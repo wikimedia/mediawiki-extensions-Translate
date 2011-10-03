@@ -436,8 +436,6 @@ This box list the problems found in the translation.',
 	'translate-magic-cm-current' => '{{Identical|Current}}',
 	'translate-magic-cm-comment' => '{{Identical|Comment}}',
 	'translate-magic-cm-save' => '{{Identical|Save}}',
-	'translationchanges' => 'Title of [[Special:TranslationChanges]]',
-	'translationchanges-export' => '{{Identical|Export}}',
 	'translate-checks-balance' => 'This translation warning is displayed if the number of opening brackets ("[", "{", and "(") is different from the number of closing brackets ("]", "}", and ")").
 
 * Parameter $1 is a list of the unbalanced brackets, for example "\'\'\'[]: 1\'\'\'" which means that there is one missing closing square brackets.
@@ -504,7 +502,8 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
 	'translate-languagestats-groups' => "You can translate the text, including 'Leave this line exactly as it is'. The lines of this messages have one (1) leading space.",
 	'translate-mgs-column-language' => '{{Identical|Language}}',
-	'supportedlanguages-colorlegend' => '$1 is not a single number, but a series of numbers with different background colours, serving as a legend to match each colour with a number of days passed since the last contributed translation. See [[Special:SupportedLanguages]] to see the final rendering.',
+	'supportedlanguages-colorlegend' => 'Used on [[Special:SupportedLanguages]]. Parameters:
+* $1 is not a single number, but a series of numbers with different background colours, serving as a legend to match each colour with a number of days passed since the last contributed translation. See [[Special:SupportedLanguages]] to see the final rendering.',
 	'supportedlanguages-recenttranslations' => 'Link on [[Special:SupportedLanguages]] to the Recent Changes special page.',
 	'translate-save' => '{{Identical|Save}}',
 	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
@@ -1666,6 +1665,7 @@ $1',
 /** Assamese (অসমীয়া)
  * @author Chaipau
  * @author Gahori
+ * @author Gitartha.bordoloi
  * @author Jaminianurag
  */
 $messages['as'] = array(
@@ -1718,8 +1718,6 @@ $messages['as'] = array(
 	'translate-magic-words' => 'যাদুকৰি শব্দবোৰ',
 	'translate-magic-namespace' => 'নামস্থান নামবোৰ',
 	'translate-magic-notsaved' => "আপুনাৰ সম্পাদনা সাঁচি থোৱা নহ'ল!",
-	'translationchanges' => 'ভাঙনি সালসলনিসমূহ',
-	'translationchanges-export' => 'ৰপ্তানি কৰক',
 	'translate-pref-editassistlang' => 'সহযোগী ভাষাসমূহ:',
 	'prefs-translate' => 'ভাঙনি বিকল্পসমূহ',
 	'translate-pref-jsedit' => 'উচ্চকৃত ভাঙনি সম্পাদন-সঁজুলি (জাভাস্ক্ৰিপ্ট)',
@@ -1755,7 +1753,7 @@ $messages['as'] = array(
 	'translate-total' => 'বাৰ্তাসমূহ',
 	'translate-untranslated' => 'ভাঙনি নোহোৱা',
 	'supportedlanguages' => 'সমৰ্থন থকা ভাষাসমূহ',
-	'translate-save' => 'সাঁচি থওঁক ($1)',
+	'translate-save' => 'সাঁচি থওক ($1)',
 	'translate-jssti-add' => 'তালিকাত যোগ দিয়ক',
 	'translate-manage-modlang-new' => '$1 (নতুন)',
 	'translate-manage-import-new' => 'নতুন বাৰ্তা $1',
@@ -1857,10 +1855,6 @@ Los cambeos nun se graben hasta que calques nel botón guardar d'abaxo.",
 	'translate-magic-notsaved' => '¡La edición nun se guardó!',
 	'translate-magic-errors' => "Por favor, igua{{PLURAL:$1|'l fallu| los fallos}} darréu nes traducciones:",
 	'translate-magic-saved' => 'Los cambeos se guardaron correutamente.',
-	'translationchanges' => 'Cambeos de traducción',
-	'translationchanges-export' => 'esportar',
-	'translationchanges-change' => '$1: $2 por $3',
-	'translationchanges-submit' => 'Amosar',
 	'translate-checks-parameters' => "{{PLURAL:$2|El siguiente parámetru nun s'usa|Los siguientes parámetros nun s'usen}}:
 <strong><nowiki>$1</nowiki></strong>",
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|El siguiente parámetru ye desconocíu|Los siguientes parámetros son desconocíos}}:
@@ -1966,13 +1960,9 @@ T'afalamos a revisar los mensaxes con [[Special:Translate|{{int:translate}}]].",
 	'translate-mgs-nothing' => "Nada qu'amosar pa les estadístiques que se pidieron.",
 	'supportedlanguages' => 'Llingües sofitaes',
 	'supportedlanguages-summary' => "Esta páxina amuesa la llista de toles llingües que sofita {{SITENAME}}, xunto colos nomes de los traductores que trabayen nelles.
-Si quies más información sobre una llingua determinada, puedes calcar nel enllaz al portal d'esa llingua.
-Si calques nel nome d'un traductor aportarás a la so páxina d'usuariu.
-
-Si una llingua nun ta na llista, puedes saber cómo entamar un proyeutu de llocalización pa la mesma en «[[Translating:Process|Llingua nueva]]».
-
-Si traduces a una llingua y nun apaez el to nome, amiéstalu a la llista de traductores del [[:Category:Languages|portal]] d'esa llingua.
-Adica pa la barra de menú y verás un enllaz al portal de la llingua de les tos preferencies.",
+Cuantes más traducciones tenga feches un traductor, más grande apaecerá'l so nome.
+El color del solliniáu indica'l tiempu que fai dende qu'un traductor tuvo activu equí.",
+	'supportedlanguages-colorlegend' => 'Lleenda del color: Cabera traducción hai $1 díes.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Traductor|Traductores}}: $1',
 	'supportedlanguages-recenttranslations' => 'traducciones recientes',
 	'supportedlanguages-count' => '$1 {{plural:$1|llingua|llingües}} en total.',
@@ -2003,6 +1993,8 @@ Usa l'enllaz d'abaxo pa volver a la vista de detalles del grupu.",
 	'translate-manage-inconsistent' => 'Se detectó una inconsistencia na solicitú.
 Por favor revisa los cambios y vuelve a probar.
 Detalles: $1.',
+	'translate-manage-toolong' => "Pasose'l tiempu máximu de procesamentu de $1 {{PLURAL:$1|segundu|segundos}}.
+Vuelvi a unviar el formulariu pa continuar procesandolu.",
 	'translate-manage-import-ok' => 'Importada la versión nueva de la páxina $1.',
 	'translate-manage-import-noks' => 'Nun se pudo importar la versión nueva de la páxina $1: $2',
 	'translate-manage-import-ignore' => "Saltando'l mensaxe $1.",
@@ -2012,6 +2004,18 @@ Por favor, compruebala.",
 	'translate-manage-fuzzy-summary' => 'La definición camudó',
 	'translate-manage-import-fuzzy' => 'Importando y poniendo la marca fuzzy: $1',
 	'translate-manage-import-done' => '¡Too fecho!',
+	'translate-manage-import-rebuild' => 'Reconstruir la caché.',
+	'translate-manage-intro-en' => "Darréu vien la llista de cambios nos mensaxes d'esti grupu.
+Por favor, revisa los cambios y escueyi una aición que quieras facer pa cada mensaxe.
+En anovando les definiciones de los mensaxes, comprueba si hai cambios esternos n'otres llingües, si esisten.
+Ten en cuenta tamién que l'aición <code>ignorar</code> ye sólo temporal.",
+	'translate-js-next' => 'Guardar y abrir el siguiente',
+	'translate-js-nonext' => "Esti yera'l caberu mensaxe d'esta páxina.",
+	'translate-js-skip' => 'Saltar al siguiente',
+	'translate-js-save-failed' => "Falló'l guardáu. Por favor, informa d'esti fallu.",
+	'translate-js-history' => 'Historial de traducciones',
+	'translate-js-support' => 'Facer una entruga',
+	'translate-js-support-title' => 'Pidir ayuda si nun hai información bastante pa traducir esti mensaxe correutamente.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Códigu',
 	'translate-gs-continent' => 'Continente',
@@ -2133,9 +2137,6 @@ $messages['ba'] = array(
 	'translate-magic-notsaved' => 'Һеҙҙең үҙгәртеүҙәрегеҙ һаҡланманы!',
 	'translate-magic-errors' => 'Түбәндәге {{PLURAL:$1|хатаны|хаталарҙы}} төҙәтегеҙ, зинһар:',
 	'translate-magic-saved' => 'Һеҙҙең үҙгәртеүҙәрегеҙ уңышлы һаҡланды.',
-	'translationchanges' => 'Тәржемәләге үҙгәрештәр',
-	'translationchanges-export' => 'сығарырға',
-	'translationchanges-change' => '$1: $2 — $3',
 	'translate-checks-parameters' => 'Түбәндәге {{PLURAL:$2|параметр|параметрҙар}} ҡулланылмай:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Түбәндәге {{PLURAL:$2|параметр|параметрҙар}} билдәһеҙ:
@@ -2474,10 +2475,6 @@ $messages['be-tarask'] = array(
 	'translate-magic-notsaved' => 'Ваша рэдагаваньне не было захавана!',
 	'translate-magic-errors' => 'Калі ласка, выпраўце {{PLURAL:$1|наступную памылку|наступныя памылкі}} у перакладах:',
 	'translate-magic-saved' => 'Вашыя зьмены былі пасьпяхова захаваны.',
-	'translationchanges' => 'Зьмены ў перакладах',
-	'translationchanges-export' => 'экспартаваць',
-	'translationchanges-change' => '$1: $2 праз $3',
-	'translationchanges-submit' => 'Выбраць',
 	'translate-checks-parameters' => '{{PLURAL:$2|Наступны парамэтар не выкарыстоўваецца|Наступныя парамэтры не выкарыстоўваюцца}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Невядомы парамэтар|Невядомыя парамэтры}}:
@@ -3053,9 +3050,6 @@ Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton en
 	'translate-magic-notsaved' => "N'eo ket bet enrollet ho tegasadenn !",
 	'translate-magic-errors' => 'Reizhit ar {{PLURAL:$1|fazi|fazi}} da-heul en troidigezhioù :',
 	'translate-magic-saved' => 'Enrollet-mat eo bet ho kemmoù.',
-	'translationchanges' => 'Troidigezhioù bet cheñchet',
-	'translationchanges-export' => 'Ezporzhiañ',
-	'translationchanges-change' => '$1: $2 gant $3',
 	'translate-checks-parameters' => 'Ne vez ket graet gant an {{PLURAL:$2|arventenn|arventennoù}} da-heul : <strong>$1</strong>',
 	'translate-checks-parameters-unknown' => 'Dianav eo an {{PLURAL:$2|arventenn|arventennoù}} da-heul :
 <strong><nowiki>$1</nowiki></strong>',
@@ -3336,9 +3330,6 @@ Promjene nisu spremljene sve dok ne kliknete dugme spremi koje se nalazi ispod.'
 	'translate-magic-notsaved' => 'Vaše uređivanje nije spremljeno!',
 	'translate-magic-errors' => 'Molimo ispravite {{PLURAL:$1|slijedeću grešku|slijedeće greške}} u prevodima:',
 	'translate-magic-saved' => 'Vaše promjene su uspješno sačuvane.',
-	'translationchanges' => 'Promjene u prijevodima',
-	'translationchanges-export' => 'izvoz',
-	'translationchanges-change' => '$1: $2 od $3',
 	'translate-checks-parameters' => 'Slijedeći {{PLURAL:$2|parametar nije iskorišten|parametri nisu iskorišteni}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Slijedeći {{PLURAL:$2|parametar je nepoznat|parametri su nepoznati}}:
@@ -3976,10 +3967,6 @@ Změny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ pod edi
 	'translate-magic-notsaved' => 'Vaše editace nebyla uložena!',
 	'translate-magic-errors' => 'Opravte následující {{PLURAL:$1|chybu|chyby}} v překladech:',
 	'translate-magic-saved' => 'Vaše změny byly úspěšně uloženy.',
-	'translationchanges' => 'Změny překladů',
-	'translationchanges-export' => 'exportovat',
-	'translationchanges-change' => '$1: $2 ($3)',
-	'translationchanges-submit' => 'Načíst',
 	'translate-checks-parameters' => 'Následující {{PLURAL:$2|parametr není použit|parametry nejsou použity}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Následující {{PLURAL:$2|parametr není definován|parametry nejsou definovány}}:
@@ -4083,14 +4070,10 @@ Teď doporučujeme zkontrolovat hlášení pomocí stránky [[Special:Translate|
 	'translate-mgs-invalid-group' => 'Zadaná skupina $1 neexistuje.',
 	'translate-mgs-nothing' => 'U požadovaných statistik není co zobrazit.',
 	'supportedlanguages' => 'Podporované jazyky',
-	'supportedlanguages-summary' => 'Na této stránce se nachází seznam všech jazyků podporovaných na {{grammar:6sg|{{SITENAME}}}} spolu se jmény překladatelů, kteří na jazyku pracují.
-Více informací ke každému jazyku získáte na jazykovém portálu, na který se dostanete kliknutím na příslušný jazyk.
-Kliknutím na jméno překladatele se dostanete na uživatelskou stránku.
-
-Pokud zde nějaký jazyk není uveden, můžete si přečíst návod na založení lokalizačního projektu na stránce „[[Translating:Process|Nový jazyk]]“.
-
-Pokud nějaký jazyk překládáte, ale vaše jméno zde není uvedeno, přidejte se do seznamu překladatelů na odpovídajícím [[:Category:Languages|jazykovém portálu]].
-Odkaz na portál vašeho preferovaného jazyka naleznete v menu.',
+	'supportedlanguages-summary' => 'Na této stránce se nachází seznam všech jazyků podporovaných na {{grammar:6sg|{{SITENAME}}}}
+spolu se jmény překladatelů, kteří na jazyku pracují.
+Čím více editací překladatel poskytnul, tím větší se jeho jméno zobrazuje.
+Barva podtržení znázorňuje, jak nedávno zde byl překladatel aktivní.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Překladatel|Překladatelé}}: $1',
 	'supportedlanguages-recenttranslations' => 'nedávné překlady',
 	'supportedlanguages-count' => 'Celkem $1 {{PLURAL:$1|jazyk|jazyky|jazyků}}.',
@@ -4277,10 +4260,6 @@ Du skal være i oversættergruppen for at gemme ændringer.
 	'translate-magic-notsaved' => 'Din redigering er ikke gemt!',
 	'translate-magic-errors' => 'Ret venligst følgende {{PLURAL:$1|fejl|fejl}} i oversættelserne:',
 	'translate-magic-saved' => 'Dine ændringer er gemt.',
-	'translationchanges' => 'Oversættelsesændringer',
-	'translationchanges-export' => 'Eksportér',
-	'translationchanges-change' => '$1: $2 af $3',
-	'translationchanges-submit' => 'Hent',
 	'translate-checks-parameters' => 'Følgende {{PLURAL:$2|parameter|parametre}} bruges ikke:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Følgende {{PLURAL:$2|parameter er ukendt|parametre er ukendte}}:
@@ -4386,14 +4365,12 @@ Du opfordres til at gennemse beskeder gennem [[Special:Translate|{{int:translate
 	'translate-mgs-invalid-group' => 'Den angivne gruppe, $1, findes ikke.',
 	'translate-mgs-nothing' => 'Der er intet at vise for den ønskede statistik.',
 	'supportedlanguages' => 'Understøttede sprog',
-	'supportedlanguages-summary' => 'Denne side viser en liste over alle de sprog, der understøttes af {{SITENAME}}, sammen med navnene på de oversættere, der arbejder på dette sprog.
-Hvis du ønsker yderligere oplysninger om et bestemt sprog, kan du klikke på linket til portalen for det pågældende sprog.
-Hvis du klikker på en oversætters navn vil det tage dig til deres brugerside.
+	'supportedlanguages-summary' => 'Denne side viser en liste over alle de sprog, der understøttes af {{SITENAME}},
+sammen med navnene på de oversættere, der arbejder på dette sprog.
 
-Hvis et sprog ikke er på listen, kan du finde ud af hvordan man starter en lokalisering projekt for et sprog på "[[Translating:Process|Nye Sprog]]". 
-
-Hvis du oversætter til et sprog og dit navn ikke er inkluderet, kan du tilføje dit navn til listen af oversættere på [[:Category:Languages|portal]] for det pågældende sprog.
-Se menulinjen for et link til portalen for det sprog du foretrækker.',
+Jo flere redigeringer, en oversætter har bidraget med, jo større skrift bruges til navnet.
+Understregningsfarven angiver, hvor nyligt en oversætter har været aktiv.',
+	'supportedlanguages-colorlegend' => 'Forklaring til farven: seneste oversættelse var for $1 dage siden.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Oversætter|Oversættere}}: $1',
 	'supportedlanguages-recenttranslations' => 'seneste oversættelser',
 	'supportedlanguages-count' => '$1 {{plural:$1|sprog|sprog}} i alt.',
@@ -4588,10 +4565,6 @@ Du musst zur Benutzergruppe Übersetzer gehören, um Änderungen speichern zu k�
 	'translate-magic-notsaved' => 'Die Änderungen wurden nicht gespeichert.',
 	'translate-magic-errors' => 'Bitte behebe {{PLURAL:$1|nachfolgenden|nachfolgende}} Fehler in der Übersetzung:',
 	'translate-magic-saved' => 'Die Änderungen wurden erfolgreich gespeichert.',
-	'translationchanges' => 'Übersetzungsänderungen',
-	'translationchanges-export' => 'exportieren',
-	'translationchanges-change' => '$1: $2 durch $3',
-	'translationchanges-submit' => 'Holen',
 	'translate-checks-parameters' => '{{PLURAL:$2|Der folgende Parameter wird|Die folgenden Parameter werden}} nicht benutzt: <strong>$1</strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Der folgende Parameter ist|Die folgenden Parameter sind}} unbekannt: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Die {{PLURAL:$2|folgende Klammersetzung ist|folgenden Klammersetzungen sind}} nicht ausgeglichen: <strong>$1</strong>',
@@ -4929,9 +4902,6 @@ Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskł
 	'translate-magic-notsaved' => 'Twója změna njejo se składła!',
 	'translate-magic-errors' => 'Pšosym skorigěruj {{PLURAL:$1|slědujucu zmólku|slědujucej zmólce|slědujuce zmólki|slědujuce zmólki}} w pśełožkach:',
 	'translate-magic-saved' => 'Twóje změny su se wuspěšnje składli.',
-	'translationchanges' => 'Změny pśełožka',
-	'translationchanges-export' => 'eksportěrowaś',
-	'translationchanges-change' => '$1: $2 pśez $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Slědujucy parameter|Slědujucej parametra|Slědujuce parametry|Slědujucych parametrow}}  se {{PLURAL:$2|njewužywa|njewužywatej|njewužywaju|njwužywa}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Slědujucy parameter jo njeznaty|Slědujucej parametra stej njeznatej|Slědujuce parametry su njeznate|Slědujucych parametrow jo njeznate}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Jo njerowna licba {{PLURAL:$2|spinka|spinkow}}: <strong><nowiki>$1</nowiki></strong>',
@@ -5710,9 +5680,6 @@ Los cambios no se graban hasta que no pulses el boton de guardar de abajo.',
 	'translate-magic-notsaved' => 'No se guardó tu edición.',
 	'translate-magic-errors' => 'Por favor corrige {{PLURAL:$1|el siguiente error|los siguientes errores}} en la traducción:',
 	'translate-magic-saved' => 'Los cambios se guardaron correctamente.',
-	'translationchanges' => 'Cambios en la traducción',
-	'translationchanges-export' => 'exportar',
-	'translationchanges-change' => '$1: $2 por $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|El siguiente parámetro no se está|Los siguientes parámetros no se están}} usando:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|El siguiente parámetro es desconocido|Los siguientes parámetros son desconocidos}}:
@@ -6734,10 +6701,6 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-magic-notsaved' => 'Votre modification n’a pas été sauvegardée !',
 	'translate-magic-errors' => 'Corrigez {{PLURAL:$1|l’erreur suivante|les erreurs suivantes}} dans les traductions :',
 	'translate-magic-saved' => 'Votre modification a été sauvegardée avec succès.',
-	'translationchanges' => 'Traductions modifiées',
-	'translationchanges-export' => 'exporter',
-	'translationchanges-change' => '$1 : $2 par $3',
-	'translationchanges-submit' => 'Rapporter',
 	'translate-checks-parameters' => '{{PLURAL:$2|Le paramètre suivant n’est pas utilisé|Les paramètres suivants ne sont pas utilisés}} :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Le paramètre suivant est inconnu|Les paramètres suivants sont inconnus}} :
@@ -7441,8 +7404,8 @@ Prema no nome do grupo de mensaxes para ollar a lista coas mensaxes sen traducir
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mensaxe|mensaxes}} por páxina',
 	'translate-submit' => 'Mostrar',
 	'translate-page-navigation-legend' => 'Navegación',
-	'translate-page-showing' => 'Amosando as mensaxes da $1 á $2, dun total de $3.',
-	'translate-page-showing-all' => 'Amosando {{PLURAL:$1|unha mensaxe|$1 mensaxes}}.',
+	'translate-page-showing' => 'Mostrando as mensaxes da $1 á $2, dun total de $3.',
+	'translate-page-showing-all' => 'Mostrando {{PLURAL:$1|unha mensaxe|$1 mensaxes}}.',
 	'translate-page-showing-none' => 'Non hai ningunha mensaxe que amosar.',
 	'translate-next' => 'Páxina seguinte',
 	'translate-prev' => 'Páxina anterior',
@@ -7494,10 +7457,6 @@ Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
 	'translate-magic-notsaved' => 'A súa edición non foi gardada!',
 	'translate-magic-errors' => 'Por favor, corrixa {{PLURAL:$1|o seguinte erro|os seguintes erros}} nas traducións:',
 	'translate-magic-saved' => 'As súas modificacións gardáronse con éxito.',
-	'translationchanges' => 'Modificacións nas traducións',
-	'translationchanges-export' => 'exportar',
-	'translationchanges-change' => '$1: $2 por $3',
-	'translationchanges-submit' => 'Mostrar',
 	'translate-checks-parameters' => '{{PLURAL:$2|Non se emprega o seguinte parámetro|Non se empregan os seguintes parámetros}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Descoñécese o seguinte parámetro|Descoñécense os seguintes parámetros}}:
@@ -7602,14 +7561,10 @@ Animámolo a que revise as mensaxes existentes mediante a páxina especial [[Spe
 	'translate-mgs-invalid-group' => 'O grupo especificado, "$1", non existe.',
 	'translate-mgs-nothing' => 'Non hai nada que mostrar para as estatísticas solicitadas.',
 	'supportedlanguages' => 'Linguas soportadas',
-	'supportedlanguages-summary' => 'Esta páxina amosa unha lista de todas as linguas soportadas por {{SITENAME}}, así como os nomes dos tradutores que traballan nelas.
-Se quere obter máis información sobre unha lingua en concreto, pode premer na ligazón cara ao portal desa lingua.
-Se preme no nome dun tradutor accederá á súa páxina de usuario.
-
-Se algunha lingua non aparece listada, infórmese de como iniciar un novo proxecto de localización [[Translating:Process|aquí]].
-
-Se colaborou na tradución a unha lingua e o seu nome non aparece listado, engádao á lista de tradutores no [[:Category:Languages|portal]] desa lingua.
-Na barra do menú terá unha ligazón ao portal da súa lingua.',
+	'supportedlanguages-summary' => 'Esta páxina mostra unha lista de todas as linguas soportadas por {{SITENAME}},
+así como os nomes dos tradutores que traballan nelas.
+Cantas máis contribucións fixese un usuario, máis grande aparecerá o seu nome.
+A cor do suliñado indica como de activo estivo o tradutor recentemente.',
 	'supportedlanguages-colorlegend' => 'Lenda das cores: Última tradución hai $1 días.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tradutor|Tradutores}}: $1',
 	'supportedlanguages-recenttranslations' => 'traducións recentes',
@@ -7858,9 +7813,6 @@ Du muesch in dr Ibersetzer-Gruppe syy go Änderige z spychere.
 	'translate-magic-notsaved' => 'Dyy Bearbeitig het nit chenne gspycheret wäre!',
 	'translate-magic-errors' => 'Bitte verbessere {{PLURAL:$1|dää Fähler|die Fähler}} in dr Ibersetzige:',
 	'translate-magic-saved' => 'Dyyni Änderige sin erfolgryych gspycheret wore.',
-	'translationchanges' => 'Ibersetzigsänderige',
-	'translationchanges-export' => 'exportiere',
-	'translationchanges-change' => '$1: $2 dur $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Dää Parameter wird|Die Parameter wäre}} nit bruucht: <strong>$1</strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Dää Parameter isch|Die Parameter sin}} nit bekannt: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Die {{PLURAL:$2|Chlammeresetzig isch|Chlammersetzige sin}} nit uusgliche: <strong>$1</strong>',
@@ -8309,10 +8261,6 @@ $messages['he'] = array(
 	'translate-magic-notsaved' => 'עריכתכם לא נשמרה!',
 	'translate-magic-errors' => 'אנא תקנו את {{PLURAL:$1|השגיאה הבאה|$1 השגיאות הבאות}} בתרגום:',
 	'translate-magic-saved' => 'השינויים שביצעתם נשמרו בהצלחה.',
-	'translationchanges' => 'שינויים בתרגום',
-	'translationchanges-export' => 'יצוא',
-	'translationchanges-change' => '$1: $2 על ידי $3',
-	'translationchanges-submit' => 'אחזור',
 	'translate-checks-parameters' => '{{PLURAL:$2|הפרמטר הבא אינו|הפרמטרים הבאים אינם}} בשימוש:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|הפרמטר הבא אינו|הפרמטרים הבאים אינם}} ידועים:
@@ -8832,9 +8780,6 @@ Dyrbiš w skupinje přełožowarjow być, zo by změny składował. Změny so nj
 	'translate-magic-notsaved' => 'Twoja změna njeje so składowała!',
 	'translate-magic-errors' => 'Prošu skoriguj {{PLURAL:$1|slědowacy zmylk|slědowacej zmylkaj|slědowace zmylki|slědowace zmylki}} w přełožkach:',
 	'translate-magic-saved' => 'Twoje změny su so wuspěšnje składowali.',
-	'translationchanges' => 'Přełožowanske změny',
-	'translationchanges-export' => 'eksportować',
-	'translationchanges-change' => '$1: $2 wot $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Slědowacy parameter|Slědowacej parametraj|Slědowace parametry|Slědowacych parametrow}} so {{PLURAL:$2|njewužiwa|njewužiwatej|njewužiwaja|njewužiwa}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Slědowacy parameter je njeznaty|Slědowacej parametraj stej njeznatej|Slědowace parametry su njeznate|Slědowacych parametrow je njeznate}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Je njeruna ličba {{PLURAL:$2|spinka|spinkow|spinkow|spinkow}}: <strong><nowiki>$1</nowiki></strong>',
@@ -9105,9 +9050,6 @@ Chanjman yo pa sove jouk ou klike sou bouton sove anba.',
 	'translate-magic-notsaved' => 'Modifikasyon ou pa t anrejistre!',
 	'translate-magic-errors' => 'Tanpri, korije {{PLURAL:$1|erè sa|erè sa yo}} nan tradiksyon:',
 	'translate-magic-saved' => 'Modifikasyon ou yo te byen anrejistre.',
-	'translationchanges' => 'Chanjman nan tradiksyon yo',
-	'translationchanges-export' => 'ekspòte',
-	'translationchanges-change' => '$1: $2 pa $3',
 	'translate-checks-parameters' => 'Paramèt {{PLURAL:$2|swivan|swivan yo}} pa itilize:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Nou pa konnen paramèt {{PLURAL:$2|swivan|swivan yo}}:
@@ -9382,9 +9324,6 @@ A változtatások nem mentődnek, míg alul a mentés gombra nem kattintasz.',
 	'translate-magic-notsaved' => 'A szerkesztésed nem lett elmentve!',
 	'translate-magic-errors' => 'Javítsd ki a következő {{PLURAL:$1|hibát|hibákat}} a fordításokban:',
 	'translate-magic-saved' => 'A módosításaid el lettek mentve.',
-	'translationchanges' => 'Változások a fordításokban',
-	'translationchanges-export' => 'kimentés',
-	'translationchanges-change' => '$1: $2 $3 által',
 	'translate-checks-parameters' => 'A következő {{PLURAL:$2|paraméter nincs|paraméterek nincsenek}} használva:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'A következő {{PLURAL:$2|paraméter ismeretlen|paraméterek ismeretlenek}}:
@@ -9663,10 +9602,6 @@ Le modificationes non es salveguardate usque tu clicca super le button Salveguar
 	'translate-magic-notsaved' => 'Tu modification non ha essite salveguardate!',
 	'translate-magic-errors' => 'Corrige per favor le sequente {{PLURAL:$1|error|errores}} in le traductiones:',
 	'translate-magic-saved' => 'Le modificationes ha essite salveguardate con successo.',
-	'translationchanges' => 'Modificationes in traductiones',
-	'translationchanges-export' => 'exportar',
-	'translationchanges-change' => '$1: $2 per $3',
-	'translationchanges-submit' => 'Obtener',
 	'translate-checks-parameters' => 'Le sequente {{PLURAL:$2|parametro|parametros}} non es usate:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Le sequente {{PLURAL:$2|parametro|parametros}} es incognite:
@@ -9965,9 +9900,6 @@ Perubahan tidak akan disimpan hingga Anda mengklik tombol simpan di bawah.',
 	'translate-magic-notsaved' => 'Suntingan Anda tidak tersimpan!',
 	'translate-magic-errors' => 'Mohon perbaiki {{PLURAL:$1|kesalahan|kesalahan}} ini pada penterjemah:',
 	'translate-magic-saved' => 'Perubahan Anda berhasil tersimpan',
-	'translationchanges' => 'Perubahan terjemahan',
-	'translationchanges-export' => 'ekspor',
-	'translationchanges-change' => '$1: $2 oleh $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Parameter|Parameter-parameter}} berikut tidak digunakan:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Parameter|Parameter-parameter}} berikut tidak dikenal:
@@ -10648,10 +10580,6 @@ $messages['ja'] = array(
 	'translate-magic-notsaved' => '編集は保存されませんでした！',
 	'translate-magic-errors' => '以下の{{PLURAL:$1|エラー}}を修正してください：',
 	'translate-magic-saved' => '変更は正常に保存されました。',
-	'translationchanges' => '翻訳変更状況',
-	'translationchanges-export' => '書き出し',
-	'translationchanges-change' => '$1：$2、$3による',
-	'translationchanges-submit' => '取得',
 	'translate-checks-parameters' => '次の{{PLURAL:$2|パラメーター}}が利用されていません：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '次の{{PLURAL:$2|パラメーター}}が未定義です：
@@ -11821,7 +11749,6 @@ $1',
 	'translate-magic-notsaved' => '당신의 편집이 저장되지 않았습니다!',
 	'translate-magic-errors' => '번역문에서 다음 오류{{PLURAL:$1|를|들을}} 수정해주십시오:',
 	'translate-magic-saved' => '당신의 편집 내용을 성공적으로 저장했습니다.',
-	'translationchanges-export' => '내보내기',
 	'translate-checks-parameters' => '다음 {{PLURAL:$2|변수가}} 사용되지 않았습니다:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => '메시지 원문에는 <nowiki>{{PLURAL:}}</nowiki>을 사용하지만 번역문에서는 그렇지 않습니다.',
@@ -11847,6 +11774,9 @@ $1',
 	'languagestats-summary' => '이 문서는 특정 언어에 대한 모든 메시지 그룹에 대한 번역 통계를 보여 주고 있습니다.',
 	'languagestats-stats-for' => '$1 ($2)에 대한 번역 통계',
 	'languagestats-recenttranslations' => '최근 번역',
+	'translate-langstats-expand' => '펼치기',
+	'translate-langstats-collapse' => '접기',
+	'translate-langstats-expandall' => '모두 펼치기',
 	'translate-language-code' => '언어 부호',
 	'translate-language-code-field-name' => '언어 부호:',
 	'translate-suppress-complete' => '완전히 번역된 메시지 그룹을 숨기기',
@@ -11855,6 +11785,8 @@ $1',
 	'translate-untranslated' => '미번역',
 	'translate-percentage-complete' => '완료',
 	'translate-percentage-fuzzy' => '업데이트 필요',
+	'translate-ls-submit' => '통계 보기',
+	'translate-ls-column-group' => '메시지 그룹',
 	'supportedlanguages-translators' => '{{PLURAL:$2|번역자}}: $1',
 	'translate-save' => '저장 ($1)',
 	'translate-manage-fuzzy-summary' => '메시지 정의가 바뀌었습니다.',
@@ -11976,10 +11908,6 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 	'translate-magic-notsaved' => 'Ding Änderunge sin nit faßjehallde!',
 	'translate-magic-errors' => 'Donn {{PLURAL:$1|dää Fähler|die Fähler}} en Övversäzunge verbessere:',
 	'translate-magic-saved' => 'Ding Änderunge sin faßjehallde.',
-	'translationchanges' => 'Neu Övversäzonge',
-	'translationchanges-export' => 'Äxpochteere',
-	'translationchanges-change' => '$1: $2 fum $3',
-	'translationchanges-submit' => 'Holle',
 	'translate-checks-parameters' => '{{PLURAL:$2|Dä Parrammeeter hee eß|Di Parrammeetere hee sen|dat Jedrißße hee iß}} nit jebruch woode: <strong>$1</strong>',
 	'translate-checks-parameters-unknown' => 'Hee {{PLURAL:$2|dä Parrammeeter|di Parrammeetere|dat Jedrißße}} kënne mer nit:
 <strong><nowiki>$1</nowiki></strong>',
@@ -12352,10 +12280,6 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-magic-notsaved' => 'Är Ännerung gouf net gespäichert!',
 	'translate-magic-errors' => 'Verbessert w.e.g. {{PLURAL:$1|dëse|dës}} Feeler an den Iwwersetzungen:',
 	'translate-magic-saved' => 'Är Ännerunge goufe gespäichert',
-	'translationchanges' => 'Iwwersetzung ännert',
-	'translationchanges-export' => 'exportéieren',
-	'translationchanges-change' => '$1: $2 vun $3',
-	'translationchanges-submit' => 'Weisen',
 	'translate-checks-parameters' => '{{PLURAL:$2|Dëse Parameter gëtt|Dës Parameter ginn}} net benotzt:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Dëse Parameter ass|Dës Parameter sinn }} onbekannt:
@@ -12463,6 +12387,7 @@ Dir sidd awer häerzlech Invitéiert fir d'Systemmessagn op [[Special:Translate|
 	'supportedlanguages-summary' => "Op dëser Säit steet eng Lëscht vun alle Sproochen déi op {{SITENAME}} ënnerstëtzt ginn, zesumme mam Numm vun den Iwwersetzer déi un där Sprooch schaffen.
 Den Numm vum Iwwersetzer ass méi grouss desto méi Iwwersetzungen de Benotzer gemaach huet.
 D'Faarf mat där den Numm vum Benotzer ënnerstrach ass weist wéi rezent dee Benotzer hei aktiv war.",
+	'supportedlanguages-colorlegend' => 'Erklärung vun de Faarwen: Lescht Iwwersetzung viru(n) $1 Deeg.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Iwwersetzer|Iwwersetzer}}: $1',
 	'supportedlanguages-recenttranslations' => 'rezent Iwwersetzungen',
 	'supportedlanguages-count' => '{{plural:$1|Eng Sprooch|$1 Sproochen}} am Ganzen.',
@@ -12987,10 +12912,6 @@ $messages['mk'] = array(
 	'translate-magic-notsaved' => 'Вашето уредување не беше зачувано!',
 	'translate-magic-errors' => 'Поправете {{PLURAL:$1|ја следнава грешка|ги следниве грешки}} во преводот:',
 	'translate-magic-saved' => 'Вашите промени се успешно зачувани.',
-	'translationchanges' => 'Промени на превод',
-	'translationchanges-export' => 'извоз',
-	'translationchanges-change' => '$1: $2 од $3',
-	'translationchanges-submit' => 'Преземи',
 	'translate-checks-parameters' => '{{PLURAL:$2|Следниов параметар не се користи|Следниве параметри се користат}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Следниов параметар е непознат|Следниве параметри се непознати}}:
@@ -13631,10 +13552,6 @@ Perubahan tidak disimpan sehingga anda mengklik butang Simpan di bawah.',
 	'translate-magic-notsaved' => 'Suntingan anda belum disimpan!',
 	'translate-magic-errors' => 'Sila betulkan {{PLURAL:$1|kesilapan|kesilapan-kesilapan}} terjemahan yang berikut:',
 	'translate-magic-saved' => 'Pengubahan anda berjaya disimpan.',
-	'translationchanges' => 'Perubahan terjemahan',
-	'translationchanges-export' => 'eksport',
-	'translationchanges-change' => '$1: $2 daripada $3',
-	'translationchanges-submit' => 'Ambil',
 	'translate-checks-parameters' => '{{PLURAL:$2|Parameter|Parameter-parameter}} berikut tidak digunakan:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Parameter|Parameter-parameter}} berikut tidak dikenali:
@@ -14924,9 +14841,6 @@ Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-magic-notsaved' => 'Endringen din ble ikke lagret!',
 	'translate-magic-errors' => 'Rett på følgende {{PLURAL:$1|feil|feil}} i oversettelsen:',
 	'translate-magic-saved' => 'Dine endringer ble lagret.',
-	'translationchanges' => 'Oversettelsesendringer',
-	'translationchanges-export' => 'eksporter',
-	'translationchanges-change' => '$1: $2 av $3',
 	'translate-checks-parameters' => 'Følgende {{PLURAL:$2|parameter|parametre}} brukes ikke:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Følgende {{PLURAL:$2|parameter er ukjent|parametre er ukjente}}:
@@ -15642,10 +15556,6 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-magic-notsaved' => 'Twoja edycja nie została zapisana!',
 	'translate-magic-errors' => 'Proszę naprawić {{PLURAL:$1|w tłumaczeniach błąd|następujące błędy w tłumaczeniach:}}',
 	'translate-magic-saved' => 'Zmiany zostały zapisane.',
-	'translationchanges' => 'Zmiany w tłumaczeniu',
-	'translationchanges-export' => 'eksportuj',
-	'translationchanges-change' => '$1: $2 przez $3',
-	'translationchanges-submit' => 'Wyświetl',
 	'translate-checks-parameters' => '{{PLURAL:$2|Następujący parametr nie jest wykorzystywany|Następujące parametry nie są wykorzystywane}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Następujący parametr nie jest zdefiniowany|Następujące parametry nie są zdefiniowane}}:
@@ -15941,9 +15851,6 @@ Le modìfiche as salvo nen fin ch'a-i da nen un colp ansima al al boton ambeless
 	'translate-magic-notsaved' => "Soa modìfica a l'é pa stàita salvà!",
 	'translate-magic-errors' => "Për piasì, ch'a rangia {{PLURAL:$1|l'eror|j'eror}} si-dapress ant le tradussion:",
 	'translate-magic-saved' => 'Ij sò cambi a son ëstàit salvà con sucess.',
-	'translationchanges' => 'Modìfiche ëd viragi',
-	'translationchanges-export' => 'esporté',
-	'translationchanges-change' => '$1: $2 da $3',
 	'translate-checks-parameters' => "{{PLURAL:$2|Ël paràmetr sota a l'é|Ij paràmetr sota a son}} pa dovrà:
 <strong><nowiki>$1</nowiki></strong>",
 	'translate-checks-parameters-unknown' => "{{PLURAL:$2|Ël paràmetr sota a l'é|Ij paràmetr sota a son}} pa conossù:
@@ -16161,6 +16068,8 @@ $messages['ps'] = array(
 	'translate-history' => 'پېښليک',
 	'translate-task-view' => 'ټول هغه پيغامونه چې دي په',
 	'translate-task-untranslated' => 'ټول هغه ناژباړلي پيغامونه چې دي په',
+	'translate-task-export' => 'ژباړې صادرول',
+	'translate-task-export-to-file' => 'ژباړې يوې دوتنې ته صادرول',
 	'translate-page-no-such-language' => 'ځانګړې شوې ژبه سمه نه وه.',
 	'translate-page-disabled' => "په دې ډله کې د همدې ژبې ژباړې ناچارنده شوي.
 سبب:
@@ -16180,24 +16089,25 @@ $messages['ps'] = array(
 	'translate-page-description-legend' => 'د ډلې په اړه مالومات',
 	'translate-page-edit' => 'سمول',
 	'translate-ext-url' => '<hr />وېبځی: $1',
+	'translate-optional' => '(اختياري)',
 	'translate-ignored' => '(بابېزه ګڼل شوی)',
 	'translate-edit-title' => '"$1" سمول',
+	'translate-edit-definition' => 'د پيغام پېژند',
 	'translate-edit-translation' => 'ژباړه',
 	'translate-edit-contribute' => 'ونډه اخيستل',
-	'translate-edit-information' => 'د "$2" پيغام په اړه مالومات ($1)',
-	'translate-edit-in-other-languages' => 'د "$1" پيغام په نورو ژبو کې',
+	'translate-edit-information' => 'د پيغام په اړه مالومات ($1)',
+	'translate-edit-in-other-languages' => 'پيغام په نورو ژبو کې',
 	'translate-magic-help' => 'دلته تاسې د ځانګړو مخونو مستعار نومونه، کوډګريز وييونه او د نوم-تشيالونو نومونه ژباړلی شی.
 
-د ځانګړو مخونو مستعار نومونه او کوډګريز وييونه په ګڼ شمېر نومونو ژباړلی شی.
-د کامې (,) په کارولو سره تاسې ژباړې يو له بل نه بېلولی شی.
-نوم-تشيالونه بايد يوه ژباړه ولري.
+د ځانګړو مخونو مستعار نومونه او کوډګريز وييونه ګڼ شمېر ژباړې لري.
+ژباړې د کامې (,) په کارېدلو سره يو له بل نه بېلې شوي.
+نوم-تشيالونه يواځې يوه ژباړه لرلی شي.
 
-In namespace translations <code>$1 talk</code> is special. <code>$1</code> is replaced with sitename (for example <code>{{ns:project_talk}}</code>).
-If it is not possible in your language to form valid expression without changing sitename, please contact a developer.
+د نوم-تشيال په ژباړو کې <code>$1 talk</code> ځانګړی دی. <code>$1</code> د وېبځي په نوم ځايناستل کېږي (د بېلګې په توګه <code>{{ns:project_talk}}</code>).
+که چېرته دا ستاسې په ژبه کې شونی نه وي چې د وېبځي د نوم بدلون نه پرته يوه سمه اصطلاح رامېنځ ته شي، نو لطفاً د يوه پروګرامر سره په تماس کې شۍ.
 
-You need to be in the translators group to save changes.
-Changes are not saved until you click save button below.
-',
+د بدلونونو د خوندي کولو لپاره پکار ده چې تاسې د ژباړنو په ډله کې اوسۍ.
+بدلونونه به تر هغه پورې نه خوندي کېږي څو چې تاسې لاندې د خوندي کولو تڼۍ نه وي کېښکاږلې.',
 	'translate-magic-submit' => 'راغونډول',
 	'translate-magic-cm-current' => 'اوسنی',
 	'translate-magic-cm-original' => 'آرنی',
@@ -16206,7 +16116,6 @@ Changes are not saved until you click save button below.
 	'translate-magic-words' => 'کوډګريز وييونه',
 	'translate-magic-namespace' => 'د نوم-تشيالونو نومونه',
 	'translate-magic-saved' => 'بدلونونه مو په برياليتوب سره خوندي شول.',
-	'translationchanges' => 'د ژباړې بدلونونه',
 	'translate-pref-editassistlang' => 'مرستيالې ژبې:',
 	'prefs-translate' => 'د ژباړې خوښنې',
 	'translate-rc-translation-filter' => 'ژباړې چاڼول:',
@@ -16216,6 +16125,7 @@ Changes are not saved until you click save button below.
 	'translate-stats-edits' => 'سمونونه',
 	'translate-stats-users' => 'ژباړونکي',
 	'translate-stats-registrations' => 'نومليکنې',
+	'translate-statsf-days' => 'د پيل نېټه:',
 	'translate-statsf-scale-months' => 'مياشتې',
 	'translate-statsf-scale-weeks' => 'اونۍ',
 	'translate-statsf-scale-days' => 'ورځې',
@@ -16231,13 +16141,21 @@ Changes are not saved until you click save button below.
 	'translate-translations-fieldset-title' => 'پيغام',
 	'translate-translations-messagename' => 'نوم:',
 	'translate-translations-project' => 'پروژه:',
+	'languagestats' => 'د ژبې شمار',
 	'languagestats-recenttranslations' => 'تازه ژباړې',
+	'translate-langstats-expand' => 'غځول',
+	'translate-langstats-collapse' => 'پرځول',
+	'translate-langstats-expandall' => 'ټول غځول',
+	'translate-langstats-collapseall' => 'ټول پرځول',
 	'translate-language-code' => 'د ژبې کوډ',
 	'translate-language-code-field-name' => 'د ژبې کوډ:',
 	'translate-language' => 'ژبه',
 	'translate-total' => 'پيغامونه',
 	'translate-untranslated' => 'ناژباړلي',
 	'translate-percentage-complete' => 'بشپړتابه',
+	'translate-ls-submit' => 'شمار ښکاره کول',
+	'translate-ls-column-group' => 'پيغام ډله',
+	'translate-mgs-column-language' => 'ژبه',
 	'supportedlanguages' => 'ملاتړې ژبې',
 	'supportedlanguages-translators' => '{{PLURAL:$2|ژباړن|ژباړونکي}}: $1',
 	'supportedlanguages-recenttranslations' => 'تازه ژباړې',
@@ -16355,9 +16273,6 @@ As alterações não serão gravadas até clicar no botão de gravar abaixo.',
 	'translate-magic-notsaved' => 'A sua edição não foi gravada!',
 	'translate-magic-errors' => 'Por favor, corrija {{PLURAL:$1|o seguinte erro|os seguintes erros}} na tradução:',
 	'translate-magic-saved' => 'As suas alterações foram gravadas com sucesso.',
-	'translationchanges' => 'Alterações às traduções',
-	'translationchanges-export' => 'exportar',
-	'translationchanges-change' => '$1: $2 por $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|O seguinte parâmetro não é usado|Os seguintes parâmetros não são usados}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|O seguinte parâmetro é desconhecido|Os seguintes parâmetros são desconhecidos}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -16642,9 +16557,6 @@ As alterações não serão gravadas até que você clique abaixo no botão de g
 	'translate-magic-notsaved' => 'Sua edição não foi salva!',
 	'translate-magic-errors' => 'Por favor, corrija {{PLURAL:$1|o seguinte erro|os seguintes erros}} na tradução:',
 	'translate-magic-saved' => 'Suas alterações foram salvas com sucesso.',
-	'translationchanges' => 'Alterações às traduções',
-	'translationchanges-export' => 'exportar',
-	'translationchanges-change' => '$1: $2 por $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|O seguinte parâmetro não é usado|Os seguintes parâmetros não são usados}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|O parâmetro a seguir é desconhecido|Os parâmetros a seguir são desconhecidos}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -17301,9 +17213,6 @@ $messages['ru'] = array(
 	'translate-magic-notsaved' => 'Ваша правка не сохранена!',
 	'translate-magic-errors' => 'Пожалуйста, исправьте {{PLURAL:$1|следующую ошибку|следующие ошибки}} в переводе:',
 	'translate-magic-saved' => 'Сделанные изменения успешно сохранены.',
-	'translationchanges' => 'Изменения в переводах',
-	'translationchanges-export' => 'выгрузить',
-	'translationchanges-change' => '$1: $2 $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Следующий параметр не используется|Следующие параметры не используются}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Неизвестный параметр|Неизвестные параметры}}:
@@ -17580,9 +17489,6 @@ $messages['rue'] = array(
 	'translate-magic-notsaved' => 'Ваше едітованя не было уложене!',
 	'translate-magic-errors' => 'Просиме оправте {{PLURAL:$1|хыбу|хыбы}} в перекладах:',
 	'translate-magic-saved' => 'Вашы зміны были успішно уложены.',
-	'translationchanges' => 'Зміны в перекладах',
-	'translationchanges-export' => 'експортовати',
-	'translationchanges-change' => '$1: $2 $3',
 	'translate-checks-parameters' => 'Наслїдуючій {{PLURAL:$2|параметер не є хоснованый|параметры не суть хоснованы}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Наслїдуючій {{PLURAL:$2|параметер не є дефінованый|параметры не суть дефінованы}}:
@@ -18322,10 +18228,6 @@ Spremembe niso shranjene dokler ne kliknete spodnjega gumba za shranjevanje.',
 	'translate-magic-notsaved' => 'Vaše urejanje ni bilo shranjeno!',
 	'translate-magic-errors' => 'Prosimo popravite {{PLURAL:$1|naslednjo napako|naslednji $1 napaki|naslednje $1 napake|naslednjih $1 napak}} v prevodih:',
 	'translate-magic-saved' => 'Vaše spremembe so bile uspešno shranjene.',
-	'translationchanges' => 'Spremembe prevoda',
-	'translationchanges-export' => 'izvoz',
-	'translationchanges-change' => '$1: $2 od $3',
-	'translationchanges-submit' => 'Pridobi',
 	'translate-checks-parameters' => '{{PLURAL:$2|Naslednji parameter ni uporabljen|Naslednja parametra nista uporabljena|Naslednji parametri niso uporabljeni}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Naslednji parameter je neznan|Naslednja parametra sta neznana|Naslednji parametri so neznani}}:
@@ -18740,8 +18642,8 @@ $messages['sr-ec'] = array(
 	'translate-langstats-collapse' => 'сакриј',
 	'translate-langstats-expandall' => 'прикажи све',
 	'translate-langstats-collapseall' => 'сакриј све',
-	'translate-language-code' => 'Кôд језика',
-	'translate-language-code-field-name' => 'Кôд:',
+	'translate-language-code' => 'Језични код',
+	'translate-language-code-field-name' => 'Језични код:',
 	'translate-suppress-complete' => 'Не приказуј потпуно преведене групе порука',
 	'translate-ls-noempty' => 'Не приказуј потпуно непреведене групе порука',
 	'translate-language' => 'Језик',
@@ -18837,7 +18739,7 @@ $1',
 	'translate-js-support' => 'Постави питање',
 	'translate-js-support-title' => 'Питајте за помоћ ако нема довољно података за ваљано превођење поруке',
 	'translate-gs-pos' => 'Положај',
-	'translate-gs-code' => 'Кôд',
+	'translate-gs-code' => 'Код',
 	'translate-gs-continent' => 'Континент',
 	'translate-gs-speakers' => 'Говорника',
 	'translate-gs-score' => 'Резултат',
@@ -18942,9 +18844,6 @@ To ćete uraditi klikom na dugme „Sačuvaj“ koje se nalazi ispod.',
 	'translate-magic-notsaved' => 'Vaša izmena nije sačuvana!',
 	'translate-magic-errors' => 'Ispravite {{PLURAL:$1|sledeću grešku|sledeće greške}} u prevodima:',
 	'translate-magic-saved' => 'Vaše izmene su sačuvane.',
-	'translationchanges' => 'Izmene prevoda',
-	'translationchanges-export' => 'izvezi',
-	'translationchanges-change' => '$1: $2 od $3',
 	'translate-checks-parameters' => 'Sledeći {{PLURAL:$2|parametar se ne koristi|parametri se ne koriste}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Sledeći {{PLURAL:$2|parametar je nepoznat|parametri su nepoznati}}:
@@ -20419,9 +20318,6 @@ Hindi sinasagip ang mga pagbabago maliban na lamang kapag pinindot mo na ang pin
 	'translate-magic-notsaved' => 'Hindi nasagip ang binago mo!',
 	'translate-magic-errors' => 'Paki-ayos ang sumusunod na {{PLURAL:$1|kamalian|mga kamalian}} na nasa salinwika:',
 	'translate-magic-saved' => 'Matagumpay na nasagip ang mga binago mo.',
-	'translationchanges' => 'Mga pagbabago sa salinwika',
-	'translationchanges-export' => 'iluwas',
-	'translationchanges-change' => '$1: $2 ni $3',
 	'translate-checks-parameters' => 'Ang sumusunod na {{PLURAL:$2|parametro ay|mga parametro ay}} hindi ginagamit:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Ang sumusunod na {{PLURAL:$2|parametro ay|mga parametro ay}} hindi nalalaman:
@@ -21103,10 +20999,6 @@ $messages['uk'] = array(
 	'translate-magic-notsaved' => 'Ваше редагування не збережено!',
 	'translate-magic-errors' => 'Будь ласка, виправіть {{PLURAL:$1|таку помилку|такі помилки}} в перекладі:',
 	'translate-magic-saved' => 'Ваші редагування успішно збережені.',
-	'translationchanges' => 'Зміни в перекладах',
-	'translationchanges-export' => 'експортувати',
-	'translationchanges-change' => '$1: $2 $3',
-	'translationchanges-submit' => 'Вивести',
 	'translate-checks-parameters' => '{{PLURAL:$2|Параметр <strong><nowiki>$1</nowiki></strong> не використовується|Параметри <strong><nowiki>$1</nowiki></strong> не використовуються}}',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Параметр <strong><nowiki>$1</nowiki></strong> невідомий|Параметри <strong><nowiki>$1</nowiki></strong> невідомі}}',
 	'translate-checks-balance' => 'Непарна кількість відкритих і закритих {{PLURAL:$2|дужок|дужок}}:
@@ -21589,10 +21481,6 @@ Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn v�
 	'translate-magic-notsaved' => 'Sửa đổi của bạn chưa được lưu!',
 	'translate-magic-errors' => 'Xin hãy sửa {{PLURAL:$1||các}} lỗi sau trong bản dịch:',
 	'translate-magic-saved' => 'Thay đổi của bạn đã được lưu.',
-	'translationchanges' => 'Các thay đổi bản dịch',
-	'translationchanges-export' => 'xuất',
-	'translationchanges-change' => '$1: $2 bởi $3',
-	'translationchanges-submit' => 'Xem',
 	'translate-checks-parameters' => '{{PLURAL:$2|Tham số|Những tham số}} sau không sử dụng:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2||Các}} tham số sau không rõ:
@@ -21700,14 +21588,10 @@ Bạn được khuyến khích xem lại các thông điệp tại [[Special:Tra
 	'translate-mgs-invalid-group' => 'Nhóm thông điệp chỉ định, “$1”, không tồn tại.',
 	'translate-mgs-nothing' => 'Không có thống kê để hiển thị.',
 	'supportedlanguages' => 'Ngôn ngữ có sẵn',
-	'supportedlanguages-summary' => "Trang này liệt kê tất cả các ngôn ngữ được {{SITENAME}} hỗ trợ, cùng với tên các biên dịch viên đang làm việc trên ngôn ngữ đó.
-Nếu bạn muốn biết thêm thông tin về một ngôn ngữ cụ thể, bạn có nhấn vào cổng chào của ngôn ngữ đó.
-Nhấn vào tên biên dịch viên sẽ đưa bạn đến trang thành viên của họ.
-
-Nếu trong danh sách không có ngôn ngữ nào đó, bạn có thể đọc cách khởi động một dự án bản địa hóa cho ngôn ngữ tại ''[[Translating:Process|Ngôn ngữ mới]]\".
-
-Nếu bạn dịch sang một ngôn ngữ mà không thấy tên bạn được ghi, xin ghi tên bạn vào danh sách các biên dịch viên tại [[:Category:Languages|cổng chào]] của ngôn ngữ đó.
-Xem thanh trình đơn để biết liên kết đến cổng ngôn ngữ của ngôn ngữ mà bạn chọn.",
+	'supportedlanguages-summary' => 'Trang này liệt kê tất cả các ngôn ngữ được {{SITENAME}} hỗ trợ, cùng với tên các biên dịch viên đang làm việc trên ngôn ngữ đó.
+Biên dịch viên càng đóng góp nhiều thì tên của họ càng lớn hơn.
+Màu đường gạch dưới cho biết biên dịch viên đã tích cực tại đây cách đây bao lâu.',
+	'supportedlanguages-colorlegend' => 'Chú thích các màu: Bản dịch gần đây nhất cách đây $1 ngày.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Biên dịch viên|Các biên dịch viên}}: $1',
 	'supportedlanguages-recenttranslations' => 'các bản dịch gần đây',
 	'supportedlanguages-count' => '$1 ngôn ngữ tổng cộng.',
@@ -22311,9 +22195,6 @@ $messages['zh-hans'] = array(
 	'translate-magic-notsaved' => '你的编辑还未被保存！',
 	'translate-magic-errors' => '请修复翻译中的以下{{PLURAL:$1|错误|错误}}：',
 	'translate-magic-saved' => '你的改变已经成功保存。',
-	'translationchanges' => '翻译更改',
-	'translationchanges-export' => '{{int:translate-magic-cm-export}}',
-	'translationchanges-change' => '$1: $2 由$3翻译',
 	'translate-checks-parameters' => '以下$2 个参数未知：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '以下$2 个参数未知：

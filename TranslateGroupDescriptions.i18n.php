@@ -2375,7 +2375,7 @@ Ustvarjeno za Univerzo v Bambergu. Pod dovoljenjem GPL 2.0 ali poznejšim. Razvi
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt za dostavljanje nepovezane, samo tekstovne različice Wikipedije na mobilne naprave.',
 );
 
-/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Rancher
  */
 $messages['sr-ec'] = array(
@@ -2409,7 +2409,7 @@ $messages['sr-ec'] = array(
 	'translate-group-desc-mediawiki-core-branch' => 'Поруке за стабилно издање [[Translating:MediaWiki|Медијавикија]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Мифоз]] је систем за управљање подацима о микрофинансирању',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] је библиотека за прављење PDF докумената са страница Медијавикија',
-	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] је програм за веб пошту',
+	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] је клијент за мрежну пошту',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Окавикс]] је програм за читање Википедије ван мреже',
 	'bw-desc-openimages' => '[[Translating:Open Images|Отворене слике]] је отворена платформа за мултимедију',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Ове поруке су део шаблона за потврду е-адресе (пројекат [[Translating:Open Images|Отворене слике]])',
@@ -2420,12 +2420,10 @@ $messages['sr-ec'] = array(
 	'bw-desc-osm-potlatch' => '[[Translating:OpenStreetMap|Потлач]] је флеш уређивач Опенстритмапа',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Пајвикипедија]] је збирка алатки за уређивање Википедије',
 	'bw-desc-shapado' => '[[Translating:Shapado|Шападо]] је интернет окружење за питања и одговоре',
-	'bw-desc-statusnet' => '[[Translating:StatusNet|Статуснет]] је платформа за микро-блогирање',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|Статуснет]] је платформа за микроблогирање',
 	'translate-group-desc-statusnet-plugin' => 'Ове поруке су део прикључка за [[Translating:StatusNet|Статуснет]]',
 	'translate-group-desc-tsint' => 'Група порука за [http://toolserver.org/~krinkle/TsIntuition Тулсервер интуишон], преводилачки систем за алатке [http://toolserver.org Тулсервера] (<span class="plainlinks">[[Translating talk:Toolserver|подршка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технички детаљи]</span>)',
-	'bw-desc-voctrain' => '[[Translating:Voctrain|Воктрејн]] је језички тренер заснован на Омегавикију',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|Викиблејм]] за трен ока проналази ауторе неке странице на Викимедији',
-	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Википедија на мобилном]] је мобилно издање Википедије',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|Викиридер]] пружа текстуално издање Википедије коме се може приступити ван мреже, и то на мобилном уређају',
 );
 
