@@ -97,7 +97,7 @@ $wgAutoloadClasses['FCFontFinder'] = $dir . 'utils/Font.php';
 $wgAutoloadClasses['TranslatePreferences'] = $dir . 'utils/UserToggles.php';
 $wgAutoloadClasses['TranslateToolbox'] = $dir . 'utils/ToolBox.php';
 
-$wgAutoloadClasses['MessageIndex'] = $dir . 'utils/MessageIndexRebuilder.php';
+$wgAutoloadClasses['MessageIndex'] = $dir . 'utils/MessageIndex.php';
 $wgAutoloadClasses['MessageIndexRebuildJob'] = $dir . 'utils/MessageIndexRebuildJob.php';
 $wgAutoloadClasses['MessageTable'] = $dir . 'utils/MessageTable.php';
 $wgAutoloadClasses['StatsTable'] = $dir . 'utils/StatsTable.php';
