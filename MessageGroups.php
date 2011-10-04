@@ -1075,6 +1075,7 @@ class MessageGroups {
 		}
 		natcasesort( $labels );
 
+		$sorted = array();
 		foreach ( array_keys( $labels ) as $id ) {
 			$sorted[$id] = $structure[$id];
 		}

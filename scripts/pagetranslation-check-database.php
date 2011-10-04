@@ -138,7 +138,7 @@ class PTCheckDB extends Maintenance {
 					array( 'delete tag', 'revtag', array( 'rt_page' => $id, 'rt_type' => $_->rt_type ) );
 				continue;
 			} elseif ( $_->rt_type === RevTag::getType( 'tp:transver' ) ) {
-				$check = $this->checkTransrevRevision( $rev );
+				$check = $this->checkTransrevRevision( $rev ); // FIXME: $rev is undefined
 				if ( $check !== true ) {
 					$name = $this->idToName( $_->rt_page );
 					$this->output( "Page $name has invalid tp:transver: $check\n" );

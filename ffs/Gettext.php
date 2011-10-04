@@ -85,6 +85,9 @@ class GettextFFS extends SimpleFFS {
 			throw new MWException( "Gettext file header was not found:\n\n$data" );
 		}
 
+		$template = array();
+		$messages = array();
+
 		// Extract some metadata from headers for easier use
 		$metadata = array();
 		if ( isset( $headers['X-Language-Code'] ) ) {
