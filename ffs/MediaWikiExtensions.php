@@ -225,6 +225,4 @@ class PremadeMediawikiExtensionGroups {
 
 		return array();
 	}
-
-
 }

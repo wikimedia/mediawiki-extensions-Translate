@@ -623,7 +623,7 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		if ( !$hasen ) {
-			$job = RenderJob::newJob( $en )->insert();
+			RenderJob::newJob( $en )->insert();
 		}
 	}
 

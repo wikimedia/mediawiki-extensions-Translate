@@ -40,7 +40,6 @@ class MessageGroupStats {
 	 * @return Array
 	 */
 	public static function forItem( $id, $code ) {
-		$group = MessageGroups::getGroup( $id );
 		$res = self::selectRowsIdLang( $id, $code );
 		$stats = self::extractResults( $res );
 
@@ -163,7 +162,7 @@ class MessageGroupStats {
 			(int)$row->tgs_fuzzy
 		);
 	}
- 
+
 	protected static function forLanguageInternal( $code, $stats = array() ) {
 		$res = self::selectRowsIdLang( null, $code );
 		$stats = self::extractResults( $res, $stats );
@@ -186,7 +185,7 @@ class MessageGroupStats {
 		return $flattened;
 	}
 
-	
+
 
 	protected static function forGroupInternal( $group, $stats = array() ) {
 		$id = $group->getId();
@@ -199,7 +198,7 @@ class MessageGroupStats {
 			if ( isset( $stats[$id][$code] ) ) continue;
 			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code );
 		}
-		
+
 		return $stats;
 	}
 
@@ -217,7 +216,7 @@ class MessageGroupStats {
 		$res = $dbr->select( self::TABLE, '*', $conds, __METHOD__ );
 		return $res;
 	}
- 
+
 	protected static function forItemInternal( &$stats, $group, $code ) {
 		$id = $group->getId();
 
@@ -229,7 +228,7 @@ class MessageGroupStats {
 			$ids = array_unique( self::expandAggregates( $group ) );
 			$res = self::selectRowsIdLang( $ids, $code );
 			$stats = self::extractResults( $res, $stats );
-			
+
 			$aggregates = array( 0, 0, 0 );
 			foreach ( $group->getGroups() as $sid => $sgroup ) {
 				if ( !isset( $stats[$sid][$code] ) ) {

@@ -426,11 +426,6 @@ class SpecialManageGroups extends SpecialPage {
 				$wgLang->formatNum( count( $modified ) )
 			);
 
-			$formParams = array(
-				'method' => 'post',
-				'action' => $this->getTitle()->getFullURL( array( 'group' => $group->getId() ) ),
-			);
-
 			if ( $this->user->isAllowed( 'translate-manage' ) ) {
 				$this->out->addHTML( $this->rebuildButton( $group, $codes, 'import' ) );
 			}

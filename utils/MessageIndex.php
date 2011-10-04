@@ -67,7 +67,7 @@ abstract class MessageIndex {
 		$this->store( $new );
 		$this->clearMessageGroupStats( $old, $new );
 	}
-	
+
 	/**
 	 * Purge message group stats when set of keys have changed.
 	 */
@@ -194,7 +194,7 @@ class CachedMessageIndex extends MessageIndex {
 
 	protected function store( array $array ) {
 		$key = wfMemckey( $this->key );
-		$data = $this->cache->set( $key, $array );
+		$this->cache->set( $key, $array );
 	}
 
 }

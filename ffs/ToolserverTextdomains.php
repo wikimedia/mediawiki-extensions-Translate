@@ -29,7 +29,6 @@ class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 	}
 
 	protected function processGroups( $groups ) {
-		$configureData = $this->loadConfigureExtensionData();
 		$fixedGroups = array();
 		foreach ( $groups as $g ) {
 			if ( !is_array( $g ) ) {
