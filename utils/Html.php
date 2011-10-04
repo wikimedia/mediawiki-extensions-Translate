@@ -140,6 +140,8 @@ class HtmlTag {
 
 	/**
 	 * Shortcut for param( name = id ). Chain-accessor.
+	 * @param $value
+	 * @return mixed
 	 */
 	public function id( $value = null ) {
 		return $this->param( 'id', $value );

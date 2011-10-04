@@ -223,6 +223,8 @@ class TPParse {
 	/**
 	 * Replaces variables from given text.
 	 * @todo Is plain str_replace not enough (even the loop is not needed)?
+	 *
+	 * @return string
 	 */
 	protected static function replaceVariables( $variables, $text ) {
 		foreach ( $variables as $key => $value ) {

@@ -143,6 +143,10 @@ class TranslateHooks {
 	/**
 	 * Hook: ParserFirstCallInit
 	 * Registers \<languages> tag with the parser.
+	 *
+	 * @param $parser Parser
+	 *
+	 * @return bool
 	 */
 	public static function setupParserHooks( $parser ) {
 		// For nice language list in-page
@@ -182,6 +186,9 @@ class TranslateHooks {
 	/**
 	 * Set the right page content language for message group translations ("Page/xx").
 	 * Hook: PageContentLanguage
+	 * @param $title Title
+	 * @param $pageLang
+	 * @return bool
 	 */
 	public static function onPageContentLanguage( $title, &$pageLang ) {
 		global $wgTranslateMessageNamespaces;

@@ -74,7 +74,7 @@ class RevTag {
 
 	/**
 	 * Loads the list of tags from database using the old schema
-	 * return array tag names => tag id
+	 * @return array tag names => tag id
 	 */
 	protected static function loadTags() {
 		static $tags = null;

@@ -57,6 +57,11 @@ class TranslatablePage {
 	 * Constructs a translatable page from given text.
 	 * Some functions will fail unless you set revision
 	 * parameter manually.
+	 *
+	 * @param $title Title
+	 * @param $text string
+	 *
+	 * @return TranslatablePage
 	 */
 	public static function newFromText( Title $title, $text ) {
 		$obj = new self( $title );
@@ -314,12 +319,20 @@ class TranslatablePage {
 
 	/**
 	 * Returns a random string that can be used as placeholder.
+	 * @return string
 	 */
 	protected static function getUniq() {
 		static $i = 0;
 		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . '|' . $i++;
 	}
 
+	/**
+	 * @param $string string
+	 * @param $rep
+	 * @param $start
+	 * @param $end
+	 * @return string
+	 */
 	protected static function index_replace( $string, $rep, $start, $end ) {
 		return substr( $string, 0, $start ) . $rep . substr( $string, $end );
 	}

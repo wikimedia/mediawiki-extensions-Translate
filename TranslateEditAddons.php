@@ -122,6 +122,8 @@ class TranslateEditAddons {
 	/**
 	 * Keep the usual diiba daaba hidden from translators.
 	 * Hook: AlternateEdit
+	 * @param $editpage EditPage
+	 * @return bool
 	 */
 	public static function intro( $editpage ) {
 		$editpage->suppressIntro = true;
@@ -137,6 +139,8 @@ class TranslateEditAddons {
 	/**
 	 * Adds the translation aids and navigation to the normal edit page.
 	 * Hook: EditPage::showEditForm:initial
+	 * @param $object
+	 * @return bool
 	 */
 	static function addTools( $object ) {
 		$handle = new MessageHandle( $object->mTitle );
@@ -152,6 +156,10 @@ class TranslateEditAddons {
 	 * Replace the normal save button with one that says if you are editing
 	 * message documentation to try to avoid accidents.
 	 * Hook: EditPageBeforeEditButtons
+	 * @param $editpage EditPage
+	 * @param $buttons
+	 * @param $tabindex
+	 * @return bool
 	 */
 	static function buttonHack( $editpage, &$buttons, $tabindex ) {
 		global $wgTranslateDocumentationLanguageCode, $wgLang;
@@ -293,6 +301,9 @@ class TranslateEditAddons {
 	/**
 	 * Removes protection tab for message namespaces - not useful.
 	 * Hook: SkinTemplateTabs
+	 * @param $skin Skin
+	 * @param $tabs
+	 * @return bool
 	 */
 	public static function tabs( $skin, &$tabs ) {
 		$handle = new MessageHandle( $skin->getTitle() );
@@ -357,7 +368,7 @@ class TranslateEditAddons {
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
 			return $fuzzy;
 		}
-		
+
 		// Not all groups have checkers
 		$group = $handle->getGroup();
 		$checker = $group->getChecker();
@@ -386,7 +397,7 @@ class TranslateEditAddons {
 			'rt_type' => RevTag::getType( 'fuzzy' ),
 			'rt_revision' => $revision
 		);
-		
+
 		// Replace the existing fuzzy tag, if any
 		if ( $fuzzy !== false ) {
 			$index = array_keys( $conds );
@@ -402,6 +413,11 @@ class TranslateEditAddons {
 	 * This is used to show diff against current version of source message
 	 * when updating a translation.
 	 * Hook: Translate:newTranslation
+	 * @param $handle MessageHandle
+	 * @param $revision Revision
+	 * @param $text string
+	 * @param $user User
+	 * @return bool
 	 */
 	public static function updateTransverTag( MessageHandle $handle, $revision, $text, User $user ) {
 		$group = $handle->getGroup();

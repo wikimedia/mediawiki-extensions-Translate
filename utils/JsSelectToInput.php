@@ -93,6 +93,7 @@ class JsSelectToInput {
 	 * @param $msg \string Message key.
 	 * @param $source \string Html id.
 	 * @param $target \string Html id.
+	 * @return string
 	 */
 	protected function getButton( $msg, $source, $target ) {
 		$source = Xml::escapeJsString( $source );

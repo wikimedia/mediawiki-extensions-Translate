@@ -132,7 +132,7 @@ class TranslateUtils {
 		"ORDER BY lang ASC, rc_timestamp DESC";
 
 		$res = $dbr->query( $sql, __METHOD__ );
-		$rows = iterator_to_array( $res ); 
+		$rows = iterator_to_array( $res );
 		return $rows;
 	}
 
@@ -195,6 +195,7 @@ class TranslateUtils {
 	 * @param $language \string Language code of the language the names should
 	 * be localised to.
 	 * @param $selectedId \string The language code that is selected by default.
+	 * @return string
 	 */
 	public static function languageSelector( $language, $selectedId ) {
 		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {

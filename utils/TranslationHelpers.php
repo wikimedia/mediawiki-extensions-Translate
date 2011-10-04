@@ -1147,6 +1147,8 @@ class TranslationHelpers {
 
 	/**
 	 * Checks whether the given service has exceeded failure count
+	 * @param $service string
+	 * @return bool
 	 */
 	public static function checkTranslationServiceFailure( $service ) {
 		global $wgMemc;

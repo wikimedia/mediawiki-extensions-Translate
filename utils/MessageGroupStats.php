@@ -154,6 +154,7 @@ class MessageGroupStats {
 
 	/**
 	 * Returns an array of needed database fields.
+	 * @return array
 	 */
 	protected static function extractNumbers( $row ) {
 		return array(
@@ -317,7 +318,7 @@ class MessageGroupStats {
 	/**
 	 * Converts input to "+2" "-4" type of string.
 	 * @param $number int
-	 * @returns string
+	 * @return string
 	 */
 	protected static function stringifyNumber( $number ) {
 		$number = intval( $number );

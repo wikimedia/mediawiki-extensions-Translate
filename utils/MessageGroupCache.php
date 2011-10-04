@@ -14,7 +14,7 @@
  * of the actual format.
  */
 class MessageGroupCache {
-	/// \string 
+	/// \string
 	protected $group;
 	/// CdbReader
 	protected $cache;
@@ -210,6 +210,7 @@ class MessageGroupCache {
 
 	/**
 	 * Returns full path the the cache file.
+	 * @return string
 	 */
 	protected function getCacheFileName() {
 		return TranslateUtils::cacheFile( "translate_groupcache-{$this->group->getId()}-{$this->code}.cdb" );

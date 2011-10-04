@@ -223,7 +223,7 @@ class StatsTable {
 	 */
 	public function getGroupDescription( MessageGroup $group ) {
 		$code = $this->lang->getCode();
-		
+
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$key = wfMemckey( "translate-groupdesc-$code-" . $group->getId() );
 		$desc = $cache->get( $key );
@@ -275,6 +275,8 @@ class StatsTable {
 	/**
 	 * Used to circumvent ugly tooltips when newlines are used in the
 	 * message content ("x\ny" becomes "x y").
+	 * @param $text
+	 * @return string
 	 */
 	public static function formatTooltip( $text ) {
 		$wordSeparator = wfMessage( 'word-separator' )->text();

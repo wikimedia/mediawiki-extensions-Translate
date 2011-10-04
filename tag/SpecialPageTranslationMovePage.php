@@ -143,30 +143,31 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	/**
 	 * Do the basic checks whether moving is possible and whether
 	 * the input looks anywhere near sane.
+	 * @return bool
 	 */
 	protected function doBasicChecks() {
 		global $wgOut;
 		# Check for database lock
 		if ( wfReadOnly() ) {
 			$wgOut->readOnlyPage();
-			return;
+			return false;
 		}
 
 		if ( $this->oldTitle === null ) {
 			$wgOut->showErrorPage( 'notargettitle', 'notargettext' );
-			return;
+			return false;
 		}
 
 		if ( !$this->oldTitle->exists() ) {
 			$wgOut->showErrorPage( 'nopagetitle', 'nopagetext' );
-			return;
+			return false;
 		}
 
 		# Check rights
 		$permErrors = $this->oldTitle->getUserPermissionsErrors( 'move', $this->user );
 		if ( !empty( $permErrors ) ) {
 			$wgOut->showPermissionsErrorPage( $permErrors );
-			return;
+			return false;
 		}
 
 		// Let the caller know it's safe to continue

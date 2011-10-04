@@ -87,6 +87,7 @@ class TranslatePreferences {
 
 	/**
 	 * JavsScript selector for language codes.
+	 * @return \JsSelectToInput
 	 */
 	protected static function languageSelector() {
 		global $wgLang;
