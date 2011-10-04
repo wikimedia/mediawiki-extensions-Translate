@@ -297,7 +297,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		}
 
 		MessageGroups::clearCache();
-		MessageIndexReduildJob::newJob()->insert();
+		MessageIndexReduildJob::newJob()->insert(); // FIXME: MessageIndexReduildJob is undefined
 
 		global $wgOut;
 		$wgOut->addWikiMsg( 'pt-deletepage-started' );

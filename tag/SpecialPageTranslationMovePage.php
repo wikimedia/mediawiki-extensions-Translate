@@ -22,7 +22,12 @@ if ( !defined( 'GAID_FOR_UPDATE' ) )  {
  */
 class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	// Basic form parameters both as text and as titles
-	protected $newText, $newTitle, $oldText, $oldTitle;
+	protected $newText, $oldText;
+
+	/**
+	 * @var Title
+	 */
+	protected $newTitle, $oldTitle;
 
 	// Other form parameters
 	/**
@@ -48,6 +53,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 	/**
 	 * User instance.
+	 * @var User
 	 */
 	protected $user;
 
@@ -185,6 +191,8 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	/**
 	 * Checks token. Use before real actions happen. Have to use wpEditToken
 	 * for compatibility for SpecialMovepage.php.
+	 *
+	 * @return bool
 	 */
 	protected function checkToken() {
 		global $wgRequest;
@@ -380,7 +388,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		}
 
 		MessageGroups::clearCache();
-		MessageIndexReduildJob::newJob()->insert();
+		MessageIndexReduildJob::newJob()->insert(); // FIXME: MessageIndexReduildJob is undefined
 
 		global $wgOut;
 		$wgOut->addWikiMsg( 'pt-movepage-started' );
