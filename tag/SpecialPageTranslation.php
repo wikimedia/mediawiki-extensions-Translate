@@ -452,6 +452,9 @@ class SpecialPageTranslation extends SpecialPage {
 	 * - Updates revtags table
 	 * - Setups renderjobs to update the translation pages
 	 * - Invalidates caches
+	 * @param $page TranslatablePage
+	 * @param $sections array
+	 * @return array|bool
 	 */
 	public function markForTranslation( TranslatablePage $page, Array $sections ) {
 		global $wgRequest;

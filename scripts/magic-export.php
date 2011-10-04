@@ -274,6 +274,8 @@ PHP
 
 	/**
 	 * Copied from cli.inc.
+	 * @param $codes
+	 * @return array
 	 */
 	private static function parseLanguageCodes( /* string */ $codes ) {
 		$langs = array_map( 'trim', explode( ',', $codes ) );

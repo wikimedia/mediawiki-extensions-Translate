@@ -16,7 +16,12 @@
  */
 class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	// Basic form parameters both as text and as titles
-	protected $text, $title;
+	protected $text;
+
+	/**
+	 * @var Title
+	 */
+	protected $title;
 
 	// Other form parameters
 	/// 'check' or 'perform'
@@ -34,7 +39,11 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	/// Contains the language code if we are working with translation page
 	protected $code;
 
-	/// User instance.
+	/**
+	 * User instance.
+	 *
+	 * @var User
+	 */
 	protected $user;
 
 	public function __construct() {
@@ -107,30 +116,31 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	/**
 	 * Do the basic checks whether moving is possible and whether
 	 * the input looks anywhere near sane.
+	 * @return bool
 	 */
 	protected function doBasicChecks() {
 		global $wgOut;
 		# Check for database lock
 		if ( wfReadOnly() ) {
 			$wgOut->readOnlyPage();
-			return;
+			return false;
 		}
 
 		if ( $this->title === null ) {
 			$wgOut->showErrorPage( 'notargettitle', 'notargettext' );
-			return;
+			return false;
 		}
 
 		if ( !$this->title->exists() ) {
 			$wgOut->showErrorPage( 'nopagetitle', 'nopagetext' );
-			return;
+			return false;
 		}
 
 		# Check rights
 		$permErrors = $this->title->getUserPermissionsErrors( 'delete', $this->user );
 		if ( !empty( $permErrors ) ) {
 			$wgOut->showPermissionsErrorPage( $permErrors );
-			return;
+			return false;
 		}
 
 		// Let the caller know it's safe to continue
@@ -140,6 +150,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	/**
 	 * Checks token. Use before real actions happen. Have to use wpEditToken
 	 * for compatibility for SpecialMovepage.php.
+	 * @return bool
 	 */
 	protected function checkToken() {
 		global $wgRequest;

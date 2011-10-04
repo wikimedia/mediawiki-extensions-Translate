@@ -61,6 +61,9 @@ class PageTranslationHooks {
 	/**
 	 * Set the right page content language for translated pages ("Page/xx").
 	 * Hook: PageContentLanguage
+	 * @param $title Title
+	 * @param $pageLang
+	 * @return bool
 	 */
 	public static function onPageContentLanguage( $title, &$pageLang ) {
 		// For translation pages, parse plural, grammar etc with correct language, and set the right direction
@@ -71,13 +74,23 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	// Only called from hook
+	/**
+	 * Only called from hook
+	 *
+	 * @param $outputpage
+	 * @param $text
+	 * @return bool
+	 */
 	public static function injectCss( $outputpage, $text ) {
 		$outputpage->addModules( 'ext.translate' );
 
 		return true;
 	}
 
+	/**
+	 * @param Title $title
+	 * @return types
+	 */
 	public static function titleToGroup( Title $title ) {
 		$namespace = $title->getNamespace();
 		$text = $title->getDBkey();
@@ -298,6 +311,16 @@ FOO;
 	/**
 	 * When attempting to save, last resort. Edit page would only display
 	 * edit conflict if there wasn't tpSyntaxCheckForEditPage
+	 * @param $article Article
+	 * @param $user User
+	 * @param $text
+	 * @param $summary string
+	 * @param $minor bool
+	 * @param $_
+	 * @param $_
+	 * @param $flags
+	 * @param $status
+	 * @return bool
 	 */
 	public static function tpSyntaxCheck( $article, $user, $text, $summary,
 			$minor, $_, $_, $flags, $status ) {

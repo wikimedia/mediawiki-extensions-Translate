@@ -467,6 +467,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 * @param $scale string One of hours, days, weeks, months
 	 * @param $cutoff int Timestamp in unix format.
 	 * @param $direction string One of earlier, later
+	 * @return int
 	 */
 	protected static function roundTimestampToCutoff( $scale, $cutoff, $direction = 'earlier' ) {
 		$dir = $direction === 'earlier' ? -1 : 1;

@@ -200,6 +200,9 @@ abstract class ComplexMessages {
 	}
 
 	/**
+	 * @param $group
+	 * @param $code
+	 * @return array
 	 */
 	protected function readVariable( $group, $code ) {
 		$file = $group['file'];
@@ -503,6 +506,8 @@ abstract class ComplexMessages {
 
 	/**
 	 * Returns string with quotes that should be valid php
+	 * @param $data string
+	 * @return string
 	 */
 	protected function normalize( $data ) {
 		# Escape quotes

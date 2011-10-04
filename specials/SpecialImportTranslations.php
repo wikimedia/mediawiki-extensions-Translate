@@ -99,6 +99,8 @@ class SpecialImportTranslations extends SpecialPage {
 	 * Checks for error state from the return value of loadFile and parseFile
 	 * functions. Prints the error and the form and returns true if there is an
 	 * error. Returns false and does nothing if there is no error.
+	 * @param $msg array
+	 * @return bool
 	 */
 	protected function checkError( $msg ) {
 		if ( $msg[0] !== 'ok' ) {
@@ -179,6 +181,8 @@ class SpecialImportTranslations extends SpecialPage {
 
 	/**
 	 * Try to get the file data from any of the supported methods.
+	 * @param $filedata
+	 * @return array
 	 */
 	protected function loadFile( &$filedata ) {
 		$source = $this->request->getText( 'upload-type' );
@@ -226,6 +230,8 @@ class SpecialImportTranslations extends SpecialPage {
 
 	/**
 	 * Try parsing file.
+	 * @param $data
+	 * @return array
 	 */
 	protected function parseFile( $data ) {
 		/** Construct a dummy group for us...

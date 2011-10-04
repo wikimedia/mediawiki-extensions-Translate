@@ -45,6 +45,7 @@ abstract class MessageGroupOld implements MessageGroup {
 
 	/**
 	 * Returns a list of optional and ignored messages in 2-d array.
+	 * @return array
 	 */
 	public function getBools() {
 		return array(
@@ -129,6 +130,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * This function can be used for meta message groups to list their "own"
 	 * messages. For example branched message groups can exclude the messages they
 	 * share with each other.
+	 * @return array
 	 */
 	public function getUniqueDefinitions() {
 		return $this->meta ? array() : $this->getDefinitions();
@@ -197,6 +199,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * @param $code \string Language code for this collection.
 	 * @param $unique \bool Whether to build collection for messages unique to this
 	 *                group only.
+	 * @return \type
 	 */
 	public function initCollection( $code, $unique = false ) {
 		if ( !$unique ) {
@@ -225,6 +228,7 @@ abstract class MessageGroupOld implements MessageGroup {
 
 	/**
 	 * Can be overwritten to retun false if something is wrong.
+	 * @return bool
 	 */
 	public function exists() {
 		return true;
@@ -875,6 +879,7 @@ class MessageGroups {
 
 	/**
 	 * Returns a cacher object.
+	 * @return BagOStuff
 	 */
 	protected static function getCache() {
 		return wfGetCache( CACHE_ANYTHING );
@@ -1042,6 +1047,7 @@ class MessageGroups {
 	/**
 	 * Returns group strucuted into sub groups. First group in each subgroup is
 	 * considered as the main group.
+	 * @return array
 	 */
 	public static function getGroupStructure() {
 		global $wgTranslateGroupStructure;

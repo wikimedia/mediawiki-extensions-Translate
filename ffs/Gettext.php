@@ -242,6 +242,8 @@ class GettextFFS extends SimpleFFS {
 	/**
 	 * Generates unique key for each message. Changing this WILL BREAK ALL
 	 * existing pages!
+	 * @param $item
+	 * @return string
 	 */
 	public static function generateKeyFromItem( $item ) {
 		$lang = Language::factory( 'en' );
@@ -264,6 +266,9 @@ class GettextFFS extends SimpleFFS {
 	 * not allowed in MediaWiki pages, the default action is to append
 	 * \-character at the end of the message. You can also choose to ignore it
 	 * and use the trim action instead.
+	 * @param $data
+	 * @param $whitespace string
+	 * @return string
 	 */
 	public static function formatForWiki( $data, $whitespace = 'mark' ) {
 		$quotePattern = '/(^"|"$\n?)/m';

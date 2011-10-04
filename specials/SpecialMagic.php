@@ -52,6 +52,7 @@ class SpecialMagic extends SpecialPage {
 	/**
 	 * Returns HTML5 output of the form
 	 * GLOBALS: $wgLang, $wgScript
+	 * @return string
 	 */
 	protected function getForm() {
 		global $wgLang, $wgScript;

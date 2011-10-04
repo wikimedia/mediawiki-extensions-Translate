@@ -91,6 +91,7 @@ class PoImporter {
 
 	/**
 	 * Parses relevant stuff from the po file.
+	 * @return array|bool
 	 */
 	public function parse() {
 		$data = file_get_contents( $this->file );

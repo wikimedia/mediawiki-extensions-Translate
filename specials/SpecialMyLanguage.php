@@ -48,6 +48,14 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 	/**
 	 * Make Special:MyLanguage links red if the target page doesn't exists.
 	 * A bit hacky because the core code is not so flexible.
+	 * @param $dummy
+	 * @param $target
+	 * @param $html
+	 * @param $customAttribs
+	 * @param $query
+	 * @param $options
+	 * @param $ret
+	 * @return bool
 	 */
 	public static function linkfix( $dummy, $target, &$html, &$customAttribs, &$query, &$options, &$ret ) {
 		if ( $target->getNamespace() == NS_SPECIAL ) {

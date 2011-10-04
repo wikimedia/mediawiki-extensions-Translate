@@ -591,6 +591,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * ArrayAccess methods. @{
+	 * @return bool
 	 */
 	public function offsetExists( $offset ) {
 		return isset( $this->keys[$offset] );
