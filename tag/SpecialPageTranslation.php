@@ -544,7 +544,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		// Re-generate caches
 		MessageGroups::clearCache();
-		MessageIndexReduildJob::newJob()->insert(); // FIXME: MessageIndexReduildJob is undefined
+		MessageIndexRebuildJob::newJob()->insert();
 		return false;
 	}
 
