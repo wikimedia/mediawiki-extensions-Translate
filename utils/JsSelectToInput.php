@@ -73,7 +73,7 @@ class JsSelectToInput {
 	public function getHtmlAndPrepareJS() {
 		if ( $this->sourceId === false ) {
 			if ( is_callable( array( $this->select, 'getAttribute' ) ) ) {
-				$this->sourceId = $this->->getAttribute['id'];
+				$this->sourceId = $this->select->getAttribute['id'];
 			}
 
 			if ( !$this->sourceId ) {
