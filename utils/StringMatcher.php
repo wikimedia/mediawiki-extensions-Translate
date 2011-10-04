@@ -61,6 +61,7 @@ class StringMatcher implements StringMangler {
 
 	/**
 	 * Alias for making NO-OP string mangler.
+	 * @return StringMatcher
 	 */
 	public static function EmptyMatcher() {
 		return new StringMatcher;

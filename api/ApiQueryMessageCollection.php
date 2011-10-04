@@ -31,6 +31,9 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$this->run( $resultPageSet );
 	}
 
+	/**
+	 * @param $resultPageSet ApiPageSet
+	 */
 	private function run( $resultPageSet = null ) {
 		$params = $this->extractRequestParams();
 

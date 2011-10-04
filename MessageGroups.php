@@ -743,6 +743,9 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		return $wgLanguageCode;
 	}
 
+	/**
+	 * @return Title
+	 */
 	public function getTitle() {
 		if ( is_string( $this->title ) ) {
 			$this->title = Title::newFromText( $this->title );
