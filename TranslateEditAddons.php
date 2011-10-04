@@ -258,7 +258,7 @@ class TranslateEditAddons {
 
 		$th = new TranslationHelpers( $object->mTitle );
 		if ( $object->firsttime && !$wgRequest->getCheck( 'oldid' ) && !$wgRequest->getCheck( 'undo' ) ) {
-			$object->textbox1 = $th->getTranslation();
+			$object->textbox1 = (string) $th->getTranslation();
 		} else {
 			$th->setTranslation( $object->textbox1 );
 		}
