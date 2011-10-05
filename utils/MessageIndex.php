@@ -23,6 +23,9 @@ abstract class MessageIndex {
 	/// @var array
 	protected $index;
 
+	/**
+	 * @return MessageIndex
+	 */
 	public static function singleton() {
 		if ( self::$instance === null ) {
 			global $wgTranslateMessageIndex;

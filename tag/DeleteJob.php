@@ -133,7 +133,7 @@ class DeleteJob extends Job {
 
 	/**
 	 * Get a user object for doing edits.
-	 * @return \User
+	 * @return User
 	 */
 	public function getUser() {
 		return User::newFromName( $this->params['user'], false );

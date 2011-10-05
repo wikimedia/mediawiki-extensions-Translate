@@ -161,7 +161,11 @@ class TranslateHooks {
 		return true;
 	}
 
-	/// Hook: LoadExtensionSchemaUpdates
+	/**
+	 * Hook: LoadExtensionSchemaUpdates
+	 * @param $updater DatabaseUpdater
+	 * @return bool
+	 */
 	public static function schemaUpdates( $updater ) {
 		$dir = dirname( __FILE__ ) . '/sql';
 

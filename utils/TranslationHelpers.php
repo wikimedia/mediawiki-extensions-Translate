@@ -964,15 +964,26 @@ class TranslationHelpers {
 		return $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
 	}
 
+	/**
+	 * @param $label string
+	 * @return string
+	 */
 	protected static function legend( $label ) {
 		# Float it to the opposite direction
 		return Html::rawElement( 'div',	array( 'class' => 'mw-translate-legend' ), $label );
 	}
 
+	/**
+	 * @return string
+	 */
 	protected static function clear() {
 		return Html::element( 'div', array( 'style' => 'clear:both;' ) );
 	}
 
+	/**
+	 * @param $code string
+	 * @return array
+	 */
 	protected static function getFallbacks( $code ) {
 		global $wgUser, $wgTranslateLanguageFallbacks;
 
@@ -1010,6 +1021,13 @@ class TranslationHelpers {
 		return array_unique( $fallbacks );
 	}
 
+	/**
+	 * @param $msg string
+	 * @param $code string
+	 * @param $title Title
+	 * @param $makelink
+	 * @return string
+	 */
 	protected function doBox( $msg, $code, $title = false, $makelink = false ) {
 		global $wgUser, $wgLang;
 
@@ -1050,6 +1068,9 @@ class TranslationHelpers {
 		return TranslateUtils::fieldset( $title, Html::element( 'span', null, $msg ), $attributes );
 	}
 
+	/**
+	 * @return null|string
+	 */
 	public function getLazySuggestionBox() {
 		if ( $this->group === null || !$this->targetLanguage ) {
 			return null;
@@ -1070,11 +1091,19 @@ class TranslationHelpers {
 		return Html::rawElement( 'div', array( 'id' => $id ), $script . $spinner );
 	}
 
+	/**
+	 * @return string
+	 */
 	public function dialogID() {
 		$hash = sha1( $this->title->getPrefixedDbKey() );
 		return substr( $hash, 0, 4 );
 	}
 
+	/**
+	 * @param $source
+	 * @param $lang
+	 * @return string
+	 */
 	public function adder( $source, $lang = null ) {
 		if ( !$this->editMode ) {
 			return '';
@@ -1092,10 +1121,19 @@ class TranslationHelpers {
 		return Html::element( 'a', $params, '↓' );
 	}
 
+	/**
+	 * @param $id string|int
+	 * @param $text string
+	 * @return string
+	 */
 	public function wrapInsert( $id, $text ) {
 		return Html::element( 'pre', array( 'id' => $id, 'style' => 'display: none;' ), $text );
 	}
 
+	/**
+	 * @param $text string
+	 * @return string
+	 */
 	public function suggestionField( $text ) {
 		static $counter = 0;
 
@@ -1131,6 +1169,10 @@ class TranslationHelpers {
 		return $wgUser->getSkin()->link( $target, $text, $jsEdit, $params );
 	}
 
+	/**
+	 * @param $id string
+	 * @return string
+	 */
 	public static function jQueryPathId( $id ) {
 		return Xml::encodeJsVar( "#$id" );
 	}

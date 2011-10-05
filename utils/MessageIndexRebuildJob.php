@@ -14,6 +14,10 @@
  * @ingroup JobQueue
  */
 class MessageIndexRebuildJob extends Job {
+
+	/**
+	 * @return MessageIndexRebuildJob
+	 */
 	public static function newJob() {
 		$job = new self( Title::newMainPage() );
 		return $job;

@@ -247,6 +247,7 @@ class ChangeSyncer {
 				$wikiDate = 'Unknown';
 			}
 
+			// TODO: $startDate is unused
 			if ( $startTs ) {
 				$startTs = wfTimestamp( TS_UNIX, $startTs );
 				$startDate = $wgLang->sprintfDate( $iso, wfTimestamp( TS_MW, $startTs ) );
@@ -254,6 +255,7 @@ class ChangeSyncer {
 				$startDate = 'Unknown';
 			}
 
+			// TODO: $endDate is unused
 			if ( $endTs ) {
 				$endTs = wfTimestamp( TS_UNIX, $endTs );
 				$endDate = $wgLang->sprintfDate( $iso, wfTimestamp( TS_MW, $endTs ) );
@@ -383,7 +385,7 @@ class ChangeSyncer {
 
 	/**
 	 * Does the actual edit.
-	 * @param $title \type{Title}
+	 * @param $title \Title
 	 * @param $translation \string
 	 * @param $comment \string Edit summary.
 	 */

@@ -61,9 +61,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Construct a new message collection from definitions.
-	 * @param $definitions \type{MessageDefinitions}
-	 * @param $code \string Language code.
-	 * @return \type{MessageCollection}
+	 * @param $definitions MessageDefinitions
+	 * @param $code string Language code.
+	 * @return MessageCollection
 	 */
 	public static function newFromDefinitions( MessageDefinitions $definitions, $code ) {
 		$collection = new self( $code );

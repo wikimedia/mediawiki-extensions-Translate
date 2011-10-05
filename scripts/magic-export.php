@@ -59,6 +59,7 @@ class MagicExport extends Maintenance {
 		$this->output( "Opening file handles and loading current data...\n" );
 
 		$groups = MessageGroups::singleton()->getGroups();
+		$filename = null;
 		foreach ( $groups as $group ) {
 			if ( !$group instanceof ExtensionMessageGroup ) {
 				continue;

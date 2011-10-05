@@ -199,7 +199,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * @param $code \string Language code for this collection.
 	 * @param $unique \bool Whether to build collection for messages unique to this
 	 *                group only.
-	 * @return \type
+	 * @return MessageCollection
 	 */
 	public function initCollection( $code, $unique = false ) {
 		if ( !$unique ) {
@@ -253,6 +253,10 @@ abstract class MessageGroupOld implements MessageGroup {
 		return isset( $tags[$type] ) ? $tags[$type] : array();
 	}
 
+	/**
+	 * @param $code string
+	 * @return bool
+	 */
 	protected function isSourceLanguage( $code ) {
 		return $code === $this->getSourceLanguage();
 	}
@@ -1000,6 +1004,10 @@ class MessageGroups {
 		}
 	}
 
+	/**
+	 * @param $id
+	 * @return bool
+	 */
 	public static function exists( $id ) {
 		return (bool) self::getGroup( $id );
 	}
@@ -1018,7 +1026,10 @@ class MessageGroups {
 		self::init();
 	}
 
-	/// Constructor function.
+	/**
+	 * Constructor function.
+	 * @return MessageGroups
+	 */
 	public static function singleton() {
 		static $instance;
 		if ( !$instance instanceof self ) {
