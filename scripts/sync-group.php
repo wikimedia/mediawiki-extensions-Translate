@@ -385,7 +385,7 @@ class ChangeSyncer {
 
 	/**
 	 * Does the actual edit.
-	 * @param $title \Title
+	 * @param $title Title
 	 * @param $translation \string
 	 * @param $comment \string Edit summary.
 	 */

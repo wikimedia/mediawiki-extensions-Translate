@@ -414,7 +414,7 @@ class TranslateEditAddons {
 	 * when updating a translation.
 	 * Hook: Translate:newTranslation
 	 * @param $handle MessageHandle
-	 * @param $revision Revision
+	 * @param $revision int
 	 * @param $text string
 	 * @param $user User
 	 * @return bool
