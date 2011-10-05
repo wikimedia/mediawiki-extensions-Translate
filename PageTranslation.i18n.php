@@ -2176,7 +2176,7 @@ $messages['gl'] = array(
 	'tpt-sections-template' => 'Modelo de páxina de tradución',
 	'tpt-action-nofuzzy' => 'Non invalidar as traducións',
 	'tpt-badtitle' => 'O nome de páxina dado ("$1") non é un título válido',
-	'tpt-nosuchpage' => 'Non existe a páxina "$1"',
+	'tpt-nosuchpage' => 'A páxina "$1" non existe',
 	'tpt-oldrevision' => '$2 non é a última versión da páxina "[[$1]]".
 Só as últimas versións poden ser marcadas para seren traducidas.',
 	'tpt-notsuitable' => 'A páxina "$1" non é válida para ser traducida.
@@ -2210,7 +2210,6 @@ Antes de marcar esta versión para ser traducida, comprobe que as modificacións
 Esta páxina é unha tradución da páxina "[[$1]]" e a tradución pódese actualizar usando [$2 a ferramenta de tradución].',
 	'tpt-unknown-page' => 'Este espazo de nomes está reservado para traducións de páxinas de contido.
 A páxina que está intentando editar parece non corresponder a algunha páxina marcada para ser traducida.',
-	'tpt-install' => 'Executar o php maintenance/update.php ou o instalador web para activar a funcionalidade de tradución de páxinas.',
 	'tpt-render-summary' => 'Actualizando para coincidir coa nova versión da páxina de orixe',
 	'tpt-download-page' => 'Exportar a páxina coas traducións',
 	'pt-parse-open' => 'Etiqueta &lt;translate> desequilibrada.

@@ -1518,7 +1518,7 @@ $messages['ksh'] = array(
 	'bw-desc-freecol' => 'Iih dat De <i lang="en">FreeCol</i> en Ding Shprooch övversäz, donn ens di Sigg „<i lang="en">[[Translating:FreeCol]]</i>“ lässe. <i lang="en">FreeCol</i> shteiht unger dä GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], e Forumsprojramm för et Web, jeschrevve en dä Projrammiershprooch <i lang="en">PHP</i>.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] es e frei Süßteem för övver et Web Faählere un Fählermeldunge ze Verwallde. Wann Üsch jät opfällt, doht et op di Sigg „[[Support|{{int:bw-mainpage-support-title}}]]“ schriive.',
-	'translate-group-desc-eol' => 'Täxte un Nohreeschte för [[Translating:Encyclopedia of Life|et Wööterbooch vum Levve]]',
+	'translate-group-desc-eol' => 'Täxte un Nohreeschte för [[Translating:EOL|et Wööterbooch vum Levve]]',
 	'translate-group-desc-ihris' => 'En Jrop Täxte un Nohreeschte för [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Täxte un Nohreeschte för <i lang="en">[[Special:Translate/out-ihris-common-0-all|iHRIS Common]]</i>, enem Modul vum <i lang="en">[[Translating:iHRIS|iHRIS]]</i>',
 	'translate-group-desc-ihris-i2ce' => 'Täxte un Nohreeschte för <i lang="en">[[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]]</i>, enem Modul vum <i lang="en">[[Translating:iHRIS|iHRIS]]</i>',
