@@ -212,6 +212,7 @@ class TranslateEditAddons {
 	}
 
 	/**
+	 * @param $title Title
 	 * @return Array of the message and the language
 	 */
 	public static function figureMessage( Title $title ) {
@@ -229,6 +230,10 @@ class TranslateEditAddons {
 		return array( $key, $code );
 	}
 
+	/**
+	 * @param $title Title
+	 * @return array
+	 */
 	public static function getKeyCodeGroup( Title $title ) {
 		list( $key, $code ) = self::figureMessage( $title );
 		$group = self::getMessageGroup( $title->getNamespace(), $key );
@@ -261,6 +266,10 @@ class TranslateEditAddons {
 		return $mg;
 	}
 
+	/**
+	 * @param $object
+	 * @return String
+	 */
 	private static function editBoxes( $object ) {
 		global $wgOut, $wgRequest;
 
@@ -316,7 +325,12 @@ class TranslateEditAddons {
 		return true;
 	}
 
-	/// Hook: EditPage::showEditForm:fields
+	/**
+	 * Hook: EditPage::showEditForm:fields
+	 * @param $edit
+	 * @param $out OutputPage
+	 * @return bool
+	 */
 	public static function keepFields( $edit, $out ) {
 		global $wgRequest;
 
@@ -329,7 +343,19 @@ class TranslateEditAddons {
 		return true;
 	}
 
-	/// Hook: ArticleSaveComplete
+	/**
+	 * @Hook: ArticleSaveComplete
+	 * @param $article Article
+	 * @param $user User
+	 * @param $text string
+	 * @param $summary string
+	 * @param $minor bool
+	 * @param $_
+	 * @param $_
+	 * @param $flags
+	 * @param $revision Revision
+	 * @return bool
+	 */
 	public static function onSave( $article, $user, $text, $summary,
 			$minor, $_, $_, $flags, $revision
 	) {
@@ -358,6 +384,11 @@ class TranslateEditAddons {
 		return true;
 	}
 
+	/**
+	 * @param $handle MessageHandle
+	 * @param $text
+	 * @return bool
+	 */
 	protected static function checkNeedsFuzzy( MessageHandle $handle, $text ) {
 		// Check for explicit tag.
 		$fuzzy = self::hasFuzzyString( $text );
@@ -389,6 +420,11 @@ class TranslateEditAddons {
 		return $fuzzy;
 	}
 
+	/**
+	 * @param $title Title
+	 * @param $revision
+	 * @param $fuzzy
+	 */
 	protected static function updateFuzzyTag( Title $title, $revision, $fuzzy ) {
 		$dbw = wfGetDB( DB_MASTER );
 
@@ -448,6 +484,10 @@ class TranslateEditAddons {
 		return true;
 	}
 
+	/**
+	 * @param $text string
+	 * @return string
+	 */
 	public static function preserveWhitespaces( $text ) {
 		$text = wfEscapeWikiText( $text );
 		$text = preg_replace( '/^ /m', '&#160;', $text );
@@ -457,7 +497,12 @@ class TranslateEditAddons {
 		return $text;
 	}
 
-	/// Hook: LanguageGetTranslatedLanguageNames
+	/**
+	 * Hook: LanguageGetTranslatedLanguageNames
+	 * @param $names
+	 * @param $code
+	 * @return bool
+	 */
 	public static function translateMessageDocumentationLanguage( &$names, $code ) {
 		global $wgTranslateDocumentationLanguageCode;
 		if ( $wgTranslateDocumentationLanguageCode ) {
@@ -467,7 +512,12 @@ class TranslateEditAddons {
 		return true;
 	}
 
-	/// Hook: ArticlePrepareTextForEdit
+	/**
+	 * Hook: ArticlePrepareTextForEdit
+	 * @param $article Article
+	 * @param $popts ParserOptions
+	 * @return bool
+	 */
 	public static function disablePreSaveTransform( $article, $popts ) {
 		global $wgTranslateDocumentationLanguageCode;
 
@@ -481,7 +531,12 @@ class TranslateEditAddons {
 		return true;
 	}
 
-	/// Hook: ArticleContentOnDiff
+	/**
+	 * Hook: ArticleContentOnDiff
+	 * @param $de DifferenceEngine
+	 * @param $out OutputPage
+	 * @return bool
+	 */
 	public static function displayOnDiff( $de, $out ) {
 		$title = $de->getTitle();
 		$handle = new MessageHandle( $title );
@@ -507,7 +562,11 @@ class TranslateEditAddons {
 		return false;
 	}
 
-	/// Hook: SpecialSearchProfiles
+	/**
+	 * Hook: SpecialSearchProfiles
+	 * @param $profiles array
+	 * @return bool
+	 */
 	public static function searchProfile( &$profiles ) {
 		global $wgTranslateMessageNamespaces;
 		$insert = array();
@@ -521,7 +580,15 @@ class TranslateEditAddons {
 		return true;
 	}
 
-	/// Hook: SpecialSearchProfileForm
+	/**
+	 * Hook: SpecialSearchProfileForm
+	 * @param $search
+	 * @param $form
+	 * @param $profile
+	 * @param $term
+	 * @param $opts
+	 * @return bool
+	 */
 	public static function searchProfileForm( $search, &$form, $profile, $term, $opts ) {
 		if ( $profile !== 'translation' ) {
 			return true;
@@ -568,7 +635,13 @@ class TranslateEditAddons {
 		return false;
 	}
 
-	/// Hook: SpecialSearchSetupEngine
+	/**
+	 * Hook: SpecialSearchSetupEngine
+	 * @param $search
+	 * @param $profile
+	 * @param $engine
+	 * @return bool
+	 */
 	public static function searchProfileSetupEngine( $search, $profile, $engine ) {
 		if ( $profile !== 'translation' ) {
 			return true;

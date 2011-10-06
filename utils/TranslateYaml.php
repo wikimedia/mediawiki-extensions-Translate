@@ -56,7 +56,11 @@ class TranslateYaml {
 		return $base;
 	}
 
-
+	/**
+	 * @param $text string
+	 * @return array
+	 * @throws MWException
+	 */
 	public static function loadString( $text ) {
 		global $wgTranslateYamlLibrary;
 
@@ -76,6 +80,10 @@ class TranslateYaml {
 		}
 	}
 
+	/**
+	 * @param $yaml array
+	 * @return array
+	 */
 	public static function fixSyckBooleans( &$yaml ) {
 		foreach ( $yaml as &$value ) {
 			if ( is_array( $value ) ) {
@@ -87,6 +95,10 @@ class TranslateYaml {
 		return $yaml;
 	}
 
+	/**
+	 * @param $yaml array
+	 * @return array
+	 */
 	public static function fixSpycSpaces( &$yaml ) {
 		foreach ( $yaml as $key => &$value ) {
 			if ( is_array( $value ) ) {
@@ -172,8 +184,8 @@ class TranslateYaml {
 			   'sub deutf8 {' .
 			       'if(ref($_[0]) eq "HASH") {' .
 			           'return { map { deutf8($_) } %{$_[0]} };' .
-                   '} elsif(ref($_[0]) eq "ARRAY") {' .
-                       'return [ map { deutf8($_) } @{$_[0]} ];' .
+			       '} elsif(ref($_[0]) eq "ARRAY") {' .
+			           'return [ map { deutf8($_) } @{$_[0]} ];' .
 			       '} else {' .
 			           'my $s = $_[0];' .
 			           'utf8::decode($s);' .

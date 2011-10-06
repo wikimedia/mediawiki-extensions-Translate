@@ -24,6 +24,10 @@ class TranslateRcFilter {
 	 * documentation of the function parameters.
 	 *
 	 * Appends SQL filter conditions into $conds.
+	 * @param $conds array
+	 * @param $tables array|stromg
+	 * @param $join_conds array
+	 * @param $opts
 	 * @return \bool true
 	 */
 	public static function translationFilter( &$conds, &$tables, &$join_conds, $opts ) {

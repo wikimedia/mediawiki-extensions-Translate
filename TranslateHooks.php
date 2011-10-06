@@ -63,7 +63,6 @@ class TranslateHooks {
 			$wgLogActionsHandlers['pagetranslation/deletelnok'] = 'PageTranslationHooks::formatLogEntry';
 			$wgLogActionsHandlers['pagetranslation/deletefnok'] = 'PageTranslationHooks::formatLogEntry';
 
-
 			global $wgJobClasses;
 			$wgJobClasses['RenderJob'] = 'RenderJob';
 			$wgJobClasses['MoveJob'] = 'MoveJob';
@@ -154,7 +153,11 @@ class TranslateHooks {
 		return true;
 	}
 
-	/// Hook: UnitTestsList
+	/**
+	 * Hook: UnitTestsList
+	 * @param $files array
+	 * @return bool
+	 */
 	public static function setupUnitTests( &$files ) {
 		$testDir = dirname( __FILE__ ) . '/tests/';
 		$files[] = $testDir . 'MessageGroupBaseTest.php';
@@ -179,13 +182,16 @@ class TranslateHooks {
 		return true;
 	}
 
-	/// Hook: ParserTestTables
+	/**
+	 * Hook: ParserTestTables
+	 * @param $tables array
+	 * @return bool
+	 */
 	public static function parserTestTables( &$tables ) {
 		$tables[] = 'revtag';
 		$tables[] = 'translate_groupstats';
 		return true;
 	}
-
 
 	/**
 	 * Set the right page content language for message group translations ("Page/xx").

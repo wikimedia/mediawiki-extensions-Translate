@@ -101,6 +101,10 @@ class StringMatcher implements StringMangler {
 		}
 	}
 
+	/**
+	 * @param $string string
+	 * @return bool
+	 */
 	public function match( $string ) {
 		if ( in_array( $string, $this->aExact ) ) {
 			return true;

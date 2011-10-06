@@ -102,9 +102,20 @@ abstract class TranslateTask {
 		return false;
 	}
 
-	protected $group; ///< \type{MessageGroup} Message group.
-	protected $collection; ///< \type{MessageCollection} Messages.
-	protected $options; ///< \type{TaskOptions} Options.
+	/**
+	 * @var MessageGroup
+	 */
+	protected $group;
+
+	/**
+	 * @var MessageCollection Options
+	 */
+	protected $collection;
+
+	/**
+	 * @var TaskOptions Options
+	 */
+	protected $options;
 
 	/**
 	 * Constructor.

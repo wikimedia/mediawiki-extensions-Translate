@@ -79,10 +79,15 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * branches one can set a message key mangler.
 	 */
 	protected $mangler = null;
+
+	/**
+	 * @return StringMatcher
+	 */
 	public function getMangler() {
 		$mangler = $this->mangler;
 
 		if ( !$mangler ) {
+			// TODO: Shouldn't this set $this->mangler
 			$mangler = StringMatcher::emptyMatcher();
 		}
 
@@ -97,6 +102,9 @@ abstract class MessageGroupOld implements MessageGroup {
 		return null;
 	}
 
+	/**
+	 * @return SimpleFormatWriter
+	 */
 	public function getWriter() {
 		return new SimpleFormatWriter( $this );
 	}
@@ -459,6 +467,11 @@ class ExtensionMessageGroup extends MessageGroupOld {
 		}
 	}
 
+	/**
+	 * @param $label
+	 * @param $id
+	 * @return ExtensionMessageGroup
+	 */
 	public static function factory( $label, $id ) {
 		$group = new ExtensionMessageGroup;
 		$group->setLabel( $label );
@@ -519,6 +532,9 @@ class ExtensionMessageGroup extends MessageGroupOld {
 		return is_readable( $this->getMessageFileWithPath( $this->getSourceLanguage() ) );
 	}
 
+	/**
+	 * @return MediaWikiMessageChecker
+	 */
 	public function getChecker() {
 		$checker = new MediaWikiMessageChecker( $this );
 		$checker->setChecks( array(
@@ -757,6 +773,9 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		return $this->title;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getDefinitions() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = 'translate_sections';
@@ -817,6 +836,9 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		return $rev->getText();
 	}
 
+	/**
+	 * @return MediaWikiMessageChecker
+	 */
 	public function getChecker() {
 		$checker = new MediaWikiMessageChecker( $this );
 		$checker->setChecks( array(
@@ -916,9 +938,9 @@ class MessageGroups {
 		$deps[] = new GlobalDependency( 'wgTranslateEC' );
 		$deps[] = new GlobalDependency( 'wgTranslateCC' );
 		$deps[] = new GlobalDependency( 'wgTranslateExtensionDirectory' );
-		$deps[] = New FileDependency( dirname( __FILE__ ) . '/groups/mediawiki-defines.txt' );
-		$deps[] = New FileDependency( dirname( __FILE__ ) . '/groups/Wikia/extensions.txt' );
-		$deps[] = New FileDependency( dirname( __FILE__ ) . '/groups/Toolserver/toolserver-textdomains.txt' );
+		$deps[] = new FileDependency( dirname( __FILE__ ) . '/groups/mediawiki-defines.txt' );
+		$deps[] = new FileDependency( dirname( __FILE__ ) . '/groups/Wikia/extensions.txt' );
+		$deps[] = new FileDependency( dirname( __FILE__ ) . '/groups/Toolserver/toolserver-textdomains.txt' );
 
 		if ( $wgTranslateAddMWExtensionGroups ) {
 			$a = new PremadeMediawikiExtensionGroups;

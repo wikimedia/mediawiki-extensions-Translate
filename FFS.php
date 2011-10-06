@@ -224,7 +224,7 @@ class SimpleFFS implements FFS {
 
 	/**
 	 * @param $collection MessageCollection
-	 * @return
+	 * @return string
 	 */
 	public function writeIntoVariable( MessageCollection $collection ) {
 		$sourceFile = $this->group->getSourceFilePath( $collection->code );

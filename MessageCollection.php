@@ -251,6 +251,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 	}
 
+	/**
+	 * @return array
+	 */
 	public static function getAvailableFilters() {
 		return array(
 			'fuzzy',

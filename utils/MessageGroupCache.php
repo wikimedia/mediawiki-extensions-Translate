@@ -14,10 +14,17 @@
  * of the actual format.
  */
 class MessageGroupCache {
-	/// \string
+
+	/**
+	 * @var MessageGroup
+	 */
 	protected $group;
-	/// CdbReader
+
+	/**
+	 * @var CdbReader
+	 */
 	protected $cache;
+
 	/// \string
 	protected $code;
 

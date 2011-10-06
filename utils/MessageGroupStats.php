@@ -186,8 +186,6 @@ class MessageGroupStats {
 		return $flattened;
 	}
 
-
-
 	protected static function forGroupInternal( $group, $stats = array() ) {
 		$id = $group->getId();
 		$res = self::selectRowsIdLang( $id, null );

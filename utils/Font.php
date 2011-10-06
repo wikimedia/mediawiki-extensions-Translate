@@ -93,6 +93,9 @@ class FCFontFinder {
 		return $chosen;
 	}
 
+	/**
+	 * @return BagOStuff
+	 */
 	protected static function getCache() {
 		return wfGetCache( CACHE_ANYTHING );
 	}

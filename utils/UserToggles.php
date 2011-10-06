@@ -46,6 +46,8 @@ class TranslatePreferences {
 	 * Add 'translate-editlangs' preference.
 	 * These are the languages also shown when translating.
 	 *
+	 * @param $user User
+	 * @param $preferences array
 	 * @return \bool true
 	 */
 	public static function translationAssistLanguages( $user, &$preferences ) {
@@ -73,6 +75,8 @@ class TranslatePreferences {
 	 * Add 'translate-jsedit' preference.
 	 * An option to disable the javascript edit interface.
 	 *
+	 * @param $user User
+	 * @param $preferences array
 	 * @return \bool true
 	 */
 	public static function translationJsedit( $user, &$preferences ) {

@@ -226,6 +226,9 @@ class TranslationHelpers {
 		}
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getBoxNames() {
 		return array(
 			'other-languages' => array( $this, 'getOtherLanguagesBox' ),
@@ -323,6 +326,11 @@ class TranslationHelpers {
 		return $result;
 	}
 
+	/**
+	 * @param $async bool
+	 * @return null|string
+	 * @throws MWException
+	 */
 	public function getSuggestionBox( $async = false ) {
 		global $wgTranslateTranslationServices;
 

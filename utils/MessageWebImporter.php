@@ -439,6 +439,9 @@ class MessageWebImporter {
 		return array( 'translate-manage-import-fuzzy', "\n" . $text );
 	}
 
+	/**
+	 * @return User
+	 */
 	public static function getFuzzyBot() {
 		global $wgTranslateFuzzyBotName;
 

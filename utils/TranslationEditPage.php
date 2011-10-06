@@ -46,6 +46,7 @@ class TranslationEditPage {
 
 	/**
 	 * Change the title of the page we are working on.
+	 * @param $title Title
 	 */
 	public function setTitle( Title $title ) { $this->title = $title; }
 	/**
