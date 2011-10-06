@@ -14,6 +14,11 @@
  * and generate YAML files with syck or spyc backend.
  */
 class TranslateYaml {
+
+	/**
+	 * @param $filename string
+	 * @return array
+	 */
 	public static function parseGroupFile( $filename ) {
 		$data = file_get_contents( $filename );
 		$documents = preg_split( "/^---$/m", $data, -1, PREG_SPLIT_NO_EMPTY );

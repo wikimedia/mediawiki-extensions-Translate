@@ -33,6 +33,8 @@ class SpecialManageGroups extends SpecialPage {
 	 */
 	protected $out;
 
+	protected $time;
+
 	/// Maximum allowed processing time in seconds.
 	protected $processingTime = 30;
 

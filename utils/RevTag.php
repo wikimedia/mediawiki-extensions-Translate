@@ -54,7 +54,7 @@ class RevTag {
 
 	/**
 	 * Converts rt_type field back to the tag name.
-	 * @param $tag rt_type value
+	 * @param $tag int rt_type value
 	 * @return string
 	 */
 	public static function typeToTag( $tag ) {

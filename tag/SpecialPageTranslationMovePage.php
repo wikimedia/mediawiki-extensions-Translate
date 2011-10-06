@@ -62,6 +62,10 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 */
 	protected $old;
 
+	protected $translationPages;
+
+	protected $sectionPages;
+
 	public function __construct( $old ) {
 		parent::__construct( 'Movepage' );
 		$this->old = $old;

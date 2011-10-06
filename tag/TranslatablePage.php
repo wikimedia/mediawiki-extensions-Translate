@@ -46,6 +46,8 @@ class TranslatablePage {
 	 */
 	protected $displayTitle = 'Page display title';
 
+	protected $cachedParse;
+
 	/**
 	 * @param title Title object for the page
 	 */

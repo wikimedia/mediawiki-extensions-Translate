@@ -13,6 +13,9 @@
  */
 class VoctrainMessageGroup extends ExtensionMessageGroup {
 
+	/**
+	 * @return VoctrainMessageChecker
+	 */
 	public function getChecker() {
 		$checker = new VoctrainMessageChecker( $this );
 		$checker->setChecks( array(

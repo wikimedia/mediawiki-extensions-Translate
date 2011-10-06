@@ -16,7 +16,12 @@
  * @deprecated Old style writer.
  */
 class XliffFormatWriter extends SimpleFormatWriter {
-	// Re-implemented
+
+	/**
+	 * Re-implemented
+	 * @param $target
+	 * @param $collection MessageCollection
+	 */
 	protected function exportLanguage( $target, MessageCollection $collection ) {
 		$code = $collection->code;
 		$w = new XMLWriter();

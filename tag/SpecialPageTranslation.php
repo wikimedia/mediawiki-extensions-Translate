@@ -255,7 +255,8 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param $title Title
 	 * @param $rev
 	 * @param $latest
-	 * @param string $old
+	 * @param $old string
+	 * @return string
 	 */
 	protected function actionLinks( $title, $rev, $latest, $old = 'old' ) {
 		$actions = array();

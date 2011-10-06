@@ -224,7 +224,7 @@ class TranslateUtils {
 	 * Returns the primary group message belongs to.
 	 * @param $namespace \int
 	 * @param $key \string
-	 * @return \types{\string,\null} Group id or null.
+	 * @return string|null Group id or null.
 	 */
 	public static function messageKeyToGroup( $namespace, $key ) {
 		$groups = self::messageKeyToGroups( $namespace, $key );

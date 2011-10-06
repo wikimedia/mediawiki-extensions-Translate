@@ -395,6 +395,9 @@ abstract class MessageGroupBase implements MessageGroup {
  * custom type of message groups.
  */
 class FileBasedMessageGroup extends MessageGroupBase {
+
+	protected $reverseCodeMap;
+
 	/**
 	 * Constructs a FileBasedMessageGroup from any normal message group.
 	 * Useful for doing special Gettext exports from any group.
@@ -469,6 +472,10 @@ class FileBasedMessageGroup extends MessageGroupBase {
 		return str_replace( array_keys( $variables ), array_values( $variables ), $pattern );
 	}
 
+	/**
+	 * @param $code
+	 * @return string
+	 */
 	public function mapCode( $code ) {
 		if ( !isset( $this->conf['FILES']['codeMap'] ) ) {
 			return $code;

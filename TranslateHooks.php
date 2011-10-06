@@ -12,7 +12,12 @@
  * Some hooks for Translate extension.
  */
 class TranslateHooks {
-	/// Hook: CanonicalNamespaces
+
+	/**
+	 * Hook: CanonicalNamespaces
+	 * @param $list array
+	 * @return bool
+	 */
 	public static function setupNamespaces( &$list ) {
 		global $wgPageTranslationNamespace;
 		if ( !defined( 'NS_TRANSLATIONS' ) ) {

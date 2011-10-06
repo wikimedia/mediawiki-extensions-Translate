@@ -470,6 +470,7 @@ class JavaFFS extends SimpleFFS {
 		if ( $output ) {
 			return $header . $output;
 		}
+		return '';
 	}
 
 	/**

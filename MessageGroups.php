@@ -18,14 +18,30 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * Human-readable name of this group
 	 */
 	protected $label  = 'none';
+
+	/**
+	 * @return string
+	 */
 	public function getLabel() { return $this->label; }
+
+	/**
+	 * @param $value string
+	 */
 	public function setLabel( $value ) { $this->label = $value; }
 
 	/**
 	 * Group-wide unique id of this group. Used also for sorting.
 	 */
 	protected $id     = 'none';
+
+	/**
+	 * @return string
+	 */
 	public function getId() { return $this->id; }
+
+	/**
+	 * @param $value string
+	 */
 	public function setId( $value ) { $this->id = $value; }
 
 	/**
@@ -33,14 +49,30 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * needed.
 	 */
 	protected $optional = array();
+
+	/**
+	 * @return array
+	 */
 	public function getOptional() { return $this->optional; }
+
+	/**
+	 * @param $value array
+	 */
 	public function setOptional( $value ) { $this->optional = $value; }
 
 	/**
 	 * List of messages that are always hidden and cannot be translated.
 	 */
 	protected $ignored = array();
+
+	/**
+	 * @return array
+	 */
 	public function getIgnored() { return $this->ignored; }
+
+	/**
+	 * @param $value array
+	 */
 	public function setIgnored( $value ) { $this->ignored = $value; }
 
 	/**
@@ -1014,15 +1046,13 @@ class MessageGroups {
 			$creater = $wgTranslateAC[$id];
 			if ( is_array( $creater ) ) {
 				return call_user_func( $creater, $id );
-			} else {
-				return new $creater;
 			}
+			return new $creater;
 		} elseif ( isset( $wgTranslateCC[$id] ) ) {
 			if ( is_callable( $wgTranslateCC[$id] ) ) {
 				return call_user_func( $wgTranslateCC[$id], $id );
-			} else {
-				return $wgTranslateCC[$id];
 			}
+			return $wgTranslateCC[$id];
 		}
 	}
 

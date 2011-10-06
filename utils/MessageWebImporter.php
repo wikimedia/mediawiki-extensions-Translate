@@ -15,10 +15,23 @@
  * displays them in pretty way with diffs and finally executes the actions the user choices.
  */
 class MessageWebImporter {
+
+	/**
+	 * @var Title
+	 */
 	protected $title;
+
+	/**
+	 * @var User
+	 */
 	protected $user;
+
+	/**
+	 * @var MessageGroup
+	 */
 	protected $group;
 	protected $code;
+	protected $time;
 
 	/**
 	 * @var OutputPage

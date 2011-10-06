@@ -21,6 +21,9 @@ class GettextPluralException extends MwException {}
 class GettextFFS extends SimpleFFS {
 	protected $offlineMode = false;
 
+	/**
+	 * @param $value bool
+	 */
 	public function setOfflineMode( $value ) {
 		$this->offlineMode = $value;
 	}

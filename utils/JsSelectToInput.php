@@ -15,7 +15,10 @@ class JsSelectToInput {
 	protected $targetId;
 	/// Id of the \<option> field
 	protected $sourceId;
-	/// XmlSelect
+
+	/**
+	 * @var XmlSelect
+	 */
 	protected $select;
 	/// Id on the button
 	protected $buttonId;

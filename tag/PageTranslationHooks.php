@@ -133,7 +133,7 @@ class PageTranslationHooks {
 		$group = MessageGroups::getGroup( $groupKey );
 		if ( !$group instanceof WikiPageMessageGroup ) {
 			SpecialPageTranslation::superDebug( __METHOD__, 'not wp-group', $title, $user, $groupKey );
-			return;
+			return true;
 		}
 
 		// Finally we know the title and can construct a Translatable page
@@ -538,6 +538,15 @@ FOO;
 		return true;
 	}
 
+	/**
+	 * @static
+	 * @param $type
+	 * @param $action
+	 * @param $title Title
+	 * @param $forUI
+	 * @param $params
+	 * @return String
+	 */
 	public static function formatLogEntry( $type, $action, $title, $forUI, $params ) {
 		global $wgLang, $wgContLang;
 
@@ -569,6 +578,7 @@ FOO;
 		} elseif ( $action === 'deletelok' ) {
 			return wfMsgExt( 'pt-log-delete-lang-ok', $opts, $title->getPrefixedText(), $user );
 		}
+	    return '';
 	}
 
 	public static function replaceMovePage( &$list ) {

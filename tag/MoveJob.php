@@ -15,6 +15,14 @@
  * @todo Get rid of direct reference to $wgMemc.
  */
 class MoveJob extends Job {
+
+	/**
+	 * @param $source Title
+	 * @param $target Title
+	 * @param $base
+	 * @param $performer
+	 * @return MoveJob
+	 */
 	public static function newJob( Title $source, Title $target, $base, /*User*/ $performer ) {
 		global $wgTranslateFuzzyBotName;
 

@@ -129,7 +129,7 @@ class TranslationHelpers {
 		}
 
 		if ( $this->group === null ) {
-			return;
+			return '';
 		}
 
 		$this->definition = $this->group->getMessage( $this->page, $this->group->getSourceLanguage() );
@@ -398,13 +398,13 @@ class TranslationHelpers {
 		$response = FormatJson::decode( $json );
 
 		if ( $json === false ) {
-				// Most likely a timeout or other general error
-				self::reportTranslationServiceFailure( $serviceName );
+			// Most likely a timeout or other general error
+			self::reportTranslationServiceFailure( $serviceName );
 
-				return null;
+			return null;
 		} elseif ( !is_object( $response ) ) {
-				error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
-				return null;
+			error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
+			return null;
 		}
 
 		if ( $response->responseStatus === 200 ) {
@@ -422,6 +422,8 @@ class TranslationHelpers {
 			error_log( __METHOD__ . "($serviceName): " . $response->responseDetails );
 			return null;
 		}
+
+		return null;
 	}
 
 	protected static function makeGoogleQueryParams( $definition, $pair, $config ) {
@@ -576,7 +578,7 @@ class TranslationHelpers {
 		$code = str_replace( '-', '_', wfBCP47( $code ) );
 
 		if ( !isset( $pairs[$code] ) ) {
-			return;
+			return null;
 		}
 
 		$suggestions = array();
@@ -692,7 +694,7 @@ class TranslationHelpers {
 		$placeholder = Html::element( 'div', array( 'class' => 'mw-translate-messagechecks' ) );
 
 		if ( $this->group === null ) {
-			return;
+			return null;
 		}
 
 		$page = $this->page;

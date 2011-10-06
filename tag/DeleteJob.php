@@ -15,6 +15,15 @@
  * @todo Get rid of direct reference to $wgMemc.
  */
 class DeleteJob extends Job {
+
+	/**
+	 * @static
+	 * @param $target Title
+	 * @param $base
+	 * @param $full
+	 * @param $performer
+	 * @return DeleteJob
+	 */
 	public static function newJob( Title $target, $base, $full, /*User*/ $performer ) {
 		global $wgTranslateFuzzyBotName;
 
@@ -103,6 +112,9 @@ class DeleteJob extends Job {
 		return $this->params['full'];
 	}
 
+	/**
+	 * @param $performer User|string
+	 */
 	public function setPerformer( $performer ) {
 		if ( is_object( $performer ) ) {
 			$this->params['performer'] = $performer->getName();
@@ -115,6 +127,9 @@ class DeleteJob extends Job {
 		return $this->params['performer'];
 	}
 
+	/**
+	 * @param $user User|string
+	 */
 	public function setUser( $user ) {
 		if ( is_object( $user ) ) {
 			$this->params['user'] = $user->getName();

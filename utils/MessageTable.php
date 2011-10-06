@@ -32,6 +32,9 @@ class MessageTable {
 		$this->appendEditLinkParams( 'loadgroup', $group->getId() );
 	}
 
+	/**
+	 * @param $array array
+	 */
 	public function setEditLinkParams( array $array ) {
 		$this->editLinkParams = $array;
 	}

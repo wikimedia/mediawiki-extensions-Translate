@@ -37,8 +37,13 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	 * @var TranslatablePage
 	 */
 	protected $page;
+
 	/// Contains the language code if we are working with translation page
 	protected $code;
+
+	protected $sectionPages;
+
+	protected $translationPages;
 
 	/**
 	 * User instance.

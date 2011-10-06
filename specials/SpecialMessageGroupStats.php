@@ -22,6 +22,10 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	/// Overwritten from SpecialLanguageStats
 	protected $noEmpty = true;
 
+	protected $names;
+
+	protected $translate;
+
 	public function __construct() {
 		SpecialPage::__construct( 'MessageGroupStats' );
 	}
