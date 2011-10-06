@@ -35,8 +35,12 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			$a['class'] = get_class( $g );
 			$a['exists'] = $g->exists();
 
-			// TODO: Evaluate $fit
+			// TODO: Add a continue?
 			$fit = $result->addValue( array( 'query', $this->getModuleName() ), null, $a );
+			if ( !$fit ) {
+				// Even if we're not going to give a continue, no point carrying on if the result is full
+				break;
+			}
 		}
 
 		$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'group' );
