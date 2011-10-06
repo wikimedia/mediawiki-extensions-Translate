@@ -25,6 +25,8 @@ class TranslatablePage {
 
 	/**
 	 * Revision of the page, if applicaple.
+	 *
+	 * @var int
 	 */
 	protected $revision = null;
 
@@ -183,7 +185,7 @@ class TranslatablePage {
 	/**
 	 * Returns MessageGroup used for translating this page. It may still be empty
 	 * if the page has not been ever marked.
-	 * @return \type{WikiPageMessageGroup}
+	 * @return WikiPageMessageGroup
 	 */
 	public function getMessageGroup() {
 		return MessageGroups::getGroup( $this->getMessageGroupId() );
@@ -297,6 +299,11 @@ class TranslatablePage {
 
 	// Inner functionality //
 
+	/**
+	 * @param $holders
+	 * @param $text
+	 * @return mixed
+	 */
 	public static function armourNowiki( &$holders, $text ) {
 		$re = '~(<nowiki>)(.*?)(</nowiki>)~s';
 
@@ -309,6 +316,11 @@ class TranslatablePage {
 		return $text;
 	}
 
+	/**
+	 * @param $holders
+	 * @param $text
+	 * @return mixed
+	 */
 	public static function unArmourNowiki( $holders, $text ) {
 		foreach ( $holders as $ph => $value ) {
 			$text = str_replace( $ph, $value, $text );
@@ -500,7 +512,11 @@ class TranslatablePage {
 		unset( self::$tagCache[$aid] );
 	}
 
-	/// @return false if tag is not found
+	/**
+	 * @param $tag
+	 * @param $dbt int
+	 * @return array|bool false if tag is not found
+	 */
 	protected function getTag( $tag, $dbt = DB_SLAVE ) {
 		if ( !$this->getTitle()->exists() ) {
 			return false;
@@ -530,6 +546,10 @@ class TranslatablePage {
 		}
 	}
 
+	/**
+	 * @param $code bool|string
+	 * @return String
+	 */
 	public function getTranslationUrl( $code = false ) {
 		$translate = SpecialPage::getTitleFor( 'Translate' );
 		$params = array(
@@ -628,6 +648,11 @@ class TranslatablePage {
 		return $temp;
 	}
 
+	/**
+	 * @param $collection MessageCollection
+	 * @param $markedRevs
+	 * @return float|int
+	 */
 	protected function getPercentageInternal( $collection, $markedRevs ) {
 		$count = count( $collection );
 		if ( $count === 0 ) {
@@ -687,6 +712,10 @@ class TranslatablePage {
 		return $db->selectField( 'revtag', $fields, $conds, __METHOD__, $options );
 	}
 
+	/**
+	 * @param $title Title
+	 * @return bool|TranslatablePage
+	 */
 	public static function isTranslationPage( Title $title ) {
 		list( $key, $code ) = TranslateUtils::figureMessage( $title->getText() );
 
@@ -721,6 +750,10 @@ class TranslatablePage {
 		return Title::makeTitleSafe( $title->getNamespace(), $text );
 	}
 
+	/**
+	 * @param $title Title
+	 * @return bool
+	 */
 	public static function isSourcePage( Title $title ) {
 		static $cache = null;
 

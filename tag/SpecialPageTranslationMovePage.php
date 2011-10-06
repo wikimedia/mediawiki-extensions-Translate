@@ -47,7 +47,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 
 	/**
-	 * TranslatablePage instance.
+	 * @var TranslatablePage instance.
 	 */
 	protected $page;
 
@@ -324,6 +324,12 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$wgOut->addHTML( implode( "\n", $form ) );
 	}
 
+	/**
+	 * @param $base
+	 * @param $old Title
+	 * @param $target
+	 * @param bool $enabled
+	 */
 	protected function printChangeLine( $base, $old, $target, $enabled = true ) {
 		global $wgOut;
 

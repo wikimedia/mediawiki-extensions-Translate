@@ -245,7 +245,6 @@ class SpecialSupportedLanguages extends SpecialPage {
 		return $users;
 	}
 
-
 	protected function outputLanguageCloud( $names ) {
 		global $wgOut;
 

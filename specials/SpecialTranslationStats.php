@@ -183,9 +183,10 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 	/**
 	 * Constructs a table row with label and input in two columns.
-	 * @param $name \string Option name.
+	 * @param $name string Option name.
 	 * @param $opts FormOptions
-	 * @return \string Html.
+	 * @param $width int
+	 * @return string Html.
 	 */
 	protected function eInput( $name, FormOptions $opts, $width = 4 ) {
 		$value = $opts[$name];
@@ -301,7 +302,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 	/**
 	 * Constructs a JavaScript enhanced group selector.
-	 * @return \type{JsSelectToInput}
+	 * @return JsSelectToInput
 	 */
 	protected function groupSelector() {
 		$groups = MessageGroups::singleton()->getGroups();
@@ -497,6 +498,12 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		return $cutoff;
 	}
 
+	/**
+	 * @param $ts
+	 * @param $amount
+	 * @param $dir
+	 * @return int
+	 */
 	protected static function roundingAddition( $ts, $amount, $dir ) {
 		if ( $dir === -1 ) {
 			return -1 * ( $ts % $amount );

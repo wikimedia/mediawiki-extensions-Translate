@@ -93,7 +93,7 @@ class RenderJob extends Job {
 	}
 
 	/**
-	 * @param $user User
+	 * @param $user User|string
 	 */
 	public function setUser( $user ) {
 		if ( $user instanceof User ) {

@@ -49,7 +49,7 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 	 * Make Special:MyLanguage links red if the target page doesn't exists.
 	 * A bit hacky because the core code is not so flexible.
 	 * @param $dummy
-	 * @param $target
+	 * @param $target Title
 	 * @param $html
 	 * @param $customAttribs
 	 * @param $query

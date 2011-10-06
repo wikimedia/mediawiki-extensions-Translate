@@ -30,7 +30,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	public function getDescription() {
 		return wfMessage( 'translate-mgs-pagename' )->text();
 	}
-	
+
 	/// Overwritten from SpecialLanguageStats
 	protected function getAllowedValues() {
 		$groups = MessageGroups::getAllGroups();
@@ -109,7 +109,11 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		return $out;
 	}
 
-	/// Overwriten from SpecialLanguageStats
+	/**
+	 * Overwriten from SpecialLanguageStats
+	 *
+	 * @return string
+	 */
 	function getTable() {
 		$table = $this->table;
 		$out = '';
@@ -144,6 +148,11 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		}
 	}
 
+	/**
+	 * @param $code
+	 * @param $cache
+	 * @return string
+	 */
 	protected function makeRow( $code, $cache ) {
 		$stats = $cache[$code];
 
@@ -175,6 +184,11 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		return $out;
 	}
 
+	/**
+	 * @param $code
+	 * @param $params
+	 * @return string
+	 */
 	protected function getMainColumnCell( $code, $params ) {
 		if ( !isset( $this->names ) ) {
 			global $wgLang;

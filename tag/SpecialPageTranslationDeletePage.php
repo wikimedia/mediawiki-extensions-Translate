@@ -33,8 +33,9 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	/// Allow skipping non-translation subpages.
 	protected $doSubpages = false;
 
-
-	/// TranslatablePage instance.
+	/**
+	 * @var TranslatablePage
+	 */
 	protected $page;
 	/// Contains the language code if we are working with translation page
 	protected $code;
@@ -262,6 +263,10 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$wgOut->addHTML( implode( "\n", $form ) );
 	}
 
+	/**
+	 * @param $title Title
+	 * @param $enabled bool
+	 */
 	protected function printChangeLine( $title, $enabled = true ) {
 		global $wgOut;
 		if ( $enabled ) {
@@ -361,6 +366,9 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		return $this->title->getSubpages();
 	}
 
+	/**
+	 * @return bool
+	 */
 	protected function singleLanguage() {
 		return $this->code !== '';
 	}

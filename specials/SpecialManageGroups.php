@@ -18,7 +18,21 @@
  * messages, as well as import/update of messages in other languages.
  */
 class SpecialManageGroups extends SpecialPage {
-	protected $skin, $user, $out;
+	/**
+	 * @var Skin
+	 */
+	protected $skin;
+
+	/**
+	 * @var User
+	 */
+	protected $user;
+
+	/**
+	 * @var OutputPage
+	 */
+	protected $out;
+
 	/// Maximum allowed processing time in seconds.
 	protected $processingTime = 30;
 
@@ -139,6 +153,12 @@ class SpecialManageGroups extends SpecialPage {
 		$wgOut->addHTML( '</ul>' );
 	}
 
+	/**
+	 * @param $group MessageGroup
+	 * @param $codes
+	 * @param $from
+	 * @return string
+	 */
 	protected function rebuildButton( $group, $codes, $from ) {
 		$formParams = array(
 			'method' => 'post',
@@ -160,6 +180,8 @@ class SpecialManageGroups extends SpecialPage {
 
 	/**
 	 * @todo Very long code block; split up.
+	 *
+	 * @param $group MessageGroup
 	 */
 	public function importForm( $group, $code ) {
 		$this->setSubtitle( $group, $code );
@@ -388,6 +410,9 @@ class SpecialManageGroups extends SpecialPage {
 		}
 	}
 
+	/**
+	 * @param $group MessageGroup
+	 */
 	public function doModLangs( $group ) {
 		global $wgLang;
 

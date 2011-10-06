@@ -21,10 +21,15 @@
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialLanguageStats extends IncludableSpecialPage {
-	/// @var StatsTable
+
+	/**
+	 * @var StatsTable
+	 */
 	protected $table;
 
-	/// @var String
+	/**
+	 * @var String
+	 */
 	protected $targetValueName = 'code';
 
 	/**
@@ -67,6 +72,11 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * The target of stats, language code or group id.
 	 */
 	protected $target;
+
+	/**
+	 * @var bool
+	 */
+	protected $purge;
 
 	public function __construct() {
 		parent::__construct( 'LanguageStats' );
@@ -257,6 +267,12 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		/// }
 	}
 
+	/**
+	 * @param $item
+	 * @param $cache
+	 * @param $parent string
+	 * @return string
+	 */
 	protected function makeGroupGroup( $item, $cache, $parent = '' ) {
 		if ( !is_array( $item ) ) {
 			return $this->makeGroupRow( $item, $cache, $parent === '' ? false : $parent );
@@ -272,9 +288,15 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		return $out;
 	}
 
+	/**
+	 * @param $group
+	 * @param $cache
+	 * @param $parent bool
+	 * @return string
+	 */
 	protected function makeGroupRow( $group, $cache, $parent = false ) {
 		if ( $this->table->isBlacklisted( $group->getId(), $this->target ) !== null ) {
-			return;
+			return '';
 		}
 
 		$stats = $cache[$group->getId()];

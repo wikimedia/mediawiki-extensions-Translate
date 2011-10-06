@@ -16,7 +16,15 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslate extends SpecialPage {
+
+	/**
+	 * @var Task
+	 */
 	protected $task = null;
+
+	/**
+	 * @var MessageGroup
+	 */
 	protected $group = null;
 
 	protected $defaults    = null;
@@ -222,6 +230,12 @@ class SpecialTranslate extends SpecialPage {
 		return $form;
 	}
 
+	/**
+	 * @param $label
+	 * @param $option
+	 * @param $error null
+	 * @return string
+	 */
 	private static function optionRow( $label, $option, $error = null ) {
 		return
 			Xml::openElement( 'tr' ) .
@@ -229,7 +243,6 @@ class SpecialTranslate extends SpecialPage {
 				Xml::tags( 'td', null, $option ) .
 				( $error ? Xml::tags( 'td', array( 'class' => 'mw-sp-translate-error' ), $error ) : '' ) .
 			Xml::closeElement( 'tr' );
-
 	}
 
 	/* Selectors ahead */

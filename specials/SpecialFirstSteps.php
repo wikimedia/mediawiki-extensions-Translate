@@ -16,7 +16,21 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialFirstSteps extends UnlistedSpecialPage {
-	protected $skin, $user, $out;
+
+	/**
+	 * @var Skin
+	 */
+	protected $skin;
+
+	/**
+	 * @var User
+	 */
+	protected $user;
+
+	/**
+	 * @var OutputPage
+	 */
+	protected $out;
 
 	public function __construct() {
 		parent::__construct( 'FirstSteps' );

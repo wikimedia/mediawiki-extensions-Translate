@@ -53,7 +53,6 @@ class SpecialPageTranslation extends SpecialPage {
 		// Check permissions
 		if ( !$this->user->isAllowed( 'pagetranslation' ) ) {
 			$wgOut->permissionRequired( 'pagetranslation' );
-
 			return;
 		}
 
@@ -252,6 +251,12 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 	}
 
+	/**
+	 * @param $title Title
+	 * @param $rev
+	 * @param $latest
+	 * @param string $old
+	 */
 	protected function actionLinks( $title, $rev, $latest, $old = 'old' ) {
 		$actions = array();
 
@@ -351,7 +356,11 @@ class SpecialPageTranslation extends SpecialPage {
 		return $sections;
 	}
 
-	/** Displays the sections and changes for the user to review */
+	/**
+	 * Displays the sections and changes for the user to review
+	 * @param $page TranslatablePage
+	 * @param $sections array
+	 */
 	public function showPage( TranslatablePage $page, Array $sections ) {
 		global $wgOut, $wgContLang;
 
@@ -548,6 +557,10 @@ class SpecialPageTranslation extends SpecialPage {
 		return false;
 	}
 
+	/**
+	 * @param $page Article
+	 * @param $changed
+	 */
 	public function addFuzzyTags( $page, $changed ) {
 		if ( !count( $changed ) ) {
 			self::superDebug( __METHOD__, 'nochanged', $page->getTitle() );
@@ -613,6 +626,8 @@ class SpecialPageTranslation extends SpecialPage {
 	 * If this page is marked for the first time, /en may not yet exists.
 	 * If this is the case, add a RenderJob for it, but don't execute it
 	 * immediately, since the message group doesn't exist during this request.
+	 * @param $page Article
+	 * @param $titles array
 	 */
 	protected function addInitialRenderJob( $page, $titles ) {
 		global $wgContLang;
