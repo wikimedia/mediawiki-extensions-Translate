@@ -68,7 +68,7 @@ class MessageGroupStats {
 
 	/**
 	 * Returns stats for all languages in given group.
-	 * @param $code string Group id
+	 * @param $id string Group id
 	 * @return Array
 	 */
 	public static function forGroup( $id ) {
@@ -154,6 +154,7 @@ class MessageGroupStats {
 
 	/**
 	 * Returns an array of needed database fields.
+	 * @param $row
 	 * @return array
 	 */
 	protected static function extractNumbers( $row ) {

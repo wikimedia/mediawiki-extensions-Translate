@@ -68,7 +68,7 @@ class StringMatcher implements StringMangler {
 	}
 
 	/**
-	 * Cosntructor, see EmptyMatcher();
+	 * Constructor, see EmptyMatcher();
 	 */
 	public function __construct( $prefix = '', $patterns = array() ) {
 		$this->sPrefix = $prefix;

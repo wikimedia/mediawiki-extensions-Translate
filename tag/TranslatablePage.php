@@ -434,6 +434,7 @@ class TranslatablePage {
 	 * Adds a tag which indicates that this page is
 	 * suitable for translation.
 	 * @param $revision integer
+	 * @param null $value
 	 */
 	public function addMarkedTag( $revision, $value = null ) {
 		$this->addTag( 'tp:mark', $revision, $value );

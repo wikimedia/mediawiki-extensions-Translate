@@ -226,6 +226,9 @@ class WikiWriter {
 
 	/**
 	 * Actually adds the new translation.
+	 * @param $namespace
+	 * @param $page
+	 * @param $text
 	 */
 	private function updateMessage( $namespace, $page, $text ) {
 		$title = Title::makeTitleSafe( $namespace, $page );

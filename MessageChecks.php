@@ -101,6 +101,7 @@ class MessageChecker {
 	/**
 	 * Adds one tests for this checker.
 	 * @see setChecks()
+	 * @param $check
 	 */
 	public function addCheck( $check ) {
 		if ( is_callable( $check ) ) {

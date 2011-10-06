@@ -88,6 +88,7 @@ interface MessageGroup {
 	/**
 	 * Initialises a message collection with the given language code,
 	 * message definitions and message tags.
+	 * @param $code
 	 * @return MessageCollection
 	 */
 	public function initCollection( $code );
@@ -97,6 +98,7 @@ interface MessageGroup {
 	 * that list may be identical with the translation in the wiki. For other
 	 * groups the messages may be loaded from a file (and differ from the
 	 * current translations or definitions).
+	 * @param $code
 	 * @return array
 	 */
 	public function load( $code );
@@ -104,6 +106,7 @@ interface MessageGroup {
 	/**
 	 * Returns message tags. If type is given, only messages keys with that
 	 * tag is returnted. Otherwise an array[tag => keys] is returnted.
+	 * @param null $type
 	 * @return array
 	 */
 	public function getTags( $type = null );
@@ -112,6 +115,8 @@ interface MessageGroup {
 	 * Returns the definition or translation for given message key in given
 	 * language code.
 	 * @todo Is this needed in the interface?
+	 * @param $key
+	 * @param $code
 	 * @return string or null
 	 */
 	public function getMessage( $key, $code );

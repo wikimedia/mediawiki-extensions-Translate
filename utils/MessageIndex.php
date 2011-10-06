@@ -73,6 +73,8 @@ abstract class MessageIndex {
 
 	/**
 	 * Purge message group stats when set of keys have changed.
+	 * @param $old array
+	 * @param $new array
 	 */
 	protected function clearMessageGroupStats( array $old, array $new ) {
 		$changes = array();
@@ -87,6 +89,11 @@ abstract class MessageIndex {
 		MessageGroupStats::clearGroup( array_keys( $changes ) );
 	}
 
+	/**
+	 * @param $hugearray array
+	 * @param $g
+	 * @param $ignore bool
+	 */
 	protected function checkAndAdd( &$hugearray, $g, $ignore = false ) {
 		if ( $g instanceof MessageGroupBase ) {
 			$cache = new MessageGroupCache( $g );

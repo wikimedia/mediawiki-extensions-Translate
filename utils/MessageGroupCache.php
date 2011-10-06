@@ -68,7 +68,8 @@ class MessageGroupCache {
 
 	/**
 	 * Get an item from the cache.
-	 * @return \string
+	 * @param $key
+	 * @return string
 	 */
 	public function get( $key ) {
 		return $this->open()->get( $key );
@@ -225,6 +226,7 @@ class MessageGroupCache {
 
 	/**
 	 * Updates cache to cache format 2.
+	 * @param $oldcache CdbReader
 	 */
 	protected function updateCacheFormat( $oldcache ) {
 		// Read the data from the old format

@@ -194,6 +194,7 @@ class TranslationHelpers {
 	 * Returns block element HTML snippet that contains the translation aids.
 	 * Not all boxes are shown all the time depending on whether they have
 	 * any information to show and on configuration variables.
+	 * @param $suggestions string
 	 * @return String. Block level HTML snippet or empty string.
 	 */
 	public function getBoxes( $suggestions = 'sync' ) {
@@ -244,7 +245,9 @@ class TranslationHelpers {
 
 	/**
 	 * Returns suggestions from a translation memory.
-	 * @return Html snippet which contains the suggestions.
+	 * @param $serviceName
+	 * @param $config
+	 * @return string Html snippet which contains the suggestions.
 	 */
 	protected function getTmBox( $serviceName, $config ) {
 		if ( !$this->targetLanguage ) {
@@ -1230,7 +1233,9 @@ class TranslationHelpers {
 	}
 
 	/**
-	 * Increases the failure count for a given service */
+	 * Increases the failure count for a given service
+	 * @param $service
+	 */
 	public static function reportTranslationServiceFailure( $service ) {
 		global $wgMemc;
 

@@ -17,11 +17,14 @@ class TranslatePreferences {
 	 * Add 'translate-pref-nonewsletter' preference.
 	 * This is actually specific to translatewiki.net
 	 *
-	 * @return \bool true
+	 * @param $user User
+	 * @param $preferences array
+	 * @return bool true
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
 		global $wgEnableEmail, $wgUser, $wgEnotifRevealEditorAddress;
 
+		// TODO: Shouldn't we use $user here?
 		// Only show is e-mail is enabled and user has a confirmed e-mail address.
 		if ( $wgEnableEmail && $wgUser->isEmailConfirmed() ) {
 			// 'translate-pref-nonewsletter' is used as opt-out for

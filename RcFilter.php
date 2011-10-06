@@ -64,7 +64,9 @@ class TranslateRcFilter {
 	 * documentation of the function parameters.
 	 *
 	 * Adds a HTMl selector into $items
-	 * @return \bool true
+	 * @param $items
+	 * @param $opts
+	 * @return bool true
 	 */
 	public static function translationFilterForm( &$items, $opts ) {
 		$opts->consumeValue( 'translations' );

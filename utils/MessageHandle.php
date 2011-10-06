@@ -22,8 +22,7 @@ class MessageHandle {
 
 	/**
 	 * Check if a title is in a message namespace.
-	 * @param $title Title
-	 * @return \bool If title is in a message namespace.
+	 * @return bool If title is in a message namespace.
 	 */
 	public function isMessageNamespace() {
 		global $wgTranslateMessageNamespaces;
@@ -111,8 +110,7 @@ class MessageHandle {
 
 	/**
 	 * Check if a title is marked as fuzzy.
-	 * @param $title Title
-	 * @return \bool If title is marked fuzzy.
+	 * @return bool If title is marked fuzzy.
 	 */
 	public function isFuzzy() {
 		$dbr = wfGetDB( DB_SLAVE );

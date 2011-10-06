@@ -69,6 +69,8 @@ function STDOUT( $str, $channel = null, $force = false ) {
 /**
  * Output a warning message to command line (if available).
  * @see STDOUT
+ * @param $message
+ * @param null $channel
  */
 function STDERR( $message, $channel = null ) {
 	STDOUT( $message, $channel, true );

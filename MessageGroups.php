@@ -215,10 +215,16 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * Returns path to the file where translation of language code $code are.
 	 *
+	 * @param $code
 	 * @return Path to the file or false if not applicable.
 	 */
 	public function getMessageFile( $code ) { return false; }
 	public function getPath() { return false; }
+
+	/**
+	 * @param $code
+	 * @return bool|string
+	 */
 	public function getMessageFileWithPath( $code ) {
 		$path = $this->getPath();
 		$file = $this->getMessageFile( $code );
@@ -467,12 +473,18 @@ class ExtensionMessageGroup extends MessageGroupOld {
 	/**
 	 * Extensions have almost always a localised description message and
 	 * address to extension homepage.
+	 * @param $key
+	 * @param $url
 	 */
 	public function setDescriptionMsg( $key, $url ) {
 		$this->descriptionKey = $key;
 		$this->descriptionUrl = $url;
 	}
 
+	/**
+	 * @param $key
+	 * @param $url
+	 */
 	protected function setDescriptionMsgReal( $key, $url ) {
 		$this->description = '';
 
@@ -1158,6 +1170,10 @@ class MessageGroups {
 	/**
 	 * Function do do $array[level1][level2]...[levelN][$key] = $value, if we have
 	 * the indexes in an array.
+	 * @param $array
+	 * @param $indexes array
+	 * @param $key
+	 * @param $value
 	 */
 	public static function deepArraySet( &$array, array $indexes, $key, $value ) {
 		foreach ( $indexes as $index ) {

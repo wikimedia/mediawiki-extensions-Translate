@@ -184,6 +184,7 @@ class SpecialManageGroups extends SpecialPage {
 	 * @todo Very long code block; split up.
 	 *
 	 * @param $group MessageGroup
+	 * @param $code
 	 */
 	public function importForm( $group, $code ) {
 		$this->setSubtitle( $group, $code );

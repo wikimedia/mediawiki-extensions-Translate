@@ -124,6 +124,7 @@ abstract class ComplexMessages {
 	/**
 	 * Gets data from request. Needs to be run before the form is displayed and
 	 * validation. Not needed for export, which uses request directly.
+	 * @param $request WebRequest
 	 */
 	public function loadFromRequest( WebRequest $request ) {
 		$saved = $this->parse( $this->formatForSave( $request ) );
@@ -172,6 +173,7 @@ abstract class ComplexMessages {
 
 	/**
 	 * Return an array of keys that can be used to iterate over all keys
+	 * @param $group
 	 * @return Array of keys for data
 	 */
 	protected function getIterator( $group ) {

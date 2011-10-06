@@ -518,7 +518,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	/**
 	 * Message keys format.
 	 *
-	 * @param $string
+	 * @param $key string
 	 *
 	 * @return string
 	 */

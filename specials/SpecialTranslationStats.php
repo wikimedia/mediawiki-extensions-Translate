@@ -211,7 +211,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 	/**
 	 * Constructs a table row with label and radio input in two columns.
-	 * @param $name Option name.
+	 * @param $name string Option name.
 	 * @param $opts FormOptions
 	 * @param $alts \list{String} List of alternatives.
 	 * @return \string Html.

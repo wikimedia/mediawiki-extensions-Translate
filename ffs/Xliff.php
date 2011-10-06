@@ -35,6 +35,9 @@ class XliffFormatWriter extends SimpleFormatWriter {
 
 	/**
 	 * Writes very minimalistic header that validates XLIFF schema.
+	 * @param $w XMLWriter
+	 * @param $handle
+	 * @param $code
 	 */
 	protected function header( XMLWriter $w, $handle, $code ) {
 		$w->startDocument( '1.0', 'UTF-8' );
@@ -61,6 +64,9 @@ class XliffFormatWriter extends SimpleFormatWriter {
 	/**
 	 * Exports the messages to XLIFF trans-units.
 	 * TODO: Add more information like provided in the web interface.
+	 * @param $w XMLWriter
+	 * @param $handle
+	 * @param $collection MessageCollection
 	 */
 	protected function messages( XMLWriter $w, $handle, MessageCollection $collection ) {
 		$w->startElement( 'body' );
@@ -82,6 +88,9 @@ class XliffFormatWriter extends SimpleFormatWriter {
 
 	/**
 	 * Ends the XLIFF document
+	 * @param $w XMLWriter
+	 * @param $handle
+	 * @param $code
 	 */
 	protected function footer( XMLWriter $w, $handle, $code ) {
 		$w->endElement(); // </file>

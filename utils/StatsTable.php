@@ -193,7 +193,7 @@ class StatsTable {
 	 * Gets the name of group linked to translation tool.
 	 * @param $group MessageGroup
 	 * @param $code string Language code
-	 * @param $paras array Any extra query parameters.
+	 * @param $params array Any extra query parameters.
 	 * @return string Html
 	 */
 	public function makeGroupLink( MessageGroup $group, $code, $params ) {

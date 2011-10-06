@@ -194,6 +194,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Some statistics scripts for example loop the same collection over every
 	 * language. This is a shortcut which keeps tags and definitions.
+	 * @param $code
 	 */
 	public function resetForNewLanguage( $code ) {
 		$this->code     = $code;
@@ -209,6 +210,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * For paging messages. One can count messages before and after slice.
+	 * @param $offset
+	 * @param $limit
 	 */
 	public function slice( $offset, $limit ) {
 		$this->keys = array_slice( $this->keys, $offset, $limit, true );
@@ -594,20 +597,32 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * ArrayAccess methods. @{
+	 * @param $offset
 	 * @return bool
 	 */
 	public function offsetExists( $offset ) {
 		return isset( $this->keys[$offset] );
 	}
 
+	/**
+	 * @param $offset
+	 * @return
+	 */
 	public function offsetGet( $offset ) {
 		return $this->messages[$offset];
 	}
 
+	/**
+	 * @param $offset
+	 * @param $value
+	 */
 	public function offsetSet( $offset, $value ) {
 		$this->messages[$offset] = $value;
 	}
 
+	/**
+	 * @param $offset
+	 */
 	public function offsetUnset( $offset ) {
 		unset( $this->keys[$offset] );
 	}
@@ -615,6 +630,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Fail fast if trying to access unknown properties. @{
+	 * @param $name
 	 */
 	public function __get( $name ) {
 		throw new MWException( __METHOD__ . ": Trying to access unknown property $name" );

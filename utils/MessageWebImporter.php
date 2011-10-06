@@ -76,6 +76,7 @@ class MessageWebImporter {
 
 	/**
 	 * Group is either MessageGroup object or group id.
+	 * @param $group MessagerGroup|string
 	 */
 	public function setGroup( $group ) {
 		if ( $group instanceof MessageGroup ) {
@@ -93,10 +94,16 @@ class MessageWebImporter {
 		$this->code = $code;
 	}
 
+	/**
+	 * @return String
+	 */
 	protected function getAction() {
 		return $this->getTitle()->getFullURL();
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function doHeader() {
 		global $wgOut;
 		$wgOut->addModules( 'ext.translate' );
@@ -114,10 +121,16 @@ class MessageWebImporter {
 			Html::hidden( 'process', 1 );
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function doFooter() {
 		return '</form>';
 	}
 
+	/**
+	 * @return bool
+	 */
 	protected function allowProcess() {
 		global $wgRequest;
 
@@ -130,6 +143,9 @@ class MessageWebImporter {
 		return false;
 	}
 
+	/**
+	 * @return array
+	 */
 	protected function getActions() {
 		if ( $this->code === 'en' ) {
 			return array( 'import', 'fuzzy', 'ignore' );
@@ -138,6 +154,11 @@ class MessageWebImporter {
 		}
 	}
 
+	/**
+	 * @param $fuzzy bool
+	 * @param $action
+	 * @return string
+	 */
 	protected function getDefaultAction( $fuzzy, $action ) {
 		if ( $action ) {
 			return $action;
@@ -511,7 +532,7 @@ class MessageWebImporter {
 	 * Prepends translation with fuzzy tag and ensures there is only one of them.
 	 *
 	 * @param $message String: message content
-	 * @return $message \string Message prefixed with TRANSLATE_FUZZY tag
+	 * @return string Message prefixed with TRANSLATE_FUZZY tag
 	 */
 	public static function makeTextFuzzy( $message ) {
 		$message = str_replace( TRANSLATE_FUZZY, '', $message );
