@@ -246,8 +246,8 @@ class StatsTable {
 	/**
 	 * Check whether translations in given group in given language
 	 * has been disabled.
-	 * @param $groupId string \Message group id
-	 * @param $code string \Language code
+	 * @param $groupId string Message group id
+	 * @param $code string Language code
 	 * @return bool
 	 */
 	public function isBlacklisted( $groupId, $code ) {
@@ -262,7 +262,9 @@ class StatsTable {
 		);
 
 		foreach ( $checks as $check ) {
-			$blacklisted = @$wgTranslateBlacklist[$check][$code];
+			if ( isset( $wgTranslateBlacklist[$check] ) && isset( $wgTranslateBlacklist[$check][$code] ) ) {
+				$blacklisted = $wgTranslateBlacklist[$check][$code];
+			}
 
 			if ( $blacklisted !== null ) {
 				break;
