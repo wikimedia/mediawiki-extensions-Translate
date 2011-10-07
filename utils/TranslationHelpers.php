@@ -638,9 +638,8 @@ class TranslationHelpers {
 			return null;
 		}
 
-		global $wgUser;
-
-		$title = $wgUser->getSkin()->link(
+		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
+		$title = $linker->link(
 			SpecialPage::getTitleFor( 'Translate' ),
 			htmlspecialchars( $this->group->getLabel() ),
 			array(),

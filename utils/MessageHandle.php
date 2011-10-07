@@ -65,6 +65,23 @@ class MessageHandle {
 		return $this->code;
 	}
 
+	/**
+	 * Determine whether the current handle is for message documentation.
+	 * @return bool
+	 */
+	public function isDoc() {
+		global $wgTranslateDocumentationLanguageCode;
+		return $this->getCode() === $wgTranslateDocumentationLanguageCode;
+	}
+
+	/**
+	 * Determine whether the current handle is for page translation feature.
+	 * @return bool
+	 */
+	public function isPageTranslation() {
+		return $this->getTitle()->getNamespace() == NS_TRANSLATIONS;
+	}
+
 	public function getGroupIds() {
 		if ( $this->groupIds === null ) {
 			$this->groupIds = TranslateUtils::messageKeyToGroups( $this->getTitle()->getNamespace(), $this->getKey() );

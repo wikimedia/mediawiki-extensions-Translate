@@ -344,7 +344,7 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * @Hook: ArticleSaveComplete
+	 * Hook: ArticleSaveComplete
 	 * @param $article Article
 	 * @param $user User
 	 * @param $text string

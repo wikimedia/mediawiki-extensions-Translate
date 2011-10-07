@@ -128,7 +128,7 @@ class TranslateHooks {
 			$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::lockedPagesCheck';
 
 			// Our custom header for translation pages
-			$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::test';
+			$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::translatablePageHeader';
 
 			// Prevent section pages appearing in categories
 			$wgHooks['LinksUpdate'][] = 'PageTranslationHooks::preventCategorization';

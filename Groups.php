@@ -106,7 +106,6 @@ interface MessageGroup {
 	/**
 	 * Returns message tags. If type is given, only messages keys with that
 	 * tag is returnted. Otherwise an array[tag => keys] is returnted.
-	 * @param null $type
 	 * @return array
 	 */
 	public function getTags( $type = null );
@@ -114,10 +113,9 @@ interface MessageGroup {
 	/**
 	 * Returns the definition or translation for given message key in given
 	 * language code.
-	 * @todo Is this needed in the interface?
-	 * @param $key
-	 * @param $code
-	 * @return string or null
+	 * @param $key string
+	 * @param $code string
+	 * @return string|null
 	 */
 	public function getMessage( $key, $code );
 
