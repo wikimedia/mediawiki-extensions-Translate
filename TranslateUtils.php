@@ -136,35 +136,7 @@ class TranslateUtils {
 		return $rows;
 	}
 
-	/* Some other helpers for ouput*/
-
-	/**
-	 * Makes a selector from name and options.
-	 * @param $name \string
-	 * @param $options \list{String} Html \<option> elements.
-	 * @return \string Html.
-	 */
-	public static function selector( $name, $options ) {
-		return Xml::tags( 'select', array( 'name' => $name, 'id' => $name ), $options );
-	}
-
-	/**
-	 * Makes a selector from name and options.
-	 * @param $name \string
-	 * @param $items \list{String} The name and value of options.
-	 * @param $selected \string The default selected value.
-	 * @return \string Html.
-	 */
-	public static function simpleSelector( $name, $items, $selected ) {
-		$options = array();
-
-		foreach ( $items as $item ) {
-			$item = strval( $item );
-			$options[] = Xml::option( $item, $item, $item === $selected );
-		}
-
-		return self::selector( $name, implode( "\n", $options ) );
-	}
+	/* Some other helpers for output */
 
 	/**
 	 * Returns a localised language name.
