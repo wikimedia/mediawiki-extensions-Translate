@@ -15,7 +15,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2011-09-29' );
+define( 'TRANSLATE_VERSION', '2011-10-07' );
 
 /**
  * Extension credits properties.
@@ -212,6 +212,11 @@ $wgTranslateDocumentationLanguageCode = false;
  * sources.
  */
 $wgTranslateFuzzyBotName = 'FuzzyBot';
+
+/**
+ * Add a preference "Do not send me e-mail newsletters" in the e-mail preferences.
+ */
+$wgTranslateNewsletterPreference = false;
 
 /**
  * Default values for list of languages to show translators as an aid when

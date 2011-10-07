@@ -15,31 +15,34 @@
 class TranslatePreferences {
 	/**
 	 * Add 'translate-pref-nonewsletter' preference.
-	 * This is actually specific to translatewiki.net
+	 * This is most probably specific to translatewiki.net. Can be enabled
+	 * with $wgTranslateNewsletterPreference.
 	 *
 	 * @param $user User
 	 * @param $preferences array
 	 * @return bool true
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
-		global $wgEnableEmail, $wgUser, $wgEnotifRevealEditorAddress;
+		global $wgTranslateNewsletterPreference;
 
-		// TODO: Shouldn't we use $user here?
-		// Only show is e-mail is enabled and user has a confirmed e-mail address.
-		if ( $wgEnableEmail && $wgUser->isEmailConfirmed() ) {
-			// 'translate-pref-nonewsletter' is used as opt-out for
-			// users with a confirmed e-mail address
-			$prefs = array(
-				'translate-nonewsletter' => array(
-					'type' => 'toggle',
-					'section' => 'personal/email',
-					'label-message' => 'translate-pref-nonewsletter'
-				)
-			);
+		if( $wgTranslateNewsletterPreference === true ) {
+			global $wgEnableEmail, $wgEnotifRevealEditorAddress;
+			// Only show is e-mail is enabled and user has a confirmed e-mail address.
+			if ( $wgEnableEmail && $user->isEmailConfirmed() ) {
+				// 'translate-pref-nonewsletter' is used as opt-out for
+				// users with a confirmed e-mail address
+				$prefs = array(
+					'translate-nonewsletter' => array(
+						'type' => 'toggle',
+						'section' => 'personal/email',
+						'label-message' => 'translate-pref-nonewsletter'
+					)
+				);
 
-			// Add setting after 'enotifrevealaddr'
-			$preferences = wfArrayInsertAfter( $preferences, $prefs,
-				$wgEnotifRevealEditorAddress ? 'enotifrevealaddr' : 'enotifminoredits' );
+				// Add setting after 'enotifrevealaddr'
+				$preferences = wfArrayInsertAfter( $preferences, $prefs,
+					$wgEnotifRevealEditorAddress ? 'enotifrevealaddr' : 'enotifminoredits' );
+			}
 		}
 
 		return true;
