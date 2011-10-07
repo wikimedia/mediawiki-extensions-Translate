@@ -218,9 +218,6 @@ class TranslateUtils {
 		return $selector->getHTML();
 	}
 
-	/// \array Cached message index.
-	static $mi = null;
-
 	/**
 	 * Returns the primary group message belongs to.
 	 * @param $namespace \int
@@ -319,6 +316,19 @@ class TranslateUtils {
 		}
 
 		return "$dir/$filename";
+	}
+
+	public static function groupSelector( $default = false ) {
+		$groups = MessageGroups::getAllGroups();
+		$selector = new XmlSelect( 'group', 'group', $default );
+
+		foreach ( $groups as $id => $class ) {
+			if ( MessageGroups::getGroup( $id )->exists() ) {
+				$selector->addOption( $class->getLabel(), $id );
+			}
+		}
+
+		return $selector;
 	}
 
 }

@@ -52,20 +52,6 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		return '';
 	}
 
-	/// @todo duplicated code
-	protected function groupSelector( $default ) {
-		$groups = MessageGroups::getAllGroups();
-		$selector = new XmlSelect( 'group', 'group', $default );
-
-		foreach ( $groups as $id => $class ) {
-			if ( MessageGroups::getGroup( $id )->exists() ) {
-				$selector->addOption( $class->getLabel(), $id );
-			}
-		}
-
-		return $selector->getHTML();
-	}
-
 	/// Overwriten from SpecialLanguageStats
 	function getform() {
 		global $wgScript;
@@ -83,7 +69,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		$out .= Xml::label( wfMsg( 'translate-mgs-group' ), 'group' );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-input' ) );
-		$out .= $this->groupSelector( $this->target );
+		$out .= TranslateUtils::groupSelector( $this->target )->getHTML();
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::closeElement( 'tr' );
 

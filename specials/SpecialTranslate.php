@@ -195,7 +195,7 @@ class SpecialTranslate extends SpecialPage {
 
 		// These are used, in the $$g black magic below. Do not remove!
 		$task = $this->taskSelector();
-		$group = $this->groupSelector();
+		$group = TranslateUtils::groupSelector( $this->group )->getHTML();
 		$language = $this->languageSelector();
 		$limit = $this->limitSelector();
 
@@ -241,20 +241,6 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	/* Selectors ahead */
-
-	protected function groupSelector() {
-		$groups = MessageGroups::getAllGroups();
-		$selector = new XmlSelect( 'group', 'group' );
-		$selector->setDefault( $this->options['group'] );
-
-		foreach ( $groups as $id => $class ) {
-			if ( MessageGroups::getGroup( $id )->exists() ) {
-				$selector->addOption( $class->getLabel(), $id );
-			}
-		}
-
-		return $selector->getHTML();
-	}
 
 	protected function taskSelector( $pageTranslation = false ) {
 		$selector = new XmlSelect( 'task', 'task' );
