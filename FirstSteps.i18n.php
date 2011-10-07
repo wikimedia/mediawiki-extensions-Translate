@@ -331,6 +331,7 @@ $3Зарэгістравацца$4',
  */
 $messages['bg'] = array(
 	'firststeps' => 'Първи стъпки',
+	'translate-fs-signup-title' => 'Регистриране',
 );
 
 /** Bengali (বাংলা)

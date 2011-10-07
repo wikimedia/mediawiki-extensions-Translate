@@ -2671,6 +2671,7 @@ $messages['bg'] = array(
 	'translate-edit' => 'редактиране',
 	'translate-talk' => 'беседа',
 	'translate-history' => 'история',
+	'translate-showsub' => 'Показване на {{PLURAL:$1|една подгрупа|$1 подгрупи}}.',
 	'translate-task-view' => 'Преглед на всички съобщения от',
 	'translate-task-untranslated' => 'Преглед на всички непреведени съобщения от',
 	'translate-task-optional' => 'Преглед на незадължителните съобщения от',
@@ -2705,6 +2706,7 @@ $messages['bg'] = array(
 	'translate-ext-url' => '<hr />Уебсайт: $1',
 	'translate-optional' => '(незадължително)',
 	'translate-ignored' => '(пренебрегнато)',
+	'translate-edit-title' => 'Редактиране на „$1“',
 	'translate-edit-definition' => 'Оригинално съобщение',
 	'translate-edit-contribute' => 'добавяне на документация',
 	'translate-edit-no-information' => 'За това съобщение няма документация. Ако знаете къде и как се използва, можете да помогнете на останалите преводачи като добавите документация за това съобщение.',
@@ -2730,9 +2732,6 @@ $messages['bg'] = array(
 	'translate-magic-notsaved' => 'Редакцията не беше съхранена!',
 	'translate-magic-errors' => 'Необходимо е да {{PLURAL:$1|се отстрани следната грешка|се отстранят следните грешки}} в преводите:',
 	'translate-magic-saved' => 'Промените бяха съхранени успешно.',
-	'translationchanges' => 'Промени в преводите',
-	'translationchanges-export' => 'изнасяне',
-	'translationchanges-change' => '$1: $2 от $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Следният параметър не се използва|Следните параметри не се използват}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Следният параметър е непознат|Следните параметри са непознати}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -2782,8 +2781,11 @@ $messages['bg'] = array(
 	'translate-suppress-complete' => 'Скриване на изцяло преведените групи съобщения',
 	'translate-language' => 'Език',
 	'translate-total' => 'Съобщения',
+	'translate-mgs-column-language' => 'Език',
+	'translate-mgs-totals' => 'Всички езици заедно',
 	'supportedlanguages' => 'Поддържани езици',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Преводач|Преводачи}}: $1',
+	'supportedlanguages-recenttranslations' => 'последни преводи',
 	'translate-save' => 'Съхраняване ($1)',
 	'translate-jssti-add' => 'Добавяне към списъка',
 	'translate-manage-modlang-new' => '$1 (ново)',
@@ -2792,9 +2794,13 @@ $messages['bg'] = array(
 	'translate-manage-submit' => 'Изпълняване',
 	'translate-manage-import-done' => 'Всичко е готово!',
 	'translate-manage-subtitle' => 'Управление',
+	'importtranslations' => 'Внасяне на преводи',
+	'translate-import-from-url' => 'Адрес към файла:',
+	'translate-import-from-wiki' => 'Файл в това уики:',
 	'translate-import-err-ul-failed' => 'Качването на файла не беше успешно',
 	'translate-import-err-no-such-file' => 'Файлът <nowiki>$1</nowiki> не съществува или не е бил качен локално.',
 	'translate-gs-total' => 'Общо',
+	'translate-searchprofile' => 'Преводи',
 );
 
 /** Bengali (বাংলা)
@@ -19208,6 +19214,7 @@ Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan mo
 );
 
 /** Swedish (Svenska)
+ * @author Ainali
  * @author Boivie
  * @author Byrial
  * @author Dafer45
@@ -19386,8 +19393,8 @@ Standardlistan på språk avgörs av ditt språk.',
 	'translate-langstats-collapseall' => 'göm alla',
 	'translate-language-code' => 'Språkkod',
 	'translate-language-code-field-name' => 'Språkkod:',
-	'translate-suppress-complete' => 'Visa inte helt översatta meddelandegrupper',
-	'translate-ls-noempty' => 'Visa inte helt oöversatta meddelandegrupper',
+	'translate-suppress-complete' => 'Visa inte meddelandegrupper som är helt översatta',
+	'translate-ls-noempty' => 'Visa inte meddelandegrupper som är helt oöversatta',
 	'translate-language' => 'Språk',
 	'translate-total' => 'Meddelanden',
 	'translate-untranslated' => 'Oöversatta',
