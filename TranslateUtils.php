@@ -209,7 +209,8 @@ class TranslateUtils {
 
 		ksort( $languages );
 
-		$selector = new HTMLSelector( 'language', 'language', $selectedId );
+		$selector = new XmlSelect( 'language', 'language' );
+		$selector->setDefault( $selectedId );
 		foreach ( $languages as $code => $name ) {
 			$selector->addOption( "$code - $name", $code );
 		}
@@ -320,71 +321,4 @@ class TranslateUtils {
 		return "$dir/$filename";
 	}
 
-}
-
-/**
- * Yet another class for building html selectors.
- */
-class HTMLSelector {
-	/// \list{String} \<option> elements.
-	private $options = array();
-	/// \string The selected value.
-	private $selected = false;
-	/// \array Extra html attributes.
-	private $attributes = array();
-
-	/**
-	 * @param $name \string
-	 * @param $id \string Default false.
-	 * @param $selected \string Default false.
-	 */
-	public function __construct( $name = false, $id = false, $selected = false ) {
-		if ( $name ) {
-			$this->setAttribute( 'name', $name );
-		}
-
-		if ( $id ) {
-			$this->setAttribute( 'id', $id );
-		}
-
-		if ( $selected ) {
-			$this->selected = $selected;
-		}
-	}
-
-	/**
-	 * Set selected value.
-	 * @param $selected \string Default false.
-	 */
-	public function setSelected( $selected ) {
-		$this->selected = $selected;
-	}
-
-	/**
-	 * Set html attribute.
-	 * @param $name \string Attribute name.
-	 * @param $value \string Attribute value.
-	 */
-	public function setAttribute( $name, $value ) {
-		$this->attributes[$name] = $value;
-	}
-
-	/**
-	 * Add an option.
-	 * @param $name \string Display name.
-	 * @param $value \string Option value. Uses $name if not given.
-	 * @param $selected \string Default selected value. Uses object value if not given.
-	 */
-	public function addOption( $name, $value = false, $selected = false ) {
-		$selected = $selected ? $selected : $this->selected;
-		$value = $value ? $value : $name;
-		$this->options[] = Xml::option( $name, $value, $value === $selected );
-	}
-
-	/**
-	 * @return \string Html for the selector.
-	 */
-	public function getHTML() {
-		return Xml::tags( 'select', $this->attributes, implode( "\n", $this->options ) );
-	}
 }

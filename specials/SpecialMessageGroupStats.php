@@ -55,7 +55,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	/// @todo duplicated code
 	protected function groupSelector( $default ) {
 		$groups = MessageGroups::getAllGroups();
-		$selector = new HTMLSelector( 'group', 'group', $default );
+		$selector = new XmlSelect( 'group', 'group', $default );
 
 		foreach ( $groups as $id => $class ) {
 			if ( MessageGroups::getGroup( $id )->exists() ) {

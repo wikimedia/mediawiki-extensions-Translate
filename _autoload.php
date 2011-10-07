@@ -20,7 +20,6 @@ $wgAutoloadClasses['TranslateTasks'] = $dir . 'TranslateTasks.php';
 $wgAutoloadClasses['TaskOptions'] = $dir . 'TranslateTasks.php';
 
 $wgAutoloadClasses['TranslateUtils'] = $dir . 'TranslateUtils.php';
-$wgAutoloadClasses['HTMLSelector'] = $dir . 'TranslateUtils.php';
 
 $wgAutoloadClasses['TranslateHooks'] = $dir . 'TranslateHooks.php';
 

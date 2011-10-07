@@ -87,7 +87,7 @@ class SpecialMagic extends SpecialPage {
 	 * @return \string HTML5-compatible select-element.
 	 */
 	protected function moduleSelector( $selectedId ) {
-		$selector = new HTMLSelector( 'module', 'module', $selectedId );
+		$selector = new XmlSelect( 'module', 'module', $selectedId );
 		foreach ( $this->aModules as $code ) {
 			$selector->addOption( wfMsg( 'translate-magic-' . $code ), $code );
 		}

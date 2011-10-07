@@ -275,15 +275,16 @@ class TranslateHooks {
 
 		ksort( $languages );
 
-		$selector = new HTMLSelector( 'languagefilter', 'languagefilter', $selected );
-		$selector->addOption( wfMessage( 'translate-search-nofilter' ), '-' );
+		$selector = new XmlSelect( 'languagefilter', 'languagefilter' );
+		$selector->setDefault( $selected );
+		$selector->addOption( wfMessage( 'translate-search-nofilter' )->text(), '-' );
 		foreach ( $languages as $code => $name ) {
 			$selector->addOption( "$code - $name", $code );
 		}
 
 		$selector = $selector->getHTML();
 
-		$label = Xml::label( wfMessage( 'translate-search-languagefilter' ), 'languagefilter' ) . '&#160;';
+		$label = Xml::label( wfMessage( 'translate-search-languagefilter' )->text(), 'languagefilter' ) . '&#160;';
 		$params = array( 'id' => 'mw-searchoptions' );
 
 		$form = Xml::fieldset( false, false, $params ) .
