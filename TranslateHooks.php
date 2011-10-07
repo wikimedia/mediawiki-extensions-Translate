@@ -215,4 +215,97 @@ class TranslateHooks {
 		return true;
 	}
 
+	/**
+	 * Hook: LanguageGetTranslatedLanguageNames
+	 */
+	public static function translateMessageDocumentationLanguage( &$names, $code ) {
+		global $wgTranslateDocumentationLanguageCode;
+		if ( $wgTranslateDocumentationLanguageCode ) {
+			$names[$wgTranslateDocumentationLanguageCode] =
+				wfMessage( 'translate-documentation-language' )->inLanguage( $code )->plain();
+		}
+		return true;
+	}
+
+	/**
+	 * Hook: SpecialSearchProfiles
+	 */
+	public static function searchProfile( array &$profiles ) {
+		global $wgTranslateMessageNamespaces;
+		$insert = array();
+		$insert['translation'] = array(
+			'message' => 'translate-searchprofile',
+			'tooltip' => 'translate-searchprofile-tooltip',
+			'namespaces' => $wgTranslateMessageNamespaces,
+		);
+
+		$profiles = wfArrayInsertAfter( $profiles, $insert, 'help' );
+		return true;
+	}
+
+	/**
+	 * Hook: SpecialSearchProfileForm
+	 */
+	public static function searchProfileForm( $search, &$form, /*string*/ $profile, $term, $opts ) {
+		if ( $profile !== 'translation' ) {
+			return true;
+		}
+
+		if ( !$search->getSearchEngine()->supports( 'title-suffix-filter' ) ) {
+			return false;
+		}
+
+		$hidden = '';
+		foreach ( $opts as $key => $value ) {
+			$hidden .= Html::hidden( $key, $value );
+		}
+
+		$context = $search->getContext();
+		$code = $context->getLang()->getCode();
+		$selected = $context->getRequest()->getVal( 'languagefilter' );
+
+		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
+			$languages = LanguageNames::getNames( $code,
+				LanguageNames::FALLBACK_NORMAL,
+				LanguageNames::LIST_MW
+			);
+		} else {
+			$languages = Language::getLanguageNames( false );
+		}
+
+		ksort( $languages );
+
+		$selector = new HTMLSelector( 'languagefilter', 'languagefilter', $selected );
+		$selector->addOption( wfMessage( 'translate-search-nofilter' ), '-' );
+		foreach ( $languages as $code => $name ) {
+			$selector->addOption( "$code - $name", $code );
+		}
+
+		$selector = $selector->getHTML();
+
+		$label = Xml::label( wfMessage( 'translate-search-languagefilter' ), 'languagefilter' ) . '&#160;';
+		$params = array( 'id' => 'mw-searchoptions' );
+
+		$form = Xml::fieldset( false, false, $params ) .
+			$hidden . $label . $selector .
+			Html::closeElement( 'fieldset' );
+		return false;
+	}
+
+	/// Hook: SpecialSearchSetupEngine
+	public static function searchProfileSetupEngine( $search, /*string*/ $profile, SearchEngine $engine ) {
+		if ( $profile !== 'translation' ) {
+			return true;
+		}
+
+		$context = $search->getContext();
+		$selected = $context->getRequest()->getVal( 'languagefilter' );
+		if ( $selected !== '-' && $selected ) {
+			$engine->setFeatureData( 'title-suffix-filter', "/$selected" );
+			$search->setExtraParam( 'languagefilter', $selected );
+		}
+		return true;
+	}
+
+
 }

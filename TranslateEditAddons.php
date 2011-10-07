@@ -20,12 +20,8 @@ class TranslateEditAddons {
 	/**
 	 * Add some tabs for navigation for users who do not use Ajax interface.
 	 * Hooks: SkinTemplateNavigation, SkinTemplateTabs
-	 * @param $skin Skin
-	 * @param $tabs Array
-	 *
-	 * @return bool
 	 */
-	static function addNavigationTabs( $skin, &$tabs ) {
+	static function addNavigationTabs( Skin $skin, array &$tabs ) {
 		global $wgRequest;
 
 		$title = $skin->getTitle();
@@ -47,20 +43,20 @@ class TranslateEditAddons {
 
 		$next = $prev = null;
 
+		$match = -100;
+
 		foreach ( $keys as $index => $tkey ) {
 			if ( $key === strtolower( strtr( $tkey, ' ', '_' ) ) ) {
+				$match = $index;
 				break;
-			}
-			if ( $index === $count -1 ) {
-				$index = -666;
 			}
 		}
 
-		if ( isset( $keys[$index -1] ) ) {
-			$prev = $keys[$index -1];
+		if ( isset( $keys[$match -1] ) ) {
+			$prev = $keys[$match -1];
 		}
-		if ( isset( $keys[$index + 1] ) ) {
-			$next = $keys[$index + 1];
+		if ( isset( $keys[$match + 1] ) ) {
+			$next = $keys[$match + 1];
 		}
 
 		$id = $group->getId();
@@ -122,10 +118,8 @@ class TranslateEditAddons {
 	/**
 	 * Keep the usual diiba daaba hidden from translators.
 	 * Hook: AlternateEdit
-	 * @param $editpage EditPage
-	 * @return bool
 	 */
-	public static function intro( $editpage ) {
+	public static function intro( EditPage $editpage ) {
 		$editpage->suppressIntro = true;
 
 		$msg = wfMsgForContent( 'translate-edit-tag-warning' );
@@ -139,10 +133,8 @@ class TranslateEditAddons {
 	/**
 	 * Adds the translation aids and navigation to the normal edit page.
 	 * Hook: EditPage::showEditForm:initial
-	 * @param $object
-	 * @return bool
 	 */
-	static function addTools( $object ) {
+	static function addTools( EditPage $object ) {
 		$handle = new MessageHandle( $object->mTitle );
 		if ( !$handle->isValid() ) {
 			return true;
@@ -156,23 +148,17 @@ class TranslateEditAddons {
 	 * Replace the normal save button with one that says if you are editing
 	 * message documentation to try to avoid accidents.
 	 * Hook: EditPageBeforeEditButtons
-	 * @param $editpage EditPage
-	 * @param $buttons
-	 * @param $tabindex
-	 * @return bool
 	 */
-	static function buttonHack( $editpage, &$buttons, $tabindex ) {
-		global $wgTranslateDocumentationLanguageCode, $wgLang;
+	static function buttonHack( EditPage $editpage, &$buttons, $tabindex ) {
+		global $wgLang;
 
 		$handle = new MessageHandle( $editpage->mTitle );
 		if ( !$handle->isValid() ) {
 			return true;
 		}
 
-		$code = $handle->getCode();
-
-		if ( $code === $wgTranslateDocumentationLanguageCode ) {
-			$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
+		if ( $handle->isDoc() ) {
+			$name = TranslateUtils::getLanguageName( $handle->getCode(), false, $wgLang->getCode() );
 			$temp = array(
 				'id'        => 'wpSave',
 				'name'      => 'wpSave',
@@ -270,7 +256,7 @@ class TranslateEditAddons {
 	 * @param $object
 	 * @return String
 	 */
-	private static function editBoxes( $object ) {
+	private static function editBoxes( EditPage $object ) {
 		global $wgOut, $wgRequest;
 
 		$th = new TranslationHelpers( $object->mTitle );
@@ -310,28 +296,20 @@ class TranslateEditAddons {
 	/**
 	 * Removes protection tab for message namespaces - not useful.
 	 * Hook: SkinTemplateTabs
-	 * @param $skin Skin
-	 * @param $tabs
-	 * @return bool
 	 */
-	public static function tabs( $skin, &$tabs ) {
+	public static function tabs( Skin $skin, &$tabs ) {
 		$handle = new MessageHandle( $skin->getTitle() );
-		if ( !$handle->isMessageNamespace() ) {
-			return true;
+		if ( $handle->isMessageNamespace() ) {
+			unset( $tabs['protect'] );
 		}
-
-		unset( $tabs['protect'] );
 
 		return true;
 	}
 
 	/**
 	 * Hook: EditPage::showEditForm:fields
-	 * @param $edit
-	 * @param $out OutputPage
-	 * @return bool
 	 */
-	public static function keepFields( $edit, $out ) {
+	public static function keepFields( EditPage $edit, OutputPage $out ) {
 		global $wgRequest;
 
 		$out->addHTML( "\n" .
@@ -344,17 +322,8 @@ class TranslateEditAddons {
 	}
 
 	/**
+	 * Runs message checks, adds tp:transver tags and updates statistics.
 	 * Hook: ArticleSaveComplete
-	 * @param $article Article
-	 * @param $user User
-	 * @param $text string
-	 * @param $summary string
-	 * @param $minor bool
-	 * @param $_
-	 * @param $_
-	 * @param $flags
-	 * @param $revision Revision
-	 * @return bool
 	 */
 	public static function onSave( $article, $user, $text, $summary,
 			$minor, $_, $_, $flags, $revision
@@ -385,18 +354,14 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * @param $handle MessageHandle
-	 * @param $text
 	 * @return bool
 	 */
-	protected static function checkNeedsFuzzy( MessageHandle $handle, $text ) {
+	protected static function checkNeedsFuzzy( MessageHandle $handle, /*string*/$text ) {
 		// Check for explicit tag.
 		$fuzzy = self::hasFuzzyString( $text );
 
 		// Docs are exempt for checks
-		global $wgTranslateDocumentationLanguageCode;
-		$code = $handle->getCode();
-		if ( $code === $wgTranslateDocumentationLanguageCode ) {
+		if ( $handle->isDoc() ) {
 			return $fuzzy;
 		}
 
@@ -407,6 +372,7 @@ class TranslateEditAddons {
 			return $fuzzy;
 		}
 
+		$code = $handle->getCode();
 		$key = $handle->getKey();
 		$en = $group->getMessage( $key, $group->getSourceLanguage() );
 		$message = new FatMessage( $key, $en );
@@ -422,8 +388,8 @@ class TranslateEditAddons {
 
 	/**
 	 * @param $title Title
-	 * @param $revision
-	 * @param $fuzzy
+	 * @param $revision int
+	 * @param $fuzzy bool
 	 */
 	protected static function updateFuzzyTag( Title $title, $revision, $fuzzy ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -485,47 +451,11 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * @param $text string
-	 * @return string
-	 */
-	public static function preserveWhitespaces( $text ) {
-		$text = wfEscapeWikiText( $text );
-		$text = preg_replace( '/^ /m', '&#160;', $text );
-		$text = preg_replace( '/ $/m', '&#160;', $text );
-		$text = preg_replace( '/  /', '&#160; ', $text );
-		$text = str_replace( "\n", '<br />', $text );
-		return $text;
-	}
-
-	/**
-	 * Hook: LanguageGetTranslatedLanguageNames
-	 * @param $names
-	 * @param $code
-	 * @return bool
-	 */
-	public static function translateMessageDocumentationLanguage( &$names, $code ) {
-		global $wgTranslateDocumentationLanguageCode;
-		if ( $wgTranslateDocumentationLanguageCode ) {
-			$names[$wgTranslateDocumentationLanguageCode] =
-				wfMessage( 'translate-documentation-language' )->inLanguage( $code )->plain();
-		}
-		return true;
-	}
-
-	/**
 	 * Hook: ArticlePrepareTextForEdit
-	 * @param $article Article
-	 * @param $popts ParserOptions
-	 * @return bool
 	 */
-	public static function disablePreSaveTransform( $article, $popts ) {
-		global $wgTranslateDocumentationLanguageCode;
-
+	public static function disablePreSaveTransform( $article, ParserOptions $popts ) {
 		$handle = new MessageHandle( $article->getTitle() );
-		$code = $handle->getCode();
-		if ( $handle->isMessageNamespace()
-			&& $code !== $wgTranslateDocumentationLanguageCode ) {
-
+		if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
 			$popts->setPreSaveTransform( false );
 		}
 		return true;
@@ -533,11 +463,8 @@ class TranslateEditAddons {
 
 	/**
 	 * Hook: ArticleContentOnDiff
-	 * @param $de DifferenceEngine
-	 * @param $out OutputPage
-	 * @return bool
 	 */
-	public static function displayOnDiff( $de, $out ) {
+	public static function displayOnDiff( DifferenceEngine $de, OutputPage $out ) {
 		$title = $de->getTitle();
 		$handle = new MessageHandle( $title );
 
@@ -560,100 +487,6 @@ class TranslateEditAddons {
 		$output = Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
 		$out->addHtml( $output );
 		return false;
-	}
-
-	/**
-	 * Hook: SpecialSearchProfiles
-	 * @param $profiles array
-	 * @return bool
-	 */
-	public static function searchProfile( &$profiles ) {
-		global $wgTranslateMessageNamespaces;
-		$insert = array();
-		$insert['translation'] = array(
-			'message' => 'translate-searchprofile',
-			'tooltip' => 'translate-searchprofile-tooltip',
-			'namespaces' => $wgTranslateMessageNamespaces,
-		);
-
-		$profiles = wfArrayInsertAfter( $profiles, $insert, 'help' );
-		return true;
-	}
-
-	/**
-	 * Hook: SpecialSearchProfileForm
-	 * @param $search
-	 * @param $form
-	 * @param $profile
-	 * @param $term
-	 * @param $opts
-	 * @return bool
-	 */
-	public static function searchProfileForm( $search, &$form, $profile, $term, $opts ) {
-		if ( $profile !== 'translation' ) {
-			return true;
-		}
-
-		if ( !$search->getSearchEngine()->supports( 'title-suffix-filter' ) ) {
-			return false;
-		}
-
-		$hidden = '';
-		foreach ( $opts as $key => $value ) {
-			$hidden .= Html::hidden( $key, $value );
-		}
-
-		$context = $search->getContext();
-		$code = $context->getLang()->getCode();
-		$selected = $context->getRequest()->getVal( 'languagefilter' );
-
-		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
-			$languages = LanguageNames::getNames( $code,
-				LanguageNames::FALLBACK_NORMAL,
-				LanguageNames::LIST_MW
-			);
-		} else {
-			$languages = Language::getLanguageNames( false );
-		}
-
-		ksort( $languages );
-
-		$selector = new HTMLSelector( 'languagefilter', 'languagefilter', $selected );
-		$selector->addOption( wfMessage( 'translate-search-nofilter' ), '-' );
-		foreach ( $languages as $code => $name ) {
-			$selector->addOption( "$code - $name", $code );
-		}
-
-		$selector = $selector->getHTML();
-
-		$label = Xml::label( wfMessage( 'translate-search-languagefilter' ), 'languagefilter' ) . '&#160;';
-		$params = array( 'id' => 'mw-searchoptions' );
-
-		$form = Xml::fieldset( false, false, $params ) .
-			$hidden . $label . $selector .
-			Html::closeElement( 'fieldset' );
-		return false;
-	}
-
-	/**
-	 * Hook: SpecialSearchSetupEngine
-	 * @param $search
-	 * @param $profile
-	 * @param $engine
-	 * @return bool
-	 */
-	public static function searchProfileSetupEngine( $search, $profile, $engine ) {
-		if ( $profile !== 'translation' ) {
-			return true;
-		}
-
-		$context = $search->getContext();
-		$selected = $context->getRequest()->getVal( 'languagefilter' );
-		if ( $selected !== '-' && $selected ) {
-			$engine->setFeatureData( 'title-suffix-filter', "/$selected" );
-			$search->setExtraParam( 'languagefilter', $selected );
-		}
-		return true;
 	}
 
 }

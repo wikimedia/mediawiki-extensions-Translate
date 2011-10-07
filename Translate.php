@@ -94,7 +94,7 @@ $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
 $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
-$wgHooks['LanguageGetTranslatedLanguageNames'][] = 'TranslateEditAddons::translateMessageDocumentationLanguage';
+$wgHooks['LanguageGetTranslatedLanguageNames'][] = 'TranslateHooks::translateMessageDocumentationLanguage';
 $wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
 // Fuzzy tags for speed.
 $wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
@@ -120,9 +120,9 @@ $wgHooks['Translate:newTranslation'][] = 'TranslationMemoryUpdater::update';
 $wgHooks['ArticleContentOnDiff'][] = 'TranslateEditAddons::displayOnDiff';
 
 // Search profile
-$wgHooks['SpecialSearchProfiles'][] = 'TranslateEditAddons::searchProfile';
-$wgHooks['SpecialSearchProfileForm'][] = 'TranslateEditAddons::searchProfileForm';
-$wgHooks['SpecialSearchSetupEngine'][] = 'TranslateEditAddons::searchProfileSetupEngine';
+$wgHooks['SpecialSearchProfiles'][] = 'TranslateHooks::searchProfile';
+$wgHooks['SpecialSearchProfileForm'][] = 'TranslateHooks::searchProfileForm';
+$wgHooks['SpecialSearchSetupEngine'][] = 'TranslateHooks::searchProfileSetupEngine';
 
 $wgHooks['LinkBegin'][] = 'SpecialMyLanguage::linkfix';
 
