@@ -349,7 +349,7 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	private function makeOffsetLink( $label, $offset ) {
-		$linker = $linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
+		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		$query = array_merge(
 			$this->nondefaults,
