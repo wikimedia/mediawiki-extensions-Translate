@@ -633,8 +633,8 @@ class TranslationHelpers {
 	}
 
 	public function getDefinitionBox() {
-		$en = $this->getDefinition();
-		if ( $en === null ) {
+		$en = strval( $this->getDefinition() );
+		if ( $en === '' ) {
 			return null;
 		}
 
