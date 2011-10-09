@@ -447,9 +447,9 @@ This warning indicates that the namespace in the translation does not match the 
 	'translate-pref-editassistlang' => 'Used in [[Special:Preferences]] under the {{msg-mw|prefs-editing}} tab.',
 	'prefs-translate' => 'Caption of a section at [[Special:Preferences#prefsection-3|Special:Preferences]]',
 	'translate-pref-editassistlang-help' => 'Used in [[Special:Preferences]], tab Editing.',
-	'right-translate' => '{{doc-right}}',
-	'right-translate-manage' => '{{doc-right}}',
-	'right-translate-import' => '{{doc-right}}',
+	'right-translate' => '{{doc-right|translate}}',
+	'right-translate-manage' => '{{doc-right|translate-manage}}',
+	'right-translate-import' => '{{doc-right|translate-import}}',
 	'translate-rc-translation-filter' => 'Name of filter in [[Special:RecentChanges]]. Gives a user the option to filter out translations, show translations only, or do nothing (default).',
 	'translate-rc-translation-filter-no' => 'Option for filter in [[Special:RecentChanges]]. Selecting this option results in the filter not doing anything. It is the default value.',
 	'translate-rc-translation-filter-only' => 'Option for filter in [[Special:RecentChanges]]. Selecting this option results in the filter only showing recent changes that are translations.',
@@ -1082,6 +1082,7 @@ $messages['ang'] = array(
  * @author OsamaK
  * @author Ouda
  * @author ترجمان05
+ * @author زكريا
  */
 $messages['ar'] = array(
 	'translate' => 'ترجمة',
@@ -1166,9 +1167,6 @@ $messages['ar'] = array(
 	'translate-magic-notsaved' => 'تعديلك لم يُحفظ!',
 	'translate-magic-errors' => 'من فضلك أصلح {{PLURAL:$1||الخطأ|الخطأين|الأخطاء}} التالية في الترجمات:',
 	'translate-magic-saved' => 'حُفظت تعديلاتك بنجاح.',
-	'translationchanges' => 'تغييرات الترجمة',
-	'translationchanges-export' => 'صدّر',
-	'translationchanges-change' => '$1: $2 بواسطة $3',
 	'translate-checks-parameters' => '{{PLURAL:$2||المحدد التالي غير مستخدم|المحددان التاليان غير مستخدمان|المحددات التالية غير مستخدمة}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2||المحدد التالي غير معروف|المحددان التاليان غير معروفان|المحددات التالية غير معروفة}}:
@@ -1238,8 +1236,8 @@ $messages['ar'] = array(
 	'languagestats-summary' => 'هذه الصفحة تعرض إحصاءات الترجمة لكل مجموعات الرسائل للغة.',
 	'languagestats-stats-for' => 'إحصاءات الترجمة للغة $1 ($2).',
 	'languagestats-recenttranslations' => 'ترجمات حديثة',
-	'translate-langstats-expand' => 'وسّع',
-	'translate-langstats-collapse' => 'اطوِ',
+	'translate-langstats-expand' => 'وسع',
+	'translate-langstats-collapse' => 'اطو',
 	'translate-langstats-expandall' => 'وسّع الكل',
 	'translate-langstats-collapseall' => 'اطوِ الكل',
 	'translate-language-code' => 'رمز اللغة',
@@ -18446,10 +18444,11 @@ Podrobnosti: $1',
 );
 
 /** Somali (Soomaaliga)
+ * @author Maax
  * @author Mimursal
  */
 $messages['so'] = array(
-	'translate' => 'Tarjun',
+	'translate' => 'Fasir',
 	'translate-language' => 'Luqad:',
 );
 
@@ -18528,6 +18527,7 @@ $messages['sr-ec'] = array(
 	'translate-page-showing' => 'Приказ порука од $1 до $2, од $3.',
 	'translate-page-showing-all' => 'Приказ $1 {{PLURAL:$1|поруке|поруке|порука}}.',
 	'translate-page-showing-none' => 'Нема порука.',
+	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
 	'translate-next' => 'Следећа страница',
 	'translate-prev' => 'Претходна страница',
 	'translate-page-description-legend' => 'Подаци о групи',
@@ -18548,6 +18548,8 @@ $messages['sr-ec'] = array(
 	'translate-edit-tmsugs' => 'Предлози из преводилачке меморије',
 	'translate-edit-tmmatch' => '$1% поклапања',
 	'translate-use-suggestion' => 'Унесите овај предлог у преводилачки оквир. Ово замењује сав садржај.',
+	'translate-edit-tab-prev' => '<<<',
+	'translate-edit-tab-next' => '>>>',
 	'translate-edit-tab-list' => 'Списак порука',
 	'translate-magic-pagename' => 'Проширени превод Медијавикија',
 	'translate-magic-help' => 'Можете превести кодове за посебне странице, магичне речи и именске просторе.
@@ -18607,7 +18609,7 @@ $messages['sr-ec'] = array(
 	'right-translate' => 'уређивање путем преводилачког сучеља',
 	'right-translate-manage' => 'управљање преводилачким групама',
 	'right-translate-import' => 'увожење ванмрежних превода',
-	'translate-rc-translation-filter' => 'Сврставање превода:',
+	'translate-rc-translation-filter' => 'Филтрирање превода:',
 	'translate-rc-translation-filter-no' => 'не ради ништа',
 	'translate-rc-translation-filter-only' => 'прикажи само преводе',
 	'translate-rc-translation-filter-filter' => 'избаци преводе',
@@ -18653,6 +18655,7 @@ $messages['sr-ec'] = array(
 	'languagestats-summary' => 'Ова страница приказује статистику превода за све групе порука неког језика.',
 	'languagestats-stats-for' => 'Статистика превода за српску ћирилицу ($2).',
 	'languagestats-recenttranslations' => 'скорашњи преводи',
+	'translate-langstats-incomplete' => 'Неке статистике наведене на страници су непотпуне. Поново учитајте страницу да добијете потпуни преглед.',
 	'translate-langstats-expand' => 'прикажи',
 	'translate-langstats-collapse' => 'сакриј',
 	'translate-langstats-expandall' => 'прикажи све',
@@ -18668,19 +18671,33 @@ $messages['sr-ec'] = array(
 	'translate-percentage-fuzzy' => 'Застарело',
 	'translate-nothing-to-do' => "Изгледа да су све поруке преведене.
 Можете их прегледати на страници ''[[Special:Translate|{{int:translate}}]]''.",
+	'translate-languagestats-groups' => ' # Додајте назнаке групе порука (једна по сваком реду) да ограничите групе порука
+ # које ће бити приказане на Special:LanguageStats. Непостојеће назнаке ће бити
+ # занемарене.',
+	'translate-languagestats-overall' => 'Све групе порука заједно',
 	'translate-ls-submit' => 'Прикажи статистику',
+	'translate-ls-column-group' => 'Група порука',
+	'translate-mgs-pagename' => 'Статистике групе',
+	'translate-mgs-fieldset' => 'Подешавање приказа',
+	'translate-mgs-group' => 'Група порука:',
+	'translate-mgs-nocomplete' => 'Не приказуј језике с потпуним преводом',
+	'translate-mgs-noempty' => 'Не приказуј језике без икаквих превода',
 	'translate-mgs-submit' => 'Прикажи статистику',
+	'translate-mgs-column-language' => 'Језик',
+	'translate-mgs-totals' => 'Сви језици заједно',
+	'translate-mgs-invalid-group' => 'Наведена група $1 не постоји.',
+	'translate-mgs-nothing' => 'Нема шта да се прикаже за захтеване статистике.',
 	'supportedlanguages' => 'Подржани језици',
-	'supportedlanguages-summary' => "Ова страница приказује списак свих подржаних језика на овом викију, заједно с именима преводиоца који раде на тим језицима.
-Ако желите више података о одређеном језику, кликните на везу портала.
-Када кликнете на име преводиоца, то ће вас одвести на његову/њену корисничку страницу.
-
-Ако ваш језик није на списку, прочитајте како да започнете локализацију на страници ''[[Translating:Process|Нови језик]]''.
-
-Уколико сте активан преводилац, додајте своје име на списак преводилаца у [[:Category:Languages|порталу]].
-Погледајте бочну палету на којој се налази веза ка порталу вашег језика који сте наместили у подешавањима.",
+	'supportedlanguages-summary' => 'Ова страница приказује списак свих подржаних језика на овом викију, заједно с именима преводиоца који раде на тим језицима.
+Величина имена, тј. слова преводиоца зависи од тога колико је порука превео. 
+Боја линије с којом је име подвучено приказује колико је преводилац активан.',
+	'supportedlanguages-colorlegend' => 'Легенда за боју; последњи превод извршен пре $1 дана.',
+	'supportedlanguages-portallink' => '[$1] $2 – $3',
+	'supportedlanguages-portallink-nocldr' => '[$1] $2',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Преводилац|Преводиоци}}: $1',
 	'supportedlanguages-recenttranslations' => 'скорашњи преводи',
+	'supportedlanguages-count' => 'Укупно $1 {{PLURAL:$1|језик|језика|језика}}.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|измена|измене|измена}} – последња измена пре $3 {{PLURAL:$3|дан|дана|дана}}',
 	'translate-save' => 'Сачувај ($1)',
 	'translate-jssti-add' => 'Додај на списак',
 	'managemessagegroups' => 'Управљање групама порука',
@@ -18763,6 +18780,10 @@ $1',
 	'translate-gs-total' => 'Укупно',
 	'translate-gs-avgscore' => 'Просечан резултат',
 	'translate-documentation-language' => 'Помоћ при превођењу',
+	'translate-searchprofile' => 'Преводи',
+	'translate-searchprofile-tooltip' => 'Тражење по свим преводима',
+	'translate-search-languagefilter' => 'Филтрирај по језику:',
+	'translate-search-nofilter' => 'Без филтрирања',
 );
 
 /** Serbian (Latin script) (‪Srpski (latinica)‬)
@@ -18939,14 +18960,9 @@ Sve vrednosti imaju svoja gornja i donja ograničenja.',
 	'translate-nothing-to-do' => 'Izgleda da su sve poruke prevedene.
 Ipak bi možda bilo dobro da ih pregledate na [[Special:Translate|{{int:translate}}]].',
 	'supportedlanguages' => 'Podržani jezici',
-	'supportedlanguages-summary' => "Ова страница приказује списак свих подржаних језика на овом викију, заједно с именима преводиоца који раде на тим језицима.
-Ако желите више података о одређеном језику, кликните на везу портала.
-Када кликнете на име преводиоца, то ће вас одвести на његову/њену корисничку страницу.
-
-Ако ваш језик није на списку, прочитајте како да започнете локализацију на страници ''[[Translating:Process|Нови језик]]''.
-
-Уколико сте активан преводилац, додајте своје име на списак преводилаца у [[:Category:Languages|порталу]].
-Погледајте бочну палету на којој се налази веза ка порталу вашег језика који сте наместили у подешавањима.",
+	'supportedlanguages-summary' => 'Ova stranica prikazuje spisak svih podržanih jezika na ovom vikiju, zajedno s imenima prevodioca koji rade na tim jezicima.
+Veličina imena, tj. slova prevodioca zavisi od toga koliko je poruka preveo. 
+Boja linije s kojom je ime podvučeno prikazuje koliko je prevodilac aktivan.',
 	'translate-save' => 'Snimi ($1)',
 	'translate-jssti-add' => 'Dodaj na spisak',
 	'translate-manage-cacheat' => 'Uvezeno $1, u $2',

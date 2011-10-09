@@ -192,7 +192,7 @@ Failures will be logged in the [[Special:Log/pagetranslation|page translation lo
  */
 $messages['qqq'] = array(
 	'pagetranslation' => 'Title of [[Special:PageTranslation]] and its name in [[Special:SpecialPages]].',
-	'right-pagetranslation' => '{{doc-right}}',
+	'right-pagetranslation' => '{{doc-right|pagetranslation}}',
 	'tpt-desc' => '{{desc}}',
 	'tpt-sections-oldnew' => '"New and existing" refers to the sum of: (a) new translation units in a translatable page, plus (b) the already existing ones from previous version of a translatable page.',
 	'tpt-saveok' => '$1 is a page title,
@@ -5501,7 +5501,7 @@ Dejanje izbrisa ne bo izvedeno takoj, ker je potrebno izbrisati veliko strani.
 Neuspehi bodo zabeleženi v [[Special:Log/pagetranslation|dnevniku prevajanja strani]] in jih morate urediti ročno.',
 );
 
-/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Rancher
  * @author Михајло Анђелковић
  */
@@ -5512,6 +5512,7 @@ $messages['sr-ec'] = array(
 	'tpt-submit' => 'Означи ову верзију за превод',
 	'translate-tag-translate-link-desc' => 'Преведите ову страну',
 	'tpt-translation-intro' => 'Ова страница је <span class="plainlinks">[$1 преведено издање]</span> странице [[$2]]. Превод је $3% завршен.',
+	'tpt-languages-separator' => '&#160;•&#160;',
 );
 
 /** Serbian Latin ekavian (‪Srpski (latinica)‬)
