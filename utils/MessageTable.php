@@ -13,9 +13,8 @@
  */
 class MessageTable {
 	protected $reviewMode = false;
-	protected $collection = null;
-	protected $group = null;
-	protected $code = null;
+	protected $collection;
+	protected $group;
 	protected $editLinkParams = array();
 
 	protected $headers = array(
@@ -24,22 +23,18 @@ class MessageTable {
 		'default' => array( 'msg', 'allmessagesdefault' ),
 	);
 
-	public function __construct( MessageCollection $collection, MessageGroup $group, $code ) {
+	public function __construct( MessageCollection $collection, MessageGroup $group ) {
 		$this->collection = $collection;
 		$this->group = $group;
-		$this->code = $code;
 		$this->setHeaderText( 'table', $group->getLabel() );
 		$this->appendEditLinkParams( 'loadgroup', $group->getId() );
 	}
 
-	/**
-	 * @param $array array
-	 */
 	public function setEditLinkParams( array $array ) {
 		$this->editLinkParams = $array;
 	}
 
-	public function appendEditLinkParams( $key, $value ) {
+	public function appendEditLinkParams( /*string*/ $key, /*string*/ $value ) {
 		$this->editLinkParams[$key] = $value;
 	}
 
@@ -105,10 +100,6 @@ class MessageTable {
 
 		$optional = wfMsgHtml( 'translate-optional' );
 
-		$mlang = Language::factory( $this->code );
-		$mespa = array( 'dir' => $mlang->getDir(), 'lang' => $this->code );
-		unset( $mlang );
-
 		$batch = new LinkBatch();
 		if ( method_exists( $batch, 'setCaller' ) ) {
 			$batch->setCaller( __METHOD__ );
@@ -122,6 +113,9 @@ class MessageTable {
 
 		$batch->execute();
 
+		$sourceLang = Language::factory( $this->group->getSourceLanguage() );
+		$targetLang = Language::factory( $this->collection->getLanguage() );
+
 		$output =  '';
 		$this->collection->initMessages(); // Just to be sure
 		foreach ( $this->collection as $key => $m ) {
@@ -129,13 +123,15 @@ class MessageTable {
 			$title = $this->keyToTitle( $key );
 
 			$original = $m->definition();
-			# @todo Handle directionality of fallback language(s)
-			if ( $m->translation() ) {
+
+			if ( $m->translation() !== null ) {
 				$message = $m->translation();
-				$rclasses = array_merge ( $mespa, array( 'class' => 'translated' ) );
+				$rclasses = self::getLanguageAttributes( $targetLang );
+				$rclasses['class'] = 'translated';
 			} else {
 				$message = $original;
-				$rclasses = array( 'lang' => 'en', 'dir' => 'ltr', 'class' => 'untranslated' );
+				$rclasses = self::getLanguageAttributes( $sourceLang );
+				$rclasses['class'] = 'untranslated';
 			}
 
 			global $wgLang;
@@ -208,5 +204,17 @@ class MessageTable {
 		$namespace = $this->group->getNamespace();
 
 		return Title::makeTitle( $namespace, $titleText );
+	}
+
+	protected static function getLanguageAttributes( Language $language ) {
+		global $wgTranslateDocumentationLanguageCode;
+		$code = $language->getCode();
+		$dir = $language->getDir();
+		if ( $code === $wgTranslateDocumentationLanguageCode ) {
+			// Should be good enough for now
+			$code = 'en';
+		}
+
+		return array( 'lang' => $code, 'dir' => $dir );
 	}
 }

@@ -81,6 +81,11 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	}
 
+	/// @return String
+	public function getLanguage() {
+		return $this->code;
+	}
+
 	// Data setters
 
 	/**

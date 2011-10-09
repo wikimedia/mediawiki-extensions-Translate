@@ -188,8 +188,7 @@ class ViewMessagesTask extends TranslateTask {
 	}
 
 	protected function output() {
-		$code = $this->options->getLanguage();
-		$table = new MessageTable( $this->collection, $this->group, $code );
+		$table = new MessageTable( $this->collection, $this->group );
 		$table->appendEditLinkParams( 'loadtask', $this->getId() );
 
 		return $table->fullTable();
@@ -212,8 +211,7 @@ class ReviewMessagesTask extends ViewMessagesTask {
 	}
 
 	protected function output() {
-		$code = $this->options->getLanguage();
-		$table = new MessageTable( $this->collection, $this->group, $code );
+		$table = new MessageTable( $this->collection, $this->group );
 		$table->appendEditLinkParams( 'loadtask', $this->getId() );
 		$table->setReviewMode();
 
