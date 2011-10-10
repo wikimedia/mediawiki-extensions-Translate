@@ -174,7 +174,7 @@ array(
 	'group' => 'ext-checkuser',
 	'check' => 'variable',
 	'message' => array(
-		'group-checkuser-member', // Optional PLURAL parameter
+		'group-checkuser-member', // Optional GENDER parameter
 	)
 ),
 array(
@@ -182,7 +182,7 @@ array(
 	'check' => 'variable',
 	'message' => array(
 		'code-stats-main', // Optional time parameters
-		'group-svnadmins-member', // Optional PLURAL parameter
+		'group-svnadmins-member', // Optional GENDER parameter
 	)
 ),
 array(
