@@ -25,24 +25,27 @@ class TranslatePreferences {
 	public static function onGetPreferences( $user, &$preferences ) {
 		global $wgTranslateNewsletterPreference;
 
-		if( $wgTranslateNewsletterPreference === true ) {
-			global $wgEnableEmail, $wgEnotifRevealEditorAddress;
-			// Only show is e-mail is enabled and user has a confirmed e-mail address.
-			if ( $wgEnableEmail && $user->isEmailConfirmed() ) {
-				// 'translate-pref-nonewsletter' is used as opt-out for
-				// users with a confirmed e-mail address
-				$prefs = array(
-					'translate-nonewsletter' => array(
-						'type' => 'toggle',
-						'section' => 'personal/email',
-						'label-message' => 'translate-pref-nonewsletter'
-					)
-				);
+		if( !$wgTranslateNewsletterPreference ) {
+			return true;
+		}
 
-				// Add setting after 'enotifrevealaddr'
-				$preferences = wfArrayInsertAfter( $preferences, $prefs,
-					$wgEnotifRevealEditorAddress ? 'enotifrevealaddr' : 'enotifminoredits' );
-			}
+		global $wgEnableEmail, $wgEnotifRevealEditorAddress;
+
+		// Only show if e-mail is enabled and user has a confirmed e-mail address.
+		if ( $wgEnableEmail && $user->isEmailConfirmed() ) {
+			// 'translate-pref-nonewsletter' is used as opt-out for
+			// users with a confirmed e-mail address
+			$prefs = array(
+				'translate-nonewsletter' => array(
+					'type' => 'toggle',
+					'section' => 'personal/email',
+					'label-message' => 'translate-pref-nonewsletter'
+				)
+			);
+
+			// Add setting after 'enotifrevealaddr'.
+			$preferences = wfArrayInsertAfter( $preferences, $prefs,
+				$wgEnotifRevealEditorAddress ? 'enotifrevealaddr' : 'enotifminoredits' );
 		}
 
 		return true;
