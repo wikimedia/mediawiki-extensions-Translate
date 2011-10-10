@@ -7419,7 +7419,7 @@ Prema no nome do grupo de mensaxes para ollar a lista coas mensaxes sen traducir
 	'translate-page-navigation-legend' => 'Navegación',
 	'translate-page-showing' => 'Mostrando as mensaxes da $1 á $2, dun total de $3.',
 	'translate-page-showing-all' => 'Mostrando {{PLURAL:$1|unha mensaxe|$1 mensaxes}}.',
-	'translate-page-showing-none' => 'Non hai ningunha mensaxe que amosar.',
+	'translate-page-showing-none' => 'Non hai ningunha mensaxe que mostrar.',
 	'translate-next' => 'Páxina seguinte',
 	'translate-prev' => 'Páxina anterior',
 	'translate-page-description-legend' => 'Información acerca do grupo',
@@ -7501,9 +7501,9 @@ A lista de linguas por defecto depende da súa.',
 	'right-translate-import' => 'Importar as traducións sen conexión',
 	'translate-rc-translation-filter' => 'Filtrar as traducións:',
 	'translate-rc-translation-filter-no' => 'Non facer nada',
-	'translate-rc-translation-filter-only' => 'Amosar só as traducións',
-	'translate-rc-translation-filter-filter' => 'Amosar o que non sexan traducións',
-	'translate-rc-translation-filter-site' => 'Amosar só os cambios nas mensaxes do sitio',
+	'translate-rc-translation-filter-only' => 'Mostrar só as traducións',
+	'translate-rc-translation-filter-filter' => 'Mostrar o que non sexan traducións',
+	'translate-rc-translation-filter-site' => 'Mostrar só os cambios nas mensaxes do sitio',
 	'translationstats' => 'Estatísticas das traducións',
 	'translate-stats-edits' => 'Edicións',
 	'translate-stats-users' => 'Tradutores',
@@ -17129,6 +17129,7 @@ Cazze 'u nome d'u gruppe de le messagge pe vedè l'elenghe de le messagge da tra
 /** Russian (Русский)
  * @author Ahonc
  * @author AlexSm
+ * @author Askarmuk
  * @author Byulent
  * @author Ferrer
  * @author Huuchin
@@ -17300,6 +17301,7 @@ $messages['ru'] = array(
 	'languagestats-summary' => 'На этой странице представлена статистика переводов для всех групп сообщений данного языка.',
 	'languagestats-stats-for' => 'Статистика переводов для $1 ($2).',
 	'languagestats-recenttranslations' => 'недавние переводы',
+	'translate-langstats-incomplete' => 'Некоторые статистические данные на этой странице являются неполными. Для получения полных данных перезагрузите страницу.',
 	'translate-langstats-expand' => 'раскрыть',
 	'translate-langstats-collapse' => 'свернуть',
 	'translate-langstats-expandall' => 'раскрыть все',
@@ -17307,6 +17309,7 @@ $messages['ru'] = array(
 	'translate-language-code' => 'Код языка',
 	'translate-language-code-field-name' => 'Код языка:',
 	'translate-suppress-complete' => 'Не показывать полностью переведённые группы сообщений',
+	'translate-ls-noempty' => 'Не показывать полностью непереведенные группы сообщений',
 	'translate-language' => 'Язык',
 	'translate-total' => 'Сообщения',
 	'translate-untranslated' => 'Непереведённые',
@@ -17315,6 +17318,18 @@ $messages['ru'] = array(
 	'translate-nothing-to-do' => 'По всей видимости, все возможные переводы уже сделаны.
 Вы можете проверить сообщения с помощью [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Сообщения всех групп',
+	'translate-ls-submit' => 'Показать статистику',
+	'translate-ls-column-group' => 'Группа сообщений',
+	'translate-mgs-pagename' => 'Статистика групп сообщений',
+	'translate-mgs-fieldset' => 'Показать настройки',
+	'translate-mgs-group' => 'Группа сообщений:',
+	'translate-mgs-nocomplete' => 'Не показывать языки, перевод на которые полностью завершен',
+	'translate-mgs-noempty' => 'Не показывать языки, перевод на которые еще на начинался',
+	'translate-mgs-submit' => 'Показать статистику',
+	'translate-mgs-column-language' => 'Язык',
+	'translate-mgs-totals' => 'Все языки',
+	'translate-mgs-invalid-group' => 'Указанная группа $1 не существует.',
+	'translate-mgs-nothing' => ' По запросу ничего не найдено',
 	'supportedlanguages' => 'Поддерживаемые языки',
 	'supportedlanguages-summary' => 'На этой странице приведён список поддерживаемых проектом {{SITENAME}} языков и имена переводчиков, работающих над ними.
 Более подробную информацию о конкретном языке, вы можете найти нажав на ссылку языкового портала соответствующего языка.
@@ -17324,6 +17339,7 @@ $messages['ru'] = array(
 
 Если вы переводите на некоторый язык, но ваше имя не включено в список, пожалуйста, добавить своё имя в список переводчиков на [[:Category:Languages|портале]] данного языка.
 Ссылку на языковой портал языка из ваших настроек можно найти в меню.',
+	'supportedlanguages-colorlegend' => 'Цветовая легенда: последний перевод был $1 дней назад.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Переводчик|Переводчики}}: $1',
 	'supportedlanguages-recenttranslations' => 'недавние переводы',
 	'supportedlanguages-count' => 'Всего $1 {{plural:$1|язык|языка|языков}}',

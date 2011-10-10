@@ -5074,6 +5074,7 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (Русский)
+ * @author Askarmuk
  * @author Ferrer
  * @author G0rn
  * @author Grigol
@@ -5198,6 +5199,10 @@ $messages['ru'] = array(
 	'pt-deletepage-full-legend' => 'Удалить доступную для перевода страницу',
 	'pt-deletepage-any-legend' => 'Удалить доступную для перевода страницу или её перевод',
 	'pt-deletepage-current' => 'Название страницы:',
+	'pt-deletepage-reason' => 'Причина',
+	'pt-deletepage-subpages' => 'Удалить все подстраницы',
+	'pt-deletepage-list-pages' => 'Список страниц для удаления',
+	'pt-deletepage-list-other' => 'Другие подстраницы',
 );
 
 /** Rusyn (Русиньскый)
