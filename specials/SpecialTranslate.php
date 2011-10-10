@@ -195,7 +195,7 @@ class SpecialTranslate extends SpecialPage {
 
 		// These are used, in the $$g black magic below. Do not remove!
 		$task = $this->taskSelector();
-		$group = TranslateUtils::groupSelector( $this->group->getId() )->getHTML();
+		$group = TranslateUtils::groupSelector( $this->group ? $this->group->getId() : null )->getHTML();
 		$language = $this->languageSelector();
 		$limit = $this->limitSelector();
 
