@@ -159,12 +159,12 @@ class MessageTable {
 			if ( $this->reviewMode && $original !== $message ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
 					Xml::tags( 'td', array( 'rowspan' => '2' ), $leftColumn ) .
-					Xml::tags( 'td', array( 'lang' => 'en', 'dir' => 'ltr' ),
+					Xml::tags( 'td', self::getLanguageAttributes( $sourceLang ),
 						TranslateUtils::convertWhiteSpaceToHTML( $original ) )
 				);
 
 				$output .= Xml::tags( 'tr', array( 'class' => 'new' ),
-					Xml::tags( 'td', $mespa, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
+					Xml::tags( 'td', $rclasses, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			} else {
 				$output .= Xml::tags( 'tr', array( 'class' => 'def' ),
