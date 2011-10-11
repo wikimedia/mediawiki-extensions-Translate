@@ -24,6 +24,7 @@ $wgAutoloadClasses['TranslateUtils'] = $dir . 'TranslateUtils.php';
 $wgAutoloadClasses['TranslateHooks'] = $dir . 'TranslateHooks.php';
 
 $wgAutoloadClasses['MessageChecker'] = $dir . 'MessageChecks.php';
+$wgAutoloadClasses['MediaWikiMessageChecker'] = $dir . 'MediaWikiMessageChecker.php';
 
 $wgAutoloadClasses['MessageGroup'] = $dir . 'Groups.php';
 $wgAutoloadClasses['MessageGroupBase'] = $dir . 'Groups.php';
