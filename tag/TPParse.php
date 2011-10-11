@@ -96,7 +96,7 @@ class TPParse {
 					$storedText = $this->dbSections[$s->id]->text;
 					if ( $s->text !== $storedText ) {
 						$s->type = 'changed';
-						$s->oldtext = $storedText;
+						$s->oldText = $storedText;
 					}
 				}
 			}
