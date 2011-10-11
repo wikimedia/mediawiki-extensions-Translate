@@ -335,19 +335,6 @@ $wgEnablePageTranslation = false;
  */
 $wgPageTranslationNamespace = 1198;
 
-/**
- * Hack to reduce database queries due to indirection in the database
- * layout. May go away in future.
- * Example:
- *  $wgTranslateStaticTags = array(
- *  	"tp:mark" => 3,
- *  	"tp:tag" => 4,
- *  	"tp:transver" => 5
- *  );
- */
-$wgTranslateStaticTags = false;
-
-
 # === Message group configuration ===
 
 /**
