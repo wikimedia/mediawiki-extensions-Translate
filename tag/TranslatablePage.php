@@ -433,8 +433,8 @@ class TranslatablePage {
 	/**
 	 * Adds a tag which indicates that this page is
 	 * suitable for translation.
-	 * @param $revision integer
-	 * @param null $value
+	 * @param $revision integer|Revision
+	 * @param $value string
 	 */
 	public function addMarkedTag( $revision, $value = null ) {
 		$this->addTag( 'tp:mark', $revision, $value );
@@ -444,12 +444,18 @@ class TranslatablePage {
 	/**
 	 * Adds a tag which indicates that this page source is
 	 * ready for marking for translation.
-	 * @param $revision integer
+	 * @param $revision integer|Revision
 	 */
 	public function addReadyTag( $revision ) {
 		$this->addTag( 'tp:tag', $revision );
 	}
 
+	/**
+	 * @param $tag
+	 * @param $revision Revision
+	 * @param $value string
+	 * @throws MWException
+	 */
 	protected function addTag( $tag, $revision, $value = null ) {
 		$dbw = wfGetDB( DB_MASTER );
 

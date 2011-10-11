@@ -376,10 +376,10 @@ class MessageWebImporter {
 	 * @static
 	 * @throws MWException
 	 * @param Title $title
-	 * @param  $message
-	 * @param  $comment
-	 * @param null $user
-	 * @param int $editFlags
+	 * @param $message
+	 * @param $comment
+	 * @param $user User
+	 * @param $editFlags
 	 * @return array
 	 */
 	public static function doImport( $title, $message, $comment, $user = null, $editFlags = 0 ) {
