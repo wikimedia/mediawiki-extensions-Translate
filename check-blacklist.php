@@ -360,6 +360,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-patroller',
+	'check' => 'variable',
+	'message' => array(
+		'group-patroller-member', // Optional GENDER parameter
+	)
+),
+array(
 	'group' => 'ext-push',
 	'check' => 'variable',
 	'message' => array(
@@ -519,36 +526,36 @@ array(
 	'group' => 'ext-wikimediamessages',
 	'check' => 'variable',
 	'message' => array(
-	'group-abusefilter-member', // Optional GENDER parameter
-	'group-accountcreator-member', // Optional GENDER parameter
-	'group-arbcom-member', // Optional GENDER parameter
-	'group-autopatrolled-member', // Optional GENDER parameter
-	'group-autoreviewer-member', // Optional GENDER parameter
-	'group-bigexport-member', // Optional GENDER parameter
-	'group-confirmed-member', // Optional GENDER parameter
-	'group-editprotected-member', // Optional GENDER parameter
-	'group-eliminator-member', // Optional GENDER parameter
-	'group-filemover-member', // Optional GENDER parameter
-	'group-flood-member', // Optional GENDER parameter
-	'group-founder-member', // Optional GENDER parameter
-	'group-Image-reviewer-member', // Optional GENDER parameter
-	'group-import-member', // Optional GENDER parameter
-	'group-interface_editors-member', // Optional GENDER parameter
-	'group-ipblock-exempt-member', // Optional GENDER parameter
-	'group-OTRS-member-member', // Optional GENDER parameter
-	'group-patroller-member', // Optional GENDER parameter
-	'group-researcher-member', // Optional GENDER parameter
-	'group-rollbacker-member', // Optional GENDER parameter
-	'group-transwiki-member', // Optional GENDER parameter
-	'group-trusted-member', // Optional GENDER parameter
-	'group-steward-member', // Optional GENDER parameter
-	'group-sysadmin-member', // Optional GENDER parameter
-	'group-editinterface-member', // Optional GENDER parameter
-	'group-Global_bot-member', // Optional GENDER parameter
-	'group-Global_rollback-member', // Optional GENDER parameter
-	'group-Global_sysops-member', // Optional GENDER parameter
-	'group-Ombudsmen-member', // Optional GENDER parameter
-	'group-Staff-member', // Optional GENDER parameter
+		'group-abusefilter-member', // Optional GENDER parameter
+		'group-accountcreator-member', // Optional GENDER parameter
+		'group-arbcom-member', // Optional GENDER parameter
+		'group-autopatrolled-member', // Optional GENDER parameter
+		'group-autoreviewer-member', // Optional GENDER parameter
+		'group-bigexport-member', // Optional GENDER parameter
+		'group-confirmed-member', // Optional GENDER parameter
+		'group-editprotected-member', // Optional GENDER parameter
+		'group-eliminator-member', // Optional GENDER parameter
+		'group-filemover-member', // Optional GENDER parameter
+		'group-flood-member', // Optional GENDER parameter
+		'group-founder-member', // Optional GENDER parameter
+		'group-Image-reviewer-member', // Optional GENDER parameter
+		'group-import-member', // Optional GENDER parameter
+		'group-interface_editors-member', // Optional GENDER parameter
+		'group-ipblock-exempt-member', // Optional GENDER parameter
+		'group-OTRS-member-member', // Optional GENDER parameter
+		'group-patroller-member', // Optional GENDER parameter
+		'group-researcher-member', // Optional GENDER parameter
+		'group-rollbacker-member', // Optional GENDER parameter
+		'group-transwiki-member', // Optional GENDER parameter
+		'group-trusted-member', // Optional GENDER parameter
+		'group-steward-member', // Optional GENDER parameter
+		'group-sysadmin-member', // Optional GENDER parameter
+		'group-editinterface-member', // Optional GENDER parameter
+		'group-Global_bot-member', // Optional GENDER parameter
+		'group-Global_rollback-member', // Optional GENDER parameter
+		'group-Global_sysops-member', // Optional GENDER parameter
+		'group-Ombudsmen-member', // Optional GENDER parameter
+		'group-Staff-member', // Optional GENDER parameter
 	)
 ),
 array(
