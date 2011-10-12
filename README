@@ -29,6 +29,8 @@ And for the code at:
  http://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2011-10-12
+- Multiple bug fixes and improvements to translatable page moving feature
 * 2011-10-07
 - $wgTranslateNewsletterPreference was introduced (default: false). Setting this
   to true, will once again add the "Do not send me e-mail newsletters"

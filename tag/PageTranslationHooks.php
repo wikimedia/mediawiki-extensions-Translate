@@ -519,7 +519,9 @@ FOO;
 		} elseif ( $action === 'unmark' ) {
 			return wfMsgExt( 'pt-log-unmark', $opts, $title->getPrefixedText(), $user );
 		} elseif ( $action === 'moveok' ) {
-			return wfMsgExt( 'pt-log-moveok', $opts, $title->getPrefixedText(), $user );
+			// Old entries are missing the target
+			$target = isset( $_['target'] ) ? $_['target'] : '[[]]';
+			return wfMsgExt( 'pt-log-moveok', $opts, $title->getPrefixedText(), $user, $target );
 		} elseif ( $action === 'movenok' ) {
 			return wfMsgExt( 'pt-log-movenok', $opts, $title->getPrefixedText(), $user, $_['target'] );
 		} elseif ( $action === 'deletefnok' ) {
@@ -543,9 +545,10 @@ FOO;
 
 	/// Hook: getUserPermissionsErrorsExpensive
 	public static function lockedPagesCheck( Title $title, User $user, $action, &$result ) {
-		global $wgMemc;
+		$cache = wfGetCache( CACHE_ANYTHING );
 		$key = wfMemcKey( 'pt-lock', $title->getPrefixedText() );
-		if ( $wgMemc->get( $key ) === true ) {
+		// At least memcached mangles true to "1"
+		if ( $cache->get( $key ) == true ) {
 			$result = array( 'pt-locked-page' );
 			return false;
 		}

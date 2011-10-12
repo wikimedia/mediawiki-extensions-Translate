@@ -353,16 +353,21 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$base = $this->oldTitle->getPrefixedText();
 		$oldLatest = $this->oldTitle->getLatestRevId();
 
+		$params = array(
+			'base-source' => $this->oldTitle->getPrefixedText(),
+			'base-target' => $this->newTitle->getPrefixedText(),
+		);
+
 		$translationPages = $this->getTranslationPages();
 		foreach ( $translationPages as $old ) {
 			$to = $this->newPageTitle( $base, $old, $target );
-			$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $base, $this->user );
+			$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $params, $this->user );
 		}
 
 		$sectionPages = $this->getSectionPages();
 		foreach ( $sectionPages as $old ) {
 			$to = $this->newPageTitle( $base, $old, $target );
-			$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $base, $this->user );
+			$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $params, $this->user );
 		}
 
 		if ( $this->moveSubpages ) {
@@ -373,14 +378,13 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 				}
 
 				$to = $this->newPageTitle( $base, $old, $target );
-				$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $base, $this->user );
+				$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $params, $this->user );
 			}
 		}
 
+		// This is used by MoveJob
+		wfGetCache( CACHE_ANYTHING )->set( wfMemcKey( 'translate-pt-move', $base ), count( $jobs ) );
 		Job::batchInsert( $jobs );
-
-		global $wgMemc;
-		$wgMemc->set( wfMemcKey( 'pt-base', $base ), array_keys( $jobs ), 60 * 60 * 6 );
 
 		MoveJob::forceRedirects( false );
 

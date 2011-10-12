@@ -31,6 +31,11 @@ class TranslateEditAddons {
 		}
 
 		$group = $handle->getGroup();
+		// Happens when translation page move is in progress
+		if ( !$group ) {
+			return true;
+		}
+
 		$key = $handle->getKey();
 		$code = $handle->getCode();
 		$collection = $group->initCollection( $group->getSourceLanguage() );
