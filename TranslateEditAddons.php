@@ -16,7 +16,6 @@
  * Also has code that is still relevant, like the hooks on save.
  */
 class TranslateEditAddons {
-
 	/**
 	 * Add some tabs for navigation for users who do not use Ajax interface.
 	 * Hooks: SkinTemplateNavigation, SkinTemplateTabs
@@ -123,10 +122,12 @@ class TranslateEditAddons {
 		$editpage->suppressIntro = true;
 
 		$msg = wfMsgForContent( 'translate-edit-tag-warning' );
+
 		if ( $msg !== '' && $msg !== '-' && TranslatablePage::isSourcePage( $editpage->mTitle ) ) {
 			global $wgOut;
 			$editpage->editFormTextTop .= $wgOut->parse( $msg );
 		}
+
 		return true;
 	}
 
@@ -172,10 +173,14 @@ class TranslateEditAddons {
 		}
 
 		global $wgTranslateSupportUrl;
-		if ( !$wgTranslateSupportUrl ) return true;
+		if ( !$wgTranslateSupportUrl ) {
+			return true;
+		}
 
 		$supportTitle = Title::newFromText( $wgTranslateSupportUrl['page'] );
-		if ( !$supportTitle ) return true;
+		if ( !$supportTitle ) {
+			return true;
+		}
 
 		$supportParams = $wgTranslateSupportUrl['params'];
 		foreach ( $supportParams as &$value ) {
@@ -383,6 +388,7 @@ class TranslateEditAddons {
 		if ( count( $checks ) ) {
 			$fuzzy = true;
 		}
+
 		return $fuzzy;
 	}
 
@@ -484,9 +490,10 @@ class TranslateEditAddons {
 		$boxes[] = $th->getDocumentationBox();
 		$boxes[] = $th->getDefinitionBox();
 		$boxes[] = $th->getTranslationDisplayBox();
+
 		$output = Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
 		$out->addHtml( $output );
+
 		return false;
 	}
-
 }

@@ -34,8 +34,10 @@ class PageTranslationHooks {
 		if ( $page ) {
 			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 			$name = $page->getPageDisplayTitle( $code );
+
 			if ( $name ) {
 				$realFunction = array( 'MessageCache', 'singleton' );
+
 				if ( is_callable( $realFunction ) ) {
 					$cache = MessageCache::singleton();
 				} else {
@@ -60,12 +62,14 @@ class PageTranslationHooks {
 			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 			$pageLang = $code;
 		}
+
 		return true;
 	}
 
 	/// Hook: OutputPageBeforeHTML
 	public static function injectCss( OutputPage $outputpage, /*string*/ $text ) {
 		$outputpage->addModules( 'ext.translate' );
+
 		return true;
 	}
 
@@ -203,11 +207,11 @@ class PageTranslationHooks {
 			/* Percentages are too accurate and take more
 			 * space than simple images */
 			$percent *= 100;
-			if     ( $percent < 20 ) $image = 1;
-			elseif ( $percent < 40 ) $image = 2;
-			elseif ( $percent < 60 ) $image = 3;
-			elseif ( $percent < 80 ) $image = 4;
-			else                     $image = 5;
+			if     ( $percent < 20 ) { $image = 1; }
+			elseif ( $percent < 40 ) { $image = 2; }
+			elseif ( $percent < 60 ) { $image = 3; }
+			elseif ( $percent < 80 ) { $image = 4; }
+			else                     { $image = 5; }
 
 			$percent = Xml::element( 'img', array(
 				'src'   => TranslateUtils::assetPath( "images/prog-$image.png" ),
@@ -608,5 +612,4 @@ FOO;
 
 		return true;
 	}
-
 }
