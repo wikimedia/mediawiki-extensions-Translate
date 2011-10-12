@@ -748,7 +748,6 @@ ar {{PLURAL:$1|stumm|stummoù}} diwezhañ avat n'hallont ket bezañ merket da ve
 Ur stumm troet eus [[$1]] eo ar bajenn-mañ; gallout a ra bezañ hizivaet en ur implijout [$2 an ostilh treiñ].",
 	'tpt-unknown-page' => "Miret eo an esaouenn anv-mañ evit troidigezh ar pajennoù.
 Ar bajenn hoc'h eus klasket kemm ne seblant ket klotañ gant pajenn ebet bet merket evit bezañ troet.",
-	'tpt-install' => 'Lañsit php maintenance/update.php pe ar staliadur web evit gweredekaat an treiñ pajennoù.',
 	'tpt-render-summary' => 'Hizivadenn da glotañ gant stumm nevez mammenn ar bajenn',
 	'tpt-download-page' => 'Ezporzhiañ ar bajenn gant an troidigezhioù',
 	'pt-parse-open' => 'Balizenn &lt;translate> digempouez.
@@ -875,7 +874,6 @@ ali {{PLURAL:$1|posljednja verzija ne može|posljednje verzije ne mogu}} biti {{
 Ova stranica je prijevod stranice [[$1]] a prevodi se mogu ažurirati putem [$2 alata za prevođenje].',
 	'tpt-unknown-page' => 'Ovaj imenski prostor je rezervisan za prevode stranica sadržaja.
 Stranica koju pokušavate uređivati ne odgovara nekoj od stranica koje su označene za prevođenje.',
-	'tpt-install' => 'Pokrenite php maintenance/update.php ili web install da biste omogućili osobinu prevođenja stranica.',
 	'tpt-render-summary' => 'Ažuriram na novu verziju izvorne stranice',
 	'tpt-download-page' => 'Izvezi stranicu sa prijevodima',
 	'pt-parse-open' => 'Neuravnotežena &lt;translate> oznaka.
@@ -1148,7 +1146,6 @@ men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til 
 Siden er en oversættelse af siden [[$1]] og oversættelsen kan opdateres ved at bruge [$2 oversættelsesværktøjet].',
 	'tpt-unknown-page' => 'Dette navnerum er reserveret til oversættelser af indholdssider.
 Siden som du prøver at redigere, ser ikke ud til at svare til nogen side markeret for oversættelse.',
-	'tpt-install' => 'Kør php maintenance/update.php eller webinstallering for at slå sideoversættelsesfunktionen til.',
 	'tpt-render-summary' => 'Opdaterer for at passe til en ny version af kildesiden',
 	'tpt-download-page' => 'Eksportér side med oversættelser',
 	'pt-parse-open' => 'Ubalanceret &lt;translate> tag.
@@ -1290,7 +1287,6 @@ Die neueste Version kann hingegen nicht als zu Übersetzen markiert werden.',
 Diese Seite ist eine Übersetzung der Seite [[$1]] und die Übersetzung kann mithilfe des [$2 Übersetzungswerkzeuges] aktualisiert werden.',
 	'tpt-unknown-page' => 'Dieser Namensraum ist für das Übersetzen von Wikiseiten reserviert.
 Die Seite, die gerade bearbeitet wird, hat keine Verbindung zu einer übersetzbaren Seite.',
-	'tpt-install' => 'Bitte <tt>maintenance/update.php</tt> oder Webinstallation ausführen, um die Seitenübersetzung zu aktivieren.',
 	'tpt-render-summary' => 'Übernehme Bearbeitung einer neuen Version der Quellseite',
 	'tpt-download-page' => 'Seite mit Übersetzungen exportieren',
 	'pt-parse-open' => 'Eine &lt;translate&gt;-Markierung hat kein Gegenstück. 
@@ -1308,7 +1304,7 @@ Text des Abschnitts: <pre>$1</pre>',
 	'pt-log-name' => 'Übersetzungs-Logbuch',
 	'pt-log-mark' => '{{GENDER:$2|gab}} Version $3 der Seite „[[:$1]]“ zur Übersetzung frei',
 	'pt-log-unmark' => '{{GENDER:$2|entfernte}} Seite „[[:$1]]“ aus der Übersetzung',
-	'pt-log-moveok' => '{{GENDER:$2|schloss}} die Umbenennung der übersetzbaren Seite $1 auf einen neuen Namen ab',
+	'pt-log-moveok' => '{{GENDER:$2|schloss}} die Umbenennung der übersetzbaren Seite $1 auf $3 ab',
 	'pt-log-movenok' => '{{GENDER:$2|hat}} ein Problem während der Verschiebung von [[:$1]] nach [[:$3]]',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|schloss}} das Löschen der übersetzbaren Seite $1 ab',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|hatte}} ein Problem während des Löschens der übersetzbaren Seite [[:$1]]',
@@ -1442,7 +1438,6 @@ ale nejnowša wersija njedajo se za pśełožowanje markěrowaś.',
 Toś ten bok jo pśełožk boka [[$1]] a pśełožk dajo se z pomocu [$2 Pśełožyś] aktualizěrowaś.',
 	'tpt-unknown-page' => 'Toś ten mjenjowy rum jo za pśełožki wopśimjeśowych bokow wuměnjony.
 Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kótaryž jo za pśełožowanje markěrowany.',
-	'tpt-install' => 'Wuwjeź php maintenance/update.php abo webinstalaciju, aby zmóžnił funkciju pśełožowanja bokow.',
 	'tpt-render-summary' => 'Aktualizacija pó nowej wersiji žrědłowego boka',
 	'tpt-download-page' => 'Bok z pśełožkami eksportěrowaś',
 	'pt-parse-open' => 'Asymetriska toflicka &lt;translate>.
@@ -1642,7 +1637,6 @@ pero la última versión no puede ser marcada para traducción.',
 Esta página es una traducción de la página [[$1]] y la traducción puede ser actualizada usando [$2 la herramienta de traducción].',
 	'tpt-unknown-page' => 'Este espacio de nombre está reservado para traducciones de páginas de contenido.
 La página que estás tratando de editar no parece corresponder con alguna página marcada para traducción.',
-	'tpt-install' => 'Ejecute maintenance/update.php o instale desde la web para activar las funciones de traducción.',
 	'tpt-render-summary' => 'Actualizando para hallar una nueva versión de la página fuente',
 	'tpt-download-page' => 'Exportar página con traducciones',
 	'pt-parse-open' => 'Etiqueta &lt;translate> desequilibrada.
@@ -1818,7 +1812,6 @@ mutta viimeisintä versiota ei voi merkitä käännettäväksi.',
 Tämä sivu on käännös sivusta [[$1]] ja käännöstä voi päivittää käyttämällä [$2 käännöstyökalua].',
 	'tpt-unknown-page' => 'Tämä nimiavaruus on varattu sisältösivujen käännöksille.
 Sivu, jota yrität muokata, ei näytä vastaavan mitään sivua, joka on merkitty käännettäväksi.',
-	'tpt-install' => 'Suorita maintenance/update.php tai verkkoasennus, jotta sivujen käännösominaisuus toimii.',
 	'tpt-render-summary' => 'Päivittäminen vastaamaan uutta versiota lähdesivusta',
 	'tpt-download-page' => 'Sivun vienti käännösten kera',
 	'pt-parse-open' => 'Sulkematon &lt;translate>-tägi.
@@ -1936,7 +1929,6 @@ mais {{PLURAL:$1|sa dernière version|leur dernière version respective}} ne peu
 Elle est une version traduite de [[$1]] et la traduction peut être mise à jour en utilisant [$2 l’outil de traduction].',
 	'tpt-unknown-page' => 'Cet espace de noms est réservé pour la traduction de pages.
 La page que vous essayé de modifier ne semble correspondre à aucune page marquée pour être traduite.',
-	'tpt-install' => 'Lancez « php maintenance/update.php » ou l’installation web pour activer la fonctionnalité de traduction de pages.',
 	'tpt-render-summary' => 'Mise à jour pour être en accord avec la nouvelle version de la source de la page',
 	'tpt-download-page' => 'Exporter la page avec ses traductions',
 	'pt-parse-open' => 'Balise &lt;translate> asymétrique.
@@ -2075,7 +2067,6 @@ mas {{PLURAL:$1|la dèrriére vèrsion pôt pas étre marcâ|les dèrriéres vè
 El est una traduccion de [[$1]] et la traduccion pôt étre betâ a jorn en utilisent l’[$2 outil de traduccion].',
 	'tpt-unknown-page' => 'Ceti èspâço de noms est resèrvâ por la traduccion de pâges de contegnu.
 La pâge que vos tâchiéd de changiér semble corrèspondre a gins de pâge marcâ por la traduccion.',
-	'tpt-install' => 'Lanciéd « php maintenance/update.php » ou ben l’enstalacion vouèbe por activar la fonccionalitât de traduccion de pâges.',
 	'tpt-render-summary' => 'Misa a jorn por étre en acôrd avouéc la novèla vèrsion de la pâge d’origina',
 	'tpt-download-page' => 'Èxportar la pâge avouéc ses traduccions',
 	'pt-parse-open' => 'Balisa &lt;translate> asimètrica.
@@ -2227,7 +2218,7 @@ Texto da sección: <pre>$1</pre>',
 	'pt-log-name' => 'Rexistro de páxinas de tradución',
 	'pt-log-mark' => '{{GENDER:$2|marcou}} a revisión $3 da páxina "[[:$1]]" para traducir',
 	'pt-log-unmark' => '{{GENDER:$2|retirou}} a páxina "[[:$1]]" da tradución',
-	'pt-log-moveok' => '{{GENDER:$2|trasladou}} a páxina traducible "$1" a un novo nome',
+	'pt-log-moveok' => '{{GENDER:$2|trasladou}} a páxina traducible "$1" a "$3"',
 	'pt-log-movenok' => '{{GENDER:$2|deu}} cun problema ao mover "[[:$1]]" a "[[:$3]]"',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|completou}} o borrado da páxina traducible "$1"',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|atopou}} un problema durante o borrado da páxina traducible "[[:$1]]"',
@@ -2346,7 +2337,6 @@ Di {{PLURAL:$1|nejscht Version cha dergege nit markiert wäre, ass si mueß|nejs
 Die Syte isch e Ibersetzig vu dr Syte [[$1]] un d Ibersetzig cha aktualisert wäre mit em [$2 Ibersetzigstool].',
 	'tpt-unknown-page' => 'Dää Namensruum isch reserviert fir Ibersetzige vu Inhaltssyte.
 D Syte, wu Du witt bearbeite, ghert schyns zue keire Syte, wu zum Ibersetze markiert isch.',
-	'tpt-install' => 'php maintenance/update.php oder d Webinstallation laufe loo go s Syte-Ibersetzigs-Feature megli mache.',
 	'tpt-render-summary' => 'Aktualisiere zum e neji Version vu dr Quällsyte z finde',
 	'tpt-download-page' => 'Syte mit Ibersetzige exportiere',
 	'pt-parse-open' => 'Uasymmetrischi &lt;translate&gt;-Markierig.
@@ -2511,7 +2501,6 @@ $messages['he'] = array(
 דף זה הוא תרגום של הדף [[$1]] וניתן לעדכן את התרגום באמצעות [$2 כלי התרגום].',
 	'tpt-unknown-page' => 'מרחב שם זה שמור לצורך תרגומי דפי התוכן.
 הדף אותו אתם מנסים לערוך אינו תואם לאף דף המסומן לתרגום.',
-	'tpt-install' => 'הריצו php maintenance/update.php או התקנת רשת כדי לאפשר את תכונת תרגום הדפים.',
 	'tpt-render-summary' => 'עדכון להתאמת הגרסה החדשה של דף המקור',
 	'tpt-download-page' => 'ייצוא דף עם תרגומים',
 	'pt-parse-open' => 'תג &lt;translate> לא מאוזן.
@@ -2693,7 +2682,6 @@ ale aktualna wersija njehodźi so za přełožowanje markěrować..',
 Tuta strona je přełožk strony [[$1]] a přełožk hodźi so z pomocu [$2 Přełožić] aktualizować.',
 	'tpt-unknown-page' => 'Tutón mjenowy rum je za přełožki wobsahowych stronow wuměnjeny.
 Strona, kotruž pospytuješ wobdźěłać, po wšěm zdaću stronje markěrowanej za přełožowanje njewotpowěduje.',
-	'tpt-install' => 'Wuwjedź php maintenance/update.php ab webinstalaciju, zo by funkcija přełožowanje stronow zmóžnił.',
 	'tpt-render-summary' => 'Aktualizacija po nowej wersiji žórłoweje strony',
 	'tpt-download-page' => 'Stronu z přełožkami eksportować',
 	'pt-parse-open' => 'Asymetriska taflička &lt;translate>.
@@ -2961,7 +2949,6 @@ ma le ultime {{PLURAL:$1|version|versiones}} non pote esser marcate pro traducti
 Iste pagina es un traduction del pagina [[$1]] e le traduction pote esser actualisate con le [$2 instrumento de traduction].',
 	'tpt-unknown-page' => 'Iste spatio de nomines es reservate pro traductiones de paginas de contento.
 Le pagina que tu vole modificar non pare corresponder con alcun pagina marcate pro traduction.',
-	'tpt-install' => 'Executa maintenance/update.php o le installation web pro activar le traduction de paginas.',
 	'tpt-render-summary' => 'Actualisation a un nove version del pagina de origine',
 	'tpt-download-page' => 'Exportar pagina con traductiones',
 	'pt-parse-open' => 'Etiquetta &lt;translate> asymmetric.
@@ -3101,7 +3088,6 @@ tetapi {{PLURAL:$1|versi|versi}} terakhir tidak dapat ditandai untuk diterjemahk
 Halaman ini adalah terjemahan dari halaman [[$1]] dan terjemahannya dapat diperbarui menggunakan [$2 peralatan penerjemahan].',
 	'tpt-unknown-page' => 'Ruang nama ini dicadangkan untuk terjemahan halaman isi.
 Halaman yang ingin Anda sunting ini tampaknya tidak memiliki hubungan dengan halaman mana pun yang ditandai untuk diterjemahkan.',
-	'tpt-install' => 'Jalankan php maintenance/update.php atau instalasi web untuk mengaktifkan fitur terjemahan halaman.',
 	'tpt-render-summary' => 'Memperbarui ke revisi terbaru halaman sumber',
 	'tpt-download-page' => 'Ekspor halaman dengan terjemahan',
 	'pt-parse-open' => 'Tag &lt;translate> tidak seimbang.
@@ -3529,7 +3515,6 @@ $messages['ksh'] = array(
 	'tpt-languages-legend' => 'Ander Shprooche:',
 	'tpt-target-page' => 'Hee di Sigg kam_mer nit vun Hand ändere. Dat hee es en Översäzungß_Sigg vun dä Sigg [[$1]]. De Övversäzung kam_mer övver däm Wiki sing [$2 Övversäzungß_Wärkzüsch] op der neußte Shtand bränge.',
 	'tpt-unknown-page' => 'Dat Appachtemang hee es för Sigge vum Enhallt vum Wiki ze Övversäze jedaach. Di Sigg, di de jraad ze ändere versöhks, schingk ävver nit met ööhnds en Sigg ze donn ze han, di för zem Övversäze makeet es.',
-	'tpt-install' => 'Lohß op Dingem Wiki singem ẞööver dat Skrip <code>php maintenance/update.php</code> loufe, udder schmiiß dat Enreeschdungsprojramm övver et Web aan, öm de Müjjeleschkeit för Sigge ze övversäze en däm Wiki aan et Loufe ze bränge.',
 	'tpt-render-summary' => 'Ändere, öm op de neue Version fun de Ojinaal_Sigg ze kumme',
 	'tpt-download-page' => 'Sigge met Övversäzunge expotteere',
 	'pt-parse-open' => 'En &lt;translate&gt; es ohne Jääjeshtöck.
@@ -3691,7 +3676,6 @@ awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
 Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungs-Fonctioun] aktulaiséiert ginn.",
 	'tpt-unknown-page' => "Dëse Nummraum ass fir d'Iwwersetze vu Säitemat Inhalt reservéiert.
 D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iwwersetzung markéiert ass ze korrespondéieren.",
-	'tpt-install' => "Lancéiert php maintenance/update.php oder web install fir d'Fonctioun vun der Säiteniwwersetzung anzeschalten.",
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
 	'tpt-download-page' => 'Säit mat Iwwersetzungen exportéieren',
 	'pt-parse-open' => 'Netsymetreschen &lt;translate&gt;-Tag.
@@ -3847,7 +3831,6 @@ $messages['mk'] = array(
 Страницава е превод на страницата [[$1]], а преводот може да се обнови само со помош на [$2 алатката за преведување].',
 	'tpt-unknown-page' => 'Овој именски простор е резервиран за преводи на содржински страници.
 Страницата која се обидувате да ја уредите не соодветствува со ниедна страница обележана за преведување.',
-	'tpt-install' => 'Пуштете го php maintenance/update.php или интернет-инсталација за да ја добиете можноста за преведување страници.',
 	'tpt-render-summary' => 'Обнова за усогласување со новата верзија на изворната страница',
 	'tpt-download-page' => 'Извези страница со преводи',
 	'pt-parse-open' => 'Неврамнотежена &lt;translate> ознака.
@@ -4025,7 +4008,6 @@ tetapi {{PLURAL:$1|versi|versi-versi}} terkini tidak boleh ditandai untuk diterj
 Laman ini merupakan terjemahan laman [[$1]], dan terjemahannya boleh dikemas kini dengan menggunakan [$2 alatan penterjemahan].',
 	'tpt-unknown-page' => 'Ruang nama ini ditempah untuk penterjemahan laman kandungan.
 Laman yang anda cuba sunting itu nampaknya tidak berpadan dengan sebarang laman yang ditandai untuk diterjemah.',
-	'tpt-install' => 'Jalamkan php maintenance/update.php atau pemasangan web untuk menghidupkan ciri penterjemahan laman.',
 	'tpt-render-summary' => 'Mengemas kini agar sepadan dengan versi baru laman sumber',
 	'tpt-download-page' => 'Eksport laman dengan terjemahan',
 	'pt-parse-open' => 'Tag &lt;translate> tidak seimbang.
@@ -4133,6 +4115,7 @@ $messages['nah'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author SPQRobin
  * @author Siebrand
  */
 $messages['nl'] = array(
@@ -4189,7 +4172,6 @@ Deze pagina is een vertaling van de pagina [[$1]].
 De vertaling kan bijgewerkt worden via de [$2 vertaalhulpmiddelen].',
 	'tpt-unknown-page' => "Deze naamruimte is gereserveerd voor de vertalingen van van pagina's.
 De pagina die u probeert te bewerken lijkt niet overeen te komen met een te vertalen pagina.",
-	'tpt-install' => 'Voer php maintenance/update.php of de webinstallatie uit om de paginavertaling te activeren.',
 	'tpt-render-summary' => 'Bijgewerkt vanwege een nieuwe basisversie van de bronpagina',
 	'tpt-download-page' => 'Pagina met vertalingen exporteren',
 	'pt-parse-open' => 'Ongebalanceerd label &lt;translate>.
@@ -4207,7 +4189,7 @@ Sectietekst: <pre>$1</pre>',
 	'pt-log-name' => 'Logboek paginavertaling',
 	'pt-log-mark' => '{{GENDER:$2|heeft}} versie $3 van pagina "[[:$1]]" voor vertaling gemarkeerd',
 	'pt-log-unmark' => '{{GENDER:$2|heeft}} de vertalingsmarkering voor pagina "[[:$1]]" verwijderd',
-	'pt-log-moveok' => '{{GENDER:$2|heeft}} de te vertalen pagina $1 hernoemd',
+	'pt-log-moveok' => '{{GENDER:$2|hernoemde}} de te vertalen pagina $1 naar $3',
 	'pt-log-movenok' => '{{GENDER:$2|is}} een probleem tegengekomen bij het hernoemen van [[:$1]] naar [[:$3]]',
 	'pt-log-delete-full-ok' => 'heeft het verwijderen van de vertaalbare pagina $1 {{GENDER:$2|afgerond}}',
 	'pt-log-delete-full-nok' => 'is een probleem {{GENDER:$2|tegengekomen}} tijdens het verwijderen van de vertaalbare pagina [[:$1]]',
@@ -4374,7 +4356,6 @@ Før denne versjonen merkes for oversettelse, sjekk at endringene i avsnittene e
 Denne siden er en oversettelse av siden [[$1]] og oversettelsen kan bli oppdatert ved å bruke [$2 oversettelsesverktøyet].',
 	'tpt-unknown-page' => 'Dette navnerommet er reservert for oversettelser av innholdssider.
 Denne siden som du prøver å redigere ser ikke ut til å samsvare med noen av sidene som er markert for oversettelse.',
-	'tpt-install' => 'Kjør php maintenance/update.php eller nettinnstallering for å muliggjøre sideoversettelsesfunksjonen.',
 	'tpt-render-summary' => 'Oppdaterer for å svare til ny versjon av kildesiden',
 	'tpt-download-page' => 'Eksporter side med oversettelser',
 	'pt-parse-open' => 'Ubalansert &lt;translate>-element.
@@ -4559,7 +4540,6 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 Jest ona tłumaczeniem strony [[$1]], a tłumaczenie może zostać zmienione za pomocą [$2 narzędzia tłumacza].',
 	'tpt-unknown-page' => 'Ta przestrzeń nazw jest zarezerwowana dla tłumaczeń stron z zawartością.
 Strona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stronie oznaczonej do tłumaczenia.',
-	'tpt-install' => 'Uruchom php maintenance/update.php lub przeprowadź instalację webową, aby włączyć opcję tłumaczenia stron.',
 	'tpt-render-summary' => 'Aktualizowanie w celu dopasowania nowej wersji strony źródłowej',
 	'tpt-download-page' => 'Wyeksportuj stronę z tłumaczeniami',
 	'pt-parse-open' => 'Niezrównoważony znacznik &lt;translate>.
@@ -4675,7 +4655,6 @@ ma {{PLURAL:$1|l'ùltima version a peul|j'ùltime version a peulo}} pa esse marc
 Sta pàgina-sì a l'é na tradussion ëd la pàgina [[$1]] e la tradussion a peul esse modificà an dovrand [$2 l'utiss ëd tradussion].",
 	'tpt-unknown-page' => "Sto spassi nominal-sì a l'é riservà për tradussion ëd pàgine ëd contnù.
 La pàgina ch'it preuve a modifiché a smija pa ch'a corisponda a na pàgina marcà për tradussion.",
-	'tpt-install' => "Fa giré ël php maintnance/update php o l'instalassion dl'aragnà për abilité la possibilità ëd tradussion ëd pàgine.",
 	'tpt-render-summary' => 'Modifiché për esse com la neuva version dla pàgina sorgiss',
 	'tpt-download-page' => 'Espòrta pàgina con tradussion',
 	'pt-parse-open' => 'Tichëtta &lt;translate> pa bilansà.
@@ -4809,7 +4788,6 @@ Antes de marcar esta versão para tradução, verifique que as alterações às 
 Ela é uma tradução da página [[$1]] e a tradução pode ser actualizada usando [$2 a ferramenta de tradução].',
 	'tpt-unknown-page' => 'Este espaço nominal está reservado para traduções de páginas de conteúdo.
 A página que está a tentar editar não parece corresponder a nenhuma página marcada para tradução.',
-	'tpt-install' => "Execute ''maintenance/update.php'' ou instale através da internet para possibilitar a funcionalidade de tradução de páginas.",
 	'tpt-render-summary' => 'A actualizar para corresponder à nova versão da página fonte',
 	'tpt-download-page' => 'Exportar a página com traduções',
 	'pt-parse-open' => 'O elemento &lt;translate> está desequilibrado.
@@ -5425,7 +5403,6 @@ vendar {{PLURAL:$1|trenutne različice|trenutnih različic}} ni mogoče označit
 Ta stran je prevod strani [[$1]], njen prevod lahko posodobite z uporabo [$2 prevajalskega orodja].',
 	'tpt-unknown-page' => 'Ta imenski prostor je pridržan za prevode vsebinskih strani.
 Stran, ki jo poskušate urediti, ne ustreza nobeni strani označeni za prevajanje.',
-	'tpt-install' => 'Zaženite php maintenance/update.php ali spletno namestitev, da omogočite zmožnost prevajanja strani.',
 	'tpt-render-summary' => 'Posodabljanje za ujemanje nove različice izvorne strani',
 	'tpt-download-page' => 'Izvozi stran s prevodi',
 	'pt-parse-open' => 'Neizenačena etiketa &lt;translate>.
@@ -5815,7 +5792,6 @@ subalit ang pinakabagong {{PLURAL:$1|bersyon|mga bersyon}} ay hindi matatatakan 
 Ang pahinang ito ay isang salinwika ng pahinang [[$1]] at maisasapanahon ang salinwika sa pamamagitan ng [$2 kasangkapang pansalinwika].',
 	'tpt-unknown-page' => 'Nakalaan ang puwang na pampangalang ito para sa mga salinwika ng pahina ng nilalaman.
 Tila hindi tumutugma ang pahinang sinusubukan mong baguhin sa anumang pahinang natatakan para sa pagsasalinwika.',
-	'tpt-install' => 'Patakbuhin ang pagpapanatiling php/update.php o paglalagay na pang-web upang mapaandar ang kasangkapang-katangiang pangsalinwika ng pahina.',
 	'tpt-render-summary' => 'Isinasapanahon upang tumugma sa bagong bersyon ng pinagmulang pahina',
 	'tpt-download-page' => 'Iluwas ang pahinang may mga pagsasalinwika',
 	'pt-parse-open' => 'Hindi magkatimbang na tatak na &lt;translate>.
@@ -6010,7 +5986,6 @@ $messages['uk'] = array(
 Це – переклад сторінки [[$1]] і його можна оновити за допомогою [$2 засобу перекладу].',
 	'tpt-unknown-page' => 'Цей простір імен зарезервовано для перекладів текстів сторінок.
 Сторінка, яку ви намагаєтесь редагувати, скоріше за все, не відповідає жодній сторінці, відміченій для перекладу.',
-	'tpt-install' => 'Виконайте php-скрипт maintenance/update.php або веб-установку, щоб увімкнути можливість перекладу сторінок.',
 	'tpt-render-summary' => 'Оновлення для відповідності новій версії вихідної сторінки',
 	'tpt-download-page' => 'Експортувати сторінку з перекладами',
 	'pt-parse-open' => 'Незбалансований тег &lt;translate>.
@@ -6142,7 +6117,6 @@ Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra nhữn
 Nó là một bản dịch của trang [[$1]] và có thể cập nhật bản dịch bằng cách sử dụng [$2 công cụ dịch thuật].',
 	'tpt-unknown-page' => 'Không gian tên này được dành cho các bản dịch trang nội dung.
 Trang bạn muốn sửa đổi dường như không tương ứng với trang nào đã được đánh dấu cần dịch.',
-	'tpt-install' => 'Chạy php maintenance/update.php hoặc cài đặt web để bật tính năng dịch trang.',
 	'tpt-render-summary' => 'Cập nhật đến phiên bản mới của trang nguồn',
 	'tpt-download-page' => 'Xuất trang cùng các bản dịch',
 	'pt-parse-open' => 'Thẻ &lt;translate> không đều.

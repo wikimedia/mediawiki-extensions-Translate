@@ -3642,9 +3642,6 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-magic-notsaved' => 'La vostra edició no ha estat desada!',
 	'translate-magic-errors' => 'Al que arregleu {{PLURAL:$1|el següent error|els següents errors}} a les traduccions:',
 	'translate-magic-saved' => "Els vostres canvis s'han desat amb èxit.",
-	'translationchanges' => 'Canvis a la traducció',
-	'translationchanges-export' => 'exporta',
-	'translationchanges-change' => '$1:$2 per $3',
 	'translate-checks-parameters' => "{{PLURAL:$2|El paràmetre següent no s'està|Els paràmetres següents no s'estan}} usant:
 <strong><nowiki>$1</nowiki></strong>",
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|El paràmetre següent és desconegut|Els paràmetres següent són desconeguts}}:
@@ -3661,7 +3658,7 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-checks-pagename' => "S'ha canviat l'espai de noms (''namespace'') de la definició",
 	'translate-checks-format' => 'Aquesta traducció no segueix la definició o té una sintaxi invàlida: $1',
 	'translate-checks-escape' => "Les següents seqüències d'escapament poden ser accidentals: <strong>$1</strong>",
-	'translate-checks-prefs' => 'El missatge entra en conflicte amb $1. Aquests missatges no poden coincidir.',
+	'translate-checks-fudforum-syntax' => 'Feu servir <nowiki>$1</nowiki> en comptes de <nowiki>$2</nowiki> en aquest projecte.',
 	'translate-pref-nonewsletter' => "No m'enviïs per correu electrònic el recull de notícies",
 	'translate-pref-editassistlang' => "Idiomes d'ajuda:",
 	'prefs-translate' => 'Opcions de traducció',
@@ -3685,7 +3682,7 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-statsf-options' => 'Opcions del gràfic',
 	'translate-statsf-width' => 'Amplada en píxels:',
 	'translate-statsf-height' => 'Alçada en píxels:',
-	'translate-statsf-days' => 'Període temporal en dies:',
+	'translate-statsf-days' => "Data d'inici:",
 	'translate-statsf-scale' => 'Granulació:',
 	'translate-statsf-scale-months' => 'Mesos',
 	'translate-statsf-scale-weeks' => 'Setmanes',
@@ -3707,6 +3704,7 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translations-summary' => 'Entreu a continuació un nom de missatge per a mostrar-ne totes les traduccions disponibles.',
 	'translate-translations-no-message' => '«$1» no és un missatge a traduir.',
 	'translate-translations-none' => 'No hi ha traduccions per a «$1»',
+	'translate-translations-count' => "{{PLURAL:$1|S'ha trobat una traducció|S'han trobat $1 traduccions}}.",
 	'translate-translations-fieldset-title' => 'Missatge',
 	'translate-translations-messagename' => 'Nom:',
 	'translate-translations-project' => 'Projecte:',
@@ -3716,9 +3714,15 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'languagestats-summary' => 'Aquesta pàgina mostra les estadístiques de traducció per a tots els grups de missatges de cada idioma.',
 	'languagestats-stats-for' => "Estadístiques de traducció per a l'idioma $1 ($2)",
 	'languagestats-recenttranslations' => 'traduccions recents',
+	'translate-langstats-incomplete' => "Algunes de les estadístiques d'aquesta pàgina són incompletes. Recarregueu-la per a obtenir-ne més.",
+	'translate-langstats-expand' => 'amplia',
+	'translate-langstats-collapse' => 'tanca',
+	'translate-langstats-expandall' => "amplia'ls tots",
+	'translate-langstats-collapseall' => "amaga'ls tots",
 	'translate-language-code' => "Codi d'idioma",
 	'translate-language-code-field-name' => "Codi d'idioma:",
 	'translate-suppress-complete' => 'Oculta els missatges de grups completament traduïts',
+	'translate-ls-noempty' => 'Oculta els missatges de grups totalment sense traduir',
 	'translate-language' => 'Idioma',
 	'translate-total' => 'Missatges',
 	'translate-untranslated' => 'Sense traduir',
@@ -3726,6 +3730,28 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-percentage-fuzzy' => 'Desfasats',
 	'translate-nothing-to-do' => 'Totes les possibles traduccions han estat realitzades.
 Us animem a revisar missatges a través de [[Special:Translate|{{int:translate}}]].',
+	'translate-languagestats-overall' => 'Tots els grups de missatges junts',
+	'translate-ls-submit' => 'Mostra les estadístiques',
+	'translate-ls-column-group' => 'Grup de missatges',
+	'translate-mgs-pagename' => 'Estadístiques del grup de missatges',
+	'translate-mgs-fieldset' => 'Mostra les preferències',
+	'translate-mgs-group' => 'Grup de missatges:',
+	'translate-mgs-nocomplete' => 'No mostris els idiomes amb una traducció completa',
+	'translate-mgs-noempty' => 'No mostris els idiomes que no tenen cap traducció',
+	'translate-mgs-submit' => 'Mostra les estadístiques',
+	'translate-mgs-column-language' => 'Idioma',
+	'translate-mgs-totals' => 'Tots els idiomes junts',
+	'translate-mgs-invalid-group' => 'El grup $1 especificat no existeix.',
+	'translate-mgs-nothing' => "Res a mostrar per l'estadística soŀlicitada.",
+	'supportedlanguages' => 'Idiomes compatibles',
+	'supportedlanguages-summary' => "Aquesta pàgina mostra una llista de tots els idiomes que es poden utilitzar a {{SITENAME}} juntament amb els noms dels traductors que treballen en cadascun d'ells.
+El nom del traductor apareix més gran com més traduccions hagi contribuït a fer.
+El color del subratllat indica si el traductor ha estat actiu recentment.",
+	'supportedlanguages-colorlegend' => 'Llegenda per al color: La darrera traducció va ser fa $1 dies.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Traductor|Traductors}}: $1',
+	'supportedlanguages-recenttranslations' => 'traduccions recents',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|idioma|idiomes}} en total.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|modificació|modificacions}}, la darrera va ser fa $3 {{PLURAL:$3|dia|dies}}',
 	'translate-save' => 'Desa ($1)',
 	'translate-jssti-add' => 'Afegeix a la llista',
 	'translate-manage-groups' => 'Gestió de grups',
@@ -10696,12 +10722,10 @@ $messages['ja'] = array(
 	'translate-mgs-invalid-group' => '指定された群$1は存在しません。',
 	'translate-mgs-nothing' => '要求された統計は表示するものがありません。',
 	'supportedlanguages' => 'サポートしている言語',
-	'supportedlanguages-summary' => 'このページには、{{SITENAME}}でサポートしている全言語の一覧、および各言語で活動している翻訳者の名前を表示しています。各言語についての詳細情報を知りたい場合は、その言語のポータルへのリンクをクリックしてください。翻訳者の名前をクリックすると、その人物の利用者ページに飛びます。
-
-一覧に記載されていない言語については、[[Translating:Process|New Language]] にて新しい言語へのローカリゼイションプロジェクトの開始方法が記されていますので参照してください。
-
-いずれかの言語への翻訳経験があるにもかかわらず、あなたの名前が一覧に含まれていない場合には、その言語の[[:Category:Languages|ポータル]]にて翻訳者一覧にご自身の名前を書き加えてください。
-個人設定で選んだ言語のポータルへのリンクは、メニューバーに表示されます。',
+	'supportedlanguages-summary' => 'このページには、{{SITENAME}}でサポートしている全言語の一覧と、その言語で活動している翻訳者の名前を表示しています。
+翻訳者の名前は、翻訳編集の数が多いほど、大きく表示されます。
+下線の色は、その翻訳者の最近の活動度を表しています。',
+	'supportedlanguages-colorlegend' => '色の凡例：最後の翻訳が$1日前',
 	'supportedlanguages-translators' => '{{PLURAL:$2|翻訳者}}: $1',
 	'supportedlanguages-recenttranslations' => '最近の翻訳',
 	'supportedlanguages-count' => '合計$1{{PLURAL:$1|言語|言語}}',
