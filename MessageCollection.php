@@ -188,11 +188,13 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Loads all message data. Must be called before accessing the messages
-	 * with ArrayAccess or iteration.
+	 * with ArrayAccess or iteration. Must be called before filtering for
+	 * $dbtype to have an effect.
+	 * @param $dbtype One of DB_* constants.
 	 */
-	public function loadTranslations() {
-		$this->loadData( $this->keys );
-		$this->loadInfo( $this->keys );
+	public function loadTranslations( $dbtype = DB_SLAVE ) {
+		$this->loadData( $this->keys, $dbtype );
+		$this->loadInfo( $this->keys, $dbtype );
 		$this->initMessages();
 	}
 
@@ -476,8 +478,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Loads existence and fuzzy state for given list of keys.
 	 * @param $keys \list{String} List of keys in database format.
+	 * @param $dbtype One of DB_* constants.
 	 */
-	protected function loadInfo( array $keys ) {
+	protected function loadInfo( array $keys, $dbtype = DB_SLAVE ) {
 		if ( $this->dbInfo !== null ) {
 			return;
 		}
@@ -488,7 +491,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			return;
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( $dbtype );
 
 		$tables = array( 'page', 'revtag' );
 		$fields = array( 'page_title', 'rt_type' );
@@ -509,8 +512,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Loads translation for given list of keys.
 	 * @param $keys \list{String} List of keys in database format.
+	 * @param $dbtype One of DB_* constants.
 	 */
-	protected function loadData( $keys ) {
+	protected function loadData( $keys, $dbtype = DB_SLAVE ) {
 		if ( $this->dbData !== null ) {
 			return;
 		}
@@ -521,7 +525,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			return;
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( $dbtype );
 
 		$tables = array( 'page', 'revision', 'text' );
 		$fields = array( 'page_title', 'rev_user_text', 'old_flags', 'old_text' );

@@ -177,7 +177,7 @@ class TPParse {
 		// For finding the messages
 		$prefix = $this->title->getPrefixedDBKey() . '/';
 
-		if ( $collection instanceOf MessageCollection ) {
+		if ( $collection instanceof MessageCollection ) {
 			$collection->filter( 'hastranslation', false );
 			$collection->loadTranslations();
 		}
