@@ -975,11 +975,97 @@ Jolic njocoš  powěsćowe listy dostaś, móžoš to na rejtarku "{{int:prefs-p
 );
 
 /** Esperanto (Esperanto)
+ * @author ArnoLagrange
  * @author Yekrats
  */
 $messages['eo'] = array(
+	'firststeps' => 'Unuaj paŝoj',
+	'firststeps-desc' => '[[Special:FirstSteps|Speciala paĝo]] por helpi novajn viki-uzantojn ekuzi la Traduk-etendaĵon',
 	'translate-fs-pagetitle-done' => '- farita!',
+	'translate-fs-pagetitle' => 'Asistilo por ekuzado - $1',
+	'translate-fs-signup-title' => 'Ensalutu',
+	'translate-fs-settings-title' => 'Agordu viajn preferojn.',
+	'translate-fs-userpage-title' => 'Kreu vian uzantopaĝon.',
+	'translate-fs-permissions-title' => 'Petu rajtojn de tradukisto',
 	'translate-fs-target-title' => 'Ek traduku!',
+	'translate-fs-email-title' => 'Konfirmu vian retpoŝtan adreson',
+	'translate-fs-intro' => "Bonvenon en la ekuz-asistilo de {{SITENAME}}.
+Vi estos gvidata tra la proceso por fariĝi tradukisto pason post paŝo. 
+Fine vi kapablos traduki ''interfacajn mesaĝojn'' de ĉiuj eltenitaj projektoj je {{SITENAME}}.",
+	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount eo.png|kadro]]
+
+En la unua paŝo vi devas krei por vi konton.  
+
+Aŭtoreco de viaj tradukoj estas atribuita al via uzantonomo. 
+La bildo dekstre montras kiel plenigi la kampojn. 
+
+Se vi jam kreis por vi konton $1ensalutu$2 anstataŭe. 
+Kiam vi estas kreinta por vi konton, bonvolu reveni al ĉi tiu paĝo.   
+
+$3Kreu novan konton$4',
+	'translate-fs-settings-text' => 'Vi devus nun iri al viaj preferoj  kaj almenaŭ ŝanĝi vian interfacan lingvon al la lingvo al kiu vi estas tradukonta. 
+
+Via interfaca lingvo estas uzata kiel defaŭlta cellingvo. 
+Estas facile forgesi ŝanĝi la lingvon al la ĝusta, sekve elekti ĝin nun estas alte rekomendite.
+
+Dum vi estas ĉi tie, vi povas ankaŭ peti de la programaro montri tradukojn en aliaj lingvoj kiujn vi konas.   
+Ĉi tiu agordaĵo estas trovebla sub la langeto "{{int:prefs-editing}}".
+Sentu vin libera ankaŭ esplori alaijn agordaĵojn. 
+
+Iru nun al via [[Special:Preferences|preferopaĝo]] kaj revenu al ĉi tiu paĝo.',
+	'translate-fs-settings-skip' => 'Mi finis. 
+Lasu min pluiri.',
+	'translate-fs-userpage-text' => 'Vi devas nun krei por vi uzantopaĝon. 
+
+Bonvolu skribi ion pri vi mem: kiu vi estas kaj kion via faras. 
+
+Tio helpos la komunumon de {{SITENAME}}  kune labori.
+Sur {{SITENAME}}, estas homoj el ĉiuj mondpartoj kiuj laboras pri diversaj lingvoj kaj projektoj. 
+
+
+En la suba antaŭplenigita skatoleto, en la unua linio vi vidas  <nowiki>{{#babel:en-2}}</nowiki>.
+Bonvolu plenigi ĝin kun viaj lingvokapabloj 
+La nombro kiu sekvas la lingvokodon priskribas je kiu nivelo vi regas iun lingvon. 
+L aeblaj valoroj estas : 
+* 1 - iom
+* 2 - baza kapablo
+* 3 - bona scio
+* 4 - dulingveco
+* 5 - profesia kapablo ekzemple kiel profesia tradukisto 
+
+Por via denaska lingvo, ignoru nivelon kaj simple enigu la lingvokodon. 
+Ekzemplo : se via denaska lingvo estas la tamula kaj ke vi bone parolas Esperanton kaj iom la svahilan enmetu:
+<code><nowiki>{{#babel:ta|eo-3|sw-1}}</nowiki></code>
+
+Se vi ne konas la kodon de iu lingvo, vi povas nu serĉi ĝin  en la suba listo:',
+	'translate-fs-userpage-submit' => 'Krei mian uzantopaĝon.',
+	'translate-fs-userpage-done' => 'Bone! Vi nun havas uzantopaĝon.',
+	'translate-fs-permissions-text' => 'Vi devas fari peton por esti aldonita al tradukistogrupo. 
+
+Ĝis ni estos riparinta la kodon, bonvolu iru al [[Project:Translator]] kaj tie sekvi la instrukciojn. 
+Poste revenu al ĉi tiu paĝo. 
+
+Kiam vi estos farinta vian peton, ano de nia teamo kontrolos ĝin kaj aprobos ĝin kiel eble plej rapide. 
+Danko pro via pacienco. 
+
+<del>Bonvolu kontroli ĉu la sekvanta peto estas ĝuste plenigita kaj alklaku la peotbutonon. </del>',
+	'translate-fs-target-text' => "Gratulojn  !
+Vi povas nun ektraduki.  
+
+Ne maltrankviliĝu se vi trovas tion iom nova kaj stranga. 
+Sur la [[Project list|projektolisto]] troviĝas superrigardo de la projektojn al kies traduko vi povas helpi. 
+
+Plej multaj el tiuj projektoj enhavas paĝon entenantan  mallongan priskribon kaj ligilon « ''Traduki ĉi tiun projekton'' » kiu gvidos vin al paĝo listiganta ĉiuj netradukitajn mesaĝojn. Havebla estas listo de ĉiuj mesaĝgrupoj kun la [[Special:LanguageStats|nuna tradukostato por difinita lingvo]].  
+
+Se vi sentas ke vi bezonas pli da informoj antaŭ ektraduki, vi povas legi al [[FAQ|Plej oftajn demandojn]]. Bedaŭrinde la dokumentado povas esti eksdata. Se vi opinias ke vi povus fari ion, ne trovante kiel fari, ne hezitu fari demandojn en la [[Support|helppaĝo]]. 
+
+Vi ankaŭ povas kontakti la aliajn tradukantojn de la sama lingvo sur [[Portal_talk:$1|diskutpaĝo]] de [[Portal:$1|via propra lingvo]].
+Se vi ne jam faris tion,  [[Special:Preferences|agordu la interfacan lingvon]] por ke ĝi estu tiu en kiun vi estas tradukonta. Tiel la ligiloj kiujn proponas la vikio estos plej adaptitaj al via situacio.",
+	'translate-fs-email-text' => 'Bonvolu enigi vian retpoŝtadreson en  [[Special:Preferences|viaj preferoj]] kaj konfirmi ĝin per la mesaĝo kiun vi ricevos. 
+
+Tio ebligos al la aliaj uzantoj kontakti vin per retpoŝto. 
+Vi ankaŭ ricevos informleteron maksimume unu fojon en la monato. 
+Se vi ne deziras ricevi ĝin, vi povas malaktivigi en la langeto  « {{int:prefs-personal}} »  de  [[Special:Preferences|viaj preferoj]].',
 );
 
 /** Spanish (Español)

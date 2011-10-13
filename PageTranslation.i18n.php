@@ -1163,7 +1163,7 @@ Afsnit tekst: <pre>$1</pre>',
 	'pt-log-name' => 'Sideoversættelses log',
 	'pt-log-mark' => '{{GENDER:$2|markeret}} version $3 af siden "[[:$1]]" til oversættelse',
 	'pt-log-unmark' => '{{GENDER:$2|fjernet}} side "[[:$1]]" fra oversættelse',
-	'pt-log-moveok' => '{{GENDER:$2|fuldført}} omdøbning af oversætbare side $1 til et nyt navn',
+	'pt-log-moveok' => '{{GENDER:$2|fuldførte}} omdøbning af den oversætbare side $1 til $3',
 	'pt-log-movenok' => '{{GENDER:$2|støtte på}} et problem under flytningen af [[:$1]] til [[:$3]]',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|færdiggjorte}} sletning af oversætbar side $1',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|stødte på}} et problem under sletning oversætbar side [[:$1]]',
@@ -1544,6 +1544,7 @@ $messages['el'] = array(
 );
 
 /** Esperanto (Esperanto)
+ * @author ArnoLagrange
  * @author Yekrats
  */
 $messages['eo'] = array(
@@ -1562,8 +1563,16 @@ Nomo: $1',
 	'tpt-sections-oldnew' => 'Novaj kaj ekzistantaj tradukaĵoj',
 	'tpt-sections-deleted' => 'Forigitaj tradukadaj unuoj',
 	'tpt-sections-template' => 'Ŝablono por tradukada paĝo',
+	'tpt-action-nofuzzy' => 'Ne malvalidigu tradukojn.',
+	'tpt-badtitle' => 'La provizita paĝnomo ($1) ne estas valida titolo',
+	'tpt-nosuchpage' => 'La paĝo $1 ne ekzistas.',
+	'tpt-oldrevision' => '$2 ne estas la lasta versio de la paĝo [[$1]].
+Nur la lasta versio de la paĝo povas esti markita por esti tradukita.',
 	'tpt-notsuitable' => 'Paĝo $1 ne taŭgas por traduki.
 Certigu ke ĝi havas etikedojn <nowiki><translate></nowiki> kaj havas validan sintakson.',
+	'tpt-saveok' => 'La paĝo [[$1]] estis markita por esti tradukita kun $2 traduk{{PLURAL:$2|ero|eroj}}.
+La paĝo povas nun esti <span class="plainlinks">[$3 tradukita]</span>.',
+	'tpt-badsect' => '« $1 » ne estas valida nomo por tradukero $2.',
 	'tpt-mark-summary' => 'Markis ĉi tiun version por traduki.',
 	'tpt-edit-failed' => 'Ne eblis ĝisdatigi la paĝon: $1',
 	'tpt-rev-latest' => 'lasta versio',
@@ -1867,6 +1876,7 @@ Tarkista mahdolliset virheet ja valmistumisviestit sivunkääntölokista.',
 
 /** French (Français)
  * @author Crochet.david
+ * @author Gomoko
  * @author Grondin
  * @author Houcinee1
  * @author IAlex
@@ -1946,7 +1956,7 @@ Texte de la section : <pre>$1</pre>',
 	'pt-log-name' => 'Journal des traductions de pages',
 	'pt-log-mark' => 'a {{GENDER:$2|marqué|marqué}} la révision $3 de la page « [[:$1]] » pour être traduite',
 	'pt-log-unmark' => 'a {{GENDER:$2|supprimé|supprimé}} la page « [[:$1]] » de la traduction',
-	'pt-log-moveok' => '{{GENDER:$2|a renommé|a renommé}} la page à traduire $1',
+	'pt-log-moveok' => '{{GENDER:$2|a terminé}} le renommage de la page traduisible de $1 en $3',
 	'pt-log-movenok' => '{{GENDER:$2|a rencontré|a rencontré}} un problème lors du renommage de [[:$1]] vers [[:$3]]',
 	'pt-log-delete-full-ok' => '{{GENDER:$2||}}a complété la suppression de la page à traduire $1',
 	'pt-log-delete-full-nok' => '{{GENDER:$2||}}a rencontré un problème lors de la suppression de la page à traduire [[:$1]]',
@@ -2518,7 +2528,7 @@ $messages['he'] = array(
 	'pt-log-name' => 'יומן תרגום דפים',
 	'pt-log-mark' => '{{GENDER:$2|סימן}} את גרסה $3 של הדף "[[:$1]]" לתרגום',
 	'pt-log-unmark' => '{{GENDER:$2|הוציא|הוציאה}} את הדף "[[:$1]]" מהתרגום',
-	'pt-log-moveok' => '{{GENDER:$2|השלים|השלימה}} את שינוי השם של הדף הניתן לתרגום $1',
+	'pt-log-moveok' => '{{GENDER:$2|השלים|השלימה}} את העברת הדף הניתן לתרגום $1 לשם $3',
 	'pt-log-movenok' => '{{GENDER:$2|מצא|מצאה}} בעיה בעת העברת [[:$1]] אל [[:$3]]',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|השלים|השלימה}} את המחיקה של הדף הניתן לתרגום $1',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|נתקל|נתקלה}} בבעיה בזמן מחיקת הדף הניתן לתרגום [[:$1]]',
@@ -2966,7 +2976,7 @@ Texto del section: <pre>$1</pre>',
 	'pt-log-name' => 'Registro de traduction de paginas',
 	'pt-log-mark' => '{{GENDER:$2|marcava}} le version $3 del pagina "[[:$1]]" pro traduction.',
 	'pt-log-unmark' => '{{GENDER:$2|removeva}} le pagina "[[:$1]]" del traduction.',
-	'pt-log-moveok' => '{{GENDER:$2|completava}} le renomination del pagina traducibile $1 a un nove nomine',
+	'pt-log-moveok' => '{{GENDER:$2|completava}} le renomination del pagina traducibile $1 a $3',
 	'pt-log-movenok' => '{{GENDER:$2|incontrava}} un problema movente [[:$1]] a [[:$3]]',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|completava}} le deletion del pagina traducibile $1',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|incontrava}} un problema durante le deletion del pagina traducibile [[:$1]]',
@@ -3827,6 +3837,7 @@ $messages['mk'] = array(
 	'tpt-translation-intro' => 'Оваа страница е <span class="plainlinks">[$1 преведена верзија]</span> на страницата [[$2]], а преводот е $3% потполн и тековен.',
 	'tpt-translation-intro-fuzzy' => 'Застарените преводи се обележуваат вака.',
 	'tpt-languages-legend' => 'Други јазици:',
+	'tpt-languages-separator' => '&#160;•&#160;',
 	'tpt-target-page' => 'Оваа страница не може да се обнови рачно.
 Страницава е превод на страницата [[$1]], а преводот може да се обнови само со помош на [$2 алатката за преведување].',
 	'tpt-unknown-page' => 'Овој именски простор е резервиран за преводи на содржински страници.
@@ -3848,7 +3859,7 @@ $messages['mk'] = array(
 	'pt-log-name' => 'Дневник на преводи на страници',
 	'pt-log-mark' => '{{GENDER:$2|означена}} ревизија $3 на стрaницата „[[:$1]]“ за превод.',
 	'pt-log-unmark' => '{{GENDER:$2|отстранета}} страницата „[[:$1]]“ од преводот.',
-	'pt-log-moveok' => '{{GENDER:$2|завршено}} преименување на преводливата страница $1',
+	'pt-log-moveok' => '{{GENDER:$2|завршено}} преименување на преводливата страница $1 до $3',
 	'pt-log-movenok' => '{{GENDER:$2|наидено}} на проблем при преместувањето на [[:$1]] во [[:$3]]',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|изврши}} бришење на преводливата страница $1',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|наиде}} на проблем бришејќи ја преводливата страница [[:$1]]',
