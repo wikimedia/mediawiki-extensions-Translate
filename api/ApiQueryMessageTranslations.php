@@ -121,7 +121,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 
 	protected function getExamples() {
 		return array(
-			"api.php?action=query&meta=messagetranslations&title=MediaWiki:January List of translations in the wiki for MediaWiki:January",
+			"api.php?action=query&meta=messagetranslations&mttitle=MediaWiki:January List of translations in the wiki for MediaWiki:January",
 		);
 	}
 
