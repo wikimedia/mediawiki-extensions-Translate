@@ -36,7 +36,7 @@ if ( !isset( $options['file'] ) ) {
 	exit( 1 );
 }
 
-/*
+/**
  * Parse the po file.
  */
 $p = new PoImporter( $options['file'] );
@@ -52,7 +52,7 @@ if ( !count( $changes ) ) {
 	exit( 0 );
 }
 
-/*
+/**
  * Import changes to wiki.
  */
 $w = new WikiWriter( $changes, $group, $options['user'], !isset( $options['really'] ) );

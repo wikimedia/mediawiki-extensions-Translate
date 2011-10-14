@@ -1047,7 +1047,7 @@ class MessageGroups {
 	/**
 	 * Fetch a message group by id.
 	 * @param $id \string Message group id.
-	 * @return MessageGroup or null if it doesn't exist.
+	 * @return MessageGroup|null if it doesn't exist.
 	 */
 	public static function getGroup( $id ) {
 		self::init();
