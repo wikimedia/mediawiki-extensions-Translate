@@ -66,6 +66,9 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 		$count = 0;
 
 		foreach ( $pageInfo as $key => $info ) {
+			if ( ++$count <= $params['offset'] ) {
+				continue;
+			}
 
 			$tTitle = Title::makeTitle( $namespace, $key );
 			$tHandle = new MessageHandle( $tTitle );
@@ -87,7 +90,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 
 			$fit = $result->addValue( array( 'query', $this->getModuleName() ), null, $data );
 			if ( !$fit ) {
-				$this->setContinueEnumParameter( 'offset', $params['offset'] + $count - 1 );
+				$this->setContinueEnumParameter( 'offset', $count );
 				break;
 			}
 
