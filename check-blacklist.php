@@ -428,6 +428,14 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-survey',
+	'check' => 'variable',
+	'message' => array(
+		'group-surveyadmin-member', // Optional GENDER parameter
+		'group-surveysubmit-member', // Optional GENDER parameter
+	)
+),
+array(
 	'group' => 'ext-socialprofile-usergifts',
 	'check' => 'variable',
 	'message' => array(
