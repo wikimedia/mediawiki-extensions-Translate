@@ -3093,7 +3093,7 @@ Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
 	'translate-statsf-options' => 'Dibarzhioù ar grafik',
 	'translate-statsf-width' => 'Ledander e piksel :',
 	'translate-statsf-height' => 'Uhelder e piksel',
-	'translate-statsf-days' => 'Marevezh e devezhioù :',
+	'translate-statsf-days' => 'Deiziad kregiñ :',
 	'translate-statsf-scale' => 'Greunerezh :',
 	'translate-statsf-scale-months' => 'Mizioù',
 	'translate-statsf-scale-weeks' => 'Sizhunvezhioù',
@@ -3125,6 +3125,7 @@ Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
 	'languagestats-summary' => 'Diskouez a ra ar bajenn-mañ ar stadegoù treiñ evit an holl strolladoù kemennadennoù en ur yezh bennak.',
 	'languagestats-stats-for' => 'Stadegoù an droidigezh evit $1 ($2).',
 	'languagestats-recenttranslations' => 'troidigezhioù diwezhañ',
+	'translate-langstats-incomplete' => "Diglok eo darn eus stadegoù ar bajenn-mañ. Ret eo hec'h adkargañ evit kaout stadegoù all.",
 	'translate-langstats-expand' => 'Dispakañ',
 	'translate-langstats-collapse' => 'Pakañ',
 	'translate-langstats-expandall' => 'Dispakañ pep tra',
@@ -3132,6 +3133,7 @@ Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
 	'translate-language-code' => 'Kod yezh',
 	'translate-language-code-field-name' => 'Kod yezh :',
 	'translate-suppress-complete' => 'Arabat diskouez ar strolladoù kemennadennoù zo bet troet penn-da-benn.',
+	'translate-ls-noempty' => "Diverkañ penn-da-benn ar strolladoù kemennadennoù n'int ket bet troet",
 	'translate-language' => 'Yezh :',
 	'translate-total' => 'Kemennadennoù',
 	'translate-untranslated' => 'Didro',
@@ -3140,18 +3142,23 @@ Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
 	'translate-nothing-to-do' => "Evit doare eo bet kaset da benn kement troidigezh posupl.
 Broudet oc'h da adwelet ar c'hemennadennoù adal [[Special:Translate|{{int:translate}}]].",
 	'translate-languagestats-overall' => 'An holl strolladoù kemennadennoù war un dro',
+	'translate-ls-submit' => 'Diskouez ar stadegoù',
+	'translate-ls-column-group' => 'Strollad kemennadennoù',
+	'translate-mgs-pagename' => 'Stadegoù ar strollad kemennadennoù',
+	'translate-mgs-fieldset' => 'Diskwel ar penndibaboù',
+	'translate-mgs-group' => 'Strollad kemennadennoù :',
+	'translate-mgs-nocomplete' => 'Arabat diskouez ar yezhoù eo klok an troidigezhioù evito',
+	'translate-mgs-noempty' => "Arabat diskouez ar yezhoù n'eus ket a droidigezhioù evito",
 	'translate-mgs-submit' => 'Diskouez ar stadegoù',
 	'translate-mgs-column-language' => 'Yezh',
 	'translate-mgs-totals' => 'An holl yezhoù war ar memes tro',
+	'translate-mgs-invalid-group' => "N'eus ket eus ar strollad $1 merket.",
+	'translate-mgs-nothing' => "N'eus netra ebet da ziskouez o klotañ gant ar stadegoù goulennet.",
 	'supportedlanguages' => 'Yezhoù skoret',
 	'supportedlanguages-summary' => "Diskouez a ra ar bajenn-mañ roll ar yezhoù skoret gant {{SITENAME}} a-gevret gant roll an droerien a labour warno.
-Mar fell deoc'h gouzout hiroc'h a-zivout ur yezh bennak e c'hallit klikañ war porched ar yezh-se.
-Mar klikit war anv un troer e viot kaset davet e bajenn bersonel.
-
-Ma vank ur yezh bennak er roll e c'hallit kavout penaos kregiñ gant ur raktres evit ur yezh nevez war \"[[Translating:Process|Yezh Nevez]]\".
-
-Ma troit en ur yezh bennak ha ma ne zeu ket hoc'h anv war wel e c'hallit ouzhpennañ anezhañ war [[:Category:Languages|porched]] ar yezh-se.
-Sellit ouzh al lañser evit al liamm a gas d'ar yezh spisaet ganeoc'h en ho penndibaboù.",
+Seul vrasoc'h anv ar troer, seul vui a droidigezhioù zo bet kaset da benn gantañ.
+Liv an islinennañ a verk pegen nevez zo eo bet oberiant an droerien amañ.",
+	'supportedlanguages-colorlegend' => "Alc'hwez evit al liv : Troidigezh ziwezhañ, $1 devezh zo.",
 	'supportedlanguages-translators' => '{{PLURAL:$2|Troer|Troerien}} : $1',
 	'supportedlanguages-recenttranslations' => 'troidigezhioù ziwezhañ',
 	'supportedlanguages-count' => '$1 {{PLURAL:$1|yezh|yezh}} en holl.',
@@ -4505,6 +4512,7 @@ Detaljer: $1',
  * @author Pill
  * @author Purodha
  * @author Raimond Spekking
+ * @author SVG
  * @author Sebastian Wallroth
  * @author Tbleher
  * @author The Evil IP address
@@ -4616,7 +4624,7 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-pref-editassistlang-bad' => 'Ungültiger Sprachcode in der Liste:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Erweiterter Übersetzungseditor (benötigt JavaScript)',
-	'right-translate' => 'Bearbeitungen mithilfe der Übersetzungsoberfläche',
+	'right-translate' => 'Bearbeitungen mithilfe der Übersetzungsoberfläche tätigen',
 	'right-translate-manage' => 'Übersetzungsgruppen verwalten',
 	'right-translate-import' => 'Offlineübersetzungen importieren',
 	'translate-rc-translation-filter' => 'Übersetzungen filtern:',
@@ -8475,6 +8483,7 @@ $messages['he'] = array(
 עם שמות של מתרגמים שעובדים על אותן השפות.
 גודל שם המתרגם יחסי למספק העריכות שלו.
 צבע הקו התחתי מראה כמה זמן המתרגם פעיל כאן.',
+	'supportedlanguages-colorlegend' => 'מקרא לצבעים: תרגום אחרון לפני $1 ימים',
 	'supportedlanguages-translators' => '{{PLURAL:$2|מתרגם|מתרגמים}}: $1',
 	'supportedlanguages-recenttranslations' => 'תרגומים אחרונים',
 	'supportedlanguages-count' => '{{PLURAL:$1|שפה אחת|$1 שפות}} בסך הכול.',
@@ -20716,8 +20725,6 @@ Neden:
 	'translate-magic-namespace' => 'Alan adları',
 	'translate-magic-notsaved' => 'Değişikliğiniz kaydedilmedi!',
 	'translate-magic-saved' => 'Değişiklikleriniz başarıyla kaydedildi.',
-	'translationchanges' => 'Çeviri değişiklikleri',
-	'translationchanges-export' => 'aktar',
 	'translate-checks-plural' => 'Tanım <nowiki>{{PLURAL:}}</nowiki> kullanıyor, ancak çeviri kullanmıyor.',
 	'translate-checks-pagename' => 'Tanımdaki ad alanı değiştirilmiş',
 	'translate-pref-nonewsletter' => 'Bana e-posta haber bülteni gönderme',
@@ -20772,6 +20779,7 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-untranslated' => 'Çevrilmemiş',
 	'translate-percentage-complete' => 'Tamamlanma',
 	'translate-percentage-fuzzy' => 'Eski tarihli',
+	'translate-mgs-column-language' => 'Dil',
 	'translate-jssti-add' => 'Listeye ekle',
 	'translate-manage-groups' => 'Grup yönetimi',
 	'translate-manage-listgroups' => 'Konfigüre edilen gruplar',
