@@ -7839,6 +7839,7 @@ $messages['grc'] = array(
 );
 
 /** Swiss German (Alemannisch)
+ * @author Als-Chlämens
  * @author Als-Holder
  * @author J. 'mach' wust
  */
@@ -7964,7 +7965,7 @@ D Standardlischt vu Sproche hangt vu Dyyre Sproch ab.',
 	'translate-statsf-options' => 'Zeichnigsoptione',
 	'translate-statsf-width' => 'Breiti in Pixel:',
 	'translate-statsf-height' => 'Hechi in Pixel:',
-	'translate-statsf-days' => 'Zytruum in Täg:',
+	'translate-statsf-days' => 'Start-Datum:',
 	'translate-statsf-scale' => 'Granularität:',
 	'translate-statsf-scale-months' => 'Monet',
 	'translate-statsf-scale-weeks' => 'Wuche',
@@ -7996,6 +7997,7 @@ D Standardlischt vu Sproche hangt vu Dyyre Sproch ab.',
 	'languagestats-summary' => 'Die Syte zeigt Ibersetzigsstatischtike fir alli Nochrichtegruppe vun ere Sproch.',
 	'languagestats-stats-for' => 'Ibersetzigsstatischtike fir $1 ($2).',
 	'languagestats-recenttranslations' => 'Aktuälli Ibersetzige',
+	'translate-langstats-incomplete' => 'E Deil vo de Statistike uff dere Syte sin nit vollständig. Due d Syte no emool lade, zume wyteri Statistike z erhalte.',
 	'translate-langstats-expand' => 'ufklappe',
 	'translate-langstats-collapse' => 'zueklappe',
 	'translate-langstats-expandall' => 'alli ufklappe',
@@ -8003,6 +8005,7 @@ D Standardlischt vu Sproche hangt vu Dyyre Sproch ab.',
 	'translate-language-code' => 'Sprochcode',
 	'translate-language-code-field-name' => 'Sprochcode:',
 	'translate-suppress-complete' => 'Unterdruck komplett ibersetzti Nochrichtegruppe',
+	'translate-ls-noempty' => 'Mäldigsgruppe ussblände, wo no gar nüüt übersetzt isch',
 	'translate-language' => 'Sproch',
 	'translate-total' => 'Syschtemnochrichte',
 	'translate-untranslated' => 'Nit ibersetzt',
@@ -8010,17 +8013,29 @@ D Standardlischt vu Sproche hangt vu Dyyre Sproch ab.',
 	'translate-percentage-fuzzy' => 'Veraltet',
 	'translate-nothing-to-do' => 'Alli meglige Ibersetzige sin schyns scho gmacht.
 S wird empfohle, Syschtemnochrichte mit dr Spezialsyte [[Special:Translate|{{int:translate}}]] z iberpriefe.',
+	'translate-languagestats-overall' => 'Alli Systenmäldigsgruppe zämme',
+	'translate-ls-submit' => 'Statischtike aazeige',
+	'translate-ls-column-group' => 'Mäldigsgrupp',
+	'translate-mgs-pagename' => 'Statischtike zu de Mäldigsgruppe',
+	'translate-mgs-fieldset' => 'Yystellige aazeige',
+	'translate-mgs-group' => 'Mäldigsgrupp:',
+	'translate-mgs-nocomplete' => 'Sprooche nit aazeige, wo scho vollständig übersetzt sin',
+	'translate-mgs-noempty' => 'Sprooche ussblände, wo no gar nüüt übersetzt isch',
+	'translate-mgs-submit' => 'Statischtike aazeige',
+	'translate-mgs-column-language' => 'Sprooch',
+	'translate-mgs-totals' => 'Alli Sprooche zämme',
+	'translate-mgs-invalid-group' => 'D Mäldigsgruppe $1, wo du aagee hesch, isch nit vorhande.',
+	'translate-mgs-nothing' => "Zue de Statistike, wo du aagfordret hesch, git's kei Date zum Aazeige.",
 	'supportedlanguages' => 'Unterstitzti Sproche',
 	'supportedlanguages-summary' => 'Die Syte zeigt e Lischte vu allne unterstitze Sproche uf {{SITENAME}}, zämme mit dr Näme vu dr Ibersetzer, wu an däne Sproche mitgschafft hän.
 Meh Informatione zuen ere Sproch git s bim Klick uf dr Portallink.
-E Klick uf dr Name vun eme Ibersetzers fiert zue dr Benutzersyte.
-
-Wänn imfall e Sproch nit ufgfiert wird, git s Informatione zum Starte vun ere neje Sproch unter „[[Translating:Process|Neji Sproche]]“.
-
-Wänn imfall dr Name vun eme Ibersetzer fählt, muess dää zue dr Lischte vu dr Ibersetzer im jewylige [[:Category:Languages|Portal]] zuegfiegt wäre.
-Im Menü git s e Link zum Portal vu dr yygstellte Sproch.',
+De Name vo eme Ibersetzer wird grösser dargstellt, je mee Bearbeitige de Ibersetzer gmacht het.
+D Farb, wo de Name mit unterstriche isch, zeigt aa, wänn de Ibersetzer zum letschte Mool aktiv mitgschafft het.',
+	'supportedlanguages-colorlegend' => 'Farblegene: Letschti Übersetzig vor $1 Dääg.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Ibersetzer|Ibersetzer}}: $1',
 	'supportedlanguages-recenttranslations' => 'Aktuälli Ibersetzige',
+	'supportedlanguages-count' => 'Insgsamt $1 {{plural:$1|Sprooch|Sprooche}}.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|Bearbeitig|Bearbeitige}} - letschti Bearbeitig vor $3 {{PLURAL:$3|Daag|Dääg}}',
 	'translate-save' => 'Spychere ($1)',
 	'translate-jssti-add' => 'Zue dr Lischt zuefiege',
 	'managemessagegroups' => 'Nochrichtegruppeverwaltig',
@@ -8101,6 +8116,10 @@ Detail: $1',
 	'translate-gs-total' => 'Insgsamt',
 	'translate-gs-avgscore' => 'Durschn. Punktzahl',
 	'translate-documentation-language' => 'Systemnochrichtedokumentation',
+	'translate-searchprofile' => 'Ibersetzige',
+	'translate-searchprofile-tooltip' => 'In allene Übersetzige sueche',
+	'translate-search-languagefilter' => 'Nooch Sprooche filtre:',
+	'translate-search-nofilter' => 'Nit nooch Sprooche filtre',
 );
 
 /** Gujarati (ગુજરાતી)

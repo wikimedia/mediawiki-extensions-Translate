@@ -2094,11 +2094,11 @@ Tèxto de la sèccion : <pre>$1</pre>',
 	'pt-log-name' => 'Jornal de les traduccions de pâges',
 	'pt-log-mark' => 'at {{GENDER:$2|marcâ}} la vèrsion $3 de la pâge « [[:$1]] » por la traduccion',
 	'pt-log-unmark' => 'at {{GENDER:$2|suprimâ}} la pâge « [[:$1]] » de la traduccion',
-	'pt-log-moveok' => 'at {{GENDER:$2|renomâ}} la pâge a traduire $1',
+	'pt-log-moveok' => 'at {{GENDER:$2|chavonâ}} lo changement de nom de la pâge a traduire de $1 en $3',
 	'pt-log-movenok' => 'at {{GENDER:$2|rencontrâ}} un problèmo pendent lo changement de nom de [[:$1]] de vers [[:$3]]',
-	'pt-log-delete-full-ok' => '{{GENDER:$2||}}at complètâ la suprèssion de la pâge a traduire $1',
+	'pt-log-delete-full-ok' => 'at {{GENDER:$2|chavonâ}} la suprèssion de la pâge a traduire $1',
 	'pt-log-delete-full-nok' => '{{GENDER:$2||}}at rencontrâ un problèmo pendent la suprèssion de la pâge a traduire [[:$1]]',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2||}}at complètâ la suprèssion de la pâge de traduccion $1',
+	'pt-log-delete-lang-ok' => 'at {{GENDER:$2|chavonâ}} la suprèssion de la pâge de traduccion $1',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2||}}at rencontrâ un problèmo pendent la suprèssion de la pâge de traduccion [[:$1]]',
 	'pt-movepage-title' => 'Dèplaciér la pâge a traduire $1',
 	'pt-movepage-blockers' => 'La pâge a traduire pôt pas étre renomâ a côsa de {{PLURAL:$1|ceta èrror|cetes èrrors}} :',
@@ -2292,6 +2292,7 @@ Os erros quedarán rexistrados no [[Special:Log/pagetranslation|rexistro de páx
 );
 
 /** Swiss German (Alemannisch)
+ * @author Als-Chlämens
  * @author Als-Holder
  * @author Purodha
  */
@@ -2364,8 +2365,12 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-log-name' => 'Sytenibersetzigs-Logbuech',
 	'pt-log-mark' => '{{GENDER:$2|het}} Version $3 vu dr Syte „[[:$1]]“ fir d Ibersetzig frejgee',
 	'pt-log-unmark' => '{{GENDER:$2|het}} d Syte „[[:$1]]“ us dr Ibersetzig uusegnuu',
-	'pt-log-moveok' => '{{GENDER:$2|het}} d Umnännig vu dr Ibersetzigssyte $1 uf e neje Name abgschlosse',
+	'pt-log-moveok' => '{{GENDER:$2|het}} d Umnännig vu dr Ibersetzigssyte $1 uf $3 abgschlosse',
 	'pt-log-movenok' => '{{GENDER:$2|het}} e Probläm bi dr Verschiebig vu [[:$1]] no [[:$3]]',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|het}} d Umnännig vu dr ibersetzbare Syte $1 abgschlosse',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|het}} derwyylischt em Lösche vo de übersetzbare Syte [[:$1]] en Problem gha',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|het}} d Umnännig vu dr ibersetzte Syte $1 abgschlosse',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|het}} derwyylischt em Lösche vo de übersetze Syte [[:$1]] en Problem gha',
 	'pt-movepage-title' => 'D Ibersetzigssyte $1 verschiebe',
 	'pt-movepage-blockers' => 'Di ibersetzbar Syte het wäge {{PLURAL:$1|däm Fähler|däne Fähler}} nit nit uf dr nej Name chenne verschobe wäre:',
 	'pt-movepage-block-base-exists' => 'D Basissyte [[:$1]] git s scho.',
@@ -2397,6 +2402,30 @@ Verschiebigsfähler wäre im [[Special:Log/pagetranslation|Ibersetzigs-Logbuech]
 	'pt-movepage-started' => 'D Basissyte isch jetz verschobe wore.
 Bitte prief s [[Special:Log/pagetranslation|Ibersetzigs-Logbuech]] uf Fählermäldige un d Vollzugsnochricht.',
 	'pt-locked-page' => 'Die Syte isch gsperrt, wel d Ibersetzigssyte zurzyt verschobe wird.',
+	'pt-deletepage-lang-title' => 'Übersetzigs-Syte $1 wird glöscht',
+	'pt-deletepage-full-title' => 'Übersetzbari Syte $1 wird glöscht.',
+	'pt-deletepage-invalid-title' => 'Die Syte, wo aagee hesch, isch nit gültig.',
+	'pt-deletepage-invalid-text' => 'Die Syte, wo aagee hesch, isch weder e übersetzbari Syte, noch e Übersetzig.',
+	'pt-deletepage-action-check' => 'Syte ufflischte, wo glöscht werde sölle',
+	'pt-deletepage-action-perform' => 'Löschig durefiere',
+	'pt-deletepage-action-other' => 'Ziil ändere',
+	'pt-deletepage-lang-legend' => 'Übersetzigs-Syte lösche',
+	'pt-deletepage-full-legend' => 'Übersetzbari Syte lösche',
+	'pt-deletepage-any-legend' => 'Übersetzbari oder übersetzti Syte lösche',
+	'pt-deletepage-current' => 'Sytename:',
+	'pt-deletepage-reason' => 'Grund:',
+	'pt-deletepage-subpages' => 'Alli Untersyte lösche',
+	'pt-deletepage-list-pages' => 'Lischt vu dr Syte, wu mien glöscht wäre',
+	'pt-deletepage-list-translation' => 'Ibersetzigssyte',
+	'pt-deletepage-list-section' => 'Abschnittssyte',
+	'pt-deletepage-list-other' => 'Anderi Untersyte',
+	'pt-deletepage-list-count' => 'Insgsamt git s $1 Syte, wu {{PLURAL:$1|mueß|mien}} glöscht wäre.',
+	'pt-deletepage-full-logreason' => 'Teil vu dr übersetzbare Syte $1.',
+	'pt-deletepage-lang-logreason' => 'Teil vu dr übersetzte Syte $1.',
+	'pt-deletepage-started' => 'Bitte due s [[Special:Log/pagetranslation|Übersetzigs-Logbuech]] uff Fääler un Ussfierigsnoochrichte überpriefe.',
+	'pt-deletepage-intro' => 'Die Spezialsyte ermöglicht s Lösche vo ganze übersetbare Syte oder Übersetzige in ei Sprooch.
+D Ussfierig vo Löschig passiert nit unmittelbar, wyl vili Syte übersetzt werde mien.
+Fääler werde im [[Special:Log/pagetranslation|Übersetzigs-Logbuech]] uffzeichnet un mien noochträgli manuell berichtigt werde.',
 );
 
 /** Gujarati (ગુજરાતી)
@@ -6146,7 +6175,7 @@ Phần văn bản: <pre>$1</pre>',
 	'pt-log-name' => 'Nhật trình dịch trang',
 	'pt-log-mark' => '{{GENDER:$2|}}đã đánh dấu phiên bản $3 của trang “[[:$1]]” là cần được dịch',
 	'pt-log-unmark' => '{{GENDER:$2|đã di chuyển}} trang "[[:$1]]" từ bản dịch',
-	'pt-log-moveok' => '{{GENDER:$2|}}đã hoàn thành việc đổi tên của trang dịch được $1',
+	'pt-log-moveok' => '{{GENDER:$2}}đã hoàn thành việc đổi tên của trang dịch được $1 thành $3',
 	'pt-log-movenok' => '{{GENDER:$2|}}đã gặp vấn đề trong khi di chuyển [[:$1]] đến [[:$3]]',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|}}đã hoàn thành xóa trang dịch được $1',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|}}đã gặp một vấn đề khi xóa trang dịch được [[:$1]]',

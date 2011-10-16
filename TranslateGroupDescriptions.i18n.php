@@ -1000,6 +1000,7 @@ Extensión creada pola Universidade de Bamberg. Licenza GPL 2.0 ou posterior. De
 );
 
 /** Swiss German (Alemannisch)
+ * @author Als-Chlämens
  * @author Als-Holder
  */
 $messages['gsw'] = array(
@@ -1011,6 +1012,7 @@ $messages['gsw'] = array(
 	'translate-group-desc-collection' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir d MediaWiki-Erwyterig [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir d MediaWiki-Erwyterig [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Meta-Nochrichte-Gruppe, wu s alli Nochrichte din het fir d MediaWiki-Erwyterig [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'In dere Meta Mäldigsgruppe sin alli Systemmädlige für d MediaWiki-Erwyyterig [http://semantic-mediawiki.org/wiki/Semantic_MediaWiki_–_Startsyte Semantic MediaWiki] un de Erwyyterige wo dört yybunde sin',
 	'translate-group-desc-socialprofile' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir verwandti Erwyterige vu dr MediaWiki-Erwyterig  f[http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir d MediaWiki-Erwyterig [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu  [http://www.wikia.com Wikia] brucht wäre',
@@ -1023,12 +1025,15 @@ $messages['gsw'] = array(
 	'bw-desc-freecol' => 'Voreb Du aafangsch mit Ibersetze vu FreeCol, liis bitte zerscht [[Translating:FreeCol]]. Freecol nutzt d GPL-Lizänz.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], e Netzforum, wu in PHP gschriben isch.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] isch e webbasiert Bug-Tracking-Syschtem. Iber Probläm sott uf [[Support]] berichtet wäre.',
+	'translate-group-desc-eol' => 'Mäldigsgruppe für [[Translating:EOL|Läbens-Enzyklopädi]]',
 	'translate-group-desc-ihris' => 'Nochrichte fir [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Nochrichte fir [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], eme Modul vu [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Nochrichte fir [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], eme Modul vu [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'Nochrichte fir [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], eme Modul vu [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Nochrichte fir [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]],, eme Modul vu [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'Mäldige fir [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'E Haupt-Plugin fir [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Nochrichte fir e stabil Version vu [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] isch e Management-Informationssyschtem fir Mikrofinanze',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' isch e Python-Bibliothek zum Schrybe vu PDF-Dokumänt us MediaWiki-Artikel, wu dur d mwlib-Bibliothek parsed wore sin.
 
@@ -1049,10 +1054,8 @@ Bitte lueg uf [[mw:Extension:PDF_Writer]] un uf http://code.pediapress.com/wiki/
 	'bw-desc-shapado' => 'Syschtemnaochrichte vu [[Translating:Shapado|Shapado]], ere freje Open-Source-Software fir Froge un Antworte',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] isch e Opensource-Mikroblog-Server',
 	'translate-group-desc-statusnet-plugin' => 'Die Noorichte ghere zuen eme Plug-in vu [[Translating:StatusNet|StatusNet]]',
-	'bw-desc-voctrain' => 'Omegawiki-basierte Vokabeltrainer. Mithilf vun eme Flashchartesyschtem chenne Vokable vu jedere Sproch zue jedere vu Omagawiki unterstitzte Sproch glehrt wäre.
-Aagleit vu dr Universität Bamberg. Lizänziert unter GPL 2.0 oder speter. Entwicklet vum [[User:Kim Bruning|Kim Bruning]].',
+	'translate-group-desc-tsint' => 'Mäldigsgruppe für [http://toolserver.org/~krinkle/TsIntuition „Toolserver Intuition“], s I18N-System für d Hilfsprogramm wo uffem [http://toolserver.org Toolserver] ghoschtet sin. (<span class="plainlinks">[[Translating talk:Toolserver|Hilf]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technischi Hywyys]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] cha d Autore vun ere Syte im e Wikimedia-Wiki schnäll uusefinde.',
-	'bw-desc-wikimediamobile' => 'Di mobil Version vu dr Wikipedia findsch unter http://m.wikipedia.org. Si het s Ziil, Wikipedia uf Smartphones rund um d Wält z bringe.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] isch e Projäkt, wu ne Offline-Textversion vu dr Wikipedia fir e Mobilservice z Verfiegig stellt.',
 );
 
