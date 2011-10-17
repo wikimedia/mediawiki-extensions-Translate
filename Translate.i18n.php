@@ -15803,13 +15803,9 @@ Proponujemy przejrzeć komunikaty korzystając z [[Special:Translate|{{int:trans
 	'translate-mgs-nothing' => 'Brak czegokolwiek do wyświetlenia dla żądanych statystyk.',
 	'supportedlanguages' => 'Obsługiwane języki',
 	'supportedlanguages-summary' => 'Na tej stronie znajduje się lista wszystkich języków, obsługiwanych przez {{GRAMMAR:B.lp|{{SITENAME}}}}, razem z pseudonimami tłumaczy, pracującymi w danym języku.
-Jeżeli chcesz dowiedzieć się więcej na temat określonego języka, kliknij na link do portalu tego języka.
-Jeżeli chcesz przejść do strony danego tłumacza, kliknij na jego pseudonim.
-
-Jeżeli języka brak w spisie, informację o tym jak rozpocząć tłumaczenie na nowy język odnajdziesz na stronie „[[Translating:Process|nowy język]]“.
-
-Jeśli tłumaczysz na jakiś język, a Twojego pseudonimu brak, dopisz się do listy tłumaczy na stronie [[:Category:Languages|portalu]] właściwego języka.
-W menu odnajdziesz link do portalu języka, który wybrałeś w preferencjach.',
+Większa czcionka świadczy o większej liczbie edycji wykonanych przez tłumacza.
+Kolorem podkreślenia wyróżniono jak dawno tłumacz był aktywny.',
+	'supportedlanguages-colorlegend' => 'Znaczenie koloru – ostatnie tłumaczenie $1 dni temu.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tłumacz|Tłumacze:}} $1',
 	'supportedlanguages-recenttranslations' => 'ostatnie tłumaczenia',
 	'supportedlanguages-count' => '$1 {{plural:$1|język|języki|języków}} łącznie.',
