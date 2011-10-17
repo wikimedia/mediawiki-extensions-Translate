@@ -205,6 +205,15 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-contest',
+	'check' => 'variable',
+	'message' => array(
+		'group-contestadmin-member', // Optional GENDER parameter
+		'group-contestparticipant-member', // Optional GENDER parameter
+		'group-contestjudge-member', // Optional GENDER parameter
+	)
+),
+array(
 	'group' => 'ext-contributionseditcount',
 	'check' => 'variable',
 	'message' => array(
