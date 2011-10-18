@@ -602,6 +602,7 @@ array(
 	'check' => 'links',
 	'message' => array(
 		'categoryselect-tooltip', // Contains link parts that may need translation
+		'categoryselect-code-view-placeholder', // Contains link parts that may need translation
 	)
 ),
 array(
