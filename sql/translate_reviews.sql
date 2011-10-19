@@ -1,3 +1,4 @@
+-- Translation reviews; to store reviews of a page revision by a user.
 CREATE TABLE /*$wgDBprefix*/translate_reviews (
   trr_user int not null,
 
