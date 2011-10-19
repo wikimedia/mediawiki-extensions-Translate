@@ -85,6 +85,8 @@ $wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
 $wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
 $wgAPIMetaModules['messagegroups'] = 'ApiQueryMessageGroups';
 $wgAPIMetaModules['messagetranslations'] = 'ApiQueryMessageTranslations';
+$wgAPIModules['translationreview'] = 'ApiTranslationReview';
+$wgHooks['APIQueryInfoTokens'][] = 'ApiTranslationReview::injectTokenFunction';
 
 // Register hooks.
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
