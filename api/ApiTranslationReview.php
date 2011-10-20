@@ -33,6 +33,10 @@ class ApiTranslationReview extends ApiBase {
 			$this->dieUsage( 'You made me confused :X', 'unknownmessage' );
 		}
 
+		if ( $handle->isFuzzy() ) {
+			$this->dieUsage( 'Cannot review fuzzy messages', 'fuzzymessage' );
+		}
+
 		$dbw = wfGetDB( DB_MASTER );
 		$table = 'translate_reviews';
 		$row = array(
@@ -95,6 +99,7 @@ class ApiTranslationReview extends ApiBase {
 		return array_merge( parent::getPossibleErrors(), array(
 			array( 'code' => 'permissiondenied', 'info' => 'You must have translate-messagereview right' ),
 			array( 'code' => 'unknownmessage', 'info' => 'Title $1 does not belong to a message group' ),
+			array( 'code' => 'fuzzymessage', 'info' => 'Cannot review fuzzy messages' ),
 			array( 'code' => 'invalidrevision', 'info' => 'Revision $1 is invalid' ),
 		) );
 	}
