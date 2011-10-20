@@ -366,6 +366,16 @@ Details: $1',
 	'translate-searchprofile-tooltip' => 'Search from all translations',
 	'translate-search-languagefilter' => 'Filter by language:',
 	'translate-search-nofilter' => 'No filtering',
+
+	'translate-messagereview-submit' => 'Review',
+	'translate-messagereview-progress' => 'Reviewing...',
+	'translate-messagereview-failure' => 'Reviewing... failed: $1',
+	'translate-messagereview-done' => 'Reviewed',
+	'translate-messagereview-apierror-invalidrevision' => 'Translation was not found',
+	'translate-messagereview-apierror-unknownmessage' => 'Message was not found',
+	'translate-messagereview-reviews' => 'Reviewed by {{PLURAL:$1|one user|$1 users}}',
+	'translate-messagereview-reviewswithyou' => 'Reviewed by {{PLURAL:$1|one user|$1 users}} including you',
+	'translate-messagereview-reviewsyou' => 'Reviewed by you',
 );
 
 /** Message documentation (Message documentation)
@@ -575,6 +585,16 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'translate-searchprofile' => 'Tab in [[Special:Search]]
 {{Identical|Translation}}',
 	'translate-searchprofile-tooltip' => 'Tooltip for a tab in [[Special:Search]]',
+
+	'translate-messagereview-submit' => 'Button label in Special:Translate review mode',
+	'translate-messagereview-progress' => 'Button label in Special:Translate review mode. Button is disabled.',
+	'translate-messagereview-failure' => 'Button label in Special:Translate review mode. Button is disabled. $1 can be {{msg-mw|translate-messagereview-apierror-invalidrevision}} or {{msg-mw|translate-messagereview-apierror-unknownmessage}}.',
+	'translate-messagereview-done' => 'Button label in Special:Translate review mode. Button is disabled.',
+	'translate-messagereview-apierror-invalidrevision' => 'Error message for {{msg-mw|translate-messagereview-failure}}',
+	'translate-messagereview-apierror-unknownmessage' => 'Error message for {{msg-mw|translate-messagereview-failure}}',
+	'translate-messagereview-reviews' => 'Status message in Special:Translate in review mode',
+	'translate-messagereview-reviewswithyou' => 'Status message in Special:Translate in review mode',
+	'translate-messagereview-reviewsyou' => 'Status message in Special:Translate in review mode',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)

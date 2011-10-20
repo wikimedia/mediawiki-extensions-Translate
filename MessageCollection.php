@@ -42,6 +42,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/// \type{Database Result Resource} Stored translations in database.
 	protected $dbData = null;
 
+	/// \type{Database Result Resource} Stored reviews in database.
+	protected $dbReviewData = null;
+
 	/**
 	 * Tags, copied to thin messages
 	 * tagtype => keys
@@ -50,6 +53,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/// \list{String} Authors.
 	protected $authors = array();
+
+	/// bool Whether review info is loaded
+	protected $reviewMode = false;
 
 	/**
 	 * Constructors. Use newFromDefinitions() instead.
@@ -184,6 +190,14 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->authors = array_unique( $authors );
 	}
 
+	/**
+	 * Call this to load list of reviewers for each message.
+	 * Can be accessed from TMessage::getReviewers().
+	 */
+	public function setReviewMode( $value = true  ) {
+		$this->reviewMode = $value;
+	}
+
 	// Data modifiers
 
 	/**
@@ -195,6 +209,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	public function loadTranslations( $dbtype = DB_SLAVE ) {
 		$this->loadData( $this->keys, $dbtype );
 		$this->loadInfo( $this->keys, $dbtype );
+		if ( $this->reviewMode ) {
+			$this->loadReviewInfo( $this->keys, $dbtype );
+		}
 		$this->initMessages();
 	}
 
@@ -510,6 +527,40 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	/**
+	 * Loads reviewers for given messages.
+	 * @param $keys \list{String} List of keys in database format.
+	 * @param $dbtype One of DB_* constants.
+	 */
+	protected function loadReviewInfo( array $keys, $dbtype = DB_SLAVE ) {
+		if ( $this->dbReviewData !== null ) {
+			return;
+		}
+
+		$this->dbReviewData = array();
+
+		if ( !count( $keys ) ) {
+			return;
+		}
+
+		$dbr = wfGetDB( $dbtype );
+
+		$tables = array( 'page', 'translate_reviews' );
+		$fields = array( 'page_title', 'trr_user' );
+		$conds  = array(
+			'page_namespace' => $this->definitions->namespace,
+			'page_title' => array_values( $keys ),
+		);
+		$joins = array( 'translate_reviews' =>
+			array(
+				'JOIN',
+				array( 'page_id=trr_page', 'page_latest=trr_revision' )
+			)
+		);
+
+		$this->dbReviewData = $dbr->select( $tables, $fields, $conds, __METHOD__, array(), $joins );
+	}
+
+	/**
 	 * Loads translation for given list of keys.
 	 * @param $keys \list{String} List of keys in database format.
 	 * @param $dbtype One of DB_* constants.
@@ -528,7 +579,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$dbr = wfGetDB( $dbtype );
 
 		$tables = array( 'page', 'revision', 'text' );
-		$fields = array( 'page_title', 'rev_user_text', 'old_flags', 'old_text' );
+		$fields = array( 'page_title', 'page_latest', 'rev_user_text', 'old_flags', 'old_text' );
 		$conds  = array(
 			'page_namespace' => $this->definitions->namespace,
 			'page_title' => array_values( $keys ),
@@ -567,6 +618,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 				$key = $flipKeys[$row->page_title];
 				$messages[$key]->setRow( $row );
+				$messages[$key]->setProperty( 'revision', $row->page_latest );
 			}
 		}
 
@@ -598,6 +650,16 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		foreach ( $this->infile as $key => $value ) {
 			if ( isset( $messages[$key] ) ) {
 				$messages[$key]->setInfile( $value );
+			}
+		}
+
+		if ( $this->dbReviewData !== null ) {
+			foreach ( $this->dbReviewData as $row ) {
+				if ( !isset( $flipKeys[$row->page_title] ) ) {
+					continue;
+				}
+				$key = $flipKeys[$row->page_title];
+				$messages[$key]->addReviewer( $row->trr_user );
 			}
 		}
 

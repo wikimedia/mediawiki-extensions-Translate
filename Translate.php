@@ -165,8 +165,17 @@ $wgResourceModules['ext.translate.quickedit'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.messagetable'] = array(
+	'scripts' => 'resources/ext.translate.messagetable.js',
 	'styles' => 'resources/ext.translate.messagetable.css',
 	'position' => 'top',
+	'messages' => array(
+		'translate-messagereview-submit',
+		'translate-messagereview-progress',
+		'translate-messagereview-failure',
+		'translate-messagereview-done',
+		'translate-messagereview-apierror-invalidrevision',
+		'translate-messagereview-apierror-unknownmessage',
+	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.translate'] = array(

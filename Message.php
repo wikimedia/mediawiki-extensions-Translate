@@ -20,6 +20,10 @@ abstract class TMessage {
 	protected $infile;
 	/// \list{String} Message tags.
 	protected $tags = array();
+	/// \array Message properties.
+	protected $props = array();
+	/// \list{String} Message reviewers.
+	protected $reviewers = array();
 
 	/**
 	 * Creates new message object.
@@ -96,6 +100,22 @@ abstract class TMessage {
 	 */
 	public function getTags() {
 		return $this->tags;
+	}
+
+	public function setProperty( $key, $value ) {
+		$this->props[$key] = $value;
+	}
+
+	public function getProperty( $key ) {
+		return isset( $this->props[$key] ) ? $this->props[$key] : null;
+	}
+
+	public function addReviewer( $userid ) {
+		$this->reviewers[] = $userid;
+	}
+
+	public function getReviewers() {
+		return $this->reviewers;
 	}
 }
 

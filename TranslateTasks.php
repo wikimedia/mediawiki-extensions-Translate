@@ -204,6 +204,7 @@ class ReviewMessagesTask extends ViewMessagesTask {
 	protected function preinit() {
 		$code = $this->options->getLanguage();
 		$this->collection = $this->group->initCollection( $code );
+		$this->collection->setReviewMode( true );
 		$this->collection->setInfile( $this->group->load( $code ) );
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'hastranslation', false );
@@ -328,6 +329,7 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 	protected function preinit() {
 		$code = $this->options->getLanguage();
 		$this->collection = $this->group->initCollection( $code );
+		$this->collection->setReviewMode( true );
 		$this->collection->setInfile( $this->group->load( $code ) );
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'hastranslation', false );

@@ -40,3 +40,12 @@
 	border-style: solid;
 	border-width: 1px;
 }
+
+.mw-translate-messagereviewbutton {
+	float: right;
+}
+
+.mw-translate-messagereviewstatus {
+	clear: right;
+	text-align: right;
+}

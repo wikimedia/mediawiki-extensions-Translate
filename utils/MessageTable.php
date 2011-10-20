@@ -95,28 +95,17 @@ class MessageTable {
 
 	public function contents() {
 		global $wgUser;
-
 		$sk = $wgUser->getSkin();
 
 		$optional = wfMsgHtml( 'translate-optional' );
 
-		$batch = new LinkBatch();
-		if ( method_exists( $batch, 'setCaller' ) ) {
-			$batch->setCaller( __METHOD__ );
-		}
-
-		$ns = $this->group->getNamespace();
-
-		foreach ( $this->collection->keys() as $key ) {
-			$batch->add( $ns, $key );
-		}
-
-		$batch->execute();
+		$this->doLinkBatch();
 
 		$sourceLang = Language::factory( $this->group->getSourceLanguage() );
 		$targetLang = Language::factory( $this->collection->getLanguage() );
 
 		$output =  '';
+
 		$this->collection->initMessages(); // Just to be sure
 		foreach ( $this->collection as $key => $m ) {
 			$tools = array();
@@ -135,7 +124,6 @@ class MessageTable {
 			}
 
 			global $wgLang;
-
 			$niceTitle = htmlspecialchars( $wgLang->truncate( $key, - 30 ) );
 
 			$tools['edit'] = $sk->link(
@@ -153,8 +141,8 @@ class MessageTable {
 			if ( $m->hasTag( 'optional' ) ) {
 				$extra = '<br />' . $optional;
 			}
-
-			$leftColumn = $anchor . $tools['edit'] . $extra;
+			
+			$leftColumn = $anchor . $tools['edit'] . $this->getReviewButton( $m ) . $extra . $this->getReviewStatus( $m );
 
 			if ( $this->reviewMode && $original !== $message ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
@@ -217,4 +205,68 @@ class MessageTable {
 
 		return array( 'lang' => $code, 'dir' => $dir );
 	}
+
+	protected function getReviewButton( TMessage $message ) {
+		global $wgUser;
+		$revision = $message->getProperty( 'revision' );
+		if ( !$this->reviewMode || !$wgUser->isAllowed( 'translate-messagereview' ) || !$revision || $message->hasTag( 'fuzzy' ) ) {
+			return '';
+		}
+
+		$attribs = array(
+			'type' => 'button',
+			'class' => 'mw-translate-messagereviewbutton',
+			'data-token' => ApiTranslationReview::getToken( 0, '' ),
+			'data-revision' => $revision,
+		);
+
+		$reviewers = $message->getReviewers();
+		if ( in_array( $wgUser->getId(), $reviewers ) ) {
+			$attribs['value'] = wfMessage( 'translate-messagereview-done' )->text();
+			$attribs['disabled'] = 'disabled';
+		} else {
+			$attribs['value'] = wfMessage( 'translate-messagereview-submit' )->text();
+		}
+
+
+		$review = Html::element( 'input', $attribs );
+		return $review;
+	}
+
+	protected function getReviewStatus( TMessage $message ) {
+		global $wgUser;
+		if ( !$this->reviewMode ) {
+			return '';
+		}
+
+		$reviewers = $message->getReviewers();
+		if ( count( $reviewers ) === 0 ) {
+			return '';
+		}
+
+		$you = $wgUser->getId();
+		if ( in_array( $you, $reviewers ) ) {
+			if ( count( $reviewers ) === 1 ) {
+				$msg = wfMessage( 'translate-messagereview-reviewsyou' )->parse();
+			} else {
+				$msg = wfMessage( 'translate-messagereview-reviewswithyou' )->numParams( count( $reviewers ) )->parse();
+			}
+		} else {
+			$msg = wfMessage( 'translate-messagereview-reviews' )->numParams( count( $reviewers ) )->parse();
+		}
+		return Html::rawElement( 'div', array( 'class' => 'mw-translate-messagereviewstatus' ), $msg );
+	}
+
+	protected function doLinkBatch() {
+		$batch = new LinkBatch();
+		if ( method_exists( $batch, 'setCaller' ) ) {
+			$batch->setCaller( __METHOD__ );
+		}
+		$ns = $this->group->getNamespace();
+		foreach ( $this->collection->keys() as $key ) {
+			$batch->add( $ns, $key );
+		}
+		$batch->execute();
+	}
+
 }
