@@ -586,7 +586,6 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'translate-searchprofile' => 'Tab in [[Special:Search]]
 {{Identical|Translation}}',
 	'translate-searchprofile-tooltip' => 'Tooltip for a tab in [[Special:Search]]',
-
 	'translate-messagereview-submit' => 'Button label in Special:Translate review mode',
 	'translate-messagereview-progress' => 'Button label in Special:Translate review mode. Button is disabled.',
 	'translate-messagereview-failure' => 'Button label in Special:Translate review mode. Button is disabled. $1 can be {{msg-mw|translate-messagereview-apierror-invalidrevision}} or {{msg-mw|translate-messagereview-apierror-unknownmessage}} or {{msg-mw|translate-messagereview-apierror-fuzzymessage}}.',
@@ -7606,7 +7605,7 @@ Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
 	'translate-checks-xhtml' => 'Por favor, substitúa {{PLURAL:$2|a seguinte etiqueta pola correcta|as seguintes etiquetas polas correctas}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'A definición usa <nowiki>{{PLURAL:}}</nowiki>, pero a tradución non.',
-	'translate-checks-pagename' => 'O espazo de nomes cambiou desde a definición',
+	'translate-checks-pagename' => 'O espazo de nomes é diferente con respecto ao presente na definición',
 	'translate-checks-format' => 'Esta tradución non segue a definición ou ten unha sintaxe inválida: $1',
 	'translate-checks-escape' => 'As seguintes secuencias de escape poden ser accidentais: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Use <nowiki>$1</nowiki> no canto de <nowiki>$2</nowiki> neste proxecto.',
@@ -13360,9 +13359,6 @@ $messages['ml'] = array(
 	'translate-magic-notsaved' => 'താങ്കളുടെ തിരുത്തൽ സേവ് ചെയ്തിട്ടില്ല!',
 	'translate-magic-errors' => 'തർജ്ജമകളിൽ ഉള്ളതായി താഴെ കൊടുത്തിരിക്കുന്ന {{PLURAL:$1|പിഴവ്|പിഴവുകൾ}} ശരിയാക്കുക:',
 	'translate-magic-saved' => 'താങ്കൾ വരുത്തിയ മാറ്റങ്ങൾ വിജയകരമായി സേവ് ചെയ്തിരിക്കുന്നു.',
-	'translationchanges' => 'പരിഭാഷയിലെ മാറ്റങ്ങൾ',
-	'translationchanges-export' => 'കയറ്റുമതി ചെയ്യുക',
-	'translationchanges-change' => '$1: $2 ചെയ്തത് $3',
 	'translate-checks-parameters' => 'ഇനിക്കൊടുക്കുന്ന {{PLURAL:$2|ചരം|ചരങ്ങൾ}} ഉപയോഗിച്ചിട്ടില്ല:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'ഇനിക്കൊടുക്കുന്ന {{PLURAL:$2|ചരം|ചരങ്ങൾ}} വ്യക്തമല്ല:
@@ -13398,7 +13394,7 @@ $messages['ml'] = array(
 	'translate-statsf-options' => 'ഗ്രാഫിന്റെ ഐച്ഛികങ്ങൾ',
 	'translate-statsf-width' => 'വീതി പിക്സലിൽ:',
 	'translate-statsf-height' => 'ഉയരം പിക്സലിൽ:',
-	'translate-statsf-days' => 'ദിവസത്തിലുള്ള കാലയളവ്:',
+	'translate-statsf-days' => 'തുടങ്ങുന്ന തീയതി:',
 	'translate-statsf-scale-months' => 'മാസങ്ങൾ',
 	'translate-statsf-scale-weeks' => 'ആഴ്‌‌ചകൾ',
 	'translate-statsf-scale-days' => 'ദിവസങ്ങൾ',
@@ -13438,6 +13434,9 @@ $messages['ml'] = array(
 	'translate-untranslated' => 'പരിഭാഷപ്പെടുത്താത്തവ',
 	'translate-percentage-complete' => 'പൂർണ്ണത',
 	'translate-percentage-fuzzy' => 'കാലഹരണപ്പെട്ടവ',
+	'translate-mgs-group' => 'സന്ദേശ ഗണം:',
+	'translate-mgs-column-language' => 'ഭാഷ',
+	'translate-mgs-totals' => 'ഒരുമിച്ച് എല്ലാ ഭാഷകളും',
 	'supportedlanguages' => 'പിന്തുണയ്ക്കുന്ന ഭാഷകൾ',
 	'supportedlanguages-translators' => '{{PLURAL:$2|പരിഭാഷക(ൻ)|പരിഭാഷകർ}}: $1',
 	'supportedlanguages-recenttranslations' => 'സമീപകാല പരിഭാഷകൾ',
