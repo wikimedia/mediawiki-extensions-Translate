@@ -4820,6 +4820,16 @@ Details: $1',
 	'translate-searchprofile-tooltip' => 'Suche in allen Übersetzungen',
 	'translate-search-languagefilter' => 'Nach Sprache filtern:',
 	'translate-search-nofilter' => 'Alle Sprachen',
+	'translate-messagereview-submit' => 'Überprüfen',
+	'translate-messagereview-progress' => 'Überprüfung …',
+	'translate-messagereview-failure' => 'Überprüfung … gescheitert: $1',
+	'translate-messagereview-done' => 'Überprüft',
+	'translate-messagereview-apierror-invalidrevision' => 'Die Übersetzung wurde nicht gefunden',
+	'translate-messagereview-apierror-unknownmessage' => 'Die Nachricht wurde nicht gefunden',
+	'translate-messagereview-apierror-fuzzymessage' => 'Die Nachricht ist als veraltet markiert',
+	'translate-messagereview-reviews' => 'Überprüft von {{PLURAL:$1|einem Benutzer|$1 Benutzern}}',
+	'translate-messagereview-reviewswithyou' => 'Überprüft von {{PLURAL:$1|einem Benutzer|$1 Benutzern}}, einschließlich dir selbst',
+	'translate-messagereview-reviewsyou' => 'Überprüft von dir',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -4873,6 +4883,8 @@ Wenn Sie sich entscheiden, Änderungen zu ignorieren, werden sie mit dem nächst
 	'translate-import-err-warnings' => 'Die Datei entspricht nicht dem erwarteten Format.
 Stellen Sie sicher, dass der Editor keine <tt>msgctxt</tt>-Felder entfernt.
 Details: $1',
+	'translate-messagereview-reviewswithyou' => 'Überprüft von {{PLURAL:$1|einem Benutzer|$1 Benutzern}}, einschließlich von Ihnen selbst',
+	'translate-messagereview-reviewsyou' => 'Überprüft von Ihnen',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -7789,6 +7801,16 @@ Detalles: $1',
 	'translate-searchprofile-tooltip' => 'Procurar en todas as traducións',
 	'translate-search-languagefilter' => 'Filtrar por lingua:',
 	'translate-search-nofilter' => 'Non filtrar',
+	'translate-messagereview-submit' => 'Revisar',
+	'translate-messagereview-progress' => 'Revisando...',
+	'translate-messagereview-failure' => 'Revisando... Erro: $1',
+	'translate-messagereview-done' => 'Revisada',
+	'translate-messagereview-apierror-invalidrevision' => 'Non se atopou a tradución',
+	'translate-messagereview-apierror-unknownmessage' => 'Non se atopou a mensaxe',
+	'translate-messagereview-apierror-fuzzymessage' => 'A mensaxe está marcada con FUZZY',
+	'translate-messagereview-reviews' => 'Revisada por {{PLURAL:$1|un usuario|$1 usuarios}}',
+	'translate-messagereview-reviewswithyou' => 'Revisada por {{PLURAL:$1|un usuario|$1 usuarios}}, incluído vostede',
+	'translate-messagereview-reviewsyou' => 'Revisada por vostede',
 );
 
 /** Gothic (Gothic)
@@ -9958,6 +9980,16 @@ Detalios: $1',
 	'translate-searchprofile-tooltip' => 'Cercar in tote le traductiones',
 	'translate-search-languagefilter' => 'Filtrar per lingua:',
 	'translate-search-nofilter' => 'Non filtrar',
+	'translate-messagereview-submit' => 'Revider',
+	'translate-messagereview-progress' => 'Revider...',
+	'translate-messagereview-failure' => 'Revider... error: $1',
+	'translate-messagereview-done' => 'Revidite',
+	'translate-messagereview-apierror-invalidrevision' => 'Traduction non trovate',
+	'translate-messagereview-apierror-unknownmessage' => 'Message non trovate',
+	'translate-messagereview-apierror-fuzzymessage' => 'Message marcate como "fuzzy"',
+	'translate-messagereview-reviews' => 'Revidite per {{PLURAL:$1|un usator|$1 usatores}}',
+	'translate-messagereview-reviewswithyou' => 'Revidite per {{PLURAL:$1|un usator|$1 usatores}} includente te',
+	'translate-messagereview-reviewsyou' => 'Revidite per te',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -13277,6 +13309,16 @@ $1',
 	'translate-searchprofile-tooltip' => 'Пребарување по сите преводи',
 	'translate-search-languagefilter' => 'Филтрирај по јазик:',
 	'translate-search-nofilter' => 'Без филтрирање',
+	'translate-messagereview-submit' => 'Проверка',
+	'translate-messagereview-progress' => 'Проверувам...',
+	'translate-messagereview-failure' => 'Проверувам... неуспешно: $1',
+	'translate-messagereview-done' => 'Проверено',
+	'translate-messagereview-apierror-invalidrevision' => 'Преводот не е пронајден',
+	'translate-messagereview-apierror-unknownmessage' => 'Пораката не е пронајдена',
+	'translate-messagereview-apierror-fuzzymessage' => 'Пораката е обележана како застарена',
+	'translate-messagereview-reviews' => 'Прегледано од {{PLURAL:$1|еден корисник|$1 корисници}}',
+	'translate-messagereview-reviewswithyou' => 'Прегледано од {{PLURAL:$1|еден корисник|$1 корисници}} заклучно со Вас',
+	'translate-messagereview-reviewsyou' => 'Прегледано од Вас',
 );
 
 /** Malayalam (മലയാളം)
@@ -13434,6 +13476,9 @@ $messages['ml'] = array(
 	'translate-untranslated' => 'പരിഭാഷപ്പെടുത്താത്തവ',
 	'translate-percentage-complete' => 'പൂർണ്ണത',
 	'translate-percentage-fuzzy' => 'കാലഹരണപ്പെട്ടവ',
+	'translate-ls-submit' => 'സ്ഥിതിവിവരക്കണക്കുകൾ പ്രദർശിപ്പിക്കുക',
+	'translate-ls-column-group' => 'സന്ദേശ ഗണം',
+	'translate-mgs-pagename' => 'സന്ദേശ ഗണത്തിന്റെ സ്ഥിതിവിവരക്കണക്കുകൾ',
 	'translate-mgs-group' => 'സന്ദേശ ഗണം:',
 	'translate-mgs-column-language' => 'ഭാഷ',
 	'translate-mgs-totals' => 'ഒരുമിച്ച് എല്ലാ ഭാഷകളും',
@@ -13479,6 +13524,13 @@ $messages['ml'] = array(
 	'translate-searchprofile' => 'പരിഭാഷകൾ',
 	'translate-searchprofile-tooltip' => 'എല്ലാ പരിഭാഷകളിൽ നിന്നും തിരയുക',
 	'translate-search-languagefilter' => 'ഭാഷയനുസരിച്ച് എടുക്കുക:',
+	'translate-messagereview-submit' => 'സംശോധനം ചെയ്യുക',
+	'translate-messagereview-progress' => 'സംശോധനം ചെയ്യുന്നു...',
+	'translate-messagereview-failure' => 'സംശോധനം ചെയ്യുന്നു... പരാജയപ്പെട്ടു: $1',
+	'translate-messagereview-done' => 'സംശോധനം ചെയ്തവ',
+	'translate-messagereview-apierror-invalidrevision' => 'പരിഭാഷ കണ്ടെത്താനായില്ല',
+	'translate-messagereview-apierror-unknownmessage' => 'സന്ദേശം കണ്ടെത്താനായില്ല',
+	'translate-messagereview-reviewsyou' => 'സംശോധനം ചെയ്തത് താങ്കളാണ്',
 );
 
 /** Mongolian (Монгол)
@@ -13915,6 +13967,16 @@ Butiran: $1',
 	'translate-searchprofile-tooltip' => 'Cari dari semua terjemahan',
 	'translate-search-languagefilter' => 'Tapis mengikut bahasa:',
 	'translate-search-nofilter' => 'Jangan tapis',
+	'translate-messagereview-submit' => 'Kaji semula',
+	'translate-messagereview-progress' => 'Mengkaji semula...',
+	'translate-messagereview-failure' => 'Mengkaji semula... tidak menjadi: $1',
+	'translate-messagereview-done' => 'Dikaji semula',
+	'translate-messagereview-apierror-invalidrevision' => 'Terjemahan tidak dijumpai',
+	'translate-messagereview-apierror-unknownmessage' => 'Mesej tidak dijumpai',
+	'translate-messagereview-apierror-fuzzymessage' => 'Mesej ditandai sebagai kabur',
+	'translate-messagereview-reviews' => 'Dikaji oleh {{PLURAL:$1|seorang|$1 orang}} pengguna',
+	'translate-messagereview-reviewswithyou' => 'Dikaji oleh {{PLURAL:$1|seorang|$1 orang}} pengguna, termasuk anda',
+	'translate-messagereview-reviewsyou' => 'Dikaji oleh anda',
 );
 
 /** Maltese (Malti)
@@ -14706,6 +14768,8 @@ Details: $1',
 	'translate-searchprofile-tooltip' => 'In vertalingen zoeken',
 	'translate-search-languagefilter' => 'Taalfilter:',
 	'translate-search-nofilter' => 'Niet filteren',
+	'translate-messagereview-apierror-invalidrevision' => 'Vertaling is niet gevonden',
+	'translate-messagereview-apierror-unknownmessage' => 'Bericht is niet gevonden',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -21870,6 +21934,16 @@ Chi tiết:$1',
 	'translate-searchprofile-tooltip' => 'Tìm kiếm tất cả các bản dịch',
 	'translate-search-languagefilter' => 'Lọc theo ngôn ngữ:',
 	'translate-search-nofilter' => 'Không lọc',
+	'translate-messagereview-submit' => 'Duyệt',
+	'translate-messagereview-progress' => 'Đang duyệt…',
+	'translate-messagereview-failure' => 'Đang duyệt… thất bại: $1',
+	'translate-messagereview-done' => 'Được duyệt',
+	'translate-messagereview-apierror-invalidrevision' => 'Không tìm thấy bản dịch',
+	'translate-messagereview-apierror-unknownmessage' => 'Không tìm thấy thông điệp',
+	'translate-messagereview-apierror-fuzzymessage' => 'Thông điệp được đánh dấu là lỗi thời',
+	'translate-messagereview-reviews' => 'Được $1 thành viên duyệt',
+	'translate-messagereview-reviewswithyou' => 'Được $1 thành viên duyệt, bao gồm bạn',
+	'translate-messagereview-reviewsyou' => 'Được bạn duyệt',
 );
 
 /** Volapük (Volapük)
