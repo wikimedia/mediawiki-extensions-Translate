@@ -207,9 +207,11 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param $dbtype One of DB_* constants.
 	 */
 	public function loadTranslations( $dbtype = DB_SLAVE ) {
+		global $wgTranslateMessageReview;
+
 		$this->loadData( $this->keys, $dbtype );
 		$this->loadInfo( $this->keys, $dbtype );
-		if ( $this->reviewMode ) {
+		if ( $this->reviewMode && $wgTranslateMessageReview ) {
 			$this->loadReviewInfo( $this->keys, $dbtype );
 		}
 		$this->initMessages();
