@@ -532,7 +532,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param $dbtype One of DB_* constants.
 	 */
 	protected function loadReviewInfo( array $keys, $dbtype = DB_SLAVE ) {
-		if ( $this->dbReviewData !== null ) {
+		global $wgTranslateMessageReview;
+		if ( $this->dbReviewData !== null || !$wgTranslateMessageReview ) {
 			return;
 		}
 
