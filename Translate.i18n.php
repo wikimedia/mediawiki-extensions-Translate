@@ -7041,6 +7041,9 @@ Détails : $1',
 	'translate-searchprofile-tooltip' => 'Rechercher dans toutes les traductions',
 	'translate-search-languagefilter' => 'Filtrer par langue :',
 	'translate-search-nofilter' => 'Aucun filtrage',
+	'translate-messagereview-apierror-invalidrevision' => "La traduction n'a pas été trouvée",
+	'translate-messagereview-apierror-unknownmessage' => "Le message n'a pas été trouvé",
+	'translate-messagereview-apierror-fuzzymessage' => 'Le message est marqué comme « fuzzy »',
 );
 
 /** Cajun French (Français cadien)
@@ -8163,6 +8166,16 @@ Detail: $1',
 	'translate-searchprofile-tooltip' => 'In allene Übersetzige sueche',
 	'translate-search-languagefilter' => 'Nooch Sprooche filtre:',
 	'translate-search-nofilter' => 'Nit nooch Sprooche filtre',
+	'translate-messagereview-submit' => 'Iberpriefe',
+	'translate-messagereview-progress' => 'Überpriefig...',
+	'translate-messagereview-failure' => 'Überpriefig...fehlgschlo: $1',
+	'translate-messagereview-done' => 'Überprieft',
+	'translate-messagereview-apierror-invalidrevision' => 'D Übersetzig het nit chönne gfunde werde',
+	'translate-messagereview-apierror-unknownmessage' => 'D Noochricht het nit chönne gfunde werde',
+	'translate-messagereview-apierror-fuzzymessage' => 'Die Mäldig isch als veraltet markiert',
+	'translate-messagereview-reviews' => 'Überprieft vo {{PLURAL:$1|eme Benutzer|$1 Benutzer}}',
+	'translate-messagereview-reviewswithyou' => 'Überprieft vo {{PLURAL:$1|eme Benutzer|$1 Benutzer}}, du sälber mitzäält',
+	'translate-messagereview-reviewsyou' => 'Vo dir sälber überprieft',
 );
 
 /** Gujarati (ગુજરાતી)
@@ -13476,6 +13489,7 @@ $messages['ml'] = array(
 	'translate-untranslated' => 'പരിഭാഷപ്പെടുത്താത്തവ',
 	'translate-percentage-complete' => 'പൂർണ്ണത',
 	'translate-percentage-fuzzy' => 'കാലഹരണപ്പെട്ടവ',
+	'translate-languagestats-overall' => 'എല്ലാ സന്ദേശഗണങ്ങളും ഒരുമിച്ച്',
 	'translate-ls-submit' => 'സ്ഥിതിവിവരക്കണക്കുകൾ പ്രദർശിപ്പിക്കുക',
 	'translate-ls-column-group' => 'സന്ദേശ ഗണം',
 	'translate-mgs-pagename' => 'സന്ദേശ ഗണത്തിന്റെ സ്ഥിതിവിവരക്കണക്കുകൾ',
@@ -20754,6 +20768,7 @@ Mga detalye: $1',
 );
 
 /** Turkish (Türkçe)
+ * @author Emperyan
  * @author Joseph
  * @author Karduelis
  * @author Srhat
@@ -20817,7 +20832,7 @@ Neden:
 	'translate-magic-cm-savefailed' => 'Kaydetme başarısız',
 	'translate-magic-special' => 'Özel sayfa rumuzları',
 	'translate-magic-words' => 'Sihirli kelimeler',
-	'translate-magic-namespace' => 'Alan adları',
+	'translate-magic-namespace' => 'Ad alanı adları',
 	'translate-magic-notsaved' => 'Değişikliğiniz kaydedilmedi!',
 	'translate-magic-saved' => 'Değişiklikleriniz başarıyla kaydedildi.',
 	'translate-checks-plural' => 'Tanım <nowiki>{{PLURAL:}}</nowiki> kullanıyor, ancak çeviri kullanmıyor.',
