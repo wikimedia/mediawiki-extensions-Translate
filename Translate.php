@@ -133,6 +133,7 @@ $wgHooks['LinkBegin'][] = 'SpecialMyLanguage::linkfix';
 $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
 $wgAvailableRights[] = 'translate-manage';
+$wgAvailableRights[] = 'translate-messagereview';
 
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
