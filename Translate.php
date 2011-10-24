@@ -137,6 +137,7 @@ $wgAvailableRights[] = 'translate-messagereview';
 
 // New rights group
 $wgGroupPermissions['translate-proofr']['translate-messagereview'] = true;
+$wgAddGroups['translate-proofr'] = array( 'translate-proofr' );
 
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
