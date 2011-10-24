@@ -209,7 +209,7 @@ class MessageTable {
 	protected function getReviewButton( TMessage $message ) {
 		global $wgUser;
 		$revision = $message->getProperty( 'revision' );
-		if ( !$this->reviewMode || !$wgUser->isAllowed( 'translate-messagereview' ) || !$revision || $message->hasTag( 'fuzzy' ) ) {
+		if ( !$this->reviewMode || !$wgUser->isAllowed( 'translate-messagereview' ) || !$revision ) {
 			return '';
 		}
 
@@ -224,6 +224,14 @@ class MessageTable {
 		if ( in_array( $wgUser->getId(), $reviewers ) ) {
 			$attribs['value'] = wfMessage( 'translate-messagereview-done' )->text();
 			$attribs['disabled'] = 'disabled';
+		} elseif( $message->hasTag( 'fuzzy' ) ) {
+			$attribs['value'] = wfMessage( 'translate-messagereview-submit' )->text();
+			$attribs['disabled'] = 'disabled';
+			$attribs['title'] = wfMessage( 'translate-messagereview-no-fuzzy' )->text();
+		} elseif( $wgUser->getName() === $message->author() ) {
+			$attribs['value'] = wfMessage( 'translate-messagereview-submit' )->text();
+			$attribs['disabled'] = 'disabled';
+			$attribs['title'] = wfMessage( 'translate-messagereview-no-own' )->text();
 		} else {
 			$attribs['value'] = wfMessage( 'translate-messagereview-submit' )->text();
 		}

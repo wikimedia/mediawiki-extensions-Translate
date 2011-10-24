@@ -34,7 +34,11 @@ class ApiTranslationReview extends ApiBase {
 		}
 
 		if ( $handle->isFuzzy() ) {
-			$this->dieUsage( 'Cannot review fuzzy messages', 'fuzzymessage' );
+			$this->dieUsage( 'Cannot review fuzzy translations', 'fuzzymessage' );
+		}
+
+		if ( $revision->getUser() == $wgUser->getId() ) {
+			$this->dieUsage( 'Cannot review own translations', 'owntranslation' );
 		}
 
 		$dbw = wfGetDB( DB_MASTER );
@@ -99,7 +103,8 @@ class ApiTranslationReview extends ApiBase {
 		return array_merge( parent::getPossibleErrors(), array(
 			array( 'code' => 'permissiondenied', 'info' => 'You must have translate-messagereview right' ),
 			array( 'code' => 'unknownmessage', 'info' => 'Title $1 does not belong to a message group' ),
-			array( 'code' => 'fuzzymessage', 'info' => 'Cannot review fuzzy messages' ),
+			array( 'code' => 'fuzzymessage', 'info' => 'Cannot review fuzzy translations' ),
+			array( 'code' => 'owntranslation', 'info' => 'Cannot review own translations' ),
 			array( 'code' => 'invalidrevision', 'info' => 'Revision $1 is invalid' ),
 		) );
 	}

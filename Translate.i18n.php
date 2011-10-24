@@ -374,10 +374,14 @@ Details: $1',
 	'translate-messagereview-done' => 'Reviewed',
 	'translate-messagereview-apierror-invalidrevision' => 'Translation was not found',
 	'translate-messagereview-apierror-unknownmessage' => 'Message was not found',
-	'translate-messagereview-apierror-fuzzymessage' => 'Message is marked as fuzzy',
+	'translate-messagereview-apierror-fuzzymessage' => 'Translation is marked as fuzzy',
+	'translate-messagereview-apierror-owntranslation' => 'You cannot review your own translations.',
 	'translate-messagereview-reviews' => 'Reviewed by {{PLURAL:$1|one user|$1 users}}',
 	'translate-messagereview-reviewswithyou' => 'Reviewed by {{PLURAL:$1|one user|$1 users}} including you',
 	'translate-messagereview-reviewsyou' => 'Reviewed by you',
+
+	'translate-messagereview-no-fuzzy' => 'Fuzzy translations cannot be reviewed',
+	'translate-messagereview-no-own' => 'You cannot review your own translations',
 );
 
 /** Message documentation (Message documentation)
@@ -595,9 +599,12 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'translate-messagereview-apierror-invalidrevision' => 'Error message for {{msg-mw|translate-messagereview-failure}}',
 	'translate-messagereview-apierror-unknownmessage' => 'Error message for {{msg-mw|translate-messagereview-failure}}',
 	'translate-messagereview-apierror-fuzzymessage' => 'Error message for {{msg-mw|translate-messagereview-failure}}',
+	'translate-messagereview-apierror-owntranslation' => 'Error message for {{msg-mw|translate-messagereview-failure}}',
 	'translate-messagereview-reviews' => 'Status message in Special:Translate in review mode',
 	'translate-messagereview-reviewswithyou' => 'Status message in Special:Translate in review mode',
 	'translate-messagereview-reviewsyou' => 'Status message in Special:Translate in review mode',
+	'translate-messagereview-no-fuzzy' => 'Tooltip for disabled review button',
+	'translate-messagereview-no-own' => 'Tooltip for disabled review button',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
