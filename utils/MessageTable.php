@@ -259,9 +259,7 @@ class MessageTable {
 
 	protected function doLinkBatch() {
 		$batch = new LinkBatch();
-		if ( method_exists( $batch, 'setCaller' ) ) {
-			$batch->setCaller( __METHOD__ );
-		}
+		$batch->setCaller( __METHOD__ );
 		$ns = $this->group->getNamespace();
 		foreach ( $this->collection->keys() as $key ) {
 			$batch->add( $ns, $key );
