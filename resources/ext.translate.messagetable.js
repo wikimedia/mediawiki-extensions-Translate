@@ -4,7 +4,6 @@ jQuery( document ).ready( function( $ ) {
 		var $b = $(this);
 		$b.click( function() {
 			var successFunction = function( data, textStatus ) {
-				console.log( data, textStatus );
 				if ( data.error ) {
 					var reason = mw.msg( "translate-messagereview-apierror-" + data.error.code );
 					$b.val( mw.msg( "translate-messagereview-failure", reason ) );
