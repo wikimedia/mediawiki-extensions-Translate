@@ -24,13 +24,13 @@ class ApiTranslationReview extends ApiBase {
 
 		$revision = Revision::newFromId( $params['revision'] );
 		if ( !$revision ) {
-			$this->dieUsage( 'You made me sad :(', 'invalidrevision' );
+			$this->dieUsage( 'Invalid revision', 'invalidrevision' );
 		}
 
 		$title = $revision->getTitle();
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
-			$this->dieUsage( 'You made me confused :X', 'unknownmessage' );
+			$this->dieUsage( 'Unknown message', 'unknownmessage' );
 		}
 
 		if ( $handle->isFuzzy() ) {
@@ -87,7 +87,7 @@ class ApiTranslationReview extends ApiBase {
 	public function getParamDescription() {
 		return array(
 			'revision' => 'The revision number to review',
-			'token' => 'A token previously acquired with prop=token&intoken=translationreview',
+			'token' => 'A token previously acquired with action=query&prop=info&intoken=translationreview',
 		);
 	}
 
