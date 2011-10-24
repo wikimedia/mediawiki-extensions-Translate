@@ -382,6 +382,12 @@ Details: $1',
 
 	'translate-messagereview-no-fuzzy' => 'Fuzzy translations cannot be reviewed',
 	'translate-messagereview-no-own' => 'You cannot review your own translations',
+
+	// Damn the 16 character limit for user group names!
+	'group-translate-proofr'           => 'Translation reviewers',
+	'group-translate-proofr-member'    => '{{GENDER:$1|translation reviewer}}',
+	'grouppage-translate-proofr'    => '{{ns:project}}:Translation reviewers',
+
 );
 
 /** Message documentation (Message documentation)
