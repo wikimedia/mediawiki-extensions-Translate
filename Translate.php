@@ -135,6 +135,9 @@ $wgAvailableRights[] = 'translate-import';
 $wgAvailableRights[] = 'translate-manage';
 $wgAvailableRights[] = 'translate-messagereview';
 
+// New rights group
+$wgGroupPermissions['translate-proofr']['translate-messagereview'] = true;
+
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
 
