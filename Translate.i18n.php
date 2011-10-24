@@ -368,20 +368,21 @@ Details: $1',
 	'translate-search-languagefilter' => 'Filter by language:',
 	'translate-search-nofilter' => 'No filtering',
 
-	'translate-messagereview-submit' => 'Review',
-	'translate-messagereview-progress' => 'Reviewing...',
-	'translate-messagereview-failure' => 'Reviewing... failed: $1',
-	'translate-messagereview-done' => 'Reviewed',
+	'translate-messagereview-submit' => 'Accept',
+	'translate-messagereview-progress' => 'Accepting...',
+	'translate-messagereview-failure' => 'Accepting... failed: $1',
+	'translate-messagereview-done' => 'Accepted',
 	'translate-messagereview-apierror-invalidrevision' => 'Translation was not found',
 	'translate-messagereview-apierror-unknownmessage' => 'Message was not found',
 	'translate-messagereview-apierror-fuzzymessage' => 'Translation is marked as fuzzy',
-	'translate-messagereview-apierror-owntranslation' => 'You cannot review your own translations.',
-	'translate-messagereview-reviews' => 'Reviewed by {{PLURAL:$1|one user|$1 users}}',
-	'translate-messagereview-reviewswithyou' => 'Reviewed by {{PLURAL:$1|one user|$1 users}} including you',
-	'translate-messagereview-reviewsyou' => 'Reviewed by you',
+	'translate-messagereview-apierror-owntranslation' => 'You cannot accept your own translations.',
+	'translate-messagereview-reviews' => 'Accepted by {{PLURAL:$1|one user|$1 users}}',
+	'translate-messagereview-reviewswithyou' => 'Accepted by {{PLURAL:$1|one user|$1 users}} including you',
+	'translate-messagereview-reviewsyou' => 'Accepted by you',
 
-	'translate-messagereview-no-fuzzy' => 'Fuzzy translations cannot be reviewed',
-	'translate-messagereview-no-own' => 'You cannot review your own translations',
+	'translate-messagereview-no-fuzzy' => 'Fuzzy translations cannot be accepted.',
+	'translate-messagereview-no-own' => 'You cannot accept your own translations.',
+	'translate-messagereview-doit' => 'Accept this translation as a correct translation.',
 
 	// Damn the 16 character limit for user group names!
 	'group-translate-proofr'           => 'Translation reviewers',
@@ -611,6 +612,7 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'translate-messagereview-reviewsyou' => 'Status message in Special:Translate in review mode',
 	'translate-messagereview-no-fuzzy' => 'Tooltip for disabled review button',
 	'translate-messagereview-no-own' => 'Tooltip for disabled review button',
+	'translate-messagereview-doit' => 'Tooltip for review button',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)

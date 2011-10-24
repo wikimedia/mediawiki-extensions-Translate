@@ -224,6 +224,7 @@ class MessageTable {
 		if ( in_array( $wgUser->getId(), $reviewers ) ) {
 			$attribs['value'] = wfMessage( 'translate-messagereview-done' )->text();
 			$attribs['disabled'] = 'disabled';
+			$attribs['title'] = wfMessage( 'translate-messagereview-doit' )->text();
 		} elseif( $message->hasTag( 'fuzzy' ) ) {
 			$attribs['value'] = wfMessage( 'translate-messagereview-submit' )->text();
 			$attribs['disabled'] = 'disabled';
