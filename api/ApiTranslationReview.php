@@ -52,6 +52,10 @@ class ApiTranslationReview extends ApiBase {
 		$res = $dbw->insert( $table, $row, __METHOD__, $options );
 		if ( !$dbw->affectedRows() ) {
 			$this->setWarning( 'Already marked as reviewed by you' );
+		} else {
+			$logger = new LogPage( 'translationreview' );
+			$params = array( $revision->getId() );
+			$logger->addEntry( 'message', $title, null, $params, $wgUser );
 		}
 
 		$output = array( 'review' => array(
