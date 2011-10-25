@@ -392,7 +392,7 @@ Details: $1',
 	// Less damn for the 32 character limit for log names
 	'log-name-translationreview' => 'Translation review log',
 	'log-description-translationreview' => 'Log of all reviews to translations and message groups.',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|reviewed}} translation $3',
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|accepted}} translation $3',
 
 );
 
