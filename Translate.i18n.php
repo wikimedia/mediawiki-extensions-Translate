@@ -385,9 +385,9 @@ Details: $1',
 	'translate-messagereview-doit' => 'Accept this translation as a correct translation.',
 
 	// Damn the 16 character limit for user group names!
-	'group-translate-proofr'           => 'Translation reviewers',
-	'group-translate-proofr-member'    => '{{GENDER:$1|translation reviewer}}',
-	'grouppage-translate-proofr'    => '{{ns:project}}:Translation reviewers',
+	'group-translate-proofr' => 'Translation reviewers',
+	'group-translate-proofr-member' => '{{GENDER:$1|translation reviewer}}',
+	'grouppage-translate-proofr' => '{{ns:project}}:Translation reviewers',
 
 );
 
