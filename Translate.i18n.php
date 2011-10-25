@@ -389,6 +389,11 @@ Details: $1',
 	'group-translate-proofr-member' => '{{GENDER:$1|translation reviewer}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Translation reviewers',
 
+	// Less damn for the 32 character limit for log names
+	'log-name-translationreview' => 'Translation review log',
+	'log-description-translationreview' => 'Log of all reviews to translations and message groups.',
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|reviewed}} translation $3',
+
 );
 
 /** Message documentation (Message documentation)

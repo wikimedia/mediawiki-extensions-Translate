@@ -139,6 +139,13 @@ $wgAvailableRights[] = 'translate-messagereview';
 $wgGroupPermissions['translate-proofr']['translate-messagereview'] = true;
 $wgAddGroups['translate-proofr'] = array( 'translate-proofr' );
 
+// Logs
+$wgLogTypes[] = 'translationreview';
+$wgLogActionsHandlers['translationreview/message'] = 'TranslateHooks::formatTranslationreviewLogEntry';
+// BC for <1.19
+$wgLogHeaders['pagetranslation'] = 'log-description-translationreview';
+$wgLogNames['pagetranslation'] = 'log-name-translationreview';
+
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
 

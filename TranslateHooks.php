@@ -312,5 +312,22 @@ class TranslateHooks {
 		return true;
 	}
 
+	/// Log action handler
+	public static function formatTranslationreviewLogEntry( $type, $action, $title, $forUI, $params ) {
+		global $wgLang, $wgContLang;
+
+		$language = $forUI === null ? $wgContLang : $wgLang;
+		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
+
+		if ( $action === 'message' ) {
+			return wfMessage( 'logentry-translationreview-message' )->params(
+				'', // User link in the new system
+				'#', // User name for gender in the new system
+				Message::rawParam( $linker->link( $title, null, array(), array( 'oldid' => $params[0] ) ) )
+			)->inLanguage( $language )->text();
+		}
+		return '';
+	}
+
 
 }
