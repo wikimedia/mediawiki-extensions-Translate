@@ -145,7 +145,7 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	protected function __construct() { }
 
-	/*
+	/**
 	 * @param $conf
 	 *
 	 * @return MessageGroup

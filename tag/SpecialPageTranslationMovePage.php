@@ -71,7 +71,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$this->old = $old;
 	}
 
-	/*
+	/**
 	 * Partially copies from SpecialMovepage.php, because it cannot be
 	 * extented in other ways.
 	 */
