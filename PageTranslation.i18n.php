@@ -2771,6 +2771,9 @@ Zmylki budu so w [[Special:Log/pagetranslation|přełožowanskim protokolu stron
 	'pt-movepage-started' => 'Zakładna strona je nětko přesunjena.
 Prošu skontroluj [[Special:Log/pagetranslation|přełožowanski protokol strony]] za zmylkami a zdźělenku wukonjenja.',
 	'pt-locked-page' => 'Tuta strona je zawrjena, dokelž přełožujomna strona so runje přesuwa.',
+	'pt-deletepage-current' => 'Mjeno strony:',
+	'pt-deletepage-reason' => 'Přičina:',
+	'pt-deletepage-list-other' => 'Druhe podstrony',
 );
 
 /** Haitian (Kreyòl ayisyen)
