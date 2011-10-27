@@ -49,7 +49,12 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * Tags, copied to thin messages
 	 * tagtype => keys
 	 */
-	protected $tags = array(); //
+	protected $tags = array();
+
+	/**
+	 * Properties, copied to thin messages
+	 */
+	protected $properties = array();
 
 	/// \list{String} Authors.
 	protected $authors = array();
@@ -225,6 +230,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->keys     = $this->fixKeys( array_keys( $this->definitions->messages ) );
 		$this->dbInfo   = null;
 		$this->dbData   = null;
+		$this->dbReviewData = null;
 		$this->messages = null;
 		$this->infile   = array();
 		$this->authors  = array();
@@ -261,21 +267,14 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 *    (INFILE, TRANSLATIONS)
 	 * @param $condition \bool Whether to return messages which do not satisfy
 	 * the given filter condition (true), or only which do (false).
+	 * @param $value Mixed Value for properties filtering.
 	 * @throws \type{MWException} If given invalid filter name.
 	 */
-	public function filter( $type, $condition = true ) {
-		switch( $type ) {
-			case 'fuzzy':
-			case 'optional':
-			case 'ignored':
-			case 'hastranslation':
-			case 'changed':
-			case 'translated':
-				$this->applyFilter( $type, $condition );
-				break;
-			default:
-				throw new MWException( "Unknown filter $type" );
+	public function filter( $type, $condition = true, $value = null ) {
+		if ( !in_array( $type, self::getAvailableFilters(), true ) ) {
+			throw new MWException( "Unknown filter $type" );
 		}
+		$this->applyFilter( $type, $condition, $value );
 	}
 
 	/**
@@ -296,9 +295,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * Really apply a filter. Some filters need multiple conditions.
 	 * @param $filter \string Filter name.
 	 * @param $condition \bool Whether to return messages which do not satisfy
+	 * @param $value Mixed Value for properties filtering.
 	 * the given filter condition (true), or only which do (false).
 	 */
-	protected function applyFilter( $filter, $condition ) {
+	protected function applyFilter( $filter, $condition, $value ) {
 		$keys = $this->keys;
 		if ( $filter === 'fuzzy' ) {
 			$keys = $this->filterFuzzy( $keys, $condition );
@@ -647,6 +647,15 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			}
 		}
 
+		// Copy properties if any.
+		foreach ( $this->properties as $type => $keys ) {
+			foreach ( $keys as $key => $value ) {
+				if ( isset( $messages[$key] ) ) {
+					$messages[$key]->setProperty( $type, $value );
+				}
+			}
+		}
+
 		// Copy infile if any.
 		foreach ( $this->infile as $key => $value ) {
 			if ( isset( $messages[$key] ) ) {
@@ -660,7 +669,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 					continue;
 				}
 				$key = $flipKeys[$row->page_title];
-				$messages[$key]->addReviewer( $row->trr_user );
+				$messages[$key]->appendProperty( 'reviewers', $row->trr_user );
 			}
 		}
 

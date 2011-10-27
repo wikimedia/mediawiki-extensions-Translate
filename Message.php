@@ -106,17 +106,17 @@ abstract class TMessage {
 		$this->props[$key] = $value;
 	}
 
+	public function appendProperty( $key, $value ) {
+		if ( !isset( $this->props[$key] ) ) {
+			$this->props[$key] = array();
+		}
+		$this->props[$key][] = $value;
+	}
+
 	public function getProperty( $key ) {
 		return isset( $this->props[$key] ) ? $this->props[$key] : null;
 	}
 
-	public function addReviewer( $userid ) {
-		$this->reviewers[] = $userid;
-	}
-
-	public function getReviewers() {
-		return $this->reviewers;
-	}
 }
 
 /**

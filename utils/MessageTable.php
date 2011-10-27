@@ -220,7 +220,7 @@ class MessageTable {
 			'data-revision' => $revision,
 		);
 
-		$reviewers = $message->getReviewers();
+		$reviewers = (array) $message->getProperty( 'reviewers' );
 		if ( in_array( $wgUser->getId(), $reviewers ) ) {
 			$attribs['value'] = wfMessage( 'translate-messagereview-done' )->text();
 			$attribs['disabled'] = 'disabled';
@@ -248,7 +248,7 @@ class MessageTable {
 			return '';
 		}
 
-		$reviewers = $message->getReviewers();
+		$reviewers = (array) $message->getProperty( 'reviewers' );
 		if ( count( $reviewers ) === 0 ) {
 			return '';
 		}
