@@ -25,7 +25,7 @@ class TranslatePreferences {
 	public static function onGetPreferences( $user, &$preferences ) {
 		global $wgTranslateNewsletterPreference;
 
-		if( !$wgTranslateNewsletterPreference ) {
+		if ( !$wgTranslateNewsletterPreference ) {
 			return true;
 		}
 

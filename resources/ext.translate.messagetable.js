@@ -11,7 +11,7 @@ jQuery( document ).ready( function( $ ) {
 					$b.val( mw.msg( "translate-messagereview-done" ) );
 				}
 			};
-			
+
 			var params = {
 				action: "translationreview",
 				token: $b.data( "token" ),
@@ -21,7 +21,7 @@ jQuery( document ).ready( function( $ ) {
 			$b.val( mw.msg( "translate-messagereview-progress" ) );
 			$b.prop( "disabled", true );
 			$.post( mw.util.wikiScript( "api" ), params, successFunction );
-			
+
 		} );
 	} );
 } );

@@ -73,12 +73,12 @@ class MoveJob extends Job {
 
 		$this->unlock();
 
-		
+
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$key = wfMemcKey( 'translate-pt-move', $base );
-		
+
 		$count = $cache->decr( $key );
-		$last = strval($count) === "0";
+		$last = strval( $count ) === "0";
 
 		if ( $last )  {
 			$cache->delete( $key );

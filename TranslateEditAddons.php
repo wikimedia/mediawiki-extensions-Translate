@@ -288,7 +288,7 @@ class TranslateEditAddons {
 	 * @return \bool If string contains fuzzy string.
 	 */
 	public static function hasFuzzyString( $text ) {
-		#wfDeprecated( __METHOD__, '1.19' );
+		# wfDeprecated( __METHOD__, '1.19' );
 		return MessageHandle::hasFuzzyString( $text );
 	}
 
@@ -298,7 +298,7 @@ class TranslateEditAddons {
 	 * @return \bool If title is marked fuzzy.
 	 */
 	public static function isFuzzy( Title $title ) {
-		#wfDeprecated( __METHOD__, '1.19' );
+		# wfDeprecated( __METHOD__, '1.19' );
 		$handle = new MessageHandle( $title );
 		return $handle->isFuzzy();
 	}

@@ -45,7 +45,7 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->setHeaders();
 
-		//@todo Move to api or so
+		// @todo Move to api or so
 		if ( $parameters === 'editpage' ) {
 			$editpage = TranslationEditPage::newFromRequest( $wgRequest );
 

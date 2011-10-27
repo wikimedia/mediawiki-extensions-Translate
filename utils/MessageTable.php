@@ -141,7 +141,7 @@ class MessageTable {
 			if ( $m->hasTag( 'optional' ) ) {
 				$extra = '<br />' . $optional;
 			}
-			
+
 			$leftColumn = $anchor . $tools['edit'] . $this->getReviewButton( $m ) . $extra . $this->getReviewStatus( $m );
 
 			if ( $this->reviewMode && $original !== $message ) {
@@ -225,11 +225,11 @@ class MessageTable {
 			$attribs['value'] = wfMessage( 'translate-messagereview-done' )->text();
 			$attribs['disabled'] = 'disabled';
 			$attribs['title'] = wfMessage( 'translate-messagereview-doit' )->text();
-		} elseif( $message->hasTag( 'fuzzy' ) ) {
+		} elseif ( $message->hasTag( 'fuzzy' ) ) {
 			$attribs['value'] = wfMessage( 'translate-messagereview-submit' )->text();
 			$attribs['disabled'] = 'disabled';
 			$attribs['title'] = wfMessage( 'translate-messagereview-no-fuzzy' )->text();
-		} elseif( $wgUser->getName() === $message->author() ) {
+		} elseif ( $wgUser->getName() === $message->author() ) {
 			$attribs['value'] = wfMessage( 'translate-messagereview-submit' )->text();
 			$attribs['disabled'] = 'disabled';
 			$attribs['title'] = wfMessage( 'translate-messagereview-no-own' )->text();

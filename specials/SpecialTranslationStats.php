@@ -483,14 +483,14 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			/* Here we assume that week starts on monday, which does not
 			* always hold true. Go Xwards day by day until we are on monday */
 			while ( date( 'D', $cutoff ) !== "Mon" ) {
-				$cutoff += $dir*86400;
+				$cutoff += $dir * 86400;
 			}
 			// Round to nearest day
 			$cutoff -= ( $cutoff % 86400 );
 		} elseif ( $scale === 'months' ) {
 			// Go Xwards/ day by day until we are on the first day of the month
 			while ( date( 'j', $cutoff ) !== "1" ) {
-				$cutoff += $dir*86400;
+				$cutoff += $dir * 86400;
 			}
 			// Round to nearest day
 			$cutoff -= ( $cutoff % 86400 );

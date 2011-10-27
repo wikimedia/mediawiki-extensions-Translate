@@ -397,7 +397,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$legend = '';
 		$period = $this->period;
 
-		for ( $i = 0; $i <= $period; $i+=30 ) {
+		for ( $i = 0; $i <= $period; $i += 30 ) {
 			$iFormatted = $wgLang->formatNum( $i );
 			$legend .= '<span style="background-color:#' . $this->getActivityColour( $period - $i, $period ) . "\"> $iFormatted</span>";
 		}
