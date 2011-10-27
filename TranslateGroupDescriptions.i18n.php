@@ -1162,12 +1162,15 @@ $messages['hsb'] = array(
 	'bw-desc-freecol' => 'Prjedy hač přełožuješ FreeCol do swojeje rěče, přečitaj prošu [[Translating:FreeCol]]. FreeCol wužiwa licencu GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webforum, spisany w PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je swobodny system na zakładźe weba za slědowanje programowych zmylkow. Zdźěl prošu problemy na stronje [[Support|Podpěra]].',
+	'translate-group-desc-eol' => 'Zdźělenska skupina za [[Translating:EOL|Encyclopedia of Life]]',
 	'translate-group-desc-ihris' => 'Skupina powěsćow za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Skupina powěsćow za [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], modul za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Skupina powěsćow za [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], modul za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'Skupina powěsćow za [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], modul za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Skupina powěsćow za [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], modul za [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'Zdźělenska skupina za [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Hłowny tykač za [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Zdźělenki za stabilnu wersiju [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je zarjadowanski informaciski system za mikrofinancne institucije',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je pythonowa biblioteka za wutworjenje PDF-dokumentow z nastawkow MediaWiki, kotrež buchu přez biblioteku mwlib analyzowane.
 
@@ -1188,10 +1191,7 @@ Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/m
 	'bw-desc-shapado' => 'Skupina zdźělenkow za zjawnje k dispoziciji stejacu softwaru Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je serwer za mikroblogowanje ze zjawnym žórłowym kodom',
 	'translate-group-desc-statusnet-plugin' => 'Tute zdzělenki su dźěl tykača za [[Translating:StatusNet|StatusNet]]',
-	'bw-desc-voctrain' => 'Trenowak wokablow z OmegaWiki. Wužiwa system flashcard za wuknjenje wokablow z někajkeje rěče do rěče, kotruž OmegaWiki podpěruje.
-Za uniwersitu Bamberg wutworjeny. Pod licencu GPL 2.0 abo wyše licencowany. Wot [[User:Kim Bruning|Kima Bruninga]] wuwity.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] móže awtorow nastawka we wikiju Wikimedije spěšnje namakać.',
-	'bw-desc-wikimediamobile' => 'Mobilna Wikipedija hodźi so na http://m.wikipedia.org namakać a ma zaměr Wikipediju na smartfonach na cyłym swěće podpěrać',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt, kotryž skići tekstowu wersiju Wikipedije offline na mobilnym graće.',
 );
 
