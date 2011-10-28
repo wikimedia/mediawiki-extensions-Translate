@@ -811,6 +811,7 @@ $messages['fi'] = array(
 
 /** French (Français)
  * @author Crochet.david
+ * @author DavidL
  * @author Houcinee1
  * @author IAlex
  * @author Jean-Frédéric
@@ -823,22 +824,22 @@ $messages['fi'] = array(
  * @author Xapitoun
  */
 $messages['fr'] = array(
-	'translategroupdescriptions-desc' => "Descriptions des groupes de messages pour les produits pris en charge par l'[http://mediawiki.org/wiki/Extension:Translate extension Translate]",
+	'translategroupdescriptions-desc' => "Descriptions des groupes de messages pour les produits pris en charge par l'[//mediawiki.org/wiki/Extension:Translate extension Translate]",
 	'translate-group-desc-nodesc' => 'Aucune description n’est disponible pour ce groupe de messages',
 	'translate-group-desc-mediawikicore' => 'Ce groupe de messages contient les messages utilisés dans la version alpha actuelle de MediaWiki ({{CURRENTVERSION}}).',
-	'translate-group-desc-mediawikimostused' => 'Ce groupe de messages contient les [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messages les plus souvent utilisés] dans MediaWiki.',
+	'translate-group-desc-mediawikimostused' => 'Ce groupe de messages contient les [//translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messages les plus souvent utilisés] dans [[Translating:MediaWiki|MediaWiki]].',
 	'translate-group-desc-mediawikiextensions' => 'Ce méta-groupe de messages contient les messages de toutes les extensions pour MediaWiki supportées.',
-	'translate-group-desc-collection' => 'Ce méta-groupe de messages contient tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection].',
-	'translate-group-desc-flaggedrevs' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
-	'translate-group-desc-readerfeedback' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-collection' => 'Ce méta-groupe de messages contient tous les messages de l’extension MediaWiki [//www.mediawiki.org/wiki/Extension:Collection Collection].',
+	'translate-group-desc-flaggedrevs' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [//www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [//www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Groupe de message de Meta contenant tous les messages pour toutes les extensions [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-socialprofile' => 'Groupe des messages Meta contenant tous les messages des extensions liées à l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-socialprofile' => 'Groupe des messages Meta contenant tous les messages des extensions liées à l’extension MediaWiki [//www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [//www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Ce méta-groupe de messages contient tous les messages des extensions MediaWiki utilisées par [http://www.wikia.com Wikia].',
-	'translate-group-desc-wikimediaextensions' => 'Ce méta-groupe de messages contient tous les messages des extensions MediaWiki utilisées par la [http://wikimedia.org/ Wikimedia Foundation].',
-	'translate-group-desc-wikimediaextensions-main' => 'Groupe de messages méta comprenant tous les messages pour les extensions MediaWiki supportées et qui doivent être traduits pour le [http://meta.wikimedia.org/wiki/Language_committee Comité des langues] de Wikimedia',
+	'translate-group-desc-wikimediaextensions' => 'Ce méta-groupe de messages contient tous les messages des extensions MediaWiki utilisées par la [//wikimedia.org/ Wikimedia Foundation].',
+	'translate-group-desc-wikimediaextensions-main' => 'Groupe de messages méta comprenant tous les messages pour les extensions MediaWiki supportées et qui doivent être traduits pour le [//meta.wikimedia.org/wiki/Language_committee Comité des langues] de Wikimedia',
 	'translate-group-desc-uniwiki' => 'Meta groupe de messages contenant tous les messages pour les extensions apparentées à [http://unicefinnovation.org/wiki.php Uniwiki]',
-	'translate-group-desc-ui' => 'Groupe de messages Meta contenant tous les messages des extensions liées à [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-ui' => 'Groupe de messages Meta contenant tous les messages des extensions liées à [//meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Toutes les pages traductibles',
 	'translate-group-desc-europeana' => "[[Translating:Europeana|Europeana]] offre d'explorer les ressources culturelles numériques de l'Europe",
 	'bw-desc-freecol' => 'Avant de traduire FreeCol dans votre langue, veuillez lire [[Translating:FreeCol]]. Freecol est publié sous licence GPL.',
@@ -873,10 +874,7 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] est un serveur de microblogging en source ouverte',
 	'translate-group-desc-statusnet-plugin' => 'Les messages font partie d’une extension pour [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Un groupe de messages pour [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], le système d\'internationalisation des outils du [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition détails techniques]</span>)',
-	'bw-desc-voctrain' => 'Entraîneur de vocabulaire basé sur [http://omegawiki.org OmegaWiki]. Utilise un système à base de cartes flash pour apprendre le vocabulaire de n’importe quel langue vers n’importe quelle langue prise en charge par Omegawiki.
-Créé pour l’Université de Bamberg. Publié sous licence GPL 2.0 ou plus récent. Développé par [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] permet de trouver rapidement les auteurs d’une page dans un wiki de Wikimedia.',
-	'bw-desc-wikimediamobile' => 'Wikimedia Mobile peut être trouvé à http://m.wikipedia.org et a pour but de faciliter l’accès à Wikipédia sur les téléphones mobiles supportés à travers le monde.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] est un projet visant à offrir une version texte de Wikipedia en mode hors connexion sur un périphérique mobile.',
 );
 
