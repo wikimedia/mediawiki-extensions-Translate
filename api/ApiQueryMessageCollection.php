@@ -46,13 +46,17 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$messages->setInFile( $group->load( $params['language'] ) );
 
 		foreach ( $params['filter'] as $filter ) {
+			$value = null;
+			if ( strpos( $filter, ':' ) !== false ) {
+				list( $filter, $value ) = explode( ':', $filter, 2 );
+			}
 			/* The filtering params here are swapped wrt MessageCollection.
 			 * There (fuzzy) means do not show fuzzy, which is the same as !fuzzy
 			 * here and fuzzy here means (fuzzy, false) there. */
 			if ( $filter[0] === '!' ) {
-				$messages->filter( substr( $filter, 1 ) );
+				$messages->filter( substr( $filter, 1 ), true, $value );
 			} else {
-				$messages->filter( $filter, false );
+				$messages->filter( $filter, false, $value );
 			}
 		}
 
@@ -112,19 +116,6 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		return $data;
 	}
 
-	/**
-	 * @return array
-	 */
-	public function getFilters() {
-		$basic = MessageCollection::getAvailableFilters();
-		$full = array();
-		foreach ( $basic as $filter ) {
-			$full[] = $filter;
-			$full[] = "!$filter";
-		}
-		return $full;
-	}
-
 	public function getAllowedParams() {
 
 		// Ugly code for BC <= 1.16
@@ -156,7 +147,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				ApiBase::PARAM_TYPE => 'integer',
 			),
 			'filter' => array(
-				ApiBase::PARAM_TYPE => $this->getFilters(),
+				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_DFLT => '!optional|!ignored',
 				ApiBase::PARAM_ISMULTI => true,
 			),
@@ -188,6 +179,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				'hastranslation - messages which have a translation regardless if it is fuzzy or not',
 				'translated     - messages which have a translation which is not fuzzy',
 				'changed        - messages which has been translated or changed since last export',
+				'reviewer:#     - messages where given userid # is among reviewers',
 			),
 		);
 	}
