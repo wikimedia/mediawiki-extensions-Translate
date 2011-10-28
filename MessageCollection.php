@@ -288,7 +288,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			'hastranslation',
 			'changed',
 			'translated',
-			'reviewer'
+			'reviewer',
+			'last-translator',
 		);
 	}
 
@@ -315,6 +316,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			$keys = $this->filterChanged( $keys, $condition );
 		} elseif ( $filter === 'reviewer' ) {
 			$keys = $this->filterReviewer( $keys, $condition, $value );
+		} elseif ( $filter === 'last-translator' ) {
+			$keys = $this->filterLastTranslator( $keys, $condition, $value );
 		} else {
 			// Filter based on tags.
 			if ( !isset( $this->tags[$filter] ) ) {
@@ -509,6 +512,37 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		return $keys;
 	}
 
+	/**
+	 * @param $keys \list{String} List of keys to filter.
+	 * @param $condition \bool True to remove translatations where last translator is $user
+	 * false to get only last translations done by others.
+	 * @param $user \int Userid
+	 * @return \list{String} Filtered keys.
+	 */
+	protected function filterLastTranslator( array $keys, $condition, $user ) {
+		$this->loadData( $keys );
+
+		if ( $condition === false ) {
+			$origKeys = $keys;
+		}
+
+		$flipKeys = array_flip( $keys );
+		$user = intval( $user );
+		foreach ( $this->dbData as $row ) {
+			if ( intval($row->rev_user) === $user ) {
+				$realKey = $flipKeys[$row->page_title];
+				unset( $keys[$realKey] );
+			}
+		}
+
+		if ( $condition === false ) {
+			// List of keys that are missing from $keys
+			$keys = array_diff( $origKeys, $keys );
+		}
+
+		return $keys;
+	}
+
 	/** @} */
 
 	/**
@@ -620,7 +654,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$dbr = wfGetDB( $dbtype );
 
 		$tables = array( 'page', 'revision', 'text' );
-		$fields = array( 'page_title', 'page_latest', 'rev_user_text', 'old_flags', 'old_text' );
+		$fields = array( 'page_title', 'page_latest', 'rev_user', 'rev_user_text', 'old_flags', 'old_text' );
 		$conds  = array(
 			'page_namespace' => $this->definitions->namespace,
 			'page_title' => array_values( $keys ),

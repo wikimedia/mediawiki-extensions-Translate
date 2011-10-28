@@ -125,6 +125,12 @@ abstract class TMessage {
  * text.
  */
 class ThinMessage extends TMessage {
+	// This maps properties to fields in the database result row
+	protected static $propertyMap = array(
+		'last-translator-text' => 'rev_user_text',
+		'last-translator-id' => 'rev_user',
+	);
+
 	/// \type{Database Result Row}
 	protected $row;
 
@@ -143,11 +149,26 @@ class ThinMessage extends TMessage {
 		return Revision::getRevisionText( $this->row );
 	}
 
+	/// Deprecated, use getProperty( 'last-translator-text' )
 	public function author() {
 		if ( !isset( $this->row ) ) {
 			return null;
 		}
 		return $this->row->rev_user_text;
+	}
+
+	// Re-implemented
+	public function getProperty( $key ) {
+		if ( !isset( self::$propertyMap[$key] ) ) {
+			return parent::getProperty( $key );
+		}
+
+		$field = self::$propertyMap[$key];
+		if ( !isset( $this->row->$field ) ) {
+			return null;
+		}
+
+		return $this->row->$field;
 	}
 
 }
