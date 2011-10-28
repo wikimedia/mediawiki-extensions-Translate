@@ -476,6 +476,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		return $keys;
 	}
 
+
 	/**
 	 * Filters list of keys according to whether the user has accepted them.
 	 * @param $keys \list{String} List of keys to filter.
@@ -484,18 +485,13 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param $user \int Userid
 	 * @return \list{String} Filtered keys.
 	 */
-	protected function filterReviewer( array $keys, $condition, $user ) {
+	protected function filterReviewer( array $keys, /*bool*/ $condition, /*int*/ $user ) {
 		$this->loadReviewInfo( $keys );
-
-		if ( $condition === false ) {
-			$origKeys = $keys;
-		}
-
-		/*
-		 * This removes messages from the list which have certain
-		 * reviewer (among others)
-		 */
+		$origKeys = $keys;
 		$flipKeys = array_flip( $keys );
+
+		/* This removes messages from the list which have certain
+		 * reviewer (among others) */
 		$user = intval( $user );
 		foreach ( $this->dbReviewData as $row ) {
 			if ( intval($row->trr_user) === $user ) {
@@ -505,7 +501,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		if ( $condition === false ) {
-			// List of keys that are missing from $keys
 			$keys = array_diff( $origKeys, $keys );
 		}
 
@@ -519,14 +514,11 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param $user \int Userid
 	 * @return \list{String} Filtered keys.
 	 */
-	protected function filterLastTranslator( array $keys, $condition, $user ) {
+	protected function filterLastTranslator( array $keys, /*bool*/ $condition, /*int*/ $user ) {
 		$this->loadData( $keys );
-
-		if ( $condition === false ) {
-			$origKeys = $keys;
-		}
-
+		$origKeys = $keys;
 		$flipKeys = array_flip( $keys );
+
 		$user = intval( $user );
 		foreach ( $this->dbData as $row ) {
 			if ( intval($row->rev_user) === $user ) {
@@ -536,14 +528,11 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		if ( $condition === false ) {
-			// List of keys that are missing from $keys
 			$keys = array_diff( $origKeys, $keys );
 		}
 
 		return $keys;
 	}
-
-	/** @} */
 
 	/**
 	 * Takes list of keys and converts them into database format.
