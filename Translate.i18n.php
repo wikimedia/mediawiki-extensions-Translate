@@ -6660,6 +6660,8 @@ like not using spaces or transliterating proper names. $1',
 	'translate-edit-tmmatch' => 'Vastaavuus $1%',
 	'translate-use-suggestion' => 'Korvaa nykyinen käännös tällä ehdotuksella.',
 	'translate-edit-tab-list' => 'Viestiluettelo',
+	'translate-edit-nopermission' => 'You need permission to translate messages.',
+	'translate-edit-askpermission' => 'Request permission',
 	'translate-magic-pagename' => 'Laajennettu MediaWikin kääntäminen',
 	'translate-magic-help' => 'Voit kääntää toimintosivujen vaihtoehtoisia nimiä, taikasanoja ja nimiavaruuksien nimiä.
 

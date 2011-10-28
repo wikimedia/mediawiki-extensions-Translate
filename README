@@ -30,6 +30,7 @@ And for the code at:
 
 == Change log ==
 * 2011-10-28
+- New configuration variable $wgTranslatePermissionUrl
 - Message review feature, available to users in translate-proofr group
 - Message collections can now have properties and allow filtering on them
   This is still work in progress and is likely to get improvements over time

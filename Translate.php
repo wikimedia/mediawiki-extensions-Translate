@@ -340,6 +340,14 @@ $wgTranslateTasks = array(
  */
 $wgTranslateSupportUrl = false;
 
+/**
+ * When unprivileged users opens a translation editor, he will
+ * see message stating that speical permission is needed for translating
+ * messages. If this variable is defined, there is a button which will
+ * take the user to that page to ask for permission.
+ */
+$wgTranslatePermissionUrl = 'Project:Translator';
+
 
 # === Page translation feature ===
 

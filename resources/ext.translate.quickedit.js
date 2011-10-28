@@ -104,7 +104,7 @@ window.trlOpenJsEdit = function( page, group ) {
 			return false;
 		} );
 		
-		form.find( '.mw-translate-support' ).click( function() {
+		form.find( '.mw-translate-support,.mw-translate-askpermission' ).click( function() {
 			// Can use .data() only with 1.4.3 or newer
 			window.open( $(this).attr('data-load-url') );
 			return false;
