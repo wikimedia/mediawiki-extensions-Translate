@@ -196,7 +196,7 @@ class ViewMessagesTask extends TranslateTask {
 }
 
 /**
- * List messages which has been changed since last export.
+ * Basic class for review mode
  */
 class ReviewMessagesTask extends ViewMessagesTask {
 	protected $id = 'review';
@@ -207,15 +207,12 @@ class ReviewMessagesTask extends ViewMessagesTask {
 		$this->collection->setReviewMode( true );
 		$this->collection->setInfile( $this->group->load( $code ) );
 		$this->collection->filter( 'ignored' );
-		$this->collection->filter( 'hastranslation', false );
-		$this->collection->filter( 'changed', false );
 	}
 
 	protected function output() {
 		$table = new MessageTable( $this->collection, $this->group );
 		$table->appendEditLinkParams( 'loadtask', $this->getId() );
 		$table->setReviewMode();
-
 		return $table->fullTable();
 	}
 }
@@ -327,12 +324,24 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 	protected $id = 'reviewall';
 
 	protected function preinit() {
-		$code = $this->options->getLanguage();
-		$this->collection = $this->group->initCollection( $code );
-		$this->collection->setReviewMode( true );
-		$this->collection->setInfile( $this->group->load( $code ) );
+		parent::preinit();
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'hastranslation', false );
+	}
+}
+
+/// Lists all translations for accepting.
+class AcceptQueueMessagesTask extends ReviewMessagesTask {
+	protected $id = 'acceptqueue';
+
+	protected function preinit() {
+		global $wgUser;
+		parent::preinit();
+		$this->collection->filter( 'ignored' );
+		$this->collection->filter( 'hastranslation', false );
+		$this->collection->filter( 'fuzzy' );
+		$this->collection->filter( 'reviewer', true, $wgUser->getId() );
+		$this->collection->filter( 'last-translator', true, $wgUser->getId() );
 	}
 }
 
@@ -453,7 +462,6 @@ class TranslateTasks {
 		$filterTasks = array(
 			'optional',
 			'untranslatedoptional',
-			'review',
 			'export-to-file',
 		);
 
