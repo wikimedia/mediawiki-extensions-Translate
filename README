@@ -29,6 +29,10 @@ And for the code at:
  http://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2011-10-28
+- Message review feature, available to users in translate-proofr group
+- Message collections can now have properties and allow filtering on them
+  This is still work in progress and is likely to get improvements over time
 * 2011-10-14
 - New API module: messagetranslations
 * 2011-10-12

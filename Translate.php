@@ -554,9 +554,6 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
  */
 $wgTranslateYamlLibrary = 'spyc';
 
-# ==== Features in development ====
-$wgTranslateMessageReview = false;
-
 /** @cond cli_support */
 if ( !defined( 'TRANSLATE_CLI' ) ) {
 	function STDOUT() { }
