@@ -62,9 +62,13 @@ Reason:
 	'translate-next'                   => 'Next page',
 	'translate-prev'                   => 'Previous page',
 
-	'translate-page-description-legend' => 'Information about the group',
-	'translate-page-edit'               => 'edit',
-	'translate-ext-url'                 => '<hr />Website: $1',
+	'translate-page-description-legend'           => 'Information about the group',
+	'translate-page-description-hasoptional'      => 'This message group contains optional messages.
+Optional messages should only be translated when your language has special requirements
+like not using spaces or transliterating proper names. $1',
+	'translate-page-description-hasoptional-open' => 'Show optional messages.',
+	'translate-page-edit'                         => 'edit',
+	'translate-ext-url'                           => '<hr />Website: $1',
 
 	'translate-optional' => '(optional)',
 	'translate-ignored'  => '(ignored)',
@@ -6639,10 +6643,6 @@ Saat listan kääntämättömistä viesteistä napsauttamalla ryhmän nimeä.',
 	'translate-next' => 'Seuraava sivu',
 	'translate-prev' => 'Edellinen sivu',
 	'translate-page-description-legend' => 'Tietoja ryhmästä',
-	'translate-page-description-hasoptional' => 'This message group contains optional messages.
-Optional messages should only be translated when your language has special requirements
-like not using spaces or transliterating proper names. $1',
-	'translate-page-description-hasoptional-open' => 'Show optional messages.',
 	'translate-page-edit' => 'muokkaa',
 	'translate-ext-url' => '<hr />Verkkosivu: $1',
 	'translate-optional' => '(valinnainen)',
