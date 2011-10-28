@@ -288,6 +288,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			'hastranslation',
 			'changed',
 			'translated',
+			'reviewer'
 		);
 	}
 
@@ -312,6 +313,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			$keys = $this->filterOnCondition( $keys, $translated, $condition );
 		} elseif ( $filter === 'changed' ) {
 			$keys = $this->filterChanged( $keys, $condition );
+		} elseif ( $filter === 'reviewer' ) {
+			$keys = $this->filterReviewer( $keys, $condition, $value );
 		} else {
 			// Filter based on tags.
 			if ( !isset( $this->tags[$filter] ) ) {
@@ -469,6 +472,43 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		return $keys;
 	}
+
+	/**
+	 * Filters list of keys according to whether the user has accepted them.
+	 * @param $keys \list{String} List of keys to filter.
+	 * @param $condition \bool True to remove translatations $user has accepted,
+	 * false to get only translations accepted by $user.
+	 * @param $user \int Userid
+	 * @return \list{String} Filtered keys.
+	 */
+	protected function filterReviewer( array $keys, $condition, $user ) {
+		$this->loadReviewInfo( $keys );
+
+		if ( $condition === false ) {
+			$origKeys = $keys;
+		}
+
+		/*
+		 * This removes messages from the list which have certain
+		 * reviewer (among others)
+		 */
+		$flipKeys = array_flip( $keys );
+		$user = intval( $user );
+		foreach ( $this->dbReviewData as $row ) {
+			if ( intval($row->trr_user) === $user ) {
+				$realKey = $flipKeys[$row->page_title];
+				unset( $keys[$realKey] );
+			}
+		}
+
+		if ( $condition === false ) {
+			// List of keys that are missing from $keys
+			$keys = array_diff( $origKeys, $keys );
+		}
+
+		return $keys;
+	}
+
 	/** @} */
 
 	/**
