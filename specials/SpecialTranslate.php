@@ -120,6 +120,25 @@ class SpecialTranslate extends SpecialPage {
 			echo $output;
 		} else {
 			$description = $this->getGroupDescription( $this->group );
+
+			$taskid = $this->options['task'];
+			if ( in_array( $taskid, array( 'untranslated', 'reviewall' ), true ) ) {
+				$hasOptional = count( $this->group->getTags( 'optional' ) );
+				if ( $hasOptional ) {
+					$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
+					$linktext = wfMessage( 'translate-page-description-hasoptional-open' )->escaped();
+					$params = array( 'task' => 'optional' ) + $this->nondefaults;
+					$link = $linker->link( $this->getTitle(), $linktext, array(), $params );
+					$note = wfMessage( 'translate-page-description-hasoptional' )->rawParams( $link )->parseAsBlock();
+
+					if ( $description ) {
+						$description .= '<hr>' . $note;
+					} else {
+						$description = $note;
+					}
+				}
+			}
+
 			if ( $description ) {
 				$description = Xml::fieldset( wfMsg( 'translate-page-description-legend' ), $description );
 			}
