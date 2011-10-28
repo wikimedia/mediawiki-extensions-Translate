@@ -167,6 +167,14 @@ abstract class TranslateTask {
 		$callback = $this->options->getPagingCB();
 		call_user_func( $callback, $this->options->getOffset(), $left, $total );
 	}
+
+	/**
+	 * Override this method if the task depends on user rights.
+	 * @return \string
+	 */
+	public function isAllowedFor( User $user ) {
+		return true;
+	}
 }
 
 /**
@@ -342,6 +350,10 @@ class AcceptQueueMessagesTask extends ReviewMessagesTask {
 		$this->collection->filter( 'fuzzy' );
 		$this->collection->filter( 'reviewer', true, $wgUser->getId() );
 		$this->collection->filter( 'last-translator', true, $wgUser->getId() );
+	}
+
+	public function isAllowedFor( User $user ) {
+		return $user->isAllowed( 'translate-messagereview' );
 	}
 }
 

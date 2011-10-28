@@ -262,13 +262,16 @@ class SpecialTranslate extends SpecialPage {
 	/* Selectors ahead */
 
 	protected function taskSelector( $pageTranslation = false ) {
+		global $wgUser;
 		$selector = new XmlSelect( 'task', 'task' );
 		$selector->setDefault( $this->options['task'] );
 
 		$isPageTranslation = $this->group instanceof WikiPageMessageGroup;
 		foreach ( TranslateTasks::getTasks( $isPageTranslation ) as $id ) {
-			$label = TranslateTask::labelForTask( $id );
-			$selector->addOption( $label, $id );
+			if ( TranslateTasks::getTask( $id )->isAllowedFor( $wgUser ) ) {
+				$label = TranslateTask::labelForTask( $id );
+				$selector->addOption( $label, $id );
+			}
 		}
 
 		return $selector->getHTML();
