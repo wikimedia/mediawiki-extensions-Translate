@@ -218,6 +218,7 @@ class MessageTable {
 			'class' => 'mw-translate-messagereviewbutton',
 			'data-token' => ApiTranslationReview::getToken( 0, '' ),
 			'data-revision' => $revision,
+			'name' => 'acceptbutton-' . $revision, // Otherwise Firefox disables buttons on page load 
 		);
 
 		$reviewers = (array) $message->getProperty( 'reviewers' );
