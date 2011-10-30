@@ -30,6 +30,7 @@ And for the code at:
 
 == Change log ==
 * 2011-10-30
+- The script referenced at 2011-08-26 is now included in the source
 - Fixed compatibility with MW 1.17
 * 2011-10-28
 - New configuration variable $wgTranslatePermissionUrl
