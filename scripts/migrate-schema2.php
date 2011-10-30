@@ -64,7 +64,13 @@ class TSchema2 extends Maintenance {
 			);
 		}
 
-		$dbw->dropTable( 'revtag_type' );
+		if ( is_callable( $dbw, 'dropTable' ) ) {
+			$dbw->dropTable( 'revtag_type', __METHOD__ );
+		} else {
+			// BC for MW <1.18
+			$table = $dbw->tableName( 'revtag_type' );
+			$dbw->query( "DROP TABLE $table", __METHOD__ );
+		}
 
 	}
 
