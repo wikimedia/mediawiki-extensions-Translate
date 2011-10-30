@@ -170,15 +170,7 @@ class TranslateUtils {
 	 * @return string
 	 */
 	public static function languageSelector( $language, $selectedId ) {
-		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
-			$languages = LanguageNames::getNames( $language,
-				LanguageNames::FALLBACK_NORMAL,
-				LanguageNames::LIST_MW
-			);
-		} else {
-			$languages = Language::getLanguageNames( false );
-		}
-
+		$languages = self::getLanguageNames( $language );
 		ksort( $languages );
 
 		$selector = new XmlSelect( 'language', 'language' );
@@ -188,6 +180,23 @@ class TranslateUtils {
 		}
 
 		return $selector->getHTML();
+	}
+
+	/**
+	 * Get translated language names.
+	 * @return array
+	 */
+	public static function getLanguageNames( /*string */ $code ) {
+		if ( is_callable( array( 'Language', 'getTranslatedLanguageNames' ) ) ) {
+			return Language::getTranslatedLanguageNames( $code );
+		} elseif ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
+			return LanguageNames::getNames( $code,
+				LanguageNames::FALLBACK_NORMAL,
+				LanguageNames::LIST_MW
+			);
+		} else {
+			return Language::getLanguageNames( false );
+		}
 	}
 
 	/**

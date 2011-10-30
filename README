@@ -29,6 +29,8 @@ And for the code at:
  http://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2011-10-30
+- Fixed compatibility with MW 1.17
 * 2011-10-28
 - New configuration variable $wgTranslatePermissionUrl
 - Message review feature, available to users in translate-proofr group

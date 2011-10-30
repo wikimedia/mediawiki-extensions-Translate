@@ -182,7 +182,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	protected function getMainColumnCell( $code, $params ) {
 		if ( !isset( $this->names ) ) {
 			global $wgLang;
-			$this->names = Language::getTranslatedLanguageNames( $wgLang->getCode() );
+			$this->names = TranslateUtils::getLanguageNames( $wgLang->getCode() );
 			$this->translate = SpecialPage::getTitleFor( 'Translate' );
 		}
 
