@@ -35,7 +35,7 @@ In the end you will be able to translate ''interface messages'' of all supported
 	'translate-fs-selectlanguage' => "Pick a language",
 	'translate-fs-settings-planguage' => "Primary language:",
 	'translate-fs-settings-planguage-desc' => "The primary language doubles as your interface language on this wiki
-and as default target langauge for translations.",
+and as default target language for translations.",
 	'translate-fs-settings-slanguage' => "Assistant language $1:",
 	'translate-fs-settings-slanguage-desc' => "It is possible to show translations of messages in other languages in the translation editor.
 Here you can choose which languages, if any, you would like to see.",
@@ -51,7 +51,7 @@ Here you can choose which languages, if any, you would like to see.",
 	'translate-fs-userpage-done' => 'Well done! You now have an user page.',
 	'translate-fs-permissions-planguage' => "Primary language:",
 	'translate-fs-permissions-help' => 'Now you need to place a request to be added to the translator group.
-Select the primary langauge you are going to translate to.
+Select the primary language you are going to translate to.
 
 You can mention other languages and other remarks in textbox below.',
 	'translate-fs-permissions-pending' => 'Your request has been submitted to [[$1]] and someone from the site staff will check it as soon as possible.
