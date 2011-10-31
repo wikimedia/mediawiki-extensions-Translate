@@ -19,6 +19,7 @@ $messages['en'] = array(
 	'firststeps' => 'First steps',
 	'firststeps-desc' => '[[Special:FirstSteps|Special page]] for getting users started on a wiki using the Translate extension',
 	'translate-fs-pagetitle-done' => ' - done!',
+	'translate-fs-pagetitle-pending' => ' - pending',
 	'translate-fs-pagetitle' => 'Getting started wizard - $1',
 	'translate-fs-signup-title' => 'Sign up',
 	'translate-fs-settings-title' => 'Configure your preferences',
@@ -31,64 +32,31 @@ $messages['en'] = array(
 You will be guided through the process of becoming a translator step by step.
 In the end you will be able to translate ''interface messages'' of all supported projects at {{SITENAME}}.",
 
-	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
-
-In the first step you must sign up.
-
-Credit for your translations is attributed to your user name.
-The image on the right shows how to fill the fields.
-
-If you have already signed up, $1log in$2 instead.
-Once you are signed up, please return to this page.
-
-$3Sign up$4',
-	'translate-fs-settings-text' => 'You should now go to your preferences and
-at least change your interface language to the language you are going to translate to.
-
-Your interface language is used as the default target language.
-It is easy to forget to change the language to the correct one, so setting it now is highly recommended.
-
-While you are there, you can also request the software to display translations in other languages you know.
-This setting can be found under tab "{{int:prefs-editing}}".
-Feel free to explore other settings, too.
-
-Go to your [[Special:Preferences|preferences page]] now and then return to this page.',
-	'translate-fs-settings-skip' => "I'm done.
-Let me proceed.",
-	'translate-fs-userpage-text' => 'Now you need to create an user page.
-
-Please write something about yourself; who you are and what you do.
-This will help the {{SITENAME}} community to work together.
-At {{SITENAME}} there are people from all around the world working on different languages and projects.
-
-In the prefilled box above in the very first line you see <nowiki>{{#babel:en-2}}</nowiki>.
-Please complete it with your language knowledge.
-The number after the language code describes how well you know the language.
-The alternatives are:
-* 1 - a little
-* 2 - basic knowledge
-* 3 - good knowledge
-* 4 - native speaker level
-* 5 - you use the language professionally, for example you are a professional translator.
-
-If you are a native speaker of a language, leave the skill level out, and only use the language code.
-Example: if you speak Tamil natively, English well, and little Swahili, you would write:
-<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
-
-If you do not know the language code of a language, now is a good time to look it up.
-You can use the list below.',
+	'translate-fs-selectlanguage' => "Pick a language",
+	'translate-fs-settings-planguage' => "Primary language:",
+	'translate-fs-settings-planguage-desc' => "The primary language doubles as your interface language on this wiki
+and as default target langauge for translations.",
+	'translate-fs-settings-slanguage' => "Assistant language $1:",
+	'translate-fs-settings-slanguage-desc' => "It is possible to show translations of messages in other languages in the translation editor.
+Here you can choose which languages, if any, you would like to see.",
+	'translate-fs-settings-submit' => "Save preferences",
+	'translate-fs-userpage-level-N' => 'I am a native speaker of',
+	'translate-fs-userpage-level-5' => 'I am a professional translator of',
+	'translate-fs-userpage-level-4' => 'I know it like a native speaker',
+	'translate-fs-userpage-level-3' => 'I have a good command of',
+	'translate-fs-userpage-level-2' => 'I have a moderate command of',
+	'translate-fs-userpage-level-1' => 'I know a little',
+	'translate-fs-userpage-help' => 'Please indicate your language skills and tell us something about yourself. If you know more than five languages you can add more later. ',
 	'translate-fs-userpage-submit' => 'Create my userpage',
 	'translate-fs-userpage-done' => 'Well done! You now have an user page.',
-	'translate-fs-permissions-text' => 'Now you need to place a request to be added to the translator group.
+	'translate-fs-permissions-planguage' => "Primary language:",
+	'translate-fs-permissions-help' => 'Now you need to place a request to be added to the translator group.
+Select the primary langauge you are going to translate to.
 
-Until we fix the code, please go to [[Project:Translator]] and follow the instructions.
-Then come back to this page.
-
-After you have submitted your request, one of the volunteer staff members will check your request and approve it as soon as possible.
-Please be patient.
-
-<del>Check that the following request is correctly filled and then press the request button.</del>',
-
+You can mention other languages and other remarks in textbox below.',
+	'translate-fs-permissions-pending' => 'Your request has been submitted to [[$1]] and someone from the site staff will check it as soon as possible.
+If you confirm your e-mail address, you will get an e-mail notification as soon as it happens.',
+	'translate-fs-permissions-submit' => 'Send request',
 	'translate-fs-target-text' => 'Congratulations!
 You can now start translating.
 
@@ -121,6 +89,18 @@ $messages['qqq'] = array(
 	'translate-fs-signup-text' => 'The parameters represent the start and end of an HTML link.',
 	'translate-fs-userpage-text' => 'You may replace "Tamil" (ta) and "Swahili" (sw) with languages that people from your language are more likely to speak.',
 	'translate-fs-permissions-text' => 'Synonym for "filed" is "submitted".',
+	'translate-fs-selectlanguage' => "Default value in language selector, acts as 'nothing chosen'",
+	'translate-fs-settings-planguage' => "Label for choosing interface language, followed by language selector",
+	'translate-fs-settings-planguage-desc' => "Help message for choosing interface language",
+	'translate-fs-settings-slanguage' => "Other languages shown while translating, followed by language selector, $1 is running number",
+	'translate-fs-settings-slanguage-desc' => "Help message for choosing assistant languages",
+	'translate-fs-settings-submit' => "Submit button",
+	'translate-fs-userpage-level-N' => 'Language skill level option, followed by language selector',
+	'translate-fs-userpage-level-5' => 'Language skill level option, followed by language selector',
+	'translate-fs-userpage-level-4' => 'Language skill level option, followed by language selector',
+	'translate-fs-userpage-level-3' => 'Language skill level option, followed by language selector',
+	'translate-fs-userpage-level-2' => 'Language skill level option, followed by language selector',
+	'translate-fs-userpage-level-1' => 'Language skill level option, followed by language selector',
 );
 
 /** Arabic (العربية)
