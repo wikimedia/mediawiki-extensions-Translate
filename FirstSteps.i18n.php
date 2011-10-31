@@ -86,15 +86,12 @@ If you do not want to receive newsletters, you can opt-out in the tab "{{int:pre
  */
 $messages['qqq'] = array(
 	'translate-fs-signup-title' => '{{Identical|Sign up}}',
-	'translate-fs-signup-text' => 'The parameters represent the start and end of an HTML link.',
-	'translate-fs-userpage-text' => 'You may replace "Tamil" (ta) and "Swahili" (sw) with languages that people from your language are more likely to speak.',
-	'translate-fs-permissions-text' => 'Synonym for "filed" is "submitted".',
 	'translate-fs-selectlanguage' => "Default value in language selector, acts as 'nothing chosen'",
-	'translate-fs-settings-planguage' => "Label for choosing interface language, followed by language selector",
-	'translate-fs-settings-planguage-desc' => "Help message for choosing interface language",
-	'translate-fs-settings-slanguage' => "Other languages shown while translating, followed by language selector, $1 is running number",
-	'translate-fs-settings-slanguage-desc' => "Help message for choosing assistant languages",
-	'translate-fs-settings-submit' => "Submit button",
+	'translate-fs-settings-planguage' => 'Label for choosing interface language, followed by language selector',
+	'translate-fs-settings-planguage-desc' => 'Help message for choosing interface language',
+	'translate-fs-settings-slanguage' => 'Other languages shown while translating, followed by language selector, $1 is running number',
+	'translate-fs-settings-slanguage-desc' => 'Help message for choosing assistant languages',
+	'translate-fs-settings-submit' => 'Submit button',
 	'translate-fs-userpage-level-N' => 'Language skill level option, followed by language selector',
 	'translate-fs-userpage-level-5' => 'Language skill level option, followed by language selector',
 	'translate-fs-userpage-level-4' => 'Language skill level option, followed by language selector',
@@ -2787,6 +2784,7 @@ Jika anda tidak ingi menerima surat berita, anda boleh memilih untuk mengecualik
 );
 
 /** Dutch (Nederlands)
+ * @author SPQRobin
  * @author Siebrand
  */
 $messages['nl'] = array(
@@ -2803,62 +2801,22 @@ $messages['nl'] = array(
 	'translate-fs-intro' => 'Welkom bij de wizard Aan de slag van {{SITENAME}}.
 We loodsen u stap voor stap door het proces van vertaler worden.
 Aan het einde kunt u alle door {{SITENAME}} ondersteunde projecten vertalen.',
-	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
-
-In de eerste stap moet u registreren.
-
-Uw gebruikersnaam wordt gebruikt als naamsvermelding voor uw vertalingen.
-De afbeelding rechts geeft aan hoe u de velden moet invullen.
-
-Als u al bent geregistreerd, dan kunt u zich $1aanmelden$2.
-Kom terug naar deze pagina als u bent aangemeld.
-
-$3Registreren$4',
-	'translate-fs-settings-text' => 'Ga nu naar uw voorkeuren en wijzig tenminste de interfacetaal naar de taal waarin u gaat vertalen.
-
-Uw interfacetaal wordt gebruikt als de standaardtaal waarin u gaat vertalen.
-Het is makkelijk te vergeten de taal te wijzigen, dus maak die instelling vooral nu.
-
-Als u toch uw instellingen aan het wijzigen bent, kunt u ook een instelling maken om vertalingen in andere talen als hulpje weer te geven.
-Deze instellingen is te vinden in het tabblad "{{int:prefs-editing}}".
-Voel u vrij om ook andere instellingen aan te passen.
-
-Ga nu naar uw [[Special:Preferences|voorkeuren]] en kom na het wijzigen terug naar deze pagina.',
-	'translate-fs-settings-skip' => 'Ik ben klaar en wil doorgaan.',
-	'translate-fs-userpage-text' => 'Maak nu uw eigen gebruikerspagina aan.
-
-Schrijf alstublieft iets over uzelf; wie u bent en wat u doet.
-Dit helpt de gemeenschap van {{SITENAME}} samen te werken.
-Op {{SITENAME}} werken mensen van over de hele wereld samen aan verschillende talen en projecten.
-
-In het ingevulde formulier boven de eerste regel ziet u <nowiki>{{#babel:en-2}}</nowiki>.
-Vul dit aan met uw eigen talenkennis.
-Het getal achter de taalcode beschrijft hoe goed u een taal in schrift beheerst.
-De mogelijkheden zijn:
-* 1 - elementair niveau
-* 2 - basisniveau
-* 3 - gevorderd niveau
-* 4 - moedertaalniveau
-* 5 - u gebruikt de taal professioneel, bijvoorbeeld als professioneel vertaler.
-
-Als u een taal als moedertaal spreekt, laat het niveau dan weg, en gebruik alleen de taalcode.
-Bijvoorbeeld: uw moedertaal is Nederlands, u beheerst het Engels op gevorderd niveau, en Swahili op elementair niveau. Noteer dan:
-<code><nowiki>{{#babel:nl|en-3|sw-1}}</nowiki></code>
-
-Als u de taalcode van een taal niet kent, dan is dit een goed moment.
-U kunt de lijst hieronder gebruiken.',
+	'translate-fs-selectlanguage' => 'Kies een taal',
+	'translate-fs-settings-planguage' => 'Voornaamste taal:',
+	'translate-fs-settings-slanguage' => 'Hulptaal $1:',
+	'translate-fs-settings-submit' => 'Voorkeuren opslaan',
+	'translate-fs-userpage-level-N' => 'Ik ben een moedertaalspreker van',
+	'translate-fs-userpage-level-5' => 'Ik ben een professionele vertaler van',
+	'translate-fs-userpage-level-4' => 'Ik ken dit zoals een moedertaalspreker',
+	'translate-fs-userpage-level-3' => 'Ik heb een goede beheersing van',
+	'translate-fs-userpage-level-2' => 'Ik heb een gemiddelde beheersing van',
+	'translate-fs-userpage-level-1' => 'Ik ken een beetje',
+	'translate-fs-userpage-help' => 'Geef uw taalvaardigheden aan en vertel ons iets over uzelf. Als u meer dan vijf talen kent kunt u er later meer toevoegen.',
 	'translate-fs-userpage-submit' => 'Mijn gebruikerspagina aanmaken',
 	'translate-fs-userpage-done' => 'Goed gedaan!
 U hebt nu een gebruikerspagina.',
-	'translate-fs-permissions-text' => 'Nu moet u een verzoek doen om vertaalrechten te krijgen.
-
-Totdat we de code wijzigen, moet u naar [[Project:Translator]] en daar de instructies volgen.
-Kom daarna terug naar deze pagina.
-
-Nadat u uw aanvraag hebt ingediend, controleert een medewerker zo snel mogelijk uw aanvraag.
-Heb even geduld, alstublieft.
-
-<del>Controleer of de onderstaande aanvraag correct is ingevuld en klik vervolgens op de knop.</del>',
+	'translate-fs-permissions-planguage' => 'Voornaamste taal:',
+	'translate-fs-permissions-submit' => 'Verzoek versturen',
 	'translate-fs-target-text' => 'Gefeliciteerd!
 U kunt nu beginnen met vertalen.
 
