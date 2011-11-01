@@ -1777,7 +1777,7 @@ $messages['nl'] = array(
 	'translate-group-desc-collection' => 'Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Metaberichtengroep met alle berichten voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-semantic' => 'Metaberichtengroep die alle berichten bevat voor alle [http://http://semantic-mediawiki.org/ Semantische MediaWiki]-extensies',
+	'translate-group-desc-semantic' => 'Metaberichtengroep die alle berichten bevat voor [http://http://semantic-mediawiki.org/ Semantische MediaWiki]-extensies',
 	'translate-group-desc-socialprofile' => 'Metaberichtengroep die alle berichten bevat voor uitbreidingen gerelateerd aan [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door [http://www.wikia.com Wikia]',
@@ -1815,9 +1815,7 @@ $messages['nl'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] is een microblogserver',
 	'translate-group-desc-statusnet-plugin' => 'Deze berichten maken onderdeel uit van een plug-in voor [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Een berichtengroep voor [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], het i18n-systeem voor [http://toolserver.org Toolserverprogramma\'s] (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technische gegevens]</span>)',
-	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] is een op Omegawiki-gebaseerde Vocabulairetrainer',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] is in staat om snel de auteurs van een pagina in een Wikimedia-wiki te vinden',
-	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Wikimedia mobile]] is de mobiele interface voor Wikipedia',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] levert een offlineversie van Wikipedia met alleen tekst op een mobiel apparaat',
 );
 
