@@ -120,7 +120,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		return array(
 			'group' => array(
 				ApiBase::PARAM_TYPE => array_keys( MessageGroups::getAllGroups() ),
-				ApiBase::PARAM_REQUIRED => true;
+				ApiBase::PARAM_REQUIRED => true,
 			),
 			'language' => array(
 				ApiBase::PARAM_TYPE => 'string',
