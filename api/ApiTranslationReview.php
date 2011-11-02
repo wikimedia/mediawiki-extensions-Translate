@@ -13,11 +13,12 @@
  * @ingroup API TranslateAPI
  */
 class ApiTranslationReview extends ApiBase {
+	protected static $right = 'translate-messagereview';
 
 	public function execute() {
 		global $wgUser;
-		if ( !$wgUser->isallowed( 'translate-messagereview' ) ) {
-			$this->dieUsageMsg( 'permissiondenied' );
+		if ( !$wgUser->isallowed( self::$right ) ) {
+			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
 		$params = $this->extractRequestParams();
@@ -104,8 +105,9 @@ class ApiTranslationReview extends ApiBase {
 	}
 
 	public function getPossibleErrors() {
+		$right = self::$right;
 		return array_merge( parent::getPossibleErrors(), array(
-			array( 'code' => 'permissiondenied', 'info' => 'You must have translate-messagereview right' ),
+			array( 'code' => 'permissiondenied', 'info' => "You must have $right right" ),
 			array( 'code' => 'unknownmessage', 'info' => 'Title $1 does not belong to a message group' ),
 			array( 'code' => 'fuzzymessage', 'info' => 'Cannot review fuzzy translations' ),
 			array( 'code' => 'owntranslation', 'info' => 'Cannot review own translations' ),
@@ -125,7 +127,7 @@ class ApiTranslationReview extends ApiBase {
 
 	public static function getToken( $pageid, $title ) {
 		global $wgUser;
-		if ( !$wgUser->isAllowed( 'translate-messagereview' ) ) {
+		if ( !$wgUser->isAllowed( self::$right ) ) {
 			return false;
 		}
 
@@ -134,7 +136,7 @@ class ApiTranslationReview extends ApiBase {
 			return $cachedToken;
 		}
 
-		$cachedToken = $wgUser->editToken( 'translate-messagereview' );
+		$cachedToken = $wgUser->editToken( $this->getTokenSalt() );
 		return $cachedToken;
 	}
 
