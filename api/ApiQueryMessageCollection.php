@@ -117,19 +117,10 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	}
 
 	public function getAllowedParams() {
-
-		// Ugly code for BC <= 1.16
-		$class = new ReflectionClass( 'ApiBase' );
-		if ( $class->hasConstant( 'PARAM_REQUIRED' ) ) {
-			$required = ApiBase::PARAM_REQUIRED;
-		} else {
-			$required = 8;
-		}
-
 		return array(
 			'group' => array(
 				ApiBase::PARAM_TYPE => array_keys( MessageGroups::getAllGroups() ),
-				$required => true,
+				ApiBase::PARAM_REQUIRED => true;
 			),
 			'language' => array(
 				ApiBase::PARAM_TYPE => 'string',
