@@ -14,6 +14,7 @@
  */
 class ApiTranslationReview extends ApiBase {
 	protected static $right = 'translate-messagereview';
+	protected static $salt = 'translate-messagereview';
 
 	public function execute() {
 		global $wgUser;
@@ -77,7 +78,7 @@ class ApiTranslationReview extends ApiBase {
 	}
 
 	public function getTokenSalt() {
-		return 'translate-messagereview';
+		return self::$salt;
 	}
 
 	public function getAllowedParams() {
@@ -136,7 +137,7 @@ class ApiTranslationReview extends ApiBase {
 			return $cachedToken;
 		}
 
-		$cachedToken = $wgUser->editToken( $this->getTokenSalt() );
+		$cachedToken = $wgUser->editToken( self::$salt );
 		return $cachedToken;
 	}
 

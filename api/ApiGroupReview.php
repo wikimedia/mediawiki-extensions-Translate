@@ -14,6 +14,7 @@
  */
 class ApiGroupReview extends ApiBase {
 	protected static $right = 'translate-groupreview';
+	protected static $salt = 'translate-groupreview';
 
 	public function execute() {
 		global $wgUser, $wgTranslateWorkflowStates;
@@ -71,7 +72,7 @@ class ApiGroupReview extends ApiBase {
 	}
 
 	public function getTokenSalt() {
-		return 'translate-groupreview';
+		return self::$salt;
 	}
 
 	public function getAllowedParams() {
@@ -142,7 +143,7 @@ class ApiGroupReview extends ApiBase {
 			return $cachedToken;
 		}
 
-		$cachedToken = $wgUser->editToken( $this->getTokenSalt() );
+		$cachedToken = $wgUser->editToken( self::$salt );
 		return $cachedToken;
 	}
 
