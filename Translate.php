@@ -86,7 +86,9 @@ $wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
 $wgAPIMetaModules['messagegroups'] = 'ApiQueryMessageGroups';
 $wgAPIMetaModules['messagetranslations'] = 'ApiQueryMessageTranslations';
 $wgAPIModules['translationreview'] = 'ApiTranslationReview';
+$wgAPIModules['groupreview'] = 'ApiGroupReview';
 $wgHooks['APIQueryInfoTokens'][] = 'ApiTranslationReview::injectTokenFunction';
+$wgHooks['APIQueryInfoTokens'][] = 'ApiGroupReview::injectTokenFunction';
 
 // Register hooks.
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
