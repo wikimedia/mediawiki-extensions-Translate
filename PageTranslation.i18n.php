@@ -1455,7 +1455,7 @@ Tekst wótrězka: <pre>$1</pre>',
 	'pt-log-name' => 'Protokol pśełožkow',
 	'pt-log-mark' => 'jo wersiju $3 boka "[[:$1]]" za pśełožowanje {{GENDER:$2|markěrował|markěrowała}}.',
 	'pt-log-unmark' => 'jo bok "[[:$1]]" z pśełožowanja {{GENDER:$2|wótpórał|wótpórała}}.',
-	'pt-log-moveok' => 'Je {{GENDER:$2|dokóńcył|dokóńcyła}} pśemjenowanje pśełožujobnego boka $1 do nowego mjenja',
+	'pt-log-moveok' => 'Je {{GENDER:$2|dokóńcył|dokóńcyła}} pśemjenowanje pśełožujobnego boka $1 do $3',
 	'pt-log-movenok' => 'Jo {{GENDER:$2|starcył|starcyła}} na problem pśi pśesuwanju [[:$1]] do [[:$3]]',
 	'pt-movepage-title' => 'Psełožujobny bok $1 psésunuś',
 	'pt-movepage-blockers' => 'Pśełožujobny bok njedajo se dla {{PLURAL:$1|slědujuceje zmólki|slědujuceju zmólkowu|slědujucych zmólkow|slědujucych zmólkow}} do nowego mjenja pśesunuś:',
@@ -1773,7 +1773,8 @@ $messages['fi'] = array(
 	'right-pagetranslation' => 'Merkitä sivuja käännettäviksi',
 	'tpt-desc' => 'Laajennus sisältösivujen kääntämiseen.',
 	'tpt-section' => 'Käännösosio $1',
-	'tpt-section-new' => 'Uusi käännösosio. Nimi: $1',
+	'tpt-section-new' => 'Uusi käännösosio.
+Nimi: $1',
 	'tpt-section-deleted' => 'Käännösosio $1',
 	'tpt-template' => 'Sivun mallipohja',
 	'tpt-templatediff' => 'Sivun mallipohja on muuttunut.',
@@ -1870,7 +1871,7 @@ Sivut ovat lukittuna siirron ajan.
 Epäonnistuneet siirrot tallennetaan sivunkääntölokiin ja ne täytyy korjata käsin.',
 	'pt-movepage-logreason' => 'Osa käännettävästä sivusta $1.',
 	'pt-movepage-started' => 'Käännettävän sivun perussivu on siirretty.
-Tarkista mahdolliset virheet ja valmistumisviestit sivunkääntölokista.',
+Tarkista mahdolliset virheet ja valmistumisviestit [[Special:Log/pagetranslation|sivunkääntölokista]].',
 	'pt-locked-page' => 'Tämä sivu on lukittu, koska käännettävän sivun siirtäminen on kesken.',
 );
 
@@ -6140,6 +6141,7 @@ $messages['vep'] = array(
 
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
+ * @author Trần Nguyễn Minh Huy
  * @author Vinhtantran
  */
 $messages['vi'] = array(
@@ -6187,7 +6189,7 @@ Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra nhữn
 	'translate-tag-markthis' => 'Đánh dấu trang này là cần dịch',
 	'translate-tag-markthisagain' => 'Trang này có <span class="plainlinks">[$1 thay đổi]</span> từ khi nó được <span class="plainlinks">[$2 đánh dấu cần dịch]</span> lần cuối.',
 	'translate-tag-hasnew' => 'Trang này có <span class="plainlinks">[$1 thay đổi]</span> chưa được đánh dấu cần dịch.',
-	'tpt-translation-intro' => 'Trang này là một <span class="plainlinks">[$1 bản dịch]</span> của trang [[$2]] và bản dịch đã hoàn thành $3% và theo phiên bản mới nhất.',
+	'tpt-translation-intro' => 'Trang này là một <span class="plainlinks">[$1 bản dịch]</span> của trang [[$2]] và bản dịch đã hoàn thành $3%.',
 	'tpt-translation-intro-fuzzy' => 'Các bản dịch lỗi thời được đánh dấu như thế này.',
 	'tpt-languages-legend' => 'Ngôn ngữ khác:',
 	'tpt-target-page' => 'Trang này không thể cập nhật bằng tay.
