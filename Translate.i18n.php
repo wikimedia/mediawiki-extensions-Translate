@@ -15,9 +15,6 @@ $messages = array();
 $messages['en'] = array(
 	'translate'         => 'Translate',
 	'translate-desc'    => '[[Special:Translate|Special page]] for translating MediaWiki and beyond',
-	'translate-edit'    => 'edit',
-	'translate-talk'    => 'talk',
-	'translate-history' => 'history',
 	'translate-showsub' => 'Show the {{PLURAL:$1|subgroup|$1 subgroups}}.',
 
 	'translate-grouplisting' => 'This is the list of all translatable groups.
@@ -434,7 +431,7 @@ Details: $1',
  * @author פוילישער
  */
 $messages['qqq'] = array(
-	'translate' => 'Part of the "Translate" extension. This message is the page title of the special page [[Special:Translate]]. It is the verb "to translate" and should be in the infinitive mood.
+	'translate' => 'This message is the page title of the special page [[Special:Translate]]. It is the verb "to translate".
 
 {{Identical|Translate}}',
 	'translate-desc' => '{{desc}}',
