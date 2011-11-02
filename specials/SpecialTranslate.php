@@ -132,11 +132,16 @@ class SpecialTranslate extends SpecialPage {
 					$note = wfMessage( 'translate-page-description-hasoptional' )->rawParams( $link )->parseAsBlock();
 
 					if ( $description ) {
-						$description .= '<hr>' . $note;
+						$description .= '<br>' . $note;
 					} else {
 						$description = $note;
 					}
 				}
+			}
+
+			$status = $this->getWorkflowStatus();
+			if ( $status !== false ) {
+				$description = $status . $description;
 			}
 
 			if ( $description ) {
@@ -465,5 +470,51 @@ class SpecialTranslate extends SpecialPage {
 		}
 
 		return $out;
+	}
+
+	protected function getWorkflowStatus() {
+		global $wgTranslateWorkflowStates, $wgUser;
+		if ( !$wgTranslateWorkflowStates ) {
+			return false;
+		}
+
+		$dbr = wfGetDB( DB_SLAVE );
+		$current = $dbr->selectField(
+			'translate_groupreviews',
+			'tgr_state',
+			array( 'tgr_group' => $this->options['group'], 'tgr_lang' => $this->options['language'] ),
+			__METHOD__
+		);
+
+		if ( $wgUser->isAllowed( 'translate-groupreview' ) ) {
+			$selector = new XmlSelect( 'workflow' );
+
+			$selector->setAttribute( 'class', 'mw-translate-workflowselector' );
+			$selector->setDefault( $current );
+			$selector->addOption( wfMessage( 'translate-workflow-state-' )->text(), '' );
+			foreach ( $wgTranslateWorkflowStates as $state ) {
+				$selector->addOption( $state );
+			}
+			$state = $selector->getHTML();
+
+			$attributes = array(
+				'type' => 'button',
+				'id' => 'mw-translate-workflowset',
+				'data-token' => ApiGroupReview::getToken( 0, '' ),
+				'data-group' => $this->options['group'],
+				'data-language' => $this->options['language'],
+				'style' => 'visibility: hidden;',
+				'value' => 'Set',
+			);
+			$state .= Html::element( 'input', $attributes );
+		} elseif ( strval( $current ) !== '' ) {
+			$state = $current;
+		} else {
+			$state = wfMessage( 'translate-workflow-state-' )->escaped();
+		}
+
+		$message = wfMessage( 'translate-workflowstatus' )->rawParams( $state );
+		$box = Html::rawElement( 'div', array( 'id' => 'mw-sp-translate-workflow' ), $message->escaped() );
+		return $box;
 	}
 }

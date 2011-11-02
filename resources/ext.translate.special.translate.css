@@ -37,3 +37,16 @@ a.mw-sp-showmore {
 	background-color: inherit;
 	font-weight: bold;
 }
+
+#mw-sp-translate-workflow {
+	float: right;
+	vertical-align: middle;
+	padding: 0.5em;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	margin-right: -1em;
+	margin-top: -1em;
+	border-bottom: 2px dotted #666;
+	border-left: 1px dotted #AAA;
+	border-bottom-left-radius: 10px;
+}

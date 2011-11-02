@@ -399,6 +399,12 @@ Details: $1',
 	'log-description-translationreview' => 'Log of all reviews to translations and message groups.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|accepted}} translation $3',
 
+	'translate-workflow-state-' => '(unset)',
+	'translate-workflowstatus' => 'Status: $1',
+	'translate-workflow-set-do' => 'Set',
+	'translate-workflow-set-doing' => 'Setting...',
+	'translate-workflow-set-done' => 'Set!',
+
 );
 
 /** Message documentation (Message documentation)
@@ -625,6 +631,12 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'translate-messagereview-no-fuzzy' => 'Tooltip for disabled review button',
 	'translate-messagereview-no-own' => 'Tooltip for disabled review button',
 	'translate-messagereview-doit' => 'Tooltip for review button',
+
+	'translate-workflow-state-' => 'Unselectable select option in Special:Translate if workflow state editing is on',
+	'translate-workflowstatus' => 'In Special:Translate if workflow states are in use, $1 is selector or the current state',
+	'translate-workflow-set-do' => 'Submit button text when active',
+	'translate-workflow-set-doing' => 'Submit button text when waiting for reply from server',
+	'translate-workflow-set-done' => 'Submit button text when submission completed succesfully',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)

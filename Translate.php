@@ -194,6 +194,13 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 
 $wgResourceModules['ext.translate.special.translate'] = array(
 	'styles' => 'resources/ext.translate.special.translate.css',
+	'scripts' => 'resources/ext.translate.special.translate.js',
+	'position' => 'top',
+	'messages' => array( 
+		'translate-workflow-set-do',
+		'translate-workflow-set-doing',
+		'translate-workflow-set-done',
+	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.supportedlanguages'] = array(
