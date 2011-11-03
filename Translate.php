@@ -189,6 +189,9 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'translate-messagereview-done',
 		'translate-messagereview-apierror-invalidrevision',
 		'translate-messagereview-apierror-unknownmessage',
+		'translate-messagereview-apierror-badtoken',
+		'translate-messagereview-apierror-fuzzymessage',
+		'translate-messagereview-apierror-owntranslation',
 	),
 ) + $resourcePaths;
 
