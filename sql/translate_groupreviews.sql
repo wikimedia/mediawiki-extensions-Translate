@@ -7,7 +7,7 @@ CREATE TABLE /*$wgDBprefix*/translate_groupreviews (
   tgr_group varchar(200) binary NOT NULL,
   tgr_lang varchar(20) binary NOT NULL,
   -- Any of user configured values from $wgTranslateWorkflowStates
-  tgr_state varbinary(32) not null,
+  tgr_state varbinary(32) NOT NULL,
 
 	PRIMARY KEY (tgr_group, tgr_lang)
 ) /*$wgDBTableOptions*/;

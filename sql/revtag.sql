@@ -2,15 +2,15 @@
 
 -- Revision tags
 CREATE TABLE /*$wgDBprefix*/revtag (
-  rt_type varbinary(60) not null,
+  rt_type varbinary(60) NOT NULL,
 
   -- Link to page.page_id
-  rt_page int not null,
+  rt_page int NOT NULL,
 
   -- Link to revision.rev_id
-  rt_revision int not null,
+  rt_revision int NOT NULL,
 
-  rt_value blob null
+  rt_value blob NULL
 ) /*$wgDBTableOptions*/;
 -- Index for finding all revisions in a page with a given tag
 CREATE UNIQUE INDEX /*i*/rt_type_page_revision ON /*$wgDBprefix*/revtag
