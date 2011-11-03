@@ -2581,7 +2581,7 @@ Created for University of Bamberg. Licensed GPL 2.0 or later. Developed by [[Use
 	'bw-desc-wikireader' => 'Ang [[Translating:WikiReader|WikiReader]] ay isang proyekto upang dalhin ang isang bersyon ng Wikipediang hindi nakakunekta sa internet at may bersyong teksto lamang mula sa isang aparatong mobil.',
 );
 
-/** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
+/** Tatar (Cyrillic script) (Татарча)
  * @author March
  * @author Rinatus
  * @author Ильнар
@@ -2591,9 +2591,9 @@ $messages['tt-cyrl'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] —  PHPда язылган веб-форум.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT — килгән хаталарны карау өчен нигезләнгән веб-система. Зинһар, булган кимчелекләрне [[Support]] битендә әйтегез.',
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] — PHP телендә язылган почта веб-клиенты. Зинхар очен, барлык җитешсезлекләр турында [[Support|ярдәм битенә]] хәбәр итегез.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] — Википедияне рәтләү өчен җиһазлар җыентыгы',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — ачык кодлы микроблогинг үзәге',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] Викимедиа авторларының битен табарга ярдәм итә.',
-	'bw-desc-wikimediamobile' => 'Викимедианең мобиль юрамасы менә бу сылтама буенча урнашкан http://m.wikipedia.org',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] —  Википедиянең кәрәзле телефондагы автаном юрамасы',
 );
 
