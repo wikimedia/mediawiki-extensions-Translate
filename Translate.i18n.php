@@ -402,7 +402,7 @@ Details: $1',
 	'translate-workflow-set-do' => 'Set',
 	'translate-workflow-set-doing' => 'Setting...',
 	'translate-workflow-set-done' => 'Set!',
-
+	'translate-stats-workflow' => 'Status',
 );
 
 /** Message documentation (Message documentation)
@@ -631,6 +631,7 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'translate-workflow-set-do' => 'Submit button text when active',
 	'translate-workflow-set-doing' => 'Submit button text when waiting for reply from server',
 	'translate-workflow-set-done' => 'Submit button text when submission completed succesfully',
+	'translate-stats-workflow' => 'Column header on Special:LanguageStats and Special:MessageGroupStats',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)

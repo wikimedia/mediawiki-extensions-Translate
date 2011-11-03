@@ -27,6 +27,8 @@ class StatsTable {
 	protected $translate;
 	/// @var string
 	protected $mainColumnHeader;
+	/// @var array
+	protected $extraColumns = array();
 
 	public function __construct() {
 		global $wgLang;
@@ -45,7 +47,10 @@ class StatsTable {
 	public function element( $in, $bgcolor = '', $sort = '' ) {
 		$attributes = array();
 		if ( $sort ) $attributes['data-sort-value'] = $sort;
-		if ( $bgcolor ) $attributes['style'] = "background-color: #" . $bgcolor;
+		if ( $bgcolor ) {
+			$attributes['style'] = "background-color: #" . $bgcolor;
+			$attributes['class'] = 'hover-color';
+		}
 
 		$element = Html::element( 'td', $attributes, $in );
 		return $element;
@@ -87,6 +92,19 @@ class StatsTable {
 		return Html::element( 'th', array(), $msg->text() );
 	}
 
+	public function addExtraColumn( Message $column ) {
+		$this->extraColumns[] = $column;
+	}
+
+	public function getOtherColumnHeaders() {
+		return array_merge( array(
+			wfMessage( 'translate-total' ),
+			wfMessage( 'translate-untranslated' ),
+			wfMessage( 'translate-percentage-complete' ),
+			wfMessage( 'translate-percentage-fuzzy' ),
+		), $this->extraColumns );
+	}
+
 	public function createHeader() {
 		// Create table header
 		$out = Html::openElement(
@@ -98,14 +116,9 @@ class StatsTable {
 		$out .= "\n\t" . Html::openElement( 'tr' );
 
 		$out .= "\n\t\t" . $this->getMainColumnHeader();
-		$out .= "\n\t\t" . $this->createColumnHeader(
-			wfMessage( 'translate-total' ) );
-		$out .= "\n\t\t" . $this->createColumnHeader(
-			wfMessage( 'translate-untranslated' ) );
-		$out .= "\n\t\t" . $this->createColumnHeader(
-			wfMessage( 'translate-percentage-complete' ) );
-		$out .= "\n\t\t" . $this->createColumnHeader(
-			wfMessage( 'translate-percentage-fuzzy' ) );
+		foreach ( $this->getOtherColumnHeaders() as $label ) {
+			$out .= "\n\t\t" . $this->createColumnHeader( $label );
+		}
 		$out .= "\n\t" . Html::closeElement( 'tr' );
 		$out .= "\n\t" . Html::closeElement( 'thead' );
 		$out .= "\n\t" . Html::openElement( 'tbody' );
@@ -124,6 +137,7 @@ class StatsTable {
 		$out  = "\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . Html::element( 'td', array(), $message->text() );
 		$out .= $this->makeNumberColumns( $fuzzy, $translated, $total );
+		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
 		return $out;
 	}
 
@@ -139,7 +153,6 @@ class StatsTable {
 			$na = "\n\t\t" . Html::element( 'td', array( 'data-sort-value' => -1 ), '...' );
 			$nap =  "\n\t\t" . $this->element( '...', 'AFAFAF', -1 );
 			$out = $na . $na . $nap . $nap;
-			$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
 			return $out;
 		}
 
@@ -158,8 +171,6 @@ class StatsTable {
 		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzy / $total ),
 			$this->getBackgroundColour( $fuzzy, $total, true ),
 			sprintf( '%1.5f', $fuzzy / $total ) );
-
-		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
 		return $out;
 	}
 

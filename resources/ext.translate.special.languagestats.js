@@ -73,24 +73,17 @@ jQuery( document ).ready( function( $ ) {
 // When hovering a row, adjust brightness of the last two custom-colored cells as well
 // See also translate.langstats.css for the highlighting for the other normal rows
 mw.loader.using( 'jquery.colorUtil' , function() {
-
 	$( '.mw-sp-translate-table.wikitable tr' ).hover( function() {
-	
-		$( '> td:last', this )
-				// Get last two cells
-				.prev( 'td' ).andSelf()
-				// 30% more brightness
-				.css( 'background-color', function( i, val ) {
-					return $.colorUtil.getColorBrightness( val, +0.3 );
-				} );
+		$( '> td.hover-color', this )
+		// 30% more brightness
+		.css( 'background-color', function( i, val ) {
+			return $.colorUtil.getColorBrightness( val, +0.3 );
+		} );
 	}, function() {
-		$( '> td:last', this )
-			// Get last two cells
-			.prev( 'td' ).andSelf()
-			// 30% less brightness
-			.css( 'background-color', function( i, val ) {
-				return $.colorUtil.getColorBrightness( val, -0.3 );
-			} );
+		$( '> td.hover-color', this )
+		// 30% less brightness
+		.css( 'background-color', function( i, val ) {
+			return $.colorUtil.getColorBrightness( val, -0.3 );
+		} );
 	} );
-
 } );

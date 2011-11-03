@@ -337,6 +337,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= "\n\t\t" . Html::rawElement( 'td', array(),
 			$this->table->makeGroupLink( $group, $this->target, $extra ) );
 		$out .= $this->table->makeNumberColumns( $fuzzy, $translated, $total );
+		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
 		return $out;
 	}
 }

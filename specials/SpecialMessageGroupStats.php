@@ -106,6 +106,13 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	 */
 	function getTable() {
 		$table = $this->table;
+
+		global $wgTranslateWorkflowStates;
+		if ( $wgTranslateWorkflowStates !== false ) {
+			$this->states = self::getWorkflowStates( $this->target );
+			$this->statemap = array_flip( $wgTranslateWorkflowStates );
+			$table->addExtraColumn( wfMessage( 'translate-stats-workflow' ) );
+		}
 		$out = '';
 
 		if ( $this->purge ) {
@@ -171,6 +178,13 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		$out  = "\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . $this->getMainColumnCell( $code, $extra );
 		$out .= $this->table->makeNumberColumns( $fuzzy, $translated, $total );
+		global $wgTranslateWorkflowStates;
+		if ( $wgTranslateWorkflowStates !== false ) {
+			$state = isset( $this->states[$code] ) ? $this->states[$code] : '';
+			$sort = isset( $this->statemap[$state] ) ? $this->statemap[$state] + 1 : -1;
+			$out .= "\n\t\t" . $this->table->element( $state, false, $sort );
+		}
+		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
 		return $out;
 	}
 
@@ -195,6 +209,16 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 		$link = $linker->link( $this->translate, $text, array(), $queryParameters );
 		return Html::rawElement( 'td', array(), $link );
+	}
+
+	protected static function getWorkflowStates( $group ) {
+		$db = wfGetDB( DB_SLAVE );
+		$res = $db->select( 'translate_groupreviews', array( 'tgr_state', 'tgr_lang' ), array( 'tgr_group' => $group ), __METHOD__ );
+		$states = array();
+		foreach ( $res as $row ) {
+			$states[$row->tgr_lang] = $row->tgr_state;
+		}
+		return $states;
 	}
 
 }
