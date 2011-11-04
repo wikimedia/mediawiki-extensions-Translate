@@ -907,7 +907,7 @@ class TranslationHelpers {
 
 		// Using newFromId instead of newFromTitle, because the page might have been renamed
 		$oldrev = Revision::newFromId( $translationRevision );
-		if ( !$oldev ) {
+		if ( !$oldrev ) {
 			// And someone might still have deleted it
 			return null;
 		}
