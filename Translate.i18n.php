@@ -19,6 +19,7 @@ $messages['en'] = array(
 
 	'translate-grouplisting' => 'This is the list of all translatable groups.
 Click the message group name to view a list of untranslated messages.',
+	'translate-grouplisting-empty' => 'No message groups have been configured for translation.',
 
 	'translate-task-view'                 => 'View all messages from',
 	'translate-task-untranslated'         => 'View all untranslated messages from',

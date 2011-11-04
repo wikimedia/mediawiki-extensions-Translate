@@ -60,7 +60,7 @@ class SpecialTranslate extends SpecialPage {
 		$errors = array();
 
 		if ( $this->options['group'] === '' ) {
-			$wgOut->addHTML( $this->groupInformation() );
+			$this->groupInformation();
 			return;
 		}
 
@@ -404,15 +404,21 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	public function groupInformation() {
-		$out = '';
+		global $wgOut;
 		$structure = MessageGroups::getGroupStructure();
+		if ( !$structure ) {
+			$wgOut->addWikiMsg( 'translate-grouplisting-empty' );
+			return;
+		}
 
+		$wgOut->addWikiMsg( 'translate-grouplisting' );
+
+		$out = '';
 		foreach ( $structure as $blocks ) {
 			$out .= $this->formatGroupInformation( $blocks );
 		}
 
-		$header = wfMsgExt( 'translate-grouplisting', 'parse' );
-		return $header . "\n" . Html::rawElement( 'table', array( 'class' => 'mw-sp-translate-grouplist wikitable' ), $out );
+		$wgOut->addHtml( Html::rawElement( 'table', array( 'class' => 'mw-sp-translate-grouplist wikitable' ), $out ) );
 	}
 
 	public function formatGroupInformation( $blocks, $level = 2 ) {

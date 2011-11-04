@@ -1152,6 +1152,7 @@ class MessageGroups {
 		}
 
 		// Sort top-level groups according to labels, not ids
+		$labels = array();
 		foreach ( $structure as $id => $data ) {
 			// Either it is a group itself, or the first group of the array
 			$nid = is_array( $data ) ? key( $data ) : $id;
