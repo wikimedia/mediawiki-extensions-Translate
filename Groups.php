@@ -106,6 +106,7 @@ interface MessageGroup {
 	/**
 	 * Returns message tags. If type is given, only messages keys with that
 	 * tag is returnted. Otherwise an array[tag => keys] is returnted.
+	 * @param $type string
 	 * @return array
 	 */
 	public function getTags( $type = null );
