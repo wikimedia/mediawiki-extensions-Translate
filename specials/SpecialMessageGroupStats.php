@@ -184,7 +184,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 			$sort = isset( $this->statemap[$state] ) ? $this->statemap[$state] + 1 : -1;
 			$out .= "\n\t\t" . $this->table->element( $state, false, $sort );
 		}
-		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
+		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
 		return $out;
 	}
 
