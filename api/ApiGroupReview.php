@@ -18,7 +18,7 @@ class ApiGroupReview extends ApiBase {
 
 	public function execute() {
 		global $wgUser, $wgTranslateWorkflowStates;
-		if ( !count( $wgTranslateWorkflowStates ) ) {
+		if ( !$wgTranslateWorkflowStates ) {
 			$this->dieUsage( 'Message group review not in use', 'disabled' );
 		}
 
