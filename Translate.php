@@ -510,6 +510,11 @@ $wgTranslateGroupRoot = '/var/www/externals';
  */
 $wgTranslateGroupFiles = array();
 
+/**
+ * @todo document
+ */
+$wgTranslateWorkflowStates = false;
+
 
 # === System setup related configuration ===
 

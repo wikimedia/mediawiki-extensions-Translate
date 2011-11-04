@@ -108,7 +108,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		$table = $this->table;
 
 		global $wgTranslateWorkflowStates;
-		if ( $wgTranslateWorkflowStates !== false ) {
+		if ( $wgTranslateWorkflowStates ) {
 			$this->states = self::getWorkflowStates( $this->target );
 			$this->statemap = array_flip( $wgTranslateWorkflowStates );
 			$table->addExtraColumn( wfMessage( 'translate-stats-workflow' ) );
@@ -179,7 +179,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		$out .= "\n\t\t" . $this->getMainColumnCell( $code, $extra );
 		$out .= $this->table->makeNumberColumns( $fuzzy, $translated, $total );
 		global $wgTranslateWorkflowStates;
-		if ( $wgTranslateWorkflowStates !== false ) {
+		if ( $wgTranslateWorkflowStates ) {
 			$state = isset( $this->states[$code] ) ? $this->states[$code] : '';
 			$sort = isset( $this->statemap[$state] ) ? $this->statemap[$state] + 1 : -1;
 			$out .= "\n\t\t" . $this->table->element( $state, false, $sort );
