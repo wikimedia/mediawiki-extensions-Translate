@@ -29,6 +29,8 @@ And for the code at:
  http://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2011-11-04
+- fuzzy.php can now take optional namespace prefix for each message
 * 2011-10-30
 - The script referenced at 2011-08-26 is now included in the source
 - Fixed compatibility with MW 1.17
