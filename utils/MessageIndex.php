@@ -40,11 +40,14 @@ abstract class MessageIndex {
 	abstract public function retrieve();
 	abstract protected function store( array $array );
 
-	public function rebuild() {
+	public function rebuild( /*bool*/ $scratch = false ) {
 		$groups = MessageGroups::singleton()->getGroups();
 
-		$old = $this->retrieve();
-		$new = array();
+		$new = $old = array();
+		if ( !$scratch ) {
+			// To avoid inifinite recursion
+			$old = $this->retrieve();
+		}
 		$postponed = array();
 
 		STDOUT( "Working with ", 'main' );
@@ -69,6 +72,7 @@ abstract class MessageIndex {
 
 		$this->store( $new );
 		$this->clearMessageGroupStats( $old, $new );
+		return $new;
 	}
 
 	/**
@@ -165,7 +169,7 @@ class FileCachedMessageIndex extends MessageIndex {
 		if ( file_exists( $file ) ) {
 			return $this->index = unserialize( file_get_contents( $file ) );
 		} else {
-			return $this->index = array();
+			return $this->index = $this->rebuild( 'empty' );
 		}
 	}
 
@@ -198,7 +202,7 @@ class CachedMessageIndex extends MessageIndex {
 		if ( is_array( $data ) ) {
 			return $this->index = $data;
 		} else {
-			return $this->index = array();
+			return $this->index = $this->rebuild( 'empty' );
 		}
 	}
 
