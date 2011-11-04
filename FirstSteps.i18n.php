@@ -1456,6 +1456,7 @@ $messages['he'] = array(
 	'firststeps' => 'הצעדים הראשונים',
 	'firststeps-desc' => 'דף מיוחד כדי לעזור למשתמשים להתחיל לעבוד בוויקי שמשתמש בהרחבת תרגום',
 	'translate-fs-pagetitle-done' => '- בוצע!',
+	'translate-fs-pagetitle-pending' => '- בהמתנה',
 	'translate-fs-pagetitle' => 'אשף תחילת עבודה – $1',
 	'translate-fs-signup-title' => 'הרשמה',
 	'translate-fs-settings-title' => 'הגדרת ההעדפות שלך',
@@ -1466,63 +1467,31 @@ $messages['he'] = array(
 	'translate-fs-intro' => "ברוכים הבאים לאשף הצעדים הראשונים של אתר {{SITENAME}}.
 האשף ידריך אתכם בתהליך שיהפוך אתכם לחלק מצוות המתרגמים.
 בסופו תוכלו לתרגם '''הודעות ממשק''' של כל הפרויקטים הנתמכים באתר {{SITENAME}}.",
-	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
-
-בשלב הראשון עליכם להירשם.
-
-קרדיט עבור התרגומים שלכם מיוחס לשם המשתמש שלכם.
-התמונה בצד ימין מראה כיצד למלא את השדות.
-
-אם כבר נרשמתם, $1היכנסו לחשבון$2.
-אחרי שתירשמו, אנא חִזרו לדף זה.
-
-$3הרשמה$4',
-	'translate-fs-settings-text' => 'כעת נא לעבור להעדפות שלכם
-ולכל הפחות שנו את שפת הממשק לשפה שאתם עומדים לתרגם.
-
-שפת הממשק משמשת שפת היעד לפי בררת המחדל.
-קל לשכוח להגדיר את השפה הנכונה, ולכן מומלץ מאוד להגדירה כעת.
-
-כאשר תהיו שם, תוכלו לבקש שהתוכנה תציג תרגומים בשפות אחרות שאתם יודעים.
-ניתן למצוא הגדרה זו תחת הלשונית "{{int:prefs-editing}}".
-אל תהססו להכיר גם הגדרות אחרות.
-
-לכו ל[[Special:Preferences|דף ההעדפות]] עכשיו ואחר־כך חזרו לדף הזה.',
-	'translate-fs-settings-skip' => 'סיימתי. 
-תנו לי להמשיך.',
-	'translate-fs-userpage-text' => 'כעת עליכם ליצור דף משתמש.
-
-נא לכתוב משהו על עצמכם – מי אתם ומה אתם עושים.
-פעולה זו תסייע לקהילת {{SITENAME}} לעבוד אִתכם.
-באתר {{SITENAME}} ישנם אנשים מכל רחבי העולם שעובדים בשפות שונות והפרויקטים שונים.
-
-בתיבת העריכה הממולאת מראש בשורה הראשונה כתוב <nowiki>{{#babel:en-2}}</nowiki>.
-נא להשלים אותה בהתאם לידיעותיכם בשפות.
-המספר לאחר קוד השפה מתאר כמה אתם יודעים את השפה.
-האפשרויות הן:
-* 1 - קצת
-* 2 - ידע של מתחיל
-* 3 - ידע טוב
-* 4 - רמת דובר ילידי
-* 5 - ידע ברמה מקצועית, למשל אם אתם עובדים בתרגום.
-
-אל תרשמו שום מספר בקוד של שפת האם שלכם.
-למשל: אם שפת אמכם היא עברית ובנוסף לכך אתם יודעים טוב אנגלית וגם קצת סוואהילי יש לכתוב:
-<code><nowiki>{{#babel:he|en-3|sw-1}}</nowiki></code>
-
-אם אינכם יודעים את קוד השפה שלכם, זה זמן טוב לחפש אותו.
-באפשרותכם להשתמש ברשימה שלהלן.',
+	'translate-fs-selectlanguage' => 'בחירת שפה',
+	'translate-fs-settings-planguage' => 'שפה עיקרית:',
+	'translate-fs-settings-planguage-desc' => 'הפשה העיקרית היא גם שפת הממשק בוויקי הזה
+ושפת היעד לתרגומים לפי בררת המחדל.',
+	'translate-fs-settings-slanguage' => 'שפת עזר $1:',
+	'translate-fs-settings-slanguage-desc' => 'אפשר להראות תרגומים של הודעות לשפות אחרות בעורך התרגומים.
+כאן אפשר לבחור אילו שפות, אם בכלל, תרצו לראות.',
+	'translate-fs-settings-submit' => 'שמירת העדפות',
+	'translate-fs-userpage-level-N' => 'אני דובר ילידי של',
+	'translate-fs-userpage-level-5' => 'אני מתרגם מקצועי בשפה הזאת',
+	'translate-fs-userpage-level-4' => 'אני יודע אותה כמו דובר ילידי',
+	'translate-fs-userpage-level-3' => 'אני יודע טוב',
+	'translate-fs-userpage-level-2' => 'אני יודע באופן בינוני',
+	'translate-fs-userpage-level-1' => 'אני יודע קצת',
+	'translate-fs-userpage-help' => 'אנא ציינו את כישורי השפה שלכם וספרו לנו כמה דברים על עצמכם. אם אתם יודעים יותר מחמש שפות, אפשר להוסיף אותן מאוחר יותר.',
 	'translate-fs-userpage-submit' => 'יצירת דף המשתמש שלי',
 	'translate-fs-userpage-done' => 'מצוין! כעת יש לך דף משתמש.',
-	'translate-fs-permissions-text' => 'כעת עליכם להוסיף בקשה להוסיף אתכם לקבוצת מתרגמים.
+	'translate-fs-permissions-planguage' => 'שפה עיקרית:',
+	'translate-fs-permissions-help' => 'עכשיו צריך להעלות בקשה להתווסף לקבוצת מתרגמים.
+נא לבחור את השפה העיקרית שתתרגמו אליה.
 
-עד שנתקן את הקוד של האתר, יש ללכת לדף [[Project:Translator]] ולבצע את ההוראות שם.
-לאחר מכן חִזרו לדף זה.
-
-לאחר שתשלחו את בקשתכם, אחד מחברי צוות המתנדבים יבדוק את בקשתכם ויאשר אותה בהקדם האפשרי.
-אנא המתינו בסבלנות.
-
-<del>בִדקו כי הבקשה הבאה מולאה כהלכה ולאחר מכן הקישו על לחצן הבקשה.</del>',
+אפשר להזכיר שפות אחרות והערות אחרות בתיבה להלן.',
+	'translate-fs-permissions-pending' => 'בקשתך נשלחה אל [[$1]] ומישהו מסגל האתר יבדוק אותה מהר ככל האפשר.
+אם תאמתו את הכתובת הדואר האקטרוני שלכם, תקבלו הודעה כשזה יקרה.',
+	'translate-fs-permissions-submit' => 'שליחת בקשה',
 	'translate-fs-target-text' => "מזל טוב!
 כעת, תוכלו להתחיל לתרגם.
 
@@ -2263,6 +2232,7 @@ $messages['lb'] = array(
 	'firststeps' => 'Éischt Schrëtt',
 	'firststeps-desc' => "[[Special:FirstSteps|Spezialsäit]] fir datt Benotzer besser ukommen fir d'Erweiderung 'Translate' op enger Wiki ze benotzen",
 	'translate-fs-pagetitle-done' => ' - fäerdeg!',
+	'translate-fs-pagetitle-pending' => '- am gaang',
 	'translate-fs-pagetitle' => 'Assistent fir unzefänken - $1',
 	'translate-fs-signup-title' => 'Schreift Iech an',
 	'translate-fs-settings-title' => 'Är Astellunge festleeën',
@@ -2276,7 +2246,13 @@ Um Schluss kënnt Dir all ''Interface-Messagen'' vun de vun {{SITENAME}} ënners
 	'translate-fs-selectlanguage' => 'Eng Sprooch eraussichen',
 	'translate-fs-settings-planguage' => 'Haaptsprooch:',
 	'translate-fs-settings-slanguage' => 'Ënnerstetzungs-Sprooch $1:',
+	'translate-fs-settings-slanguage-desc' => 'Et ass méiglech fir Iwwersetzunge vu Messagen an anere Sproochen am Iwwersetzungsediteur ze weisen.
+Hei kënnt Dir eraussiche wat fir eng Sprooch, wann Dir dat wëllt, Dir gesi wëllt.',
 	'translate-fs-settings-submit' => 'Astellunge späicheren',
+	'translate-fs-userpage-level-5' => 'Ech sinn e professionellen Iwwersetzer vu(n)',
+	'translate-fs-userpage-level-4' => 'Ech kenne se wéi wann et meng Mammesprooch wier',
+	'translate-fs-userpage-level-3' => 'Ech ka mech gutt ausdrécken op',
+	'translate-fs-userpage-level-1' => 'Ech kann a bëssen',
 	'translate-fs-userpage-submit' => 'Meng Benotzersäit maachen',
 	'translate-fs-userpage-done' => 'Gutt gemaach! dir hutt elo eng Benotzersäit.',
 	'translate-fs-permissions-planguage' => 'Haaptsprooch:',

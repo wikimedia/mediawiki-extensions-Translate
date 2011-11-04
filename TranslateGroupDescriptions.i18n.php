@@ -2474,7 +2474,7 @@ $messages['sv'] = array(
 Se [[mw:Extension:PDF_Writer]] och http://code.pediapress.com/wiki/wiki/mwlibrl för mer information.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] är en e-postklient som är skriven i PHP. Var god att rapportera några problem [[Support|här]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] är en offline Wikipedia-läsare',
-	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] är en plattform för öppna media',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] är en plattform för öppen media',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Dessa meddelanden är en del av e-postbekräftelsemallen för [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Dessa meddelanden är en del av [[Translating:Open Images|Open Images]]-projektet',
 	'bw-desc-openlayers' => 'OpenLayers är en dynamisk kartgenerator med öppen källkod. Vänligen rapportera problem till [[support]].',

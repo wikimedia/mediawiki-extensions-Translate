@@ -535,7 +535,6 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-untranslated' => 'Column header in [[Special:LanguageStats]] for number of untranslated messages in a message group.',
 	'translate-percentage-complete' => 'Used in [[Special:LanguageStats]].',
 	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
-	'translate-languagestats-groups' => "You can translate the text, including 'Leave this line exactly as it is'. The lines of this messages have one (1) leading space.",
 	'translate-mgs-column-language' => '{{Identical|Language}}',
 	'supportedlanguages-colorlegend' => 'Used on [[Special:SupportedLanguages]]. Parameters:
 * $1 is not a single number, but a series of numbers with different background colours, serving as a legend to match each colour with a number of days passed since the last contributed translation. See [[Special:SupportedLanguages]] to see the final rendering.',
@@ -624,6 +623,7 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'translate-messagereview-no-fuzzy' => 'Tooltip for disabled review button',
 	'translate-messagereview-no-own' => 'Tooltip for disabled review button',
 	'translate-messagereview-doit' => 'Tooltip for review button',
+	'logentry-translationreview-message' => '{{Logentry}}',
 	'translate-workflow-state-' => 'Unselectable select option in Special:Translate if workflow state editing is on',
 	'translate-workflowstatus' => 'In Special:Translate if workflow states are in use, $1 is selector or the current state',
 	'translate-workflow-set-do' => 'Submit button text when active',
@@ -674,6 +674,19 @@ $messages['ary'] = array(
 $messages['saz'] = array(
 	'translate-statsf-scale-days' => 'ꢣꢶꢥ꣄ꢥꢸꢥ꣄',
 	'translate-statsf-count-registrations' => 'ꢥꣁꢮ꣄ꢮꣁ ꢮꢮ꣄ꢬꢸꢥꢵꢬꢸꢥ꣄',
+);
+
+/** толышә зывон (толышә зывон)
+ * @author Гусейн
+ */
+$messages['tly'] = array(
+	'translate' => 'Пегордынијеј',
+	'translate-page-settings-legend' => 'Пеғәндон',
+	'translate-page-language' => 'Зывон',
+	'translate-next' => 'Пешонә сәһифә',
+	'translate-page-edit' => 'сәрост кардеј',
+	'translate-edit-translation' => 'Пегордыније',
+	'translate-magic-cm-current' => 'Есәтнә',
 );
 
 /** Afrikaans (Afrikaans)
@@ -1886,7 +1899,7 @@ como nun usar espacios o pa treslliterar nomes propios. $1',
 	'translate-edit-warnings' => 'Avisos sobre traducciones incompletes',
 	'translate-edit-tmsugs' => 'Suxerencies de la memoria de traducción',
 	'translate-edit-tmmatch' => '$1% de coincidencies',
-	'translate-use-suggestion' => "Inxertar esta suxerencia nel área de traducción. Esto troca'l conteníu actual ensembre.",
+	'translate-use-suggestion' => 'Sustituir la traducción actual por esta suxerencia.',
 	'translate-edit-tab-list' => 'Llista de mensaxes',
 	'translate-magic-pagename' => 'Traducción estendida de MediaWiki',
 	'translate-magic-help' => "Pues traducir los nomes de les páxines especiales, les pallabres máxiques y los nomes de los espacios de nome.
@@ -2125,6 +2138,7 @@ Detalles: $1",
 	'translate-messagereview-apierror-unknownmessage' => "Nun s'alcontró'l mensaxe",
 	'translate-messagereview-apierror-fuzzymessage' => 'La traducción ta marcada como aproximada',
 	'translate-messagereview-apierror-owntranslation' => 'Nun pues aceutar les traducciones propies.',
+	'translate-messagereview-apierror-badtoken' => 'Token non válidu',
 	'translate-messagereview-reviews' => 'Aceutada por {{PLURAL:$1|un usuariu|$1 usuarios}}',
 	'translate-messagereview-reviewswithyou' => 'Aceutada por {{PLURAL:$1|un usuariu|$1 usuarios}} incluyíu tú',
 	'translate-messagereview-reviewsyou' => 'Aceutada por ti',
@@ -2137,6 +2151,12 @@ Detalles: $1",
 	'log-name-translationreview' => 'Rexistru de revisión de la traducción',
 	'log-description-translationreview' => 'Rexistru de toles revisiones de les traducciones y grupos de mensaxes.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|aceutó}} la traducción $3',
+	'translate-workflow-state-' => '(desactiváu)',
+	'translate-workflowstatus' => 'Estáu: $1',
+	'translate-workflow-set-do' => 'Activar',
+	'translate-workflow-set-doing' => 'Activando...',
+	'translate-workflow-set-done' => '¡Activáu!',
+	'translate-stats-workflow' => 'Estáu',
 );
 
 /** Azerbaijani (Azərbaycanca)
@@ -6221,7 +6241,7 @@ $messages['et'] = array(
 	'translate-edit-committed' => 'Kehtiv tõlge tarkvaras',
 	'translate-edit-warnings' => 'Hoiatused puuduliku tõlke kohta',
 	'translate-edit-tmsugs' => 'Pakkumused tõlgete andmebaasist',
-	'translate-use-suggestion' => 'Lisa pakutud tõlge tõlkimiskasti. Sellega asendatakse kasti kogu praegune sisu.',
+	'translate-use-suggestion' => 'Asenda praegune tõlge selle pakkumusega.',
 	'translate-edit-tab-list' => 'Sõnumiloend',
 	'translate-magic-pagename' => 'Laiendatud MediaWiki tõlkimine',
 	'translate-magic-module' => 'Moodul:',
@@ -7921,9 +7941,6 @@ A lista de linguas por defecto depende da súa.',
 	'translate-percentage-fuzzy' => 'Anticuadas',
 	'translate-nothing-to-do' => 'Semella que todas as traducións posibles foron feitas.
 Animámolo a que revise as mensaxes existentes mediante a páxina especial [[Special:Translate|{{int:translate}}]].',
-	'translate-languagestats-groups' => ' # Engada os identificadores de grupos de mensaxes, un por liña, para restrinxir os grupos de mensaxes que
- # aparecen en Special:LanguageStats. Os identificadores de grupos de mensaxes que non existan
- # serán ignorados.',
 	'translate-languagestats-overall' => 'Todos os grupos de mensaxes xuntos',
 	'translate-ls-submit' => 'Mostrar as estatísticas',
 	'translate-ls-column-group' => 'Grupo de mensaxes',
@@ -8039,6 +8056,7 @@ Detalles: $1',
 	'translate-messagereview-apierror-unknownmessage' => 'Non se atopou a mensaxe',
 	'translate-messagereview-apierror-fuzzymessage' => 'A tradución está marcada con FUZZY',
 	'translate-messagereview-apierror-owntranslation' => 'Non se poden aceptar as traducións feitas por un mesmo.',
+	'translate-messagereview-apierror-badtoken' => 'Pase incorrecto',
 	'translate-messagereview-reviews' => 'Aceptada por {{PLURAL:$1|un usuario|$1 usuarios}}',
 	'translate-messagereview-reviewswithyou' => 'Aceptada por {{PLURAL:$1|un usuario|$1 usuarios}}, incluído vostede',
 	'translate-messagereview-reviewsyou' => 'Aceptada por vostede',
@@ -8056,6 +8074,7 @@ Detalles: $1',
 	'translate-workflow-set-do' => 'Activado',
 	'translate-workflow-set-doing' => 'Activando...',
 	'translate-workflow-set-done' => 'Activado!',
+	'translate-stats-workflow' => 'Estado',
 );
 
 /** Gothic (Gothic)
@@ -8671,7 +8690,7 @@ $messages['he'] = array(
 	'translate-edit-warnings' => 'אזהרות על תרגומים חלקיים',
 	'translate-edit-tmsugs' => 'הצעות מזיכרון התרגום',
 	'translate-edit-tmmatch' => 'רמת התאמה: $1%',
-	'translate-use-suggestion' => 'להכניס את ההצעה הזאת בשדה התרגום. זה יחליף את כל התוכן הנוכחי.',
+	'translate-use-suggestion' => 'החלפת התרגום הנוכחי בהצעה הזאת.',
 	'translate-edit-tab-list' => 'רשימת הודעות',
 	'translate-magic-pagename' => 'תרגום מורחב של מדיה־ויקי',
 	'translate-magic-help' => 'באפשרותכם לתרגם שמות דפים מיוחדים, מילות קסם ושמות מרחבי שם.
@@ -8911,6 +8930,7 @@ $1',
 	'translate-messagereview-apierror-unknownmessage' => 'ההודעה לא נמצאה',
 	'translate-messagereview-apierror-fuzzymessage' => 'ההודעה מסומנת כמטושטשת',
 	'translate-messagereview-apierror-owntranslation' => 'לא ניתן לסקור תרגום של עצמך',
+	'translate-messagereview-apierror-badtoken' => 'אסימון בלתי תקין',
 	'translate-messagereview-reviews' => 'אושרה על־ידי {{PLURAL:$1|משתמש אחד|$1 משתמשים}}',
 	'translate-messagereview-reviewswithyou' => 'אושרה על־ידי {{PLURAL:$1|משתמש אחד|$1 משתמשים}}, כולל אותך',
 	'translate-messagereview-reviewsyou' => 'אושרה על־ידיך',
@@ -8923,6 +8943,12 @@ $1',
 	'log-name-translationreview' => 'יומן סקירת תרגומים',
 	'log-description-translationreview' => 'יומן של כל הסקירות של תרגומים ושל קבוצות תרגומים.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|אישר|אישרה}} את התרגום $3',
+	'translate-workflow-state-' => '(לא מוגדר)',
+	'translate-workflowstatus' => 'מצב: $1',
+	'translate-workflow-set-do' => 'הגדרה',
+	'translate-workflow-set-doing' => 'מתבצעת הגדרה...',
+	'translate-workflow-set-done' => 'הוגדר!',
+	'translate-stats-workflow' => 'מצב',
 );
 
 /** Hindi (हिन्दी)
@@ -12349,6 +12375,9 @@ Donn op en Jropp klecke, öm en Leßß met allem ze sinn ze krijje, wat doh dren
 	'translate-next' => 'Näx Sigk',
 	'translate-prev' => 'Förrije Sigk',
 	'translate-page-description-legend' => 'Enfommazjohne övver di {{int:translate-page-group}}',
+	'translate-page-description-hasoptional' => "En heh dä Jropp sin 'nit esu nüüdeje' täxte un Nohreeschte.
+Di sullte bloß övversaz wääde, wann Ding Shprooch jät besönders bruch, esu jät wi käin Zwescheräum udder anders jeschrevve Naame. $1",
+	'translate-page-description-hasoptional-open' => "Donn de 'nit esu nüüdeje' Täxte udder Nohreeschte aanzeije.",
 	'translate-page-edit' => 'Änndere',
 	'translate-ext-url' => '<hr />Websaijt: $1',
 	'translate-optional' => '(nit esu nüüdesch)',
@@ -12484,9 +12513,6 @@ Wat De jezeich kreß, wann De nix enndrähß, deiht vun dä Shprooch afhange, en
 	'translate-nothing-to-do' => 'Et süht donoh uß, wi wenn all müjjeliche Övversetzunge ald jemaat wöre.
 Et künnt en joode Idee sin, dem Süsteem sing Nohreschte un Texte övver
 de Söndersigg [[Special:Translate|{{int:translate}}]] norrens ze prööfe.',
-	'translate-languagestats-groups' => ' # Jif dä Nohreschtejroppe ier Nommere hee en, öm de Nohreschtejroppe en dä
- # Aanzeije op Special:LanguageStats enzeschrängke. Nohreschtejroppe, woh et
- # de Nommere nit jit, donn nix.',
 	'translate-languagestats-overall' => 'Alle Jroppe vun Täxte un Nohreeschte zosamme',
 	'translate-ls-submit' => 'Shtatistike Aanzeije',
 	'translate-ls-column-group' => 'Nohrechtejropp',
@@ -12604,6 +12630,8 @@ $1',
 	'group-translate-proofr' => 'Övversäzongsprööver',
 	'group-translate-proofr-member' => '{{GENDER:$1|Ovversäzongsprööver|Ovversäzongsprööverėn|Ovversäzongsprööver|Ovversäzongsprööverėn|Ovversäzongsprööver}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Ovversäzongsprööver',
+	'log-name-translationreview' => 'Logbooch vum Övversäzonge Pröhve',
+	'log-description-translationreview' => 'Dat Logbooh hät all de Prööfunge vun Övversäzunge un Jroppe vun Nohreeaschte un Täxte.',
 );
 
 /** Kurdish (Latin script) (‪Kurdî (latînî)‬)
@@ -12758,7 +12786,7 @@ Optional Message sollen nëmmen iwwersat gi wann Är Sprooch speziell Ufuerderun
 	'translate-edit-warnings' => 'Warnunge virun onkompletten Iwwersetzungen',
 	'translate-edit-tmsugs' => 'Automatesch Virschléi aus aneren Iwwersetzungen',
 	'translate-edit-tmmatch' => '$1% Iwwereestëmmung',
-	'translate-use-suggestion' => "Setzt dëse Virschlag an d'Iwwersetzungsfeld. Doduerch gëtt de kompletten Inhalt am Iwwersetzungsfeld iwwerschriwwen.",
+	'translate-use-suggestion' => 'Déi aktuell Iwwersetzung duerch dëse Virschlag ersetzen.',
 	'translate-edit-tab-list' => 'Lëscht vun de Messagen',
 	'translate-magic-pagename' => 'Erweidert MediaWiki Iwwersetzung',
 	'translate-magic-help' => "Dir kënnt d'Aliase vu Spezialsäiten, magesch Wierder an Nummraum Nimm iwwersetzen.
@@ -13006,6 +13034,8 @@ Detailler: $1',
 	'grouppage-translate-proofr' => '{{ns:project}}: Leit déi Iwwersetzungen nokucken',
 	'log-name-translationreview' => 'Logbuch vun den nogekuckten Iwwersetzungen',
 	'logentry-translationreview-message' => "$1 {{GENDER:$2|huet}} d'Iwwersetzung $3 nogekuckt",
+	'translate-workflow-set-do' => 'Astellen',
+	'translate-workflow-set-done' => 'Agestallt!',
 );
 
 /** Ganda (Luganda)
@@ -13532,9 +13562,6 @@ $messages['mk'] = array(
 	'translate-percentage-fuzzy' => 'Застарени',
 	'translate-nothing-to-do' => 'Извршени се сите можни преводи.
 Ви препорачуваме да ги прегледате пораките преку [[Special:Translate|{{int:translate}}]].',
-	'translate-languagestats-groups' => '# Додајте назнаки (ID) на групите пораки (по една во секој ред) за да ги ограничите групите пораки што
- # ќе се прикажат на Special:LanguageStats. Непостоечките назнаки ќе
- # бидат занемарени.',
 	'translate-languagestats-overall' => 'Сите групи на пораки заедно',
 	'translate-ls-submit' => 'Дај статистики',
 	'translate-ls-column-group' => 'Група на пораки',
@@ -13652,6 +13679,7 @@ $1',
 	'translate-messagereview-apierror-unknownmessage' => 'Пораката не е пронајдена',
 	'translate-messagereview-apierror-fuzzymessage' => 'Преводот е обележан како застарен',
 	'translate-messagereview-apierror-owntranslation' => 'Не можете да си прифаќате Ваши сопствени преводи.',
+	'translate-messagereview-apierror-badtoken' => 'Неправилен жетон',
 	'translate-messagereview-reviews' => 'Прифатено од {{PLURAL:$1|еден корисник|$1 корисници}}',
 	'translate-messagereview-reviewswithyou' => 'Прифатено од {{PLURAL:$1|еден корисник|$1 корисници}} заклучно со Вас',
 	'translate-messagereview-reviewsyou' => 'Прифатено од Вас',
@@ -13669,6 +13697,7 @@ $1',
 	'translate-workflow-set-do' => 'Задај',
 	'translate-workflow-set-doing' => 'Задавам...',
 	'translate-workflow-set-done' => 'Зададено!',
+	'translate-stats-workflow' => 'Статус',
 );
 
 /** Malayalam (മലയാളം)
@@ -14091,6 +14120,8 @@ seperti tidak menggunakan jarak atau mengalih huruf kata nama khas. $1',
 	'translate-edit-tmsugs' => 'Cadangan dari sistem ingatan penterjemahan',
 	'translate-edit-tmmatch' => '$1% berpadan',
 	'translate-use-suggestion' => 'Ganti terjemahan semasa dengan cadangan ini.',
+	'translate-edit-tab-prev' => '<<<',
+	'translate-edit-tab-next' => '>>>',
 	'translate-edit-tab-list' => 'Senarai mesej',
 	'translate-magic-pagename' => 'Terjemahan tambahan MediaWiki',
 	'translate-magic-help' => 'Anda boleh menterjemahkan alias laman khas, kata sakti dan nama ruang nama.
@@ -14233,6 +14264,8 @@ bersama dengan nama-nama para penterjemah yang mengusahakan bahasa itu.
 Semakin besar nama penterjemah, semakin banyak suntingan yang disumbangkannya.
 Warna garis bawah menunjukkan betapa barunya seseorang penterjemah giat di sini.',
 	'supportedlanguages-colorlegend' => 'Petunjuk untuk warna: Terjemahan terakhir pada $1 hari yang lalu.',
+	'supportedlanguages-portallink' => '[$1] $2 - $3',
+	'supportedlanguages-portallink-nocldr' => '[$1] $2',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Penterjemah|Penterjemah}}: $1',
 	'supportedlanguages-recenttranslations' => 'terjemahan terbaru',
 	'supportedlanguages-count' => 'Sejumlah $1 bahasa.',
@@ -14331,6 +14364,7 @@ Butiran: $1',
 	'translate-messagereview-apierror-unknownmessage' => 'Mesej tidak dijumpai',
 	'translate-messagereview-apierror-fuzzymessage' => 'Terjemahan ditandai sebagai kabur',
 	'translate-messagereview-apierror-owntranslation' => 'Anda tidak boleh menerima terjemahan sendiri.',
+	'translate-messagereview-apierror-badtoken' => 'Token tidak sah',
 	'translate-messagereview-reviews' => 'Diterima oleh {{PLURAL:$1|seorang|$1 orang}} pengguna',
 	'translate-messagereview-reviewswithyou' => 'Diterima oleh {{PLURAL:$1|seorang|$1 orang}} pengguna, termasuk anda',
 	'translate-messagereview-reviewsyou' => 'Diterima oleh anda',
@@ -14348,6 +14382,7 @@ Butiran: $1',
 	'translate-workflow-set-do' => 'Tetapkan',
 	'translate-workflow-set-doing' => 'Tetapan sedang dibuat...',
 	'translate-workflow-set-done' => 'Beres!',
+	'translate-stats-workflow' => 'Status',
 );
 
 /** Maltese (Malti)
@@ -15140,6 +15175,7 @@ Details: $1',
 	'translate-messagereview-apierror-unknownmessage' => 'Het bericht is niet aangetroffen.',
 	'translate-messagereview-apierror-fuzzymessage' => 'De vertaling is gemarkeerd als verouderd.',
 	'translate-messagereview-apierror-owntranslation' => 'U kunt uw eigen vertalingen niet accepteren.',
+	'translate-messagereview-apierror-badtoken' => 'Ongeldig token',
 	'translate-messagereview-reviews' => 'Geaccepteerd door {{PLURAL:$1|één gebruiker|$1 gebruikers}}',
 	'translate-messagereview-reviewswithyou' => 'Geaccepteerd door {{PLURAL:$1|één gebruiker|$1 gebruikers}} inclusief uzelf.',
 	'translate-messagereview-reviewsyou' => 'Geaccepteerd door u',
@@ -15157,6 +15193,7 @@ Details: $1',
 	'translate-workflow-set-do' => 'Instellen',
 	'translate-workflow-set-doing' => 'Bezig met instellen...',
 	'translate-workflow-set-done' => 'Ingesteld',
+	'translate-stats-workflow' => 'Status',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -19045,6 +19082,7 @@ Podrobnosti: $1',
 	'translate-messagereview-apierror-unknownmessage' => 'Sporočila ni bilo mogoče najti',
 	'translate-messagereview-apierror-fuzzymessage' => 'Prevod je označen kot zastarel',
 	'translate-messagereview-apierror-owntranslation' => 'Ne morete sprejemati svojih prevodov.',
+	'translate-messagereview-apierror-badtoken' => 'Neveljaven žeton',
 	'translate-messagereview-reviews' => '{{PLURAL:$1|Sprejel $1 uporabnik|Sprejela $1 uporabnika|Sprejeli $1 uporabniki|Sprejelo $1 uporabnikov}}',
 	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|Sprejel $1 uporabnik|Sprejela $1 uporabnika|Sprejeli $1 uporabniki|Sprejelo $1 uporabnikov}}, vključno z vami',
 	'translate-messagereview-reviewsyou' => 'Sprejeli ste vi',
@@ -19062,6 +19100,7 @@ Podrobnosti: $1',
 	'translate-workflow-set-do' => 'Nastavi',
 	'translate-workflow-set-doing' => 'Nastavljanje ...',
 	'translate-workflow-set-done' => 'Nastavljeno!',
+	'translate-stats-workflow' => 'Stanje',
 );
 
 /** Somali (Soomaaliga)
