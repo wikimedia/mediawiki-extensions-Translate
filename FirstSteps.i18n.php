@@ -1239,6 +1239,12 @@ Aquí pode elixir, se quere, as linguas que queira ver.',
 	'translate-fs-userpage-submit' => 'Crear a miña páxina de usuario',
 	'translate-fs-userpage-done' => 'Ben feito! Agora xa ten unha páxina de usuario.',
 	'translate-fs-permissions-planguage' => 'Lingua principal:',
+	'translate-fs-permissions-help' => 'Agora ten que facer unha petición para pasar a formar parte do grupo de tradutores.
+Seleccione a lingua principal na que vai traducir.
+
+Pode mencionar outras linguas ou observacións na caixa de texto inferior.',
+	'translate-fs-permissions-pending' => 'A súa solicitude enviouse a "[[$1]]" e algún dos membros do persoal do sitio atenderá a petición axiña.
+Se confirma o seu enderezo de correo electrónico recibirá unha notificación en canto ocorra.',
 	'translate-fs-permissions-submit' => 'Enviar a solicitude',
 	'translate-fs-target-text' => 'Parabéns!
 Agora xa pode comezar a traducir.
@@ -2131,67 +2137,18 @@ $messages['ksh'] = array(
 	'translate-fs-intro' => 'Wellkumme bei {{GRAMMAR:Genitiv ier|{{SITENAME}}}} Hölp bei de eetsde Schredde för neu Metmaacher.
 Heh kreß De Schrett för Schrett jesaat, wi De ene Övversäzer weeß.
 Aam Engk kanns De de Täxte un Nohreeschte uß alle Projäkte övversäze, di {{GRAMMAR:em Dativ|{{SITENAME}}}} ongerstöz wääde.',
-	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
-
-Dä eetsde Schredd es et Aanmelde.
-
-För Ding Övversäzonge weed Dinge Name als Metmaacher hehem
-Wiki als Urhävver un Verantwootlescher jenannt.
-Dat Beld heh bei zeisch, wi mer dat Fommulaa ußfölle moß.
-
-Wann De alld aanjemäldt bes, don $1enlogge$2 un
-wann de ennjelogg bes, küß De wider op heh di Sigg.
-
-Söns $3don Desch anmällde$4.',
-	'translate-fs-settings-text' => 'Jäz sullts De op di Sigg met Dinge Enstellunge jon un doh
-winneschsdens ens de Schprooch för de Bedeenbofferfläsh
-op di Shprooch säze, woh De noh övversäze wells.
-
-Di Shprooch, di doh enjeshtalld es, weed als Ding Standatt-Shprooch
-för Ding Övversäzonge jenumme.
-
-Wann De alld dobei bes, kanns De doh och jlish enstelle, dat De
-Övversäzonge en andere Shprooche aanjezeish kriß, di De kanns.
-Di Enstellung fengks De onger „{{int:prefs-editing}}“ onge.
-Wann De löstich bes, kanns De nattörlish och noch ander
-Enstelluinge ußprobeere.
-
-Jangk jäz op di [[Special:Preferences|Sigg met Dinge Enstellunge]]
-un wann De doh fäädesch bes, küß De wider retuur noh heh dä Sigg.',
-	'translate-fs-settings-skip' => 'Ben fäädesch.
-Wigger maache!',
-	'translate-fs-userpage-text' => 'Jäz moß De en Metmaachersigg för Desch enreeschte.
-
-Donn jät övver Desch schrieve, wä De bes, wat De määß un esu.
-Dat sull dä {{GRAMMAR:Genitiv ier|{{SITENAME}}}} Gemeinschaff hellfe,joot zosammezewerke.
-Dat sin Minsche vun övverall op de Wält, di aan de öngerscheidleschßte Shprooche un Projäkte aam brasselle sin.
-
-En dämm för-ußjeföllte Kaste bovve en de allereezte Reih sühß De <nowiki>{{#babel:en-2}}</nowiki>.
-Bes esu joot un donn dä met Dinge Shproochkäntneße fölle.
-De Nommere noh dä Afköözung för en Shprooch saare, wi joot De se kanns.
-Doh bedügge:
-* 1 — e beßje,
-* 2 — jrundlääje Weße,
-* 3 — joode Kenntneß,
-* 4 — wi ene Einheimesche,
-* 5 — Do schwaads di Shprooch berooflesch, för e Beishpell, Do bes ene Dolmätscher.
-
-För Ding Mottershprooch schrief jaa kein Nommer hen, un donn bloß di Afköözung dohenn.
-För e Beishpell, wann De Tamiilesch vun klein aan kalls, joot Änglesch un e beßje Kisuaheeli kanns, dann deihß De schriive: <code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
-
-Künnt sin, dat De di Affköözung för en Shprooche nit weiß, dann es dat en joode Jelääjeheit, se nohzeloore.
-Dat kanns De en dä Leß heh dronger maache.',
+	'translate-fs-selectlanguage' => 'Söhg en Shprooch uß',
+	'translate-fs-settings-planguage' => 'Houpshprooch:',
+	'translate-fs-settings-planguage-desc' => 'De Houpshprooch is och di Schprooch, die heh dat Wiki met Der kallt, un des es och Ding shtandattmääßeje Shprooch för dren ze övversäze.',
+	'translate-fs-settings-slanguage' => 'Zohsäzlejje Shprooch Nommer $1:',
+	'translate-fs-settings-slanguage-desc' => 'Et es müjjelesch, sesch Övversäzonge en ander Shprooche beim sellver övversäze aanzeije ze lohße. Söhg uß, wat för esu en Shprooche De ze sinn krijje wells, wan De övverhoup wälsche han wells.',
+	'translate-fs-settings-submit' => 'Enstellunge faßhallde',
+	'translate-fs-userpage-level-N' => 'Ming Mottershprooch es',
+	'translate-fs-userpage-level-5' => 'Esch ben ene beroofsmääßeje Övversäzer noh',
+	'translate-fs-userpage-level-4' => 'Esch kennen mesch esu jood uß, wi wann et ming Motterschprooch wöhr',
+	'translate-fs-userpage-level-3' => 'Esch kann joot domet ömjonn.',
 	'translate-fs-userpage-submit' => 'En Metmaachersigg aanlääje',
 	'translate-fs-userpage-done' => 'Joot jemaat! Jäz häs De en Metmaachersigg.',
-	'translate-fs-permissions-text' => 'Jäz möß De dröm froore, dat De en de Metmaacherjropp „{{int:group-translator}}“ opjenumme wees.
-
-Bes mer doh draan jet verändert han, jangk op di Sigg [[Project:Translator]] un donn, wat doh shteiht.
-Donoh jangk retuur op heh di Sigg.
-
-Wann de di Aanfrooch loßjescheck häs, weed eine vun dä Freiwellije, di dat maache künne, dobei jonn un alles prööfe, un dämm nohkumme.
-Bes dohenn bes esu joot un han e beßje Jedold.
-
-<del>Föll dat Fommulaa heh dronger reschtesch uß, un donn dann op dä Knopp klecke.</del>',
 	'translate-fs-target-text' => 'Onse Jlöckwonsch!
 Jez kanns De et Övversäze aanfange
 

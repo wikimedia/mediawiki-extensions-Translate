@@ -436,6 +436,7 @@ $messages['qqq'] = array(
 	'translate-desc' => '{{desc}}',
 	'translate-task-untranslated' => "Option in 'I want to' drop-down box on Translate page",
 	'translate-task-untranslatedoptional' => 'Used in drop-down box in Special:Translate. See http://translatewiki.net/w/i.php?title=Special%3ATranslate&task=untranslatedoptional&group=core for example.',
+	'translate-task-acceptqueue' => 'This is one of the tasks in the selection in [[Special:Translate]]',
 	'translate-page-no-such-language' => "Shown when someone requests a language that doesn't exists. [{{FULLURL:Special:Translate|language=}} Example].",
 	'translate-page-no-such-task' => "Shown when someone requests a task that doesn't exists. [{{FULLURL:Special:Translate|task=invalidtask&group=core}} Example].",
 	'translate-page-no-such-group' => "Shown when someone requests a group that doesn't exists. [{{FULLURL:Special:Translate|group=invalidgroup}} Example].",
@@ -1164,6 +1165,7 @@ $messages['ang'] = array(
  * @author OsamaK
  * @author Ouda
  * @author ترجمان05
+ * @author روخو
  * @author زكريا
  */
 $messages['ar'] = array(
@@ -1177,6 +1179,7 @@ $messages['ar'] = array(
 	'translate-task-untranslatedoptional' => 'عرض الرسائل الاختيارية غير المترجمة من',
 	'translate-task-problematic' => 'أرى الرسائل التي بها مشاكل',
 	'translate-task-review' => 'أراجع التغييرات ل',
+	'translate-task-acceptqueue' => 'تقبل الترجمات في',
 	'translate-task-reviewall' => 'أراجع كل الرسائل المترجمة في',
 	'translate-task-export' => 'أصدر الترجمات',
 	'translate-task-export-to-file' => 'أصدر الترجمة لملف',
@@ -1206,6 +1209,7 @@ $messages['ar'] = array(
 	'translate-ext-url' => '<hr />موقع الوب: $1',
 	'translate-optional' => '(اختياري)',
 	'translate-ignored' => '(متجاهل)',
+	'translate-edit-title' => 'عدل "$1"',
 	'translate-edit-definition' => 'تعريف الرسالة',
 	'translate-edit-translation' => 'الترجمة',
 	'translate-edit-contribute' => 'ساهم',
@@ -1275,6 +1279,7 @@ $messages['ar'] = array(
 	'right-translate' => 'التعديل باستخدام واجهة الترجمة',
 	'right-translate-manage' => 'إدارة مجموعات الترجمة',
 	'right-translate-import' => 'استيراد الترجمات من الخارج',
+	'right-translate-messagereview' => 'مراجعة الترجمات',
 	'translate-rc-translation-filter' => 'رشّح الترجمات:',
 	'translate-rc-translation-filter-no' => 'لا تفعل شيئا',
 	'translate-rc-translation-filter-only' => 'اعرض الترجمات فقط',
@@ -1283,6 +1288,7 @@ $messages['ar'] = array(
 	'translationstats' => 'إحصاءات الترجمة',
 	'translate-stats-edits' => 'تعديلات',
 	'translate-stats-users' => 'المترجمون',
+	'translate-stats-registrations' => 'التسجيلات',
 	'translate-statsf-intro' => 'يمكنك توليد إحصاءات بسيطة بهذه الاستمارة. كل القيم لها حدود عليا وسفلى.',
 	'translate-statsf-options' => 'خيارات الرسم',
 	'translate-statsf-width' => 'العرض بالبكسل:',
@@ -1290,6 +1296,8 @@ $messages['ar'] = array(
 	'translate-statsf-days' => 'فترة زمنية باليوم:',
 	'translate-statsf-start' => 'فترة زمنية باليوم:',
 	'translate-statsf-scale' => 'التدريج:',
+	'translate-statsf-scale-months' => 'أشهر',
+	'translate-statsf-scale-weeks' => 'أسابيع',
 	'translate-statsf-scale-days' => 'أيام',
 	'translate-statsf-scale-hours' => 'ساعات',
 	'translate-statsf-count' => 'قياس:',
@@ -1330,9 +1338,11 @@ $messages['ar'] = array(
 	'translate-percentage-fuzzy' => 'غير المحدث',
 	'translate-nothing-to-do' => 'كل الترجمات المحتملة يبدو أنه قد تم عملها.
 من الأفضل أن تراجع الرسائل من خلال [[Special:Translate|{{int:translate}}]].',
-	'translate-languagestats-groups' => ' # أضف أرقام مجموعات الرسائل, واحدا لكل سطر لتحديد مجموعات الرسائل التي
- # تعرض في Special:LanguageStats.أرقام مجموعات الرسائل غير الموجودة سوف
- # يتم تجاهلها.',
+	'translate-mgs-fieldset' => 'عرض التفضيلات',
+	'translate-mgs-nocomplete' => 'لا تعرض اللغات التي أنجزت ترجمتها',
+	'translate-mgs-noempty' => 'لا تعرض اللغات التي لم تنجز ترجمتها',
+	'translate-mgs-column-language' => 'اللغة',
+	'translate-mgs-totals' => 'كل اللغات معا',
 	'supportedlanguages' => 'اللغات المدعومة',
 	'supportedlanguages-recenttranslations' => 'الترجمات الأخيرة',
 	'translate-save' => 'احفظ ($1)',
@@ -1404,6 +1414,7 @@ $1',
 	'translate-js-save-failed' => 'فشل الحفظ. من فضلك بلّغ عن هذا الخطأ.',
 	'translate-js-history' => 'تاريخ الترجمة',
 	'translate-js-support' => 'اطرح سؤالا',
+	'translate-js-support-title' => 'اطلب المساعدة إذا لم تكن لديك معلومات كافية لترجمة هذه الرسالة بشكل صحيح.',
 	'translate-gs-pos' => 'الترتيب',
 	'translate-gs-code' => 'الرمز',
 	'translate-gs-continent' => 'القارة',
@@ -1413,6 +1424,14 @@ $1',
 	'translate-gs-count' => 'العدد',
 	'translate-gs-total' => 'المجموع',
 	'translate-gs-avgscore' => 'معدل الدرجات',
+	'translate-documentation-language' => 'رسالة التوثيق',
+	'translate-searchprofile' => 'ترجمات',
+	'translate-messagereview-submit' => 'قبول',
+	'translate-messagereview-progress' => 'الموافقة...',
+	'translate-messagereview-done' => 'مقبول',
+	'group-translate-proofr' => 'مراجعين الترجمة',
+	'translate-workflow-set-do' => 'وضع',
+	'translate-workflow-set-doing' => 'إعداد...',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -4367,6 +4386,7 @@ $messages['da'] = array(
 	'translate-showsub' => 'Vis {{PLURAL:$1|undergruppen|de $1 undergrupper}}.',
 	'translate-grouplisting' => 'Dette er listen over alle oversætbare grupper. 
 Klik på meddelelsen gruppens navn for at se en liste over uoversatte beskeder.',
+	'translate-grouplisting-empty' => 'Ingen beskedgrupper er blevet sat op til oversættelse.',
 	'translate-task-view' => 'Se alle beskeder fra',
 	'translate-task-untranslated' => 'Se alle uoversatte beskeder fra',
 	'translate-task-optional' => 'Se valgfrie beskeder fra',
@@ -4526,7 +4546,7 @@ Alle værdier har øvre og nedre grænser.',
 	'translate-translations-history-short' => 'h',
 	'languagestats' => 'Sprogstatistik',
 	'languagestats-summary' => 'Denne side viser oversættelsesstatistik for alle beskedgrupper for et sprog.',
-	'languagestats-stats-for' => 'Oversættelse statistik for $1 ($2).',
+	'languagestats-stats-for' => 'Oversættelsesstatistik for $1 ($2).',
 	'languagestats-recenttranslations' => 'seneste oversættelser',
 	'translate-langstats-incomplete' => 'Nogle af statistikkerne på denne side er ufuldstændige. Genindlæs siden for at få yderligere statistik.',
 	'translate-langstats-expand' => 'fold ud',
@@ -4566,7 +4586,7 @@ Understregningsfarven angiver, hvor nyligt en oversætter har været aktiv.',
 	'supportedlanguages-colorlegend' => 'Forklaring til farven: seneste oversættelse var for $1 dage siden.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Oversætter|Oversættere}}: $1',
 	'supportedlanguages-recenttranslations' => 'seneste oversættelser',
-	'supportedlanguages-count' => '$1 {{plural:$1|sprog|sprog}} i alt.',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|sprog|sprog}} i alt.',
 	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|redigering|redigeringer}} - seneste redigering var for $3 {{PLURAL:$3|dag|dage}} siden',
 	'translate-save' => 'Gem ($1)',
 	'translate-jssti-add' => 'Tilføj til listen',
@@ -4707,6 +4727,7 @@ $messages['de'] = array(
 	'translate-showsub' => 'Die {{PLURAL:$1|Untergruppe|$1 Untergruppen}} anzeigen',
 	'translate-grouplisting' => 'Dies ist die Liste aller übersetzbaren Systemnachrichtengruppen.
 Klicke auf die jeweilige Systemnachrichtengruppe, um eine Liste der nicht übersetzten Systemnachrichten anzuzeigen.',
+	'translate-grouplisting-empty' => 'Es wurden keine Nachrichtengruppen für das Übersetzen konfiguriert.',
 	'translate-task-view' => 'Zeige alle Systemnachrichten',
 	'translate-task-untranslated' => 'Zeige nicht übersetzte oder veraltete Systemnachrichten',
 	'translate-task-optional' => 'Zeige optionale Systemnachrichten',
@@ -4875,9 +4896,6 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-percentage-fuzzy' => 'Veraltet',
 	'translate-nothing-to-do' => 'Alle möglichen Übersetzungen sind offenbar schon erledigt.
 Es wird empfohlen, Systemnachrichten mit der Spezialseite [[Special:Translate|{{int:translate}}]] zu überprüfen.',
-	'translate-languagestats-groups' => ' # Ergänze die ID einer Systemnachrichtengruppe (eine per Zeile) um die Gruppen von
- # Special:LanguageStats auszuschließen. Nicht existerende IDs
- # werden ignoriert.',
 	'translate-languagestats-overall' => 'Alle Systemnachrichtengruppen zusammen',
 	'translate-ls-submit' => 'Statistiken anzeigen',
 	'translate-ls-column-group' => 'Systemnachrichtengruppe',
@@ -7765,6 +7783,7 @@ $messages['gl'] = array(
 	'translate-showsub' => 'Mostrar {{PLURAL:$1|o subgrupo|os $1 subgrupos}}.',
 	'translate-grouplisting' => 'Esta é a lista de todos os grupos que se poden traducir.
 Prema no nome do grupo de mensaxes para ollar a lista coas mensaxes sen traducir.',
+	'translate-grouplisting-empty' => 'Non hai grupo ningún configurado para a súa tradución.',
 	'translate-task-view' => 'Ver todas as mensaxes de',
 	'translate-task-untranslated' => 'Ver todas as mensaxes sen traducir de',
 	'translate-task-optional' => 'Ver as mensaxes opcionais de',
@@ -9469,7 +9488,12 @@ Podrobnosće: $1',
 	'translate-messagereview-no-fuzzy' => 'Zestarjene přełožki njehodźa so akceptować.',
 	'translate-messagereview-no-own' => 'Njemóžeš swójski přełožk akceptować.',
 	'translate-messagereview-doit' => 'Tutón přełožk jako korektny akceptować.',
+	'group-translate-proofr' => 'Kontroler přełožkow',
+	'group-translate-proofr-member' => '{{GENDER:$1|kontroler přełožkow|kontrolerka přełožkow}}',
+	'grouppage-translate-proofr' => '{{ns:project}}:Kontrolerojo přełožkow',
 	'logentry-translationreview-message' => '$1 je přełožk $3 {{GENDER:$2|akceptował|akceptowała}}',
+	'translate-workflowstatus' => 'Status: $1',
+	'translate-stats-workflow' => 'Status',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -10031,6 +10055,7 @@ $messages['ia'] = array(
 	'translate-showsub' => 'Monstrar le {{PLURAL:$1|subgruppo|$1 subgruppos}}.',
 	'translate-grouplisting' => 'Isto es le lista de tote le gruppos traducibile.
 Clicca sur le nomine de un gruppo de messages pro vider un lista de messages non traducite.',
+	'translate-grouplisting-empty' => 'Nulle gruppo de messages ha essite configurate pro traduction.',
 	'translate-task-view' => 'Vider tote le messages del',
 	'translate-task-untranslated' => 'Vider tote le messages non traducite del',
 	'translate-task-optional' => 'Vider le messages optional del',
@@ -10084,7 +10109,7 @@ Si tu sape ubi o como iste message es usate, tu pote adjutar le altere traductor
 	'translate-edit-warnings' => 'Advertimentos super traductiones incomplete',
 	'translate-edit-tmsugs' => 'Suggestiones ab le memoria de traductiones',
 	'translate-edit-tmmatch' => '$1% de correspondentia',
-	'translate-use-suggestion' => 'Inserer iste suggestion in le area de traduction. Isto reimplacia tote le contento actual.',
+	'translate-use-suggestion' => 'Reimplaciar le traduction actual per iste suggestion.',
 	'translate-edit-tab-list' => 'Lista de messages',
 	'translate-magic-pagename' => 'Traduction extendite de MediaWiki',
 	'translate-magic-help' => 'Tu pote traducer le aliases de paginas special, le parolas magic e le nomines de spatios de nomines.
@@ -10207,9 +10232,6 @@ Le lista predefinite de linguas depende de tu lingua.',
 	'translate-percentage-fuzzy' => 'Obsolete',
 	'translate-nothing-to-do' => 'Il pare que tote le traductiones possibile ha essite facite.
 Es recommendate revider le messages per medio del pagina [[Special:Translate|{{int:translate}}]].',
-	'translate-languagestats-groups' => ' # Adde IDs de gruppos de messages, un per linea, pro limitar le
- # gruppos monstrate in Special:LanguageStats. Le gruppos non existente
- # essera ignorate.',
 	'translate-languagestats-overall' => 'Tote le gruppos de messages insimul',
 	'translate-ls-submit' => 'Monstrar statisticas',
 	'translate-ls-column-group' => 'Gruppo de messages',
@@ -10326,6 +10348,7 @@ Detalios: $1',
 	'translate-messagereview-apierror-unknownmessage' => 'Message non trovate',
 	'translate-messagereview-apierror-fuzzymessage' => 'Le traduction es marcate como obsolete',
 	'translate-messagereview-apierror-owntranslation' => 'Tu non pote acceptar tu proprie traductiones.',
+	'translate-messagereview-apierror-badtoken' => 'Indicio invalide',
 	'translate-messagereview-reviews' => 'Acceptate per {{PLURAL:$1|un usator|$1 usatores}}',
 	'translate-messagereview-reviewswithyou' => 'Acceptate per {{PLURAL:$1|un usator|$1 usatores}} includente te',
 	'translate-messagereview-reviewsyou' => 'Acceptate per te',
@@ -10338,6 +10361,12 @@ Detalios: $1',
 	'log-name-translationreview' => 'Registro de revision de traductiones',
 	'log-description-translationreview' => 'Registro de tote le revisiones de traductiones e gruppos de messages.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|acceptava}} le traduction $3',
+	'translate-workflow-state-' => '(non definite)',
+	'translate-workflowstatus' => 'Stato: $1',
+	'translate-workflow-set-do' => 'Activar',
+	'translate-workflow-set-doing' => 'Activation...',
+	'translate-workflow-set-done' => 'Activate!',
+	'translate-stats-workflow' => 'Stato',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -10345,6 +10374,7 @@ Detalios: $1',
  * @author Farras
  * @author Irwangatot
  * @author IvanLanin
+ * @author Kenrick95
  * @author Meursault2004
  * @author Rex
  */
@@ -10361,6 +10391,7 @@ Klik nama kelompok pesan untuk melihat daftar pesan yang belum diterjemahkan.',
 	'translate-task-untranslatedoptional' => 'Tampilkan pesan opsional yang belum diterjemahkan dari',
 	'translate-task-problematic' => 'Tampilkan pesan-pesan bermasalah',
 	'translate-task-review' => 'Tinjau perubahan dari',
+	'translate-task-acceptqueue' => 'Menerima terjemahan di',
 	'translate-task-reviewall' => 'Tinjau semua perubahan pada',
 	'translate-task-export' => 'Ekspor terjemahan',
 	'translate-task-export-to-file' => 'Ekspor terjemahan ke berkas',
@@ -10619,6 +10650,13 @@ Detail: $1",
 	'translate-searchprofile-tooltip' => 'Cari dari semua terjemahan',
 	'translate-search-languagefilter' => 'Saring menurut bahasa:',
 	'translate-search-nofilter' => 'Tanpa penyaringan',
+	'translate-messagereview-submit' => 'Terima',
+	'translate-messagereview-progress' => 'Sedang menerima...',
+	'translate-messagereview-failure' => 'Sedang menerima... gagal: $1',
+	'translate-messagereview-done' => 'Diterima',
+	'translate-messagereview-apierror-invalidrevision' => 'Terjemahan tidak ditemukan',
+	'translate-messagereview-apierror-unknownmessage' => 'Pesan tidak ditemukan',
+	'translate-messagereview-apierror-owntranslation' => 'Anda tidak dapat menerima terjemahan sendiri',
 );
 
 /** Igbo (Igbo)
@@ -12342,6 +12380,7 @@ $messages['ksh'] = array(
 	'translate-showsub' => 'Zeisch de {{PLURAL:$1|Ongerjropp|$1 Ongerjroppe|kei Ongerjroppe}} aan!',
 	'translate-grouplisting' => 'Dat heh es en Leßß met all de övversäzbaa Jroppe un Nohreeschte vum Syßteem.
 Donn op en Jropp klecke, öm en Leßß met allem ze sinn ze krijje, wat doh dren nit övversaz es.',
+	'translate-grouplisting-empty' => 'Et sinn_er kein Jroppe vun Täxte un Nohreeschte för et Övversäze freijejovve.',
 	'translate-task-view' => 'Zeijsh de Täxte un Nohreschte',
 	'translate-task-untranslated' => 'Zeijsh de onnövversaz Täxte un Nohreschte',
 	'translate-task-optional' => "Zeijsh de 'nit esu nüüdijje' Täxte un Nohreschte",
@@ -12349,6 +12388,7 @@ Donn op en Jropp klecke, öm en Leßß met allem ze sinn ze krijje, wat doh dren
 	'translate-task-untranslatedoptional' => "Zeijsh de nit övversaz 'nit esu nüdeje' Täxte un Nohreeschte",
 	'translate-task-problematic' => 'Zeijsh de probleemattesche Täxte un Nohreeschte',
 	'translate-task-review' => 'Zeijsh de jeännderte Täxte un Nohreeschte zom Prööfe',
+	'translate-task-acceptqueue' => 'De Övversäzonge pröhve',
 	'translate-task-reviewall' => 'Zeijsh de övversaz Täxte un Nohreeschte zom Prööfe',
 	'translate-task-export' => 'Donn de Övversäzzonge äxpotteere',
 	'translate-task-export-to-file' => 'Donn de Övversäzzonge en_en Datteij äxpotteere',
@@ -12631,7 +12671,14 @@ $1',
 	'group-translate-proofr-member' => '{{GENDER:$1|Ovversäzongsprööver|Ovversäzongsprööverėn|Ovversäzongsprööver|Ovversäzongsprööverėn|Ovversäzongsprööver}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Ovversäzongsprööver',
 	'log-name-translationreview' => 'Logbooch vum Övversäzonge Pröhve',
-	'log-description-translationreview' => 'Dat Logbooh hät all de Prööfunge vun Övversäzunge un Jroppe vun Nohreeaschte un Täxte.',
+	'log-description-translationreview' => 'Dat Logbooh hät all de Prööfunge vun Övversäzunge un Jroppe vun Nohreeschte un Täxte.',
+	'logentry-translationreview-message' => '{{GENDER:$2|Dä|Dat|Dä Metmaacher|De|Dat}} $1 hät di Övversäzong vun „$3“ jepröhf.',
+	'translate-workflow-state-' => '(nit jesaz)',
+	'translate-workflowstatus' => 'Der Zohschtand es: $1',
+	'translate-workflow-set-do' => 'Lohß Jonn!',
+	'translate-workflow-set-doing' => 'Ben am Waade&nbsp;...',
+	'translate-workflow-set-done' => 'Jedonn!',
+	'translate-stats-workflow' => 'Zohstand',
 );
 
 /** Kurdish (Latin script) (‪Kurdî (latînî)‬)
@@ -13035,6 +13082,7 @@ Detailler: $1',
 	'log-name-translationreview' => 'Logbuch vun den nogekuckten Iwwersetzungen',
 	'logentry-translationreview-message' => "$1 {{GENDER:$2|huet}} d'Iwwersetzung $3 nogekuckt",
 	'translate-workflow-set-do' => 'Astellen',
+	'translate-workflow-set-doing' => 'Astellen...',
 	'translate-workflow-set-done' => 'Agestallt!',
 );
 
@@ -13386,6 +13434,7 @@ $messages['mk'] = array(
 	'translate-showsub' => 'Прикажи {{PLURAL:$1|ја подгрупата|ги $1-те подгрупи}}.',
 	'translate-grouplisting' => 'Ова е список на сите преводливи групи.
 Со кликнување на групата се отвора список на кој се наведени сите непреведени пораки.',
+	'translate-grouplisting-empty' => 'Нема групи пораки подготвени за превод.',
 	'translate-task-view' => 'Преглед на сите пораки',
 	'translate-task-untranslated' => 'Преглед на сите непреведени пораки',
 	'translate-task-optional' => 'Преглед на незадолжителни пораки од',
@@ -14884,6 +14933,7 @@ $messages['nl'] = array(
 	'translate-showsub' => 'De {{PLURAL:$1|subgroep|$1 subgroepen}} weergeven.',
 	'translate-grouplisting' => 'Dit is een lijst met alle te vertalen berichtengroepen.
 Klik op een berichtengroep om de lijst met nog niet vertaalde berichten te bekijken.',
+	'translate-grouplisting-empty' => 'Er zijn geen te vertalen berichtengroepen.',
 	'translate-task-view' => 'alle berichten bekijken',
 	'translate-task-untranslated' => 'alle onvertaalde berichten bekijken',
 	'translate-task-optional' => 'optionele berichten bekijken',
@@ -15394,6 +15444,7 @@ $1',
  * @author Byrial
  * @author Harald Khan
  * @author Jon Harald Søby
+ * @author Jsoby
  * @author Laaknor
  * @author Nghtwlkr
  * @author Simny
@@ -15655,7 +15706,7 @@ Detaljer: $1',
 	'translate-js-skip' => 'Hopp over til neste',
 	'translate-js-save-failed' => 'Lagring mislyktes. Rapporter denne feilen.',
 	'translate-js-history' => 'Oversettelseshistorikk',
-	'translate-js-support' => 'Spør spørsmål',
+	'translate-js-support' => 'Still spørsmål',
 	'translate-js-support-title' => 'Be om hjelp hvis det ikke er nok informasjon til å oversette denne meldingen korrekt.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kode',
@@ -21249,7 +21300,7 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-statsf-width' => 'Piksel olarak genişlik:',
 	'translate-statsf-height' => 'Piksel olarak yükseklik:',
 	'translate-statsf-days' => 'Gün olarak süre:',
-	'translate-statsf-start' => 'Gün olarak süre:',
+	'translate-statsf-start' => 'Başlangıç tarihi:',
 	'translate-statsf-scale' => 'Veri:',
 	'translate-statsf-scale-months' => 'Aylar',
 	'translate-statsf-scale-days' => 'Günler',
@@ -22043,6 +22094,7 @@ $messages['vi'] = array(
 	'translate-showsub' => 'Hiện {{PLURAL:$1|nhóm con|$1 nhóm con}}.',
 	'translate-grouplisting' => 'Đây là danh sách tất cả các nhóm dịch được.
 Nhấn chuột vào tên nhóm thông điệp để xem một danh sách thông điệp chưa được dịch.',
+	'translate-grouplisting-empty' => 'Các nhóm thông điệp chưa được thiết lập để dịch.',
 	'translate-task-view' => 'Xem tất cả các thông điệp từ',
 	'translate-task-untranslated' => 'Xem tất cả các thông điệp chưa dịch từ',
 	'translate-task-optional' => 'Xem các thông điệp tùy chọn từ',
@@ -22219,9 +22271,6 @@ Danh sách các ngôn ngữ mặc định sẽ tùy thuộc vào ngôn ngữ mà
 	'translate-percentage-fuzzy' => 'Lỗi thời',
 	'translate-nothing-to-do' => 'Dường như tất cả những gì có thể dịch được đều đã được thực hiện.
 Bạn được khuyến khích xem lại các thông điệp tại [[Special:Translate|{{int:translate}}]].',
-	'translate-languagestats-groups' => ' # Thêm mã nhóm thông điệp, mỗi mã một dòng để ngăn các nhóm thông điệp
- # được hiển thị ở Special:LanguageStats. Các mã nhóm thông điệp không tồn tại
- # sẽ bị bỏ qua.',
 	'translate-languagestats-overall' => 'Tổng cộng các nhóm thông điệp',
 	'translate-ls-submit' => 'Xem thống kê',
 	'translate-ls-column-group' => 'Nhóm thông điệp',
