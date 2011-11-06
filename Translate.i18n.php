@@ -159,6 +159,7 @@ The default list of languages depends on your language.',
 	'right-translate-manage' => 'Manage translation groups',
 	'right-translate-import' => 'Import offline translations',
 	'right-translate-messagereview' => 'Review translations',
+	'right-translate-groupreview' => 'Review translations of message groups',
 
 	'translate-rc-translation-filter' => 'Filter translations:',
 	'translate-rc-translation-filter-no' => 'Do nothing',
@@ -405,6 +406,7 @@ Details: $1',
 
 /** Message documentation (Message documentation)
  * @author Ans
+ * @author Amire80
  * @author Assele
  * @author Darth Kule
  * @author Dbc334
@@ -486,6 +488,7 @@ This warning indicates that the namespace in the translation does not match the 
 	'right-translate-manage' => '{{doc-right|translate-manage}}',
 	'right-translate-import' => '{{doc-right|translate-import}}',
 	'right-translate-messagereview' => '{{doc-right|translate-messagereview}}',
+	'right-translate-groupreview' => '{{doc-right|translate-groupreview}}',
 	'translate-rc-translation-filter' => 'Name of filter in [[Special:RecentChanges]]. Gives a user the option to filter out translations, show translations only, or do nothing (default).',
 	'translate-rc-translation-filter-no' => 'Option for filter in [[Special:RecentChanges]]. Selecting this option results in the filter not doing anything. It is the default value.',
 	'translate-rc-translation-filter-only' => 'Option for filter in [[Special:RecentChanges]]. Selecting this option results in the filter only showing recent changes that are translations.',

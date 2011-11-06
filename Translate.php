@@ -136,6 +136,7 @@ $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
 $wgAvailableRights[] = 'translate-manage';
 $wgAvailableRights[] = 'translate-messagereview';
+$wgAvailableRights[] = 'translate-groupreview';
 
 // New rights group
 $wgGroupPermissions['translate-proofr']['translate-messagereview'] = true;
