@@ -1,4 +1,11 @@
 jQuery( function( $ ) {
+	// BC for MW < 1.18
+	if ( !mw.util.wikiScript ) {
+		mw.util.wikiScript = function( str ) {
+			return mw.config.get( 'wgScriptPath' ) + '/' + ( str || 'index' ) + mw.config.get( 'wgScriptExtension' );
+		}
+	}
+	
 	$(".mw-translate-import-inputs").change( function() {
 		var id = $(this).attr( "id" ).replace( /-input/, "" );
 		$( "input[name=upload-type]:checked" ).attr( "checked", false );

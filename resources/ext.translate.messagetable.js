@@ -1,4 +1,11 @@
 jQuery( function( $ ) {
+	// BC for MW < 1.18
+	if ( !mw.util.wikiScript ) {
+		mw.util.wikiScript = function( str ) {
+			return mw.config.get( 'wgScriptPath' ) + '/' + ( str || 'index' ) + mw.config.get( 'wgScriptExtension' );
+		}
+	}
+	
 	$( ".mw-translate-messagereviewbutton" ).click( function() {
 		var $b = $(this);
 

@@ -1,4 +1,11 @@
-jQuery( document ).ready( function( $ ) {
+jQuery( function( $ ) {
+	// BC for MW < 1.18
+	if ( !mw.util.wikiScript ) {
+		mw.util.wikiScript = function( str ) {
+			return mw.config.get( 'wgScriptPath' ) + '/' + ( str || 'index' ) + mw.config.get( 'wgScriptExtension' );
+		}
+	}
+	
 	var $submit = $( "input#mw-translate-workflowset" );
 	var $select = $( "#mw-sp-translate-workflow select" );
 	$select.find( "option[value=]" ).attr( "disabled", "disabled" );
