@@ -153,6 +153,7 @@ $messages['aln'] = array(
 
 /** Arabic (العربية)
  * @author OsamaK
+ * @author روخو
  */
 $messages['ar'] = array(
 	'translate-group-desc-nodesc' => 'لا وصف متوفر لمجموعة الرسائل هذه',
@@ -170,6 +171,7 @@ $messages['ar'] = array(
 	'translate-group-desc-ui' => 'مجموعة رسائل علوية تحتوي كل رسائل الامتدادات المتعلقة ب[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative مبادرة استخدامية ويكيبيديا]',
 	'translate-group-desc-translatablepages' => 'جميع الصفحات التي يمكن ترجمتها',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] منتدى وب مكتوب بلغة PHP',
+	'translate-group-desc-mediawiki-core-branch' => 'رسائل لنسخة المستقرة من [[Translating:MediaWiki|ميديا ويكي]]',
 );
 
 /** Egyptian Spoken Arabic (مصرى)

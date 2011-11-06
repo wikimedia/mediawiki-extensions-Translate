@@ -295,6 +295,7 @@ Die bladsy wat u probeer wysig kom nie ooreen met een wat vir vertaling gemerk i
  * @author Meno25
  * @author OsamaK
  * @author ترجمان05
+ * @author روخو
  */
 $messages['ar'] = array(
 	'pagetranslation' => 'ترجمة صفحة',
@@ -333,6 +334,7 @@ $messages['ar'] = array(
 	'tpt-rev-latest' => 'آخر نسخة',
 	'tpt-rev-old' => 'الفرق مقابل النسخة المعلّمة السابقة',
 	'tpt-rev-mark-new' => 'علّم هذه النسخة للترجمة',
+	'tpt-rev-unmark' => 'إزالة هذه الصفحة من الترجمة',
 	'tpt-translate-this' => 'ترجم هذه الصّفحة',
 	'translate-tag-translate-link-desc' => 'ترجم هذه الصفحة',
 	'translate-tag-markthis' => 'علّم هذه الصفحة للترجمة',
@@ -345,9 +347,12 @@ $messages['ar'] = array(
 هذه الصفحة ترجمة لصفحة [[$1]] ويمكن تحديث الترجمة باستخدام [$2 أداة الترجمة].',
 	'tpt-unknown-page' => 'هذا النطاق محجوز لترجمات صفحات المحتوى.
 الصفحة التي تحاول تعديلها لا يبدو أنها تتبع أي صفحة معلمة للترجمة.',
-	'tpt-install' => 'شغل php maintenance/update.php أو نصب من الويب لتفعيل خاصية ترجمة الصفحات.',
 	'tpt-render-summary' => 'تحديث لمطابقة نسخة صفحة المصدر الجديدة',
 	'tpt-download-page' => 'صدّر الصفحة مع الترجمات',
+	'pt-log-mark' => '{{GENDER:$2|marked}} تنقيح $3 صفحة "[[:$1]]" ل الترجمة',
+	'pt-log-movenok' => '{{GENDER:$2|encountered}} خطأ اثناء النقل [[:$1]] to [[:$3]]',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|completed}} شطب صفحة الترجمة $1',
+	'pt-movepage-block-tp-exists' => 'صفحة الهدف المترجمة [[:$2]] موجودة.',
 	'pt-movepage-list-pages' => 'قائمة الصفحات التي ستنقل',
 	'pt-movepage-list-translation' => 'صفحات الترجمة',
 	'pt-movepage-list-other' => 'صفحات فرعية أخرى',
@@ -355,7 +360,12 @@ $messages['ar'] = array(
 	'pt-movepage-new' => 'الاسم الجديد:',
 	'pt-movepage-reason' => 'السبب:',
 	'pt-movepage-subpages' => 'انقل جميع الصفحات الفرعية',
+	'pt-movepage-action-check' => 'تحقق اذا كان النقل ممكنا',
 	'pt-movepage-action-perform' => 'لا تنقل',
+	'pt-movepage-action-other' => 'تغيير الهدف',
+	'pt-deletepage-current' => 'اسم الصفحة:',
+	'pt-deletepage-reason' => 'السبب:',
+	'pt-deletepage-list-translation' => 'صفحات الترجمة',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -4072,6 +4082,7 @@ tetapi {{PLURAL:$1|versi|versi-versi}} terkini tidak boleh ditandai untuk diterj
 	'tpt-translation-intro' => 'Laman ini merupakan <span class="plainlinks">[$1 versi terjemahan]</span> laman [[$2]] dan penterjemahannya $3% siap.',
 	'tpt-translation-intro-fuzzy' => 'Terjemahan yang lapuk ditandai sebegini.',
 	'tpt-languages-legend' => 'Bahasa lain:',
+	'tpt-languages-separator' => '&#160;•&#160;',
 	'tpt-target-page' => 'Laman ini tidak boleh dikemaskini secara manual.
 Laman ini merupakan terjemahan laman [[$1]], dan terjemahannya boleh dikemas kini dengan menggunakan [$2 alatan penterjemahan].',
 	'tpt-unknown-page' => 'Ruang nama ini ditempah untuk penterjemahan laman kandungan.

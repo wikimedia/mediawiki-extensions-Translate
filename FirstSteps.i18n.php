@@ -103,18 +103,36 @@ $messages['qqq'] = array(
 /** Arabic (العربية)
  * @author OsamaK
  * @author ترجمان05
+ * @author روخو
  */
 $messages['ar'] = array(
 	'firststeps' => 'الخطوات الأولى',
 	'translate-fs-pagetitle-done' => '- تمّ!',
+	'translate-fs-pagetitle-pending' => ' - معلقة',
+	'translate-fs-pagetitle' => 'بدأ الحصول على المعالج  - $1',
 	'translate-fs-signup-title' => 'سجّل',
 	'translate-fs-settings-title' => 'اضبط تفضيلاتك',
 	'translate-fs-userpage-title' => 'أنشئ صفحة المستخدم',
 	'translate-fs-permissions-title' => 'اطلب صلاحيات مترجم',
 	'translate-fs-target-title' => 'ابدأ الترجمة!',
 	'translate-fs-email-title' => 'أكّد عنوان بريدك الإلكتروني',
+	'translate-fs-selectlanguage' => 'اختر اللغة',
+	'translate-fs-settings-planguage' => 'اللغة الأساسية:',
+	'translate-fs-settings-slanguage' => 'مساعد لغوي $1:',
+	'translate-fs-userpage-level-5' => 'أنا مترجم محترف في',
+	'translate-fs-userpage-level-3' => 'لدي نزعة قيادية جيدة في',
+	'translate-fs-userpage-level-2' => 'لدي نزعة قيادية متوسطة في',
+	'translate-fs-userpage-level-1' => 'أعرف القليل',
+	'translate-fs-userpage-help' => 'يرجى الإشارة إلى مهاراتك اللغوية واخبرنا شيئا عن نفسك. إذا كنت تعرف أكثر من خمس لغات يمكنك إضافة المزيد لاحقا.',
 	'translate-fs-userpage-submit' => 'أنشئ صفحة المستخدم',
 	'translate-fs-userpage-done' => 'أحسنت! لديك الآن صفحة مستخدم.',
+	'translate-fs-permissions-planguage' => 'اللغة الأساسية:',
+	'translate-fs-permissions-help' => 'الآن تحتاج إلى لطلب مكان تضاف فيه إلى مجموعة مترجمين.
+
+حدد اللغة الأساسية أنت سوف تترجم الى.
+
+يمكنك ذكر لغات وملاحظات أخرى في مربع النص أدناه.',
+	'translate-fs-permissions-submit' => 'إرسال طلب',
 );
 
 /** Bashkir (Башҡортса)
@@ -1837,7 +1855,7 @@ Al fin tu potera traducer le ''messages de interfacie'' de tote le projectos sup
 e como le lingua de destination predefinite pro traductiones.',
 	'translate-fs-settings-slanguage' => 'Lingua assistente $1:',
 	'translate-fs-settings-slanguage-desc' => 'Es possibile monstrar traductiones de messages in altere linguas in le editor de traductiones.
-Hic tu pote seliger qual linguas tu vole vider (o nulle).',
+Hic tu pote seliger le linguas que tu vole vider (si desirate).',
 	'translate-fs-settings-submit' => 'Confirmar preferentias',
 	'translate-fs-userpage-level-N' => 'Io es un parlante native de',
 	'translate-fs-userpage-level-5' => 'Io es un traductor professional de',
