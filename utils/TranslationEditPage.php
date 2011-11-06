@@ -193,7 +193,7 @@ class TranslationEditPage {
 		}
 
 		return array(
-			'onclick' => TranslateBC::encodeJsCall(
+			'onclick' => Xml::encodeJsCall(
 				'return trlOpenJsEdit', array( $title->getPrefixedDbKey(), $group ) ),
 			'title' => wfMsg( 'translate-edit-title', $title->getPrefixedText() )
 		);
