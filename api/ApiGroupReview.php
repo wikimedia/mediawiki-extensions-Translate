@@ -122,7 +122,7 @@ class ApiGroupReview extends ApiBase {
 		global $wgTranslateWorkflowStates;
 		$groups = MessageGroups::getAllGroups();
 		$group = key( $groups );
-		$state = current( $wgTranslateWorkflowStates );
+		$state = current( (array) $wgTranslateWorkflowStates );
 		return array(
 			"api.php?action=groupreview&group=$group&language=de&state=$state",
 		);
