@@ -323,7 +323,7 @@ class GettextFFS extends SimpleFFS {
 	}
 
 	protected function doGettextHeader( MessageCollection $collection, $template, &$pluralCount ) {
-		global $wgSitename, $wgCanonicalServer;
+		global $wgSitename, $wgServer, $wgCanonicalServer;
 
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
@@ -345,8 +345,15 @@ PHP;
 		// Make sure there is no empty line before msgid
 		$output = trim( $output ) . "\n";
 
-		// @todo twn specific
-		$portal = Title::makeTitle( NS_PORTAL, $code )->getCanonicalUrl();
+		// @todo portal is twn specific
+		// BC for MW <1.18
+		if ( method_exists( 'Title', 'getCanonicalUrl' ) ) {
+			$portal = Title::makeTitle( NS_PORTAL, $code )->getCanonicalUrl();
+			$server = $wgCanonicalServer;
+		} else {
+			$portal = Title::makeTitle( NS_PORTAL, $code )->getFullUrl();
+			$server = $wgServer;
+		}
 
 		$specs = isset( $template['HEADERS'] ) ? $template['HEADERS'] : array();
 
@@ -363,7 +370,7 @@ PHP;
 		$specs['Content-Type'] = 'text/plain; charset=UTF-8';
 		$specs['Content-Transfer-Encoding'] = '8bit';
 		$specs['X-Generator'] = $this->getGenerator();
-		$specs['X-Translation-Project'] = "$wgSitename at $wgCanonicalServer";
+		$specs['X-Translation-Project'] = "$wgSitename at $server";
 		$specs['X-Language-Code'] = $code;
 		if ( $this->offlineMode ) {
 			$specs['X-Message-Group'] = $this->group->getId();
