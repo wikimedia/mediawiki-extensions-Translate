@@ -212,6 +212,7 @@ $wgResourceModules['ext.translate.special.supportedlanguages'] = array(
 
 $wgResourceModules['ext.translate.special.importtranslations'] = array(
 	'scripts' => 'resources/ext.translate.special.importtranslations.js',
+	'dependencies' => array( 'jquery.ui.autocomplete' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.selecttoinput'] = array(
