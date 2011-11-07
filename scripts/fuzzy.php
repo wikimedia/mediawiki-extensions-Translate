@@ -125,7 +125,7 @@ class FuzzyBot {
 		);
 
 		if ( count( $this->skipLanguages ) ) {
-			$conds = 'substring_index(page_title, \'/\', -1) NOT IN (' . $dbr->makeList( $this->skipLanguages ) . ')';
+			$conds[] = 'substring_index(page_title, \'/\', -1) NOT IN (' . $dbr->makeList( $this->skipLanguages ) . ')';
 		}
 
 		$rows = $dbr->select(
