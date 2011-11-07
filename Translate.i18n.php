@@ -407,8 +407,8 @@ Details: $1',
 );
 
 /** Message documentation (Message documentation)
- * @author Ans
  * @author Amire80
+ * @author Ans
  * @author Assele
  * @author Darth Kule
  * @author Dbc334
@@ -4830,6 +4830,8 @@ wie bspw. die Nichtverwendung von Leerzeichen oder die Transkription der korrekt
 	'translate-edit-tmmatch' => '$1 % Übereinstimmung',
 	'translate-use-suggestion' => 'Ersetze die aktuelle Übersetzung mit diesem Vorschlag.',
 	'translate-edit-tab-list' => 'Nachrichtenliste',
+	'translate-edit-nopermission' => 'Du benötigst die Berechtigung, Systemnachrichten übersetzen zu können.',
+	'translate-edit-askpermission' => 'Berechtigung beantragen',
 	'translate-magic-pagename' => 'Übersetzen (extra)',
 	'translate-magic-help' => 'Du kannst hier Aliase für Spezialseiten, magische Wörter und Namensraumnamen übersetzen.
 
@@ -4882,6 +4884,7 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'right-translate-manage' => 'Übersetzungsgruppen verwalten',
 	'right-translate-import' => 'Offlineübersetzungen importieren',
 	'right-translate-messagereview' => 'Übersetzungen überprüfen',
+	'right-translate-groupreview' => 'Übersetzungen von Nachrichtengruppen überprüfen',
 	'translate-rc-translation-filter' => 'Übersetzungen filtern:',
 	'translate-rc-translation-filter-no' => 'nichts',
 	'translate-rc-translation-filter-only' => 'Zeige nur Übersetzungen',
@@ -5101,6 +5104,7 @@ Optionale Nachrichten sollten nur dann übersetzt werden, sofern es in Ihrer Spr
 wie bspw. die Nichtverwendung von Leerzeichen oder die Transkription der korrekten Namen. $1',
 	'translate-edit-no-information' => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn Sie wissen, wo und in welchem Zusammenhang sie benutzt wird, können Sie anderen Übersetzern helfen, indem Sie eine Dokumentation hinzufügen.''",
 	'translate-use-suggestion' => 'Fügen Sie diesen Vorschlag in das Übersetzungsfeld ein. Diese ersetzt dabei alle aktuellen Inhalte.',
+	'translate-edit-nopermission' => 'Sie benötigen die Berechtigung, Systemnachrichten übersetzen zu können.',
 	'translate-magic-help' => 'Sie können hier Aliase für Spezialseiten, magische Wörter und Namensraumnamen übersetzen.
 
 Spezialseiten und magische Wörter können mehrere Übersetzungen haben, sie werden jeweils durch ein Komma (,) getrennt. Namensraumnamen dürfen nur je eine Übersetzung haben.
@@ -7023,6 +7027,7 @@ $messages['fr'] = array(
 	'translate-showsub' => 'Voir {{PLURAL:$1|le sous-groupe|les $1 sous-groupes}}.',
 	'translate-grouplisting' => 'Ceci est la liste de tous les groupes qui peuvent être traduits.
 Cliquer sur le nom du groupe de messages pour voir une liste des messages qui ne sont pas traduits.',
+	'translate-grouplisting-empty' => "Aucun groupe de message n'a été configuré pour la traduction.",
 	'translate-task-view' => 'Voir tous les messages du',
 	'translate-task-untranslated' => 'Voir tous les messages non traduits du',
 	'translate-task-optional' => 'Voir les messages facultatifs du',
@@ -7137,6 +7142,7 @@ La liste par défaut des langues varie en fonction de votre langue.',
 	'right-translate-manage' => 'Gérer les groupes de traduction',
 	'right-translate-import' => 'Importer les traductions hors ligne',
 	'right-translate-messagereview' => 'Examiner les traductions',
+	'right-translate-groupreview' => 'Revoir les traductions des groupes de message',
 	'translate-rc-translation-filter' => 'Filtrer les traductions :',
 	'translate-rc-translation-filter-no' => 'Ne rien faire',
 	'translate-rc-translation-filter-only' => 'Afficher uniquement les traductions',
@@ -7200,9 +7206,6 @@ Toutes les valeurs ont des limites supérieure et inférieure.',
 	'translate-percentage-fuzzy' => 'Désuets',
 	'translate-nothing-to-do' => 'Toutes les traductions possibles semblent avoir été effectuées.
 Vous êtes encouragé à revoir les messages depuis [[Special:Translate|{{int:translate}}]].',
-	'translate-languagestats-groups' => ' # Ajoutez des ID de groupes de messages, un par ligne pour limiter les groupes
- # qui sont affichés sur Special:LanguageStats. Les groupes inexistants seront
- # ignorés.',
 	'translate-languagestats-overall' => 'Tous les groupes de messages ensemble',
 	'translate-ls-submit' => 'Afficher les statistiques',
 	'translate-ls-column-group' => 'Groupe de messages',
@@ -7316,6 +7319,7 @@ Détails : $1',
 	'translate-messagereview-apierror-unknownmessage' => "Le message n'a pas été trouvé",
 	'translate-messagereview-apierror-fuzzymessage' => 'La traduction est marquée comme « fuzzy »',
 	'translate-messagereview-apierror-owntranslation' => 'Vous ne pouvez pas accepter vos propres traductions.',
+	'translate-messagereview-apierror-badtoken' => 'Jeton non valide',
 	'translate-messagereview-reviews' => 'Accepté par  {{PLURAL:$1| un utilisateur| $1  utilisateurs}}',
 	'translate-messagereview-reviewswithyou' => 'Accepté par  {{PLURAL:$1| un utilisateur| $1  utilisateurs}}, vous y compris',
 	'translate-messagereview-reviewsyou' => 'Accepté par vous',
@@ -7333,6 +7337,7 @@ Détails : $1',
 	'translate-workflow-set-do' => 'Activé',
 	'translate-workflow-set-doing' => 'Activation...',
 	'translate-workflow-set-done' => 'Activé!',
+	'translate-stats-workflow' => 'Statut',
 );
 
 /** Cajun French (Français cadien)
@@ -7946,6 +7951,7 @@ A lista de linguas por defecto depende da súa.',
 	'right-translate-manage' => 'Xestionar os grupos de tradución',
 	'right-translate-import' => 'Importar as traducións sen conexión',
 	'right-translate-messagereview' => 'Revisar as traducións',
+	'right-translate-groupreview' => 'Revisar as traducións dos grupos de mensaxes',
 	'translate-rc-translation-filter' => 'Filtrar as traducións:',
 	'translate-rc-translation-filter-no' => 'Non facer nada',
 	'translate-rc-translation-filter-only' => 'Mostrar só as traducións',
@@ -8819,6 +8825,7 @@ $messages['he'] = array(
 	'right-translate-manage' => 'ניהול קבוצות תרגום',
 	'right-translate-import' => 'יבוא תרגומים לא מקוונים',
 	'right-translate-messagereview' => 'לסקור תרגומים',
+	'right-translate-groupreview' => 'סקירת תרגומים של קבוצות הודעות',
 	'translate-rc-translation-filter' => 'סינון תרגומים:',
 	'translate-rc-translation-filter-no' => 'ללא סינון',
 	'translate-rc-translation-filter-only' => 'הצגת תרגומים בלבד',
@@ -10160,6 +10167,8 @@ Si tu sape ubi o como iste message es usate, tu pote adjutar le altere traductor
 	'translate-edit-tmmatch' => '$1% de correspondentia',
 	'translate-use-suggestion' => 'Reimplaciar le traduction actual per iste suggestion.',
 	'translate-edit-tab-list' => 'Lista de messages',
+	'translate-edit-nopermission' => 'Tu require permission pro poter traducer messages.',
+	'translate-edit-askpermission' => 'Requestar permission',
 	'translate-magic-pagename' => 'Traduction extendite de MediaWiki',
 	'translate-magic-help' => 'Tu pote traducer le aliases de paginas special, le parolas magic e le nomines de spatios de nomines.
 
@@ -10219,6 +10228,7 @@ Le lista predefinite de linguas depende de tu lingua.',
 	'right-translate-manage' => 'Gerer gruppos de traduction',
 	'right-translate-import' => 'Importar traductiones foras de linea',
 	'right-translate-messagereview' => 'Revider traductiones',
+	'right-translate-groupreview' => 'Revider traductiones de gruppos de messages',
 	'translate-rc-translation-filter' => 'Filtrar traductiones:',
 	'translate-rc-translation-filter-no' => 'Facer nihil',
 	'translate-rc-translation-filter-only' => 'Monstrar solmente traductiones',
@@ -13538,6 +13548,8 @@ $messages['mk'] = array(
 	'translate-edit-tmsugs' => 'Предлози од претходни преводи',
 	'translate-edit-tmmatch' => '$1% совпаѓање',
 	'translate-use-suggestion' => 'Заменете го тековниот превод со овој предлог во полето за превод.',
+	'translate-edit-tab-prev' => '<<<',
+	'translate-edit-tab-next' => '>>>',
 	'translate-edit-tab-list' => 'Список на пораки',
 	'translate-magic-pagename' => 'Превод на додатоци за МедијаВики',
 	'translate-magic-help' => 'Можете да ги преведете алијасите на специјалните страници, волшебните зборови и називите на именските простори.
@@ -13598,6 +13610,7 @@ $messages['mk'] = array(
 	'right-translate-manage' => 'Раководење со преводни групи',
 	'right-translate-import' => 'Увезување на преводи од сметач (вонмрежни)',
 	'right-translate-messagereview' => 'Проверка на преводи',
+	'right-translate-groupreview' => 'Проверка на преводи на групи пораки',
 	'translate-rc-translation-filter' => 'Филтрирање на преводи:',
 	'translate-rc-translation-filter-no' => 'Не прави ништо',
 	'translate-rc-translation-filter-only' => 'Прикажи само преводи',
@@ -13611,7 +13624,7 @@ $messages['mk'] = array(
 	'translate-statsf-options' => 'Нагодувања за графиконот',
 	'translate-statsf-width' => 'Ширина во пиксели:',
 	'translate-statsf-height' => 'Висина во пиксели:',
-	'translate-statsf-days' => 'Почетен датум:',
+	'translate-statsf-days' => 'Временски период во денови:',
 	'translate-statsf-start' => 'Почетен датум:',
 	'translate-statsf-scale' => 'Подробност:',
 	'translate-statsf-scale-months' => 'Месеци',
@@ -13679,6 +13692,8 @@ $messages['mk'] = array(
 Големината на името (т.е. буквите) на преведувачот зависи од тоа колку пораки има преведено.
 Бојата на линијата со која е подвлечено името ја покажува скорешноста на неговата активност.',
 	'supportedlanguages-colorlegend' => 'Легенда за бојата: Последен превод извршен пред $1 дена.',
+	'supportedlanguages-portallink' => '[$1] $2 - $3',
+	'supportedlanguages-portallink-nocldr' => '[$1] $2',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Преведувач|Преведувачи}}: $1',
 	'supportedlanguages-recenttranslations' => 'скорешни преводи',
 	'supportedlanguages-count' => 'Вкупно $1 {{plural:$1|јазик|јазици}}.',
@@ -14281,6 +14296,7 @@ Senarai bahasa tersedia bergantung pada bahasa anda.',
 	'right-translate-manage' => 'Menguruskan kumpulan penterjemah',
 	'right-translate-import' => 'Mengimport terjemahan luar talian',
 	'right-translate-messagereview' => 'Kaji semula terjemahan',
+	'right-translate-groupreview' => 'Mengkaji semula terjemahan kumpulan mesej',
 	'translate-rc-translation-filter' => 'Tapis terjemahan:',
 	'translate-rc-translation-filter-no' => 'Tidak berbuat apa-apa',
 	'translate-rc-translation-filter-only' => 'Tunjukkan terjemahan sahaja',
@@ -15097,6 +15113,7 @@ De standaardlijst van hulptalen is taalafhankelijk.',
 	'right-translate-manage' => 'Berichtengroepen beheren',
 	'right-translate-import' => 'Vertalingen van buiten het systeem importeren',
 	'right-translate-messagereview' => 'Vertalingen accepteren',
+	'right-translate-groupreview' => 'Vertalingen van berichtengroepen controleren',
 	'translate-rc-translation-filter' => 'Vertalingen filteren:',
 	'translate-rc-translation-filter-no' => 'Niets doen',
 	'translate-rc-translation-filter-only' => 'Alleen vertalingen weergeven',
@@ -22200,6 +22217,8 @@ thí dụ như không sử dụng khoảng cách hoặc có hệ thống phiên 
 	'translate-edit-tmmatch' => 'trùng $1%',
 	'translate-use-suggestion' => 'Thay thế bản dịch hiện hành với đề nghị này.',
 	'translate-edit-tab-list' => 'Danh sách thông điệp',
+	'translate-edit-nopermission' => 'Bạn cần xin phép biên dịch thông điệp.',
+	'translate-edit-askpermission' => 'Xin phép',
 	'translate-magic-pagename' => 'Bản dịch MediaWiki mở rộng',
 	'translate-magic-help' => 'Bạn có thể dịch bí danh của các trang đặc biệt, câu thần chú và tên của không gian tên.
 
@@ -22259,6 +22278,7 @@ Danh sách các ngôn ngữ mặc định sẽ tùy thuộc vào ngôn ngữ mà
 	'right-translate-manage' => 'Quản lý các nhóm biên dịch',
 	'right-translate-import' => 'Nhập các bản dịch ngoại tuyến vào',
 	'right-translate-messagereview' => 'Duyệt các bản dịch',
+	'right-translate-groupreview' => 'Duyệt các bản dịch nhóm thông điệp',
 	'translate-rc-translation-filter' => 'Lọc bản dịch:',
 	'translate-rc-translation-filter-no' => 'Không lọc',
 	'translate-rc-translation-filter-only' => 'Chỉ hiển thị bản dịch',

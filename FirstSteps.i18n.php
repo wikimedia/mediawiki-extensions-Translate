@@ -82,6 +82,7 @@ If you do not want to receive newsletters, you can opt-out in the tab "{{int:pre
 /** Message documentation (Message documentation)
  * @author EugeneZelenko
  * @author Lloffiwr
+ * @author Purodha
  * @author The Evil IP address
  */
 $messages['qqq'] = array(
@@ -92,12 +93,12 @@ $messages['qqq'] = array(
 	'translate-fs-settings-slanguage' => 'Other languages shown while translating, followed by language selector, $1 is running number',
 	'translate-fs-settings-slanguage-desc' => 'Help message for choosing assistant languages',
 	'translate-fs-settings-submit' => 'Submit button',
-	'translate-fs-userpage-level-N' => 'Language skill level option, followed by language selector',
-	'translate-fs-userpage-level-5' => 'Language skill level option, followed by language selector',
-	'translate-fs-userpage-level-4' => 'Language skill level option, followed by language selector',
-	'translate-fs-userpage-level-3' => 'Language skill level option, followed by language selector',
-	'translate-fs-userpage-level-2' => 'Language skill level option, followed by language selector',
-	'translate-fs-userpage-level-1' => 'Language skill level option, followed by language selector',
+	'translate-fs-userpage-level-N' => 'Language skill level option, followed by language selector, will be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
+	'translate-fs-userpage-level-5' => 'Language skill level option, followed by language selector, will be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
+	'translate-fs-userpage-level-4' => 'Language skill level option, followed by language selector, will be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
+	'translate-fs-userpage-level-3' => 'Language skill level option, followed by language selector, will be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
+	'translate-fs-userpage-level-2' => 'Language skill level option, followed by language selector, will be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
+	'translate-fs-userpage-level-1' => 'Language skill level option, followed by language selector, will be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
 );
 
 /** Arabic (العربية)
@@ -2145,6 +2146,7 @@ $messages['ksh'] = array(
 	'firststeps' => 'Eetste Schredde',
 	'firststeps-desc' => '[[Special:FirstSteps|Extra Sigg]] för Metmaacher op Wikis met däm Zohsazprojramm <i lang="en">Translate</i> aan et werke ze krijje.',
 	'translate-fs-pagetitle-done' => ' - jedonn!',
+	'translate-fs-pagetitle-pending' => ' - noch nit jedonn',
 	'translate-fs-pagetitle' => 'En de Jäng kumme - $1',
 	'translate-fs-signup-title' => 'Aanmälde',
 	'translate-fs-settings-title' => 'Enstellunge maache',
@@ -2162,11 +2164,23 @@ Aam Engk kanns De de Täxte un Nohreeschte uß alle Projäkte övversäze, di {{
 	'translate-fs-settings-slanguage-desc' => 'Et es müjjelesch, sesch Övversäzonge en ander Shprooche beim sellver övversäze aanzeije ze lohße. Söhg uß, wat för esu en Shprooche De ze sinn krijje wells, wan De övverhoup wälsche han wells.',
 	'translate-fs-settings-submit' => 'Enstellunge faßhallde',
 	'translate-fs-userpage-level-N' => 'Ming Mottershprooch es',
-	'translate-fs-userpage-level-5' => 'Esch ben ene beroofsmääßeje Övversäzer noh',
-	'translate-fs-userpage-level-4' => 'Esch kennen mesch esu jood uß, wi wann et ming Motterschprooch wöhr',
-	'translate-fs-userpage-level-3' => 'Esch kann joot domet ömjonn.',
-	'translate-fs-userpage-submit' => 'En Metmaachersigg aanlääje',
+	'translate-fs-userpage-level-5' => 'Esch ben ene beroofsmääßeje Övversäzer vun',
+	'translate-fs-userpage-level-4' => 'Esch kennen mesch esu jood uß, wi wann et ming Motterschprooch wöhr, met',
+	'translate-fs-userpage-level-3' => 'Esch kann joot ömjonn met',
+	'translate-fs-userpage-level-2' => 'Esch kann meddelmääßesch',
+	'translate-fs-userpage-level-1' => 'Esch kann e bezje',
+	'translate-fs-userpage-help' => 'Jiv Ding Shprooche aan un sach ons jät övvr Desch. Wann De mieh wi fönnef Schprooche kanns, kanns De di schpääder emmer noch derbei donn.',
+	'translate-fs-userpage-submit' => 'Don en Metmaachersigg för Desch aanlääje',
 	'translate-fs-userpage-done' => 'Joot jemaat! Jäz häs De en Metmaachersigg.',
+	'translate-fs-permissions-planguage' => 'Ding Houpshprooch:',
+	'translate-fs-permissions-help' => 'Jäz moß De en Aanfrooch loßlohße, öm en de Övversäzer-Jropp ze kumme.
+Donn Ding Houpschprooch aanjävve, woh De et miehts noh övversäze wells.
+
+Do kanns natöörlesch ander Schprooche un wat De söns noch saare wells en dä Kaßte heh endraare.',
+	'translate-fs-permissions-pending' => 'Ding Aanfrooch es jäz noh [[$1]] övvermeddelt, un eine vun de {{int:group-staff/ksh}}
+weed sesch esu flöck, wi_t jeiht, dröm kömmere.
+Wann De Ding Addräß för de <i lang="en">e-mail<i> beschtäätesch häs, kriß De en Nohreesch drövver, wann ed esu wigg es.',
+	'translate-fs-permissions-submit' => 'Lohß Jonn!',
 	'translate-fs-target-text' => 'Onse Jlöckwonsch!
 Jez kanns De et Övversäze aanfange
 
