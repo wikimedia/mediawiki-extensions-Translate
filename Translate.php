@@ -515,7 +515,9 @@ $wgTranslateGroupRoot = '/var/www/externals';
 $wgTranslateGroupFiles = array();
 
 /**
- * @todo document
+ * List of possible message group review workflow states.
+ * Up two 32 characters each.
+ * Example: array( 'new', 'needs_proofreading', 'ready', 'published', );
  */
 $wgTranslateWorkflowStates = false;
 
