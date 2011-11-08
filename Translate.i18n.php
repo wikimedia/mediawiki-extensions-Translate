@@ -6904,6 +6904,8 @@ Asetuksen oletusarvoiset kielet riippuvat kielestä, jolle olet kääntämässä
 	'translate-percentage-fuzzy' => 'Vanhentuneita',
 	'translate-nothing-to-do' => 'Kaikki mahdolliset käännökset on merkitty tehdyiksi.
 Voit tarkistaa käännöksiä toimintosivulla [[Special:Translate|{{int:translate}}]].',
+	'translate-ls-submit' => 'Näytä tilastot',
+	'translate-mgs-submit' => 'Näytä tilastot',
 	'translate-mgs-column-language' => 'Kieli',
 	'supportedlanguages' => 'Tuetut kielet',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Kääntäjä|Kääntäjät}}: $1',
@@ -6983,6 +6985,10 @@ $1',
 	'translate-messagereview-progress' => 'Hyväksytään...',
 	'translate-messagereview-failure' => 'Hyväksyminen epäonnistui: $1',
 	'translate-messagereview-done' => 'Hyväksytty',
+	'translate-messagereview-apierror-invalidrevision' => 'Käännöstä ei löytynyt',
+	'translate-messagereview-apierror-unknownmessage' => 'Viestiä ei löytynyt',
+	'translate-messagereview-apierror-fuzzymessage' => 'Käännös on merkitty sumeaksi',
+	'translate-messagereview-apierror-owntranslation' => 'Et voi hyväksyä omia käännöksiäsi',
 	'translate-messagereview-reviews' => '{{PLURAL:$1|Yhden|$1}} käyttäjän hyväksymä',
 	'translate-messagereview-reviewsyou' => 'Olet hyväksynyt käännöksen',
 	'translate-messagereview-no-fuzzy' => 'Sumeita käännöksiä ei voi hyväksyä.',
@@ -7084,6 +7090,8 @@ Si vous savez où ou comment il est utilisé, vous pouvez aider les autres tradu
 	'translate-edit-tmmatch' => '$1 % de correspondance',
 	'translate-use-suggestion' => 'Remplacer la traduction actuelle par cette suggestion.',
 	'translate-edit-tab-list' => 'Liste de messages',
+	'translate-edit-nopermission' => 'Vous devez obtenir la permission de traduire les messages.',
+	'translate-edit-askpermission' => 'Demander la permission',
 	'translate-magic-pagename' => 'Traduction étendue de MediaWiki',
 	'translate-magic-help' => 'Vous pouvez traduire les alias de pages spéciales, les mots magiques et les noms des espaces de noms.
 
@@ -7892,6 +7900,8 @@ como non empregar espazos ou para a transliteración de nomes propios. $1',
 	'translate-edit-tmmatch' => '$1% de coincidencia',
 	'translate-use-suggestion' => 'Substituír a tradución actual por esta suxestión.',
 	'translate-edit-tab-list' => 'Lista de mensaxes',
+	'translate-edit-nopermission' => 'Non ten os permisos necesarios para traducir mensaxes.',
+	'translate-edit-askpermission' => 'Solicitar os permisos',
 	'translate-magic-pagename' => 'Tradución estendida de MediaWiki',
 	'translate-magic-help' => 'Pode traducir os alias das páxinas especiais, as palabras máxicas e mais os nomes dos espazos de nomes.
 
@@ -8766,6 +8776,8 @@ $messages['he'] = array(
 	'translate-edit-tmmatch' => 'רמת התאמה: $1%',
 	'translate-use-suggestion' => 'החלפת התרגום הנוכחי בהצעה הזאת.',
 	'translate-edit-tab-list' => 'רשימת הודעות',
+	'translate-edit-nopermission' => 'נדרשות הרשאות כדי לתרגם הודעות.',
+	'translate-edit-askpermission' => 'בקשת הרשאה',
 	'translate-magic-pagename' => 'תרגום מורחב של מדיה־ויקי',
 	'translate-magic-help' => 'באפשרותכם לתרגם שמות דפים מיוחדים, מילות קסם ושמות מרחבי שם.
 
@@ -11127,6 +11139,7 @@ $messages['ja'] = array(
 	'translate-showsub' => '{{PLURAL:$1|下位群|$1の下位群}}を表示。',
 	'translate-grouplisting' => 'これは、翻訳可能な群の全一覧です。
 メッセージ群の名前をクリックして、未翻訳メッセージの一覧を見ることができます。',
+	'translate-grouplisting-empty' => '翻訳用に設定されたメッセージ群はありません',
 	'translate-task-view' => 'すべてのメッセージを表示',
 	'translate-task-untranslated' => '未翻訳メッセージを表示',
 	'translate-task-optional' => '任意翻訳のメッセージを表示',
@@ -11134,6 +11147,7 @@ $messages['ja'] = array(
 	'translate-task-untranslatedoptional' => '未翻訳の任意翻訳メッセージを表示',
 	'translate-task-problematic' => '問題のあるメッセージを表示',
 	'translate-task-review' => '更新反映待ちのメッセージを確認',
+	'translate-task-acceptqueue' => '翻訳を受け入れる',
 	'translate-task-reviewall' => 'すべての翻訳済みメッセージを確認',
 	'translate-task-export' => '翻訳を書き出し',
 	'translate-task-export-to-file' => '訳文をファイルに書き出し',
@@ -11159,6 +11173,9 @@ $messages['ja'] = array(
 	'translate-next' => '次のページ',
 	'translate-prev' => '前のページ',
 	'translate-page-description-legend' => 'この群についての情報',
+	'translate-page-description-hasoptional' => 'このメッセージ群はオプション翻訳のメッセージを含んでいます。
+オプション翻訳のメッセージは、その言語において特別な必要性（スペースを除去する、固有名詞を翻字するなど）がある場合にのみ翻訳してください。$1',
+	'translate-page-description-hasoptional-open' => 'オプション翻訳のメッセージを表示する。',
 	'translate-page-edit' => '編集',
 	'translate-ext-url' => '<hr />ウェブサイト：$1',
 	'translate-optional' => '（任意翻訳）',
@@ -11175,8 +11192,10 @@ $messages['ja'] = array(
 	'translate-edit-warnings' => '不完全な翻訳に対する警告',
 	'translate-edit-tmsugs' => '翻訳メモリーからの提案',
 	'translate-edit-tmmatch' => '$1%の一致',
-	'translate-use-suggestion' => 'この翻訳提案を、編集領域に挿入します。現在入力されている内容は全て置き換えられます。',
+	'translate-use-suggestion' => 'この現在の翻訳を、この翻訳提案に置き換えます。',
 	'translate-edit-tab-list' => 'メッセージ一覧',
+	'translate-edit-nopermission' => 'メッセージを翻訳する権限が必要です。',
+	'translate-edit-askpermission' => '権限を要求する',
 	'translate-magic-pagename' => '拡張MediaWiki翻訳',
 	'translate-magic-help' => '特別ページへのエイリアス、マジックワード、名前空間名を翻訳できます。
 
@@ -11231,6 +11250,8 @@ $messages['ja'] = array(
 	'right-translate' => '翻訳用インターフェースを使って編集する',
 	'right-translate-manage' => '翻訳グループを管理する',
 	'right-translate-import' => 'オフラインでの翻訳を読み込む',
+	'right-translate-messagereview' => '翻訳を査読する',
+	'right-translate-groupreview' => 'メッセージ群の翻訳を査読する',
 	'translate-rc-translation-filter' => '絞込み：',
 	'translate-rc-translation-filter-no' => '絞り込まない',
 	'translate-rc-translation-filter-only' => '翻訳のみ',
@@ -11292,9 +11313,6 @@ $messages['ja'] = array(
 	'translate-percentage-complete' => '完了',
 	'translate-percentage-fuzzy' => '要修正',
 	'translate-nothing-to-do' => '翻訳の可能なものはすべて翻訳されています。[[Special:Translate|{{int:translate}}]]を使ってメッセージを見直すことが推奨されます。',
-	'translate-languagestats-groups' => ' # Special:LanguageStatsに表示するメッセージ群を制限するには
- # メッセージ群のIDを1行1つずつ記入します。
- # 無効なIDは無視されます。',
 	'translate-languagestats-overall' => '合計',
 	'translate-ls-submit' => '統計を表示',
 	'translate-ls-column-group' => 'メッセージ群',
@@ -13551,6 +13569,8 @@ $messages['mk'] = array(
 	'translate-edit-tab-prev' => '<<<',
 	'translate-edit-tab-next' => '>>>',
 	'translate-edit-tab-list' => 'Список на пораки',
+	'translate-edit-nopermission' => 'Ви треба дозвола за да преведувате пораки.',
+	'translate-edit-askpermission' => 'Побарај дозвола',
 	'translate-magic-pagename' => 'Превод на додатоци за МедијаВики',
 	'translate-magic-help' => 'Можете да ги преведете алијасите на специјалните страници, волшебните зборови и називите на именските простори.
 
@@ -14237,6 +14257,8 @@ seperti tidak menggunakan jarak atau mengalih huruf kata nama khas. $1',
 	'translate-edit-tab-prev' => '<<<',
 	'translate-edit-tab-next' => '>>>',
 	'translate-edit-tab-list' => 'Senarai mesej',
+	'translate-edit-nopermission' => 'Anda memerlukan kebenaran untuk menterjemahkan mesej.',
+	'translate-edit-askpermission' => 'Pohon kebenaran',
 	'translate-magic-pagename' => 'Terjemahan tambahan MediaWiki',
 	'translate-magic-help' => 'Anda boleh menterjemahkan alias laman khas, kata sakti dan nama ruang nama.
 
@@ -15054,6 +15076,8 @@ Optionele berichten hoeven alleen vertaald te worden als uw taal bijzondere eige
 	'translate-edit-tmmatch' => '$1% overeenkomst',
 	'translate-use-suggestion' => 'Huidige vertaling door deze suggestie vervangen.',
 	'translate-edit-tab-list' => 'Berichtenlijst',
+	'translate-edit-nopermission' => 'U hebt rechten nodig om te kunnen vertalen.',
+	'translate-edit-askpermission' => 'Vertaalrechten aanvragen',
 	'translate-magic-pagename' => 'Uitgebreide MediaWiki-vertaling',
 	'translate-magic-help' => 'U kunt alternatieven voor speciale pagina\'s, magische woorden en naamruimtebenamingen vertalen.
 
@@ -18566,9 +18590,6 @@ $messages['sah'] = array(
 $messages['si'] = array(
 	'translate' => 'පරිවර්තනය කරන්න',
 	'translate-desc' => 'මාධ්‍යවිකී සහ ඉන් ඔබ්බට පරිවර්තනය කෙරුම සඳහා [[Special:Translate|විශේෂ පිටුව]]',
-	'translate-edit' => 'සංස්කරණය',
-	'translate-talk' => 'සාකච්ඡාව',
-	'translate-history' => 'ඉතිහාසය',
 	'translate-showsub' => '{{PLURAL:$1|උපකණ්ඩායම|උපකණ්ඩායම් $1 ක්}} පෙන්වන්න.',
 	'translate-grouplisting' => 'මේ සමස්ත පරිවර්තනය කල හැකි කාණ්ඩ ලැයිස්තුවයි.
 පරිවර්තනය නොවුනු පණිවුඩ ලැයිස්තුවක් නැරඹීම සඳහා පණිවුඩ කාණ්ඩ නාමය ක්ලික් කරන්න.',
@@ -18586,14 +18607,14 @@ $messages['si'] = array(
 	'translate-page-no-such-language' => 'නම් කෙරුනු භාෂාව අනීතිකයි.',
 	'translate-page-no-such-task' => 'නම් කෙරුණු කෘත්‍යය අනීතිකයි.',
 	'translate-page-no-such-group' => 'නම් කෙරුණු කාණ්ඩය අනීතිකයි.',
-	'translate-page-settings-legend' => 'පරිස්ථිතීන්',
+	'translate-page-settings-legend' => 'සැකසුම්',
 	'translate-page-task' => 'මට අවශ්‍ය වන්නේ',
 	'translate-page-group' => 'කාණ්ඩය',
 	'translate-page-language' => 'භාෂාව',
 	'translate-page-limit' => 'සීමාව',
 	'translate-page-limit-option' => 'එක් පිටුවකට {{PLURAL:$1|පණිවුඩයක්|පණිවුඩ}} $1 ක්',
 	'translate-submit' => 'ආහරනය කරන්න',
-	'translate-page-navigation-legend' => 'ප්‍රයාණය',
+	'translate-page-navigation-legend' => 'යාත්‍රණය',
 	'translate-page-showing' => '$3 ක් අතුරින් පණ්වුඩ $1 සිට $2 දක්වා ප්‍රදර්ශනය කෙරෙයි .',
 	'translate-page-showing-none' => 'පෙන්විමට පණිවුඩ නොමැත.',
 	'translate-next' => 'ඊළඟ පිටුව',
@@ -18618,8 +18639,6 @@ $messages['si'] = array(
 	'translate-magic-words' => 'මායා වචන',
 	'translate-magic-namespace' => 'නාමඅවකාශ නම්',
 	'translate-magic-notsaved' => 'ඔබගේ සංස්කරණය සුරැකීම සිදු නොවිණි!',
-	'translationchanges-export' => 'නිර්යාත',
-	'translationchanges-change' => '$1: $2, $3 විසිනි',
 	'translate-rc-translation-filter-no' => 'කිසිවක් නොකරන්න',
 	'translate-stats-edits' => 'සංස්කරණ',
 	'translate-stats-users' => 'පරිවර්තකයන්',
@@ -18645,12 +18664,13 @@ $messages['si'] = array(
 	'languagestats-recenttranslations' => 'නව පරිවර්තන',
 	'translate-language-code' => 'භාෂා කේතය',
 	'translate-language-code-field-name' => 'භාෂා කේතය:',
-	'translate-suppress-complete' => 'සම්පූර්ණයෙන් පරිවර්තිත පණිවුඩ කාණ්ඩ යටපත් කරන්න',
+	'translate-suppress-complete' => 'මුළුමනින්ම පරිවර්තනයකල පණිවුඩ කාණ්ඩ යටපත්කරන්න',
 	'translate-language' => 'භාෂාව',
 	'translate-total' => 'පණිඩුඩ',
 	'translate-untranslated' => 'පරිවර්තනය නොකල',
 	'translate-percentage-complete' => 'සමාප්තිය',
 	'translate-percentage-fuzzy' => 'යල් පැන ගිය',
+	'translate-mgs-column-language' => 'බස',
 	'translate-save' => '($1) සුරකින්න',
 	'translate-jssti-add' => 'ලැයිස්තුවට එක් කරන්න',
 	'translate-manage-modlang-new' => '$1 (නව)',
@@ -18905,6 +18925,7 @@ $messages['sl'] = array(
 	'translate-showsub' => 'Prikaži {{PLURAL:$1|podskupino|$1 podskupini|$1 podskupine|$1 podskupin}}.',
 	'translate-grouplisting' => 'To je seznam vseh prevedljivih skupin.
 Kliknite na skupino sporočil za prikaz seznama neprevedenih sporočil.',
+	'translate-grouplisting-empty' => 'Nobena skupina sporočil ni bila konfigurirana za prevajanje.',
 	'translate-task-view' => 'Prikaži vsa sporočila',
 	'translate-task-untranslated' => 'Prikaži vsa neprevedena sporočila',
 	'translate-task-optional' => 'Prikaži neobvezna sporočila',
@@ -18961,6 +18982,8 @@ kot sta neuporaba presledkov ali prečrkovanje izvirnih imen. $1',
 	'translate-edit-tmmatch' => '$1 % ujemanje',
 	'translate-use-suggestion' => 'Zamenjaj trenutni prevod s tem predlogom.',
 	'translate-edit-tab-list' => 'Seznam sporočil',
+	'translate-edit-nopermission' => 'Za prevajanje sporočil potrebujete dovoljenje.',
+	'translate-edit-askpermission' => 'Zaprosi za dovoljenje',
 	'translate-magic-pagename' => 'Razširjeno prevajanje MediaWiki',
 	'translate-magic-help' => 'Prevedete lahko vzdevke posebnih strani, čarobne besede in imena imenskih prostorov.
 
@@ -19020,6 +19043,7 @@ Privzeti seznam jezikov je odvisen od vašega jezika.',
 	'right-translate-manage' => 'Urejanje skupin prevodov',
 	'right-translate-import' => 'Uvažanje nepovezanih prevodov',
 	'right-translate-messagereview' => 'Pregledovanje prevodov',
+	'right-translate-groupreview' => 'Pregled prevodov skupine sporočil',
 	'translate-rc-translation-filter' => 'Filtriraj prevode:',
 	'translate-rc-translation-filter-no' => 'Ne stori ničesar',
 	'translate-rc-translation-filter-only' => 'Prikaži samo prevode',
@@ -22888,6 +22912,7 @@ $messages['yue'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Alexsh
+ * @author Bencmq
  * @author Chenxiaoqino
  * @author Gaoxuewei
  * @author Gzdavidwong
@@ -22995,7 +23020,7 @@ $messages['zh-hans'] = array(
 	'translate-checks-xhtml' => '请替换以下 {{PLURAL:$2|标签|标签}} 与正确的：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => '原始信息使用了<nowiki>{{PLURAL:}}</nowiki>，但翻译并未使用。',
-	'translate-checks-pagename' => '名字空间从定义的更改',
+	'translate-checks-pagename' => '名字空间与原文不符',
 	'translate-checks-format' => '这个翻译不遵从定义或有无效的语法：$1',
 	'translate-checks-escape' => '以下转义可能是意外：<strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => '使用 <nowiki>$1</nowiki>，而不是在这个项目中的 <nowiki>$2</nowiki>。',
@@ -23168,6 +23193,7 @@ $1',
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Alexsh
+ * @author Bencmq
  * @author Gzdavidwong
  * @author Liangent
  * @author Mark85296341
@@ -23176,9 +23202,6 @@ $1',
 $messages['zh-hant'] = array(
 	'translate' => '翻譯',
 	'translate-desc' => '翻譯 MediaWiki 介面訊息的[[Special:Translate|特殊頁面]]',
-	'translate-edit' => '編輯',
-	'translate-talk' => '對話',
-	'translate-history' => '歷史',
 	'translate-task-view' => '檢視全部介面訊息',
 	'translate-task-untranslated' => '檢視尚未翻譯的介面訊息',
 	'translate-task-optional' => '檢視可選的介面訊息',
@@ -23255,9 +23278,6 @@ $messages['zh-hant'] = array(
 	'translate-magic-notsaved' => '您的編輯尚未被儲存！',
 	'translate-magic-errors' => '請修復翻譯中的以下{{PLURAL:$1|錯誤|錯誤}}：',
 	'translate-magic-saved' => '你的變更已經成功儲存。',
-	'translationchanges' => '翻譯更改',
-	'translationchanges-export' => '{{int:translate-magic-cm-export}}',
-	'translationchanges-change' => '$1: $2 由 $3 翻譯',
 	'translate-checks-parameters' => '以下參數沒有使用到：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '以下參數為未知參數：
@@ -23268,7 +23288,7 @@ $messages['zh-hant'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => '請修正以下的標籤：<strong>$1</strong>',
 	'translate-checks-plural' => '原始訊息使用於<nowiki>{{PLURAL:}}</nowiki>中，並沒有用於翻譯。',
-	'translate-checks-pagename' => '名字空間從定義中改變',
+	'translate-checks-pagename' => '名字空間與原文不符',
 	'translate-checks-format' => '這個翻譯不遵從定義或有無效的語法：$1',
 	'translate-checks-escape' => '以下轉義可能是意外：<strong>$1</strong>',
 	'translate-pref-nonewsletter' => '不要傳送電子報',
