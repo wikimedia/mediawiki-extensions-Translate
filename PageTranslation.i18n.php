@@ -4551,12 +4551,14 @@ La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marca
  */
 $messages['pdc'] = array(
 	'pagetranslation' => 'Iwwersetzing vun Bledder',
+	'tpt-template' => 'Moddel fer des Blatt',
 	'tpt-rev-latest' => 'Letscht Version',
 	'tpt-translate-this' => 'des Blatt iwwersetze',
 	'translate-tag-translate-link-desc' => 'Des Blatt iwwersetze',
 	'tpt-languages-legend' => 'Annere Schprooche:',
 	'pt-movepage-new' => 'Neier Naame:',
 	'pt-movepage-reason' => 'Grund:',
+	'pt-deletepage-current' => 'Naame vum Blatt:',
 );
 
 /** Polish (Polski)

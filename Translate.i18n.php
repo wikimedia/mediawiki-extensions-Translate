@@ -12211,6 +12211,7 @@ $messages['km'] = array(
 	'languagestats-summary' => 'ទំព័រ​នេះ​បង្ហាញ​ស្ថិតិ​នៃ​ការប្រែសម្រួល​​គ្រប់ក្រុម​សារ​ទាំងអស់​សម្រាប់​ភាសា​មួយ​។',
 	'languagestats-stats-for' => 'ស្ថិតិបកប្រែសំរាប់ $1 ($2)។',
 	'languagestats-recenttranslations' => 'ការបកប្រែនាពេលថ្មីៗ',
+	'translate-langstats-incomplete' => 'ស្ថិតិខ្លះនៅលើទំព័រនេះមិនពេញលេញទេ។ សូមផ្ទុកជាថ្មីដើម្បីទទួលបានស្ថិតិបន្ថែមទៀត។',
 	'translate-langstats-expand' => 'ពន្លាត',
 	'translate-langstats-collapse' => 'បង្រួញ',
 	'translate-langstats-expandall' => 'ពន្លាតទាំងអស់',
@@ -16185,9 +16186,7 @@ $messages['pa'] = array(
  */
 $messages['pdc'] = array(
 	'translate' => 'Iwwersetze',
-	'translate-edit' => 'Ennere',
-	'translate-talk' => 'Gschwetz',
-	'translate-history' => 'Gschicht',
+	'translate-page-settings-legend' => 'Uffstellinge',
 	'translate-page-group' => 'Druppe',
 	'translate-page-language' => 'Schprooch',
 	'translate-page-navigation-legend' => 'Faahre-Gnepp',
@@ -16197,7 +16196,6 @@ $messages['pdc'] = array(
 	'translate-ext-url' => '<hr />Gewebb: $1',
 	'translate-magic-cm-to-be' => 'Sollt sei',
 	'translate-magic-cm-comment' => 'Aamaericking:',
-	'translationchanges-change' => '$1: $2 darich $3',
 	'translationstats' => 'Nummere vun Iwwersetzinge',
 	'translate-stats-edits' => 'Enneringe',
 	'translate-stats-users' => 'Iwwersetzer',
@@ -16692,7 +16690,7 @@ Tùit ij valor a l'han dij lìmit superior e anferior.",
 	'translate-statsf-width' => 'Larghëssa an pontin:',
 	'translate-statsf-height' => 'Autëssa an pontin:',
 	'translate-statsf-days' => 'Antërval ëd temp an di:',
-	'translate-statsf-start' => 'Antërval ëd temp an di:',
+	'translate-statsf-start' => 'Dàita ëd prinsipi:',
 	'translate-statsf-scale' => 'Granularità:',
 	'translate-statsf-scale-months' => 'Mèis',
 	'translate-statsf-scale-weeks' => 'Sman-e',
@@ -23013,10 +23011,8 @@ $messages['zh-hans'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => '有一个不均匀的量的 {{PLURAL:$2|括号|括号}}：
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '后 {{PLURAL:$2|个链接是|$2 个链接是}}有问题：
-<strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => '以下$2 个链接丢失：
-<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '以下$2个链接存在问题：<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '以下$2个链接丢失：<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => '请替换以下 {{PLURAL:$2|标签|标签}} 与正确的：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => '原始信息使用了<nowiki>{{PLURAL:}}</nowiki>，但翻译并未使用。',
@@ -23284,8 +23280,7 @@ $messages['zh-hant'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => '括號的數量不一致：<strong>$1</strong>',
 	'translate-checks-links' => '以下的連結可能有問題：<strong>$1</strong>',
-	'translate-checks-links-missing' => '以下連結遺失：
-<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '以下$2個連結遺失：<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => '請修正以下的標籤：<strong>$1</strong>',
 	'translate-checks-plural' => '原始訊息使用於<nowiki>{{PLURAL:}}</nowiki>中，並沒有用於翻譯。',
 	'translate-checks-pagename' => '名字空間與原文不符',
