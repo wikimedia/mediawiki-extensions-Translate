@@ -10441,6 +10441,7 @@ Detalios: $1',
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Anakmalaysia
  * @author Bennylin
  * @author Farras
  * @author Irwangatot
@@ -10577,7 +10578,7 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-statsf-width' => 'Lebar dalam piksel:',
 	'translate-statsf-height' => 'Tinggi dalam piksel:',
 	'translate-statsf-days' => 'Periode waktu dalam hari:',
-	'translate-statsf-start' => 'Periode waktu dalam hari:',
+	'translate-statsf-start' => 'Tanggal mulai:',
 	'translate-statsf-scale' => 'Granularitas:',
 	'translate-statsf-scale-months' => 'Bulan',
 	'translate-statsf-scale-weeks' => 'Minggu',
@@ -11407,6 +11408,12 @@ $1',
 	'translate-searchprofile-tooltip' => 'すべての翻訳から検索',
 	'translate-search-languagefilter' => '言語で絞り込み：',
 	'translate-search-nofilter' => 'すべて表示',
+	'translate-messagereview-submit' => '採用',
+	'translate-messagereview-progress' => '採用しています……',
+	'translate-messagereview-failure' => '採用しています……失敗しました： $1',
+	'translate-messagereview-done' => '採用済み',
+	'translate-messagereview-apierror-invalidrevision' => '翻訳が見つかりませんでした',
+	'translate-messagereview-apierror-unknownmessage' => 'メッセージが見つかりませんでした',
 );
 
 /** Jamaican Creole English (Patois)
@@ -12073,7 +12080,7 @@ $messages['km'] = array(
 	'translate-page-disabled' => "ការបកប្រែសម្រាប់ភាសានេះក្នុងក្រុមនេះមិនត្រូវបានអនុញ្ញាតទេ។ មូលហេតុ:
 
 ''$1''",
-	'translate-page-settings-legend' => 'ការកំណត់យក',
+	'translate-page-settings-legend' => 'ការកំណត់​ផ្សេងៗ',
 	'translate-page-task' => 'ខ្ញុំចង់',
 	'translate-page-group' => 'ក្រុម',
 	'translate-page-language' => 'ភាសា',
@@ -16245,6 +16252,7 @@ $messages['pfl'] = array(
  * @author Saper
  * @author Sp5uhe
  * @author ToSter
+ * @author Woytecr
  * @author Wpedzich
  * @author Žekřil71pl
  */
@@ -22910,6 +22918,7 @@ $messages['yue'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Alexsh
+ * @author Anakmalaysia
  * @author Bencmq
  * @author Chenxiaoqino
  * @author Gaoxuewei
@@ -23047,7 +23056,7 @@ $messages['zh-hans'] = array(
 	'translate-statsf-width' => '宽度：',
 	'translate-statsf-height' => '高度：',
 	'translate-statsf-days' => '以天计算的时间段：',
-	'translate-statsf-start' => '以天计算的时间段：',
+	'translate-statsf-start' => '起始日期：',
 	'translate-statsf-scale' => '粗糙程度：',
 	'translate-statsf-scale-months' => '月份',
 	'translate-statsf-scale-weeks' => '周',
