@@ -371,63 +371,18 @@ $messages['br'] = array(
 	'translate-fs-intro' => "Deuet mat oc'h er skoazeller evit pazioù kentañ {{SITENAME}}.
 Emaomp o vont da hentañ ac'hanoc'h paz ha paz evit dont da vezañ un troer.
 E fin an hentad e c'helloc'h treiñ \"kemennadennoù etrefas\" an holl raktresoù meret gant {{SITENAME}}.",
-	'translate-fs-signup-text' => "[[Image:HowToStart1CreateAccount.png|framm]]
-
-Evit ar bazenn gentañ e rankez kevreañ.
-
-An troidigezhioù graet ganeoc'h a vo laket war ho kont, dre hoc'h anv implijer.
-Diskouez a ra ar skeudenn a-zehou penaos leuniañ ar maeziennoù.
-
-M'emaoc'h enskrivet dija, hoc'h eus da $1gevreañ$2 kentoc'h.
-Ur wezh enskrivet, distroit d'ar bajenn-mañ.
-
-$3En em enskrivañ$4",
-	'translate-fs-settings-text' => "Dleout a rafec'h mont da welet ho penndibaboù ha
-da nebeutañ lakaat da yezh an etrefas ar yezh emaoc'h o vont da reiñ enni.
-
-Lakaet e vez yezh hoc'h etrefas da yezh treiñ dre ziouer.
-Aes eo disoñjal lakaat ar yezh a zere, setu eo kenkoulz en ober diouzhtu.
-
-E-keit ha m'emaoc'h ganti e c'hallit ivez goulenn digant ar meziant diskouez an troidigezhioù e yezhoù all anavezet ganeoc'h.
-Emañ an arventenn-se en ivinell \"{{int:prefs-editing}}\".
-Taolit ur sell ouzh an arventennoù all ma karit ivez.
-
-Kit d'ho [[Special:Preferences|pajenn penndibaboù]] diouzhtu ha distroit d'ar bajenn-mañ goude-se.",
-	'translate-fs-settings-skip' => "Echuet eo ganin.
-Lezit ac'hanon da genderc'hel.",
-	'translate-fs-userpage-text' => "Bremañ hoc'h eus da sevel ho pajenn implijer.
-
-Merkit un dra bennak diwar ho penn ; piv oc'h ha petra a rit da skouer.
-Sikour a raio tud kumuniezh {{SITENAME}} da genlabourat ganeoc'h.
-E {{SITENAME}} ez eus tud eus ar bed-holl a labour war raktresoù disheñvel e yezhoù disheñvel.
-
-Er voest rakleuniet a-us, el linenn gentañ diouzhtu e welit <nowiki>{{#babel:en-2}}</nowiki>.
-Klokait anezhi diouzh ho parregezhioù yezh.
-Merkañ a ra an niver goude kod ar yezh pegen mat e komzit yezh pe yezh.
-Setu a c'haller dibab :
-* 1 - Un tammig bihan
-* 2 - Un anaoudegezh diazez
-* 3 - Un anaoudegezh vat
-* 4 - Live unan a gomz a-vihanik
-* 5 - Implijout a rit ar yezh en un doare micherel, da kouer ma'z oc'h troer a-vicher.
-
-Ma komzit ur yezh a-vihanik, lezit al live barregezh disifr ha merkit hepken ar c'hod yezh.
-Da skouer : ma komzit brezhineg a-vihanik, galleg evel m'eo dleet, ma tistripit un tamm saozneg ha m'hoc'h eus tamm anaoudegezh eus ar swahileg, e c'hallot skrivañ :
-<code><nowiki>{{#babel:br|fr-3|en-2|sw-1}}</nowiki></code>
-
-Ma n'anavezit ket kod yezh ar yezhoù a rit ganto eo deuet ar mare da glask anezho.
-Implijout a roll a-is a c'hallit.",
+	'translate-fs-selectlanguage' => 'Dibab ur yezh',
+	'translate-fs-settings-planguage' => 'Yezh pennañ :',
+	'translate-fs-settings-submit' => 'Enrollañ ar penndibaboù',
+	'translate-fs-userpage-level-N' => 'A-vihanik e komzan',
+	'translate-fs-userpage-level-5' => 'Troer a-vicher on war ar',
+	'translate-fs-userpage-level-4' => 'Evel ur yezher a-vihanik e komzan',
+	'translate-fs-userpage-level-3' => 'Ampart on war ar',
+	'translate-fs-userpage-level-2' => "Barrek a-walc'h on war ar",
+	'translate-fs-userpage-level-1' => 'Un tammig e ouzon ar',
 	'translate-fs-userpage-submit' => 'Krouiñ ma fajenn implijer',
 	'translate-fs-userpage-done' => "Dispar ! Ur bajenn implijer hoc'h eus bremañ.",
-	'translate-fs-permissions-text' => "Ret eo deoc'h goulenn bezañ enskrivet d'ar strollad troerien.
-
-Da c'hortoz ma vo kempennet ar c'hod ganeomp, kit da welet war [[Project:Translator]] ha heuilhit an erbedadennoù.
-Goude-se, distroit d'ar bajenn-mañ.
-
-Pa vo bet lakaet ho koulenn ez aio unan eus hor skipailh a-youl vat da wiriañ anezhañ hag e vo aprouet kerkent ha ma vo tu.
-Un tamm pasianted mar plij.
-
-<del>Gwiriit mat eo leuniet prop ar goulenn-mañ ha klikit war ar bouton goulenn.</del>",
+	'translate-fs-permissions-submit' => 'Kas ar goulenn',
 	'translate-fs-target-text' => "Gourc'hemennoù !
 Kregiñ da dreiñ a c'hallit ober bremañ.
 
