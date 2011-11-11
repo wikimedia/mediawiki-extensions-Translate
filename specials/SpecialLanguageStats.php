@@ -329,9 +329,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$rowParams['data-groupid'] = $group->getId();
 		if ( is_string( $parent ) ) {
 			$rowParams['data-parentgroups'] = $parent;
-		}
-
-		if ( $parent === true ) {
+		} elseif ( $parent === true ) {
 			$rowParams['data-ismeta'] = '1';
 		}
 
