@@ -361,6 +361,7 @@ $messages['br'] = array(
 	'firststeps' => 'Pazenn gentañ',
 	'firststeps-desc' => '[[Special:FirstSteps|Pajenn dibar]] evit hentañ an implijerien war ur wiki hag a implij an astenn Translate',
 	'translate-fs-pagetitle-done' => ' - graet !',
+	'translate-fs-pagetitle-pending' => ' - war ober',
 	'translate-fs-pagetitle' => "Heñcher loc'hañ - $1",
 	'translate-fs-signup-title' => 'En em enskrivañ',
 	'translate-fs-settings-title' => 'Kefluniañ ho arventennoù',
@@ -382,6 +383,7 @@ E fin an hentad e c'helloc'h treiñ \"kemennadennoù etrefas\" an holl raktreso�
 	'translate-fs-userpage-level-1' => 'Un tammig e ouzon ar',
 	'translate-fs-userpage-submit' => 'Krouiñ ma fajenn implijer',
 	'translate-fs-userpage-done' => "Dispar ! Ur bajenn implijer hoc'h eus bremañ.",
+	'translate-fs-permissions-planguage' => 'Yezh pennañ :',
 	'translate-fs-permissions-submit' => 'Kas ar goulenn',
 	'translate-fs-target-text' => "Gourc'hemennoù !
 Kregiñ da dreiñ a c'hallit ober bremañ.
@@ -1435,8 +1437,8 @@ Inā ʻaʻole makemake e loaʻa nā nū hou, hiki ke pale i ke kāwāholo "{{int
 $messages['he'] = array(
 	'firststeps' => 'הצעדים הראשונים',
 	'firststeps-desc' => 'דף מיוחד כדי לעזור למשתמשים להתחיל לעבוד בוויקי שמשתמש בהרחבת תרגום',
-	'translate-fs-pagetitle-done' => '- בוצע!',
-	'translate-fs-pagetitle-pending' => '- בהמתנה',
+	'translate-fs-pagetitle-done' => ' - בוצע!',
+	'translate-fs-pagetitle-pending' => ' - בהמתנה',
 	'translate-fs-pagetitle' => 'אשף תחילת עבודה – $1',
 	'translate-fs-signup-title' => 'הרשמה',
 	'translate-fs-settings-title' => 'הגדרת ההעדפות שלך',
@@ -1449,7 +1451,7 @@ $messages['he'] = array(
 בסופו תוכלו לתרגם '''הודעות ממשק''' של כל הפרויקטים הנתמכים באתר {{SITENAME}}.",
 	'translate-fs-selectlanguage' => 'בחירת שפה',
 	'translate-fs-settings-planguage' => 'שפה עיקרית:',
-	'translate-fs-settings-planguage-desc' => 'הפשה העיקרית היא גם שפת הממשק בוויקי הזה
+	'translate-fs-settings-planguage-desc' => 'השפה העיקרית היא גם שפת הממשק בוויקי הזה
 ושפת היעד לתרגומים לפי בררת המחדל.',
 	'translate-fs-settings-slanguage' => 'שפת עזר $1:',
 	'translate-fs-settings-slanguage-desc' => 'אפשר להראות תרגומים של הודעות לשפות אחרות בעורך התרגומים.
@@ -3181,9 +3183,29 @@ $messages['sl'] = array(
 Vodili vas bomo skozi postopek, da postanete prevajalec, korak za korakom.
 Na koncu boste lahko prevajali ''sporočila vmesnika'' vseh podprtih projektov na {{GRAMMAR:dajalnik|{{SITENAME}}}}.",
 	'translate-fs-selectlanguage' => 'Izberite jezik',
+	'translate-fs-settings-planguage' => 'Prvotni jezik:',
+	'translate-fs-settings-planguage-desc' => 'Prvotni jezik se kaže kot vaš jezik vmesnika na tem wikiju
+in kot privzeti ciljni jezik prevodov.',
+	'translate-fs-settings-slanguage' => 'Pomožni jezik $1:',
+	'translate-fs-settings-slanguage-desc' => 'V urejevalniku prevodov je mogoče prikazati prevode sporočil v drugih jezikih.
+Tukaj lahko izberete jezike, ki bi jih radi videli, če to želite.',
 	'translate-fs-settings-submit' => 'Shrani nastavitve',
+	'translate-fs-userpage-level-N' => 'Sem naravni govorec',
+	'translate-fs-userpage-level-5' => 'Sem profesionalni prevajalec',
+	'translate-fs-userpage-level-4' => 'Govorim ga skoraj enako dobro kakor prvi jezik',
+	'translate-fs-userpage-level-3' => 'Zelo dobro govorim',
+	'translate-fs-userpage-level-2' => 'Srednje dobro govorim',
+	'translate-fs-userpage-level-1' => 'Poznam osnove',
+	'translate-fs-userpage-help' => 'Prosimo, navedite svoje znanje jezikov in nam povejte nekaj o sebi. Če znate več kot pet jezikov, jih lahko dodate pozneje.',
 	'translate-fs-userpage-submit' => 'Ustvari mojo uporabniško stran',
 	'translate-fs-userpage-done' => 'Dobro opravljeno! Sedaj imate uporabniško stran.',
+	'translate-fs-permissions-planguage' => 'Prvotni jezik:',
+	'translate-fs-permissions-help' => 'Sedaj morate vložiti prošnjo za priključitev k skupini prevajalcev.
+Izberite prvotni jezik, v katerega boste prevajali.
+
+V spodnjem polju lahko omenite tudi druge jezike in druge pripombe.',
+	'translate-fs-permissions-pending' => 'Vašo prošnjo smo posredovali na [[$1]] in nekdo od osebja strani jo bo čim prej preveril.
+Če potrdite svoj e-poštni naslov, boste prejeli e-poštno obvestilo takoj, ko se to zgodi.',
 	'translate-fs-permissions-submit' => 'Pošlji zahtevo',
 	'translate-fs-target-text' => "Čestitamo!
 Sedaj lahko začnete prevajati.
