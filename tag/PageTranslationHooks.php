@@ -334,7 +334,7 @@ FOO;
 	 */
 	public static function preventDirectEditing( Title $title, User $user, $action, &$result ) {
 		$page = TranslatablePage::isTranslationPage( $title );
-		if ( $page !== false && $action !== 'delete' ) {
+		if ( $page !== false && $action !== 'delete' && $action !== 'read' ) {
 			if ( self::$allowTargetEdit ) {
 				return true;
 			}
