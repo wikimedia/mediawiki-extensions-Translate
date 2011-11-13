@@ -224,7 +224,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			)
 		);
 
-		$out = wfMsgExt( 'languagestats-stats-for', array( 'parse', 'replaceafter' ), $languageName, $rcInLangLink );
+		$out = wfMessage( 'languagestats-stats-for', $languageName )->rawParams( $rcInLangLink )->parseAsBlock();
 		$wgOut->addHTML( $out );
 	}
 
