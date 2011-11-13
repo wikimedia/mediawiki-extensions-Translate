@@ -545,6 +545,10 @@ FOO;
 
 	/// Hook: getUserPermissionsErrorsExpensive
 	public static function lockedPagesCheck( Title $title, User $user, $action, &$result ) {
+		if ( $action == 'read' ) {
+			return true;
+		}
+
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$key = wfMemcKey( 'pt-lock', $title->getPrefixedText() );
 		// At least memcached mangles true to "1"
