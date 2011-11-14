@@ -239,7 +239,7 @@ $wgResourceModules['jquery.form'] = array(
 # == Configuration variables ==
 
 # === Basic configuration ===
-
+# <source lang=php>
 /**
  * Language code for message documentation. Suggested values are qqq or info.
  * If set to false (default), message documentation feature is disabled.
@@ -364,9 +364,9 @@ $wgTranslateSupportUrl = false;
  */
 $wgTranslatePermissionUrl = 'Project:Translator';
 
-
+# </source>
 # === Page translation feature ===
-
+# <source lang=php>
 /**
  * Enable page translation feature.
  *
@@ -384,7 +384,9 @@ $wgEnablePageTranslation = false;
  */
 $wgPageTranslationNamespace = 1198;
 
+# </source>
 # === Message group configuration ===
+# <source lang=php>
 
 /**
  * Two-dimensional array of languages that cannot be translated.
@@ -515,15 +517,18 @@ $wgTranslateGroupRoot = '/var/www/externals';
 $wgTranslateGroupFiles = array();
 
 /**
- * List of possible message group review workflow states.
+ * List of possible message group review workflow states. Users who have
+ * translate-groupreview right can set this in Special:Translate.
+ * The state is visible in Special:Translate, Special:MessageGroupStats and
+ * Special:LanguageStats.
  * Up two 32 characters each.
  * Example: array( 'new', 'needs_proofreading', 'ready', 'published', );
  */
 $wgTranslateWorkflowStates = false;
 
-
+# </source>
 # === System setup related configuration ===
-
+# <source lang=php>
 /**
  * Location of your extensions, if not the default. Only matters
  * if you are localising your own extensions with this extension.
@@ -541,10 +546,11 @@ $wgTranslateCacheDirectory = false;
  * FileCachedMessageIndex needs $wgCacheDirectory to be functional.
  */
 $wgTranslateMessageIndex = array( 'CachedMessageIndex' );
-# $wgTranslateMessageIndex = array( 'FileCachedMessageIndex' );
+// $wgTranslateMessageIndex = array( 'FileCachedMessageIndex' );
 
+# </source>
 # ==== PHPlot ====
-
+# <source lang=php>
 /**
  * For Special:TranslationStats PHPlot is needed to produce graphs.
  * Set this the location of phplot.php.
@@ -561,8 +567,9 @@ $wgTranslatePHPlot = false;
  */
 $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
 
+# </source>
 # ==== YAML driver ====
-
+# <source lang=php>
 /**
  * Currently supported YAML drivers are spyc and syck and sycl-pecl.
  *
@@ -584,6 +591,8 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
  * For syck-pecl you need libsyck and pecl install syck-beta
  */
 $wgTranslateYamlLibrary = 'spyc';
+
+# </source>
 
 /** @cond cli_support */
 if ( !defined( 'TRANSLATE_CLI' ) ) {
