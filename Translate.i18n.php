@@ -6015,6 +6015,7 @@ Detaloj: $1',
  * @author Sanbec
  * @author Tempestas
  * @author Translationista
+ * @author Vivaelcelta
  */
 $messages['es'] = array(
 	'translate' => 'Traducir',
@@ -6190,7 +6191,8 @@ Todos los valores tienen límites superiores e inferiores.',
 	'translate-langstats-collapseall' => 'contraer todo',
 	'translate-language-code' => 'Código de idioma',
 	'translate-language-code-field-name' => 'Código de idioma',
-	'translate-suppress-complete' => 'Eliminar grupos de mensajes completamente traducidos',
+	'translate-suppress-complete' => 'Eliminar los grupos de mensajes completamente traducidos',
+	'translate-ls-noempty' => 'Eliminar los grupos de mensajes sin traducción iniciada',
 	'translate-language' => 'Idioma',
 	'translate-total' => 'Mensajes',
 	'translate-untranslated' => 'Sin traducir',
@@ -6280,6 +6282,7 @@ $1',
 	'translate-import-err-ul-failed' => 'La carga del archivo no fue exitosa.',
 	'translate-import-err-invalid-title' => 'El nombre del archivo <nowiki>$1</nowiki> es inválido.',
 	'translate-import-err-no-such-file' => 'El archivo <nowiki>$1</nowiki> no existe o no ha sido guardado localmente.',
+	'translate-import-err-stale-group' => 'El grupo de mensajes al que pertenece este archivo no existe.',
 	'translate-import-err-no-headers' => 'El archivo no es un archivo Gettext bien formado en formato de extensión Translate:
 No se puede determinar el grupo y el idioma a partir de los encabezados de archivo.',
 	'translate-import-err-warnings' => 'El archivo no está bien constituído.
@@ -6314,6 +6317,7 @@ Detalle: $1',
 	'translate-messagereview-apierror-unknownmessage' => 'No se encontró el mensaje',
 	'translate-messagereview-apierror-fuzzymessage' => 'La traducción está marcada como difusa',
 	'translate-messagereview-apierror-owntranslation' => 'No puedes aceptar tus propias traducciones',
+	'translate-messagereview-apierror-badtoken' => 'Código no válido',
 	'translate-messagereview-reviews' => 'Aceptada por {{PLURAL:$1|un usuario|$1 usuarios}}',
 	'translate-messagereview-reviewswithyou' => 'Aceptada por {{PLURAL:$1|un usuario|$1 usuarios}} incluyéndote a ti',
 	'translate-messagereview-reviewsyou' => 'Aceptada por ti',
@@ -6321,7 +6325,14 @@ Detalle: $1',
 	'translate-messagereview-no-own' => 'No puedes aceptar tus propias traducciones.',
 	'translate-messagereview-doit' => 'Aceptar esta traducción como una traducción correcta.',
 	'group-translate-proofr' => 'Revisores de la traducción',
+	'group-translate-proofr-member' => '{{GENDER:$1|revisor|revisora}} de las traducciones',
 	'grouppage-translate-proofr' => '{{ns:project}}:Revisores de traducción',
+	'log-name-translationreview' => 'Registro de revisión de las traducciones',
+	'log-description-translationreview' => 'Registro de todas las revisiones de las traducciones y de los grupos de mensajes.',
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|aceptó}} la traducción "$3"',
+	'translate-workflow-set-doing' => 'Activando...',
+	'translate-workflow-set-done' => '¡Activado!',
+	'translate-stats-workflow' => 'Estado',
 );
 
 /** Estonian (Eesti)

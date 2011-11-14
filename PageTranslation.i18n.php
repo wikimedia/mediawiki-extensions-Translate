@@ -1604,6 +1604,7 @@ La paĝo povas nun esti <span class="plainlinks">[$3 tradukita]</span>.',
  * @author Purodha
  * @author Sanbec
  * @author Translationista
+ * @author Vivaelcelta
  */
 $messages['es'] = array(
 	'pagetranslation' => 'Traducción de página',
@@ -1674,7 +1675,7 @@ Texto de sección: <pre>$1</pre>',
 	'pt-log-name' => 'Registro de traducción de página',
 	'pt-log-mark' => 'Revisión {{GENDER:$2|marcada}} $3 de página "[[:$1]]" para traducción',
 	'pt-log-unmark' => 'Revisión {{GENDER:$2|marcada}} de página "[[:$1]]" para traducción',
-	'pt-log-moveok' => '{{GENDER:$2|completado}} renombrado de página traducible $1 a un nuevo nombre',
+	'pt-log-moveok' => '{{GENDER:$2|trasladó}} la página traducible $1 a "$3"',
 	'pt-log-movenok' => '{{GENDER:$2|encontrado}} un problema mientras se movía [[:$1]] a [[:$3]]',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|encontró}} un problema al eliminar la página de traducción [[:$1]]',
 	'pt-movepage-title' => 'Mover página traducible $1',
@@ -2752,6 +2753,10 @@ Tekst wotrězka: <pre>$1</pre>',
 	'pt-log-unmark' => 'jo stronu "[[:$1]]" z přełožowanja {{GENDER:$2|wotstronił|wotstroniła}}.',
 	'pt-log-moveok' => 'je přemjenowanje přełožowanskeje strony $1 do $3 {{GENDER:$2|wotzamknył|wotzamknyła}}',
 	'pt-log-movenok' => 'je při přesuwanju [[:$1]] do [[:$3]] na problem {{GENDER:$2|storčił|storčiła}}',
+	'pt-log-delete-full-ok' => 'je hašenje přełožujomneje strony $1 {{GENDER:$2|wotzamknył|wotzamknyła}}',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|storči}} na problem při hašenju přełožujomneje strony [[:$1]]',
+	'pt-log-delete-lang-ok' => 'je hašenje přełoženeje strony $1 {{GENDER:$2|wotzamknył|wotzamknyła}}',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|storči}} na problem při hašenju přełoženeje strony [[:$1]]',
 	'pt-movepage-title' => 'Přełožujomnu stronu $1 přesunyć',
 	'pt-movepage-blockers' => 'Přełožujomna strona njeda so {{PLURAL:$1|slědowaceho zmylka|slědowaceju zmylkow|slědowacych zmylkow|slědowacych zmylkow}} dla do noweho mjena přesunyć:',
 	'pt-movepage-block-base-exists' => 'Zakładna cilowa strona [[:$1]] eksistuje.',
@@ -2803,6 +2808,10 @@ Prošu skontroluj [[Special:Log/pagetranslation|přełožowanski protokol strony
 	'pt-deletepage-list-count' => 'W cyłku {{PLURAL:$1|ma so $1 strona|matej so $1 stronje|maja so $1 strony|ma so $1 stronow}} zhašeć.',
 	'pt-deletepage-full-logreason' => 'Dźěl přełožujomneje strony $1.',
 	'pt-deletepage-lang-logreason' => 'Dźěl přełoženeje strony $1.',
+	'pt-deletepage-started' => 'Prošu přepruwuj [[Special:Log/pagetranslation|protokol přełožkow]] za zmylkami a wuwjedźenskimi zdźělenkami.',
+	'pt-deletepage-intro' => 'Tuta specialna strona ći dowoluje, zo by do rěče přełožujomne strony abo  přełožki zhašał.
+Zhašenje njestanje so hnydom, dokelž wjele stronow dyrbi so zhašeć.
+Zmólki budu se w  [[Special:Log/pagetranslation|protokolu přełožkow]] protokolować a wone dyrbja so manuelnje porjedźić.',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -4829,6 +4838,7 @@ $messages['ps'] = array(
  * @author Giro720
  * @author Hamilton Abreu
  * @author Malafaya
+ * @author Vivaelcelta
  * @author Waldir
  */
 $messages['pt'] = array(
@@ -4899,7 +4909,7 @@ Texto da secção: <pre>$1</pre>',
 	'pt-log-name' => 'Registo de tradução de páginas',
 	'pt-log-mark' => '{{GENDER:$2|marcou}} a edição $3 da página "[[:$1]]" para tradução.',
 	'pt-log-unmark' => '{{GENDER:$2|removeu}} a página "[[:$1]]" de tradução.',
-	'pt-log-moveok' => '{{GENDER:$2|alterou o nome}} da página traduzível $1 para [[:$3]]',
+	'pt-log-moveok' => '{{GENDER:$2|alterou o nome}} da página traduzível $1 para $3',
 	'pt-log-movenok' => '{{GENDER:$2|encontrou}} um problema ao mover [[:$1]] para [[:$3]]',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|eliminou}} a página traduzível $1',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|encontrou}} um problema ao eliminar a página traduzível [[:$1]]',

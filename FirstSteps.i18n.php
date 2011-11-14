@@ -1542,9 +1542,15 @@ Tu móžeš wubrać, kotre rěče chceš rady widźeć.',
 	'translate-fs-userpage-level-3' => 'Mam dobre znajomosće',
 	'translate-fs-userpage-level-2' => 'Mam přerězne znajomosće',
 	'translate-fs-userpage-level-1' => 'Mam snadne znajomosće',
+	'translate-fs-userpage-help' => 'Prošu podaj swoje rěčne znajomosće a zdźěl nam něšto wo sebje. Jeli maš znajomosće we wjace hač pjeć rěčach, móžeš je pozdźišo podać.',
 	'translate-fs-userpage-submit' => 'Moju wužiwarsku stronu wutworić',
 	'translate-fs-userpage-done' => 'Gratulacija! Maš nětko wužiwarsku stronu.',
 	'translate-fs-permissions-planguage' => 'Hłowna rěč:',
+	'translate-fs-permissions-help' => 'Dyrbiš nětko naprašowanje stajić, zo by so do skupiny přełožowarjow přiwzał.
+Wubjer hłownu rěč, do kotrejež chceš přełožować.
+
+Móžeš druhe rěče a druhe přispomnjenki w slědowacym tekstowym polu podać.',
+	'translate-fs-permissions-pending' => 'Twoje naprašowanje je so do [[$1]] wotpósłało a něchtó z teama translatewiki.net budźe jo tak bórze kaž móžno přehladować. Jeli swoju e-mejlowu adresu wobkrućiš, dóstanješ e-mejlowu zdźělenku, tak chětře kaž je so to stało.',
 	'translate-fs-permissions-submit' => 'Naprašowanje pósłać',
 	'translate-fs-target-text' => 'Zbožopřeće!
 Móžeš nětko přełožowanje započeć.
