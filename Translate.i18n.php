@@ -249,7 +249,7 @@ You are encouraged to review messages through [[Special:Translate|{{int:translat
 	'translate-mgs-submit' => 'Show statistics',
 	'translate-mgs-column-language' => 'Language',
 	'translate-mgs-totals' => 'All languages together',
-	'translate-mgs-invalid-group' => 'The specified group $1 does on exist.',
+	'translate-mgs-invalid-group' => 'The specified group $1 does not exist.',
 	'translate-mgs-nothing' => 'Nothing to show for requested statistics.',
 
 	# Special:SupportedLanguages

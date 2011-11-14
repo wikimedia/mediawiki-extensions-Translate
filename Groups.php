@@ -12,9 +12,9 @@
  * Interface for message groups.
  *
  * Message groups are the heart of the Translate extension. They encapsulate
- * a set of messages. Aside from basic information like id, label and
+ * a set of messages each. Aside from basic information like id, label and
  * description, the class defines which mangler, message checker and file
- * system support (FFS), if any, the group uses. Usually this is only thin
+ * system support (FFS), if any, the group uses. Usually this is only a thin
  * wrapper over message configuration files.
  */
 interface MessageGroup {
