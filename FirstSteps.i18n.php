@@ -1020,12 +1020,13 @@ Aurrera jarraitu.',
 
 /** Finnish (Suomi)
  * @author Centerlink
+ * @author Crt
  * @author Nike
  * @author ZeiP
  */
 $messages['fi'] = array(
 	'firststeps' => 'Alkutoimet',
-	'firststeps-desc' => '[[Special:FirstSteps|Toimintosivu]] joka ohjastaa uudet käyttäjät Translate-laajennoksen käyttöön.',
+	'firststeps-desc' => '[[Special:FirstSteps|Toimintosivu]], joka ohjastaa uudet käyttäjät Translate-laajennoksen käyttöön.',
 	'translate-fs-pagetitle-done' => ' - valmis!',
 	'translate-fs-pagetitle-pending' => ' - vireillä',
 	'translate-fs-pagetitle' => 'Alkutoimet - $1',
@@ -1517,6 +1518,7 @@ $messages['hsb'] = array(
 	'firststeps' => 'Prěnje kroki',
 	'firststeps-desc' => '[[Special:FirstSteps|Specialna strona]] za startowu pomoc na wikiju, kotryž rozšěrjenje Translate wužiwa',
 	'translate-fs-pagetitle-done' => ' - sčinjene!',
+	'translate-fs-pagetitle-pending' => '´- wobdźěłuje so',
 	'translate-fs-pagetitle' => 'Startowy asistent - $1',
 	'translate-fs-signup-title' => 'Registrować',
 	'translate-fs-settings-title' => 'Konfiguruj swoje nastajenja',
@@ -1527,61 +1529,23 @@ $messages['hsb'] = array(
 	'translate-fs-intro' => "Witaj do startoweho asistenta projekta {{SITENAME}}.
 Dóstanješ nawod krok po kroku, kak so z přełožowarjom stanješ.
 Na kóncu móžeš ''zdźělenki programoweho powjercha'' wšěch podpěrowanych projektow na {{SITENAME}} přełožić.",
-	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
-
-W prěnim kroku dyrbiš so registrować, t. r. wužiwarske konto wutworić.
-
-Přełožki, kotrež sy sčinił, budu so twojemu wužiwarskemu mjenu připokazować.
-Wobraz naprawo ći pokazuje, kak dyrbiš pola wupjelnić.
-
-Jeli sy hižo zregistrowany, $1přizjew so$2 město toho.
-Hdyž sy zregistrowany, wróć so k tutej stronje.
-
-$3Registrować$4',
-	'translate-fs-settings-text' => 'Dźi nětko do swojich nastajenjow a změń znajmjeńša swoju powjerchowu rěc do rěče, do kotrejež chceš přełožić.
-
-Twoja powjerchowa rěč wužiwa so jako standardna cilowa rěč.
-Zabywa so lochko, rěč do praweje rěče změnić, tohodla so jara poručuje, ju nětko nastajić.
-
-Hdyž sy jónu tu, móžeš tež softwaru prosyć, přełožki tež w druhich rěčach zwobraznić, kotrež rozumiš.
-Tute nastajenje namakaš pod rajtarkom "{{int:prefs-editing}}".
-Wobhladaj sej woměrje tež druhe nastajenja.
-
-Dźi nětko k swojej [[Special:Preferences|stronje nastajenjow]] a wróć so potom k tutej stronje.',
-	'translate-fs-settings-skip' => 'Sym hotowy.
-Daj mi pokročować.',
-	'translate-fs-userpage-text' => 'Nětko dyrbiš wužiwarsku stronu wutworić.
-
-Prošu napisaj něšto wo sebi; štó sy a što činiš.
-To budźe zhromadźenstwu {{SITENAME}} při zhromadnym dźěle pomhać.
-Na {{SITENAME}} su ludźo z cyłeho swěta, kotřiž na rozdźělnych rěčach a projektach dźěłaja.
-
-We wupjelnjenym kašćiku horjeka w prěnjej lince, widźiš <nowiki>{{#babel:en-2}}</nowiki>.
-Prošu wudospołń jón přez twoje rěčne znajomosće.
-Ličba za rěčnym kodom wopisuje, kak derje znaješ rěč.
-Móžnosće su:
-* 1 - trochu
-* 2 - zakładne znajomosće
-* 3 - dobre znajomosće
-* 4 - niwow maćernorěčneho rěčnika
-* 5 - wužiwaš rěč profesionelnje, na přikład twoje powołanje je přełožowar.
-
-Jeli sy maćernorěčny rěčnik rěče, wuwostaj ličbu za rěčnym kodom a wužij jenož rěčny kod.
-Přikład: jeli tamilšćina je twoja maćeršćina, jendźelšćinu derje a swahilšćinu trochu rozumiš, by pisał:
-<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
-
-Jeli njeznaješ rěčny kod rěče, pohladaj nětko za nim.
-Móžeš slědowacu lisćinu za to wužiwać.',
+	'translate-fs-selectlanguage' => 'Wubjer rěč',
+	'translate-fs-settings-planguage' => 'Hłowna rěč:',
+	'translate-fs-settings-planguage-desc' => 'Hłowna rěč ma dwě funkciji: słuži jako rěč wužiwarskeho powjercha w tutym wikiju a jako standardna cilowa rěč za přełožki.',
+	'translate-fs-settings-slanguage' => 'Pomocna rěč $1:',
+	'translate-fs-settings-slanguage-desc' => 'Je móžno překožki zdźělenkow w druhich rěčach w přełožowanskim editorje pokazać.
+Tu móžeš wubrać, kotre rěče chceš rady widźeć.',
+	'translate-fs-settings-submit' => 'Nastajenja składować',
+	'translate-fs-userpage-level-N' => 'Sym maćernorěčnik',
+	'translate-fs-userpage-level-5' => 'Sym profesionalny přełožowar',
+	'translate-fs-userpage-level-4' => 'Mam znajomosće maćernorěčnika',
+	'translate-fs-userpage-level-3' => 'Mam dobre znajomosće',
+	'translate-fs-userpage-level-2' => 'Mam přerězne znajomosće',
+	'translate-fs-userpage-level-1' => 'Mam snadne znajomosće',
 	'translate-fs-userpage-submit' => 'Moju wužiwarsku stronu wutworić',
 	'translate-fs-userpage-done' => 'Gratulacija! Maš nětko wužiwarsku stronu.',
-	'translate-fs-permissions-text' => 'Nětko dyrbiš wo přiwzaće do skupiny přełožowarjow prosyć.
-
-Doniž kod njekorigujemy, dźi na stronu [[Project:Translator]] a slěduj instrukcije. Wróć so potom na tutu stronu.
-
-Po tym zo sy swoje požadanje wotpósłał, budźe jedyn z dobrowólnych čłonow teama twoje požadanje kontrolować a jo tak bórze kaž móžno schwalić.
-Prošu budź sćerpliwy.
-
-<del>Skontroluj, hač slědowace požadanje je korektnje wupjelnjene a klikń potom na tłóčatko.</del>',
+	'translate-fs-permissions-planguage' => 'Hłowna rěč:',
+	'translate-fs-permissions-submit' => 'Naprašowanje pósłać',
 	'translate-fs-target-text' => 'Zbožopřeće!
 Móžeš nětko přełožowanje započeć.
 
@@ -1966,6 +1930,7 @@ $messages['ja'] = array(
 	'firststeps' => '開始手順',
 	'firststeps-desc' => 'Translate 拡張機能を使用するウィキで利用者が開始準備をするための[[Special:FirstSteps|特別ページ]]',
 	'translate-fs-pagetitle-done' => ' - 完了！',
+	'translate-fs-pagetitle-pending' => ' - 保留中',
 	'translate-fs-pagetitle' => '開始準備ウィザード - $1',
 	'translate-fs-signup-title' => '利用者登録',
 	'translate-fs-settings-title' => '個人設定の設定',
@@ -1974,47 +1939,31 @@ $messages['ja'] = array(
 	'translate-fs-target-title' => '翻訳を始めましょう！',
 	'translate-fs-email-title' => '自分の電子メールアドレスの確認',
 	'translate-fs-intro' => '{{SITENAME}} 開始準備ウィザードへようこそ。これから翻訳者になるための手順について1つずつ案内していきます。それらを終えると、あなたは {{SITENAME}} でサポートしているすべてのプロジェクトのインターフェイスメッセージを翻訳できるようになります。',
-	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
-
-手順の初めは利用者登録を済ませることです。
-
-あなたが為した翻訳にはあなたの利用者名がクレジットとして付記されます。右の画像ではフォームの各欄をどのように埋めるのかを示しています。
-
-既に登録が済んでいる場合は、代わりに$1ログイン$2してください。登録がまだの場合は、登録を済ませてからこのページに戻ってきてください。
-
-$3登録$4',
-	'translate-fs-settings-text' => '個人設定に移動し、まずインターフェイス言語をあなたが作業しようとしている翻訳先の言語に変更してください。
-
-あなたのインターフェイス言語は既定の翻訳先言語として使われます。この言語を正しいものに変更する作業は忘れがちであるため、今それを行うことを強く勧めます。
-
-またさらに、あなたが知っている他の言語での訳文も表示するよう設定することができます。その設定は「{{int:prefs-editing}}」タブの下にあります。他の設定について探ってみるのもよいでしょう。
-
-[[Special:Preferences|個人設定ページ]]に移動し、終わったらこのページに戻ってきてください。',
-	'translate-fs-settings-skip' => '終わったので次に進みます。',
-	'translate-fs-userpage-text' => '次に、あなたの利用者ページを作成する必要があります。
-
-自身について、あなたが何者で何をしているのかなど、なにかを書いてください。これは {{SITENAME}} のコミュニティーで共同作業を行う助けとなります。{{SITENAME}} には世界中から異なる言語やプロジェクトで作業を行っている人々が集まっています。
-
-上の入力済みのボックスのちょうど1行目に <nowiki>{{#babel:en-2}}</nowiki> とあるのを確認してください。それをあなたの言語に関する知識を書いて完成させます。言語コードの後に続く数字は、その言語をあなたがどれだけ理解できるか伝えるものです。以下が選択肢です:
-* 1 - 少し
-* 2 - 基礎的な知識
-* 3 - 十分な知識
-* 4 - 母語話者の水準
-* 5 - プロの翻訳家であるなど、その言語を職業的に使用している
-
-あなたがその言語のまさに母語話者である場合、理解度を表す数字の部分は消して、言語コードのみを書きます。例えば、あなたが母語としてタミル語を話し、英語をうまく、スワヒリ語を少し話す場合は、次のようになります:
-<code><nowiki>{{#babel:ta|en-3|sw-1}}</nowiki></code>
-
-言語コードがわからない場合は、いい機会ですので調べてみましょう。下記の一覧を参考にしてください。',
+	'translate-fs-selectlanguage' => '言語を選択',
+	'translate-fs-settings-planguage' => '第一言語：',
+	'translate-fs-settings-planguage-desc' => '第一言語は、このウィキのインターフェースで使用する言語と
+翻訳対象の言語を兼ねます',
+	'translate-fs-settings-slanguage' => '補助言語$1：',
+	'translate-fs-settings-slanguage-desc' => '翻訳編集画面でそのメッセージの翻訳を他の言語で表示することができます。
+見たい言語があれば、ここで選択してください。',
+	'translate-fs-settings-submit' => '設定を保存',
+	'translate-fs-userpage-level-N' => '母語話者です',
+	'translate-fs-userpage-level-5' => '翻訳の専門家です',
+	'translate-fs-userpage-level-4' => '母語のように扱えます',
+	'translate-fs-userpage-level-3' => '流暢に扱えます',
+	'translate-fs-userpage-level-2' => '中級程度の能力です',
+	'translate-fs-userpage-level-1' => '少し使うことができます',
+	'translate-fs-userpage-help' => '自分の言語能力について紹介し、何か自己紹介をしてください。5つ以上の言語について知っている場合は、あとで追加することができます。',
 	'translate-fs-userpage-submit' => '自分の利用者ページを作成',
 	'translate-fs-userpage-done' => 'お疲れ様です。あなたの利用者ページができました。',
-	'translate-fs-permissions-text' => '次に、翻訳者グループに追加してもらうよう申請を出す必要があります。
+	'translate-fs-permissions-planguage' => '第一言語：',
+	'translate-fs-permissions-help' => '次に翻訳者グループへの追加申請をする必要があります。
+翻訳する予定の第一言語を選択してください。
 
-新しい仕組みが完成するまでは、[[Project:Translator]] に移動してそこにある指示に従っていただくことになっています。終わったらこのページに戻ってきてください。
-
-申請が提出されると、できる限り速やかにボランティアスタッフの誰かがあなたの申請を審査し承認いたします。この間しばらくお待ちください。
-
-<del>以下の申請が正しく入力されているか確認し、それから申請ボタンを押してください。</del>',
+他の言語やその他の事項については、以下のテキストボックスで説明できます。',
+	'translate-fs-permissions-pending' => '申請は[[$1]]に送信され、サイトのスタッフの誰かが早急に確認します。
+もしメールアドレスを設定していれば、メール通知によって結果をすぐに知ることができます。',
+	'translate-fs-permissions-submit' => '申請を送信',
 	'translate-fs-target-text' => "お疲れ様でした！あなたが翻訳を開始する準備が整いました。
 
 まだ慣れないことや分かりにくいことがあっても、心配することはありません。[[Project list|プロジェクト一覧]]にあなたが翻訳を行うことのできる各プロジェクトの概要があります。ほとんどのプロジェクトには短い解説ページがあり、「'''Translate this project'''」というリンクからそのプロジェクトの未翻訳メッセージをすべて一覧できるページに移動できます。すべてのメッセージグループに関して[[Special:LanguageStats|各言語別に現在の翻訳状況]]を一覧することもできます。

@@ -776,7 +776,7 @@ Testenn ar rannbennad : <pre>$1</pre>",
 	'pt-log-mark' => 'en deus merket{{GENDER:$2|}} an adweladenn $3 eus ar bajenn "[[:$1]]" evit bezañ troet',
 	'pt-log-unmark' => 'en deus dilamet{{GENDER:$2|}} ar bajenn "[[:$1]]" eus an droidigezh',
 	'pt-log-moveok' => '{{GENDER:$2|en deus|he deus}} adanvet ar bajenn da dreiñ $1 e $3',
-	'pt-log-movenok' => 'en deus bet{{GENDER:$2|}} ur gudenn en ur klask fiñval [[:$1]] da [[:$3]]',
+	'pt-log-movenok' => '{{GENDER:$2|en deus|he deus}} bet ur gudenn en ur glask adenvel [[:$1]] e [[:$3]]',
 	'pt-movepage-title' => 'Fiñval ar bajenn da dreiñ $1',
 	'pt-movepage-blockers' => "Ar bajenn da dreiñ na c'hell ket bezañ adanvet en abeg d'ar fazi{{PLURAL:$1||où}} da-heul :",
 	'pt-movepage-block-base-exists' => 'Bez ez eus eus ar bajenn diazez moned [[:$1]].',
@@ -817,6 +817,7 @@ Mar plij gwiriit [[Special:Log/pagetranslation|pajenn marilh an troidigezhioù]]
 	'pt-deletepage-action-other' => 'Kemmañ ar moned',
 	'pt-deletepage-lang-legend' => 'Diverkañ ar bajenn dreiñ',
 	'pt-deletepage-full-legend' => "Diverkañ ar bajenn a c'haller treiñ",
+	'pt-deletepage-any-legend' => 'Diverkañ ar bajenn da vezañ troet pe troidigezh ar bajenn da vezañ troet',
 	'pt-deletepage-current' => 'Anv ar bajenn :',
 	'pt-deletepage-reason' => 'Abeg :',
 	'pt-deletepage-subpages' => 'Diverkañ an holl ispajennoù',
@@ -1491,13 +1492,13 @@ Tekst wótrězka: <pre>$1</pre>',
 	'pt-movepage-action-perform' => 'Pśesunuś',
 	'pt-movepage-action-other' => 'Cel změniś',
 	'pt-movepage-intro' => 'Toś ten specialny bok dowólujo śi boki pśesunuś, kótarež sz za pśełožk markěrowane.
-Pśesunjenje njebuźo se ned staś, dokulaž wjele bokow muse se pśesunuś.
-Cakański rěd buźo se wužywaś, aby se boki pśesunuli.
+Pśesunjenje njebuźo se ned staś, dokulaž wjele bokow musy se pśesunuś.
+
 Mjaztym až boki se pśesuwaju,  njejo móžno z wótpowědnymi bokami interagěrowaś.
-Zmólki budu se protokolěrowaś w pséłožowańskem protokolu a muse se manuelnje wótpóraś.',
+Zmólki budu se protokolěrowaś w [[Special:Log/pagetranslation|pséłožowańskem protokolu]] a muse se manuelnje wótpóraś.',
 	'pt-movepage-logreason' => 'Źěl pśełožujobnego boka $1.',
 	'pt-movepage-started' => 'Zakładny bok jo něnto pśesunjony.
-Pšosym pśekontrolěruj pśełožowański protokol boka za zmólkami a pśewjeźeńsku powěźeńku.',
+Pšosym pśekontrolěruj [[Special:Log/pagetranslation|pśełožowański protokol boka]] za zmólkami a zdźělenje wuwjeźenja.',
 	'pt-locked-page' => 'Toś ten bok jo se zastajił, dokulaž pśełožujobny bok se rowno pśesuwa.',
 );
 
@@ -1860,7 +1861,7 @@ Käännösosion teksti: <pre>$1</pre>',
 	'pt-movepage-block-section-exists' => 'Käännösosiosivu [[:$2]] on olemassa.',
 	'pt-movepage-block-section-invalid' => 'Käännösosiosivun [[:$1]] uusi nimi ei ole kelvollinen (liian pitkä?)',
 	'pt-movepage-block-subpage-exists' => 'Alasivu [[:$2]] on olemassa.',
-	'pt-movepage-block-subpage-invalid' => 'Alisivun [[:$1]] uusi nimi ei ole kelvollinen (liian pitkä?)',
+	'pt-movepage-block-subpage-invalid' => 'Alasivun [[:$1]] uusi nimi ei ole kelvollinen (liian pitkä?)',
 	'pt-movepage-list-pages' => 'Lista siirrettävistä sivuista',
 	'pt-movepage-list-translation' => 'Käännössivut',
 	'pt-movepage-list-section' => 'Käännösosiosivut',
@@ -2782,12 +2783,16 @@ Zmylki budu so w [[Special:Log/pagetranslation|přełožowanskim protokolu stron
 	'pt-movepage-started' => 'Zakładna strona je nětko přesunjena.
 Prošu skontroluj [[Special:Log/pagetranslation|přełožowanski protokol strony]] za zmylkami a zdźělenku wukonjenja.',
 	'pt-locked-page' => 'Tuta strona je zawrjena, dokelž přełožujomna strona so runje přesuwa.',
+	'pt-deletepage-lang-title' => 'Přełožena strona $1 so haša.',
+	'pt-deletepage-full-title' => 'Přełožujomna strona $1 so haša.',
 	'pt-deletepage-invalid-title' => 'Podata strona płaćiwa njeje.',
 	'pt-deletepage-invalid-text' => 'Podata strona ani přełožujomna strona ani přełožk njeje.',
 	'pt-deletepage-action-check' => 'Strony nalistować, kotrež maja so zhašeć',
+	'pt-deletepage-action-perform' => 'Zhašeć',
 	'pt-deletepage-action-other' => 'Cil změnić',
 	'pt-deletepage-lang-legend' => 'Přełoženu stronu wušmórnyć',
 	'pt-deletepage-full-legend' => 'Přełožujomnu stronu wušmórnyć',
+	'pt-deletepage-any-legend' => 'Přełožujomnu stronu abo přełožk přełožujomneje strony zhašeć',
 	'pt-deletepage-current' => 'Mjeno strony:',
 	'pt-deletepage-reason' => 'Přičina:',
 	'pt-deletepage-subpages' => 'Wšě podstrony wušmórnyć',
@@ -3356,7 +3361,7 @@ $messages['ja'] = array(
 	'pt-log-name' => 'ページ翻訳記録',
 	'pt-log-mark' => 'ページ「[[:$1]]」の版 $3 を翻訳対象に{{GENDER:$2|指定}}',
 	'pt-log-unmark' => 'ページ「[[:$1]]」の翻訳指定を{{GENDER:$2|解除}}',
-	'pt-log-moveok' => '翻訳可能ページ$1を新しい名前に変更{{GENDER:$2|完了}}',
+	'pt-log-moveok' => '翻訳可能ページ$1を新しい名前$3に変更{{GENDER:$2|完了}}',
 	'pt-log-movenok' => '[[:$1]]を[[:$3]]へ移動中に問題が{{GENDER:$2|発生しました}}',
 	'pt-log-delete-full-ok' => '翻訳可能ページ$1の削除が{{GENDER:$2|完了しました}}',
 	'pt-log-delete-full-nok' => '翻訳可能ページ[[:$1]]の削除中に問題が{{GENDER:$2|発生しました}}',
@@ -4559,6 +4564,7 @@ $messages['pdc'] = array(
 	'pt-movepage-new' => 'Neier Naame:',
 	'pt-movepage-reason' => 'Grund:',
 	'pt-deletepage-current' => 'Naame vum Blatt:',
+	'pt-deletepage-reason' => 'Grund:',
 );
 
 /** Polish (Polski)

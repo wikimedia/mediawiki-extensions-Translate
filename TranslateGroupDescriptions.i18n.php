@@ -1150,6 +1150,7 @@ $messages['hsb'] = array(
 	'translate-group-desc-collection' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection] wobsahuje',
 	'translate-group-desc-flaggedrevs' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] wobsahuje',
 	'translate-group-desc-readerfeedback' => 'Metaskupina powěsćow, kotraž wšě powěsće za rozšěrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] wobsahuje',
+	'translate-group-desc-semantic' => 'Hłowna zdźělenska skupina, kotraž wšě zdźělenki za wšě rozšěrjenja [http://semantic-mediawiki.org/ Semantic MediaWiki] wobsahuje',
 	'translate-group-desc-socialprofile' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež su z rozšěrjenjom [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] přiwuzne',
 	'translate-group-desc-translate' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate] wobsahuje',
 	'translate-group-desc-wikiaextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrowane rozšěrjenja MediaWiki wobsahuje, kotrež so wot [http://www.wikia.com Wikia] wužiwaja',
@@ -1191,6 +1192,7 @@ Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/m
 	'bw-desc-shapado' => 'Skupina zdźělenkow za zjawnje k dispoziciji stejacu softwaru Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je serwer za mikroblogowanje ze zjawnym žórłowym kodom',
 	'translate-group-desc-statusnet-plugin' => 'Tute zdzělenki su dźěl tykača za [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Zdźělenska skupina za [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-system za nastroje [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|podpěra]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition techniske podrobnosće]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] móže awtorow nastawka we wikiju Wikimedije spěšnje namakać.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt, kotryž skići tekstowu wersiju Wikipedije offline na mobilnym graće.',
 );
@@ -1587,6 +1589,7 @@ $messages['lb'] = array(
 	'translate-group-desc-ihris-common' => 'Message fir [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], ee Modul vun [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Message fir [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], ee Modul vun [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'Message fir [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], ee Modul vun [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-qualify' => 'Message fir [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], ee Modul vun [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-kiwix' => 'Message fir [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'En Haapt-Plugin fir [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Message fir eng stabil Versioun vu [[Translating:MediaWiki|MediaWiki]]',
