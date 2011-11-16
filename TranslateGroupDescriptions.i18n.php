@@ -727,6 +727,7 @@ $messages['eo'] = array(
  * @author Locos epraix
  * @author Peter17
  * @author Translationista
+ * @author Vivaelcelta
  */
 $messages['es'] = array(
 	'translategroupdescriptions-desc' => 'Descripciones de los grupos de mensajes de los productos compatibles con la extensión [http://mediawiki.org/wiki/Extension:Translate Translate]',
@@ -737,6 +738,7 @@ $messages['es'] = array(
 	'translate-group-desc-collection' => 'Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'Grupo de mensajes meta que contienen todos los mensajes de las extensiones de [http://semantic-mediawiki.org/ Semantic MediaWiki]',
 	'translate-group-desc-socialprofile' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones relacionadas a la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Grupo de mensajes Meta conteniendo todos los mensajes para extensiones MediaWiki soportadas usadas por [http://www.wikia.com Wikia]',
@@ -766,10 +768,7 @@ Por favor mira [[mw:Extension:PDF_Writer]] y http://code.pediapress.com/wiki/wik
 	'bw-desc-shapado' => 'Grupo de mensajes para el sofware Q&A de fuente libre y abierta [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es un servidor de microblogueo de fuente abierta',
 	'translate-group-desc-statusnet-plugin' => 'Estos mensajes forman parte de un complemento para [[Translating:StatusNet|StatusNet]]',
-	'bw-desc-voctrain' => 'Entrenador de vocabulario basado en [http://omegawiki.org OmegaWiki]. Usa un sistema flashcard para aprender vocabulario de cualquier idioma soportado por Omegawiki.
-Creado por la Universidad de Bamberg. Licenciado GPL 2.0 o posterior. Desarrollado por [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] es capaz de encontrar rápidamente los autores de una página en una wiki de Wikimedia.',
-	'bw-desc-wikimediamobile' => 'Wikimedia mobile puede ser encontrada en http://m.wikipedia.org y permite llevar Wikipedia a Smartphones soportados alrededor del mundo.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es un proyecto para proveer una versión offline, sólo texto de Wikipedia para dispositivos móviles.',
 );
 

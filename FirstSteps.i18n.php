@@ -93,12 +93,36 @@ $messages['qqq'] = array(
 	'translate-fs-settings-slanguage' => 'Other languages shown while translating, followed by language selector, $1 is running number',
 	'translate-fs-settings-slanguage-desc' => 'Help message for choosing assistant languages',
 	'translate-fs-settings-submit' => 'Submit button',
-	'translate-fs-userpage-level-N' => 'Language skill level option, followed by language selector, will be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
-	'translate-fs-userpage-level-5' => 'Language skill level option, followed by language selector, will be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
-	'translate-fs-userpage-level-4' => 'Language skill level option, followed by language selector, will be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
-	'translate-fs-userpage-level-3' => 'Language skill level option, followed by language selector, will be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
-	'translate-fs-userpage-level-2' => 'Language skill level option, followed by language selector, will be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
-	'translate-fs-userpage-level-1' => 'Language skill level option, followed by language selector, will be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
+	'translate-fs-userpage-level-N' => 'A language skill level option.
+It is used inside a selector, which is followed by another selector, where you choose a language.
+Wording of this message may refer to it per "this language" or "the selected language", for example.
+
+The data collected via the pair of selectors will later be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
+	'translate-fs-userpage-level-5' => 'A language skill level option.
+It is used inside a selector, which is followed by another selector, where you choose a language.
+Wording of this message may refer to it per "this language" or "the selected language", for example.
+
+The data collected via the pair of selectors will later be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
+	'translate-fs-userpage-level-4' => 'A language skill level option.
+It is used inside a selector, which is followed by another selector, where you choose a language.
+Wording of this message may refer to it per "this language" or "the selected language", for example.
+
+The data collected via the pair of selectors will later be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
+	'translate-fs-userpage-level-3' => 'A language skill level option.
+It is used inside a selector, which is followed by another selector, where you choose a language.
+Wording of this message may refer to it per "this language" or "the selected language", for example.
+
+The data collected via the pair of selectors will later be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
+	'translate-fs-userpage-level-2' => 'A language skill level option.
+It is used inside a selector, which is followed by another selector, where you choose a language.
+Wording of this message may refer to it per "this language" or "the selected language", for example.
+
+The data collected via the pair of selectors will later be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
+	'translate-fs-userpage-level-1' => 'A language skill level option.
+It is used inside a selector, which is followed by another selector, where you choose a language.
+Wording of this message may refer to it per "this language" or "the selected language", for example.
+
+The data collected via the pair of selectors will later be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
 );
 
 /** Arabic (العربية)
@@ -134,6 +158,44 @@ $messages['ar'] = array(
 
 يمكنك ذكر لغات وملاحظات أخرى في مربع النص أدناه.',
 	'translate-fs-permissions-submit' => 'إرسال طلب',
+);
+
+/** Asturian (Asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'firststeps' => 'Primeros pasos',
+	'firststeps-desc' => "[[Special:FirstSteps|Páxina especial]] pa los usuarios que principien con una wiki qu'use la estensión Translate",
+	'translate-fs-pagetitle-done' => '- ¡fecho!',
+	'translate-fs-pagetitle-pending' => ' - pendiente',
+	'translate-fs-pagetitle' => 'Asistente pa los primeros pasos - $1',
+	'translate-fs-signup-title' => "Date d'alta",
+	'translate-fs-settings-title' => 'Configura les tos preferencies',
+	'translate-fs-userpage-title' => "Crea la to páxina d'usuariu",
+	'translate-fs-permissions-title' => 'Pidi permisos de traductor',
+	'translate-fs-target-title' => '¡Comienza a traducir!',
+	'translate-fs-email-title' => 'Confirma la to direición de corréu',
+	'translate-fs-intro' => "Bienveníu al asistente pa dar los primeros pasos en {{SITENAME}}.
+Vamos guiate, pasu ente pasu, pel procesu de convertite nun traductor.
+Cuando acabes, podrás traducir los ''mensaxes de la interfaz'' de tolos proyeutos sofitaos en {{SITENAME}}.",
+	'translate-fs-selectlanguage' => 'Escueyi una llingua',
+	'translate-fs-settings-planguage' => 'Llingua principal:',
+	'translate-fs-settings-planguage-desc' => 'A llingua principal ye tanto la llingua de la interfaz de la wiki
+como la llingua predeterminada pa facer les traducciones.',
+	'translate-fs-settings-slanguage' => "Llingua d'ayuda $1:",
+	'translate-fs-settings-slanguage-desc' => 'Ye posible amosar les traducciones de los mensaxes a otres llingües ne editor de traducciones.
+Equí pues escoyer qué llingües quies ver, si quies dalguna.',
+	'translate-fs-settings-submit' => 'Guardar les preferencies',
+	'translate-fs-userpage-level-N' => 'Soi falante nativu de',
+	'translate-fs-userpage-level-5' => 'Soi traductor profesional de',
+	'translate-fs-userpage-level-4' => 'La conozo como un falante nativu',
+	'translate-fs-userpage-level-3' => 'Tengo un bon dominiu de',
+	'translate-fs-userpage-level-2' => 'Tengo un dominiu moderáu de',
+	'translate-fs-userpage-level-1' => 'Se un poco de',
+	'translate-fs-userpage-help' => 'Indica les tos capacidaes llingüístiques y cunta daqué tocante a ti. Si sabes más de cinco llingües pues amestales más alantre.',
+	'translate-fs-userpage-submit' => "Crear la mio páxina d'usuariu",
+	'translate-fs-userpage-done' => "¡Bien fecho! Agora tienes una páxina d'usuariu.",
+	'translate-fs-permissions-planguage' => 'Llingua principal:',
 );
 
 /** Bashkir (Башҡортса)
@@ -927,11 +989,13 @@ Se vi ne deziras ricevi ĝin, vi povas malaktivigi en la langeto  « {{int:prefs
  * @author Fitoschido
  * @author Mor
  * @author Tempestas
+ * @author Vivaelcelta
  */
 $messages['es'] = array(
 	'firststeps' => 'Primeros pasos',
 	'firststeps-desc' => '[[Special:FirstSteps|Página especial]] para que los usuarios comiencen en un wiki usando la extensión de traducción',
 	'translate-fs-pagetitle-done' => '- ¡hecho!',
+	'translate-fs-pagetitle-pending' => '; pendiente',
 	'translate-fs-pagetitle' => 'Guía de inicio - $1',
 	'translate-fs-signup-title' => 'Registrarse',
 	'translate-fs-settings-title' => 'Configurar tus preferencias',
@@ -942,43 +1006,31 @@ $messages['es'] = array(
 	'translate-fs-intro' => "Bienvenido al asistente de los primeros pasos en {{SITENAME}}.
 Serás guíado a través del proceso de convertirte en un traductor pasa a paso.
 Al final serás capaz de traducir los ''mensajes de interfaz'' de todos los proyectos soportados en {{SITENAME}}",
-	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|marco]]
-
-El primer paso es que debes registrarte.
-
-Los créditos por tu traducción se atribuyen a tu nombre de usuario.
-La imagen de la derecha muestra como rellenar los campos.
-
-Si ya te has registrado, entonces $1inicia sesión$2.
-Una vez que te hayas registrado, por favor regresa a esta página.
-
-$3Registrarse$4',
-	'translate-fs-settings-text' => 'Ahora debes ir a tus preferencias y
-cambiar el idioma de la interfaz al idioma que quieres traducir.
-
-El idioma de la interfaz es usado como el idioma a traducir por defecto.
-Es fácil olvidarse de cambiar el idioma al correcto, por lo que configurarlo ahora es altamente recomendado.
-
-Mientras estás aquí, puedes hacer que el software muestre traducciones en otros idiomas que conozcas.
-Esta configuración se encuentra bajo la pestaña "{{int:prefs-editing}}".
-Siéntete libre de explorar otras configuraciones también.
-
-Ve a tu [[Special:Preferences|página de preferencias]] ahora y entonces puedes volver a esta página.',
-	'translate-fs-settings-skip' => 'He terminado.
-Déjenme continuar.',
-	'translate-fs-userpage-text' => 'Ahora es necesario crear una página de usuario.
-Por favor escribe algo sobre ti; Quién eres y qué haces.
-Esto ayudará a la {{SITENAME}} comunidad para trabajar juntos.
-En {{SITENAME}} hay gente de todo el mundo trabajando en distintos idiomas y proyectos.',
+	'translate-fs-selectlanguage' => 'Elija un idioma',
+	'translate-fs-settings-planguage' => 'Idioma principal:',
+	'translate-fs-settings-planguage-desc' => 'El idioma principal es tanto el idioma de la interfaz en este wiki
+y también el idioma en el que se van a realizar las traducciones.',
+	'translate-fs-settings-slanguage' => 'Idioma soportado $1:',
+	'translate-fs-settings-slanguage-desc' => 'Es posible mostrar las traducciones de los mensajes en otros idiomas en el editor de traducciones.
+Aquí puede elegir, si quiere, los idiomas que le gustaría ver.',
+	'translate-fs-settings-submit' => 'Guardar las preferencias',
+	'translate-fs-userpage-level-N' => 'Soy hablante nativo de',
+	'translate-fs-userpage-level-5' => 'Soy traductor profesional de',
+	'translate-fs-userpage-level-4' => 'Lo conozco como un hablante nativo',
+	'translate-fs-userpage-level-3' => 'Tengo un buen dominio de',
+	'translate-fs-userpage-level-2' => 'Tengo un dominio con moderado de',
+	'translate-fs-userpage-level-1' => 'Sé un poco de',
+	'translate-fs-userpage-help' => 'Por favor indique sus competencias lingüísticas y coméntenos algo sobre usted. Si sabe más de cinco idiomas los puede añadir más adelante.',
 	'translate-fs-userpage-submit' => 'Crear mi página de usuario',
 	'translate-fs-userpage-done' => '¡Bien hecho! Ahora tienes una página de usuario.',
-	'translate-fs-permissions-text' => 'Ahora tienes que hacer una solicitud para ser agregado al grupo de traductores.
+	'translate-fs-permissions-planguage' => 'Idioma principal:',
+	'translate-fs-permissions-help' => 'Ahora tiene que hacer una solicitud para pasar a formar parte del grupo de traductores.
+Seleccione el idioma principal en el que se va a traducir.
 
-Hasta que arreglemos el código, por favor ve a [[Project:Translator]] y sigue las instrucciones.
-
-Después de que hayas enviado tu solicitud, uno de los miembros voluntarios del personal verificará tu solicitud y la aprobará tan pronto como sea posible. Por favor se paciente.
-
-<del>Verifica que la siguiente solicitud está correctamente rellenada y luego presiona el botón de solicitud.</del>',
+Puede mencionar otros idiomas y otras observaciones en el cuadro de texto inferior.',
+	'translate-fs-permissions-pending' => 'Su solicitud ha sido enviada a "[[$1]]" y alguno de los miembros del personal del sitio atenderá tan pronto como sea posible.
+Si confirmas tu dirección de correo electrónico, recibirá una notificación por correo electrónico tan pronto como ocurra.',
+	'translate-fs-permissions-submit' => 'Enviar la solicitud',
 	'translate-fs-target-text' => '¡Felicidades!
 Ahora puedes comenzar a traducir.
 
@@ -2075,12 +2127,12 @@ Aam Engk kanns De de Täxte un Nohreeschte uß alle Projäkte övversäze, di {{
 	'translate-fs-settings-slanguage' => 'Zohsäzlejje Shprooch Nommer $1:',
 	'translate-fs-settings-slanguage-desc' => 'Et es müjjelesch, sesch Övversäzonge en ander Shprooche beim sellver övversäze aanzeije ze lohße. Söhg uß, wat för esu en Shprooche De ze sinn krijje wells, wan De övverhoup wälsche han wells.',
 	'translate-fs-settings-submit' => 'Enstellunge faßhallde',
-	'translate-fs-userpage-level-N' => 'Ming Mottershprooch es',
-	'translate-fs-userpage-level-5' => 'Esch ben ene beroofsmääßeje Övversäzer vun',
-	'translate-fs-userpage-level-4' => 'Esch kennen mesch esu jood uß, wi wann et ming Motterschprooch wöhr, met',
-	'translate-fs-userpage-level-3' => 'Esch kann joot ömjonn met',
-	'translate-fs-userpage-level-2' => 'Esch kann meddelmääßesch',
-	'translate-fs-userpage-level-1' => 'Esch kann e bezje',
+	'translate-fs-userpage-level-N' => 'Ming Mottershprooch es:',
+	'translate-fs-userpage-level-5' => 'Esch ben ene beroofsmääßeje Övversäzer vun:',
+	'translate-fs-userpage-level-4' => 'Esch kennen mesch esu jood uß, wi wann et ming Motterschprooch wöhr, met:',
+	'translate-fs-userpage-level-3' => 'Esch kann joot ömjonn met dä Schprooch:',
+	'translate-fs-userpage-level-2' => 'Esch kann di Schprooch meddelmääßesch:',
+	'translate-fs-userpage-level-1' => 'Esch kann e beßje vun dä Schprooch:',
 	'translate-fs-userpage-help' => 'Jiv Ding Shprooche aan un sach ons jät övvr Desch. Wann De mieh wi fönnef Schprooche kanns, kanns De di schpääder emmer noch derbei donn.',
 	'translate-fs-userpage-submit' => 'Don en Metmaachersigg för Desch aanlääje',
 	'translate-fs-userpage-done' => 'Joot jemaat! Jäz häs De en Metmaachersigg.',
