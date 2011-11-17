@@ -750,12 +750,13 @@ $messages['es'] = array(
 	'bw-desc-freecol' => 'Antes de traducir FreeCol a tu idioma, por favor lee [[Translating:FreeCol]]. Freecol usa la licencia GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un foro web escrito en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] es un sistema de corrección de errores libre basado en web. Por favor reporta cualquier problema en [[Support]].',
+	'translate-group-desc-eol' => 'Grupo de mensajes de la [[Translating:EOL|Enciclopedia de la vida]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Un complemento nuclear para [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] es un sistema de información de gestión (MIS) para microfinanzas',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' es una biblioteca python para escribir documentos PDF de artículos MediaWiki los cuales fueron analizados por la biblioteca mwlib.
 
 Por favor mira [[mw:Extension:PDF_Writer]] y http://code.pediapress.com/wiki/wiki/mwlibrl para mayor información.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] es un cliente de correo basado en web escrito en PHP. Por favor reporta cualquier problema en [[Support]].',
+	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] es un cliente de correo web escrito en PHP.',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] es un lector de Wikipedia sin conexión',
 	'bw-desc-openlayers' => 'OpenLayers es un generador de mapas dinámico de fuente abierta. Por favor reporta cualquier problema en [[support]].',
 	'bw-desc-openstreetmap' => 'Grupo de mensajes para todos los mensajes de [[Translating:OpenStreetMap|OpenStreetMap]]',

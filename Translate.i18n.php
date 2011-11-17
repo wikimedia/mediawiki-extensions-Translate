@@ -6185,7 +6185,7 @@ Todos los valores tienen límites superiores e inferiores.',
 	'translate-translations-history-short' => 'h',
 	'languagestats' => 'Estadísticas por idioma',
 	'languagestats-summary' => 'Esta página muestra estadísticas de traducción para todos los grupos de mensajes para un idioma.',
-	'languagestats-stats-for' => 'Estadísticas de traducción para $1 ($2).',
+	'languagestats-stats-for' => 'Estadísticas de las traduccines en $1 ($2).',
 	'languagestats-recenttranslations' => 'Traducciones recientes',
 	'translate-langstats-incomplete' => 'Algunas de las estadísticas de esta página están incompletas. Actualiza la página para obtener más estadísticas.',
 	'translate-langstats-expand' => 'expandir',
@@ -7504,8 +7504,9 @@ Rêson :
 	'translate-edit-warnings' => 'Avèrtissements sur les traduccions encomplètes',
 	'translate-edit-tmsugs' => 'Consèlys de la mèmouère de traduccion',
 	'translate-edit-tmmatch' => '$1 % de corrèspondance',
-	'translate-use-suggestion' => 'Entrebetar ceti consèly dens la fenétra de traduccion. Cen remplace l’ensemblo du contegnu d’ora.',
+	'translate-use-suggestion' => 'Remplaciér la traduccion d’ora per ceti consèly.',
 	'translate-edit-tab-list' => 'Lista de mèssâjos',
+	'translate-edit-askpermission' => 'Demandar la pèrmission',
 	'translate-magic-pagename' => 'Traduccion ètendua de MediaWiki',
 	'translate-magic-help' => 'Vos pouede traduire los noms paralèlos de les pâges spèciâles, los mots magicos et los noms des èspâços de noms.
 
@@ -7627,9 +7628,6 @@ Totes les valors ont des limites d’amont et desot.',
 	'translate-percentage-fuzzy' => 'Dèpassâs',
 	'translate-nothing-to-do' => 'Totes les traduccions possibles semblont avêr étâ fêtes.
 Vos éte encoragiê a revêre los mèssâjos dês [[Special:Translate|{{int:translate}}]].',
-	'translate-languagestats-groups' => ' # Apondéd des numerôs de tropes de mèssâjos, yon per legne por limitar les tropes
- # que sont montrâs dessus Special:LanguageStats. Les tropes pas ègzistentes seront
- # ignorâs.',
 	'translate-languagestats-overall' => 'Totes les tropes de mèssâjos ensemblo',
 	'translate-ls-submit' => 'Fâre vêre les statistiques',
 	'translate-ls-column-group' => 'Tropa de mèssâjos',
@@ -7732,6 +7730,7 @@ Dètalys : $1',
 	'translate-messagereview-apierror-unknownmessage' => 'lo mèssâjo at pas étâ trovâ',
 	'translate-messagereview-apierror-fuzzymessage' => 'la traduccion est marcâ coment « fuzzy »',
 	'translate-messagereview-apierror-owntranslation' => 'Vos pouede pas accèptar voutres prôpres traduccions.',
+	'translate-messagereview-apierror-badtoken' => 'Prêsa fôssa',
 	'translate-messagereview-reviews' => 'Accèptâ per {{PLURAL:$1|yon utilisator|$1 utilisators}}',
 	'translate-messagereview-reviewswithyou' => 'Accèptâ per {{PLURAL:$1|yon utilisator|$1 utilisators}}, vos avouéc',
 	'translate-messagereview-reviewsyou' => 'Accèptâ per vos',
@@ -7739,6 +7738,8 @@ Dètalys : $1',
 	'group-translate-proofr-member' => 'rèviso{{GENDER:$1|r|sa}} de traduccion',
 	'grouppage-translate-proofr' => '{{ns:project}}:Rèvisors de traduccion',
 	'logentry-translationreview-message' => '$1 at {{GENDER:$2|accèptâ}} la traduccion $3',
+	'translate-workflowstatus' => 'Statut : $1',
+	'translate-stats-workflow' => 'Statut',
 );
 
 /** Friulian (Furlan)
