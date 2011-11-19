@@ -67,8 +67,8 @@ $messages['en'] = array(
 	'translate-group-desc-tsint' => 'A message group for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], the i18n system for [http://toolserver.org Toolserver] tools (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)',
 	//'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] is an OmegaWiki-based vocabulary trainer',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] is able to quickly find the authors of a part of a page in a Wikimedia wiki',
-	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] delivers an offline, text-only version of Wikipedia on a mobile device.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wikipedia.',
+	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] delivers an offline, text-only version of Wikipedia on a mobile device',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wikipedia',
 );
 
 /** Message documentation (Message documentation)
