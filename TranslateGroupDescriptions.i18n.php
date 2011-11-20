@@ -991,11 +991,9 @@ Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pe
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] é un servidor de mensaxes de blogue curtas de código aberto',
 	'translate-group-desc-statusnet-plugin' => 'Estas mensaxes forman parte dun complemento do [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Un grupo de mensaxes para o [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], o sistema i18n das ferramentas do [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|axuda]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalles técnicos]</span>)',
-	'bw-desc-voctrain' => 'Adestrador de vocabulario baseado en Omegawiki. Usa un sistema de tarxetas para aprender vocabulario de calquera lingua a calquera lingua soportado por Omegawiki.
-Extensión creada pola Universidade de Bamberg. Licenza GPL 2.0 ou posterior. Desenvolvido por [[User:Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php?user_lang=gl Wikiblame] é capaz de atopar rapidamente os autores dunha páxina nun wiki da Wikimedia.',
-	'bw-desc-wikimediamobile' => 'Wikimedia móbil pódese atopar en http://gl.m.wikipedia.org e pretende que a Wikipedia sexa accesible desde teléfonos móbiles en todo o mundo.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] é un proxecto para ollar unha versión da Wikipedia sen conexión e en modo de só lectura nun dispositivo móbil.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar na Wikipedia',
 );
 
 /** Swiss German (Alemannisch)
@@ -1194,6 +1192,7 @@ Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/m
 	'translate-group-desc-tsint' => 'Zdźělenska skupina za [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-system za nastroje [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|podpěra]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition techniske podrobnosće]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] móže awtorow nastawka we wikiju Wikimedije spěšnje namakać.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt, kotryž skići tekstowu wersiju Wikipedije offline na mobilnym graće.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] je platformu přesahaca aplikacija za mobilne telefony a tabletowe ličaki za čitanje a wobdźěłowanje Wikipedije',
 );
 
 /** Hungarian (Magyar)
@@ -1299,11 +1298,9 @@ Vide le [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plur
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es un servitor open source de microblogging',
 	'translate-group-desc-statusnet-plugin' => 'Iste messages face parte de un plug-in pro [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Un gruppo de messages pro [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], le systema de internationalisation pro le instrumentos de [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|adjuta]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalios technic]</span>)',
-	'bw-desc-voctrain' => 'Trainator de vocabulario a base de [http://omegawiki.org OmegaWiki]. Usa un systema de flashcard pro apprender vocabulario de omne lingua a omne lingua supportate per OmegaWiki.
-Create pro le Universitate de Bamberg. Sub licentia GPL 2.0 o plus recente. Disveloppate per [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pote rapidemente trovar le autores de un pagina in un wiki de Wikimedia.',
-	'bw-desc-wikimediamobile' => 'Wikimedia mobile se trova a http://m.wikipedia.org e permitte acceder a Wikipedia con le telephonos mobile supportate in tote le mundo.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es un projecto pro facer un version de Wikipedia usabile sin connexion, e con texto solmente, in un apparato mobile.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] es un application multi-platteforma pro apparatos mobile e tablettas pro leger e contribuer a Wikipedia',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1467,6 +1464,7 @@ $messages['ja'] = array(
 	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver]にあるツールの国際化システム(<span class="plainlinks">[[Translating talk:Toolserver|サポート]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition 技術的詳細]</span>)である[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]のメッセージ群',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]は、ウィキメディアのウィキ上のページの著者をすばやく検索することができます',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]は、携帯可能な機器で、オフラインかつ文字のみのウィキペディアを提供します',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]はウィキペディアを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末のアプリケーションです',
 );
 
 /** Kabardian (Cyrillic) (Адыгэбзэ (Cyrillic))
@@ -1745,10 +1743,9 @@ $messages['ms'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] ialah pelayan mikroblog',
 	'translate-group-desc-statusnet-plugin' => 'Mesej-mesej ini tergolong dalam pemalam untuk [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Kumpulan mesej untuk [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], sistem i18n untuk peralatan [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|bantuan]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition butiran teknikal]</span>)',
-	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] ialah pelatih kosa kata berasaskan OmegaWiki',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] boleh cepat mencari pengarang sebahagian laman dalam wiki di bawah Wikimedia',
-	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Wikimedia mobile]] ialah antara muka Wikipedia untuk peranti mudah alih',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] menyampaikan versi teks sahaja Wikipedia di luar talian pada peranti mudah alih.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] merupakan aplikasi mudah alih dan tablet merentas platform untuk membaca dan menyumbang kepada Wikipedia',
 );
 
 /** Maltese (Malti)
@@ -2722,11 +2719,9 @@ Xem thêm chi tiết tại [[MW:Extension:PDF Writer]] và http://code.pediapres
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] là máy chủ tiểu blog nguồn mở',
 	'translate-group-desc-statusnet-plugin' => 'Các thông điệp này thuộc về một phần bổ trợ cho [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Nhóm thông điệp của [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], hệ thống biên dịch các công cụ [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|trợ giúp]] · [https://wiki.toolserver.org/view/Toolserver_Intuition chi tiết kỹ thuật]</span>)',
-	'bw-desc-voctrain' => "Chương trình dạy từ vựng dựa trên [http://omegawiki.org OmegaWiki]. Sử dụng hệ thống thẻ nhớ (''flashcard'') để tập nói ngôn ngữ nào dùng ngôn ngữ nào tại Omegawiki.
-Được xây dựng bởi [[User:Kim Bruning|Kim Bruning]] cho Đại học Bamberg và cho phép sử dụng theo giấy phép GPL 2.0 hoặc phiên bản mới hơn.",
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] có thể nhanh chóng tìm ra tác giả của trang trong wiki của Wikimedia.',
-	'bw-desc-wikimediamobile' => 'Wikimedia di động có thể xem tại http://m.wikipedia.org với mục tiêu mang Wikipedia đến các điện thoại thông minh trên khắp thế giới.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] là dự án sản xuất phiên bản Wikipedia ngoại tuyến có văn bản thuần để đọc trên thiết bị di động.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] là một ứng dụng đa nền tảng dành cho máy tính di động và bảng để đọc và đóng góp vào Wikipedia',
 );
 
 /** Yiddish (ייִדיש)

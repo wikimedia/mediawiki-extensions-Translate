@@ -1739,62 +1739,10 @@ $messages['hu'] = array(
 	'translate-fs-intro' => "Üdvözlünk a {{SITENAME}} használatának első lépéseiben segítő varázslóban!
 Lépésről lépésre segítünk a fordítóvá válás folyamatában.
 A végén hozzákezdhetsz bármelyik, {{SITENAME}} által támogatott projekt ''felületének üzeneteinek'' fordításához.",
-	'translate-fs-signup-text' => '[[Image:HowToStart1CreateAccount.png|frame]]
-
-Első lépés a regisztráció.
-
-A fordításaid a te felhasználónevedhez lesznek kötve.
-A jobb oldalon található kép megmutatja, hogyan kell helyesen kitölteni a mezőket.
-
-Ha már korábban regisztráltál, inkább $1jelentkezz be$2.
-Ha megtörtént a regisztráció, látogass vissza erre a lapra.
-
-$3Regisztráció$4',
-	'translate-fs-settings-text' => 'Most menj a beállításaidhoz, és ha mást nem is,
-de állítsd át a felület nyelvét arra, amire fordítani fogsz.
-
-A felület nyelve lesz az alapértelmezett célnyelv.
-Könnyű elfelejteni a helyes nyelvre váltást, így erősen ajánlott a módosítás.
-
-Míg ott vagy, beállíthatod, hogy a szoftver más olyan nyelveken is megjelenítse a fordításokat, melyeket ismersz.
-Ez a beállítás a „{{int:prefs-editing}}” fülön található.
-Ezeken kívül további beállításokat is kipróbálhatsz.
-
-Menj a [[Special:Preferences|beállításaidhoz]], majd térj vissza erre a lapra.',
-	'translate-fs-settings-skip' => 'Végeztem.
-Szeretném folytatni.',
-	'translate-fs-userpage-text' => 'Most létre kell hoznod egy felhasználói lapot!
-
-Írj valamit magadról: ki vagy és mit csinálsz.
-Ez elősegíti a {{SITENAME}} közösség közös munkáját.
-A {{SITENAME}}-en a világ minden tájáról végeznek szerkesztéseket különböző nyelven és projekteken.
-
-A fenti, előre kitöltött dobozban az első sorban ezt látod: <nowiki>{{#babel:en-2}}</nowiki>.
-Egészítsd ki a nyelvtudásoddal.
-A nyelv utáni szám leírja, hogy milyen tudással rendelkezel az adott nyelvből.
-A lehetőségek:
-* 1 – minimális
-* 2 – alaptudás
-* 3 – jó tudás
-* 4 – anyanyelvi szinten
-* 5 – a nyelvet hivatásszerűen használod, például hivatásos fordító vagy.
-
-Ha a nyelv anyanyelved, akkor hagyd ki a tudásszintet, és csak a nyelvkódot írd be.
-Például ha magyar az anyanyelved, jól beszélsz angolul és még egy kicsit németül, akkor a következőt írd:
-<code><nowiki>{{#babel:hu|en-3|de-1}}</nowiki></code>
-
-Ha nem tudod egy nyelv kódját, itt az ideje, hogy megkeresd.
-Az alábbi listát használhatod hozzá.',
+	'translate-fs-settings-submit' => 'Beállítások mentése',
 	'translate-fs-userpage-submit' => 'Felhasználói lap létrehozása',
 	'translate-fs-userpage-done' => 'Felhasználói lap létrehozva.',
-	'translate-fs-permissions-text' => 'Most kérned kell, hogy a fordítói csoportba kerülhess.
-
-Amíg nem javítjuk ki a kódot, menj a [[Project:Translator]] lapra, és kövesd az ott megjelenő információkat, majd gyere vissza erre a lapra.
-
-Miután elküldted a kérésedet, a személyzet egyik önkéntes tagja ellenőrzi a kérésedet, és elfogadja, amilyen gyorsan lehetséges
-Légy türelmes.
-
-<del>Ellenőrizd, hogy az alábbi kérelem megfelelően ki van-e töltve, majd kattints a Kérelem elküldése gombra.</del>',
+	'translate-fs-permissions-planguage' => 'Elsődleges nyelv:',
 	'translate-fs-target-text' => "Gratulálunk!
 Most már elkezdhetsz fordítani.
 
