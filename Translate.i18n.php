@@ -4397,6 +4397,7 @@ Metoda <code>$1</code> není podporována.',
 	'group-translate-proofr' => 'Hodnotitelé překladů',
 	'group-translate-proofr-member' => '{{GENDER:$1|hodnotitel|hodnotitelka|hodnotitel}} překladů',
 	'grouppage-translate-proofr' => '{{ns:project}}:Hodnotitelé překladů',
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|přijal|přijala|přijal}} překlad $3',
 );
 
 /** Kashubian (Kaszëbsczi)
@@ -13046,6 +13047,8 @@ Optional Message sollen nëmmen iwwersat gi wann Är Sprooch speziell Ufuerderun
 	'translate-edit-tmmatch' => '$1% Iwwereestëmmung',
 	'translate-use-suggestion' => 'Déi aktuell Iwwersetzung duerch dëse Virschlag ersetzen.',
 	'translate-edit-tab-list' => 'Lëscht vun de Messagen',
+	'translate-edit-nopermission' => "Dir braucht eng Autorisatioun fir Messagen z'iwwersetzen.",
+	'translate-edit-askpermission' => 'Autorisatioun ufroen',
 	'translate-magic-pagename' => 'Erweidert MediaWiki Iwwersetzung',
 	'translate-magic-help' => "Dir kënnt d'Aliase vu Spezialsäiten, magesch Wierder an Nummraum Nimm iwwersetzen.
 
@@ -13105,6 +13108,7 @@ D'Standard-Lëscht vu Sproochen hànkt vun Ärer Sprooch of.",
 	'right-translate-manage' => 'Iwwersetzungsgruppe geréieren',
 	'right-translate-import' => 'Offline Iwwersetzungen importéieren',
 	'right-translate-messagereview' => 'Iwwersetzungen nokucken',
+	'right-translate-groupreview' => "D'Iwwersetzunge vun de Gruppe vu Messagen nokucken",
 	'translate-rc-translation-filter' => 'Iwwersetzunge filteren:',
 	'translate-rc-translation-filter-no' => 'Näischt maachen',
 	'translate-rc-translation-filter-only' => 'Nëmmen Iwwersetzunge weisen',
@@ -13291,10 +13295,13 @@ Detailler: $1',
 	'group-translate-proofr-member' => '{{GENDER:$1|Persoun déi Iwwersetzungen nokuckt}}',
 	'grouppage-translate-proofr' => '{{ns:project}}: Leit déi Iwwersetzungen nokucken',
 	'log-name-translationreview' => 'Logbuch vun den nogekuckten Iwwersetzungen',
+	'log-description-translationreview' => 'Logbuch vun allen nogekuckten Iwwersetzungen a Gruppe vu Messagen.',
 	'logentry-translationreview-message' => "$1 {{GENDER:$2|huet}} d'Iwwersetzung $3 nogekuckt",
+	'translate-workflowstatus' => 'Statut: $1',
 	'translate-workflow-set-do' => 'Astellen',
 	'translate-workflow-set-doing' => 'Astellen...',
 	'translate-workflow-set-done' => 'Agestallt!',
+	'translate-stats-workflow' => 'Statut',
 );
 
 /** Ganda (Luganda)

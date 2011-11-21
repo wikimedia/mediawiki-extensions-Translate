@@ -5618,16 +5618,19 @@ $messages['sr-ec'] = array(
 	'translate-tag-translate-link-desc' => 'Преведите ову страну',
 	'tpt-translation-intro' => 'Ова страница је <span class="plainlinks">[$1 преведено издање]</span> странице [[$2]]. Превод је $3% завршен.',
 	'tpt-languages-separator' => '&#160;•&#160;',
+	'pt-log-name' => 'Историја превода странице',
 );
 
-/** Serbian Latin ekavian (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪Srpski (latinica)‬)
  * @author Michaello
+ * @author Rancher
  */
 $messages['sr-el'] = array(
 	'tpt-diff-old' => 'Prethodni tekst',
 	'tpt-diff-new' => 'Sledeći tekst',
 	'tpt-submit' => 'Označi ovu verziju za prevod',
 	'translate-tag-translate-link-desc' => 'Prevedite ovu stranu',
+	'pt-log-name' => 'Istorija prevoda stranice',
 );
 
 /** Seeltersk (Seeltersk)
