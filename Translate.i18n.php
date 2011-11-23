@@ -645,8 +645,6 @@ If you click the "Accept" button in [[Special:Translate]], the button may be dis
  * @author Jose77
  */
 $messages['rtm'] = array(
-	'translate-edit' => "a'tū'ạki",
-	'translate-talk' => 'hạifäeaga',
 	'translate-page-edit' => "a'tū'ạki",
 );
 
@@ -654,8 +652,6 @@ $messages['rtm'] = array(
  * @author Flrn
  */
 $messages['krl'] = array(
-	'translate-edit' => 'muokkaus',
-	'translate-talk' => 'pagin',
 	'translate-page-navigation-legend' => 'Valličy',
 );
 
@@ -663,8 +659,6 @@ $messages['krl'] = array(
  * @author Jose77
  */
 $messages['niu'] = array(
-	'translate-edit' => 'fakahakohako',
-	'translate-history' => 'liu onoono atu ki tua',
 	'translate-page-navigation-legend' => 'Navikati',
 );
 
@@ -970,9 +964,6 @@ Besonderhede: $1',
  * @author Mdupont
  */
 $messages['aln'] = array(
-	'translate-edit' => 'redaktoj',
-	'translate-talk' => 'diskutim',
-	'translate-history' => 'histori',
 	'translate-task-view' => 'Shiko të gjitha mesazhet nga',
 	'translate-task-untranslated' => 'Shiko të gjitha mesazhet papërkthyera nga',
 	'translate-task-optional' => 'Shiko mesazhet opsional nga',
@@ -991,7 +982,6 @@ $messages['aln'] = array(
 	'translate-page-settings-legend' => 'Paneli i punëve',
 	'translate-page-task' => 'Dua të',
 	'translate-page-group' => 'Grup',
-	'translate-page-group-tooltip' => 'Emri i një grupi të mesazheve. Në qoftë se grupi përbëhet nga një mesin apo superset e mesazheve nga grupet e tjera, ajo është shfaqur me shkronja të theksuara.',
 	'translate-page-language' => 'Gjuhë',
 	'translate-page-limit' => 'Limit',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|mesazh|mesazhe}} për faqe',
@@ -1068,8 +1058,6 @@ $messages['aln'] = array(
  */
 $messages['am'] = array(
 	'translate' => 'ማስተርጐሚያ',
-	'translate-edit' => 'አርም',
-	'translate-history' => 'ታሪክ',
 	'translate-task-view' => 'መልእክቶች ሁሉ ለማየት',
 	'translate-task-untranslated' => 'ያልተተረጎሙትን መልእክቶች ሁሉ ለማየት',
 	'translate-task-problematic' => 'ችግር ያላቸውን መልእክቶች ለማየት',
@@ -1100,9 +1088,6 @@ $messages['am'] = array(
  */
 $messages['an'] = array(
 	'translate' => 'Traducir',
-	'translate-edit' => 'editar',
-	'translate-talk' => 'descutir',
-	'translate-history' => 'historial',
 	'translate-task-view' => 'Veyer totz os mensaches de',
 	'translate-task-untranslated' => 'Veyer totz os mensaches sin traducir de',
 	'translate-task-optional' => 'Veyer os mensaches opcionals de',
@@ -1152,18 +1137,8 @@ Ha de fer parte d'a colla de traductors ta poder alzar os cambeos. Ístos no que
 	'translate-magic-special' => 'Alias de pachinas especials',
 	'translate-magic-words' => 'Parolas machicas',
 	'translate-magic-namespace' => 'Espacios de nombres',
-	'translationchanges' => 'Cambeos en a traducción',
-	'translationchanges-export' => 'exportar',
-	'translationchanges-change' => '$1: $2 por $3',
 	'translate-translations-fieldset-title' => 'Mensache',
 	'translate-save' => 'Alzar($1)',
-);
-
-/** Old English (Ænglisc) */
-$messages['ang'] = array(
-	'translate-edit' => 'ādihtan',
-	'translate-talk' => 'mōtung',
-	'translate-history' => 'stǣr',
 );
 
 /** Arabic (العربية)
@@ -1559,7 +1534,6 @@ $messages['arc'] = array(
  * @author Poquil
  */
 $messages['arn'] = array(
-	'translate-talk' => 'dungun',
 	'translate-page-showing' => 'adkintun mensajes del $1 al $2 de $3',
 	'translate-page-showing-all' => 'adkintun $1 {{PLURAL:$1|message|messages}}.',
 	'translate-edit-contribute' => 'ñma',
@@ -1811,9 +1785,6 @@ $1',
 $messages['as'] = array(
 	'translate' => 'ভাঙনি কৰক',
 	'translate-desc' => 'মেডিয়াৱিকি আৰু অন্য ভাঙনিৰ কাৰণে [[Special:Translate|বিশেষ পৃষ্ঠা]]',
-	'translate-edit' => 'সম্পাদনা',
-	'translate-talk' => 'আলোচনা',
-	'translate-history' => 'ইতিহাস',
 	'translate-showsub' => ' {{PLURAL:$1|subgroup|$1 subgroups}} দেখুৱাওক',
 	'translate-grouplisting' => 'এইখন ভাঙনি কৰিব পৰা সকলো গোটৰ তালিকা।
 ভাঙনি নোহোৱা বাৰ্ত্তাবোৰ চাবলৈ বাৰ্ত্তাগোটৰ নামটোত ক্লিক কৰক।',
@@ -2236,7 +2207,6 @@ Detalles: $1",
  */
 $messages['az'] = array(
 	'translate' => 'Tərcümə et',
-	'translate-history' => 'tarix',
 	'translate-page-group' => 'Qrup',
 	'translate-page-language' => 'Dil',
 	'translate-submit' => 'Seç',
@@ -2552,9 +2522,6 @@ $messages['bcc'] = array(
  */
 $messages['bcl'] = array(
 	'translate' => 'Sangliân',
-	'translate-edit' => 'hirahón',
-	'translate-talk' => 'magtaram',
-	'translate-history' => 'historya',
 	'translate-task-view' => 'Hilingón an gabos na mga mensahe poon',
 	'translate-task-untranslated' => 'Hilingón an gabos na mga dai nasangliân na mensahe poon',
 	'translate-task-review' => 'Reparohon an mga pagbabâgo sa',
@@ -2571,13 +2538,6 @@ $messages['bcl'] = array(
 	'translate-magic-cm-original' => 'Orihinal',
 	'translate-magic-cm-save' => 'Itagama',
 	'translate-magic-cm-savefailed' => 'Bigô an pagtagama',
-);
-
-/** Belarusian (Беларуская)
- * @author Тест
- */
-$messages['be'] = array(
-	'translate-history' => 'гісторыя',
 );
 
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
@@ -3006,9 +2966,6 @@ $messages['bg'] = array(
  */
 $messages['bn'] = array(
 	'translate' => 'অনুবাদ করুন',
-	'translate-edit' => 'সম্পাদনা',
-	'translate-talk' => 'আলোচনা',
-	'translate-history' => 'ইতিহাস',
 	'translate-task-view' => 'সমস্ত বার্তা',
 	'translate-task-untranslated' => 'অনুবাদ হয়নি এমন সব বার্তা',
 	'translate-task-review' => 'পরিবর্তনসমূহ পুনর্বিবেচনা',
@@ -3044,8 +3001,6 @@ $messages['bn'] = array(
 	'translate-magic-cm-save' => 'সংরক্ষণ',
 	'translate-magic-cm-savefailed' => 'সংরক্ষণ ব্যর্থ',
 	'translate-magic-namespace' => 'নেমস্পেসের নাম',
-	'translationchanges' => 'অনুবাদ পরিবর্তনসমূহ',
-	'translationchanges-export' => 'রপ্তানি',
 	'translate-pref-editassistlang' => 'সহযোগী ভাষা:',
 	'translate-rc-translation-filter-no' => 'কিছু করা হবে না',
 	'translate-rc-translation-filter-only' => 'শুধুমাত্র অনুবাদগুলো দেখাও',
@@ -3104,9 +3059,6 @@ $messages['bn'] = array(
  */
 $messages['bo'] = array(
 	'translate' => 'ཡིག་སྒྱུར།',
-	'translate-edit' => 'རྩོམ་སྒྲིག',
-	'translate-talk' => 'གླེང་མོལ།',
-	'translate-history' => 'ལོ་རྒྱུས།',
 	'translate-showsub' => ' {{PLURAL:$1|subgroup|$1 subgroups}} སྟོན།',
 	'translate-grouplisting' => 'འདི་ནི་ཡིག་སྒྱུར་བྱ་ཆོག་པའི་ཚོ་ཁག་ཡོངས་ཀྱི་ཐོ་གཞུང་རེད། བསྒྱུར་བྱའི་སྡེ་ཁག་གི་ཁ་བྱང་ལ་གནུན་ཏེ་བསྒྱུར་མ་ཟིན་པའི་ཚིག་གི་ཐོ་ཡིག་ལ་ལྟོས།',
 	'translate-task-view' => 'ཚིག་ཡོངས་རྫོགས་ལ་ལྟ་བ།',
@@ -3765,9 +3717,6 @@ Detalji: $1',
  */
 $messages['bug'] = array(
 	'translate' => "Tare'juma",
-	'translate-edit' => 'padécéŋ',
-	'translate-talk' => 'bicara',
-	'translate-history' => 'sejara',
 	'translate-task-view' => 'Ita sininna méséje polé',
 	'translate-task-untranslated' => "Ita manéŋ méséje deppa ritare'juma polé",
 	'translate-task-optional' => 'Ita méséje opsional polé',
@@ -4032,9 +3981,6 @@ $1",
  */
 $messages['ce'] = array(
 	'translate' => 'Гоч',
-	'translate-edit' => 'нисйé',
-	'translate-talk' => 'дийцаре',
-	'translate-history' => 'исторе',
 	'translate-task-reviewall' => 'Нисдé массо гочдарш',
 	'translate-page-settings-legend' => 'Барамаш',
 	'translate-page-task' => 'Суна лаьа',
@@ -4053,8 +3999,6 @@ $messages['ce'] = array(
 	'translate-magic-submit' => 'Арайаккха',
 	'translate-magic-cm-export' => 'Вахьайахка',
 	'translate-magic-cm-save' => 'lалашдан',
-	'translationchanges' => 'Гочдарна хийцамаш',
-	'translationchanges-export' => 'вахьайахка',
 	'translate-rc-translation-filter' => 'Литта гочдарш:',
 	'translate-statsf-submit' => 'Хьалха муха ю хьажа',
 	'translate-sidebar-alltrans' => 'Кхечу меттанашкахь',
@@ -4076,8 +4020,6 @@ $messages['ce'] = array(
  * @author Jatrobat
  */
 $messages['ch'] = array(
-	'translate-edit' => 'tulaika',
-	'translate-talk' => 'kuentusi',
 	'translate-page-navigation-legend' => 'Nabegasion',
 );
 
@@ -4088,9 +4030,6 @@ $messages['ch'] = array(
  */
 $messages['ckb'] = array(
 	'translate' => 'وەرگێڕە',
-	'translate-edit' => 'دەستکاری',
-	'translate-talk' => 'لێدوان',
-	'translate-history' => 'مێژوو',
 	'translate-task-view' => 'گشت پەیامەکان ببینم لە',
 	'translate-task-untranslated' => 'گشت پەیامە وەرنەگێڕدراوەکان ببینم لە',
 	'translate-task-problematic' => 'دیتنی ئەو پەیامانەی کێشەیان هەیە',
@@ -4110,7 +4049,6 @@ $messages['ckb'] = array(
 	'translate-magic-cm-save' => 'پاشەکەوت',
 	'translate-magic-cm-savefailed' => 'پاشەکەوت‌کردن سەرکەوتوو نەبوو',
 	'translate-magic-saved' => 'گۆڕانکاریەکانت بە سەرکەوتووی پاشەکەوت کرا.',
-	'translationchanges-export' => 'هەناردن',
 	'translate-pref-nonewsletter' => 'ئی‌مێڵی هەواڵ‌نامە بۆ من مەنێرە',
 	'prefs-translate' => 'هەڵبژاردەکانی وەرگێڕان',
 	'right-translate' => 'دەستکاری بە کەڵك وەرگرتن لە ڕووکاری وەرگێڕان',
@@ -4132,11 +4070,6 @@ $messages['ckb'] = array(
 	'translate-total' => 'پەیامەکان',
 	'translate-untranslated' => 'وەرنەگێڕاو',
 	'translate-jssti-add' => 'زیادکردن بۆ سەر لیست',
-);
-
-/** Corsican (Corsu) */
-$messages['co'] = array(
-	'translate-history' => 'cronolugia',
 );
 
 /** Czech (Česky)
@@ -4405,7 +4338,6 @@ Metoda <code>$1</code> není podporována.',
  */
 $messages['csb'] = array(
 	'translate' => 'Dolmôczë',
-	'translate-edit' => 'edicëjô',
 	'translate-edit-in-other-languages' => 'Wiadło "$1" w jinych jãzëkach',
 	'translate-sidebar-alltrans' => 'W jinych jãzëkach',
 );
@@ -4422,9 +4354,6 @@ $messages['cu'] = array(
  */
 $messages['cy'] = array(
 	'translate' => 'Cyfieithu',
-	'translate-edit' => 'golygu',
-	'translate-talk' => 'sgwrs',
-	'translate-history' => 'hanes',
 	'translate-page-group' => 'Grŵp',
 	'translate-next' => "I'r dudalen nesaf",
 	'translate-prev' => "I'r dudalen gynt",
@@ -4888,25 +4817,30 @@ Du musst zur Benutzergruppe Übersetzer gehören, um Änderungen speichern zu k�
 	'translate-magic-notsaved' => 'Die Änderungen wurden nicht gespeichert.',
 	'translate-magic-errors' => 'Bitte behebe {{PLURAL:$1|nachfolgenden|nachfolgende}} Fehler in der Übersetzung:',
 	'translate-magic-saved' => 'Die Änderungen wurden erfolgreich gespeichert.',
-	'translate-checks-parameters' => '{{PLURAL:$2|Der folgende Parameter wird|Die folgenden Parameter werden}} nicht benutzt: <strong>$1</strong>',
-	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Der folgende Parameter ist|Die folgenden Parameter sind}} unbekannt: <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'Die {{PLURAL:$2|folgende Klammersetzung ist|folgenden Klammersetzungen sind}} nicht ausgeglichen: <strong>$1</strong>',
-	'translate-checks-links' => '{{PLURAL:$2|Der folgende Link ist|Die folgenden Links sind}} problematisch: <strong>$1</strong>',
-	'translate-checks-links-missing' => '{{PLURAL:$2|Folgender Link fehlt|Folgende $2 Links fehlen}}:
+	'translate-checks-parameters' => '{{PLURAL:$2|Der folgende Parameter wird|Die folgenden Parameter werden}} nicht benutzt:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'Bitte ersetze {{PLURAL:$2|den folgenden Tag|die folgenden Tags}} durch die korrekten: <strong>$1</strong>',
-	'translate-checks-plural' => 'Das Original benutzt <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.',
-	'translate-checks-pagename' => 'Namensraum geändert durch die Definition',
-	'translate-checks-format' => 'Diese Übersetzung entspricht nicht der Definition oder hat eine ungültige Syntax: $1',
-	'translate-checks-escape' => 'Die folgenden Escape-Sequenzen können versehentlich vorhanden sein: <strong>$1</strong>',
-	'translate-checks-fudforum-syntax' => 'Bitte benutze <nowiki>$1</nowiki> anstatt <nowiki>$2</nowiki> in diesem Projekt.',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Der folgende Parameter ist|Die folgenden Parameter sind}} unbekannt:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => 'Die {{PLURAL:$2|folgende Klammersetzung ist|folgenden Klammersetzungen sind}} nicht ausgeglichen:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => '{{PLURAL:$2|Der folgende Link ist|Die folgenden $2 Links sind}} problematisch:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Der folgende Link fehlt|Die folgenden $2 Links fehlen}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Bitte ersetze {{PLURAL:$2|den folgenden Tag|die folgenden Tags}} durch die korrekten:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural' => 'Die Übersetzungsvorlage verwendet <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.',
+	'translate-checks-pagename' => 'Der Namensraum weicht von dem in der Übersetzungsvorlage ab.',
+	'translate-checks-format' => 'Diese Übersetzung entspricht nicht der Übersetzungsvorlage oder enthält eine ungültige Syntax: $1',
+	'translate-checks-escape' => 'Die folgenden Escape-Sequenzen könnten versehentlich vorhanden sein: <strong>$1</strong>',
+	'translate-checks-fudforum-syntax' => 'Bitte benutze in diesem Projekt <nowiki>$1</nowiki> anstatt <nowiki>$2</nowiki>.',
 	'translate-pref-nonewsletter' => 'Sende mir keinen E-Mail-Newsletter zu',
-	'translate-pref-editassistlang' => 'Sprachunterstützung:',
+	'translate-pref-editassistlang' => 'Unterstützungssprachen:',
 	'prefs-translate' => 'Übersetzungsoptionen',
-	'translate-pref-editassistlang-help' => 'Mit Komma getrennte Liste von Sprachcodes.
-Die Übersetzungen der Systemnachrichten in der gewählten Sprachen werden beim Übersetzen angezeigt.
+	'translate-pref-editassistlang-help' => 'Mit Kommas getrennte Liste von Sprachcodes.
+Die Übersetzungen der Systemnachrichten in den gewählten Sprachen werden beim Übersetzen angezeigt.
 Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
-	'translate-pref-editassistlang-bad' => 'Ungültiger Sprachcode in der Liste:
+	'translate-pref-editassistlang-bad' => 'In der Liste ist ein ungültiger Sprachcode enthalten:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Erweiterter Übersetzungseditor (benötigt JavaScript)',
 	'right-translate' => 'Bearbeitungen mithilfe der Übersetzungsoberfläche tätigen',
@@ -5442,9 +5376,6 @@ Drobnostki: $1',
  * @author FRANCIS5091
  */
 $messages['dtp'] = array(
-	'translate-edit' => 'idito',
-	'translate-talk' => 'bolotok',
-	'translate-history' => 'susuyan',
 	'translate-page-navigation-legend' => 'Popotunud',
 	'translate-next' => 'Bolikon sumuhut',
 	'translate-page-edit' => 'idito',
@@ -5458,8 +5389,6 @@ $messages['dtp'] = array(
 $messages['ee'] = array(
 	'translate' => 'Ɖe egɔme',
 	'translate-desc' => '[[Special:Translate|Axa tɔxe]] na MediaWiki kple nububuwo meɖeɖe',
-	'translate-edit' => 'trɔ asi le eŋu',
-	'translate-history' => 'xoxoawo',
 	'translate-task-view' => 'Kpɔ duwo katã tso',
 	'translate-task-untranslated' => 'Kpɔ duwo katã siwo gɔme wome ɖe haɖe o',
 	'translate-task-review' => 'Kpɔ tɔtrɔwo si kuɖe',
@@ -6634,9 +6563,6 @@ Arrazoia:
  */
 $messages['ext'] = array(
 	'translate' => 'Traucil',
-	'translate-edit' => 'eital',
-	'translate-talk' => 'caraba',
-	'translate-history' => 'estorial',
 	'translate-task-view' => 'Vel tolos mensahis endi',
 	'translate-task-untranslated' => 'Vel tolos mensahis sin traucil endi',
 	'translate-task-export' => 'Esporteal traucionis endi',
@@ -6660,9 +6586,6 @@ $messages['ext'] = array(
 $messages['fa'] = array(
 	'translate' => 'ترجمه',
 	'translate-desc' => '[[Special:Translate|صفحهٔ ویژه‌ای]] برای ترجمهٔ مدیاویکی و فراتر از آن',
-	'translate-edit' => 'ویرایش',
-	'translate-talk' => 'بحث',
-	'translate-history' => 'تاریخچه',
 	'translate-showsub' => 'نمایش {{PLURAL:$1|زیر گروه|$1 زیر گروه}}.',
 	'translate-grouplisting' => 'این فهرستی از تمام گروه‌های قابل ترجمه است.
 روی نام گروه پیغام‌ها کلیک کنید تا فهرستی از پیغام‌های ترجمه‌نشده را ببینید.',
@@ -6688,8 +6611,6 @@ $messages['fa'] = array(
 	'translate-page-settings-legend' => 'تنظیمات',
 	'translate-page-task' => 'دستور',
 	'translate-page-group' => 'گروه',
-	'translate-page-group-tooltip' => 'عنوان گروه پیغام‌ها.
-اگر گروه شامل زیرمجموعه‌ای از دیگر گروه‌ها باشد، به صورت پررنگ نمایش داده می‌شود.',
 	'translate-page-language' => 'زبان',
 	'translate-page-limit' => 'تعداد',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|پیغام|پیغام}} در هر صفحه',
@@ -6739,9 +6660,6 @@ $messages['fa'] = array(
 	'translate-magic-words' => 'واژه‌های جادویی',
 	'translate-magic-namespace' => 'اسم فضاهای نام',
 	'translate-magic-notsaved' => 'ویرایشتان ذخیره نشد!',
-	'translationchanges' => 'تغییرهای ترجمه',
-	'translationchanges-export' => 'برون‌بری',
-	'translationchanges-change' => '$1: $2 توسط $3',
 	'translate-checks-parameters' => 'این {{PLURAL:$2|پارامتر استفاده نشده‌است|پارامترها استفاده نشده‌اند}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'تعداد {{PLURAL:$2|پرانتزها|پرانتزها}} زوج نیست:
@@ -6826,7 +6744,8 @@ Saat listan kääntämättömistä viesteistä napsauttamalla ryhmän nimeä.',
 	'translate-page-no-such-language' => 'Tuntematon kieli.',
 	'translate-page-no-such-task' => 'Tuntematon tehtävä.',
 	'translate-page-no-such-group' => 'Tuntematon ryhmä.',
-	'translate-page-disabled' => "Käännökset tälle kielelle tässä ryhmässä on estetty. Syy:
+	'translate-page-disabled' => "Käännökset tälle kielelle tässä ryhmässä on estetty.
+Syy:
 
 ''$1''",
 	'translate-page-settings-legend' => 'Asetukset',
@@ -7428,9 +7347,6 @@ Détails : $1',
  */
 $messages['frc'] = array(
 	'translate' => 'Traduire',
-	'translate-edit' => 'changer',
-	'translate-talk' => 'discussion',
-	'translate-history' => 'changements',
 	'translate-task-view' => 'voir tous les messages',
 	'translate-task-untranslated' => 'voir tous les messages pas traduits',
 	'translate-task-review' => 'regarder les changements',
@@ -7442,7 +7358,6 @@ $messages['frc'] = array(
 	'translate-prev' => 'Page avant',
 	'translate-optional' => '(de choix)',
 	'translate-ignored' => '(ignoré)',
-	'translationchanges' => 'Modification des traductions',
 	'translate-language' => 'Langue:',
 );
 
@@ -7748,9 +7663,6 @@ Dètalys : $1',
  */
 $messages['fur'] = array(
 	'translate' => 'Traduzion',
-	'translate-edit' => 'cambie',
-	'translate-talk' => 'discussion',
-	'translate-history' => 'storic',
 	'translate-showsub' => 'Mostre {{PLURAL:$1|il sotgrup|i $1 sotgrups}}.',
 	'translate-task-view' => 'Mostre ducj i messaçs dai',
 	'translate-task-untranslated' => 'Mostre ducj i messaçs no tradusûts dal',
@@ -7802,9 +7714,6 @@ $messages['fur'] = array(
 	'translate-magic-cm-comment' => 'Coment:',
 	'translate-magic-cm-save' => 'Salve',
 	'translate-magic-cm-savefailed' => 'Salvament falît',
-	'translationchanges' => 'Cambiaments aes traduzions',
-	'translationchanges-export' => 'espuarte',
-	'translationchanges-change' => '$1: $2 di $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Il parametri ca sot nol è doprât|I parametris ca sot no son doprâts}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Il parametri ca sot nol è cognossût|I parametris ca sot no son cognossûts}}:
@@ -7879,14 +7788,12 @@ $messages['fur'] = array(
  * @author Snakesteuben
  */
 $messages['fy'] = array(
-	'translate-edit' => 'bewurkje',
 	'translate-page-group' => 'Groep',
 	'translate-next' => 'Folgjende side',
 	'translate-page-edit' => 'bewurkje',
 	'translate-magic-cm-export' => 'Eksportearje',
 	'translate-magic-cm-comment' => 'Oanmerking:',
 	'translate-magic-cm-save' => 'Fêstlizze',
-	'translationchanges-export' => 'eksportearje',
 );
 
 /** Irish (Gaeilge)
@@ -7894,15 +7801,12 @@ $messages['fy'] = array(
  * @author Moilleadóir
  */
 $messages['ga'] = array(
-	'translate-talk' => 'plé',
-	'translate-history' => 'stair',
 	'translate-page-settings-legend' => 'Sainroghanna',
 	'translate-page-group' => 'Ghrúpa',
 	'translate-page-language' => 'Teanga',
 	'translate-submit' => 'Faigh',
 	'translate-page-navigation-legend' => 'Nascleanúint',
 	'translate-edit-in-other-languages' => 'Teachtaireacht "$1" i dteangacha eile',
-	'translationchanges-export' => 'Easpórtaigh',
 	'translate-statsf-scale-days' => 'Lae',
 	'translate-statsf-scale-hours' => 'Uaire',
 	'translate-language' => 'Teanga',
@@ -8236,13 +8140,6 @@ Detalles: $1',
 	'translate-stats-workflow' => 'Estado',
 );
 
-/** Gothic (Gothic)
- * @author Jocke Pirat
- */
-$messages['got'] = array(
-	'translate-edit' => 'máidjan',
-);
-
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
  * @author Crazymadlover
  * @author LeighvsOptimvsMaximvs
@@ -8250,9 +8147,6 @@ $messages['got'] = array(
  */
 $messages['grc'] = array(
 	'translate' => 'Μεταγλωττίζειν',
-	'translate-edit' => 'μεταγράφειν',
-	'translate-talk' => 'διαλέγεσθαι',
-	'translate-history' => 'αἱ προτέραι',
 	'translate-page-settings-legend' => 'Ῥυθμίσεις',
 	'translate-page-task' => 'Βούλομαι',
 	'translate-page-group' => 'Ὁμάς',
@@ -8275,8 +8169,6 @@ $messages['grc'] = array(
 	'translate-magic-cm-original' => 'Αὐθεντικόν',
 	'translate-magic-cm-comment' => 'Σχόλιον:',
 	'translate-magic-cm-save' => 'Γράφειν',
-	'translationchanges-export' => 'ἐξάγειν',
-	'translationchanges-change' => '$1: $2 ὑπὸ $3',
 	'translate-rc-translation-filter-no' => 'Ἀπραξία',
 	'translate-stats-edits' => 'Μεταγραφαί',
 	'translate-stats-users' => 'Μεταγλωττισταί',
@@ -8749,8 +8641,6 @@ $messages['gu'] = array(
  */
 $messages['gv'] = array(
 	'translate' => 'Dy hyndaa',
-	'translate-edit' => 'reaghey',
-	'translate-history' => 'shennaghys',
 	'translate-page-group' => 'Possan',
 	'translate-page-language' => 'Çhengey',
 	'translate-page-limit' => 'Jeoraght',
@@ -8766,7 +8656,6 @@ $messages['ha'] = array(
  * @author Hakka
  */
 $messages['hak'] = array(
-	'translate-edit' => 'phiên-chho',
 	'translate-page-edit' => 'piên-sip',
 );
 
@@ -8776,8 +8665,6 @@ $messages['hak'] = array(
  */
 $messages['haw'] = array(
 	'translate' => 'Unuhi',
-	'translate-edit' => 'e hoʻololi',
-	'translate-history' => 'mōʻaukala',
 	'translate-page-language' => 'ʻŌlelo',
 	'translate-page-navigation-legend' => 'Ka hoʻokele ʻana',
 	'translate-page-edit' => 'e hoʻololi',
@@ -9120,9 +9007,6 @@ $1',
  */
 $messages['hi'] = array(
 	'translate' => 'अनुवाद',
-	'translate-edit' => 'संपादन',
-	'translate-talk' => 'वार्ता',
-	'translate-history' => 'इतिहास',
 	'translate-task-view' => 'से सभी संदेश देखें',
 	'translate-task-untranslated' => 'से सभी अननुवादित संदेश देखें',
 	'translate-task-optional' => 'से वैकल्पिक संदेश देखें',
@@ -9139,16 +9023,12 @@ $messages['hi'] = array(
 	'translate-magic-cm-export' => 'निर्यात',
 	'translate-magic-cm-comment' => 'टिप्पणी:',
 	'translate-magic-cm-save' => 'संजोयें',
-	'translationchanges-export' => 'निर्यात',
 );
 
 /** Hiligaynon (Ilonggo)
  * @author Jose77
  */
 $messages['hil'] = array(
-	'translate-edit' => 'ilisan',
-	'translate-talk' => 'hisayranay',
-	'translate-history' => 'saysay',
 	'translate-page-navigation-legend' => 'Nabigayson',
 );
 
@@ -10839,8 +10719,6 @@ Detail: $1",
  */
 $messages['ig'] = array(
 	'translate' => 'Kuwaria na asụsụ ozor',
-	'translate-edit' => 'mèzi',
-	'translate-talk' => 'okwu',
 	'translate-page-settings-legend' => 'Otu ihe dị',
 	'translate-page-task' => 'M chorí',
 	'translate-page-group' => 'Ọtú',
@@ -10898,9 +10776,6 @@ $messages['ilo'] = array(
  */
 $messages['io'] = array(
 	'translate' => 'Traduko',
-	'translate-edit' => 'redaktar',
-	'translate-talk' => 'diskutez',
-	'translate-history' => 'versionaro',
 	'translate-page-task' => 'Me volas',
 	'translate-page-group' => 'Grupo',
 	'translate-page-language' => 'Linguo',
@@ -10915,7 +10790,6 @@ $messages['io'] = array(
 	'translate-magic-cm-comment' => 'Komento:',
 	'translate-magic-cm-save' => 'Registragar',
 	'translate-magic-namespace' => 'Nomi di la nomari',
-	'translationchanges-change' => '$1: $2 per $3',
 	'translate-rc-translation-filter-only' => 'Montrez nur tradukuri',
 	'translate-stats-edits' => 'Editi',
 	'translate-stats-users' => 'Tradukisti',
@@ -10937,9 +10811,6 @@ $messages['io'] = array(
  */
 $messages['is'] = array(
 	'translate' => 'Þýða',
-	'translate-edit' => 'breyta',
-	'translate-talk' => 'spjall',
-	'translate-history' => 'breytingaskrá',
 	'translate-task-view' => 'Skoða allar meldingar frá',
 	'translate-task-untranslated' => 'Skoða allar óþýddar meldingar frá',
 	'translate-task-optional' => 'Skoða valfrjálsar meldingar frá',
@@ -10984,9 +10855,6 @@ Ef þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum
 	'translate-magic-cm-savefailed' => 'Vistun mistókst',
 	'translate-magic-special' => 'Aukanefni kerfissíðna',
 	'translate-magic-namespace' => 'Heiti nafnrýma',
-	'translationchanges' => 'Breytingar þýðinga',
-	'translationchanges-export' => 'flytja',
-	'translationchanges-change' => '$1: $2 eftir $3',
 	'translate-checks-parameters' => 'Eftirfarandi {{PLURAL:$2|færibreyta er ekki notuð|færibreytur eru ekki notaðar}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => 'Eftirfarandi {{PLURAL:$2|tengill er vafasamur|$2 tenglar eru vafasamir}}:
@@ -11727,9 +11595,6 @@ Owah-owahan ora bakal disimpen nganti panjenengan ngeklik tombol simpen ing ngis
 $messages['ka'] = array(
 	'translate' => 'თარგმნა',
 	'translate-desc' => '[[Special:Translate|სპეციალური გვერდი]] მედიავიკისა და სხვათა შეტყობინებების სათარგმნელად.',
-	'translate-edit' => 'რედაქტირება',
-	'translate-talk' => 'განხილვა',
-	'translate-history' => 'ისტორია',
 	'translate-task-view' => 'ვნახო ყველა შეტყობინება',
 	'translate-task-untranslated' => 'ვნახო ყველა უთარგმნელი შეტყობინება',
 	'translate-task-optional' => 'ვნახო არასავალდებულო შეტყობინებები',
@@ -11787,9 +11652,6 @@ $messages['ka'] = array(
  */
 $messages['kaa'] = array(
 	'translate' => 'Awdarıw',
-	'translate-edit' => "o'zgertiw",
-	'translate-talk' => "sa'wbet",
-	'translate-history' => 'tariyxı',
 	'translate-task-view' => 'Barlıq xabarlardı qaraw',
 	'translate-task-untranslated' => "Barlıq awdarılmag'an xabarlardı qaraw",
 	'translate-task-optional' => "Sha'rt emes xabarlardı qaraw",
@@ -11840,9 +11702,6 @@ $messages['kaa'] = array(
 	'translate-magic-special' => 'Arnawlı bet laqabı',
 	'translate-magic-words' => "Sıyqırlı so'zler",
 	'translate-magic-namespace' => "İsimler ko'pligi atları",
-	'translationchanges' => "Awdarma o'zgerisleri",
-	'translationchanges-export' => 'eksport qılıw',
-	'translationchanges-change' => '$1: $2 ($3 boyınsha)',
 	'translate-checks-parameters' => "To'mendegi parametrler qollanılmag'an: <strong>$1</strong>",
 	'translate-checks-balance' => "Qawıslardın' sanı jup emes: <strong>$1</strong>",
 	'translate-checks-links' => "To'mendegi siltewler jaramsız: <strong>$1</strong>",
@@ -11852,11 +11711,10 @@ $messages['kaa'] = array(
 	'right-translate' => "Awdarma interfeysi ja'rdeminde o'zgertiw",
 );
 
-/** Kabardian (Cyrillic) (Адыгэбзэ (Cyrillic))
+/** Адыгэбзэ (Адыгэбзэ)
  * @author Тамэ Балъкъэрхэ
  */
 $messages['kbd-cyrl'] = array(
-	'translate-history' => 'тхыдэ',
 	'translate-page-settings-legend' => 'Теухуапхъэхэр',
 	'translate-page-task' => 'Сыхуейщ',
 	'translate-page-group' => 'Гуп',
@@ -11867,14 +11725,7 @@ $messages['kbd-cyrl'] = array(
 	'translate-ignored' => '(щхьэщыгъэцIэфтауэ)',
 );
 
-/** Kongo (Kongo)
- * @author Rkupsala
- */
-$messages['kg'] = array(
-	'translate-talk' => 'disolo',
-);
-
-/** کھوار (کھوار)
+/** Khowar (کھوار)
  * @author Rachitrali
  */
 $messages['khw'] = array(
@@ -11886,9 +11737,6 @@ $messages['khw'] = array(
  */
 $messages['kk-arab'] = array(
 	'translate' => 'اۋدارۋ',
-	'translate-edit' => 'وڭدەۋ',
-	'translate-talk' => 'تالقىلاۋ',
-	'translate-history' => 'تارىيحى',
 	'translate-task-view' => 'بارلىق حابارىن قاراۋ',
 	'translate-task-untranslated' => 'اۋدارىلماعان بارلىق حابارىن قاراۋ',
 	'translate-task-optional' => 'مىندەتتى ەمەس حابارلارىن قاراۋ',
@@ -11942,9 +11790,6 @@ $messages['kk-arab'] = array(
 	'translate-magic-special' => 'ارنايى بەت بۇركەمەلەرى',
 	'translate-magic-words' => 'سىيقىر سوزدەر',
 	'translate-magic-namespace' => 'ەسىم ايا اتاۋلارى',
-	'translationchanges' => 'اۋدارما وزگەرىستەرى',
-	'translationchanges-export' => 'سىرتقا بەرۋ',
-	'translationchanges-change' => '$1: $2 ($3 ٸستەگەن)',
 	'translate-checks-parameters' => 'كەلەسى باپتالىمدار پايدالانىلماعان: <strong>$1</strong>',
 	'translate-checks-balance' => 'مىندا جاقشالاردىڭ بارلىق سانى جۇپ ەمەس: <strong>$1</strong>',
 	'translate-checks-links' => 'كەلەسى سىلتەمەلەر جارامسىز: <strong>$1</strong>',
@@ -11952,16 +11797,13 @@ $messages['kk-arab'] = array(
 	'translate-checks-plural' => 'انىقتالىمدا <nowiki>{{PLURAL:}} پايدالانىلعان, بىراق اۋدارمادا بۇل جوق.',
 );
 
-/** Kazakh (Cyrillic) (Қазақша (Cyrillic))
+/** Kazakh (Cyrillic script) (‪Қазақша (кирил)‬)
  * @author AlefZet
  * @author GaiJin
  */
 $messages['kk-cyrl'] = array(
 	'translate' => 'Аудару',
 	'translate-desc' => 'MediaWiki дегенді және бұнан тыстарды аудару үшін арналған [[Special:Translate|арнайы бет]]',
-	'translate-edit' => 'өңдеу',
-	'translate-talk' => 'талқылау',
-	'translate-history' => 'тарихы',
 	'translate-task-view' => 'барлық хабарын қарау',
 	'translate-task-untranslated' => 'аударылмаған барлық хабарын қарау',
 	'translate-task-optional' => 'міндетті емес хабарларын қарау',
@@ -12027,9 +11869,6 @@ $messages['kk-cyrl'] = array(
 	'translate-magic-special' => 'Арнайы бет бүркеме аттары',
 	'translate-magic-words' => 'Сиқыр сөздер',
 	'translate-magic-namespace' => 'Есім ая атаулары',
-	'translationchanges' => 'Аударма өзгерістері',
-	'translationchanges-export' => 'сыртқа беру',
-	'translationchanges-change' => '$1: $2 ($3 істеген)',
 	'translate-checks-parameters' => 'Келесі бапталымдар пайдаланылмаған: <strong>$1</strong>',
 	'translate-checks-balance' => 'Мында жақшалардың бүкіл саны жұп емес: <strong>$1</strong>',
 	'translate-checks-links' => 'Келесі сілтемелер жарамсыз: <strong>$1</strong>',
@@ -12044,16 +11883,13 @@ $messages['kk-cyrl'] = array(
 	'translate-rc-translation-filter-site' => 'Тек торап хабарларының өзгерістері',
 );
 
-/** Kazakh (Latin) (Қазақша (Latin))
+/** Kazakh (Latin script) (‪Qazaqşa (latın)‬)
  * @author AlefZet
  * @author Atabek
  * @author GaiJin
  */
 $messages['kk-latn'] = array(
 	'translate' => 'Awdarıw',
-	'translate-edit' => 'öñdew',
-	'translate-talk' => 'talqılaw',
-	'translate-history' => 'tarïxı',
 	'translate-task-view' => 'barlıq xabarın qaraw',
 	'translate-task-untranslated' => 'awdarılmağan barlıq xabarın qaraw',
 	'translate-task-optional' => 'mindetti emes xabarların qaraw',
@@ -12107,9 +11943,6 @@ Esim aya awdarmalarında <code>$1_talk</code> degen arnaýı keltiriledi. <code>
 	'translate-magic-special' => 'Arnaýı bet bürkemeleri',
 	'translate-magic-words' => 'Sïqır sözder',
 	'translate-magic-namespace' => 'Esim aya atawları',
-	'translationchanges' => 'Awdarma özgeristeri',
-	'translationchanges-export' => 'sırtqa berw',
-	'translationchanges-change' => '$1: $2 ($3 istegen)',
 	'translate-checks-parameters' => 'Kelesi baptalımdar paýdalanılmağan: <strong>$1</strong>',
 	'translate-checks-balance' => 'Mında jaqşalardıñ barlıq sanı jup emes:
 <strong><nowiki>$1</nowiki></strong>',
@@ -12125,9 +11958,6 @@ Esim aya awdarmalarında <code>$1_talk</code> degen arnaýı keltiriledi. <code>
  */
 $messages['kk-kz'] = array(
 	'translate' => 'Аудару',
-	'translate-edit' => 'өңдеу',
-	'translate-talk' => 'талқылау',
-	'translate-history' => 'тарихы',
 	'translate-task-view' => 'барлық хабарын қарау',
 	'translate-task-untranslated' => 'аударылмаған барлық хабарын қарау',
 	'translate-task-optional' => 'міндетті емес хабарларын қарау',
@@ -12160,7 +11990,6 @@ $messages['kk-kz'] = array(
 	'translate-magic-special' => 'Арнайы бет бүркемелері',
 	'translate-magic-words' => 'Сиқыр сөздер',
 	'translate-magic-namespace' => 'Есім ая атаулары',
-	'translationchanges' => 'Аударма өзгерістері',
 	'translate-language' => 'Тілі:',
 );
 
@@ -12404,8 +12233,6 @@ $messages['km'] = array(
  * @author Nayvik
  */
 $messages['kn'] = array(
-	'translate-edit' => 'ಸಂಪಾದಿಸಿ',
-	'translate-history' => 'ಇತಿಹಾಸ',
 	'translate-page-language' => 'ಭಾಷೆ',
 	'translate-next' => 'ಮುಂದಿನ ಪುಟ',
 	'translate-prev' => 'ಹಿಂದಿನ ಪುಟ',
@@ -12564,18 +12391,7 @@ $1',
  * @author Jose77
  */
 $messages['kri'] = array(
-	'translate-edit' => 'chenj',
-	'translate-history' => 'istri',
 	'translate-page-edit' => 'chenj',
-);
-
-/** Kinaray-a (Kinaray-a)
- * @author Jose77
- */
-$messages['krj'] = array(
-	'translate-edit' => 'iislan',
-	'translate-talk' => 'wakal',
-	'translate-history' => 'Kasaysayan',
 );
 
 /** Colognian (Ripoarisch)
@@ -12899,9 +12715,6 @@ $1',
  */
 $messages['ku-latn'] = array(
 	'translate' => 'Wergerîne',
-	'translate-edit' => 'biguherîne',
-	'translate-talk' => 'nîqaş',
-	'translate-history' => 'dîrok',
 	'translate-task-view' => 'hemû mesajan bibînim ji',
 	'translate-task-export' => 'Wergeran bişîne',
 	'translate-page-task' => 'Ez dixwazim',
@@ -12926,7 +12739,6 @@ $messages['ku-latn'] = array(
 	'translate-magic-cm-comment' => 'Şîrove:',
 	'translate-magic-cm-save' => 'Qeyd bike',
 	'translate-magic-notsaved' => 'Guherandina te nehate qeydkirin!',
-	'translationchanges-export' => 'bişîne',
 	'translate-pref-editassistlang' => 'Zimanên alîkar:',
 	'translate-rc-translation-filter' => 'Wergeran parzûn bike:',
 	'translate-rc-translation-filter-filter' => 'Wergeran parzûn bike',
@@ -12975,9 +12787,6 @@ $messages['ku-latn'] = array(
  */
 $messages['la'] = array(
 	'translate' => 'Traducere',
-	'translate-edit' => 'recensere',
-	'translate-talk' => 'disputatio',
-	'translate-history' => 'historia',
 	'translate-next' => 'Pagina proxima',
 	'translate-prev' => 'Pagina superior',
 	'translate-magic-cm-save' => 'Servare',
@@ -13309,8 +13118,6 @@ Detailler: $1',
  */
 $messages['lg'] = array(
 	'translate' => 'Vvuunula',
-	'translate-edit' => 'kyusa',
-	'translate-talk' => 'yogera nange',
 	'translate-task-view' => "Okulaba obubaka bwonna obw'omu",
 	'translate-task-untranslated' => "Okulaba obubaka obutannavvuunulwa obw'omu",
 	'translate-task-reviewall' => "Okulaba obubaka obuvvuunulidwa bwonna obw'omu",
@@ -13343,9 +13150,6 @@ $messages['lg'] = array(
  */
 $messages['li'] = array(
 	'translate' => 'Vertale',
-	'translate-edit' => 'bewèrk',
-	'translate-talk' => 'euverlèk',
-	'translate-history' => 'gesjiedenis',
 	'translate-task-view' => 'alle berichte bekieke',
 	'translate-task-untranslated' => 'alle neet-vertaalde berichte bekieke',
 	'translate-task-optional' => 'optioneel berichte bekieke',
@@ -13365,7 +13169,6 @@ $messages['li'] = array(
 	'translate-next' => 'Volgende pazjena',
 	'translate-prev' => 'Veurige pazjena',
 	'translate-optional' => '(optioneel)',
-	'translationchanges-export' => 'exportere',
 );
 
 /** Lumbaart (Lumbaart)
@@ -13428,9 +13231,6 @@ $messages['lo'] = array(
  */
 $messages['lt'] = array(
 	'translate' => 'Vertimas',
-	'translate-edit' => 'redaguoti',
-	'translate-talk' => 'aptarimas',
-	'translate-history' => 'istorija',
 	'translate-task-view' => 'Pažiūrėti visus pranešimus iš',
 	'translate-task-untranslated' => 'Pažiūrėti visus neišverstus pranešimus iš',
 	'translate-task-optional' => 'Pažiūrėti nebūtinus pranešimus iš',
@@ -13485,9 +13285,6 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
 	'translate-magic-special' => 'Specialių puslapių pavadinimai',
 	'translate-magic-words' => 'Magiški žodžiai',
 	'translate-magic-namespace' => 'Vardų srities pavadinimai',
-	'translationchanges' => 'Vertimo pakeitimai',
-	'translationchanges-export' => 'eksportuoti',
-	'translationchanges-change' => '$1: $2 pagal $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Šis $2 parametras nepanaudotas|Šie $2 parametrai nepanaudoti|Šie $2 parametrų nepanaudoti}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Aprašymas naudoja <nowiki>{{PLURAL:}}</nowiki>, bet vertimas ne.',
@@ -13501,9 +13298,6 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
  */
 $messages['ltg'] = array(
 	'translate' => 'Puorviersšona',
-	'translate-edit' => 'pataiseit',
-	'translate-talk' => 'sprīža',
-	'translate-history' => 'viesture',
 	'translate-page-task' => 'Es grybu',
 	'translate-page-group' => 'Grupa',
 	'translate-page-language' => 'Volūda',
@@ -13633,8 +13427,6 @@ $messages['mg'] = array(
  * @author Сай
  */
 $messages['mhr'] = array(
-	'translate-talk' => 'каҥашымаш',
-	'translate-history' => 'историй',
 	'translate-next' => 'Вес лаштык',
 	'translate-prev' => 'Ончычсо лаштык',
 	'translate-magic-cm-save' => 'Аралаш',
@@ -14203,9 +13995,6 @@ $messages['mn'] = array(
 $messages['mo'] = array(
 	'translate' => 'Традуче',
 	'translate-desc' => '[[Special:Translate|Паӂинэ спечиалэ]] пентру традучеря програмулуй МедияВики, дар ну нумай',
-	'translate-edit' => 'едитязэ',
-	'translate-talk' => 'Дискуций',
-	'translate-history' => 'историк',
 	'translate-showsub' => 'Аратэ {{PLURAL:$1|субгрупул|челе $1 субгрупурь}}.',
 	'translate-grouplisting' => 'Ачаста есте листа тутурор групурилор де месаже традуктибиле.
 Апасэ пе нумеле групулуй де месаже пентру а визуализа о листэ а месажелор нетрадусе.',
@@ -14227,8 +14016,6 @@ $messages['mo'] = array(
 	'translate-page-settings-legend' => 'Сетэрь:',
 	'translate-page-task' => 'Дореск сэ',
 	'translate-page-group' => 'Груп',
-	'translate-page-group-tooltip' => 'Нумеле групулуй де месаже.
-Дакэ групул репрезинтэ ун субсет сау ун суперсет де месаже каре провин де ла алте групурь, есте афишат ынгрошат.',
 	'translate-page-language' => 'Лимбэ',
 	'translate-page-limit' => 'Лимитэ',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|месаж|месаже}} пе паӂинэ',
@@ -14268,9 +14055,6 @@ $messages['mo'] = array(
 $messages['mr'] = array(
 	'translate' => 'भाषांतर करा',
 	'translate-desc' => 'मिडीयाविकि आणि त्या पलीकडील भाषांतरणे करण्याकरिता [[Special:Translate|विशेष पान]]',
-	'translate-edit' => 'संपादन',
-	'translate-talk' => 'चर्चा',
-	'translate-history' => 'इतिहास',
 	'translate-task-view' => 'या वर्गाचे सारे संदेश बघावे',
 	'translate-task-untranslated' => 'यामधील सर्व अभाषांतरीत संदेश बघावे',
 	'translate-task-optional' => 'चे पर्यायी संदेश बघावे',
@@ -14318,9 +14102,6 @@ $messages['mr'] = array(
 	'translate-magic-special' => 'विशेष पान टोपणनावे',
 	'translate-magic-words' => 'जादूई शब्द',
 	'translate-magic-namespace' => 'नामविश्व नावे',
-	'translationchanges' => 'भाषांतरांमधील बदल',
-	'translationchanges-export' => 'नीर्यात',
-	'translationchanges-change' => '$1: $2 ने $3',
 	'translate-checks-parameters' => 'खालील मापदंड {{PLURAL:$2|वापरला नाही|वापरलेले नाहीत}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'चुकीची कंस संख्या:
@@ -14843,9 +14624,6 @@ Il-lista predefinita tal-lingwi tiddependi fuq il-lingwa tiegħek.",
  */
 $messages['my'] = array(
 	'translate' => 'ဘာသာပြန်ပါ',
-	'translate-edit' => 'ပြင်ရန်',
-	'translate-talk' => 'ဆွေးနွေးချက်',
-	'translate-history' => 'မှတ်​တမ်း​',
 	'translate-task-view' => 'စကားလုံး အားလုံးကို ကြည့်မည်',
 	'translate-task-untranslated' => 'ဘာသာမပြန်ရသေးသော  စကားလုံး အားလုံးကို ကြည့်မည်',
 	'translate-task-optional' => 'ရွေးချယ်နိုင်သည့် စကားလုံးအားလုံးကို ကြည့်မည်',
@@ -14872,9 +14650,6 @@ $messages['my'] = array(
  */
 $messages['myv'] = array(
 	'translate' => 'Ютавтомонзо',
-	'translate-edit' => 'витнемензэ-петнемензэ',
-	'translate-talk' => 'кортнеме',
-	'translate-history' => 'путовксонзо-юронзо',
 	'translate-page-no-such-language' => 'Аравтозь келесь а маштови.',
 	'translate-page-settings-legend' => 'Аравтнемкат',
 	'translate-page-task' => 'Ули мелем',
@@ -14902,7 +14677,6 @@ $messages['myv'] = array(
 	'translate-magic-cm-save' => 'Ванстомс',
 	'translate-magic-cm-savefailed' => 'Ванстома тевесь эзь лисе',
 	'translate-magic-namespace' => 'Лем потмо лемть',
-	'translationchanges' => 'Ютавтомасо полавтнемат',
 	'translate-rc-translation-filter' => 'Сувтнемс ютавтовкстнэнь',
 	'translate-rc-translation-filter-no' => 'Мезеяк а теемс',
 	'translate-rc-translation-filter-only' => 'Ськамост ютавтовкстнэнь невтемс',
@@ -14947,9 +14721,6 @@ $messages['myv'] = array(
  */
 $messages['nah'] = array(
 	'translate' => 'Tictlahtōlcuepāz',
-	'translate-edit' => 'ticpatlāz',
-	'translate-talk' => 'tēixnāmiquiliztli',
-	'translate-history' => 'tlahcuilōlloh',
 	'translate-task-view' => 'Mà mowalnèxtìkan nochtìn in ìtlanawatìlwàn in',
 	'translate-task-untranslated' => 'Mà mowàlnèxtìkan nochtìn in ayamo tlatlâtòlkueptìn tlanawatìltìn kảtë ìpan',
 	'translate-page-task' => 'Nikneki',
@@ -14971,8 +14742,6 @@ $messages['nah'] = array(
 	'translate-magic-cm-original' => 'Achto',
 	'translate-magic-cm-save' => 'Ticpiyāz',
 	'translate-magic-namespace' => 'Tōcātzintli ītōca',
-	'translationchanges-export' => 'ticnamacāz',
-	'translationchanges-change' => '$1: $2 īpal $3',
 	'translate-rc-translation-filter-no' => 'Ahtlein titlachīhuāz',
 	'translationstats' => 'Tlahtōlcuepaliztli tlapōhualli',
 	'translate-stats-edits' => 'Tlapatlaliztli',
@@ -14986,21 +14755,11 @@ $messages['nah'] = array(
 	'translate-translations-fieldset-title' => 'Tītlantlahtōlli',
 );
 
-/** Neapolitan (Nnapulitano) */
-$messages['nap'] = array(
-	'translate-edit' => 'càgna',
-	'translate-talk' => 'chiàcchiera',
-	'translate-history' => 'cronologgia',
-);
-
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
 $messages['nds'] = array(
 	'translate' => 'Översetten',
-	'translate-edit' => 'ännern',
-	'translate-talk' => 'Diskuschoon',
-	'translate-history' => 'Historie',
 	'translate-page-task' => 'Ik will',
 	'translate-page-group' => 'Grupp',
 	'translate-page-language' => 'Spraak',
@@ -15015,9 +14774,6 @@ $messages['nds'] = array(
  */
 $messages['nds-nl'] = array(
 	'translate' => 'Vertalen',
-	'translate-edit' => 'bewark',
-	'translate-talk' => 'overleeg',
-	'translate-history' => 'geschiedenisse',
 );
 
 /** Nepali (नेपाली)
@@ -15971,7 +15727,6 @@ $messages['nso'] = array(
 	'translate-page-showing-all' => 'Go botšhwa  $1 {{PLURAL:$1|ya molaetša|ya melaetša}}.',
 	'translate-page-description-legend' => 'Tsebo ka sehlopha',
 	'translate-magic-cm-save' => 'Boloka',
-	'translationchanges-change' => '$1: $2 ka $3',
 	'translate-statsf-scale-days' => 'Matšatši',
 	'translate-statsf-scale-hours' => 'Diiri',
 	'translate-statsf-count-edits' => 'Palo ya diphetogo',
@@ -16217,9 +15972,6 @@ Detalhs : $1',
 $messages['or'] = array(
 	'translate' => 'ଅନୁବାଦ',
 	'translate-desc' => '[[Special:Translate|ବିଶେଷ ପୃଷ୍ଠା]] ମିଡ଼ିଆଉଇକି ଓ ବାକିସବୁ ଅନୁବାଦ କରିବା ନିମନ୍ତେ ବିଶେଷ ପୃଷ୍ଠା',
-	'translate-edit' => 'ସମ୍ପାଦନ',
-	'translate-talk' => 'କଥାଭାଷା',
-	'translate-history' => 'ଇତିହାସ',
 	'translate-page-navigation-legend' => 'ଦିଗବାରେଣି (ନାଭିଗେସନ)',
 	'translate-next' => 'ପର ପୃଷ୍ଠା',
 	'translate-prev' => 'ଆଗ ପୃଷ୍ଠା',
@@ -16236,10 +15988,6 @@ $messages['or'] = array(
 	'translate-magic-namespace' => 'ନେମ୍ସସ୍ପେସ ନାମସବୁ',
 	'translate-magic-notsaved' => 'ଆପଣଙ୍କ ସମ୍ପାଦନା ସାଇତାଯାଇପାରିଲା ନାହିଁ!',
 	'translate-magic-saved' => 'ଆପଣଙ୍କ ସମ୍ପାଦନା ସଫଳ ଭାବେ ସାଇତାଗଲା ।',
-	'translationchanges' => 'ଅନୁବାଦ ବଦଳ',
-	'translationchanges-export' => 'ପଠେଇବେ',
-	'translationchanges-change' => '$1: $3ଙ୍କ ଦେଇ $2',
-	'translationchanges-submit' => 'ବଢ଼ାଇବେ',
 	'translate-pref-nonewsletter' => 'ମୋତେ ଇ-ମେଲ ନିଉଜଲେଟର ପଠାଇବେ ନାହିଁ',
 	'translate-rc-translation-filter-no' => 'କିଛି ବି କରିବେ ନାହିଁ',
 	'translate-rc-translation-filter-only' => 'କେବଳ ଅନୁବାଦସବୁ ଦେଖାନ୍ତୁ',
@@ -16254,8 +16002,6 @@ $messages['or'] = array(
  * @author Bouron
  */
 $messages['os'] = array(
-	'translate-edit' => 'ивын',
-	'translate-history' => 'истори',
 	'translate-page-task' => 'Мæн фæнды',
 	'translate-page-group' => 'Къорд',
 	'translate-page-language' => 'Æвзаг',
@@ -16272,9 +16018,6 @@ $messages['os'] = array(
  */
 $messages['pa'] = array(
 	'translate' => 'ਅਨੁਵਾਦ',
-	'translate-edit' => 'ਸੋਧ',
-	'translate-talk' => 'ਗੱਲਬਾਤ',
-	'translate-history' => 'ਅਤੀਤ',
 	'translate-task-view' => 'ਇਸ ਤੋਂ ਸਭ ਸੁਨੇਹੇ ਵੇਖੋ',
 	'translate-page-settings-legend' => 'ਸੈਟਿੰਗ',
 	'translate-page-task' => 'ਮੈਂ ਚਾਹੁੰਦਾ ਹਾਂ',
@@ -16384,7 +16127,6 @@ $messages['pdc'] = array(
  * @author Xqt
  */
 $messages['pfl'] = array(
-	'translate-edit' => 'Bearwaide',
 	'translate-page-edit' => 'bearwaide',
 	'translate-edit-title' => '„$1“ bearwaide',
 	'translate-stats-edits' => 'Bearwaidunge',
@@ -16998,8 +16740,6 @@ Detaj: $1",
  */
 $messages['pnb'] = array(
 	'translate' => 'ترجمعہ',
-	'translate-edit' => 'لکھو',
-	'translate-talk' => 'گل بات',
 	'translate-page-settings-legend' => 'ترتیب',
 	'translate-page-task' => 'میں چانداں واں',
 	'translate-page-group' => 'ٹولی',
@@ -17696,9 +17436,6 @@ Detalhes: $1',
  * @author Jose77
  */
 $messages['rif'] = array(
-	'translate-edit' => 'arri',
-	'translate-talk' => 'awal',
-	'translate-history' => 'amzruy',
 	'translate-page-navigation-legend' => 'Asari',
 	'translate-page-edit' => 'arri',
 );
@@ -17708,9 +17445,6 @@ $messages['rif'] = array(
  * @author Gion-andri
  */
 $messages['rm'] = array(
-	'translate-edit' => 'editar',
-	'translate-talk' => 'discussiun',
-	'translate-history' => 'versiuns',
 	'translate-page-settings-legend' => 'Parameters',
 	'translate-page-task' => 'Jau vi',
 	'translate-page-group' => 'Gruppa',
@@ -17989,9 +17723,6 @@ Detalii: $1',
 $messages['roa-tara'] = array(
 	'translate' => 'Traduce',
 	'translate-desc' => '[[Special:Translate|Pàgena speciele]] pe le traduziune de MediaUicchi e rrete',
-	'translate-edit' => 'cange',
-	'translate-talk' => 'ngazzaminde',
-	'translate-history' => 'cunde',
 	'translate-showsub' => "Fa vedè {{PLURAL:$1|'u sottogruppe|le $1 sottogruppe}}.",
 	'translate-grouplisting' => "Quiste jè l'elenghe de tutte le gruppe traducibbele. <br />
 Cazze 'u nome d'u gruppe de le messagge pe vedè l'elenghe de le messagge da traducere.",
@@ -18028,9 +17759,6 @@ Cazze 'u nome d'u gruppe de le messagge pe vedè l'elenghe de le messagge da tra
 	'translate-magic-words' => 'Parole maggeche',
 	'translate-magic-namespace' => 'Nome de le namespace',
 	'translate-magic-notsaved' => "'U cangiamende tune non g'à state reggistrate!",
-	'translationchanges' => 'Cangiaminde de le traduziune',
-	'translationchanges-export' => 'esporte',
-	'translationchanges-change' => '$1: $2 da $3',
 	'translate-rc-translation-filter-no' => 'No fà ninde',
 	'translationstats' => 'Statisteche de le traduziune',
 	'translate-stats-edits' => 'Cangiaminde',
@@ -19003,9 +18731,6 @@ Predvoleny zoznam jazykov závisí na vašom jazyku.',
 	'translate-percentage-fuzzy' => 'Zastaralé',
 	'translate-nothing-to-do' => 'Zdá sa, že všetky možné preklady sú hotové.
 Ďalej sa odporúča aby ste skontrolovali správy prostredníctvom [[Special:Translate|{{int:translate}}]].',
-	'translate-languagestats-groups' => ' # Pridajte ID skupín správ, po jednom na riadok, čím obmedzíte skupiny správ
- # zobrazované na Special:LanguageStats. Neexistujúce ID skupín správ budú
- # ignorované.',
 	'translate-save' => 'Uložiť ($1)',
 	'translate-jssti-add' => 'Pridať do zoznamu',
 	'translate-manage-groups' => 'Správa skupín',
@@ -20118,9 +19843,6 @@ Detalji: $1',
  */
 $messages['ss'] = array(
 	'translate' => 'Humusha',
-	'translate-edit' => 'hlela',
-	'translate-talk' => 'Ingcoco',
-	'translate-history' => 'umlandvo',
 	'translate-task-view' => 'Bona yonkhe milayeto lebuya ku',
 	'translate-task-untranslated' => 'Bona yonkhe milayeto lengakahumushwa ye',
 );
@@ -20655,9 +20377,6 @@ Detaljer: $1',
  */
 $messages['sw'] = array(
 	'translate' => 'Kutafsiri',
-	'translate-edit' => 'hariri',
-	'translate-talk' => 'majadiliano',
-	'translate-history' => 'historia',
 	'translate-task-view' => 'Tazama jumbe zote kutoka',
 	'translate-page-language' => 'Lugha',
 	'translate-page-navigation-legend' => 'Urambazaji',
@@ -20682,8 +20401,6 @@ $messages['sw'] = array(
  * @author Pimke
  */
 $messages['szl'] = array(
-	'translate-edit' => 'sprowjéj',
-	'translate-history' => 'historjo',
 	'translate-next' => 'Nostympno zajta',
 	'translate-prev' => 'Popředńo zajta',
 );
@@ -20978,9 +20695,6 @@ $messages['te'] = array(
  */
 $messages['tet'] = array(
 	'translate' => 'Tradús',
-	'translate-edit' => 'edita',
-	'translate-talk' => 'diskusaun',
-	'translate-history' => 'istória',
 	'translate-task-view' => 'Haree mensajen hotu husi',
 	'translate-page-settings-legend' => 'Preferénsia',
 	'translate-page-task' => "Ha'u hakarak",
@@ -21002,15 +20716,12 @@ $messages['tet'] = array(
 	'translate-searchprofile' => 'Tradusaun sira',
 );
 
-/** Tajik (Cyrillic) (Тоҷикӣ (Cyrillic))
+/** Tajik (Cyrillic script) (Тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
 	'translate' => 'Тарҷума',
 	'translate-desc' => '[[Special:Translate|Саҳифаи вижа]] барои тарҷумаи МедиаВики ва бартар аз он',
-	'translate-edit' => 'вироиш',
-	'translate-talk' => 'баҳс',
-	'translate-history' => 'таърих',
 	'translate-task-view' => 'Намоиши тамоми пайғомҳо аз',
 	'translate-task-untranslated' => 'Намоиши тамоми пайғомҳои тарҷуманашуда аз',
 	'translate-task-optional' => 'Намоиши пайғомҳои ихтиёрӣ аз',
@@ -21058,21 +20769,15 @@ $messages['tg-cyrl'] = array(
 	'translate-magic-cm-savefailed' => 'Шикаст дар захира кардан',
 	'translate-magic-words' => 'Калимаҳои ҷодуӣ',
 	'translate-magic-namespace' => 'Исми фазоҳои ном',
-	'translationchanges' => 'Тағйироти тарҷума',
-	'translationchanges-export' => 'судур',
-	'translationchanges-change' => '$1: $2 аз тарафи $3',
 	'translate-checks-parameters' => 'Параметрҳои зерин истифода нашудаанд: <strong>$1</strong>',
 );
 
-/** Tajik (Latin) (Тоҷикӣ (Latin))
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
 	'translate' => 'Tarçuma',
 	'translate-desc' => '[[Special:Translate|Sahifai viƶa]] baroi tarçumai MediaViki va bartar az on',
-	'translate-edit' => 'viroiş',
-	'translate-talk' => 'bahs',
-	'translate-history' => "ta'rix",
 	'translate-task-view' => 'Namoişi tamomi pajƣomho az',
 	'translate-task-untranslated' => 'Namoişi tamomi pajƣomhoi tarçumanaşuda az',
 	'translate-task-optional' => 'Namoişi pajƣomhoi ixtijorī az',
@@ -21118,9 +20823,6 @@ Agar şumo medoned in paƣom ciguna jo dar kuço istifoda meşavad, şumo metavo
 	'translate-magic-cm-savefailed' => 'Şikast dar zaxira kardan',
 	'translate-magic-words' => 'Kalimahoi çoduī',
 	'translate-magic-namespace' => 'Ismi fazohoi nom',
-	'translationchanges' => 'Taƣjiroti tarçuma',
-	'translationchanges-export' => 'sudur',
-	'translationchanges-change' => '$1: $2 az tarafi $3',
 );
 
 /** Thai (ไทย)
@@ -21317,8 +21019,6 @@ $messages['th'] = array(
 $messages['tk'] = array(
 	'translate' => 'Terjime',
 	'translate-desc' => 'Mediawikini we ýenekileri terjime etmek üçin [[Special:Translate|ýörite sahypa]]',
-	'translate-edit' => 'redaktirle',
-	'translate-history' => 'geçmiş',
 	'translate-task-view' => 'Ähli habarlaşyklary görjek',
 	'translate-task-untranslated' => 'Terjime edilmedik ähli habarlaşyklary görjek',
 	'translate-task-optional' => 'Hökmany däl habarlaşyklary görjek',
@@ -21790,7 +21490,7 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 	'translate-gs-avgscore' => 'Ort. skor',
 );
 
-/** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
+/** Tatar (Cyrillic script) (Татарча)
  * @author Himiq Dzyu
  * @author Timming
  * @author Ильнар
@@ -21798,9 +21498,6 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 $messages['tt-cyrl'] = array(
 	'translate' => 'Тәрҗемә',
 	'translate-desc' => '[[Special:Translate|Махсус бит]] MediaWiki һәм башка программлар тәрҗемә итү өчен',
-	'translate-edit' => 'үзгәртү',
-	'translate-talk' => 'бәхәс',
-	'translate-history' => 'тарих',
 	'translate-task-view' => 'Барлык мәкаләләрне карау',
 	'translate-task-untranslated' => 'Тәрҗемә ителмәгән мәкаләләрне карау',
 	'translate-task-optional' => 'Кирәк булмаган мәкаләләрне карау',
@@ -21851,9 +21548,6 @@ $messages['tt-cyrl'] = array(
 	'translate-magic-notsaved' => 'Сезнең үзгәртү сакланмаган!',
 	'translate-magic-errors' => 'Зинһар, тәрҗемәдәге {{PLURAL:$1|әлеге хатаны}} төзәтегез:',
 	'translate-magic-saved' => 'Кертелгән үзгәртүләр сакланды.',
-	'translationchanges' => 'Тәрҗемәләрдәге үзгәртүләр',
-	'translationchanges-export' => 'чыгару',
-	'translationchanges-change' => '$1: $2 $3',
 	'translate-checks-parameters' => '{{PLURAL:$2|Әлеге параметр кулланылмый|Әлеге параметрлар кулланылмый}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Билгесез параметр|Билгесез параметрлар}}:
@@ -21874,13 +21568,9 @@ $messages['tt-cyrl'] = array(
 	'translate-suppress-complete' => 'Тулысынча тәрҗемә ителгән төркемнәрне күрсәтмәскә',
 	'translate-language' => 'Тел',
 	'translate-total' => 'Хат',
-	'translate-total-tooltip' => 'Әлеге төркемдәге мәкаләләренең гомуми саны.',
 	'translate-untranslated' => 'Тәрҗемә ителмәгәннәре',
-	'translate-untranslated-tooltip' => 'Тәрҗемә ителмәгән һәм искергән җитләрнең гомуми саны.',
 	'translate-percentage-complete' => 'Башкарылган эш',
-	'translate-percentage-complete-tooltip' => 'Тәрҗемә ителгән мәкаләләр саны.',
 	'translate-percentage-fuzzy' => 'Искергән битләр',
-	'translate-percentage-fuzzy-tooltip' => 'Искергән дип табылган мәкаләләр.',
 	'translate-nothing-to-do' => 'Барлык тәрҗемәләр дә башкарылган инде. Сез мәкаләләрне [[Special:Translate|{{int:translate}}]] бите аша карый аласыз.',
 	'supportedlanguages' => 'Кулланылучы телләр',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Тәрҗемәче|Тәрҗемәчеләр}}: $1',
@@ -21892,13 +21582,6 @@ $messages['tt-cyrl'] = array(
 	'translate-js-skip' => 'Киләсе биткә күчү',
 	'translate-js-history' => 'Тәрҗемә тарихы',
 	'translate-js-support' => 'Сорау бирү',
-);
-
-/** Uighur (ئۇيغۇرچە / Uyghurche‎) */
-$messages['ug'] = array(
-	'translate-edit' => 'uzgartish',
-	'translate-talk' => 'monazire',
-	'translate-history' => 'tarih',
 );
 
 /** Uyghur (Arabic script) (ئۇيغۇرچە)
@@ -22020,13 +21703,10 @@ $messages['ug-arab'] = array(
 	'translate-gs-total' => 'جەمئى',
 );
 
-/** Uighur (Latin) (ئۇيغۇرچە / Uyghurche‎ (Latin))
+/** Uyghur (Latin script) (Uyghurche‎)
  * @author Jose77
  */
 $messages['ug-latn'] = array(
-	'translate-edit' => 'uzgartish',
-	'translate-talk' => 'monazire',
-	'translate-history' => 'tarih',
 	'translate-page-language' => 'Til',
 	'translate-next' => 'Kéyinki bet',
 	'translate-prev' => 'Aldinqi bet',
@@ -22946,9 +22626,6 @@ Kod:
  */
 $messages['wa'] = array(
 	'translate' => 'Ratourner',
-	'translate-edit' => 'candjî',
-	'translate-talk' => 'copene',
-	'translate-history' => 'istwere',
 	'translate-task-view' => 'Vey tos les messaedjes',
 	'translate-task-untranslated' => 'Vey tos les messaedjes nén ratournés',
 	'translate-task-review' => 'Verifyî les candjmints',
@@ -23008,9 +22685,6 @@ $messages['xmf'] = array(
 $messages['yi'] = array(
 	'translate' => 'פֿארטײַטשן',
 	'translate-desc' => '[[Special:Translate|באזונדערער בלאט]] פֿאר פֿארטײַטשן מעדיעוויקי און ווײַטער',
-	'translate-edit' => 'רעדאַקטירן',
-	'translate-talk' => 'רעדן',
-	'translate-history' => 'היסטאריע',
 	'translate-showsub' => 'ווײַזן די {{PLURAL:$1|אונטערגרופע|$1 אונטערגרופעס}}.',
 	'translate-grouplisting' => 'דאָס איז די ליסטע פֿון אַלע איבערזעצבאַרע גרופעס.
 קליקט דעם מעלדונג גרופע נאָמען צו ווײַזן א ליסטע פֿון אַלע נישט־פֿאַרטײַטשע מעלדונגען.',
@@ -23080,10 +22754,6 @@ $messages['yi'] = array(
 	'translate-magic-notsaved' => 'אייער רעדאקטירונג איז נישט אויפגעהיטן!',
 	'translate-magic-errors' => 'ביטע פאַרריכטן {{PLURAL:$1|פֿאלגנדן גרײַז|פֿאלגנדע גרײַזן}} אין איבערזעצונגען:',
 	'translate-magic-saved' => 'אייערע ענדערונגען זענען אויפגעהיטן מיט דערפאלג.',
-	'translationchanges' => 'פארטײַטשן ענדערונגען',
-	'translationchanges-export' => 'עקספארט',
-	'translationchanges-change' => '$1: $2 דורך $3',
-	'translationchanges-submit' => 'ברענגען',
 	'translate-checks-parameters' => '{{PLURAL:$2|דער פֿאלגנדער פאראמעטער ווערט|די פֿאלגנדע פאראמעטערס ווערן}} נישט געניצט:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|דער פֿאלגנדער פאַראַמעטער איז|די פֿאלגנדע פאַראַמעטערס זענען}} נישט באַקאַנט:
@@ -23172,9 +22842,6 @@ $messages['yi'] = array(
 $messages['yue'] = array(
 	'translate' => '翻譯',
 	'translate-desc' => '翻譯MediaWiki同其它嘢嘅[[Special:Translate|特別頁]]',
-	'translate-edit' => '編輯',
-	'translate-talk' => '對話',
-	'translate-history' => '歷史',
 	'translate-task-view' => '去睇全部信息自',
 	'translate-task-untranslated' => '去睇全部未翻譯好嘅信息自',
 	'translate-task-optional' => '去睇可選用嘅信息自',
@@ -23237,9 +22904,6 @@ $messages['yue'] = array(
 	'translate-magic-special' => '特別頁替身',
 	'translate-magic-words' => '魔術字',
 	'translate-magic-namespace' => '名空間名',
-	'translationchanges' => '翻譯更改',
-	'translationchanges-export' => '倒出',
-	'translationchanges-change' => '$1: $2 由 $3',
 	'translate-checks-parameters' => '下面嘅參數係無用到嘅: <strong>$1</strong>',
 	'translate-checks-balance' => '插入字嘅數量唔均等: <strong>$1</strong>',
 	'translate-checks-links' => '下面嘅連結有問題: <strong>$1</strong>',

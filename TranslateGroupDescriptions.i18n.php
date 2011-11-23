@@ -95,9 +95,7 @@ $messages['qqq'] = array(
 	'bw-desc-shapado' => 'Do not translate the link target <code>Translating:Shapado</code>.',
 	'bw-desc-statusnet' => 'Do not translate the link target <code>Translating:StatusNet</code>.',
 	'translate-group-desc-statusnet-plugin' => 'Do not translate the link target <code>Translating:StatusNet</code>.',
-	'bw-desc-voctrain' => 'Do not translate the link target <code>Translating:Voctrain</code>.',
 	'bw-desc-wikiblame' => 'Do not translate the link target <code>Translating:WikiBlame</code>.',
-	'bw-desc-wikimediamobile' => 'Do not translate the link target <code>Translating:Wikimedia_mobile</code>.',
 	'bw-desc-wikireader' => 'Do not translate the link target <code>Translating:WikiReader</code>.',
 );
 
@@ -133,12 +131,7 @@ Sien [[mw:Extension:PDF Writer]] en [http://code.pediapress.com/wiki/wiki/mwlibr
 * Probeer om vertalings nie langer as die oorspronklike Engels te maak nie vanweë beperkings in die "UI-framework". Sien ook die [http://trac.openstreetmap.org/ticket/2067 onopgeloste fout].
 * Gebruik [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] vir die toets van Potlatch. U kan soveel u wil daar toets (in enige area).',
 	'bw-desc-statusnet' => "[[Translating:StatusNet|StatusNet]] is 'n oopbron mikroblog-bediener",
-	'bw-desc-voctrain' => "[http://omegawiki.org OmegaWiki]-gebaseerde woordeskatopleier. Gebruik 'n stelsel van geheuekaarte om die woordeskat van enige taal na enige ander ondersteunde taal aan te leer.
-Ontwikkel vir die Universiteit van Bamberg.
-Lisensie: GPL 2.0 of nuwer.
-Ontwikkel deur [[User:Kim Bruning]].",
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] is in staat om vinnig die outeurs van 'n bladsy in 'n Wikimedia-wiki te vind.",
-	'bw-desc-wikimediamobile' => 'Wikipedia mobiel kan by http://m.wikipedia.org gevind word en het ten doel om Wikipedia op "smartphones" regoor die wêreld te ondersteun.',
 	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] is 'n projek wat 'n aflyn-weergawe van Wikipedia op 'n mobiele-toestel lewer.",
 );
 
@@ -285,10 +278,7 @@ $messages['bg'] = array(
 	'bw-desc-osm-site' => 'Тази група съобщения съдържа интерфейсните съобщения за [[Translating:Open Street Map|Open Street Map]].
 Вижте [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} страницата от сайта на проект Unicode CLDR] за обяснение на ключовете за множествено число в съобщенията.',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] е сървър за микроблогване с отворен код',
-	'bw-desc-voctrain' => 'Система за речниково обучение, базирана на [http://omegawiki.org OmegaWiki]. Използва [http://bg.wikipedia.org/wiki/Флашкарта_(обучение)системата на флашкартите] за учене на думи от и на произволен език, поддържан от Omegawiki.
-Системата е създадена за университета в Бамберг и публикувана под лиценза GPL, версия 2.0 или по-късна. Разработена е от [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] може бързо да намери авторите на страница в уики на Уикимедия.',
-	'bw-desc-wikimediamobile' => 'Wikimedia mobile се намира на адрес http://m.wikipedia.org и има за цел да улесни достъпа до Уикипедия от смартфони по целия свят.',
 );
 
 /** Breton (Brezhoneg)
@@ -350,10 +340,7 @@ Sellit 'ta [[mw:Extension:PDF_Writer]] hag http://code.pediapress.com/wiki/wiki/
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] zo ur servijer mikroblogiñ frank a wirioù',
 	'translate-group-desc-statusnet-plugin' => "Darn eus un astenn evit [[Translating:StatusNet|StatusNet]] eo ar c'hemennoù-mañ",
 	'translate-group-desc-tsint' => 'Ur strollad kemennadennoù evit [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], ar reizhiad etrebroadelaat ostilhoù an [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)',
-	'bw-desc-voctrain' => "Pleustrer gerioù diazezet war [http://omegawiki.org OmegaWiki]. Implijout a ra ur reizhiad flashcard da zeskiñ gerioù adal nep yezh pleustret war Omegawiki.
-Gant skol-veur Bamberg eo bet savet. Aotre GPL 2.0 pe nevesoc'h. Diorroet gant [[User:Kim Bruning|Kim Bruning]].",
 	'bw-desc-wikiblame' => 'Gouest eo [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] da gavout fonnus aozerien ur bajenn eus ur wiki Wikimedia.',
-	'bw-desc-wikimediamobile' => "Gallout a ra Wikimedia hezoug bezañ kavet war http://m.wikipedia.org hag e bal zo lakaat ar pellgomzerioù ijinek d'ober gant Wikipedia e pep lec'h dre ar bed.",
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] a zo ur raktres gantañ ar pal kinnig ur stumm testenn eus Wikipedia er mod ez linenn war un trobarzhell hezoug.',
 );
 
@@ -414,10 +401,7 @@ Pogledajte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je platforma otvorenog koda za mikro blogiranje',
 	'translate-group-desc-statusnet-plugin' => 'Ove poruke su dio priključka za [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Grupa poruka za [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n sistem za [http://toolserver.org Toolserver] alate (<span class="plainlinks">[[Translating talk:Toolserver|podrška]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tehnički detalji]</span>)',
-	'bw-desc-voctrain' => 'Riječnički trener zasnovan na Omegawiki. Koristi sistem flashcard za učenje riječi sa bilo kojeg jezika na drugi jezik koji omogućuje Omegawiki.
-Napravljeno na Univerzitetu Bamberg. Licencirano pod GPL 2.0 ili kasnijom. Razvijeno od strane korisnika [[User:Kim Bruning]].',
 	'bw-desc-wikiblame' => 'Putem [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je moguće brzo pronaći autore stranica u Wikimedia wikijima.',
-	'bw-desc-wikimediamobile' => 'Wikimedia mobile se može naći na http://m.wikipedia.org i cilj joj je da dovede Wikipediju na smartfone širom svijeta.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekat koji ima za cilj da omogući vanmrežnu tekstualnu verziju Wikipedije na mobilnim uređajima.',
 );
 
@@ -430,7 +414,6 @@ $messages['ca'] = array(
 	'bw-desc-mantisbt' => "[http://www.mantisbt.org MantisBT] és un sistema de gestió d'errors via web. Si us plau, informeu de qualsevol problema a [[Support]].",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] és un client de correu electrònic desenvolupat en PHP. Si us plau, informeu de qualsevol problema a [[Support]].',
 	'bw-desc-openlayers' => 'OpenLayers és un programa lliure de generació dinàmica de mapes. Si us plau, informeu de qualsevol incidència a [[support]].',
-	'bw-desc-wikimediamobile' => 'Wikimedia mòbil es pot trobar a http://m.wikipedia.org i pretén portar la Viquipèdia als telèfons mòbils arreu del món.',
 );
 
 /** Czech (Česky)
@@ -489,10 +472,7 @@ Vysvětlení klíčů u funkce PLURAL najdete na [http://unicode.org/repos/cldr-
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je open-source mikroblovací server',
 	'translate-group-desc-statusnet-plugin' => 'Tyto zprávy jsou částí modulu pro [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Skupina zpráv pro [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], lokalizační systém pro nástroje na [http://toolserver.org Toolserveru] (<span class="plainlinks">[[Translating talk:Toolserver|podpora]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technické podrobnosti]</span>)',
-	'bw-desc-voctrain' => 'Program pro výuku slovíček založený na [http://omegawiki.org OmegaWiki]. Používá systém učebních kartiček k výuce slovíček z libovolného jazyka v libovolném jazyce podporovaném na Omegawiki.
-Vytvořeno pro Univerzitu v Bamberku. Licencováno pod GPL 2.0 nebo novější. Autorem je [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] dokáže rychle zjistit autory libovolné stránky na wiki nadace Wikimedia.',
-	'bw-desc-wikimediamobile' => 'Wikimedia mobile sídlí na http://m.wikipedia.org a pomáhá dostat Wikipedii do podporovaných smartphonů po celém světě.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt nabízející offline čistě textovou verzi Wikipedie pro mobilní zařízení.',
 );
 
@@ -663,10 +643,7 @@ Pšosym glědaj [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wi
 	'bw-desc-shapado' => 'Kupka powěźeńkow za zjawnje k dispoziciji stojecu softwaru Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] jo serwer za mikroblogowanje ze zjawnym žrědłowym kodom',
 	'translate-group-desc-statusnet-plugin' => 'Toś te powěźeńki su źěl tykaca za [[Translating:StatusNet|StatusNet]]',
-	'bw-desc-voctrain' => 'Treněrowak wokablow na zakłaźe [http://omegawiki.org OmegaWiki]. Wužywa system flashcard za wuknjenje wokablow z někakeje rěcy do rěcy, kótaruž OmegaWiki pódpěrujo.
-Za Uniwersitu Bamberg napórany. Stoj pód licencu GPL 2.0 abo wušej. Wót [[User:Kim Bruning|Kima Bruninga]] wuwity.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] móžo awtorow boka we wikiju Wikimedije malsnje namakaś.',
-	'bw-desc-wikimediamobile' => 'Mobilna Wikimedija dajo se na http://m.wikipedia.org namakaś a ma zaměr Wikipediju na smartfonach na cełem swěśe pódprěś',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] jo projekt, kótaryž stoj tekstowu wersiju Wikipedije offline na mobilnem rěźe k dispoziciji.',
 );
 
@@ -692,10 +669,7 @@ $messages['el'] = array(
 * Προσπαθήστε να κρατήσετε τις μεταφράσεις σας παρόμοιες όσο το δυνατόν στο μήκος του αγγλικού πρωτότυπου, λόγω περιορισμών πλαισίου UI. Επίσης δείτε το [http://trac.openstreetmap.org/ticket/2067 ανοικτή σφάλμα].
 * Χρησιμοποιήστε το [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] για δοκιμή του Potlatch. Μπορείτε να δοκιμάσετε εκεί όλα όσα θέλετε σε οποιαδήποτε περιοχή.',
 	'bw-desc-statusnet' => 'Το [[Translating:StatusNet|StatusNet]] είναι ένας εξυπηρετητής ανοικτού λογισμικού microblogging',
-	'bw-desc-voctrain' => 'Με βάση το [http://omegawiki.org OmegaWiki] εκπαιδευτής λεξιλογίου. Χρησιμοποιεί ένα σύστημα flashcard για να μάθει λεξιλόγιο από οποιαδήποτε γλώσσα σε οποιαδήποτε από τις γλώσσες που υποστηρίζονται από το Omegawiki.
-Δημιουργήθηκε για το Πανεπιστήμιο του Bamberg. Έχει λάβει άδεια GPL 2.0 ή νεότερη έκδοση. Αναπτυγμένο από το [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => 'Το [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] είναι σε θέση να βρει γρήγορα τους συντάκτες μιας σελίδας σε ένα wiki Wikimedia.',
-	'bw-desc-wikimediamobile' => 'Το Wikimedia mobile μπορεί να βρεθεί στο http://m.wikipedia.org και αποσκοπεί να φέρει τη Βικιπαίδεια σε θέση να υποστηρίζει smartphones σε όλο τον κόσμο.',
 	'bw-desc-wikireader' => 'Το [[Translating:WikiReader|WikiReader]] είναι ενα εγχείρημα για παράδοση μιας εκτός σύνδεσης, μόνο κειμένου έκδοσης της Βικιπαίδειας σε μια κινητή συσκευή.',
 );
 
@@ -924,10 +898,7 @@ Vêde la [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 * utilisar [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] por èprovar Potlatch. Vos pouede èprovar tant que vos lo voléd dens una zona quinta que seye.',
 	'bw-desc-shapado' => 'Ceta tropa de mèssâjos contint los mèssâjos de la programeria abada et a sôrsa uvèrta de quèstions / rèponses [[Translating:Shapado|Shapado]].',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] est un sèrvor de microblogging a sôrsa uvèrta.',
-	'bw-desc-voctrain' => 'Entrênor de vocabulèro basâ dessus [http://omegawiki.org OmegaWiki]. Utilise un sistèmo a bâsa de cârtes flash por aprendre lo vocabulèro d’una lengoua quinta que seye de vers una lengoua recognua per OmegaWiki quinta que seye.
-Fêt por l’Univèrsitât de Bamberg. Publeyê desot licence GPL 2.0 ou ben ples novél. Dèvelopâ per [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pèrmèt de trovar rêdo los ôtors d’una pâge dens un vouiqui de Wikimedia.',
-	'bw-desc-wikimediamobile' => 'Wikimedia mobilo pôt étre trovâ a http://m.wikipedia.org et at por fin de facilitar l’accès a Vouiquipèdia sur los enfatâblos recognus a travèrs lo mondo.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] est un projèt visent a semondre una vèrsion tèxto de Vouiquipèdia en defôr de legne sur un pèrifèrico mobilo.',
 );
 
@@ -1110,9 +1081,7 @@ $messages['he'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] הוא שרת מיקרובלוגים.',
 	'translate-group-desc-statusnet-plugin' => 'ההודעות האלו הן חלק מתוסף עבור [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'קבוצת הודעות ל־[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], מערכת התרגום עבור כלי [http://toolserver.org Toolserver‏ (<span class="plainlinks">[[Translating talk:Toolserver|תמיכה]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition פרטים טכניים]</span>)',
-	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] הוא מאמן אוצר מילים מבוסס אומגה־ויקי',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] מסוגל לזהות את הכותבים של חלק מדף האתר ויקי של ויקימדיה',
-	'bw-desc-wikimediamobile' => '[[Translating:Wikimedia_mobile|Wikimedia mobile]] הוא ממשק ויקיפדיה עבור מכשירים ניידים',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] מביא גרסת טקסט של ויקיפדיה למכשיר נייד.',
 );
 
@@ -1237,10 +1206,7 @@ A többesszám formátumáról [http://unicode.org/repos/cldr-tmp/trunk/diff/sup
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]], egy nyílt forrású mikroblogging szerver',
 	'translate-group-desc-statusnet-plugin' => 'Ezek az üzenetek egy [[Translating:StatusNet|StatusNet]]-kiegészítő részei',
 	'translate-group-desc-tsint' => 'Üzenetcsoport a [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]hez, ami egy i18n-rendszer [http://toolserver.org toolserveres] eszközökhöz (<span class="plainlinks">[[Translating talk:Toolserver|támogatás]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technikai részletek]</span>)',
-	'bw-desc-voctrain' => '[http://omegawiki.org OmegaWiki]-alapú szótanító. Memóriakártya alapú rendszert használ szavak tanulásához bármely nyelvről bármely nyelvre, melyet az OmegaWiki támogat.
-A Bambergi Egyetem részére készült, a GPL licenc 2.0-ás vagy későbbi változata alatt lett közzétéve. Fejlesztette [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => 'A [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] segítségével könnyen megtalálhatod egy Wikimédia-wikis lap szerkesztőit.',
-	'bw-desc-wikimediamobile' => 'A Wikimedia mobil változata a http://m.wikipedia.org címen található, és célja, hogy eljuttassa a Wikipédiát a támogatott okostelefonokra az egész világon.',
 	'bw-desc-wikireader' => 'A [[Translating:WikiReader|WikiReader]] a Wikipédia csak szöveges, internetkapcsolat nélküli változatát mobil eszközökön elérhetővé tevő projekt.',
 );
 
@@ -1361,10 +1327,7 @@ Lihat pula [[mw:Extension:PDF Writer]] dan http://code.pediapress.com/wiki/wiki/
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] adalah suatu server mikroblog sumber terbuka',
 	'translate-group-desc-statusnet-plugin' => 'Pesan ini adalah bagian dari sebuah plugin untuk [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Kelompok pesan untuk [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], sistem i18n untuk alat [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|dukungan]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detail teknis]</span>)',
-	'bw-desc-voctrain' => 'Pelatih kosakata berbasis-[http://omegawiki.org OmegaWiki]. Menggunakan sistem kartu flash untuk mempelajari kosakata dari suatu bahasa ke bahasa lain yang didukung oleh OmegaWiki.
-Diciptakan untuk University of Bamberg. Dilisensikan di bawah GPL 2.0 atau lebih tinggi. Dikembangkan oleh [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] dapat dengan cepat menampilkan daftar penulis suatu halaman wiki Wikimedia.',
-	'bw-desc-wikimediamobile' => 'Wikimedia mobile dapat ditemukan di http://m.wikipedia.org dan bertujuan untuk membawa Wikipedia yang dapat didukung oleh smartphone di seluruh dunia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] merupakan sebuah proyek yang memberikan sebuah versi luring, hanya berisi teks dari Wikipedia pada perangkat selular.',
 );
 
@@ -1405,9 +1368,7 @@ Per favore:
 * Per effettuare test su Potlatch usa [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] dove è possibile effettuare tutte le prove in qualsiasi zona.",
 	'bw-desc-shapado' => 'Gruppo di messaggi per il software libero ed open source [[Translating:Shapado|Shapado]], per Q&A',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] è un server di microblogging open source',
-	'bw-desc-voctrain' => "Trainer di vocaboli basato su [http://omegawiki.org OmegaWiki]. Utilizza un sistema di flashcard per imparare i vocaboli da qualsiasi lingua in qualsiasi lingua supportata da OmegaWiki. Creato per l'Università di Bamberga (Germania). Licenziato con licenza GPL 2.0 o successiva. Sviluppato da [[User:Kim Bruning|Kim Bruning]].",
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] è in grado di trovare velocemente gli autori di una pagina in un sito di Wikimedia.',
-	'bw-desc-wikimediamobile' => 'Wikimedia mobile si trova al seguente url: http://m.wikipedia.org e mira a portare Wikipedia su tutti gli smartphones compatibili in tutto il mondo.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] è un progetto per fornire una versione offline, solo testo di Wikipedia per dispositivi mobili.',
 );
 
@@ -1463,21 +1424,18 @@ $messages['ja'] = array(
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]]は、ウェブ上で動作する質問回答ソフトウェアです',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] はオープンソースのマイクロブログサーバーです',
 	'translate-group-desc-statusnet-plugin' => 'これらのメッセージは、[[Translating:StatusNet|StatusNet]]のプラグインの一部です',
-	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver]にあるツールの国際化システム(<span class="plainlinks">[[Translating talk:Toolserver|サポート]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition 技術的詳細]</span>)である[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]のメッセージ群',
+	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver] にあるツールの国際化システム（<span class="plainlinks">[[Translating talk:Toolserver|サポート]]、[https://wiki.toolserver.org/view/Toolserver_Intuition 技術的詳細]</span>）である [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition] のメッセージ群',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]は、ウィキメディアのウィキ上のページの著者をすばやく検索することができます',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]は、携帯可能な機器で、オフラインかつ文字のみのウィキペディアを提供します',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]はウィキペディアを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末のアプリケーションです',
 );
 
-/** Kabardian (Cyrillic) (Адыгэбзэ (Cyrillic))
+/** Адыгэбзэ (Адыгэбзэ)
  * @author Тамэ Балъкъэрхэ
  */
 $messages['kbd-cyrl'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — микроболдингым и сервер зыIуха къызыхэкIа кодыр игъусэу',
-	'bw-desc-voctrain' => 'Псэлъалъэ тренажор [http://omegawiki.org OmegaWiki] тещIыхьауэ. Къегъэсэбэпыр карточкэ системэ псэлъалъэр хэгъэхъуэным бзэу хъуамкIэ, Omegawiki дэзыIыгъхэм.
-Бамберга университетым щхьа щIащ. Лицензироват щIащ GPL 2.0-мкIэ е нэхъ иужьрей версиекIэ. ЗыщIар [[User:Kim Bruning|Ким Брунинг]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] и сэбэпыр псынщIэу къегъэгъуэт напэкIуэцIхэм я тхакIуэхэр Википедие проектым.',
-	'bw-desc-wikimediamobile' => 'Мобильнэ Википедиер щыIэщ мы адресым: http://m.wikipedia.org, дуней псом къыщыбгъэсэбэп хъунущ Википедием смартфонкIэ удэлэжьэнумэ.',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -1692,7 +1650,6 @@ $messages['ml'] = array(
 	'translate-group-desc-mediawikicore' => 'ഇപ്പോഴത്തെ മീഡിയവിക്കി ആൽഫാ പതിപ്പ് ({{CURRENTVERSION}}) ഉപയോഗിക്കുന്ന എല്ലാ സന്ദേശങ്ങളുമുൾപ്പെടുന്ന ഗണം',
 	'translate-group-desc-wikimediaextensions' => '[http://wikimedia.org/ വിക്കിമീഡിയ ഫൗണ്ടേഷൻ] ഉപയോഗിക്കുന്ന മീഡിയവിക്കി അനുബന്ധങ്ങളിലെ എല്ലാ സന്ദേശങ്ങളുമുൾപ്പെടുന്ന ഗണം',
 	'translate-group-desc-translatablepages' => 'പരിഭാഷപ്പെടുത്താവുന്ന എല്ലാ താളുകളും',
-	'bw-desc-wikimediamobile' => 'വിക്കിപീഡിയയുടെ മൊബൈൽ സമ്പർക്കമുഖമാണ് [[Translating:Wikimedia_mobile|വിക്കിമീഡിയ മൊബൈൽ]]',
 );
 
 /** Malay (Bahasa Melayu)
@@ -1888,10 +1845,7 @@ Se [http://unicode.org/repos//cldr-tmp/trunk/diff/supplemental/language_plural_r
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] er en mikrobloggtjener med åpen kildekode',
 	'translate-group-desc-statusnet-plugin' => 'Disse meldingene er en del av en utvidelse for [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'En meldingsgruppe for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-systemet for [http://toolserver.org Toolserver]-verktøy (<span class="plainlinks">[[Translating talk:Toolserver|støtte]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tekniske detaljer]</span>)',
-	'bw-desc-voctrain' => '[http://omegawiki.org OmegaWiki]-basert ordforrådstrener. Bruker et huskekortsystem for å lære ordforråd fra ethvert språk til ethvert språk støttet av OmegaWiki.
-Opprettet for universitetet i Bamberg. Lisensiert under GPL 2.0 eller senere. Utviklet av [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan kjapt finne ut hvem som har forfattet en side på en Wikimedia-wiki.',
-	'bw-desc-wikimediamobile' => 'Wikipedia på mobil kan du finne på http://m.wikipedia.org og sikter mot å bringe Wikipedia til støttede mobiltelefoner verden over.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] er et prosjekt for å levere en frakoblet tekstversjon av Wikipedia på en mobil enhet.',
 );
 
@@ -1925,10 +1879,7 @@ Vejatz [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibr
 *ensajatz de far de traduccions de longor equivalenta a l’original anglés, en rason de restriccions de l’interfàcia d'utilizaire. Vejatz lo [http://trac.openstreetmap.org/ticket/2067 rapòrt de bug].
 *utilizatz [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] per testar Potlatch. Podètz testar autant coma volètz  dins quin airal que siá.",
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es un servidor de microblogging en font dobèrta',
-	'bw-desc-voctrain' => "Entraïnador de vocabulari basat sus [http://omegawiki.org OmegaWiki]. Utiliza una carta flash per aprene lo vocabulari d'una lenga quina que siá cap a una lenga presa en carga per Omegawiki quina que siá.
-Creat per l'universitat de Bamberg. Licence : GPL 2.0 o mai recent. Desvolopat per [[User:Kim Bruning|Kim Bruning]].",
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] es en mesura de trobar rapidament los autors d’una pagina dins un wiki Wikimedia.',
-	'bw-desc-wikimediamobile' => "Wikimedia mobil pòt èsser trobat a http://m.wikipedia.org e a per tòca d'aportar Wikimedia als smartphones suportats a travèrs lo monde.",
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es un projècte que visa a ofrir una version tèxte de Wikipèdia en mòde desconnectat sus un periferic mobil.',
 );
 
@@ -1986,10 +1937,7 @@ Więcej informacji odnajdziesz na stronach [[mw:Extension:PDF_Writer]] oraz http
 	'bw-desc-shapado' => 'Grupa komunikatów darmowego z otwartym kodem oprogramowania zadawania pytań i udzielania odpowiedzi [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] jest opartym na otwartym kodzie serwerem mikroblogów',
 	'translate-group-desc-statusnet-plugin' => 'Te komunikaty są częścią wtyczki do [[Translating:StatusNet|StatusNet]]',
-	'bw-desc-voctrain' => 'Nauczyciel słówek oparty na Omegawiki. Wykorzystuje system plansz do nauki słownictwa w dowolnym języku obsługiwanym przez Omegawiki.
-Utworzony dla Uniwersytetu w Bambergu. Licencja GPL w wersji 2.0 lub nowszej. Opracowane przez [[User:Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pozwala szybko odnaleźć autorów strony w Wikimedia wiki.',
-	'bw-desc-wikimediamobile' => 'Mobilne Wikimedia można odnaleźć na stronie http://m.wikipedia.org. Umożliwia ono korzystanie z Wikipedii w dowolnym miejscu na świecie poprzez telefony komórkowe.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] jest projektem udostępniania offline, wyłącznie tekstowej wersji Wikipedii dla uradzeń mobilnych.',
 );
 
@@ -2046,18 +1994,8 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'bw-desc-statusnet' => "[[Translating:StatusNet|StatusNet]] a l'é un servent ëd microscartari a sorgiss duverta",
 	'translate-group-desc-statusnet-plugin' => "Sti mëssagi a fan part ëd n'estension për [[Translating:StatusNet|StatusNet]]",
 	'translate-group-desc-tsint' => 'Na partìa ëd mëssagi për [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], ël sistema i18n për [http://toolserver.org Toolserver] utiss (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detaj técnich]</span>)',
-	'bw-desc-voctrain' => "[http://omegawiki.org OmegaWiki]-based vocabulary trainer. A dòvra un sistema ëd flashcard për amparé ël vocabolari da minca lenga a minca lenga apogià da OmegaWiki.
-Creà da l'Università ëd Bamberg. Licensià GPL 2.0 o pì anans. Svilupà da [[User:Kim Bruning|Kim Bruning]].",
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] a peil trové an pressa j'àutor ëd na pàgina an na wiki ëd Wikimedia.",
-	'bw-desc-wikimediamobile' => 'Wikimedia mobile a peul esse trovà a http://m.wikipedia.org e a veul porté Wikipedia a suporté jë smartphones dël mond.',
 	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] a l'é un proget për fé na version ëd Wikipedia fòra linia, ëd sol test, dzora a na perifèrica mòbil.",
-);
-
-/** Pashto (پښتو)
- * @author Ahmed-Najib-Biabani-Ibrahimkhel
- */
-$messages['ps'] = array(
-	'bw-desc-wikimediamobile' => 'د ويکيمېډيا موبايل په http://m.wikipedia.org موندلی شی. د ويکيپېډيا يوه موخه دا ده چې د نړۍ په شاوخوا کې د هوښيارټيليفونونو لپاره د ويکيپېډيا ملاتړ وکړي.',
 );
 
 /** Portuguese (Português)
@@ -2119,10 +2057,7 @@ Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] é um servidor de microblogues de código aberto',
 	'translate-group-desc-statusnet-plugin' => 'Estas mensagens fazem parte de um plugin para o [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Um grupo de mensagens para o [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], o sistema de internacionalização das ferramentas [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|apoio]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalhes técnicos]</span>)',
-	'bw-desc-voctrain' => "Treinador de Vocabulário baseado no [http://omegawiki.org OmegaWiki]. Usa um sistema ''flashcard'' para aprender vocabulário de qualquer língua para qualquer língua suportada pelo Omegawiki.
-Criado para a Universidade de Bamberg. Licenciado GPL 2.0 ou posterior. Desenvolvido por [[User:Kim Bruning]].",
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] consegue encontrar rapidamente os autores de uma página numa wiki da Wikimedia.',
-	'bw-desc-wikimediamobile' => "Wikimedia mobile pode ser encontrado em http://m.wikipedia.org e pretende levar a Wikipédia aos ''smartphones'' suportados de todo o mundo.",
 	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] é um projecto para apresentar ''offline'' uma versão de texto da Wikipédia num dispositivo móvel.",
 );
 
@@ -2170,10 +2105,7 @@ Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 	'bw-desc-shapado' => 'Grupo de mensagens do software de perguntas e respostas, livre e de código aberto, [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] é um servidor de microblogues de código aberto',
 	'translate-group-desc-statusnet-plugin' => 'Estas mensagens fazem parte de um plugin para o [[Translating:StatusNet|StatusNet]]',
-	'bw-desc-voctrain' => 'Treinador de Vocabulário baseado no Omegawiki. Utiliza um sistema de flashcard para aprender vocabulário de qualquer idioma para qualquer idioma suportado pelo Omegawiki.
-Created pela Universidade de Bamberg. Licenciado GPL 2.0 ou posterior. Desenvolvido por [[User:Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] é capaz de encontrar rapidamente os autores de uma página em um wiki da Wikimedia.',
-	'bw-desc-wikimediamobile' => 'Wikimedia mobile pode ser encontrado em http://m.wikipedia.org e pretende trazer a Wikipédia para  smartphones em todo o mundo.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] é um projeto para apresentar offline uma versão de texto da Wikipédia num dispositivo móvel.',
 );
 
@@ -2217,9 +2149,7 @@ $messages['ro'] = array(
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] este un software bazat pe web de tip întrebări și răspunsuri',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] este un server pentru microblogging',
 	'translate-group-desc-statusnet-plugin' => 'Aceste mesaje sunt componente ale unui plugin pentru [[Translating:StatusNet|StatusNet]]',
-	'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] este un antrenor de vocabular bazat pe OmegaWiki',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] este capabil să găsească rapid autorii unei pagini dintr-un site wiki susținut de Wikimedia',
-	'bw-desc-wikimediamobile' => 'Wikimedia mobilă se poate accesa la http://m.wikipedia.org și are ca scop aducerea Wikipediei direct pe telefoanele mobile din întreaga lume.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] este un proiect ce are ca scop furnizarea unei versiuni off-line (care să conțină doar text) a Wikipediei pe un dispozitiv mobil.',
 );
 
@@ -2313,10 +2243,7 @@ $messages['sk'] = array(
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] je webmailový klient napísaný v PHP. Akékoľvek problémy hláste na [[Support|stránke Podpory]].',
 	'bw-desc-openlayers' => 'OpenLayers je open source generátor dynamických máp. Akékoľvek problémy hláste na [[Support|stránke Podpory]].',
 	'bw-desc-osm-site' => 'Táto skupina správ obsahuje správy rozhrania pre  [[Translating:Open Street Map|Open Street Map]].',
-	'bw-desc-voctrain' => 'Tréner slovnej zásoby založený na [http://omegawiki.org OmegaWiki]. Používa systém kartičiek na výuku slovnej zásoby medzi ľubovoľnými dvomi jazykmi, ktoré OmegaWiki podporuje.
-Vytvorené pre University of Bamberg. Licencované za podmienok GPL 2.0 alebo neskoršej. Vyvinul [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] dokáže rýchlo nájsť autorov stránky vo wiki projektov Wikimedia.',
-	'bw-desc-wikimediamobile' => 'Wikimedia mobile je možné nájsť na http://m.wikipedia.org a pomáha dostať Wikipédiu do podporovaných smartfónov na celom svete.',
 );
 
 /** Slovenian (Slovenščina)
@@ -2572,13 +2499,7 @@ Mangyaring tingnan ang [[mw:Extension:PDF_Writer]] at ang http://code.pediapress
 	'bw-desc-statusnet' => 'Ang [[Translating:StatusNet|StatusNet]] ay isang tagapaghaing pang-mikroblog na may bukas na pinagmumulan',
 	'translate-group-desc-statusnet-plugin' => 'Ang mga mensaheng ito ay bahagi ng isang pamasak para sa [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Isang pangkat ng mensahe para sa [http://toolserver.org/~krinkle/TsIntuition Intuition ng Toolserver], ang sistemang i18n para sa mga kasangkapan ng [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|pagtangkilik]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition mga detalyeng teknikal]</span>)',
-	'bw-desc-voctrain' => 'Pangsanay sa bokabularyo na nakabatay sa [http://omegawiki.org OmegaWiki].  Gumagamit na sistemang may lumilitaw na baraha upang matuto ng bokabularyo mula sa anumang wika papunta sa anumang wikang tinatangkilik ng Omegawiki.
-Nilikha para sa Pamantasan ng Bamberg. May lisensyang GPL 2.0 o mas luma.  Pinaunlad ni [[User:Kim Bruning|Kim Bruning]].
-
-[http://omegawiki.org OmegaWiki]-based vocabulary trainer. Uses a flashcard system to learn vocabulary from any language to any language supported by Omegawiki.
-Created for University of Bamberg. Licensed GPL 2.0 or later. Developed by [[User:Kim Bruning|Kim Bruning]].',
 	'bw-desc-wikiblame' => 'Kayang mabilisang hanapin ng [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] ang mga may-akda ng isang pahinang nasa loob ng isang wiki ng Wikimedia.',
-	'bw-desc-wikimediamobile' => 'Matatagpuan ang mobil na Wikimedia sa http://m.wikipedia.org at may layuning dalhin ang Wikipedia sa tinatangkilik na mga smartphone sa buong mundo.',
 	'bw-desc-wikireader' => 'Ang [[Translating:WikiReader|WikiReader]] ay isang proyekto upang dalhin ang isang bersyon ng Wikipediang hindi nakakunekta sa internet at may bersyong teksto lamang mula sa isang aparatong mobil.',
 );
 
@@ -2639,10 +2560,7 @@ $messages['uk'] = array(
 	'bw-desc-shapado' => 'Група повідомлень відкритого та вільного програмного забезпечення питань та відповідей [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сервер мікроблогінгу з відкритим вихідним кодом',
 	'translate-group-desc-statusnet-plugin' => 'Ці повідомлення є частиною плагіна для [[Translating:StatusNet|StatusNet]]',
-	'bw-desc-voctrain' => 'Словниковий тренажер на основі [http://omegawiki.org OmegaWiki]. Використовує систему карток для поповнення словарного запасу на будь-яких мовах, які підтримуються Omegawiki.
-Створений для університету Бамберга. Ліцензований з GPL 2.0 або пізнішими версіями. Розроблений [[User:Kim Bruning|Кімом Брунінгом]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дозволяє швидко знайти авторів сторінки в проектах Вікімедіа.',
-	'bw-desc-wikimediamobile' => 'Мобільна Вікімедіа знаходиться за адресою http://m.wikipedia.org і призначена для роботи з Вікіпедією за допомогою підтримуваних смартфонів по всьому світу.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] є проектом для випуску автономної текстової версії Вікіпедії на мобільному пристрої.',
 );
 
@@ -2659,10 +2577,7 @@ Ližainformacijad sab löuta [[mw:Extension:PDF_Writer]] da http://code.pediapre
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] om PHP-kelel kirjutadud web-klijent. Olgat hüväd, kirjutagat erazvuiččiš petusiš [[Support|Abulehtpolel]].',
 	'bw-desc-openlayers' => "OpenLayers om dinamižiden kartoiden generator avaitud äugotižkodanke. Olgat hüväd, kirjutagat kaikiš vigoiš [[Support|pid'oitelemižen lehtpolel]].",
 	'bw-desc-osm-site' => 'Nece tedotusiden gruppas om [[Translating:Open Street Map|Open Street Map]]-interfeisan tedotusid.',
-	'bw-desc-voctrain' => "[http://omegawiki.org OmegaWiki]-n abul tehtud vajehnik-trenažor. Kävutab kartaižiden sisteman vaihištod täuttes kaikil kelil, kudambid pid'oiteleb Omegawiki.
-Om tehtud Bambergan universitetan täht, om licenziruidud GPL 2.0-licenzijan mödhe vai möhemba. Šingotab [[User:Kim Bruning|Kim Bruning]].",
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] laskeb löuta teravas lehtpolen avtorid Wikimedii-projektoiš.',
-	'bw-desc-wikimediamobile' => "Mobiližen Wikimedijan adres om http://m.wikipedia.org; se abutab rata Wikipedijanke pid'oiteldud smartfonale kaikes mail'mas.",
 );
 
 /** Vietnamese (Tiếng Việt)
@@ -2761,7 +2676,6 @@ $messages['zh-hans'] = array(
 	'bw-desc-shapado' => '本组包含免费开源问答软件[[Translating:Shapado|Shapado]]的信息',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]]是一个开源微博客服务',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame]可以快速找到某Wikimedia wiki中某页面的作者。',
-	'bw-desc-wikimediamobile' => 'Wikimedia mobile可以通过http://m.wikipedia.org进行访问，它旨在将维基百科显示在全世界有支持的智能手机上。',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] 是一个将离线、仅文字版本的维基百科传送到手机上的项目。',
 );
 
@@ -2783,7 +2697,6 @@ $messages['zh-hant'] = array(
 	'bw-desc-osm-site' => '本群組包含了 [[Translating:Open Street Map|Open Street Map]] 的介面訊息。',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] 是一個開源微網誌服務',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] 可以快速找到 Wikimedia 的維基某一個頁面的作者。',
-	'bw-desc-wikimediamobile' => 'Wikimedia mobile 可以通過 http://m.wikipedia.org 進行訪問，它旨在將 Wikipedia 顯示在全世界受支援的智慧型手機裝置上。',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] 是一個將離線、僅文字版本的維基百科傳送到手機上的計畫。',
 );
 

@@ -285,7 +285,6 @@ Die bladsy is 'n vertaling van die bladsy [[$1]].
 Die vertaling kan bygewerk word via die [$2 vertaalgereedskap].",
 	'tpt-unknown-page' => 'Hierdie naamruimte is gereserveer vir die vertalings van bladsye.
 Die bladsy wat u probeer wysig kom nie ooreen met een wat vir vertaling gemerk is nie.',
-	'tpt-install' => 'Voer php maintenance/update.php of die webinstallasie uit om die bladsyvertaling te aktiveer.',
 	'tpt-render-summary' => "Besig met bewerkings vanweë 'n nuwe basisweergawe van die bronblad",
 	'tpt-download-page' => 'Eksporteer bladsy met vertalings',
 	'pt-shake-empty' => 'Leë afdeling vir merker $1.',
@@ -425,7 +424,6 @@ $messages['arz'] = array(
 هذه الصفحه ترجمه لصفحه [[$1]] ويمكن تحديث الترجمه باستخدام [$2 أداه الترجمة].',
 	'tpt-unknown-page' => 'هذا النطاق محجوز لترجمات صفحات المحتوى.
 الصفحه التى تحاول تعديلها لا يبدو أنها تتبع أى صفحه معلمه للترجمه.',
-	'tpt-install' => 'شغل php maintenance/update.php أو نصب من الويب لتفعيل خاصيه ترجمه الصفحات.',
 	'tpt-render-summary' => 'تحديث لمطابقه نسخه صفحه المصدر الجديدة',
 	'tpt-download-page' => 'صدّر الصفحه مع الترجمات',
 );
@@ -1093,7 +1091,6 @@ Předtím než tuto verzi označíte pro překlad zkontrolujte, že změny čás
 Tato stránka je překladem stránky [[$1]] a překlad lze aktualizovat pomocí [$2 nástroje pro překlad].',
 	'tpt-unknown-page' => 'Tento jmenný prostor je vyhrazen pro překlady stránek s obsahem.
 Zdá se, že stránka, kterou se pokoušíte upravovat, neodpovídá žádné stránce označené pro překlad.',
-	'tpt-install' => 'Funkci překladu stránek povolíte spuštěním <code>php maintenance/update.php</code> nebo webové instalace.',
 	'tpt-render-summary' => 'Aktualizace na novou verzi zdrojové stránky',
 	'tpt-download-page' => 'Exportovat stránky s překlady',
 );
@@ -2886,7 +2883,6 @@ men dènye {{PLURAL:$1|vèsyon|vèsyon yo}} pa ka make pou tradui.',
 	'tpt-target-page' => 'Paj sa a, se yon tradiksyon paj [[$1]] epi ou kapab mete a jou tradiksyon an lè ou itilize [$2 zouti tradiksyon an].',
 	'tpt-unknown-page' => 'Espas non sa a rezève pou tradiksyon paj yo.
 Paj w ap eseye modifye pa sanble koresponn ak yon paj ki make pou tradiksyon.',
-	'tpt-install' => 'Chaje php maintenance/update.php oubyen enstalasyon wèb pou aktive fonksyon tradiksyon paj la.',
 	'tpt-render-summary' => 'N ap mete ajou pou nou genyen nouvo vèsyon paj sous la.',
 	'tpt-download-page' => 'Ekspòte paj ki gen tradiksyon',
 	'pt-parse-open' => 'Baliz &lt;translate> pa balanse.
@@ -2966,7 +2962,6 @@ Mielőtt fordításra jelölöd ezt a változatot, ellenőrizd hogy a szakaszok 
 A(z) [[$1]] lap fordítása, és a fordítását [$2 a fordítás segédeszköz] segítségével lehet frissíteni.',
 	'tpt-unknown-page' => 'Ez a névtér a tartalmi lapok fordításainak van fenntartva.
 A lap, amit szerkeszteni próbálsz, úgy tűnik hogy nem egyezik egy fordításra jelölt lappal sem.',
-	'tpt-install' => 'Futtasd a <code>maintenance/update.php</code>-t vagy a webes telepítőt, hogy engedélyezd a lapfordítás funkciót.',
 	'tpt-render-summary' => 'Frissítés, hogy megegyezzen a forráslap új változatával',
 	'tpt-download-page' => 'Lap exportálása fordításokkal együtt',
 	'pt-parse-nested' => 'Egymásba ágyazott &lt;translate> szakaszok nem engedélyezettek.
@@ -3313,7 +3308,6 @@ ma {{PLURAL:$1|l'ultima versione non può essere marcata|le ultime versioni non 
 	'tpt-target-page' => 'Questa pagina non può essere aggiornata manualmente. Questa pagina è una traduzione della pagina [[$1]] e la traduzione può essere aggiornata tramite [$2 lo strumento di traduzione].',
 	'tpt-unknown-page' => 'Questo namespace è riservato alle traduzioni del contenuto delle pagine.
 La pagina che stai cercando di modificare non sembra corrispondere ad alcuna pagina segnata per la traduzione.',
-	'tpt-install' => "Esegui lo script php maintenance/update.php o riesegui l'installazione web per abilitare il servizio di traduzione pagine.",
 	'tpt-render-summary' => 'Aggiornamento per riscontrare la nuova versione della pagina di origine',
 	'tpt-download-page' => 'Esporta la pagina con le traduzioni',
 	'pt-shake-empty' => 'Sezione vuota per il marcatore $1.',
@@ -3450,7 +3444,7 @@ $messages['ja'] = array(
 失敗した場合、その[[Special:Log/pagetranslation|ページの翻訳記録]]に記録されるので、手動で修正する必要があります。',
 );
 
-/** Jamaican Creole English (Patios)
+/** Jamaican Creole English (Patois)
  * @author Yocahuna
  */
 $messages['jam'] = array(
@@ -3503,7 +3497,7 @@ $messages['ka'] = array(
 	'tpt-diff-new' => 'ახალი ტექსტი',
 );
 
-/** Kabardian (Cyrillic) (Адыгэбзэ (Cyrillic))
+/** Адыгэбзэ (Адыгэбзэ)
  * @author Тамэ Балъкъэрхэ
  */
 $messages['kbd-cyrl'] = array(
@@ -4567,7 +4561,6 @@ Abans de marcar aquestas versions per èsser traduchas, verificatz que las modif
 Es una version traducha de [[$1]] e la traduccion pòt èsser mesa a jorn en utilizant [$2 l'esplech de traduccion].",
 	'tpt-unknown-page' => "Aqueste espaci de noms es reservat per la traduccion de paginas.
 La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marcada per èsser traducha.",
-	'tpt-install' => "Aviatz php maintenance/update.php o l'installacion web per activar la foncionalitat de traduccion de paginas.",
 	'tpt-render-summary' => 'Mesa a jorn per èsser en acòrd amb la version novèla de la font de la pagina',
 	'tpt-download-page' => 'Exportar la pagina amb sas traduccions',
 	'pt-movepage-list-translation' => 'Paginas de traduccion',
@@ -5463,7 +5456,6 @@ Predtým než túto verziu označíte na preklad skontrolujte, že zmeny sekcií
 Táto stránka je prekladom stránky [[$1]] a preklad možno aktualizovať pomocou [$2 nástroja na preklad].',
 	'tpt-unknown-page' => 'Tento menný priestor je vyhradený na preklady stránok s obsahom.
 Zdá sa, že stránka, ktorú sa pokúšate upravovať nezodpovedá žiadnej stránke označenej na preklad.',
-	'tpt-install' => 'Funkciu prekladu webových stránok zapnete spustením php maintenance/update.php alebo webovej inštalácie.',
 	'tpt-render-summary' => 'Aktualizácia na novú verziu zdrojovej stránky',
 	'tpt-download-page' => 'Exportovať stránky s prekladmi',
 );
@@ -5849,7 +5841,6 @@ $messages['th'] = array(
 	'tpt-target-page' => 'หน้านี้ไม่สามารถถูกปรับปรุงตามปกติได้
 
 หน้านี้เป็นหน้าการแปลของหน้า[[$1]] และสามารถปรับปรุงการแปลได้โดยใช้[เครื่องมือการแปล $2]',
-	'tpt-install' => 'เข้าไปที่ maintenance/update.php ใน PHP หรือเข้าไปที่ตัวติดตั้งในเว็บเพื่อเปิดคุณสมบัติการแปลภาษา',
 	'tpt-render-summary' => 'กำลังอัพเดตเพื่อทำให้ตรงกันกับรุ่นปรับปรุงใหม่ของหน้่าโค้ดหลัก',
 	'tpt-download-page' => 'ส่งหน้าออกไปพร้อมการแปลภาษา',
 );
@@ -6018,7 +6009,7 @@ Bu sürümü çeviri için işaretlemeden önce, çevirmenlere gereksiz iş çı
 	'pt-movepage-new' => 'Yeni adı:',
 );
 
-/** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
+/** Tatar (Cyrillic script) (Татарча)
  * @author Ильнар
  * @author Рашат Якупов
  */
@@ -6030,7 +6021,7 @@ $messages['tt-cyrl'] = array(
 	'tpt-translation-intro' => 'Әлеге бит [[$2]] сәхифәсенең <span class="plainlinks">[$1 тәрҗемәсе булып тора]</span>. Тәрҗемә $3% башкарылган.',
 );
 
-/** ئۇيغۇرچە (ئۇيغۇرچە)
+/** Uyghur (Arabic script) (ئۇيغۇرچە)
  * @author Sahran
  */
 $messages['ug-arab'] = array(
@@ -6400,7 +6391,6 @@ $messages['zh-hans'] = array(
 	'translate-tag-markthis' => '标记此页面的翻译',
 	'tpt-translation-intro-fuzzy' => '像这样标记为过时的翻译。',
 	'tpt-languages-legend' => '其他语言：',
-	'tpt-install' => '运行 php maintenance/update.php 或网络安装启用页翻译功能。',
 	'tpt-render-summary' => '要匹配的源页的新版本更新',
 	'tpt-download-page' => '汇出含翻译的页面',
 	'pt-shake-empty' => '空节标记为 $1。',
