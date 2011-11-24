@@ -340,7 +340,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			$wgCaptchaTriggers = null;
 
 			$language = $wgRequest->getVal( 'primary-language' );
-			$message = $wgRequest->getText( 'message' );
+			$message = $wgRequest->getText( 'message', '...' );
 			$params = array(
 				'action' => 'threadaction',
 				'threadaction' => 'newthread',
