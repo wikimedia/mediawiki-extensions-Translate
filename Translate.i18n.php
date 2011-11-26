@@ -9018,6 +9018,7 @@ $1',
 /** Hindi (हिन्दी)
  * @author Ashishbhatnagar72
  * @author Kaustubh
+ * @author Knightsofdawn
  */
 $messages['hi'] = array(
 	'translate' => 'अनुवाद',
@@ -9026,7 +9027,7 @@ $messages['hi'] = array(
 	'translate-task-optional' => 'से वैकल्पिक संदेश देखें',
 	'translate-task-review' => 'बदलावों का पुनरावलोकन',
 	'translate-task-reviewall' => 'में सभी अनुवादों का पुनरावलिकन करें',
-	'translate-task-export' => 'से अनुवाद आयात करें.',
+	'translate-task-export' => 'अनुवाद आयात करें',
 	'translate-page-disabled' => "इस भा्षा के इस समूह में अनुवाद बंद हैं. कारण:
 ''$1''",
 	'translate-page-language' => 'भाषा',
@@ -9037,6 +9038,62 @@ $messages['hi'] = array(
 	'translate-magic-cm-export' => 'निर्यात',
 	'translate-magic-cm-comment' => 'टिप्पणी:',
 	'translate-magic-cm-save' => 'संजोयें',
+	'translate-statsf-scale' => 'कणिकामयता (Granularity)',
+	'translate-statsf-scale-months' => 'महीने',
+	'translate-statsf-scale-weeks' => 'सप्ताह (हफ्ते)',
+	'translate-statsf-scale-days' => 'दिन (दिवस)',
+	'translate-statsf-scale-hours' => 'घंटे',
+	'translate-statsf-count' => 'माप',
+	'translate-language' => 'भाषा',
+	'translate-total' => 'संदेश',
+	'translate-untranslated' => 'बिना अनुवाद',
+	'translate-percentage-complete' => 'समापन',
+	'translate-percentage-fuzzy' => 'कालग्रस्त (पुराना)',
+	'translate-nothing-to-do' => 'सभी संभव अनुवाद किया गए प्रतीत होते हैं।
+आपको [[Special:Translate|{{int:translate}}]] के माध्यम से संदेशों की समीक्षा करने के लिए प्रोत्साहित किया जाता है',
+	'translate-languagestats-overall' => 'सभी संदेश-समूह एक साथ',
+	'translate-ls-submit' => 'आँकड़े दिखाएं',
+	'translate-ls-column-group' => 'संदेश-समूह',
+	'translate-mgs-pagename' => 'संदेश-समूह आँकड़े',
+	'translate-mgs-fieldset' => 'प्राथमिकताएँ प्रदर्शित करें',
+	'translate-mgs-group' => 'संदेश-समूह',
+	'translate-mgs-nocomplete' => 'जिन भाषाओँ का अनुवाद पूर्ण हो चुका है उन्हें न दिखाएं',
+	'translate-mgs-noempty' => 'जिन भाषाओँ का अनुवाद नहीं है उन्हें न दिखाएं',
+	'translate-mgs-submit' => 'आँकड़े दिखाएं',
+	'translate-mgs-column-language' => 'भाषा',
+	'translate-mgs-totals' => 'सभी भाषाओं एक साथ',
+	'translate-mgs-invalid-group' => 'विनिर्दिष्ट समूह  $1  अस्तित्व में नहीं है।',
+	'translate-mgs-nothing' => 'अनुरोध किए गए आँकड़े दिखाने के लिए कुछ नहीं है ।',
+	'supportedlanguages' => 'समर्थित भाषाएँ',
+	'translate-js-next' => 'सहेजें और अगले सन्देश-कुंजी खोलें',
+	'translate-js-skip' => 'त्यागें और अगली सन्देश-कुंजी खोलें',
+	'translate-js-save-failed' => 'सहेजने में विफल। कृपया इस त्रुटि की रिपोर्ट करें।',
+	'translate-js-support' => 'सवाल पूछें',
+	'translate-js-support-title' => 'कृपया मदद मांगें अगर इस सन्देश के अनुवाद में कोई जानकारी की कमी हो तो',
+	'translate-gs-continent' => 'महाद्वीप',
+	'translate-gs-speakers' => 'वक्ता',
+	'translate-gs-score' => 'अंक',
+	'translate-gs-multiple' => 'एकाधिक',
+	'translate-gs-count' => 'गणना',
+	'translate-documentation-language' => 'सन्देश दस्तावेज़ीकरण',
+	'translate-searchprofile' => 'विशेष: खोज',
+	'translate-searchprofile-tooltip' => 'सभी अनुवादों से खोज',
+	'translate-search-languagefilter' => 'निस्पंदन (छानना)  - भाषा के आधार पर',
+	'translate-search-nofilter' => 'निःनिस्पंदन (बिना छननी)',
+	'translate-messagereview-submit' => 'स्वीकारें',
+	'translate-messagereview-progress' => 'स्वीकार रहे हैं...',
+	'translate-messagereview-failure' => 'स्वीकार रहे हैं... विफल हुई : $1',
+	'translate-messagereview-done' => 'स्वीकृत हुआ',
+	'translate-messagereview-apierror-invalidrevision' => 'अनुवाद नहीं मिला',
+	'translate-messagereview-apierror-unknownmessage' => 'सन्देश नहीं मिला',
+	'translate-messagereview-apierror-fuzzymessage' => 'अनुवाद FUZZY अँकित हुआ है',
+	'translate-messagereview-apierror-owntranslation' => 'आप अपने खुद के अनुवाद को स्वीकार नहीं कर सकते',
+	'translate-messagereview-apierror-badtoken' => 'अमान्य टोकन',
+	'translate-messagereview-reviews' => '{{PLURAL:$1|१ उपयोगकर्ता|$1 उपयोगकर्ताओं}} के द्वारा स्वीकारा गया',
+	'translate-messagereview-reviewswithyou' => 'आप को मिला कर {{PLURAL:$1|१ उपयोगकर्ता|$1 उपयोगकर्ताओं}} के द्वारा स्वीकारा गया',
+	'translate-messagereview-reviewsyou' => 'आप के द्वारा स्वीकारा गया',
+	'translate-messagereview-no-fuzzy' => ' FUZZY अनुवाद स्वीकृत नहीं हो सकता',
+	'translate-messagereview-no-own' => 'आप अपने खुद के अनुवाद को स्वीकार नहीं कर सकते',
 );
 
 /** Hiligaynon (Ilonggo)
@@ -12244,6 +12301,7 @@ $messages['km'] = array(
 );
 
 /** Kannada (ಕನ್ನಡ)
+ * @author Dipin
  * @author Nayvik
  */
 $messages['kn'] = array(
@@ -12265,6 +12323,7 @@ $messages['kn'] = array(
 	'translate-translations-messagename' => 'ಹೆಸರು:',
 	'translate-translations-project' => 'ಯೋಜನೆ:',
 	'languagestats' => 'ಭಾಷಾ ಅಂಕಿಅಂಶಗಳು',
+	'translate-langstats-expand' => 'ಹಲವು',
 	'translate-language-code' => 'ಭಾಷಾ ಸಂಕೇತ',
 	'translate-language-code-field-name' => 'ಭಾಷಾ ಸಂಕೇತ:',
 	'translate-language' => 'ಭಾಷೆ',
@@ -13841,6 +13900,7 @@ $messages['ml'] = array(
 	'translate-edit-tmsugs' => 'ഓർത്തുവെച്ച പരിഭാഷപ്പെടുത്തലുകളിൽ നിന്നുള്ള സൂചനകൾ',
 	'translate-edit-tmmatch' => '$1% പൊരുത്തപ്പെടുന്നു',
 	'translate-edit-tab-list' => 'സന്ദേശങ്ങളുടെ പട്ടിക',
+	'translate-edit-askpermission' => 'അനുമതി അഭ്യർത്ഥിക്കുക',
 	'translate-magic-pagename' => 'മീഡിയവിക്കി വിപുലീകൃത തർജ്ജമ',
 	'translate-magic-module' => 'ഘടകം:',
 	'translate-magic-submit' => 'സമർപ്പിക്കുക',
@@ -13940,6 +14000,7 @@ $messages['ml'] = array(
 	'translate-ls-column-group' => 'സന്ദേശ ഗണം',
 	'translate-mgs-pagename' => 'സന്ദേശ ഗണത്തിന്റെ സ്ഥിതിവിവരക്കണക്കുകൾ',
 	'translate-mgs-group' => 'സന്ദേശ ഗണം:',
+	'translate-mgs-submit' => 'സ്ഥിതിവിവരക്കണക്കുകൾ പ്രദർശിപ്പിക്കുക',
 	'translate-mgs-column-language' => 'ഭാഷ',
 	'translate-mgs-totals' => 'ഒരുമിച്ച് എല്ലാ ഭാഷകളും',
 	'supportedlanguages' => 'പിന്തുണയ്ക്കുന്ന ഭാഷകൾ',
@@ -13951,6 +14012,7 @@ $messages['ml'] = array(
 	'translate-manage-groups' => 'ഗണത്തിന്റെ കൈകാര്യം',
 	'translate-manage-listgroups' => 'ക്രമീകരിക്കപ്പെട്ട ഗണങ്ങൾ',
 	'translate-manage-listgroups-old' => 'പഴയ ശൈലിയിലുള്ള ഗണങ്ങൾ',
+	'translate-managegroups' => 'ഗണത്തിന്റെ കൈകാര്യം',
 	'translate-manage-modlang-new' => '$1 (പുതിയത്)',
 	'translate-manage-import-new' => 'പുതിയ സന്ദേശം $1',
 	'translate-manage-import-deleted' => 'മായ്ക്കപ്പെട്ട സന്ദേശം $1',
@@ -13985,13 +14047,21 @@ $messages['ml'] = array(
 	'translate-searchprofile' => 'പരിഭാഷകൾ',
 	'translate-searchprofile-tooltip' => 'എല്ലാ പരിഭാഷകളിൽ നിന്നും തിരയുക',
 	'translate-search-languagefilter' => 'ഭാഷയനുസരിച്ച് എടുക്കുക:',
-	'translate-messagereview-submit' => 'സംശോധനം ചെയ്യുക',
-	'translate-messagereview-progress' => 'സംശോധനം ചെയ്യുന്നു...',
-	'translate-messagereview-failure' => 'സംശോധനം ചെയ്യുന്നു... പരാജയപ്പെട്ടു: $1',
-	'translate-messagereview-done' => 'സംശോധനം ചെയ്തവ',
+	'translate-messagereview-submit' => 'സ്വീകരിക്കുക',
+	'translate-messagereview-progress' => 'സ്വീകരിക്കുന്നു...',
+	'translate-messagereview-failure' => 'സ്വീകരിക്കുന്നു... പരാജയപ്പെട്ടു: $1',
+	'translate-messagereview-done' => 'സ്വീകരിച്ചവ',
 	'translate-messagereview-apierror-invalidrevision' => 'പരിഭാഷ കണ്ടെത്താനായില്ല',
 	'translate-messagereview-apierror-unknownmessage' => 'സന്ദേശം കണ്ടെത്താനായില്ല',
+	'translate-messagereview-apierror-owntranslation' => 'താങ്കൾക്ക് താങ്കളുടെ തന്നെ പരിഭാഷകൾ സ്വീകരിക്കാനാവില്ല',
+	'translate-messagereview-apierror-badtoken' => 'അസാധുവായ ചീട്ട്',
 	'translate-messagereview-reviewsyou' => 'സംശോധനം ചെയ്തത് താങ്കളാണ്',
+	'translate-workflow-state-' => '(സജ്ജീകരിച്ചിട്ടില്ല)',
+	'translate-workflowstatus' => 'സ്ഥിതി : $1',
+	'translate-workflow-set-do' => 'സജ്ജീകരിക്കുക',
+	'translate-workflow-set-doing' => 'സജ്ജീകരിക്കുന്നു...',
+	'translate-workflow-set-done' => 'സജ്ജീകരിച്ചു!',
+	'translate-stats-workflow' => 'സ്ഥിതി',
 );
 
 /** Mongolian (Монгол)
@@ -14062,16 +14132,18 @@ $messages['mo'] = array(
 );
 
 /** Marathi (मराठी)
+ * @author Ankitgadgil
  * @author Htt
  * @author Kaustubh
  * @author Mahitgar
+ * @author Saleelk
  */
 $messages['mr'] = array(
 	'translate' => 'भाषांतर करा',
-	'translate-desc' => 'मिडीयाविकि आणि त्या पलीकडील भाषांतरणे करण्याकरिता [[Special:Translate|विशेष पान]]',
-	'translate-task-view' => 'या वर्गाचे सारे संदेश बघावे',
-	'translate-task-untranslated' => 'यामधील सर्व अभाषांतरीत संदेश बघावे',
-	'translate-task-optional' => 'चे पर्यायी संदेश बघावे',
+	'translate-desc' => 'मिडीयाविकि आणि इतर भाषांतरे करण्याकरिता [[Special:Translate|विशेष पान]]',
+	'translate-task-view' => 'या वर्गातील सारे संदेश बघावे',
+	'translate-task-untranslated' => 'यामधील सर्व अभाषांतरित संदेश बघावे',
+	'translate-task-optional' => 'यामधील पर्यायी संदेश बघावे',
 	'translate-task-review' => 'चे बदल तपासा',
 	'translate-task-reviewall' => 'मधील सर्व भाषांतरणे तपासा',
 	'translate-task-export' => 'कडून भाषांतरणे निर्यात करा',
@@ -14085,7 +14157,7 @@ $messages['mr'] = array(
 	'translate-page-group' => 'गट',
 	'translate-page-language' => 'भाषा',
 	'translate-page-limit' => 'मर्यादा',
-	'translate-page-limit-option' => 'प्रतिपान {{PLURAL:$1|संदेश|संदेश}}$1',
+	'translate-page-limit-option' => 'प्रतिपृष्ठ {{PLURAL:$1|संदेश|संदेश}}$1',
 	'translate-submit' => 'मिळवा',
 	'translate-page-navigation-legend' => 'सुचालन',
 	'translate-page-showing' => '$3चे $1पासून $2पर्यंत संदेश दाखवत आहे.',
@@ -14095,25 +14167,25 @@ $messages['mr'] = array(
 	'translate-prev' => 'मागील पान',
 	'translate-page-description-legend' => 'गटाबद्दल माहिती',
 	'translate-optional' => '(वैकल्पिक)',
-	'translate-ignored' => '(दुर्लक्षीत)',
+	'translate-ignored' => '(दुर्लक्षित)',
 	'translate-edit-definition' => 'संदेश व्याख्या',
 	'translate-edit-contribute' => 'योगदान करा',
 	'translate-edit-no-information' => "''या संदेशाकरिता कोणतेही नोंदीकरण(डॉक्यूमेंटेशन) नाही. हा संदेश कुठे आणि कसा वापरला आहे हे तुम्हाला ठावूक असेल तर, या पानाचे नोंदीकरण(डॉक्यूमेंटेशन) करून तुम्ही इतर भाषांतरकारांना मदत करू शकता.''",
-	'translate-edit-information' => '($1)या संदेशाबद्दल माहिती',
-	'translate-edit-in-other-languages' => 'इतर भाषातील संदेश',
+	'translate-edit-information' => '($1) या संदेशाबद्दल माहिती',
+	'translate-edit-in-other-languages' => 'इतर भाषांमधील संदेश',
 	'translate-edit-committed' => 'संकेतन प्रणालीमधील सध्याचे भाषांतरण',
 	'translate-edit-warnings' => 'अर्धवट भाषांतरांसाठीचे इशारे',
 	'translate-magic-pagename' => 'वाढीव मीडियाविकि भाषांतर',
 	'translate-magic-submit' => 'ओढा',
-	'translate-magic-cm-export' => 'नीर्यात',
-	'translate-magic-cm-to-be' => 'अपेक्षीत',
+	'translate-magic-cm-export' => 'निर्यात',
+	'translate-magic-cm-to-be' => 'अपेक्षित',
 	'translate-magic-cm-current' => 'सद्य',
 	'translate-magic-cm-original' => 'मूळ',
-	'translate-magic-cm-comment' => 'प्रतिक्रीया',
+	'translate-magic-cm-comment' => 'प्रतिक्रिया',
 	'translate-magic-cm-save' => 'जतन करा',
 	'translate-magic-cm-updatedusing' => '[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]] वापरून बदलले',
 	'translate-magic-cm-savefailed' => 'जतन अयशस्वी',
-	'translate-magic-special' => 'विशेष पान टोपणनावे',
+	'translate-magic-special' => 'विशेष पान - टोपणनावे',
 	'translate-magic-words' => 'जादूई शब्द',
 	'translate-magic-namespace' => 'नामविश्व नावे',
 	'translate-checks-parameters' => 'खालील मापदंड {{PLURAL:$2|वापरला नाही|वापरलेले नाहीत}}:
@@ -14246,7 +14318,7 @@ Perubahan tidak disimpan sehingga anda mengklik butang Simpan di bawah.',
 	'prefs-translate' => 'Pilihan penterjemahan',
 	'translate-pref-editassistlang-help' => 'Senarai kod bahasa terpisah koma.
 Terjemahan mesej dalam bahasa-bahasa ini ditunjukkan apabila anda menterjemah.
-Senarai bahasa tersedia bergantung pada bahasa anda.',
+Senarai bahasa asali bergantung pada bahasa anda.',
 	'translate-pref-editassistlang-bad' => 'Kod bahasa tidak sah dalam senarai:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Editor penterjemahan termaju (JavaScript)',
@@ -20420,6 +20492,7 @@ $messages['szl'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author Logicwiki
  * @author Surya Prakash.S.A.
  * @author TRYPPN
  * @author Trengarasu
@@ -20480,10 +20553,12 @@ $messages['ta'] = array(
 	'translate-edit-nopermission' => 'தகவல்களை மொழிபெயர்க்க உங்களுக்கு அனுமதி இருக்கவேண்டும்.',
 	'translate-edit-askpermission' => 'அனுமதி வேண்டுக',
 	'translate-magic-pagename' => 'நீட்சிபெற்ற மீடியாவிக்கி மொழிபெயர்ப்பு',
+	'translate-magic-cm-current' => 'தற்போதைய',
 	'translate-magic-cm-save' => 'பக்கத்தை சேமி',
 	'translate-magic-cm-savefailed' => 'சேமிப்பு தோல்வி',
 	'translate-magic-namespace' => 'பெயர்வெளிப் பெயர்கள்',
 	'translate-magic-notsaved' => 'நீங்கள் செய்த தொகுப்பு சேமிக்கப்படவில்லை',
+	'right-translate-messagereview' => 'மொழிபெயர்ப்புகளை மதிப்பீடுக',
 	'translationstats' => 'மொழிபெயர்ப்பு புள்ளிவிவரம்',
 	'translate-stats-users' => 'மொழிபெயர்ப்பாளர்கள்',
 	'translate-statsf-width' => 'படவணுக்களில் அகலம்',
@@ -20504,15 +20579,22 @@ $messages['ta'] = array(
 	'translate-tag-category' => 'மொழிபெயர்க்கக்கூடிய பக்கங்கள்',
 	'translate-sidebar-alltrans' => 'மற்ற மொழிகளில்',
 	'translations' => 'எல்லா மொழிபெயர்ப்புகளும்',
+	'translate-translations-fieldset-title' => 'செய்தி',
+	'translate-translations-messagename' => 'பெயர்:',
+	'translate-translations-project' => 'திட்டம்:',
 	'translate-langstats-expand' => 'விரிவாக்குக',
 	'translate-langstats-collapse' => 'சுருக்குக',
 	'translate-langstats-expandall' => 'அனைத்தையும் விரிவாக்குக',
 	'translate-langstats-collapseall' => 'அனைத்தியும் சுருக்குக',
 	'translate-language-code' => 'மொழிக் குறியீடு',
 	'translate-language-code-field-name' => 'மொழிக் குறியீடு:',
+	'translate-language' => 'மொழி',
 	'translate-total' => 'தகவல்கள்',
 	'translate-untranslated' => 'மொழிபெயர்க்காதவை',
 	'translate-percentage-complete' => 'நிறைவு',
+	'translate-ls-submit' => 'புள்ளிவிவரங்களை காண்பி',
+	'translate-mgs-column-language' => 'மொழி',
+	'supportedlanguages' => 'ஆதரிக்கப்பட்ட மொழிகள்',
 	'supportedlanguages-portallink' => '[$1] $2 - $3',
 	'supportedlanguages-recenttranslations' => 'அண்மைய மொழிபெயர்ப்புகள்',
 	'translate-save' => 'சேமி ($1)',

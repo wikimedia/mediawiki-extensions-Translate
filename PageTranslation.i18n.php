@@ -6352,6 +6352,7 @@ $messages['yi'] = array(
  * @author Hydra
  * @author Liangent
  * @author PhiLiP
+ * @author Xiaomingyan
  * @author Yfdyh000
  * @author 阿pp
  */
@@ -6365,8 +6366,8 @@ $messages['zh-hans'] = array(
 	'tpt-section-deleted' => '翻译单元$1',
 	'tpt-template' => '页面模板',
 	'tpt-templatediff' => '页面模板已改变。',
-	'tpt-diff-old' => '上一个文字',
-	'tpt-diff-new' => '下一个文字',
+	'tpt-diff-old' => '上一版本文字',
+	'tpt-diff-new' => '下一版本文字',
 	'tpt-submit' => '标记此版本的翻译',
 	'tpt-sections-oldnew' => '新的和现存的翻译单元',
 	'tpt-sections-deleted' => '已删除的翻译模块',
