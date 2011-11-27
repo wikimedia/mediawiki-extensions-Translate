@@ -834,12 +834,12 @@ Suoritettuasi kaikki askeleet, voit kääntää kaikkien {{GRAMMAR:inessive|{{SI
 	'translate-fs-userpage-submit' => 'Luo käyttäjäsivuni',
 	'translate-fs-userpage-done' => 'Hyvin tehty! Sinulla on nyt käyttäjäsivu.',
 	'translate-fs-permissions-planguage' => 'Ensisijainen kieli',
-	'translate-fs-target-text' => 'Onnittelut!
+	'translate-fs-target-text' => "Onnittelut!
 Voit nyt aloittaa kääntämisen.
 
 Älä huolestu, vaikka et vielä täysin ymmärtäisi miten kaikki toimii.
 Meillä on [[Project list|luettelo projekteista]], joiden kääntämiseen voit osallistua.
-Useimmilla projekteilla on lyhyt kuvaussivu, jossa on "\'\'Käännä tämä projekti\'\'"-linkki varsinaiselle käännössivulle.
+Useimmilla projekteilla on lyhyt kuvaussivu, jossa on ''Käännä tämä projekti'' -linkki varsinaiselle käännössivulle.
 [[Special:LanguageStats|Kielen nykyisen käännöstilanteen]] näyttävä lista on myös saatavilla.
 
 Jos haluat tietää lisää, voit lukea vaikkapa [[FAQ|usein kysyttyjä kysymyksiä]].
@@ -848,7 +848,7 @@ Jos et keksi, miten joku tarvitsemasi asia tehdään, älä epäröi pyytää ap
 
 Voit myös ottaa yhteyttä muihin saman kielen kääntäjiin [[Portal:$1|oman kielesi portaalin]] [[Portal_talk:$1|keskustelusivulla]].
 Valikon portaalilinkki osoittaa [[Special:Preferences|valitsemasi kielen]] portaaliin.
-Jos valitsemasi kieli on väärä, muuta se.',
+Jos valitsemasi kieli on väärä, muuta se.",
 	'translate-fs-email-text' => 'Anna sähköpostiosoitteesi [[Special:Preferences|asetuksissasi]] ja vahvista se sähköpostiviestistä, joka lähetetään sinulle. 
 
 Tämä mahdollistaa muiden käyttäjien ottaa sinuun yhteyttä sähköpostitse. 
