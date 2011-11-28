@@ -875,7 +875,7 @@ $messages['frp'] = array(
 	'translate-group-desc-translatablepages' => 'Totes les pâges a traduire',
 	'bw-desc-freecol' => 'Devant que traduire FreeCol dens voutra lengoua, volyéd liére [[Translating:FreeCol]]. FreeCol utilise la licence GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un barjacâjo vouèbe ècrit en PHP.',
-	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] est un sistèmo abado por la survelyence sur lo Malyâjo de les cofieries. Volyéd raportar tôs los problèmos dessus [[Support|Assistance]].',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] est una programeria libra por la survelyence sur lo Malyâjo de les cofieries.',
 	'translate-group-desc-eol' => 'Una tropa de mèssâjos por l’[[Translating:EOL|Enciclopèdia de la via]].',
 	'translate-group-desc-ihris' => 'Una tropa de mèssâjos por [[Translating:iHRIS|iHRIS]].',
 	'translate-group-desc-ihris-common' => 'Una tropa de mèssâjos por [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un modulo de [[Translating:iHRIS|iHRIS]].',
@@ -896,7 +896,7 @@ Vêde la [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 
 * tâchiér de fâre des traduccions de longior pariére a l’originâl anglès, a côsa de rèstriccions de l’entèrface utilisator. Vêde lo [http://trac.openstreetmap.org/ticket/2067 rapôrt de cofierie].
 * utilisar [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] por èprovar Potlatch. Vos pouede èprovar tant que vos lo voléd dens una zona quinta que seye.',
-	'bw-desc-shapado' => 'Ceta tropa de mèssâjos contint los mèssâjos de la programeria abada et a sôrsa uvèrta de quèstions / rèponses [[Translating:Shapado|Shapado]].',
+	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] est una programeria libra de quèstions et rèponses.',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] est un sèrvor de microblogging a sôrsa uvèrta.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pèrmèt de trovar rêdo los ôtors d’una pâge dens un vouiqui de Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] est un projèt visent a semondre una vèrsion tèxto de Vouiquipèdia en defôr de legne sur un pèrifèrico mobilo.',
