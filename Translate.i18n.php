@@ -7855,7 +7855,8 @@ Prema no nome do grupo de mensaxes para ollar a lista coas mensaxes sen traducir
 	'translate-page-no-such-language' => 'O código de lingua especificado non é válido.',
 	'translate-page-no-such-task' => 'A tarefa especificada non é válida.',
 	'translate-page-no-such-group' => 'O grupo especificado non é válido.',
-	'translate-page-disabled' => "As traducións desta lingua neste grupo foron deshabilitadas. Razón:
+	'translate-page-disabled' => "As traducións desta lingua neste grupo están desactivadas.
+Motivo:
 
 ''$1''",
 	'translate-page-settings-legend' => 'Configuracións',
