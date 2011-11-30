@@ -1781,11 +1781,17 @@ Izena: $1',
 
 /** Persian (فارسی)
  * @author Mjbmr
+ * @author ZxxZxxZ
  */
 $messages['fa'] = array(
+	'tpt-diff-old' => 'متن قبلی',
+	'tpt-diff-new' => 'متن جدید',
 	'pt-log-name' => 'سیاههٔ ترجمه صفحه',
 	'pt-log-mark' => 'نسخه $3 از صفحهٔ "[[:$1]]" برای ترجمه {{GENDER:$2|علامت زده شد}}',
 	'pt-log-unmark' => 'صفحهٔ "[[:$1]]" از ترجمه {{GENDER:$2|حذف شد}}',
+	'pt-deletepage-current' => 'نام صفحه:',
+	'pt-deletepage-reason' => 'دلیل:',
+	'pt-deletepage-list-other' => 'زیربخش‌های دیگر',
 );
 
 /** Finnish (Suomi)
