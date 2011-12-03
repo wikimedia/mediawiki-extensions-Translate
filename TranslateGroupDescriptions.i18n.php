@@ -894,7 +894,7 @@ Vêde [[mw:Extension:PDF_Writer]] et pués http://code.pediapress.com/wiki/wiki/
 Vêde la [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} pâge de l’Unicode CLDR por una èxplicacion de l’usâjo des plurâls].',
 	'bw-desc-osm-potlatch' => 'Ceta tropa de mèssâjos contint los mèssâjos de l’entèrface de [[Translating:OpenStreetMap|Potlatch]]. Volyéd :
 
-* tâchiér de fâre des traduccions de longior pariére a l’originâl anglès, a côsa de rèstriccions de l’entèrface utilisator. Vêde lo [http://trac.openstreetmap.org/ticket/2067 rapôrt de cofierie].
+* tâchiér de fâre des traduccions de longior pariére a l’originâl anglès, a côsa de rèstriccions de l’entèrface usanciér. Vêde lo [http://trac.openstreetmap.org/ticket/2067 rapôrt de cofierie].
 * utilisar [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] por èprovar Potlatch. Vos pouede èprovar tant que vos lo voléd dens una zona quinta que seye.',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] est una programeria libra de quèstions et rèponses.',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] est un sèrvor de microblogging a sôrsa uvèrta.',
