@@ -672,6 +672,15 @@ $messages['niu'] = array(
 	'translate-page-navigation-legend' => 'Navikati',
 );
 
+/** Goan Konkani (Latin script) (Konknni)
+ * @author The Discoverer
+ */
+$messages['gom-latn'] = array(
+	'translate-page-language' => 'Bhas',
+	'translate-language' => 'Bhas',
+	'translate-mgs-column-language' => 'Bhas',
+);
+
 /** Moroccan Spoken Arabic (Maġribi)
  * @author Enzoreg
  */
@@ -15162,7 +15171,7 @@ Alle waarden hebben een limiet aan de boven- en onderzijde.',
 	'translate-statsf-options' => 'Grafiekopties',
 	'translate-statsf-width' => 'Breedte in pixels:',
 	'translate-statsf-height' => 'Hoogte in pixels:',
-	'translate-statsf-days' => 'Termijn in dagen:',
+	'translate-statsf-days' => 'Periode in dagen:',
 	'translate-statsf-start' => 'Begindatum:',
 	'translate-statsf-scale' => 'Granulariteit:',
 	'translate-statsf-scale-months' => 'Maanden',
@@ -15411,6 +15420,8 @@ Valfrie meldingar skal ein berre setja om når målet har særskilde krav, til d
 	'translate-edit-tmsugs' => 'Framlegg frå omsetjingsminnet',
 	'translate-edit-tmmatch' => '$1% treff',
 	'translate-edit-tab-list' => 'Meldingsliste',
+	'translate-edit-nopermission' => 'Du tarv løyve for å setja om meldingar',
+	'translate-edit-askpermission' => 'Bed om løyve',
 	'translate-magic-pagename' => 'Utvida MediaWiki-omsetjing',
 	'translate-magic-help' => 'Du kan setje om spesialsidenamn, magiske ord og namna på namnerom.
 
@@ -15530,6 +15541,9 @@ Sjå gjerne over meldingar gjennom [[Special:Translate|{{int:translate}}]].',
 	'translate-manage-modlang-new' => '$1 (ny)',
 	'translate-manage-import-new' => 'Ny melding $1',
 	'translate-manage-import-deleted' => 'Sletta melding $1',
+	'translate-manage-action-import' => 'Importer',
+	'translate-manage-action-ignore' => 'Ignorer',
+	'translate-manage-submit' => 'Utfør',
 	'translate-manage-import-ok' => 'Importert ny versjon av sida $1',
 	'translate-manage-import-summary' => 'Importerer ein ny versjon frå ei ekstern kjelda',
 	'translate-manage-fuzzy-summary' => 'Definisjonen er endra',
@@ -15555,6 +15569,8 @@ $1',
 	'translate-js-support' => 'Still spørsmål',
 	'translate-js-support-title' => 'Spør etter hjelp om det ikkje er nok informasjon til å setja om meldinga rett.',
 	'translate-gs-continent' => 'Kontinent',
+	'translate-search-languagefilter' => 'Filtrer etter mål:',
+	'translate-search-nofilter' => 'Inga filtrering',
 	'translate-messagereview-submit' => 'Godtak',
 	'translate-messagereview-progress' => 'Godtek...',
 	'translate-messagereview-done' => 'Godteke',

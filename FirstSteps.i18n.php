@@ -421,6 +421,7 @@ $messages['cs'] = array(
 	'firststeps' => 'První kroky',
 	'firststeps-desc' => '[[Special:FirstSteps|Speciální stránka]] pomáhající uživatelům začít pracovat na wiki s rozšířením Translate',
 	'translate-fs-pagetitle-done' => ' – hotovo!',
+	'translate-fs-pagetitle-pending' => ' – probíhá',
 	'translate-fs-pagetitle' => 'Průvodce začátkem – $1',
 	'translate-fs-signup-title' => 'Registrace',
 	'translate-fs-settings-title' => 'Úprava nastavení',
@@ -431,8 +432,31 @@ $messages['cs'] = array(
 	'translate-fs-intro' => "Vítejte v průvodci prvními kroky po {{grammar:7sg|{{SITENAME}}}}.
 Provedeme vás všemi kroky, které jsou třeba, abyste se {{gender:|mohl stát překladatelem|mohla stát překladatelkou|mohli stát překladateli}}.
 Na konci budete moci překládat ''zprávy uživatelského rozhraní'' všech projektů podporovaných na {{grammar:6sg|{{SITENAME}}}}.",
+	'translate-fs-selectlanguage' => 'Vyberte jazyk',
+	'translate-fs-settings-planguage' => 'Primární jazyk:',
+	'translate-fs-settings-planguage-desc' => 'Primární jazyk slouží na této wiki i jako jazyk pro vaše rozhraní
+a jako implicitní cílový jazyk pro překlady.',
+	'translate-fs-settings-slanguage' => 'Pomocný jazyk $1:',
+	'translate-fs-settings-slanguage-desc' => 'V editoru překladů je možné zobrazovat překlady zpráv do jiných jazyků.
+Zde si můžete zvolit, které jazyky, pokud vůbec nějaké, chcete vidět.',
+	'translate-fs-settings-submit' => 'Uložit nastavení',
+	'translate-fs-userpage-level-N' => 'Jsem rodilý mluvčí jazyka',
+	'translate-fs-userpage-level-5' => 'Jsem profesionální překladatel jazyka',
+	'translate-fs-userpage-level-4' => 'Jazyk ovládám jako rodilý mluvčí',
+	'translate-fs-userpage-level-3' => 'Mám dobrou znalost jazyka',
+	'translate-fs-userpage-level-2' => 'Mám průměrnou znalost jazyka',
+	'translate-fs-userpage-level-1' => 'Umím trochu jazyk',
+	'translate-fs-userpage-help' => 'Uveďte své jazykové znalosti a řekněte nám něco o sobě. Pokud umíte víc než pět jazyků, budete později moci přidat další.',
 	'translate-fs-userpage-submit' => 'Založit mou uživatelskou stránku',
 	'translate-fs-userpage-done' => 'Výtečně! Teď máte svou uživatelskou stránku.',
+	'translate-fs-permissions-planguage' => 'Primární jazyk:',
+	'translate-fs-permissions-help' => 'Nyní bude potřeba požádat o přidání do skupiny překladatelů.
+Zvolte primární jazyk, do kterého budete překládat.
+
+Další jazyky a jiné poznámky můžete zmínit v textovém poli níže.',
+	'translate-fs-permissions-pending' => 'Vaše žádost byla přidána na [[$1]] a někdo z pracovníků ji co nejdříve zkontroluje.
+Pokud si ověříte svou e-mailovou adresu, dostanete poté upozornění e-mailem.',
+	'translate-fs-permissions-submit' => 'Odeslat žádost',
 	'translate-fs-target-text' => "Gratulujeme!
 Teď můžete začít překládat.
 
