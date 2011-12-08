@@ -29,7 +29,12 @@ jQuery( function( $ ) {
 			format: "json"
 		};
 		$b.val( mw.msg( "translate-messagereview-progress" ) );
-		$b.prop( "disabled", true );
+		// BC for MW < 1.18
+		if ( typeof $b.prop === "undefined" ) {
+			$b.attr( "disabled", "disabled );
+		} else {
+			$b.prop( "disabled", true );
+		}
 		$.post( mw.util.wikiScript( "api" ), params, successFunction ).fail( failFunction );
 	} );
 } );
