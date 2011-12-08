@@ -31,7 +31,7 @@ jQuery( function( $ ) {
 		$b.val( mw.msg( "translate-messagereview-progress" ) );
 		// BC for MW < 1.18
 		if ( typeof $b.prop === "undefined" ) {
-			$b.attr( "disabled", "disabled );
+			$b.attr( "disabled", "disabled" );
 		} else {
 			$b.prop( "disabled", true );
 		}
