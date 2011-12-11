@@ -1230,7 +1230,7 @@ Na kóncu móžeš ''zdźělenki programoweho powjercha'' wšěch podpěrowanych
 	'translate-fs-settings-planguage' => 'Hłowna rěč:',
 	'translate-fs-settings-planguage-desc' => 'Hłowna rěč ma dwě funkciji: słuži jako rěč wužiwarskeho powjercha w tutym wikiju a jako standardna cilowa rěč za přełožki.',
 	'translate-fs-settings-slanguage' => 'Pomocna rěč $1:',
-	'translate-fs-settings-slanguage-desc' => 'Je móžno překožki zdźělenkow w druhich rěčach w přełožowanskim editorje pokazać.
+	'translate-fs-settings-slanguage-desc' => 'Je móžno přełožki zdźělenkow w druhich rěčach w přełožowanskim editorje pokazać.
 Tu móžeš wubrać, kotre rěče chceš rady widźeć.',
 	'translate-fs-settings-submit' => 'Nastajenja składować',
 	'translate-fs-userpage-level-N' => 'Sym maćernorěčnik',

@@ -1782,8 +1782,10 @@ $messages['nl'] = array(
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Harald Khan
+ * @author Njardarlogar
  */
 $messages['nn'] = array(
+	'translate-group-desc-nodesc' => 'Inga skildring er tilgjengeleg for denne meldingsgruppa',
 	'bw-desc-freecol' => 'Før du set om FreeCol til språket ditt, les gjennom [[Translating:FreeCol]]. FreeCol nyttar GPL-lisens.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] er eit gratis nettbasert feilsporingssystem. Meld frå om problem på [[Support]].',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' er eit Python-bibliotek for skriving av PDF-dokument frå MediaWiki-artiklar som har vorte tolka av mwlib-biblioteket.
