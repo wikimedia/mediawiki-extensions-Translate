@@ -26,7 +26,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'version'        => TRANSLATE_VERSION,
 	'author'         => array( 'Niklas Laxström', 'Siebrand Mazeland' ),
 	'descriptionmsg' => 'translate-desc',
-	'url'            => 'http://www.mediawiki.org/wiki/Extension:Translate',
+	'url'            => 'https://www.mediawiki.org/wiki/Extension:Translate',
 );
 
 /**
