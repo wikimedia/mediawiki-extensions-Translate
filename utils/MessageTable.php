@@ -123,7 +123,8 @@ class MessageTable {
 			global $wgLang;
 			$niceTitle = htmlspecialchars( $wgLang->truncate( $key, - 30 ) );
 
-			$tools['edit'] = Linker::link(
+			$linker = class_exists( 'DummyLinker' ) ? new DummyLinker() : new Linker();
+			$tools['edit'] = $linker->link(
 				$title,
 				$niceTitle,
 				TranslationEditPage::jsEdit( $title ),

@@ -1181,7 +1181,8 @@ class TranslationHelpers {
 
 		$jsEdit = TranslationEditPage::jsEdit( $target, $group );
 
-		return Linker::link( $target, $text, $jsEdit, $params );
+		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker() : new Linker();
+		return $linker->link( $target, $text, $jsEdit, $params );
 	}
 
 	/**
