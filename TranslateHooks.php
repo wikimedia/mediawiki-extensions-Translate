@@ -248,7 +248,7 @@ class TranslateHooks {
 	/**
 	 * Hook: SpecialSearchProfileForm
 	 */
-	public static function searchProfileForm( $search, &$form, /*string*/ $profile, $term, $opts ) {
+	public static function searchProfileForm( SpecialSearch $search, &$form, /*string*/ $profile, $term, array $opts ) {
 		if ( $profile !== 'translation' ) {
 			return true;
 		}
@@ -263,7 +263,7 @@ class TranslateHooks {
 		}
 
 		$context = $search->getContext();
-		$code = $context->getLang()->getCode();
+		$code = $context->getLanguage()->getCode();
 		$selected = $context->getRequest()->getVal( 'languagefilter' );
 
 		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
