@@ -430,7 +430,7 @@ class TranslationHelpers {
 	}
 
 	protected static function makeGoogleQueryParams( $definition, $pair, $config ) {
-		global $wgSitename, $wgVersion, $wgProxyKey;
+		global $wgSitename, $wgVersion, $wgProxyKey, $wgRequest;
 		$options = array();
 		$options['timeout'] = $config['timeout'];
 
@@ -439,7 +439,7 @@ class TranslationHelpers {
 			'v' => '1.0',
 			'langpair' => $pair,
 			// Unique but not identifiable
-			'userip' => sha1( $wgProxyKey . wfGetIp() ),
+			'userip' => sha1( $wgProxyKey . $wgRequest->getIP() ),
 			'x-application' => "$wgSitename (MediaWiki $wgVersion; Translate " . TRANSLATE_VERSION . ")",
 		);
 
