@@ -94,9 +94,6 @@ class MessageTable {
 	}
 
 	public function contents() {
-		global $wgUser;
-		$sk = $wgUser->getSkin();
-
 		$optional = wfMsgHtml( 'translate-optional' );
 
 		$this->doLinkBatch();
@@ -126,7 +123,7 @@ class MessageTable {
 			global $wgLang;
 			$niceTitle = htmlspecialchars( $wgLang->truncate( $key, - 30 ) );
 
-			$tools['edit'] = $sk->link(
+			$tools['edit'] = Linker::link(
 				$title,
 				$niceTitle,
 				TranslationEditPage::jsEdit( $title ),

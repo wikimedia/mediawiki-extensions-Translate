@@ -1172,8 +1172,6 @@ class TranslationHelpers {
 	 * @return link
 	 */
 	public static function ajaxEditLink( $target, $text ) {
-		global $wgUser;
-
 		list( $page, ) = TranslateEditAddons::figureMessage( $target );
 		$group = TranslateUtils::messageKeyToGroup( $target->getNamespace(), $page );
 
@@ -1183,7 +1181,7 @@ class TranslationHelpers {
 
 		$jsEdit = TranslationEditPage::jsEdit( $target, $group );
 
-		return $wgUser->getSkin()->link( $target, $text, $jsEdit, $params );
+		return Linker::link( $target, $text, $jsEdit, $params );
 	}
 
 	/**
