@@ -858,6 +858,7 @@ Suoritettuasi kaikki askeleet, voit kääntää kaikkien {{GRAMMAR:inessive|{{SI
 	'translate-fs-userpage-submit' => 'Luo käyttäjäsivuni',
 	'translate-fs-userpage-done' => 'Hyvin tehty! Sinulla on nyt käyttäjäsivu.',
 	'translate-fs-permissions-planguage' => 'Ensisijainen kieli',
+	'translate-fs-permissions-submit' => 'Lähetä pyyntö',
 	'translate-fs-target-text' => "Onnittelut!
 Voit nyt aloittaa kääntämisen.
 
@@ -1776,14 +1777,43 @@ $messages['ml'] = array(
 
 /** Marathi (मराठी)
  * @author Htt
+ * @author Shubhamlanke
  */
 $messages['mr'] = array(
 	'firststeps' => 'पहिल्या पायर्‍या',
+	'firststeps-desc' => '[[महत्त्वाचे; पहिली पायरी महत्त्वाचे पान]] भाषांतर विस्तार वापरून सुरु केलेल्या युजर्सना मिळण्यासाठी .',
 	'translate-fs-pagetitle-done' => ' - झाले!',
+	'translate-fs-pagetitle-pending' => 'अनिर्णीत,राहिलेले,',
+	'translate-fs-pagetitle' => 'सुरु झालेले विझार्ड मिळण्यासाठी ‌-$१',
+	'translate-fs-signup-title' => 'करार करणे.',
 	'translate-fs-userpage-title' => 'माझे सदस्यपान तयार करा.',
+	'translate-fs-permissions-title' => 'भाषांतरास परवानगी मिळण्यासाठी विनंती करा. (भाषांतर करणार्या व्यक्तीस )',
 	'translate-fs-target-title' => 'भाषांतरास सुरुवात करा!',
+	'translate-fs-email-title' => 'आपला इमेल पत्ता पडताळून पहा.',
+	'translate-fs-intro' => '{{साइटचे नाव}} साइटवर तुमचे स्वागत आहे पहिली पायरी 
+योग्य भाषांतकार होण्याच्या प्रक्रियेद्वारे तुम्हाला क्रमा-क्रमाने मार्गदर्शन केले जाईल.
+शेवटी तुम्ही ह्या साईटवर  {{साइटचे नाव}} उपलब्ध  असलेल्या सर्व प्रकल्प ईंटरफेस संदेशांचे भाषांतर करण्यास लायकवान बनाल.',
+	'translate-fs-selectlanguage' => '(योग्य) भाषा निवडा.',
+	'translate-fs-settings-planguage' => 'मुख्य(महत्त्वाची) भाषा निवडा.',
+	'translate-fs-settings-planguage-desc' => 'तुमची मुख्य भाषा ही विकीवर तुमची दुवा साधणारी भाषा आणि भाषांतरासाठी दिफॉल्ट भाषा म्हणुन वापरली जाते.',
+	'translate-fs-settings-slanguage' => 'उप‌-भाषा $१:',
+	'translate-fs-settings-slanguage-desc' => 'भाषांतर एडिटर मध्ये संदेशांचे दुसर्या भाषेमध्ये भाषांतर सहज शक्य आहे.
+जर तुम्हाला एखादी भाषा पाहण्यासाठी आवडेल; तर इथे तुम्ही ती भाषा निवडू शकता.',
+	'translate-fs-settings-submit' => 'माझ्या पसंती जतन करा.',
+	'translate-fs-userpage-level-N' => 'मी जन्मतः (..........)(एखादी भाषा)  बोलतो.',
+	'translate-fs-userpage-level-5' => 'मी( ..........)(एखादया भाषेचे दुसर्या भाषेत रुपांतर)व्यवसायिक भाषांतकार आहे',
+	'translate-fs-userpage-level-4' => 'मी त्या (भाषेला)माझ्या मूळ बोलीभाषे एवढा जाणतो.
+उदा. एखादी भाषा,गोष्ट',
+	'translate-fs-userpage-level-3' => 'माझी त्या ...... चांगली पकड(कौशल्य) आहे.',
+	'translate-fs-userpage-level-2' => 'माझी त्या.....(भाषेवर) मध्यम कौशल्य आहे.',
+	'translate-fs-userpage-level-1' => 'मला थोडेसे माहिती आहे.',
+	'translate-fs-userpage-help' => 'क्रुपया तुमचे भाषेचे कौशल्य दाखवा आणि स्वतःबद्दल काहीतरी सांगा. जर तुम्हाला पाच पेक्षा जास्त भाषा माहित असतील; तर त्यांचा तुम्ही नंतर समावेश करू शकता.',
 	'translate-fs-userpage-submit' => 'माझे सदस्यपान तयार करा.',
 	'translate-fs-userpage-done' => 'छान! तुम्हाला आता सदस्यपान आहे.',
+	'translate-fs-permissions-planguage' => 'मुख्य(महत्त्वाची) भाषा निवडा',
+	'translate-fs-permissions-help' => 'भाषांतर करणार्या समुहामध्ये समवेश होण्यासाठी विनंती पाठवण्याची तुम्हाला गरज आहे.
+तुम्ही भाषांतर करण्यासाठी वापरणारी मुख्य भाषा निवडा.
+तुम्ही खाली टेक्सबॉक्स मध्ये इतर भाषा आणि सूचना देऊ शकता.',
 );
 
 /** Malay (Bahasa Melayu)

@@ -1906,6 +1906,8 @@ Epäonnistuneet siirrot tallennetaan sivunkääntölokiin ja ne täytyy korjata 
 	'pt-movepage-started' => 'Käännettävän sivun perussivu on siirretty.
 Tarkista mahdolliset virheet ja valmistumisviestit [[Special:Log/pagetranslation|sivunkääntölokista]].',
 	'pt-locked-page' => 'Tämä sivu on lukittu, koska käännettävän sivun siirtäminen on kesken.',
+	'pt-deletepage-list-translation' => 'Käännössivut',
+	'pt-deletepage-list-other' => 'Muut alasivut',
 );
 
 /** French (Français)
