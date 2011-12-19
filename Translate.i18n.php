@@ -11031,6 +11031,9 @@ $messages['it'] = array(
 	'translate-next' => 'Pagina successiva',
 	'translate-prev' => 'Pagina precedente',
 	'translate-page-description-legend' => 'Informazioni sul gruppo',
+	'translate-page-description-hasoptional' => 'Questo gruppo messaggi contiene messaggi opzionali.
+I messaggi opzionali dovrebbero essere tradotti solo quando la lingua ha dei requisiti speciali come il mancato utilizzo degli spazi o la traslitterazione dei nomi propri. $1',
+	'translate-page-description-hasoptional-open' => 'Mostra i messaggi opzionali.',
 	'translate-page-edit' => 'modifica',
 	'translate-ext-url' => '<hr />Sito web: $1',
 	'translate-optional' => '(opzionale)',
