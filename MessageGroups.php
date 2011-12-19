@@ -1084,6 +1084,32 @@ class MessageGroups {
 		return self::singleton()->getGroups();
 	}
 
+	/**
+	 * We want to de-emphasize time sensitive groups like news for 2009.
+	 * They can still exist in the system, but should not appear in front
+	 * of translators looking to do some useful work.
+	 * @return string
+	 * @since 2011-12-12
+	 */
+	public static function getPriority( MessageGroup $group ) {
+		static $groups = null;
+		if ( $groups === null ) {
+			$groups = array();
+			// Abusing this table originally intented for other purposes
+			$db = wfGetDB( DB_SLAVE );
+			$table = 'translate_groupreviews';
+			$fields = array( 'tgr_group', 'tgr_state' );
+			$conds = array( 'tgr_lang' => '*priority' );
+			$res = $db->select( $table, $fields, $conds, __METHOD__ );
+			foreach ( $res as $row ) {
+				$groups[$row->tgr_group] = $row->tgr_state;
+			}
+		}
+
+		$id = $group->getId();
+		return isset( $groups[$id] ) ? $groups[$id] : '';
+	}
+
 	/// @todo Make protected.
 	public $classes;
 	private function __construct() {

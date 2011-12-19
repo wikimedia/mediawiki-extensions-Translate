@@ -219,7 +219,7 @@ class SpecialTranslate extends SpecialPage {
 
 		// These are used, in the $$g black magic below. Do not remove!
 		$task = $this->taskSelector();
-		$group = TranslateUtils::groupSelector( $this->group ? $this->group->getId() : null )->getHTML();
+		$group = $this->groupSelector();
 		$language = $this->languageSelector();
 		$limit = $this->limitSelector();
 
@@ -277,6 +277,27 @@ class SpecialTranslate extends SpecialPage {
 				$label = TranslateTask::labelForTask( $id );
 				$selector->addOption( $label, $id );
 			}
+		}
+
+		return $selector->getHTML();
+	}
+
+	protected function groupSelector() {
+		$groups = MessageGroups::getAllGroups();
+		$selected = $this->options['group'];
+
+		$selector = new XmlSelect( 'group', 'group' );
+		$selector->setDefault( $selected );
+
+		foreach ( $groups as $id => $class ) {
+			$group = MessageGroups::getGroup( $id );
+			$hide = MessageGroups::getPriority( $group ) === 'discouraged';
+
+			if ( !$group->exists() || ( $id !== $selected && $hide ) ) {
+				continue;
+			}
+
+			$selector->addOption( $class->getLabel(), $id );
 		}
 
 		return $selector->getHTML();
@@ -403,6 +424,10 @@ class SpecialTranslate extends SpecialPage {
 		return '';
 	}
 
+	/**
+	 * This funtion renders the default list of groups when no parameters
+	 * are passed.
+	 */
 	public function groupInformation() {
 		global $wgOut;
 		$structure = MessageGroups::getGroupStructure();
