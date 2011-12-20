@@ -386,6 +386,9 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-oldnew' );
 
+		$diffOld = wfMsgHtml( 'tpt-diff-old' );
+		$diffNew = wfMsgHtml( 'tpt-diff-new' );
+
 		foreach ( $sections as $s ) {
 			if ( $s->type === 'new' ) {
 				$input = Xml::input( 'tpt-sect-' . $s->id, 15, $s->name );
@@ -401,7 +404,8 @@ class SpecialPageTranslation extends SpecialPage {
 				}
 				$diff->setReducedLineNumbers();
 				$diff->setText( $s->getOldText(), $s->getText() );
-				$text = $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
+				$text = $diff->getDiff( $diffOld, $diffNew );
+				$diffOld = $diffNew = null;
 				$diff->showDiffStyle();
 
 				$id = "tpt-sect-{$s->id}-action-nofuzzy";
