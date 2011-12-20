@@ -209,6 +209,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 
 $wgResourceModules['ext.translate.special.supportedlanguages'] = array(
 	'styles' => 'resources/ext.translate.special.supportedlanguages.css',
+	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.pagetranslation'] = array(
