@@ -399,10 +399,10 @@ class SpecialPageTranslation extends SpecialPage {
 				if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
 					$diff->setTextLanguage( $wgContLang );
 				}
+				$diff->setReducedLineNumbers();
 				$diff->setText( $s->getOldText(), $s->getText() );
 				$text = $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
 				$diff->showDiffStyle();
-				$diff->setReducedLineNumbers();
 
 				$id = "tpt-sect-{$s->id}-action-nofuzzy";
 				$text = Xml::checkLabel( wfMsg( 'tpt-action-nofuzzy' ), $id, $id, false ) . $text;
