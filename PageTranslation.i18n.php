@@ -51,11 +51,19 @@ Before marking this version for translation, check that the changes to sections 
 
 	# Page list on the special page
 	'tpt-list-nopages' => 'No pages are marked for translation nor ready to be marked for translation.',
-	'tpt-old-pages' => 'Some version of {{PLURAL:$1|this page has|these pages have}} been marked for translation.',
+
+	'tpt-new-pages-title' => 'Pages proposed for translation',
+	'tpt-old-pages-title' => 'Pages in translation',
+	'tpt-other-pages-title' => 'Broken pages',
+	'tpt-discouraged-pages-title' => 'Discouraged pages',
+
 	'tpt-new-pages' => '{{PLURAL:$1|This page contains|These pages contain}} text with translation tags,
 but no version of {{PLURAL:$1|this page is|these pages are}} currently marked for translation.',
+	'tpt-old-pages' => 'Some version of {{PLURAL:$1|this page has|these pages have}} been marked for translation.',
 	'tpt-other-pages' => '{{PLURAL:$1|An old version of this page is|Older versions of these pages are}} marked for translation,
 but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.',
+	'tpt-discouraged-pages' => '{{PLURAL:$1|This page has|These pages have}} been discouraged from further translation.',
+
 	'tpt-rev-mark-new' => 'mark this version for translation',
 	'tpt-rev-unmark' => 'remove this page from translation',
 
@@ -196,8 +204,10 @@ $messages['qqq'] = array(
 $2 is a count of sections which can be used with PLURAL,
 $3 is an URL.',
 	'tpt-mark-summary' => 'This message is used as an edit summary.',
-	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton.',
+	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton. $1 is the number of pages',
 	'tpt-other-pages' => '$1 is the number of pages in the following list.',
+	'tpt-new-pages' => '$1 is the number of pages in the following list.',
+	'tpt-discouraged-pages' => '$1 is the number of pages in the following list.',
 	'tpt-rev-old' => '',
 	'translate-tag-markthisagain' => '"has changes" is to be understood as "has been altered/edited"',
 	'translate-tag-hasnew' => '"has changes" is to be understood as "has been altered/edited"',
@@ -220,6 +230,10 @@ $3 is an URL.',
 	'pt-deletepage-action-check' => 'This is a button label. "List" is an imperative verb.',
 	'pt-deletepage-current' => '{{Identical|Page name}}',
 	'pt-deletepage-reason' => '{{Identical|Reason}}',
+	'tpt-new-pages-title' => 'Header in [[Special:PageTranslation]]',
+	'tpt-old-pages-title' => 'Header in [[Special:PageTranslation]]',
+	'tpt-other-pages-title' => 'Header in [[Special:PageTranslation]]',
+	'tpt-discouraged-pages-title' => 'Header in [[Special:PageTranslation]]',
 );
 
 /** ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ (ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ)

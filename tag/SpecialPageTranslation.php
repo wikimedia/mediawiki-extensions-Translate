@@ -175,85 +175,116 @@ class SpecialPageTranslation extends SpecialPage {
 		return $pages;
 	}
 
+	protected function classifyPages( array $in ) {
+		$out = array(
+			'proposed' => array(),
+			'active' => array(),
+			'broken' => array(),
+			'discouraged' => array(),
+		);
+
+		foreach ( $in as $index => $page ) {
+			if ( !isset( $page['tp:mark'] ) ) {
+				// Never marked
+				$out['proposed'][$index] = $page;
+			} elseif ( $page['tp:tag'] === $page['latest'] ) {
+				// Marked and latest version if fine
+				$out['active'][$index] = $page;
+			} else {
+				// Marked but latest version if not fine
+				$out['broken'][$index] = $page;
+			}
+		}
+
+		// broken and proposed take preference over discouraged status
+		foreach ( $out['active'] as $index => $page ) {
+			$id = TranslatablePage::getMessageGroupIdFromTitle( $page['title'] );
+			$group = MessageGroups::getGroup( $id );
+			if ( MessageGroups::getPriority( $group ) === 'discouraged' ) {
+				$out['discouraged'][$index] = $page;
+				unset( $out['active'][$index] );
+			}
+		}
+		return $out;
+	}
+
 	public function listPages() {
 		global $wgOut;
+		$out = $wgOut;
+		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		$res = $this->loadPagesFromDB();
-		$pages = $this->buildPageArray( $res );
-		if ( !count( $pages ) ) {
+		$allpages = $this->buildPageArray( $res );
+		if ( !count( $allpages ) ) {
 			$wgOut->addWikiMsg( 'tpt-list-nopages' );
 			return;
 		}
+		$types = $this->classifyPages( $allpages );
 
-		// Pages where mark <= tag
-		$items = array();
-		foreach ( $pages as $index => $page ) {
-			if ( !isset( $page['tp:mark'] ) || !isset( $page['tp:tag'] ) ) {
-				continue;
+		$pages = $types['proposed'];
+		if ( count( $pages ) ) {
+			$out->wrapWikiMsg( '== $1 ==', 'tpt-new-pages-title' );
+			$wgOut->addWikiMsg( 'tpt-new-pages', count( $pages ) );
+			$out->addHtml( '<ol>' );
+			foreach ( $pages as $page ) {
+				$link = $linker->link( $page['title'] );
+				$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], 'new' );
+				$out->addHtml( "<li>$link $acts</li>" );
 			}
+			$out->addHtml( '</ol>' );
+		}
 
-			if ( $page['tp:tag'] !== $page['latest'] ) {
-				continue;
+		$pages = $types['active'];
+		if ( count( $pages ) ) {
+			$out->wrapWikiMsg( '== $1 ==', 'tpt-old-pages-title' );
+			$out->addWikiMsg( 'tpt-old-pages', count( $pages ) );
+			$out->addHtml( '<ol>' );
+			foreach ( $pages as $page ) {
+				$link = $linker->link( $page['title'] );
+				$canUpdate = 'old';
+				if ( $page['tp:mark'] !== $page['tp:tag'] ) {
+					$link = "<b>$link</b>";
+					$canUpdate = 'new';
+				}
+
+				$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], $canUpdate );
+				$out->addHtml( "<li>$link $acts</li>" );
 			}
+			$out->addHtml( '</ol>' );
+		}
 
-			$link = $this->user->getSkin()->link( $page['title'] );
-			if ( $page['tp:mark'] !== $page['tp:tag'] ) {
-				$link = "<b>$link</b>";
+		$pages = $types['broken'];
+		if ( count( $pages ) ) {
+			$out->wrapWikiMsg( '== $1 ==', 'tpt-other-pages-title' );
+			$out->addWikiMsg( 'tpt-other-pages', count( $pages ) );
+			$out->addHtml( '<ol>' );
+			foreach ( $pages as $page ) {
+				$link = $linker->link( $page['title'] );
+				$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], 'stuck' );
+				$out->addHtml( "<li>$link $acts</li>" );
 			}
-			$acts = $this->actionLinks( $page['title'], $page['tp:mark'], $page['latest'], 'old' );
-			$items[] = "<li>$link $acts</li>";
-			unset( $pages[$index] );
+			$out->addHtml( '</ol>' );
 		}
 
-		if ( count( $items ) ) {
-			$wgOut->addWikiMsg( 'tpt-old-pages', count( $items ) );
-			$wgOut->addHtml( Html::rawElement( 'ol', null, implode( "\n", $items ) ) );
-			$wgOut->addHtml( '<hr />' );
-		}
+		$pages = $types['discouraged'];
+		if ( count( $pages ) ) {
+			$out->wrapWikiMsg( '== $1 ==', 'tpt-discouraged-pages-title' );
+			$out->addWikiMsg( 'tpt-discouraged-pages', count( $pages ) );
+			$out->addHtml( '<ol>' );
+			foreach ( $pages as $page ) {
+				$link = $linker->link( $page['title'] );
+				$canUpdate = 'old';
+				if ( $page['tp:mark'] !== $page['tp:tag'] ) {
+					$link = "<b>$link</b>";
+					$canUpdate = 'new';
+				}
 
-		// Pages which are never marked
-		$items = array();
-		foreach ( $pages as $index => $page ) {
-			if ( isset( $page['tp:mark'] ) || !isset( $page['tp:tag'] ) ) {
-				continue;
+				$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], $canUpdate );
+				$out->addHtml( "<li>$link $acts</li>" );
 			}
-
-			/* Ignore pages which have had \<translate> at some point, but which
-			 * have never been marked. */
-			if ( $page['tp:tag'] !== $page['latest'] ) {
-				unset( $pages[$index] );
-				continue;
-			}
-
-			$link = $this->user->getSkin()->link( $page['title'] );
-			$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], 'new' );
-			$items[] = "<li>$link $acts</li>";
-
-			unset( $pages[$index] );
+			$out->addHtml( '</ol>' );
 		}
 
-		if ( count( $items ) ) {
-			$wgOut->addWikiMsg( 'tpt-new-pages', count( $items ) );
-			$wgOut->addHtml( Html::rawElement( 'ol', null, implode( "\n", $items ) ) );
-			$wgOut->addHtml( '<hr />' );
-		}
-
-		/* Pages which have been marked in the past, but newest version does
-		 * not have a tag */
-		$items = array();
-		foreach ( $pages as $index => $page ) {
-			$link = $this->user->getSkin()->link( $page['title'] );
-			$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], 'stuck' );
-			$items[] = "<li>$link $acts</li>";
-
-			unset( $pages[$index] );
-		}
-
-		if ( count( $items ) ) {
-			$wgOut->addWikiMsg( 'tpt-other-pages', count( $items ) );
-			$wgOut->addHtml( Html::rawElement( 'ol', null, implode( "\n", $items ) ) );
-			$wgOut->addHtml( '<hr />' );
-		}
 	}
 
 	/**
