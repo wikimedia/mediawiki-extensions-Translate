@@ -366,7 +366,7 @@ class SpecialPageTranslation extends SpecialPage {
 		global $wgOut, $wgContLang;
 
 		$wgOut->setSubtitle( $this->user->getSkin()->link( $page->getTitle() ) );
-		$wgOut->addModules( 'ext.translate' );
+		$wgOut->addModules( 'ext.translate.special.pagetranslation' );
 
 		$wgOut->addWikiMsg( 'tpt-showpage-intro' );
 

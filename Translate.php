@@ -211,6 +211,11 @@ $wgResourceModules['ext.translate.special.supportedlanguages'] = array(
 	'styles' => 'resources/ext.translate.special.supportedlanguages.css',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.special.pagetranslation'] = array(
+	'styles' => 'resources/ext.translate.special.pagetranslation.css',
+	'position' => 'top',
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.special.importtranslations'] = array(
 	'scripts' => 'resources/ext.translate.special.importtranslations.js',
 	'dependencies' => array(
