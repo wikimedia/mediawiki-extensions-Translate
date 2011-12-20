@@ -56,11 +56,8 @@ Before marking this version for translation, check that the changes to sections 
 but no version of {{PLURAL:$1|this page is|these pages are}} currently marked for translation.',
 	'tpt-other-pages' => '{{PLURAL:$1|An old version of this page is|Older versions of these pages are}} marked for translation,
 but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.',
-	'tpt-rev-latest' => 'latest version',
-	'tpt-rev-old' => 'difference to previous marked version',
 	'tpt-rev-mark-new' => 'mark this version for translation',
 	'tpt-rev-unmark' => 'remove this page from translation',
-	'tpt-translate-this' => 'translate this page',
 
 	# Source and translation page headers
 	'translate-tag-translate-link-desc' => 'Translate this page',

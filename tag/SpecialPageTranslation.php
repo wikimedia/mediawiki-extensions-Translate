@@ -158,17 +158,10 @@ class SpecialPageTranslation extends SpecialPage {
 		return $res;
 	}
 
-	public function listPages() {
-		global $wgOut;
-
-		$res = $this->loadPagesFromDB();
-		if ( !$res->numRows() ) {
-			$wgOut->addWikiMsg( 'tpt-list-nopages' );
-			return;
-		}
-
+	protected function buildPageArray( /*db result*/ $res ) {
 		$pages = array();
 		foreach ( $res as $r ) {
+			// We have multiple rows for same page, because of different tags
 			if ( !isset( $pages[$r->page_id] ) ) {
 				$pages[$r->page_id] = array();
 				$title = Title::newFromRow( $r );
@@ -178,6 +171,18 @@ class SpecialPageTranslation extends SpecialPage {
 
 			$tag = RevTag::typeToTag( $r->rt_type );
 			$pages[$r->page_id][$tag] = intval( $r->rt_revision );
+		}
+		return $pages;
+	}
+
+	public function listPages() {
+		global $wgOut;
+
+		$res = $this->loadPagesFromDB();
+		$pages = $this->buildPageArray( $res );
+		if ( !count( $pages ) ) {
+			$wgOut->addWikiMsg( 'tpt-list-nopages' );
+			return;
 		}
 
 		// Pages where mark <= tag
@@ -196,7 +201,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$link = "<b>$link</b>";
 			}
 			$acts = $this->actionLinks( $page['title'], $page['tp:mark'], $page['latest'], 'old' );
-			$items[] = "<li>$link ($acts) </li>";
+			$items[] = "<li>$link $acts</li>";
 			unset( $pages[$index] );
 		}
 
@@ -222,7 +227,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 			$link = $this->user->getSkin()->link( $page['title'] );
 			$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], 'new' );
-			$items[] = "<li>$link ($acts) </li>";
+			$items[] = "<li>$link $acts</li>";
 
 			unset( $pages[$index] );
 		}
@@ -239,7 +244,7 @@ class SpecialPageTranslation extends SpecialPage {
 		foreach ( $pages as $index => $page ) {
 			$link = $this->user->getSkin()->link( $page['title'] );
 			$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], 'stuck' );
-			$items[] = "<li>$link ($acts) </li>";
+			$items[] = "<li>$link $acts</li>";
 
 			unset( $pages[$index] );
 		}
@@ -260,22 +265,6 @@ class SpecialPageTranslation extends SpecialPage {
 	 */
 	protected function actionLinks( $title, $rev, $latest, $old = 'old' ) {
 		$actions = array();
-
-		/* For pages that have been marked for translation at some point,
-		 * but there has been new changes since then, provide a link to
-		 * to view the differences between last marked version and latest
-		 * version of the page.
-		 */
-		if ( $latest !== $rev && $old !== 'new' ) {
-			$actions[] = $this->user->getSkin()->link(
-				$title,
-				htmlspecialchars( wfMsg( 'tpt-rev-old', $rev ) ),
-				array(),
-				array( 'oldid' => $rev, 'diff' => $title->getLatestRevId() )
-			);
-		} else {
-			$actions[] = wfMsgHtml( 'tpt-rev-latest' );
-		}
 
 		if ( $this->user->isAllowed( 'pagetranslation' ) ) {
 			$token = $this->user->editToken();
@@ -308,18 +297,12 @@ class SpecialPageTranslation extends SpecialPage {
 			}
 		}
 
-		if ( $old === 'old' && $this->user->isAllowed( 'translate' ) ) {
-			$actions[] = $this->user->getSkin()->link(
-				SpecialPage::getTitleFor( 'Translate' ),
-				wfMsgHtml( 'tpt-translate-this' ),
-				array(),
-				array( 'group' => TranslatablePage::getMessageGroupIdFromTitle( $title ) )
-			);
+		if ( !count( $actions ) ) {
+			return '';
 		}
-
 		global $wgLang;
-
-		return $wgLang->semicolonList( $actions );
+		$flattened = $wgLang->semicolonList( $actions );
+		return Html::rawElement( 'span', array( 'class' => 'mw-tpt-actions' ), "($flattened)" );
 	}
 
 	public function checkInput( TranslatablePage $page, &$error = false ) {
