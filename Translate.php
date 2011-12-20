@@ -162,23 +162,6 @@ $wgResourceModules['ext.translate'] = array(
 	'styles' => 'resources/ext.translate.css',
 ) + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.languagestats'] = array(
-	'scripts' => 'resources/ext.translate.special.languagestats.js',
-	'styles' => 'resources/ext.translate.special.languagestats.css',
-	'messages' => array( 'translate-langstats-expandall', 'translate-langstats-collapseall', 'translate-langstats-expand', 'translate-langstats-collapse' ),
-) + $resourcePaths;
-
-$wgResourceModules['ext.translate.quickedit'] = array(
-	'scripts' => 'resources/ext.translate.quickedit.js',
-	'styles' => 'resources/ext.translate.quickedit.css',
-	'messages' => array( 'translate-js-nonext', 'translate-js-save-failed' ),
-	'dependencies' => array(
-		'jquery.form',
-		'jquery.ui.dialog',
-		'jquery.autoresize',
-	),
-) + $resourcePaths;
-
 $wgResourceModules['ext.translate.messagetable'] = array(
 	'scripts' => 'resources/ext.translate.messagetable.js',
 	'styles' => 'resources/ext.translate.messagetable.css',
@@ -196,25 +179,19 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 	),
 ) + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.translate'] = array(
-	'styles' => 'resources/ext.translate.special.translate.css',
-	'scripts' => 'resources/ext.translate.special.translate.js',
-	'position' => 'top',
-	'messages' => array( 
-		'translate-workflow-set-do',
-		'translate-workflow-set-doing',
-		'translate-workflow-set-done',
+$wgResourceModules['ext.translate.quickedit'] = array(
+	'scripts' => 'resources/ext.translate.quickedit.js',
+	'styles' => 'resources/ext.translate.quickedit.css',
+	'messages' => array( 'translate-js-nonext', 'translate-js-save-failed' ),
+	'dependencies' => array(
+		'jquery.form',
+		'jquery.ui.dialog',
+		'jquery.autoresize',
 	),
 ) + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.supportedlanguages'] = array(
-	'styles' => 'resources/ext.translate.special.supportedlanguages.css',
-	'position' => 'top',
-) + $resourcePaths;
-
-$wgResourceModules['ext.translate.special.pagetranslation'] = array(
-	'styles' => 'resources/ext.translate.special.pagetranslation.css',
-	'position' => 'top',
+$wgResourceModules['ext.translate.selecttoinput'] = array(
+	'scripts' => 'resources/ext.translate.selecttoinput.js',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.importtranslations'] = array(
@@ -224,8 +201,31 @@ $wgResourceModules['ext.translate.special.importtranslations'] = array(
 	),
 ) + $resourcePaths;
 
-$wgResourceModules['ext.translate.selecttoinput'] = array(
-	'scripts' => 'resources/ext.translate.selecttoinput.js',
+$wgResourceModules['ext.translate.special.languagestats'] = array(
+	'scripts' => 'resources/ext.translate.special.languagestats.js',
+	'styles' => 'resources/ext.translate.special.languagestats.css',
+	'messages' => array( 'translate-langstats-expandall', 'translate-langstats-collapseall', 'translate-langstats-expand', 'translate-langstats-collapse' ),
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.pagetranslation'] = array(
+	'styles' => 'resources/ext.translate.special.pagetranslation.css',
+	'position' => 'top',
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.supportedlanguages'] = array(
+	'styles' => 'resources/ext.translate.special.supportedlanguages.css',
+	'position' => 'top',
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.translate'] = array(
+	'styles' => 'resources/ext.translate.special.translate.css',
+	'scripts' => 'resources/ext.translate.special.translate.js',
+	'position' => 'top',
+	'messages' => array( 
+		'translate-workflow-set-do',
+		'translate-workflow-set-doing',
+		'translate-workflow-set-done',
+	),
 ) + $resourcePaths;
 
 $wgResourceModules['jquery.autoresize'] = array(
