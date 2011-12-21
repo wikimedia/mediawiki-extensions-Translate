@@ -185,8 +185,10 @@ class SpecialPageTranslation extends SpecialPage {
 
 		foreach ( $in as $index => $page ) {
 			if ( !isset( $page['tp:mark'] ) ) {
-				// Never marked
-				$out['proposed'][$index] = $page;
+				// Never marked, check that the latest version is ready
+				if ( $page['tp:tag'] === $page['latest'] ) {
+					$out['proposed'][$index] = $page;
+				} // Otherwise ignore such pages
 			} elseif ( $page['tp:tag'] === $page['latest'] ) {
 				// Marked and latest version if fine
 				$out['active'][$index] = $page;
