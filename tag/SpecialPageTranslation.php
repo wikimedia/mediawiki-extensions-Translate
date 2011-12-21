@@ -296,17 +296,18 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param $old string
 	 * @return string
 	 */
-	protected function actionLinks( $title, $rev, $latest, $old = 'old' ) {
+	protected function actionLinks( $title, $rev, $latest, $type = 'old' ) {
 		$actions = array();
+		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		if ( $this->user->isAllowed( 'pagetranslation' ) ) {
 			$token = $this->user->editToken();
 
 			if (
-				( $old === 'new' && $latest === $rev ) ||
-				( $old === 'old' && $latest !== $rev )
+				( $type === 'new' && $latest === $rev ) ||
+				( $type === 'old' && $latest !== $rev )
 			) {
-				$actions[] = $this->user->getSkin()->link(
+				$actions[] = $linker->link(
 					$this->getTitle(),
 					wfMsgHtml( 'tpt-rev-mark-new' ),
 					array(),
@@ -316,8 +317,8 @@ class SpecialPageTranslation extends SpecialPage {
 						'token' => $token,
 					)
 				);
-			} elseif ( $old === 'stuck' ) {
-				$actions[] = $this->user->getSkin()->link(
+			} elseif ( $type === 'stuck' ) {
+				$actions[] = $linker->link(
 					$this->getTitle(),
 					wfMsgHtml( 'tpt-rev-unmark' ),
 					array(),

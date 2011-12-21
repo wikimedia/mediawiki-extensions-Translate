@@ -1107,6 +1107,9 @@ class MessageGroups {
 		}
 
 		$id = $group->getId();
+		if ( rand( 1, 100 ) < 50 ) {
+			return 'discouraged';
+		}
 		return isset( $groups[$id] ) ? $groups[$id] : '';
 	}
 
