@@ -34,9 +34,11 @@ class SpecialPageTranslation extends SpecialPage {
 
 		global $wgRequest, $wgOut, $wgUser;
 		$this->user = $wgUser;
+		$request = $wgRequest;
 
 		$target = $wgRequest->getText( 'target', $parameters );
 		$revision = $wgRequest->getInt( 'revision', 0 );
+		$action = $request->getVal( 'do' );
 
 		// No specific page or invalid input
 		$title = Title::newFromText( $target );
@@ -69,7 +71,26 @@ class SpecialPageTranslation extends SpecialPage {
 			return;
 		}
 
-		if ( $revision === -1 ) {
+		if ( $action === 'discourage' || $action === 'encourage' ) {
+			$id = TranslatablePage::getMessageGroupIdFromTitle( $title );
+			$dbw = wfGetDB( DB_MASTER );
+			$table = 'translate_groupreviews';
+			$row = array(
+				'tgr_group' => $id,
+				'tgr_lang' => '*priority',
+				'tgr_state' => 'discouraged',
+			);
+			if ( $action === 'encourage' ) {
+				$dbw->delete( $table, $row, __METHOD__ );
+			} else {
+				$index = array( 'tgr_group', 'tgr_lang' );
+				$dbw->replace( $table, array( $index ), $row, __METHOD__ );
+			}
+			$this->listPages();
+			return;
+		}
+
+		if ( $action === 'unmark' ) {
 			$page = TranslatablePage::newFromTitle( $title );
 			$page->removeTags();
 			$page->getTitle()->invalidateCache();
@@ -230,7 +251,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$out->addHtml( '<ol>' );
 			foreach ( $pages as $page ) {
 				$link = $linker->link( $page['title'] );
-				$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], 'new' );
+				$acts = $this->actionLinks( $page, 'proposed' );
 				$out->addHtml( "<li>$link $acts</li>" );
 			}
 			$out->addHtml( '</ol>' );
@@ -243,13 +264,11 @@ class SpecialPageTranslation extends SpecialPage {
 			$out->addHtml( '<ol>' );
 			foreach ( $pages as $page ) {
 				$link = $linker->link( $page['title'] );
-				$canUpdate = 'old';
 				if ( $page['tp:mark'] !== $page['tp:tag'] ) {
 					$link = "<b>$link</b>";
-					$canUpdate = 'new';
 				}
 
-				$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], $canUpdate );
+				$acts = $this->actionLinks( $page, 'active' );
 				$out->addHtml( "<li>$link $acts</li>" );
 			}
 			$out->addHtml( '</ol>' );
@@ -262,7 +281,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$out->addHtml( '<ol>' );
 			foreach ( $pages as $page ) {
 				$link = $linker->link( $page['title'] );
-				$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], 'stuck' );
+				$acts = $this->actionLinks( $page, 'broken' );
 				$out->addHtml( "<li>$link $acts</li>" );
 			}
 			$out->addHtml( '</ol>' );
@@ -275,13 +294,11 @@ class SpecialPageTranslation extends SpecialPage {
 			$out->addHtml( '<ol>' );
 			foreach ( $pages as $page ) {
 				$link = $linker->link( $page['title'] );
-				$canUpdate = 'old';
 				if ( $page['tp:mark'] !== $page['tp:tag'] ) {
 					$link = "<b>$link</b>";
-					$canUpdate = 'new';
 				}
 
-				$acts = $this->actionLinks( $page['title'], $page['tp:tag'], $page['latest'], $canUpdate );
+				$acts = $this->actionLinks( $page, 'discouraged' );
 				$out->addHtml( "<li>$link $acts</li>" );
 			}
 			$out->addHtml( '</ol>' );
@@ -290,39 +307,65 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	/**
-	 * @param $title Title
-	 * @param $rev
-	 * @param $latest
-	 * @param $old string
+	 * @param $page array
+	 * @param $type string
 	 * @return string
 	 */
-	protected function actionLinks( $title, $rev, $latest, $type = 'old' ) {
+	protected function actionLinks( array $page, $type ) {
 		$actions = array();
 		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
+
+		$title = $page['title'];
 
 		if ( $this->user->isAllowed( 'pagetranslation' ) ) {
 			$token = $this->user->editToken();
 
-			if (
-				( $type === 'new' && $latest === $rev ) ||
-				( $type === 'old' && $latest !== $rev )
-			) {
+			$pending = $type === 'active' && $page['latest'] !== $page['tp:mark'];
+			if ( $type === 'proposed' || $pending ) {
 				$actions[] = $linker->link(
 					$this->getTitle(),
-					wfMsgHtml( 'tpt-rev-mark-new' ),
+					wfMsgHtml( 'tpt-rev-mark' ),
 					array(),
 					array(
+						'do' => 'mark',
 						'target' => $title->getPrefixedText(),
 						'revision' => $title->getLatestRevId(),
 						'token' => $token,
 					)
 				);
-			} elseif ( $type === 'stuck' ) {
+			} elseif ( $type === 'broken' ) {
 				$actions[] = $linker->link(
 					$this->getTitle(),
 					wfMsgHtml( 'tpt-rev-unmark' ),
 					array(),
 					array(
+						'do' => 'unmark',
+						'target' => $title->getPrefixedText(),
+						'revision' => -1,
+						'token' => $token,
+					)
+				);
+			}
+
+			if ( $type === 'active' ) {
+				$actions[] = $linker->link(
+					$this->getTitle(),
+					wfMsgHtml( 'tpt-rev-discourage' ),
+					array( 'title' => wfMsg( 'tpt-rev-discourage-tooltip' ) ),
+					array(
+						'do' => 'discourage',
+						'target' => $title->getPrefixedText(),
+						'revision' => -1,
+						'token' => $token,
+					)
+				);
+			} elseif ( $type === 'discouraged' ) {
+				$actions[] = $linker->link(
+					$this->getTitle(),
+					wfMsgHtml( 'tpt-rev-encourage' ),
+					array( 'title' => wfMsg( 'tpt-rev-encourage-tooltip' ) ),
+					array(
+						'do' => 'encourage',
 						'target' => $title->getPrefixedText(),
 						'revision' => -1,
 						'token' => $token,

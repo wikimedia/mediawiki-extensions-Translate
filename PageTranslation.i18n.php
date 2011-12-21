@@ -64,8 +64,16 @@ but no version of {{PLURAL:$1|this page is|these pages are}} currently marked fo
 but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|This page has|These pages have}} been discouraged from further translation.',
 
-	'tpt-rev-mark-new' => 'mark this version for translation',
-	'tpt-rev-unmark' => 'remove this page from translation',
+	'tpt-rev-mark' => 'mark for translation',
+	'tpt-rev-unmark' => 'remove from translation',
+	'tpt-rev-discourage' => 'discourage',
+	'tpt-rev-encourage' => 'restore',
+
+	'tpt-rev-mark-tooltip' => 'Mark the latest version of this page for translation.',
+	'tpt-rev-unmark-tooltip' => 'Remove this page from translation.',
+	'tpt-rev-discourage-tooltip' => 'Discourage further translations on this page.',
+	'tpt-rev-encourage-tooltip' => 'Restore this page to normal translation.',
+
 
 	# Source and translation page headers
 	'translate-tag-translate-link-desc' => 'Translate this page',
@@ -196,7 +204,7 @@ Failures will be logged in the [[Special:Log/pagetranslation|page translation lo
  * @author Umherirrender
  */
 $messages['qqq'] = array(
-	'pagetranslation' => 'Title of [[Special:PageTranslation]] and its name in [[Special:SpecialPages]].',
+	'pagetranslation' => 'Title of [[Special:PageTranslation]] and its name in [[Special:SpecialPages]]. [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'right-pagetranslation' => '{{doc-right|pagetranslation}}',
 	'tpt-desc' => '{{desc}}',
 	'tpt-sections-oldnew' => '"New and existing" refers to the sum of: (a) new translation units in a translatable page, plus (b) the already existing ones from previous version of a translatable page.',
@@ -204,14 +212,14 @@ $messages['qqq'] = array(
 $2 is a count of sections which can be used with PLURAL,
 $3 is an URL.',
 	'tpt-mark-summary' => 'This message is used as an edit summary.',
-	'tpt-new-pages-title' => 'Header in [[Special:PageTranslation]]',
-	'tpt-old-pages-title' => 'Header in [[Special:PageTranslation]]',
-	'tpt-other-pages-title' => 'Header in [[Special:PageTranslation]]',
-	'tpt-discouraged-pages-title' => 'Header in [[Special:PageTranslation]]',
-	'tpt-new-pages' => '$1 is the number of pages in the following list.',
-	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton. $1 is the number of pages',
-	'tpt-other-pages' => '$1 is the number of pages in the following list.',
-	'tpt-discouraged-pages' => '$1 is the number of pages in the following list.',
+	'tpt-new-pages-title' => 'Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-old-pages-title' => 'Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-other-pages-title' => 'Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-discouraged-pages-title' => 'Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-new-pages' => '$1 is the number of pages in the following list. [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton. $1 is the number of pages [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-other-pages' => '$1 is the number of pages in the following list. [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-discouraged-pages' => '$1 is the number of pages in the following list. [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'translate-tag-markthisagain' => '"has changes" is to be understood as "has been altered/edited"',
 	'translate-tag-hasnew' => '"has changes" is to be understood as "has been altered/edited"',
 	'tpt-languages-legend' => 'The caption of a language selector displayed using <code>&lt;languages /&gt;</code>, e.g. on [[Project list]].',
@@ -233,6 +241,16 @@ $3 is an URL.',
 	'pt-deletepage-action-check' => 'This is a button label. "List" is an imperative verb.',
 	'pt-deletepage-current' => '{{Identical|Page name}}',
 	'pt-deletepage-reason' => '{{Identical|Reason}}',
+
+	'tpt-rev-mark' => 'Possible page action and link text in [[Special:PageTranslation]]. In parenthesis after page name. [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-rev-unmark' => 'Possible page action and link text in [[Special:PageTranslation]]. In parenthesis after page name. [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-rev-discourage' => 'Possible page action and link text in [[Special:PageTranslation]]. In parenthesis after page name. [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-rev-encourage' => 'Possible page action and link text in [[Special:PageTranslation]]. In parenthesis after page name. [[Image:Page translation admin view.png|thumb|Admin view]]',
+
+	'tpt-rev-mark-tooltip' => 'Tooltip for page action link text in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-rev-unmark-tooltip' => 'Tooltip for page action link text in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-rev-discourage-tooltip' => 'Tooltip for page action link text in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-rev-encourage-tooltip' => 'Tooltip for page action link text in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
 );
 
 /** ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ (ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ)
