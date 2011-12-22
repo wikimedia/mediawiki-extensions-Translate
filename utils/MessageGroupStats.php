@@ -231,10 +231,18 @@ class MessageGroupStats {
 
 			$aggregates = array( 0, 0, 0 );
 			foreach ( $group->getGroups() as $sid => $sgroup ) {
+				# Discouraged groups may belong to a another group, usually if there
+				# is a aggregate group for all translatable pages. In that case
+				# calculate and store the statistics, but don't count them as part of
+				# the aggregate group, so that the numbers in Special:LanguageStats
+				# add up. The statistics for discouraged groups can still be viewed
+				# through Special:MessageGroupStats.
 				if ( !isset( $stats[$sid][$code] ) ) {
 					$stats[$sid][$code] = self::forItemInternal( $stats, $sgroup, $code );
 				}
-				$aggregates = self::multiAdd( $aggregates, $stats[$sid][$code] );
+				if ( MessageGroups::getPriority( $sgroup ) !== 'discouraged' ) {
+					$aggregates = self::multiAdd( $aggregates, $stats[$sid][$code] );
+				}
 			}
 			$stats[$id][$code] = $aggregates;
 		} else {
