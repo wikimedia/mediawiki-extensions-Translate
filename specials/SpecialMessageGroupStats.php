@@ -182,7 +182,9 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		if ( $wgTranslateWorkflowStates ) {
 			$state = isset( $this->states[$code] ) ? $this->states[$code] : '';
 			$sort = isset( $this->statemap[$state] ) ? $this->statemap[$state] + 1 : -1;
-			$out .= "\n\t\t" . $this->table->element( $state, false, $sort );
+			$stateMessage = wfMessage( "translate-workflow-state-$state" );
+			$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
+			$out .= "\n\t\t" . $this->table->element( $stateText, false, $sort );
 		}
 		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
 		return $out;
@@ -213,12 +215,16 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 	protected static function getWorkflowStates( $group ) {
 		$db = wfGetDB( DB_SLAVE );
-		$res = $db->select( 'translate_groupreviews', array( 'tgr_state', 'tgr_lang' ), array( 'tgr_group' => $group ), __METHOD__ );
+		$res = $db->select(
+			'translate_groupreviews',
+			array( 'tgr_state', 'tgr_lang' ),
+			array( 'tgr_group' => $group ),
+			__METHOD__
+		);
 		$states = array();
 		foreach ( $res as $row ) {
 			$states[$row->tgr_lang] = $row->tgr_state;
 		}
 		return $states;
 	}
-
 }

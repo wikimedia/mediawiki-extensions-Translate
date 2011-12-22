@@ -524,7 +524,9 @@ class SpecialTranslate extends SpecialPage {
 			$selector->setDefault( $current );
 			$selector->addOption( wfMessage( 'translate-workflow-state-' )->text(), '' );
 			foreach ( $wgTranslateWorkflowStates as $state ) {
-				$selector->addOption( $state );
+				$stateMessage = wfMessage( "translate-workflow-state-$state" );
+				$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
+				$selector->addOption( $stateText, $state );
 			}
 			$state = $selector->getHTML();
 

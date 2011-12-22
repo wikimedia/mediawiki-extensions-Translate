@@ -398,6 +398,8 @@ Details: $1',
 	'log-description-translationreview' => 'Log of all reviews to translations and message groups.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|accepted}} translation $3',
 
+	// The actual states, when set, come after the hyphen.
+	// The dangling hyphen hints that it's unset.
 	'translate-workflow-state-' => '(unset)',
 	'translate-workflowstatus' => 'Status: $1',
 	'translate-workflow-set-do' => 'Set',
@@ -643,7 +645,7 @@ If you click the "Accept" button in [[Special:Translate]], the button may be dis
 	'group-translate-proofr-member' => '{{doc-group|translate-proofr|member}}',
 	'grouppage-translate-proofr' => '{{doc-group|translate-proofr|page}}',
 	'logentry-translationreview-message' => '{{Logentry}}',
-	'translate-workflow-state-' => 'Unselectable select option in Special:Translate if workflow state editing is on',
+	'translate-workflow-state-' => 'Unselectable select option in Special:Translate if workflow state editing is on. The dangling hyphen in the message key hints that this state is unset; the actual states have the same key with something after the hyphen.',
 	'translate-workflowstatus' => 'In Special:Translate if workflow states are in use, $1 is selector or the current state',
 	'translate-workflow-set-do' => 'Submit button text when active',
 	'translate-workflow-set-doing' => 'Submit button text when waiting for reply from server',
