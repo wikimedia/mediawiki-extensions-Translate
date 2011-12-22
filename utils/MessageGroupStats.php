@@ -230,7 +230,7 @@ class MessageGroupStats {
 			$stats = self::extractResults( $res, $stats );
 
 			$aggregates = array( 0, 0, 0 );
-			foreach ( $group->getGroups() as $sid => $sgroup ) {
+			foreach ( $group->getGroups() as $sid => $subgroup ) {
 				# Discouraged groups may belong to a another group, usually if there
 				# is a aggregate group for all translatable pages. In that case
 				# calculate and store the statistics, but don't count them as part of
@@ -238,9 +238,9 @@ class MessageGroupStats {
 				# add up. The statistics for discouraged groups can still be viewed
 				# through Special:MessageGroupStats.
 				if ( !isset( $stats[$sid][$code] ) ) {
-					$stats[$sid][$code] = self::forItemInternal( $stats, $sgroup, $code );
+					$stats[$sid][$code] = self::forItemInternal( $stats, $subgroup, $code );
 				}
-				if ( MessageGroups::getPriority( $sgroup ) !== 'discouraged' ) {
+				if ( MessageGroups::getPriority( $subgroup ) !== 'discouraged' ) {
 					$aggregates = self::multiAdd( $aggregates, $stats[$sid][$code] );
 				}
 			}
