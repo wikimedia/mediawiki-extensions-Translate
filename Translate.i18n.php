@@ -13724,7 +13724,7 @@ $messages['mk'] = array(
 	'languagestats-summary' => 'Оваа страница прикажува статистики на превод за сите групи на пораки за одреден јазик.',
 	'languagestats-stats-for' => 'Преводни статистики за $1 ($2).',
 	'languagestats-recenttranslations' => 'скорешни преводи',
-	'translate-langstats-incomplete' => 'Некои од статистиките на страницава се непотполни. За да добиете потполни статистики, превчитајте ја страницата.',
+	'translate-langstats-incomplete' => 'Некои од статистиките на страницава се непотполни. Превчитајте ја страницата за да добиете потполни статистики.',
 	'translate-langstats-expand' => 'прикажи',
 	'translate-langstats-collapse' => 'скриј',
 	'translate-langstats-expandall' => 'прикажи сè',
@@ -14906,6 +14906,7 @@ $messages['nds-nl'] = array(
 /** Nepali (नेपाली)
  * @author Bhawani Gautam
  * @author Bhawani Gautam Rhk
+ * @author RajeshPandey
  * @author सरोज कुमार ढकाल
  */
 $messages['ne'] = array(
@@ -14917,7 +14918,7 @@ $messages['ne'] = array(
 	'translate-task-view' => 'यसका सबै सन्देशहरु हेर्ने',
 	'translate-task-untranslated' => 'यसका अनुवाद नगरिएका सबै सन्देशहरु हेर्ने',
 	'translate-task-optional' => 'यसका सबै वैकल्पिक सन्देशहरु हेर्ने',
-	'translate-task-suggestions' => 'अनुवाद स्मृतिबाट सुझाउ सहितका सन्देशहरु हेर्ने',
+	'translate-task-suggestions' => 'अनुवाद स्मृतिबाट सुझाव सहितका सन्देशहरु हेर्ने',
 	'translate-task-untranslatedoptional' => 'अनुवाद नगरिएका सबै वैकल्पिक सन्देशहरु हेर्ने',
 	'translate-task-problematic' => 'समस्याहरु भएका सन्देशहरु हेर्ने',
 	'translate-task-review' => 'परिवर्तन समीक्षा गर्ने',
@@ -14961,7 +14962,7 @@ $messages['ne'] = array(
 	'translate-edit-in-other-languages' => 'सन्देश अरु भाषाहरुमा',
 	'translate-edit-committed' => 'सफ्टवेयरमा वर्तमान अनुवाद',
 	'translate-edit-warnings' => 'चेतावनी अपूर्ण अनुवादको बारेमा',
-	'translate-edit-tmsugs' => 'अनुवाद स्मृतिबाट सुझाउहरु',
+	'translate-edit-tmsugs' => 'अनुवाद स्मृतिबाट सुझावहरु',
 	'translate-edit-tmmatch' => '$1% मेल',
 	'translate-use-suggestion' => 'यस सुझाउलाई अनुवादको कोठामा हाल्नुहोस्। यसले वर्तमान सामग्री(शव्दहरु)को स्थान लिनेछ।',
 	'translate-edit-tab-list' => 'सन्देश सूची',
@@ -15015,9 +15016,9 @@ $messages['ne'] = array(
 	'languagestats-summary' => 'यस पृष्ठमा भाषाको निम्ति सबै सन्देश समूहहरुका लागि अनुवाद तथ्यांक प्रदर्शित गरिन्छ।',
 	'languagestats-stats-for' => '$1 ($2)को लागि अनुवाद तथ्यांक।',
 	'languagestats-recenttranslations' => 'भर्खरैका अनुवादहरु',
-	'translate-langstats-expand' => 'फैल्याउने',
+	'translate-langstats-expand' => 'फैलाउ',
 	'translate-langstats-collapse' => 'खुम्च्याउने',
-	'translate-langstats-expandall' => 'सबै फैल्याउने',
+	'translate-langstats-expandall' => 'सबै फैलाउ',
 	'translate-langstats-collapseall' => 'सबै खुम्च्याउने',
 	'translate-language-code' => 'भाषा कोड',
 	'translate-language-code-field-name' => 'भाषा कोड:',
