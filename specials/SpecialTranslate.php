@@ -450,9 +450,17 @@ class SpecialTranslate extends SpecialPage {
 		global $wgLang;
 
 		if ( is_array( $blocks ) ) {
+			foreach ( $blocks as $i => $block ) {
+				if ( !is_array( $block ) && MessageGroups::getPriority( $block ) === 'discouraged' ) {
+					unset( $blocks[$i] );
+				}
+			}
 			$block = array_shift( $blocks );
 		} else {
 			$block = $blocks;
+			if ( MessageGroups::getPriority( $block ) === 'discouraged' ) {
+				return '';
+			}
 		}
 
 		$id = $block->getId();
