@@ -2361,6 +2361,56 @@ $messages['sr-ec'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|Викиридер]] пружа текстуално издање Википедије коме се може приступити ван мреже, и то на мобилном уређају',
 );
 
+/** Serbian (Latin script) (‪Srpski (latinica)‬) */
+$messages['sr-el'] = array(
+	'translategroupdescriptions-desc' => 'Opisi grupa poruka za projekte koji su podržani od strane proširenja [http://mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-nodesc' => 'Opis nije dostupan za ovu grupu poruka',
+	'translate-group-desc-mediawikicore' => 'Ova grupa sadrži poruke koje se koriste u alfa izdanju [[Translating:MediaWiki|Medijavikija]] ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Ova grupa sadrži [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki petsto najčešćih poruka] na [[Translating:MediaWiki|Medijavikiji]]',
+	'translate-group-desc-mediawikiextensions' => 'Meta grupa poruka koja sadrži sve poruke za podržana proširenja [[Translating:MediaWiki|Medijavikija]]',
+	'translate-group-desc-collection' => 'Meta grupa poruka koja sadrži sve poruke proširenja [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'Meta grupa poruka koja sadrži sve poruke proširenja [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Meta grupa poruka koja sadrži sve poruke proširenja [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-socialprofile' => 'Meta grupa poruka koja sadrži sve poruke proširenja vezane za [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Meta grupa poruka koja sadrži sve poruke proširenja [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-wikiaextensions' => 'Meta grupa poruka koja sadrži sve poruke za podržana proširenja koje koristi [http://www.wikia.com Vikija]',
+	'translate-group-desc-wikimediaextensions' => 'Meta grupa poruka koja sadrži sve poruke za podržana proširenja koje koristi [http://wikimedia.org/ Zadužbina Vikimedija]',
+	'translate-group-desc-wikimediaextensions-main' => 'Meta grupa poruka koja sadrži sve poruke podržanih proširenja Medijavikija. Poruke je potrebno prevesti za Vikimedijin [http://meta.wikimedia.org/wiki/Language_committee jezički odbor]',
+	'translate-group-desc-uniwiki' => 'Meta grupa poruka koja sadrži sve poruke vezane za [http://unicefinnovation.org/wiki.php Univiki]',
+	'translate-group-desc-ui' => 'Meta grupa poruka koja sadrži sve poruke proširenja vezane za [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-translatablepages' => 'Sve prevodive stranice',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Evropeana]] omogućava ljudima da pregledaju digitalno kulturno nasleđe Evrope',
+	'bw-desc-freecol' => '[[Translating:FreeCol|Frikol]] je strateška igra',
+	'bw-desc-fudforum' => '[[Translating:FUDforum|FUD-forum]] je mesto za raspravljanje o različitim temama',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] je sistem za praćenje grešaka',
+	'translate-group-desc-eol' => 'Grupa poruka za [[Translating:EOL|Enciklopediju života]]',
+	'translate-group-desc-ihris' => 'Grupa poruka za [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-common' => 'Grupa poruka za [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], modul projekta [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-i2ce' => 'Grupa poruka za [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], modul projekta [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-manage' => 'Grupa poruka za [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], modul projekta [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-qualify' => 'Grupa poruka za [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], modul projekta [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-mantisbt-plugin-core' => 'Osnovno proširenje za [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Poruke za stabilno izdanje [[Translating:MediaWiki|Medijavikija]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifoz]] je sistem za upravljanje podacima o mikrofinansiranju',
+	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] je biblioteka za pravljenje PDF dokumenata sa stranica Medijavikija',
+	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] je klijent za mrežnu poštu',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okaviks]] je program za čitanje Vikipedije van mreže',
+	'bw-desc-openimages' => '[[Translating:Open Images|Otvorene slike]] je otvorena platforma za multimediju',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Ove poruke su deo šablona za potvrdu e-adrese (projekat [[Translating:Open Images|Otvorene slike]])',
+	'translate-group-desc-openimages-all' => 'Ove poruke su deo projekta [[Translating:Open Images|Otvorene slike]]',
+	'bw-desc-openlayers' => '[[Translating:OpenLayers|Openlejers]] je dinamički generator mapi',
+	'bw-desc-openstreetmap' => '[[Translating:OpenStreetMap|Openstritmap]] je besplatna karta celog sveta',
+	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|Openstritmap]] je besplatna karta celog sveta',
+	'bw-desc-osm-potlatch' => '[[Translating:OpenStreetMap|Potlač]] je fleš uređivač Openstritmapa',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pajvikipedija]] je zbirka alatki za uređivanje Vikipedije',
+	'bw-desc-shapado' => '[[Translating:Shapado|Šapado]] je internet okruženje za pitanja i odgovore',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|Statusnet]] je platforma za mikroblogiranje',
+	'translate-group-desc-statusnet-plugin' => 'Ove poruke su deo priključka za [[Translating:StatusNet|Statusnet]]',
+	'translate-group-desc-tsint' => 'Grupa poruka za [http://toolserver.org/~krinkle/TsIntuition Tulserver intuišon], prevodilački sistem za alatke [http://toolserver.org Tulservera] (<span class="plainlinks">[[Translating talk:Toolserver|podrška]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tehnički detalji]</span>)',
+	'bw-desc-wikiblame' => '[[Translating:WikiBlame|Vikiblejm]] za tren oka pronalazi autore neke stranice na Vikimediji',
+	'bw-desc-wikireader' => '[[Translating:WikiReader|Vikirider]] pruža tekstualno izdanje Vikipedije kome se može pristupiti van mreže, i to na mobilnom uređaju',
+);
+
 /** Swedish (Svenska)
  * @author Boivie
  * @author Fluff
@@ -2688,17 +2738,22 @@ $messages['zh-hans'] = array(
  * @author Mark85296341
  */
 $messages['zh-hant'] = array(
+	'translategroupdescriptions-desc' => '消息組說明 [http://mediawiki.org/wiki/Extension:Translate 翻譯] 擴展所支持的產品',
+	'translate-group-desc-nodesc' => '沒有描述用於此消息組',
 	'translate-group-desc-mediawikicore' => '此介面訊息群組包含了目前 MediaWiki alpha 版本所使用的訊息（{{CURRENTVERSION}}）',
+	'translate-group-desc-translatablepages' => '所有翻譯網頁',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] 使人們能夠探索歐洲數字文化資源',
 	'bw-desc-freecol' => '在翻譯 FreeCol 到您的語言之前，請閱讀 [[Translating:FreeCol]]。Freecol 使用 GPL 協議。',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum]，一個用 PHP 編寫的論壇。',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] 是一個基於 Web 的 Bug 追蹤系統。請在[[Support|技術支援頁面]]報告任何問題。',
-	'bw-desc-mwlibrl' => "'''mwlib.rl''' 是一個 python 函式庫，使用 mwlib 函式庫進行解析，用以將 MediaWiki 頁面寫為 PDF 文檔。
+	'bw-desc-mwlibrl' => "'''mwlib.rl'''是一個使用mwlib庫解析的python庫，用以將MediaWiki條目轉化為PDF文件。
 
-更多資訊請參看 [[mw:Extension:PDF_Writer]] 和 http://code.pediapress.com/wiki/wiki/mwlibrl 。",
+更多信息請見[[mw:Extension:PDF_Writer]]和http://code.pediapress.com/wiki/wiki/mwlibrl。",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] 是一個使用 PHP 編寫的 Web 郵件客戶端。請在 [[Support]] 內報告問題。',
 	'bw-desc-openlayers' => 'OpenLayers 是一個開源的動態地圖生成器。請在 [[support]] 頁面內報告問題。',
 	'bw-desc-openstreetmap' => '本群組包含所有 [[Translating:OpenStreetMap|OpenStreetMap]] 的介面訊息',
 	'bw-desc-osm-site' => '本群組包含了 [[Translating:Open Street Map|Open Street Map]] 的介面訊息。',
+	'bw-desc-shapado' => '本組包含免費開源問答軟件[[Translating:Shapado|Shapado]]的信息',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] 是一個開源微網誌服務',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] 可以快速找到 Wikimedia 的維基某一個頁面的作者。',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] 是一個將離線、僅文字版本的維基百科傳送到手機上的計畫。',
