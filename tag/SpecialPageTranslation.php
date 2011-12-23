@@ -325,7 +325,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$actions[] = $linker->link(
 					$this->getTitle(),
 					wfMsgHtml( 'tpt-rev-mark' ),
-					array(),
+					array( 'title' => wfMsg( 'tpt-rev-mark-tooltip' ) ),
 					array(
 						'do' => 'mark',
 						'target' => $title->getPrefixedText(),
@@ -337,7 +337,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$actions[] = $linker->link(
 					$this->getTitle(),
 					wfMsgHtml( 'tpt-rev-unmark' ),
-					array(),
+					array( 'title' => wfMsg( 'tpt-rev-unmark-tooltip' ) ),
 					array(
 						'do' => 'unmark',
 						'target' => $title->getPrefixedText(),
