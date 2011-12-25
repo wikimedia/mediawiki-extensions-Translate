@@ -87,6 +87,11 @@ class SpecialPageTranslation extends SpecialPage {
 				$dbw->replace( $table, array( $index ), $row, __METHOD__ );
 			}
 			$this->listPages();
+
+			$group = MessageGroups::getGroup( $id );
+			$parents = MessageGroups::getParentGroups( $group );
+			MessageGroupStats::clearGroup( $parents );
+
 			return;
 		}
 

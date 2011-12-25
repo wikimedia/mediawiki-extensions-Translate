@@ -1110,6 +1110,28 @@ class MessageGroups {
 		return isset( $groups[$id] ) ? $groups[$id] : '';
 	}
 
+	/**
+	 * Returns the message groups this message group is part of.
+	 * @since 2011-12-15
+	 * @return array
+	 */
+	public static function getParentGroups( MessageGroup $group ) {
+		// Take the first message, get a handle for it and check
+		// if that message belongs to other groups. Those are the
+		// parent aggregate groups. Ideally we loop over all keys,
+		// but this should be enough.
+		$keys = array_keys( $group->getDefinitions() );
+		$title = Title::makeTitle( $group->getNamespace(), $keys[0] );
+		$handle = new MessageHandle( $title );
+		$ids = $handle->getGroupIds();
+		foreach ( $ids as $index => $id ) {
+			if ( $id === $group->getId() ) {
+				unset( $ids[$index] );
+			}
+		}
+		return $ids;
+	}
+
 	/// @todo Make protected.
 	public $classes;
 	private function __construct() {
