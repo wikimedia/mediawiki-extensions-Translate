@@ -194,7 +194,7 @@ class TranslationEditPage {
 
 		return array(
 			'onclick' => Xml::encodeJsCall(
-				'return trlOpenJsEdit', array( $title->getPrefixedDbKey(), $group ) ),
+				'return mw.translate.openDialog', array( $title->getPrefixedDbKey(), $group ) ),
 			'title' => wfMsg( 'translate-edit-title', $title->getPrefixedText() )
 		);
 	}

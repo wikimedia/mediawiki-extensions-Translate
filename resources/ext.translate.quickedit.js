@@ -19,184 +19,193 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-(function($) {
-
-function MessageCheckUpdater( callback ) {
+(function( $ ) {
+	"use strict";
 	
-	this.act = function() {
-		callback();
-		delete this.timeoutID;
-	};
+	var translate = {
+		dialogwidth: false,
+ 
+		init: function() {
+			mw.translate.dialogwidth = parseInt( mw.translate.windowWidth()*0.8, 10 );
+		},
 
-	this.setup = function() {
-		this.cancel();
-		var self = this;
-		this.timeoutID = window.setTimeout( self.act, 1000 );
-	};
+		MessageCheckUpdater: function( callback ) {
+			this.act = function() {
+				callback();
+				delete this.timeoutID;
+			};
 
-	this.cancel = function() {
-		if ( typeof this.timeoutID === 'number' ) {
-			window.clearTimeout( this.timeoutID );
-			delete this.timeoutID;
-		}
-	};
-}
+			this.setup = function() {
+				this.cancel();
+				var self = this;
+				this.timeoutID = window.setTimeout( self.act, 1000 );
+			};
 
-function trlVpWidth() {
-	return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-}
+			this.cancel = function() {
+				if ( typeof this.timeoutID === 'number' ) {
+					window.clearTimeout( this.timeoutID );
+					delete this.timeoutID;
+				}
+			};
+		},
 
-function addAccessKeys(dialog) {
-	$( '[accesskey=a], [accesskey=s], [accesskey=d], [accesskey=h]' ).each(
-		function( i ) {
-			$(this).removeAttr( 'accesskey' );
-		}
-	);
-	dialog.find( '.mw-translate-save' ).attr( 'accesskey', 'a' ).attr( 'title', '[' + tooltipAccessKeyPrefix + 'a]' );
-	dialog.find( '.mw-translate-next' ).attr( 'accesskey', 's' ).attr( 'title', '[' + tooltipAccessKeyPrefix + 's]' );
-	dialog.find( '.mw-translate-skip' ).attr( 'accesskey', 'd' ).attr( 'title', '[' + tooltipAccessKeyPrefix + 'd]' );
-	dialog.find( '.mw-translate-history' ).attr( 'accesskey', 'h' ).attr( 'title', '[' + tooltipAccessKeyPrefix + 'h]' );
-}
+		windowWidth: function() {
+			return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		},
 
-var dialogwidth = false;
+		addAccessKeys: function( dialog ) {
+			var buttons = {
+				a: '.mw-translate-save',
+				s: '.mw-translate-next',
+				d: '.mw-translate-skip',
+				h: '.mw-translate-history'
+			};
 
-window.trlOpenJsEdit = function( page, group ) {
-	var url = wgScript + '?title=Special:Translate/editpage&suggestions=async&page=$1&loadgroup=$2';
-	url = url.replace( '$1', encodeURIComponent( page ) ).replace( '$2', encodeURIComponent( group ) );
-	var id = 'jsedit' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
+			for ( var key in buttons ) {
+				if ( !buttons.hasOwnProperty( key ) ) {
+					continue;
+				}
 
-	var dialog = $( '#' + id );
-	if ( dialog.size() > 0 ) {
-		dialog.dialog( 'option', 'position', 'top' );
-		dialog.dialog( 'open' );
-		return false;
-	}
+				$( buttons[key] )
+					.val( function( i, b ) { return b.replace( / \(.\)$/, '' ); } )
+					.removeAttr( 'accesskey' )
+					.attr( 'title', '' );
 
-	$( '<div/>' ).attr( 'id', id ).appendTo( $( 'body' ) );
-	dialog = $( '#' + id );
+				dialog.find( buttons[key] )
+					.val( function( i, b ) { return b + ' (_)'.replace( '_', key ); } )
+					.attr( 'accesskey', key )
+					.attr( 'title', '[' + tooltipAccessKeyPrefix + key + ']' );
+			}
+		},
+ 
+		registerFeatures: function( dialog, form, page ) {
+			// Enable the collapsible element
+			var $identical = $( '.mw-identical-title' );
+			if ( $.isFunction( $identical.makeCollapsible ) ) {
+				$identical.makeCollapsible();
+			}
+			
+			form.find( '.mw-translate-next' ).click( function() {
+				mw.translate.openNext( page );
+			} );
 
-	var spinner = $( '<div/>' ).attr( 'class', 'mw-ajax-loader' );
-	dialog.html( $( '<div/>' ).attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
+			form.find( '.mw-translate-skip' ).click( function() {
+				mw.translate.openNext( page );
+				dialog.dialog( 'close' );
+				return false;
+			} );
 
-	dialog.load(url, false, function() {
-		var form = $( '#' + id + ' form' );
+			form.find( '.mw-translate-history' ).click( function() {
+				window.open( mw.config.get( 'wgServer' ) + mw.config.get( 'wgScript' ) + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
+				return false;
+			} );
+			
+			form.find( '.mw-translate-support, .mw-translate-askpermission' ).click( function() {
+				// Can use .data() only with 1.4.3 or newer
+				window.open( $(this).attr( 'data-load-url' ) );
+				return false;
+			} );
 
-		form.hide().slideDown();
+			form.find( 'input#summary' ).focus( function() {
+				$(this).css( 'width', '85%' );
+			} );
+			
+			var textarea = form.find( '.mw-translate-edit-area' );
+			textarea.css( 'display', 'block' );
+			textarea.autoResize( {extraSpace: 15, limit: 200} ).trigger( 'change' );
+			textarea.focus();
 
-		// Enable the collapsible element
-		var $identical = $( '.mw-identical-title' );
-		if ( $.isFunction( $identical.makeCollapsible ) ) {
-			$identical.makeCollapsible();
-		}
+			if ( form.find( '.mw-translate-messagechecks' ) ) {
+				var checker = new mw.translate.MessageCheckUpdater( function() {
+					var url = mw.config.get( 'wgScript' ) + '?title=Special:Translate/editpage&suggestions=checks&page=$1&loadgroup=$2';
+					url = url.replace( '$1', encodeURIComponent( page ) ).replace( '$2', encodeURIComponent( group ) );
+					$.post( url, { translation: textarea.val() }, function( mydata ) {
+						form.find( '.mw-translate-messagechecks' ).replaceWith( mydata );
+					} );
+				} );
 
-		form.find( '.mw-translate-next' ).click( function() {
-			trlLoadNext( page );
-		} );
+				textarea.keyup( function() { checker.setup() } );
+			}
+		},
 
-		form.find( '.mw-translate-skip' ).click( function() {
-			trlLoadNext( page );
-			dialog.dialog( 'close' );
-			return false;
-		} );
+		openDialog: function( page, group ) {
+			var url = mw.config.get( 'wgScript' ) +  '?title=Special:Translate/editpage&suggestions=async&page=$1&loadgroup=$2';
+			url = url.replace( '$1', encodeURIComponent( page ) ).replace( '$2', encodeURIComponent( group ) );
+			var id = 'jsedit' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
 
-		form.find( '.mw-translate-history' ).click( function() {
-			window.open( wgServer + wgScript + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
-			return false;
-		} );
-		
-		form.find( '.mw-translate-support,.mw-translate-askpermission' ).click( function() {
-			// Can use .data() only with 1.4.3 or newer
-			window.open( $(this).attr('data-load-url') );
-			return false;
-		} );
+			var dialog = $( '#' + id );
+			if ( dialog.size() > 0 ) {
+				dialog.dialog( 'option', 'position', 'top' );
+				dialog.dialog( 'open' );
+				return false;
+			}
 
-		form.find( 'input#summary' ).focus( function() {
-			$(this).css('width', '85%');
-		});
-		
-		var textarea = form.find( '.mw-translate-edit-area' );
-		textarea.css( 'display', 'block' );
-		textarea.autoResize({extraSpace: 15, limit: 200}).trigger( 'change' );
-		textarea.focus();
+			$( '<div>' ).attr( 'id', id ).appendTo( $( 'body' ) );
+			dialog = $( '#' + id );
 
-		if ( form.find( '.mw-translate-messagechecks' ) ) {
-			var checker = new MessageCheckUpdater( function() {
-				var url = wgScript + '?title=Special:Translate/editpage&suggestions=checks&page=$1&loadgroup=$2';
-				url = url.replace( '$1', encodeURIComponent( page ) ).replace( '$2', encodeURIComponent( group ) );
-				$.post( url, { translation: textarea.val() }, function( mydata ) {
-					form.find( '.mw-translate-messagechecks' ).replaceWith( mydata );
+			var spinner = $( '<div>' ).attr( 'class', 'mw-ajax-loader' );
+			dialog.html( $( '<div>' ).attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
+
+			dialog.load( url, false, function() {
+				var form = $( '#' + id + ' form' );
+
+				mw.translate.registerFeatures( dialog, form, page );
+				mw.translate.addAccessKeys( form );
+				form.hide().slideDown();
+
+				form.ajaxForm( {
+					dataType: 'json',
+					success: function(json) {
+						if ( json.error ) {
+							alert( json.error.info + ' (' + json.error.code +')' );
+						} else if ( json.edit.result === 'Failure' ) {
+							alert( mw.msg( 'translate-js-save-failed' ) );
+						} else if ( json.edit.result === 'Success' ) {
+							dialog.dialog( 'close' );
+						} else {
+							alert( mw.msg( 'translate-js-save-failed' ) );
+						}
+					}
 				} );
 			} );
 
-			textarea.keyup( function() {
-				checker.setup();
+			dialog.dialog( {
+				bgiframe: true,
+				width: mw.translate.dialogwidth,
+				title: page,
+				position: 'top',
+				resize: function() { $( '#' + id + ' textarea' ).width( '100%' ); },
+				resizeStop: function() { mw.translate.dialogwidth = $( '#' + id ).width(); },
+				focus: function() { mw.translate.addAccessKeys( dialog ); },
+				close: function() { mw.translate.addAccessKeys( $([]) ); }
 			} );
-		}
-		
-		addAccessKeys( form );
-		var b = null;
-		b = form.find( '.mw-translate-save' );
-			b.val( b.val() + ' (a)' );
-		b = form.find( '.mw-translate-next' );
-			b.val( b.val() + ' (s)' );
-		b = form.find( '.mw-translate-skip' );
-			b.val( b.val() + ' (d)' );
-		b = form.find( '.mw-translate-history' );
-			b.val( b.val() + ' (h)' );
 
-		form.ajaxForm( {
-			dataType: 'json',
-			success: function(json) {
-				if ( json.error ) {
-					alert( json.error.info + ' (' + json.error.code +')' );
-				} else if ( json.edit.result === 'Failure' ) {
-					alert( mw.msg( 'translate-js-save-failed' ) );
-				} else if ( json.edit.result === 'Success' ) {
-					dialog.dialog( 'close' );
-				} else {
-					alert( mw.msg( 'translate-js-save-failed' ) );
+			return false;
+		},
+
+		openNext: function( title ) {
+			var messages = mw.config.get( 'trlKeys' );
+			var page = title.replace( /[^:]+:/, '' );
+			var namespace = title.replace( /:.*/, '' );
+			var found = false;
+			for ( var key in messages ) {
+				if ( !messages.hasOwnProperty( key ) ) {
+					continue;
+				}
+
+				var value = messages[key];
+				if ( found ) {
+					return mw.translate.openDialog( namespace + ':' + value );
+				} else if( page === value ) {
+					found = true;
 				}
 			}
-		} );
-	} );
-
-	dialog.dialog( {
-		bgiframe: true,
-		width: dialogwidth ? dialogwidth : parseInt( trlVpWidth()*0.8, 10 ),
-		title: page,
-		position: 'top',
-		resize: function(event, ui) {
-			$( '#' + id + ' textarea' ).width( '100%' );
-		},
-		resizeStop: function(event, ui) {
-			dialogwidth = $( '#' + id ).width();
-		},
-		focus: function(event, ui) {
-			addAccessKeys( dialog );
-		},
-		close: function(event, ui) {
-			addAccessKeys( $([]) );
+			alert( mw.msg( 'translate-js-nonext' ) );
+			return;
 		}
-	} );
+	};
+	
+	mw.translate = translate;
+	$( document ).ready( mw.translate.init );
 
-	return false;
-}
-
-function trlLoadNext( title ) {
-	var page = title.replace( /[^:]+:/, '' );
-	var namespace = title.replace( /:.*/, '' );
-	var found = false;
-	for ( var key in trlKeys ) {
-		if ( !trlKeys.hasOwnProperty(key) ) { continue; }
-		var value = trlKeys[key];
-		if (found) {
-			return trlOpenJsEdit( namespace + ':' + value );
-		} else if( page === value ) {
-			found = true;
-		}
-	}
-	alert( mw.msg( 'translate-js-nonext' ) );
-	return;
-}
-
-})(jQuery);
+} )( jQuery );
