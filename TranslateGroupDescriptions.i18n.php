@@ -1717,6 +1717,64 @@ $messages['mt'] = array(
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] hu kapaċi li jsib veloċement l-awturi ta' paġna fuq sit tal-Wikimedia.",
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Audun
+ * @author Laaknor
+ * @author Nghtwlkr
+ */
+$messages['nb'] = array(
+	'translategroupdescriptions-desc' => 'Meldingsgruppebeskrivelser for produkt støttet av utvidelsen [http://mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-nodesc' => 'Ingen beskrivelse er tilgjengelig for denne meldingsgruppen',
+	'translate-group-desc-mediawikicore' => 'Denne meldingsgruppen inneholder meldinger brukt i den gjeldende alfaversjonen av MediaWiki ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Denne meldingsgruppen inneholder [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki de 500 mest brukte meldingene] i MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser som støttes av MediaWiki',
+	'translate-group-desc-collection' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-socialprofile' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-wikiaextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://www.wikia.com Wikia]',
+	'translate-group-desc-wikimediaextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikimediaextensions-main' => 'Metameldingsgruppe som inneholder alle meldinger for støttede MediaWikiutvidelser som kreves for å bli oversatt for Wikimedias [http://meta.wikimedia.org/wiki/Language_committee språkkomite]',
+	'translate-group-desc-uniwiki' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://unicefinnovation.org/wiki.php Uniwiki]',
+	'translate-group-desc-ui' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
+	'translate-group-desc-translatablepages' => 'Alle sider som kan oversettes',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] lar folk utforske de digitale kulturelle ressursene i Europa',
+	'bw-desc-freecol' => 'Før du oversetter FreeCol til ditt språk, les gjennom [[Translating:FreeCol]]. FreeCol bruker GPL-lisensen.',
+	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], et nettforum skrevet i PHP.',
+	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] er et gratis nettbasert feilsporingssystem. Vennligst meld fra om problem på [[Support]].',
+	'translate-group-desc-ihris' => 'En meldingsgruppe for [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-common' => 'En meldingsgruppe for [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], en modul av [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-i2ce' => 'En meldingsgruppe for [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], en modul av [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-manage' => 'En meldingsgruppe for [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], en modul av [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-qualify' => 'En meldingsgruppe for [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], en modul av [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-mantisbt-plugin-core' => 'A kjerneutvidelse for [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] er et informasjonhåndteringssystem for mikrofinans',
+	'bw-desc-mwlibrl' => "'''mwlib.rl''' er et python-bibliotek for skriving av PDF-dokument fra MediaWiki-artikler som har blitt tolket av mwlib-biblioteket.
+
+Se [[mw:Extension:PDF_Writer]] og http://code.pediapress.com/wiki/wiki/mwlibrl for mer informasjon.",
+	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] er en nettbasert e-postklient skrevet i PHP. Vennligst rapporter problemer til [[Support]].',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] er en frakoblet Wikipedialeser',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] er en åpen mediaplattform',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Disse meldingene er en del av e-postbekreftelsesmalen for [[Translating:Open Images|Open Images]]',
+	'translate-group-desc-openimages-all' => 'Disse meldingene er en del av [[Translating:Open Images|Open Images]]-prosjektet',
+	'bw-desc-openlayers' => 'OpenLayers er en dynamisk kartgenerator med åpen kildekode. Vennligst rapporter problemer til [[support]].',
+	'bw-desc-openstreetmap' => 'Meldingsgruppe for alle [[Translating:OpenStreetMap|OpenStreetMap]]-meldinger',
+	'bw-desc-osm-site' => 'Denne meldingsgruppen inneholder grensesnittsmeldingene for [[Translating:Open Street Map|Open Street Map]].
+Se [http://unicode.org/repos//cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} Unicode CLDR-side for forklaring av de mange nøklene].',
+	'bw-desc-osm-potlatch' => 'Denne meldingsgruppen inneholder grensesnittsmeldinger for [[Translating:OpenStreetMap|Potlatch]]. Vennligst:
+
+* Forsøk å holde oversettelsene så nærme orginalen på engelsk i antall tegn, på grunn av begrensninger i brukergrensesnittet. Se også [http://trac.openstreetmap.org/ticket/2067 åpen feilmelding].
+* Bruk [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] for å teste Potlatch. Du kan teste alt du vil på alle områder der.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] er en samling av verktøy for å redigere Wikipedia',
+	'bw-desc-shapado' => 'Meldingsgruppe for Q&A-programvaren [[Translating:Shapado|Shapado]] som er gratis og har åpen kildekode',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] er en mikrobloggtjener med åpen kildekode',
+	'translate-group-desc-statusnet-plugin' => 'Disse meldingene er en del av en utvidelse for [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'En meldingsgruppe for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-systemet for [http://toolserver.org Toolserver]-verktøy (<span class="plainlinks">[[Translating talk:Toolserver|støtte]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tekniske detaljer]</span>)',
+	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan kjapt finne ut hvem som har forfattet en side på en Wikimedia-wiki.',
+	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] er et prosjekt for å levere en frakoblet tekstversjon av Wikipedia på en mobil enhet.',
+);
+
 /** Nepali (नेपाली)
  * @author सरोज कुमार ढकाल
  */
@@ -1793,64 +1851,6 @@ $messages['nn'] = array(
 
 Sjå [[mw:Extension:PDF_Writer]] og http://code.pediapress.com/wiki/wiki/mwlibrl for meir informasjon.",
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan snøgt finna ut kven som har forfatta ei sida i ein Wikimedia-wiki.',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Audun
- * @author Laaknor
- * @author Nghtwlkr
- */
-$messages['nb'] = array(
-	'translategroupdescriptions-desc' => 'Meldingsgruppebeskrivelser for produkt støttet av utvidelsen [http://mediawiki.org/wiki/Extension:Translate Translate]',
-	'translate-group-desc-nodesc' => 'Ingen beskrivelse er tilgjengelig for denne meldingsgruppen',
-	'translate-group-desc-mediawikicore' => 'Denne meldingsgruppen inneholder meldinger brukt i den gjeldende alfaversjonen av MediaWiki ({{CURRENTVERSION}})',
-	'translate-group-desc-mediawikimostused' => 'Denne meldingsgruppen inneholder [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki de 500 mest brukte meldingene] i MediaWiki',
-	'translate-group-desc-mediawikiextensions' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser som støttes av MediaWiki',
-	'translate-group-desc-collection' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
-	'translate-group-desc-flaggedrevs' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
-	'translate-group-desc-readerfeedback' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-socialprofile' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
-	'translate-group-desc-wikiaextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://www.wikia.com Wikia]',
-	'translate-group-desc-wikimediaextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://wikimedia.org/ Wikimedia Foundation]',
-	'translate-group-desc-wikimediaextensions-main' => 'Metameldingsgruppe som inneholder alle meldinger for støttede MediaWikiutvidelser som kreves for å bli oversatt for Wikimedias [http://meta.wikimedia.org/wiki/Language_committee språkkomite]',
-	'translate-group-desc-uniwiki' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://unicefinnovation.org/wiki.php Uniwiki]',
-	'translate-group-desc-ui' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
-	'translate-group-desc-translatablepages' => 'Alle sider som kan oversettes',
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] lar folk utforske de digitale kulturelle ressursene i Europa',
-	'bw-desc-freecol' => 'Før du oversetter FreeCol til ditt språk, les gjennom [[Translating:FreeCol]]. FreeCol bruker GPL-lisensen.',
-	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], et nettforum skrevet i PHP.',
-	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] er et gratis nettbasert feilsporingssystem. Vennligst meld fra om problem på [[Support]].',
-	'translate-group-desc-ihris' => 'En meldingsgruppe for [[Translating:iHRIS|iHRIS]]',
-	'translate-group-desc-ihris-common' => 'En meldingsgruppe for [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], en modul av [[Translating:iHRIS|iHRIS]]',
-	'translate-group-desc-ihris-i2ce' => 'En meldingsgruppe for [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], en modul av [[Translating:iHRIS|iHRIS]]',
-	'translate-group-desc-ihris-manage' => 'En meldingsgruppe for [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], en modul av [[Translating:iHRIS|iHRIS]]',
-	'translate-group-desc-ihris-qualify' => 'En meldingsgruppe for [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], en modul av [[Translating:iHRIS|iHRIS]]',
-	'translate-group-desc-mantisbt-plugin-core' => 'A kjerneutvidelse for [[Translating:MantisBT|MantisBT]]',
-	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] er et informasjonhåndteringssystem for mikrofinans',
-	'bw-desc-mwlibrl' => "'''mwlib.rl''' er et python-bibliotek for skriving av PDF-dokument fra MediaWiki-artikler som har blitt tolket av mwlib-biblioteket.
-
-Se [[mw:Extension:PDF_Writer]] og http://code.pediapress.com/wiki/wiki/mwlibrl for mer informasjon.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] er en nettbasert e-postklient skrevet i PHP. Vennligst rapporter problemer til [[Support]].',
-	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] er en frakoblet Wikipedialeser',
-	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] er en åpen mediaplattform',
-	'translate-group-desc-openimages-verifyemailtemplate' => 'Disse meldingene er en del av e-postbekreftelsesmalen for [[Translating:Open Images|Open Images]]',
-	'translate-group-desc-openimages-all' => 'Disse meldingene er en del av [[Translating:Open Images|Open Images]]-prosjektet',
-	'bw-desc-openlayers' => 'OpenLayers er en dynamisk kartgenerator med åpen kildekode. Vennligst rapporter problemer til [[support]].',
-	'bw-desc-openstreetmap' => 'Meldingsgruppe for alle [[Translating:OpenStreetMap|OpenStreetMap]]-meldinger',
-	'bw-desc-osm-site' => 'Denne meldingsgruppen inneholder grensesnittsmeldingene for [[Translating:Open Street Map|Open Street Map]].
-Se [http://unicode.org/repos//cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} Unicode CLDR-side for forklaring av de mange nøklene].',
-	'bw-desc-osm-potlatch' => 'Denne meldingsgruppen inneholder grensesnittsmeldinger for [[Translating:OpenStreetMap|Potlatch]]. Vennligst:
-
-* Forsøk å holde oversettelsene så nærme orginalen på engelsk i antall tegn, på grunn av begrensninger i brukergrensesnittet. Se også [http://trac.openstreetmap.org/ticket/2067 åpen feilmelding].
-* Bruk [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] for å teste Potlatch. Du kan teste alt du vil på alle områder der.',
-	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] er en samling av verktøy for å redigere Wikipedia',
-	'bw-desc-shapado' => 'Meldingsgruppe for Q&A-programvaren [[Translating:Shapado|Shapado]] som er gratis og har åpen kildekode',
-	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] er en mikrobloggtjener med åpen kildekode',
-	'translate-group-desc-statusnet-plugin' => 'Disse meldingene er en del av en utvidelse for [[Translating:StatusNet|StatusNet]]',
-	'translate-group-desc-tsint' => 'En meldingsgruppe for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-systemet for [http://toolserver.org Toolserver]-verktøy (<span class="plainlinks">[[Translating talk:Toolserver|støtte]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tekniske detaljer]</span>)',
-	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan kjapt finne ut hvem som har forfattet en side på en Wikimedia-wiki.',
-	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] er et prosjekt for å levere en frakoblet tekstversjon av Wikipedia på en mobil enhet.',
 );
 
 /** Occitan (Occitan)
@@ -2158,6 +2158,7 @@ $messages['ro'] = array(
 );
 
 /** Russian (Русский)
+ * @author Eleferen
  * @author Ferrer
  * @author Kaganer
  * @author Lockal
@@ -2219,6 +2220,7 @@ $messages['ru'] = array(
 	'translate-group-desc-tsint' => 'Группа сообщений для [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], системы интернационализации [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|поддержка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технические подробности]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] позволяет быстро найти авторов страницы в проектах Викимедиа.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] — это проект, предоставляющий автономную текстовую версию Википедии на мобильном устройстве.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] является кросс-платформенным приложением для мобильных и планшетных устройств для чтения и внесения вклада в Википедию.',
 );
 
 /** Slovak (Slovenčina)

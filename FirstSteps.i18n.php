@@ -241,6 +241,7 @@ $messages['ba'] = array(
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
+ * @author Renessaince
  * @author Wizardist
  * @author Zedlik
  */
@@ -258,6 +259,7 @@ $messages['be-tarask'] = array(
 	'translate-fs-intro' => "Запрашаем у майстар пачатковага навучаньня {{GRAMMAR:родны|{{SITENAME}}}}.
 Вас правядуць праз працэс станаўленьня перакладчыкам крок за крокам.
 Пасьля гэтага Вы зможаце перакладаць ''паведамленьні інтэрфэйсу'' ўсіх праектаў, якія падтрымліваюцца ў {{GRAMMAR:месны|{{SITENAME}}}}.",
+	'translate-fs-selectlanguage' => 'Абярыце мову',
 	'translate-fs-userpage-submit' => 'Стварыць маю старонку ўдзельніка',
 	'translate-fs-userpage-done' => 'Выдатна! Цяпер Вы маеце старонку ўдзельніка.',
 	'translate-fs-target-text' => "Віншуем!
@@ -804,6 +806,51 @@ Si todavía no lo has hecho, [[Special:Preferences|cambia el idioma de tu interf
 Esto permite a los otros usuarios contactar contigo por correo electrónico.
 También recibirás boletines de noticias como máximo una vez al mes.
 Si no deseas recibir boletines de noticias, puedes cancelarlos en la pestaña "{{int:prefs-personal}}" de tus [[Special:Preferences|preferencias]].',
+);
+
+/** Estonian (Eesti)
+ * @author Pikne
+ */
+$messages['et'] = array(
+	'firststeps' => 'Esimesed sammud',
+	'firststeps-desc' => '[[Special:FirstSteps|Erilehekülg]], mis aitab tõlkimisga alustada',
+	'translate-fs-pagetitle-done' => ' – valmis!',
+	'translate-fs-pagetitle-pending' => ' – ootel',
+	'translate-fs-pagetitle' => 'Alustusviisard – $1',
+	'translate-fs-signup-title' => 'Registreerumine',
+	'translate-fs-settings-title' => 'Eelistuste seadmine',
+	'translate-fs-userpage-title' => 'Kasutajalehekülje loomine',
+	'translate-fs-permissions-title' => 'Tõlkijaõiguste taotlemine',
+	'translate-fs-target-title' => 'Alusta tõlkimist!',
+	'translate-fs-email-title' => 'E-posti aadressi kinnitamine',
+	'translate-fs-intro' => "Tere tulemast {{GRAMMAR:genitive|{{SITENAME}}}} alustusviisardisse.
+Sul aidatakse sammhaaval tõlkijaks saada.
+Lõpuks saad tõlkida kõikide {{GRAMMAR:genitive|{{SITENAME}}}} toetatud projektide ''liidese sõnumeid''.",
+	'translate-fs-selectlanguage' => 'Vali keel',
+	'translate-fs-settings-planguage' => 'Põhikeel:',
+	'translate-fs-settings-planguage-desc' => 'Põhikeel kattub sinu siin vikis kasutatava liidesekeelega
+ja keelega, millesse vaikimisi tõlgid.',
+	'translate-fs-settings-slanguage' => '$1. abikeel:',
+	'translate-fs-settings-slanguage-desc' => 'Tõlkeredaktoris saab näidata sõnumite teiskeelseid tõlkeid.
+Siin saad valida, milliseid keeli soovid näha, kui soovid.',
+	'translate-fs-settings-submit' => 'Salvesta eelistused',
+	'translate-fs-userpage-level-N' => 'See on minu emakeel',
+	'translate-fs-userpage-level-5' => 'Mul on selle keele tõlkija kutse',
+	'translate-fs-userpage-level-4' => 'Räägin seda keelt emakeelelähedasel tasemel',
+	'translate-fs-userpage-level-3' => 'Räägin seda keelt heal tasemel',
+	'translate-fs-userpage-level-2' => 'Räägin seda keelt keskmisel tasemel',
+	'translate-fs-userpage-level-1' => 'Räägin natuke seda keelt',
+	'translate-fs-userpage-help' => 'Palun kirjelda oma keelteoskust ja räägi midagi endast. Kui oskad rohkem kui viit keelt, saad ülejäänud hiljem lisada.',
+	'translate-fs-userpage-submit' => 'Loo minu kasutajalehekülg',
+	'translate-fs-userpage-done' => 'Hästi tehtud! Nüüd on sul kasutajalehekülg.',
+	'translate-fs-permissions-planguage' => 'Põhikeel:',
+	'translate-fs-permissions-help' => 'Nüüd pead esitama taotluse, et sind lisataks tõlkijate rühma.
+Vali põhikeel, millesse tõlgid.
+
+Allolevas tekstikastis saad mainida teisi keeli ja teha muid märkusi.',
+	'translate-fs-permissions-pending' => 'Sinu taotlus on lisatud leheküljele "[[$1]]" ja keegi võrgukoha kooseisust vaatab selle esimesel võimalusel üle.
+Kui kinnitad oma e-posti aadressi, saad e-kirja niipea, kui su taotlus on üle vaadatud.',
+	'translate-fs-permissions-submit' => 'Saada taotlus',
 );
 
 /** Basque (Euskara)
@@ -1872,6 +1919,47 @@ Anda juga akan menerima surat berita selebih-lebihnya sebulan sekali.
 Jika anda tidak ingi menerima surat berita, anda boleh memilih untuk mengecualikan diri daripada senarai penghantaran kami dalam tab "{{int:prefs-personal}}" dalam [[Special:Preferences|keutamaan]] anda.',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Jon Harald Søby
+ * @author Nghtwlkr
+ */
+$messages['nb'] = array(
+	'firststeps' => 'Første steg',
+	'firststeps-desc' => '[[Special:FirstSteps|Spesialside]] for å få brukere igang med wikier som bruker Translate-utvidelsen',
+	'translate-fs-pagetitle-done' => ' – ferdig!',
+	'translate-fs-pagetitle' => 'Veiviser for å komme igang – $1',
+	'translate-fs-signup-title' => 'Registrer deg',
+	'translate-fs-settings-title' => 'Konfigurer innstillingene dine',
+	'translate-fs-userpage-title' => 'Opprett brukersiden din',
+	'translate-fs-permissions-title' => 'Spør om oversetterrettigheter',
+	'translate-fs-target-title' => 'Start å oversette!',
+	'translate-fs-email-title' => 'Bekreft e-postadressen din',
+	'translate-fs-intro' => "Velkommen til veiviseren for å komme igang med {{SITENAME}}.
+Du vil bli veiledet gjennom prosessen med å bli en oversetter steg for steg.
+Til slutt vil du kunne oversette ''grensesnittsmeldinger'' for alle støttede prosjekt på {{SITENAME}}.",
+	'translate-fs-userpage-submit' => 'Opprett brukersiden min',
+	'translate-fs-userpage-done' => 'Flott! Nå har du en brukerside.',
+	'translate-fs-target-text' => "Gratulerer.
+Du kan nå begynne å oversette.
+
+Ikke vær redd om det fortsatt føles nytt og forvirrende.
+I [[Project list|prosjektlisten]] er det en liste over prosjekt du kan bidra med oversettelser til.
+De fleste av prosjektene har en kort beskrivelsesside med en «''Oversett dette prosjektet''»-lenke som vil føre deg til en side som lister opp alle uoversatte meldinger.
+En liste over alle meldingsgruppene med den [[Special:LanguageStats|nåværende oversettelsesstatusen for et språk]] er også tilgjengelig.
+
+Om du synes at du må forstå mer før du begynner å oversette kan du lese [[FAQ|Ofte stilte spørsmål]].
+Dessverre kan dokumentasjonen av og til være utdatert.
+Om det er noe du tror du kan gjøre men ikke vet hvordan, ikke nøl med å spørre på [[Support|støttesiden]].
+
+Du kan også kontakte medoversettere av samme språk på [[Portal:$1|din språkportal]]s [[Portal_talk:$1|diskusjonsside]].
+Om du ikke allerede har gjort det, [[Special:Preferences|endre grensesnittspråket ditt til det språket du vil oversette til]] slik at wikien kan vise de mest relevante lenkene for deg.",
+	'translate-fs-email-text' => 'Oppgi e-postadressen din i [[Special:Preferences|innstillingene dine]] og bekreft den i e-posten som blir sendt til deg.
+
+Dette lar andre brukere kontakte deg via e-post.
+Du vil også motta nyhetsbrev høyst én gang i måneden.
+Om du ikke vil motta nyhetsbrevet kan du melde deg ut i fanen «{{int:prefs-personal}}» i [[Special:Preferences|innstillingene]] dine.',
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
@@ -1941,47 +2029,6 @@ Als u geen nieuwsbrieven wilt ontvangen, dan kunt u dit aangeven in het tabblad 
  */
 $messages['nn'] = array(
 	'translate-fs-userpage-submit' => 'Opprett brukarsida mi',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
- * @author Nghtwlkr
- */
-$messages['nb'] = array(
-	'firststeps' => 'Første steg',
-	'firststeps-desc' => '[[Special:FirstSteps|Spesialside]] for å få brukere igang med wikier som bruker Translate-utvidelsen',
-	'translate-fs-pagetitle-done' => ' – ferdig!',
-	'translate-fs-pagetitle' => 'Veiviser for å komme igang – $1',
-	'translate-fs-signup-title' => 'Registrer deg',
-	'translate-fs-settings-title' => 'Konfigurer innstillingene dine',
-	'translate-fs-userpage-title' => 'Opprett brukersiden din',
-	'translate-fs-permissions-title' => 'Spør om oversetterrettigheter',
-	'translate-fs-target-title' => 'Start å oversette!',
-	'translate-fs-email-title' => 'Bekreft e-postadressen din',
-	'translate-fs-intro' => "Velkommen til veiviseren for å komme igang med {{SITENAME}}.
-Du vil bli veiledet gjennom prosessen med å bli en oversetter steg for steg.
-Til slutt vil du kunne oversette ''grensesnittsmeldinger'' for alle støttede prosjekt på {{SITENAME}}.",
-	'translate-fs-userpage-submit' => 'Opprett brukersiden min',
-	'translate-fs-userpage-done' => 'Flott! Nå har du en brukerside.',
-	'translate-fs-target-text' => "Gratulerer.
-Du kan nå begynne å oversette.
-
-Ikke vær redd om det fortsatt føles nytt og forvirrende.
-I [[Project list|prosjektlisten]] er det en liste over prosjekt du kan bidra med oversettelser til.
-De fleste av prosjektene har en kort beskrivelsesside med en «''Oversett dette prosjektet''»-lenke som vil føre deg til en side som lister opp alle uoversatte meldinger.
-En liste over alle meldingsgruppene med den [[Special:LanguageStats|nåværende oversettelsesstatusen for et språk]] er også tilgjengelig.
-
-Om du synes at du må forstå mer før du begynner å oversette kan du lese [[FAQ|Ofte stilte spørsmål]].
-Dessverre kan dokumentasjonen av og til være utdatert.
-Om det er noe du tror du kan gjøre men ikke vet hvordan, ikke nøl med å spørre på [[Support|støttesiden]].
-
-Du kan også kontakte medoversettere av samme språk på [[Portal:$1|din språkportal]]s [[Portal_talk:$1|diskusjonsside]].
-Om du ikke allerede har gjort det, [[Special:Preferences|endre grensesnittspråket ditt til det språket du vil oversette til]] slik at wikien kan vise de mest relevante lenkene for deg.",
-	'translate-fs-email-text' => 'Oppgi e-postadressen din i [[Special:Preferences|innstillingene dine]] og bekreft den i e-posten som blir sendt til deg.
-
-Dette lar andre brukere kontakte deg via e-post.
-Du vil også motta nyhetsbrev høyst én gang i måneden.
-Om du ikke vil motta nyhetsbrevet kan du melde deg ut i fanen «{{int:prefs-personal}}» i [[Special:Preferences|innstillingene]] dine.',
 );
 
 /** Deitsch (Deitsch)
@@ -2200,6 +2247,7 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (Русский)
+ * @author Eleferen
  * @author G0rn
  * @author Hypers
  * @author Александр Сигачёв
@@ -2218,8 +2266,27 @@ $messages['ru'] = array(
 	'translate-fs-intro' => 'Добро пожаловать в программу начального обучения проекта {{SITENAME}}.
 Шаг за шагом вы будете проведены по обучающей программе переводчиков.
 По окончанию обучения вы сможете переводить интерфейсные сообщения всех поддерживаемых проектов {{SITENAME}}.',
+	'translate-fs-selectlanguage' => 'Выберите язык',
+	'translate-fs-settings-planguage' => 'Основной язык:',
+	'translate-fs-settings-slanguage' => 'Вспомогательные языки $1:',
+	'translate-fs-settings-submit' => 'Сохранить настройки',
+	'translate-fs-userpage-level-N' => 'Мой родной язык',
+	'translate-fs-userpage-level-5' => 'Я профессиональный переводчик с',
+	'translate-fs-userpage-level-4' => 'Я в совершенстве владею',
+	'translate-fs-userpage-level-3' => 'Я хорошо знаю',
+	'translate-fs-userpage-level-2' => 'Я средне владею',
+	'translate-fs-userpage-level-1' => 'Начальные знания',
+	'translate-fs-userpage-help' => 'Пожалуйста, укажите свои знания языков и расскажите нам немного о себе. Если вы знаете больше, чем пять языков, вы сможете добавить их позже.',
 	'translate-fs-userpage-submit' => 'Создать мою страницу участника',
 	'translate-fs-userpage-done' => 'Отлично! Теперь у вас есть страница участника.',
+	'translate-fs-permissions-planguage' => 'Основной язык:',
+	'translate-fs-permissions-help' => 'Теперь вам нужно разместить запрос, для вступления в группу переводчиков.
+Выберите основной язык, на который Вы планируете осуществлять переводы.
+
+Можно указать другие языки и примечания в текстовом поле ниже.',
+	'translate-fs-permissions-pending' => 'Ваша заявка была подана [[$1]], и кто-то из сотрудников сайта проверит её в ближайшее время.
+Если вы подтвердите свой адрес электронной почты, Вы получите уведомление по электронной почте, как только это произойдёт.',
+	'translate-fs-permissions-submit' => 'Отправить запрос',
 	'translate-fs-target-text' => "Поздравляем!
 Теперь вы можете начать переводить.
 
