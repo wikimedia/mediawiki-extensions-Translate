@@ -221,6 +221,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 	'styles' => 'resources/ext.translate.special.translate.css',
 	'scripts' => 'resources/ext.translate.special.translate.js',
 	'position' => 'top',
+	'dependencies' => array( 'mediawiki.util' ),
 	'messages' => array( 
 		'translate-workflow-set-do',
 		'translate-workflow-set-doing',
