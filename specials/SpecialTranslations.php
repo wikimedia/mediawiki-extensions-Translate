@@ -243,12 +243,7 @@ class SpecialTranslations extends SpecialAllpages {
 		$out .= Xml::closeElement( 'table' );
 		$wgOut->addHTML( $out );
 
-		$vars = array(
-			'trlKeys' => $ajaxPageList,
-			'trlMsgNoNext' => wfMsg( 'translate-js-nonext' ),
-			'trlMsgSaveFailed' => wfMsg( 'translate-js-save-failed' ),
-		);
-
+		$vars = array( 'trlKeys' => $ajaxPageList );
 		$wgOut->addScript( Skin::makeVariablesScript( $vars ) );
 	}
 
