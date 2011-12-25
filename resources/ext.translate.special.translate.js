@@ -1,9 +1,12 @@
 jQuery( function( $ ) {
+	"use strict";
+	var mw = mediaWiki;
+	
 	// BC for MW < 1.18
 	if ( !mw.util.wikiScript ) {
 		mw.util.wikiScript = function( str ) {
 			return mw.config.get( 'wgScriptPath' ) + '/' + ( str || 'index' ) + mw.config.get( 'wgScriptExtension' );
-		}
+		};
 	}
 	
 	var $submit = $( "input#mw-translate-workflowset" );
@@ -21,7 +24,7 @@ jQuery( function( $ ) {
 				$select.find( "option[selected]" ).attr( "selected", false );
 				$select.find( "option[value=" + event.data.newstate +"]" ).attr( "selected", "selected" );
 			}
-		}
+		};
 		
 		$submit.attr( "disabled", "disable" );
 		$submit.val( mw.msg( "translate-workflow-set-doing" ) );
