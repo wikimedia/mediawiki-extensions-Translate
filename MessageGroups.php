@@ -1112,7 +1112,7 @@ class MessageGroups {
 
 	/**
 	 * Returns the message groups this message group is part of.
-	 * @since 2011-12-15
+	 * @since 2011-12-25
 	 * @return array
 	 */
 	public static function getParentGroups( MessageGroup $group ) {
