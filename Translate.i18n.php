@@ -158,10 +158,10 @@ The default list of languages depends on your language.',
 	'translate-pref-jsedit' => 'Enhanced translation editor (JavaScript)',
 
 	'right-translate' => 'Edit using the translate interface',
-	'right-translate-manage' => 'Manage translation groups',
+	'right-translate-manage' => 'Manage message groups',
 	'right-translate-import' => 'Import offline translations',
 	'right-translate-messagereview' => 'Review translations',
-	'right-translate-groupreview' => 'Review translations of message groups',
+	'right-translate-groupreview' => 'Change workflow state of message groups',
 
 	'translate-rc-translation-filter' => 'Filter translations:',
 	'translate-rc-translation-filter-no' => 'Do nothing',
