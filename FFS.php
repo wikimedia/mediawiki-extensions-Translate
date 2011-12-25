@@ -1306,7 +1306,8 @@ class PythonSingleFFS extends SimpleFFS {
 			fwrite( $this->fw, "$authors" );
 		}
 
-		fwrite( $this->fw, "\t'{$collection->code}': {\n" );
+		$code = $this->group->mapCode( $collection->code );
+		fwrite( $this->fw, "\t'{$code}': {\n" );
 		fwrite( $this->fw, $this->writeBlock( $collection ) );
 		fwrite( $this->fw, "\t},\n" );
 	}
