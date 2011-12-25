@@ -738,7 +738,6 @@ abstract class JavaScriptFFS extends SimpleFFS {
  * @ingroup FFS
  */
 class OpenLayersFFS extends JavaScriptFFS {
-
 	/**
 	 * @param $key string
 	 * @return string
@@ -847,7 +846,6 @@ EOT;
  * @ingroup FFS
  */
 class YamlFFS extends SimpleFFS {
-
 	/**
 	 * @param $data
 	 * @return array

@@ -136,7 +136,6 @@ interface MessageGroup {
 abstract class MessageGroupBase implements MessageGroup {
 	protected $conf;
 	protected $namespace;
-
 	protected $groups;
 
 	/**
@@ -399,7 +398,6 @@ abstract class MessageGroupBase implements MessageGroup {
  * custom type of message groups.
  */
 class FileBasedMessageGroup extends MessageGroupBase {
-
 	protected $reverseCodeMap;
 
 	/**
@@ -515,7 +513,6 @@ class FileBasedMessageGroup extends MessageGroupBase {
  * @todo Currently unused?
  */
 class MediaWikiMessageGroup extends FileBasedMessageGroup {
-
 	public function mapCode( $code ) {
 		return ucfirst( str_replace( '-', '_', parent::mapCode( $code ) ) );
 	}
