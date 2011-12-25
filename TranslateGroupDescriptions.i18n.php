@@ -1800,7 +1800,7 @@ Sjå [[mw:Extension:PDF_Writer]] og http://code.pediapress.com/wiki/wiki/mwlibrl
  * @author Laaknor
  * @author Nghtwlkr
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'translategroupdescriptions-desc' => 'Meldingsgruppebeskrivelser for produkt støttet av utvidelsen [http://mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-nodesc' => 'Ingen beskrivelse er tilgjengelig for denne meldingsgruppen',
 	'translate-group-desc-mediawikicore' => 'Denne meldingsgruppen inneholder meldinger brukt i den gjeldende alfaversjonen av MediaWiki ({{CURRENTVERSION}})',

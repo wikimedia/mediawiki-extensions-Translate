@@ -4377,7 +4377,7 @@ Sjekk at sida er merkt med <nowiki><translate></nowiki>-merke og har ein gyldig 
  * @author Nghtwlkr
  * @author Purodha
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'pagetranslation' => 'Sideoversetting',
 	'right-pagetranslation' => 'Merk versjoner av sider for oversettelse',
 	'tpt-desc' => 'Utvidelse for oversetting av innholdssider',

@@ -15610,7 +15610,7 @@ $1',
  * @author Nghtwlkr
  * @author Simny
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'translate' => 'Oversett',
 	'translate-desc' => '[[Special:Translate|Spesialside]] for oversettelse av MediaWiki og annet',
 	'translate-showsub' => 'Vis {{PLURAL:$1|undergruppen|de $1 undergruppene}}',

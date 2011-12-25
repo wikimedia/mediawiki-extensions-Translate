@@ -592,7 +592,7 @@ $specialPageAliases['nn'] = array(
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
-$specialPageAliases['no'] = array(
+$specialPageAliases['nb'] = array(
 	'Translate' => array( 'Oversett' ),
 	'Magic' => array( 'Avansert_oversettelse', 'Avansert_oversetting', 'Magi' ),
 	'TranslationChanges' => array( 'Oversettelsesendringer', 'Oversettingsendringer' ),

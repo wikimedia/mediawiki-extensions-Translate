@@ -1947,7 +1947,7 @@ $messages['nn'] = array(
  * @author Jon Harald Søby
  * @author Nghtwlkr
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'firststeps' => 'Første steg',
 	'firststeps-desc' => '[[Special:FirstSteps|Spesialside]] for å få brukere igang med wikier som bruker Translate-utvidelsen',
 	'translate-fs-pagetitle-done' => ' – ferdig!',
