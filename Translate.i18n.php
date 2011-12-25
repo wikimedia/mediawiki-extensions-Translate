@@ -338,7 +338,7 @@ $1',
 	'translate-import-err-stale-group' => 'The message group this file belongs to does not exist.',
 
 	'translate-import-err-no-headers' => 'File is not a well formed Gettext file in Translate extension format:
-Unable to determine group and language from file headers.',
+Unable to determine message group and language from file headers.',
 	'translate-import-err-warnings' => 'The file is not well formed.
 Make sure your editor does not remove msgctxt fields.
 Details: $1',
