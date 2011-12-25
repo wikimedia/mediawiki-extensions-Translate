@@ -1250,6 +1250,9 @@ class PythonSingleFFS extends SimpleFFS {
 	 * @return array
 	 */
 	public function read( $code ) {
+		// Map codes
+		$code = $this->group->mapCode( $code );
+
 		// TODO: Improve this code to not use static variables.
 		if ( !isset( self::$data[$this->group->getId()] ) ) {
 			/* N levels of escaping
