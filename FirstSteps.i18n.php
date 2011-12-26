@@ -259,7 +259,7 @@ $messages['be-tarask'] = array(
 	'translate-fs-intro' => "Запрашаем у майстар пачатковага навучаньня {{GRAMMAR:родны|{{SITENAME}}}}.
 Вас правядуць праз працэс станаўленьня перакладчыкам крок за крокам.
 Пасьля гэтага Вы зможаце перакладаць ''паведамленьні інтэрфэйсу'' ўсіх праектаў, якія падтрымліваюцца ў {{GRAMMAR:месны|{{SITENAME}}}}.",
-	'translate-fs-selectlanguage' => 'Абярыце мову',
+	'translate-fs-selectlanguage' => 'Выберыце мову',
 	'translate-fs-userpage-submit' => 'Стварыць маю старонку ўдзельніка',
 	'translate-fs-userpage-done' => 'Выдатна! Цяпер Вы маеце старонку ўдзельніка.',
 	'translate-fs-target-text' => "Віншуем!
@@ -1599,15 +1599,20 @@ $messages['km'] = array(
 $messages['ko'] = array(
 	'translate-fs-pagetitle-done' => '- 완료!',
 	'translate-fs-pagetitle-pending' => '- 보류',
+	'translate-fs-pagetitle' => '시작 마법사 - $1',
+	'translate-fs-signup-title' => '가입하기',
+	'translate-fs-settings-title' => '기본 설정 구성',
 	'translate-fs-userpage-title' => '사용자 페이지 만들기',
 	'translate-fs-target-title' => '번역 시작하기',
 	'translate-fs-email-title' => '이메일 주소 확인하기',
 	'translate-fs-selectlanguage' => '언어 선택',
 	'translate-fs-settings-planguage' => '모국어:',
 	'translate-fs-settings-slanguage' => '보조 언어 $1:',
+	'translate-fs-settings-submit' => '설정 저장하기',
 	'translate-fs-userpage-submit' => '내 사용자 페이지 만들기',
 	'translate-fs-userpage-done' => '잘하셨습니다! 당신은 이제 사용자 페이지를 가졌습니다.',
 	'translate-fs-permissions-planguage' => '모국어:',
+	'translate-fs-permissions-submit' => '요청 보내기',
 );
 
 /** Colognian (Ripoarisch)
