@@ -21,6 +21,7 @@
 
 (function( $ ) {
 	"use strict";
+	var mw = mediaWiki;
 	
 	var translate = {
 		dialogwidth: false,
@@ -78,7 +79,7 @@
 			}
 		},
  
-		registerFeatures: function( dialog, form, page ) {
+		registerFeatures: function( dialog, form, page, group ) {
 			// Enable the collapsible element
 			var $identical = $( '.mw-identical-title' );
 			if ( $.isFunction( $identical.makeCollapsible ) ) {
@@ -124,7 +125,7 @@
 					} );
 				} );
 
-				textarea.keyup( function() { checker.setup() } );
+				textarea.keyup( function() { checker.setup(); } );
 			}
 		},
 
@@ -149,7 +150,7 @@
 			dialog.load( url, false, function() {
 				var form = $( '#' + id + ' form' );
 
-				mw.translate.registerFeatures( dialog, form, page );
+				mw.translate.registerFeatures( dialog, form, page, group );
 				mw.translate.addAccessKeys( form );
 				form.hide().slideDown();
 
