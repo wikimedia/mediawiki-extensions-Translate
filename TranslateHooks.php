@@ -155,6 +155,7 @@ class TranslateHooks {
 	public static function setupParserHooks( $parser ) {
 		// For nice language list in-page
 		$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
+		$parser->setFunctionHook( 'translationdialog', array( 'TranslateHooks', 'translationDialogMagicWord' ) );
 		return true;
 	}
 
@@ -327,5 +328,28 @@ class TranslateHooks {
 		return '';
 	}
 
+	/**
+	 * Hook: ParserFirstCallInit
+	 */
+	public static function translationDialogMagicWord( Parser $parser, $title = '' ) {
+		$title = Title::newFromText( $title );
+		$handle = new MessageHandle( $title );
+		$group = $handle->getGroup();
+		$callParams = array( $title->getPrefixedText(), $group->getId() );
+		$call = Xml::encodeJsCall( 'mw.translate.openDialog', $callParams );
+
+		$js = <<<JAVASCRIPT
+mw.loader.using( 'ext.translate.quickedit', function() { $call; } ); return false;
+JAVASCRIPT;
+
+
+		$a = array(
+			'href' => $title->getFullUrl( array( 'action' => 'edit' ) ),
+			'onclick' => $js,
+		);
+
+		$output = Html::element( 'a', $a, wfMessage( 'translate-edit-jsopen' )->text() );
+		return $parser->insertStripItem( $output, $parser->mStripState );
+	}
 
 }

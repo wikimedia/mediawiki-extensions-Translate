@@ -86,15 +86,21 @@
 				$identical.makeCollapsible();
 			}
 			
-			form.find( '.mw-translate-next' ).click( function() {
-				mw.translate.openNext( page );
-			} );
+			if ( mw.config.get( 'trlKeys' ) ) {
+				form.find( '.mw-translate-next' ).click( function() {
+					mw.translate.openNext( page );
+				} );
 
-			form.find( '.mw-translate-skip' ).click( function() {
-				mw.translate.openNext( page );
-				dialog.dialog( 'close' );
-				return false;
-			} );
+				form.find( '.mw-translate-skip' ).click( function() {
+					mw.translate.openNext( page );
+					dialog.dialog( 'close' );
+					return false;
+				} );
+			} else {
+				form.find( '.mw-translate-next, .mw-translate-skip' )
+					.attr( 'disabled', 'disabled' )
+					.css( 'display', 'none' );
+			}
 
 			form.find( '.mw-translate-history' ).click( function() {
 				window.open( mw.config.get( 'wgServer' ) + mw.config.get( 'wgScript' ) + '?action=history&title=' + form.find( 'input[name=title]' ).val() );

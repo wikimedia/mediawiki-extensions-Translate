@@ -71,6 +71,7 @@ like not using spaces or transliterating proper names. $1',
 	'translate-optional' => '(optional)',
 	'translate-ignored'  => '(ignored)',
 
+	'translate-edit-jsopen'             => 'edit',
 	'translate-edit-title'              => 'Edit "$1"',
 	'translate-edit-definition'         => 'Message definition',
 	'translate-edit-translation'        => 'Translation',
@@ -652,6 +653,7 @@ If you click the "Accept" button in [[Special:Translate]], the button may be dis
 	'translate-workflow-set-doing' => 'Submit button text when waiting for reply from server',
 	'translate-workflow-set-done' => 'Submit button text when submission completed succesfully',
 	'translate-stats-workflow' => 'Column header on Special:LanguageStats and Special:MessageGroupStats',
+	'translate-edit-jsopen'             => 'Default linktext of <nowiki>{{#translationdialog:pagename}}</nowiki>',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
