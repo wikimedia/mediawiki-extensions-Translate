@@ -331,8 +331,9 @@ class TranslateHooks {
 	/**
 	 * Hook: ParserFirstCallInit
 	 */
-	public static function translationDialogMagicWord( Parser $parser, $title = '' ) {
+	public static function translationDialogMagicWord( Parser $parser, $title = '', $linktext = '' ) {
 		$title = Title::newFromText( $title );
+		if ( !$title ) return '';
 		$handle = new MessageHandle( $title );
 		$group = $handle->getGroup();
 		$callParams = array( $title->getPrefixedText(), $group->getId() );
@@ -348,7 +349,10 @@ JAVASCRIPT;
 			'onclick' => $js,
 		);
 
-		$output = Html::element( 'a', $a, wfMessage( 'translate-edit-jsopen' )->text() );
+		if ( $linktext === '' ) {
+			$linktext = wfMessage( 'translate-edit-jsopen' )->text();
+		}
+		$output = Html::element( 'a', $a, $linktext );
 		return $parser->insertStripItem( $output, $parser->mStripState );
 	}
 
