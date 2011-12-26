@@ -656,6 +656,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$inserts = array();
 
+		// @todo Filter out qqq so it is not marked as fuzzy.
 		foreach ( $res as $r ) {
 			$inserts[] = array(
 				'rt_page' => $r->page_id,
