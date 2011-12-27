@@ -330,8 +330,10 @@ class TranslateHooks {
 			$languageCode = $params[0];
 			$languageNames = Language::getTranslatedLanguageNames( $languageCode );
 			$languageName = "$languageNames[$languageCode] ($languageCode)";
-			$oldStateMessage = wfMessage( "translate-workflow-state-$params[2]" );
-			$newStateMessage = wfMessage( "translate-workflow-state-$params[3]" );
+			$oldState = $params[2];
+			$newState = $params[3];
+			$oldStateMessage = wfMessage( "translate-workflow-state-$oldState" );
+			$newStateMessage = wfMessage( "translate-workflow-state-$newState" );
 			$oldState = $oldStateMessage->isBlank() ? $oldState : $oldStateMessage->text();
 			$newState = $newStateMessage->isBlank() ? $newState : $newStateMessage->text();
 
@@ -342,7 +344,7 @@ class TranslateHooks {
 				$params[1], // group
 				$oldState,
 				$newState
-			)->inLanguage( $language )->text() . $bla;
+			)->inLanguage( $language )->text();
 		}
 
 		return '';
