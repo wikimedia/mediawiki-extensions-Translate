@@ -168,7 +168,7 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	public function loadPagesFromDB() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_MASTER );
 		$tables = array( 'page', 'revtag' );
 		$vars = array( 'page_id', 'page_title', 'page_namespace', 'page_latest', 'MAX(rt_revision) as rt_revision', 'rt_type' );
 		$conds = array(
