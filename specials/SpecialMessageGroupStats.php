@@ -107,12 +107,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	function getTable() {
 		$table = $this->table;
 
-		global $wgTranslateWorkflowStates;
-		if ( $wgTranslateWorkflowStates ) {
-			$this->states = self::getWorkflowStates( $this->target );
-			$this->statemap = array_flip( $wgTranslateWorkflowStates );
-			$table->addExtraColumn( wfMessage( 'translate-stats-workflow' ) );
-		}
+		$this->workflowStatesColumn();
 		$out = '';
 
 		if ( $this->purge ) {
