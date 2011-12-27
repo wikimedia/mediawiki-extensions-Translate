@@ -1313,9 +1313,9 @@ Móžeš so tež ze sobupřełožowarjemi samsneje rěče na [[Portal_talk:$1|di
 Jeli hišće njejsy to činił, [[Special:Preferences|změń swój wužiwarski powjerch do rěče, do kotrejež chceš přełožować]], zo by wiki móhł wotkazy pokazać, kotrež su relewantne za tebje.',
 	'translate-fs-email-text' => 'Prošu podaj swoju e-mejlowu adresu w [[Special:Preferences|swojich nastajenjach]] a wobkruć ju přez e-mejl, kotraž so ći sćele.
 
-To dowola druhim wužiwarjam, so z tobu přez e-mejl do zwisk stajić.
-Dóstanješ tež powěsćowe listy, zwjetša jónkróć wob měsać.
-Jeli nochceš powěsćowe listy dóstać, móžeš tutu opciju na rajtarku "{{int:prefs-personal}}" swojich [[Special:Preferences|preferencow]] znjemóžnić.',
+To dowola druhim wužiwarjam, so z tobu přez e-mejl do zwiska stajić.
+Dóstanješ tež powěsćowe listy, zwjetša jónkróć wob měsac.
+Jeli nochceš powěsćowe listy dóstać, móžeš tutu opciju na rajtarku "{{int:prefs-personal}}" swojich [[Special:Preferences|nastajenjow]] znjemóžnić.',
 );
 
 /** Haitian (Kreyòl ayisyen)

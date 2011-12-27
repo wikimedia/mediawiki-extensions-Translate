@@ -1130,7 +1130,7 @@ $messages['hsb'] = array(
 	'translate-group-desc-translatablepages' => 'Wšě přełožujomne strony',
 	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] zmóžnja ludźom digitalne kulturne resursy Europy přeslědźić.',
 	'bw-desc-freecol' => 'Prjedy hač přełožuješ FreeCol do swojeje rěče, přečitaj prošu [[Translating:FreeCol]]. FreeCol wužiwa licencu GPL.',
-	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webforum, spisany w PHP.',
+	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] je webforum spisany w PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je swobodny system na zakładźe weba za slědowanje programowych zmylkow. Zdźěl prošu problemy na stronje [[Support|Podpěra]].',
 	'translate-group-desc-eol' => 'Zdźělenska skupina za [[Translating:EOL|Encyclopedia of Life]]',
 	'translate-group-desc-ihris' => 'Skupina powěsćow za [[Translating:iHRIS|iHRIS]]',
@@ -1152,7 +1152,7 @@ Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/m
 	'translate-group-desc-openimages-all' => 'Tute zdźělenki su dźěl projekta [[Translating:Open Images|Open Images]]',
 	'bw-desc-openlayers' => 'OpenLayers je dynamiski generator kartow ze zjawnym žórłowym kodom. Prošu zdźěl problemy na stronje [[Support|Podpěra]]',
 	'bw-desc-openstreetmap' => 'Skupina zdźělenkow za wšě zdźělenki z [[Translating:OpenStreetMap|OpenStreetMap]]',
-	'bw-desc-osm-site' => 'Tuta skupina zdźělenkow wobsahuje zdźělenki wužiwarskeho powjercha za [[Translating:Open Street Map|Open Street Map]]',
+	'bw-desc-osm-site' => 'Zdźělenki wužiwarskeho powjercha za [[Translating:OpenStreetMap|OpenStreetMap]], wobdźěłujomnu kartu cyłeho swěta',
 	'bw-desc-osm-potlatch' => 'Tuta skupina zdźělenkow wobsahuje zdźělenki za powjerch programa [[Translating:Open Street Map|Potlatch]]. Prošu:
 
 * Spytaj swoje přełožki tak dołho kaž jendźelski original dźeržeć, dla wobmjezowanjow  za system wužiwarskeho powjercha. Hlej tež [http://trac.openstreetmap.org/ticket/2067 wotewrjeny problem].
@@ -1337,6 +1337,7 @@ Lihat pula [[mw:Extension:PDF Writer]] dan http://code.pediapress.com/wiki/wiki/
  * @author Civvì
  * @author Darth Kule
  * @author Gianfranco
+ * @author Nemo bis
  */
 $messages['it'] = array(
 	'translate-group-desc-mediawikicore' => "Questo gruppo di messaggi contiene i messaggi usati nell'attuale versione alfa di MediaWiki ({{CURRENTVERSION}})",
@@ -1348,16 +1349,14 @@ $messages['it'] = array(
 	'translate-group-desc-socialprofile' => "Meta gruppo di messaggi contenente tutti i messaggi delle estensioni relative all'estensione MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]",
 	'translate-group-desc-translate' => "Meta gruppo di messaggi contenente tutti i messaggi dell'estensione MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]",
 	'translate-group-desc-wikiaextensions' => 'Meta gruppo di messaggi contenente tutti i messaggi per le estensioni di MediaWiki supportate usate da [http://www.wikia.com Wikia]',
-	'translate-group-desc-wikimediaextensions' => 'Meta gruppo di messaggi contenente tutti i messaggi per le estensioni di MediaWiki supportate utilizzate dalla [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikimediaextensions' => 'Meta gruppo di messaggi contenente tutti i messaggi per le estensioni di MediaWiki usate dalla [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-uniwiki' => 'Meta gruppo di messaggi contenente tutti i messaggi delle estensioni relative a [http://unicefinnovation.org/wiki.php Uniwiki]',
-	'translate-group-desc-ui' => 'Meta gruppo di messaggi contenente tutti i messaggi delle estensioni relative alla [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
-	'bw-desc-freecol' => 'Prima di tradurre FreeCol nella tua lingua, leggi [[Translating:FreeCol]]. FreeCol utilizza la licenza GPL.',
-	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un forum web scritto in PHP.',
-	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] è un sistema gratuito di tracciamento bug web-based. Segnalare gli eventuali problemi in [[Support]].',
-	'bw-desc-mwlibrl' => "'''mwlib.rl''' è una libreria python per scrivere documenti PDF da pagine MediaWiki che sono analizzate dalla libreria mwlib.
-
-Leggere [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl per ulteriori informazioni.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] è un client webmail scritto in PHP. Segnalare gli eventuali problemi in [[Support]].',
+	'translate-group-desc-ui' => 'Meta gruppo di messaggi contenente tutti i messaggi delle estensioni relative al [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Progetto usabilità di Wikipedia]',
+	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] è un gioco strategico a turni.',
+	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]], un forum web scritto in PHP.',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] è un sistema gratuito di tracciamento bug web-based.',
+	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] è una libreria python per scrivere documenti PDF da pagine MediaWiki.',
+	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] è un client webmail scritto in PHP.',
 	'bw-desc-openlayers' => 'OpenLayers è un generatore di mappe dinamiche open source. Segnalare gli eventuali problemi in [[support]].',
 	'bw-desc-openstreetmap' => 'Questo gruppo contiene tutti i messaggi per [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => "Questo gruppo di messaggi contiene i messaggi dell'interfaccia per tradurre [[Translating:Open Street Map|Open Street Map]].
@@ -1367,7 +1366,7 @@ Vedi [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_
 Per favore: 
 * Cerca di mantenere la lunghezza delle traduzioni più simile possibile alla lunghezza del testo originale inglese, questo a causa delle limitazioni dell'interfaccia utente. Vedi anche [http://trac.openstreetmap.org/ticket/2067 il bug aperto]. 
 * Per effettuare test su Potlatch usa [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] dove è possibile effettuare tutte le prove in qualsiasi zona.",
-	'bw-desc-shapado' => 'Gruppo di messaggi per il software libero ed open source [[Translating:Shapado|Shapado]], per Q&A',
+	'bw-desc-shapado' => 'Gruppo di messaggi per la piattaforma di domande e risposte [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] è un server di microblogging open source',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] è in grado di trovare velocemente gli autori di una pagina in un sito di Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] è un progetto per fornire una versione offline, solo testo di Wikipedia per dispositivi mobili.',
@@ -2701,8 +2700,14 @@ Xem thêm chi tiết tại [[MW:Extension:PDF Writer]] và http://code.pediapres
  * @author פוילישער
  */
 $messages['yi'] = array(
+	'translategroupdescriptions-desc' => 'מעלדונג גרופע באשרייבונגען פאר פראדוקטן געשטיצט מיטן [http://mediawiki.org/wiki/Extension:Translate איבערזעצונג] פארברייטערונג',
+	'translate-group-desc-nodesc' => 'נישט פֿאראן קיין באשרייבונג פאר דער מעלדונג גרופע',
 	'translate-group-desc-mediawikicore' => 'די מעלדונג גרופע אנטהאלט די מעלגדונגען געניצט אין דער לויפיגער אלפא ווערסיע פון מעדיעוויקי  ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'די מעלדונג גרופע אנטהאלט די [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 מערסטע געניצטע מעלגדונגען] אין מעדיעוויקי',
+	'translate-group-desc-mediawikiextensions' => 'מעטא מעלדונג גרופע וואס אנטהאלט אלע מעלדונגען פאר געשטיצטע פארברייטערונגען פאר [[Translating:MediaWiki|מעדיעוויקי]]',
+	'translate-group-desc-translatablepages' => 'אלע איבערזעצבאַרע בלעטער',
+	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] דערמעגלעכט מענטשן אויספארשן די קולטורעלע רעסורסן פון אייראפע',
+	'translate-group-desc-kiwix' => 'א מעלדונג גרופע פאר [[Translating:Kiwix|קיוויקס]]',
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
