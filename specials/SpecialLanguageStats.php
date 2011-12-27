@@ -229,12 +229,49 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	/**
+	 * If workflow states are configured, adds a workflow states column
+	 */
+	function workflowStatesColumn() {
+		global $wgTranslateWorkflowStates;
+		if ( $wgTranslateWorkflowStates ) {
+			$this->states = self::getWorkflowStates( $this->target );
+			$this->statemap = array_flip( $wgTranslateWorkflowStates );
+			$this->table->addExtraColumn( wfMessage( 'translate-stats-workflow' ) );
+		}
+
+		return;
+	}
+
+	/**
+	 * If workflow states are configured, adds a cell with the workflow state to the row, 
+	 * @param $code Language code
+	 * @return string
+	 */
+	function workflowStateCell( $code ) {
+		global $wgTranslateWorkflowStates;
+		if ( $wgTranslateWorkflowStates ) {
+			$state = isset( $this->states[$code] ) ? $this->states[$code] : '';
+			$sort = isset( $this->statemap[$state] ) ? $this->statemap[$state] + 1 : -1;
+			$stateMessage = wfMessage( "translate-workflow-state-$state" );
+			$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
+			return "\n\t\t" . $this->table->element(
+				$stateText,
+				isset( $wgTranslateWorkflowStates[$state] ) ? $wgTranslateWorkflowStates[$state] : '',
+				$sort
+			);
+		}
+
+		return '';
+	}
+
+	/**
 	 * Returns the table itself.
 	 * @return \string HTML
 	 */
 	function getTable() {
 		$table = $this->table;
 
+		$this->workflowStatesColumn();
 		$out = '';
 
 		if ( $this->purge ) {
@@ -344,7 +381,23 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= "\n\t\t" . Html::rawElement( 'td', array(),
 			$this->table->makeGroupLink( $group, $this->target, $extra ) );
 		$out .= $this->table->makeNumberColumns( $fuzzy, $translated, $total );
+
 		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
 		return $out;
+	}
+
+	protected static function getWorkflowStates( $group ) {
+		$db = wfGetDB( DB_SLAVE );
+		$res = $db->select(
+			'translate_groupreviews',
+			array( 'tgr_state', 'tgr_lang' ),
+			array( 'tgr_group' => $group ),
+			__METHOD__
+		);
+		$states = array();
+		foreach ( $res as $row ) {
+			$states[$row->tgr_lang] = $row->tgr_state;
+		}
+		return $states;
 	}
 }
