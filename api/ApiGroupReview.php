@@ -40,6 +40,7 @@ class ApiGroupReview extends ApiBase {
 		}
 
 		$dbr = wfGetDB( DB_SLAVE );
+		$groupid = $group->getId();
 		$currentState = $dbr->selectField(
 			'translate_groupreviews',
 			'tgr_state',
@@ -49,7 +50,6 @@ class ApiGroupReview extends ApiBase {
 
 		$dbw = wfGetDB( DB_MASTER );
 		$table = 'translate_groupreviews';
-		$groupid = $group->getId();
 		$row = array(
 			'tgr_group' => $groupid,
 			'tgr_lang' => $requestParams['language'],
