@@ -178,13 +178,18 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		$out  = "\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . $this->getMainColumnCell( $code, $extra );
 		$out .= $this->table->makeNumberColumns( $fuzzy, $translated, $total );
+
 		global $wgTranslateWorkflowStates;
 		if ( $wgTranslateWorkflowStates ) {
 			$state = isset( $this->states[$code] ) ? $this->states[$code] : '';
 			$sort = isset( $this->statemap[$state] ) ? $this->statemap[$state] + 1 : -1;
 			$stateMessage = wfMessage( "translate-workflow-state-$state" );
 			$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
-			$out .= "\n\t\t" . $this->table->element( $stateText, false, $sort );
+			$out .= "\n\t\t" . $this->table->element(
+				$stateText,
+				$wgTranslateWorkflowStates[$state],
+				$sort
+			);
 		}
 		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
 		return $out;

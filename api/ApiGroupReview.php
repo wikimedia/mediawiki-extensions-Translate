@@ -87,7 +87,7 @@ class ApiGroupReview extends ApiBase {
 				ApiBase::PARAM_DFLT => 'en',
 			),
 			'state' => array(
-				ApiBase::PARAM_TYPE => array_values( (array) $wgTranslateWorkflowStates ),
+				ApiBase::PARAM_TYPE => array_keys( (array) $wgTranslateWorkflowStates ),
 				ApiBase::PARAM_REQUIRED => true,
 			),
 			'token' => array(
