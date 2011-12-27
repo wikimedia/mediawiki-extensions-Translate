@@ -325,6 +325,26 @@ class TranslateHooks {
 				Message::rawParam( $linker->link( $title, null, array(), array( 'oldid' => $params[0] ) ) )
 			)->inLanguage( $language )->text();
 		}
+
+		if ( $action === 'group' ) {
+			$languageCode = $params[0];
+			$languageNames = Language::getTranslatedLanguageNames( $languageCode );
+			$languageName = "$languageNames[$languageCode] ($languageCode)";
+			$oldStateMessage = wfMessage( "translate-workflow-state-$params[2]" );
+			$newStateMessage = wfMessage( "translate-workflow-state-$params[3]" );
+			$oldState = $oldStateMessage->isBlank() ? $oldState : $oldStateMessage->text();
+			$newState = $newStateMessage->isBlank() ? $newState : $newStateMessage->text();
+
+			return wfMessage( 'logentry-groupreview-message' )->params(
+				'', // User link in the new system
+				'#', // User name for gender in the new system
+				$languageName,
+				$params[1], // group
+				$oldState,
+				$newState
+			)->inLanguage( $language )->text() . $bla;
+		}
+
 		return '';
 	}
 
@@ -338,7 +358,6 @@ class TranslateHooks {
 		$group = $handle->getGroup();
 		$callParams = array( $title->getPrefixedText(), $group->getId() );
 		$call = Xml::encodeJsCall( 'mw.translate.openDialog', $callParams );
-
 		$js = <<<JAVASCRIPT
 mw.loader.using( 'ext.translate.quickedit', function() { $call; } ); return false;
 JAVASCRIPT;
@@ -355,5 +374,5 @@ JAVASCRIPT;
 		$output = Html::element( 'a', $a, $linktext );
 		return $parser->insertStripItem( $output, $parser->mStripState );
 	}
-
 }
+

@@ -1,4 +1,4 @@
-<?php
+ workflow states<?php
 /**
  * Translations for the core of the Translate extension.
  *
@@ -398,6 +398,7 @@ Details: $1',
 	'log-name-translationreview' => 'Translation review log',
 	'log-description-translationreview' => 'Log of all reviews to translations and message groups.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|accepted}} translation $3',
+	'logentry-groupreview-message' => '$1 {{GENDER:$2|changed}} the status of $3 translations of message group $4 from $5 to $6',
 
 	// The actual states, when set, come after the hyphen.
 	// The dangling hyphen hints that it's unset.
@@ -649,6 +650,13 @@ If you click the "Accept" button in [[Special:Translate]], the button may be dis
 	'group-translate-proofr-member' => '{{doc-group|translate-proofr|member}}',
 	'grouppage-translate-proofr' => '{{doc-group|translate-proofr|page}}',
 	'logentry-translationreview-message' => '{{Logentry}}',
+	'logentry-groupreview-message' => '{{Logentry}} Params:
+
+* $1, $2: Performing user account name
+* $3: Language
+* $4: Message group name
+* $5: Previous workflow state
+* $6: New workflow state',
 	'translate-workflow-state-' => 'Unselectable select option in Special:Translate if workflow state editing is on. The dangling hyphen in the message key hints that this state is unset; the actual states have the same key with something after the hyphen.',
 	'translate-workflowstatus' => 'In Special:Translate if workflow states are in use, $1 is selector or the current state',
 	'translate-workflow-set-do' => 'Submit button text when active',
@@ -9335,6 +9343,7 @@ $1',
 	'log-name-translationreview' => 'יומן סקירת תרגומים',
 	'log-description-translationreview' => 'יומן של כל הסקירות של תרגומים ושל קבוצות תרגומים.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|אישר|אישרה}} את התרגום $3',
+	'logentry-groupreview-message' => '$1 {{GENDER:$2|שינה|שינתה}} את מצב התרגום ל$3 של הקבוצה $4 מ"$5" ל"$6"',
 	'translate-workflow-state-' => '(לא מוגדר)',
 	'translate-workflowstatus' => 'מצב: $1',
 	'translate-workflow-set-do' => 'הגדרה',

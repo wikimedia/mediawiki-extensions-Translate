@@ -145,7 +145,9 @@ $wgAddGroups['translate-proofr'] = array( 'translate-proofr' );
 
 // Logs
 $wgLogTypes[] = 'translationreview';
+$wgLogTypes[] = 'groupreview';
 $wgLogActionsHandlers['translationreview/message'] = 'TranslateHooks::formatTranslationreviewLogEntry';
+$wgLogActionsHandlers['translationreview/group'] = 'TranslateHooks::formatTranslationreviewLogEntry';
 // BC for <1.19
 $wgLogHeaders['pagetranslation'] = 'log-description-translationreview';
 $wgLogNames['pagetranslation'] = 'log-name-translationreview';

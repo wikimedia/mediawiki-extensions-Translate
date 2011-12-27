@@ -26,38 +26,57 @@ class ApiGroupReview extends ApiBase {
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
-		$params = $this->extractRequestParams();
+		$requestParams = $this->extractRequestParams();
 
-		$group = MessageGroups::getGroup( $params['group'] );
+		$group = MessageGroups::getGroup( $requestParams['group'] );
 		if ( !$group ) {
 			$this->dieUsageMsg( array( 'missingparam', 'group' ) );
 		}
 
+		// XXX Is this part needed?
 		$languages = Language::getLanguageNames( false );
-		if ( !isset( $languages[$params['language']] ) ) {
+		if ( !isset( $languages[$requestParams['language']] ) ) {
 			$this->dieUsageMsg( array( 'missingparam', 'language' ) );
 		}
 
+		$dbr = wfGetDB( DB_SLAVE );
+		$currentState = $dbr->selectField(
+			'translate_groupreviews',
+			'tgr_state',
+			array( 'tgr_group' => $groupid, 'tgr_lang' => $requestParams['language'] ),
+			__METHOD__
+		);
+
 		$dbw = wfGetDB( DB_MASTER );
 		$table = 'translate_groupreviews';
+		$groupid = $group->getId();
 		$row = array(
-			'tgr_group' => $group->getId(),
-			'tgr_lang' => $params['language'],
-			'tgr_state' => $params['state'],
+			'tgr_group' => $groupid,
+			'tgr_lang' => $requestParams['language'],
+			'tgr_state' => $requestParams['state'],
 		);
 		$index = array( 'tgr_group', 'tgr_language' );
 		$res = $dbw->replace( $table, array( $index ), $row, __METHOD__ );
 
-		/* Will be implemented later
 		$logger = new LogPage( 'translationreview' );
-		$params = array( $revision->getId() );
-		$logger->addEntry( 'group', $title, null, $params, $wgUser );
-		*/
+		$logParams = array(
+			$requestParams['language'],
+			$group->getLabel(),
+			$currentState,
+			$requestParams['state'],
+		);
+		$logger->addEntry(
+			'group',
+			SpecialPage::getTitleFor( 'Translate', $groupid ), // It's not really a page
+			'', // No comments
+			$logParams,
+			$wgUser
+		);
 
 		$output = array( 'review' => array(
 			'group' => $group->getId(),
-			'language' => $params['language'],
-			'state' => $params['state'],
+			'language' => $requestParams['language'],
+			'state' => $requestParams['state'],
 		) );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
