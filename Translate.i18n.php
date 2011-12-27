@@ -1,4 +1,4 @@
- workflow states<?php
+<?php
 /**
  * Translations for the core of the Translate extension.
  *
