@@ -44,14 +44,13 @@ jQuery( function( $ ) {
 		var tobe = event.target.value;
 		
 		$submit.val( mw.msg( "translate-workflow-set-do" ) );
+		$submit.unbind( "click" );
 		if ( current !== tobe ) {
 			$submit.css( "visibility", "visible" );
 			$submit.attr( "disabled", false );
 			$submit.click( { newstate: tobe }, submitFunction );
 		} else {
 			$submit.attr( "disabled", "disabled" );
-			$submit.unbind( "click" );
 		}
-
 	} );
 } );
