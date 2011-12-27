@@ -229,20 +229,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	/**
-	 * Adds a workflow states column if its needed.
-	 */
-	function workflowStatesColumn() {
-		global $wgTranslateWorkflowStates;
-		if ( $wgTranslateWorkflowStates ) {
-			$this->states = self::getWorkflowStates( $this->target );
-			$this->statemap = array_flip( $wgTranslateWorkflowStates );
-			$table->addExtraColumn( wfMessage( 'translate-stats-workflow' ) );
-		}
-		return;
-	}
-
-
-	/**
 	 * Returns the table itself.
 	 * @return \string HTML
 	 */
