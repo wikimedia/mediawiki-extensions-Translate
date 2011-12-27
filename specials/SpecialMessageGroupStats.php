@@ -188,7 +188,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 			$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
 			$out .= "\n\t\t" . $this->table->element(
 				$stateText,
-				$wgTranslateWorkflowStates[$state],
+				isset( $wgTranslateWorkflowStates[$state] ) ? $wgTranslateWorkflowStates[$state] : '',
 				$sort
 			);
 		}
