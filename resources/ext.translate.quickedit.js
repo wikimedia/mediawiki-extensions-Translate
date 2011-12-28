@@ -192,18 +192,17 @@
 
 		openNext: function( title ) {
 			var messages = mw.config.get( 'trlKeys' );
-			var page = title.replace( /[^:]+:/, '' );
-			var namespace = title.replace( /:.*/, '' );
-			var found = false;
-			for ( var key in messages ) {
+			var found = false, key, value;
+			
+			for ( key in messages ) {
 				if ( !messages.hasOwnProperty( key ) ) {
 					continue;
 				}
 
-				var value = messages[key];
+				value = messages[key];
 				if ( found ) {
-					return mw.translate.openDialog( namespace + ':' + value );
-				} else if( page === value ) {
+					return mw.translate.openDialog( value );
+				} else if( value === title ) {
 					found = true;
 				}
 			}

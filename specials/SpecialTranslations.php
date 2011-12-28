@@ -200,7 +200,7 @@ class SpecialTranslations extends SpecialAllpages {
 		foreach ( $res as $s ) {
 			$key = $s->page_title;
 			$tTitle = Title::makeTitle( $s->page_namespace, $key );
-			$ajaxPageList[] = $tTitle->getDBkey();
+			$ajaxPageList[] = $tTitle->getPrefixedDBkey();
 
 			$code = $this->getCode( $s->page_title );
 
@@ -221,7 +221,7 @@ class SpecialTranslations extends SpecialAllpages {
 				$historyText,
 				array(
 					'action',
-					'title' => wfMsg( 'history-title', $tTitle->getPrefixedDbKey() )
+					'title' => wfMsg( 'history-title', $tTitle->getPrefixedDBkey() )
 				),
 				array( 'action' => 'history' )
 			);

@@ -61,7 +61,12 @@ class MessageTable {
 	public function includeAssets() {
 		global $wgOut;
 		TranslationHelpers::addModules( $wgOut );
-		$vars = array( 'trlKeys' => array_values( $this->collection->keys() ) );
+		$keys = array();
+		$namespace = $this->group->getNamespace();
+		foreach ( array_values( $this->collection->keys() ) as $name ) {
+			$keys[] = Title::makeTitle( $namespace, $name )->getPrefixedDbKey();
+		}
+		$vars = array( 'trlKeys' => $keys );
 		$wgOut->addScript( Skin::makeVariablesScript( $vars ) );
 		$wgOut->addModules( 'ext.translate.messagetable' );
 	}
