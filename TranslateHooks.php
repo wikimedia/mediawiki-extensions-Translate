@@ -357,13 +357,13 @@ class TranslateHooks {
 		$title = Title::newFromText( $title );
 		if ( !$title ) return '';
 		$handle = new MessageHandle( $title );
+		if ( !$handle->isValid() ) return '';
 		$group = $handle->getGroup();
 		$callParams = array( $title->getPrefixedText(), $group->getId() );
 		$call = Xml::encodeJsCall( 'mw.translate.openDialog', $callParams );
 		$js = <<<JAVASCRIPT
 mw.loader.using( 'ext.translate.quickedit', function() { $call; } ); return false;
 JAVASCRIPT;
-
 
 		$a = array(
 			'href' => $title->getFullUrl( array( 'action' => 'edit' ) ),
