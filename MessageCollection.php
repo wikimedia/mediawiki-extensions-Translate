@@ -773,6 +773,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		if ( $this->dbReviewData !== null ) {
 			foreach ( $this->dbReviewData as $row ) {
 				$mkey = $this->rowToKey( $row );
+				if ( !isset( $messages[$mkey] ) ) {
+					continue;
+				}
 				$messages[$mkey]->appendProperty( 'reviewers', $row->trr_user );
 			}
 		}
