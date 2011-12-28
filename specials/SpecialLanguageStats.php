@@ -235,7 +235,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		global $wgTranslateWorkflowStates;
 		if ( $wgTranslateWorkflowStates ) {
 			$this->states = self::getWorkflowStates();
-			$this->statemap = array_flip( $wgTranslateWorkflowStates );
+			$this->statemap = array_flip( array_keys( $wgTranslateWorkflowStates ) );
 			$this->table->addExtraColumn( wfMessage( 'translate-stats-workflow' ) );
 		}
 
