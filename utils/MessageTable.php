@@ -126,7 +126,7 @@ class MessageTable {
 			}
 
 			global $wgLang;
-			$niceTitle = htmlspecialchars( $wgLang->truncate( $key, - 30 ) );
+			$niceTitle = htmlspecialchars( $wgLang->truncate( $title->getPrefixedText(), - 30 ) );
 
 			$linker = class_exists( 'DummyLinker' ) ? new DummyLinker() : new Linker();
 			$tools['edit'] = $linker->link(
