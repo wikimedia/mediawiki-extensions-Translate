@@ -726,6 +726,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		if ( $this->dbData !== null ) {
 			foreach ( $this->dbData as $row ) {
 				$mkey = $this->rowToKey( $row );
+				if ( !isset( $messages[$mkey] ) ) {
+					continue;
+				}
 				$messages[$mkey]->setRow( $row );
 				$messages[$mkey]->setProperty( 'revision', $row->page_latest );
 			}

@@ -212,6 +212,10 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->group = MessageGroups::getGroup( $this->options['group'] );
 		$this->task  = TranslateTasks::getTask( $this->options['task'] );
+
+		if ( $this->group instanceof RecentMessageGroup ) {
+			$this->group->setLanguage( $this->options['language'] );
+		}
 	}
 
 	protected function settingsForm( $errors ) {
@@ -283,21 +287,36 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function groupSelector() {
+		$activeId = false;
+		if ( $this->group ) {
+			$activeId = $this->group->getId();
+		}
+
 		$groups = MessageGroups::getAllGroups();
+		$dynamic = MessageGroups::getDynamicGroups();
+		$groups = array_keys( array_merge( $groups, $dynamic ) );
+
 		$selected = $this->options['group'];
 
 		$selector = new XmlSelect( 'group', 'group' );
 		$selector->setDefault( $selected );
 
-		foreach ( $groups as $id => $class ) {
+		foreach ( $groups as $id ) {
+			if ( $id === $activeId ) {
+				$activeId = false;
+			}
 			$group = MessageGroups::getGroup( $id );
 			$hide = MessageGroups::getPriority( $group ) === 'discouraged';
 
-			if ( !$group->exists() || ( $id !== $selected && $hide ) ) {
+			if ( !$group->exists() || $hide ) {
 				continue;
 			}
 
-			$selector->addOption( $class->getLabel(), $id );
+			$selector->addOption( $group->getLabel(), $id );
+		}
+
+		if ( $activeId ) {
+			$selector->addOption( $this->group->getLabel(), $activeId );
 		}
 
 		return $selector->getHTML();
@@ -514,6 +533,10 @@ class SpecialTranslate extends SpecialPage {
 	protected function getWorkflowStatus() {
 		global $wgTranslateWorkflowStates, $wgUser;
 		if ( !$wgTranslateWorkflowStates ) {
+			return false;
+		}
+
+		if ( MessageGroups::isDynamic( $this->group ) ) {
 			return false;
 		}
 

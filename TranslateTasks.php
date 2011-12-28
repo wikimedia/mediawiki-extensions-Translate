@@ -436,6 +436,10 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 	}
 
 	public function output() {
+		if ( MessageGroups::isDynamic( $this->group ) ) {
+			return 'Not supported';
+		}
+
 		$ffs = null;
 		if ( $this->group instanceof FileBasedMessageGroup ) {
 			$ffs = $this->group->getFFS();

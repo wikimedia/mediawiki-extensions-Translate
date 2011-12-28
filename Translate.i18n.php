@@ -408,6 +408,11 @@ Details: $1',
 	'translate-workflow-set-doing' => 'Setting...',
 	'translate-workflow-set-done' => 'Set!',
 	'translate-stats-workflow' => 'Status',
+
+	// Dynamic message groups
+	'translate-dynagroup-recent-label' => 'Recent translations',
+	'translate-dynagroup-recent-desc' => 'This message group shows all recent translations into this language.
+Most useful with Accept messages or Review all translations task.',
 );
 
 /** Message documentation (Message documentation)

@@ -905,6 +905,80 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 }
 
 /**
+ * @since 2011-11-28
+ */
+class RecentMessageGroup extends WikiMessageGroup {
+	// Ugly
+	public $namespaces = array( false, false );
+
+	protected $code;
+
+	public function __construct() {}
+
+	public function setLanguage( $code ) {
+		$this->language = $code;
+	}
+
+	public function getId() {
+		return '!recent';
+	}
+
+	public function getLabel() {
+		return wfMessage( 'translate-dynagroup-recent-label' )->text();
+	}
+
+	public function getDescription() {
+		return wfMessage( 'translate-dynagroup-recent-desc' )->text();
+	}
+
+	protected function getRCCutoff() {
+		$db = wfGetDB( DB_SLAVE );
+		$tables = 'recentchanges';
+		$max = $db->selectField( $tables, 'MAX(rc_id)', array(), __METHOD__ );
+		return max( 0, $max - 50000 );
+	}
+
+	public function getDefinitions() {
+		global $wgTranslateMessageNamespaces;
+		$db = wfGetDB( DB_SLAVE );
+		$tables = 'recentchanges';
+		$fields = array( 'rc_namespace', 'rc_title' );
+		$conds = array(
+			'rc_title ' . $db->buildLike( $db->anyString(), '/' . $this->language ),
+			'rc_namespace' => $wgTranslateMessageNamespaces,
+			'rc_type != ' . RC_LOG,
+			'rc_id > ' . $this->getRCCutoff(),
+		);
+		$options = array(
+			'ORDER BY' => 'rc_id DESC',
+			'LIMIT' => 200
+		);
+		$res = $db->select( $tables, $fields, $conds, __METHOD__, $options );
+
+		$defs = array();
+		foreach ( $res as $row ) {
+			$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
+			$handle = new MessageHandle( $title );
+			if ( !$handle->isValid() ) {
+				continue;
+			}
+
+			$mkey = $row->rc_namespace . ':' . $handle->getKey();
+			if ( !isset( $defs[$mkey] ) ) {
+				$group = $handle->getGroup();
+				$defs[$mkey] = $group->getMessage( $handle->getKey(), $this->getSourceLanguage() );
+			}
+		}
+		return $defs;
+	}
+
+	public function getChecker() {
+		return null;
+	}
+
+}
+
+/**
  * Factory class for accessing message groups individually by id or
  * all of them as an list.
  * @todo Clean up the mixed static/member method interface.
@@ -1065,6 +1139,11 @@ class MessageGroups {
 				return call_user_func( $wgTranslateCC[$id], $id );
 			}
 			return $wgTranslateCC[$id];
+		} elseif ( strval( $id ) !== '' && $id[0] === '!' ) {
+			$dynamic = self::getDynamicGroups();
+			if ( isset( $dynamic[$id] ) ) {
+				return new $dynamic[$id];
+			}
 		}
 	}
 
@@ -1108,6 +1187,12 @@ class MessageGroups {
 
 		$id = $group->getId();
 		return isset( $groups[$id] ) ? $groups[$id] : '';
+	}
+
+	/// @since 2011-12-28
+	public static function isDynamic( MessageGroup $group ) {
+		$id = $group->getId();
+		return strval( $id ) !== '' && $id[0] === '!';
 	}
 
 	/**
@@ -1168,6 +1253,16 @@ class MessageGroups {
 			}
 		}
 		return $this->classes;
+	}
+
+	/**
+	 * Contents on these groups changes on a whim.
+	 * @since 2011-12-28
+	 */
+	public static function getDynamicGroups() {
+		return array(
+			'!recent' => 'RecentMessageGroup',
+		);
 	}
 
 	/**
