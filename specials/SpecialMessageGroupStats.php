@@ -107,7 +107,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	function getTable() {
 		$table = $this->table;
 
-		$this->workflowStatesColumn();
+		$this->addWorkflowStatesColumn();
 		$out = '';
 
 		if ( $this->purge ) {
@@ -173,7 +173,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		$out  = "\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . $this->getMainColumnCell( $code, $extra );
 		$out .= $this->table->makeNumberColumns( $fuzzy, $translated, $total );
-		$out .= $this->workflowStateCell( $code );
+		$out .= $this->getWorkflowStateCell( $code );
 
 		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
 		return $out;
