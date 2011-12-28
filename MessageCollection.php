@@ -608,7 +608,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$dbr = wfGetDB( $dbtype );
 		$tables = array( 'page', 'translate_reviews' );
 		$fields = array( 'page_namespace', 'page_title', 'trr_user' );
-		$conds  = $this->getTitleConds( $dbtype );
+		$conds  = $this->getTitleConds( $dbr );
 		$joins  = array( 'translate_reviews' =>
 			array(
 				'JOIN',
