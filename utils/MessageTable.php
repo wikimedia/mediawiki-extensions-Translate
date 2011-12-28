@@ -61,12 +61,11 @@ class MessageTable {
 	public function includeAssets() {
 		global $wgOut;
 		TranslationHelpers::addModules( $wgOut );
-		$keys = array();
-		$namespace = $this->group->getNamespace();
-		foreach ( array_values( $this->collection->keys() ) as $name ) {
-			$keys[] = Title::makeTitle( $namespace, $name )->getPrefixedDbKey();
+		$pages = array();
+		foreach ( $this->collection->getTitles() as $title ) {
+			$pages[] = $title->getPrefixedDBKey();
 		}
-		$vars = array( 'trlKeys' => $keys );
+		$vars = array( 'trlKeys' => $pages );
 		$wgOut->addScript( Skin::makeVariablesScript( $vars ) );
 		$wgOut->addModules( 'ext.translate.messagetable' );
 	}
@@ -273,9 +272,8 @@ class MessageTable {
 	protected function doLinkBatch() {
 		$batch = new LinkBatch();
 		$batch->setCaller( __METHOD__ );
-		$ns = $this->group->getNamespace();
-		foreach ( $this->collection->keys() as $key ) {
-			$batch->add( $ns, $key );
+		foreach ( $this->collection->getTitles() as $title ) {
+			$batch->addObj( $title );
 		}
 		$batch->execute();
 	}

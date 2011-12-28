@@ -40,7 +40,7 @@ class TranslateEditAddons {
 		$code = $handle->getCode();
 		$collection = $group->initCollection( $group->getSourceLanguage() );
 		$collection->filter( 'optional' );
-		$keys = array_keys( $collection->keys() );
+		$keys = $collection->getMessageKeys();
 		$count = count( $keys );
 
 		$key = strtolower( strtr( $key, ' ', '_' ) );

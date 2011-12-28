@@ -34,6 +34,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/// \arrayof{String,TMessage} %Message key => messages.
 	protected $messages = null;
 
+	/// Array
+	protected $reverseMap;
+
 	// Database resources
 
 	/// \type{Database Result Resource} Stored message existence and fuzzy state.
@@ -124,6 +127,24 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 */
 	public function keys() {
 		return $this->keys;
+	}
+
+	/**
+	 * Returns list of titles of messages that are used in this collection after filtering.
+	 * @return \list{Title}
+	 * @since 2011-12-28
+	 */
+	public function getTitles() {
+		return array_values( $this->keys );
+	}
+
+	/**
+	 * Returns list of message keys that are used in this collection after filtering.
+	 * @return \list{String}
+	 * @since 2011-12-28
+	 */
+	public function getMessageKeys() {
+		return array_keys( $this->keys );
 	}
 
 	/**
@@ -227,7 +248,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 */
 	public function resetForNewLanguage( $code ) {
 		$this->code     = $code;
-		$this->keys     = $this->fixKeys( array_keys( $this->definitions->messages ) );
+		$this->keys     = $this->fixKeys();
 		$this->dbInfo   = null;
 		$this->dbData   = null;
 		$this->dbReviewData = null;
@@ -381,15 +402,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			$origKeys = $keys;
 		}
 
-		$flipKeys = array_flip( $keys );
-
 		foreach ( $this->dbInfo as $row ) {
 			if ( $row->rt_type !== null ) {
-				if ( !isset( $flipKeys[$row->page_title] ) ) {
-					continue;
-				}
-
-				unset( $keys[$flipKeys[$row->page_title]] );
+				unset( $keys[$this->rowToKey( $row )] );
 			}
 		}
 
@@ -414,15 +429,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			$origKeys = $keys;
 		}
 
-		$flipKeys = array_flip( $keys );
-
 		foreach ( $this->dbInfo as $row ) {
-			// Remove messages which have a translation from keys
-			if ( !isset( $flipKeys[$row->page_title] ) ) {
-				continue;
-			}
-
-			unset( $keys[$flipKeys[$row->page_title]] );
+			unset( $keys[$this->rowToKey( $row )] );
 		}
 
 		// Check also if there is something in the file that is not yet in the database
@@ -453,18 +461,16 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			$origKeys = $keys;
 		}
 
-		$flipKeys = array_flip( $keys );
-
 		foreach ( $this->dbData as $row ) {
-			$realKey = $flipKeys[$row->page_title];
-			if ( !isset( $this->infile[$realKey] ) ) {
+			$mkey = $this->rowToKey( $row );
+			if ( !isset( $this->infile[$mkey] ) ) {
 				continue;
 			}
 
 			$text = Revision::getRevisionText( $row );
-			if ( $this->infile[$realKey] === $text ) {
+			if ( $this->infile[$mkey] === $text ) {
 				// Remove unchanged messages from the list
-				unset( $keys[$realKey] );
+				unset( $keys[$mkey] );
 			}
 		}
 
@@ -488,15 +494,13 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	protected function filterReviewer( array $keys, /*bool*/ $condition, /*int*/ $user ) {
 		$this->loadReviewInfo( $keys );
 		$origKeys = $keys;
-		$flipKeys = array_flip( $keys );
 
 		/* This removes messages from the list which have certain
 		 * reviewer (among others) */
 		$user = intval( $user );
 		foreach ( $this->dbReviewData as $row ) {
 			if ( intval($row->trr_user) === $user ) {
-				$realKey = $flipKeys[$row->page_title];
-				unset( $keys[$realKey] );
+				unset( $keys[$this->rowToKey( $row )] );
 			}
 		}
 
@@ -517,13 +521,11 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	protected function filterLastTranslator( array $keys, /*bool*/ $condition, /*int*/ $user ) {
 		$this->loadData( $keys );
 		$origKeys = $keys;
-		$flipKeys = array_flip( $keys );
 
 		$user = intval( $user );
 		foreach ( $this->dbData as $row ) {
 			if ( intval($row->rev_user) === $user ) {
-				$realKey = $flipKeys[$row->page_title];
-				unset( $keys[$realKey] );
+				unset( $keys[$this->rowToKey( $row )] );
 			}
 		}
 
@@ -539,18 +541,20 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param $keys \list{String} List of keys in display format.
 	 * @return \arrayof{String,String} Array of keys in database format indexed by display format.
 	 */
-	protected function fixKeys( array $keys ) {
+	protected function fixKeys() {
 		$newkeys = array();
-		$namespace = $this->definitions->namespace;
+		// array( namespace, pagename )
+		$pages = $this->definitions->getPages();
 		$code = $this->code;
 
-		foreach ( $keys as $key ) {
-			$title = Title::makeTitleSafe( $namespace, $key . '/' . $code );
+		foreach ( $pages as $key => $page ) {
+			list ( $namespace, $pagename ) = $page;
+			$title = Title::makeTitleSafe( $namespace, "$pagename/$code" );
 			if ( !$title ) {
-				wfWarn( "Invalid title $namespace:$key/$code" );
+				wfWarn( "Invalid title $namespace:$pagename/$code" );
 				continue;
 			}
-			$newkeys[$key] = $title->getDBKey();
+			$newkeys[$key] = $title;
 		}
 		return $newkeys;
 	}
@@ -572,14 +576,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		$dbr = wfGetDB( $dbtype );
-
 		$tables = array( 'page', 'revtag' );
-		$fields = array( 'page_title', 'rt_type' );
-		$conds  = array(
-			'page_namespace' => $this->definitions->namespace,
-			'page_title' => array_values( $keys ),
-		);
-		$joins = array( 'revtag' =>
+		$fields = array( 'page_namespace', 'page_title', 'rt_type' );
+		$conds  = $this->getTitleConds( $dbr );
+		$joins  = array( 'revtag' =>
 			array(
 				'LEFT JOIN',
 				array( 'page_id=rt_page', 'page_latest=rt_revision', 'rt_type' => RevTag::getType( 'fuzzy' ) )
@@ -606,14 +606,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		$dbr = wfGetDB( $dbtype );
-
 		$tables = array( 'page', 'translate_reviews' );
-		$fields = array( 'page_title', 'trr_user' );
-		$conds  = array(
-			'page_namespace' => $this->definitions->namespace,
-			'page_title' => array_values( $keys ),
-		);
-		$joins = array( 'translate_reviews' =>
+		$fields = array( 'page_namespace', 'page_title', 'trr_user' );
+		$conds  = $this->getTitleConds( $dbtype );
+		$joins  = array( 'translate_reviews' =>
 			array(
 				'JOIN',
 				array( 'page_id=trr_page', 'page_latest=trr_revision' )
@@ -642,17 +638,73 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$dbr = wfGetDB( $dbtype );
 
 		$tables = array( 'page', 'revision', 'text' );
-		$fields = array( 'page_title', 'page_latest', 'rev_user', 'rev_user_text', 'old_flags', 'old_text' );
+		$fields = array( 'page_namespace', 'page_title', 'page_latest', 'rev_user', 'rev_user_text', 'old_flags', 'old_text' );
 		$conds  = array(
-			'page_namespace' => $this->definitions->namespace,
-			'page_title' => array_values( $keys ),
 			'page_latest = rev_id',
 			'old_id = rev_text_id',
 		);
+		$conds = array_merge( $conds, $this->getTitleConds( $dbr ) );
 
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__ );
 
 		$this->dbData = $res;
+	}
+
+	/**
+	 * Of the current set of keys, construct database query conditions.
+	 * @since 2011-12-28
+	 */
+	protected function getTitleConds( $db ) {
+		// Array of array( namespace, pagename )
+		$byNamespace = array();
+		foreach ( $this->getTitles() as $title ) {
+			$namespace = $title->getNamespace();
+			$pagename = $title->getDBKey();
+			$byNamespace[$namespace][] = $pagename;
+		}
+
+		$conds = array();
+		foreach ( $byNamespace as $namespaces => $pagenames ) {
+			$cond = array(
+				'page_namespace' => $namespaces,
+				'page_title' => $pagenames,
+			);
+
+			$conds[] = $db->makeList( $cond, LIST_AND );
+		}
+		return $conds;
+	}
+
+	/**
+	 * Given two-dimensional map of namespace and pagenames, this uses
+	 * database fields page_namespace and page_title as keys and returns
+	 * the value for those indexes.
+	 * @since 2011-12-23
+	 */
+	protected function rowToKey( $row ) {
+		$map = $this->getReverseMap();
+		if ( isset( $map[$row->page_namespace][$row->page_title] ) ) {
+			return $map[$row->page_namespace][$row->page_title];
+		} else {
+			wfWarn( "Got unknown title from the database: {$row->page_namespace}:{$row->page_title}" );
+			return null;
+		}
+	}
+
+	/**
+	 * Creates a two-dimensional map of namespace and pagenames.
+	 * @since 2011-12-23
+	 */
+	public function getReverseMap() {
+		if ( isset( $this->reverseMap ) ) {
+			return $this->reverseMap;
+		}
+
+		$map = array();
+		foreach ( $this->keys as $mkey => $title ) {
+			$map[$title->getNamespace()][$title->getDBKey()] = $mkey;
+		}
+		return $this->reverseMap = $map;
 	}
 
 	/**
@@ -665,35 +717,25 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		$messages = array();
-
-		foreach ( array_keys( $this->keys ) as $key ) {
-			$messages[$key] = new ThinMessage( $key, $this->definitions->messages[$key] );
+		$definitions = $this->definitions->getDefinitions();
+		foreach ( array_keys( $this->keys ) as $mkey ) {
+			$messages[$mkey] = new ThinMessage( $mkey, $definitions[$mkey] );
 		}
-
-		$flipKeys = array_flip( $this->keys );
 
 		// Copy rows if any.
 		if ( $this->dbData !== null ) {
 			foreach ( $this->dbData as $row ) {
-				if ( !isset( $flipKeys[$row->page_title] ) ) {
-					continue;
-				}
-
-				$key = $flipKeys[$row->page_title];
-				$messages[$key]->setRow( $row );
-				$messages[$key]->setProperty( 'revision', $row->page_latest );
+				$mkey = $this->rowToKey( $row );
+				$messages[$mkey]->setRow( $row );
+				$messages[$mkey]->setProperty( 'revision', $row->page_latest );
 			}
 		}
 
 		if ( $this->dbInfo !== null ) {
 			$fuzzy = array();
 			foreach ( $this->dbInfo as $row ) {
-				if ( !isset( $flipKeys[$row->page_title] ) ) {
-					continue;
-				}
-
 				if ( $row->rt_type !== null ) {
-					$fuzzy[] = $flipKeys[$row->page_title];
+					$fuzzy[] = $this->rowToKey( $row );
 				}
 			}
 
@@ -702,36 +744,33 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		// Copy tags if any.
 		foreach ( $this->tags as $type => $keys ) {
-			foreach ( $keys as $key ) {
-				if ( isset( $messages[$key] ) ) {
-					$messages[$key]->setTag( $type );
+			foreach ( $keys as $mkey ) {
+				if ( isset( $messages[$mkey] ) ) {
+					$messages[$mkey]->setTag( $type );
 				}
 			}
 		}
 
 		// Copy properties if any.
 		foreach ( $this->properties as $type => $keys ) {
-			foreach ( $keys as $key => $value ) {
-				if ( isset( $messages[$key] ) ) {
-					$messages[$key]->setProperty( $type, $value );
+			foreach ( $keys as $mkey => $value ) {
+				if ( isset( $messages[$mkey] ) ) {
+					$messages[$mkey]->setProperty( $type, $value );
 				}
 			}
 		}
 
 		// Copy infile if any.
-		foreach ( $this->infile as $key => $value ) {
-			if ( isset( $messages[$key] ) ) {
-				$messages[$key]->setInfile( $value );
+		foreach ( $this->infile as $mkey => $value ) {
+			if ( isset( $messages[$mkey] ) ) {
+				$messages[$mkey]->setInfile( $value );
 			}
 		}
 
 		if ( $this->dbReviewData !== null ) {
 			foreach ( $this->dbReviewData as $row ) {
-				if ( !isset( $flipKeys[$row->page_title] ) ) {
-					continue;
-				}
-				$key = $flipKeys[$row->page_title];
-				$messages[$key]->appendProperty( 'reviewers', $row->trr_user );
+				$mkey = $this->rowToKey( $row );
+				$messages[$mkey]->appendProperty( 'reviewers', $row->trr_user );
 			}
 		}
 
@@ -820,14 +859,36 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 /**
  * Wrapper for message definitions, just to beauty the code.
- * This is one reason why message collections and thus message groups are
- * restricted into single namespace.
+ *
+ * API totally changed in 2011-12-28
  */
 class MessageDefinitions {
-	public $namespace;
-	public $messages;
-	public function __construct( $namespace, array $messages ) {
+	protected $namespace;
+	protected $messages;
+
+	public function __construct( array $messages, $namespace = false ) {
 		$this->namespace = $namespace;
 		$this->messages = $messages;
+	}
+
+	public function getDefinitions() {
+		return $this->messages;
+	}
+
+	/**
+	 * @return Array of Array( namespace, pagename )
+	 */
+	public function getPages() {
+		$namespace = $this->namespace;
+		$pages = array();
+		foreach ( array_keys( $this->messages ) as $key ) {
+			if ( $namespace === false ) {
+				// pages are in format ex. "8:jan"
+				$pages[$key] = explode( $key, ':', 2 );
+			} else {
+				$pages[$key] = array( $namespace, $key );
+			}
+		}
+		return $pages;
 	}
 }

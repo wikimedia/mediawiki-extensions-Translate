@@ -69,21 +69,21 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$count = 0;
 
 		$props = array_flip( $params['prop'] );
-		foreach ( $messages->keys() as $key => $dbkey ) {
+		foreach ( $messages->keys() as $mkey => $title ) {
 			if ( ++$count > $params['limit'] ) {
 					$this->setContinueEnumParameter( 'offset', $params['offset'] + $count - 1 );
 					break;
 			}
 
 			if ( is_null( $resultPageSet ) ) {
-				$data = $this->extractMessageData( $result, $props, $messages[$key] );
+				$data = $this->extractMessageData( $result, $props, $messages[$mkey] );
 				$fit = $result->addValue( array( 'query', $this->getModuleName() ), null, $data );
 				if ( !$fit ) {
 					$this->setContinueEnumParameter( 'offset', $params['offset'] + $count - 1 );
 					break;
 				}
 			} else {
-				$pages[] = Title::makeTitleSafe( $group->getNamespace(), $dbkey );
+				$pages[] = $title;
 			}
 		}
 

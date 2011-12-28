@@ -254,7 +254,7 @@ abstract class MessageGroupOld implements MessageGroup {
 			$definitions = $this->getUniqueDefinitions();
 		}
 
-		$defs = new MessageDefinitions( $this->namespaces[0], $definitions );
+		$defs = new MessageDefinitions( $definitions, $this->namespaces[0] );
 		$collection = MessageCollection::newFromDefinitions( $defs, $code );
 
 		$bools = $this->getBools();
@@ -624,7 +624,7 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 		$this->fill( $collection );
 		$this->fillContents( $collection );
 
-		foreach ( array_keys( $collection->keys() ) as $key ) {
+		foreach ( $collection->getMessageKeys() as $key ) {
 			if ( $collection[$key]->translation() === null ) {
 				unset( $collection[$key] );
 			}
@@ -635,7 +635,7 @@ class AliasMessageGroup extends ExtensionMessageGroup {
 
 	function fill( MessageCollection $messages ) {
 		$cache = $this->load( $messages->code );
-		foreach ( array_keys( $messages->keys() ) as $key ) {
+		foreach ( $messages->getMessageKeys() as $key ) {
 			if ( isset( $cache[$key] ) ) {
 				if ( is_array( $cache[$key] ) ) {
 					$messages[$key]->setInfile( implode( ',', $cache[$key] ) );

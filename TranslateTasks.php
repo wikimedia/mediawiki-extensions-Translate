@@ -282,7 +282,7 @@ class ViewWithSuggestionsTask extends ViewMessagesTask {
 
 		$start = time();
 
-		foreach ( $this->collection->keys() as $key => $_ ) {
+		foreach ( $this->collection->getMessageKeys() as $key ) {
 			// Allow up to 10 seconds to search for suggestions.
 			if ( time() - $start > 10 || TranslationHelpers::checkTranslationServiceFailure( 'tmserver' ) ) {
 				unset( $this->collection[$key] );

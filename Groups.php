@@ -254,7 +254,7 @@ abstract class MessageGroupBase implements MessageGroup {
 			}
 		}
 
-		$definitions = new MessageDefinitions( $namespace, $messages );
+		$definitions = new MessageDefinitions( $messages, $namespace );
 		$collection = MessageCollection::newFromDefinitions( $definitions, $code );
 		$this->setTags( $collection );
 
@@ -666,7 +666,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		}
 
 		$namespace = $this->getNamespace();
-		$definitions = new MessageDefinitions( $namespace, $messages );
+		$definitions = new MessageDefinitions( $messages, $namespace );
 		$collection = MessageCollection::newFromDefinitions( $definitions, $code );
 
 		$this->setTags( $collection );
