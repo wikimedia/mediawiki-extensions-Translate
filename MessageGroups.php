@@ -951,7 +951,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 		);
 		$options = array(
 			'ORDER BY' => 'rc_id DESC',
-			'LIMIT' => 200
+			'LIMIT' => 1000
 		);
 		$res = $db->select( $tables, $fields, $conds, __METHOD__, $options );
 
