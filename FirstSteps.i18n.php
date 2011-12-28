@@ -1509,6 +1509,69 @@ $messages['ig'] = array(
 	'translate-fs-pagetitle-done' => '- ọméchá!',
 );
 
+/** Italian (Italiano)
+ * @author Nemo bis
+ */
+$messages['it'] = array(
+	'firststeps' => 'Primi passi',
+	'firststeps-desc' => "[[Special:FirstSteps|Pagina speciale]] per aiutare gli utenti nei loro inizi in un wiki che fa uso dell'estensione Translate.",
+	'translate-fs-pagetitle-done' => '- fatto!',
+	'translate-fs-pagetitle-pending' => '- in attesa',
+	'translate-fs-pagetitle' => 'Percorso guidato per i primi passi - $1',
+	'translate-fs-signup-title' => 'Registrati',
+	'translate-fs-settings-title' => 'Configura le tue preferenze',
+	'translate-fs-userpage-title' => 'Crea la tua pagina utente',
+	'translate-fs-permissions-title' => 'Richiedi i permessi per tradurre',
+	'translate-fs-target-title' => 'Comincia a tradurre!',
+	'translate-fs-email-title' => 'Conferma il tuo indirizzo e-mail',
+	'translate-fs-intro' => "Benvenuto/a nel percorso guidato per i primi passi in {{SITENAME}}.
+Sarai guidato passo passo nel processo di diventare un traduttore.
+Alla fine sarai in grado di tradurre i ''messaggi di sistema'' di tutti i progetti supportati da {{SITENAME}}.",
+	'translate-fs-selectlanguage' => 'Scegli una lingua',
+	'translate-fs-settings-planguage' => 'Lingua principale:',
+	'translate-fs-settings-planguage-desc' => "La tua lingua principale funge per te sia da lingua dell'interfaccia del wiki sia da lingua predefinita in cui tradurre.",
+	'translate-fs-settings-slanguage' => 'Lingua di confronto $1:',
+	'translate-fs-settings-slanguage-desc' => "È possibile mostrare le traduzioni dei messaggi in altre lingue nell'interfaccia di traduzione.
+Qui puoi scegliere eventualmente quali lingue vuoi vedere.",
+	'translate-fs-settings-submit' => 'Salva preferenze',
+	'translate-fs-userpage-level-N' => 'Sono madrelingua in',
+	'translate-fs-userpage-level-5' => 'Sono un traduttore professionista di',
+	'translate-fs-userpage-level-4' => 'La conosco come un madrelingua.',
+	'translate-fs-userpage-level-3' => 'Ho una buona conoscenza di',
+	'translate-fs-userpage-level-2' => 'Ho una discreta conoscenza di',
+	'translate-fs-userpage-level-1' => "Conosco un po' di",
+	'translate-fs-userpage-help' => 'Indica le tue abilità linguistiche e dicci qualcosa di te. Se conosci più di cinque lingue puoi aggiungerne altre in seguito.',
+	'translate-fs-userpage-submit' => 'Crea la mia pagina utente',
+	'translate-fs-userpage-done' => 'Ben fatto! Ora hai una pagina utente.',
+	'translate-fs-permissions-planguage' => 'Lingua principale:',
+	'translate-fs-permissions-help' => 'Ora devi fare richiesta per essere aggiunto al gruppo dei traduttori.
+Seleziona la lingua principale in cui vuoi tradurre.
+
+Puoi indicare altre lingue e altre informazioni rilevanti nella casella di testo sottostante.',
+	'translate-fs-permissions-pending' => "La tua richiesta è stata pubblicata in [[$1]] e un membro dell'organico del sito la verificherà al più presto.
+Se confermi il tuo indirizzo e-mail, riceverai una notifica via e-mail appena succederà.",
+	'translate-fs-permissions-submit' => 'Invia richiesta',
+	'translate-fs-target-text' => "Congratulazioni!
+Ora puoi cominciare a tradurre.
+
+Non preoccuparti se tutto ti sembra ancora nuovo e ti confonde.
+Alla pagina [[Project list]] c'è una panoramica dei progetti alla cui traduzione puoi collaborare.
+La maggior parte dei progetti ha una breve pagina di descrizione con un collegamento \"''Traduci questo progetto''\" che ti porterà a una pagina che elenca tutti i messaggi rimasti da tradurre.
+C'è anche un elenco di tutti i gruppi di messaggi con [[Special:LanguageStats|l'attuale stato della loro traduzione in una certa lingua]].
+
+Se pensi di aver bisogno di capire meglio prima di cominciare a tradurre, puoi leggere le [[FAQ|risposte alle domande più frequenti]].
+Purtroppo la documentazione è talvolta non aggiornata.
+Se c'è qualcosa che pensi dovresti poter fare, ma non riesci a capire come, non farti problemi a chiedere alla [[Support|pagina d'aiuto]].
+
+Puoi anche contattare colleghi traduttore della stessa lingua nella [[Portal_talk:\$1|pagina di discussione]] del [[Portal:\$1|portale della tua lingua]].
+Se non l'hai già fatto, [[Special:Preferences|seleziona come lingua dell'interfaccia utente la lingua in cui vuoi tradurre]], così che il wiki sia in grado di mostrarti i collegamenti più pertinenti per te.",
+	'translate-fs-email-text' => 'Ti consigliamo di inserire il tuo indirizzo e-mail nelle [[Special:Preferences|tue preferenze]] e di confermarlo attraverso il messaggio che ti sarà inviato.
+
+Ciò permetterà agli altri utenti di contattarti per e-mail.
+Inoltre, riceverai la newsletter al più una volta al mese.
+Se non vuoi ricevere la newsletter, puoi esserne escluso attraverso l\'apposita opzione della scheda "{{int:prefs-personal}}" delle [[Special:Preferences|tue preferenze]].',
+);
+
 /** Japanese (日本語)
  * @author Fryed-peach
  * @author Hosiryuhosi
