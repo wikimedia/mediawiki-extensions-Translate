@@ -104,13 +104,14 @@ class MessageTable {
 
 		$sourceLang = Language::factory( $this->group->getSourceLanguage() );
 		$targetLang = Language::factory( $this->collection->getLanguage() );
+		$titleMap = $this->collection->keys();
 
 		$output =  '';
 
 		$this->collection->initMessages(); // Just to be sure
 		foreach ( $this->collection as $key => $m ) {
 			$tools = array();
-			$title = $this->keyToTitle( $key );
+			$title = $titleMap[$key];
 
 			$original = $m->definition();
 
@@ -187,13 +188,6 @@ class MessageTable {
 		} else {
 			throw new MWException( "Unexcepted format $format" );
 		}
-	}
-
-	protected function keyToTitle( $key ) {
-		$titleText = TranslateUtils::title( $key, $this->collection->code );
-		$namespace = $this->group->getNamespace();
-
-		return Title::makeTitle( $namespace, $titleText );
 	}
 
 	protected static function getLanguageAttributes( Language $language ) {

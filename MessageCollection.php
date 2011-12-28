@@ -643,7 +643,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			'page_latest = rev_id',
 			'old_id = rev_text_id',
 		);
-		$conds = array_merge( $conds, $this->getTitleConds( $dbr ) );
+		$conds[] = $this->getTitleConds( $dbr );
 
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__ );
 
@@ -672,7 +672,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 			$conds[] = $db->makeList( $cond, LIST_AND );
 		}
-		return $conds;
+		return $db->makeList( $conds, LIST_OR );
 	}
 
 	/**
@@ -884,7 +884,7 @@ class MessageDefinitions {
 		foreach ( array_keys( $this->messages ) as $key ) {
 			if ( $namespace === false ) {
 				// pages are in format ex. "8:jan"
-				$pages[$key] = explode( $key, ':', 2 );
+				$pages[$key] = explode( ':', $key, 2 );
 			} else {
 				$pages[$key] = array( $namespace, $key );
 			}
