@@ -526,12 +526,20 @@ $wgTranslateGroupRoot = '/var/www/externals';
 $wgTranslateGroupFiles = array();
 
 /**
- * List of possible message group review workflow states. Users who have
- * translate-groupreview right can set this in Special:Translate.
+ * List of possible message group review workflow states and colors for each state.
+ * Users who have translate-groupreview right can set this in Special:Translate.
  * The state is visible in Special:Translate, Special:MessageGroupStats and
- * Special:LanguageStats.
+ * Special:LanguageStats. If the value is false, the workflow states feature
+ * is disabled.
  * Up two 32 characters each.
- * Example: array( 'new', 'needs_proofreading', 'ready', 'published', );
+ * Example:
+ * array(
+ *      'new' => 'FF0000', // red
+ *      'needs_proofreading' => '0000FF', // blue
+ *      'ready' => 'FFFF00', // yellow
+ *      'published' => '00FF00', // green
+ * );
+ *
  */
 $wgTranslateWorkflowStates = false;
 
