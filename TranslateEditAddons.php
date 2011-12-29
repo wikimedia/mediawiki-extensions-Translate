@@ -433,6 +433,10 @@ class TranslateEditAddons {
 	 * @return bool
 	 */
 	public static function updateTransverTag( MessageHandle $handle, $revision, $text, User $user ) {
+		if ( $user->isAllowed( 'bot' ) ) {
+			return false;
+		}
+
 		$group = $handle->getGroup();
 		if ( $group instanceof WikiPageMessageGroup ) {
 			// WikiPageMessageGroup has different method
