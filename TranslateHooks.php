@@ -351,7 +351,7 @@ class TranslateHooks {
 	}
 
 	/**
-	 * Hook: ParserFirstCallInit
+	 * Parser function hook
 	 */
 	public static function translationDialogMagicWord( Parser $parser, $title = '', $linktext = '' ) {
 		$title = Title::newFromText( $title );
