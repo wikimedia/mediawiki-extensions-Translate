@@ -413,6 +413,11 @@ Details: $1',
 	'translate-dynagroup-recent-label' => 'Recent translations',
 	'translate-dynagroup-recent-desc' => 'This message group shows all recent translations into this language.
 Most useful with Accept messages or Review all translations task.',
+
+	'translate-dynagroup-by' => 'Translation made by {{GENDER:$1|$1}}',
+	'translate-dynagroup-byc' => 'Translation made by {{GENDER:$1|$1}} ($2)',
+	'translate-dynagroup-last' => 'Latest change by {{GENDER:$1|$1}}',
+	'translate-dynagroup-lastc' => 'Latest change by {{GENDER:$1|$1}} ($2)',
 );
 
 /** Message documentation (Message documentation)

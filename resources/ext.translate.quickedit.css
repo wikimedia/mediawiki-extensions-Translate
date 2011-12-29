@@ -88,3 +88,7 @@
 .mw-sp-translate-edit-warnings { background-color: #FFDBDB; }
 .mw-translate-definition-preview { padding: 3px; }
 .mw-translate-edit-tmsugs { background-color: #C0F9B6; }
+
+.mw-sp-translate-latestchange {
+	padding-bottom: 0px;
+}

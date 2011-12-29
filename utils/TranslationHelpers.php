@@ -211,6 +211,10 @@ class TranslationHelpers {
 			return (string) call_user_func( $all['check'] );
 		}
 
+		if ( $this->group instanceof RecentMessageGroup ) {
+			$all['last-diff'] = array( $this, 'getLastDiff' );
+		}
+
 		$boxes = array();
 		foreach ( $all as $type => $cb ) {
 			$box = call_user_func( $cb );
@@ -979,6 +983,57 @@ class TranslationHelpers {
 		$diff->showDiffStyle();
 
 		return $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
+	}
+
+	protected function getLastDiff() {
+		// Shortcuts
+		$title = $this->title;
+		$latestRevId = $title->getLatestRevID();
+		$previousRevId = $title->getPreviousRevisionID( $latestRevId );
+
+		$latestRev = Revision::newFromTitle( $title, $latestRevId );
+		$previousRev = Revision::newFromTitle( $title, $previousRevId );
+
+		$diffText = '';
+
+		if ( $latestRev && $previousRev ) {
+			$latest = $latestRev->getText();
+			$previous = $previousRev->getText();
+			if ( $previous !== $latest ) {
+				$diff = new DifferenceEngine;
+				if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
+					$diff->setTextLanguage( $this->targetLanguage );
+				}
+				$diff->setText( $previous, $latest );
+				$diff->setReducedLineNumbers();
+				$diff->showDiffStyle();
+				$diffText = $diff->getDiff( false, false );
+			}
+		}
+
+		if ( !$latestRev ) {
+			return null;
+		}
+
+		global $wgUser;
+		$user = $latestRev->getUserText( Revision::FOR_THIS_USER, $wgUser );
+		$comment = $latestRev->getComment();
+
+		if ( $diffText === '' ) {
+			if ( strval( $comment ) !== '' ) {
+				$text = wfMessage( 'translate-dynagroup-byc', $user, $comment )->escaped();
+			} else {
+				$text = wfMessage( 'translate-dynagroup-by', $user )->escaped();
+			}
+		} else {
+			if ( strval( $comment ) !== '' ) {
+				$text = wfMessage( 'translate-dynagroup-lastc', $user, $comment )->escaped();
+			} else {
+				$text = wfMessage( 'translate-dynagroup-last', $user )->escaped();
+			}
+		}
+		
+		return TranslateUtils::fieldset( $text, $diffText, array( 'class' => 'mw-sp-translate-latestchange' ) );
 	}
 
 	/**
