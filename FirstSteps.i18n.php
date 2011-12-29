@@ -2628,6 +2628,27 @@ $messages['uk'] = array(
 Якщо ви не хочете отримувати розсилку новин, ви можете відмовитися від неї у вкладці "{{int:prefs-personal}}" ваших [Special:Preferences|налаштувань]].',
 );
 
+/** Veps (Vepsän kel')
+ * @author Игорь Бродский
+ */
+$messages['vep'] = array(
+	'firststeps' => 'Ezmäižed haškud',
+	'translate-fs-pagetitle-done' => '- om tehtud!',
+	'translate-fs-target-title' => "Zavot'kat kändmaha!",
+	'translate-fs-email-title' => 'Vahvištoitta e-počtan adres',
+	'translate-fs-selectlanguage' => "Valita kel'",
+	'translate-fs-settings-planguage' => "Aluskel'",
+	'translate-fs-settings-slanguage' => "$1. abukel':",
+	'translate-fs-settings-submit' => 'Kaita järgendused',
+	'translate-fs-userpage-level-N' => "Minun mamankel'",
+	'translate-fs-userpage-level-5' => 'Olen professionaline kändai',
+	'translate-fs-userpage-level-4' => 'Mahtan pagišta kut kelenkandai',
+	'translate-fs-userpage-level-3' => 'Mahtan hüvin',
+	'translate-fs-userpage-level-2' => 'Mahtan keskmäras',
+	'translate-fs-userpage-level-1' => 'Mahtan vähäižel',
+	'translate-fs-userpage-submit' => "Säta minun personaline lehtpol'",
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  * @author Vinhtantran

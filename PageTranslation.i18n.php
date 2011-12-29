@@ -1976,10 +1976,10 @@ Tarkista mahdolliset virheet ja valmistumisviestit [[Special:Log/pagetranslation
 	'pt-deletepage-lang-title' => 'Poistetaan käännössivu $1.',
 	'pt-deletepage-full-title' => 'Poistetaan käännettävissä oleva sivu $1.',
 	'pt-deletepage-invalid-title' => 'Määritetty sivu ei kelpaa.',
-	'pt-deletepage-invalid-text' => 'Määritetty sivu ei ole käännettävissä oleva sivu tai sellaisen käännös.',
+	'pt-deletepage-invalid-text' => 'Sivu ei ole käännettävissä oleva sivu tai sellaisen käännös.',
 	'pt-deletepage-action-check' => 'Luetteloi poistettavat sivut',
 	'pt-deletepage-action-perform' => 'Suorita poisto',
-	'pt-deletepage-action-other' => 'Vaihda kohde',
+	'pt-deletepage-action-other' => 'Vaihda kohdetta',
 	'pt-deletepage-lang-legend' => 'Poista käännössivu',
 	'pt-deletepage-full-legend' => 'Poista käännettävissä oleva sivu',
 	'pt-deletepage-any-legend' => 'Poista käännettävissä oleva sivu tai käännettävissä olevan sivun käännös',
@@ -3029,6 +3029,7 @@ Teks baliz la: <pre>$1</pre>',
 
 /** Hungarian (Magyar)
  * @author Dani
+ * @author Dj
  * @author Glanthor Reviol
  */
 $messages['hu'] = array(
@@ -4038,6 +4039,42 @@ $messages['lg'] = array(
 	'tpt-languages-legend' => 'Nnimi ndala:',
 );
 
+/** Lithuanian (Lietuvių)
+ * @author Eitvys200
+ */
+$messages['lt'] = array(
+	'pagetranslation' => 'Puslapio vertimas',
+	'tpt-templatediff' => 'Pasikeitė puslapio šablonas.',
+	'tpt-diff-old' => 'Ankstesnis tekstas',
+	'tpt-diff-new' => 'Naujas tekstas',
+	'tpt-sections-template' => 'Vertimo puslapio šablonas',
+	'tpt-badtitle' => 'duotas puslapio pavadinimas ($1) nėra gera antraštė',
+	'tpt-nosuchpage' => 'Puslapio $1 neegzistuoja',
+	'tpt-mark-summary' => 'Ši versija pažymėta vertimui',
+	'tpt-edit-failed' => 'Nepavyko atnaujinti puslapio: $1',
+	'tpt-already-marked' => 'Šio puslapio naujausia versija jau yra pažymėta vertimui.',
+	'tpt-unmarked' => 'Puslapis $1 nebėra pažymėtas vertimams.',
+	'tpt-other-pages-title' => 'Sugadinti puslapiai',
+	'tpt-rev-mark' => 'Pažymėti vertimui',
+	'tpt-rev-unmark' => 'pašalinti iš vertimo',
+	'tpt-rev-encourage' => 'atkurti',
+	'translate-tag-translate-link-desc' => 'Versti šį puslapį',
+	'tpt-translation-intro-fuzzy' => 'Pasenę vertimai yra pažymėti kaip šis.',
+	'tpt-languages-legend' => 'Kitos kalbos:',
+	'pt-movepage-action-other' => 'Pakeisti taikinį',
+	'pt-deletepage-action-check' => 'Sąrašą puslapių kurie turi būti ištrinti.',
+	'pt-deletepage-action-perform' => 'Padaryti trynimą',
+	'pt-deletepage-action-other' => 'Pakeisti taikinį',
+	'pt-deletepage-lang-legend' => 'Ištrinti vertimo puslapį',
+	'pt-deletepage-full-legend' => 'Ištrinti išverčiama puslapį',
+	'pt-deletepage-current' => 'Puslapio pavadinimas:',
+	'pt-deletepage-reason' => 'Priežastis:',
+	'pt-deletepage-list-pages' => 'Sąrašas ištrinti puslapius',
+	'pt-deletepage-list-translation' => 'Vertimo puslapiai',
+	'pt-deletepage-full-logreason' => 'Dalis išverčiamo puslapio $1.',
+	'pt-deletepage-lang-logreason' => 'Dalis vertimo puslapio $1.',
+);
+
 /** Latgalian (Latgaļu)
  * @author Dark Eagle
  */
@@ -4794,11 +4831,18 @@ La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marca
  * @author Jnanaranjan Sahu
  */
 $messages['or'] = array(
+	'pagetranslation' => 'ପୃଷ୍ଠା ଅନୁବାଦ',
+	'tpt-template' => 'ପୃଷ୍ଠା ଛାଞ୍ଚ',
+	'tpt-languages-legend' => 'ଅଲଗା ଭାଷାସବୁ:',
+	'pt-movepage-list-translation' => 'ଅନୁବାଦ ପୃଷ୍ଠାସବୁ',
+	'pt-movepage-list-other' => 'ଅନ୍ୟ ଉପପୃଷ୍ଠାସବୁ',
 	'pt-movepage-legend' => 'ଅନୁବାଦ ହୋଇପାରୁଥିବା ପୃଷ୍ଠାଗୁଡିକୁ ଘୁଞ୍ଚାଇବେ',
 	'pt-movepage-current' => 'ବର୍ତମାନର ନାମ',
 	'pt-movepage-new' => 'ନୂଆ  ନାମ',
 	'pt-movepage-reason' => 'କାରଣ :',
+	'pt-deletepage-current' => 'ପୃଷ୍ଠା ନାମ:',
 	'pt-deletepage-reason' => 'କାରଣ:',
+	'pt-deletepage-list-section' => 'ଅନୁଭାଗ ପୃଷ୍ଠାସବୁ',
 );
 
 /** Deitsch (Deitsch)
@@ -5397,12 +5441,15 @@ $messages['roa-tara'] = array(
 	'tpt-nosuchpage' => "Pàgene $1 non g'esiste",
 	'translate-tag-translate-link-desc' => 'Traduce sta vosce',
 	'tpt-languages-legend' => 'Otre lènghe:',
+	'tpt-languages-separator' => '&#160;•&#160;',
 	'pt-movepage-current' => 'Nome de mò:',
 	'pt-movepage-new' => 'Nome nuève:',
 	'pt-movepage-reason' => 'Mutive:',
 	'pt-movepage-subpages' => 'Spuèste tutte le sottopàggene',
 	'pt-movepage-action-perform' => "Fà 'u spostamende",
 	'pt-movepage-action-other' => "Cange 'a destinazione",
+	'pt-deletepage-current' => "Nome d'a pàgene:",
+	'pt-deletepage-reason' => 'Mutive:',
 );
 
 /** Russian (Русский)
@@ -5637,7 +5684,11 @@ $messages['scn'] = array(
  */
 $messages['si'] = array(
 	'pagetranslation' => 'පිටුව පරිවර්තනය',
+	'right-pagetranslation' => 'පරිවර්තනය සඳහා පිටුවල අනුවාද සලකුණු කරන්න',
+	'tpt-desc' => 'අන්තර්ගත පිටු පරිවර්තනය කිරීම සඳහා විස්තීරණය',
 	'tpt-section' => '$1 පරිවර්තන ඒකකය',
+	'tpt-section-new' => 'නව පරිවර්තන ඒකකය.
+නම: $1',
 	'tpt-section-deleted' => '$1 පරිවර්තන ඒකකය',
 	'tpt-template' => 'පිටු සැකිල්ල',
 	'tpt-templatediff' => 'පිටු සැකිල්ල වෙනස් වී ඇත',
@@ -5657,20 +5708,40 @@ $messages['si'] = array(
 	'tpt-saveok' => '{{PLURAL:$2|එක් පරිවර්තන ඒකකයක්|පරිවර්තන ඒකක $2 ක්}} හා සමගින් පරිවර්තනය කෙරුමට [[$1]] පිටුව ‍සලකුණු කොට ඇත.
 මෙම පිටුව දැන් <span class="plainlinks">[$3 පරිවර්තනය කල හැක]</span>.',
 	'tpt-badsect' => '"$1" යනු $2 පරිවර්තන ඒකකය සඳහා නීතික මාතෘකාවක් නොවේ.',
+	'tpt-mark-summary' => 'පරිවර්තනය සඳහා මෙම අනුවාදය සලකුණු කරන ලදී',
+	'tpt-edit-failed' => 'පිටුව යාවත්කාලීන කල නොහැක: $1',
+	'tpt-already-marked' => 'මෙම පිටුවෙහි නවතම අනුවාදය පරිවර්තනය සඳහා දැනටමත් සලකුණු කොට ඇත.',
+	'tpt-new-pages-title' => 'පරිවර්තනය සඳහා යෝජිත පිටු',
+	'tpt-old-pages-title' => 'පරිවර්තනයේ ඇති පිටු',
 	'tpt-other-pages-title' => 'බිඳුණු පිටු',
+	'tpt-discouraged-pages-title' => 'අධෛර්යකල පිටු',
+	'tpt-rev-mark' => 'පරිවර්තනය සඳහා සලකුණු කරන්න',
 	'tpt-rev-unmark' => 'පරිවර්තනයෙන් ඉවත් කරන්න',
+	'tpt-rev-discourage' => 'අධෛර්ය කරන්න',
+	'tpt-rev-encourage' => 'නැවත පිහිටුවන්න',
+	'tpt-rev-mark-tooltip' => 'පරිවර්තනය සඳහා මෙම පිටුවෙහි නවතම අනුවාදය සලකුණු කරන්න.',
+	'tpt-rev-unmark-tooltip' => 'මෙම පිටුව පරිවර්තනයෙන් ඉවත් කරන්න.',
+	'tpt-rev-discourage-tooltip' => 'මෙම පිටුවෙහි ඉදිරි පරිවර්තනයන් අධෛර්ය කරන්න.',
+	'tpt-rev-encourage-tooltip' => 'සාමාන්‍ය පරිවර්තනය වෙත මෙම පිටුව නැවත පිහිටුවන්න.',
 	'translate-tag-translate-link-desc' => 'මෙම පිටුව පරිවර්තනය කරන්න',
+	'translate-tag-markthis' => 'පරිවර්තනය සඳහා මෙම පිටුව සලකුණු කරන්න',
+	'tpt-translation-intro-fuzzy' => 'යල්පැනපු පරිවර්තනයන් මෙලෙස සලකුණු කරයි.',
 	'tpt-languages-legend' => 'වෙනත් භාෂා:',
+	'tpt-download-page' => 'පරිවර්තනය සහිත පිටුව නිර්යාත කරන්න',
 	'pt-log-name' => 'පිටු පරිවර්තන ලඝු සටහන',
+	'pt-movepage-list-pages' => 'ගෙනයාමට ඇති පිටු ලැයිස්තුව',
 	'pt-movepage-list-translation' => 'පරිවර්තන පිටු',
+	'pt-movepage-list-section' => 'කාණ්ඩ පිටු',
 	'pt-movepage-list-other' => 'වෙනත් උපපිටු',
 	'pt-movepage-legend' => 'පරිවර්තනය කල හැකි පිටුව ගෙනයන්න',
 	'pt-movepage-current' => 'වත්මන් නාමය:',
 	'pt-movepage-new' => 'නව නම:',
 	'pt-movepage-reason' => 'හේතුව:',
 	'pt-movepage-subpages' => 'සියලුම උපපිටු ගෙනයන්න',
+	'pt-movepage-action-check' => 'ගෙනයාම කළහැකි දැයි පිරික්සන්න',
 	'pt-movepage-action-perform' => 'ගෙනයන්න',
 	'pt-movepage-action-other' => 'ඉලක්කය මාරු කරන්න',
+	'pt-movepage-logreason' => '$1 පරිවර්තනය කල හැකි පිටුවෙහි කොටසක්.',
 	'pt-deletepage-lang-title' => '$1 පරිවර්තන පිටුව මකමින්.',
 	'pt-deletepage-full-title' => '$1 පරිවර්තනය කල හැකි පිටුව මකමින්.',
 	'pt-deletepage-invalid-title' => 'විශේෂණය කෙරූ පිටුව වලංගු නොවේ.',
@@ -5679,6 +5750,7 @@ $messages['si'] = array(
 	'pt-deletepage-action-other' => 'ඉලක්කය වෙනස් කරන්න',
 	'pt-deletepage-lang-legend' => 'පරිවර්තන පිටුව මකමින්',
 	'pt-deletepage-full-legend' => 'පරිවර්තනය කල හැකි පිටුව මකන්න',
+	'pt-deletepage-any-legend' => 'පරිවර්තනය කළහැකි හෝ පරිවර්තනය කළහැකි පරිවර්තන පිටුවක් මකන්න',
 	'pt-deletepage-current' => 'පිටු නාමය:',
 	'pt-deletepage-reason' => 'හේතුව:',
 	'pt-deletepage-subpages' => 'සියලුම උපපිටු මකන්න',
@@ -5686,6 +5758,8 @@ $messages['si'] = array(
 	'pt-deletepage-list-translation' => 'පරිවර්තන පිටු',
 	'pt-deletepage-list-section' => 'කාණ්ඩ පිටු',
 	'pt-deletepage-list-other' => 'වෙනත් උපපිටු',
+	'pt-deletepage-full-logreason' => '$1 පරිවර්තනමය පිටුවෙහි කොටසක්.',
+	'pt-deletepage-lang-logreason' => '$1 පරිවර්තන පිටුවෙහි කොටසක්.',
 );
 
 /** Slovak (Slovenčina)
@@ -6517,13 +6591,25 @@ $messages['vep'] = array(
 	'tpt-sections-oldnew' => 'Uded da olijad kändmižühtnikad',
 	'tpt-sections-template' => 'Kändmižen lehtpolen šablon',
 	'tpt-nosuchpage' => 'Ei ole mugošt lehtpol\'t: "$1".',
+	'tpt-new-pages-title' => 'Lehtpoled kändmižen täht',
+	'tpt-old-pages-title' => "Lehtpoled, kudambad kätas nügüd'",
 	'tpt-other-pages-title' => 'Traudüd lehtpoled',
+	'tpt-rev-encourage' => 'endištada',
+	'tpt-rev-mark-tooltip' => "Znamoita necen lehtpolen jäl'gmäine versii kändmižen täht",
 	'translate-tag-translate-link-desc' => "Käta nece lehtpol'",
+	'translate-tag-markthis' => "Znamoita nece lehtpol' kändmižen täht.",
 	'tpt-languages-legend' => 'Toižed keled:',
+	'tpt-download-page' => "Eksportiruida lehtpol' kändusidenke",
 	'pt-movepage-list-other' => 'Toižed alalehtpoled',
 	'pt-movepage-current' => 'Olii nimi:',
 	'pt-movepage-new' => "Uz' nimi:",
 	'pt-movepage-reason' => 'Sü:',
+	'pt-movepage-action-perform' => 'Udesnimitada',
+	'pt-movepage-action-other' => 'Vajehtada met',
+	'pt-deletepage-action-other' => 'Vajehtada met',
+	'pt-deletepage-current' => 'Lehtpolen nimi:',
+	'pt-deletepage-reason' => 'Sü:',
+	'pt-deletepage-list-other' => 'Toižed alalehtpoled',
 );
 
 /** Vietnamese (Tiếng Việt)
