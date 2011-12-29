@@ -88,11 +88,11 @@
 			
 			if ( mw.config.get( 'trlKeys' ) ) {
 				form.find( '.mw-translate-next' ).click( function() {
-					mw.translate.openNext( page );
+					mw.translate.openNext( page, group );
 				} );
 
 				form.find( '.mw-translate-skip' ).click( function() {
-					mw.translate.openNext( page );
+					mw.translate.openNext( page, group );
 					dialog.dialog( 'close' );
 					return false;
 				} );
@@ -190,7 +190,7 @@
 			return false;
 		},
 
-		openNext: function( title ) {
+		openNext: function( title, group ) {
 			var messages = mw.config.get( 'trlKeys' );
 			var found = false, key, value;
 			
@@ -201,7 +201,7 @@
 
 				value = messages[key];
 				if ( found ) {
-					return mw.translate.openDialog( value );
+					return mw.translate.openDialog( value, group );
 				} else if( value === title ) {
 					found = true;
 				}

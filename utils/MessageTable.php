@@ -126,13 +126,13 @@ class MessageTable {
 			}
 
 			global $wgLang;
-			$niceTitle = htmlspecialchars( $wgLang->truncate( $title->getPrefixedText(), - 30 ) );
+			$niceTitle = htmlspecialchars( $wgLang->truncate( $title->getPrefixedText(), -35 ) );
 
 			$linker = class_exists( 'DummyLinker' ) ? new DummyLinker() : new Linker();
 			$tools['edit'] = $linker->link(
 				$title,
 				$niceTitle,
-				TranslationEditPage::jsEdit( $title ),
+				TranslationEditPage::jsEdit( $title, $this->group->getId() ),
 				array( 'action' => 'edit' ) + $this->editLinkParams,
 				'known'
 			);
@@ -145,7 +145,7 @@ class MessageTable {
 				$extra = '<br />' . $optional;
 			}
 
-			$leftColumn = $anchor . $tools['edit'] . $this->getReviewButton( $m ) . $extra . $this->getReviewStatus( $m );
+			$leftColumn = $this->getReviewButton( $m ) . $anchor . $tools['edit'] . $extra . $this->getReviewStatus( $m );
 
 			if ( $this->reviewMode && $original !== $message ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
