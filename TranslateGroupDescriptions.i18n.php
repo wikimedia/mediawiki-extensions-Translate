@@ -1084,6 +1084,7 @@ $messages['he'] = array(
 	'translate-group-desc-tsint' => 'קבוצת הודעות ל־[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], מערכת התרגום עבור כלי [http://toolserver.org Toolserver‏ (<span class="plainlinks">[[Translating talk:Toolserver|תמיכה]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition פרטים טכניים]</span>)',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] מסוגל לזהות את הכותבים של חלק מדף האתר ויקי של ויקימדיה',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] מביא גרסת טקסט של ויקיפדיה למכשיר נייד.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] הוא יישום מרובה־פלטפורמות לקריאה ועריכה של ויקיפדיה במכשירים ניידים ובמחשבי לוח',
 );
 
 /** Croatian (Hrvatski)
