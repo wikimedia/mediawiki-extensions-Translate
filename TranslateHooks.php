@@ -328,6 +328,7 @@ class TranslateHooks {
 
 		if ( $action === 'group' ) {
 			$languageCode = $params[0];
+			$groupLabel = $params[1];
 			$languageNames = Language::getTranslatedLanguageNames( $languageCode );
 			$languageName = "$languageNames[$languageCode] ($languageCode)";
 			$oldState = $params[2];
@@ -340,8 +341,13 @@ class TranslateHooks {
 			return wfMessage( 'logentry-groupreview-message' )->params(
 				'', // User link in the new system
 				'#', // User name for gender in the new system
+				Message::rawParam( $linker->link(
+					$title,
+					$groupLabel,
+					array(),
+					array( 'language' => $languageCode ) )
+				),
 				$languageName,
-				$params[1], // group
 				$oldState,
 				$newState
 			)->inLanguage( $language )->text();

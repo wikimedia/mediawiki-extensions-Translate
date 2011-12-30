@@ -33,7 +33,6 @@ class ApiGroupReview extends ApiBase {
 			$this->dieUsageMsg( array( 'missingparam', 'group' ) );
 		}
 
-		// XXX Is this part needed?
 		$languages = Language::getLanguageNames( false );
 		if ( !isset( $languages[$requestParams['language']] ) ) {
 			$this->dieUsageMsg( array( 'missingparam', 'language' ) );
@@ -67,7 +66,7 @@ class ApiGroupReview extends ApiBase {
 		);
 		$logger->addEntry(
 			'group',
-			SpecialPage::getTitleFor( 'Translate', $groupid ), // It's not really a page
+			SpecialPage::getTitleFor( 'Translate', $groupid ),
 			'', // No comments
 			$logParams,
 			$wgUser
