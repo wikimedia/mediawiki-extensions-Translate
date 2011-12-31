@@ -189,6 +189,7 @@ $wgResourceModules['ext.translate.quickedit'] = array(
 		'jquery.form',
 		'jquery.ui.dialog',
 		'jquery.autoresize',
+		'mediawiki.util',
 	),
 ) + $resourcePaths;
 
