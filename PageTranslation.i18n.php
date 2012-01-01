@@ -1603,10 +1603,16 @@ La paĝo povas nun esti <span class="plainlinks">[$3 tradukita]</span>.',
 	'tpt-badsect' => '« $1 » ne estas valida nomo por tradukero $2.',
 	'tpt-mark-summary' => 'Markis ĉi tiun version por traduki.',
 	'tpt-edit-failed' => 'Ne eblis ĝisdatigi la paĝon: $1',
+	'tpt-old-pages-title' => 'Paĝoj en traduko',
+	'tpt-rev-unmark' => 'forigi el traduko',
+	'tpt-rev-encourage' => 'restarigi',
 	'translate-tag-translate-link-desc' => 'Traduki ĉi tiun paĝon',
 	'translate-tag-markthis' => 'Marki ĉi tiun paĝon por tradukado',
 	'tpt-languages-legend' => 'Aliaj lingvoj:',
 	'tpt-download-page' => 'Eksporti paĝon kun tradukoj',
+	'pt-movepage-list-translation' => 'Tradukaj paĝoj',
+	'pt-movepage-new' => 'Nova nomo:',
+	'pt-deletepage-reason' => 'Kialo:',
 );
 
 /** Spanish (Español)
@@ -2189,12 +2195,19 @@ Devant que marcar cetes vèrsions por la traduccion, controlâd que los changeme
 	'tpt-already-marked' => 'La dèrriére vèrsion de ceta pâge at ja étâ marcâ por la traduccion.',
 	'tpt-unmarked' => 'La pâge $1 est pas més marcâ por la traduccion.',
 	'tpt-list-nopages' => 'Niona pâge at étâ marcâ por la traduccion ou ben est prèsta por l’étre.',
+	'tpt-new-pages-title' => 'Pâges proposâs a la traduccion',
+	'tpt-old-pages-title' => 'Pâges en cors de traduccion',
+	'tpt-other-pages-title' => 'Pâges câsses',
+	'tpt-discouraged-pages-title' => 'Pâges dècoragiês',
 	'tpt-new-pages' => '{{PLURAL:$1|Ceta pâge contint|Cetes pâges contegnont}} de tèxto avouéc des balises de traduccion,
 mas niona vèrsion de {{PLURAL:$1|ceta pâge est marcâ|cetes pâges sont marcâs}} por la traduccion.',
 	'tpt-old-pages' => 'Des vèrsions de {{PLURAL:$1|ceta pâge|cetes pâges}} ont étâ marcâs por la traduccion.',
 	'tpt-other-pages' => '{{PLURAL:$1|Una vielye vèrsion de ceta pâge at étâ marcâ|Des vielyes vèrsions de cetes pâges ont étâ marcâs}} por la traduccion,
 mas {{PLURAL:$1|la dèrriére vèrsion pôt pas étre marcâ|les dèrriéres vèrsions pôvont pas étre marcâs}} por la traduccion.',
+	'tpt-rev-mark' => 'marcar por traduccion',
 	'tpt-rev-unmark' => 'enlevar de la traduccion',
+	'tpt-rev-discourage' => 'dècoragiér',
+	'tpt-rev-encourage' => 'refâre',
 	'translate-tag-translate-link-desc' => 'Traduire ceta pâge',
 	'translate-tag-markthis' => 'Marcar ceta pâge por la traduccion',
 	'translate-tag-markthisagain' => 'Ceta pâge at avu des <span class="plainlinks">[$1 changements]</span> dês qu’at étâ <span class="plainlinks">[$2 marcâ dèrriérement por la traduccion]</span>.',
@@ -2950,7 +2963,7 @@ Prošu skontroluj [[Special:Log/pagetranslation|přełožowanski protokol strony
 	'pt-deletepage-started' => 'Prošu přepruwuj [[Special:Log/pagetranslation|protokol přełožkow]] za zmylkami a wuwjedźenskimi zdźělenkami.',
 	'pt-deletepage-intro' => 'Tuta specialna strona ći dowoluje, zo by do rěče přełožujomne strony abo  přełožki zhašał.
 Zhašenje njestanje so hnydom, dokelž wjele stronow dyrbi so zhašeć.
-Zmólki budu se w  [[Special:Log/pagetranslation|protokolu přełožkow]] protokolować a wone dyrbja so manuelnje porjedźić.',
+Zmylki budu se w  [[Special:Log/pagetranslation|protokolu přełožkow]] protokolować a wone dyrbja so manuelnje porjedźić.',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -3102,6 +3115,7 @@ Elem szövege: <pre>$1</pre>',
 	'pt-movepage-action-perform' => 'Átnevezés végrehajtása',
 	'pt-movepage-action-other' => 'Cél megváltoztatása',
 	'pt-movepage-logreason' => 'A(z) $1 fordítható lap része',
+	'pt-deletepage-current' => 'Lap neve:',
 );
 
 /** Interlingua (Interlingua)
@@ -5036,11 +5050,23 @@ Prima ëd marché costa version për la tradussion, controlé che le modìfiche 
 	'tpt-already-marked' => "L'ùltima version ëd sa pàgina a l'é stàita già marcà për la tradussion.",
 	'tpt-unmarked' => "La pàgina $1 a l'é pi nen marcà për la tradussion.",
 	'tpt-list-nopages' => 'A-i é gnun-a pàgina marcà për la tradussion ni pronta për esse marcà për la tradussion.',
+	'tpt-new-pages-title' => 'Pagine propòste për tradussion',
+	'tpt-old-pages-title' => 'Pagine an tradussion',
+	'tpt-other-pages-title' => 'Pagine corompùe',
+	'tpt-discouraged-pages-title' => 'Pagine dëscoragià',
 	'tpt-new-pages' => "{{PLURAL:$1|Sa pàgina a conten|Se pàgine a conten-o}} dël test con la tichëtta ëd tradussion, ma gnun-a version ëd {{PLURAL:$1|costa pàgina|coste pàgine}} a l'é al moment marcà për la tradussion.",
 	'tpt-old-pages' => 'Chèiche version ëd {{PLURAL:$1|costa pàgine|coste pàgine}} a son ëstàite marcà për la tradussion.',
 	'tpt-other-pages' => "{{PLURAL:$1|Na veja version ëd costa pàgina a l'é|Dle veje version ëd coste pàgine a son}} marcà për la tradussion,
 ma {{PLURAL:$1|l'ùltima version a peul|j'ùltime version a peulo}} pa esse marcà për la tradussion.",
-	'tpt-rev-unmark' => 'gava costa pàgina da la tradussion',
+	'tpt-discouraged-pages' => " {{PLURAL:$1|Sta pagina a l'é staita|Ste pagine a son staite}} dëscoragià da autre tradussion.",
+	'tpt-rev-mark' => 'marca për tradussion',
+	'tpt-rev-unmark' => 'gava da la tradussion',
+	'tpt-rev-discourage' => 'dëscoragia',
+	'tpt-rev-encourage' => "buté 'me ch'a l'era",
+	'tpt-rev-mark-tooltip' => "Marca l'ùltima vërsion dë sta pagina për tradussion.",
+	'tpt-rev-unmark-tooltip' => 'Gava costa pàgina da la tradussion.',
+	'tpt-rev-discourage-tooltip' => 'Dëscoragia autre tradussion su sta pagina.',
+	'tpt-rev-encourage-tooltip' => 'Ripristina costa pàgina a tradussion normal.',
 	'translate-tag-translate-link-desc' => 'Fé la tradussion ëd sa pàgina',
 	'translate-tag-markthis' => 'Marca costa pàgina për la tradussion',
 	'translate-tag-markthisagain' => 'Costa pàgina a l\'ha avù <span class="plainlinks">[$1 cangiament]</span> da cand a l\'é stàita <span class="plainlinks">[$2 marcà për la tradussion]</span> l\'ùltima vira.',
@@ -5069,8 +5095,12 @@ Test ëd la session: <pre>$1</pre>',
 	'pt-log-name' => 'Registr dle tradussion ëd pàgine',
 	'pt-log-mark' => '{{GENDER:$2|marcà}} la revision $3 dla pàgina "[[:$1]]" për la tradussion',
 	'pt-log-unmark' => 'a l\'ha {{GENDER:$2|gavà}} la pàgina "[[:$1]]" da la tradussion',
-	'pt-log-moveok' => "a l'ha {{GENDER:$2|completà}} ëd deje un nòm neuv a la pàgina da volté $1",
+	'pt-log-moveok' => "a l'ha {{GENDER:$2|completà}} ëd deje un nòm neuv a la pàgina da volté $1 a $3",
 	'pt-log-movenok' => "{{GENDER:$2|a l'ha rancontrà}} un problema an tramudand [[:$1]] a [[:$3]]",
+	'pt-log-delete-full-ok' => '{{GENDER:$2|completà}} scanselament ëd la pagina voltàbila $1',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|ancontrà}} un probem an scanseland la pagina voltàbile [[:$1]]',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|completà}} scanselament ëd la pagina ëd tradussion $1',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|ancontrà}} un probem an scanseland la pagina ëd tradussion [[:$1]]',
 	'pt-movepage-title' => 'Tramudé la pàgina da volté $1',
 	'pt-movepage-blockers' => 'La pàgina da volté a peul pa esse tramudà a un nòm neuv a motiv ëd {{PLURAL:$1|cost eror|costi eror}}:',
 	'pt-movepage-block-base-exists' => 'La pàgina base pontà [[:$1]] a esist.',
@@ -5102,6 +5132,27 @@ J'eror a saran registrà ant ël [[Special:Log/pagetranslation|registr ëd tradu
 	'pt-movepage-started' => "La pàgina base adess a l'é tramudà.
 Për piasì, ch'a contròla ël [[Special:Log/pagetranslation|registr ëd tradussion dle pàgine]] për eror e mëssagi ëd completament.",
 	'pt-locked-page' => "Cota pàgina a l'é blocà përchè la pàgina da volté a l'é an camin ch'as tramuda.",
+	'pt-deletepage-lang-title' => 'Scanselé la pagina ëd tradussion $1.',
+	'pt-deletepage-full-title' => 'Scanselé la pagina voltàbila $1.',
+	'pt-deletepage-invalid-title' => "La pagina specificà a l'é pa bon-a.",
+	'pt-deletepage-invalid-text' => "La pagina specificà a l'é pa na pagina voltabila ni na tradussion ëd cola.",
+	'pt-deletepage-action-check' => 'Lista ëd pàgine da scancelé',
+	'pt-deletepage-action-perform' => 'Fà la scanselassion',
+	'pt-deletepage-action-other' => 'Cangé ël bërsaj',
+	'pt-deletepage-lang-legend' => 'Scanselé la pagina ëd tradussion',
+	'pt-deletepage-full-legend' => 'Scanselé la pagina voltàbila',
+	'pt-deletepage-any-legend' => 'Scansela la pagina voltàbila o la tradussion ëd na pagina voltàbila',
+	'pt-deletepage-current' => 'Nòm ëd la pàgina:',
+	'pt-deletepage-reason' => 'Rason:',
+	'pt-deletepage-subpages' => 'Scansea tute e sotpagine',
+	'pt-deletepage-list-pages' => 'Lista dle pàgine da scanselé',
+	'pt-deletepage-list-translation' => 'Pàgine ëd viragi',
+	'pt-deletepage-list-section' => 'Pàgine ëd session',
+	'pt-deletepage-list-other' => 'Àutre sot-pàgine',
+	'pt-deletepage-list-count' => 'An total $1 {{PLURAL:$1|pàgina|pàgine}} da scanselé.',
+	'pt-deletepage-full-logreason' => 'Tòch ëd la pàgina da volté $1.',
+	'pt-deletepage-lang-logreason' => 'Tòch ëd la pàgina ëd tradussion $1.',
+	'pt-deletepage-started' => "Për piasì, ch'a contròla ël [[Special:Log/pagetranslation|registr ëd tradussion dle pàgine]] për eror e mëssagi ëd completament.",
 );
 
 /** Pashto (پښتو)
@@ -5727,6 +5778,7 @@ $messages['si'] = array(
 	'tpt-mark-summary' => 'පරිවර්තනය සඳහා මෙම අනුවාදය සලකුණු කරන ලදී',
 	'tpt-edit-failed' => 'පිටුව යාවත්කාලීන කල නොහැක: $1',
 	'tpt-already-marked' => 'මෙම පිටුවෙහි නවතම අනුවාදය පරිවර්තනය සඳහා දැනටමත් සලකුණු කොට ඇත.',
+	'tpt-unmarked' => '$1 පිටුව පරිවර්තනය සඳහා තවදුරටත් සලකුණු කර නොමැත.',
 	'tpt-new-pages-title' => 'පරිවර්තනය සඳහා යෝජිත පිටු',
 	'tpt-old-pages-title' => 'පරිවර්තනයේ ඇති පිටු',
 	'tpt-other-pages-title' => 'බිඳුණු පිටු',
@@ -5743,8 +5795,11 @@ $messages['si'] = array(
 	'translate-tag-markthis' => 'පරිවර්තනය සඳහා මෙම පිටුව සලකුණු කරන්න',
 	'tpt-translation-intro-fuzzy' => 'යල්පැනපු පරිවර්තනයන් මෙලෙස සලකුණු කරයි.',
 	'tpt-languages-legend' => 'වෙනත් භාෂා:',
+	'tpt-render-summary' => 'මූලාශ්‍ර පිටුවේ නව අනුවාදය වෙත ගැලපීම සඳහා යාවත්කාලීන කරමින්',
 	'tpt-download-page' => 'පරිවර්තනය සහිත පිටුව නිර්යාත කරන්න',
+	'pt-shake-empty' => '$1 ලකුණුකරණය සඳහා හිස් කාණ්ඩය.',
 	'pt-log-name' => 'පිටු පරිවර්තන ලඝු සටහන',
+	'pt-log-unmark' => '"[[:$1]]" පිටුව පරිවර්තනයෙන් {{GENDER:$2|ඉවත්කරන ලදී}}',
 	'pt-log-delete-full-ok' => '$1 පරිවර්තනමය පිටුවේ මකාදැමීම {{GENDER:$2|සම්පූර්ණ කරන ලදී}}',
 	'pt-log-delete-lang-ok' => '$1 පරිවර්තන පිටුවේ මකාදැමීම {{GENDER:$2|සම්පූර්ණ කරන ලදී}}',
 	'pt-movepage-title' => 'පරිවර්තනය කල හැකි $1 පිටුව ගෙනයන්න',
@@ -5767,9 +5822,13 @@ $messages['si'] = array(
 	'pt-movepage-action-perform' => 'ගෙනයන්න',
 	'pt-movepage-action-other' => 'ඉලක්කය මාරු කරන්න',
 	'pt-movepage-logreason' => '$1 පරිවර්තනය කල හැකි පිටුවෙහි කොටසක්.',
+	'pt-movepage-started' => 'පදනම් පිටුව දැන් ගෙනයන ලදී.
+සම්පූර්ණ පණිවුඩය සහ දෝෂයන් සඳහා කරුණාකර [[Special:Log/pagetranslation|පිටු පරිවර්තන ලඝු සටහන]] පිරික්සන්න.',
+	'pt-locked-page' => 'මෙම පිටුව අගුළුදමා ඇත මන්ද පරිවර්තනමය පිටුව ගෙනයමින් පවතියි.',
 	'pt-deletepage-lang-title' => '$1 පරිවර්තන පිටුව මකමින්.',
 	'pt-deletepage-full-title' => '$1 පරිවර්තනය කල හැකි පිටුව මකමින්.',
 	'pt-deletepage-invalid-title' => 'විශේෂණය කෙරූ පිටුව වලංගු නොවේ.',
+	'pt-deletepage-invalid-text' => 'විශේෂණය කෙරූ පිටුව පරිවර්තනය කල නොහැකි හෝ පරිවර්තනමය නොවේ.',
 	'pt-deletepage-action-check' => 'මැකීමට ඇති පිටු ලැයිස්තුගත කරන්න',
 	'pt-deletepage-action-perform' => 'මැකීම සිදු කරන්න',
 	'pt-deletepage-action-other' => 'ඉලක්කය වෙනස් කරන්න',
@@ -5783,8 +5842,10 @@ $messages['si'] = array(
 	'pt-deletepage-list-translation' => 'පරිවර්තන පිටු',
 	'pt-deletepage-list-section' => 'කාණ්ඩ පිටු',
 	'pt-deletepage-list-other' => 'වෙනත් උපපිටු',
+	'pt-deletepage-list-count' => 'එකතුව වශයෙන් {{PLURAL:$1|පිටු|පිටු}} $1 ක් මැකීමට ඇත.',
 	'pt-deletepage-full-logreason' => '$1 පරිවර්තනමය පිටුවෙහි කොටසක්.',
 	'pt-deletepage-lang-logreason' => '$1 පරිවර්තන පිටුවෙහි කොටසක්.',
+	'pt-deletepage-started' => 'සම්පූර්ණ පණිවුඩය සහ දෝෂයන් සඳහා කරුණාකර [[Special:Log/pagetranslation|පිටු පරිවර්තන ලඝු සටහන]] පිරික්සන්න.',
 );
 
 /** Slovak (Slovenčina)
@@ -6177,6 +6238,7 @@ men {{PLURAL:$1|den senaste versionen|de senaste versionerna}} kan inte markeras
 );
 
 /** Tamil (தமிழ்)
+ * @author Shanmugamp7
  * @author TRYPPN
  */
 $messages['ta'] = array(
@@ -6185,6 +6247,22 @@ $messages['ta'] = array(
 	'tpt-diff-old' => 'முந்தைய சொற்றொடர்',
 	'tpt-diff-new' => 'புதிய சொற்றொடர்',
 	'tpt-languages-legend' => 'மற்ற மொழிகள்:',
+	'pt-deletepage-action-perform' => 'நீக்கலை செய்யவும்',
+	'pt-deletepage-action-other' => 'இலக்கை மாற்று',
+	'pt-deletepage-lang-legend' => 'மொழிபெயர்ப்பு பக்கத்தை நீக்கு',
+	'pt-deletepage-full-legend' => 'மொழிபெயர்க்கதகுந்த பக்கத்தை நீக்கு',
+	'pt-deletepage-any-legend' => 'மொழிபெயர்க்கத்தகுந்த பக்கம் அல்லது மொழிபெயர்க்கத்தகுந்த பக்கத்தின் மொழிபெயர்ப்பை நீக்கு',
+	'pt-deletepage-current' => 'பக்கப் பெயர்:',
+	'pt-deletepage-reason' => 'காரணம்:',
+	'pt-deletepage-subpages' => 'எல்லா துணைப்பக்கங்களையும் நீக்கு',
+	'pt-deletepage-list-pages' => 'நீக்கபடவேண்டிய பக்கங்களின் பட்டியல்',
+	'pt-deletepage-list-translation' => 'மொழிபெயர்ப்பு பக்கங்கள்',
+	'pt-deletepage-list-section' => 'பிரிவு பக்கங்கள்',
+	'pt-deletepage-list-other' => 'மற்ற துணைப்பக்கங்கள்',
+	'pt-deletepage-list-count' => 'மொத்தம்  $1   {{PLURAL:$1|பக்கம் |பக்கங்கள்}} நீக்கப்பட.',
+	'pt-deletepage-full-logreason' => 'மொழிபெயர்க்க தகுந்த பக்கத்தின் பகுதி $1.',
+	'pt-deletepage-lang-logreason' => 'மொழிபெயர்ப்பு பக்கத்தின் பகுதி  $1 .',
+	'pt-deletepage-started' => 'தயவுகூர்ந்து  [[Special:Log/pagetranslation|பக்க மொழிபெயர்ப்பு குறிப்பேடு]] ல்  பிழைகளை மற்றும் நிறைவு தகவலை சரிபார்க்கவும், .',
 );
 
 /** Telugu (తెలుగు)
@@ -6808,6 +6886,7 @@ $messages['yi'] = array(
 	'tpt-old-pages-title' => 'בלעטער צו איבערזעצן',
 	'tpt-other-pages-title' => 'צעבראכענע בלעטער',
 	'translate-tag-translate-link-desc' => 'פֿאַרטײַטשט דעם בלאַט',
+	'translate-tag-markthis' => 'מארקירן דעם בלאט פאר איבערזעצונג',
 	'translate-tag-markthisagain' => 'דער בלאַט האט <span class="plainlinks">[ $1 ענדערונגען]</span> זינט ער איז לעצט געווארן <span class="plainlinks">[ $2 אנגעצייכנט פֿאַר איבערזעצונג].</span>',
 	'translate-tag-hasnew' => 'דער בלאַט אַנטהאַלט  <span class="plainlinks">[ $1 ענדערונגען]</span> וואָס זענען נישט אנגעצייכנט פֿאַר איבערזעצונג.',
 	'tpt-languages-legend' => 'אנדערע שפראַכן:',
@@ -6818,6 +6897,12 @@ $messages['yi'] = array(
 	'pt-deletepage-current' => 'בלאַט נאָמען:',
 	'pt-deletepage-reason' => 'אורזאַך:',
 	'pt-deletepage-subpages' => 'אויסמעקן אלע אונטערבלעטער',
+	'pt-deletepage-list-translation' => 'איבערזעצונג בלעטער',
+	'pt-deletepage-list-section' => 'אפטיילונג בלעטער',
+	'pt-deletepage-list-other' => 'אנדערע אונטערבלעטער',
+	'pt-deletepage-list-count' => 'אינגאנצן $1 {{PLURAL:$1|בלאט|בלעטער}} אויסצומעקן.',
+	'pt-deletepage-full-logreason' => 'טייל פון איבערזעצבארן בלאט $1.',
+	'pt-deletepage-lang-logreason' => 'טייל פון איבערזעצונג בלאט $1.',
 );
 
 /** Simplified Chinese (‪中文(简体)‬)

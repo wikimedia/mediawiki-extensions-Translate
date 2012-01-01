@@ -2736,6 +2736,7 @@ $messages['yi'] = array(
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
+ * @author Anakmalaysia
  * @author Bencmq
  * @author Hydra
  * @author PhiLiP
@@ -2746,23 +2747,40 @@ $messages['zh-hans'] = array(
 	'translategroupdescriptions-desc' => '消息组说明 [http://mediawiki.org/wiki/Extension:Translate 翻译] 扩展所支持的产品',
 	'translate-group-desc-nodesc' => '没有描述用于此消息组',
 	'translate-group-desc-mediawikicore' => '此界面消息群组包含了当前MediaWiki alpha版本所使用的消息（{{CURRENTVERSION}}）',
+	'translate-group-desc-mediawikiextensions' => '包含[[Translating:MediaWiki|MediaWiki]]支持扩展所有消息的元消息组。',
+	'translate-group-desc-collection' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection]扩展所有消息的元消息组。',
+	'translate-group-desc-flaggedrevs' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]扩展所有消息的元消息组。',
+	'translate-group-desc-readerfeedback' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]扩展所有消息的元消息组。',
+	'translate-group-desc-semantic' => '包含所有[http://semantic-mediawiki.org/ Semantic MediaWiki]扩展所有消息的元消息组。',
+	'translate-group-desc-translate' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]扩展所有消息的元消息组。',
+	'translate-group-desc-wikiaextensions' => '包含[http://www.wikia.com Wikia]专用MediaWiki扩展所有消息的元消息组。',
 	'translate-group-desc-translatablepages' => '所有翻译网页',
 	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] 使人们能够探索欧洲数字文化资源',
 	'bw-desc-freecol' => '在将FreeCol翻译至你的语言之前，请阅读[[Translating:FreeCol]]。Freecol使用GPL许可协议。',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum]，一个用PHP编写的论坛。',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT]是一个免费的基于Web的Bug追踪系统。请在[[Support|支持]]报告问题。',
+	'translate-group-desc-mediawiki-core-branch' => '用于MediaWiki稳定版本的消息。',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]]是一种小额信贷管理信息系统。',
 	'bw-desc-mwlibrl' => "'''mwlib.rl'''是一个使用mwlib库解析的python库，用以将MediaWiki条目转化为PDF文件。
 
 更多信息请见[[mw:Extension:PDF_Writer]]和http://code.pediapress.com/wiki/wiki/mwlibrl。",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] 是一个使用PHP编写的收发邮件客户端。请在[[Support|支持]]报告问题。',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]]是一种离线维基百科阅读器。',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]]是一种开放媒体平台。',
+	'translate-group-desc-openimages-verifyemailtemplate' => '这些消息属于[[Translating:Open Images|Open Images]]电子邮件验证模板',
+	'translate-group-desc-openimages-all' => '这些消息属于[[Translating:Open Images|Open Images]]项目',
 	'bw-desc-openlayers' => 'OpenLayers是一个开源的动态地图生成器。请在[[Support|支持]]报告问题。',
 	'bw-desc-openstreetmap' => '本组包含所有[[Translating:OpenStreetMap|OpenStreetMap]]信息',
 	'bw-desc-osm-site' => '本组包含[[Translating:Open Street Map|Open Street Map]]的界面信息。
 请见[http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} plural keys扩展包的Unicode CLDR页面]。',
+	'bw-desc-osm-potlatch' => '[[Translating:OpenStreetMap|Potlatch]]是一个基于Flash的OpenStreetMap编辑器。',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]]是一个维基百科编辑工具集合。',
 	'bw-desc-shapado' => '本组包含免费开源问答软件[[Translating:Shapado|Shapado]]的信息',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]]是一个开源微博客服务',
+	'translate-group-desc-statusnet-plugin' => '这些消息属于[[Translating:StatusNet|StatusNet]]的插件',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame]可以快速找到某Wikimedia wiki中某页面的作者。',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] 是一个将离线、仅文字版本的维基百科传送到手机上的项目。',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]是一个用于阅读并编辑维基百科的手机、平板跨平台应用程序。',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)

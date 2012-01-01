@@ -905,6 +905,12 @@ Suoritettuasi kaikki askeleet, voit kääntää kaikkien {{GRAMMAR:inessive|{{SI
 	'translate-fs-userpage-submit' => 'Luo käyttäjäsivuni',
 	'translate-fs-userpage-done' => 'Hyvin tehty! Sinulla on nyt käyttäjäsivu.',
 	'translate-fs-permissions-planguage' => 'Ensisijainen kieli',
+	'translate-fs-permissions-help' => 'Nyt sinun pitää esittää pyyntö kääntäjäryhmään lisäämisestä.
+Valitse ensisijainen kieli, jolle aiot kääntää.
+
+Voit mainita muita kieliä ja kirjoittaa muita huomautuksia alla olevaan kenttään.',
+	'translate-fs-permissions-pending' => 'Pyyntösi on lisätty sivulle [[$1]] ja joku sivuston henkilökunnasta tarkistaa sen niin pian kuin mahdollista.
+Jos vahvistat sähköpostiosoitteesi, saat huomautuksen sähköpostin kautta heti, kun se tapahtuu.',
 	'translate-fs-permissions-submit' => 'Lähetä pyyntö',
 	'translate-fs-target-text' => "Onnittelut!
 Voit nyt aloittaa kääntämisen.
@@ -2718,6 +2724,7 @@ Nếu bạn không muốn nhận thư tin tức, bạn có thể bỏ nó ra kh�
  * @author פוילישער
  */
 $messages['yi'] = array(
+	'firststeps' => 'ערשטע טריט',
 	'translate-fs-userpage-title' => 'שאַפֿן אײַער באַניצער בלאַט',
 	'translate-fs-permissions-title' => 'בעטן איבערזעצער אויטאריזאַציע',
 	'translate-fs-target-title' => 'אָנהייבן איבערזעצן!',
@@ -2726,6 +2733,7 @@ $messages['yi'] = array(
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
+ * @author Anakmalaysia
  * @author Chenxiaoqino
  * @author Hydra
  * @author Mark85296341
@@ -2744,8 +2752,19 @@ $messages['zh-hans'] = array(
 	'translate-fs-intro' => "欢迎来到 {{SITENAME}}入门向导。
 你会被指导如何成为一名翻译者。
 最后你将可以翻译{{SITENAME}}里所有项目的''界面消息''.",
+	'translate-fs-selectlanguage' => '选择一种语言',
+	'translate-fs-settings-planguage' => '首选语言：',
+	'translate-fs-settings-slanguage' => '第$1辅助语言：',
+	'translate-fs-settings-submit' => '保存设定',
+	'translate-fs-userpage-level-N' => '我的母语是',
+	'translate-fs-userpage-level-5' => '我能专业地翻译的语言是',
+	'translate-fs-userpage-level-4' => '我熟练像母语者一样流利',
+	'translate-fs-userpage-level-3' => '我熟练不错',
+	'translate-fs-userpage-level-2' => '我熟练平平',
+	'translate-fs-userpage-level-1' => '我知道一点点',
 	'translate-fs-userpage-submit' => '创建我的用户页面',
 	'translate-fs-userpage-done' => '很好！现在你有了一个用户页面。',
+	'translate-fs-permissions-submit' => '发送请求',
 	'translate-fs-target-text' => '恭喜 ！
 您现在可以开始翻译。
 
