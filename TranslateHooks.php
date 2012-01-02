@@ -328,9 +328,9 @@ class TranslateHooks {
 
 		if ( $action === 'group' ) {
 			$languageCode = $params[0];
-			$groupLabel = $params[1];
 			$languageNames = Language::getTranslatedLanguageNames( $languageCode );
 			$languageName = "$languageNames[$languageCode] ($languageCode)";
+			$groupLabel = $params[1];
 			$oldState = $params[2];
 			$newState = $params[3];
 			$oldStateMessage = wfMessage( "translate-workflow-state-$oldState" );
