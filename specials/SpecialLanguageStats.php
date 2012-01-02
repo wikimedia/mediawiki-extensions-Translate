@@ -210,17 +210,17 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * Output something helpful to guide the confused user.
 	 */
 	protected function outputIntroduction() {
-		global $wgOut, $wgLang;
+		global $wgOut, $wgLang, $wgUser;
 
 		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 		$languageName = TranslateUtils::getLanguageName( $this->target, false, $wgLang->getCode() );
 		$rcInLangLink = $linker->link(
-			SpecialPage::getTitleFor( 'Recentchanges' ),
+			SpecialPage::getTitleFor( 'Translate', '!recent' ),
 			wfMsgHtml( 'languagestats-recenttranslations' ),
 			array(),
 			array(
-				'translations' => 'only',
-				'trailer' => "/" . $this->target
+				'task' => $wgUser->isAllowed( 'translate-messagereview' ) ? 'acceptqueue' : 'reviewall',
+				'language' => $this->target
 			)
 		);
 
