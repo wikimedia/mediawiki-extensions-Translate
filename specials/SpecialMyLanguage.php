@@ -24,25 +24,49 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 
 	/// Only takes arguments from $par
 	public function execute( $par ) {
-		global $wgOut, $wgLang;
+		global $wgOut;
 
-		$title = null;
-		if ( strval( $par ) !== '' ) {
-			$title = Title::newFromText( $par );
-			if ( $title && $title->exists() && $wgLang->getCode() !== 'en' ) {
-				$local = Title::newFromText( "$par/" . $wgLang->getCode() );
-				if ( $local && $local->exists() ) {
-					$title = $local;
-				}
-			}
-		}
-
+		$title = $this->findTitle( $par );
 		// Go to the main page if given invalid title.
 		if ( !$title ) {
 			$title = Title::newMainPage();
 		}
 
 		$wgOut->redirect( $title->getLocalURL() );
+	}
+
+	/**
+	 * Assuming the user's interface language is fi
+	 * Given input Page, it returns Page/fi if it exists, otherwise Page
+	 * Given input Page/de, it returns Page/fi if it exists, otherwise Page/de if it exists, otherwise Page
+	 * @return Title|null
+	 */
+	protected function findTitle( $par ) {
+		global $wgLang, $wgLanguageCode;
+		// base = title without language code suffix
+		// provided = the title as it was given
+		$base = $provided = Title::newFromText( $par );
+
+		if ( strpos( $par, '/' ) !== false ) {
+			$pos = strrpos( $par, '/' );
+			$basepage = substr( $par, 0, $pos );
+			$code = substr( $par, $pos+1 );
+			$codes = Language::getLanguageNames( false );
+			if ( isset( $codes[$code] ) ) {
+				$base = Title::newFromText( $basepage );
+			}
+		}
+
+		$uiCode = $wgLang->getCode();
+		$proposed = Title::newFromText( $base->getPrefixedText() . "/$uiCode" );
+		if ( $uiCode !== $wgLanguageCode && $proposed && $proposed->exists() ) {
+			return $proposed;
+		} elseif( $provided && $provided->exists() ) {
+			return $provided;
+		} else {
+			return $base;
+		}
+
 	}
 
 	/**
