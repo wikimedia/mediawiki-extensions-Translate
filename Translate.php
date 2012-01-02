@@ -162,6 +162,7 @@ $resourcePaths = array(
 // Client-side resource modules
 $wgResourceModules['ext.translate'] = array(
 	'styles' => 'resources/ext.translate.css',
+	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.messagetable'] = array(

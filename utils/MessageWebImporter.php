@@ -105,9 +105,6 @@ class MessageWebImporter {
 	 * @return string
 	 */
 	protected function doHeader() {
-		global $wgOut;
-		$wgOut->addModules( 'ext.translate' );
-
 		$formParams = array(
 			'method' => 'post',
 			'action' => $this->getAction(),
