@@ -122,7 +122,7 @@ foreach ( $groups as $groupId => $group ) {
 			}
 
 			list( $total, $translated, ) = $stats[$code];
-			if ( $translate/$total < $threshold ) {
+			if ( $translated/$total*100 < $threshold ) {
 				unset( $langs[$index] );
 			}
 		}
