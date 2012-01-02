@@ -113,15 +113,19 @@ foreach ( $groups as $groupId => $group ) {
 
 	STDERR( 'Exporting ' . $groupId );
 
+	$langs = $reqLangs;
 	if ( $threshold ) {
-		$langs = TranslationStats::getPercentageTranslated(
-			$groupId,
-			$reqLangs,
-			$threshold,
-			true
-		);
-	} else {
-		$langs = $reqLangs;
+		$stats = MessageGroupStats::forGroup( $groupId );
+		foreach ( $langs as $index => $code ) {
+			if ( !isset( $stats[$code] ) ) {
+				unset( $langs[$index] );
+			}
+
+			list( $total, $translated, ) = $stats[$code];
+			if ( $translate/$total < $threshold ) {
+				unset( $langs[$index] );
+			}
+		}
 	}
 
 	if ( $group instanceof FileBasedMessageGroup ) {
