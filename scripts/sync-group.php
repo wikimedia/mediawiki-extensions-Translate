@@ -363,27 +363,6 @@ class ChangeSyncer {
 	}
 
 	/**
-	 * Initialises FuzzyBot if necessary.
-	 * @return \type{User}
-	 */
-	public function getImportUser() {
-		static $user = null;
-
-		if ( $user === null ) {
-			global $wgTranslateFuzzyBotName;
-
-			$user = User::newFromName( $wgTranslateFuzzyBotName );
-
-			if ( !$user->isLoggedIn() ) {
-				STDOUT( "Creating user $wgTranslateFuzzyBotName" );
-				$user->addToDatabase();
-			}
-		}
-
-		return $user;
-	}
-
-	/**
 	 * Does the actual edit.
 	 * @param $title Title
 	 * @param $translation \string
@@ -393,7 +372,7 @@ class ChangeSyncer {
 		global $wgUser;
 
 		$old = $wgUser;
-		$wgUser = $this->getImportUser();
+		$wgUser = FuzzyBot::getUser();
 
 		$flags = EDIT_FORCE_BOT;
 		if ( $this->norc ) {

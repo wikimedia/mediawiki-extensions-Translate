@@ -25,10 +25,8 @@ class DeleteJob extends Job {
 	 * @return DeleteJob
 	 */
 	public static function newJob( Title $target, $base, $full, /*User*/ $performer ) {
-		global $wgTranslateFuzzyBotName;
-
 		$job = new self( $target );
-		$job->setUser( $wgTranslateFuzzyBotName );
+		$job->setUser( FuzzyBot::getUser() );
 		$job->setFull( $full );
 		$job->setBase( $base );
 		$msg = $job->getFull() ? 'pt-deletepage-full-logreason' : 'pt-deletepage-lang-logreason';

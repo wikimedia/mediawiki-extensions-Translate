@@ -147,26 +147,6 @@ class FuzzyBot {
 	}
 
 	/**
-	 * Create FuzzyBot user if necessary.
-	 * @return \type{User}
-	 */
-	public function getImportUser() {
-		static $user = null;
-
-		if ( $user === null ) {
-			global $wgTranslateFuzzyBotName;
-			$user = User::newFromName( $wgTranslateFuzzyBotName );
-
-			if ( !$user->isLoggedIn() ) {
-				STDOUT( "Creating user $wgTranslateFuzzyBotName" );
-				$user->addToDatabase();
-			}
-		}
-
-		return $user;
-	}
-
-	/**
 	 * Does the actual edit if possible.
 	 * @param $title \type{Title}
 	 * @param $text \string
@@ -177,7 +157,7 @@ class FuzzyBot {
 		global $wgTranslateDocumentationLanguageCode, $wgUser;
 
 		$oldUser = $wgUser;
-		$wgUser = $this->getImportUser();
+		$wgUser = FuzzyBot::getUser();
 
 		STDOUT( "Updating {$title->getPrefixedText()}... ", $title );
 		if ( !$title instanceof Title ) {

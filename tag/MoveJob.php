@@ -23,10 +23,8 @@ class MoveJob extends Job {
 	 * @return MoveJob
 	 */
 	public static function newJob( Title $source, Title $target, array $params, /*User*/ $performer ) {
-		global $wgTranslateFuzzyBotName;
-
 		$job = new self( $source );
-		$job->setUser( $wgTranslateFuzzyBotName );
+		$job->setUser( FuzzyBot::getUser() );
 		$job->setTarget( $target->getPrefixedText() );
 		$job->setSummary( wfMsgForContent( 'pt-movepage-logreason', $params['base-source'] ) );
 		$job->setParams( $params );

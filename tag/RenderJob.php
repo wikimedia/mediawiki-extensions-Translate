@@ -20,10 +20,8 @@ class RenderJob extends Job {
 	 * @return RenderJob
 	 */
 	public static function newJob( Title $target ) {
-		global $wgTranslateFuzzyBotName;
-
 		$job = new self( $target );
-		$job->setUser( $wgTranslateFuzzyBotName );
+		$job->setUser( FuzzyBot::getUser() );
 		$job->setFlags( EDIT_FORCE_BOT );
 		$job->setSummary( wfMsgForContent( 'tpt-render-summary' ) );
 
@@ -62,7 +60,7 @@ class RenderJob extends Job {
 
 		$article = new Article( $title, 0 );
 
-		// @todo Fuzzybot hack
+		// @todo FuzzyBot hack
 		PageTranslationHooks::$allowTargetEdit = true;
 
 		// Do the edit

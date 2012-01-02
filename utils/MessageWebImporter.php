@@ -434,7 +434,7 @@ class MessageWebImporter {
 
 		// Edit with fuzzybot if there is no user.
 		if ( !$user ) {
-			$user = self::getFuzzyBot();
+			$user = FuzzyBot::getUser();
 		}
 
 		// Process all rows.
@@ -471,21 +471,6 @@ class MessageWebImporter {
 		}
 
 		return array( 'translate-manage-import-fuzzy', "\n" . $text );
-	}
-
-	/**
-	 * @return User
-	 */
-	public static function getFuzzyBot() {
-		global $wgTranslateFuzzyBotName;
-
-		$user = User::newFromName( $wgTranslateFuzzyBotName );
-
-		if ( !$user->isLoggedIn() ) {
-			$user->addToDatabase();
-		}
-
-		return $user;
 	}
 
 	/**
