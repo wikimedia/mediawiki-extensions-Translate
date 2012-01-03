@@ -497,7 +497,7 @@ $messages['da'] = array(
 	'translate-fs-target-title' => 'Start med at oversætte!',
 	'translate-fs-email-title' => 'Bekræft din e-mail-adresse',
 	'translate-fs-intro' => "Velkommen til {{SITENAME}} kom godt i gang guide.
-Du vil blive guidet igennem processen med til at blive en oversætter trin for trin. 
+Du vil blive guidet igennem processen med til at blive en oversætter trin for trin.
 I sidste ende vil du være i stand til at oversætte ''brugerflade beskeder'' hos alle støttede projekter på {{SITENAME}}.",
 	'translate-fs-selectlanguage' => 'Vælg et sprog',
 	'translate-fs-settings-planguage' => 'Primært sprog:',
@@ -523,7 +523,7 @@ Du kan nævne andre sprog eller tilføje andre bemærkninger i tekstfeltet neden
 	'translate-fs-permissions-pending' => 'Din anmodning er blevet sendt til [[$1]], og en af hjemmesidens ansatte vil tjekke den snarest muligt.
 Hvis du bekræfter din email-adresse, vil du modtage en notits per email, så snart det sker.',
 	'translate-fs-permissions-submit' => 'Send anmodning',
-	'translate-fs-target-text' => 'Tillykke! 
+	'translate-fs-target-text' => 'Tillykke!
 Du kan nu begynde at oversætte.
 
 Vær ikke bange, hvis det stadig føles nyt og forvirrende for dig.
@@ -714,26 +714,26 @@ $messages['eo'] = array(
 	'translate-fs-target-title' => 'Ek traduku!',
 	'translate-fs-email-title' => 'Konfirmu vian retpoŝtan adreson',
 	'translate-fs-intro' => "Bonvenon en la ekuz-asistilo de {{SITENAME}}.
-Vi estos gvidata tra la proceso por fariĝi tradukisto pason post paŝo. 
+Vi estos gvidata tra la proceso por fariĝi tradukisto pason post paŝo.
 Fine vi kapablos traduki ''interfacajn mesaĝojn'' de ĉiuj eltenitaj projektoj je {{SITENAME}}.",
 	'translate-fs-userpage-submit' => 'Krei mian uzantopaĝon.',
 	'translate-fs-userpage-done' => 'Bone! Vi nun havas uzantopaĝon.',
 	'translate-fs-target-text' => "Gratulojn  !
-Vi povas nun ektraduki.  
+Vi povas nun ektraduki.
 
-Ne maltrankviliĝu se vi trovas tion iom nova kaj stranga. 
-Sur la [[Project list|projektolisto]] troviĝas superrigardo de la projektojn al kies traduko vi povas helpi. 
+Ne maltrankviliĝu se vi trovas tion iom nova kaj stranga.
+Sur la [[Project list|projektolisto]] troviĝas superrigardo de la projektojn al kies traduko vi povas helpi.
 
-Plej multaj el tiuj projektoj enhavas paĝon entenantan  mallongan priskribon kaj ligilon « ''Traduki ĉi tiun projekton'' » kiu gvidos vin al paĝo listiganta ĉiuj netradukitajn mesaĝojn. Havebla estas listo de ĉiuj mesaĝgrupoj kun la [[Special:LanguageStats|nuna tradukostato por difinita lingvo]].  
+Plej multaj el tiuj projektoj enhavas paĝon entenantan  mallongan priskribon kaj ligilon « ''Traduki ĉi tiun projekton'' » kiu gvidos vin al paĝo listiganta ĉiuj netradukitajn mesaĝojn. Havebla estas listo de ĉiuj mesaĝgrupoj kun la [[Special:LanguageStats|nuna tradukostato por difinita lingvo]].
 
-Se vi sentas ke vi bezonas pli da informoj antaŭ ektraduki, vi povas legi al [[FAQ|Plej oftajn demandojn]]. Bedaŭrinde la dokumentado povas esti eksdata. Se vi opinias ke vi povus fari ion, ne trovante kiel fari, ne hezitu fari demandojn en la [[Support|helppaĝo]]. 
+Se vi sentas ke vi bezonas pli da informoj antaŭ ektraduki, vi povas legi al [[FAQ|Plej oftajn demandojn]]. Bedaŭrinde la dokumentado povas esti eksdata. Se vi opinias ke vi povus fari ion, ne trovante kiel fari, ne hezitu fari demandojn en la [[Support|helppaĝo]].
 
 Vi ankaŭ povas kontakti la aliajn tradukantojn de la sama lingvo sur [[Portal_talk:$1|diskutpaĝo]] de [[Portal:$1|via propra lingvo]].
 Se vi ne jam faris tion,  [[Special:Preferences|agordu la interfacan lingvon]] por ke ĝi estu tiu en kiun vi estas tradukonta. Tiel la ligiloj kiujn proponas la vikio estos plej adaptitaj al via situacio.",
-	'translate-fs-email-text' => 'Bonvolu enigi vian retpoŝtadreson en  [[Special:Preferences|viaj preferoj]] kaj konfirmi ĝin per la mesaĝo kiun vi ricevos. 
+	'translate-fs-email-text' => 'Bonvolu enigi vian retpoŝtadreson en  [[Special:Preferences|viaj preferoj]] kaj konfirmi ĝin per la mesaĝo kiun vi ricevos.
 
-Tio ebligos al la aliaj uzantoj kontakti vin per retpoŝto. 
-Vi ankaŭ ricevos informleteron maksimume unu fojon en la monato. 
+Tio ebligos al la aliaj uzantoj kontakti vin per retpoŝto.
+Vi ankaŭ ricevos informleteron maksimume unu fojon en la monato.
 Se vi ne deziras ricevi ĝin, vi povas malaktivigi en la langeto  « {{int:prefs-personal}} »  de  [[Special:Preferences|viaj preferoj]].',
 );
 
@@ -927,10 +927,10 @@ Jos et keksi, miten joku tarvitsemasi asia tehdään, älä epäröi pyytää ap
 Voit myös ottaa yhteyttä muihin saman kielen kääntäjiin [[Portal:$1|oman kielesi portaalin]] [[Portal_talk:$1|keskustelusivulla]].
 Valikon portaalilinkki osoittaa [[Special:Preferences|valitsemasi kielen]] portaaliin.
 Jos valitsemasi kieli on väärä, muuta se.",
-	'translate-fs-email-text' => 'Anna sähköpostiosoitteesi [[Special:Preferences|asetuksissasi]] ja vahvista se sähköpostiviestistä, joka lähetetään sinulle. 
+	'translate-fs-email-text' => 'Anna sähköpostiosoitteesi [[Special:Preferences|asetuksissasi]] ja vahvista se sähköpostiviestistä, joka lähetetään sinulle.
 
-Tämä mahdollistaa muiden käyttäjien ottaa sinuun yhteyttä sähköpostitse. 
-Saat myös uutiskirjeen korkeintaan kerran kuukaudessa. 
+Tämä mahdollistaa muiden käyttäjien ottaa sinuun yhteyttä sähköpostitse.
+Saat myös uutiskirjeen korkeintaan kerran kuukaudessa.
 Jos et halua vastaanottaa uutiskirjeitä, voit valita sen pois välilehdellä "{{int:prefs-personal}}" omat [[Special:Preferences|asetukset]].',
 );
 
@@ -1911,7 +1911,7 @@ $messages['mr'] = array(
 	'translate-fs-permissions-title' => 'भाषांतरास परवानगी मिळण्यासाठी विनंती करा. (भाषांतर करणार्या व्यक्तीस )',
 	'translate-fs-target-title' => 'भाषांतरास सुरुवात करा!',
 	'translate-fs-email-title' => 'आपला इमेल पत्ता पडताळून पहा.',
-	'translate-fs-intro' => '{{साइटचे नाव}} साइटवर तुमचे स्वागत आहे पहिली पायरी 
+	'translate-fs-intro' => '{{साइटचे नाव}} साइटवर तुमचे स्वागत आहे पहिली पायरी
 योग्य भाषांतकार होण्याच्या प्रक्रियेद्वारे तुम्हाला क्रमा-क्रमाने मार्गदर्शन केले जाईल.
 शेवटी तुम्ही ह्या साईटवर  {{साइटचे नाव}} उपलब्ध  असलेल्या सर्व प्रकल्प ईंटरफेस संदेशांचे भाषांतर करण्यास लायकवान बनाल.',
 	'translate-fs-selectlanguage' => '(योग्य) भाषा निवडा.',
@@ -2572,7 +2572,7 @@ $messages['tl'] = array(
 	'translate-fs-permissions-title' => 'Humiling ng mga pahintulot na pangtagapagsalinwika',
 	'translate-fs-target-title' => 'Magsimulang magsalinwika!',
 	'translate-fs-email-title' => 'Tiyakin ang tirahan mo ng e-liham',
-	'translate-fs-intro' => "Maligayang pagdating sa masalamangkang unang mga hakbang ng {{SITENAME}}. 
+	'translate-fs-intro' => "Maligayang pagdating sa masalamangkang unang mga hakbang ng {{SITENAME}}.
 Hakbang-hakbang na gagabayan ka sa proseso ng pagiging isang tagapagsalinwika.
 Sa huli, makakapagsalinwika ka ng ''mga mensahe ng ugnayang-mukha'' ng lahat ng tinatangkilik na mga proyekto sa {{SITENAME}}.",
 	'translate-fs-userpage-submit' => 'Likhain ang aking pahina ng tagagamit',

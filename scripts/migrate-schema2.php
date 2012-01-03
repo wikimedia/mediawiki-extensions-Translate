@@ -49,7 +49,7 @@ class TSchema2 extends Maintenance {
 		$dbw->query( "ALTER TABLE $table MODIFY rt_type varbinary(60) not null", __METHOD__ );
 
 		$res = $dbw->select(
-			'revtag_type', 
+			'revtag_type',
 			array( 'rtt_id', 'rtt_name' ),
 			array(),
 			__METHOD__

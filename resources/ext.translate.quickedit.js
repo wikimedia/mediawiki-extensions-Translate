@@ -22,7 +22,7 @@
 	"use strict";
 	var dialogwidth = false,
 	    translate;
-	
+
 	function MessageCheckUpdater( callback ) {
 		this.act = function() {
 			callback();
@@ -78,7 +78,7 @@
 		if ( $.isFunction( $identical.makeCollapsible ) ) {
 			$identical.makeCollapsible();
 		}
-		
+
 		if ( mw.config.get( 'trlKeys' ) ) {
 			form.find( '.mw-translate-next' ).click( function() {
 				mw.translate.openNext( page, group );
@@ -99,7 +99,7 @@
 			window.open( mw.config.get( 'wgServer' ) + mw.config.get( 'wgScript' ) + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
 			return false;
 		} );
-		
+
 		form.find( '.mw-translate-support, .mw-translate-askpermission' ).click( function() {
 			// Can use .data() only with 1.4.3 or newer
 			window.open( $(this).attr( 'data-load-url' ) );
@@ -109,7 +109,7 @@
 		form.find( 'input#summary' ).focus( function() {
 			$(this).css( 'width', '85%' );
 		} );
-		
+
 		var textarea = form.find( '.mw-translate-edit-area' );
 		textarea.css( 'display', 'block' );
 		textarea.autoResize( {extraSpace: 15, limit: 200} ).trigger( 'change' );
@@ -127,7 +127,7 @@
 			textarea.keyup( function() { checker.setup(); } );
 		}
 	}
-	
+
 	translate = {
 		init: function() {
 			dialogwidth = parseInt( windowWidth()*0.8, 10 );
@@ -191,7 +191,7 @@
 		openNext: function( title, group ) {
 			var messages = mw.config.get( 'trlKeys' );
 			var found = false, key, value;
-			
+
 			for ( key in messages ) {
 				if ( !messages.hasOwnProperty( key ) ) {
 					continue;
@@ -208,7 +208,7 @@
 			return;
 		}
 	};
-	
+
 	mw.translate = translate;
 	$( document ).ready( translate.init );
 

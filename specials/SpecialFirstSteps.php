@@ -100,7 +100,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		{
 			$this->user->setOption( 'language', $wgRequest->getVal( 'primary-language' ) );
 			$this->user->setOption( 'translate-firststeps', '1' );
-			
+
 			$assistant = array();
 			for ( $i = 0; $i < 10; $i++ ) {
 				$language = $wgRequest->getText( "assistant-language-$i", '-' );
@@ -155,7 +155,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$selector->addOptions( $languages );
 
 		$num = max( 2, count( $helpers ) );
-		for( $i = 0; $i < $num; $i++ ) {
+		for ( $i = 0; $i < $num; $i++ ) {
 			$id = $name = "assistant-language-$i";
 			$text = wfMessage( 'translate-fs-settings-slanguage' )->numParams( $i + 1 )->text();
 			$selector->setDefault( isset( $helpers[$i] ) ? $helpers[$i] : false );
@@ -296,7 +296,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			if ( $i === 0 ) {
 				$skill->setDefault( '2' );
 				$selector->setDefault( 'en' );
-			} elseif( $i === 1 && $wgLang->getCode() !== 'en' ) {
+			} elseif ( $i === 1 && $wgLang->getCode() !== 'en' ) {
 				$skill->setDefault( 'N' );
 				$selector->setDefault( $wgLang->getCode() );
 			} else {
@@ -365,7 +365,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-done' ) );
 			$this->out->addHtml( $header );
 			return $step;
-		} elseif( $page ) {
+		} elseif ( $page ) {
 			$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-pending' ) );
 			$this->out->addHtml( $header->style( 'opacity', false ) );
 			$this->out->addWikiMsg( 'translate-fs-permissions-pending', $page );

@@ -5,7 +5,7 @@ jQuery( function( $ ) {
 			return mw.config.get( 'wgScriptPath' ) + '/' + ( str || 'index' ) + mw.config.get( 'wgScriptExtension' );
 		}
 	}
-	
+
 	$(".mw-translate-import-inputs").change( function() {
 		var id = $(this).attr( "id" ).replace( /-input/, "" );
 		$( "input[name=upload-type]:checked" ).attr( "checked", false );
@@ -19,7 +19,7 @@ jQuery( function( $ ) {
 			var success = function( res ) {
 				response( res[1] );
 			};
-			
+
 			$.get( api, data, success );
 		}
 	} );

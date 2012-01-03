@@ -1,18 +1,18 @@
 jQuery( function( $ ) {
 	"use strict";
 	var mw = mediaWiki;
-	
+
 	// BC for MW < 1.18
 	if ( !mw.util.wikiScript ) {
 		mw.util.wikiScript = function( str ) {
 			return mw.config.get( 'wgScriptPath' ) + '/' + ( str || 'index' ) + mw.config.get( 'wgScriptExtension' );
 		};
 	}
-	
+
 	var $submit = $( "input#mw-translate-workflowset" );
 	var $select = $( "#mw-sp-translate-workflow select" );
 	$select.find( "option[value=]" ).attr( "disabled", "disabled" );
-		
+
 	var submitFunction = function( event ) {
 		var successFunction = function( data, textStatus ) {
 			if ( data.error ) {
@@ -25,7 +25,7 @@ jQuery( function( $ ) {
 				$select.find( "option[value=" + event.data.newstate +"]" ).attr( "selected", "selected" );
 			}
 		};
-		
+
 		$submit.attr( "disabled", "disable" );
 		$submit.val( mw.msg( "translate-workflow-set-doing" ) );
 		var params = {
@@ -38,11 +38,11 @@ jQuery( function( $ ) {
 		};
 		$.post( mw.util.wikiScript( "api" ), params, successFunction );
 	};
-	
+
 	$select.change( function( event ) {
 		var current = $(this).find( "option[selected]" ).val();
 		var tobe = event.target.value;
-		
+
 		$submit.val( mw.msg( "translate-workflow-set-do" ) );
 		$submit.unbind( "click" );
 		if ( current !== tobe ) {

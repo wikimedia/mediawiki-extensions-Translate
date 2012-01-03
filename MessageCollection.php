@@ -499,7 +499,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		 * reviewer (among others) */
 		$user = intval( $user );
 		foreach ( $this->dbReviewData as $row ) {
-			if ( intval($row->trr_user) === $user ) {
+			if ( intval( $row->trr_user ) === $user ) {
 				unset( $keys[$this->rowToKey( $row )] );
 			}
 		}
@@ -524,7 +524,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		$user = intval( $user );
 		foreach ( $this->dbData as $row ) {
-			if ( intval($row->rev_user) === $user ) {
+			if ( intval( $row->rev_user ) === $user ) {
 				unset( $keys[$this->rowToKey( $row )] );
 			}
 		}

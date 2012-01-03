@@ -48,7 +48,6 @@ class MessageHandle {
 			} else {
 				$this->code = substr( $text, $pos + 1 );
 				$this->key = substr( $text, 0, $pos );
-				
 			}
 		}
 		return array( $this->key, $this->code );

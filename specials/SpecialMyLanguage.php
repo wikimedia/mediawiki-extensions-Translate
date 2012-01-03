@@ -50,7 +50,7 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 		if ( strpos( $par, '/' ) !== false ) {
 			$pos = strrpos( $par, '/' );
 			$basepage = substr( $par, 0, $pos );
-			$code = substr( $par, $pos+1 );
+			$code = substr( $par, $pos + 1 );
 			$codes = Language::getLanguageNames( false );
 			if ( isset( $codes[$code] ) ) {
 				$base = Title::newFromText( $basepage );
@@ -61,12 +61,11 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 		$proposed = Title::newFromText( $base->getPrefixedText() . "/$uiCode" );
 		if ( $uiCode !== $wgLanguageCode && $proposed && $proposed->exists() ) {
 			return $proposed;
-		} elseif( $provided && $provided->exists() ) {
+		} elseif ( $provided && $provided->exists() ) {
 			return $provided;
 		} else {
 			return $base;
 		}
-
 	}
 
 	/**

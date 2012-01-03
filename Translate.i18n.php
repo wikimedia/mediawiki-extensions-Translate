@@ -904,7 +904,7 @@ Alle waardes het hoër en laer limiete.',
 	'translate-untranslated' => 'Onvertaal',
 	'translate-percentage-complete' => 'Vertaal',
 	'translate-percentage-fuzzy' => 'Verouderd',
-	'translate-nothing-to-do' => 'Dit lyk of alle moontlike vertalings gemaak is. 
+	'translate-nothing-to-do' => 'Dit lyk of alle moontlike vertalings gemaak is.
 U word aangemoedig om vertalings via [[Special:Translate|{{int:translate}}]] te kontroleer.',
 	'translate-ls-submit' => 'Wys statistieke',
 	'translate-ls-column-group' => 'Boodskapgroep',
@@ -939,8 +939,8 @@ U word aangemoedig om vertalings via [[Special:Translate|{{int:translate}}]] te 
 	'translate-manage-submit' => 'Voer uit',
 	'translate-manage-nochanges' => 'Daar is geen veranderinge in die boodskapdefinisies vir hierdie groep nie.',
 	'translate-manage-nochanges-other' => 'Daar was geen wysigings vir die taal nie. Gebruik die onderstaande skakel om terug te keer na die groep se detail besonderhede.',
-	'translate-manage-inconsistent' => "'n Teenstrydigheid is in die versoek bespeur. 
-Kontroleer die veranderinge en probeer weer. 
+	'translate-manage-inconsistent' => "'n Teenstrydigheid is in die versoek bespeur.
+Kontroleer die veranderinge en probeer weer.
 Besonderhede: $1.",
 	'translate-manage-toolong' => 'Die maksimum verwerkingstyd van $1 {{PLURAL:$1|sekonde|sekondes}} is oorskry.
 Dien die opdrag asseblief weer in.',
@@ -2495,11 +2495,11 @@ $messages['ba'] = array(
 	'translate-manage-import-fuzzy' => 'Индереү һәм хата: $1',
 	'translate-manage-import-done' => 'Барыһы ла үтәлде!',
 	'translate-manage-import-rebuild' => 'Кэшты яңынан яһау.',
-	'translate-manage-intro-en' => 'Түбәндә — был төркөмдәге яҙмаларҙы үҙгәртеү исемлеге. 
+	'translate-manage-intro-en' => 'Түбәндә — был төркөмдәге яҙмаларҙы үҙгәртеү исемлеге.
 Һәр яҙма өсөн үҙгәрештәрҙе тикшерегеҙ һәм был яҙма менән ни эшләргә теләгәнегеҙҙе һайлағыҙ, зинһар.
 Яҙмаларҙың билдәләмәһе яңырғас, әгәр булһа, башҡа телдәрҙәге тышҡы үҙгәрештәрҙе тикшерегеҙ.
 Шулай уҡ <code>иғтибарға алмаҫҡа</code> эше исемлектә ваҡытлыса тороуын иҫәпкә алығыҙ.',
-	'translate-manage-intro-other' => 'Түбәндә — $1 теленә тәржемә үҙгәрештәре исемлеге. 
+	'translate-manage-intro-other' => 'Түбәндә — $1 теленә тәржемә үҙгәрештәре исемлеге.
 Һәр тәржемә өсөн үҙгәрештәрҙе тикшерегеҙ һәм был тәржемә менән ни эшләргә теләгәнегеҙҙе һайлағыҙ, зинһар.
 Әгәр һеҙ үҙгәрештәрҙе иғтибарһыҙ ҡалдырһағыҙ, улар икенсе сығарыуға күсереләсәк.',
 	'translate-manage-subtitle' => 'Идара итеү',
@@ -4456,7 +4456,7 @@ $messages['da'] = array(
 	'translate' => 'Oversæt',
 	'translate-desc' => '[[Special:Translate|Specialside]] til oversættelse af MediaWiki og andet',
 	'translate-showsub' => 'Vis {{PLURAL:$1|undergruppen|de $1 undergrupper}}.',
-	'translate-grouplisting' => 'Dette er listen over alle oversætbare grupper. 
+	'translate-grouplisting' => 'Dette er listen over alle oversætbare grupper.
 Klik på meddelelsen gruppens navn for at se en liste over uoversatte beskeder.',
 	'translate-grouplisting-empty' => 'Ingen beskedgrupper er blevet sat op til oversættelse.',
 	'translate-task-view' => 'Se alle beskeder fra',
@@ -5262,7 +5262,7 @@ Klikni na mě kupki powěźeńkow, aby se woglědał lisćinu njepśełožonych 
 	'translate-prev' => 'Slědny bok',
 	'translate-page-description-legend' => 'Informacije wó kupce',
 	'translate-page-description-hasoptional' => 'Toś ta zdźěleńska kupka wopśimujo opcionalne powěźeńki.
-Opcionalne powěźeńki by měli se jano pśełožowaś, jolic twója rěc ma wósebnu pótrjebu za nje, 
+Opcionalne powěźeńki by měli se jano pśełožowaś, jolic twója rěc ma wósebnu pótrjebu za nje,
 kaž na pśikład njewužywanje proznych znamuškow abo transliteraciju swójskich mjenjow. $1',
 	'translate-page-description-hasoptional-open' => 'Opcionalne powěźeńki pokazaś.',
 	'translate-page-edit' => 'wobźěłaś',
@@ -5959,8 +5959,8 @@ Vi devas esti en la grupo de tradukantoj por konservi ŝanĝojn.
 	'translate-pref-nonewsletter' => 'Ne sendi al mi retpoŝtajn gazetojn',
 	'translate-pref-editassistlang' => 'Helpaj lingvoj:',
 	'prefs-translate' => 'Tradukaj agordoj',
-	'translate-pref-editassistlang-help' => 'Listo da lingvokodoj disigitaj de komoj. 
-Traduko de mesaĝo en ĉi tiuj lingvoj estas montritaj kiam vi estas tradukanta. 
+	'translate-pref-editassistlang-help' => 'Listo da lingvokodoj disigitaj de komoj.
+Traduko de mesaĝo en ĉi tiuj lingvoj estas montritaj kiam vi estas tradukanta.
 La defaŭlta lingvolisto dependas de via lingvo.',
 	'translate-pref-editassistlang-bad' => 'Malvalida lingva kodo en la listo:
 <nowiki>$1</nowiki>.',
@@ -6029,7 +6029,7 @@ La defaŭlta lingvolisto dependas de via lingvo.',
 	'translate-untranslated' => 'Netradukita',
 	'translate-percentage-complete' => 'Kompletigo',
 	'translate-percentage-fuzzy' => 'Malfreŝdata',
-	'translate-nothing-to-do' => 'Ĉiuj eblaj tradukoj ŝajne estas jam faritaj. 
+	'translate-nothing-to-do' => 'Ĉiuj eblaj tradukoj ŝajne estas jam faritaj.
 Vi estas instigita por revizii mesaĝojn tra [[Special:Translate|{{int:translate}}]]',
 	'translate-languagestats-overall' => 'Ĉiuj mesaĝgrupoj kune',
 	'translate-ls-submit' => 'Montri statistikojn',
@@ -6046,8 +6046,8 @@ Vi estas instigita por revizii mesaĝojn tra [[Special:Translate|{{int:translate
 	'translate-mgs-nothing' => 'Nenio estas montrebla por la petitaj statistikoj',
 	'supportedlanguages' => 'Eltenitaj lingvoj',
 	'supportedlanguages-summary' => 'Ĉi tiu paĝo montras liston de ĉiuj lingvoj eltenitaj de {{SITENAME}},
-kune kun la nomoj de tradukistoj laborantaj pri tiu lihngvo. 
-Ju pli multe kontribuis iu tradukisto, des pli granda aperas ties nomo. 
+kune kun la nomoj de tradukistoj laborantaj pri tiu lihngvo.
+Ju pli multe kontribuis iu tradukisto, des pli granda aperas ties nomo.
 La koloro de substreko indikas kiom da tempo pasis de kiam tradukisto esti laste aktiva ĉi tie.',
 	'supportedlanguages-colorlegend' => 'Kolorpriskribo: lasta traduko antaŭ $1 tagoj.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tradukisto|Tradukistoj}}: $1',
@@ -6075,12 +6075,12 @@ La koloro de substreko indikas kiom da tempo pasis de kiam tradukisto esti laste
 	'translate-manage-action-fuzzy' => 'Importi tradukojn kaj marki kiel neprecizajn',
 	'translate-manage-submit' => 'Ekfunkcii',
 	'translate-manage-nochanges' => 'Ne estas ŝanĝoj en la difino de la mesaĝoj por ĉi tiu grupo.',
-	'translate-manage-nochanges-other' => 'Ne estas ŝanĝoj por ĉi tiu lingvo. 
+	'translate-manage-nochanges-other' => 'Ne estas ŝanĝoj por ĉi tiu lingvo.
 Uzu la suban ligilon por reiri al la detala vido de la grupo.',
-	'translate-manage-inconsistent' => 'Malkoheraĵo estas trovita en ĉi tiu peto. 
-Bonvolu kontroli ŝanĝojn kaj provu denove. 
+	'translate-manage-inconsistent' => 'Malkoheraĵo estas trovita en ĉi tiu peto.
+Bonvolu kontroli ŝanĝojn kaj provu denove.
 Detaloj : $1.',
-	'translate-manage-toolong' => 'La maksimuma procesdaŭro ($1 {{PLURAL:$1|sekundo|sekundoj}}) pasis. 
+	'translate-manage-toolong' => 'La maksimuma procesdaŭro ($1 {{PLURAL:$1|sekundo|sekundoj}}) pasis.
 Bonvolu resendi la formularon por plu procesigi.',
 	'translate-manage-import-ok' => 'Importita nova versio de paĝo $1.',
 	'translate-manage-import-noks' => 'Malsukcesis la importado de nova versio de paĝo $1: $2',
@@ -6092,12 +6092,12 @@ Bonvolu kontroli.',
 	'translate-manage-import-fuzzy' => 'Importante kaj markante kiel nepreciza: $1',
 	'translate-manage-import-done' => 'Finite!',
 	'translate-manage-import-rebuild' => 'Refreŝas kaŝmemoro.',
-	'translate-manage-intro-en' => 'Sube estas listo de mesaĝŝanĝoj en ĉi tiu grupo. 
-Bonvolu revizii la ŝanĝojn kaj elektu kion vi volas fari kun ĉiu mesaĝo. 
-Kiam vi estas ĝisdatiginta la mesaĝdifinojn, kontrolu ĉu estas eksteraj ŝanĝoj en aliaj lingvoj, se estas. 
+	'translate-manage-intro-en' => 'Sube estas listo de mesaĝŝanĝoj en ĉi tiu grupo.
+Bonvolu revizii la ŝanĝojn kaj elektu kion vi volas fari kun ĉiu mesaĝo.
+Kiam vi estas ĝisdatiginta la mesaĝdifinojn, kontrolu ĉu estas eksteraj ŝanĝoj en aliaj lingvoj, se estas.
 Notu ankaŭ ke la ago <code>ignori</code>  estas nur portempa.',
-	'translate-manage-intro-other' => 'Sube estas listo de mesaĝŝanĝoj en la lingvo $1. 
-Bonvolu revizii la ŝanĝojn kaj elektu kion vi volas fari kun ĉiu traduko. 
+	'translate-manage-intro-other' => 'Sube estas listo de mesaĝŝanĝoj en la lingvo $1.
+Bonvolu revizii la ŝanĝojn kaj elektu kion vi volas fari kun ĉiu traduko.
 Se vi decidas ignori ŝanĝojn, ili estos anstataŭigitaj je venonta eksporto.',
 	'translate-manage-subtitle' => 'Administri',
 	'translate-manage-import-rebuild-all' => 'Rekonstruu ĉiujn lingvojn kaj ignoru ĉiujn ŝanĝojn',
@@ -6116,8 +6116,8 @@ $1',
 	'translate-import-err-stale-group' => 'La mesaĝgrupo al kiu apartenas ĉi tiu dosiero ne ekzistas.',
 	'translate-import-err-no-headers' => 'La dosiero estas ne bone formita Gettext-dosiero en la formato de la Traduk-etendaĵo:
 neeblas decidi grupon kaj lingvon el dosierkapo.',
-	'translate-import-err-warnings' => 'La dosiero ne estas bone formita. 
-Bonvolu kontroli ke via redaktilo ne forigas msgctxt-kampojn. 
+	'translate-import-err-warnings' => 'La dosiero ne estas bone formita.
+Bonvolu kontroli ke via redaktilo ne forigas msgctxt-kampojn.
 Detaloj: $1',
 	'translate-js-next' => 'Konservi kaj malfermi la sekvan',
 	'translate-js-nonext' => 'Tio estis la lasta mesaĝo en ĉi tiu paĝo.',
@@ -7379,10 +7379,10 @@ Alleviivauksen väri kertoo, milloin kääntäjä on viimeksi kääntänyt tää
 	'translate-manage-action-fuzzy' => 'Tuo ja merkitse käännökset tarkistettavaksi',
 	'translate-manage-submit' => 'Suorita',
 	'translate-manage-nochanges' => 'Tämän ryhmän viestien määritelmiin ei ole mitään muutoksia.',
-	'translate-manage-nochanges-other' => 'Ei ollut mitään muutoksia tälle kielelle. 
+	'translate-manage-nochanges-other' => 'Ei ollut mitään muutoksia tälle kielelle.
 Käytä alla olevaa linkkiä palataksesi ryhmän yksityiskohtanäkymään.',
-	'translate-manage-inconsistent' => 'Pyynnön tiedot ovat epäjohdonmukaisia. 
-Tarkista muutokset ja yritä uudelleen. 
+	'translate-manage-inconsistent' => 'Pyynnön tiedot ovat epäjohdonmukaisia.
+Tarkista muutokset ja yritä uudelleen.
 Yksityiskohdat: $1.',
 	'translate-manage-toolong' => '$1 {{PLURAL:$1|sekunnin}} enimmäiskäsittelyaika ylittyi.
 Jatka käsittelyä lähettämällä lomake uudelleen.',
@@ -9191,7 +9191,7 @@ $messages['he'] = array(
 	'translate' => 'תרגום',
 	'translate-desc' => '[[Special:Translate|דף מיוחד]] לתרגום מדיה־ויקי ומעבר לכך',
 	'translate-showsub' => 'להציג {{PLURAL:$1|קבוצת|$1 קבוצות}} משנה.',
-	'translate-grouplisting' => 'זוהי רשימה של כל הקבוצות שאפשר לתרגם. 
+	'translate-grouplisting' => 'זוהי רשימה של כל הקבוצות שאפשר לתרגם.
 לחצו על שם הקבוצה בשביל להציג רשימה של הודעות לא מתורגמות.',
 	'translate-grouplisting-empty' => 'לא הוגדרו קבוצות הודעות לתרגום.',
 	'translate-task-view' => 'הצגת כל ההודעות בקבוצה',
@@ -9767,7 +9767,7 @@ Zadani popis jezika ovisi o vašem jeziku.',
 	'translate-stats-edits' => 'Uređivanja',
 	'translate-stats-users' => 'Prevoditelji',
 	'translate-stats-registrations' => 'Prijave',
-	'translate-statsf-intro' => 'Možete generirati jednostavne statistike s ovim obrascem. 
+	'translate-statsf-intro' => 'Možete generirati jednostavne statistike s ovim obrascem.
 Sve vrijednosti imaju gornju i donju granicu.',
 	'translate-statsf-options' => 'Opcije grafa',
 	'translate-statsf-width' => 'Širina u pikselima:',
@@ -9825,7 +9825,7 @@ Sve vrijednosti imaju gornju i donju granicu.',
 	'translate-manage-submit' => 'Izvrši',
 	'translate-manage-import-ignore' => 'Preskačem poruku $1.',
 	'translate-manage-import-summary' => 'Uvoz nove inačice iz vanjskog izvora',
-	'translate-manage-conflict-summary' => 'Uvoz nove inačice iz vanjskog izvora. 
+	'translate-manage-conflict-summary' => 'Uvoz nove inačice iz vanjskog izvora.
 Molimo provjerite.',
 	'translate-manage-fuzzy-summary' => 'Definicija se promijenila',
 	'translate-manage-import-fuzzy' => 'Uvoz i "fuzzying": $1',
@@ -9897,7 +9897,7 @@ Klikń na mjeno skupiny zdźělinkow, zo by sej lisćinu njepřełoženych zdź�
 	'translate-prev' => 'Předchadna strona',
 	'translate-page-description-legend' => 'Informacije wo skupinje',
 	'translate-page-description-hasoptional' => 'Tuta zdźělenska skupina wobsahuje opcionalne zdźělenki.
-Opcionalne zdźělenki měli so jenož přełožować, jeli twoja rěč ma wosebitu potrjebu za nje, 
+Opcionalne zdźělenki měli so jenož přełožować, jeli twoja rěč ma wosebitu potrjebu za nje,
 kaž na přikład njewužiwanje mjezerow abo transliteraciju swójskich mjenow. $1',
 	'translate-page-description-hasoptional-open' => 'Opcionalne zdźělenki pokazać.',
 	'translate-page-edit' => 'wobdźěłać',
@@ -10393,8 +10393,8 @@ Gade meni a pou jwenn lyen pou paj prensipal lang ou prefere a.',
 	'translate-manage-nochanges' => 'Pa gen chanjman nan definisyon mesaj yo pou gwoup sa a.',
 	'translate-manage-nochanges-other' => 'Pa t gen okenn chanjman pou lang sa a.
 Sèvi ak lyen ki anba pou tounen wè detay yo.',
-	'translate-manage-inconsistent' => 'Detekte enkonsistans nan demann lan. 
-Tanpri gade si gen chanjman epi eseye ankò. 
+	'translate-manage-inconsistent' => 'Detekte enkonsistans nan demann lan.
+Tanpri gade si gen chanjman epi eseye ankò.
 Detay: $1.',
 	'translate-manage-toolong' => 'Tan $1 {{PLURAL:$1|segonn|segonn}} maksimòm pou tretman an depase.
 Tanpri, soumèt fòmilè ankò pou kontinye tretman.',
@@ -10402,7 +10402,7 @@ Tanpri, soumèt fòmilè ankò pou kontinye tretman.',
 	'translate-manage-import-noks' => 'Enpòtasyon de nouvo vèsyon paj $1 pa t mache: $2',
 	'translate-manage-import-ignore' => 'Mesaj $1 te sote.',
 	'translate-manage-import-summary' => 'Enpòtasyon yon nouvo vèsyon depi yon sous andeyò',
-	'translate-manage-conflict-summary' => 'Enpòtasyon yon nouvo vèsyon depi yon sous andeyò. 
+	'translate-manage-conflict-summary' => 'Enpòtasyon yon nouvo vèsyon depi yon sous andeyò.
 Tanpri verifye.',
 	'translate-manage-fuzzy-summary' => 'Definisyon an te chanje',
 	'translate-manage-import-fuzzy' => 'Enpòtasyon ak make kòm flou: $1',
@@ -10498,7 +10498,7 @@ Kattints az üzenetcsoport nevére a fordítandó üzenetek listájának megteki
 	'translate-next' => 'következő',
 	'translate-prev' => 'előző',
 	'translate-page-description-legend' => 'Információk a csoportról',
-	'translate-page-description-hasoptional' => 'Ez az üzenet opcionális üzeneteket tartalmaz. 
+	'translate-page-description-hasoptional' => 'Ez az üzenet opcionális üzeneteket tartalmaz.
 Az opcionális üzeneteket csak akkor kell lefordítani, ha a nyelvnek speciális követelménye van, mint például a szóközök, vagy a tulajdonnevek átírása. $1',
 	'translate-page-description-hasoptional-open' => 'Opcionális üzenetek megjelenítése.',
 	'translate-page-edit' => 'szerkesztés',
@@ -11807,7 +11807,7 @@ Si consiglia di revisionare i messaggi attraverso [[Special:Translate|{{int:tran
 	'translate-manage-action-fuzzy' => 'Importa e richiedi aggiornamento',
 	'translate-manage-submit' => 'Esegui',
 	'translate-manage-nochanges' => 'Non ci sono cambiamenti nelle definizioni dei messaggi per questo gruppo.',
-	'translate-manage-nochanges-other' => "Non c'era alcuna novità per questa lingua. 
+	'translate-manage-nochanges-other' => "Non c'era alcuna novità per questa lingua.
 Usa il link sottostante per rivedere i dettagli del gruppo.",
 	'translate-manage-inconsistent' => "È stata rilevata un'incoerenza nella richiesta.
 Cerca i cambiamenti e riprova.
@@ -11829,7 +11829,7 @@ Controlla le modifiche e scegli l'azione da eseguire per ciascun messaggio.
 Quanto hai aggiornato le definizioni dei messaggi, controlla se ci sono modifiche esterne in altre lingue.
 Inoltre, nota che l'azione <code>{{int:translate-manage-action-ignore}}</code> è solo temporanea.",
 	'translate-manage-intro-other' => "Di seguito sono elencati i cambiamenti alle traduzioni nella lingua $1.
-Controlla le modifiche e scegli l'azione da eseguire per ciascun messaggio. 
+Controlla le modifiche e scegli l'azione da eseguire per ciascun messaggio.
 Se scegli di ignorare i cambiamenti, saranno sovrascritti alla prossima esportazione.",
 	'translate-manage-subtitle' => 'Amministra',
 	'translate-manage-import-rebuild-all' => 'Ricostruisci tutte le lingue e ignora tutti i cambiamenti',
@@ -19139,7 +19139,7 @@ $messages['ru'] = array(
 	'translate' => 'Перевод',
 	'translate-desc' => '[[Special:Translate|Служебная страница]] для перевода MediaWiki и прочих программ',
 	'translate-showsub' => 'Показать {{PLURAL:$1|подгруппу|$1 подгруппы|$1 подгрупп}}.',
-	'translate-grouplisting' => 'Это список всех переводимых групп. 
+	'translate-grouplisting' => 'Это список всех переводимых групп.
 Нажмите на название группы сообщений, чтобы просмотреть список непереведённых сообщений.',
 	'translate-grouplisting-empty' => 'Групп сообщений, настроенных для перевода, нет.',
 	'translate-task-view' => 'Просмотреть все сообщения',
@@ -20952,7 +20952,7 @@ $messages['sr-ec'] = array(
 	'translate-mgs-nothing' => 'Нема шта да се прикаже за захтеване статистике.',
 	'supportedlanguages' => 'Подржани језици',
 	'supportedlanguages-summary' => 'Ова страница приказује списак свих подржаних језика на овом викију, заједно с именима преводиоца који раде на тим језицима.
-Величина имена, тј. слова преводиоца зависи од тога колико је порука превео. 
+Величина имена, тј. слова преводиоца зависи од тога колико је порука превео.
 Боја линије с којом је име подвучено приказује колико је преводилац активан.',
 	'supportedlanguages-colorlegend' => 'Легенда за боју; последњи превод извршен пре $1 дана.',
 	'supportedlanguages-portallink' => '[$1] $2 – $3',
@@ -21284,7 +21284,7 @@ Možete ih pregledati na stranici ''[[Special:Translate|{{int:translate}}]]''.",
 	'translate-mgs-nothing' => 'Nema šta da se prikaže za zahtevane statistike.',
 	'supportedlanguages' => 'Podržani jezici',
 	'supportedlanguages-summary' => 'Ova stranica prikazuje spisak svih podržanih jezika na ovom vikiju, zajedno s imenima prevodioca koji rade na tim jezicima.
-Veličina imena, tj. slova prevodioca zavisi od toga koliko je poruka preveo. 
+Veličina imena, tj. slova prevodioca zavisi od toga koliko je poruka preveo.
 Boja linije s kojom je ime podvučeno prikazuje koliko je prevodilac aktivan.',
 	'supportedlanguages-colorlegend' => 'Legenda za boju; poslednji prevod izvršen pre $1 dana.',
 	'supportedlanguages-portallink' => '[$1] $2 – $3',
@@ -22201,7 +22201,7 @@ $messages['te'] = array(
 	'translate-page-no-such-language' => 'ఎంచుకున్న భాష సరైనది కాదు.',
 	'translate-page-no-such-task' => 'ఎంచుకున్న పని సరైనది కాదు.',
 	'translate-page-no-such-group' => 'ఇచ్చిన సమూహం సరైనది కాదు.',
-	'translate-page-disabled' => "ఈ భాషకి ఈ సమూహంలో అనువాదాలని అచేతనం చేసారు. 
+	'translate-page-disabled' => "ఈ భాషకి ఈ సమూహంలో అనువాదాలని అచేతనం చేసారు.
 కారణం:
 
 ''$1''",
@@ -23414,7 +23414,7 @@ $messages['uk'] = array(
 	'translate' => 'Переклад',
 	'translate-desc' => '[[Special:Translate|Спеціальна сторінка]] для перекладу MediaWiki та інших програм',
 	'translate-showsub' => 'Показати {{PLURAL:$1|підгрупу|$1 підгрупи|$1 підгруп}}.',
-	'translate-grouplisting' => 'Це список усіх груп, що можуть перекладатися. 
+	'translate-grouplisting' => 'Це список усіх груп, що можуть перекладатися.
 Натисніть на назву групи повідомлень, щоб подивитися список неперекладених повідомлень.',
 	'translate-task-view' => 'Переглянути всі повідомлення',
 	'translate-task-untranslated' => 'Переглянути неперекладені повідомлення',
@@ -24575,7 +24575,7 @@ $messages['yi'] = array(
 	'translate-pref-nonewsletter' => 'שיקט מיר נישט קיין ע־פאסט בריוון',
 	'translate-pref-editassistlang' => 'אונטערשטיץ שפראכן:',
 	'prefs-translate' => 'איבערזעצונג אויסקלייבן',
-	'translate-pref-editassistlang-bad' => 'אומגילטיקער שפּראַך קאָד אין דער רשימה: 
+	'translate-pref-editassistlang-bad' => 'אומגילטיקער שפּראַך קאָד אין דער רשימה:
 <nowiki>$1</nowiki> .',
 	'translate-pref-jsedit' => 'פֿארברייטערטער איבערזעצונג  רעדאקטאר (JavaScript)',
 	'right-translate' => 'רעדאקטירן דורכן איבערזעצונג אייבערפֿלאך',

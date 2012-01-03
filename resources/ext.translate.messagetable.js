@@ -5,7 +5,7 @@ jQuery( function( $ ) {
 			return mw.config.get( 'wgScriptPath' ) + '/' + ( str || 'index' ) + mw.config.get( 'wgScriptExtension' );
 		}
 	}
-	
+
 	$( ".mw-translate-messagereviewbutton" ).click( function() {
 		var $b = $(this);
 
@@ -17,7 +17,7 @@ jQuery( function( $ ) {
 				$b.val( mw.msg( "translate-messagereview-done" ) );
 			}
 		};
-		
+
 		var failFunction = function( jqXHR, textStatus ) {
 			$b.val( mw.msg( "translate-messagereview-failure", jqXHR.statusText ) );
 		};

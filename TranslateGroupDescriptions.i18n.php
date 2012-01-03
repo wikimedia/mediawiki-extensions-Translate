@@ -36,7 +36,6 @@ $messages['en'] = array(
 	'translate-group-desc-translatablepages' => 'All translatable pages',
 
 	# Supported product message group descriptions
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] enables people to explore the digital cultural resources of Europe',
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] is a turn-based strategy game',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] is web-based discussion forum software',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] is web-based issue tracking software',
@@ -59,13 +58,11 @@ $messages['en'] = array(
 	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] is a dynamic map generator in JavaScript',
 	'bw-desc-openstreetmap' => 'All messages related to [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] is an editable map of the whole world',
-	'bw-desc-osm-potlatch' => '[[Translating:OpenStreetMap|Potlatch]] is a Flash-based OpenStreetMap editor',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] is a collection of tools to edit Wikipedia',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] is web-based Question and Answer software',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] is a microblogging server',
 	'translate-group-desc-statusnet-plugin' => 'These messages are part of a plugin for [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'A message group for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], the i18n system for [http://toolserver.org Toolserver] tools (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)',
-	//'bw-desc-voctrain' => '[[Translating:Voctrain|Voctrain]] is an OmegaWiki-based vocabulary trainer',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] is able to quickly find the authors of a part of a page in a Wikimedia wiki',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] delivers an offline, text-only version of Wikipedia on a mobile device',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wikipedia',
@@ -735,7 +732,7 @@ Por favor mira [[mw:Extension:PDF_Writer]] y http://code.pediapress.com/wiki/wik
 	'bw-desc-openlayers' => 'OpenLayers es un generador de mapas dinámico de fuente abierta. Por favor reporta cualquier problema en [[support]].',
 	'bw-desc-openstreetmap' => 'Grupo de mensajes para todos los mensajes de [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Este grupo de mensajes contiene los mensajes de interfaz para [[Translating:Open Street Map|Open Street Map]]',
-	'bw-desc-osm-potlatch' => 'Este grupo de mensajes contiene los mensajes de la interfaz para [[Translating:OpenStreetMap|Potlatch]]. Por favor: 
+	'bw-desc-osm-potlatch' => 'Este grupo de mensajes contiene los mensajes de la interfaz para [[Translating:OpenStreetMap|Potlatch]]. Por favor:
 
 * Trate de mantener sus traducciones similares en longitud al original en inglés tanto como posible a causa de las restricciones de la interfaz de usuario. Véase también este [http://trac.openstreetmap.org/ticket/2067 bug].
 * Utilice [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] para probar Potlatch. Allí puede probar todo lo que desee en cualquier área.',
@@ -1382,10 +1379,10 @@ $messages['it'] = array(
 	'bw-desc-openstreetmap' => 'Questo gruppo contiene tutti i messaggi per [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => "Questo gruppo di messaggi contiene i messaggi dell'interfaccia per tradurre [[Translating:Open Street Map|Open Street Map]].
 Vedi [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} la pagina Unicode CLDR per i criteri sul'uso dei plurali].",
-	'bw-desc-osm-potlatch' => "Questo gruppo di messaggi contiene l'interfaccia per [[Traduzione: OpenStreetMap | Potlatch]]. 
+	'bw-desc-osm-potlatch' => "Questo gruppo di messaggi contiene l'interfaccia per [[Traduzione: OpenStreetMap | Potlatch]].
 
-Per favore: 
-* Cerca di mantenere la lunghezza delle traduzioni più simile possibile alla lunghezza del testo originale inglese, questo a causa delle limitazioni dell'interfaccia utente. Vedi anche [http://trac.openstreetmap.org/ticket/2067 il bug aperto]. 
+Per favore:
+* Cerca di mantenere la lunghezza delle traduzioni più simile possibile alla lunghezza del testo originale inglese, questo a causa delle limitazioni dell'interfaccia utente. Vedi anche [http://trac.openstreetmap.org/ticket/2067 il bug aperto].
 * Per effettuare test su Potlatch usa [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] dove è possibile effettuare tutte le prove in qualsiasi zona.",
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] è una collezione di strumenti per modificare siti MediaWiki',
 	'bw-desc-shapado' => 'Gruppo di messaggi per la piattaforma di domande e risposte [[Translating:Shapado|Shapado]]',
@@ -1946,7 +1943,7 @@ $messages['pl'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Główna wtyczka dla [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Komunikaty stabilnej wersji oprogramowania [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] jest systemem zarządzania informacją dla mikrofinansów',
-	'bw-desc-mwlibrl' => "'''mwlib.rl''' jest biblioteką w języku Python zapisującą dokumenty w formacie PDF z artykułami MediaWiki, które zostały przeanalizowane przez bibliotekę mwlib. 
+	'bw-desc-mwlibrl' => "'''mwlib.rl''' jest biblioteką w języku Python zapisującą dokumenty w formacie PDF z artykułami MediaWiki, które zostały przeanalizowane przez bibliotekę mwlib.
 
 Więcej informacji odnajdziesz na stronach [[mw:Extension:PDF_Writer]] oraz http://code.pediapress.com/wiki/wiki/mwlibrl.",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] jest internetowym klientem poczty napisanym w PHP. Prosimy o zgłaszanie wszelkich problemów [[Support|obsłudze]].',
@@ -2489,7 +2486,7 @@ Se [[mw:Extension:PDF_Writer]] och http://code.pediapress.com/wiki/wiki/mwlibrl 
 	'bw-desc-openstreetmap' => 'Alla meddelanden som rör [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Den här gruppen av meddelanden innehåller gränssnittet för [[Translating:Open Street Map|Open Street Map]].
 Se [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} Unicode CLDR sida för förklaring av plural hantering].',
-	'bw-desc-osm-potlatch' => 'Den här gruppen innehåller gränssnitts meddelandena för [[Translating:OpenStreetMap|Potlatch]]. 
+	'bw-desc-osm-potlatch' => 'Den här gruppen innehåller gränssnitts meddelandena för [[Translating:OpenStreetMap|Potlatch]].
 Observera följande:
 
 *Försök att hålla längden på översättningarna så lika de engelska orginal texterna som möjligt, på grund av implementationen av det grafiska gränssnittet. Se även [http://trac.openstreetmap.org/ticket/2067 open bug].

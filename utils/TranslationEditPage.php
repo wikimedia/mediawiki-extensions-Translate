@@ -91,7 +91,7 @@ class TranslationEditPage {
 			'lang' => $targetLang->getCode(),
 			'dir' => $targetLang->getDir(),
 		);
-		
+
 		if ( !$wgUser->isAllowed( 'translate' ) ) {
 			$textareaParams['readonly'] = 'readonly';
 		}

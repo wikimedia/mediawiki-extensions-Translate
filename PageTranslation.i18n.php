@@ -1178,7 +1178,7 @@ Oversættelse skabelon: <pre>$1</pre>',
 Tag tekst: <pre>$1</pre>',
 	'pt-shake-multiple' => 'Flere afsnit markører for et afsnit.
 Afsnit tekst: <pre>$1</pre>',
-	'pt-shake-position' => 'Afsnit markører i uvendet position. 
+	'pt-shake-position' => 'Afsnit markører i uvendet position.
 Afsnit tekst: <pre>$1</pre>',
 	'pt-shake-empty' => 'Tom section for markør $1.',
 	'pt-log-header' => 'Log for handlinger i forbindelse med side oversættelses systemet',
@@ -1214,9 +1214,9 @@ Afsnit tekst: <pre>$1</pre>',
 	'pt-movepage-action-check' => 'Tjek om flytningen er muligt',
 	'pt-movepage-action-perform' => 'Gennemfør flytningen',
 	'pt-movepage-action-other' => 'Skift mål',
-	'pt-movepage-intro' => 'Denne speciale side tillader dig at flytte sider, der er markeret til oversættelse. 
-Flytningen vil ikke være øjeblikkelig, fordi mange sider skal flyttes. 
-Mens siderne bliver flyttet, er det ikke muligt at interagere med de omtalte sider. 
+	'pt-movepage-intro' => 'Denne speciale side tillader dig at flytte sider, der er markeret til oversættelse.
+Flytningen vil ikke være øjeblikkelig, fordi mange sider skal flyttes.
+Mens siderne bliver flyttet, er det ikke muligt at interagere med de omtalte sider.
 Fejl vil blive logget på [[Special:Log/pagetranslation|sideoversættelsesloggen]], og de skal repareres manuelt.',
 	'pt-movepage-logreason' => 'Del af oversætbar side $1.',
 	'pt-movepage-started' => 'Base siden er nu flyttet.
@@ -1319,7 +1319,7 @@ Diese Seite ist eine Übersetzung der Seite [[$1]] und die Übersetzung kann mit
 Die Seite, die gerade bearbeitet wird, hat keine Verbindung zu einer übersetzbaren Seite.',
 	'tpt-render-summary' => 'Übernehme Bearbeitung einer neuen Version der Quellseite',
 	'tpt-download-page' => 'Seite mit Übersetzungen exportieren',
-	'pt-parse-open' => 'Eine &lt;translate&gt;-Markierung hat kein Gegenstück. 
+	'pt-parse-open' => 'Eine &lt;translate&gt;-Markierung hat kein Gegenstück.
 Übersetzungsvorlage: <pre>$1</pre>',
 	'pt-parse-close' => 'Eine &lt;&#47;translate&gt;-Markierung hat kein Gegenstück.
 Übersetzungsvorlage: <pre>$1</pre>',
@@ -2828,10 +2828,10 @@ Ime: $1',
 	'pt-movepage-action-check' => 'Provjeri je li premještanje moguće',
 	'pt-movepage-action-perform' => 'Premjesti',
 	'pt-movepage-action-other' => 'Promijeni cilj',
-	'pt-movepage-intro' => 'Ova posebna stranica omogućava vam premještanje stranica koje su označene za prijevod. 
-Premještanje nije trenutačno, jer mnoge stranice treba premjestiti. 
-Red poslova će se koristiti za premještanje stranica. 
-Dok se stranice premještaju, nije moguće raditi na stranicama u pitanju. 
+	'pt-movepage-intro' => 'Ova posebna stranica omogućava vam premještanje stranica koje su označene za prijevod.
+Premještanje nije trenutačno, jer mnoge stranice treba premjestiti.
+Red poslova će se koristiti za premještanje stranica.
+Dok se stranice premještaju, nije moguće raditi na stranicama u pitanju.
 Kvarovi/pogreške biti će prijavljene u evidenciji prijevoda i trebaju se ručno popraviti.',
 	'pt-movepage-logreason' => 'Dio prevodive stranice $1.',
 );
@@ -2987,7 +2987,7 @@ $messages['ht'] = array(
 	'right-pagetranslation' => 'Make vèsyon paj yo pou tradui',
 	'tpt-desc' => 'Ekstansyon pou tradui paj kontni yo',
 	'tpt-section' => 'Inite tradiksyon $1',
-	'tpt-section-new' => 'Nouvo inite tradiksyon. 
+	'tpt-section-new' => 'Nouvo inite tradiksyon.
 Non: $1',
 	'tpt-section-deleted' => 'Inite tradiksyon $1',
 	'tpt-template' => 'Modèl pou paj',
@@ -5012,7 +5012,7 @@ Działanie przenoszenia nie jest natychmiastowe, ponieważ wiele stron wymaga pr
 Podczas gdy strony są przenoszone, nie jest możliwa praca z tymi stronami poprzez zapytania.
 Błędy zostaną odnotowane na [[Special:Log/pagetranslation|stronie rejestru tłumaczeń]] i muszą zostać naprawione ręcznie.',
 	'pt-movepage-logreason' => 'Część przetłumaczalnej strony $1.',
-	'pt-movepage-started' => 'Strona bazowa jest teraz przenoszona. 
+	'pt-movepage-started' => 'Strona bazowa jest teraz przenoszona.
 Proszę sprawdzić na [[Special:Log/pagetranslation|stronie rejestru tłumaczeń]] czy nie wystąpiły błędy oraz komunikat o zakończeniu operacji.',
 	'pt-locked-page' => 'Ta strona jest zablokowana ponieważ jest przygotowana do przeniesienia.',
 	'pt-deletepage-invalid-title' => 'Wybrana strona nie jest poprawna.',

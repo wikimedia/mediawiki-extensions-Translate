@@ -243,7 +243,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	/**
-	 * If workflow states are configured, adds a cell with the workflow state to the row, 
+	 * If workflow states are configured, adds a cell with the workflow state to the row,
 	 * @param $target Whose workflow state do we want, such as language code or group id.
 	 * @return string
 	 */
