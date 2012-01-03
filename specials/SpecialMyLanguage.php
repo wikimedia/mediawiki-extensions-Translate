@@ -57,6 +57,10 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 			}
 		}
 
+		if ( !$base ) {
+			return null;
+		}
+
 		$uiCode = $wgLang->getCode();
 		$proposed = Title::newFromText( $base->getPrefixedText() . "/$uiCode" );
 		if ( $uiCode !== $wgLanguageCode && $proposed && $proposed->exists() ) {
