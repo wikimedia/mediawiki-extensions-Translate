@@ -35,7 +35,7 @@ if ( isset( $options['help'] ) ) {
 	showUsage();
 }
 
-$bot = new FuzzyBot( $args );
+$bot = new FuzzyScript( $args );
 
 if ( isset( $options['skiplanguages'] ) ) {
 	$_skipLanguages = array();
@@ -62,7 +62,7 @@ $bot->execute();
 /**
  * Class for marking translation fuzzy.
  */
-class FuzzyBot {
+class FuzzyScript {
 	/// \list{String} List of patterns to mark.
 	private $titles = array();
 	/// \bool Check for configuration problems.
