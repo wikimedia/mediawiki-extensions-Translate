@@ -267,6 +267,7 @@ $messages['saz'] = array(
 );
 
 /** Afrikaans (Afrikaans)
+ * @author Ansumang
  * @author Naudefj
  */
 $messages['af'] = array(
@@ -303,6 +304,7 @@ Alvorens u die weergawe vir vertaling merk, maak seker dat die veranderinge gemi
 	'tpt-list-nopages' => 'Geen bladsye is vir vertaling gemerk of is reg om vir vertaling gemerk te word nie.',
 	'tpt-new-pages' => 'Hierdie {{PLURAL:$1|bladsy bevat|bladsye bevat}} teks met vertalings-etikette, maar geen weergawe van die {{PLURAL:$1|bladsy|bladsye}} is vir vertaling gemerk nie.',
 	'tpt-old-pages' => "'n Weergawe van die {{PLURAL:$1|bladsy|bladsye}} is reeds vir vertaling gemerk.",
+	'tpt-rev-encourage' => 'herstel',
 	'translate-tag-translate-link-desc' => 'Vertaal die bladsy',
 	'translate-tag-markthis' => 'Merk die bladsy vir vertaling',
 	'translate-tag-markthisagain' => 'Hierdie bladsy is <span class="plainlinks">[$1 kere gewysig]</span> sedert dit laas <span class="plainlinks">[$2 vir vertaling gemerk was]</span>.',
@@ -318,6 +320,9 @@ Die bladsy wat u probeer wysig kom nie ooreen met een wat vir vertaling gemerk i
 	'tpt-render-summary' => "Besig met bewerkings vanweë 'n nuwe basisweergawe van die bronblad",
 	'tpt-download-page' => 'Eksporteer bladsy met vertalings',
 	'pt-shake-empty' => 'Leë afdeling vir merker $1.',
+	'pt-movepage-reason' => 'Rede:',
+	'pt-deletepage-current' => 'Bladsynaam:',
+	'pt-deletepage-reason' => 'Rede:',
 );
 
 /** Arabic (العربية)
@@ -2792,6 +2797,8 @@ $messages['hi'] = array(
 	'tpt-other-pages-title' => 'टूटा पृष्ठ',
 	'pt-movepage-new' => 'नया नाम:',
 	'pt-movepage-reason' => 'कारण:',
+	'pt-deletepage-current' => 'पृष्ठ नाम:',
+	'pt-deletepage-reason' => 'कारण:',
 );
 
 /** Croatian (Hrvatski)
@@ -3275,6 +3282,7 @@ Fallimentos essera registrate in le [[Special:Log/pagetranslation|registro de tr
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Anakmalaysia
  * @author Bennylin
  * @author Farras
  * @author Irwangatot
@@ -3346,7 +3354,7 @@ Teks bagian: <pre>$1</pre>',
 	'pt-log-name' => 'Log penerjemahan halaman',
 	'pt-log-mark' => '{{GENDER:$2|menandai}} versi $3 halaman "[[:$1]]" untuk diterjemahkan',
 	'pt-log-unmark' => '{{GENDER:$2|menghapus}} halaman "[[:$1]]" dari penerjemahan',
-	'pt-log-moveok' => '{{GENDER:$2|selesai}} mengganti nama halaman yang dapat diterjemahkan $1 menjadi nama baru',
+	'pt-log-moveok' => '{{GENDER:$2|selesai}} mengganti nama halaman yang dapat diterjemahkan $1 menjadi $3',
 	'pt-log-movenok' => '{{GENDER:$2|mengalami}} masalah ketika memindahkan [[:$1]] ke [[:$3]]',
 	'pt-movepage-title' => 'Pindahkan halaman yang dapat diterjemahkan $1',
 	'pt-movepage-blockers' => 'Halaman yang dapat diterjemahkan tidak dapat dipindahkan ke nama baru karena {{PLURAL:$1|kesalahan|kesalahan}} berikut:',
@@ -5717,6 +5725,13 @@ $messages['rue'] = array(
 	'pt-movepage-action-other' => 'Змінити ціль',
 );
 
+/** Sanskrit (संस्कृतम्)
+ * @author Ansumang
+ */
+$messages['sa'] = array(
+	'pt-movepage-reason' => 'कारणम् :',
+);
+
 /** Sakha (Саха тыла)
  * @author HalanTul
  */
@@ -5799,6 +5814,7 @@ $messages['si'] = array(
 	'tpt-old-pages-title' => 'පරිවර්තනයේ ඇති පිටු',
 	'tpt-other-pages-title' => 'බිඳුණු පිටු',
 	'tpt-discouraged-pages-title' => 'අධෛර්යකල පිටු',
+	'tpt-old-pages' => 'පරිවර්තනය සඳහා {{PLURAL:$1|මෙම පිටුවේ|මෙම පිටුවල}} සමහර අනුවාදයන් සලකුණු කරන ලදී.',
 	'tpt-rev-mark' => 'පරිවර්තනය සඳහා සලකුණු කරන්න',
 	'tpt-rev-unmark' => 'පරිවර්තනයෙන් ඉවත් කරන්න',
 	'tpt-rev-discourage' => 'අධෛර්ය කරන්න',
@@ -6996,7 +7012,7 @@ $messages['zh-hans'] = array(
 	'tpt-templatediff' => '页面模板已改变。',
 	'tpt-diff-old' => '上一版本文字',
 	'tpt-diff-new' => '下一版本文字',
-	'tpt-submit' => '标记此版本的翻译',
+	'tpt-submit' => '标记此版本进行翻译',
 	'tpt-sections-oldnew' => '新的和现存的翻译单元',
 	'tpt-sections-deleted' => '已删除的翻译模块',
 	'tpt-sections-template' => '翻译页面模版',
@@ -7004,35 +7020,48 @@ $messages['zh-hans'] = array(
 	'tpt-badtitle' => '页面名称 ($1) 不是一个有效的标题',
 	'tpt-nosuchpage' => '页面$1 不存在。',
 	'tpt-oldrevision' => '$2 不是最新版本的页面 [[$1]]。
-最新版本只可以将标记为翻译。',
+只有最新版本可以将标记进行翻译。',
 	'tpt-notsuitable' => '页$1不适合翻译。
 请确保它具有 <nowiki><translate></nowiki> 标记，并具有有效的语法。',
+	'tpt-saveok' => '[[$1]]页面已被标记将进行翻译，一共$2个翻译单位。
+本页面现已可以<span class="plainlinks">[$3 翻译]</span>。',
 	'tpt-badsect' => '“$1”对于$2翻译单位不是有效的名称。',
 	'tpt-showpage-intro' => '以下列出新创、现存及已删除的部分。
 将此版本标记进行翻译之前，请检查来确定该部分极少受修改，以便翻译员避免得到多余的工作。',
-	'tpt-mark-summary' => '标记此版本的翻译',
+	'tpt-mark-summary' => '此版本已被标记将进行翻译',
 	'tpt-edit-failed' => '无法更新该页面：$1',
-	'tpt-already-marked' => '此页面的最新版本已经已标记为翻译。',
-	'tpt-unmarked' => '页 $1 不再被标记为翻译。',
-	'tpt-list-nopages' => '没有页面被标记为翻译，也不愿意被标记为翻译。',
+	'tpt-already-marked' => '此页面的最新版本已经已标记进行翻译。',
+	'tpt-unmarked' => '$1页不再被标记进行翻译。',
+	'tpt-list-nopages' => '没有被标记进行翻译或者准备被标记进行翻译的页面。',
 	'tpt-new-pages-title' => '提议翻译的页面',
 	'tpt-old-pages-title' => '正在翻译的页面',
 	'tpt-other-pages-title' => '损坏的页面',
 	'tpt-discouraged-pages-title' => '不推荐的页面',
+	'tpt-new-pages' => '以下{{PLURAL:$1|此|这些}}页面包含具有翻译标记的文本，
+但没有被标记进行翻译的版本。',
+	'tpt-old-pages' => '以下{{PLURAL:$1|此|这些}}页面有被标记进行翻译的版本。',
+	'tpt-other-pages' => '以下{{PLURAL:$1|此|这些}}页面有旧版本被标记进行翻译，
+但最新版本不得标记进行翻译。',
+	'tpt-discouraged-pages' => '以下{{PLURAL:$1|此|这些}}页面挫折更多翻译。',
 	'tpt-rev-mark' => '标记进行翻译',
 	'tpt-rev-unmark' => '从翻译中删除',
-	'tpt-rev-discourage' => '不推荐',
+	'tpt-rev-discourage' => '挫折',
 	'tpt-rev-encourage' => '恢复',
 	'tpt-rev-mark-tooltip' => '标记本页的最新版本进行翻译。',
 	'tpt-rev-unmark-tooltip' => '从翻译中删除此页。',
-	'tpt-rev-discourage-tooltip' => '在此页上阻止更多的翻译。',
+	'tpt-rev-discourage-tooltip' => '在此页上挫折更多的翻译。',
 	'tpt-rev-encourage-tooltip' => '将此页面恢复正常翻译模式。',
 	'translate-tag-translate-link-desc' => '翻译本页',
-	'translate-tag-markthis' => '标记此页面的翻译',
-	'tpt-translation-intro-fuzzy' => '像这样标记为过时的翻译。',
+	'translate-tag-markthis' => '标记此页面将进行翻译',
+	'translate-tag-markthisagain' => '此页面<span class="plainlinks">[$2 最近被标记进行翻译]</span>以来，已经过一些<span class="plainlinks">[$1 更改]</span>。',
+	'translate-tag-hasnew' => '此页面有未被标记进行翻译的<span class="plainlinks">[$1更改]</span>。',
+	'tpt-translation-intro' => '此页面是[[$2]]页面的<span class="plainlinks">[$1翻译版本]</span>，而该翻译工作已经$3%完成。',
+	'tpt-translation-intro-fuzzy' => '已过时的翻译就这样标记。',
 	'tpt-languages-legend' => '其他语言：',
 	'tpt-target-page' => '本页面无法手动更新。
 本页面是[[$1]]页面的翻译版，可以使用[$2 翻译工具]来更新该翻译。',
+	'tpt-unknown-page' => '此命名空间是保留给内容页面翻译。
+您尝试编辑的页面似乎没有对应任何被标记进行翻译的页面。',
 	'tpt-render-summary' => '要匹配的源页的新版本更新',
 	'tpt-download-page' => '汇出含翻译的页面',
 	'pt-parse-open' => '&lt;translate>标签不平衡。
@@ -7048,6 +7077,14 @@ $messages['zh-hans'] = array(
 	'pt-shake-empty' => '空节标记为 $1。',
 	'pt-log-header' => '与有关的网页翻译系统操作日志',
 	'pt-log-name' => '网页翻译日志',
+	'pt-log-mark' => '{{GENDER:$2|标记}}“[[:$1]]”页面$3版本进行翻译',
+	'pt-log-unmark' => '从翻译中{{GENDER:$2|删除}}“[[:$1]]”页面',
+	'pt-log-moveok' => '{{GENDER:$2|完成}}将$1改名成为$3',
+	'pt-log-movenok' => '当移动[[:$1]]至[[:$3]]{{GENDER:$2|遇到}}问题',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|完成}}删除$1可翻译页面',
+	'pt-log-delete-full-nok' => '当删除[[:$1]]可翻译页面{{GENDER:$2|遇到}}问题',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|完成}}删除$1翻译页面',
+	'pt-log-delete-lang-nok' => '当删除[[:$1]]翻译页面{{GENDER:$2|遇到}}问题',
 	'pt-movepage-title' => '移动可翻译页面$1',
 	'pt-movepage-blockers' => '可翻译页面无法移动至新名称，原因为以下这{{PLURAL:$1|个|些}}错误：',
 	'pt-movepage-block-base-exists' => '目标基页面 [[:$1]] 存在。',
@@ -7071,6 +7108,10 @@ $messages['zh-hans'] = array(
 	'pt-movepage-action-check' => '检查是否可以移动',
 	'pt-movepage-action-perform' => '确认移动',
 	'pt-movepage-action-other' => '更改目标',
+	'pt-movepage-intro' => '本特殊页面允许您移动被标记进行翻译的页面。
+此移动操作将不会一瞬间，因为有很多页面要移动。
+当页面移动中，不能与该页面交互。
+任何移动失败将在[[Special:Log/pagetranslation|页面翻译日志]]记录，并且需要手动修理。',
 	'pt-movepage-logreason' => '可翻译页面$1 的部分。',
 	'pt-movepage-started' => '基页面现已移动。
 请检查[[Special:Log/pagetranslation|页面翻译日志]]内的错误和完成消息。',
@@ -7096,6 +7137,9 @@ $messages['zh-hans'] = array(
 	'pt-deletepage-full-logreason' => '翻译页面的一部分 $1。',
 	'pt-deletepage-lang-logreason' => '翻译页面的一部分 $1。',
 	'pt-deletepage-started' => '请检查[[Special:Log/pagetranslation|页面翻译日志]]内的错误和完成消息。',
+	'pt-deletepage-intro' => '本特殊页面允许您删除一种语言中全部可翻译页面与翻译作品。
+此移动操作将不会一瞬间，因为有很多页面要删除。
+任何删除失败将在[[Special:Log/pagetranslation|页面翻译日志]]记录，并且需要手动修理。',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
@@ -7124,29 +7168,48 @@ $messages['zh-hant'] = array(
 	'tpt-badtitle' => '頁面名稱 ($1) 不是一個有效的標題',
 	'tpt-nosuchpage' => '頁面$1 不存在。',
 	'tpt-oldrevision' => '$2 不是最新版本的頁面 [[$1]]。
-最新版本只可以將標記為翻譯。',
+最新版本只可以將標記進行翻譯。',
 	'tpt-notsuitable' => '頁$1不適合翻譯。
 請確保它具有 <nowiki><translate></nowiki> 標記，並具有有效的語法。',
+	'tpt-saveok' => '[[$1]]頁面已被標記將進行翻譯，一共$2個翻譯單位。
+本頁面現已可以<span class="plainlinks">[$3 翻譯]</span>。',
+	'tpt-badsect' => '「$1」對於$2翻譯單位不是有效的名稱。',
 	'tpt-showpage-intro' => '以下列出新創、現存及已刪除的部分。
 將此版本標記進行翻譯之前，請檢查來確定該部分極少受修改，以便翻譯員避免得到多餘的工作。',
 	'tpt-mark-summary' => '標記此版本的翻譯',
 	'tpt-edit-failed' => '無法更新該頁面：$1',
-	'tpt-already-marked' => '此頁面的最新版本已經已標記為翻譯。',
-	'tpt-unmarked' => '頁 $1 不再被標記為翻譯。',
-	'tpt-list-nopages' => '沒有頁面被標記為翻譯，也不願意被標記為翻譯。',
+	'tpt-already-marked' => '此頁面的最新版本已經已標記進行翻譯。',
+	'tpt-unmarked' => '$1頁不再被標記進行翻譯。',
+	'tpt-list-nopages' => '沒有被標記進行翻譯或者準備被標記進行翻譯的頁面。',
 	'tpt-new-pages-title' => '提議翻譯的頁面',
 	'tpt-old-pages-title' => '正在翻譯的頁面',
 	'tpt-other-pages-title' => '損壞的頁面',
 	'tpt-discouraged-pages-title' => '不推薦的頁面',
+	'tpt-new-pages' => '以下{{PLURAL:$1|此|這些}}頁麵包含具有翻譯標記的文本，
+但沒有被標記進行翻譯的版本。',
+	'tpt-old-pages' => '以下{{PLURAL:$1|此|這些}}頁面有被標記進行翻譯的版本。',
+	'tpt-other-pages' => '以下{{PLURAL:$1|此|這些}}頁面有舊版本被標記進行翻譯，
+但最新版本不得標記進行翻譯。',
+	'tpt-discouraged-pages' => '以下{{PLURAL:$1|此|這些}}頁面挫折更多翻譯。',
 	'tpt-rev-mark' => '標記進行翻譯',
 	'tpt-rev-unmark' => '從翻譯中刪除',
-	'tpt-rev-discourage' => '不推薦',
+	'tpt-rev-discourage' => '挫折',
 	'tpt-rev-encourage' => '恢復',
 	'tpt-rev-mark-tooltip' => '標記本頁的最新版本進行翻譯。',
+	'tpt-rev-unmark-tooltip' => '從翻譯中刪除此頁。',
+	'tpt-rev-discourage-tooltip' => '在此頁上挫折更多翻譯。',
+	'tpt-rev-encourage-tooltip' => '將此頁面恢復正常翻譯模式。',
 	'translate-tag-translate-link-desc' => '翻譯本頁',
 	'translate-tag-markthis' => '標記此頁面的翻譯',
+	'translate-tag-markthisagain' => '此頁面<span class="plainlinks">[$2 最近被標記進行翻譯]</span>以來，已經過一些<span class="plainlinks">[$1 更改]</span>。',
+	'translate-tag-hasnew' => '此頁面有未被標記進行翻譯的<span class="plainlinks">[$1更改]</span>。',
+	'tpt-translation-intro' => '此頁面是[[$2]]頁面的<span class="plainlinks">[$1翻譯版本]</span>，而該翻譯工作已經$3%完成。',
 	'tpt-translation-intro-fuzzy' => '像這樣標記為過時的翻譯。',
 	'tpt-languages-legend' => '其他語言：',
+	'tpt-target-page' => '本頁面無法手動更新。
+本頁面是[[$1]]頁面的翻譯版，可以使用[$2 翻譯工具]來更新該翻譯。',
+	'tpt-unknown-page' => '此命名空間是保留給內容頁面翻譯。
+您嘗試編輯的頁面似乎沒有對應任何被標記進行翻譯的頁面。',
 	'tpt-render-summary' => '要匹配的源頁的新版本更新',
 	'tpt-download-page' => '匯出含翻譯的頁面',
 	'pt-parse-open' => '&lt;translate>標籤不平衡。
@@ -7162,6 +7225,14 @@ $messages['zh-hant'] = array(
 	'pt-shake-empty' => '空節標記為 $1。',
 	'pt-log-header' => '與有關的網頁翻譯系統操作日誌',
 	'pt-log-name' => '網頁翻譯日誌',
+	'pt-log-mark' => '{{GENDER:$2|標記}}「[[:$1]]」頁面$3版本進行翻譯',
+	'pt-log-unmark' => '從翻譯中{{GENDER:$2|刪除}}「[[:$1]]」頁面',
+	'pt-log-moveok' => '{{GENDER:$2|完成}}將$1改名成為$3',
+	'pt-log-movenok' => '當移動[[:$1]]至[[:$3]]{{GENDER:$2|遇到}}問題',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|完成}}刪除$1可翻譯頁面',
+	'pt-log-delete-full-nok' => '當刪除[[:$1]]可翻譯頁面{{GENDER:$2|遇到}}問題',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|完成}}刪除$1翻譯頁面',
+	'pt-log-delete-lang-nok' => '當刪除[[:$1]]翻譯頁面{{GENDER:$2|遇到}}問題',
 	'pt-movepage-title' => '移動可翻譯頁面$1',
 	'pt-movepage-blockers' => '可翻譯頁面無法移動至新名稱，原因為以下這{{PLURAL:$1|個|些}}錯誤：',
 	'pt-movepage-block-base-exists' => '目標基頁 [[:$1]] 存在。',
@@ -7185,6 +7256,10 @@ $messages['zh-hant'] = array(
 	'pt-movepage-action-check' => '檢查是否可以移動',
 	'pt-movepage-action-perform' => '確認移動',
 	'pt-movepage-action-other' => '更改目標',
+	'pt-movepage-intro' => '本特殊頁面允許您移動被標記進行翻譯的頁面。
+此移動操作將不會一瞬間，因為有很多頁面要移動。
+當頁面移動中，不能與該頁面交互。
+任何移動失敗將在[[Special:Log/pagetranslation|頁面翻譯日誌]]記錄，並且需要手動修理。',
 	'pt-movepage-logreason' => '可翻譯頁面$1 的部分。',
 	'pt-movepage-started' => '基頁面現已移動。
 請檢查[[Special:Log/pagetranslation|頁面翻譯日誌]]內的錯誤和完成消息。',
@@ -7210,5 +7285,8 @@ $messages['zh-hant'] = array(
 	'pt-deletepage-full-logreason' => '翻譯頁面的一部分 $1。',
 	'pt-deletepage-lang-logreason' => '翻譯頁面的一部分 $1。',
 	'pt-deletepage-started' => '請檢查[[Special:Log/pagetranslation|頁面翻譯日誌]]內的錯誤和完成消息。',
+	'pt-deletepage-intro' => '本特殊頁面允許您刪除一種語言中全部可翻譯頁面與翻譯作品。
+此移動操作將不會一瞬間，因為有很多頁面要刪除。
+任何刪除失敗將在[[Special:Log/pagetranslation|頁面翻譯日誌]]記錄，並且需要手動修理。',
 );
 

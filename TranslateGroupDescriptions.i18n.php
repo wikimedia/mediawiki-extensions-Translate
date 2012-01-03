@@ -1930,7 +1930,6 @@ $messages['pl'] = array(
 	'translate-group-desc-uniwiki' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń związanych z [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń związanych z [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Inicjatywą użyteczności Wikipedii]',
 	'translate-group-desc-translatablepages' => 'Wszystkie przetłumaczalne strony',
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] umożliwia ludziom odkrywanie dorobku kulturowego Europy',
 	'bw-desc-freecol' => 'Zanim rozpoczniesz tłumaczenie FreeCol, zapoznaj się z [[Translating:FreeCol]]. Freecol udostępniane jest na licencji GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] – forum internetowe napisane w PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] jest bezpłatnym internetowym systemem obsługi zgłoszeń usterek. Prosimy o zgłaszanie wszelkich problemów [[Support|obsłudze]].',
@@ -1954,10 +1953,6 @@ Więcej informacji odnajdziesz na stronach [[mw:Extension:PDF_Writer]] oraz http
 	'bw-desc-openlayers' => 'OpenLayers jest oprogramowaniem z otwartym kodem generującym dynamiczne mapy. Prosimy o zgłaszanie wszelkich problemów [[support|obsłudze]].',
 	'bw-desc-openstreetmap' => 'Grupa wszystkich komunikatów [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Ta grupa komunikatów zawiera interfejs [[Translating:Open Street Map|Open Street Map]]. Zobacz [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} stronę Unicode CLDR wyjaśniającą zasady tworzenia liczby mnogiej].',
-	'bw-desc-osm-potlatch' => 'Ta grupa zawiera komunikaty interfejsu [[Translate:OpenStreetMap|Potlaczu]].
-
-* Jeśli to możliwe staraj się zachować w swoim tłumaczeniu zbliżoną długość komunikatu do angielskojęzycznego oryginału, ze względu na ograniczenia szablonu interfejsu użytkownika. Zobacz również [http://trac.openstreetmap.org/ticket/2067 nieusunięty błąd].
-* Użyj [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] do sprawdzenia Potlaczu. Możesz tam wszystko przetestować.',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] to kolekcja narzędzi służących do edycji Wikipedii',
 	'bw-desc-shapado' => 'Grupa komunikatów darmowego z otwartym kodem oprogramowania zadawania pytań i udzielania odpowiedzi [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] jest opartym na otwartym kodzie serwerem mikroblogów',
@@ -2739,6 +2734,7 @@ $messages['yi'] = array(
  * @author PhiLiP
  * @author Tommyang
  * @author Xiaomingyan
+ * @author Yanmiao liu
  */
 $messages['zh-hans'] = array(
 	'translategroupdescriptions-desc' => '消息组说明 [http://mediawiki.org/wiki/Extension:Translate 翻译] 扩展所支持的产品',
@@ -2752,11 +2748,10 @@ $messages['zh-hans'] = array(
 	'translate-group-desc-translate' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]扩展所有消息的元消息组。',
 	'translate-group-desc-wikiaextensions' => '包含[http://www.wikia.com Wikia]专用MediaWiki扩展所有消息的元消息组。',
 	'translate-group-desc-translatablepages' => '所有翻译网页',
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] 使人们能够探索欧洲数字文化资源',
 	'bw-desc-freecol' => '在将FreeCol翻译至你的语言之前，请阅读[[Translating:FreeCol]]。Freecol使用GPL许可协议。',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum]，一个用PHP编写的论坛。',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT]是一个免费的基于Web的Bug追踪系统。请在[[Support|支持]]报告问题。',
-	'translate-group-desc-mediawiki-core-branch' => '用于MediaWiki稳定版本的消息。',
+	'translate-group-desc-mediawiki-core-branch' => '用于 [[Translating:MediaWiki|MediaWiki]] 稳定版本的消息。',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]]是一种小额信贷管理信息系统。',
 	'bw-desc-mwlibrl' => "'''mwlib.rl'''是一个使用mwlib库解析的python库，用以将MediaWiki条目转化为PDF文件。
 
@@ -2770,7 +2765,6 @@ $messages['zh-hans'] = array(
 	'bw-desc-openstreetmap' => '本组包含所有[[Translating:OpenStreetMap|OpenStreetMap]]信息',
 	'bw-desc-osm-site' => '本组包含[[Translating:Open Street Map|Open Street Map]]的界面信息。
 请见[http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} plural keys扩展包的Unicode CLDR页面]。',
-	'bw-desc-osm-potlatch' => '[[Translating:OpenStreetMap|Potlatch]]是一个基于Flash的OpenStreetMap编辑器。',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]]是一个维基百科编辑工具集合。',
 	'bw-desc-shapado' => '本组包含免费开源问答软件[[Translating:Shapado|Shapado]]的信息',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]]是一个开源微博客服务',

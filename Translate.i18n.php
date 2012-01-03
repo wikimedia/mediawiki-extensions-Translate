@@ -737,6 +737,7 @@ $messages['tly'] = array(
 );
 
 /** Afrikaans (Afrikaans)
+ * @author Ansumang
  * @author Arnobarnard
  * @author Byeboer
  * @author Naudefj
@@ -1002,6 +1003,7 @@ Besonderhede: $1',
 	'translate-workflow-set-do' => 'Stel',
 	'translate-workflow-set-doing' => 'Besig om te stel...',
 	'translate-workflow-set-done' => 'Gestel!',
+	'translate-stats-workflow' => 'Status',
 );
 
 /** Gheg Albanian (Gegë)
@@ -5120,7 +5122,7 @@ Details: $1',
 	'translate-stats-workflow' => 'Status',
 	'translate-dynagroup-recent-label' => 'Aktuelle Übersetzungen',
 	'translate-dynagroup-recent-desc' => 'Diese Nachrichtengruppe zeigt alle aktuellen Übersetzungen in diese Sprache an.
-Am nützlichsten zum Prüfen und Akzeptieren von Nachrichten.',
+Am nützlichsten ist sie für das Prüfen und Akzeptieren von Nachrichten.',
 	'translate-dynagroup-by' => 'Übersetzung von {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Übersetzung von {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Letzte Änderung von {{GENDER:$1|$1}}',
@@ -9536,6 +9538,7 @@ $messages['hi'] = array(
 	'translate-task-export' => 'अनुवाद आयात करें',
 	'translate-page-disabled' => "इस भा्षा के इस समूह में अनुवाद बंद हैं. कारण:
 ''$1''",
+	'translate-page-settings-legend' => 'सेटिंग्स',
 	'translate-page-group' => 'समूह',
 	'translate-page-language' => 'भाषा',
 	'translate-page-limit' => 'सीमा',
@@ -10498,7 +10501,7 @@ Kattints az üzenetcsoport nevére a fordítandó üzenetek listájának megteki
 	'translate-next' => 'következő',
 	'translate-prev' => 'előző',
 	'translate-page-description-legend' => 'Információk a csoportról',
-	'translate-page-description-hasoptional' => 'Ez az üzenet opcionális üzeneteket tartalmaz.
+	'translate-page-description-hasoptional' => 'Ez az üzenetcsoport opcionális üzeneteket tartalmaz.
 Az opcionális üzeneteket csak akkor kell lefordítani, ha a nyelvnek speciális követelménye van, mint például a szóközök, vagy a tulajdonnevek átírása. $1',
 	'translate-page-description-hasoptional-open' => 'Opcionális üzenetek megjelenítése.',
 	'translate-page-edit' => 'szerkesztés',
@@ -13924,6 +13927,8 @@ Detailler: $1',
 	'translate-workflow-set-done' => 'Agestallt!',
 	'translate-stats-workflow' => 'Statut',
 	'translate-dynagroup-recent-label' => 'Rezent Iwwersetzungen',
+	'translate-dynagroup-by' => 'Iwwersetzung vum {{GENDER:$1|$1}}',
+	'translate-dynagroup-byc' => 'Iwwersetzung vum {{GENDER:$1|$1}} ($2)',
 );
 
 /** Ganda (Luganda)
@@ -19668,6 +19673,29 @@ $messages['rue'] = array(
 	'translate-gs-avgscore' => 'Сер. оцінка',
 );
 
+/** Sanskrit (संस्कृतम्)
+ * @author Ansumang
+ */
+$messages['sa'] = array(
+	'translate-page-settings-legend' => 'संरचनम्',
+	'translate-page-group' => 'वर्ग',
+	'translate-page-language' => 'भाषा',
+	'translate-page-edit' => 'सम्पाद्यताम्',
+	'translate-edit-jsopen' => 'सम्पाद्यताम्',
+	'translate-edit-title' => 'सम्पाद्यताम् "$1"',
+	'translate-edit-translation' => 'अनुवादम्',
+	'translate-magic-cm-original' => 'मूल',
+	'translate-magic-cm-comment' => 'टिप्पणी:',
+	'translate-stats-edits' => 'सम्पाद्यताम्',
+	'translate-statsf-scale-weeks' => 'सप्ताहम्',
+	'translate-statsf-scale-days' => 'दिवस',
+	'translate-statsf-scale-hours' => 'घण्टा',
+	'translate-statsf-submit' => 'प्राग्दृश्यम् दर्श्यताम्',
+	'translate-translations-fieldset-title' => 'संदेश',
+	'translate-translations-messagename' => 'नामन्:',
+	'translate-translations-project' => 'प्रकल्पम्:',
+);
+
 /** Sakha (Саха тыла)
  * @author Bert Jickty
  * @author HalanTul
@@ -24770,6 +24798,7 @@ $messages['zh-hans'] = array(
 	'translate-desc' => '用以翻译MediaWiki和其他软件界面信息的[[Special:Translate|特殊页面]]',
 	'translate-showsub' => '显示子组。{{PLURAL:$1}}',
 	'translate-grouplisting' => '本列表显示所有可翻译组。单击信息组名查看未翻译信息列表。',
+	'translate-grouplisting-empty' => '没有已为翻译配置的信息组。',
 	'translate-task-view' => '查看所有信息',
 	'translate-task-untranslated' => '查看所有未翻译信息',
 	'translate-task-optional' => '查看可选信息',
@@ -24801,7 +24830,9 @@ $messages['zh-hans'] = array(
 	'translate-next' => '下一页',
 	'translate-prev' => '上一页',
 	'translate-page-description-legend' => '有关本组的信息',
-	'translate-page-description-hasoptional-open' => '显示可选消息。',
+	'translate-page-description-hasoptional' => '此信息组包含选修信息。
+选修信息应该只若您的语言有特殊要求（例如：写文中不使用空格、专有名词需音译转写等）才得翻译。$1',
+	'translate-page-description-hasoptional-open' => '显示选修信息。',
 	'translate-page-edit' => '编辑',
 	'translate-ext-url' => '<hr />网站：$1',
 	'translate-optional' => '（可选）',
@@ -24811,7 +24842,8 @@ $messages['zh-hans'] = array(
 	'translate-edit-definition' => '信息原文',
 	'translate-edit-translation' => '翻译',
 	'translate-edit-contribute' => '贡献',
-	'translate-edit-no-information' => "''本界面消息没有任何说明文档。如果您知道这个消息在哪使用或如何使用，您可以增加该消息的说明文档来帮助其他翻译者。''",
+	'translate-edit-no-information' => "''本界面信息没有任何说明文档。''
+''若您知道此信息在何处使用或如何使用，您可以增加该信息的说明文档来帮助其他翻译者。''",
 	'translate-edit-information' => '关于信息的资料（$1）',
 	'translate-edit-in-other-languages' => '其他语言的信息',
 	'translate-edit-committed' => '当前翻译',
@@ -24820,6 +24852,7 @@ $messages['zh-hans'] = array(
 	'translate-edit-tmmatch' => '$1%匹配',
 	'translate-use-suggestion' => '采纳此建议取代目前的翻译。',
 	'translate-edit-tab-list' => '信息列表',
+	'translate-edit-nopermission' => '您必须获得权限才可以翻译信息。',
 	'translate-edit-askpermission' => '请求权限',
 	'translate-magic-pagename' => '扩展的MediaWiki翻译',
 	'translate-magic-help' => '您可以面翻译特殊页面别名、魔术字以及名字空间名称。
@@ -24914,13 +24947,13 @@ $messages['zh-hans'] = array(
 	'translate-sidebar-alltrans' => '其他语言',
 	'translations' => '所有翻译',
 	'translations-summary' => '在下方输入信息名称来显示所有可用的翻译。',
-	'translate-translations-no-message' => '“$1”不是可翻译的界面消息',
+	'translate-translations-no-message' => '“$1”不是可翻译的界面信息',
 	'translate-translations-none' => '没有“$1”的翻译',
 	'translate-translations-count' => '发现 {{PLURAL:$1|一个翻译|$1 个翻译}}。',
 	'translate-translations-fieldset-title' => '信息',
 	'translate-translations-messagename' => '名称：',
 	'translate-translations-project' => '计划:',
-	'translate-translations-including-no-param' => '请在子页面参数中指定一个有效的消息键',
+	'translate-translations-including-no-param' => '请在子页面参数中指定一个有效的信息键',
 	'translate-translations-history-short' => '历',
 	'languagestats' => '语言统计',
 	'languagestats-summary' => '这个页面显示了当前语言的所有项目组的完成度。',
@@ -24933,8 +24966,8 @@ $messages['zh-hans'] = array(
 	'translate-langstats-collapseall' => '全部折叠',
 	'translate-language-code' => '语言代码',
 	'translate-language-code-field-name' => '语言代码：',
-	'translate-suppress-complete' => '隐藏已全部翻译完成的消息组',
-	'translate-ls-noempty' => '隐藏完全未翻译的消息组',
+	'translate-suppress-complete' => '隐藏已全部翻译完成的信息组',
+	'translate-ls-noempty' => '隐藏完全未翻译的信息组',
 	'translate-language' => '语言',
 	'translate-total' => '信息',
 	'translate-untranslated' => '未翻译',
@@ -24944,10 +24977,10 @@ $messages['zh-hans'] = array(
 你可以在[[Special:Translate|{{int:translate}}]]查看其他的翻译项目。',
 	'translate-languagestats-overall' => '所有信息组',
 	'translate-ls-submit' => '显示统计',
-	'translate-ls-column-group' => '消息组',
-	'translate-mgs-pagename' => '消息组统计',
+	'translate-ls-column-group' => '信息组',
+	'translate-mgs-pagename' => '信息组统计',
 	'translate-mgs-fieldset' => '显示偏好',
-	'translate-mgs-group' => '消息组：',
+	'translate-mgs-group' => '信息组：',
 	'translate-mgs-nocomplete' => '不要显示已完全翻译的语言',
 	'translate-mgs-noempty' => '不要显示没有任何翻译的语言',
 	'translate-mgs-submit' => '显示统计',
@@ -24956,7 +24989,7 @@ $messages['zh-hans'] = array(
 	'translate-mgs-invalid-group' => '指定的组$1不存在。',
 	'translate-mgs-nothing' => '对于请求的统计，没有内容显示。',
 	'supportedlanguages' => '支持的语言',
-	'supportedlanguages-summary' => '此页显示 {{SITENAME}} 所支持的所有语言的列表，
+	'supportedlanguages-summary' => '本页显示 {{SITENAME}} 所支持的所有语言的列表，
 连同工作对该语言的翻译员的姓名。
 某个翻译员的名称显现更大，表示其编辑贡献更多。
 下划线的颜色表示某个翻译员在此最近有多少活跃。',
@@ -24977,7 +25010,7 @@ $messages['zh-hans'] = array(
 	'translate-manage-return-to-group' => '返回组详细信息页面',
 	'translate-manage-modlangs' => '请在以下{{PLURAL:$1|语言|语言}}版本中检查任何可能作出的修改。',
 	'translate-manage-modlang-new' => '$1（新）',
-	'translate-manage-import-diff' => '信息$1|操作：$2',
+	'translate-manage-import-diff' => '信息 $1 | 操作：$2',
 	'translate-manage-import-new' => '新信息$1',
 	'translate-manage-import-deleted' => '删除的信息$1',
 	'translate-manage-action-import' => '导入',
@@ -24985,8 +25018,8 @@ $messages['zh-hans'] = array(
 	'translate-manage-action-ignore' => '忽略',
 	'translate-manage-action-fuzzy' => '导入和模糊的翻译',
 	'translate-manage-submit' => '执行',
-	'translate-manage-nochanges' => '信息定义为此组中有任何更改。',
-	'translate-manage-nochanges-other' => '有没有这种语言的更改。
+	'translate-manage-nochanges' => '信息定义为此组中没有任何更改。',
+	'translate-manage-nochanges-other' => '在这种语言没有任何更改。
 返回组详细信息视图中使用下面的链接。',
 	'translate-manage-inconsistent' => '检测到请求中的不一致。
 请检查是否有变化，然后重试。
@@ -25003,9 +25036,9 @@ $messages['zh-hans'] = array(
 	'translate-manage-import-fuzzy' => '导入和模糊：$1',
 	'translate-manage-import-done' => '全部完成！',
 	'translate-manage-import-rebuild' => '缓存重建。',
-	'translate-manage-intro-en' => '下面是此组中的消息更改的列表。
+	'translate-manage-intro-en' => '下面是此组中的信息更改的列表。
 请检查所做的更改，并选择您想要为每个邮件的操作。
-一旦您已更新消息定义，检查外部更改在其他语言中，如果任何。
+一旦您已更新信息定义，检查外部更改在其他语言中，如果任何。
 此外请注意，<code>ignore</code>的行动只是暂时的。',
 	'translate-manage-intro-other' => '下面是在翻译更改列表$1语言。
 请检查所做的更改，并选择您想要为每个翻译的操作。
@@ -25025,6 +25058,11 @@ $1',
 	'translate-import-err-invalid-title' => '提供文件名称 <nowiki>$1</nowiki> 是无效的。',
 	'translate-import-err-no-such-file' => '文件 <nowiki>$1</nowiki> 不存在或本地已上载。',
 	'translate-import-err-stale-group' => '此文件所属的信息组不存在。',
+	'translate-import-err-no-headers' => '该文件不是以翻译扩展格式形成良好的Gettext文件：
+无法以文件头确定信息组和语言。',
+	'translate-import-err-warnings' => '该文件不良好形成。
+请确保您的编辑器不会删除msgctxt领域。
+详细信息：$1',
 	'translate-js-next' => '保存并打开下一条',
 	'translate-js-nonext' => '这是本页的最后一条信息。',
 	'translate-js-skip' => '跳至下一条',
@@ -25050,8 +25088,8 @@ $1',
 	'translate-messagereview-progress' => '正在接受...',
 	'translate-messagereview-failure' => '正在接受...失败：$1',
 	'translate-messagereview-done' => '已接受',
-	'translate-messagereview-apierror-invalidrevision' => '没有找到翻译',
-	'translate-messagereview-apierror-unknownmessage' => '没有找到消息',
+	'translate-messagereview-apierror-invalidrevision' => '找不到翻译',
+	'translate-messagereview-apierror-unknownmessage' => '找不到信息',
 	'translate-messagereview-apierror-fuzzymessage' => '翻译被编辑为不准确',
 	'translate-messagereview-apierror-owntranslation' => '您不能接受自己的翻译',
 	'translate-messagereview-apierror-badtoken' => '无效的权标',
@@ -25065,15 +25103,22 @@ $1',
 	'group-translate-proofr-member' => '{{GENDER:$1|翻译复查者}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:翻译复查者',
 	'log-name-translationreview' => '翻译复查日志',
-	'log-description-translationreview' => '所有对翻译和消息组的复查的日志。',
+	'log-description-translationreview' => '所有对翻译和信息组的复查的日志。',
 	'logentry-translationreview-message' => '$1{{GENDER:$2|已接受}}翻译$3',
-	'logentry-groupreview-message' => '$1将$3消息组的$4翻译状态从$5{{GENDER:$2|更改}}至$6',
+	'logentry-groupreview-message' => '$1将$3信息组的$4翻译状态从$5{{GENDER:$2|更改}}至$6',
 	'translate-workflow-state-' => '（未设置）',
 	'translate-workflowstatus' => '状态：$1',
 	'translate-workflow-set-do' => '设置',
 	'translate-workflow-set-doing' => '正在设置...',
 	'translate-workflow-set-done' => '已设置！',
 	'translate-stats-workflow' => '状态',
+	'translate-dynagroup-recent-label' => '最近的翻译',
+	'translate-dynagroup-recent-desc' => '本信息组显示该语言中所有最近的翻译作品，
+最适合于接收信息或检阅所有翻译的职务。',
+	'translate-dynagroup-by' => '{{GENDER:$1|$1}}作出翻译',
+	'translate-dynagroup-byc' => '{{GENDER:$1|$1}}作出翻译（$2）',
+	'translate-dynagroup-last' => '{{GENDER:$1|$1}}作出最近更改',
+	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}}作出最近更改（$2）',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
@@ -25089,11 +25134,12 @@ $messages['zh-hant'] = array(
 	'translate' => '翻譯',
 	'translate-desc' => '翻譯 MediaWiki 介面訊息的[[Special:Translate|特殊頁面]]',
 	'translate-showsub' => '顯示子組。{{PLURAL:$1}}',
-	'translate-grouplisting' => '本列表顯示所有可翻譯組。單擊信息組名查看未翻譯信息列表。',
+	'translate-grouplisting' => '本列表顯示所有可翻譯組。單擊訊息組名查看未翻譯訊息列表。',
+	'translate-grouplisting-empty' => '沒有已為翻譯設定的訊息組。',
 	'translate-task-view' => '檢視全部介面訊息',
 	'translate-task-untranslated' => '檢視尚未翻譯的介面訊息',
 	'translate-task-optional' => '檢視可選的介面訊息',
-	'translate-task-suggestions' => '查看有翻譯建議的信息',
+	'translate-task-suggestions' => '查看有翻譯建議的訊息',
 	'translate-task-untranslatedoptional' => '檢視尚未翻譯的可選介面訊息',
 	'translate-task-problematic' => '檢視有問題的介面訊息',
 	'translate-task-review' => '檢查該處的更改',
@@ -25123,25 +25169,29 @@ $messages['zh-hant'] = array(
 	'translate-next' => '下一頁',
 	'translate-prev' => '上一頁',
 	'translate-page-description-legend' => '關於本群組',
-	'translate-page-description-hasoptional-open' => '顯示可選消息。',
+	'translate-page-description-hasoptional' => '此信息組包含選修訊息。
+選修訊息應該只若您的語言有特殊要求（例如：寫文中不使用空格、專有名詞需音譯轉寫等）才得翻譯。 $1',
+	'translate-page-description-hasoptional-open' => '顯示選修訊息。',
 	'translate-page-edit' => '編輯',
 	'translate-ext-url' => '<hr />網站：$1',
 	'translate-optional' => '（可選）',
 	'translate-ignored' => '（已略過）',
+	'translate-edit-jsopen' => '編輯',
 	'translate-edit-title' => '開始翻譯「$1」',
 	'translate-edit-definition' => '介面訊息原文',
 	'translate-edit-translation' => '翻譯',
 	'translate-edit-contribute' => '貢獻',
 	'translate-edit-no-information' => "''本介面訊息沒有任何說明資訊
 如果您知道這個訊息是使用在哪個地方，您可以增加說明資訊以協助其他翻譯者''",
-	'translate-edit-information' => '關於信息的資料（$1）',
-	'translate-edit-in-other-languages' => '其他語言的信息',
+	'translate-edit-information' => '關於訊息的資料（$1）',
+	'translate-edit-in-other-languages' => '其他語言的訊息',
 	'translate-edit-committed' => '目前翻譯',
 	'translate-edit-warnings' => '未完成翻譯的警告',
 	'translate-edit-tmsugs' => '來自翻譯記憶的建議',
 	'translate-edit-tmmatch' => '$1% 符合',
 	'translate-use-suggestion' => '採納此建議取代目前的翻譯。',
 	'translate-edit-tab-list' => '介面訊息清單',
+	'translate-edit-nopermission' => '您必須獲得權限才可以翻譯信息。',
 	'translate-edit-askpermission' => '請求權限',
 	'translate-magic-pagename' => '延伸的 MediaWiki 翻譯',
 	'translate-magic-help' => "您可以使用本特殊頁面翻譯'''特殊頁面別名'''、'''魔術字'''以及'''名字空間名稱'''。
@@ -25197,10 +25247,10 @@ $messages['zh-hant'] = array(
 <nowiki>$1</nowiki>。',
 	'translate-pref-jsedit' => '增強的翻譯編輯器（JavaScript）',
 	'right-translate' => '使用翻譯介面編輯',
-	'right-translate-manage' => '管理計畫群組',
+	'right-translate-manage' => '管理訊息組',
 	'right-translate-import' => '匯入離線翻譯',
 	'right-translate-messagereview' => '複查翻譯',
-	'right-translate-groupreview' => '改善計畫群組工作流狀態',
+	'right-translate-groupreview' => '改善訊息組工作流狀態',
 	'translate-rc-translation-filter' => '篩選翻譯：',
 	'translate-rc-translation-filter-no' => '不篩選',
 	'translate-rc-translation-filter-only' => '只顯示翻譯',
@@ -25242,10 +25292,10 @@ $messages['zh-hant'] = array(
 	'translate-translations-fieldset-title' => '所有翻譯',
 	'translate-translations-messagename' => '訊息名稱：',
 	'translate-translations-project' => '計畫：',
-	'translate-translations-including-no-param' => '請在子頁面參數中指定一個有效的消息鍵',
+	'translate-translations-including-no-param' => '請在子頁面參數中指定一個有效的訊息鍵',
 	'translate-translations-history-short' => '歷',
 	'languagestats' => '語言統計',
-	'languagestats-summary' => '這個頁面顯示了目前語言的所有計畫群組的完成進度。',
+	'languagestats-summary' => '這個頁面顯示了目前語言的所有訊息組的完成進度。',
 	'languagestats-stats-for' => '$1 ($2) 的翻譯統計。',
 	'languagestats-recenttranslations' => '最近的翻譯',
 	'translate-langstats-incomplete' => '本頁面內有一些統計數據載入不完整，請刷新本頁面以便獲得更多統計數據。',
@@ -25255,8 +25305,8 @@ $messages['zh-hant'] = array(
 	'translate-langstats-collapseall' => '全部摺疊',
 	'translate-language-code' => '語言代碼',
 	'translate-language-code-field-name' => '語言代碼：',
-	'translate-suppress-complete' => '隱藏已全部翻譯完成的計畫群組',
-	'translate-ls-noempty' => '隱藏完全未翻譯的消息組',
+	'translate-suppress-complete' => '隱藏已全部翻譯完成的訊息組',
+	'translate-ls-noempty' => '隱藏完全未翻譯的訊息組',
 	'translate-language' => '語言',
 	'translate-total' => '訊息',
 	'translate-untranslated' => '未翻譯',
@@ -25264,12 +25314,12 @@ $messages['zh-hant'] = array(
 	'translate-percentage-fuzzy' => '已過時',
 	'translate-nothing-to-do' => '似乎所有的翻譯都已經完成。
 你可以在[[Special:Translate|{{int:translate}}]]查看其他的翻譯項目。',
-	'translate-languagestats-overall' => '所有信息組',
+	'translate-languagestats-overall' => '所有訊息組',
 	'translate-ls-submit' => '顯示統計',
-	'translate-ls-column-group' => '消息組',
-	'translate-mgs-pagename' => '消息組統計',
+	'translate-ls-column-group' => '訊息組',
+	'translate-mgs-pagename' => '訊息組統計',
 	'translate-mgs-fieldset' => '顯示偏好',
-	'translate-mgs-group' => '消息組：',
+	'translate-mgs-group' => '訊息組：',
 	'translate-mgs-nocomplete' => '不要顯示已完全翻譯的語言',
 	'translate-mgs-noempty' => '不要顯示沒有任何翻譯的語言',
 	'translate-mgs-submit' => '顯示統計',
@@ -25278,6 +25328,10 @@ $messages['zh-hant'] = array(
 	'translate-mgs-invalid-group' => '指定的組$1不存在。',
 	'translate-mgs-nothing' => '對於請求的統計，沒有內容顯示。',
 	'supportedlanguages' => '支援的語言',
+	'supportedlanguages-summary' => '本頁顯示{{SITENAME}} 所支持的所有語言的列表，
+連同工作對該語言的翻譯員的姓名。
+某個翻譯員的名稱顯現更大，表示其編輯貢獻更多。
+下劃線的顏色表示某個翻譯員在此最近有多少活躍。',
 	'supportedlanguages-colorlegend' => '顏色圖例：其最近一次翻譯是於$1天前。',
 	'supportedlanguages-translators' => '{{PLURAL:$2|翻譯者|翻譯者}}：$1',
 	'supportedlanguages-recenttranslations' => '最近的翻譯',
@@ -25285,16 +25339,17 @@ $messages['zh-hant'] = array(
 	'supportedlanguages-activity' => '$1：$2次編輯——最近一次編輯於$3天前',
 	'translate-save' => '儲存 （$1）',
 	'translate-jssti-add' => '新增至清單',
-	'managemessagegroups' => '信息組管理',
+	'managemessagegroups' => '訊息組管理',
 	'translate-manage-groups' => '群組管理',
 	'translate-manage-listgroups' => '配置群組',
 	'translate-manage-listgroups-old' => '舊的風格群組',
 	'translate-managegroups' => '組管理',
 	'translate-manage-newgroup' => '以前此訊息群組沒有被導入過。',
 	'translate-manage-cacheat' => '導入$1在$2',
-	'translate-manage-return-to-group' => '返回組詳細信息頁面',
+	'translate-manage-return-to-group' => '返回組詳細訊息組頁面',
 	'translate-manage-modlangs' => '請在以下{{PLURAL:$1|語言|語言}}版本中檢查任何可能作出的修改。',
 	'translate-manage-modlang-new' => '$1（新）',
+	'translate-manage-import-diff' => '訊息 $1 | 操作：$2',
 	'translate-manage-import-new' => '新訊息 $1',
 	'translate-manage-import-deleted' => '刪除的訊息  $1',
 	'translate-manage-action-import' => '匯入',
@@ -25302,9 +25357,9 @@ $messages['zh-hant'] = array(
 	'translate-manage-action-ignore' => '忽略',
 	'translate-manage-action-fuzzy' => '導入和模糊的翻譯',
 	'translate-manage-submit' => '執行',
-	'translate-manage-nochanges' => '信息定義為此組中有任何更改。',
-	'translate-manage-nochanges-other' => '有沒有這種語言的更改。
-返回組詳細信息視圖中使用下面的鏈接。',
+	'translate-manage-nochanges' => '訊息定義為此組中沒有任何更改。',
+	'translate-manage-nochanges-other' => '在這種語言沒有任何更改。
+返回組詳細信息視圖中使用下面的連結。',
 	'translate-manage-inconsistent' => '檢測到請求中的不一致。
 請檢查是否有變化，然後重試。
 詳細信息：$1。',
@@ -25320,9 +25375,9 @@ $messages['zh-hant'] = array(
 	'translate-manage-import-fuzzy' => '導入和模糊：$1',
 	'translate-manage-import-done' => '全部完成！',
 	'translate-manage-import-rebuild' => '緩存重建。',
-	'translate-manage-intro-en' => '下面是此組中的消息更改的列表。
+	'translate-manage-intro-en' => '下面是此組中的訊息更改的列表。
 請檢查所做的更改，並選擇您想要為每個郵件的操作。
-一旦您已更新消息定義，檢查外部更改在其他語言中，如果任何。
+一旦您已更新訊息定義，檢查外部更改在其他語言中，如果任何。
 此外請注意，<code>ignore</code>的行動只是暫時的。',
 	'translate-manage-intro-other' => '下面是在翻譯更改列表$1語言。
 請檢查所做的更改，並選擇您想要為每個翻譯的操作。
@@ -25341,14 +25396,19 @@ $1',
 	'translate-import-err-ul-failed' => '文件上傳不成功',
 	'translate-import-err-invalid-title' => '提供文件名稱 <nowiki>$1</nowiki> 是無效的。',
 	'translate-import-err-no-such-file' => '文件 <nowiki>$1</nowiki> 不存在或本地已上載。',
-	'translate-import-err-stale-group' => '此文件所屬的信息組不存在。',
+	'translate-import-err-stale-group' => '此文件所屬的訊息組不存在。',
+	'translate-import-err-no-headers' => '該檔案不是以翻譯擴展格式形成良好的Gettext檔案：
+無法以文件頭確定訊息組和語言。',
+	'translate-import-err-warnings' => '此檔案文件不良好形成。
+請確保您的編輯器不會刪除msgctxt領域。
+詳細信息：$1',
 	'translate-js-next' => '儲存並開啟下一個',
 	'translate-js-nonext' => '這是本頁的最後一個訊息。',
 	'translate-js-skip' => '跳至下一個',
 	'translate-js-save-failed' => '保存失敗。請報告此錯誤。',
 	'translate-js-history' => '翻譯歷史',
 	'translate-js-support' => '問問題',
-	'translate-js-support-title' => '如果沒有足夠的資料來正確翻譯此信息，要求幫助。',
+	'translate-js-support-title' => '如果沒有足夠的資料來正確翻譯此訊息，要求幫助。',
 	'translate-gs-pos' => '位置',
 	'translate-gs-code' => '代碼',
 	'translate-gs-continent' => '大陸',
@@ -25358,7 +25418,7 @@ $1',
 	'translate-gs-count' => '數量',
 	'translate-gs-total' => '總數',
 	'translate-gs-avgscore' => '平均得分',
-	'translate-documentation-language' => '信息說明文件',
+	'translate-documentation-language' => '訊息說明文件',
 	'translate-searchprofile' => '翻譯',
 	'translate-searchprofile-tooltip' => '從所有翻譯搜索',
 	'translate-search-languagefilter' => '按語言篩選：',
@@ -25367,8 +25427,8 @@ $1',
 	'translate-messagereview-progress' => '正在接受...',
 	'translate-messagereview-failure' => '正在接受...失敗：$1',
 	'translate-messagereview-done' => '已接受',
-	'translate-messagereview-apierror-invalidrevision' => '沒有找到翻譯',
-	'translate-messagereview-apierror-unknownmessage' => '沒有找到消息',
+	'translate-messagereview-apierror-invalidrevision' => '找不到翻譯',
+	'translate-messagereview-apierror-unknownmessage' => '找不到訊息',
 	'translate-messagereview-apierror-fuzzymessage' => '翻譯被編輯為不準確',
 	'translate-messagereview-apierror-owntranslation' => '您不能接受自己的翻譯',
 	'translate-messagereview-apierror-badtoken' => '無效的權標',
@@ -25382,15 +25442,22 @@ $1',
 	'group-translate-proofr-member' => '{{GENDER:$1|翻譯複查者}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:翻譯複查者',
 	'log-name-translationreview' => '翻譯複查日誌',
-	'log-description-translationreview' => '所有對翻譯和消息組的複查的日誌。',
+	'log-description-translationreview' => '所有對翻譯和訊息組的複查的日誌。',
 	'logentry-translationreview-message' => '$1{{GENDER:$2|已接受}}翻譯$3',
-	'logentry-groupreview-message' => '$1將$3消息組的$4翻譯狀態從$5{{GENDER:$2|更改}}至$6',
+	'logentry-groupreview-message' => '$1將$3訊息組的$4翻譯狀態從$5{{GENDER:$2|更改}}至$6',
 	'translate-workflow-state-' => '（未設置）',
 	'translate-workflowstatus' => '狀態：$1',
 	'translate-workflow-set-do' => '設置',
 	'translate-workflow-set-doing' => '正在設置...',
 	'translate-workflow-set-done' => '已設置！',
 	'translate-stats-workflow' => '狀態',
+	'translate-dynagroup-recent-label' => '最近的翻譯',
+	'translate-dynagroup-recent-desc' => '本訊息組顯示該語言中所有最近的翻譯作品，
+最適合於接收訊息或檢閱所有翻譯的職務。',
+	'translate-dynagroup-by' => '{{GENDER:$1|$1}}作出翻譯',
+	'translate-dynagroup-byc' => '{{GENDER:$1|$1}}作出翻譯（$2）',
+	'translate-dynagroup-last' => '{{GENDER:$1|$1}}作出最近更改',
+	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}}作出最近更改（$2）',
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)
