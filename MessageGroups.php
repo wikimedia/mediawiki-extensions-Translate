@@ -777,9 +777,7 @@ class WikiMessageGroup extends MessageGroupOld {
 	 * @return \types{\string,\null} The translation or null if it doesn't exists.
 	 */
 	public function getMessage( $key, $code ) {
-		global $wgContLang;
-
-		if ( $code && $wgContLang->getCode() !== $code ) {
+		if ( $code && $this->getSourceLanguage() !== $code ) {
 			return TranslateUtils::getMessageContent( $key, $code );
 		} else {
 			return TranslateUtils::getMessageContent( $key, false );
