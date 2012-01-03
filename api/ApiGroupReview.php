@@ -97,7 +97,11 @@ class ApiGroupReview extends ApiBase {
 		global $wgTranslateWorkflowStates;
 		return array(
 			'group' => array(
-				ApiBase::PARAM_TYPE => array_keys( MessageGroups::getAllGroups() ),
+				/* API borks with | if defined multiple allowed values even
+				 * though we are expecting only one value, which can and will
+				 * contain | for page translation pages, which have group id
+				 * of format page|Pagename. */
+				ApiBase::PARAM_TYPE => 'string',//array_keys( MessageGroups::getAllGroups() ),
 				ApiBase::PARAM_REQUIRED => true,
 			),
 			'language' => array(
