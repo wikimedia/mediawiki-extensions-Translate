@@ -130,8 +130,10 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		if ( $out ) {
 			$table->setMainColumnHeader( wfMessage( 'translate-mgs-column-language' ) );
 			$out = $table->createHeader() . "\n" . $out;
-			$out .= $table->makeTotalRow( wfMessage( 'translate-mgs-totals' ), $this->totals );
 			$out .= Html::closeElement( 'tbody' );
+			$out .= '<tfoot>';
+			$out .= $table->makeTotalRow( wfMessage( 'translate-mgs-totals' ), $this->totals );
+			$out .= '</tfoot>';
 			$out .= Html::closeElement( 'table' );
 			return $out;
 		} else {
