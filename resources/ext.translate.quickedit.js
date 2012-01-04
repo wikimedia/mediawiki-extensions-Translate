@@ -46,6 +46,10 @@
 	function windowWidth() {
 		return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	}
+	
+	function windowHeight() {
+		return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+	}
 
 	function addAccessKeys( dialog ) {
 		var buttons = {
@@ -112,7 +116,7 @@
 
 		var textarea = form.find( '.mw-translate-edit-area' );
 		textarea.css( 'display', 'block' );
-		textarea.autoResize( {extraSpace: 15, limit: 200} ).trigger( 'change' );
+		textarea.autoResize( { maxHeight: 200 } );
 		textarea.focus();
 
 		if ( form.find( '.mw-translate-messagechecks' ) ) {
@@ -131,6 +135,11 @@
 	translate = {
 		init: function() {
 			dialogwidth = parseInt( windowWidth()*0.8, 10 );
+			mw.util.addCSS( "/* Inserted by ext.translate.quickedit */\n" +
+				".mw-sp-translate-edit-fields {\n" + 
+				"\tmax-height: " + parseInt( windowHeight() * 0.7, 10 )  + "px;\n" +
+				"\toverflow: auto\n}\n"
+			);
 		},
 
 		openDialog: function( page, group ) {

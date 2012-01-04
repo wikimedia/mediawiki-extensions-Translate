@@ -19,6 +19,8 @@
 	line-height: normal;
 	margin: 0px;
 	border: 1px solid #DBDBDB;
+	max-height: 250px;
+	overflow: auto;
 }
 
 .mw-sp-translate-edit-fields legend {
