@@ -289,10 +289,12 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		if ( $out ) {
 			$table->setMainColumnHeader( wfMessage( 'translate-ls-column-group' ) );
 			$out = $table->createHeader() . "\n" . $out;
-			$out .= '<tfoot>';
-			$out .= $table->makeTotalRow( wfMessage( 'translate-languagestats-overall' ), $this->totals );
-			$out .= '</tfoot>';
 			$out .= Html::closeElement( 'tbody' );
+
+			$out .= Html::openElement( 'tfoot' );
+			$out .= $table->makeTotalRow( wfMessage( 'translate-languagestats-overall' ), $this->totals );
+			$out .= Html::closeElement( 'tfoot' );
+
 			$out .= Html::closeElement( 'table' );
 			return $out;
 		} else {
