@@ -20,9 +20,6 @@ abstract class MessageIndex {
 	/// @var MessageIndex
 	protected static $instance;
 
-	/// @var array
-	protected $index;
-
 	/**
 	 * @return MessageIndex
 	 */
@@ -34,6 +31,33 @@ abstract class MessageIndex {
 			self::$instance = new $class( $params );
 		}
 		return self::$instance;
+	}
+
+
+	/**
+	 * @since 2012-01-14
+	 * @return array
+	 */
+	public static function getGroupIds( MessageHandle $handle ) {
+		$namespace = $handle->getTitle()->getNamespace();
+		$key = $handle->getKey();
+		$normkey = strtr( strtolower( "$namespace:$key" ), " ", "_"  );
+
+		$index = self::singleton()->retrieve();
+		if ( isset( $index[$normkey] ) ) {
+			return (array) $index[$normkey];
+		} else {
+			return array();
+		}
+	}
+
+	/**
+	 * @since 2012-01-14
+	 * @return MessageGroup|null
+	 */
+	public static function getPrimaryGroupId( MessageHandle $handle ) {
+		$groups = self::getGroupIds( $handle );
+		return count( $groups ) ? array_shift( $groups ) : null;
 	}
 
 	/** @return array */
@@ -157,6 +181,9 @@ abstract class MessageIndex {
  * Storage on serialized file.
  */
 class FileCachedMessageIndex extends MessageIndex {
+	/// @var array
+	protected $index;
+
 	protected $filename = 'translate_messageindex.ser';
 
 	/** @return array */
@@ -186,6 +213,9 @@ class FileCachedMessageIndex extends MessageIndex {
 class CachedMessageIndex extends MessageIndex {
 	protected $key = 'translate-messageindex';
 	protected $cache;
+
+	/// @var array
+	protected $index;
 
 	protected function __construct( array $params ) {
 		$this->cache = wfGetCache( CACHE_ANYTHING );

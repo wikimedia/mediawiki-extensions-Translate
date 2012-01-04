@@ -974,6 +974,17 @@ class RecentMessageGroup extends WikiMessageGroup {
 		return null;
 	}
 
+	/**
+	 * Subpage language of any in the title is not used.
+	 */
+	public function getMessageContent( MessageHandle $handle, $code ) {
+		$groupId = MessageIndex::getPrimaryGroupId( $handle );
+		$group = MessageGroups::getGroup( $groupId );
+		if ( $group ) {
+			return $group->getMessage( $handle->getKey(), $code );
+		}
+	}
+
 }
 
 /**

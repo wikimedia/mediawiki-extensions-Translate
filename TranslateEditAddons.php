@@ -269,7 +269,8 @@ class TranslateEditAddons {
 	private static function editBoxes( EditPage $object ) {
 		global $wgOut, $wgRequest;
 
-		$th = new TranslationHelpers( $object->mTitle );
+		$groupId = $wgRequest->getText( 'loadgroup', '' );
+		$th = new TranslationHelpers( $object->mTitle, $groupId );
 		if ( $object->firsttime && !$wgRequest->getCheck( 'oldid' ) && !$wgRequest->getCheck( 'undo' ) ) {
 			$object->textbox1 = (string) $th->getTranslation();
 		} else {

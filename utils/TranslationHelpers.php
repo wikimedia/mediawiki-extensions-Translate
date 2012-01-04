@@ -16,22 +16,16 @@
  */
 class TranslationHelpers {
 	/**
-	 * Title of the message
+	 * @var MessageHandle
+	 * @since 2012-01-04
 	 */
-	protected $title;
-	/**
-	 * Name of the message without namespace or language code.
-	 */
-	protected $page;
-	/**
-	 * The language we are translating into.
-	 */
-	protected $targetLanguage;
+	protected $handle;
 	/**
 	 * The group object of the message (or null if there isn't any)
 	 * @var MessageGroup
 	 */
 	protected $group;
+
 	/**
 	 * The current translation as a string.
 	 */
@@ -51,45 +45,28 @@ class TranslationHelpers {
 	protected $editMode = 'true';
 
 	/**
-	 * @param $title Title Title of a page that holds a translation.
+	 * @param $title Title: Title of a page that holds a translation.
+	 * @param $group String: Group id that should be used, otherwise autodetected from title.
 	 */
-	public function __construct( Title $title ) {
-		$this->title = $title;
-		$this->init();
-	}
-
-	/**
-	 * Initializes member variables.
-	 */
-	protected function init() {
-		$title = $this->title;
-		list( $page, $code ) = TranslateEditAddons::figureMessage( $title );
-
-		$this->page = $page;
-		$this->targetLanguage = $code;
-		$this->group = self::getMessageGroup( $title->getNamespace(), $page );
+	public function __construct( Title $title, $groupId ) {
+		$this->handle = new MessageHandle( $title );
+		$this->group = $this->getMessageGroup( $this->handle, $groupId );
 	}
 
 	/**
 	 * Tries to determine to which group this message belongs. It tries to get
 	 * group id from loadgroup GET-paramater, but fallbacks to messageIndex file
 	 * if no valid group was provided.
-	 * @param $namespace  int  The namespace where the page is.
-	 * @param $key  string     The message key we are interested in.
+	 *
 	 * @return MessageGroup which the key belongs to, or null.
 	 */
-	protected static function getMessageGroup( $namespace, $key ) {
-		global $wgRequest;
+	protected function getMessageGroup( MessageHandle $handle, $groupId ) {
+		$mg = MessageGroups::getGroup( $groupId );
 
-		$group = $wgRequest->getText( 'loadgroup', '' );
-		$mg = MessageGroups::getGroup( $group );
-
-		# If we were not given group
+		# If we were not given (a valid) group
 		if ( $mg === null ) {
-			$group = TranslateUtils::messageKeyToGroup( $namespace, $key );
-			if ( $group ) {
-				$mg = MessageGroups::getGroup( $group );
-			}
+			$groupId = MessageIndex::getPrimaryGroupId( $handle );
+			$mg = MessageGroups::getGroup( $groupId );
 		}
 
 		return $mg;
@@ -128,11 +105,13 @@ class TranslationHelpers {
 			return $this->definition;
 		}
 
-		if ( $this->group === null ) {
-			return '';
-		}
+		$this->mustBeKnownMessage();
 
-		$this->definition = $this->group->getMessage( $this->page, $this->group->getSourceLanguage() );
+		if ( method_exists( $this->group, 'getMessageContent' ) ) {
+			$this->definition = $this->group->getMessageContent( $this->handle, $this->group->getSourceLanguage() );
+		} else {
+			$this->definition = $this->group->getMessage( $this->handle->getKey(), $this->group->getSourceLanguage() );
+		}
 
 		return $this->definition;
 	}
@@ -148,17 +127,18 @@ class TranslationHelpers {
 		}
 
 		// Shorter names
-		$page = $this->page;
-		$code = $this->targetLanguage;
+		$title = $this->handle->getTitle();
+		$page = $this->handle->getKey();
+		$code = $this->handle->getCode();
 		$group = $this->group;
 
 		// Try database first
 		$translation = TranslateUtils::getMessageContent(
-			$page, $code, $this->title->getNamespace()
+			$page, $code, $title->getNamespace()
 		);
 
 		if ( $translation !== null ) {
-			if ( !TranslateEditAddons::hasFuzzyString( $translation ) && TranslateEditAddons::isFuzzy( $this->title ) ) {
+			if ( !TranslateEditAddons::hasFuzzyString( $translation ) && TranslateEditAddons::isFuzzy( $title ) ) {
 				$translation = TRANSLATE_FUZZY . $translation;
 			}
 		} elseif ( $group && !$group instanceof FileBasedMessageGroup ) {
@@ -184,10 +164,19 @@ class TranslationHelpers {
 	}
 
 	/**
-	 * Get target language code
+	 * Gets the linguistically correct language code for translation
 	 */
 	public function getTargetLanguage() {
-		return $this->targetLanguage;
+		global $wgLanguageCode, $wgTranslateDocumentationLanguageCode;
+
+		$code = $this->handle->getCode();
+		if ( !$code ) {
+			$this->mustBeKnownMessage();
+			$code = $group->getSourceLanguage();
+		}
+		if ( $code === $wgTranslateDocumentationLanguageCode ) {
+			return $wgLanguageCode;
+		}
 	}
 
 	/**
@@ -217,7 +206,11 @@ class TranslationHelpers {
 
 		$boxes = array();
 		foreach ( $all as $type => $cb ) {
-			$box = call_user_func( $cb );
+			try {
+				$box = call_user_func( $cb );
+			} catch ( TranslationHelperExpection $e ) {
+				$box = "<!-- Box $type not available: {$e->getMessage()} -->";
+			}
 
 			if ( $box ) {
 				$boxes[$type] = $box;
@@ -254,22 +247,17 @@ class TranslationHelpers {
 	 * @return string Html snippet which contains the suggestions.
 	 */
 	protected function getTmBox( $serviceName, $config ) {
-		if ( !$this->targetLanguage ) {
-			return null;
-		}
-
-		if ( strval( $this->getDefinition() ) === '' ) {
-			return null;
-		}
-
-		if ( self::checkTranslationServiceFailure( $serviceName ) ) {
-			return null;
-		}
+		$this->mustHaveDefinition();
+		self::checkTranslationServiceFailure( $serviceName );
 
 		// Needed data
-		$code = $this->targetLanguage;
+		$page = $this->handle->getKey();
+		$code = $this->handle->getCode();
+		if ( !$code ) {
+			$code = $this->group->getSourceLanguage();
+		}
 		$definition = $this->getDefinition();
-		$ns = $this->title->getNsText();
+		$ns = $this->handle->getTitle()->getNsText();
 
 		// Fetch suggestions
 		$server = $config['server'];
@@ -283,47 +271,46 @@ class TranslationHelpers {
 		// Parse suggestions, but limit to three (in case there would be more)
 		$boxes = array();
 
-		if ( $suggestions !== false ) {
-			$suggestions = FormatJson::decode( $suggestions, true );
-
-			foreach ( $suggestions as $s ) {
-				// No use to suggest them what they are currently viewing
-				if ( $s['context'] === "$ns:{$this->page}" ) {
-					continue;
-				}
-
-				$accuracy = wfMsgHtml( 'translate-edit-tmmatch' , sprintf( '%.2f', $s['quality'] ) );
-				$legend = array( $accuracy => array() );
-
-				$source_page = Title::newFromText( $s['context'] . "/$code" );
-				if ( $source_page ) {
-					$legend[$accuracy][] = self::ajaxEditLink( $source_page, '•' );
-				}
-
-				$text = $this->suggestionField( $s['target'] );
-				$params = array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] );
-
-				if ( isset( $sugFields[$s['target']] ) ) {
-					$sugFields[$s['target']][2] = array_merge_recursive( $sugFields[$s['target']][2], $legend );
-				} else {
-					$sugFields[$s['target']] = array( $text, $params, $legend );
-				}
-			}
-
-			foreach ( $sugFields as $field ) {
-				list( $text, $params, $label ) = $field;
-				$legend = array();
-
-				foreach ( $label as $acc => $links ) {
-					$legend[] = $acc . ' ' . implode( " ", $links );
-				}
-
-				$legend = implode( ' | ', $legend );
-				$boxes[] = Html::rawElement( 'div', $params, self::legend( $legend ) . $text . self::clear() ) . "\n";
-			}
-		} else {
+		if ( $suggestions === false ) {
 			// Assume timeout
 			self::reportTranslationServiceFailure( $serviceName );
+		}
+		$suggestions = FormatJson::decode( $suggestions, true );
+
+		foreach ( $suggestions as $s ) {
+			// No use to suggest them what they are currently viewing
+			if ( $s['context'] === "$ns:$page" ) {
+				continue;
+			}
+
+			$accuracy = wfMsgHtml( 'translate-edit-tmmatch' , sprintf( '%.2f', $s['quality'] ) );
+			$legend = array( $accuracy => array() );
+
+			$source_page = Title::newFromText( $s['context'] . "/$code" );
+			if ( $source_page ) {
+				$legend[$accuracy][] = self::ajaxEditLink( $source_page, '•' );
+			}
+
+			$text = $this->suggestionField( $s['target'] );
+			$params = array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] );
+
+			if ( isset( $sugFields[$s['target']] ) ) {
+				$sugFields[$s['target']][2] = array_merge_recursive( $sugFields[$s['target']][2], $legend );
+			} else {
+				$sugFields[$s['target']] = array( $text, $params, $legend );
+			}
+		}
+
+		foreach ( $sugFields as $field ) {
+			list( $text, $params, $label ) = $field;
+			$legend = array();
+
+			foreach ( $label as $acc => $links ) {
+				$legend[] = $acc . ' ' . implode( " ", $links );
+			}
+
+			$legend = implode( ' | ', $legend );
+			$boxes[] = Html::rawElement( 'div', $params, self::legend( $legend ) . $text . self::clear() ) . "\n";
 		}
 
 		$boxes = array_slice( $boxes, 0, 3 );
@@ -378,18 +365,17 @@ class TranslationHelpers {
 	protected function getGoogleSuggestion( $serviceName, $config ) {
 		global $wgMemc;
 
-		if ( self::checkTranslationServiceFailure( $serviceName ) ) {
-			return null;
-		}
+		$this->mustHaveDefinition();
+		self::checkTranslationServiceFailure( $serviceName );
 
-		$code = $this->targetLanguage;
+		$code = $this->handle->getCode();
 		$definition = trim( strval( $this->getDefinition() ) );
 		$definition = self::wrapUntranslatable( $definition );
 
 		$memckey = wfMemckey( 'translate-tmsug-badcodes-' . $serviceName );
 		$unsupported = $wgMemc->get( $memckey );
 
-		if ( $definition === '' || isset( $unsupported[$code] ) ) {
+		if ( isset( $unsupported[$code] ) ) {
 			return null;
 		}
 
@@ -407,8 +393,6 @@ class TranslationHelpers {
 		if ( $json === false ) {
 			// Most likely a timeout or other general error
 			self::reportTranslationServiceFailure( $serviceName );
-
-			return null;
 		} elseif ( !is_object( $response ) ) {
 			error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
 			return null;
@@ -424,10 +408,9 @@ class TranslationHelpers {
 			$wgMemc->set( $memckey, $unsupported, 60 * 60 * 8 );
 		} else {
 			// Unknown error, assume the worst
-			self::reportTranslationServiceFailure( $serviceName );
 			wfWarn(  __METHOD__ . "($serviceName): " . $response->responseDetails );
 			error_log( __METHOD__ . "($serviceName): " . $response->responseDetails );
-			return null;
+			self::reportTranslationServiceFailure( $serviceName );
 		}
 
 		return null;
@@ -457,18 +440,17 @@ class TranslationHelpers {
 	protected function getMicrosoftSuggestion( $serviceName, $config ) {
 		global $wgMemc;
 
-		if ( self::checkTranslationServiceFailure( $serviceName ) ) {
-			return null;
-		}
+		$this->mustHaveDefinition();
+		self::checkTranslationServiceFailure( $serviceName );
 
-		$code = $this->targetLanguage;
+		$code = $this->handle->getCode();
 		$definition = trim( strval( $this->getDefinition() ) );
 		$definition = self::wrapUntranslatable( $definition );
 
 		$memckey = wfMemckey( 'translate-tmsug-badcodes-' . $serviceName );
 		$unsupported = $wgMemc->get( $memckey );
 
-		if ( $definition === '' || isset( $unsupported[$code] ) ) {
+		if ( isset( $unsupported[$code] ) ) {
 			return null;
 		}
 
@@ -514,7 +496,6 @@ class TranslationHelpers {
 			}
 			// Most likely a timeout or other general error
 			self::reportTranslationServiceFailure( $serviceName );
-			return null;
 		}
 
 		$ret = $req->getContent();
@@ -541,13 +522,11 @@ class TranslationHelpers {
 	protected function getApertiumSuggestion( $serviceName, $config ) {
 		global $wgMemc;
 
-		if ( self::checkTranslationServiceFailure( $serviceName ) ) {
-			return null;
-		}
+		self::checkTranslationServiceFailure( $serviceName );
 
-		$page = $this->page;
-		$code = $this->targetLanguage;
-		$ns = $this->title->getNamespace();
+		$page = $this->handle->getKey();
+		$code = $this->handle->getCode();
+		$ns = $this->handle->getTitle()->getNamespace();
 
 		$memckey = wfMemckey( 'translate-tmsug-pairs-' . $serviceName );
 		$pairs = $wgMemc->get( $memckey );
@@ -560,7 +539,6 @@ class TranslationHelpers {
 
 			if ( $json === false ) {
 				self::reportTranslationServiceFailure( $serviceName );
-				return null;
 			} elseif ( !is_object( $response ) ) {
 				error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
 				return null;
@@ -614,7 +592,6 @@ class TranslationHelpers {
 			$response = FormatJson::decode( $json );
 			if ( $json === false || !is_object( $response ) ) {
 				self::reportTranslationServiceFailure( $serviceName );
-				break; // Too slow, back off
 			} elseif ( $response->responseStatus !== 200 ) {
 				error_log( __METHOD__ . " (HTTP {$response->responseStatus}) with ($serviceName ($candidate|$code)): " . $response->responseDetails );
 			} else {
@@ -637,10 +614,8 @@ class TranslationHelpers {
 	}
 
 	public function getDefinitionBox() {
-		$en = strval( $this->getDefinition() );
-		if ( $en === '' ) {
-			return null;
-		}
+		$this->mustHaveDefinition();
+		$en = $this->getDefinition();
 
 		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 		$title = $linker->link(
@@ -649,7 +624,7 @@ class TranslationHelpers {
 			array(),
 			array(
 				'group' => $this->group->getId(),
-				'language' => $this->targetLanguage
+				'language' => $this->handle->getCode()
 			)
 		);
 
@@ -695,17 +670,15 @@ class TranslationHelpers {
 	}
 
 	public function getCheckBox() {
+		$this->mustBeKnownMessage();
+
 		global $wgTranslateDocumentationLanguageCode;
 
 		$placeholder = Html::element( 'div', array( 'class' => 'mw-translate-messagechecks' ) );
 
-		if ( $this->group === null ) {
-			return null;
-		}
-
-		$page = $this->page;
+		$page = $this->handle->getKey();
 		$translation = $this->getTranslation();
-		$code = $this->targetLanguage;
+		$code = $this->handle->getCode();
 		$en = $this->getDefinition();
 
 		if ( strval( $translation ) === '' ) {
@@ -746,9 +719,9 @@ class TranslationHelpers {
 	public function getOtherLanguagesBox() {
 		global $wgLang;
 
-		$code = $this->targetLanguage;
-		$page = $this->page;
-		$ns = $this->title->getNamespace();
+		$code = $this->handle->getCode();
+		$page = $this->handle->getKey();
+		$ns = $this->handle->getTitle()->getNamespace();
 
 		$boxes = array();
 		foreach ( self::getFallbacks( $code ) as $fbcode ) {
@@ -807,8 +780,8 @@ class TranslationHelpers {
 			return null;
 		}
 
-		$page = $this->page;
-		$ns = $this->title->getNamespace();
+		$page = $this->handle->getKey();
+		$ns = $this->handle->getTitle()->getNamespace();
 
 		$title = Title::makeTitle( $ns, $page . '/' . $wgTranslateDocumentationLanguageCode );
 		$edit = self::ajaxEditLink( $title, wfMsgHtml( 'translate-edit-contribute' ) );
@@ -848,7 +821,7 @@ class TranslationHelpers {
 			$ffs = $this->group->getFFS();
 			if ( $ffs instanceof GettextFFS ) {
 				global $wgContLang;
-				$mykey = $wgContLang->lcfirst( $this->page );
+				$mykey = $wgContLang->lcfirst( $this->handle->getKey() );
 				$data = $ffs->read( $this->group->getSourceLanguage() );
 				$help = $data['TEMPLATE'][$mykey]['comments'];
 				// Do not display an empty comment. That's no help and takes up unnecessary space.
@@ -881,21 +854,24 @@ class TranslationHelpers {
 	}
 
 	protected function getPageDiff() {
-		if ( $this->group instanceof WikiPageMessageGroup || $this->group === null ) {
+		$this->mustBeKnownMessage();
+
+		$group = $this->group;
+		$title = $this->handle->getTitle();
+		$key = $this->handle->getKey();
+
+		if ( $group instanceof WikiPageMessageGroup ) {
 			return null;
 		}
 
-		// Shortcuts
-		$key = $this->page;
-
-		$definitionTitle = Title::makeTitleSafe( $this->title->getNamespace(), "$key/en" );
+		$definitionTitle = Title::makeTitleSafe( $title->getNamespace(), "$key/en" );
 		if ( !$definitionTitle || !$definitionTitle->exists() ) {
 			return null;
 		}
 
 		$db = wfGetDB( DB_MASTER );
 		$conds = array(
-			'rt_page' => $this->title->getArticleId(),
+			'rt_page' => $title->getArticleId(),
 			'rt_type' => RevTag::getType( 'tp:transver' ),
 		);
 		$options = array(
@@ -934,19 +910,21 @@ class TranslationHelpers {
 	}
 
 	protected function getTranslationPageDiff() {
+
 		global $wgEnablePageTranslation;
 
 		if ( !$wgEnablePageTranslation ) {
 			return null;
 		}
 
+		$this->mustBeKnownMessage();
 		if ( !$this->group instanceof WikiPageMessageGroup ) {
 			return null;
 		}
 
 		// Shortcuts
-		$code = $this->targetLanguage;
-		$key = $this->page;
+		$code = $this->handle->getCode();
+		$key = $this->handle->getKey();
 
 		// TODO: encapsulate somewhere
 		$page = TranslatablePage::newFromTitle( $this->group->getTitle() );
@@ -987,7 +965,7 @@ class TranslationHelpers {
 
 	protected function getLastDiff() {
 		// Shortcuts
-		$title = $this->title;
+		$title = $this->handle->getTitle();
 		$latestRevId = $title->getLatestRevID();
 		$previousRevId = $title->getPreviousRevisionID( $latestRevId );
 
@@ -1002,7 +980,7 @@ class TranslationHelpers {
 			if ( $previous !== $latest ) {
 				$diff = new DifferenceEngine;
 				if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
-					$diff->setTextLanguage( $this->targetLanguage );
+					$diff->setTextLanguage( $this->getTargetLanguage() );
 				}
 				$diff->setText( $previous, $latest );
 				$diff->setReducedLineNumbers();
@@ -1032,7 +1010,7 @@ class TranslationHelpers {
 				$text = wfMessage( 'translate-dynagroup-last', $user )->escaped();
 			}
 		}
-
+		
 		return TranslateUtils::fieldset( $text, $diffText, array( 'class' => 'mw-sp-translate-latestchange' ) );
 	}
 
@@ -1144,13 +1122,14 @@ class TranslationHelpers {
 	 * @return null|string
 	 */
 	public function getLazySuggestionBox() {
-		if ( $this->group === null || !$this->targetLanguage ) {
+		$this->mustBeKnownMessage();
+		if ( !$this->handle->getCode() ) {
 			return null;
 		}
 
 		$url = SpecialPage::getTitleFor( 'Translate', 'editpage' )->getLocalUrl( array(
 			'suggestions' => 'only',
-			'page' => $this->title->getPrefixedDbKey(),
+			'page' => $this->handle->getTitle()->getPrefixedDbKey(),
 			'loadgroup' => $this->group->getId(),
 		) );
 		$url = Xml::encodeJsVar( $url );
@@ -1167,22 +1146,22 @@ class TranslationHelpers {
 	 * @return string
 	 */
 	public function dialogID() {
-		$hash = sha1( $this->title->getPrefixedDbKey() );
+		$hash = sha1( $this->handle->getTitle()->getPrefixedDbKey() );
 		return substr( $hash, 0, 4 );
 	}
 
 	/**
-	 * @param $source
-	 * @param $lang
+	 * @param $source jQuery selector for element containing the source
+	 * @param $lang Language code or object
 	 * @return string
 	 */
-	public function adder( $source, $lang = null ) {
+	public function adder( $source, $lang ) {
 		if ( !$this->editMode ) {
 			return '';
 		}
 		$target = self::jQueryPathId( $this->getTextareaId() );
 		$source = self::jQueryPathId( $source );
-		$dir = wfGetLangObj( $lang ? $lang : $this->targetLanguage )->getDir();
+		$dir = wfGetLangObj( $lang )->getDir();
 		$params = array(
 			'onclick' => "jQuery($target).val(jQuery($source).text()).focus(); return false;",
 			'href' => '#',
@@ -1209,15 +1188,17 @@ class TranslationHelpers {
 	public function suggestionField( $text ) {
 		static $counter = 0;
 
+		$code = $this->getTargetLanguage();
+
 		$counter++;
 		$dialogID = $this->dialogID();
 		$id = Sanitizer::escapeId( "tmsug-$dialogID-$counter" );
-		$contents = Html::rawElement( 'div', array( 'lang' => $this->targetLanguage,
-			'dir' => Language::factory( $this->targetLanguage )->getDir() ),
+		$contents = Html::rawElement( 'div', array( 'lang' => $code,
+			'dir' => Language::factory( $code )->getDir() ),
 			TranslateUtils::convertWhiteSpaceToHTML( $text ) );
 		$contents .= $this->wrapInsert( $id, $text );
 
-		return $this->adder( $id ) . "\n" . $contents;
+		return $this->adder( $id, $code ) . "\n" . $contents;
 	}
 
 	/**
@@ -1227,14 +1208,14 @@ class TranslationHelpers {
 	 * @return link
 	 */
 	public static function ajaxEditLink( $target, $text ) {
-		list( $page, ) = TranslateEditAddons::figureMessage( $target );
-		$group = TranslateUtils::messageKeyToGroup( $target->getNamespace(), $page );
+		$handle = new MessageHandle( $target );
+		$groupId = MessageIndex::getPrimaryGroupId( $handle );
 
 		$params = array();
 		$params['action'] = 'edit';
-		$params['loadgroup'] = $group;
+		$params['loadgroup'] = $groupId;
 
-		$jsEdit = TranslationEditPage::jsEdit( $target, $group );
+		$jsEdit = TranslationEditPage::jsEdit( $target, $groupId );
 
 		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker() : new Linker();
 		return $linker->link( $target, $text, $jsEdit, $params );
@@ -1287,7 +1268,9 @@ class TranslationHelpers {
 			return false;
 		}
 
-		return $count >= self::$serviceFailureCount;
+		if ( $count >= self::$serviceFailureCount ) {
+			throw new TranslationHelperExpection( "web service $service is temporarily disabled" );
+		}
 	}
 
 	/**
@@ -1314,11 +1297,10 @@ class TranslationHelpers {
 		} elseif ( $count > self::$serviceFailureCount ) {
 			error_log( "Translation service $service still suspended" );
 		}
+
+		throw new TranslationHelperExpection( "web service $service failed to provide valid response" );
 	}
 
-	/**
-	 * @param $out OutputPage
-	 */
 	public static function addModules( OutputPage $out ) {
 		$out->addModules( 'ext.translate.quickedit' );
 
@@ -1329,4 +1311,28 @@ class TranslationHelpers {
 		$diff = new DifferenceEngine;
 		$diff->showDiffStyle();
 	}
+
+	/// @since 2012-01-04
+	protected function mustBeKnownMessage() {
+		if ( !$this->group ) {
+			throw new TranslationHelperExpection( 'unknown group' );
+		}
+	}
+	/// @since 2012-01-04
+	protected function mustBeTranslation() {
+		if ( !$this->handle->getCode() ) {
+			throw new TranslationHelperExpection( 'editing source language' );
+		}
+	}
+
+	/// @since 2012-01-04
+	protected function mustHaveDefinition() {
+		if ( strval( $this->getDefinition() ) === '' ) {
+			throw new TranslationHelperExpection( 'message does not have definition' );
+		}
+	}
+
 }
+
+/// @since 2012-01-04
+class TranslationHelperExpection extends MWException {}

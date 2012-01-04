@@ -60,12 +60,13 @@ class TranslationEditPage {
 	 * disabled all other output.
 	 */
 	public function execute() {
-		global $wgOut, $wgServer, $wgScriptPath, $wgUser;
+		global $wgOut, $wgServer, $wgScriptPath, $wgUser, $wgRequest;
 
 		$wgOut->disable();
 
 		$data = $this->getEditInfo();
-		$helpers = new TranslationHelpers( $this->getTitle() );
+		$groupId = $wgRequest->getText( 'loadgroup', '' );
+		$helpers = new TranslationHelpers( $this->getTitle(), $groupId );
 
 		$id = "tm-target-{$helpers->dialogID()}";
 		$helpers->setTextareaId( $id );
