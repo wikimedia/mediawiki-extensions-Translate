@@ -491,7 +491,7 @@ class TranslateEditAddons {
 		$de->loadNewText();
 		$out->setRevisionId( $de->mNewRev->getId() );
 
-		$th = new TranslationHelpers( $title );
+		$th = new TranslationHelpers( $title, /*group*/false );
 		$th->setEditMode( false );
 		$th->setTranslation( $de->mNewtext );
 		TranslationHelpers::addModules( $out );
