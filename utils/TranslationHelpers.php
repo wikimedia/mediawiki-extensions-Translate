@@ -172,7 +172,7 @@ class TranslationHelpers {
 		$code = $this->handle->getCode();
 		if ( !$code ) {
 			$this->mustBeKnownMessage();
-			$code = $group->getSourceLanguage();
+			$code = $this->group->getSourceLanguage();
 		}
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
 			return $wgLanguageCode;
