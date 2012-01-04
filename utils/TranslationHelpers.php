@@ -193,11 +193,11 @@ class TranslationHelpers {
 		if ( $suggestions === 'async' ) {
 			$all['translation-memory'] = array( $this, 'getLazySuggestionBox' );
 		} elseif ( $suggestions === 'only' ) {
-			return (string) call_user_func( $all['translation-memory'], 'lazy' );
+			return (string) $this->callBox( 'translation-memory', $all['translation-memory'], array( 'lazy' ) );
 		} elseif ( $suggestions === 'checks' ) {
 			global $wgRequest;
 			$this->translation = $wgRequest->getText( 'translation' );
-			return (string) call_user_func( $all['check'] );
+			return (string) $this->callBox( $all['check'], 'check' );
 		}
 
 		if ( $this->group instanceof RecentMessageGroup ) {
@@ -206,12 +206,7 @@ class TranslationHelpers {
 
 		$boxes = array();
 		foreach ( $all as $type => $cb ) {
-			try {
-				$box = call_user_func( $cb );
-			} catch ( TranslationHelperExpection $e ) {
-				$box = "<!-- Box $type not available: {$e->getMessage()} -->";
-			}
-
+			$box = $this->callBox( $type, $cb );
 			if ( $box ) {
 				$boxes[$type] = $box;
 			}
@@ -221,6 +216,15 @@ class TranslationHelpers {
 			return Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
 		} else {
 			return '';
+		}
+	}
+
+	/// @since 2012-01-04
+	protected function callBox( $type, $cb, $params = array() ) {
+		try {
+			return call_user_func_array( $cb, $params );
+		} catch ( TranslationHelperExpection $e ) {
+			return"<!-- Box $type not available: {$e->getMessage()} -->";
 		}
 	}
 

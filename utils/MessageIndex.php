@@ -35,7 +35,7 @@ abstract class MessageIndex {
 
 
 	/**
-	 * @since 2012-01-14
+	 * @since 2012-01-04
 	 * @return array
 	 */
 	public static function getGroupIds( MessageHandle $handle ) {
@@ -52,7 +52,7 @@ abstract class MessageIndex {
 	}
 
 	/**
-	 * @since 2012-01-14
+	 * @since 2012-01-04
 	 * @return MessageGroup|null
 	 */
 	public static function getPrimaryGroupId( MessageHandle $handle ) {
