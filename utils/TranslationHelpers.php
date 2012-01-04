@@ -197,7 +197,7 @@ class TranslationHelpers {
 		} elseif ( $suggestions === 'checks' ) {
 			global $wgRequest;
 			$this->translation = $wgRequest->getText( 'translation' );
-			return (string) $this->callBox( $all['check'], 'check' );
+			return (string) $this->callBox( 'check', $all['check'] );
 		}
 
 		if ( $this->group instanceof RecentMessageGroup ) {
