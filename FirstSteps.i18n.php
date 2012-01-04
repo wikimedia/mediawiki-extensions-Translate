@@ -260,8 +260,12 @@ $messages['be-tarask'] = array(
 Вас правядуць праз працэс станаўленьня перакладчыкам крок за крокам.
 Пасьля гэтага Вы зможаце перакладаць ''паведамленьні інтэрфэйсу'' ўсіх праектаў, якія падтрымліваюцца ў {{GRAMMAR:месны|{{SITENAME}}}}.",
 	'translate-fs-selectlanguage' => 'Выберыце мову',
+	'translate-fs-settings-planguage' => 'Асноўная мова:',
+	'translate-fs-settings-planguage-desc' => 'Асноўная мова выступае ў ролі як мовы інтэрфэйсу, гэтак і перадвызначанай мовы перакладу.',
+	'translate-fs-settings-submit' => 'Захаваць налады',
 	'translate-fs-userpage-submit' => 'Стварыць маю старонку ўдзельніка',
 	'translate-fs-userpage-done' => 'Выдатна! Цяпер Вы маеце старонку ўдзельніка.',
+	'translate-fs-permissions-submit' => 'Даслаць запыт',
 	'translate-fs-target-text' => "Віншуем!
 Цяпер Вы можаце пачаць перакладаць.
 
@@ -931,7 +935,7 @@ Jos valitsemasi kieli on väärä, muuta se.",
 
 Tämä mahdollistaa muiden käyttäjien ottaa sinuun yhteyttä sähköpostitse.
 Saat myös uutiskirjeen korkeintaan kerran kuukaudessa.
-Jos et halua vastaanottaa uutiskirjeitä, voit valita sen pois välilehdellä "{{int:prefs-personal}}" omat [[Special:Preferences|asetukset]].',
+Jos et halua vastaanottaa uutiskirjeitä, voit muuttaa asetusta välilehdellä »{{int:prefs-personal}}» omat [[Special:Preferences|asetukset]].',
 );
 
 /** French (Français)

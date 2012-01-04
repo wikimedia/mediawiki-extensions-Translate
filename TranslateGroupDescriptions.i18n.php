@@ -226,7 +226,6 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-uniwiki' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў зьвязаных з [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Група мэта-паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў, якія адносяцца да [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Усе старонкі, якія магчыма перакласьці',
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] дае магчымасьць людзям знаёміцца з лічбавымі культурнымі крыніцамі Эўропы',
 	'bw-desc-freecol' => 'Перад тым, як перакладаць FreeCol на Вашую мову, калі ласка, прачытайце [[Translating:FreeCol]]. Freecol выкарыстоўвае ліцэнзію GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] — рухавік для вэб-форумаў на PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] — вольная ўэб-сыстэма сачэньня за памылкамі. Калі ласка, паведамляйце пра любыя праблемы ў [[Support]].',
@@ -252,10 +251,6 @@ $messages['be-tarask'] = array(
 	'bw-desc-openstreetmap' => 'Група паведамленьняў для ўсіх паведамленьняў [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Гэтая група зьмяшчае паведамленьні для [[Translating:Open Street Map|Open Street Map]].
 Глядзіце [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} старонку Unicode CLDR] зь інструкцыяй фармаваньня множнага ліку.',
-	'bw-desc-osm-potlatch' => 'Гэтая група зьмяшчае паведамленьні для [[Translating:OpenStreetMap|Potlatch]]. Калі ласка:
-
-* Пры магчымасьці не рабіце паведамленьні даўжэйшымі за ангельскія; інтэрфэйс мае абмежаваньні па даўжыні радкоў. Глядзіце [http://trac.openstreetmap.org/ticket/2067 адкрытае паведамленьне пра памылку].
-* Выкарыстоўвайце [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] для праверкі Potlatch. Там Вы можаце пратэставаць неабходныя функцыі.',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] — калекцыя інструмэнтаў для рэдагаваньня Вікіпэдыі',
 	'bw-desc-shapado' => 'Група паведамленьняў для вольнай плятформы пытаньняў і адказаў [[Translating:Shapado|Shapado]].',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сэрвэр мікраблёгаў з адкрытым кодам',
@@ -263,6 +258,7 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-tsint' => 'Група паведамленьняў [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], сыстэмы перакладаў для [http://tolserver.org сэрвэра інструмэнтаў] (<span class="plainlinks">[[Translating talk:Toolserver|падтрымка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition тэхнічныя дэталі]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дазваляе хутка знайсьці аўтараў пэўнай старонкі ці выказваньня ў праектах Фундацыі «Вікімэдыя».',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] — праект для аўтаномнага чытаньня тэкставай вэрсіі Вікіпэдыі для мабільных прылад.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] — крос-плятформавая мабільная і планшэтная праграма для чытаньня і рэдагаваньня Вікіпэдыі',
 );
 
 /** Bulgarian (Български)

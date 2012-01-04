@@ -269,6 +269,7 @@ $messages['saz'] = array(
 /** Afrikaans (Afrikaans)
  * @author Ansumang
  * @author Naudefj
+ * @author පසිඳු කාවින්ද
  */
 $messages['af'] = array(
 	'pagetranslation' => 'Bladsyvertaling',
@@ -286,6 +287,7 @@ Naam: $1',
 	'tpt-sections-oldnew' => 'Nuwe en bestaande vertaaleenhede',
 	'tpt-sections-deleted' => 'Verwyderde vertaaleenhede',
 	'tpt-sections-template' => 'Vertaalbladsjabloon',
+	'tpt-action-nofuzzy' => 'Het vertalings ongeldig nie',
 	'tpt-badtitle' => "Die naam verskaf ($1) is nie 'n geldige bladsynaam nie",
 	'tpt-nosuchpage' => 'Bladsy $1 bestaan nie.',
 	'tpt-oldrevision' => '$2 is nie die nuutste weergawe van die bladsy [[$1]] nie.
@@ -302,9 +304,19 @@ Alvorens u die weergawe vir vertaling merk, maak seker dat die veranderinge gemi
 	'tpt-already-marked' => 'Die nuutste weergawe van die bladsy is reeds gemerk vir vertaling.',
 	'tpt-unmarked' => 'Bladsy $1 is nie meer vir vertaling gemerk nie.',
 	'tpt-list-nopages' => 'Geen bladsye is vir vertaling gemerk of is reg om vir vertaling gemerk te word nie.',
+	'tpt-old-pages-title' => 'Bladsye in vertaling',
+	'tpt-other-pages-title' => 'Gebreekte bladsye',
+	'tpt-discouraged-pages-title' => 'ontmoedig bladsye',
 	'tpt-new-pages' => 'Hierdie {{PLURAL:$1|bladsy bevat|bladsye bevat}} teks met vertalings-etikette, maar geen weergawe van die {{PLURAL:$1|bladsy|bladsye}} is vir vertaling gemerk nie.',
 	'tpt-old-pages' => "'n Weergawe van die {{PLURAL:$1|bladsy|bladsye}} is reeds vir vertaling gemerk.",
+	'tpt-rev-mark' => 'merk vir vertaling',
+	'tpt-rev-unmark' => 'verwyder van vertaling',
+	'tpt-rev-discourage' => 'ontmoedig',
 	'tpt-rev-encourage' => 'herstel',
+	'tpt-rev-mark-tooltip' => 'Merk die nuutste weergawe van hierdie bladsy vir vertaling.',
+	'tpt-rev-unmark-tooltip' => 'Verwyder hierdie bladsy van die vertaling.',
+	'tpt-rev-discourage-tooltip' => 'Ontmoedig verdere vertalings van hierdie bladsy.',
+	'tpt-rev-encourage-tooltip' => 'Herstel hierdie bladsy na normaal vertaling.',
 	'translate-tag-translate-link-desc' => 'Vertaal die bladsy',
 	'translate-tag-markthis' => 'Merk die bladsy vir vertaling',
 	'translate-tag-markthisagain' => 'Hierdie bladsy is <span class="plainlinks">[$1 kere gewysig]</span> sedert dit laas <span class="plainlinks">[$2 vir vertaling gemerk was]</span>.',
@@ -595,10 +607,20 @@ $messages['be-tarask'] = array(
 	'tpt-already-marked' => 'Апошняя вэрсія гэтай старонкі ўжо была пазначана для перакладу.',
 	'tpt-unmarked' => 'Старонка $1 болей не пазначаная для перакладу.',
 	'tpt-list-nopages' => 'Старонкі для перакладу не пазначаныя альбо не падрыхтаваныя.',
+	'tpt-new-pages-title' => 'Старонкі, прапанаваныя да перакладу',
+	'tpt-old-pages-title' => 'Старонкі на стадыі перакладу',
+	'tpt-other-pages-title' => 'Сапсаваныя старонкі',
+	'tpt-discouraged-pages-title' => 'Адхіленыя старонкі',
 	'tpt-new-pages' => '{{PLURAL:$1|Гэта старонка ўтрымлівае|Гэтыя старонкі ўтрымліваюць}} тэкст з тэгамі перакладу, але {{PLURAL:$1|пазначанай для перакладу вэрсіі гэтай старонкі|пазначаных для перакладу вэрсіяў гэтых старонак}} няма.',
 	'tpt-old-pages' => 'Некаторыя вэрсіі {{PLURAL:$1|гэтай старонкі|гэтых старонак}} былі пазначаны для перакладу.',
 	'tpt-other-pages' => '{{PLURAL:$1|Старая вэрсія гэтай старонкі пазначаная|Старыя вэрсіі гэтых старонак пазначаныя}} для перакладу, але {{PLURAL:$1|апошняя вэрсія ня можа быць пазначаная|апошнія вэрсіі ня могуць быць пазначаныя}} для перакладу.',
-	'tpt-rev-unmark' => 'выдаліць гэтую старонку са сьпісу для перакладу',
+	'tpt-discouraged-pages' => '{{PLURAL:$1|Гэтай старонцы|Гэтым старонкам}} было адхілена ў далейшым перакладзе.',
+	'tpt-rev-mark' => 'пазначыць да перакладу',
+	'tpt-rev-unmark' => 'выдаліць зь перакладу',
+	'tpt-rev-discourage' => 'адхіліць',
+	'tpt-rev-encourage' => 'аднавіць',
+	'tpt-rev-mark-tooltip' => 'Пазначыць апошнюю вэрсію старонкі да перакладу.',
+	'tpt-rev-unmark-tooltip' => 'Выдаліць гэтую старонку зь перакладу.',
 	'translate-tag-translate-link-desc' => 'Перакласьці гэту старонку',
 	'translate-tag-markthis' => 'Пазначыць гэту старонку для перакладу',
 	'translate-tag-markthisagain' => 'Гэта старонка ўтрымлівае <span class="plainlinks">[$1 зьмены]</span> пасьля апошняй <span class="plainlinks">[$2 пазнакі для перакладу]</span>.',
@@ -2793,12 +2815,23 @@ $messages['he'] = array(
  */
 $messages['hi'] = array(
 	'pagetranslation' => 'पृष्ठ अनुबाद',
+	'tpt-section' => 'अनुबाद यूनिट $1',
 	'tpt-template' => 'पृष्ठ साँचा',
+	'tpt-diff-old' => 'पूर्व लेख',
+	'tpt-diff-new' => 'नया लेख',
 	'tpt-other-pages-title' => 'टूटा पृष्ठ',
+	'pt-movepage-list-translation' => 'अनुबाद पृष्ठ',
+	'pt-movepage-list-section' => 'अनुभाग पृष्ठ',
+	'pt-movepage-list-other' => 'अन्य उपपृष्ठ',
+	'pt-movepage-current' => 'सद्य सदस्यनाम:',
 	'pt-movepage-new' => 'नया नाम:',
 	'pt-movepage-reason' => 'कारण:',
 	'pt-deletepage-current' => 'पृष्ठ नाम:',
 	'pt-deletepage-reason' => 'कारण:',
+	'pt-deletepage-list-pages' => 'पृष्ठ तालिका हटाने के लिए',
+	'pt-deletepage-list-translation' => 'अनुबाद पृष्ठ',
+	'pt-deletepage-list-section' => 'अनुभाग पृष्ठ',
+	'pt-deletepage-list-other' => 'अन्य उपपृष्ठ',
 );
 
 /** Croatian (Hrvatski)
