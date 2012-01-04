@@ -100,7 +100,7 @@ class ApiGroupReview extends ApiBase {
 				/* API borks with | if defined multiple allowed values even
 				 * though we are expecting only one value, which can and will
 				 * contain | for page translation pages, which have group id
-				 * of format page|Pagename. */
+				 * of format page|Pagename. This is fixed in 1.19 and up */
 				ApiBase::PARAM_TYPE => 'string',//array_keys( MessageGroups::getAllGroups() ),
 				ApiBase::PARAM_REQUIRED => true,
 			),
