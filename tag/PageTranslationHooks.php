@@ -31,22 +31,16 @@ class PageTranslationHooks {
 
 		// Set display title
 		$page = TranslatablePage::isTranslationPage( $title );
-		if ( $page ) {
-			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
-			$name = $page->getPageDisplayTitle( $code );
+		if ( !$page ) {
+			return true;
+		}
 
-			if ( $name ) {
-				$realFunction = array( 'MessageCache', 'singleton' );
+		list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
+		$name = $page->getPageDisplayTitle( $code );
 
-				if ( is_callable( $realFunction ) ) {
-					$cache = MessageCache::singleton();
-				} else {
-					global $wgMessageCache;
-					$cache = $wgMessageCache;
-				}
-				$name = $cache->transform( $name, false, Language::factory( $code ) );
-				$parser->getOutput()->setDisplayTitle( $name );
-			}
+		if ( $name ) {
+			$name = $parser->recursivePreprocess( $name );
+			$parser->getOutput()->setDisplayTitle( $name );
 		}
 
 		return true;
