@@ -16,7 +16,13 @@ class PageTranslationHooks {
 	// Uuugly hack
 	static $allowTargetEdit = false;
 
-	/// Hook: ParserBeforeStrip
+	/**
+	 * Hook: ParserBeforeStrip
+	 * @param $parser Parser
+	 * @param $text
+	 * @param $state
+	 * @return bool
+	 */
 	public static function renderTagPage( $parser, &$text, $state ) {
 		$title = $parser->getTitle();
 
