@@ -487,8 +487,34 @@ $messages['as'] = array(
 
 /** Asturian (Asturianu)
  * @author Esbardu
+ * @author Xuacu
  */
 $messages['ast'] = array(
+	'pagetranslation' => 'Traducción de páxines',
+	'right-pagetranslation' => 'Marcar versiones de páxines pa traducir',
+	'tpt-desc' => 'Estensión pa traducir páxines de conteníu',
+	'tpt-section' => 'Unidá de traducción $1',
+	'tpt-section-new' => 'Nueva unidá de traducción.
+Nome: $1',
+	'tpt-section-deleted' => 'Unidá de traducción $1',
+	'tpt-template' => 'Plantía de páxina',
+	'tpt-templatediff' => 'La plantía de páxina camudó.',
+	'tpt-diff-old' => 'Testu anterior',
+	'tpt-diff-new' => 'Testu nuevu',
+	'tpt-submit' => 'Marcar esta versión pa traducir',
+	'tpt-sections-oldnew' => 'Unidaes de traducción nueves e esistentes',
+	'tpt-sections-deleted' => 'Unidaes de traducción desaniciaes',
+	'tpt-sections-template' => 'Plantía de páxina de traducción',
+	'tpt-action-nofuzzy' => 'Nun invalidar les traducciones',
+	'tpt-badtitle' => 'El nome que-y disti a la páxina ("$1") nun ye un títulu válidu',
+	'tpt-nosuchpage' => 'La páxina $1 nun esiste',
+	'tpt-oldrevision' => '$2 nun y la cabera versión de la páxina [[$1]].
+Sólo les caberes versiones se puen marcar pa traducir.',
+	'tpt-notsuitable' => 'La páxina "$1" nun ye válida pa traducir.
+Comprueba que tenga les etiquetes <nowiki><translate></nowiki> y una sintaxis válida.',
+	'tpt-saveok' => 'A páxina [[$1]] marcose pa traducir con {{PLURAL:$2|una unidá de traducción|$2 unidaes de traducción}}.
+La páxina agora se pue <span class="plainlinks">[$3 traducir]</span>.',
+	'tpt-badsect' => '"$1" nun ye un nome válidu pa la unidá de traducción $2.',
 	'translate-tag-translate-link-desc' => 'Traducir esta páxina',
 );
 

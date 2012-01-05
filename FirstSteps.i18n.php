@@ -196,6 +196,13 @@ Equí pues escoyer qué llingües quies ver, si quies dalguna.',
 	'translate-fs-userpage-submit' => "Crear la mio páxina d'usuariu",
 	'translate-fs-userpage-done' => "¡Bien fecho! Agora tienes una páxina d'usuariu.",
 	'translate-fs-permissions-planguage' => 'Llingua principal:',
+	'translate-fs-permissions-help' => "Agora tienes de facer una solicitú pa que t'amiesten al grupu de traductores.
+Seleiciona la llingua principal a la que vas a traducir.
+
+Pues mentar más llingües y otros comentarios nel cuadru de testu d'abaxo.",
+	'translate-fs-permissions-pending' => "La to solicitú s'unvió a «[[$1]]» y dalguién del equipu d'esi sitiu la revisará tan ceo como pueda.
+Si confirmes la to direición de corréu electrónicu, recibirás un avisu pel corréu cuando lo faiga.",
+	'translate-fs-permissions-submit' => 'Unviar la solicitú',
 );
 
 /** Bashkir (Башҡортса)
