@@ -43,14 +43,6 @@
 		};
 	}
 
-	function windowWidth() {
-		return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-	}
-	
-	function windowHeight() {
-		return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-	}
-
 	function addAccessKeys( dialog ) {
 		var buttons = {
 			a: '.mw-translate-save',
@@ -134,10 +126,11 @@
 
 	translate = {
 		init: function() {
-			dialogwidth = parseInt( windowWidth()*0.8, 10 );
+			var height = $( window ).height() * 0.7;
+			dialogwidth = $( window ).width() * 0.8;
 			mw.util.addCSS( "/* Inserted by ext.translate.quickedit */\n" +
 				".mw-sp-translate-edit-fields {\n" + 
-				"\tmax-height: " + parseInt( windowHeight() * 0.7, 10 )  + "px;\n" +
+				"\tmax-height: " + height + "px;\n" +
 				"\toverflow: auto\n}\n"
 			);
 		},
