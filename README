@@ -29,9 +29,40 @@ And for the code at:
  http://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-01-06
+- Fixes to the sizing of the translation editor dialog
+* 2012-01-05
+- Fixed a fatal error that sometimes occured when translation page title used
+  GRAMMAR and the page was viewed with English UI.
+* 2012-01-04
+- The summary row in Special:LanguageStats and Special:MessageGroupStats is no
+  longer sorted with rest of the rows.
+- There is now new message group for recent translations intented for reviewing
+  new translations
+- Fixed a bug that prevented changing workflow state of page translation
+  message group
+* 2012-01-02
+- Special:MyLanguage can now be used with language subpage to use that as the
+  default fallback instead of untranslated version
+- The flash of unstylized content effect is reduced
+- FuzzyBot user was not always created, leading to missing log entries
+  for example
+- export.php fixed after it was broken due to recent refactorings
+* 2011-12-26
+- Added {{#translationdialog:title}} for creating a link to the translation
+  dialog
+* 2011-12-25
+- Made the extension work without legacy JavaScript globals
+- PythonSingleFFS now respects codemap
+* 2011-12-23
+- Translatable pages can now be discourages, meaning that they wont show up in
+  the usualy places so that translators don't translate them needlessy.
 * 2011-11-06
+- Rewrote Special:ImportTranslations JavaScript so that it actually works
 - Fixed compatibility with MW 1.17 in JavaScript
 * 2011-11-04
+- The 'no translations' RC filter options was lost when navigating
+- Made MessageCache more robust
 - fuzzy.php can now take optional namespace prefix for each message
 * 2011-10-30
 - The script referenced at 2011-08-26 is now included in the source
