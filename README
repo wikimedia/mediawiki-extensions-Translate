@@ -55,8 +55,8 @@ And for the code at:
 - Made the extension work without legacy JavaScript globals
 - PythonSingleFFS now respects codemap
 * 2011-12-23
-- Translatable pages can now be discouraged, meaning that they wont show up in
-  the usualy places so that translators don't translate them needlessy.
+- Translatable pages can now be discouraged, meaning that they won't show up in
+  the usually places so that translators don't translate them needlessy.
 * 2011-11-06
 - Rewrote Special:ImportTranslations JavaScript so that it actually works
 - Fixed compatibility with MW 1.17 in JavaScript
