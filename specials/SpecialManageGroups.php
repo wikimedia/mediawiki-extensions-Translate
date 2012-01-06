@@ -291,7 +291,7 @@ class SpecialManageGroups extends SpecialPage {
 							$this->time = wfTimestamp();
 						}
 
-						$fuzzybot = MessageWebImporter::getFuzzyBot();
+						$fuzzybot = FuzzyBot::getUser();
 						$message = MessageWebImporter::doAction(
 							$action,
 							$group,
