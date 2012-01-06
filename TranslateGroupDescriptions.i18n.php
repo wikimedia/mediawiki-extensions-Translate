@@ -258,7 +258,7 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-tsint' => 'Група паведамленьняў [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], сыстэмы перакладаў для [http://tolserver.org сэрвэра інструмэнтаў] (<span class="plainlinks">[[Translating talk:Toolserver|падтрымка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition тэхнічныя дэталі]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дазваляе хутка знайсьці аўтараў пэўнай старонкі ці выказваньня ў праектах Фундацыі «Вікімэдыя».',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] — праект для аўтаномнага чытаньня тэкставай вэрсіі Вікіпэдыі для мабільных прылад.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] — крос-плятформавая мабільная і планшэтная праграма для чытаньня і рэдагаваньня Вікіпэдыі',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] — крос-плятформавае мабільнае і пляншэтнае дастасаваньне для чытаньня і рэдагаваньня Вікіпэдыі',
 );
 
 /** Bulgarian (Български)

@@ -473,7 +473,8 @@ $messages['qqq'] = array(
 	'translate-page-description-hasoptional-open' => 'Link text for message {{msg|translate-page-description-hasoptional}}',
 	'translate-page-edit' => '{{Identical|Edit}}',
 	'translate-optional' => '{{Identical|Optional}}',
-	'translate-edit-jsopen' => 'Default linktext of <nowiki>{{#translationdialog:pagename}}</nowiki>',
+	'translate-edit-jsopen' => 'Default linktext of <nowiki>{{#translationdialog:pagename}}</nowiki>.
+{{Identical|Edit}}',
 	'translate-edit-title' => 'Used as a tooltip for edit links in lists with translatable messages. Parameters:
 * $1 is the name of the page to be edited.
 {{Identical|Edit}}',
@@ -2681,7 +2682,7 @@ $messages['be-tarask'] = array(
 	'translate-prev' => 'Папярэдняя старонка',
 	'translate-page-description-legend' => 'Інфармацыя пра групу',
 	'translate-page-description-hasoptional' => 'Гэтая група паведамленьняў утрымлівае неабавязковыя паведамленьні.
-Падобныя паведамленьні мусяць перакладацца толькі ў тым выпадку, калі ваша мова мае асаблівыя патрабаваньні, кшталту напісаньня без прагалаў, ці трансьлітэрацыі асабовых імёнаў. $1',
+Неабавязковыя паведамленьні мусяць перакладацца толькі ў тым выпадку, калі Вашая мова мае асаблівыя патрабаваньні, кшталту напісаньня без прагалаў, ці трансьлітарацыі ўласных імёнаў ці назваў. $1',
 	'translate-page-description-hasoptional-open' => 'Паказаць неабавязковыя паведамленьні.',
 	'translate-page-edit' => 'рэдагаваць',
 	'translate-ext-url' => '<hr />Сайт: $1',
@@ -2702,7 +2703,7 @@ $messages['be-tarask'] = array(
 	'translate-edit-tmmatch' => '$1% супадзеньне',
 	'translate-use-suggestion' => 'Замяніць цяперашні пераклад на гэтую прапанову.',
 	'translate-edit-tab-list' => 'Сьпіс паведамленьняў',
-	'translate-edit-nopermission' => 'Для перакладаньня паведамленьняў неабходны дазвол.',
+	'translate-edit-nopermission' => 'Для перакладу паведамленьняў неабходны дазвол.',
 	'translate-edit-askpermission' => 'Запытаць дазвол',
 	'translate-magic-pagename' => 'Пашыраны пераклад MediaWiki',
 	'translate-magic-help' => 'Вы можаце перакладаць псэўданімы спэцыяльных старонак, магічныя словы і прасторы назваў.
@@ -2759,9 +2760,9 @@ $messages['be-tarask'] = array(
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Пашыраны рэдактар перакладаў (JavaScript)',
 	'right-translate' => 'Рэдагаваньне з выкарыстаньнем інтэрфэйсу перакладу',
-	'right-translate-manage' => 'Кіраваньне групамі перакладаў',
+	'right-translate-manage' => 'кіраваньне групамі перакладаў',
 	'right-translate-import' => 'імпартаваньне вонкавых перакладаў',
-	'right-translate-messagereview' => 'Рэцэнзаваньне перакладаў',
+	'right-translate-messagereview' => 'рэцэнзаваньне перакладаў',
 	'translate-rc-translation-filter' => 'Фільтраваць пераклады:',
 	'translate-rc-translation-filter-no' => 'Не',
 	'translate-rc-translation-filter-only' => 'Паказваць толькі пераклады',
@@ -2808,7 +2809,7 @@ $messages['be-tarask'] = array(
 	'languagestats-summary' => 'Гэта старонка паказвае статыстыку перакладаў для ўсіх групаў паведамленьняў для мовы.',
 	'languagestats-stats-for' => 'Статыстыка перакладаў для $1 ($2).',
 	'languagestats-recenttranslations' => 'апошнія пераклады',
-	'translate-langstats-incomplete' => 'Некаторыя статыстычныя зьвесткі на старонцы ня поўныя. Для атрыманьня большых зьвестак трэба абнавіць старонку.',
+	'translate-langstats-incomplete' => 'Некаторыя статыстычныя зьвесткі на старонцы няпоўныя. Для атрыманьня апошніх зьвестак трэба абнавіць старонку.',
 	'translate-langstats-expand' => 'разгарнуць',
 	'translate-langstats-collapse' => 'згарнуць',
 	'translate-langstats-expandall' => 'разгарнуць усе',
@@ -2816,6 +2817,7 @@ $messages['be-tarask'] = array(
 	'translate-language-code' => 'Код мовы',
 	'translate-language-code-field-name' => 'Код мовы:',
 	'translate-suppress-complete' => 'Поўнасьцю схаваць перакладзеныя групы паведамленьняў',
+	'translate-ls-noempty' => 'Схаваць зусім не перакладзеныя групы паведамленьняў',
 	'translate-language' => 'Мова',
 	'translate-total' => 'Паведамленьні',
 	'translate-untranslated' => 'Неперакладзеныя',
@@ -2824,9 +2826,15 @@ $messages['be-tarask'] = array(
 	'translate-nothing-to-do' => 'Былі зроблены ўсе магчымыя пераклады.
 Вы можаце праверыць пераклады з дапамогай [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Усе паведамленьні групаў разам',
-	'translate-ls-submit' => 'Атрымаць статыстыку',
+	'translate-ls-submit' => 'Паказаць статыстыку',
 	'translate-ls-column-group' => 'Група паведамленьняў',
-	'translate-mgs-fieldset' => 'Налады адлюстраваньня',
+	'translate-mgs-pagename' => 'Статыстыка груп паведамленьняў',
+	'translate-mgs-fieldset' => 'Налады паказу',
+	'translate-mgs-group' => 'Група паведамленьняў:',
+	'translate-mgs-nocomplete' => 'Не паказваць мовы, пераклад на якія цалкам скончаны',
+	'translate-mgs-submit' => 'Паказаць статыстыку',
+	'translate-mgs-column-language' => 'Мова',
+	'translate-mgs-totals' => 'Усе мовы разам',
 	'supportedlanguages' => 'Мовы перакладу',
 	'supportedlanguages-summary' => 'На гэтай старонцы пададзены сьпіс усіх моваў, якія падтрымліваюцца ў {{GRAMMAR:месны|{{SITENAME}}}}, разам з імёнамі перакладчыкаў, якія перакладаюць на гэтыя мовы.
 Калі Вам неабходна дадатковая інфармацыя па пэўнай мове, Вы можаце перайсьці на партал гэтай мовы.
@@ -7422,8 +7430,8 @@ Alleviivauksen väri kertoo, milloin kääntäjä on viimeksi kääntänyt tää
 	'translate-manage-action-fuzzy' => 'Tuo ja merkitse käännökset tarkistettavaksi',
 	'translate-manage-submit' => 'Suorita',
 	'translate-manage-nochanges' => 'Tämän ryhmän viestien määritelmiin ei ole mitään muutoksia.',
-	'translate-manage-nochanges-other' => 'Ei ollut mitään muutoksia tälle kielelle.
-Käytä alla olevaa linkkiä palataksesi ryhmän yksityiskohtanäkymään.',
+	'translate-manage-nochanges-other' => 'Tähän kieleen ei ollut muutoksia.
+Palaa ryhmän yksityiskohtanäkymään alla olevalla linkillä.',
 	'translate-manage-inconsistent' => 'Pyynnön tiedot ovat epäjohdonmukaisia.
 Tarkista muutokset ja yritä uudelleen.
 Yksityiskohdat: $1.',
@@ -17983,7 +17991,7 @@ Detaj: $1",
 	'translate-stats-workflow' => 'Stat',
 	'translate-dynagroup-recent-label' => 'Tradussion recente',
 	'translate-dynagroup-recent-desc' => 'Sta partìa ëd mëssagi a smon tute le tradussion recente an costa lenga.
-A ven dzortut a taj con ël travaj Aceté ij mëssagi o Revisioné tute le tradussion.',
+A ven dzortut a taj con ël travaj "{{int:translate-task-acceptqueue}}" e "{{int:translate-task-reviewall}}".',
 	'translate-dynagroup-by' => 'Tradussion fàite da {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Tradussion fàite da {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Ùltime modìfiche ëd {{GENDER:$1|$1}}',

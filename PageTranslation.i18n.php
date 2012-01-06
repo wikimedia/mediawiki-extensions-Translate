@@ -6687,6 +6687,7 @@ $messages['ug-arab'] = array(
 );
 
 /** Ukrainian (Українська)
+ * @author A1
  * @author AS
  * @author Ahonc
  * @author Hypers
@@ -6727,14 +6728,22 @@ $messages['uk'] = array(
 	'tpt-already-marked' => 'Остання версія цієї сторінки вже була відмічена для перекладу.',
 	'tpt-unmarked' => 'Сторінка $1 більше не відмічена для перекладу.',
 	'tpt-list-nopages' => 'Немає сторінок, відмічених для перекладу, або готових бути відміченими для перекладу.',
+	'tpt-new-pages-title' => 'Сторінки, запропоновані для перекладу',
+	'tpt-old-pages-title' => 'Сторінки в процесі перекладу',
+	'tpt-other-pages-title' => 'Пошкоджені сторінки',
+	'tpt-discouraged-pages-title' => 'Відключені сторінки',
 	'tpt-new-pages' => '{{PLURAL:$1|Ця сторінка містить|Ці сторінки містять}} текст з тегами перекладу, але жодна з версій {{PLURAL:$1|цієї сторінки|цих сторінок}} не відмічена для перекладу.',
 	'tpt-old-pages' => 'Деякі версії {{PLURAL:$1|цієї сторінки|цих сторінок}} були відмічені для перекладу.',
 	'tpt-other-pages' => '{{PLURAL:$1|Стара версія цієї сторінки відмічена|Старі версії цих сторінок відмічені}} для перекладу,
 але {{PLURAL:$1|остання версія не може бути відмічена|останні версії не можуть бути відмічені}} для перекладу.',
 	'tpt-rev-mark' => 'позначити для перекладу',
 	'tpt-rev-unmark' => 'вилучити з перекладу',
+	'tpt-rev-discourage' => 'виключити',
 	'tpt-rev-encourage' => 'відновити',
+	'tpt-rev-mark-tooltip' => 'Відзначити останню версію цієї сторінки для перекладу.',
 	'tpt-rev-unmark-tooltip' => 'Прибрати цю сторінку з перекладу',
+	'tpt-rev-discourage-tooltip' => 'Запобігти подальшим перекладам цієї сторінки',
+	'tpt-rev-encourage-tooltip' => 'Відновити цю сторінку для звичайного перекладу',
 	'translate-tag-translate-link-desc' => 'Перекласти цю сторінку',
 	'translate-tag-markthis' => 'Позначити цю сторінку для перекладу',
 	'translate-tag-markthisagain' => 'На цій сторінці було здійснено <span class="plainlinks">[$1 змін]</span> з моменту, коли ця сторінка була востаннє <span class="plainlinks">[$2 відмічена до перекладу]</span>.',
@@ -6800,11 +6809,19 @@ $messages['uk'] = array(
 	'pt-deletepage-invalid-title' => 'Зазначена сторінка є недійсною.',
 	'pt-deletepage-action-check' => 'Список сторінок, які будуть вилучені',
 	'pt-deletepage-action-perform' => 'Виконати вилучення',
+	'pt-deletepage-lang-legend' => 'Вилучити сторінку перекладу',
+	'pt-deletepage-full-legend' => 'Вилучити сторінку перекладу',
+	'pt-deletepage-any-legend' => 'Вилучити сторінку для перекладу або її переклад',
 	'pt-deletepage-current' => 'Назва сторінки:',
 	'pt-deletepage-reason' => 'Причина:',
 	'pt-deletepage-subpages' => 'Вилучити всі підсторінки',
 	'pt-deletepage-list-pages' => 'Список сторінок для вилучення',
+	'pt-deletepage-list-translation' => 'Сторінки перекладу',
+	'pt-deletepage-list-section' => 'Сторінки розділу',
 	'pt-deletepage-list-other' => 'Інші підсторінки',
+	'pt-deletepage-list-count' => 'Усього вилучити $1 {{PLURAL:$1|сторінку|сторінки|сторінок}}.',
+	'pt-deletepage-full-logreason' => 'Частина сторінки для перекладу, $1.',
+	'pt-deletepage-lang-logreason' => 'Частина сторінки перекладу $1.',
 );
 
 /** Urdu (اردو) */
