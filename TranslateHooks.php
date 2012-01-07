@@ -319,10 +319,13 @@ class TranslateHooks {
 		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		if ( $action === 'message' ) {
+			$link = $forUI ?
+				$linker->link( $title, null, array(), array( 'oldid' => $params[0] ) ) :
+				$title->getPrefixedText();
 			return wfMessage( 'logentry-translationreview-message' )->params(
 				'', // User link in the new system
 				'#', // User name for gender in the new system
-				Message::rawParam( $linker->link( $title, null, array(), array( 'oldid' => $params[0] ) ) )
+				Message::rawParam( $link )
 			)->inLanguage( $language )->text();
 		}
 
@@ -338,15 +341,14 @@ class TranslateHooks {
 			$oldState = $oldStateMessage->isBlank() ? $oldState : $oldStateMessage->text();
 			$newState = $newStateMessage->isBlank() ? $newState : $newStateMessage->text();
 
+			$link = $forUI ?
+				$linker->link( $title, $groupLabel, array(), array( 'language' => $languageCode ) ) :
+				$groupLabel;
+
 			return wfMessage( 'logentry-groupreview-message' )->params(
 				'', // User link in the new system
 				'#', // User name for gender in the new system
-				Message::rawParam( $linker->link(
-					$title,
-					$groupLabel,
-					array(),
-					array( 'language' => $languageCode ) )
-				),
+				Message::rawParam( $link ),
 				$languageName,
 				$oldState,
 				$newState
