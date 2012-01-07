@@ -2763,6 +2763,7 @@ $messages['yi'] = array(
  * @author Anakmalaysia
  * @author Chenxiaoqino
  * @author Hydra
+ * @author Hzy980512
  * @author Mark85296341
  */
 $messages['zh-hans'] = array(
@@ -2791,6 +2792,7 @@ $messages['zh-hans'] = array(
 	'translate-fs-userpage-level-1' => '我知道一点点',
 	'translate-fs-userpage-submit' => '创建我的用户页面',
 	'translate-fs-userpage-done' => '很好！现在你有了一个用户页面。',
+	'translate-fs-permissions-planguage' => '主要语言：',
 	'translate-fs-permissions-submit' => '发送请求',
 	'translate-fs-target-text' => '恭喜 ！
 您现在可以开始翻译。

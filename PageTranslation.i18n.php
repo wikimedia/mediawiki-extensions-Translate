@@ -515,7 +515,53 @@ Comprueba que tenga les etiquetes <nowiki><translate></nowiki> y una sintaxis v�
 	'tpt-saveok' => 'A páxina [[$1]] marcose pa traducir con {{PLURAL:$2|una unidá de traducción|$2 unidaes de traducción}}.
 La páxina agora se pue <span class="plainlinks">[$3 traducir]</span>.',
 	'tpt-badsect' => '"$1" nun ye un nome válidu pa la unidá de traducción $2.',
+	'tpt-showpage-intro' => 'Abaxo ta la llista de les seiciones nueves, esistentes y desaniciaes.
+Enantes de marcar esta versión pa traducir, comprueba que los cambios fechos nes seiciones tan amenorgaos pa evitar trabayu innecesariu de los traductores.',
+	'tpt-mark-summary' => 'Marcó esta versión pa traducir',
+	'tpt-edit-failed' => 'Nun se pudo anovar la páxina: $1',
+	'tpt-already-marked' => "La cabera versión d'esta páxina yá se marcó pa traducir.",
+	'tpt-unmarked' => 'La páxina "$1" yá nun ta marcada pa traducir.',
+	'tpt-list-nopages' => 'Nun hai páxina dala marcada pa traducir nin preparada pa marcase pa traducir.',
+	'tpt-new-pages-title' => 'Páxines propuestes pa traducción',
+	'tpt-old-pages-title' => 'Páxines en traducción',
+	'tpt-other-pages-title' => 'Páxines frañaes',
+	'tpt-discouraged-pages-title' => 'Páxines desaconseyaes',
+	'tpt-new-pages' => "{{PLURAL:$1|Esta páxina contién|Estes páxines contienen}} testu con etiquetes de traducción, pero denguna versión {{PLURAL:$1|d'esta páxina|d'estes páxines}} ta marcada pa traducir anguaño.",
+	'tpt-old-pages' => "Dalguna versión {{PLURAL:$1|d'esta páxina|d'estes páxines}} se marcó pa traducir.",
+	'tpt-other-pages' => "Hai {{PLURAL:$1|una versión vieya d'esta páxina marcada|delles versiones vieyes d'estes páxines marcaes}} pa traducir, pero {{PLURAL:$1|a cabera versión|les caberes versiones}} nun se {{PLURAL:$1|pue|pueden}} marcar pa traducir.",
+	'tpt-discouraged-pages' => "Ta desaconseyao facer más traducciones {{PLURAL:$1|d'esta páxina|d'estes páxines}}.",
+	'tpt-rev-mark' => 'marcar pa traducir',
+	'tpt-rev-unmark' => 'desaniciar de la traducción',
+	'tpt-rev-discourage' => 'desaconseyar',
+	'tpt-rev-encourage' => 'restaurar',
+	'tpt-rev-mark-tooltip' => "Marcar la cabera versión d'esta páxina pa traducir.",
+	'tpt-rev-unmark-tooltip' => 'Desaniciar esta páxina de la traducción.',
+	'tpt-rev-discourage-tooltip' => "Desaconseyar más traducciones d'esta páxina.",
+	'tpt-rev-encourage-tooltip' => 'Restaurar esta páxina a traducción normal.',
 	'translate-tag-translate-link-desc' => 'Traducir esta páxina',
+	'translate-tag-markthis' => 'Marcar esta páxina pa traducir',
+	'translate-tag-markthisagain' => 'Esta páxina tien <span class="plainlinks">[$1 cambios]</span> dende que se <span class="plainlinks">[$2 marcó pa traducir]</span> la última vegada.',
+	'translate-tag-hasnew' => 'Esta páxina contién <span class="plainlinks">[$1 cambios]</span> que nun tan marcaos pa traducir.',
+	'tpt-translation-intro' => 'Esta páxina ye una <span class="plainlinks">[$1 versión traducida]</span> de la páxina «[[$2]]» y la traducción ta completada nún $3%.',
+	'tpt-translation-intro-fuzzy' => "Les traducciones desfasaes tan marcaes d'esta manera.",
+	'tpt-languages-legend' => 'Otres llingües:',
+	'tpt-target-page' => 'Esta páxina nun se pue anovar manualmente.
+Esta páxina ye una traducción de la páxina [[$1]] y la traducción pue anovase usando [$2 la ferramienta de traducción].',
+	'tpt-unknown-page' => 'Esti espaciu de nomes ta acutáu pa les traducciones de les páxines de conteníu.
+La páxina que tas intentando editar paez que nun correspuende con denguna páxina marcada pa traducir.',
+	'tpt-render-summary' => 'Anovando pa casar cola nueva versión de la páxina orixinal',
+	'tpt-download-page' => 'Esportar la páxina con traducciones',
+	'pt-parse-open' => 'Etiqueta &lt;translate> desequilibrada.
+Plantía de traducción: <pre>$1</pre>',
+	'pt-parse-close' => 'Etiqueta &lt;/translate> desequilibrada.
+Plantía de traducción: <pre>$1</pre>',
+	'pt-parse-nested' => 'Nun se permiten seiciones &lt;translate> añeraes.
+Testu de la etiqueta: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Marcadores de seición múltiples pa una seición.
+Testu de la seición: <pre>$1</pre>',
+	'pt-shake-position' => 'Marcadores de seición en posición inesperada.
+Testu de la seición: <pre>$1</pre>',
+	'pt-shake-empty' => 'Seición balera pal marcador $1.',
 );
 
 /** Azerbaijani (Azərbaycanca)
