@@ -984,7 +984,48 @@ class RecentMessageGroup extends WikiMessageGroup {
 			return $group->getMessage( $handle->getKey(), $code );
 		}
 	}
+}
 
+class WorkflowStatesMessageGroup extends WikiMessageGroup {
+	// id and source are not needed
+	public function __construct() {}
+
+	public function getId() {
+		return 'translate-workflow-states';
+	}
+
+	public function getLabel() {
+		return wfMessage( 'translate-workflowgroup-label' )->text();
+	}
+
+	public function getDescription() {
+		return wfMessage( 'translate-workflowgroup-desc' )->text();
+	}
+
+	public function getDefinitions() {
+		global $wgTranslateWorkflowStates;
+
+		$defs = array();
+
+		foreach ( array_keys( $wgTranslateWorkflowStates ) as $state ) {
+			$titleString = "Translate-workflow-state-$state";
+
+			// Automatically create pages for workflow states in the original language
+			$title = Title::makeTitle( $this->getNamespace(), $titleString );
+			if ( !$title->exists() ) {
+				$page = new WikiPage( $title );
+				$page->doEdit(
+					$state,
+					wfMessage( 'translate-workflow-autocreated-summary', $state )->inContentLanguage()->text(),
+					EDIT_NEW
+				);
+			}
+
+			$defs[$titleString] = $state;
+		}
+
+		return $defs;
+	}
 }
 
 /**
@@ -1056,6 +1097,7 @@ class MessageGroups {
 		global $wgEnablePageTranslation, $wgTranslateGroupFiles;
 		global $wgTranslateAC, $wgTranslateEC, $wgTranslateCC;
 		global $wgAutoloadClasses;
+		global $wgTranslateWorkflowStates;
 
 		$deps = array();
 		$deps[] = new GlobalDependency( 'wgTranslateAddMWExtensionGroups' );
@@ -1089,6 +1131,10 @@ class MessageGroups {
 				$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $title );
 				$wgTranslateCC[$id]->setLabel( $title->getPrefixedText() );
 			}
+		}
+
+		if ( $wgTranslateWorkflowStates ) {
+			$wgTranslateCC['translate-workflow-states'] = new WorkflowStatesMessageGroup();
 		}
 
 		$autoload = array();

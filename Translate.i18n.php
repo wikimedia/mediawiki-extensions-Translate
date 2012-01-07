@@ -407,7 +407,12 @@ Details: $1',
 	'translate-workflow-set-do' => 'Set',
 	'translate-workflow-set-doing' => 'Setting...',
 	'translate-workflow-set-done' => 'Set!',
+	'translate-workflow-autocreated-summary' => 'Automatic creation of page for workflow state $1',
 	'translate-stats-workflow' => 'Status',
+
+	'translate-workflowgroup-label' => 'Workflow states',
+	'translate-workflowgroup-desc' => 'This message group shows the translation workflow states.
+The states are defined in the configuration variable $wgTranslateWorkflowStates.',
 
 	// Dynamic message groups
 	'translate-dynagroup-recent-label' => 'Recent translations',
@@ -674,6 +679,7 @@ Additional parameters:
 	'translate-workflow-set-do' => 'Submit button text when active',
 	'translate-workflow-set-doing' => 'Submit button text when waiting for reply from server',
 	'translate-workflow-set-done' => 'Submit button text when submission completed succesfully',
+	'translate-workflow-autocreated-summary' => 'This is an edit summary for the automatic creation of a workflow state page.',
 	'translate-stats-workflow' => 'Column header on Special:LanguageStats and Special:MessageGroupStats',
 );
 
@@ -9561,7 +9567,11 @@ $1',
 	'translate-workflow-set-do' => 'הגדרה',
 	'translate-workflow-set-doing' => 'מתבצעת הגדרה...',
 	'translate-workflow-set-done' => 'הוגדר!',
+	'translate-workflow-autocreated-summary' => 'יצירה אוטומטית של דף עם מצב התרגום $1',
 	'translate-stats-workflow' => 'מצב',
+	'translate-workflowgroup-label' => 'מצבי תרגום',
+	'translate-workflowgroup-desc' => 'קבוצת ההודעות הזאת מציגה את המצבים האפשריים של תרגום הודעות.
+המצבים מוגדרים במשתנה ‎$wgTranslateWorkflowStates בקובץ ההגדרות של ההרחבה Translate.',
 	'translate-dynagroup-recent-label' => 'תרגומים אחרונים',
 	'translate-dynagroup-recent-desc' => 'קבוצת ההודעות הזאת מציגה את כל התרגומים האחרונים לשפה הזאת.
 זה שימושי בעיקר במצבים "{{int:translate-task-acceptqueue}}" ו"{{int:translate-task-reviewall}}".',
