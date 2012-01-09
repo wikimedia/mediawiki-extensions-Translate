@@ -11,7 +11,7 @@ jQuery( function( $ ) {
 
 		var successFunction = function( data, textStatus ) {
 			if ( data.error ) {
-				var reason = mw.msg( "translate-messagereview-apierror-" + data.error.code );
+				var reason = mw.msg( "api-error-" + data.error.code );
 				$b.val( mw.msg( "translate-messagereview-failure", reason ) );
 			} else {
 				$b.val( mw.msg( "translate-messagereview-done" ) );
