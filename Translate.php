@@ -148,8 +148,8 @@ $wgLogTypes[] = 'translationreview';
 $wgLogActionsHandlers['translationreview/message'] = 'TranslateHooks::formatTranslationreviewLogEntry';
 $wgLogActionsHandlers['translationreview/group'] = 'TranslateHooks::formatTranslationreviewLogEntry';
 // BC for <1.19
-$wgLogHeaders['pagetranslation'] = 'log-description-translationreview';
-$wgLogNames['pagetranslation'] = 'log-name-translationreview';
+$wgLogHeaders['translationreview'] = 'log-description-translationreview';
+$wgLogNames['translationreview'] = 'log-name-translationreview';
 
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
