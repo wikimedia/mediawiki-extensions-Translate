@@ -14009,6 +14009,7 @@ Detailler: $1',
 	'log-name-translationreview' => 'Logbuch vun den nogekuckten Iwwersetzungen',
 	'log-description-translationreview' => 'Logbuch vun allen nogekuckten Iwwersetzungen a Gruppe vu Messagen.',
 	'logentry-translationreview-message' => "$1 {{GENDER:$2|huet}} d'Iwwersetzung $3 nogekuckt",
+	'translate-workflow-state-' => '(net agestallt)',
 	'translate-workflowstatus' => 'Statut: $1',
 	'translate-workflow-set-do' => 'Astellen',
 	'translate-workflow-set-doing' => 'Astellen...',
@@ -14017,6 +14018,8 @@ Detailler: $1',
 	'translate-dynagroup-recent-label' => 'Rezent Iwwersetzungen',
 	'translate-dynagroup-by' => 'Iwwersetzung vum {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Iwwersetzung vum {{GENDER:$1|$1}} ($2)',
+	'translate-dynagroup-last' => 'Lescht Ännerung vum {{GENDER:$1|$1}}',
+	'translate-dynagroup-lastc' => 'Lescht Ännerung vum {{GENDER:$1|$1}} ($2)',
 );
 
 /** Ganda (Luganda)

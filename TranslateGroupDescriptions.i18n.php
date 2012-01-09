@@ -1970,6 +1970,7 @@ $messages['pms'] = array(
 	'translate-group-desc-collection' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Colession]",
 	'translate-group-desc-flaggedrevs' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Revision signalà]",
 	'translate-group-desc-readerfeedback' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback Artorn dij letor]",
+	'translate-group-desc-semantic' => "Partìa ëd mëssagi Meta contenent tùit ij mëssagi për tute j'estension [http://semantic-mediawiki.org/ Semantic MediaWiki]",
 	'translate-group-desc-socialprofile' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension relativa a l'estension ëd MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]",
 	'translate-group-desc-translate' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Tradussion]",
 	'translate-group-desc-wikiaextensions' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension mantnùa MediaWiki dovrà da [http://www.wikia.com Wikia]",
@@ -1978,15 +1979,16 @@ $messages['pms'] = array(
 	'translate-group-desc-uniwiki' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension relativa a [http://unicefinnovation.org/wiki.php Uniwiki]",
 	'translate-group-desc-ui' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension relativa a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]",
 	'translate-group-desc-translatablepages' => "Tute le pàgine ch'as peulo volté",
-	'translate-group-desc-europeana' => "[[Translating:Europeana|Europeana]] a abìlita le përson-e a esploré j'arsorse culturaj digitaj d'Euròpa",
 	'bw-desc-freecol' => "Prima ëd volté FreeCol an soa lenga, për piasì ch'a lesa [[Translating:FreeCol]]. Freecol a deuvra la licensa GPL.",
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un forum web scrivù an PHP.',
 	'bw-desc-mantisbt' => "[http://www.mantisbt.org MantisBT] a l'é un sistema lìber ëd trassadura dj'eror web-based. Për piasì arpòrta minca problema an [[Support]].",
+	'translate-group-desc-eol' => 'Na partìa ëd mëssagi për [[Translating:EOL|Ensiclopedìa dla Vita]]',
 	'translate-group-desc-ihris' => 'Na partìa ëd mëssagi për [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => "Na partìa ëd mëssagi për [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un mòdul d'[[Translating:iHRIS|iHRIS]]",
 	'translate-group-desc-ihris-i2ce' => "Na partìa ëd mëssagi për [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], un mòdul d'[[Translating:iHRIS|iHRIS]]",
 	'translate-group-desc-ihris-manage' => "Na partìa ëd mëssagi për [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], un mòdul d'[[Translating:iHRIS|iHRIS]]",
 	'translate-group-desc-ihris-qualify' => "Na partìa ëd mëssagi për [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], un mòdul d'[[Translating:iHRIS|iHRIS]]",
+	'translate-group-desc-kiwix' => 'Na partìa ëd mëssagi për [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Un plugin sentral për [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Mëssagi për na version ëstàbil ëd [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => "[[Translating:Mifos|Mifos]] a l'é un sistema anformativ ëd gestion për la microfinansa",
@@ -2001,10 +2003,6 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'bw-desc-openlayers' => "OpenLayers a l'é un generador ëd mape dinàmiche open source. Për piasì arpòrta minca problema an dzora a [[Support]].",
 	'bw-desc-openstreetmap' => 'Partìa ëd mëssagi për tùit ij mëssagi [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => "Sta partìa ëd messagi-sì a conten ij messagi d'antërfassa për [[Translating:Open Street Map|Open Street Map]].",
-	'bw-desc-osm-potlatch' => "Sta partìa ëd messagi a conten ij messagi d'antërfacia për [[Translating:OpenStreetMap|Potlatch]]. Për piasì:
-
-* Preuva a manten-e toe tradussion ël pì possibil istesse a la lunghëssa dl'original anglèis a causa dle restrission dël framework UI. Varda ëdcò [http://trac.openstreetmap.org/ticket/2067 open bug].
-* Dòvra [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] për prové Potlatch. It peule prové là tut lòn ch'it veule an tute le aire.",
 	'translate-group-desc-pywikipedia' => "[[Translating:Pywikipedia|Pywikipedia]] a l'é na colession d'utiss për modifiché Wikipedia",
 	'bw-desc-shapado' => 'Partìa ëd mëssagi për ël programa ëd domande e rispòste lìber e a sorgiss lìbera [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => "[[Translating:StatusNet|StatusNet]] a l'é un servent ëd microscartari a sorgiss duverta",
@@ -2012,6 +2010,7 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'translate-group-desc-tsint' => 'Na partìa ëd mëssagi për [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], ël sistema i18n për [http://toolserver.org Toolserver] utiss (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detaj técnich]</span>)',
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] a peil trové an pressa j'àutor ëd na pàgina an na wiki ëd Wikimedia.",
 	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] a l'é un proget për fé na version ëd Wikipedia fòra linia, ëd sol test, dzora a na perifèrica mòbil.",
+	'translate-group-desc-wikipediamobile' => "[[Translating:WikipediaMobile|WikipediaMobile]] a l'é na cross-piataforma mòbila e n'aplicassin tablet për lese e contribuì a Wikipedia",
 );
 
 /** Portuguese (Português)
