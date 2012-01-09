@@ -999,7 +999,7 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 	}
 
 	public function getDescription() {
-		return wfMessage( 'translate-workflowgroup-desc' )->text();
+		return wfMessage( 'translate-workflowgroup-desc' )->plain();
 	}
 
 	public function getDefinitions() {
@@ -1009,19 +1009,23 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 
 		foreach ( array_keys( $wgTranslateWorkflowStates ) as $state ) {
 			$titleString = "Translate-workflow-state-$state";
+			$definitionText = $state;
 
 			// Automatically create pages for workflow states in the original language
 			$title = Title::makeTitle( $this->getNamespace(), $titleString );
 			if ( !$title->exists() ) {
 				$page = new WikiPage( $title );
 				$page->doEdit(
-					$state,
+					$state /*content*/,
 					wfMessage( 'translate-workflow-autocreated-summary', $state )->inContentLanguage()->text(),
-					EDIT_NEW
+					0, /*flags*/
+					false, /* base revision id */
+					FuzzyBot::getUser()
 				);
+			} else {
+				$definitionText = Revision::newFromTitle( $title )->getText();
 			}
-
-			$defs[$titleString] = $state;
+			$defs[$titleString] = $definitionText;
 		}
 
 		return $defs;
@@ -1107,6 +1111,7 @@ class MessageGroups {
 		$deps[] = new GlobalDependency( 'wgTranslateEC' );
 		$deps[] = new GlobalDependency( 'wgTranslateCC' );
 		$deps[] = new GlobalDependency( 'wgTranslateExtensionDirectory' );
+		$deps[] = new GlobalDependency( 'wgTranslateWorkflowStates' );
 		$deps[] = new FileDependency( dirname( __FILE__ ) . '/groups/mediawiki-defines.txt' );
 		$deps[] = new FileDependency( dirname( __FILE__ ) . '/groups/Wikia/extensions.txt' );
 		$deps[] = new FileDependency( dirname( __FILE__ ) . '/groups/Toolserver/toolserver-textdomains.txt' );
