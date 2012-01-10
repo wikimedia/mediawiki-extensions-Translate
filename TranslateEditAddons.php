@@ -227,17 +227,6 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * @param $title Title
-	 * @return array
-	 */
-	public static function getKeyCodeGroup( Title $title ) {
-		list( $key, $code ) = self::figureMessage( $title );
-		$group = self::getMessageGroup( $title->getNamespace(), $key );
-
-		return array( $key, $code, $group );
-	}
-
-	/**
 	 * Tries to determine to which group this message belongs. It tries to get
 	 * group id from loadgroup GET-paramater, but fallbacks to messageIndex file
 	 * if no valid group was provided, or the group provided is a meta group.
