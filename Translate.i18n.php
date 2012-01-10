@@ -8696,7 +8696,11 @@ Detalles: $1',
 	'translate-workflow-set-do' => 'Activado',
 	'translate-workflow-set-doing' => 'Activando...',
 	'translate-workflow-set-done' => 'Activado!',
+	'translate-workflow-autocreated-summary' => 'Creación automática da páxina para o estado "$1" do fluxo de traballo',
 	'translate-stats-workflow' => 'Estado',
+	'translate-workflowgroup-label' => 'Estados do fluxo de traballo',
+	'translate-workflowgroup-desc' => 'Este grupo de mensaxes mostra todas as traducións dos estados do fluxo de traballo.
+Os estados están definidos na variable de configuración $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Traducións recentes',
 	'translate-dynagroup-recent-desc' => 'Este grupo de mensaxes mostra todas as traducións recentes feitas nesta lingua.
 É moi útil para as tarefas "{{int:translate-task-acceptqueue}}" e "{{int:translate-task-reviewall}}".',
@@ -16689,7 +16693,11 @@ Details: $1',
 	'translate-workflow-set-do' => 'Instellen',
 	'translate-workflow-set-doing' => 'Bezig met instellen...',
 	'translate-workflow-set-done' => 'Ingesteld',
+	'translate-workflow-autocreated-summary' => 'Pagina voor workflowstatus $1 is automatisch aangemaakt',
 	'translate-stats-workflow' => 'Status',
+	'translate-workflowgroup-label' => 'Workflowstatussen',
+	'translate-workflowgroup-desc' => 'Deze berichtengroep bevat de statussen voor de workflow.
+Deze statussen zijn ingesteld in de instelling $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Recente vertalingen',
 	'translate-dynagroup-recent-desc' => 'Deze berichtengroep geeft alle recente wijzigingen weer in deze taal.
 Dit is vooral nuttig voor de taken "{{int:translate-task-acceptqueue}}" en "{{int:translate-task-reviewall}}".',

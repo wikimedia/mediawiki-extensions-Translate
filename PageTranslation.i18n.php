@@ -5279,9 +5279,9 @@ Për piasì, ch'a contròla ël [[Special:Log/pagetranslation|registr ëd tradus
 	'pt-deletepage-full-logreason' => 'Tòch ëd la pàgina da volté $1.',
 	'pt-deletepage-lang-logreason' => 'Tòch ëd la pàgina ëd tradussion $1.',
 	'pt-deletepage-started' => "Për piasì, ch'a contròla ël [[Special:Log/pagetranslation|registr ëd tradussion dle pàgine]] për j'eror e ël mëssagi ëd completament.",
-	'pt-deletepage-intro' => "Sta pagina special at përmëtt dë scanselé qualsëssìa pagina voltàbila o tradussion ant un-a lenga.
-L'assion dë scanselassion a sarà pa istananea, përché tante pagine a deuvo esse scanselà.
-J'eror a saran registrà ant ël [[Special:Log/pagetranslation|registr ëd tradussion ëd pagine]]  e a deuvo esse riparà a man.",
+	'pt-deletepage-intro' => "Costa pàgina special a-j përmët dë scancelé qualsëssìa pàgina da volté o dle tradussion ant na lenga.
+L'assion dë scancelassion a sarà pa imedià, përché tante pàgine a devo esse scancelà.
+J'eror a saran registrà ant ël [[Special:Log/pagetranslation|registr ëd le tradussion ëd le pàgine]]  e a devo esse rangià a man.",
 );
 
 /** Pashto (پښتو)
