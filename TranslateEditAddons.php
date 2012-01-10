@@ -124,7 +124,11 @@ class TranslateEditAddons {
 	 * Hook: AlternateEdit
 	 */
 	public static function intro( EditPage $editpage ) {
-		$editpage->suppressIntro = true;
+		$handle = new MessageHandle( $editpage->mTitle );
+		if ( $handle->isValid() ) {
+			$editpage->suppressIntro = true;
+			return true;
+		}
 
 		$msg = wfMsgForContent( 'translate-edit-tag-warning' );
 

@@ -29,6 +29,9 @@ And for the code at:
  http://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-01-10
+- Translate extension no longer unconditionally suppresses edit intros
+- Fixed compatibility issue with logs on < MW 1.18
 * 2012-01-06
 - Fixes to the sizing of the translation editor dialog
 * 2012-01-05
