@@ -29,6 +29,9 @@ And for the code at:
  http://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-01-11
+- Translate page group id prefix was changed from page| to page-. Some old
+  links need to be updated, some still work.
 * 2012-01-10
 - Translate extension no longer unconditionally suppresses edit intros
 - Fixed compatibility issue with logs on < MW 1.18

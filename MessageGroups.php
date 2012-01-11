@@ -1184,6 +1184,8 @@ class MessageGroups {
 	 * @return MessageGroup|null if it doesn't exist.
 	 */
 	public static function getGroup( $id ) {
+		// BC with page| which is now page-
+		$id = strtr( $id, '|', '-' );
 		self::init();
 
 		global $wgTranslateEC, $wgTranslateAC, $wgTranslateCC;

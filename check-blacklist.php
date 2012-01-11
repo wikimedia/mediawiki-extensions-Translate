@@ -651,7 +651,7 @@ array(
 ),
 // translatewiki.net specific
 array(
-	'group' => 'page|Translating:Intro',
+	'group' => 'page-Translating:Intro',
 	'check' => 'links',
 	'message' => array(
 		'Translating:Intro/intro', // Contains links that are translated

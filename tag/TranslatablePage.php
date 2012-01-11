@@ -181,7 +181,7 @@ class TranslatablePage {
 	 * @return \string
 	 */
 	public static function getMessageGroupIdFromTitle( Title $title ) {
-		return 'page|' . $title->getPrefixedText();
+		return 'page-' . $title->getPrefixedText();
 	}
 
 	/**

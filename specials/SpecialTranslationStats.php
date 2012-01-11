@@ -78,7 +78,8 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			$values = array_map( 'trim', explode( ',', $opts[$t] ) );
 			$values = array_splice( $values, 0, 4 );
 			if ( $t === 'group' ) {
-				$values = preg_replace( '~^page_~', 'page|', $values );
+				// BC for old syntax which replaced _ to | which was not allowed
+				$values = preg_replace( '~^page_~', 'page-', $values );
 			}
 			$opts[$t] = implode( ',', $values );
 		}
