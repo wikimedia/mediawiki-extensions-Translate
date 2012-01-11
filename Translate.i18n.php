@@ -11158,6 +11158,8 @@ Non pote determinar le gruppo e lingua ex le capites del file.',
 	'translate-import-err-warnings' => 'Le file non es ben formate.
 Assecura te que tu editor non remove le campos msgctxt.
 Detalios: $1',
+	'translate-js-summary' => 'Summario:',
+	'translate-js-save' => 'Salveguardar',
 	'translate-js-next' => 'Salveguardar e aperir le sequente',
 	'translate-js-nonext' => 'Isto esseva le ultime message in iste pagina.',
 	'translate-js-skip' => 'Saltar al sequente',
@@ -15494,7 +15496,11 @@ Butiran: $1',
 	'translate-workflow-set-do' => 'Tetapkan',
 	'translate-workflow-set-doing' => 'Tetapan sedang dibuat...',
 	'translate-workflow-set-done' => 'Beres!',
+	'translate-workflow-autocreated-summary' => 'Pembuatan laman secara automatik untuk keadaan alir kerja $1',
 	'translate-stats-workflow' => 'Status',
+	'translate-workflowgroup-label' => 'Keadaan alir kerja',
+	'translate-workflowgroup-desc' => 'Kumpulan mesej ini menunjukkan keadaan alir kerja terjemahan.
+Keadaan-keadaan ini ditakrifkan dalam pembolehubah konfigurasi $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Terjemahan terkini',
 	'translate-dynagroup-recent-desc' => 'Kumpulan mesej ini menunjukkan semua terjemahan terkini ke dalam bahasa ini.
 Paling berguna dengan tugas "{{int:translate-task-acceptqueue}}" dan "{{int:translate-task-reviewall}}".',
@@ -24940,6 +24946,7 @@ $messages['yue'] = array(
  * @author Gaoxuewei
  * @author Gzdavidwong
  * @author Hydra
+ * @author Hzy980512
  * @author Jimmy xu wrk
  * @author Liangent
  * @author Mark85296341
@@ -25011,7 +25018,7 @@ $messages['zh-hans'] = array(
 	'translate-edit-nopermission' => '您必须获得权限才可以翻译信息。',
 	'translate-edit-askpermission' => '请求权限',
 	'translate-magic-pagename' => '扩展的MediaWiki翻译',
-	'translate-magic-help' => '您可以面翻译特殊页面别名、魔术字以及名字空间名称。
+	'translate-magic-help' => '您可以翻译特殊页面别名、魔术字以及名字空间名称。
 
 特殊页面别名和魔术字可以有多个翻译。
 这些翻译使用一个逗号（,）分隔。

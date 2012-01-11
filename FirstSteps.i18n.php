@@ -2793,6 +2793,8 @@ $messages['zh-hans'] = array(
 	'translate-fs-userpage-submit' => '创建我的用户页面',
 	'translate-fs-userpage-done' => '很好！现在你有了一个用户页面。',
 	'translate-fs-permissions-planguage' => '主要语言：',
+	'translate-fs-permissions-pending' => '您的请求已提交至[[$1]]，站点管理员会尽快查阅您的请求。
+如果您已验证您的电子邮箱，那么这个请求有答复后就会给您发送邮件。',
 	'translate-fs-permissions-submit' => '发送请求',
 	'translate-fs-target-text' => '恭喜 ！
 您现在可以开始翻译。

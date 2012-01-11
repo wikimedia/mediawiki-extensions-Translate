@@ -2726,6 +2726,7 @@ $messages['yi'] = array(
  * @author Anakmalaysia
  * @author Bencmq
  * @author Hydra
+ * @author Hzy980512
  * @author PhiLiP
  * @author Tommyang
  * @author Xiaomingyan
@@ -2746,6 +2747,7 @@ $messages['zh-hans'] = array(
 	'bw-desc-freecol' => '在将FreeCol翻译至你的语言之前，请阅读[[Translating:FreeCol]]。Freecol使用GPL许可协议。',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum]，一个用PHP编写的论坛。',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT]是一个免费的基于Web的Bug追踪系统。请在[[Support|支持]]报告问题。',
+	'translate-group-desc-mantisbt-plugin-core' => '[[Translating:MantisBT|MantisBT]]的核心插件',
 	'translate-group-desc-mediawiki-core-branch' => '用于 [[Translating:MediaWiki|MediaWiki]] 稳定版本的消息。',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]]是一种小额信贷管理信息系统。',
 	'bw-desc-mwlibrl' => "'''mwlib.rl'''是一个使用mwlib库解析的python库，用以将MediaWiki条目转化为PDF文件。
