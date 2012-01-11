@@ -111,9 +111,7 @@ class TranslationEditPage {
 		$hidden[] = Html::hidden( 'format', 'json' );
 		$hidden[] = Html::hidden( 'action', 'edit' );
 
-                // Allow links and "sup" in MediaWiki:Summary to work here, so do not use Xml::inputLabel().
-		$summary = Html::rawElement( 'label', array( 'for' => 'summary' ), wfMessage( 'summary' )->text() );
-		$summaryInput = Xml::input( 'summary', 40, false, array( 'id' => 'summary' ) );
+		$summary = Xml::inputLabel( wfMsg( 'summary' ), 'summary', 'summary', 40 );
 		$save = Xml::submitButton( wfMsg( 'savearticle' ), array( 'class' => 'mw-translate-save' ) );
 		$saveAndNext = Xml::submitButton( wfMsg( 'translate-js-next' ), array( 'class' => 'mw-translate-next' ) );
 		$skip = Html::element( 'input', array( 'class' => 'mw-translate-skip', 'type' => 'button', 'value' => wfMsg( 'translate-js-skip' ) ) );
@@ -134,7 +132,7 @@ class TranslationEditPage {
 		$support = $this->getSupportButton( $this->getTitle() );
 
 		if ( $wgUser->isAllowed( 'translate' ) ) {
-			$bottom = "$summary$summaryInput$save$saveAndNext$skip$history$support";
+			$bottom = "$summary$save$saveAndNext$skip$history$support";
 		} else {
 			$text = wfMessage( 'translate-edit-nopermission' )->escaped();
 			$button = $this->getPermissionPageButton();
