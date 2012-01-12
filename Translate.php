@@ -165,6 +165,11 @@ $wgResourceModules['ext.translate'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.helplink'] = array(
+	'styles' => 'resources/ext.translate.helplink.css',
+	'position' => 'top',
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.messagetable'] = array(
 	'scripts' => 'resources/ext.translate.messagetable.js',
 	'styles' => 'resources/ext.translate.messagetable.css',

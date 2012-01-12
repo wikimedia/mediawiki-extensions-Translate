@@ -426,6 +426,8 @@ Most useful for the tasks "{{int:translate-task-acceptqueue}}" and "{{int:transl
 	'translate-dynagroup-byc' => 'Translation made by {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Latest change by {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Latest change by {{GENDER:$1|$1}} ($2)',
+
+	'translate-gethelp' => 'Help',
 );
 
 /** Message documentation (Message documentation)
@@ -685,6 +687,8 @@ Additional parameters:
 	'translate-workflow-set-done' => 'Submit button text when submission completed succesfully',
 	'translate-workflow-autocreated-summary' => 'This is an edit summary for the automatic creation of a workflow state page.',
 	'translate-stats-workflow' => 'Column header on Special:LanguageStats and Special:MessageGroupStats',
+
+	'translate-gethelp' => 'Link to some Translate help page or tutorial',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
