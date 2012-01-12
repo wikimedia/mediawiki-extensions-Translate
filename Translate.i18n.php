@@ -687,7 +687,6 @@ Additional parameters:
 	'translate-workflow-set-done' => 'Submit button text when submission completed succesfully',
 	'translate-workflow-autocreated-summary' => 'This is an edit summary for the automatic creation of a workflow state page.',
 	'translate-stats-workflow' => 'Column header on Special:LanguageStats and Special:MessageGroupStats',
-
 	'translate-gethelp' => 'Link to some Translate help page or tutorial',
 );
 
@@ -5129,6 +5128,8 @@ Die Gruppen und Sprache konnte nicht aus dem Dateikopf ermittelt werden.',
 	'translate-import-err-warnings' => 'Die Datei entspricht nicht dem erwarteten Format.
 Stelle sicher, dass der Editor keine <tt>msgctxt</tt>-Felder entfernt.
 Details: $1',
+	'translate-js-summary' => 'Zusammenfassung:',
+	'translate-js-save' => 'Speichern',
 	'translate-js-next' => 'Speichern und nächste öffnen',
 	'translate-js-nonext' => 'Dies war die letzte Systemnachricht dieser Seite.',
 	'translate-js-skip' => 'Weiter zur nächsten',
@@ -5188,6 +5189,7 @@ Am nützlichsten ist sie für die Aufgaben „{{int:translate-task-acceptqueue}}
 	'translate-dynagroup-byc' => 'Übersetzung von {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Letzte Änderung von {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Letzte Änderung von {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Hilfe',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -5547,6 +5549,8 @@ Njemóžno kupku a rěc z datajowych głowow zwěsćiś.',
 	'translate-import-err-warnings' => 'Dataja njejo derje wuformowana.
 Zawěsć, až twój editor njewótpórujo póla msgctxt.
 Drobnostki: $1',
+	'translate-js-summary' => 'Zespominanje:',
+	'translate-js-save' => 'Składowaś',
 	'translate-js-next' => 'Pśiducu powěźeńku składowaś a wocyniś',
 	'translate-js-nonext' => 'To jo było slědna powěźeńka na tos tom boku.',
 	'translate-js-skip' => 'K pśiducej powěźeńce skócyś',
@@ -5606,6 +5610,7 @@ Jo nejwužytnjej za nadawka "{{int:translate-task-acceptqueue}}" a "{{int:transl
 	'translate-dynagroup-byc' => 'Pśełožk wót {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Nejnowša změna wót {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Nejnowša změna wót {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Pomoc',
 );
 
 /** Central Dusun (Dusun Bundu-liwan)
@@ -7836,6 +7841,8 @@ il est impossible de déterminer le groupe et la langue depuis les entêtes du f
 	'translate-import-err-warnings' => 'Le fichier n’est pas bien formé.
 Assurez-vous que votre outil de traduction ne supprime pas les champs « msgctxt ».
 Détails : $1',
+	'translate-js-summary' => 'Résumé:',
+	'translate-js-save' => 'Enregistrer',
 	'translate-js-next' => 'Sauvegarder et ouvrir le suivant',
 	'translate-js-nonext' => "C'était le dernier message de cette page.",
 	'translate-js-skip' => 'Aller au suivant',
@@ -7895,6 +7902,7 @@ Il est surtout utilisé pour les tâches "{{int:translate-task-acceptqueue}}" et
 	'translate-dynagroup-byc' => 'Traduction faite par  {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Dernière modification par  {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Dernière modification par  {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Aide',
 );
 
 /** Cajun French (Français cadien)
@@ -8393,7 +8401,7 @@ Prema no nome do grupo de mensaxes para ollar a lista coas mensaxes sen traducir
 	'translate-task-view' => 'Ver todas as mensaxes de',
 	'translate-task-untranslated' => 'Ver todas as mensaxes sen traducir de',
 	'translate-task-optional' => 'Ver as mensaxes opcionais de',
-	'translate-task-suggestions' => 'Ver as mensaxes coas suxestións da memoria de tradución',
+	'translate-task-suggestions' => 'Ver as mensaxes con suxestións da memoria de tradución',
 	'translate-task-untranslatedoptional' => 'Ver as mensaxes opcionais non traducidas de',
 	'translate-task-problematic' => 'Ver as mensaxes que teñen problemas en',
 	'translate-task-review' => 'Revisar os cambios en',
@@ -8657,6 +8665,8 @@ non se poden determinar o grupo e a lingua a partir das cabeceiras do ficheiro.'
 	'translate-import-err-warnings' => 'O ficheiro non está ben formado.
 Asegúrese de que o seu editor non elimina campos msgctxt.
 Detalles: $1',
+	'translate-js-summary' => 'Resumo:',
+	'translate-js-save' => 'Gardar',
 	'translate-js-next' => 'Gardar e abrir a seguinte',
 	'translate-js-nonext' => 'Esta é a última mensaxe da páxina.',
 	'translate-js-skip' => 'Pasar á seguinte',
@@ -8716,6 +8726,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'translate-dynagroup-byc' => 'Tradución feita por {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Última modificación feita por {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Última modificación feita por {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Axuda',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -9290,8 +9301,8 @@ $messages['he'] = array(
 	'translate-page-limit-option' => 'עד {{PLURAL:$1|הודעה אחת|$1 הודעות}} בדף',
 	'translate-submit' => 'הצגה',
 	'translate-page-navigation-legend' => 'ניווט',
-	'translate-page-showing' => 'הצגת הודעות מ־$1 עד $2 מתוך $3.',
-	'translate-page-showing-all' => 'הצגת {{PLURAL:$1|הודעה אחת|$1 הודעות}}.',
+	'translate-page-showing' => 'מוצגות הודעות מ־$1 עד $2 מתוך $3.',
+	'translate-page-showing-all' => '{{PLURAL:$1|מוצגת הודעה אחת|מוצגות $1 הודעות}}.',
 	'translate-page-showing-none' => 'אין הודעות להצגה.',
 	'translate-next' => 'לדף הבא',
 	'translate-prev' => 'לדף הקודם',
@@ -10222,6 +10233,8 @@ Njeje móžno skupinu a rěč z hłowy dataje zwěsćić.',
 	'translate-import-err-warnings' => 'Dataja derje sformowana njeje.
 Zawěsć, zo twój editor pola <tt>msgctxt</tt> njewotstronja.
 Podrobnosće: $1',
+	'translate-js-summary' => 'Zjeće:',
+	'translate-js-save' => 'Składować',
 	'translate-js-next' => 'Přichodnu powěsć składować a wočinić',
 	'translate-js-nonext' => 'To bě poslednja zdźělenka na tutej stronje.',
 	'translate-js-skip' => 'K přichodnej powěsći skočić',
@@ -10281,6 +10294,7 @@ Je najwužitnišo za nadawkaj "{{int:translate-task-acceptqueue}}" a "{{int:tran
 	'translate-dynagroup-byc' => 'Přełožk wot {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Najnowša změna wot {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Najnowša změna wot {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Pomoc',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -11223,6 +11237,7 @@ Es utile principalmente pro le cargas "{{int:translate-task-acceptqueue}}" e "{{
 	'translate-dynagroup-byc' => 'Traduction facite per {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Ultime modification per {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Ultime modification per {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Adjuta',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -12068,6 +12083,7 @@ $messages['ja'] = array(
 	'translate-ext-url' => '<hr />ウェブサイト：$1',
 	'translate-optional' => '（任意翻訳）',
 	'translate-ignored' => '（翻訳無視）',
+	'translate-edit-jsopen' => '編集',
 	'translate-edit-title' => '「$1」を編集',
 	'translate-edit-definition' => 'メッセージ定義',
 	'translate-edit-translation' => '翻訳',
@@ -12136,10 +12152,10 @@ $messages['ja'] = array(
 <nowiki>$1</nowiki>',
 	'translate-pref-jsedit' => '拡張版翻訳エディタ（JavaScriptが必要）',
 	'right-translate' => '翻訳用インターフェースを使って編集する',
-	'right-translate-manage' => '翻訳グループを管理する',
+	'right-translate-manage' => 'メッセージ群を管理する',
 	'right-translate-import' => 'オフラインでの翻訳を読み込む',
 	'right-translate-messagereview' => '翻訳を査読する',
-	'right-translate-groupreview' => 'メッセージ群の翻訳を査読する',
+	'right-translate-groupreview' => 'メッセージ群のワークフローの状態を変更',
 	'translate-rc-translation-filter' => '絞込み：',
 	'translate-rc-translation-filter-no' => '絞り込まない',
 	'translate-rc-translation-filter-only' => '翻訳のみ',
@@ -12274,6 +12290,8 @@ $1',
 	'translate-import-err-stale-group' => 'このファイルが所属するメッセージグループは存在しません。',
 	'translate-import-err-no-headers' => 'ファイルが Translate 拡張機能の形式に正しく適応した gettext ファイルではありません。ファイルヘッダーからグループと言語を確定することができませんでした。',
 	'translate-import-err-warnings' => 'このファイルは形式が正しくありません。あなたの使ったエディターが msgctxt フィールドを除去していないか確認してください。詳細: $1',
+	'translate-js-summary' => '要約：',
+	'translate-js-save' => '保存',
 	'translate-js-next' => '保存して次を開く',
 	'translate-js-nonext' => 'これはこのページの最後のメッセージ',
 	'translate-js-skip' => '次へスキップ',
@@ -12315,12 +12333,24 @@ $1',
 	'log-name-translationreview' => '翻訳査読記録',
 	'log-description-translationreview' => '翻訳とメッセージ群に対する全ての査読の記録',
 	'logentry-translationreview-message' => '$1が$3の翻訳を{{GENDER:$2|承認}}',
+	'logentry-groupreview-message' => '$1がメッセージ群$3の$4の翻訳の状態を$5から$6に{{GENDER:$2|変更しました}}',
 	'translate-workflow-state-' => '（解除）',
 	'translate-workflowstatus' => '状態：$1',
 	'translate-workflow-set-do' => '設定',
 	'translate-workflow-set-doing' => '設定中・・・',
 	'translate-workflow-set-done' => '設定完了！',
+	'translate-workflow-autocreated-summary' => 'ワークフロー状態$1のページの自動作成',
 	'translate-stats-workflow' => '状態',
+	'translate-workflowgroup-label' => 'ワークフロー状態',
+	'translate-workflowgroup-desc' => 'このメッセージ群では翻訳ワークフロー状態を示します。
+状態は、設定変数$wgTranslateWorkflowStatesによって定義されています。',
+	'translate-dynagroup-recent-label' => '最近の翻訳',
+	'translate-dynagroup-recent-desc' => 'このメッセージ群はこの言語への全ての最近の翻訳を表示しています。
+「{{int:translate-task-acceptqueue}}」と「{{int:translate-task-reviewall}}」の作業に便利です。',
+	'translate-dynagroup-by' => '{{GENDER:$1|$1}}による翻訳',
+	'translate-dynagroup-byc' => '{{GENDER:$1|$1}}による翻訳（$2）',
+	'translate-dynagroup-last' => '{{GENDER:$1|$1}}による最終更新',
+	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}}による最終更新（$2）',
 );
 
 /** Jamaican Creole English (Patois)
@@ -13212,10 +13242,13 @@ $1',
 	'translate-next' => '다음 페이지',
 	'translate-prev' => '이전 페이지',
 	'translate-page-description-legend' => '이 그룹에 대한 정보',
+	'translate-page-description-hasoptional-open' => '선택 메시지 보이기',
 	'translate-page-edit' => '편집',
 	'translate-ext-url' => '<hr />웹 사이트: $1',
 	'translate-optional' => '(선택적)',
 	'translate-ignored' => '(무시됨)',
+	'translate-edit-jsopen' => '편집',
+	'translate-edit-title' => '"$1" 편집하기',
 	'translate-edit-definition' => '메시지 정의',
 	'translate-edit-translation' => '번역',
 	'translate-edit-contribute' => '편집하기',
@@ -13298,10 +13331,16 @@ $1',
 	'supportedlanguages-translators' => '{{PLURAL:$2|번역자}}: $1',
 	'translate-save' => '저장 ($1)',
 	'translate-manage-fuzzy-summary' => '메시지 정의가 바뀌었습니다.',
+	'translate-js-summary' => '편집 요약:',
+	'translate-js-save' => '저장',
 	'translate-js-next' => '저장하고 다음으로 넘어가기',
 	'translate-js-nonext' => '이것이 이 페이지의 마지막 메시지입니다.',
 	'translate-js-skip' => '다음으로 넘어가기',
+	'translate-js-save-failed' => '저장에 실패했습니다. 이 오류를 신고해주시기 바랍니다.',
 	'translate-js-history' => '번역 내력',
+	'translate-js-support' => '질문하기',
+	'translate-js-support-title' => '이 메시지를 정확히 번역할 만한 정보가 부족하다면 도움을 요청하세요.',
+	'translate-searchprofile' => '번역문',
 );
 
 /** Krio (Krio)
@@ -14751,6 +14790,8 @@ $1',
 	'translate-import-err-warnings' => 'Податотеката не е добро формулирана.
 Осигурајте се дека вашиот обработувач не ги отстранува msgctxt полињата.
 Детали: $1',
+	'translate-js-summary' => 'Опис:',
+	'translate-js-save' => 'Зачувај',
 	'translate-js-next' => 'Зачувај и отвори следна',
 	'translate-js-nonext' => 'Ова беше последната порака на страницава.',
 	'translate-js-skip' => 'Прејди на следно',
@@ -16660,6 +16701,8 @@ het was niet mogelijk de groep en taal te bepalen uit het bestand.',
 	'translate-import-err-warnings' => 'Het bestand is niet juist gevormd.
 Zorg dat uw tekstverwerker het veld msgctxt niet verwijderd.
 Details: $1',
+	'translate-js-summary' => 'Samenvatting:',
+	'translate-js-save' => 'Opslaan',
 	'translate-js-next' => 'Opslaan en volgende',
 	'translate-js-nonext' => 'Dit was het laatste bericht op deze pagina.',
 	'translate-js-skip' => 'Overslaan en volgende',
@@ -16719,6 +16762,7 @@ Dit is vooral nuttig voor de taken "{{int:translate-task-acceptqueue}}" en "{{in
 	'translate-dynagroup-byc' => 'Vertaling gemaakt door {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Laatste wijziging door {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Laatste wijziging door {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Hulp',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -18080,11 +18124,11 @@ Detaj: $1",
 	'translate-workflow-set-do' => 'Ampòsta',
 	'translate-workflow-set-doing' => 'Ativassion...',
 	'translate-workflow-set-done' => 'Ativà!',
-	'translate-workflow-autocreated-summary' => 'Creassion automàtica ëd pagina për lë stat ëd fluss $1',
+	'translate-workflow-autocreated-summary' => 'Creassion automàtica ëd la pàgina për lë stat dël process ëd travaj $1',
 	'translate-stats-workflow' => 'Stat',
-	'translate-workflowgroup-label' => 'Stat dë fluss ëd travaj',
-	'translate-workflowgroup-desc' => 'Sta partìa ëd mëssagi a mosta jë stat dël fluss ëd tradussion.
-Jë stat a son definì ant a variàbil ëd configurassion $wgTranslateWorkflowStates.',
+	'translate-workflowgroup-label' => 'Stat dël process ëd travaj',
+	'translate-workflowgroup-desc' => 'Sta partìa ëd mëssagi a mostra jë stat dël process ëd travaj ëd tradussion.
+Jë stat a son definì ant la variàbil ëd configurassion $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Tradussion recente',
 	'translate-dynagroup-recent-desc' => 'Sta partìa ëd mëssagi a smon tute le tradussion recente an costa lenga.
 A ven dzortut a taj con ël travaj "{{int:translate-task-acceptqueue}}" e "{{int:translate-task-reviewall}}".',
@@ -19359,6 +19403,7 @@ $messages['ru'] = array(
 	'translate-ext-url' => '<hr />Сайт: $1',
 	'translate-optional' => '(необязательное)',
 	'translate-ignored' => '(игнорируемое)',
+	'translate-edit-jsopen' => 'правка',
 	'translate-edit-title' => 'Правка «$1»',
 	'translate-edit-definition' => 'Формулировка сообщения',
 	'translate-edit-translation' => 'Перевод',
@@ -19580,6 +19625,8 @@ $1',
 	'translate-import-err-warnings' => 'Файл не является правильно построенным.
 Убедитесь, что ваш редактор не удаляет поля msgctxt.
 Подробнее: $1',
+	'translate-js-summary' => 'Описание:',
+	'translate-js-save' => 'Сохранить',
 	'translate-js-next' => 'Сохранить и открыть следующий',
 	'translate-js-nonext' => 'Это было последнее сообщение на этой странице.',
 	'translate-js-skip' => 'Перейти к следующему',
@@ -19627,6 +19674,7 @@ $1',
 	'translate-workflow-set-doing' => 'Устанавливаем...',
 	'translate-workflow-set-done' => 'Установлено!',
 	'translate-stats-workflow' => 'Статус',
+	'translate-dynagroup-recent-label' => 'Недавние переводы',
 );
 
 /** Rusyn (Русиньскый)
@@ -20993,6 +21041,7 @@ $messages['sr-ec'] = array(
 	'translate-ext-url' => '<hr />Адреса: $1',
 	'translate-optional' => '(необавезно)',
 	'translate-ignored' => '(занемарено)',
+	'translate-edit-jsopen' => 'уреди',
 	'translate-edit-title' => 'Уређивање „$1“',
 	'translate-edit-definition' => 'Значење поруке',
 	'translate-edit-translation' => 'Превод',
@@ -21223,6 +21272,8 @@ $1',
 	'translate-import-err-warnings' => 'Датотека није добро формирана.
 Уверите се да уређивач не уклања msgctxt поља.
 Детаљи: $1',
+	'translate-js-summary' => 'Опис:',
+	'translate-js-save' => 'Сачувај',
 	'translate-js-next' => 'Сачувај и отвори следеће',
 	'translate-js-nonext' => 'То је била последња порука на овој страници.',
 	'translate-js-skip' => 'Прескочи на следеће',
@@ -21264,12 +21315,24 @@ $1',
 	'log-name-translationreview' => 'Историја провере превода',
 	'log-description-translationreview' => 'Историја свих провера превода и група порука.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|је прихватио|је прихватила|је прихватио}} превод $3',
+	'logentry-groupreview-message' => '$1 {{GENDER:$2|је променио|је променила|је променио}} стање превода на $4 у групи $3 из $5 у $6',
 	'translate-workflow-state-' => '(врати)',
 	'translate-workflowstatus' => 'Статус: $1',
 	'translate-workflow-set-do' => 'Постави',
 	'translate-workflow-set-doing' => 'Постављам…',
 	'translate-workflow-set-done' => 'Постављено',
-	'translate-stats-workflow' => 'Статус',
+	'translate-workflow-autocreated-summary' => 'Аутоматско стварање странице за радно стање $1',
+	'translate-stats-workflow' => 'Стање',
+	'translate-workflowgroup-label' => 'Радна стања',
+	'translate-workflowgroup-desc' => 'Ова група порука приказује радно стање превода.
+Стања су одређена с променљивом $wgTranslateWorkflowStates.',
+	'translate-dynagroup-recent-label' => 'Скорашњи преводи',
+	'translate-dynagroup-recent-desc' => 'Ова група порука приказује све скорашње преводе на овом језику.
+Ово је најкорисније за задатке „{{int:translate-task-acceptqueue}}“ и „{{int:translate-task-reviewall}}“.',
+	'translate-dynagroup-by' => 'Превод {{GENDER:$1|је направио|је направила|је направио}} $1',
+	'translate-dynagroup-byc' => 'Превод {{GENDER:$1|је направио|је направила|је направио}} $1 ($2)',
+	'translate-dynagroup-last' => 'Последњу измену {{GENDER:$1|је направио|је направила|је направио}} $1',
+	'translate-dynagroup-lastc' => 'Последњу измену {{GENDER:$1|је направио|је направила|је направио}} $1 ($2)',
 );
 
 /** Serbian (Latin script) (‪Srpski (latinica)‬)
@@ -22542,6 +22605,8 @@ $messages['te'] = array(
 	'translate-import-from-wiki' => 'ఈ వికీలోని దస్త్రం:',
 	'translate-import-from-local' => 'స్థానిక దస్త్రపు ఎక్కింపు:',
 	'translate-import-err-ul-failed' => 'దస్త్రపు ఎక్కింపు విజయవంతం కాలేదు',
+	'translate-js-summary' => 'సారాంశం:',
+	'translate-js-save' => 'భద్రపరచు',
 	'translate-js-next' => 'భద్రపరిచి తర్వాతి దానికి వెళ్ళు',
 	'translate-js-nonext' => 'ఈ పుటలో ఇది చివరి సందేశం',
 	'translate-js-skip' => 'వదిలేసి తర్వాతి దానికి వెళ్ళు',
@@ -22562,6 +22627,8 @@ $messages['te'] = array(
 	'translate-searchprofile-tooltip' => 'అనువాదాలన్నింటిలో వెతకండి',
 	'translate-search-languagefilter' => 'భాష వడపోత:',
 	'translate-search-nofilter' => 'వడపోత లేదు',
+	'translate-messagereview-submit' => 'అంగీకరించు',
+	'group-translate-proofr' => 'అనువాద సమీక్షకులు',
 	'translate-workflowstatus' => 'స్థితి: $1',
 	'translate-stats-workflow' => 'స్థితి',
 );

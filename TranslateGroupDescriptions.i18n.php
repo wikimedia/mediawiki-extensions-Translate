@@ -1692,7 +1692,6 @@ $messages['ms'] = array(
 	'translate-group-desc-uniwiki' => 'Kumpulan mesej meta yang mengandungi semua mesej untuk sambungan-sambungan yang berkaitan dengan  [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Kumpulan mesej meta yang mengandungi semua mesej untuk sambungan-sambungan yang berkaitan dengan  [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Inisiatif Kebolehgunaan Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Semua laman yang boleh diterjemah',
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] membolehkan kita menjelajahi sumber kebudayaan digital Eropah',
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] ialah permainan strategi berasaskan giliran',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] ialah perisian forum perbincangan berasaskan web',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] ialah perisian menjejak masalah berasaskan web',
@@ -1715,7 +1714,6 @@ $messages['ms'] = array(
 	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] ialah penjana peta dinamik berasaskan JavaScript',
 	'bw-desc-openstreetmap' => 'Semua mesej yang berkaitan dengan [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] ialah peta seluruh dunia yang boleh disunting',
-	'bw-desc-osm-potlatch' => '[[Translating:OpenStreetMap|Potlatch]] ialah penyunting OpenStreetMap berasaskan Flash',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] ialah koleksi peralatan menyunting Wikipedia',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] ialah perisian soal jawab berasaskan web',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] ialah pelayan mikroblog',
@@ -1723,7 +1721,7 @@ $messages['ms'] = array(
 	'translate-group-desc-tsint' => 'Kumpulan mesej untuk [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], sistem i18n untuk peralatan [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|bantuan]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition butiran teknikal]</span>)',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] boleh cepat mencari pengarang sebahagian laman dalam wiki di bawah Wikimedia',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] menyampaikan versi teks sahaja Wikipedia di luar talian pada peranti mudah alih.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] merupakan aplikasi mudah alih dan tablet merentas platform untuk membaca dan menyumbang kepada Wikipedia',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] merupakan aplikasi merentas platform mudah alih/tablet yang digunakan untuk membaca dan menyumbang kepada Wikipedia',
 );
 
 /** Maltese (Malti)
@@ -1982,7 +1980,7 @@ $messages['pms'] = array(
 	'bw-desc-freecol' => "Prima ëd volté FreeCol an soa lenga, për piasì ch'a lesa [[Translating:FreeCol]]. Freecol a deuvra la licensa GPL.",
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un forum web scrivù an PHP.',
 	'bw-desc-mantisbt' => "[http://www.mantisbt.org MantisBT] a l'é un sistema lìber ëd trassadura dj'eror web-based. Për piasì arpòrta minca problema an [[Support]].",
-	'translate-group-desc-eol' => 'Na partìa ëd mëssagi për [[Translating:EOL|Ensiclopedìa dla Vita]]',
+	'translate-group-desc-eol' => "Na partìa ëd mëssagi për l'[[Translating:EOL|Enciclopedìa dla Vita]]",
 	'translate-group-desc-ihris' => 'Na partìa ëd mëssagi për [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => "Na partìa ëd mëssagi për [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un mòdul d'[[Translating:iHRIS|iHRIS]]",
 	'translate-group-desc-ihris-i2ce' => "Na partìa ëd mëssagi për [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], un mòdul d'[[Translating:iHRIS|iHRIS]]",
@@ -2010,7 +2008,7 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'translate-group-desc-tsint' => 'Na partìa ëd mëssagi për [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], ël sistema i18n për [http://toolserver.org Toolserver] utiss (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detaj técnich]</span>)',
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] a peil trové an pressa j'àutor ëd na pàgina an na wiki ëd Wikimedia.",
 	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] a l'é un proget për fé na version ëd Wikipedia fòra linia, ëd sol test, dzora a na perifèrica mòbil.",
-	'translate-group-desc-wikipediamobile' => "[[Translating:WikipediaMobile|WikipediaMobile]] a l'é na cross-piataforma mòbila e n'aplicassin tablet për lese e contribuì a Wikipedia",
+	'translate-group-desc-wikipediamobile' => "[[Translating:WikipediaMobile|WikipediaMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wikipedia",
 );
 
 /** Portuguese (Português)
