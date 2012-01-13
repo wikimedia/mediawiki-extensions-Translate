@@ -214,7 +214,7 @@ class PageTranslationHooks {
 			else                     { $image = 5; }
 
 			$percent = Xml::element( 'img', array(
-				'src'   => TranslateUtils::assetPath( "images/prog-$image.png" ),
+				'src'   => TranslateUtils::assetPath( "resources/images/prog-$image.png" ),
 				'alt'   => "$percent%", // @todo i18n missing.
 				'title' => "$percent%", // @todo i18n missing.
 				'width' => '9',
