@@ -864,7 +864,7 @@ class TranslationHelpers {
 		$title = $this->handle->getTitle();
 		$key = $this->handle->getKey();
 
-		if ( $group instanceof WikiPageMessageGroup ) {
+		if ( $group instanceof WikiPageMessageGroup || !$title->exists() ) {
 			return null;
 		}
 
