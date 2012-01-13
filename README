@@ -29,7 +29,7 @@ And for the code at:
  http://translatewiki.net/docs/Translate/html/
 
 == Change log ==
-* 2012-01-12
+* 2012-01-13
 - Special:PageTranslation has now better error checking for invalid and
   duplicate translation unit names.
 - Special pages have now help links.
