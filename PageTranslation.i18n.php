@@ -1353,6 +1353,7 @@ Fejl vil blive registreret i [[Special:Log/pagetranslation|side oversættelses l
  * @author Imre
  * @author Kghbln
  * @author McDutchie
+ * @author Metalhead64
  * @author Purodha
  * @author The Evil IP address
  * @author Umherirrender
@@ -1386,6 +1387,7 @@ Diese Seite kann nun <span class="plainlinks">[$3 übersetzt]</span> werden.',
 Bevor du diese Version zur Übersetzung freigibst, stelle bitte sicher, dass die Änderungen an den Abschnitten minimal sind, um unnötige Arbeit für Übersetzer zu verhindern.',
 	'tpt-mark-summary' => 'Diese Seite wurde zum Übersetzen freigegeben',
 	'tpt-edit-failed' => 'Seite kann nicht aktualisiert werden: $1',
+	'tpt-duplicate' => 'Der Übersetzungseinheitname $1 wird mehr als ein Mal verwendet.',
 	'tpt-already-marked' => 'Die letzte Version dieser Seite wurde bereits zum Übersetzen freigegeben.',
 	'tpt-unmarked' => 'Seite $1 ist nicht länger als zu Übersetzen markiert.',
 	'tpt-list-nopages' => 'Es sind keine Seiten zum Übersetzen freigegeben und auch nicht vorbereitet, um freigegeben werden zu können.',
@@ -2981,6 +2983,7 @@ Strona hodźi so nětko <span class="plainlinks">[$3 přełožować]</span>.',
 Prjedy hač tutu wersiju za přełožowanje markěruješ, skontroluj, hač změny wotrězkow su miniměrowane, zo by njetrěbne dźěło za přełožowarjow wobešoł.',
 	'tpt-mark-summary' => 'Je tutu wersiju za přełožowanje markěrował',
 	'tpt-edit-failed' => 'Strona njeda so aktualizować: $1',
+	'tpt-duplicate' => 'Mjeno přełožkoweje jednotki $1 so wjace hač jedyn raz wužiwa.',
 	'tpt-already-marked' => 'Akutalna wersija tuteje strony je so hižo za přełožowanje markěrowała.',
 	'tpt-unmarked' => 'Strona $1 hižo njeje za přełožowanje markěrowana.',
 	'tpt-list-nopages' => 'Strony njejsu ani za přełožowanje markěrowali ani njejsu hotowe za přełožowanje.',
@@ -4783,6 +4786,7 @@ De pagina kan nu  <span class="plainlinks">[$3 vertaald]</span> worden.',
 Controleer voordat u deze versie voor vertaling markeert of de wijzigingen aan de secties zo klein mogelijk zijn om onnodig werk voor vertalers te voorkomen.',
 	'tpt-mark-summary' => 'Heeft deze versie voor vertaling gemarkeerd',
 	'tpt-edit-failed' => 'De pagina "$1" kon niet bijgewerkt worden.',
+	'tpt-duplicate' => 'De vertaaleenheid "$1" wordt meer dan eens gebruikt.',
 	'tpt-already-marked' => 'De meest recente versie van deze pagina is al gemarkeerd voor vertaling.',
 	'tpt-unmarked' => 'Pagina "$1" is niet langer te vertalen.',
 	'tpt-list-nopages' => "Er zijn geen pagina's gemarkeerd voor vertaling, noch klaar om gemarkeerd te worden voor vertaling.",

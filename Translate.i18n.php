@@ -13177,13 +13177,42 @@ $messages['km'] = array(
 /** Kannada (ಕನ್ನಡ)
  * @author Dipin
  * @author Nayvik
+ * @author VASANTH S.N.
  */
 $messages['kn'] = array(
+	'translate' => 'ಭಾಷಾಂತರಿಸು',
+	'translate-task-view' => 'ಎಲ್ಲಾ ಸಂದೇಶಗಳನ್ನು ನೋಡಿ',
+	'translate-task-untranslated' => 'ಭಾಷಾಂತರಿಸಲ್ಪಡದ ಎಲ್ಲಾ ಸಂದೇಶಗಳನ್ನು ನೋಡಿ',
+	'translate-task-optional' => 'ಐಚ್ಚಿಕ ಸಂದೇಶಗಳನ್ನು ನೋಡಿ',
+	'translate-task-problematic' => 'ತೊಂದರೆ ಇರುವ ಸಂದೇಶಗಳನ್ನು ನೋಡಿ',
+	'translate-task-acceptqueue' => 'ಭಾಷಾಂತರವನ್ನು ಅಂಗೀಕರಿಸು',
+	'translate-page-no-such-language' => 'ಉಲ್ಲೇಖಿಸಿದ ಭಾಷೆ ಅಸ್ತಿತ್ವದಲ್ಲಿ ಇಲ್ಲ',
+	'translate-page-no-such-task' => 'ಉಲ್ಲೇಖಿಸಿದ ಕೆಲಸ ಅಸಿಂಧು',
+	'translate-page-no-such-group' => 'ಉಲ್ಲೇಖಿಸಿದ ಗುಂಪು ಅಸಿಂಧುವಾಗಿತ್ತು',
+	'translate-page-settings-legend' => 'ವ್ಯವಸ್ಥೆಗಳು',
+	'translate-page-task' => 'ನನ್ನ ಇಚ್ಛೆ',
+	'translate-page-group' => 'ಗುಂಪು',
 	'translate-page-language' => 'ಭಾಷೆ',
+	'translate-page-limit' => 'ಮಿತಿ',
+	'translate-submit' => 'ಕರೆತರು',
+	'translate-page-navigation-legend' => 'ಪಥ ನಿರ್ದೇಶನ',
+	'translate-page-showing' => 'ಒಟ್ಟು $3 ರಲ್ಲಿ $1 ರಿಂದ $2 ರ ವರೇಗಿನ ಸಂದೇಶಗಳನ್ನು ತೋರಿಸುತ್ತಿದೆ',
+	'translate-page-showing-none' => 'ತೋರಿಸಲು ಸಂದೇಶಗಳಿಲ್ಲ',
 	'translate-next' => 'ಮುಂದಿನ ಪುಟ',
 	'translate-prev' => 'ಹಿಂದಿನ ಪುಟ',
+	'translate-page-description-hasoptional-open' => 'ಐಚ್ಛಿಕ ಸಂದೇಶಗಳನ್ನು ತೋರಿಸಿ',
 	'translate-page-edit' => 'ಸಂಪಾದಿಸಿ',
 	'translate-optional' => '(ಐಚ್ಛಿಕ)',
+	'translate-edit-jsopen' => 'ಸಂಪಾದಿಸು',
+	'translate-edit-title' => '"$1"ನ್ನು ಸಂಪಾದಿಸು',
+	'translate-edit-translation' => 'ಅನುವಾದ',
+	'translate-edit-contribute' => 'ನೆರವಾಗು',
+	'translate-edit-tmmatch' => '$1% ಹೊಂದಿಕೆಯಾಗು',
+	'translate-use-suggestion' => 'ಈಗಿನ ಭಾಷಾಂತರವನ್ನು ಈ ಸಲಹೆಯೊಂದಿಗೆ ಬದಲಾಯಿಸಿ',
+	'translate-edit-tab-list' => 'ಸಂದೇಶ ಪಟ್ಟಿ',
+	'translate-edit-nopermission' => 'ಭಾಷಾಂತರಿಸಲು ನಿಮಗೆ ಅನುಮತಿ ಬೇಕು',
+	'translate-edit-askpermission' => 'ಅನುಮತಿಗಾಗಿ ಕೋರಿಕೆ',
+	'translate-magic-pagename' => 'ವಿಸ್ತರಿಸಲ್ಪಟ್ಟ ಮಿಡಿಯಾವಿಕಿ ಭಾಷಾಂತರ',
 	'translate-stats-edits' => 'ಸಂಪಾದನೆಗಳು',
 	'translate-statsf-width' => 'ಪಿಕ್ಸಲ್‌ಗಳಲ್ಲಿ ಅಗಲ:',
 	'translate-statsf-height' => 'ಪಿಕ್ಸಲ್‌ಗಳಲ್ಲಿ ಎತ್ತರ:',
@@ -14851,11 +14880,13 @@ $1',
 	'translate-dynagroup-byc' => 'Преводот го изврши {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Последната промена ја изврши {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Последната промена ја изврши {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Помош',
 );
 
 /** Malayalam (മലയാളം)
  * @author Jacob.jose
  * @author Praveenp
+ * @author Santhosh.thottingal
  * @author Shijualex
  */
 $messages['ml'] = array(
@@ -15075,6 +15106,8 @@ $messages['ml'] = array(
 	'translate-workflow-set-doing' => 'സജ്ജീകരിക്കുന്നു...',
 	'translate-workflow-set-done' => 'സജ്ജീകരിച്ചു!',
 	'translate-stats-workflow' => 'സ്ഥിതി',
+	'translate-dynagroup-recent-label' => 'സമീപകാല പരിഭാഷകൾ',
+	'translate-gethelp' => 'സഹായം',
 );
 
 /** Mongolian (Монгол)
@@ -15494,6 +15527,8 @@ Kumpulan dan bahasa tidak dapat ditentukan daripada pengatas fail.',
 	'translate-import-err-warnings' => 'Fail ini tidak dibentuk dengan betul.
 Pastikan editor anda tidak menguggurkan medan msgctxt.
 Butiran: $1',
+	'translate-js-summary' => 'Ringkasan:',
+	'translate-js-save' => 'Simpan',
 	'translate-js-next' => 'Simpan dan buka yang seterusnya',
 	'translate-js-nonext' => 'Inilah mesej terakhir di laman ini.',
 	'translate-js-skip' => 'Langkau ke mesej seterusnya',
@@ -15553,6 +15588,7 @@ Paling berguna dengan tugas "{{int:translate-task-acceptqueue}}" dan "{{int:tran
 	'translate-dynagroup-byc' => 'Terjemahan dibuat oleh {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Perubahan terkini oleh {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Perubahan terkini oleh {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Bantuan',
 );
 
 /** Maltese (Malti)
@@ -25297,6 +25333,8 @@ $1',
 	'translate-import-err-warnings' => '该文件不良好形成。
 请确保您的编辑器不会删除msgctxt领域。
 详细信息：$1',
+	'translate-js-summary' => '摘要：',
+	'translate-js-save' => '保存',
 	'translate-js-next' => '保存并打开下一条',
 	'translate-js-nonext' => '这是本页的最后一条信息。',
 	'translate-js-skip' => '跳至下一条',
@@ -25344,7 +25382,11 @@ $1',
 	'translate-workflow-set-do' => '设置',
 	'translate-workflow-set-doing' => '正在设置...',
 	'translate-workflow-set-done' => '已设置！',
+	'translate-workflow-autocreated-summary' => '自动创建$1工作流状态页',
 	'translate-stats-workflow' => '状态',
+	'translate-workflowgroup-label' => '工作流状态',
+	'translate-workflowgroup-desc' => '此消息组显示翻译工作流程状态。
+该状态是由$wgTranslateWorkflowStates配置变量定义。',
 	'translate-dynagroup-recent-label' => '最近的翻译',
 	'translate-dynagroup-recent-desc' => '本信息组显示该语言中所有最近的翻译作品，
 最可用于“{{int:translate-task-acceptqueue}}”及“{{int:translate-task-reviewall}}”的职务。',
@@ -25352,6 +25394,7 @@ $1',
 	'translate-dynagroup-byc' => '{{GENDER:$1|$1}}作出翻译（$2）',
 	'translate-dynagroup-last' => '{{GENDER:$1|$1}}作出最近更改',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}}作出最近更改（$2）',
+	'translate-gethelp' => '帮助',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)

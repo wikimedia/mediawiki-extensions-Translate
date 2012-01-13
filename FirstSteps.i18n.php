@@ -1889,6 +1889,7 @@ $messages['mk'] = array(
 
 /** Malayalam (മലയാളം)
  * @author Praveenp
+ * @author Santhosh.thottingal
  */
 $messages['ml'] = array(
 	'firststeps' => 'ആദ്യ ചുവടുകൾ',
@@ -1903,6 +1904,11 @@ $messages['ml'] = array(
 	'translate-fs-intro' => "{{SITENAME}} ആദ്യചുവടുകൾ സഹായത്തിലേയ്ക്ക് സ്വാഗതം.
 പരിഭാഷക(ൻ) പദവിയിലേക്ക് എത്താനുള്ള ഘട്ടം ഘട്ടമായി എത്താനുള്ള വഴികാട്ടിയാണിത്.
 അവസാനം {{SITENAME}} സംരംഭത്തിൽ പിന്തുണയുള്ള എല്ലാ പദ്ധതികളുടെയും ''സമ്പർക്കമുഖ സന്ദേശങ്ങൾ'' പരിഭാഷപ്പെടുത്താൻ താങ്കൾക്ക് സാധിച്ചിരിക്കും.",
+	'translate-fs-selectlanguage' => 'ഭാഷ തിരഞ്ഞെടുക്കുക',
+	'translate-fs-settings-planguage' => 'പ്രാഥമികഭാഷ:',
+	'translate-fs-settings-planguage-desc' => 'പ്രാഥമിക ഭാഷ നിങ്ങളുടെ സമ്പർക്കമുഖ ഭാഷയായും പരിഭാഷയ്ക്കുള്ള ഭാഷയായും മാറുന്നു.',
+	'translate-fs-settings-slanguage' => 'സഹായകഭാഷ $1:',
+	'translate-fs-settings-submit' => 'ക്രമീകരണങ്ങൾ ഓർത്തുവെയ്ക്കുക',
 	'translate-fs-userpage-submit' => 'എന്റെ ഉപയോക്തൃ താൾ സൃഷ്ടിക്കുക',
 	'translate-fs-userpage-done' => 'കൊള്ളാം! താങ്കൾക്കിപ്പോൾ ഒരു ഉപയോക്തൃതാൾ ഉണ്ട്.',
 );
@@ -1968,7 +1974,8 @@ Anda akan dibimbing sepanjang proses langkah demi langkah untuk menjadi penterje
 Pada akhirnya, anda akan dapat menterjemahkan "pesanan antara muka" bagi semua projek yang disokong di {{SITENAME}}.',
 	'translate-fs-selectlanguage' => 'Pilih bahasa',
 	'translate-fs-settings-planguage' => 'Bahasa utama:',
-	'translate-fs-settings-planguage-desc' => 'Bahasa utama ini juga merupakan bahasa antara muka anda di wiki ini dan juga bahasa sasaran asali untuk terjemahan.',
+	'translate-fs-settings-planguage-desc' => 'Bahasa utama ini juga merupakan bahasa antara muka anda di wiki ini
+dan juga bahasa sasaran asali untuk terjemahan.',
 	'translate-fs-settings-slanguage' => 'Bahasa pembantu: $1',
 	'translate-fs-settings-slanguage-desc' => 'Anda boleh memaparkan terjemahan mesej dalam bahasa lain dalam editor penterjemahan.
 Di sini anda boleh memilih bahasa-bahasa yang anda ingin lihat.',
@@ -2770,6 +2777,7 @@ $messages['zh-hans'] = array(
 	'firststeps' => '第一步',
 	'firststeps-desc' => '让用户开始wiki翻译的[[Special:FirstSteps|引导页面]]',
 	'translate-fs-pagetitle-done' => ' - 完成！',
+	'translate-fs-pagetitle-pending' => '- 待定',
 	'translate-fs-pagetitle' => '入门向导 - $1',
 	'translate-fs-signup-title' => '注册',
 	'translate-fs-settings-title' => '设置你的选项',
@@ -2782,7 +2790,11 @@ $messages['zh-hans'] = array(
 最后你将可以翻译{{SITENAME}}里所有项目的''界面消息''.",
 	'translate-fs-selectlanguage' => '选择一种语言',
 	'translate-fs-settings-planguage' => '首选语言：',
+	'translate-fs-settings-planguage-desc' => '该首选语言作为此维基项目的用户界面，
+并成为默认的翻译目标语言。',
 	'translate-fs-settings-slanguage' => '第$1辅助语言：',
+	'translate-fs-settings-slanguage-desc' => '在翻译编辑器之内可以显示其他语言翻译的消息。
+您可以在此选择您想显示的语言。',
 	'translate-fs-settings-submit' => '保存设定',
 	'translate-fs-userpage-level-N' => '我的母语是',
 	'translate-fs-userpage-level-5' => '我能专业地翻译的语言是',
@@ -2790,9 +2802,14 @@ $messages['zh-hans'] = array(
 	'translate-fs-userpage-level-3' => '我熟练不错',
 	'translate-fs-userpage-level-2' => '我熟练平平',
 	'translate-fs-userpage-level-1' => '我知道一点点',
+	'translate-fs-userpage-help' => '请说明您的语言能力，并告诉我们关于您自己。如果您知道超过五种语言，您可以以后添加更多。',
 	'translate-fs-userpage-submit' => '创建我的用户页面',
 	'translate-fs-userpage-done' => '很好！现在你有了一个用户页面。',
 	'translate-fs-permissions-planguage' => '主要语言：',
+	'translate-fs-permissions-help' => '现在，您需要请求参加翻译组。
+请选择您想参入翻译的首选语言。
+
+您可以在以下的文本框之内提及其他语言及其他备注。',
 	'translate-fs-permissions-pending' => '您的请求已提交至[[$1]]，站点管理员会尽快查阅您的请求。
 如果您已验证您的电子邮箱，那么这个请求有答复后就会给您发送邮件。',
 	'translate-fs-permissions-submit' => '发送请求',
