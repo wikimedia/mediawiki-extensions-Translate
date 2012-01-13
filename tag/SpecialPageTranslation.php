@@ -122,7 +122,9 @@ class SpecialPageTranslation extends SpecialPage {
 
 		if ( $revision !== intval( $title->getLatestRevID() ) ) {
 			// We do want to notify the reviewer if the underlying page changes during review
-			$wgOut->addWikiMsg( 'tpt-oldrevision', $title->getPrefixedText(), $revision );
+			$target = $title->getFullUrl( array( 'oldid' => $revision ) );
+			$link = "<span class='plainlinks'>[$target $revision]</span>";
+			$wgOut->addWikiMsg( 'tpt-oldrevision', $title->getPrefixedText(), $link );
 			self::superDebug( __METHOD__, "revision mismatch while marking", $this->user, $title, $revision, intval( $title->getLatestRevID() ) );
 			return;
 		}
@@ -390,6 +392,8 @@ class SpecialPageTranslation extends SpecialPage {
 	public function checkInput( TranslatablePage $page, &$error = false ) {
 		global $wgOut, $wgRequest;
 
+		$usedNames = array();
+
 		$parse = $page->getParse();
 		$sections = $parse->getSectionsForSave();
 		foreach ( $sections as $s ) {
@@ -397,12 +401,20 @@ class SpecialPageTranslation extends SpecialPage {
 			// to link the new names to current sections. Name will become
 			// the new id only after it is saved into db and the page.
 			// Do not allow changing names for old sections
-			$s->name = $s->id;
-			if ( $s->type !== 'new' ) {
-				continue;
+			if ( $s->type === 'new' ) {
+				$name = $wgRequest->getText( 'tpt-sect-' . $s->id, $s->id );
+			} else {
+				$name = $s->id;
 			}
 
-			$name = $wgRequest->getText( 'tpt-sect-' . $s->id, $s->id );
+			// We need to do checks for both new and existing sections.
+			// Someone might have tampered with the page source adding
+			// duplicate or invalid markers.
+			if ( isset( $usedNames[$name] ) ) {
+				$wgOut->addWikiMsg( 'tpt-duplicate', $name );
+				$error = true;
+			}
+			$usedNames[$name] = true;
 
 			// Make sure valid title can be constructed
 			$sectionTitle = Title::makeTitleSafe(

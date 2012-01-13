@@ -46,6 +46,7 @@ The page can now be <span class="plainlinks">[$3 translated]</span>.',
 Before marking this version for translation, check that the changes to sections are minimised to avoid unnecessary work for translators.',
 	'tpt-mark-summary' => 'Marked this version for translation',
 	'tpt-edit-failed' => 'Could not update the page: $1',
+	'tpt-duplicate' => 'Translation unit name $1 is used more than once.',
 	'tpt-already-marked' => 'The latest version of this page has already been marked for translation.',
 	'tpt-unmarked' => 'Page $1 is no longer marked for translation.',
 
