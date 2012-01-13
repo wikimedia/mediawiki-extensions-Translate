@@ -185,6 +185,8 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'api-error-invalidrevision',
 		'api-error-owntranslation',
 		'api-error-unknownmessage',
+		'api-error-unknownerror',
+		'tpt-unknown-page'
 	),
 ) + $resourcePaths;
 
