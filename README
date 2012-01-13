@@ -30,6 +30,8 @@ And for the code at:
 
 == Change log ==
 * 2012-01-13
+- export.php has a switch "--no-fuzzy" that will filter out fuzzy messages
+  for file based message groups.
 - Special:PageTranslation has now better error checking for invalid and
   duplicate translation unit names.
 - Special pages have now help links.

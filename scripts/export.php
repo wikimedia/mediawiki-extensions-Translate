@@ -32,6 +32,7 @@ Options:
                 in that location
   --no-location Only used combined with "ppgettext". This option will rebuild
                 the gettext file without location information.
+  --no-fuzzy    Do not include any messages marked as fuzzy/outdated.
 EOT
 );
 	exit( 1 );
@@ -77,6 +78,12 @@ if ( isset( $options['no-location'] ) ) {
 	$noLocation = '--no-location ';
 } else {
 	$noLocation = '';
+}
+
+if ( isset( $options['no-fuzzy'] ) ) {
+	$noFuzzy = true;
+} else {
+	$noFuzzy = false;
 }
 
 $reqLangs = Cli::parseLanguageCodes( $options['lang'] );
@@ -152,6 +159,11 @@ foreach ( $groups as $groupId => $group ) {
 			}
 
 			$collection->resetForNewLanguage( $lang );
+
+			if ( $noFuzzy ) {
+				$collection->filter( 'fuzzy' );
+			}
+
 			$ffs->write( $collection );
 
 			// Do post processing if requested.
@@ -172,6 +184,10 @@ foreach ( $groups as $groupId => $group ) {
 			}
 		}
 	} else {
+		if ( $noFuzzy ) {
+			STDERR( '--no-fuzzy is not supported for this message group.' );
+		}
+
 		$writer = $group->getWriter();
 		$writer->fileExport( $langs, $options['target'] );
 	}
