@@ -76,13 +76,11 @@ class TPParse {
 		$sections = $this->sections;
 		$highest = 0;
 		foreach ( array_keys( $this->dbSections ) as $key ) {
-			if ( !is_int( $key ) ) continue;
-			$highest = max( $highest, $key );
+			$highest = max( $highest, intval( $key ) );
 		}
 
 		foreach ( $sections as $_ ) {
-			if ( !is_int( $_->id ) ) continue;
-			$highest = max( $_->id, $highest );
+			$highest = max( $highest, intval( $_->id ) );
 		}
 
 		foreach ( $sections as $s ) {
