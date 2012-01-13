@@ -120,6 +120,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		}
 
 		if ( !$this->including() ) {
+			TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Statistics_and_reporting' );
 			$wgOut->addHTML( $this->getForm() );
 		}
 

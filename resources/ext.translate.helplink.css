@@ -1,19 +1,14 @@
 .mw-translate-helplink {
-	position: relative;
+	position: absolute;
+	width: 100%;
+	display: block;
 	margin-top: -10px;
-	float: right;
 }
 
 .mw-translate-helplink a {
-	display: block;
-	position: absolute;
-	width: 150px;
-	left: -150px;
-	text-align: right;
-	overflow: hidden;
+	/* @embed */
+	background: url(images/help.png) no-repeat scroll left center transparent;
+	padding-left: 20px;
+	float: right;
 }
 
-.mw-translate-helplink img {
-	vertical-align: middle;
-	margin-right: 4px;
-}

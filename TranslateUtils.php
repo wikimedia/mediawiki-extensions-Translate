@@ -316,12 +316,9 @@ class TranslateUtils {
 	 * @since 2012-01-12
 	 */
 	public static function addSpecialHelpLink( OutputPage $out, /*string*/$to ) {
-		global $wgExtensionAssetsPath;
-
 		$out->addModules( 'ext.translate.helplink' );
 		$text = wfMessage( 'translate-gethelp' )->escaped();
-		$image = Html::element( 'img', array( 'src' => "$wgExtensionAssetsPath/Translate/resources/images/help.png" ) );
-		$link = Html::rawElement( 'a', array( 'href' => "//www.mediawiki.org/wiki/Special:MyLanguage/$to" ), "$image$text" );
+		$link = Html::rawElement( 'a', array( 'href' => "//www.mediawiki.org/wiki/Special:MyLanguage/$to" ), "$text" );
 		$wrapper = Html::rawElement( 'div', array( 'class' => 'mw-translate-helplink' ), $link );
 		$out->addHtml( $wrapper );
 	}

@@ -115,6 +115,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		global $wgOut, $wgScript;
 
 		$this->setHeaders();
+		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Statistics_and_reporting' );
 		$wgOut->addWikiMsg( 'translate-statsf-intro' );
 
 		$wgOut->addHTML(
