@@ -321,7 +321,7 @@ FOO;
 	public static function preventUnknownTranslations( Title $title, User $user, $action, &$result ) {
 		$handle = new MessageHandle( $title );
 		if ( $handle->isPageTranslation() && $action === 'edit' && !$handle->isValid() ) {
-			$result = array( 'tpt-unknown-page' );
+			$result = array( wgMsg( 'tpt-unknown-page' ) );
 			return false;
 		}
 
