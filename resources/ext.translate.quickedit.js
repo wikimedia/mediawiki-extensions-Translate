@@ -164,7 +164,11 @@
 					dataType: 'json',
 					success: function(json) {
 						if ( json.error ) {
-							alert( json.error.info + ' (' + json.error.code +')' );
+							if( json.error.code === 'emptypage') {
+								alert( mw.msg( 'api-error-emptypage' ) );
+							} else {
+								alert( json.error.info + ' (' + json.error.code +')' );
+							}
 						} else if ( json.edit.result === 'Failure' ) {
 							alert( mw.msg( 'translate-js-save-failed' ) );
 						} else if ( json.edit.result === 'Success' ) {

@@ -15,7 +15,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2012-01-09' );
+define( 'TRANSLATE_VERSION', '2012-01-13' );
 
 /**
  * Extension credits properties.
@@ -180,6 +180,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'translate-messagereview-failure',
 		'translate-messagereview-done',
 		'api-error-badtoken',
+		'api-error-emptypage',
 		'api-error-fuzzymessage',
 		'api-error-invalidrevision',
 		'api-error-owntranslation',
