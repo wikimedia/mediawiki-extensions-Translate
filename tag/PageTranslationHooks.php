@@ -163,6 +163,12 @@ class PageTranslationHooks {
 		$article->doPurge();
 	}
 
+	/**
+	 * @param $data
+	 * @param $params
+	 * @param $parser Parser
+	 * @return string
+	 */
 	public static function languages( $data, $params, $parser ) {
 		$title = $parser->getTitle();
 
