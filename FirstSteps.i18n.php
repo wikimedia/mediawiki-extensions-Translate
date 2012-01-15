@@ -875,8 +875,12 @@ $messages['eu'] = array(
 	'translate-fs-settings-title' => 'Zure hobespenak konfiguratu',
 	'translate-fs-userpage-title' => 'Zure lankide orria sortu',
 	'translate-fs-permissions-title' => 'Itzultzaile eskubidea eskatu',
+	'translate-fs-target-title' => 'Hasi itzultzen!',
+	'translate-fs-selectlanguage' => 'Hizkuntza aukeratu',
+	'translate-fs-settings-planguage' => 'Lehen hizkuntza:',
 	'translate-fs-userpage-submit' => 'Nire lankide orria sortu',
 	'translate-fs-userpage-done' => 'Ondo egina! Orain lankide orrialdea duzu.',
+	'translate-fs-permissions-submit' => 'Eskaera bidali',
 );
 
 /** Finnish (Suomi)

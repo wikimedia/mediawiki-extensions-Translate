@@ -2846,14 +2846,11 @@ $messages['be-tarask'] = array(
 	'translate-mgs-column-language' => 'Мова',
 	'translate-mgs-totals' => 'Усе мовы разам',
 	'supportedlanguages' => 'Мовы перакладу',
-	'supportedlanguages-summary' => 'На гэтай старонцы пададзены сьпіс усіх моваў, якія падтрымліваюцца ў {{GRAMMAR:месны|{{SITENAME}}}}, разам з імёнамі перакладчыкаў, якія перакладаюць на гэтыя мовы.
-Калі Вам неабходна дадатковая інфармацыя па пэўнай мове, Вы можаце перайсьці на партал гэтай мовы.
-Націснуўшы на імя перакладчыка, Вы перайдзеце на яго старонку ўдзельніка.
-
-Калі мовы няма ў сьпісе, Вы можаце знайсьці інфармацыю пра тое, як пачаць лякалізацыю на [[Translating:Process|новай мове]]".
-
-Калі Вы перакладаеце на нейкую мову, а Вашага імя няма ў сьпісе, калі ласка, дадайце Вашае імя ў сьпіс перакладчыкаў на [[:Category:Languages|партале]] гэтай мовы.
-Шукайце ў мэню спасылку на партал на мове, пададзенай ў Вашых наладах.',
+	'supportedlanguages-summary' => 'На гэтай старонцы пададзены сьпіс усіх моваў, якія падтрымлівае {{SITENAME}},
+разам з імёнамі перакладчыкаў, якія перакладаюць на гэтыя мовы.
+Тым большым выглядае імя перакладчыка, чым больш перакладаў ён зрабіў.
+Колер падкрэсьленьня сьведчыць, як даўно перакладчык быў актыўны.',
+	'supportedlanguages-colorlegend' => 'Значэньне колеру: апошні пераклад выкананы $1 дзён таму.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Перакладчык|Перакладчыкі}}: $1',
 	'supportedlanguages-recenttranslations' => 'апошнія пераклады',
 	'supportedlanguages-count' => '$1 {{PLURAL:$1|мова|мовы|моваў}} агулам.',
@@ -2920,6 +2917,7 @@ $1',
 	'translate-import-err-warnings' => 'Няслушны файл.
 Упэўніцеся што Ваш рэдактар не выдаляе палі msgctxt.
 Падрабязнасьці: $1',
+	'translate-js-summary' => 'Апісаньне:',
 	'translate-js-next' => 'Захаваць і адкрыць наступнае',
 	'translate-js-nonext' => 'Гэта было апошняе паведамленьне на гэтай старонцы.',
 	'translate-js-skip' => 'Адкрыць наступнае',
@@ -2941,6 +2939,18 @@ $1',
 	'translate-searchprofile-tooltip' => 'Шукаць па ўсіх перакладах',
 	'translate-search-languagefilter' => 'Мова паведамленьняў:',
 	'translate-search-nofilter' => 'любая',
+	'api-error-fuzzymessage' => 'Пераклад пазначаны як недакладны',
+	'api-error-owntranslation' => 'Вы ня можаце ўхваліць уласныя пераклады',
+	'translate-messagereview-doit' => 'Ухваліць гэты пераклад як слушны.',
+	'group-translate-proofr' => 'Ацэньнікі перакладаў',
+	'group-translate-proofr-member' => '{{GENDER:$1|ацэньнік перакладаў|ацэньніца перакладаў}}',
+	'grouppage-translate-proofr' => '{{ns:project}}:Ацэньнікі перакладаў',
+	'log-name-translationreview' => 'Журнал ацэнак перакладаў',
+	'log-description-translationreview' => 'Журнал усех ацэнак перакладаў і груп паведамленьняў.',
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|ухваліў|ухваліла}} пераклад $3',
+	'logentry-groupreview-message' => '$1 {{GENDER:$2|зьмяніў|зьмяніла}} статус перакладаў на $4 групы паведамленьняў $3 з $5 на $6',
+	'translate-workflowstatus' => 'Статус: $1',
+	'translate-gethelp' => 'Дапамога',
 );
 
 /** Bulgarian (Български)
@@ -3290,6 +3300,7 @@ Ne zle ar c'hemennadennoù diret bezañ troet nemet pa vez ezhomm dibar gant ho 
 	'translate-ext-url' => "<hr />Lec'hienn Web : $1",
 	'translate-optional' => '(diret)',
 	'translate-ignored' => '(laosket a-gostez)',
+	'translate-edit-jsopen' => 'kemmañ',
 	'translate-edit-title' => 'Kemmañ "$1"',
 	'translate-edit-definition' => 'Termenadur ar gemennadenn',
 	'translate-edit-translation' => 'Troidigezh',
@@ -3357,7 +3368,7 @@ Cheñch a ra roll dre ziouer ar yezhoù-se diouzh ar yezh a rit ganti.',
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Aozer troidigezhioù gwellaet (JavaScript)',
 	'right-translate' => 'Kemmañ en ur ober gant an etrefas treiñ',
-	'right-translate-manage' => 'Merañ strolladoù treiñ',
+	'right-translate-manage' => 'Merañ ar strolladoù kemennadennoù',
 	'right-translate-import' => 'Enporzhiañ an troidigezhioù ezlinenn',
 	'right-translate-messagereview' => 'Adwelet an troidigezhioù',
 	'right-translate-groupreview' => 'Adlenn troidigezhioù strolladoù kemennadennoù',
@@ -3511,6 +3522,8 @@ Dibosupl eo didermeniñ ar strollad hag ar yezh adalek talbennoù ar restr.",
 	'translate-import-err-warnings' => 'Ne oa ket stummet mat ar restr-mañ.
 Bezit sur ne lam ket ho skridaozer ar maeziennoù msgctxt kuit.
 Munudoù : $1',
+	'translate-js-summary' => 'Diverrañ :',
+	'translate-js-save' => 'Enrollañ',
 	'translate-js-next' => 'Enrollañ ha digeriñ an hini da-heul',
 	'translate-js-nonext' => 'Ar gemenadenn ziwezhañ er bajenn-mañ e oa.',
 	'translate-js-skip' => "Mont d'an hini da-heul",
@@ -3558,6 +3571,13 @@ Munudoù : $1',
 	'translate-workflow-set-doing' => 'O weredekaat...',
 	'translate-workflow-set-done' => 'Gweredekaet !',
 	'translate-stats-workflow' => 'Statud',
+	'translate-workflowgroup-label' => 'Stad an argerzh labour',
+	'translate-dynagroup-recent-label' => 'Troidigezhioù diwezhañ',
+	'translate-dynagroup-by' => 'Troidigezhioù graet gant {{GENDER:$1|$1}}',
+	'translate-dynagroup-byc' => 'Troidigezh graet gant {{GENDER:$1|$1}}',
+	'translate-dynagroup-last' => 'Kemm diwezhañ graet gant {{GENDER:$1|$1}}',
+	'translate-dynagroup-lastc' => 'Kemm diwezhañ graet gant {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Skoazell',
 );
 
 /** Bosnian (Bosanski)
@@ -6910,10 +6930,12 @@ Arrazoia:
 	'translate-next' => 'Hurrengo orria',
 	'translate-prev' => 'Aurreko orria',
 	'translate-page-description-legend' => 'Taldeari buruzko informazioa',
+	'translate-page-description-hasoptional-open' => 'Erakutsi hautazko mezuak.',
 	'translate-page-edit' => 'aldatu',
 	'translate-ext-url' => '<hr />Webgunea: $1',
 	'translate-optional' => '(hautazkoa)',
 	'translate-ignored' => '(ignoratua)',
+	'translate-edit-jsopen' => 'aldatu',
 	'translate-edit-title' => '"$1" aldatu',
 	'translate-edit-definition' => 'Mezuaren definizioa',
 	'translate-edit-translation' => 'Itzulpena',
@@ -6925,6 +6947,7 @@ Arrazoia:
 	'translate-edit-warnings' => 'Bukatu gabeko itzulpenei buruzko oharrak',
 	'translate-edit-tmmatch' => '$1% bilaketa',
 	'translate-edit-tab-list' => 'Mezuen zerrenda',
+	'translate-edit-askpermission' => 'Baimena eskatu',
 	'translate-magic-pagename' => 'MediaWiki itzulpen zabaldua',
 	'translate-magic-module' => 'Modulu:',
 	'translate-magic-submit' => 'Bilatu',
@@ -6948,6 +6971,7 @@ Arrazoia:
 	'prefs-translate' => 'Itzulpen aukerak',
 	'right-translate' => 'Aldatu itzulpen interfazea erabiliz',
 	'right-translate-import' => 'Inportatu sarez kanpoko itzulpenak',
+	'right-translate-messagereview' => 'Itzulpenak berrikusi',
 	'translate-rc-translation-filter' => 'Itzulpenak iragazi:',
 	'translate-rc-translation-filter-no' => 'Ezer ez egin',
 	'translate-rc-translation-filter-only' => 'Itzulpenak bakarrik erakutsi',
@@ -6960,7 +6984,7 @@ Arrazoia:
 	'translate-statsf-width' => 'Zabalera pixeletan:',
 	'translate-statsf-height' => 'Altuera pixeletan:',
 	'translate-statsf-days' => 'Denbora-tartea egunetan:',
-	'translate-statsf-start' => 'Denbora-tartea egunetan:',
+	'translate-statsf-start' => 'Hasiera data:',
 	'translate-statsf-scale' => 'Pikortasuna:',
 	'translate-statsf-scale-months' => 'Hilabete',
 	'translate-statsf-scale-weeks' => 'Asteak',
@@ -6996,6 +7020,11 @@ Arrazoia:
 	'translate-untranslated' => 'Itzuli gabe',
 	'translate-percentage-complete' => 'Bukatuak',
 	'translate-percentage-fuzzy' => 'Zaharkituak',
+	'translate-ls-submit' => 'Estatistikak erakutsi',
+	'translate-mgs-fieldset' => 'Hobespenak erakutsi',
+	'translate-mgs-submit' => 'Estatistikak erakutsi',
+	'translate-mgs-column-language' => 'Hizkuntza',
+	'translate-mgs-totals' => 'Hizkuntza guztiak batera',
 	'supportedlanguages' => 'Laguntza duten hizkuntzak',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Itzultzailea|Itzultzaileak}}: $1',
 	'supportedlanguages-recenttranslations' => 'azken itzulpenak',
@@ -7018,6 +7047,8 @@ Arrazoia:
 	'translate-manage-subtitle' => 'Kudeatu',
 	'importtranslations' => 'Itzulpenak inportatu',
 	'translate-import-load' => 'Fitxategia kargatu',
+	'translate-js-summary' => 'Laburpena:',
+	'translate-js-save' => 'Gorde',
 	'translate-js-next' => 'Gorde eta hurrengoa ireki',
 	'translate-js-nonext' => 'Mezu hau orrialde honetako azkena da.',
 	'translate-js-skip' => 'Hurrengora salto egin',
@@ -7030,12 +7061,20 @@ Arrazoia:
 	'translate-gs-speakers' => 'Hiztunak',
 	'translate-gs-score' => 'Puntuaketa',
 	'translate-gs-multiple' => 'Anitza',
+	'translate-gs-count' => 'Zenbaketa',
 	'translate-gs-total' => 'Guztira',
 	'translate-gs-avgscore' => 'Batazbesteko puntuazioa',
 	'translate-documentation-language' => 'Mezuaren dokumentazioa',
 	'translate-searchprofile' => 'Itzulpenak',
 	'translate-searchprofile-tooltip' => 'Itzulpen guztietan bilatu',
 	'translate-search-languagefilter' => 'Iragazi hizkuntzaren arabera:',
+	'translate-messagereview-submit' => 'Onartu',
+	'translate-messagereview-progress' => 'Onartzen...',
+	'translate-messagereview-done' => 'Onartu',
+	'translate-workflowstatus' => 'Egoera: $1',
+	'translate-stats-workflow' => 'Egoera',
+	'translate-dynagroup-recent-label' => 'Azken itzulpenak',
+	'translate-gethelp' => 'Laguntza',
 );
 
 /** Extremaduran (Estremeñu)
@@ -13842,6 +13881,7 @@ $messages['lb'] = array(
 	'translate-showsub' => "Weis {{PLURAL:$1|d'Ënnergrupp|déi $1 Ënnergruppen}}.",
 	'translate-grouplisting' => "Dëst ass d'Lëscht vun allen iwweretzbare Gruppen.
 Klickt den Numm vum Grupp vu Messagen un fir déi net iwwersate Messagen ze gesinn.",
+	'translate-grouplisting-empty' => "Et goufe keng Gruppe vu Messagen fir d'Iwwersetze configuréiert.",
 	'translate-task-view' => 'All Systemmessage weisen',
 	'translate-task-untranslated' => 'All net iwwersate Systemmessage weisen',
 	'translate-task-optional' => 'Optional Message weisen',
@@ -14105,6 +14145,8 @@ De Grupp an d\'Sprooch konnte vun der Entête vum Fichier net bestëmmt ginn.',
 	'translate-import-err-warnings' => 'De Fichier ass net richteg forméiert.
 Vergewëssert Iech datt Ären Editeursprogramm keng msgctxt Felder ewechhëllt.
 Detailler: $1',
+	'translate-js-summary' => 'Resumé:',
+	'translate-js-save' => 'Späicheren',
 	'translate-js-next' => 'Späicheren an den Nächsten opmaachen',
 	'translate-js-nonext' => 'Dëst war de leschte Message op dëser Säit',
 	'translate-js-skip' => 'Op den Nächste goen',
@@ -14157,6 +14199,7 @@ Detailler: $1',
 	'translate-dynagroup-byc' => 'Iwwersetzung vum {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Lescht Ännerung vum {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Lescht Ännerung vum {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Hëllef',
 );
 
 /** Ganda (Luganda)
@@ -18168,6 +18211,8 @@ As peul pa determinesse la partìa e la lenga da l'antestassion dl'archivi.",
 	'translate-import-err-warnings' => "L'archivi a l'é pa bin formà.
 Ch'as sigura che sò editor a gava pa ij camp msgctxt.
 Detaj: $1",
+	'translate-js-summary' => 'Resumé:',
+	'translate-js-save' => 'Salva',
 	'translate-js-next' => 'Salvé e duverté col apress',
 	'translate-js-nonext' => "Cost a l'era l'ùltim mëssagi dzora a sta pàgina-sì.",
 	'translate-js-skip' => "Sàuta a col ch'a ven",
@@ -18227,6 +18272,7 @@ A ven dzortut a taj con ël travaj "{{int:translate-task-acceptqueue}}" e "{{int
 	'translate-dynagroup-byc' => 'Tradussion fàite da {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Ùltime modìfiche ëd {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Ùltime modìfiche ëd {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Agiut',
 );
 
 /** Western Punjabi (پنجابی)
