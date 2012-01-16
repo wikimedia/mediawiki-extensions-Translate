@@ -54,7 +54,7 @@ class SpecialTranslations extends SpecialAllpages {
 		} else {
 			$title = Title::newFromText( $par, $namespace );
 		}
-
+		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate' );
 		if ( !$title ) {
 			$title = Title::makeTitle( NS_MEDIAWIKI, '' );
 			$wgOut->addHTML( $this->namespaceMessageForm( $title ) );

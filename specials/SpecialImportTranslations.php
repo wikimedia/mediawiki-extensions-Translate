@@ -120,7 +120,7 @@ class SpecialImportTranslations extends SpecialPage {
 		global $wgOut;
 
 		$wgOut->addModules( 'ext.translate.special.importtranslations' );
-
+		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Group_management' );
 		/**
 		 * Ugly but necessary form building ahead, ohoy
 		 */
