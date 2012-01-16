@@ -269,9 +269,14 @@ $messages['be-tarask'] = array(
 	'translate-fs-selectlanguage' => 'Выберыце мову',
 	'translate-fs-settings-planguage' => 'Асноўная мова:',
 	'translate-fs-settings-planguage-desc' => 'Асноўная мова выступае ў ролі як мовы інтэрфэйсу, гэтак і перадвызначанай мовы перакладу.',
+	'translate-fs-settings-slanguage' => 'Дапаможная мова $1:',
+	'translate-fs-settings-slanguage-desc' => 'Існуе магчымасьць адлюстроўваць пераклады паведамленьняў на іншыя мовы ў акне рэдактара перакладаў.
+Тут вы можаце абраць мовы, калі патрэбна, на якіх будуць адлюстроўвацца падобныя пераклады.',
 	'translate-fs-settings-submit' => 'Захаваць налады',
+	'translate-fs-userpage-level-N' => 'Мая родная мова',
 	'translate-fs-userpage-submit' => 'Стварыць маю старонку ўдзельніка',
 	'translate-fs-userpage-done' => 'Выдатна! Цяпер Вы маеце старонку ўдзельніка.',
+	'translate-fs-permissions-planguage' => 'Асноўная мова:',
 	'translate-fs-permissions-submit' => 'Даслаць запыт',
 	'translate-fs-target-text' => "Віншуем!
 Цяпер Вы можаце пачаць перакладаць.
