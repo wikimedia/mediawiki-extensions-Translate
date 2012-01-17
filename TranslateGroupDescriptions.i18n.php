@@ -267,10 +267,12 @@ $messages['be-tarask'] = array(
  */
 $messages['bg'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], форум, написан на PHP.',
+	'translate-group-desc-mediawiki-core-branch' => 'Съобщения за стабилна версия на [[Translating:MediaWiki|MediaWiki]]',
 	'bw-desc-openlayers' => 'OpenLayers е динамичен генератор на карти, публикуван под отворен код. Моля, съобщавайте за възникнали проблеми на  [[support|екипа по поддръжката]].',
 	'bw-desc-osm-site' => 'Тази група съобщения съдържа интерфейсните съобщения за [[Translating:Open Street Map|Open Street Map]].
 Вижте [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} страницата от сайта на проект Unicode CLDR] за обяснение на ключовете за множествено число в съобщенията.',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] е сървър за микроблогване с отворен код',
+	'translate-group-desc-statusnet-plugin' => 'Тези съобщения са част от добавка за [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] може бързо да намери авторите на страница в уики на Уикимедия.',
 );
 

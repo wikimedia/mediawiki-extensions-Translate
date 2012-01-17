@@ -802,6 +802,8 @@ $messages['bg'] = array(
 	'pt-movepage-new' => 'Ново име:',
 	'pt-movepage-reason' => 'Причина:',
 	'pt-movepage-subpages' => 'Преместване на всички подстраници',
+	'pt-deletepage-reason' => 'Причина:',
+	'pt-deletepage-subpages' => 'Изтриване на всички подстраници',
 );
 
 /** Bengali (বাংলা)

@@ -633,7 +633,8 @@ $1 is a language name.',
 	'translate-import-err-warnings' => 'Used in [[Special:ImportTranslations]].',
 	'translate-js-summary' => 'Label for summary field in translation editor.
 {{Identical|Summary}}',
-	'translate-js-save' => 'Button in translation editor which saves the content and closes the dialog',
+	'translate-js-save' => 'Button in translation editor which saves the content and closes the dialog.
+{{Identical|Save}}',
 	'translate-js-next' => 'next refers to next message in the message list',
 	'translate-js-nonext' => 'This is a JavaScript popup (alert) when user clicks "Save and open next" and there is no next message.',
 	'translate-js-skip' => 'A button together with Save and Save an open next. Goes to the next message without saving.',
@@ -2994,10 +2995,12 @@ $messages['bg'] = array(
 	'translate-next' => 'Следваща страница',
 	'translate-prev' => 'Предишна страница',
 	'translate-page-description-legend' => 'Информация за групата',
+	'translate-page-description-hasoptional-open' => 'Показване на допълнителни съобщения.',
 	'translate-page-edit' => 'редактиране',
 	'translate-ext-url' => '<hr />Уебсайт: $1',
 	'translate-optional' => '(незадължително)',
 	'translate-ignored' => '(пренебрегнато)',
+	'translate-edit-jsopen' => 'редактиране',
 	'translate-edit-title' => 'Редактиране на „$1“',
 	'translate-edit-definition' => 'Оригинално съобщение',
 	'translate-edit-contribute' => 'добавяне на документация',
@@ -3066,6 +3069,7 @@ $messages['bg'] = array(
 	'translate-translations-fieldset-title' => 'Съобщение',
 	'translate-translations-messagename' => 'Име:',
 	'translate-translations-project' => 'Проект:',
+	'translate-translations-history-short' => 'и',
 	'languagestats' => 'Езикови статистики',
 	'languagestats-summary' => 'Тази страница показва статистиките за преводите на всички групи съобщения за езика.',
 	'languagestats-stats-for' => 'Статистики за преводите на $1 ($2).',
@@ -3090,10 +3094,18 @@ $messages['bg'] = array(
 	'importtranslations' => 'Внасяне на преводи',
 	'translate-import-from-url' => 'Адрес към файла:',
 	'translate-import-from-wiki' => 'Файл в това уики:',
+	'translate-import-load' => 'Зареждане на файла',
 	'translate-import-err-ul-failed' => 'Качването на файла не беше успешно',
 	'translate-import-err-no-such-file' => 'Файлът <nowiki>$1</nowiki> не съществува или не е бил качен локално.',
+	'translate-js-summary' => 'Резюме:',
+	'translate-js-save' => 'Съхраняване',
+	'translate-js-next' => 'Съхраняване и отваряне на следващото',
+	'translate-js-nonext' => 'Това беше последното съобщение на тази страница.',
+	'translate-js-support' => 'Задаване на въпрос',
+	'translate-gs-code' => 'Код',
 	'translate-gs-total' => 'Общо',
 	'translate-searchprofile' => 'Преводи',
+	'translate-gethelp' => 'Помощ',
 );
 
 /** Bengali (বাংলা)
@@ -7543,6 +7555,7 @@ Viestiryhmä- ja kielitietoja ei löytynyt tiedoston otsakkeesta.',
 	'translate-import-err-warnings' => 'Tiedostossa on ongelmia.
 Varmista, ettei käyttämäsi muokkausohjelma poista msgctxt-kenttiä.
 Tiedot: $1',
+	'translate-js-save' => 'Tallenna',
 	'translate-js-next' => 'Tallenna ja avaa seuraava',
 	'translate-js-nonext' => 'Tämä oli tämän sivun viimeinen viesti.',
 	'translate-js-skip' => 'Hyppää seuraavaan',
@@ -7594,6 +7607,7 @@ Tiedot: $1',
 	'translate-dynagroup-recent-label' => 'Tuoreet käännökset',
 	'translate-dynagroup-by' => 'Käännöksen teki {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Käännöksen teki {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Ohje',
 );
 
 /** French (Français)
