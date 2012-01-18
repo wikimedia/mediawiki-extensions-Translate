@@ -2550,6 +2550,17 @@ Du kommer också att få ett nyhetsbrev högst en gång i månaden.
 Om du inte vill få några nyhetsbrev så kan kan välja bort dem under fliken "{{int:prefs-personal}}" i dina [[Special:Preferences|inställningar]].',
 );
 
+/** Tulu (ತುಳು)
+ * @author VASANTH S.N.
+ */
+$messages['tcy'] = array(
+	'firststeps' => 'ಸುರುತ ಪಜ್ಜೆಲು',
+	'translate-fs-selectlanguage' => 'ಒಂಜಿ ಬಾಸೆನ್ ಆಯ್ಕೆ ಮಲ್ಪುಲೆ',
+	'translate-fs-settings-planguage' => 'ಪ್ರಾಥಮಿಕೆ ಬಾಸೆ',
+	'translate-fs-settings-slanguage' => 'ಸಹಾಯಕ ಬಾಸೆ: $1',
+	'translate-fs-userpage-level-N' => 'ಎನ್ನ ಮಾತೃಭಾಸೆ',
+);
+
 /** Telugu (తెలుగు)
  * @author Chaduvari
  * @author Veeven
