@@ -3,7 +3,7 @@
  * Code for caching the messages of file based message groups.
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2009-2010 Niklas Laxström
+ * @copyright Copyright © 2009-2012 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -12,6 +12,8 @@
  * that the cache is up to date. Parsing the source files can be slow, so
  * constructing CDB cache makes accessing that data constant speed regardless
  * of the actual format.
+ *
+ * @ingroup MessageGroups
  */
 class MessageGroupCache {
 

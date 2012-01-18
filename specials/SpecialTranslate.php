@@ -82,7 +82,7 @@ class SpecialTranslate extends SpecialPage {
 			$this->options['group'] = $this->defaults['group'];
 		}
 
-		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate' );
+		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Translation_example' );
 		// Show errors nicely.
 		$wgOut->addHTML( $this->settingsForm( $errors ) );
 

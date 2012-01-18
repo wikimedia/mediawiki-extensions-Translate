@@ -1,4 +1,11 @@
 <?php
+/**
+ * Class that enhances Title with stuff related to message groups
+ * @file
+ * @author Niklas Laxström
+ * @copyright Copyright © 2022-2012 Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
 /**
  * Class for pointing to messages, like Title class is for titles.

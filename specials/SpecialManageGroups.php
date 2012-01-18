@@ -3,11 +3,10 @@
  * Implements special page for group management, where file based message
  * groups are be managed.
  *
- * @ingroup SpecialPage
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2009-2010, Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2009-2012, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -16,6 +15,8 @@
  * file based message groups can be managed (FileBasedMessageGroup). This page
  * allows updating of the file cache, import and fuzzy for source language
  * messages, as well as import/update of messages in other languages.
+ *
+ * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialManageGroups extends SpecialPage {
 	/**

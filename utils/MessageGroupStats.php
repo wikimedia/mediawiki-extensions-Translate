@@ -5,13 +5,15 @@
  * @file
  * @author Wikia http://trac.wikia-code.com/browser/wikia/trunk/extensions/wikia/TranslationStatistics
  * @author Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 3 or later
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
  * This class abstract MessageGroup statistics calculation and storing.
  * You can access stats easily per language or per group.
  * Stat array for each item is of format array( total, translate, fuzzy ).
+ *
+ * @ingroup Stats MessageGroups
  */
 class MessageGroupStats {
 	/// Name of the database table

@@ -5,7 +5,7 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright  Copyright © 2011, Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2012, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -17,7 +17,7 @@
  * "translators". The subpage "translators" must contain the template
  * [[:{{ns:template}}:User|User]], taking a user name as parameter.
  *
- * @ingroup SpecialPage TranslateSpecialPage
+ * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialSupportedLanguages extends SpecialPage {
 	/// Whether to skip and regenerate caches

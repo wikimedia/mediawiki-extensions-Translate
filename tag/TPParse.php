@@ -4,13 +4,14 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2009-2011 Niklas Laxström
+ * @copyright Copyright © 2009-2012 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
  * This class represents the results of parsed source page, that is, the
  * extracted sections and a template.
+ *
  * @ingroup PageTranslation
  */
 class TPParse {

@@ -4,15 +4,14 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright  Copyright © 2011, Niklas Laxström
+ * @copyright Copyright © 2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
  * Special page which enables deleting translations of translatable pages
  *
- * @ingroup SpecialPage
- * @ingroup PageTranslation
+ * @ingroup SpecialPage PageTranslation
  */
 class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	// Basic form parameters both as text and as titles

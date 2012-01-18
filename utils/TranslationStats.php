@@ -5,12 +5,13 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2010, Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2010-2012, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
  * Contains methods that provide statistics for message groups.
+ *
  * @ingroup Stats
  */
 class TranslationStats {

@@ -4,21 +4,15 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright  Copyright © 2010, Niklas Laxström
+ * @copyright  Copyright © 2010-2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-
-if ( !defined( 'GAID_FOR_UPDATE' ) )  {
-	/* Backwards-compatible define for 1.17+ (see r75379) */
-	define( 'GAID_FOR_UPDATE', Title::GAID_FOR_UPDATE );
-}
 
 /**
  * Overrides Special:Movepage to to allow renaming a page translation page and
  * all related translations and derivative pages.
  *
- * @ingroup SpecialPage
- * @ingroup PageTranslation
+ * @ingroup SpecialPage PageTranslation
  */
 class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	// Basic form parameters both as text and as titles
@@ -242,7 +236,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$form[] = Html::hidden( 'wpEditToken', $this->user->editToken() );
 		$this->addInputLabel( $form, wfMsg( 'pt-movepage-current' ), 'wpOldTitle', 30, $this->oldText, $readonly );
 		$this->addInputLabel( $form, wfMsg( 'pt-movepage-new' ), 'wpNewTitle', 30, $this->newText );
-		$this->addInputLabel( $form, wfMsg( 'pt-movepage-reason' ), 'reason', 60, $this->reason );
+		$this->addInputLabel( $form, wfMsg( 'pt-movepage-reason' ), 'reason', 45, $this->reason );
 		$form[] = Xml::checkLabel( wfMsg( 'pt-movepage-subpages' ), 'subpages', 'mw-subpages', $this->moveSubpages ) . $br;
 		$form[] = Xml::submitButton( wfMsg( 'pt-movepage-action-check' ), $subaction );
 		$form[] = Xml::closeElement( 'form' );
@@ -396,10 +390,10 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		MoveJob::forceRedirects( true );
 
 		$newTpage = TranslatablePage::newFromTitle( $this->newTitle );
-		$newTpage->addReadyTag( $this->newTitle->getLatestRevId( GAID_FOR_UPDATE ) );
+		$newTpage->addReadyTag( $this->newTitle->getLatestRevId( Title::GAID_FOR_UPDATE ) );
 
 		if ( $newTpage->getMarkedTag() === $oldLatest ) {
-			$newTpage->addMarkedTag( $this->newTitle->getLatestRevId( GAID_FOR_UPDATE ) );
+			$newTpage->addMarkedTag( $this->newTitle->getLatestRevId( Title::GAID_FOR_UPDATE ) );
 		}
 
 		MessageGroups::clearCache();
