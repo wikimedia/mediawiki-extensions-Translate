@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2011, Niklas Laxström
+ * @copyright Copyright © 2008-2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -12,7 +12,6 @@
  * Contains class with job for deleting translatable and translation pages.
  *
  * @ingroup PageTranslation JobQueue
- * @todo Get rid of direct reference to $wgMemc.
  */
 class DeleteJob extends Job {
 
