@@ -7003,6 +7003,7 @@ Bạn có thể <span class="plainlinks">[$3 dịch]</span> trang ngay bây gi�
 Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra những thay đổi tại các mục đã được thu gọn lại để tránh công việc không cần thiết cho biên dịch viên chưa.',
 	'tpt-mark-summary' => 'Đánh dấu phiên bản này là cần dịch',
 	'tpt-edit-failed' => 'Không thể cập nhật trang: $1',
+	'tpt-duplicate' => 'Tên đơn vị dịch $1 được sử dụng hơn một lần.',
 	'tpt-already-marked' => 'Phiên bản mới nhất của trang này đã được đánh dấu cần dịch rồi.',
 	'tpt-unmarked' => 'Trang $1 không còn đánh dấu là cần dịch.',
 	'tpt-list-nopages' => 'Chưa có trang này được đánh dấu cần dịch hoặc chưa sẵn sàng để được đánh dấu cần dịch.',

@@ -305,6 +305,7 @@ $messages['be-tarask'] = array(
 $messages['bg'] = array(
 	'firststeps' => 'Първи стъпки',
 	'translate-fs-signup-title' => 'Регистриране',
+	'translate-fs-userpage-done' => 'Готово! Вече имате потребителска страница.',
 );
 
 /** Bengali (বাংলা)

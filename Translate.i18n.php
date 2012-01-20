@@ -2243,6 +2243,8 @@ Nun se puen determinar el grupu y la llingua a partir de les testeres del ficher
 	'translate-import-err-warnings' => "El ficheru nun ta bien formáu.
 Asegúrate de que'l to editor nun desanicia los campos msgctxt.
 Detalles: $1",
+	'translate-js-summary' => 'Resume:',
+	'translate-js-save' => 'Guardar',
 	'translate-js-next' => 'Guardar y abrir el siguiente',
 	'translate-js-nonext' => "Esti yera'l caberu mensaxe d'esta páxina.",
 	'translate-js-skip' => 'Saltar al siguiente',
@@ -2290,7 +2292,11 @@ Detalles: $1",
 	'translate-workflow-set-do' => 'Activar',
 	'translate-workflow-set-doing' => 'Activando...',
 	'translate-workflow-set-done' => '¡Activáu!',
+	'translate-workflow-autocreated-summary' => 'Creación automática de la páxina pal estáu "$1" del fluxu de trabayu',
 	'translate-stats-workflow' => 'Estáu',
+	'translate-workflowgroup-label' => 'Estaos del fluxu de trabayu',
+	'translate-workflowgroup-desc' => 'Esti grupu de mensaxes amuesa los estaos del fluxu de trabayu de traducción.
+Los estaos se definen na variable de configuración $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Traducciones recientes',
 	'translate-dynagroup-recent-desc' => 'Esti grupu de mensaxes amuesa toles traducciones recientes nesta llingua.
 Ye enforma afayadizo pa les xeres «{{int:translate-task-acceptqueue}}» y «{{int:translate-task-reviewall}}».',
@@ -2298,6 +2304,7 @@ Ye enforma afayadizo pa les xeres «{{int:translate-task-acceptqueue}}» y «{{i
 	'translate-dynagroup-byc' => 'Traducción fecha por {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Caberu cambiu fechu por {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Caberu cambiu fechu por {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Ayuda',
 );
 
 /** Azerbaijani (Azərbaycanca)
@@ -15125,6 +15132,7 @@ $messages['ml'] = array(
 	'translate-ext-url' => '<hr />വെബ്സൈറ്റ്: $1',
 	'translate-optional' => '(നിർബന്ധമില്ല)',
 	'translate-ignored' => '(അവഗണച്ചിരിക്കുന്നു)',
+	'translate-edit-jsopen' => 'തിരുത്തുക',
 	'translate-edit-title' => '"$1" തിരുത്തുക',
 	'translate-edit-definition' => 'സന്ദേശത്തിന്റെ നിർ‌വചനം',
 	'translate-edit-translation' => 'പരിഭാഷ',
@@ -15179,7 +15187,7 @@ $messages['ml'] = array(
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'വിപുലമായ പരിഭാഷാ തിരുത്തലുപാധി (ജാവാസ്ക്രിപ്റ്റ്)',
 	'right-translate' => 'പരിഭാഷയ്ക്കുള്ള സമ്പർക്കമുഖമുപയോഗിച്ച് തിരുത്തുക',
-	'right-translate-manage' => 'പരിഭാഷാസംഘങ്ങളുടെ കൈകാര്യം',
+	'right-translate-manage' => 'സന്ദേശ സഞ്ചയങ്ങളുടെ കൈകാര്യം',
 	'right-translate-import' => 'ഓഫ്‌ലൈൻ പരിഭാഷകൾ ഇറക്കുമതി ചെയ്യുക',
 	'right-translate-messagereview' => 'പരിഭാഷകൾ സംശോധനം ചെയ്യുക',
 	'translate-rc-translation-filter' => 'പരിഭാഷകൾ അരിച്ചെടുക്കുക:',
@@ -24767,6 +24775,8 @@ Không thể xác định nhóm và ngôn ngữ từ tiêu đề tập tin.',
 	'translate-import-err-warnings' => 'Tập tin không được định dạng đúng.
 Hãy đảm bảo trình duyệt của bạn không xóa đi vùng msgctxt.
 Chi tiết:$1',
+	'translate-js-summary' => 'Tóm lược:',
+	'translate-js-save' => 'Lưu',
 	'translate-js-next' => 'Lưu và sang thông điệp sau',
 	'translate-js-nonext' => 'Đây là thông điệp cuối cùng trên trang này.',
 	'translate-js-skip' => 'Chuyển đến thông điệp kế',
@@ -24814,14 +24824,19 @@ Chi tiết:$1',
 	'translate-workflow-set-do' => 'Định rõ',
 	'translate-workflow-set-doing' => 'Đang định rõ…',
 	'translate-workflow-set-done' => 'Đã định xong!',
+	'translate-workflow-autocreated-summary' => 'Tự động tạo ra trang cho trạng thái luồng làm việc $1',
 	'translate-stats-workflow' => 'Trạng thái',
+	'translate-workflowgroup-label' => 'Trạng thái luồng làm việc',
+	'translate-workflowgroup-desc' => 'Nhóm thông điệp này chứa các trạng thái luồng làm việc biên dịch.
+Các trạng thái được định rõ trong biến cấu hình $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Bản dịch gần đây',
 	'translate-dynagroup-recent-desc' => 'Nhóm thông điệp này bao gồm các bản dịch gần đây trong ngôn ngữ này.
-Nó có ích đối với các tác vụ “Chấp nhận bản dịch” và “Kiểm lại tất cả các bản dịch”.',
+Nó có ích đối với các tác vụ “{{int:translate-task-acceptqueue}}” và “{{int:translate-task-reviewall}}”.',
 	'translate-dynagroup-by' => 'Bản dịch của $1',
 	'translate-dynagroup-byc' => 'Bản dịch của $1 ($2)',
 	'translate-dynagroup-last' => 'Thay đổi cuối cùng của $1',
 	'translate-dynagroup-lastc' => 'Thay đổi cuối cùng của $1 ($2)',
+	'translate-gethelp' => 'Trợ giúp',
 );
 
 /** Volapük (Volapük)
@@ -25411,7 +25426,7 @@ $messages['zh-hans'] = array(
 	'translate-rc-translation-filter-site' => '只有网站讯息的更动',
 	'translationstats' => '翻译统计',
 	'translate-stats-edits' => '编辑',
-	'translate-stats-users' => '翻译者',
+	'translate-stats-users' => '译者',
 	'translate-stats-registrations' => '注册',
 	'translate-statsf-intro' => '您可以生成简单的统计数据，与此窗体。
 所有值都具有上限和下限。',
@@ -25486,7 +25501,7 @@ $messages['zh-hans'] = array(
 某个翻译员的名称显现更大，表示其编辑贡献更多。
 下划线的颜色表示某个翻译员在此最近有多少活跃。',
 	'supportedlanguages-colorlegend' => '颜色图例：其最近一次翻译是于$1天前。',
-	'supportedlanguages-translators' => '{{PLURAL:$2|翻译者|翻译者}}: $1',
+	'supportedlanguages-translators' => '{{PLURAL:$2|译者}}：$1',
 	'supportedlanguages-recenttranslations' => '最近的翻译',
 	'supportedlanguages-count' => '总共有 $1 语言',
 	'supportedlanguages-activity' => '$1：$2次编辑——最近一次编辑于$3天前',
