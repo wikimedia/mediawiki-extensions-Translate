@@ -203,6 +203,25 @@ Pues mentar más llingües y otros comentarios nel cuadru de testu d'abaxo.",
 	'translate-fs-permissions-pending' => "La to solicitú s'unvió a «[[$1]]» y dalguién del equipu d'esi sitiu la revisará tan ceo como pueda.
 Si confirmes la to direición de corréu electrónicu, recibirás un avisu pel corréu cuando lo faiga.",
 	'translate-fs-permissions-submit' => 'Unviar la solicitú',
+	'translate-fs-target-text' => "¡Felicidaes!
+Agora pues comenzar a traducir.
+
+Nun tengas mieu si te paez nuevo y te confunde.
+Na [[Project list]] hai una vista xeneral de los proyeutos nos que pues collaborar coles tos traducciones.
+La mayoría de los proyeutos tien una páxina de descripción curtia con un enllaz \"''Traducir esti proyeutu''\", que te llevará a una páxina cola llista de tollos mensaxes por traducir.
+Tamién ta disponible la llista de tolos grupos de mensaxes col [[Special:LanguageStats|estáu actual de la traducción a una llingua]].
+
+Si crees que necesites entender más enantes de principiar coles traducciones, pues lleer les [[FAQ|Entrugues frecuentes]].
+Por desgracia la documentación pue tar ensin actualizar dacuando.
+Si hai dalgo que crees que podríes facer, pero nun yes a alcontrar cómo, nun duldes n'entrugalo na [[Support|páxina de sofitu]].
+
+Tamién pues ponete en contautu con otros traductores a la mesma llingua na [[Portal_talk:\$1|páxina d'alderique]] del [[Portal:\$1|portal de la to llingua]].
+Si nun lo ficisti entá, [[Special:Preferences|camuda la llingua de la interfaz d'usuariu a la llingua a la que quies traducir]], pa que la wiki te pueda amosar los enllaces más relevantes pa ti.",
+	'translate-fs-email-text' => 'Por favor da la to direición de corréu electrónicu nes tos [[Special:Preferences|preferencies]] y confírmala dende\'l corréu que vamos unviate.
+
+Esto permite qu\'otros usuarios se pongan en contautu contigo per corréu.
+Tamién recibirás boletinos de noticies tolo más una vegada al mes.
+Si nun quies recibir boletinos de noticies, pues desapuntate na llingüeta "{{int:prefs-personal}}" de les tos [[Special:Preferences|preferencies]].',
 );
 
 /** Bashkir (Башҡортса)

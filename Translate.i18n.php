@@ -21141,6 +21141,8 @@ Ne morem določiti skupine in jezika iz glav datoteke.',
 	'translate-import-err-warnings' => 'Datoteka ni dobro oblikovana.
 Prepričajte se, da vaš urejevalnik ne odstrani polj msgctxt.
 Podrobnosti: $1',
+	'translate-js-summary' => 'Povzetek:',
+	'translate-js-save' => 'Shrani',
 	'translate-js-next' => 'Shrani in odpri naslednje',
 	'translate-js-nonext' => 'To je bilo zadnje sporočilo na tej strani.',
 	'translate-js-skip' => 'Preskoči na naslednje',
@@ -21189,6 +21191,7 @@ Podrobnosti: $1',
 	'translate-workflow-set-done' => 'Nastavljeno!',
 	'translate-stats-workflow' => 'Stanje',
 	'translate-dynagroup-recent-label' => 'Nedavni prevodi',
+	'translate-gethelp' => 'Pomoč',
 );
 
 /** Somali (Soomaaliga)

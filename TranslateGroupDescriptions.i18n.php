@@ -183,6 +183,25 @@ $messages['arz'] = array(
 	'translate-group-desc-ui' => 'مجموعه رسائل علويه تحتوى كل رسائل الامتدادات المتعلقه ب[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative مبادره استخداميه ويكيبيديا]',
 );
 
+/** Asturian (Asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'translategroupdescriptions-desc' => 'Descripciones de los grupos de mensaxes de los productos compatibles con la estensión [http://mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-nodesc' => 'Nun hai descripción dala pa esti grupu de mensaxes',
+	'translate-group-desc-mediawikicore' => 'Esti grupu de mensaxes contién los mensaxes emplegaos na versión alfa actual de [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Esti grupu de mensaxes contién los [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mensaxes más usaos] de [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawikiextensions' => 'Grupu de mensaxes Meta que contien tolos mensaxes pa les estensiones que sofita [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-collection' => 'Grupu de mensaxes Meta que contien tolos mensaxes pa la estensión [http://www.mediawiki.org/wiki/Extension:Collection Collection] de MediaWiki',
+	'translate-group-desc-flaggedrevs' => 'Grupu de mensaxes Meta que contien tolos mensaxes pa la estensión [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] de MediaWiki',
+	'translate-group-desc-readerfeedback' => 'Grupu de mensaxes Meta que contien tolos mensaxes pa la estensión [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] de MediaWiki',
+	'translate-group-desc-semantic' => 'Grupu de mensaxes meta que contien tolos mensaxes de toles estensiones de [http://semantic-mediawiki.org/ Semantic MediaWiki]',
+	'translate-group-desc-socialprofile' => 'Grupu de mensaxes Meta que contien tolos mensaxes de les estensiones rellacionaes cola estensión [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] de MediaWiki',
+	'translate-group-desc-translate' => 'Grupu de mensaxes Meta que contien tolos mensaxes pa la estensión [http://www.mediawiki.org/wiki/Extension:Translate Translate] de MediaWiki',
+	'translate-group-desc-wikiaextensions' => "Grupu de mensaxes Meta que contien tolos mensaxes pa les estensiones sofitaes por MediaWiki qu'usa [http://www.wikia.com Wikia]",
+	'translate-group-desc-wikimediaextensions' => "Grupu de mensaxes Meta que contien tolos mensaxes pa les estensiones sofitaes por MediaWiki qu'usa la [http://wikimedia.org/ Fundación Wikimedia]",
+);
+
 /** Azerbaijani (Azərbaycanca)
  * @author Sortilegus
  */
