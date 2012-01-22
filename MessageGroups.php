@@ -267,10 +267,6 @@ abstract class MessageGroupOld implements MessageGroup {
 		$this->mangler = StringMatcher::emptyMatcher();
 	}
 
-	public static function factory( $label, $id ) {
-		return null;
-	}
-
 	/**
 	 * Can be overwritten to retun false if something is wrong.
 	 * @return bool
@@ -283,12 +279,6 @@ abstract class MessageGroupOld implements MessageGroup {
 		return null;
 	}
 
-	// Unsupported stuff, just to satisfy the new interface
-	public function setConfiguration( $conf ) { }
-	public function getConfiguration() { }
-
-
-	public function getFFS() { return null; }
 	public function getTags( $type = null ) {
 		$tags = array(
 			'optional' => $this->optional,
@@ -309,6 +299,11 @@ abstract class MessageGroupOld implements MessageGroup {
 	protected function isSourceLanguage( $code ) {
 		return $code === $this->getSourceLanguage();
 	}
+
+	// Unsupported stuff, just to satisfy the new interface
+	public function setConfiguration( $conf ) { }
+	public function getConfiguration() { }
+	public function getFFS() { return null; }
 }
 
 /**
