@@ -93,7 +93,7 @@ class SpecialManageGroups extends SpecialPage {
 
 		$groups = MessageGroups::singleton()->getGroups();
 
-		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Help:Extension:Translate/Group_management' );
+		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Group_management' );
 		$wgOut->wrapWikiMsg( '<h2>$1</h2>', 'translate-manage-listgroups' );
 		$separator = wfMsg( 'word-separator' );
 
