@@ -44,6 +44,19 @@ abstract class MessageGroupOld implements MessageGroup {
 	 */
 	public function setId( $value ) { $this->id = $value; }
 
+
+	/**
+	 * The namespace where all the messages of this group belongs.
+	 * If the group has messages from multiple namespace, set this to false
+	 * and look how RecentMessageGroup implements the definitions.
+	 */
+	protected $namespace = NS_MEDIAWIKI;
+	/// Get the namespace where all the messages of this group belongs.
+	public function getNamespace() { return $this->namespace; }
+	/// Set the namespace where all the messages of this group belongs.
+	public function setNamespace() { return $this->namespace; }
+
+
 	/**
 	 * List of messages that are hidden by default, but can still be translated if
 	 * needed.
@@ -127,8 +140,6 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	public function setMangler( $value ) { $this->mangler = $value; }
-
-	public $namespaces = array( NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
 
 	public function getReader( $code ) {
 		return null;
@@ -254,7 +265,7 @@ abstract class MessageGroupOld implements MessageGroup {
 			$definitions = $this->getUniqueDefinitions();
 		}
 
-		$defs = new MessageDefinitions( $definitions, $this->namespaces[0] );
+		$defs = new MessageDefinitions( $definitions, $this->getNamespace() );
 		$collection = MessageCollection::newFromDefinitions( $defs, $code );
 
 		foreach ( $this->getTags() as $type => $tags ) {
@@ -287,7 +298,8 @@ abstract class MessageGroupOld implements MessageGroup {
 	// Unsupported stuff, just to satisfy the new interface
 	public function setConfiguration( $conf ) { }
 	public function getConfiguration() { }
-	public function getNamespace() { return $this->namespaces[0]; }
+
+
 	public function getFFS() { return null; }
 	public function getTags( $type = null ) {
 		$tags = $this->getBools();
@@ -795,7 +807,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	public function __construct( $id, $source ) {
 		$this->id = $id;
 		$this->title = $source;
-		$this->namespaces = array( NS_TRANSLATIONS, NS_TRANSLATIONS_TALK );
+		$this->namespace = NS_TRANSLATIONS;
 	}
 
 	/// Defaults to wiki content language.
@@ -868,7 +880,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 			return isset( $stuff[$key] ) ? $stuff[$key] : null;
 		}
 
-		$title = Title::makeTitleSafe( $this->namespaces[0], "$key/$code" );
+		$title = Title::makeTitleSafe( $this->getNamespace(), "$key/$code" );
 		$rev = Revision::newFromTitle( $title );
 
 		if ( !$rev ) {
@@ -907,7 +919,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
  */
 class RecentMessageGroup extends WikiMessageGroup {
 	// Ugly
-	public $namespaces = array( false, false );
+	protected $namespace = false;
 
 	protected $code;
 
