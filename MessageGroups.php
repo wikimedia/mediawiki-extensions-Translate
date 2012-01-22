@@ -257,9 +257,9 @@ abstract class MessageGroupOld implements MessageGroup {
 		$defs = new MessageDefinitions( $definitions, $this->namespaces[0] );
 		$collection = MessageCollection::newFromDefinitions( $defs, $code );
 
-		$bools = $this->getBools();
-		$collection->setTags( 'ignored',  $bools['ignored']  );
-		$collection->setTags( 'optional', $bools['optional'] );
+		foreach ( $this->getTags() as $type => $tags ) {
+			$collection->setTags( $type, $tags );
+		}
 
 		return $collection;
 	}
