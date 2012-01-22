@@ -36,7 +36,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$this->purge = $wgRequest->getVal( 'action' ) === 'purge';
 
 		$this->setHeaders();
-		TranslateUtils::addSpecialHelpLink( $wgOut, '//translatewiki.net/wiki/Translatewiki.net_languages', true );
+		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators' );
 		$wgOut->addModules( 'ext.translate.special.supportedlanguages' );
 
 		$cache = wfGetCache( CACHE_ANYTHING );
