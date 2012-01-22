@@ -88,17 +88,6 @@ abstract class MessageGroupOld implements MessageGroup {
 	public function setIgnored( $value ) { $this->ignored = $value; }
 
 	/**
-	 * Returns a list of optional and ignored messages in 2-d array.
-	 * @return array
-	 */
-	public function getBools() {
-		return array(
-			'optional' => $this->optional,
-			'ignored' => $this->ignored,
-		);
-	}
-
-	/**
 	 * Holds descripton of this group. Description is a wiki text snippet that
 	 * gives information about this group to translators.
 	 */
@@ -301,7 +290,10 @@ abstract class MessageGroupOld implements MessageGroup {
 
 	public function getFFS() { return null; }
 	public function getTags( $type = null ) {
-		$tags = $this->getBools();
+		$tags = array(
+			'optional' => $this->optional,
+			'ignored' => $this->ignored,
+		);
 
 		if ( !$type ) {
 			return $tags;
@@ -390,13 +382,11 @@ class CoreMessageGroup extends MessageGroupOld {
 		return new WikiFormatWriter( $this );
 	}
 
-	public function getBools() {
+	public function getTags( $type = null ) {
 		require( $this->getMetaDataPrefix() . '/messageTypes.inc' );
-
-		return array(
-			'optional' => $this->mangler->mangle( $wgOptionalMessages ),
-			'ignored'  => $this->mangler->mangle( $wgIgnoredMessages ),
-		);
+		$this->optional = $this->mangler->mangle( $wgOptionalMessages );
+		$this->ignored = $this->mangler->mangle( $wgIgnoredMessages );
+		return parent::getTags( $type );
 	}
 
 	public function load( $code ) {
