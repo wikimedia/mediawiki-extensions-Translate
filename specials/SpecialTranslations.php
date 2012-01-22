@@ -30,6 +30,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 		$this->setHeaders();
 		$this->outputHeader();
+		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Statistics_and_reporting#Translations_in_all_languages' );
 
 		self::includeAssets();
 
