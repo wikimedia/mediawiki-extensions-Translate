@@ -138,6 +138,7 @@ class SpecialMagic extends SpecialPage {
 
 		$this->setup( $parameters );
 		$this->setHeaders();
+		TranslateUtils::addSpecialHelpLink( $wgOut, '//translatewiki.net/wiki/FAQ#Special:AdvancedTranslate', true );
 
 		$wgOut->addHTML( $this->getForm() );
 

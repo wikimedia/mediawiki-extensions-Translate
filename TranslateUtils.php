@@ -315,13 +315,20 @@ class TranslateUtils {
 	/**
 	 * @since 2012-01-12
 	 */
-	public static function addSpecialHelpLink( OutputPage $out, /*string*/$to ) {
+	public static function addSpecialHelpLink( OutputPage $out, /*string*/$to, $overrideBaseUrl = false ) {
 		$out->addModules( 'ext.translate.helplink' );
 		$text = wfMessage( 'translate-gethelp' )->escaped();
+
+		if( $overrideBaseUrl ) {
+			$helpUrl = $to;
+		} else {
+			$helpUrl = "//www.mediawiki.org/wiki/Special:MyLanguage/$to";
+		}
+
 		$link = Html::rawElement(
 			'a',
 			array(
-				'href' => "//www.mediawiki.org/wiki/Special:MyLanguage/$to",
+				'href' => $helpUrl,
 				'target' => '_blank'
 			),
 			"$text" );
