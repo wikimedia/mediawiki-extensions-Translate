@@ -129,7 +129,7 @@ abstract class MessageIndex {
 			if ( $cache->exists() ) {
 				$keys = $cache->getKeys();
 			} else {
-				$keys = array_keys( $g->load( 'en' ) );
+				$keys = array_keys( $g->getDefinitions() );
 			}
 		} else {
 			$messages = $g->getDefinitions();

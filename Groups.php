@@ -104,6 +104,11 @@ interface MessageGroup {
 	public function load( $code );
 
 	/**
+	 * Shortcut for load( getSourceLanguage() ).
+	 */
+	public function getDefinitions();
+
+	/**
 	 * Returns message tags. If type is given, only messages keys with that
 	 * tag is returnted. Otherwise an array[tag => keys] is returnted.
 	 * @param $type string
@@ -171,6 +176,11 @@ abstract class MessageGroupBase implements MessageGroup {
 		$conf = $this->getFromConf( 'BASIC', 'sourcelanguage' );
 
 		return $conf !== null ? $conf : 'en';
+	}
+
+	public function getDefinitions() {
+		$defs = $this->load( $this->getSourceLanguage() );
+		return $defs;
 	}
 
 	protected function getFromConf( $section, $key ) {
@@ -247,7 +257,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		$cache = new MessageGroupCache( $this );
 		if ( !$cache->exists() ) {
 			wfWarn( "By-passing message group cache" );
-			$messages = $this->load( $this->getSourceLanguage() );
+			$messages = $this->getDefinitions();
 		} else {
 			foreach ( $cache->getKeys() as $key ) {
 				$messages[$key] = $cache->get( $key );
@@ -654,14 +664,16 @@ class AggregateMessageGroup extends MessageGroupBase {
 		$messages = array();
 
 		foreach ( $this->getGroups() as $group ) {
+			if ( $group instanceof MessageGroupOld ) {
+				$messages += $group->getDefinitions();
+				continue;
+			}
+
 			$cache = new MessageGroupCache( $group );
 			if ( $cache->exists() ) {
 				foreach ( $cache->getKeys() as $key ) {
 					$messages[$key] = $cache->get( $key );
 				}
-			} else {
-				// BC for MessageGroupOld
-				$messages += $group->load( $this->getSourceLanguage() );
 			}
 		}
 
