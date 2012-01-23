@@ -30,8 +30,6 @@ class SpecialTranslations extends SpecialAllpages {
 
 		$this->setHeaders();
 		$this->outputHeader();
-		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Statistics_and_reporting#Translations_in_all_languages' );
-
 		self::includeAssets();
 
 		if ( $this->including() ) {
@@ -55,7 +53,7 @@ class SpecialTranslations extends SpecialAllpages {
 		} else {
 			$title = Title::newFromText( $par, $namespace );
 		}
-		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate' );
+		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Statistics_and_reporting#Translations_in_all_languages' );
 		if ( !$title ) {
 			$title = Title::makeTitle( NS_MEDIAWIKI, '' );
 			$wgOut->addHTML( $this->namespaceMessageForm( $title ) );
