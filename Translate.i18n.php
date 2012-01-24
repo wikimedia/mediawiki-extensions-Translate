@@ -13552,6 +13552,9 @@ $1',
 	'translate-manage-import-summary' => '외부에서 새 버전을 가져옴',
 	'translate-manage-fuzzy-summary' => '메시지 정의가 바뀌었습니다.',
 	'translate-manage-import-done' => '모두 완료!',
+	'translate-manage-intro-other' => '다음은 $1로 된 번역 수정 목록입니다.
+이 수정 내역을 검토하고 각 번역문에 대해 취할 동작을 선택해주세요.
+메시지 수정을 무시하기로 했다면 다음 내보내기 때 해당 사항이 무시될 것입니다.',
 	'importtranslations' => '번역 가져오기',
 	'translate-import-from-url' => '파일의 URL:',
 	'translate-import-from-wiki' => '이 위키에 있는 파일:',
@@ -19605,6 +19608,7 @@ Cazze 'u nome d'u gruppe de le messagge pe vedè l'elenghe de le messagge da tra
  * @author Eugrus
  * @author Ferrer
  * @author Huuchin
+ * @author KPu3uC B Poccuu
  * @author Kaganer
  * @author Lockal
  * @author MaxSem
@@ -19721,7 +19725,7 @@ $messages['ru'] = array(
 	'translate-checks-format' => 'Этот перевод не соответствует определению или содержит синтаксическую ошибку: $1',
 	'translate-checks-escape' => 'Следующие экранирующие последовательности могут быть случайны: <strong>$1</strong>',
 	'translate-checks-fudforum-syntax' => 'Использовать в этом проекте <nowiki>$1</nowiki> вместо <nowiki>$2</nowiki>.',
-	'translate-pref-nonewsletter' => 'Не отправлять мне информационный бюллетень по электронной почте',
+	'translate-pref-nonewsletter' => 'Не отправлять мне информационный бюллетень по электронной почте.',
 	'translate-pref-editassistlang' => 'Вспомогательные языки:',
 	'prefs-translate' => 'Настройки перевода',
 	'translate-pref-editassistlang-help' => 'Разделённый запятыми список кодов языков.
@@ -19729,7 +19733,7 @@ $messages['ru'] = array(
 Список по умолчанию зависит от вашего языка.',
 	'translate-pref-editassistlang-bad' => 'Неверный языковой код в списке:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Улучшенный редактор переводов (JavaScript)',
+	'translate-pref-jsedit' => 'Улучшенный редактор переводов (JavaScript).',
 	'right-translate' => 'правка с использованием интерфейса перевода',
 	'right-translate-manage' => 'Управление группами сообщений',
 	'right-translate-import' => 'Импортирование offline-переводов',

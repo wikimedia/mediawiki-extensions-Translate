@@ -5703,6 +5703,7 @@ $messages['roa-tara'] = array(
  * @author G0rn
  * @author Grigol
  * @author Hypers
+ * @author KPu3uC B Poccuu
  * @author Kaganer
  * @author Purodha
  * @author Александр Сигачёв
@@ -5810,7 +5811,7 @@ $messages['ru'] = array(
 	'pt-movepage-new' => 'Новое название:',
 	'pt-movepage-reason' => 'Причина:',
 	'pt-movepage-subpages' => 'Переименовать все подстраницы',
-	'pt-movepage-action-check' => 'Проверить возможно ли переименование',
+	'pt-movepage-action-check' => 'Проверить, возможно ли переименование',
 	'pt-movepage-action-perform' => 'Произвести переименование',
 	'pt-movepage-action-other' => 'Изменить цель',
 	'pt-movepage-intro' => 'Эта служебная страница позволяет переименовывать страницы, отмеченные для перевода.
@@ -5821,7 +5822,7 @@ $messages['ru'] = array(
 	'pt-movepage-started' => 'Основная страница переименована.
 Пожалуйста, проверьте [[Special:Log/pagetranslation|журнал переводимых страниц]] на наличие ошибок.',
 	'pt-locked-page' => 'Эта страница заблокирована, так как переводимая страница сейчас переименовывается.',
-	'pt-deletepage-lang-title' => 'Удаление страницы с переводом $1.',
+	'pt-deletepage-lang-title' => 'Удаление страницы перевода «$1».',
 	'pt-deletepage-full-title' => 'Удаление доступной для перевода страницы $1.',
 	'pt-deletepage-invalid-title' => 'Указана неверная страница.',
 	'pt-deletepage-invalid-text' => 'Указанная страница не относится к числу доступных для перевода страниц или их переводов.',
@@ -5839,8 +5840,8 @@ $messages['ru'] = array(
 	'pt-deletepage-list-section' => 'Страницы раздела',
 	'pt-deletepage-list-other' => 'Другие подстраницы',
 	'pt-deletepage-list-count' => 'В сумме $1 {{PLURAL:$1|страница|страниц}} для перевода.',
-	'pt-deletepage-full-logreason' => 'Часть доступной для перевода страницы $1.',
-	'pt-deletepage-lang-logreason' => 'Часть страницы перевода $1.',
+	'pt-deletepage-full-logreason' => 'Часть доступной для перевода страницы «$1».',
+	'pt-deletepage-lang-logreason' => 'Часть страницы перевода «$1».',
 	'pt-deletepage-started' => 'Пожалуйста, проверьте [[Special:Log/pagetranslation|журнал перевода страниц]] на предмет сообщений об ошибках и успешных завершениях.',
 	'pt-deletepage-intro' => 'Это специальная страница позволяет вам удалить целые страницы, доступные для перевода, или переводы на определённый язык.
 Действие по удалению не будет выполнено сразу же, так как в очереди на удаление будет много страниц.
