@@ -8560,7 +8560,7 @@ As traducións sepáranse mediante unha coma (,).
 Os nomes dos espazos de nomes só poden ter unha tradución.
 
 Nas traducións dos espazos de nomes, <code>$1 talk</code> é especial. <code>$1</code> substitúese polo nome do sitio (por exemplo, <code>{{ns:project_talk}}</code>).
-Se na súa lingua non resulta posíbel formar unha expresión válida sen mudar o nome do sitio, contacte cun desenvolvedor.
+Se na súa lingua non resulta posible formar unha expresión válida sen mudar o nome do sitio, póñase en contacto cun desenvolvedor.
 
 Ten que estar no grupo de tradutores para gardar os cambios.
 Os cambios non se gardan ata que prema no botón "Gardar" de embaixo.',
@@ -12005,7 +12005,7 @@ Si consiglia di revisionare i messaggi attraverso [[Special:Translate|{{int:tran
 	'supportedlanguages-colorlegend' => 'Legenda dei colori: ultima traduzione $1 giorni fa.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Traduttore|Traduttori}}: $1',
 	'supportedlanguages-recenttranslations' => 'traduzioni recenti',
-	'supportedlanguages-count' => '$1 {{PLURAL:$1|linguaggio|linguaggi}} in totale.',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|lingua|lingue}} in totale.',
 	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|modifica|modifiche}} - ultima modifica $3 {{PLURAL:$3|giorno|giorni}} fa',
 	'translate-save' => 'Salva ($1)',
 	'translate-jssti-add' => "Aggiungi all'elenco",
@@ -14423,6 +14423,18 @@ $messages['lmo'] = array(
 	'translate-tag-fuzzy-reason' => 'Definizión cambiada de "$1" cun cument "$3" in $2.',
 	'translate-sidebar-alltrans' => 'In alter lenguv',
 	'translations' => 'Tüt i tradüzión',
+);
+
+/** Lingala (Lingála)
+ * @author Eruedin
+ */
+$messages['ln'] = array(
+	'translate-page-settings-legend' => 'Palamɛ́tɛlɛ',
+	'translate-page-language' => 'Lokótá',
+	'translate-page-navigation-legend' => 'Botamboli',
+	'translate-next' => 'Lonkásá na nsima',
+	'translate-page-edit' => 'kobimisela',
+	'translate-edit-jsopen' => 'kobimisela',
 );
 
 /** Lao (ລາວ)
