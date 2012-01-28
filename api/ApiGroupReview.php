@@ -147,7 +147,7 @@ class ApiGroupReview extends ApiBase {
 	}
 
 	public function getVersion() {
-		return __CLASS__ . ': $Id: $';
+		return __CLASS__ . ': $Id$';
 	}
 
 	public static function getToken( $pageid, $title ) {
