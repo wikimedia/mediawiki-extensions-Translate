@@ -19,6 +19,10 @@ class MessageGroupStats {
 	/// Name of the database table
 	const TABLE = 'translate_groupstats';
 
+	const TOTAL = 0;
+	const TRANSLATED = 1;
+	const FUZZY = 2;
+
 	/// @var float
 	protected static $timeStart = null;
 	/// @var float
