@@ -186,6 +186,7 @@ class TranslateHooks {
 		$updater->addExtensionUpdate( array( 'dropIndex', 'translate_sections', 'trs_page', "$dir/translate_sections-indexchange2.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addTable', 'translate_reviews', "$dir/translate_reviews.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addTable', 'translate_groupreviews', "$dir/translate_groupreviews.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addTable', 'translate_tms', "$dir/translate_tm.sql", true ) );
 
 		return true;
 	}
