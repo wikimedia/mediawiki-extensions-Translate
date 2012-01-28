@@ -199,4 +199,5 @@ $wgAutoloadClasses['ApiQueryMessageGroups'] = $dir . 'api/ApiQueryMessageGroups.
 $wgAutoloadClasses['ApiQueryMessageTranslations'] = $dir . 'api/ApiQueryMessageTranslations.php';
 $wgAutoloadClasses['ApiTranslationReview'] = $dir . 'api/ApiTranslationReview.php';
 $wgAutoloadClasses['ApiGroupReview'] = $dir . 'api/ApiGroupReview.php';
+$wgAutoloadClasses['ApiTTMServer'] = $dir . 'api/ApiTTMServer.php';
 /**@}*/
