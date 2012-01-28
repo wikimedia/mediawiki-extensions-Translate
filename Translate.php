@@ -88,6 +88,7 @@ $wgAPIMetaModules['messagegroups'] = 'ApiQueryMessageGroups';
 $wgAPIMetaModules['messagetranslations'] = 'ApiQueryMessageTranslations';
 $wgAPIModules['translationreview'] = 'ApiTranslationReview';
 $wgAPIModules['groupreview'] = 'ApiGroupReview';
+$wgAPIModules['ttmserver'] = 'ApiTTMServer';
 $wgHooks['APIQueryInfoTokens'][] = 'ApiTranslationReview::injectTokenFunction';
 $wgHooks['APIQueryInfoTokens'][] = 'ApiGroupReview::injectTokenFunction';
 
