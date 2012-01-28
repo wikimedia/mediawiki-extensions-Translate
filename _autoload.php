@@ -121,6 +121,8 @@ $wgAutoloadClasses['TranslateYaml'] = $dir . 'utils/TranslateYaml.php';
 $wgAutoloadClasses['RevTag'] = $dir . 'utils/RevTag.php';
 
 $wgAutoloadClasses['MessageHandle'] = $dir . 'utils/MessageHandle.php';
+$wgAutoloadClasses['TTMServer'] = $dir . 'utils/TTMServer.php';
+
 
 /**@}*/
 

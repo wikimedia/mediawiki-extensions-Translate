@@ -8,14 +8,14 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2006-2011, Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2006-2012, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2012-01-13' );
+define( 'TRANSLATE_VERSION', '2012-01-28' );
 
 /**
  * Extension credits properties.
