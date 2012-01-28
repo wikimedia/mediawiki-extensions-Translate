@@ -612,6 +612,15 @@ Hinweis:
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] ist eine plattformübergreifende Mobiltelefon- und Tablet-PC-Applikation zum Lesen und Bearbeiten der Wikipedia',
 );
 
+/** Zazaki (Zazaki)
+ * @author Erdemaslancan
+ */
+$messages['diq'] = array(
+	'translate-group-desc-eol' => 'Na mesac grubiya [[Translating:EOL|Encyclopedia of Life]]iya',
+	'translate-group-desc-ihris' => 'Na mesac grubiya  [[Translating:iHRIS|iHRIS]]iya',
+	'translate-group-desc-kiwix' => 'Na mesac grubiya [[Translating:Kiwix|Kiwix]]iya',
+);
+
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
  */

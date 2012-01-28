@@ -7155,6 +7155,7 @@ $messages['fa'] = array(
 	'translate-showsub' => 'نمایش {{PLURAL:$1|زیر گروه|$1 زیر گروه}}.',
 	'translate-grouplisting' => 'این فهرستی از تمام گروه‌های قابل ترجمه است.
 روی نام گروه پیغام‌ها کلیک کنید تا فهرستی از پیغام‌های ترجمه‌نشده را ببینید.',
+	'translate-grouplisting-empty' => 'هیچ گروه پیغامی برای ترجمه تنظیم نشده‌است.',
 	'translate-task-view' => 'نمایش تمام پیغام‌ها',
 	'translate-task-untranslated' => 'نمایش تمام پیغام‌های ترجمه نشده',
 	'translate-task-optional' => 'نمایش پیغام‌های اختیاری',
@@ -7162,6 +7163,7 @@ $messages['fa'] = array(
 	'translate-task-untranslatedoptional' => 'نمایش پیغام‌های اختیاری ترجمه‌نشده',
 	'translate-task-problematic' => 'مشاهدهٔ پیغام‌هایی که مشکل دارند',
 	'translate-task-review' => 'بازبینی تغییرها',
+	'translate-task-acceptqueue' => 'پذیرفتن ترجمه‌ها در',
 	'translate-task-reviewall' => 'بازبینی تمام ترجمه‌ها',
 	'translate-task-export' => 'برون‌بری ترجمه‌ها',
 	'translate-task-export-to-file' => 'برون‌بری ترجمه‌ها به یک پرونده',
@@ -7188,9 +7190,11 @@ $messages['fa'] = array(
 	'translate-next' => 'صفحهٔ بعدی',
 	'translate-prev' => 'صفحهٔ قبلی',
 	'translate-page-description-legend' => 'اطلاعات در مورد گروه',
+	'translate-page-description-hasoptional-open' => 'نمایش پیغام‌های اختیاری.',
 	'translate-page-edit' => 'ویرایش',
 	'translate-optional' => '(اختیاری)',
 	'translate-ignored' => '(نادیده گرفته شده)',
+	'translate-edit-jsopen' => 'ویرایش',
 	'translate-edit-title' => 'ویرایش «$1»',
 	'translate-edit-definition' => 'تعریف پیغام',
 	'translate-edit-translation' => 'ترجمه',
@@ -7200,7 +7204,7 @@ $messages['fa'] = array(
 	'translate-edit-in-other-languages' => 'همین پیغام در دیگر زبان‌ها',
 	'translate-edit-committed' => 'ترجمهٔ فعلی در نرم‌افزار',
 	'translate-edit-warnings' => 'هشدار در مورد ترجمه‌های ناکامل',
-	'translate-edit-tmsugs' => 'پیشنهادها ا زحافظه ترجمه',
+	'translate-edit-tmsugs' => 'پیشنهادها از حافظهٔ ترجمه و ترجمهٔ ماشینی',
 	'translate-edit-tmmatch' => '$1٪ مطابقت',
 	'translate-edit-tab-list' => 'فهرست پیغام‌ها',
 	'translate-magic-pagename' => 'ترجمهٔ گسترش یافتهٔ مدیاویکی',
@@ -7213,8 +7217,10 @@ $messages['fa'] = array(
 در ترجمهٔ نام فضاهای نام <code>$1 talk</code> خاص است. <code>$1</code> توسط نام وبگاه جایگزین می‌شود (مانند <code>{{ns:project_talk}}</code>). اگر در زبان شما امکان ایجاد چنین عبارتی بدون تغییر دادن نام وبگاه وجود ندارد، لطفاً با یکی از توسعه‌دهندگان نرم‌افزار تماس بگیرید.
 
 برای ذخیره کردن تغییرها باید عضو گروه ترجمه‌کنندگان باشید. تغییرات زمانی ذخیره می‌شوند که دکمهٔ ذخیره را در پایین صفحه فشار دهید.',
+	'translate-magic-module' => 'ماژول:',
 	'translate-magic-submit' => 'بیاور',
 	'translate-magic-cm-export' => 'برون‌بری',
+	'translate-magic-nothing-to-export' => 'چیزی برای برون‌بری وجود ندارد.',
 	'translate-magic-cm-to-be' => 'آینده',
 	'translate-magic-cm-current' => 'کنونی',
 	'translate-magic-cm-original' => 'اصلی',
@@ -7264,6 +7270,7 @@ $messages['fa'] = array(
 	'translate-langstats-collapseall' => 'نهفتن همه',
 	'translate-language' => 'زبان',
 	'translate-mgs-fieldset' => 'نمایش ترجیحات',
+	'translate-mgs-group' => 'گروه پیغام‌ها:',
 	'translate-mgs-submit' => 'نمایش آمار',
 	'translate-mgs-column-language' => 'زبان',
 	'translate-mgs-totals' => 'همهٔ زبان‌ها با هم',
@@ -7276,6 +7283,7 @@ $messages['fa'] = array(
 	'translate-manage-action-import' => 'درون‌ریزی',
 	'translate-manage-submit' => 'اجرا',
 	'translate-manage-subtitle' => 'مدیریت',
+	'translate-js-save' => 'ذخیره',
 	'translate-js-next' => 'ذخیره و بازکردن بعدی',
 	'translate-js-nonext' => 'این آخرین پیغام این صفحه بود.',
 	'translate-js-skip' => 'پرش به بعدی',
@@ -7297,6 +7305,9 @@ $messages['fa'] = array(
 	'translate-searchprofile-tooltip' => 'جستجو از تمامی ترجمه‌ها',
 	'translate-search-languagefilter' => 'پالایش بر اساس زبان:',
 	'translate-search-nofilter' => 'بدون پالایش',
+	'translate-messagereview-submit' => 'پذیرفتن',
+	'translate-messagereview-progress' => 'پذیرفتن...',
+	'translate-messagereview-failure' => 'پذیرفتن... ناموفق: $1',
 	'translate-stats-workflow' => 'وضعیت',
 );
 
@@ -12449,6 +12460,7 @@ $1',
 	'translate-dynagroup-byc' => '{{GENDER:$1|$1}}による翻訳（$2）',
 	'translate-dynagroup-last' => '{{GENDER:$1|$1}}による最終更新',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}}による最終更新（$2）',
+	'translate-gethelp' => 'ヘルプ',
 );
 
 /** Jamaican Creole English (Patois)
