@@ -321,6 +321,17 @@ if ( !defined( 'TRANSLATE_FUZZY' ) ) {
  * - private API key if provided
  */
 $wgTranslateTranslationServices = array();
+/*
+$wgTranslateTranslationServices['TTMServer'] = array(
+	'database' => false, // Passed to wfGetDB
+	'cutoff' => 0.75,
+	'timeout-sync' => 0, // Unused
+	'timeout-async' => 0, // Unused
+	'type' => 'ttmserver',
+	'public' => false,
+);
+*/
+
 $wgTranslateTranslationServices['Google'] = array(
 	'url' => 'http://ajax.googleapis.com/ajax/services/language/translate',
 	'key' => null,

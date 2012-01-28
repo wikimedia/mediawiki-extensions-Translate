@@ -325,6 +325,66 @@ class TranslationHelpers {
 	}
 
 	/**
+	 * Returns suggestions from a translation memory.
+	 * @param $serviceName
+	 * @param $config
+	 * @return string Html snippet which contains the suggestions.
+	 */
+	protected function getTTMServerBox( $serviceName, $config ) {
+		$this->mustHaveDefinition();
+		$this->mustBeTranslation();
+
+		$source = $this->group->getSourceLanguage();
+		$code = $this->handle->getCode();
+		$definition = $this->getDefinition();
+		$suggestions = TTMServer::primary()->query( $source, $code, $definition );
+		if ( count( $suggestions ) === 0 ) {
+			return null;
+		}
+
+		foreach ( $suggestions as $s ) {
+			$accuracy = wfMsgHtml( 'translate-edit-tmmatch' , sprintf( '%.2f', $s['quality'] * 100 ) );
+			$legend = array( $accuracy => array() );
+
+			$sourceTitle = Title::newFromText( $s['context'] );
+			$handle = new MessageHandle( $sourceTitle );
+			$targetTitle = Title::makeTitle( $sourceTitle->getNamespace(), $handle->getKey() . "/$code" );
+			if ( $targetTitle ) {
+				$legend[$accuracy][] = self::ajaxEditLink( $targetTitle, '•' );
+			}
+
+			// Show the source text in a tooltip
+			$text = $this->suggestionField( $s['target'] );
+			$params = array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] );
+
+			// Group identical suggestions together
+			if ( isset( $sugFields[$s['target']] ) ) {
+				$sugFields[$s['target']][2] = array_merge_recursive( $sugFields[$s['target']][2], $legend );
+			} else {
+				$sugFields[$s['target']] = array( $text, $params, $legend );
+			}
+		}
+
+		foreach ( $sugFields as $field ) {
+			list( $text, $params, $label ) = $field;
+			$legend = array();
+
+			foreach ( $label as $acc => $links ) {
+				$legend[] = $acc . ' ' . implode( " ", $links );
+			}
+
+			$legend = implode( ' | ', $legend );
+			$boxes[] = Html::rawElement( 'div', $params, self::legend( $legend ) . $text . self::clear() ) . "\n";
+		}
+
+		// Limit to three best
+		$boxes = array_slice( $boxes, 0, 3 );
+		$result = implode( "\n", $boxes );
+		return $result;
+	}
+
+
+	/**
 	 * @param $async bool
 	 * @return null|string
 	 * @throws MWException
@@ -342,6 +402,8 @@ class TranslationHelpers {
 
 			if ( $config['type'] === 'tmserver' ) {
 				$boxes[] = $this->getTmBox( $name, $config );
+			} elseif ( $config['type'] === 'ttmserver' ) {
+				$boxes[] = $this->getTTMServerBox( $name, $config );
 			} elseif ( $config['type'] === 'google' ) {
 				$boxes[] = $this->getGoogleSuggestion( $name, $config );
 			} elseif ( $config['type'] === 'microsoft' ) {
