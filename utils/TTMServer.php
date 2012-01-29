@@ -116,11 +116,10 @@ class TTMServer implements iTTMServer  {
 
 		// Insert the new translation
 		$row = $deleteConds + array(
-			'text' => $targetText,
+			'tmt_text' => $targetText,
 		);
 
-		$uniqueIndex = array( 'tmt_sid', 'tmt_lang' );
-		$dbw->insert( 'translate_tmt', array( $uniqueIndex ), $row, __METHOD__ );
+		$dbw->insert( 'translate_tmt', $row, __METHOD__ );
 
 		return true;
 	}

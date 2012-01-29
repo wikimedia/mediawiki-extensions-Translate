@@ -122,6 +122,7 @@ $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations
 
 // Translation memory updates
 $wgHooks['Translate:newTranslation'][] = 'TranslationMemoryUpdater::update';
+$wgHooks['Translate:newTranslation'][] = 'TranslateHooks::updateTM';
 
 // Translation display related
 $wgHooks['ArticleContentOnDiff'][] = 'TranslateEditAddons::displayOnDiff';

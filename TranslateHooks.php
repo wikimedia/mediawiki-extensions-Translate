@@ -385,5 +385,15 @@ JAVASCRIPT;
 		$output = Html::element( 'a', $a, $linktext );
 		return $parser->insertStripItem( $output, $parser->mStripState );
 	}
+
+	/**
+	 * Shovels the new translation into TTMServer.
+	 * Hook: Translate:newTranslation
+	 */
+	public static function updateTM( MessageHandle $handle, $revision, $text, User $user ) {
+		TTMServer::primary()->update( $handle, $text );
+		return true;
+	}
+
 }
 
