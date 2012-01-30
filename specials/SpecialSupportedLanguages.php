@@ -260,6 +260,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 				'href' => "#$k",
 				'class' => 'tag',
 				'style' => "font-size:$size%",
+				'lang' => $k,
 			);
 
 			$tag = Html::element( 'a', $params, $name );
