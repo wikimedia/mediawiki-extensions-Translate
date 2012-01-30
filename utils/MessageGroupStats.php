@@ -113,7 +113,6 @@ class MessageGroupStats {
 	}
 
 	public static function clearGroup( $id ) {
-		wfDebugLog( 'messagegroupstats', "Cleared {$id}" );
 		if ( !count( $id ) ) return;
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array( 'tgs_group' => $id );
