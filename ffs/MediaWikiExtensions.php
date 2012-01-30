@@ -55,7 +55,7 @@ class PremadeMediawikiExtensionGroups {
 		$group = ExtensionMessageGroup::factory( $info['name'], $id );
 		$group->setMessageFile( $info['file'] );
 		$group->setPath( $this->path );
-		$group->namespaces = $this->namespaces;
+		$group->setNamespace( $this->namespace );
 
 		if ( isset( $info['prefix'] ) ) {
 			$mangler = new StringMatcher( $info['prefix'], $info['mangle'] );

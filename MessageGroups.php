@@ -53,7 +53,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	/// Get the namespace where all the messages of this group belongs.
 	public function getNamespace() { return $this->namespace; }
 	/// Set the namespace where all the messages of this group belongs.
-	public function setNamespace() { return $this->namespace; }
+	public function setNamespace( $ns ) { $this->namespace = $ns; }
 
 
 	/**
