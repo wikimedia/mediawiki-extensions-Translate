@@ -109,13 +109,16 @@ class MessageGroupStats {
 		);
 
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
+		wfDebugLog( 'messagegroupstats', "Cleared " . serialize( $conds ) );
 	}
 
 	public static function clearGroup( $id ) {
+		wfDebugLog( 'messagegroupstats', "Cleared {$id}" );
 		if ( !count( $id ) ) return;
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array( 'tgs_group' => $id );
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
+		wfDebugLog( 'messagegroupstats', "Cleared " . serialize( $conds ) );
 	}
 
 	public static function clearLanguage( $code ) {
@@ -123,6 +126,7 @@ class MessageGroupStats {
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array( 'tgs_lang' => $code );
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
+		wfDebugLog( 'messagegroupstats', "Cleared " . serialize( $conds ) );
 	}
 
 	/**
@@ -131,6 +135,7 @@ class MessageGroupStats {
 	public static function clearAll() {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete( self::TABLE, '*' );
+		wfDebugLog( 'messagegroupstats', "Cleared everything :(" );
 	}
 
 	protected static function extractResults( $res, $stats = array() ) {
