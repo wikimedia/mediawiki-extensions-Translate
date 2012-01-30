@@ -884,36 +884,42 @@ class TranslationHelpers {
 	}
 
 	protected function formatGettextComments() {
-		if ( $this->group instanceof FileBasedMessageGroup ) {
-			$ffs = $this->group->getFFS();
-			if ( $ffs instanceof GettextFFS ) {
-				global $wgContLang;
-				$mykey = $wgContLang->lcfirst( $this->handle->getKey() );
-				$data = $ffs->read( $this->group->getSourceLanguage() );
-				$help = $data['TEMPLATE'][$mykey]['comments'];
-				// Do not display an empty comment. That's no help and takes up unnecessary space.
-				$conf = $this->group->getConfiguration();
-				if ( isset( $conf['BASIC']['codeBrowser'] ) ) {
-					$out = '';
-					$pattern = $conf['BASIC']['codeBrowser'];
-					$pattern = str_replace( '%FILE%', '\1', $pattern );
-					$pattern = str_replace( '%LINE%', '\2', $pattern );
-					$pattern = "[$pattern \\1:\\2]";
-					foreach ( $help as $type => $lines ) {
-						if ( $type === ':' ) {
-							$files = '';
-							foreach ( $lines as $line ) {
-								$files .= ' ' . preg_replace( '/([^ :]+):(\d+)/', $pattern, $line );
-							}
-							$out .= "<nowiki>#:</nowiki> $files<br />";
-						} else {
-							foreach ( $lines as $line ) {
-								$out .= "<nowiki>#$type</nowiki> $line<br />";
-							}
+		$this->mustBeKnownMessage();
+		// We need to get the primary group to get the correct file
+		// So $group can be different from $this->group
+		$group = $this->handle->getGroup();
+		if ( !$group instanceof FileBasedMessageGroup ) {
+			return '';
+		}
+
+		$ffs = $group->getFFS();
+		if ( $ffs instanceof GettextFFS ) {
+			global $wgContLang;
+			$mykey = $wgContLang->lcfirst( $this->handle->getKey() );
+			$data = $ffs->read( $this->group->getSourceLanguage() );
+			$help = $data['TEMPLATE'][$mykey]['comments'];
+			// Do not display an empty comment. That's no help and takes up unnecessary space.
+			$conf = $this->group->getConfiguration();
+			if ( isset( $conf['BASIC']['codeBrowser'] ) ) {
+				$out = '';
+				$pattern = $conf['BASIC']['codeBrowser'];
+				$pattern = str_replace( '%FILE%', '\1', $pattern );
+				$pattern = str_replace( '%LINE%', '\2', $pattern );
+				$pattern = "[$pattern \\1:\\2]";
+				foreach ( $help as $type => $lines ) {
+					if ( $type === ':' ) {
+						$files = '';
+						foreach ( $lines as $line ) {
+							$files .= ' ' . preg_replace( '/([^ :]+):(\d+)/', $pattern, $line );
+						}
+						$out .= "<nowiki>#:</nowiki> $files<br />";
+					} else {
+						foreach ( $lines as $line ) {
+							$out .= "<nowiki>#$type</nowiki> $line<br />";
 						}
 					}
-					return "$out";
 				}
+				return "$out";
 			}
 		}
 
