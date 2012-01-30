@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @copyright Copyright © 2008-2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -16,7 +16,7 @@ class PremadeMediawikiExtensionGroups {
 	protected $definitionFile = null;
 	protected $useConfigure = true;
 	protected $idPrefix = 'ext-';
-	protected $namespaces = array( NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
+	protected $namespace = NS_MEDIAWIKI;
 
 	public function __construct() {
 		global $wgTranslateExtensionDirectory;

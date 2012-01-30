@@ -5,7 +5,7 @@
  * @file
  * @author Niklas Laxström
  * @author Krinkle
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @copyright Copyright © 2008-2012, Niklas Laxström
  * @copyright Copyright © 2011, Krinkle
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
@@ -17,7 +17,7 @@ class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 	protected $useConfigure = false;
 	protected $groups;
 	protected $idPrefix = 'tsint-';
-	protected $namespaces = array( NS_TOOLSERVER, NS_TOOLSERVER_TALK );
+	protected $namespace = NS_TOOLSERVER;
 
 	public function __construct() {
 		global $wgTranslateGroupRoot;

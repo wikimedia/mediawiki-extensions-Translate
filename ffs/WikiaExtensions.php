@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @copyright Copyright © 2008-2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -15,7 +15,7 @@ class PremadeWikiaExtensionGroups extends PremadeMediawikiExtensionGroups {
 	protected $useConfigure = false;
 	protected $idPrefix = 'wikia-';
 	protected $path = null;
-	protected $namespaces = array( NS_WIKIA, NS_WIKIA_TALK );
+	protected $namespace = NS_WIKIA;
 
 	public function __construct() {
 		global $wgTranslateGroupRoot;
