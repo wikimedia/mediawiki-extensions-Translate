@@ -177,6 +177,7 @@ class TranslationHelpers {
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
 			return $wgLanguageCode;
 		}
+		return $code;
 	}
 
 	/**
