@@ -1182,6 +1182,11 @@ class MessageGroups {
 	public static function getGroup( $id ) {
 		// BC with page| which is now page-
 		$id = strtr( $id, '|', '-' );
+		/* Translatable pages use spaces, but MW occasionally likes to
+		 * normalize spaces to underscores */
+		if ( strpos( $id, 'page-' ) === 0 ) {
+			$id = strtr( $id, '_', ' ' );
+		}
 		self::init();
 
 		global $wgTranslateEC, $wgTranslateAC, $wgTranslateCC;
