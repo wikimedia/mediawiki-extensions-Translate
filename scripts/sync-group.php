@@ -70,7 +70,7 @@ if ( isset( $options['group'] ) ) {
 	}
 }
 
-if( !count( $groups ) {
+if( !count( $groups ) ) {
 	STDERR( "ESG2: No valid message groups identified." );
 	exit( 1 );
 }
