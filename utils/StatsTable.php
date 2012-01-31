@@ -32,6 +32,7 @@ class StatsTable {
 
 	public function __construct() {
 		global $wgLang;
+
 		$this->lang = $wgLang;
 		$this->translate = SpecialPage::getTitleFor( 'Translate' );
 	}
@@ -46,13 +47,18 @@ class StatsTable {
 	 */
 	public function element( $in, $bgcolor = '', $sort = '' ) {
 		$attributes = array();
-		if ( $sort ) $attributes['data-sort-value'] = $sort;
+
+		if ( $sort ) {
+			$attributes['data-sort-value'] = $sort;
+		}
+
 		if ( $bgcolor ) {
 			$attributes['style'] = "background-color: #" . $bgcolor;
 			$attributes['class'] = 'hover-color';
 		}
 
 		$element = Html::element( 'td', $attributes, $in );
+
 		return $element;
 	}
 
@@ -62,7 +68,11 @@ class StatsTable {
 		if ( $fuzzy ) {
 			// Weigh fuzzy with factor 20.
 			$v = $v * 20;
-			if ( $v > 255 ) $v = 255;
+
+			if ( $v > 255 ) {
+				$v = 255;
+			}
+
 			$v = 255 - $v;
 		}
 
@@ -134,10 +144,12 @@ class StatsTable {
 	 */
 	public function makeTotalRow( Message $message, $numbers ) {
 		list( $total, $translated, $fuzzy ) = $numbers;
+
 		$out  = "\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . Html::element( 'td', array(), $message->text() );
 		$out .= $this->makeNumberColumns( $fuzzy, $translated, $total );
 		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
+
 		return $out;
 	}
 
@@ -153,6 +165,7 @@ class StatsTable {
 			$na = "\n\t\t" . Html::element( 'td', array( 'data-sort-value' => -1 ), '...' );
 			$nap =  "\n\t\t" . $this->element( '...', 'AFAFAF', -1 );
 			$out = $na . $na . $nap . $nap;
+
 			return $out;
 		}
 
@@ -181,6 +194,7 @@ class StatsTable {
 	 */
 	public function formatPercentage( $num ) {
 		$fmt = $this->lang->formatNum( number_format( round( 100 * $num, 2 ), 2 ) );
+
 		return wfMessage( 'percent', $fmt )->text();
 	}
 
@@ -208,7 +222,6 @@ class StatsTable {
 	 * @return string Html
 	 */
 	public function makeGroupLink( MessageGroup $group, $code, $params ) {
-
 		$queryParameters = $params + array(
 			'group' => $group->getId(),
 			'language' => $code
@@ -238,19 +251,24 @@ class StatsTable {
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$key = wfMemckey( "translate-groupdesc-$code-" . $group->getId() );
 		$desc = $cache->get( $key );
+
 		if ( is_string( $desc ) ) {
 			return $desc;
 		}
 
 		$realFunction = array( 'MessageCache', 'singleton' );
+
 		if ( is_callable( $realFunction ) ) {
 			$mc = MessageCache::singleton();
 		} else {
 			global $wgMessageCache;
+
 			$mc = $wgMessageCache;
 		}
+
 		$desc = $mc->transform( $group->getDescription(), true, $this->lang );
 		$cache->set( $key, $desc );
+
 		return $desc;
 	}
 

@@ -129,7 +129,7 @@
 			var height = $( window ).height() * 0.7;
 			dialogwidth = $( window ).width() * 0.8;
 			mw.util.addCSS( "/* Inserted by ext.translate.quickedit */\n" +
-				".mw-sp-translate-edit-fields {\n" + 
+				".mw-sp-translate-edit-fields {\n" +
 				"\tmax-height: " + height + "px;\n" +
 				"\toverflow: auto\n}\n"
 			);

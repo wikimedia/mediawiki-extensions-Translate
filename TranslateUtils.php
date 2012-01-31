@@ -319,7 +319,7 @@ class TranslateUtils {
 		$out->addModules( 'ext.translate.helplink' );
 		$text = wfMessage( 'translate-gethelp' )->escaped();
 
-		if( $overrideBaseUrl ) {
+		if ( $overrideBaseUrl ) {
 			$helpUrl = $to;
 		} else {
 			$helpUrl = "//www.mediawiki.org/wiki/Special:MyLanguage/$to";

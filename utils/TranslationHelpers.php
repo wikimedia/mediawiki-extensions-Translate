@@ -1083,7 +1083,7 @@ class TranslationHelpers {
 				$text = wfMessage( 'translate-dynagroup-last', $user )->escaped();
 			}
 		}
-		
+
 		return TranslateUtils::fieldset( $text, $diffText, array( 'class' => 'mw-sp-translate-latestchange' ) );
 	}
 

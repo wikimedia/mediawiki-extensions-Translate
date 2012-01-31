@@ -686,7 +686,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		}
 		return $messages;
 	}
-		
+
 
 	public function initCollection( $code ) {
 		$messages = $this->loadMessagesFromCache( $this->getGroups() );

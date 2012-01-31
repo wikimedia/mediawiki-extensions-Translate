@@ -39,7 +39,7 @@ class ApiTTMServer extends ApiBase {
 
 	protected function getAvailableTranslationServices() {
 		global $wgTranslateTranslationServices;
-		
+
 		$good = array();
 		foreach ( $wgTranslateTranslationServices as $id => $config ) {
 			if ( $config['type'] === 'ttmserver' && $config['public'] === true ) {

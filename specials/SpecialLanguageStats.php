@@ -21,7 +21,6 @@
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialLanguageStats extends IncludableSpecialPage {
-
 	/**
 	 * @var StatsTable
 	 */
@@ -80,7 +79,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	public function __construct() {
 		parent::__construct( 'LanguageStats' );
+
 		global $wgLang;
+
 		$this->target = $wgLang->getCode();
 	}
 
@@ -99,12 +100,15 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$wgOut->addModules( 'ext.translate.messagetable' );
 
 		$params = explode( '/', $par  );
+
 		if ( isset( $params[0] ) && trim( $params[0] ) ) {
 			$this->target = $params[0];
 		}
+
 		if ( isset( $params[1] ) ) {
 			$this->noComplete = (bool)$params[1];
 		}
+
 		if ( isset( $params[2] ) ) {
 			$this->noEmpty = (bool)$params[2];
 		}
@@ -146,12 +150,14 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 */
 	protected function isValidValue( $value ) {
 		$langs = Language::getLanguageNames( false );
+
 		return isset( $langs[$value] );
 	}
 
 	/// Called when the target is unknown.
 	protected function invalidTarget() {
 		global $wgOut;
+
 		$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-page-no-such-language' );
 	}
 
@@ -233,6 +239,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 */
 	function addWorkflowStatesColumn() {
 		global $wgTranslateWorkflowStates;
+
 		if ( $wgTranslateWorkflowStates ) {
 			$this->states = self::getWorkflowStates();
 			$this->statemap = array_flip( array_keys( $wgTranslateWorkflowStates ) );
@@ -249,11 +256,13 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 */
 	function getWorkflowStateCell( $target ) {
 		global $wgTranslateWorkflowStates;
+
 		if ( $wgTranslateWorkflowStates ) {
 			$state = isset( $this->states[$target] ) ? $this->states[$target] : '';
 			$sort = isset( $this->statemap[$state] ) ? $this->statemap[$state] + 1 : -1;
 			$stateMessage = wfMessage( "translate-workflow-state-$state" );
 			$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
+
 			return "\n\t\t" . $this->table->element(
 				$stateText,
 				isset( $wgTranslateWorkflowStates[$state] ) ? $wgTranslateWorkflowStates[$state] : '',
@@ -296,14 +305,16 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$out .= Html::closeElement( 'tfoot' );
 
 			$out .= Html::closeElement( 'table' );
+
 			return $out;
 		} else {
 			$this->nothing = true;
+
 			return '';
 		}
 
-		/// @todo: Allow extra message here, once total translated volume goes
-		///        over a certain percentage? (former live hack at translatewiki)
+		/// @todo Allow extra message here, once total translated volume goes
+		///       over a certain percentage? (former live hack at translatewiki)
 		/// if ( $this->totals['2'] && ( $this->totals['1'] / $this->totals['2'] ) > 0.95 ) {
 		/// 	$out .= wfMessage( 'translate-somekey' );
 		/// }
@@ -323,10 +334,12 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out = '';
 		$top = array_shift( $item );
 		$out .= $this->makeGroupRow( $top, $cache, $parent === '' ? true : $parent );
+
 		foreach ( $item as $subgroup ) {
 			$parents = trim( $parent . ' ' . $top->getId() );
 			$out .= $this->makeGroupGroup( $subgroup, $cache, $parents );
 		}
+
 		return $out;
 	}
 
@@ -377,6 +390,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$rowParams = array();
 		$rowParams['data-groupid'] = $groupId;
+
 		if ( is_string( $parent ) ) {
 			$rowParams['data-parentgroups'] = $parent;
 		} elseif ( $parent === true ) {
@@ -390,6 +404,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= $this->getWorkflowStateCell( $groupId );
 
 		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
+
 		return $out;
 	}
 
@@ -413,10 +428,13 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			array( $targetCol => $this->target ),
 			__METHOD__
 		);
+
 		$states = array();
+
 		foreach ( $res as $row ) {
 			$states[$row->$selectKey] = $row->tgr_state;
 		}
+
 		return $states;
 	}
 }

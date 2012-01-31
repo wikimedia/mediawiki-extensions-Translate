@@ -99,7 +99,7 @@ if ( isset( $options['group'] ) ) {
 	foreach ( $groupIds as $groupId ) {
 		$group = MessageGroups::getGroup( $groupId );
 
-		if( $group !== null ) {
+		if ( $group !== null ) {
 			$groups[$groupId] = $group;
 		} else {
 			STDERR( "Invalid group $groupId" );

@@ -33,7 +33,7 @@ class TTMServerBootstrap extends Maintenance {
 	protected function statusLine( $text, $channel = null ) {
 		$pid =  sprintf( "%5s", getmypid() );
 		$prefix = sprintf( "%6.2f", microtime( true ) - $this->start );
-		$mem = sprintf( "%5.1fM", ( memory_get_usage( true ) / (1024*1024) ) );
+		$mem = sprintf( "%5.1fM", ( memory_get_usage( true ) / ( 1024 * 1024 ) ) );
 		$this->output( "$pid $prefix $mem  $text", $channel );
 	}
 
@@ -53,7 +53,7 @@ class TTMServerBootstrap extends Maintenance {
 		$this->output( 'fulltext.. ', 1 );
 		$dbw->delete( 'translate_tmf', '*', __METHOD__ );
 		$table = $dbw->tableName( 'translate_tmf' );
-		#$dbw->query( "DROP INDEX tmf_text ON $table" );
+		# $dbw->query( "DROP INDEX tmf_text ON $table" );
 		$this->output( 'done!', 1 );
 
 		$this->statusLine( 'Loading groups... ', 2 );
@@ -187,7 +187,7 @@ class TTMServerBootstrap extends Maintenance {
 					$this->output( '.', $targetLanguage );
 				}
 				wfWaitForSlaves( 10 );
-			} while( count( $inserts ) );
+			} while ( count( $inserts ) );
 		}
 
 		if ( $multi ) {
