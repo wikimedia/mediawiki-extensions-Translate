@@ -36,9 +36,12 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	}
 
 	/// Overwritten from SpecialLanguageStats
-	protected function getAllowedValues() {
-		$groups = MessageGroups::getAllGroups();
-		return array_keys( $groups );
+	protected function isValidValue( $value ) {
+		$group = MessageGroups::getGroup( $value );
+		if ( $group ) {
+			$this->target = $group->getId();
+		}
+		return (bool) $group;
 	}
 
 	/// Overwritten from SpecialLanguageStats

@@ -124,8 +124,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$wgOut->addHTML( $this->getForm() );
 		}
 
-		$allowedValues = $this->getAllowedValues();
-		if ( in_array( $this->target, $allowedValues, true ) ) {
+		if ( $this->isValidValue( $this->target ) ) {
 			$this->outputIntroduction();
 			$output = $this->getTable();
 			if ( $this->incomplete ) {
@@ -145,9 +144,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * Return the list of allowed values for target here.
 	 * @return array
 	 */
-	protected function getAllowedValues() {
+	protected function isValidValue( $value ) {
 		$langs = Language::getLanguageNames( false );
-		return array_keys( $langs );
+		return isset( $langs[$value] );
 	}
 
 	/// Called when the target is unknown.
