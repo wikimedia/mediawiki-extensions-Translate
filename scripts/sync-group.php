@@ -10,7 +10,7 @@
 
 /// @cond
 
-$optionsWithArgs = array( 'group', 'lang', 'start', 'end' );
+$optionsWithArgs = array( 'group', 'groupprefix', 'lang', 'start', 'end' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 # Override the memory limit for wfShellExec, 100 MB seems to be too little for svn
@@ -19,13 +19,15 @@ $wgMaxShellMemory = 1024 * 200;
 function showUsage() {
 	STDERR( <<<EOT
 Options:
-  --group       Comma separated list of group IDs or *
+  --group       Comma separated list of group IDs
+  --groupprefix Prefix of group IDs to be exported message groups (cannot use
+                group)
   --lang        Comma separated list of language codes or *
   --norc        Do not add entries to recent changes table
   --help        This help message
   --noask       Skip all conflicts
-  --start       Start of the last export (changes in wiki after this will conflict)
-  --end         End of the last export (changes in source before this wont conflict)
+  --start       Start of the last export (changes in wiki after will conflict)
+  --end         End of the last export (changes in source after will conflict)
   --nocolor     Without colours
 EOT
 );
@@ -36,22 +38,41 @@ if ( isset( $options['help'] ) ) {
 	showUsage();
 }
 
-if ( !isset( $options['group'] ) ) {
-	STDERR( "ESG1: Message group id must be supplied with group parameter." );
+if ( !isset( $options['group'] ) && !isset( $options['groupprefix'] ) ) {
+	STDERR( "ESG1: Message group id must be supplied with group or groupprefix parameter." );
 	exit( 1 );
 }
 
-$group = MessageGroups::getGroup( $options['group'] );
-if ( $group === null ) {
-	if ( $options['group'] === '*' ) {
-		$mg = MessageGroups::singleton();
-		$groups = $mg->getGroups();
-	} else {
-		STDERR( "ESG2: Invalid message group was given." );
-		exit( 1 );
+$groups = array();
+
+// @todo FIXME: Code duplication with export.php
+if ( isset( $options['group'] ) ) {
+	// Explode parameter
+	$groupIds = explode( ',', trim( $options['group'] ) );
+
+	// Get groups and add groups to array
+	foreach ( $groupIds as $groupId ) {
+		$group = MessageGroups::getGroup( $groupId );
+
+		if( $group !== null ) {
+			$groups[$groupId] = $group;
+		}
 	}
 } else {
-	$groups = array( $group );
+	// Apparently using option groupprefix. Find groups that match.
+	$allGroups = MessageGroups::singleton()->getGroups();
+
+	// Add matching groups to groups array.
+	foreach ( $allGroups as $groupId => $messageGroup ) {
+		if ( strpos( $groupId, $options['groupprefix'] ) === 0 && !$messageGroup->isMeta() ) {
+			$groups[$groupId] = $messageGroup;
+		}
+	}
+}
+
+if( !count( $groups ) {
+	STDERR( "ESG2: No valid message groups identified." );
+	exit( 1 );
 }
 
 if ( !isset( $options['lang'] ) || strval( $options['lang'] ) === '' ) {

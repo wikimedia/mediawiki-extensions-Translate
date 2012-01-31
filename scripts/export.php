@@ -90,6 +90,7 @@ $reqLangs = Cli::parseLanguageCodes( $options['lang'] );
 
 $groups = array();
 
+// @todo FIXME: Code duplication with sync-group.php
 if ( isset( $options['group'] ) ) {
 	// Explode parameter
 	$groupIds = explode( ',', trim( $options['group'] ) );

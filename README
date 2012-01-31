@@ -30,10 +30,9 @@ And for the code at:
 
 == Change log ==
 * 2012-01-31
-- export.php changes:
-  - switch "grouptrail" renamed to "groupprefix"
-  - switch "groups" dropped. "group" now takes a comma separated list of group
-    IDs, too.
+- export.php: switch "grouptrail" renamed to "groupprefix" and switch "groups"
+  was dropped. "group" now takes a comma separated list of groups IDs, too.
+- sync-group.php: switch "groupprefix" added.
 * 2012-01-13
 - export.php has a switch "--no-fuzzy" that will filter out fuzzy messages
   for file based message groups.
