@@ -25,6 +25,7 @@ Options:
   --group       Comma separated list of group IDs (cannot use groupprefix)
   --groupprefix Prefix of group IDs to be exported message groups (cannot use
                 group)
+  --help        This help message
   --threshold   Do not export under this percentage translated
   --ppgettext   Group root path for checkout of product. "msgmerge" will post
                 process on the export result based on the current definitionFile
@@ -95,7 +96,11 @@ if ( isset( $options['group'] ) ) {
 
 	// Get groups and add groups to array
 	foreach ( $groupIds as $groupId ) {
-		$groups[$groupId] = MessageGroups::getGroup( $groupId );
+		$group = MessageGroups::getGroup( $groupId );
+
+		if( $group !== null ) {
+			$groups[$groupId] = $group;
+		}
 	}
 } else {
 	// Apparently using option groupprefix. Find groups that match.
