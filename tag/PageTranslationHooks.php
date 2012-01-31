@@ -452,7 +452,7 @@ FOO;
 
 		$legend  = Html::rawElement(
 			'div',
-			array( 'style' => 'font-size: x-small; text-align: center;' ),
+			array( 'class' => 'mw-pt-translate-header' ),
 			$wgLang->semicolonList( $actions )
 		) . Html::element( 'hr' );
 
