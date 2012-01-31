@@ -660,12 +660,16 @@ class AggregateMessageGroup extends MessageGroupBase {
 		return $all;
 	}
 
-	public function initCollection( $code ) {
+	protected function loadMessagesFromCache( $groups ) {
 		$messages = array();
-
-		foreach ( $this->getGroups() as $group ) {
+		foreach ( $groups as $group ) {
 			if ( $group instanceof MessageGroupOld ) {
 				$messages += $group->getDefinitions();
+				continue;
+			}
+
+			if ( $group instanceof AggregateMessageGroup ) {
+				$messages += $this->loadMessagesFromCache( $group->getGroups() );
 				continue;
 			}
 
@@ -676,7 +680,12 @@ class AggregateMessageGroup extends MessageGroupBase {
 				}
 			}
 		}
+		return $messages;
+	}
+		
 
+	public function initCollection( $code ) {
+		$messages = $this->loadMessagesFromCache( $this->getGroups() );
 		$namespace = $this->getNamespace();
 		$definitions = new MessageDefinitions( $messages, $namespace );
 		$collection = MessageCollection::newFromDefinitions( $definitions, $code );
