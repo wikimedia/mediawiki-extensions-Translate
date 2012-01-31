@@ -15,7 +15,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2012-01-28' );
+define( 'TRANSLATE_VERSION', '2012-01-31' );
 
 /**
  * Extension credits properties.
