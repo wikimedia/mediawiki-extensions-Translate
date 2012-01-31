@@ -619,6 +619,10 @@ class AggregateMessageGroup extends MessageGroupBase {
 					continue;
 				}
 
+				if ( MessageGroups::getPriority( $group ) === 'discouraged' ) {
+					continue;
+				}
+
 				$groups[$id] = $group;
 			}
 
