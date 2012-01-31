@@ -9,7 +9,7 @@
  * @file
  */
 
-$optionsWithArgs = array( 'lang', 'skip', 'target', 'group', 'groups', 'grouptrail', 'threshold', 'ppgettext' );
+$optionsWithArgs = array( 'lang', 'skip', 'target', 'group', 'groups', 'groupprefix', 'threshold', 'ppgettext' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 function showUsage() {
@@ -24,8 +24,8 @@ Options:
   --skip        Languages to skip, comma separated list
   --group       Group ID (cannot use groups grouptrial)
   --groups      Group IDs, comma separated list (cannot use group or grouptrial)
-  --grouptrail  Trial for IDs of to be exported message groups (cannot use
-                group or grouptrial)
+  --groupprefix Prefix of group IDs to be exported message groups (cannot use
+                group or groups)
   --threshold   Do not export under this percentage translated
   --ppgettext   Group root path for checkout of product. "msgmerge" will post
                 process on the export result based on the current definitionFile
@@ -58,8 +58,8 @@ if ( isset( $options['skip'] ) ) {
 	$skip = array();
 }
 
-if ( !isset( $options['group'] ) && !isset( $options['groups'] ) && !isset( $options['grouptrail'] ) ) {
-	STDERR( "You need to specify one or more groups using any of the options 'group', 'groups' or 'grouptrail'" );
+if ( !isset( $options['group'] ) && !isset( $options['groups'] ) && !isset( $options['groupprefix'] ) ) {
+	STDERR( "You need to specify one or more groups using any of the options 'group', 'groups' or 'groupprefix'" );
 	exit( 1 );
 }
 
@@ -101,12 +101,12 @@ if ( isset( $options['group'] ) ) {
 		$groups[$groupId] = MessageGroups::getGroup( $groupId );
 	}
 } else {
-	// Apparently using option grouptrail. Find groups that match.
+	// Apparently using option groupprefix. Find groups that match.
 	$allGroups = MessageGroups::singleton()->getGroups();
 
 	// Add matching groups to groups array.
 	foreach ( $allGroups as $groupId => $messageGroup ) {
-		if ( strpos( $groupId, $options['grouptrail'] ) === 0 && !$messageGroup->isMeta() ) {
+		if ( strpos( $groupId, $options['groupprefix'] ) === 0 && !$messageGroup->isMeta() ) {
 			$groups[$groupId] = $messageGroup;
 		}
 	}
