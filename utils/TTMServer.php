@@ -106,7 +106,7 @@ class TTMServer implements iTTMServer  {
 		 * longer. The old translations are still kept until purged by
 		 * rerunning the bootstrap script. */
 		$conds = array(
-			'tms_context' => $title->getPrefixedText()
+			'tms_context' => $title->getPrefixedText(),
 			'tms_text' => $definition,
 		);
 		$sid = $dbw->selectField( 'translate_tms', 'tms_sid', $conds, __METHOD__ );
