@@ -3,7 +3,9 @@
  * Command line script to import/update source messages and translations into the wiki database.
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2010, Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2007-2012, Niklas Laxström
+ * @copyright Copyright © 2009-2012, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
@@ -56,6 +58,8 @@ if ( isset( $options['group'] ) ) {
 
 		if( $group !== null ) {
 			$groups[$groupId] = $group;
+		} else {
+			STDERR( "Invalid group $groupId" );
 		}
 	}
 } else {

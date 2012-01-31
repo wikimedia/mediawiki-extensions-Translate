@@ -15,30 +15,68 @@ More documenation is at
  http://translatewiki.net/wiki/Translating:Documentation#Documentation_for_system_administrators
 
 == Contributing ==
-Translations? -> go to http://translatewiki.net and sign up.
-Code? File format handlers? New message groups? Graphics? Suggestions?
-Bug reports? -> please start a thread at http://translatewiki.net/wiki/Support
-or join us at #mediawiki-i18n and let us know what you have in mind.
+* Translations? Go to https://translatewiki.net and sign up.
+* Code? File format handlers? New message groups? Graphics? Suggestions?
+* Bug reports? Please start a thread at http://translatewiki.net/wiki/Support,
+  report a bug in https://bugzilla.wikimedia.org or join us at #mediawiki-i18n
+  and let us know what you have in mind.
 
-Bugs and feature requests are collected at:
- http://translatewiki.net/wiki/Issues_and_features
+Some known bugs and feature requests are collected at:
+ https://translatewiki.net/wiki/Issues_and_features
 
 Documentation for the extension is at:
- http://translatewiki.net/wiki/Translating:Documentation
+ https://www.mediawiki.org/wiki/Help:Extension:Translate
 And for the code at:
- http://translatewiki.net/docs/Translate/html/
+ https://translatewiki.net/docs/Translate/html/
 
 == Change log ==
 * 2012-01-31
-- export.php: switch "grouptrail" renamed to "groupprefix" and switch "groups"
+- export.php: switch "grouptrail" renamed to "groupprefix" and switch "groups".
   was dropped. "group" now takes a comma separated list of groups IDs, too.
 - sync-group.php: switch "groupprefix" added.
+- Double counting of messages when adding message groups and aggregate groups to
+  another aggregate group was partially resolved.
+- Messages for translatable pages for which translation is discouraged, are no
+  longer added to aggregate message groups to avoid mismatches in statistics.
+- Special:MessageGroupStats now works for group IDs with spaces.
+- Updates were made for the translation memory service, to avoid serving
+  incorrect or outdated suggestions.
+* 2012-01-30
+- Statictics issues introduced recently were resolved.
+- "lang" attributes were added to Special:SupportedLanguages.
+- [[Special:Translate/groupname]] links for translatable pages with spaces or
+  colons in them are now possible. For page "Some page" it is:
+  [[Special:Translate/page-Some_page]].
+- The JavaScript translation editor now shows the code browser and gettext
+  comments when translating aggregate message groups.
+- Logging was added group statistics caching to determine if cache purges happen
+  too often.
+* 2012-01-29
+- Update functionality for the translation memory was added.
+* 2012-01-28
+- Code readability improvements were made.
+- A translation memory service was added, including a bootstrap script.
+* 2012-01-22
+- Message groups are no longer forced to implement getBools. getTags is the
+  official way to do this.
+- getDefinitions was added to the MessageGroupInterface.
+- The public $namespaces variable in MessageGroup was removed.
+* 2012-01-20
+- Browser compatibility updates were made in CSS.
+* 2012-01-19
+- Deprecated hook LanguageGetMagic was removed.
+* 2012-01-16
+- Help icons linking to documentation at
+  https://www.mediawiki.org/Help:Extension:Translate or sub pages were added to
+  extension functionality.
+- Backward compatibility with MediaWiki 1.18 was restored.
 * 2012-01-13
-- export.php has a switch "--no-fuzzy" that will filter out fuzzy messages
-  for file based message groups.
+- export.php has a switch "no-fuzzy" that will filter out fuzzy messages for
+  file based message groups.
 - Special:PageTranslation has now better error checking for invalid and
   duplicate translation unit names.
 - Special pages have now help links.
+- Images were moved to a resources sub folder.
 * 2012-01-11
 - Translate page group id prefix was changed from page| to page-. Some old
   links need to be updated, some still work.
