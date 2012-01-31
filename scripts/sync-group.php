@@ -19,14 +19,14 @@ $wgMaxShellMemory = 1024 * 200;
 function showUsage() {
 	STDERR( <<<EOT
 Options:
-	--group	comma separated list of group ids or *
-	--lang	comma separated list of language codes or *
-	--norc	do not add entries to recent changes table
-	--help	this help
-	--noask	skip all conflicts
-	--start	start of the last export (changes in wiki after this will conflict)
-	--end	end of the last export (changes in source before this wont conflict)
-	--nocolor	without colours
+  --group       Comma separated list of group IDs or *
+  --lang        Comma separated list of language codes or *
+  --norc        Do not add entries to recent changes table
+  --help        This help message
+  --noask       Skip all conflicts
+  --start       Start of the last export (changes in wiki after this will conflict)
+  --end         End of the last export (changes in source before this wont conflict)
+  --nocolor     Without colours
 EOT
 );
 	exit( 1 );
