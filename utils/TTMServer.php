@@ -100,14 +100,21 @@ class TTMServer implements iTTMServer  {
 
 		$dbw = $this->getDB( DB_MASTER );
 		/* Check that the definition exists and fetch the sid. If not, add
-		 * the definition and retrieve the sid. */
-		$conds = array( 'tms_context' => $title->getPrefixedText() );
+		 * the definition and retrieve the sid. If the definition changes,
+		 * we will create a new entry - otherwise we could at some point
+		 * get suggestions which do not match the original definition any
+		 * longer. The old translations are still kept until purged by
+		 * rerunning the bootstrap script. */
+		$conds = array(
+			'tms_context' => $title->getPrefixedText()
+			'tms_text' => $definition,
+		);
 		$sid = $dbw->selectField( 'translate_tms', 'tms_sid', $conds, __METHOD__ );
 		if ( $sid === false ) {
 			$sid = $this->insertSource( $title, $sourceLanguage, $definition );
 		}
 
-		// Delete old translations for this message
+		// Delete old translations for this message if any. Could also use replace
 		$deleteConds = array(
 			'tmt_sid' => $sid,
 			'tmt_lang' => $targetLanguage,
