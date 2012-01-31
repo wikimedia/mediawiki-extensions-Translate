@@ -908,6 +908,70 @@ $messages['eu'] = array(
 	'translate-fs-permissions-submit' => 'Eskaera bidali',
 );
 
+/** Persian (فارسی)
+ * @author Huji
+ */
+$messages['fa'] = array(
+	'firststeps' => 'گام‌های نخست',
+	'firststeps-desc' => '[[Special:FirstSteps|گام‌های نخست]] برای به راه افتادن کاربران در ویکی با استفاده از افزونه ترجمه',
+	'translate-fs-pagetitle-done' => '- شد!',
+	'translate-fs-pagetitle-pending' => '- در انتظار',
+	'translate-fs-pagetitle' => 'جادوگر آغاز به کار - $1',
+	'translate-fs-signup-title' => 'ثبت نام',
+	'translate-fs-settings-title' => 'تنظیمات‌تان را پیکربندی کنید',
+	'translate-fs-userpage-title' => 'صفحه کاربری‌تان را ایجاد کنید',
+	'translate-fs-permissions-title' => 'درخواست مجوز مترجم بدهید',
+	'translate-fs-target-title' => 'شروع به ترجمه کنید!',
+	'translate-fs-email-title' => 'نشانی پست الکترونیکی خود را تأیید کنید',
+	'translate-fs-intro' => "به جادوگر گام‌های نخست {{SITENAME}} خوش آمدید.
+شما گام به گام در راه مترجم شدن راهنمایی خواهید شد.
+در انتها شما قادر خواهید بود ''پیغام‌های رابط کاربری'' تمام پروژه‌های پشتیبانی شده در {{SITENAME}} را ترجمه کنید.",
+	'translate-fs-selectlanguage' => 'یک زبان انتخاب کنید',
+	'translate-fs-settings-planguage' => 'زبان اصلی:',
+	'translate-fs-settings-planguage-desc' => 'زبان اصلی به عنوان زبان رابط کاربری این ویکی
+و نیز به عنوان زبان هدف در ترجمه‌ها در نظر گرفته می شود.',
+	'translate-fs-settings-slanguage' => 'زبان دستیار $1:',
+	'translate-fs-settings-slanguage-desc' => 'ترجمه‌های پیغام‌ها در زبان‌های دیگر نیز می‌تواند در ویرایشگر ترجمه نمایش یابد.
+در این‌جا شما می‌توانید انتخاب کنید چه زبانی را می‌خواهید ببینید.',
+	'translate-fs-settings-submit' => 'ذخیره کردن ترجیحات',
+	'translate-fs-userpage-level-N' => 'این زبان مادری من است',
+	'translate-fs-userpage-level-5' => 'من مترجم حرفه‌ای این زبان هستم',
+	'translate-fs-userpage-level-4' => 'این زبان را مانند زبان مادری بلدم',
+	'translate-fs-userpage-level-3' => 'این زبان را خوب بلدم',
+	'translate-fs-userpage-level-2' => 'این زبان را در حد متوسط بلدم',
+	'translate-fs-userpage-level-1' => 'این زبان را کمی بلدم',
+	'translate-fs-userpage-help' => 'لطفا مهارت‌های زبانی خود را مشخص کنید و کمی درباره خودتان به ما بگویید. اگر بیش از پنج زبان می‌دانید می‌توانید بقیه را بعداً اضافه کنید.',
+	'translate-fs-userpage-submit' => 'ایجاد صفحه کاربری',
+	'translate-fs-userpage-done' => 'آفرین! اکنون یک صفحه کاربری دارید.',
+	'translate-fs-permissions-planguage' => 'زبان اصلی:',
+	'translate-fs-permissions-help' => 'اکنون باید درخواست کنید تا به گروه مترجمان اضافه شوید.
+زبان اصلی که قادرید به آن ترجمه کنید را انتخاب کنید.
+
+شما می‌توانید زبان‌های دیگر و سایر توضیحات را در جعبه زیر وارد کنید.',
+	'translate-fs-permissions-pending' => 'درخواست شما به  [[$1]] ارسال شد و یکی از کارکنان سایت در اولین فرصت آن را بررسی خواهد کرد.
+اگر نشانی پست الکترونیکی خود را تأیید کنید، به محض این که این اتفاق بیفتد از طریق پست الکترونیکی با خبر خواهید شد.',
+	'translate-fs-permissions-submit' => 'ارسال درخواست',
+	'translate-fs-target-text' => "تبریک!
+شما اینک می‌توانید شروع به ترجمه کنید.
+
+از این که این که برایتان تازگی دارد و گیج شده‌اید نگران نباشید.
+در [[Project list|فهرست پروژه‌ها]] چکیده‌ای از پروژه‌هایی که می‌توانید به ترجمه‌شان کمک کنید وجود دارد.
+بیشتر پروژه‌ها یک صفحه توضیحات به همراه یک پیوند «''این پروژه را ترجمه کنید''» دارند که شما را به صفحه‌ای می‌برد که تمام پیغام‌های ترجمه نشده را فهرست می‌کند.
+فهرستی از تمام گروه‌های پیغام‌ها به همراه [[Special:LanguageStats|وضعیت فعلی ترجمه آن‌ها به هر زبان]] نیز موجود است.
+
+اگر فکر می‌کنید که قبل از شروع به ترجمه نیاز به دانستن چیزهای بیشتری دارید، می‌توانید [[FAQ|پرسش‌های متداول]] را مطالعه کنید.
+متاسفانه مستندات گاهی قدیمی هستند.
+اگر فکر می‌کنید کاری را باید بتوانید انجام بدهید، اما نمی‌دانید چگونه، بدون تردید در [[Support|صفحه پشتیبانی]] سوال کنید.
+
+شما همچنین می‌توانید با دیگر مترجمان همزبان با خودتان از طریق [[Portal_talk:$1|صفحه بحث]] [[Portal:$1|ورودی زبان خودتان]] ارتباط برقرار کنید.
+لطفا همین الان [[Special:Preferences|زبان رابطه کاربری را به زبانی که به آن ترجمه می‌کنید تغییر دهید]] تا ویکی پیوندها مرتبط را به شما نشان دهد.",
+	'translate-fs-email-text' => 'لطفاً نشانی پست الکترونیکی خود را در [[Special:Preferences|تنظیامت خود]] مشخص کنید و از طریق نامه‌ای که به شما فرستاده می‌شود آن را تأیید کنید.
+
+این کار باعث می‌شود دیگران بتوانند با شما از طریق پست الکترونیکی تماس بگیرند.
+همچنین ماهی یک بار یک خبرنامه دریافت خواهید کرد.
+اگر نمی‌خواهید خبرنامه دریافت کنید، می توانید در زبانه «{{int:prefs-personal}}» [[Special:Preferences|ترجیحات]] آن را غیر فعال کنید.',
+);
+
 /** Finnish (Suomi)
  * @author Centerlink
  * @author Crt
@@ -1553,6 +1617,50 @@ Jika Anda tidak ingin menerima langganan berita, Anda dapat memilih tidak di tab
  */
 $messages['ig'] = array(
 	'translate-fs-pagetitle-done' => '- ọméchá!',
+);
+
+/** Icelandic (Íslenska)
+ * @author Snævar
+ */
+$messages['is'] = array(
+	'firststeps' => 'Fyrstu skrefin',
+	'translate-fs-pagetitle-done' => '- búið!',
+	'translate-fs-pagetitle-pending' => '- í bið',
+	'translate-fs-signup-title' => 'Skráðu þig',
+	'translate-fs-settings-title' => 'Breyttu stillingunum þínum',
+	'translate-fs-userpage-title' => 'Búðu til notendasíðu',
+	'translate-fs-permissions-title' => 'Óskaðu eftir þýðingar réttindum',
+	'translate-fs-target-title' => 'Byrjaðu að þýða!',
+	'translate-fs-email-title' => 'Staðfestu netfangið þitt',
+	'translate-fs-selectlanguage' => 'Veldu tungumál',
+	'translate-fs-settings-planguage' => 'Fyrsta tungumál:',
+	'translate-fs-settings-planguage-desc' => 'Fyrsta tungumál verður notað bæði sem viðmótstungumálið þitt á þessum wiki og sjálfgefið tungumál fyrir þýðingar.',
+	'translate-fs-settings-slanguage' => 'Aðstoðar tungumál: $1',
+	'translate-fs-settings-slanguage-desc' => 'Það er hægt að sýna þýðingar fyrir skilaboð á öðrum tungumálum í þýðingar viðmótinu.
+Hér getur þú valið hvaða tungumál, ef einhver, þú villt sjá.',
+	'translate-fs-settings-submit' => 'Vista stillingar',
+	'translate-fs-userpage-level-N' => 'Móðurmál mitt er',
+	'translate-fs-userpage-level-5' => 'Ég hef atvinnufærni í',
+	'translate-fs-userpage-level-4' => 'Ég tala málið eins og innfæddur',
+	'translate-fs-userpage-level-3' => 'Ég hef yfirburðarkunnáttu á',
+	'translate-fs-userpage-level-2' => 'Ég hef miðlungskunnáttu á',
+	'translate-fs-userpage-level-1' => 'Ég hef grundvallarkunnáttu á',
+	'translate-fs-userpage-help' => 'Vinsamlegast gefðu upp færni þína á tungumálinu og segðu okkur eitthvað um þig. Ef þú þekkir fleiri en fimm tungumál, þá getur þú bætt við fleirum seinna.',
+	'translate-fs-userpage-submit' => 'Búðu til notendasíðuna mína',
+	'translate-fs-userpage-done' => 'Vel gert! Þú hefur nú notendasíðu.',
+	'translate-fs-permissions-planguage' => 'Fyrsta tungumál:',
+	'translate-fs-permissions-help' => 'Nú þarft þú að óska eftir að fá þýðinda réttindi.
+Veldu það tungumál sem þú ætlar að þýða á.
+
+Þú getur nefnt önnur tungumál og athugasemdir í texta boxinu hér fyrir neðan.',
+	'translate-fs-permissions-pending' => 'Beiðni þín hefur verið sent til [[$1]] og starfsmaður síðunnar mun fara yfir hana eins fljótt og auðið er.
+Ef þú staðfestir netfangið þitt, þá færð þú tölvupóst um leið og það gerist.',
+	'translate-fs-permissions-submit' => 'Senda beiðni',
+	'translate-fs-email-text' => 'Vinsamlegast tilgreindu netfangið þitt í [[Special:Preferences|stillingunum þínum]] og staðfestu það frá tölvupóstinum sem er sendur til þín.
+
+Þetta gerir öðrum notendum kleift að hafa samband við þig með tölvupósti.
+Þú munt einnig fá fréttabréf allt að einu sinni í mánuði.
+Ef þú villt ekki fá send fréttabréf þá getur þú afvirkjað möguleikann undir "{{int:prefs-personal}}" flipanum í [[Special:Preferences|stillingunum þínum]]',
 );
 
 /** Italian (Italiano)
