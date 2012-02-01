@@ -43,18 +43,16 @@ abstract class MessageGroupOld implements MessageGroup {
 	 */
 	public function setId( $value ) { $this->id = $value; }
 
-
 	/**
-	 * The namespace where all the messages of this group belongs.
-	 * If the group has messages from multiple namespace, set this to false
+	 * The namespace where all the messages of this group belong.
+	 * If the group has messages from multiple namespaces, set this to false
 	 * and look how RecentMessageGroup implements the definitions.
 	 */
 	protected $namespace = NS_MEDIAWIKI;
-	/// Get the namespace where all the messages of this group belongs.
+	/// Get the namespace where all the messages of this group belong.
 	public function getNamespace() { return $this->namespace; }
-	/// Set the namespace where all the messages of this group belongs.
+	/// Set the namespace where all the messages of this group belong.
 	public function setNamespace( $ns ) { $this->namespace = $ns; }
-
 
 	/**
 	 * List of messages that are hidden by default, but can still be translated if

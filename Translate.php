@@ -176,6 +176,9 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 	'scripts' => 'resources/ext.translate.messagetable.js',
 	'styles' => 'resources/ext.translate.messagetable.css',
 	'position' => 'top',
+	'dependencies' => array(
+		'mediawiki.util',
+	),
 	'messages' => array(
 		'translate-messagereview-submit',
 		'translate-messagereview-progress',
