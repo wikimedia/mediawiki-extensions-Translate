@@ -243,6 +243,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'translate-workflow-set-do',
 		'translate-workflow-set-doing',
 		'translate-workflow-set-done',
+		'translate-workflow-set-error-alreadyset',
 	),
 ) + $resourcePaths;
 

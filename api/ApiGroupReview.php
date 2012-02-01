@@ -47,6 +47,10 @@ class ApiGroupReview extends ApiBase {
 			__METHOD__
 		);
 
+		if ( $currentState == $requestParams['state'] ) {
+			$this->dieUsage( wfMessage( 'translate-workflow-set-error-alreadyset' ), 'sameworkflowstate' );
+		}
+
 		$dbw = wfGetDB( DB_MASTER );
 		$table = 'translate_groupreviews';
 		$row = array(
