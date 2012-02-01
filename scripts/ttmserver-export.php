@@ -40,8 +40,7 @@ class TTMServerBootstrap extends Maintenance {
 	public function execute() {
 		$server = TTMServer::primary();
 		if ( $server instanceof FakeTTMServer ) {
-			$this->error( "Translation memory is not configured properly" );
-			$this->exit();
+			$this->error( "Translation memory is not configured properly", 1 );
 		}
 
 		$dbw = $server->getDB( DB_MASTER );
@@ -53,7 +52,7 @@ class TTMServerBootstrap extends Maintenance {
 		$this->output( 'fulltext.. ', 1 );
 		$dbw->delete( 'translate_tmf', '*', __METHOD__ );
 		$table = $dbw->tableName( 'translate_tmf' );
-		# $dbw->query( "DROP INDEX tmf_text ON $table" );
+		$dbw->query( "DROP INDEX tmf_text ON $table" );
 		$this->output( 'done!', 1 );
 
 		$this->statusLine( 'Loading groups... ', 2 );
