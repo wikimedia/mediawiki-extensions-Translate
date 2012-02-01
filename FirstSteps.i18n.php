@@ -2746,6 +2746,16 @@ Sa huli, makakapagsalinwika ka ng ''mga mensahe ng ugnayang-mukha'' ng lahat ng 
 	'translate-fs-userpage-done' => 'Mahusay! Mayroon ka na ngayong isang pahina ng tagagamit.',
 );
 
+/** Turkish (Türkçe)
+ * @author Incelemeelemani
+ */
+$messages['tr'] = array(
+	'firststeps' => 'İlk adımlar',
+	'translate-fs-pagetitle-done' => ' - tamam!',
+	'translate-fs-pagetitle-pending' => ' - bekliyor',
+	'translate-fs-signup-title' => 'Kaydol',
+);
+
 /** Uyghur (Arabic script) (ئۇيغۇرچە)
  * @author Sahran
  */

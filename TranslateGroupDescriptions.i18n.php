@@ -614,11 +614,12 @@ Hinweis:
 
 /** Zazaki (Zazaki)
  * @author Erdemaslancan
+ * @author Mirzali
  */
 $messages['diq'] = array(
-	'translate-group-desc-eol' => 'Na mesac grubiya [[Translating:EOL|Encyclopedia of Life]]iya',
-	'translate-group-desc-ihris' => 'Na mesac grubiya  [[Translating:iHRIS|iHRIS]]iya',
-	'translate-group-desc-kiwix' => 'Na mesac grubiya [[Translating:Kiwix|Kiwix]]iya',
+	'translate-group-desc-eol' => 'Seba [[Translating:EOL|Ensiklopediya Cıwiyayışi]] yew mesacê grube',
+	'translate-group-desc-ihris' => 'Seba [[Translating:iHRIS|iHRIS]]i yew mesacê grube',
+	'translate-group-desc-kiwix' => 'Seba [[Translating:Kiwix|Kiwix]]i yew mesacê grube',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -802,7 +803,7 @@ $messages['fi'] = array(
 	'translate-group-desc-uniwiki' => 'Metaviestiryhmä, joka sisältää kaikki [http://unicefinnovation.org/wiki.php Uniwikiin] liittyvien laajennuksien viestit.',
 	'translate-group-desc-translatablepages' => 'Kaikki käännettävät sivut',
 	'bw-desc-freecol' => 'Ennen kuin käännät FreeColia kielellesi, luethan sivun [[Translating:FreeCol]]. Freecol käyttää GPL-lisenssiä.',
-	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], PHP:llä tehty keskustelufoorumi.',
+	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] on verkkopohjainen keskustelufoorumi',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] on verkossa toimiva virheenseurantaohjelmisto',
 	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] on sähköpostiohjelma',
 	'translate-group-desc-statusnet-plugin' => 'Nämä viestit ovat osa [[Translating:StatusNet|StatusNet]]in liitännäistä',

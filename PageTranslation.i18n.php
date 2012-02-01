@@ -6711,6 +6711,7 @@ Pakisuri ang [[Special:Log/pagetranslation|talaan ng pagsasalinwika ng pahina]] 
 );
 
 /** Turkish (Türkçe)
+ * @author Incelemeelemani
  * @author Joseph
  * @author Karduelis
  * @author Vito Genovese
@@ -6743,6 +6744,7 @@ Bu sürümü çeviri için işaretlemeden önce, çevirmenlere gereksiz iş çı
 	'tpt-edit-failed' => 'Sayfa güncellenemedi: $1',
 	'tpt-already-marked' => 'Bu sayfanın en son sürümü çeviri için işaretlenmiş.',
 	'tpt-list-nopages' => 'Çeviri için işaretlenen ya da işaretlenmeye hazır olan herhangi bir sayfa bulunmuyor.',
+	'tpt-old-pages-title' => 'Çeviri sayfası',
 	'tpt-old-pages' => '{{PLURAL:$1|Bu sayfanın|Bu sayfaların}} bazı sürümleri çeviri için işaretlenmiş.',
 	'translate-tag-translate-link-desc' => 'Bu sayfayı çevir',
 	'translate-tag-markthis' => 'Bu sayfayı çeviri için işaretle',

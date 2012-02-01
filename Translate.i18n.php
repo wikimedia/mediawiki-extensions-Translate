@@ -491,7 +491,7 @@ $messages['qqq'] = array(
 {{Identical|Edit}}',
 	'translate-edit-translation' => 'Legend for box like {{msg-mw|Translate-edit-definition}} or {{msg-mw|Translate-edit-in-other-languages}}.
 {{Identical|Translation}}',
-	'translate-edit-contribute' => 'beşdar bibe',
+	'translate-edit-contribute' => 'This appears in the parentheses after {{msg-mw|Translate-edit-information}}',
 	'translate-edit-no-information' => 'Message is used as a hint to translators that documentation for a message without documentation is needed.',
 	'translate-edit-information' => 'Caption for box which contains information about the message. $1 is {{msg-mw|translate-edit-contribute}}.',
 	'translate-edit-in-other-languages' => 'Caption for box which contains translation of message in other languages.',
@@ -5245,6 +5245,7 @@ Details: $1',
 	'translate-workflow-set-do' => 'Einstellen',
 	'translate-workflow-set-doing' => 'Wird eingestellt …',
 	'translate-workflow-set-done' => 'Eingestellt',
+	'translate-workflow-set-error-alreadyset' => 'Der angeforderte Status ist identisch mit dem aktuellen Status.',
 	'translate-workflow-autocreated-summary' => 'Automatische Erstellung der Seite für Arbeitsablaufstatus $1',
 	'translate-stats-workflow' => 'Status',
 	'translate-workflowgroup-label' => 'Arbeitsablaufstatus',
@@ -8823,6 +8824,7 @@ Detalles: $1',
 	'translate-workflow-set-do' => 'Activado',
 	'translate-workflow-set-doing' => 'Activando...',
 	'translate-workflow-set-done' => 'Activado!',
+	'translate-workflow-set-error-alreadyset' => 'O estado solicitado é idéntico ao estado actual.',
 	'translate-workflow-autocreated-summary' => 'Creación automática da páxina para o estado "$1" do fluxo de traballo',
 	'translate-stats-workflow' => 'Estado',
 	'translate-workflowgroup-label' => 'Estados do fluxo de traballo',
@@ -9428,7 +9430,7 @@ $messages['he'] = array(
 	'translate-edit-title' => 'לערוך את "$1"',
 	'translate-edit-definition' => 'הגדרת ההודעה',
 	'translate-edit-translation' => 'תרגום',
-	'translate-edit-contribute' => 'תרומה',
+	'translate-edit-contribute' => 'לתרום תיעוד',
 	'translate-edit-no-information' => "'''להודעה זו אין תיעוד.
 אם אתם יודעים היכן או כיצד משתמשים בהודעה זו, באפשרותכם לעזור למתרגמים אחרים באמצעות הוספת תיעוד להודעה זו.'''",
 	'translate-edit-information' => 'מידע על ההודעה ($1)',
@@ -10395,6 +10397,7 @@ Podrobnosće: $1',
 	'translate-workflow-set-do' => 'Nastajić',
 	'translate-workflow-set-doing' => 'Nastaja so...',
 	'translate-workflow-set-done' => 'Nastajeny!',
+	'translate-workflow-set-error-alreadyset' => 'Požadany status je identiski z aktualnym statusom.',
 	'translate-workflow-autocreated-summary' => 'Awtomatiske wutworjenje strony za dźěłowotběžny status $1',
 	'translate-stats-workflow' => 'Status',
 	'translate-workflowgroup-label' => 'Dźěłowotběžne statusy',
@@ -11338,6 +11341,7 @@ Detalios: $1',
 	'translate-workflow-set-do' => 'Activar',
 	'translate-workflow-set-doing' => 'Activation...',
 	'translate-workflow-set-done' => 'Activate!',
+	'translate-workflow-set-error-alreadyset' => 'Le stato requestate es identic al stato actual.',
 	'translate-workflow-autocreated-summary' => 'Creation automatic de pagina pro le stato de fluxo de labor $1',
 	'translate-stats-workflow' => 'Stato',
 	'translate-workflowgroup-label' => 'Statos de fluxo de labor',
@@ -17056,6 +17060,7 @@ Dit is vooral nuttig voor de taken "{{int:translate-task-acceptqueue}}" en "{{in
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Byrial
+ * @author Dittaeva
  * @author Frokor
  * @author Gunnernett
  * @author Harald Khan
@@ -17119,7 +17124,7 @@ Valfrie meldingar skal ein berre setja om når målet har særskilde krav, til d
 	'translate-edit-tmsugs' => 'Framlegg frå omsetjingsminnet',
 	'translate-edit-tmmatch' => '$1% treff',
 	'translate-edit-tab-list' => 'Meldingsliste',
-	'translate-edit-nopermission' => 'Du tarv løyve for å setja om meldingar',
+	'translate-edit-nopermission' => 'Du treng løyve for å setja om meldingar',
 	'translate-edit-askpermission' => 'Bed om løyve',
 	'translate-magic-pagename' => 'Utvida MediaWiki-omsetjing',
 	'translate-magic-help' => 'Du kan setje om spesialsidenamn, magiske ord og namna på namnerom.
@@ -23643,6 +23648,7 @@ Mga detalye: $1',
 /** Turkish (Türkçe)
  * @author Cekli829
  * @author Emperyan
+ * @author Incelemeelemani
  * @author Joseph
  * @author Karduelis
  * @author Srhat
@@ -23781,6 +23787,10 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 	'translate-import-from-local' => 'Yerel dosya yükleme:',
 	'translate-import-load' => 'Dosya yükle',
 	'translate-import-err-ul-failed' => 'Dosya yükleme başarısız oldu',
+	'translate-js-summary' => 'Açıklama:',
+	'translate-js-save' => 'Kaydet',
+	'translate-js-next' => 'Kaydet ve sonrakini aç',
+	'translate-js-history' => 'Çeviri geçmişi',
 	'translate-gs-pos' => 'Kon',
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kıta',
@@ -23790,8 +23800,10 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 	'translate-gs-count' => 'Sayı',
 	'translate-gs-total' => 'Toplam',
 	'translate-gs-avgscore' => 'Ort. skor',
+	'translate-messagereview-submit' => 'Onayla',
 	'translate-workflowstatus' => 'Durum: $1',
 	'translate-stats-workflow' => 'Durum',
+	'translate-gethelp' => 'Yardım',
 );
 
 /** Tatar (Cyrillic script) (Татарча)
