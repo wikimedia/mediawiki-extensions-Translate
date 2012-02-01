@@ -240,10 +240,12 @@ class PageTranslationHooks {
 			$_title = Title::makeTitle( $title->getNamespace(), $title->getDBkey() . $suffix );
 
 			if ( $parser->getTitle()->getText() === $_title->getText() ) {
-				$languages[] = Html::rawElement( 'b', null, "*$name* $percent" );
-			} elseif ( $code === $userLangCode ) {
-				$languages[] = $linker->linkKnown( $_title, Html::rawElement( 'b', null, "$name $percent" ) );
+				$name = Html::rawElement( 'span', array( 'class' => 'mw-pt-languages-selected' ), $name );
+				$languages[] = "$name $percent";
 			} else {
+				if ( $code === $userLangCode ) {
+					$name = Html::rawElement( 'span', array( 'class' => 'mw-pt-languages-ui' ), $name );
+				}
 				$languages[] = $linker->linkKnown( $_title, "$name $percent" );
 			}
 		}

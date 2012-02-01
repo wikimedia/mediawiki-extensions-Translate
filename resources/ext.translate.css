@@ -32,3 +32,12 @@
 	font-size: x-small;
 	text-align: center;
 }
+
+/* The *stars* should be replaceable with bunnies */
+.mw-pt-languages-selected:before, .mw-pt-languages-selected:after {
+	content: '*';
+}
+
+.mw-pt-languages-selected, .mw-pt-languages-ui {
+	font-weight: bold;
+}
