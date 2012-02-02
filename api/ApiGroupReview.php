@@ -48,7 +48,7 @@ class ApiGroupReview extends ApiBase {
 		);
 
 		if ( $currentState == $requestParams['state'] ) {
-			$this->dieUsage( wfMessage( 'translate-workflow-set-error-alreadyset' ), 'sameworkflowstate' );
+			$this->dieUsage( 'The requested state is identical to the current state', 'sameworkflowstate' );
 		}
 
 		$dbw = wfGetDB( DB_MASTER );
@@ -137,6 +137,7 @@ class ApiGroupReview extends ApiBase {
 		return array_merge( parent::getPossibleErrors(), array(
 			array( 'code' => 'permissiondenied', 'info' => "You must have $right right" ),
 			array( 'code' => 'disabled', 'info' => "Message group workflows are not in use" ),
+			array( 'code' => 'sameworkflowstate', 'info' => "The requested state is identical to the current state" ),
 		) );
 	}
 
