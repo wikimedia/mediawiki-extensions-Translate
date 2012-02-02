@@ -3701,6 +3701,7 @@ Gli errori sono riportati nel [[Special:Log/pagetranslation|registro delle tradu
 /** Japanese (日本語)
  * @author Aotake
  * @author Fryed-peach
+ * @author Whym
  * @author 青子守歌
  */
 $messages['ja'] = array(
@@ -3728,7 +3729,7 @@ $messages['ja'] = array(
 	'tpt-showpage-intro' => '以下には新しいセクション、既存のセクション、そして削除されたセクションが一覧されています。この版を翻訳対象に指定する前に、セクションの変更を最小限にすることで不要な翻訳作業を回避できないか確認してください。',
 	'tpt-mark-summary' => 'この版を翻訳対象に指定しました',
 	'tpt-edit-failed' => 'ページを更新できませんでした: $1',
-	'tpt-duplicate' => '翻訳単位名$1は、1回以上使用されています。',
+	'tpt-duplicate' => '翻訳単位名$1は、複数回使用されています。',
 	'tpt-already-marked' => 'このページの最新版がすでに翻訳対象に指定されています。',
 	'tpt-unmarked' => 'ページ「$1」はもう翻訳対象に指定されていません。',
 	'tpt-list-nopages' => '翻訳対象に指定されたページがない、または翻訳対象に指定する準備ができているページがありません。',
