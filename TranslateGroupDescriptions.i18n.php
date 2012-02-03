@@ -572,10 +572,9 @@ $messages['de'] = array(
 	'translate-group-desc-uniwiki' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten für verwandte Erweiterungen von [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Diese Hauptgruppe beinhaltet alle Systemnachrichten der [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Alle übersetzbaren Seiten',
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] ermöglicht einen Zugang zum europäischen Kulturerbe',
 	'bw-desc-freecol' => 'Vor dem Übersetzungsstart für FreeCol bitte [[Translating:FreeCol]] lesen. FreeCol nutzt die GPL-Lizenz.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], ein in PHP geschriebenes Web-Forum.',
-	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] ist ein webbasierendes Bug-Tracking-System. Fragen und Fehler sollten auf [[Support]] berichtet werden.',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] ist ein internetgestütztes Bug-Tracking-System',
 	'translate-group-desc-eol' => 'Nachrichten für die [[Translating:EOL|Enzyklopädie des Lebens]]',
 	'translate-group-desc-ihris' => 'Nachrichten für [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Nachrichten für [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], einem Modul von [[Translating:iHRIS|iHRIS]]',
@@ -597,11 +596,6 @@ Weitere Information finden sich unter [[mw:Extension:PDF Writer]] und http://cod
 	'bw-desc-openlayers' => 'OpenLayers ist ein dynamischer Open-Source-Kartengenerator. Fragen und Fehler sollten auf [[Support]] berichtet werden.',
 	'bw-desc-openstreetmap' => 'Diese Gruppe beinhaltet die Nachrichten für [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Diese Gruppe beinhaltet die Nachrichten der Benutzeroberfläche für [[Translating:Open Street Map|Open Street Map]].',
-	'bw-desc-osm-potlatch' => 'Diese Gruppe beinhaltet die Nachrichten der Benutzeroberfläche für [[Translating:OpenStreetMap|Potlatch]].
-
-Hinweis:
-* Die Oberfläche hat Probleme mit langem Text. Bitte versuche die Textlänge der Übersetzung entsprechend dem Original zu halten ([http://trac.openstreetmap.org/ticket/2067 Offener Bug]).
-* Benutze [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] zum Testen von Potlatch. Es kann dort alles in jedem Bereich getestet werden.',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] ist eine Sammlung von Werkzeugen zum Bearbeiten der Wikipedia',
 	'bw-desc-shapado' => 'Systemnachrichten von [[Translating:Shapado|Shapado]], einer freien Open-Source-Software für Fragen und Antworten',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] ist ein Open-Source-Mikroblogging-Server',
@@ -635,6 +629,7 @@ $messages['dsb'] = array(
 	'translate-group-desc-flaggedrevs' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Metakupka powěźeńkow, kótaraž wopśimujo wše powěźeńki za rozšyrjenje MediaWiki
 [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'Głowna zdźěleńska kupka, kótaraž wopśimujo wšykne powěźeńki za wšykne rozšyrjenja [http://semantic-mediawiki.org/ Semantic MediaWiki]',
 	'translate-group-desc-socialprofile' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenja, kótarež su pśiswójźbne z rozšyrjenim MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež wužywaju se pśez [http://www.wikia.com Wikia]',
@@ -643,11 +638,17 @@ $messages['dsb'] = array(
 	'translate-group-desc-uniwiki' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenja, kótarež su pśiswójźbne z [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metakupka powěźeńkow, kótaraž wopśimujo wše powěźeńki za rozšyrjenja, kótarež póśěguju se na [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciatiwu wužywajobnosći Wikipedije]',
 	'translate-group-desc-translatablepages' => 'Wšykne pśełožujobne boki',
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] zmóžnja luźim digitalne kulturne resurse Europy pśeslěźiś',
 	'bw-desc-freecol' => 'Nježli až pśełožujoš FreeCol do swójeje rěcy, pśecytaj pšosym [[Translating:FreeCol]]. FreeCol wužywa licencu GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webforum napisany w PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] jo swobodny system za slědowanje programowych zmólkow na zakłaźe weba. Pšosym daj problemy na boku [[Support|Pódpěra]] k wěsći.',
+	'translate-group-desc-eol' => 'Kupka powěźeńkow za [[Translating:EOL|Encyclopedia of Life]]',
+	'translate-group-desc-ihris' => 'Kupka powěźeńkow za [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-common' => 'Kupka powěźeńkow za [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], modul za [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-i2ce' => 'Kupka powěźeńkow za [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], modul za [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-qualify' => 'Kupka powěźeńkow za [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], modul za [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'Kupka powěźeńkow za [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Głowny tykac za [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Powěźeńki za stabilnu wersiju [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] jo informaciski system managementa za mikrofinancěrowanje',
 	'bw-desc-mwlibrl' => "'''mwlib.rl'' jo pythonowa biblioteka za napóranje PDF-dokumentow z nastawkow MediaWiki, kótarež su se pśez biblioteku mwlib analyzěrowali.
 
@@ -660,10 +661,6 @@ Pšosym glědaj [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wi
 	'bw-desc-openlayers' => 'OpenLayers jo dynamiski generator kórtow ze zajwnym žrědłowym kodom. Daj pšosym problemy na boku [[Support|Pódpěra]] k wěsći.',
 	'bw-desc-openstreetmap' => 'Kupka powěźeńkow za wšykne powěźeńki z [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Toś ta kupka powěźeńkow wopśimujo powěźeńki wužywarskego powjercha za [[Translating:Open Street Map|Open Street Map]]',
-	'bw-desc-osm-potlatch' => 'Toś ta kupka powěźeńkow wopśimujo powěźeńki za powjerch programa [[Translating:Open Street Map|Potlatch]]. Pšosym:
-
-* Wopytaj swóje pśełožki tak dłujko ako engelski original źaržaś, dla wobgranicowanjow za system wužywarskego powjercha. Glědaj teke [http://trac.openstreetmap.org/ticket/2067 wócynjony problem].
-* Wužyj [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org], aby testował Potlatch. Móžoš tam wšykne funkcije testowaś.',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] jo zběrka rědow za wobźěłowanjoju Wikipedije',
 	'bw-desc-shapado' => 'Kupka powěźeńkow za zjawnje k dispoziciji stojecu softwaru Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] jo serwer za mikroblogowanje ze zjawnym žrědłowym kodom',
