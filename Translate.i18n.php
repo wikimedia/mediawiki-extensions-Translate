@@ -16972,9 +16972,9 @@ Controleer de wijziging.',
 	'translate-manage-import-fuzzy' => 'Bezig met importeren en fuzzy markeren: $1',
 	'translate-manage-import-done' => 'Klaar!',
 	'translate-manage-import-rebuild' => 'Cache herbouwen.',
-	'translate-manage-intro-en' => 'Hieronder wordt een lijst weergegeven met wijzgingen in berichten van deze groep.
+	'translate-manage-intro-en' => 'Hieronder wordt een lijst weergegeven met wijzigingen in berichten van deze groep.
 Controleer de wijzigingen en kies de uit te voeren handeling voor ieder bericht.
-Als u de berichtdefinities hebt bijgewerkt, controleer dan of er externe wijzigingen in anderer talen zijn.
+Als u de berichtdefinities hebt bijgewerkt, controleer dan of er externe wijzigingen in andere talen zijn.
 De handeling <code>ignore</code> is van tijdelijke aard.',
 	'translate-manage-intro-other' => 'Hieronder wordt een lijst weergegeven van wijzigingen in de vertalingen voor de taal $1.
 Controleer de wijzigingen en kies een uit te voeren handeling voor iedere vertaling.
