@@ -10688,6 +10688,7 @@ Detay: $1',
 );
 
 /** Hungarian (Magyar)
+ * @author Bináris
  * @author BáthoryPéter
  * @author Dani
  * @author Dj
@@ -11004,7 +11005,7 @@ Részletek: $1',
 	'group-translate-proofr' => 'Fordítás ellenőrzők',
 	'group-translate-proofr-member' => '{{GENDER:$1|fordítás ellenőrző}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Fordítás ellenőrzők',
-	'log-name-translationreview' => 'Fordítás ellenőrzési napló',
+	'log-name-translationreview' => 'Fordítás-ellenőrzési napló',
 	'log-description-translationreview' => 'Valamennyi fordítás és üzenetcsoport ellenőrzésének a naplója.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|elfogadta}} a fordítást: $3',
 	'translate-workflowstatus' => 'Állapot: $1',
@@ -12458,6 +12459,7 @@ $1',
 	'translate-workflow-set-do' => '設定',
 	'translate-workflow-set-doing' => '設定中・・・',
 	'translate-workflow-set-done' => '設定完了！',
+	'translate-workflow-set-error-alreadyset' => '要求された状態は、現在の状態と同じです。',
 	'translate-workflow-autocreated-summary' => 'ワークフロー状態$1のページの自動作成',
 	'translate-stats-workflow' => '状態',
 	'translate-workflowgroup-label' => 'ワークフロー状態',
@@ -17711,6 +17713,7 @@ $messages['pdc'] = array(
 	'translate-edit-in-other-languages' => 'Meldinge in annere Schprooche',
 	'translate-magic-cm-to-be' => 'Sollt sei',
 	'translate-magic-cm-comment' => 'Aamaericking:',
+	'translate-magic-cm-save' => 'Beilege',
 	'translate-magic-namespace' => 'Naame von Blatznaame',
 	'translationstats' => 'Nummere vun Iwwersetzinge',
 	'translate-stats-edits' => 'Enneringe',
@@ -17743,11 +17746,13 @@ $messages['pdc'] = array(
 	'translate-mgs-column-language' => 'Schprooch',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Iwwersetzer|Iwwersetzer}}: $1',
 	'supportedlanguages-recenttranslations' => 'Letscht Iwwersetzinge',
+	'translate-save' => 'Beilege ($1)',
 	'translate-jssti-add' => 'Zu de Lischt dezu duh',
 	'translate-manage-modlang-new' => '$1 (nei)',
 	'translate-manage-import-done' => 'Alles geduh!',
 	'translate-import-from-wiki' => 'Feil in dem Wiki:',
 	'translate-import-load' => 'Feil ufflaade',
+	'translate-js-save' => 'Beilege',
 	'translate-gs-speakers' => 'Schwetzer',
 );
 
