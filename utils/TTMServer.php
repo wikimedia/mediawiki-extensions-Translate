@@ -132,6 +132,7 @@ class TTMServer implements iTTMServer  {
 	}
 
 	public function insertSource( Title $context, $sourceLanguage, $text ) {
+		wfProfileIn( __METHOD__ );
 		$row = array(
 			'tms_lang' => $sourceLanguage,
 			'tms_len' => mb_strlen( $text ),
@@ -153,10 +154,12 @@ class TTMServer implements iTTMServer  {
 			$dbw->insert( 'translate_tmf', $row, __METHOD__ );
 		}
 
+		wfProfileOut( __METHOD__ );
 		return $sid;
 	}
 
 	public function query( $sourceLanguage, $targetLanguage, $text ) {
+		wfProfileIn( __METHOD__ );
 		// Calculate the bounds of the string length which are able
 		// to satisfy the cutoff percentage in edit distance.
 		$len = mb_strlen( $text );
@@ -183,16 +186,20 @@ class TTMServer implements iTTMServer  {
 		}
 
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__ );
+		wfProfileOut( __METHOD__ );
 		return $this->processQueryResults( $res, $text );
 	}
 
 	protected function processQueryResults( $res, $text ) {
+		wfProfileIn( __METHOD__ );
+		$lenA = mb_strlen( $text );
 		$results = array();
 		foreach ( $res as $row ) {
 			$a = $text;
 			$b = $row->tms_text;
-			$len = min( mb_strlen( $a ), mb_strlen( $b ) );
-			$dist = self::levenshtein_php( $a, $b );
+			$lenB = mb_strlen( $b );
+			$len = min( $lenA, $lenB );
+			$dist = self::levenshtein_php( $a, $b, $lenA, $lenB );
 			$quality = 1 - ( $dist / $len );
 
 			if ( $quality >= $this->config['cutoff'] ) {
@@ -205,6 +212,7 @@ class TTMServer implements iTTMServer  {
 			}
 		}
 		usort( $results, array( $this, 'qualitySort' ) );
+		wfProfileOut( __METHOD__ );
 		return $results;
 	}
 
@@ -222,6 +230,7 @@ class TTMServer implements iTTMServer  {
 	 * Tries to find the most useful tokens.
 	 */
 	protected function filterForFulltext( $language, $input ) {
+		wfProfileIn( __METHOD__ );
 		$lang = Language::factory( $language );
 
 		$text = preg_replace( '/[^[:alnum:]]/u', ' ', $input );
@@ -229,6 +238,7 @@ class TTMServer implements iTTMServer  {
 		$text = $lang->lc( $text );
 		$segments = preg_split( '/\s+/', $text, -1, PREG_SPLIT_NO_EMPTY );
 		if ( count( $segments ) < 4 ) {
+			wfProfileOut( __METHOD__ );
 			return array();
 		}
 
@@ -242,19 +252,26 @@ class TTMServer implements iTTMServer  {
 
 		$segments = array_unique( $segments );
 		$segments = array_slice( $segments, 0, 10 );
+		wfProfileOut( __METHOD__ );
 		return $segments;
 	}
 
 	/**
-	 * Stolen from PHP manual comments.
 	 * The native levenshtein is limited to 255 bytes.
 	 */
-	function levenshtein_php($str1, $str2){
-		$length1 = mb_strlen( $str1);
-		$length2 = mb_strlen( $str2);
+	function levenshtein_php($str1, $str2, $length1, $length2){
 		if( $length1 == 0 ) return $length2;
 		if( $length2 == 0 ) return $length1;
 		if( $str1 === $str2) return 0;
+
+		$bytelength1 = strlen( $str1 );
+		$bytelength2 = strlen( $str2 );
+		if ( $bytelength1 === $length1 && $bytelength1 <= 255
+			&& $bytelength2 === $length2 && $bytelength2 <= 255
+		) {
+			return levenshtein( $str1, $str2 );
+		}
+
 		$prevRow = range( 0, $length2);
 		for ( $i = 0; $i < $length1; $i++ ) {
 			$currentRow=array();
