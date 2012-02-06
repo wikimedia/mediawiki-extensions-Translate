@@ -259,10 +259,10 @@ class TTMServer implements iTTMServer  {
 	/**
 	 * The native levenshtein is limited to 255 bytes.
 	 */
-	function levenshtein_php($str1, $str2, $length1, $length2){
-		if( $length1 == 0 ) return $length2;
-		if( $length2 == 0 ) return $length1;
-		if( $str1 === $str2) return 0;
+	function levenshtein_php( $str1, $str2, $length1, $length2 ) {
+		if ( $length1 == 0 ) return $length2;
+		if ( $length2 == 0 ) return $length1;
+		if ( $str1 === $str2 ) return 0;
 
 		$bytelength1 = strlen( $str1 );
 		$bytelength2 = strlen( $str2 );
@@ -272,17 +272,17 @@ class TTMServer implements iTTMServer  {
 			return levenshtein( $str1, $str2 );
 		}
 
-		$prevRow = range( 0, $length2);
+		$prevRow = range( 0, $length2 );
 		for ( $i = 0; $i < $length1; $i++ ) {
-			$currentRow=array();
+			$currentRow = array();
 			$currentRow[0] = $i + 1;
-			$c1 = mb_substr( $str1, $i, 1) ;
+			$c1 = mb_substr( $str1, $i, 1 ) ;
 			for ( $j = 0; $j < $length2; $j++ ) {
-				$c2 = mb_substr( $str2, $j, 1);
-				$insertions = $prevRow[$j+1] + 1;
+				$c2 = mb_substr( $str2, $j, 1 );
+				$insertions = $prevRow[$j + 1] + 1;
 				$deletions = $currentRow[$j] + 1;
-				$substitutions = $prevRow[$j] + (($c1 != $c2)?1:0);
-				$currentRow[] = min($insertions, $deletions, $substitutions);
+				$substitutions = $prevRow[$j] + ( ( $c1 != $c2 ) ? 1:0 );
+				$currentRow[] = min( $insertions, $deletions, $substitutions );
 			}
 			$prevRow = $currentRow;
 		}
