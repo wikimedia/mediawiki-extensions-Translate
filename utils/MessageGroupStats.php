@@ -204,9 +204,16 @@ class MessageGroupStats {
 
 		# Go over each language filling missing entries
 		$languages = array_keys( Language::getLanguageNames( false ) );
+		// This is for calculating things in correct order
+		sort( $languages );
 		foreach ( $languages as $code ) {
 			if ( isset( $stats[$id][$code] ) ) continue;
 			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code );
+		}
+
+		// This is for sorting the values added later in correct order
+		foreach ( array_keys( $stats ) as $key ) {
+			ksort( $stats[$key] );
 		}
 
 		return $stats;
