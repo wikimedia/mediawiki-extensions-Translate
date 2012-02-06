@@ -493,7 +493,7 @@ class TranslationHelpers {
 			'v' => '1.0',
 			'langpair' => $pair,
 			// Unique but not identifiable
-			'userip' => sha1( $wgProxyKey . $wgRequest->getIP() ),
+			'userip' => sha1( $wgProxyKey . ( method_exists( $wgRequest, 'getIP' ) ? $wgRequest->getIP() : wfGetIP() ) ),
 			'x-application' => "$wgSitename (MediaWiki $wgVersion; Translate " . TRANSLATE_VERSION . ")",
 		);
 
