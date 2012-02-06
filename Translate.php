@@ -85,6 +85,7 @@ $wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
 // API
 $wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
 $wgAPIMetaModules['messagegroups'] = 'ApiQueryMessageGroups';
+$wgAPIMetaModules['messagegroupstats'] = 'ApiQueryMessageGroupStats';
 $wgAPIMetaModules['messagetranslations'] = 'ApiQueryMessageTranslations';
 $wgAPIModules['translationreview'] = 'ApiTranslationReview';
 $wgAPIModules['groupreview'] = 'ApiGroupReview';

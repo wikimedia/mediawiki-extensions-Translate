@@ -196,6 +196,7 @@ $wgAutoloadClasses['TagContainer'] = $dir . 'utils/Html.php';
  */
 $wgAutoloadClasses['ApiQueryMessageCollection'] = $dir . 'api/ApiQueryMessageCollection.php';
 $wgAutoloadClasses['ApiQueryMessageGroups'] = $dir . 'api/ApiQueryMessageGroups.php';
+$wgAutoloadClasses['ApiQueryMessageGroupStats'] = $dir . 'api/ApiQueryMessageGroupStats.php';
 $wgAutoloadClasses['ApiQueryMessageTranslations'] = $dir . 'api/ApiQueryMessageTranslations.php';
 $wgAutoloadClasses['ApiTranslationReview'] = $dir . 'api/ApiTranslationReview.php';
 $wgAutoloadClasses['ApiGroupReview'] = $dir . 'api/ApiGroupReview.php';
