@@ -702,6 +702,7 @@ $messages['dsb'] = array(
 	'firststeps' => 'Prědne kšace',
 	'firststeps-desc' => '[[Special:FirstSteps|Specialny bok]], aby  wólažcył wužywarjam wužywanje rozšyrjenja Translate',
 	'translate-fs-pagetitle-done' => ' - wótbyte!',
+	'translate-fs-pagetitle-pending' => '´- wobźěłujo se',
 	'translate-fs-pagetitle' => 'Startowy asistent - $1',
 	'translate-fs-signup-title' => 'Registrěrowaś',
 	'translate-fs-settings-title' => 'Twóje nastajenja konfigurěrowaś',
@@ -712,8 +713,29 @@ $messages['dsb'] = array(
 	'translate-fs-intro' => "Witaj do startowego asistenta {{GRAMMAR:genitiw|SITENAME}}.
 Pokazujo so śi kšać pó kšać, kak buźoš pśełožowaŕ.
 Na kóńcu móžoš ''powěźeńki wužywarskego powjercha'' wšyknych pódpěranych projektow na {{SITENAME}} pśełožowaś.",
+	'translate-fs-selectlanguage' => 'Wubjeŕ rěc',
+	'translate-fs-settings-planguage' => 'Głowna rěc:',
+	'translate-fs-settings-planguage-desc' => 'Głowna rěc ma dwě funkciji: słužy ako rěc wužywarskego pówjercha w toś tom wikiju a ako standardna celowa rěc za pśełožki.',
+	'translate-fs-settings-slanguage' => 'Pomocna rěc $1:',
+	'translate-fs-settings-slanguage-desc' => 'Jo móžno pśełožki powěźeńkow w drugich rěcach w pśełožowańskem editorje pokazaś.
+How móžoš wubraś, kótare rěcy coš rady wiźeś.',
+	'translate-fs-settings-submit' => 'Nastajenja składowaś',
+	'translate-fs-userpage-level-N' => 'Som maminorěcny',
+	'translate-fs-userpage-level-5' => 'Som profesionelny pśełožowaŕ',
+	'translate-fs-userpage-level-4' => 'Mam znajobnosći maminorěcnego',
+	'translate-fs-userpage-level-3' => 'Mam dobre znajobnosći',
+	'translate-fs-userpage-level-2' => 'Mam pśerězne znajobnosći',
+	'translate-fs-userpage-level-1' => 'Mam jano mało znajobnosćow',
+	'translate-fs-userpage-help' => 'Pšosym pódaj swóje rěcne znajobnosći a daj nam něco wó sebje k wěsći. Jolic maš znajobnosći we wěcej ako pěś rěcach, móžoš je pózdźej pódaś.',
 	'translate-fs-userpage-submit' => 'Mój wužywarski bok napóraś',
 	'translate-fs-userpage-done' => 'Derje cynił! Maš něnto wužywarski bok.',
+	'translate-fs-permissions-planguage' => 'Głowna rěc:',
+	'translate-fs-permissions-help' => 'Musyš něnto napšašowanje stajiś, aby se do kupki pśełožowarjow pśiwzeł.
+Wubjeŕ głownu rěc, do kótarejež coš pśełožowaś.
+
+Móžoš druge rěcy a druge pśipomnjeśa w slědujucem tekstowem pólu pódaś.',
+	'translate-fs-permissions-pending' => 'Twójo napšašowanje jo se do [[$1]] wótpósłało a něchten z teama translatewiki.net buźo jo tak skóro ako móžno pśeglědowaś. Jolic swóju e-mailowu adresu wobkšuśiš, dostanjoš e-mailowu powěźeńku, gaž jo se to stało.',
+	'translate-fs-permissions-submit' => 'Napšašowanje pósłaś',
 	'translate-fs-target-text' => 'Gratulacija!
 Móžoš něnto pśełožowanje zachopiś.
 

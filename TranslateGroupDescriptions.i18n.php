@@ -645,6 +645,7 @@ $messages['dsb'] = array(
 	'translate-group-desc-ihris' => 'Kupka powěźeńkow za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Kupka powěźeńkow za [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], modul za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Kupka powěźeńkow za [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], modul za [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-manage' => 'Kupka powěźeńkow za [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], modul za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Kupka powěźeńkow za [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], modul za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-kiwix' => 'Kupka powěźeńkow za [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Głowny tykac za [[Translating:MantisBT|MantisBT]]',
@@ -665,8 +666,10 @@ Pšosym glědaj [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wi
 	'bw-desc-shapado' => 'Kupka powěźeńkow za zjawnje k dispoziciji stojecu softwaru Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] jo serwer za mikroblogowanje ze zjawnym žrědłowym kodom',
 	'translate-group-desc-statusnet-plugin' => 'Toś te powěźeńki su źěl tykaca za [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Zdźěleńska kupka za [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-system za rědy [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|pódpěra]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition techniske drobnostki]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] móžo awtorow boka we wikiju Wikimedije malsnje namakaś.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] jo projekt, kótaryž stoj tekstowu wersiju Wikipedije offline na mobilnem rěźe k dispoziciji.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] jo platformu pśesegajuca aplikacija za mobilne telefony a tabletowe licadła za cytanje a wobźěłowanje Wikipedije',
 );
 
 /** Greek (Ελληνικά)
