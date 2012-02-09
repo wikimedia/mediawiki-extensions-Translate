@@ -70,13 +70,15 @@ class TTMServer implements iTTMServer  {
 		}
 	}
 
+	/**
+	 * @param $mode int
+	 * @return DatabaseBase
+	 */
 	public function getDB( $mode = DB_SLAVE ) {
 		return wfGetDB( $mode, 'ttmserver', $this->config['database'] );
 	}
 
 	public function update( MessageHandle $handle, $targetText ) {
-		global $wgContLang;
-
 		if ( !$handle->isValid() || $handle->getCode() === '' ) {
 			return false;
 		}
