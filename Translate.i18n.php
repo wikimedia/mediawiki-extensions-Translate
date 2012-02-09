@@ -1306,7 +1306,7 @@ $messages['ar'] = array(
 	'translate-edit-tmsugs' => 'مقترحات من ذاكرة الترجمة',
 	'translate-edit-tmmatch' => '$1% مطابقة',
 	'translate-use-suggestion' => 'استبدال الترجمة الحالية بهذا الاقتراح.',
-	'translate-edit-tab-list' => 'قائمة رسائل',
+	'translate-edit-tab-list' => 'قائمة الرسائل',
 	'translate-magic-pagename' => 'ترجمة ميدياويكي الممتدة',
 	'translate-magic-help' => 'يمكنك ترجمة أسماء الصفحات الخاصة، والكلمات السحرية، وأسماء النطاقات.
 
@@ -5336,6 +5336,7 @@ Details: $1',
 
 /** Zazaki (Zazaki)
  * @author Erdemaslancan
+ * @author Mirzali
  */
 $messages['diq'] = array(
 	'translate-page-settings-legend' => 'Sazkerdış',
@@ -5353,7 +5354,7 @@ $messages['diq'] = array(
 	'translate-magic-module' => 'Modul:',
 	'translate-rc-translation-filter' => 'Açarnayışi Filtre fi',
 	'translate-tag-page-desc' => '[[$2|$1]] açarnè',
-	'translations' => 'ÇArnayışi Pêro',
+	'translations' => 'Çarnayışi pêro',
 	'translate-translations-project' => 'Proce:',
 	'languagestats' => 'İstatistikê zuwani',
 	'languagestats-summary' => 'Na pelay zuwana istatistik dê gruba mesaca asayışiya çarnayışiya.',
@@ -15894,7 +15895,8 @@ Agħfas l-isem tal-grupp ta' messaġġi sabiex tara lista sħiħa ta' messaġġi
 	'translate-page-no-such-language' => 'Il-lingwa speċifikata hi invalida.',
 	'translate-page-no-such-task' => 'L-azzjoni speċifikata kienet invalida.',
 	'translate-page-no-such-group' => 'Il-grupp speċifikat huwa invalidu.',
-	'translate-page-disabled' => "Traduzzjonijiet f'din il-lingwa għal dan il-grupp ġew diżabilitati.. Raġuni:
+	'translate-page-disabled' => "Traduzzjonijiet f'din il-lingwa għal dan il-grupp ġew diżabilitati.
+Raġuni:
 
 ''$1''",
 	'translate-page-settings-legend' => 'Impostazzjonijiet',
