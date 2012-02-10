@@ -16,7 +16,7 @@
  */
 class SpecialMessageGroupStats extends SpecialLanguageStats {
 	/// Overwritten from SpecialLanguageStats
-	protected $targetValueName = 'group';
+	protected $targetValueName = array( 'group' );
 	/// Overwritten from SpecialLanguageStats
 	protected $noComplete = false;
 	/// Overwritten from SpecialLanguageStats
@@ -57,7 +57,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 	/// Overwriten from SpecialLanguageStats
 	function getform() {
-		global $wgScript;
+		global $wgScript, $wgRequest;
 
 		$out = Html::openElement( 'div' );
 		$out .= Html::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
@@ -96,6 +96,13 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 		$out .= Html::closeElement( 'table' );
 		$out .= Html::closeElement( 'fieldset' );
+		/* Since these pages are in the tabgroup with Special:Translate,
+		 * it makes sense to retain the selected group/language parameter
+		 * on post requests even when not relevant to the current page. */
+		$val = $wgRequest->getVal( 'language' );
+		if ( $val !== null ) {
+			$out .= Html::hidden( 'language', $val );
+		}
 		$out .= Html::closeElement( 'form' );
 		$out .= Html::closeElement( 'div' );
 

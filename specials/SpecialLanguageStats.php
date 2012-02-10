@@ -29,7 +29,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	/**
 	 * @var String
 	 */
-	protected $targetValueName = 'code';
+	protected $targetValueName = array( 'code', 'language' );
 
 	/**
 	 * Most of the displayed numbers added together.
@@ -117,7 +117,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$submitted = !$this->including() && $request->getVal( 'x' ) === 'D';
 
 		// Default booleans to false if the form was submitted
-		$this->target = $request->getVal( $this->targetValueName, $this->target );
+		foreach ( $this->targetValueName as $key ) {
+			$this->target = $request->getVal( $key, $this->target );
+		}
 		$this->noComplete = $request->getBool( 'suppresscomplete', $this->noComplete && !$submitted );
 		$this->noEmpty = $request->getBool( 'suppressempty', $this->noEmpty && !$submitted );
 
@@ -165,7 +167,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * @todo duplicated code
 	 */
 	protected function getForm() {
-		global $wgScript;
+		global $wgScript, $wgRequest;
 
 		$out = Html::openElement( 'div' );
 		$out .= Html::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
@@ -177,10 +179,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-label' ) );
-		$out .= Xml::label( wfMsg( 'translate-language-code-field-name' ), 'code' );
+		$out .= Xml::label( wfMsg( 'translate-language-code-field-name' ), 'language' );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-input' ) );
-		$out .= Xml::input( 'code', 10, $this->target, array( 'id' => 'code' ) );
+		$out .= Xml::input( 'language', 10, $this->target, array( 'id' => 'language' ) );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::closeElement( 'tr' );
 
@@ -204,6 +206,13 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$out .= Html::closeElement( 'table' );
 		$out .= Html::closeElement( 'fieldset' );
+		/* Since these pages are in the tabgroup with Special:Translate,
+		 * it makes sense to retain the selected group/language parameter
+		 * on post requests even when not relevant to the current page. */
+		$val = $wgRequest->getVal( 'group' );
+		if ( $val !== null ) {
+			$out .= Html::hidden( 'group', $val );
+		}
 		$out .= Html::closeElement( 'form' );
 		$out .= Html::closeElement( 'div' );
 
@@ -408,13 +417,13 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	protected function getWorkflowStates() {
 		$db = wfGetDB( DB_SLAVE );
-
-		switch ( $this->targetValueName ) {
+		$key = array_pop( $this->targetValueName );
+		switch ( $key ) {
 			case 'group':
 				$targetCol = 'tgr_group';
 				$selectKey = 'tgr_lang';
 				break;
-			case 'code':
+			case 'language':
 				$targetCol = 'tgr_lang';
 				$selectKey = 'tgr_group';
 				break;

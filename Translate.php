@@ -108,6 +108,8 @@ $wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTr
 $wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
 $wgHooks['Translate:newTranslation'][] = 'TranslateEditAddons::updateTransverTag';
 
+$wgHooks['SkinTemplateNavigation::SpecialPage'][] = 'SpecialTranslate::tabify';
+
 // Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
 $wgDefaultUserOptions['translate-editlangs'] = 'default';
@@ -194,6 +196,11 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'api-error-unknownerror',
 		'tpt-unknown-page'
 	),
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.tabgroup'] = array(
+	'styles' => 'resources/ext.translate.tabgroup.css',
+	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.quickedit'] = array(

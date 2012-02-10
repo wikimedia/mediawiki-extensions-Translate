@@ -1,5 +1,6 @@
-/* Group listing at Special:Translate */
-
+/*
+ * Group listing at Special:Translate
+ */
 table.mw-sp-translate-grouplist td {
 	min-width: 13em;
 }
@@ -23,27 +24,45 @@ a.mw-sp-showmore {
 	cursor: pointer;
 }
 
-/* Form at Special:Translate */
-
+/*
+ * Form at Special:Translate
+ */
 .mw-sp-translate-error {
 	font-style: italic;
 	background-color: yellow;
-	padding-left: 3em;
-	padding-right: 3em;
 }
 
-.mw-sp-translate-settings table {
-	border-spacing: 12pt 5pt;
-	background-color: inherit;
+/* Make the less important selectors fade to reduce the feel that
+ * there is ton of options that need scanning and changing. Subject
+ * to change to better solution later. */
+.mw-sp-translate-nonessential {
 	font-weight: bold;
+	opacity: 0.4;
 }
 
+.mw-sp-translate-nonessential:hover {
+	opacity: 1.0;
+}
+
+/* This gets pretty far on wide screens... */
+.mw-sp-translate-settings input[type=submit] {
+	float: right;
+}
+
+/* For some reason a non-breaking space is not enough to keep the label
+ * with the dropdown. */
+.mw-sp-translate-settings label {
+	white-space: nowrap;
+}
+
+/*
+ * This reserves one corner with curvy lines for the message group status.
+ */
 #mw-sp-translate-workflow {
 	float: right;
 	vertical-align: middle;
 	padding: 0.5em;
 	margin-left: 20px;
-	margin-bottom: 20px;
 	margin-right: -1em;
 	margin-top: -1em;
 	border-bottom: 2px dotted #666;
