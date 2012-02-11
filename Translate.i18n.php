@@ -160,7 +160,9 @@ The default list of languages depends on your language.',
 
 	'right-translate' => 'Edit using the translate interface',
 	'right-translate-manage' => 'Manage message groups',
+	'action-translate-manage' => 'manage message groups', // Checked for ManageMessageGroups
 	'right-translate-import' => 'Import offline translations',
+	'action-translate-import' => 'import offline translations', // Checked for ImportTranslations
 	'right-translate-messagereview' => 'Review translations',
 	'right-translate-groupreview' => 'Change workflow state of message groups',
 
