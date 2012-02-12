@@ -203,7 +203,6 @@ class MediaWikiMessageChecker extends MessageChecker {
 			$definition = $message->definition();
 			$translation = $message->translation();
 
-
 			if ( in_array( strtolower( $key ), $timeList, true ) ) {
 				$defArray = explode( ',', $definition );
 				$traArray = explode( ',', $translation );
@@ -212,10 +211,16 @@ class MediaWikiMessageChecker extends MessageChecker {
 				$defCount = count( $defArray );
 				$traCount = count( $traArray );
 				if ( $defCount !== $traCount ) {
+					global $wgLang;
+
 					$warnings[$key][] = array(
 						array( 'miscmw', $subcheck, $key, $code ),
 						'translate-checks-format',
-						"Parameter count is $traCount; should be $defCount", // @todo Missing i18n.
+						wfMessage(
+							'translate-checks-parametersnotequal',
+							$wgLang->formatNum( $traCount ),
+							$wgLang->formatNum( $defCount )
+						)->text()
 					);
 					continue;
 				}
@@ -229,7 +234,11 @@ class MediaWikiMessageChecker extends MessageChecker {
 						$warnings[$key][] = array(
 							array( 'miscmw', $subcheck, $key, $code ),
 							'translate-checks-format',
-							"<nowiki>$traArray[$i]</nowiki> is malformed", // @todo Missing i18n.
+							wfMessage(
+								'translate-checks-malformed',
+								$defArray,
+								$i
+							)->text()
 						);
 						continue;
 					}
@@ -239,7 +248,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 						$warnings[$key][] = array(
 							array( 'miscmw', $subcheck, $key, $code ),
 							'translate-checks-format',
-							"<tt><nowiki>$traItems[1] !== $defItems[1]</nowiki></tt>",
+							"<tt><nowiki>$traItems[1] !== $defItems[1]</nowiki></tt>", // @todo FIXME: i18n missing.
 						);
 						continue;
 					}

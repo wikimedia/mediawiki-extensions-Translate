@@ -520,7 +520,7 @@ class FileBasedMessageGroup extends MessageGroupBase {
 
 /**
  * New style message group for %MediaWiki.
- * @todo Currently unused?
+ * @todo Currently unused
  */
 class MediaWikiMessageGroup extends FileBasedMessageGroup {
 	public function mapCode( $code ) {

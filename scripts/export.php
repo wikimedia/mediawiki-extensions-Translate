@@ -88,33 +88,15 @@ if ( isset( $options['no-fuzzy'] ) ) {
 
 $reqLangs = Cli::parseLanguageCodes( $options['lang'] );
 
-$groups = array();
+// In case both group and groupprefix would be set, MessageGroups::getMessageGroups
+// will give preference to groupIds.
+$groupIds = isset( $options['group'] ) ? explode( ',', trim( $options['group'] ) ) : null;
+$groupPrefix = isset( $options['groupprefix'] ) ? $options['groupprefix'] : null;
+$groups = MessageGroups::getMessageGroups( $groupIds, $groupPrefix );
 
-// @todo FIXME: Code duplication with sync-group.php
-if ( isset( $options['group'] ) ) {
-	// Explode parameter
-	$groupIds = explode( ',', trim( $options['group'] ) );
-
-	// Get groups and add groups to array
-	foreach ( $groupIds as $groupId ) {
-		$group = MessageGroups::getGroup( $groupId );
-
-		if ( $group !== null ) {
-			$groups[$groupId] = $group;
-		} else {
-			STDERR( "Invalid group $groupId" );
-		}
-	}
-} else {
-	// Apparently using option groupprefix. Find groups that match.
-	$allGroups = MessageGroups::singleton()->getGroups();
-
-	// Add matching groups to groups array.
-	foreach ( $allGroups as $groupId => $messageGroup ) {
-		if ( strpos( $groupId, $options['groupprefix'] ) === 0 && !$messageGroup->isMeta() ) {
-			$groups[$groupId] = $messageGroup;
-		}
-	}
+if ( !count( $groups ) ) {
+	STDERR( "No valid message groups identified." );
+	exit( 1 );
 }
 
 foreach ( $groups as $groupId => $group ) {

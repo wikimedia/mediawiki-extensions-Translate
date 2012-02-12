@@ -15,7 +15,6 @@
  * displays them in pretty way with diffs and finally executes the actions the user choices.
  */
 class MessageWebImporter {
-
 	/**
 	 * @var Title
 	 */
@@ -203,7 +202,7 @@ class MessageWebImporter {
 
 			if ( $old === false ) {
 				$name = wfMsgHtml( 'translate-manage-import-new',
-					'<code style="font-weight:normal;">' . htmlspecialchars( $key ) . '</code>'
+					'<code class="mw-tmi-new">' . htmlspecialchars( $key ) . '</code>'
 				);
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $value );
 				$changed[] = self::makeSectionElement( $name, 'new', $text );
@@ -268,7 +267,7 @@ class MessageWebImporter {
 				}
 
 				$name = wfMsg( 'translate-manage-import-diff',
-					'<code style="font-weight:normal;">' . htmlspecialchars( $key ) . '</code>',
+					'<code class="mw-tmi-diff">' . htmlspecialchars( $key ) . '</code>',
 					implode( ' ', $act )
 				);
 
@@ -283,9 +282,8 @@ class MessageWebImporter {
 			$diff = array_diff( $keys, array_keys( $messages ) );
 
 			foreach ( $diff as $s ) {
-				// @todo FIXME: Use CSS file.
 				$name = wfMsgHtml( 'translate-manage-import-deleted',
-					'<code style="font-weight:normal;">' . htmlspecialchars( $s ) . '</code>'
+					'<code class="mw-tmi-deleted">' . htmlspecialchars( $s ) . '</code>'
 				);
 				$text = TranslateUtils::convertWhiteSpaceToHTML(  $collection[$s]->translation() );
 				$changed[] = self::makeSectionElement( $name, 'deleted', $text );

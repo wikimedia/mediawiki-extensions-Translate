@@ -1032,7 +1032,6 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
  * @todo Clean up the mixed static/member method interface.
  */
 class MessageGroups {
-
 	/// Initialises the list of groups (but not the groups itself if possible).
 	public static function init() {
 		static $loaded = false;
@@ -1300,7 +1299,7 @@ class MessageGroups {
 	 * Get all enabled message groups.
 	 * @return \array
 	 */
-	public function getGroups() {
+	public function getAllMessageGroups() {
 		if ( $this->classes === null ) {
 			$this->classes = array();
 			global $wgTranslateEC, $wgTranslateCC;
@@ -1313,7 +1312,45 @@ class MessageGroups {
 				$this->classes[$g->getId()] = $g;
 			}
 		}
+
 		return $this->classes;
+	}
+
+	/**
+	 * Get message groups.
+	 *
+	 * @para $groups \array Group IDs
+	 * @para $groupPrefix \string Prefix for groups
+	 * @return \array
+	 */
+	public function getGroups( $groups = null, $groupPrefix = null ) {
+		if ( count( $groups ) ) {
+			// Get groups and add groups to array
+			foreach ( $groupIds as $groupId ) {
+				$group = self::getGroup( $groupId );
+
+				if ( $group !== null ) {
+					$groups[$groupId] = $group;
+				} else {
+					wfDebug( __METHOD__ . ": Invalid group $groupId\n" );
+				}
+			}
+
+			return $groups;
+		} elseif ( $groupPrefix !== null ) {
+			$allGroups = self::singleton()->getGroups();
+
+			// Add matching groups to groups array.
+			foreach ( $allGroups as $groupId => $messageGroup ) {
+				if ( strpos( $groupId, $groupPrefix ) === 0 && !$messageGroup->isMeta() ) {
+					$groups[$groupId] = $messageGroup;
+				}
+			}
+
+			return $groups;
+		} else {
+			return self::getAllMessageGroups();
+		}
 	}
 
 	/**

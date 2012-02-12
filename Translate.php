@@ -15,7 +15,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2012-01-31' );
+define( 'TRANSLATE_VERSION', '2012-02-12' );
 
 /**
  * Extension credits properties.
@@ -226,10 +226,20 @@ $wgResourceModules['ext.translate.special.importtranslations'] = array(
 	),
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.messagewebimporter'] = array(
+	'styles' => 'resources/ext.translate.messagewebimporter.css',
+	'position' => 'top',
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.special.languagestats'] = array(
 	'scripts' => 'resources/ext.translate.special.languagestats.js',
 	'styles' => 'resources/ext.translate.special.languagestats.css',
-	'messages' => array( 'translate-langstats-expandall', 'translate-langstats-collapseall', 'translate-langstats-expand', 'translate-langstats-collapse' ),
+	'messages' => array(
+		'translate-langstats-expandall',
+		'translate-langstats-collapseall',
+		'translate-langstats-expand',
+		'translate-langstats-collapse'
+	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.pagetranslation'] = array(

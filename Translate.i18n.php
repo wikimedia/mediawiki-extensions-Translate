@@ -146,6 +146,8 @@ Changes are not saved until you click save button below.',
 	'translate-checks-pagename'           => 'Namespace changed from the definition',
 	'translate-checks-format'             => 'This translation does not follow the definition or has invalid syntax: $1',
 	'translate-checks-escape'             => 'The following escapes may be accidental: <strong>$1</strong>',
+	'translate-checks-parametersnotequal' => 'Parameter count is {{PLURAL:$1|$1}}; should be {{PLURAL:$2|$2}}.',
+	'translate-checks-malformed'          => '<nowiki>$traArray[$i]</nowiki> is malformed.',
 	'translate-checks-fudforum-syntax'    => 'Use <nowiki>$1</nowiki> instead of <nowiki>$2</nowiki> in this project.',
 
 	'translate-pref-nonewsletter' => 'Do not send me e-mail newsletters',
@@ -521,13 +523,18 @@ This box list the problems found in the translation.',
 	'translate-magic-cm-current' => '{{Identical|Current}}',
 	'translate-magic-cm-comment' => '{{Identical|Comment}}',
 	'translate-magic-cm-save' => '{{Identical|Save}}',
-	'translate-checks-balance' => 'This translation warning is displayed if the number of opening brackets ("[", "{", and "(") is different from the number of closing brackets ("]", "}", and ")").
-
+	'translate-checks-balance' => 'This translation warning is displayed if the number of opening brackets ("[", "{", and "(") is different from the number of closing brackets ("]", "}", and ")"). Parameters:
 * Parameter $1 is a list of the unbalanced brackets, for example "\'\'\'[]: 1\'\'\'" which means that there is one missing closing square brackets.
 * Parameter $2 is the number of types of parentheses that are unbalanced.',
 	'translate-checks-pagename' => 'A warning when editing a message.
 
 This warning indicates that the namespace in the translation does not match the namespace appearing in the message definition (original English message).',
+	'translate-checks-parametersnotequal' => 'Warning message from automated syntax check for translators. Parameters:
+* $1 is the number of parameters used in the source message
+* $2 is the number of parameters used in the translated message.',
+	'translate-checks-malformed'          => 'Warning message from automated syntax check for translators. Parameters:
+* $1 is ...
+* $2 is ....',
 	'translate-pref-nonewsletter' => "Option in [[Special:Preferences]], 'Misc' tab.",
 	'translate-pref-editassistlang' => 'Used in [[Special:Preferences]] under the {{msg-mw|prefs-editing}} tab.',
 	'prefs-translate' => 'Caption of a section at [[Special:Preferences#prefsection-3|Special:Preferences]]',
