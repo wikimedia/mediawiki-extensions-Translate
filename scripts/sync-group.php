@@ -49,7 +49,7 @@ if ( !isset( $options['group'] ) && !isset( $options['groupprefix'] ) ) {
 // will give preference to groupIds.
 $groupIds = isset( $options['group'] ) ? explode( ',', trim( $options['group'] ) ) : null;
 $groupPrefix = isset( $options['groupprefix'] ) ? $options['groupprefix'] : null;
-$groups = MessageGroups::getMessageGroups( $groupIds, $groupPrefix );
+$groups = singleton()->getGroups( $groupIds, $groupPrefix );
 
 if ( !count( $groups ) ) {
 	STDERR( "ESG2: No valid message groups identified." );

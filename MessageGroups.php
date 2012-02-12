@@ -1326,7 +1326,7 @@ class MessageGroups {
 	public function getGroups( $groups = null, $groupPrefix = null ) {
 		if ( count( $groups ) ) {
 			// Get groups and add groups to array
-			foreach ( $groupIds as $groupId ) {
+			foreach ( $groups as $groupId ) {
 				$group = self::getGroup( $groupId );
 
 				if ( $group !== null ) {
