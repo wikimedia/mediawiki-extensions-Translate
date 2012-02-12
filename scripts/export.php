@@ -88,11 +88,11 @@ if ( isset( $options['no-fuzzy'] ) ) {
 
 $reqLangs = Cli::parseLanguageCodes( $options['lang'] );
 
-// In case both group and groupprefix would be set, MessageGroups::getMessageGroups
+// In case both group and groupprefix would be set, MessageGroups::getGroups
 // will give preference to groupIds.
 $groupIds = isset( $options['group'] ) ? explode( ',', trim( $options['group'] ) ) : null;
 $groupPrefix = isset( $options['groupprefix'] ) ? $options['groupprefix'] : null;
-$groups = MessageGroups::getMessageGroups( $groupIds, $groupPrefix );
+$groups = MessageGroups::getGroups( $groupIds, $groupPrefix );
 
 if ( !count( $groups ) ) {
 	STDERR( "No valid message groups identified." );

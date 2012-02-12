@@ -45,7 +45,7 @@ if ( !isset( $options['group'] ) && !isset( $options['groupprefix'] ) ) {
 	exit( 1 );
 }
 
-// In case both group and groupprefix would be set, MessageGroups::getMessageGroups
+// In case both group and groupprefix would be set, MessageGroups::getGroups
 // will give preference to groupIds.
 $groupIds = isset( $options['group'] ) ? explode( ',', trim( $options['group'] ) ) : null;
 $groupPrefix = isset( $options['groupprefix'] ) ? $options['groupprefix'] : null;
