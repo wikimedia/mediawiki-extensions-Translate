@@ -21,7 +21,7 @@ $wgMaxShellMemory = 1024 * 200;
 function showUsage() {
 	STDERR( <<<EOT
 Options:
-  --group       Comma separated list of group IDs
+  --group       Comma separated list of group IDs (cannot use groupprefix)
   --groupprefix Prefix of group IDs to be exported message groups (cannot use
                 group)
   --lang        Comma separated list of language codes or *
