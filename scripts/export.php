@@ -92,7 +92,7 @@ $reqLangs = Cli::parseLanguageCodes( $options['lang'] );
 // will give preference to groupIds.
 $groupIds = isset( $options['group'] ) ? explode( ',', trim( $options['group'] ) ) : null;
 $groupPrefix = isset( $options['groupprefix'] ) ? $options['groupprefix'] : null;
-$groups = singleton()->getGroups( $groupIds, $groupPrefix );
+$groups = MessageGroups::singleton()->getGroups( $groupIds, $groupPrefix );
 
 if ( !count( $groups ) ) {
 	STDERR( "No valid message groups identified." );
