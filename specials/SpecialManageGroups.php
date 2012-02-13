@@ -212,10 +212,18 @@ class SpecialManageGroups extends SpecialPage {
 			$process = false;
 		}
 
+		$user = $this->user;
+		// BC <1.19
+		if ( method_exists( $user, 'getEditToken' ) ) {
+			$token = $user->getEditToken();
+		} else {
+			$token = $user->editToken();
+		}
+
 		$this->out->addHTML(
 			Xml::openElement( 'form', $formParams ) .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Html::hidden( 'token', $this->user->editToken() ) .
+			Html::hidden( 'token', $token ) .
 			Html::hidden( 'group', $group->getId() ) .
 			Html::hidden( 'process', 1 )
 		);
