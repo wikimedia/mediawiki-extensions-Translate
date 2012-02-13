@@ -260,7 +260,7 @@ class SpecialTranslate extends SpecialPage {
 		if ( $taction === 'proofread' ) {
 			$extra = $this->taskLinks( array( 'acceptqueue', 'reviewall' ) );
 		} elseif ( $taction === 'translate' ) {
-			$extra = $this->taskLinks( array( 'untranslated', 'view', 'optional', 'suggestions' ) );
+			$extra = $this->taskLinks( array( 'view', 'untranslated', 'optional', 'suggestions' ) );
 		} elseif ( $taction === 'export' ) {
 			$extra = $this->taskLinks( array( 'export-as-po', 'export-to-file' ) );
 		} else {
