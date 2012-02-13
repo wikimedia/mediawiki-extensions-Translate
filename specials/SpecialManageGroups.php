@@ -20,11 +20,6 @@
  */
 class SpecialManageGroups extends SpecialPage {
 	/**
-	 * @var Skin
-	 */
-	protected $skin;
-
-	/**
 	 * @var User
 	 */
 	protected $user;
@@ -44,12 +39,12 @@ class SpecialManageGroups extends SpecialPage {
 		global $wgOut, $wgUser;
 		$this->out = $wgOut;
 		$this->user = $wgUser;
-		$this->skin = $wgUser->getSkin();
 		parent::__construct( 'ManageMessageGroups', 'translate-manage' );
 	}
 
 	public function execute( $par ) {
 		global $wgRequest;
+		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		$this->out->setPageTitle( htmlspecialchars( wfMsg( 'translate-managegroups' ) ) );
 
@@ -107,7 +102,7 @@ class SpecialManageGroups extends SpecialPage {
 			wfDebug( __METHOD__ . ": {$group->getId()}\n" );
 
 			$id = $group->getId();
-			$link = $this->skin->link( $this->getTitle(), $group->getLabel(),
+			$link = $linker->link( $this->getTitle(), $group->getLabel(),
 				array( 'id' => "mw-group-$id" ), array( 'group' => $id ) );
 			$out = $link . $separator;
 
@@ -406,7 +401,8 @@ class SpecialManageGroups extends SpecialPage {
 		if ( $code === 'en' ) {
 			$this->doModLangs( $group );
 		} else {
-			$this->out->addHTML( '<p>' . $this->skin->link(
+			$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
+			$this->out->addHTML( '<p>' . $linker->link(
 				$this->getTitle(),
 				wfMsgHtml( 'translate-manage-return-to-group' ),
 				array(),
@@ -435,7 +431,8 @@ class SpecialManageGroups extends SpecialPage {
 				continue;
 			}
 
-			$link = $this->skin->link(
+			$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
+			$link = $linker->link(
 				$this->getTitle(),
 				htmlspecialchars( TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() ) . " ($code)" ),
 				array(),
@@ -485,13 +482,14 @@ class SpecialManageGroups extends SpecialPage {
 	 */
 	protected function setSubtitle( $group, $code ) {
 		global $wgLang;
+		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
-		$links[] = $this->skin->link(
+		$links[] = $linker->link(
 			$this->getTitle(),
 			wfMsgHtml( 'translate-manage-subtitle' )
 		);
 
-		$links[] = $this->skin->link(
+		$links[] = $linker->link(
 			$this->getTitle(),
 			htmlspecialchars( $group->getLabel() ),
 			array(),
@@ -501,7 +499,7 @@ class SpecialManageGroups extends SpecialPage {
 		// Do not show language part for English.
 		if ( $code !== 'en' ) {
 			$langname = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
-			$links[] = $this->skin->link(
+			$links[] = $linker->link(
 				$this->getTitle(),
 				htmlspecialchars( $langname ),
 				array(),
