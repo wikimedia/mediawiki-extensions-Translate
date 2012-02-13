@@ -51,6 +51,7 @@ $groupIds = array();
 if ( isset( $options['groupprefix'] ) ) {
 	$groupIds[] = $options['groupprefix'] . '*';
 }
+
 if ( isset( $options['group'] ) ) {
 	$groupIds = explode( ',', trim( $options['group'] ) );
 }
