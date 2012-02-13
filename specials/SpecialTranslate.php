@@ -325,21 +325,17 @@ class SpecialTranslate extends SpecialPage {
 			if ( $this->defaults['task'] === $id ) {
 				return '';
 			}
-			return $sep . Xml::radioLabel(
-				wfMessage( "translate-taskui-$id" )->text(),
-				'task', $id, 'task', // Name, value, id
-				true // Selected
+			return $sep . Html::rawElement( 'label', null,
+				Xml::radio( 'task', $id, true ) . ' ' .
+				wfMessage( "translate-taskui-$id" )->escaped()
 			);
 		} else {
 			$output = '';
 			foreach ( $tasks as $index => $id ) {
-				$output .= Xml::radioLabel(
-					wfMessage( "translate-taskui-$id" )->text(),
-					'task', // Name
-					$id,
-					"task-$index", // id
-					$this->options['task'] === $id
-				);
+				$output .= Html::rawElement( 'label', null,
+				Xml::radio( 'task', $id, $this->options['task'] === $id ) . ' ' .
+				wfMessage( "translate-taskui-$id" )->escaped()
+			) . ' ';
 			}
 			return $sep . $output;
 		}
