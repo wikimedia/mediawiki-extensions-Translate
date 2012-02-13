@@ -164,10 +164,18 @@ class SpecialManageGroups extends SpecialPage {
 			'action' => $this->getTitle()->getLocalURL() . '#mw-group-' . $group->getId(),
 		);
 
+		$user = $this->user;
+		// BC <1.19
+		if ( method_exists( $user, 'getEditToken' ) ) {
+			$token = $user->getEditToken();
+		} else {
+			$token = $user->editToken();
+		}
+
 		$html =
 			Xml::openElement( 'form', $formParams ) .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Html::hidden( 'token', $this->user->editToken() ) .
+			Html::hidden( 'token', $token ) .
 			Html::hidden( 'group', $group->getId() ) .
 			Html::hidden( 'codes', implode( ',', $codes ) ) .
 			Html::hidden( 'rebuildall', 1 ) .
