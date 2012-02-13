@@ -265,11 +265,6 @@ class ViewWithSuggestionsTask extends ViewMessagesTask {
 
 	protected function preinit() {
 		$code = $this->options->getLanguage();
-		global $wgTranslateTranslationServices;
-		$config = $wgTranslateTranslationServices['tmserver'];
-		$server = $config['server'];
-		$port   = $config['port'];
-		$timeout = $config['timeout-sync'];
 		$sourceLanguage = $this->group->getSourceLanguage();
 
 		$this->collection = $this->group->initCollection( $code );
