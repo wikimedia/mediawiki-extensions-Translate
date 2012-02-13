@@ -46,10 +46,16 @@ if ( !isset( $options['group'] ) && !isset( $options['groupprefix'] ) ) {
 }
 
 // In case both group and groupprefix would be set, MessageGroups::getGroups
-// will give preference to groupIds.
-$groupIds = isset( $options['group'] ) ? explode( ',', trim( $options['group'] ) ) : null;
-$groupPrefix = isset( $options['groupprefix'] ) ? $options['groupprefix'] : null;
-$groups = MessageGroups::singleton()->getGroups( $groupIds, $groupPrefix );
+// will give preference to group. @TODO: get rid of groupprefix
+$groupIds = array();
+if ( isset( $options['groupprefix'] ) ) {
+	$groupIds[] = $options['groupprefix'] . '*';
+}
+if ( isset( $options['group'] ) ) {
+	$groupIds = explode( ',', trim( $options['group'] ) );
+}
+$groupIds = MessageGroups::expandWildcards( $groupIds );
+$groups = MessageGroups::getGroupsById( $groupIds );
 
 if ( !count( $groups ) ) {
 	STDERR( "ESG2: No valid message groups identified." );

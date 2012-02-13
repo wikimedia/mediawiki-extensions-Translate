@@ -89,13 +89,19 @@ if ( isset( $options['no-fuzzy'] ) ) {
 $reqLangs = Cli::parseLanguageCodes( $options['lang'] );
 
 // In case both group and groupprefix would be set, MessageGroups::getGroups
-// will give preference to groupIds.
-$groupIds = isset( $options['group'] ) ? explode( ',', trim( $options['group'] ) ) : null;
-$groupPrefix = isset( $options['groupprefix'] ) ? $options['groupprefix'] : null;
-$groups = MessageGroups::singleton()->getGroups( $groupIds, $groupPrefix );
+// will give preference to group. @TODO: get rid of groupprefix
+$groupIds = array();
+if ( isset( $options['groupprefix'] ) ) {
+	$groupIds[] = $options['groupprefix'] . '*';
+}
+if ( isset( $options['group'] ) ) {
+	$groupIds = explode( ',', trim( $options['group'] ) );
+}
+$groupIds = MessageGroups::expandWildcards( $groupIds );
+$groups = MessageGroups::getGroupsById( $groupIds );
 
 if ( !count( $groups ) ) {
-	STDERR( "No valid message groups identified." );
+	STDERR( "EE1: No valid message groups identified." );
 	exit( 1 );
 }
 

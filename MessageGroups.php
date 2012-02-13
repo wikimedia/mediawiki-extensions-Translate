@@ -1299,7 +1299,7 @@ class MessageGroups {
 	 * Get all enabled message groups.
 	 * @return \array
 	 */
-	public function getAllMessageGroups() {
+	public function getGroups() {
 		if ( $this->classes === null ) {
 			$this->classes = array();
 			global $wgTranslateEC, $wgTranslateCC;
@@ -1317,40 +1317,47 @@ class MessageGroups {
 	}
 
 	/**
-	 * Get message groups.
+	 * Get message groups for corresponding message group ids.
 	 *
-	 * @para $groups \array Group IDs
-	 * @para $groupPrefix \string Prefix for groups
-	 * @return \array
+	 * @param $groups array Group IDs
+	 * @param $groupPrefix string Prefix for groups
+	 * @return array
+	 * @since 2012-02-13
 	 */
-	public function getGroups( $groups = null, $groupPrefix = null ) {
-		if ( count( $groups ) ) {
-			// Get groups and add groups to array
-			foreach ( $groups as $groupId ) {
-				$group = self::getGroup( $groupId );
+	public static function getGroupsById( array $ids ) {
+		$groups = array();
+		foreach ( $ids as $id ) {
+			$group = self::getGroup( $id );
 
-				if ( $group !== null ) {
-					$groups[$groupId] = $group;
-				} else {
-					wfDebug( __METHOD__ . ": Invalid group $groupId\n" );
-				}
+			if ( $group !== null ) {
+				$groups[$id] = $group;
+			} else {
+				wfDebug( __METHOD__ . ": Invalid message group id: $id\n" );
 			}
-
-			return $groups;
-		} elseif ( $groupPrefix !== null ) {
-			$allGroups = self::singleton()->getGroups();
-
-			// Add matching groups to groups array.
-			foreach ( $allGroups as $groupId => $messageGroup ) {
-				if ( strpos( $groupId, $groupPrefix ) === 0 && !$messageGroup->isMeta() ) {
-					$groups[$groupId] = $messageGroup;
-				}
-			}
-
-			return $groups;
-		} else {
-			return self::getAllMessageGroups();
 		}
+
+		return $groups;
+	}
+
+	/**
+	 * If the list of message group ids contains wildcards, this function will match
+	 * them against the list of all supported message groups and return matched
+	 * message group ids.
+	 * @param $ids \list{String}|String
+	 * @return \list{String}
+	 * @since 2012-02-13
+	 */
+	public static function expandWildcards( $ids ) {
+		$all = array();
+
+		$matcher = new StringMatcher( '', (array) $ids );
+		foreach ( self::singleton()->getGroups() as $id => $_ ) {
+			if ( $matcher->match( $id ) ) {
+				$all[] = $id;
+			}
+		}
+
+		return $all;
 	}
 
 	/**
