@@ -702,7 +702,7 @@ $messages['be-tarask'] = array(
 	'translate-tag-markthis' => 'Пазначыць гэту старонку для перакладу',
 	'translate-tag-markthisagain' => 'Гэта старонка ўтрымлівае <span class="plainlinks">[$1 зьмены]</span> пасьля апошняй <span class="plainlinks">[$2 пазнакі для перакладу]</span>.',
 	'translate-tag-hasnew' => 'Гэта старонка ўтрымлівае <span class="plainlinks">[$1 зьмены]</span> не пазначаныя для перакладу.',
-	'tpt-translation-intro' => 'Гэта старонка <span class="plainlinks">[$1 перакладзеная вэрсія]</span> старонкі [[$2]], пераклад завершаны на $3%.',
+	'tpt-translation-intro' => 'Гэтая старонка — <span class="plainlinks">[$1 перакладзеная вэрсія]</span> старонкі [[$2]]. Пераклад завершаны на $3%.',
 	'tpt-translation-intro-fuzzy' => 'Састарэлыя пераклады пазначаны наступным чынам.',
 	'tpt-languages-legend' => 'Іншыя мовы:',
 	'tpt-target-page' => 'Гэта старонка ня можа быць абноўлена ўручную.
@@ -872,6 +872,7 @@ Gallout a ra ar bajenn bezañ <span class="plainlinks">[$3 troet]</span> bremañ
 Kent merkañ ar stumm-mañ evit an treiñ, gwiriait mat n'eus ket bet nemeur a gemmoù er rannbennadoù kuit da bourchas labour aner d'an droourien.",
 	'tpt-mark-summary' => 'Merket eo bet ar stumm-mañ da vezañ troet',
 	'tpt-edit-failed' => "N'eus ket bet gallet hizivaat ar bajenn : $1",
+	'tpt-duplicate' => 'Implijet eo bet meur a wezh anv an unvez treiñ $1.',
 	'tpt-already-marked' => 'Merket eo bet ar stumm diwezhañ eus ar bajenn-mañ da vezañ troet dija.',
 	'tpt-unmarked' => "N'eo ket merket ken ar bajenn $1 evit bezañ troet.",
 	'tpt-list-nopages' => "N'eus pajenn ebet merket da vezañ troet na prest da vezañ merket da vezañ troet.",
@@ -5111,6 +5112,7 @@ $messages['pdc'] = array(
 );
 
 /** Polish (Polski)
+ * @author BeginaFelicysym
  * @author Deejay1
  * @author Equadus
  * @author Leinad
@@ -5149,6 +5151,7 @@ Można ją teraz <span class="plainlinks">[$3 przetłumaczyć]</span>.',
 Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy tłumaczy, sprawdź czy zmiany w sekcjach zostały zminimalizowane.',
 	'tpt-mark-summary' => 'Oznaczono tę wersję do tłumaczenia',
 	'tpt-edit-failed' => 'Nie udało się zaktualizować strony $1',
+	'tpt-duplicate' => 'Nazwa jednostki tłumaczenia  $1  jest używana więcej niż jeden raz.',
 	'tpt-already-marked' => 'Najnowsza wersja tej strony już wcześniej została oznaczona do tłumaczenia.',
 	'tpt-unmarked' => 'Strona $1 nie będzie dłużej oznaczona jako przeznaczona do tłumaczenia.',
 	'tpt-list-nopages' => 'Nie oznaczono stron do tłumaczenia i nie ma stron gotowych do oznaczenia do tłumaczenia.',
@@ -5161,7 +5164,13 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 	'tpt-other-pages' => '{{PLURAL:$1|Stara wersja tej strony jest oznaczona jako przeznaczona|Stare wersje tych stron są oznaczone jako przeznaczone}} do tłumaczenia, ale {{PLURAL:$1|jej aktualna wersja nie może zostać oznaczona jako przeznaczona|ich aktualne wersje nie mogą zostać oznaczone jako przeznaczone}} do tłumaczenia.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Ta strona jest odradzana|Te strony są odradzane}} do dalszego tłumaczenia.',
 	'tpt-rev-mark' => 'zaznacz do tłumaczenia',
-	'tpt-rev-unmark' => 'usuń tę stronę z przeznaczonych do tłumaczenia',
+	'tpt-rev-unmark' => 'usuń z tłumaczenia',
+	'tpt-rev-discourage' => 'zniechęcić',
+	'tpt-rev-encourage' => 'Przywracanie',
+	'tpt-rev-mark-tooltip' => 'Zaznacz najnowszą wersję tej strony do tłumaczenia.',
+	'tpt-rev-unmark-tooltip' => 'Usuń tę stronę z tłumaczenia.',
+	'tpt-rev-discourage-tooltip' => 'Zniechęć do dalszych tłumaczeń na tej stronie.',
+	'tpt-rev-encourage-tooltip' => 'Przywrócić tę stronę do zwykłego tłumaczenia.',
 	'translate-tag-translate-link-desc' => 'Przetłumacz tę stronę',
 	'translate-tag-markthis' => 'Oznacz tę stronę do tłumaczenia',
 	'translate-tag-markthisagain' => 'Ta strona została <span class="plainlinks">[zmieniona $1 razy]</span>, od kiedy ostatnio była <span class="plainlinks">[$2 oznaczona do tłumaczenia]</span>.',
@@ -5224,18 +5233,33 @@ Działanie przenoszenia nie jest natychmiastowe, ponieważ wiele stron wymaga pr
 Podczas gdy strony są przenoszone, nie jest możliwa praca z tymi stronami poprzez zapytania.
 Błędy zostaną odnotowane na [[Special:Log/pagetranslation|stronie rejestru tłumaczeń]] i muszą zostać naprawione ręcznie.',
 	'pt-movepage-logreason' => 'Część przetłumaczalnej strony $1.',
-	'pt-movepage-started' => 'Strona bazowa jest teraz przenoszona.
+	'pt-movepage-started' => 'Strona bazowa jest teraz przenoszona. 
 Proszę sprawdzić na [[Special:Log/pagetranslation|stronie rejestru tłumaczeń]] czy nie wystąpiły błędy oraz komunikat o zakończeniu operacji.',
 	'pt-locked-page' => 'Ta strona jest zablokowana ponieważ jest przygotowana do przeniesienia.',
+	'pt-deletepage-lang-title' => 'Usuwanie strony tłumaczenia  $1.',
+	'pt-deletepage-full-title' => 'Usuwanie strony do tłumaczenia  $1.',
 	'pt-deletepage-invalid-title' => 'Wybrana strona nie jest poprawna.',
+	'pt-deletepage-invalid-text' => 'Wybrana strona nie jest przeznaczona do tłumaczenia ani jej tłumaczeniem.',
 	'pt-deletepage-action-check' => 'Pokaż spis stron, które mają zostać usunięte',
 	'pt-deletepage-action-perform' => 'Usuń',
 	'pt-deletepage-action-other' => 'Zmiana celu',
+	'pt-deletepage-lang-legend' => 'Usuwanie strony tłumaczenia',
+	'pt-deletepage-full-legend' => 'Usunąć stronę przeznaczoną do tłumaczenia',
+	'pt-deletepage-any-legend' => 'Usuń stronę przeznaczoną do tłumaczenia lub tłumaczenie strony',
 	'pt-deletepage-current' => 'Tytuł strony',
 	'pt-deletepage-reason' => 'Powód',
 	'pt-deletepage-subpages' => 'Usuń wszystkie podstrony',
+	'pt-deletepage-list-pages' => 'Lista stron do usunięcia',
 	'pt-deletepage-list-translation' => 'Strony tłumaczeń',
+	'pt-deletepage-list-section' => 'Sekcje stron',
 	'pt-deletepage-list-other' => 'Inne podstrony',
+	'pt-deletepage-list-count' => 'W sumie  $1 {{PLURAL:$1|strona|strony|stron}} do usunięcia.',
+	'pt-deletepage-full-logreason' => 'Część strony do tłumaczenia  $1.',
+	'pt-deletepage-lang-logreason' => 'Część strony tłumaczenia  $1.',
+	'pt-deletepage-started' => 'Sprawdź [[Special:Log/pagetranslation|dziennik strony tłumaczenia]] pod względem błędów i komunikatów zakończenia.',
+	'pt-deletepage-intro' => 'Ta specjalna strona pozwala na usuwanie całych stron do tłumaczenia lub tłumaczenia na jeden z języków.
+Akcja usuwania nie będzie błyskawiczna, ponieważ będzie musiało być usunięte wiele stron.
+Błędy będą rejestrowane [[Special:Log/pagetranslation|w dzienniku tłumaczenia strony]] i muszą one być naprawione ręcznie.',
 );
 
 /** Piedmontese (Piemontèis)

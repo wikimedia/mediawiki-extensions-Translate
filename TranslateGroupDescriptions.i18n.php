@@ -1934,6 +1934,7 @@ Vejatz [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibr
 );
 
 /** Polish (Polski)
+ * @author BeginaFelicysym
  * @author Leinad
  * @author Sp5uhe
  * @author ToSter
@@ -1947,6 +1948,7 @@ $messages['pl'] = array(
 	'translate-group-desc-collection' => 'Metagrupa zawiera wszystkie komunikaty MediaWiki używane przez rozszerzenie [http://www.mediawiki.org/wiki/Extension:Collection Kolekcja]',
 	'translate-group-desc-flaggedrevs' => 'Metagrupa zawiera wszystkie komunikaty rozszerzenia MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Metagrupa komunikatów, zawierająca wszystkie komunikaty rozszerzenia MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'Grupa meta wiadomości zawierająca wszystkie wiadomości dla wszystkich rozszerzeń [http://semantic-mediawiki.org/ Semantic MediaWiki]',
 	'translate-group-desc-socialprofile' => 'Metagrupa komunikatów, zawierająca wszystkie komunikaty rozszerzeń związanych z rozszerzeniem MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń MediaWiki używanych przez [http://www.wikia.com Wikia]',
@@ -1964,6 +1966,7 @@ $messages['pl'] = array(
 	'translate-group-desc-ihris-i2ce' => 'Grupa komunikatów [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], moduł [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-manage' => 'Grupa komunikatów [[Special:Translate/out-ihris-manage-0-all|menadżera iHRIS]], moduł [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-qualify' => 'Grupa komunikatów [[Special:Translate/out-ihris-qualify-0-all|kwalifikacji iHRIS]], modułu [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'Grupy wiadomości dla [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Główna wtyczka dla [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Komunikaty stabilnej wersji oprogramowania [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] jest systemem zarządzania informacją dla mikrofinansów',
@@ -1982,8 +1985,10 @@ Więcej informacji odnajdziesz na stronach [[mw:Extension:PDF_Writer]] oraz http
 	'bw-desc-shapado' => 'Grupa komunikatów darmowego z otwartym kodem oprogramowania zadawania pytań i udzielania odpowiedzi [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] jest opartym na otwartym kodzie serwerem mikroblogów',
 	'translate-group-desc-statusnet-plugin' => 'Te komunikaty są częścią wtyczki do [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Grupa wiadomości dla [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition] - systemu i18n narzędzia [http://toolserver.org Toolserver] (·<span class="plainlinks">[[Translating talk:Toolserver|wsparcie]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition szczegóły techniczne]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pozwala szybko odnaleźć autorów strony w Wikimedia wiki.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] jest projektem udostępniania offline, wyłącznie tekstowej wersji Wikipedii dla uradzeń mobilnych.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] jest wieloplatformową aplikacją na telefony i tablety do czytania i dodawania treści do Wikipedii',
 );
 
 /** Piedmontese (Piemontèis)

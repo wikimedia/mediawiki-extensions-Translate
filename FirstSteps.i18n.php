@@ -1953,6 +1953,7 @@ Um Schluss kënnt Dir all ''Interface-Messagen'' vun de vun {{SITENAME}} ënners
 	'translate-fs-settings-slanguage-desc' => 'Et ass méiglech fir Iwwersetzunge vu Messagen an anere Sproochen am Iwwersetzungsediteur ze weisen.
 Hei kënnt Dir eraussiche wat fir eng Sprooch, wann Dir dat wëllt, Dir gesi wëllt.',
 	'translate-fs-settings-submit' => 'Astellunge späicheren',
+	'translate-fs-userpage-level-N' => 'Meng Mamme sprooch ass',
 	'translate-fs-userpage-level-5' => 'Ech sinn e professionellen Iwwersetzer vu(n)',
 	'translate-fs-userpage-level-4' => 'Ech kenne se wéi wann et meng Mammesprooch wier',
 	'translate-fs-userpage-level-3' => 'Ech ka mech gutt ausdrécken op',
@@ -1961,6 +1962,7 @@ Hei kënnt Dir eraussiche wat fir eng Sprooch, wann Dir dat wëllt, Dir gesi wë
 	'translate-fs-userpage-submit' => 'Meng Benotzersäit maachen',
 	'translate-fs-userpage-done' => 'Gutt gemaach! dir hutt elo eng Benotzersäit.',
 	'translate-fs-permissions-planguage' => 'Haaptsprooch:',
+	'translate-fs-permissions-pending' => 'Är Ufro gouf op [[$1]] gespäichert an e vun de Mataarbechter vum Site wäert dat esou séier wéi méiglech nokucken. Wann Dir Är Mail-Adress confirméiert, da kritt Dir eng Confirmatioun esou bal wéi dat gemaaach ass.',
 	'translate-fs-permissions-submit' => 'Ufro schécken',
 	'translate-fs-target-text' => "Felicitatiounen!
 Dir kënnt elo ufänke mat iwwersetzen.
@@ -2290,12 +2292,14 @@ $messages['pdc'] = array(
 );
 
 /** Polish (Polski)
+ * @author BeginaFelicysym
  * @author Sp5uhe
  */
 $messages['pl'] = array(
 	'firststeps' => 'Pierwsze kroki',
 	'firststeps-desc' => '[[Special:FirstSteps|Strona specjalna]] ułatwiająca rozpoczęcie pracy na wiki z wykorzystaniem rozszerzenia Translate',
 	'translate-fs-pagetitle-done' => '&#32;– gotowe!',
+	'translate-fs-pagetitle-pending' => '- oczekiwanie',
 	'translate-fs-pagetitle' => 'Kreator pierwszych kroków – $1',
 	'translate-fs-signup-title' => 'Rejestracja',
 	'translate-fs-settings-title' => 'Konfiguracja preferencji',
@@ -2306,8 +2310,45 @@ $messages['pl'] = array(
 	'translate-fs-intro' => "Witaj w kreatorze pierwszych kroków na {{GRAMMAR:MS,pl|{{SITENAME}}}}.
 Pomożemy Ci krok po kroku przejść przez proces zostania tłumaczem.
 Po jego zakończeniu będziesz mógł tłumaczyć ''komunikatu interfejsu'' wszystkich wspieranych przez {{GRAMMAR:B.lp|{{SITENAME}}}} projektów.",
+	'translate-fs-selectlanguage' => 'Wybierz język',
+	'translate-fs-settings-planguage' => 'Język podstawowy:',
+	'translate-fs-settings-planguage-desc' => 'Język podstawowy służy jako język interfejsu tej wiki
+i jako domyślny język docelowy tłumaczenia.',
+	'translate-fs-settings-slanguage' => 'Język pomocniczy $1:',
+	'translate-fs-settings-slanguage-desc' => 'Istnieje możliwość pokazania tłumaczeń wiadomości w innych językach w oknie edycji tłumaczenia.
+W tym miejscu można wybrać, tłumaczenia na jakie ewentualne języki chcesz widzieć.',
+	'translate-fs-settings-submit' => 'Zapisz preferencje',
+	'translate-fs-userpage-level-N' => 'Moim językiem ojczystym jest',
+	'translate-fs-userpage-level-5' => 'Jestem profesjonalnym tłumaczem na',
+	'translate-fs-userpage-level-4' => 'Znam język jak ojczysty',
+	'translate-fs-userpage-level-3' => 'Mam dobrą znajomość',
+	'translate-fs-userpage-level-2' => 'Mam umiarkowaną znajomość',
+	'translate-fs-userpage-level-1' => 'Znam trochę',
+	'translate-fs-userpage-help' => 'Proszę wskaż swoje umiejętności językowe i opowiedz nam coś o sobie. Jeśli znasz więcej niż pięć języków, możesz później dodać ich więcej.',
 	'translate-fs-userpage-submit' => 'Utwórz moją stronę użytkownika',
 	'translate-fs-userpage-done' => 'Udało się! Masz już swoją stronę użytkownika.',
+	'translate-fs-permissions-planguage' => 'Język podstawowy:',
+	'translate-fs-permissions-help' => 'Teraz musisz umieścić wniosek o dodania siebie do grupy tłumaczy.
+Wybierz język podstawowy, na który zamierzasz tłumaczyć.
+
+Można wymienić inne języki i inne uwagi w polu tekstowym poniżej.',
+	'translate-fs-permissions-pending' => 'Wniosek został złożony na [[$1]] i ktoś z personelu witryny sprawdzi go tak szybko, jak to możliwe.
+Jeśli adres e-mail został przez ciebie potwierdzony, otrzymasz wiadomość z powiadomieniem, gdy tylko się to stanie.',
+	'translate-fs-permissions-submit' => 'Wyślij wniosek',
+	'translate-fs-target-text' => 'Gratulujemy!
+Możesz teraz rozpocząć tłumaczenie.
+
+Nie bój, jeśli wydaje ci się to się wciąż nowe i pogmatwane.
+Na [[Project list|liście projektu]] zamieszczono przegląd projektów, do których możesz dodawać tłumaczenia.
+Większość projektów ma krótki opis strony z łączem "\'\'Tłumacz ten projekt\'\'", który przenosi do strony, która zawiera listę wszystkich nieprzetłumaczonych wiadomości.
+Lista wszystkich grup wiadomości z [[Special:LanguageStats|bieżącym stanem tłumaczenia na język]] jest również dostępna.
+
+Jeśli uważasz, że musisz zrozumieć więcej, zanim zaczniesz tłumaczyć, możesz przeczytać [[FAQ|Często zadawane pytania]].
+Niestety dokumentacja może być czasami nieaktualna.
+Jeśli istnieje coś, co myślisz, że powinno zostać zrobione, ale nie możesz dowiedzieć się, jak, nie wahaj się o to pytać na [[Support|stronie wsparcia]].
+
+Można również skontaktować się kolegów tłumaczy na ten sam język na [[Portal_talk:$1|stronie rozmowy]] [[Portal:$1|portalu własnego języka]].
+Jeśli to jeszcze zostało ustawione, [[Special:Preferences|zmień język interfejsu użytkownika na język, na który chcesz tłumaczyć]], aby wiki była w stanie pokazać łącza najbardziej odpowiednie dla ciebie.',
 	'translate-fs-email-text' => 'Podaj swój adres e‐mail w [[Special:Preferences|preferencjach]] i potwierdź go korzystając z e‐maila wysłanego do Ciebie.
 
 Umożliwi to innym użytkownikom kontakt z Tobą.
