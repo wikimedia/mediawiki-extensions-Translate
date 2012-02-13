@@ -284,25 +284,18 @@ class ViewWithSuggestionsTask extends ViewMessagesTask {
 
 		foreach ( $this->collection->getMessageKeys() as $key ) {
 			// Allow up to 10 seconds to search for suggestions.
-			if ( time() - $start > 10 || TranslationHelpers::checkTranslationServiceFailure( 'tmserver' ) ) {
+			if ( time() - $start > 10 ) {
 				unset( $this->collection[$key] );
 				continue;
 			}
 
-			$def = rawurlencode( $this->collection[$key]->definition() );
-			$url = "$server:$port/tmserver/$sourceLanguage/$code/unit/$def";
-			$suggestions = Http::get( $url, $timeout );
-
-			if ( $suggestions !== false ) {
-				$suggestions = FormatJson::decode( $suggestions, true );
-				foreach ( $suggestions as $s ) {
-					// We have a good suggestion, do not filter.
-					if ( $s['quality'] > 0.80 ) {
-						continue 2;
-					}
+			$definition = $this->collection[$key]->definition();
+			$suggestions = TTMServer::primary()->query( $sourceLanguage, $code, $definition );
+			foreach ( $suggestions as $s ) {
+				// We have a good suggestion, do not filter.
+				if ( $s['quality'] > 0.80 ) {
+					continue 2;
 				}
-			} else {
-				TranslationHelpers::reportTranslationServiceFailure( 'tmserver' );
 			}
 			unset( $this->collection[$key] );
 		}
