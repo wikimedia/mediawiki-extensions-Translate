@@ -1330,7 +1330,7 @@ class MessageGroups {
 			$group = self::getGroup( $id );
 
 			if ( $group !== null ) {
-				if( $group->isMeta() && $skipMeta ) {
+				if( $skipMeta && $group->isMeta() ) {
 					continue;
 				} else {
 					$groups[$id] = $group;
