@@ -1319,18 +1319,22 @@ class MessageGroups {
 	/**
 	 * Get message groups for corresponding message group ids.
 	 *
-	 * @param $groups array Group IDs
-	 * @param $groupPrefix string Prefix for groups
+	 * @param $ids array Group IDs
+	 * @param $skipMeta bool Skip aggregate message groups
 	 * @return array
 	 * @since 2012-02-13
 	 */
-	public static function getGroupsById( array $ids ) {
+	public static function getGroupsById( array $ids, $skipMeta = false ) {
 		$groups = array();
 		foreach ( $ids as $id ) {
 			$group = self::getGroup( $id );
 
 			if ( $group !== null ) {
-				$groups[$id] = $group;
+				if( $group->isMeta() && $skipMeta ) {
+					continue;
+				} else {
+					$groups[$id] = $group;
+				}
 			} else {
 				wfDebug( __METHOD__ . ": Invalid message group id: $id\n" );
 			}

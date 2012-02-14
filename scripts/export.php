@@ -98,8 +98,9 @@ if ( isset( $options['groupprefix'] ) ) {
 if ( isset( $options['group'] ) ) {
 	$groupIds = explode( ',', trim( $options['group'] ) );
 }
+
 $groupIds = MessageGroups::expandWildcards( $groupIds );
-$groups = MessageGroups::getGroupsById( $groupIds );
+$groups = MessageGroups::getGroupsById( $groupIds, true );
 
 if ( !count( $groups ) ) {
 	STDERR( "EE1: No valid message groups identified." );
