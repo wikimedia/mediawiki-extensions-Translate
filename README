@@ -30,6 +30,20 @@ And for the code at:
  https://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-02-13
+- Updated some deprecated function calls
+- New translation memory called TTMServer comes with the extension and is enabled
+  by default
+* 2012-02-11
+- Some missing action- messages added
+* 2012-02-10
+- New tabbed task spaced UI on Special:Translate
+* 2012-02-06
+- API module for message group stats written by Tim Gerundt.
+* 2012-02-01
+- Missing JavaScript dependency added to messagetable
+- No more logging state changes where the state didn't actually change
+- Allow syntax like {{Special:MessageGroupStats|group=page-Main/sub|suppresscomplete=1}}
 * 2012-01-31
 - export.php: switch "grouptrail" renamed to "groupprefix" and switch "groups".
   was dropped. "group" now takes a comma separated list of groups IDs, too.
