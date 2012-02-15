@@ -21,7 +21,8 @@
 (function ( $, mw, undefined ) {
 	"use strict";
 	var dialogwidth = false,
-	    translate;
+	    translate,
+	    preloads = {};
 
 	function MessageCheckUpdater( callback ) {
 		this.act = function() {
@@ -68,23 +69,28 @@
 		}
 	}
 
-	function registerFeatures( dialog, form, page, group ) {
+	function registerFeatures( callbacks, form, page, group ) {
 		// Enable the collapsible element
 		var $identical = $( '.mw-identical-title' );
 		if ( $.isFunction( $identical.makeCollapsible ) ) {
 			$identical.makeCollapsible();
 		}
 
-		if ( mw.config.get( 'trlKeys' ) ) {
-			form.find( '.mw-translate-next' ).click( function() {
-				mw.translate.openNext( page, group );
-			} );
-
-			form.find( '.mw-translate-skip' ).click( function() {
-				mw.translate.openNext( page, group );
-				dialog.dialog( 'close' );
-				return false;
-			} );
+		if ( mw.config.get( 'trlKeys' ) || $( '.tqe-inlineeditable' ).length ) {
+			if ( callbacks.next === undefined ) {
+				form.find( '.mw-translate-next, .mw-translate-skip' ).attr( 'disabled', 'disabled' )
+			} else {
+				form.find( '.mw-translate-next' ).click( function () {
+					callbacks.next && callbacks.next();
+				} );
+				form.find( '.mw-translate-skip,' ).click( function () {
+					callbacks.close && callbacks.close();
+					callbacks.next && callbacks.next();
+				} );
+				form.find( '.mw-translate-close' ).click( function () {
+					callbacks.close && callbacks.close();
+				} );
+			}
 		} else {
 			form.find( '.mw-translate-next, .mw-translate-skip' )
 				.attr( 'disabled', 'disabled' )
@@ -92,7 +98,7 @@
 		}
 
 		form.find( '.mw-translate-history' ).click( function() {
-			window.open( mw.config.get( 'wgServer' ) + mw.config.get( 'wgScript' ) + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
+			window.open( mw.util.wikiScript() + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
 			return false;
 		} );
 
@@ -101,9 +107,13 @@
 			window.open( $(this).attr( 'data-load-url' ) );
 			return false;
 		} );
+		
+		form.find( 'input, textarea' ).focus( function() {
+			addAccessKeys( form );
+		} );
 
 		form.find( 'input#summary' ).focus( function() {
-			$(this).css( 'width', '85%' );
+			$( this ).css( 'width', '85%' );
 		} );
 
 		var textarea = form.find( '.mw-translate-edit-area' );
@@ -126,18 +136,27 @@
 
 	translate = {
 		init: function() {
-			var height = $( window ).height() * 0.7;
 			dialogwidth = $( window ).width() * 0.8;
-			mw.util.addCSS( "/* Inserted by ext.translate.quickedit */\n" +
-				".mw-sp-translate-edit-fields {\n" +
-				"\tmax-height: " + height + "px;\n" +
-				"\toverflow: auto\n}\n"
-			);
+			var $inlines = $( '.tqe-inlineeditable' );
+			$inlines.dblclick( mw.translate.inlineEditor );
+			
+			var $first = $inlines.first();
+			if ( $first.length ) {
+				var title = $first.data( 'title' );
+				var group = $first.data( 'group' );
+				mw.translate.loadEditor( title, group, $.noop );
+			}
+			
+			var prev = null;
+			$inlines.each( function() {
+				if ( prev ) {
+					prev.next = this;
+				}
+				prev = this;
+			} )
 		},
 
 		openDialog: function( page, group ) {
-			var url = mw.config.get( 'wgScript' ) +  '?title=Special:Translate/editpage&suggestions=async&page=$1&loadgroup=$2';
-			url = url.replace( '$1', encodeURIComponent( page ) ).replace( '$2', encodeURIComponent( group ) );
 			var id = 'jsedit' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
 
 			var dialog = $( '#' + id );
@@ -146,20 +165,59 @@
 				dialog.dialog( 'open' );
 				return false;
 			}
+			
+			var dialog = $( '<div>' ).attr( 'id', id ).appendTo( $( 'body' ) );
+			
+			var callbacks = {}
+			callbacks.close = function () { dialog.dialog( 'close' ); };
+			callbacks.next = function () { mw.translate.openNext( page, group ); };
+			mw.translate.openEditor( dialog, page, group, callbacks );
 
-			$( '<div>' ).attr( 'id', id ).appendTo( $( 'body' ) );
-			dialog = $( '#' + id );
+			dialog.dialog( {
+				bgiframe: true,
+				width: dialogwidth,
+				title: page,
+				position: 'top',
+				resize: function() { $( '#' + id + ' textarea' ).width( '100%' ); },
+				resizeStop: function() { dialogwidth = $( '#' + id ).width(); },
+			} );
 
+			return false;
+		},
+ 
+		loadEditor: function( page, group, callback ) {
+			// Try if it has been cached
+			var id = 'preload-' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
+			var preload = preloads[id];
+			if ( preload !== undefined ) {
+				callback.call( preload );
+				delete preloads[id];
+				return;
+			}
+
+			var url = mw.util.wikiScript();
+			var params = {
+				title: 'Special:Translate/editpage',
+				suggestions: 'sync',
+				page: page,
+				loadgroup: group
+			};
+			$.get( url, params, function ( data ) {
+				preloads[id] = data;
+				callback.call( data );
+			} );
+		},
+ 
+		openEditor: function( element, page, group, callbacks ) {
+			var $target = $( element );
 			var spinner = $( '<div>' ).attr( 'class', 'mw-ajax-loader' );
-			dialog.html( $( '<div>' ).attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
+			$target.html( $( '<div>' ).attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
 
-			dialog.load( url, false, function() {
-				var form = $( '#' + id + ' form' );
-
-				registerFeatures( dialog, form, page, group );
-				addAccessKeys( form );
-				form.hide().slideDown();
-
+			mw.translate.loadEditor( page, group, function() {
+				$target.html( this );
+				callbacks.load && callbacks.load( $target );
+				var form = $target.find( 'form' );
+				registerFeatures( callbacks, form, page, group );
 				form.ajaxForm( {
 					dataType: 'json',
 					success: function(json) {
@@ -172,26 +230,14 @@
 						} else if ( json.edit.result === 'Failure' ) {
 							alert( mw.msg( 'translate-js-save-failed' ) );
 						} else if ( json.edit.result === 'Success' ) {
-							dialog.dialog( 'close' );
+							callbacks.close && callbacks.close();
+							callbacks.success && callbacks.success( form.find( '.mw-translate-edit-area' ).val() );
 						} else {
 							alert( mw.msg( 'translate-js-save-failed' ) );
 						}
 					}
 				} );
 			} );
-
-			dialog.dialog( {
-				bgiframe: true,
-				width: dialogwidth,
-				title: page,
-				position: 'top',
-				resize: function() { $( '#' + id + ' textarea' ).width( '100%' ); },
-				resizeStop: function() { dialogwidth = $( '#' + id ).width(); },
-				focus: function() { addAccessKeys( dialog ); },
-				close: function() { addAccessKeys( $([]) ); }
-			} );
-
-			return false;
 		},
 
 		openNext: function( title, group ) {
@@ -212,6 +258,55 @@
 			}
 			alert( mw.msg( 'translate-js-nonext' ) );
 			return;
+		},
+	
+		inlineEditor: function () {
+			var $this = $( this );
+			if ( $this.hasClass( 'tqe-editor-loaded' ) ) {
+				// Editor is open, do not replace it
+				return;
+			}
+			
+			var current = $this.html();
+			var $target = $( '<td>' ).attr( { colspan: 2 } );
+			$this.html( $target );
+			$this.addClass( 'tqe-editor-loaded' );
+			
+			var classes = $this.attr( 'class' );
+			var page = $this.data( 'title' );
+			var group = $this.data( 'group' );
+			var next = $( this.next );
+			var callbacks = {}
+			callbacks.success = function ( text ) {
+				// Update the cell value with the new translation
+				$this.find( 'td' ).last().text( text );
+			};
+			callbacks.close = function () {
+				$this.html( current );
+				$this.removeClass( 'tqe-editor-loaded' );
+			};
+			callbacks.load = function ( editor ) {
+				var $header = $( '<div class="tqe-fakeheader"></div>' );
+				$header.text( page );
+				$header.append( '<input type=button class="mw-translate-close" value="X" />' );
+				
+				$( editor ).find( 'form' ).prepend( $header );
+			};
+			if ( next.length ) {
+				callbacks.next = function () { next.dblclick(); };
+				// Preload the next item
+				var ntitle = next.data( 'title' );
+				var ngroup = next.data( 'group' );
+				mw.translate.loadEditor( ntitle, ngroup, $.noop );
+			}
+			mw.translate.openEditor( $target, page, group, callbacks );
+			
+			// Remove any text selection caused by double clicking
+			var sel = window.getSelection ? window.getSelection() : document.selection;
+			if ( sel ) {
+				sel.removeAllRanges && sel.removeAllRanges();
+				sel.empty && sel.empty();
+			}
 		}
 	};
 

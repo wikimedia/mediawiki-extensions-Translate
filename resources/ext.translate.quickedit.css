@@ -7,6 +7,12 @@
 	font-size: small;
 }
 
+.tqe-inlineeditable .mw-ajax-dialog {
+	margin: 5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
 .mw-sp-translate-edit-fields a {
 	color: blue;
 }
@@ -93,4 +99,15 @@
 
 .mw-sp-translate-latestchange {
 	padding-bottom: 0px;
+}
+
+
+.tqe-fakeheader {
+	border: 1px solid #CCC;
+	padding: .75em;
+	font-weight: bold;
+}
+
+.mw-translate-close {
+	float: right;
 }

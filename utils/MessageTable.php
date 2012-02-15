@@ -145,6 +145,11 @@ class MessageTable {
 				$extra = '<br />' . $optional;
 			}
 
+			$tqeData = array(
+				'data-title' => $title->getPrefixedText(),
+				'data-group' => $this->group->getId(),
+			);
+
 			$leftColumn = $this->getReviewButton( $m ) . $anchor . $tools['edit'] . $extra . $this->getReviewStatus( $m );
 
 			if ( $this->reviewMode && $original !== $message ) {
@@ -154,11 +159,11 @@ class MessageTable {
 						TranslateUtils::convertWhiteSpaceToHTML( $original ) )
 				);
 
-				$output .= Xml::tags( 'tr', array( 'class' => 'new' ),
+				$output .= Xml::tags( 'tr', array( 'class' => 'new tqe-inlineeditable' ) + $tqeData,
 					Xml::tags( 'td', $rclasses, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			} else {
-				$output .= Xml::tags( 'tr', array( 'class' => 'def' ),
+				$output .= Xml::tags( 'tr', array( 'class' => 'def tqe-inlineeditable' ) + $tqeData,
 					Xml::tags( 'td', null, $leftColumn ) .
 					Xml::tags( 'td', $rclasses, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);

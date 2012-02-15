@@ -187,15 +187,23 @@ class TranslationEditPage {
 	 * @return \array
 	 */
 	public static function jsEdit( Title $title, $group = "" ) {
-		global $wgUser;
+		global $wgUser, $wgRequest;
 
 		if ( !$wgUser->getOption( 'translate-jsedit' ) ) {
 			return array();
 		}
 
+		if ( $wgRequest->getVal( 'translate-beta' ) ) {
+			$onclick = 'jQuery( this ).closest( ".inlineeditable" ).dblclick(); return false;';
+		} else {
+			$onclick = Xml::encodeJsCall(
+				'return mw.translate.openDialog', array( $title->getPrefixedDbKey(), $group )
+			);
+		}
+
+
 		return array(
-			'onclick' => Xml::encodeJsCall(
-				'return mw.translate.openDialog', array( $title->getPrefixedDbKey(), $group ) ),
+			'onclick' => $onclick,
 			'title' => wfMsg( 'translate-edit-title', $title->getPrefixedText() )
 		);
 	}
