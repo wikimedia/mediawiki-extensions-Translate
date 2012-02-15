@@ -703,7 +703,7 @@ $messages['be-tarask'] = array(
 	'translate-tag-markthisagain' => 'Гэта старонка ўтрымлівае <span class="plainlinks">[$1 зьмены]</span> пасьля апошняй <span class="plainlinks">[$2 пазнакі для перакладу]</span>.',
 	'translate-tag-hasnew' => 'Гэта старонка ўтрымлівае <span class="plainlinks">[$1 зьмены]</span> не пазначаныя для перакладу.',
 	'tpt-translation-intro' => 'Гэтая старонка — <span class="plainlinks">[$1 перакладзеная вэрсія]</span> старонкі [[$2]]. Пераклад завершаны на $3%.',
-	'tpt-translation-intro-fuzzy' => 'Састарэлыя пераклады пазначаны наступным чынам.',
+	'tpt-translation-intro-fuzzy' => 'Гэтак пазначаныя састарэлыя пераклады.',
 	'tpt-languages-legend' => 'Іншыя мовы:',
 	'tpt-target-page' => 'Гэта старонка ня можа быць абноўлена ўручную.
 Гэта старонка зьяўляецца перакладам старонкі [[$1]], пераклад можа быць абноўлены з выкарыстаньнем [$2 інструмэнта перакладу].',
@@ -7317,7 +7317,7 @@ $messages['zh-hans'] = array(
 	'translate-tag-markthis' => '标记此页面将进行翻译',
 	'translate-tag-markthisagain' => '此页面<span class="plainlinks">[$2 最近被标记进行翻译]</span>以来，已经过一些<span class="plainlinks">[$1 更改]</span>。',
 	'translate-tag-hasnew' => '此页面有未被标记进行翻译的<span class="plainlinks">[$1更改]</span>。',
-	'tpt-translation-intro' => '此页面是[[$2]]页面的<span class="plainlinks">[$1翻译版本]</span>，而该翻译工作已经$3%完成。',
+	'tpt-translation-intro' => '此页面是[[$2]]页面的<span class="plainlinks">[$1 翻译版本]</span>，而该翻译工作已经$3%完成。',
 	'tpt-translation-intro-fuzzy' => '已过时的翻译就这样标记。',
 	'tpt-languages-legend' => '其他语言：',
 	'tpt-target-page' => '本页面无法手动更新。
@@ -7465,7 +7465,7 @@ $messages['zh-hant'] = array(
 	'translate-tag-markthis' => '標記此頁面的翻譯',
 	'translate-tag-markthisagain' => '此頁面<span class="plainlinks">[$2 最近被標記進行翻譯]</span>以來，已經過一些<span class="plainlinks">[$1 更改]</span>。',
 	'translate-tag-hasnew' => '此頁面有未被標記進行翻譯的<span class="plainlinks">[$1更改]</span>。',
-	'tpt-translation-intro' => '此頁面是[[$2]]頁面的<span class="plainlinks">[$1翻譯版本]</span>，而該翻譯工作已經$3%完成。',
+	'tpt-translation-intro' => '此頁面是[[$2]]頁面的<span class="plainlinks">[$1 翻譯版本]</span>，而該翻譯工作已經$3%完成。',
 	'tpt-translation-intro-fuzzy' => '像這樣標記為過時的翻譯。',
 	'tpt-languages-legend' => '其他語言：',
 	'tpt-target-page' => '本頁面無法手動更新。

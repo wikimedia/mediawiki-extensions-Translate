@@ -1970,9 +1970,7 @@ $messages['pl'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Główna wtyczka dla [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Komunikaty stabilnej wersji oprogramowania [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] jest systemem zarządzania informacją dla mikrofinansów',
-	'bw-desc-mwlibrl' => "'''mwlib.rl''' jest biblioteką w języku Python zapisującą dokumenty w formacie PDF z artykułami MediaWiki, które zostały przeanalizowane przez bibliotekę mwlib.
-
-Więcej informacji odnajdziesz na stronach [[mw:Extension:PDF_Writer]] oraz http://code.pediapress.com/wiki/wiki/mwlibrl.",
+	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] jest biblioteką do tworzenia dokumentów PDF ze stron MediaWiki',
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] jest internetowym klientem poczty napisanym w PHP. Prosimy o zgłaszanie wszelkich problemów [[Support|obsłudze]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] jest czytnikiem offline Wikipedii',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] to otwarta platforma multimediów',

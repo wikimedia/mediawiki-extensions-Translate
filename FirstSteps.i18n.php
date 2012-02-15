@@ -2769,8 +2769,12 @@ $messages['te'] = array(
 	'translate-fs-intro' => '{{SITENAME}} యొక్క తొలి అడుగుల విజార్డుకు స్వాగతం.
 అంచెలంచెలుగా అనువాదకుడిగా తయారయే విధానం గురించి మీకిక్కడ మార్గదర్శకత్వం లభిస్తుంది.
 చివరికి, {{SITENAME}} లో మద్దతు ఉన్న అన్ని ప్రాజెక్టుల్లోను "ఇంటరుఫేసు సందేశాల"ను అనువదించే సామర్ధ్యం మీకు లభిస్తుంది.',
+	'translate-fs-selectlanguage' => 'ఒక భాషను ఎంచుకోండి',
+	'translate-fs-settings-planguage' => 'ప్రధాన  భాష:',
+	'translate-fs-settings-submit' => 'అభిరుచులను భద్రపరచు',
 	'translate-fs-userpage-submit' => 'నా వాడుకరి పుటని సృష్టించు',
 	'translate-fs-userpage-done' => 'భళా! మీకు ఇప్పుడు వాడుకరి పుట ఉంది.',
+	'translate-fs-permissions-planguage' => 'ప్రధాన  భాష:',
 );
 
 /** Thai (ไทย)
