@@ -6975,6 +6975,20 @@ $messages['fa'] = array(
 	'translate-grouplisting' => 'این فهرستی از تمام گروه‌های قابل ترجمه است.
 روی نام گروه پیغام‌ها کلیک کنید تا فهرستی از پیغام‌های ترجمه‌نشده را ببینید.',
 	'translate-grouplisting-empty' => 'هیچ گروه پیغامی برای ترجمه تنظیم نشده‌است.',
+	'translate-taskui-view' => 'نمایش تمام پیغام‌ها',
+	'translate-taskui-untranslated' => 'نمایش پیغام‌های ترجمه نشده',
+	'translate-taskui-optional' => 'نمایش پیغام‌های اختیاری',
+	'translate-taskui-suggestions' => 'نمایش پیغام‌های دارای ترجمهٔ پیشنهادی در حافظه',
+	'translate-taskui-acceptqueue' => 'تنها پیغام‌هایی که من می‌توانم تأیید کنم',
+	'translate-taskui-reviewall' => 'بررسی تمام ترجمه‌ها',
+	'translate-taskui-export-to-file' => 'برون‌ریزی در قالب بومی',
+	'translate-taskui-export-as-po' => 'برون‌ریزی برای ترجمه غیر برخط',
+	'translate-taction-translate' => 'ترجمه',
+	'translate-taction-proofread' => 'بازبینی‌شده',
+	'translate-taction-lstats' => 'آمار زبان',
+	'translate-taction-mstats' => 'آمار گروه‌های پیغام',
+	'translate-taction-export' => 'برون‌بری',
+	'translate-taction-disabled' => 'این عمل در این ویکی غیر فعال شده است.',
 	'translate-page-no-such-language' => 'زبان مورد نظر غیر مجاز است.',
 	'translate-page-no-such-group' => 'گروه مورد نظر غیر مجاز است.',
 	'translate-page-disabled' => "ترجمه این زبان در این گروه غیر فعال است.
@@ -6994,8 +7008,11 @@ $messages['fa'] = array(
 	'translate-next' => 'صفحهٔ بعدی',
 	'translate-prev' => 'صفحهٔ قبلی',
 	'translate-page-description-legend' => 'اطلاعات در مورد گروه',
+	'translate-page-description-hasoptional' => 'این گروه پیغام‌ها شامل پیغام‌های اختیاری است.
+پیغام‌های اختیاری باید تنها زمانی ترجمه شوند که زبان شما شرایط ویژه‌ای نظیر استفاده نکردن از فاصله یا نویسه‌گردانی اسامی خاص داشته باشد. $1',
 	'translate-page-description-hasoptional-open' => 'نمایش پیغام‌های اختیاری.',
 	'translate-page-edit' => 'ویرایش',
+	'translate-ext-url' => '<hr />وبگاه: $1',
 	'translate-optional' => '(اختیاری)',
 	'translate-ignored' => '(نادیده گرفته شده)',
 	'translate-edit-jsopen' => 'ویرایش',
@@ -7010,17 +7027,21 @@ $messages['fa'] = array(
 	'translate-edit-warnings' => 'هشدار در مورد ترجمه‌های ناکامل',
 	'translate-edit-tmsugs' => 'پیشنهادها از حافظهٔ ترجمه و ترجمهٔ ماشینی',
 	'translate-edit-tmmatch' => '$1٪ مطابقت',
+	'translate-use-suggestion' => 'ترجمه فعلی را با این پیشنهاد جایگزین کن.',
 	'translate-edit-tab-list' => 'فهرست پیغام‌ها',
+	'translate-edit-nopermission' => 'برای ترجمه پیغام‌ها نیازمند دسترسی هستید.',
+	'translate-edit-askpermission' => 'درخواست دسترسی',
 	'translate-magic-pagename' => 'ترجمهٔ گسترش یافتهٔ مدیاویکی',
-	'translate-magic-help' => 'شما می‌توانید نام مستعار صفحه‌های ویژه، واژه‌های جادویی، نام پوسته‌ها و نام فضاهای نام را ترجمه کنید.
+	'translate-magic-help' => 'شما می‌توانید نام مستعار صفحه‌های ویژه، واژه‌های جادویی، و نام فضاهای نام را ترجمه کنید.
 
-در مورد واژه‌های جادویی ترجمهٔ شما باید شامل معادل انگلیسی هم باشد وگرنه واژهٔ جادویی کار نخواهد کرد. هم‌چنین، اولین بخش (0 یا 1) را تغییر ندهید.
-
-نام‌های مستعار صفحه‌های ویژه و واژه‌های جادویی می‌توانند بیش از یک ترجمه داشته باشند. ترجمه‌ها با یک کامای انگلیسی (,) از هم جدا می‌شوند. نام پوسته‌ها و فضاهای نام تنها می‌تواند یک ترجمه داشته باشد.
+نام مستعار صفحه‌های ویژه می‌تواند بیش از یک ترجمه داشته باشد.
+ترجمه‌ها را با استفاده از کامای انگلیسی (,) از هم جدا کنید.
+فضاهای نام تنها می‌توانند یک ترجمه داشته باشند.
 
 در ترجمهٔ نام فضاهای نام <code>$1 talk</code> خاص است. <code>$1</code> توسط نام وبگاه جایگزین می‌شود (مانند <code>{{ns:project_talk}}</code>). اگر در زبان شما امکان ایجاد چنین عبارتی بدون تغییر دادن نام وبگاه وجود ندارد، لطفاً با یکی از توسعه‌دهندگان نرم‌افزار تماس بگیرید.
 
-برای ذخیره کردن تغییرها باید عضو گروه ترجمه‌کنندگان باشید. تغییرات زمانی ذخیره می‌شوند که دکمهٔ ذخیره را در پایین صفحه فشار دهید.',
+برای ذخیره کردن تغییرها باید عضو گروه ترجمه‌کنندگان باشید.
+تغییرات زمانی ذخیره می‌شوند که دکمهٔ ذخیره را در پایین صفحه فشار دهید.',
 	'translate-magic-module' => 'ماژول:',
 	'translate-magic-submit' => 'بیاور',
 	'translate-magic-cm-export' => 'برون‌بری',
@@ -11825,8 +11846,8 @@ Dettagli: $1',
 	'translate-workflow-set-done' => 'Modificato!',
 	'translate-stats-workflow' => 'Stato',
 	'translate-dynagroup-recent-label' => 'Traduzioni recenti',
-	'translate-dynagroup-by' => 'Traduzione fatta da {{GENDER:$1|$1}}',
-	'translate-dynagroup-byc' => 'Traduzione fatta da {{GENDER:$1|$1}} ($2)',
+	'translate-dynagroup-by' => 'Traduzione di {{GENDER:$1|$1}}',
+	'translate-dynagroup-byc' => 'Traduzione di {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Ultima modifica di {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Ultima modifica di {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Aiuto',
@@ -21933,6 +21954,12 @@ $messages['ta'] = array(
 	'translate-grouplisting' => 'இது மொழிபெயர்க்கத்தக்க அனைத்து குழுக்களின் பட்டியல் ஆகும்.
 தகவல் குழுவினைச் சொடுக்கி அனைத்து மொழிபெயர்க்காத தகவல்களையும் பார்க்கவும்.',
 	'translate-grouplisting-empty' => 'மொழிபெயர்ப்பதற்கு எந்த தகவற்குழுவும் அமைக்கப்படவில்லை.',
+	'translate-taskui-view' => 'அனைத்துத் தகவல்களையும் காண்பி',
+	'translate-taskui-untranslated' => 'மொழிபெயர்க்கப்படாத தகவல்களை காண்பி',
+	'translate-taskui-optional' => 'கட்டாயமில்லாதத் தகவல்களை காண்பி',
+	'translate-taction-translate' => 'மொழிபெயர்ப்பு செய்யவும்',
+	'translate-taction-proofread' => 'மெய்ப்புப் பார்',
+	'translate-taction-lstats' => 'மொழி புள்ளிவிவரம்',
 	'translate-page-no-such-language' => 'குறித்த மொழி செல்லுபடியற்றதாகும்.',
 	'translate-page-no-such-group' => 'குறித்த குழு செல்லுபடியற்றதாகும்.',
 	'translate-page-settings-legend' => 'அமைப்புகள்',
@@ -21952,6 +21979,7 @@ $messages['ta'] = array(
 	'translate-page-edit' => 'தொகு',
 	'translate-optional' => '(விருப்பதேர்வு)',
 	'translate-ignored' => '(புறக்கணிக்கப்பட்டது)',
+	'translate-edit-jsopen' => 'தொகு',
 	'translate-edit-title' => '"$1" -ஐ தொகுக்கவும்',
 	'translate-edit-definition' => 'தகவல் வரையறை',
 	'translate-edit-translation' => 'மொழிபெயர்ப்பு',
@@ -21966,11 +21994,17 @@ $messages['ta'] = array(
 	'translate-edit-nopermission' => 'தகவல்களை மொழிபெயர்க்க உங்களுக்கு அனுமதி இருக்கவேண்டும்.',
 	'translate-edit-askpermission' => 'அனுமதி வேண்டுக',
 	'translate-magic-pagename' => 'நீட்சிபெற்ற மீடியாவிக்கி மொழிபெயர்ப்பு',
+	'translate-magic-cm-export' => 'ஏற்றுமதி செய்',
 	'translate-magic-cm-current' => 'தற்போதைய',
+	'translate-magic-cm-original' => 'மூலம்',
+	'translate-magic-cm-comment' => 'கருத்து:',
 	'translate-magic-cm-save' => 'பக்கத்தை சேமி',
 	'translate-magic-cm-savefailed' => 'சேமிப்பு தோல்வி',
 	'translate-magic-namespace' => 'பெயர்வெளிப் பெயர்கள்',
 	'translate-magic-notsaved' => 'நீங்கள் செய்த தொகுப்பு சேமிக்கப்படவில்லை',
+	'translate-magic-saved' => 'உங்களது மாற்றங்கள் வெற்றிகரமாக சேமிக்கப்பட்டது.',
+	'translate-pref-nonewsletter' => 'எனக்கு மின்னஞ்சல் செய்திமடற்கள் அனுப்ப வேண்டாம்',
+	'translate-pref-editassistlang' => 'உதவும் மொழிகள்:',
 	'right-translate-messagereview' => 'மொழிபெயர்ப்புகளை மதிப்பீடுக',
 	'translate-rc-translation-filter' => 'மொழிபெயர்ப்புகளை வடிகட்டு',
 	'translate-rc-translation-filter-no' => 'எதுவும் செய்ய வேண்டாம்',
@@ -22007,6 +22041,7 @@ $messages['ta'] = array(
 	'translate-translations-fieldset-title' => 'செய்தி',
 	'translate-translations-messagename' => 'பெயர்:',
 	'translate-translations-project' => 'திட்டம்:',
+	'languagestats-recenttranslations' => 'அண்மைய மொழிபெயர்ப்புகள்',
 	'translate-langstats-expand' => 'விரிவாக்குக',
 	'translate-langstats-collapse' => 'சுருக்குக',
 	'translate-langstats-expandall' => 'அனைத்தையும் விரிவாக்குக',
@@ -22017,7 +22052,10 @@ $messages['ta'] = array(
 	'translate-total' => 'தகவல்கள்',
 	'translate-untranslated' => 'மொழிபெயர்க்காதவை',
 	'translate-percentage-complete' => 'நிறைவு',
+	'translate-percentage-fuzzy' => 'காலாவதியானது',
 	'translate-ls-submit' => 'புள்ளிவிவரங்களை காண்பி',
+	'translate-mgs-fieldset' => 'விருப்பத்தேர்வுகளைக் காண்பி',
+	'translate-mgs-submit' => 'புள்ளிவிவரங்களை காண்பி',
 	'translate-mgs-column-language' => 'மொழி',
 	'supportedlanguages' => 'ஆதரிக்கப்பட்ட மொழிகள்',
 	'supportedlanguages-portallink' => '[$1] $2 - $3',
