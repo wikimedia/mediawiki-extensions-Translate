@@ -2549,6 +2549,7 @@ $messages['ru'] = array(
 	'firststeps' => 'Первые шаги',
 	'firststeps-desc' => '[[Special:FirstSteps|Служебная страница]] для новых пользователей вики с установленным расширением перевода',
 	'translate-fs-pagetitle-done' => ' — сделано!',
+	'translate-fs-pagetitle-pending' => ' — в ожидании',
 	'translate-fs-pagetitle' => 'Программа начального обучения — $1',
 	'translate-fs-signup-title' => 'Зарегистрируйтесь',
 	'translate-fs-settings-title' => 'Произведите настройку',
@@ -2561,7 +2562,11 @@ $messages['ru'] = array(
 По окончанию обучения вы сможете переводить интерфейсные сообщения всех поддерживаемых проектов {{SITENAME}}.',
 	'translate-fs-selectlanguage' => 'Выберите язык',
 	'translate-fs-settings-planguage' => 'Основной язык:',
+	'translate-fs-settings-planguage-desc' => 'Основной язык дублирует ваш язык интерфейса в этой вики
+и по умолчанию рассматривается как целевой язык переводов.',
 	'translate-fs-settings-slanguage' => 'Вспомогательные языки $1:',
+	'translate-fs-settings-slanguage-desc' => 'Это позволяет видеть переводы сообщений на другие языки в интерфейсе редактирования переводов.
+Здесь можно выбрать, какие из имеющихся языков вы хотели бы видеть.',
 	'translate-fs-settings-submit' => 'Сохранить настройки',
 	'translate-fs-userpage-level-N' => 'Мой родной язык',
 	'translate-fs-userpage-level-5' => 'Я профессиональный переводчик с',

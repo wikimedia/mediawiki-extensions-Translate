@@ -14075,14 +14075,15 @@ $messages['lmo'] = array(
 
 /** Lingala (Lingála)
  * @author Eruedin
+ * @author Moyogo
  */
 $messages['ln'] = array(
 	'translate-page-settings-legend' => 'Palamɛ́tɛlɛ',
 	'translate-page-language' => 'Lokótá',
 	'translate-page-navigation-legend' => 'Botamboli',
 	'translate-next' => 'Lonkásá na nsima',
-	'translate-page-edit' => 'kobimisela',
-	'translate-edit-jsopen' => 'kobimisela',
+	'translate-page-edit' => 'kobɔngisa',
+	'translate-edit-jsopen' => 'kobɔngisa',
 );
 
 /** Lao (ລາວ)
@@ -19145,6 +19146,20 @@ $messages['ru'] = array(
 	'translate-grouplisting' => 'Это список всех переводимых групп.
 Нажмите на название группы сообщений, чтобы просмотреть список непереведённых сообщений.',
 	'translate-grouplisting-empty' => 'Групп сообщений, настроенных для перевода, нет.',
+	'translate-taskui-view' => 'Показать все сообщения',
+	'translate-taskui-untranslated' => 'Показать непереведённые сообщения',
+	'translate-taskui-optional' => 'Показать дополнительные сообщения',
+	'translate-taskui-suggestions' => 'Показать сообщения с предложениями из памяти переводов',
+	'translate-taskui-acceptqueue' => 'Только одобренные мной сообщения',
+	'translate-taskui-reviewall' => 'Проверить все переводы',
+	'translate-taskui-export-to-file' => 'Экспорт в родном формате',
+	'translate-taskui-export-as-po' => 'Экспорт для оффлайнового перевод',
+	'translate-taction-translate' => 'Перевод',
+	'translate-taction-proofread' => 'Вычитка',
+	'translate-taction-lstats' => 'Статистика языка',
+	'translate-taction-mstats' => 'Статистики группы сообщений',
+	'translate-taction-export' => 'Экспорт',
+	'translate-taction-disabled' => 'Это действие отключено в этой вики.',
 	'translate-page-no-such-language' => 'Передан неверный код языка',
 	'translate-page-no-such-group' => 'Неверно указана группа.',
 	'translate-page-disabled' => "В этом разделе переводы на данный язык отключены. Причина:
@@ -19231,6 +19246,8 @@ $messages['ru'] = array(
 	'translate-checks-pagename' => 'Изменилось определение пространства имён',
 	'translate-checks-format' => 'Этот перевод не соответствует определению или содержит синтаксическую ошибку: $1',
 	'translate-checks-escape' => 'Следующие экранирующие последовательности могут быть случайны: <strong>$1</strong>',
+	'translate-checks-parametersnotequal' => 'Число параметров — $1, а {{PLURAL:$2|должен|должно}} быть — $2.',
+	'translate-checks-malformed' => '<nowiki>$traArray[$i]</nowiki> некорректен.',
 	'translate-checks-fudforum-syntax' => 'Использовать в этом проекте <nowiki>$1</nowiki> вместо <nowiki>$2</nowiki>.',
 	'translate-pref-nonewsletter' => 'Не отправлять мне информационный бюллетень по электронной почте',
 	'translate-pref-editassistlang' => 'Вспомогательные языки:',
@@ -19243,7 +19260,9 @@ $messages['ru'] = array(
 	'translate-pref-jsedit' => 'Улучшенный редактор переводов (JavaScript)',
 	'right-translate' => 'правка с использованием интерфейса перевода',
 	'right-translate-manage' => 'управление группами сообщений',
+	'action-translate-manage' => 'управление группами сообщений',
 	'right-translate-import' => 'импортирование переводов, выполненных в оффлайне',
+	'action-translate-import' => 'импорт переводов, выполненных в оффлайне',
 	'right-translate-messagereview' => 'досмотр переводов',
 	'right-translate-groupreview' => 'изменять состояние обработки групп сообщений',
 	'translate-rc-translation-filter' => 'Фильтровать переводы:',
@@ -19441,6 +19460,7 @@ $1',
 	'translate-workflow-set-do' => 'Установить',
 	'translate-workflow-set-doing' => 'Устанавливаем...',
 	'translate-workflow-set-done' => 'Установлено!',
+	'translate-workflow-set-error-alreadyset' => 'Запрашиваемое состояние идентично текущему.',
 	'translate-workflow-autocreated-summary' => 'Автоматическое создание страницы состояния рабочего процесса «$1»',
 	'translate-stats-workflow' => 'Статус',
 	'translate-workflowgroup-label' => 'Состояния процесса',
