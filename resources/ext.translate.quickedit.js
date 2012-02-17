@@ -144,7 +144,7 @@
 			if ( $first.length ) {
 				var title = $first.data( 'title' );
 				var group = $first.data( 'group' );
-				mw.translate.loadEditor( title, group, $.noop );
+				mw.translate.loadEditor( null, title, group, $.noop );
 			}
 			
 			var prev = null;
@@ -185,16 +185,20 @@
 			return false;
 		},
  
-		loadEditor: function( page, group, callback ) {
+		loadEditor: function( $target, page, group, callback ) {
 			// Try if it has been cached
 			var id = 'preload-' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
 			var preload = preloads[id];
 			if ( preload !== undefined ) {
-				callback.call( preload );
-				delete preloads[id];
+				if ( $target ) {
+					$target.html( preloads[id] );
+					delete preloads[id];
+				}
+				callback();
 				return;
 			}
 
+			// Load the editor into provided target or cache it locally
 			var url = mw.util.wikiScript();
 			var params = {
 				title: 'Special:Translate/editpage',
@@ -202,10 +206,15 @@
 				page: page,
 				loadgroup: group
 			};
-			$.get( url, params, function ( data ) {
-				preloads[id] = data;
-				callback.call( data );
-			} );
+			if ( $target ) {
+				$target.load( url, params, callback );
+				delete preloads[id];
+			} else {
+				$.get( url, params, function ( data ) {
+					preloads[id] = data;
+				} );
+			}
+
 		},
  
 		openEditor: function( element, page, group, callbacks ) {
@@ -213,8 +222,7 @@
 			var spinner = $( '<div>' ).attr( 'class', 'mw-ajax-loader' );
 			$target.html( $( '<div>' ).attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
 
-			mw.translate.loadEditor( page, group, function() {
-				$target.html( this );
+			mw.translate.loadEditor( $target, page, group, function() {
 				callbacks.load && callbacks.load( $target );
 				var form = $target.find( 'form' );
 				registerFeatures( callbacks, form, page, group );
@@ -297,7 +305,7 @@
 				// Preload the next item
 				var ntitle = next.data( 'title' );
 				var ngroup = next.data( 'group' );
-				mw.translate.loadEditor( ntitle, ngroup, $.noop );
+				mw.translate.loadEditor( null, ntitle, ngroup, $.noop );
 			}
 			mw.translate.openEditor( $target, page, group, callbacks );
 			
