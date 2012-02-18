@@ -35,10 +35,11 @@
 }
 
 
-.mw-sp-translate-table td {
+.mw-sp-translate-table > tbody > tr > * {
 	vertical-align: top;
 	border-style: solid;
 	border-width: 1px;
+	border-color: #909090;
 }
 
 .mw-translate-messagereviewbutton {

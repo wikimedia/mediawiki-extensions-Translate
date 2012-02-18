@@ -8,9 +8,11 @@
 }
 
 .tqe-inlineeditable .mw-ajax-dialog {
-	margin: 5px;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	margin: 10px;
+}
+
+.tqe-editor-loaded {
+	background-color: #FFF !important;
 }
 
 .mw-sp-translate-edit-fields a {
@@ -105,6 +107,12 @@
 .tqe-fakeheader {
 	border: 1px solid #CCC;
 	padding: .75em;
+	font-weight: bold;
+	line-height: 2em;
+}
+
+.tqe-fakeheader input {
+	height: 2em;
 	font-weight: bold;
 }
 
