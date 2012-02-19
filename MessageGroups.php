@@ -968,7 +968,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 			$mkey = $row->rc_namespace . ':' . $handle->getKey();
 			if ( !isset( $defs[$mkey] ) ) {
 				$group = $handle->getGroup();
-				$defs[$mkey] = $group->getMessage( $handle->getKey(), $this->getSourceLanguage() );
+				$defs[$mkey] = $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
 			}
 		}
 		return $defs;
@@ -981,11 +981,11 @@ class RecentMessageGroup extends WikiMessageGroup {
 	/**
 	 * Subpage language of any in the title is not used.
 	 */
-	public function getMessageContent( MessageHandle $handle, $code ) {
+	public function getMessageContent( MessageHandle $handle ) {
 		$groupId = MessageIndex::getPrimaryGroupId( $handle );
 		$group = MessageGroups::getGroup( $groupId );
 		if ( $group ) {
-			return $group->getMessage( $handle->getKey(), $code );
+			return $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
 		}
 	}
 }

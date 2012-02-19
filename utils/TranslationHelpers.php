@@ -108,7 +108,7 @@ class TranslationHelpers {
 		$this->mustBeKnownMessage();
 
 		if ( method_exists( $this->group, 'getMessageContent' ) ) {
-			$this->definition = $this->group->getMessageContent( $this->handle, $this->group->getSourceLanguage() );
+			$this->definition = $this->group->getMessageContent( $this->handle );
 		} else {
 			$this->definition = $this->group->getMessage( $this->handle->getKey(), $this->group->getSourceLanguage() );
 		}
