@@ -897,7 +897,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		// Allow for adding a custom group description by using
 		// "MediaWiki:Tp-custom-<group ID>".
 		$customText = '';
-		$customMessage = $wfMessage( 'tp-custom-' . $this->id )->inContentLanguage();
+		$customMessage = wfMessage( 'tp-custom-' . $this->id )->inContentLanguage();
 		if( $customMessage->exists() ) {
 			$customText = $customMessage->plain();
 		}
