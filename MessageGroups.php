@@ -5,7 +5,8 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2012, Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2008-2012, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -892,7 +893,16 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	public function getDescription() {
 		$title = $this->title;
 		$target = SpecialPage::getTitleFor( 'MyLanguage', $title )->getPrefixedText();
-		return wfMsgNoTrans( 'translate-tag-page-desc', $title, $target );
+
+		// Allow for adding a custom group description by using
+		// "MediaWiki:Tp-custom-<group ID>".
+		if( wfMessage( 'tp-custom-' . $this->id )->inContentLanguage()->exists() ) {
+			$customText = ' ' . wfMessage( 'tp-custom-' . $this->id )->getText();
+		} else {
+			$customText = '';
+		}
+
+		return wfMsgNoTrans( 'translate-tag-page-desc', $title, $target ) . $customText;
 	}
 }
 

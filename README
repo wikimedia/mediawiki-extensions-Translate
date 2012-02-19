@@ -32,6 +32,8 @@ And for the code at:
 == Change log ==
 * 2012-02-19
 - MediaWiki 1.18 or later is now required.
+- Group description of translatable pages can be extended by adding content to
+  [[MediaWiki:Tp-custom-<group id>]].
 * 2012-02-13
 - Updated some deprecated function calls
 - New translation memory called TTMServer comes with the extension and is enabled
