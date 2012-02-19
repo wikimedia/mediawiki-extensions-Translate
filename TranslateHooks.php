@@ -84,10 +84,6 @@ class TranslateHooks {
 				define( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace + 1 );
 			}
 
-			if ( version_compare( $wgVersion, '1.17alpha', '<' ) ) {
-				efTranslateNamespaces( $wgExtraNamespaces );
-			}
-
 			$wgNamespacesWithSubpages[NS_TRANSLATIONS]      = true;
 			$wgNamespacesWithSubpages[NS_TRANSLATIONS_TALK] = true;
 

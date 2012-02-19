@@ -158,9 +158,6 @@ class SpecialImportTranslations extends SpecialPage {
 				$this->request->getText( 'upload-type' ) === 'wiki' ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
 			Xml::input( 'upload-wiki', 50,
-						/**
-						 * @todo Needs i18n in content language.
-						 */
 				$this->request->getText( 'upload-wiki', 'File:' ),
 				array( 'id' => 'mw-translate-up-wiki-input' ) + $class ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .

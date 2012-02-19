@@ -30,6 +30,8 @@ And for the code at:
  https://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-02-19
+- MediaWiki 1.18 or later is now required.
 * 2012-02-13
 - Updated some deprecated function calls
 - New translation memory called TTMServer comes with the extension and is enabled

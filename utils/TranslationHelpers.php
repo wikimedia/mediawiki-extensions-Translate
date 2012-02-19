@@ -1376,13 +1376,6 @@ class TranslationHelpers {
 
 	public static function addModules( OutputPage $out ) {
 		$out->addModules( 'ext.translate.quickedit' );
-
-		// Might be needed, but ajax doesn't load it
-		// Globals :(
-		/// @todo: remove when 1.17 is no longer supported.
-		// The RL module name is different in 1.17 and >1.17
-		$diff = new DifferenceEngine;
-		$diff->showDiffStyle();
 	}
 
 	/// @since 2012-01-04

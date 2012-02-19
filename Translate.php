@@ -269,13 +269,6 @@ $wgResourceModules['jquery.autoresize'] = array(
 	'scripts' => 'resources/jquery.autoresize.js',
 ) + $resourcePaths;
 
-// Doesn't exist in 1.17, but declaring twice causes an error
-if ( version_compare( $wgVersion, '1.18', '<' ) ) {
-$wgResourceModules['jquery.form'] = array(
-	'scripts' => 'resources/jquery.form.js',
-) + $resourcePaths;
-}
-
 /** @endcond */
 
 
