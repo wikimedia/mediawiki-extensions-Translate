@@ -325,9 +325,8 @@ if ( !defined( 'TRANSLATE_FUZZY' ) ) {
  * );
  * </pre>
  *
- * For Google and Apertium, you should get an API key.
+ * For Apertium, you should get an API key.
  * @see http://wiki.apertium.org/wiki/Apertium_web_service
- * @see http://code.google.com/apis/ajaxsearch/key.html
  *
  * The translation services are provided with the following information:
  * - server ip address
@@ -344,13 +343,6 @@ $wgTranslateTranslationServices['TTMServer'] = array(
 	'timeout-async' => 0, // Unused
 	'type' => 'ttmserver',
 	'public' => false,
-);
-$wgTranslateTranslationServices['Google'] = array(
-	'url' => 'http://ajax.googleapis.com/ajax/services/language/translate',
-	'key' => null,
-	'timeout-sync' => 3,
-	'timeout-async' => 6,
-	'type' => 'google',
 );
 $wgTranslateTranslationServices['Microsoft'] = array(
 	'url' => 'http://api.microsofttranslator.com/V2/Http.svc/Translate',
