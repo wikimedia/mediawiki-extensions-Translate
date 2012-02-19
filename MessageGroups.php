@@ -896,13 +896,13 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 
 		// Allow for adding a custom group description by using
 		// "MediaWiki:Tp-custom-<group ID>".
-		if( wfMessage( 'tp-custom-' . $this->id )->inContentLanguage()->exists() ) {
-			$customText = ' ' . wfMessage( 'tp-custom-' . $this->id )->text();
-		} else {
-			$customText = '';
+		$customText = '';
+		$customMessage = $wfMessage( 'tp-custom-' . $this->id )->inContentLanguage();
+		if( $customMessage->exists() ) {
+			$customText = $customMessage->plain();
 		}
 
-		return wfMsgNoTrans( 'translate-tag-page-desc', $title, $target ) . $customText;
+		return wfMessage( 'translate-tag-page-desc', $title, $target )->plain() . $customText;
 	}
 }
 
