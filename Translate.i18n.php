@@ -2065,7 +2065,7 @@ La llista predeterminada de llingües depende de la to llingua.",
 	'translate-statsf-count-registrations' => 'Nuevos usuarios',
 	'translate-statsf-language' => 'Llista de códigos de llingua separtaos por comes:',
 	'translate-statsf-group' => 'Llista de códigos de grupu separtaos por comes:',
-	'translate-statsf-submit' => 'Entever',
+	'translate-statsf-submit' => 'Vista previa',
 	'translate-tag-category' => 'Páxines traducibles',
 	'translate-tag-page-desc' => 'Traducción de la páxina wiki [[$2|$1]].',
 	'translate-tag-fuzzy-comment' => 'Definición camudada por [[User:$1|$1]] na revisión $2.',
@@ -7062,49 +7062,113 @@ $messages['fa'] = array(
 	'translate-magic-words' => 'واژه‌های جادویی',
 	'translate-magic-namespace' => 'اسم فضاهای نام',
 	'translate-magic-notsaved' => 'ویرایشتان ذخیره نشد!',
+	'translate-magic-errors' => 'لطفاً {{PLURAL:$1|خطای|خطاهای}} زیر را در ترجمهٔ خود اصلاح کنید:',
+	'translate-magic-saved' => 'تغییرات شما با موفقیت ذخیره شد.',
 	'translate-checks-parameters' => 'این {{PLURAL:$2|پارامتر استفاده نشده‌است|پارامترها استفاده نشده‌اند}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|پارامتر|پارامترهای}} زیر {{PLURAL:$2|ناشناخته است|ناشناخته‌اند}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'تعداد {{PLURAL:$2|پرانتزها|پرانتزها}} زوج نیست:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '{{PLURAL:$2|پیوندهایی که در ادامه می‌آیند مشکل‌ساز هستند|پیوندی که در ادامه می‌آید مشکل ساز است}}:
 <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|پیوند|پیوندهای}} زیر پیدا {{PLURAL:$2|نشد|نشدند}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'لطفاً این {{PLURAL:$2|برچسب|برچسب‌ها}} را با موارد درست جایگزین کنید:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'تعریف از <nowiki>{{PLURAL:}}</nowiki> استفاده می‌کند اما ترجمه از آن استفاده نمی‌کند.',
+	'translate-checks-pagename' => 'فضای نام با آن چه در تعریف پیغام آمده تفاوت دارد',
+	'translate-checks-format' => 'این ترجمه از تعریف پیغام تبعیت نمی‌کند یا دارای ساختار نامعتبر است: $1',
+	'translate-checks-parametersnotequal' => 'شمار پارامترها {{PLURAL:$1|$1}} تاست؛ بایست {{PLURAL:$2|$2}} تا باشد.',
+	'translate-checks-malformed' => '<nowiki>$1</nowiki> بدشکل است.',
+	'translate-checks-fudforum-syntax' => 'در این پروژه از <nowiki>$1</nowiki> به جای <nowiki>$2</nowiki> استفاده کنید.',
 	'translate-pref-nonewsletter' => 'برای من خبرنامهٔ الکترونیکی ارسال نشود',
 	'translate-pref-editassistlang' => 'زبان‌های دستیار:',
+	'prefs-translate' => 'گزینه‌های ترجمه',
+	'translate-pref-editassistlang-help' => 'فهرست کدهای زبان جدا شده با کاما.
+ترجمه‌های پیغام‌های این زبان‌ها در زمانی که شما ترجمه می‌کنید نمایش داده می‌شوند.
+فهرست پیش‌فرض زبان‌ها بستگی به این دارد که زبان شما چیست.',
+	'translate-pref-editassistlang-bad' => 'کد زبان نامعتبر در فهرست:
+<nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'ویرایشگر پیشرفتهٔ ترجمه (جاوااسکریپت)',
+	'right-translate' => 'ویرایش با استفاده از رابط ترجمه',
+	'right-translate-manage' => 'مدیریت گروه‌های پیغام',
+	'action-translate-manage' => 'مدیریت گروه‌های پیغام',
+	'right-translate-import' => 'درون‌ریزی ترجمه‌های غیر برخط',
+	'action-translate-import' => 'درون‌ریزی ترجمه‌های غیر برخط',
+	'right-translate-messagereview' => 'بازبینی ترجمه‌ها',
+	'right-translate-groupreview' => 'بازبینی ترجمه‌ها',
+	'translate-rc-translation-filter' => 'پالایش ترجمه‌ها:',
+	'translate-rc-translation-filter-no' => 'کاری نکن',
+	'translate-rc-translation-filter-only' => 'تنها ترجمه‌ها را نمایش بده',
+	'translate-rc-translation-filter-filter' => 'ترجمه‌ها را نمایش نده',
+	'translate-rc-translation-filter-site' => 'تنها تغییرات پیغام‌های وبگاه',
 	'translationstats' => 'آمار ترجمه',
 	'translate-stats-edits' => 'ویرایش‌ها',
 	'translate-stats-users' => 'مترجمان',
 	'translate-stats-registrations' => 'ثبت نام',
 	'translate-statsf-intro' => 'شما می‌توانید توسط این فرم آمارهای ساده ایجاد کنید.
 تمام مقادیر دارای حد بالا و پایین هستند.',
+	'translate-statsf-options' => 'گزینه های نمودار',
+	'translate-statsf-width' => 'پهنا به پیکسل:',
+	'translate-statsf-height' => 'بلندی به پیکسل:',
+	'translate-statsf-days' => 'مدت زمان به روز:',
+	'translate-statsf-start' => 'تاریخ شروع:',
+	'translate-statsf-scale' => 'ظرافت:',
 	'translate-statsf-scale-months' => 'ماه',
 	'translate-statsf-scale-weeks' => 'هفته',
 	'translate-statsf-scale-days' => 'روز',
 	'translate-statsf-scale-hours' => 'ساعت',
+	'translate-statsf-count' => 'معیار:',
 	'translate-statsf-count-edits' => 'شمار ویرایش‌ها',
 	'translate-statsf-count-users' => 'مترجمان فعال',
 	'translate-statsf-count-registrations' => 'کاربران تازه',
 	'translate-statsf-language' => 'فهرست کدهای زبان جدا شده با کاما:',
+	'translate-statsf-group' => 'فهرست کدهای گروه جدا شده با کاما:',
 	'translate-statsf-submit' => 'پیش‌نمایش',
+	'translate-tag-category' => 'صفحه‌های قابل ترجمه',
+	'translate-tag-page-desc' => 'ترجمهٔ صفحهٔ [[$2|$1]] ویکی.',
+	'translate-tag-fuzzy-comment' => 'تعریف توسط [[User:$1|$1]]  در نسخهٔ $2 تغییر یافت.',
+	'translate-tag-fuzzy-reason' => 'تعریف توسط «$1» با توضیح «$3» در $2 تغییر یافت.',
 	'translate-sidebar-alltrans' => 'در زبان‌های دیگر',
 	'translations' => 'همهٔ ترجمه‌ها',
+	'translations-summary' => 'نام یک پیغام را در زیر وارد کنید تا تمام ترجمه‌های موجود را ببینید.',
+	'translate-translations-no-message' => '«$1» یک پیغام قابل ترجمه نیست',
+	'translate-translations-none' => 'ترجمه‌ای برای «$1» موجود نیست',
+	'translate-translations-count' => ' {{PLURAL:$1|یک ترجمه|$1 ترجمه}} پیدا شد.',
 	'translate-translations-fieldset-title' => 'پیام',
+	'translate-translations-messagename' => 'نام:',
 	'translate-translations-project' => 'پروژه:',
 	'translate-translations-history-short' => 'ت',
 	'languagestats' => 'آمار زبان',
+	'languagestats-summary' => 'این صفحه آمار ترجمه برای همهٔ گروه‌های پیغام را برای یک زبان نمایش می‌دهد.',
+	'languagestats-stats-for' => 'آمار ترجمه برای $1 ($2).',
+	'languagestats-recenttranslations' => 'ترجمه‌های اخیر',
 	'translate-langstats-expand' => 'گسترش',
 	'translate-langstats-collapse' => 'نهفتن',
 	'translate-langstats-expandall' => 'گسترش همه',
 	'translate-langstats-collapseall' => 'نهفتن همه',
+	'translate-language-code' => 'کد زبان',
+	'translate-language-code-field-name' => 'کد زبان:',
+	'translate-suppress-complete' => 'فرونشانی گروه‌های پیغامی که تماماً ترجمه شده‌اند',
+	'translate-ls-noempty' => 'فرونشانی گروه‌های پیغامی که هیچ ترجمه نشده‌اند',
 	'translate-language' => 'زبان',
-	'translate-mgs-fieldset' => 'نمایش ترجیحات',
+	'translate-total' => 'پیغام‌ها',
+	'translate-untranslated' => 'ترجمه نشده',
+	'translate-percentage-complete' => 'پیشرفت',
+	'translate-percentage-fuzzy' => 'تاریخ گذشته',
+	'translate-nothing-to-do' => 'تمام ترجمه‌های ممکن انجام شده‌اند.
+شما را ترغیب می‌کنیم که از طریق [[Special:Translate|{{int:translate}}]] ترجمه‌ها را بازبینی کنید.',
+	'translate-languagestats-overall' => 'همه گروه‌های پیغام با هم',
+	'translate-ls-column-group' => 'گروه پیغام‌ها',
+	'translate-mgs-fieldset' => 'تنظیمات نمایش',
 	'translate-mgs-group' => 'گروه پیغام‌ها:',
+	'translate-mgs-nocomplete' => 'زبان‌هایی که ترجمه را به پایان رسانده‌اند نمایش نده',
+	'translate-mgs-noempty' => 'زبان‌هایی که هیچ ترجمه‌ای ندارند نمایش نده',
 	'translate-mgs-submit' => 'نمایش آمار',
 	'translate-mgs-column-language' => 'زبان',
 	'translate-mgs-totals' => 'همهٔ زبان‌ها با هم',
+	'translate-mgs-invalid-group' => 'گروه مشخص شده $1 وجود ندارد.',
 	'supportedlanguages' => 'زبان‌های پشتیبانی‌شده',
 	'supportedlanguages-recenttranslations' => 'ترجمه‌های اخیر',
 	'translate-save' => 'ذخیره ($1)',
@@ -7114,6 +7178,7 @@ $messages['fa'] = array(
 	'translate-manage-action-import' => 'درون‌ریزی',
 	'translate-manage-submit' => 'اجرا',
 	'translate-manage-subtitle' => 'مدیریت',
+	'translate-js-summary' => 'خلاصه:',
 	'translate-js-save' => 'ذخیره',
 	'translate-js-next' => 'ذخیره و بازکردن بعدی',
 	'translate-js-nonext' => 'این آخرین پیغام این صفحه بود.',
@@ -7139,7 +7204,14 @@ $messages['fa'] = array(
 	'translate-messagereview-submit' => 'پذیرفتن',
 	'translate-messagereview-progress' => 'پذیرفتن...',
 	'translate-messagereview-failure' => 'پذیرفتن... ناموفق: $1',
+	'translate-workflow-state-' => '(تنظیم‌نشده)',
+	'translate-workflowstatus' => 'وضعیت: $1',
+	'translate-workflow-set-do' => 'تنظیم کن',
+	'translate-workflow-set-doing' => 'در حال تنظیم کردن ...',
+	'translate-workflow-set-done' => 'تنظیم شد!',
 	'translate-stats-workflow' => 'وضعیت',
+	'translate-dynagroup-recent-label' => 'ترجمه‌های اخیر',
+	'translate-gethelp' => 'راهنما',
 );
 
 /** Finnish (Suomi)
@@ -13713,7 +13785,7 @@ Klickt den Numm vum Grupp vu Messagen un fir déi net iwwersate Messagen ze gesi
 	'translate-next' => 'Nächst Säit',
 	'translate-prev' => 'Vireg Säit',
 	'translate-page-description-legend' => 'Informatiounen iwwert de Grupp',
-	'translate-page-description-hasoptional' => 'An dësem Groupe vu Messagen sinn optional Messagen.
+	'translate-page-description-hasoptional' => 'An dësem Groupe vu Message sinn optional Messagen.
 Optional Message sollen nëmmen iwwersat gi wann Är Sprooch speziell Ufuerderungen huet wéi zum Beispill datt Espacen net benotzt ginn oder eng Transliteratioun vu speziellen Nimm. $1',
 	'translate-page-description-hasoptional-open' => 'Optional Message weisen.',
 	'translate-page-edit' => 'änneren',
@@ -16354,6 +16426,7 @@ Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
 	'translate-checks-format' => 'Deze vertaling wijkt af van het bronbericht of heeft een ongeldige opmaak: $1',
 	'translate-checks-escape' => 'De volgende escapes zijn waarschijnlijk per ongeluk toegepast: <strong>$1</strong>',
 	'translate-checks-parametersnotequal' => 'Aantal parameters is {{PLURAL:$1|$1}}; moet {{PLURAL:$2|$2}} zijn.',
+	'translate-checks-malformed' => '<nowiki>$1</nowiki> heeft een ongeldige indeling.',
 	'translate-checks-fudforum-syntax' => 'Gebruik <nowiki>$1</nowiki> in plaats van <nowiki>$2</nowiki> voor dit project.',
 	'translate-pref-nonewsletter' => 'Mij geen nieuwsbrieven per e-mail sturen',
 	'translate-pref-editassistlang' => 'Hulptalen:',
@@ -17377,6 +17450,8 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 	'translate-checks-pagename' => 'Przestrzeń nazw zmieniona z definicji',
 	'translate-checks-format' => 'To tłumaczenie jest niezgodne z definicją lub ma nieprawidłową składnię: $1',
 	'translate-checks-escape' => 'Następujące wyjścia z procesu tłumaczenia mogą być przypadkowe: <strong>$1</strong>',
+	'translate-checks-parametersnotequal' => 'Liczba parametrów to  {{PLURAL:$1|$1 }}; {{PLURAL:$2|powinien być $2|powinno być $2}}.',
+	'translate-checks-malformed' => '<nowiki>$1</nowiki> jest niepoprawne.',
 	'translate-checks-fudforum-syntax' => 'Użyj w tym projekcie <nowiki>$1</nowiki> zamiast <nowiki>$2</nowiki>.',
 	'translate-pref-nonewsletter' => 'Nie wysyłaj do mnie biuletynów pocztą elektroniczną',
 	'translate-pref-editassistlang' => 'Języki pomocnicze:',

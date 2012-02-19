@@ -2024,6 +2024,7 @@ Izena: $1',
 );
 
 /** Persian (فارسی)
+ * @author Huji
  * @author Mjbmr
  * @author ZxxZxxZ
  */
@@ -2033,9 +2034,27 @@ $messages['fa'] = array(
 	'pt-log-name' => 'سیاههٔ ترجمه صفحه',
 	'pt-log-mark' => 'نسخه $3 از صفحهٔ "[[:$1]]" برای ترجمه {{GENDER:$2|علامت زده شد}}',
 	'pt-log-unmark' => 'صفحهٔ "[[:$1]]" از ترجمه {{GENDER:$2|حذف شد}}',
+	'pt-movepage-list-translation' => 'صفحه‌های ترجمه',
+	'pt-movepage-list-section' => 'صفحه‌های بخش',
+	'pt-movepage-list-other' => 'زیرصفحه‌های دیگر',
+	'pt-movepage-current' => 'نام فعلی:',
+	'pt-movepage-new' => 'نام جدید:',
+	'pt-movepage-reason' => 'دلیل:',
+	'pt-movepage-subpages' => 'انتقال همهٔ زیرصفحه‌ها',
+	'pt-movepage-action-check' => 'بررسی کن که انتقال ممکن باشد',
+	'pt-movepage-action-perform' => 'منتقل کن',
+	'pt-movepage-action-other' => 'تغییر هدف',
+	'pt-deletepage-lang-legend' => 'حذف صفحهٔ ترجمه',
+	'pt-deletepage-full-legend' => 'حذف صحفهٔ قابل ترجمه',
+	'pt-deletepage-any-legend' => 'حذف صفحهٔ قابل ترجمه یا ترجمهٔ صفحهٔ قابل ترجمه',
 	'pt-deletepage-current' => 'نام صفحه:',
 	'pt-deletepage-reason' => 'دلیل:',
+	'pt-deletepage-subpages' => 'حذف تمام زیرصفحه‌ها',
+	'pt-deletepage-list-pages' => 'فهرست صفحه‌هایی که حذف می‌شوند',
+	'pt-deletepage-list-translation' => 'صفحه‌های ترجمه',
+	'pt-deletepage-list-section' => 'صفحه‌های بخش',
 	'pt-deletepage-list-other' => 'زیربخش‌های دیگر',
+	'pt-deletepage-list-count' => 'در کل $1 {{PLURAL:$1|صفحه|صفحه}} حذف می‌شوند.',
 );
 
 /** Finnish (Suomi)
