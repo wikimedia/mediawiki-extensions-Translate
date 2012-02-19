@@ -58,12 +58,11 @@ class GettextFFS extends SimpleFFS {
 	 * or use msgctxt (non-standard po-files)
 	 * @param $mangler StringMangler
 	 * @return \array
-	 * @todo Refactor method into smaller parts.
 	 */
 	public static function parseGettextData( $data, $useCtxtAsKey = false, $mangler ) {
 		$potmode = false;
 
-		// Normalise newlines, to make processing easier lates
+		// Normalise newlines, to make processing easier
 		$data = str_replace( "\r\n", "\n", $data );
 
 		/* Delimit the file into sections, which are separated by two newlines.
@@ -83,7 +82,9 @@ class GettextFFS extends SimpleFFS {
 
 			// Check for pot-mode by checking if the header is fuzzy
 			$flags = self::parseFlags( $headerSection );
-			if ( in_array( 'fuzzy', $flags, true ) ) $potmode = true;
+			if ( in_array( 'fuzzy', $flags, true ) ) {
+				$potmode = true;
+			}
 		} else {
 			throw new MWException( "Gettext file header was not found:\n\n$data" );
 		}
@@ -112,103 +113,16 @@ class GettextFFS extends SimpleFFS {
 
 		// Then parse the messages
 		foreach ( $sections as $section ) {
-			if ( trim( $section ) === '' ) {
-				continue;
-			}
-
-			/* These inactive section are of no interest to us. Multiline mode
-			 * is needed because there may be flags or other annoying stuff
-			 * before the commented out sections.
-			 */
-			if ( preg_match( '/^#~/m', $section ) ) continue;
-
-			$item = array(
-				'ctxt'  => '',
-				'id'    => '',
-				'str'   => '',
-				'flags' => array(),
-				'comments' => array(),
+			self::parseGettextSection(
+				$section,
+				$useCtxtAsKey,
+				$pluralCount,
+				$mangler,
+				$messages,
+				$template,
+				$metadata,
+				$headers
 			);
-
-			$match = self::expectKeyword( 'msgid', $section );
-			if ( $match !== null ) {
-				$item['id'] = self::formatForWiki( $match );
-			} else {
-				throw new MWException( "Unable to parse msgid:\n\n$section" );
-			}
-
-			$match = self::expectKeyword( 'msgctxt', $section );
-			if ( $match !== null ) {
-				$item['ctxt'] = self::formatForWiki( $match );
-			} elseif ( $useCtxtAsKey ) { // Invalid message
-				$metadata['warnings'][] = "Ctxt missing for {$item['id']}";
-				error_log( "Ctxt missing for {$item['id']}" );
-			}
-
-
-			$pluralMessage = false;
-			$match = self::expectKeyword( 'msgid_plural', $section );
-			if ( $match !== null ) {
-				$pluralMessage = true;
-				$plural = self::formatForWiki( $match );
-				$item['id'] = "{{PLURAL:GETTEXT|{$item['id']}|$plural}}";
-			}
-
-			if ( $pluralMessage ) {
-				$actualForms = array();
-				for ( $i = 0; $i < $pluralCount; $i++ ) {
-					$match = self::expectKeyword( "msgstr\\[$i\\]", $section );
-					if ( $match !== null ) {
-						$actualForms[] = self::formatForWiki( $match );
-					} else {
-						$actualForms[] = '';
-						error_log( "Plural $i not found, expecting total of $pluralCount for {$item['id']}" );
-					}
-				}
-
-				// Keep the translation empty if no form has translation
-				if ( array_sum( array_map( 'strlen', $actualForms ) ) > 0 ) {
-					$item['str'] = '{{PLURAL:GETTEXT|' . implode( '|', $actualForms ) . '}}';
-				}
-			} else {
-				$match = self::expectKeyword( 'msgstr', $section );
-				if ( $match !== null ) {
-					$item['str'] = self::formatForWiki( $match );
-				} else {
-					throw new MWException( "Unable to parse msgstr:\n\n$section" );
-				}
-			}
-
-			// Parse flags
-			$flags = self::parseFlags( $section );
-			foreach ( $flags as $key => $flag ) {
-				if ( $flag === 'fuzzy' ) {
-					$item['str'] = TRANSLATE_FUZZY . $item['str'];
-					unset( $flags[$key] );
-				}
-			}
-			$item['flags'] = $flags;
-
-			// Rest of the comments
-			$matches = array();
-			if ( preg_match_all( '/^#(.?) (.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
-				foreach ( $matches as $match ) {
-					if ( $match[1] !== ',' && strpos( $match[1], '[Wiki]' ) !== 0 ) {
-						$item['comments'][$match[1]][] = $match[2];
-					}
-				}
-			}
-
-			if ( $useCtxtAsKey ) {
-				$key = $item['ctxt'];
-			} else {
-				$key = self::generateKeyFromItem( $item );
-			}
-
-			$key = $mangler->mangle( $key );
-
-			$messages[$key] = $potmode ? $item['id'] : $item['str'];
-			$template[$key] = $item;
 		}
 
 		return array(
@@ -217,6 +131,121 @@ class GettextFFS extends SimpleFFS {
 			'METADATA' => $metadata,
 			'HEADERS' => $headers
 		);
+	}
+
+	public static function parseGettextSection( $section, $useCtxtAsKey, $pluralCount, $manger, &$messages, &$template, &$metadata, &$headers ) {
+		if ( trim( $section ) === '' ) {
+			return false;
+		}
+
+		/* These inactive sections are of no interest to us. Multiline mode
+		 * is needed because there may be flags or other annoying stuff
+		 * before the commented out sections.
+		 */
+		if ( preg_match( '/^#~/m', $section ) ) {
+			return false;
+		}
+
+		$item = array(
+			'ctxt'  => '',
+			'id'    => '',
+			'str'   => '',
+			'flags' => array(),
+			'comments' => array(),
+		);
+
+		$match = self::expectKeyword( 'msgid', $section );
+		if ( $match !== null ) {
+			$item['id'] = self::formatForWiki( $match );
+		} else {
+			throw new MWException( "Unable to parse msgid:\n\n$section" );
+		}
+
+		$match = self::expectKeyword( 'msgctxt', $section );
+		if ( $match !== null ) {
+			$item['ctxt'] = self::formatForWiki( $match );
+		} elseif ( $useCtxtAsKey ) { // Invalid message
+			$metadata['warnings'][] = "Ctxt missing for {$item['id']}";
+			error_log( "Ctxt missing for {$item['id']}" );
+		}
+
+		$pluralMessage = false;
+		$match = self::expectKeyword( 'msgid_plural', $section );
+		if ( $match !== null ) {
+			$pluralMessage = true;
+			$plural = self::formatForWiki( $match );
+			$item['id'] = "{{PLURAL:GETTEXT|{$item['id']}|$plural}}";
+		}
+
+		if ( $pluralMessage ) {
+			$pluralMessageText = self::processGettextPluralMessage( $pluralCount, $section );
+
+			// Keep the translation empty if no form has translation
+			if( $pluralMessageText !== '' ) {
+				$item['str'] = $pluralMessageText;
+			}
+		} else {
+			$match = self::expectKeyword( 'msgstr', $section );
+			if ( $match !== null ) {
+				$item['str'] = self::formatForWiki( $match );
+			} else {
+				throw new MWException( "Unable to parse msgstr:\n\n$section" );
+			}
+		}
+
+		// Parse flags
+		$flags = self::parseFlags( $section );
+		foreach ( $flags as $key => $flag ) {
+			if ( $flag === 'fuzzy' ) {
+				$item['str'] = TRANSLATE_FUZZY . $item['str'];
+				unset( $flags[$key] );
+			}
+		}
+		$item['flags'] = $flags;
+
+		// Rest of the comments
+		$matches = array();
+		if ( preg_match_all( '/^#(.?) (.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
+			foreach ( $matches as $match ) {
+				if ( $match[1] !== ',' && strpos( $match[1], '[Wiki]' ) !== 0 ) {
+					$item['comments'][$match[1]][] = $match[2];
+				}
+			}
+		}
+
+		if ( $useCtxtAsKey ) {
+			$key = $item['ctxt'];
+		} else {
+			$key = self::generateKeyFromItem( $item );
+		}
+
+		$key = $mangler->mangle( $key );
+
+		$messages[$key] = $potmode ? $item['id'] : $item['str'];
+		$template[$key] = $item;
+		
+		return true;
+	}
+
+	public static function processGettextPluralMessage( $pluralCount, $section ) {
+		$actualForms = array();
+
+		for ( $i = 0; $i < $pluralCount; $i++ ) {
+			$match = self::expectKeyword( "msgstr\\[$i\\]", $section );
+
+			if ( $match !== null ) {
+				$actualForms[] = self::formatForWiki( $match );
+			} else {
+				$actualForms[] = '';
+				error_log( "Plural $i not found, expecting total of $pluralCount for {$item['id']}" );
+			}
+		}
+
+		if ( array_sum( array_map( 'strlen', $actualForms ) ) > 0 ) {
+			return '{{PLURAL:GETTEXT|' . implode( '|', $actualForms ) . '}}';
+		} else {
+			return '';
+		}
 	}
 
 	public static function parseFlags( $section ) {
@@ -346,14 +375,8 @@ PHP;
 		$output = trim( $output ) . "\n";
 
 		// @todo portal is twn specific
-		// BC for MW <1.18
-		if ( method_exists( 'Title', 'getCanonicalUrl' ) ) {
-			$portal = Title::makeTitle( NS_PORTAL, $code )->getCanonicalUrl();
-			$server = $wgCanonicalServer;
-		} else {
-			$portal = Title::makeTitle( NS_PORTAL, $code )->getFullUrl();
-			$server = $wgServer;
-		}
+		$portal = Title::makeTitle( NS_PORTAL, $code )->getCanonicalUrl();
+		$server = $wgCanonicalServer;
 
 		$specs = isset( $template['HEADERS'] ) ? $template['HEADERS'] : array();
 
@@ -576,5 +599,4 @@ PHP;
 
 		return $splitPlurals;
 	}
-
 }
