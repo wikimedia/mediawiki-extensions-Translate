@@ -425,7 +425,7 @@ The states are defined in the configuration variable $wgTranslateWorkflowStates.
 	// Dynamic message groups
 	'translate-dynagroup-recent-label' => 'Recent translations',
 	'translate-dynagroup-recent-desc' => 'This message group shows all recent translations into this language.
-Most useful for the tasks "{{int:translate-task-acceptqueue}}" and "{{int:translate-task-reviewall}}".',
+Most useful for the proofreading tasks.',
 
 	'translate-dynagroup-by' => 'Translation made by {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Translation made by {{GENDER:$1|$1}} ($2)',
