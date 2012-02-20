@@ -121,8 +121,7 @@ class GettextFFS extends SimpleFFS {
 				$potmode,
 				$messages,
 				$template,
-				$metadata,
-				$headers
+				$metadata
 			);
 		}
 
@@ -134,7 +133,7 @@ class GettextFFS extends SimpleFFS {
 		);
 	}
 
-	public static function parseGettextSection( $section, $useCtxtAsKey, $pluralCount, $mangler, $potmode, &$messages, &$template, &$metadata, &$headers ) {
+	public static function parseGettextSection( $section, $useCtxtAsKey, $pluralCount, $mangler, $potmode, &$messages, &$template, &$metadata ) {
 		if ( trim( $section ) === '' ) {
 			return false;
 		}
