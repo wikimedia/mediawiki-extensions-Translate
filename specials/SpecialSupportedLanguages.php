@@ -77,9 +77,6 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$this->preQueryUsers( $users );
 
 		list( $editcounts, $lastedits ) = $this->getUserStats();
-		global $wgUser;
-
-		$skin = $wgUser->getSkin();
 
 		// Information to be used inside the foreach loop.
 		$linkInfo['rc']['title'] = SpecialPage::getTitleFor( 'Recentchanges' );
@@ -103,7 +100,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 			$wgOut->addHtml( Html::openElement( 'h2', array( 'id' => $code ) ) );
 			if ( defined( 'NS_PORTAL' ) ) {
 				$portalTitle = Title::makeTitleSafe( NS_PORTAL, $code );
-				$wgOut->addHtml( $skin->linkKnown( $portalTitle, $headerText ) );
+				$wgOut->addHtml( Linker::linkKnown( $portalTitle, $headerText ) );
 			} else {
 				$wgOut->addHtml( $headerText );
 			}
@@ -112,7 +109,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 			// Add useful links for language stats and recent changes for the language.
 			$links = array();
-			$links[] = $skin->link(
+			$links[] = Linker::link(
 				$linkInfo['stats']['title'],
 				$linkInfo['stats']['msg'],
 				array(),
@@ -122,7 +119,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 				),
 				array( 'known', 'noclasses' )
 			);
-			$links[] = $skin->link(
+			$links[] = Linker::link(
 				$linkInfo['rc']['title'],
 				$linkInfo['rc']['msg'],
 				array(),
@@ -270,8 +267,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 	}
 
 	protected function makeUserList( $users, $editcounts, $lastedits ) {
-		global $wgOut, $wgLang, $wgUser;
-		$skin = $wgUser->getSkin();
+		global $wgOut, $wgLang;
 
 		$day = 60 * 60 * 24;
 
@@ -306,7 +302,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 			$stylestr = $this->formatStyle( $styles );
 			if ( $stylestr ) $attribs['style'] = $stylestr;
 
-			$links[] = $skin->link( $title, $enc, $attribs );
+			$links[] = Linker::link( $title, $enc, $attribs );
 		}
 
 		$wgOut->addHTML( "<p class='mw-translate-spsl-translators'>" . wfMsgExt(

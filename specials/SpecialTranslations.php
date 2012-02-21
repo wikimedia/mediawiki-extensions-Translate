@@ -136,8 +136,6 @@ class SpecialTranslations extends SpecialAllpages {
 	function showTranslations( Title $title ) {
 		global $wgOut, $wgUser, $wgLang;
 
-		$sk = $wgUser->getSkin();
-
 		$namespace = $title->getNamespace();
 		$message = $title->getDBkey();
 
@@ -212,10 +210,10 @@ class SpecialTranslations extends SpecialAllpages {
 					$text
 				);
 			} else {
-				$tools['edit'] = $sk->link( $tTitle, $text );
+				$tools['edit'] = Linker::link( $tTitle, $text );
 			}
 
-			$tools['history'] = $sk->link(
+			$tools['history'] = Linker::link(
 				$tTitle,
 				$historyText,
 				array(

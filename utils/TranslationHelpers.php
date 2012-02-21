@@ -1152,12 +1152,10 @@ class TranslationHelpers {
 	 * @return string
 	 */
 	protected function doBox( $msg, $code, $title = false, $makelink = false ) {
-		global $wgUser, $wgLang;
+		global $wgLang;
 
 		$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 		$code = wfBCP47( $code );
-
-		$skin = $wgUser->getSkin();
 
 		$attributes = array();
 		if ( !$title ) {
@@ -1180,7 +1178,7 @@ class TranslationHelpers {
 
 		if ( $makelink ) {
 			$linkTitle = Title::newFromText( $makelink );
-			$title = $skin->link(
+			$title = Linker::link(
 				$linkTitle,
 				htmlspecialchars( $title ),
 				array(),

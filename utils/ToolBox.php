@@ -25,6 +25,7 @@ class TranslateToolbox {
 	static function toolboxAllTranslations( &$skin ) {
 		global $wgTranslateMessageNamespaces;
 
+		// @todo Remove BC code.
 		if ( method_exists( $skin, 'getSkin' ) ) {
 			$title = $skin->getSkin()->getTitle();
 		} else {

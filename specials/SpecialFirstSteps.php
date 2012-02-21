@@ -16,12 +16,6 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialFirstSteps extends UnlistedSpecialPage {
-
-	/**
-	 * @var Skin
-	 */
-	protected $skin;
-
 	/**
 	 * @var User
 	 */
@@ -40,7 +34,6 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		global $wgOut, $wgUser;
 		$this->out = $wgOut;
 		$this->user = $wgUser;
-		$this->skin = $wgUser->getSkin();
 
 		$this->out->addWikiMsg( 'translate-fs-intro' );
 		$step = false;
