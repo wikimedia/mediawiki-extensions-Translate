@@ -25,6 +25,7 @@ $wgExtensionCredits['specialpage'][] = array(
 
 $dir = dirname( __FILE__ );
 $wgSpecialPages['TranslatorSignup'] = 'SpecialTranslatorSignup';
+$wgSpecialPageGroups['TranslatorSignup'] = 'login';
 $wgExtensionMessagesFiles['LCADFT'] = "$dir/LCADFT.i18n.php";
 $wgExtensionMessagesFiles['LCADFT-alias'] = "$dir/LCADFT.alias.php";
 $wgAutoloadClasses['SpecialTranslatorSignup'] = "$dir/SpecialTranslatorSignup.php";
