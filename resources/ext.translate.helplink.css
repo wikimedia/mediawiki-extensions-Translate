@@ -1,8 +1,9 @@
 .mw-translate-helplink {
-	position: absolute;
+	float: right;
 	width: 100%;
 	display: block;
 	margin-top: -10px;
+	margin-bottom: -10px;
 }
 
 .mw-translate-helplink a {
