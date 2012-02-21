@@ -352,7 +352,7 @@ class GettextFFS extends SimpleFFS {
 	}
 
 	protected function doGettextHeader( MessageCollection $collection, $template, &$pluralCount ) {
-		global $wgSitename, $wgServer, $wgCanonicalServer;
+		global $wgSitename;
 
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
@@ -374,33 +374,25 @@ PHP;
 		// Make sure there is no empty line before msgid
 		$output = trim( $output ) . "\n";
 
-		// @todo portal is twn specific
-		$portal = Title::makeTitle( NS_PORTAL, $code )->getCanonicalUrl();
-		$server = $wgCanonicalServer;
-
 		$specs = isset( $template['HEADERS'] ) ? $template['HEADERS'] : array();
 
 		$timestamp = wfTimestampNow();
-		$specs['Project-Id-Version'] = $this->group->getLabel();
-		$specs['Report-Msgid-Bugs-To'] = $wgSitename;
 		$specs['PO-Revision-Date'] = self::formatTime( $timestamp );
 		if ( $this->offlineMode ) {
 			$specs['POT-Creation-Date'] = self::formatTime( $timestamp );
 		} elseif ( $this->group instanceof MessageGroupBase ) {
 			$specs['X-POT-Import-Date'] = self::formatTime( wfTimestamp( TS_MW, $this->getPotTime() ) );
 		}
-		$specs['Language-Team'] = "$name <$portal>";
 		$specs['Content-Type'] = 'text/plain; charset=UTF-8';
 		$specs['Content-Transfer-Encoding'] = '8bit';
+		wfRunHooks( 'Translate:GettextFFS:headerFields', array( &$specs, $this->group, $code ) );
 		$specs['X-Generator'] = $this->getGenerator();
-		$specs['X-Translation-Project'] = "$wgSitename at $server";
-		$specs['X-Language-Code'] = $code;
+
 		if ( $this->offlineMode ) {
+			$specs['X-Language-Code'] = $code;
 			$specs['X-Message-Group'] = $this->group->getId();
-		} else {
-			// Prepend # so that message import does not think this is a file it can import
-			$specs['X-Message-Group'] = '#' . $this->group->getId();
 		}
+
 		$plural = self::getPluralRule( $code );
 		if ( $plural ) {
 			$specs['Plural-Forms'] = $plural;
