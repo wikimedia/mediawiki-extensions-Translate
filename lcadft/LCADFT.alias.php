@@ -10,5 +10,5 @@ $specialPageAliases = array();
 
 /** English (English) */
 $specialPageAliases['en'] = array(
-	'TranslatorSignup' => array( 'Translator Signup' ),
+	'TranslatorSignup' => array( 'TranslatorSignup' ),
 );
