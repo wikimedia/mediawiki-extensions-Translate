@@ -372,6 +372,10 @@ Emaomp o vont da hentañ ac'hanoc'h paz ha paz evit dont da vezañ un troer.
 E fin an hentad e c'helloc'h treiñ \"kemennadennoù etrefas\" an holl raktresoù meret gant {{SITENAME}}.",
 	'translate-fs-selectlanguage' => 'Dibab ur yezh',
 	'translate-fs-settings-planguage' => 'Yezh pennañ :',
+	'translate-fs-settings-planguage-desc' => 'Talvezout a ra ar yezh pennañ da yezh an etrefas evit ar wiki-mañ ha da yezh labour evit an troidigezhioù.',
+	'translate-fs-settings-slanguage' => 'Yezh skoazell $1 :',
+	'translate-fs-settings-slanguage-desc' => "Posupl eo diskwel troidigezhioù kemennadennoù e yezhoù all er skridaozerez treiñ.
+Amañ e c'hallit dibab peseurt yezhoù a garfec'h gwelet, mar karit.",
 	'translate-fs-settings-submit' => 'Enrollañ ar penndibaboù',
 	'translate-fs-userpage-level-N' => 'A-vihanik e komzan',
 	'translate-fs-userpage-level-5' => 'Troer a-vicher on war ar',
@@ -379,9 +383,16 @@ E fin an hentad e c'helloc'h treiñ \"kemennadennoù etrefas\" an holl raktreso�
 	'translate-fs-userpage-level-3' => 'Ampart on war ar',
 	'translate-fs-userpage-level-2' => "Barrek a-walc'h on war ar",
 	'translate-fs-userpage-level-1' => 'Un tammig e ouzon ar',
+	'translate-fs-userpage-help' => "Roit titouroù diwar-benn ho parregezhioù yezh ha kontit deomp un draig bennak diwar ho penn. Mard ouzit ouzhpenn 5 yezh e c'hallot ouzhpennañ anezho diwezhatoc'hik.",
 	'translate-fs-userpage-submit' => 'Krouiñ ma fajenn implijer',
 	'translate-fs-userpage-done' => "Dispar ! Ur bajenn implijer hoc'h eus bremañ.",
 	'translate-fs-permissions-planguage' => 'Yezh pennañ :',
+	'translate-fs-permissions-help' => "Bremañ eo ret deoc'h goulenn ma vo ouzhpennet hoc'h anv e strollad an droerien.
+Dibabit ar yezh pennañ hoc'h eus c'hoant da dreiñ enni.
+
+Gallout a rit menegiñ yezhoù all ha lakaat evezhiadennoù all en takad skrivañ a-is.",
+	'translate-fs-permissions-pending' => "Kaset eo bet ho koulenn da [[$1]] ha gwiriet e vo gant unan bennak eus ar skipailh a-raok pell.
+Ma kadarnait ho chomlec'h postel e resevot ur gemennadenn dre bostel pa vo bet graet.",
 	'translate-fs-permissions-submit' => 'Kas ar goulenn',
 	'translate-fs-target-text' => "Gourc'hemennoù !
 Kregiñ da dreiñ a c'hallit ober bremañ.
@@ -1794,7 +1805,7 @@ $messages['ja'] = array(
 	'translate-fs-permissions-submit' => '申請を送信',
 	'translate-fs-target-text' => "お疲れ様でした！あなたが翻訳を開始する準備が整いました。
 
-まだ慣れないことや分かりにくいことがあっても、心配することはありません。[[Project list|プロジェクト一覧]]にあなたが翻訳を行うことのできる各プロジェクトの概要があります。ほとんどのプロジェクトには短い解説ページがあり、「'''Translate this project'''」というリンクからそのプロジェクトの未翻訳メッセージをすべて一覧できるページに移動できます。すべてのメッセージグループに関して[[Special:LanguageStats|各言語別に現在の翻訳状況]]を一覧することもできます。
+まだ慣れないことや分かりにくいことがあっても、心配することはありません。[[Project list|プロジェクト一覧]]にあなたが翻訳を行うことのできる各プロジェクトの概要があります。ほとんどのプロジェクトには短い解説ページがあり、「'''Translate this project'''」というリンクからそのプロジェクトの未翻訳メッセージをすべて一覧できるページに移動できます。すべてのメッセージグループに関して[[Special:LanguageStats|各言語内での現在の翻訳状況]]を一覧することもできます。
 
 翻訳を始める前にもっと知らなければならないことがあると感じられたならば、[[FAQ]] のページを読むのもよいでしょう。残念なことにドキュメントの中には更新が途絶えてしまっているものもあります。もし、なにかやりたいことがあって、それをどうやって行えばよいのかわからない場合には、遠慮せず[[Support|サポートページ]]にて質問してください。
 

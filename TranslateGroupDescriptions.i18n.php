@@ -1501,8 +1501,20 @@ $messages['km'] = array(
  * @author ToePeu
  */
 $messages['ko'] = array(
+	'translategroupdescriptions-desc' => '[http://mediawiki.org/wiki/Extension:Translate 번역] 확장 기능에서 지원하는 제품의 메시지 그룹 설명입니다',
 	'translate-group-desc-nodesc' => '이 메시지 그룹에 대한 설명이 없습니다.',
 	'translate-group-desc-mediawikicore' => '여기에는 최신 미디어위키 알파 버전 ({{CURRENTVERSION}}) 의 메세지가 있습니다.',
+	'translate-group-desc-mediawikimostused' => '이 메시지 그룹은 [[Translating:MediaWiki|미디어위키]]에서 [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 가장 자주 쓰이는 메시지 500개]를 포함하고 있습니다.',
+	'translate-group-desc-mediawikiextensions' => '여기서 지원하는 [[Translating:MediaWiki|미디어위키]]의 확장 기능에 있는 모든 메시지의 메타 그룹입니다.',
+	'translate-group-desc-collection' => '미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:Collection Collection]의 모든 메시지를 포함하는 메타 그룹입니다.',
+	'translate-group-desc-flaggedrevs' => '미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]의 모든 메시지를 포함하는 메타 그룹입니다.',
+	'translate-group-desc-readerfeedback' => '미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]의 모든 메시지를 포함하는 메타 그룹입니다.',
+	'translate-group-desc-translate' => '미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:Translate Translate]의 모든 메시지를 포함하는 메타 그룹입니다.',
+	'translate-group-desc-wikiaextensions' => '[http://www.wikia.com 위키아]에서 쓰이며 여기서 지원하는 미디어위키 확장 기능의 모든 메시지를 포함한 메타 그룹입니다.',
+	'translate-group-desc-wikimediaextensions' => '[http://wikimedia.org/ 위키미디어 재단]에서 쓰이며 여기서 지원하는 미디어위키 확장 기능의 모든 메시지를 포함한 메타 그룹입니다.',
+	'translate-group-desc-wikimediaextensions-main' => '위키미디어 [http://meta.wikimedia.org/wiki/Language_committee 언어 위원회]가 번역을 요구하는 미디어위키 확장 기능의 모든 메시지를 포함한 메타 그룹입니다.',
+	'translate-group-desc-mediawiki-core-branch' => '[[Translating:MediaWiki|미디어위키]] 정식 버전의 메시지입니다.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]은 위키백과 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 애플리케이션입니다.',
 );
 
 /** Colognian (Ripoarisch)
