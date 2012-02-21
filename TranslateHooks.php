@@ -328,7 +328,7 @@ class TranslateHooks {
 
 		if ( $action === 'group' ) {
 			$languageCode = $params[0];
-			$languageNames = Language::getTranslatedLanguageNames( $languageCode );
+			$languageNames = Language::getTranslatedLanguageNames( $language->getCode() );
 			$languageName = "$languageNames[$languageCode] ($languageCode)";
 			$groupLabel = $params[1];
 			$oldState = $params[2];
