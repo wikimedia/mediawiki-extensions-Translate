@@ -33,7 +33,6 @@ abstract class MessageIndex {
 		return self::$instance;
 	}
 
-
 	/**
 	 * @since 2012-01-04
 	 * @return array
@@ -74,7 +73,6 @@ abstract class MessageIndex {
 			return array();
 		}
 		$recursion++;
-		
 
 		$groups = MessageGroups::singleton()->getGroups();
 
@@ -213,7 +211,6 @@ class FileCachedMessageIndex extends MessageIndex {
 		$file = TranslateUtils::cacheFile( $this->filename );
 		file_put_contents( $file, serialize( $array ) );
 	}
-
 }
 
 /**
@@ -249,5 +246,4 @@ class CachedMessageIndex extends MessageIndex {
 		$key = wfMemckey( $this->key );
 		$this->cache->set( $key, $array );
 	}
-
 }
