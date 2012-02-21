@@ -64,7 +64,6 @@ JAVASCRIPT
 		} else {
 			$status = $this->msg( 'lcadft-email-notset' )->parse();
 		}
-			
 
 		$m['emailstatus'] = array(
 			'type' => 'info',
@@ -108,7 +107,7 @@ JAVASCRIPT
 				$this->msg( 'lcadft-freq-week' )->text()    => 'week',
 				$this->msg( 'lcadft-freq-month' )->text()   => 'month',
 				$this->msg( 'lcadft-freq-weekly' )->text()  => 'weekly',
-				$this->msg( 'lcadft-freq-monthly' )->text() => 'monthl',
+				$this->msg( 'lcadft-freq-monthly' )->text() => 'monthly',
 			),
 		);
 		return $m;
@@ -146,5 +145,4 @@ JAVASCRIPT
 
 		return array_combine( $wikis, $wikis );
 	}
-
 }
