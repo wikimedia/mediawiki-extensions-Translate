@@ -14,9 +14,9 @@ $messages = array();
 $messages['en'] = array(
 	'translatorsignup' => 'Translator signup',
 	'lcadft-desc' => 'Allows translators sign up for translation notifications',
-	'lcadft-info' => 'Info',
-	'lcadft-username' => 'Username',
-	'lcadft-emailstatus' => 'E-mail status',
+	'lcadft-info' => 'User information',
+	'lcadft-username' => 'Username:',
+	'lcadft-emailstatus' => 'E-mail status:',
 	'lcadft-email-confirmed' => 'Your e-mail address is confirmed',
 	'lcadft-email-unconfirmed' => 'Your e-mail address is not confirmed. $1',
 	'lcadft-email-notset' => 'You have not provided an e-mail address. You can do that in your [[Special:Preferences|preferences]].',
@@ -36,11 +36,12 @@ $messages['en'] = array(
 
 $messages['qqq'] = array(
 	'lcadft' => 'Special page header',
-	'lcadft-desc' => '{{desct}}',
+	'lcadft-desc' => '{{desc}}',
 	'lcadft-info' => 'Fieldset header',
 	'lcadft-username' => 'Label followed by username',
 	'lcadft-emailstatus' => 'Label',
-	'lcadft-email-unconfirmed' => '$1 is a button which can be used to send confirmation email. Button text is in Mediawiki:confirmemail_send message.',
+	'lcadft-email-unconfirmed' => 'Parameters:
+* $1 is a button which can be used to send confirmation email. Button text is {{msg-mw|mediawiki:confirmemail_send}}.',
 	'lcadft-contact' => 'Fieldset header',
 	'lcadft-cmethod-email' => 'Check option label',
 	'lcadft-cmethod-talkpage' => 'Check option label',
