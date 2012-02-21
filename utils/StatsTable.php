@@ -156,8 +156,8 @@ class StatsTable {
 	/**
 	 * Makes partial row from completion numbers
 	 * @param $fuzzy int Number of fuzzy translations
-	 * @param $translated in Number of non-fuzzy translations
-	 * @param $total Total number of messages in this group
+	 * @param $translated int Number of non-fuzzy translations
+	 * @param $total int Total number of messages in this group
 	 * @return string Html
 	 */
 	public function makeNumberColumns( $fuzzy, $translated, $total ) {

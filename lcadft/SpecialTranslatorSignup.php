@@ -46,7 +46,7 @@ JAVASCRIPT
 		);
 	}
 	public function getDataModel() {
-		global $wgLCADFTContactMethods, $wgScript;
+		global $wgLCADFTContactMethods;
 
 		$m['username'] = array(
 			'type' => 'info',
@@ -129,18 +129,18 @@ JAVASCRIPT
 	}
 
 	protected function getOtherWikis() {
-		$wikis = array();
 		if ( !class_exists( 'CentralAuthUser' ) ) {
 			return array();
 		}
-		$globalUser = new CentralAuthUser( $this->getUser->getName() );
+		$globalUser = new CentralAuthUser( $this->getUser()->getName() );
 		if ( !$globalUser->exists() ) {
 			return array();
 		}
 
-		$stuff = $this->mGlobalUser->queryAttached();
-		foreach ( $suff as $dbname => $value ) {
-			$wikis[] = $dname;
+		$wikis = array();
+		$stuff = $globalUser->queryAttached();
+		foreach ( $stuff as $dbname => $value ) {
+			$wikis[] = $dbname;
 		}
 
 		return array_combine( $wikis, $wikis );
