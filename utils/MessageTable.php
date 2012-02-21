@@ -148,6 +148,7 @@ class MessageTable {
 			$tqeData = array(
 				'data-title' => $title->getPrefixedText(),
 				'data-group' => $this->group->getId(),
+				'id' => 'tqe-anchor-' . substr( sha1( $title->getPrefixedText() ), 0, 12 ),
 			);
 
 			$leftColumn = $this->getReviewButton( $m ) . $anchor . $tools['edit'] . $extra . $this->getReviewStatus( $m );

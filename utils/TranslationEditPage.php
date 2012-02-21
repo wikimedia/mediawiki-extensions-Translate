@@ -194,7 +194,8 @@ class TranslationEditPage {
 		}
 
 		if ( $wgRequest->getVal( 'translate-beta' ) ) {
-			$onclick = 'jQuery( this ).closest( ".inlineeditable" ).dblclick(); return false;';
+			$text = 'tqe-anchor-' . substr( sha1( $title->getPrefixedText() ), 0, 12 );
+			$onclick = "jQuery( '#$text' ).dblclick(); return false;";
 		} else {
 			$onclick = Xml::encodeJsCall(
 				'return mw.translate.openDialog', array( $title->getPrefixedDbKey(), $group )
