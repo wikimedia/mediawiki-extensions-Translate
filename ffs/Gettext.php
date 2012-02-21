@@ -522,7 +522,7 @@ PHP;
 
 	protected function getGenerator() {
 		return 'MediaWiki ' . SpecialVersion::getVersion() .
-			"; Translate extension (" . TRANSLATE_VERSION . ")";
+			"; Translate " . TRANSLATE_VERSION;
 	}
 
 	protected function formatDocumentation( $key ) {
