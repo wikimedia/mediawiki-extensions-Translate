@@ -87,15 +87,15 @@
 					callbacks.close && callbacks.close();
 					callbacks.next && callbacks.next();
 				} );
-				form.find( '.mw-translate-close' ).click( function () {
-					callbacks.close && callbacks.close();
-				} );
 			}
 		} else {
 			form.find( '.mw-translate-next, .mw-translate-skip' )
 				.attr( 'disabled', 'disabled' )
 				.css( 'display', 'none' );
 		}
+		form.find( '.mw-translate-close' ).click( function () {
+			callbacks.close && callbacks.close();
+		} );
 
 		form.find( '.mw-translate-history' ).click( function() {
 			window.open( mw.util.wikiScript() + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
