@@ -1376,6 +1376,11 @@ class TranslationHelpers {
 
 	public static function addModules( OutputPage $out ) {
 		$out->addModules( 'ext.translate.quickedit' );
+
+		// Might be needed, but ajax doesn't load it
+		// Globals :(
+		$diff = new DifferenceEngine;
+		$diff->showDiffStyle();
 	}
 
 	/// @since 2012-01-04
