@@ -46,7 +46,7 @@ JAVASCRIPT
 		);
 	}
 	public function getDataModel() {
-		global $wgLCADFTContactMethods;
+		global $wgLCADFTContactMethods, $wgLang;
 
 		$m['username'] = array(
 			'type' => 'info',
@@ -72,6 +72,33 @@ JAVASCRIPT
 			'section' => 'info',
 			'raw' => true,
 		);
+
+
+		$languages = Language::getLanguageNames();
+		ksort( $languages );
+
+		$options = array();
+		foreach ( $languages as $code => $name ) {
+			$display = wfBCP47( $code ) . ' - ' . $name;
+			$options[$display] = $code;
+		}
+
+		$options = array( wfMessage( 'lcadft-nolang' )->plain() => '' ) + $options;
+
+		for ( $i = 1; $i < 4; $i++ ) {
+			$m["lang-$i"] = array(
+				'type' => 'select',
+				'label-message' => array( "lcadft-lang", $wgLang->formatNum( $i ) ),
+				'section' => 'languages',
+				'options' => $options,
+				'default' => $user->getOption( "lcadft-lang-$i" ),
+			);
+
+			if ( $i === 1 ) {
+				$m["lang-$i"]['default'] = $user->getOption( "lcadft-lang-$i", $wgLang->getCode() );
+				$m["lang-$i"]['required'] = true;
+			}
+		}
 
 		foreach ( $wgLCADFTContactMethods as $method => $value ) {
 			if ( $value === false ) {
