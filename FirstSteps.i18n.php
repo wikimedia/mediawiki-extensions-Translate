@@ -2994,7 +2994,7 @@ Xin hãy thay đổi nếu cần.',
 
 Nó cho phép người khác liên hệ với bạn qua thư.
 Bạn cũng sẽ nhận được thư tin tức tối đa một bức một tháng.
-Nếu bạn không muốn nhận thư tin tức, bạn có thể bỏ nó ra khỏi thẻ "{{int:prefs-personal}}" trong [[Special:Preferences|tùy chọn cá nhân]].',
+Nếu bạn không muốn nhận thư tin tức, bạn có thể bỏ nó ra khỏi thẻ “{{int:prefs-personal}}” trong [[Special:Preferences|tùy chọn cá nhân]].',
 );
 
 /** Yiddish (ייִדיש)

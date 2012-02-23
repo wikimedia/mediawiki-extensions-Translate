@@ -7106,7 +7106,7 @@ Chỉ có các phiên bản mới nhất mới có thể đánh dấu cần dị
 Hãy đảm bảo là nó có thẻ <nowiki><translate></nowiki> và có cú pháp đúng.',
 	'tpt-saveok' => 'Trang [[$1]] đã được đánh dấu chờ dịch với $2 đơn vị dịch thuật.
 Bạn có thể <span class="plainlinks">[$3 dịch]</span> trang ngay bây giờ.',
-	'tpt-badsect' => '"$1" không phải là tên hợp lệ cho đơn vị dịch thuật $2.',
+	'tpt-badsect' => '“$1” không phải là tên hợp lệ cho đơn vị dịch thuật $2.',
 	'tpt-showpage-intro' => 'Dưới đây là các mục mới, đang tồn tại hoặc đã bị xóa.
 Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra những thay đổi tại các mục đã được thu gọn lại để tránh công việc không cần thiết cho biên dịch viên chưa.',
 	'tpt-mark-summary' => 'Đánh dấu phiên bản này là cần dịch',
@@ -7158,7 +7158,7 @@ Phần văn bản: <pre>$1</pre>',
 	'pt-log-header' => 'Nhật trình các tác vụ co liên quan đến hệ thống dịch trang',
 	'pt-log-name' => 'Nhật trình dịch trang',
 	'pt-log-mark' => '{{GENDER:$2|}}đã đánh dấu phiên bản $3 của trang “[[:$1]]” là cần được dịch',
-	'pt-log-unmark' => '{{GENDER:$2|đã di chuyển}} trang "[[:$1]]" từ bản dịch',
+	'pt-log-unmark' => '{{GENDER:$2}}đã di chuyển trang “[[:$1]]” từ bản dịch',
 	'pt-log-moveok' => '{{GENDER:$2}}đã hoàn thành việc đổi tên của trang dịch được $1 thành $3',
 	'pt-log-movenok' => '{{GENDER:$2|}}đã gặp vấn đề trong khi di chuyển [[:$1]] đến [[:$3]]',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|}}đã hoàn thành xóa trang dịch được $1',

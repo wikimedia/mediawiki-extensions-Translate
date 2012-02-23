@@ -2553,6 +2553,14 @@ $1',
  * @author Mucalexx
  */
 $messages['bar'] = array(
+	'translate' => 'Ywersétzen',
+	'translate-desc' => "Dagänzd a [[Special:Translate|Speziaalseiten]] zan Ywersétzen vah d' MediaWiki-Systémnoochrichtner und dénen eanerre weidern Auhwendunger.",
+	'translate-taction-translate' => 'Ywersétzen',
+	'translate-taction-proofread' => 'Korrekturleesen',
+	'translate-taction-lstats' => 'Staatistiken za da Sprooch',
+	'translate-taction-mstats' => 'Staatistiken za da Noochrichtengruppm',
+	'translate-taction-export' => 'Exportiern',
+	'translate-taction-disabled' => "Dé Akzión is a' dém Wiki deaktivierd.",
 	'translate-page-language' => 'Sprooch',
 	'translate-page-limit' => 'Limit',
 	'translate-edit-information' => 'Informazión zur da Systémnoochricht ($1)',
@@ -2704,8 +2712,8 @@ $messages['be-tarask'] = array(
 	'translate-pref-editassistlang' => 'Дапаможныя мовы:',
 	'prefs-translate' => 'Налады перакладу',
 	'translate-pref-editassistlang-help' => 'Падзелены коскамі сьпіс кодаў моў.
-Пераклады паведамленьняў на гэтыя мовы паказваюцца пад час Вашых перакладаў.
-Сьпіс моў па змоўчваньні залежыць ад Вашай мовы.',
+Пераклады паведамленьняў на гэтыя мовы паказваюцца ў працэсе перакладаньня.
+Сьпіс перадвызначаных моў залежыць ад Вашай мовы.',
 	'translate-pref-editassistlang-bad' => 'Няслушны код мовы ў сьпісе:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Пашыраны рэдактар перакладаў (JavaScript)',
@@ -5577,7 +5585,7 @@ Drobnostki: $1',
 Statuse definěruju se w konfiguraciskej wariabli $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Nejnowše pśełožki',
 	'translate-dynagroup-recent-desc' => 'Toś ta zdźěleńska kupka pokazujo wšykne aktualne pśełožki do toś teje rěcy.
-Jo nejwužytnjej za nadawka "{{int:translate-task-acceptqueue}}" a "{{int:translate-task-reviewall}}".',
+Jo nejwužytnjej za korigěrowańske nadawki.',
 	'translate-dynagroup-by' => 'Pśełožk wót {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Pśełožk wót {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Nejnowša změna wót {{GENDER:$1|$1}}',
@@ -6351,7 +6359,7 @@ Todos los valores tienen límites superiores e inferiores.',
 	'translate-translations-history-short' => 'h',
 	'languagestats' => 'Estadísticas por idioma',
 	'languagestats-summary' => 'Esta página muestra estadísticas de traducción para todos los grupos de mensajes para un idioma.',
-	'languagestats-stats-for' => 'Estadísticas de las traduccines en $1 ($2).',
+	'languagestats-stats-for' => 'Estadísticas de las traducciones en $1 ($2).',
 	'languagestats-recenttranslations' => 'Traducciones recientes',
 	'translate-langstats-incomplete' => 'Algunas de las estadísticas de esta página están incompletas. Actualiza la página para obtener más estadísticas.',
 	'translate-langstats-expand' => 'expandir',
@@ -8741,7 +8749,7 @@ Detalles: $1',
 Os estados están definidos na variable de configuración $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Traducións recentes',
 	'translate-dynagroup-recent-desc' => 'Este grupo de mensaxes mostra todas as traducións recentes feitas nesta lingua.
-É moi útil para as tarefas "{{int:translate-task-acceptqueue}}" e "{{int:translate-task-reviewall}}".',
+É moi útil para as tarefas de corrección.',
 	'translate-dynagroup-by' => 'Tradución feita por {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Tradución feita por {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Última modificación feita por {{GENDER:$1|$1}}',
@@ -10276,7 +10284,7 @@ Podrobnosće: $1',
 Statusy definuja so w konfiguraciskej wariabli $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Najnowše přełožki',
 	'translate-dynagroup-recent-desc' => 'Tuta zdźělenska skupina pokazuje wšě aktualne přełožki do tuteje rěče.
-Je najwužitnišo za nadawkaj "{{int:translate-task-acceptqueue}}" a "{{int:translate-task-reviewall}}".',
+Je najwužitnišo za korigowanske nadawki.',
 	'translate-dynagroup-by' => 'Přełožk wot {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Přełožk wot {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Najnowša změna wot {{GENDER:$1|$1}}',
@@ -11987,7 +11995,7 @@ Dettagli: $1',
 $messages['ja'] = array(
 	'translate' => '翻訳',
 	'translate-desc' => 'MediaWiki及びその他を翻訳するための[[Special:Translate|特別ページ]]',
-	'translate-showsub' => '{{PLURAL:$1|下位群|$1の下位群}}を表示。',
+	'translate-showsub' => '{{PLURAL:$1|下位群|$1個の下位群}}を表示。',
 	'translate-grouplisting' => 'これは、翻訳可能な群の全一覧です。
 メッセージ群の名前をクリックして、未翻訳メッセージの一覧を見ることができます。',
 	'translate-grouplisting-empty' => '翻訳用に設定されたメッセージ群はありません',
@@ -23971,6 +23979,20 @@ $messages['vi'] = array(
 	'translate-grouplisting' => 'Đây là danh sách tất cả các nhóm dịch được.
 Nhấn chuột vào tên nhóm thông điệp để xem một danh sách thông điệp chưa được dịch.',
 	'translate-grouplisting-empty' => 'Các nhóm thông điệp chưa được thiết lập để dịch.',
+	'translate-taskui-view' => 'Tất cả các thông điệp',
+	'translate-taskui-untranslated' => 'Các thông điệp chưa dịch',
+	'translate-taskui-optional' => 'Các thông điệp tùy dịch',
+	'translate-taskui-suggestions' => 'Các thông điệp có gợi ý từ bộ nhớ biên dịch',
+	'translate-taskui-acceptqueue' => 'Chỉ duyệt các thông điệp tôi có quyền chấp nhận',
+	'translate-taskui-reviewall' => 'Duyệt tất cả các bản dịch',
+	'translate-taskui-export-to-file' => 'Xuất ra định dạng bản địa',
+	'translate-taskui-export-as-po' => 'Xuất để dịch ngoại tuyến',
+	'translate-taction-translate' => 'Biên dịch',
+	'translate-taction-proofread' => 'Hiệu đính',
+	'translate-taction-lstats' => 'Thống kê ngôn ngữ',
+	'translate-taction-mstats' => 'Thống kê nhóm thông điệp',
+	'translate-taction-export' => 'Xuất',
+	'translate-taction-disabled' => 'Tác vụ này đã bị tắt trên wiki này.',
 	'translate-page-no-such-language' => 'Ngôn ngữ chỉ định không đúng.',
 	'translate-page-no-such-group' => 'Nhóm chỉ định không đúng.',
 	'translate-page-disabled' => "Các bản dịch trong ngôn ngữ này trong nhóm đã bị tắt. Lý do:
@@ -23990,10 +24012,10 @@ Nhấn chuột vào tên nhóm thông điệp để xem một danh sách thông 
 	'translate-next' => 'Trang sau',
 	'translate-prev' => 'Trang trước',
 	'translate-page-description-legend' => 'Thông tin về nhóm',
-	'translate-page-description-hasoptional' => 'Nhóm thông điệp này có thông điệp tùy chọn.
-Chỉ nên biên dịch thông điệp tùy chọn khi ngôn ngữ của bạn có những thuộc tính đặc biệt
+	'translate-page-description-hasoptional' => 'Nhóm thông điệp này có thông điệp tùy dịch.
+Chỉ nên dịch một thông điệp tùy dịch nếu ngôn ngữ của bạn có những thuộc tính đặc biệt
 thí dụ như không sử dụng khoảng cách hoặc có hệ thống phiên âm tên. $1',
-	'translate-page-description-hasoptional-open' => 'Xem các thông điệp tùy chọn',
+	'translate-page-description-hasoptional-open' => 'Xem các thông điệp tùy dịch.',
 	'translate-page-edit' => 'sửa',
 	'translate-ext-url' => '<hr />Website: $1',
 	'translate-optional' => '(tùy chọn)',
@@ -24059,6 +24081,8 @@ Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn v�
 	'translate-checks-pagename' => 'Không gian tên đã thay đổi so với định nghĩa',
 	'translate-checks-format' => 'Bản dịch này không đúng định nghĩa hoặc có cú pháp sai: $1',
 	'translate-checks-escape' => 'Dấu escape sau có thể là vô tinh: <strong>$1</strong>',
+	'translate-checks-parametersnotequal' => 'Có {{PLURAL:$1|$1}} tham số; phải có {{PLURAL:$2|$2}} tham số.',
+	'translate-checks-malformed' => '<nowiki>$1</nowiki> hư hỏng.',
 	'translate-checks-fudforum-syntax' => 'Hãy dùng <nowiki>$1</nowiki> thay cho <nowiki>$2</nowiki> trong dự án này.',
 	'translate-pref-nonewsletter' => 'Đừng gửi cho tôi bản tin qua thư điện tử',
 	'translate-pref-editassistlang' => 'Ngôn ngữ bổ trợ:',
@@ -24071,7 +24095,9 @@ Danh sách các ngôn ngữ mặc định sẽ tùy thuộc vào ngôn ngữ mà
 	'translate-pref-jsedit' => 'Bộ biên soạn biên dịch nâng cao (JavaScript)',
 	'right-translate' => 'Sửa đổi sử dụng giao diện biên dịch',
 	'right-translate-manage' => 'Quản lý các nhóm thông điệp',
-	'right-translate-import' => 'Nhập các bản dịch ngoại tuyến vào',
+	'action-translate-manage' => 'quản lý các nhóm thông điệp',
+	'right-translate-import' => 'Nhập các bản dịch ngoại tuyến',
+	'action-translate-import' => 'nhập các bản dịch ngoại tuyến',
 	'right-translate-messagereview' => 'Duyệt các bản dịch',
 	'right-translate-groupreview' => 'Thay đổi trạng thái luồng làm việc của các nhóm thông điệp',
 	'translate-rc-translation-filter' => 'Lọc bản dịch:',
@@ -24104,12 +24130,12 @@ Danh sách các ngôn ngữ mặc định sẽ tùy thuộc vào ngôn ngữ mà
 	'translate-tag-category' => 'Các trang dịch được',
 	'translate-tag-page-desc' => 'Bản dịch trang wiki [[$2|$1]].',
 	'translate-tag-fuzzy-comment' => 'Định nghĩa do [[User:$1|$1]] thay đổi trong phiên bản $2.',
-	'translate-tag-fuzzy-reason' => 'Định nghĩa do "$1" thay đổi với lời tóm lược "$3" vào $2.',
+	'translate-tag-fuzzy-reason' => 'Định nghĩa do “$1” thay đổi với lời tóm lược “$3” vào $2.',
 	'translate-sidebar-alltrans' => 'Theo ngôn ngữ khác',
 	'translations' => 'Tất cả các bản dịch',
 	'translations-summary' => 'Nhập vào một tên thông điệp phía dưới để hiển thị tất cả các bản dịch hiện có.',
-	'translate-translations-no-message' => '"$1" không phải là thông điệp cần dịch',
-	'translate-translations-none' => 'Không có bản dịch cho "$1"',
+	'translate-translations-no-message' => '“$1” không phải là thông điệp cần dịch',
+	'translate-translations-none' => 'Không có bản dịch cho “$1”',
 	'translate-translations-count' => 'Tìm thấy {{PLURAL:$1|một bản dịch|$1 bản dịch}}.',
 	'translate-translations-fieldset-title' => 'Thông điệp',
 	'translate-translations-messagename' => 'Tên:',
@@ -24139,7 +24165,7 @@ Bạn được khuyến khích xem lại các thông điệp tại [[Special:Tra
 	'translate-languagestats-overall' => 'Tổng cộng các nhóm thông điệp',
 	'translate-ls-submit' => 'Xem thống kê',
 	'translate-ls-column-group' => 'Nhóm thông điệp',
-	'translate-mgs-pagename' => 'Thống kê của nhóm thông điệp',
+	'translate-mgs-pagename' => 'Thống kê nhóm thông điệp',
 	'translate-mgs-fieldset' => 'Tùy chỉnh hiển thị',
 	'translate-mgs-group' => 'Nhóm thông điệp:',
 	'translate-mgs-nocomplete' => 'Ẩn các ngôn ngữ đã có bản dịch hoàn thành',
@@ -24281,7 +24307,7 @@ Chi tiết:$1',
 Các trạng thái được định rõ trong biến cấu hình $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Bản dịch gần đây',
 	'translate-dynagroup-recent-desc' => 'Nhóm thông điệp này bao gồm các bản dịch gần đây trong ngôn ngữ này.
-Nó có ích đối với các tác vụ “{{int:translate-task-acceptqueue}}” và “{{int:translate-task-reviewall}}”.',
+Nó có ích đối với các tác vụ hiệu đính.',
 	'translate-dynagroup-by' => 'Bản dịch của $1',
 	'translate-dynagroup-byc' => 'Bản dịch của $1 ($2)',
 	'translate-dynagroup-last' => 'Thay đổi cuối cùng của $1',
@@ -25080,6 +25106,7 @@ $1',
  * @author Liangent
  * @author Mark85296341
  * @author Oapbtommy
+ * @author Reedy
  * @author Wrightbus
  */
 $messages['zh-hant'] = array(
