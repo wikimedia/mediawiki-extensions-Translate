@@ -17721,7 +17721,7 @@ Szczegóły – $1',
 Stany są zdefiniowane w zmiennej konfiguracji $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Ostatnie tłumaczenia',
 	'translate-dynagroup-recent-desc' => 'Ta grupa wiadomości zawiera wszystkie ostatnie tłumaczenia na ten język.
-Jest najbardziej użyteczna dla zadań "{{int:translate-task-acceptqueue}}" i "{{int:translate-task-reviewall}}".',
+Jest najbardziej użyteczna dla zadań korekty.',
 	'translate-dynagroup-by' => 'Tłumaczenia dokonywane przez {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Tłumaczenia dokonywane przez {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Ostatnia zmiana wykonana przez {{GENDER:$1|$1}}',
@@ -19260,6 +19260,7 @@ Cazze 'u nome d'u gruppe de le messagge pe vedè l'elenghe de le messagge da tra
  * @author Eugrus
  * @author Ferrer
  * @author Huuchin
+ * @author Ignatus
  * @author KPu3uC B Poccuu
  * @author Kaganer
  * @author Lockal
@@ -19596,8 +19597,8 @@ $1',
 	'translate-workflowgroup-desc' => 'Эта группа сообщений показывает перевод состояний рабочего процесса.
 Состояния определяются с помощью переменной конфигурации $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Недавние переводы',
-	'translate-dynagroup-recent-desc' => 'Отображаются все недавние переводы на данный язык.
-Этот режим наиболее полезен для задач «{{int:translate-task-acceptqueue}}» и «{{int:translate-task-reviewall}}».',
+	'translate-dynagroup-recent-desc' => 'Эта группа сообщений отображает все недавние переводы на данный язык.
+Этот режим наиболее полезен для задач вычитки.',
 	'translate-dynagroup-by' => 'Перевод выполнен  {{GENDER:$1|участником|участницей}} $1',
 	'translate-dynagroup-byc' => 'Перевод выполнен  {{GENDER:$1|участником|участницей}} $1 ($2)',
 	'translate-dynagroup-last' => 'Последние изменения от {{GENDER:$1|участника|участницы}} $1',

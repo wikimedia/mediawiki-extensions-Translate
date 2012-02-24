@@ -1560,8 +1560,8 @@ Tu essera guidate passo a passo trans le processo de devenir traductor.
 Al fin tu potera traducer le ''messages de interfacie'' de tote le projectos supportate in {{SITENAME}}.",
 	'translate-fs-selectlanguage' => 'Selige un lingua',
 	'translate-fs-settings-planguage' => 'Lingua primari:',
-	'translate-fs-settings-planguage-desc' => 'Le lingua primari es usate como le lingua de interfacie in iste wiki
-e como le lingua de destination predefinite pro traductiones.',
+	'translate-fs-settings-planguage-desc' => 'Le lingua primari es le lingua de interfacie in iste wiki,
+e le lingua predefinite pro traductiones.',
 	'translate-fs-settings-slanguage' => 'Lingua assistente $1:',
 	'translate-fs-settings-slanguage-desc' => 'Es possibile monstrar traductiones de messages in altere linguas in le editor de traductiones.
 Hic tu pote seliger le linguas que tu vole vider (si desirate).',
@@ -2088,6 +2088,7 @@ $messages['ml'] = array(
 
 /** Marathi (मराठी)
  * @author Htt
+ * @author Shantanoo
  * @author Shubhamlanke
  */
 $messages['mr'] = array(
@@ -2108,11 +2109,11 @@ $messages['mr'] = array(
 	'translate-fs-settings-planguage' => 'मुख्य(महत्त्वाची) भाषा निवडा.',
 	'translate-fs-settings-planguage-desc' => 'तुमची मुख्य भाषा ही विकीवर तुमची दुवा साधणारी भाषा आणि भाषांतरासाठी दिफॉल्ट भाषा म्हणुन वापरली जाते.',
 	'translate-fs-settings-slanguage' => 'उप‌-भाषा $१:',
-	'translate-fs-settings-slanguage-desc' => 'भाषांतर एडिटर मध्ये संदेशांचे दुसर्या भाषेमध्ये भाषांतर सहज शक्य आहे.
+	'translate-fs-settings-slanguage-desc' => 'भाषांतर एडिटर मध्ये संदेशाचे  दुसऱ्या भाषेमध्ये भाषांतर सहज शक्य आहे.
 जर तुम्हाला एखादी भाषा पाहण्यासाठी आवडेल; तर इथे तुम्ही ती भाषा निवडू शकता.',
 	'translate-fs-settings-submit' => 'माझ्या पसंती जतन करा.',
 	'translate-fs-userpage-level-N' => 'मी जन्मतः (..........)(एखादी भाषा)  बोलतो.',
-	'translate-fs-userpage-level-5' => 'मी( ..........)(एखादया भाषेचे दुसर्या भाषेत रुपांतर)व्यवसायिक भाषांतकार आहे',
+	'translate-fs-userpage-level-5' => 'मी( ..........)(एखाद्या भाषेचे दुसऱ्या भाषेत रुपांतर)व्यवसायिक भाषांतरकार आहे',
 	'translate-fs-userpage-level-4' => 'मी त्या (भाषेला)माझ्या मूळ बोलीभाषे एवढा जाणतो.
 उदा. एखादी भाषा,गोष्ट',
 	'translate-fs-userpage-level-3' => 'माझी त्या ...... चांगली पकड(कौशल्य) आहे.',
