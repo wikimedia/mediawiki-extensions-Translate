@@ -36,16 +36,19 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$this->purge = $wgRequest->getVal( 'action' ) === 'purge';
 
 		$this->setHeaders();
-		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators' );
 		$wgOut->addModules( 'ext.translate.special.supportedlanguages' );
 
+		// Do not add html content to OutputPage before this block of code!
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$cachekey = wfMemcKey( 'translate-supportedlanguages', $wgLang->getCode() );
 		$data = $cache->get( $cachekey );
 		if ( !$this->purge && is_string( $data ) ) {
+			TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators' );
 			$wgOut->addHtml( $data );
 			return;
 		}
+
+		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators' );
 
 		$this->outputHeader();
 		$wgOut->addWikiMsg( 'supportedlanguages-colorlegend', $this->getColorLegend() );
