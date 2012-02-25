@@ -376,6 +376,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$this->incomplete = true;
 			$extra = array();
 		} else {
+			if( $total === 0 ) {
+				error_log( $groupId . ' has 0 messages.' );
+			}
+
 			if ( $this->noComplete && $fuzzy === 0 && $translated === $total ) {
 				return '';
 			}
