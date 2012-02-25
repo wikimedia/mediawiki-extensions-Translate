@@ -615,7 +615,7 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-manage-modlangs' => '{{doc-screenshot|Manage-3.png|twn}}Part of group management special page.',
 	'translate-manage-modlang-new' => '{{Identical|New}}
 
-"new" means that the translations for that languages has never been imported/cached yet. $1 is a link to the page that allows do that.',
+"new" means that the translations for that language have never been imported/cached yet. $1 is a link to the page that allows do that.',
 	'translate-manage-import-diff' => 'See screenshot [[File:Manage-2.png|150px|right|Group management interface]].
 Variables:
 *$1 - Message name
@@ -1997,14 +1997,14 @@ como nun usar espacios o pa treslliterar nomes propios. $1',
 	'translate-magic-help' => "Pues traducir los nomes de les páxines especiales, les pallabres máxiques y los nomes de los espacios de nome.
 
 Los nomes de les páxines especiales y les pallabres máxiques puen tener múltiples traducciones.
-Les traducciones sepártense con una coma (,).
+Les traducciones se separten con una coma (,).
 Los espacios de nome namái puen tener una traducción.
 
-Nes traducciones de los espacios de nome <code>$1 talk</code> ye especial. <code>$1</code> ye sustituyíu pol nome del sitiu (por exemplu <code>{{ns:project_talk}}</code>).
-Si na to llingua nun ye posible formar una espresión válida ensin camudar el nome del sitiu, por favor contauta con un desenrollador.
+Nes traducciones de los espacios de nome <code>$1 talk</code> ye especial. <code>$1</code> se sustituye pol nome del sitiu (por exemplu <code>{{ns:project_talk}}</code>).
+Si na to llingua nun ye posible formar una espresión válida ensin camudar el nome del sitiu, por favor contauta con un desendolcador.
 
-Necesites tar nel grupu de traductores pa guardar los cambeos.
-Los cambeos nun se graben hasta que calques nel botón guardar d'abaxo.",
+Necesites tar nel grupu de traductores pa guardar los cambios.
+Los cambios nun se graben hasta que calques nel botón guardar d'abaxo.",
 	'translate-magic-module' => 'Módulu:',
 	'translate-magic-submit' => 'Amosar',
 	'translate-magic-cm-export' => 'Esportar',
@@ -4801,6 +4801,7 @@ Detaljer: $1',
 
 /** German (Deutsch)
  * @author Als-Holder
+ * @author Geitost
  * @author Giftpflanze
  * @author Imre
  * @author Kghbln
@@ -4859,7 +4860,7 @@ Klicke auf die jeweilige Systemnachrichtengruppe, um eine Liste der nicht übers
 	'translate-page-description-legend' => 'Informationen über diese Systemnachrichtengruppe',
 	'translate-page-description-hasoptional' => 'Diese Nachrichtengruppe enthält optionale Nachrichten.
 Optionale Nachrichten sollten nur dann übersetzt werden, sofern es in deiner Sprache Bedarf für sie gibt,
-wie beispielsweise die Nichtverwendung von Leerzeichen oder die Transkription der korrekten Namen. $1',
+wie beispielsweise die Nichtverwendung von Leerzeichen oder die Transkription von Eigennamen. $1',
 	'translate-page-description-hasoptional-open' => 'Optionale Nachrichten anzeigen.',
 	'translate-page-edit' => 'bearbeiten',
 	'translate-ext-url' => '<hr />Website: $1',
@@ -5167,6 +5168,7 @@ $messages['de-ch'] = array(
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
+ * @author Geitost
  * @author Imre
  * @author Kghbln
  * @author MichaelFrey
@@ -5175,7 +5177,7 @@ $messages['de-ch'] = array(
 $messages['de-formal'] = array(
 	'translate-page-description-hasoptional' => 'Diese Nachrichtengruppe enthält optionale Nachrichten.
 Optionale Nachrichten sollten nur dann übersetzt werden, sofern es in Ihrer Sprache Bedarf für sie gibt,
-wie beispielsweise die Nichtverwendung von Leerzeichen oder die Transkription der korrekten Namen. $1',
+wie beispielsweise die Nichtverwendung von Leerzeichen oder die Transkription von Eigennamen. $1',
 	'translate-edit-no-information' => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn Sie wissen, wo und in welchem Zusammenhang sie benutzt wird, können Sie anderen Übersetzern helfen, indem Sie eine Dokumentation hinzufügen.''",
 	'translate-use-suggestion' => 'Ersetzen Sie die aktuelle Übersetzung mit diesem Vorschlag.',
 	'translate-edit-nopermission' => 'Sie benötigen die Berechtigung, Systemnachrichten übersetzen zu können.',
@@ -9358,12 +9360,12 @@ $messages['he'] = array(
 	'translate-magic-cm-save' => 'שמירה',
 	'translate-magic-cm-updatedusing' => 'עודכן באמצעות [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
 	'translate-magic-cm-savefailed' => 'השמירה נכשלה',
-	'translate-magic-special' => 'שמות דפים מיוחדים',
+	'translate-magic-special' => 'כינויי דפים מיוחדים',
 	'translate-magic-words' => 'מילות קסם',
 	'translate-magic-namespace' => 'שמות מרחבי שם',
 	'translate-magic-notsaved' => 'עריכתכם לא נשמרה!',
 	'translate-magic-errors' => 'אנא תקנו את {{PLURAL:$1|השגיאה הבאה|$1 השגיאות הבאות}} בתרגום:',
-	'translate-magic-saved' => 'השינויים שביצעתם נשמרו בהצלחה.',
+	'translate-magic-saved' => 'השינויים שלכם נשמרו בהצלחה.',
 	'translate-checks-parameters' => '{{PLURAL:$2|הפרמטר הבא אינו|הפרמטרים הבאים אינם}} בשימוש:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|הפרמטר הבא אינו|הפרמטרים הבאים אינם}} ידועים:
@@ -9384,11 +9386,11 @@ $messages['he'] = array(
 	'translate-checks-malformed' => '<nowiki>$1</nowiki> אינו תקין.',
 	'translate-checks-fudforum-syntax' => 'השתמשו ב־<nowiki>$1</nowiki> ולא ב־<nowiki>$2</nowiki> בפרויקט הזה.',
 	'translate-pref-nonewsletter' => 'אל תשלחו אליי הודעות בדואר האלקטרוני',
-	'translate-pref-editassistlang' => 'שפות הסיוע:',
+	'translate-pref-editassistlang' => 'שפות מסייעות:',
 	'prefs-translate' => 'אפשרויות תרגום',
 	'translate-pref-editassistlang-help' => 'רשימה מופרדת בפסיקים של קודי שפות.
-תרגום הודעה בשפות אלו יופיע בעת תרגום המונחים.
-רשימת שפות ברירת המחדל תלויה בשפה שאתם דוברים.',
+תרגום של ההודעה לשפות אלו יופיע בעת תרגום.
+רשימת שפות התחלתית תלויה בשפה שאתם דוברים.',
 	'translate-pref-editassistlang-bad' => 'קוד שפה שגוי ברשימה:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'עורך תרגומים מורחב (JavaScript)',
@@ -9426,7 +9428,7 @@ $messages['he'] = array(
 	'translate-statsf-language' => 'רשימת קודי שפה (מופרדים בפסיק):',
 	'translate-statsf-group' => 'רשימת קודי קבוצות (מופרדים בפסיק):',
 	'translate-statsf-submit' => 'תצוגה מקדימה',
-	'translate-tag-category' => 'דפים הניתנים לתירגום',
+	'translate-tag-category' => 'דפים שאפשר לתרגם',
 	'translate-tag-page-desc' => 'תרגום של דף הוויקי [[$2|$1]].',
 	'translate-tag-fuzzy-comment' => 'ההגדרה שונתה על ידי [[User:$1|$1]] בגרסה $2.',
 	'translate-tag-fuzzy-reason' => 'ההגדרה שונתה על ידי "$1" עם ההערה "$3" ב־$2.',
@@ -9578,7 +9580,7 @@ $1',
 	'translate-messagereview-done' => 'אושר',
 	'translate-messagereview-reviews' => 'אושרה על־ידי {{PLURAL:$1|משתמש אחד|$1 משתמשים}}',
 	'translate-messagereview-reviewswithyou' => 'אושרה על־ידי {{PLURAL:$1|משתמש אחד|$1 משתמשים}}, כולל אותך',
-	'translate-messagereview-reviewsyou' => 'אושרה על־ידיך',
+	'translate-messagereview-reviewsyou' => 'אישרת את זה בעצמך',
 	'api-error-invalidrevision' => 'התרגום לא נמצא',
 	'api-error-unknownmessage' => 'ההודעה לא נמצאה',
 	'api-error-fuzzymessage' => 'ההודעה מסומנת כמטושטשת',
@@ -24881,7 +24883,9 @@ $messages['zh-hans'] = array(
 	'translate-pref-jsedit' => '增强的翻译编辑器（JavaScript）',
 	'right-translate' => '使用翻译界面编辑',
 	'right-translate-manage' => '管理信息组',
+	'action-translate-manage' => '管理信息组',
 	'right-translate-import' => '导入离线翻译',
+	'action-translate-import' => '导入离线翻译',
 	'right-translate-messagereview' => '复查翻译',
 	'right-translate-groupreview' => '改变信息组工作流状态',
 	'translate-rc-translation-filter' => '筛选翻译：',
