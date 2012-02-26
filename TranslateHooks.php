@@ -313,11 +313,10 @@ class TranslateHooks {
 		global $wgLang, $wgContLang;
 
 		$language = $forUI === null ? $wgContLang : $wgLang;
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		if ( $action === 'message' ) {
 			$link = $forUI ?
-				$linker->link( $title, null, array(), array( 'oldid' => $params[0] ) ) :
+				Linker::link( $title, null, array(), array( 'oldid' => $params[0] ) ) :
 				$title->getPrefixedText();
 			return wfMessage( 'logentry-translationreview-message' )->params(
 				'', // User link in the new system
@@ -339,7 +338,7 @@ class TranslateHooks {
 			$newState = $newStateMessage->isBlank() ? $newState : $newStateMessage->text();
 
 			$link = $forUI ?
-				$linker->link( $title, $groupLabel, array(), array( 'language' => $languageCode ) ) :
+				Linker::link( $title, $groupLabel, array(), array( 'language' => $languageCode ) ) :
 				$groupLabel;
 
 			return wfMessage( 'logentry-groupreview-message' )->params(

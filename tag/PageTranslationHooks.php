@@ -205,9 +205,6 @@ class PageTranslationHooks {
 
 		$userLangCode = $options->getUserLang();
 
-		// BC for <1.19
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
-
 		$languages = array();
 		foreach ( $status as $code => $percent ) {
 			$name = TranslateUtils::getLanguageName( $code, false, $userLangCode );
@@ -241,7 +238,7 @@ class PageTranslationHooks {
 				if ( $code === $userLangCode ) {
 					$name = Html::rawElement( 'span', array( 'class' => 'mw-pt-languages-ui' ), $name );
 				}
-				$languages[] = $linker->linkKnown( $_title, "$name $percent" );
+				$languages[] = Linker::linkKnown( $_title, "$name $percent" );
 			}
 		}
 
@@ -405,7 +402,6 @@ FOO;
 		$ready = $page->getReadyTag();
 
 		$title = $page->getTitle();
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		$latest = $title->getLatestRevId();
 		$canmark = $ready === $latest && $marked !== $latest;
@@ -421,7 +417,7 @@ FOO;
 
 			$translate = SpecialPage::getTitleFor( 'Translate' );
 			$linkDesc  = wfMsgHtml( 'translate-tag-translate-link-desc' );
-			$actions[] = $linker->link( $translate, $linkDesc, array(), $par );
+			$actions[] = Linker::link( $translate, $linkDesc, array(), $par );
 		}
 
 		if ( $canmark ) {
@@ -433,7 +429,7 @@ FOO;
 				// This page has never been marked
 				if ( $marked === false ) {
 					$linkDesc  = wfMsgHtml( 'translate-tag-markthis' );
-					$actions[] = $linker->link( $translate, $linkDesc, array(), $par );
+					$actions[] = Linker::link( $translate, $linkDesc, array(), $par );
 				} else {
 					$markUrl = $translate->getFullUrl( $par );
 					$actions[] = wfMsgExt( 'translate-tag-markthisagain', 'parseinline', $diffUrl, $markUrl );
@@ -575,8 +571,9 @@ FOO;
 	public static function replaceSubtitle( &$subpages, $skin = null , $out = null ) {
 		global $wgOut;
 		// $out was only added in some MW version
-		if ( $out === null ) $out = $wgOut;
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
+		if ( $out === null ) {
+			$out = $wgOut;
+		}
 
 		if ( !TranslatablePage::isTranslationPage( $out->getTitle() )
 				&& !TranslatablePage::isSourcePage( $out->getTitle() ) ) {
@@ -603,7 +600,7 @@ FOO;
 					$linkObj = Title::newFromText( $growinglink );
 
 					if ( is_object( $linkObj ) && $linkObj->exists() ) {
-						$getlink = $linker->linkKnown(
+						$getlink = Linker::linkKnown(
 							SpecialPage::getTitleFor( 'MyLanguage', $growinglink ),
 							htmlspecialchars( $display )
 						);

@@ -684,8 +684,7 @@ class TranslationHelpers {
 		$this->mustHaveDefinition();
 		$en = $this->getDefinition();
 
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
-		$title = $linker->link(
+		$title = Linker::link(
 			SpecialPage::getTitleFor( 'Translate' ),
 			htmlspecialchars( $this->group->getLabel() ),
 			array(),
@@ -1288,8 +1287,7 @@ class TranslationHelpers {
 
 		$jsEdit = TranslationEditPage::jsEdit( $target, $groupId );
 
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker() : new Linker();
-		return $linker->link( $target, $text, $jsEdit, $params );
+		return Linker::link( $target, $text, $jsEdit, $params );
 	}
 
 	/**

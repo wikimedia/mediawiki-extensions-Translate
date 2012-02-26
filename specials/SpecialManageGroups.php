@@ -44,7 +44,6 @@ class SpecialManageGroups extends SpecialPage {
 
 	public function execute( $par ) {
 		global $wgRequest;
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		$this->out->setPageTitle( htmlspecialchars( wfMsg( 'translate-managegroups' ) ) );
 
@@ -102,7 +101,7 @@ class SpecialManageGroups extends SpecialPage {
 			wfDebug( __METHOD__ . ": {$group->getId()}\n" );
 
 			$id = $group->getId();
-			$link = $linker->link( $this->getTitle(), $group->getLabel(),
+			$link = Linker::link( $this->getTitle(), $group->getLabel(),
 				array( 'id' => "mw-group-$id" ), array( 'group' => $id ) );
 			$out = $link . $separator;
 
@@ -417,8 +416,7 @@ class SpecialManageGroups extends SpecialPage {
 		if ( $code === 'en' ) {
 			$this->doModLangs( $group );
 		} else {
-			$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
-			$this->out->addHTML( '<p>' . $linker->link(
+			$this->out->addHTML( '<p>' . Linker::link(
 				$this->getTitle(),
 				wfMsgHtml( 'translate-manage-return-to-group' ),
 				array(),
@@ -447,8 +445,7 @@ class SpecialManageGroups extends SpecialPage {
 				continue;
 			}
 
-			$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
-			$link = $linker->link(
+			$link = Linker::link(
 				$this->getTitle(),
 				htmlspecialchars( TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() ) . " ($code)" ),
 				array(),
@@ -498,14 +495,13 @@ class SpecialManageGroups extends SpecialPage {
 	 */
 	protected function setSubtitle( $group, $code ) {
 		global $wgLang;
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
-		$links[] = $linker->link(
+		$links[] = Linker::link(
 			$this->getTitle(),
 			wfMsgHtml( 'translate-manage-subtitle' )
 		);
 
-		$links[] = $linker->link(
+		$links[] = Linker::link(
 			$this->getTitle(),
 			htmlspecialchars( $group->getLabel() ),
 			array(),
@@ -515,7 +511,7 @@ class SpecialManageGroups extends SpecialPage {
 		// Do not show language part for English.
 		if ( $code !== 'en' ) {
 			$langname = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
-			$links[] = $linker->link(
+			$links[] = Linker::link(
 				$this->getTitle(),
 				htmlspecialchars( $langname ),
 				array(),

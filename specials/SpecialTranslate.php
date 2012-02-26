@@ -123,10 +123,9 @@ class SpecialTranslate extends SpecialPage {
 			if ( in_array( $taskid, array( 'untranslated', 'reviewall' ), true ) ) {
 				$hasOptional = count( $this->group->getTags( 'optional' ) );
 				if ( $hasOptional ) {
-					$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 					$linktext = wfMessage( 'translate-page-description-hasoptional-open' )->escaped();
 					$params = array( 'task' => 'optional' ) + $this->nondefaults;
-					$link = $linker->link( $this->getTitle(), $linktext, array(), $params );
+					$link = Linker::link( $this->getTitle(), $linktext, array(), $params );
 					$note = wfMessage( 'translate-page-description-hasoptional' )->rawParams( $link )->parseAsBlock();
 
 					if ( $description ) {
@@ -471,14 +470,12 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	private function makeOffsetLink( $label, $offset ) {
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
-
 		$query = array_merge(
 			$this->nondefaults,
 			array( 'offset' => $offset )
 		);
 
-		$link = $linker->link(
+		$link = Linker::link(
 			$this->getTitle(),
 			$label,
 			array(),
@@ -547,9 +544,7 @@ class SpecialTranslate extends SpecialPage {
 			'taction' => $this->options['taction'],
 		);
 
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
-
-		$label = $linker->link(
+		$label = Linker::link(
 			$title,
 			htmlspecialchars( $block->getLabel() ),
 			array(),

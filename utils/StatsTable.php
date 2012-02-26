@@ -231,8 +231,7 @@ class StatsTable {
 			'title' => $this->getGroupDescription( $group )
 		);
 
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
-		$translateGroupLink = $linker->link(
+		$translateGroupLink = Linker::link(
 			$this->translate, $this->getGroupLabel( $group ), $attributes, $queryParameters
 		);
 

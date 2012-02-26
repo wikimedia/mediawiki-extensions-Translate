@@ -241,7 +241,6 @@ class SpecialPageTranslation extends SpecialPage {
 	public function listPages() {
 		global $wgOut;
 		$out = $wgOut;
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		$res = $this->loadPagesFromDB();
 		$allpages = $this->buildPageArray( $res );
@@ -257,7 +256,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$wgOut->addWikiMsg( 'tpt-new-pages', count( $pages ) );
 			$out->addHtml( '<ol>' );
 			foreach ( $pages as $page ) {
-				$link = $linker->link( $page['title'] );
+				$link = Linker::link( $page['title'] );
 				$acts = $this->actionLinks( $page, 'proposed' );
 				$out->addHtml( "<li>$link $acts</li>" );
 			}
@@ -270,7 +269,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$out->addWikiMsg( 'tpt-old-pages', count( $pages ) );
 			$out->addHtml( '<ol>' );
 			foreach ( $pages as $page ) {
-				$link = $linker->link( $page['title'] );
+				$link = Linker::link( $page['title'] );
 				if ( $page['tp:mark'] !== $page['tp:tag'] ) {
 					$link = "<b>$link</b>";
 				}
@@ -287,7 +286,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$out->addWikiMsg( 'tpt-other-pages', count( $pages ) );
 			$out->addHtml( '<ol>' );
 			foreach ( $pages as $page ) {
-				$link = $linker->link( $page['title'] );
+				$link = Linker::link( $page['title'] );
 				$acts = $this->actionLinks( $page, 'broken' );
 				$out->addHtml( "<li>$link $acts</li>" );
 			}
@@ -300,7 +299,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$out->addWikiMsg( 'tpt-discouraged-pages', count( $pages ) );
 			$out->addHtml( '<ol>' );
 			foreach ( $pages as $page ) {
-				$link = $linker->link( $page['title'] );
+				$link = Linker::link( $page['title'] );
 				if ( $page['tp:mark'] !== $page['tp:tag'] ) {
 					$link = "<b>$link</b>";
 				}
@@ -320,7 +319,6 @@ class SpecialPageTranslation extends SpecialPage {
 	 */
 	protected function actionLinks( array $page, $type ) {
 		$actions = array();
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		$title = $page['title'];
 
@@ -329,7 +327,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 			$pending = $type === 'active' && $page['latest'] !== $page['tp:mark'];
 			if ( $type === 'proposed' || $pending ) {
-				$actions[] = $linker->link(
+				$actions[] = Linker::link(
 					$this->getTitle(),
 					wfMsgHtml( 'tpt-rev-mark' ),
 					array( 'title' => wfMsg( 'tpt-rev-mark-tooltip' ) ),
@@ -341,7 +339,7 @@ class SpecialPageTranslation extends SpecialPage {
 					)
 				);
 			} elseif ( $type === 'broken' ) {
-				$actions[] = $linker->link(
+				$actions[] = Linker::link(
 					$this->getTitle(),
 					wfMsgHtml( 'tpt-rev-unmark' ),
 					array( 'title' => wfMsg( 'tpt-rev-unmark-tooltip' ) ),
@@ -355,7 +353,7 @@ class SpecialPageTranslation extends SpecialPage {
 			}
 
 			if ( $type === 'active' ) {
-				$actions[] = $linker->link(
+				$actions[] = Linker::link(
 					$this->getTitle(),
 					wfMsgHtml( 'tpt-rev-discourage' ),
 					array( 'title' => wfMsg( 'tpt-rev-discourage-tooltip' ) ),
@@ -367,7 +365,7 @@ class SpecialPageTranslation extends SpecialPage {
 					)
 				);
 			} elseif ( $type === 'discouraged' ) {
-				$actions[] = $linker->link(
+				$actions[] = Linker::link(
 					$this->getTitle(),
 					wfMsgHtml( 'tpt-rev-encourage' ),
 					array( 'title' => wfMsg( 'tpt-rev-encourage-tooltip' ) ),

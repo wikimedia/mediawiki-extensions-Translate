@@ -215,8 +215,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		);
 
 		$text = htmlspecialchars( "$code: {$this->names[$code]}" );
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
-		$link = $linker->link( $this->translate, $text, array(), $queryParameters );
+		$link = Linker::link( $this->translate, $text, array(), $queryParameters );
 		return Html::rawElement( 'td', array(), $link );
 	}
 }

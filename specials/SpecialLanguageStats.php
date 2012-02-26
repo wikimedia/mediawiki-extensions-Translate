@@ -225,9 +225,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	protected function outputIntroduction() {
 		global $wgOut, $wgLang, $wgUser;
 
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 		$languageName = TranslateUtils::getLanguageName( $this->target, false, $wgLang->getCode() );
-		$rcInLangLink = $linker->link(
+		$rcInLangLink = Linker::link(
 			SpecialPage::getTitleFor( 'Translate', '!recent' ),
 			wfMsgHtml( 'languagestats-recenttranslations' ),
 			array(),
