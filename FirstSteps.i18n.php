@@ -1763,6 +1763,7 @@ Se non vuoi ricevere la newsletter, puoi esserne escluso attraverso l\'apposita 
 /** Japanese (日本語)
  * @author Fryed-peach
  * @author Hosiryuhosi
+ * @author Whym
  * @author 青子守歌
  */
 $messages['ja'] = array(
@@ -1792,7 +1793,7 @@ $messages['ja'] = array(
 	'translate-fs-userpage-level-3' => '流暢に扱えます',
 	'translate-fs-userpage-level-2' => '中級程度の能力です',
 	'translate-fs-userpage-level-1' => '少し使うことができます',
-	'translate-fs-userpage-help' => '自分の言語能力について紹介し、何か自己紹介をしてください。5つ以上の言語について知っている場合は、あとで追加することができます。',
+	'translate-fs-userpage-help' => '自分の言語能力について紹介し、何か自己紹介をしてください。6つ以上の言語について知っている場合は、あとで追加することができます。',
 	'translate-fs-userpage-submit' => '自分の利用者ページを作成',
 	'translate-fs-userpage-done' => 'お疲れ様です。あなたの利用者ページができました。',
 	'translate-fs-permissions-planguage' => '第一言語：',

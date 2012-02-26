@@ -271,6 +271,7 @@ $messages['be-tarask'] = array(
 	'bw-desc-openstreetmap' => 'Група паведамленьняў для ўсіх паведамленьняў [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Гэтая група зьмяшчае паведамленьні для [[Translating:Open Street Map|Open Street Map]].
 Глядзіце [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} старонку Unicode CLDR] зь інструкцыяй фармаваньня множнага ліку.',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] — рэдактар OpenStreetMap на Flash',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] — калекцыя інструмэнтаў для рэдагаваньня Вікіпэдыі',
 	'bw-desc-shapado' => 'Група паведамленьняў для вольнай плятформы пытаньняў і адказаў [[Translating:Shapado|Shapado]].',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сэрвэр мікраблёгаў з адкрытым кодам',
@@ -599,6 +600,7 @@ Weitere Information finden sich unter [[mw:Extension:PDF Writer]] und http://cod
 	'bw-desc-openlayers' => 'OpenLayers ist ein dynamischer Open-Source-Kartengenerator. Fragen und Fehler sollten auf [[Support]] berichtet werden.',
 	'bw-desc-openstreetmap' => 'Diese Gruppe beinhaltet die Nachrichten für [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Diese Gruppe beinhaltet die Nachrichten der Benutzeroberfläche für [[Translating:Open Street Map|Open Street Map]].',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] ein Flash-gestützter OpenStreetMap-Editor',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] ist eine Sammlung von Werkzeugen zum Bearbeiten der Wikipedia',
 	'bw-desc-shapado' => 'Systemnachrichten von [[Translating:Shapado|Shapado]], einer freien Open-Source-Software für Fragen und Antworten',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] ist ein Open-Source-Mikroblogging-Server',
@@ -665,6 +667,7 @@ Pšosym glědaj [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wi
 	'bw-desc-openlayers' => 'OpenLayers jo dynamiski generator kórtow ze zajwnym žrědłowym kodom. Daj pšosym problemy na boku [[Support|Pódpěra]] k wěsći.',
 	'bw-desc-openstreetmap' => 'Kupka powěźeńkow za wšykne powěźeńki z [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Toś ta kupka powěźeńkow wopśimujo powěźeńki wužywarskego powjercha za [[Translating:Open Street Map|Open Street Map]]',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] jo editor za OpenStreetMap, kótaryž na Flash bazěrujo',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] jo zběrka rědow za wobźěłowanjoju Wikipedije',
 	'bw-desc-shapado' => 'Kupka powěźeńkow za zjawnje k dispoziciji stojecu softwaru Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] jo serwer za mikroblogowanje ze zjawnym žrědłowym kodom',
@@ -1156,7 +1159,6 @@ $messages['hsb'] = array(
 	'translate-group-desc-uniwiki' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež su z [http://unicefinnovation.org/wiki.php Uniwiki] přiwuzne',
 	'translate-group-desc-ui' => 'Metaskupina zdźělenkow, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež so na [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciatiwu wužiwajomnosće Wikipedije] poćahuja.',
 	'translate-group-desc-translatablepages' => 'Wšě přełožujomne strony',
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] zmóžnja ludźom digitalne kulturne resursy Europy přeslědźić.',
 	'bw-desc-freecol' => 'Prjedy hač přełožuješ FreeCol do swojeje rěče, přečitaj prošu [[Translating:FreeCol]]. FreeCol wužiwa licencu GPL.',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] je webforum spisany w PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je swobodny system na zakładźe weba za slědowanje programowych zmylkow. Zdźěl prošu problemy na stronje [[Support|Podpěra]].',
@@ -1181,10 +1183,7 @@ Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/m
 	'bw-desc-openlayers' => 'OpenLayers je dynamiski generator kartow ze zjawnym žórłowym kodom. Prošu zdźěl problemy na stronje [[Support|Podpěra]]',
 	'bw-desc-openstreetmap' => 'Skupina zdźělenkow za wšě zdźělenki z [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Zdźělenki wužiwarskeho powjercha za [[Translating:OpenStreetMap|OpenStreetMap]], wobdźěłujomnu kartu cyłeho swěta',
-	'bw-desc-osm-potlatch' => 'Tuta skupina zdźělenkow wobsahuje zdźělenki za powjerch programa [[Translating:Open Street Map|Potlatch]]. Prošu:
-
-* Spytaj swoje přełožki tak dołho kaž jendźelski original dźeržeć, dla wobmjezowanjow  za system wužiwarskeho powjercha. Hlej tež [http://trac.openstreetmap.org/ticket/2067 wotewrjeny problem].
-* Wužij [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org], zo by Potlatch testował. Móžeš tam wšě funkcije testować.',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] je editor za OpenStreetMap, kotryž na Flash bazěruje',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] je zběrka nastrojow za wobdźěłowanju Wikipedije',
 	'bw-desc-shapado' => 'Skupina zdźělenkow za zjawnje k dispoziciji stejacu softwaru Q&A [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je serwer za mikroblogowanje ze zjawnym žórłowym kodom',
@@ -1260,7 +1259,6 @@ $messages['ia'] = array(
 	'translate-group-desc-uniwiki' => 'Metagruppo con tote le messages pro le extensiones connexe a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagruppo de messages continente tote le messages pro extensiones connexe al [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Initiativa de Usabilitate de Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Tote le paginas traducibile',
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] permitte explorar le ressources cultural digital de Europa',
 	'bw-desc-freecol' => 'Ante de traducer FreeCol in tu lingua, per favor lege [[Translating:FreeCol]]. FreeCol usa le licentia GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un foro web scribite in PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] es un systema libere pro gerer defectos via web. Per favor reporta omne problema in [[Support]].',
@@ -1286,10 +1284,7 @@ Vide [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl 
 	'bw-desc-openstreetmap' => 'Gruppo pro tote le messages de [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Iste gruppo de messages contine le messages de interfacie pro [[Translating:Open Street Map|Open Street Map]].
 Vide le [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} pagina CLDR Unicode] pro un explication de como se codifica le plurales.',
-	'bw-desc-osm-potlatch' => 'Iste gruppo de messages contine le messages de interfacie pro [[Translating:OpenStreetMap|Potlatch]]. Per favor:
-
-* Tenta mantener tu traductiones tanto similar al longitude del original anglese como possibile a causa del restrictiones inherente in le interfacie de usator. Vide tamben [http://trac.openstreetmap.org/ticket/2067 iste reporto de defecto].
-* Usa [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] pro testar Potlatch. Tu pote testar ibi tanto como tu vole in omne area.',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] es un editor pro OpenStreetMap a base de Flash',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] es un collection de instrumentos pro modificar Wikipedia',
 	'bw-desc-shapado' => 'Gruppo de messages pro le software libere pro questiones e responsas [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es un servitor open source de microblogging',
