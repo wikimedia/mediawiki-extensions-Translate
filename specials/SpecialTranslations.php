@@ -205,7 +205,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 			$text = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 			$text .= $separator;
-			$text .= $paretheses->params( $code );
+			$text .= $parentheses->params( $code );
 			$text = htmlspecialchars( $text );
 
 			if ( $canTranslate ) {
