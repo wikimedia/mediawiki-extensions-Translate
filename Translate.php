@@ -15,7 +15,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2012-02-19' );
+define( 'TRANSLATE_VERSION', '2012-02-26' );
 
 /**
  * Extension credits properties.
@@ -491,7 +491,7 @@ $wgTranslateGroupStructure = array(
 	'/^out-openimages/' => array( 'openimages' ),
 	'/^out-osm/' => array( 'osm' ),
 	'/^out-pywikipedia/' => array( 'pywikipedia' ),
-	'/^out-shapado/' => array( 'shapado' ),
+	'/^shapado/' => array( 'shapado' ),
 	'/^out-statusnet-plugin/' => array( 'statusnet', 'plugin' ),
 	'/^out-statusnet/' => array( 'statusnet' ),
 //	'/^page\|/' => array( 'page' ),
