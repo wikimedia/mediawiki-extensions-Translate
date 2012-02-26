@@ -194,7 +194,6 @@ class SpecialTranslations extends SpecialAllpages {
 		$ajaxPageList = array();
 		$historyText = "&#160;<sup>" . wfMsgHtml( 'translate-translations-history-short' ) . "</sup>&#160;";
 		$separator = wfMessage( 'word-separator' )->plain();
-		$parentheses = wfMessage( 'parentheses' )->escaped();
 
 		foreach ( $res as $s ) {
 			$key = $s->page_title;
@@ -205,7 +204,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 			$text = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 			$text .= $separator;
-			$text .= $parentheses->params( $code );
+			$text .= wfMessage( 'parentheses' )->params( $code )->escaped();
 			$text = htmlspecialchars( $text );
 
 			if ( $canTranslate ) {
