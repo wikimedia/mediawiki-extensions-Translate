@@ -58,6 +58,7 @@ $messages['en'] = array(
 	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] is a dynamic map generator in JavaScript',
 	'bw-desc-openstreetmap' => 'All messages related to [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] is an editable map of the whole world',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] is a Flash-based OpenStreetMap editor',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] is a collection of tools to edit Wikipedia',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] is web-based Question and Answer software',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] is a microblogging server',
