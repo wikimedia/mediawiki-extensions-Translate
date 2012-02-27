@@ -194,7 +194,15 @@ class PageTranslationHooks {
 		if ( !$status ) {
 			return '';
 		}
-
+		// If the prioritylangs set, show those languages alone.
+		$priorityLangs =  TranslateMetadata::get( $page->getMessageGroupId(), 'prioritylangs' );
+		$filter = null;
+		if( strlen( $priorityLangs ) > 0 ) {
+			$filter = explode( ',', $priorityLangs );
+		}
+		if ( $filter != null) {
+			$status = array_intersect_key( $status, array_flip( $filter ) );
+		}
 		// Fix title
 		$title = $page->getTitle();
 
