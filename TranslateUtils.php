@@ -187,8 +187,8 @@ class TranslateUtils {
 	 * @return array
 	 */
 	public static function getLanguageNames( /*string */ $code ) {
-		if ( is_callable( array( 'Language', 'getTranslatedLanguageNames' ) ) ) {
-			return Language::getTranslatedLanguageNames( $code );
+		if ( is_callable( array( 'Language', 'fetchLanguageNames' ) ) ) {
+			return Language::fetchLanguageNames( $code, 'mw' ); // since 1.20
 		} elseif ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
 			return LanguageNames::getNames( $code,
 				LanguageNames::FALLBACK_NORMAL,
