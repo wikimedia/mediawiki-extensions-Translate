@@ -2301,6 +2301,7 @@ $messages['az'] = array(
 /** Bashkir (Башҡортса)
  * @author Assele
  * @author Haqmar
+ * @author Roustammr
  * @author Рустам Нурыев
  */
 $messages['ba'] = array(
@@ -2336,7 +2337,7 @@ $messages['ba'] = array(
 	'translate-edit-contribute' => 'үҙгәртергә',
 	'translate-edit-no-information' => "''Был яҙманың тасуирламаһы юҡ. Әгәр һеҙ был яҙманың ҡайҙа һәм нисек ҡулланылғанын белһәгеҙ, был яҙмаға тасуирлама өҫтәп, бүтән тәржемәселәргә ярҙам итә  алаһығыҙ.''",
 	'translate-edit-information' => 'Яҙма тураһында мәғлүмәт ($1)',
-	'translate-edit-in-other-languages' => 'Яҙма башҡа телдәрҙә',
+	'translate-edit-in-other-languages' => 'Ошо яҙма башҡа телдәрҙә',
 	'translate-edit-committed' => 'Программала хәҙерге тәржемәһе',
 	'translate-edit-warnings' => 'Тулы булмаған тәржемәләр тураһында иҫкәртеү',
 	'translate-edit-tmsugs' => 'Тәржемәләр хәтеренән тәҡдимдәр',
@@ -20029,6 +20030,9 @@ $messages['si'] = array(
 	'translate-grouplisting' => 'මේ සමස්ත පරිවර්තනය කල හැකි කාණ්ඩ ලැයිස්තුවයි.
 පරිවර්තනය නොවුනු පණිවුඩ ලැයිස්තුවක් නැරඹීම සඳහා පණිවුඩ කාණ්ඩ නාමය ක්ලික් කරන්න.',
 	'translate-grouplisting-empty' => 'පරිවර්තනය සඳහා කිසිදු පණිවුඩ කාණ්ඩයක් වින්‍යාසගතකොට නොමැත.',
+	'translate-taskui-view' => 'සියළු පණිවුඩ පෙන්වන්න',
+	'translate-taskui-untranslated' => 'පරිවර්තනය නොකල පණිවුඩ පෙන්වන්න',
+	'translate-taction-translate' => 'පරිවර්තනය කරන්න',
 	'translate-page-no-such-language' => 'නම් කෙරුනු භාෂාව අනීතිකයි.',
 	'translate-page-no-such-group' => 'නම් කෙරුණු කාණ්ඩය අනීතිකයි.',
 	'translate-page-disabled' => "මෙම කාණ්ඩයේ මෙම භාෂාව සඳහා පරිවර්තන අක්‍රීය කොට ඇත.
@@ -20040,13 +20044,13 @@ $messages['si'] = array(
 	'translate-page-language' => 'භාෂාව',
 	'translate-page-limit' => 'සීමාව',
 	'translate-page-limit-option' => 'එක් පිටුවකට {{PLURAL:$1|පණිවුඩ|පණිවුඩ}} $1 ක්',
-	'translate-submit' => 'පමුණුවන්න',
+	'translate-submit' => 'ඉටුකරන්න',
 	'translate-page-navigation-legend' => 'යාත්‍රණය',
 	'translate-page-showing' => '$3 ක් අතුරින් පණ්වුඩ $1 සිට $2 දක්වා ප්‍රදර්ශනය කෙරෙයි .',
 	'translate-page-showing-all' => '{{PLURAL:$1|පණිවුඩ|පණිවුඩ}} $1 ක් පෙන්වමින්.',
 	'translate-page-showing-none' => 'පෙන්විමට පණිවුඩ නොමැත.',
 	'translate-next' => 'ඊළඟ පිටුව',
-	'translate-prev' => 'පූර්ව පිටුව',
+	'translate-prev' => 'පෙර පිටුව',
 	'translate-page-description-legend' => 'කාණ්ඩය පිළිබඳ විස්තර',
 	'translate-page-description-hasoptional-open' => 'අමතර පණිවුඩ පෙන්වන්න.',
 	'translate-page-edit' => 'සංස්කරණය',
@@ -22123,11 +22127,23 @@ $messages['ta'] = array(
 	'translate-taskui-view' => 'அனைத்துத் தகவல்களையும் காண்பி',
 	'translate-taskui-untranslated' => 'மொழிபெயர்க்கப்படாத தகவல்களை காண்பி',
 	'translate-taskui-optional' => 'கட்டாயமில்லாதத் தகவல்களை காண்பி',
+	'translate-taskui-suggestions' => 'மொழிபெயர்ப்பு நினைவகத்தின் பரிந்துரைகள் கொண்ட தகவல்களை காண்பி',
+	'translate-taskui-acceptqueue' => 'நான் ஏற்றுக்கொள்ளக்கூடிய தகவல்களை மட்டும் காண்பி',
+	'translate-taskui-reviewall' => 'அனைத்து மொழிபெயர்ப்புகளையும் பரிசீலனை செய்',
+	'translate-taskui-export-to-file' => 'சொந்த வடிவமைப்பில் ஏற்றுமதி செய்',
+	'translate-taskui-export-as-po' => 'இணைப்பில்லா (off-line)  மொழிபெயர்ப்புக்காக ஏற்றுமதி செய்',
 	'translate-taction-translate' => 'மொழிபெயர்ப்பு செய்யவும்',
 	'translate-taction-proofread' => 'மெய்ப்புப் பார்',
 	'translate-taction-lstats' => 'மொழி புள்ளிவிவரம்',
+	'translate-taction-mstats' => 'தகவல் குழு புள்ளிவிவரங்கள்',
+	'translate-taction-export' => 'ஏற்றுமதி செய்',
+	'translate-taction-disabled' => 'இந்த செயல் இந்த விக்கியில் செயலிழக்கம் செய்யப்பட்டுள்ளது.',
 	'translate-page-no-such-language' => 'குறித்த மொழி செல்லுபடியற்றதாகும்.',
 	'translate-page-no-such-group' => 'குறித்த குழு செல்லுபடியற்றதாகும்.',
+	'translate-page-disabled' => "இந்த குழுவில் இந்த மொழிக்கான மொழிபெயப்பு  செயலிழக்கம் செய்யப்பட்டுள்ளது.
+காரணம்:
+
+''$1''",
 	'translate-page-settings-legend' => 'அமைப்புகள்',
 	'translate-page-group' => 'குழு',
 	'translate-page-language' => 'மொழி',
