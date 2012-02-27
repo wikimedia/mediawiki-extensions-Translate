@@ -236,7 +236,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 							'translate-checks-format',
 							wfMessage(
 								'translate-checks-malformed',
-								$defArray[$i]
+								$traArray[$i]
 							)->text()
 						);
 						continue;
