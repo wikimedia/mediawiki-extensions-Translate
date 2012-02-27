@@ -122,7 +122,7 @@ $wgAutoloadClasses['RevTag'] = $dir . 'utils/RevTag.php';
 
 $wgAutoloadClasses['MessageHandle'] = $dir . 'utils/MessageHandle.php';
 $wgAutoloadClasses['TTMServer'] = $dir . 'utils/TTMServer.php';
-
+$wgAutoloadClasses['TranslateMetadata'] = $dir . 'utils/TranslateMetadata.php';
 
 /**@}*/
 
