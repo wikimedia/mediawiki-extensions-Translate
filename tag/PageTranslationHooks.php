@@ -196,12 +196,22 @@ class PageTranslationHooks {
 		}
 		// If the prioritylangs set, show those languages alone.
 		$priorityLangs =  TranslateMetadata::get( $page->getMessageGroupId(), 'prioritylangs' );
+		$priorityForce =  TranslateMetadata::get( $page->getMessageGroupId(), 'priorityforce' );
 		$filter = null;
 		if( strlen( $priorityLangs ) > 0 ) {
-			$filter = explode( ',', $priorityLangs );
+			$filter =  array_flip( explode( ',', $priorityLangs ) );
 		}
 		if ( $filter != null) {
-			$status = array_intersect_key( $status, array_flip( $filter ) );
+			if ( $priorityForce == 'on' ) {
+				// Show only the priority languages.
+				$status = array_intersect_key( $status, $filter );
+			}
+			foreach ( $filter as $langCode => $value) {
+				if ( !isset( $status[$langCode] ) ) {
+					// We need to show all priority languages even if no translation started
+					$status[ $langCode] = 0;
+				}
+			}
 		}
 		// Fix title
 		$title = $page->getTitle();
@@ -227,7 +237,7 @@ class PageTranslationHooks {
 			elseif ( $percent < 80 ) { $image = 4; }
 			else                     { $image = 5; }
 
-			$percent = Xml::element( 'img', array(
+			$percentImage = Xml::element( 'img', array(
 				'src'   => TranslateUtils::assetPath( "resources/images/prog-$image.png" ),
 				'alt'   => "$percent%", // @todo i18n missing.
 				'title' => "$percent%", // @todo i18n missing.
@@ -241,12 +251,12 @@ class PageTranslationHooks {
 
 			if ( $parser->getTitle()->getText() === $_title->getText() ) {
 				$name = Html::rawElement( 'span', array( 'class' => 'mw-pt-languages-selected' ), $name );
-				$languages[] = "$name $percent";
+				$languages[] = "$name $percentImage";
 			} else {
 				if ( $code === $userLangCode ) {
 					$name = Html::rawElement( 'span', array( 'class' => 'mw-pt-languages-ui' ), $name );
 				}
-				$languages[] = Linker::linkKnown( $_title, "$name $percent" );
+				$languages[] = Linker::link( $_title, "$name $percentImage" );
 			}
 		}
 
@@ -336,11 +346,21 @@ FOO;
 	 */
 	public static function preventUnknownTranslations( Title $title, User $user, $action, &$result ) {
 		$handle = new MessageHandle( $title );
-		if ( $handle->isPageTranslation() && $action === 'edit' && !$handle->isValid() ) {
-			$result = array( 'tpt-unknown-page' );
-			return false;
+		if ( $handle->isPageTranslation() && $action === 'edit' ) { 
+			if( !$handle->isValid() ) {
+				$result = array( 'tpt-unknown-page' );
+				return false;
+			}
+			$priorityLangs = TranslateMetadata::get(  $handle->getGroup()->getId() , 'prioritylangs' );
+			$priorityForce = TranslateMetadata::get(  $handle->getGroup()->getId() , 'priorityforce' );
+			if ( strlen( $priorityLangs ) > 0 && $priorityForce ) {
+				$filter = array_flip( explode ( ',', $priorityLangs ) );
+				if ( count( $filter) > 0 && !isset( $filter[$handle->getCode()] ) ) {
+					$result = array( 'tpt-translation-restricted' );
+					return false;
+				}
+			}
 		}
-
 		return true;
 	}
 
