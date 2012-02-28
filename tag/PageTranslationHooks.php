@@ -248,15 +248,29 @@ class PageTranslationHooks {
 			// Add links to other languages
 			$suffix = ( $code === 'en' ) ? '' : "/$code";
 			$_title = Title::makeTitle( $title->getNamespace(), $title->getDBkey() . $suffix );
-
-			if ( $parser->getTitle()->getText() === $_title->getText() ) {
+			if ( intval( $percent ) === 0 ) {
+				/* When language is included because it is a priority language,
+				 * but translation does not yet exists, link directly to the
+				 * translation view. */
+				$translate = SpecialPage::getTitleFor( 'Translate' );
+				$params = array(
+					'group' => $page->getMessageGroupId(),
+					'language' => $code,
+					'task' => 'view'
+				);
+				$attribs = array(
+					'title' => wfMessage( 'tpt-languages-zero' )->text(),
+					'class' => 'new', // For red link color
+				);
+				$languages[] = Linker::link( $translate, "$name $percentImage", $attribs, $params );
+			} elseif ( $parser->getTitle()->getText() === $_title->getText() ) {
 				$name = Html::rawElement( 'span', array( 'class' => 'mw-pt-languages-selected' ), $name );
 				$languages[] = "$name $percentImage";
 			} else {
 				if ( $code === $userLangCode ) {
 					$name = Html::rawElement( 'span', array( 'class' => 'mw-pt-languages-ui' ), $name );
 				}
-				$languages[] = Linker::link( $_title, "$name $percentImage" );
+				$languages[] = Linker::linkKnown( $_title, "$name $percentImage" );
 			}
 		}
 

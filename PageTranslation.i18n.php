@@ -86,6 +86,7 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 
 	'tpt-languages-legend' => 'Other languages:',
 	'tpt-languages-separator' => '&#160;•&#160;',
+	'tpt-languages-zero' => 'Start translation for this language',
 
 	'tpt-target-page' => 'This page cannot be updated manually.
 This page is a translation of page [[$1]] and the translation can be updated using [$2 the translation tool].',
@@ -259,6 +260,7 @@ $3 is an URL.',
 	'pt-deletepage-action-check' => 'This is a button label. "List" is an imperative verb.',
 	'pt-deletepage-current' => '{{Identical|Page name}}',
 	'pt-deletepage-reason' => '{{Identical|Reason}}',
+	'tpt-languages-zero' => 'Tooltip for a link in &lt;language /> when language is included because it is a priority language, but translation does not yet exists. It links directly to the translation view.',
 );
 
 /** ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ (ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ)
