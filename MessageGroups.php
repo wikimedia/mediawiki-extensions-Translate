@@ -1240,7 +1240,7 @@ class MessageGroups {
 	 * @return string
 	 * @since 2011-12-12
 	 */
-	public static function getPriority( MessageGroup $group ) {
+	public static function getPriority( $group ) {
 		static $groups = null;
 		if ( $groups === null ) {
 			$groups = array();
@@ -1255,7 +1255,11 @@ class MessageGroups {
 			}
 		}
 
-		$id = $group->getId();
+		if ( $group instanceof MessageGroup ) {
+			$id = $group->getId();
+		} else {
+			$id = $group;
+		}
 		return isset( $groups[$id] ) ? $groups[$id] : '';
 	}
 

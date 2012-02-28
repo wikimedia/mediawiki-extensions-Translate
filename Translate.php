@@ -137,6 +137,10 @@ $wgHooks['SpecialSearchSetupEngine'][] = 'TranslateHooks::searchProfileSetupEngi
 
 $wgHooks['LinkBegin'][] = 'SpecialMyLanguage::linkfix';
 
+// Stats table manipulation
+$wgHooks['Translate:MessageGroupStats:isIncluded'][] = 'TranslateHooks::hideDiscouragedFromStats';
+$wgHooks['Translate:MessageGroupStats:isIncluded'][] = 'TranslateHooks::hideRestrictedFromStats';
+
 // New rights
 $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';

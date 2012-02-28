@@ -362,12 +362,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			return '';
 		}
 
-		# These are hidden, and the code in MessageGroupStats makes sure that
-		# these are not counted in the aggregate groups they may belong.
-		if ( MessageGroups::getPriority( $group ) === 'discouraged' ) {
-			return '';
-		}
-
 		$stats = $cache[$groupId];
 
 		list( $total, $translated, $fuzzy ) = $stats;

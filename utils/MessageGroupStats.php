@@ -257,7 +257,9 @@ class MessageGroupStats {
 				if ( !isset( $stats[$sid][$code] ) ) {
 					$stats[$sid][$code] = self::forItemInternal( $stats, $subgroup, $code );
 				}
-				if ( MessageGroups::getPriority( $subgroup ) !== 'discouraged' ) {
+
+				$include = wfRunHooks( 'Translate:MessageGroupStats:isIncluded', array( $sid, $code ) );
+				if ( $include ) {
 					$aggregates = self::multiAdd( $aggregates, $stats[$sid][$code] );
 				}
 			}

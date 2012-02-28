@@ -390,5 +390,24 @@ JAVASCRIPT;
 		return true;
 	}
 
+	/// Hook: Translate:MessageGroupStats:isIncluded
+	public static function hideDiscouragedFromStats( $id, $code ) {
+		// Return true to keep, false to exlude
+		return MessageGroups::getPriority( $id ) !== 'discouraged';
+	}
+
+	/// Hook: Translate:MessageGroupStats:isIncluded
+	public static function hideRestrictedFromStats( $id, $code ) {
+		$filterLangs = TranslateMetadata::get( $id, 'prioritylangs' );
+		if ( strlen( $filterLangs ) === 0 ) {
+			// No restrictions, keep everything
+			return true;
+		}
+
+		$filter = array_flip( explode( ',', $filterLangs ) );
+		// If the language is in the list, return true to not hide it
+		return isset( $filter[$code] );
+	}
+
 }
 
