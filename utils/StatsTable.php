@@ -299,6 +299,13 @@ class StatsTable {
 			}
 		}
 
+		$filterLangs = TranslateMetadata::get( $groupId , 'prioritylangs' );
+		if ( strlen( $filterLangs ) > 0 ) {
+			$filter = array_flip( explode( ',', $filterLangs ) );
+			if ( count( $filter ) > 0 && !isset( $filter[$code] ) ) {
+				$blacklisted = true;
+			}
+		}
 		return $blacklisted;
 	}
 
