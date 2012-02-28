@@ -91,7 +91,7 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 This page is a translation of page [[$1]] and the translation can be updated using [$2 the translation tool].',
 	'tpt-unknown-page' => 'This namespace is reserved for content page translations.
 The page you are trying to edit does not seem to correspond any page marked for translation.',
-	'tpt-translation-restricted' => 'Translations to this language is disabled by translation administrator.',
+	'tpt-translation-restricted' => 'Translation of this group to this language has been prevented by translation administrator.',
 
 	'tpt-render-summary' => 'Updating to match new version of source page',
 
