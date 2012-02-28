@@ -33,8 +33,8 @@ $wgExtensionCredits['specialpage'][] = array(
  * @cond file_level_code
  * Setup class autoloading.
  */
-$dir = dirname( __FILE__ ) . '/';
-require_once( $dir . '_autoload.php' );
+$dir = dirname( __FILE__ );
+require_once( "$dir/_autoload.php" );
 /** @endcond */
 
 /**
@@ -42,12 +42,12 @@ require_once( $dir . '_autoload.php' );
  */
 
 // Register extension messages and other localisation.
-$wgExtensionMessagesFiles['Translate'] = $dir . 'Translate.i18n.php';
-$wgExtensionMessagesFiles['FirstSteps'] = $dir . 'FirstSteps.i18n.php';
-$wgExtensionMessagesFiles['PageTranslation'] = $dir . 'PageTranslation.i18n.php';
-$wgExtensionMessagesFiles['TranslateGroupDescriptions'] = $dir . 'TranslateGroupDescriptions.i18n.php';
-$wgExtensionMessagesFiles['TranslateAlias'] = $dir . 'Translate.alias.php';
-$wgExtensionMessagesFiles['TranslateMagic'] = $dir . 'Translate.magic.php';
+$wgExtensionMessagesFiles['Translate'] = "$dir/Translate.i18n.php";
+$wgExtensionMessagesFiles['FirstSteps'] = "$dir/FirstSteps.i18n.php";
+$wgExtensionMessagesFiles['PageTranslation'] = "$dir/PageTranslation.i18n.php";
+$wgExtensionMessagesFiles['TranslateGroupDescriptions'] = "$dir/TranslateGroupDescriptions.i18n.php";
+$wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
+$wgExtensionMessagesFiles['TranslateMagic'] = "$dir/Translate.magic.php";
 
 // Register initialization code
 $wgExtensionFunctions[] = 'TranslateHooks::setupTranslate';
