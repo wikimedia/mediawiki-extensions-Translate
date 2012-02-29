@@ -405,8 +405,6 @@ class TranslationHelpers {
 				$boxes[] = $this->getTmBox( $name, $config );
 			} elseif ( $config['type'] === 'ttmserver' ) {
 				$boxes[] = $this->getTTMServerBox( $name, $config );
-			} elseif ( $config['type'] === 'google' ) {
-				$boxes[] = $this->getGoogleSuggestion( $name, $config );
 			} elseif ( $config['type'] === 'microsoft' ) {
 				$boxes[] = $this->getMicrosoftSuggestion( $name, $config );
 			} elseif ( $config['type'] === 'apertium' ) {
@@ -427,60 +425,6 @@ class TranslationHelpers {
 		} else {
 			return null;
 		}
-	}
-
-	protected function getGoogleSuggestion( $serviceName, $config ) {
-		global $wgMemc;
-
-		$this->mustHaveDefinition();
-		self::checkTranslationServiceFailure( $serviceName );
-
-		$code = $this->handle->getCode();
-		$definition = trim( strval( $this->getDefinition() ) );
-		$definition = self::wrapUntranslatable( $definition );
-
-		$memckey = wfMemckey( 'translate-tmsug-badcodes-' . $serviceName );
-		$unsupported = $wgMemc->get( $memckey );
-
-		if ( isset( $unsupported[$code] ) ) {
-			return null;
-		}
-
-		/* There is 5000 *character* limit, but encoding needs to be taken into
-		 * account. Not sure if this applies also to post method. */
-		if ( strlen( rawurlencode( $definition ) ) > 4900 ) {
-			return null;
-		}
-
-		$source = $this->group->getSourceLanguage();
-		$options = self::makeGoogleQueryParams( $definition, "$source|$code", $config );
-		$json = Http::post( $config['url'], $options );
-		$response = FormatJson::decode( $json );
-
-		if ( $json === false ) {
-			// Most likely a timeout or other general error
-			self::reportTranslationServiceFailure( $serviceName );
-		} elseif ( !is_object( $response ) ) {
-			error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
-			return null;
-		}
-
-		if ( $response->responseStatus === 200 ) {
-			$text = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
-			$text = self::unwrapUntranslatable( $text );
-			$text = $this->suggestionField( $text );
-			return Html::rawElement( 'div', null, self::legend( $serviceName ) . $text . self::clear() );
-		} elseif ( $response->responseDetails === 'invalid translation language pair' ) {
-			$unsupported[$code] = true;
-			$wgMemc->set( $memckey, $unsupported, 60 * 60 * 8 );
-		} else {
-			// Unknown error, assume the worst
-			wfWarn(  __METHOD__ . "($serviceName): " . $response->responseDetails );
-			error_log( __METHOD__ . "($serviceName): " . $response->responseDetails );
-			self::reportTranslationServiceFailure( $serviceName );
-		}
-
-		return null;
 	}
 
 	protected static function makeGoogleQueryParams( $definition, $pair, $config ) {
