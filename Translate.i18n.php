@@ -749,15 +749,6 @@ $messages['gom-latn'] = array(
 	'translate-mgs-column-language' => 'Bhas',
 );
 
-/** Moroccan Spoken Arabic (Maġribi)
- * @author Enzoreg
- */
-$messages['ary'] = array(
-	'translate-manage-modlang-new' => '$1 (jdid)',
-	'translate-manage-import-new' => 'Méṣaj jdid $1',
-	'translate-manage-import-deleted' => 'Méṣaj memḫi $1',
-);
-
 /** ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ (ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ)
  * @author MooRePrabu
  */
@@ -1611,6 +1602,15 @@ $messages['arn'] = array(
 	'translate-magic-cm-original' => 'kuse',
 	'translate-magic-cm-save' => 'elkünun',
 	'translate-magic-cm-savefailed' => 'elkünun weda',
+);
+
+/** Moroccan Spoken Arabic (Maġribi)
+ * @author Enzoreg
+ */
+$messages['ary'] = array(
+	'translate-manage-modlang-new' => '$1 (jdid)',
+	'translate-manage-import-new' => 'Méṣaj jdid $1',
+	'translate-manage-import-deleted' => 'Méṣaj memḫi $1',
 );
 
 /** Egyptian Spoken Arabic (مصرى)
@@ -10580,6 +10580,19 @@ $messages['hu'] = array(
 	'translate-grouplisting' => 'Ez az összes fordítható csoport listája.
 Kattints az üzenetcsoport nevére a fordítandó üzenetek listájának megtekintéséhez.',
 	'translate-grouplisting-empty' => 'Nincs fordítható üzenet csoport.',
+	'translate-taskui-view' => 'Összes üzenet megjelenítése',
+	'translate-taskui-untranslated' => 'Lefordítatlan üzenetek megjelenítése',
+	'translate-taskui-optional' => 'Opcionális üzenetek megjelenítése.',
+	'translate-taskui-suggestions' => 'Fordítási javaslattal rendelkező üzenetek megjelenítése',
+	'translate-taskui-acceptqueue' => 'Csak az általam elfogadható üzenetek',
+	'translate-taskui-export-to-file' => 'Exportálás natív formátumban',
+	'translate-taskui-export-as-po' => 'Exportálás offline fordításhoz',
+	'translate-taction-translate' => 'Fordítás',
+	'translate-taction-proofread' => 'Korrektúra',
+	'translate-taction-lstats' => 'Nyelvi statisztika',
+	'translate-taction-mstats' => 'Üzenetcsoport statisztika',
+	'translate-taction-export' => 'Exportálás',
+	'translate-taction-disabled' => 'Ez a művelet le van tiltva ebben a wikiben.',
 	'translate-page-no-such-language' => 'A megadott nyelv érvénytelen',
 	'translate-page-no-such-group' => 'A megadott csoport érvénytelen',
 	'translate-page-disabled' => "Ez a csoport nem fordítható erre a nyelvre. A tiltás oka:
@@ -10666,6 +10679,7 @@ A változtatások nem mentődnek, míg alul a mentés gombra nem kattintasz.',
 	'translate-checks-pagename' => 'A névtér nem egyezik meg a definícióval',
 	'translate-checks-format' => 'A fordítás nem felel meg a definíciónak, vagy érvénytelen a szintaxisa: $1',
 	'translate-checks-escape' => 'A következő escape-ek valószínűleg véletlenül történtek: <strong>$1</strong>',
+	'translate-checks-malformed' => '<nowiki>$1</nowiki> hibás formátumú.',
 	'translate-checks-fudforum-syntax' => 'Használj <nowiki>$1</nowiki> formát <nowiki>$2</nowiki> helyett ebben a projektben.',
 	'translate-pref-nonewsletter' => 'Ne küldjenek hírlevelet',
 	'translate-pref-editassistlang' => 'Segédnyelvek:',
@@ -10678,7 +10692,9 @@ A nyelvek alapértelmezett listája a nyelvedtől függ.',
 	'translate-pref-jsedit' => 'Fejlett fordítás szerkesztő (JavaScript)',
 	'right-translate' => 'szerkesztés a fordítói felületen keresztül',
 	'right-translate-manage' => 'Üzenetcsoportok kezelése',
+	'action-translate-manage' => 'üzenetcsoportok kezelése',
 	'right-translate-import' => 'kapcsolat nélküli fordítások importálása',
+	'action-translate-import' => 'offline fordítások importálása',
 	'right-translate-messagereview' => 'Fordítások ellenőrzése',
 	'right-translate-groupreview' => 'Üzenetcsoportok állapotának megváltoztatása',
 	'translate-rc-translation-filter' => 'Fordítások szűrése:',
@@ -10830,6 +10846,8 @@ nem sikerült meghatározni a csoportot és a nyelvet a fájl fejlécéből.',
 	'translate-import-err-warnings' => 'A fájl nem megfelelően formázott.
 Ellenőrizd, hogy a szerkesztőd nem távolította-e el az msgctxt-mezőket.
 Részletek: $1',
+	'translate-js-summary' => 'Összefoglaló:',
+	'translate-js-save' => 'Mentés',
 	'translate-js-next' => 'Mentés és a következő megnyitása',
 	'translate-js-nonext' => 'Ez volt az utolsó üzenet ezen a lapon.',
 	'translate-js-skip' => 'Ugrás a következőre',
@@ -10875,10 +10893,13 @@ Részletek: $1',
 	'translate-workflow-set-do' => 'Beállít',
 	'translate-workflow-set-doing' => 'Beállítás…',
 	'translate-workflow-set-done' => 'Beállítva!',
+	'translate-workflow-set-error-alreadyset' => 'A kért állapot megegyezik a jelenlegi állapottal.',
 	'translate-stats-workflow' => 'Állapot',
+	'translate-workflowgroup-label' => 'Munkafolyamat állapotok',
 	'translate-dynagroup-recent-label' => 'Friss fordítások',
 	'translate-dynagroup-by' => '{{GENDER:$1|$1}} fordítása',
 	'translate-dynagroup-byc' => '{{GENDER:$1|$1}} fordítása ($2)',
+	'translate-gethelp' => 'Súgó',
 );
 
 /** Interlingua (Interlingua)
@@ -23452,6 +23473,7 @@ $messages['ug-latn'] = array(
 );
 
 /** Ukrainian (Українська)
+ * @author A1
  * @author AS
  * @author Ahonc
  * @author Aleksandrit
@@ -23470,6 +23492,16 @@ $messages['uk'] = array(
 	'translate-showsub' => 'Показати {{PLURAL:$1|підгрупу|$1 підгрупи|$1 підгруп}}.',
 	'translate-grouplisting' => 'Це список усіх груп, що можуть перекладатися.
 Натисніть на назву групи повідомлень, щоб подивитися список неперекладених повідомлень.',
+	'translate-taskui-view' => 'Показати всі повідомлення',
+	'translate-taskui-untranslated' => 'Показати неперекладені повідомлення',
+	'translate-taskui-optional' => 'Показати додаткові повідомлення.',
+	'translate-taskui-suggestions' => "Показати повідомлення з пропозиціями пам'яті перекладів",
+	'translate-taction-translate' => 'Переклад',
+	'translate-taction-proofread' => 'Вичитка',
+	'translate-taction-lstats' => 'Статистика для цієї мови',
+	'translate-taction-mstats' => 'Статистика груп повідомлень',
+	'translate-taction-export' => 'Експорт',
+	'translate-taction-disabled' => 'Ця дія недоступна на цій вікі.',
 	'translate-page-no-such-language' => 'Зазначена неправильна мова.',
 	'translate-page-no-such-group' => 'Зазначена неправильна група.',
 	'translate-page-disabled' => "Переклади на цю мову в цій групі вимкнені. Причина:

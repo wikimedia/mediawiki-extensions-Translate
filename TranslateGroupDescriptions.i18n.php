@@ -848,7 +848,6 @@ $messages['fr'] = array(
 	'translate-group-desc-uniwiki' => 'Meta groupe de messages contenant tous les messages pour les extensions apparentées à [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Groupe de messages Meta contenant tous les messages des extensions liées à [//meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Toutes les pages traductibles',
-	'translate-group-desc-europeana' => "[[Translating:Europeana|Europeana]] offre d'explorer les ressources culturelles numériques de l'Europe",
 	'bw-desc-freecol' => 'Avant de traduire FreeCol dans votre langue, veuillez lire [[Translating:FreeCol]]. Freecol est publié sous licence GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un forum internet écrit en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] est un système gratuit pour le suivi sur le web des anomalies. Rapportez tous les problèmes sur [[Support]].',
@@ -873,9 +872,7 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] est un générateur de cartes dynamiques en JavaScript',
 	'bw-desc-openstreetmap' => 'Groupe de messages pour tous les messages de [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => "Ce groupe de messages contient les messages de l'interface d'[[Translating:Open Street Map|Open Street Map]].",
-	'bw-desc-osm-potlatch' => 'Ce groupe de messages contient les messages de l’interface de [[Translating:OpenStreetMap|Potlatch]]. Veuillez :
-*essayer de faire des traductions de longueur équivalente à l’original anglais, en raison de restrictions de l’interface utilisateur. Voir le [http://trac.openstreetmap.org/ticket/2067 rapport de bug].
-*utiliser [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] pour tester Potlatch. Vous pouvez tester autant que vous le voulez dans n’importe-quelle zone.',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] est un éditeur OpenStreetMap basé sur du flash',
 	'translate-group-desc-pywikipedia' => "[[Translating:Pywikipedia|Pywikipedia]] est une collection d'outils pour modifier Wikipédia",
 	'bw-desc-shapado' => 'Groupe de messages pour le logiciel libre et open-source de questions/réponses [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] est un serveur de microblogging en source ouverte',

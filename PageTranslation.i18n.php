@@ -242,6 +242,10 @@ $3 is an URL.',
 	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton. $1 is the number of pages [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-other-pages' => '$1 is the number of pages in the following list. [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-discouraged-pages' => '$1 is the number of pages in the following list. [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-select-prioritylangs' => 'Label for the input box to enter preferred languages',
+	'tpt-select-prioritylangs-force' => 'Label for the checkbox to make the translation restriction',
+	'tpt-select-prioritylangs-reason' => 'Label for the textbox to enter reason for restriction',
+	'tpt-sections-prioritylangs' => 'Section title in  [[Special:PageTranslation]]',
 	'tpt-rev-mark' => 'Possible page action and link text in [[Special:PageTranslation]]. In parenthesis after page name. [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-rev-unmark' => 'Possible page action and link text in [[Special:PageTranslation]]. In parenthesis after page name. [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-rev-discourage' => 'Possible page action and link text in [[Special:PageTranslation]]. In parenthesis after page name. [[Image:Page translation admin view.png|thumb|Admin view]]',
@@ -254,13 +258,10 @@ $3 is an URL.',
 	'translate-tag-hasnew' => '"has changes" is to be understood as "has been altered/edited"',
 	'tpt-languages-legend' => 'The caption of a language selector displayed using <code>&lt;languages /&gt;</code>, e.g. on [[Project list]].',
 	'tpt-languages-separator' => '{{optional}}',
+	'tpt-languages-zero' => 'Tooltip for a link in &lt;language /> when language is included because it is a priority language, but translation does not yet exists. It links directly to the translation view.',
 	'tpt-translation-restricted' => 'Error message shown to user when translation to a language which is restricted by translation admin.',
 	'tpt-discouraged-language-force' => 'Warning shown along with group description if the language is prevented from translation for the selected language',
 	'tpt-discouraged-language' => 'Warning shown along with group description if the language is discouraged from translation for the selected language',
-	'tpt-select-prioritylangs' => 'Label for the input box to enter preferred languages',
-	'tpt-select-prioritylangs-force' => 'Label for the checkbox to make the translation restriction',
-	'tpt-select-prioritylangs-reason' => 'Label for the textbox to enter reason for restriction',
-	'tpt-sections-prioritylangs' => 'Section title in  [[Special:PageTranslation]]',
 	'pt-parse-open' => '"Translation template" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.',
 	'pt-shake-multiple' => 'Each translation (=section) unit can only contain one marker.',
 	'pt-shake-empty' => 'Translation unit (=section) is empty except for the translation marker (=<nowiki><!--T:1--></nowiki>)',
@@ -280,7 +281,6 @@ $3 is an URL.',
 	'pt-deletepage-action-check' => 'This is a button label. "List" is an imperative verb.',
 	'pt-deletepage-current' => '{{Identical|Page name}}',
 	'pt-deletepage-reason' => '{{Identical|Reason}}',
-	'tpt-languages-zero' => 'Tooltip for a link in &lt;language /> when language is included because it is a priority language, but translation does not yet exists. It links directly to the translation view.',
 );
 
 /** ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ (ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ)
@@ -1467,6 +1467,7 @@ Die neueste Version kann hingegen nicht zur Übersetzung freigegeben werden.',
 Diese Seite ist eine Übersetzung der Seite [[$1]] und die Übersetzung kann mithilfe des [$2 Übersetzungswerkzeuges] aktualisiert werden.',
 	'tpt-unknown-page' => 'Dieser Namensraum ist für das Übersetzen von Wikiseiten reserviert.
 Die Seite, die gerade bearbeitet wird, hat keine Verbindung zu einer übersetzbaren Seite.',
+	'tpt-translation-restricted' => 'Das Übersetzen dieser Systemnachrichtengruppe in diese Sprache wurde durch den Übersetzungsadministrator deaktiviert.',
 	'tpt-render-summary' => 'Übernehme Bearbeitung einer neuen Version der Quellseite',
 	'tpt-download-page' => 'Seite mit Übersetzungen exportieren',
 	'pt-parse-open' => 'Eine &lt;translate&gt;-Markierung hat kein Gegenstück.
@@ -1627,6 +1628,7 @@ ale nejnowša wersija njedajo se za pśełožowanje markěrowaś.',
 Toś ten bok jo pśełožk boka [[$1]] a pśełožk dajo se z pomocu [$2 Pśełožyś] aktualizěrowaś.',
 	'tpt-unknown-page' => 'Toś ten mjenjowy rum jo za pśełožki wopśimjeśowych bokow wuměnjony.
 Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kótaryž jo za pśełožowanje markěrowany.',
+	'tpt-translation-restricted' => 'Pśełožowański administrator jo pśełožowanjeju toś teje kupki do toś teje rěcy jo zajźował.',
 	'tpt-render-summary' => 'Aktualizacija pó nowej wersiji žrědłowego boka',
 	'tpt-download-page' => 'Bok z pśełožkami eksportěrowaś',
 	'pt-parse-open' => 'Asymetriska toflicka &lt;translate>.
@@ -1884,6 +1886,7 @@ pero la última versión no puede ser marcada para traducción.',
 Esta página es una traducción de la página [[$1]] y la traducción puede ser actualizada usando [$2 la herramienta de traducción].',
 	'tpt-unknown-page' => 'Este espacio de nombre está reservado para traducciones de páginas de contenido.
 La página que estás tratando de editar no parece corresponder con alguna página marcada para traducción.',
+	'tpt-translation-restricted' => 'La traducción de este grupo a este idioma ha sido impedida por el administrador de traducción.',
 	'tpt-render-summary' => 'Actualizando para hallar una nueva versión de la página fuente',
 	'tpt-download-page' => 'Exportar página con traducciones',
 	'pt-parse-open' => 'Etiqueta &lt;translate> desequilibrada.
@@ -3132,6 +3135,7 @@ ale aktualna wersija njehodźi so za přełožowanje markěrować.',
 Tuta strona je přełožk strony [[$1]] a přełožk hodźi so z pomocu [$2 Přełožić] aktualizować.',
 	'tpt-unknown-page' => 'Tutón mjenowy rum je za přełožki wobsahowych stronow wuměnjeny.
 Strona, kotruž pospytuješ wobdźěłać, po wšěm zdaću stronje markěrowanej za přełožowanje njewotpowěduje.',
+	'tpt-translation-restricted' => 'Přełožowanski administrator je přełožowanju tuteje skupiny do tuteje rěče zadźěwał.',
 	'tpt-render-summary' => 'Aktualizacija po nowej wersiji žórłoweje strony',
 	'tpt-download-page' => 'Stronu z přełožkami eksportować',
 	'pt-parse-open' => 'Asymetriska taflička &lt;translate>.
@@ -4473,6 +4477,7 @@ $messages['mk'] = array(
 Страницава е превод на страницата [[$1]], а преводот може да се обнови само со помош на [$2 алатката за преведување].',
 	'tpt-unknown-page' => 'Овој именски простор е резервиран за преводи на содржински страници.
 Страницата која се обидувате да ја уредите не соодветствува со ниедна страница обележана за преведување.',
+	'tpt-translation-restricted' => 'Преведувањето на оваа група на тој јазик е спречено од преводен администратор.',
 	'tpt-render-summary' => 'Обнова за усогласување со новата верзија на изворната страница',
 	'tpt-download-page' => 'Извези страница со преводи',
 	'pt-parse-open' => 'Неврамнотежена &lt;translate> ознака.
@@ -5230,6 +5235,7 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 Jest ona tłumaczeniem strony [[$1]], a tłumaczenie może zostać zmienione za pomocą [$2 narzędzia tłumacza].',
 	'tpt-unknown-page' => 'Ta przestrzeń nazw jest zarezerwowana dla tłumaczeń stron z zawartością.
 Strona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stronie oznaczonej do tłumaczenia.',
+	'tpt-translation-restricted' => 'Tłumaczenie tej grupy na ten język zostało zablokowane przez administratora tłumaczenia.',
 	'tpt-render-summary' => 'Aktualizowanie w celu dopasowania nowej wersji strony źródłowej',
 	'tpt-download-page' => 'Wyeksportuj stronę z tłumaczeniami',
 	'pt-parse-open' => 'Niezrównoważony znacznik &lt;translate>.
@@ -7168,6 +7174,7 @@ Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra nhữn
 Nó là một bản dịch của trang [[$1]] và có thể cập nhật bản dịch bằng cách sử dụng [$2 công cụ dịch thuật].',
 	'tpt-unknown-page' => 'Không gian tên này được dành cho các bản dịch trang nội dung.
 Trang bạn muốn sửa đổi dường như không tương ứng với trang nào đã được đánh dấu cần dịch.',
+	'tpt-translation-restricted' => 'Người quản lý biên dịch không cho phép dịch nhóm ra ngôn ngữ này.',
 	'tpt-render-summary' => 'Cập nhật đến phiên bản mới của trang nguồn',
 	'tpt-download-page' => 'Xuất trang cùng các bản dịch',
 	'pt-parse-open' => 'Thẻ &lt;translate> không đều.
