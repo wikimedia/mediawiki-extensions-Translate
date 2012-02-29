@@ -66,7 +66,7 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 	'tpt-discouraged-pages' => '{{PLURAL:$1|This page has|These pages have}} been discouraged from further translation.',
 	'tpt-select-prioritylangs' => 'Preferred languages (comma-separated language codes): ',
 	'tpt-select-prioritylangs-force' => 'Limit translation to these languages alone',
-	'tpt-select-prioritylangs-reason' => 'Reason for setting this set of preferred languages(optional): ',
+	'tpt-select-prioritylangs-reason' => 'Reason for setting this set of preferred languages (optional): ',
 	'tpt-sections-prioritylangs' => 'Preferred Languages',
 	
 	'tpt-rev-mark' => 'mark for translation',

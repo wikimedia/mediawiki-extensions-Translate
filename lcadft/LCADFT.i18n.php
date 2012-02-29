@@ -63,3 +63,33 @@ $messages['qqq'] = array(
 	'lcadft-freq-monthly' => 'Radio option label',
 	'lcadft-submit' => 'Submit button text',
 );
+
+/** Hebrew
+ * @author amire80
+ */
+$messages['he'] = array(
+	'translatorsignup' => 'רישום מתרגמים',
+	'lcadft-desc' => 'רישום מתרגמים לעדכונים על מיזמי תרגום',
+	'lcadft-info' => 'מידע על המשתמש',
+	'lcadft-username' => 'שם משתמש:',
+	'lcadft-emailstatus' => 'מצב דוא"ל:',
+	'lcadft-email-confirmed' => 'הדוא"ל שלך מאומת',
+	'lcadft-email-unconfirmed' => 'הדוא"ל שלך אינו מאומת. $1',
+	'lcadft-email-notset' => 'לא נתת כתובת דוא"ל. אפשר לעשות את זה ב[[Special:Preferences|העדפות]] שלך.',
+	'lcadft-languages' => 'שפות',
+	'lcadft-lang' => 'שפה מס\' $1',
+	'lcadft-nolang' => 'בחירת שפה',
+	'lcadft-contact' => 'דרכי התקשרות מועדפות',
+	'lcadft-cmethod-email' => 'דוא"ל',
+	'lcadft-cmethod-talkpage' => 'דף שיחה',
+	'lcadft-cmethod-talkpage-elsewhere' => 'דף שיחה בוויקי אחר',
+	'lcadft-cmethod-feed' => 'הזנה',
+	'lcadft-cmethod-no' => 'לא ליצור אתי קשר',
+	'lcadft-frequency' => 'תדירות ההתקשרות',
+	'lcadft-freq-always' => 'כשיש מה לתרגם',
+	'lcadft-freq-week' => 'לכל היותר פעם בשבוע',
+	'lcadft-freq-month' => 'לכל היותר פעם בחודש',
+	'lcadft-freq-weekly' => 'סיכום שבועי',
+	'lcadft-freq-monthly' => 'סיכום חודשי',
+	'lcadft-submit' => 'רישום',
+);
