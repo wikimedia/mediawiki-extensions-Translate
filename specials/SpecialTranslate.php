@@ -168,13 +168,13 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function setup( $parameters ) {
-		global $wgUser, $wgRequest;
+		global $wgUser, $wgRequest, $wgLang;
 
 		$defaults = array(
 		/* str  */ 'taction'  => 'translate',
 		/* str  */ 'task'     => 'untranslated',
 		/* str  */ 'sort'     => 'normal',
-		/* str  */ 'language' => $wgUser->getOption( 'language' ),
+		/* str  */ 'language' => $wgLang->getCode(),
 		/* str  */ 'group'    => '',
 		/* int  */ 'offset'   => 0,
 		/* int  */ 'limit'    => 100,
