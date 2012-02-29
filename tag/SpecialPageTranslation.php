@@ -70,6 +70,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$wgOut->addWikiMsg( 'tpt-nosuchpage', $title->getPrefixedText() );
 			return;
 		}
+		$wgOut->addModules( 'ext.translate.special.pagetranslation' );
 
 		if ( $action === 'discourage' || $action === 'encourage' ) {
 			$id = TranslatablePage::getMessageGroupIdFromTitle( $title );
@@ -528,6 +529,22 @@ class SpecialPageTranslation extends SpecialPage {
 			}
 		}
 
+		$priorityLangs = TranslateMetadata::get( $page->getMessageGroupId(), 'prioritylangs' );
+		$priorityForce = TranslateMetadata::get( $page->getMessageGroupId(), 'priorityforce' );
+		$priorityReason = TranslateMetadata::get( $page->getMessageGroupId(), 'priorityreason' );
+		$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-prioritylangs' );
+		$langSelector = Xml::languageSelector( $wgContLang-> getCode() );
+		$priorityLangsInput = Html::element( 'input', array( 'id' => 'tpt-prioritylangs', 'size' => '50', 'name' => 'prioritylangs', 'value' => $priorityLangs , ) );
+		if ( $priorityForce === 'on' ) {
+			$forceLimit = Html::element( 'input', array( 'id' => 'tpt-priority-forcelimit', 'type' => 'checkbox', 'name' => 'forcelimit', 'checked' => 'checked' )  );
+		} else {
+		$forceLimit = Html::element( 'input', array( 'id' => 'tpt-priority-forcelimit', 'type' => 'checkbox', 'name' => 'forcelimit' ) );
+		}
+		$priorityReasonTextArea = Html::element( 'textarea', array( 'id' => 'tpt-priority-reason', 'name' => 'priorityreason' ), $priorityReason  );
+		$forceLimitLabel = Html::element( 'label', array( 'id' => 'tpt-priority-forcelimit-label', 'for' => 'tpt-priority-forcelimit' ), wfMsgHtml( 'tpt-select-prioritylangs-force' ) );
+		$wgOut->addHTML( wfMsgHtml( 'tpt-select-prioritylangs' ) . $langSelector[1] . $priorityLangsInput );
+		$wgOut->addHTML( '<br/>' . $forceLimit . $forceLimitLabel . '<br/>' . wfMsgHtml( 'tpt-select-prioritylangs-reason' ) . $priorityReasonTextArea . '<br/>' );
+
 		$wgOut->addHTML(
 			Xml::submitButton( wfMsg( 'tpt-submit' ) ) .
 			Xml::closeElement( 'form' )
@@ -619,6 +636,11 @@ class SpecialPageTranslation extends SpecialPage {
 		$page->addMarkedTag( $newrevision, $changed );
 		$this->addFuzzyTags( $page, $changed );
 
+		// Save the priority languages if any
+		$priorityLangs = trim( $wgRequest->getVal( 'prioritylangs' ) );
+		$priorityForce = $wgRequest->getVal( 'forcelimit' );
+		$priorityReason = $wgRequest->getVal( 'priorityreason' );
+
 		global $wgUser;
 		$logger = new LogPage( 'pagetranslation' );
 		$params = array(
@@ -627,6 +649,24 @@ class SpecialPageTranslation extends SpecialPage {
 			'changed' => count( $changed ),
 		);
 		$logger->addEntry( 'mark', $page->getTitle(), null, array( serialize( $params ) ) );
+		if (  $priorityLangs ) {
+			$groupId = $page->getMessageGroupId();
+			TranslateMetadata::set( $groupId, 'prioritylangs', trim( $priorityLangs, ',' ) );
+			if ( $priorityForce ) {
+				TranslateMetadata::set( $groupId, 'priorityforce', $priorityForce );
+			} else {
+				TranslateMetadata::set( $groupId, 'priorityforce', 'off' );
+			}
+			if ( trim( $priorityReason ) ) {
+				TranslateMetadata::set( $groupId, 'priorityreason', $priorityReason );
+			}
+			$params = array(
+				'user' => $wgUser->getName(),
+				'languages' => $priorityLangs,
+				'force' => $priorityForce,
+			);
+			$logger->addEntry( 'prioritylanguages', $page->getTitle(), null, array( serialize( $params ) ) );
+		}
 
 		$page->getTitle()->invalidateCache();
 		$this->setupRenderJobs( $page );
