@@ -439,7 +439,7 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param $sections array
 	 */
 	public function showPage( TranslatablePage $page, Array $sections ) {
-		global $wgOut, $wgContLang;
+		global $wgOut, $wgContLang, $wgLang;
 
 		$wgOut->setSubtitle( Linker::link( $page->getTitle() ) );
 		$wgOut->addModules( 'ext.translate.special.pagetranslation' );
@@ -529,25 +529,50 @@ class SpecialPageTranslation extends SpecialPage {
 			}
 		}
 
-		$priorityLangs = TranslateMetadata::get( $page->getMessageGroupId(), 'prioritylangs' );
-		$priorityForce = TranslateMetadata::get( $page->getMessageGroupId(), 'priorityforce' );
-		$priorityReason = TranslateMetadata::get( $page->getMessageGroupId(), 'priorityreason' );
-		$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-prioritylangs' );
-		$langSelector = Xml::languageSelector( $wgContLang-> getCode() );
-		$priorityLangsInput = Html::element( 'input', array( 'id' => 'tpt-prioritylangs', 'size' => '50', 'name' => 'prioritylangs', 'value' => $priorityLangs , ) );
-		if ( $priorityForce === 'on' ) {
-			$forceLimit = Html::element( 'input', array( 'id' => 'tpt-priority-forcelimit', 'type' => 'checkbox', 'name' => 'forcelimit', 'checked' => 'checked' )  );
-		} else {
-		$forceLimit = Html::element( 'input', array( 'id' => 'tpt-priority-forcelimit', 'type' => 'checkbox', 'name' => 'forcelimit' ) );
-		}
-		$priorityReasonTextArea = Html::element( 'textarea', array( 'id' => 'tpt-priority-reason', 'name' => 'priorityreason' ), $priorityReason  );
-		$forceLimitLabel = Html::element( 'label', array( 'id' => 'tpt-priority-forcelimit-label', 'for' => 'tpt-priority-forcelimit' ), wfMsgHtml( 'tpt-select-prioritylangs-force' ) );
-		$wgOut->addHTML( wfMsgHtml( 'tpt-select-prioritylangs' ) . $langSelector[1] . $priorityLangsInput );
-		$wgOut->addHTML( '<br/>' . $forceLimit . $forceLimitLabel . '<br/>' . wfMsgHtml( 'tpt-select-prioritylangs-reason' ) . $priorityReasonTextArea . '<br/>' );
+		$this->priorityLanguagesForm( $page );
 
 		$wgOut->addHTML(
 			Xml::submitButton( wfMsg( 'tpt-submit' ) ) .
 			Xml::closeElement( 'form' )
+		);
+	}
+
+	protected function priorityLanguagesForm( TranslatablePage $page ) {
+		global $wgOut, $wgContLang, $wgLang;
+		$groupId = $page->getMessageGroupId();
+		$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-prioritylangs' );
+
+		$langSelector = Xml::languageSelector( $wgContLang->getCode(), false, $wgLang->getCode() );
+
+		$hLangs = Xml::inputLabelSep(
+			wfMsg( 'tpt-select-prioritylangs' ),
+			'prioritylangs', // name
+			'tpt-prioritylangs', // id
+			50,
+			TranslateMetadata::get( $groupId, 'prioritylangs' )
+		);
+
+		$hForce = Xml::checkLabel(
+			wfMsg( 'tpt-select-prioritylangs-force' ),
+			'forcelimit', // name
+			'tpt-priority-forcelimit', // id
+			TranslateMetadata::get( $groupId, 'priorityforce' ) === 'on'
+		);
+
+		$hReason = Xml::inputLabelSep(
+			wfMsg( 'tpt-select-prioritylangs-reason' ),
+			'priorityreason', // name
+			'tpt-priority-reason', // id
+			50, // size
+			TranslateMetadata::get( $groupId, 'priorityreason' )
+		);
+
+		$wgOut->addHTML(
+			"<table>" .
+			"<tr><td class='mw-label'>$hLangs[0]</td><td class='mw-input'>$hLangs[1]$langSelector[1]</td></tr>" .
+			"<tr><td></td><td class='mw-inout'>$hForce</td></tr>" .
+			"<tr><td class='mw-label'>$hReason[0]</td><td class='mw-input'>$hReason[1]</td></tr>" .
+			"</table>"
 		);
 	}
 
@@ -636,11 +661,6 @@ class SpecialPageTranslation extends SpecialPage {
 		$page->addMarkedTag( $newrevision, $changed );
 		$this->addFuzzyTags( $page, $changed );
 
-		// Save the priority languages if any
-		$priorityLangs = trim( $wgRequest->getVal( 'prioritylangs' ) );
-		$priorityForce = $wgRequest->getVal( 'forcelimit' );
-		$priorityReason = $wgRequest->getVal( 'priorityreason' );
-
 		global $wgUser;
 		$logger = new LogPage( 'pagetranslation' );
 		$params = array(
@@ -649,17 +669,19 @@ class SpecialPageTranslation extends SpecialPage {
 			'changed' => count( $changed ),
 		);
 		$logger->addEntry( 'mark', $page->getTitle(), null, array( serialize( $params ) ) );
-		if (  $priorityLangs ) {
+
+
+		// Save the priority languages if any
+		$priorityLangs = trim( $wgRequest->getVal( 'prioritylangs' ) );
+		$priorityForce = $wgRequest->getCheck( 'forcelimit' );
+		$priorityReason = $wgRequest->getVal( 'priorityreason' );
+		// FIXME: does not log removals
+		if ( $priorityLangs ) {
 			$groupId = $page->getMessageGroupId();
+			// FIXME: does not normalise input to a,b,c,d
 			TranslateMetadata::set( $groupId, 'prioritylangs', trim( $priorityLangs, ',' ) );
-			if ( $priorityForce ) {
-				TranslateMetadata::set( $groupId, 'priorityforce', $priorityForce );
-			} else {
-				TranslateMetadata::set( $groupId, 'priorityforce', 'off' );
-			}
-			if ( trim( $priorityReason ) ) {
-				TranslateMetadata::set( $groupId, 'priorityreason', $priorityReason );
-			}
+			TranslateMetadata::set( $groupId, 'priorityforce', $priorityForce ? 'on' : 'off' );
+			TranslateMetadata::set( $groupId, 'priorityreason', trim( $priorityReason ) );
 			$params = array(
 				'user' => $wgUser->getName(),
 				'languages' => $priorityLangs,
