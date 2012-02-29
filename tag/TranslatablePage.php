@@ -617,15 +617,15 @@ class TranslatablePage {
 	}
 
 	public function getTranslationPercentages( $force = false ) {
-		// Check the memory cache, as this is very slow to calculate
-		global $wgMemc, $wgRequest;
+		global $wgRequest;
 
+		// Check the cache, as this is relatively slow to calculate
 		$memcKey = wfMemcKey( 'pt', 'status', $this->getTitle()->getPrefixedText() );
-		$cache = $wgMemc->get( $memcKey );
+		$cached = wfGetCache( CACHE_ANYTHING )->get( $memcKey );
 
 		$force = $force || $wgRequest->getText( 'action' ) === 'purge';
-		if ( !$force && is_array( $cache ) ) {
-			return $cache;
+		if ( !$force && is_array( $cached ) ) {
+			return $cached;
 		}
 
 		$titles = $this->getTranslationPages();
@@ -653,7 +653,7 @@ class TranslatablePage {
 
 		$temp[$wgContLang->getCode()] = 1.00;
 
-		$wgMemc->set( $memcKey, $temp, 60 * 60 * 12 );
+		wfGetCache( CACHE_ANYTHING )->set( $memcKey, $temp, 60 * 60 * 12 );
 
 		return $temp;
 	}
