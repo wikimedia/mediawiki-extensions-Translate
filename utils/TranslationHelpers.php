@@ -449,8 +449,6 @@ class TranslationHelpers {
 	}
 
 	protected function getMicrosoftSuggestion( $serviceName, $config ) {
-		global $wgMemc;
-
 		$this->mustHaveDefinition();
 		self::checkTranslationServiceFailure( $serviceName );
 
@@ -459,7 +457,7 @@ class TranslationHelpers {
 		$definition = self::wrapUntranslatable( $definition );
 
 		$memckey = wfMemckey( 'translate-tmsug-badcodes-' . $serviceName );
-		$unsupported = $wgMemc->get( $memckey );
+		$unsupported = wfGetCache( CACHE_ANYTHING )->get( $memckey );
 
 		if ( isset( $unsupported[$code] ) ) {
 			return null;
@@ -496,7 +494,7 @@ class TranslationHelpers {
 			$error = $req->getContent();
 			if ( strpos( $error, 'must be a valid language' ) !== false ) {
 				$unsupported[$code] = true;
-				$wgMemc->set( $memckey, $unsupported, 60 * 60 * 8 );
+				wfGetCache( CACHE_ANYTHING )->set( $memckey, $unsupported, 60 * 60 * 8 );
 				return null;
 			}
 
@@ -531,8 +529,6 @@ class TranslationHelpers {
 	}
 
 	protected function getApertiumSuggestion( $serviceName, $config ) {
-		global $wgMemc;
-
 		self::checkTranslationServiceFailure( $serviceName );
 
 		$page = $this->handle->getKey();
@@ -540,7 +536,7 @@ class TranslationHelpers {
 		$ns = $this->handle->getTitle()->getNamespace();
 
 		$memckey = wfMemckey( 'translate-tmsug-pairs-' . $serviceName );
-		$pairs = $wgMemc->get( $memckey );
+		$pairs = wfGetCache( CACHE_ANYTHING )->get( $memckey );
 
 		if ( !$pairs ) {
 
@@ -564,7 +560,7 @@ class TranslationHelpers {
 				$pairs[$target][$source] = true;
 			}
 
-			$wgMemc->set( $memckey, $pairs, 60 * 60 * 24 );
+			wfGetCache( CACHE_ANYTHING )->set( $memckey, $pairs, 60 * 60 * 24 );
 		}
 
 		if ( isset( $config['codemap'][$code] ) ) {
@@ -1258,10 +1254,8 @@ class TranslationHelpers {
 	 * @return bool
 	 */
 	public static function checkTranslationServiceFailure( $service ) {
-		global $wgMemc;
-
 		$key = wfMemckey( "translate-service-$service" );
-		$value = $wgMemc->get( $key );
+		$value = wfGetCache( CACHE_ANYTHING )->get( $key );
 		if ( !is_string( $value ) ) {
 			return false;
 		}
@@ -1271,7 +1265,7 @@ class TranslationHelpers {
 			if ( $count >= self::$serviceFailureCount ) {
 				error_log( "Translation service $service (was) restored" );
 			}
-			$wgMemc->delete( $key );
+			wfGetCache( CACHE_ANYTHING )->delete( $key );
 			return false;
 		} elseif ( $failed + self::$serviceFailurePeriod < wfTimestamp() ) {
 			/* We are in suspicious mode and one failure is enough to update
@@ -1291,10 +1285,8 @@ class TranslationHelpers {
 	 * @param $service
 	 */
 	public static function reportTranslationServiceFailure( $service ) {
-		global $wgMemc;
-
 		$key = wfMemckey( "translate-service-$service" );
-		$value = $wgMemc->get( $key );
+		$value = wfGetCache( CACHE_ANYTHING )->get( $key );
 		if ( !is_string( $value ) ) {
 			$count = 0;
 		} else {
@@ -1303,7 +1295,7 @@ class TranslationHelpers {
 
 		$count += 1;
 		$failed = wfTimestamp();
-		$wgMemc->set( $key, "$count|$failed", self::$serviceFailurePeriod * 5 );
+		wfGetCache( CACHE_ANYTHING )->set( $key, "$count|$failed", self::$serviceFailurePeriod * 5 );
 
 		if ( $count == self::$serviceFailureCount ) {
 			error_log( "Translation service $service suspended" );
