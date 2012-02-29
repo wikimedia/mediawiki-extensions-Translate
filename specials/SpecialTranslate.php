@@ -142,13 +142,14 @@ class SpecialTranslate extends SpecialPage {
 			}
 			$priorityLangs = array_flip( explode( ',', TranslateMetadata::get( $this->group->getId(), 'prioritylangs' ) ) );
 			$priorityForce = TranslateMetadata::get( $this->group->getId(), 'priorityforce' );
-			if ( count( $priorityLangs ) > 0 && !isset( $priorityLangs[$this->options['language']]  ) ) {
+			if ( !isset( $priorityLangs[$this->options['language']] ) ) {
 				$priorityReason = TranslateMetadata::get( $this->group->getId(), 'priorityreason' );
-				if ( $priorityForce == 'on' ) {
+				if ( $priorityForce === 'on' ) {
+					// Hide table
 					$this->paging['count'] = 0;
-					$description .= '<p>' . wfMsg( 'tpt-discouraged-language-force' ) . '</p>' . $priorityReason ;
+					$description .= wfMessage( 'tpt-discouraged-language-force', $priorityReason )->parseAsBlock();
 				} else {
-					$description .= '<p>' . wfMsg( 'tpt-discouraged-language' ) . '</p>' . $priorityReason;
+					$description .= wfMessage( 'tpt-discouraged-language', $priorityReason )->parseAsBlock();
 				}
 			}
 			if ( $description ) {

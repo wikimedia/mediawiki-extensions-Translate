@@ -97,8 +97,12 @@ This page is a translation of page [[$1]] and the translation can be updated usi
 	'tpt-unknown-page' => 'This namespace is reserved for content page translations.
 The page you are trying to edit does not seem to correspond any page marked for translation.',
 	'tpt-translation-restricted' => 'Translation of this message group to this language has been prevented by translation administrator.',
-	'tpt-discouraged-language-force' => 'Translation administrator has limited the languages this message group can be translated to. This languages is not among those languegs.',
-	'tpt-discouraged-language' => 'This language is not among the priority languages set by translation administrator for this message group.',
+	'tpt-discouraged-language-force' => 'Translation administrator has limited the languages this message group can be translated to. This languages is not among those languages.
+
+Reason for limiting: $1',
+	'tpt-discouraged-language' => 'This language is not among the priority languages set by translation administrator for this message group
+
+Reason for prioritization: $1',
 
 	'tpt-render-summary' => 'Updating to match new version of source page',
 
