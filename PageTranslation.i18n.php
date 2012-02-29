@@ -96,9 +96,9 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 This page is a translation of page [[$1]] and the translation can be updated using [$2 the translation tool].',
 	'tpt-unknown-page' => 'This namespace is reserved for content page translations.
 The page you are trying to edit does not seem to correspond any page marked for translation.',
-	'tpt-translation-restricted' => 'Translation of this group to this language has been prevented by translation administrator.',
-	'tpt-discouraged-language-force' => 'Translation administrator prevented translation of this group to this language.',
-	'tpt-discouraged-language' => 'Translation administrator discourage translation of this group to this language.',
+	'tpt-translation-restricted' => 'Translation of this message group to this language has been prevented by translation administrator.',
+	'tpt-discouraged-language-force' => 'Translation administrator has limited the languages this message group can be translated to. This languages is not among those languegs.',
+	'tpt-discouraged-language' => 'This language is not among the priority languages set by translation administrator for this message group.',
 
 	'tpt-render-summary' => 'Updating to match new version of source page',
 
@@ -127,8 +127,8 @@ Section text: <pre>$1</pre>',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|encountered}} a problem while deleting translatable page [[:$1]]',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|completed}} deletion of translation page $1',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|encountered}} a problem while deleting translation page [[:$1]]',
-	'pt-log-priority-langs' => '{{GENDER:$2|set}} preferred languages for translation page [[:$1]] as $3',
-	'pt-log-priority-langs-force' => '{{GENDER:$2|restricted}} languages for translation page [[:$1]] as $3',
+	'pt-log-priority-langs' => '{{GENDER:$2|set}} the priority languages for translatable page [[:$1]] to $3',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|limited}} languages for translatable page [[:$1]] to $3',
 
 
 	# move page replacement
