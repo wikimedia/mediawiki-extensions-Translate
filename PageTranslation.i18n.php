@@ -101,7 +101,7 @@ The page you are trying to edit does not seem to correspond any page marked for 
 	'tpt-discouraged-language-force' => 'Translation administrator has limited the languages this message group can be translated to. This language is not among those languages.
 
 Reason for limiting: $1',
-	'tpt-discouraged-language' => 'This language is not among the priority languages set by translation administrator for this message group
+	'tpt-discouraged-language' => 'This language is not among the priority languages set by translation administrator for this message group.
 
 Reason for prioritization: $1',
 
