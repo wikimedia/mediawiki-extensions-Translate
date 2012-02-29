@@ -140,7 +140,17 @@ class SpecialTranslate extends SpecialPage {
 			if ( $status !== false ) {
 				$description = $status . $description;
 			}
-
+			$priorityLangs = array_flip( explode( ',', TranslateMetadata::get( $this->group->getId(), 'prioritylangs' ) ) );
+			$priorityForce = TranslateMetadata::get( $this->group->getId(), 'priorityforce' );
+			if ( count( $priorityLangs ) > 0 && !isset( $priorityLangs[$this->options['language']]  ) ) {
+				$priorityReason = TranslateMetadata::get( $this->group->getId(), 'priorityreason' );
+				if ( $priorityForce == 'on' ) {
+					$this->paging['count'] = 0;
+					$description .= '<p>' . wfMsg( 'tpt-discouraged-language-force' ) . '</p>' . $priorityReason ;
+				} else {
+					$description .= '<p>' . wfMsg( 'tpt-discouraged-language' ) . '</p>' . $priorityReason;
+				}
+			}
 			if ( $description ) {
 				$description = Xml::fieldset( wfMsg( 'translate-page-description-legend' ), $description );
 			}
@@ -149,7 +159,7 @@ class SpecialTranslate extends SpecialPage {
 
 			if ( $this->paging['count'] === 0 ) {
 				$wgOut->addHTML( $description . $links );
-			} elseif( $this->paging['count'] === $this->paging['total']  ) {
+			} elseif ( $this->paging['count'] === $this->paging['total']  ) {
 				$wgOut->addHTML( $description . $output . $links );
 			} else {
 				$wgOut->addHTML( $description . $links . $output . $links );
@@ -214,7 +224,7 @@ class SpecialTranslate extends SpecialPage {
 				} else {
 					$defaults['task'] = 'reviewall';
 				}
-			} elseif( $nondefaults['taction'] === 'export' ) {
+			} elseif ( $nondefaults['taction'] === 'export' ) {
 				$defaults['task'] = '';
 			}
 		}
@@ -655,7 +665,7 @@ class SpecialTranslate extends SpecialPage {
 		if ( trim( $sub ) !== '' ) {
 			if ( $alias === 'Translate' || $alias === 'MessageGroupStats' ) {
 				$params['group'] = $sub;
-			} elseif( $alias === 'LanguageStats' ) {
+			} elseif ( $alias === 'LanguageStats' ) {
 				// Breaks if additional parameters besides language are code provided
 				$params['language'] = $sub;
 			}
