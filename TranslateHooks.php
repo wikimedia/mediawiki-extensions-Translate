@@ -67,6 +67,7 @@ class TranslateHooks {
 			$wgLogActionsHandlers['pagetranslation/deletefok'] = 'PageTranslationHooks::formatLogEntry';
 			$wgLogActionsHandlers['pagetranslation/deletelnok'] = 'PageTranslationHooks::formatLogEntry';
 			$wgLogActionsHandlers['pagetranslation/deletefnok'] = 'PageTranslationHooks::formatLogEntry';
+			$wgLogActionsHandlers['pagetranslation/prioritylanguages'] = 'PageTranslationHooks::formatLogEntry';
 
 			global $wgJobClasses;
 			$wgJobClasses['RenderJob'] = 'RenderJob';

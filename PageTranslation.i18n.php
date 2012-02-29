@@ -123,6 +123,8 @@ Section text: <pre>$1</pre>',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|encountered}} a problem while deleting translatable page [[:$1]]',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|completed}} deletion of translation page $1',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|encountered}} a problem while deleting translation page [[:$1]]',
+	'pt-log-priority-langs' => '{{GENDER:$2|set}} preferred languages for translation page [[:$1]] as $3',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|restricted}} languages for translation page [[:$1]] as $3',
 
 
 	# move page replacement
@@ -256,6 +258,8 @@ $3 is an URL.',
 	'pt-log-unmark' => 'Used on [[Special:Log/pagetranslation]]',
 	'pt-log-moveok' => 'Used on [[Special:Log/pagetranslation]]',
 	'pt-log-movenok' => 'Used on [[Special:Log/pagetranslation]]',
+	'pt-log-priority-langs' => 'Used on [[Special:Log/pagetranslation]]. $3 is comma seperated list of languages.',
+	'pt-log-priority-langs-force' => 'Used on [[Special:Log/pagetranslation]]. $3 is comma seperated list of languages.',
 	'pt-movepage-block-base-exists' => "'''base page''' refers to the untranslated version of the translatable page.",
 	'pt-movepage-block-tp-exists' => 'translation page is a translated version of a translatable page',
 	'pt-movepage-block-section-exists' => 'Section page is a translation of one section. Translation page consists of many translation sections.',
