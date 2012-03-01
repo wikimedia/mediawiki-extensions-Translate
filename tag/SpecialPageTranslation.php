@@ -671,24 +671,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$logger->addEntry( 'mark', $page->getTitle(), null, array( serialize( $params ) ) );
 
 
-		// Save the priority languages if any
-		$priorityLangs = trim( $wgRequest->getVal( 'prioritylangs' ) );
-		$priorityForce = $wgRequest->getCheck( 'forcelimit' );
-		$priorityReason = $wgRequest->getVal( 'priorityreason' );
-		// FIXME: does not log removals
-		if ( $priorityLangs ) {
-			$groupId = $page->getMessageGroupId();
-			// FIXME: does not normalise input to a,b,c,d
-			TranslateMetadata::set( $groupId, 'prioritylangs', trim( $priorityLangs, ',' ) );
-			TranslateMetadata::set( $groupId, 'priorityforce', $priorityForce ? 'on' : 'off' );
-			TranslateMetadata::set( $groupId, 'priorityreason', trim( $priorityReason ) );
-			$params = array(
-				'user' => $wgUser->getName(),
-				'languages' => $priorityLangs,
-				'force' => $priorityForce,
-			);
-			$logger->addEntry( 'prioritylanguages', $page->getTitle(), null, array( serialize( $params ) ) );
-		}
+		$this->handlePriorityLanguages( $wgRequest, $page, $wgUser );
 
 		$page->getTitle()->invalidateCache();
 		$this->setupRenderJobs( $page );
@@ -697,6 +680,44 @@ class SpecialPageTranslation extends SpecialPage {
 		MessageGroups::clearCache();
 		MessageIndexRebuildJob::newJob()->insert();
 		return false;
+	}
+
+	protected function handlePriorityLanguages( WebRequest $request, TranslatablePage $page, User $user ) {
+		// new priority languages
+		$npLangs = trim( $request->getVal( 'prioritylangs' ) );
+		$npForce = $request->getCheck( 'forcelimit' ) ? 'on' : 'off';
+		$npReason = trim( $request->getText( 'priorityreason' ) );
+
+		// Normalize
+		$npLangs = array_map( 'trim', explode( ',', $npLangs ) );
+		$npLangs = array_unique( $npLangs );
+		$npLangs = implode( ',', $npLangs );
+		if ( $npLangs === '' ) {
+			$npLangs = false;
+			$npForce = false;
+			$npReason = false;
+		}
+
+		$groupId = $page->getMessageGroupId();
+		// old priority languages
+		$opLangs = TranslateMetadata::get( $groupId, 'prioritylangs' );
+		$opForce = TranslateMetadata::get( $groupId, 'priorityforce' );
+		$opReason = TranslateMetadata::get( $groupId, 'priorityreason' );
+
+		TranslateMetadata::set( $groupId, 'prioritylangs', $npLangs );
+		TranslateMetadata::set( $groupId, 'priorityforce', $npForce );
+		TranslateMetadata::set( $groupId, 'priorityreason', $npReason );
+
+		if ( $opLangs !== $npLangs || $opForce !== $npForce || $opReason !== $npReason ) {
+			$params = array(
+				'user' => $user->getName(),
+				'languages' => $npLangs,
+				'force' => $npForce,
+				'reason' => $npReason,
+			);
+			$logger = new LogPage( 'pagetranslation' );
+			$logger->addEntry( 'prioritylanguages', $page->getTitle(), null, array( serialize( $params ) ) );
+		}
 	}
 
 	/**

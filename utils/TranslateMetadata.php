@@ -33,7 +33,12 @@ class TranslateMetadata {
 	public static function set( $group, $key, $value ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$data = array( 'tmd_group' => $group, 'tmd_key' => $key, 'tmd_value' => $value );
-		$dbw->replace( 'translate_metadata', array( array( 'tmd_group', 'tmd_key' ) ), $data, __METHOD__ );
+		if ( $value === false ) {
+			unset( $data['tmd_value'] );
+			$dbw->delete( 'translate_metadata', $data );
+		} else {
+			$dbw->replace( 'translate_metadata', array( array( 'tmd_group', 'tmd_key' ) ), $data, __METHOD__ );
+		}
 	}
 
 }
