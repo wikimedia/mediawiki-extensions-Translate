@@ -264,6 +264,13 @@ $messages['ba'] = array(
 Әгәр һеҙ яңылыҡтар алырға теләмәһәгеҙ, һеҙ унан [[Special:Preferences|көйләүҙәр битендә]],  «{{int:prefs-personal}}» бүлегендә баш тарта алаһығыҙ.',
 );
 
+/** Bavarian (Boarisch)
+ * @author Mucalexx
+ */
+$messages['bar'] = array(
+	'firststeps' => "D' erschten Schriet",
+);
+
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
