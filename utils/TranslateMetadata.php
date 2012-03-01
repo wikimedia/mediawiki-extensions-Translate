@@ -18,10 +18,19 @@ class TranslateMetadata {
 	 * @return String
 	 */
 	public static function get( $group, $key ) {
-		$dbr = wfGetDB( DB_SLAVE );
-		$conds = array( 'tmd_group' => $group, 'tmd_key' => $key );
-		$result = $dbr->selectField( 'translate_metadata', 'tmd_value', $conds, __METHOD__ );
-		return $result;
+		static $cache = null;
+		if ( $cache === null ) {
+			$dbr = wfGetDB( DB_SLAVE );
+			$cache = $dbr->select( 'translate_metadata', '*', array(), __METHOD__ );
+		}
+
+		foreach ( $cache as $row ) {
+			if ( $row->tmd_group === $group && $row->tmd_key === $key ) {
+				return $row->tmd_value;
+			}
+		}
+
+		return false;
 	}
 
 	/**
