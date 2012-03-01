@@ -1333,22 +1333,17 @@ class MessageGroups {
 	/**
 	 * Get message groups for corresponding message group ids.
 	 *
-	 * @param $ids array Group IDs
-	 * @param $skipMeta bool Skip aggregate message groups
-	 * @return array
+	 * @param $ids array of message group ids
+	 * @return array array of message groups indexed by message group ids
 	 * @since 2012-02-13
 	 */
-	public static function getGroupsById( array $ids, $skipMeta = false ) {
+	public static function getGroupsById( array $ids ) {
 		$groups = array();
 		foreach ( $ids as $id ) {
 			$group = self::getGroup( $id );
 
 			if ( $group !== null ) {
-				if ( $skipMeta && $group->isMeta() ) {
-					continue;
-				} else {
-					$groups[$id] = $group;
-				}
+				$groups[$id] = $group;
 			} else {
 				wfDebug( __METHOD__ . ": Invalid message group id: $id\n" );
 			}
