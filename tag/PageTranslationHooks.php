@@ -551,10 +551,11 @@ FOO;
 		$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per ) );
 
 		if ( floor( $per ) < 100 ) {
-			$group = $page->getMessageGroup();
-			$collection = $group->initCollection( $code );
-			$collection->filter( 'fuzzy', false );
-			if ( count( $collection ) ) {
+			$groupId = $page->getMessageGroup()->getId();
+			$stats = MessageGroupStats::forItem( $groupId, $code );
+			$fuzzy = $stats[MessageGroupStats::FUZZY];
+			if ( $fuzzy ) {
+				// Only show if there is fuzzy messages
 				$wrap = '<div class="mw-translate-page-info mw-translate-fuzzy">$1</div>';
 				$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro-fuzzy' ) );
 			}
