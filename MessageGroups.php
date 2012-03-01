@@ -898,7 +898,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		// "MediaWiki:Tp-custom-<group ID>".
 		$customText = '';
 		$customMessage = wfMessage( 'tp-custom-' . $this->id )->inContentLanguage();
-		if( $customMessage->exists() ) {
+		if ( $customMessage->exists() ) {
 			$customText = $customMessage->plain();
 		}
 
@@ -1344,7 +1344,7 @@ class MessageGroups {
 			$group = self::getGroup( $id );
 
 			if ( $group !== null ) {
-				if( $skipMeta && $group->isMeta() ) {
+				if ( $skipMeta && $group->isMeta() ) {
 					continue;
 				} else {
 					$groups[$id] = $group;
