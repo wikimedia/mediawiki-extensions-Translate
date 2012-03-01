@@ -201,7 +201,13 @@ class TTMServer implements iTTMServer  {
 			$b = $row->tms_text;
 			$lenB = mb_strlen( $b );
 			$len = min( $lenA, $lenB );
-			$dist = self::levenshtein_php( $a, $b, $lenA, $lenB );
+			if ( $len > 1000 ) {
+				// two strings of length 1500 ~ 10s
+				// two strings of length 2250 ~ 30s
+				$dist = $len;
+			} else {
+				$dist = self::levenshtein( $a, $b, $lenA, $lenB );
+			}
 			$quality = 1 - ( $dist / $len );
 
 			if ( $quality >= $this->config['cutoff'] ) {
@@ -261,7 +267,7 @@ class TTMServer implements iTTMServer  {
 	/**
 	 * The native levenshtein is limited to 255 bytes.
 	 */
-	function levenshtein_php( $str1, $str2, $length1, $length2 ) {
+	public static function levenshtein( $str1, $str2, $length1, $length2 ) {
 		if ( $length1 == 0 ) return $length2;
 		if ( $length2 == 0 ) return $length1;
 		if ( $str1 === $str2 ) return 0;
