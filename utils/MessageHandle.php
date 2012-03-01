@@ -28,8 +28,8 @@ class MessageHandle {
 	}
 
 	/**
-	 * Check if a title is in a message namespace.
-	 * @return bool If title is in a message namespace.
+	 * Check if this handle is in a message namespace.
+	 * @return bool
 	 */
 	public function isMessageNamespace() {
 		global $wgTranslateMessageNamespaces;
@@ -38,7 +38,8 @@ class MessageHandle {
 	}
 
 	/**
-	 * @return Array of the message and the language
+	 * Recommended to use getCode and getKey instead.
+	 * @return Array of the message key and the language code
 	 */
 	public function figureMessage() {
 		if ( $this->key === null ) {
@@ -61,6 +62,7 @@ class MessageHandle {
 	}
 
 	/**
+	 * Returns the identified or guessed message key.
 	 * @return String
 	 */
 	public function getKey() {
@@ -69,6 +71,8 @@ class MessageHandle {
 	}
 
 	/**
+	 * Returns the language code.
+	 * For language codeless source messages will return empty string.
 	 * @return String
 	 */
 	public function getCode() {
@@ -87,12 +91,20 @@ class MessageHandle {
 
 	/**
 	 * Determine whether the current handle is for page translation feature.
+	 * This does not consider whether the handle corresponds to any message.
 	 * @return bool
 	 */
 	public function isPageTranslation() {
 		return $this->getTitle()->getNamespace() == NS_TRANSLATIONS;
 	}
 
+	/**
+	 * Returns all message group ids this message belongs to.
+	 * The primary message group id is always the first one.
+	 * If the handle does not correspond to any message, the returned array 
+	 * is empty.
+	 * @return array
+	 */
 	public function getGroupIds() {
 		if ( $this->groupIds === null ) {
 			$this->groupIds = TranslateUtils::messageKeyToGroups( $this->getTitle()->getNamespace(), $this->getKey() );
@@ -111,17 +123,18 @@ class MessageHandle {
 	}
 
 	/**
-	 * Checks if the title corresponds to a known message.
+	 * Checks if the handle corresponds to a known message.
 	 * @since 2011-03-16
-	 * @return \bool
+	 * @return bool
 	 */
 	public function isValid() {
 		return $this->isMessageNamespace() && $this->getGroupIds();
 	}
 
 	/**
+	 * Get the original title.
 	 * @return Title
-	*/
+	 */
 	public function getTitle() {
 		return $this->title;
 	}
@@ -129,8 +142,8 @@ class MessageHandle {
 	/**
 	 * Check if a string contains the fuzzy string.
 	 *
-	 * @param $text \string Arbitrary text
-	 * @return \bool If string contains fuzzy string.
+	 * @param $text string Arbitrary text
+	 * @return bool If string contains fuzzy string.
 	 */
 	public static function hasFuzzyString( $text ) {
 		return strpos( $text, TRANSLATE_FUZZY ) !== false;
@@ -154,7 +167,6 @@ class MessageHandle {
 		);
 
 		$res = $dbr->selectField( $tables, $field, $conds, __METHOD__ );
-
 		return $res !== false;
 	}
 
