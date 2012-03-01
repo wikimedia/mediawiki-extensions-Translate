@@ -109,15 +109,11 @@ if ( !count( $groups ) ) {
 
 foreach ( $groups as $groupId => $group ) {
 	if ( !$group instanceof MessageGroup ) {
-		STDERR( "Unknown message group $groupId" );
+		STDERR( "Invalid group: " . $groupId );
 		exit( 1 );
 	}
 
-	if ( $group->isMeta() ) {
-		STDERR( "Skipping meta message group $groupId" );
-	}
-
-	STDERR( "Exporting $groupId" );
+	STDERR( 'Exporting ' . $groupId );
 
 	$langs = $reqLangs;
 	if ( $threshold ) {
