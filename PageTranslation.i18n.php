@@ -65,7 +65,7 @@ but no version of {{PLURAL:$1|this page is|these pages are}} currently marked fo
 but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|This page has|These pages have}} been discouraged from further translation.',
 
-	'tpt-select-prioritylangs' => 'Comma separated list of language codes:',
+	'tpt-select-prioritylangs' => 'Comma-separated list of language codes:',
 	'tpt-select-prioritylangs-force' => 'Prevent translations to other languages',
 	'tpt-select-prioritylangs-reason' => 'Reason:',
 	'tpt-sections-prioritylangs' => 'Priority languages',
