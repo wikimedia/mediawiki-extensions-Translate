@@ -97,7 +97,9 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 This page is a translation of page [[$1]] and the translation can be updated using [$2 the translation tool].',
 	'tpt-unknown-page' => 'This namespace is reserved for content page translations.
 The page you are trying to edit does not seem to correspond any page marked for translation.',
-	'tpt-translation-restricted' => 'Translation of this message group to this language has been prevented by translation administrator.',
+	'tpt-translation-restricted' => 'Translation of this message group to this language has been prevented by translation administrator.
+
+Reason for limiting: $1',
 	'tpt-discouraged-language-force' => 'Translation administrator has limited the languages this message group can be translated to. This language is not among those languages.
 
 Reason for limiting: $1',

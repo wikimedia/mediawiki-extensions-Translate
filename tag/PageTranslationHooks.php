@@ -370,18 +370,39 @@ FOO;
 				$result = array( 'tpt-unknown-page' );
 				return false;
 			}
-			$priorityLangs = TranslateMetadata::get(  $handle->getGroup()->getId() , 'prioritylangs' );
-			$priorityForce = TranslateMetadata::get(  $handle->getGroup()->getId() , 'priorityforce' );
-			if ( strlen( $priorityLangs ) > 0 && $priorityForce ) {
-				$filter = array_flip( explode ( ',', $priorityLangs ) );
-				if ( count( $filter ) > 0 && !isset( $filter[$handle->getCode()] ) ) {
-					$result = array( 'tpt-translation-restricted' );
-					return false;
-				}
-			}
 		}
 		return true;
 	}
+
+	/**
+	 * Prevent editing of restricted languages
+	 * Hook: getUserPermissionsErrorsExpensive
+	 * @since 2012-03-01
+	 */
+	public static function preventRestrictedTranslations( Title $title, User $user, $action, &$result ) {
+		$handle = new MessageHandle( $title );
+		if ( !$handle->isValid() ) {
+			return true;
+		}
+
+		$groupId = $handle->getGroup()->getId();
+		$priorityForce = TranslateMetadata::get( $groupId, 'priorityforce' );
+		if ( !$priorityForce ) {
+			return true;
+		}
+
+		$priorityLangs = TranslateMetadata::get( $groupId, 'prioritylangs' );
+		$priorityReason = TranslateMetadata::get( $groupId, 'priorityreason' );
+		$filter = array_flip( explode( ',', $priorityLangs ) );
+		if ( !isset( $filter[$handle->getCode()] ) ) {
+			$result = array( 'tpt-translation-restricted', $priorityReason );
+			return false;
+		}
+
+		return true;
+	}
+
+
 
 	/**
 	 * Prevent editing of translation pages directly.
