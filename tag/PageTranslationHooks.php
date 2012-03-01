@@ -205,6 +205,8 @@ class PageTranslationHooks {
 		if ( $filter !== null ) {
 			// If translation is restricted to some languages, only show them
 			if ( $priorityForce === 'on' ) {
+				// Do not filter the source language link
+				$filter[$page->getMessageGroup()->getSourceLanguage()] = true;
 				$status = array_intersect_key( $status, $filter );
 			}
 			foreach ( $filter as $langCode => $value ) {
