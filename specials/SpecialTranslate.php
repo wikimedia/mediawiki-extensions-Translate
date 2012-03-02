@@ -142,7 +142,7 @@ class SpecialTranslate extends SpecialPage {
 			}
 			$priorityLangs = array_flip( explode( ',', TranslateMetadata::get( $this->group->getId(), 'prioritylangs' ) ) );
 			$priorityForce = TranslateMetadata::get( $this->group->getId(), 'priorityforce' );
-			if ( !isset( $priorityLangs[$this->options['language']] ) ) {
+			if ( count( $priorityLangs ) && !isset( $priorityLangs[$this->options['language']] ) ) {
 				$priorityReason = TranslateMetadata::get( $this->group->getId(), 'priorityreason' );
 				if ( $priorityForce === 'on' ) {
 					// Hide table
