@@ -88,11 +88,13 @@ class SpecialPageTranslation extends SpecialPage {
 
 			if ( $action === 'encourage' ) {
 				$dbw->delete( $table, $row, __METHOD__ );
-				$logger->addEntry( 'encourage', $page->getTitle(), null, array( serialize( $params ) ) );
+				// @todo Check if page is currently actually discouraged to prevent duplicate log entries.
+				$logger->addEntry( 'encourage', $title, null, array( serialize( $params ) ) );
 			} else {
 				$index = array( 'tgr_group', 'tgr_lang' );
 				$dbw->replace( $table, array( $index ), $row, __METHOD__ );
-				$logger->addEntry( 'discourage', $page->getTitle(), null, array( serialize( $params ) ) );
+				// @todo Check if page is currently actually discouraged to prevent duplicate log entries.
+				$logger->addEntry( 'discourage', $title, null, array( serialize( $params ) ) );
 			}
 
 			$this->listPages();
