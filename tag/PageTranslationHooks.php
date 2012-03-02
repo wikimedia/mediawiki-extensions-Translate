@@ -608,6 +608,10 @@ FOO;
 			return wfMsgExt( 'pt-log-delete-full-ok', $opts, $title->getPrefixedText(), $user );
 		} elseif ( $action === 'deletelok' ) {
 			return wfMsgExt( 'pt-log-delete-lang-ok', $opts, $title->getPrefixedText(), $user );
+		} elseif ( $action === 'encourage' ) {
+			return wfMsgExt( 'pt-log-encourage', $opts, $title->getPrefixedText(), $user );
+		} elseif ( $action === 'discourage' ) {
+			return wfMsgExt( 'pt-log-discourage', $opts, $title->getPrefixedText(), $user );
 		} elseif ( $action === 'prioritylanguages' ) {
 			if ( $_['languages'] === false ) {
 				return wfMsgExt( 'pt-log-priority-langs-unset', $opts, $title->getPrefixedText(), $user );

@@ -134,10 +134,11 @@ Section text: <pre>$1</pre>',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|encountered}} a problem while deleting translatable page [[:$1]]',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|completed}} deletion of translation page $1',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|encountered}} a problem while deleting translation page [[:$1]]',
+	'pt-log-encourage' => '{{GENDER:$2|encouraged}} translation for page [[:$1]]',
+	'pt-log-discourage' => '{{GENDER:$2|discouraged}} translation for page [[:$1]]',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|removed}} priority languages from translatable page [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|set}} the priority languages for translatable page [[:$1]] to $3',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|limited}} languages for translatable page [[:$1]] to $3',
-
 
 	# move page replacement
 	'pt-movepage-title' => 'Move translatable page $1',

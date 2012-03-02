@@ -83,11 +83,16 @@ class SpecialPageTranslation extends SpecialPage {
 				'tgr_state' => 'discouraged',
 			);
 
+			$logger = new LogPage( 'pagetranslation' );
+			$params = array( 'user' => $wgUser->getName() );
+
 			if ( $action === 'encourage' ) {
 				$dbw->delete( $table, $row, __METHOD__ );
+				$logger->addEntry( 'encourage', $page->getTitle(), null, array( serialize( $params ) ) );
 			} else {
 				$index = array( 'tgr_group', 'tgr_lang' );
 				$dbw->replace( $table, array( $index ), $row, __METHOD__ );
+				$logger->addEntry( 'discourage', $page->getTitle(), null, array( serialize( $params ) ) );
 			}
 
 			$this->listPages();
@@ -315,7 +320,6 @@ class SpecialPageTranslation extends SpecialPage {
 			}
 			$out->addHtml( '</ol>' );
 		}
-
 	}
 
 	/**
