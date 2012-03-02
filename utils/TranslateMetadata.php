@@ -50,7 +50,6 @@ class TranslateMetadata {
 			$dbw->replace( 'translate_metadata', array( array( 'tmd_group', 'tmd_key' ) ), $data, __METHOD__ );
 		}
 
-		$this->cache = null;
+		self::$cache = null;
 	}
-
 }
