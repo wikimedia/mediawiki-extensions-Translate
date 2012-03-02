@@ -22,7 +22,7 @@ class TranslateMetadata {
 	public static function get( $group, $key ) {
 		if ( self::$cache === null ) {
 			$dbr = wfGetDB( DB_SLAVE );
-			$cache = $dbr->select( 'translate_metadata', '*', array(), __METHOD__ );
+			self::$cache = $dbr->select( 'translate_metadata', '*', array(), __METHOD__ );
 		}
 
 		foreach ( self::$cache as $row ) {
