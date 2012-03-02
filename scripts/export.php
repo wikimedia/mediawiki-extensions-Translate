@@ -100,7 +100,7 @@ if ( isset( $options['group'] ) ) {
 }
 
 $groupIds = MessageGroups::expandWildcards( $groupIds );
-$groups = MessageGroups::getGroupsById( $groupIds, true );
+$groups = MessageGroups::getGroupsById( $groupIds );
 
 if ( !count( $groups ) ) {
 	STDERR( "EE1: No valid message groups identified." );
