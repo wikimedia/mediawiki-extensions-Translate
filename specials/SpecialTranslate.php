@@ -140,9 +140,11 @@ class SpecialTranslate extends SpecialPage {
 			if ( $status !== false ) {
 				$description = $status . $description;
 			}
-			$priorityLangs = array_flip( explode( ',', TranslateMetadata::get( $this->group->getId(), 'prioritylangs' ) ) );
-			$priorityForce = TranslateMetadata::get( $this->group->getId(), 'priorityforce' );
-			if ( count( $priorityLangs ) && !isset( $priorityLangs[$this->options['language']] ) ) {
+
+			$priorityLangs = TranslateMetadata::get( $this->group->getId(), 'prioritylangs' );
+			if ( $priorityLangs !== false && !isset( $priorityLangs[$this->options['language']] ) ) {
+				$priorityLangs = array_flip( explode( ',', $priorityLangs ) );
+				$priorityForce = TranslateMetadata::get( $this->group->getId(), 'priorityforce' );
 				$priorityReason = TranslateMetadata::get( $this->group->getId(), 'priorityreason' );
 				if ( $priorityForce === 'on' ) {
 					// Hide table
