@@ -86,7 +86,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 			if ( $action === 'encourage' ) {
 				$dbw->delete( $table, $row, __METHOD__ );
-				// @todo Check if page is currently actually encourageed to prevent duplicate log entries.
+				// @todo Check if page is currently actually encouraged to prevent duplicate log entries.
 				$logger->addEntry( 'encourage', $title, null, array( serialize( $params ) ) );
 			} else {
 				$index = array( 'tgr_group', 'tgr_lang' );
