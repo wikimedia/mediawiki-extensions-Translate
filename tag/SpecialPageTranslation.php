@@ -70,6 +70,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$wgOut->addWikiMsg( 'tpt-nosuchpage', $title->getPrefixedText() );
 			return;
 		}
+
 		$wgOut->addModules( 'ext.translate.special.pagetranslation' );
 
 		if ( $action === 'discourage' || $action === 'encourage' ) {
@@ -81,12 +82,14 @@ class SpecialPageTranslation extends SpecialPage {
 				'tgr_lang' => '*priority',
 				'tgr_state' => 'discouraged',
 			);
+
 			if ( $action === 'encourage' ) {
 				$dbw->delete( $table, $row, __METHOD__ );
 			} else {
 				$index = array( 'tgr_group', 'tgr_lang' );
 				$dbw->replace( $table, array( $index ), $row, __METHOD__ );
 			}
+
 			$this->listPages();
 
 			$group = MessageGroups::getGroup( $id );
@@ -106,6 +109,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$logger->addEntry( 'unmark', $page->getTitle(), null, array( serialize( $params ) ) );
 			$wgOut->addWikiMsg( 'tpt-unmarked', $title->getPrefixedText() );
 			self::superDebug( __METHOD__, "unmarked page", $this->user, $title );
+
 			return;
 		}
 
@@ -145,6 +149,7 @@ class SpecialPageTranslation extends SpecialPage {
 		// Non-fatal error which prevents saving
 		if ( $error === false && $wgRequest->wasPosted() ) {
 			$err = $this->markForTranslation( $page, $sections );
+
 			if ( $err ) {
 				call_user_func_array( array( $wgOut, 'addWikiMsg' ), $err );
 			} else {
