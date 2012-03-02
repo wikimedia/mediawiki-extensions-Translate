@@ -11,6 +11,8 @@
  */
 
 class TranslateMetadata {
+	protected static $cache = null;
+
 	/**
 	 * Get a metadata value for the given group and key.
 	 * @param $group The group name
@@ -18,13 +20,12 @@ class TranslateMetadata {
 	 * @return String
 	 */
 	public static function get( $group, $key ) {
-		static $cache = null;
-		if ( $cache === null ) {
+		if ( self::$cache === null ) {
 			$dbr = wfGetDB( DB_SLAVE );
 			$cache = $dbr->select( 'translate_metadata', '*', array(), __METHOD__ );
 		}
 
-		foreach ( $cache as $row ) {
+		foreach ( self::$cache as $row ) {
 			if ( $row->tmd_group === $group && $row->tmd_key === $key ) {
 				return $row->tmd_value;
 			}
@@ -48,6 +49,8 @@ class TranslateMetadata {
 		} else {
 			$dbw->replace( 'translate_metadata', array( array( 'tmd_group', 'tmd_key' ) ), $data, __METHOD__ );
 		}
+
+		$this->cache = null;
 	}
 
 }
