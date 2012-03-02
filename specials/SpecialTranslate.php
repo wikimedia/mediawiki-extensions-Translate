@@ -141,11 +141,13 @@ class SpecialTranslate extends SpecialPage {
 				$description = $status . $description;
 			}
 
-			$priorityLangs = TranslateMetadata::get( $this->group->getId(), 'prioritylangs' );
-			if ( $priorityLangs !== false && !isset( $priorityLangs[$this->options['language']] ) ) {
-				$priorityLangs = array_flip( explode( ',', $priorityLangs ) );
-				$priorityForce = TranslateMetadata::get( $this->group->getId(), 'priorityforce' );
-				$priorityReason = TranslateMetadata::get( $this->group->getId(), 'priorityreason' );
+			$groupId = $this->group->getId();
+			// PHP is such an awesome language
+			$priorityLangs = TranslateMetadata::get( $groupId, 'prioritylangs' );
+			$priorityLangs = array_flip( array_filter( explode( ',', $priorityLangs ) ) );
+			if ( count( $priorityLangs) && !isset( $priorityLangs[$this->options['language']] ) ) {
+				$priorityForce = TranslateMetadata::get( $groupId, 'priorityforce' );
+				$priorityReason = TranslateMetadata::get( $groupId, 'priorityreason' );
 				if ( $priorityForce === 'on' ) {
 					// Hide table
 					$this->paging['count'] = 0;
