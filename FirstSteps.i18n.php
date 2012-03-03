@@ -1853,25 +1853,62 @@ $messages['km'] = array(
 );
 
 /** Korean (한국어)
+ * @author Freebiekr
  * @author 관인생략
  */
 $messages['ko'] = array(
+	'firststeps' => '첫 단계',
+	'firststeps-desc' => 'Translate  확장기능을 사용하는 웹사이트에서 사용자가 활동할 수 있게 돕는 [[Special:FirstSteps|특수 문서]]',
 	'translate-fs-pagetitle-done' => '- 완료!',
-	'translate-fs-pagetitle-pending' => '- 보류',
+	'translate-fs-pagetitle-pending' => '- 처리 대기 중',
 	'translate-fs-pagetitle' => '시작 마법사 - $1',
 	'translate-fs-signup-title' => '가입하기',
-	'translate-fs-settings-title' => '기본 설정 구성',
-	'translate-fs-userpage-title' => '사용자 페이지 만들기',
-	'translate-fs-target-title' => '번역 시작하기',
+	'translate-fs-settings-title' => '환경 설정',
+	'translate-fs-userpage-title' => '사용자 문서 만들기',
+	'translate-fs-permissions-title' => '번역자 권한 신청',
+	'translate-fs-target-title' => '번역하기!',
 	'translate-fs-email-title' => '이메일 주소 확인하기',
+	'translate-fs-intro' => "{{SITENAME}} 첫 단계 마법사에 오신 것을 환영합니다. 번역자가 되는 과정을 점차적으로 거칠 것입니다.  결국에는 {{SITENAME}}에서 지원하는 모든 프로젝트의 ''인터페이스 메시지''를 번역할 수 있을 것입니다.",
 	'translate-fs-selectlanguage' => '언어 선택',
-	'translate-fs-settings-planguage' => '모국어:',
+	'translate-fs-settings-planguage' => '모어:',
+	'translate-fs-settings-planguage-desc' => '모어는 여기 웹사이트에서 당신의 인터페이스 언어이자 번역할 때 기본 도착어가 됩니다.',
 	'translate-fs-settings-slanguage' => '보조 언어 $1:',
-	'translate-fs-settings-submit' => '설정 저장하기',
-	'translate-fs-userpage-submit' => '내 사용자 페이지 만들기',
-	'translate-fs-userpage-done' => '잘하셨습니다! 당신은 이제 사용자 페이지를 가졌습니다.',
-	'translate-fs-permissions-planguage' => '모국어:',
-	'translate-fs-permissions-submit' => '요청 보내기',
+	'translate-fs-settings-slanguage-desc' => '번역 편집기에서 다른 언어로 된 메시지의 번역을 나타낼 수도 있습니다. 여기서 보고 싶은 언어를 선택할 수 있습니다.',
+	'translate-fs-settings-submit' => '환경 설정 저장하기',
+	'translate-fs-userpage-level-N' => '이 언어는 내 모어입니다.',
+	'translate-fs-userpage-level-5' => '나는 전문 번역가입니다.',
+	'translate-fs-userpage-level-4' => '나는 이 언어를 모어 수준으로 압니다.',
+	'translate-fs-userpage-level-3' => '나는 이 언어를 잘 구사합니다.',
+	'translate-fs-userpage-level-2' => '저는 이 언어를 보통 수준으로 구사합니다.',
+	'translate-fs-userpage-level-1' => '나는 이 언어를 거의 모릅니다.',
+	'translate-fs-userpage-help' => '자신의 언어 능력을 밝히고 우리에게 자신을 소개하십시오. 언어를 여섯 가지 이상 안다면 나중에 첨가할 수 있습니다.',
+	'translate-fs-userpage-submit' => '내 사용자 문서 만들기',
+	'translate-fs-userpage-done' => '잘 했습니다! 이제 당신의 사용자 문서가 생겼습니다.',
+	'translate-fs-permissions-planguage' => '모어:',
+	'translate-fs-permissions-help' => '지금 번역자 그룹에 추가되도록 요청할 필요가 있습니다.  번역 모어를 선택하십시오.
+
+아래 상자에서 다른 언어 및 의견을 말할 수 있습니다.',
+	'translate-fs-permissions-pending' => '당신의 요청이 [[$1]]로 제출되었으며 여기 웹사이트 직원이 되도록 빨리 그 요청을 검토할 것입니다. 이메일 주소를 인증하면 요청 결과를 이메일로 받아볼 것입니다.',
+	'translate-fs-permissions-submit' => '요청 제출',
+	'translate-fs-target-text' => '축하합니다!
+지금부터 번역할 수 있습니다.
+
+아직 낯설고 혼란스러울지라도 두려워하지 마십시오.
+[[Project list]]에서 당신이 기여할 수 있는 프로젝트의 개요를 보십시오. 
+프로젝트 대부분에는 "\'\'이 프로젝트를 번역하라\'\'"는 링크와 함께 간략한 설명이 있습니다. 그 링크를 클릭하면 미번역된 모든 메시지가 나타날 것입니다.
+[[Special:LanguageStats|언어 번역 공정]]이 있는 모든 메시지 그룹 목록도 이용할 수 있습니다.
+
+번역하기 전에 더 이해할 필요가 있다고 생각한다면  [[FAQ|자주 묻는 질문]]을 읽어 보십시오.
+불행하게도 문서는 종종 더 이상 유용하지 않을 수 있습니다. 
+당신이 할 수 있어야 한다고 생각하는 무엇이 있지만 어떻게 할 수 있을지 찾을 수 없다면 [[Support|지원 문서]]에 이를 문의하십시오. 
+
+[[Portal:$1|당신의 언어 들머리]] [[Portal_talk:$1|토론 문서]]에서 자신과 같은 언어의 번역자와 연락할 수도 있습니다. 
+아직 변경하지 않았다면 [[Special:Preferences|자신의 언어 인터페이스를 번역 도착어로 변경하십시오]].  그러면 웹사이트에서 당신에게 가장 관련있는 링크를 보여줄 수 있습니다.',
+	'translate-fs-email-text' => '[[Special:Preferences|환경 설정]]에서 이메일 주소를 제공하고 받은 이메일로 그 주소를 확인하십시오.
+
+그러면 다른 사용자가 이메일로 당신과 연락할 수 있게 됩니다.
+많아야 한 달에 한 번 발송하는 소식지도 받을 것입니다.
+소식지를 받고 싶지 않으면 [[Special:Preferences|환경 설정]] "{{int:prefs-personal}}" 탭에서 선택 해제하십시오.',
 );
 
 /** Colognian (Ripoarisch)
@@ -2109,7 +2146,7 @@ $messages['mr'] = array(
 	'translate-fs-userpage-title' => 'माझे सदस्यपान तयार करा.',
 	'translate-fs-permissions-title' => 'भाषांतरास परवानगी मिळण्यासाठी विनंती करा. (भाषांतर करणार्या व्यक्तीस )',
 	'translate-fs-target-title' => 'भाषांतरास सुरुवात करा!',
-	'translate-fs-email-title' => 'आपला इमेल पत्ता पडताळून पहा.',
+	'translate-fs-email-title' => 'आपला ई-मेल पत्ता पडताळून पहा.',
 	'translate-fs-intro' => '{{साइटचे नाव}} साइटवर तुमचे स्वागत आहे पहिली पायरी
 योग्य भाषांतकार होण्याच्या प्रक्रियेद्वारे तुम्हाला क्रमा-क्रमाने मार्गदर्शन केले जाईल.
 शेवटी तुम्ही ह्या साईटवर  {{साइटचे नाव}} उपलब्ध  असलेल्या सर्व प्रकल्प ईंटरफेस संदेशांचे भाषांतर करण्यास लायकवान बनाल.',
@@ -2585,7 +2622,7 @@ $messages['ru'] = array(
 	'translate-fs-settings-planguage' => 'Основной язык:',
 	'translate-fs-settings-planguage-desc' => 'Основной язык дублирует ваш язык интерфейса в этой вики
 и по умолчанию рассматривается как целевой язык переводов.',
-	'translate-fs-settings-slanguage' => 'Вспомогательные языки $1:',
+	'translate-fs-settings-slanguage' => 'Вспомогательный язык $1:',
 	'translate-fs-settings-slanguage-desc' => 'Это позволяет видеть переводы сообщений на другие языки в интерфейсе редактирования переводов.
 Здесь можно выбрать, какие из имеющихся языков вы хотели бы видеть.',
 	'translate-fs-settings-submit' => 'Сохранить настройки',

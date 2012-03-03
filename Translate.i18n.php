@@ -4522,6 +4522,7 @@ Valgfrie beskeder bør kun oversættes, hvis dit sprog har særlige krav som for
 	'translate-ext-url' => '<hr />Webside: $1',
 	'translate-optional' => '(valgfri)',
 	'translate-ignored' => '(ignoreres)',
+	'translate-edit-jsopen' => 'redigér',
 	'translate-edit-title' => 'Rediger "$1"',
 	'translate-edit-definition' => 'Beskeden som skal oversættes',
 	'translate-edit-translation' => 'Oversættelse',
@@ -4595,6 +4596,7 @@ Standardlisten afhænger af dit sprog.',
 	'translate-pref-jsedit' => 'Udvidet redigeringsvindue for oversættelser (JavaScript)',
 	'right-translate' => 'Redigere med oversætningsgrænsefladen',
 	'right-translate-manage' => 'Administrere beskedgrupper',
+	'action-translate-manage' => 'administrere beskedgrupper',
 	'right-translate-import' => 'Importere offline oversættelser',
 	'right-translate-messagereview' => 'Kontrollere oversættelser',
 	'right-translate-groupreview' => 'Gennemgå oversættelser af beskedgrupper',
@@ -4751,6 +4753,7 @@ Kan ikke bestemme gruppe og sprog fra fil headere.',
 Sørg for, at din editor ikke fjerner msgctxt felter.
 Detaljer: $1',
 	'translate-js-summary' => 'Beskrivelse:',
+	'translate-js-save' => 'Gem',
 	'translate-js-next' => 'Gem og åben næste',
 	'translate-js-nonext' => 'Dette var den sidste besked på denne side.',
 	'translate-js-skip' => 'Gå til næste',
@@ -4798,6 +4801,11 @@ Detaljer: $1',
 	'translate-workflow-set-doing' => 'Sætter...',
 	'translate-workflow-set-done' => 'Sat!',
 	'translate-stats-workflow' => 'Status',
+	'translate-dynagroup-by' => 'Oversat af {{GENDER:$1|$1}}',
+	'translate-dynagroup-byc' => 'Oversat af {{GENDER:$1|$1}} ($2)',
+	'translate-dynagroup-last' => 'Sidste ændring af {{GENDER:$1|$1}}',
+	'translate-dynagroup-lastc' => 'Sidste ændring af {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Hjælp',
 );
 
 /** German (Deutsch)
@@ -5139,7 +5147,7 @@ Details: $1',
 	'log-description-translationreview' => 'Logbuch aller Übersetzungsprüfungen an Übersetzungen und Nachrichtengruppen.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|überprüfte}} die Übersetzung $3',
 	'logentry-groupreview-message' => '$1 {{GENDER:$2|änderte}} den Status von $4 Übersetzungen der Nachrichtengruppe $3 von $5 in $6',
-	'translate-workflow-state-' => '(nicht eingestellt)',
+	'translate-workflow-state-' => '(nicht gesetzt)',
 	'translate-workflowstatus' => 'Status: $1',
 	'translate-workflow-set-do' => 'Einstellen',
 	'translate-workflow-set-doing' => 'Wird eingestellt …',
@@ -7664,7 +7672,7 @@ Cliquer sur le nom du groupe de messages pour voir une liste des messages qui ne
 Motif :
 
 ''$1''",
-	'translate-page-settings-legend' => 'Paramètres',
+	'translate-page-settings-legend' => 'Configuration',
 	'translate-page-group' => 'Groupe',
 	'translate-page-language' => 'Langue',
 	'translate-page-limit' => 'Limite',
@@ -12502,6 +12510,7 @@ Owah-owahan ora bakal disimpen nganti panjenengan ngeklik tombol simpen ing ngis
 );
 
 /** Georgian (ქართული)
+ * @author David1010
  * @author Malafaya
  * @author Sopho
  * @author Temuri rajavi
@@ -12544,9 +12553,13 @@ $messages['ka'] = array(
 	'translate-translations-fieldset-title' => 'ყველა თარგმანი',
 	'translate-translations-messagename' => 'სახელი:',
 	'languagestats' => 'ენის სტატისტიკა',
+	'languagestats-summary' => 'ამ გვერდზე ნაჩვენებია თარგმანების სტატისტიკა ამ ენის ყველა ჯგუფის შეტყობინებისათვის.',
+	'languagestats-stats-for' => '$1 ენის თარგმანების სტატისტიკა ($2).',
+	'translate-langstats-expandall' => 'ყველას გაშლა',
 	'translate-language-code' => 'ენის კოდი',
 	'translate-language-code-field-name' => 'ენის კოდი:',
 	'translate-suppress-complete' => 'გამოტოვე მთლიანად თარგმნილი შეტყობინებათა ჯგუფები',
+	'translate-ls-noempty' => 'არ აჩვენო მთლიანად თარგმნილი შეტყობინებათა ჯგუფები',
 	'translate-language' => 'ენა',
 	'translate-total' => 'შეტყობინებები',
 );
@@ -13937,6 +13950,7 @@ Dir musst am Grupp vun den Iwwersetzer si fir Ännerungen ofspäicheren ze kënn
 	'translate-checks-pagename' => "Nummraum geännert duerch d'Definitioun",
 	'translate-checks-format' => 'Dës Iwwersetzung translation entsprecht net der Definitioun oder huet eng Syntax déi net gëlteg ass: $1',
 	'translate-checks-escape' => 'Dës Escape-Sequenzen kënnen ongewollt sinn: <strong>$1</strong>',
+	'translate-checks-malformed' => '<nowiki>$1</nowiki> ass formal net valabel.',
 	'translate-checks-fudforum-syntax' => '<nowiki>$1</nowiki>  aplaz vu(n) <nowiki>$2</nowiki>  an dësem Projet benotzen.',
 	'translate-pref-nonewsletter' => 'Schéckt mir keng E-Mail-Newsletter.',
 	'translate-pref-editassistlang' => 'Sproochen déi ënnerstëtzen:',
@@ -14796,10 +14810,10 @@ $messages['mk'] = array(
 	'translate-manage-submit' => 'Изврши',
 	'translate-manage-nochanges' => 'Нема промени во дефинициите на пораките за оваа група.',
 	'translate-manage-nochanges-other' => 'Немало промени за овој јазик.
-Употребете ја врската подолу за да се вратите на прегледот на детали за групата.',
+Употребете ја врската подолу за да се вратите на прегледот на подробности за групата.',
 	'translate-manage-inconsistent' => 'Откриена е недоследност во барањето.
 Проверете дали има промени и обидете се повторно.
-Детали: $1.',
+Подробности : $1.',
 	'translate-manage-toolong' => 'Надминато е максималното време за обработка од $1 {{PLURAL:$1|секунда|секунди}}.
 Поднесете го образецот одново за да продолжите со обработката.',
 	'translate-manage-import-ok' => 'Увезена нова верзија на страницата $1.',
@@ -14838,7 +14852,7 @@ $1',
 Не можам да одредам група и јазик од насловите на податотеката.',
 	'translate-import-err-warnings' => 'Податотеката не е добро формулирана.
 Осигурајте се дека вашиот обработувач не ги отстранува msgctxt полињата.
-Детали: $1',
+Подробности : $1',
 	'translate-js-summary' => 'Опис:',
 	'translate-js-save' => 'Зачувај',
 	'translate-js-next' => 'Зачувај и отвори следна',

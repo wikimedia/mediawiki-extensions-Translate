@@ -214,6 +214,7 @@ Failures will be logged in the [[Special:Log/pagetranslation|page translation lo
 );
 
 /** Message documentation (Message documentation)
+ * @author Amire80
  * @author Darth Kule
  * @author EugeneZelenko
  * @author Fryed-peach
@@ -270,12 +271,19 @@ $3 is an URL.',
 	'pt-parse-open' => '"Translation template" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.',
 	'pt-shake-multiple' => 'Each translation (=section) unit can only contain one marker.',
 	'pt-shake-empty' => 'Translation unit (=section) is empty except for the translation marker (=<nowiki><!--T:1--></nowiki>)',
-	'pt-log-header' => 'Used on [[Special:Log/pagetranslation]]',
-	'pt-log-name' => 'Used on [[Special:Log/pagetranslation]]',
-	'pt-log-mark' => 'Used on [[Special:Log/pagetranslation]]',
-	'pt-log-unmark' => 'Used on [[Special:Log/pagetranslation]]',
-	'pt-log-moveok' => 'Used on [[Special:Log/pagetranslation]]',
-	'pt-log-movenok' => 'Used on [[Special:Log/pagetranslation]]',
+	'pt-log-header' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'pt-log-name' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'pt-log-mark' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'pt-log-unmark' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'pt-log-moveok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'pt-log-movenok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'pt-log-delete-full-ok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'pt-log-delete-full-nok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'pt-log-delete-lang-ok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'pt-log-delete-lang-nok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'pt-log-encourage' => "A log message that appears when a translation manager marks a page as a page that should not be translated, for example if it's outdated.",
+	'pt-log-discourage' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'pt-log-priority-langs-unset' => '{{logentry|[[Special:Log/pagetranslation]]}}',
 	'pt-log-priority-langs' => 'Used on [[Special:Log/pagetranslation]]. $3 is comma-separated list of languages.',
 	'pt-log-priority-langs-force' => 'Used on [[Special:Log/pagetranslation]]. $3 is a comma-separated list of languages.',
 	'pt-movepage-block-base-exists' => "'''base page''' refers to the untranslated version of the translatable page.",
@@ -719,6 +727,9 @@ $messages['be-tarask'] = array(
 	'tpt-old-pages' => 'Некаторыя вэрсіі {{PLURAL:$1|гэтай старонкі|гэтых старонак}} былі пазначаны для перакладу.',
 	'tpt-other-pages' => '{{PLURAL:$1|Старая вэрсія гэтай старонкі пазначаная|Старыя вэрсіі гэтых старонак пазначаныя}} для перакладу, але {{PLURAL:$1|апошняя вэрсія ня можа быць пазначаная|апошнія вэрсіі ня могуць быць пазначаныя}} для перакладу.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Гэтай старонцы|Гэтым старонкам}} было адхілена ў далейшым перакладзе.',
+	'tpt-select-prioritylangs' => 'Сьпіс прыярытэтных кодаў моваў, падзеленых коскамі:',
+	'tpt-select-prioritylangs-reason' => 'Прычына:',
+	'tpt-sections-prioritylangs' => 'Прыярытэтныя мовы',
 	'tpt-rev-mark' => 'пазначыць да перакладу',
 	'tpt-rev-unmark' => 'выдаліць зь перакладу',
 	'tpt-rev-discourage' => 'адхіліць',
@@ -734,10 +745,14 @@ $messages['be-tarask'] = array(
 	'tpt-translation-intro' => 'Гэтая старонка — <span class="plainlinks">[$1 перакладзеная вэрсія]</span> старонкі [[$2]]. Пераклад завершаны на $3%.',
 	'tpt-translation-intro-fuzzy' => 'Гэтак пазначаныя састарэлыя пераклады.',
 	'tpt-languages-legend' => 'Іншыя мовы:',
+	'tpt-languages-zero' => 'Пачаць пераклад на гэтую мову',
 	'tpt-target-page' => 'Гэта старонка ня можа быць абноўлена ўручную.
 Гэта старонка зьяўляецца перакладам старонкі [[$1]], пераклад можа быць абноўлены з выкарыстаньнем [$2 інструмэнта перакладу].',
 	'tpt-unknown-page' => 'Гэта прастора назваў зарэзэрваваная для перакладаў старонак зьместу.
 Старонка, якую Вы спрабуеце рэдагаваць, верагодна не зьвязана зь якой-небудзь старонкай пазначанай для перакладу.',
+	'tpt-translation-restricted' => 'Пераклад гэтай старонкі на дадзеную мову быў папярэджаны адміністратарам паракладаў.
+
+Прычына: $1',
 	'tpt-render-summary' => 'Абнаўленьне для адпаведнасьці новай вэрсіі крынічнай старонкі',
 	'tpt-download-page' => 'Экспартаваць старонку з перакладамі',
 	'pt-parse-open' => 'Незбалянсаваны тэг &lt;translate>.
@@ -761,6 +776,9 @@ $messages['be-tarask'] = array(
 	'pt-log-delete-full-nok' => '{{GENDER:$2|атрымаў|атрымала}} памылку пры выдаленьні старонкі [[:$1]], якую магчыма перакласьці',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|зьдзейсьніў|зьдзейсьніла}} выдаленьне старонкі перакладу $1',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|атрымаў|атрымала}} памылку пры выдаленьні старонкі перакладу [[:$1]]',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|выдаліў|выдаліла}} прыярытэтныя мовы зь перакладанай старонкі [[:$1]]',
+	'pt-log-priority-langs' => '{{GENDER:$2|пазначыў|пазначыла}} наступныя прыярытэтныя мовы для перакладанай старонкі [[:$1]]: $3',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|абмежаваў|абмежавала}} сьпіс моваў да перакладу [[:$1]] да наступных: $3',
 	'pt-movepage-title' => 'Перанесьці старонку $1, якую магчыма перакласьці',
 	'pt-movepage-blockers' => 'Немагчыма перанесьці старонкі, якія магчыма перакладаць, з-за {{PLURAL:$1|наступнай памылкі|наступных памылак}}:',
 	'pt-movepage-block-base-exists' => 'Існуе мэтавая базавая старонка [[:$1]].',
@@ -1309,6 +1327,7 @@ kontrollér før denne version markeres for oversættelse, at ændringerne i sek
 	'tpt-old-pages' => 'En version af {{PLURAL:$1|denne side|disse sider}} er markeret for oversættelse.',
 	'tpt-other-pages' => '{{PLURAL:$1|En gammel version af denne side er|Ældre versioner af disse sider er}} markeret til oversættelse,
 men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til oversættelse.',
+	'tpt-select-prioritylangs-reason' => 'Begrundelse:',
 	'tpt-rev-unmark' => 'fjern denne side fra oversættelse',
 	'translate-tag-translate-link-desc' => 'Oversæt denne side',
 	'translate-tag-markthis' => 'Markér denne side for oversættelse',
@@ -1480,12 +1499,12 @@ Die Seite, die gerade bearbeitet wird, hat keine Verbindung zu einer übersetzba
 	'tpt-translation-restricted' => 'Das Übersetzen dieser Seite in diese Sprache wurde durch einen Übersetzungsadministrator deaktiviert.
 
 Grund: $1',
-	'tpt-discouraged-language-force' => 'Der Übersetzungsadministrator hat die Sprachen eingeschränkt, in die diese Systemnachrichtengruppe übersetzt werden kann. Diese Sprache befindet sich nicht unter zulässigen Sprachen.
+	'tpt-discouraged-language-force' => 'Ein Übersetzungsadministrator hat die Sprachen eingeschränkt, in die diese Seite übersetzt werden kann. Diese Sprache befindet sich nicht unter den zulässigen Sprachen.
 
-Der Grund für die Einschränkung: $1',
-	'tpt-discouraged-language' => 'Diese Sprache befindet sich nicht unter den priorisierten Sprachen für die Übersetzung dieser Systemnachrichtengruppe.
+Grund: $1',
+	'tpt-discouraged-language' => 'Diese Sprache befindet sich nicht unter den von einem Übersetzungsadministrator priorisierten Sprachen für die Übersetzung dieser Seite.
 
-Der Grund für die Priorisierung: $1',
+Grund: $1',
 	'tpt-render-summary' => 'Übernehme Bearbeitung einer neuen Version der Quellseite',
 	'tpt-download-page' => 'Seite mit Übersetzungen exportieren',
 	'pt-parse-open' => 'Eine &lt;translate&gt;-Markierung hat kein Gegenstück.
@@ -1509,6 +1528,8 @@ Text des Abschnitts: <pre>$1</pre>',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|hatte}} ein Problem während des Löschens der übersetzbaren Seite [[:$1]]',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|schloss}} das Löschen der übersetzten Seite $1 ab',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|hatte}} ein Problem während des Löschens der übersetzten Seite [[:$1]]',
+	'pt-log-encourage' => '{{GENDER:$2|empfahl}} die Übersetzung von Seite [[:$1]]',
+	'pt-log-discourage' => '{{GENDER:$2|riet ab}} die Seite [[:$1]] zu übersetzen',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|Entfernte}} die priorisierten Sprachen von der übersetzbaren Seite [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|Legte}} die priorisierten Sprachen für die übersetzbare Seite [[:$1]] auf $3 fest',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|Schränkte}} die Sprachen für die übersetzbare Seite [[:$1]] auf $3 ein',
@@ -1630,8 +1651,8 @@ Nježli až markěrujoš toś tu wersiju za pśełožowanje, pśekontrolěruj, l
 	'tpt-other-pages' => 'Stara wersija {{PLURAL:$1|toś togo boka|toś teju bokowu|toś tych bokow|tośtych bokow}} jo za pśełožowanje markěrowana,
 ale nejnowša wersija njedajo se za pśełožowanje markěrowaś.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Toś ten bok|Toś tej boka|Toś te boki|Toś te boki}} {{PLURAL:$1|jo|stej|su|su}} se wót dalšnego pśełoženja {{PLURAL:$1|wuzamknuła|wuzamknułej|wuzamknuli|wuzamknuli}}.',
-	'tpt-select-prioritylangs' => 'Lisćina rěcnych kodow źělonych pśez komu:',
-	'tpt-select-prioritylangs-force' => 'Pśełožkam do drugich rěcow zajźowaś',
+	'tpt-select-prioritylangs' => 'Lisćina rěcnych kodow primarnych rěcow źělonych pśez komu:',
+	'tpt-select-prioritylangs-force' => 'Pśełožkam do drugich ako primarnych rěcow zajźowaś',
 	'tpt-select-prioritylangs-reason' => 'Pśicyna:',
 	'tpt-sections-prioritylangs' => 'Primarne rěcy',
 	'tpt-rev-mark' => 'za pśełožowanje markěrowaś',
@@ -1654,15 +1675,15 @@ ale nejnowša wersija njedajo se za pśełožowanje markěrowaś.',
 Toś ten bok jo pśełožk boka [[$1]] a pśełožk dajo se z pomocu [$2 Pśełožyś] aktualizěrowaś.',
 	'tpt-unknown-page' => 'Toś ten mjenjowy rum jo za pśełožki wopśimjeśowych bokow wuměnjony.
 Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kótaryž jo za pśełožowanje markěrowany.',
-	'tpt-translation-restricted' => 'Pśełožowański administrator jo pśełožowanjeju toś teje kupki do toś teje rěcy jo zajźował.
+	'tpt-translation-restricted' => 'Pśełožowański administrator jo pśełožowanjeju toś togo boka  do toś teje rěcy jo zajźował.
 
-Pśicyna za wobgranicowanje: $1',
-	'tpt-discouraged-language-force' => 'Pśełožowański administrator jo rěcy wobgranicował, do kótarychž toś ta zdźěleńska kupka dajo se pśełožyś. Toś rěc njejo mjazy toś tymi rěcami:
+Pśicyna: $1',
+	'tpt-discouraged-language-force' => 'Pśełožowański administrator jo rěcy wobgranicował, do kótarychž toś ten bok dajo se pśełožyś. Toś rěc njejo mjazy toś tymi rěcami:
 
-Pśicyna za wobgranicowanje: $1',
-	'tpt-discouraged-language' => 'Toś ta rěc njejo mjazy primarnymi rěcami, kótarež pśełožowański administrator jo za toś tu zdźěleńsku kupku póstajił.
+Pśicyna: $1',
+	'tpt-discouraged-language' => 'Toś ta rěc njejo mjazy primarnymi rěcami, kótarež pśełožowański administrator jo za ten toś bok póstajił.
 
-Pśicyna za prioritu: $1',
+Pśicyna: $1',
 	'tpt-render-summary' => 'Aktualizacija pó nowej wersiji žrědłowego boka',
 	'tpt-download-page' => 'Bok z pśełožkami eksportěrowaś',
 	'pt-parse-open' => 'Asymetriska toflicka &lt;translate>.
@@ -1905,7 +1926,7 @@ Antes de marcar esta versión para traducción, verifica que los cambios a las s
 pero la última versión no puede ser marcada para traducción.',
 	'tpt-discouraged-pages' => 'Se desaconseja la traducción adicional de {{PLURAL:$1|esta página|estas páginas}}.',
 	'tpt-select-prioritylangs' => 'Lista de códigos de idioma prioritarios separados por comas:',
-	'tpt-select-prioritylangs-force' => 'Impedir la traducción a otros idiomas distintos de los prioritarios',
+	'tpt-select-prioritylangs-force' => 'Impedir las traducciones a otros idiomas distintos de los prioritarios',
 	'tpt-select-prioritylangs-reason' => 'Motivo:',
 	'tpt-sections-prioritylangs' => 'Idiomas prioritarios',
 	'tpt-rev-mark' => 'marcar para traducción',
@@ -1960,6 +1981,8 @@ Texto de sección: <pre>$1</pre>',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|encontró}} un problema al eliminar la página de traducción [[:$1]]',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|completó}} el borrado de la página de traducción "$1"',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|encontró}} un problema al eliminar la página de traducción [[:$1]]',
+	'pt-log-encourage' => '{{GENDER:$2|fomentó}} la traducción para la página [[:$1]]',
+	'pt-log-discourage' => '{{GENDER:$2|desaconsejó}} la traducción para la página [[:$1]]',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|ha eliminado}} los idiomas prioritarios de las páginas traducibles [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|puso}} los idiomas prioritarios para páginas traducibles [[:$1]] en $3',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|limitó}} los idiomas para la página traducible [[:$1]] en $3',
@@ -2345,8 +2368,8 @@ Avant de marquer ces versions pour être traduites, vérifier que les modificati
 	'tpt-other-pages' => 'Une ancienne version de {{PLURAL:$1|la page suivante|chacune des pages suivantes}} a été marquée pour être traduite,
 mais {{PLURAL:$1|sa dernière version|leur dernière version respective}} ne peut pas être marquée ainsi :',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Cette page a été découragée|Ces pages ont été découragées}} à être {{PLURAL:$1|traduite|traduites}} davantage.',
-	'tpt-select-prioritylangs' => 'Liste de codes de langue séparés par des virgules:',
-	'tpt-select-prioritylangs-force' => "Empêcher les traductions en d'autres langues",
+	'tpt-select-prioritylangs' => 'Liste de codes de langue prioritaire séparés par des virgules:',
+	'tpt-select-prioritylangs-force' => "Empêcher les traductions en d'autres langues que les langues prioritaires",
 	'tpt-select-prioritylangs-reason' => 'Motif:',
 	'tpt-sections-prioritylangs' => 'Langues prioritaires',
 	'tpt-rev-mark' => 'marquer pour traduction',
@@ -2369,15 +2392,15 @@ mais {{PLURAL:$1|sa dernière version|leur dernière version respective}} ne peu
 Elle est une version traduite de [[$1]] et la traduction peut être mise à jour en utilisant [$2 l’outil de traduction].',
 	'tpt-unknown-page' => 'Cet espace de noms est réservé pour la traduction de pages.
 La page que vous essayé de modifier ne semble correspondre à aucune page marquée pour être traduite.',
-	'tpt-translation-restricted' => 'La traduction de ce groupe de messages dans cette langue a été empêchée par l’administrateur des traductions.
+	'tpt-translation-restricted' => 'La traduction de cette page dans cette langue a été empêchée par un administrateur des traductions.
 
-Motif de la limitation : $1',
-	'tpt-discouraged-language-force' => "L'administrateur des traductions a limité les langues dans lesquelles ce groupe de messages peut être traduit. Ces langues ne font pas partie de celles-ci.
+Motif: $1',
+	'tpt-discouraged-language-force' => 'Un administrateur des traductions a limité les langues dans lesquelles cette page peut être traduite. Cette langue ne fait pas partie de celles-ci.
 
-Raison de la limitation: $1",
-	'tpt-discouraged-language' => "Cette langue ne fait pas partie des langues prioritaires positionnées par l'administrateur de traductions pour ce groupe de messages
+Motif: $1',
+	'tpt-discouraged-language' => 'La langue vers laquelle les messages listés dans cette page peuvent être traduits ne fait pas partie des langues prioritaires définies par un administrateur des traductions.
 
-Motif pour la priorisation: $1",
+Motif : $1',
 	'tpt-render-summary' => 'Mise à jour pour être en accord avec la nouvelle version de la source de la page',
 	'tpt-download-page' => 'Exporter la page avec ses traductions',
 	'pt-parse-open' => 'Balise &lt;translate> asymétrique.
@@ -2976,8 +2999,8 @@ $messages['he'] = array(
 	'tpt-other-pages' => '{{PLURAL:$1|גרסה ישנה של דף זה סומנה|גרסאות ישנות של דפים אלה סומנו}} לתרגום,
 אבל {{PLURAL:$1|הגרסה האחרונה אינה יכולה להיות מסומנת|הגרסאות האחרונות אינן יכולות להיות מסומנות}} לתרגום.',
 	'tpt-discouraged-pages' => 'מומלץ לא לתרגם את {{PLURAL:$1|הדף הזה|הדפים האלה}}',
-	'tpt-select-prioritylangs' => 'רשימת מופרדת בפסיקים של קודי שפה:',
-	'tpt-select-prioritylangs-force' => 'למנוע תרגום לשפות אחרות',
+	'tpt-select-prioritylangs' => 'רשימת מופרדת בפסיקים של קודי שפות מועדפות:',
+	'tpt-select-prioritylangs-force' => 'למנוע תרגום לשפות שאינן מוגדרות כמועדפות',
 	'tpt-select-prioritylangs-reason' => 'סיבה:',
 	'tpt-sections-prioritylangs' => 'שפות מועדפות',
 	'tpt-rev-mark' => 'לסמן לתרגום',
@@ -3003,12 +3026,12 @@ $messages['he'] = array(
 	'tpt-translation-restricted' => 'מנהל תרגומים נעל את תרגום קבוצת ההודעות הזאת לשפה הזאת.
 
 סיבה להגבלה: $1',
-	'tpt-discouraged-language-force' => 'מנהל תרגומים הגביל את השפות שאפשר לתרגם אליהן את קבוצת ההודעות הזאת. השפה הזאת לא נכללת בהן.
+	'tpt-discouraged-language-force' => 'מנהל תרגומים הגביל את השפות שאפשר לתרגם אליהן את הדף הזה. השפה הזאת לא נכללת בהן.
 
-סיבה להגבלה: $1',
-	'tpt-discouraged-language' => 'השפה הזאת היא לא אחת השפות המועדפות לתרגום כפי שהגדיר מנהל תרגומים עבור הקבוצה הזאת.
+סיבה: $1',
+	'tpt-discouraged-language' => 'השפה הזאת היא לא אחת השפות המועדפות לתרגום כפי שהגדיר מנהל תרגומים עבור הדף הזה.
 
-סיבה לתעדוף: $1',
+סיבה: $1',
 	'tpt-render-summary' => 'עדכון להתאמת הגרסה החדשה של דף המקור',
 	'tpt-download-page' => 'ייצוא דף עם תרגומים',
 	'pt-parse-open' => 'תג &lt;translate> לא מאוזן.
@@ -3032,6 +3055,8 @@ $messages['he'] = array(
 	'pt-log-delete-full-nok' => '{{GENDER:$2|נתקל|נתקלה}} בבעיה בזמן מחיקת הדף הניתן לתרגום [[:$1]]',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|השלים|השלימה}} את המחיקה של דף התרגום $1',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|נתקל|נתקלה}} בבעיה בזמן מחיקת דף התרגום [[:$1]]',
+	'pt-log-encourage' => '{{GENDER:$2|המליץ|המליצה}} לתרגם את הדף [[:$1]]',
+	'pt-log-discourage' => '{{GENDER:$2|המליץ|המליצה}} לא לתרגם את הדף [[:$1]]',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|הסיר|הסירה}} את תעדוף השפות לתרגום מהדף [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|הגדיר|הגדירה}} שהשפות המועדפות לתרגום דף [[:$1]] הן $3',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|הגביל|הגבילה}} את תרגום הדף [[:$1]] לשפות הבאות: $3',
@@ -3203,8 +3228,8 @@ Prjedy hač tutu wersiju za přełožowanje markěruješ, skontroluj, hač změn
 	'tpt-other-pages' => 'Stara wersija {{PLURAL:$1|tuteje strony|tuteju stronow|tutych stronow|tutych stronow}} je za přełožowanje markěrowana,
 ale aktualna wersija njehodźi so za přełožowanje markěrować.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Tuta strona|Tutej stronje|Tute strony|Tute strony}} {{PLURAL:$1|bu|buštej|buchu|buchu}} wot dalšeho přełoženja {{PLURAL:$1|wuzamknjena|wuzamknjenej|wuzamknjene|wuzamknjene}}.',
-	'tpt-select-prioritylangs' => 'Lisćina rěčnych kodow dźělenych přez komu:',
-	'tpt-select-prioritylangs-force' => 'Přełožkam do druhich rěčow zadźěwać',
+	'tpt-select-prioritylangs' => 'Lisćina rěčnych kodow primarnych rěčow dźělenych přez komu:',
+	'tpt-select-prioritylangs-force' => 'Přełožkam do druhich rěčow hač primarnych rěčow zadźěwać',
 	'tpt-select-prioritylangs-reason' => 'Přičina:',
 	'tpt-sections-prioritylangs' => 'Primarne rěče',
 	'tpt-rev-mark' => 'za přełožowanje markěrować',
@@ -3227,15 +3252,15 @@ ale aktualna wersija njehodźi so za přełožowanje markěrować.',
 Tuta strona je přełožk strony [[$1]] a přełožk hodźi so z pomocu [$2 Přełožić] aktualizować.',
 	'tpt-unknown-page' => 'Tutón mjenowy rum je za přełožki wobsahowych stronow wuměnjeny.
 Strona, kotruž pospytuješ wobdźěłać, po wšěm zdaću stronje markěrowanej za přełožowanje njewotpowěduje.',
-	'tpt-translation-restricted' => 'Přełožowanski administrator je přełožowanju tuteje skupiny do tuteje rěče zadźěwał.
+	'tpt-translation-restricted' => 'Přełožowanski administrator je přełožowanju tuteje strony do tuteje rěče zadźěwał.
 
-Přičina za wobmjezowanje: $1',
-	'tpt-discouraged-language-force' => 'Přełožowanski administrator je rěče wobmjezował, do kotrychž tuta zdźělenska skupina da so přełožić. Tuta rěč mjez tutymi rěčemi njeje:
+Přičina: $1',
+	'tpt-discouraged-language-force' => 'Přełožowanski administrator je rěče wobmjezował, do kotrychž tuta strona da so přełožić. Tuta rěč mjez tutymi rěčemi njeje:
 
-Přičina za wobmjezowanje: $1',
-	'tpt-discouraged-language' => 'Tuta rěč njeje mjez primarnymi rěčemi, kotrež přełožowanski administrator je za tutu zdźělensku skupinu postajił.
+Přičina: $1',
+	'tpt-discouraged-language' => 'Tuta rěč njeje mjez primarnymi rěčemi, kotrež přełožowanski administrator je za tutu stronu postajił.
 
-Přičina za prioritu: $1',
+Přičina: $1',
 	'tpt-render-summary' => 'Aktualizacija po nowej wersiji žórłoweje strony',
 	'tpt-download-page' => 'Stronu z přełožkami eksportować',
 	'pt-parse-open' => 'Asymetriska taflička &lt;translate>.
@@ -3259,6 +3284,8 @@ Tekst wotrězka: <pre>$1</pre>',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|storči}} na problem při hašenju přełožujomneje strony [[:$1]]',
 	'pt-log-delete-lang-ok' => 'je hašenje přełoženeje strony $1 {{GENDER:$2|wotzamknył|wotzamknyła}}',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|storči}} na problem při hašenju přełoženeje strony [[:$1]]',
+	'pt-log-encourage' => '{{GENDER:$2}} je k přełožowanju za stronu [[:$1]] pohonił',
+	'pt-log-discourage' => '{{GENDER:$2}} je wot přełožowanja za stronu [[:$1]] wotradźił',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2}} je primarne rěče z přełožujomneje strony [[:$1]] {{GENDER:$2|wotstronił|wotstroniła}}',
 	'pt-log-priority-langs' => '{{GENDER:$2}} je primarne rěče za přełožujomnu stronu [[:$1]] na $3 {{GENDER:$2|postajił|postajiła}}',
 	'pt-log-priority-langs-force' => '{{GENDER:$2}} je rěče za přełožujomnu stronu [[:$1]] na $3 {{GENDER:$2|wobmjezował|wobmjezowała}}',
@@ -3516,10 +3543,10 @@ Ante de marcar iste version pro traduction, assecura que le modificationes al se
 	'tpt-other-pages' => '{{PLURAL:$1|Un ancian version de iste pagina|Ancian versiones de iste paginas}} es marcate pro traduction,
 ma le ultime {{PLURAL:$1|version|versiones}} non pote esser marcate pro traduction.',
 	'tpt-discouraged-pages' => 'Le ulterior traduction de iste {{PLURAL:$1|pagina|paginas}} es discoragiate.',
-	'tpt-select-prioritylangs' => 'Linguas preferite (codices de lingua separate per commas):',
-	'tpt-select-prioritylangs-force' => 'Limitar le traduction a iste linguas solmente',
-	'tpt-select-prioritylangs-reason' => 'Motivo pro specificar iste serie de linguas preferite (optional):',
-	'tpt-sections-prioritylangs' => 'Linguas preferite',
+	'tpt-select-prioritylangs' => 'Lista de linguas prioritari separate per commas:',
+	'tpt-select-prioritylangs-force' => 'Impedir le traduction in linguas non prioritari',
+	'tpt-select-prioritylangs-reason' => 'Motivo:',
+	'tpt-sections-prioritylangs' => 'Linguas prioritari',
 	'tpt-rev-mark' => 'marcar pro traduction',
 	'tpt-rev-unmark' => 'remover del traduction',
 	'tpt-rev-discourage' => 'discoragiar',
@@ -3540,13 +3567,15 @@ ma le ultime {{PLURAL:$1|version|versiones}} non pote esser marcate pro traducti
 Iste pagina es un traduction del pagina [[$1]] e le traduction pote esser actualisate con le [$2 instrumento de traduction].',
 	'tpt-unknown-page' => 'Iste spatio de nomines es reservate pro traductiones de paginas de contento.
 Le pagina que tu vole modificar non pare corresponder con alcun pagina marcate pro traduction.',
-	'tpt-translation-restricted' => 'Le traduction de iste gruppo de messages in iste lingua ha essite impedite per le administrator de traductiones.',
-	'tpt-discouraged-language-force' => 'Le administrator de traductiones ha limitate le linguas in le quales iste gruppo de messages pote esser traducite. Iste lingua non es inter le linguas permittite.
+	'tpt-translation-restricted' => 'Le traduction de iste pagina in iste lingua ha essite impedite per un administrator de traductiones.
 
-Motivo pro iste limitation: $1',
-	'tpt-discouraged-language' => 'Iste lingua non es inter le linguas prioritari definite per le administrator de traductiones pro iste gruppo de messages.
+Motivo: $1',
+	'tpt-discouraged-language-force' => 'Un administrator de traductiones ha limitate le linguas in le quales iste pagina pote esser traducite. Iste lingua non es inter le linguas permittite.
 
-Le motivo pro iste definition de prioritates: $1',
+Motivo: $1',
+	'tpt-discouraged-language' => 'Iste lingua non es inter le linguas prioritari definite per le administrator de traductiones pro iste pagina.
+
+Motivo: $1',
 	'tpt-render-summary' => 'Actualisation a un nove version del pagina de origine',
 	'tpt-download-page' => 'Exportar pagina con traductiones',
 	'pt-parse-open' => 'Etiquetta &lt;translate> asymmetric.
@@ -3570,6 +3599,9 @@ Texto del section: <pre>$1</pre>',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|incontrava}} un problema durante le deletion del pagina traducibile [[:$1]]',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|completava}} le deletion del pagina traducite $1',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|incontrava}} un problema durante le deletion del pagina traducite [[:$1]]',
+	'pt-log-encourage' => '{{GENDER:$2|incoragiava}} le traduction del pagina [[:$1]]',
+	'pt-log-discourage' => '{{GENDER:$2|discoragiava}} le traduction del pagina [[:$1]]',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|removeva}} le linguas prioritari pro le pagina traducibile [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|definiva}} le linguas prioritari pro le pagina traducibile [[:$1]] como $3',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|limitava}} le linguas pro le pagina traducibile [[:$1]] a $3',
 	'pt-movepage-title' => 'Renominar le pagina traducibile $1',
@@ -3833,6 +3865,9 @@ ma {{PLURAL:$1|l'ultima versione non può essere segnata|le ultime versioni non 
 	'tpt-target-page' => 'Questa pagina non può essere aggiornata manualmente. Questa pagina è una traduzione della pagina [[$1]] e la traduzione può essere aggiornata tramite [$2 lo strumento di traduzione].',
 	'tpt-unknown-page' => 'Questo namespace è riservato alle traduzioni del contenuto delle pagine.
 La pagina che stai cercando di modificare non sembra corrispondere ad alcuna pagina segnata per la traduzione.',
+	'tpt-discouraged-language' => "Questa lingua non è impostata come prioritaria dall'amministratore delle traduzioni per questa pagina.
+
+Motivo: $1",
 	'tpt-render-summary' => 'Aggiornamento come da nuova versione della pagina di origine',
 	'tpt-download-page' => 'Esporta la pagina con le traduzioni',
 	'pt-parse-open' => 'Marcatore &lt;translate> sbilanciato.
@@ -4574,8 +4609,8 @@ $messages['mk'] = array(
 	'tpt-other-pages' => '{{PLURAL:$1|Стара верзија на оваа страница е означена за преведување|Постари верзии на оваа страница се означени за преведување}},
 но {{PLURAL:$1|најновата верзија не може да се означи|најновите верзии не можат да се означат}} за преведување.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Се препорачува оваа страница повеќе да не се преведува|Се препорачува овие страници повеќе да не се преведуваат}}.',
-	'tpt-select-prioritylangs' => 'Список на јазични кодови одделени со запирка:',
-	'tpt-select-prioritylangs-force' => 'Спречи преводи на други јазици',
+	'tpt-select-prioritylangs' => 'Список на кодови на приоритетните јазици, одделени со запирка:',
+	'tpt-select-prioritylangs-force' => 'Спречи преводи на јазици што не се приоритетни',
 	'tpt-select-prioritylangs-reason' => 'Причина:',
 	'tpt-sections-prioritylangs' => 'Приоритетни јазици',
 	'tpt-rev-mark' => 'означи за преведување',
@@ -4599,15 +4634,15 @@ $messages['mk'] = array(
 Страницава е превод на страницата [[$1]], а преводот може да се обнови само со помош на [$2 алатката за преведување].',
 	'tpt-unknown-page' => 'Овој именски простор е резервиран за преводи на содржински страници.
 Страницата која се обидувате да ја уредите не соодветствува со ниедна страница обележана за преведување.',
-	'tpt-translation-restricted' => 'Преведувањето на групава на тој јазик е спречено од преводен администратор.
+	'tpt-translation-restricted' => 'Преведувањето на страницата на овој јазик е спречено од преводен администратор.
 
-Причина за ограничувањето: $1',
-	'tpt-discouraged-language-force' => 'Преводниот администратор ги ограничи јазиците на кои може да се преведе оваа група пораки. Овој јазик не е меѓу нив.
+Причина: $1',
+	'tpt-discouraged-language-force' => 'Преводен администратор ги ограничи јазиците на кои може да се преведе оваа страница. Овој јазик не е меѓу нив.
 
-Причина за ограничувањето: $1',
-	'tpt-discouraged-language' => 'Овој јазик не е меѓу приоритетните јазици што ги задал администраторот на оваа група пораки
+Причина: $1',
+	'tpt-discouraged-language' => 'Овој јазик не е меѓу приоритетните јазици на оваа страница што ги задал администратор
 
-Причина за приоритизацијата: $1',
+Причина: $1',
 	'tpt-render-summary' => 'Обнова за усогласување со новата верзија на изворната страница',
 	'tpt-download-page' => 'Извези страница со преводи',
 	'pt-parse-open' => 'Неврамнотежена &lt;translate> ознака.
@@ -4631,6 +4666,8 @@ $messages['mk'] = array(
 	'pt-log-delete-full-nok' => '{{GENDER:$2|наиде}} на проблем бришејќи ја преводливата страница [[:$1]]',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|изврши}} бришење на преводната страница $1',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|наиде}} на проблем бришејќи ја преводната страница [[:$1]]',
+	'pt-log-encourage' => '{{GENDER:$2|препорача}} преведување на страницата [[:$1]]',
+	'pt-log-discourage' => '{{GENDER:$2|препорача}} непреведување на страницата [[:$1]]',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|отстрани}} приоритетни јазици од преводливата страница [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|ѝ ги зададе}} следниве приоритетни јазици на преводливата страница [[:$1]]: $3',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|ги ограничи}} јазиците на преводливата страница [[:$1]] на $3',
@@ -4845,6 +4882,8 @@ Teks bahagian: <pre>$1</pre>',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|menemui}} masalah ketika menghapuskan laman boleh terjemah [[:$1]]',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|menyiapkan}} penghapuskan laman penterjemahan $1',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|menemui}} masalah ketika menghapuskan laman penterjemahan [[:$1]]',
+	'pt-log-encourage' => '{{GENDER:$2|menggalakkan}} penterjemahan laman [[:$1]]',
+	'pt-log-discourage' => '{{GENDER:$2|menegah}} penterjemahan laman [[:$1]]',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|menggugurkan}} bahasa keutamaan dari halaman boleh terjemah [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|menetapkan}} bahasa keutamaan untuk halaman boleh terjemah [[:$1]] kepada $3',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|mengehadkan}} bahasa untuk halaman boleh terjemah [[:$1]] kepada $3',
@@ -5085,10 +5124,10 @@ Controleer voordat u deze versie voor vertaling markeert of de wijzigingen aan d
 	'tpt-other-pages' => '{{PLURAL:$1|Een oude versie van deze pagina is|Oude versies van deze pagina zijn}} gemarkeerd voor vertaling,
 maar de laatste {{PLURAL:$1|versie kan|versies kunnen}} niet gemarkeerd worden voor vertaling.',
 	'tpt-discouraged-pages' => "Voor deze {{PLURAL:$1|pagina|pagina's}} wordt vertalen ontmoedigd.",
-	'tpt-select-prioritylangs' => "Voorkeurstalen (taalcodes door komma's gescheiden):",
-	'tpt-select-prioritylangs-force' => 'Vertaling beperken tot alleen deze talen',
-	'tpt-select-prioritylangs-reason' => 'Reden voor het instellen van deze reeks voorkeurstalen (optioneel):',
-	'tpt-sections-prioritylangs' => 'Voorkeurstalen',
+	'tpt-select-prioritylangs' => "Prioriteitstalen (taalcodes door komma's gescheiden):",
+	'tpt-select-prioritylangs-force' => 'Vertaling beperken tot alleen deze prioriteitstalen',
+	'tpt-select-prioritylangs-reason' => 'Reden:',
+	'tpt-sections-prioritylangs' => 'Prioriteitstalen',
 	'tpt-rev-mark' => 'voor vertaling markeren',
 	'tpt-rev-unmark' => 'als te vertalen pagina verwijderen',
 	'tpt-rev-discourage' => 'ontmoedigen',
@@ -5110,13 +5149,15 @@ Deze pagina is een vertaling van de pagina [[$1]].
 De vertaling kan bijgewerkt worden via de [$2 vertaalhulpmiddelen].',
 	'tpt-unknown-page' => "Deze naamruimte is gereserveerd voor de vertalingen van van pagina's.
 De pagina die u probeert te bewerken lijkt niet overeen te komen met een te vertalen pagina.",
-	'tpt-translation-restricted' => 'De vertaling van deze berichtengroep naar deze taal is voorkomen door de vertalingenbeheerder.',
-	'tpt-discouraged-language-force' => 'De vertalingenbeheerder heeft de talen in welke deze berichtengroep kan vertaald worden beperkt. Deze taal maakt geen deel uit van die talen.
+	'tpt-translation-restricted' => 'De vertaling van deze pagina naar deze taal is onmogelijk gemaakt door de vertalingenbeheerder.
 
-Reden voor de beperking: $1',
-	'tpt-discouraged-language' => 'De vertalingenbeheerder heeft deze taal niet bij de prioritaire talen ingesteld voor deze berichtengroep
+Reden: $1',
+	'tpt-discouraged-language-force' => 'Een vertalingenbeheerder heeft de talen waarin deze pagina vertaald kan worden beperkt. Deze taal maakt geen deel uit van die talen.
 
-Reden voor prioriteitinstelling: $1',
+Reden: $1',
+	'tpt-discouraged-language' => 'De vertalingenbeheerder heeft deze taal niet als prioriteitstaal ingesteld voor deze pagina.
+
+Reden: $1',
 	'tpt-render-summary' => 'Bijgewerkt vanwege een nieuwe basisversie van de bronpagina',
 	'tpt-download-page' => 'Pagina met vertalingen exporteren',
 	'pt-parse-open' => 'Ongebalanceerd label &lt;translate>.
@@ -5140,7 +5181,10 @@ Sectietekst: <pre>$1</pre>',
 	'pt-log-delete-full-nok' => 'is een probleem {{GENDER:$2|tegengekomen}} tijdens het verwijderen van de vertaalbare pagina [[:$1]]',
 	'pt-log-delete-lang-ok' => 'heeft het verwijderen van de vertaalde pagina $1 {{GENDER:$2|afgerond}}',
 	'pt-log-delete-lang-nok' => 'is een probleem {{GENDER:$2|tegengekomen}} tijdens het verwijderen van de vertaalde pagina [[:$1]]',
-	'pt-log-priority-langs' => '{{GENDER:$2|heeft}} de prioritaire talen voor de vertaalbare pagina [[:$1]] ingesteld op $3',
+	'pt-log-encourage' => '{{GENDER:$2|heeft}} de vertaling van de pagina [[:$1]] opnieuw prominent gemaakt',
+	'pt-log-discourage' => '{{GENDER:$2|heeft}} de vertaling van de pagina [[:$1]] ontmoedigd',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|heeft}} prioriteitstalen van de vertaalbare pagina [[:$1]] verwijderd',
+	'pt-log-priority-langs' => '{{GENDER:$2|heeft}} de prioriteitstalen voor de vertaalbare pagina [[:$1]] ingesteld op $3',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|heeft}} de talen voor de vertaalbare pagina [[:$1]] beperkt tot $3',
 	'pt-movepage-title' => 'Te vertalen pagina $1 hernoemen',
 	'pt-movepage-blockers' => 'De te vertalen pagina kan niet hernoemd worden vanwege de volgende {{PLURAL:$1|foutmelding|foutmeldingen}}:',
@@ -5380,6 +5424,10 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 	'tpt-old-pages' => 'Niektóre wersje {{PLURAL:$1|tej strony|tych stron}} zostały oznaczone do tłumaczenia.',
 	'tpt-other-pages' => '{{PLURAL:$1|Stara wersja tej strony jest oznaczona jako przeznaczona|Stare wersje tych stron są oznaczone jako przeznaczone}} do tłumaczenia, ale {{PLURAL:$1|jej aktualna wersja nie może zostać oznaczona jako przeznaczona|ich aktualne wersje nie mogą zostać oznaczone jako przeznaczone}} do tłumaczenia.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Ta strona jest odradzana|Te strony są odradzane}} do dalszego tłumaczenia.',
+	'tpt-select-prioritylangs' => 'Kody języków priorytetowych rozdzielone przecinkami:',
+	'tpt-select-prioritylangs-force' => 'Zapobieganie tłumaczeniom na języki inne niż priorytetowe',
+	'tpt-select-prioritylangs-reason' => 'Powód:',
+	'tpt-sections-prioritylangs' => 'Języki priorytetowe',
 	'tpt-rev-mark' => 'zaznacz do tłumaczenia',
 	'tpt-rev-unmark' => 'usuń z tłumaczenia',
 	'tpt-rev-discourage' => 'zniechęcić',
@@ -5395,11 +5443,20 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 	'tpt-translation-intro' => 'Ta strona to <span class="plainlinks">[$1 przetłumaczona wersja]</span> strony [[$2]], a tłumaczenie jest ukończone lub aktualne w $3%.',
 	'tpt-translation-intro-fuzzy' => 'Tak są oznaczane nieaktualne tłumaczenia.',
 	'tpt-languages-legend' => 'Inne języki:',
+	'tpt-languages-zero' => 'Rozpocznij tłumaczenie na ten język',
 	'tpt-target-page' => 'Ta strona nie może zostać zaktualizowana ręcznie.
 Jest ona tłumaczeniem strony [[$1]], a tłumaczenie może zostać zmienione za pomocą [$2 narzędzia tłumacza].',
 	'tpt-unknown-page' => 'Ta przestrzeń nazw jest zarezerwowana dla tłumaczeń stron z zawartością.
 Strona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stronie oznaczonej do tłumaczenia.',
-	'tpt-translation-restricted' => 'Tłumaczenie tej grupy na ten język zostało zablokowane przez administratora tłumaczenia.',
+	'tpt-translation-restricted' => 'Tłumaczenie tej strony na ten język zostało zablokowane przez administratora tłumaczenia.
+
+Powód: $1',
+	'tpt-discouraged-language-force' => 'Administrator tłumaczenia ograniczył języki, na które ta strona może być tłumaczona. Ten język do nich nie należy.
+
+Powód: $1',
+	'tpt-discouraged-language' => 'Ten język nie należy do języków priorytetowych ustawionych przez administratora tłumaczenia dla tej strony.
+
+Powód: $1',
 	'tpt-render-summary' => 'Aktualizowanie w celu dopasowania nowej wersji strony źródłowej',
 	'tpt-download-page' => 'Wyeksportuj stronę z tłumaczeniami',
 	'pt-parse-open' => 'Niezrównoważony znacznik &lt;translate>.
@@ -5423,6 +5480,9 @@ Tekst sekcji – <pre>$1</pre>',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|napotkał|napotkała}} problem przy usuwaniu tłumaczonej strony [[:$1]]',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|usunął|usunęła}} tłumaczoną stronę $1',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|napotkał|napotkała}} problem podczas usuwania strony z tłumaczeniem [[:$1]]',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|usunął|usunęła}} języki priorytetowe strony do przetłumaczenia [[:$1]]',
+	'pt-log-priority-langs' => '{{GENDER:$2|ustawił|ustawiła}} języki priorytetowe strony do przetłumaczenia [[:$1]] na $3',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|ograniczył|ograniczyła}} języki na jakie można przetłumaczyć stronę [[:$1]] na $3',
 	'pt-movepage-title' => 'Przenieś przetłumaczalną stronę $1',
 	'pt-movepage-blockers' => 'Przetłumaczalna strona nie może zostać przeniesiona pod nową nazwę ponieważ {{PLURAL:$1|wystąpił następujący błąd|wystąpiły następujące błędy:}}',
 	'pt-movepage-block-base-exists' => 'Istnieje bazowa strona docelowa [[:$1]].',
@@ -6046,8 +6106,8 @@ $messages['ru'] = array(
 но последняя версия не может быть отмечена для перевода.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Этой странице|Этим страницам}} было отказано в дальнейшем переводе.',
 	'tpt-select-prioritylangs' => 'Предпочитаемые языки (коды языков, разделенные запятой):',
-	'tpt-select-prioritylangs-reason' => 'Причина для установки этих предпочитаемых языков (необязательно)',
-	'tpt-sections-prioritylangs' => 'Предпочитаемые языки',
+	'tpt-select-prioritylangs-reason' => 'Причина:',
+	'tpt-sections-prioritylangs' => 'Приоритетные языки',
 	'tpt-rev-mark' => 'пометить для перевода',
 	'tpt-rev-unmark' => 'убрать из перевода',
 	'tpt-rev-discourage' => 'исключить',
@@ -7335,6 +7395,10 @@ Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra nhữn
 	'tpt-old-pages' => 'Một phiên bản nào đó của {{PLURAL:$1||các}} trang này đã được đánh dấu cần dịch.',
 	'tpt-other-pages' => '{{PLURAL:$1|Một|Những}} phiên bản trước của trang này được đánh dấu là cần dịch, nhưng {{PLURAL:$1|phiên bản|các phiên bản}} gần đây nhất không thể được đánh dấu là cần dịch.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Trang|Các trang}} này đã được khuyên để yên không cần dịch tiếp.',
+	'tpt-select-prioritylangs' => 'Danh sách các mã ngôn ngữ quan trọng phân tách bằng dấu phẩy:',
+	'tpt-select-prioritylangs-force' => 'Không cho phép dịch ra các ngôn ngữ không quan trọng',
+	'tpt-select-prioritylangs-reason' => 'Lý do:',
+	'tpt-sections-prioritylangs' => 'Ngôn ngữ quan trọng',
 	'tpt-rev-mark' => 'đánh dấu cần dịch',
 	'tpt-rev-unmark' => 'bỏ dấu cần dịch',
 	'tpt-rev-discourage' => 'khuyên để yên',
@@ -7350,11 +7414,20 @@ Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra nhữn
 	'tpt-translation-intro' => 'Trang này là một <span class="plainlinks">[$1 bản dịch]</span> của trang [[$2]] và bản dịch đã hoàn thành $3%.',
 	'tpt-translation-intro-fuzzy' => 'Các bản dịch lỗi thời được đánh dấu như thế này.',
 	'tpt-languages-legend' => 'Ngôn ngữ khác:',
+	'tpt-languages-zero' => 'Bắt đầu bản dịch trong ngôn ngữ này',
 	'tpt-target-page' => 'Trang này không thể cập nhật bằng tay.
 Nó là một bản dịch của trang [[$1]] và có thể cập nhật bản dịch bằng cách sử dụng [$2 công cụ dịch thuật].',
 	'tpt-unknown-page' => 'Không gian tên này được dành cho các bản dịch trang nội dung.
 Trang bạn muốn sửa đổi dường như không tương ứng với trang nào đã được đánh dấu cần dịch.',
-	'tpt-translation-restricted' => 'Người quản lý biên dịch không cho phép dịch nhóm ra ngôn ngữ này.',
+	'tpt-translation-restricted' => 'Một người quản lý biên dịch không cho phép dịch trang ra ngôn ngữ này.
+
+Lý do: $1',
+	'tpt-discouraged-language-force' => 'Một người quản lý biên dịch chỉ cho phép biên dịch trang ra một số ngôn ngữ, không bao gồm ngôn ngữ này.
+
+Lý do: $1',
+	'tpt-discouraged-language' => 'Ngôn ngữ này không phải là một trong những ngôn ngữ quan trọng theo người quản lý biên dịch của trang này.
+
+Lý do: $1',
 	'tpt-render-summary' => 'Cập nhật đến phiên bản mới của trang nguồn',
 	'tpt-download-page' => 'Xuất trang cùng các bản dịch',
 	'pt-parse-open' => 'Thẻ &lt;translate> không đều.
@@ -7378,6 +7451,9 @@ Phần văn bản: <pre>$1</pre>',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|}}đã gặp một vấn đề khi xóa trang dịch được [[:$1]]',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|}}đã hoàn thành xóa trang dịch $1',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|}}đã gặp một vấn đề khi xóa trang dịch [[:$1]]',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2}}đã gỡ các ngôn ngữ quan trọng khỏi trang dịch được [[:$1]]',
+	'pt-log-priority-langs' => '{{GENDER:$2}}đã đặt các ngôn ngữ quan trọng của trang dịch được [[:$1]] là $3',
+	'pt-log-priority-langs-force' => '{{GENDER:$2}}đã đặt danh sách ngôn ngữ hạn chế của trang dịch được [[:$1]] là $3',
 	'pt-movepage-title' => 'Di chuyển trang dịch được $1',
 	'pt-movepage-blockers' => 'Trang dịch được không thể được đổi tên vì {{PLURAL:$1|lỗi|các lỗi}} sau:',
 	'pt-movepage-block-base-exists' => 'Bản gốc của trang đích [[:$1]] tồn tại.',
