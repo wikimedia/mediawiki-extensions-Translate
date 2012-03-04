@@ -2037,7 +2037,7 @@ Dir kënnt och aner Iwwersetzer vun der selwechter Sprooch op der [[Portal_talk:
 	'translate-fs-email-text' => 'Gitt w.e.g. Är E-Mailadress an [[Special:Preferences|Ären Astellungen]] un a confirméiert se vun der E-Mail aus déi Dir geschéckt kritt.
 
 Dëst erlaabte et anere Benotzer fir Iech per Mail ze kontaktéieren.
-Dir och Newsletteren awer héchstens eng pro Mount.
+Dir kritt och Newsletteren awer héchstens eng pro Mount.
 Wann Dir keng Newslettere kréie wëllt, da kënnt Dir dat am Tab "{{int:prefs-personal}}"  vun Ären [[Special:Preferences|Astellungen]] ausschalten.',
 );
 
@@ -2556,6 +2556,7 @@ $messages['ro'] = array(
 	'firststeps' => 'Primii pași',
 	'firststeps-desc' => '[[Special:FirstSteps|Pagină specială]] pentru a veni în întâmpinarea utilizatorilor unui site wiki care folosesc extensia Translate',
 	'translate-fs-pagetitle-done' => ' – realizat!',
+	'translate-fs-pagetitle-pending' => ' – în așteptare',
 	'translate-fs-pagetitle' => 'Ghidul începătorului – $1',
 	'translate-fs-signup-title' => 'Înregistrați-vă',
 	'translate-fs-settings-title' => 'Configurați-vă preferințele',
@@ -2566,8 +2567,30 @@ $messages['ro'] = array(
 	'translate-fs-intro' => "Bine ați venit: acesta este un ghid al începătorului oferit de {{SITENAME}}.
 Veți fi îndrumat pas cu pas pentru a deveni un traducător.
 În finalul procesului, veți putea traduce ''mesaje din interfața'' tuturor proiectelor care dispun de serviciile {{SITENAME}}.",
+	'translate-fs-selectlanguage' => 'Alegeți o limbă',
+	'translate-fs-settings-planguage' => 'Limbă principală:',
+	'translate-fs-settings-planguage-desc' => 'Limba primară va deveni limba interfeței pe acest wiki și limba implicită pentru traducerile dumneavoastră.',
+	'translate-fs-settings-slanguage' => 'Limba ajutătoare nr. $1:',
+	'translate-fs-settings-slanguage-desc' => 'Este posibilă afișarea altor traduceri ale mesajelor, în alte limbi, în cadrul editorului.
+Aici puteți alege limbile pe care doriți să le afișați.',
+	'translate-fs-settings-submit' => 'Salvează preferințele',
+	'translate-fs-userpage-level-N' => 'Sunt vorbitor nativ de',
+	'translate-fs-userpage-level-5' => 'Sunt traducător profesionist în',
+	'translate-fs-userpage-level-4' => 'O cunosc asemenea unui vorbitor nativ',
+	'translate-fs-userpage-level-3' => 'Am cunoștințe bune de',
+	'translate-fs-userpage-level-2' => 'Am cunoștințe rezonabile de',
+	'translate-fs-userpage-level-1' => 'O cunosc destul de puțin',
+	'translate-fs-userpage-help' => 'Vă rugăm să vă indicați competențele lingvistice și să ne spuneți câte ceva despre dumneavoastră. Dacă cunoașteți mai mult de cinci limbi, le puteți adăuga mai târziu pe restul.',
 	'translate-fs-userpage-submit' => 'Creează-mi pagina mea de utilizator',
 	'translate-fs-userpage-done' => 'Foarte bine! Acum aveți o pagină de utilizator.',
+	'translate-fs-permissions-planguage' => 'Limbă principală:',
+	'translate-fs-permissions-help' => 'Acum va trebuie să faceți o cerere pentru a fi adăugat grupului de traducători.
+Selectați limba principală în care veți traduce.
+
+Puteți menționa alte limbi și remarci în caseta de mai jos.',
+	'translate-fs-permissions-pending' => 'Cererea dumneavoastră a fost transmisă către [[$1]], iar cineva din cadrul echipei site-ului o va verifica cât mai curând posibil.
+Dacă vă confirmați adresa electronică, veți primi o notificare prin e-mail de îndată ce cererea va fi fost verificată.',
+	'translate-fs-permissions-submit' => 'Trimite cererea',
 	'translate-fs-target-text' => "Felicitări!
 Din acest moment puteți traduce.
 
