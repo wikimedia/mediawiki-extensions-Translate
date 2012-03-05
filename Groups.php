@@ -668,11 +668,17 @@ class AggregateMessageGroup extends MessageGroupBase {
 	}
 
 	public function getMessage( $key, $code ) {
-		$id = TranslateUtils::messageKeyToGroup( $this->getNamespace(), $key );
-		$groups = $this->getGroups();
-
-		if ( isset( $groups[$id] ) ) {
-			return $groups[$id]->getMessage( $key, $code );
+		/* Just hand over the message content retrieval to the primary message
+		 * group directly. This used to iterate over the subgroups looking for
+		 * the primary group, but that might actually be under some other
+		 * aggregate message group.
+		 * @TODO: implement getMessageContent to avoid hardcoding the namespace
+		 * here.
+		 */
+		$groupId = TranslateUtils::messageKeyToGroup( $this->getNamespace(), $key );
+		$group = MessageGroups::getGroup( $groupId );
+		if ( $group ) {
+			return $group->getMessage( $key, $code );
 		} else {
 			return null;
 		}
