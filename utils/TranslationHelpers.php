@@ -297,7 +297,7 @@ class TranslationHelpers {
 			self::reportTranslationServiceFailure( $serviceName );
 		} elseif ( !is_array( $response ) ) {
 			error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
-			return null;
+			throw new TranslationHelperExpection( 'Malformed reply from remote server' );
 		}
 
 		$suggestions = $response['ttmserver'];
@@ -369,7 +369,7 @@ class TranslationHelpers {
 
 	/**
 	 * @param $async bool
-	 * @return null|string
+	 * @return string
 	 * @throws MWException
 	 */
 	public function getSuggestionBox( $async = false ) {
@@ -448,7 +448,7 @@ class TranslationHelpers {
 		$unsupported = wfGetCache( CACHE_ANYTHING )->get( $memckey );
 
 		if ( isset( $unsupported[$code] ) ) {
-			return null;
+			throw new TranslationHelperExpection( 'Unsupported language' );
 		}
 
 		$options = array();
@@ -462,7 +462,7 @@ class TranslationHelpers {
 		if ( isset( $config['key'] ) ) {
 			$params['appId'] = $config['key'];
 		} else {
-			return null;
+			throw new TranslationHelperExpection( 'API key is not set' );
 		}
 
 		$url = $config['url'] . '?' . wfArrayToCgi( $params );
@@ -483,7 +483,7 @@ class TranslationHelpers {
 			if ( strpos( $error, 'must be a valid language' ) !== false ) {
 				$unsupported[$code] = true;
 				wfGetCache( CACHE_ANYTHING )->set( $memckey, $unsupported, 60 * 60 * 8 );
-				return null;
+				throw new TranslationHelperExpection( 'Unsupported language code' );
 			}
 
 			if ( $error ) {
@@ -536,7 +536,7 @@ class TranslationHelpers {
 				self::reportTranslationServiceFailure( $serviceName );
 			} elseif ( !is_object( $response ) ) {
 				error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
-				return null;
+				throw new TranslationHelperExpection( 'Malformed reply from remote server' );
 			}
 
 			foreach ( $response->responseData as $pair ) {
@@ -558,7 +558,7 @@ class TranslationHelpers {
 		$code = str_replace( '-', '_', wfBCP47( $code ) );
 
 		if ( !isset( $pairs[$code] ) ) {
-			return null;
+			throw new TranslationHelperExpection( 'Unsupported language' );
 		}
 
 		$suggestions = array();
@@ -601,7 +601,7 @@ class TranslationHelpers {
 		}
 
 		if ( !count( $suggestions ) ) {
-			return null;
+			throw new TranslationHelperExpection( 'No suggestions' );
 		}
 
 		$divider = Html::element( 'div', array( 'style' => 'margin-bottom: 0.5ex' ) );
@@ -771,7 +771,7 @@ class TranslationHelpers {
 		global $wgTranslateDocumentationLanguageCode, $wgOut;
 
 		if ( !$wgTranslateDocumentationLanguageCode ) {
-			return null;
+			throw new TranslationHelperExpection( 'Message documentation language code is not defined' );
 		}
 
 		$page = $this->handle->getKey();
