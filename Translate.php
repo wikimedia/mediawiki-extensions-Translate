@@ -45,7 +45,6 @@ require_once( "$dir/_autoload.php" );
 $wgExtensionMessagesFiles['Translate'] = "$dir/Translate.i18n.php";
 $wgExtensionMessagesFiles['FirstSteps'] = "$dir/FirstSteps.i18n.php";
 $wgExtensionMessagesFiles['PageTranslation'] = "$dir/PageTranslation.i18n.php";
-$wgExtensionMessagesFiles['AggregateGroups'] = "$dir/PageTranslation.i18n.php";
 $wgExtensionMessagesFiles['TranslateGroupDescriptions'] = "$dir/TranslateGroupDescriptions.i18n.php";
 $wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
 $wgExtensionMessagesFiles['TranslateMagic'] = "$dir/Translate.magic.php";
