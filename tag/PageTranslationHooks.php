@@ -616,9 +616,9 @@ FOO;
 			if ( $_['languages'] === false ) {
 				return wfMsgExt( 'pt-log-priority-langs-unset', $opts, $title->getPrefixedText(), $user );
 			} elseif ( $_['force'] === 'on' ) {
-				return wfMsgExt( 'pt-log-priority-langs-force', $opts, $title->getPrefixedText(), $user, $_['languages'] );
+				return wfMsgExt( 'pt-log-priority-langs-force', $opts, $title->getPrefixedText(), $user, $_['languages'], $_['reason'] );
 			} else {
-				return wfMsgExt( 'pt-log-priority-langs', $opts, $title->getPrefixedText(), $user , $_['languages'] );
+				return wfMsgExt( 'pt-log-priority-langs', $opts, $title->getPrefixedText(), $user , $_['languages'], $_['reason'] );
 			}
 		}
 		return '';
