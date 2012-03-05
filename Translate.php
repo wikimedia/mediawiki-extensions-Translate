@@ -45,6 +45,7 @@ require_once( "$dir/_autoload.php" );
 $wgExtensionMessagesFiles['Translate'] = "$dir/Translate.i18n.php";
 $wgExtensionMessagesFiles['FirstSteps'] = "$dir/FirstSteps.i18n.php";
 $wgExtensionMessagesFiles['PageTranslation'] = "$dir/PageTranslation.i18n.php";
+$wgExtensionMessagesFiles['AggregateGroups'] = "$dir/PageTranslation.i18n.php";
 $wgExtensionMessagesFiles['TranslateGroupDescriptions'] = "$dir/TranslateGroupDescriptions.i18n.php";
 $wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
 $wgExtensionMessagesFiles['TranslateMagic'] = "$dir/Translate.magic.php";
@@ -81,6 +82,7 @@ $wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps';
 $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
 // Unlisted special page; does not need $wgSpecialPageGroups.
 $wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
+$wgSpecialPages['AggregateGroups'] = 'SpecialAggregateGroups';
 
 // API
 $wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
@@ -89,9 +91,11 @@ $wgAPIMetaModules['messagegroupstats'] = 'ApiQueryMessageGroupStats';
 $wgAPIMetaModules['messagetranslations'] = 'ApiQueryMessageTranslations';
 $wgAPIModules['translationreview'] = 'ApiTranslationReview';
 $wgAPIModules['groupreview'] = 'ApiGroupReview';
+$wgAPIModules['aggregategroups'] = 'ApiAggregateGroups';
 $wgAPIModules['ttmserver'] = 'ApiTTMServer';
 $wgHooks['APIQueryInfoTokens'][] = 'ApiTranslationReview::injectTokenFunction';
 $wgHooks['APIQueryInfoTokens'][] = 'ApiGroupReview::injectTokenFunction';
+$wgHooks['APIQueryInfoTokens'][] = 'ApiAggregateGroups::injectTokenFunction';
 
 // Register hooks.
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
@@ -251,6 +255,12 @@ $wgResourceModules['ext.translate.special.pagetranslation'] = array(
 	'dependencies' => array(
 		'jquery.ui.autocomplete',
 	),
+	'position' => 'top',
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.aggregategroups'] = array(
+	'scripts' => 'resources/ext.translate.special.aggregategroups.js',
+	'styles' => 'resources/ext.translate.special.aggregategroups.css',
 	'position' => 'top',
 ) + $resourcePaths;
 

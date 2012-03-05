@@ -112,6 +112,12 @@ Reason: $1',
 
 	'tpt-download-page' => 'Export page with translations',
 
+	'tpt-aggregategroups' => 'Aggregate Groups',
+	'tpt-aggregategroup-add' => 'Add',
+	'tpt-aggregategroup-save' => 'Save',
+	'tpt-aggregategroup-add-new' => 'Add a new aggregate group',
+	'tpt-aggregategroup-new-name' => 'Name:',
+	'tpt-aggregategroup-new-description' => 'Description(optional):',
 	'pt-parse-open' => 'Unbalanced &lt;translate> tag.
 Translation template: <pre>$1</pre>',
 	'pt-parse-close' => 'Unbalanced &lt;/translate> tag.

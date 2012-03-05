@@ -54,6 +54,7 @@ $wgAutoloadClasses['MessageWriter'] = "$IP/maintenance/language/writeMessagesArr
  * There are few more special pages in page translation section.
  * @{
  */
+$wgAutoloadClasses['SpecialAggregateGroups'] = "$dir/specials/SpecialAggregateGroups.php";
 $wgAutoloadClasses['SpecialFirstSteps'] = "$dir/specials/SpecialFirstSteps.php";
 $wgAutoloadClasses['SpecialImportTranslations'] = "$dir/specials/SpecialImportTranslations.php";
 $wgAutoloadClasses['SpecialLanguageStats'] = "$dir/specials/SpecialLanguageStats.php";
@@ -180,6 +181,7 @@ $wgAutoloadClasses['TagContainer'] = "$dir/utils/Html.php";
  * @{
  */
 $wgAutoloadClasses['ApiGroupReview'] = "$dir/api/ApiGroupReview.php";
+$wgAutoloadClasses['ApiAggregateGroups'] = "$dir/api/ApiAggregateGroups.php";
 $wgAutoloadClasses['ApiQueryMessageCollection'] = "$dir/api/ApiQueryMessageCollection.php";
 $wgAutoloadClasses['ApiQueryMessageGroupStats'] = "$dir/api/ApiQueryMessageGroupStats.php";
 $wgAutoloadClasses['ApiQueryMessageGroups'] = "$dir/api/ApiQueryMessageGroups.php";
