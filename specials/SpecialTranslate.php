@@ -151,9 +151,9 @@ class SpecialTranslate extends SpecialPage {
 				if ( $priorityForce === 'on' ) {
 					// Hide table
 					$this->paging['count'] = 0;
-					$description .= wfMessage( 'tpt-discouraged-language-force', $priorityReason )->parseAsBlock();
+					$description .= Html::RawElement( 'div', array( 'class' => 'error' ), wfMessage( 'tpt-discouraged-language-force', $priorityReason )->parseAsBlock() );
 				} else {
-					$description .= wfMessage( 'tpt-discouraged-language', $priorityReason )->parseAsBlock();
+					$description .= Html::RawElement( 'div', array( 'class' => 'warning' ), wfMessage( 'tpt-discouraged-language', $priorityReason )->parseAsBlock() );
 				}
 			}
 			if ( $description ) {
