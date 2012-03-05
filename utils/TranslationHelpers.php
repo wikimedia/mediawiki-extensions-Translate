@@ -251,86 +251,6 @@ class TranslationHelpers {
 	 * @param $config
 	 * @return string Html snippet which contains the suggestions.
 	 */
-	protected function getTmBox( $serviceName, $config ) {
-		$this->mustHaveDefinition();
-		self::checkTranslationServiceFailure( $serviceName );
-
-		// Needed data
-		$page = $this->handle->getKey();
-		$code = $this->handle->getCode();
-		if ( !$code ) {
-			$code = $this->group->getSourceLanguage();
-		}
-		$definition = $this->getDefinition();
-		$ns = $this->handle->getTitle()->getNsText();
-
-		// Fetch suggestions
-		$server = $config['server'];
-		$port   = $config['port'];
-		$timeout = $config['timeout'];
-		$def = rawurlencode( $definition );
-		$url = "$server:$port/tmserver/en/$code/unit/$def";
-		$suggestions = Http::get( $url, $timeout );
-
-		$sugFields = array();
-		// Parse suggestions, but limit to three (in case there would be more)
-		$boxes = array();
-
-		if ( $suggestions === false ) {
-			// Assume timeout
-			self::reportTranslationServiceFailure( $serviceName );
-		}
-		$suggestions = FormatJson::decode( $suggestions, true );
-
-		foreach ( $suggestions as $s ) {
-			// No use to suggest them what they are currently viewing
-			if ( $s['context'] === "$ns:$page" ) {
-				continue;
-			}
-
-			$accuracy = wfMsgHtml( 'translate-edit-tmmatch' , sprintf( '%.2f', $s['quality'] ) );
-			$legend = array( $accuracy => array() );
-
-			$source_page = Title::newFromText( $s['context'] . "/$code" );
-			if ( $source_page ) {
-				$legend[$accuracy][] = self::ajaxEditLink( $source_page, '•' );
-			}
-
-			$text = $this->suggestionField( $s['target'] );
-			$params = array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] );
-
-			if ( isset( $sugFields[$s['target']] ) ) {
-				$sugFields[$s['target']][2] = array_merge_recursive( $sugFields[$s['target']][2], $legend );
-			} else {
-				$sugFields[$s['target']] = array( $text, $params, $legend );
-			}
-		}
-
-		foreach ( $sugFields as $field ) {
-			list( $text, $params, $label ) = $field;
-			$legend = array();
-
-			foreach ( $label as $acc => $links ) {
-				$legend[] = $acc . ' ' . implode( " ", $links );
-			}
-
-			$legend = implode( ' | ', $legend );
-			$boxes[] = Html::rawElement( 'div', $params, self::legend( $legend ) . $text . self::clear() ) . "\n";
-		}
-
-		$boxes = array_slice( $boxes, 0, 3 );
-		$result = implode( "\n", $boxes );
-
-		// Limit to three max
-		return $result;
-	}
-
-	/**
-	 * Returns suggestions from a translation memory.
-	 * @param $serviceName
-	 * @param $config
-	 * @return string Html snippet which contains the suggestions.
-	 */
 	protected function getTTMServerBox( $serviceName, $config ) {
 		$this->mustHaveDefinition();
 		$this->mustBeTranslation();
@@ -401,9 +321,7 @@ class TranslationHelpers {
 				$config['timeout'] = $config['timeout-sync'];
 			}
 
-			if ( $config['type'] === 'tmserver' ) {
-				$boxes[] = $this->getTmBox( $name, $config );
-			} elseif ( $config['type'] === 'ttmserver' ) {
+			if ( $config['type'] === 'ttmserver' ) {
 				$boxes[] = $this->getTTMServerBox( $name, $config );
 			} elseif ( $config['type'] === 'microsoft' ) {
 				$boxes[] = $this->getMicrosoftSuggestion( $name, $config );

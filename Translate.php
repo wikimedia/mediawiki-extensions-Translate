@@ -124,7 +124,6 @@ $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterF
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 
 // Translation memory updates
-$wgHooks['Translate:newTranslation'][] = 'TranslationMemoryUpdater::update';
 $wgHooks['Translate:newTranslation'][] = 'TranslateHooks::updateTM';
 
 // Translation display related
@@ -321,22 +320,11 @@ if ( !defined( 'TRANSLATE_FUZZY' ) ) {
 
 /**
  * Define various web services that provide translation suggestions.
- * Example for tmserver translation memory from translatetoolkit.
- * <pre>
- * $wgTranslateTranslationServices['tmserver'] = array(
- *   'server' => 'http://127.0.0.1',
- *   'port' => 54321,
- *   'timeout-sync' => 3,
- *   'timeout-async' => 6,
- *   'database' => '/path/to/database.sqlite',
- *   'type' => 'tmserver',
- * );
- * </pre>
  *
  * For Apertium, you should get an API key.
  * @see http://wiki.apertium.org/wiki/Apertium_web_service
  *
- * The translation services are provided with the following information:
+ * The machine translation services are provided with the following information:
  * - server ip address
  * - versions of MediaWiki and Translate extension
  * - clients ip address encrypted with $wgProxyKey

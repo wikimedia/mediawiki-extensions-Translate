@@ -107,7 +107,6 @@ $wgAutoloadClasses['TranslateToolbox'] = "$dir/utils/ToolBox.php";
 $wgAutoloadClasses['TranslateYaml'] = "$dir/utils/TranslateYaml.php";
 $wgAutoloadClasses['TranslationEditPage'] = "$dir/utils/TranslationEditPage.php";
 $wgAutoloadClasses['TranslationHelpers'] = "$dir/utils/TranslationHelpers.php";
-$wgAutoloadClasses['TranslationMemoryUpdater'] = "$dir/utils/TranslationMemoryUpdater.php";
 $wgAutoloadClasses['TranslationStats'] = "$dir/utils/TranslationStats.php";
 
 /**@}*/
