@@ -107,6 +107,7 @@ Reason: $1',
 
 Reason: $1',
 
+	'tpt-priority-languages' => 'A translation administrator has set the priotiy languages for this group as $1.',
 	'tpt-render-summary' => 'Updating to match new version of source page',
 
 	'tpt-download-page' => 'Export page with translations',
@@ -268,6 +269,7 @@ $3 is an URL.',
 	'tpt-translation-restricted' => 'Error message shown to user when translation to a language which is restricted by translation admin.',
 	'tpt-discouraged-language-force' => 'Warning shown along with group description if the language is prevented from translation for the selected language',
 	'tpt-discouraged-language' => 'Warning shown along with group description if the language is discouraged from translation for the selected language',
+	'tpt-priority-languages' => 'Message to be shown before the messagestats table. $1 is comma seperated list of language codes.',
 	'pt-parse-open' => '"Translation template" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.',
 	'pt-shake-multiple' => 'Each translation (=section) unit can only contain one marker.',
 	'pt-shake-empty' => 'Translation unit (=section) is empty except for the translation marker (=<nowiki><!--T:1--></nowiki>)',
