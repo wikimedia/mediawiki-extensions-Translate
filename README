@@ -31,6 +31,7 @@ And for the code at:
 
 == Change log ==
 * 2012-03-05
+- Support for using remote TTMServers via API interface added.
 - Support for tmserver was removed. Translate comes with TTMServer enabled by default.
   To bootstrap it with current translations, run php scripts/ttmserver-export.php.
 * 2012-02-19

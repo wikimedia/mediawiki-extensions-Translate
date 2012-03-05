@@ -356,6 +356,17 @@ $wgTranslateTranslationServices['Apertium'] = array(
 	'type' => 'apertium',
 	'codemap' => array( 'no' => 'nb' ),
 );
+/* Example configuration for remote TTMServer
+$wgTranslateTranslationServices['example'] = array(
+	'url' => 'http://example.com/w/api.php',
+	'viewurl' => '//example.com/wiki/',
+	'displayname' => 'example.com',
+	'cutoff' => 0.75,
+	'timeout-sync' => 4,
+	'timeout-async' => 4,
+	'type' => 'remote-ttmserver',
+);
+*/
 
 /**
  * List of tasks in Special:Translate. If you are only using page translation
