@@ -55,8 +55,8 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		global $wgRequest, $wgOut;
 		$group = $wgRequest->getVal( 'group' );
 		$priorityLangs = TranslateMetadata::get( $group, 'prioritylangs' );
-		if( $priorityLangs ){
-			$wgOut->addHTML( wfMsg('tpt-priority-languages', $priorityLangs ) );
+		if ( $priorityLangs ) {
+			$wgOut->addWikiMsg( 'tpt-priority-languages', $priorityLangs );
 		}
 	}
 
