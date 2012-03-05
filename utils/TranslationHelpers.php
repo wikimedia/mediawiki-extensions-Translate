@@ -225,7 +225,7 @@ class TranslationHelpers {
 		try {
 			return call_user_func_array( $cb, $params );
 		} catch ( TranslationHelperExpection $e ) {
-			return"<!-- Box $type not available: {$e->getMessage()} -->";
+			return "<!-- Box $type not available: {$e->getMessage()} -->";
 		}
 	}
 
@@ -313,6 +313,13 @@ class TranslationHelpers {
 	public function getSuggestionBox( $async = false ) {
 		global $wgTranslateTranslationServices;
 
+		$handlers = array(
+			'ttmserver' => 'getTTMServerBox',
+			'microsoft' => 'getMicrosoftSuggestion',
+			'apertium'  => 'getApertiumSuggestion',
+		);
+
+		$errors = '';
 		$boxes = array();
 		foreach ( $wgTranslateTranslationServices as $name => $config ) {
 			if ( $async === 'async' ) {
@@ -321,12 +328,13 @@ class TranslationHelpers {
 				$config['timeout'] = $config['timeout-sync'];
 			}
 
-			if ( $config['type'] === 'ttmserver' ) {
-				$boxes[] = $this->getTTMServerBox( $name, $config );
-			} elseif ( $config['type'] === 'microsoft' ) {
-				$boxes[] = $this->getMicrosoftSuggestion( $name, $config );
-			} elseif ( $config['type'] === 'apertium' ) {
-				$boxes[] = $this->getApertiumSuggestion( $name, $config );
+			if ( isset( $handlers[$config['type']] ) ) {
+				$method = $handlers[$config['type']];
+				try {
+					$boxes[] = $this->$method( $name, $config );
+				} catch ( TranslationHelperExpection $e ) {
+					$errors .= "<!-- Box $name not available: {$e->getMessage()} -->\n";
+				}
 			} else {
 				throw new MWException( __METHOD__ . ": Unsupported type {$config['type']}" );
 			}
@@ -338,10 +346,10 @@ class TranslationHelpers {
 		// Enclose if there is more than one box
 		if ( count( $boxes ) ) {
 			$sep = Html::element( 'hr', array( 'class' => 'mw-translate-sep' ) );
-			return TranslateUtils::fieldset( wfMsgHtml( 'translate-edit-tmsugs' ),
+			return $errors . TranslateUtils::fieldset( wfMsgHtml( 'translate-edit-tmsugs' ),
 				implode( "$sep\n", $boxes ), array( 'class' => 'mw-translate-edit-tmsugs' ) );
 		} else {
-			return null;
+			return $errors;
 		}
 	}
 
