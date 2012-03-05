@@ -700,6 +700,13 @@ class SpecialPageTranslation extends SpecialPage {
 		// Normalize
 		$npLangs = array_map( 'trim', explode( ',', $npLangs ) );
 		$npLangs = array_unique( $npLangs );
+		// Remove invalid language codes.
+		$languages = Language::fetchLanguageNames( null, 'mw' );
+		foreach ( $npLangs as $index => $language ) {
+			if( !array_key_exists( $language, $languages ) ) {
+				unset( $npLangs[$index] );
+			}
+		}
 		$npLangs = implode( ',', $npLangs );
 		if ( $npLangs === '' ) {
 			$npLangs = false;
