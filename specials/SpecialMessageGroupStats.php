@@ -52,7 +52,12 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 	/// Overwritten from SpecialLanguageStats
 	protected function outputIntroduction() {
-		return '';
+		global $wgRequest, $wgOut;
+		$group = $wgRequest->getVal( 'group' );
+		$priorityLangs = TranslateMetadata::get( $group, 'prioritylangs' );
+		if( $priorityLangs ){
+			$wgOut->addHTML( wfMsg('tpt-priority-languages', $priorityLangs ) );
+		}
 	}
 
 	/// Overwriten from SpecialLanguageStats
