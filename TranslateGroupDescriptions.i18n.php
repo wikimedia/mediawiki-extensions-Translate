@@ -2312,7 +2312,6 @@ $messages['sl'] = array(
 	'translate-group-desc-uniwiki' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitev, povezanih z [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitev, povezanih z [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedijino Pobudo za uporabnost]',
 	'translate-group-desc-translatablepages' => 'Vse prevedljive strani',
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] omogoča ljudem raziskovati digitalne kulturne vire Evrope',
 	'bw-desc-freecol' => 'Pred prevajanjem FreeCol v vaš jezik, prosimo, preberite [[Translating:FreeCol]]. Freecol uporablja dovoljenje GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], spletni forum napisan v PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je prost spletni sistem za sledenje hroščem. Prosimo, sporočite morebitne težave na [[Support|Podpora]].',
@@ -2336,10 +2335,7 @@ $messages['sl'] = array(
 	'bw-desc-openstreetmap' => 'Skupina sporočil za vsa sporočila [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Ta skupina sporočil zajema sporočila vmesnika [[Translating:Open Street Map|Open Street Map]].
 Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} stran Unicode CLDR za razlago množinskih ključev].',
-	'bw-desc-osm-potlatch' => 'Ta skupina sporočil vsebuje sporočila vmesnika [[Translating:OpenStreetMap|Potlatch]]. Prosimo:
-
-* Poskusite ohraniti vaše prevode podobne dolžine kot so angleški izvirniki kolikor se le da, zaradi omejitve ogrodja uporabniškega vmesnika. Oglejte si tudi [http://trac.openstreetmap.org/ticket/2067 odprti hrošč].
-* Uporabljajte [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] za preizkušanje Potlatch. Tam lahko preizkušate vse kar hočete, v katerem koli območju.',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] je na flashu temelječ urejevalnik OpenStreetMap',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] je zbirka orodij za urejanje Wikipedije',
 	'bw-desc-shapado' => 'Skupina sporočil prostega in odprtokodnega programja za vprašanja in odgovore [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je odprtokodni strežnik za mikrobloganje',
