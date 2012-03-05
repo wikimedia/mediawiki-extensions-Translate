@@ -173,7 +173,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 			$extra = array();
 		} else {
 			if( $total === 0 ) {
-				error_log( $groupId . ' has 0 messages.' );
+				error_log( __METHOD__ . ": $code has 0 messages." );
 			}
 
 			if ( $this->noComplete && $fuzzy === 0 && $translated === $total ) {
