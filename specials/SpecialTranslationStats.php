@@ -23,6 +23,31 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		parent::__construct( 'TranslationStats' );
 	}
 
+	/// @since 2012-03-05
+	protected static $graphs = array(
+		'edits' => 'TranslatePerLanguageStats',
+		'users' => 'TranslatePerLanguageStats',
+		'registrations' => 'TranslateRegistrationStats',
+		'reviews' => 'ReviewPerLanguageStats',
+		'reviewers' => 'ReviewPerLanguageStats',
+	);
+
+	/**
+	 * @since 2012-03-05
+	 * @return list
+	 */
+	public function getGraphTypes() {
+		return array_keys( self::$graphs );
+	}
+
+	/**
+	 * @since 2012-03-05
+	 * @return string
+	 */
+	public function getGraphClass( $type ) {
+		return self::$graphs[$type];
+	}
+
 	public function execute( $par ) {
 		global $wgOut, $wgRequest;
 
@@ -69,7 +94,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			$opts->validateIntBounds( 'days', 1, 4 );
 		}
 
-		$validCounts = array( 'edits', 'users', 'registrations' );
+		$validCounts = $this->getGraphTypes();
 		if ( !in_array( $opts['count'], $validCounts ) ) {
 			$opts['count'] = 'edits';
 		}
@@ -135,7 +160,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			$this->eInput( 'start', $opts, 12 ) .
 			$this->eInput( 'days', $opts ) .
 			$this->eRadio( 'scale', $opts, array( 'months', 'weeks', 'days', 'hours' ) ) .
-			$this->eRadio( 'count', $opts, array( 'edits', 'users', 'registrations' ) ) .
+			$this->eRadio( 'count', $opts, $this->getGraphTypes() ) .
 			'<tr><td colspan="2"><hr /></td></tr>' .
 			$this->eLanguage( 'language', $opts ) .
 			$this->eGroup( 'group', $opts ) .
@@ -356,11 +381,8 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		global $wgLang;
 		$dbr = wfGetDB( DB_SLAVE );
 
-		if ( $opts['count'] === 'registrations' ) {
-			$so = new TranslateRegistrationStats( $opts );
-		} else {
-			$so = new TranslatePerLanguageStats( $opts );
-		}
+		$class = $this->getGraphClass( $opts['count'] );
+		$so = new $class( $opts );
 
 		$fixedStart = $opts->getValue( 'start' ) !== '';
 
@@ -737,6 +759,20 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 		}
 		return $conds;
 	}
+
+	/// @since 2012-03-05
+	protected static function namespacesFromGroups( $groupIds ) {
+		$namespaces = array();
+		foreach ( $groupIds as $id ) {
+			$group = MessageGroups::getGroup( $id );
+			if ( $group ) {
+				$namespace = $group->getNamespace();
+				$namespaces[$namespace] = true;
+			}
+		}
+
+		return array_keys( $namespaces );
+	}
 }
 
 /**
@@ -776,27 +812,16 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		$this->groups = array_filter( array_map( 'trim', explode( ',', $this->opts['group'] ) ) );
 		$this->codes = array_filter( array_map( 'trim', explode( ',', $this->opts['language'] ) ) );
 
-		$namespaces = array();
-		$languages = array();
-
-		foreach ( $this->groups as $id ) {
-			$group = MessageGroups::getGroup( $id );
-			if ( $group ) {
-				$namespaces[] = $group->getNamespace();
-			}
-		}
-
-		foreach ( $this->codes as $code ) {
-			$languages[] = 'rc_title ' . $db->buildLike( $db->anyString(), "/$code" );
-		}
-
+		$namespaces = self::namespacesFromGroups( $this->groups );
 		if ( count( $namespaces ) ) {
-			$namespaces = array_unique( $namespaces );
 			$conds['rc_namespace'] = $namespaces;
 		}
 
+		$languages = array();
+		foreach ( $this->codes as $code ) {
+			$languages[] = 'rc_title ' . $db->buildLike( $db->anyString(), "/$code" );
+		}
 		if ( count( $languages ) ) {
-			$languages = array_unique( $languages );
 			$conds[] = $db->makeList( $languages, LIST_OR );
 		}
 
@@ -947,5 +972,109 @@ class TranslateRegistrationStats extends TranslationStatsBase {
 
 	public function getTimestamp( $row ) {
 		return $row->user_registration;
+	}
+}
+
+/**
+ * Graph which provides statistics on number of reviews and reviewers.
+ * @since 2012-03-05
+ * @ingroup Stats
+ */
+class ReviewPerLanguageStats extends TranslatePerLanguageStats {
+	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $start, $end ) {
+		global $wgTranslateMessageNamespaces;
+
+		$db = wfGetDB( DB_SLAVE );
+
+		$tables = array( 'logging' );
+		$fields = array( 'log_timestamp' );
+
+		$conds = array(
+			'log_namespace' => $wgTranslateMessageNamespaces,
+			'log_action' => 'message',
+		);
+
+		$timeConds = self::makeTimeCondition( 'log_timestamp', $start, $end );
+		$conds = array_merge( $conds, $timeConds );
+
+		$options = array( 'ORDER BY' => 'log_timestamp' );
+
+		$this->groups = array_filter( array_map( 'trim', explode( ',', $this->opts['group'] ) ) );
+		$this->codes = array_filter( array_map( 'trim', explode( ',', $this->opts['language'] ) ) );
+
+		$namespaces = self::namespacesFromGroups( $this->groups );
+		if ( count( $namespaces ) ) {
+			$conds['log_namespace'] = $namespaces;
+		}
+
+		$languages = array();
+		foreach ( $this->codes as $code ) {
+			$languages[] = 'log_title ' . $db->buildLike( $db->anyString(), "/$code" );
+		}
+		if ( count( $languages ) ) {
+			$conds[] = $db->makeList( $languages, LIST_OR );
+		}
+
+		$fields[] = 'log_title';
+
+		if ( $this->groups ) {
+			$fields[] = 'log_namespace';
+		}
+
+		if ( $this->opts['count'] === 'reviewers' ) {
+			$fields[] = 'log_user_text';
+		}
+
+		$type .= '-reviews';
+	}
+
+	public function indexOf( $row ) {
+		// We need to check that there is only one user per day.
+		if ( $this->opts['count'] === 'reviewers' ) {
+			$date = $this->formatTimestamp( $row->log_timestamp );
+
+			if ( isset( $this->usercache[$date][$row->log_user_text] ) ) {
+				return -1;
+			} else {
+				$this->usercache[$date][$row->log_user_text] = 1;
+			}
+		}
+
+		// Do not consider language-less pages.
+		if ( strpos( $row->log_title, '/' ) === false ) {
+			return false;
+		}
+
+		// No filters, just one key to track.
+		if ( !$this->groups && !$this->codes ) {
+			return 'all';
+		}
+
+		// The key-building needs to be in sync with ::labels().
+		list( $key, $code ) = TranslateUtils::figureMessage( $row->log_title );
+
+		$groups = array();
+		$codes = array();
+
+		if ( $this->groups ) {
+			/* Get list of keys that the message belongs to, and filter
+			 * out those which are not requested. */
+			$groups = TranslateUtils::messageKeyToGroups( $row->log_namespace, $key );
+			$groups = array_intersect( $this->groups, $groups );
+		}
+
+		if ( $this->codes ) {
+			$codes = array( $code );
+		}
+
+		return $this->combineTwoArrays( $groups, $codes );
+	}
+
+	public function labels() {
+		return $this->combineTwoArrays( $this->groups, $this->codes );
+	}
+
+	public function getTimestamp( $row ) {
+		return $row->log_timestamp;
 	}
 }
