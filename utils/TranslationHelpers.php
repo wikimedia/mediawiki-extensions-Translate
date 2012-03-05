@@ -377,6 +377,7 @@ class TranslationHelpers {
 
 		$handlers = array(
 			'ttmserver' => 'getTTMServerBox',
+			'ttmserver-remote' => 'getRemoteTTMServerBox',
 			'microsoft' => 'getMicrosoftSuggestion',
 			'apertium'  => 'getApertiumSuggestion',
 		);
