@@ -693,7 +693,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 	protected function handlePriorityLanguages( WebRequest $request, TranslatablePage $page, User $user ) {
 		// new priority languages
-		$npLangs = trim( $request->getVal( 'prioritylangs' ) );
+		$npLangs = rtrim( trim( $request->getVal( 'prioritylangs' ) ), ',' );
 		$npForce = $request->getCheck( 'forcelimit' ) ? 'on' : 'off';
 		$npReason = trim( $request->getText( 'priorityreason' ) );
 
