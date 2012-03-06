@@ -404,7 +404,8 @@ JAVASCRIPT;
 	/// Hook: Translate:MessageGroupStats:isIncluded
 	public static function hideRestrictedFromStats( $id, $code ) {
 		$filterLangs = TranslateMetadata::get( $id, 'prioritylangs' );
-		if ( strlen( $filterLangs ) === 0 ) {
+		$priorityForce = TranslateMetadata::get( $id, 'priorityforce' );
+		if ( strlen( $filterLangs ) === 0 ||  $priorityForce === 'off' ) {
 			// No restrictions, keep everything
 			return true;
 		}

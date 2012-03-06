@@ -387,14 +387,10 @@ FOO;
 
 		$groupId = $handle->getGroup()->getId();
 		$priorityForce = TranslateMetadata::get( $groupId, 'priorityforce' );
-		if ( !$priorityForce ) {
-			return true;
-		}
-
 		$priorityLangs = TranslateMetadata::get( $groupId, 'prioritylangs' );
 		$priorityReason = TranslateMetadata::get( $groupId, 'priorityreason' );
 		$filter = array_flip( explode( ',', $priorityLangs ) );
-		if ( !isset( $filter[$handle->getCode()] ) ) {
+		if ( !isset( $filter[$handle->getCode()] ) && $priorityForce === 'on' ) {
 			$result = array( 'tpt-translation-restricted', $priorityReason );
 			return false;
 		}
