@@ -179,7 +179,7 @@ The default list of languages depends on your language.',
 	'translate-stats-edits' => 'Edits',
 	'translate-stats-users' => 'Translators',
 	'translate-stats-registrations' => 'Registrations',
-	'translate-stats-review' => 'Reviews',
+	'translate-stats-reviews' => 'Reviews',
 	'translate-stats-reviewers' => 'Reviewers',
 
 	'translate-statsf-intro' => 'You can generate simple statistics with this form.
