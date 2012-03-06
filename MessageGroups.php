@@ -1237,7 +1237,9 @@ class MessageGroups {
 	 * We want to de-emphasize time sensitive groups like news for 2009.
 	 * They can still exist in the system, but should not appear in front
 	 * of translators looking to do some useful work.
-	 * @return string
+	 *
+	 * @param $group MessageGroup|string Message group ID
+	 * @return string Translatable page priority
 	 * @since 2011-12-12
 	 */
 	public static function getPriority( $group ) {
