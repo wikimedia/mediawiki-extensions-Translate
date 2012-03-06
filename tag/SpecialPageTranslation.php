@@ -84,15 +84,20 @@ class SpecialPageTranslation extends SpecialPage {
 			$logger = new LogPage( 'pagetranslation' );
 			$params = array( 'user' => $wgUser->getName() );
 
-			if ( $action === 'encourage' ) {
+			$priority = MessageGroups::getPriority( $id );
+
+			// encouraged is default priority (''). Only do this if the priority is discouraged.
+			if ( $action === 'encourage' && $priority === 'discouraged' ) {
 				$dbw->delete( $table, $row, __METHOD__ );
-				// @todo Check if page is currently actually encouraged to prevent duplicate log entries.
 				$logger->addEntry( 'encourage', $title, null, array( serialize( $params ) ) );
 			} else {
 				$index = array( 'tgr_group', 'tgr_lang' );
 				$dbw->replace( $table, array( $index ), $row, __METHOD__ );
-				// @todo Check if page is currently actually discouraged to prevent duplicate log entries.
-				$logger->addEntry( 'discourage', $title, null, array( serialize( $params ) ) );
+
+				// Prevent duplicate log entries.
+				if( $priority !== 'discouraged' ) {
+					$logger->addEntry( 'discourage', $title, null, array( serialize( $params ) ) );
+				}
 			}
 
 			$this->listPages();
