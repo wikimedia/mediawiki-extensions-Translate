@@ -679,8 +679,11 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 		$logger->addEntry( 'mark', $page->getTitle(), null, array( serialize( $params ) ) );
 
-
 		$this->handlePriorityLanguages( $wgRequest, $page, $wgUser );
+
+		// This updates the language bars properly as well as the translatable page.
+		$page->getTranslationPercentages( true );
+		WikiPage::factory( $page->getTitle() )->doPurge();
 
 		$page->getTitle()->invalidateCache();
 		$this->setupRenderJobs( $page );
