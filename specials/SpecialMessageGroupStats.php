@@ -134,7 +134,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 		$languages = array_keys( Language::getLanguageNames( false ) );
 		sort( $languages );
-
+		$this->filterPriorityLangs( $languages,  $this->target, $cache );
 		foreach ( $languages as $code ) {
 			if ( $table->isBlacklisted( $this->target, $code ) !== null ) {
 				continue;
@@ -160,6 +160,31 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	}
 
 	/**
+	 * Filter an array of languages based on whether a priority set of languages present for the passed group.
+	 * If priority languages are present, to that list add languages with more than 0% translation.
+	 * @param $languages Array of Languages to be filtered
+	 * @param $group
+	 * @param $cache
+	 */
+	protected function filterPriorityLangs( &$languages, $group, $cache ) {
+		$filterLangs = TranslateMetadata::get( $group, 'prioritylangs' );
+		if ( strlen( $filterLangs ) === 0 ) {
+			// No restrictions, keep everything
+			return;
+		}
+		$filter = array_flip( explode( ',', $filterLangs ) );
+		foreach ( $languages as $id => $code ) {
+			if ( isset( $filter[$code] ) ) {
+				continue;
+			}
+			$translated = $cache[$code][1];
+			if ( $translated === 0 ) {
+				unset( $languages[$id] );
+			}
+		}
+	}
+
+	/**
 	 * @param $code
 	 * @param $cache
 	 * @return string
@@ -172,7 +197,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 			$this->incomplete = true;
 			$extra = array();
 		} else {
-			if( $total === 0 ) {
+			if ( $total === 0 ) {
 				error_log( __METHOD__ . ": $code has 0 messages." );
 			}
 
