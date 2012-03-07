@@ -396,11 +396,34 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 			$newTpage->addMarkedTag( $this->newTitle->getLatestRevId( Title::GAID_FOR_UPDATE ) );
 		}
 
+		// remove the entries from metadata table.
+		$oldGroupId = $this->page->getMessageGroupId();
+		$newGroupId = $newTpage->getMessageGroupId();
+		$this->moveMetadata( $oldGroupId, $newGroupId );
+
 		MessageGroups::clearCache();
 		MessageIndexRebuildJob::newJob()->insert();
 
 		global $wgOut;
 		$wgOut->addWikiMsg( 'pt-movepage-started' );
+	}
+
+	protected function moveMetadata( $oldGroupId, $newGroupId ) {
+		$prioritylangs = TranslateMetadata::get( $oldGroupId, 'prioritylangs' );
+		$priorityforce = TranslateMetadata::get( $oldGroupId, 'priorityforce' );
+		$priorityreason = TranslateMetadata::get( $oldGroupId, 'priorityreason' );
+		TranslateMetadata::set( $oldGroupId, 'prioritylangs', false );
+		TranslateMetadata::set( $oldGroupId, 'priorityforce', false );
+		TranslateMetadata::set( $oldGroupId, 'priorityreason', false );
+		if ( $prioritylangs ) {
+			TranslateMetadata::set( $newGroupId, 'prioritylangs', $prioritylangs );
+		}
+		if ( $priorityforce ) {
+			TranslateMetadata::set( $newGroupId, 'priorityforce', $priorityforce );
+		}
+		if ( $priorityreason ) {
+			TranslateMetadata::set( $newGroupId, 'priorityreason', $priorityreason );
+		}
 	}
 
 	protected function checkMoveBlockers() {

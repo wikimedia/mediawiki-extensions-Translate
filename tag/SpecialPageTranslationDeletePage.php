@@ -316,11 +316,20 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 			$this->page->removeTags();
 		}
 
+		$this->clearMetadata();
 		MessageGroups::clearCache();
 		MessageIndexRebuildJob::newJob()->insert();
 
 		global $wgOut;
 		$wgOut->addWikiMsg( 'pt-deletepage-started' );
+	}
+
+	protected function clearMetadata() {
+		// remove the entries from metadata table.
+		$groupId = $this->page->getMessageGroupId();
+		TranslateMetadata::set( $groupId, 'prioritylangs', false );
+		TranslateMetadata::set( $groupId, 'priorityforce', false );
+		TranslateMetadata::set( $groupId, 'priorityreason', false );
 	}
 
 	/**
