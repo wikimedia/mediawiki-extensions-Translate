@@ -1239,7 +1239,7 @@ class MessageGroups {
 	 * of translators looking to do some useful work.
 	 *
 	 * @param $group MessageGroup|string Message group ID
-	 * @return string Translatable page priority
+	 * @return string Message group priority
 	 * @since 2011-12-12
 	 */
 	public static function getPriority( $group ) {
