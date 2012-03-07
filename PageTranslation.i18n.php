@@ -111,7 +111,7 @@ Reason: $1',
 	'tpt-render-summary' => 'Updating to match new version of source page',
 
 	'tpt-download-page' => 'Export page with translations',
-	'aggregategroups' => 'Aggregate Groups',
+	'aggregategroups' => 'Aggregate groups',
 	'tpt-aggregategroup-add' => 'Add',
 	'tpt-aggregategroup-save' => 'Save',
 	'tpt-aggregategroup-add-new' => 'Add a new aggregate group',
