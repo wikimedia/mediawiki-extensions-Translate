@@ -824,10 +824,10 @@ class TranslationHelpers {
 		if ( $ffs instanceof GettextFFS ) {
 			global $wgContLang;
 			$mykey = $wgContLang->lcfirst( $this->handle->getKey() );
-			$data = $ffs->read( $this->group->getSourceLanguage() );
+			$data = $ffs->read( $group->getSourceLanguage() );
 			$help = $data['TEMPLATE'][$mykey]['comments'];
 			// Do not display an empty comment. That's no help and takes up unnecessary space.
-			$conf = $this->group->getConfiguration();
+			$conf = $group->getConfiguration();
 			if ( isset( $conf['BASIC']['codeBrowser'] ) ) {
 				$out = '';
 				$pattern = $conf['BASIC']['codeBrowser'];
