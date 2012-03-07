@@ -82,6 +82,7 @@ $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
 // Unlisted special page; does not need $wgSpecialPageGroups.
 $wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
 $wgSpecialPages['AggregateGroups'] = 'SpecialAggregateGroups';
+$wgSpecialPageGroups['AggregateGroups'] = 'wiki';
 
 // API
 $wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';

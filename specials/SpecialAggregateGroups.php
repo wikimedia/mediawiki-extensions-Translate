@@ -38,7 +38,6 @@ class SpecialAggregateGroups extends SpecialPage {
 			$wgOut->permissionRequired( 'translate-manage' );
 			return;
 		}
-		$wgOut->setPageTitle( wfMsg( 'tpt-aggregategroups' ) );
 		$this->showAggregateGroups();
 
 	}
