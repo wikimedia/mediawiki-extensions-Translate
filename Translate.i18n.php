@@ -7348,7 +7348,7 @@ $messages['fi'] = array(
 	'translate-grouplisting' => 'Tämä on kaikkien käännettävien ryhmien luettelo.
 Saat listan kääntämättömistä viesteistä napsauttamalla ryhmän nimeä.',
 	'translate-grouplisting-empty' => 'Yhtään viestiryhmää ei ole asetettu käännettäväksi.',
-	'translate-taskui-view' => 'Näytä kaikki viesit',
+	'translate-taskui-view' => 'Näytä kaikki viestit',
 	'translate-taskui-untranslated' => 'Näytä kääntämättömät viestit',
 	'translate-taskui-optional' => 'Näytä valinnaiset viestit',
 	'translate-taskui-suggestions' => 'Näytä viestit, joille käännösmuisti ehdottaa käännöksiä',
@@ -17299,7 +17299,7 @@ $messages['or'] = array(
 	'translate-page-navigation-legend' => 'ଦିଗବାରେଣି (ନାଭିଗେସନ)',
 	'translate-next' => 'ପର ପୃଷ୍ଠା',
 	'translate-prev' => 'ଆଗ ପୃଷ୍ଠା',
-	'translate-page-edit' => 'ବଦଳାଇବେ',
+	'translate-page-edit' => 'ଏହାକୁ ବଦଳାନ୍ତୁ',
 	'translate-ext-url' => '<hr />ୱେବସାଇଟ: $1',
 	'translate-edit-jsopen' => 'ବଦଳ',
 	'translate-edit-title' => 'ବଦଳ "$1"',
@@ -17505,6 +17505,7 @@ $messages['pfl'] = array(
 );
 
 /** Polish (Polski)
+ * @author Beau
  * @author BeginaFelicysym
  * @author Derbeth
  * @author Dodek
@@ -17528,7 +17529,7 @@ $messages['pl'] = array(
 	'translate-showsub' => 'Pokaż {{PLURAL:$1|tę podgrupę|$1 podgrupy|$1 podgrup}} komunikatów.',
 	'translate-grouplisting' => 'Oto spis wszystkich grup przeznaczonych do tłumaczenia.
 Kliknij nazwę grupy aby zobaczyć listę nieprzetłumaczonych komunikatów.',
-	'translate-grouplisting-empty' => 'Żadne grupy stron nie zostały skonfigurowane do tłumaczenia.',
+	'translate-grouplisting-empty' => 'Żadne grupy komunikatów nie zostały skonfigurowane do tłumaczenia.',
 	'translate-taskui-view' => 'Pokaż wszystkie wiadomości',
 	'translate-taskui-untranslated' => 'Pokaż nieprzetłumaczone wiadomości',
 	'translate-taskui-optional' => 'Pokaż opcjonalne wiadomości',
@@ -17642,8 +17643,8 @@ Domyślna lista języków zależy od Twojego języka.',
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Rozszerzony edytor tłumaczeń (JavaScript)',
 	'right-translate' => 'Edycja z użyciem interfejsu tłumaczeń',
-	'right-translate-manage' => 'Zarządzaj grupami wiadomości',
-	'action-translate-manage' => 'zarządzaj grupami wiadomości',
+	'right-translate-manage' => 'Zarządzanie grupami komunikatów',
+	'action-translate-manage' => 'zarządzania grupami komunikatów',
 	'right-translate-import' => 'Importowanie tłumaczeń wykonanych offline',
 	'action-translate-import' => 'importowanie tłumaczeń wykonanych offline',
 	'right-translate-messagereview' => 'Sprawdź tłumaczenia',

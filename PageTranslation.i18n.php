@@ -3131,7 +3131,7 @@ $messages['he'] = array(
 	'tpt-priority-languages' => 'מנהל תרגום הגדיר שהשפות המועדפות לקבוצה הזאת הן $1.',
 	'tpt-render-summary' => 'עדכון להתאמת הגרסה החדשה של דף המקור',
 	'tpt-download-page' => 'ייצוא דף עם תרגומים',
-	'tpt-aggregategroups' => 'קבוצות צבורות',
+	'aggregategroups' => 'קבוצות צבורות',
 	'tpt-aggregategroup-add' => 'הוספה',
 	'tpt-aggregategroup-save' => 'שמירה',
 	'tpt-aggregategroup-add-new' => 'הודפת קבוצה צבורה חדשה',
@@ -5293,7 +5293,7 @@ Reden: $1',
 	'tpt-priority-languages' => 'Een vertalingenbeheerder heeft de prioriteitstalen voor deze groep ingesteld op $1.',
 	'tpt-render-summary' => 'Bijgewerkt vanwege een nieuwe basisversie van de bronpagina',
 	'tpt-download-page' => 'Pagina met vertalingen exporteren',
-	'tpt-aggregategroups' => 'Samengevoegde groepen',
+	'aggregategroups' => 'Samengevoegde groepen',
 	'tpt-aggregategroup-add' => 'Toevoegen',
 	'tpt-aggregategroup-save' => 'Opslaan',
 	'tpt-aggregategroup-add-new' => 'Nieuwe samengevoegde groep toevoegen',
@@ -7739,6 +7739,7 @@ $messages['yi'] = array(
  * @author Gzdavidwong
  * @author Hydra
  * @author Liangent
+ * @author Linforest
  * @author PhiLiP
  * @author Xiaomingyan
  * @author Yfdyh000
@@ -7788,6 +7789,10 @@ $messages['zh-hans'] = array(
 	'tpt-other-pages' => '以下{{PLURAL:$1|此|这些}}页面有旧版本被标记进行翻译，
 但最新版本不得标记进行翻译。',
 	'tpt-discouraged-pages' => '以下{{PLURAL:$1|此|这些}}页面挫折更多翻译。',
+	'tpt-select-prioritylangs' => '优先语言代码的逗号分隔型列表',
+	'tpt-select-prioritylangs-force' => '防止向优先语言以外的语言的翻译',
+	'tpt-select-prioritylangs-reason' => '原因：',
+	'tpt-sections-prioritylangs' => '优先语言',
 	'tpt-rev-mark' => '标记进行翻译',
 	'tpt-rev-unmark' => '从翻译中删除',
 	'tpt-rev-discourage' => '挫折',
@@ -7803,12 +7808,29 @@ $messages['zh-hans'] = array(
 	'tpt-translation-intro' => '此页面是[[$2]]页面的<span class="plainlinks">[$1 翻译版本]</span>，而该翻译工作已经$3%完成。',
 	'tpt-translation-intro-fuzzy' => '已过时的翻译就这样标记。',
 	'tpt-languages-legend' => '其他语言：',
+	'tpt-languages-zero' => '开始这种语言的翻译',
 	'tpt-target-page' => '本页面无法手动更新。
 本页面是[[$1]]页面的翻译版，可以使用[$2 翻译工具]来更新该翻译。',
 	'tpt-unknown-page' => '此命名空间是保留给内容页面翻译。
 您尝试编辑的页面似乎没有对应任何被标记进行翻译的页面。',
+	'tpt-translation-restricted' => '此页面到这种语言的翻译，已被翻译管理员禁止。
+
+原因：$1',
+	'tpt-discouraged-language-force' => '翻译管理员限制了翻译此页时所能采用的语言。这种语言不在这些语言之列。
+
+原因：$1',
+	'tpt-discouraged-language' => '这种语言不在此页的翻译管理员所设置的优先语言之列。
+
+原因：$1',
+	'tpt-priority-languages' => '翻译管理员已经为为这个到$1的组设置了优先语言 。',
 	'tpt-render-summary' => '要匹配的源页的新版本更新',
 	'tpt-download-page' => '汇出含翻译的页面',
+	'aggregategroups' => '聚合组',
+	'tpt-aggregategroup-add' => '添加',
+	'tpt-aggregategroup-save' => '保存',
+	'tpt-aggregategroup-add-new' => '添加新的聚合组',
+	'tpt-aggregategroup-new-name' => '名称：',
+	'tpt-aggregategroup-new-description' => '说明 （可选）：',
 	'pt-parse-open' => '&lt;translate>标签不平衡。
 翻译模板：<pre>$1</pre>',
 	'pt-parse-close' => '&lt;/translate>标签不平衡。
@@ -7830,6 +7852,11 @@ $messages['zh-hans'] = array(
 	'pt-log-delete-full-nok' => '当删除[[:$1]]可翻译页面{{GENDER:$2|遇到}}问题',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|完成}}删除$1翻译页面',
 	'pt-log-delete-lang-nok' => '当删除[[:$1]]翻译页面{{GENDER:$2|遇到}}问题',
+	'pt-log-encourage' => '{{GENDER:$2|鼓励}}翻译页面[[:$1]]',
+	'pt-log-discourage' => '{{GENDER:$2|不鼓励}}翻译页面[[:$1]]',
+	'pt-log-priority-langs-unset' => '从可翻译页面[[:$1]]{{GENDER:$2|已删除}}优先语言',
+	'pt-log-priority-langs' => '{{GENDER:$2|设定}}可翻译页面[[:$1]]的优先语言为$3。原因：$4',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|已限制}}可翻译页面的[[:$1]]的语言为$3。原因：$4',
 	'pt-movepage-title' => '移动可翻译页面$1',
 	'pt-movepage-blockers' => '可翻译页面无法移动至新名称，原因为以下这{{PLURAL:$1|个|些}}错误：',
 	'pt-movepage-block-base-exists' => '目标基页面 [[:$1]] 存在。',
