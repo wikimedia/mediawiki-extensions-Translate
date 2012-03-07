@@ -30,10 +30,16 @@ And for the code at:
  https://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-03-07
+- $wgTranslateGroupStructure is no longer used. If you are using aggregate message
+  groups, you can remove the old settings and everything still works as expected.
+  If you are not yet using aggregate message groups, you should to not confuse users.
 * 2012-03-05
 - Support for using remote TTMServers via API interface added.
 - Support for tmserver was removed. Translate comes with TTMServer enabled by default.
   To bootstrap it with current translations, run php scripts/ttmserver-export.php.
+
+# Missing entries above this line
 * 2012-02-19
 - MediaWiki 1.18 or later is now required.
 - Group description of translatable pages can be extended by adding content to

@@ -479,42 +479,6 @@ $wgTranslateAuthorBlacklist = array();
 $wgTranslateAuthorBlacklist[] = array( 'black', '/^.*;.*;.*Bot$/Ui' );
 
 /**
- * Regexps for putting groups into subgroups at Special:Translate.
- * Deepest groups first.
- */
-$wgTranslateGroupStructure = array(
-	'/^core/' => array( 'core' ),
-	'/^ext-collection/' => array( 'ext', 'collection' ),
-	'/^ext-flaggedrevs/' => array( 'ext', 'flaggedrevs' ),
-	'/^ext-readerfeedback/' => array( 'ext', 'readerfeedback' ),
-	'/^ext-semantic/' => array( 'ext', 'semantic' ),
-	'/^ext-socialprofile/' => array( 'ext', 'socialprofile' ),
-	'/^ext-translate/' => array( 'ext', 'translate' ),
-	'/^ext-uniwiki/' => array( 'ext', 'uniwiki' ),
-	'/^ext-ui/' => array( 'ext', 'usabilityinitiative' ),
-	'/^ext/' => array( 'ext' ),
-	'/^wikia/' => array( 'wikia' ),
-	'/^tsint/' => array( 'tsint' ),
-	'/^out-eol/' => array( 'eol' ),
-	'/^out-ihris-common/' => array( 'ihris', 'common' ),
-	'/^out-ihris-i2ce/' => array( 'ihris', 'i2ce' ),
-	'/^out-ihris-manage/' => array( 'ihris', 'manage' ),
-	'/^out-ihris-qualify/' => array( 'ihris', 'qualify' ),
-	'/^out-ihris/' => array( 'ihris' ),
-	'/^out-mantis/' => array( 'mantis' ),
-	'/^out-mifos/' => array( 'mifos' ),
-	'/^out-nocc/' => array( 'nocc' ),
-	'/^out-okawix/' => array( 'okawix' ),
-	'/^out-openimages/' => array( 'openimages' ),
-	'/^out-osm/' => array( 'osm' ),
-	'/^out-pywikipedia/' => array( 'pywikipedia' ),
-	'/^shapado/' => array( 'shapado' ),
-	'/^out-statusnet-plugin/' => array( 'statusnet', 'plugin' ),
-	'/^out-statusnet/' => array( 'statusnet' ),
-//	'/^page\|/' => array( 'page' ),
-);
-
-/**
  * List of namespace that contain messages. No talk namespaces.
  * @see http://translatewiki.net/wiki/Translating:Group_configuration
  */
