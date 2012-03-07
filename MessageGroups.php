@@ -1391,66 +1391,111 @@ class MessageGroups {
 	}
 
 	/**
-	 * Returns group strucuted into sub groups. First group in each subgroup is
-	 * considered as the main group.
+	 * Returns a tree of message groups. First group in each subgroup is
+	 * the aggregate group. Groups can be nested infinitely, though in practice
+	 * other code might not handle more than two (or even one) nesting levels.
+	 * One group can exist multiple times in differents parts of the tree.
+	 * In other words: [Group1, Group2, [AggGroup, Group3, Group4]]
+	 * @throws MWException If cyclic structure is detected.
 	 * @return array
 	 */
 	public static function getGroupStructure() {
-		global $wgTranslateGroupStructure;
-
 		$groups = self::getAllGroups();
-
+		
+		// Determine the top level groups of the tree
+		$tree = $groups;
 		$structure = array();
 		foreach ( $groups as $id => $o ) {
-			if ( !MessageGroups::getGroup( $id )->exists() ) {
+			if ( !$o->exists() ) {
+				unset( $groups[$id], $tree[$id] );
 				continue;
 			}
 
-			foreach ( $wgTranslateGroupStructure as $pattern => $hypergroup ) {
-				if ( preg_match( $pattern, $id ) ) {
-					// Emulate deepArraySet, because AFAIK php does not have one
-					self::deepArraySet( $structure, $hypergroup, $id, $o );
-					// We need to continue the outer loop, because we have finished this item.
-					continue 2;
+			if ( $o instanceof AggregateMessageGroup ) {
+				foreach ( $o->getGroups() as $sid => $so ) {
+					unset( $tree[$sid] );
+				}
+			}
+		}
+
+		/* Now we have two things left in $tree array:
+		 * - solitaries: top-level non-aggregate message groups
+		 * - top-level aggregate message groups */
+		usort( $tree, array( __CLASS__, 'groupLabelSort' ) );
+		foreach ( $tree as $index => $group ) {
+			if ( $group instanceof AggregateMessageGroup ) {
+				$tree[$index] = self::subGroups( $group );
+			}
+		}
+
+		/* Essentially we are done now. Cyclic groups can cause part of the
+		 * groups not be included at all, because they have all unset each
+		 * other in the first loop. So now we check if there are groups left
+		 * over. */
+		$used = array();
+		// Hack to allow passing by reference
+		array_walk_recursive( $tree, array( __CLASS__, 'collectGroupIds' ), array( &$used ) );
+		$unused = array_diff( array_keys( $groups ), array_keys( $used ) );
+		if ( count( $unused ) ) {
+			foreach ( $unused as $index => $id ) {
+				if ( !$groups[$id] instanceof AggregateMessageGroup ) {
+					unset( $unused[$index] );
 				}
 			}
 
-			// Does not belong to any subgroup, just shove it into main level.
-			$structure[$id] = $o;
+			// Only list the aggregate groups, other groups cannot cause cycles
+			$participants = implode( ', ', $unused );
+			throw new MWException( "Found cyclic aggregate message groups: $participants" );
 		}
 
-		// Sort top-level groups according to labels, not ids
-		$labels = array();
-		foreach ( $structure as $id => $data ) {
-			// Either it is a group itself, or the first group of the array
-			$nid = is_array( $data ) ? key( $data ) : $id;
-			$labels[$id] = $groups[$nid]->getLabel();
-		}
-		natcasesort( $labels );
-
-		$sorted = array();
-		foreach ( array_keys( $labels ) as $id ) {
-			$sorted[$id] = $structure[$id];
-		}
-
-		return $sorted;
+		return $tree;
 	}
 
-	/**
-	 * Function do do $array[level1][level2]...[levelN][$key] = $value, if we have
-	 * the indexes in an array.
-	 * @param $array
-	 * @param $indexes array
-	 * @param $key
-	 * @param $value
-	 */
-	public static function deepArraySet( &$array, array $indexes, $key, $value ) {
-		foreach ( $indexes as $index ) {
-			if ( !isset( $array[$index] ) ) $array[$index] = array();
-			$array = &$array[$index];
+	/// See getGroupStructure, just collects ids into array
+	public static function collectGroupIds( $value, $key, $used ) {
+		$used[0][$value->getId()] = true;
+	}
+
+	/// Sorts groups by label value
+	public static function groupLabelSort( $a, $b ) {
+		$al = $a->getLabel();
+		$bl = $b->getLabel();
+		return strcasecmp( $al, $bl );
+	}
+
+	/// Helper for getGroupStructure
+	protected static function subGroups( AggregateMessageGroup $parent ) {
+		static $recursionGuard = array();
+
+		$pid = $parent->getId();
+		if ( isset( $recursionGuard[$pid] ) ) {
+			$tid = $pid;
+			$path = array( $tid );
+			do {
+				$tid = $recursionGuard[$tid];
+				$path[] = $tid;
+				// Until we have gone full cycle
+			} while ( $tid !== $pid );
+			$path = implode( ' > ', $path );
+			throw new MWException( "Found cyclic aggregate message groups: $path" );
 		}
 
-		$array[$key] = $value;
+		// We don't care about the ids.
+		$tree = array_values( $parent->getGroups() );
+		usort( $tree, array( __CLASS__, 'groupLabelSort' ) );
+		// Expand aggregate groups (if any left) after sorting to form a tree
+		foreach ( $tree as $index => $group ) {
+			if ( $group instanceof AggregateMessageGroup ) {
+				$sid = $group->getId();
+				$recursionGuard[$pid] = $sid;
+				$tree[$index] = self::subGroups( $group );
+				unset( $recursionGuard[$pid] );
+			}
+		}
+
+		// Parent group must be first item in the array
+		array_unshift( $tree, $parent );
+		return $tree;
 	}
 
 }
