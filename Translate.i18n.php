@@ -3082,6 +3082,7 @@ $messages['bho'] = array(
 	'translate-taskui-reviewall' => 'सभी अनुवाद के समीक्षा करीं',
 	'translate-taskui-export-to-file' => 'मूल स्वरूप में निर्यात करीं',
 	'translate-taskui-export-as-po' => 'ऑफ़लाइन अनुवाद के खातिर निर्यात करीं',
+	'translate-taction-translate' => 'अनुवादन करीं',
 );
 
 /** Bengali (বাংলা)
@@ -8541,7 +8542,7 @@ como non empregar espazos ou para a transliteración de nomes propios. $1',
 	'translate-edit-translation' => 'Tradución',
 	'translate-edit-contribute' => 'contribuír',
 	'translate-edit-no-information' => "''Esta mensaxe non ten documentación.''
-''Se sabe onde ou como se usa esta mensaxe, pode axudar a outros tradutores engadíndolle datos.''",
+''Se sabe onde ou como se usa esta mensaxe, pode axudar aos outros tradutores engadíndolle datos.''",
 	'translate-edit-information' => 'Información acerca da mensaxe ($1)',
 	'translate-edit-in-other-languages' => 'Mensaxe noutras linguas',
 	'translate-edit-committed' => 'Tradución actual no software',
@@ -8625,7 +8626,7 @@ A lista de linguas por defecto depende da súa.',
 	'translate-stats-edits' => 'Edicións',
 	'translate-stats-users' => 'Tradutores',
 	'translate-stats-registrations' => 'Rexistros',
-	'translate-stats-review' => 'Revisións',
+	'translate-stats-reviews' => 'Revisións',
 	'translate-stats-reviewers' => 'Revisores',
 	'translate-statsf-intro' => 'Pode xerar estatísticas de forma sinxela con este formulario. Todos os valores teñen límites máximos e mínimos.',
 	'translate-statsf-options' => 'Opcións da gráfica',
