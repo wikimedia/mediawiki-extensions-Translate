@@ -34,12 +34,37 @@ And for the code at:
 - $wgTranslateGroupStructure is no longer used. If you are using aggregate message
   groups, you can remove the old settings and everything still works as expected.
   If you are not yet using aggregate message groups, you should to not confuse users.
+- Gettext file were not shown in translation editor when using recent translations task.
+- New Special page AggregateGroups where translation administrator can group pages
+  into subgroups.
+* 2012-03-06
+- Translation administrator can now suggest languages translatable page should be
+  primarily translated into with a note or preventing other language translations.
 * 2012-03-05
 - Support for using remote TTMServers via API interface added.
 - Support for tmserver was removed. Translate comes with TTMServer enabled by default.
   To bootstrap it with current translations, run php scripts/ttmserver-export.php.
-
-# Missing entries above this line
+- Message documentation was not shown when translating for subgroups nested more than
+  one level deep.
+- Special:TranslationStats can now graph review and reviewer activity.
+* 2012-03-02
+- Encourage/discourage changes of translatable pages are now logged.
+* 2012-03-01
+- Added upper length for translation memory suggestions because of performance concerns.
+* 2012-02-29
+- Configuring wgMainCache is no longer necessary. Translate extension will use any
+  available caching mechanism automatically when needed.
+- Support for Google Translate was removed, as the free service is no more.
+- Special:LanguageStats' default value derived from current interface language now
+  works also for anonymous users (only relevant when using LanguageSelector)
+* 2012-02-24
+- Help link is no longer added twice in Special:SupportedLanguages
+* 2012-02-21
+- Gettext headers can now be customised with Translate:GettextFFS:headerFields
+  hook. Less headers are modified by default.
+- Message index no longer goes into recursive loop on some cases when creating
+  the index the first time.
+- Improved the position of help links in Monobook skin.
 * 2012-02-19
 - MediaWiki 1.18 or later is now required.
 - Group description of translatable pages can be extended by adding content to
@@ -51,7 +76,7 @@ And for the code at:
 * 2012-02-11
 - Some missing action- messages added
 * 2012-02-10
-- New tabbed task spaced UI on Special:Translate
+- New tabbed task-based UI on Special:Translate
 * 2012-02-06
 - API module for message group stats written by Tim Gerundt.
 * 2012-02-01
