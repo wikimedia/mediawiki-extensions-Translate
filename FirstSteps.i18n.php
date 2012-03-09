@@ -282,6 +282,7 @@ $messages['be-tarask'] = array(
 	'firststeps' => 'Першыя крокі',
 	'firststeps-desc' => '[[Special:FirstSteps|Спэцыяльная старонка]] для пачатку працы з пашырэньнем Translate',
 	'translate-fs-pagetitle-done' => ' — зроблена!',
+	'translate-fs-pagetitle-pending' => ' — чаканьне',
 	'translate-fs-pagetitle' => 'Майстар пачатковага навучаньня — $1',
 	'translate-fs-signup-title' => 'Зарэгіструйцеся',
 	'translate-fs-settings-title' => 'Вызначыце Вашыя налады',
@@ -300,6 +301,7 @@ $messages['be-tarask'] = array(
 Тут Вы можаце выбраць мовы, калі патрэбна, на якіх будуць паказвацца падобныя пераклады.',
 	'translate-fs-settings-submit' => 'Захаваць налады',
 	'translate-fs-userpage-level-N' => 'Мая родная мова',
+	'translate-fs-userpage-level-5' => 'Я — прафэсійны перакладчык на',
 	'translate-fs-userpage-submit' => 'Стварыць маю старонку ўдзельніка',
 	'translate-fs-userpage-done' => 'Выдатна! Цяпер Вы маеце старонку ўдзельніка.',
 	'translate-fs-permissions-planguage' => 'Асноўная мова:',
@@ -2798,6 +2800,7 @@ $messages['sv'] = array(
 	'firststeps' => 'Komma igång',
 	'firststeps-desc' => '[[Special:FirstSteps|Särskild sida]] för att få användare att komma igång med en wiki med hjälp av översättningstillägget',
 	'translate-fs-pagetitle-done' => ' – klart!',
+	'translate-fs-pagetitle-pending' => ' - pågående',
 	'translate-fs-pagetitle' => 'Guide för att komma igång - $1',
 	'translate-fs-signup-title' => 'Skapa ett användarkonto',
 	'translate-fs-settings-title' => 'Konfigurera inställningar',
@@ -2806,8 +2809,31 @@ $messages['sv'] = array(
 	'translate-fs-target-title' => 'Börja översätta!',
 	'translate-fs-email-title' => 'Bekräfta din e-postadress',
 	'translate-fs-intro' => "Välkommen till guiden för att komma igång med {{SITENAME}}. Du kommer att vägledas stegvis i hur man blir översättare. När du är färdig kommer du att kunna översätta ''gränssnittsmeddelanden'' av alla projekt som stöds av {{SITENAME}}.",
+	'translate-fs-selectlanguage' => 'Välj ett språk',
+	'translate-fs-settings-planguage' => 'Huvudspråk:',
+	'translate-fs-settings-planguage-desc' => 'Huvudspråket fungerar som ditt gränssnittsspråk på denna wiki
+och som standardspråk för översättningar.',
+	'translate-fs-settings-slanguage' => 'Hjälpspråk $1:',
+	'translate-fs-settings-slanguage-desc' => 'Det kan vara möjligt att visa översättningar av meddelanden på andra språk i översättningsredigeraren.
+Här kan du välja vilka språk, om några, du skulle vilja se.',
+	'translate-fs-settings-submit' => 'Spara inställningar',
+	'translate-fs-userpage-level-N' => 'Mitt modersmål är',
+	'translate-fs-userpage-level-5' => 'Jag är en professionell översättare av',
+	'translate-fs-userpage-level-4' => 'Jag är lika bra som en modersmålstalare',
+	'translate-fs-userpage-level-3' => 'Jag har god kunskap om',
+	'translate-fs-userpage-level-2' => 'Jag har måttlig kunskap om',
+	'translate-fs-userpage-level-1' => 'Jag kan lite',
+	'translate-fs-userpage-help' => 'Var god ange dina språkkunskaper och berätta för oss om dig själv. Om du kan fler än språk kan du lägga till fler senare.',
 	'translate-fs-userpage-submit' => 'Skapa din användarsida',
 	'translate-fs-userpage-done' => 'Mycket bra! Du har nu en användarsida.',
+	'translate-fs-permissions-planguage' => 'Huvudspråk:',
+	'translate-fs-permissions-help' => 'Nu behöver du skicka en begäran för att läggas till i översättningsgruppen.
+Välj huvudspråket du kommer att översätta till.
+
+Du kan nämna andra språk och andra bemärkningar i textrutan nedan.',
+	'translate-fs-permissions-pending' => 'Din begäran har skickats till [[$1]] och någon från sidans personal kommer att kontrollera den så fort som möjligt.
+Om du bekräftar din e-postadress kommer du få ett e-postmeddelande så fort det händer.',
+	'translate-fs-permissions-submit' => 'Skicka begäran',
 	'translate-fs-target-text' => 'Grattis! Nu kan du börja översätta.
 
 Var inte rädd om det fortfarande känns nytt och främmande för dig.

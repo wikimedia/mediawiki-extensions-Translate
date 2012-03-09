@@ -725,6 +725,7 @@ $messages['eo'] = array(
 );
 
 /** Spanish (Español)
+ * @author Armando-Martin
  * @author Crazymadlover
  * @author Dferg
  * @author Locos epraix
@@ -754,20 +755,27 @@ $messages['es'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un foro web escrito en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] es un sistema de corrección de errores libre basado en web. Por favor reporta cualquier problema en [[Support]].',
 	'translate-group-desc-eol' => 'Grupo de mensajes de la [[Translating:EOL|Enciclopedia de la vida]]',
+	'translate-group-desc-ihris' => 'Un grupo de mensajes de [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-common' => 'Un grupo de mensajes de [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un módulo de [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-i2ce' => 'Un grupo de mensajes de[[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], un módulo de [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-manage' => 'Un grupo de mensajes de [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], un módulo de[[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-qualify' => 'Un grupo de mensajes de [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], un módulo de [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'Un grupo de mensajes de [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Un complemento nuclear para [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Mensajes para una versión estable de [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] es un sistema de información de gestión (MIS) para microfinanzas',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' es una biblioteca python para escribir documentos PDF de artículos MediaWiki los cuales fueron analizados por la biblioteca mwlib.
 
 Por favor mira [[mw:Extension:PDF_Writer]] y http://code.pediapress.com/wiki/wiki/mwlibrl para mayor información.",
 	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] es un cliente de correo web escrito en PHP.',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] es un lector de Wikipedia sin conexión',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] es una plataforma multimedia abierta',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Estos mensajes son parte de la plantilla de verificación de correo electrónico de [[Translating:Open Images|Open Images]]',
+	'translate-group-desc-openimages-all' => 'Estos mensajes forman parte del proyecto [[Translating:Open Images|Open Images]]',
 	'bw-desc-openlayers' => 'OpenLayers es un generador de mapas dinámico de fuente abierta. Por favor reporta cualquier problema en [[support]].',
 	'bw-desc-openstreetmap' => 'Grupo de mensajes para todos los mensajes de [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Este grupo de mensajes contiene los mensajes de interfaz para [[Translating:Open Street Map|Open Street Map]]',
-	'bw-desc-osm-potlatch' => 'Este grupo de mensajes contiene los mensajes de la interfaz para [[Translating:OpenStreetMap|Potlatch]]. Por favor:
-
-* Trate de mantener sus traducciones similares en longitud al original en inglés tanto como posible a causa de las restricciones de la interfaz de usuario. Véase también este [http://trac.openstreetmap.org/ticket/2067 bug].
-* Utilice [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] para probar Potlatch. Allí puede probar todo lo que desee en cualquier área.',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] es un editor de OpenStreetMap basado en Flash',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] es una colección de herramientas para editar Wikipedia',
 	'bw-desc-shapado' => 'Grupo de mensajes para el sofware Q&A de fuente libre y abierta [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es un servidor de microblogueo de fuente abierta',
@@ -2469,14 +2477,15 @@ $messages['sv'] = array(
 	'translate-group-desc-collection' => 'Metagrupp med alla meddelanden för MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'Metameddelandegrupp som innehåller alla meddelanden för alla tillägg till [http://semantic-mediawiki.org/ Semantic MediaWiki]',
 	'translate-group-desc-socialprofile' => 'Metagrupp som innehåller alla meddelanden för tillägg relaterade till MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägg som används av [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägg som används av [http://wikimedia.org/ Wikimedia Foundation]',
+	'translate-group-desc-wikimediaextensions-main' => 'Metameddelandegrupp som innehåller alla meddelanden för stödjande MediaWiki-tillägg som krävs för att översättas för Wikimedias [http://meta.wikimedia.org/wiki/Language_committee språkkommitté]',
 	'translate-group-desc-uniwiki' => 'Metagrupp som innehåller alla meddelanden för tillägg relaterade till [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagrupp som innehåller alla meddelanden för tillägg relaterade till [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Alla översättningsbara sidor',
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] tillåter folk att utforska digitala kulturella resurser i Europa',
 	'bw-desc-freecol' => 'Innan du översätter FreeCol till ditt språk, var god läs [[Translating:FreeCol]]. FreeCol använder GPL-licensen.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], ett webbforum skrivet i PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] är ett gratis webbaserat bugspårningssystem. Vänligen rapportera alla problem på [[Support]].',
@@ -2502,17 +2511,15 @@ Se [[mw:Extension:PDF_Writer]] och http://code.pediapress.com/wiki/wiki/mwlibrl 
 	'bw-desc-openstreetmap' => 'Alla meddelanden som rör [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Den här gruppen av meddelanden innehåller gränssnittet för [[Translating:Open Street Map|Open Street Map]].
 Se [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} Unicode CLDR sida för förklaring av plural hantering].',
-	'bw-desc-osm-potlatch' => 'Den här gruppen innehåller gränssnitts meddelandena för [[Translating:OpenStreetMap|Potlatch]].
-Observera följande:
-
-*Försök att hålla längden på översättningarna så lika de engelska orginal texterna som möjligt, på grund av implementationen av det grafiska gränssnittet. Se även [http://trac.openstreetmap.org/ticket/2067 open bug].
-*Använd [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] för att prova Potlatch. Du kan testa i vilket område du vill där.',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] är en Flash-baserad redigerare för OpenStreetMap',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] är en samling verktyg för att redigera Wikipedia',
 	'bw-desc-shapado' => 'Meddelandegrupp för Q&A-programvaran [[Translating:Shapado|Shapado]] som är fri och har öppen källkod',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] microblog server med öppen källkod',
 	'translate-group-desc-statusnet-plugin' => 'Dessa meddelanden är en del av ett tillägg för [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'En meddelandegrupp för [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-systemet för verktyg till [http://toolserver.org Toolserver](<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tekniska detaljer]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan snabbt hitta författarna till en sida på en Wikimedia wiki.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] är ett projekt  för att tillhandahålla en offline textversion av Wikipedia på en mobil enhet.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] är en a korsplattform för mobil- and surfplattor för att läsa och bidra till Wikipedia',
 );
 
 /** Telugu (తెలుగు)
