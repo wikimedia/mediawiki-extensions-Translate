@@ -4507,6 +4507,8 @@ Ier dir dës Versioun fir d'iwwersetze markéiert, kuckt w.e.g. no datt d'Änner
 	'tpt-old-pages' => "Eng Versioun vun {{PLURAL:$1|dëser Säit|dëse Säite}} gouf fir d'Iwwersetze markéiert.",
 	'tpt-other-pages' => "Al Versioun vun {{PLURAL:$1|dëser Säit|dëse Säite}} sinn als z'iwwesetze markéiert,
 awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
+	'tpt-select-prioritylangs' => 'Komma-getrennte Lëscht vun de prioritäre Sproochcoden:',
+	'tpt-select-prioritylangs-force' => 'Iwwersetzungen an aner wéi déi prioritär Sprooche verhënneren',
 	'tpt-select-prioritylangs-reason' => 'Grond:',
 	'tpt-sections-prioritylangs' => 'Prioritär Sproochen',
 	'tpt-rev-mark' => "markéiere fir z'iwwersetzen",

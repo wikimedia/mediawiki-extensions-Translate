@@ -706,6 +706,8 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'group-translate-proofr' => '{{doc-group|translate-proofr}}',
 	'group-translate-proofr-member' => '{{doc-group|translate-proofr|member}}',
 	'grouppage-translate-proofr' => '{{doc-group|translate-proofr|page}}',
+	'group-translate-proofr.css' => '{{doc-group|translate-proofr|css}}',
+	'group-translate-proofr.js' => '{{doc-group|translate-proofr|js}}',
 	'logentry-translationreview-message' => '{{Logentry}}',
 	'logentry-groupreview-message' => '{{Logentry}}
 
@@ -2629,6 +2631,15 @@ $messages['be-tarask'] = array(
 	'translate-grouplisting' => 'Гэта сьпіс усіх групаў, якія можна перакладаць.
 Націсьніце на назву групы для паказу сьпісу неперакладзеных паведамленьняў.',
 	'translate-grouplisting-empty' => 'Няма групаў паведамленьняў, сканфігураваных для перакладу.',
+	'translate-taskui-view' => 'Паказаць усе паведамленьні',
+	'translate-taskui-untranslated' => 'Паказаць неперакладзеныя паведамленьні',
+	'translate-taskui-optional' => 'Паказаць неабавязковыя паведамленьні.',
+	'translate-taskui-suggestions' => 'Паказаць паведамленьні з падказкамі з памяці перакладаў',
+	'translate-taskui-export-to-file' => 'Экспартаваць у родным фармаце',
+	'translate-taskui-export-as-po' => 'Экспартаваць для оф-лайнавага перакладу',
+	'translate-taction-translate' => 'Пераклад',
+	'translate-taction-proofread' => 'Вычытка',
+	'translate-taction-lstats' => 'Статыстыка па мове',
 	'translate-page-no-such-language' => 'Пададзеная няслушная мова.',
 	'translate-page-no-such-group' => 'Пададзеная няслушная група.',
 	'translate-page-disabled' => "Пераклады на гэту мову ў гэтай групе былі адключаны. Прычына:
@@ -12239,6 +12250,8 @@ $messages['ja'] = array(
 	'translate-stats-edits' => '編集',
 	'translate-stats-users' => '翻訳者',
 	'translate-stats-registrations' => '登録',
+	'translate-stats-reviews' => '査読',
+	'translate-stats-reviewers' => '査読者',
 	'translate-statsf-intro' => 'このフォームを使って簡単な統計を生成できます。すべての数値には上限と下限があります。',
 	'translate-statsf-options' => 'グラフのオプション',
 	'translate-statsf-width' => 'ピクセル単位の幅：',
@@ -12254,6 +12267,8 @@ $messages['ja'] = array(
 	'translate-statsf-count-edits' => '編集回数',
 	'translate-statsf-count-users' => '活動中の翻訳者',
 	'translate-statsf-count-registrations' => '新しい利用者',
+	'translate-statsf-count-reviews' => '翻訳査読',
+	'translate-statsf-count-reviewers' => '査読者',
 	'translate-statsf-language' => 'カンマ区切りの言語コードの一覧：',
 	'translate-statsf-group' => 'カンマ区切りのグループコードの一覧：',
 	'translate-statsf-submit' => 'プレビュー',
@@ -25059,7 +25074,7 @@ $messages['zh-hans'] = array(
 	'translate-edit-information' => '关于信息的资料（$1）',
 	'translate-edit-in-other-languages' => '其他语言的信息',
 	'translate-edit-committed' => '当前翻译',
-	'translate-edit-warnings' => '未完成翻译的警告',
+	'translate-edit-warnings' => '有关不完整翻译的警告',
 	'translate-edit-tmsugs' => '来自翻译记忆的建议',
 	'translate-edit-tmmatch' => '$1%匹配',
 	'translate-use-suggestion' => '采纳此建议取代目前的翻译。',
@@ -25095,10 +25110,8 @@ $messages['zh-hans'] = array(
 	'translate-magic-notsaved' => '你的编辑还未被保存！',
 	'translate-magic-errors' => '请修复翻译中的以下{{PLURAL:$1|错误|错误}}：',
 	'translate-magic-saved' => '你的改变已经成功保存。',
-	'translate-checks-parameters' => '以下$2 个参数未知：
-<strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => '以下$2 个参数未知：
-<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters' => '以下{{PLURAL:$2|参数}}未使用：<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '以下{{PLURAL:$2|参数}}未使用：<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => '有一个不均匀的量的 {{PLURAL:$2|括号|括号}}：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '以下$2个链接存在问题：<strong><nowiki>$1</nowiki></strong>',

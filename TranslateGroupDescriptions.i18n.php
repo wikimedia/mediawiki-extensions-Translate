@@ -780,8 +780,10 @@ Por favor mira [[mw:Extension:PDF_Writer]] y http://code.pediapress.com/wiki/wik
 	'bw-desc-shapado' => 'Grupo de mensajes para el sofware Q&A de fuente libre y abierta [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es un servidor de microblogueo de fuente abierta',
 	'translate-group-desc-statusnet-plugin' => 'Estos mensajes forman parte de un complemento para [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Un grupo de mensajes para [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], el sistema i18n de herramientas de [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|ayuda]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalles técnicos]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] es capaz de encontrar rápidamente los autores de una página en una wiki de Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es un proyecto para proveer una versión offline, sólo texto de Wikipedia para dispositivos móviles.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] es una aplicación para dispositivos móviles y tabletas-PC para leer y colaborar en Wikipedia',
 );
 
 /** Estonian (Eesti)
@@ -2702,7 +2704,6 @@ $messages['vi'] = array(
 	'translate-group-desc-uniwiki' => 'Siêu nhóm thông điệp chứa thông điệp của các phần mở rộng có liên quan đến [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Siêu nhóm thông điệp chứa tất cả các thông điệp dùng cho bộ mở rộng liên quan đến [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Sáng kiến Khả dụng Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Mọi trang dịch được',
-	'translate-group-desc-europeana' => '[[Translating:Europeana|Europeana]] cho phép mọi người thám hiểm những tài nguyên văn hóa số của châu Âu',
 	'bw-desc-freecol' => 'Trước khi dịch FreeCol ra ngôn ngữ của bạn, xin hãy đọc [[Translating:FreeCol]]. Freecol sử dụng giấy phép GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], một diễn đàn mạng được viết bằng PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] là hệ thống miễn phí để theo dõi lỗi trên Web. Xin hãy báo cáo lỗi tại [[Support]].',
@@ -2715,30 +2716,27 @@ $messages['vi'] = array(
 	'translate-group-desc-kiwix' => 'Nhóm thông điệp cho [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Một trong những phần bổ trợ chính của [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Các thông điệp trong một phiên bản ổn định của [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] là hệ thống quản lý thông tin về tài chính vi mô',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] là hệ thống quản lý thông tin về tài chính vi mô.',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' là một thư viện Python để tạo ra tài liệu PDF từ những bài MediaWiki được thư viện mwlib xử lý.
 
 Xem thêm chi tiết tại [[MW:Extension:PDF Writer]] và http://code.pediapress.com/wiki/wiki/mwlibrl .",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net/ NOCC] là chương trình thư điện tử Web được viết bằng PHP. Xin hãy báo cáo lỗi tại [[Support]].',
-	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] là chương trình đọc Wikipedia ngoại tuyến',
-	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] là nền phương tiện mở',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] là chương trình đọc Wikipedia ngoại tuyến.',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] là nền phương tiện mở.',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Các thông điệp này thuộc về bản mẫu xác nhận địa chỉ thư điện tử của [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Các thông điệp này thuộc về dự án [[Translating:Open Images|Open Images]]',
 	'bw-desc-openlayers' => 'OpenLayers là một thư viện mã nguồn mở để tạo ra bản đồ động. Xin hãy báo cáo lỗi tại [[Support]].',
 	'bw-desc-openstreetmap' => 'Nhóm thông điệp chứa các thông điệp của [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Nhóm thông điệp này chứa các thông điệp của giao diện [[Translating:OpenStreetMap|OpenStreetMap]].',
-	'bw-desc-osm-potlatch' => 'Nhóm thông điệp này chứa các thông điệp của giao diện [[Translating:OpenStreetMap|Potlatch]]. Xin hãy:
-
-* Cố gắng dịch càng gần độ dài của bản gốc tiếng Anh càng tốt vì những hạn chế của nền giao diện. Xem thêm [http://trac.openstreetmap.org/ticket/2067 lỗi chưa giải quyết].
-* Thử Potlatch tại máy chủ [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org]. Bạn có thể thử ở đấy phần nào cũng được.',
-	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] là một thư viện để lập chương trình tự động sửa đổi Wikipedia',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] là một trình vẽ bản đồ OpenStreetMap dùng Flash.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] là một thư viện để lập chương trình tự động sửa đổi Wikipedia.',
 	'bw-desc-shapado' => 'Nhóm thông điệp cho phần mềm hỏi đáp nguồn mở miễn phí [[Translating:Shapado|Shapado]]',
-	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] là máy chủ tiểu blog nguồn mở',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] là máy chủ tiểu blog nguồn mở.',
 	'translate-group-desc-statusnet-plugin' => 'Các thông điệp này thuộc về một phần bổ trợ cho [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Nhóm thông điệp của [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], hệ thống biên dịch các công cụ [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|trợ giúp]] · [https://wiki.toolserver.org/view/Toolserver_Intuition chi tiết kỹ thuật]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] có thể nhanh chóng tìm ra tác giả của trang trong wiki của Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] là dự án sản xuất phiên bản Wikipedia ngoại tuyến có văn bản thuần để đọc trên thiết bị di động.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] là một ứng dụng đa nền tảng dành cho máy tính di động và bảng để đọc và đóng góp vào Wikipedia',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] là một ứng dụng đa nền tảng dành cho máy tính di động và bảng để đọc và đóng góp vào Wikipedia.',
 );
 
 /** Yiddish (ייִדיש)
