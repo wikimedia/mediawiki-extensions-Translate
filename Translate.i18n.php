@@ -405,6 +405,9 @@ Details: $1',
 	'group-translate-proofr-member' => '{{GENDER:$1|translation reviewer}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Translation reviewers',
 
+	'group-translate-proofr.css' => '/* CSS placed here will affect translation reviewers only */', # only translate this message to other languages if you have to change it
+	'group-translate-proofr.js'  => '/* JS placed here will affect translation reviewer only */', # only translate this message to other languages if you have to change it
+
 	// Less damn for the 32 character limit for log names
 	'log-name-translationreview' => 'Translation review log',
 	'log-description-translationreview' => 'Log of all reviews to translations and message groups.',
