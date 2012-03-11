@@ -184,16 +184,18 @@ class TranslationEditPage {
 	 * @param $title Title Title object for the translatable message.
 	 * @param $group \string The group in which this message belongs to.
 	 *   Optional, but avoids a lookup later if provided.
+	 * @param $type \string Force the type of editor to be used. Use dialog
+	 *   where embedded editor is no applicable.
 	 * @return \array
 	 */
-	public static function jsEdit( Title $title, $group = "" ) {
+	public static function jsEdit( Title $title, $group = "", $type = 'default' ) {
 		global $wgUser, $wgRequest;
 
 		if ( !$wgUser->getOption( 'translate-jsedit' ) ) {
 			return array();
 		}
 
-		if ( $wgRequest->getVal( 'translate-beta' ) ) {
+		if ( $type === 'default' && $wgRequest->getVal( 'translate-beta' ) ) {
 			$text = 'tqe-anchor-' . substr( sha1( $title->getPrefixedText() ), 0, 12 );
 			$onclick = "jQuery( '#$text' ).dblclick(); return false;";
 		} else {

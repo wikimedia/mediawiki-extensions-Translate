@@ -1214,7 +1214,7 @@ class TranslationHelpers {
 		$params['action'] = 'edit';
 		$params['loadgroup'] = $groupId;
 
-		$jsEdit = TranslationEditPage::jsEdit( $target, $groupId );
+		$jsEdit = TranslationEditPage::jsEdit( $target, $groupId, 'dialog' );
 
 		return Linker::link( $target, $text, $jsEdit, $params );
 	}
