@@ -83,6 +83,7 @@ like not using spaces or transliterating proper names. $1',
 	'translate-edit-committed'          => 'Current translation in software',
 	'translate-edit-warnings'           => 'Warnings about incomplete translations',
 	'translate-edit-tmsugs'             => 'Suggestions from translation memories and machine translation',
+	'translate-edit-tmmatch-source'     => 'Translation source text: $1',
 	'translate-edit-tmmatch'            => '$1% match',
 	'translate-use-suggestion'          => 'Replace current translation with this suggestion.',
 

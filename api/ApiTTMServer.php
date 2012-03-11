@@ -29,8 +29,8 @@ class ApiTTMServer extends ApiBase {
 
 		$result = $this->getResult();
 		foreach ( $suggestions as $sug ) {
-			$result->setContent( $sug, $sug['target'] );
-			unset( $sug['target'] );
+			$sug['location'] = $server->expandLocation( $sug );
+			unset( $sug['wiki'] );
 			$result->addValue( $this->getModuleName(), null, $sug );
 		}
 

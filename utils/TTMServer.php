@@ -71,6 +71,51 @@ class TTMServer implements iTTMServer  {
 	}
 
 	/**
+	 * Determines if the suggestion returned by this TTMServer comes
+	 * from this wiki or any other wiki.
+	 * @return Bool
+	 * @since 2012-03-11
+	 */
+	public function isLocalSuggestion( array $suggestion ) {
+		$type = $this->config['type'];
+		$isLocal = $type === 'ttmserver';
+		if ( $type === 'shared-ttmserver' && $suggestion['wiki'] === wfWikiId() ) {
+			$isLocal = true;
+		}
+		return $isLocal;
+	}
+
+	/**
+	 * Given suggestion returned by this TTMServer, constructs fully
+	 * qualified URL to the location of the translation.
+	 * @return String URL
+	 * @since 2012-03-11
+	 */
+	public function expandLocation( array $suggestion ) {
+		$type = $this->config['type'];
+		if ( $type === 'shared-ttmserver' ) {
+			$wiki = WikiMap::getWiki( $suggestion['wiki'] );
+			return $wiki->getCanonicalUrl( $suggestion['location'] );
+		} elseif ( $type === 'remote-ttmserver' ) {
+			return $suggestion['location'];
+		} else {
+			$title = Title::newFromText( $suggestion['location'] );
+			return $title->getCanonicalUrl();
+		}
+	}
+
+	/**
+	 * Is this TTMServer instance using shared translation memory database.
+	 * This affects the database layout, shared databases have an extra field
+	 * and we have to be considerate about data originating from other wikies.
+	 * @return Bool
+	 * @since 2012-03-11
+	 */
+	public function isShared() {
+		return $this->config['type'] === 'shared-ttmserver';
+	}
+
+	/**
 	 * @param $mode int
 	 * @return DatabaseBase
 	 */
@@ -111,6 +156,10 @@ class TTMServer implements iTTMServer  {
 			'tms_context' => $title->getPrefixedText(),
 			'tms_text' => $definition,
 		);
+		if ( $this->isShared() ) {
+			$conds['tms_wiki'] = wfWikiId();
+		}
+
 		$sid = $dbw->selectField( 'translate_tms', 'tms_sid', $conds, __METHOD__ );
 		if ( $sid === false ) {
 			$sid = $this->insertSource( $title, $sourceLanguage, $definition );
@@ -142,6 +191,10 @@ class TTMServer implements iTTMServer  {
 			'tms_context' => $context->getPrefixedText(),
 		);
 
+		if ( $this->isShared() ) {
+			$row['tms_wiki'] = wfWikiId();
+		}
+
 		$dbw = $this->getDB( DB_MASTER );
 		$dbw->insert( 'translate_tms', $row, __METHOD__ );
 		$sid = $dbw->insertId();
@@ -172,6 +225,10 @@ class TTMServer implements iTTMServer  {
 		$dbr = $this->getDB( DB_SLAVE );
 		$tables = array( 'translate_tmt', 'translate_tms' );
 		$fields = array( 'tms_context', 'tms_text', 'tmt_lang', 'tmt_text' );
+		if ( $this->isShared() ) {
+			$fields[] = 'tms_wiki';
+		}
+
 		$conds = array(
 			'tms_lang' => $sourceLanguage,
 			'tmt_lang' => $targetLanguage,
@@ -189,10 +246,10 @@ class TTMServer implements iTTMServer  {
 
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__ );
 		wfProfileOut( __METHOD__ );
-		return $this->processQueryResults( $res, $text );
+		return $this->processQueryResults( $res, $text, $sourceLanguage, $targetLanguage );
 	}
 
-	protected function processQueryResults( $res, $text ) {
+	protected function processQueryResults( $res, $text, $sourceLanguage, $targetLanguage ) {
 		wfProfileIn( __METHOD__ );
 		$lenA = mb_strlen( $text );
 		$results = array();
@@ -211,11 +268,14 @@ class TTMServer implements iTTMServer  {
 			$quality = 1 - ( $dist / $len );
 
 			if ( $quality >= $this->config['cutoff'] ) {
+				$loc = self::contextToLocation( $row->tms_context, $sourceLanguage, $targetLanguage );
 				$results[] = array(
 					'source' => $row->tms_text,
 					'target' => $row->tmt_text,
 					'context' => $row->tms_context,
+					'location' => $loc,
 					'quality' => $quality,
+					'wiki' => isset( $row->tms_wiki ) ? $row->tms_wiki : false,
 				);
 			}
 		}
@@ -262,6 +322,18 @@ class TTMServer implements iTTMServer  {
 		$segments = array_slice( $segments, 0, 10 );
 		wfProfileOut( __METHOD__ );
 		return $segments;
+	}
+
+	/**
+	 * Given pagename Namespace:Page/en, replace the language code with
+	 * the target language. In theory namespaces could be stored differently,
+	 * but in MediaWiki this is standard practise.
+	 * @return String
+	 * @since 2012-03-11
+	 */
+	protected static function contextToLocation( $text, $sourceLanguage, $targetLanguage ) {
+		$len = strlen( $sourceLanguage );
+		return substr( $text, 0, -$len ) . $targetLanguage;
 	}
 
 	/**

@@ -22,10 +22,14 @@ require_once( "$IP/maintenance/Maintenance.php" );
  * @since 2012-01-26
  */
 class TTMServerBootstrap extends Maintenance {
+	/// @var Array Configuration of requested TTMServer
+	protected $config;
+
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = 'Script to bootstrap TTMServer';
 		$this->addOption( 'threads', 'Number of threads', /*required*/false, /*has arg*/true );
+		$this->addOption( 'server', 'Server configuration identifier', /*required*/false, /*has arg*/true );
 		$this->setBatchSize( 100 );
 		$this->start = microtime( true );
 	}
@@ -38,22 +42,54 @@ class TTMServerBootstrap extends Maintenance {
 	}
 
 	public function execute() {
-		$server = TTMServer::primary();
-		if ( $server instanceof FakeTTMServer ) {
+		global $wgTranslateTranslationServices;
+
+		// TTMServer is the id of the enabled-by-default instance
+		$configKey = $this->getOption( 'server', 'TTMServer' );
+		if ( isset( $wgTranslateTranslationServices[$configKey] ) ) {
+			$this->config = $config = $wgTranslateTranslationServices[$configKey];
+			$server = new TTMServer( $config );
+		} else {
 			$this->error( "Translation memory is not configured properly", 1 );
 		}
 
 		$dbw = $server->getDB( DB_MASTER );
 
-		$this->statusLine( 'Deleting sources.. ', 1 );
-		$dbw->delete( 'translate_tms', '*', __METHOD__ );
-		$this->output( 'translations.. ', 1 );
-		$dbw->delete( 'translate_tmt', '*', __METHOD__ );
-		$this->output( 'fulltext.. ', 1 );
-		$dbw->delete( 'translate_tmf', '*', __METHOD__ );
-		$table = $dbw->tableName( 'translate_tmf' );
-		$dbw->query( "DROP INDEX tmf_text ON $table" );
-		$this->output( 'done!', 1 );
+		if ( $server->isShared() ) {
+			$wiki = array( 'tms_wiki' => wfWikiId() );
+
+			$this->statusLine( 'Deleting fulltext.. ', 1 );
+			$dbw->deleteJoin(
+				'translate_tmf', 'translate_tms',
+				'tmf_sid', 'tms_sid',
+				$wiki, __METHOD__
+			);
+
+			$this->output( 'translations.. ', 1 );
+			$dbw->deleteJoin(
+				'translate_tmt', 'translate_tms',
+				'tmt_sid', 'tms_sid',
+				$wiki, __METHOD__
+			);
+
+			$this->output( 'sources.. ', 1 );
+			$dbw->delete( 'translate_tms', $wiki, __METHOD__ );
+			$this->output( 'done!', 1 );
+		} else {
+			// For dedicated databases we can just wipe out everything,
+			// drop the index during bootstrap and readd it later.
+			$this->statusLine( 'Deleting sources.. ', 1 );
+			$dbw->delete( 'translate_tms', '*', __METHOD__ );
+			$this->output( 'translations.. ', 1 );
+			$dbw->delete( 'translate_tmt', '*', __METHOD__ );
+			$this->output( 'fulltext.. ', 1 );
+			$dbw->delete( 'translate_tmf', '*', __METHOD__ );
+			$table = $dbw->tableName( 'translate_tmf' );
+			$dbw->ignoreErrors( true );
+			$dbw->query( "DROP INDEX tmf_text ON $table" );
+			$dbw->ignoreErrors( false );
+			$this->output( 'done!', 1 );
+		}
 
 		$this->statusLine( 'Loading groups... ', 2 );
 		$groups = MessageGroups::singleton()->getGroups();
@@ -99,17 +135,19 @@ class TTMServerBootstrap extends Maintenance {
 			pcntl_waitpid( $pid, $status );
 		}
 
-		$this->statusLine( 'Adding fulltext index...', 9 );
-		$table = $dbw->tableName( 'translate_tmf' );
-		$dbw->query( "CREATE FULLTEXT INDEX tmf_text ON $table (tmf_text)" );
-		$this->output( ' done!', 9 );
+		if ( !$server->isShared() ) {
+			$this->statusLine( 'Adding fulltext index...', 9 );
+			$table = $dbw->tableName( 'translate_tmf' );
+			$dbw->query( "CREATE FULLTEXT INDEX tmf_text ON $table (tmf_text)" );
+			$this->output( ' done!', 9 );
+		}
 	}
 
 	protected function exportGroup( MessageGroup $group, $multi = false ) {
 		// Make sure all existing connections are dead,
 		// we can't use them in forked children.
 		LBFactory::destroyInstance();
-		$server = TTMServer::primary();
+		$server = new TTMServer( $this->config );
 
 		$id = $group->getId();
 		$sourceLanguage = $group->getSourceLanguage();

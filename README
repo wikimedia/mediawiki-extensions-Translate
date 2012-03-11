@@ -30,6 +30,11 @@ And for the code at:
  https://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-03-11
+- Support for shared TTMServer databases was added
+- Suggestions from different TTMServers are now grouped
+- Output of TTMServer api module has changed
+- TTMServer configs can override the link symbol by adding value for symbol in the config
 * 2012-03-07
 - $wgTranslateGroupStructure is no longer used. If you are using aggregate message
   groups, you can remove the old settings and everything still works as expected.

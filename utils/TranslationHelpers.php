@@ -258,7 +258,8 @@ class TranslationHelpers {
 		$source = $this->group->getSourceLanguage();
 		$code = $this->handle->getCode();
 		$definition = $this->getDefinition();
-		$suggestions = TTMServer::primary()->query( $source, $code, $definition );
+		$TTMServer = new TTMServer( $config );
+		$suggestions = $TTMServer->query( $source, $code, $definition );
 		if ( count( $suggestions ) === 0 ) {
 			throw new TranslationHelperExpection( 'No suggestions' );
 		}
@@ -319,34 +320,37 @@ class TranslationHelpers {
 			$suggestions = $wrapper['suggestions'];
 
 			foreach ( $suggestions as $s ) {
-				$accuracy = wfMsgHtml( 'translate-edit-tmmatch' , sprintf( '%.2f', $s['quality'] * 100 ) );
+				$tooltip = wfMessage( 'translate-edit-tmmatch-source', $s['source'] )->plain();
+				$text = wfMessage( 'translate-edit-tmmatch', sprintf( '%.2f', $s['quality'] * 100 ) )->plain();
+				$accuracy = Html::element( 'span', array( 'title' => $tooltip ), $text );
 				$legend = array( $accuracy => array() );
 
-				if ( $config['type'] === 'remote-ttmserver' ) {
-					$params = array(
-						'href' => $url = $config['viewurl'] . $s['context'],
-						'target' => '_blank',
-						'title' => "{$config['displayname']}: {$s['context']}",
-					);
-					$legend[$accuracy][] = Html::element( 'a', $params, '‣' );
+				$TTMServer = new TTMServer( $config );
+				if ( $TTMServer->isLocalSuggestion( $s ) ) {
+					$title = Title::newFromText( $s['location'] );
+					$symbol = isset( $config['symbol'] ) ? $config['symbol'] : '•';
+					$legend[$accuracy][] = self::ajaxEditLink( $title, '•' );
 				} else {
-					$sourceTitle = Title::newFromText( $s['context'] );
-					$handle = new MessageHandle( $sourceTitle );
-					$targetTitle = Title::makeTitle( $sourceTitle->getNamespace(), $handle->getKey() . "/$code" );
-					if ( $targetTitle ) {
-						$legend[$accuracy][] = self::ajaxEditLink( $targetTitle, '•' );
+					if ( $config['type'] === 'remote-ttmserver' ) {
+						$displayName = $config['displayname'];
+					} else {
+						$wiki = WikiMap::getWiki( $s['wiki'] );
+						$displayName = $wiki->getDisplayName() . ': ' . $s['location'];
 					}
+
+					$params = array(
+						'href' => $TTMServer->expandLocation( $s ),
+						'target' => '_blank',
+						'title' => $displayName,
+					);
+
+					$symbol = isset( $config['symbol'] ) ? $config['symbol'] : '‣';
+					$legend[$accuracy][] = Html::element( 'a', $params, $symbol );
 				}
 
-				// Show the source text in a tooltip
-				if ( isset( $s['target'] ) ) {
-					$suggestion = $s['target'];
-				} else {
-					$suggestion = $s['*'];
-					
-				}
+				$suggestion = $s['target'];
 				$text = $this->suggestionField( $suggestion );
-				$params = array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] );
+				$params = array( 'class' => 'mw-sp-translate-edit-tmsug' );
 
 				// Group identical suggestions together
 				if ( isset( $sugFields[$suggestion] ) ) {
@@ -386,6 +390,7 @@ class TranslationHelpers {
 
 		$handlers = array(
 			'ttmserver' => 'getTTMServerBox',
+			'shared-ttmserver' => 'getTTMServerBox',
 			'remote-ttmserver' => 'getRemoteTTMServerBox',
 			'microsoft' => 'getMicrosoftSuggestion',
 			'apertium'  => 'getApertiumSuggestion',
@@ -395,17 +400,19 @@ class TranslationHelpers {
 		$boxes = array();
 		$TTMSSug = array();
 		foreach ( $wgTranslateTranslationServices as $name => $config ) {
-			if ( $async === 'async' ) {
-				$config['timeout'] = $config['timeout-async'];
-			} else {
-				$config['timeout'] = $config['timeout-sync'];
+			$type = $config['type'];
+			if ( $type !== 'ttmserver' ) {
+				if ( $async === 'async' ) {
+					$config['timeout'] = $config['timeout-async'];
+				} else {
+					$config['timeout'] = $config['timeout-sync'];
+				}
 			}
 
-			$type = $config['type'];
 			if ( isset( $handlers[$type] ) ) {
 				$method = $handlers[$type];
 				try {
-					if ( $type === 'ttmserver' || $type === 'remote-ttmserver' ) {
+					if ( $type === 'ttmserver' || $type === 'remote-ttmserver' || $type === 'shared-ttmserver' ) {
 						$TTMSSug[$name] = array(
 							'config' => $config,
 							'suggestions' => $this->$method( $name, $config ),
