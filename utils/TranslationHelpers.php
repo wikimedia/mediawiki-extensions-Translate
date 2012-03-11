@@ -263,7 +263,7 @@ class TranslationHelpers {
 			throw new TranslationHelperExpection( 'No suggestions' );
 		}
 
-		return $this->formatTTMServerSuggestions( $suggestions, $code, $config );
+		return $suggestions;
 	}
 
 	/**
@@ -295,6 +295,7 @@ class TranslationHelpers {
 		if ( $json === false ) {
 			// Most likely a timeout or other general error
 			self::reportTranslationServiceFailure( $serviceName );
+			throw new TranslationHelperExpection( 'No reply from remote server' );
 		} elseif ( !is_array( $response ) ) {
 			error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
 			throw new TranslationHelperExpection( 'Malformed reply from remote server' );
@@ -305,46 +306,54 @@ class TranslationHelpers {
 			throw new TranslationHelperExpection( 'No suggestions' );
 		}
 
-		return $this->formatTTMServerSuggestions( $suggestions, $code, $config );
+		return $suggestions;
 	}
 
 	/// Since 2012-03-05
-	protected function formatTTMServerSuggestions( $data, $code, $config ) {
-		foreach ( $data as $s ) {
-			$accuracy = wfMsgHtml( 'translate-edit-tmmatch' , sprintf( '%.2f', $s['quality'] * 100 ) );
-			$legend = array( $accuracy => array() );
+	protected function formatTTMServerSuggestions( $data ) {
+		$code = $this->handle->getCode();
+		$sugFields = array();
 
-			if ( $config['type'] === 'remote-ttmserver' ) {
-				$params = array(
-					'href' => $url = $config['viewurl'] . $s['context'],
-					'target' => '_blank',
-					'title' => $config['displayname'],
-				);
-				$legend[$accuracy][] = Html::element( 'a', $params, '‣' );
-			} else {
-				$sourceTitle = Title::newFromText( $s['context'] );
-				$handle = new MessageHandle( $sourceTitle );
-				$targetTitle = Title::makeTitle( $sourceTitle->getNamespace(), $handle->getKey() . "/$code" );
-				if ( $targetTitle ) {
-					$legend[$accuracy][] = self::ajaxEditLink( $targetTitle, '•' );
+		foreach ( $data as $service => $wrapper ) {
+			$config = $wrapper['config'];
+			$suggestions = $wrapper['suggestions'];
+
+			foreach ( $suggestions as $s ) {
+				$accuracy = wfMsgHtml( 'translate-edit-tmmatch' , sprintf( '%.2f', $s['quality'] * 100 ) );
+				$legend = array( $accuracy => array() );
+
+				if ( $config['type'] === 'remote-ttmserver' ) {
+					$params = array(
+						'href' => $url = $config['viewurl'] . $s['context'],
+						'target' => '_blank',
+						'title' => "{$config['displayname']}: {$s['context']}",
+					);
+					$legend[$accuracy][] = Html::element( 'a', $params, '‣' );
+				} else {
+					$sourceTitle = Title::newFromText( $s['context'] );
+					$handle = new MessageHandle( $sourceTitle );
+					$targetTitle = Title::makeTitle( $sourceTitle->getNamespace(), $handle->getKey() . "/$code" );
+					if ( $targetTitle ) {
+						$legend[$accuracy][] = self::ajaxEditLink( $targetTitle, '•' );
+					}
 				}
-			}
 
-			// Show the source text in a tooltip
-			if ( isset( $s['target'] ) ) {
-				$suggestion = $s['target'];
-			} else {
-				$suggestion = $s['*'];
-				
-			}
-			$text = $this->suggestionField( $suggestion );
-			$params = array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] );
+				// Show the source text in a tooltip
+				if ( isset( $s['target'] ) ) {
+					$suggestion = $s['target'];
+				} else {
+					$suggestion = $s['*'];
+					
+				}
+				$text = $this->suggestionField( $suggestion );
+				$params = array( 'class' => 'mw-sp-translate-edit-tmsug', 'title' => $s['source'] );
 
-			// Group identical suggestions together
-			if ( isset( $sugFields[$suggestion] ) ) {
-				$sugFields[$suggestion][2] = array_merge_recursive( $sugFields[$suggestion][2], $legend );
-			} else {
-				$sugFields[$suggestion] = array( $text, $params, $legend );
+				// Group identical suggestions together
+				if ( isset( $sugFields[$suggestion] ) ) {
+					$sugFields[$suggestion][2] = array_merge_recursive( $sugFields[$suggestion][2], $legend );
+				} else {
+					$sugFields[$suggestion] = array( $text, $params, $legend );
+				}
 			}
 		}
 
@@ -384,6 +393,7 @@ class TranslationHelpers {
 
 		$errors = '';
 		$boxes = array();
+		$TTMSSug = array();
 		foreach ( $wgTranslateTranslationServices as $name => $config ) {
 			if ( $async === 'async' ) {
 				$config['timeout'] = $config['timeout-async'];
@@ -391,16 +401,27 @@ class TranslationHelpers {
 				$config['timeout'] = $config['timeout-sync'];
 			}
 
-			if ( isset( $handlers[$config['type']] ) ) {
-				$method = $handlers[$config['type']];
+			$type = $config['type'];
+			if ( isset( $handlers[$type] ) ) {
+				$method = $handlers[$type];
 				try {
-					$boxes[] = $this->$method( $name, $config );
+					if ( $type === 'ttmserver' || $type === 'remote-ttmserver' ) {
+						$TTMSSug[$name] = array(
+							'config' => $config,
+							'suggestions' => $this->$method( $name, $config ),
+						);
+					} else {
+						$boxes[] = $this->$method( $name, $config );
+					}
 				} catch ( TranslationHelperExpection $e ) {
 					$errors .= "<!-- Box $name not available: {$e->getMessage()} -->\n";
 				}
 			} else {
 				throw new MWException( __METHOD__ . ": Unsupported type {$config['type']}" );
 			}
+		}
+		if ( count( $TTMSSug ) ) {
+			array_unshift( $boxes, $this->formatTTMServerSuggestions( $TTMSSug ) );
 		}
 
 		// Remove nulls and falses
