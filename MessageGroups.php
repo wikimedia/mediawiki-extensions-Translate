@@ -817,7 +817,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = 'translate_sections';
 		$vars = array( 'trs_key', 'trs_text' );
-		$conds = array( 'trs_page' => $this->getTitle()->getArticleId() );
+		$conds = array( 'trs_page' => $this->getTitle()->getArticleID() );
 		$options = array( 'ORDER BY' => 'trs_order' );
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 

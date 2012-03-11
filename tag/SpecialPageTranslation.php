@@ -637,7 +637,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$inserts = array();
 		$changed = array();
 
-		$pageId = $page->getTitle()->getArticleId();
+		$pageId = $page->getTitle()->getArticleID();
 		foreach ( array_values( $sections ) as $index => $s ) {
 			if ( $s->type === 'changed' ) {
 				// Allow silent changes to avoid fuzzying unnecessary.
@@ -667,7 +667,7 @@ class SpecialPageTranslation extends SpecialPage {
 				unset( $inserts[$index]['trs_order'] );
 			}
 		}
-		$dbw->delete( 'translate_sections', array( 'trs_page' => $page->getTitle()->getArticleId() ), __METHOD__ );
+		$dbw->delete( 'translate_sections', array( 'trs_page' => $page->getTitle()->getArticleID() ), __METHOD__ );
 		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
 
 		/* Stores the names of changed sections in the database.

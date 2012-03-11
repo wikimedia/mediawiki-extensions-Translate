@@ -129,7 +129,7 @@ class PageTranslationHooks {
 		$dbw = wfGetDB( DB_MASTER );
 
 		$conds = array(
-			'rt_page' => $title->getArticleId(),
+			'rt_page' => $title->getArticleID(),
 			'rt_type' => RevTag::getType( 'tp:transver' ),
 			'rt_revision' => $revision
 		);

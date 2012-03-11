@@ -460,7 +460,7 @@ class TranslatablePage {
 	protected function addTag( $tag, $revision, $value = null ) {
 		$dbw = wfGetDB( DB_MASTER );
 
-		$aid = $this->getTitle()->getArticleId();
+		$aid = $this->getTitle()->getArticleID();
 
 		if ( is_object( $revision ) ) {
 			throw new MWException( 'Got object, excepted id' );
@@ -506,7 +506,7 @@ class TranslatablePage {
 	 * @todo Change name to something better.
 	 */
 	public function removeTags() {
-		$aid = $this->getTitle()->getArticleId();
+		$aid = $this->getTitle()->getArticleID();
 
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array(
@@ -532,7 +532,7 @@ class TranslatablePage {
 			return false;
 		}
 
-		$aid = $this->getTitle()->getArticleId();
+		$aid = $this->getTitle()->getArticleID();
 
 		if ( isset( self::$tagCache[$aid][$tag] ) ) {
 			return self::$tagCache[$aid][$tag];
@@ -576,7 +576,7 @@ class TranslatablePage {
 
 		$fields = array( 'rt_revision', 'rt_value' );
 		$conds = array(
-			'rt_page' => $this->getTitle()->getArticleId(),
+			'rt_page' => $this->getTitle()->getArticleID(),
 			'rt_type' => RevTag::getType( 'tp:mark' ),
 		);
 		$options = array( 'ORDER BY' => 'rt_revision DESC' );
@@ -714,7 +714,7 @@ class TranslatablePage {
 		$db = wfGetDB( DB_SLAVE );
 		$fields = 'rt_value';
 		$conds = array(
-			'rt_page' => $title->getArticleId(),
+			'rt_page' => $title->getArticleID(),
 			'rt_type' => RevTag::getType( 'tp:transver' ),
 		);
 		$options = array( 'ORDER BY' => 'rt_revision DESC' );
@@ -778,7 +778,7 @@ class TranslatablePage {
 			$cacheObj->set( $cacheKey, $cache, 60 * 5 );
 		}
 
-		return in_array( $title->getArticleId(), $cache );
+		return in_array( $title->getArticleID(), $cache );
 	}
 
 	/// List of page ids where the latest revision is either tagged or marked
