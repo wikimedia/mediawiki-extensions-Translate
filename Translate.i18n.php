@@ -2076,6 +2076,8 @@ La llista predeterminada de llingües depende de la to llingua.",
 	'translate-stats-edits' => 'Ediciones',
 	'translate-stats-users' => 'Traductores',
 	'translate-stats-registrations' => 'Rexistros',
+	'translate-stats-reviews' => 'Revisiones',
+	'translate-stats-reviewers' => 'Revisores',
 	'translate-statsf-intro' => 'Pues xenerar estadístiques cencielles con esti formulariu. Tolos valores tienen llímites superiores y inferiores.',
 	'translate-statsf-options' => 'Opciones del gráficu',
 	'translate-statsf-width' => 'Anchura en píxeles:',
@@ -2091,6 +2093,8 @@ La llista predeterminada de llingües depende de la to llingua.",
 	'translate-statsf-count-edits' => "Númberu d'ediciones",
 	'translate-statsf-count-users' => 'Traductores activos',
 	'translate-statsf-count-registrations' => 'Nuevos usuarios',
+	'translate-statsf-count-reviews' => 'Revisiones de les traducciones',
+	'translate-statsf-count-reviewers' => 'Revisores',
 	'translate-statsf-language' => 'Llista de códigos de llingua separtaos por comes:',
 	'translate-statsf-group' => 'Llista de códigos de grupu separtaos por comes:',
 	'translate-statsf-submit' => 'Vista previa',
@@ -4916,6 +4920,7 @@ wie beispielsweise die Nichtverwendung von Leerzeichen oder die Transkription vo
 	'translate-edit-committed' => 'Aktuelle Übersetzung',
 	'translate-edit-warnings' => 'Warnungen zu unvollständigen Übersetzungen',
 	'translate-edit-tmsugs' => 'Vorschläge aus dem Übersetzungsspeicher',
+	'translate-edit-tmmatch-source' => 'Übersetzungsquelltext: $1',
 	'translate-edit-tmmatch' => '$1 % Übereinstimmung',
 	'translate-use-suggestion' => 'Ersetze die aktuelle Übersetzung mit diesem Vorschlag.',
 	'translate-edit-tab-list' => 'Nachrichtenliste',
@@ -4992,7 +4997,7 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-stats-edits' => 'Bearbeitungen',
 	'translate-stats-users' => 'Übersetzer',
 	'translate-stats-registrations' => 'Registrierungen',
-	'translate-stats-review' => 'Übersetzungsprüfungen',
+	'translate-stats-reviews' => 'Übersetzungsprüfungen',
 	'translate-stats-reviewers' => 'Übersetzungsprüfer',
 	'translate-statsf-intro' => 'Du kannst mit diesem Formular einfache Statistiken erstellen.
 Alle Werte haben untere und obere Limits.',
@@ -9663,7 +9668,7 @@ $1',
 	'translate-gs-count' => 'סך הכול',
 	'translate-gs-total' => 'סה"כ',
 	'translate-gs-avgscore' => 'ניקוד ממוצע',
-	'translate-documentation-language' => 'תיעוד ההודעה',
+	'translate-documentation-language' => 'תיעוד הודעות',
 	'translate-searchprofile' => 'תרגומים',
 	'translate-searchprofile-tooltip' => 'חיפוש בכל התרגומים',
 	'translate-search-languagefilter' => 'סינון לפי שפה:',
@@ -10395,6 +10400,7 @@ Je najwužitnišo za korigowanske nadawki.',
 /** Haitian (Kreyòl ayisyen)
  * @author Boukman
  * @author Jvm
+ * @author Kaganer
  * @author Masterches
  */
 $messages['ht'] = array(
@@ -10432,7 +10438,7 @@ Rezon:
 	'translate-edit-no-information' => "''Mesaj sa pa dokimante.
 Si w konnen ki kote mesaj sa itilize, ou kapab ede lòt tradiktè lè ou ajoute dokimantasyon pou mesaj sa.''",
 	'translate-edit-information' => 'Enfòmasyon sou mesaj "$2" ($1)',
-	'translate-edit-in-other-languages' => 'Mesaj "$1" nan lòt lang yo',
+	'translate-edit-in-other-languages' => 'Mesaj nan lòt lang yo',
 	'translate-edit-committed' => 'Tradiksyon kouran nan logisyèl',
 	'translate-edit-warnings' => 'Avètisman sou tradiksyon ki pa konplete yo',
 	'translate-edit-tmsugs' => 'Sijesyon ki soti nan memwa tradiksyon',
@@ -11052,6 +11058,7 @@ Si tu sape ubi o como iste message es usate, tu pote adjutar le altere traductor
 	'translate-edit-committed' => 'Traduction actual in software',
 	'translate-edit-warnings' => 'Advertimentos super traductiones incomplete',
 	'translate-edit-tmsugs' => 'Suggestiones ab le memoria de traductiones',
+	'translate-edit-tmmatch-source' => 'Texto fonte pro traduction: $1',
 	'translate-edit-tmmatch' => '$1% de correspondentia',
 	'translate-use-suggestion' => 'Reimplaciar le traduction actual per iste suggestion.',
 	'translate-edit-tab-list' => 'Lista de messages',
@@ -11130,7 +11137,7 @@ Le lista predefinite de linguas depende de tu lingua.',
 	'translate-stats-edits' => 'Modificationes',
 	'translate-stats-users' => 'Traductores',
 	'translate-stats-registrations' => 'Registrationes',
-	'translate-stats-review' => 'Revisiones',
+	'translate-stats-reviews' => 'Revisiones',
 	'translate-stats-reviewers' => 'Revisores',
 	'translate-statsf-intro' => 'Tu pote generar statisticas simple con iste formulario. Tote le valores ha limites maxime e minime.',
 	'translate-statsf-options' => 'Optiones de graphico',
@@ -12494,6 +12501,7 @@ Ef yu nuo we ar ou dis mechiz yuuz, yu kiahn elp ada chranslieta bai ad dakiumen
 );
 
 /** Javanese (Basa Jawa)
+ * @author Kaganer
  * @author Meursault2004
  * @author Pras
  */
@@ -12525,7 +12533,7 @@ $messages['jv'] = array(
 	'translate-edit-contribute' => 'awèh kontribusi',
 	'translate-edit-no-information' => "''Pesen iki ora nduwé dokumèntasi. Menawa panjenengan ngerti kepriyé pesen iki dienggo, mangga panjenengan bisa nulungi para panerjemah liyané mawa nambahaké dokumentasi ing pesen iki.''",
 	'translate-edit-information' => 'Informasi ngenani pesen "$2" ($1)',
-	'translate-edit-in-other-languages' => 'Pesen "$1" ing basa liya',
+	'translate-edit-in-other-languages' => 'Pesen ing basa liya',
 	'translate-edit-committed' => 'Pertalan saiki ing perangkat lunak',
 	'translate-edit-warnings' => 'Pèngetan perkara pertalan sing ora pepak',
 	'translate-magic-pagename' => 'Pangambanan pertalan MediaWiki',
