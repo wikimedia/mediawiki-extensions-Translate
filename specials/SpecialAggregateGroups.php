@@ -84,7 +84,6 @@ class SpecialAggregateGroups extends SpecialPage {
 		$aggregategroups = ApiAggregateGroups::getAggregateGroups( );
 		$res = $this->loadPagesFromDB();
 		$pages = $this->buildPageArray( $res );
-		$pages = $this->filterUnGroupedPages( $pages,  $aggregategroups );
 		foreach ( $aggregategroups as $id => $group ) {
 			$wgOut->addHtml( "<div id='tpt-aggregate-group'>" );
 
@@ -112,7 +111,7 @@ class SpecialAggregateGroups extends SpecialPage {
 			}
 			$wgOut->addHtml( "</ol>" );
 
-			$this->groupSelector ( $pages, $id );
+			$this->groupSelector ( $pages, $group );
 			$addButton = Html::element( 'input',
 				array( 'type' => 'button',
 					'value' =>  wfMsg( 'tpt-aggregategroup-add' ),
@@ -148,7 +147,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		$wgOut->addHtml( $newGroupDiv );
 	}
 
-	protected function groupSelector(  $pages, $id ) {
+	protected function groupSelector(  $pages, $group ) {
 		global $wgOut;
 		$out = $wgOut;
 		if ( !count( $pages ) ) {
@@ -156,35 +155,25 @@ class SpecialAggregateGroups extends SpecialPage {
 			return;
 		}
 		$options = "\n";
+		$subgroups = $group['subgroups'];
 		if ( count( $pages ) ) {
 			foreach ( $pages as $pageId => $page ) {
 				$title =  $page['title']->getText();
 				$pageid = TranslatablePage::getMessageGroupIdFromTitle( $page['title'] ) ;
-				$options .= Xml::option(  $title , $pageid, false , array( 'id' => $pageid ) ) . "\n";
+				if ( ! isset( $subgroups[$pageid] ) ) {
+					$options .= Xml::option(  $title , $pageid, false , array( 'id' => $pageid ) ) . "\n";
+				}
 			}
 		}
 		$selector = Xml::tags( 'select',
 				array(
-					'id' => 'tp-aggregate-groups-select-' . $id,
+					'id' => 'tp-aggregate-groups-select-' .  $group['id'],
 					'name' => 'group',
 					'class' => 'tp-aggregate-group-chooser',
 					),
 				$options
 			);
 		$out->addHtml( $selector );
-	}
-
-	protected function filterUnGroupedPages( $pages,  $aggregategroups ) {
-		foreach ( $aggregategroups as  $aggregategroup ) {
-			$subgroups = $aggregategroup['subgroups'];
-			foreach ( $pages as  $id => $page ) {
-					$pageid = TranslatablePage::getMessageGroupIdFromTitle( $page['title'] ) ;
-					if ( isset( $subgroups[$pageid] ) ) {
-						unset( $pages[$id] );
-					}
-			}
-		}
-		return $pages;
 	}
 
 }

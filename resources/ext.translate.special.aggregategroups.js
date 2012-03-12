@@ -4,17 +4,20 @@ jQuery( function( $ ) {
 
 		function associate( event ){
 			var aggregategroup = event.target.id;
-			var selected = $( '#tp-aggregate-groups-select-'+ aggregategroup + ' option:selected' ).text();
-			var group = $( '#tp-aggregate-groups-select-'+ aggregategroup + ' option:selected' ).val();
+			var $selected = $( '#tp-aggregate-groups-select-'+ aggregategroup + ' option:selected' );
+			var groupName = $selected.text();
+			var groupId = $selected.val();
 			var $select= $( 'select.tp-aggregate-group-chooser' ) ;
 
 			var successFunction = function( data, textStatus ) {
 				if ( data.error ) {
 					alert( data.error.info );
 				}else{
-					$( '#tp-aggregate-groups-ol-'+ aggregategroup ).append( '<li><a id='+group+' href='+selected+'>'+selected+'</a><span class=\'tp-aggregate-remove-button\' id='+group+'></span></li>' );
-					$( 'option#'+ group ).remove();
-					$( 'span#'+group ).on ( "click", function(event){ dissociate(event); } );
+					$( '#tp-aggregate-groups-ol-'+ aggregategroup ).append( '<li><a id='+groupId+' href='+groupName+'>'+groupName+'</a><span class=\'tp-aggregate-remove-button\' id='+groupId+'></span></li>' );
+					// remove this group from the select.
+					$selected.remove();
+					// bind click event to the dissociate(remove) button.
+					$( 'span#'+groupId ).on ( "click", function(event){ dissociate(event); } );
 				}
 			};
 
@@ -22,7 +25,7 @@ jQuery( function( $ ) {
 				action: "aggregategroups",
 				'do' : 'associate',
 				token: $( "#token" ).val(),
-				group: group,
+				group: groupId,
 				aggregategroup: aggregategroup,
 				format: "json"
 			};
@@ -30,19 +33,16 @@ jQuery( function( $ ) {
 		}
 
 		function dissociate(event){
-			var group = event.target.id;
-			var selected = $( 'a#'+group ).text();
-			var $select= $( 'select.tp-aggregate-group-chooser' ) ;
-			var aggregategroup = $( 'a#'+group ).closest( 'div' ).find( 'h2' ).attr( 'id' );
-
+			var groupId = event.target.id;
+			var groupName = $( 'a#'+groupId ).text();
+			var aggregategroup = $( 'a#'+groupId ).closest( 'div' ).find( 'h2' ).attr( 'id' );
+			var $select =  $( '#tp-aggregate-groups-select-'+ aggregategroup );
 			var successFunction = function( data, textStatus ) {
 				if ( data.error ) {
 					alert( data.error.info );
 				}else{
-					$select.each( function(){
-						$( this ).append( '<option value="'+group+'">'+selected+'</option>' );
-					} );
-					$( 'span#'+ group ).closest( 'li' ).remove();
+					$select .append( '<option value="'+groupId+'">'+groupName+'</option>' );
+					$( 'span#'+ groupId ).closest( 'li' ).remove();
 				}
 			};
 
@@ -50,7 +50,7 @@ jQuery( function( $ ) {
 				action: "aggregategroups",
 				'do' : 'dissociate',
 				token: $( "#token" ).val(),
-				group: group,
+				group: groupId,
 				aggregategroup: aggregategroup,
 				format: "json"
 			};
@@ -59,19 +59,10 @@ jQuery( function( $ ) {
 
 		function removeGroup(event){
 			var aggregategroup = event.target.id;
-			var $select= $( 'select.tp-aggregate-group-chooser') ;
-
 			var successFunction = function( data, textStatus ) {
 				if ( data.error ) {
 					alert( data.error.info );
 				}else{
-					$( 'span#'+ aggregategroup ).parent().parent().find('li a').each(function(){
-						$groupId = $( this ).attr('id');
-						$groupName = $( this ).text();
-						$select.each( function(){
-							$ (this ).append('<option value="'+$groupId+'">'+$groupName+'</option>');
-						} );
-					});
 					$( 'span#'+ aggregategroup ).closest('div#tpt-aggregate-group').remove();
 				}
 			};
