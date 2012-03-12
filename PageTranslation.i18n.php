@@ -571,6 +571,7 @@ La páxina agora se pue <span class="plainlinks">[$3 traducir]</span>.',
 Enantes de marcar esta versión pa traducir, comprueba que los cambios fechos nes seiciones tan amenorgaos pa evitar trabayu innecesariu de los traductores.',
 	'tpt-mark-summary' => 'Marcó esta versión pa traducir',
 	'tpt-edit-failed' => 'Nun se pudo anovar la páxina: $1',
+	'tpt-duplicate' => "El nome de la unidá de traducción  $1 s'utiliza más d'una vegada.",
 	'tpt-already-marked' => "La cabera versión d'esta páxina yá se marcó pa traducir.",
 	'tpt-unmarked' => 'La páxina "$1" yá nun ta marcada pa traducir.',
 	'tpt-list-nopages' => 'Nun hai páxina dala marcada pa traducir nin preparada pa marcase pa traducir.',
@@ -582,6 +583,10 @@ Enantes de marcar esta versión pa traducir, comprueba que los cambios fechos ne
 	'tpt-old-pages' => "Dalguna versión {{PLURAL:$1|d'esta páxina|d'estes páxines}} se marcó pa traducir.",
 	'tpt-other-pages' => "Hai {{PLURAL:$1|una versión vieya d'esta páxina marcada|delles versiones vieyes d'estes páxines marcaes}} pa traducir, pero {{PLURAL:$1|a cabera versión|les caberes versiones}} nun se {{PLURAL:$1|pue|pueden}} marcar pa traducir.",
 	'tpt-discouraged-pages' => "Ta desaconseyao facer más traducciones {{PLURAL:$1|d'esta páxina|d'estes páxines}}.",
+	'tpt-select-prioritylangs' => 'Llista de códigos de les llingües prioritaries separtaos por comes:',
+	'tpt-select-prioritylangs-force' => 'Torgar les traducciones a otres llingües distintes de les prioritaries',
+	'tpt-select-prioritylangs-reason' => 'Motivu:',
+	'tpt-sections-prioritylangs' => 'Llingües prioritaries',
 	'tpt-rev-mark' => 'marcar pa traducir',
 	'tpt-rev-unmark' => 'desaniciar de la traducción',
 	'tpt-rev-discourage' => 'desaconseyar',
@@ -597,12 +602,25 @@ Enantes de marcar esta versión pa traducir, comprueba que los cambios fechos ne
 	'tpt-translation-intro' => 'Esta páxina ye una <span class="plainlinks">[$1 versión traducida]</span> de la páxina «[[$2]]» y la traducción ta completada nún $3%.',
 	'tpt-translation-intro-fuzzy' => "Les traducciones desfasaes tan marcaes d'esta manera.",
 	'tpt-languages-legend' => 'Otres llingües:',
+	'tpt-languages-zero' => 'Principiar la traducción nesta llingua',
 	'tpt-target-page' => 'Esta páxina nun se pue anovar manualmente.
 Esta páxina ye una traducción de la páxina [[$1]] y la traducción pue anovase usando [$2 la ferramienta de traducción].',
 	'tpt-unknown-page' => 'Esti espaciu de nomes ta acutáu pa les traducciones de les páxines de conteníu.
 La páxina que tas intentando editar paez que nun correspuende con denguna páxina marcada pa traducir.',
+	'tpt-translation-restricted' => "Un alministrador de traducciones torgó la traducción d'esta páxina a esta llingua.
+
+Motivu: $1",
+	'tpt-discouraged-language-force' => 'Un alministrador de traducciones llendó les llingües a les que se pue traducir esta páxina. Esta llingua nun ta ente elles.
+
+Motivu: $1',
+	'tpt-discouraged-language' => 'Esta llingua nun ta ente les llingües prioritaries que definió pa la páxina un alministrador.
+
+Motivu: $1',
+	'tpt-priority-languages' => "Un alministrador de traducciones definió les llingües prioritaries d'esti grupu como $1.",
 	'tpt-render-summary' => 'Anovando pa casar cola nueva versión de la páxina orixinal',
 	'tpt-download-page' => 'Esportar la páxina con traducciones',
+	'tpt-aggregategroup-add' => 'Amestar',
+	'tpt-aggregategroup-save' => 'Guardar',
 	'pt-parse-open' => 'Etiqueta &lt;translate> desequilibrada.
 Plantía de traducción: <pre>$1</pre>',
 	'pt-parse-close' => 'Etiqueta &lt;/translate> desequilibrada.
@@ -4995,6 +5013,12 @@ Sebab: $1',
 	'tpt-priority-languages' => 'Seorang pentadbir penterjemahan telah menetapkan $1 sebagai bahasa keutamaan kumpulan ini.',
 	'tpt-render-summary' => 'Mengemas kini agar sepadan dengan versi baru laman sumber',
 	'tpt-download-page' => 'Eksport laman dengan terjemahan',
+	'aggregategroups' => 'Kumpulan agregat',
+	'tpt-aggregategroup-add' => 'Tambahkan',
+	'tpt-aggregategroup-save' => 'Simpan',
+	'tpt-aggregategroup-add-new' => 'Tambahkan kumpulan agregat baru',
+	'tpt-aggregategroup-new-name' => 'Nama:',
+	'tpt-aggregategroup-new-description' => 'Keterangan (tidak wajib):',
 	'pt-parse-open' => 'Tag &lt;translate> tidak seimbang.
 Templat penterjemahan: <pre>$1</pre>',
 	'pt-parse-close' => 'Tag &lt;/translate> tidak seimbang.
