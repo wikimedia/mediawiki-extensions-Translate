@@ -262,6 +262,7 @@ $wgResourceModules['ext.translate.special.aggregategroups'] = array(
 	'scripts' => 'resources/ext.translate.special.aggregategroups.js',
 	'styles' => 'resources/ext.translate.special.aggregategroups.css',
 	'position' => 'top',
+	'dependencies' => array( 'mediawiki.util' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.supportedlanguages'] = array(

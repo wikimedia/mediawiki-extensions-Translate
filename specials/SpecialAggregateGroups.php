@@ -4,6 +4,7 @@
  *
  * @file
  * @author Santhosh Thottingal
+ * @author Niklas Laxström
  * @copyright Copyright © 2012 Santhosh Thottingal
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
@@ -25,97 +26,71 @@ class SpecialAggregateGroups extends SpecialPage {
 		global $wgRequest, $wgOut, $wgUser;
 		$this->user = $wgUser;
 		$request = $wgRequest;
+		$out = $this->getOutput();
 
 		// Check permissions
 		if ( !$this->user->isAllowed( 'translate-manage' ) ) {
-			$wgOut->permissionRequired( 'translate-manage' );
+			$out->permissionRequired( 'translate-manage' );
 			return;
 		}
 
 		// Check permissions
 		if ( $wgRequest->wasPosted() && !$this->user->matchEditToken( $wgRequest->getText( 'token' ) ) ) {
 			self::superDebug( __METHOD__, "token failure", $this->user );
-			$wgOut->permissionRequired( 'translate-manage' );
+			$out->permissionRequired( 'translate-manage' );
 			return;
 		}
-		$this->showAggregateGroups();
-
-	}
-
-	public function loadPagesFromDB() {
-		$dbr = wfGetDB( DB_MASTER );
-		$tables = array( 'page', 'revtag' );
-		$vars = array( 'page_id', 'page_title', 'page_namespace', 'page_latest', 'MAX(rt_revision) as rt_revision', 'rt_type' );
-		$conds = array(
-			'page_id=rt_page',
-			'rt_type' => array( RevTag::getType( 'tp:mark' ), RevTag::getType( 'tp:tag' ) ),
-		);
-		$options = array(
-			'ORDER BY' => 'page_namespace, page_title',
-			'GROUP BY' => 'page_id, rt_type',
-		);
-		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
-
-		return $res;
-	}
-
-	protected function buildPageArray( /*db result*/ $res ) {
+		
+		$groups = MessageGroups::getAllGroups();
+		$aggregates = array();
 		$pages = array();
-		foreach ( $res as $r ) {
-			// We have multiple rows for same page, because of different tags
-			if ( !isset( $pages[$r->page_id] ) ) {
-				$pages[$r->page_id] = array();
-				$title = Title::newFromRow( $r );
-				$pages[$r->page_id]['title'] = $title;
-				$pages[$r->page_id]['latest'] = intval( $title->getLatestRevID() );
+		foreach ( $groups as $group ) {
+			if ( $group instanceof WikiPageMessageGroup ) {
+				$pages[] = $group;
+			} elseif ( $group instanceof AggregateMessageGroup ) {
+				if ( TranslateMetadata::get( $group->getId(), 'subgroups' ) !== false ) {
+					$aggregates[] = $group;
+				}
 			}
-
-			$tag = RevTag::typeToTag( $r->rt_type );
-			$pages[$r->page_id][$tag] = intval( $r->rt_revision );
 		}
-		return $pages;
+
+		if ( !count( $pages ) ) {
+			// @TODO use different message
+			$out->addWikiMsg( 'tpt-list-nopages' );
+			return;
+		}
+
+		$this->showAggregateGroups( $aggregates, $pages );
+
 	}
 
-
-	protected function showAggregateGroups() {
+	protected function showAggregateGroups( array $aggregates, array $pages ) {
 		global $wgOut;
 		$wgOut->addModules( 'ext.translate.special.aggregategroups' );
 
-		$aggregategroups = MessageGroups::getAggregateGroups( );
-		$res = $this->loadPagesFromDB();
-		$pages = $this->buildPageArray( $res );
-		foreach ( $aggregategroups as $id => $group ) {
-			$wgOut->addHtml( "<div id='tpt-aggregate-group'>" );
+		foreach ( $aggregates as $group ) {
+			$id = $group->getId();
+			$div = Html::openElement( 'div', array(
+				'class' => 'mw-tpa-group',
+				'data-groupid' => $id,
+				'data-id' => $this->htmlIdForGroup( $group ),
+			) );
 
-			$removeSpan = Html::element( 'span', array(
-				'class' => 'tp-aggregate-remove-ag-button',
-				'id' => $id ) ) ;
-			$wgOut->addHtml( "<h2 id='$id'>" . $group['name'] .  $removeSpan . "</h2>" );
+			$wgOut->addHtml( $div );
 
-			$wgOut->addHtml( "<p>" . $group['description'] . "</p>" );
+			$remove = Html::element( 'span', array( 'class' => 'tp-aggregate-remove-ag-button' ) );
 
-			$wgOut->addHtml( "<ol id='tp-aggregate-groups-ol-$id'>" );
-			$subgroups = $group['subgroups'];
-			foreach ( $subgroups as $subgroupId => $subgroup ) {
-				$removeSpan =   Html::element( 'span', array(
-						'class' => 'tp-aggregate-remove-button',
-						'id' => $subgroupId ) );
-				if ( $subgroup ) {
-					$wgOut->addHtml( "<li>" .
-						Linker::linkKnown( $subgroup->getTitle(),
-							null,
-							array( 'id' => $subgroupId )
-							)
-						. "$removeSpan </li>" );
-				}
-			}
-			$wgOut->addHtml( "</ol>" );
-
-			$this->groupSelector ( $pages, $group );
+			$hid = $this->htmlIdForGroup( $group );
+			$header = Html::rawElement( 'h2', null, 	htmlspecialchars( $group->getLabel() ) . $remove );
+			$wgOut->addHtml( $header );
+			$wgOut->addWikiText( $group->getDescription() );
+			$this->listSubgroups( $group );
+			$select = $this->getGroupSelector( $pages, $group );
+			$wgOut->addHtml( $select->getHtml() );
 			$addButton = Html::element( 'input',
 				array( 'type' => 'button',
 					'value' =>  wfMsg( 'tpt-aggregategroup-add' ),
-					'id' => $id, 'class' => 'tp-aggregate-add-button' )
+					'class' => 'tp-aggregate-add-button' )
 				);
 			$wgOut->addHtml( $addButton );
 			$wgOut->addHtml( "</div>" );
@@ -147,33 +122,46 @@ class SpecialAggregateGroups extends SpecialPage {
 		$wgOut->addHtml( $newGroupDiv );
 	}
 
-	protected function groupSelector(  $pages, $group ) {
-		global $wgOut;
-		$out = $wgOut;
-		if ( !count( $pages ) ) {
-			$wgOut->addWikiMsg( 'tpt-list-nopages' );
-			return;
-		}
-		$options = "\n";
-		$subgroups = $group['subgroups'];
-		if ( count( $pages ) ) {
-			foreach ( $pages as $pageId => $page ) {
-				$title =  $page['title']->getText();
-				$pageid = TranslatablePage::getMessageGroupIdFromTitle( $page['title'] ) ;
-				if ( ! isset( $subgroups[$pageid] ) ) {
-					$options .= Xml::option(  $title , $pageid, false , array( 'id' => $pageid ) ) . "\n";
-				}
-			}
-		}
-		$selector = Xml::tags( 'select',
+	protected function listSubgroups( AggregateMessageGroup $parent ) {
+		$out = $this->getOutput();
+		$sanid = Sanitizer::escapeId( $parent->getId() );
+		
+		$id = $this->htmlIdForGroup( $parent, 'mw-tpa-grouplist-' );
+		$out->addHtml( Html::openElement( 'ol', array( 'id' => $id ) ) );
+
+		foreach ( $parent->getGroups() as $id => $group ) {
+			$remove = Html::element( 'span',
 				array(
-					'id' => 'tp-aggregate-groups-select-' .  $group['id'],
-					'name' => 'group',
-					'class' => 'tp-aggregate-group-chooser',
-					),
-				$options
+					'class' => 'tp-aggregate-remove-button',
+					'data-groupid' => $group->getId(),
+				)
 			);
-		$out->addHtml( $selector );
+
+			$link = Linker::linkKnown( $group->getTitle(), null, array( 'id' => $id ) );
+			$out->addHtml( Html::rawElement( 'li', null, "$link$remove" ) );
+		}
+		$out->addHtml( Html::closeElement( 'ol' ) );
+	}
+
+	protected function getGroupSelector( $availableGroups, $parent ) {
+		$id = $this->htmlIdForGroup( $parent, 'mw-tpa-groupselect-' );
+		$select = new XmlSelect( 'group', $id );
+
+		$subgroups = $parent->getGroups();
+		foreach ( $availableGroups as $group ) {
+			$groupId = $group->getId();
+			// Do not include already included groups in the list
+			if ( isset( $subgroups[$groupId] ) ) continue;
+			$select->addOption( $group->getLabel(), $groupId );
+		}
+	
+		return $select;
+	}
+
+	protected function htmlIdForGroup( MessageGroup $group, $prefix = '' ) {
+		$id = sha1( $group->getId() );
+		$id = substr( $id, 5, 8 );
+		return $prefix . $id;
 	}
 
 }

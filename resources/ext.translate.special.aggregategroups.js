@@ -1,142 +1,150 @@
-jQuery( function( $ ) {
+jQuery( document ).ready( function ( $ ) {
+	"use strict";
+	
+	function getApiParams( $target ) {
+		return {
+			action: 'aggregategroups',
+			token: $( '#token' ).val(),
+			aggregategroup: $target.parents( '.mw-tpa-group' ).data( 'groupid' ),
+			format: "json"
+		};
+	}
 
-	$( document ).ready( function () {
+	function associate( event ) {
+		var
+			$target = $( event.target ),
+			parentId = $target.parents( '.mw-tpa-group' ).data( 'id' ),
+			$selected = $( '#mw-tpa-groupselect-' + parentId + ' option:selected' ),
+			subgroupId = $selected.val(),
+			subgroupName = $selected.text();
+			
+			
 
-		function associate( event ){
-			var aggregategroup = event.target.id;
-			var $selected = $( '#tp-aggregate-groups-select-'+ aggregategroup + ' option:selected' );
-			var groupName = $selected.text();
-			var groupId = $selected.val();
-			var $select= $( 'select.tp-aggregate-group-chooser' ) ;
+		var successFunction = function( data, textStatus ) {
+			if ( data.error ) {
+				alert( data.error.info );
+			} else {
+				var aAttr = {
+					href: mw.util.wikiGetlink( subgroupName ),
+					title: subgroupName
+				};
+				var $a = $( '<a>', aAttr ).text( subgroupName );
 
-			var successFunction = function( data, textStatus ) {
-				if ( data.error ) {
-					alert( data.error.info );
-				}else{
-					$( '#tp-aggregate-groups-ol-'+ aggregategroup ).append( '<li><a id='+groupId+' href='+groupName+'>'+groupName+'</a><span class=\'tp-aggregate-remove-button\' id='+groupId+'></span></li>' );
-					// remove this group from the select.
-					$selected.remove();
-					// bind click event to the dissociate(remove) button.
-					$( 'span#'+groupId ).on ( "click", function(event){ dissociate(event); } );
-				}
-			};
+				var spanAttr = {
+					'class': 'tp-aggregate-remove-button',
+					'data-groupid': subgroupId
+				};
 
-			var params = {
-				action: "aggregategroups",
-				'do' : 'associate',
-				token: $( "#token" ).val(),
-				group: groupId,
-				aggregategroup: aggregategroup,
-				format: "json"
-			};
-			$.post( mw.util.wikiScript( "api" ), params, successFunction );
-		}
+				var $span = $( '<span>', spanAttr )
+				
+				var $ol = $( '#mw-tpa-grouplist-' + parentId );
+				$ol.append( $( '<li>' ).append( $a.after( $span ) ) );
 
-		function dissociate(event){
-			var groupId = event.target.id;
-			var groupName = $( 'a#'+groupId ).text();
-			var aggregategroup = $( 'a#'+groupId ).closest( 'div' ).find( 'h2' ).attr( 'id' );
-			var $select =  $( '#tp-aggregate-groups-select-'+ aggregategroup );
-			var successFunction = function( data, textStatus ) {
-				if ( data.error ) {
-					alert( data.error.info );
-				}else{
-					$select .append( '<option value="'+groupId+'">'+groupName+'</option>' );
-					$( 'span#'+ groupId ).closest( 'li' ).remove();
-				}
-			};
-
-			var params = {
-				action: "aggregategroups",
-				'do' : 'dissociate',
-				token: $( "#token" ).val(),
-				group: groupId,
-				aggregategroup: aggregategroup,
-				format: "json"
-			};
-			$.post( mw.util.wikiScript( "api" ), params, successFunction );
-		}
-
-		function removeGroup(event){
-			var aggregategroup = event.target.id;
-			var successFunction = function( data, textStatus ) {
-				if ( data.error ) {
-					alert( data.error.info );
-				}else{
-					$( 'span#'+ aggregategroup ).closest('div#tpt-aggregate-group').remove();
-				}
-			};
-
-			var params = {
-				action: "aggregategroups",
-				'do' : 'remove',
-				token: $( "#token" ).val(),
-				aggregategroup: aggregategroup,
-				format: "json"
-			};
-			$.post( mw.util.wikiScript( "api" ), params, successFunction );
-		}
-
-		$( 'input.tp-aggregate-add-button' ).on ( "click", function( event ){
-			associate(event);
+				// remove this group from the select.
+				$selected.remove();
+				$span.click( dissociate );
+			}
+		};
+		
+		var params = $.extend( getApiParams( $target ), {
+			'do' : 'associate',
+			group: subgroupId,
 		} );
+		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
+	}
 
-		$( 'span.tp-aggregate-remove-button' ).on ( "click", function( event ){
-			dissociate(event);
-		 } );
+	function dissociate( event ) {
+		var
+			$target = $( event.target ),
+			parentId = $target.parents( '.mw-tpa-group' ).data( 'id' ),
+			$select = $( '#mw-tpa-groupselect-' + parentId );
 
-		$( 'span.tp-aggregate-remove-ag-button' ).on ( "click", function( event ){
-			removeGroup(event);
-		 } );
-
-		$( 'a.tpt-add-new-group' ).on ( "click", function( event ){
-			$( 'div.tpt-add-new-group' ).removeClass( 'hidden' );
+		function successFunction( data, textStatus ) {
+			if ( data.error ) {
+				alert( data.error.info );
+			}  else {
+				$( '<option>', { value: $target.data( 'groupid' ) } )
+					.text( $target.parent( 'a' ).text() )
+					.appendTo( $select );
+				$target.parent( 'li' ).remove();
+			}
+		};
+		
+		var params = $.extend( getApiParams( $target ), {
+			'do' : 'dissociate',
+			group: $target.data( 'groupid' ),
 		} );
+		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
+	}
 
-		$( '#tpt-aggregategroups-save' ). on ( "click", function( event ){
-			var aggregateGroup = $( 'input.tp-aggregategroup-add-name' ).val().toLowerCase().replace( ' ', '_');
-			var aggregateGroupName = $( 'input.tp-aggregategroup-add-name' ).val();
-			var aggregateGroupDesc = $( 'input.tp-aggregategroup-add-description' ).val();
-			var $select= $( 'select.tp-aggregate-group-chooser' ) ;
+	function removeGroup( event ) {
+		var
+			$target = $( event.target ),
+			parentId = $target.parent( '.mw-tpa-group' ).data( 'groupid' );
 
-			var successFunction = function( data, textStatus ) {
-				if ( data.error ) {
-					alert( data.error.info );
-				}else{
-					$removeSpan  =  $( '<span>' ).attr( 'id', aggregateGroup ).addClass( 'tp-aggregate-remove-ag-button' );
-					$div = $( "<div id='tpt-aggregate-group'>" )
-						.append ( $( '<h2>' ).attr( 'id', aggregateGroup ).text( aggregateGroupName ) 
-							.append ( $removeSpan ) ) 
-						.append ( $('<p>').text( aggregateGroupDesc ) )
-						.append ( $('<ol id=\'tp-aggregate-groups-ol-'+aggregateGroup+'\'>') );
+		function successFunction ( data, textStatus ) {
+			if ( data.error ) {
+				alert( data.error.info );
+			} else {
+				$( event.target ).parents( '.mw-tpa-group' ).remove();
+			}
+		};
 
-					if (  $select.length > 0 ){
-						var $groupSelector = $( $( 'select.tp-aggregate-group-chooser')[0] ).clone();
-						$groupSelector.attr('id', 'tp-aggregate-groups-select-' + aggregateGroup);
-						var $addButton =  $( $( 'input.tp-aggregate-add-button')[0]).clone();
-						$addButton.attr( 'id', aggregateGroup);
-						$div.append( $groupSelector ).append( $addButton );
-						$addButton.on ( "click", function( event ){ associate(event); } );
-						$removeSpan.on ( "click", function( event ){ removeGroup(event); } );
-						$( 'div.tpt-add-new-group' ).addClass('hidden');
-					}else{
-						// First group in the wiki. Cannot clone the group selector, just reload this time.
-						location.reload();
-					}
-					$( 'a.tpt-add-new-group' ).before ( $div ) ;
-				}
-			};
+		var params = $.extend( getApiParams( $target ), {'do' : 'remove' } );
+		$.post( mw.util.wikiScript( "api" ), params, successFunction );
+	}
 
-			var params = {
-				action: "aggregategroups",
-				'do' : 'add',
-				token: $( "#token" ).val(),
-				aggregategroup: aggregateGroup,
-				groupname : aggregateGroupName,
-				groupdescription: aggregateGroupDesc,
-				format: "json"
-			};
-			$.post( mw.util.wikiScript( "api" ), params, successFunction );
-		} )
+	$( '.tp-aggregate-add-button' ).click( associate );
+	$( '.tp-aggregate-remove-button' ).click( dissociate );
+	$( '.tp-aggregate-remove-ag-button' ).click( removeGroup );
+	
+	$( 'a.tpt-add-new-group' ).on ( "click", function( event ){
+		$( 'div.tpt-add-new-group' ).removeClass( 'hidden' );
 	} );
+
+	$( '#tpt-aggregategroups-save' ). on ( "click", function( event ){
+		var aggregateGroup = $( 'input.tp-aggregategroup-add-name' ).val().toLowerCase().replace( ' ', '_');
+		var aggregateGroupName = $( 'input.tp-aggregategroup-add-name' ).val();
+		var aggregateGroupDesc = $( 'input.tp-aggregategroup-add-description' ).val();
+		var $select = $( 'select.tp-aggregate-group-chooser' );
+
+		var successFunction = function( data, textStatus ) {
+			if ( data.error ) {
+				alert( data.error.info );
+			}else{
+				var $removeSpan =  $( '<span>' ).attr( 'id', aggregateGroup ).addClass( 'tp-aggregate-remove-ag-button' );
+				var $div = $( "<div class='mw-tpa-group'>" )
+					.append ( $( '<h2>' ).text( aggregateGroupName ) 
+						.append ( $removeSpan ) ) 
+					.append ( $('<p>').text( aggregateGroupDesc ) )
+					.append ( $('<ol id=\'mw-tpa-grouplist-'+aggregateGroup+'\'>') );
+
+				if ( $select.length > 0 ){
+					var $groupSelector = $( $( 'select.tp-aggregate-group-chooser')[0] ).clone();
+					$groupSelector.attr('id', 'tp-aggregate-groups-select-' + aggregateGroup);
+					var $addButton =  $( $( 'input.tp-aggregate-add-button')[0]).clone();
+					$addButton.attr( 'id', aggregateGroup);
+					$div.append( $groupSelector ).append( $addButton );
+					$addButton.on ( "click", function( event ){ associate(event); } );
+					$removeSpan.on ( "click", function( event ){ removeGroup(event); } );
+					$( 'div.tpt-add-new-group' ).addClass('hidden');
+				}else{
+					// First group in the wiki. Cannot clone the group selector, just reload this time.
+					location.reload();
+				}
+				$( 'a.tpt-add-new-group' ).before ( $div ) ;
+			}
+		};
+
+		var params = {
+			action: "aggregategroups",
+			'do' : 'add',
+			token: $( "#token" ).val(),
+			aggregategroup: aggregateGroup,
+			groupname : aggregateGroupName,
+			groupdescription: aggregateGroupDesc,
+			format: "json"
+		};
+		$.post( mw.util.wikiScript( "api" ), params, successFunction );
+	} )
 } );
