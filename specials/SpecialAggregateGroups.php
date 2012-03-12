@@ -81,7 +81,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		global $wgOut;
 		$wgOut->addModules( 'ext.translate.special.aggregategroups' );
 
-		$aggregategroups = ApiAggregateGroups::getAggregateGroups( );
+		$aggregategroups = MessageGroups::getAggregateGroups( );
 		$res = $this->loadPagesFromDB();
 		$pages = $this->buildPageArray( $res );
 		foreach ( $aggregategroups as $id => $group ) {
