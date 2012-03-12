@@ -28,7 +28,7 @@ class ApiAggregateGroups extends ApiBase {
 
 		$params = $this->extractRequestParams();
 		$aggregateGroup = $params['aggregategroup'];
-		$action = $action;
+		$action = $params['do'];
 
 		if ( $action === 'associate' || $action === 'dissociate' ) {
 			// Group is mandatory only for these two actions
@@ -55,7 +55,7 @@ class ApiAggregateGroups extends ApiBase {
 				$subgroups[] = $group;
 				$subgroups = array_unique( $subgroups );
 			} elseif ( $action === 'dissociate' ) {
-				$subgroups =  array_flip( explode( ',', $subgroups ) ) ;
+				$subgroups = array_flip( $subgroups ) ;
 				unset( $subgroups[$group] );
 				$subgroups = array_flip( $subgroups );
 			}
