@@ -30,6 +30,8 @@ And for the code at:
  https://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-03-12
+* Special:LanguageStats group collapsing now supports nested subgroups
 * 2012-03-11
 - Support for shared TTMServer databases was added
 - Suggestions from different TTMServers are now grouped

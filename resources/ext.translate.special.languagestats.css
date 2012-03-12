@@ -2,20 +2,20 @@
 	background: white;
 }
 
-.mw-sp-langstats-toggleall {
+.groupexpander-all {
 	text-align: right;
 }
 
-.mw-sp-langstats-toggle {
+.groupexpander {
 	float: right;
 }
 
-.mw-sp-langstats-collapser,
-.mw-sp-langstats-collapser a {
+.expanded,
+.expanded a {
 	cursor: n-resize;
 }
 
-.mw-sp-langstats-expander,
-.mw-sp-langstats-expander a {
+.collapsed,
+.collapsed a {
 	cursor: s-resize;
 }

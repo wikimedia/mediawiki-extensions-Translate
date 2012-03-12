@@ -327,35 +327,39 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	}
 
 	/**
-	 * @param $item
-	 * @param $cache
-	 * @param $parent string
+	 * Creates a html table row for given (top-level) message group.
+	 * If $item is an array, meaning that the first group is an
+	 * AggregateMessageGroup and the latter are its children, it will recurse
+	 * and create rows for them too.
+	 * @param $item Array|MessageGroup
+	 * @param $cache Array Cache as returned by MessageGroupStats::forLanguage
+	 * @param $parent MessageGroup (do not use, used internally only)
 	 * @return string
 	 */
-	protected function makeGroupGroup( $item, $cache, $parent = '' ) {
+	protected function makeGroupGroup( $item, array $cache, MessageGroup $parent = null ) {
 		if ( !is_array( $item ) ) {
-			return $this->makeGroupRow( $item, $cache, $parent === '' ? false : $parent );
+			return $this->makeGroupRow( $item, $cache, $parent );
 		}
 
+		// The first group in the array is the parent AggregateMessageGroup
 		$out = '';
 		$top = array_shift( $item );
-		$out .= $this->makeGroupRow( $top, $cache, $parent === '' ? true : $parent );
+		$out .= $this->makeGroupRow( $top, $cache, $parent );
 
+		// Rest are children
 		foreach ( $item as $subgroup ) {
-			$parents = trim( $parent . ' ' . $top->getId() );
-			$out .= $this->makeGroupGroup( $subgroup, $cache, $parents );
+			$out .= $this->makeGroupGroup( $subgroup, $cache, $top );
 		}
 
 		return $out;
 	}
 
 	/**
-	 * @param $group
-	 * @param $cache
-	 * @param $parent bool
+	 * Actually creates the table for single message group, unless it
+	 * is blacklisted or hidden by filters.
 	 * @return string
 	 */
-	protected function makeGroupRow( $group, $cache, $parent = false ) {
+	protected function makeGroupRow( MessageGroup $group, array $cache, MessageGroup $parent = null ) {
 		$groupId = $group->getId();
 
 		if ( $this->table->isBlacklisted( $groupId, $this->target ) !== null ) {
@@ -394,11 +398,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$rowParams = array();
 		$rowParams['data-groupid'] = $groupId;
-
-		if ( is_string( $parent ) ) {
-			$rowParams['data-parentgroups'] = $parent;
-		} elseif ( $parent === true ) {
-			$rowParams['data-ismeta'] = '1';
+		$rowParams['class'] = get_class( $group );
+		if ( $parent ) {
+			$rowParams['data-parentgroup'] = $parent->getId();
 		}
 
 		$out  = "\t" . Html::openElement( 'tr', $rowParams );
