@@ -82,6 +82,20 @@ array(
 	)
 ),
 array(
+	'group' => 'core-1.17',
+	'check' => 'variable',
+	'message' => array(
+		'perfcachedts', // Optional time parameters
+	),
+),
+array(
+	'group' => 'core-1.18',
+	'check' => 'variable',
+	'message' => array(
+		'perfcachedts', // Optional time parameters
+	),
+),
+array(
 	'group' => 'ext-abusefilter',
 	'check' => 'variable',
 	'message' => array(
