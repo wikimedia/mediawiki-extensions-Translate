@@ -570,10 +570,10 @@ PHP;
 		$splitPlurals = array();
 		for ( $i = 0; $i < $forms; $i++ ) {
 			$plurals = array();
-			$match = preg_match_all( '/{{PLURAL:GETTEXT\|(.*)}}/iU', $text, $plurals );
+			$match = preg_match_all( '/{{PLURAL:GETTEXT\|(.*)}}/iUs', $text, $plurals );
 
 			if ( !$match ) {
-				throw new GettextPluralException( "Failed to parse plural for: $text" );
+				throw new GettextPluralException( "Failed to find plural in: $text" );
 			}
 
 			$pluralForm = $text;
