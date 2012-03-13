@@ -686,9 +686,13 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$this->handlePriorityLanguages( $wgRequest, $page, $wgUser );
 
+		// @todo FIXME: When translatable page X is tagged for translation and when X has <languages/>,
+		//              then there is no language bar on X after tagging and a job queue run. The below
+		//              tried to resolve that, but didn't. No correct solution known at the moment.
+		//              Manual fix is "action=purge" on X.
 		// This updates the language bars properly as well as the translatable page.
-		$page->getTranslationPercentages( true );
-		WikiPage::factory( $page->getTitle() )->doPurge();
+		//$page->getTranslationPercentages( true );
+		//WikiPage::factory( $page->getTitle() )->doPurge();
 
 		$page->getTitle()->invalidateCache();
 		$this->setupRenderJobs( $page );
