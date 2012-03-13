@@ -110,27 +110,30 @@ jQuery( document ).ready( function ( $ ) {
 	} );
 
 	$( '#tpt-aggregategroups-save' ). on ( "click", function( event ){
-		var aggregateGroup = createId( $( 'input.tp-aggregategroup-add-name' ).val() );
+		var aggregateGroupId = createId( $( 'input.tp-aggregategroup-add-name' ).val() );
 		var aggregateGroupName = $( 'input.tp-aggregategroup-add-name' ).val();
 		var aggregateGroupDesc = $( 'input.tp-aggregategroup-add-description' ).val();
-		var $select = $( 'select.tp-aggregate-group-chooser' );
+		var $select = $( 'div.mw-tpa-group select' );
 
 		var successFunction = function( data, textStatus ) {
 			if ( data.error ) {
 				alert( data.error.info );
 			}else{
-				var $removeSpan =  $( '<span>' ).attr( 'id', aggregateGroup ).addClass( 'tp-aggregate-remove-ag-button' );
+				var $removeSpan =  $( '<span>' ).attr( 'id', aggregateGroupId ).addClass( 'tp-aggregate-remove-ag-button' );
 				var $div = $( "<div class='mw-tpa-group'>" )
 					.append ( $( '<h2>' ).text( aggregateGroupName ) 
 						.append ( $removeSpan ) ) 
 					.append ( $('<p>').text( aggregateGroupDesc ) )
-					.append ( $('<ol id=\'mw-tpa-grouplist-'+aggregateGroup+'\'>') );
-
+					.append ( $('<ol id=\'mw-tpa-grouplist-' + aggregateGroupId +'\'>') );
+				$div.data( 'groupid', aggregateGroupId );
+				$div.data( 'id', aggregateGroupId );
 				if ( $select.length > 0 ){
-					var $groupSelector = $( $( 'select.tp-aggregate-group-chooser' )[0] ).clone();
-					$groupSelector.attr('id', 'tp-aggregate-groups-select-' + aggregateGroup);
+					var $groupSelector = $( '<select>' ).attr('id', 'mw-tpa-groupselect-' + aggregateGroupId );
+					$.each(data.aggregategroups.groups, function( key, value) {
+						$groupSelector.append( $( '<option>', { value : key } ).text( value ) ); 
+					} );
 					var $addButton =  $( $( 'input.tp-aggregate-add-button' )[0]).clone();
-					$addButton.attr( 'id', aggregateGroup);
+					$addButton.attr( 'id', aggregateGroupId );
 					$div.append( $groupSelector ).append( $addButton );
 					$addButton.click( associate );
 					$removeSpan.click( removeGroup );
@@ -147,7 +150,7 @@ jQuery( document ).ready( function ( $ ) {
 			action: "aggregategroups",
 			'do' : 'add',
 			token: $( "#token" ).val(),
-			aggregategroup: aggregateGroup,
+			aggregategroup: aggregateGroupId,
 			groupname : aggregateGroupName,
 			groupdescription: aggregateGroupDesc,
 			format: "json"

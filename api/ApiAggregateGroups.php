@@ -29,7 +29,7 @@ class ApiAggregateGroups extends ApiBase {
 		$params = $this->extractRequestParams();
 		$aggregateGroup = $params['aggregategroup'];
 		$action = $params['do'];
-
+		$output = array();
 		if ( $action === 'associate' || $action === 'dissociate' ) {
 			// Group is mandatory only for these two actions
 			if ( !isset( $params['group'] ) ) {
@@ -66,7 +66,7 @@ class ApiAggregateGroups extends ApiBase {
 			TranslateMetadata::set( $aggregateGroup, 'name', false ) ;
 			TranslateMetadata::set( $aggregateGroup, 'description', false ) ;
 		} elseif ( $action === 'add' ) {
-			if ( TranslateMetadata::get( $aggregateGroup, 'subgroups') ) {
+			if ( TranslateMetadata::get( $aggregateGroup, 'subgroups' ) ) {
 				$this->dieUsage( 'Aggregate Group aleady exists', 'duplicateaggregategroup' );
 			}
 			// @FIXME: check that the group id is valid (like, no commas)
@@ -80,10 +80,12 @@ class ApiAggregateGroups extends ApiBase {
 			if ( $desc ) {
 				TranslateMetadata::set( $aggregateGroup, 'description', $desc ) ;
 			}
+			// Once new aggregate group added, we need to show all the pages that can be added to that.
+			$output['groups'] = self::getAllPages();
 		}
 
 		// If we got this far, nothing has failed
-		$output = array( 'result' => 'ok' );
+		$output['result'] = 'ok';
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 		// Cache needs to be cleared after any changes to groups
 		MessageGroups::clearCache();
@@ -158,6 +160,17 @@ class ApiAggregateGroups extends ApiBase {
 
 	public function getVersion() {
 		return __CLASS__ . ': $Id$';
+	}
+
+	public static function getAllPages() {
+		$groups = MessageGroups::getAllGroups();
+		$pages = array();
+		foreach ( $groups as  $group ) {
+			if ( $group instanceof WikiPageMessageGroup ) {
+				$pages[$group->getId()] = $group->getTitle()->getPrefixedText();
+			}
+		}
+		return $pages;
 	}
 
 	public static function getToken( $pageid, $title ) {
