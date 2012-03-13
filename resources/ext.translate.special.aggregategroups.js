@@ -91,6 +91,15 @@ jQuery( document ).ready( function ( $ ) {
 		var params = $.extend( getApiParams( $target ), {'do' : 'remove' } );
 		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 	}
+	
+	/*
+	 * Replace some special characters like space, comma, brackets etc to _ in a string. Also convert it to lowercase.
+	 */
+	function createId( s ){
+		if ( s !== undefined ) {
+			return s.toLowerCase().replace( /[\x00-\x1f\x23\x2c\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/g, '_' );
+		}
+	}
 
 	$( '.tp-aggregate-add-button' ).click( associate );
 	$( '.tp-aggregate-remove-button' ).click( dissociate );
@@ -101,7 +110,7 @@ jQuery( document ).ready( function ( $ ) {
 	} );
 
 	$( '#tpt-aggregategroups-save' ). on ( "click", function( event ){
-		var aggregateGroup = $( 'input.tp-aggregategroup-add-name' ).val().toLowerCase().replace( ' ', '_');
+		var aggregateGroup = createId( $( 'input.tp-aggregategroup-add-name' ).val() );
 		var aggregateGroupName = $( 'input.tp-aggregategroup-add-name' ).val();
 		var aggregateGroupDesc = $( 'input.tp-aggregategroup-add-description' ).val();
 		var $select = $( 'select.tp-aggregate-group-chooser' );
