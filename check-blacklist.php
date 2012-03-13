@@ -85,14 +85,14 @@ array(
 	'group' => 'core-1.17',
 	'check' => 'variable',
 	'message' => array(
-		'perfcachedts', // Optional time parameters
+		'mw-core-1.17-perfcachedts', // Optional time parameters
 	),
 ),
 array(
 	'group' => 'core-1.18',
 	'check' => 'variable',
 	'message' => array(
-		'perfcachedts', // Optional time parameters
+		'mw-core-1.18-perfcachedts', // Optional time parameters
 	),
 ),
 array(
