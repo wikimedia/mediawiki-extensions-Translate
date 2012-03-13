@@ -1,6 +1,6 @@
 jQuery( document ).ready( function ( $ ) {
 	"use strict";
-	
+
 	function getApiParams( $target ) {
 		return {
 			action: 'aggregategroups',
@@ -17,8 +17,6 @@ jQuery( document ).ready( function ( $ ) {
 			$selected = $( '#mw-tpa-groupselect-' + parentId + ' option:selected' ),
 			subgroupId = $selected.val(),
 			subgroupName = $selected.text();
-			
-			
 
 		var successFunction = function( data, textStatus ) {
 			if ( data.error ) {
@@ -45,7 +43,7 @@ jQuery( document ).ready( function ( $ ) {
 				$span.click( dissociate );
 			}
 		};
-		
+
 		var params = $.extend( getApiParams( $target ), {
 			'do' : 'associate',
 			group: subgroupId,
@@ -64,7 +62,7 @@ jQuery( document ).ready( function ( $ ) {
 				alert( data.error.info );
 			}  else {
 				$( '<option>', { value: $target.data( 'groupid' ) } )
-					.text( $target.parent( 'a' ).text() )
+					.text( $target.siblings( 'a' ).text() )
 					.appendTo( $select );
 				$target.parent( 'li' ).remove();
 			}
@@ -91,7 +89,7 @@ jQuery( document ).ready( function ( $ ) {
 		};
 
 		var params = $.extend( getApiParams( $target ), {'do' : 'remove' } );
-		$.post( mw.util.wikiScript( "api" ), params, successFunction );
+		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 	}
 
 	$( '.tp-aggregate-add-button' ).click( associate );
@@ -120,14 +118,14 @@ jQuery( document ).ready( function ( $ ) {
 					.append ( $('<ol id=\'mw-tpa-grouplist-'+aggregateGroup+'\'>') );
 
 				if ( $select.length > 0 ){
-					var $groupSelector = $( $( 'select.tp-aggregate-group-chooser')[0] ).clone();
+					var $groupSelector = $( $( 'select.tp-aggregate-group-chooser' )[0] ).clone();
 					$groupSelector.attr('id', 'tp-aggregate-groups-select-' + aggregateGroup);
-					var $addButton =  $( $( 'input.tp-aggregate-add-button')[0]).clone();
+					var $addButton =  $( $( 'input.tp-aggregate-add-button' )[0]).clone();
 					$addButton.attr( 'id', aggregateGroup);
 					$div.append( $groupSelector ).append( $addButton );
-					$addButton.on ( "click", function( event ){ associate(event); } );
-					$removeSpan.on ( "click", function( event ){ removeGroup(event); } );
-					$( 'div.tpt-add-new-group' ).addClass('hidden');
+					$addButton.click( associate );
+					$removeSpan.click( removeGroup );
+					$( 'div.tpt-add-new-group' ).addClass( 'hidden' );
 				}else{
 					// First group in the wiki. Cannot clone the group selector, just reload this time.
 					location.reload();
@@ -145,6 +143,6 @@ jQuery( document ).ready( function ( $ ) {
 			groupdescription: aggregateGroupDesc,
 			format: "json"
 		};
-		$.post( mw.util.wikiScript( "api" ), params, successFunction );
+		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 	} )
 } );
