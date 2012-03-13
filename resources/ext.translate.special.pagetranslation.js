@@ -9,17 +9,20 @@
 jQuery( function( $ ) {
 	"use strict"
 	
-	$.widget( "ui.combobox", {
+	$.widget( "ui.multiselectautocomplete", {
+		options: { 
+			inputbox: null, // a jquery selector for the input box where selections are written.
+			// @TODO can have more options.
+		},
 		_create: function() {
 			var self = this,
 				select = this.element.hide(),
-				selected = select.children( ":selected" );
-				
+				options = this.options;
 			function split( val ) {
 				return val.split( /,\s*/ );
 			}
 			
-			var input = this.input = $( '#tpt-prioritylangs' )
+			var input = this.input = $( options.inputbox )
 				.autocomplete( {
 					delay: 0,
 					minLength: 0,
@@ -76,5 +79,5 @@ jQuery( function( $ ) {
 			}
 		} );
 
-	$( "#wpUserLanguage" ).combobox();
+	$( "#wpUserLanguage" ).multiselectautocomplete( { inputbox : '#tpt-prioritylangs' } );
 } );
