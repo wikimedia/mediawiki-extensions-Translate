@@ -30,42 +30,52 @@ And for the code at:
  https://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-03-13
+- Removed groupprefix option from export.php and sync-group.php. Use * wildcard
+  with group option.
 * 2012-03-12
-* Special:LanguageStats group collapsing now supports nested subgroups
+- Special:LanguageStats group collapsing now supports nested subgroups.
 * 2012-03-11
-- Support for shared TTMServer databases was added
-- Suggestions from different TTMServers are now grouped
-- Output of TTMServer api module has changed
-- TTMServer configs can override the link symbol by adding value for symbol in the config
+- Support for shared TTMServer databases was added.
+- Suggestions from different TTMServers are now grouped.
+- Output of TTMServer api module has changed.
+- TTMServer configs can override the link symbol by adding value for symbol in
+  the config.
 * 2012-03-07
-- $wgTranslateGroupStructure is no longer used. If you are using aggregate message
-  groups, you can remove the old settings and everything still works as expected.
-  If you are not yet using aggregate message groups, you should to not confuse users.
-- Gettext file were not shown in translation editor when using recent translations task.
-- New Special page AggregateGroups where translation administrator can group pages
-  into subgroups.
+- $wgTranslateGroupStructure is no longer used. If you are using aggregate
+  message groups, you can remove the old settings and everything still works as
+  expected. If you are not yet using aggregate message groups, you should do
+  that to not confuse users.
+- Gettext file were not shown in translation editor when using recent
+  translations task.
+- New Special page AggregateGroups where translation administrator can group
+  pages into subgroups.
 * 2012-03-06
-- Translation administrator can now suggest languages translatable page should be
-  primarily translated into with a note or preventing other language translations.
+- Translation administrator can now suggest languages translatable page should
+  be primarily translated into with a note or preventing other language
+  translations.
 * 2012-03-05
 - Support for using remote TTMServers via API interface added.
-- Support for tmserver was removed. Translate comes with TTMServer enabled by default.
-  To bootstrap it with current translations, run php scripts/ttmserver-export.php.
-- Message documentation was not shown when translating for subgroups nested more than
-  one level deep.
+- Support for tmserver was removed. Translate comes with TTMServer enabled by
+  default. To bootstrap it with current translations, run php
+  scripts/ttmserver-export.php.
+- Message documentation was not shown when translating for subgroups nested more
+  than one level deep.
 - Special:TranslationStats can now graph review and reviewer activity.
 * 2012-03-02
 - Encourage/discourage changes of translatable pages are now logged.
 * 2012-03-01
-- Added upper length for translation memory suggestions because of performance concerns.
+- Added upper length for translation memory suggestions because of performance
+  concerns.
 * 2012-02-29
-- Configuring wgMainCache is no longer necessary. Translate extension will use any
-  available caching mechanism automatically when needed.
+- Configuring wgMainCache is no longer necessary. Translate extension will use
+  any available caching mechanism automatically when needed.
 - Support for Google Translate was removed, as the free service is no more.
-- Special:LanguageStats' default value derived from current interface language now
-  works also for anonymous users (only relevant when using LanguageSelector)
+- Special:LanguageStats' default value derived from current interface language
+  now works also for anonymous users (only relevant when using
+  LanguageSelector).
 * 2012-02-24
-- Help link is no longer added twice in Special:SupportedLanguages
+- Help link is no longer added twice in Special:SupportedLanguages.
 * 2012-02-21
 - Gettext headers can now be customised with Translate:GettextFFS:headerFields
   hook. Less headers are modified by default.
@@ -78,18 +88,19 @@ And for the code at:
   [[MediaWiki:Tp-custom-<group id>]].
 * 2012-02-13
 - Updated some deprecated function calls
-- New translation memory called TTMServer comes with the extension and is enabled
-  by default
+- New translation memory called TTMServer comes with the extension and is
+  enabled by default.
 * 2012-02-11
-- Some missing action- messages added
+- Some missing action- messages added.
 * 2012-02-10
-- New tabbed task-based UI on Special:Translate
+- New tabbed task-based UI on Special:Translate.
 * 2012-02-06
 - API module for message group stats written by Tim Gerundt.
 * 2012-02-01
-- Missing JavaScript dependency added to messagetable
-- No more logging state changes where the state didn't actually change
-- Allow syntax like {{Special:MessageGroupStats|group=page-Main/sub|suppresscomplete=1}}
+- Missing JavaScript dependency added to messagetable.
+- No more logging state changes where the state didn't actually change.
+- Allow syntax like
+  {{Special:MessageGroupStats|group=page-Main/sub|suppresscomplete=1}}.
 * 2012-01-31
 - export.php: switch "grouptrail" renamed to "groupprefix" and switch "groups".
   was dropped. "group" now takes a comma separated list of groups IDs, too.

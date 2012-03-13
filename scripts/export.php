@@ -9,7 +9,7 @@
  * @file
  */
 
-$optionsWithArgs = array( 'lang', 'skip', 'target', 'group', 'groupprefix', 'threshold', 'ppgettext' );
+$optionsWithArgs = array( 'lang', 'skip', 'target', 'group', 'threshold', 'ppgettext' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 function showUsage() {
@@ -22,9 +22,7 @@ Options:
   --target      Target directory for exported files
   --lang        Comma separated list of language codes or *
   --skip        Languages to skip, comma separated list
-  --group       Comma separated list of group IDs (cannot use groupprefix)
-  --groupprefix Prefix of group IDs to be exported message groups (cannot use
-                group)
+  --group       Comma separated list of group IDs (can use * as wildcard)
   --help        This help message
   --threshold   Do not export under this percentage translated
   --ppgettext   Group root path for checkout of product. "msgmerge" will post
@@ -58,8 +56,8 @@ if ( isset( $options['skip'] ) ) {
 	$skip = array();
 }
 
-if ( !isset( $options['group'] ) && !isset( $options['groupprefix'] ) ) {
-	STDERR( "You need to specify one or more groups using any of the options 'group' or 'groupprefix'" );
+if ( !isset( $options['group'] ) ) {
+	STDERR( "You need to specify one or more groups" );
 	exit( 1 );
 }
 
@@ -87,13 +85,6 @@ if ( isset( $options['no-fuzzy'] ) ) {
 }
 
 $reqLangs = Cli::parseLanguageCodes( $options['lang'] );
-
-// In case both group and groupprefix would be set, MessageGroups::getGroups
-// will give preference to group. @TODO: get rid of groupprefix
-$groupIds = array();
-if ( isset( $options['groupprefix'] ) ) {
-	$groupIds[] = $options['groupprefix'] . '*';
-}
 
 if ( isset( $options['group'] ) ) {
 	$groupIds = explode( ',', trim( $options['group'] ) );

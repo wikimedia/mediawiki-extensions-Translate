@@ -13,7 +13,7 @@
 /// @cond
 
 $options         = array( 'git' );
-$optionsWithArgs = array( 'group', 'groupprefix', 'lang', 'start', 'end' );
+$optionsWithArgs = array( 'group', 'lang', 'start', 'end' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 # Override the memory limit for wfShellExec, 100 MB seems to be too little for svn
@@ -22,11 +22,9 @@ $wgMaxShellMemory = 1024 * 200;
 function showUsage() {
 	STDERR( <<<EOT
 Options:
-  --group       Comma separated list of group IDs (cannot use groupprefix)
-  --groupprefix Prefix of group IDs to be exported message groups (cannot use
-                group)
+  --group       Comma separated list of group IDs (can use * as wildcard)
   --git         Use git to retrieve last modified date of i18n files. Will use
-                subversion by default and fallback on filesystem timestamp.
+                subversion by default and fallback on filesystem timestamp
   --lang        Comma separated list of language codes or *
   --norc        Do not add entries to recent changes table
   --help        This help message
@@ -43,16 +41,9 @@ if ( isset( $options['help'] ) ) {
 	showUsage();
 }
 
-if ( !isset( $options['group'] ) && !isset( $options['groupprefix'] ) ) {
-	STDERR( "ESG1: Message group id must be supplied with group or groupprefix parameter." );
+if ( !isset( $options['group'] ) ) {
+	STDERR( "ESG1: Message group id must be supplied with group parameter." );
 	exit( 1 );
-}
-
-// In case both group and groupprefix would be set, MessageGroups::getGroups
-// will give preference to group. @TODO: get rid of groupprefix
-$groupIds = array();
-if ( isset( $options['groupprefix'] ) ) {
-	$groupIds[] = $options['groupprefix'] . '*';
 }
 
 if ( isset( $options['group'] ) ) {
