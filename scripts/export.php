@@ -28,8 +28,8 @@ Options:
   --help        This help message
   --threshold   Do not export under this percentage translated
   --ppgettext   Group root path for checkout of product. "msgmerge" will post
-                process on the export result based on the current definitionFile
-                in that location
+                process on the export result based on the current source file
+                in that location (from sourcePattern or definitionFile)
   --no-location Only used combined with "ppgettext". This option will rebuild
                 the gettext file without location information.
   --no-fuzzy    Do not include any messages marked as fuzzy/outdated.
@@ -149,7 +149,7 @@ foreach ( $groups as $groupId => $group ) {
 			$wgMaxShellMemory = 402400;
 
 			$conf = $group->getConfiguration();
-			$definitionFile = str_replace( '%GROUPROOT%', $options['ppgettext'], $conf['FILES']['definitionFile'] );
+			$definitionFile = str_replace( '%GROUPROOT%', $options['ppgettext'], $group->getSourceFilePath( $group->getSourceLanguage() ) );
 		}
 
 		foreach ( $langs as $lang ) {
