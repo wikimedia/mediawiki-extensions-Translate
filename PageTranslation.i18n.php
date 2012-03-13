@@ -619,8 +619,12 @@ Motivu: $1',
 	'tpt-priority-languages' => "Un alministrador de traducciones definió les llingües prioritaries d'esti grupu como $1.",
 	'tpt-render-summary' => 'Anovando pa casar cola nueva versión de la páxina orixinal',
 	'tpt-download-page' => 'Esportar la páxina con traducciones',
+	'aggregategroups' => "Grupos d'agregación",
 	'tpt-aggregategroup-add' => 'Amestar',
 	'tpt-aggregategroup-save' => 'Guardar',
+	'tpt-aggregategroup-add-new' => "Amestar un nuevu grupu d'agregación",
+	'tpt-aggregategroup-new-name' => 'Nome:',
+	'tpt-aggregategroup-new-description' => 'Descripción (opcional):',
 	'pt-parse-open' => 'Etiqueta &lt;translate> desequilibrada.
 Plantía de traducción: <pre>$1</pre>',
 	'pt-parse-close' => 'Etiqueta &lt;/translate> desequilibrada.
@@ -632,6 +636,10 @@ Testu de la seición: <pre>$1</pre>',
 	'pt-shake-position' => 'Marcadores de seición en posición inesperada.
 Testu de la seición: <pre>$1</pre>',
 	'pt-shake-empty' => 'Seición balera pal marcador $1.',
+	'pt-log-header' => 'Rexistru de les aiciones rellacionaes col sistema de traducción de páxines',
+	'pt-log-name' => 'Rexistru de traducción de páxines',
+	'pt-log-mark' => '{{GENDER:$2|marcó}} la revisión $3 de la páxina "[[:$1]]" pa traducir',
+	'pt-log-unmark' => '{{GENDER:$2|desanició}} la páxina "[[:$1]]" de la traducción',
 );
 
 /** Azerbaijani (Azərbaycanca)
