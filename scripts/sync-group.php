@@ -12,6 +12,7 @@
 
 /// @cond
 
+$options         = array( 'git' );
 $optionsWithArgs = array( 'group', 'groupprefix', 'lang', 'start', 'end' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
@@ -24,6 +25,8 @@ Options:
   --group       Comma separated list of group IDs (cannot use groupprefix)
   --groupprefix Prefix of group IDs to be exported message groups (cannot use
                 group)
+  --git         Use git to retrieve last modified date of i18n files. Will use
+                subversion by default and fallback on filesystem timestamp.
   --lang        Comma separated list of language codes or *
   --norc        Do not add entries to recent changes table
   --help        This help message
@@ -124,7 +127,13 @@ foreach ( $groups as &$group ) {
 			$cs->nocolor = true;
 		}
 
-		$ts = $cs->getTimestampsFromSvn( $file );
+		# Guess last modified date of the file from either git, svn or filesystem
+		$ts = false;
+		if( isset( $options['git'] ) ) {
+			$ts = $cs->getTimestampsFromGit( $file );
+		} else {
+			$ts = $cs->getTimestampsFromSvn( $file );
+		}
 		if ( !$ts ) {
 			$ts = $cs->getTimestampsFromFs( $file );
 		}
@@ -179,6 +188,23 @@ class ChangeSyncer {
 		}
 
 		return false;
+	}
+
+	/**
+	 * Fetch last changed timestamp for a versioned file for conflict resolution.
+	 * @param $file \string Filename with full path.
+	 * @return \string Timestamp or false.
+	 */
+	public function getTimestampsFromGit( $file ) {
+		$file   = escapeshellarg( $file );
+		$retval = 0;
+		$output = wfShellExec( "git log -n 1 --format=%cd $file", $retval );
+
+		if ( $retval ) {
+			return false;
+		}
+
+		return strtotime( $output );
 	}
 
 	/**
