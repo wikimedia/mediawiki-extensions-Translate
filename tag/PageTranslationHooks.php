@@ -616,6 +616,10 @@ FOO;
 			} else {
 				return wfMsgExt( 'pt-log-priority-langs', $opts, $title->getPrefixedText(), $user , $_['languages'], $_['reason'] );
 			}
+		} elseif ( $action === 'associate' ) {
+			return wfMsgExt( 'pt-log-aggregategroup-associate', $opts, $title->getPrefixedText(), $user, $_['aggregategroup'] );
+		} elseif ( $action === 'dissociate' ) {
+			return wfMsgExt( 'pt-log-aggregategroup-dissociate', $opts, $title->getPrefixedText(), $user, $_['aggregategroup'] );
 		}
 		return '';
 	}

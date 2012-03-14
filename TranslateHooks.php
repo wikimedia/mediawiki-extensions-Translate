@@ -70,6 +70,8 @@ class TranslateHooks {
 			$wgLogActionsHandlers['pagetranslation/encourage'] = 'PageTranslationHooks::formatLogEntry';
 			$wgLogActionsHandlers['pagetranslation/discourage'] = 'PageTranslationHooks::formatLogEntry';
 			$wgLogActionsHandlers['pagetranslation/prioritylanguages'] = 'PageTranslationHooks::formatLogEntry';
+			$wgLogActionsHandlers['pagetranslation/associate'] = 'PageTranslationHooks::formatLogEntry';
+			$wgLogActionsHandlers['pagetranslation/dissociate'] = 'PageTranslationHooks::formatLogEntry';
 
 			global $wgJobClasses;
 			$wgJobClasses['RenderJob'] = 'RenderJob';

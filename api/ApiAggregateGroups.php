@@ -26,6 +26,7 @@ class ApiAggregateGroups extends ApiBase {
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
+		$logger = new LogPage( 'pagetranslation' );
 		$params = $this->extractRequestParams();
 		$aggregateGroup = $params['aggregategroup'];
 		$action = $params['do'];
@@ -37,7 +38,7 @@ class ApiAggregateGroups extends ApiBase {
 			}
 
 			// Get the list of group ids
-			$group = $params['group'];
+			$groupId = $params['group'];
 			$subgroups = TranslateMetadata::get( $aggregateGroup, 'subgroups' );
 			if ( $subgroups ) {
 				$subgroups = array_map( 'trim', explode( ',', $subgroups ) );
@@ -45,22 +46,29 @@ class ApiAggregateGroups extends ApiBase {
 				// For newly created groups the subgroups value might be empty
 				$subgroups = array();
 			}
+			$group = MessageGroups::getGroup( $groupId );
+			if ( $group === null || !$group instanceof WikiPageMessageGroup ) {
+				$this->dieUsage( 'Group does not exist or invalid', 'invalidgroup' );
+			}
 
-			// @FIXME: check that the group id is a translatable page
 			// @FIXME: handle pages with a comma in their name
 
 			// Add or remove from the list
-			// @TODO logging
 			if ( $action === 'associate' ) {
-				$subgroups[] = $group;
+				$subgroups[] = $groupId;
 				$subgroups = array_unique( $subgroups );
 			} elseif ( $action === 'dissociate' ) {
 				$subgroups = array_flip( $subgroups ) ;
-				unset( $subgroups[$group] );
+				unset( $subgroups[$groupId] );
 				$subgroups = array_flip( $subgroups );
 			}
 
 			TranslateMetadata::set( $aggregateGroup, 'subgroups', implode( ',', $subgroups ) ) ;
+			$logparams = array(
+				'user' => $wgUser->getName() ,
+				'aggregategroup' => TranslateMetadata::get( $aggregateGroup, 'name' ),
+			);
+			$logger->addEntry( $action, $group->getTitle(), null, array( serialize( $logparams ) ) );
 		} elseif ( $action === 'remove' ) {
 			TranslateMetadata::set( $aggregateGroup, 'subgroups', false ) ;
 			TranslateMetadata::set( $aggregateGroup, 'name', false ) ;
