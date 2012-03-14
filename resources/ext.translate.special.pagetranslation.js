@@ -1,9 +1,9 @@
 /*
  * @author Santhosh Thottingal
- * jquery autocomplete based multiple selector for input box. 
- * Autocompleted values will be available in input filed as comma seperated values.
+ * jQuery autocomplete based multiple selector for input box.
+ * Autocompleted values will be available in input filed as comma separated values.
  * The values for autocompletion is from the language selector in this case.
- * The input field is a php created one.
+ * The input field is created in PHP code.
  * Credits: http://jqueryui.com/demos/autocomplete/#multiple
  */
 jQuery( function( $ ) {
@@ -11,7 +11,7 @@ jQuery( function( $ ) {
 	
 	$.widget( "ui.multiselectautocomplete", {
 		options: { 
-			inputbox: null, // a jquery selector for the input box where selections are written.
+			inputbox: null, // a jQuery selector for the input box where selections are written.
 			// @TODO can have more options.
 		},
 		_create: function() {
@@ -64,20 +64,20 @@ jQuery( function( $ ) {
 					}
 				} );
 
-				input.data( "autocomplete" )._renderItem = function( ul, item ) {
-					return $( "<li>" )
-						.data( "item.autocomplete", item )
-						.append( "<a>" + item.label + "</a>" )
-						.appendTo( ul );
-				};
-			}, // End of _create
+			input.data( "autocomplete" )._renderItem = function( ul, item ) {
+				return $( "<li>" )
+					.data( "item.autocomplete", item )
+					.append( "<a>" + item.label + "</a>" )
+					.appendTo( ul );
+			};
+		}, // End of _create
 
-			destroy: function() {
-				this.input.remove();
-				this.element.show();
-				$.Widget.prototype.destroy.call( this );
-			}
-		} );
+		destroy: function() {
+			this.input.remove();
+			this.element.show();
+			$.Widget.prototype.destroy.call( this );
+		}
+	} );
 
 	$( "#wpUserLanguage" ).multiselectautocomplete( { inputbox : '#tpt-prioritylangs' } );
 } );
