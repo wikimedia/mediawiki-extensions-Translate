@@ -399,7 +399,7 @@ JAVASCRIPT;
 
 	/// Hook: Translate:MessageGroupStats:isIncluded
 	public static function hideDiscouragedFromStats( $id, $code ) {
-		// Return true to keep, false to exlude
+		// Return true to keep, false to exclude
 		return MessageGroups::getPriority( $id ) !== 'discouraged';
 	}
 
