@@ -22,47 +22,46 @@ jQuery( function( $ ) {
 				return val.split( /,\s*/ );
 			}
 			
-			var input = this.input = $( options.inputbox )
-				.autocomplete( {
-					delay: 0,
-					minLength: 0,
-					source: function( request, response ) {
+			var input = this.input = $( options.inputbox ).autocomplete( {
+				delay: 0,
+				minLength: 0,
+				source: function( request, response ) {
+					var term = split( request.term ).pop();
+					var matcher = new RegExp( $.ui.autocomplete.escapeRegex( term ), "i" );
+					response( select.children( "option" ).map( function() {
+						var text = $( this ).text();
+						var value = $( this ).val();
 						var term = split( request.term ).pop();
-						var matcher = new RegExp( $.ui.autocomplete.escapeRegex( term ), "i" );
-						response( select.children( "option" ).map( function() {
-							var text = $( this ).text();
-							var value = $( this ).val();
-							var term = split( request.term ).pop();
-							if ( this.value && ( !request.term || matcher.test(text) ) ) {
-								return {
-									label: text.replace(
-										new RegExp(
-										"(?![^&;]+;)(?!<[^<>]*)(" +
-										$.ui.autocomplete.escapeRegex( term ) +
-										")(?![^<>]*>)(?![^&;]+;)", "gi"
-										), "<strong>$1</strong>" ),
-									value: value,
-									option: this
-								};
-							}
-						} ) );
-					},
-					select: function( event, ui ) {
-						ui.item.option.selected = true;
-						self._trigger( "selected", event, {
-							item: ui.item.option
-						});
-						var terms = split( $(this).val() );
-						// remove the current input
-						terms.pop();
-						// add the selected item
-						terms.push( ui.item.value );
-						// add placeholder to get the comma-and-space at the end
-						terms.push( "" );
-						$( this ).val( terms.join( ", " ) );
-						return false;
-					}
-				} );
+						if ( this.value && ( !request.term || matcher.test(text) ) ) {
+							return {
+								label: text.replace(
+									new RegExp(
+									"(?![^&;]+;)(?!<[^<>]*)(" +
+									$.ui.autocomplete.escapeRegex( term ) +
+									")(?![^<>]*>)(?![^&;]+;)", "gi"
+									), "<strong>$1</strong>" ),
+								value: value,
+								option: this
+							};
+						}
+					} ) );
+				},
+				select: function( event, ui ) {
+					ui.item.option.selected = true;
+					self._trigger( "selected", event, {
+						item: ui.item.option
+					});
+					var terms = split( $(this).val() );
+					// remove the current input
+					terms.pop();
+					// add the selected item
+					terms.push( ui.item.value );
+					// add placeholder to get the comma-and-space at the end
+					terms.push( "" );
+					$( this ).val( terms.join( ", " ) );
+					return false;
+				}
+			} );
 
 			input.data( "autocomplete" )._renderItem = function( ul, item ) {
 				return $( "<li>" )
