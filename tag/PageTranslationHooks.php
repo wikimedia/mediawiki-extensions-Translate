@@ -225,6 +225,7 @@ class PageTranslationHooks {
 
 		// This way the parser knows to fragment the parser cache by language code
 		$userLangCode = $parser->getOptions()->getUserLang();
+		$sourceLanguage = $page->getMessageGroup()->getSourceLanguage();
 
 		$languages = array();
 		foreach ( $status as $code => $percent ) {
@@ -249,8 +250,7 @@ class PageTranslationHooks {
 			) );
 
 			// Add links to other languages
-			// @FIXME: 'en' should be the source language, not hardcoded
-			$suffix = ( $code === 'en' ) ? '' : "/$code";
+			$suffix = ( $code === $sourceLanguage ) ? '' : "/$code";
 			$_title = Title::makeTitle( $title->getNamespace(), $title->getDBkey() . $suffix );
 			if ( intval( $percent ) === 0 ) {
 				/* When language is included because it is a priority language,
