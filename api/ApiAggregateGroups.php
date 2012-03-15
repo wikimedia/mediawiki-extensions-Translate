@@ -75,7 +75,7 @@ class ApiAggregateGroups extends ApiBase {
 			TranslateMetadata::set( $aggregateGroup, 'description', false ) ;
 		} elseif ( $action === 'add' ) {
 			if ( TranslateMetadata::get( $aggregateGroup, 'subgroups' ) ) {
-				$this->dieUsage( 'Aggregate Group aleady exists', 'duplicateaggregategroup' );
+				$this->dieUsage( 'Aggregate message group already exists', 'duplicateaggregategroup' );
 			}
 			// @FIXME: check that the group id is valid (like, no commas)
 			TranslateMetadata::set( $aggregateGroup, 'subgroups', '' ) ;
