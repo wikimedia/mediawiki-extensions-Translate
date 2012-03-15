@@ -134,13 +134,13 @@ foreach ( $groups as $groupId => $group ) {
 		$definitionFile = false;
 
 		if ( isset( $options['ppgettext'] ) && $ffs instanceof GettextFFS ) {
-			global $wgMaxShellMemory;
+			global $wgMaxShellMemory, $wgTranslateGroupRoot;
 
 			// Need more shell memory for msgmerge.
 			$wgMaxShellMemory = 402400;
 
 			$conf = $group->getConfiguration();
-			$definitionFile = str_replace( '%GROUPROOT%', $options['ppgettext'], $group->getSourceFilePath( $group->getSourceLanguage() ) );
+			$definitionFile = str_replace( $wgTranslateGroupRoot, $options['ppgettext'], $group->getSourceFilePath( $group->getSourceLanguage() ) );
 		}
 
 		foreach ( $langs as $lang ) {
