@@ -299,8 +299,8 @@ The colour of an underline indicates how recently a translator has been active h
 	'translate-manage-action-ignore' => 'Ignore',
 	'translate-manage-action-fuzzy' => 'Import and fuzzy translations',
 	'translate-manage-submit' => 'Execute',
-	'translate-manage-nochanges' => 'There is no changes in message definitions for this group.',
-	'translate-manage-nochanges-other' => 'There was no changes for this language.
+	'translate-manage-nochanges' => 'There are no changes in message definitions for this group.',
+	'translate-manage-nochanges-other' => 'There were no changes for this language.
 Use the link below to return the group details view.',
 
 	'translate-manage-inconsistent' => 'Detected inconsistency in the request.
@@ -13252,7 +13252,7 @@ $messages['kn'] = array(
 	'translate-edit-definition' => 'ಸಂದೇಶ ವ್ಯಾಖ್ಯೆ',
 	'translate-edit-translation' => 'ಅನುವಾದ',
 	'translate-edit-contribute' => 'ನೆರವಾಗು',
-	'translate-edit-no-information' => '"ಈ ಸಂದೇಶಕ್ಕೆ ಯಾವುದೇ ದಾಖಲೆಗಳಿಲ್ಲ." 
+	'translate-edit-no-information' => '"ಈ ಸಂದೇಶಕ್ಕೆ ಯಾವುದೇ ದಾಖಲೆಗಳಿಲ್ಲ."
 "ನಿಮಗೆ ಈ ಸಂದೇಶ ಎಲ್ಲಿಯಾದರೂ ಅಥವಾ ಹೇಗಾದರೂ ಉಪಯೋಗದಲ್ಲಿರುವುದು ತಿಳಿದಿದ್ದರೆ,ನೀವು ಇದಕ್ಕೆ ತಕ್ಕ ದಾಖಲೆಗಳನ್ನು ಸೇರಿಸಿ ಬೇರಿ ಭಾಷಾಂತರಕಾರರಿಗೆ ಸಹಾಯ ಮಾಡಬಹುದು."',
 	'translate-edit-information' => 'ಸಂದೇಶದ ಬಗ್ಗೆ ಮಾಹಿತಿ ($1)',
 	'translate-edit-in-other-languages' => 'ಬೇರೆ ಭಾಷೆಗಳಲ್ಲಿ ಸಂದೇಶ',
@@ -20539,7 +20539,7 @@ Kliknutím na názov skupiny zobrazíte zoznam nepreložených správ.',
 	'translate-prev' => 'Predošlá stránka',
 	'translate-page-description-legend' => 'Informácie o skupine',
 	'translate-page-description-hasoptional' => 'Táto skupina obsahuje voliteľné správy.
-Voliteľné správy sa majú prekladať len v prípade, ak má váš jazyk špecifické potreby, 
+Voliteľné správy sa majú prekladať len v prípade, ak má váš jazyk špecifické potreby,
 ako napr. nepoužívanie medzier, alebo transkripcie vlastných mien. $1',
 	'translate-page-description-hasoptional-open' => 'Zobraziť voliteľné správy.',
 	'translate-page-edit' => 'upraviť',
