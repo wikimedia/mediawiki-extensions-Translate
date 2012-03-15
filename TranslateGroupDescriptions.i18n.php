@@ -1381,7 +1381,6 @@ $messages['it'] = array(
 	'translate-group-desc-uniwiki' => 'Meta gruppo di messaggi contenente tutti i messaggi delle estensioni relative a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta gruppo di messaggi contenente tutti i messaggi delle estensioni relative al [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Progetto usabilità di Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Tutte le pagine traducibili',
-	'translate-group-desc-europeana' => "[[Translating:Europeana|Europeana]] consente alle persone di esplorare le risorse culturali digitali d'Europa",
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] è un gioco strategico a turni.',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]], un forum web scritto in PHP.',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] è un sistema gratuito di tracciamento bug web-based.',
@@ -1405,11 +1404,7 @@ $messages['it'] = array(
 	'bw-desc-openstreetmap' => 'Questo gruppo contiene tutti i messaggi per [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => "Questo gruppo di messaggi contiene i messaggi dell'interfaccia per tradurre [[Translating:Open Street Map|Open Street Map]].
 Vedi [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} la pagina Unicode CLDR per i criteri sul'uso dei plurali].",
-	'bw-desc-osm-potlatch' => "Questo gruppo di messaggi contiene l'interfaccia per [[Traduzione: OpenStreetMap | Potlatch]].
-
-Per favore:
-* Cerca di mantenere la lunghezza delle traduzioni più simile possibile alla lunghezza del testo originale inglese, questo a causa delle limitazioni dell'interfaccia utente. Vedi anche [http://trac.openstreetmap.org/ticket/2067 il bug aperto].
-* Per effettuare test su Potlatch usa [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] dove è possibile effettuare tutte le prove in qualsiasi zona.",
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] è un editor di OpenStreetMap basato su Flash',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] è una collezione di strumenti per modificare siti MediaWiki',
 	'bw-desc-shapado' => 'Gruppo di messaggi per la piattaforma di domande e risposte [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] è un server di microblogging open source',

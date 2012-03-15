@@ -2714,6 +2714,26 @@ $messages['si'] = array(
 	'translate-fs-target-title' => 'පරිවර්තනය කිරීම අරඹන්න!',
 );
 
+/** Slovak (Slovenčina)
+ * @author Teslaton
+ */
+$messages['sk'] = array(
+	'translate-fs-target-text' => "Gratulujeme!
+Teraz môžete začať prekladať.
+
+Nebojte sa, ak vám to tu pripadá nové a mätúce.
+Na stránke [[Project list/sk|Zoznam projektov]] nájdete prehľad projektov, do ktorých môžete prispievať prekladmi.
+Väčšina projektov obsahuje stručný popis a odkaz ''Translate this project'', ktorý vás dovedie na stránku s prehľadom všetkých nepreložených správ.
+Je tiež k dispozícii zoznam všetkých skupín správ spolu s [[Special:LanguageStats|aktuálnym stavom prekladu do daného jazyka]].
+
+Ak máte potrebu porozumieť veciam dôkladnejšie, ešte než začnete prekladať, môžete si prečítať [[FAQ|často kladené otázky]].
+Dokumentácia môže byť bohužiaľ niekedy zastaralá.
+Ak nájdete niečo, čo si myslíte, že by ste {{gender:|mal byť schopný|mala byť schopná|mali byť schopní}} robiť, ale nejde to, neváhajte sa opýtať na [[Support|stránke podpory]].
+
+Môžete tiež kontaktovať spoluprekladateľa do rovnakého jazyka pomocou [[Portal_talk:$1|diskusnej stránky]] [[Portal:$1|vášho jazykového portálu]].
+Ak ste tak dosiaľ {{gender:|neurobil|neurobila|neurobili}}, [[Special:Preferences|nastavte svoj jazyk rozhrania]] na jazyk, do ktorého chcete prekladať, aby vám táto wiki bola schopná zobrazovať čo najrelevantnejšie odkazy.",
+);
+
 /** Slovenian (Slovenščina)
  * @author Dbc334
  */
