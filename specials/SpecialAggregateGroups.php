@@ -40,7 +40,7 @@ class SpecialAggregateGroups extends UnlistedSpecialPage {
 			$out->permissionRequired( 'translate-manage' );
 			return;
 		}
-		
+
 		$groups = MessageGroups::getAllGroups();
 		$aggregates = array();
 		$pages = array();
@@ -106,7 +106,7 @@ class SpecialAggregateGroups extends UnlistedSpecialPage {
 			wfMsg( 'tpt-aggregategroup-add-new' ) .
 			 "</a>" );
 		$newGroupNameLabel = wfMsg( 'tpt-aggregategroup-new-name' );
-		$newGroupName = Html::element( 'input', array( 'class' => 'tp-aggregategroup-add-name' ) );
+		$newGroupName = Html::element( 'input', array( 'class' => 'tp-aggregategroup-add-name', 'maxlength' => '200' ) );
 		$newGroupDescriptionLabel = wfMsg( 'tpt-aggregategroup-new-description' );
 		$newGroupDescription = Html::element( 'input',
 				array( 'class' => 'tp-aggregategroup-add-description' )
@@ -125,7 +125,7 @@ class SpecialAggregateGroups extends UnlistedSpecialPage {
 	protected function listSubgroups( AggregateMessageGroup $parent ) {
 		$out = $this->getOutput();
 		$sanid = Sanitizer::escapeId( $parent->getId() );
-		
+
 		$id = $this->htmlIdForGroup( $parent, 'mw-tpa-grouplist-' );
 		$out->addHtml( Html::openElement( 'ol', array( 'id' => $id ) ) );
 
@@ -154,7 +154,7 @@ class SpecialAggregateGroups extends UnlistedSpecialPage {
 			if ( isset( $subgroups[$groupId] ) ) continue;
 			$select->addOption( $group->getLabel(), $groupId );
 		}
-	
+
 		return $select;
 	}
 

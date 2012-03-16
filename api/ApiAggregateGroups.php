@@ -43,7 +43,11 @@ class ApiAggregateGroups extends ApiBase {
 			if ( $subgroups ) {
 				$subgroups = array_map( 'trim', explode( ',', $subgroups ) );
 			} else {
-				// For newly created groups the subgroups value might be empty
+				// For newly created groups the subgroups value might be empty,
+				// but check that.
+				if ( !TranslateMetadata::get( $aggregateGroup, 'name' ) ) {
+					$this->dieUsage( '‎Invalid Aggregate message group', 'invalidaggregategroup' );
+				} ;
 				$subgroups = array();
 			}
 			$group = MessageGroups::getGroup( $groupId );
@@ -51,8 +55,9 @@ class ApiAggregateGroups extends ApiBase {
 				$this->dieUsage( 'Group does not exist or invalid', 'invalidgroup' );
 			}
 
-			// @FIXME: handle pages with a comma in their name
-
+			if ( !self::isValid( $aggregateGroup ) ) {
+				$this->dieUsage( '‎Invalid Aggregate message group', 'invalidaggregategroup' );
+			}
 			// Add or remove from the list
 			if ( $action === 'associate' ) {
 				$subgroups[] = $groupId;
@@ -77,7 +82,9 @@ class ApiAggregateGroups extends ApiBase {
 			if ( TranslateMetadata::get( $aggregateGroup, 'subgroups' ) ) {
 				$this->dieUsage( 'Aggregate message group already exists', 'duplicateaggregategroup' );
 			}
-			// @FIXME: check that the group id is valid (like, no commas)
+			if ( !self::isValid ( $aggregateGroup ) ) {
+				$this->dieUsage( '‎Invalid Aggregate message group name', 'invalidaggregategroup' );
+			}
 			TranslateMetadata::set( $aggregateGroup, 'subgroups', '' ) ;
 			$name = trim( $params['groupname'] );
 			$desc = trim( $params['groupdescription'] );
@@ -97,6 +104,13 @@ class ApiAggregateGroups extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 		// Cache needs to be cleared after any changes to groups
 		MessageGroups::clearCache();
+	}
+
+	protected function isValid( $aggregateGroup ) {
+		if ( !$aggregateGroup || preg_match( '/[\x00-\x1f\x22\x23\x2c\x2e\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/i', $aggregateGroup ) ) {
+				return false;
+		}
+		return true;
 	}
 
 	public function isWriteMode() {
