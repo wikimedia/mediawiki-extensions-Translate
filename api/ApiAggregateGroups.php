@@ -173,7 +173,7 @@ class ApiAggregateGroups extends ApiBase {
 	public static function getAllPages() {
 		$groups = MessageGroups::getAllGroups();
 		$pages = array();
-		foreach ( $groups as  $group ) {
+		foreach ( $groups as $group ) {
 			if ( $group instanceof WikiPageMessageGroup ) {
 				$pages[$group->getId()] = $group->getTitle()->getPrefixedText();
 			}

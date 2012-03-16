@@ -93,11 +93,11 @@ jQuery( document ).ready( function ( $ ) {
 	}
 	
 	/*
-	 * Replace some special characters like space, comma, brackets etc to _ in a string. Also convert it to lowercase.
+	 * Replace some special characters like space, dots, comma, brackets etc to _ in a string. Also convert it to lowercase.
 	 */
 	function createId( s ){
 		if ( s !== undefined ) {
-			return s.toLowerCase().replace( /[\x00-\x1f\x23\x2c\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/g, '_' );
+			return 'ag-' + s.toLowerCase().replace( /[\x00-\x1f\x23\x2c\x2e\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/g, '_' );
 		}
 	}
 
@@ -129,7 +129,7 @@ jQuery( document ).ready( function ( $ ) {
 				$div.data( 'id', aggregateGroupId );
 				if ( $select.length > 0 ){
 					var $groupSelector = $( '<select>' ).attr('id', 'mw-tpa-groupselect-' + aggregateGroupId );
-					$.each(data.aggregategroups.groups, function( key, value) {
+					$.each( data.aggregategroups.groups, function( key, value ) {
 						$groupSelector.append( $( '<option>', { value : key } ).text( value ) ); 
 					} );
 					var $addButton =  $( $( 'input.tp-aggregate-add-button' )[0]).clone();
