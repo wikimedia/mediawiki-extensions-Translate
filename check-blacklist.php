@@ -663,6 +663,15 @@ array(
 		'stafflog-piggybacklogoutmsg', // Contains optional additional parameters.
 	)
 ),
+array(
+	'group' => 'wikia-wikiamobile',
+	'check' => 'links',
+	'message' => array(
+		'wikiamobile-footer-link1', // Contains link parts that may need translation
+		'wikiamobile-footer-link2', // Contains link parts that may need translation
+		'wikiamobile-footer-link3', // Contains link parts that may need translation
+	)
+),
 // translatewiki.net specific
 array(
 	'group' => 'page-Translating:Intro',
