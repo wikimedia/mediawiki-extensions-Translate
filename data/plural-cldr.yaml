@@ -1,27 +1,31 @@
-locales:
+locales: 
   af: Default
   ak: One-zero
   am: One-zero
   ar: Arabic
+  asa: Default
   az: Zero
-  be: Rule J
+  be: Rule K
   bem: Default
+  bez: Default
   bg: Default
   bh: One-zero
   bm: Zero
   bn: Default
   bo: Zero
-  br: Rule S
+  br: Rule T
   brx: Default
-  bs: Rule J
+  bs: Rule K
   ca: Default
-  ccg: Default
+  cgg: Default
   chr: Default
-  cs: Rule K
-  cy: Rule P
+  cs: Rule L
+  cy: Rule Q
   da: Default
   de: Default
+  dv: Default
   dz: Zero
+  ee: Default
   el: Default
   en: Default
   eo: Default
@@ -36,15 +40,18 @@ locales:
   fr: Rule E
   fur: Default
   fy: Default
-  ga: Has-dual
+  ga: Rule H
+  gd: Rule X
   gl: Default
   gsw: Default
   gu: Default
   guw: One-zero
+  gv: Rule W
   ha: Default
+  haw: Default
   he: Default
   hi: One-zero
-  hr: Rule J
+  hr: Rule K
   hu: Zero
   id: Zero
   ig: Zero
@@ -52,155 +59,194 @@ locales:
   is: Default
   it: Default
   iu: Has-dual
-  iw: Default
   ja: Zero
+  jmc: Default
   jv: Zero
   ka: Zero
   kab: Rule E
+  kaj: Default
+  kcg: Default
   kde: Zero
   kea: Zero
+  kk: Default
+  kl: Default
   km: Zero
   kn: Zero
   ko: Zero
+  ksb: Default
+  ksh: Rule U
   ku: Default
-  lag: Rule Q
+  kw: Has-dual
+  lag: Rule R
   lb: Default
+  lg: Default
   ln: One-zero
   lo: Zero
-  lt: Rule I
+  lt: Rule J
   lv: Rule F
   mas: Default
   mg: One-zero
-  mk: Rule O
+  mk: Rule P
   ml: Default
   mn: Default
-  mo: Rule H
+  mo: Rule I
   mr: Default
   ms: Zero
-  mt: Rule N
+  mt: Rule O
   my: Zero
   nah: Default
+  naq: Has-dual
   nb: Default
+  nd: Default
   ne: Default
   nl: Default
   nn: Default
   "no": Default
+  nr: Default
   nso: One-zero
+  ny: Default
   nyn: Default
   om: Default
   or: Default
   pa: Default
   pap: Default
-  pl: Rule L
+  pl: Rule M
   ps: Default
   pt: Default
-  pt_PT: Default
   rm: Default
-  ro: Rule H
-  ru: Rule J
+  ro: Rule I
+  rof: Default
+  ru: Rule K
+  rwk: Default
   sah: Zero
   saq: Default
   se: Has-dual
+  seh: Default
   ses: Zero
   sg: Zero
-  sh: Rule J
-  shi: Rule R
-  sk: Rule K
-  sl: Rule M
+  sh: Rule K
+  shi: Rule S
+  sk: Rule L
+  sl: Rule N
   sma: Has-dual
   smi: Has-dual
   smj: Has-dual
   smn: Has-dual
   sms: Has-dual
+  sn: Default
   so: Default
   sq: Default
-  sr: Rule J
+  sr: Rule K
+  ss: Default
   ssy: Default
+  st: Default
   sv: Default
   sw: Default
   syr: Default
   ta: Default
   te: Default
+  teo: Default
   th: Zero
   ti: One-zero
+  tig: Default
   tk: Default
   tl: One-zero
+  tn: Default
   to: Zero
   tr: Zero
-  #tzm:
-  uk: Rule J
+  ts: Default
+  tzm: Rule V
+  uk: Rule K
   ur: Default
+  ve: Default
   vi: Zero
+  vun: Default
   wa: One-zero
   wae: Default
   wo: Zero
+  xh: Default
   xog: Default
   yo: Zero
   zh: Zero
   zu: Default
-rulesets:
-  Arabic:
+rulesets: 
+  Arabic: 
     few: n mod 100 in 3..10
     many: n mod 100 in 11..99
     one: n is 1
     two: n is 2
     zero: n is 0
-  Default:
+  Default: 
     one: n is 1
-  Has-dual:
+  Has-dual: 
     one: n is 1
     two: n is 2
-  One-zero:
+  One-zero: 
     one: n in 0..1
-  Rule E:
+  Rule E: 
     one: n within 0..2 and n is not 2
-  Rule F:
+  Rule F: 
     one: n mod 10 is 1 and n mod 100 is not 11
     zero: n is 0
-  Rule H:
+  Rule H: 
+    few: n in 3..6
+    many: n in 7..10
+    one: n is 1
+    two: n is 2
+  Rule I: 
     few: n is 0 OR n is not 1 AND n mod 100 in 1..19
     one: n is 1
-  Rule I:
+  Rule J: 
     few: n mod 10 in 2..9 and n mod 100 not in 11..19
     one: n mod 10 is 1 and n mod 100 not in 11..19
-  Rule J:
+  Rule K: 
     few: n mod 10 in 2..4 and n mod 100 not in 12..14
     many: n mod 10 is 0 or n mod 10 in 5..9 or n mod 100 in 11..14
     one: n mod 10 is 1 and n mod 100 is not 11
-  Rule K:
+  Rule L: 
     few: n in 2..4
     one: n is 1
-  Rule L:
+  Rule M: 
     few: n mod 10 in 2..4 and n mod 100 not in 12..14
     many: n is not 1 and n mod 10 in 0..1 or n mod 10 in 5..9 or n mod 100 in 12..14
     one: n is 1
-  Rule M:
+  Rule N: 
     few: n mod 100 in 3..4
     one: n mod 100 is 1
     two: n mod 100 is 2
-  Rule N:
+  Rule O: 
     few: n is 0 or n mod 100 in 2..10
     many: n mod 100 in 11..19
     one: n is 1
-  Rule O:
+  Rule P: 
     one: n mod 10 is 1 and n is not 11
-  Rule P:
+  Rule Q: 
     few: n is 3
     many: n is 6
     one: n is 1
     two: n is 2
     zero: n is 0
-  Rule Q:
+  Rule R: 
     one: n within 0..2 and n is not 0 and n is not 2
     zero: n is 0
-  Rule R:
+  Rule S: 
     few: n in 2..10
     one: n within 0..1
-  Rule S:
-    few: n is 3
-    many: n is 6
+  Rule T: 
+    few: n mod 10 in 3..4,9 and n mod 100 not in 10..19,70..79,90..99
+    many: n mod 1000000 is 0 and n is not 0
+    one: n mod 10 is 1 and n mod 100 not in 11,71,91
+    two: n mod 10 is 2 and n mod 100 not in 12,72,92
+  Rule U: 
     one: n is 1
-    two: n is 2
     zero: n is 0
+  Rule V: 
+    one: n in 0..1 or n in 11..99
+  Rule W: 
+    one: n mod 10 in 1..2 or n mod 20 is 0
+  Rule X: 
+    few: n in 3..10,13..19
+    one: n in 1,11
+    two: n in 2,12
   Zero: []
 
