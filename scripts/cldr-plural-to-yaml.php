@@ -19,6 +19,7 @@ require_once( "$IP/maintenance/Maintenance.php" );
 
 /** Script to format CLDR plural definitions to more usable format.
  * plurals.xml from core.zip must be in the current directory.
+ * It is at common/supplemental/plurals.xml .
  * The script will output plural-CLDR.yaml into current directory.
  */
 class CLDRPluralToYaml extends Maintenance {
