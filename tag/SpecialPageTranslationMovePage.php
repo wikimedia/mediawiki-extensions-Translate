@@ -421,7 +421,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		if ( $priorityforce ) {
 			TranslateMetadata::set( $newGroupId, 'priorityforce', $priorityforce );
 		}
-		if ( $priorityreason ) {
+		if ( $priorityreason !== false ) {
 			TranslateMetadata::set( $newGroupId, 'priorityreason', $priorityreason );
 		}
 	}
