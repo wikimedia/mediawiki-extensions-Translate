@@ -4581,6 +4581,7 @@ awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
 Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungs-Fonctioun] aktulaiséiert ginn.",
 	'tpt-unknown-page' => "Dëse Nummraum ass fir d'Iwwersetze vu Säitemat Inhalt reservéiert.
 D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iwwersetzung markéiert ass ze korrespondéieren.",
+	'tpt-priority-languages' => 'En Iwwersetzungs-Administrateur huet déi prioritiséiert Sprooche fir dëse Grupp op $1 agestallt.',
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
 	'tpt-download-page' => 'Säit mat Iwwersetzungen exportéieren',
 	'tpt-aggregategroup-add' => 'Derbäisetzen',

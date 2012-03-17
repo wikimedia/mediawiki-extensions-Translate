@@ -14019,6 +14019,7 @@ Optional Message sollen nëmmen iwwersat gi wann Är Sprooch speziell Ufuerderun
 	'translate-edit-committed' => 'Aktuell Iwwersetzung an der Software',
 	'translate-edit-warnings' => 'Warnunge virun onkompletten Iwwersetzungen',
 	'translate-edit-tmsugs' => 'Automatesch Virschléi aus aneren Iwwersetzungen',
+	'translate-edit-tmmatch-source' => "Quelltext fir d'Iwwersetzung: $1",
 	'translate-edit-tmmatch' => '$1% Iwwereestëmmung',
 	'translate-use-suggestion' => 'Déi aktuell Iwwersetzung duerch dëse Virschlag ersetzen.',
 	'translate-edit-tab-list' => 'Lëscht vun de Messagen',
