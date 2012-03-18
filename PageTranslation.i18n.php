@@ -4584,8 +4584,10 @@ D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iw
 	'tpt-priority-languages' => 'En Iwwersetzungs-Administrateur huet déi prioritiséiert Sprooche fir dëse Grupp op $1 agestallt.',
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
 	'tpt-download-page' => 'Säit mat Iwwersetzungen exportéieren',
+	'aggregategroups' => 'Gruppen zesummeleeën',
 	'tpt-aggregategroup-add' => 'Derbäisetzen',
 	'tpt-aggregategroup-save' => 'Späicheren',
+	'tpt-aggregategroup-add-new' => 'Eng nei zesummegeluechte Grupp derbäisetzen',
 	'tpt-aggregategroup-new-name' => 'Numm:',
 	'tpt-aggregategroup-new-description' => 'Beschreiwung (optional):',
 	'pt-parse-open' => 'Netsymetreschen &lt;translate&gt;-Tag.
