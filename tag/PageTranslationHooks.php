@@ -53,7 +53,6 @@ class PageTranslationHooks {
 				$newParser = new Parser();
 				$name = $newParser->preprocess( $name, $parser->getTitle(), $parser->getOptions() );
 			}
-			$name = $parser->recursivePreprocess( $name );
 			$parser->getOutput()->setDisplayTitle( $name );
 		}
 
