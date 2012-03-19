@@ -97,7 +97,7 @@ jQuery( document ).ready( function ( $ ) {
 	 */
 	function createId( s ){
 		if ( s !== undefined ) {
-			return 'ag-' + s.toLowerCase().replace( /[\x00-\x1f\x23\x2c\x2e\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/g, '_' );
+			return 'agg-' + s.toLowerCase().replace( /[\x00-\x1f\x23\x2c\x2e\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/g, '_' );
 		}
 	}
 
