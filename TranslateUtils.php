@@ -253,7 +253,7 @@ class TranslateUtils {
 	/**
 	 * Escapes the message, and does some mangling to whitespace, so that it is
 	 * preserved when outputted as-is to html page. Line feeds are converted to
-	 * \<br /> and occurances of leading and trailing and multiple consecutive
+	 * \<br /> and occurrences of leading and trailing and multiple consecutive
 	 * spaces to non-breaking spaces.
 	 *
 	 * @param $msg \string Plain text string.
