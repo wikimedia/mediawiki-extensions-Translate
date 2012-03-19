@@ -11738,10 +11738,15 @@ $messages['io'] = array(
 /** Icelandic (Íslenska)
  * @author Jóna Þórunn
  * @author S.Örvarr.S
+ * @author Snævar
  * @author Spacebirdy
  */
 $messages['is'] = array(
 	'translate' => 'Þýða',
+	'translate-taskui-view' => 'Sýna öll skilaboð',
+	'translate-taskui-untranslated' => 'Sýna óþýdd skilaboð',
+	'translate-taskui-optional' => 'Sýna valfrjáls skilaboð',
+	'translate-taskui-suggestions' => 'Sýna skilaboð með uppástungum úr þýðingarminni',
 	'translate-page-no-such-language' => 'Tilgreinda tungumálið var ógilt.',
 	'translate-page-no-such-group' => 'Tilgreindur hópur var ógildur.',
 	'translate-page-settings-legend' => 'Stillingar',
@@ -11787,7 +11792,15 @@ Ef þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Skilgreiningin notar <nowiki>{{PLURAL:}}</nowiki> en ekki þýðingin.',
 	'translate-pref-nonewsletter' => 'Ekki senda mér rafrænt fréttabréf',
+	'translate-statsf-intro' => 'Þú getur búið til einfalt línurit með þessu eyðublaði.
+Öll gildi hafa efri og neðri gildi.',
+	'translate-statsf-options' => 'Stillingar línuritsins',
+	'translate-statsf-width' => 'Breidd í dílum:',
+	'translate-statsf-height' => 'Hæð í dílum:',
+	'translate-statsf-scale-months' => 'Mánuðir',
+	'translate-statsf-scale-weeks' => 'Vikur',
 	'translate-statsf-scale-days' => 'Dagar',
+	'translate-statsf-scale-hours' => 'Klukkutímar',
 	'translate-statsf-submit' => 'Forskoða',
 	'translations' => 'Allar þýðingar',
 	'translate-translations-fieldset-title' => 'Melding',
