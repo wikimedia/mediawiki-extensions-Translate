@@ -91,15 +91,6 @@ jQuery( document ).ready( function ( $ ) {
 		var params = $.extend( getApiParams( $target ), {'do' : 'remove' } );
 		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 	}
-	
-	/*
-	 * Replace some special characters like space, dots, comma, brackets etc to _ in a string. Also convert it to lowercase.
-	 */
-	function createId( s ){
-		if ( s !== undefined ) {
-			return 'agg-' + s.toLowerCase().replace( /[\x00-\x1f\x23\x2c\x2e\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/g, '_' );
-		}
-	}
 
 	$( '.tp-aggregate-add-button' ).click( associate );
 	$( '.tp-aggregate-remove-button' ).click( dissociate );
@@ -110,7 +101,6 @@ jQuery( document ).ready( function ( $ ) {
 	} );
 
 	$( '#tpt-aggregategroups-save' ). on ( "click", function( event ){
-		var aggregateGroupId = createId( $( 'input.tp-aggregategroup-add-name' ).val() );
 		var aggregateGroupName = $( 'input.tp-aggregategroup-add-name' ).val();
 		var aggregateGroupDesc = $( 'input.tp-aggregategroup-add-description' ).val();
 		var $select = $( 'div.mw-tpa-group select' );
@@ -119,6 +109,7 @@ jQuery( document ).ready( function ( $ ) {
 			if ( data.error ) {
 				alert( data.error.info );
 			}else{
+				var aggregateGroupId = data.aggregategroups.aggregategroupId;
 				var $removeSpan =  $( '<span>' ).attr( 'id', aggregateGroupId ).addClass( 'tp-aggregate-remove-ag-button' );
 				var $div = $( "<div class='mw-tpa-group'>" )
 					.append ( $( '<h2>' ).text( aggregateGroupName ) 
@@ -150,7 +141,6 @@ jQuery( document ).ready( function ( $ ) {
 			action: "aggregategroups",
 			'do' : 'add',
 			token: $( "#token" ).val(),
-			aggregategroup: aggregateGroupId,
 			groupname : aggregateGroupName,
 			groupdescription: aggregateGroupDesc,
 			format: "json"

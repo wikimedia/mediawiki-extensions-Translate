@@ -28,7 +28,6 @@ class ApiAggregateGroups extends ApiBase {
 
 		$logger = new LogPage( 'pagetranslation' );
 		$params = $this->extractRequestParams();
-		$aggregateGroup = $params['aggregategroup'];
 		$action = $params['do'];
 		$output = array();
 		if ( $action === 'associate' || $action === 'dissociate' ) {
@@ -36,7 +35,10 @@ class ApiAggregateGroups extends ApiBase {
 			if ( !isset( $params['group'] ) ) {
 				$this->dieUsageMsg( array( 'missingparam', 'group' ) );
 			}
-
+			if ( !isset( $params['aggregategroup'] ) ) {
+				$this->dieUsageMsg( array( 'missingparam', 'aggregategroup' ) );
+			}
+			$aggregateGroup = $params['aggregategroup'];
 			// Get the list of group ids
 			$groupId = $params['group'];
 			$subgroups = TranslateMetadata::get( $aggregateGroup, 'subgroups' );
@@ -75,28 +77,36 @@ class ApiAggregateGroups extends ApiBase {
 			);
 			$logger->addEntry( $action, $group->getTitle(), null, array( serialize( $logparams ) ) );
 		} elseif ( $action === 'remove' ) {
+			if ( !isset( $params['aggregategroup'] ) ) {
+				$this->dieUsageMsg( array( 'missingparam', 'aggregategroup' ) );
+			}
+			$aggregateGroup = $params['aggregategroup'];
 			TranslateMetadata::set( $aggregateGroup, 'subgroups', false ) ;
 			TranslateMetadata::set( $aggregateGroup, 'name', false ) ;
 			TranslateMetadata::set( $aggregateGroup, 'description', false ) ;
 		} elseif ( $action === 'add' ) {
-			if ( TranslateMetadata::get( $aggregateGroup, 'subgroups' ) ) {
+			if ( !isset( $params['groupname'] ) ) {
+				$this->dieUsageMsg( array( 'missingparam', 'groupname' ) );
+			}
+			$name = trim( $params['groupname'] );
+			if ( strlen( $name ) === 0 ) {
+				$this->dieUsage( '‎Invalid Aggregate message group name', 'invalidaggregategroupname' );
+			}
+			$desc = trim( $params['groupdescription'] );
+			$aggregategroupId = self::generateAggregateGroupId( $name );
+			if ( TranslateMetadata::get( $aggregategroupId, 'subgroups' ) ) {
 				$this->dieUsage( 'Aggregate message group already exists', 'duplicateaggregategroup' );
 			}
-			if ( !self::isValid ( $aggregateGroup ) ) {
-				$this->dieUsage( '‎Invalid Aggregate message group name', 'invalidaggregategroup' );
-			}
-			TranslateMetadata::set( $aggregateGroup, 'subgroups', '' ) ;
-			$name = trim( $params['groupname'] );
-			$desc = trim( $params['groupdescription'] );
-
+			TranslateMetadata::set( $aggregategroupId, 'subgroups', '' ) ;
 			if ( $name ) {
-				TranslateMetadata::set( $aggregateGroup, 'name', $name ) ;
+				TranslateMetadata::set( $aggregategroupId, 'name', $name ) ;
 			}
 			if ( $desc ) {
-				TranslateMetadata::set( $aggregateGroup, 'description', $desc ) ;
+				TranslateMetadata::set( $aggregategroupId, 'description', $desc ) ;
 			}
 			// Once new aggregate group added, we need to show all the pages that can be added to that.
 			$output['groups'] = self::getAllPages();
+			$output['aggregategroupId'] = $aggregategroupId;
 		}
 
 		// If we got this far, nothing has failed
@@ -111,6 +121,14 @@ class ApiAggregateGroups extends ApiBase {
 				return false;
 		}
 		return true;
+	}
+
+	protected function generateAggregateGroupId ( $aggregateGroupName, $prefix = "agg-" ) {
+		if ( strlen( $aggregateGroupName ) + strlen ( $prefix )  >= 200 ) { // The database field for this has maxlimit 200
+			return $prefix . substr( sha1( $aggregateGroupName ), 0, 5 );
+		} else {
+			return $prefix . preg_replace( '/[\x00-\x1f\x23\x27\x2c\x2e\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/i', '_', $aggregateGroupName );
+		}
 	}
 
 	public function isWriteMode() {
@@ -132,7 +150,6 @@ class ApiAggregateGroups extends ApiBase {
 			),
 			'aggregategroup' => array(
 				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
 			),
 			'group' => array(
 				ApiBase::PARAM_TYPE => array_keys( MessageGroups::getAllGroups() ),
