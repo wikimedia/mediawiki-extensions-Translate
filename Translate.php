@@ -249,11 +249,19 @@ $wgResourceModules['ext.translate.special.languagestats'] = array(
 	),
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.multiselectautocomplete'] = array(
+	'scripts' => 'resources/ext.translate.multiselectautocomplete.js',
+	'dependencies' => array(
+		'jquery.ui.autocomplete',
+	),
+	'position' => 'top',
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.special.pagetranslation'] = array(
 	'scripts' => 'resources/ext.translate.special.pagetranslation.js',
 	'styles' => 'resources/ext.translate.special.pagetranslation.css',
 	'dependencies' => array(
-		'jquery.ui.autocomplete',
+		'ext.translate.multiselectautocomplete',
 	),
 	'position' => 'top',
 ) + $resourcePaths;
