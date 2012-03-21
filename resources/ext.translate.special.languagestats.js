@@ -31,10 +31,10 @@ jQuery( document ).ready( function( $ ) {
 
 		// Build toggle link
 		var $toggler = $( '<span class="groupexpander collapsed">[</span>' )
-			.append( $( '<a href="#" onclick="return false;"></a>' )
+			.append( $( '<a href="#"></a>' )
 			.text( mw.msg( 'translate-langstats-expand' ) ) )
 			.append( ']' )
-			.click( function() {
+			.click( function( e ) {
 				var $el = $( this );
 				// Switch the state and toggle the rows
 				if ( $el.hasClass( 'collapsed' ) ) {
@@ -46,6 +46,8 @@ jQuery( document ).ready( function( $ ) {
 					$el.addClass( 'collapsed' ).removeClass( 'expanded' );
 					$el.find( '> a' ).text( mw.msg( 'translate-langstats-expand' ) );
 				}
+				
+				e.preventDefault();
 			} );
 
 		// Add the toggle link to the first cell of the meta group table-row
@@ -66,10 +68,10 @@ jQuery( document ).ready( function( $ ) {
 		$allChildRows = $( 'tr[data-parentgroup]', $translateTable ),
 		$allToggles_cache = null,
 		$toggleAllButton = $( '<span class="collapsed">[</span>' )
-			.append( $( '<a href="#" onclick="return false;"></a>' )
+			.append( $( '<a href="#""></a>' )
 			.text( mw.msg( 'translate-langstats-expandall' ) ) )
 			.append( ']' )
-			.click( function() {
+			.click( function( e ) {
 				var
 					$el = $( this ),
 					$allToggles = !!$allToggles_cache ? $allToggles_cache : $( '.groupexpander', $translateTable );
@@ -86,6 +88,8 @@ jQuery( document ).ready( function( $ ) {
 					$el.find( '> a' ).text( mw.msg( 'translate-langstats-expandall' ) );
 					$allToggles.find( '> a' ).text( mw.msg( 'translate-langstats-expand' ) );
 				}
+				
+				e.preventDefault();
 			} );
 
 	// Initially hide them
