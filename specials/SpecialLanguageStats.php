@@ -77,6 +77,15 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 */
 	protected $purge;
 
+	/**
+	 * Helper variable to avoid overcounting message groups that appear
+	 * multiple times in the list with different parents. Aggregate message
+	 * group stats are always excluded from totals.
+	 *
+	 * @var array
+	 */
+	protected $statsCounted = array();
+
 	public function __construct() {
 		parent::__construct( 'LanguageStats' );
 
@@ -392,8 +401,12 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			}
 		}
 
-		if ( !$group instanceof AggregateMessageGroup ) {
-			$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
+		
+		if ( !$group instanceof AggregateMessageGroup  ) {
+			if ( !isset( $this->statsCounted[$groupId] ) ) {
+				$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
+				$this->statsCounted[$groupId] = true;
+			}
 		}
 
 		$rowParams = array();
