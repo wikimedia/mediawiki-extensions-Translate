@@ -145,8 +145,8 @@ Section text: <pre>$1</pre>',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|removed}} priority languages from translatable page [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|set}} the priority languages for translatable page [[:$1]] to $3. Reason: $4',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|limited}} languages for translatable page [[:$1]] to $3. Reason: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|added}} page [[:$1]] to $3.',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|removed}} page [[:$1]] from $3.',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|added}} translatable page [[:$1]] to aggregate group $3.',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|removed}} translatable page [[:$1]] from aggregate group $3.',
 
 	# move page replacement
 	'pt-movepage-title' => 'Move translatable page $1',
