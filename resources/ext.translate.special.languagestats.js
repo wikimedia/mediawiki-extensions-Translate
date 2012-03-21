@@ -68,7 +68,7 @@ jQuery( document ).ready( function( $ ) {
 		$allChildRows = $( 'tr[data-parentgroup]', $translateTable ),
 		$allToggles_cache = null,
 		$toggleAllButton = $( '<span class="collapsed">[</span>' )
-			.append( $( '<a href="#""></a>' )
+			.append( $( '<a href="#"></a>' )
 			.text( mw.msg( 'translate-langstats-expandall' ) ) )
 			.append( ']' )
 			.click( function( e ) {
