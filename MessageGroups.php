@@ -1106,7 +1106,6 @@ class MessageGroups {
 		global $wgTranslateWorkflowStates;
 
 		$deps = array();
-		$deps[] = new GlobalDependency( 'wgTranslateAddMWExtensionGroups' );
 		$deps[] = new GlobalDependency( 'wgEnablePageTranslation' );
 		$deps[] = new GlobalDependency( 'wgTranslateGroupFiles' );
 		$deps[] = new GlobalDependency( 'wgTranslateAC' );
