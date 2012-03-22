@@ -696,7 +696,7 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 		$data = file_get_contents( dirname( __FILE__ ) . '/wikimedia-mostused-2011.txt' );
 		$data = str_replace( "\r", '', $data );
 		$messages = explode( "\n", $data );
-		$contents = Language::getMessagesFor( $this->getSourceLanguage() );
+		$contents = parent::getDefinitions();
 		$definitions = array();
 
 		foreach ( $messages as $key ) {
