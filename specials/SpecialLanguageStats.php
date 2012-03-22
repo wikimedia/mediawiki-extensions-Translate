@@ -27,7 +27,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	protected $table;
 
 	/**
-	 * @var String
+	 * @var Array
 	 */
 	protected $targetValueName = array( 'code', 'language' );
 
@@ -62,7 +62,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	protected $noComplete = true;
 
 	/**
-	 * Whether to hide reos which are fully untranslated.
+	 * Whether to hide rows which are fully untranslated.
 	 * @var bool
 	 */
 	protected $noEmpty = false;
@@ -73,6 +73,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	protected $target;
 
 	/**
+	 * Whether to regenerate stats. Activated by action=purge in query params.
 	 * @var bool
 	 */
 	protected $purge;
