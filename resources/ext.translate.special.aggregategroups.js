@@ -87,9 +87,10 @@ jQuery( document ).ready( function ( $ ) {
 				$( event.target ).parents( '.mw-tpa-group' ).remove();
 			}
 		};
-
-		var params = $.extend( getApiParams( $target ), {'do' : 'remove' } );
-		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
+		if ( confirm ( mw.msg( 'tpt-aggregategroup-remove-confirm' ) ) ) {
+			var params = $.extend( getApiParams( $target ), {'do' : 'remove' } );
+			$.post( mw.util.wikiScript( 'api' ), params, successFunction );
+		}
 	}
 
 	$( '.tp-aggregate-add-button' ).click( associate );
