@@ -18,11 +18,37 @@ class PremadeMediawikiExtensionGroups {
 	protected $idPrefix = 'ext-';
 	protected $namespace = NS_MEDIAWIKI;
 
-	public function __construct() {
-		global $wgTranslateExtensionDirectory;
-		$dir = dirname( dirname( __FILE__ ) );
-		$this->definitionFile = $dir . '/groups/MediaWiki/mediawiki-defines.txt';
-		$this->path = $wgTranslateExtensionDirectory;
+	/**
+	 * @param $def Path to file
+	 * @param $path Path to extensions
+	 */
+	public function __construct( $def, $path ) {
+		$this->definitionFile = $def;
+		$this->path = $path;
+	}
+
+	/**
+	 * Whether to use the Configure extension to load extension home pages.
+	 * @since 2012-03-22
+	 */
+	public function setUseConfigure( $value ) {
+		$this->useConfigure = $value;
+	}
+
+	/**
+	 * How to prefix message group ids.
+	 * @since 2012-03-22
+	 */
+	public function setGroupPrefix( $value ) {
+		$this->idPrefix = $value;
+	}
+
+	/**
+	 * What namespace holds the messages.
+	 * @since 2012-03-22
+	 */
+	public function setNamespace( $value ) {
+		$this->namespace = $value;
 	}
 
 	/// Initialisation function

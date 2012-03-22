@@ -118,7 +118,6 @@ $wgAutoloadClasses['TranslationStats'] = "$dir/utils/TranslationStats.php";
  */
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = "$dir/ffs/MediaWikiExtensions.php";
 $wgAutoloadClasses['PremadeToolserverTextdomains'] = "$dir/ffs/ToolserverTextdomains.php";
-$wgAutoloadClasses['PremadeWikiaExtensionGroups'] = "$dir/ffs//WikiaExtensions.php";
 /**@}*/
 
 /**
