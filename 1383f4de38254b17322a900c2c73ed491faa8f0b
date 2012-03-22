@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAIn//+ko\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-03-22T06:54:48Z",
+      "side": 1,
+      "message": "Trim not needed",
+      "revId": "1383f4de38254b17322a900c2c73ed491faa8f0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAIn//+kk\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-03-22T06:54:48Z",
+      "side": 1,
+      "message": "Space after isset",
+      "revId": "1383f4de38254b17322a900c2c73ed491faa8f0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAIn//+k4\u003d",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-03-22T06:54:48Z",
+      "side": 1,
+      "message": "Double whitespace",
+      "revId": "1383f4de38254b17322a900c2c73ed491faa8f0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAIn//+kw\u003d",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-03-22T06:54:48Z",
+      "side": 1,
+      "message": "trim is not needed, since we make sure elsewhere that the value we store doesn\u0027t contain whitespaces",
+      "revId": "1383f4de38254b17322a900c2c73ed491faa8f0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAIn//+ks\u003d",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-03-22T06:54:48Z",
+      "side": 1,
+      "message": "No space should be after isset",
+      "revId": "1383f4de38254b17322a900c2c73ed491faa8f0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
