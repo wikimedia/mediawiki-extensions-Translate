@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAIn//+j8\u003d",
+        "filename": ".gitreview",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-03-22T08:39:24Z",
+      "side": 1,
+      "message": "Typo. It is port",
+      "revId": "d483f61e6168757d9bf26560f4cdb858a01ceeaa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
