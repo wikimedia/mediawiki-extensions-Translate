@@ -521,13 +521,6 @@ $wgTranslateEC[] = 'core';
 $wgTranslateCC = array();
 
 /**
- * Enable all configured MediaWiki extensions.
- * Extensions which do not exist are ignored.
- * @see Translate/groups/mediawiki-defines.txt
- */
-$wgTranslateAddMWExtensionGroups = false;
-
-/**
  * Location in the filesystem to which paths are relative in custom groups.
  */
 $wgTranslateGroupRoot = '/var/www/externals';
