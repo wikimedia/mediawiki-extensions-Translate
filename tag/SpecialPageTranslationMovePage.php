@@ -424,6 +424,24 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		if ( $priorityreason !== false ) {
 			TranslateMetadata::set( $newGroupId, 'priorityreason', $priorityreason );
 		}
+		// make the changes in aggregate groups metadata, if present in any of them.
+		$groups = MessageGroups::getAllGroups();
+		$aggregates = array();
+		foreach ( $groups as $group ) {
+			if ( $group instanceof AggregateMessageGroup ) {
+				$subgroups = TranslateMetadata::get(  $group->getId(), 'subgroups' ) ;
+				if ( $subgroups !== false ) {
+					$subgroups = array_map( 'trim', explode( ',', $subgroups ) );
+					$subgroups = array_flip( $subgroups );
+					if ( isset ( $subgroups[$oldGroupId] ) ) {
+						$subgroups[$newGroupId] = $subgroups[$oldGroupId];
+						unset( $subgroups[$oldGroupId] );
+						$subgroups = array_flip( $subgroups );
+						TranslateMetadata::set( $group->getId(), 'subgroups', implode( ',', $subgroups ) ) ;
+					}
+				}
+			}
+		}
 	}
 
 	protected function checkMoveBlockers() {
