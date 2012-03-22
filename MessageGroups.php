@@ -1100,7 +1100,6 @@ class MessageGroups {
 	 * their own cache dependencies.
 	 */
 	protected static function loadGroupDefinitions() {
-		global $wgTranslateAddMWExtensionGroups;
 		global $wgEnablePageTranslation, $wgTranslateGroupFiles;
 		global $wgTranslateAC, $wgTranslateEC, $wgTranslateCC;
 		global $wgAutoloadClasses;
@@ -1115,14 +1114,6 @@ class MessageGroups {
 		$deps[] = new GlobalDependency( 'wgTranslateCC' );
 		$deps[] = new GlobalDependency( 'wgTranslateExtensionDirectory' );
 		$deps[] = new GlobalDependency( 'wgTranslateWorkflowStates' );
-		$deps[] = new FileDependency( dirname( __FILE__ ) . '/groups/mediawiki-defines.txt' );
-		$deps[] = new FileDependency( dirname( __FILE__ ) . '/groups/Wikia/extensions.txt' );
-		$deps[] = new FileDependency( dirname( __FILE__ ) . '/groups/Toolserver/toolserver-textdomains.txt' );
-
-		if ( $wgTranslateAddMWExtensionGroups ) {
-			$a = new PremadeMediawikiExtensionGroups;
-			$a->addAll();
-		}
 
 		if ( $wgEnablePageTranslation ) {
 			$dbr = wfGetDB( DB_MASTER );

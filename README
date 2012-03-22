@@ -30,6 +30,8 @@ And for the code at:
  https://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-03-22
+- $wgTranslateAddMWExtensionGroups was removed.
 * 2012-03-13
 - Removed groupprefix option from export.php and sync-group.php. Use * wildcard
   with group option.
