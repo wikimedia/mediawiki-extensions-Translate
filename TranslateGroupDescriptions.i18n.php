@@ -548,6 +548,7 @@ $messages['da'] = array(
 	'translate-group-desc-tsint' => 'En besked gruppe for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n systemet til [http://toolserver.org Toolserver] værktøjer (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] er i stand til hurtigt at finde forfatterne til en del af en side i en Wikimedia wiki',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] giver en frakoblet tekstudgave af Wikipedia på en mobil enhed.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] er et flerplatforms mobil- og tabletprogram til at læse og bidrage til Wikipedia',
 );
 
 /** German (Deutsch)
