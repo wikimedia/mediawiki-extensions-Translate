@@ -5,7 +5,7 @@
  *
  * @author Niklas Laxstrom
  *
- * @copyright Copyright © 2010, Niklas Laxström
+ * @copyright Copyright © 2010-2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @file
  */
@@ -28,18 +28,18 @@ class MWExtFileList extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Script which lists required i18n files for mediawiki extensions';
-		$this->addOption( 'path', 'List only files for given group path. Must match the path attribute of groups.', false, 'witharg' );
-		$this->addOption( 'target', 'List only files missing from target. Defaults to path.', false, 'witharg' );
+		$this->mDescription = 'Script which lists required i18n files for mediawiki extension style groups';
+		$this->addOption( 'group', 'Only groups that match the provided pattern', true, 'witharg' );
 	}
 
 	public function execute() {
+		$groupIds = explode( ',', $this->getOption( 'group' ) );
+		$groupIds = MessageGroups::expandWildcards( $groupIds );
+		$groups = MessageGroups::getGroupsById( $groupIds );
 		$this->files = array();
-		$groups = MessageGroups::singleton()->getGroups();
-		$target = $this->getOption( 'path' );
+
 		foreach ( $groups as $group ) {
 			if ( !$group instanceof ExtensionMessageGroup ) continue;
-			if ( $target && $group->getPath() !== $target ) continue;
 			$this->addPaths( $group->getMessageFile( 'en' ) );
 			$this->addPaths( $group->getAliasFile( 'en' ) );
 			$this->addPaths( $group->getMagicFile( 'en' ) );
@@ -52,11 +52,8 @@ class MWExtFileList extends Maintenance {
 	public function addPaths( $file ) {
 		if ( $file === '' ) return;
 
-		$target = $this->getOption( 'target', $this->getOption( 'path' ) );
-
 		$paths = array();
 		do {
-			if ( file_exists( "$target/$file" ) ) break;
 			$paths[] = $file;
 			$file = dirname( $file );
 		} while ( $file !== '.' && $file !== '' );
