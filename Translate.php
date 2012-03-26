@@ -271,6 +271,9 @@ $wgResourceModules['ext.translate.special.aggregategroups'] = array(
 	'styles' => 'resources/ext.translate.special.aggregategroups.css',
 	'position' => 'top',
 	'dependencies' => array( 'mediawiki.util' ),
+	'messages' => array(
+		'tpt-aggregategroup-remove-confirm',
+	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.supportedlanguages'] = array(
