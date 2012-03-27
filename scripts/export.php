@@ -9,7 +9,7 @@
  * @file
  */
 
-$optionsWithArgs = array( 'lang', 'skip', 'target', 'group', 'threshold', 'ppgettext' );
+$optionsWithArgs = array( 'lang', 'skip', 'target', 'group', 'threshold', 'ppgettext', 'hours' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 function showUsage() {
@@ -92,24 +92,55 @@ if ( isset( $options['group'] ) ) {
 
 $groupIds = MessageGroups::expandWildcards( $groupIds );
 $groups = MessageGroups::getGroupsById( $groupIds );
+foreach ( $groups as $groupId => $group ) {
+	if ( !$group instanceof MessageGroup ) {
+		STDERR( "EE2: Unknown message group $groupId" );
+		exit( 1 );
+	}
+
+	if ( $group->isMeta() ) {
+		STDERR( "Skipping meta message group $groupId" );
+		unset( $groups[$groupId] );
+		continue;
+	}
+}
 
 if ( !count( $groups ) ) {
 	STDERR( "EE1: No valid message groups identified." );
 	exit( 1 );
 }
 
-foreach ( $groups as $groupId => $group ) {
-	if ( !$group instanceof MessageGroup ) {
-		STDERR( "Unknown message group $groupId" );
-		exit( 1 );
+$changeFilter = false;
+if ( isset( $options['hours'] ) ) {
+	$namespaces = array();
+	foreach( $groups as $group ) {
+		$namespaces[$group->getNamespace()] = true;
 	}
+	$namespaces = array_keys( $namespaces );
+	$bots = true;
 
-	if ( $group->isMeta() ) {
-		STDERR( "Skipping meta message group $groupId" );
+	$changeFilter = array();
+	$rows = TranslateUtils::translationChanges( $options['hours'], $bots, $namespaces );
+	foreach ( $rows as $row ) {
+		$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
+		$handle = new MessageHandle( $title );
+		$code = $handle->getCode();
+		if ( !$code ) {
+			continue;
+		}
+		$groupIds = $handle->getGroupIds();
+		foreach ( $groupIds as $groupId ) {
+			$changeFilter[$groupId][$code] = true;
+		}
+	}
+}
+
+foreach ( $groups as $groupId => $group ) {
+	// No changes to this group at all
+	if ( is_array( $changeFilter ) && !isset( $changeFilter[$groupId] ) ) {
+		STDERR( "No recent changes to $groupId" );
 		continue;
 	}
-
-	STDERR( "Exporting $groupId" );
 
 	$langs = $reqLangs;
 	if ( $threshold ) {
@@ -125,6 +156,17 @@ foreach ( $groups as $groupId => $group ) {
 			}
 		}
 	}
+
+	// Filter out unchanged languages from requested languages
+	if ( is_array( $changeFilter ) ) {
+		$langs = array_intersect( $langs, array_keys( $changeFilter[$groupId] ) );
+	}
+
+	if ( !count( $langs ) ) {
+		continue;
+	}
+
+	STDERR( "Exporting $groupId" );
 
 	if ( $group instanceof FileBasedMessageGroup ) {
 		$ffs = $group->getFFS();
