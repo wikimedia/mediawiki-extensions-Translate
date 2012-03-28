@@ -392,7 +392,7 @@ class JavaFFS extends SimpleFFS {
 					continue;
 				}
 
-				if ( $line[0] === '#' ) {
+				if ( $line[0] === '#' || $line[0] === '!' ) {
 					$match = array();
 					$ok = preg_match( '/#\s*Author:\s*(.*)/', $line, $match );
 
@@ -404,19 +404,17 @@ class JavaFFS extends SimpleFFS {
 				}
 
 				if ( strpos( $line, $this->keySeparator ) === false ) {
-					throw new MWException( "Line without '{$this->keySeparator}': $line." );
+					throw new MWException( "Line without separator '{$this->keySeparator}': $line." );
 				}
 
-				list( $key, $value ) = explode( $this->keySeparator, $line, 2 );
-				$key = trim( $key );
-
+				list( $key, $value ) = self::readRow( $line, $this->keySeparator );
 				if ( $key === '' ) {
 					throw new MWException( "Empty key in line $line." );
 				}
-
-				$value = str_replace( '\n', "\n", $value );
 			}
 
+			/* TODO: this doesn't handle the pathological case of
+			 * even number of trailing \ */
 			if ( strlen( $value ) && $value[strlen( $value ) - 1] === "\\" ) {
 				$value = substr( $value, 0, strlen( $value ) - 1 );
 				$linecontinuation = true;
@@ -448,7 +446,6 @@ class JavaFFS extends SimpleFFS {
 		$mangler = $this->group->getMangler();
 
 		foreach ( $collection as $key => $m ) {
-			$key = $mangler->unmangle( $key );
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 
@@ -456,15 +453,13 @@ class JavaFFS extends SimpleFFS {
 				continue;
 			}
 
-			// Make sure we do not slip newlines trough... it would be fatal.
-			$value = str_replace( "\n", '\\n', $value );
-
 			// Just to give an overview of translation quality.
 			if ( $m->hasTag( 'fuzzy' ) ) {
 				$output .= "# Fuzzy\n";
 			}
 
-			$output .= "$key{$this->keySeparator}$value\n";
+			$key = $mangler->unmangle( $key );
+			$output .= self::writeRow( $key, $this->keySeparator, $value );
 		}
 
 		if ( $output ) {
@@ -472,6 +467,78 @@ class JavaFFS extends SimpleFFS {
 		}
 		return '';
 	}
+
+
+	/**
+	 * Writes well-formed properties file row with key and value.
+	 * @return string
+	 * @since 2012-03-28
+	 */
+	public static function writeRow( /*string*/$key, /*string*/$sep, /*string*/$value ) {
+		/* Keys containing the separator need escaping. Also escape comment
+		 * characters, though strictly they would only need escaping when
+		 * they are the first character. Plus the escape character itself. */
+		$key = addcslashes( $key, "#!$sep\\" );
+		// Make sure we do not slip newlines trough... it would be fatal.
+		$value = str_replace( "\n", '\\n', $value );
+		return "$key$sep$value\n";
+	}
+
+	/**
+	 * Parses non-empty properties file row to key and value.
+	 * @return string
+	 * @since 2012-03-28
+	 */
+	public static function readRow( /*string*/$line, /*string*/$sep ) {
+		if ( strpos( $line, '\\' ) === false ) {
+			list( $key, $value ) = explode( $sep, $line, 2 );
+		} else {
+			/* There might be escaped separators in the key, using
+			 * slower method to find the separator. */
+
+			/* Make the key default to empty instead of value, because
+			 * empty key causes error on callers, while empty value
+			 * wouldn't. */
+			$key = '';
+			$value = $line;
+
+			/* Find the first unescaped separator. Example:
+			 * First line is the string being read, second line is the
+			 * value of $escaped after having read the above character.
+			 *
+			 * ki\ts\\s\=a = koira
+			 * 0010010010000
+			 *          ^ Not separator because $escaped was true
+			 *             ^ Split the string into key and value here
+			 */
+
+			$len = strlen( $line );
+			$escaped = false;
+			for ( $i = 0; $i < $len; $i++ ) {
+				$char = $line[$i];
+				if ( $char === '\\' ) {
+					$escaped = !$escaped;
+				} elseif ( $escaped ) {
+					$escaped = false;
+				} elseif ( $char === $sep ) {
+					$key = substr( $line, 0, $i );
+					// Excluding the separator character from the value
+					$value = substr( $line, $i + 1 );
+					break;
+				}
+			}
+		}
+
+		/* We usually don't want to expand things like \t in values since
+		 * translators cannot easily input those. But in keys we do.
+		 * \n is exception we do handle in values. */
+		$key = trim( $key );
+		$key = stripcslashes( $key );
+		$value = ltrim( $value );
+		$value = str_replace( '\n', "\n", $value );
+		return array( $key, $value );
+	}
+
 
 	/**
 	 * @param $collection MessageCollection
