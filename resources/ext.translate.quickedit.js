@@ -287,7 +287,9 @@
 			var callbacks = {}
 			callbacks.success = function ( text ) {
 				// Update the cell value with the new translation
-				$this.find( 'td' ).last().text( text );
+				$this.find( 'td' ).last()
+					.removeClass( 'untranslated' )
+					.text( text );
 			};
 			callbacks.close = function () {
 				$this.html( current );
