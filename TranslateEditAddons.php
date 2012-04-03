@@ -490,11 +490,24 @@ class TranslateEditAddons {
 		TranslationHelpers::addModules( $out );
 
 		$boxes = array();
-		$boxes[] = $th->getDocumentationBox();
-		$boxes[] = $th->getDefinitionBox();
-		$boxes[] = $th->getTranslationDisplayBox();
+		$errors = '';
 
-		$output = Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
+		$boxMakers = array(
+			array( $th, 'getDocumentationBox' ),
+			array( $th, 'getDefinitionBox' ),
+			array( $th, 'getTranslationDisplayBox' ),
+		);
+
+		foreach ( $boxMakers as $maker ) {
+			try {
+				$boxes[] = call_user_func( $maker );
+			} catch ( TranslationHelperExpection $e ) {
+				$errors .=  "<!-- Box $name not available: {$e->getMessage()} -->\n";
+			}
+		}
+
+		$output = $errors . implode( "\n", $boxes );
+		$output = Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), $output );
 		$out->addHtml( $output );
 
 		return false;
