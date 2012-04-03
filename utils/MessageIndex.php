@@ -199,17 +199,22 @@ class FileCachedMessageIndex extends MessageIndex {
 			return $this->index;
 		}
 
+		wfProfileIn( __METHOD__ );
 		$file = TranslateUtils::cacheFile( $this->filename );
 		if ( file_exists( $file ) ) {
-			return $this->index = unserialize( file_get_contents( $file ) );
+			$this->index = unserialize( file_get_contents( $file ) );
 		} else {
-			return $this->index = $this->rebuild();
+			$this->index = $this->rebuild();
 		}
+		wfProfileOut( __METHOD__ );
+		return $this->index;
 	}
 
 	protected function store( array $array ) {
+		wfProfileIn( __METHOD__ );
 		$file = TranslateUtils::cacheFile( $this->filename );
 		file_put_contents( $file, serialize( $array ) );
+		wfProfileOut( __METHOD__ );
 	}
 }
 
@@ -233,17 +238,22 @@ class CachedMessageIndex extends MessageIndex {
 			return $this->index;
 		}
 
+		wfProfileIn( __METHOD__ );
 		$key = wfMemckey( $this->key );
 		$data = $this->cache->get( $key );
 		if ( is_array( $data ) ) {
-			return $this->index = $data;
+			$this->index = $data;
 		} else {
-			return $this->index = $this->rebuild();
+			$this->index = $this->rebuild();
 		}
+		wfProfileOut( __METHOD__ );
+		return $this->index;
 	}
 
 	protected function store( array $array ) {
+		wfProfileIn( __METHOD__ );
 		$key = wfMemckey( $this->key );
 		$this->cache->set( $key, $array );
+		wfProfileOut( __METHOD__ );
 	}
 }
