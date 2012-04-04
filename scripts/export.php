@@ -50,12 +50,6 @@ if ( !isset( $options['lang'] ) ) {
 	exit( 1 );
 }
 
-if ( isset( $options['skip'] ) ) {
-	$skip = array_map( 'trim', explode( ',', $options['skip'] ) );
-} else {
-	$skip = array();
-}
-
 if ( !isset( $options['group'] ) ) {
 	STDERR( "You need to specify one or more groups" );
 	exit( 1 );
@@ -84,7 +78,16 @@ if ( isset( $options['no-fuzzy'] ) ) {
 	$noFuzzy = false;
 }
 
+$skip = array();
+if ( isset( $options['skip'] ) ) {
+	$skip = array_map( 'trim', explode( ',', $options['skip'] ) );
+}
 $reqLangs = Cli::parseLanguageCodes( $options['lang'] );
+$reqLangs = array_flip( $reqLangs );
+foreach ( $skip as $skipLang ) {
+	unset( $reqLangs[$skipLang] );
+}
+$reqLangs = array_flip( $reqLangs );
 
 if ( isset( $options['group'] ) ) {
 	$groupIds = explode( ',', trim( $options['group'] ) );
@@ -186,8 +189,7 @@ foreach ( $groups as $groupId => $group ) {
 		}
 
 		foreach ( $langs as $lang ) {
-			// Do not export if language code is to be skipped or is not a valid language.
-			if ( in_array( $lang, $skip ) || !$group->isValidLanguage( $lang ) ) {
+			if ( !$group->isValidLanguage( $lang ) ) {
 				continue;
 			}
 
