@@ -32,6 +32,7 @@ And for the code at:
 == Change log ==
 * 2012-04-10
 - New MessageIndex backends: database and cdb
+- Fixed an out of memory issue with page translation feature on MW 1.18 and older
 * 2012-03-22
 - $wgTranslateAddMWExtensionGroups was removed.
 * 2012-03-13
