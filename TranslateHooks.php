@@ -191,6 +191,7 @@ class TranslateHooks {
 		$updater->addExtensionUpdate( array( 'addTable', 'translate_groupreviews', "$dir/translate_groupreviews.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addTable', 'translate_tms', "$dir/translate_tm.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addTable', 'translate_metadata', "$dir/translate_metadata.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addTable', 'translate_messageindex', "$dir/translate_messageindex.sql", true ) );
 		return true;
 	}
 
@@ -202,6 +203,7 @@ class TranslateHooks {
 	public static function parserTestTables( &$tables ) {
 		$tables[] = 'revtag';
 		$tables[] = 'translate_groupstats';
+		$tables[] = 'translate_messageindex';
 		return true;
 	}
 

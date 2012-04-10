@@ -30,6 +30,8 @@ And for the code at:
  https://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-04-10
+- New MessageIndex backends: database and cdb
 * 2012-03-22
 - $wgTranslateAddMWExtensionGroups was removed.
 * 2012-03-13

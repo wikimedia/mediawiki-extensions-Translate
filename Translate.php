@@ -569,12 +569,12 @@ $wgTranslateExtensionDirectory = "$IP/extensions/";
 $wgTranslateCacheDirectory = false;
 
 /**
- * Configures where message index is stored.
- * Available classes are CachedMessageIndex and FileCachedMessageIndex.
- * FileCachedMessageIndex needs $wgCacheDirectory to be functional.
+ * Configures how the message index is stored.
+ * The other backends need $wgCacheDirectory to be functional.
  */
-$wgTranslateMessageIndex = array( 'CachedMessageIndex' );
-// $wgTranslateMessageIndex = array( 'FileCachedMessageIndex' );
+$wgTranslateMessageIndex = array( 'DatabaseMessageIndex' );
+// $wgTranslateMessageIndex = array( 'SerializedMessageIndex' );
+// $wgTranslateMessageIndex = array( 'CDBMessageIndex' );
 
 # </source>
 # ==== PHPlot ====

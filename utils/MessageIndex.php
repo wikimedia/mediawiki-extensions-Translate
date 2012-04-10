@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxstrom
- * @copyright Copyright © 2008-2011, Niklas Laxström
+ * @copyright Copyright © 2008-2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -34,6 +34,7 @@ abstract class MessageIndex {
 	}
 
 	/**
+	 * Retrieves a list of groups given MessageHandle belongs to.
 	 * @since 2012-01-04
 	 * @return array
 	 */
@@ -42,9 +43,9 @@ abstract class MessageIndex {
 		$key = $handle->getKey();
 		$normkey = strtr( strtolower( "$namespace:$key" ), " ", "_"  );
 
-		$index = self::singleton()->retrieve();
-		if ( isset( $index[$normkey] ) ) {
-			return (array) $index[$normkey];
+		$value = self::singleton()->get( $normkey );
+		if ( $value !== null ) {
+			return (array) $value;
 		} else {
 			return array();
 		}
@@ -59,7 +60,23 @@ abstract class MessageIndex {
 		return count( $groups ) ? array_shift( $groups ) : null;
 	}
 
-	/** @return array */
+	/**
+	 * Looks up the stored value for single key. Only for testing.
+	 * @since 2012-04-10
+	 * @param String $key
+	 * @return String|Array|null
+	 */
+	protected function get( $key ) {
+		// Default implementation
+		$mi = $this->retrieve();
+		if ( isset( $mi[$key] ) ) {
+			return $mi[$key];
+		} else {
+			return null;
+		}
+	}
+
+	/// @return array
 	abstract public function retrieve();
 	abstract protected function store( array $array );
 
@@ -182,12 +199,42 @@ abstract class MessageIndex {
 		}
 		unset( $id ); // Disconnect the previous references to this $id
 	}
+
+	/* These are probably slower than serialize and unserialize,
+	 * but they are more space efficient because we only need
+	 * strings and arrays. */
+	protected function serialize( $data ) {
+		if ( is_array( $data ) ) {
+			return implode( '|', $data );
+		} else {
+			return $data;
+		}
+	}
+
+	protected function unserialize( $data ) {
+		if ( strpos( $data, '|' ) !== false ) {
+			return explode( '|', $data );
+		}
+		return $data;
+	}
+
 }
 
 /**
  * Storage on serialized file.
+ *
+ * This serializes the whole array. Because this format can preserve
+ * the values which are stored as references inside the array, this is
+ * the most space efficient storage method and fastest when you want
+ * the full index.
+ *
+ * Unfortunately when the size of index grows to about 50000 items, even
+ * though it is only 3,5M on disk, it takes 35M when loaded into memory
+ * and the loading can take more than 0,5 seconds. Because usually we
+ * need to look up only few keys, it is better to use another backend
+ * which provides random access - this backend doesn't support that.
  */
-class FileCachedMessageIndex extends MessageIndex {
+class SerializedMessageIndex extends MessageIndex {
 	/// @var array
 	protected $index;
 
@@ -217,9 +264,75 @@ class FileCachedMessageIndex extends MessageIndex {
 		wfProfileOut( __METHOD__ );
 	}
 }
+/// BC
+class FileCachedMessageIndex extends SerializedMessageIndex {}
 
 /**
- * Storage on ObjectCache.
+ * Storage on the database itself.
+ *
+ * This is likely to be the slowest backend. However it scales okay
+ * and provides random access. It also doesn't need any special setup,
+ * the database table is added with update.php together with other tables,
+ * which is the reason this is the default backend. It also works well
+ * on multi-server setup without needing for shared file storage.
+ *
+ * @since 2012-04-12
+ */
+class DatabaseMessageIndex extends MessageIndex {
+	/// @var array
+	protected $index;
+
+	/** @return array */
+	public function retrieve() {
+		if ( $this->index !== null ) {
+			return $this->index;
+		}
+
+		wfProfileIn( __METHOD__ );
+		$dbr = wfGetDB( DB_SLAVE );
+		$res = $dbr->select( 'translate_messageindex', '*', array(), __METHOD__ );
+		$this->index = array();
+		foreach ( $res as $row ) {
+			$this->index[$row->tmi_key] = $this->unserialize( $row->tmi_value );
+		}
+		wfProfileOut( __METHOD__ );
+		return $this->index;
+	}
+
+	protected function get( $key ) {
+		wfProfileIn( __METHOD__ );
+		$dbr = wfGetDB( DB_SLAVE );
+		$value = $dbr->selectField( 'translate_messageindex', 'tmi_value', array( 'tmi_key' => $key ), __METHOD__ );
+		if ( is_string( $value ) ) {
+			$value = $this->unserialize( $value );
+		} else {
+			$value = null;
+		}
+		wfProfileOut( __METHOD__ );
+		return $value;
+	}
+
+	protected function store( array $array ) {
+		wfProfileIn( __METHOD__ );
+		$dbw = wfGetDB( DB_MASTER );
+		$rows = array();
+		foreach ( $array as $key => $value ) {
+			$value = $this->serialize( $value );
+			$rows[] = array( 'tmi_key' => $key, 'tmi_value' => $value );
+		}
+		$dbw->delete( 'translate_messageindex', '*', __METHOD__ );
+		$dbw->replace( 'translate_messageindex', array( array( 'tmi_key' ) ), $rows, __METHOD__ );
+		wfProfileOut( __METHOD__ );
+	}
+}
+
+/**
+ * Storage on the object cache.
+ *
+ * This can be faster than DatabaseMessageIndex, but it doesn't
+ * provide random access, and the data is not guaranteed to be persistent.
+ *
+ * This is unlikely to be the best backend for you, so don't use it.
  */
 class CachedMessageIndex extends MessageIndex {
 	protected $key = 'translate-messageindex';
@@ -256,4 +369,98 @@ class CachedMessageIndex extends MessageIndex {
 		$this->cache->set( $key, $array );
 		wfProfileOut( __METHOD__ );
 	}
+}
+
+
+/**
+ * Storage on CDB files.
+ *
+ * This is improved version of SerializedMessageIndex. It uses CDB files
+ * for storage, which means it provides random access. The CDB files are
+ * about double the size of serialized files (~7M for 50000 keys).
+ *
+ * Loading the whole index is slower than serialized, but about the same
+ * as for database. Suitable for single-server setups where
+ * SerializedMessageIndex is too slow for sloading the whole index.
+ *
+ * @since 2012-04-10
+ */
+class CDBMessageIndex extends MessageIndex {
+	/// @var Array
+	protected $index;
+
+	/// @var CdbReader
+	protected $reader;
+
+	/// @var String
+	protected $filename = 'translate_messageindex.cdb';
+
+	/** @return array */
+	public function retrieve() {
+		$reader = $this->getReader();
+		// This must be below the line above, which may fill the index
+		if ( $this->index !== null ) {
+			return $this->index;
+		}
+
+		wfProfileIn( __METHOD__ );
+		$keys = $this->unserialize( $reader->get( '#keys' ) );
+		$this->index = array();
+		foreach ( $keys as $key ) {
+			$this->index[$key] = $this->unserialize( $reader->get( $key ) );
+		}
+		wfProfileOut( __METHOD__ );
+		return $this->index;
+	}
+
+	protected function get( $key ) {
+		$reader = $this->getReader();
+
+		// We might have the full cache loaded
+		if ( $this->index !== null ) {
+			if ( isset( $this->index[$key] ) ) {
+				return $this->index[$key];
+			} else {
+				return null;
+			}
+		}
+
+		wfProfileIn( __METHOD__ );
+		$value = $reader->get( $key );
+		if ( !is_string( $value ) ) {
+			$value = null;
+		} else {
+			$value = $this->unserialize( $value );
+		}
+		wfProfileOut( __METHOD__ );
+		return $value;
+	}
+
+	protected function store( array $array ) {
+		wfProfileIn( __METHOD__ );
+		$this->reader = null;
+
+		$file = TranslateUtils::cacheFile( $this->filename );
+		$cache = CdbWriter::open( $file );
+		$keys = array_keys( $array );
+		$cache->set( '#keys', $this->serialize( $keys ) );
+
+		foreach ( $array as $key => $value ) {
+			$value = $this->serialize( $value );
+			$cache->set( $key, $value );
+		}
+		$cache->close();
+		wfProfileOut( __METHOD__ );
+	}
+
+	protected function getReader() {
+		$file = TranslateUtils::cacheFile( $this->filename );
+		if ( $this->reader === null ) {
+			if ( !file_exists( $file ) ) {
+				$this->index = $this->rebuild();
+			}
+		}
+		return $this->reader = CdbReader::open( $file );
+	}
+
 }
