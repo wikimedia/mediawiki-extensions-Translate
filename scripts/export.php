@@ -31,6 +31,7 @@ Options:
   --no-location Only used combined with "ppgettext". This option will rebuild
                 the gettext file without location information.
   --no-fuzzy    Do not include any messages marked as fuzzy/outdated.
+  --codemaponly Only export languages that have a codeMap entry.
 EOT
 );
 	exit( 1 );
@@ -89,6 +90,11 @@ foreach ( $skip as $skipLang ) {
 }
 $reqLangs = array_flip( $reqLangs );
 
+$codemapOnly = false;
+if ( isset( $options['codemaponly'] ) ) {
+	$codemapOnly = true;
+}
+
 if ( isset( $options['group'] ) ) {
 	$groupIds = explode( ',', trim( $options['group'] ) );
 }
@@ -146,6 +152,15 @@ foreach ( $groups as $groupId => $group ) {
 	}
 
 	$langs = $reqLangs;
+
+	if ( $codemapOnly ) {
+		foreach ( $langs as $index => $code ) {
+			if ( $group->mapCode( $code ) == $code ) {
+				unset( $langs[$index] );
+			}
+		}
+	}
+
 	if ( $threshold ) {
 		$stats = MessageGroupStats::forGroup( $groupId );
 		foreach ( $langs as $index => $code ) {
