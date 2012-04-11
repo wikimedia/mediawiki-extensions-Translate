@@ -212,31 +212,6 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * Tries to determine to which group this message belongs. It tries to get
-	 * group id from loadgroup GET-paramater, but fallbacks to messageIndex file
-	 * if no valid group was provided, or the group provided is a meta group.
-	 *
-	 * @param $namespace \int The namespace number for the key we are interested in.
-	 * @param $key \string The message key we are interested in.
-	 * @return MessageGroup which the key belongs to, or null.
-	 */
-	private static function getMessageGroup( $namespace, $key ) {
-		global $wgRequest;
-
-		$group = $wgRequest->getText( 'loadgroup', '' );
-		$mg = MessageGroups::getGroup( $group );
-
-		if ( $mg === null ) {
-			$group = TranslateUtils::messageKeyToGroup( $namespace, $key );
-			if ( $group ) {
-				$mg = MessageGroups::getGroup( $group );
-			}
-		}
-
-		return $mg;
-	}
-
-	/**
 	 * @param $object
 	 * @return String
 	 */
