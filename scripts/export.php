@@ -204,7 +204,7 @@ foreach ( $groups as $groupId => $group ) {
 			// Do post processing if requested.
 			if ( $definitionFile ) {
 				if ( is_file( $definitionFile ) ) {
-					$targetFileName = $ffs->getWritePath() . $group->getTargetFilename( $collection->code );
+					$targetFileName = $ffs->getWritePath() . "/" . $group->getTargetFilename( $collection->code );
 					$cmd = "msgmerge --quiet " . $noLocation . "--output-file=" . $targetFileName . ' ' . $targetFileName . ' ' . $definitionFile;
 					wfShellExec( $cmd, $ret );
 
