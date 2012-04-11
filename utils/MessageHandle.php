@@ -45,14 +45,12 @@ class MessageHandle {
 		if ( $this->key === null ) {
 			$title = $this->getTitle();
 			// Check if this is a valid message first
-			$ns = $title->getNamespace();
-			$text = $title->getDBkey();
-			$known = TranslateUtils::messageKeyToGroups( $ns, $text );
+			$this->key = $title->getText();
+			$known = count( MessageIndex::singleton()->getGroupIds( $this ) );
 
-			$pos = strrpos( $text, '/' );
+			$pos = strrpos( $this->key, '/' );
 			if ( $known || $pos === false ) {
 				$this->code = '';
-				$this->key = $text;
 			} else {
 				$this->code = substr( $text, $pos + 1 );
 				$this->key = substr( $text, 0, $pos );
@@ -107,7 +105,7 @@ class MessageHandle {
 	 */
 	public function getGroupIds() {
 		if ( $this->groupIds === null ) {
-			$this->groupIds = TranslateUtils::messageKeyToGroups( $this->getTitle()->getNamespace(), $this->getKey() );
+			$this->groupIds = MessageIndex::singleton()->getGroupIds( $this );
 		}
 		return $this->groupIds;
 	}
