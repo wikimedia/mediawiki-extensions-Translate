@@ -212,25 +212,6 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * @param $title Title
-	 * @return Array of the message and the language
-	 */
-	public static function figureMessage( Title $title ) {
-		$text = $title->getDBkey();
-		$pos = strrpos( $text, '/' );
-
-		if ( $pos === false ) {
-			$code = '';
-			$key = $text;
-		} else {
-			$code = substr( $text, $pos + 1 );
-			$key = substr( $text, 0, $pos );
-		}
-
-		return array( $key, $code );
-	}
-
-	/**
 	 * Tries to determine to which group this message belongs. It tries to get
 	 * group id from loadgroup GET-paramater, but fallbacks to messageIndex file
 	 * if no valid group was provided, or the group provided is a meta group.
