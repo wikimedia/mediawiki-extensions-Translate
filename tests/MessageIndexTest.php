@@ -9,19 +9,26 @@
  */
 
 class MessageIndexTest extends MediaWikiTestCase {
+	protected $config;
 
 	public function setUp() {
 		parent::setUp();
 		$this->testdata = unserialize( file_get_contents( 'messageindexdata.ser' ) );
+		global $wgTranslateCacheDirectory;
+		$this->config = $wgTranslateCacheDirectory;
+		// Only in 1.20, but who runs tests again older versions anyway?
+		$wgTranslateCacheDirectory = $this->getNewTempDirectory();
+	}
+
+	public function tearDown() {
+		global $wgTranslateCacheDirectory;
+		$wgTranslateCacheDirectory = $this->config;
 	}
 
 	/**
 	 * @dataProvider MessageIndexImplementationProvider
 	 */
 	public function testMessageIndexImplementation( $mi ) {
-		global $wgTranslateCacheDirectory;
-		$wgTranslateCacheDirectory = '.';
-
 		$data = $this->testdata;
 		$mi->store( $data );
 
