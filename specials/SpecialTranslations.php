@@ -136,12 +136,11 @@ class SpecialTranslations extends SpecialAllpages {
 	function showTranslations( Title $title ) {
 		global $wgOut, $wgUser, $wgLang;
 
+		$handle = new MessageHandle( $title );
 		$namespace = $title->getNamespace();
-		$message = $title->getDBkey();
+		$message = $handle->getKey();
 
-		$inMessageGroup = TranslateUtils::messageKeyToGroup( $title->getNamespace(), $title->getText() );
-
-		if ( !$inMessageGroup ) {
+		if ( !$handle->isValid() ) {
 			$wgOut->addWikiMsg( 'translate-translations-no-message', $title->getPrefixedText() );
 			return;
 		}
@@ -199,8 +198,9 @@ class SpecialTranslations extends SpecialAllpages {
 			$key = $s->page_title;
 			$tTitle = Title::makeTitle( $s->page_namespace, $key );
 			$ajaxPageList[] = $tTitle->getPrefixedDBkey();
+			$tHandle = new MessageHandle( $tTitle );
 
-			$code = $this->getCode( $s->page_title );
+			$code = $tHandle->getCode();
 
 			$text = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
 			$text .= $separator;
@@ -226,7 +226,7 @@ class SpecialTranslations extends SpecialAllpages {
 				array( 'action' => 'history' )
 			);
 
-			if ( TranslateEditAddons::isFuzzy( $tTitle ) ) {
+			if ( MessageHandle::hasFuzzyString( $pageInfo[$key][0] ) || $tHandle->isFuzzy() ) {
 				$class = 'orig';
 			} else {
 				$class = 'def';
