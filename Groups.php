@@ -675,7 +675,9 @@ class AggregateMessageGroup extends MessageGroupBase {
 		 * @TODO: implement getMessageContent to avoid hardcoding the namespace
 		 * here.
 		 */
-		$groupId = TranslateUtils::messageKeyToGroup( $this->getNamespace(), $key );
+		$title = Title::makeTitle( $this->getNamespace(), $key );
+		$handle = new MessageHandle( $title );
+		$groupId = MessageIndex::getPrimaryGroupId( $handle );
 		$group = MessageGroups::getGroup( $groupId );
 		if ( $group ) {
 			return $group->getMessage( $key, $code );
