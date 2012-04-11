@@ -23,25 +23,10 @@ class TranslateToolbox {
 	 * @return bool
 	 */
 	static function toolboxAllTranslations( &$skin ) {
-		global $wgTranslateMessageNamespaces;
-
-		// @todo Remove BC code.
-		if ( method_exists( $skin, 'getSkin' ) ) {
-			$title = $skin->getSkin()->getTitle();
-		} else {
-			global $wgTitle;
-			$title = $wgTitle;
-		}
-		$ns = $title->getNamespace();
-		if ( !in_array( $ns, $wgTranslateMessageNamespaces ) ) {
-			return true;
-		}
-
-		$inMessageGroup = TranslateUtils::messageKeyToGroup( $title->getNamespace(), $title->getBaseText() );
-
-		if ( $inMessageGroup ) {
-			// Add a slash at the end, to not have basename in the result of Special:Prefixindex
-			$message = $title->getNsText() . ":" . $title->getBaseText();
+		$title = $skin->getSkin()->getTitle();
+		$handle = new MessageHandle( $title );
+		if ( $handle->isValid() ) {
+			$message = $title->getNsText() . ':' . $handle->getKey();
 			$desc = wfMsg( 'translate-sidebar-alltrans' );
 			$url = htmlspecialchars( SpecialPage::getTitleFor( 'Translations' )->getLocalURL( 'message=' . $message ) );
 
