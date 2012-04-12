@@ -505,7 +505,7 @@ FOO;
 
 		$legend  = Html::rawElement(
 			'div',
-			array( 'class' => 'mw-pt-translate-header' ),
+			array( 'class' => 'mw-pt-translate-header nomobile' ),
 			$wgLang->semicolonList( $actions )
 		) . Html::element( 'hr' );
 
