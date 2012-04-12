@@ -155,7 +155,7 @@ foreach ( $groups as $groupId => $group ) {
 
 	if ( $codemapOnly ) {
 		foreach ( $langs as $index => $code ) {
-			if ( $group->mapCode( $code ) == $code ) {
+			if ( $group->mapCode( $code ) === $code ) {
 				unset( $langs[$index] );
 			}
 		}
