@@ -852,6 +852,7 @@ class TranslationHelpers {
 		if ( $ffs instanceof GettextFFS ) {
 			global $wgContLang;
 			$mykey = $wgContLang->lcfirst( $this->handle->getKey() );
+			$mykey = str_replace( ' ', '_', $mykey );
 			$data = $ffs->read( $group->getSourceLanguage() );
 			$help = $data['TEMPLATE'][$mykey]['comments'];
 			// Do not display an empty comment. That's no help and takes up unnecessary space.
