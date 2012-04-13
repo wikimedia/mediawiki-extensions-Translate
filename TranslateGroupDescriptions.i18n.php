@@ -67,7 +67,7 @@ $messages['en'] = array(
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] is able to quickly find the authors of a part of a page in a Wikimedia wiki',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] delivers an offline, text-only version of Wikipedia on a mobile device',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wikipedia',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WikktionaryMobile|WiktionaryMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wiktionary',
+	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wiktionary',
 );
 
 /** Message documentation (Message documentation)
