@@ -150,11 +150,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Returns stored message tags.
 	 * @param $type \string Tag type, usually optional or ignored.
-	 * @return \types{\list{String},\null} List of keys or null if no tags.
-	 * @todo Return empty array instead?
+	 * @return \types{\list{String}} List of keys with given tag.
 	 */
 	public function getTags( $type ) {
-		return isset( $this->tags[$type] ) ? $this->tags[$type] : null;
+		return isset( $this->tags[$type] ) ? $this->tags[$type] : array();
 	}
 
 	/**
