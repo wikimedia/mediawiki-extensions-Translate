@@ -241,9 +241,6 @@ class SpecialManageGroups extends SpecialPage {
 		$diff->setReducedLineNumbers();
 
 		$ignoredMessages = $collection->getTags( 'ignored' );
-		if ( !is_array( $ignoredMessages ) ) {
-			$ignoredMessages = array();
-		}
 
 		$messages = $group->load( $code );
 		$changed = array();
