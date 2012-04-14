@@ -749,7 +749,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		foreach ( $this->tags as $type => $keys ) {
 			foreach ( $keys as $mkey ) {
 				if ( isset( $messages[$mkey] ) ) {
-					$messages[$mkey]->setTag( $type );
+					$messages[$mkey]->addTag( $type );
 				}
 			}
 		}
