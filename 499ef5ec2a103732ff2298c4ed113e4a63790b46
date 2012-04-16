@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAJX///vw\u003d",
+        "filename": "MessageCollection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-04-16T10:27:33Z",
+      "side": 1,
+      "message": "Need to remove \u0027,\\null\u0027  too.",
+      "revId": "499ef5ec2a103732ff2298c4ed113e4a63790b46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
