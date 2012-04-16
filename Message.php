@@ -79,9 +79,8 @@ abstract class TMessage {
 	/**
 	 * Add a tag for this message.
 	 * @param $tag \string
-	 * @todo Rename to addTag.
 	 */
-	public function setTag( $tag ) {
+	public function addTag( $tag ) {
 		$this->tags[] = $tag;
 	}
 
