@@ -637,6 +637,7 @@ Motivu: $1',
 	'tpt-aggregategroup-add-new' => "Amestar un nuevu grupu d'agregación",
 	'tpt-aggregategroup-new-name' => 'Nome:',
 	'tpt-aggregategroup-new-description' => 'Descripción (opcional):',
+	'tpt-aggregategroup-remove-confirm' => '¿Tas seguru de que quies desaniciar esti grupu agregáu?',
 	'pt-parse-open' => 'Etiqueta &lt;translate> desequilibrada.
 Plantía de traducción: <pre>$1</pre>',
 	'pt-parse-close' => 'Etiqueta &lt;/translate> desequilibrada.
@@ -652,6 +653,74 @@ Testu de la seición: <pre>$1</pre>',
 	'pt-log-name' => 'Rexistru de traducción de páxines',
 	'pt-log-mark' => '{{GENDER:$2|marcó}} la revisión $3 de la páxina "[[:$1]]" pa traducir',
 	'pt-log-unmark' => '{{GENDER:$2|desanició}} la páxina "[[:$1]]" de la traducción',
+	'pt-log-moveok' => "{{GENDER:$2|completó}}'l treslláu de la páxina traducible $1 a $3",
+	'pt-log-movenok' => "{{GENDER:$2|s'alcontró}} un problema al mover [[:$1]] a [[:$3]]",
+	'pt-log-delete-full-ok' => "{{GENDER:$2|completó}}'l desaniciu de la páxina traducible $1",
+	'pt-log-delete-full-nok' => '{{GENDER:$2|alcontró}} un problema al desaniciar la páxina traducible [[:$1]]',
+	'pt-log-delete-lang-ok' => "{{GENDER:$2|completó}}'l desaniciu de la páxina de traducción $1",
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|alcontró}} un problema al desaniciar la páxina de traducción [[:$1]]',
+	'pt-log-encourage' => '{{GENDER:$2|encamentó}} traducir la páxina [[:$1]]',
+	'pt-log-discourage' => '{{GENDER:$2|desaconseyó}} traducir la páxina [[:$1]]',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|desanició}} les llingües prioritaries de la páxina traducible [[:$1]]',
+	'pt-log-priority-langs' => '{{GENDER:$2|definió}} les llingües prioritaries de la páxina traducible [[:$1]] como $3. Motivu: $4',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|llendó}} les llingües de la páxina traducible [[:$1]] a $3. Motivu: $4',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|amestó}} la páxina traducible [[:$1]] al grupu agregáu $3',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|desanició}} la páxina traducible [[:$1]] del grupu agregáu $3',
+	'pt-movepage-title' => 'Treslladar la páxina traducible $1',
+	'pt-movepage-blockers' => 'Nun se pue treslladar la páxina traducible a un nome nuevu {{PLURAL:$1|pol siguiente error|polos siguientes errores}}:',
+	'pt-movepage-block-base-exists' => 'La páxina base de destín [[:$1]] yá esiste.',
+	'pt-movepage-block-base-invalid' => 'La páxina base de destín nun ye un títulu válidu.',
+	'pt-movepage-block-tp-exists' => 'La páxina de traducción de destín [[:$2]] yá esiste.',
+	'pt-movepage-block-tp-invalid' => 'El títulu de la páxina de traducción de destín pa [[:$1]] sedría inválidu (¿demasiao llargu?).',
+	'pt-movepage-block-section-exists' => 'La páxina de seición de destín [[:$2]] yá esiste.',
+	'pt-movepage-block-section-invalid' => 'El títulu de la páxina de seición de destín pa [[:$1]] sedría inválidu (¿demasiao llargu?).',
+	'pt-movepage-block-subpage-exists' => 'La subpáxina de destín [[:$2]] yá esiste.',
+	'pt-movepage-block-subpage-invalid' => 'El títulu de la subpáxina de destín pa [[:$1]] sedría inválidu (¿demasiao llargu?).',
+	'pt-movepage-list-pages' => 'Llista de páxines a treslladar',
+	'pt-movepage-list-translation' => 'Páxines de traducción',
+	'pt-movepage-list-section' => 'Páxines de seición',
+	'pt-movepage-list-other' => 'Otres subpáxines',
+	'pt-movepage-list-count' => 'En total $1 {{PLURAL:$1|páxina|páxines}} a treslladar.',
+	'pt-movepage-legend' => 'Treslladar la páxina traducible',
+	'pt-movepage-current' => 'Nome actual:',
+	'pt-movepage-new' => 'Nome nuevu:',
+	'pt-movepage-reason' => 'Motivu:',
+	'pt-movepage-subpages' => 'Treslladar toles subpáxines',
+	'pt-movepage-action-check' => "Comprobar si'l treslláu ye posible",
+	'pt-movepage-action-perform' => 'Facer el treslláu',
+	'pt-movepage-action-other' => 'Camudar el destín',
+	'pt-movepage-intro' => "Esta páxina especial te permite treslladar páxines que tan marcaes pa traducir.
+L'aición de treslláu nun sedrá inmediata, porque ye necesario mover munches páxines.
+Mentanto se treslladen les páxines, nun ye posible interactuar coles mesmes.
+Los fallos quedarán rexistraos nel [[Special:Log/pagetranslation|rexistru de traducción de páxines]] y tendrán de reparase a mano.",
+	'pt-movepage-logreason' => 'Parte de la páxina traducible $1.',
+	'pt-movepage-started' => 'La páxina base ta treslladada.
+Por favor, mira nel [[Special:Log/pagetranslation|rexistru de traducción de páxines]] pa ver los errores y mensaxe de completáu.',
+	'pt-locked-page' => 'Esta páxina ta bloquiada porque ta treslladandose la páxina traducible.',
+	'pt-deletepage-lang-title' => 'Desaniciando la páxina de traducción $1.',
+	'pt-deletepage-full-title' => 'Desaniciando la páxina traducible $1.',
+	'pt-deletepage-invalid-title' => 'La páxina especificada nun ye válida.',
+	'pt-deletepage-invalid-text' => 'La páxina especificada nun ye una páxina traducible nin una traducción de la mesma.',
+	'pt-deletepage-action-check' => 'Llista de páxines a desaniciar',
+	'pt-deletepage-action-perform' => 'Facer el desaniciu',
+	'pt-deletepage-action-other' => 'Camudar el destín',
+	'pt-deletepage-lang-legend' => 'Desaniciar la páxina de traducción',
+	'pt-deletepage-full-legend' => 'Desaniciar la páxina traducible',
+	'pt-deletepage-any-legend' => 'Desaniciar la páxina traducible o la traducción de la páxina traducible',
+	'pt-deletepage-current' => 'Nome de la páxina:',
+	'pt-deletepage-reason' => 'Motivu:',
+	'pt-deletepage-subpages' => 'Desaniciar toles subpáxines',
+	'pt-deletepage-list-pages' => 'Llista de páxines a desaniciar',
+	'pt-deletepage-list-translation' => 'Páxines de traducción',
+	'pt-deletepage-list-section' => 'Páxines de seición',
+	'pt-deletepage-list-other' => 'Otres subpáxines',
+	'pt-deletepage-list-count' => 'En total $1 {{PLURAL:$1|páxina|páxines}} a desaniciar.',
+	'pt-deletepage-full-logreason' => 'Parte de la páxina traducible $1.',
+	'pt-deletepage-lang-logreason' => 'Parte de la páxina de traducción $1.',
+	'pt-deletepage-started' => 'Por favor, mira nel [[Special:Log/pagetranslation|rexistru de traducción de páxines]] pa ver los errores y mensaxe de completáu.',
+	'pt-deletepage-intro' => "Esta páxina especial te permite desaniciar páxines traducibles enteres o les traducciones a una llingua.
+L'aición de desaniciu nun sedrá inmediata, porque ye necesario desaniciar munches páxines.
+Los fallos quedarán rexistraos nel [[Special:Log/pagetranslation|rexistru de traducción de páxines]] y tendrán de reparase a mano.",
 );
 
 /** Azerbaijani (Azərbaycanca)
@@ -4133,6 +4202,7 @@ Gli errori sono riportati nel [[Special:Log/pagetranslation|registro delle tradu
 /** Japanese (日本語)
  * @author Aotake
  * @author Fryed-peach
+ * @author Shirayuki
  * @author Whym
  * @author 青子守歌
  */
@@ -4162,20 +4232,20 @@ $messages['ja'] = array(
 	'tpt-saveok' => 'ページ[[$1]]は翻訳対象に指定されており、$2{{PLURAL:$2|個}}の翻訳単位を含んでいます。
 このページを<span class="plainlinks">[$3 翻訳]</span>することができます。',
 	'tpt-badsect' => '「$1」は翻訳単位$2の名前として無効です。',
-	'tpt-showpage-intro' => '以下には新規・既存・削除済の節が一覧されています。
+	'tpt-showpage-intro' => '以下は新規・既存・削除済みの節の一覧です。
 この版を翻訳対象に指定する前に、節の変更を最小限にすることで不要な翻訳作業を回避できないか確認してください。',
 	'tpt-mark-summary' => 'この版を翻訳対象に指定しました',
 	'tpt-edit-failed' => 'ページを更新できませんでした: $1',
 	'tpt-duplicate' => '翻訳単位名$1は、複数回使用されています。',
 	'tpt-already-marked' => 'このページの最新版がすでに翻訳対象に指定されています。',
 	'tpt-unmarked' => 'ページ「$1」は既に翻訳対象ではありません。',
-	'tpt-list-nopages' => '翻訳対象に指定されたページがないか、または翻訳対象に指定する準備ができているページがありません。',
+	'tpt-list-nopages' => '翻訳対象に指定されたページがないか、翻訳対象に指定する準備ができているページがありません。',
 	'tpt-new-pages-title' => '翻訳が提案されているページ',
-	'tpt-old-pages-title' => '翻訳可能なページ',
+	'tpt-old-pages-title' => '翻訳対象ページ',
 	'tpt-other-pages-title' => '壊れたページ',
 	'tpt-discouraged-pages-title' => '翻訳が中止されたページ',
-	'tpt-new-pages' => '{{PLURAL:$1|これらのページ|このページ}}は本文に翻訳タグを含んでいますが、
-{{PLURAL:$1|これらのページ|このページ}}には翻訳対象に指定されている版がありません。',
+	'tpt-new-pages' => '{{PLURAL:$1|このページ|これらのページ}}は本文に翻訳タグを含んでいますが、
+{{PLURAL:$1|このページ|これらのページ}}には翻訳対象に指定されている版がありません。',
 	'tpt-old-pages' => '{{PLURAL:$1|これらの|この}}ページには翻訳対象に指定された版があります。',
 	'tpt-other-pages' => '{{PLURAL:$1|このページの古い版}}が翻訳対象に指定されていますが、
 最新の{{PLURAL:$1|版}}は翻訳対象に指定できません。',
@@ -4188,20 +4258,20 @@ $messages['ja'] = array(
 	'tpt-rev-unmark' => '翻訳から除去',
 	'tpt-rev-discourage' => '翻訳中止',
 	'tpt-rev-encourage' => '復元',
-	'tpt-rev-mark-tooltip' => 'このページの最新版を翻訳対象に指定する。',
-	'tpt-rev-unmark-tooltip' => 'このページを翻訳対象から除去する。',
-	'tpt-rev-discourage-tooltip' => 'このページのこれ以上の翻訳を中止する。',
-	'tpt-rev-encourage-tooltip' => 'このページを通常の翻訳に復元する。',
+	'tpt-rev-mark-tooltip' => 'このページの最新版を翻訳対象に指定します。',
+	'tpt-rev-unmark-tooltip' => 'このページを翻訳対象から除去します。',
+	'tpt-rev-discourage-tooltip' => 'このページのこれ以上の翻訳を中止します。',
+	'tpt-rev-encourage-tooltip' => 'このページを通常の翻訳に復元します。',
 	'translate-tag-translate-link-desc' => 'このページを翻訳する',
 	'translate-tag-markthis' => 'このページを翻訳対象に指定する',
 	'translate-tag-markthisagain' => 'このページには最後に<span class="plainlinks">[$2 翻訳が指定]</span>されて以降に<span class="plainlinks">[$1 変更]</span>があります。',
 	'translate-tag-hasnew' => 'このページには翻訳対象に指定されていない<span class="plainlinks">[$1 変更]</span>があります。',
-	'tpt-translation-intro' => 'このページはページ[[$2]]の<span class="plainlinks">[$1 翻訳版]</span> です。翻訳は$3%完了しており、最新の状態を反映しています。',
+	'tpt-translation-intro' => 'このページはページ「[[$2]]」の<span class="plainlinks">[$1 翻訳版]</span> です。翻訳は$3%完了しています。',
 	'tpt-translation-intro-fuzzy' => '古くなった翻訳はこのような印が付いています。',
 	'tpt-languages-legend' => '他言語での翻訳:',
 	'tpt-languages-zero' => 'この言語について翻訳を開始する',
 	'tpt-target-page' => 'このページは手動で更新できません。
-このページはページ[[$1]]の翻訳で、[$2 翻訳ツール]を使用して更新します。',
+このページはページ「[[$1]]」の翻訳であり、[$2 翻訳ツール]を使用して更新します。',
 	'tpt-unknown-page' => 'この名前空間はコンテンツページの翻訳のために使用します。
 編集しようとしているページに対応する翻訳対象ページが存在しないようです。',
 	'tpt-translation-restricted' => '翻訳管理者によって、このページのこの言語への翻訳は禁止されています。
@@ -4224,12 +4294,12 @@ $messages['ja'] = array(
 翻訳の雛型：<pre>$1</pre>',
 	'pt-parse-close' => '&lt;/translate>タグの対応がとれていません。
 翻訳の雛型：<pre>$1</pre>',
-	'pt-parse-nested' => '&lt;translate>タグの入れ子は許されません。
-タグ内容：<pre>$1</pre>',
+	'pt-parse-nested' => '&lt;translate>節の入れ子は許されません。
+タグの内容：<pre>$1</pre>',
 	'pt-shake-multiple' => '1つの節に対して、複数の節マーカーがあります。
 節の内容：<pre>$1</pre>',
-	'pt-shake-position' => '予期せぬ位置に節マーカーがあります。
-節内容：<pre>$1</pre>',
+	'pt-shake-position' => '予期しない位置に節マーカーがあります。
+節の内容：<pre>$1</pre>',
 	'pt-shake-empty' => 'マーカー$1に対応する節が空です。',
 	'pt-log-header' => 'ページ翻訳システムに関連した操作の記録',
 	'pt-log-name' => 'ページ翻訳記録',
@@ -4243,11 +4313,11 @@ $messages['ja'] = array(
 	'pt-log-delete-lang-nok' => '翻訳ページ[[:$1]]の削除中に問題が{{GENDER:$2|発生しました}}',
 	'pt-log-encourage' => 'がページ[[:$1]]を翻訳対象に{{GENDER:$2|追加しました}}',
 	'pt-log-discourage' => 'がページ[[:$1]]を翻訳対象から{{GENDER:$2|外しました}}',
-	'pt-log-priority-langs-unset' => 'がページ[[:$1]]から主要言語を{{GENDER:$2|除去しました}}',
-	'pt-log-priority-langs' => 'がページ[[:$1]]の主要言語を$3に{{GENDER:$2|設定しました}}。理由：$4',
-	'pt-log-priority-langs-force' => 'がページ[[:$1]]の言語を$3に{{GENDER:$2|制限しました}}。理由：$4',
-	'pt-log-aggregategroup-associate' => 'がページ[[:$1]]を集約群$3に{{GENDER:$2|追加しました}}',
-	'pt-log-aggregategroup-dissociate' => 'がページ[[:$1]]を集約群$3から{{GENDER:$2|除去しました}}',
+	'pt-log-priority-langs-unset' => 'がページ「[[:$1]]」から主要言語を{{GENDER:$2|除去しました}}',
+	'pt-log-priority-langs' => 'がページ「[[:$1]]」の主要言語を$3に{{GENDER:$2|設定しました}}。理由：$4',
+	'pt-log-priority-langs-force' => 'がページ「[[:$1]]」の言語を$3に{{GENDER:$2|制限しました}}。理由：$4',
+	'pt-log-aggregategroup-associate' => 'がページ「[[:$1]]」を集約群$3に{{GENDER:$2|追加しました}}',
+	'pt-log-aggregategroup-dissociate' => 'がページ「[[:$1]]」を集約群$3から{{GENDER:$2|除去しました}}',
 	'pt-movepage-title' => '翻訳可能ページ$1を移動',
 	'pt-movepage-blockers' => '翻訳可能ページは、{{PLURAL:$1|以下の問題}}により、新しい名前に移動できません：',
 	'pt-movepage-block-base-exists' => '対象の基底ページ[[:$1]]は既に存在しています。',
@@ -7943,6 +8013,7 @@ $messages['yi'] = array(
  * @author Liangent
  * @author Linforest
  * @author PhiLiP
+ * @author Supaiku
  * @author Xiaomingyan
  * @author Yfdyh000
  * @author 阿pp
@@ -8033,6 +8104,7 @@ $messages['zh-hans'] = array(
 	'tpt-aggregategroup-add-new' => '添加新的聚合组',
 	'tpt-aggregategroup-new-name' => '名称：',
 	'tpt-aggregategroup-new-description' => '说明 （可选）：',
+	'tpt-aggregategroup-remove-confirm' => '确实要删除此聚合组吗？',
 	'pt-parse-open' => '&lt;translate>标签不平衡。
 翻译模板：<pre>$1</pre>',
 	'pt-parse-close' => '&lt;/translate>标签不平衡。
@@ -8059,6 +8131,8 @@ $messages['zh-hans'] = array(
 	'pt-log-priority-langs-unset' => '从可翻译页面[[:$1]]{{GENDER:$2|已删除}}优先语言',
 	'pt-log-priority-langs' => '{{GENDER:$2|设定}}可翻译页面[[:$1]]的优先语言为$3。原因：$4',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|已限制}}可翻译页面的[[:$1]]的语言为$3。原因：$4',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|添加了}} 可翻译页 [[:$1]] 以聚合组$3',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|已删除}} 可翻译页 [[:$1]] 从聚合组$3',
 	'pt-movepage-title' => '移动可翻译页面$1',
 	'pt-movepage-blockers' => '可翻译页面无法移动至新名称，原因为以下这{{PLURAL:$1|个|些}}错误：',
 	'pt-movepage-block-base-exists' => '目标基页面 [[:$1]] 存在。',

@@ -2523,8 +2523,8 @@ Se não deseja receber as newsletters, pode optar por não recebê-las no separa
 );
 
 /** Brazilian Portuguese (Português do Brasil)
- * @author Giro720
  * @author 555
+ * @author Giro720
  */
 $messages['pt-br'] = array(
 	'firststeps' => 'Primeiros passos',

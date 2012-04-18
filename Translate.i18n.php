@@ -10680,6 +10680,7 @@ Detay: $1',
  * @author Glanthor Reviol
  * @author Misibacsi
  * @author Tgr
+ * @author Wilander
  */
 $messages['hu'] = array(
 	'translate' => 'Fordítás',
@@ -10696,7 +10697,7 @@ Kattints az üzenetcsoport nevére a fordítandó üzenetek listájának megteki
 	'translate-taskui-export-to-file' => 'Exportálás natív formátumban',
 	'translate-taskui-export-as-po' => 'Exportálás offline fordításhoz',
 	'translate-taction-translate' => 'Fordítás',
-	'translate-taction-proofread' => 'Korrektúra',
+	'translate-taction-proofread' => 'Korrekturlese',
 	'translate-taction-lstats' => 'Nyelvi statisztika',
 	'translate-taction-mstats' => 'Üzenetcsoport statisztika',
 	'translate-taction-export' => 'Exportálás',
@@ -12236,6 +12237,7 @@ Dettagli: $1',
  * @author Naohiro19
  * @author Ohgi
  * @author Schu
+ * @author Shirayuki
  * @author Whym
  * @author 青子守歌
  */
@@ -12430,7 +12432,7 @@ $messages['ja'] = array(
 	'translate-nothing-to-do' => '翻訳の可能なものはすべて翻訳されています。[[Special:Translate|{{int:translate}}]]を使ってメッセージを見直すことが推奨されます。',
 	'translate-languagestats-overall' => '合計',
 	'translate-ls-submit' => '統計を表示',
-	'translate-ls-column-group' => 'メッセージ群',
+	'translate-ls-column-group' => 'メッセージ グループ',
 	'translate-mgs-pagename' => 'メッセージ群内の翻訳状況',
 	'translate-mgs-fieldset' => '表示設定',
 	'translate-mgs-group' => 'メッセージ群：',
@@ -12442,9 +12444,10 @@ $messages['ja'] = array(
 	'translate-mgs-invalid-group' => '指定された群$1は存在しません。',
 	'translate-mgs-nothing' => '要求された統計は表示するものがありません。',
 	'supportedlanguages' => 'サポートしている言語',
-	'supportedlanguages-summary' => 'このページには、{{SITENAME}}でサポートしている全言語の一覧と、その言語で活動している翻訳者の名前を表示しています。
-翻訳者の名前は、翻訳編集の数が多いほど、大きく表示されます。
-下線の色は、その翻訳者の最近の活動度を表しています。',
+	'supportedlanguages-summary' => 'このページには、{{SITENAME}}が対応している全言語の一覧と、
+その言語で活動している翻訳者の名前を表示しています。
+翻訳者の名前は翻訳編集の数が多いほど大きく表示されます。
+下線の色はその翻訳者の最近の活動度を表しています。',
 	'supportedlanguages-colorlegend' => '色の凡例：最後の翻訳が$1日前',
 	'supportedlanguages-translators' => '{{PLURAL:$2|翻訳者}}: $1',
 	'supportedlanguages-recenttranslations' => '最近の翻訳',
@@ -12826,6 +12829,16 @@ $messages['kaa'] = array(
 	'translate-checks-plural' => "Anıqlamada <nowiki>{{PLURAL:}}</nowiki> paydalanılg'an, biraq awdarmada bul joq.",
 	'translate-pref-nonewsletter' => "Mag'an e-mail boyınsha jan'alıqlardı jibermen'",
 	'right-translate' => "Awdarma interfeysi ja'rdeminde o'zgertiw",
+);
+
+/** Kabyle (Taqbaylit)
+ * @author Mmistmurt
+ */
+$messages['kab'] = array(
+	'translate-page-settings-legend' => 'Iɣewwaren',
+	'translate-page-group' => 'Agraw',
+	'translate-page-language' => 'Tutlayt',
+	'translate-submit' => 'Umuɣ',
 );
 
 /** Адыгэбзэ (Адыгэбзэ)
@@ -14758,7 +14771,7 @@ Heng thuthawn duh-thlante hi i ţawngin mamawh bîk, entirnan hming roman hawraw
 	'translate-magic-words' => 'Dawi-chhamphual',
 	'translate-magic-namespace' => 'Hminghmun hmingte',
 	'translate-magic-notsaved' => 'I thuziak dahţhat a ni lo a nia!',
-	'translate-magic-errors' => 'Heng lehlinna dikhlel{{PLURAL:$1||te}} hi khawngaihin tidik rawh le.',
+	'translate-magic-errors' => '{{PLURAL:$1|Hë|Hêng}} lehlinna dikhlel{{PLURAL:$1||te}} hi khawngaihin tidik rawh le.',
 	'translate-magic-saved' => 'I tihdanglamna hlawtling taka dahţhat a ni.',
 	'translate-checks-parameters' => '{{PLURAL:$2|He thil hman ngei ngei ngai|Heng thil hman ngei ngei ngaite}} hi hman a la ni lo:
 <strong><nowiki>$1</nowiki></strong>',
@@ -25674,6 +25687,7 @@ $messages['yue'] = array(
  * @author Mark85296341
  * @author PhiLiP
  * @author Sahran
+ * @author Supaiku
  * @author Wmr89502270
  * @author Xiaomingyan
  * @author Yfdyh000
@@ -25733,6 +25747,7 @@ $messages['zh-hans'] = array(
 	'translate-edit-committed' => '当前翻译',
 	'translate-edit-warnings' => '有关不完整翻译的警告',
 	'translate-edit-tmsugs' => '来自翻译记忆的建议',
+	'translate-edit-tmmatch-source' => '翻译的源文本：$1',
 	'translate-edit-tmmatch' => '$1%匹配',
 	'translate-use-suggestion' => '采纳此建议取代目前的翻译。',
 	'translate-edit-tab-list' => '信息列表',
@@ -25779,6 +25794,8 @@ $messages['zh-hans'] = array(
 	'translate-checks-pagename' => '名字空间与原文不符',
 	'translate-checks-format' => '这个翻译不遵从定义或有无效的语法：$1',
 	'translate-checks-escape' => '以下转义可能是意外：<strong>$1</strong>',
+	'translate-checks-parametersnotequal' => '参数计数是 {{PLURAL:$1|   $1 }} ；应该是 {{PLURAL:$2|$2}}.',
+	'translate-checks-malformed' => '<nowiki>$1</nowiki>格式不正确。',
 	'translate-checks-fudforum-syntax' => '使用 <nowiki>$1</nowiki>，而不是在这个项目中的 <nowiki>$2</nowiki>。',
 	'translate-pref-nonewsletter' => '不要给我发送新闻邮件',
 	'translate-pref-editassistlang' => '辅助语言：',
@@ -26000,14 +26017,14 @@ $1',
 	'translate-workflow-set-do' => '设置',
 	'translate-workflow-set-doing' => '正在设置...',
 	'translate-workflow-set-done' => '已设置！',
+	'translate-workflow-set-error-alreadyset' => '被请求的状态与当前状态以相同。',
 	'translate-workflow-autocreated-summary' => '自动创建$1工作流状态页',
 	'translate-stats-workflow' => '状态',
 	'translate-workflowgroup-label' => '工作流状态',
 	'translate-workflowgroup-desc' => '此消息组显示翻译工作流程状态。
 该状态是由$wgTranslateWorkflowStates配置变量定义。',
 	'translate-dynagroup-recent-label' => '最近的翻译',
-	'translate-dynagroup-recent-desc' => '本信息组显示该语言中所有最近的翻译作品，
-最可用于“{{int:translate-task-acceptqueue}}”及“{{int:translate-task-reviewall}}”的职务。',
+	'translate-dynagroup-recent-desc' => '此消息组显示所有最近翻译成这种语言。 ！N ！最有用的校对任务。',
 	'translate-dynagroup-by' => '{{GENDER:$1|$1}}作出翻译',
 	'translate-dynagroup-byc' => '{{GENDER:$1|$1}}作出翻译（$2）',
 	'translate-dynagroup-last' => '{{GENDER:$1|$1}}作出最近更改',
