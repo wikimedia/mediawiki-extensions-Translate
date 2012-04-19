@@ -4267,14 +4267,14 @@ $messages['ja'] = array(
 	'translate-tag-markthisagain' => 'このページには最後に<span class="plainlinks">[$2 翻訳が指定]</span>されて以降に<span class="plainlinks">[$1 変更]</span>があります。',
 	'translate-tag-hasnew' => 'このページには翻訳対象に指定されていない<span class="plainlinks">[$1 変更]</span>があります。',
 	'tpt-translation-intro' => 'このページはページ「[[$2]]」の<span class="plainlinks">[$1 翻訳版]</span> です。翻訳は$3%完了しています。',
-	'tpt-translation-intro-fuzzy' => '古くなった翻訳はこのような印が付いています。',
+	'tpt-translation-intro-fuzzy' => '修正が必要な翻訳にはこのような印が付いています。',
 	'tpt-languages-legend' => '他言語での翻訳:',
 	'tpt-languages-zero' => 'この言語について翻訳を開始する',
 	'tpt-target-page' => 'このページは手動で更新できません。
 このページはページ「[[$1]]」の翻訳であり、[$2 翻訳ツール]を使用して更新します。',
 	'tpt-unknown-page' => 'この名前空間はコンテンツページの翻訳のために使用します。
 編集しようとしているページに対応する翻訳対象ページが存在しないようです。',
-	'tpt-translation-restricted' => '翻訳管理者によって、このページのこの言語への翻訳は禁止されています。
+	'tpt-translation-restricted' => '翻訳管理者がこのページのこの言語への翻訳を禁止しています。
 理由：$1',
 	'tpt-discouraged-language-force' => '翻訳管理者が、このページを翻訳できる言語を制限しています。この言語はそれらの言語に含まれていません。
 理由：$1',
@@ -5484,6 +5484,7 @@ Reden: $1',
 	'tpt-aggregategroup-add-new' => 'Nieuwe samengevoegde groep toevoegen',
 	'tpt-aggregategroup-new-name' => 'Naam:',
 	'tpt-aggregategroup-new-description' => 'Beschrijving (optioneel):',
+	'tpt-aggregategroup-remove-confirm' => 'Weet u zeker dat u deze samengestelde groep wilt verwijderen?',
 	'pt-parse-open' => 'Ongebalanceerd label &lt;translate>.
 Vertaalsjabloon: <pre>$1</pre>',
 	'pt-parse-close' => 'Ongebalanceerd label &lt;translate>.
@@ -5510,8 +5511,8 @@ Sectietekst: <pre>$1</pre>',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|heeft}} prioriteitstalen van de vertaalbare pagina [[:$1]] verwijderd',
 	'pt-log-priority-langs' => '{{GENDER:$2|heeft}} de prioriteitstalen voor de pagina [[:$1]] ingesteld op $3. Reden: $4',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|heeft}} de talen voor de pagina [[:$1]] beperkt tot $3. Reden: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|voegde}} pagina [[:$1]] aan $3 toe.',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|verwijderde}} pagina [[:$1]] van $3.',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|heeft}} de vertaalbare pagina [[:$1]] aan de samengestelde groep $3 toegevoegd',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|heeft}} de vertaalbare pagina [[:$1]] uit de samengestelde groep $3 verwijderd',
 	'pt-movepage-title' => 'Te vertalen pagina $1 hernoemen',
 	'pt-movepage-blockers' => 'De te vertalen pagina kan niet hernoemd worden vanwege de volgende {{PLURAL:$1|foutmelding|foutmeldingen}}:',
 	'pt-movepage-block-base-exists' => 'De doelpagina [[:$1]] bestaat al.',

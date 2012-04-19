@@ -1462,6 +1462,7 @@ Vedi [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_
  * @author Aphaia
  * @author Fryed-peach
  * @author Hosiryuhosi
+ * @author Shirayuki
  * @author Whym
  * @author 青子守歌
  */
@@ -1500,7 +1501,7 @@ $messages['ja'] = array(
 	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]]はウェブメールのクライアントです',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]]は、オフラインでのウィキペディア閲覧機器です',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]]はオープンなメディアプラットフォームです。',
-	'translate-group-desc-openimages-verifyemailtemplate' => 'これらのメッセージは、[[Translating:Open Images|Open Images]]の電子メール確認テンプレートの一部です',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'これらのメッセージは、[[Translating:Open Images|Open Images]] のメール検証テンプレートの一部です',
 	'translate-group-desc-openimages-all' => 'これらのメッセージは、[[Translating:Open Images|Open Images]]プロジェクトの一部です',
 	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]]は、JavaScriptでの動的な地図生成ツールです',
 	'bw-desc-openstreetmap' => '[[Translating:OpenStreetMap|OpenStreetMap]]に関連する全メッセージ',

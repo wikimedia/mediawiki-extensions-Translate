@@ -1772,6 +1772,7 @@ Se non vuoi ricevere la newsletter, puoi esserne escluso attraverso l\'apposita 
 /** Japanese (日本語)
  * @author Fryed-peach
  * @author Hosiryuhosi
+ * @author Shirayuki
  * @author Whym
  * @author 青子守歌
  */
@@ -1786,7 +1787,7 @@ $messages['ja'] = array(
 	'translate-fs-userpage-title' => 'あなたの利用者ページを作成',
 	'translate-fs-permissions-title' => '翻訳者権限の申請',
 	'translate-fs-target-title' => '翻訳を始めましょう！',
-	'translate-fs-email-title' => '自分の電子メールアドレスの確認',
+	'translate-fs-email-title' => 'あなたのメール アドレスを確認',
 	'translate-fs-intro' => '{{SITENAME}} 開始準備ウィザードへようこそ。これから翻訳者になるための手順について1つずつ案内していきます。それらを終えると、あなたは {{SITENAME}} でサポートしているすべてのプロジェクトのインターフェイスメッセージを翻訳できるようになります。',
 	'translate-fs-selectlanguage' => '言語を選択',
 	'translate-fs-settings-planguage' => '第一言語：',
@@ -1821,9 +1822,11 @@ $messages['ja'] = array(
 
 また、同じ言語で作業している仲間の翻訳者とは[[Portal:$1|言語別のポータル]]の[[Portal_talk:$1|トークページ]]で連絡することができます。
 まだ設定されていなければ、[[Special:Preferences|インターフェースの言語を、翻訳先としたい言語に変更]]すれば、ウィキ上では最も関連性のあるリンクが表示されます。",
-	'translate-fs-email-text' => 'あなたの電子メールアドレスを[[Special:Preferences|個人設定]]で入力し、送られてきたメールからそのメールアドレスの確認を行ってください。
+	'translate-fs-email-text' => 'あなたのメール アドレスを[[Special:Preferences|個人設定]]に入力して、お送りするメールでメール アドレスの確認を行ってください。
 
-これにより、他の利用者があなたに電子メールを通じて連絡できるようになります。また、多くて月に1回ほどニュースレターが送られてきます。ニュースレターを受け取りたくない場合は、[[Special:Preferences|個人設定]]の「{{int:prefs-personal}}」タブで受信の中止を設定できます。',
+これにより他の利用者があなたに連絡できるようになります。
+また、毎月 1 回まで、ニュースレターをお送りします。
+ニュースレターが不要な場合は、[[Special:Preferences|個人設定]]の「{{int:prefs-personal}}」タブで受信を中止できます。',
 );
 
 /** Jamaican Creole English (Patois)
