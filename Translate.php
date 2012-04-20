@@ -165,6 +165,7 @@ $wgLogNames['translationreview'] = 'log-name-translationreview';
 
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
+$wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
 
 $resourcePaths = array(
 	'localBasePath' => dirname( __FILE__ ),
@@ -256,6 +257,12 @@ $wgResourceModules['ext.translate.multiselectautocomplete'] = array(
 	),
 	'position' => 'top',
 ) + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.managegroups'] = array(
+	'styles' => 'resources/ext.translate.special.managegroups.css',
+	'position' => 'top',
+) + $resourcePaths;
+
 
 $wgResourceModules['ext.translate.special.pagetranslation'] = array(
 	'scripts' => 'resources/ext.translate.special.pagetranslation.js',
