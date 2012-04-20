@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAJX//+Uk\u003d",
+        "filename": "scripts/processMessageChanges.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-04-20T09:53:35Z",
+      "side": 1,
+      "message": "But we  are doing it for source language too at line 61.",
+      "revId": "eff0f23bac8cc95f28a361e0e0dbd219707bc04d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJX//+Uo\u003d",
+        "filename": "scripts/processMessageChanges.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-04-20T09:53:35Z",
+      "side": 1,
+      "message": "Forgot to comment out/remove after demo?",
+      "revId": "eff0f23bac8cc95f28a361e0e0dbd219707bc04d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJX//+UU\u003d",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-04-20T09:53:35Z",
+      "side": 1,
+      "message": "Whitespace",
+      "revId": "eff0f23bac8cc95f28a361e0e0dbd219707bc04d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJX//+UM\u003d",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-04-20T09:53:35Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "eff0f23bac8cc95f28a361e0e0dbd219707bc04d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAJX//+UQ\u003d",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-04-20T09:53:35Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "eff0f23bac8cc95f28a361e0e0dbd219707bc04d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
