@@ -97,6 +97,7 @@ $wgAutoloadClasses['CDBMessageIndex'] = "$dir/utils/MessageIndex.php";
 $wgAutoloadClasses['DatabaseMessageIndex'] = "$dir/utils/MessageIndex.php";
 $wgAutoloadClasses['SerializedMessageIndex'] = "$dir/utils/MessageIndex.php";
 $wgAutoloadClasses['MessageIndexRebuildJob'] = "$dir/utils/MessageIndexRebuildJob.php";
+$wgAutoloadClasses['MessageUpdateJob'] = "$dir/utils/MessageUpdateJob.php";
 $wgAutoloadClasses['MessageTable'] = "$dir/utils/MessageTable.php";
 $wgAutoloadClasses['MessageWebImporter'] = "$dir/utils/MessageWebImporter.php";
 $wgAutoloadClasses['PHPVariableLoader'] = "$dir/utils/ResourceLoader.php";
