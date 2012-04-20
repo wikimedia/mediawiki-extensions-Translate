@@ -4211,8 +4211,8 @@ $messages['ja'] = array(
 	'right-pagetranslation' => 'ページの版を翻訳対象に指定する',
 	'tpt-desc' => 'コンテンツページの翻訳のための拡張機能',
 	'tpt-section' => '翻訳単位$1',
-	'tpt-section-new' => '新規翻訳単位。
-名前: $1',
+	'tpt-section-new' => '新しい翻訳単位。
+名前：$1',
 	'tpt-section-deleted' => '翻訳単位$1',
 	'tpt-template' => 'ページの雛型',
 	'tpt-templatediff' => 'このページの雛型が変更されました。',
@@ -4228,10 +4228,10 @@ $messages['ja'] = array(
 	'tpt-oldrevision' => '$2はページ「[[$1]]」の最新版ではありません。
 翻訳対象に指定できるのは最新版のみです。',
 	'tpt-notsuitable' => 'ページ $1 は翻訳に対応していません。
-<nowiki><translate></nowiki>タグが含まれていること、また正しい構文で使用されていることを確認してください。',
-	'tpt-saveok' => 'ページ[[$1]]は翻訳対象に指定されており、$2{{PLURAL:$2|個}}の翻訳単位を含んでいます。
-このページを<span class="plainlinks">[$3 翻訳]</span>することができます。',
-	'tpt-badsect' => '「$1」は翻訳単位$2の名前として無効です。',
+<nowiki><translate></nowiki> タグが含まれていて、かつ文法的に正しいことをを確認してください。',
+	'tpt-saveok' => 'ページ「[[$1]]」は翻訳対象に指定されており、$2 {{PLURAL:$2|個の翻訳単位}}を含んでいます。
+このページを<span class="plainlinks">[$3 翻訳]</span>できます。',
+	'tpt-badsect' => '「$1」は翻訳単位$2の名前として正しくありません。',
 	'tpt-showpage-intro' => '以下は新規・既存・削除済みの節の一覧です。
 この版を翻訳対象に指定する前に、節の変更を最小限にすることで不要な翻訳作業を回避できないか確認してください。',
 	'tpt-mark-summary' => 'この版を翻訳対象に指定しました',
@@ -4247,7 +4247,7 @@ $messages['ja'] = array(
 	'tpt-new-pages' => '{{PLURAL:$1|このページ|これらのページ}}は本文に翻訳タグを含んでいますが、
 {{PLURAL:$1|このページ|これらのページ}}には翻訳対象に指定されている版がありません。',
 	'tpt-old-pages' => '{{PLURAL:$1|これらの|この}}ページには翻訳対象に指定された版があります。',
-	'tpt-other-pages' => '{{PLURAL:$1|このページの古い版}}が翻訳対象に指定されていますが、
+	'tpt-other-pages' => '{{PLURAL:$1|このページの古い版|このページの複数の古い版}}が翻訳対象に指定されていますが、
 最新の{{PLURAL:$1|版}}は翻訳対象に指定できません。',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|このページ|これらのページ}}には、さらなる翻訳が不要です。',
 	'tpt-select-prioritylangs' => 'カンマ区切りの第一言語コードの一覧：',
@@ -4272,7 +4272,7 @@ $messages['ja'] = array(
 	'tpt-languages-zero' => 'この言語について翻訳を開始する',
 	'tpt-target-page' => 'このページは手動で更新できません。
 このページはページ「[[$1]]」の翻訳であり、[$2 翻訳ツール]を使用して更新します。',
-	'tpt-unknown-page' => 'この名前空間はコンテンツページの翻訳のために使用します。
+	'tpt-unknown-page' => 'この名前空間はコンテンツ ページの翻訳のために予約されています。
 編集しようとしているページに対応する翻訳対象ページが存在しないようです。',
 	'tpt-translation-restricted' => '翻訳管理者がこのページのこの言語への翻訳を禁止しています。
 理由：$1',
@@ -4311,8 +4311,8 @@ $messages['ja'] = array(
 	'pt-log-delete-full-nok' => '翻訳可能ページ[[:$1]]の削除中に問題が{{GENDER:$2|発生しました}}',
 	'pt-log-delete-lang-ok' => '翻訳ページ$1の削除が{{GENDER:$2|完了しました}}',
 	'pt-log-delete-lang-nok' => '翻訳ページ[[:$1]]の削除中に問題が{{GENDER:$2|発生しました}}',
-	'pt-log-encourage' => 'がページ[[:$1]]を翻訳対象に{{GENDER:$2|追加しました}}',
-	'pt-log-discourage' => 'がページ[[:$1]]を翻訳対象から{{GENDER:$2|外しました}}',
+	'pt-log-encourage' => 'がページ「[[:$1]]」を翻訳対象に{{GENDER:$2|指定しました}}',
+	'pt-log-discourage' => 'がページ「[[:$1]]」を翻訳対象から{{GENDER:$2|外しました}}',
 	'pt-log-priority-langs-unset' => 'がページ「[[:$1]]」から主要言語を{{GENDER:$2|除去しました}}',
 	'pt-log-priority-langs' => 'がページ「[[:$1]]」の主要言語を$3に{{GENDER:$2|設定しました}}。理由：$4',
 	'pt-log-priority-langs-force' => 'がページ「[[:$1]]」の言語を$3に{{GENDER:$2|制限しました}}。理由：$4',
