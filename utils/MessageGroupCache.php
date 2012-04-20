@@ -16,6 +16,9 @@
  * @ingroup MessageGroups
  */
 class MessageGroupCache {
+	const NO_SOURCE = 1;
+	const NO_CACHE = 2;
+	const CHANGED = 3;
 
 	/**
 	 * @var MessageGroup
@@ -69,6 +72,14 @@ class MessageGroupCache {
 	}
 
 	/**
+	 * ...
+	 * @return \string Unix timestamp.
+	 */
+	public function getUpdateTimestamp() {
+		return $this->open()->get( '#updated' );
+	}
+
+	/**
 	 * Get an item from the cache.
 	 * @param $key
 	 * @return string
@@ -116,9 +127,9 @@ class MessageGroupCache {
 	 * Checks whether the cache still reflects the source file.
 	 * It uses multiple conditions to speed up the checking from file
 	 * modification timestamps to hashing.
-	 * @return \bool Wether the cache is up to date.
+	 * @return \bool Whether the cache is up to date.
 	 */
-	public function isValid() {
+	public function isValid( &$reason = 0 ) {
 		$group = $this->group;
 		$groupId = $group->getId();
 
@@ -154,8 +165,11 @@ class MessageGroupCache {
 			// Timestamp and existence checks
 			if ( !$cache && !$source ) {
 				return true;
-			} elseif ( $cache xor $source ) {
-				// Either exists but not both
+			} elseif ( !$cache && $source ) {
+				$reason = self::NO_CACHE;
+				return false;
+			} elseif ( $cache && !$source ) {
+				$reason = self::NO_SOURCE;
 				return false;
 			} elseif ( filemtime( $filename ) <= $this->get( '#updated' ) ) {
 				return true;
@@ -176,8 +190,11 @@ class MessageGroupCache {
 
 		// Message count check
 		$messages = $group->load( $this->code );
-		if ( $this->get( '#msgcount' ) != count( $messages ) ) {
+		// CDB converts numbers to strings
+		$count = intval( $this->get( '#msgcount' ) );
+		if ( $count !== count( $messages ) ) {
 			// Number of messsages has changed
+			$reason = self::CHANGED;
 			return false;
 		}
 
@@ -189,6 +206,7 @@ class MessageGroupCache {
 			return true;
 		}
 
+		$reason = self::CHANGED;
 		return false;
 	}
 
