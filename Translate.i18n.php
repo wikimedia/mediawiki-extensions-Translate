@@ -2284,12 +2284,15 @@ Ye enforma afayadizo pa les xeres de correición.',
 
 /** Azerbaijani (Azərbaycanca)
  * @author Cekli829
+ * @author Irada
  * @author Wertuose
  */
 $messages['az'] = array(
 	'translate' => 'Tərcümə et',
+	'translate-taskui-view' => 'Bütün xəbərlərin göstərilməsi',
 	'translate-page-group' => 'Qrup',
 	'translate-page-language' => 'Dil',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|xəbər|xəbəri}} səhifədə göstər',
 	'translate-submit' => 'Seç',
 	'translate-magic-cm-current' => 'Hazırki',
 	'translate-magic-cm-original' => 'Orijinal',
@@ -4624,6 +4627,7 @@ Du skal være i oversættergruppen for at gemme ændringer.
 	'translate-checks-pagename' => 'Navnerum er anderledes end i originalen',
 	'translate-checks-format' => 'Denne oversættelse følger ikke originalen eller har ugyldig syntaks: $1',
 	'translate-checks-escape' => 'Følgende undtagelser kan være fejltagelser: <strong>$1</strong>',
+	'translate-checks-parametersnotequal' => 'Antallet af parametre er {{PLURAL:$1|$1}}; det burde være {{PLURAL:$2|$2}}.',
 	'translate-checks-fudforum-syntax' => 'Brug <nowiki>$1</nowiki> i stedet for <nowiki>$2</nowiki> i dette projekt.',
 	'translate-pref-nonewsletter' => 'Send ikke e-mail-nyhedsbreve til mig',
 	'translate-pref-editassistlang' => 'Hjælpesprog:',
@@ -4841,6 +4845,7 @@ Detaljer: $1',
 	'translate-workflow-set-doing' => 'Sætter...',
 	'translate-workflow-set-done' => 'Sat!',
 	'translate-stats-workflow' => 'Status',
+	'translate-dynagroup-recent-label' => 'Seneste oversættelser',
 	'translate-dynagroup-by' => 'Oversat af {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Oversat af {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Sidste ændring af {{GENDER:$1|$1}}',
@@ -12358,7 +12363,7 @@ $messages['ja'] = array(
 	'translate-pref-editassistlang-bad' => '一覧中の不正な言語コード：
 <nowiki>$1</nowiki>',
 	'translate-pref-jsedit' => '拡張版翻訳エディタ（JavaScriptが必要）',
-	'right-translate' => '翻訳用インターフェースを使って編集する',
+	'right-translate' => '翻訳用インターフェイスを使用して編集',
 	'right-translate-manage' => 'メッセージ群を管理する',
 	'action-translate-manage' => 'メッセージ群を管理',
 	'right-translate-import' => 'オフラインでの翻訳を読み込む',
@@ -12551,7 +12556,7 @@ $1',
 	'translate-workflow-state-' => '（解除）',
 	'translate-workflowstatus' => '進捗状況：$1',
 	'translate-workflow-set-do' => '設定',
-	'translate-workflow-set-doing' => '設定中・・・',
+	'translate-workflow-set-doing' => '設定中...',
 	'translate-workflow-set-done' => '設定完了！',
 	'translate-workflow-set-error-alreadyset' => '要求された進捗状況は、現在の進捗状況と同じです。',
 	'translate-workflow-autocreated-summary' => '作業進捗状況$1のページの自動作成',
@@ -23598,11 +23603,14 @@ $messages['th'] = array(
 
 /** Turkmen (Türkmençe)
  * @author Hanberke
+ * @author Nazarisgoal
  * @author Runningfridgesrule
  */
 $messages['tk'] = array(
 	'translate' => 'Terjime',
 	'translate-desc' => 'Mediawikini we ýenekileri terjime etmek üçin [[Special:Translate|ýörite sahypa]]',
+	'translate-taskui-view' => 'Hemme ÿazgylary görkez',
+	'translate-taskui-untranslated' => 'Terjime edilmedik ÿazgylary görkez',
 	'translate-page-settings-legend' => 'Ileri tutmalar',
 	'translate-page-group' => 'Topar',
 	'translate-page-language' => 'Dil',

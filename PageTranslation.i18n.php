@@ -1443,10 +1443,12 @@ kontrollér før denne version markeres for oversættelse, at ændringerne i sek
 	'tpt-already-marked' => 'Den seneste version af denne side er allerede markeret for oversættelse.',
 	'tpt-unmarked' => 'Siden $1 er ikke længere markeret til oversættelse.',
 	'tpt-list-nopages' => 'Ingen sider er markeret for oversættelse eller parate til at blive markeret for oversættelse.',
+	'tpt-other-pages-title' => 'Fejlbehæftede sider',
 	'tpt-new-pages' => '{{PLURAL:$1|Denne side|Disse sider}} indeholder tekst med oversættelsestags, men ingen version af {{PLURAL:$1|siden|siderne}} er i øjeblikket markeret for oversættelse.',
 	'tpt-old-pages' => 'En version af {{PLURAL:$1|denne side|disse sider}} er markeret for oversættelse.',
 	'tpt-other-pages' => '{{PLURAL:$1|En gammel version af denne side er|Ældre versioner af disse sider er}} markeret til oversættelse,
 men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til oversættelse.',
+	'tpt-select-prioritylangs' => 'Liste over sprogkoder for prioriterede sprog, adskilt med kommaer:',
 	'tpt-select-prioritylangs-reason' => 'Begrundelse:',
 	'tpt-rev-unmark' => 'fjern denne side fra oversættelse',
 	'translate-tag-translate-link-desc' => 'Oversæt denne side',
@@ -1456,12 +1458,17 @@ men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til 
 	'tpt-translation-intro' => 'Denne side er en <span class="plainlinks">[$1 oversat version]</span> af en side [[$2]] og oversættelsen er $3 % komplet og opdateret.',
 	'tpt-translation-intro-fuzzy' => 'Forældede oversættelser er markeret sådan her.',
 	'tpt-languages-legend' => 'Andre sprog:',
+	'tpt-languages-zero' => 'Begynd på oversættelsen til dette sprog',
 	'tpt-target-page' => 'Denne side kan ikke opdateres manuelt.
 Siden er en oversættelse af siden [[$1]] og oversættelsen kan opdateres ved at bruge [$2 oversættelsesværktøjet].',
 	'tpt-unknown-page' => 'Dette navnerum er reserveret til oversættelser af indholdssider.
 Siden som du prøver at redigere, ser ikke ud til at svare til nogen side markeret for oversættelse.',
 	'tpt-render-summary' => 'Opdaterer for at passe til en ny version af kildesiden',
 	'tpt-download-page' => 'Eksportér side med oversættelser',
+	'tpt-aggregategroup-add' => 'Tilføj',
+	'tpt-aggregategroup-save' => 'Gem',
+	'tpt-aggregategroup-new-name' => 'Navn:',
+	'tpt-aggregategroup-new-description' => 'Beskrivelse (valgfri):',
 	'pt-parse-open' => 'Ubalanceret &lt;translate> tag.
 Oversættelse skabelon: <pre>$1</pre>',
 	'pt-parse-close' => 'Ubalanceret &lt;/translate> tag.
@@ -4710,6 +4717,7 @@ D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iw
 	'tpt-aggregategroup-add-new' => 'Eng nei zesummegeluechte Grupp derbäisetzen',
 	'tpt-aggregategroup-new-name' => 'Numm:',
 	'tpt-aggregategroup-new-description' => 'Beschreiwung (optional):',
+	'tpt-aggregategroup-remove-confirm' => 'Sidd Dir sécher datt Dir dëse Grupp läsche wëllt?',
 	'pt-parse-open' => 'Netsymetreschen &lt;translate&gt;-Tag.
 Iwwersetzungsschabloun: <pre>$1</pre>',
 	'pt-parse-close' => 'Netsymetreschen &lt;&#47;translate&gt;-Tag.
