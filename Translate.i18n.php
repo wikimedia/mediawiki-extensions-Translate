@@ -12357,9 +12357,9 @@ $messages['ja'] = array(
 	'translate-pref-nonewsletter' => 'メールのニュースレターを受け取らない',
 	'translate-pref-editassistlang' => '補助言語：',
 	'prefs-translate' => '翻訳設定',
-	'translate-pref-editassistlang-help' => 'カンマ区切りの言語コード一覧。
-これらの言語での翻訳が、翻訳中に表示されます。
-規定の一覧は、自身の言語により変化します。',
+	'translate-pref-editassistlang-help' => '言語コードをカンマ区切りで列挙します。
+翻訳中に、これらの言語での翻訳が表示されます。
+既定の言語一覧は、自身の言語により変化します。',
 	'translate-pref-editassistlang-bad' => '一覧中の不正な言語コード：
 <nowiki>$1</nowiki>',
 	'translate-pref-jsedit' => '拡張版翻訳エディタ（JavaScriptが必要）',
