@@ -1157,7 +1157,7 @@ class MessageGroups {
 			}
 		}
 
-		$aggregategroups = self::getAggregateGroups( );
+		$aggregategroups = self::getAggregateGroups();
 		foreach ( $aggregategroups as $id => $group ) {
 			$conf = array();
 			$conf['BASIC'] = array();
@@ -1167,7 +1167,7 @@ class MessageGroups {
 			$conf['BASIC']['class'] = 'AggregateMessageGroup';
 			$conf['BASIC']['description'] = $group['description'];
 			$conf['BASIC']['namespace'] = 'NS_TRANSLATIONS';
-			$subgroups = explode( ',', TranslateMetadata::get( $id, 'subgroups' ) ) ;
+			$subgroups = explode( ',', TranslateMetadata::get( $id, 'subgroups' ) );
 			$conf['GROUPS'] = $subgroups;
 			$group = MessageGroupBase::factory( $conf );
 			$wgTranslateCC[$id] = $group;
@@ -1406,7 +1406,7 @@ class MessageGroups {
 	 */
 	public static function getGroupStructure() {
 		$groups = self::getAllGroups();
-		
+
 		// Determine the top level groups of the tree
 		$tree = $groups;
 		$structure = array();
@@ -1502,7 +1502,7 @@ class MessageGroups {
 		array_unshift( $tree, $parent );
 		return $tree;
 	}
-	
+
 	/*
 	 * Get all the aggregate groups defined in translate_metadata table, along with
 	 * subgroups as MessageGroup objects.
@@ -1514,22 +1514,19 @@ class MessageGroups {
 		$conds = array(
 			'tmd_key' => 'subgroups',
 		);
-		$options = array(
-			'ORDER BY' => 'tmd_group',
-		);
-		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
+		$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
 		$aggregateGroups = array();
 		foreach ( $res as $r ) {
 			$aggregateGroups[$r->tmd_group] = array();
 			$aggregateGroups[$r->tmd_group]['id'] = $r->tmd_group;
 			$aggregateGroups[$r->tmd_group]['name'] = TranslateMetadata::get( $r->tmd_group, 'name' );
 			$aggregateGroups[$r->tmd_group]['description'] = TranslateMetadata::get( $r->tmd_group, 'description' );
-			$subGroupsArray = explode( ',', $r->tmd_value ) ;
+			$subGroupsArray = explode( ',', $r->tmd_value );
 			$subGroups = array();
 			foreach ( $subGroupsArray as $subGroup ) {
 				$subGroups[$subGroup] = MessageGroups::getGroup( trim( $subGroup ) );
 			}
-			$aggregateGroups[$r->tmd_group]['subgroups'] = $subGroups ;
+			$aggregateGroups[$r->tmd_group]['subgroups'] = $subGroups;
 		}
 		return $aggregateGroups;
 	}
