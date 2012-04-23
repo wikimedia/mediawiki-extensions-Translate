@@ -471,6 +471,7 @@ Most useful for the proofreading tasks.',
  * @author Toliño
  * @author Umherirrender
  * @author פוילישער
+ * @author 555
  */
 $messages['qqq'] = array(
 	'translate' => 'This message is the page title of the special page [[Special:Translate]]. It is the verb "to translate".
@@ -559,7 +560,7 @@ This warning indicates that the namespace in the translation does not match the 
 	'translate-rc-translation-filter-filter' => 'Option for filter in [[Special:RecentChanges]]. Selecting this option results in the filter not showing any recent changes that are translations.',
 	'translate-rc-translation-filter-site' => 'Selects changes to MediaWiki-messages without a language code in the [[Special:RecentChanges|recentchanges]].
 For example MediaWiki:Common.css, but not MediaWiki:Common.css/fr or other messages for specific languages.
-These messages will not be submitted to svn, but will only affect the interface on translatewiki.net.',
+These messages will only affect the interface on {{SITENAME}}.',
 	'translate-stats-edits' => "This message is used in the automatically created graph. It's possible that the graph plotting software doesn't support non-Latin scripts correctly.
 
 {{Identical|Edit}}",
@@ -610,6 +611,7 @@ These messages will not be submitted to svn, but will only affect the interface 
 	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
 	'translate-mgs-fieldset' => 'Fieldset label in [[Special:MessageGroupStats]]',
 	'translate-mgs-column-language' => '{{Identical|Language}}',
+	'supportedlanguages-summary' => 'Header for [[Special:SupportedLanguages]] page.',
 	'supportedlanguages-colorlegend' => 'Used on [[Special:SupportedLanguages]]. Parameters:
 * $1 is not a single number, but a series of numbers with different background colours, serving as a legend to match each colour with a number of days passed since the last contributed translation. See [[Special:SupportedLanguages]] to see the final rendering.',
 	'supportedlanguages-portallink' => '{{optional}}',
@@ -713,7 +715,7 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'logentry-groupreview-message' => '{{Logentry}}
 
 Additional parameters:
-* $4: Language
+* $4: Localised language name (with language code in parentheses)
 * $5: Previous workflow state
 * $6: New workflow state',
 	'translate-workflow-state-' => 'Unselectable select option in Special:Translate if workflow state editing is on. The dangling hyphen in the message key hints that this state is unset; the actual states have the same key with something after the hyphen.',
@@ -12388,7 +12390,7 @@ $messages['ja'] = array(
 	'translate-statsf-days' => '開始日：',
 	'translate-statsf-start' => '開始日：',
 	'translate-statsf-scale' => '粒度：',
-	'translate-statsf-scale-months' => 'ヶ月',
+	'translate-statsf-scale-months' => '月',
 	'translate-statsf-scale-weeks' => '週',
 	'translate-statsf-scale-days' => '日',
 	'translate-statsf-scale-hours' => '時間',
@@ -12492,7 +12494,9 @@ $messages['ja'] = array(
 	'translate-manage-import-done' => 'すべて完了しました！',
 	'translate-manage-import-rebuild' => 'キャッシュの再構築',
 	'translate-manage-intro-en' => '以下はこのグループにおけるメッセージの変更の一覧です。変更を精査し、それぞれのメッセージに対して行いたい操作を選択してください。メッセージ定義を更新した際には、もしあれば、他の言語における外部の変更も点検してください。また、操作 <code>ignore</code> は一時的なものにしかすぎないことに注意してください。',
-	'translate-manage-intro-other' => '以下は$1における翻訳の変更の一覧です。変更を精査し、それぞれのメッセージに対して行いたい操作を選択してください。変更を無視することを選んだ場合、次回のインポートでそれは上書きされます。',
+	'translate-manage-intro-other' => '以下は$1での翻訳の変更の一覧です。
+それぞれの翻訳について、変更を精査して、行いたい操作を選択してください。
+変更の無視を選択した場合、それは次回の書き出しで上書きされます。',
 	'translate-manage-subtitle' => '管理',
 	'translate-manage-import-rebuild-all' => 'すべての言語を再構築し、変更はすべて無視する',
 	'importtranslations' => '翻訳の取り込み',

@@ -2149,7 +2149,7 @@ $messages['mr'] = array(
 	'translate-fs-pagetitle' => 'सुरु झालेले विझार्ड मिळण्यासाठी ‌-$१',
 	'translate-fs-signup-title' => 'करार करणे.',
 	'translate-fs-userpage-title' => 'माझे सदस्यपान तयार करा.',
-	'translate-fs-permissions-title' => 'भाषांतरास परवानगी मिळण्यासाठी विनंती करा. (भाषांतर करणार्या व्यक्तीस )',
+	'translate-fs-permissions-title' => 'भाषांतर करण्याची परवानगी मिळण्यासाठी विनंती करा. (भाषांतर करणाऱ्या व्यक्तीस)',
 	'translate-fs-target-title' => 'भाषांतरास सुरुवात करा!',
 	'translate-fs-email-title' => 'आपला ई-मेल पत्ता पडताळून पहा.',
 	'translate-fs-intro' => '{{साइटचे नाव}} साइटवर तुमचे स्वागत आहे पहिली पायरी
@@ -2173,7 +2173,7 @@ $messages['mr'] = array(
 	'translate-fs-userpage-submit' => 'माझे सदस्यपान तयार करा.',
 	'translate-fs-userpage-done' => 'छान! तुम्हाला आता सदस्यपान आहे.',
 	'translate-fs-permissions-planguage' => 'मुख्य(महत्त्वाची) भाषा निवडा',
-	'translate-fs-permissions-help' => 'भाषांतर करणार्या समुहामध्ये समवेश होण्यासाठी विनंती पाठवण्याची तुम्हाला गरज आहे.
+	'translate-fs-permissions-help' => 'तुम्ही भाषांतर करणाऱ्या समूहामध्ये समाविष्ट होण्यासाठी विनंती पाठवावी.
 तुम्ही भाषांतर करण्यासाठी वापरणारी मुख्य भाषा निवडा.
 तुम्ही खाली टेक्सबॉक्स मध्ये इतर भाषा आणि सूचना देऊ शकता.',
 );
