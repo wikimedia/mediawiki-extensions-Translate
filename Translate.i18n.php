@@ -444,6 +444,7 @@ Most useful for the proofreading tasks.',
 );
 
 /** Message documentation (Message documentation)
+ * @author 555
  * @author Amire80
  * @author Ans
  * @author Assele
@@ -471,7 +472,6 @@ Most useful for the proofreading tasks.',
  * @author Toliño
  * @author Umherirrender
  * @author פוילישער
- * @author 555
  */
 $messages['qqq'] = array(
 	'translate' => 'This message is the page title of the special page [[Special:Translate]]. It is the verb "to translate".
@@ -12260,13 +12260,13 @@ $messages['ja'] = array(
 	'translate-taskui-optional' => '省略可能なメッセージを表示',
 	'translate-taskui-suggestions' => '翻訳メモリーの提案があるメッセージを表示',
 	'translate-taskui-acceptqueue' => '自分が採用可能なメッセージのみ',
-	'translate-taskui-reviewall' => '全ての翻訳を査読',
+	'translate-taskui-reviewall' => 'すべての翻訳を査読',
 	'translate-taskui-export-to-file' => 'ネイティブ形式で書き出し',
 	'translate-taskui-export-as-po' => 'オフライン翻訳のために書き出し',
 	'translate-taction-translate' => '翻訳',
 	'translate-taction-proofread' => '校正',
-	'translate-taction-lstats' => '言語内翻訳状況',
-	'translate-taction-mstats' => 'メッセージ群内の翻訳状況',
+	'translate-taction-lstats' => '言語別翻訳状況',
+	'translate-taction-mstats' => 'メッセージ群別の翻訳状況',
 	'translate-taction-export' => '書き出し',
 	'translate-taction-disabled' => 'このウィキではこのアクションは無効になっています。',
 	'translate-page-no-such-language' => '言語指定が不正です。',
@@ -12370,7 +12370,7 @@ $messages['ja'] = array(
 	'action-translate-manage' => 'メッセージ群を管理',
 	'right-translate-import' => 'オフラインでの翻訳を読み込む',
 	'action-translate-import' => 'オフラインでの翻訳を読み込む',
-	'right-translate-messagereview' => '翻訳を査読する',
+	'right-translate-messagereview' => '翻訳を査読',
 	'right-translate-groupreview' => 'メッセージ群のワークフローの状態を変更',
 	'translate-rc-translation-filter' => '翻訳を絞込み：',
 	'translate-rc-translation-filter-no' => '絞り込まない',
@@ -12418,7 +12418,7 @@ $messages['ja'] = array(
 	'translate-translations-project' => 'プロジェクト:',
 	'translate-translations-including-no-param' => 'サブページ引数に有効なメッセージキーを指定してください',
 	'translate-translations-history-short' => '履歴',
-	'languagestats' => '言語内翻訳状況',
+	'languagestats' => '言語別翻訳状況',
 	'languagestats-summary' => 'このページでは指定した言語におけるメッセージの翻訳状況をメッセージ群ごとに表示しています。',
 	'languagestats-stats-for' => '$1の翻訳統計（$2）。',
 	'languagestats-recenttranslations' => '最近の翻訳',
@@ -12439,17 +12439,17 @@ $messages['ja'] = array(
 	'translate-nothing-to-do' => '翻訳の可能なものはすべて翻訳されています。[[Special:Translate|{{int:translate}}]]を使ってメッセージを見直すことが推奨されます。',
 	'translate-languagestats-overall' => '合計',
 	'translate-ls-submit' => '統計を表示',
-	'translate-ls-column-group' => 'メッセージ グループ',
-	'translate-mgs-pagename' => 'メッセージ群内の翻訳状況',
+	'translate-ls-column-group' => 'メッセージ群',
+	'translate-mgs-pagename' => 'メッセージ群別の翻訳状況',
 	'translate-mgs-fieldset' => '表示設定',
 	'translate-mgs-group' => 'メッセージ群：',
-	'translate-mgs-nocomplete' => '翻訳を完了している言語を表示しない',
+	'translate-mgs-nocomplete' => '翻訳が完了した言語を表示しない',
 	'translate-mgs-noempty' => '翻訳が1つもない言語を表示しない',
 	'translate-mgs-submit' => '統計を表示',
 	'translate-mgs-column-language' => '言語',
 	'translate-mgs-totals' => '同時にすべての言語',
 	'translate-mgs-invalid-group' => '指定された群$1は存在しません。',
-	'translate-mgs-nothing' => '要求された統計は表示するものがありません。',
+	'translate-mgs-nothing' => '要求された統計には表示するものがありません。',
 	'supportedlanguages' => 'サポートしている言語',
 	'supportedlanguages-summary' => 'このページには、{{SITENAME}}が対応している全言語の一覧と、
 その言語で活動している翻訳者の名前を表示しています。
@@ -12510,8 +12510,8 @@ $1',
 	'translate-import-err-ul-failed' => 'ファイルのアップロードに失敗しました',
 	'translate-import-err-invalid-title' => '与えられたファイル名 <nowiki>$1</nowiki> が不正です。',
 	'translate-import-err-no-such-file' => 'ファイル <nowiki>$1</nowiki> は存在しないか、ローカルにアップロードされていません。',
-	'translate-import-err-stale-group' => 'このファイルが所属するメッセージグループは存在しません。',
-	'translate-import-err-no-headers' => 'ファイルが Translate 拡張機能の形式に正しく適応した gettext ファイルではありません。ファイルヘッダーからグループと言語を確定することができませんでした。',
+	'translate-import-err-stale-group' => 'このファイルが所属するメッセージ群は存在しません。',
+	'translate-import-err-no-headers' => 'ファイルが Translate 拡張機能の形式に正しく適応した gettext ファイルではありません。ファイル ヘッダーからメッセージ群と言語を決定できませんでした。',
 	'translate-import-err-warnings' => 'このファイルは形式が正しくありません。あなたの使ったエディターが msgctxt フィールドを除去していないか確認してください。詳細: $1',
 	'translate-js-summary' => '要約：',
 	'translate-js-save' => '保存',
@@ -12554,7 +12554,7 @@ $1',
 	'group-translate-proofr-member' => '{{GENDER:$1|翻訳査読者}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:翻訳査読者',
 	'log-name-translationreview' => '翻訳査読記録',
-	'log-description-translationreview' => '翻訳とメッセージ群に対する全ての査読の記録',
+	'log-description-translationreview' => '翻訳とメッセージ群に対するすべての査読の記録',
 	'logentry-translationreview-message' => '$1が$3の翻訳を{{GENDER:$2|承認}}',
 	'logentry-groupreview-message' => '$1がメッセージ群$3の$4の翻訳の進捗状況を$5から$6に{{GENDER:$2|変更しました}}',
 	'translate-workflow-state-' => '（解除）',
