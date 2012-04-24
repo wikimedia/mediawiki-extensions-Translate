@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAJ3////s\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-04-24T05:35:03Z",
+      "side": 1,
+      "message": "Typo here \u0027translate-smb-submitted\u0027 --\u003e \u0027translate-smg-submitted\u0027",
+      "revId": "0c630389df8d079c9367ed7ccd72a9a2a87b113d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
