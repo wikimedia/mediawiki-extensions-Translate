@@ -2226,7 +2226,12 @@ Nimi: $1',
 	'tpt-new-pages-title' => 'Tõlkimiseks esitatud leheküljed',
 	'tpt-old-pages-title' => 'Tõlgitavad leheküljed',
 	'tpt-other-pages-title' => 'Katkised leheküljed',
-	'tpt-discouraged-pages-title' => 'Soovimatud leheküljed',
+	'tpt-discouraged-pages-title' => 'Kasutusest välja jäetud leheküljed',
+	'tpt-new-pages' => '{{PLURAL:$1|See lehekülg sisaldab|Need leheküljed sisaldavad}} tõlkemärgenditega teksti,
+aga ükski {{PLURAL:$1|selle lehekülje|nende lehekülgede}} versioon pole praegu märgitud tõlkimiseks.',
+	'tpt-old-pages' => 'Mõned {{PLURAL:$1|selle lehekülje|nende lehekülgede}} versioonid on märgitud tõlkimiseks.',
+	'tpt-other-pages' => '{{PLURAL:$1|Selle lehekülje vana versioon|Nende lehekülgede vanad versioonid}} on märgitud tõlkimiseks
+ja {{PLURAL:$1|uusimat versiooni|uusimaid versioone}} ei saa tõlgitavaks teha.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Selle lehekülje|Nende lehekülgede}} edasist tõlkimist ei soovita.',
 	'tpt-rev-mark' => 'märgi tõlkimiseks',
 	'tpt-rev-unmark' => 'eemalda tõlkimisest',
@@ -2237,6 +2242,7 @@ Nimi: $1',
 	'tpt-rev-discourage-tooltip' => 'Olgu selle lehekülje edasine tõlkimine soovimatu',
 	'tpt-rev-encourage-tooltip' => 'Ennista see lehekülg harilikuks tõlkimiseks',
 	'translate-tag-translate-link-desc' => 'Tõlgi see leht',
+	'translate-tag-hasnew' => 'See lehekülg sisaldab <span class="plainlinks">[$1 muudatusi]</span>, mida pole märgitud tõlkimiseks.',
 	'tpt-translation-intro-fuzzy' => 'Iganenud tõlkeid märgitakse nii.',
 	'tpt-languages-legend' => 'Teistes keeltes:',
 	'pt-log-header' => 'Lehekülgede tõlkesüsteemiga seotud toimingute logi',
@@ -4225,7 +4231,7 @@ $messages['ja'] = array(
 	'tpt-templatediff' => 'このページの雛型が変更されました。',
 	'tpt-diff-old' => '前のテキスト',
 	'tpt-diff-new' => '新しいテキスト',
-	'tpt-submit' => 'この版を翻訳対象に指定する',
+	'tpt-submit' => 'この版を翻訳対象に指定',
 	'tpt-sections-oldnew' => '新規および既存の翻訳単位',
 	'tpt-sections-deleted' => '削除された翻訳単位',
 	'tpt-sections-template' => '翻訳ページの雛型',
@@ -4257,8 +4263,8 @@ $messages['ja'] = array(
 	'tpt-other-pages' => '{{PLURAL:$1|このページの古い版|このページの複数の古い版}}が翻訳対象に指定されていますが、
 最新の{{PLURAL:$1|版}}は翻訳対象に指定できません。',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|このページ|これらのページ}}には、さらなる翻訳が不要です。',
-	'tpt-select-prioritylangs' => 'カンマ区切りの第一言語コードの一覧：',
-	'tpt-select-prioritylangs-force' => '主要言語以外への翻訳を禁止する',
+	'tpt-select-prioritylangs' => '主要言語コードを列挙（カンマ区切り）：',
+	'tpt-select-prioritylangs-force' => '主要言語以外への翻訳を禁止',
 	'tpt-select-prioritylangs-reason' => '理由：',
 	'tpt-sections-prioritylangs' => '主要言語',
 	'tpt-rev-mark' => '翻訳対象に指定',
@@ -4269,14 +4275,14 @@ $messages['ja'] = array(
 	'tpt-rev-unmark-tooltip' => 'このページを翻訳対象から除去します。',
 	'tpt-rev-discourage-tooltip' => 'このページのこれ以上の翻訳を中止します。',
 	'tpt-rev-encourage-tooltip' => 'このページを通常の翻訳に復元します。',
-	'translate-tag-translate-link-desc' => 'このページを翻訳する',
-	'translate-tag-markthis' => 'このページを翻訳対象に指定する',
+	'translate-tag-translate-link-desc' => 'このページを翻訳',
+	'translate-tag-markthis' => 'このページを翻訳対象に指定',
 	'translate-tag-markthisagain' => 'このページには最後に<span class="plainlinks">[$2 翻訳が指定]</span>されて以降に<span class="plainlinks">[$1 変更]</span>があります。',
 	'translate-tag-hasnew' => 'このページには翻訳対象に指定されていない<span class="plainlinks">[$1 変更]</span>があります。',
 	'tpt-translation-intro' => 'このページはページ「[[$2]]」の<span class="plainlinks">[$1 翻訳版]</span> です。翻訳は$3%完了しています。',
 	'tpt-translation-intro-fuzzy' => '修正が必要な翻訳にはこのような印が付いています。',
 	'tpt-languages-legend' => '他言語での翻訳:',
-	'tpt-languages-zero' => 'この言語について翻訳を開始する',
+	'tpt-languages-zero' => 'この言語について翻訳を開始',
 	'tpt-target-page' => 'このページは手動で更新できません。
 このページはページ「[[$1]]」の翻訳であり、[$2 翻訳ツール]を使用して更新します。',
 	'tpt-unknown-page' => 'この名前空間はコンテンツ ページの翻訳のために予約されています。
@@ -4293,7 +4299,7 @@ $messages['ja'] = array(
 	'aggregategroups' => '集約群',
 	'tpt-aggregategroup-add' => '追加',
 	'tpt-aggregategroup-save' => '保存',
-	'tpt-aggregategroup-add-new' => '新しい集約群を追加する',
+	'tpt-aggregategroup-add-new' => '新しい集約群を追加',
 	'tpt-aggregategroup-new-name' => '名前：',
 	'tpt-aggregategroup-new-description' => '説明（省略可）：',
 	'tpt-aggregategroup-remove-confirm' => 'この集約群を本当に削除してもよろしいですか？',
@@ -4348,10 +4354,10 @@ $messages['ja'] = array(
 	'pt-movepage-action-check' => '移動が可能な場合にチェック',
 	'pt-movepage-action-perform' => '移動しない',
 	'pt-movepage-action-other' => '対象を変更',
-	'pt-movepage-intro' => 'この特別ページは、翻訳用に設定されたページを移動することができます。
-多くのページを移動しなければならないため、移動操作はすぐに完了はしません。
-ページが移動されている間、そのページの質問ページで対話することができません。
-失敗した場合は、その[[Special:Log/pagetranslation|ページの翻訳ログ]]に記録されるので、手動で修正される必要があります。',
+	'pt-movepage-intro' => 'この特別ページでは、翻訳対象に指定されたページを移動できます。
+多くのページを移動する必要があるため、移動操作はすぐには完了しません。
+ページの移動中は、そのページの操作はできません。
+失敗した場合は、その[[Special:Log/pagetranslation|ページの翻訳ログ]]に記録されるので、手動で修正する必要があります。',
 	'pt-movepage-logreason' => '翻訳可能ページ$1の一部。',
 	'pt-movepage-started' => '基底ページが移動されました。
 [[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認してください。',
@@ -4363,12 +4369,12 @@ $messages['ja'] = array(
 	'pt-deletepage-action-check' => '削除するページの一覧',
 	'pt-deletepage-action-perform' => '削除を実行',
 	'pt-deletepage-action-other' => '対象を変更',
-	'pt-deletepage-lang-legend' => '翻訳ページを削除する',
-	'pt-deletepage-full-legend' => '翻訳可能ページを削除する',
-	'pt-deletepage-any-legend' => '翻訳可能ページや、翻訳可能ページや翻訳を削除する',
+	'pt-deletepage-lang-legend' => '翻訳ページを削除',
+	'pt-deletepage-full-legend' => '翻訳可能ページを削除',
+	'pt-deletepage-any-legend' => '翻訳可能ページや、翻訳可能ページや翻訳を削除',
 	'pt-deletepage-current' => 'ページ名：',
 	'pt-deletepage-reason' => '理由：',
-	'pt-deletepage-subpages' => '全ての下位ページを削除する',
+	'pt-deletepage-subpages' => '全ての下位ページを削除',
 	'pt-deletepage-list-pages' => '削除するページの一覧',
 	'pt-deletepage-list-translation' => '翻訳ページ',
 	'pt-deletepage-list-section' => '節ページ',
@@ -4376,9 +4382,9 @@ $messages['ja'] = array(
 	'pt-deletepage-list-count' => '合計で$1ページが削除',
 	'pt-deletepage-full-logreason' => '翻訳可能ページ$1の一部。',
 	'pt-deletepage-lang-logreason' => '翻訳ページ$1の一部。',
-	'pt-deletepage-started' => '[[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認して下さい。',
-	'pt-deletepage-intro' => 'この特別ページでは、翻訳可能ページ全体やある言語への翻訳全てを削除することができます。
-多くのページを削除しなければならないため、削除操作は即実行されません。
+	'pt-deletepage-started' => '[[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認してください。',
+	'pt-deletepage-intro' => 'この特別ページでは、翻訳可能ページ全体やある言語への翻訳全てを削除できます。
+多くのページを削除する必要があるため、削除操作はすぐには完了しません。
 失敗した場合、その[[Special:Log/pagetranslation|ページの翻訳記録]]に記録されるので、手動で修正する必要があります。',
 );
 
