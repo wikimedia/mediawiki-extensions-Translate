@@ -443,6 +443,7 @@ Most useful for the proofreading tasks.',
  * @author Raymond
  * @author SPQRobin
  * @author Sanbec
+ * @author Shirayuki
  * @author Siebrand
  * @author The Evil IP address
  * @author Toliño
@@ -454,16 +455,16 @@ $messages['qqq'] = array(
 
 {{Identical|Translate}}',
 	'translate-desc' => '{{desc}}',
-	'translate-taskui-view' => 'Task in Special:Translate on action Translate',
-	'translate-taskui-untranslated' => 'Task in Special:Translate on action Translate',
-	'translate-taskui-optional' => 'Task in Special:Translate on action Translate',
-	'translate-taskui-suggestions' => 'Task in Special:Translate on action Translate',
-	'translate-taskui-acceptqueue' => 'Task in Special:Translate on action Proofread - only shown to users who are allowed to accept translations
+	'translate-taskui-view' => 'Task in [[Special:Translate]] on action Translate',
+	'translate-taskui-untranslated' => 'Task in [[Special:Translate]] on action Translate',
+	'translate-taskui-optional' => 'Task in [[Special:Translate]] on action Translate',
+	'translate-taskui-suggestions' => 'Task in [[Special:Translate]] on action Translate',
+	'translate-taskui-acceptqueue' => 'Task in [[Special:Translate]] on action Proofread - only shown to users who are allowed to accept translations
 
 Goes together with {{msg-mw|translate-taskui-reviewall}}',
-	'translate-taskui-reviewall' => 'Task in Special:Translate on action Proofread',
-	'translate-taskui-export-to-file' => 'Task in Special:Translate on action Export',
-	'translate-taskui-export-as-po' => 'Task in Special:Translate on action Export',
+	'translate-taskui-reviewall' => 'Task in [[Special:Translate]] on action Proofread',
+	'translate-taskui-export-to-file' => 'Task in [[Special:Translate]] on action Export',
+	'translate-taskui-export-as-po' => 'Task in [[Special:Translate]] on action Export',
 	'translate-taction-translate' => 'A tab text used in Special pages Translate, LanguageStats and MessageGroupStats',
 	'translate-taction-proofread' => 'A tab text used in Special pages Translate, LanguageStats and MessageGroupStats',
 	'translate-taction-lstats' => 'A tab text used in Special pages Translate, LanguageStats and MessageGroupStats',
@@ -595,11 +596,11 @@ These messages will only affect the interface on {{SITENAME}}.',
 	'supportedlanguages-recenttranslations' => 'Link on [[Special:SupportedLanguages]] to the Recent Changes special page.',
 	'translate-save' => '{{Identical|Save}}',
 	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
-	'managemessagegroups' => 'Special page name and html title in Special:ManageMessageGroups',
-	'translate-smg-notallowed' => 'Wikitext error message in Special:ManageMessageGroups',
-	'translate-smg-nochanges' => 'Wikitext information message in Special:ManageMessageGroups',
-	'translate-smg-submit' => 'Button label in Special:ManageMessageGroups',
-	'translate-smg-submitted' => 'Confirmation wikitext information message in Special:ManageMessageGroups',
+	'managemessagegroups' => 'Special page name and html title in [[Special:ManageMessageGroups]]',
+	'translate-smg-notallowed' => 'Wikitext error message in [[Special:ManageMessageGroups]]',
+	'translate-smg-nochanges' => 'Wikitext information message in [[Special:ManageMessageGroups]]',
+	'translate-smg-submit' => 'Button label in [[Special:ManageMessageGroups]]',
+	'translate-smg-submitted' => 'Confirmation wikitext information message in [[Special:ManageMessageGroups]]',
 	'translate-manage-import-diff' => 'See screenshot [[File:Manage-2.png|150px|right|Group management interface]].
 Variables:
 *$1 - Message name
@@ -656,12 +657,12 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'translate-searchprofile' => 'Tab in [[Special:Search]]
 {{Identical|Translation}}',
 	'translate-searchprofile-tooltip' => 'Tooltip for a tab in [[Special:Search]]',
-	'translate-messagereview-submit' => 'Button label in Special:Translate review mode.
+	'translate-messagereview-submit' => 'Button label in [[Special:Translate]] review mode.
 {{Identical|Accept}}',
-	'translate-messagereview-progress' => 'Button label in Special:Translate review mode. Button is disabled.',
-	'translate-messagereview-failure' => 'Button label in Special:Translate review mode. Button is disabled. $1 can be {{msg-mw|translate-messagereview-apierror-invalidrevision}} or {{msg-mw|translate-messagereview-apierror-unknownmessage}} or {{msg-mw|translate-messagereview-apierror-fuzzymessage}}.',
-	'translate-messagereview-done' => 'Button label in Special:Translate review mode. Button is disabled.',
-	'translate-messagereview-reviews' => 'Status message in Special:Translate in review mode',
+	'translate-messagereview-progress' => 'Button label in [[Special:Translate]] review mode. Button is disabled.',
+	'translate-messagereview-failure' => 'Button label in [[Special:Translate]] review mode. Button is disabled. $1 can be {{msg-mw|translate-messagereview-apierror-invalidrevision}} or {{msg-mw|translate-messagereview-apierror-unknownmessage}} or {{msg-mw|translate-messagereview-apierror-fuzzymessage}}.',
+	'translate-messagereview-done' => 'Button label in [[Special:Translate]] review mode. Button is disabled.',
+	'translate-messagereview-reviews' => 'Status message in [[Special:Translate]] in review mode',
 	'translate-messagereview-reviewswithyou' => 'Status message in Special:Translate in review mode',
 	'translate-messagereview-reviewsyou' => 'Status message in Special:Translate in review mode',
 	'api-error-invalidrevision' => 'Error message for {{msg-mw|translate-messagereview-failure}}',
@@ -11561,8 +11562,8 @@ $messages['ja'] = array(
 	'translate' => '翻訳',
 	'translate-desc' => 'MediaWiki及びその他を翻訳するための[[Special:Translate|特別ページ]]',
 	'translate-showsub' => '{{PLURAL:$1|下位群|$1個の下位群}}を表示。',
-	'translate-grouplisting' => 'これは、翻訳可能な群の全一覧です。
-メッセージ群の名前をクリックして、未翻訳メッセージの一覧を見ることができます。',
+	'translate-grouplisting' => 'これは翻訳可能なすべての群の一覧です。
+メッセージ群名をクリックして、未翻訳メッセージの一覧を表示してください。',
 	'translate-grouplisting-empty' => '翻訳用に設定されたメッセージ群はありません',
 	'translate-taskui-view' => '全メッセージを表示',
 	'translate-taskui-untranslated' => '未翻訳メッセージを表示',
@@ -11597,7 +11598,7 @@ $messages['ja'] = array(
 	'translate-prev' => '前のページ',
 	'translate-page-description-legend' => 'この群についての情報',
 	'translate-page-description-hasoptional' => 'このメッセージ群には省略可能なメッセージがあります。
-省略可能なメッセージは、その言語において特別な必要性（スペースを除去する、固有名詞を翻字するなど）がある場合にのみ翻訳してください。$1',
+省略可能なメッセージは、その言語で特別な必要性（スペースの除去、固有名詞の翻字など）がある場合のみ翻訳してください。$1',
 	'translate-page-description-hasoptional-open' => '省略可能なメッセージを表示する。',
 	'translate-page-edit' => '編集',
 	'translate-ext-url' => '<hr />ウェブサイト：$1',
@@ -11609,7 +11610,7 @@ $messages['ja'] = array(
 	'translate-edit-translation' => '翻訳',
 	'translate-edit-contribute' => '投稿',
 	'translate-edit-no-information' => "''このメッセージに関する説明はありません。''
-''もしこのメッセージが、どこでどのように使われているか知っている場合、説明を投稿して、他の翻訳者を助けてください。''",
+''このメッセージがどこでどのように使用されているか知っている場合は、説明を投稿して他の翻訳者を助けてください。''",
 	'translate-edit-information' => 'メッセージについての情報（$1）',
 	'translate-edit-in-other-languages' => '他言語でのメッセージ',
 	'translate-edit-committed' => '現在ソフトウェア上で採用されている翻訳メッセージ',
@@ -11620,7 +11621,7 @@ $messages['ja'] = array(
 	'translate-use-suggestion' => 'この現在の翻訳を、この翻訳提案に置き換えます。',
 	'translate-edit-tab-list' => 'メッセージ一覧',
 	'translate-edit-nopermission' => 'メッセージを翻訳する権限が必要です。',
-	'translate-edit-askpermission' => '権限を要求する',
+	'translate-edit-askpermission' => '権限を要求',
 	'translate-magic-pagename' => '拡張MediaWiki翻訳',
 	'translate-magic-help' => '特別ページへのエイリアス、マジックワード、名前空間名を翻訳できます。
 
@@ -11658,7 +11659,7 @@ $messages['ja'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => '次の{{PLURAL:$2|タグ}}を正しいものに修正してください：
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-plural' => '定義には<nowiki>{{PLURAL:}}</nowiki>がありますが、翻訳に存在していません。',
+	'translate-checks-plural' => '定義に<nowiki>{{PLURAL:}}</nowiki>がありますが、翻訳にはありません。',
 	'translate-checks-pagename' => '定義から名前空間が変更されています',
 	'translate-checks-format' => 'この翻訳は定義に沿っていない、または不正な構文を使用しています：$1',
 	'translate-checks-escape' => '以下のエスケープは偶発のものであるかもしれません：<strong>$1</strong>',
@@ -11673,7 +11674,7 @@ $messages['ja'] = array(
 既定の言語一覧は、自身の言語により変化します。',
 	'translate-pref-editassistlang-bad' => '一覧中の不正な言語コード：
 <nowiki>$1</nowiki>',
-	'translate-pref-jsedit' => '拡張版翻訳エディタ（JavaScriptが必要）',
+	'translate-pref-jsedit' => '拡張版翻訳エディター（JavaScriptが必要）',
 	'right-translate' => '翻訳用インターフェイスを使用して編集',
 	'right-translate-manage' => 'メッセージ群を管理する',
 	'action-translate-manage' => 'メッセージ群を管理',
@@ -11692,13 +11693,13 @@ $messages['ja'] = array(
 	'translate-stats-registrations' => '登録',
 	'translate-stats-reviews' => '査読',
 	'translate-stats-reviewers' => '査読者',
-	'translate-statsf-intro' => 'このフォームを使って簡単な統計を生成できます。すべての数値には上限と下限があります。',
+	'translate-statsf-intro' => 'このフォームで簡単な統計を生成できます。すべての数値には上限と下限があります。',
 	'translate-statsf-options' => 'グラフのオプション',
 	'translate-statsf-width' => '幅（ピクセル）：',
 	'translate-statsf-height' => '高さ（ピクセル）：',
 	'translate-statsf-days' => '日数：',
 	'translate-statsf-start' => '開始日時：',
-	'translate-statsf-scale' => '粒度：',
+	'translate-statsf-scale' => '精度：',
 	'translate-statsf-scale-months' => '月',
 	'translate-statsf-scale-weeks' => '週',
 	'translate-statsf-scale-days' => '日',
@@ -11710,15 +11711,15 @@ $messages['ja'] = array(
 	'translate-statsf-count-reviews' => '翻訳査読',
 	'translate-statsf-count-reviewers' => '査読者',
 	'translate-statsf-language' => '言語コードを列挙（カンマ区切り）：',
-	'translate-statsf-group' => 'グループコードを列挙（カンマ区切り）：',
+	'translate-statsf-group' => 'メッセージ群コードを列挙（カンマ区切り）：',
 	'translate-statsf-submit' => 'プレビュー',
 	'translate-tag-category' => '翻訳可能なページ',
-	'translate-tag-page-desc' => 'ウィキページ[[$2|$1]]に対する翻訳。',
+	'translate-tag-page-desc' => 'ウィキページ[[$2|$1]]に対する翻訳です。',
 	'translate-tag-fuzzy-comment' => '[[User:$1|$1]] が版 $2 で定義を変更しました。',
 	'translate-tag-fuzzy-reason' => '「$1」が $2 で定義を変更しました(コメント：$3)。',
 	'translate-sidebar-alltrans' => '他言語での翻訳',
 	'translations' => '全翻訳結果',
-	'translations-summary' => '既存のすべての訳文を見るには下欄にメッセージの名前を入力してください。',
+	'translations-summary' => '既存のすべての翻訳を表示するには下欄にメッセージ名を入力してください。',
 	'translate-translations-no-message' => '「$1」は翻訳できないメッセージです',
 	'translate-translations-none' => '「$1」には翻訳がありません',
 	'translate-translations-count' => '{{PLURAL:$1|翻訳|$1件の翻訳}}が見つかりました。',
@@ -11738,7 +11739,7 @@ $messages['ja'] = array(
 	'translate-langstats-collapseall' => 'すべて折り畳む',
 	'translate-language-code' => '言語コード',
 	'translate-language-code-field-name' => '言語コード：',
-	'translate-suppress-complete' => '翻訳が完了したグループを表示しない',
+	'translate-suppress-complete' => '翻訳が完了したメッセージ群を表示しない',
 	'translate-ls-noempty' => '全く翻訳されていないメッセージ群を表示しない',
 	'translate-language' => '言語',
 	'translate-total' => 'メッセージ数',
@@ -11772,6 +11773,8 @@ $messages['ja'] = array(
 	'translate-save' => '保存 ($1)',
 	'translate-jssti-add' => '追加',
 	'managemessagegroups' => 'メッセージ群の管理',
+	'translate-smg-nochanges' => '処理する変更はありません。',
+	'translate-smg-submitted' => 'メッセージの定義が更新されました。バックグラウンドで変更を処理中です。',
 	'translate-manage-import-diff' => 'メッセージ $1 | 操作：$2',
 	'translate-manage-import-new' => '新しいメッセージ $1',
 	'translate-manage-import-deleted' => '削除されたメッセージ $1',
@@ -11779,13 +11782,17 @@ $messages['ja'] = array(
 	'translate-manage-action-conflict' => '取り込みとfuzzy',
 	'translate-manage-action-ignore' => '無視',
 	'translate-manage-action-fuzzy' => '翻訳を取り込んで要修正の印を付ける',
-	'translate-manage-nochanges' => 'このグループのメッセージには定義変更はありません。',
-	'translate-manage-nochanges-other' => 'この言語が対応すべき変更はありませんでした。下のリンクをクリックするとグループの詳細画面に戻ります。',
-	'translate-manage-inconsistent' => 'リクエスト内に矛盾を発見しました。変更を確認した後に再度実施してください。詳細：$1',
+	'translate-manage-nochanges' => 'この群のメッセージの定義には変更はありません。',
+	'translate-manage-nochanges-other' => 'この言語が対応すべき変更はありませんでした。
+下のリンクをクリックするとメッセージ群の詳細画面に戻ります。',
+	'translate-manage-inconsistent' => 'リクエスト内に矛盾を発見しました。
+変更を確認した後に再度実施してください。
+詳細：$1',
 	'translate-manage-toolong' => '処理時間の最大値である$1秒を超過しました。処理を続行するにはフォームを再投稿してください。',
 	'translate-manage-import-summary' => '外部ソースから新しい版を取り込み中',
-	'translate-manage-conflict-summary' => '外部ソースから新しい版を取り込み中。確認してください。',
-	'translate-manage-fuzzy-summary' => '定義が変更されました',
+	'translate-manage-conflict-summary' => '外部ソースから新しい版を取り込み中。
+確認してください。',
+	'translate-manage-fuzzy-summary' => 'メッセージの定義が変更されました',
 	'importtranslations' => '翻訳の取り込み',
 	'translate-import-from-url' => 'ファイルの URL:',
 	'translate-import-from-wiki' => 'このウィキ内のファイル:',
@@ -11798,8 +11805,11 @@ $1',
 	'translate-import-err-invalid-title' => '与えられたファイル名 <nowiki>$1</nowiki> が不正です。',
 	'translate-import-err-no-such-file' => 'ファイル <nowiki>$1</nowiki> は存在しないか、ローカルにアップロードされていません。',
 	'translate-import-err-stale-group' => 'このファイルが所属するメッセージ群は存在しません。',
-	'translate-import-err-no-headers' => 'ファイルが Translate 拡張機能の形式に正しく適応した gettext ファイルではありません。ファイル ヘッダーからメッセージ群と言語を決定できませんでした。',
-	'translate-import-err-warnings' => 'このファイルは形式が正しくありません。あなたの使ったエディターが msgctxt フィールドを除去していないか確認してください。詳細: $1',
+	'translate-import-err-no-headers' => 'ファイルが Translate 拡張機能の形式に正しく適応した gettext ファイルではありません。
+ファイル ヘッダーからメッセージ群と言語を決定できませんでした。',
+	'translate-import-err-warnings' => 'このファイルは形式が正しくありません。
+あなたの使ったエディターが msgctxt フィールドを除去していないか確認してください。
+詳細: $1',
 	'translate-js-summary' => '要約：',
 	'translate-js-save' => '保存',
 	'translate-js-next' => '保存して次を開く',
@@ -13994,7 +14004,7 @@ Heng thuthawn duh-thlante hi i ţawngin mamawh bîk, entirnan hming roman hawraw
 	'translate-edit-tmmatch-source' => 'Lehlinna thu hnar: $1',
 	'translate-edit-tmmatch' => '$1% inmil',
 	'translate-use-suggestion' => 'Tuna lehlinna awm hi he rawtna hian thlâk rawh',
-	'translate-edit-tab-list' => 'Thawthawn tlar',
+	'translate-edit-tab-list' => 'Thuthawn tlar',
 	'translate-edit-nopermission' => 'Thuthawn letling tùrin phalna i neih a ngai.',
 	'translate-edit-askpermission' => 'Phalna dilna',
 	'translate-magic-pagename' => 'MediaWiki lehlinna zauh',
