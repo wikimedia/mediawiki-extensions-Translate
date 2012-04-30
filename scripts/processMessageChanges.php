@@ -109,7 +109,7 @@ class ProcessMessageChanges extends Maintenance {
 			$sourceContent = $file['MESSAGES'][$key];
 			$wikiContent = $wiki[$key]->translation();
 
-			if ( $sourceContent !== str_replace( TRANSLATE_FUZZY, '', $wikiContent ) ) {
+			if ( str_replace( TRANSLATE_FUZZY, '', $sourceContent ) !== str_replace( TRANSLATE_FUZZY, '', $wikiContent ) ) {
 				// TODO: Check whether the cached content is the
 				// same as the source and if so skip
 				$this->addChange( 'change', $group, $code, $key, $sourceContent );

@@ -116,7 +116,7 @@ class SpecialManageGroups extends SpecialPage {
 			$wiki = Revision::newFromTitle( $title )->getText();
 			$handle = new MessageHandle( $title );
 			if ( $handle->isFuzzy() ) {
-				$wiki = '!!FUZZY!!' . $wiki;
+				$wiki = '!!FUZZY!!' . str_replace( TRANSLATE_FUZZY, '', $wiki );
 			}
 
 			if ( $group->getSourceLanguage() === $code ) {
