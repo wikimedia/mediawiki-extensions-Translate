@@ -1396,6 +1396,25 @@ class MessageGroups {
 	}
 
 	/**
+	 * Get only groups of specific type (class).
+	 * @param string $type Class name of wanted type
+	 * @return MessageGroupBase[]
+	 * @since 2012-04-30
+	 */
+	public static function getGroupsByType( $type ) {
+		wfProfileIn( __METHOD__ );
+		$groups = self::getAllGroups();
+		foreach ( $groups as $id => $group ) {
+			if ( !$group instanceof $type ) {
+				unset( $groups[$id] );
+			}
+		}
+		wfProfileOut( __METHOD__ );
+		return $groups;
+	}
+
+
+	/**
 	 * Returns a tree of message groups. First group in each subgroup is
 	 * the aggregate group. Groups can be nested infinitely, though in practice
 	 * other code might not handle more than two (or even one) nesting levels.

@@ -35,7 +35,7 @@ class ProcessMessageChanges extends Maintenance {
 	}
 
 	public function execute() {
-		$groups = self::getGroupsOfType( 'FileBasedMessageGroup' );
+		$groups = MessageGroups::getGroupsByType( 'FileBasedMessageGroup' );
 		foreach ( $groups as $group ) {
 			$this->processMessageGroup( $group );
 		}
@@ -142,20 +142,6 @@ class ProcessMessageChanges extends Maintenance {
 			'content' => $content,
 		);
 	}
-
-
-	protected static function getGroupsOfType( $type ) {
-		wfProfileIn( __METHOD__ );
-		$groups = MessageGroups::getAllGroups();
-		foreach ( $groups as $id => $group ) {
-			if ( !$group instanceof $type ) {
-				unset( $groups[$id] );
-			}
-		}
-		wfProfileOut( __METHOD__ );
-		return $groups;
-	}
-
 }
 
 $maintClass = 'ProcessMessageChanges';
