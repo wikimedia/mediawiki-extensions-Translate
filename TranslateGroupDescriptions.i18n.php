@@ -716,6 +716,7 @@ Pšosym glědaj [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wi
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] móžo awtorow boka we wikiju Wikimedije malsnje namakaś.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] jo projekt, kótaryž stoj tekstowu wersiju Wikipedije offline na mobilnem rěźe k dispoziciji.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] jo platformu pśesegajuca aplikacija za mobilne telefony a tabletowe licadła za cytanje a wobźěłowanje Wikipedije',
+	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] jo platformu pśesegajuca aplikacija za mobilne telefony a tabletowe licadła za cytanje a wobźěłowanje Wikisłownika',
 );
 
 /** Greek (Ελληνικά)
@@ -1478,8 +1479,8 @@ $messages['ja'] = array(
 	'translate-group-desc-collection' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:Collection Collection]のすべてのメッセージを含んだ上位メッセージ群',
 	'translate-group-desc-flaggedrevs' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]のすべてのメッセージを含んだ上位メッセージ群',
 	'translate-group-desc-readerfeedback' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]のすべてのメッセージを含んだ上位メッセージ群',
-	'translate-group-desc-semantic' => '[http://semantic-mediawiki.org/ Semantic MediaWiki] 拡張機能のすべてのメッセージを含む上位メッセージ群',
-	'translate-group-desc-socialprofile' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]のすべてのメッセージを含む上位メッセージ群',
+	'translate-group-desc-semantic' => '[http://semantic-mediawiki.org/ Semantic MediaWiki] 拡張機能のすべてのメッセージを含んだ上位メッセージ群',
+	'translate-group-desc-socialprofile' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]のすべてのメッセージを含んだ上位メッセージ群',
 	'translate-group-desc-translate' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:Translate Translate]のすべてのメッセージを含んだ上位メッセージ群',
 	'translate-group-desc-wikiaextensions' => '[http://www.wikia.com Wikia]で使われているMediaWiki拡張機能によってサポートされた、すべてのメッセージからなる上位メッセージ群',
 	'translate-group-desc-wikimediaextensions' => '[http://wikimedia.org/ ウィキメディア財団]で使われているMediaWiki拡張機能にサポートされた、すべてのメッセージからなる上位メッセージ群',
@@ -1515,7 +1516,7 @@ $messages['ja'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] はオープンソースのマイクロブログサーバーです',
 	'translate-group-desc-statusnet-plugin' => 'これらのメッセージは、[[Translating:StatusNet|StatusNet]]のプラグインの一部です',
 	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver] にあるツールの国際化システム（<span class="plainlinks">[[Translating talk:Toolserver|サポート]]、[https://wiki.toolserver.org/view/Toolserver_Intuition 技術的詳細]</span>）である [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition] のメッセージ群',
-	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]は、ウィキメディアのウィキ上のページの著者をすばやく検索することができます',
+	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]は、ウィキメディアのウィキ上にあるページの一部の著者をすばやく検索できます',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]は、携帯可能な機器で、オフラインかつ文字のみのウィキペディアを提供します',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]はウィキペディアを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]]はウィクショナリーを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',

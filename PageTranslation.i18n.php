@@ -1743,6 +1743,13 @@ Bevor Sie diese Version zur Übersetzung markieren, stellen Sie bitte sicher, da
 Bitte prüfen Sie das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] auf Fehlermeldungen, bzw. die Vollzugsnachricht.',
 );
 
+/** Zazaki (Zazaki)
+ * @author Erdemaslancan
+ */
+$messages['diq'] = array(
+	'tpt-template' => 'Pela şabloni',
+);
+
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
  */
@@ -4221,7 +4228,7 @@ Gli errori sono riportati nel [[Special:Log/pagetranslation|registro delle tradu
  */
 $messages['ja'] = array(
 	'pagetranslation' => 'ページ翻訳',
-	'right-pagetranslation' => 'ページの版を翻訳対象に指定する',
+	'right-pagetranslation' => 'ページの版を翻訳対象に指定',
 	'tpt-desc' => 'コンテンツページの翻訳のための拡張機能',
 	'tpt-section' => '翻訳単位$1',
 	'tpt-section-new' => '新しい翻訳単位。
@@ -6062,9 +6069,13 @@ $messages['ps'] = array(
 	'tpt-nosuchpage' => 'د $1 په نوم کوم مخ نشته',
 	'tpt-old-pages-title' => 'د ژباړې مخونه',
 	'tpt-other-pages-title' => 'مات مخونه',
+	'tpt-select-prioritylangs-reason' => 'سبب:',
 	'translate-tag-translate-link-desc' => 'همدا مخ ژباړل',
 	'translate-tag-markthis' => 'همدا مخ د ژباړې لپاره په نښه کول',
 	'tpt-languages-legend' => 'نورې ژبې:',
+	'tpt-aggregategroup-add' => 'ورګډول',
+	'tpt-aggregategroup-save' => 'خوندي کول',
+	'tpt-aggregategroup-new-name' => 'نوم:',
 	'pt-movepage-list-pages' => 'د لېږدون د مخونو لړليک',
 	'pt-movepage-list-translation' => 'د ژباړې مخونه',
 	'pt-movepage-list-section' => 'د برخې مخونه',
@@ -6795,6 +6806,7 @@ $messages['si'] = array(
 
 /** Slovak (Slovenčina)
  * @author Helix84
+ * @author Kusavica
  * @author Mormegil
  * @author Rudko
  */
@@ -6815,6 +6827,7 @@ Názov: $1',
 	'tpt-sections-deleted' => 'Zmazané jednotky prekladu',
 	'tpt-sections-template' => 'Šablóna stránky na preklad',
 	'tpt-badtitle' => 'Zadaný názov stránky ($1) nie je platný',
+	'tpt-nosuchpage' => 'Stránka $1 neexistuje',
 	'tpt-oldrevision' => '$2 nie je najnovšia verzia stránky [[$1]].
 Na preklad je možné označiť iba posledné verzie stránok.',
 	'tpt-notsuitable' => 'Stránka $1 nie je vhodná na preklad.
@@ -6843,6 +6856,7 @@ Táto stránka je prekladom stránky [[$1]] a preklad možno aktualizovať pomoc
 Zdá sa, že stránka, ktorú sa pokúšate upravovať nezodpovedá žiadnej stránke označenej na preklad.',
 	'tpt-render-summary' => 'Aktualizácia na novú verziu zdrojovej stránky',
 	'tpt-download-page' => 'Exportovať stránky s prekladmi',
+	'tpt-aggregategroup-save' => 'Uložiť',
 );
 
 /** Slovenian (Slovenščina)
@@ -7987,7 +8001,8 @@ $messages['yi'] = array(
 	'tpt-sections-oldnew' => 'נײַע און עקסיסטירנדע איבערזעצונג איינהייטן',
 	'tpt-sections-deleted' => 'אויסגעמעקטע איבערזעצונג איינהייטן',
 	'tpt-sections-template' => 'איבערזעצונג בלאט מוסטער',
-	'tpt-old-pages-title' => 'בלעטער צו איבערזעצן',
+	'tpt-new-pages-title' => 'בלעטער פארגעשטעלט איבערצוזעצן',
+	'tpt-old-pages-title' => 'בלעטער איבערצוזעצן',
 	'tpt-other-pages-title' => 'צעבראכענע בלעטער',
 	'tpt-rev-encourage' => 'אויפֿריכטן',
 	'tpt-rev-mark-tooltip' => 'מארקירן די לעצטע ווערזיע פון דעם בלאט פאר איבערזעצן.',
@@ -7999,8 +8014,13 @@ $messages['yi'] = array(
 	'tpt-translation-intro' => 'דער דאזיקער בלאט איז א <span class="plainlinks">[$1 איבערגעזעצטע ווערסיע]</span> פון דעם בלאט [[$2]] און די איבערזעצונג איז $3% פארענדיקט.',
 	'tpt-translation-intro-fuzzy' => 'פארעלטערטע איבערזעצונגען זענען מארקירט אזוי.',
 	'tpt-languages-legend' => 'אנדערע שפראַכן:',
+	'tpt-languages-zero' => 'אנהייבן איבערזעצן די דאזיקע שפראך',
 	'pt-movepage-list-pages' => 'רשימה פון בלעטער צו באַוועגן',
 	'pt-movepage-list-translation' => 'טײַטש  בלעטער',
+	'pt-movepage-list-section' => 'אפטיילונג בלעטער',
+	'pt-movepage-list-other' => 'אנדערע אונטערבלעטער',
+	'pt-movepage-list-count' => 'אינגאנצן $1 {{PLURAL:$1|בלאט|בלעטער}} צו באוועגן.',
+	'pt-movepage-legend' => 'באוועגן איבערזעצבארן בלאט',
 	'pt-movepage-current' => 'אקטועלער נאמען:',
 	'pt-movepage-new' => 'נײַער נאָמען:',
 	'pt-movepage-reason' => 'אורזאַך:',
