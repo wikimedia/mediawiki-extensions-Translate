@@ -1074,6 +1074,10 @@ Ur stumm troet eus [[$1]] eo ar bajenn-mañ; gallout a ra bezañ hizivaet en ur 
 Ar bajenn hoc'h eus klasket kemm ne seblant ket klotañ gant pajenn ebet bet merket evit bezañ troet.",
 	'tpt-render-summary' => 'Hizivadenn da glotañ gant stumm nevez mammenn ar bajenn',
 	'tpt-download-page' => 'Ezporzhiañ ar bajenn gant an troidigezhioù',
+	'tpt-aggregategroup-add' => 'Ouzhpennañ',
+	'tpt-aggregategroup-save' => 'Enrollañ',
+	'tpt-aggregategroup-new-name' => 'Anv :',
+	'tpt-aggregategroup-new-description' => 'Deskrivadur (diret) :',
 	'pt-parse-open' => 'Balizenn &lt;translate> digempouez.
 Patrom treiñ : <pre>$1</pre>',
 	'pt-parse-close' => 'Balizenn &lt;/translate> digempouez.
@@ -1931,6 +1935,7 @@ $messages['ee'] = array(
 );
 
 /** Greek (Ελληνικά)
+ * @author Crazymadlover
  * @author Dead3y3
  * @author Flyax
  * @author Lou
@@ -1966,6 +1971,7 @@ $messages['el'] = array(
 	'tpt-languages-legend' => 'Άλλες γλώσσες:',
 	'tpt-render-summary' => 'Ενημέρωση για να αντιστοιχεί στη νέα έκδοση της σελίδας πηγής',
 	'tpt-download-page' => 'Εξαγωγή της σελίδας με τις μεταφράσεις',
+	'tpt-aggregategroup-new-name' => 'Όνομα:',
 );
 
 /** Esperanto (Esperanto)

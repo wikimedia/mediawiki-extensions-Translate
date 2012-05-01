@@ -2398,6 +2398,7 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je zmožen hitro najti avtorje strani na wikiju Wikimedije.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt za dostavljanje nepovezane, samo tekstovne različice Wikipedije na mobilne naprave.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] je večplatformni mobilni in tablični program za branje in prispevanje k Wikipediji',
+	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] je večplatformni mobilni in tablični program za branje in prispevanje k Wikislovarju',
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
