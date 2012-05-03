@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2011, Niklas Laxström
+ * @copyright Copyright © 2011-2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -29,5 +29,21 @@ class MessageIndexRebuildJob extends Job {
 
 	function run() {
 		MessageIndex::singleton()->rebuild();
+	}
+
+	/**
+	 * Usually this job is fast enough to be executed immediately,
+	 * in which case having it go through jobqueue only causes problems
+	 * in installations with errant job queue processing.
+	 * @override
+	 */
+	public function insert() {
+		global $wgTranslateDelayedMessageIndexRebuild;
+		if ( $wgTranslateDelayedMessageIndexRebuild ) {
+			return parent::insert();
+		} else {
+			$this->run();
+			return true;
+		}
 	}
 }

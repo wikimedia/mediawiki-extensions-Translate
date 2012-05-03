@@ -8,6 +8,9 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+/**
+ * @group Database
+ */
 class MessageIndexTest extends MediaWikiTestCase {
 	protected $config;
 

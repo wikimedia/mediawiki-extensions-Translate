@@ -583,6 +583,15 @@ $wgTranslateMessageIndex = array( 'DatabaseMessageIndex' );
 // $wgTranslateMessageIndex = array( 'SerializedMessageIndex' );
 // $wgTranslateMessageIndex = array( 'CDBMessageIndex' );
 
+/**
+ * If you have lots of message groups, especially file based ones, and the
+ * message index rebuilding gets slow, set this to true to delay the rebuilding
+ * via JobQueue. This only makes sense if you have configured jobs to be
+ * processed outside of requests via cron or similar.
+ * @since 2012-05-03
+ */
+$wgTranslateDelayedMessageIndexRebuild = false;
+
 # </source>
 # ==== PHPlot ====
 # <source lang=php>
