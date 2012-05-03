@@ -120,11 +120,12 @@ class ApiGroupReview extends ApiBase {
 	}
 
 	public function getParamDescription() {
+		$action = TranslateUtils::getTokenAction( 'groupreview' );
 		return array(
 			'group' => 'Message group',
 			'language' => 'Language code',
 			'state' => 'The new state for the group',
-			'token' => 'A token previously acquired with action=query&prop=info&intoken=groupreview',
+			'token' => "A token previously acquired with $action",
 		);
 	}
 
@@ -155,7 +156,7 @@ class ApiGroupReview extends ApiBase {
 		return __CLASS__ . ': $Id$';
 	}
 
-	public static function getToken( $pageid, $title ) {
+	public static function getToken() {
 		global $wgUser;
 		if ( !$wgUser->isAllowed( self::$right ) ) {
 			return false;

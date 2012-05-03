@@ -93,9 +93,14 @@ $wgAPIModules['translationreview'] = 'ApiTranslationReview';
 $wgAPIModules['groupreview'] = 'ApiGroupReview';
 $wgAPIModules['aggregategroups'] = 'ApiAggregateGroups';
 $wgAPIModules['ttmserver'] = 'ApiTTMServer';
+// Before MW 1.20
 $wgHooks['APIQueryInfoTokens'][] = 'ApiTranslationReview::injectTokenFunction';
 $wgHooks['APIQueryInfoTokens'][] = 'ApiGroupReview::injectTokenFunction';
 $wgHooks['APIQueryInfoTokens'][] = 'ApiAggregateGroups::injectTokenFunction';
+// After MW 1.20
+$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiTranslationReview::injectTokenFunction';
+$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiGroupReview::injectTokenFunction';
+$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiAggregateGroups::injectTokenFunction';
 
 // Register hooks.
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';

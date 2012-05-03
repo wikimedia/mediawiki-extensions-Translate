@@ -95,9 +95,10 @@ class ApiTranslationReview extends ApiBase {
 	}
 
 	public function getParamDescription() {
+		$action = TranslateUtils::getTokenAction( 'translationreview' );
 		return array(
 			'revision' => 'The revision number to review',
-			'token' => 'A token previously acquired with action=query&prop=info&intoken=translationreview',
+			'token' => "A token previously acquired with $action",
 		);
 	}
 
@@ -126,7 +127,7 @@ class ApiTranslationReview extends ApiBase {
 		return __CLASS__ . ': $Id$';
 	}
 
-	public static function getToken( $pageid, $title ) {
+	public static function getToken() {
 		global $wgUser;
 		if ( !$wgUser->isAllowed( self::$right ) ) {
 			return false;

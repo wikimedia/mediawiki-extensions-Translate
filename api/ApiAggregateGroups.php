@@ -168,13 +168,14 @@ class ApiAggregateGroups extends ApiBase {
 	}
 
 	public function getParamDescription() {
+		$action = TranslateUtils::getTokenAction( 'aggregategroups' );
 		return array(
 			'do' => 'What to do with aggregate message group',
 			'group' => 'Message group id',
 			'aggregategroup' => 'Aggregate message group id',
 			'groupname' => 'Aggregate message group name',
 			'groupdescription' => 'Aggregate message group description',
-			'token' => 'A token previously acquired with action=query&prop=info&intoken=aggregategroups',
+			'token' => "A token previously acquired with $action",
 		);
 	}
 
@@ -212,7 +213,7 @@ class ApiAggregateGroups extends ApiBase {
 		return $pages;
 	}
 
-	public static function getToken( $pageid, $title ) {
+	public static function getToken() {
 		global $wgUser;
 		if ( !$wgUser->isAllowed( self::$right ) ) {
 			return false;
