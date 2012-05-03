@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAKX///z8\u003d",
+        "filename": "tests/ApiTokensTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 103
+      },
+      "writtenOn": "2012-05-03T14:08:57Z",
+      "side": 1,
+      "message": "No need for DerivativeRequest as we don\u0027t have a proper $wgRequest here anyway.",
+      "revId": "6bafcd572a02c4ccdc85af9a3b5b1ff110a4585a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
