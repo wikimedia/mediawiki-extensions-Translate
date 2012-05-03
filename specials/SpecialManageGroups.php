@@ -100,10 +100,10 @@ class SpecialManageGroups extends SpecialPage {
 
 	protected function formatChange( $group, $code, $type, $params ) {
 		$key = $params['key'];
-		$id = sha1( "{$group->getId()}/$code/$type/$key" );
+		$id = substr( sha1( "{$group->getId()}/$code/$type/$key" ), 0, 7 );
 		$id = Sanitizer::escapeId( "smg/$id" );
 
-		$filesystem = $wiki = $fuzzy = '';
+		$filesystem = $wiki = $actions = '';
 
 		if ( isset( $params['content'] ) ) {
 			$filesystem = $params['content'];
@@ -119,15 +119,17 @@ class SpecialManageGroups extends SpecialPage {
 				$wiki = '!!FUZZY!!' . str_replace( TRANSLATE_FUZZY, '', $wiki );
 			}
 
+			$actions .= ' ' . Xml::checkLabel( wfMsg( 'translate-manage-action-ignore' ), "i/$id", "i/$id" );
+
 			if ( $group->getSourceLanguage() === $code ) {
-				$fuzzy = Xml::checkLabel( wfMsg( 'translate-manage-action-fuzzy' ), "f/$id", "f/$id" );
+				$actions .= ' ' . Xml::checkLabel( wfMsg( 'translate-manage-action-fuzzy' ), "f/$id", "f/$id" );
 			}
 		}
 
 		$diff = new DifferenceEngine();
 		$diff->setReducedLineNumbers();
 		$diff->setText( $filesystem, $wiki );
-		$text = $diff->getDiff( $fuzzy, Linker::link( $title ) );
+		$text = $diff->getDiff( $actions, Linker::link( $title ) );
 		$change = Html::rawElement( 'div', array( 'class' => 'mw-translate-smg-change' ), $text );
 		$hidden = Html::hidden( $id, 1 );
 		return $hidden . $change;
@@ -153,13 +155,17 @@ class SpecialManageGroups extends SpecialPage {
 				foreach ( $subchanges as $type => $messages ) {
 					foreach ( $messages as $params ) {
 						$key = $params['key'];
-						$id = sha1( "{$group->getId()}/$code/$type/$key" );
+						$id = substr( sha1( "{$group->getId()}/$code/$type/$key" ), 0, 7 );
 						$id = Sanitizer::escapeId( "smg/$id" );
 						if ( $req->getVal( $id ) === null ) {
 							throw new MWException( "Request is inconsistent. Not found '$id'." );
 						}
 						// Do nothing if message was deleted
 						if ( !isset( $params['content'] ) ) {
+							continue;
+						}
+
+						if ( $req->getCheck( "i/$id" ) ) {
 							continue;
 						}
 
