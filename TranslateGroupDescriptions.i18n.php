@@ -2166,6 +2166,7 @@ Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
  * @author Hamilton Abreu
  * @author Helder.wiki
  * @author Heldergeovane
+ * @author 555
  */
 $messages['pt-br'] = array(
 	'translategroupdescriptions-desc' => 'Descrições dos grupos de mensagens dos produtos suportados pela extensão [http://mediawiki.org/wiki/Extension:Translate Translate]',
@@ -2198,10 +2199,7 @@ Por favor veja [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wik
 	'bw-desc-openstreetmap' => 'Grupo para todas as mensagens do [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Este grupo contém as mensagens de interface do [[Translating:Open Street Map|Open Street Map]].
 Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} a página Unicode CLDR para uma explicação das chaves plurais].',
-	'bw-desc-osm-potlatch' => 'Este grupo contém as mensagens de interface do [[Translating:OpenStreetMap|Potlatch]]. Por favor:
-
-* Tente manter o comprimento das traduções tão semelhante quanto possível ao original em inglês, devido a algumas restrições do interface de usuário. Ver também [http://trac.openstreetmap.org/ticket/2067 problema em aberto].
-* Use a [http://api06.dev.openstreetmap.org api06.dev.openstreetmap.org] para testar o Potlatch. Você poderá testar quanto quiser em qualquer área.',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] é um conjunto de ferramentas para editar a Wikipédia',
 	'bw-desc-shapado' => 'Grupo de mensagens do software de perguntas e respostas, livre e de código aberto, [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] é um servidor de microblogues de código aberto',
 	'translate-group-desc-statusnet-plugin' => 'Estas mensagens fazem parte de um plugin para o [[Translating:StatusNet|StatusNet]]',

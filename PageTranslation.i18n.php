@@ -4505,8 +4505,19 @@ $messages['kn'] = array(
  */
 $messages['ko'] = array(
 	'pagetranslation' => '문서 번역',
+	'tpt-diff-old' => '이전 텍스트',
+	'tpt-diff-new' => '새 텍스트',
+	'tpt-sections-deleted' => '삭제된 번역 단위',
+	'tpt-select-prioritylangs-reason' => '이유:',
 	'translate-tag-translate-link-desc' => '이 문서 번역하기',
 	'tpt-languages-legend' => '다른 언어:',
+	'tpt-aggregategroup-save' => '저장하기',
+	'tpt-aggregategroup-new-name' => '이름:',
+	'tpt-aggregategroup-new-description' => '설명 (선택):',
+	'pt-movepage-current' => '현재 이름:',
+	'pt-movepage-new' => '새 이름:',
+	'pt-movepage-reason' => '이유:',
+	'pt-deletepage-reason' => '이유:',
 );
 
 /** Colognian (Ripoarisch)

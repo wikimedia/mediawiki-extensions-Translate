@@ -2027,6 +2027,7 @@ Hei kënnt Dir eraussiche wat fir eng Sprooch, wann Dir dat wëllt, Dir gesi wë
 	'translate-fs-userpage-level-3' => 'Ech ka mech gutt ausdrécken op',
 	'translate-fs-userpage-level-2' => 'Ech hu mëttelméisseg Kenntnisser vu(n)',
 	'translate-fs-userpage-level-1' => 'Ech kann a bëssen',
+	'translate-fs-userpage-help' => 'Gitt w.e.g. Är Sproochkenntnisser un an erziel eis eppes iwwer Iech. Wann Dir méi wéi fënnef Sprooche kënnt da kënnt Dir déi méi spéit derbäisetzen.',
 	'translate-fs-userpage-submit' => 'Meng Benotzersäit maachen',
 	'translate-fs-userpage-done' => 'Gutt gemaach! dir hutt elo eng Benotzersäit.',
 	'translate-fs-permissions-planguage' => 'Haaptsprooch:',
@@ -2364,11 +2365,48 @@ $messages['pdc'] = array(
  * @author Manuae
  */
 $messages['pfl'] = array(
+	'firststeps' => 'Easchde Schridd',
+	'firststeps-desc' => '[[Special:FirstSteps|Sondasaid]] dmid Benudza uffm Wiki laischda mide „Translate“-Eawaidarung oafonge kenne',
 	'translate-fs-pagetitle-done' => ' – ferdisch!',
 	'translate-fs-pagetitle-pending' => '– noch ned ferdisch',
+	'translate-fs-pagetitle' => 'Hilf fas Oafonge: $1',
+	'translate-fs-signup-title' => 'Oamelde',
+	'translate-fs-settings-title' => 'Oischdellunge oabasse',
+	'translate-fs-userpage-title' => 'Eazaisch doi Benudzasaid',
 	'translate-fs-permissions-title' => 'Frooch noch Räschd zum Iwasedze',
 	'translate-fs-target-title' => 'Iwasedze!',
+	'translate-fs-email-title' => 'E-Mail-Adress bschdedische',
+	'translate-fs-intro' => "Willkumme baide {{SITENAME}} Hilf, zum Oafonge.
+Do weaschd Schridd fa Schridd ins Iwasedze oifgiad.
+Oam Schluß weaschd alli ''Nochrischde vunde Benudzaowaflesch'' vun alli Brojegd bai {{SITENAME}} iwasedze kenne.",
+	'translate-fs-selectlanguage' => 'Wählda ä Schbrooch',
+	'translate-fs-settings-planguage' => 'Haubdschbrooch:',
+	'translate-fs-settings-submit' => 'Oischdellunge schbaischere',
+	'translate-fs-userpage-level-N' => 'Des isch moi Muddaschbrooch',
+	'translate-fs-userpage-level-5' => 'Isch binän fachkundische Iwasedza',
+	'translate-fs-userpage-level-4' => 'Isch babbls faschd wie moi Muddaschbrooch',
+	'translate-fs-userpage-level-3' => 'Isch babbls goans guud',
+	'translate-fs-userpage-level-2' => 'Isch babbls schun guud',
+	'translate-fs-userpage-level-1' => 'Isch babbls ä bissl',
+	'translate-fs-userpage-help' => 'Bidde saach uns was iwa disch un wasfa Schbrooche du babblschd. Wonn mea als finf Schbrooche koanschd, konschdse a schbeda oagewe.',
+	'translate-fs-userpage-submit' => 'Benudzasaid oaleesche',
 	'translate-fs-userpage-done' => 'Brima, jedz hoschd ä Benudzasaid',
+	'translate-fs-permissions-submit' => 'Oafroch abschigge',
+	'translate-fs-target-text' => "Gliggwunsch!
+Du konschd glaisch midm Iwasedze oafonge.
+
+Losdisch ned vum Naije vawirre.
+Uffde Said [[Project list|Brojegde]] gibds ä Iwasischd vunde Brojegd, wu dro schaffe konschd.
+Maischdns hods ä korzi Bschraiwung zsomme midm „''Iwasedze''“-Ling'g, wu disch uff ä Said mid Nochrische bringe dud, wu noch iwasedzd werre missen.
+Ä Lischd vunde Nochrischdegrubbe unäm [[Special:LanguageStats|geschewerdische Stoand vunär Schbrooch]] gibds aa.
+
+Wonn do mea wisse wilschd, konschd a die [[FAQ|oam haifigschdi gschdellde Froche]] lese.
+Die Unalaache kennen awa a ä bissl ald soi.
+Wonn was mache megschd, awa ned wegschd wie, frooch efach uff de [[Support|Hilfssaid]].
+
+Konschd awa a Iwasedza vun doinare Schbrooch uffde [[Portal_talk:$1|Dischbediersaid]] [[Portal:$1|vum Schbroochpordal]] oaschbresche.
+S'Podal vabinded uff doin [[Special:Preferences|Schbroochoischdellunge]].
+Wenn nedisch mugschd des änare.",
 );
 
 /** Polish (Polski)
