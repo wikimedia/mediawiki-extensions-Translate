@@ -642,6 +642,7 @@ Weitere Information finden sich unter [[mw:Extension:PDF Writer]] und http://cod
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] ist ein Open-Source-Mikroblogging-Server',
 	'translate-group-desc-statusnet-plugin' => 'Diese Nachrichten gehören zu einem Plug-in von [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Nachrichtengruppe für [http://toolserver.org/~krinkle/TsIntuition „Toolserver Intuition“], das I18N-System für die auf dem [http://toolserver.org Toolserver] gehosteten Hilfsprogramme. (<span class="plainlinks">[[Translating talk:Toolserver|Hilfe]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technische Hinweise]</span>)',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] ist ein Dienst, der Routen zum Wandern, Radeln, Mountainbiking und Skating auf der gesamten Welt darstellt. Er verwendet die Lizenz GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] ermöglicht das schnelle Finden eines Autoren einer Seite auf Wikis der Wikimedia Foundation.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ist ein Projekt für eine offline, nur-Text-Version der Wikipedia auf Kleingeräte.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] ist eine plattformübergreifende Mobiltelefon- und Tablet-PC-Applikation zum Lesen und Bearbeiten der Wikipedia',
@@ -2163,11 +2164,11 @@ Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 );
 
 /** Brazilian Portuguese (Português do Brasil)
+ * @author 555
  * @author Giro720
  * @author Hamilton Abreu
  * @author Helder.wiki
  * @author Heldergeovane
- * @author 555
  */
 $messages['pt-br'] = array(
 	'translategroupdescriptions-desc' => 'Descrições dos grupos de mensagens dos produtos suportados pela extensão [http://mediawiki.org/wiki/Extension:Translate Translate]',
