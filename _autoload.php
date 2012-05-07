@@ -156,18 +156,18 @@ $wgAutoloadClasses['TranslatablePage'] = "$dir/tag/TranslatablePage.php";
  * @name   Classes for file format support (FFS)
  * @{
  */
-$wgAutoloadClasses['DtdFFS'] = "$dir/ffs/DTD.php";
-$wgAutoloadClasses['FFS'] = "$dir/FFS.php";
-$wgAutoloadClasses['FlatPhpFFS'] = "$dir/ffs/PhpVariables.php";
-$wgAutoloadClasses['GettextFFS'] = "$dir//ffs/Gettext.php";
-$wgAutoloadClasses['JavaFFS'] = "$dir/FFS.php";
-$wgAutoloadClasses['JavaScriptFFS'] = "$dir/FFS.php";
-$wgAutoloadClasses['OpenLayersFFS'] = "$dir/FFS.php";
-$wgAutoloadClasses['PythonSingleFFS'] = "$dir/FFS.php";
-$wgAutoloadClasses['RubyYamlFFS'] = "$dir/FFS.php";
-$wgAutoloadClasses['ShapadoJsFFS'] = "$dir/FFS.php";
-$wgAutoloadClasses['SimpleFFS'] = "$dir/FFS.php";
-$wgAutoloadClasses['YamlFFS'] = "$dir/FFS.php";
+$wgAutoloadClasses['DtdFFS'] = "$dir/ffs/DtdFFS.php";
+$wgAutoloadClasses['FFS'] = "$dir/ffs/FFS.php";
+$wgAutoloadClasses['FlatPhpFFS'] = "$dir/ffs/FlatPhpFFS.php";
+$wgAutoloadClasses['GettextFFS'] = "$dir/ffs/GettextFFS.php";
+$wgAutoloadClasses['JavaFFS'] = "$dir/ffs/JavaFFS.php";
+$wgAutoloadClasses['JavaScriptFFS'] = "$dir/ffs/JavaScriptFFS.php";
+$wgAutoloadClasses['OpenLayersFFS'] = "$dir/ffs/JavaScriptFFS.php";
+$wgAutoloadClasses['PythonSingleFFS'] = "$dir/ffs/PythonSingleFFS.php";
+$wgAutoloadClasses['RubyYamlFFS'] = "$dir/ffs/RubyYamlFFS.php";
+$wgAutoloadClasses['ShapadoJsFFS'] = "$dir/ffs/JavaScriptFFS.php";
+$wgAutoloadClasses['SimpleFFS'] = "$dir/ffs/FFS.php";
+$wgAutoloadClasses['YamlFFS'] = "$dir/ffs/YamlFFS.php";
 /**@}*/
 
 /**
