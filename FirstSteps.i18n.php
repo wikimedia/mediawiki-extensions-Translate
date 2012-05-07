@@ -2368,7 +2368,7 @@ $messages['pfl'] = array(
 	'firststeps' => 'Easchde Schridd',
 	'firststeps-desc' => '[[Special:FirstSteps|Sondasaid]] dmid Benudza uffm Wiki laischda mide „Translate“-Eawaidarung oafonge kenne',
 	'translate-fs-pagetitle-done' => ' – ferdisch!',
-	'translate-fs-pagetitle-pending' => '– noch ned ferdisch',
+	'translate-fs-pagetitle-pending' => ' – noch ned ferdisch',
 	'translate-fs-pagetitle' => 'Hilf fas Oafonge: $1',
 	'translate-fs-signup-title' => 'Oamelde',
 	'translate-fs-settings-title' => 'Oischdellunge oabasse',
@@ -2381,6 +2381,11 @@ Do weaschd Schridd fa Schridd ins Iwasedze oifgiad.
 Oam Schluß weaschd alli ''Nochrischde vunde Benudzaowaflesch'' vun alli Brojegd bai {{SITENAME}} iwasedze kenne.",
 	'translate-fs-selectlanguage' => 'Wählda ä Schbrooch',
 	'translate-fs-settings-planguage' => 'Haubdschbrooch:',
+	'translate-fs-settings-planguage-desc' => 'Die Haubdschbrooch isch fa doi Owaflesch uffm Wiki 
+un a die Schbrooch inwus Iwasedze wilschd.',
+	'translate-fs-settings-slanguage' => 'Hilfschbrooch: $1',
+	'translate-fs-settings-slanguage-desc' => "S'meschlisch da Iwasedzunge vun Nochrischde in oanare Schbrooche zaische zu losse.
+Wonns hawe wilschd un wonnses gibd, konschdda do die Schbrooch wehle.",
 	'translate-fs-settings-submit' => 'Oischdellunge schbaischere',
 	'translate-fs-userpage-level-N' => 'Des isch moi Muddaschbrooch',
 	'translate-fs-userpage-level-5' => 'Isch binän fachkundische Iwasedza',
@@ -2391,6 +2396,13 @@ Oam Schluß weaschd alli ''Nochrischde vunde Benudzaowaflesch'' vun alli Brojegd
 	'translate-fs-userpage-help' => 'Bidde saach uns was iwa disch un wasfa Schbrooche du babblschd. Wonn mea als finf Schbrooche koanschd, konschdse a schbeda oagewe.',
 	'translate-fs-userpage-submit' => 'Benudzasaid oaleesche',
 	'translate-fs-userpage-done' => 'Brima, jedz hoschd ä Benudzasaid',
+	'translate-fs-permissions-planguage' => 'Haubdschbrooch:',
+	'translate-fs-permissions-help' => 'Jedzd mugschd oafroche, um zude Benudzagrubb vunde Iwasedza uffgnumme werre zu kenne.
+Wehl doi Haubdschbrooch, in wus iwasedze wilschd.
+
+Onare Schbrooche un Hiwies konschd une im Tegschdfeld oagewe.',
+	'translate-fs-permissions-pending' => 'Doi Oafroch isch jedzd uffde Said [[$1]] un iaschndwea werdse doan iwbriefe.
+Wonn doi E-Mail-Adress bschedische dudsch, krigschd dodriwa a Bschaid wonns basiad isch.',
 	'translate-fs-permissions-submit' => 'Oafroch abschigge',
 	'translate-fs-target-text' => "Gliggwunsch!
 Du konschd glaisch midm Iwasedze oafonge.
@@ -2407,6 +2419,11 @@ Wonn was mache megschd, awa ned wegschd wie, frooch efach uff de [[Support|Hilfs
 Konschd awa a Iwasedza vun doinare Schbrooch uffde [[Portal_talk:$1|Dischbediersaid]] [[Portal:$1|vum Schbroochpordal]] oaschbresche.
 S'Podal vabinded uff doin [[Special:Preferences|Schbroochoischdellunge]].
 Wenn nedisch mugschd des änare.",
+	'translate-fs-email-text' => 'Geb bidde doi E-Mail-Adress in [[Special:Preferences|doine Oischdellunge]] oa un bschedischse iwa die E-Mail, wu krische duschd.
+
+S\'eameschlischd oanare dia E-Mails z\'schigge.
+Krigschd a de monadlische Newsletter gschiggd.
+Wonnen awa ned hawe wilschd, konschdn inde Tab "{{int:Prefs-personal}}" vun doine [[Special:Preferences|Oischdellunge]] wegnemme.',
 );
 
 /** Polish (Polski)
