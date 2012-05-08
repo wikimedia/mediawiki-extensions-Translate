@@ -356,6 +356,53 @@ FOO;
 	}
 
 	/**
+	 * Page moving and page protection (and possibly other things) creates null
+	 * revisions. These revisions re-use the previous text already stored in
+	 * the database. Those however do not trigger re-parsing of the page and
+	 * thus the ready tag is not updated. This watches for new revisions,
+	 * checks if they reuse existing text, checks whether the parent version
+	 * is the latest version and has a ready tag. If that is the case,
+	 * also adds a ready tag for the new revision (which is safe, because
+	 * the text hasn't changed). The interface will say that there has been
+	 * a change, but shows no change in the content. This lets the user to
+	 * update the translation pages in the case, the non-text changes affect
+	 * the rendering of translation pages. I'm not aware of any such cases
+	 * at the moment.
+	 * Hook: RevisionInsertComplete
+	 * @since 2012-05-08
+	 */
+	public static function updateTranstagOnNullRevisions( Revision $rev, $text, $flags ) {
+		$title = $rev->getTitle();
+
+		$newRevId = $rev->getId();
+		$oldRevId = $rev->getParentId();
+		$newTextId = $rev->getTextId();
+
+		/* This hook doesn't provide any way to detech null revisions
+		 * without extra query */
+		$dbw = wfGetDB( DB_MASTER );
+		$table = 'revision';
+		$field = 'rev_text_id';
+		$conds = array(
+			'rev_page' => $rev->getPage(),
+			'rev_id' => $oldRevId,
+		);
+		// FIXME: optimize away this query. Bug 36588.
+		$oldTextId = $dbw->selectField( $table, $field, $conds, __METHOD__ );
+
+		if ( strval( $newTextId ) !== strval( $oldTextId ) ) {
+			// Not a null revision, bail out.
+			return true;
+		}
+
+		$page = TranslatablePage::newFromTitle( $title );
+		if ( $page->getReadyTag( DB_MASTER ) === $oldRevId ) {
+			$page->addReadyTag( $newRevId );
+		}
+		return true;
+	}
+
+	/**
 	 * Prevent editing of unknown pages in Translations namespace.
 	 * Hook: getUserPermissionsErrorsExpensive
 	 */

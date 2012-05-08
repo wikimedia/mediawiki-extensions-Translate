@@ -119,6 +119,7 @@ class TranslateHooks {
 
 			// Add transtag to page props for discovery
 			$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::addTranstag';
+			$wgHooks['RevisionInsertComplete'][] = 'PageTranslationHooks::updateTranstagOnNullRevisions';
 
 			// Prevent editing of unknown pages in Translations namespace
 			$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::preventUnknownTranslations';
