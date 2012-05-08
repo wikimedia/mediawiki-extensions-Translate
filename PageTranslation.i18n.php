@@ -274,6 +274,9 @@ $3 is an URL.',
 	'tpt-languages-legend' => 'The caption of a language selector displayed using <code>&lt;languages /&gt;</code>, e.g. on [[Project list]].',
 	'tpt-languages-separator' => '{{optional}}',
 	'tpt-languages-zero' => 'Tooltip for a link in &lt;language /> when language is included because it is a priority language, but translation does not yet exists. It links directly to the translation view.',
+	'tpt-target-page' => 'Message displayed when trying to edit a translatable page directly. Parameters:
+* $1 is the translatable page
+* $2 is a link to the translation tool for the translatable page.',
 	'tpt-translation-restricted' => 'Error message shown to user when translation to a language which is restricted by translation admin.',
 	'tpt-discouraged-language-force' => 'Warning shown along with group description if the language is prevented from translation for the selected language',
 	'tpt-discouraged-language' => 'Warning shown along with group description if the language is discouraged from translation for the selected language',
@@ -875,6 +878,8 @@ $messages['be-tarask'] = array(
 Прычына: $1',
 	'tpt-render-summary' => 'Абнаўленьне для адпаведнасьці новай вэрсіі крынічнай старонкі',
 	'tpt-download-page' => 'Экспартаваць старонку з перакладамі',
+	'tpt-aggregategroup-add' => 'Дадаць',
+	'tpt-aggregategroup-save' => 'Захаваць',
 	'pt-parse-open' => 'Незбалянсаваны тэг &lt;translate>.
 Шаблён перакладу: <pre>$1</pre>',
 	'pt-parse-close' => 'Незбалянсаваны тэг &lt;/translate>.
@@ -4057,7 +4062,7 @@ $messages['ig'] = array(
  */
 $messages['is'] = array(
 	'translate-tag-translate-link-desc' => 'Þýða þessa síðu',
-	'tpt-translation-intro' => 'Þessi síða er <span class="plainlinks">[$1 þýdd útgáfa]</span> af síðunni [[$2]] og þýðing hennar er $3% lokið.',
+	'tpt-translation-intro' => 'Þessi síða er <span class="plainlinks">[$1 þýdd útgáfa]</span> af síðunni [[$2]] og þýðingu hennar er $3% lokið.',
 	'tpt-languages-legend' => 'Önnur tungumál:',
 	'pt-log-name' => 'Þýðingarskrá',
 	'pt-log-mark' => '{{GENDER:$2|merkti}} útgáfu $3 á "[[:$1]]" til þýðingar',
@@ -5742,11 +5747,39 @@ $messages['pdc'] = array(
  * @author Manuae
  */
 $messages['pfl'] = array(
+	'pagetranslation' => 'Saide iwasedze',
+	'tpt-section' => 'Iwasedzungsoihaid „$1“',
+	'tpt-section-new' => 'Naiji Iwasedzungsoihaid
+Noame: $1',
+	'tpt-section-deleted' => 'Iwasedzungsoihaid „$1“',
+	'tpt-template' => 'Saidevoalaach',
+	'tpt-templatediff' => "Die Saidevoalaach hodsisch g'änad",
 	'tpt-diff-old' => 'Vorische Tegschd',
 	'tpt-diff-new' => 'Naie Tegschd',
+	'tpt-sections-deleted' => "G'leschdi Iwasedzungsoihaide",
+	'tpt-sections-template' => 'Voalaach fa Iwasedzungssaide',
+	'tpt-badtitle' => 'De oagewene Saidenoame „$1“ ischn ugildische Tidl',
+	'tpt-nosuchpage' => 'Said $1 gibds ned',
 	'tpt-other-pages-title' => 'Kapudde Saide',
 	'tpt-select-prioritylangs-reason' => 'Grund:',
+	'tpt-rev-discourage' => "Abg'rode",
+	'tpt-rev-encourage' => 'Widdaheaschdelle',
+	'translate-tag-translate-link-desc' => 'Said iwasedze',
+	'translate-tag-markthis' => 'Said fas Iwasedze kennzaischne',
+	'translate-tag-markthisagain' => 'Onde Said isch <span class="plainlinks">[$1 gschaffd worre]</span>, nochdemmase <span class="plainlinks">[$2 fas Iwasedz fraigewe]</span> kabd hod.',
+	'translate-tag-hasnew' => 'Onde Said hods <span class="plainlinks">[$1 Eawede]</span>, wu ned fas Iwasedze fraigewe worre sin.',
+	'tpt-translation-intro' => 'Die Said isch ä <span class="plainlinks">[$1 iwasedzdi Fassung]</span> vunde Said [[$2]] un die Iwasedzung isch zu $3 % ferdisch.',
 	'tpt-languages-legend' => 'Onare Schbroche',
+	'tpt-aggregategroup-add' => 'Dzufiesche',
+	'tpt-aggregategroup-save' => 'Schbaischare',
+	'tpt-aggregategroup-new-name' => 'Noame:',
+	'pt-movepage-list-translation' => 'Iwasedzdi Saide',
+	'pt-movepage-new' => 'Naije Noame:',
+	'pt-deletepage-current' => 'Saidenoame:',
+	'pt-deletepage-reason' => 'Grund:',
+	'pt-deletepage-subpages' => 'Lesch alli Unasaide',
+	'pt-deletepage-list-translation' => 'Iwasedzdi Saide',
+	'pt-deletepage-list-section' => 'Abschniddsaide',
 );
 
 /** Polish (Polski)
