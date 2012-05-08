@@ -188,15 +188,27 @@ class TranslateUtils {
 	 */
 	public static function getLanguageNames( /*string */ $code ) {
 		if ( is_callable( array( 'Language', 'fetchLanguageNames' ) ) ) {
-			return Language::fetchLanguageNames( $code, 'mw' ); // since 1.20
+			$languageNames = Language::fetchLanguageNames( $code, 'mw' ); // since 1.20
 		} elseif ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
-			return LanguageNames::getNames( $code,
+			$languageNames = LanguageNames::getNames( $code,
 				LanguageNames::FALLBACK_NORMAL,
 				LanguageNames::LIST_MW
 			);
 		} else {
-			return Language::getLanguageNames( false );
+			$languageNames = Language::getLanguageNames( false );
 		}
+
+		// Remove languages with deprecated codes (bug 35475)
+		global $wgDummyLanguageCodes, $wgVersion;
+		$dummyLanguageCodes = version_compare( $wgVersion, '1.18', '<' )
+			? array_values( $wgDummyLanguageCodes )
+			: array_keys( $wgDummyLanguageCodes );
+
+		foreach ( $dummyLanguageCodes as $dummyLanguageCode ) {
+			unset( $languageNames[$dummyLanguageCode] );
+		}
+
+		return $languageNames;
 	}
 
 	/**
