@@ -25,11 +25,12 @@ class ApiTokensTest extends MediaWikiTestCase {
 		$api->execute();
 
 		$data = $api->getResultData();
-		if ( isset( $data['pages'] ) ) {
-			foreach ( $data['pages'] as $page ) {
+		if ( isset( $data['query'] ) ) {
+			foreach ( $data['query']['pages'] as $page ) {
 				$this->assertSame( $expected, $page[$id . 'token'] );
 			}
 		} else {
+			$this->assertArrayHasKey( 'tokens', $data, 'Result has tokens' );
 			$this->assertSame( $expected, $data['tokens'][$id . 'token'] );
 		}
 	}
