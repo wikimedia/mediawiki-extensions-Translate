@@ -109,8 +109,6 @@ class SpecialManageGroups extends SpecialPage {
 			$filesystem = $params['content'];
 		}
 
-
-
 		$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$code" );
 		if ( $title->exists() ) {
 			$wiki = Revision::newFromTitle( $title )->getText();
@@ -130,7 +128,7 @@ class SpecialManageGroups extends SpecialPage {
 		$diff->setReducedLineNumbers();
 		$diff->setText( $filesystem, $wiki );
 		$text = $diff->getDiff( $actions, Linker::link( $title ) );
-		$change = Html::rawElement( 'div', array( 'class' => 'mw-translate-smg-change' ), $text );
+		$change = Html::rawElement( 'div', array( 'class' => "mw-translate-smg-change smg-change-$type" ), $text );
 		$hidden = Html::hidden( $id, 1 );
 		return $hidden . $change;
 	}

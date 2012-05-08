@@ -85,12 +85,28 @@ class ProcessMessageChanges extends Maintenance {
 		$cache = new MessageGroupCache( $group, $code );
 		$reason = 0;
 		if ( !$cache->isValid( $reason ) ) {
-			$this->addMessageUpdateChanges( $group, $code, $reason );
+			$this->addMessageUpdateChanges( $group, $code, $reason, $cache );
 		}
 		wfProfileOut( __METHOD__ );
 	}
 
-	protected function addMessageUpdateChanges( FileBasedMessageGroup $group, $code, $reason ) {
+	/**
+	 * This is the detective roman. We have three sources of information:
+	 * - current message state in the file
+	 * - current message state in the wiki
+	 * - cached message state since cache was last build
+	 *   (usually after export from wiki)
+	 * Now we must try to guess what in earth has driven
+	 * the file state and wiki state out of sync. Then we
+	 * must compile list of events that would bring those
+	 * to sync. Types of events are addition, deletion,
+	 * (content) change and possible rename in the future.
+	 * After that the list of events are stored for later
+	 * processing of a translation administrator, who can
+	 * decide what actions to take on those events to bring
+	 * the state more or less in sync.
+	 */
+	protected function addMessageUpdateChanges( FileBasedMessageGroup $group, $code, $reason, $cache ) {
 		wfProfileIn( __METHOD__ );
 		/* This throws a warning if message definitions are not yet
 		 * cached and will read the file for definitions. */
@@ -109,9 +125,16 @@ class ProcessMessageChanges extends Maintenance {
 			$sourceContent = $file['MESSAGES'][$key];
 			$wikiContent = $wiki[$key]->translation();
 
-			if ( str_replace( TRANSLATE_FUZZY, '', $sourceContent ) !== str_replace( TRANSLATE_FUZZY, '', $wikiContent ) ) {
-				// TODO: Check whether the cached content is the
-				// same as the source and if so skip
+			if ( !self::compareContent( $sourceContent, $wikiContent ) ) {
+				if ( $reason !== MessageGroupCache::NO_CACHE ) {
+					$cacheContent = $cache->get( $key );
+				  if ( self::compareContent( $sourceContent, $cacheContent ) ) {
+						/* This message has only changed in the wiki, which means
+						* we can ignore the difference and have it exported on
+						* next export. */
+						continue;
+					}
+				}
 				$this->addChange( 'change', $group, $code, $key, $sourceContent );
 			}
 		}
@@ -123,14 +146,20 @@ class ProcessMessageChanges extends Maintenance {
 			$this->addChange( 'addition', $group, $code, $key, $sourceContent );
 		}
 
-		$deleted = array_diff( $wikiKeys, $fileKeys );
-		foreach ( $deleted as $key ) {
-			/* Should the cache not exist, don't consider the messages
-			 * missing from the file as deleted - they probably aren't
-			 * yet exported. For example new language translations are
-			 * exported the first time. */
-			if ( $reason === MessageGroupCache::NO_CACHE ) continue;
-			$this->addChange( 'deletion', $group, $code, $key, null );
+		/* Should the cache not exist, don't consider the messages
+		 * missing from the file as deleted - they probably aren't
+		 * yet exported. For example new language translations are
+		 * exported the first time. */
+		if ( $reason !== MessageGroupCache::NO_CACHE ) {
+			$deleted = array_diff( $wikiKeys, $fileKeys );
+			foreach ( $deleted as $key ) {
+				if ( $cache->get( $key ) === false ) {
+					/* This message has never existed in the cache, so it
+					 * must be a newly made in the wiki. */
+					continue;
+				}
+				$this->addChange( 'deletion', $group, $code, $key, null );
+			}
 		}
 
 		wfProfileOut( __METHOD__ );
@@ -141,6 +170,17 @@ class ProcessMessageChanges extends Maintenance {
 			'key' => $key,
 			'content' => $content,
 		);
+	}
+
+	/**
+	 * Compares two strings ignoring fuzzy markers.
+	 * @since 2012-05-08
+	 * @return bool
+	 */
+	protected static function compareContent( $a, $b ) {
+		$a = str_replace( TRANSLATE_FUZZY, '', $a );
+		$b = str_replace( TRANSLATE_FUZZY, '', $b );
+		return  $a === $b;
 	}
 }
 
