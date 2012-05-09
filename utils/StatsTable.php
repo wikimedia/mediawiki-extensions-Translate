@@ -177,13 +177,21 @@ class StatsTable {
 			array( 'data-sort-value' => $total - $translated ),
 			$this->lang->formatNum( $total - $translated ) );
 
-		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $translated / $total, 'floor' ),
-			$this->getBackgroundColour( $translated, $total ),
-			sprintf( '%1.5f', $translated / $total ) );
+		if ( $total === 0 ) {
+			$transRatio = 0;
+			$fuzzyRatio = 0;
+		} else {
+			$transRatio = $translated / $total;
+			$fuzzyRatio = $fuzzy / $total;
+		}
 
-		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzy / $total, 'ceil' ),
+		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $transRatio, 'floor' ),
+			$this->getBackgroundColour( $translated, $total ),
+			sprintf( '%1.5f', $transRatio ) );
+
+		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzyRatio, 'ceil' ),
 			$this->getBackgroundColour( $fuzzy, $total, true ),
-			sprintf( '%1.5f', $fuzzy / $total ) );
+			sprintf( '%1.5f', $fuzzyRatio ) );
 		return $out;
 	}
 
