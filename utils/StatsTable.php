@@ -177,11 +177,11 @@ class StatsTable {
 			array( 'data-sort-value' => $total - $translated ),
 			$this->lang->formatNum( $total - $translated ) );
 
-		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $translated / $total ),
+		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $translated / $total, 'floor' ),
 			$this->getBackgroundColour( $translated, $total ),
 			sprintf( '%1.5f', $translated / $total ) );
 
-		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzy / $total ),
+		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzy / $total, 'ceil' ),
 			$this->getBackgroundColour( $fuzzy, $total, true ),
 			sprintf( '%1.5f', $fuzzy / $total ) );
 		return $out;
@@ -190,10 +190,12 @@ class StatsTable {
 	/**
 	 * Makes a nice print from plain float.
 	 * @param $num float
+	 * @param $to string floor or ceil
 	 * @return string Plain text
 	 */
-	public function formatPercentage( $num ) {
-		$fmt = $this->lang->formatNum( number_format( round( 100 * $num, 2 ), 2 ) );
+	public function formatPercentage( $num, $to = 'floor' ) {
+		$num = $to === 'floor' ? floor( 100 * $num ) : ceil( 100 * $num );
+		$fmt = $this->lang->formatNum( $num );
 
 		return wfMessage( 'percent', $fmt )->text();
 	}
