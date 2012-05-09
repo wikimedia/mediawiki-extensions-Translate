@@ -193,7 +193,7 @@ class StatsTable {
 	 * @return string Plain text
 	 */
 	public function formatPercentage( $num ) {
-		$fmt = $this->lang->formatNum( number_format( round( 100 * $num, 2 ), 2 ) );
+		$fmt = $this->lang->formatNum( round( 100 * $num ) );
 
 		return wfMessage( 'percent', $fmt )->text();
 	}
