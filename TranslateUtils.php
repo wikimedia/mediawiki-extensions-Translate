@@ -199,10 +199,10 @@ class TranslateUtils {
 		}
 
 		// Remove languages with deprecated codes (bug 35475)
-		global $wgDummyLanguageCodes;
+		global $wgDummyLanguageCodes, $wgTranslateDocumentationLanguageCode;
 
 		foreach ( array_keys( $wgDummyLanguageCodes ) as $dummyLanguageCode ) {
-			if ( $dummyLanguageCode == 'qqq' ) {
+			if ( $dummyLanguageCode === $wgTranslateDocumentationLanguageCode ) {
 				continue;
 			}
 			unset( $languageNames[$dummyLanguageCode] );
