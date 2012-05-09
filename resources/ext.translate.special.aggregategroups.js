@@ -30,7 +30,6 @@ jQuery( document ).ready( function ( $ ) {
 
 				var spanAttr = {
 					'class': 'tp-aggregate-remove-button',
-					'data-groupid': subgroupId
 				};
 
 				var $span = $( '<span>', spanAttr )

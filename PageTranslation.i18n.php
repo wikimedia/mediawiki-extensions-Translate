@@ -118,6 +118,8 @@ Reason: $1',
 	'tpt-aggregategroup-new-name' => 'Name:',
 	'tpt-aggregategroup-new-description' => 'Description (optional):',
 	'tpt-aggregategroup-remove-confirm' => 'Are you sure you want to delete this aggregate group?',
+	'tpt-aggregategroup-invalid-group' => 'Group does not exist',
+
 	'pt-parse-open' => 'Unbalanced &lt;translate> tag.
 Translation template: <pre>$1</pre>',
 	'pt-parse-close' => 'Unbalanced &lt;/translate> tag.
@@ -322,6 +324,7 @@ $3 is an URL.',
 	'pt-deletepage-action-check' => 'This is a button label. "List" is an imperative verb.',
 	'pt-deletepage-current' => '{{Identical|Page name}}',
 	'pt-deletepage-reason' => '{{Identical|Reason}}',
+	'tpt-aggregategroup-invalid-group' => 'Show on Special:AggregateGroups after remove button of a group, if the stored group id does not match any currently known groups.',
 );
 
 /** ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ (ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ)

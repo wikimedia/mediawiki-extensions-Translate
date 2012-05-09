@@ -1157,21 +1157,11 @@ class MessageGroups {
 			}
 		}
 
-		$aggregategroups = self::getAggregateGroups();
-		foreach ( $aggregategroups as $id => $group ) {
-			$conf = array();
-			$conf['BASIC'] = array();
-			$conf['BASIC']['id'] =   $id;
-			$conf['BASIC']['label'] =  $group['name'];
-			$conf['BASIC']['meta'] = 1;
-			$conf['BASIC']['class'] = 'AggregateMessageGroup';
-			$conf['BASIC']['description'] = $group['description'];
-			$conf['BASIC']['namespace'] = 'NS_TRANSLATIONS';
-			$subgroups = explode( ',', TranslateMetadata::get( $id, 'subgroups' ) );
-			$conf['GROUPS'] = $subgroups;
-			$group = MessageGroupBase::factory( $conf );
+		$aggregateGroups = self::getAggregateGroups();
+		foreach ( $aggregateGroups as $id => $group ) {
 			$wgTranslateCC[$id] = $group;
 		}
+
 		$key = wfMemckey( 'translate-groups' );
 		$value = array(
 			'ac' => $wgTranslateAC,
@@ -1522,32 +1512,39 @@ class MessageGroups {
 		return $tree;
 	}
 
-	/*
-	 * Get all the aggregate groups defined in translate_metadata table, along with
-	 * subgroups as MessageGroup objects.
+	/**
+	 * Get all the aggregate messages groups defined in translate_metadata table.
+	 * @return array
+	 * @since 2012-05-09 return value changed
 	 */
-	public static function getAggregateGroups() {
-		$dbr = wfGetDB( DB_MASTER );
+	protected static function getAggregateGroups() {
+		$dbw = wfGetDB( DB_MASTER );
 		$tables = array( 'translate_metadata' );
-		$vars = array( 'tmd_group', 'tmd_value' );
-		$conds = array(
-			'tmd_key' => 'subgroups',
-		);
-		$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
-		$aggregateGroups = array();
-		foreach ( $res as $r ) {
-			$aggregateGroups[$r->tmd_group] = array();
-			$aggregateGroups[$r->tmd_group]['id'] = $r->tmd_group;
-			$aggregateGroups[$r->tmd_group]['name'] = TranslateMetadata::get( $r->tmd_group, 'name' );
-			$aggregateGroups[$r->tmd_group]['description'] = TranslateMetadata::get( $r->tmd_group, 'description' );
-			$subGroupsArray = explode( ',', $r->tmd_value );
-			$subGroups = array();
-			foreach ( $subGroupsArray as $subGroup ) {
-				$subGroups[$subGroup] = MessageGroups::getGroup( trim( $subGroup ) );
-			}
-			$aggregateGroups[$r->tmd_group]['subgroups'] = $subGroups;
+		$fields = array( 'tmd_group', 'tmd_value' );
+		$conds = array( 'tmd_key' => 'subgroups' );
+		$res = $dbw->select( $tables, $fields, $conds, __METHOD__ );
+
+		$groups = array();
+		foreach ( $res as $row ) {
+			$id = $row->tmd_group;
+			$name = 
+			$desc = TranslateMetadata::get( $id, 'description' );
+
+			$conf = array();
+			$conf['BASIC'] = array(
+				'id' => $id,
+				'label' => TranslateMetadata::get( $id, 'name' ),
+				'description' => TranslateMetadata::get( $id, 'description' ),
+				'meta' => 1,
+				'class' => 'AggregateMessageGroup',
+				'namespace' => NS_TRANSLATIONS,
+			);
+			$conf['GROUPS'] = TranslateMetadata::getSubgroups( $id );
+			$group = MessageGroupBase::factory( $conf );
+
+			$groups[$id] = $group;
 		}
-		return $aggregateGroups;
+		return $groups;
 	}
 
 }

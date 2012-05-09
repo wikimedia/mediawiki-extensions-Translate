@@ -48,7 +48,8 @@ class SpecialAggregateGroups extends UnlistedSpecialPage {
 			if ( $group instanceof WikiPageMessageGroup ) {
 				$pages[] = $group;
 			} elseif ( $group instanceof AggregateMessageGroup ) {
-				if ( TranslateMetadata::get( $group->getId(), 'subgroups' ) !== false ) {
+				$subgroups = TranslateMetadata::getSubgroups( $group->getId() ) ;
+				if ( $subgroups !== false ) {
 					$aggregates[] = $group;
 				}
 			}
@@ -81,7 +82,7 @@ class SpecialAggregateGroups extends UnlistedSpecialPage {
 			$remove = Html::element( 'span', array( 'class' => 'tp-aggregate-remove-ag-button' ) );
 
 			$hid = $this->htmlIdForGroup( $group );
-			$header = Html::rawElement( 'h2', null, 	htmlspecialchars( $group->getLabel() ) . $remove );
+			$header = Html::rawElement( 'h2', null, htmlspecialchars( $group->getLabel() ) . $remove );
 			$wgOut->addHtml( $header );
 			$wgOut->addWikiText( $group->getDescription() );
 			$this->listSubgroups( $group );
@@ -129,16 +130,28 @@ class SpecialAggregateGroups extends UnlistedSpecialPage {
 		$id = $this->htmlIdForGroup( $parent, 'mw-tpa-grouplist-' );
 		$out->addHtml( Html::openElement( 'ol', array( 'id' => $id ) ) );
 
-		foreach ( $parent->getGroups() as $id => $group ) {
+		// Not calling $parent->getGroups() because it has done filtering already
+		$subgroups = TranslateMetadata::getSubgroups( $parent->getId() );
+		foreach ( $subgroups as $id ) {
+			$group = MessageGroups::getGroup( $id );
 			$remove = Html::element( 'span',
 				array(
 					'class' => 'tp-aggregate-remove-button',
-					'data-groupid' => $group->getId(),
+					'data-groupid' => $id,
 				)
 			);
 
-			$link = Linker::linkKnown( $group->getTitle(), null, array( 'id' => $id ) );
-			$out->addHtml( Html::rawElement( 'li', null, "$link$remove" ) );
+			$text = $note = '';
+
+			if ( $group ) {
+				$text = Linker::linkKnown( $group->getTitle() );
+				$note = MessageGroups::getPriority( $id );
+			} else {
+				$text = htmlspecialchars( $id );
+				$note = $this->msg( 'tpt-aggregategroup-invalid-group' )->escapeId();
+			}
+
+			$out->addHtml( Html::rawElement( 'li', null, "$text$remove $note" ) );
 		}
 		$out->addHtml( Html::closeElement( 'ol' ) );
 	}
@@ -147,7 +160,9 @@ class SpecialAggregateGroups extends UnlistedSpecialPage {
 		$id = $this->htmlIdForGroup( $parent, 'mw-tpa-groupselect-' );
 		$select = new XmlSelect( 'group', $id );
 
-		$subgroups = $parent->getGroups();
+		// Not calling $parent->getGroups() because it has done filtering already
+		$subgroups = TranslateMetadata::getSubgroups( $parent->getId() );
+		$subgroups = array_flip( $subgroups );
 		foreach ( $availableGroups as $group ) {
 			$groupId = $group->getId();
 			// Do not include already included groups in the list
