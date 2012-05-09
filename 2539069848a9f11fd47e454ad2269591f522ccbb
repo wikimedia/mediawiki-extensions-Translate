@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALX///r4\u003d",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-05-09T06:14:52Z",
+      "side": 1,
+      "message": "I prefer \u003d\u003d\u003d",
+      "revId": "2539069848a9f11fd47e454ad2269591f522ccbb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
