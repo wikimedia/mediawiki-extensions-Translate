@@ -1,6 +1,7 @@
 .svn
 *~
 .*.swp
+*.kate-swp
 .classpath
 .idea
 .metadata*
