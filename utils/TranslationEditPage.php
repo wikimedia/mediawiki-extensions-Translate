@@ -107,7 +107,9 @@ class TranslationEditPage {
 		}
 
 		$hidden[] = Html::hidden( 'starttimestamp', $data['starttimestamp'] );
-		$hidden[] = Html::hidden( 'token', $data['edittoken'] );
+		if ( $data['edittoken'] ) {
+			$hidden[] = Html::hidden( 'token', $data['edittoken'] );
+		}
 		$hidden[] = Html::hidden( 'format', 'json' );
 		$hidden[] = Html::hidden( 'action', 'edit' );
 
