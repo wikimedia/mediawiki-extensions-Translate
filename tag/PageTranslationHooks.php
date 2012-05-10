@@ -175,6 +175,7 @@ class PageTranslationHooks {
 	 */
 	public static function languages( $data, $params, $parser ) {
 		$title = $parser->getTitle();
+		$internalTitleString = $title->getDBkey();
 
 		// Check if this is a source page or a translation page
 		$page = TranslatablePage::newFromTitle( $title );
@@ -247,12 +248,13 @@ class PageTranslationHooks {
 
 			// Add links to other languages
 			$suffix = ( $code === $sourceLanguage ) ? '' : "/$code";
-			$_title = Title::makeTitle( $title->getNamespace(), $title->getDBkey() . $suffix );
+			$targetTitleString = $title->getDBkey() . $suffix;
+			$_title = Title::makeTitle( $title->getNamespace(), $targetTitleString );
 			if ( intval( $percent ) === 0 ) {
 				/* When language is included because it is a priority language,
 				 * but translation does not yet exists, link directly to the
 				 * translation view. */
-				$translate = SpecialPage::getTitleFor( 'Translate' );
+				$specialTranslateTitle = SpecialPage::getTitleFor( 'Translate' );
 				$params = array(
 					'group' => $page->getMessageGroupId(),
 					'language' => $code,
@@ -260,9 +262,25 @@ class PageTranslationHooks {
 				);
 				$attribs = array(
 					'title' => wfMessage( 'tpt-languages-zero' )->text(),
-					'class' => 'new', // For red link color
 				);
-				$languages[] = Linker::link( $translate, "$name $percentImage", $attribs, $params );
+
+				if ( $_title->isKnown() ) {
+					/* Applies when a page exists, but appears not to be
+					 * translated, for example if already translated parts
+					 * were removed from the source page. */
+					if ( $internalTitleString === $targetTitleString ) {
+						$attribs += array(
+							'class' => 'mw-pt-languages-selected',
+						);
+					}
+				} else {
+					/* Applies to recommended languages, the translation
+					 * to which wasn't started yet. */
+					$attribs += array(
+						'class' => 'new', // For red link color
+					);
+				}
+				$languages[] = Linker::link( $specialTranslateTitle, $name, $attribs, $params ) . " $percentImage";
 			} elseif ( $parser->getTitle()->getText() === $_title->getText() ) {
 				// The page we are currently on
 				$name = Html::rawElement( 'span', array( 'class' => 'mw-pt-languages-selected' ), $name );
@@ -271,12 +289,16 @@ class PageTranslationHooks {
 				if ( $code === $userLangCode ) {
 					$name = Html::rawElement( 'span', array( 'class' => 'mw-pt-languages-ui' ), $name );
 				}
-				$languages[] = Linker::linkKnown( $_title, "$name $percentImage" );
+				$languages[] = Linker::linkKnown( $_title, "$name" ) . " $percentImage";
 			}
 		}
 
 		$legend = wfMsg( 'tpt-languages-legend' );
-		$languages = implode( wfMsg( 'tpt-languages-separator' ), $languages );
+
+		// dirmark (rlm/lrm) is added, because languages with RTL names can
+		// mess the display
+		global $wgLang;
+		$languages = implode( wfMsg( 'tpt-languages-separator' ) . $wgLang->getDirMarkEntity(), $languages );
 
 		return <<<FOO
 <div class="mw-pt-languages">
