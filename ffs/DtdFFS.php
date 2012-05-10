@@ -29,7 +29,7 @@ class DtdFFS extends SimpleFFS {
 			$authors[] = $matches[1][$i];
 		}
 
-		preg_match_all( ',<!ENTITY[ ]+([^ ]+)[ ]+"([^"]+)"[^>]*>,', $data, $matches );
+		preg_match_all( ',<!ENTITY[ ]+([^ ]+)\w+"([^"]+)"[^>]*>,', $data, $matches );
 
 		$keys = $matches[1];
 		$values = $matches[2];
