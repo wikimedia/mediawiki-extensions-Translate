@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALX//++E\u003d",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-05-10T20:54:20Z",
+      "side": 1,
+      "message": "I think $title-\u003eequals( $_title ) should work.",
+      "revId": "8a827427979ff0208c2fc50536306169d43182d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALX//+9s\u003d",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-05-10T20:54:20Z",
+      "side": 1,
+      "message": "$attribs[\u0027class\u0027] \u003d \u0027...\u0027;",
+      "revId": "8a827427979ff0208c2fc50536306169d43182d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
