@@ -913,7 +913,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 	// Ugly
 	protected $namespace = false;
 
-	protected $code;
+	protected $language;
 
 	public function __construct() {}
 
@@ -941,6 +941,10 @@ class RecentMessageGroup extends WikiMessageGroup {
 	}
 
 	public function getDefinitions() {
+		if ( !$this->language ) {
+			throw new MWException( "Language not set" );
+		}
+
 		global $wgTranslateMessageNamespaces;
 		$db = wfGetDB( DB_SLAVE );
 		$tables = 'recentchanges';
