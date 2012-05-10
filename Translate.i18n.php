@@ -14662,7 +14662,7 @@ $messages['mk'] = array(
 	'translate-manage-inconsistent' => 'Откриена е недоследност во барањето.
 Проверете дали има промени и обидете се повторно.
 Подробности : $1.',
-	'translate-manage-toolong' => 'Надминато е максималното време за обработка од $1 {{PLURAL:$1|секунда|секунди}}.
+	'translate-manage-toolong' => 'Пречекорено е максималното време за обработка од $1 {{PLURAL:$1|секунда|секунди}}.
 Поднесете го образецот одново за да продолжите со обработката.',
 	'translate-manage-import-summary' => 'Увезување на нова верзија од надворешен извор',
 	'translate-manage-conflict-summary' => 'Увезување на нова верзија од надворешен извор.
@@ -17203,12 +17203,12 @@ Drigg uff die Grubb, um ä Lischd vunde uiwasedzbare Nochrischde zseje.',
 	'translate-taskui-acceptqueue' => 'Bloß Nochrischde zaische, wu isch oivaschdone bin',
 	'translate-taskui-reviewall' => 'Alli Iwasedzunge iwabriefe',
 	'translate-taskui-export-to-file' => 'Exbodiers im aischene Foamad',
-	'translate-taskui-export-as-po' => 'Fa ä Offline-Iwasedzung exbordiere',
+	'translate-taskui-export-as-po' => 'Fa ä Offline-Iwasedzung ausgewe',
 	'translate-taction-translate' => 'Iwasedze',
 	'translate-taction-proofread' => 'Iwabriefe',
 	'translate-taction-lstats' => 'Schdadischdig fa die Schbrooch',
 	'translate-taction-mstats' => 'Schdadischdigge fa die Nochrischdegrubb',
-	'translate-taction-export' => 'Exbordiere',
+	'translate-taction-export' => 'Ausgewe',
 	'translate-taction-disabled' => 'Des do hods ned uffm Wiki.',
 	'translate-page-no-such-language' => 'Die oagewene Schbrooch isch ugildisch.',
 	'translate-page-no-such-group' => 'Die oagewene Grubb isch ugildisch.',
@@ -17228,6 +17228,11 @@ Wesche:
 	'translate-page-showing-none' => "S'hod kä Nochrischde.",
 	'translate-next' => 'negschd Said',
 	'translate-prev' => 'vorisch Said',
+	'translate-page-description-legend' => 'Auskinfd iwa die Grubb',
+	'translate-page-description-hasoptional' => 'Die Nochrischdegrubb hod obzionali Nochrischde.
+Obzionali Nochrischde dedn awa bessa bloß iwasedz werre, wonns inde Schbrooch dodvoa ä Bedirfnis hot
+wie kä Leazaische zu bnudze oda Aischenoame zu umschraiwe. $1',
+	'translate-page-description-hasoptional-open' => 'Obzionali Nochrischde zaische',
 	'translate-page-edit' => 'bearwaide',
 	'translate-ext-url' => '<hr />Websaid: $1',
 	'translate-optional' => '(uff Wunsch)',
@@ -17241,11 +17246,12 @@ Wesche:
 	'translate-edit-in-other-languages' => 'Nochrischd in onare Schbrooche',
 	'translate-edit-warnings' => 'Waanung iwa mongelhafde Iwasedzunge',
 	'translate-edit-tmmatch' => '$1 % Iwaoischdimmung',
+	'translate-edit-tab-list' => 'Nochrischdelischd',
 	'translate-edit-nopermission' => "Fas Iwasedze vun Nochrischde braugschd s'Räschd.",
 	'translate-edit-askpermission' => 'Nochde Bwillischung frooche',
 	'translate-magic-submit' => 'Hole',
 	'translate-magic-cm-export' => 'Exbord',
-	'translate-magic-nothing-to-export' => 'Do hods nix fas Exbordiere.',
+	'translate-magic-nothing-to-export' => 'Do hods nix fas Ausgewe.',
 	'translate-magic-cm-to-be' => 'Ded soi solle',
 	'translate-magic-cm-current' => 'Gescheweadisch',
 	'translate-magic-cm-original' => 'Original',
