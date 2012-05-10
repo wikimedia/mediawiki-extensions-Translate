@@ -174,12 +174,12 @@ class PageTranslationHooks {
 	 * @return string
 	 */
 	public static function languages( $data, $params, $parser ) {
-		$title = $parser->getTitle();
+		$currentTitle = $parser->getTitle();
 
 		// Check if this is a source page or a translation page
-		$page = TranslatablePage::newFromTitle( $title );
+		$page = TranslatablePage::newFromTitle( $currentTitle );
 		if ( $page->getMarkedTag() === false ) {
-			$page = TranslatablePage::isTranslationPage( $title );
+			$page = TranslatablePage::isTranslationPage( $currentTitle );
 		}
 
 		if ( $page === false || $page->getMarkedTag() === false ) {
@@ -214,7 +214,7 @@ class PageTranslationHooks {
 		}
 
 		// Fix title
-		$title = $page->getTitle();
+		$pageTitle = $page->getTitle();
 
 		// Sort by language code, which seems to be the only sane method
 		ksort( $status );
@@ -247,12 +247,30 @@ class PageTranslationHooks {
 
 			// Add links to other languages
 			$suffix = ( $code === $sourceLanguage ) ? '' : "/$code";
-			$_title = Title::makeTitle( $title->getNamespace(), $title->getDBkey() . $suffix );
-			if ( intval( $percent ) === 0 ) {
+			$targetTitleString = $pageTitle->getDBkey() . $suffix;
+			$subpage = Title::makeTitle( $pageTitle->getNamespace(), $targetTitleString );
+
+			$classes = array();
+			if ( $code === $userLangCode ) {
+				$classes[] = 'mw-pt-languages-ui';
+			}
+			if ( $currentTitle->equals( $subpage ) ) {
+				$classes[] = 'mw-pt-languages-selected';
+			}
+			if ( count( $classes ) ) {
+				$attribs = array( 'class' => implode( ' ', $classes ) );
+				$name = Html::rawElement( 'span', $attribs, $name );
+			}
+
+			if ( $currentTitle->equals( $subpage ) ) {
+				// No further processing needed
+			} elseif ( $subpage->isKnown() ) {
+				$name = Linker::linkKnown( $subpage, $name );
+			} else {
 				/* When language is included because it is a priority language,
 				 * but translation does not yet exists, link directly to the
 				 * translation view. */
-				$translate = SpecialPage::getTitleFor( 'Translate' );
+				$specialTranslateTitle = SpecialPage::getTitleFor( 'Translate' );
 				$params = array(
 					'group' => $page->getMessageGroupId(),
 					'language' => $code,
@@ -262,21 +280,19 @@ class PageTranslationHooks {
 					'title' => wfMessage( 'tpt-languages-zero' )->text(),
 					'class' => 'new', // For red link color
 				);
-				$languages[] = Linker::link( $translate, "$name $percentImage", $attribs, $params );
-			} elseif ( $parser->getTitle()->getText() === $_title->getText() ) {
-				// The page we are currently on
-				$name = Html::rawElement( 'span', array( 'class' => 'mw-pt-languages-selected' ), $name );
-				$languages[] = "$name $percentImage";
-			} else {
-				if ( $code === $userLangCode ) {
-					$name = Html::rawElement( 'span', array( 'class' => 'mw-pt-languages-ui' ), $name );
-				}
-				$languages[] = Linker::linkKnown( $_title, "$name $percentImage" );
+				$name = Linker::link( $specialTranslateTitle, $name, $attribs, $params );
 			}
+
+			$languages[] = "$name $percentImage";
 		}
 
 		$legend = wfMsg( 'tpt-languages-legend' );
-		$languages = implode( wfMsg( 'tpt-languages-separator' ), $languages );
+		// dirmark (rlm/lrm) is added, because languages with RTL names can
+		// mess the display
+		$lang = Language::factory( $userLangCode );
+		$sep = wfMessage( 'tpt-languages-separator' )->inLanguage( $lang )->plain();
+		$sep .= $lang->getDirMarkEntity();
+		$languages = implode( $sep, $languages );
 
 		return <<<FOO
 <div class="mw-pt-languages">
