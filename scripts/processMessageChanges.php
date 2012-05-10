@@ -117,6 +117,9 @@ class ProcessMessageChanges extends Maintenance {
 
 		// By-pass cached message definitions
 		$file = $group->getFFS()->read( $code );
+		if ( !isset( $file['MESSAGES'] ) ) {
+			error_log( "{$group->getId()} has an FFS - the FFS didn't return cake for $code" );
+		}
 		$fileKeys = array_keys( $file['MESSAGES'] );
 
 		$common = array_intersect( $fileKeys, $wikiKeys );
