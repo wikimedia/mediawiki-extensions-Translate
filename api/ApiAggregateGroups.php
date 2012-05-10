@@ -39,74 +39,80 @@ class ApiAggregateGroups extends ApiBase {
 				$this->dieUsageMsg( array( 'missingparam', 'aggregategroup' ) );
 			}
 			$aggregateGroup = $params['aggregategroup'];
-			// Get the list of group ids
-			$groupId = $params['group'];
-			$subgroups = TranslateMetadata::get( $aggregateGroup, 'subgroups' );
-			if ( $subgroups ) {
-				$subgroups = array_map( 'trim', explode( ',', $subgroups ) );
-			} else {
+			$subgroups = TranslateMetadata::getSubgroups( $aggregateGroup );
+			if ( count( $subgroups ) === 0 ) {
 				// For newly created groups the subgroups value might be empty,
 				// but check that.
-				if ( !TranslateMetadata::get( $aggregateGroup, 'name' ) ) {
-					$this->dieUsage( '‎Invalid Aggregate message group', 'invalidaggregategroup' );
-				} ;
+				if ( TranslateMetadata::get( $aggregateGroup, 'name' ) === false ) {
+					$this->dieUsage( 'Invalid aggregate message group', 'invalidaggregategroup' );
+				}
 				$subgroups = array();
 			}
-			$group = MessageGroups::getGroup( $groupId );
-			if ( $group === null || !$group instanceof WikiPageMessageGroup ) {
-				$this->dieUsage( 'Group does not exist or invalid', 'invalidgroup' );
-			}
 
-			if ( !self::isValid( $aggregateGroup ) ) {
-				$this->dieUsage( '‎Invalid Aggregate message group', 'invalidaggregategroup' );
-			}
+			$subgroupId = $params['group'];
+			$group = MessageGroups::getGroup( $subgroupId );
+
 			// Add or remove from the list
 			if ( $action === 'associate' ) {
-				$subgroups[] = $groupId;
+				if ( !$group instanceof WikiPageMessageGroup ) {
+					$this->dieUsage( 'Group does not exist or invalid', 'invalidgroup' );
+				}
+
+				$subgroups[] = $subgroupId;
 				$subgroups = array_unique( $subgroups );
 			} elseif ( $action === 'dissociate' ) {
-				$subgroups = array_flip( $subgroups ) ;
-				unset( $subgroups[$groupId] );
+				// Allow removal of non-existing groups
+				$subgroups = array_flip( $subgroups );
+				unset( $subgroups[$subgroupId] );
 				$subgroups = array_flip( $subgroups );
 			}
 
-			TranslateMetadata::set( $aggregateGroup, 'subgroups', implode( ',', $subgroups ) ) ;
+			TranslateMetadata::setSubgroups( $aggregateGroup, $subgroups );
+
 			$logparams = array(
 				'user' => $wgUser->getName() ,
+				//TODO: Why is this name and not id?
 				'aggregategroup' => TranslateMetadata::get( $aggregateGroup, 'name' ),
 			);
-			$logger->addEntry( $action, $group->getTitle(), null, array( serialize( $logparams ) ) );
+
+			$title = $group ? $group->getTitle() : Title::newFromText( "Group:$id" );
+			$logger->addEntry( $action, $title, null, array( serialize( $logparams ) ) );
 		} elseif ( $action === 'remove' ) {
 			if ( !isset( $params['aggregategroup'] ) ) {
 				$this->dieUsageMsg( array( 'missingparam', 'aggregategroup' ) );
 			}
-			$aggregateGroup = $params['aggregategroup'];
-			TranslateMetadata::set( $aggregateGroup, 'subgroups', false ) ;
-			TranslateMetadata::set( $aggregateGroup, 'name', false ) ;
-			TranslateMetadata::set( $aggregateGroup, 'description', false ) ;
+			TranslateMetadata::deleteGroup( $params['aggregategroup'] );
+			// TODO: logging
+
 		} elseif ( $action === 'add' ) {
 			if ( !isset( $params['groupname'] ) ) {
 				$this->dieUsageMsg( array( 'missingparam', 'groupname' ) );
 			}
 			$name = trim( $params['groupname'] );
 			if ( strlen( $name ) === 0 ) {
-				$this->dieUsage( '‎Invalid Aggregate message group name', 'invalidaggregategroupname' );
+				$this->dieUsage( 'Invalid aggregate message group name', 'invalidaggregategroupname' );
+			}
+
+			if ( !isset( $params['groupdescription'] ) ) {
+				$this->dieUsageMsg( array( 'missingparam', 'groupdescription' ) );
 			}
 			$desc = trim( $params['groupdescription'] );
-			$aggregategroupId = self::generateAggregateGroupId( $name );
-			if ( TranslateMetadata::get( $aggregategroupId, 'subgroups' ) ) {
-				$this->dieUsage( 'Aggregate message group already exists', 'duplicateaggregategroup' );
+
+			$aggregateGroupId = self::generateAggregateGroupId( $name );
+			$exists = MessageGroups::getGroup( $aggregateGroupId );
+			if ( $exists ) {
+				$this->dieUsage( 'Message group already exists', 'duplicateaggregategroup' );
 			}
-			TranslateMetadata::set( $aggregategroupId, 'subgroups', '' ) ;
-			if ( $name ) {
-				TranslateMetadata::set( $aggregategroupId, 'name', $name ) ;
-			}
-			if ( $desc ) {
-				TranslateMetadata::set( $aggregategroupId, 'description', $desc ) ;
-			}
+
+			TranslateMetadata::set( $aggregateGroupId, 'name', $name );
+			TranslateMetadata::set( $aggregateGroupId, 'description', $desc );
+			TranslateMetadata::setSubgroups( $aggregateGroupId, array() );
+
 			// Once new aggregate group added, we need to show all the pages that can be added to that.
 			$output['groups'] = self::getAllPages();
-			$output['aggregategroupId'] = $aggregategroupId;
+			$output['aggregategroupId'] = $aggregateGroupId;
+			// TODO: logging
+
 		}
 
 		// If we got this far, nothing has failed
@@ -114,17 +120,12 @@ class ApiAggregateGroups extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 		// Cache needs to be cleared after any changes to groups
 		MessageGroups::clearCache();
-	}
-
-	protected function isValid( $aggregateGroup ) {
-		if ( !$aggregateGroup || preg_match( '/[\x00-\x1f\x22\x23\x2c\x2e\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/i', $aggregateGroup ) ) {
-				return false;
-		}
-		return true;
+		MessageIndexRebuildJob::newJob()->insert();
 	}
 
 	protected function generateAggregateGroupId ( $aggregateGroupName, $prefix = "agg-" ) {
-		if ( strlen( $aggregateGroupName ) + strlen ( $prefix )  >= 200 ) { // The database field for this has maxlimit 200
+		// The database field has maximum limit of 200 bytes
+		if ( strlen( $aggregateGroupName ) + strlen( $prefix )  >= 200 ) {
 			return $prefix . substr( sha1( $aggregateGroupName ), 0, 5 );
 		} else {
 			return $prefix . preg_replace( '/[\x00-\x1f\x23\x27\x2c\x2e\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/i', '_', $aggregateGroupName );
@@ -152,7 +153,8 @@ class ApiAggregateGroups extends ApiBase {
 				ApiBase::PARAM_TYPE => 'string',
 			),
 			'group' => array(
-				ApiBase::PARAM_TYPE => array_keys( MessageGroups::getAllGroups() ),
+				// Not providing list of values, to allow dissociation of unknown groups
+				ApiBase::PARAM_TYPE => 'string',
 			),
 			'groupname' => array(
 				ApiBase::PARAM_TYPE => 'string',

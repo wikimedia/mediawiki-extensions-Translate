@@ -36,7 +36,7 @@ class TranslateMetadata {
 
 	/**
 	 * Set a metadata value for the given group and metadata key. Updates the value if already existing.
-	 * @param $group The group name
+	 * @param $group The group id
 	 * @param $key Metadata key
 	 * @param $value Metadata value
 	 */
@@ -52,4 +52,52 @@ class TranslateMetadata {
 
 		self::$cache = null;
 	}
+
+	/**
+	 * Wrapper for getting subgroups.
+	 * @param string $groupId
+	 * @since 2012-05-09
+	 * return array|false
+	 */
+	public static function getSubgroups( $groupId ) {
+		$groups = self::get( $groupId, 'subgroups' );
+		if ( $groups !== false ) {
+			if ( strpos( $groups, '|' ) !== false ) {
+				$groups = explode( '|', $groups );
+			} else {
+				$groups = array_map( 'trim', explode( ',', $groups ) );
+			}
+
+			foreach ( $groups as $index => $id ) {
+				if ( trim( $id ) === '' ) {
+					unset( $groups[$index] );
+				}
+			}
+		}
+
+		return $groups;
+	}
+
+	/**
+	 * Wrapper for setting subgroups.
+	 * @param string $groupId
+	 * @param array $subgroupIds
+	 * @since 2012-05-09
+	 */
+	public static function setSubgroups( $groupId, $subgroupIds ) {
+		$subgroups = implode( '|', $subgroupIds );
+		self::set( $groupId, 'subgroups', $subgroups );
+	}
+
+	/**
+	 * Wrapper for deleting one wiki aggregate group at once.
+	 * @param string $groupId
+	 * @since 2012-05-09
+	 */
+	public static function deleteGroup( $groupId ) {
+		$dbw = wfGetDB( DB_MASTER );
+		$conds = array( 'tmd_group' => $groupId );
+		$dbw->delete( 'translate_metadata', $conds );
+	}
+
 }
