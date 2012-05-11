@@ -2623,6 +2623,8 @@ Motif : $1',
 	'tpt-aggregategroup-add-new' => "Ajouter un nouveau groupe d'agrégation",
 	'tpt-aggregategroup-new-name' => 'Nom:',
 	'tpt-aggregategroup-new-description' => 'Description (facultative):',
+	'tpt-aggregategroup-remove-confirm' => 'Êtes-vous sûr de vouloir supprimer ce groupe agrégé?',
+	'tpt-aggregategroup-invalid-group' => "Le groupe n'existe pas",
 	'pt-parse-open' => 'Balise &lt;translate> asymétrique.
 Modèle de traduction : <pre>$1</pre>',
 	'pt-parse-close' => 'Balise &lt;/translate> asymétrique.
@@ -2649,8 +2651,8 @@ Texte de la section : <pre>$1</pre>',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|a supprimé}} les langues prioritaires pour la page traduisible [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|définir}} les langues prioritaires pour la page traduisible [[:$1]] en $3. Raison : $4',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|limiter}} les langues pour la page traduisible [[:$1]] en $3. Raison : $4',
-	'pt-log-aggregategroup-associate' => "{{GENDER:$2|a ajouté}} la pageà traduire [[:$1]] au groupe d'agrégation $3.",
-	'pt-log-aggregategroup-dissociate' => "{{GENDER:$2|a supprimé}} la page à traduire [[:$1]] du groupe d'agrégation $3.",
+	'pt-log-aggregategroup-associate' => "{{GENDER:$2|a ajouté}} la pageà traduire [[:$1]] au groupe d'agrégation $3",
+	'pt-log-aggregategroup-dissociate' => "{{GENDER:$2|a supprimé}} la page à traduire [[:$1]] du groupe d'agrégation $3",
 	'pt-movepage-title' => 'Déplacer la page à traduire $1',
 	'pt-movepage-blockers' => 'La page à traduire ne peut pas être renommée à cause {{PLURAL:$1|de l’erreur suivante|des erreurs suivantes}} :',
 	'pt-movepage-block-base-exists' => 'La page de base cible [[:$1]] existe.',
@@ -4088,6 +4090,7 @@ $messages['is'] = array(
  * @author Gianfranco
  * @author Nemo bis
  * @author VittGam
+ * @author Ximo17
  */
 $messages['it'] = array(
 	'pagetranslation' => 'Traduzione pagine',
@@ -4133,7 +4136,10 @@ ma al momento nessuna versione di {{PLURAL:$1|questa pagina|queste pagine}} è s
 	'tpt-other-pages' => "{{PLURAL:$1|Una vecchia versione di questa pagina è segnata|Delle vecchie versioni di queste pagine sono segnate}} per la traduzione,
 ma {{PLURAL:$1|l'ultima versione non può essere segnata|le ultime versioni non possono essere segnate}} per la traduzione.",
 	'tpt-discouraged-pages' => "L'ulteriore traduzione di {{PLURAL:$1|questa pagina|queste pagine}} è scoraggiata.",
+	'tpt-select-prioritylangs' => 'Elenco dei codici lingua prioritari separati da virgole:',
+	'tpt-select-prioritylangs-force' => 'Evitare le traduzioni in lingue non ritenute prioritarie',
 	'tpt-select-prioritylangs-reason' => 'Motivo:',
+	'tpt-sections-prioritylangs' => 'Lingue prioritarie',
 	'tpt-rev-mark' => 'segna per la traduzione',
 	'tpt-rev-unmark' => 'rimuovi dalla traduzione',
 	'tpt-rev-discourage' => 'scoraggia',
@@ -4149,18 +4155,29 @@ ma {{PLURAL:$1|l'ultima versione non può essere segnata|le ultime versioni non 
 	'tpt-translation-intro' => 'Questa pagina è una <span class="plainlinks">[$1 versione tradotta]</span> della pagina [[$2]]; la traduzione è completa e aggiornata al $3&nbsp;%.',
 	'tpt-translation-intro-fuzzy' => 'Le traduzioni non aggiornate sono segnate come questo testo.',
 	'tpt-languages-legend' => 'Altre lingue:',
+	'tpt-languages-zero' => 'Inizia a tradurre in questa lingua',
 	'tpt-target-page' => 'Questa pagina non può essere aggiornata manualmente. Questa pagina è una traduzione della pagina [[$1]] e la traduzione può essere aggiornata tramite [$2 lo strumento di traduzione].',
 	'tpt-unknown-page' => 'Questo namespace è riservato alle traduzioni del contenuto delle pagine.
 La pagina che stai cercando di modificare non sembra corrispondere ad alcuna pagina segnata per la traduzione.',
+	'tpt-translation-restricted' => "La traduzione di questa pagina in questa lingua è stata impedita dall'amministratore.
+
+Motivo: $1",
+	'tpt-discouraged-language-force' => "L'amministratore ha limitato le lingue in cui questa pagina può essere tradotta. Questa lingua non è compresa tra esse.
+
+Motivo: $1",
 	'tpt-discouraged-language' => "Questa lingua non è impostata come prioritaria dall'amministratore delle traduzioni per questa pagina.
 
 Motivo: $1",
+	'tpt-priority-languages' => "L'amministratore ha impostato le lingue prioritarie per questo gruppo di $1.",
 	'tpt-render-summary' => 'Aggiornamento come da nuova versione della pagina di origine',
 	'tpt-download-page' => 'Esporta la pagina con le traduzioni',
 	'tpt-aggregategroup-add' => 'Aggiungi',
 	'tpt-aggregategroup-save' => 'Salva',
+	'tpt-aggregategroup-add-new' => 'Aggiungere un nuovo gruppo aggregato',
 	'tpt-aggregategroup-new-name' => 'Nome:',
 	'tpt-aggregategroup-new-description' => 'Descrizione (opzionale):',
+	'tpt-aggregategroup-remove-confirm' => 'Sei sicuro di voler cancellare questo gruppo aggregato?',
+	'tpt-aggregategroup-invalid-group' => 'Il gruppo non esiste',
 	'pt-parse-open' => 'Marcatore &lt;translate> sbilanciato.
 Struttura della traduzione: <pre>$1</pre>',
 	'pt-parse-close' => 'Marcatore &lt;/translate> sbilanciato.
@@ -4184,6 +4201,11 @@ Testo della sezione: <pre>$1</pre>',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|ha incontrato}} un problema nella cancellazione della pagina di traduzione [[:$1]]',
 	'pt-log-encourage' => '{{GENDER:$2|incoraggia}} la traduzione della pagina [[:$1]]',
 	'pt-log-discourage' => '{{GENDER:$2|scoraggia}} la traduzione della pagina [[:$1]]',
+	'pt-log-priority-langs-unset' => 'Lingue prioritarie {{GENDER:$2|rimosse}} dalla pagina [[:$1]] da tradurre',
+	'pt-log-priority-langs' => '{{GENDER:$2|Impostate}} le lingue prioritarie per la pagina [[:$1]] da tradurre [[:$1]] in $3. Motivo: $4',
+	'pt-log-priority-langs-force' => 'Lingue {{GENDER:$2|limited}} per la pagina [[:$1]] da tradurre in $3. Motivo: $4',
+	'pt-log-aggregategroup-associate' => 'La pagina [[:$1]] da tradurre è stata {{GENDER:$2|aggiunta}} al gruppo aggregato $3',
+	'pt-log-aggregategroup-dissociate' => 'La pagina [[:$1]] da tradurre è stata {{GENDER:$2|rimossa}} dal gruppo aggregato $3',
 	'pt-movepage-title' => 'Sposta la pagina da tradurre $1',
 	'pt-movepage-blockers' => 'Questa pagina da tradurre non è stata spostata a un nuovo nome per {{PLURAL:$1|il seguente errore|i seguenti errori}}:',
 	'pt-movepage-block-base-exists' => 'La pagina base di destinazione [[:$1]] esiste già.',
@@ -5005,6 +5027,8 @@ $messages['mk'] = array(
 	'tpt-aggregategroup-add-new' => 'Додај нова збирна група',
 	'tpt-aggregategroup-new-name' => 'Назив:',
 	'tpt-aggregategroup-new-description' => 'Опис (незадолжително):',
+	'tpt-aggregategroup-remove-confirm' => 'Дали сте сигурни дека сакате да ја избришете оваа збирна група?',
+	'tpt-aggregategroup-invalid-group' => 'Групата не постои',
 	'pt-parse-open' => 'Неврамнотежена &lt;translate> ознака.
 Шаблон за преводот: <pre>$1</pre>',
 	'pt-parse-close' => 'Неврамнотежена &lt;/translate> ознака.
@@ -5031,8 +5055,8 @@ $messages['mk'] = array(
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|отстрани}} приоритетни јазици од преводливата страница [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|ѝ ги зададе}} следниве приоритетни јазици на преводливата страница [[:$1]]: $3. Причина: $4',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|ги ограничи}} јазиците на преводливата страница [[:$1]] на $3. Причина: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|ја додаде}} преводливата страница [[:$1]] во збирната група $3.',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|ја отстрани}} преводливата страница [[:$1]] од збирната група $3.',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|ја додаде}} преводливата страница [[:$1]] во збирната група $3',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|ја отстрани}} преводливата страница [[:$1]] од збирната група $3',
 	'pt-movepage-title' => 'Преместување на преводливата страница $1',
 	'pt-movepage-blockers' => 'Преводливата страница не може да се премести на нов наслов заради {{PLURAL:$1|следнава грешка|следниве грешки}}:',
 	'pt-movepage-block-base-exists' => 'Целната основна страница [[:$1]] постои.',
@@ -5230,6 +5254,8 @@ Sebab: $1',
 	'tpt-aggregategroup-add-new' => 'Tambahkan kumpulan agregat baru',
 	'tpt-aggregategroup-new-name' => 'Nama:',
 	'tpt-aggregategroup-new-description' => 'Keterangan (tidak wajib):',
+	'tpt-aggregategroup-remove-confirm' => 'Adakah anda benar-benar ingin menghapuskan kumpulan agregat ini?',
+	'tpt-aggregategroup-invalid-group' => 'Kumpulan tidak wujud',
 	'pt-parse-open' => 'Tag &lt;translate> tidak seimbang.
 Templat penterjemahan: <pre>$1</pre>',
 	'pt-parse-close' => 'Tag &lt;/translate> tidak seimbang.
@@ -5256,8 +5282,8 @@ Teks bahagian: <pre>$1</pre>',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|menggugurkan}} bahasa keutamaan dari halaman boleh terjemah [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|menetapkan}} bahasa keutamaan untuk halaman boleh terjemah [[:$1]] kepada $3. Sebab: $4',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|mengehadkan}} bahasa untuk halaman boleh terjemah [[:$1]] kepada $3. Sebab: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|menambahkan}} laman [[:$1]] kepada kumpulan agregat $3.',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|menggugurkan}} laman [[:$1]] daripada kumpulan agregat $3.',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|menambahkan}} laman [[:$1]] kepada kumpulan agregat $3',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|menggugurkan}} laman [[:$1]] daripada kumpulan agregat $3',
 	'pt-movepage-title' => 'Alihkan laman boleh terjemah $1',
 	'pt-movepage-blockers' => 'Laman boleh terjemah ini tidak boleh dipindahkan ke nama baru atas {{PLURAL:$1|ralat|ralat-ralat}} yang berikut:',
 	'pt-movepage-block-base-exists' => 'Laman asas sasaran [[:$1]] wujud.',
@@ -8005,7 +8031,7 @@ $messages['vep'] = array(
 $messages['vi'] = array(
 	'pagetranslation' => 'Dịch trang',
 	'right-pagetranslation' => 'Đánh dấu các phiên bản của trang là cần dịch',
-	'tpt-desc' => 'Bộ mở rộng để dịch trang nội dung',
+	'tpt-desc' => 'Phần mở rộng để dịch trang nội dung',
 	'tpt-section' => 'Đơn vị dịch thuật $1',
 	'tpt-section-new' => 'Đơn vị dịch thuật mới.
 Tên: $1',
@@ -8086,6 +8112,8 @@ Lý do: $1',
 	'tpt-aggregategroup-add-new' => 'Thêm nhóm tập hợp mới',
 	'tpt-aggregategroup-new-name' => 'Tên:',
 	'tpt-aggregategroup-new-description' => 'Miêu tả (tùy chọn):',
+	'tpt-aggregategroup-remove-confirm' => 'Bạn có chắc muốn xóa nhóm hợp này?',
+	'tpt-aggregategroup-invalid-group' => 'Nhóm không tồn tại',
 	'pt-parse-open' => 'Thẻ &lt;translate> không đều.
 Bản mẫu thông dịch: <pre>$1</pre>',
 	'pt-parse-close' => 'Thẻ &lt;/translate> không đều.
@@ -8112,8 +8140,8 @@ Phần văn bản: <pre>$1</pre>',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2}}đã gỡ các ngôn ngữ quan trọng khỏi trang dịch được [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2}}đã đặt các ngôn ngữ quan trọng của trang dịch được [[:$1]] là $3. Lý do: $4',
 	'pt-log-priority-langs-force' => '{{GENDER:$2}}đã đặt danh sách ngôn ngữ hạn chế của trang dịch được [[:$1]] là $3. Lý do: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2}}đã thêm trang dịch được [[:$1]] vào nhóm tập hợp $3.',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2}}đã rút trang dịch được [[:$1]] khỏi nhóm tập hợp $3.',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2}}đã thêm trang dịch được [[:$1]] vào nhóm tập hợp $3',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2}}đã rút trang dịch được [[:$1]] khỏi nhóm tập hợp $3',
 	'pt-movepage-title' => 'Di chuyển trang dịch được $1',
 	'pt-movepage-blockers' => 'Trang dịch được không thể được đổi tên vì {{PLURAL:$1|lỗi|các lỗi}} sau:',
 	'pt-movepage-block-base-exists' => 'Bản gốc của trang đích [[:$1]] tồn tại.',
