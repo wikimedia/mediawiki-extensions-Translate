@@ -64,8 +64,8 @@ array(
 		'group-sysop-member', // Optional GENDER parameter
 		'group-bureaucrat-member', // Optional GENDER parameter
 		'group-suppress-member', // Optional GENDER parameter
-		'userrights-groupsmember', // Optional GENDER parameter
-		'userrights-groupsmember-auto', // Optional GENDER parameter
+		'userrights-groups-help', // Optional GENDER parameter
+		'userrights-editusergroup', // Optional GENDER parameter
 	),
 ),
 array(
