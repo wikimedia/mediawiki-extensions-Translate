@@ -1876,8 +1876,8 @@ Tekst wótrězka: <pre>$1</pre>',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2}} jo primarne rěcy z pśełožujobnego boka [[:$1]] {{GENDER:$2|wótpórał|wótpórała}}',
 	'pt-log-priority-langs' => '{{GENDER:$2}} jo primarne rěcy za pśełožujobny bok [[:$1]] na $3 {{GENDER:$2|póstajił|póstajiła}}. Pśicyna: $4',
 	'pt-log-priority-langs-force' => '{{GENDER:$2}} jo rěcy za pśełožujobny bok [[:$1]] na $3 {{GENDER:$2|wobgranicował|wobgranicowała}}. Pśicyna: $4',
-	'pt-log-aggregategroup-associate' => 'jo pśełožujobny bok [[:$1]]  głownej kupce $3 {{GENDER:$2|pśidał|pśidała}}.',
-	'pt-log-aggregategroup-dissociate' => 'jo pśełožujobnu bok [[:$1]]  z głowneje kupki $3 {{GENDER:$2|wótpórał|wótpórała}}.',
+	'pt-log-aggregategroup-associate' => 'jo pśełožujobny bok [[:$1]]  głownej kupce $3 {{GENDER:$2|pśidał|pśidała}}',
+	'pt-log-aggregategroup-dissociate' => 'jo pśełožujobnu bok [[:$1]]  z głowneje kupki $3 {{GENDER:$2|wótpórał|wótpórała}}',
 	'pt-movepage-title' => 'Psełožujobny bok $1 psésunuś',
 	'pt-movepage-blockers' => 'Pśełožujobny bok njedajo se dla {{PLURAL:$1|slědujuceje zmólki|slědujuceju zmólkowu|slědujucych zmólkow|slědujucych zmólkow}} do nowego mjenja pśesunuś:',
 	'pt-movepage-block-base-exists' => 'Celowy zakładny bok  [[:$1]] eksistěrujo.',
@@ -2962,8 +2962,8 @@ Texto da sección: <pre>$1</pre>',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|eliminou}} as linguas prioritarias da páxina traducible "[[:$1]]"',
 	'pt-log-priority-langs' => '{{GENDER:$2|definiu}} as linguas prioritarias da páxina traducible "[[:$1]]" a $3. Motivo: $4',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|limitou}} as linguas da páxina traducible "[[:$1]]" a $3. Motivo: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|engadiu}} a páxina "[[:$1]]" a $3.',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|eliminou}} a páxina "[[:$1]]" de $3.',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|engadiu}} a páxina traducible "[[:$1]]" ao grupo de agregación $3',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|eliminou}} a páxina traducible "[[:$1]]" do grupo de agregación $3',
 	'pt-movepage-title' => 'Mover a páxina traducible "$1"',
 	'pt-movepage-blockers' => 'Non se pode trasladar a páxina traducible a un novo nome debido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:',
 	'pt-movepage-block-base-exists' => 'Existe a páxina de destino "[[:$1]]".',
@@ -3861,6 +3861,7 @@ Motivo: $1',
 	'tpt-aggregategroup-add-new' => 'Adder un nove gruppo aggregate',
 	'tpt-aggregategroup-new-name' => 'Nomine:',
 	'tpt-aggregategroup-new-description' => 'Description (optional):',
+	'tpt-aggregategroup-remove-confirm' => 'Es tu secur de voler deler iste gruppo aggregate?',
 	'pt-parse-open' => 'Etiquetta &lt;translate> asymmetric.
 Patrono de traduction: <pre>$1</pre>',
 	'pt-parse-close' => 'Etiquetta &lt;/translate> asymmetric.
@@ -3887,8 +3888,8 @@ Texto del section: <pre>$1</pre>',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|removeva}} le linguas prioritari pro le pagina traducibile [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|definiva}} le linguas prioritari pro le pagina traducibile [[:$1]] como $3. Motivo: $4',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|limitava}} le linguas pro le pagina traducibile [[:$1]] a $3. Motivo: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|addeva}} le pagina traducibile [[:$1]] al gruppo aggregate $3.',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|removeva}} le pagina traducibile [[:$1]] del gruppo aggregate $3.',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|addeva}} le pagina traducibile [[:$1]] al gruppo aggregate $3',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|removeva}} le pagina traducibile [[:$1]] del gruppo aggregate $3',
 	'pt-movepage-title' => 'Renominar le pagina traducibile $1',
 	'pt-movepage-blockers' => 'Le pagina traducibile non pote esser renominate a causa del sequente {{PLURAL:$1|error|errores}}:',
 	'pt-movepage-block-base-exists' => 'Le pagina de base de destination [[:$1]] existe.',
@@ -5126,9 +5127,15 @@ $messages['ml'] = array(
 	'tpt-badtitle' => 'താളിനു നൽകിയ പേര് ($1) സാധുവായ തലക്കെട്ട് അല്ല',
 	'tpt-nosuchpage' => '$1 എന്ന താൾ നിലവിലില്ല.',
 	'tpt-edit-failed' => 'താൾ പുതുക്കാൻ കഴിഞ്ഞില്ല: $1',
+	'tpt-select-prioritylangs-reason' => 'കാരണം:',
 	'tpt-rev-discourage' => 'നിരുത്സാഹപ്പെടുത്തുക',
+	'tpt-rev-encourage' => 'പുനഃസ്ഥാപിക്കുക',
 	'translate-tag-translate-link-desc' => 'ഈ താൾ പരിഭാഷപ്പെടുത്തുക',
 	'tpt-languages-legend' => 'മറ്റു ഭാഷകൾ:',
+	'tpt-aggregategroup-add' => 'കൂട്ടിച്ചേർക്കുക',
+	'tpt-aggregategroup-save' => 'സേവ് ചെയ്യുക',
+	'tpt-aggregategroup-new-name' => 'പേര്:',
+	'tpt-aggregategroup-new-description' => 'വിവരണം (ഐച്ഛികം):',
 	'pt-log-name' => 'താൾ പരിഭാഷാ രേഖ',
 	'pt-movepage-block-subpage-exists' => 'ലക്ഷ്യം വെച്ച ഉപതാൾ [[:$2]] നിലവിലുണ്ട്.',
 	'pt-movepage-list-pages' => 'മാറ്റേണ്ട താളുകളുടെ പട്ടിക',
@@ -5565,6 +5572,7 @@ Reden: $1',
 	'tpt-aggregategroup-new-name' => 'Naam:',
 	'tpt-aggregategroup-new-description' => 'Beschrijving (optioneel):',
 	'tpt-aggregategroup-remove-confirm' => 'Weet u zeker dat u deze samengestelde groep wilt verwijderen?',
+	'tpt-aggregategroup-invalid-group' => 'De groep bestaat niet',
 	'pt-parse-open' => 'Ongebalanceerd label &lt;translate>.
 Vertaalsjabloon: <pre>$1</pre>',
 	'pt-parse-close' => 'Ongebalanceerd label &lt;translate>.
@@ -6007,8 +6015,8 @@ Tekst sekcji – <pre>$1</pre>',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|usunął|usunęła}} języki priorytetowe strony do przetłumaczenia [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|ustawił|ustawiła}} języki priorytetowe strony do przetłumaczenia [[:$1]] na $3. Powód: $4',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|ograniczył|ograniczyła}} języki na jakie można przetłumaczyć stronę [[:$1]] na $3. Powód: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|dodał|dodała}} stronę do tłumaczenia [[:$1]] do łączonej grupy $3.',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|usunął|usunęła}} stronę do tłumaczenia [[:$1]] z łączonej grupy $3.',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|dodał|dodała}} stronę do tłumaczenia [[:$1]] do łączonej grupy $3',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|usunął|usunęła}} stronę do tłumaczenia [[:$1]] z łączonej grupy $3',
 	'pt-movepage-title' => 'Przenieś przetłumaczalną stronę $1',
 	'pt-movepage-blockers' => 'Przetłumaczalna strona nie może zostać przeniesiona pod nową nazwę ponieważ {{PLURAL:$1|wystąpił następujący błąd|wystąpiły następujące błędy:}}',
 	'pt-movepage-block-base-exists' => 'Istnieje bazowa strona docelowa [[:$1]].',
@@ -7759,6 +7767,7 @@ Pakisuri ang [[Special:Log/pagetranslation|talaan ng pagsasalinwika ng pahina]] 
  * @author Incelemeelemani
  * @author Joseph
  * @author Karduelis
+ * @author Suelnur
  * @author Vito Genovese
  */
 $messages['tr'] = array(
@@ -7800,9 +7809,12 @@ Bu sürümü çeviri için işaretlemeden önce, çevirmenlere gereksiz iş çı
 	'tpt-download-page' => 'Çevirileri olan sayfayı dışa aktar',
 	'tpt-aggregategroup-add' => 'Ekle',
 	'tpt-aggregategroup-save' => 'Kaydet',
+	'pt-movepage-list-other' => 'Diğer alt sayfalar',
 	'pt-movepage-current' => 'Geçerli adı:',
 	'pt-movepage-new' => 'Yeni adı:',
+	'pt-movepage-subpages' => 'Tüm alt sayfaları taşı',
 	'pt-deletepage-current' => 'Sayfa adı:',
+	'pt-deletepage-subpages' => 'Tüm alt sayfaları sil',
 );
 
 /** Tatar (Cyrillic script) (Татарча)
@@ -7984,7 +7996,7 @@ $messages['vec'] = array(
 	'translate-tag-translate-link-desc' => 'Tradusi sta pagina',
 );
 
-/** Veps (Vepsän kel')
+/** Veps (Vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(

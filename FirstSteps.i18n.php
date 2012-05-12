@@ -1152,7 +1152,7 @@ Si vous ne souhaitez pas recevoir ce courrier d’informations, vous pouvez le d
  */
 $messages['frp'] = array(
 	'firststeps' => 'Premiérs pâs',
-	'firststeps-desc' => '[[Special:FirstSteps|Pâge spèciâla]] por guidar los utilisators sur un vouiqui qu’utilise l’èxtension « Translate ».',
+	'firststeps-desc' => '[[Special:FirstSteps|Pâge spèciâla]] por guidar los usanciérs sur un vouiqui qu’utilise l’èxtension « Translate ».',
 	'translate-fs-pagetitle-done' => ' - fêt !',
 	'translate-fs-pagetitle' => 'Guido d’emmodâ - $1',
 	'translate-fs-signup-title' => 'Enscrîde-vos',
@@ -2349,6 +2349,7 @@ Als u geen nieuwsbrieven wilt ontvangen, dan kunt u dit aangeven in het tabblad 
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Harald Khan
+ * @author Njardarlogar
  */
 $messages['nn'] = array(
 	'translate-fs-userpage-submit' => 'Opprett brukarsida mi',
@@ -3038,7 +3039,7 @@ $messages['tl'] = array(
 	'translate-fs-permissions-title' => 'Humiling ng mga pahintulot na pangtagapagsalinwika',
 	'translate-fs-target-title' => 'Magsimulang magsalinwika!',
 	'translate-fs-email-title' => 'Tiyakin ang tirahan mo ng e-liham',
-	'translate-fs-intro' => "Maligayang pagdating sa masalamangkang unang mga hakbang ng {{SITENAME}}.
+	'translate-fs-intro' => "Maligayang pagdating sa masalamangkang unang mga hakbang ng {{SITENAME}}. 
 Hakbang-hakbang na gagabayan ka sa proseso ng pagiging isang tagapagsalinwika.
 Sa huli, makakapagsalinwika ka ng ''mga mensahe ng ugnayang-mukha'' ng lahat ng tinatangkilik na mga proyekto sa {{SITENAME}}.",
 	'translate-fs-userpage-submit' => 'Likhain ang aking pahina ng tagagamit',
@@ -3126,7 +3127,7 @@ $messages['uk'] = array(
 Якщо ви не хочете отримувати розсилку новин, ви можете відмовитися від неї у вкладці "{{int:prefs-personal}}" ваших [Special:Preferences|налаштувань]].',
 );
 
-/** Veps (Vepsän kel')
+/** Veps (Vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
