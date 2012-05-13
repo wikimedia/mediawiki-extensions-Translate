@@ -11918,6 +11918,7 @@ $messages['ja'] = array(
 	'translate-save' => '保存 ($1)',
 	'translate-jssti-add' => '追加',
 	'managemessagegroups' => 'メッセージ群の管理',
+	'translate-smg-notallowed' => 'この操作を行うことは許可されていません。',
 	'translate-smg-nochanges' => '処理する変更はありません。',
 	'translate-smg-submit' => '処理するために変更を送信',
 	'translate-smg-submitted' => 'メッセージの定義が更新されました。バックグラウンドで変更を処理中です。',

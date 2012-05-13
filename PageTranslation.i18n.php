@@ -644,6 +644,7 @@ Motivu: $1',
 	'tpt-aggregategroup-new-name' => 'Nome:',
 	'tpt-aggregategroup-new-description' => 'Descripción (opcional):',
 	'tpt-aggregategroup-remove-confirm' => '¿Tas seguru de que quies desaniciar esti grupu agregáu?',
+	'tpt-aggregategroup-invalid-group' => 'El grupu nun esiste',
 	'pt-parse-open' => 'Etiqueta &lt;translate> desequilibrada.
 Plantía de traducción: <pre>$1</pre>',
 	'pt-parse-close' => 'Etiqueta &lt;/translate> desequilibrada.
@@ -1850,6 +1851,8 @@ Pśicyna: $1',
 	'tpt-aggregategroup-add-new' => 'Nowu zespominańsku kupku pśidaś',
 	'tpt-aggregategroup-new-name' => 'Mě:',
 	'tpt-aggregategroup-new-description' => 'Wopisanje (opcionalne):',
+	'tpt-aggregategroup-remove-confirm' => 'Coš toś tu kupku napšawdu lašowaś?',
+	'tpt-aggregategroup-invalid-group' => 'Kupka njeeksistěrujo',
 	'pt-parse-open' => 'Asymetriska toflicka &lt;translate>.
 Pśełožowańska pśedłoga: <pre>$1</pre>',
 	'pt-parse-close' => 'Asymetriska toflicka &lt;/translate>.
@@ -3292,7 +3295,7 @@ $messages['he'] = array(
 	'aggregategroups' => 'קבוצות משולבות',
 	'tpt-aggregategroup-add' => 'הוספה',
 	'tpt-aggregategroup-save' => 'שמירה',
-	'tpt-aggregategroup-add-new' => 'הודפת קבוצה משולבת חדשה',
+	'tpt-aggregategroup-add-new' => 'הוספת קבוצה משולבת חדשה',
 	'tpt-aggregategroup-new-name' => 'שם:',
 	'tpt-aggregategroup-new-description' => 'תיאור (לא חובה):',
 	'tpt-aggregategroup-remove-confirm' => 'האם ברצונך באמת למחוק את הקבוצה המשולבת הזאת?',
@@ -3310,7 +3313,7 @@ $messages['he'] = array(
 	'pt-shake-empty' => 'קטע ריק עבור סמן $1.',
 	'pt-log-header' => 'יומן של פעולות שמיוחדות למערכת תרגום דפים',
 	'pt-log-name' => 'יומן תרגום דפים',
-	'pt-log-mark' => '{{GENDER:$2|סימן}} את גרסה $3 של הדף "[[:$1]]" לתרגום',
+	'pt-log-mark' => '{{GENDER:$2|סימן|סימנה}} את גרסה $3 של הדף "[[:$1]]" לתרגום',
 	'pt-log-unmark' => '{{GENDER:$2|הוציא|הוציאה}} את הדף "[[:$1]]" מהתרגום',
 	'pt-log-moveok' => '{{GENDER:$2|השלים|השלימה}} את העברת הדף הניתן לתרגום $1 לשם $3',
 	'pt-log-movenok' => '{{GENDER:$2|מצא|מצאה}} בעיה בעת העברת [[:$1]] אל [[:$3]]',
@@ -3862,6 +3865,7 @@ Motivo: $1',
 	'tpt-aggregategroup-new-name' => 'Nomine:',
 	'tpt-aggregategroup-new-description' => 'Description (optional):',
 	'tpt-aggregategroup-remove-confirm' => 'Es tu secur de voler deler iste gruppo aggregate?',
+	'tpt-aggregategroup-invalid-group' => 'Gruppo non existe',
 	'pt-parse-open' => 'Etiquetta &lt;translate> asymmetric.
 Patrono de traduction: <pre>$1</pre>',
 	'pt-parse-close' => 'Etiquetta &lt;/translate> asymmetric.
