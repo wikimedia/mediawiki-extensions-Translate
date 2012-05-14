@@ -104,6 +104,12 @@ jQuery( document ).ready( function ( $ ) {
 	$( '#tpt-aggregategroups-save' ). on ( "click", function( event ){
 		var aggregateGroupName = $( 'input.tp-aggregategroup-add-name' ).val();
 		var aggregateGroupDesc = $( 'input.tp-aggregategroup-add-description' ).val();
+
+		// Empty the fields. If they are not emptied, then when another group
+		// is added, the values will appear again. Bug 36296.
+		$( 'input.tp-aggregategroup-add-name' ).val( '' );
+		$( 'input.tp-aggregategroup-add-description' ).val( '' );
+
 		var $select = $( 'div.mw-tpa-group select' );
 
 		var successFunction = function( data, textStatus ) {
