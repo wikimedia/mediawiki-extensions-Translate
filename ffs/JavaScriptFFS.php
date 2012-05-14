@@ -223,63 +223,6 @@ abstract class JavaScriptFFS extends SimpleFFS {
 }
 
 /**
- * New style file format support for specific kind of JavaScript
- * formatted files used by OpenLayers.
- * @ingroup FFS
- */
-class OpenLayersFFS extends JavaScriptFFS {
-	/**
-	 * @param $key string
-	 * @return string
-	 */
-	protected function transformKey( $key ) {
-		return "'$key'";
-	}
-
-	/**
-	 * @param $code string
-	 * @param $authors array
-	 * @return string
-	 */
-	protected function header( $code, $authors ) {
-		$names = Language::getLanguageNames();
-		$name = $names[ $code ];
-
-		$authorsList = $this->authorsList( $authors );
-
-		/** @cond doxygen_bug */
-		return <<<EOT
-/* Copyright (c) 2006-2008 MetaCarta, Inc., published under the Clear BSD
- * license.  See http://svn.openlayers.org/trunk/openlayers/license.txt for the
- * full text of the license. */
-
-/**
- * @requires OpenLayers/Lang.js
- */
-
-/**
-$authorsList
- *
- * Namespace: OpenLayers.Lang["$code"]
- * Dictionary for $name.  Keys for entries are used in calls to
- *     <OpenLayers.Lang.translate>.  Entry bodies are normal strings or
- *     strings formatted for use with <OpenLayers.String.format> calls.
- */
-OpenLayers.Lang["$code"] = OpenLayers.Util.applyDefaults({
-
-EOT;
-		/** @endcond */
-	}
-
-	/**
-	 * @return string
-	 */
-	protected function footer() {
-		return "});\n";
-	}
-}
-
-/**
  * File format support for Shapado, which uses JavaScript based format.
  * @ingroup FFS
  */
