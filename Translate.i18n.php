@@ -7442,6 +7442,7 @@ Tiedot: $1',
  * @author PieRRoMaN
  * @author Seb35
  * @author Sherbrooke
+ * @author Tititou36
  * @author Urhixidur
  * @author Verdy p
  * @author Wyz
@@ -7717,6 +7718,7 @@ Détails : $1',
 	'translate-js-history' => 'Historique de traduction',
 	'translate-js-support' => 'Poser une question',
 	'translate-js-support-title' => "Demandez de l'aide s'il n'y a pas suffisamment d'informations pour traduire ce message correctement.",
+	'translate-js-support-unsaved-warning' => 'Vous avez des traductions non enregistrées.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Code',
 	'translate-gs-continent' => 'Continent',
@@ -16497,6 +16499,7 @@ Details: $1',
 	'translate-js-history' => 'Vertaalgeschiedenis',
 	'translate-js-support' => 'Vraag stellen',
 	'translate-js-support-title' => 'Vraag om hulp als er niet voldoende informatie is om dit bericht juist te vertalen.',
+	'translate-js-support-unsaved-warning' => 'U hebt niet-opgeslagen vertalingen.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Code',
 	'translate-gs-continent' => 'Continent',

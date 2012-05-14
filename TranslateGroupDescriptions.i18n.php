@@ -55,6 +55,7 @@ $messages['en'] = array(
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] is a open media platform',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'These messages are part of the [[Translating:Open Images|Open Images]] email verification template',
 	'translate-group-desc-openimages-all' => 'These messages are part of the [[Translating:Open Images|Open Images]] project',
+	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] is a dynamic map generator in JavaScript',
 	'bw-desc-openstreetmap' => 'All messages related to [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] is an editable map of the whole world',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] is a Flash-based OpenStreetMap editor',
@@ -1022,6 +1023,7 @@ Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pe
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] é un servidor de mensaxes de blogue curtas de código aberto',
 	'translate-group-desc-statusnet-plugin' => 'Estas mensaxes forman parte dun complemento do [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Un grupo de mensaxes para o [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], o sistema i18n das ferramentas do [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|axuda]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalles técnicos]</span>)',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] é un servizo que mostra rutas de sendeirismo, ciclismo, ciclismo de montaña e patinaxe de todo o mundo. Usa a licenza GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php?user_lang=gl Wikiblame] é capaz de atopar rapidamente os autores dunha páxina nun wiki da Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] é un proxecto para ollar unha versión da Wikipedia sen conexión e en modo de só lectura nun dispositivo móbil.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar na Wikipedia',
@@ -1426,9 +1428,11 @@ Vedi [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] è un server di microblogging open source',
 	'translate-group-desc-statusnet-plugin' => "Questi messaggi sono parte di un'estensione di [[Translating:StatusNet|StatusNet]]",
 	'translate-group-desc-tsint' => 'Un gruppo di messaggi per [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], il sistema di localizzazione degli strumenti del [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|aiuto]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition dettagli tecnici]</span>)',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] è un servizio che mostra percorsi per escursionismo, ciclismo, mountain bike e pattinaggio in tutto il mondo. Usa la licenza GNU GPL.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] è in grado di trovare velocemente gli autori di una pagina in un sito di Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] è un progetto per fornire una versione offline, solo testo di Wikipedia per dispositivi mobili.',
 	'translate-group-desc-wikipediamobile' => "[[Translating:WikipediaMobile|WikipediaMobile]] è un'applicazione multipiattaforma per dispositivi mobili e tavolette per leggere e modificare Wikipedia",
+	'translate-group-desc-wiktionarymobile' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] è un'applicazione multipiattaforma per dispositivi mobili e tavolette per leggere e modificare Wiktionary",
 );
 
 /** Japanese (日本語)
