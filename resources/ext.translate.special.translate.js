@@ -54,3 +54,45 @@ jQuery( function( $ ) {
 		}
 	} );
 } );
+
+
+/**
+ * Edit warning for Vector
+ */
+
+( function ( $, mw ) {
+	"use strict";
+	function ourWindowOnBeforeUnloadRegister() {
+		pageShowHandler();
+		if ( window.addEventListener ) {
+			window.addEventListener( 'pageshow', pageShowHandler, false );
+		} else if ( window.attachEvent ) {
+			window.attachEvent( 'pageshow', pageShowHandler );
+		}
+	}
+
+	function pageShowHandler() {
+		// Re-add onbeforeunload handler
+		window.onbeforeunload = ourWindowOnBeforeUnload;
+	}
+
+	function ourWindowOnBeforeUnload() {
+		var retval;
+
+		if ( $( '.mw-ajax-dialog' ).length ) {
+			// Return our message
+			retval = 'You have editor windows open.';//mw.msg( 'vector-editwarning-warning' );
+		}
+
+		// Unset the onbeforeunload handler so we don't break page caching in Firefox
+		window.onbeforeunload = null;
+		if ( retval !== undefined ) {
+			// ...but if the user chooses not to leave the page, we need to rebind it
+			setTimeout( function() { window.onbeforeunload = ourWindowOnBeforeUnloadRegister; } );
+			return retval;
+		}
+	}
+
+	$( document ).ready( ourWindowOnBeforeUnloadRegister );
+
+} )( jQuery, mediaWiki );
