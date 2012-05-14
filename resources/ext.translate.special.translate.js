@@ -54,3 +54,34 @@ jQuery( function( $ ) {
 		}
 	} );
 } );
+
+/**
+ * Edit warning for Vector
+ */
+
+( function ( $, mw ) {
+	"use strict";
+	function ourWindowOnBeforeUnloadRegister() {
+		pageShowHandler();
+		if ( window.addEventListener ) {
+			window.addEventListener( 'pageshow', pageShowHandler, false );
+		} else if ( window.attachEvent ) {
+			window.attachEvent( 'pageshow', pageShowHandler );
+		}
+	}
+
+	function pageShowHandler() {
+		// Re-add onbeforeunload handler
+		window.onbeforeunload = ourWindowOnBeforeUnload;
+	}
+
+	function ourWindowOnBeforeUnload() {
+		if ( $( '.mw-ajax-dialog:visible' ).length ) {
+			// Return our message
+			return mw.msg( 'translate-js-support-unsaved-warning' );
+		}
+	}
+
+	$( document ).ready( ourWindowOnBeforeUnloadRegister );
+
+} )( jQuery, mediaWiki );

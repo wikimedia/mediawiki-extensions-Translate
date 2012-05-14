@@ -338,7 +338,7 @@ Details: $1',
 	'translate-js-history' => 'Translation history',
 	'translate-js-support' => 'Ask question',
 	'translate-js-support-title' => 'Ask for help if there is not enough information to translate this message correctly.',
-
+	'translate-js-support-unsaved-warning' => 'You have unsaved translations.',
 
 	// scripts/groupStatistics.php related messages
 	'translate-gs-pos' => 'Pos.',
