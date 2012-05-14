@@ -195,4 +195,45 @@ class SpecialManageGroups extends SpecialPage {
 		$out->addWikiMsg( 'translate-smg-submitted' );
 
 	}
+
+	/**
+	 * Adds the task-based tabs on Special:Translate and few other special pages.
+	 * Hook: SkinTemplateNavigation::SpecialPage
+	 * @since 2012-05-14
+	 */
+	static function tabify( Skin $skin, array &$tabs ) {
+		global $wgRequest, $wgOut;
+
+		$title = $skin->getTitle();
+		list( $alias, $sub ) = SpecialPage::resolveAliasWithSubpage( $title->getText() );
+
+		$pagesInGroup = array(
+			'ManageMessageGroups' => 'namespaces',
+			'AggregateGroups' => 'namespaces',
+			'SupportedLanguages' => 'views',
+			'TranslationStats' => 'views',
+		);
+		if ( !isset( $pagesInGroup[$alias] ) ) {
+			return true;
+		}
+
+		$wgOut->addModules( 'ext.translate.tabgroup' );
+
+		$tabs['namespaces'] = array();
+		foreach ( $pagesInGroup as $spName => $section ) {
+			$spClass = SpecialPage::getPage( $spName );
+			if ( $spClass === null ) {
+				continue; // Page explicitly disabled
+			}
+			$spTitle = $spClass->getTitle();
+
+			$tabs[$section][strtolower( $spName )] = array(
+				'text' => $spClass->getDescription(),
+				'href' => $spTitle->getLocalUrl(),
+				'class' => $alias === $spName ? 'selected' : '',
+			);
+		}
+
+		return true;
+	}
 }

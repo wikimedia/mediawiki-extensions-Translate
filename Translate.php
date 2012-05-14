@@ -118,6 +118,7 @@ $wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
 $wgHooks['Translate:newTranslation'][] = 'TranslateEditAddons::updateTransverTag';
 
 $wgHooks['SkinTemplateNavigation::SpecialPage'][] = 'SpecialTranslate::tabify';
+$wgHooks['SkinTemplateNavigation::SpecialPage'][] = 'SpecialManageGroups::tabify';
 
 // Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
