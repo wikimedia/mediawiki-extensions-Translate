@@ -55,7 +55,6 @@ $messages['en'] = array(
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] is a open media platform',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'These messages are part of the [[Translating:Open Images|Open Images]] email verification template',
 	'translate-group-desc-openimages-all' => 'These messages are part of the [[Translating:Open Images|Open Images]] project',
-	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] is a dynamic map generator in JavaScript',
 	'bw-desc-openstreetmap' => 'All messages related to [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] is an editable map of the whole world',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] is a Flash-based OpenStreetMap editor',
