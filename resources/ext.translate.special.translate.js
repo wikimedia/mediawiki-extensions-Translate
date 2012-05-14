@@ -54,3 +54,38 @@ jQuery( function( $ ) {
 		}
 	} );
 } );
+
+/**
+ * A warning to be shown if a user tries to close the page or navigate away
+ * from it without saving the written translation.
+ *
+ * Based on editWarning from the Vector extension, but greatly
+ * simplified.
+ */
+
+( function ( $, mw ) {
+	"use strict";
+	function ourWindowOnBeforeUnloadRegister() {
+		pageShowHandler();
+		if ( window.addEventListener ) {
+			window.addEventListener( 'pageshow', pageShowHandler, false );
+		} else if ( window.attachEvent ) {
+			window.attachEvent( 'pageshow', pageShowHandler );
+		}
+	}
+
+	function pageShowHandler() {
+		// Re-add onbeforeunload handler
+		window.onbeforeunload = ourWindowOnBeforeUnload;
+	}
+
+	function ourWindowOnBeforeUnload() {
+		if ( $( '.mw-ajax-dialog:visible' ).length ) {
+			// Return our message
+			return mw.msg( 'translate-js-support-unsaved-warning' );
+		}
+	}
+
+	$( document ).ready( ourWindowOnBeforeUnloadRegister );
+
+} )( jQuery, mediaWiki );
