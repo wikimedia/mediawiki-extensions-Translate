@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALX//9+w\u003d",
+        "filename": "resources/ext.translate.special.translate.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-05-14T12:47:13Z",
+      "side": 1,
+      "message": "It\u0027s not really for Vector here :)",
+      "revId": "16774b1c8bf423c94635a1073d997bea5c0016d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
