@@ -338,7 +338,7 @@ Details: $1',
 	'translate-js-history' => 'Translation history',
 	'translate-js-support' => 'Ask question',
 	'translate-js-support-title' => 'Ask for help if there is not enough information to translate this message correctly.',
-
+	'translate-js-support-unsaved-warning' => 'You have unsaved translations.',
 
 	// scripts/groupStatistics.php related messages
 	'translate-gs-pos' => 'Pos.',
@@ -641,6 +641,7 @@ fuzzy = mark translations for review',
 	'translate-js-nonext' => 'This is a JavaScript popup (alert) when user clicks "Save and open next" and there is no next message.',
 	'translate-js-skip' => 'A button together with Save and Save an open next. Goes to the next message without saving.',
 	'translate-js-save-failed' => 'If there was unknown error while submitting a translation, user gets this message in javascript popup (alert).',
+	'translate-js-support-unsaved-warning' => 'A warning shown in a dialog box if a user tries to close a page without saving a translation written .',
 	'translate-gs-pos' => "Used in wiki tables for localisation statistics as a column header for 'Positition' abbreviated. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]",
 	'translate-gs-code' => 'Used in wiki tables for localisation statistics as a column header for language code. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]
 {{Identical|Code}}',
