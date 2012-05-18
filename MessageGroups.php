@@ -1531,8 +1531,6 @@ class MessageGroups {
 		$groups = array();
 		foreach ( $res as $row ) {
 			$id = $row->tmd_group;
-			$name = 
-			$desc = TranslateMetadata::get( $id, 'description' );
 
 			$conf = array();
 			$conf['BASIC'] = array(
