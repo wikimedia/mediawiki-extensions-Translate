@@ -60,6 +60,8 @@ class SpecialAggregateGroups extends SpecialPage {
 			return;
 		}
 
+		usort( $aggregates, array( 'MessageGroups', 'groupLabelSort' ) );
+
 		$this->showAggregateGroups( $aggregates, $pages );
 	}
 
@@ -128,10 +130,20 @@ class SpecialAggregateGroups extends SpecialPage {
 		$out->addHtml( Html::openElement( 'ol', array( 'id' => $id ) ) );
 
 		// Not calling $parent->getGroups() because it has done filtering already
-		$subgroups = TranslateMetadata::getSubgroups( $parent->getId() );
-		asort( $subgroups );
-		foreach ( $subgroups as $id ) {
-			$group = MessageGroups::getGroup( $id );
+		$subgroupIds = TranslateMetadata::getSubgroups( $parent->getId() );
+
+		// Get the respective groups and sort them
+		$subgroups = MessageGroups::getGroupsById( $subgroupIds );
+		uasort( $subgroups, array( 'MessageGroups', 'groupLabelSort' ) );
+
+		// Add missing invalid group ids back, not returned by getGroupsById
+		foreach ( $subgroupIds as $id ) {
+			if ( !isset( $subgroups[$id] ) ) {
+				$subgroups[$id] = null;
+			}
+		}
+
+		foreach ( $subgroups as $id => $group ) {
 			$remove = Html::element( 'span',
 				array(
 					'class' => 'tp-aggregate-remove-button',
