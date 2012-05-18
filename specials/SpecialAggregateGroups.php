@@ -10,7 +10,6 @@
  */
 
 class SpecialAggregateGroups extends SpecialPage {
-
 	/**
 	 * @var User
 	 */
@@ -62,7 +61,6 @@ class SpecialAggregateGroups extends SpecialPage {
 		}
 
 		$this->showAggregateGroups( $aggregates, $pages );
-
 	}
 
 	protected function showAggregateGroups( array $aggregates, array $pages ) {
@@ -96,7 +94,6 @@ class SpecialAggregateGroups extends SpecialPage {
 			$wgOut->addHtml( $addButton );
 			$wgOut->addHtml( "</div>" );
 		}
-
 
 		$wgOut->addHtml( Html::element( 'input',
 			array( 'type' => 'hidden',
@@ -132,6 +129,7 @@ class SpecialAggregateGroups extends SpecialPage {
 
 		// Not calling $parent->getGroups() because it has done filtering already
 		$subgroups = TranslateMetadata::getSubgroups( $parent->getId() );
+		asort( $subgroups );
 		foreach ( $subgroups as $id ) {
 			$group = MessageGroups::getGroup( $id );
 			$remove = Html::element( 'span',
@@ -178,5 +176,4 @@ class SpecialAggregateGroups extends SpecialPage {
 		$id = substr( $id, 5, 8 );
 		return $prefix . $id;
 	}
-
 }
