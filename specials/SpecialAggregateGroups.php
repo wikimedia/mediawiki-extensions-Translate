@@ -148,7 +148,7 @@ class SpecialAggregateGroups extends SpecialPage {
 				$note = MessageGroups::getPriority( $id );
 			} else {
 				$text = htmlspecialchars( $id );
-				$note = $this->msg( 'tpt-aggregategroup-invalid-group' )->escapeId();
+				$note = $this->msg( 'tpt-aggregategroup-invalid-group' )->escaped();
 			}
 
 			$out->addHtml( Html::rawElement( 'li', null, "$text$remove $note" ) );
