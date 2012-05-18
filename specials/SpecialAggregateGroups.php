@@ -28,14 +28,8 @@ class SpecialAggregateGroups extends SpecialPage {
 		$out = $this->getOutput();
 
 		// Check permissions
+		// TODO: allow read only for other users
 		if ( !$this->user->isAllowed( 'translate-manage' ) ) {
-			$out->permissionRequired( 'translate-manage' );
-			return;
-		}
-
-		// Check permissions
-		if ( $wgRequest->wasPosted() && !$this->user->matchEditToken( $wgRequest->getText( 'token' ) ) ) {
-			self::superDebug( __METHOD__, "token failure", $this->user );
 			$out->permissionRequired( 'translate-manage' );
 			return;
 		}
@@ -100,7 +94,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		$wgOut->addHtml( Html::element( 'input',
 			array( 'type' => 'hidden',
 				'id' => 'token',
-				'value' => ApiAggregateGroups::getToken( 0, '' )
+				'value' => ApiAggregateGroups::getToken()
 				) ) );
 		$wgOut->addHtml( "<br/><a class='tpt-add-new-group' href='#'>" .
 			wfMsg( 'tpt-aggregategroup-add-new' ) .
