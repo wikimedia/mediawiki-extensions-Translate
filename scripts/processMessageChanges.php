@@ -86,6 +86,13 @@ class ProcessMessageChanges extends Maintenance {
 		$reason = 0;
 		if ( !$cache->isValid( $reason ) ) {
 			$this->addMessageUpdateChanges( $group, $code, $reason, $cache );
+
+			if ( !isset( $this->changes[$group->getId()][$code] ) ) {
+				/* Update the cache immediately if file and wiki state match.
+				 * Otherwise the cache will get outdated compared to file state
+				 * and will give false positive conflicts later. */
+				$cache->create();
+			}
 		}
 		wfProfileOut( __METHOD__ );
 	}
@@ -133,8 +140,8 @@ class ProcessMessageChanges extends Maintenance {
 					$cacheContent = $cache->get( $key );
 				  if ( self::compareContent( $sourceContent, $cacheContent ) ) {
 						/* This message has only changed in the wiki, which means
-						* we can ignore the difference and have it exported on
-						* next export. */
+						 * we can ignore the difference and have it exported on
+						 * next export. */
 						continue;
 					}
 				}
