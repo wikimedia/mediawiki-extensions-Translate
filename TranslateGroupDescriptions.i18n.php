@@ -864,6 +864,7 @@ $messages['fi'] = array(
  * @author Peter17
  * @author PieRRoMaN
  * @author Sherbrooke
+ * @author Urhixidur
  * @author Verdy p
  * @author Xapitoun
  */
@@ -888,7 +889,7 @@ $messages['fr'] = array(
 	'bw-desc-freecol' => 'Avant de traduire FreeCol dans votre langue, veuillez lire [[Translating:FreeCol]]. Freecol est publié sous licence GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un forum internet écrit en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] est un système gratuit pour le suivi sur le web des anomalies. Rapportez tous les problèmes sur [[Support]].',
-	'translate-group-desc-eol' => "Un groupe de message pour l’''[[Translating:EOL|Encyclopedia of Life]]''",
+	'translate-group-desc-eol' => "Un groupe de messages pour l’''[[Translating:EOL|Encyclopedia of Life]]''",
 	'translate-group-desc-ihris' => 'Un groupe de messages pour [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Un groupe de messages pour [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un module de [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Un groupe de messages pour [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], un module de [[Translating:iHRIS|iHRIS]]',
@@ -1136,9 +1137,11 @@ $messages['he'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] הוא שרת מיקרובלוגים.',
 	'translate-group-desc-statusnet-plugin' => 'ההודעות האלו הן חלק מתוסף עבור [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'קבוצת הודעות ל־[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], מערכת התרגום עבור כלי [http://toolserver.org Toolserver‏ (<span class="plainlinks">[[Translating talk:Toolserver|תמיכה]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition פרטים טכניים]</span>)',
+	'translate-group-desc-waymarked-trails' => 'אתר [[Translating:Waymarked Trails|Waymarked Trails]] הוא שירות להצגת שבילים לטיולי הליכה, טיולי אופניים, אופני הרי וגלגליות מסביב לעולם. הרישיון שלו הוא GPL.',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] מסוגל לזהות את הכותבים של חלק מדף האתר ויקי של ויקימדיה',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] מביא גרסת טקסט של ויקיפדיה למכשיר נייד.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] הוא יישום מרובה־פלטפורמות לקריאה ועריכה של ויקיפדיה במכשירים ניידים ובמחשבי לוח',
+	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|ויקימילון נייד]] הוא יישום מרובה־פלטפורמות למכשירים ניידים ומחשבי לוח לקריאה ותרומה לוויקימילון',
 );
 
 /** Croatian (Hrvatski)
@@ -2270,6 +2273,7 @@ $messages['ru'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сервер микроблогинга с открытым исходным кодом',
 	'translate-group-desc-statusnet-plugin' => 'Это сообщения плагина для [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Группа сообщений для [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], системы интернационализации [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|поддержка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технические подробности]</span>)',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] — сервис, показывающий маршруты и места по всему миру, подходящие для пеших прогулок, велоспорта, поездок на горном велосипеде и катания на роликовых коньках. Использует лицензию GNU GPL.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] позволяет быстро найти авторов страницы в проектах Викимедиа.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] — это проект, предоставляющий автономную текстовую версию Википедии на мобильном устройстве.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] является кросс-платформенным приложением для мобильных и планшетных устройств для чтения и внесения вклада в Википедию.',
@@ -2355,6 +2359,7 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je odprtokodni strežnik za mikrobloganje',
 	'translate-group-desc-statusnet-plugin' => 'Ta sporočila so del vtičnika za [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Skupina sporočil za [http://toolserver.org/~krinkle/TsIntuition Toolserverjevo Intuicijo], sistem i18n za orodja [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|podpora]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tehnične podrobnosti]</span>)',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] je storitev, ki prikazuje poti za pohodništvo, kolesarjenje, gorsko kolesarjenje in rolkanje po celem svetu.  Uporablja dovoljenje GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je zmožen hitro najti avtorje strani na wikiju Wikimedije.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt za dostavljanje nepovezane, samo tekstovne različice Wikipedije na mobilne naprave.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] je večplatformni mobilni in tablični program za branje in prispevanje k Wikipediji',

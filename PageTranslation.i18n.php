@@ -974,6 +974,9 @@ $messages['bg'] = array(
 	'translate-tag-translate-link-desc' => 'Превеждане на тази страница',
 	'tpt-languages-legend' => 'Други езици:',
 	'tpt-download-page' => 'Изнасяне на страница с преводите',
+	'tpt-aggregategroup-add' => 'Добавяне',
+	'tpt-aggregategroup-save' => 'Съхраняване',
+	'tpt-aggregategroup-new-name' => 'Име:',
 	'pt-movepage-list-other' => 'Други подстраници',
 	'pt-movepage-current' => 'Текущо име:',
 	'pt-movepage-new' => 'Ново име:',
@@ -1417,6 +1420,13 @@ Zdá se, že stránka, kterou se pokoušíte upravovat, neodpovídá žádné st
 	'tpt-download-page' => 'Exportovat stránky s překlady',
 );
 
+/** Welsh (Cymraeg)
+ * @author Lloffiwr
+ */
+$messages['cy'] = array(
+	'pagetranslation' => 'Cyfieithu tudalen',
+);
+
 /** Danish (Dansk)
  * @author Byrial
  * @author Emilkris33
@@ -1763,6 +1773,7 @@ Bitte prüfen Sie das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] auf 
  */
 $messages['diq'] = array(
 	'tpt-template' => 'Pela şabloni',
+	'aggregategroups' => 'Grubi pêro',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -4362,6 +4373,7 @@ $messages['ja'] = array(
 	'tpt-aggregategroup-new-name' => '名前：',
 	'tpt-aggregategroup-new-description' => '説明（省略可）：',
 	'tpt-aggregategroup-remove-confirm' => 'この集約群を本当に削除してもよろしいですか？',
+	'tpt-aggregategroup-invalid-group' => 'グループは存在しません',
 	'pt-parse-open' => '&lt;translate>タグの対応がとれていません。
 翻訳の雛型：<pre>$1</pre>',
 	'pt-parse-close' => '&lt;/translate>タグの対応がとれていません。
@@ -4794,6 +4806,7 @@ D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iw
 	'tpt-aggregategroup-new-name' => 'Numm:',
 	'tpt-aggregategroup-new-description' => 'Beschreiwung (optional):',
 	'tpt-aggregategroup-remove-confirm' => 'Sidd Dir sécher datt Dir dëse Grupp läsche wëllt?',
+	'tpt-aggregategroup-invalid-group' => 'De Grupp gëtt et net',
 	'pt-parse-open' => 'Netsymetreschen &lt;translate&gt;-Tag.
 Iwwersetzungsschabloun: <pre>$1</pre>',
 	'pt-parse-close' => 'Netsymetreschen &lt;&#47;translate&gt;-Tag.
@@ -5840,10 +5853,10 @@ Vorm Kennzaischen vunde Ausgab fas Iwasedze, iwabrief, das die Änarunge vunde A
 	'tpt-other-pages' => 'Ä aldi Ausgab vunde {{PLURAL:$1|Said|Saide}} sin fas Iwasedze kennzaischnd worre.
 Die naischd Ausgab konn awa ned fa ä Iwasedzung kennzaischnd werre.',
 	'tpt-discouraged-pages' => "Vunde {{PLURAL:$1|Said|Saide}} isch die Iwasedzung abg'broche worre.",
-	'tpt-select-prioritylangs' => 'Midm Komma gdrenndi Lischd vun Schweapingd Schboochcode:',
-	'tpt-select-prioritylangs-force' => 'Vahinas Iwasedze in oanare als die Schweapingd Schbrooche',
+	'tpt-select-prioritylangs' => 'Komma gdrenndi Lischd vun voaroangischi Schboochcode:',
+	'tpt-select-prioritylangs-force' => 'Vahinas Iwasedze in oanare als die voaroangischi Schbrooche',
 	'tpt-select-prioritylangs-reason' => 'Grund:',
-	'tpt-sections-prioritylangs' => 'Schweapingd Schbrooche',
+	'tpt-sections-prioritylangs' => 'Voaroangischi Schbrooche',
 	'tpt-rev-mark' => 'Fas Iwasedze fraigewe',
 	'tpt-rev-unmark' => 'Fraigab fas Iwasedze wegnemme',
 	'tpt-rev-discourage' => "Abg'rode",
@@ -5862,12 +5875,27 @@ Die naischd Ausgab konn awa ned fa ä Iwasedzung kennzaischnd werre.',
 	'tpt-languages-zero' => 'Midm Iwasedze in die Schbrooch oafonge',
 	'tpt-target-page' => 'Die Said konned vun Hoand agdualisiad werre.
 Die Said ischä Iwasedzung vunde Said [[$1]] un die Iwasedzung koama midm [$2 Iwasedzungsweagzaisch] agdualisiere.',
+	'tpt-translation-restricted' => "S'Iwasedze vunde Said in die Schbrooch isch duaschn Administrator vahinad worre.
+
+Grund: $1",
+	'tpt-discouraged-language-force' => "S'Iwasedze vunde Said in Schbrooche isch duaschn Administrator oigschrängd worre. Die Schbrooch isch laida ned unade ealaubde Schbrooche.
+
+Grund: $1",
+	'tpt-discouraged-language' => 'Die Schbrooch isch käni vunde voaroangischi Schbrooche, wuen Administrator va die Said gsedzd kabd hod.
+
+Grund: $1',
+	'tpt-priority-languages' => 'Än Administrator hoddie voaroangischi Schbrooche fa die Grubb uff $1 gsedzd.',
+	'tpt-render-summary' => 'Iwanemm die naijschd Ausgab vunde Qwellsaid',
 	'tpt-download-page' => 'Said mide Iwasedzung ausgewe',
 	'aggregategroups' => 'Grubbe zsommefasse',
 	'tpt-aggregategroup-add' => 'Dzufiesche',
 	'tpt-aggregategroup-save' => 'Schbaischare',
 	'tpt-aggregategroup-add-new' => 'Ä naiji zsommegfasdi Grubb dzufiesche',
 	'tpt-aggregategroup-new-name' => 'Noame:',
+	'tpt-aggregategroup-new-description' => 'Bschraiwung (fraiwillisch)',
+	'tpt-aggregategroup-remove-confirm' => 'Bischda sischa, dass die zsommegfasdi Grubb lesche wilschd?',
+	'tpt-aggregategroup-invalid-group' => 'Die Grubb hods ned',
+	'pt-log-header' => 'Logbuch fa Änarunge, wus Iwasedzungssischdem fa Saide noidud',
 	'pt-log-name' => 'Iwasedzungs-Logbuch',
 	'pt-log-mark' => '{{GENDER:$2|hod}} Ausgab $3 vunde Said [[:$1]] fas Iwasedze freigewe',
 	'pt-log-unmark' => '{{GENDER:$2|hoddie}} Said "[[:$1]]" ausde Iwasedzung weggnumme',
@@ -5879,28 +5907,56 @@ Die Said ischä Iwasedzung vunde Said [[$1]] un die Iwasedzung koama midm [$2 Iw
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|hod}} Ärscha beim Lesche vunde iwasedzbar Said [[:$1]] kabd',
 	'pt-log-encourage' => '{{GENDER:$2|hoddie}} Iwasedzung vunde Said [[:$1]] voagschlache',
 	'pt-log-discourage' => "{{GENDER:$2|abg'rode}} die Said [[:$1]] zu iwasedze",
-	'pt-log-priority-langs-unset' => '{{GENDER:$2|hoddie}} Schweapingd Schbrooche vunde iwasedtzbari Saide [[:$1]] weggnumme',
-	'pt-log-priority-langs' => 'hodie Schweapingd Schbrooche fadie iwasedzbari Saide [[:$1]] uff $3 {{GENDER:$2|feschdgleschd}}. Grund: $4',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|hoddie}} voaroangischi Schbrooche vunde iwasedzbari Saide [[:$1]] weggnumme',
+	'pt-log-priority-langs' => 'hodie voaroangischi Schbrooche fadie iwasedzbari Saide [[:$1]] uff $3 {{GENDER:$2|feschdgleschd}}. Grund: $4',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|hodie}} Schbrooche fadie iwasedzbari Saide [[:$1]] uff $3 oigschrängd. Grund: $4',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|hoddie}} iwasedzbari Saide [[:$1]] vunde zsommegfasdi Nochrischdegrubb $3 dzugfieschd',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|hoddie}} iwasedzbari Saide [[:$1]] vunde zsommegfasdi Grubb $3 weggnumme',
 	'pt-movepage-title' => 'Bweesch die iwasedzba Said $1',
 	'pt-movepage-blockers' => 'Die iwasedzba Said kon {{PLURAL:$1|weschm|weschede}} Fehla ned uffde naije Noame bweschd werre:',
 	'pt-movepage-block-base-exists' => 'Die Zielbasis Said [[:$1]] hods schun.',
+	'pt-movepage-block-base-invalid' => 'Die Grundsaid hod kän gildische Tidl.',
+	'pt-movepage-block-tp-exists' => 'Die Iwasedzungsaid [[:$2]] hods schun.',
+	'pt-movepage-block-tp-invalid' => 'Die Iwasedzung vum Saidetitl fa [[:$1]] ded ned gildisch soi (zu loang?).',
+	'pt-movepage-block-section-exists' => 'Die Abschniddsaid [[:$2]] hods schun.',
+	'pt-movepage-block-section-invalid' => 'Die Iwasedzung vunde Abschniddsaid fa [[:$1]] ded ned gildisch soi (zu loang?).',
+	'pt-movepage-block-subpage-exists' => 'Die Unasaid [[:$2]] hods schun.',
+	'pt-movepage-block-subpage-invalid' => 'De Saidetitl fa [[:$1]] ded ned gildisch soi (zu loang?).',
 	'pt-movepage-list-pages' => 'Lisch vunde Saide, wu zu vaschiewe sin',
 	'pt-movepage-list-translation' => 'Iwasedzdi Saide',
+	'pt-movepage-list-section' => 'Abschniddsaide',
+	'pt-movepage-list-other' => 'Waidari Unasaide',
+	'pt-movepage-list-count' => 'Gsomd hods $1 {{PLURAL:$1|Said|Saide}} fas vaschiewe.',
+	'pt-movepage-legend' => 'Bweesch die iwasedzba Said',
+	'pt-movepage-current' => 'Agduelle Noame:',
 	'pt-movepage-new' => 'Naije Noame:',
 	'pt-movepage-reason' => 'Grund:',
 	'pt-movepage-subpages' => 'Beweesch alli Unsasaide',
+	'pt-movepage-action-check' => 'Iwabrief, obs Vaschiewe meschlisch isch',
 	'pt-movepage-action-perform' => 'Vaschiebs',
 	'pt-movepage-action-other' => 'Änas Ziel',
+	'pt-movepage-logreason' => 'Deel vunde iwasedzbari Said $1.',
+	'pt-locked-page' => 'Die Said isch gsischad, wail die Iwasetzungssaid grad vaschowe werd.',
+	'pt-deletepage-lang-title' => 'Lesche vunde iwasedzdi Saide $1.',
+	'pt-deletepage-full-title' => 'Lesche vunde iwasedzbari Saide $1.',
+	'pt-deletepage-invalid-title' => 'Die oagewe Said isch ugildisch.',
+	'pt-deletepage-invalid-text' => 'Die oagewe Said isch kä iwasedzbari Said un a ned ä Iwasedzung dodvu.',
+	'pt-deletepage-action-check' => 'Zaisch leschbari Saide',
 	'pt-deletepage-action-perform' => 'Leschs',
 	'pt-deletepage-action-other' => 'Änas Ziel',
 	'pt-deletepage-lang-legend' => 'Iwasedzdi Said lesche',
+	'pt-deletepage-full-legend' => 'Iwasedzbari Said lesche',
+	'pt-deletepage-any-legend' => 'Iwasedzbari oda iwasedzdi Said lesche',
 	'pt-deletepage-current' => 'Saidenoame:',
 	'pt-deletepage-reason' => 'Grund:',
 	'pt-deletepage-subpages' => 'Lesch alli Unasaide',
 	'pt-deletepage-list-pages' => 'Lisch vunde Saide, wu zu lesche sin',
 	'pt-deletepage-list-translation' => 'Iwasedzdi Saide',
 	'pt-deletepage-list-section' => 'Abschniddsaide',
+	'pt-deletepage-list-other' => 'Waidari Unasaide',
+	'pt-deletepage-list-count' => 'Gsomd hods $1 {{PLURAL:$1|Said|Saide}} fas lesche.',
+	'pt-deletepage-full-logreason' => 'Deel vunde iwasedzbari Said $1.',
+	'pt-deletepage-lang-logreason' => 'Deel vunde iwasedzde Said $1.',
 );
 
 /** Polish (Polski)
@@ -5997,6 +6053,8 @@ Powód: $1',
 	'tpt-aggregategroup-add-new' => 'Dodaj nową grupę zbiorczą',
 	'tpt-aggregategroup-new-name' => 'Nazwa:',
 	'tpt-aggregategroup-new-description' => 'Opis (opcjonalnie):',
+	'tpt-aggregategroup-remove-confirm' => 'Na pewno usunąć tę grupę agregacji?',
+	'tpt-aggregategroup-invalid-group' => 'Grupa nie istnieje',
 	'pt-parse-open' => 'Niezrównoważony znacznik &lt;translate>.
 Szablon tłumaczenia – <pre>$1</pre>',
 	'pt-parse-close' => 'Niezrównoważony znacznik &lt;/translate>.
@@ -6767,6 +6825,7 @@ $messages['ru'] = array(
 	'tpt-aggregategroup-new-name' => 'Название:',
 	'tpt-aggregategroup-new-description' => 'Описание (необязательно):',
 	'tpt-aggregategroup-remove-confirm' => 'Вы правда хотите удалить агрегированную группу?',
+	'tpt-aggregategroup-invalid-group' => 'Группа не существует.',
 	'pt-parse-open' => 'Несбалансированный тег &lt;translate>.
 Шаблон перевода: <pre>$1</pre>',
 	'pt-parse-close' => 'Несбалансированный тег &lt;translate>.
@@ -8289,6 +8348,7 @@ $messages['yi'] = array(
  * @author Chenxiaoqino
  * @author Gzdavidwong
  * @author Hydra
+ * @author Hzy980512
  * @author Liangent
  * @author Linforest
  * @author PhiLiP
@@ -8384,6 +8444,7 @@ $messages['zh-hans'] = array(
 	'tpt-aggregategroup-new-name' => '名称：',
 	'tpt-aggregategroup-new-description' => '说明 （可选）：',
 	'tpt-aggregategroup-remove-confirm' => '确实要删除此聚合组吗？',
+	'tpt-aggregategroup-invalid-group' => '组别不存在',
 	'pt-parse-open' => '&lt;translate>标签不平衡。
 翻译模板：<pre>$1</pre>',
 	'pt-parse-close' => '&lt;/translate>标签不平衡。
