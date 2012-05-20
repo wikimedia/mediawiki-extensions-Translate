@@ -194,6 +194,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-citespecial',
+	'check' => 'links',
+	'message' => array(
+		'cite_text', // Contains link parts that may need translation
+	)
+),
+array(
 	'group' => 'ext-codereview',
 	'check' => 'variable',
 	'message' => array(
