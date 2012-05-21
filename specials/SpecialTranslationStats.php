@@ -51,6 +51,8 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	public function execute( $par ) {
 		global $wgOut, $wgRequest;
 
+		$output->addModules( 'ext.translate.special.translationstats' );
+
 		$opts = new FormOptions();
 		$opts->add( 'graphit', false );
 		$opts->add( 'preview', false );
