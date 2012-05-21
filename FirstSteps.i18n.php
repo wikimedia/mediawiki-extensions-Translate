@@ -2387,7 +2387,7 @@ un a die Schbrooch inwus Iwasedze wilschd.',
 	'translate-fs-settings-slanguage' => 'Hilfschbrooch: $1',
 	'translate-fs-settings-slanguage-desc' => "S'meschlisch da Iwasedzunge vun Nochrischde in oanare Schbrooche zaische zu losse.
 Wonns hawe wilschd un wonnses gibd, konschdda do die Schbrooch wehle.",
-	'translate-fs-settings-submit' => 'Oischdellunge schbaischere',
+	'translate-fs-settings-submit' => 'Oischdellunge schbaischare',
 	'translate-fs-userpage-level-N' => 'Des isch moi Muddaschbrooch',
 	'translate-fs-userpage-level-5' => 'Isch binän fachkundische Iwasedza',
 	'translate-fs-userpage-level-4' => 'Isch babbls faschd wie moi Muddaschbrooch',

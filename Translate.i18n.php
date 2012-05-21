@@ -5071,7 +5071,7 @@ $messages['diq'] = array(
 	'translate-taskui-suggestions' => 'Mesacê ke heq de açarnayışi melumatê cı ke esto êna bımocne',
 	'translate-taction-translate' => 'Açarnayış',
 	'translate-taction-proofread' => 'Timar ke',
-	'translate-taction-lstats' => 'İstatistikê zuwani',
+	'translate-taction-lstats' => 'İstatistikê zıwani',
 	'translate-taction-mstats' => 'İstatıstıke mesacande gruban',
 	'translate-taction-export' => 'Bıkırêş',
 	'translate-page-settings-legend' => 'Sazkerdış',
@@ -5106,7 +5106,7 @@ $messages['diq'] = array(
 	'translate-sidebar-alltrans' => 'Zıwanê bini',
 	'translations' => 'Çarnayışi pêro',
 	'translate-translations-project' => 'Proce:',
-	'languagestats' => 'İstatistikê zuwani',
+	'languagestats' => 'İstatistikê zıwani',
 	'languagestats-summary' => 'Na pelay zuwana istatistik dê gruba mesaca asayışiya çarnayışiya.',
 	'languagestats-stats-for' => 'Çarnayışè istatistikê $1 ($2).',
 	'languagestats-recenttranslations' => 'Çarnayışe bahdoni',
@@ -5120,6 +5120,7 @@ $messages['diq'] = array(
 	'translate-ls-noempty' => 'Peleyê kı nè açarneyayê êna pıploğnê',
 	'translate-language' => 'Zıwan',
 	'translate-untranslated' => 'Nêaçerneyayê',
+	'translate-languagestats-overall' => 'Mesacanê gruban de pêrona piya',
 	'translate-mgs-pagename' => 'İstatıstıke mesacande gruban',
 	'translate-mgs-column-language' => 'Zıwan',
 	'supportedlanguages-recenttranslations' => 'Çarnayışe bahdoni',
@@ -17282,21 +17283,36 @@ wie kä Leazaische zu bnudze oda Aischenoame zu umschraiwe. $1',
 	'translate-edit-tab-list' => 'Nochrischdelischd',
 	'translate-edit-nopermission' => "Fas Iwasedze vun Nochrischde braugschd s'Räschd.",
 	'translate-edit-askpermission' => 'Nochde Bwillischung frooche',
+	'translate-magic-pagename' => 'Eawaidadi MediaWiki-Iwasedzung',
+	'translate-magic-help' => 'Du konschd do Bseudoniem fa Schbezialsaide, magische Weada un Noame vun Noamnsrääm iwasedze.
+
+Schbezialsaide un magische Weada kennen vaschiedene Iwasedzunge hawe. Iwasedzunge werren midm Komma (,) gdrennd. Noamnsrääm kennen ä Iwasedzung hawe.
+
+Inde Iwasedzung vum  Noame vun Noamnsrääm hod <code>$1 talk</code> ä bsondari Bdaidung. <code>$1</code> werd midm Brojegdnoame (z. B. <code>{{ns:project_talk}}</code>) easedzd. Wons inde Schbroch ned meschlisch isch, än gildischi Ausdrugg zu finne, frochgschdn Endwiggla.
+
+Du mugschd inde Grubb vunde Iwasedza soi, um Änarunge schbaischare zu kenne.
+Änarunge werren gschbaischad, won unne uff „Schbaischare“ gligge dudschd.',
+	'translate-magic-module' => 'Bauschdää:',
 	'translate-magic-submit' => 'Hole',
-	'translate-magic-cm-export' => 'Exbord',
+	'translate-magic-cm-export' => 'Ausgewe',
 	'translate-magic-nothing-to-export' => 'Do hods nix fas Ausgewe.',
 	'translate-magic-cm-to-be' => 'Ded soi solle',
 	'translate-magic-cm-current' => 'Gescheweadisch',
 	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-comment' => 'Kommenda:',
-	'translate-magic-cm-save' => 'Schbaischere',
+	'translate-magic-cm-save' => 'Schbaischare',
 	'translate-magic-cm-updatedusing' => 'Agduell iwa [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
 	'translate-magic-cm-savefailed' => 'Schbaischare isch ned gonge',
 	'translate-magic-special' => 'Bseudoniem fa Schbezialsaide',
 	'translate-magic-words' => 'Magische Weada',
+	'translate-magic-namespace' => 'Noame vunde Noamsrääm',
 	'translate-magic-notsaved' => 'Doi Änarunge sin ned gsischad worre!',
 	'translate-magic-errors' => 'Beheb bidde {{PLURAL:$1|de|die}} Fehla inde Iwasedzung:',
 	'translate-magic-saved' => 'Doi Änarunge sin eafolschraisch gsischad worre',
+	'translate-checks-parameters' => 'Die folschndi {{PLURAL:$2|Kenngreeß wead|Kenngreeß werren}} ned bnudzd:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => 'Die folschndi {{PLURAL:$2|Kenngreeß isch|Kenngreeß sin}} ubkond: 
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Do hodse uglaischi Oazahl vun {{PLURAL:$2|Klommare|Klommare}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => "{{PLURAL:$2|De Ling'g isch|Die $2 Ling'gs sin}} broblemadisch:
@@ -17407,7 +17423,7 @@ Maßnoahm <code>$1</code> werd ned unaschdidzd.',
 $1',
 	'translate-import-err-ul-failed' => "S'roihole vunde Dadai hod ned g'klabbd",
 	'translate-js-summary' => 'Zommefassung:',
-	'translate-js-save' => 'Schbaischere',
+	'translate-js-save' => 'Schbaischare',
 	'translate-js-next' => 'Schbaischare unde negschd effne',
 	'translate-js-nonext' => 'Des isch die ledschd Nochrischd ufde Said gwesd.',
 	'translate-js-skip' => 'Waida zum negschde',
