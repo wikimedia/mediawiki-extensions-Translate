@@ -269,7 +269,6 @@ $wgResourceModules['ext.translate.special.managegroups'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
-
 $wgResourceModules['ext.translate.special.pagetranslation'] = array(
 	'scripts' => 'resources/ext.translate.special.pagetranslation.js',
 	'styles' => 'resources/ext.translate.special.pagetranslation.css',
@@ -277,6 +276,13 @@ $wgResourceModules['ext.translate.special.pagetranslation'] = array(
 		'ext.translate.multiselectautocomplete',
 	),
 	'position' => 'top',
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.translationstats'] = array(
+	'scripts' => 'resources/ext.translate.special.translationstats.js',
+	'dependencies' => array(
+		'jquery.ui.datepicker',
+	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.aggregategroups'] = array(
