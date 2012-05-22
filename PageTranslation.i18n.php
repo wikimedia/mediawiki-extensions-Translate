@@ -5957,6 +5957,9 @@ Grund: $1',
 	'pt-deletepage-list-count' => 'Gsomd hods $1 {{PLURAL:$1|Said|Saide}} fas lesche.',
 	'pt-deletepage-full-logreason' => 'Deel vunde iwasedzbari Said $1.',
 	'pt-deletepage-lang-logreason' => 'Deel vunde iwasedzde Said $1.',
+	'pt-deletepage-intro' => "Die Schbezialsaid konn alli iwasedzbari oda iwasedzdi Saide vunärer Schbrooch lesche.
+S'Lesche werd ned glaisch gmachd, wenns viel Saide sin.
+Fehla werren im [[Special: Log/pagetranslation|Iwasedzungs-Log]] oigdraache un missn vun Hoand b'rischdischd werre.",
 );
 
 /** Polish (Polski)
