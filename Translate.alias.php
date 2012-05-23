@@ -94,6 +94,18 @@ $specialPageAliases['bg'] = array(
 	'Translations' => array( 'Преводи' ),
 );
 
+/** Banjar (Bahasa Banjar) */
+$specialPageAliases['bjn'] = array(
+	'Translate' => array( 'Tarjamahakan' ),
+	'Magic' => array( 'Tarjamahakan_lanjut' ),
+	'TranslationStats' => array( 'Statistik_tarjamahan' ),
+	'Translations' => array( 'Tarjamahan' ),
+	'LanguageStats' => array( 'Statistik_bahasa' ),
+	'PageTranslation' => array( 'Tarjamahan_tungkaran' ),
+	'ImportTranslations' => array( 'Impor_tarjamahan' ),
+	'MyLanguage' => array( 'Bahasa_ulun' ),
+);
+
 /** Breton (Brezhoneg) */
 $specialPageAliases['br'] = array(
 	'Translate' => array( 'Treiñ' ),
@@ -245,10 +257,18 @@ $specialPageAliases['gl'] = array(
 /** Swiss German (Alemannisch) */
 $specialPageAliases['gsw'] = array(
 	'Translate' => array( 'Ibersetze' ),
-	'Magic' => array( 'Usgwytets Ibersetze' ),
+	'Magic' => array( 'Usgwytets_Ibersetze' ),
 	'TranslationStats' => array( 'Ibersetzigsstatischtik' ),
 	'Translations' => array( 'Ibersetzige' ),
 	'LanguageStats' => array( 'Sprochstatischtik' ),
+	'MessageGroupStats' => array( 'Noochrichtegruppestatistike' ),
+	'PageTranslation' => array( 'Übersetzig_vo_Syte' ),
+	'ImportTranslations' => array( 'Übersetzige_importiere' ),
+	'ManageMessageGroups' => array( 'Noochrichtegruppe_verwalte' ),
+	'FirstSteps' => array( 'Erschti_Schritt' ),
+	'SupportedLanguages' => array( 'Sprooche_wo_unterstützt_werde' ),
+	'MyLanguage' => array( 'Myyni_Sprooch' ),
+	'PageTranslationDeletePage' => array( 'Löschsyte_für_Übersetzige' ),
 );
 
 /** Hebrew (עברית) */
@@ -408,7 +428,8 @@ $specialPageAliases['kw'] = array(
 	'Translate' => array( 'Treylya' ),
 	'Magic' => array( 'TreylyaAvoncys' ),
 	'Translations' => array( 'Treylyansow' ),
-	'PageTranslation' => array( 'TreylyansAnFolen' ),
+	'PageTranslation' => array( 'TreylyansFolednow' ),
+	'MyLanguage' => array( 'OwYeth' ),
 );
 
 /** Luxembourgish (Lëtzebuergesch) */
@@ -418,6 +439,7 @@ $specialPageAliases['lb'] = array(
 	'TranslationStats' => array( 'Iwwersetzungsstatistiken' ),
 	'Translations' => array( 'Iwwersetzungen' ),
 	'LanguageStats' => array( 'Sproochestatistiken' ),
+	'MessageGroupStats' => array( 'Statistike_vun_de_Gruppe_vu_Messagen' ),
 	'PageTranslation' => array( 'Säiten-Iwwersetzung' ),
 	'ImportTranslations' => array( 'Iwwersetzungen_importéieren' ),
 	'ManageMessageGroups' => array( 'Gruppe_vu_Message_geréieren' ),
@@ -524,6 +546,7 @@ $specialPageAliases['nb'] = array(
 	'TranslationStats' => array( 'Oversettelsesstatistikk' ),
 	'Translations' => array( 'Oversettelser' ),
 	'LanguageStats' => array( 'Språkstatistikk' ),
+	'MessageGroupStats' => array( 'Meldingsgruppestatistikk' ),
 	'PageTranslation' => array( 'Sideoversettelse' ),
 	'ImportTranslations' => array( 'Importer_oversettelser' ),
 	'ManageMessageGroups' => array( 'Behandle_meldingsgrupper' ),
@@ -568,6 +591,7 @@ $specialPageAliases['nl'] = array(
 	'SupportedLanguages' => array( 'OndersteundeTalen' ),
 	'MyLanguage' => array( 'MijnTaal' ),
 	'PageTranslationDeletePage' => array( 'PaginavertalingpaginaVerwijderen' ),
+	'AggregateGroups' => array( 'SamengevoegdeGroepen' ),
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬) */
@@ -625,8 +649,8 @@ $specialPageAliases['pt'] = array(
 /** Brazilian Portuguese (Português do Brasil) */
 $specialPageAliases['pt-br'] = array(
 	'Translate' => array( 'Traduzir' ),
-	'Magic' => array( 'Tradução avançada' ),
-	'TranslationStats' => array( 'Estado da tradução', 'Status da tradução' ),
+	'Magic' => array( 'Tradução_avançada' ),
+	'TranslationStats' => array( 'Estado_da_tradução', 'Status_da_tradução' ),
 );
 
 /** Romanian (Română) */
@@ -778,6 +802,11 @@ $specialPageAliases['vi'] = array(
 	'TranslationStats' => array( 'Thống_kê_biên_dịch' ),
 	'Translations' => array( 'Bản_dịch' ),
 	'LanguageStats' => array( 'Thống_kê_ngôn_ngữ' ),
+	'MessageGroupStats' => array( 'Thống_kê_nhóm_thông_điệp', 'Thống_kê_nhóm' ),
+	'PageTranslation' => array( 'Dịch_trang', 'Biên_dịch_trang' ),
+	'ImportTranslations' => array( 'Nhập_bản_dịch' ),
+	'ManageMessageGroups' => array( 'Quản_lý_nhóm_thông_điệp', 'Quản_lý_nhóm' ),
+	'FirstSteps' => array( 'Bước_đầu' ),
 	'MyLanguage' => array( 'Ngôn_ngữ_tôi' ),
 );
 
@@ -803,6 +832,7 @@ $specialPageAliases['zh-hans'] = array(
 	'Magic' => array( '高级翻译' ),
 	'TranslationStats' => array( '翻译统计' ),
 	'LanguageStats' => array( '语言统计' ),
+	'MessageGroupStats' => array( '信息组状态' ),
 	'PageTranslation' => array( '网页翻译' ),
 	'ImportTranslations' => array( '进口翻译' ),
 	'ManageMessageGroups' => array( '消息组管理' ),
