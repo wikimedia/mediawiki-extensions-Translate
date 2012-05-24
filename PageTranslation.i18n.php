@@ -1403,8 +1403,18 @@ Předtím než tuto verzi označíte pro překlad zkontrolujte, že změny čás
 	'tpt-edit-failed' => 'Nelze aktualizovat stránku: $1',
 	'tpt-already-marked' => 'Nejnovější verze této stránky už byla označena pro překlad.',
 	'tpt-list-nopages' => 'Žádné stránky nejsou označeny pro překlad nebo na to nejsou připraveny.',
+	'tpt-new-pages-title' => 'Stránky navržené k překladu',
+	'tpt-old-pages-title' => 'Překládané stránky',
+	'tpt-other-pages-title' => 'Rozbité stránky',
+	'tpt-discouraged-pages-title' => 'Nedoporučené stránky',
 	'tpt-new-pages' => '{{PLURAL:$1|Tato stránka obsahuje|Tyto stránky obsahují}} text se značkami pro překlad, ale žádná verze {{PLURAL:$1|této stránky|těchto stránek}} není aktuálně označena pro překlad.',
 	'tpt-old-pages' => 'Některé verze {{PLURAL:$1|této stránky|těchto stránek}} bylo označeny pro překlad.',
+	'tpt-other-pages' => 'Starší verze {{PLURAL:$1|této stránky je označena|těchto stránek jsou označeny}} pro překlad,
+ale nejnovější verze {{PLURAL:$1|nemůže být k překladu označena|nemohou být k překladu označeny}}.',
+	'tpt-discouraged-pages' => 'Další překlady {{PLURAL:$1|této stránky|těchto stránek}} se nedoporučují.',
+	'tpt-select-prioritylangs-force' => 'Zakázat překlady do jiných než prioritních jazyků',
+	'tpt-select-prioritylangs-reason' => 'Důvod:',
+	'tpt-sections-prioritylangs' => 'Prioritní jazyky',
 	'translate-tag-translate-link-desc' => 'Přeložit tuto stránku',
 	'translate-tag-markthis' => 'Označit tuto stránku pro překlad',
 	'translate-tag-markthisagain' => 'Tato stránka byla <span class="plainlinks">[$1 změněna]</span> od posledního <span class="plainlinks">[$2 označení pro překlad]</span>.',
@@ -1412,12 +1422,40 @@ Předtím než tuto verzi označíte pro překlad zkontrolujte, že změny čás
 	'tpt-translation-intro' => 'Toto je <span class="plainlinks">[$1 přeložená verze]</span> stránky [[$2]], překlad je úplný a aktuální na $3 %.',
 	'tpt-translation-intro-fuzzy' => 'Takto jsou označeny zastaralé části překladu.',
 	'tpt-languages-legend' => 'Jiné jazyky:',
+	'tpt-languages-zero' => 'Začít překlad do tohoto jazyka',
 	'tpt-target-page' => 'Tuto stránku nelze ručně aktualizovat.
 Tato stránka je překladem stránky [[$1]] a překlad lze aktualizovat pomocí [$2 nástroje pro překlad].',
 	'tpt-unknown-page' => 'Tento jmenný prostor je vyhrazen pro překlady stránek s obsahem.
 Zdá se, že stránka, kterou se pokoušíte upravovat, neodpovídá žádné stránce označené pro překlad.',
+	'tpt-translation-restricted' => 'Správce překladů zabránil překladu této stránky do tohoto jazyka.
+
+Zdůvodnění: $1',
+	'tpt-discouraged-language-force' => 'Správce překladů omezil jazyky, do kterých lze tuto stránku překládat. Tento jazyk mezi těmito jazyky není.
+
+Zdůvodnění: $1',
+	'tpt-discouraged-language' => 'Tento jazyk nepatří k prioritním jazykům nastaveným správcem překladů pro tuto stránku.
+
+Zdůvodnění: $1',
+	'tpt-priority-languages' => 'Správce překladů nastavil prioritní jazyky pro tuto skupinu na $1.',
 	'tpt-render-summary' => 'Aktualizace na novou verzi zdrojové stránky',
 	'tpt-download-page' => 'Exportovat stránky s překlady',
+	'pt-log-header' => 'Protokol úkonů souvisejících se systémem překladu stránek',
+	'pt-log-name' => 'Kniha překladů stránek',
+	'pt-log-mark' => '{{GENDER:$2|označil|označila}} verzi $3 stránky „[[:$1]]“ k překladu',
+	'pt-log-unmark' => '{{GENDER:$2|odstranil|odstranila}} stránku „[[:$1]]“ z překládání',
+	'pt-log-moveok' => '{{GENDER:$2|dokončil|dokončila}} přejmenování překladatelné stránky $1 na $3',
+	'pt-log-movenok' => '{{GENDER:$2|narazil|narazila}} na problém při přesunu [[:$1]] na [[:$3]]',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|dokončil|dokončila}} smazání překladatelné stránky $1',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|narazil|narazila}} na problém při mazání překladatelné stránky [[:$1]]',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|dokončil|dokončila}} smazání překladové stránky $1',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|narazil|narazila}} na problém při mazání překladové stránky [[:$1]]',
+	'pt-log-encourage' => '{{GENDER:$2|vybídnul|vybídla}} k překladu stránky [[:$1]]',
+	'pt-log-discourage' => '{{GENDER:$2|odradil|odradila}} od překladu stránky [[:$1]]',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|odebral|odebrala}} prioritní jazyky z překladatelné stránky [[:$1]]',
+	'pt-log-priority-langs' => '{{GENDER:$2|nastavil|nastavila}} prioritní jazyky pro překladatelnou stránku [[:$1]] na $3. Zdůvodnění: $4',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|omezil|omezila}} jazyky pro překladatelnou stránku [[:$1]] na $3. Zdůvodnění: $4',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|přidal|přidala}} překladatelnou stránku [[:$1]] do skupiny $3',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|odebral|odebrala}} překladatelnou stránku [[:$1]] ze skupiny $3',
 );
 
 /** Welsh (Cymraeg)
@@ -5812,7 +5850,7 @@ $messages['pdc'] = array(
  */
 $messages['pfl'] = array(
 	'pagetranslation' => 'Saide iwasedze',
-	'right-pagetranslation' => 'Gschisch vunde Saide fas Iwasedze kennzaischne',
+	'right-pagetranslation' => 'Gschischd vunde Saide fas Iwasedze kennzaischne',
 	'tpt-desc' => 'Eameschlischds Iwasedze vun Inhaldssaide',
 	'tpt-section' => 'Iwasedzungsoihaid „$1“',
 	'tpt-section-new' => 'Naiji Iwasedzungsoihaid
@@ -5831,7 +5869,7 @@ Noame: $1',
 	'tpt-nosuchpage' => 'Said $1 gibds ned',
 	'tpt-oldrevision' => '$2 isch ned die naischdi Ausgab vunde Said [[$1]].
 Bloß die naischd Ausgab konn fas Iwasedze kennzaischnd werre.',
-	'tpt-notsuitable' => "Die Said $1 isch nded fas Iwasedze g'aischnd.
+	'tpt-notsuitable' => "Die Said $1 isch ned fas Iwasedze g'aischnd.
 Saida sicha, dasses än <nowiki><translate></nowiki>-Tag un ä gildischi Sadsuffbau bnudzd werd.",
 	'tpt-saveok' => 'Die Said [[$1]] isch midm iwasedzbari {{PLURAL:$2|Abschnidd|$2 Abschnidd}} fas Iwasedze kennzaischnd worre.
 Die Said konn donn <span class="plainlinks">[$3 iwasedzd]</span> werre.',
@@ -5917,11 +5955,11 @@ Grund: $1',
 	'pt-movepage-block-base-exists' => 'Die Zielbasis Said [[:$1]] hods schun.',
 	'pt-movepage-block-base-invalid' => 'Die Grundsaid hod kän gildische Tidl.',
 	'pt-movepage-block-tp-exists' => 'Die Iwasedzungsaid [[:$2]] hods schun.',
-	'pt-movepage-block-tp-invalid' => 'Die Iwasedzung vum Saidetitl fa [[:$1]] ded ned gildisch soi (zu loang?).',
+	'pt-movepage-block-tp-invalid' => 'Die Iwasedzung vum Saidetitl fa [[:$1]] deed ned gildisch soi (zu loang?).',
 	'pt-movepage-block-section-exists' => 'Die Abschniddsaid [[:$2]] hods schun.',
-	'pt-movepage-block-section-invalid' => 'Die Iwasedzung vunde Abschniddsaid fa [[:$1]] ded ned gildisch soi (zu loang?).',
+	'pt-movepage-block-section-invalid' => 'Die Iwasedzung vunde Abschniddsaid fa [[:$1]] deed ned gildisch soi (zu loang?).',
 	'pt-movepage-block-subpage-exists' => 'Die Unasaid [[:$2]] hods schun.',
-	'pt-movepage-block-subpage-invalid' => 'De Saidetitl fa [[:$1]] ded ned gildisch soi (zu loang?).',
+	'pt-movepage-block-subpage-invalid' => 'De Saidetitl fa [[:$1]] deed ned gildisch soi (zu loang?).',
 	'pt-movepage-list-pages' => 'Lisch vunde Saide, wu zu vaschiewe sin',
 	'pt-movepage-list-translation' => 'Iwasedzdi Saide',
 	'pt-movepage-list-section' => 'Abschniddsaide',

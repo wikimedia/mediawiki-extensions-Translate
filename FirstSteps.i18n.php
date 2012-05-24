@@ -2411,7 +2411,7 @@ Du konschd glaisch midm Iwasedze oafonge.
 Losdisch ned vum Naije vawirre.
 Uffde Said [[Project list|Brojegde]] gibds ä Iwasischd vunde Brojegd, wu dro schaffe konschd.
 Maischdns hods ä korzi Bschraiwung zsomme midm „''Iwasedze''“-Ling'g, wu disch uff ä Said mid Nochrische bringe dud, wu noch iwasedzd werre missen.
-Ä Lischd vunde Nochrischdegrubbe unäm [[Special:LanguageStats|geschewerdische Stoand vunär Schbrooch]] gibds aa.
+Ä Lischd vunde Nochrischdegrubbe unäm [[Special:LanguageStats|geschewerdische Zuschdoand vunär Schbrooch]] gibds aa.
 
 Wonn do mea wisse wilschd, konschd a die [[FAQ|oam haifigschdi gschdellde Froche]] lese.
 Die Unalaache kennen awa a ä bissl ald soi.

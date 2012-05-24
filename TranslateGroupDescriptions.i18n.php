@@ -228,7 +228,7 @@ $messages['ast'] = array(
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] ye software pa Entrugues y Rempuestes basáu en web',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] ye un sirvidor pa microbloguéu',
 	'translate-group-desc-statusnet-plugin' => "Estos mensaxes son parte d'un complementu pa [[Translating:StatusNet|StatusNet]]",
-	'translate-group-desc-tsint' => 'Un grupu de mensaxes pa [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], e sistema i18n de les ferramientes de [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|sofitu]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalles téunicos]</span>)',
+	'translate-group-desc-tsint' => 'Un grupu de mensaxes pa [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], el sistema i18n de les ferramientes de [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|sofitu]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalles téunicos]</span>)',
 	'translate-group-desc-waymarked-trails' => "[[Translating:Waymarked Trails|Waymarked Trails]] ye un serviciu qu'amuesa rutes andariegues, ciclistes, pa bicis de monte y pa patinos en llinia per tou el mundu. Usa la llicencia GPL de GNU",
 	'bw-desc-wikiblame' => "[[Translating:WikiBlame|WikiBlame]] ye capaz d'alcontrar rápidamente los autores d'una parte d'una páxina nuna wiki de Wikimedia",
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ufre una versión de Wikipedia ensin conexón, en mou sólo testu, nun preséu móvil',
