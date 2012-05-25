@@ -39,7 +39,7 @@ class SpecialTranslate extends SpecialPage {
 	 * Access point for this special page.
 	 */
 	public function execute( $parameters ) {
-		global $wgOut, $wgTranslateBlacklist, $wgRequest;
+		global $wgOut, $wgTranslateBlacklist, $wgRequest, $wgLang, $wgContLang;
 
 		$wgOut->addModules( 'ext.translate.special.translate' );
 
@@ -145,16 +145,44 @@ class SpecialTranslate extends SpecialPage {
 			// PHP is such an awesome language
 			$priorityLangs = TranslateMetadata::get( $groupId, 'prioritylangs' );
 			$priorityLangs = array_flip( array_filter( explode( ',', $priorityLangs ) ) );
-			if ( count( $priorityLangs) && !isset( $priorityLangs[$this->options['language']] ) ) {
+			$priorityLangsCount = count( $priorityLangs );
+			if ( $priorityLangsCount && !isset( $priorityLangs[$this->options['language']] ) ) {
 				$priorityForce = TranslateMetadata::get( $groupId, 'priorityforce' );
 				$priorityReason = TranslateMetadata::get( $groupId, 'priorityreason' );
+				if ( $priorityReason === '' ) {
+					$priorityReason = wfMessage( 'tpt-discouraged-language-noreason' )->plain();
+				} else {
+					// The reason is probable writte in the content language
+					$priorityReason = Xml::element( 'span',
+						array(
+							'lang' => $wgContLang->getCode(),
+							'dir' => $wgContLang->getDir()
+						),
+						$priorityReason
+					);
+				}
 				if ( $priorityForce === 'on' ) {
 					// Hide table
 					$this->paging['count'] = 0;
-					$description .= Html::RawElement( 'div', array( 'class' => 'error' ), wfMessage( 'tpt-discouraged-language-force', $priorityReason )->parseAsBlock() );
+					$priorityMessageClass = 'error';
+					$priorityMessageKey = 'tpt-discouraged-language-force';
 				} else {
-					$description .= Html::RawElement( 'div', array( 'class' => 'warning' ), wfMessage( 'tpt-discouraged-language', $priorityReason )->parseAsBlock() );
+					$priorityMessageClass = 'warning';
+					$priorityMessageKey = 'tpt-discouraged-language';
 				}
+				$priorityLangNames = array();
+				foreach ( array_keys( $priorityLangs ) as $langCode ) {
+					$priorityLangNames[] = Language::fetchLanguageName( $langCode, $wgLang->getCode() );
+				}
+				$description .= Html::RawElement( 'div',
+					array( 'class' => $priorityMessageClass ),
+					wfMessage(
+						$priorityMessageKey,
+						$priorityReason,
+						$priorityLangsCount,
+						$wgLang->listToText( $priorityLangNames )
+					)->parseAsBlock()
+				);
 			}
 			if ( $description ) {
 				$description = Xml::fieldset( wfMsg( 'translate-page-description-legend' ), $description );
