@@ -100,12 +100,13 @@ The page you are trying to edit does not seem to correspond any page marked for 
 	'tpt-translation-restricted' => 'Translation of this page to this language has been prevented by a translation administrator.
 
 Reason: $1',
-	'tpt-discouraged-language-force' => 'A translation administrator has limited the languages this page can be translated in. This language is not among those languages.
+	'tpt-discouraged-language-force' => "'''This page cannot be translated to $2.'''
 
-Reason: $1',
-	'tpt-discouraged-language' => 'This language is not among the priority languages set by a translation administrator for this page.
+The translation administrator decided that this page can only be translated to $3.",
+	'tpt-discouraged-language' => "'''Translating to $2 is not a priority for this page.'''
 
-Reason: $1',
+The translation administrator decided to focus the translation efforts on $3.",
+	'tpt-discouraged-language-reason' => 'Reason: $1',
 
 	'tpt-priority-languages' => 'A translation administrator has set the priority languages for this group to $1.',
 	'tpt-render-summary' => 'Updating to match new version of source page',
@@ -280,8 +281,18 @@ $3 is an URL.',
 * $1 is the translatable page
 * $2 is a link to the translation tool for the translatable page.',
 	'tpt-translation-restricted' => 'Error message shown to user when translation to a language which is restricted by translation admin.',
-	'tpt-discouraged-language-force' => 'Warning shown along with group description if the language is prevented from translation for the selected language',
-	'tpt-discouraged-language' => 'Warning shown along with group description if the language is discouraged from translation for the selected language',
+	'tpt-discouraged-language-force' => 'Error shown along with group description if the language is prevented from translation for the selected language.
+
+* $2 is the language that to which the user asked to translate the page.
+* $3 is the names of the translation languages.',
+	'tpt-discouraged-language' => 'Warning shown along with group description if the language is discouraged from translation for the selected language.
+
+* $2 is the language that to which the user asked to translate the page.
+* $3 is the names of the translation languages.',
+	'tpt-discouraged-language-reason' => '$1 is the reason for the priority language definition.
+Used only if a reason was provided in the following messages:
+* {{msg-mw|tpt-discouraged-language-force}}
+* {{msg-mw|tpt-discouraged-language}}',
 	'tpt-priority-languages' => 'Message to be shown before the messagestats table. $1 is a comma-separated list of language codes.',
 	'aggregategroups' => 'Title of [[Special:AggregateGroups]] and its name in [[Special:AggregateGroups]].',
 	'tpt-aggregategroup-add' => 'Label for the button to add a new page to aggregate group in [[Special:AggregateGroups]]',
@@ -3334,12 +3345,13 @@ $messages['he'] = array(
 	'tpt-translation-restricted' => 'מנהל תרגומים נעל את תרגום קבוצת ההודעות הזאת לשפה הזאת.
 
 סיבה להגבלה: $1',
-	'tpt-discouraged-language-force' => 'מנהל תרגומים הגביל את השפות שאפשר לתרגם אליהן את הדף הזה. השפה הזאת לא נכללת בהן.
+	'tpt-discouraged-language-force' => '\'\'\'אי־אפשר לתרגם את הדף הזה ל{{GRAMMAR:תחילית|$2}}.\'\'\'
 
-סיבה: $1',
-	'tpt-discouraged-language' => 'השפה הזאת היא לא אחת השפות המועדפות לתרגום כפי שהגדיר מנהל תרגומים עבור הדף הזה.
+מנהל התרגומים החליט שאפשר לתרגם את הדף הזה רק ל$3.',
+	'tpt-discouraged-language' => '\'\'\'תרגום הדף הזה ל{{GRAMMAR:תחילית|$2}} אינו בעדיפות.\'\'\'
 
-סיבה: $1',
+מנהל התרגומים החליט להתמקד בתרגום הדף הזה ל$3.',
+	'tpt-discouraged-language-reason' => 'סיבה: $1',
 	'tpt-priority-languages' => 'מנהל תרגום הגדיר שהשפות המועדפות לקבוצה הזאת הן $1.',
 	'tpt-render-summary' => 'עדכון להתאמת הגרסה החדשה של דף המקור',
 	'tpt-download-page' => 'ייצוא דף עם תרגומים',
