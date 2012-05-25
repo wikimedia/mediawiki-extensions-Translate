@@ -5138,10 +5138,15 @@ $messages['diq'] = array(
 	'translate-suppress-complete' => 'Peleyê kı açarneyayê êna pıploğnê',
 	'translate-ls-noempty' => 'Peleyê kı nè açarneyayê êna pıploğnê',
 	'translate-language' => 'Zıwan',
+	'translate-total' => 'Mesaci',
 	'translate-untranslated' => 'Nêaçerneyayê',
+	'translate-percentage-complete' => 'Temamiya',
+	'translate-percentage-fuzzy' => 'Verêna ra',
 	'translate-languagestats-overall' => 'Mesacanê gruban de pêrona piya',
 	'translate-ls-submit' => 'İstatistikan bımocne',
+	'translate-ls-column-group' => 'Gruba mesacan',
 	'translate-mgs-pagename' => 'İstatıstıke mesacande gruban',
+	'translate-mgs-group' => 'Gruba mesacan',
 	'translate-mgs-submit' => 'İstatistikan bımocne',
 	'translate-mgs-column-language' => 'Zıwan',
 	'supportedlanguages-recenttranslations' => 'Çarnayışe bahdoni',
@@ -23287,6 +23292,7 @@ $messages['tly'] = array(
 /** Turkish (Türkçe)
  * @author Cekli829
  * @author Emperyan
+ * @author Erdemaslancan
  * @author Incelemeelemani
  * @author Joseph
  * @author Karduelis

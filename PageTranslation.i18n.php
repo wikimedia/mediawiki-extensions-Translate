@@ -4224,7 +4224,7 @@ Motivo: $1",
 	'tpt-discouraged-language' => "Questa lingua non è impostata come prioritaria dall'amministratore delle traduzioni per questa pagina.
 
 Motivo: $1",
-	'tpt-priority-languages' => "L'amministratore ha impostato le lingue prioritarie per questo gruppo di $1.",
+	'tpt-priority-languages' => "L'amministratore ha impostato le lingue prioritarie per questo gruppo in $1.",
 	'tpt-render-summary' => 'Aggiornamento come da nuova versione della pagina di origine',
 	'tpt-download-page' => 'Esporta la pagina con le traduzioni',
 	'aggregategroups' => 'Gruppi aggregati',
