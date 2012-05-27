@@ -5870,7 +5870,7 @@ Noame: $1',
 	'tpt-oldrevision' => '$2 isch ned die naischdi Ausgab vunde Said [[$1]].
 Bloß die naischd Ausgab konn fas Iwasedze kennzaischnd werre.',
 	'tpt-notsuitable' => "Die Said $1 isch ned fas Iwasedze g'aischnd.
-Saida sicha, dasses än <nowiki><translate></nowiki>-Tag un ä gildischi Sadsuffbau bnudzd werd.",
+Saida sicha, dasses än <nowiki><translate></nowiki>-Uffschrifd  unän gildischi Sadsuffbau bnudzd werd.",
 	'tpt-saveok' => 'Die Said [[$1]] isch midm iwasedzbari {{PLURAL:$2|Abschnidd|$2 Abschnidd}} fas Iwasedze kennzaischnd worre.
 Die Said konn donn <span class="plainlinks">[$3 iwasedzd]</span> werre.',
 	'tpt-badsect' => '"$1" isch nedn gildischi Noame fa Iwasedzungsoihaid $2.',
@@ -5913,6 +5913,8 @@ Die naischd Ausgab konn awa ned fa ä Iwasedzung kennzaischnd werre.',
 	'tpt-languages-zero' => 'Midm Iwasedze in die Schbrooch oafonge',
 	'tpt-target-page' => 'Die Said konned vun Hoand agdualisiad werre.
 Die Said ischä Iwasedzung vunde Said [[$1]] un die Iwasedzung koama midm [$2 Iwasedzungsweagzaisch] agdualisiere.',
+	'tpt-unknown-page' => "D'Noamensraum isch fas Iwasedze vun Wikisaide reswawiad.
+Die Said, wu grad schaffe duschd, enschbrischd käna iwasedbari Said.",
 	'tpt-translation-restricted' => "S'Iwasedze vunde Said in die Schbrooch isch duaschn Administrator vahinad worre.
 
 Grund: $1",
@@ -5933,6 +5935,17 @@ Grund: $1',
 	'tpt-aggregategroup-new-description' => 'Bschraiwung (fraiwillisch)',
 	'tpt-aggregategroup-remove-confirm' => 'Bischda sischa, dass die zsommegfasdi Grubb lesche wilschd?',
 	'tpt-aggregategroup-invalid-group' => 'Die Grubb hods ned',
+	'pt-parse-open' => 'Ä &lt;translate&gt;-Uffschrifd hodkä Gescheschdigg.
+Iwasedzungsvorlaach: <pre>$1</pre>',
+	'pt-parse-close' => 'Än&lt;translate&gt;-Uffschrifd hodkä Gescheschdigg.
+Iwasedzungsvorlaach: <pre>$1</pre>',
+	'pt-parse-nested' => 'Vaschacheldi &lt;translate&gt;-Abschnidd sined meschlisch.
+Text vunde Uffschrifd: <pre>$1</pre>',
+	'pt-shake-multiple' => "Mehrare Abschnittszaische fa'n Abschnidd.
+Tegschd vum Abschnidd: <pre>$1</pre>",
+	'pt-shake-position' => 'Abschnittszaische onär ueawadede Schdell.
+Tegschd vum Abschnidd: <pre>$1</pre>',
+	'pt-shake-empty' => 'De Abschnid fas Zaische $1 isch lea.',
 	'pt-log-header' => 'Logbuch fa Änarunge, wus Iwasedzungssischdem fa Saide noidud',
 	'pt-log-name' => 'Iwasedzungs-Logbuch',
 	'pt-log-mark' => '{{GENDER:$2|hod}} Ausgab $3 vunde Said [[:$1]] fas Iwasedze freigewe',
@@ -5973,7 +5986,13 @@ Grund: $1',
 	'pt-movepage-action-check' => 'Iwabrief, obs Vaschiewe meschlisch isch',
 	'pt-movepage-action-perform' => 'Vaschiebs',
 	'pt-movepage-action-other' => 'Änas Ziel',
+	'pt-movepage-intro' => 'Die Schbezialsaid eameschlischds Saide zu vaschiewe, wu fas Iwasedze gkennzaischnd worre sin.
+Die Vaschiewung gehdned glaisch, wails viel Saide hod.
+Werendm Vaschiewe komma die Saide ned bnudze.
+Fehla werre im [[Special:Log/pagetranslation|Iwasedzungs-Logbuch]] uffgschriewe un missn vun Hond vaänad werre.',
 	'pt-movepage-logreason' => 'Deel vunde iwasedzbari Said $1.',
+	'pt-movepage-started' => 'Die Grundsaid isch vaschowe worre.
+Briefs [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] uff Nochrischde vun Fehla- unde Ferdischschdellung.',
 	'pt-locked-page' => 'Die Said isch gsischad, wail die Iwasetzungssaid grad vaschowe werd.',
 	'pt-deletepage-lang-title' => 'Lesche vunde iwasedzdi Saide $1.',
 	'pt-deletepage-full-title' => 'Lesche vunde iwasedzbari Saide $1.',
@@ -5995,9 +6014,10 @@ Grund: $1',
 	'pt-deletepage-list-count' => 'Gsomd hods $1 {{PLURAL:$1|Said|Saide}} fas lesche.',
 	'pt-deletepage-full-logreason' => 'Deel vunde iwasedzbari Said $1.',
 	'pt-deletepage-lang-logreason' => 'Deel vunde iwasedzde Said $1.',
-	'pt-deletepage-intro' => "Die Schbezialsaid konn alli iwasedzbari oda iwasedzdi Saide vunärer Schbrooch lesche.
+	'pt-deletepage-started' => 'Iwabriefs [[Special:Log/pagetranslation|Iwasedzungs-Logbuch]] noch Fehla un Nochrischde fas Feadischschdelle.',
+	'pt-deletepage-intro' => "Die Schbezialsaid konn alli iwasedzbari oda iwasedzdi Saide vunär Schbrooch lesche.
 S'Lesche werd ned glaisch gmachd, wenns viel Saide sin.
-Fehla werren im [[Special: Log/pagetranslation|Iwasedzungs-Log]] oigdraache un missn vun Hoand b'rischdischd werre.",
+Fehla werren im [[Special:Log/pagetranslation|Iwasedzungs-Logbuch]] oigdraache un missn vun Hoand b'rischdischd werre.",
 );
 
 /** Polish (Polski)

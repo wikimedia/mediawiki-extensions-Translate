@@ -5092,7 +5092,7 @@ $messages['diq'] = array(
 	'translate-taction-proofread' => 'Timar ke',
 	'translate-taction-lstats' => 'İstatistikê zıwani',
 	'translate-taction-mstats' => 'İstatıstıke mesacande gruban',
-	'translate-taction-export' => 'Bıkırêş',
+	'translate-taction-export' => 'Teber de',
 	'translate-page-settings-legend' => 'Sazkerdış',
 	'translate-page-group' => 'Grub',
 	'translate-page-language' => 'Zıwan',
@@ -5111,8 +5111,9 @@ $messages['diq'] = array(
 	'translate-edit-information' => 'Heq tê ($1) zanışe',
 	'translate-edit-in-other-languages' => 'Zuwanan dê binan de mesaci',
 	'translate-edit-tmsugs' => 'Hafıza da açarnayışi ra şıma rê tawsiyey',
+	'translate-edit-tab-list' => 'Listeya mesacan',
 	'translate-magic-module' => 'Modul:',
-	'translate-magic-cm-export' => 'Bıkırêş',
+	'translate-magic-cm-export' => 'Teber de',
 	'translate-magic-cm-current' => 'Newe resnayış',
 	'translate-magic-cm-original' => 'Orcinal',
 	'translate-magic-cm-comment' => 'beyanat:',
@@ -14724,7 +14725,7 @@ $messages['mk'] = array(
 	'translate-manage-action-ignore' => 'Занемари',
 	'translate-manage-action-fuzzy' => 'Увези и обележи ги преводите со „fuzzy“',
 	'translate-manage-nochanges' => 'Нема промени во дефинициите на пораките за оваа група.',
-	'translate-manage-nochanges-other' => 'Немало промени за овој јазик.
+	'translate-manage-nochanges-other' => 'Нема за овој јазик.
 Употребете ја врската подолу за да се вратите на прегледот на подробности за групата.',
 	'translate-manage-inconsistent' => 'Откриена е недоследност во барањето.
 Проверете дали има промени и обидете се повторно.
@@ -17351,7 +17352,7 @@ Du mugschd inde Grubb vunde Iwasedza soi, um Änarunge schbaischare zu kenne.
 <strong><nowiki>$1</nowiki></strong>",
 	'translate-checks-links-missing' => "{{PLURAL:$2|De Ling'g fehld|Die $2 Ling'gs fehln}}:
 <strong><nowiki>$1</nowiki></strong>",
-	'translate-checks-xhtml' => 'Bidde easedz {{PLURAL:$2|de|die}} Uffhenga midm rischdische:
+	'translate-checks-xhtml' => 'Bidde easedz die {{PLURAL:$2|Uffschrifd|Uffschrifde}} midm rischdische:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Die Feschleschung bnudzd <nowiki>{{PLURAL:}}</nowiki>, awa die Iwasedzung ned.',
 	'translate-checks-pagename' => 'De Noamensraum waischd vunde Feschleschung ab.',
@@ -17411,7 +17412,7 @@ Alli Wead hawenen unare un ower Rohmewead.',
 	'translate-tag-category' => 'Iwasedzdi Saide',
 	'translate-tag-page-desc' => 'Iwasedzung vunde Wikisaid [[$2|$1]].',
 	'translate-tag-fuzzy-comment' => "Feschleschung g'änad vum [[User:$1|$1]] inde Ausgab $2.",
-	'translate-tag-fuzzy-reason' => 'Feschleschung g\'änad vum [[User:$1|$1]] midde Bemerschung "$3" in $2.',
+	'translate-tag-fuzzy-reason' => 'Feschdleschung g\'änad vun "$1" midde Bemeaschung "$3" in $2.',
 	'translate-sidebar-alltrans' => 'In oanare Schbrooche',
 	'translations' => 'All Iwasedzunge',
 	'translations-summary' => 'Gebn Nochrischdenoame oi, um alli vafieschbari Iwasedzunge zu zaische.',
@@ -17550,6 +17551,8 @@ Hiwais: $1',
 	'group-translate-proofr' => 'Iwasedzungs-Guudachda',
 	'group-translate-proofr-member' => '{{GENDER:$1|Guudachda}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Iwasedzungsguudachda',
+	'log-name-translationreview' => 'Iwasedzungs-Iwabligg-Logbuch',
+	'log-description-translationreview' => 'Logbuch fa alli Iwabriefunge vun Iwasedzunge und Nochrischdegrubbe.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|hod}} die Iwasedzung $3 iwabrifd',
 	'logentry-groupreview-message' => "$1 hodde Zuschdoand von $4 Iwasedzunge vunde Nochrischdegrubb $3 vun $5 in $6 {{GENDER:$2|g'änad}}",
 	'translate-workflow-state-' => '(ned gsedzd)',
