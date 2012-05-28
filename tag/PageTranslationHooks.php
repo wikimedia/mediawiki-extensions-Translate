@@ -389,6 +389,9 @@ FOO;
 	 */
 	public static function updateTranstagOnNullRevisions( Revision $rev, $text, $flags ) {
 		$title = $rev->getTitle();
+		if ( !$title ) {
+			return true;
+		}
 
 		$newRevId = $rev->getId();
 		$oldRevId = $rev->getParentId();
