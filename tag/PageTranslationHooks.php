@@ -390,6 +390,13 @@ FOO;
 	public static function updateTranstagOnNullRevisions( Revision $rev, $text, $flags ) {
 		$title = $rev->getTitle();
 
+		/* Title might be null when using replicated databases.
+		 * Even in that case null revisions should have valid
+		 * titles since e778bf8. See bug 32983. */
+		if ( !$title ) {
+			return true;
+		}
+
 		$newRevId = $rev->getId();
 		$oldRevId = $rev->getParentId();
 		$newTextId = $rev->getTextId();
