@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//+JM\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-05-28T05:33:11Z",
+      "side": 1,
+      "message": "Suggestion to simplify this:  Translation is restricted to Language1, Language2 and Language3.",
+      "revId": "b17ee03e4acd560deea8577bb52781f47a58c4e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//+JI\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-05-28T05:33:11Z",
+      "side": 1,
+      "message": "Suggestion to simplify this:  Preferred languages are Language1, Language2 and Language3.\n(\"Defined translation languages\" is hard to understand and translate, at least to Malayalam :) )",
+      "revId": "b17ee03e4acd560deea8577bb52781f47a58c4e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//+JQ\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-05-28T05:33:11Z",
+      "side": 1,
+      "message": "A suggestion about UI: For the warning message, yellow text in white background is bit difficult to read. How about using the class \u0027warningbox\u0027 and \u0027errorbox\u0027 here?",
+      "revId": "b17ee03e4acd560deea8577bb52781f47a58c4e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
