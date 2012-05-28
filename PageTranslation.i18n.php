@@ -3825,6 +3825,8 @@ Elem szövege: <pre>$1</pre>',
 	'pt-movepage-action-perform' => 'Átnevezés végrehajtása',
 	'pt-movepage-action-other' => 'Cél megváltoztatása',
 	'pt-movepage-logreason' => 'A(z) $1 fordítható lap része',
+	'pt-deletepage-action-perform' => 'Törlés végrehajtása',
+	'pt-deletepage-action-other' => 'Cél megváltoztatása',
 	'pt-deletepage-current' => 'Lap neve:',
 );
 

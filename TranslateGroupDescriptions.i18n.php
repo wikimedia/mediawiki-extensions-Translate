@@ -1580,14 +1580,20 @@ Jangk op di Sigge „<i lang="en">[[mw:Extension:PDF_Writer]]</i>“ un „<i la
 	'bw-desc-openlayers' => '<i lang="en">OpenLayers</i> es en <i lang="en">open-source</i>-Süßteem för dünnamesch Landkaate ußzejävve. Wann Üsch jät opfällt, doht et op de Sigg „[[Support|{{int:bw-mainpage-support-title}}]]“ schriive.',
 	'bw-desc-openstreetmap' => 'En dä Jropp sen Täxde un Nohreeschte em Zosammehang, di met <i lang="en">[[Translating:OpenStreetMap|OpenStreetMap]]</i> shtonn.',
 	'bw-desc-osm-site' => 'Heh di Jropp hät de Nohreeschte uß dä Bovverfläsch vun <i lang="en">[[Translating:Open Street Map|Open Street Map]]</i>.',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] es e Projramm för <i lang="en">OpenStreetMap</i> ze beärbeide wad op <i lang="en">Flash</i> läuf.',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] es en Versammlong vun Projramme un Wärkzüsch för en de Wikipedija un ander WikiMedia Wikis ze ändere.',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] es e Projramm för Froore un Antwoote övver et Internet.',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es ene ẞööver för et Mini-Blogge met offe Quälltäxt.',
 	'translate-group-desc-statusnet-plugin' => 'Heh di Täxte un Nohreeschte sin Deil vun enem Zohsazprojramm för [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Heh di Jropp vun Täxte un Nohreeschte jehööt zom [http://toolserver.org/~krinkle/TsIntuition Tuulẞööver singem <i lang="en">Intuition</i>], enem Süßteem för et Övversäze vun  Projramme, di om [http://toolserver.org Tuulẞööver] loufe (<span class="plainlinks">[[Translating talk:Toolserver|{{int:bw-mainpage-support-title}}]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition täschnesch Einzelheite]</span>)',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] es ene Deens, dä zeisch Wanderwääje, Raddwääje, Bärschraddwääje, un Rollschohwäje en de janze Wält onger dä alljemeine öffentlesche Lizänz vun dä GNU.
+
+
+ .',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] kann flöck de Schriiver vun enem Stöck vun ener Sigg en enem Wikimedia Wiki fenge.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es e Projäk för en offlain Version vun de Wikipedia, ävver bloß Täx, op klein Jeräte.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] es a Projramm för ongerscheidlijje Bedriefssyßteeme för de Wikipeedija op draachbaare Jerääte un Tablät-PCs ze lässe un ze schrieve.',
+	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] en e Projramm för et Wikiwööterbooch ze beloore udder ze ändeere för et Funktellefoon un der Tablätt-PC.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -1954,6 +1960,62 @@ Vejatz [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibr
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es un servidor de microblogging en font dobèrta',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] es en mesura de trobar rapidament los autors d’una pagina dins un wiki Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es un projècte que visa a ofrir una version tèxte de Wikipèdia en mòde desconnectat sus un periferic mobil.',
+);
+
+/** Pälzisch (Pälzisch)
+ * @author Manuae
+ */
+$messages['pfl'] = array(
+	'translategroupdescriptions-desc' => 'Bschraiwung vunde Nochrischdegrubb fa Brodugd vunde unaschdidzdi [http://mediawiki.org/wiki/Extension:Translate Iwasedzung] Eawaidarung',
+	'translate-group-desc-nodesc' => "S'hod kä Bschraiwung fa die Nochrischdegrubb",
+	'translate-group-desc-mediawikicore' => 'Die Grubb hod alli Nochrischde vunde naijschdi alpha-Ausgab vun [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Die Grubb hod die [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 oam haifigschdi gnudzde Nochrischde] in [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawikiextensions' => 'Meda-Nochrischdegrubb, wu alli Nochrischde vunde [[Translating:MediaWiki|MediaWiki]] unaschdidzi Eawaidarunge hod.',
+	'translate-group-desc-collection' => 'Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [http://www.mediawiki.org/wiki/Extension:Collection Collection] hod.',
+	'translate-group-desc-flaggedrevs' => 'Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] hod.',
+	'translate-group-desc-readerfeedback' => 'Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] hod.',
+	'translate-group-desc-semantic' => 'Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [http://semantic-mediawiki.org/ Semantic MediaWiki] hod.',
+	'translate-group-desc-socialprofile' => 'Meda-Nochrischdegrubb, wu alli Nochrischde im Zommehong midde MediaWiki-Eawaidarung [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] hod.',
+	'translate-group-desc-translate' => 'Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [http://www.mediawiki.org/wiki/Extension:Translate Translate] hod.',
+	'translate-group-desc-wikiaextensions' => 'Meda-Nochrischdegrubb, wu alli Nochrischde fa unaschdizdi MediaWiki-Eawaidarung vun [http://www.wikia.com Wikia] hod.',
+	'translate-group-desc-wikimediaextensions' => 'Meda-Nochrischdegrubb, wu alli Nochrischde fa unaschdizdi MediaWiki-Eawaidarung vun [http://wikimedia.org/ Wikimedia Foundation] hod.',
+	'translate-group-desc-wikimediaextensions-main' => 'Meda-Nochrischdegrubb, wu alli Nochrischde fa unaschdizdi MediaWiki-Eawaidarung hod, wu fas Iwasedze vun [http://meta.wikimedia.org/wiki/Language_committee Language committee] nodwendisch sin.',
+	'translate-group-desc-uniwiki' => 'Meda-Nochrischdegrubb, wu alli Nochrischde im Zommehong midde MediaWiki-Eawaidarung [http://unicefinnovation.org/wiki.php Uniwiki] hod.',
+	'translate-group-desc-ui' => 'Meda-Nochrischdegrubb, wu alli Nochrischde im Zommehong midde MediaWiki-Eawaidarung [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative] hod.',
+	'translate-group-desc-translatablepages' => 'Alli iwasedzbari Saide',
+	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] ischä rundebasiades Schdradegieschbiel',
+	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] ischä Web-Sofdwaa faä Dischbedier-Bladdform',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] ischä Web-Sofdwaa faä Tigged-Sischdem',
+	'translate-group-desc-eol' => 'Ä Nochrischdegrubb fas [[Translating:EOL|Sachweadabuch vum Lewe]]',
+	'translate-group-desc-ihris' => 'Ä Nochrischdegrubb fa [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-common' => "Ä Nochrischdegrubb fa [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], n'Deel vun [[Translating:iHRIS|iHRIS]]",
+	'translate-group-desc-ihris-i2ce' => "Ä Nochrischdegrubb fa [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], n'Deel vun [[Translating:iHRIS|iHRIS]]",
+	'translate-group-desc-ihris-manage' => "Ä Nochrischdegrubb fa [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], n'Deel vun [[Translating:iHRIS|iHRIS]]",
+	'translate-group-desc-ihris-qualify' => "Ä Nochrischdegrubb fa [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], n'Deel vun [[Translating:iHRIS|iHRIS]]",
+	'translate-group-desc-kiwix' => 'Ä Nochrischdegrubb fa [[Translating:Kiwix|Kiwix]]',
+	'translate-group-desc-mantisbt-plugin-core' => 'Ä Kean-Oischubb fa [[Translating:MantisBT|MantisBT]]',
+	'translate-group-desc-mediawiki-core-branch' => 'Nochrischde fa ä schdabieli Ausgab vun [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] ischä MIS fa Gläkabidal',
+	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] ischä Bibliodeeg fas Schaffe vun PDF Unalaache vun MediaWiki-Saide',
+	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] ischn Webmail-Client',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] ischn offline Wikipedia Lesebrogram',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] ischä Bladdfoam fa fraiji Medije',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Die Nochrischde sinen Deel vunde Voalaach fadie E-Mail-Bschdedischung vun [[Translating:Open Images|Open Images]]',
+	'translate-group-desc-openimages-all' => 'Die Nochrischde sinen Deel vum [[Translating:Open Images|Open Images]]-Voahawe',
+	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] ischn dinamische Kaade-Eazaischa in JavaScript',
+	'bw-desc-openstreetmap' => 'Alli Nochrischde zu [[Translating:OpenStreetMap|OpenStreetMap]]',
+	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] ischä vaänabari Kaad vunde gonse Weld',
+	'translate-group-desc-potlatch2' => "[[Translating:OpenStreetMap|Potlatch2]] ischä Flash-gschdidzds OpenStreetMap B'awaidungsbrogram",
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] ischä Sommlung vun Weagzaisch zum Änare vunde Wikipedia',
+	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] ischä Web-Sofdwaa fa Frooche un Oandworde',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] ischn Glänochrische-Seava',
+	'translate-group-desc-statusnet-plugin' => 'Die Nachrischde sinen Deel vun Oischieb vun [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Ä Nochrischdegrubb fa [http://toolserver.org/~krinkle/TsIntuition „Toolserver Intuition"], s\'i18n-Sischdem fa uffm [http://toolserver.org Toolserver] lieschndi Weagzaisch (<span class="plainlinks">[[Translating talk:Toolserver|Hilf]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition fachlischi Oagawe]</span>)',
+	'translate-group-desc-waymarked-trails' => "[[Translating:Waymarked Trails|Waymarked Trails]] ischn Dinschd fa Weesche fas Woandare, Radle, Beaschradle un Rollschuh laafe uffde gonse Weld. Bnudzd die GNU GPL G'nehmischung",
+	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] eameschlischds Uffinne vunem Audoa vuner Said inem Wikimedia Wiki.',
+	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] gibdä offline Ausgab vun Wikipedia fa Mobili Grääd als Tegschd',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] ischä bladdfoamiwagraifndi mobili un Täbled-Oawendung fas Lese un Baidraache vun Wikipedia',
+	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] ischä bladdfoamiwagraifndi mobili un Täbled-Oawendung fas Lese un Baidraache vun Wiktionary',
 );
 
 /** Polish (Polski)
@@ -2624,6 +2686,7 @@ $messages['tt-cyrl'] = array(
 
 /** Ukrainian (Українська)
  * @author AS
+ * @author Base
  * @author Prima klasy4na
  * @author Тест
  */
@@ -2645,6 +2708,7 @@ $messages['uk'] = array(
 	'bw-desc-freecol' => 'Перед тим, як перекладати FreeCol на вашу мову, прочитайте, будь ласка, [[Translating:FreeCol]]. Freecol використовує ліцензію GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] — веб-форум, написаний на PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] це вільна веб-система для відслідковування багів. Будь ласка, повідомляйте будь-які проблеми у [[Support|службу підтримки]].',
+	'translate-group-desc-mediawiki-core-branch' => 'Повідомлення для стабільної версії [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] — система керування інформацією для мікрофінансування',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' це бібліотека на мові python для створення PDF-документів зі сторінок MediaWiki, які були проаналізовані mwlib.
 
