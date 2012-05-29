@@ -1104,6 +1104,8 @@ class MessageGroups {
 	 * their own cache dependencies.
 	 */
 	protected static function loadGroupDefinitions() {
+		wfProfileIn( __METHOD__ );
+
 		global $wgEnablePageTranslation, $wgTranslateGroupFiles;
 		global $wgTranslateAC, $wgTranslateEC, $wgTranslateCC;
 		global $wgAutoloadClasses;
@@ -1119,6 +1121,7 @@ class MessageGroups {
 		$deps[] = new GlobalDependency( 'wgTranslateWorkflowStates' );
 
 		if ( $wgEnablePageTranslation ) {
+			wfProfileIn( __METHOD__ . '-pt' );
 			$dbr = wfGetDB( DB_MASTER );
 
 			$tables = array( 'page', 'revtag' );
@@ -1133,15 +1136,19 @@ class MessageGroups {
 				$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $title );
 				$wgTranslateCC[$id]->setLabel( $title->getPrefixedText() );
 			}
+			wfProfileOut( __METHOD__ . '-pt' );
 		}
 
 		if ( $wgTranslateWorkflowStates ) {
 			$wgTranslateCC['translate-workflow-states'] = new WorkflowStatesMessageGroup();
 		}
 
+		wfProfileIn( __METHOD__ . '-hook' );
 		$autoload = array();
 		wfRunHooks( 'TranslatePostInitGroups', array( &$wgTranslateCC, &$deps, &$autoload ) );
+		wfProfileOut( __METHOD__ . '-hook' );
 
+		wfProfileIn( __METHOD__ . '-yaml' );
 		foreach ( $wgTranslateGroupFiles as $configFile ) {
 			wfDebug( $configFile . "\n" );
 			$deps[] = new FileDependency( realpath( $configFile ) );
@@ -1160,11 +1167,14 @@ class MessageGroups {
 				$wgTranslateCC[$id] = $group;
 			}
 		}
+		wfProfileOut( __METHOD__ . '-yaml' );
 
+		wfProfileIn( __METHOD__ . '-agg' );
 		$aggregateGroups = self::getAggregateGroups();
 		foreach ( $aggregateGroups as $id => $group ) {
 			$wgTranslateCC[$id] = $group;
 		}
+		wfProfileOut( __METHOD__ . '-agg' );
 
 		$key = wfMemckey( 'translate-groups' );
 		$value = array(
@@ -1178,6 +1188,7 @@ class MessageGroups {
 		$wrapper->storeToCache( self::getCache(), $key, 60 * 60 * 2 );
 
 		wfDebug( __METHOD__ . "-end\n" );
+		wfProfileOut( __METHOD__ );
 	}
 
 	/**
@@ -1419,6 +1430,7 @@ class MessageGroups {
 	 */
 	public static function getGroupStructure() {
 		$groups = self::getAllGroups();
+		wfProfileIn( __METHOD__ );
 
 		// Determine the top level groups of the tree
 		$tree = $groups;
@@ -1466,6 +1478,7 @@ class MessageGroups {
 			throw new MWException( "Found cyclic aggregate message groups: $participants" );
 		}
 
+		wfProfileOut( __METHOD__ );
 		return $tree;
 	}
 
