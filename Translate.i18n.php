@@ -10439,6 +10439,8 @@ A nyelvek alapértelmezett listája a nyelvedtől függ.',
 	'translate-statsf-count-edits' => 'Szerkesztések száma',
 	'translate-statsf-count-users' => 'Aktív fordítók',
 	'translate-statsf-count-registrations' => 'Új felhasználók',
+	'translate-statsf-count-reviews' => 'Fordítás ellenőrzések',
+	'translate-statsf-count-reviewers' => 'Lektorok',
 	'translate-statsf-language' => 'Nyelvkódok, vesszővel elválasztva:',
 	'translate-statsf-group' => 'Csoportkódok, vesszővel elválasztva:',
 	'translate-statsf-submit' => 'Előnézet',
@@ -10502,6 +10504,9 @@ Egy fordító minél többet fordított, a neve annál nagyobb betűkkel jelenik
 	'translate-save' => 'Mentés ($1)',
 	'translate-jssti-add' => 'Hozzáadás a listához',
 	'managemessagegroups' => 'Üzenetcsoportok karbantartása',
+	'translate-smg-notallowed' => 'Ezt a tevékenységet nem hajthatod végre.',
+	'translate-smg-nochanges' => 'Nincsenek feldolgozandó változtatások.',
+	'translate-smg-submitted' => 'Az üzenet definíciók frissítése megtörtént. A változások a háttérben kerülnek feldolgozásra.',
 	'translate-manage-import-diff' => 'Üzenet: $1 | Műveletek: $2',
 	'translate-manage-import-new' => 'Új üzenet: $1',
 	'translate-manage-import-deleted' => 'Törölt üzenet: $1',
@@ -12051,8 +12056,8 @@ $1',
 	'translate-search-languagefilter' => '言語で絞り込み：',
 	'translate-search-nofilter' => 'すべて表示',
 	'translate-messagereview-submit' => '採用',
-	'translate-messagereview-progress' => '採用しています……',
-	'translate-messagereview-failure' => '採用しています……失敗しました： $1',
+	'translate-messagereview-progress' => '採用中...',
+	'translate-messagereview-failure' => '採用中... 失敗しました：$1',
 	'translate-messagereview-done' => '採用済み',
 	'translate-messagereview-reviews' => '{{PLURAL:$1|$1人の利用者}}によって承認',
 	'translate-messagereview-reviewswithyou' => 'あなたを含めた{{PLURAL:$1|$1人の利用者}}によって承認',
@@ -12246,6 +12251,7 @@ Owah-owahan ora bakal disimpen nganti panjenengan ngeklik tombol simpen ing ngis
 );
 
 /** Georgian (ქართული)
+ * @author BRUTE
  * @author David1010
  * @author Malafaya
  * @author Sopho
@@ -12269,19 +12275,28 @@ $messages['ka'] = array(
 	'translate-page-edit' => 'რედაქტირება',
 	'translate-ext-url' => '<hr />ვებ-გვერდი: $1',
 	'translate-optional' => '(არასავალდებულო)',
+	'translate-edit-jsopen' => 'რედაქტირება',
+	'translate-edit-translation' => 'თარგმანი',
+	'translate-edit-no-information' => "''ამ შეტყობინებას არ აქვს დოკუმენტაცია.''
+''თუ იცით სად და როგორ გამოიყენება ეს შეტყობინება, გთხოვთ დაეხმაროთ სხვა მთარგმნელებს და დაურთოთ დოკუმენტაცია ამ შეტყობინებას.''",
 	'translate-edit-in-other-languages' => 'იგივე შეტყობინება ($1) სხვა ენებზე',
 	'translate-magic-module' => 'მოდული:',
 	'translate-magic-submit' => 'აჩვენე',
 	'translate-magic-cm-comment' => 'კომენტარი:',
 	'translate-magic-cm-save' => 'შენახვა',
+	'translate-magic-cm-savefailed' => 'შენახვა ვერ მოხერხდა',
 	'translate-magic-words' => 'მაგიური სიტყვები',
 	'translate-rc-translation-filter-only' => 'აჩვენე მხოლოდ თარგმანები',
 	'translationstats' => 'თარგმანის სტატისტიკა',
+	'translate-stats-edits' => 'რედაქტირებები',
 	'translate-stats-users' => 'მთარგმნელები',
+	'translate-statsf-scale-months' => 'თვე',
 	'translate-statsf-scale-days' => 'დღეები',
 	'translate-statsf-scale-hours' => 'საათები',
 	'translate-statsf-count-edits' => 'რედაქციების რიცხვი',
 	'translate-statsf-count-users' => 'აქტიური მთარგმნელები',
+	'translate-statsf-count-registrations' => 'ახალი მომხმარებლები',
+	'translate-statsf-count-reviewers' => 'შემმოწმებლები',
 	'translate-statsf-submit' => 'წინასწარი გადახედვა',
 	'translate-sidebar-alltrans' => 'სხვა თარგმანები',
 	'translations' => 'ყველა თარგმანი',
@@ -12298,6 +12313,8 @@ $messages['ka'] = array(
 	'translate-ls-noempty' => 'არ აჩვენო მთლიანად თარგმნილი შეტყობინებათა ჯგუფები',
 	'translate-language' => 'ენა',
 	'translate-total' => 'შეტყობინებები',
+	'translate-mgs-submit' => 'სტატისტიკის ნახვა',
+	'translate-mgs-column-language' => 'ენა',
 );
 
 /** Kara-Kalpak (Qaraqalpaqsha)
@@ -12977,6 +12994,7 @@ $messages['kn'] = array(
  * @author Klutzy
  * @author Kwj2772
  * @author ToePeu
+ * @author 아라
  */
 $messages['ko'] = array(
 	'translate' => '번역하기',
@@ -13178,6 +13196,11 @@ $1',
 	'api-error-unknownmessage' => '메시지를 찾을 수 없습니다.',
 	'api-error-fuzzymessage' => '번역이 fuzzy 처리되었습니다.',
 	'translate-messagereview-no-own' => '자신의 번역은 승인할 수 없습니다.',
+	'group-translate-proofr' => '번역 평론가',
+	'group-translate-proofr-member' => '{{GENDER:$1|번역 평론가}}',
+	'grouppage-translate-proofr' => '{{ns:project}}:번역 평론가',
+	'group-translate-proofr.css' => '/* 이 CSS 설정은 번역 평론가에만 적용됩니다 */',
+	'group-translate-proofr.js' => '/* 이 자바스크립트 설정은 번역 평론가에만 적용됩니다 */',
 	'log-name-translationreview' => '번역 검토 기록',
 	'translate-workflowstatus' => '상태: $1',
 	'translate-stats-workflow' => '상태',
@@ -13203,6 +13226,10 @@ $messages['ksh'] = array(
 	'translate-grouplisting' => 'Dat heh es en Leßß met all de övversäzbaa Jroppe un Nohreeschte vum Syßteem.
 Donn op en Jropp klecke, öm en Leßß met allem ze sinn ze krijje, wat doh dren nit övversaz es.',
 	'translate-grouplisting-empty' => 'Et sinn_er kein Jroppe vun Täxte un Nohreeschte för et Övversäze freijejovve.',
+	'translate-taskui-view' => 'Alle Täxte udder Nohreeschte aanzeije',
+	'translate-taskui-untranslated' => 'Onövversaz Täxte udder Nohreeschte aanzeije',
+	'translate-taskui-optional' => "De 'nid esu nüüdeje' Täxte udder Nohreeschte aanzeije.",
+	'translate-taction-proofread' => 'Jääjelässe',
 	'translate-page-no-such-language' => 'De aanjejovve {{int:translate-page-language}} känne mer nit.',
 	'translate-page-no-such-group' => 'De aanjejovve {{int:translate-page-group}} känne mer nit.',
 	'translate-page-disabled' => "Övversezonge sen affjeschalldt för di {{int:translate-page-group}} un {{int:translate-page-language}}, weil:
@@ -13229,6 +13256,7 @@ Di sullte bloß övversaz wääde, wann Ding Shprooch jät besönders bruch, esu
 	'translate-ext-url' => '<hr />Websaijt: $1',
 	'translate-optional' => '(nit esu nüüdesch)',
 	'translate-ignored' => '(övverjange)',
+	'translate-edit-jsopen' => 'ändere',
 	'translate-edit-title' => '„$1“ ändere',
 	'translate-edit-definition' => 'De Ojinaal Nohreesch',
 	'translate-edit-translation' => 'Övversäzong',
@@ -13467,6 +13495,12 @@ $1',
 	'translate-workflow-set-doing' => 'Ben am Waade&nbsp;...',
 	'translate-workflow-set-done' => 'Jedonn!',
 	'translate-stats-workflow' => 'Zohstand',
+	'translate-dynagroup-recent-label' => 'Neuste Övversäzonge',
+	'translate-dynagroup-by' => 'De Övversäzong es {{GENDER:$1|vum|vum|vum Metmaacher|vun dä|vum}} $1',
+	'translate-dynagroup-byc' => 'De Övversäzong es {{GENDER:$1|vum|vum|vum Metmaacher|vun dä|vum}} $1 ($2)',
+	'translate-dynagroup-last' => 'De läzde Änderung {{GENDER:$1|vum|vum|vum Metmaacher|vun dä|vum}} $1',
+	'translate-dynagroup-lastc' => 'De läzde Änderung {{GENDER:$1|vum|vum|vum Metmaacher|vun dä|vum}} $1 ($2)',
+	'translate-gethelp' => 'Hölp',
 );
 
 /** Kurdish (Latin script) (‪Kurdî (latînî)‬)
@@ -14839,6 +14873,17 @@ $messages['ml'] = array(
 	'translate-showsub' => '{{PLURAL:$1|ഉപസംഘത്തെ|$1 ഉപസംഘങ്ങൾ}} പ്രദർശിപ്പിക്കുക.',
 	'translate-grouplisting' => 'പരിഭാഷായോഗ്യങ്ങളായ ഗണങ്ങളുടെ പട്ടികയാണിത്.
 പരിഭാഷപ്പെടുത്താനുള്ള സന്ദേശങ്ങളുടെ പട്ടികയ്ക്ക് ഓരോ സന്ദേശ ഗണത്തിന്റേയും പേരിൽ ഞെക്കുക.',
+	'translate-grouplisting-empty' => 'പരിഭാഷക്കായി ഒരു സന്ദേശഗണവും ക്രമീകരിച്ചിട്ടില്ല.',
+	'translate-taskui-view' => 'എല്ലാ സന്ദേശങ്ങളും പ്രദർശിപ്പിക്കുക',
+	'translate-taskui-untranslated' => 'പരിഭാഷപ്പെടുത്താത്ത സന്ദേശങ്ങൾ പ്രദർശിപ്പിക്കുക',
+	'translate-taskui-optional' => 'ഐച്ഛിക സന്ദേശങ്ങൾ പ്രദർശിപ്പിക്കുക',
+	'translate-taskui-suggestions' => 'പരിഭാഷാ ശേഖരത്തിൽ നിർദ്ദേശങ്ങളുള്ള സന്ദേശങ്ങൾ പ്രദർശിപ്പിക്കുക',
+	'translate-taskui-acceptqueue' => 'എനിക്ക് സ്വീകരിക്കാനാവുന്ന സന്ദേശങ്ങൾ മാത്രം',
+	'translate-taskui-reviewall' => 'എല്ലാ പരിഭാഷകളും സംശോധനം ചെയ്യുക',
+	'translate-taction-translate' => 'പരിഭാഷപ്പെടുത്തുക',
+	'translate-taction-proofread' => 'തെറ്റുതിരുത്തൽ വായന നടത്തുക',
+	'translate-taction-lstats' => 'ഭാഷയുടെ സ്ഥിതിവിവരക്കണക്കുകൾ',
+	'translate-taction-mstats' => 'സന്ദേശ ഗണത്തിന്റെ സ്ഥിതിവിവരക്കണക്കുകൾ',
 	'translate-page-no-such-language' => 'തിരഞ്ഞെടുത്ത ഭാഷ അസാധുവാണ്‌.',
 	'translate-page-no-such-group' => 'തിരഞ്ഞെടുത്ത ഗണം അസാധുവാണ്‌.',
 	'translate-page-disabled' => "ഈ ഗണത്തിലുള്ള സന്ദേശങ്ങൾക്ക് ഈ ഭാഷയിലുള്ള പരിഭാഷ നിരോധിച്ചിരിക്കുന്നു. കാരണം:
@@ -14942,6 +14987,7 @@ $messages['ml'] = array(
 	'translate-statsf-count-edits' => 'ആകെ തിരുത്തലുകൾ',
 	'translate-statsf-count-users' => 'സജീവ പരിഭാഷകർ',
 	'translate-statsf-count-registrations' => 'പുതിയ ഉപയോക്താക്കൾ',
+	'translate-statsf-count-reviewers' => 'സംശോധകർ',
 	'translate-statsf-submit' => 'എങ്ങനെയുണ്ടെന്ന് കാണുക',
 	'translate-tag-category' => 'പരിഭാഷപ്പെടുത്താവുന്ന താളുകൾ',
 	'translate-tag-page-desc' => '[[$2|$1]] എന്ന വിക്കി താളിന്റെ തർജ്ജമ.',

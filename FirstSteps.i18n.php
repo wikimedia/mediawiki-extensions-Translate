@@ -1513,6 +1513,7 @@ Si ou pa vle resevwa nouvèl, ou kapab retire ou nan opsyon sa nan onglè "{{int
 
 /** Hungarian (Magyar)
  * @author Dani
+ * @author Dj
  * @author Misibacsi
  */
 $messages['hu'] = array(
@@ -1529,6 +1530,8 @@ $messages['hu'] = array(
 	'translate-fs-intro' => "Üdvözlünk a {{SITENAME}} használatának első lépéseiben segítő varázslóban!
 Lépésről lépésre segítünk a fordítóvá válás folyamatában.
 A végén hozzákezdhetsz bármelyik, {{SITENAME}} által támogatott projekt ''felületének üzeneteinek'' fordításához.",
+	'translate-fs-selectlanguage' => 'Válassz egy nyelvet!',
+	'translate-fs-settings-planguage' => 'Elsődleges nyelv:',
 	'translate-fs-settings-submit' => 'Beállítások mentése',
 	'translate-fs-userpage-submit' => 'Felhasználói lap létrehozása',
 	'translate-fs-userpage-done' => 'Felhasználói lap létrehozva.',

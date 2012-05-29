@@ -3791,6 +3791,8 @@ Mielőtt fordításra jelölöd ezt a változatot, ellenőrizd hogy a szakaszok 
 	'tpt-new-pages' => '{{PLURAL:$1|Ez a lap tartalmaz|Ezek a lapok tartalmaznak}} fordítási tagekkel ellátott szöveget, de jelenleg egyik {{PLURAL:$1|változata|változatuk}} sincs megjelölve fordításra.',
 	'tpt-old-pages' => '{{PLURAL:$1|Ennek a lapnak|Ezeknek a lapoknak}} néhány változata meg van jelölve fordításra.',
 	'tpt-other-pages' => 'A lap korábbi {{PLURAL:$1|változata|változatai}} fordíthatónak voltak megjelölve, de a legutóbbi {{PLURAL:$1|változatot|változatokat}} nem lehet megjelölni fordításra.',
+	'tpt-select-prioritylangs-reason' => 'Ok:',
+	'tpt-sections-prioritylangs' => 'Kiemelt nyelvek',
 	'tpt-rev-unmark' => 'lap eltávolítása a fordításból',
 	'translate-tag-translate-link-desc' => 'A lap fordítása',
 	'translate-tag-markthis' => 'Lap megjelölése fordításra',
@@ -3805,6 +3807,14 @@ A(z) [[$1]] lap fordítása, és a fordítását [$2 a fordítás segédeszköz]
 A lap, amit szerkeszteni próbálsz, úgy tűnik hogy nem egyezik egy fordításra jelölt lappal sem.',
 	'tpt-render-summary' => 'Frissítés, hogy megegyezzen a forráslap új változatával',
 	'tpt-download-page' => 'Lap exportálása fordításokkal együtt',
+	'aggregategroups' => 'Összesített csoportok',
+	'tpt-aggregategroup-add' => 'Hozzáad',
+	'tpt-aggregategroup-save' => 'Mentés',
+	'tpt-aggregategroup-add-new' => 'Új egyesített csoport hozzáadása',
+	'tpt-aggregategroup-new-name' => 'Név:',
+	'tpt-aggregategroup-new-description' => 'Leírás (opcionális):',
+	'tpt-aggregategroup-remove-confirm' => 'Biztosan törölni szeretné ezt az összesített csoportot?',
+	'tpt-aggregategroup-invalid-group' => 'Csoport nem létezik',
 	'pt-parse-nested' => 'Egymásba ágyazott &lt;translate> szakaszok nem engedélyezettek.
 Elem szövege: <pre>$1</pre>',
 	'pt-log-header' => 'A lapfordító rendszerhez kapcsolódó műveletek naplója',
@@ -3827,7 +3837,10 @@ Elem szövege: <pre>$1</pre>',
 	'pt-movepage-logreason' => 'A(z) $1 fordítható lap része',
 	'pt-deletepage-action-perform' => 'Törlés végrehajtása',
 	'pt-deletepage-action-other' => 'Cél megváltoztatása',
+	'pt-deletepage-lang-legend' => 'Fordítási lap törlése',
 	'pt-deletepage-current' => 'Lap neve:',
+	'pt-deletepage-reason' => 'Ok:',
+	'pt-deletepage-subpages' => 'Összes allap törlése',
 );
 
 /** Interlingua (Interlingua)
@@ -4649,6 +4662,7 @@ $messages['ksh'] = array(
 	'tpt-already-marked' => 'De neuste Version vun dä Sigg es ald för zem Övversäze makeet.',
 	'tpt-unmarked' => 'De Sigg „$1“ es nit ieh för ze övversäze makeet.',
 	'tpt-list-nopages' => 'Et sinn_er kein Sigge för zem Övversäze makeet, un et sin och kein doh, wo esu en Makeerunge eren künnte.',
+	'tpt-other-pages-title' => 'Kapodde Sigge',
 	'tpt-new-pages' => '{{PLURAL:$1|Di Sigg hät|Di Sigge han|Kein Sigg hät}} ene <code lang="en">translation</code>-Befähl en sesch, ävve kei Version dofun es för ze Övversäze makeet.',
 	'tpt-old-pages' => 'En Version vun hee dä {{PLURAL:$1|Sigg|Sigge|-}} es för zem Övversäze makeet.',
 	'tpt-other-pages' => '{{PLURAL:$1|En ällder Version vun heh dä Sigg es|$1 ällder Versione vun heh dä Sigg sin}} för et Övversäze frei jejovve, ävver de neuste Version löht sesh nit frei jävve.',
@@ -4664,6 +4678,7 @@ $messages['ksh'] = array(
 	'tpt-unknown-page' => 'Dat Appachtemang hee es för Sigge vum Enhallt vum Wiki ze Övversäze jedaach. Di Sigg, di de jraad ze ändere versöhks, schingk ävver nit met ööhnds en Sigg ze donn ze han, di för zem Övversäze makeet es.',
 	'tpt-render-summary' => 'Ändere, öm op de neue Version fun de Ojinaal_Sigg ze kumme',
 	'tpt-download-page' => 'Sigge met Övversäzunge expotteere',
+	'tpt-aggregategroup-new-name' => 'Dä Name vun dä Jropp:',
 	'pt-parse-open' => 'En &lt;translate&gt; es ohne Jääjeshtöck.
 De Siggeschabloon för ze övversäze: <pre>$1</pre>',
 	'pt-parse-close' => 'En &lt;/translate&gt; es ohne Jääjeshtöck.
