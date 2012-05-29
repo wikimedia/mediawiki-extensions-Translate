@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//9yI\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-05-29T11:08:39Z",
+      "side": 1,
+      "message": "Trialing whitespace.",
+      "revId": "8df2764c924406e76f6ab17fe6f8859301c53619",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
