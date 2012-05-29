@@ -43,6 +43,17 @@
 			}
 		};
 	}
+	
+	/**
+	 * This is JS port same method of TranslateUtils.php
+	 */
+	function convertWhiteSpaceToHTML( text ) {
+		return mw.html.escape( text )
+			.replace( /^ /gm, '&#160;' )
+			.replace( / $/gm, '&#160;' )
+			.replace( /  /g, '&#160; ' )
+			.replace( /\n/g, '<br />' )
+	}
 
 	function addAccessKeys( dialog ) {
 		var buttons = {
@@ -289,7 +300,7 @@
 				// Update the cell value with the new translation
 				$this.find( 'td' ).last()
 					.removeClass( 'untranslated' )
-					.text( text );
+					.html( convertWhiteSpaceToHTML( text ) );
 			};
 			callbacks.close = function () {
 				$this.html( current );

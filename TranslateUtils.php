@@ -268,6 +268,8 @@ class TranslateUtils {
 	 * \<br /> and occurrences of leading and trailing and multiple consecutive
 	 * spaces to non-breaking spaces.
 	 *
+	 * This is also implemented in JavaScript in ext.translate.quickedit.
+	 *
 	 * @param $msg \string Plain text string.
 	 * @return \string Text string that is ready for outputting.
 	 */
