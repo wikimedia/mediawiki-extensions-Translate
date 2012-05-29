@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//9ug\u003d",
+        "filename": "resources/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-05-29T13:01:02Z",
+      "side": 1,
+      "message": "You\u0027re stating in commit message \"1.18 now minimum\", and this code is still here?",
+      "revId": "a72174c6718077ac4abf3e6ecf6f873d961a4dfa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
