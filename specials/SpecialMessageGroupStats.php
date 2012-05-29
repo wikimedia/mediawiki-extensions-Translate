@@ -39,7 +39,16 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	protected function isValidValue( $value ) {
 		$group = MessageGroups::getGroup( $value );
 		if ( $group ) {
-			$this->target = $group->getId();
+			if ( MessageGroups::isDynamic( $group ) ) {
+				/* Dynamic groups are not listed, but it is possible to end up
+				 * on this page with a dynamic group by navigating from
+				 * translation or proofreading activity or by giving group id
+				 * of dynamic group explicitly. Ignore dynamic group to avoid
+				 * throwing exceptions later. */
+				$group = false;
+			} else {
+				$this->target = $group->getId();
+			}
 		}
 		return (bool) $group;
 	}
