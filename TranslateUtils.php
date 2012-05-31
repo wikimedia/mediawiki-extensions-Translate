@@ -364,4 +364,34 @@ class TranslateUtils {
 		return $method;
 	}
 
+	/**
+	 * Get all the translatable languages for a group, considering the whitelisting
+	 * and blacklisting.
+	 * @return array
+	 */
+	public static function getTranslatableLanguages(MessageGroup $group){
+		$codes = Language::getLanguageNames( false );
+		$whitelistedLanguages = $codes;
+		$groupConfiguration =  $group->getConfiguration();
+		if( !isset( $groupConfiguration['LANGUAGES'] ) ) {
+			// No LANGUAGES session in the configuration.
+			return $codes;
+		}
+		// Whitelist overrides blacklist.
+		if( isset( $groupConfiguration['LANGUAGES']['whitelist'] ) ) {
+			$whitelistedLanguages = $groupConfiguration['LANGUAGES']['whitelist'];
+			if( !is_array( $whitelistedLanguages ) && $whitelistedLanguages === "*" ) {
+				return $codes; 
+			} else {
+				return array_flip( $whitelistedLanguages );
+			}
+		}
+
+		$blackListedLanguages = $groupConfiguration['LANGUAGES']['blacklist'];
+		if( !is_array( $blackListedLanguages ) && $blackListedLanguages === "*" ) {
+			// All languages blacklisted. This is very rare but not impossible.
+			$blackListedLanguages = $codes;
+		}
+		return array_flip( array_diff( $whitelistedLanguages, $blackListedLanguages) );
+	}
 }
