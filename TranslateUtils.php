@@ -363,5 +363,4 @@ class TranslateUtils {
 		}
 		return $method;
 	}
-
 }

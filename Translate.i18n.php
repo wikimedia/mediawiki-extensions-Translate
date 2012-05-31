@@ -44,7 +44,7 @@ Click the message group name to view a list of untranslated messages.',
 Reason:
 
 ''$1''",
-
+	'translate-language-disabled' => 'Translation to this language is disabled.',
 	'translate-page-settings-legend' => 'Settings',
 	'translate-page-group'           => 'Group',
 	'translate-page-language'        => 'Language',
@@ -472,6 +472,7 @@ Goes together with {{msg-mw|translate-taskui-reviewall}}',
 	'translate-taction-export' => 'A tab text used in Special pages Translate, LanguageStats and MessageGroupStats',
 	'translate-taction-disabled' => 'Shown instead of the radio buttons for tasks when all tasks related to this action has been disabled.',
 	'translate-page-no-such-language' => "Shown when someone requests a language that doesn't exists. [{{FULLURL:Special:Translate|language=}} Example].",
+	'translate-language-disabled' => "Shown when someone requests a blacklisted language. [{{FULLURL:Special:Translate|language=}} Example].",
 	'translate-page-no-such-group' => "Shown when someone requests a group that doesn't exists. [{{FULLURL:Special:Translate|group=invalidgroup}} Example].",
 	'translate-page-settings-legend' => '{{Identical|Settings}}',
 	'translate-page-group' => '{{Identical|Group}}',

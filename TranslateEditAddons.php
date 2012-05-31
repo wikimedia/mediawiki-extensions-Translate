@@ -124,12 +124,18 @@ class TranslateEditAddons {
 	 * Hook: AlternateEdit
 	 */
 	public static function intro( EditPage $editpage ) {
+		global $wgLang, $wgOut;
 		$handle = new MessageHandle( $editpage->mTitle );
 		if ( $handle->isValid() ) {
 			$editpage->suppressIntro = true;
+			$group = $handle->getGroup();
+			$translatableLanguages = $group->getTranslatableLanguages( );
+			if ( !isset( $translatableLanguages[$handle->getCode()] ) ) {
+				$wgOut->wrapWikiMsg( "<div class='error'>$1</div>",'translate-language-disabled' );
+				return false;
+			}
 			return true;
 		}
-
 		$msg = wfMsgForContent( 'translate-edit-tag-warning' );
 
 		if ( $msg !== '' && $msg !== '-' && TranslatablePage::isSourcePage( $editpage->mTitle ) ) {

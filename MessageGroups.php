@@ -303,6 +303,15 @@ abstract class MessageGroupOld implements MessageGroup {
 	public function setConfiguration( $conf ) { }
 	public function getConfiguration() { }
 	public function getFFS() { return null; }
+	/**
+	 * Get all the translatable languages for a group, considering the whitelisting
+	 * and blacklisting.
+	 * @return array The language names as array keys.
+	 */
+	public function getTranslatableLanguages(){
+		global $wgLang;
+		return TranslateUtils::getLanguageNames( $wgLang->getCode() );
+	}
 }
 
 /**
