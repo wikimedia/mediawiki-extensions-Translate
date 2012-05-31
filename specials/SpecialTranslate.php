@@ -70,6 +70,11 @@ class SpecialTranslate extends SpecialPage {
 			$this->options['language'] = $this->defaults['language'];
 		}
 
+		$translatableLanguages =  $this->group->getTranslatableLanguages( );
+		if ( !isset( $translatableLanguages[$this->options['language']] ) ) {
+			$errors['language'] = wfMessage( 'translate-language-disabled' )->text();
+		}
+
 		if ( !$this->group instanceof MessageGroup ) {
 			$errors['group'] = wfMessage( 'translate-page-no-such-group' )->text();
 			$this->options['group'] = $this->defaults['group'];

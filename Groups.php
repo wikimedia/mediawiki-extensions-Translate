@@ -135,6 +135,13 @@ interface MessageGroup {
 	 * Get the workflow configuration for the group.
 	 */
 	public function getWorkflowConfiguration();
+
+	/*
+	 * Get all the translatable languages for a group, considering the whitelisting
+	 * and blacklisting.
+	 * @return array The language names as array keys.
+	 */
+	public function getTranslatableLanguages();
 }
 
 /**
@@ -425,6 +432,40 @@ abstract class MessageGroupBase implements MessageGroup {
 			return $wgTranslateWorkflowStates;
 		}
 		return false;
+	}
+	/**
+	 * Get all the translatable languages for a group, considering the whitelisting
+	 * and blacklisting.
+	 * @return array The language names as array keys.
+	 */
+	public function getTranslatableLanguages() {
+		global $wgLang;
+		$codes = array_keys( TranslateUtils::getLanguageNames( $wgLang->getCode() ) );
+		$codes = array_flip( $codes );
+		$whitelistedLanguages = $codes;
+		$groupConfiguration = $this->getConfiguration();
+		if ( !isset( $groupConfiguration['LANGUAGES'] ) ) {
+			// No LANGUAGES section in the configuration.
+			return $codes;
+		}
+		// Whitelist overrides blacklist.
+		if( isset( $groupConfiguration['LANGUAGES']['whitelist'] ) ) {
+			$whitelistedLanguages = $groupConfiguration['LANGUAGES']['whitelist'];
+			if( !is_array( $whitelistedLanguages ) && $whitelistedLanguages === "*" ) {
+				return $codes;
+			} else {
+				return array_flip( $whitelistedLanguages );
+			}
+		}
+
+		$blackListedLanguages = $groupConfiguration['LANGUAGES']['blacklist'];
+		if( !is_array( $blackListedLanguages ) && $blackListedLanguages === "*" ) {
+			// All languages blacklisted. This is very rare but not impossible.
+			$blackListedLanguages = $codes;
+		} else {
+			$blackListedLanguages = array_flip( $blackListedLanguages);
+		}
+		return array_diff_key( $whitelistedLanguages, $blackListedLanguages);
 	}
 }
 
