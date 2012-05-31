@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//86U\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-05-31T09:08:52Z",
+      "side": 1,
+      "message": "Should be: \u0027Translation to this language is disabled.\u0027",
+      "revId": "06e191e17b0b8cc46336fc159510f58a6fc2871b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//86Q\u003d",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-05-31T09:08:52Z",
+      "side": 1,
+      "message": "Trialing whitespace.",
+      "revId": "06e191e17b0b8cc46336fc159510f58a6fc2871b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
