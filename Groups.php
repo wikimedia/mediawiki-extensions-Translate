@@ -130,6 +130,14 @@ interface MessageGroup {
 	 * @return string
 	 */
 	public function getSourceLanguage();
+
+	/*
+	 * Get all the translatable languages for a group, considering the whitelisting
+	 * and blacklisting.
+	 * @return array The language names as array keys.
+	 */
+	public function getTranslatableLanguages();
+
 }
 
 /**
@@ -397,6 +405,38 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	protected function isSourceLanguage( $code ) {
 		return $code === $this->getSourceLanguage();
+	}
+
+	/**
+	 * Get all the translatable languages for a group, considering the whitelisting
+	 * and blacklisting.
+	 * @return array The language names as array keys.
+	 */
+	public function getTranslatableLanguages(){
+		global $wgLang;
+		$codes = TranslateUtils::getLanguageNames( $wgLang->getCode() );
+		$whitelistedLanguages = $codes;
+		$groupConfiguration = $this->getConfiguration();
+		if ( !isset( $groupConfiguration['LANGUAGES'] ) ) {
+			// No LANGUAGES section in the configuration.
+			return $codes;
+		}
+		// Whitelist overrides blacklist.
+		if( isset( $groupConfiguration['LANGUAGES']['whitelist'] ) ) {
+			$whitelistedLanguages = $groupConfiguration['LANGUAGES']['whitelist'];
+			if( !is_array( $whitelistedLanguages ) && $whitelistedLanguages === "*" ) {
+				return $codes;
+			} else {
+				return array_flip( $whitelistedLanguages );
+			}
+		}
+
+		$blackListedLanguages = $groupConfiguration['LANGUAGES']['blacklist'];
+		if( !is_array( $blackListedLanguages ) && $blackListedLanguages === "*" ) {
+			// All languages blacklisted. This is very rare but not impossible.
+			$blackListedLanguages = $codes;
+		}
+		return array_flip( array_diff( $whitelistedLanguages, $blackListedLanguages) );
 	}
 }
 
