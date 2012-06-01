@@ -1065,6 +1065,8 @@ Kent merkañ ar stumm-mañ evit an treiñ, gwiriait mat n'eus ket bet nemeur a g
 	'tpt-other-pages' => "Merket ez eus bet da vezañ troet {{PLURAL:$1|ur stumm kozh eus ar bajenn-mañ|stummoù koshoc'h eus ar pajennoù-mañ}};
 ar {{PLURAL:$1|stumm|stummoù}} diwezhañ avat n'hallont ket bezañ merket da vezañ troet.",
 	'tpt-discouraged-pages' => "Dizerbedet eo treiñ ar {{PLURAL:$1|bajenn-mañ|pajennoù-mañ}} pelloc'h.",
+	'tpt-select-prioritylangs-reason' => 'Abeg :',
+	'tpt-sections-prioritylangs' => 'Yezhoù pouezusañ',
 	'tpt-rev-mark' => 'merkañ da vezañ troet',
 	'tpt-rev-unmark' => 'Lemel a-ziwar ar roll treiñ',
 	'tpt-rev-discourage' => 'dizerbediñ',
@@ -1090,6 +1092,7 @@ Ar bajenn hoc'h eus klasket kemm ne seblant ket klotañ gant pajenn ebet bet mer
 	'tpt-aggregategroup-save' => 'Enrollañ',
 	'tpt-aggregategroup-new-name' => 'Anv :',
 	'tpt-aggregategroup-new-description' => 'Deskrivadur (diret) :',
+	'tpt-aggregategroup-invalid-group' => "N'eus ket eus ar strollad-mañ",
 	'pt-parse-open' => 'Balizenn &lt;translate> digempouez.
 Patrom treiñ : <pre>$1</pre>',
 	'pt-parse-close' => 'Balizenn &lt;/translate> digempouez.
@@ -6655,6 +6658,7 @@ Motivo: $1',
 	'tpt-aggregategroup-new-name' => 'Nome:',
 	'tpt-aggregategroup-new-description' => 'Descrição (opcional):',
 	'tpt-aggregategroup-remove-confirm' => 'Tem certeza que deseja remover este grupo agregador?',
+	'tpt-aggregategroup-invalid-group' => 'Grupo inexistente',
 	'pt-parse-open' => 'O elemento &lt;translate> está desequilibrado.
 Modelo de tradução: <pre>$1</pre>',
 	'pt-parse-close' => 'O elemento &lt;/translate> está desequilibrado.
