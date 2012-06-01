@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//8o0\u003d",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-01T08:28:35Z",
+      "side": 1,
+      "message": "This should clearly mention that the language codes are array keys instead of values, which would be the default expectation.",
+      "revId": "9c588ed754eddfa740f3c8995fc7e62dd3cfe55f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//8pU\u003d",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-01T08:28:35Z",
+      "side": 1,
+      "message": "Should use TranslateUtils::getLanguageNames()",
+      "revId": "9c588ed754eddfa740f3c8995fc7e62dd3cfe55f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//8pY\u003d",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-01T08:28:35Z",
+      "side": 1,
+      "message": "Double space",
+      "revId": "9c588ed754eddfa740f3c8995fc7e62dd3cfe55f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//8pQ\u003d",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-01T08:28:35Z",
+      "side": 1,
+      "message": "Space after if in this extension.",
+      "revId": "9c588ed754eddfa740f3c8995fc7e62dd3cfe55f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//8pM\u003d",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-01T08:28:35Z",
+      "side": 1,
+      "message": "You mean section?",
+      "revId": "9c588ed754eddfa740f3c8995fc7e62dd3cfe55f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//8o4\u003d",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-01T08:28:35Z",
+      "side": 1,
+      "message": "Might want to filter out the language names from the return value",
+      "revId": "9c588ed754eddfa740f3c8995fc7e62dd3cfe55f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//8pE\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-01T08:28:35Z",
+      "side": 1,
+      "message": "Please make a group-\u003egetTranslatableLanguages() getter so that it can easily made to work also for other than FileBasedMessageGroups.",
+      "revId": "9c588ed754eddfa740f3c8995fc7e62dd3cfe55f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//8ow\u003d",
+        "filename": "tests/BlackListTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-01T08:28:35Z",
+      "side": 1,
+      "message": "allLangs is unused here",
+      "revId": "9c588ed754eddfa740f3c8995fc7e62dd3cfe55f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//8os\u003d",
+        "filename": "tests/BlackListTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-01T08:28:35Z",
+      "side": 1,
+      "message": "allLangs is unused here",
+      "revId": "9c588ed754eddfa740f3c8995fc7e62dd3cfe55f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
