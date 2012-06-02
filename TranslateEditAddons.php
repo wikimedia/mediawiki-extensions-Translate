@@ -419,9 +419,12 @@ class TranslateEditAddons {
 	 * Hook: ArticlePrepareTextForEdit
 	 */
 	public static function disablePreSaveTransform( $article, ParserOptions $popts ) {
-		$handle = new MessageHandle( $article->getTitle() );
-		if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
-			$popts->setPreSaveTransform( false );
+		global $wgTranslateDisablePreSaveTransform;
+		if ( $wgTranslateDisablePreSaveTransform ) {
+			$handle = new MessageHandle( $article->getTitle() );
+			if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
+				$popts->setPreSaveTransform( false );
+			}
 		}
 		return true;
 	}

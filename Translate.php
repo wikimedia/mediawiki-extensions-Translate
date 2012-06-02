@@ -643,6 +643,12 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
  */
 $wgTranslateYamlLibrary = 'spyc';
 
+/**
+ * Disable pre-save transform for message pages. This allows special pre-save
+ * syntax such as "~~~~" to be saved into them.
+ */
+$wgTranslateDisablePreSaveTransform = false;
+
 # </source>
 
 /** @cond cli_support */
