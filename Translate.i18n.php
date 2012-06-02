@@ -11,6 +11,7 @@ $messages = array();
 /** English
  * @author Nike
  * @author Siebrand
+ * @author Jarry1250
  */
 $messages['en'] = array(
 	'translate'         => 'Translate',
@@ -417,6 +418,8 @@ Most useful for the proofreading tasks.',
 	'translate-dynagroup-lastc' => 'Latest change by {{GENDER:$1|$1}} ($2)',
 
 	'translate-gethelp' => 'Help',
+	//SVG translation-related messages
+	'translate-svg-desc' => 'This group contains translations for the file $1.',
 );
 
 /** Message documentation (Message documentation)
