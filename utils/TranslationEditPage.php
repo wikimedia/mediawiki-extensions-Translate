@@ -67,6 +67,7 @@ class TranslationEditPage {
 		$data = $this->getEditInfo();
 		$groupId = $wgRequest->getText( 'loadgroup', '' );
 		$helpers = new TranslationHelpers( $this->getTitle(), $groupId );
+		$properties = array();
 
 		$id = "tm-target-{$helpers->dialogID()}";
 		$helpers->setTextareaId( $id );
@@ -82,6 +83,18 @@ class TranslationEditPage {
 		}
 
 		$translation = $helpers->getTranslation();
+
+		if( strpos( $translation, '{{Properties' ) !== false ){
+			//Uses {{Properties}} template e.g. SVG image translation
+			$propertystring = substr( $translation, ( strrpos( $translation, '{{Properties' ) ) );
+			$translation = substr( $translation, 0, ( strrpos( $translation, '{{Properties' ) ) );
+			preg_match_all( '/\| *([a-z]+) *= *([^|}]+)/', $propertystring, $parameters ); //n.b. constrains parameter naming choice
+			$count = count( $parameters[0] );
+			for( $i = 0; $i < $count; $i++ ){
+				$properties[ $parameters[1][$i] ] = trim( $parameters[2][$i] );
+			}
+		}
+
 		$targetLang = Language::factory( $helpers->getTargetLanguage() );
 		$textareaParams = array(
 			'name' => 'text',
@@ -98,7 +111,19 @@ class TranslationEditPage {
 		}
 
 		$textarea = Html::element( 'textarea', $textareaParams, $translation );
-
+		$extraInputs = '';
+		if( count( $properties ) > 0 ){
+			foreach( $properties as $index=>$currentValue ){
+				switch( $index ){
+					default:
+						$extraInputs .= Xml::inputLabel( wfMsg( 'translate-js-label-' . $index ),
+														'mw-translate-prop-'.$index, 'mw-translate-prop-'.$index, 4, $currentValue ) . "&nbsp;";
+						break;
+				}
+			}
+			$extraInputs = Xml::fieldset( wfMessage( 'translate-js-properties-legend' ), $extraInputs,
+						array( 'class' => 'mw-hideable', 'style' => 'opacity:0; line-height:115%;' ) );
+		}
 		$hidden = array();
 		$hidden[] = Html::hidden( 'title', $this->getTitle()->getPrefixedDbKey() );
 
@@ -117,6 +142,9 @@ class TranslationEditPage {
 		$save = Xml::submitButton( wfMsg( 'translate-js-save' ), array( 'class' => 'mw-translate-save' ) );
 		$saveAndNext = Xml::submitButton( wfMsg( 'translate-js-next' ), array( 'class' => 'mw-translate-next' ) );
 		$skip = Html::element( 'input', array( 'class' => 'mw-translate-skip', 'type' => 'button', 'value' => wfMsg( 'translate-js-skip' ) ) );
+		$properties = ( count( $properties ) > 0 ) ? Html::element( 'input', array( 'class' => 'mw-translate-properties', 'type' => 'button',
+																	'value' => wfMsg( 'translate-js-properties' ) ) ) : '';
+
 
 		if ( $this->getTitle()->exists() ) {
 			$history = Html::element(
@@ -134,7 +162,7 @@ class TranslationEditPage {
 		$support = $this->getSupportButton( $this->getTitle() );
 
 		if ( $wgUser->isAllowed( 'translate' ) ) {
-			$bottom = "$summary$save$saveAndNext$skip$history$support";
+			$bottom = "$summary$save$saveAndNext$skip$properties$history$support";
 		} else {
 			$text = wfMessage( 'translate-edit-nopermission' )->escaped();
 			$button = $this->getPermissionPageButton();
@@ -150,7 +178,8 @@ class TranslationEditPage {
 		$form = Html::rawElement( 'form', $formParams,
 			implode( "\n", $hidden ) . "\n" .
 			$helpers->getBoxes( $this->suggestions ) . "\n" .
-			"$textarea\n$bottom"
+			Html::rawElement( 'div', array( 'style' => 'overflow:auto; padding:2px;' ), "$textarea\n$extraInputs" ) . "\n" .
+			Html::rawElement( 'div', array( 'style' => 'clear:both; margin-top: -3px;' ), $bottom )
 		);
 
 		echo Html::rawElement( 'div', array( 'class' => 'mw-ajax-dialog' ), $form );

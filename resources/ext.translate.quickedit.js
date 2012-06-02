@@ -60,7 +60,8 @@
 			a: '.mw-translate-save',
 			s: '.mw-translate-next',
 			d: '.mw-translate-skip',
-			h: '.mw-translate-history'
+			h: '.mw-translate-history',
+			p: '.mw-translate-properties'
 		};
 
 		for ( var key in buttons ) {
@@ -113,12 +114,23 @@
 			return false;
 		} );
 
+		form.find( '.mw-translate-properties' ).click( function(){
+			$('.mw-hideable').each( function(){
+				if ( $(this).css( 'opacity' ) == '1' ){
+					$(this).animate( { opacity: 0 }, 200, 'linear' );
+				} else {
+					$(this).animate( { opacity: 1 }, 200, 'linear' );
+				}
+			} );
+			return false;
+		} );
+
 		form.find( '.mw-translate-support, .mw-translate-askpermission' ).click( function() {
 			// Can use .data() only with 1.4.3 or newer
 			window.open( $(this).attr( 'data-load-url' ) );
 			return false;
 		} );
-		
+
 		form.find( 'input, textarea' ).focus( function() {
 			addAccessKeys( form );
 		} );
@@ -150,14 +162,14 @@
 			dialogwidth = $( window ).width() * 0.8;
 			var $inlines = $( '.tqe-inlineeditable' );
 			$inlines.dblclick( mw.translate.inlineEditor );
-			
+
 			var $first = $inlines.first();
 			if ( $first.length ) {
 				var title = $first.data( 'title' );
 				var group = $first.data( 'group' );
 				mw.translate.loadEditor( null, title, group, $.noop );
 			}
-			
+
 			var prev = null;
 			$inlines.each( function() {
 				if ( prev ) {
@@ -176,9 +188,9 @@
 				dialog.dialog( 'open' );
 				return false;
 			}
-			
+
 			var dialog = $( '<div>' ).attr( 'id', id ).appendTo( $( 'body' ) );
-			
+
 			var callbacks = {}
 			callbacks.close = function () { dialog.dialog( 'close' ); };
 			callbacks.next = function () { mw.translate.openNext( page, group ); };
@@ -237,24 +249,30 @@
 				callbacks.load && callbacks.load( $target );
 				var form = $target.find( 'form' );
 				registerFeatures( callbacks, form, page, group );
-				form.ajaxForm( {
-					dataType: 'json',
-					success: function(json) {
-						if ( json.error ) {
-							if( json.error.code === 'emptypage') {
-								alert( mw.msg( 'api-error-emptypage' ) );
+				form.bind('submit', function() {
+					var translation = form.find('.mw-translate-edit-area').last().val();
+					form.find('.mw-translate-edit-area').last().val( translation + mw.translate.propertiesToString( form ) );
+					$(this).ajaxSubmit({
+						dataType: 'json',
+						success: function(json) {
+							$('.mw-translate-edit-area').last().val( translation );
+							if ( json.error ) {
+								if( json.error.code === 'emptypage') {
+									alert( mw.msg( 'api-error-emptypage' ) );
+								} else {
+									alert( json.error.info + ' (' + json.error.code +')' );
+								}
+							} else if ( json.edit.result === 'Failure' ) {
+								alert( mw.msg( 'translate-js-save-failed' ) );
+							} else if ( json.edit.result === 'Success' ) {
+								callbacks.close && callbacks.close();
+								callbacks.success && callbacks.success( form.find( '.mw-translate-edit-area' ).val() );
 							} else {
-								alert( json.error.info + ' (' + json.error.code +')' );
+								alert( mw.msg( 'translate-js-save-failed' ) );
 							}
-						} else if ( json.edit.result === 'Failure' ) {
-							alert( mw.msg( 'translate-js-save-failed' ) );
-						} else if ( json.edit.result === 'Success' ) {
-							callbacks.close && callbacks.close();
-							callbacks.success && callbacks.success( form.find( '.mw-translate-edit-area' ).val() );
-						} else {
-							alert( mw.msg( 'translate-js-save-failed' ) );
 						}
-					}
+					});
+					return false; // <-- important!
 				} );
 			} );
 		},
@@ -278,19 +296,36 @@
 			alert( mw.msg( 'translate-js-nonext' ) );
 			return;
 		},
-	
+
+		propertiesToString: function( form ){
+			var propertiesString = '';
+			form.find( '[id^="mw-translate-prop-"]' ).each(function() {
+				var value = $(this).attr( 'value' );
+				if( $(this).attr( 'type' ) == 'checkbox' ){
+					value = "no";
+					if( $(this).attr( 'checked' ) ){ value = "yes"; }
+				}
+				var id = $(this).attr( 'id' ).replace( 'mw-translate-prop-', '' );
+				propertiesString += '|' + id + '=' + value;
+			});
+			if( propertiesString !== '' ){
+				propertiesString = '{{Properties' + propertiesString + '}}';
+			}
+			return propertiesString;
+		},
+
 		inlineEditor: function () {
 			var $this = $( this );
 			if ( $this.hasClass( 'tqe-editor-loaded' ) ) {
 				// Editor is open, do not replace it
 				return;
 			}
-			
+
 			var current = $this.html();
 			var $target = $( '<td>' ).attr( { colspan: 2 } );
 			$this.html( $target );
 			$this.addClass( 'tqe-editor-loaded' );
-			
+
 			var classes = $this.attr( 'class' );
 			var page = $this.data( 'title' );
 			var group = $this.data( 'group' );
@@ -310,7 +345,7 @@
 				var $header = $( '<div class="tqe-fakeheader"></div>' );
 				$header.text( page );
 				$header.append( '<input type=button class="mw-translate-close" value="X" />' );
-				
+
 				$( editor ).find( 'form' ).prepend( $header );
 			};
 			if ( next.length ) {
@@ -321,7 +356,7 @@
 				mw.translate.loadEditor( null, ntitle, ngroup, $.noop );
 			}
 			mw.translate.openEditor( $target, page, group, callbacks );
-			
+
 			// Remove any text selection caused by double clicking
 			var sel = window.getSelection ? window.getSelection() : document.selection;
 			if ( sel ) {
