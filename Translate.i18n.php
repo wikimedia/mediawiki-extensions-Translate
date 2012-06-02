@@ -435,6 +435,7 @@ Most useful for the proofreading tasks.',
 	'translate-page-description-legend-svgmg' => 'Information about this file',
 	'translate-taction-mstats-svgmg' => 'File statistics',
 	'translate-taction-export-svgmg' => 'Upload updated version of file',
+	'translate-js-thumbnail' => '(thumbnail updates automatically)',
 );
 
 /** Message documentation (Message documentation)
