@@ -335,6 +335,8 @@ Details: $1',
 	'translate-js-next' => 'Save and open next',
 	'translate-js-nonext' => 'This was the last message on this page.',
 	'translate-js-skip' => 'Skip to next',
+	'translate-js-properties' => 'Show/hide properties',
+	'translate-js-properties-legend' => 'Properties',
 	'translate-js-save-failed' => 'Saving failed. Please report this error.',
 	'translate-js-history' => 'Translation history',
 	'translate-js-support' => 'Ask question',
@@ -646,6 +648,8 @@ fuzzy = mark translations for review',
 	'translate-js-next' => 'next refers to next message in the message list',
 	'translate-js-nonext' => 'This is a JavaScript popup (alert) when user clicks "Save and open next" and there is no next message.',
 	'translate-js-skip' => 'A button together with Save and Save an open next. Goes to the next message without saving.',
+	'translate-js-properties-legend' => 'The legend for a fieldset which contains property controls',
+	'translate-js-properties' => 'A button which either shows or hides property controls',
 	'translate-js-save-failed' => 'If there was unknown error while submitting a translation, user gets this message in javascript popup (alert).',
 	'translate-js-support-unsaved-warning' => 'A warning shown in a dialog box if a user tries to close a page without saving a translation written .',
 	'translate-gs-pos' => "Used in wiki tables for localisation statistics as a column header for 'Positition' abbreviated. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]",
@@ -5834,8 +5838,8 @@ Klaku la mesaĝan grupnomon por vidi liston de mesaĝoj sen traduko.',
 	'translate-next' => 'Sekva paĝo',
 	'translate-prev' => 'Antaŭa paĝo',
 	'translate-page-description-legend' => 'Informoj pri la grupo',
-	'translate-page-description-hasoptional' => 'Ĉi tiu mesaĝgrupo entenas opciajn mesaĝojn. 
-Opciaj mesaĝoj estu tradukitaj al via lingvo se via lingvo postulas ĝin 
+	'translate-page-description-hasoptional' => 'Ĉi tiu mesaĝgrupo entenas opciajn mesaĝojn.
+Opciaj mesaĝoj estu tradukitaj al via lingvo se via lingvo postulas ĝin
 kiel ne uzi spacojn aŭ transliterado de personaj nomoj. $1',
 	'translate-page-description-hasoptional-open' => 'Montru opciajn mesaĝojn.',
 	'translate-page-edit' => 'redakti',
@@ -6109,7 +6113,7 @@ Detaloj: $1',
 	'translate-workflowgroup-desc' => 'Ĉi tiu mesaĝgrupo montras la laborflustatusojn.
 La statusoj estas difinitaj en la konfigurvariablo $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Lastatempaj tradukoj',
-	'translate-dynagroup-recent-desc' => 'Ĉi tiu mesaĝgrupo montras ĉiuj novajn tradukojn en ĉi tiun lingvon. 
+	'translate-dynagroup-recent-desc' => 'Ĉi tiu mesaĝgrupo montras ĉiuj novajn tradukojn en ĉi tiun lingvon.
 Plej utila por provlegaj taskoj.',
 	'translate-dynagroup-by' => 'Traduko faris de {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Traduko faris de {{GENDER:$1|$1}} ($2)',
@@ -12949,7 +12953,7 @@ $messages['kn'] = array(
 	'translate-edit-definition' => 'ಸಂದೇಶ ವ್ಯಾಖ್ಯೆ',
 	'translate-edit-translation' => 'ಅನುವಾದ',
 	'translate-edit-contribute' => 'ನೆರವಾಗು',
-	'translate-edit-no-information' => '"ಈ ಸಂದೇಶಕ್ಕೆ ಯಾವುದೇ ದಾಖಲೆಗಳಿಲ್ಲ." 
+	'translate-edit-no-information' => '"ಈ ಸಂದೇಶಕ್ಕೆ ಯಾವುದೇ ದಾಖಲೆಗಳಿಲ್ಲ."
 "ನಿಮಗೆ ಈ ಸಂದೇಶ ಎಲ್ಲಿಯಾದರೂ ಅಥವಾ ಹೇಗಾದರೂ ಉಪಯೋಗದಲ್ಲಿರುವುದು ತಿಳಿದಿದ್ದರೆ,ನೀವು ಇದಕ್ಕೆ ತಕ್ಕ ದಾಖಲೆಗಳನ್ನು ಸೇರಿಸಿ ಬೇರಿ ಭಾಷಾಂತರಕಾರರಿಗೆ ಸಹಾಯ ಮಾಡಬಹುದು."',
 	'translate-edit-information' => 'ಸಂದೇಶದ ಬಗ್ಗೆ ಮಾಹಿತಿ ($1)',
 	'translate-edit-in-other-languages' => 'ಬೇರೆ ಭಾಷೆಗಳಲ್ಲಿ ಸಂದೇಶ',
@@ -17407,7 +17411,7 @@ Drigg uff die Grubb, um ä Lischd vunde uiwasedzbare Nochrischde zseje.',
 	'translate-page-no-such-language' => 'Die oagewene Schbrooch isch ugildisch.',
 	'translate-page-no-such-group' => 'Die oagewene Grubb isch ugildisch.',
 	'translate-page-disabled' => "Iwasedzunge in die Schbrooch ged ned fa die Grubb.
-Wesche: 
+Wesche:
 
 ''$1''",
 	'translate-page-settings-legend' => 'Oischdellunge',
@@ -17477,7 +17481,7 @@ Du mugschd inde Grubb vunde Iwasedza soi, um Änarunge schbaischare zu kenne.
 	'translate-magic-saved' => 'Doi Änarunge sin eafolschraisch gsischad worre',
 	'translate-checks-parameters' => 'Die folschndi {{PLURAL:$2|Kenngreeß wead|Kenngreeß werren}} ned bnudzd:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => 'Die folschndi {{PLURAL:$2|Kenngreeß isch|Kenngreeß sin}} ubkond: 
+	'translate-checks-parameters-unknown' => 'Die folschndi {{PLURAL:$2|Kenngreeß isch|Kenngreeß sin}} ubkond:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Do hodse uglaischi Oazahl vun {{PLURAL:$2|Klommare|Klommare}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -19818,7 +19822,7 @@ $messages['ru'] = array(
 	'translate-mgs-invalid-group' => 'Указанная группа $1 не существует.',
 	'translate-mgs-nothing' => 'Нет данных для отображения.',
 	'supportedlanguages' => 'Поддерживаемые языки',
-	'supportedlanguages-summary' => 'На этой странице приведён список поддерживаемых проектом {{SITENAME}} языков 
+	'supportedlanguages-summary' => 'На этой странице приведён список поддерживаемых проектом {{SITENAME}} языков
 вместе с именами тех, кто здесь трудится над переводами на эти языки.
 Имя переводчика отображается тем крупнее, чем больше правок он сделал.
 По цвету подчёркивания можно понять, насколько давно переводчик последний раз совершал здесь какое-либо действие.',
@@ -20665,7 +20669,7 @@ Kliknutím na názov skupiny zobrazíte zoznam nepreložených správ.',
 	'translate-prev' => 'Predošlá stránka',
 	'translate-page-description-legend' => 'Informácie o skupine',
 	'translate-page-description-hasoptional' => 'Táto skupina obsahuje voliteľné správy.
-Voliteľné správy sa majú prekladať len v prípade, ak má váš jazyk špecifické potreby, 
+Voliteľné správy sa majú prekladať len v prípade, ak má váš jazyk špecifické potreby,
 ako napr. nepoužívanie medzier, alebo transkripcie vlastných mien. $1',
 	'translate-page-description-hasoptional-open' => 'Zobraziť voliteľné správy.',
 	'translate-page-edit' => 'upraviť',
