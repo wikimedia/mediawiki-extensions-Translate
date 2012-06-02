@@ -420,6 +420,9 @@ Most useful for the proofreading tasks.',
 	'translate-gethelp' => 'Help',
 	//SVG translation-related messages
 	'translate-svg-desc' => 'This group contains translations for the file $1.',
+	'translate-page-description-legend-svgmg' => 'Information about this file',
+	'translate-taction-mstats-svgmg' => 'File statistics',
+	'translate-taction-export-svgmg' => 'Upload updated version of file',
 );
 
 /** Message documentation (Message documentation)
