@@ -157,7 +157,7 @@ class SpecialTranslate extends SpecialPage {
 				}
 			}
 			if ( $description ) {
-				$description = Xml::fieldset( wfMsg( 'translate-page-description-legend' ), $description );
+				$description = Xml::fieldset( self::overridableMsg( 'translate-page-description-legend', $this->group ), $description );
 			}
 
 			$links = $this->doStupidLinks();
@@ -657,7 +657,6 @@ class SpecialTranslate extends SpecialPage {
 
 		$title = $skin->getTitle();
 		list( $alias, $sub ) = SpecialPage::resolveAliasWithSubpage( $title->getText() );
-
 		$pagesInGroup = array( 'Translate', 'LanguageStats', 'MessageGroupStats' );
 		if ( !in_array( $alias, $pagesInGroup, true ) ) {
 			return true;
@@ -666,7 +665,7 @@ class SpecialTranslate extends SpecialPage {
 		$wgOut->addModules( 'ext.translate.tabgroup' );
 
 		// Extract subpage syntax, otherwise the values are not passed forward
-		$params = array();
+		$params = array( 'group' => false );
 		if ( trim( $sub ) !== '' ) {
 			if ( $alias === 'Translate' || $alias === 'MessageGroupStats' ) {
 				$params['group'] = $sub;
@@ -711,21 +710,33 @@ class SpecialTranslate extends SpecialPage {
 		unset( $params['limit'] );
 
 		$tabs['views']['lstats'] = array(
-			'text' => wfMessage( 'translate-taction-lstats' )->text(),
+			'text' => self::overridableMsg( 'translate-taction-lstats', $params['group'] )->text(),
 			'href' => $languagestats->getLocalUrl( $params ),
 			'class' => $alias === 'LanguageStats' ? 'selected' : '',
 		);
 		$tabs['views']['mstats'] = array(
-			'text' => wfMessage( 'translate-taction-mstats' )->text(),
+			'text' =>  self::overridableMsg( 'translate-taction-mstats', $params['group'] )->text(),
 			'href' => $messagegroupstats->getLocalUrl( $params ),
 			'class' => $alias === 'MessageGroupStats' ? 'selected' : '',
 		);
 		$tabs['views']['export'] = array(
-			'text' => wfMessage( 'translate-taction-export' )->text(),
+			'text' =>  self::overridableMsg( 'translate-taction-export', $params['group'] )->text(),
 			'href' => $translate->getLocalUrl( array( 'taction' => 'export' ) + $params ),
 			'class' => $alias === 'Translate' && $taction === 'export' ? 'selected' : '',
 		);
 
 		return true;
+	}
+	
+	private static function overridableMsg( $key, $group ){
+		if( $group === false ) return wfMessage( $key );
+		if( is_string( $group ) ) $group = MessageGroups::getGroup( $group );
+		$suffix = str_replace( "MessageGroup", "MG", get_class( $group ) );
+		$suffix = strtolower( $suffix );
+		if( wfMessage( $key . '-' . $suffix )->exists() ){
+			return wfMessage( $key . '-' . $suffix );
+		} else {
+			return wfMessage( $key );
+		}
 	}
 }
