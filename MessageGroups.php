@@ -780,6 +780,99 @@ class WikiMessageGroup extends MessageGroupOld {
 	}
 }
 
+
+/**
+ * Group for messages that can be controlled via a page in %File namespace.
+ *
+ * In the page comments start with # and continue till the end of the line.
+ * The page should contain list of page names in %File namespace, without
+ * the namespace prefix. Use underscores for spaces in page names, since
+ * whitespace separates the page names from each other.
+ * @ingroup MessageGroups
+ */
+class SVGMessageGroup extends WikiMessageGroup {
+	protected $source = null;
+
+	/**
+	 * Constructor.
+	 *
+	 * @param $id \string Unique id for this group.
+	 * @param $source \string MediaWiki message that contains list of message keys.
+	 */
+	public function __construct( $filename ) {
+		global $wgLang, $wgContLang;
+		parent::__construct( $filename, $filename );
+		$prefixed_filename = $wgContLang->getNsText( NS_FILE ) . ':' . $filename;
+		$this->setNamespace( NS_FILE );
+        $this->setLabel( $filename );
+		$title = Title::newFromText( $prefixed_filename );
+		if( !$title->exists() ) die(); //TODO
+		$desc  = "[[$prefixed_filename|thumb|" . $wgLang->alignEnd() . "|upright|275x275px]]";
+		$desc .= wfMessage( 'translate-svg-desc', '[[:' . $prefixed_filename . ']]' )->text() . '<br /><br />' . "\n";
+		$desc .= '=== ' . wfMessage( 'translate-svg-header' )->text() . ' ==='."\n";
+		$desc .= Revision::newFromTitle( $title )->getText(); //Todo: strip irrelevant
+        $this->setDescription( $desc ); 
+	}
+	
+	/**
+	 * Fetch definitions from database.
+	 * @return \array Array of messages keys with definitions.
+	 */
+	public function getDefinitions() {
+		$definitions = array();
+		
+		for( $i = 1; $i < 2000; $i++ ){ //$i should never get that big, just a debug check for infinite loop
+			$message = $this->source . '/' . $i;
+			$title = Title::makeTitle( $this->getNamespace(), $message );
+			if ( !$title->exists() ) {
+				break;
+			}
+			$definition = Revision::newFromTitle( $title )->getText();
+			if( strpos( $definition, '{{Properties' ) !== false ){
+				$definition = substr( $definition, 0, ( strrpos( $definition, '{' ) - 1 ) ); //Strip properties template
+			}
+			$definitions[$message] = $definition;
+		}
+		return $definitions;
+	}
+	
+	/**
+	 * Returns of stored translation of message specified by the $key in language
+	 * code $code.
+	 *
+	 * @param $key \string Key of the message.
+	 * @param $code \string Language code.
+	 * @return \types{\string,\null} The translation or null if it doesn't exists.
+	 */
+	public function getMessage( $key, $code ) {
+		if ( $this->isSourceLanguage( $code ) ) {
+			$stuff = $this->load( $code );
+			return isset( $stuff[$key] ) ? $stuff[$key] : null;
+		}
+
+		$title = Title::makeTitleSafe( $this->getNamespace(), "$key/$code" );
+		$rev = Revision::newFromTitle( $title );
+
+		if ( !$rev ) {
+			return null;
+		}
+		
+		$definition = $rev->getText();
+		if( strpos( $definition, '{{Properties' ) !== false ){
+			$definition = substr( $definition, 0, ( strrpos( $definition, '{' ) - 1 ) ); //Strip properties template
+		}
+		return $definition;
+	}
+	
+	public function load( $code ) {
+		if ( $this->isSourceLanguage( $code ) ) {
+			return $this->getDefinitions();
+		}
+
+		return array();
+	}
+}
+
 /**
  * Wraps the translatable page sections into a message group.
  * @ingroup PageTranslation
