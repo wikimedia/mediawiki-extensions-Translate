@@ -807,30 +807,28 @@ class SVGMessageGroup extends WikiMessageGroup {
         $this->setLabel( $filename );
 		$title = Title::newFromText( $prefixed_filename );
 		if( !$title->exists() ) die(); //TODO
-		
+
 		$rev = Revision::newFromTitle( $title )->getText();
 		$revsections = explode( "\n==", $rev );
 		foreach( $revsections as $revsection ){
+			//Attempt to trim the file description page down to only the most relevant content
 			if( strpos( $revsection, '{{Information' ) !== false ){
-				$revsection = "\n=" . $revsection;
-				$revsection = str_replace( "==\n", "===\n", $revsection );
-				$rev = $revsection;
+				$rev = trim( preg_replace( "/==+[^=]+==+/", "", $revsection ) );
 			}
 		}
-		
+
 		$desc  = "[[$prefixed_filename|thumb|" . $wgLang->alignEnd() . "|upright|275x275px]]";
-		$desc .= wfMessage( 'translate-svg-desc', '[[:' . $prefixed_filename . ']]' )->text() . '<br /><br />' . "\n";
-		$desc .= Html::rawElement( 'div', array( 'style' => 'overflow:auto; padding:2px;' ), $rev );
-        $this->setDescription( $desc ); 
+		$desc .= Html::rawElement( 'div', array( 'style' => 'overflow:auto; padding:10px 2px;' ), $rev );
+		$this->setDescription( $desc );
 	}
-	
+
 	/**
 	 * Fetch definitions from database.
 	 * @return \array Array of messages keys with definitions.
 	 */
 	public function getDefinitions() {
 		$definitions = array();
-		
+
 		for( $i = 1; $i < 2000; $i++ ){ //$i should never get that big, just a debug check for infinite loop
 			$message = $this->source . '/' . $i;
 			$title = Title::makeTitle( $this->getNamespace(), $message . '/' . $this->getSourceLanguage() );
@@ -845,7 +843,7 @@ class SVGMessageGroup extends WikiMessageGroup {
 		}
 		return $definitions;
 	}
-	
+
 	/**
 	 * Returns of stored translation of message specified by the $key in language
 	 * code $code.
@@ -854,21 +852,21 @@ class SVGMessageGroup extends WikiMessageGroup {
 	 * @param $code \string Language code.
 	 * @return \types{\string,\null} The translation or null if it doesn't exists.
 	 */
-	public function getMessage( $key, $code, $onlyProperties = false ) {		
+	public function getMessage( $key, $code, $onlyProperties = false ) {
 		$title = Title::makeTitleSafe( $this->getNamespace(), "$key/$code" );
 		if ( !$title->exists() ) {
 			return null;
 		}
 		$rev = Revision::newFromTitle( $title );
-		
+
 		$definition = $rev->getText();
 		if( strpos( $definition, '{{Properties' ) !== false ){
 			$definition = substr( $definition, 0, ( strrpos( $definition, '{' ) - 1 ) ); //Strip properties template
 		}
 		return $definition;
 	}
-	
-		/**
+
+	/**
 	 * Returns of stored properties of message specified by the $key in language
 	 * code $code.
 	 *
@@ -876,21 +874,21 @@ class SVGMessageGroup extends WikiMessageGroup {
 	 * @param $code \string Language code.
 	 * @return \types{\string,\null} The translation or null if it doesn't exists.
 	 */
-	public function getProperties( $key, $code ) {		
+	public function getProperties( $key, $code ) {
 		$title = Title::makeTitleSafe( $this->getNamespace(), "$key/$code" );
 		if ( !$title->exists() ) {
 			return null;
 		}
 		$rev = Revision::newFromTitle( $title );
-		
+
 		$properties = $rev->getText();
-		if( strpos( $properties, '{{Properties' ) === false ){ 
+		if( strpos( $properties, '{{Properties' ) === false ){
 			return null;
 		}
-		$properties = substr( $properties, ( strrpos( $properties, '{{Properties' ) ) ); //Only retain properties template			
+		$properties = substr( $properties, ( strrpos( $properties, '{{Properties' ) ) ); //Only retain properties template
 		return $properties;
 	}
-	
+
 	public function load( $code ) {
 		if ( $this->isSourceLanguage( $code ) ) {
 			return $this->getDefinitions();
