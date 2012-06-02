@@ -569,6 +569,14 @@ $wgTranslateGroupFiles = array();
 $wgTranslateWorkflowStates = false;
 
 # </source>
+# === Page translation feature ===
+# <source lang=php>
+/**
+ * List of typefaces (or keywords) that can safely be incorporated into SVG images, not including "(inherit)", the default
+ */
+$wgTranslateSVGTypefaces = array( 'serif', 'sans-serif', 'cursive', 'monospace' );
+
+# </source>
 # === System setup related configuration ===
 # <source lang=php>
 /**

@@ -343,6 +343,16 @@ Details: $1',
 	'translate-js-support-title' => 'Ask for help if there is not enough information to translate this message correctly.',
 	'translate-js-support-unsaved-warning' => 'You have unsaved translations.',
 
+	//Labels for potential properties attached to strings
+	'translate-js-label-x' => 'X-coordinate:',
+	'translate-js-label-y' => 'Y-coordinate:',
+	'translate-js-label-typeface' => 'Font:',
+	'translate-js-label-fontsize' => '',
+	'translate-js-label-bold' => 'Bold',
+	'translate-js-label-italic' => 'Italic',
+	'translate-js-label-underline' => 'Underline',
+	'translate-js-typefaces-inherit' => '(inherit)',
+
 	// scripts/groupStatistics.php related messages
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Code',
@@ -712,6 +722,15 @@ Additional parameters:
 * $2 is the edit summary that was provided.',
 	'translate-gethelp' => 'Link to some Translate help page or tutorial.
 {{Identical|Help}}',
+
+	'translate-js-label-x' => 'Label for textbox which sets the horizontal position of a string',
+	'translate-js-label-y' => 'Label for textbox which sets the vertical position of a string',
+	'translate-js-label-typeface' => 'Label for a drop down "combobox" which sets the typeface used in a string',
+	'translate-js-label-fontsize' => 'Label for textbox which sets the size of the typeface used in a string',
+	'translate-js-label-bold' => 'Label for checkbox governing the formatting of a string',
+	'translate-js-label-italic' => 'Label for checkbox governing the formatting of a string',
+	'translate-js-label-underline' => 'Label for checkbox governing the formatting of a string',
+	'translate-js-typefaces-inherit' => 'Label used to imply that no specific typeface will be set for a string; instead, it will be inherited from the document default.'
 );
 
 /** Faeag Rotuma (Faeag Rotuma)

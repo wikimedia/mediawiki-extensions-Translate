@@ -113,7 +113,7 @@
 			window.open( mw.util.wikiScript() + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
 			return false;
 		} );
-		
+
 		form.find( '.mw-translate-properties' ).click( function(){
 			$('.mw-hideable').each( function(){
 				if ( $(this).css( 'opacity' ) == '1' ){

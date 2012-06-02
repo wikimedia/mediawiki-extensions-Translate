@@ -124,7 +124,7 @@ class MessageTable {
 				$rclasses = self::getLanguageAttributes( $sourceLang );
 				$rclasses['class'] = 'untranslated';
 			}
-			
+
 			if( strpos( $message, '{{Properties' ) !== false ){
 				$message = substr( $message, 0, ( strrpos( $message, '{' ) - 1 ) ); //Strip properties template - HACKY here
 			}
