@@ -60,7 +60,7 @@ class TranslationEditPage {
 	 * disabled all other output.
 	 */
 	public function execute() {
-		global $wgOut, $wgServer, $wgScriptPath, $wgUser, $wgRequest;
+		global $wgOut, $wgServer, $wgScriptPath, $wgUser, $wgRequest, $wgTranslateSVGTypefaces;
 
 		$wgOut->disable();
 
@@ -115,6 +115,32 @@ class TranslationEditPage {
 		if( count( $properties ) > 0 ){
 			foreach( $properties as $index=>$currentValue ){
 				switch( $index ){
+					case 'x':
+					case 'y':
+						$br = ( $index == 'x' ) ? '' : Xml::element( 'br' );
+						$extraInputs .= Xml::inputLabel( wfMsg( 'translate-js-label-' . $index ),
+														'mw-translate-prop-'.$index, 'mw-translate-prop-'.$index, 4, $currentValue,
+														array( 'type' => 'number', 'step' => 'any', 'style' => 'width:5em;' ) ) . "&nbsp;$br";
+						break;
+					case 'typeface':
+						if( $currentValue == 'inherit' ){
+							$currentValue = wfMsg( 'translate-js-typefaces-inherit' );
+						}
+						$extraInputs .= Xml::label( wfMsg( 'translate-js-label-' . $index ), 'mw-translate-prop-'.$index ) .
+										"&nbsp;" . Xml::listDropDown( 'mw-translate-prop-'.$index, implode( "\n", $wgTranslateSVGTypefaces ),
+																		wfMsg( 'translate-js-typefaces-inherit' ), $currentValue ) . "&nbsp;";
+						break;
+					case 'fontsize':
+						$extraInputs .= Xml::inputLabel( wfMsg( 'translate-js-label-' . $index ),
+														'mw-translate-prop-'.$index, 'mw-translate-prop-'.$index, 4, $currentValue,
+														array( 'type' => 'text', 'pattern' => '[-0-9.]+(px|%|em|pt)?', 'title' => '####px' ) ) . "&nbsp;<br />";
+						break;
+					case 'bold':
+					case 'italic':
+					case 'underline':
+						$checked = ( $currentValue === 'yes' );
+						$extraInputs .= Xml::checkLabel( wfMsg( 'translate-js-label-' . $index ), 'mw-translate-prop-'.$index, 'mw-translate-prop-'.$index, $checked ) . "&nbsp;";
+						break;
 					default:
 						$extraInputs .= Xml::inputLabel( wfMsg( 'translate-js-label-' . $index ),
 														'mw-translate-prop-'.$index, 'mw-translate-prop-'.$index, 4, $currentValue ) . "&nbsp;";
@@ -124,6 +150,7 @@ class TranslationEditPage {
 			$extraInputs = Xml::fieldset( wfMessage( 'translate-js-properties-legend' ), $extraInputs,
 						array( 'class' => 'mw-hideable', 'style' => 'opacity:0; line-height:115%;' ) );
 		}
+		
 		$hidden = array();
 		$hidden[] = Html::hidden( 'title', $this->getTitle()->getPrefixedDbKey() );
 
