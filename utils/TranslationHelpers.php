@@ -189,6 +189,7 @@ class TranslationHelpers {
 	 */
 	public function getBoxes( $suggestions = 'sync' ) {
 		// Box filter
+		$all = array();
 		$all = $this->getBoxNames();
 
 		if ( $suggestions === 'async' ) {
@@ -203,6 +204,10 @@ class TranslationHelpers {
 
 		if ( $this->group instanceof RecentMessageGroup ) {
 			$all['last-diff'] = array( $this, 'getLastDiff' );
+		}
+		if ( $this->group instanceof SVGMessageGroup ) {
+			unset( $all['documentation'] );
+			$all = array_merge( array( 'thumbnail' => array( $this, 'getThumbnail' ) ), $all );
 		}
 
 		$boxes = array();
@@ -1042,6 +1047,14 @@ class TranslationHelpers {
 		}
 
 		return TranslateUtils::fieldset( $text, $diffText, array( 'class' => 'mw-sp-translate-latestchange' ) );
+	}
+	
+	protected function getThumbnail() {
+		global $wgLang;
+		$title = explode( '/', $this->handle->getTitle()->getPrefixedText() );
+		$title = Title::newFromText( $title[0] );
+		$file = wfFindFile( $title );
+		return Linker::makeThumbLinkObj( $title, $file, $label = '', '', $wgLang->alignEnd(), array( 'width' => 275, 'height' => 275 ) );
 	}
 
 	/**
