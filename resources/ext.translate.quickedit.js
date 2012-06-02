@@ -60,7 +60,8 @@
 			a: '.mw-translate-save',
 			s: '.mw-translate-next',
 			d: '.mw-translate-skip',
-			h: '.mw-translate-history'
+			h: '.mw-translate-history',
+			p: '.mw-translate-properties'
 		};
 
 		for ( var key in buttons ) {
@@ -110,6 +111,17 @@
 
 		form.find( '.mw-translate-history' ).click( function() {
 			window.open( mw.util.wikiScript() + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
+			return false;
+		} );
+		
+		form.find( '.mw-translate-properties' ).click( function(){
+			$('.mw-hideable').each( function(){
+				if ( $(this).css( 'opacity' ) == '1' ){
+					$(this).animate( { opacity: 0 }, 200, 'linear' );
+				} else {
+					$(this).animate( { opacity: 1 }, 200, 'linear' );
+				}
+			} );
 			return false;
 		} );
 
@@ -237,24 +249,30 @@
 				callbacks.load && callbacks.load( $target );
 				var form = $target.find( 'form' );
 				registerFeatures( callbacks, form, page, group );
-				form.ajaxForm( {
-					dataType: 'json',
-					success: function(json) {
-						if ( json.error ) {
-							if( json.error.code === 'emptypage') {
-								alert( mw.msg( 'api-error-emptypage' ) );
+				form.bind('submit', function() {
+					var translation = form.find('.mw-translate-edit-area').last().val();
+					form.find('.mw-translate-edit-area').last().val( translation + mw.translate.propertiesToString( form ) );
+					$(this).ajaxSubmit({
+						dataType: 'json',
+						success: function(json) {
+							$('.mw-translate-edit-area').last().val( translation );
+							if ( json.error ) {
+								if( json.error.code === 'emptypage') {
+									alert( mw.msg( 'api-error-emptypage' ) );
+								} else {
+									alert( json.error.info + ' (' + json.error.code +')' );
+								}
+							} else if ( json.edit.result === 'Failure' ) {
+								alert( mw.msg( 'translate-js-save-failed' ) );
+							} else if ( json.edit.result === 'Success' ) {
+								callbacks.close && callbacks.close();
+								callbacks.success && callbacks.success( form.find( '.mw-translate-edit-area' ).val() );
 							} else {
-								alert( json.error.info + ' (' + json.error.code +')' );
+								alert( mw.msg( 'translate-js-save-failed' ) );
 							}
-						} else if ( json.edit.result === 'Failure' ) {
-							alert( mw.msg( 'translate-js-save-failed' ) );
-						} else if ( json.edit.result === 'Success' ) {
-							callbacks.close && callbacks.close();
-							callbacks.success && callbacks.success( form.find( '.mw-translate-edit-area' ).val() );
-						} else {
-							alert( mw.msg( 'translate-js-save-failed' ) );
 						}
-					}
+					});
+					return false; // <-- important!
 				} );
 			} );
 		},
@@ -277,6 +295,23 @@
 			}
 			alert( mw.msg( 'translate-js-nonext' ) );
 			return;
+		},
+		
+		propertiesToString: function( form ){
+			var propertiesString = '';
+			form.find( '[id^="mw-translate-prop-"]' ).each(function() {
+				var value = $(this).attr( 'value' );
+				if( $(this).attr( 'type' ) == 'checkbox' ){
+					value = "no";
+					if( $(this).attr( 'checked' ) ){ value = "yes"; }
+				}
+				var id = $(this).attr( 'id' ).replace( 'mw-translate-prop-', '' );
+				propertiesString += '|' + id + '=' + value;
+			});
+			if( propertiesString !== '' ){
+				propertiesString = '{{Properties' + propertiesString + '}}';
+			}
+			return propertiesString;
 		},
 	
 		inlineEditor: function () {

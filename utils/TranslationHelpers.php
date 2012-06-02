@@ -144,6 +144,10 @@ class TranslationHelpers {
 		} elseif ( $group && !$group instanceof FileBasedMessageGroup ) {
 			// Then try to load from files (old groups)
 			$translation = $group->getMessage( $page, $code );
+			if( $translation == null && method_exists( $group, 'getProperties' ) ){
+				//Prefill properties, at least
+				$translation = $group->getProperties( $page, $group->getSourceLanguage() );
+			}
 		} else {
 			// Nothing to prefil
 			$translation = '';
