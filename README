@@ -30,6 +30,8 @@ And for the code at:
  https://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-06-03
+- Option skipgroup added to export.php to filter wildcard groups.
 * 2012-04-11
 - Option codemaponly added to export.php to so that only code mapped languages
   can be exported.

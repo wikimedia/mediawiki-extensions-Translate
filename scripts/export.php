@@ -23,6 +23,7 @@ Options:
   --lang        Comma separated list of language codes or *
   --skip        Languages to skip, comma separated list
   --group       Comma separated list of group IDs (can use * as wildcard)
+  --skipgroup   Comma separated list of group IDs that should not be exported
   --help        This help message
   --threshold   Do not export under this percentage translated
   --ppgettext   Group root path for checkout of product. "msgmerge" will post
@@ -144,7 +145,17 @@ if ( isset( $options['hours'] ) ) {
 	}
 }
 
+	$skipGroups = array();
+	if ( isset( $options['skipgroup'] ) ) {
+		$skipGroups = array_map( 'trim', explode( ',', $options['skipgroup'] ) );
+	}
+
 foreach ( $groups as $groupId => $group ) {
+	if( in_array( $groupId, $skipGroups ) ) {
+		STDERR( "Group $groupId is in skipgroup" );
+		continue;
+	}
+
 	// No changes to this group at all
 	if ( is_array( $changeFilter ) && !isset( $changeFilter[$groupId] ) ) {
 		STDERR( "No recent changes to $groupId" );
