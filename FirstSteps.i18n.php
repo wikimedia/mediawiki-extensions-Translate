@@ -816,8 +816,9 @@ Vi ankaŭ ricevos informleteron maksimume unu fojon en la monato.
 Se vi ne deziras ricevi ĝin, vi povas malaktivigi en la langeto  « {{int:prefs-personal}} »  de  [[Special:Preferences|viaj preferoj]].',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Crazymadlover
+ * @author Dferg
  * @author Diego Grez
  * @author Drini
  * @author Fitoschido
@@ -829,7 +830,7 @@ $messages['es'] = array(
 	'firststeps' => 'Primeros pasos',
 	'firststeps-desc' => '[[Special:FirstSteps|Página especial]] para que los usuarios comiencen en un wiki usando la extensión de traducción',
 	'translate-fs-pagetitle-done' => '- ¡hecho!',
-	'translate-fs-pagetitle-pending' => '; pendiente',
+	'translate-fs-pagetitle-pending' => '- pendiente',
 	'translate-fs-pagetitle' => 'Guía de inicio - $1',
 	'translate-fs-signup-title' => 'Registrarse',
 	'translate-fs-settings-title' => 'Configurar tus preferencias',
@@ -1511,7 +1512,7 @@ W ap resevwa nouvèl tou yon fwa pa mwa o maksimòm.
 Si ou pa vle resevwa nouvèl, ou kapab retire ou nan opsyon sa nan onglè "{{int:prefs-personal}}" ki nan [[Special:Preferences|preferans ou yo]].',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Dani
  * @author Dj
  * @author Misibacsi

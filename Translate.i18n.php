@@ -1450,6 +1450,7 @@ $messages['arc'] = array(
 	'translate-taskui-untranslated' => 'ܚܘܝ ܐܓܪ̈ܬܐ ܠܐ ܬܘܪ̈ܓܡܐ',
 	'translate-taskui-optional' => 'ܚܘܝ ܐܓܪ̈ܬܐ ܓܒܝܬ̈ܐ',
 	'translate-taskui-suggestions' => 'ܚܘܝ ܐܓܪ̈ܬܐ ܥܡ ܡܚܫܚܬ̈ܐ ܡܢ ܥܘܗܕܢܐ ܕܬܘܪܓܡܐ',
+	'translate-taction-translate' => 'ܬܪܓܡ',
 	'translate-taction-proofread' => 'ܢܩܕ ܟܬܒܬܐ',
 	'translate-taction-export' => 'ܐܦܩ',
 	'translate-page-settings-legend' => 'ܛܘܝܒ̈ܐ',
@@ -1471,6 +1472,7 @@ $messages['arc'] = array(
 	'translate-edit-translation' => 'ܬܘܪܓܡܐ',
 	'translate-edit-contribute' => 'ܫܘܬܦ',
 	'translate-edit-in-other-languages' => 'ܐܓܪܬܐ ܒܠܫܢ̈ܐ ܐܚܪ̈ܢܐ',
+	'translate-edit-tmmatch' => '$1% ܠܚܡܐ',
 	'translate-edit-tab-list' => 'ܡܟܬܒܘܬܐ ܕܐܓܪ̈ܬܐ',
 	'translate-magic-submit' => 'ܒܨܝܐ',
 	'translate-magic-cm-export' => 'ܐܦܩ',
@@ -3069,7 +3071,7 @@ $messages['bpy'] = array(
 	'translate' => 'অনুবাদ করিক',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fohanno
  * @author Fulup
  * @author Gwendal
@@ -4024,7 +4026,7 @@ $messages['ckb'] = array(
 	'translate-gethelp' => 'یارمەتی',
 );
 
-/** Czech (Česky)
+/** Czech (česky)
  * @author Danny B.
  * @author Li-sung
  * @author Matěj Grabovský
@@ -6120,7 +6122,7 @@ Plej utila por provlegaj taskoj.',
 	'translate-gethelp' => 'Helpo',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author -jem-
  * @author Antur
  * @author Armando-Martin
@@ -6161,7 +6163,8 @@ Pulse en el nombre del grupo de mensajes para ver la lista de mensajes sin tradu
 	'translate-taction-disabled' => 'Esta acción está deshabilitada en este wiki.',
 	'translate-page-no-such-language' => 'No se especificó un idioma válido',
 	'translate-page-no-such-group' => 'El grupo especificado no es válido.',
-	'translate-page-disabled' => "Se han deshabilitado las traducciones a este idioma en este grupo de mensajes. Razón:
+	'translate-page-disabled' => "Se han deshabilitado las traducciones a este idioma en este grupo de mensajes. 
+Razón:
 
 ''$1''",
 	'translate-page-settings-legend' => 'Preferencias',
@@ -6241,7 +6244,7 @@ Los cambios no se graban hasta que no pulses el boton de guardar de abajo.',
 	'translate-checks-xhtml' => 'Por favor, sustituye {{PLURAL:$2|la siguiente etiqueta por la correcta|las siguientes etiquetas por las correctas}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'El mensaje original usa <nowiki>{{PLURAL:}}</nowiki> pero no así la traducción.',
-	'translate-checks-pagename' => 'Nombre de espacio cambiada desde la definición',
+	'translate-checks-pagename' => 'Nombre del espacio cambiado desde la definición',
 	'translate-checks-format' => 'Esta traducción no sigue la definición o tiene sintaxis inválida: $1',
 	'translate-checks-escape' => 'Los siguientes escapes pueden ser accidentales: <strong>$1</strong>',
 	'translate-checks-parametersnotequal' => 'El número de parámetros es {{PLURAL:$1|$1}}; debería ser {{PLURAL:$2|$2}}.',
@@ -6430,7 +6433,7 @@ Detalle: $1',
 	'translate-messagereview-reviewsyou' => 'Aceptada por ti',
 	'api-error-invalidrevision' => 'No se encontró la traducción',
 	'api-error-unknownmessage' => 'No se encontró el mensaje',
-	'api-error-fuzzymessage' => 'La traducción está marcada como difusa',
+	'api-error-fuzzymessage' => 'La traducción está marcada como desactualizada',
 	'api-error-owntranslation' => 'No puedes aceptar tus propias traducciones',
 	'translate-messagereview-no-fuzzy' => 'No se pueden aceptar las traducciones difusas.',
 	'translate-messagereview-no-own' => 'No puedes aceptar tus propias traducciones.',
@@ -6441,14 +6444,14 @@ Detalle: $1',
 	'log-name-translationreview' => 'Registro de revisión de las traducciones',
 	'log-description-translationreview' => 'Registro de todas las revisiones de las traducciones y de los grupos de mensajes.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|aceptó}} la traducción "$3"',
-	'logentry-groupreview-message' => '$1 {{GENDER:$2|ha cambiado}} el estado de $4 traducciones del grupo de mensajes  $3  desde  $5  a $6',
+	'logentry-groupreview-message' => '$1 {{GENDER:$2|modificó}} el estado de las traducciones en $4 del grupo de mensajes $3, de «$5» a «$6»',
 	'translate-workflow-state-' => '(desactivado)',
 	'translate-workflowstatus' => 'Estado: $1',
 	'translate-workflow-set-do' => 'Activar',
 	'translate-workflow-set-doing' => 'Activando...',
 	'translate-workflow-set-done' => '¡Activado!',
 	'translate-workflow-set-error-alreadyset' => 'El estado requerido es idéntico a la situación actual.',
-	'translate-workflow-autocreated-summary' => 'Creación automática de la página por el estado del flujo de trabajo$1',
+	'translate-workflow-autocreated-summary' => 'Creación automática de la página por el estado del flujo de trabajo $1',
 	'translate-stats-workflow' => 'Estado',
 	'translate-workflowgroup-label' => 'Estados del flujo de trabajo',
 	'translate-workflowgroup-desc' => 'Este grupo de mensajes muestra los estados de flujo de trabajo de traducción.
@@ -6463,7 +6466,7 @@ Utilizado sobre todo para tareas de corrección.',
 	'translate-gethelp' => 'Ayuda',
 );
 
-/** Estonian (Eesti)
+/** Estonian (eesti)
  * @author Hendrik
  * @author Ker
  * @author Pikne
@@ -10320,7 +10323,7 @@ Detay: $1',
 	'translate-documentation-language' => 'Dokimantasyon pou mesaj',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Bináris
  * @author BáthoryPéter
  * @author Dani
@@ -16758,7 +16761,7 @@ Dit is vooral nuttig voor de controletaken.',
 	'translate-gethelp' => 'Hulp',
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
  * @author Byrial
  * @author Dittaeva
  * @author Frokor
@@ -16933,7 +16936,7 @@ Sjå gjerne over meldingar gjennom [[Special:Translate|{{int:translate}}]].',
 	'translate-manage-import-deleted' => 'Sletta melding $1',
 	'translate-manage-action-import' => 'Importer',
 	'translate-manage-action-ignore' => 'Ignorer',
-	'translate-manage-import-summary' => 'Importerer ein ny versjon frå ei ekstern kjelda',
+	'translate-manage-import-summary' => 'Importerer ein ny versjon frå ei ekstern kjelde',
 	'translate-manage-fuzzy-summary' => 'Definisjonen er endra',
 	'importtranslations' => 'Importér omsetjingar',
 	'translate-import-from-url' => 'Fil-URL:',
@@ -18748,7 +18751,7 @@ Detalhes: $1',
 	'translate-search-nofilter' => 'Não filtrar',
 );
 
-/** Brazilian Portuguese (Português do Brasil)
+/** Brazilian Portuguese (português do Brasil)
  * @author 555
  * @author Eduardo.mps
  * @author Giro720
@@ -19183,7 +19186,7 @@ Sche vus savais nua e co che quai messadi vegn duvrà, pudais vus gidar auters t
 	'translate-edit-warnings' => 'Avertiment davart translaziuns nuncumplettas',
 );
 
-/** Romanian (Română)
+/** Romanian (română)
  * @author Danutz
  * @author Firilacroco
  * @author KlaudiuMihaila

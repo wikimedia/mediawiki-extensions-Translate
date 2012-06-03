@@ -1017,7 +1017,7 @@ $messages['bo'] = array(
 	'pt-movepage-reason' => 'རྒྱུ་མཚན།',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fohanno
  * @author Fulup
  * @author Y-M D
@@ -2096,10 +2096,11 @@ La paĝo povas nun esti <span class="plainlinks">[$3 tradukita]</span>.',
 	'pt-deletepage-list-count' => 'Entute $1 {{PLURAL:$1|paĝo|paĝoj}} por forigi.',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Antur
  * @author Armando-Martin
  * @author Crazymadlover
+ * @author Dferg
  * @author Diego Grez
  * @author Imre
  * @author McDutchie
@@ -2114,7 +2115,8 @@ $messages['es'] = array(
 	'right-pagetranslation' => 'Marcar versiones de páginas para traducción',
 	'tpt-desc' => 'Extensiones para traducir páginas de contenido',
 	'tpt-section' => 'Unidad de traducción $1',
-	'tpt-section-new' => 'Nueva unidad de traducción. Nombre: $1',
+	'tpt-section-new' => 'Nueva unidad de traducción. 
+Nombre: $1',
 	'tpt-section-deleted' => 'Unidad de traducción $1',
 	'tpt-template' => 'Plantilla de página',
 	'tpt-templatediff' => 'La plantilla de página ha cambiado.',
@@ -3753,7 +3755,7 @@ Teks baliz la: <pre>$1</pre>',
 	'pt-movepage-action-other' => 'Chanje sib',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Dani
  * @author Dj
  * @author Glanthor Reviol
@@ -6564,7 +6566,7 @@ A eliminação não é instantânea, porque será necessário eliminar muitas p�
 Os problemas que ocorrerem serão registados no [[Special:Log/pagetranslation|registo de traduções]] e podem exigir reparação manual.',
 );
 
-/** Brazilian Portuguese (Português do Brasil)
+/** Brazilian Portuguese (português do Brasil)
  * @author 555
  * @author Eduardo.mps
  * @author Giro720
@@ -6754,7 +6756,7 @@ $messages['rm'] = array(
 	'tpt-languages-legend' => 'Autras linguas:',
 );
 
-/** Romanian (Română)
+/** Romanian (română)
  * @author Firilacroco
  * @author KlaudiuMihaila
  * @author Minisarm

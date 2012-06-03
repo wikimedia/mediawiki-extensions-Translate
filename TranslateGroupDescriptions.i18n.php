@@ -2236,7 +2236,7 @@ Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] é um projeto para apresentar offline uma versão de texto da Wikipédia num dispositivo móvel.',
 );
 
-/** Romanian (Română)
+/** Romanian (română)
  * @author Minisarm
  */
 $messages['ro'] = array(
@@ -2542,7 +2542,7 @@ $messages['sr-el'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|Vikirider]] pruža tekstualnu verziju Vikipedije kojoj se može pristupiti van mreže, i to na mobilnom uređaju',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author Boivie
  * @author Fluff
  * @author Lokal Profil
@@ -2698,7 +2698,7 @@ $messages['tt-cyrl'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] —  Википедиянең кәрәзле телефондагы автаном юрамасы',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author AS
  * @author Base
  * @author Prima klasy4na
