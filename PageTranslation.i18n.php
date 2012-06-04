@@ -1707,6 +1707,7 @@ Grund: $1',
 	'tpt-discouraged-language' => 'Diese Sprache befindet sich nicht unter den von einem Übersetzungsadministrator priorisierten Sprachen für die Übersetzung dieser Seite.
 
 Grund: $1',
+	'tpt-discouraged-language-reason' => 'Grund: $1',
 	'tpt-priority-languages' => 'Ein Übersetzungsadministrator hat die priorisierte Sprachen für diese Nachrichtengruppe auf $1 festgelegt.',
 	'tpt-render-summary' => 'Übernehme Bearbeitung einer neuen Version der Quellseite',
 	'tpt-download-page' => 'Seite mit Übersetzungen exportieren',
@@ -2593,7 +2594,7 @@ Poisto ei tapahdu välittömästi, sillä useita sivuja täytyy poistaa.
 Virheet merkitään [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne täytyy korjata käsin.',
 );
 
-/** French (Français)
+/** French (français)
  * @author Crochet.david
  * @author DavidL
  * @author Gomoko
@@ -2605,6 +2606,7 @@ Virheet merkitään [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne t
  * @author Sherbrooke
  * @author Urhixidur
  * @author Verdy p
+ * @author Wyz
  * @author Y-M D
  */
 $messages['fr'] = array(
@@ -2682,6 +2684,7 @@ Motif: $1',
 	'tpt-discouraged-language' => 'La langue vers laquelle les messages listés dans cette page peuvent être traduits ne fait pas partie des langues prioritaires définies par un administrateur des traductions.
 
 Motif : $1',
+	'tpt-discouraged-language-reason' => 'Raison : $1',
 	'tpt-priority-languages' => 'Un administrateur de traduction a défini les langues prioritaire pour ce groupe : $1 .',
 	'tpt-render-summary' => 'Mise à jour pour être en accord avec la nouvelle version de la source de la page',
 	'tpt-download-page' => 'Exporter la page avec ses traductions',
@@ -2995,6 +2998,7 @@ Motivo: $1',
 	'tpt-discouraged-language' => 'Esta lingua non está entre as linguas prioritarias que un administrador definiu para a páxina.
 
 Motivo: $1',
+	'tpt-discouraged-language-reason' => 'Motivo: $1',
 	'tpt-priority-languages' => 'Un administrador de traducións definiu as linguas prioritarias deste grupo a $1.',
 	'tpt-render-summary' => 'Actualizando para coincidir coa nova versión da páxina de orixe',
 	'tpt-download-page' => 'Exportar a páxina coas traducións',
@@ -5677,6 +5681,7 @@ Reden: $1',
 	'tpt-discouraged-language' => 'De vertalingenbeheerder heeft deze taal niet als prioriteitstaal ingesteld voor deze pagina.
 
 Reden: $1',
+	'tpt-discouraged-language-reason' => 'Reden: $1',
 	'tpt-priority-languages' => 'Een vertalingenbeheerder heeft de prioriteitstalen voor deze groep ingesteld op $1.',
 	'tpt-render-summary' => 'Bijgewerkt vanwege een nieuwe basisversie van de bronpagina',
 	'tpt-download-page' => 'Pagina met vertalingen exporteren',

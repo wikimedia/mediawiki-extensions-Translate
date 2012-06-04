@@ -13320,7 +13320,7 @@ Di sullte bloß övversaz wääde, wann Ding Shprooch jät besönders bruch, esu
 	'translate-edit-contribute' => 'beijdraare',
 	'translate-edit-no-information' => "''Mer han kein Dokementazjohn för dat Täxshtöck.''
 ''Wann De weijß, wann un woh dat Shtöck jenou jebruch weed, dann kanns De dä Anndere hellefe, un jet för_et ennjävve.''",
-	'translate-edit-information' => 'Ennfommazjohne övver dä Täx udder de Nohreesch ($1)',
+	'translate-edit-information' => 'Ennfommazjohne övver dä Täx udder di Nohreesch ($1)',
 	'translate-edit-in-other-languages' => 'Dä Täx udder di Nohreesch in annder Shprooche',
 	'translate-edit-committed' => 'Es aktowäll övversaz met',
 	'translate-edit-warnings' => 'Warnonge wääje unkomplätte Övversäzonge',
@@ -13397,7 +13397,7 @@ Wat De jezeich kreß, wann De nix enndrähß, deiht vun dä Shprooch afhange, en
 	'translate-rc-translation-filter-only' => 'Don noor de Övversëzonge zëije',
 	'translate-rc-translation-filter-filter' => 'Don de Övversëzonge fott lohße',
 	'translate-rc-translation-filter-site' => 'Nor de Änderonge för hee dat Wiki',
-	'translationstats' => 'Statistike fun de Övversäzunge',
+	'translationstats' => 'Schtatistike fun de Övversäzunge',
 	'translate-stats-edits' => 'Änderunge',
 	'translate-stats-users' => 'Övversäzer',
 	'translate-stats-registrations' => 'Aanmäldonge',
