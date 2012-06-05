@@ -2198,6 +2198,7 @@ Razón: $1',
 	'tpt-discouraged-language' => 'Este idioma no está entre los idiomas prioritarios establecidos por un administrador de traducción para esta página.
 
 Razón: $1',
+	'tpt-discouraged-language-reason' => 'Motivo: $1',
 	'tpt-priority-languages' => 'Un administrador de traducciones ha definido los idiomas prioritarios de este grupo: $1.',
 	'tpt-render-summary' => 'Actualizando para hallar una nueva versión de la página fuente',
 	'tpt-download-page' => 'Exportar página con traducciones',
@@ -2361,7 +2362,7 @@ ja {{PLURAL:$1|uusimat versiooni|uusimaid versioone}} ei saa tõlgitavaks teha.'
 	'pt-deletepage-lang-logreason' => 'Osa tõlkeleheküljest $1.',
 );
 
-/** Basque (Euskara)
+/** Basque (euskara)
  * @author An13sa
  * @author Kobazulo
  */
@@ -2374,8 +2375,11 @@ Izena: $1',
 	'tpt-diff-old' => 'Aurreko testua',
 	'tpt-diff-new' => 'Testu berria',
 	'tpt-edit-failed' => 'Ezin izan da orrialdea eguneratu: $1',
+	'tpt-select-prioritylangs-reason' => 'Arrazoia:',
 	'translate-tag-translate-link-desc' => 'Itzuli orri hau',
 	'tpt-languages-legend' => 'Beste hizkuntzak:',
+	'tpt-discouraged-language-reason' => 'Arrazoia: $1',
+	'tpt-aggregategroup-new-name' => 'Izena:',
 	'pt-movepage-list-translation' => 'Itzulpen orrialdeak',
 	'pt-movepage-list-other' => 'Bestelako azpiorrialdeak',
 	'pt-movepage-current' => 'Oraingo izena:',
@@ -4173,7 +4177,7 @@ $messages['is'] = array(
 	'pt-log-unmark' => '{{GENDER:$2|fjarlægði}} "[[:$1]]" úr þýðingu',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author Aushulz
  * @author Beta16
  * @author Civvì
@@ -4260,6 +4264,7 @@ Motivo: $1",
 	'tpt-discouraged-language' => "Questa lingua non è impostata come prioritaria dall'amministratore delle traduzioni per questa pagina.
 
 Motivo: $1",
+	'tpt-discouraged-language-reason' => 'Motivo: $1',
 	'tpt-priority-languages' => "L'amministratore ha impostato le lingue prioritarie per questo gruppo in $1.",
 	'tpt-render-summary' => 'Aggiornamento come da nuova versione della pagina di origine',
 	'tpt-download-page' => 'Esporta la pagina con le traduzioni',
@@ -4495,7 +4500,7 @@ $messages['ja'] = array(
 	'pt-movepage-current' => '現在の名前：',
 	'pt-movepage-new' => '新しい名前：',
 	'pt-movepage-reason' => '理由：',
-	'pt-movepage-subpages' => 'サブページを全て移動',
+	'pt-movepage-subpages' => '下位ページをすべて移動',
 	'pt-movepage-action-check' => '移動が可能な場合にチェック',
 	'pt-movepage-action-perform' => '移動しない',
 	'pt-movepage-action-other' => '対象を変更',
@@ -4519,7 +4524,7 @@ $messages['ja'] = array(
 	'pt-deletepage-any-legend' => '翻訳可能ページや、翻訳可能ページや翻訳を削除',
 	'pt-deletepage-current' => 'ページ名：',
 	'pt-deletepage-reason' => '理由：',
-	'pt-deletepage-subpages' => '全ての下位ページを削除',
+	'pt-deletepage-subpages' => '下位ページをすべて削除',
 	'pt-deletepage-list-pages' => '削除するページの一覧',
 	'pt-deletepage-list-translation' => '翻訳ページ',
 	'pt-deletepage-list-section' => '節ページ',
@@ -4528,7 +4533,7 @@ $messages['ja'] = array(
 	'pt-deletepage-full-logreason' => '翻訳可能ページ$1の一部。',
 	'pt-deletepage-lang-logreason' => '翻訳ページ$1の一部。',
 	'pt-deletepage-started' => '[[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認してください。',
-	'pt-deletepage-intro' => 'この特別ページでは、翻訳可能ページ全体やある言語への翻訳全てを削除できます。
+	'pt-deletepage-intro' => 'この特別ページでは、翻訳可能ページ全体、あるいは指定した言語への翻訳すべてを削除できます。
 多くのページを削除する必要があるため、削除操作はすぐには完了しません。
 失敗した場合、その[[Special:Log/pagetranslation|ページの翻訳記録]]に記録されるので、手動で修正する必要があります。',
 );
@@ -5057,7 +5062,7 @@ $messages['mg'] = array(
 	'right-pagetranslation' => 'Mamamarika ny santiônam-pejy hodikaina',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  * @author Brest
  */
@@ -5138,6 +5143,7 @@ $messages['mk'] = array(
 	'tpt-discouraged-language' => 'Овој јазик не е меѓу приоритетните јазици на оваа страница што ги задал администратор
 
 Причина: $1',
+	'tpt-discouraged-language-reason' => 'Причина: $1',
 	'tpt-priority-languages' => 'Преводен администратор на групата ѝ ги зададе приоритетните јазици: $1.',
 	'tpt-render-summary' => 'Обнова за усогласување со новата верзија на изворната страница',
 	'tpt-download-page' => 'Извези страница со преводи',

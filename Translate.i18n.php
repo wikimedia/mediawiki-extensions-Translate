@@ -422,6 +422,7 @@ Most useful for the proofreading tasks.',
 /** Message documentation (Message documentation)
  * @author 555
  * @author Amire80
+ * @author An13sa
  * @author Ans
  * @author Assele
  * @author Darth Kule
@@ -693,7 +694,7 @@ Additional parameters:
 {{Identical|Status}}',
 	'translate-workflow-set-do' => 'Submit button text when active',
 	'translate-workflow-set-doing' => 'Submit button text when waiting for reply from server',
-	'translate-workflow-set-done' => 'Submit button text when submission completed succesfully',
+	'translate-workflow-set-done' => 'Gorde botoia sakatu behin itzulpen egin eta gero',
 	'translate-workflow-set-error-alreadyset' => 'An error message shown in a popup box after pressing the {{msg-mw|translate-workflow-set-do}} button.',
 	'translate-workflow-autocreated-summary' => 'This is an edit summary for the automatic creation of a workflow state page.',
 	'translate-stats-workflow' => 'Column header on Special:LanguageStats and Special:MessageGroupStats',
@@ -6743,7 +6744,7 @@ Sobib ennekõike tõlgete ülevaatuseks.',
 	'translate-gethelp' => 'Abi',
 );
 
-/** Basque (Euskara)
+/** Basque (euskara)
  * @author An13sa
  * @author Kobazulo
  * @author Theklan
@@ -6752,6 +6753,19 @@ $messages['eu'] = array(
 	'translate' => 'Itzuli',
 	'translate-desc' => '[[Special:Translate|Orrialde berezia]] MediaWiki eta bestelakoak itzultzeko',
 	'translate-showsub' => 'Erakutsi {{PLURAL:$1|azpitaldea|$1 azpitaldeak}}.',
+	'translate-grouplisting' => 'Zerrenda honetan itzuli daitezken talde guztiak daude.
+Klikatu mezu-talde bat, itzuli gabeko mezuen zerrenda ikusteko.',
+	'translate-taskui-view' => 'Mezu guztiak erakutsi',
+	'translate-taskui-untranslated' => 'Itzuli gabeko mezuak erakutsi',
+	'translate-taskui-optional' => 'Hautazko mezuak erakutsi',
+	'translate-taskui-suggestions' => 'Itzulpen-memoriak iradokitako mezuak erakutsi',
+	'translate-taskui-acceptqueue' => 'Onar ditzakedan mezuak bakarrik',
+	'translate-taskui-reviewall' => 'Itzulpen guztiak berrikusi',
+	'translate-taction-translate' => 'Itzuli',
+	'translate-taction-proofread' => 'Zuzenketak',
+	'translate-taction-lstats' => 'Hizkuntza estatistikak',
+	'translate-taction-mstats' => 'Mezu-taldeko estatistikak',
+	'translate-taction-export' => 'Esportatu',
 	'translate-page-no-such-language' => 'Zehaztutako hizkuntza baliogabea da.',
 	'translate-page-no-such-group' => 'Zehaztutako taldea baligabea da.',
 	'translate-page-disabled' => "Ezin da talde honetako hizkuntzako honetarako itzulpenik egin.
@@ -6771,6 +6785,8 @@ Arrazoia:
 	'translate-next' => 'Hurrengo orria',
 	'translate-prev' => 'Aurreko orria',
 	'translate-page-description-legend' => 'Taldeari buruzko informazioa',
+	'translate-page-description-hasoptional' => 'Mezu-talde honek hautazko mezuak ditu.
+Hautazko mezuak zure hizkuntzaren berezitasunak direla-eta, espazioak ez daudenean edo izen berezien itzulpenerako bakarrik itzuli. $1',
 	'translate-page-description-hasoptional-open' => 'Erakutsi hautazko mezuak.',
 	'translate-page-edit' => 'aldatu',
 	'translate-ext-url' => '<hr />Webgunea: $1',
@@ -6821,6 +6837,8 @@ Arrazoia:
 	'translate-stats-edits' => 'Aldaketak',
 	'translate-stats-users' => 'Itzultzaileak',
 	'translate-stats-registrations' => 'Izena-emateak',
+	'translate-stats-reviews' => 'Berrikuspenak',
+	'translate-stats-reviewers' => 'Berrikusleak',
 	'translate-statsf-options' => 'Aukera grafikoak',
 	'translate-statsf-width' => 'Zabalera pixeletan:',
 	'translate-statsf-height' => 'Altuera pixeletan:',
@@ -6835,6 +6853,7 @@ Arrazoia:
 	'translate-statsf-count-edits' => 'Aldaketa kopurua',
 	'translate-statsf-count-users' => 'Lanean ari diren itzultzaileak',
 	'translate-statsf-count-registrations' => 'Lankide berriak',
+	'translate-statsf-count-reviewers' => 'Berrikusleak',
 	'translate-statsf-submit' => 'Aurreikuspena',
 	'translate-tag-category' => 'Orri itzulgarriak',
 	'translate-sidebar-alltrans' => 'Beste hizkuntzetan',
@@ -6862,7 +6881,10 @@ Arrazoia:
 	'translate-percentage-complete' => 'Bukatuak',
 	'translate-percentage-fuzzy' => 'Zaharkituak',
 	'translate-ls-submit' => 'Estatistikak erakutsi',
+	'translate-ls-column-group' => 'Mezu-taldea',
+	'translate-mgs-pagename' => 'Mezu-taldeko estatistikak',
 	'translate-mgs-fieldset' => 'Hobespenak erakutsi',
+	'translate-mgs-group' => 'Mezu-taldea:',
 	'translate-mgs-submit' => 'Estatistikak erakutsi',
 	'translate-mgs-column-language' => 'Hizkuntza',
 	'translate-mgs-totals' => 'Hizkuntza guztiak batera',
@@ -6905,6 +6927,7 @@ Arrazoia:
 	'translate-messagereview-progress' => 'Onartzen...',
 	'translate-messagereview-done' => 'Onartu',
 	'translate-workflowstatus' => 'Egoera: $1',
+	'translate-workflow-set-done' => 'Gorde botoia sakatu behin itzulpen egin eta gero',
 	'translate-stats-workflow' => 'Egoera',
 	'translate-dynagroup-recent-label' => 'Azken itzulpenak',
 	'translate-gethelp' => 'Laguntza',
