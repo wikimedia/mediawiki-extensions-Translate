@@ -1906,6 +1906,7 @@ Pśicyna: $1',
 	'tpt-discouraged-language' => 'Toś ta rěc njejo mjazy primarnymi rěcami, kótarež pśełožowański administrator jo za ten toś bok póstajił.
 
 Pśicyna: $1',
+	'tpt-discouraged-language-reason' => 'Pśicyna: $1',
 	'tpt-priority-languages' => 'Pśełožowański administrator jo primarne rěcy za toś tu kupku ako $1 nastajił.',
 	'tpt-render-summary' => 'Aktualizacija pó nowej wersiji žrědłowego boka',
 	'tpt-download-page' => 'Bok z pśełožkami eksportěrowaś',
@@ -3605,6 +3606,7 @@ Přičina: $1',
 	'tpt-discouraged-language' => 'Tuta rěč njeje mjez primarnymi rěčemi, kotrež přełožowanski administrator je za tutu stronu postajił.
 
 Přičina: $1',
+	'tpt-discouraged-language-reason' => 'Přičina: $1',
 	'tpt-priority-languages' => 'Přełožowanski administrator je primarne rěče za tutu skupinu jako $1 nastajił.',
 	'tpt-render-summary' => 'Aktualizacija po nowej wersiji žórłoweje strony',
 	'tpt-download-page' => 'Stronu z přełožkami eksportować',
@@ -4399,7 +4401,7 @@ $messages['ja'] = array(
 	'tpt-mark-summary' => 'この版を翻訳対象に指定しました',
 	'tpt-edit-failed' => 'ページを更新できませんでした: $1',
 	'tpt-duplicate' => '翻訳単位名$1は、複数回使用されています。',
-	'tpt-already-marked' => 'このページの最新版がすでに翻訳対象に指定されています。',
+	'tpt-already-marked' => 'このページの最新版は既に翻訳対象に指定されています。',
 	'tpt-unmarked' => 'ページ「$1」は既に翻訳対象ではありません。',
 	'tpt-list-nopages' => '翻訳対象に指定されたページがないか、翻訳対象に指定する準備ができているページがありません。',
 	'tpt-new-pages-title' => '翻訳が提案されているページ',
@@ -4408,7 +4410,7 @@ $messages['ja'] = array(
 	'tpt-discouraged-pages-title' => '翻訳が中止されたページ',
 	'tpt-new-pages' => '{{PLURAL:$1|このページ|これらのページ}}は本文に翻訳タグを含んでいますが、
 {{PLURAL:$1|このページ|これらのページ}}には翻訳対象に指定されている版がありません。',
-	'tpt-old-pages' => '{{PLURAL:$1|これらの|この}}ページには翻訳対象に指定された版があります。',
+	'tpt-old-pages' => '{{PLURAL:$1|このページには|これらのページには}}翻訳対象に指定された版があります。',
 	'tpt-other-pages' => '{{PLURAL:$1|このページの古い版|このページの複数の古い版}}が翻訳対象に指定されていますが、
 最新の{{PLURAL:$1|版}}は翻訳対象に指定できません。',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|このページ|これらのページ}}には、さらなる翻訳が不要です。',
@@ -4426,7 +4428,7 @@ $messages['ja'] = array(
 	'tpt-rev-encourage-tooltip' => 'このページを通常の翻訳に復元します。',
 	'translate-tag-translate-link-desc' => 'このページを翻訳',
 	'translate-tag-markthis' => 'このページを翻訳対象に指定',
-	'translate-tag-markthisagain' => 'このページには最後に<span class="plainlinks">[$2 翻訳が指定]</span>されて以降に<span class="plainlinks">[$1 変更]</span>があります。',
+	'translate-tag-markthisagain' => 'このページには、最後に<span class="plainlinks">[$2 翻訳が指定]</span>された時点以降の<span class="plainlinks">[$1 変更]</span>があります。',
 	'translate-tag-hasnew' => 'このページには翻訳対象に指定されていない<span class="plainlinks">[$1 変更]</span>があります。',
 	'tpt-translation-intro' => 'このページはページ「[[$2]]」の<span class="plainlinks">[$1 翻訳版]</span> です。翻訳は$3%完了しています。',
 	'tpt-translation-intro-fuzzy' => '修正が必要な翻訳にはこのような印が付いています。',
