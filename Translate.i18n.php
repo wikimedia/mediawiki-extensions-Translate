@@ -1492,7 +1492,7 @@ $messages['arc'] = array(
 	'translate-statsf-scale-days' => 'ܝܘܡܬ̈ܐ',
 	'translate-statsf-scale-hours' => 'ܫܥܬ̈ܐ',
 	'translate-statsf-count-edits' => 'ܡܢܝܢܐ ܕܫܘܚܠܦ̈ܐ',
-	'translate-statsf-count-users' => 'ܬܪ̈ܓܡܢܐ ܟܫܝܪ̈ܐ',
+	'translate-statsf-count-users' => 'ܬܪ̈ܓܡܢܐ ܙܪ̄ܝܙܐ',
 	'translate-statsf-submit' => 'ܚܝܪܬܐ ܩܕܡܝܬܐ',
 	'translate-sidebar-alltrans' => 'ܒܠܫܢ̈ܐ ܐܚܪ̈ܢܐ',
 	'translations' => 'ܟܠ ܬܪ̈ܓܡܝܬܐ',
@@ -3136,6 +3136,7 @@ Ne zle ar c'hemennadennoù diret bezañ troet nemet pa vez ezhomm dibar gant ho 
 	'translate-edit-committed' => 'Troidigezh er meziant evit poent',
 	'translate-edit-warnings' => 'Kemennoù diwall diwar-benn an troidigezhioù diglok',
 	'translate-edit-tmsugs' => 'Kinnig a-berzh ar memor treiñ',
+	'translate-edit-tmmatch-source' => 'Testenn orin da dreiñ : $1',
 	'translate-edit-tmmatch' => '$1% kenglotañ',
 	'translate-use-suggestion' => "Erlec'hiañ an droidigezh a-vremañ gant ar c'hinnig-mañ.",
 	'translate-edit-tab-list' => 'Roll kemennadennoù',
@@ -3228,6 +3229,7 @@ Bevennoù izel hag uhel zo d'an holl dalvoudoù.",
 	'translate-statsf-count-edits' => 'Niver a gemmoù',
 	'translate-statsf-count-users' => 'Troerien oberiant',
 	'translate-statsf-count-registrations' => 'Implijerien nevez',
+	'translate-statsf-count-reviews' => 'Adweladennoù troidigezhioù',
 	'translate-statsf-count-reviewers' => 'Reizherien',
 	'translate-statsf-language' => 'Roll kodoù yezh, dispartiet gant skejoù :',
 	'translate-statsf-group' => 'Roll kodoù strolladoù, dispartiet gant skejoù :',
@@ -3292,6 +3294,10 @@ Liv an islinennañ a verk pegen nevez zo eo bet oberiant an droerien amañ.",
 	'translate-save' => 'Enrollañ ($1)',
 	'translate-jssti-add' => "Ouzhpennañ d'ar roll",
 	'managemessagegroups' => 'Merañ ar strollad kemennadennoù',
+	'translate-smg-notallowed' => "N'oc'h ket aotreet da gas an oberiadenn-mañ da benn.",
+	'translate-smg-nochanges' => "N'eus netra da gemmañ.",
+	'translate-smg-submit' => "Kas ar c'hemmoù ma vo pledet ganto",
+	'translate-smg-submitted' => "Hizivaet eo bet termenadurioù an troidigezhioù. Plediñ a reer gant ar c'hemmoù en drekleur.",
 	'translate-manage-import-diff' => 'Kemennadenn $1 | Oberoù : $2',
 	'translate-manage-import-new' => 'Kemennadenn nevez $1',
 	'translate-manage-import-deleted' => 'Kemennadennoù diverket $1',
@@ -3338,6 +3344,7 @@ Munudoù : $1',
 	'translate-js-history' => 'Istor an droidigezh',
 	'translate-js-support' => 'Sevel ur goulenn',
 	'translate-js-support-title' => "Goulennit un tamm skoazell ma vank titouroù evit treiñ ar gemennadenn-mañ evel m'eo dleet.",
+	'translate-js-support-unsaved-warning' => "Chom a ra troidigezhioù n'int ket bet enrollet ganeoc'h.",
 	'translate-gs-pos' => "Lec'h.",
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kevandir',
@@ -5138,6 +5145,7 @@ $messages['diq'] = array(
 	'translate-edit-in-other-languages' => 'Zuwanan dê binan de mesaci',
 	'translate-edit-tmsugs' => 'Hafıza da açarnayışi ra şıma rê tawsiyey',
 	'translate-edit-tab-list' => 'Listeya mesacan',
+	'translate-magic-pagename' => 'Açarnayışê MedyaVikiyo herayen',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Biya',
 	'translate-magic-cm-export' => 'Teber de',
@@ -5160,7 +5168,7 @@ $messages['diq'] = array(
 	'translate-statsf-scale-hours' => 'Seati',
 	'translate-statsf-count-registrations' => 'Kerbero newe',
 	'translate-statsf-submit' => 'Verqayt',
-	'translate-tag-page-desc' => '[[$2|$1]] açarnè',
+	'translate-tag-page-desc' => 'Açarnayışê pela da [[$2|$1]] wiki',
 	'translate-sidebar-alltrans' => 'Zıwanê bini',
 	'translations' => 'Çarnayışi pêro',
 	'translate-translations-fieldset-title' => 'Mesac',
@@ -5177,7 +5185,7 @@ $messages['diq'] = array(
 	'translate-langstats-collapseall' => 'Pêron  Kılm ke',
 	'translate-language-code' => 'Kodê zıwani',
 	'translate-language-code-field-name' => 'Kodê zıwani:',
-	'translate-suppress-complete' => 'Peleyê kı açarneyayê êna pıploğnê',
+	'translate-suppress-complete' => 'Peleyê kı açarneyayê êna biya',
 	'translate-ls-noempty' => 'Peleyê kı nè açarneyayê êna pıploğnê',
 	'translate-language' => 'Zıwan',
 	'translate-total' => 'Mesaci',
@@ -11876,7 +11884,7 @@ $messages['ja'] = array(
 	'translate-showsub' => '{{PLURAL:$1|下位群|$1個の下位群}}を表示する。',
 	'translate-grouplisting' => 'これは翻訳可能なすべての群の一覧です。
 メッセージ群名をクリックして、未翻訳メッセージの一覧を表示してください。',
-	'translate-grouplisting-empty' => '翻訳用に設定されたメッセージ群はありません',
+	'translate-grouplisting-empty' => '翻訳対象に設定されたメッセージ群はありません。',
 	'translate-taskui-view' => '全メッセージを表示',
 	'translate-taskui-untranslated' => '未翻訳メッセージを表示',
 	'translate-taskui-optional' => '省略可能なメッセージを表示',
@@ -11890,9 +11898,9 @@ $messages['ja'] = array(
 	'translate-taction-lstats' => '言語別翻訳状況',
 	'translate-taction-mstats' => 'メッセージ群別の翻訳状況',
 	'translate-taction-export' => '書き出し',
-	'translate-taction-disabled' => 'このウィキではこのアクションは無効になっています。',
-	'translate-page-no-such-language' => '言語指定が不正です。',
-	'translate-page-no-such-group' => '指定された群は不正です。',
+	'translate-taction-disabled' => 'このウィキではこの操作は無効になっています。',
+	'translate-page-no-such-language' => '言語の指定が正しくありません。',
+	'translate-page-no-such-group' => '群の指定が正しくありません。',
 	'translate-page-disabled' => "この群では、この言語への翻訳は停止されています。理由：
 
 ''$1''",
@@ -12492,6 +12500,13 @@ $messages['kbd-cyrl'] = array(
  */
 $messages['khw'] = array(
 	'translate' => 'ترجمہ کورے',
+);
+
+/** Kirmanjki (Kırmancki)
+ * @author Erdemaslancan
+ */
+$messages['kiu'] = array(
+	'translate-tag-page-desc' => 'Açarnayışê pela da [[$2|$1]] wiki',
 );
 
 /** Kazakh (Arabic script) (‫قازاقشا (تٴوتە)‬)
@@ -16493,7 +16508,7 @@ Klik op een berichtengroep om de lijst met nog niet vertaalde berichten te bekij
 	'translate-taskui-optional' => 'Optionele berichten weergeven',
 	'translate-taskui-suggestions' => 'Berichten met vertaalsuggesties weergeven',
 	'translate-taskui-acceptqueue' => 'Alleen berichten die ik kan accepteren',
-	'translate-taskui-reviewall' => 'Alle vertalingen proeflezen',
+	'translate-taskui-reviewall' => 'Alle vertalingen controleren',
 	'translate-taskui-export-to-file' => 'Exporteren in de oorspronkelijke indeling',
 	'translate-taskui-export-as-po' => 'Exporteren voor offline vertaling',
 	'translate-taction-translate' => 'Vertalen',
@@ -20671,8 +20686,9 @@ $1',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}} විසින් සිදු කල අවසන් වෙනස ($2)',
 );
 
-/** Slovak (Slovenčina)
+/** Slovak (slovenčina)
  * @author Helix84
+ * @author Kusavica
  * @author Mormegil
  * @author Rudko
  * @author Teslaton
@@ -20945,6 +20961,8 @@ Podrobnosti: $1',
 	'translate-gs-count' => 'Počet',
 	'translate-gs-total' => 'Celkom',
 	'translate-gs-avgscore' => 'Priem. skóre',
+	'translate-messagereview-done' => 'Akceptované',
+	'api-error-invalidrevision' => 'Preklad sa nenašiel',
 	'group-translate-proofr' => 'Hodnotitelia prekladov',
 	'group-translate-proofr-member' => '{{GENDER:$1|hodnotiteľ|hodnotiteľka|hodnotiteľ}} prekladov',
 	'grouppage-translate-proofr' => '{{ns:project}}:Hodnotitelia prekladov',
@@ -23897,7 +23915,7 @@ $messages['ug-latn'] = array(
 	'translate-language' => 'Til',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author A1
  * @author AS
  * @author Ahonc
@@ -23907,6 +23925,7 @@ $messages['ug-latn'] = array(
  * @author Hypers
  * @author Microcell
  * @author NickK
+ * @author Olvin
  * @author Prima klasy4na
  * @author Test
  * @author Тест
@@ -23922,6 +23941,7 @@ $messages['uk'] = array(
 	'translate-taskui-optional' => 'Показати додаткові повідомлення.',
 	'translate-taskui-suggestions' => "Показати повідомлення з пропозиціями пам'яті перекладів",
 	'translate-taskui-acceptqueue' => 'Лише повідомлення, які я можу прийняти',
+	'translate-taskui-reviewall' => 'Переглянути всі переклади',
 	'translate-taction-translate' => 'Переклад',
 	'translate-taction-proofread' => 'Вичитка',
 	'translate-taction-lstats' => 'Статистика для цієї мови',
@@ -24854,16 +24874,145 @@ Kod:
 	'translate-percentage-complete' => 'Lölöfükam',
 );
 
-/** Walloon (Walon)
+/** Walloon (walon)
  * @author Srtxg
  */
 $messages['wa'] = array(
 	'translate' => 'Ratourner',
+	'translate-desc' => '[[Special:Translate|Padje sipeciåle]] po ratourner MediaWiki et ds ôtes',
+	'translate-showsub' => 'Mostrer {{PLURAL:$1|li dzo-groupe|les $1 dizo-groupes}}.',
+	'translate-grouplisting' => "Çouchal c' est l' djivêye di tos les groupes ki plèt esse ratournés.
+Clitchîz sol no d' on groupe di messaedjes po vey ene djivêye des messaedjes nén co ratournés.",
+	'translate-taskui-view' => 'Mostrer tos les messaedjes',
+	'translate-taskui-untranslated' => 'Mostrer les messaedjes nén ratournés',
+	'translate-taskui-optional' => 'Mostrer les messaedjes opcionels',
+	'translate-taskui-suggestions' => 'Mostrer les messaedjes avou des propôzicions del memwere di ratournaedje',
+	'translate-taskui-acceptqueue' => "Rén k' les messaedjes ki dj' pou acertiner",
+	'translate-taskui-reviewall' => 'Verifyî tos les ratournaedjes',
+	'translate-taskui-export-to-file' => 'Riçure e cogne native',
+	'translate-taskui-export-as-po' => 'Riçure po on ratournaedje foû raloyaedje',
+	'translate-taction-translate' => 'Ratourner',
+	'translate-taction-proofread' => 'Verifiaedje',
+	'translate-taction-lstats' => 'Sitatistikes do lingaedje',
+	'translate-taction-mstats' => 'Sitatistikes do groupe di messaedjes',
+	'translate-taction-export' => 'Ricopyî foû',
+	'translate-page-settings-legend' => 'Tchuzes',
+	'translate-page-group' => 'Groupe:',
+	'translate-page-language' => 'Lingaedje',
+	'translate-page-limit' => 'Limite',
+	'translate-page-limit-option' => '$1 messaedje{{PLURAL:$1||s}} par pådje',
 	'translate-submit' => 'I va',
+	'translate-page-navigation-legend' => 'Naiviaedje',
+	'translate-page-showing' => 'Mostraedje des messaedje di $1 a $2 so $3.',
+	'translate-page-showing-all' => "Håynaedje {{PLURAL:$1|d' on messaedje|di $1 messaedjes}}.",
+	'translate-page-showing-none' => 'Nou messaedje a håyner.',
 	'translate-next' => 'Pådje shuvante',
 	'translate-prev' => 'Pådje di dvant',
+	'translate-page-description-legend' => 'Infôrmåcions sol groupe',
+	'translate-page-description-hasoptional-open' => 'Mostrer les messaedjes opcionels.',
+	'translate-page-edit' => 'candjî',
+	'translate-ext-url' => '<hr />Waibe: $1',
 	'translate-optional' => '(opcionel)',
 	'translate-ignored' => '(ignoré)',
+	'translate-edit-jsopen' => 'candjî',
+	'translate-edit-title' => 'Candjî «$1»',
+	'translate-magic-cm-to-be' => 'Divénrè',
+	'translate-magic-cm-current' => 'Asteure',
+	'translate-magic-cm-original' => 'Oridjinnå',
+	'translate-magic-cm-save' => 'Schaper',
+	'translationstats' => 'Sitatistikes di ratournaedje',
+	'translate-stats-edits' => 'Candjmints',
+	'translate-stats-users' => 'Ratourneus',
+	'translate-stats-registrations' => 'Edjîstraedjes',
+	'translate-stats-reviews' => 'Verifiaedjes',
+	'translate-stats-reviewers' => 'Verifieus',
+	'translate-statsf-intro' => 'Vos ploz produre des statistikes simpes a pårti di cisse formulrece ci.
+Totes les valixhances ont des limites pa dzeur et pa dzo.',
+	'translate-statsf-options' => 'Tchuzes pol grafike',
+	'translate-statsf-width' => 'Lårdjeur e picsels:',
+	'translate-statsf-height' => 'Hôteur e picsels:',
+	'translate-statsf-days' => 'Termene e nombe di djoûs:',
+	'translate-statsf-start' => 'Date di cmince:',
+	'translate-statsf-scale' => 'Schåle:',
+	'translate-statsf-scale-months' => 'moes',
+	'translate-statsf-scale-weeks' => 'samwinnes',
+	'translate-statsf-scale-days' => 'djoûs',
+	'translate-statsf-scale-hours' => 'eures',
+	'translate-statsf-count' => "Çou k' on mezeure:",
+	'translate-statsf-count-edits' => 'nombe di candjmints',
+	'translate-statsf-count-users' => 'ratourneus actifs',
+	'translate-statsf-count-registrations' => 'noveas uzeus',
+	'translate-statsf-count-reviews' => 'verifiaedjes',
+	'translate-statsf-count-reviewers' => 'verifieus',
+	'translate-statsf-language' => 'Djivêye di côdes di lingaedje, dispårtis pa des comas:',
+	'translate-statsf-group' => 'Djivêye di côdes di groupes, dispårtis pa des comas:',
+	'translate-statsf-submit' => 'Vey divant',
+	'translate-tag-category' => "Pådjes k' on pout ratourner",
+	'translate-tag-page-desc' => 'Ratournaedje del pådje wiki [[$2|$1]].',
+	'translate-tag-fuzzy-comment' => 'Definixha candjî pa [[User:$1|$1]] al modêye $2.',
+	'translate-tag-fuzzy-reason' => "Definixha candjî pa «$1» avou l' comintaire «$3» e $2.",
+	'translate-sidebar-alltrans' => 'Dins ds ôtes lingaedjes',
+	'translations' => 'Tos les ratournaedjes',
+	'translate-translations-none' => 'Nou ratournaedje po «$1»',
+	'translate-translations-fieldset-title' => 'Messaedje',
+	'languagestats-summary' => 'Cisse pådje ci mostere les statistikes di ratournaedje di tos les groupes di messaedjes po on lingaedje diné.',
+	'translate-langstats-expand' => 'diswalper',
+	'translate-langstats-collapse' => 'erôler',
+	'translate-langstats-expandall' => 'diswalper ttafwait',
+	'translate-langstats-collapseall' => 'erôler ttafwait',
+	'translate-language-code' => 'Côde do lingaedje',
+	'translate-language-code-field-name' => 'Côde do lingaedje:',
+	'translate-suppress-complete' => 'Èn nén mostrer les groupes di messaedjes ratournés pår',
+	'translate-ls-noempty' => 'Èn nén mostrer les groupes di messaedjes sins nou ratournaedje',
+	'translate-language' => 'Lingaedje',
+	'translate-total' => 'Messaedjes',
+	'translate-untranslated' => 'Nén ratournés',
+	'translate-percentage-complete' => 'Completaedje',
+	'translate-percentage-fuzzy' => 'Trop vîs',
+	'translate-ls-submit' => 'Håyner les statistikes',
+	'translate-ls-column-group' => 'Groupe di messaedjes',
+	'translate-mgs-pagename' => 'Sitatistikes do groupe di messaedjes',
+	'translate-mgs-fieldset' => 'Preferinces di håynaedje',
+	'translate-mgs-group' => 'Groupe di messaedjes:',
+	'translate-mgs-nocomplete' => "Èn nén mostrer les lingaedjes k' ont ratourné ttafwait",
+	'translate-mgs-noempty' => 'Èn nén mostrer les lingaedjes sins nou ratournaedje',
+	'translate-mgs-submit' => 'Håyner les statistikes',
+	'translate-mgs-column-language' => 'Lingaedje',
+	'translate-mgs-totals' => 'Tos les lingaedjes eshonne',
+	'translate-mgs-invalid-group' => "Li groupe dimandé $1 n' egzistêye nén.",
+	'supportedlanguages' => 'Lingaedjes sopoirtés',
+	'supportedlanguages-summary' => "Cisse pådje ci mostere tos les lingaedjes sopoirtés pa {{SITENAME}}, 
+avou les nos des ratourneus k' ovrèt e tchaeke lingaedje.
+Li no d'on ratourneu est metou pus grand sorlon l' cwantité di candjmints k' il a fwait.
+Li coleur do sorlignaedje mostere s' il a stî actif dierinnmint.",
+	'supportedlanguages-colorlegend' => 'Ledjinde des coleurs: Dierin ratournaedje i gn $1 djoûs.',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Ratourneu|Ratourneus}}: $1',
+	'supportedlanguages-recenttranslations' => 'dierins ratournaedjes',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|lingaedje|lingaedjes}} å totå.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|candjmint|candjmints}} - dierin candjmint i gn $3 {{PLURAL:$3|djoû|djoûs}}',
+	'translate-save' => 'Schaper ($1)',
+	'translate-jssti-add' => 'Radjouter el djivêye',
+	'managemessagegroups' => 'Manaedjaedje des groupes',
+	'translate-smg-notallowed' => "Vos n' poloz nén fé ciste accion ci.",
+	'translate-smg-nochanges' => 'I gn a nou candjmint a traitî.',
+	'translate-smg-submit' => 'Evoyî les candjmints po esse traitîs',
+	'translate-smg-submitted' => 'Les definixhas des messaedjes ont stî metowes a djoû. Les candjmints sont traitîs en erî-plan.',
+	'translate-manage-import-diff' => 'Messaedje $1 | Accions: $2',
+	'translate-manage-import-new' => 'Novea messaedje $1',
+	'translate-manage-import-deleted' => 'Messaedje disfacé $1',
+	'translate-manage-action-import' => 'ristitchî',
+	'translate-manage-action-conflict' => 'ristitchî et marker «fuzzy»',
+	'translate-manage-action-ignore' => 'passer houte',
+	'translate-manage-action-fuzzy' => 'Ristitchî les ratournaedjes et les marker come «fuzzy»',
+	'translate-manage-nochanges' => "I n' a nou candjmint dins les definixhas des messaedjes po ç' groupe ci.",
+	'translate-manage-nochanges-other' => "I n' a yeu nou candjmint po ç' lingaedje ci.
+Eployîz l' loyén chal pa dzo po rivni al vuwe di detays do groupe.",
+	'translate-js-save' => 'Schaper',
+	'translate-js-next' => "Schaper et drovi l' shuvant",
+	'translate-dynagroup-recent-label' => 'Dierins ratournaedjes',
+	'translate-dynagroup-recent-desc' => "Ci groupe ci mostere les ratournaedjes fwaits dierinnmint dins l' lingaedje.
+Il est eployî copurade po les bouyes di verifiaedje.",
+	'translate-gethelp' => 'Aidance',
 );
 
 /** Kalmyk (Хальмг)

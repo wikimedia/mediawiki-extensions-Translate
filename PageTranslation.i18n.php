@@ -1076,6 +1076,7 @@ Kent merkañ ar stumm-mañ evit an treiñ, gwiriait mat n'eus ket bet nemeur a g
 	'tpt-other-pages' => "Merket ez eus bet da vezañ troet {{PLURAL:$1|ur stumm kozh eus ar bajenn-mañ|stummoù koshoc'h eus ar pajennoù-mañ}};
 ar {{PLURAL:$1|stumm|stummoù}} diwezhañ avat n'hallont ket bezañ merket da vezañ troet.",
 	'tpt-discouraged-pages' => "Dizerbedet eo treiñ ar {{PLURAL:$1|bajenn-mañ|pajennoù-mañ}} pelloc'h.",
+	'tpt-select-prioritylangs' => "Roll kodoù ar yezhoù d'ober ganto da gentañ, dispartiet gant skejoù :",
 	'tpt-select-prioritylangs-reason' => 'Abeg :',
 	'tpt-sections-prioritylangs' => 'Yezhoù pouezusañ',
 	'tpt-rev-mark' => 'merkañ da vezañ troet',
@@ -1093,6 +1094,7 @@ ar {{PLURAL:$1|stumm|stummoù}} diwezhañ avat n'hallont ket bezañ merket da ve
 	'tpt-translation-intro' => 'Ur stumm <span class="plainlinks">[$1 troet]</span> eus ar bajenn [[$2]] eo ar bajenn-mañ; kaset ez eus bet da benn $3% eus an droidigezh anezhi, ha diouzh an deiz emañ.',
 	'tpt-translation-intro-fuzzy' => 'An troidigezhioù diamzeret zo merket evel-henn.',
 	'tpt-languages-legend' => 'Yezhoù all :',
+	'tpt-languages-zero' => 'Stagañ gant an troidigezhioù evit ar yezh-se',
 	'tpt-target-page' => "N'hall ket ar bajenn-mañ bezañ hizivaet gant an dorn.
 Ur stumm troet eus [[$1]] eo ar bajenn-mañ; gallout a ra bezañ hizivaet en ur implijout [$2 an ostilh treiñ].",
 	'tpt-unknown-page' => "Miret eo an esaouenn anv-mañ evit troidigezh ar pajennoù.
@@ -8315,6 +8317,7 @@ Lý do: $1',
 	'tpt-discouraged-language' => 'Ngôn ngữ này không phải là một trong những ngôn ngữ quan trọng theo người quản lý biên dịch của trang này.
 
 Lý do: $1',
+	'tpt-discouraged-language-reason' => 'Lý do: $1',
 	'tpt-priority-languages' => 'Một người quản lý biên dịch đã đặt các ngôn ngữ quan trọng của nhóm này là $1.',
 	'tpt-render-summary' => 'Cập nhật đến phiên bản mới của trang nguồn',
 	'tpt-download-page' => 'Xuất trang cùng các bản dịch',
