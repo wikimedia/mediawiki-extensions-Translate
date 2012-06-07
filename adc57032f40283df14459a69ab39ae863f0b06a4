@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAL3///Zg\u003d",
+        "filename": "Translate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-06-07T14:59:56Z",
+      "side": 1,
+      "message": "Can you make sure there is BC for this, or would that create a lot of additional complexity?",
+      "revId": "adc57032f40283df14459a69ab39ae863f0b06a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
