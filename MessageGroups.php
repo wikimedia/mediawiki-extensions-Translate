@@ -303,6 +303,25 @@ abstract class MessageGroupOld implements MessageGroup {
 	public function setConfiguration( $conf ) { }
 	public function getConfiguration() { }
 	public function getFFS() { return null; }
+
+	/**
+	 * Get the workflow configuration for the group.
+	 */
+	public function getWorkflowConfiguration() {
+		global $wgTranslateWorkflowStates;
+		// If set to false or empty string, return false;
+		if( !$wgTranslateWorkflowStates ) {
+			return false;
+		}
+		if ( isset( $wgTranslateWorkflowStates[$this->getId()] ) ) {
+			return $wgTranslateWorkflowStates[$this->getId()];
+		}
+		// return default configuration
+		if ( isset( $wgTranslateWorkflowStates["default"] ) ) {
+			return $wgTranslateWorkflowStates['default'];
+		}
+		return false;
+	}
 }
 
 /**
