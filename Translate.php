@@ -551,19 +551,29 @@ $wgTranslateGroupRoot = '/var/www/externals';
 $wgTranslateGroupFiles = array();
 
 /**
- * List of possible message group review workflow states and colors for each state.
- * Users who have translate-groupreview right can set this in Special:Translate.
+ * List of possible message group review workflow states and properties
+ * for each state.
+ * The currently supported properties are:
+ * * color: the color that is used for displaying the state in the tables.
+ * * right: additional right that is needed to set the state.
+ * Users who have the translate-groupreview right can set this in
+ * Special:Translate.
  * The state is visible in Special:Translate, Special:MessageGroupStats and
- * Special:LanguageStats. If the value is false, the workflow states feature
- * is disabled.
- * Up two 32 characters each.
+ * Special:LanguageStats.
+ * If the value is false, the workflow states feature is disabled.
+ * State name can be up to 32 characters maximum.
  * Example:
- * array(
- *      'new' => 'FF0000', // red
- *      'needs_proofreading' => '0000FF', // blue
- *      'ready' => 'FFFF00', // yellow
- *      'published' => '00FF00', // green
+ * $wgTranslateWorkflowStates["groupid"] = array(
+ *      'new' => array( 'color' => 'FF0000' ), // red
+ *      'needs_proofreading' => array( 'color' => '0000FF' ), // blue
+ *      'ready' => array( 'color' => 'FFFF00' ), // yellow
+ *      'published' => array(
+ *          'color' => '00FF00', // green
+ *          'right' => 'centralnotice-admin',
+ *      ),
  * );
+ * If there is a default workflowstate for all groups, define it like this:
+ *  $wgTranslateWorkflowStates["default"] = array( // configuration )
  *
  */
 $wgTranslateWorkflowStates = false;

@@ -629,8 +629,9 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function getWorkflowStatus() {
-		global $wgTranslateWorkflowStates, $wgUser;
-		if ( !$wgTranslateWorkflowStates ) {
+		global $wgUser;
+		$translateWorkflowStates = $this->group->getWorkflowConfiguration();
+		if ( !$translateWorkflowStates ) {
 			return false;
 		}
 
@@ -647,19 +648,48 @@ class SpecialTranslate extends SpecialPage {
 		);
 
 		if ( $wgUser->isAllowed( 'translate-groupreview' ) ) {
-			$selector = new XmlSelect( 'workflow' );
-
-			$selector->setAttribute( 'class', 'mw-translate-workflowselector' );
-			$selector->setDefault( $current );
-			$selector->addOption( wfMessage( 'translate-workflow-state-' )->text(), '' );
-			foreach ( array_keys( $wgTranslateWorkflowStates ) as $state ) {
+			// Always add an option for "unset" state
+			$unsetOptionAttributes = array(
+				'value' => '',
+			);
+			if ( !$current ) {
+				$unsetOptionAttributes['selected'] = 'selected';
+			}
+			$workflowStatesOptions = Xml::element( 'option',
+				$unsetOptionAttributes,
+				wfMessage( 'translate-workflow-state-' )->text()
+			);
+			// Add an option for every state
+			foreach ( array_keys( $translateWorkflowStates ) as $state ) {
 				$stateMessage = wfMessage( "translate-workflow-state-$state" );
 				$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
-				$selector->addOption( $stateText, $state );
-			}
-			$state = $selector->getHTML();
 
-			$attributes = array(
+				$workflowStatesOptionAttributes = array(
+					'value' => $state,
+				);
+
+				if ( ( isset( $translateWorkflowStates[$state]['right'] ) )
+					&& ( !$wgUser->isAllowed( $translateWorkflowStates[$state]['right'] ) ) )
+				{
+					// Grey out the forbidden option
+					$workflowStatesOptionAttributes['disabled'] = 'disabled';
+				}
+
+				if ( $state === $current ) {
+					$workflowStatesOptionAttributes['selected'] = 'selected';
+				}
+
+				$workflowStatesOptions .= Html::element( 'option', $workflowStatesOptionAttributes, $stateText );
+			}
+			$stateIndicator = Html::rawElement( 'select',
+				array(
+					'class' => 'mw-translate-workflowselector',
+					'name' => 'workflow',
+				),
+				$workflowStatesOptions
+			);
+
+			$setButtonAttributes = array(
 				'type' => 'button',
 				'id' => 'mw-translate-workflowset',
 				'data-token' => ApiGroupReview::getToken( 0, '' ),
@@ -668,14 +698,14 @@ class SpecialTranslate extends SpecialPage {
 				'style' => 'visibility: hidden;',
 				'value' => 'Set',
 			);
-			$state .= Html::element( 'input', $attributes );
+			$stateIndicator .= Html::element( 'input', $setButtonAttributes );
 		} elseif ( strval( $current ) !== '' ) {
-			$state = $current;
+			$stateIndicator = $current;
 		} else {
-			$state = wfMessage( 'translate-workflow-state-' )->escaped();
+			$stateIndicator = wfMessage( 'translate-workflow-state-' )->escaped();
 		}
 
-		$message = wfMessage( 'translate-workflowstatus' )->rawParams( $state );
+		$message = wfMessage( 'translate-workflowstatus' )->rawParams( $stateIndicator );
 		$box = Html::rawElement( 'div', array( 'id' => 'mw-sp-translate-workflow' ), $message->escaped() );
 		return $box;
 	}

@@ -17,8 +17,14 @@ class ApiGroupReview extends ApiBase {
 	protected static $salt = 'translate-groupreview';
 
 	public function execute() {
-		global $wgUser, $wgTranslateWorkflowStates;
-		if ( !$wgTranslateWorkflowStates ) {
+		global $wgUser;
+		$requestParams = $this->extractRequestParams();
+		$group = MessageGroups::getGroup( $requestParams['group'] );
+		if ( !$group ) {
+			$this->dieUsageMsg( array( 'missingparam', 'group' ) );
+		}
+		$translateWorkflowStates = $group->getWorkflowConfiguration();
+		if ( !$translateWorkflowStates ) {
 			$this->dieUsage( 'Message group review not in use', 'disabled' );
 		}
 
@@ -27,11 +33,6 @@ class ApiGroupReview extends ApiBase {
 		}
 
 		$requestParams = $this->extractRequestParams();
-
-		$group = MessageGroups::getGroup( $requestParams['group'] );
-		if ( !$group ) {
-			$this->dieUsageMsg( array( 'missingparam', 'group' ) );
-		}
 
 		$languages = Language::getLanguageNames( false );
 		if ( !isset( $languages[$requestParams['language']] ) ) {
@@ -46,17 +47,20 @@ class ApiGroupReview extends ApiBase {
 			array( 'tgr_group' => $groupid, 'tgr_lang' => $requestParams['language'] ),
 			__METHOD__
 		);
-
-		if ( $currentState == $requestParams['state'] ) {
+		$targetState = $requestParams['state'];
+		if ( $currentState == $targetState ) {
 			$this->dieUsage( 'The requested state is identical to the current state', 'sameworkflowstate' );
 		}
-
+		if ( ( isset( $translateWorkflowStates[$targetState]['right'] ) )
+				&& ( !$wgUser->isAllowed( $translateWorkflowStates[$targetState]['right'] ) ) ) {
+			$this->dieUsage( 'Permission denied', 'permissiondenied' );
+		}
 		$dbw = wfGetDB( DB_MASTER );
 		$table = 'translate_groupreviews';
 		$row = array(
 			'tgr_group' => $groupid,
 			'tgr_lang' => $requestParams['language'],
-			'tgr_state' => $requestParams['state'],
+			'tgr_state' => $targetState,
 		);
 		$index = array( 'tgr_group', 'tgr_language' );
 		$res = $dbw->replace( $table, array( $index ), $row, __METHOD__ );
@@ -66,7 +70,7 @@ class ApiGroupReview extends ApiBase {
 			$requestParams['language'],
 			$group->getLabel(),
 			$currentState,
-			$requestParams['state'],
+			$targetState,
 		);
 		$logger->addEntry(
 			'group',
@@ -79,7 +83,7 @@ class ApiGroupReview extends ApiBase {
 		$output = array( 'review' => array(
 			'group' => $group->getId(),
 			'language' => $requestParams['language'],
-			'state' => $requestParams['state'],
+			'state' => $targetState,
 		) );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );

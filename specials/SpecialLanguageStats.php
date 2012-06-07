@@ -258,6 +258,8 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		if ( $wgTranslateWorkflowStates ) {
 			$this->states = self::getWorkflowStates();
+
+			// An array where keys are state names and values are numbers
 			$this->statemap = array_flip( array_keys( $wgTranslateWorkflowStates ) );
 			$this->table->addExtraColumn( wfMessage( 'translate-stats-workflow' ) );
 		}
@@ -271,17 +273,31 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * @return string
 	 */
 	function getWorkflowStateCell( $target ) {
-		global $wgTranslateWorkflowStates;
-
-		if ( $wgTranslateWorkflowStates ) {
+		$group = MessageGroups::getGroup( $target );
+		$translateWorkflowStates = false;
+		if($group){
+			$translateWorkflowStates = $group->getWorkflowConfiguration();
+		}
+		if ( $translateWorkflowStates ) {
 			$state = isset( $this->states[$target] ) ? $this->states[$target] : '';
 			$sort = isset( $this->statemap[$state] ) ? $this->statemap[$state] + 1 : -1;
 			$stateMessage = wfMessage( "translate-workflow-state-$state" );
 			$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
 
+			$cellBgColor = '';
+			if( isset( $translateWorkflowStates[$state] )
+				&& is_array( $translateWorkflowStates[$state] )
+				&& isset( $translateWorkflowStates[$state]['color'] ) ) {
+				$cellBgColor = $translateWorkflowStates[$state]['color'];
+			} else {
+				// BC for old format of workflow state configuration.
+				$cellBgColor = isset( $translateWorkflowStates[$state] )
+				? $translateWorkflowStates[$state]
+				: '';
+			}
 			return "\n\t\t" . $this->table->element(
 				$stateText,
-				isset( $wgTranslateWorkflowStates[$state] ) ? $wgTranslateWorkflowStates[$state] : '',
+				$cellBgColor,
 				$sort
 			);
 		}
@@ -402,7 +418,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			}
 		}
 
-		
+
 		if ( !$group instanceof AggregateMessageGroup  ) {
 			if ( !isset( $this->statsCounted[$groupId] ) ) {
 				$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
