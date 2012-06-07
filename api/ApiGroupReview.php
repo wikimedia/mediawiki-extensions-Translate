@@ -17,8 +17,14 @@ class ApiGroupReview extends ApiBase {
 	protected static $salt = 'translate-groupreview';
 
 	public function execute() {
-		global $wgUser, $wgTranslateWorkflowStates;
-		if ( !$wgTranslateWorkflowStates ) {
+		global $wgUser;
+		$requestParams = $this->extractRequestParams();
+		$group = MessageGroups::getGroup( $requestParams['group'] );
+		if ( !$group ) {
+			$this->dieUsageMsg( array( 'missingparam', 'group' ) );
+		}
+		$translateWorkflowStates = $group->getWorkflowConfiguration();
+		if ( !$translateWorkflowStates ) {
 			$this->dieUsage( 'Message group review not in use', 'disabled' );
 		}
 
@@ -27,11 +33,6 @@ class ApiGroupReview extends ApiBase {
 		}
 
 		$requestParams = $this->extractRequestParams();
-
-		$group = MessageGroups::getGroup( $requestParams['group'] );
-		if ( !$group ) {
-			$this->dieUsageMsg( array( 'missingparam', 'group' ) );
-		}
 
 		$languages = Language::getLanguageNames( false );
 		if ( !isset( $languages[$requestParams['language']] ) ) {
@@ -46,9 +47,16 @@ class ApiGroupReview extends ApiBase {
 			array( 'tgr_group' => $groupid, 'tgr_lang' => $requestParams['language'] ),
 			__METHOD__
 		);
-
-		if ( $currentState == $requestParams['state'] ) {
+		$targetState = $requestParams['state'];
+		if ( $currentState == $targetState ) {
 			$this->dieUsage( 'The requested state is identical to the current state', 'sameworkflowstate' );
+		}
+		if ( ( isset( $translateWorkflowStates[$targetState]['right'] ) )
+				&& ( !$wgUser->isAllowed( $translateWorkflowStates[$targetState]['right'] ) ) ) {
+			$this->dieUsage( 'Permission denied', 'permissiondenied' );
+		}
+		if ( !isset( $translateWorkflowStates[$targetState] ) ) {
+				$this->dieUsage( 'The requested state is invalid', 'invalidstate' );
 		}
 
 		$dbw = wfGetDB( DB_MASTER );
@@ -56,7 +64,7 @@ class ApiGroupReview extends ApiBase {
 		$row = array(
 			'tgr_group' => $groupid,
 			'tgr_lang' => $requestParams['language'],
-			'tgr_state' => $requestParams['state'],
+			'tgr_state' => $targetState,
 		);
 		$index = array( 'tgr_group', 'tgr_language' );
 		$res = $dbw->replace( $table, array( $index ), $row, __METHOD__ );
@@ -66,7 +74,7 @@ class ApiGroupReview extends ApiBase {
 			$requestParams['language'],
 			$group->getLabel(),
 			$currentState,
-			$requestParams['state'],
+			$targetState,
 		);
 		$logger->addEntry(
 			'group',
@@ -79,7 +87,7 @@ class ApiGroupReview extends ApiBase {
 		$output = array( 'review' => array(
 			'group' => $group->getId(),
 			'language' => $requestParams['language'],
-			'state' => $requestParams['state'],
+			'state' => $targetState,
 		) );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
@@ -98,7 +106,6 @@ class ApiGroupReview extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		global $wgTranslateWorkflowStates;
 		return array(
 			'group' => array(
 				ApiBase::PARAM_TYPE => array_keys( MessageGroups::getAllGroups() ),
@@ -109,7 +116,7 @@ class ApiGroupReview extends ApiBase {
 				ApiBase::PARAM_DFLT => 'en',
 			),
 			'state' => array(
-				ApiBase::PARAM_TYPE => array_keys( (array) $wgTranslateWorkflowStates ),
+				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
 			),
 			'token' => array(
@@ -139,16 +146,15 @@ class ApiGroupReview extends ApiBase {
 			array( 'code' => 'permissiondenied', 'info' => "You must have $right right" ),
 			array( 'code' => 'disabled', 'info' => "Message group workflows are not in use" ),
 			array( 'code' => 'sameworkflowstate', 'info' => "The requested state is identical to the current state" ),
+			array( 'code' => 'invalidstate', 'info' => "The requested state is invalid" ),
 		) );
 	}
 
 	public function getExamples() {
-		global $wgTranslateWorkflowStates;
 		$groups = MessageGroups::getAllGroups();
 		$group = key( $groups );
-		$state = current( (array) $wgTranslateWorkflowStates );
 		return array(
-			"api.php?action=groupreview&group=$group&language=de&state=$state",
+			"api.php?action=groupreview&group=$group&language=de&state=ready",
 		);
 	}
 
