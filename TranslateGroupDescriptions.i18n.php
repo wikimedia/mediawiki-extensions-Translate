@@ -516,7 +516,7 @@ Vysvětlení klíčů u funkce PLURAL najdete na [http://unicode.org/repos/cldr-
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] je mnohoplatformní mobilní a tabletová aplikace pro čtení Wikipedie a přispívání do ní',
 );
 
-/** Danish (Dansk)
+/** Danish (dansk)
  * @author Byrial
  * @author Emilkris33
  * @author Peter Alberti
@@ -567,9 +567,11 @@ $messages['da'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] er en microblogging server',
 	'translate-group-desc-statusnet-plugin' => 'Disse meddelelser er en del af et plugin til [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'En besked gruppe for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n systemet til [http://toolserver.org Toolserver] værktøjer (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] er en tjeneste, der viser vandre-, cykel-, mountainbike- og rulleskøjteruter for hele verden. Den bruger GNU GPL-licensen.',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] er i stand til hurtigt at finde forfatterne til en del af en side i en Wikimedia wiki',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] giver en frakoblet tekstudgave af Wikipedia på en mobil enhed.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] er et flerplatforms mobil- og tabletprogram til at læse og bidrage til Wikipedia',
+	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] er et flerplatforms mobil- og tabletprogram til at læse og bidrage til Wiktionary',
 );
 
 /** German (Deutsch)
@@ -1459,8 +1461,8 @@ $messages['ja'] = array(
 	'translate-group-desc-socialprofile' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]のすべてのメッセージを含む上位メッセージ群',
 	'translate-group-desc-translate' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:Translate Translate]のすべてのメッセージを含む上位メッセージ群',
 	'translate-group-desc-wikiaextensions' => '[http://www.wikia.com Wikia]で使われているMediaWiki拡張機能によってサポートされた、すべてのメッセージからなる上位メッセージ群',
-	'translate-group-desc-wikimediaextensions' => '[http://wikimedia.org/ ウィキメディア財団]で使われているMediaWiki拡張機能にサポートされた、すべてのメッセージからなる上位メッセージ群',
-	'translate-group-desc-wikimediaextensions-main' => 'ウィキメディアの[http://meta.wikimedia.org/wiki/Language_committee 言語委員会]が翻訳を要求するMediaWiki拡張機能にサポートされた、すべてのメッセージからなる上位メッセージ群',
+	'translate-group-desc-wikimediaextensions' => '[http://wikimedia.org/ ウィキメディア財団]が使用している、サポート対象のMediaWiki拡張機能のすべてのメッセージを含む上位メッセージ群',
+	'translate-group-desc-wikimediaextensions-main' => 'ウィキメディアの[http://meta.wikimedia.org/wiki/Language_committee 言語委員会]が翻訳を必要とする、サポート対象のMediaWiki拡張機能のすべてのメッセージを含む上位メッセージ群',
 	'translate-group-desc-uniwiki' => '[http://unicefinnovation.org/wiki.php Uniwiki]に関連する拡張機能のすべてのメッセージを含む上位メッセージ群',
 	'translate-group-desc-ui' => '[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative ウィキペディアの使用性改善]に関連した拡張機能のすべてのメッセージを含む上位メッセージ群',
 	'translate-group-desc-translatablepages' => '翻訳可能なすべてのページ',
@@ -2128,9 +2130,11 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'bw-desc-statusnet' => "[[Translating:StatusNet|StatusNet]] a l'é un servent ëd microscartari a sorgiss duverta",
 	'translate-group-desc-statusnet-plugin' => "Sti mëssagi a fan part ëd n'estension për [[Translating:StatusNet|StatusNet]]",
 	'translate-group-desc-tsint' => 'Na partìa ëd mëssagi për [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], ël sistema i18n për [http://toolserver.org Toolserver] utiss (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detaj técnich]</span>)',
+	'translate-group-desc-waymarked-trails' => "[[Translating:Waymarked Trails|Waymarked Trails]] a l'é un servissi ch'a mosta le stra për escursion, bici, rampichin e patinagi anlinia d'antorn al mond. A dòvra la licensa GNU GPL",
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] a peil trové an pressa j'àutor ëd na pàgina an na wiki ëd Wikimedia.",
 	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] a l'é un proget për fé na version ëd Wikipedia fòra linia, ëd sol test, dzora a na perifèrica mòbil.",
 	'translate-group-desc-wikipediamobile' => "[[Translating:WikipediaMobile|WikipediaMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wikipedia",
+	'translate-group-desc-wiktionarymobile' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wiktionary",
 );
 
 /** Portuguese (Português)

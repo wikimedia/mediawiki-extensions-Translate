@@ -1099,6 +1099,7 @@ ar {{PLURAL:$1|stumm|stummoù}} diwezhañ avat n'hallont ket bezañ merket da ve
 Ur stumm troet eus [[$1]] eo ar bajenn-mañ; gallout a ra bezañ hizivaet en ur implijout [$2 an ostilh treiñ].",
 	'tpt-unknown-page' => "Miret eo an esaouenn anv-mañ evit troidigezh ar pajennoù.
 Ar bajenn hoc'h eus klasket kemm ne seblant ket klotañ gant pajenn ebet bet merket evit bezañ troet.",
+	'tpt-discouraged-language-reason' => 'Abeg : $1',
 	'tpt-render-summary' => 'Hizivadenn da glotañ gant stumm nevez mammenn ar bajenn',
 	'tpt-download-page' => 'Ezporzhiañ ar bajenn gant an troidigezhioù',
 	'tpt-aggregategroup-add' => 'Ouzhpennañ',
@@ -1481,7 +1482,7 @@ $messages['cy'] = array(
 	'pagetranslation' => 'Cyfieithu tudalen',
 );
 
-/** Danish (Dansk)
+/** Danish (dansk)
  * @author Byrial
  * @author Emilkris33
  * @author Peter Alberti
@@ -1527,6 +1528,7 @@ kontrollér før denne version markeres for oversættelse, at ændringerne i sek
 men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til oversættelse.',
 	'tpt-select-prioritylangs' => 'Liste over sprogkoder for prioriterede sprog, adskilt med kommaer:',
 	'tpt-select-prioritylangs-reason' => 'Begrundelse:',
+	'tpt-sections-prioritylangs' => 'Prioriterede sprog',
 	'tpt-rev-unmark' => 'fjern denne side fra oversættelse',
 	'translate-tag-translate-link-desc' => 'Oversæt denne side',
 	'translate-tag-markthis' => 'Markér denne side for oversættelse',
@@ -1540,6 +1542,7 @@ men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til 
 Siden er en oversættelse af siden [[$1]] og oversættelsen kan opdateres ved at bruge [$2 oversættelsesværktøjet].',
 	'tpt-unknown-page' => 'Dette navnerum er reserveret til oversættelser af indholdssider.
 Siden som du prøver at redigere, ser ikke ud til at svare til nogen side markeret for oversættelse.',
+	'tpt-discouraged-language-reason' => 'Begrundelse: $1',
 	'tpt-render-summary' => 'Opdaterer for at passe til en ny version af kildesiden',
 	'tpt-download-page' => 'Eksportér side med oversættelser',
 	'tpt-aggregategroup-add' => 'Tilføj',
@@ -3872,7 +3875,7 @@ Elem szövege: <pre>$1</pre>',
 	'pt-deletepage-subpages' => 'Összes allap törlése',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -3950,6 +3953,7 @@ Motivo: $1',
 	'tpt-discouraged-language' => 'Iste lingua non es inter le linguas prioritari definite per le administrator de traductiones pro iste pagina.
 
 Motivo: $1',
+	'tpt-discouraged-language-reason' => 'Motivo: $1',
 	'tpt-priority-languages' => 'Un administrator de traduction ha definite le linguas prioritari pro iste gruppo como $1.',
 	'tpt-render-summary' => 'Actualisation a un nove version del pagina de origine',
 	'tpt-download-page' => 'Exportar pagina con traductiones',
@@ -4405,13 +4409,13 @@ $messages['ja'] = array(
 	'tpt-duplicate' => '翻訳単位名$1は、複数回使用されています。',
 	'tpt-already-marked' => 'このページの最新版は既に翻訳対象に指定されています。',
 	'tpt-unmarked' => 'ページ「$1」は既に翻訳対象ではありません。',
-	'tpt-list-nopages' => '翻訳対象に指定されたページがないか、翻訳対象に指定する準備ができているページがありません。',
+	'tpt-list-nopages' => '翻訳対象に指定されているページがないか、翻訳対象に指定する準備ができているページがありません。',
 	'tpt-new-pages-title' => '翻訳が提案されているページ',
 	'tpt-old-pages-title' => '翻訳対象ページ',
 	'tpt-other-pages-title' => '壊れたページ',
 	'tpt-discouraged-pages-title' => '翻訳が中止されたページ',
 	'tpt-new-pages' => '{{PLURAL:$1|このページ|これらのページ}}は本文に翻訳タグを含んでいますが、
-{{PLURAL:$1|このページ|これらのページ}}には翻訳対象に指定されている版がありません。',
+{{PLURAL:$1|このページ|これらのページ}}には現在、翻訳対象に指定されている版がありません。',
 	'tpt-old-pages' => '{{PLURAL:$1|このページには|これらのページには}}翻訳対象に指定された版があります。',
 	'tpt-other-pages' => '{{PLURAL:$1|このページの古い版|このページの複数の古い版}}が翻訳対象に指定されていますが、
 最新の{{PLURAL:$1|版}}は翻訳対象に指定できません。',
@@ -4421,7 +4425,7 @@ $messages['ja'] = array(
 	'tpt-select-prioritylangs-reason' => '理由：',
 	'tpt-sections-prioritylangs' => '主要言語',
 	'tpt-rev-mark' => '翻訳対象に指定',
-	'tpt-rev-unmark' => '翻訳から除去',
+	'tpt-rev-unmark' => '翻訳対象から除去',
 	'tpt-rev-discourage' => '翻訳中止',
 	'tpt-rev-encourage' => '復元',
 	'tpt-rev-mark-tooltip' => 'このページの最新版を翻訳対象に指定します。',
@@ -4441,9 +4445,11 @@ $messages['ja'] = array(
 	'tpt-unknown-page' => 'この名前空間はコンテンツ ページの翻訳のために予約されています。
 編集しようとしているページに対応する翻訳対象ページが存在しないようです。',
 	'tpt-translation-restricted' => '翻訳管理者がこのページのこの言語への翻訳を禁止しています。
+
 理由：$1',
-	'tpt-discouraged-language-force' => '翻訳管理者が、このページを翻訳できる言語を制限しています。この言語はそれらの言語に含まれていません。
-理由：$1',
+	'tpt-discouraged-language-force' => "'''このページは $2 に翻訳できません。'''
+
+翻訳管理者がこのページの翻訳先言語を $3 のみに制限しています。",
 	'tpt-discouraged-language' => 'この言語は、翻訳管理者がこのページに設定した主要言語に含まれていません。
 理由：$1',
 	'tpt-priority-languages' => '翻訳管理者が、このメッセージ群の主要言語を$1に設定しました。',
@@ -4490,11 +4496,11 @@ $messages['ja'] = array(
 	'pt-movepage-block-base-exists' => '対象の基底ページ[[:$1]]は既に存在しています。',
 	'pt-movepage-block-base-invalid' => '対象の基底ページは有効なタイトルではありません。',
 	'pt-movepage-block-tp-exists' => '対象の翻訳ページ[[:$2]]は既に存在しています。',
-	'pt-movepage-block-tp-invalid' => '対象の翻訳ページの題[[:$1]]が無効です（長過ぎる？）。',
+	'pt-movepage-block-tp-invalid' => '対象の翻訳ページの名前[[:$1]]が無効です（長過ぎる？）。',
 	'pt-movepage-block-section-exists' => '対象の節ページ[[:$2]]は既に存在しています。',
-	'pt-movepage-block-section-invalid' => '対象の節ページの題[[:$1]]が無効です（長過ぎる？）。',
-	'pt-movepage-block-subpage-exists' => '対象のサブページ[[:$2]]は既に存在しています。',
-	'pt-movepage-block-subpage-invalid' => '対象のサブページの題[[:$1]]が無効です（長過ぎる？）。',
+	'pt-movepage-block-section-invalid' => '対象の節ページの名前[[:$1]]が無効です（長過ぎる？）。',
+	'pt-movepage-block-subpage-exists' => '対象の下位ページ[[:$2]]は既に存在しています。',
+	'pt-movepage-block-subpage-invalid' => '対象の下位ページの名前[[:$1]]が無効です（長過ぎる？）。',
 	'pt-movepage-list-pages' => '移動するページの一覧',
 	'pt-movepage-list-translation' => '翻訳ページ',
 	'pt-movepage-list-section' => '節ページ',
@@ -4508,10 +4514,10 @@ $messages['ja'] = array(
 	'pt-movepage-action-check' => '移動が可能な場合にチェック',
 	'pt-movepage-action-perform' => '移動しない',
 	'pt-movepage-action-other' => '対象を変更',
-	'pt-movepage-intro' => 'この特別ページでは、翻訳対象に指定されたページを移動できます。
+	'pt-movepage-intro' => 'この特別ページでは、翻訳対象に指定されているページを移動できます。
 多くのページを移動する必要があるため、移動操作はすぐには完了しません。
 ページの移動中は、そのページの操作はできません。
-失敗した場合は、その[[Special:Log/pagetranslation|ページの翻訳ログ]]に記録されるので、手動で修正する必要があります。',
+失敗した場合は、その[[Special:Log/pagetranslation|ページの翻訳記録]]に記録されるため、手動で修正する必要があります。',
 	'pt-movepage-logreason' => '翻訳可能ページ$1の一部。',
 	'pt-movepage-started' => '基底ページが移動されました。
 [[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認してください。',
@@ -4525,7 +4531,7 @@ $messages['ja'] = array(
 	'pt-deletepage-action-other' => '対象を変更',
 	'pt-deletepage-lang-legend' => '翻訳ページを削除',
 	'pt-deletepage-full-legend' => '翻訳可能ページを削除',
-	'pt-deletepage-any-legend' => '翻訳可能ページや、翻訳可能ページや翻訳を削除',
+	'pt-deletepage-any-legend' => '翻訳可能ページ、または翻訳可能ページの翻訳を削除',
 	'pt-deletepage-current' => 'ページ名：',
 	'pt-deletepage-reason' => '理由：',
 	'pt-deletepage-subpages' => '下位ページをすべて削除',
@@ -4723,6 +4729,17 @@ $messages['ksh'] = array(
 	'tpt-languages-zero' => 'Donn ens loßlääje mem Övversäze en heh di Schprooch',
 	'tpt-target-page' => 'Hee di Sigg kam_mer nit vun Hand ändere. Dat hee es en Översäzungß_Sigg vun dä Sigg [[$1]]. De Övversäzung kam_mer övver däm Wiki sing [$2 Övversäzungß_Wärkzüsch] op der neußte Shtand bränge.',
 	'tpt-unknown-page' => 'Dat Appachtemang hee es för Sigge vum Enhallt vum Wiki ze Övversäze jedaach. Di Sigg, di de jraad ze ändere versöhks, schingk ävver nit met ööhnds en Sigg ze donn ze han, di för zem Övversäze makeet es.',
+	'tpt-translation-restricted' => 'Et en di Schprooch hät ene Verwallder vum Övversäzze för heh di Sigg verbodde.
+
+Jrond: $1',
+	'tpt-discouraged-language-force' => "'''Heh di Sigg kam_mer nit op $2 övversäze.'''
+
+Ene Verwallder vum Övversäzze hät faßjelaat, dat di Sigg bloß op $3 övversaz wääde sull.",
+	'tpt-discouraged-language' => "'''Heh di Sigg op $2 övversäze hät keine Vörrang.'''
+
+Ene Verwallder vum Övversäzze hät faßjelaat, dat di Sigg en de Houpsaach op $3 övversaz wääde sull.",
+	'tpt-discouraged-language-reason' => 'Jrond: $1',
+	'tpt-priority-languages' => 'Ene Verwallder vum Övversäzze hät de Houpschprooche för heh di Jropp op $1 jesaz.',
 	'tpt-render-summary' => 'Ändere, öm op de neue Version fun de Ojinaal_Sigg ze kumme',
 	'tpt-download-page' => 'Sigge met Övversäzunge expotteere',
 	'aggregategroups' => 'Sammeljroppe',
@@ -4730,6 +4747,7 @@ $messages['ksh'] = array(
 	'tpt-aggregategroup-save' => 'Faßhalde',
 	'tpt-aggregategroup-add-new' => 'Donn en neu Sammeljropp derbei',
 	'tpt-aggregategroup-new-name' => 'Dä Name vun dä Jropp:',
+	'tpt-aggregategroup-new-description' => 'Wat en dä Sammeljrobb es (kann läddesch blieve):',
 	'tpt-aggregategroup-remove-confirm' => 'Wells De di Sammeljropp verhaftesch fott schmiiße?',
 	'tpt-aggregategroup-invalid-group' => 'Di Jropp jidd_et nit',
 	'pt-parse-open' => 'En &lt;translate&gt; es ohne Jääjeshtöck.
@@ -4753,6 +4771,13 @@ Dä Täx vun däm Affschned es: <pre>$1</pre>',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|hädd}} e Problem jehatt beim Fottschmieße vun dä övversäbaa Sigg „[[:$1]]“',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|hät}} de övversaz Sigg „$1“ fäädesch fottjeschmeße.',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|hät}} e Problem jehatt beim Fottschmieße vun dä övversaz Sigg „[[:$1]]“',
+	'pt-log-encourage' => '{{GENDER:$2|Dä|Dat|Dä Metmaacher|De|Dat}} [[User:$2|$2]] hät zom Övversäze fun dä Sigg [[:$1]] jeroode.',
+	'pt-log-discourage' => '{{GENDER:$2|Dä|Dat|Dä Metmaacher|De|Dat}} [[User:$2|$2]] hät vum Övversäze fun dä Sigg [[:$1]] afjeroode.',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|Dä|Dat|Dä Metmaacher|De|Dat}} [[User:$2|$2]] hät Houpschproche fun dä övversäzbaa Sigg [[:$1]] fottjenumme.',
+	'pt-log-priority-langs' => '{{GENDER:$2|Dä|Dat|Dä Metmaacher|De|Dat}} [[User:$2|$2]] hät de Houpschproche fun dä övversäzbaa Sigg [[:$1]] op $3 jesaz. Der Jrond es: $4.',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|Dä|Dat|Dä Metmaacher|De|Dat}} [[User:$2|$2]] hät de Schproche för et Övversäzze fun dä övversäzbaa Sigg [[:$1]] op $3 bejränz. Der Jrond es: $4.',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|Dä|Dat|Dä Metmaacher|De|Dat}} [[User:$2|$2]] hät di övversäzbaa Sigg [[:$1]] en di Sammeljrop $3 opjenumme.',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|Dä|Dat|Dä Metmaacher|De|Dat}} [[User:$2|$2]] hät di övversäzbaa Sigg [[:$1]] uß dä Sammeljrop $3 eruß jenumme.',
 	'pt-movepage-title' => 'De övversäzbaa Sigg „$1“ ömnänne',
 	'pt-movepage-blockers' => 'Di övversäbaa Sigg künne mer nit ömbenänne. {{PLURAL:$1|Der Jrond es:|De Jrönd sin:|Mer weße ävver kein Jrönd doför.}}',
 	'pt-movepage-block-base-exists' => 'De Zielsigg „[[:$1]]“ jidd_et ald.',
@@ -4904,6 +4929,7 @@ awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
 Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungs-Fonctioun] aktulaiséiert ginn.",
 	'tpt-unknown-page' => "Dëse Nummraum ass fir d'Iwwersetze vu Säitemat Inhalt reservéiert.
 D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iwwersetzung markéiert ass ze korrespondéieren.",
+	'tpt-discouraged-language-reason' => 'Grond: $1',
 	'tpt-priority-languages' => 'En Iwwersetzungs-Administrateur huet déi prioritiséiert Sprooche fir dëse Grupp op $1 agestallt.',
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
 	'tpt-download-page' => 'Säit mat Iwwersetzungen exportéieren',
@@ -5381,6 +5407,7 @@ Sebab: $1',
 	'tpt-discouraged-language' => 'Bahasa ini bukan bahasa keutamaan yang ditetapkan oleh pentadbir penterjemahan untuk halaman ini.
 
 Sebab: $1',
+	'tpt-discouraged-language-reason' => 'Sebab: $1',
 	'tpt-priority-languages' => 'Seorang pentadbir penterjemahan telah menetapkan $1 sebagai bahasa keutamaan kumpulan ini.',
 	'tpt-render-summary' => 'Mengemas kini agar sepadan dengan versi baru laman sumber',
 	'tpt-download-page' => 'Eksport laman dengan terjemahan',
@@ -6092,7 +6119,7 @@ S'Lesche werd ned glaisch gmachd, wenns viel Saide sin.
 Fehla werren im [[Special:Log/pagetranslation|Iwasedzungs-Logbuch]] oigdraache un missn vun Hoand b'rischdischd werre.",
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author BeginaFelicysym
  * @author Deejay1
  * @author Equadus
@@ -6177,6 +6204,7 @@ Powód: $1',
 	'tpt-discouraged-language' => 'Ten język nie należy do języków priorytetowych ustawionych przez administratora tłumaczenia dla tej strony.
 
 Powód: $1',
+	'tpt-discouraged-language-reason' => 'Powód: $1',
 	'tpt-priority-languages' => 'Administrator tłumaczenia ustawił języki priorytetowe dla tej grupy jako $1 .',
 	'tpt-render-summary' => 'Aktualizowanie w celu dopasowania nowej wersji strony źródłowej',
 	'tpt-download-page' => 'Wyeksportuj stronę z tłumaczeniami',
@@ -8048,12 +8076,13 @@ $messages['ug-arab'] = array(
 	'tpt-languages-legend' => 'باشقا تىل',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author A1
  * @author AS
  * @author Ahonc
  * @author Hypers
  * @author NickK
+ * @author Olvin
  * @author Prima klasy4na
  * @author Riwnodennyk
  * @author Тест
@@ -8117,8 +8146,21 @@ $messages['uk'] = array(
 Це – переклад сторінки [[$1]] і його можна оновити за допомогою [$2 засобу перекладу].',
 	'tpt-unknown-page' => 'Цей простір імен зарезервовано для перекладів текстів сторінок.
 Сторінка, яку ви намагаєтесь редагувати, скоріше за все, не відповідає жодній сторінці, відміченій для перекладу.',
+	'tpt-discouraged-language-force' => 'Неможливо перекласти сторінку на мову: $2
+Адміністратор визнає лише такі мови: $3',
+	'tpt-discouraged-language' => 'Адміністратор бажає бачити цю сторінку перекладеною мовою $3, натомість мова $2 його не цікавить',
+	'tpt-discouraged-language-reason' => 'Причина:$1',
+	'tpt-priority-languages' => 'Адміністратор перекладу визначив для цієї групи пріоритетні мови $1.',
 	'tpt-render-summary' => 'Оновлення для відповідності новій версії вихідної сторінки',
 	'tpt-download-page' => 'Експортувати сторінку з перекладами',
+	'aggregategroups' => 'Загальні групи',
+	'tpt-aggregategroup-add' => 'Додати',
+	'tpt-aggregategroup-save' => 'Зберегти',
+	'tpt-aggregategroup-add-new' => 'Додати нову загальну групу',
+	'tpt-aggregategroup-new-name' => 'Назва:',
+	'tpt-aggregategroup-new-description' => "Опис (необов'язково):",
+	'tpt-aggregategroup-remove-confirm' => 'Ви дійсно бажаєте видалити цю загальну групу?',
+	'tpt-aggregategroup-invalid-group' => 'Група не існує',
 	'pt-parse-open' => 'Незбалансований тег &lt;translate>.
 Шаблон перекладу: <pre>$1</pre>',
 	'pt-parse-close' => 'Незбалансований тег &lt;/translate>.
@@ -8136,6 +8178,10 @@ $messages['uk'] = array(
 	'pt-log-unmark' => '{{GENDER:$2|зняв|зняла}} сторінку "[[:$1]]" з перекладу',
 	'pt-log-moveok' => '{{GENDER:$2|виконав|виконала}} перейменування сторінки для перекладу $1 на $3',
 	'pt-log-movenok' => '{{GENDER:$2|викликав|викликала}} помилку при переміщенні [[:$1]] до [[:$3]]',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|видалив|видалила}} сторінку перекладу $1',
+	'pt-log-delete-full-nok' => 'Сталася помилка при видаленні сторінки перекладу [[:$1]]',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|вилучив|вилучила}} сторінку з перекладом $1',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|Сталася}} помилка під час вилучення сторінки перекладу [[:$1]]',
 	'pt-movepage-title' => 'Перемістити сторінку $1, доступну для перекладу',
 	'pt-movepage-blockers' => 'Сторінка перекладу не може бути перейменована через {{PLURAL:$1|таку помилку|такі помилки}}:',
 	'pt-movepage-block-base-exists' => 'Основна кінцева сторінка [[:$1]] вже існує.',
@@ -8168,9 +8214,13 @@ $messages['uk'] = array(
 	'pt-movepage-started' => 'Основна сторінка тепер переміщена.
 Будь ласка, перевірте [[Special:Log/pagetranslation|журнал перекладу сторінок]] на наявність помилок і повідомлення про завершення.',
 	'pt-locked-page' => 'Ця сторінка заблокована, оскільки в даний момент відбувається переміщення сторінки, що перекладається.',
+	'pt-deletepage-lang-title' => 'Вилучення сторінки перекладу  $1.',
+	'pt-deletepage-full-title' => 'Видалення сторінки доступної для перекладу  $1 .',
 	'pt-deletepage-invalid-title' => 'Зазначена сторінка є недійсною.',
+	'pt-deletepage-invalid-text' => 'Зазначена сторінка не є перекладом і не доступна для перекладу.',
 	'pt-deletepage-action-check' => 'Список сторінок, які будуть вилучені',
 	'pt-deletepage-action-perform' => 'Виконати вилучення',
+	'pt-deletepage-action-other' => 'Змінити ціль',
 	'pt-deletepage-lang-legend' => 'Вилучити сторінку перекладу',
 	'pt-deletepage-full-legend' => 'Вилучити сторінку перекладу',
 	'pt-deletepage-any-legend' => 'Вилучити сторінку для перекладу або її переклад',

@@ -1795,8 +1795,8 @@ $messages['ja'] = array(
 	'translate-fs-intro' => '{{SITENAME}} 開始準備ウィザードへようこそ。これから翻訳者になるための手順について1つずつ案内していきます。それらを終えると、あなたは {{SITENAME}} でサポートしているすべてのプロジェクトのインターフェイスメッセージを翻訳できるようになります。',
 	'translate-fs-selectlanguage' => '言語を選択',
 	'translate-fs-settings-planguage' => '第一言語：',
-	'translate-fs-settings-planguage-desc' => '第一言語は、このウィキのインターフェイスで使用する言語と
-翻訳対象の言語を兼ねます',
+	'translate-fs-settings-planguage-desc' => '第一言語は、このウィキのインターフェイスで使用する言語と、
+既定の翻訳先言語を兼ねます。',
 	'translate-fs-settings-slanguage' => '補助言語$1：',
 	'translate-fs-settings-slanguage-desc' => '翻訳編集画面で、そのメッセージの他の言語への翻訳を表示できます。
 見たい言語があれば、ここで選択してください。',
@@ -3074,9 +3074,10 @@ $messages['ug-arab'] = array(
 	'translate-fs-email-title' => 'ئېلخەت مەنزىلىڭىزنى جەزملەڭ',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author A1
  * @author Hypers
+ * @author Olvin
  * @author Тест
  */
 $messages['uk'] = array(
@@ -3093,6 +3094,13 @@ $messages['uk'] = array(
 	'translate-fs-intro' => 'Ласкаво просимо до майстра "перші кроки" проекту {{SITENAME}}.
 Крок за кроком майстер проведе вас шляхом становлення як перекладача.
 Зрештою, ви зможете перекладати інтерфейсні повідомлення усіх проектів, що підтримуються на {{SITENAME}}.',
+	'translate-fs-settings-planguage' => 'Основна мова:',
+	'translate-fs-settings-planguage-desc' => 'Основна мова дублює мову інтерфейсу цієї вікі
+і є мовою за замовчуванням для перекладу.',
+	'translate-fs-settings-slanguage' => 'Допоміжні мови $1:',
+	'translate-fs-settings-slanguage-desc' => 'Це дозволяє бачити переклади повідомлень іншими мовами в інтерфейсі перекладача.
+Тут можна вибрати, які саме мови ви хотіли б бачити.',
+	'translate-fs-settings-submit' => 'Зберегти налаштування',
 	'translate-fs-userpage-level-N' => 'Моя рідна мова',
 	'translate-fs-userpage-level-5' => 'Я - професійний перекладач з',
 	'translate-fs-userpage-level-4' => 'Досконало володію',
