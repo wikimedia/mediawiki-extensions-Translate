@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH///UU\u003d",
+        "filename": "Groups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-06-11T06:11:47Z",
+      "side": 1,
+      "message": "Whitespace.",
+      "revId": "97cb8ff3ddb360048ad73211cead498a3433d685",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH///UQ\u003d",
+        "filename": "Groups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-06-11T06:11:47Z",
+      "side": 1,
+      "message": "Whitespace.",
+      "revId": "97cb8ff3ddb360048ad73211cead498a3433d685",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH///Uo\u003d",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-06-11T06:11:47Z",
+      "side": 1,
+      "message": "Whitespace.\n\nAnd why not use something like Html::Element?",
+      "revId": "97cb8ff3ddb360048ad73211cead498a3433d685",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH///UY\u003d",
+        "filename": "tests/BlackListTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-06-11T06:11:47Z",
+      "side": 1,
+      "message": "Closing bracket is placed strangely (also on a few other lines).",
+      "revId": "97cb8ff3ddb360048ad73211cead498a3433d685",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH///Uc\u003d",
+        "filename": "tests/BlackListTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-06-11T06:11:47Z",
+      "side": 1,
+      "message": "Whitespace.",
+      "revId": "97cb8ff3ddb360048ad73211cead498a3433d685",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
