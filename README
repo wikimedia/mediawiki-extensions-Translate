@@ -30,20 +30,120 @@ And for the code at:
  https://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-06-11
+- Allow setting message group state for a group only for specific user right.
+  This redefines $wgTranslateWorkflowStates to hold the rights required for
+  a state transition.
+- Allow black listing and white listing of languages in YAML configuration. YAML
+  files will have new top level section called LANGUAGES. LANGUAGES can have
+  optional subsections whitelist and blacklist, which take an array of language
+  codes. If a subsection is not specified, the white/blacklist value will
+  default to *, meaning all known languages. Whitelist overrides blacklist.
+* 2012-06-04
+- Show the priority languages in Special:Translate.
 * 2012-06-03
 - Option skipgroup added to export.php to filter wildcard groups.
+* 2012-06-02
+- $wgTranslateDisablePreSaveTransform added to make the disabling of PST for
+  message pages configurable, so that mediawiki.org etc. isn't broken.
+* 2012-05-29
+- Implemented and used convertWhiteSpaceToHTML in JavaScript.
+- Dynamic groups are ignored in Special:MessageGroupStats.
+* 2012-05-18
+- Fatal error on Special:AggregateGroups fixed.
+- Sort aggregates and their subgroups on Special:AggregateGroups.
+- Outdated caches were not recreated when file and wiki state matched.
+- Page translation icons are now 264dpi.
+- Unnecessary token check removed from Special:AggregateGroups.
+* 2012-05-14
+- Made link appearance in <languages/> bar saner for edge cases. Links to
+  existing, but untranslated pages are not shown as red anymore.
+- Fixed bug where fields for new aggregate groups on Special:AggregateGroups
+  were sometimes pre-filled.
+- When translation editor is open, a warning is displayed when trying to leave
+  the page.
+- OpenLayersFFS was removed.
+- Administrative pages are now links in tabs.
+* 2012-05-10
+- Fix to prevent page protection from confusing page translation feature.
+* 2012-05-09
+- Decimals on Special:LanguageStats and Special:MessageGroupStats were removed
+  for improved readability.
+* 2012-05-08
+- processMessageChanges was updated to reduce the number of false positives of
+  changed or deleted messages.
+- Deprecated languages are no longer displayed in the language selector on
+  Special:Translate.
+* 2012-05-07
+- FFS.php was split into several files.
+* 2012-05-03
+- $wgTranslateDelayedMessageIndexRebuild was added. If you have lots of message
+  groups, especially file based ones, and the message index rebuilding gets
+  slow, set this to true to delay the rebuilding via JobQueue. This only makes
+  sense if you have configured jobs to be processed outside of requests via cron
+  or similar.
+- API tokens are provided in a saner way now.
+- "ignore" option was added to Special:ManageMessageGroups (regression fixed).
+* 2012-04-30
+- Comparison of fuzzied translations was improved.
+* 2012-04-25
+- Special:ManageMessageGroups was improved so that the update process takes less
+  time. scripts/processMessageChanges.php should be run from the command line.
+  This stages all required changes. After that, the stated changes can be
+  assessed on Special:ManageMessageGroups. Processing takes place using the
+  job queue.
+* 2012-04-16
+- TMessage::setTag renamed to TMessage::addTag.
 * 2012-04-11
 - Option codemaponly added to export.php to so that only code mapped languages
   can be exported.
 - Script autoexport.php was removed. Use export.php.
 * 2012-04-10
 - New MessageIndex backends: database and cdb.
-- Fixed an out of memory issue with page translation feature on MW 1.18 and older.
+- Fixed an out of memory issue with page translation feature on MW 1.18 and
+  older.
+* 2012-04-05
+- JavaFFS was made more robust.
+* 2012-04-03
+- Profiling updates for message index related function calls.
+- Exception on diff pages fixed.
+* 2012-04-02
+- Improved metadata handling when renaming and deleting translatable pages.
+* 2012-03-27
+- Switch "hours" added to export.php.
+- Bug fix for inline editor to remove the "untranslated" class.
+* 2012-03-26
+- Deleting an aggregate group must be confirmed.
+* 2012-03-24
+- list-mwext-i18n-files.php was simplified.
 * 2012-03-22
 - $wgTranslateAddMWExtensionGroups was removed.
+- Messages are loaded using parent::getDefinitions() to allow decoupling
+  MediaWiki message groups from live wiki code.
+* 2012-03-21
+- ext.translate.special.languagestats.js no longer uses onclick.
+- Some issues with overcounting because of aggregate groups were resolved.
+* 2012-03-20
+- ext.translate.special.pagetranslation.js made more reusable: The generic
+  autocompletion funcionality is in ext.translate.multiselectautocomplete.js and
+  ext.translate.special.pagetranslation.js only apply it to
+  Special:PageTranslation.
+* 2012-03-19
+- Group ID prefix for aggregate groups through Special:AggregateGroup was
+  updated from "ag-" to "agg-".
+* 2012-03-16
+- A bug was fixed when renaming a translatable page with priority languages.
+- Plural rules were updates to CLDR 21.0.
+- More validations added to Special:AggregateGroup input.
+* 2012-03-14
+- Adding and removing a group from an aggregate group is now logged.
 * 2012-03-13
 - Removed groupprefix option from export.php and sync-group.php. Use * wildcard
   with group option.
+- Page translation widget was made more easily reusable.
+- sync-group.php can now find the timestamp for git checkouts.
+- export.php no longer requires definitionFile when using gettext post processing
+  with ppgettext.
 * 2012-03-12
 - Special:LanguageStats group collapsing now supports nested subgroups.
 * 2012-03-11
