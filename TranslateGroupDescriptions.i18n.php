@@ -2130,7 +2130,7 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'bw-desc-statusnet' => "[[Translating:StatusNet|StatusNet]] a l'é un servent ëd microscartari a sorgiss duverta",
 	'translate-group-desc-statusnet-plugin' => "Sti mëssagi a fan part ëd n'estension për [[Translating:StatusNet|StatusNet]]",
 	'translate-group-desc-tsint' => 'Na partìa ëd mëssagi për [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], ël sistema i18n për [http://toolserver.org Toolserver] utiss (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detaj técnich]</span>)',
-	'translate-group-desc-waymarked-trails' => "[[Translating:Waymarked Trails|Waymarked Trails]] a l'é un servissi ch'a mosta le stra për escursion, bici, rampichin e patinagi anlinia d'antorn al mond. A dòvra la licensa GNU GPL",
+	'translate-group-desc-waymarked-trails' => "[[Translating:Waymarked Trails|Waymarked Trails]] a l'é un servissi ch'a mostra le stra për j'escursion, la bici, ël rampichin e ël tapinagi an linia dantorn al mond. A deuvra la licensa GNU GPL",
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] a peil trové an pressa j'àutor ëd na pàgina an na wiki ëd Wikimedia.",
 	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] a l'é un proget për fé na version ëd Wikipedia fòra linia, ëd sol test, dzora a na perifèrica mòbil.",
 	'translate-group-desc-wikipediamobile' => "[[Translating:WikipediaMobile|WikipediaMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wikipedia",
