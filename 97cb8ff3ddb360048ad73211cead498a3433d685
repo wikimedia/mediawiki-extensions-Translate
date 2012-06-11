@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH///To\u003d",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-06-11T06:28:25Z",
+      "side": 1,
+      "message": "It is unnecessary here(but not wrong). I used the same pattern that is used by EditPage.php for this kind of errors",
+      "parentUuid": "AAAAMH///Uo\u003d",
+      "revId": "97cb8ff3ddb360048ad73211cead498a3433d685",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH///UY\u003d",
         "filename": "tests/BlackListTest.php",
         "patchSetId": 3
