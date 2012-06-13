@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//+OQ\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-06-13T15:56:16Z",
+      "side": 1,
+      "message": "Must be prefixedFilename according to the coding conventions.",
+      "revId": "e57d07c9cb65c732b2d94837063e7de377a7aa4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//+OM\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-06-13T15:56:16Z",
+      "side": 1,
+      "message": "Spaces instead of tabs.",
+      "revId": "e57d07c9cb65c732b2d94837063e7de377a7aa4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//+N8\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-06-13T15:56:16Z",
+      "side": 1,
+      "message": "Even for a TODO it\u0027s not a good idea. And blocks with curlies are mandatory.",
+      "revId": "e57d07c9cb65c732b2d94837063e7de377a7aa4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//+OE\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 814,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-06-13T15:56:16Z",
+      "side": 1,
+      "message": "Whitespace before curly.",
+      "revId": "e57d07c9cb65c732b2d94837063e7de377a7aa4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//+OI\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-06-13T15:56:16Z",
+      "side": 1,
+      "message": "Is it really good to hardcode width and height? It may easily make the image ugly.",
+      "revId": "e57d07c9cb65c732b2d94837063e7de377a7aa4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//+OA\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-06-13T15:56:16Z",
+      "side": 1,
+      "message": "I\u0027m OK with just making this one long multi-line assignment to $desc.",
+      "revId": "e57d07c9cb65c732b2d94837063e7de377a7aa4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//+N0\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 850,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-06-13T15:56:16Z",
+      "side": 1,
+      "message": "This line is probably wrong. I\u0027m not sure that I understand what it means.",
+      "revId": "e57d07c9cb65c732b2d94837063e7de377a7aa4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//+Nw\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-06-13T15:56:16Z",
+      "side": 1,
+      "message": "This line is probably wrong. I\u0027m not sure that I understand what it means.",
+      "revId": "e57d07c9cb65c732b2d94837063e7de377a7aa4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
