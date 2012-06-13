@@ -6213,6 +6213,7 @@ Pulse en el nombre del grupo de mensajes para ver la lista de mensajes sin tradu
 Razón:
 
 ''$1''",
+	'translate-language-disabled' => 'La traducción a este idioma está deshabilitada.',
 	'translate-page-settings-legend' => 'Preferencias',
 	'translate-page-group' => 'Grupo',
 	'translate-page-language' => 'Idioma',
