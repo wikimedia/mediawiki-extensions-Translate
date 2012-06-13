@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//+Ms\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 95
+      },
+      "writtenOn": "2012-06-13T16:12:00Z",
+      "side": 1,
+      "message": "Yes, this is very much a to-do TODO, not a \"let\u0027s deploy it like this and then see whether we can fix it later\" TODO. I\u0027m thinking the best would be to merely output some kind of \"No description provided\" message?",
+      "parentUuid": "AAAAMH//+N8\u003d",
+      "revId": "e57d07c9cb65c732b2d94837063e7de377a7aa4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//+OE\u003d",
         "filename": "MessageGroups.php",
         "patchSetId": 4
@@ -81,6 +99,24 @@
       "writtenOn": "2012-06-13T15:56:16Z",
       "side": 1,
       "message": "Is it really good to hardcode width and height? It may easily make the image ugly.",
+      "revId": "e57d07c9cb65c732b2d94837063e7de377a7aa4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//+Mw\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 95
+      },
+      "writtenOn": "2012-06-13T16:12:00Z",
+      "side": 1,
+      "message": "275x275 specifies maximum dimensions; it does not affect the height-to-width ratio. Does that help clarify?",
+      "parentUuid": "AAAAMH//+OI\u003d",
       "revId": "e57d07c9cb65c732b2d94837063e7de377a7aa4e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
