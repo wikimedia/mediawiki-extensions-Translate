@@ -1520,7 +1520,7 @@ $messages['arc'] = array(
 	'translate-searchprofile' => 'ܬܘܪ̈ܓܡܐ',
 );
 
-/** Araucanian (Mapudungun)
+/** Araucanian (mapudungun)
  * @author Poquil
  */
 $messages['arn'] = array(
@@ -1826,7 +1826,7 @@ $1",
 	'translate-gs-total' => 'মুঠ',
 );
 
-/** Asturian (Asturianu)
+/** Asturian (asturianu)
  * @author Esbardu
  * @author Xuacu
  */
@@ -2156,7 +2156,7 @@ Ye enforma afayadizo pa les xeres de correición.',
 	'translate-gethelp' => 'Ayuda',
 );
 
-/** Azerbaijani (Azərbaycanca)
+/** Azerbaijani (azərbaycanca)
  * @author Cekli829
  * @author Irada
  * @author Wertuose
@@ -2786,7 +2786,7 @@ $1',
 	'translate-gethelp' => 'Дапамога',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author DCLXVI
  */
 $messages['bg'] = array(
@@ -3075,7 +3075,7 @@ $messages['bo'] = array(
 	'translate-translations-messagename' => 'མིང་།',
 );
 
-/** Bishnupria Manipuri (ইমার ঠার/বিষ্ণুপ্রিয়া মণিপুরী)
+/** Bishnupria Manipuri (বিষ্ণুপ্রিয়া মণিপুরী)
  * @author Usingha
  */
 $messages['bpy'] = array(
@@ -3411,7 +3411,7 @@ Talvoudus evit adlenn ha reizhañ.',
 	'translate-gethelp' => 'Skoazell',
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  */
 $messages['bs'] = array(
@@ -3670,7 +3670,7 @@ $messages['bxr'] = array(
 	'translate-language' => 'Хэлэн',
 );
 
-/** Catalan (Català)
+/** Catalan (català)
  * @author Jordi Roqué
  * @author Paucabot
  * @author SMP
@@ -3936,7 +3936,7 @@ $messages['ch'] = array(
 	'translate-page-navigation-legend' => 'Nabegasion',
 );
 
-/** Sorani (کوردی)
+/** Sorani Kurdish (کوردی)
  * @author Asoxor
  * @author Marmzok
  * @author رزگار
@@ -5579,7 +5579,7 @@ $messages['dtp'] = array(
 	'translate-magic-cm-comment' => 'Kanu:',
 );
 
-/** Ewe (Eʋegbe)
+/** Ewe (eʋegbe)
  * @author Natsubee
  */
 $messages['ee'] = array(
@@ -6979,7 +6979,7 @@ Hautazko mezuak zure hizkuntzaren berezitasunak direla-eta, espazioak ez daudene
 	'translate-gethelp' => 'Laguntza',
 );
 
-/** Extremaduran (Estremeñu)
+/** Extremaduran (estremeñu)
  * @author Better
  */
 $messages['ext'] = array(
@@ -7264,7 +7264,7 @@ $messages['fa'] = array(
 	'translate-gethelp' => 'راهنما',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Centerlink
  * @author Cimon Avaro
  * @author Crt
@@ -7580,7 +7580,7 @@ Tiedot: $1',
 	'translate-gethelp' => 'Ohje',
 );
 
-/** French (Français)
+/** French (français)
  * @author ChrisPtDe
  * @author Crochet.david
  * @author Dereckson
@@ -7929,7 +7929,7 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'translate-gethelp' => 'Aide',
 );
 
-/** Cajun French (Français cadien)
+/** Cajun French (français cadien)
  * @author RoyAlcatraz
  */
 $messages['frc'] = array(
@@ -7942,7 +7942,7 @@ $messages['frc'] = array(
 	'translate-language' => 'Langue:',
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author Cedric31
  * @author ChrisPtDe
  */
@@ -8216,7 +8216,7 @@ Dètalys : $1',
 	'translate-dynagroup-lastc' => 'Dèrriér changement per {{GENDER:$1|$1}} ($2)',
 );
 
-/** Friulian (Furlan)
+/** Friulian (furlan)
  * @author Klenje
  */
 $messages['fur'] = array(
@@ -9673,7 +9673,7 @@ $messages['hil'] = array(
 	'translate-page-navigation-legend' => 'Nabigayson',
 );
 
-/** Croatian (Hrvatski)
+/** Croatian (hrvatski)
  * @author Dalibor Bosits
  * @author Dnik
  * @author Ex13
@@ -11388,7 +11388,7 @@ $messages['io'] = array(
 	'translate-save' => 'Registragar ($1)',
 );
 
-/** Icelandic (Íslenska)
+/** Icelandic (íslenska)
  * @author Jóna Þórunn
  * @author S.Örvarr.S
  * @author Snævar
@@ -12757,7 +12757,7 @@ $messages['kk-kz'] = array(
 	'translate-language' => 'Тілі:',
 );
 
-/** Kalaallisut (Kalaallisut)
+/** Kalaallisut (kalaallisut)
  * @author Qaqqalik
  */
 $messages['kl'] = array(
@@ -14207,7 +14207,7 @@ $messages['li'] = array(
 	'translate-optional' => '(optioneel)',
 );
 
-/** Lumbaart (Lumbaart)
+/** lumbaart (lumbaart)
  * @author Dakrismeno
  * @author Insübrich
  */
@@ -14240,7 +14240,7 @@ $messages['lmo'] = array(
 	'translations' => 'Tüt i tradüzión',
 );
 
-/** Lingala (Lingála)
+/** Lingala (lingála)
  * @author Eruedin
  * @author Moyogo
  */
@@ -14261,7 +14261,7 @@ $messages['lo'] = array(
 	'translate-desc' => '[[Special:Translate|ໜ້າພິເສດ]]ສຳຫຼັບແປມີເດຍວິກິແລະອື່ນ າ',
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Eitvys200
  * @author Garas
  * @author Homo
@@ -14410,7 +14410,7 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
 	'translate-stats-workflow' => 'Būsena',
 );
 
-/** Latgalian (Latgaļu)
+/** Latgalian (latgaļu)
  * @author Dark Eagle
  */
 $messages['ltg'] = array(
@@ -14677,7 +14677,7 @@ Chanchim kim: $1',
 	'translate-gethelp' => 'Ţanpuina',
 );
 
-/** Latvian (Latviešu)
+/** Latvian (latviešu)
  * @author GreenZeb
  * @author Marozols
  * @author Papuass
@@ -15347,7 +15347,7 @@ $messages['ml'] = array(
 	'translate-gethelp' => 'സഹായം',
 );
 
-/** Mongolian (Монгол)
+/** Mongolian (монгол)
  * @author Chinneeb
  */
 $messages['mn'] = array(
@@ -15356,7 +15356,7 @@ $messages['mn'] = array(
 	'translate-language' => 'Хэл',
 );
 
-/** Moldavian (Молдовеняскэ)
+/** Moldavian (молдовеняскэ)
  * @author Node ue
  */
 $messages['mo'] = array(
@@ -17159,7 +17159,7 @@ $messages['nso'] = array(
 	'translate-js-skip' => 'Lesa o bule yago latela',
 );
 
-/** Occitan (Occitan)
+/** Occitan (occitan)
  * @author Cedric31
  * @author ChrisPtDe
  */
@@ -18675,7 +18675,7 @@ $messages['ps'] = array(
 	'translate-gethelp' => 'لارښود',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author 555
  * @author Crazymadlover
  * @author Giro720
@@ -19330,7 +19330,7 @@ $messages['rif'] = array(
 	'translate-page-edit' => 'arri',
 );
 
-/** Romansh (Rumantsch)
+/** Romansh (rumantsch)
  * @author Gion
  * @author Gion-andri
  */
@@ -19652,7 +19652,7 @@ Detalii: $1',
 	'translate-gethelp' => 'Ajutor',
 );
 
-/** Tarandíne (Tarandíne)
+/** tarandíne (tarandíne)
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
@@ -19774,7 +19774,7 @@ Cazze 'u nome d'u gruppe de le messagge pe vedè l'elenghe de le messagge da tra
 	'translate-dynagroup-lastc' => 'Urteme cangiamende de {{GENDER:$1|$1}} ($2)',
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Ahonc
  * @author AlexSm
  * @author Askarmuk
@@ -20335,7 +20335,7 @@ $messages['sa'] = array(
 	'translate-translations-project' => 'प्रकल्पम्:',
 );
 
-/** Sakha (Саха тыла)
+/** Sakha (саха тыла)
  * @author Bert Jickty
  * @author HalanTul
  */
@@ -20515,7 +20515,7 @@ $messages['sah'] = array(
 	'translate-documentation-language' => 'Биллэрии документацията',
 );
 
-/** Sicilian (Sicilianu)
+/** Sicilian (sicilianu)
  * @author Aushulz
  * @author Gmelfi
  */
@@ -21088,7 +21088,7 @@ Podrobnosti: $1',
 	'translate-gethelp' => 'Pomoc',
 );
 
-/** Slovenian (Slovenščina)
+/** Slovenian (slovenščina)
  * @author Dbc334
  * @author Smihael
  */
@@ -21431,7 +21431,7 @@ $messages['so'] = array(
 	'translate-language' => 'Luqad:',
 );
 
-/** Albanian (Shqip)
+/** Albanian (shqip)
  * @author Dori
  * @author Puntori
  */
@@ -21459,7 +21459,7 @@ $messages['sq'] = array(
 	'translate-statsf-submit' => 'Parapamja',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
@@ -21782,7 +21782,7 @@ $1',
 	'translate-gethelp' => 'Помоћ',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪srpski (latinica)‬)
  * @author Michaello
  * @author Rancher
  * @author Жељко Тодоровић
@@ -22284,7 +22284,7 @@ Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan mo
 	'translate-gs-continent' => 'Buana',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author Ainali
  * @author Boivie
  * @author Byrial
@@ -23039,7 +23039,7 @@ $messages['te'] = array(
 	'translate-gethelp' => 'సహాయం',
 );
 
-/** Tetum (Tetun)
+/** Tetum (tetun)
  * @author MF-Warburg
  */
 $messages['tet'] = array(
@@ -23063,7 +23063,7 @@ $messages['tet'] = array(
 	'translate-searchprofile' => 'Tradusaun sira',
 );
 
-/** Tajik (Cyrillic script) (Тоҷикӣ)
+/** Tajik (Cyrillic script) (тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -23109,7 +23109,7 @@ $messages['tg-cyrl'] = array(
 	'translate-checks-parameters' => 'Параметрҳои зерин истифода нашудаанд: <strong>$1</strong>',
 );
 
-/** Tajik (Latin script) (Tojikī)
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -23700,7 +23700,7 @@ Pinaka nakakatulong para sa mga gawain ng pagwawasto.',
 	'translate-gethelp' => 'Tulong',
 );
 
-/** Толышә зывон (Толышә зывон)
+/** толышә зывон (толышә зывон)
  * @author Гусейн
  */
 $messages['tly'] = array(
@@ -23920,7 +23920,7 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 	'translate-gethelp' => 'Yardım',
 );
 
-/** Tatar (Cyrillic script) (Татарча)
+/** Tatar (Cyrillic script) (татарча)
  * @author Ajdar
  * @author Himiq Dzyu
  * @author Timming
@@ -24435,7 +24435,7 @@ $1',
 	'translate-gethelp' => 'Довідка',
 );
 
-/** Vèneto (Vèneto)
+/** vèneto (vèneto)
  * @author Candalua
  */
 $messages['vec'] = array(
@@ -26046,7 +26046,7 @@ $1',
 	'translate-gethelp' => '帮助',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Alexsh
  * @author Anakmalaysia
  * @author Bencmq

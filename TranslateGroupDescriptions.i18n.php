@@ -180,7 +180,7 @@ $messages['arz'] = array(
 	'translate-group-desc-ui' => 'مجموعه رسائل علويه تحتوى كل رسائل الامتدادات المتعلقه ب[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative مبادره استخداميه ويكيبيديا]',
 );
 
-/** Asturian (Asturianu)
+/** Asturian (asturianu)
  * @author Xuacu
  */
 $messages['ast'] = array(
@@ -236,7 +236,7 @@ $messages['ast'] = array(
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Wiktionary',
 );
 
-/** Azerbaijani (Azərbaycanca)
+/** Azerbaijani (azərbaycanca)
  * @author Sortilegus
  */
 $messages['az'] = array(
@@ -316,7 +316,7 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] — крос-плятформавая праграма для тэлефонаў і пляншэтаў для чытаньня і рэдагаваньня Вікіслоўніка',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author DCLXVI
  * @author Spiritia
  */
@@ -333,7 +333,7 @@ $messages['bg'] = array(
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] може бързо да намери авторите на страница в уики на Уикимедия.',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fohanno
  * @author Fulup
  * @author Gwendal
@@ -391,7 +391,7 @@ Sellit 'ta [[mw:Extension:PDF_Writer]] hag http://code.pediapress.com/wiki/wiki/
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] a zo ur raktres gantañ ar pal kinnig ur stumm testenn eus Wikipedia er mod ez linenn war un trobarzhell hezoug.',
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  * @author Smooth O
  */
@@ -447,7 +447,7 @@ Pogledajte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekat koji ima za cilj da omogući vanmrežnu tekstualnu verziju Wikipedije na mobilnim uređajima.',
 );
 
-/** Catalan (Català)
+/** Catalan (català)
  * @author SMP
  */
 $messages['ca'] = array(
@@ -458,7 +458,7 @@ $messages['ca'] = array(
 	'bw-desc-openlayers' => 'OpenLayers és un programa lliure de generació dinàmica de mapes. Si us plau, informeu de qualsevol incidència a [[support]].',
 );
 
-/** Czech (Česky)
+/** Czech (česky)
  * @author Mormegil
  * @author Reaperman
  */
@@ -752,7 +752,7 @@ $messages['eo'] = array(
 	'bw-desc-freecol' => 'Antaŭ tradukante FreeCol al via lingvo, bonvolu legi [[Translating:FreeCol]]. FreeCol uzas la Ĝeneralan Publikan Permesilon.',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Armando-Martin
  * @author Crazymadlover
  * @author Dferg
@@ -816,14 +816,14 @@ Por favor mira [[mw:Extension:PDF_Writer]] y http://code.pediapress.com/wiki/wik
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] es una aplicación para dispositivos móviles y tabletas-PC para leer y colaborar en Wikipedia',
 );
 
-/** Estonian (Eesti)
+/** Estonian (eesti)
  * @author Hendrik
  */
 $messages['et'] = array(
 	'bw-desc-freecol' => "Enne FreeCol'i tõlkimist oma keelde lugege palun [[Translating:FreeCol]]. FreeCol kasutab GPL litsentsi.",
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Centerlink
  * @author Cimon Avaro
  * @author Crt
@@ -854,7 +854,7 @@ $messages['fi'] = array(
 	'translate-group-desc-statusnet-plugin' => 'Nämä viestit ovat osa [[Translating:StatusNet|StatusNet]]in liitännäistä',
 );
 
-/** French (Français)
+/** French (français)
  * @author Crochet.david
  * @author DavidL
  * @author Gomoko
@@ -925,7 +925,7 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] est une application multi-plateformes pour mobiles et tablettes permettant de lire et contribuer à Wiktionnaire',
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -968,7 +968,7 @@ Vêde la [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] est un projèt visent a semondre una vèrsion tèxto de Vouiquipèdia en defôr de legne sur un pèrifèrico mobilo.',
 );
 
-/** Friulian (Furlan)
+/** Friulian (furlan)
  * @author Klenje
  */
 $messages['fur'] = array(
@@ -1146,7 +1146,7 @@ $messages['he'] = array(
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|ויקימילון נייד]] הוא יישום מרובה־פלטפורמות למכשירים ניידים ומחשבי לוח לקריאה ותרומה לוויקימילון',
 );
 
-/** Croatian (Hrvatski)
+/** Croatian (hrvatski)
  * @author Ex13
  * @author SpeedyGonsales
  */
@@ -1225,7 +1225,7 @@ Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/m
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] je platformu přesahaca aplikacija za mobilne telefony a tabletowe ličaki za čitanje a wobdźěłowanje Wikisłownika',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Dani
  * @author Glanthor Reviol
  */
@@ -1265,7 +1265,7 @@ A többesszám formátumáról [http://unicode.org/repos/cldr-tmp/trunk/diff/sup
 	'bw-desc-wikireader' => 'A [[Translating:WikiReader|WikiReader]] a Wikipédia csak szöveges, internetkapcsolat nélküli változatát mobil eszközökön elérhetővé tevő projekt.',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -1379,7 +1379,7 @@ Lihat pula [[mw:Extension:PDF Writer]] dan http://code.pediapress.com/wiki/wiki/
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] merupakan sebuah proyek yang memberikan sebuah versi luring, hanya berisi teks dari Wikipedia pada perangkat selular.',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author Beta16
  * @author Civvì
  * @author Darth Kule
@@ -1652,7 +1652,7 @@ $messages['lb'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ass e Projet fir eng reng Textversioun vu Wikipedia offline op engem mobilen Apparat zur Verfügung ze stellen.',
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Perkunas
  * @author Tomasdd
  */
@@ -1667,7 +1667,7 @@ $messages['lt'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] projetas, kuris pateikia automatinę Vikipedijos versiją mobiliose įrangose.',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -1920,7 +1920,7 @@ $messages['nl'] = array(
 	'translate-group-desc-wiktionarymobile' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] is een platformonafhankelijke toepassing voor mobiele telefoons en tablet-pc's voor het lezen van en bijdragen aan Wikiwoordenboek",
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
  * @author Harald Khan
  * @author Njardarlogar
  */
@@ -1934,7 +1934,7 @@ Sjå [[mw:Extension:PDF_Writer]] og http://code.pediapress.com/wiki/wiki/mwlibrl
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan snøgt finna ut kven som har forfatta ei sida i ein Wikimedia-wiki.',
 );
 
-/** Occitan (Occitan)
+/** Occitan (occitan)
  * @author Cedric31
  */
 $messages['oc'] = array(
@@ -2021,7 +2021,7 @@ $messages['pfl'] = array(
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] ischä bladdfoamiwagraifndi mobili un Täbled-Oawendung fas Lese un Baidraache vun Wiktionary',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author BeginaFelicysym
  * @author Leinad
  * @author Sp5uhe
@@ -2137,7 +2137,7 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'translate-group-desc-wiktionarymobile' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wiktionary",
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author Giro720
  * @author Hamilton Abreu
  * @author McDutchie
@@ -2195,7 +2195,7 @@ Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] é um projecto para apresentar ''offline'' uma versão de texto da Wikipédia num dispositivo móvel.",
 );
 
-/** Brazilian Portuguese (Português do Brasil)
+/** Brazilian Portuguese (português do Brasil)
  * @author 555
  * @author Giro720
  * @author Hamilton Abreu
@@ -2297,7 +2297,7 @@ $messages['ro'] = array(
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] este o aplicație multiplatformă destinată dispozitivelor mobile cu ajutorul căreia se poate lectura sau contribui la conținutul Wikționarului',
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Eleferen
  * @author Ferrer
  * @author Kaganer
@@ -2361,7 +2361,7 @@ $messages['ru'] = array(
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] — это кросс-платформенное приложение для мобильных и планшетных устройств, предназначенное для чтения и редактирования Викисловаря',
 );
 
-/** Slovak (Slovenčina)
+/** Slovak (slovenčina)
  * @author Helix84
  * @author Rudko
  */
@@ -2390,7 +2390,7 @@ $messages['sk'] = array(
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] dokáže rýchlo nájsť autorov stránky vo wiki projektov Wikimedia.',
 );
 
-/** Slovenian (Slovenščina)
+/** Slovenian (slovenščina)
  * @author Dbc334
  */
 $messages['sl'] = array(
@@ -2447,7 +2447,7 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] je večplatformni mobilni in tablični program za branje in prispevanje k Wikislovarju',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author Rancher
  */
 $messages['sr-ec'] = array(
@@ -2497,7 +2497,7 @@ $messages['sr-ec'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|Викиридер]] пружа текстуалну верзију Википедије којој се може приступити ван мреже, и то на мобилном уређају',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪srpski (latinica)‬)
  * @author Rancher
  */
 $messages['sr-el'] = array(
@@ -2687,7 +2687,7 @@ Mangyaring tingnan ang [[mw:Extension:PDF_Writer]] at ang http://code.pediapress
 	'bw-desc-wikireader' => 'Ang [[Translating:WikiReader|WikiReader]] ay isang proyekto upang dalhin ang isang bersyon ng Wikipediang hindi nakakunekta sa internet at may bersyong teksto lamang mula sa isang aparatong mobil.',
 );
 
-/** Tatar (Cyrillic script) (Татарча)
+/** Tatar (Cyrillic script) (татарча)
  * @author March
  * @author Rinatus
  * @author Ильнар
@@ -2834,7 +2834,7 @@ $messages['yi'] = array(
 	'translate-group-desc-kiwix' => 'א מעלדונג גרופע פאר [[Translating:Kiwix|קיוויקס]]',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Anakmalaysia
  * @author Bencmq
  * @author Hydra
@@ -2897,7 +2897,7 @@ $messages['zh-hans'] = array(
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]是一个用于阅读并编辑维基百科的手机、平板跨平台应用程序。',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Liangent
  * @author Mark85296341
  */

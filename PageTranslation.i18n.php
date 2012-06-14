@@ -566,7 +566,7 @@ $messages['as'] = array(
 	'pt-movepage-action-perform' => 'স্থানান্তৰ নকৰিব',
 );
 
-/** Asturian (Asturianu)
+/** Asturian (asturianu)
  * @author Esbardu
  * @author Xuacu
  */
@@ -741,7 +741,7 @@ L'aición de desaniciu nun sedrá inmediata, porque ye necesario desaniciar munc
 Los fallos quedarán rexistraos nel [[Special:Log/pagetranslation|rexistru de traducción de páxines]] y tendrán de reparase a mano.",
 );
 
-/** Azerbaijani (Azərbaycanca)
+/** Azerbaijani (azərbaycanca)
  * @author Cekli829
  */
 $messages['az'] = array(
@@ -811,7 +811,7 @@ Stö sicher, daas a <nowiki><translate></nowiki>-Tag und gütige Syntax vawendt 
 	'pt-deletepage-started' => "Bittscheh 's [[Special:Log/pagetranslation|Ywersétzungs-Logbuach]] noch Feelern und Ausfiarungsnoochrichten priaffm.",
 );
 
-/** Belarusian (Беларуская)
+/** Belarusian (беларуская)
  * @author Тест
  */
 $messages['be'] = array(
@@ -976,7 +976,7 @@ $messages['be-tarask'] = array(
 Памылкі будуць запратакаляваныя на [[Special:Log/pagetranslation|старонцы журналу перакладаў]] і патрабуюць выпраўленьня ўручную.',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author DCLXVI
  */
 $messages['bg'] = array(
@@ -1181,7 +1181,7 @@ Mar plij gwiriit [[Special:Log/pagetranslation|pajenn marilh an troidigezhioù]]
 	'pt-deletepage-lang-logreason' => 'Rann eus ar bajenn da dreiñ $1.',
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  */
 $messages['bs'] = array(
@@ -1308,7 +1308,7 @@ $messages['bug'] = array(
 	'translate-tag-translate-link-desc' => "Tare'juma iyyedé leppa",
 );
 
-/** Catalan (Català)
+/** Catalan (català)
  * @author Jordi Roqué
  * @author SMP
  * @author Solde
@@ -1366,7 +1366,7 @@ $messages['ce'] = array(
 	'tpt-languages-legend' => 'Кхин меттанаш:',
 );
 
-/** Sorani (کوردی)
+/** Sorani Kurdish (کوردی)
  * @author Asoxor
  * @author Marmzok
  * @author رزگار
@@ -1386,7 +1386,7 @@ $messages['ckb'] = array(
 	'pt-movepage-reason' => 'هۆکار:',
 );
 
-/** Czech (Česky)
+/** Czech (česky)
  * @author Matěj Grabovský
  * @author Mormegil
  */
@@ -2009,7 +2009,7 @@ Lašowanje njestanjo se ned, dokulaž wjele bokow musy se wulašowaś.
 Zmólki budu se w  [[Special:Log/pagetranslation|protokolu pśełožkow]] protokolěrowaś a wóne muse se manuelnje pórěźiś.',
 );
 
-/** Ewe (Eʋegbe)
+/** Ewe (eʋegbe)
  * @author Natsubee
  */
 $messages['ee'] = array(
@@ -2299,7 +2299,7 @@ Por favor verifica el [[Special:Log/pagetranslation|registro de traducción de p
 	'pt-deletepage-intro' => 'Esta página especial permite eliminar páginas traducibles enteras o traducciones a un idioma. La eliminación no será instantánea, porque deben borrarse muchas páginas. Los fallos se registrarán en el [[Special:Log/pagetranslation|registro de traducción de la página]] y tendrán que ser reparados a mano.',
 );
 
-/** Estonian (Eesti)
+/** Estonian (eesti)
  * @author Avjoska
  * @author Ker
  * @author Pikne
@@ -2453,7 +2453,7 @@ $messages['fa'] = array(
 	'pt-deletepage-list-count' => 'در کل $1 {{PLURAL:$1|صفحه|صفحه}} حذف می‌شوند.',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Cimon Avaro
  * @author Crt
  * @author Nedergard
@@ -2791,7 +2791,7 @@ La suppression n'est pas instantanée, car plusieurs pages seront supprimées.
 Les échecs seront inscrits dans le [[Special:Log/pagetranslation|journal des traductions]] et ils doivent être corrigés à la main.",
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  * @author Purodha
  */
@@ -2922,7 +2922,7 @@ Volyéd controlar lo [[Special:Log/pagetranslation|jornal de les traduccions de 
 	'pt-deletepage-lang-logreason' => 'Èxtrèt de la pâge de traduccion $1.',
 );
 
-/** Friulian (Furlan)
+/** Friulian (furlan)
  * @author Klenje
  */
 $messages['fur'] = array(
@@ -3364,12 +3364,12 @@ $messages['he'] = array(
 	'tpt-translation-restricted' => 'מנהל תרגומים נעל את תרגום קבוצת ההודעות הזאת לשפה הזאת.
 
 סיבה להגבלה: $1',
-	'tpt-discouraged-language-force' => '\'\'\'אי־אפשר לתרגם את הדף הזה ל{{GRAMMAR:תחילית|$2}}.\'\'\'
+	'tpt-discouraged-language-force' => 'מנהל תרגומים הגביל את השפות שאפשר לתרגם אליהן את הדף הזה. השפה הזאת לא נכללת בהן.
 
-מנהל תרגומים החליט שאפשר לתרגם את הדף הזה רק ל$3.',
-	'tpt-discouraged-language' => '\'\'\'תרגום הדף הזה ל{{GRAMMAR:תחילית|$2}} אינו בעדיפות.\'\'\'
+סיבה: $1',
+	'tpt-discouraged-language' => 'השפה הזאת היא לא אחת השפות המועדפות לתרגום כפי שהגדיר מנהל תרגומים עבור הדף הזה.
 
-מנהל התרגומים החליט להתמקד בתרגום הדף הזה ל$3.',
+סיבה: $1',
 	'tpt-discouraged-language-reason' => 'סיבה: $1',
 	'tpt-priority-languages' => 'מנהל תרגום הגדיר שהשפות המועדפות לקבוצה הזאת הן $1.',
 	'tpt-render-summary' => 'עדכון להתאמת הגרסה החדשה של דף המקור',
@@ -3491,7 +3491,7 @@ $messages['hi'] = array(
 	'pt-deletepage-list-other' => 'अन्य उपपृष्ठ',
 );
 
-/** Croatian (Hrvatski)
+/** Croatian (hrvatski)
  * @author Ex13
  * @author Herr Mlinka
  * @author SpeedyGonsales
@@ -4173,7 +4173,7 @@ $messages['ig'] = array(
 	'pt-movepage-reason' => 'Mgbághapụtà:',
 );
 
-/** Icelandic (Íslenska)
+/** Icelandic (íslenska)
  * @author Snævar
  */
 $messages['is'] = array(
@@ -5019,7 +5019,7 @@ $messages['lg'] = array(
 	'tpt-languages-legend' => 'Nnimi ndala:',
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Eitvys200
  */
 $messages['lt'] = array(
@@ -5055,7 +5055,7 @@ $messages['lt'] = array(
 	'pt-deletepage-lang-logreason' => 'Dalis vertimo puslapio $1.',
 );
 
-/** Latgalian (Latgaļu)
+/** Latgalian (latgaļu)
  * @author Dark Eagle
  */
 $messages['ltg'] = array(
@@ -5065,7 +5065,7 @@ $messages['ltg'] = array(
 	'pt-movepage-reason' => 'Īmesle:',
 );
 
-/** Latvian (Latviešu)
+/** Latvian (latviešu)
  * @author Papuass
  */
 $messages['lv'] = array(
@@ -5319,7 +5319,7 @@ $messages['ml'] = array(
 	'pt-deletepage-list-other' => 'മറ്റ് ഉപതാളുകൾ',
 );
 
-/** Mongolian (Монгол)
+/** Mongolian (монгол)
  * @author Chinneeb
  */
 $messages['mn'] = array(
@@ -5815,7 +5815,7 @@ Het verwijderen vindt niet per direct plaats, omdat het mogelijk is dat vele pag
 Fouten worden opgenomen in het [[Special:Log/pagetranslation|Logboek paginavertaling]] en deze moeten handmatig gecorrigeerd worden.",
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
  * @author Eirik
  * @author Frokor
  * @author Gunnernett
@@ -5857,7 +5857,7 @@ Sjekk at sida er merkt med <nowiki><translate></nowiki>-merke og har ein gyldig 
 	'tpt-download-page' => 'Eksporter side med omsetjingar',
 );
 
-/** Occitan (Occitan)
+/** Occitan (occitan)
  * @author Cedric31
  */
 $messages['oc'] = array(
@@ -6487,7 +6487,7 @@ $messages['ps'] = array(
 	'pt-deletepage-list-other' => 'نور واړه مخونه',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author Giro720
  * @author Hamilton Abreu
  * @author Malafaya
@@ -6801,7 +6801,7 @@ A eliminação não será instantânea por serem muitas as páginas integrantes 
 Os erros serão reportados no [[Special:Log/pagetranslation|registro de tradução de páginas]] e precisarão ser corrigidos manualmente.',
 );
 
-/** Romansh (Rumantsch)
+/** Romansh (rumantsch)
  * @author Gion-andri
  */
 $messages['rm'] = array(
@@ -6862,7 +6862,7 @@ Nume: $1',
 	'pt-deletepage-full-logreason' => 'Parte a paginii traductibile $1.',
 );
 
-/** Tarandíne (Tarandíne)
+/** tarandíne (tarandíne)
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
@@ -6887,7 +6887,7 @@ $messages['roa-tara'] = array(
 	'pt-deletepage-reason' => 'Mutive:',
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Askarmuk
  * @author DR
  * @author Eugrus
@@ -7112,7 +7112,7 @@ $messages['sa'] = array(
 	'pt-movepage-reason' => 'कारणम् :',
 );
 
-/** Sakha (Саха тыла)
+/** Sakha (саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
@@ -7145,7 +7145,7 @@ $messages['sah'] = array(
 	'tpt-edit-failed' => 'Бу сирэйи саҥардар табыллыбата: $1',
 );
 
-/** Sicilian (Sicilianu)
+/** Sicilian (sicilianu)
  * @author Aushulz
  */
 $messages['scn'] = array(
@@ -7264,7 +7264,7 @@ $messages['si'] = array(
 	'pt-deletepage-started' => 'සම්පූර්ණ පණිවුඩය සහ දෝෂයන් සඳහා කරුණාකර [[Special:Log/pagetranslation|පිටු පරිවර්තන ලඝු සටහන]] පිරික්සන්න.',
 );
 
-/** Slovak (Slovenčina)
+/** Slovak (slovenčina)
  * @author Helix84
  * @author Kusavica
  * @author Mormegil
@@ -7319,7 +7319,7 @@ Zdá sa, že stránka, ktorú sa pokúšate upravovať nezodpovedá žiadnej str
 	'tpt-aggregategroup-save' => 'Uložiť',
 );
 
-/** Slovenian (Slovenščina)
+/** Slovenian (slovenščina)
  * @author Dbc334
  * @author Irena Plahuta
  * @author Smihael
@@ -7471,7 +7471,7 @@ Dejanje izbrisa ne bo izvedeno takoj, ker je potrebno izbrisati veliko strani.
 Neuspehi bodo zabeleženi v [[Special:Log/pagetranslation|dnevniku prevajanja strani]] in jih morate urediti ročno.',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author Rancher
  * @author Михајло Анђелковић
  */
@@ -7525,7 +7525,7 @@ $messages['sr-ec'] = array(
 	'pt-movepage-action-other' => 'Промени циљ',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪srpski (latinica)‬)
  * @author Michaello
  * @author Rancher
  */
@@ -7564,7 +7564,7 @@ $messages['su'] = array(
 	'pt-movepage-action-other' => 'Ganti tujul',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author Dafer45
  * @author Fluff
  * @author Jopparn
@@ -8047,7 +8047,7 @@ Bu sürümü çeviri için işaretlemeden önce, çevirmenlere gereksiz iş çı
 	'pt-deletepage-subpages' => 'Tüm alt sayfaları sil',
 );
 
-/** Tatar (Cyrillic script) (Татарча)
+/** Tatar (Cyrillic script) (татарча)
  * @author Ильнар
  * @author Рашат Якупов
  */
@@ -8241,7 +8241,7 @@ $messages['ur'] = array(
 	'pt-movepage-reason' => 'وجہ:',
 );
 
-/** Vèneto (Vèneto)
+/** vèneto (vèneto)
  * @author Candalua
  */
 $messages['vec'] = array(
@@ -8529,7 +8529,7 @@ $messages['yi'] = array(
 	'pt-deletepage-lang-logreason' => 'טייל פון איבערזעצונג בלאט $1.',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Anakmalaysia
  * @author Chenxiaoqino
  * @author Gzdavidwong
@@ -8716,7 +8716,7 @@ $messages['zh-hans'] = array(
 任何删除失败将在[[Special:Log/pagetranslation|页面翻译日志]]记录，并且需要手动修理。',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Anakmalaysia
  * @author Liangent
  * @author Mark85296341
