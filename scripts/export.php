@@ -9,7 +9,7 @@
  * @file
  */
 
-$optionsWithArgs = array( 'lang', 'skip', 'target', 'group', 'threshold', 'ppgettext', 'hours' );
+$optionsWithArgs = array( 'target', 'lang', 'skip', 'group', 'skipgroup', 'threshold', 'ppgettext', 'hours' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 function showUsage() {
@@ -26,6 +26,8 @@ Options:
   --skipgroup   Comma separated list of group IDs that should not be exported
   --help        This help message
   --threshold   Do not export under this percentage translated
+  --hours       Only export languages with changes in the last given number of
+                hours.
   --ppgettext   Group root path for checkout of product. "msgmerge" will post
                 process on the export result based on the current source file
                 in that location (from sourcePattern or definitionFile)
