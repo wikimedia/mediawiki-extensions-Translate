@@ -1998,7 +1998,7 @@ Wann De dat nit han wells, kanns De et onger „{{int:prefs-personal}}“ en [[S
 $messages['ku-latn'] = array(
 	'firststeps' => 'Gavên yekem',
 	'translate-fs-pagetitle-done' => '- çêbû!',
-	'translate-fs-target-title' => 'Bi wergerrê dest pê bike!',
+	'translate-fs-target-title' => 'Bi wergerê dest pê bike!',
 );
 
 /** Luxembourgish (Lëtzebuergesch)

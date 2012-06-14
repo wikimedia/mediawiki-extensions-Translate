@@ -665,7 +665,7 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'translate-searchprofile-tooltip' => 'Tooltip for a tab in [[Special:Search]]',
 	'translate-messagereview-submit' => 'Button label in [[Special:Translate]] review mode.
 {{Identical|Accept}}',
-	'translate-messagereview-progress' => 'Button label in [[Special:Translate]] review mode. Button is disabled.',
+	'translate-messagereview-progress' => 'Button label in [[Special:Translate]] review mode. Button is disabled. This is shown very briefly while the acceptance is in progress.',
 	'translate-messagereview-failure' => 'Button label in [[Special:Translate]] review mode. Button is disabled. $1 can be {{msg-mw|translate-messagereview-apierror-invalidrevision}} or {{msg-mw|translate-messagereview-apierror-unknownmessage}} or {{msg-mw|translate-messagereview-apierror-fuzzymessage}}.',
 	'translate-messagereview-done' => 'Button label in [[Special:Translate]] review mode. Button is disabled.',
 	'translate-messagereview-reviews' => 'Status message in [[Special:Translate]] in review mode',
@@ -10720,7 +10720,7 @@ Részletek: $1',
 	'translate-gethelp' => 'Súgó',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -10749,6 +10749,7 @@ Clicca sur le nomine de un gruppo de messages pro vider un lista de messages non
 	'translate-page-disabled' => "Le traductiones in iste lingua in iste gruppo ha essite disactivate. Motivo:
 
 ''$1''",
+	'translate-language-disabled' => 'Le traduction in iste lingua es disactivate.',
 	'translate-page-settings-legend' => 'Optiones',
 	'translate-page-group' => 'Gruppo',
 	'translate-page-language' => 'Lingua',
@@ -11009,8 +11010,8 @@ Detalios: $1',
 	'translate-search-languagefilter' => 'Filtrar per lingua:',
 	'translate-search-nofilter' => 'Non filtrar',
 	'translate-messagereview-submit' => 'Acceptar',
-	'translate-messagereview-progress' => 'Acceptation...',
-	'translate-messagereview-failure' => 'Acceptation... fallite: $1',
+	'translate-messagereview-progress' => 'Accepta…',
+	'translate-messagereview-failure' => 'Acceptation fallite: $1',
 	'translate-messagereview-done' => 'Acceptate',
 	'translate-messagereview-reviews' => 'Acceptate per {{PLURAL:$1|un usator|$1 usatores}}',
 	'translate-messagereview-reviewswithyou' => 'Acceptate per {{PLURAL:$1|un usator|$1 usatores}} includente te',
