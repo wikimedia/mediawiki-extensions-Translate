@@ -643,6 +643,13 @@ array(
 	)
 ),
 array(
+	'group' => 'wikia-hawelcome',
+	'check' => 'links',
+	'message' => array(
+		'welcome-message-wall-user-staff', // Contains link parts that may need translation
+	)
+),
+array(
 	'group' => 'wikia-problemreports',
 	'check' => 'links',
 	'message' => array(
