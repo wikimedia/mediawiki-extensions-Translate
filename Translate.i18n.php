@@ -7631,6 +7631,7 @@ Cliquer sur le nom du groupe de messages pour voir une liste des messages qui ne
 Motif :
 
 ''$1''",
+	'translate-language-disabled' => 'La traduction dans cette langue est désactivée.',
 	'translate-page-settings-legend' => 'Configuration',
 	'translate-page-group' => 'Groupe',
 	'translate-page-language' => 'Langue',
@@ -9206,6 +9207,7 @@ $messages['he'] = array(
 	'translate-page-disabled' => "התרגומים לשפה זו בקבוצה זו בוטלו מהסיבה הבאה:
 
 '''$1'''",
+	'translate-language-disabled' => 'תרגום לשפה הזאת כבוי.',
 	'translate-page-settings-legend' => 'הגדרות',
 	'translate-page-group' => 'קבוצה',
 	'translate-page-language' => 'שפה',
@@ -15490,6 +15492,7 @@ Klik nama kumpulan mesej untuk melihat senarai mesej yang belum diterjemah.',
 Sebab:
 
 ''$1''",
+	'translate-language-disabled' => 'Terjemahan kepada bahasa ini tidak dibenarkan.',
 	'translate-page-settings-legend' => 'Tetapan',
 	'translate-page-group' => 'Kumpulan',
 	'translate-page-language' => 'Bahasa',
@@ -16635,6 +16638,7 @@ Klik op een berichtengroep om de lijst met nog niet vertaalde berichten te bekij
 	'translate-page-disabled' => "Vertalingen in deze taal voor deze groep zijn uitgeschakeld. Reden:
 
 ''$1''",
+	'translate-language-disabled' => 'Vertalen in deze taal is uitgeschakeld.',
 	'translate-page-settings-legend' => 'Instellingen',
 	'translate-page-group' => 'Groep',
 	'translate-page-language' => 'Taal',
