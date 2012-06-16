@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//+m0\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-16T07:53:15Z",
+      "side": 1,
+      "message": "I would add a hook here, to make it possible for others to add boxes without modifying this code :)",
+      "revId": "2578c43854c9fde02dea1846fa5d79a55f7650a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+nM\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-16T07:53:15Z",
+      "side": 1,
+      "message": "Why do you consider this unnecessary for SVG?",
+      "revId": "2578c43854c9fde02dea1846fa5d79a55f7650a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+nE\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1054,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-16T07:53:15Z",
+      "side": 1,
+      "message": "Trailing space",
+      "revId": "2578c43854c9fde02dea1846fa5d79a55f7650a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
