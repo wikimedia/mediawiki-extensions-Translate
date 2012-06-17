@@ -866,6 +866,7 @@ $messages['be-tarask'] = array(
 	'tpt-other-pages' => '{{PLURAL:$1|Старая вэрсія гэтай старонкі пазначаная|Старыя вэрсіі гэтых старонак пазначаныя}} для перакладу, але {{PLURAL:$1|апошняя вэрсія ня можа быць пазначаная|апошнія вэрсіі ня могуць быць пазначаныя}} для перакладу.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Гэтай старонцы|Гэтым старонкам}} было адхілена ў далейшым перакладзе.',
 	'tpt-select-prioritylangs' => 'Сьпіс прыярытэтных кодаў моваў, падзеленых коскамі:',
+	'tpt-select-prioritylangs-force' => 'Запабегчы перакладам на іншыя мовы, што не ў прыярытэце',
 	'tpt-select-prioritylangs-reason' => 'Прычына:',
 	'tpt-sections-prioritylangs' => 'Прыярытэтныя мовы',
 	'tpt-rev-mark' => 'пазначыць да перакладу',
@@ -891,6 +892,13 @@ $messages['be-tarask'] = array(
 	'tpt-translation-restricted' => 'Пераклад гэтай старонкі на дадзеную мову быў папярэджаны адміністратарам паракладаў.
 
 Прычына: $1',
+	'tpt-discouraged-language-force' => "'''Гэтая старонка ня можа быць перакладзеная на мову $2.'''
+
+Адміністратар перакладу вырашыў, што гэтая старонка можа быць перакладзеная толькі на мовы: $3.",
+	'tpt-discouraged-language' => "'''Пераклад на мову $2 не зьяўляецца прыярытэтным.'''
+
+Адміністратар перакладу вырашыў сканцэнтраваць перакладніцкія высілкі на мовах $3.",
+	'tpt-discouraged-language-reason' => 'Прычына: $1',
 	'tpt-render-summary' => 'Абнаўленьне для адпаведнасьці новай вэрсіі крынічнай старонкі',
 	'tpt-download-page' => 'Экспартаваць старонку з перакладамі',
 	'tpt-aggregategroup-add' => 'Дадаць',
@@ -4929,6 +4937,12 @@ awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
 Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungs-Fonctioun] aktulaiséiert ginn.",
 	'tpt-unknown-page' => "Dëse Nummraum ass fir d'Iwwersetze vu Säitemat Inhalt reservéiert.
 D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iwwersetzung markéiert ass ze korrespondéieren.",
+	'tpt-translation-restricted' => "D'Iwwersetze vun dëser Säit an dës Sprooch gouf vun engem Iwwersetzungs-Administrateur gespaart.
+
+Grond: $1",
+	'tpt-discouraged-language-force' => "'''Dës Säit kann net op $2 iwwersat ginn.'''
+
+En Iwwersetzungs-Administrateur huet decidéiert datt dës Säit nëmmen op $3 iwwersat ka ginn.",
 	'tpt-discouraged-language-reason' => 'Grond: $1',
 	'tpt-priority-languages' => 'En Iwwersetzungs-Administrateur huet déi prioritiséiert Sprooche fir dëse Grupp op $1 agestallt.',
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
@@ -8545,7 +8559,7 @@ $messages['yi'] = array(
  */
 $messages['zh-hans'] = array(
 	'pagetranslation' => '页面翻译',
-	'right-pagetranslation' => '为翻译标记页面的版本',
+	'right-pagetranslation' => '标记翻译的页面版本',
 	'tpt-desc' => '用于翻译内容页面的扩展',
 	'tpt-section' => '翻译单元$1',
 	'tpt-section-new' => '新翻译单元。
