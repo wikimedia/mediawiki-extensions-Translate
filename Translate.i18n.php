@@ -1862,6 +1862,7 @@ Calca nel nome del grupu de mensaxes para ver la llista de mensaxes ensin traduc
 	'translate-page-disabled' => "Les traducciones d'esta llingua nesti grupu foron desactivaes. Motivu:
 
 ''$1''",
+	'translate-language-disabled' => 'La traducción a esta llingua ta desactivada.',
 	'translate-page-settings-legend' => 'Configuración',
 	'translate-page-group' => 'Grupu',
 	'translate-page-language' => 'Llingua',
@@ -11998,7 +11999,7 @@ $messages['ja'] = array(
 	'translate-magic-namespace' => '名前空間名',
 	'translate-magic-notsaved' => '編集は保存されませんでした！',
 	'translate-magic-errors' => '以下の{{PLURAL:$1|エラー}}を修正してください：',
-	'translate-magic-saved' => '変更は正常に保存されました。',
+	'translate-magic-saved' => '変更を保存しました。',
 	'translate-checks-parameters' => '次の{{PLURAL:$2|パラメーター}}が利用されていません：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '次の{{PLURAL:$2|パラメーター}}が未定義です：
@@ -13472,6 +13473,7 @@ Donn op en Jropp klecke, öm en Leßß met allem ze sinn ze krijje, wat doh dren
 	'translate-page-disabled' => "Övversezonge sen affjeschalldt för di {{int:translate-page-group}} un {{int:translate-page-language}}, weil:
 
 ''$1''",
+	'translate-language-disabled' => 'Övversäzonge in heh di Schprooch sin afjeschalldt.',
 	'translate-page-settings-legend' => 'Enshtällonge',
 	'translate-page-group' => 'Jrupp:',
 	'translate-page-language' => 'Shprooch:',

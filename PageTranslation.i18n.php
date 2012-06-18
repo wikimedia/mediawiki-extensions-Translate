@@ -645,6 +645,7 @@ Motivu: $1',
 	'tpt-discouraged-language' => 'Esta llingua nun ta ente les llingües prioritaries que definió pa la páxina un alministrador.
 
 Motivu: $1',
+	'tpt-discouraged-language-reason' => 'Motivu: $1',
 	'tpt-priority-languages' => "Un alministrador de traducciones definió les llingües prioritaries d'esti grupu como $1.",
 	'tpt-render-summary' => 'Anovando pa casar cola nueva versión de la páxina orixinal',
 	'tpt-download-page' => 'Esportar la páxina con traducciones',
