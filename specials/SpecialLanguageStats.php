@@ -273,7 +273,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 */
 	function getWorkflowStateCell( $target ) {
 		// This will be set by addWorkflowStatesColumn if needed
-		if ( !isset( $this->states ) {
+		if ( !isset( $this->states ) ) {
 			return '';
 		}
 

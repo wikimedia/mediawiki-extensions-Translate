@@ -70,7 +70,7 @@ class SpecialTranslate extends SpecialPage {
 			$this->options['language'] = $this->defaults['language'];
 		}
 
-		$translatableLanguages =  $this->group->getTranslatableLanguages( );
+		$translatableLanguages = $this->group->getTranslatableLanguages();
 		if ( !isset( $translatableLanguages[$this->options['language']] ) ) {
 			$errors['language'] = wfMessage( 'translate-language-disabled' )->text();
 		}
@@ -202,7 +202,7 @@ class SpecialTranslate extends SpecialPage {
 
 			if ( $this->paging['count'] === 0 ) {
 				$wgOut->addHTML( $description . $links );
-			} elseif ( $this->paging['count'] === $this->paging['total']  ) {
+			} elseif ( $this->paging['count'] === $this->paging['total'] ) {
 				$wgOut->addHTML( $description . $output . $links );
 			} else {
 				$wgOut->addHTML( $description . $links . $output . $links );
