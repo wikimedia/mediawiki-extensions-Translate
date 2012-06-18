@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//+I4\u003d",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2012-06-18T12:26:07Z",
+      "side": 1,
+      "message": "I am pretty sure you would need to commit the write query first. \n\nOn a special page, that mean a stalled page while waiting for slave to catch up :(\n\nTwo other ways to do it:\n\n- since the data is in $inserts, reuse them instead of writing to DB and reloading from DB.\n- read data from MASTER to make sure you get a fresh page",
+      "revId": "c3022813264d01ced47572a719d6ee13f9780d55",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
