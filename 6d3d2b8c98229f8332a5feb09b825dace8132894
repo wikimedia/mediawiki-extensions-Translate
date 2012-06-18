@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//+Rw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T06:37:42Z",
+      "side": 1,
+      "message": "\u00273\u0027 alone is not clear",
+      "revId": "6d3d2b8c98229f8332a5feb09b825dace8132894",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+Rs\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T06:37:42Z",
+      "side": 1,
+      "message": "This is too long for a tab",
+      "revId": "6d3d2b8c98229f8332a5feb09b825dace8132894",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
