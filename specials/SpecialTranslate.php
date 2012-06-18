@@ -635,8 +635,8 @@ class SpecialTranslate extends SpecialPage {
 
 	protected function getWorkflowStatus() {
 		global $wgUser;
-		$translateWorkflowStates = $this->group->getWorkflowConfiguration();
-		if ( !$translateWorkflowStates ) {
+		$stateConfig = $this->group->getWorkflowConfiguration();
+		if ( !$stateConfig ) {
 			return false;
 		}
 
@@ -652,46 +652,41 @@ class SpecialTranslate extends SpecialPage {
 			__METHOD__
 		);
 
+		$options = array();
+		$stateConfig = array_merge(
+			array( '' => array( 'right' => 'impossible-right' ) ),
+			$stateConfig
+		);
+
 		if ( $wgUser->isAllowed( 'translate-groupreview' ) ) {
-			// Always add an option for "unset" state
-			$unsetOptionAttributes = array(
-				'value' => '',
-			);
-			if ( !$current ) {
-				$unsetOptionAttributes['selected'] = 'selected';
-			}
-			$workflowStatesOptions = Xml::element( 'option',
-				$unsetOptionAttributes,
-				wfMessage( 'translate-workflow-state-' )->text()
-			);
 			// Add an option for every state
-			foreach ( array_keys( $translateWorkflowStates ) as $state ) {
+			foreach ( $stateConfig as $state => $config ) {
 				$stateMessage = wfMessage( "translate-workflow-state-$state" );
 				$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
 
-				$workflowStatesOptionAttributes = array(
+				$attributes = array(
 					'value' => $state,
 				);
 
-				if ( ( isset( $translateWorkflowStates[$state]['right'] ) )
-					&& ( !$wgUser->isAllowed( $translateWorkflowStates[$state]['right'] ) ) )
+				if ( $state === strval( $current ) ) {
+					$attributes['selected'] = 'selected';
+				}
+
+				if ( is_array( $config ) && isset( $config['right'] )
+					&& !$wgUser->isAllowed( $config['right'] ) )
 				{
 					// Grey out the forbidden option
-					$workflowStatesOptionAttributes['disabled'] = 'disabled';
+					$attributes['disabled'] = 'disabled';
 				}
 
-				if ( $state === $current ) {
-					$workflowStatesOptionAttributes['selected'] = 'selected';
-				}
-
-				$workflowStatesOptions .= Html::element( 'option', $workflowStatesOptionAttributes, $stateText );
+				$options[] = Html::element( 'option', $attributes, $stateText );
 			}
 			$stateIndicator = Html::rawElement( 'select',
 				array(
 					'class' => 'mw-translate-workflowselector',
 					'name' => 'workflow',
 				),
-				$workflowStatesOptions
+				implode( "\n", $options )
 			);
 
 			$setButtonAttributes = array(
