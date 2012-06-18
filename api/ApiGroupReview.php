@@ -23,8 +23,8 @@ class ApiGroupReview extends ApiBase {
 		if ( !$group ) {
 			$this->dieUsageMsg( array( 'missingparam', 'group' ) );
 		}
-		$translateWorkflowStates = $group->getWorkflowConfiguration();
-		if ( !$translateWorkflowStates ) {
+		$stateConfig = $group->getWorkflowConfiguration();
+		if ( !$stateConfig ) {
 			$this->dieUsage( 'Message group review not in use', 'disabled' );
 		}
 
@@ -48,16 +48,21 @@ class ApiGroupReview extends ApiBase {
 			__METHOD__
 		);
 		$targetState = $requestParams['state'];
-		if ( $currentState == $targetState ) {
+		if ( $currentState === $targetState ) {
 			$this->dieUsage( 'The requested state is identical to the current state', 'sameworkflowstate' );
 		}
-		if ( ( isset( $translateWorkflowStates[$targetState]['right'] ) )
-				&& ( !$wgUser->isAllowed( $translateWorkflowStates[$targetState]['right'] ) ) ) {
+
+		if ( !isset( $stateConfig[$targetState] ) ) {
+			$this->dieUsage( 'The requested state is invalid', 'invalidstate' );
+		}
+
+		if ( is_array( $stateConfig[$targetState] )
+			&& isset( $stateConfig[$targetState]['right'] )
+			&& !$wgUser->isAllowed( $stateConfig[$targetState]['right'] ) )
+		{
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
-		if ( !isset( $translateWorkflowStates[$targetState] ) ) {
-				$this->dieUsage( 'The requested state is invalid', 'invalidstate' );
-		}
+
 
 		$dbw = wfGetDB( DB_MASTER );
 		$table = 'translate_groupreviews';

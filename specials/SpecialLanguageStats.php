@@ -260,7 +260,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$this->states = self::getWorkflowStates();
 
 			// An array where keys are state names and values are numbers
-			$this->statemap = array_flip( array_keys( $wgTranslateWorkflowStates ) );
 			$this->table->addExtraColumn( wfMessage( 'translate-stats-workflow' ) );
 		}
 
@@ -273,36 +272,38 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * @return string
 	 */
 	function getWorkflowStateCell( $target ) {
+		// This will be set by addWorkflowStatesColumn if needed
+		if ( !isset( $this->states ) {
+			return '';
+		}
+
 		$group = MessageGroups::getGroup( $target );
-		$translateWorkflowStates = false;
-		if($group){
-			$translateWorkflowStates = $group->getWorkflowConfiguration();
-		}
-		if ( $translateWorkflowStates ) {
-			$state = isset( $this->states[$target] ) ? $this->states[$target] : '';
-			$sort = isset( $this->statemap[$state] ) ? $this->statemap[$state] + 1 : -1;
-			$stateMessage = wfMessage( "translate-workflow-state-$state" );
-			$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
+		$stateConfig = $group->getWorkflowConfiguration();
 
-			$cellBgColor = '';
-			if( isset( $translateWorkflowStates[$state] )
-				&& is_array( $translateWorkflowStates[$state] )
-				&& isset( $translateWorkflowStates[$state]['color'] ) ) {
-				$cellBgColor = $translateWorkflowStates[$state]['color'];
-			} else {
-				// BC for old format of workflow state configuration.
-				$cellBgColor = isset( $translateWorkflowStates[$state] )
-				? $translateWorkflowStates[$state]
-				: '';
+		$state = isset( $this->states[$target] ) ? $this->states[$target] : '';
+
+		$sortValue = -1;
+		$stateColor = '';
+		if ( isset( $stateConfig[$state] ) ) {
+			$sortIndex = array_flip( array_keys( $stateConfig ) );
+			$sortValue = $sortIndex[$state] + 1;
+
+			if ( is_string( $stateConfig[$state] ) ) {
+				// BC for old configuration format
+				$stateColor = $stateConfig[$state];
+			} elseif ( isset( $stateConfig[$state]['color'] ) ) {
+				$stateColor = $stateConfig[$state]['color'];
 			}
-			return "\n\t\t" . $this->table->element(
-				$stateText,
-				$cellBgColor,
-				$sort
-			);
 		}
 
-		return '';
+		$stateMessage = wfMessage( "translate-workflow-state-$state" );
+		$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
+
+		return "\n\t\t" . $this->table->element(
+			$stateText,
+			$stateColor,
+			$sortValue
+		);
 	}
 
 	/**
