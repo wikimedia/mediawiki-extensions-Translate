@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//+G0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:13:09Z",
+      "side": 1,
+      "message": "\u0027specific\u0027 sounds redundant",
+      "revId": "856c48cd985df30b875694f2134ddaf77650b9f6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+G4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:13:09Z",
+      "side": 1,
+      "message": "typo",
+      "revId": "856c48cd985df30b875694f2134ddaf77650b9f6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+Gw\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:13:09Z",
+      "side": 1,
+      "message": "Missing space",
+      "revId": "856c48cd985df30b875694f2134ddaf77650b9f6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+Gs\u003d",
+        "filename": "Translate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:13:09Z",
+      "side": 1,
+      "message": "There is already header named this.",
+      "revId": "856c48cd985df30b875694f2134ddaf77650b9f6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+Go\u003d",
+        "filename": "Translate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:13:09Z",
+      "side": 1,
+      "message": "Wrap lines at about 80 chars",
+      "revId": "856c48cd985df30b875694f2134ddaf77650b9f6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+Gk\u003d",
+        "filename": "utils/TranslationEditPage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:13:09Z",
+      "side": 1,
+      "message": "Too many tabs",
+      "revId": "856c48cd985df30b875694f2134ddaf77650b9f6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
