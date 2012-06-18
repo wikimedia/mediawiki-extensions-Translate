@@ -673,7 +673,8 @@ class SpecialTranslate extends SpecialPage {
 					'value' => $state,
 				);
 
-				if ( ( isset( $translateWorkflowStates[$state]['right'] ) )
+				if ( ( is_array( $translateWorkflowStates[$state] )
+						&& isset( $translateWorkflowStates[$state]['right'] ) )
 					&& ( !$wgUser->isAllowed( $translateWorkflowStates[$state]['right'] ) ) )
 				{
 					// Grey out the forbidden option
