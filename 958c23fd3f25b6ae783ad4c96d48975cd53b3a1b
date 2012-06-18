@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//+HA\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "The button text should change once clicked or have buttons that stick down.",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+IE\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 5841,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "Your editor seems to strip all trailing whitespace from lines. These are potential source of merge conflicts in i18n files and generally pollute the patch.",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+IA\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "Trailing tabs",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+H8\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "Am I blind or is this block repeated twice?",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+H4\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "Why is it important?",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+H0\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "I think you need $( this ).val() here.",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+Ho\u003d",
+        "filename": "utils/MessageTable.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "Trailing tabs",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+Hk\u003d",
+        "filename": "utils/MessageTable.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "Repeated again? Why are you stripping it?",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+HM\u003d",
+        "filename": "utils/TranslationEditPage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "Check whitespace usage for your additions in this file.",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+Hc\u003d",
+        "filename": "utils/TranslationEditPage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "Maybe a good place for a hook which does this",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+Hg\u003d",
+        "filename": "utils/TranslationEditPage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "You can\u0027t use \u0026nbsp; in MediaWiki. Why is it needed at all?",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+HY\u003d",
+        "filename": "utils/TranslationEditPage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "I\u0027d avoid inline styles.",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+HU\u003d",
+        "filename": "utils/TranslationEditPage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "Less tabs please.",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+HQ\u003d",
+        "filename": "utils/TranslationEditPage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "Avoid inline styles",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+HI\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "Don\u0027t use \u003d\u003d null.",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//+HE\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-18T13:08:50Z",
+      "side": 1,
+      "message": "I don\u0027t understand this, aren\u0027t the properties part of the message? Why do they need to be added here?",
+      "revId": "958c23fd3f25b6ae783ad4c96d48975cd53b3a1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
