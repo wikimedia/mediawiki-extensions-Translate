@@ -2535,6 +2535,9 @@ Tämä sivu on käännös sivusta [[$1]] ja käännöstä voi päivittää käyt
 Sivu, jota yrität muokata, ei näytä vastaavan mitään sivua, joka on merkitty käännettäväksi.',
 	'tpt-render-summary' => 'Päivittäminen vastaamaan uutta versiota lähdesivusta',
 	'tpt-download-page' => 'Sivun vienti käännösten kera',
+	'tpt-aggregategroup-add' => 'Lisää',
+	'tpt-aggregategroup-save' => 'Tallenna',
+	'tpt-aggregategroup-new-name' => 'Nimi',
 	'pt-parse-open' => 'Sulkematon &lt;translate>-tägi.
 Käännöspohja: <pre>$1</pre>',
 	'pt-parse-close' => 'Avaamaton &lt;/translate>-tägi.

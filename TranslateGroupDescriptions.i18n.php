@@ -511,9 +511,11 @@ Vysvětlení klíčů u funkce PLURAL najdete na [http://unicode.org/repos/cldr-
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] je open-source mikroblovací server',
 	'translate-group-desc-statusnet-plugin' => 'Tyto zprávy jsou částí modulu pro [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Skupina zpráv pro [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], lokalizační systém pro nástroje na [http://toolserver.org Toolserveru] (<span class="plainlinks">[[Translating talk:Toolserver|podpora]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technické podrobnosti]</span>)',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] je služba zobrazující trasy pro turistiku, cyklistiku, MTB a inline bruslení po celém světě. Používá licenci GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] dokáže rychle zjistit autory libovolné stránky na wiki nadace Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt nabízející offline čistě textovou verzi Wikipedie pro mobilní zařízení.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] je mnohoplatformní mobilní a tabletová aplikace pro čtení Wikipedie a přispívání do ní',
+	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] je mnohoplatformní mobilní a tabletová aplikace pro čtení Wikislovníku a přispívání do něj',
 );
 
 /** Danish (dansk)
