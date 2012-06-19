@@ -63,25 +63,9 @@ class SpecialTranslate extends SpecialPage {
 			return;
 		}
 
-		$codes = Language::getLanguageNames( false );
-		$errors = array();
-		if ( !$this->options['language'] || !isset( $codes[$this->options['language']] ) ) {
-			$errors['language'] = wfMessage( 'translate-page-no-such-language' )->text();
-			$this->options['language'] = $this->defaults['language'];
-		}
-
-		$translatableLanguages = $this->group->getTranslatableLanguages();
-		if ( !isset( $translatableLanguages[$this->options['language']] ) ) {
-			$errors['language'] = wfMessage( 'translate-language-disabled' )->text();
-		}
-
-		if ( !$this->group instanceof MessageGroup ) {
-			$errors['group'] = wfMessage( 'translate-page-no-such-group' )->text();
-			$this->options['group'] = $this->defaults['group'];
-		}
-
 		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Translation_example' );
 		// Show errors nicely.
+		$errors = $this->getFormErrors();
 		$wgOut->addHTML( $this->settingsForm( $errors ) );
 
 		if ( count( $errors ) ) {
@@ -208,6 +192,30 @@ class SpecialTranslate extends SpecialPage {
 				$wgOut->addHTML( $description . $links . $output . $links );
 			}
 		}
+	}
+
+	/**
+	 * Returns array of errors in the form parameters.
+	 */
+	protected function getFormErrors() {
+		$errors = array();
+
+		$codes = TranslateUtils::getLanguageNames( 'en' );
+		if ( !$this->options['language'] || !isset( $codes[$this->options['language']] ) ) {
+			$errors['language'] = wfMessage( 'translate-page-no-such-language' )->text();
+			$this->options['language'] = $this->defaults['language'];
+		}
+
+		if ( !$this->group instanceof MessageGroup ) {
+			$errors['group'] = wfMessage( 'translate-page-no-such-group' )->text();
+			$this->options['group'] = $this->defaults['group'];
+		} else {
+			$translatableLanguages = $this->group->getTranslatableLanguages();
+			if ( !isset( $translatableLanguages[$this->options['language']] ) ) {
+				$errors['language'] = wfMessage( 'translate-language-disabled' )->text();
+			}
+		}
+		return $errors;
 	}
 
 	protected function setup( $parameters ) {
