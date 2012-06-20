@@ -15,7 +15,14 @@ class ApiTokensTest extends MediaWikiTestCase {
 
 	/** @dataProvider getTokenClasses */
 	public function testTokenRetrieval( $id, $class ) {
+		// Make sure we have the right to get the token
+		global $wgGroupPermissions, $wgUser;
+		$wgGroupPermissions['*'][$class::getRight()] = true;
+		$wgUser->clearInstanceCache(); // Reread above global
+
+		// We should be getting anonymous user token
 		$expected = $class::getToken();
+		$this->assertNotSame( false, $expected, 'We did not get a valid token' );
 
 		$actionString = TranslateUtils::getTokenAction( $id );
 		$params = wfCgiToArray( $actionString );
