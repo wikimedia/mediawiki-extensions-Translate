@@ -164,7 +164,7 @@ class ApiGroupReview extends ApiBase {
 	}
 
 	public function getVersion() {
-		return __CLASS__ . ': $Id$';
+		return __CLASS__ . ': ' . TRANSLATE_VERSION;
 	}
 
 	public static function getToken() {
