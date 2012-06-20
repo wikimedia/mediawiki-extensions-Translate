@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAANX//+0w\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2012-06-20T11:48:54Z",
+      "side": 1,
+      "message": "maybe reference the bug number ? ;-D",
+      "revId": "4ef6ccd28ee2b58a1b6d709b2f382da245ad6d2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAANX//+0s\u003d",
+        "filename": "api/ApiAggregateGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2012-06-20T11:48:54Z",
+      "side": 1,
+      "message": "Unknown constant I guess",
+      "revId": "4ef6ccd28ee2b58a1b6d709b2f382da245ad6d2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
