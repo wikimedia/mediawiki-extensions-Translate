@@ -302,6 +302,11 @@ class TranslationHelpers {
 			throw new TranslationHelperExpection( 'Malformed reply from remote server' );
 		}
 
+		if ( !isset( $response['ttmserver'] ) ) {
+			self::reportTranslationServiceFailure( $serviceName );
+			throw new TranslationHelperExpection( 'Unexpected reply from remote server' );
+		}
+
 		$suggestions = $response['ttmserver'];
 		if ( count( $suggestions ) === 0 ) {
 			throw new TranslationHelperExpection( 'No suggestions' );
