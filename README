@@ -30,6 +30,8 @@ And for the code at:
  https://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-06-21
+- Fixed recent imcompatibility with MW 1.19
 * 2012-06-11
 - Allow setting message group state for a group only for specific user right.
   This redefines $wgTranslateWorkflowStates to hold the rights required for
