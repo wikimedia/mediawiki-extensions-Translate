@@ -60,6 +60,8 @@ class SpecialManageGroups extends SpecialPage {
 	}
 
 	protected function showChanges( $allowed ) {
+		global $wgContLang;
+
 		$out = $this->getOutput();
 		$user = $this->getUser();
 
@@ -77,6 +79,22 @@ class SpecialManageGroups extends SpecialPage {
 			$group = MessageGroups::getGroup( $id );
 			$changes = unserialize( $reader->get( $id ) );
 			$out->addHtml( Html::element( 'h2', array(), $group->getLabel() ) );
+
+			// Reduce page existance queries to one per group
+			$lb = new LinkBatch();
+			$ns = $group->getNamespace();
+			$isCap = MWNamespace::isCapitalized( $ns );
+			foreach ( $changes as $code => $subchanges ) {
+				foreach ( $subchanges as $type => $messages ) {
+					foreach ( $messages as $params ) {
+						// Constructing title objects is way slower
+						$key = $params['key'];
+						if ( $isCap ) $key = $wgContLang->ucfirst( $key );
+						$lb->add( $ns, "$key/$code" );
+					}
+				}
+			}
+			$lb->execute();
 
 			foreach ( $changes as $code => $subchanges ) {
 				foreach ( $subchanges as $type => $messages ) {
