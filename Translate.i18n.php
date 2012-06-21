@@ -21139,6 +21139,7 @@ Kliknite na skupino sporočil za prikaz seznama neprevedenih sporočil.',
 Razlog:
 
 ''$1''",
+	'translate-language-disabled' => 'Prevodi v ta jezik so onemogočeni.',
 	'translate-page-settings-legend' => 'Nastavitve',
 	'translate-page-group' => 'Skupina',
 	'translate-page-language' => 'Jezik',

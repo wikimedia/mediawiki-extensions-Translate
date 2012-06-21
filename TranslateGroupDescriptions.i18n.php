@@ -2708,13 +2708,14 @@ $messages['tt-cyrl'] = array(
 /** Ukrainian (українська)
  * @author AS
  * @author Base
+ * @author Olvin
  * @author Prima klasy4na
  * @author Тест
  */
 $messages['uk'] = array(
 	'translate-group-desc-nodesc' => 'Немає опису цієї групи повідомлень',
 	'translate-group-desc-mediawikicore' => 'Ця група містить повідомлення, які використовують у поточній альфа-версії MediaWiki ({{CURRENTVERSION}})',
-	'translate-group-desc-mediawikimostused' => 'Ця група містить [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 найвживаніших у MediaWiki повідомлень]',
+	'translate-group-desc-mediawikimostused' => 'Ця група містить [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 найуживаніших повідомлень] [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mediawikiextensions' => 'Ця метагрупа містить повідомлення підтримуваних розширень MediaWiki',
 	'translate-group-desc-collection' => 'Метагрупа, що містить повідомлення для розширення [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Метагрупа, що містить повідомлення для MediaWiki-розширення [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
