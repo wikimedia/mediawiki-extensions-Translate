@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX///as\u003d",
+        "filename": "scripts/processMessageChanges.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-06-21T11:39:04Z",
+      "side": 1,
+      "message": "This looks very verbose. Maybe only output when using --verbose?",
+      "revId": "c9926b55136fc932a4a3624130df4157e676f664",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX///ao\u003d",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-06-21T11:39:04Z",
+      "side": 1,
+      "message": "Typo: group",
+      "revId": "c9926b55136fc932a4a3624130df4157e676f664",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
