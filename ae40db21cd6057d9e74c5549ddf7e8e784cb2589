@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX///ag\u003d",
+        "filename": "README",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-06-21T11:41:13Z",
+      "side": 1,
+      "message": "Also update the version date in Translate.php?",
+      "revId": "ae40db21cd6057d9e74c5549ddf7e8e784cb2589",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
