@@ -65,7 +65,7 @@ class MessageUpdateJob extends Job {
 			$inserts = array();
 			foreach ( $res as $row ) {
 				$inserts[] = array(
-					'rt_type' => 'fuzzy',
+					'rt_type' => Revtag::getType( 'fuzzy' ),
 					'rt_page' => $row->page_id,
 					'rt_revision' => $row->page_latest,
 				);
