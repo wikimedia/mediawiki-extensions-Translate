@@ -130,7 +130,7 @@ class TranslateEditAddons {
 			$editpage->suppressIntro = true;
 			$group = $handle->getGroup();
 			$translatableLanguages = $group->getTranslatableLanguages( );
-			if ( !isset( $translatableLanguages[$handle->getCode()] ) ) {
+			if ( $handle->getCode() && !isset( $translatableLanguages[$handle->getCode()] ) ) {
 				$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-language-disabled' );
 				return false;
 			}
