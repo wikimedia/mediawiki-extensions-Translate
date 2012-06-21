@@ -31,7 +31,8 @@ And for the code at:
 
 == Change log ==
 * 2012-06-21
-- Fixed recent incompatibility with MW 1.19
+- Fixed recent incompatibility with MW 1.19.
+- Improved hiding of blacklisted groups on Special:LangaugeStats.
 * 2012-06-11
 - Allow setting message group state for a group only for specific user right.
   This redefines $wgTranslateWorkflowStates to hold the rights required for

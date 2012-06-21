@@ -389,7 +389,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	protected function makeGroupRow( MessageGroup $group, array $cache, MessageGroup $parent = null ) {
 		$groupId = $group->getId();
 
-		if ( $this->table->isBlacklisted( $groupId, $this->target ) !== null ) {
+		$translatableLanguages = $group->getTranslatableLanguages();
+		if ( $this->table->isBlacklisted( $groupId, $this->target ) !== null
+			|| !isset( $translatableLanguages[$this->target] ) )
+		{
 			return '';
 		}
 
