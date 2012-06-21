@@ -36,13 +36,14 @@ class ProcessMessageChanges extends Maintenance {
 
 	public function execute() {
 		$groups = MessageGroups::getGroupsByType( 'FileBasedMessageGroup' );
-		foreach ( $groups as $group ) {
+		foreach ( $groups as $id => $group ) {
+			$this->output( "Processing $id\n" );
 			$this->processMessageGroup( $group );
 		}
 		if ( count( $this->changes ) ) {
 			$this->writeChanges();
 		} else {
-			$this->output( 'No changes found' );
+			$this->output( "No changes found\n" );
 		}
 	}
 
