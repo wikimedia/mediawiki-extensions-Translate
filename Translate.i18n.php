@@ -7878,7 +7878,7 @@ il est impossible de déterminer le groupe et la langue depuis les entêtes du f
 	'translate-import-err-warnings' => 'Le fichier n’est pas bien formé.
 Assurez-vous que votre outil de traduction ne supprime pas les champs « msgctxt ».
 Détails : $1',
-	'translate-js-summary' => 'Résumé:',
+	'translate-js-summary' => 'Résumé :',
 	'translate-js-save' => 'Enregistrer',
 	'translate-js-next' => 'Enregistrer et ouvrir le suivant',
 	'translate-js-nonext' => "C'était le dernier message de cette page.",
@@ -13175,11 +13175,11 @@ $1',
 	'translate-page-group' => '그룹',
 	'translate-page-language' => '언어',
 	'translate-page-limit' => '제한',
-	'translate-page-limit-option' => '페이지당 $1개의 메시지 보기',
+	'translate-page-limit-option' => '페이지당 메시지 $1개 보기',
 	'translate-submit' => '불러오기',
 	'translate-page-navigation-legend' => '둘러보기',
-	'translate-page-showing' => '$3개의 메시지 중 $1 - $2을(를) 보고 있습니다.',
-	'translate-page-showing-all' => '$1개의 메시지를 보고 있습니다.',
+	'translate-page-showing' => '메시지 $3개 중 $1 - $2을(를) 보고 있습니다.',
+	'translate-page-showing-all' => '메시지 $1개를 보고 있습니다.',
 	'translate-page-showing-none' => '보여 줄 메시지가 없습니다.',
 	'translate-next' => '다음 페이지',
 	'translate-prev' => '이전 페이지',
@@ -19415,6 +19415,7 @@ Apăsați pe numele grupului de mesaje pentru a vizualiza o listă a mesajelor n
 Motiv:
 
 ''$1''",
+	'translate-language-disabled' => 'Traducerile în această limbă sunt dezactivate.',
 	'translate-page-settings-legend' => 'Setări',
 	'translate-page-group' => 'Grup',
 	'translate-page-language' => 'Limbă',
