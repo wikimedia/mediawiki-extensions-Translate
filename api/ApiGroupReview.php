@@ -173,18 +173,16 @@ class ApiGroupReview extends ApiBase {
 			return false;
 		}
 
-		static $cachedToken = null;
-		if ( !is_null( $cachedToken ) ) {
-			return $cachedToken;
-		}
-
-		$cachedToken = $wgUser->editToken( self::$salt );
-		return $cachedToken;
+		return $wgUser->editToken( self::$salt );
 	}
 
 	public static function injectTokenFunction( &$list ) {
 		$list['groupreview'] = array( __CLASS__, 'getToken' );
 		return true; // Hooks must return bool
+	}
+
+	public static function getRight() {
+		return self::$right;
 	}
 
 }
