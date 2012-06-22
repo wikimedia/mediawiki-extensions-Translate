@@ -213,6 +213,8 @@ class TranslationHelpers {
 			}
 		}
 
+		wfRunHooks( 'TranslateGetBoxes', array( $this->handle->getTitle(), &$boxes ) );
+
 		if ( count( $boxes ) ) {
 			return Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
 		} else {
