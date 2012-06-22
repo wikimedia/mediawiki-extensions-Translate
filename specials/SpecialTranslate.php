@@ -179,7 +179,11 @@ class SpecialTranslate extends SpecialPage {
 				);
 			}
 			if ( $description ) {
-				$description = Xml::fieldset( wfMsg( 'translate-page-description-legend' ), $description );
+				$description = Xml::fieldset(
+					wfMsg( 'translate-page-description-legend' ),
+					$description,
+					array( 'class' => 'mw-sp-translate-description'
+				);
 			}
 
 			$links = $this->doStupidLinks();
