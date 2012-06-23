@@ -4661,22 +4661,65 @@ $messages['kn'] = array(
 
 /** Korean (한국어)
  * @author Kwj2772
+ * @author 아라
  */
 $messages['ko'] = array(
 	'pagetranslation' => '문서 번역',
+	'tpt-template' => '문서 틀',
+	'tpt-templatediff' => '문서 틀이 바뀌었습니다.',
 	'tpt-diff-old' => '이전 텍스트',
 	'tpt-diff-new' => '새 텍스트',
+	'tpt-submit' => '번역에 대해 이 버전 검토',
 	'tpt-sections-deleted' => '삭제된 번역 단위',
+	'tpt-sections-template' => '번역 문서 틀',
+	'tpt-badtitle' => '주어진 문서 이름($1)은 올바른 제목이 아닙니다',
+	'tpt-nosuchpage' => '$1 문서가 존재하지 않습니다',
+	'tpt-oldrevision' => '$2 버전은 [[$1]] 문서의 최신 버전이 아닙니다.
+최신 버전만 번역에서 검토할 수 있습니다.',
+	'tpt-edit-failed' => '문서를 업데이트를 할 수 없습니다: $1',
+	'tpt-other-pages-title' => '잘못된 문서',
 	'tpt-select-prioritylangs-reason' => '이유:',
 	'translate-tag-translate-link-desc' => '이 문서 번역하기',
 	'tpt-languages-legend' => '다른 언어:',
+	'tpt-discouraged-language-force' => "'''이 번역은 $2(으)로 번역할 수 없습니다.'''
+
+번역 관리자는 이 문서가 $3(으)로 번역할 수 있도록 결정합니다.",
+	'tpt-discouraged-language-reason' => '이유: $1',
+	'tpt-aggregategroup-add' => '더하기',
 	'tpt-aggregategroup-save' => '저장하기',
 	'tpt-aggregategroup-new-name' => '이름:',
 	'tpt-aggregategroup-new-description' => '설명 (선택):',
+	'tpt-aggregategroup-invalid-group' => '그룹이 존재하지 않습니다',
+	'pt-log-name' => '문서 번역 기록',
+	'pt-movepage-list-pages' => '이동할 문서 목록',
+	'pt-movepage-list-translation' => '번역 문서',
+	'pt-movepage-list-section' => '부분 문서',
+	'pt-movepage-list-other' => '다른 하위 문서',
+	'pt-movepage-list-count' => '이동할 문서 총 $1개.',
+	'pt-movepage-legend' => '번역 가능한 문서 이동',
 	'pt-movepage-current' => '현재 이름:',
 	'pt-movepage-new' => '새 이름:',
 	'pt-movepage-reason' => '이유:',
+	'pt-movepage-subpages' => '모든 하위 문서 이동',
+	'pt-movepage-action-perform' => '이동하기',
+	'pt-movepage-logreason' => '번역 가능한 $1 문서의 부분.',
+	'pt-deletepage-lang-title' => '$1 번역 문서 삭제.',
+	'pt-deletepage-full-title' => '번역 가능한 $1 문서 삭제.',
+	'pt-deletepage-action-perform' => '삭제하기',
+	'pt-deletepage-action-other' => '목표 바꿈',
+	'pt-deletepage-lang-legend' => '번역 문서 삭제',
+	'pt-deletepage-full-legend' => '번역 가능한 문서 삭제',
+	'pt-deletepage-any-legend' => '번역 가능한 문서 또는 번역 가능한 문서의 번역 삭제',
+	'pt-deletepage-current' => '문서 이름:',
 	'pt-deletepage-reason' => '이유:',
+	'pt-deletepage-subpages' => '모든 하위 문서 삭제',
+	'pt-deletepage-list-pages' => '삭제할 문서 목록',
+	'pt-deletepage-list-translation' => '번역 문서',
+	'pt-deletepage-list-section' => '부분 문서',
+	'pt-deletepage-list-other' => '다른 하위 문서',
+	'pt-deletepage-list-count' => '삭제할 문서 총 $1개.',
+	'pt-deletepage-full-logreason' => '번역 가능한 $1 문서의 부분.',
+	'pt-deletepage-lang-logreason' => '$1 번역 문서의 부분.',
 );
 
 /** Colognian (Ripoarisch)
