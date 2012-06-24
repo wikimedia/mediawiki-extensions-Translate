@@ -119,3 +119,13 @@
 .mw-translate-close {
 	float: right;
 }
+
+.mw-translate-inputs{
+	overflow: auto;
+	padding: 2px;'
+}
+
+.mw-translate-bottom{
+	clear: both;
+	margin-top: -3px;
+}
