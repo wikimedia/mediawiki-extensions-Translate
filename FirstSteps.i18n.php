@@ -537,6 +537,25 @@ Také budete maximálně jednou měsíčně dostávat novinky.
 Pokud novinky nechcete dostávat, můžete se z odběru odhlásit na záložce „{{int:prefs-personal}}“ v [[Special:Preferences|nastavení]].',
 );
 
+/** Welsh (Cymraeg)
+ * @author Lloffiwr
+ */
+$messages['cy'] = array(
+	'translate-fs-selectlanguage' => 'Dewiswch iaith',
+	'translate-fs-settings-planguage' => 'Prif iaith:',
+	'translate-fs-settings-submit' => 'Rhodder y dewisiadau ar gadw',
+	'translate-fs-userpage-level-N' => 'Yr iaith hon yw fy mamiaith:',
+	'translate-fs-userpage-level-5' => 'Rwyn gyfieithydd proffesiynol yn yr iaith hon:',
+	'translate-fs-userpage-level-4' => 'Rwyn siarad yr iaith hon yn rhugl:',
+	'translate-fs-userpage-level-3' => "Rwyn medru'r iaith hon yn dda:",
+	'translate-fs-userpage-level-2' => "Rwyn medru'r iaith hon yn weddol dda:",
+	'translate-fs-userpage-level-1' => 'Rwyn medru ychydig ar yr iaith hon:',
+	'translate-fs-userpage-help' => 'Nodwch eich sgiliau ieithyddol a dywedwch ychydig amdanoch eich hunain wrthym. Os ydych yn siarad mwy na phum iaith gallwch ychwanegu ieithoedd wedyn.',
+	'translate-fs-userpage-submit' => 'Cadwer fy nhudalen defnyddiwr',
+	'translate-fs-userpage-done' => 'Da iawn! Erbyn hyn mae gennych dudalen defnyddiwr.',
+	'translate-fs-permissions-planguage' => 'Prif iaith:',
+);
+
 /** Danish (dansk)
  * @author Emilkris33
  * @author Peter Alberti

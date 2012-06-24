@@ -230,6 +230,7 @@ Failures will be logged in the [[Special:Log/pagetranslation|page translation lo
  * @author Darth Kule
  * @author EugeneZelenko
  * @author Fryed-peach
+ * @author Lloffiwr
  * @author Mormegil
  * @author Nemo bis
  * @author Nike
@@ -333,9 +334,14 @@ Used only if a reason was provided in the following messages:
 	'pt-movepage-block-section-exists' => 'Section page is a translation of one section. Translation page consists of many translation sections.',
 	'pt-movepage-block-subpage-exists' => 'Subpage is here any subpage of translation page, which is not a translated version of the translatable page.',
 	'pt-movepage-reason' => '{{Identical|Reason}}',
+	'pt-movepage-action-other' => "Button label on the special page 'Move translateable page'. See [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_21._Move_confirm.png screenshot].",
 	'pt-deletepage-action-check' => 'This is a button label. "List" is an imperative verb.',
+	'pt-deletepage-action-perform' => "Submit button on special page 'Deleting translatable page'. See [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
+	'pt-deletepage-action-other' => "Button label on the special page 'Deleting translatable page'. See [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
 	'pt-deletepage-current' => '{{Identical|Page name}}',
 	'pt-deletepage-reason' => '{{Identical|Reason}}',
+	'pt-deletepage-subpages' => "Checkbox label on special page 'Deleting translatable page'. see [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
+	'pt-deletepage-list-section' => "Heading in special page 'Deleting translatable page'. See [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
 );
 
 /** ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ (ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ)
@@ -1489,6 +1495,41 @@ Zdůvodnění: $1',
  */
 $messages['cy'] = array(
 	'pagetranslation' => 'Cyfieithu tudalen',
+	'tpt-section' => 'Adran gyfieithu rhif $1',
+	'tpt-section-deleted' => 'Adran gyfieithu rhif $1',
+	'tpt-diff-old' => 'Y testun cynt',
+	'tpt-diff-new' => 'Y testun newydd',
+	'tpt-other-pages-title' => 'Tudalennau toredig',
+	'tpt-select-prioritylangs-reason' => 'Rheswm:',
+	'tpt-sections-prioritylangs' => 'Blaenoriaethau ymhlith yr ieithoedd',
+	'tpt-languages-legend' => 'Ieithoedd eraill:',
+	'tpt-aggregategroup-add' => 'Ychwaneger',
+	'tpt-aggregategroup-save' => 'Cadwer',
+	'tpt-aggregategroup-new-name' => 'Enw:',
+	'tpt-aggregategroup-new-description' => 'Disgrifiad (dewisol):',
+	'pt-log-name' => 'Lòg cyfieithu tudalennau',
+	'pt-movepage-list-pages' => "Rhestr y tudalennau i'w symud",
+	'pt-movepage-list-translation' => 'Tudalennau cyfieithu',
+	'pt-movepage-list-section' => 'Tudalennau adran gyfieithu',
+	'pt-movepage-list-other' => 'Isdudalennau eraill',
+	'pt-movepage-list-count' => "Cyfanswm y tudalennau i'w symud yw {{PLURAL:$1|$1}}.",
+	'pt-movepage-legend' => 'Symud tudalen y gellir ei chyfieithu',
+	'pt-movepage-current' => 'Enw cyfredol:',
+	'pt-movepage-new' => 'Enw newydd:',
+	'pt-movepage-reason' => 'Rheswm:',
+	'pt-movepage-subpages' => 'Symud pob isdudalen',
+	'pt-movepage-action-check' => 'Cadarnhau bod symud y dudalen yn bosibl',
+	'pt-movepage-action-perform' => 'Symuder',
+	'pt-movepage-action-other' => 'Dewis tudalen wahanol',
+	'pt-deletepage-action-perform' => 'Dileer',
+	'pt-deletepage-action-other' => 'Dewis tudalen wahanol',
+	'pt-deletepage-current' => "Enw'r dudalen:",
+	'pt-deletepage-reason' => 'Rheswm:',
+	'pt-deletepage-subpages' => "Dileu'r holl isdudalennau",
+	'pt-deletepage-list-pages' => "Rhestr y tudalennau i'w dileu",
+	'pt-deletepage-list-translation' => 'Tudalennau cyfieithu',
+	'pt-deletepage-list-section' => 'Tudalennau adran gyfieithu',
+	'pt-deletepage-list-other' => 'Isdudalennau eraill',
 );
 
 /** Danish (dansk)
@@ -5348,6 +5389,7 @@ $messages['ml'] = array(
 	'tpt-rev-encourage' => 'പുനഃസ്ഥാപിക്കുക',
 	'translate-tag-translate-link-desc' => 'ഈ താൾ പരിഭാഷപ്പെടുത്തുക',
 	'tpt-languages-legend' => 'മറ്റു ഭാഷകൾ:',
+	'tpt-discouraged-language-reason' => 'കാരണം: $1',
 	'tpt-aggregategroup-add' => 'കൂട്ടിച്ചേർക്കുക',
 	'tpt-aggregategroup-save' => 'സേവ് ചെയ്യുക',
 	'tpt-aggregategroup-new-name' => 'പേര്:',
