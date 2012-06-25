@@ -190,6 +190,8 @@ class JavaFFS extends SimpleFFS {
 		 * \n is exception we do handle in values. */
 		$key = trim( $key );
 		$key = stripcslashes( $key );
+		$key = str_replace( '{', "-", $key );
+		$key = str_replace( '}', "-", $key );
 		$value = ltrim( $value );
 		$value = str_replace( '\n', "\n", $value );
 		return array( $key, $value );

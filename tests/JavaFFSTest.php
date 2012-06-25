@@ -29,6 +29,7 @@ message = Welcome to \
           Wikipedia!
 # Add spaces to the key
 key\ with\ spaces = This is the value that could be looked up with the key "key with spaces".
+extensions.{972ce4c6-7e08-4474-a285-3208198ce6fd}.name=ברירת מחדל
 PROPERTIES;
 
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
@@ -39,6 +40,7 @@ PROPERTIES;
 			'language' => 'English',
 			'message' => 'Welcome to Wikipedia!',
 			'key with spaces' => 'This is the value that could be looked up with the key "key with spaces".',
+			'extensions.-972ce4c6-7e08-4474-a285-3208198ce6fd-.name' => 'ברירת מחדל',
 		);
 		$expected = array( 'MESSAGES' => $expected, 'AUTHORS' => array() );
 		$this->assertEquals( $expected, $parsed );
