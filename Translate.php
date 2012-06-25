@@ -654,10 +654,12 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
 $wgTranslateYamlLibrary = 'spyc';
 
 /**
- * Disable pre-save transform for message pages. This allows special pre-save
- * syntax such as "~~~~" to be saved into them.
+ * Pre-save transform for message pages. MediaWiki does this by default
+ * (including for pages in the MediaWiki-namespace). By setting this to
+ * false it allows users to put untransformed syntax such as "~~~~" into
+ * a page without having them be transformed upon save.
  */
-$wgTranslateDisablePreSaveTransform = false;
+$wgTranslateUsePreSaveTransform = false;
 
 # </source>
 
