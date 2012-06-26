@@ -29,8 +29,8 @@ class TTMServerBootstrap extends Maintenance {
 		parent::__construct();
 		$this->mDescription = 'Script to bootstrap TTMServer';
 		$this->addOption( 'threads', 'Number of threads', /*required*/false, /*has arg*/true );
-		$this->addOption( 'server', 'Server configuration identifier', /*required*/false, /*has arg*/true );
-		$this->setBatchSize( 100 );
+		$this->addOption( 'ttmserver', 'Server configuration identifier', /*required*/false, /*has arg*/true );
+		$this->setBatchSize( 1000 );
 		$this->start = microtime( true );
 	}
 
@@ -45,56 +45,20 @@ class TTMServerBootstrap extends Maintenance {
 		global $wgTranslateTranslationServices;
 
 		// TTMServer is the id of the enabled-by-default instance
-		$configKey = $this->getOption( 'server', 'TTMServer' );
+		$configKey = $this->getOption( 'ttmserver', 'TTMServer' );
 		if ( isset( $wgTranslateTranslationServices[$configKey] ) ) {
 			$this->config = $config = $wgTranslateTranslationServices[$configKey];
-			$server = new TTMServer( $config );
+			$server = TTMServer::factory( $config );
 		} else {
 			$this->error( "Translation memory is not configured properly", 1 );
 		}
 
-		$dbw = $server->getDB( DB_MASTER );
 
-		if ( $server->isShared() ) {
-			$wiki = array( 'tms_wiki' => wfWikiId() );
+		$this->output( "Cleaning up old entries...\n" );
+		$server->beginBootstrap();
 
-			$this->statusLine( 'Deleting fulltext.. ', 1 );
-			$dbw->deleteJoin(
-				'translate_tmf', 'translate_tms',
-				'tmf_sid', 'tms_sid',
-				$wiki, __METHOD__
-			);
-
-			$this->output( 'translations.. ', 1 );
-			$dbw->deleteJoin(
-				'translate_tmt', 'translate_tms',
-				'tmt_sid', 'tms_sid',
-				$wiki, __METHOD__
-			);
-
-			$this->output( 'sources.. ', 1 );
-			$dbw->delete( 'translate_tms', $wiki, __METHOD__ );
-			$this->output( 'done!', 1 );
-		} else {
-			// For dedicated databases we can just wipe out everything,
-			// drop the index during bootstrap and readd it later.
-			$this->statusLine( 'Deleting sources.. ', 1 );
-			$dbw->delete( 'translate_tms', '*', __METHOD__ );
-			$this->output( 'translations.. ', 1 );
-			$dbw->delete( 'translate_tmt', '*', __METHOD__ );
-			$this->output( 'fulltext.. ', 1 );
-			$dbw->delete( 'translate_tmf', '*', __METHOD__ );
-			$table = $dbw->tableName( 'translate_tmf' );
-			$dbw->ignoreErrors( true );
-			$dbw->query( "DROP INDEX tmf_text ON $table" );
-			$dbw->ignoreErrors( false );
-			$this->output( 'done!', 1 );
-		}
-
-		$this->statusLine( 'Loading groups... ', 2 );
+		$this->statusLine( "Loading groups...\n" );
 		$groups = MessageGroups::singleton()->getGroups();
-		$this->output( 'done!', 2 );
-
 
 		$threads = $this->getOption( 'threads', 1 );
 		$pids = array();
@@ -111,7 +75,12 @@ class TTMServerBootstrap extends Maintenance {
 				// Child, reseed because there is no bug in PHP:
 				// http://bugs.php.net/bug.php?id=42465
 				mt_srand( getmypid() );
-				$this->exportGroup( $group, $threads > 1 );
+
+				// Make sure all existing connections are dead,
+				// we can't use them in forked children.
+				LBFactory::destroyInstance();
+
+				$this->exportGroup( $group );
 				exit();
 			} elseif ( $pid === -1 ) {
 				// Fork failed do it serialized
@@ -135,60 +104,43 @@ class TTMServerBootstrap extends Maintenance {
 			pcntl_waitpid( $pid, $status );
 		}
 
-		if ( !$server->isShared() ) {
-			$this->statusLine( 'Adding fulltext index...', 9 );
-			$table = $dbw->tableName( 'translate_tmf' );
-			$dbw->query( "CREATE FULLTEXT INDEX tmf_text ON $table (tmf_text)" );
-			$this->output( ' done!', 9 );
-		}
+		$this->statusLine( "Creating indexes and optimizing...\n" );
+		$server->endBootstrap();
 	}
 
-	protected function exportGroup( MessageGroup $group, $multi = false ) {
-		// Make sure all existing connections are dead,
-		// we can't use them in forked children.
-		LBFactory::destroyInstance();
-		$server = new TTMServer( $this->config );
+	protected function exportGroup( MessageGroup $group ) {
+		$server = TTMServer::factory( $this->config );
 
 		$id = $group->getId();
 		$sourceLanguage = $group->getSourceLanguage();
 
-		if ( $multi ) {
-			$stats = MessageGroupStats::forGroup( $id );
-			$this->statusLine( "Loaded stats for $id\n" );
-		} else {
-			$this->statusLine( "Loading stats... ", 4 );
-			$stats = MessageGroupStats::forGroup( $id );
-			$this->output( "done!", 4 );
-			$this->statusLine( "Inserting sources: ", 5 );
-		}
+		$stats = MessageGroupStats::forGroup( $id );
+		$this->statusLine( "Loaded stats for $id\n" );
 
 		$collection = $group->initCollection( $sourceLanguage );
 		$collection->filter( 'ignored' );
 		$collection->filter( 'optional' );
 		$collection->initMessages();
 
-		$sids = array();
-		$counter = 0;
+		$server->beginBatch();
+		$inserts = array();
 
 		foreach ( $collection->keys() as $mkey => $title ) {
 			$def = $collection[$mkey]->definition();
-			$sids[$mkey] = $server->insertSource( $title, $sourceLanguage, $def );
-			if ( ++$counter % $this->mBatchSize === 0 && !$multi ) {
-				wfWaitForSlaves( 10 );
-				$this->output( '.', 5 );
-			}
+			$inserts[$mkey] = array( $title, $sourceLanguage, $def );
 		}
 
-		$total = count( $sids );
-		if ( $multi ) {
-			$this->statusLine( "Inserted $total source entries for $id\n" );
-		} else {
-			$this->output( "$total entries", 5 );
-			$this->statusLine( "Inserting translations...", 6 );
-		}
+		$total = count( $inserts );
+		do {
+			$batch = array_splice( $inserts, 0, $this->mBatchSize );
+			$server->batchInsertDefinitions( $batch );
+		} while ( count( $inserts ) );
 
-		$dbw = $server->getDB( DB_MASTER );
+		$this->statusLine( "Inserted $total source entries for $id\n" );
 
+
+		$inserts = array();
+		$total = 0;
 		foreach ( $stats as $targetLanguage => $numbers ) {
 			if ( $targetLanguage === $sourceLanguage ) {
 				continue;
@@ -197,39 +149,26 @@ class TTMServerBootstrap extends Maintenance {
 				continue;
 			}
 
-			if ( !$multi ) {
-				$this->output( sprintf( "%19s  ", $targetLanguage ), $targetLanguage );
-			}
-
 			$collection->resetForNewLanguage( $targetLanguage );
 			$collection->filter( 'ignored' );
 			$collection->filter( 'optional' );
 			$collection->filter( 'translated', false );
 			$collection->loadTranslations();
 
-			$inserts = array();
 			foreach ( $collection->keys() as $mkey => $title ) {
-				$inserts[] = array(
-					'tmt_sid' => $sids[$mkey],
-					'tmt_lang' => $targetLanguage,
-					'tmt_text' => $collection[$mkey]->translation()
-				);
+				$inserts[$mkey] = array( $title, $targetLanguage, $collection[$mkey]->translation() );
 			}
+
+			$total += count( $inserts );
 
 			do {
 				$batch = array_splice( $inserts, 0, $this->mBatchSize );
-				$dbw->insert( 'translate_tmt', $batch, __METHOD__ );
-
-				if ( !$multi ) {
-					$this->output( '.', $targetLanguage );
-				}
-				wfWaitForSlaves( 10 );
+				$server->batchInsertTranslations( $batch );
 			} while ( count( $inserts ) );
 		}
 
-		if ( $multi ) {
-			$this->statusLine( "Inserted translations for $id\n" );
-		}
+		$server->endBatch();
+		$this->statusLine( "Inserted $total translations for $id\n" );
 	}
 
 }
