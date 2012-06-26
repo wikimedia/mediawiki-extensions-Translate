@@ -17,9 +17,11 @@
 class ApiTTMServer extends ApiBase {
 
 	public function execute() {
+		global $wgTranslateTranslationServices;
 		$params = $this->extractRequestParams();
 
-		$server = TTMServer::primary();
+		$config = $wgTranslateTranslationServices[$params['service']];
+		$server = TTMServer::factory( $config );
 
 		$suggestions = $server->query(
 			$params['sourcelanguage'],
@@ -42,7 +44,7 @@ class ApiTTMServer extends ApiBase {
 
 		$good = array();
 		foreach ( $wgTranslateTranslationServices as $id => $config ) {
-			if ( $config['type'] === 'ttmserver' && $config['public'] === true ) {
+			if ( isset( $config['public'] ) && $config['public'] === true ) {
 				$good[] = $id;
 			}
 		}

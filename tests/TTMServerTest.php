@@ -31,7 +31,8 @@ class TTMServerTest extends MediaWikiTestCase {
 			'cutoff' => 0.75,
 			'timeout-sync' => 4,
 			'timeout-async' => 4,
-			'type' => 'remote-ttmserver',
+			'type' => 'ttmserver',
+			'class' => 'RemoteTTMServer',
 		);
 
 		$wgTranslateTranslationServices['sharedtm'] = array(
@@ -39,7 +40,8 @@ class TTMServerTest extends MediaWikiTestCase {
 			'cutoff' => 0.75,
 			'timeout-sync' => 4,
 			'timeout-async' => 4,
-			'type' => 'shared-ttmserver',
+			'type' => 'ttmserver',
+			'class' => 'SharedDatabaseTTMServer',
 		);
 
 	}
@@ -66,7 +68,7 @@ class TTMServerTest extends MediaWikiTestCase {
 		);
 		$server = TTMServer::primary();
 		$this->assertEquals(
-			'TTMServer',
+			'DatabaseTTMServer',
 			get_class( $server ),
 			'Real server given when default server is enabled'
 		);
@@ -84,32 +86,9 @@ class TTMServerTest extends MediaWikiTestCase {
 		$title = new Title();
 		$handle = new MessageHandle( $title );
 
-		$this->assertFalse(
+		$this->assertNull(
 			$server->update( $handle, 'text' ),
-			'FakeTTMServer returns false on update'
-		);
-
-		$this->assertFalse(
-			$server->insertSource( $title, 'fi', 'teksti' ),
-			'FakeTTMServer returns false on insertSource'
+			'FakeTTMServer returns null on update'
 		);
 	}
-
-	/**
-	 * @dataProvider dataIsShared
-	 */
-	public function testIsShared( $server, $value ) {
-		global $wgTranslateTranslationServices;
-		$server = new TTMServer( $wgTranslateTranslationServices[$server] );
-		$this->assertEquals( $value, $server->isShared() );
-	}
-
-	public function dataIsShared() {
-		return array(
-			array( 'localtm', false ),
-			array( 'apitm', false ),
-			array( 'sharedtm', true ),
-		);
-	}
-
 }
