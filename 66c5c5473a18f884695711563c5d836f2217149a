@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn///ks\u003d",
+        "filename": "resources/ext.translate.quickedit.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-26T14:18:14Z",
+      "side": 1,
+      "message": "Add space before {",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///ko\u003d",
+        "filename": "resources/ext.translate.quickedit.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-26T14:18:14Z",
+      "side": 1,
+      "message": "Add space before {",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///kk\u003d",
+        "filename": "resources/ext.translate.quickedit.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-26T14:18:14Z",
+      "side": 1,
+      "message": "Could use explanation where the -3 comes from.",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///kY\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-26T14:18:14Z",
+      "side": 1,
+      "message": "You should cache the selector result as var textarea \u003d form.find( \u0027....\u0027 );\nthen use textarea.val(), since there should ever be only one edit area with this class per form.",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///jQ\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-26T14:18:14Z",
+      "side": 1,
+      "message": "What about editors without JavaScript using the regular page edit view to Translate? Maybe the translation properties should only be stripped on the client side with JavaScript? I still think that keeping the properties with the messages would be easier, otherwise you will lose them easily - with offline translation for example.",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///jM\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-26T14:18:14Z",
+      "side": 1,
+      "message": "} );",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///jY\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-26T14:18:14Z",
+      "side": 1,
+      "message": "I see no reason to change \u003d\u003d\u003d to is_null",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///jU\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-26T14:18:14Z",
+      "side": 1,
+      "message": "Why is the hook only for null translations?",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///jc\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-06-26T14:18:14Z",
+      "side": 1,
+      "message": "You can turn this into elseif",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
