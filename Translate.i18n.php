@@ -450,6 +450,7 @@ Most useful for the proofreading tasks.',
  * @author Toliño
  * @author Umherirrender
  * @author פוילישער
+ * @author 아라
  */
 $messages['qqq'] = array(
 	'translate' => 'This message is the page title of the special page [[Special:Translate]]. It is the verb "to translate".
@@ -650,7 +651,7 @@ fuzzy = mark translations for review',
 	'translate-js-skip' => 'A button together with Save and Save an open next. Goes to the next message without saving.',
 	'translate-js-save-failed' => 'If there was unknown error while submitting a translation, user gets this message in javascript popup (alert).',
 	'translate-js-support-unsaved-warning' => 'A warning shown in a dialog box if a user tries to close a page without saving a translation written .',
-	'translate-gs-pos' => "Used in wiki tables for localisation statistics as a column header for 'Positition' abbreviated. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]",
+	'translate-gs-pos' => "Used in wiki tables for localisation statistics as a column header for 'Position' abbreviated. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]",
 	'translate-gs-code' => 'Used in wiki tables for localisation statistics as a column header for language code. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]
 {{Identical|Code}}',
 	'translate-gs-continent' => 'Used in wiki tables for localisation statistics as a column header for the continent where a language is spoken. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
@@ -13219,7 +13220,8 @@ $messages['ko'] = array(
 	'translate-taction-disabled' => '이 행동은 이 위키에서 비활성화되어 있습니다.',
 	'translate-page-no-such-language' => '선택한 언어가 잘못되었습니다.',
 	'translate-page-no-such-group' => '입력한 그룹이 잘못되었습니다.',
-	'translate-page-disabled' => '이 그룹에서 이 언어로의 번역이 비활성화되어 있습니다. 이유:
+	'translate-page-disabled' => '이 그룹에서 이 언어로의 번역이 비활성화되어 있습니다.
+이유:
 
 $1',
 	'translate-language-disabled' => '이 언어로의 번역이 비활성화되어 있습니다.',
@@ -13307,7 +13309,7 @@ $1',
 	'translate-checks-pagename' => '이름공간이 정의로부터 바뀌었습니다',
 	'translate-checks-format' => '이 번역은 정의를 따르지 않거나 잘못된 구문입니다: $1',
 	'translate-checks-escape' => '다음의 탈출은 실수였을 수 있습니다: <strong>$1</strong>',
-	'translate-checks-parametersnotequal' => '메개 번수 개수는 {{PLURAL:$1|$1}}개이며 {{PLURAL:$2|$2}}개여야 합니다.',
+	'translate-checks-parametersnotequal' => '매개 번수 개수는 {{PLURAL:$1|$1}}개이며 {{PLURAL:$2|$2}}개여야 합니다.',
 	'translate-checks-malformed' => '<nowiki>$1</nowiki>(은)는 잘못된 형식입니다.',
 	'translate-checks-fudforum-syntax' => '이 프로젝트에는 <nowiki>$2</nowiki> 대신에 <nowiki>$1</nowiki>(을)를 사용하십시오.',
 	'translate-pref-nonewsletter' => '이메일 뉴스레터를 보내지 않습니다',
@@ -13406,7 +13408,7 @@ $1',
 	'translate-mgs-totals' => '모든 언어',
 	'translate-mgs-invalid-group' => '지정한 $1 그룹이 존재하지 않습니다.',
 	'translate-mgs-nothing' => '통계 자료 요청에 대해 보여 줄 통계가 없습니다.',
-	'supportedlanguages' => '지원하는 언어',
+	'supportedlanguages' => '지원 언어',
 	'supportedlanguages-summary' => '이 문서는 {{SITENAME}}에서 지원하는 모든 언어의 목록과 그 언어로 번역하는 번역자의 이름을 보여 주고 있습니다.
 번역자가 편집을 더 많이 할수록 이름이 크게 나타납니다.
 밑줄의 색깔은 번역자가 얼마나 최근에 활동했는지를 나타냅니다.',
@@ -13430,6 +13432,13 @@ $1',
 	'translate-manage-action-ignore' => '무시',
 	'translate-manage-action-fuzzy' => '가져오기와 퍼지 번역',
 	'translate-manage-nochanges' => '이 그룹에 대한 메시지 정의 바뀜이 없습니다.',
+	'translate-manage-nochanges-other' => '이 언어에 대한 바뀜이 없습니다.
+그룹 자세한 정보 보기로 돌아가려면 다음 링크를 사용하세요.',
+	'translate-manage-inconsistent' => '요청에서 일치하지 않음을 발견했습니다.
+바뀜을 확인하고 다시 시도하세요.
+자세한 정보: $1.',
+	'translate-manage-toolong' => '최대 처리 시간 $1초가 초과했습니다.
+처리를 계속하려면 양식을 다시 전송하세요.',
 	'translate-manage-import-summary' => '바깥에서 새 버전을 가져옴',
 	'translate-manage-conflict-summary' => '바깥 소스로부터 새 버전을 가져옵니다.
 확인하세요.',
@@ -13462,8 +13471,10 @@ $1',
 	'translate-js-support' => '질문하기',
 	'translate-js-support-title' => '이 메시지를 정확히 번역할 만한 정보가 부족하다면 도움을 요청하세요.',
 	'translate-js-support-unsaved-warning' => '번역을 저장하지 않았습니다.',
+	'translate-gs-pos' => '순위',
 	'translate-gs-code' => '코드',
 	'translate-gs-continent' => '국가',
+	'translate-gs-speakers' => '말한이',
 	'translate-gs-score' => '점수',
 	'translate-gs-multiple' => '여러',
 	'translate-gs-count' => '갯수',
@@ -13487,6 +13498,7 @@ $1',
 	'api-error-owntranslation' => '자신의 번역은 승인할 수 없습니다.',
 	'translate-messagereview-no-fuzzy' => '퍼지 번역은 승인할 수 없습니다.',
 	'translate-messagereview-no-own' => '자신의 번역은 승인할 수 없습니다.',
+	'translate-messagereview-doit' => '올바른 번역으로 이 번역을 승인합니다.',
 	'group-translate-proofr' => '번역 평론가',
 	'group-translate-proofr-member' => '{{GENDER:$1|번역 평론가}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:번역 평론가',
@@ -13494,12 +13506,19 @@ $1',
 	'group-translate-proofr.js' => '/* 이 자바스크립트 설정은 번역 평론가에만 적용됩니다 */',
 	'log-name-translationreview' => '번역 검토 기록',
 	'log-description-translationreview' => '번역과 메시지 그룹에 대한 모든 검토 기록.',
+	'logentry-translationreview-message' => '$1 사용자가 $3 번역을 {{GENDER:$2|승인했습니다}}',
+	'logentry-groupreview-message' => '$1 사용자가 $5부터 $6까지 $3 메시지 그룹의 $4 번역의 상태가 {{GENDER:$2|바뀌었습니다}}',
 	'translate-workflow-state-' => '(미설정)',
 	'translate-workflowstatus' => '상태: $1',
 	'translate-workflow-set-do' => '설정',
 	'translate-workflow-set-doing' => '설정 중...',
 	'translate-workflow-set-done' => '설정!',
+	'translate-workflow-set-error-alreadyset' => '요청한 상태는 현재 상태와 동일합니다.',
+	'translate-workflow-autocreated-summary' => '$1 작업 상태에 대한 페이지가 자동으로 만듦',
 	'translate-stats-workflow' => '상태',
+	'translate-workflowgroup-label' => '작업 상태',
+	'translate-workflowgroup-desc' => '이 메시지 그룹은 번역 작업 상태를 보여줍니다.
+상태는 $wgTranslateWorkflowStates 변수 설정에 지정됩니다.',
 	'translate-dynagroup-recent-label' => '최근 번역',
 	'translate-dynagroup-recent-desc' => '이 메시지 그룹은 이 언어로의 최근 번역을 보여줍니다.
 교정 작업에 아주 유용합니다.',
@@ -24267,6 +24286,9 @@ $messages['uk'] = array(
 	'translate-next' => 'наступна сторінка',
 	'translate-prev' => 'попередня сторінка',
 	'translate-page-description-legend' => 'Інформація про групу',
+	'translate-page-description-hasoptional' => "Ця група повідомлень містить необов'язкові повідомлення.
+Необов'язкові повідомлення слід перекладати лише якщо Ваша мова вимагає особливого ставлення,
+скажімо, не вживаються пробіли чи не потрібна транслітерація власних імен. $1",
 	'translate-page-description-hasoptional-open' => 'Показувати додаткові повідомлення.',
 	'translate-page-edit' => 'редагувати',
 	'translate-ext-url' => '<hr />Сайт: $1',
@@ -24397,7 +24419,7 @@ $messages['uk'] = array(
 	'translate-language-code' => 'Код мови',
 	'translate-language-code-field-name' => 'Код мови:',
 	'translate-suppress-complete' => 'Приховати повністю перекладені групи повідомлень',
-	'translate-ls-noempty' => 'Приховати повністю неперекладені групи повідомлень',
+	'translate-ls-noempty' => 'Приховати зовсім неперекладені групи повідомлень',
 	'translate-language' => 'Мова',
 	'translate-total' => 'Повідомлення',
 	'translate-untranslated' => 'Неперекладені',
@@ -24516,8 +24538,8 @@ $1',
 	'translate-workflowstatus' => 'Статус: $1',
 	'translate-stats-workflow' => 'Статус',
 	'translate-dynagroup-recent-label' => 'Останні переклади',
-	'translate-dynagroup-recent-desc' => 'Ця група повідомлення відображає всі останні переклади на цю мову.
-Цей режим є найзручнішим для вичитування.',
+	'translate-dynagroup-recent-desc' => 'Ця група повідомлень відображає всі останні переклади цією мовою.
+Найзручніший режим для вичитки.',
 	'translate-dynagroup-by' => '{{GENDER:$1| Переклав|Переклала}}   $1',
 	'translate-dynagroup-byc' => '{{GENDER:$1| Переклав|Переклала}}   $1 ( $2 )',
 	'translate-dynagroup-last' => 'Востаннє змінено {{GENDER:$1|$1}}',

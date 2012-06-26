@@ -4706,18 +4706,38 @@ $messages['kn'] = array(
  */
 $messages['ko'] = array(
 	'pagetranslation' => '문서 번역',
+	'right-pagetranslation' => '번역에 대한 문서의 버전 검토',
+	'tpt-desc' => '번역 콘텐츠 문서를 위한 확장 기능',
+	'tpt-section' => '번역 단위 $1',
+	'tpt-section-new' => '새 번역 단위.
+이름: $1',
+	'tpt-section-deleted' => '번역 단위 $1',
 	'tpt-template' => '문서 틀',
 	'tpt-templatediff' => '문서 틀이 바뀌었습니다.',
 	'tpt-diff-old' => '이전 텍스트',
 	'tpt-diff-new' => '새 텍스트',
 	'tpt-submit' => '번역에 대해 이 버전 검토',
+	'tpt-sections-oldnew' => '새로 및 기존 번역 단위',
 	'tpt-sections-deleted' => '삭제된 번역 단위',
 	'tpt-sections-template' => '번역 문서 틀',
+	'tpt-action-nofuzzy' => '번역을 무효화하지 마십시오',
 	'tpt-badtitle' => '주어진 문서 이름($1)은 올바른 제목이 아닙니다',
 	'tpt-nosuchpage' => '$1 문서가 존재하지 않습니다',
 	'tpt-oldrevision' => '$2 버전은 [[$1]] 문서의 최신 버전이 아닙니다.
 최신 버전만 번역에서 검토할 수 있습니다.',
+	'tpt-notsuitable' => '$1 문서는 번역에 적합하지 않습니다.
+<nowiki><translate></nowiki> 태그가 있고 올바른 문법인지 확인하세요.',
+	'tpt-saveok' => '[[$1]] 문서는 $2 번역 단위로 번역에 대해 검토했습니다.
+문서는 지금 <span class="plainlinks">[$3 번역]</span>할 수 있습니다.',
+	'tpt-badsect' => '"$1"(은)는 $2 번역 유닉에 대해 올바른 이름이 아닙니다.',
+	'tpt-showpage-intro' => '다음은 새로와 기존, 삭제된 부분이 나열되어 있습니다.
+번역에 대한 이 버전을 검토하기 전에 부분에 대한 바뀜이 번역에 대한 불필요한 작업을 피하기 위해 최소화되어 있는지 확인하세요.',
+	'tpt-mark-summary' => '번역에 대해 이 버전 검토함',
 	'tpt-edit-failed' => '문서를 업데이트를 할 수 없습니다: $1',
+	'tpt-duplicate' => '$1 번역 단위 이름은 한 번 이상 사용합니다.',
+	'tpt-already-marked' => '이 문서의 최신 버전은 번역에 대해 이미 검토했습니다.',
+	'tpt-unmarked' => '$1 문서는 번역에 대해 더 이상 검토하지 않습니다.',
+	'tpt-list-nopages' => '문서가 번역에 대해 검토하거나 번역에 대해 검토할 준비가 없습니다.',
 	'tpt-new-pages-title' => '문서 번역에 대한 제안',
 	'tpt-old-pages-title' => '번역한 문서',
 	'tpt-other-pages-title' => '잘못된 문서',
@@ -4729,26 +4749,88 @@ $messages['ko'] = array(
 하지만 최신 {{PLURAL:$1|버전}}은 번역에서 검토할 수 없었습니다.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|이 문서는}} 추가 번역에서 실종했습니다.',
 	'tpt-select-prioritylangs' => '우선 언어 코드의 쉼표로 구분한 목록:',
+	'tpt-select-prioritylangs-force' => '우선 언어 이외의 언어로 번역 방지',
 	'tpt-select-prioritylangs-reason' => '이유:',
+	'tpt-sections-prioritylangs' => '우선 언어',
 	'tpt-rev-mark' => '번역 검토',
 	'tpt-rev-unmark' => '번역에서 삭제',
 	'tpt-rev-discourage' => '실종',
 	'tpt-rev-encourage' => '복구',
+	'tpt-rev-mark-tooltip' => '번역에 대한 이 문서의 최신 버전을 검토합니다.',
+	'tpt-rev-unmark-tooltip' => '번역에서 이 문서를 삭제합니다.',
+	'tpt-rev-discourage-tooltip' => '이 문서에 대한 번역을 실종합니다.',
+	'tpt-rev-encourage-tooltip' => '이 문서를 정상적인 번역으로 복원합니다.',
 	'translate-tag-translate-link-desc' => '이 문서 번역하기',
+	'translate-tag-markthis' => '번역에 대해 이 버전 검토',
+	'translate-tag-markthisagain' => '이 문서에는 최근 <span class="plainlinks">[$2 번역에 대해 검토한]</span> 이후 <span class="plainlinks">[$1 바뀜]</span>이 있습니다.',
+	'translate-tag-hasnew' => '이 문서에는 번역에 대해 검토하지 않은 <span class="plainlinks">[$1 바뀜]</span>을 포함합니다.',
+	'tpt-translation-intro' => '이 문서는 [[$2]] 문서의 <span class="plainlinks">[$1 번역한 버전]</span>이고 번역은 $3% 완료했습니다.',
+	'tpt-translation-intro-fuzzy' => '오래된 번역은 이렇게 표시합니다.',
 	'tpt-languages-legend' => '다른 언어:',
+	'tpt-languages-zero' => '이 언어에 대한 번역 시작',
+	'tpt-target-page' => '이 문서를 수동으로 업데이트할 수 없습니다.
+이 문서는 [[$1]]의 번역이며 번역은 [$2 번역 도구]를 사용하여 업데이트할 수 있습니다.',
+	'tpt-unknown-page' => '이 이름공간은 콘텐츠 페이지 번역에 대해 예약되어 있습니다.
+편집하려고 하는 문서는 번역에 대해 검토한 모든 문서와 일치하지 않는 것 같습니다.',
+	'tpt-translation-restricted' => '이 언어로의 이 문서의 번역은 번역 관리자에 의해 차단되었습니다.
+
+이유: $1',
 	'tpt-discouraged-language-force' => "'''이 문서는 $2(으)로 번역할 수 없습니다.'''
 
 번역 관리자는 이 문서가 $3(으)로 번역할 수 있도록 결정합니다.",
+	'tpt-discouraged-language' => "'''$2로 번역하는 것은 이 문서에 대해 우선 순위가 아닙니다.'''
+
+번역 관리자는 $3에 번역 노력을 집중하기로 결정합니다.",
 	'tpt-discouraged-language-reason' => '이유: $1',
-	'aggregategroups' => '총 그룹',
+	'tpt-priority-languages' => '번역 관리자는 $1(으)로 이 그룹에 대해 우선 언어를 설정합니다.',
+	'tpt-render-summary' => '원본 문서의 새 버전에 맞게 업데이트',
+	'tpt-download-page' => '번역 문서 내보내기',
+	'aggregategroups' => '집계 그룹',
 	'tpt-aggregategroup-add' => '더하기',
-	'tpt-aggregategroup-save' => '저장하기',
-	'tpt-aggregategroup-add-new' => '새로운 총 그룹 더하기',
+	'tpt-aggregategroup-save' => '저장',
+	'tpt-aggregategroup-add-new' => '새 집계 그룹 더하기',
 	'tpt-aggregategroup-new-name' => '이름:',
 	'tpt-aggregategroup-new-description' => '설명 (선택):',
 	'tpt-aggregategroup-remove-confirm' => '이 총 그룹을 삭제하겠습니까?',
 	'tpt-aggregategroup-invalid-group' => '그룹이 존재하지 않습니다',
+	'pt-parse-open' => '불균형한 &lt;translate> 태그입니다.
+번역 틀: <pre>$1</pre>',
+	'pt-parse-close' => '불균형한 &lt;/translate> 태그입니다.
+번역 틀: <pre>$1</pre>',
+	'pt-parse-nested' => '중첩한 &lt;translate> 부분은 허용하지 않습니다.
+태그 텍스트: <pre>$1</pre>',
+	'pt-shake-multiple' => '한 부분에 여러 부분 검토.
+부분 텍스트: <pre>$1</pre>',
+	'pt-shake-position' => '예상하지 않은 위치에 부분 검토.
+부분 텍스트: <pre>$1</pre>',
+	'pt-shake-empty' => '$1 검토에 대한 빈 부분.',
+	'pt-log-header' => '문서 번역 시스템에 관련된 작업에 대한 기록',
 	'pt-log-name' => '문서 번역 기록',
+	'pt-log-mark' => '번역에 대한 "[[:$1]]" 문서의 $3 버전을 {{GENDER:$2|검토함}}',
+	'pt-log-unmark' => '번역에서 "[[:$1]]" 문서를 {{GENDER:$2|삭제함}}',
+	'pt-log-moveok' => '$1 번역 가능한 문서를 $3 문서로 이름 바꾸기 {{GENDER:$2|완료}}',
+	'pt-log-movenok' => '[[:$1]] 문서를 [[:$3]] 문서로 이동하는 동안 문제 {{GENDER:$2|발생}}',
+	'pt-log-delete-full-ok' => '$1 번역 가능한 문서 삭제 {{GENDER:$2|완료}}',
+	'pt-log-delete-full-nok' => '[[:$1]] 번역 가능한 문서를 삭제하는 동안 문제 {{GENDER:$2|발생}}',
+	'pt-log-delete-lang-ok' => '$1 번역 문서 삭제 {{GENDER:$2|완료}}',
+	'pt-log-delete-lang-nok' => '[[:$1]] 번역 문서를 삭제하는 동안 문제 {{GENDER:$2|발생}}',
+	'pt-log-encourage' => '[[:$1]] 문서의 번역 {{GENDER:$2|권장}}',
+	'pt-log-discourage' => '[[:$1]] 문서의 번역 {{GENDER:$2|비권장}}',
+	'pt-log-priority-langs-unset' => '[[:$1]] 번역 가능한 문서에서 우선 언어를 {{GENDER:$2|삭제함}}',
+	'pt-log-priority-langs' => '[[:$1]] 번역 가능한 문서를 $3 문서로 우선 순위 언어를 {{GENDER:$2|설정함}}. 이유: $4',
+	'pt-log-priority-langs-force' => '[[:$1]] 번역 가능한 문서를 $3 문서로 언어를 {{GENDER:$2|제한함}}. 이유: $4',
+	'pt-log-aggregategroup-associate' => '[[:$1]] 번역 가능한 문서를 $3 집계 그룹에 {{GENDER:$2|더함}}',
+	'pt-log-aggregategroup-dissociate' => '[[:$1]] 번역 가능한 문서를 $3 집계 그룹에서 {{GENDER:$2|삭제함}}',
+	'pt-movepage-title' => '$1 번역 가능한 문서 이동',
+	'pt-movepage-blockers' => '번역 가능한 문서는 다음 {{PLURAL:$1|오류}} 때문에 새 이름으로 이동할 수 없습니다:',
+	'pt-movepage-block-base-exists' => '대상 [[:$1]] 기본 문서가 존재합니다.',
+	'pt-movepage-block-base-invalid' => '대상 기본 문서는 올바른 제목이 아닙니다.',
+	'pt-movepage-block-tp-exists' => '대상 [[:$2]] 번역 문서가 존재합니다.',
+	'pt-movepage-block-tp-invalid' => '[[:$1]]에 대한 대상 번역 문서 제목은 유효하지 않습니다 (너무 길어요?).',
+	'pt-movepage-block-section-exists' => '대상 [[:$2]] 부분 문서가 존재합니다.',
+	'pt-movepage-block-section-invalid' => '[[:$1]]에 대한 대상 부분 문서 제목은 유효하지 않습니다 (너무 길어요?).',
+	'pt-movepage-block-subpage-exists' => '대상 [[:$2]] 하위 문서가 존재합니다.',
+	'pt-movepage-block-subpage-invalid' => '[[:$1]]에 대한 대상 하위 문서 제목은 유효하지 않습니다 (너무 길어요?).',
 	'pt-movepage-list-pages' => '이동할 문서 목록',
 	'pt-movepage-list-translation' => '번역 문서',
 	'pt-movepage-list-section' => '부분 문서',
@@ -4759,12 +4841,24 @@ $messages['ko'] = array(
 	'pt-movepage-new' => '새 이름:',
 	'pt-movepage-reason' => '이유:',
 	'pt-movepage-subpages' => '모든 하위 문서 이동',
+	'pt-movepage-action-check' => '이동할 수 있는지 확인',
 	'pt-movepage-action-perform' => '이동하기',
+	'pt-movepage-action-other' => '대상 변경',
+	'pt-movepage-intro' => '이 특수 문서는 번역에 대해 검토한 문서를 이동할 수 있습니다.
+많은 문서가 이동해야 하기 때문에 즉시 이동 작업이 되지 않습니다.
+문서를 이동하는 동안 이는 질문의 문서와 상호 작용하는 것은 불가능합니다.
+실패하면 [[Special:Log/pagetranslation|문서 번역 기록]]에 기록되고 직접 복구할 필요가 있습니다.',
 	'pt-movepage-logreason' => '번역 가능한 $1 문서의 부분.',
+	'pt-movepage-started' => '기본 페이지가 지금 이동했습니다.
+오류에 대해 [[Special:Log/pagetranslation|문서 번역 기록]]을 확인하고 메시지를 완료하세요.',
+	'pt-locked-page' => '이 문서는 번역 가능한 문서가 현재 이동하고 있기 때문에 잠겨 있습니다.',
 	'pt-deletepage-lang-title' => '$1 번역 문서 삭제.',
 	'pt-deletepage-full-title' => '$1 번역 가능한 문서 삭제.',
+	'pt-deletepage-invalid-title' => '지정한 문서가 유효하지 않습니다.',
+	'pt-deletepage-invalid-text' => '지정한 문서는 이의 번역가능한 문서도 번역도 아닙니다.',
+	'pt-deletepage-action-check' => '삭제될 문서 목록',
 	'pt-deletepage-action-perform' => '삭제하기',
-	'pt-deletepage-action-other' => '목표 바꾸기',
+	'pt-deletepage-action-other' => '대상 변경',
 	'pt-deletepage-lang-legend' => '번역 문서 삭제',
 	'pt-deletepage-full-legend' => '번역 가능한 문서 삭제',
 	'pt-deletepage-any-legend' => '번역 가능한 문서 또는 번역 가능한 문서의 번역 삭제',
@@ -4778,6 +4872,10 @@ $messages['ko'] = array(
 	'pt-deletepage-list-count' => '삭제할 문서 총 $1개.',
 	'pt-deletepage-full-logreason' => '$1 번역 가능한 문서의 부분.',
 	'pt-deletepage-lang-logreason' => '$1 번역 문서의 부분.',
+	'pt-deletepage-started' => '오류와 메시지 완료를 위한 [[Special:Log/pagetranslation|문서 번역 기록]]를 확인하세요.',
+	'pt-deletepage-intro' => '이 특수 문서는 하나의 언어로 전체 번역 가능한 문서 또는 번역을 삭제할 수 있습니다.
+여러 문서를 삭제해야 하기 때문에 즉시 삭제 작업이 되지 않습니다.
+실패하면 [[Special:Log/pagetranslation|문서 번역 기록]]에 기록되고 직접 복구할 필요가 있습니다.',
 );
 
 /** Colognian (Ripoarisch)
