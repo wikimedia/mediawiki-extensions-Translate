@@ -277,13 +277,13 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			return '';
 		}
 
-		if ( $this instanceof SpecialLanguageStats ) {
-			// The message group for this row
-			$group = MessageGroups::getGroup( $target );
-			$stateConfig = $group->getWorkflowConfiguration();
-		} else {
+		if ( $this instanceof MessageGroupStats ) {
 			// Same for every language
 			$group = MessageGroups::getGroup( $this->target );
+			$stateConfig = $group->getWorkflowConfiguration();
+		} else {
+			// The message group for this row
+			$group = MessageGroups::getGroup( $target );
 			$stateConfig = $group->getWorkflowConfiguration();
 		}
 
