@@ -277,7 +277,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			return '';
 		}
 
-		if ( $this instanceof MessageGroupStats ) {
+		if ( $this instanceof SpecialMessageGroupStats ) {
 			// Same for every language
 			$group = MessageGroups::getGroup( $this->target );
 			$stateConfig = $group->getWorkflowConfiguration();
