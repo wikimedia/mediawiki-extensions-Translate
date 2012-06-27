@@ -2477,7 +2477,7 @@ $messages['bcl'] = array(
 	'translate-magic-cm-savefailed' => 'Bigô an pagtagama',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -2511,6 +2511,7 @@ $messages['be-tarask'] = array(
 	'translate-page-disabled' => "Пераклады на гэту мову ў гэтай групе былі адключаны. Прычына:
 
 ''$1''",
+	'translate-language-disabled' => 'Пераклад на гэтую мову адключаны.',
 	'translate-page-settings-legend' => 'Парамэтры',
 	'translate-page-group' => 'Група',
 	'translate-page-language' => 'Мова',
@@ -24287,8 +24288,8 @@ $messages['uk'] = array(
 	'translate-prev' => 'попередня сторінка',
 	'translate-page-description-legend' => 'Інформація про групу',
 	'translate-page-description-hasoptional' => "Ця група повідомлень містить необов'язкові повідомлення.
-Необов'язкові повідомлення слід перекладати лише якщо Ваша мова вимагає особливого ставлення,
-скажімо, не вживаються пробіли чи не потрібна транслітерація власних імен. $1",
+Їх слід перекладати лише якщо Ваша мова вимагає особливого ставлення,
+скажімо, у ній не вживаються пробіли чи не потрібна транслітерація власних імен. $1",
 	'translate-page-description-hasoptional-open' => 'Показувати додаткові повідомлення.',
 	'translate-page-edit' => 'редагувати',
 	'translate-ext-url' => '<hr />Сайт: $1',

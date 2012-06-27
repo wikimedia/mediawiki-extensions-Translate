@@ -825,7 +825,7 @@ $messages['be'] = array(
 	'pt-movepage-reason' => 'Прычына:',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Renessaince
@@ -910,6 +910,7 @@ $messages['be-tarask'] = array(
 	'tpt-download-page' => 'Экспартаваць старонку з перакладамі',
 	'tpt-aggregategroup-add' => 'Дадаць',
 	'tpt-aggregategroup-save' => 'Захаваць',
+	'tpt-aggregategroup-new-name' => 'Назва:',
 	'pt-parse-open' => 'Незбалянсаваны тэг &lt;translate>.
 Шаблён перакладу: <pre>$1</pre>',
 	'pt-parse-close' => 'Незбалянсаваны тэг &lt;/translate>.
