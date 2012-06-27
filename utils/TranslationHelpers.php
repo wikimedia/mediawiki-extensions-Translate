@@ -220,8 +220,11 @@ class TranslationHelpers {
 		}
 	}
 
-	/// @since 2012-01-04
-	protected function callBox( $type, $cb, $params = array() ) {
+	/**
+	 * Public since 2012-06-26
+	 * @since 2012-01-04
+	 */
+	public function callBox( $type, $cb, $params = array() ) {
 		try {
 			return call_user_func_array( $cb, $params );
 		} catch ( TranslationHelperExpection $e ) {
