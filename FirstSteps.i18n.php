@@ -1889,6 +1889,7 @@ $messages['km'] = array(
 /** Korean (한국어)
  * @author Freebiekr
  * @author 관인생략
+ * @author 아라
  */
 $messages['ko'] = array(
 	'firststeps' => '첫걸음',
@@ -1902,7 +1903,9 @@ $messages['ko'] = array(
 	'translate-fs-permissions-title' => '번역자 권한 신청',
 	'translate-fs-target-title' => '번역하기!',
 	'translate-fs-email-title' => '이메일 주소 확인하기',
-	'translate-fs-intro' => "{{SITENAME}} 첫걸음 마법사에 오신 것을 환영합니다. 번역자가 되는 과정을 차례로 거칠 것입니다.  결국에는 {{SITENAME}}에서 지원하는 모든 프로젝트의 ''인터페이스 메시지''를 번역할 수 있을 것입니다.",
+	'translate-fs-intro' => "{{SITENAME}} 첫걸음 마법사에 오신 것을 환영합니다.
+번역자가 되는 과정을 차례로 거칠 것입니다.
+결국에는 {{SITENAME}}에서 지원하는 모든 프로젝트의 ''인터페이스 메시지''를 번역할 수 있을 것입니다.",
 	'translate-fs-selectlanguage' => '언어 선택',
 	'translate-fs-settings-planguage' => '모어:',
 	'translate-fs-settings-planguage-desc' => '모어는 여기 웹사이트에서 당신의 인터페이스 언어이자 번역할 때 기본 도착어가 됩니다.',
@@ -1919,7 +1922,7 @@ $messages['ko'] = array(
 	'translate-fs-userpage-submit' => '내 사용자 문서 만들기',
 	'translate-fs-userpage-done' => '잘 했습니다! 이제 당신의 사용자 문서가 생겼습니다.',
 	'translate-fs-permissions-planguage' => '모어:',
-	'translate-fs-permissions-help' => '지금 번역자 그룹에 추가되도록 요청할 필요가 있습니다.  번역 모어를 선택하십시오.
+	'translate-fs-permissions-help' => '지금 번역자 그룹에 추가되도록 요청할 필요가 있습니다. 번역 모어를 선택하십시오.
 
 아래 상자에서 다른 언어 및 의견을 말할 수 있습니다.',
 	'translate-fs-permissions-pending' => '당신의 요청이 [[$1]]로 제출되었으며 여기 웹사이트 직원이 되도록 빨리 그 요청을 검토할 것입니다. 이메일 주소를 인증하면 요청 결과를 이메일로 받아볼 것입니다.',
