@@ -220,7 +220,7 @@ class PageTranslationHooks {
 		ksort( $status );
 
 		// This way the parser knows to fragment the parser cache by language code
-		$userLangCode = $parser->getOptions()->getUserLang();
+		$userLangCode = htmlspecialchars( $parser->getOptions()->getUserLang() );
 		$userLangDir = $parser->getOptions()->getUserLangObj()->getDir();
 		$sourceLanguage = $page->getMessageGroup()->getSourceLanguage();
 
@@ -260,7 +260,7 @@ class PageTranslationHooks {
 			}
 			if ( count( $classes ) ) {
 				$attribs = array( 'class' => implode( ' ', $classes ) );
-				$name = Html::rawElement( 'span', $attribs, $name );
+				$name = Html::raw( 'span', $attribs, $name );
 			}
 
 			if ( $currentTitle->equals( $subpage ) ) {
@@ -284,7 +284,7 @@ class PageTranslationHooks {
 				$name = Linker::link( $specialTranslateTitle, $name, $attribs, $params );
 			}
 
-			$languages[] = "$name $percentImage";
+			$languages[] = "$name $percentImage\n";
 		}
 
 		$legend = wfMsg( 'tpt-languages-legend' );
@@ -295,17 +295,34 @@ class PageTranslationHooks {
 		$sep .= $lang->getDirMarkEntity();
 		$languages = implode( $sep, $languages );
 
-		return <<<FOO
-<div class="mw-pt-languages" lang="$userLangCode" dir="$userLangDir">
-<table><tbody>
+		$out = Html::openElement(
+			'div',
+			array(
+				'class' => 'mw-pt-languages',
+				'lang' => $userLangCode,
+				'dir' => $userLangDir
+			)
+		);
+		$out .= Html::openElement( 'table' );
+		$out .= Html::openElement( 'tbody' );
+		$out .= Html::openElement( 'tr', array( 'valign' => 'top' ) );
+		$out .= Html::rawElement(
+			'td',
+			array( 'class' => 'mw-pt-languages-label',
+			"<b>$legend</b>"
+			)
+		);
+		$out .= Html::rawElement(
+			'td',
+			array( 'class' => 'mw-pt-languages-list',
+			"<b>$languages</b>"
+			)
+		);
+		$out .= Html::closeElement( 'tbody' );
+		$out .= Html::closeElement( 'table' );
+		$out .= Html::closeElement( 'div' );
 
-<tr valign="top">
-<td class="mw-pt-languages-label"><b>$legend</b></td>
-<td class="mw-pt-languages-list">$languages</td></tr>
-
-</tbody></table>
-</div>
-FOO;
+		return $out;
 	}
 
 	/**
