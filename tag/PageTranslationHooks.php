@@ -260,7 +260,7 @@ class PageTranslationHooks {
 			}
 			if ( count( $classes ) ) {
 				$attribs = array( 'class' => implode( ' ', $classes ) );
-				$name = Html::raw( 'span', $attribs, $name );
+				$name = Html::rawElement( 'span', $attribs, $name );
 			}
 
 			if ( $currentTitle->equals( $subpage ) ) {
@@ -284,7 +284,7 @@ class PageTranslationHooks {
 				$name = Linker::link( $specialTranslateTitle, $name, $attribs, $params );
 			}
 
-			$languages[] = "$name $percentImage\n";
+			$languages[] = "$name $percentImage";
 		}
 
 		// dirmark (rlm/lrm) is added, because languages with RTL names can
@@ -304,7 +304,7 @@ class PageTranslationHooks {
 		$out .= Html::openElement( 'tr', array( 'valign' => 'top' ) );
 		$out .= Html::rawElement( 'td',
 			array( 'class' => 'mw-pt-languages-label' ),
-			wfMessage( 'tpt-languages-legend' )->escaped(),
+			wfMessage( 'tpt-languages-legend' )->escaped()
 		);
 		$out .= Html::rawElement( 'td',
 			array( 'class' => 'mw-pt-languages-list' ),
