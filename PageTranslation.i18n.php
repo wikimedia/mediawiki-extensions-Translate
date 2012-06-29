@@ -1573,6 +1573,7 @@ kontrollér før denne version markeres for oversættelse, at ændringerne i sek
 	'tpt-unmarked' => 'Siden $1 er ikke længere markeret til oversættelse.',
 	'tpt-list-nopages' => 'Ingen sider er markeret for oversættelse eller parate til at blive markeret for oversættelse.',
 	'tpt-other-pages-title' => 'Fejlbehæftede sider',
+	'tpt-discouraged-pages-title' => 'Frarådede sider',
 	'tpt-new-pages' => '{{PLURAL:$1|Denne side|Disse sider}} indeholder tekst med oversættelsestags, men ingen version af {{PLURAL:$1|siden|siderne}} er i øjeblikket markeret for oversættelse.',
 	'tpt-old-pages' => 'En version af {{PLURAL:$1|denne side|disse sider}} er markeret for oversættelse.',
 	'tpt-other-pages' => '{{PLURAL:$1|En gammel version af denne side er|Ældre versioner af disse sider er}} markeret til oversættelse,
@@ -1580,7 +1581,11 @@ men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til 
 	'tpt-select-prioritylangs' => 'Liste over sprogkoder for prioriterede sprog, adskilt med kommaer:',
 	'tpt-select-prioritylangs-reason' => 'Begrundelse:',
 	'tpt-sections-prioritylangs' => 'Prioriterede sprog',
-	'tpt-rev-unmark' => 'fjern denne side fra oversættelse',
+	'tpt-rev-unmark' => 'fjern fra oversættelse',
+	'tpt-rev-discourage' => 'fraråd',
+	'tpt-rev-encourage' => 'gendan',
+	'tpt-rev-discourage-tooltip' => 'Fraråd yderligere oversættelse af denne side.',
+	'tpt-rev-encourage-tooltip' => 'Gendan denne side til normal oversættelse.',
 	'translate-tag-translate-link-desc' => 'Oversæt denne side',
 	'translate-tag-markthis' => 'Markér denne side for oversættelse',
 	'translate-tag-markthisagain' => 'Denne side er <span class="plainlinks">[$1 ændret]</span> siden den sidst blev <span class="plainlinks">[$2 markeret for oversættelse]</span>.',
@@ -1600,6 +1605,7 @@ Siden som du prøver at redigere, ser ikke ud til at svare til nogen side marker
 	'tpt-aggregategroup-save' => 'Gem',
 	'tpt-aggregategroup-new-name' => 'Navn:',
 	'tpt-aggregategroup-new-description' => 'Beskrivelse (valgfri):',
+	'tpt-aggregategroup-invalid-group' => 'Gruppen findes ikke',
 	'pt-parse-open' => 'Ubalanceret &lt;translate> tag.
 Oversættelse skabelon: <pre>$1</pre>',
 	'pt-parse-close' => 'Ubalanceret &lt;/translate> tag.
