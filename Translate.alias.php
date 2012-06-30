@@ -75,7 +75,16 @@ $specialPageAliases['arz'] = array(
 /** Assamese (অসমীয়া) */
 $specialPageAliases['as'] = array(
 	'Translate' => array( 'অনুবাদ_কৰক' ),
+	'Magic' => array( 'উন্নত_অনুবাদ', 'যাদু' ),
 	'TranslationStats' => array( 'অনুবাদ_পৰিসংখ্যা' ),
+	'Translations' => array( 'অনুবাদসমূহ' ),
+	'LanguageStats' => array( 'ভাষাৰ_পৰিসংখ্যা' ),
+	'MessageGroupStats' => array( 'বাৰ্তাৰ_গোট_পৰিসংখ্যা' ),
+	'PageTranslation' => array( 'পৃষ্ঠা_অনুবাদ' ),
+	'ImportTranslations' => array( 'অনুবাদ_আমদানি_কৰক' ),
+	'FirstSteps' => array( 'প্ৰথম_পদক্ষেপ' ),
+	'SupportedLanguages' => array( 'সমৰ্থিত_ভাষাসমূহ' ),
+	'MyLanguage' => array( 'মোৰ_ভাষা' ),
 );
 
 /** Azerbaijani (azərbaycanca) */
@@ -185,7 +194,7 @@ $specialPageAliases['diq'] = array(
 	'AggregateGroups' => array( 'GrubêAggregate' ),
 );
 
-/** Lower Sorbian (Dolnoserbski) */
+/** Lower Sorbian (dolnoserbski) */
 $specialPageAliases['dsb'] = array(
 	'Translate' => array( 'Přełožiś' ),
 	'Magic' => array( 'Rozšyrjone pśełožowanje' ),
@@ -265,7 +274,7 @@ $specialPageAliases['frp'] = array(
 	'LanguageStats' => array( 'Statistiques_de_les_lengoues', 'StatistiquesDeLesLengoues' ),
 );
 
-/** Galician (Galego) */
+/** Galician (galego) */
 $specialPageAliases['gl'] = array(
 	'Translate' => array( 'Traducir' ),
 	'Magic' => array( 'Tradución_avanzada' ),
@@ -304,7 +313,7 @@ $specialPageAliases['hr'] = array(
 	'Translate' => array( 'Prevedi' ),
 );
 
-/** Upper Sorbian (Hornjoserbsce) */
+/** Upper Sorbian (hornjoserbsce) */
 $specialPageAliases['hsb'] = array(
 	'Translate' => array( 'Přełožić' ),
 	'Magic' => array( 'Rozšěrjene přełožowanje', 'Magiske' ),
@@ -479,6 +488,7 @@ $specialPageAliases['lb'] = array(
 	'FirstSteps' => array( 'Éischt_Schrëtt' ),
 	'SupportedLanguages' => array( 'Ënnerstetzte_Sproochen' ),
 	'MyLanguage' => array( 'Meng_Sprooch' ),
+	'PageTranslationDeletePage' => array( 'Läschsäit_fir_Iwwersetzungen' ),
 );
 
 /** lumbaart (lumbaart) */
@@ -508,6 +518,7 @@ $specialPageAliases['mk'] = array(
 	'SupportedLanguages' => array( 'ПоддржаниЈазици' ),
 	'MyLanguage' => array( 'МојЈазик' ),
 	'PageTranslationDeletePage' => array( 'ПреводНаСтраницаИзбришиСтраница' ),
+	'AggregateGroups' => array( 'ЗбирниГрупи' ),
 );
 
 /** Malayalam (മലയാളം) */
@@ -806,6 +817,11 @@ $specialPageAliases['tl'] = array(
 	'LanguageStats' => array( 'Mga estadistika ng wika' ),
 );
 
+/** толышә зывон (толышә зывон) */
+$specialPageAliases['tly'] = array(
+	'MyLanguage' => array( 'Чымы_зывон' ),
+);
+
 /** Turkish (Türkçe) */
 $specialPageAliases['tr'] = array(
 	'Translate' => array( 'Çevir', 'Çeviri' ),
@@ -888,8 +904,8 @@ $specialPageAliases['zh-hans'] = array(
 	'TranslationStats' => array( '翻译统计' ),
 	'LanguageStats' => array( '语言统计' ),
 	'MessageGroupStats' => array( '信息组状态' ),
-	'PageTranslation' => array( '网页翻译' ),
-	'ImportTranslations' => array( '进口翻译' ),
+	'PageTranslation' => array( '页面翻译' ),
+	'ImportTranslations' => array( '导入翻译' ),
 	'ManageMessageGroups' => array( '消息组管理' ),
 	'FirstSteps' => array( '首几步' ),
 	'SupportedLanguages' => array( '支持的语言' ),
@@ -902,8 +918,8 @@ $specialPageAliases['zh-hant'] = array(
 	'Magic' => array( '高級翻譯' ),
 	'TranslationStats' => array( '翻譯統計' ),
 	'LanguageStats' => array( '語言統計' ),
-	'PageTranslation' => array( '頁面統計' ),
-	'ImportTranslations' => array( '匯入統計' ),
+	'PageTranslation' => array( '頁面翻譯' ),
+	'ImportTranslations' => array( '匯入翻譯' ),
 	'ManageMessageGroups' => array( '消息組管理' ),
 	'FirstSteps' => array( '入門' ),
 	'SupportedLanguages' => array( '支持的語言' ),
