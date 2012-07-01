@@ -271,7 +271,7 @@ $messages['bar'] = array(
 	'firststeps' => "D' erschten Schriet",
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Renessaince
@@ -735,7 +735,7 @@ Sie erhalten außerdem bis zu einmal im Monat einen Newsletter.
 Wenn Sie keinen Newsletter erhalten möchten, können Sie sich im Tab „{{int:prefs-personal}}“ in Ihren [[Special:Preferences|Einstellungen]] austragen.',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -1204,7 +1204,7 @@ $messages['fur'] = array(
 	'translate-fs-email-title' => 'Conferme la tô direzion email',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -1429,7 +1429,7 @@ $messages['hr'] = array(
 	'translate-fs-userpage-submit' => 'Stvori moju suradničku stranicu',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
@@ -1893,7 +1893,7 @@ $messages['km'] = array(
  */
 $messages['ko'] = array(
 	'firststeps' => '첫걸음',
-	'firststeps-desc' => 'Translate  확장기능을 사용하는 웹사이트에서 사용자가 활동할 수 있게 돕는 [[Special:FirstSteps|특수 문서]]',
+	'firststeps-desc' => 'Translate  확장 기능을 사용하는 웹사이트에서 사용자가 활동할 수 있게 돕는 [[Special:FirstSteps|특수 문서]]',
 	'translate-fs-pagetitle-done' => '- 완료!',
 	'translate-fs-pagetitle-pending' => '- 처리 대기 중',
 	'translate-fs-pagetitle' => '시작 마법사 - $1',
@@ -2816,7 +2816,7 @@ $messages['ru'] = array(
 Если вы не хотите получать рассылку, то можете отказаться от неё на вкладке «{{int:prefs-personal}}» своих [[Special:Preferences|персональных настроек]].',
 );
 
-/** Rusyn (Русиньскый)
+/** Rusyn (русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(

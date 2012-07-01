@@ -1504,6 +1504,7 @@ $messages['cy'] = array(
 	'tpt-select-prioritylangs-reason' => 'Rheswm:',
 	'tpt-sections-prioritylangs' => 'Blaenoriaethau ymhlith yr ieithoedd',
 	'tpt-languages-legend' => 'Ieithoedd eraill:',
+	'tpt-discouraged-language-reason' => 'Rheswm: $1',
 	'tpt-aggregategroup-add' => 'Ychwaneger',
 	'tpt-aggregategroup-save' => 'Cadwer',
 	'tpt-aggregategroup-new-name' => 'Enw:',
@@ -1891,7 +1892,7 @@ $messages['diq'] = array(
 	'aggregategroups' => 'Grubi pêro',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -2991,7 +2992,7 @@ $messages['fur'] = array(
 	'pt-movepage-reason' => 'Reson:',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -3593,7 +3594,7 @@ Kvarovi/pogreške biti će prijavljene u evidenciji prijevoda i trebaju se ručn
 	'pt-movepage-logreason' => 'Dio prevodive stranice $1.',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
@@ -4793,7 +4794,7 @@ $messages['ko'] = array(
 	'tpt-render-summary' => '원본 문서의 새 버전에 맞게 업데이트',
 	'tpt-download-page' => '번역 문서 내보내기',
 	'aggregategroups' => '집계 그룹',
-	'tpt-aggregategroup-add' => '더하기',
+	'tpt-aggregategroup-add' => '추가',
 	'tpt-aggregategroup-save' => '저장',
 	'tpt-aggregategroup-add-new' => '새 집계 그룹 더하기',
 	'tpt-aggregategroup-new-name' => '이름:',
@@ -7299,7 +7300,7 @@ $messages['ru'] = array(
 Сбои будут отмечены в [[Special:Log/pagetranslation|журнале перевода страниц]] и должны быть устранены вручную.',
 );
 
-/** Rusyn (Русиньскый)
+/** Rusyn (русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(

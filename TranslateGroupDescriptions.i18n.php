@@ -255,7 +255,7 @@ $messages['ba'] = array(
 	'translate-group-desc-flaggedrevs' => 'MediaWiki проектының [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] киңәйеүенең бөтә яҙмаларын үҙ эсенә алыусы мета төркөм.',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Renessaince
@@ -652,7 +652,7 @@ $messages['diq'] = array(
 	'translate-group-desc-kiwix' => 'Seba [[Translating:Kiwix|Kiwix]]i yew mesacê grube',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -977,7 +977,7 @@ $messages['fur'] = array(
 	'translate-group-desc-translatablepages' => 'Dutis lis pagjinis che si puedin tradusi',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -1169,7 +1169,7 @@ $messages['hr'] = array(
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] je karta svijeta koju može svatko uređivati',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(

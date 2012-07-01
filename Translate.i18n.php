@@ -496,6 +496,7 @@ Goes together with {{msg-mw|translate-taskui-reviewall}}',
 	'translate-edit-title' => 'Used as a tooltip for edit links in lists with translatable messages. Parameters:
 * $1 is the name of the page to be edited.
 {{Identical|Edit}}',
+	'translate-edit-definition' => 'Heading of infobox containing original message to be translated.',
 	'translate-edit-translation' => 'Legend for box like {{msg-mw|Translate-edit-definition}} or {{msg-mw|Translate-edit-in-other-languages}}.
 {{Identical|Translation}}',
 	'translate-edit-contribute' => 'This appears in the parentheses after {{msg-mw|Translate-edit-information}}',
@@ -600,12 +601,18 @@ These messages will only affect the interface on {{SITENAME}}.',
 	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
 	'translate-mgs-fieldset' => 'Fieldset label in [[Special:MessageGroupStats]]',
 	'translate-mgs-column-language' => '{{Identical|Language}}',
+	'supportedlanguages' => 'Title of [[Special:SupportedLanguages]]',
 	'supportedlanguages-summary' => 'Header for [[Special:SupportedLanguages]] page.',
 	'supportedlanguages-colorlegend' => 'Used on [[Special:SupportedLanguages]]. Parameters:
 * $1 is not a single number, but a series of numbers with different background colours, serving as a legend to match each colour with a number of days passed since the last contributed translation. See [[Special:SupportedLanguages]] to see the final rendering.',
 	'supportedlanguages-portallink' => '{{optional}}',
 	'supportedlanguages-portallink-nocldr' => '{{optional}}',
+	'supportedlanguages-translators' => 'On [[Special:SupportedLanguages]].
+*$2 is the number of translators listed
+*$1 is the list of translators names',
 	'supportedlanguages-recenttranslations' => 'Link on [[Special:SupportedLanguages]] to [[Special:RecentChanges]].',
+	'supportedlanguages-count' => 'On [[Special:SupportedLanguages]]
+*$1 is the total number of supported languages.',
 	'translate-save' => '{{Identical|Save}}',
 	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
 	'managemessagegroups' => 'Special page name and html title in [[Special:ManageMessageGroups]]',
@@ -1110,7 +1117,7 @@ $messages['am'] = array(
 	'translate-language' => 'ቋንቋ',
 );
 
-/** Aragonese (Aragonés)
+/** Aragonese (aragonés)
  * @author Juanpabl
  */
 $messages['an'] = array(
@@ -4361,7 +4368,7 @@ Užitečné hlavně pro korektury.',
 	'translate-gethelp' => 'Nápověda',
 );
 
-/** Kashubian (Kaszëbsczi)
+/** Kashubian (kaszëbsczi)
  * @author Kaszeba
  */
 $messages['csb'] = array(
@@ -4370,7 +4377,7 @@ $messages['csb'] = array(
 	'translate-sidebar-alltrans' => 'W jinych jãzëkach',
 );
 
-/** Church Slavic (Словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
  * @author ОйЛ
  */
 $messages['cu'] = array(
@@ -4383,6 +4390,7 @@ $messages['cu'] = array(
 $messages['cy'] = array(
 	'translate' => 'Cyfieithu',
 	'translate-taction-translate' => 'Cyfieithu',
+	'translate-taction-proofread' => 'Adolygu',
 	'translate-taction-lstats' => 'Ystadegau ieithyddol',
 	'translate-taction-export' => 'Allforio',
 	'translate-page-settings-legend' => 'Gosodiadau',
@@ -4397,7 +4405,10 @@ $messages['cy'] = array(
 	'translate-ext-url' => '<hr />Gwefan: $1',
 	'translate-optional' => '(dewisol)',
 	'translate-edit-jsopen' => 'golygu',
+	'translate-edit-title' => 'Golygu "$1"',
+	'translate-edit-definition' => 'Y neges wreiddiol',
 	'translate-edit-translation' => 'Cyfieithiad',
+	'translate-edit-in-other-languages' => 'Y neges mewn ieithoedd eraill',
 	'translate-magic-submit' => 'Cyrcher',
 	'translate-magic-cm-export' => 'Allforier',
 	'translate-magic-cm-current' => 'Cyfredol',
@@ -4406,8 +4417,12 @@ $messages['cy'] = array(
 	'translate-magic-cm-save' => 'Cadwer',
 	'translate-magic-namespace' => "Enwau'r parthau",
 	'translate-pref-nonewsletter' => 'Peidier ag anfon cylchlythyron e-bost ataf',
+	'translate-pref-editassistlang' => 'Ieithoedd cynorthwyol:',
 	'translationstats' => 'Ystadegau cyfieithu',
+	'translate-stats-edits' => 'Golygiadau',
 	'translate-stats-users' => 'Cyfieithwyr',
+	'translate-stats-reviews' => 'Adolygiadau',
+	'translate-stats-reviewers' => 'Adolygwyr',
 	'translate-statsf-start' => 'Dyddiad dechrau:',
 	'translate-statsf-scale-months' => 'Misoedd',
 	'translate-statsf-scale-weeks' => 'Wythnosau',
@@ -4418,22 +4433,36 @@ $messages['cy'] = array(
 	'translate-statsf-submit' => 'Rhagolwg',
 	'translate-sidebar-alltrans' => 'Ieithoedd eraill',
 	'translations' => 'Yr holl gyfieithiadau',
+	'translations-summary' => 'Gosodwch enw neges isod, er mwyn gweld yr holl gyfieithiadau ohoni sydd ar gael.',
 	'translate-translations-fieldset-title' => 'Neges',
 	'translate-translations-messagename' => 'Enw:',
 	'translate-translations-project' => 'Prosiect:',
 	'translate-translations-history-short' => 'h',
 	'languagestats' => 'Ystadegau ieithyddol',
 	'languagestats-summary' => "Mae'r dudalen hon yn dangos ystadegau cyfieithu yr holl grwpiau negeseuon ar gyfer rhyw iaith.",
+	'languagestats-stats-for' => 'Ystadegau cyfieithu ar gyfer $1 ($2).',
 	'languagestats-recenttranslations' => 'cyfieithiadau diweddar',
+	'translate-langstats-expand' => 'ehangu',
+	'translate-langstats-collapse' => 'crebachu',
+	'translate-langstats-expandall' => "ehangu'r cwbl",
+	'translate-langstats-collapseall' => "crebachu'r cwbl",
 	'translate-language-code' => 'Côd iaith',
 	'translate-language-code-field-name' => 'Côd iaith:',
 	'translate-suppress-complete' => 'Hepgor dangos y grwpiau o negeseuon sydd wedi eu llwyr gyfieithu',
+	'translate-ls-noempty' => 'Hepgor dangos y grwpiau o negeseuon sydd heb eu cyfieithu o gwbl',
 	'translate-language' => 'Iaith',
 	'translate-total' => 'Negeseuon',
 	'translate-untranslated' => 'Heb eu cyfieithu',
 	'translate-percentage-complete' => 'Parod',
 	'translate-percentage-fuzzy' => 'Ag angen diweddaru',
+	'translate-ls-submit' => 'Dangoser yr ystadegau',
+	'translate-mgs-submit' => 'Dangoser yr ystadegau',
+	'translate-mgs-column-language' => 'Iaith',
+	'translate-mgs-totals' => "Yr holl ieithoedd gyda'i gilydd",
+	'supportedlanguages' => 'Ieithoedd a gynhelir',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Cyfieithydd|Cyfieithwyr}}: $1',
 	'supportedlanguages-recenttranslations' => 'chyfieithiadau diweddar',
+	'supportedlanguages-count' => 'Cynhelir $1 {{PLURAL:$1|iaith}} i gyd.',
 	'translate-js-summary' => 'Crynodeb:',
 	'translate-js-history' => 'Hynt y cyfieithu',
 	'translate-js-support' => 'Ceisio cymorth',
@@ -5311,7 +5340,7 @@ $messages['diq'] = array(
 	'translate-gethelp' => 'Peşti',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Dundak
  * @author Michawiki
  */
@@ -8426,7 +8455,7 @@ $messages['ga'] = array(
 	'translate-language' => 'Teanga',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Alma
  * @author Gallaecio
  * @author Toliño
@@ -9907,7 +9936,7 @@ Molimo provjerite.',
 	'translate-documentation-language' => 'Dokumentacija poruke',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Dundak
  * @author Michawiki
  */
@@ -13568,7 +13597,7 @@ Donn op en Jropp klecke, öm en Leßß met allem ze sinn ze krijje, wat doh dren
 
 ''$1''",
 	'translate-language-disabled' => 'Övversäzonge in heh di Schprooch sin afjeschalldt.',
-	'translate-page-settings-legend' => 'Enshtällonge',
+	'translate-page-settings-legend' => 'Enschtällonge',
 	'translate-page-group' => 'Jrupp:',
 	'translate-page-language' => 'Shprooch:',
 	'translate-page-limit' => 'Ömfang:',
@@ -13871,6 +13900,12 @@ Dat es et bäß för et Jääjelässe.',
  */
 $messages['ku-latn'] = array(
 	'translate' => 'Wergerîne',
+	'translate-taskui-view' => 'Hemû mesajan nîşan bide',
+	'translate-taskui-untranslated' => 'Mesajên newergerandî nîşan bide',
+	'translate-taskui-acceptqueue' => 'Tenê mesajên ku ez dikarim bipejirînim',
+	'translate-taction-translate' => 'Wergerîne',
+	'translate-taction-lstats' => 'Statîstîkên ziman',
+	'translate-taction-mstats' => 'Statîstîkên koma peyamê',
 	'translate-page-group' => 'Kom',
 	'translate-page-language' => 'Ziman',
 	'translate-page-limit' => 'Sînor',
@@ -13885,15 +13920,17 @@ $messages['ku-latn'] = array(
 	'translate-edit-title' => 'Biguherîne "$1"',
 	'translate-edit-translation' => 'Werger',
 	'translate-edit-contribute' => 'beşdar bibe',
+	'translate-edit-in-other-languages' => 'Peyam bi zimanên din',
 	'translate-edit-tab-list' => 'Lîsteya peyaman',
 	'translate-magic-submit' => 'Biçe',
 	'translate-magic-cm-export' => 'Bişîne',
 	'translate-magic-cm-current' => 'Niha',
 	'translate-magic-cm-original' => 'Orjînal',
 	'translate-magic-cm-comment' => 'Şîrove:',
-	'translate-magic-cm-save' => 'Qeyd bike',
+	'translate-magic-cm-save' => 'Tomar bike',
 	'translate-magic-notsaved' => 'Guherandina te nehate qeydkirin!',
 	'translate-pref-editassistlang' => 'Zimanên alîkar:',
+	'prefs-translate' => 'Vebijarkên wergerê',
 	'translate-rc-translation-filter' => 'Wergeran parzûn bike:',
 	'translate-rc-translation-filter-filter' => 'Wergeran parzûn bike',
 	'translationstats' => 'Statîstîkên wergeran',
@@ -13908,10 +13945,11 @@ $messages['ku-latn'] = array(
 	'translate-statsf-count-users' => 'Wergêrên çalak',
 	'translate-statsf-count-registrations' => 'Bikarhênerên nû',
 	'translate-statsf-submit' => 'Pêşdîtin',
+	'translate-tag-category' => 'Rûpelên wergerbar',
 	'translate-sidebar-alltrans' => 'Bi zimanên din',
 	'translations' => 'Hemû werger',
-	'translate-translations-count' => '{{PLURAL:$1|wergerek hate| $1 werger hatin}} dîtin.',
-	'translate-translations-fieldset-title' => 'Mesaj',
+	'translate-translations-count' => '{{PLURAL:$1|wergerek hat| $1 werger hatin}} dîtin.',
+	'translate-translations-fieldset-title' => 'Peyam',
 	'translate-translations-messagename' => 'Nav:',
 	'translate-translations-project' => 'Proje:',
 	'translate-translations-history-short' => 'd',
@@ -13920,6 +13958,10 @@ $messages['ku-latn'] = array(
 	'translate-language-code' => 'Koda ziman',
 	'translate-language-code-field-name' => 'Koda ziman:',
 	'translate-language' => 'Ziman',
+	'translate-total' => 'Peyam',
+	'translate-untranslated' => 'Newergerandî',
+	'translate-ls-column-group' => 'Koma peyamê',
+	'translate-mgs-group' => 'Koma peyamê:',
 	'translate-mgs-column-language' => 'Ziman',
 	'supportedlanguages' => 'Zimanên tên bikaranîn',
 	'supportedlanguages-recenttranslations' => 'wergerên niha',
@@ -13929,10 +13971,22 @@ $messages['ku-latn'] = array(
 	'translate-manage-import-new' => 'Mesaja nû $1',
 	'translate-manage-import-deleted' => 'Peyama jêbirî $1',
 	'translate-manage-action-import' => 'Tevlî bike',
+	'translate-js-summary' => 'Kurte:',
+	'translate-js-save' => 'Tomar bike',
 	'translate-js-history' => 'Dîroka wergerê',
+	'translate-js-support' => 'Pirs bike',
+	'translate-js-support-unsaved-warning' => 'Wergerên te yên newergerandî hene.',
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Parzemîn',
+	'translate-gs-speakers' => 'Axaftvan',
 	'translate-gs-total' => 'Hemû',
+	'translate-searchprofile' => 'Werger',
+	'translate-messagereview-submit' => 'Bipejirîne',
+	'translate-messagereview-done' => 'Pejirand',
+	'api-error-invalidrevision' => 'Werger nehat dîtin',
+	'api-error-unknownmessage' => 'Peyam nehat dîtin',
+	'translate-dynagroup-recent-label' => 'Wergerên dawî',
+	'translate-gethelp' => 'Alîkarî',
 );
 
 /** Latin (Latina)
@@ -20226,7 +20280,7 @@ $1',
 	'translate-gethelp' => 'Справка',
 );
 
-/** Rusyn (Русиньскый)
+/** Rusyn (русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(
@@ -22753,7 +22807,7 @@ $messages['sw'] = array(
 	'translate-percentage-fuzzy' => 'Zilizopitwa na wakati',
 );
 
-/** Silesian (Ślůnski)
+/** Silesian (ślůnski)
  * @author Herr Kriss
  * @author Pimke
  */
