@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//+ag\u003d",
+        "filename": "Translate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-07-02T06:40:25Z",
+      "side": 1,
+      "message": "This is the language filter with autocomplete feature. I don\u0027t see it used in Special:TranslationStats.",
+      "revId": "e629849f7eea358d74a357c929385023c8fe66f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+ak\u003d",
+        "filename": "resources/ext.translate.special.translationstats.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-07-02T06:40:25Z",
+      "side": 1,
+      "message": "Lines below this is not really required. The show hide logic for the datepicker is managed by itself.  See the default datepicker http://jqueryui.com/demos/datepicker/#default",
+      "revId": "e629849f7eea358d74a357c929385023c8fe66f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
