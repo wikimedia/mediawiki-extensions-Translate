@@ -151,7 +151,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		} elseif ( $submitted ) {
 			$this->invalidTarget();
 		}
-
 	}
 
 	/**
@@ -429,7 +428,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 				$extra = array();
 			}
 		}
-
 
 		if ( !$group instanceof AggregateMessageGroup  ) {
 			if ( !isset( $this->statsCounted[$groupId] ) ) {
