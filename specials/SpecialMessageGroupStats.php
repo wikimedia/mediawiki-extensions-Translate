@@ -214,7 +214,12 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 				return '';
 			}
 
-			if ( $this->noEmpty && $translated === 0 && $fuzzy === 0  ) {
+			if ( $this->noEmpty && $translated === 0 && $fuzzy === 0 ) {
+				return '';
+			}
+
+			// Skip below 2% if "don't show without translations" is checked.
+			if ( $this->noEmpty && ( $translated / $total ) < 0.02 ) {
 				return '';
 			}
 
