@@ -261,7 +261,7 @@ class TranslationHelpers {
 		$source = $this->group->getSourceLanguage();
 		$code = $this->handle->getCode();
 		$definition = $this->getDefinition();
-		$TTMServer = new TTMServer( $config );
+		$TTMServer = TTMServer::factory( $config );
 		$suggestions = $TTMServer->query( $source, $code, $definition );
 		if ( count( $suggestions ) === 0 ) {
 			throw new TranslationHelperExpection( 'No suggestions' );
@@ -333,13 +333,13 @@ class TranslationHelpers {
 				$accuracy = Html::element( 'span', array( 'title' => $tooltip ), $text );
 				$legend = array( $accuracy => array() );
 
-				$TTMServer = new TTMServer( $config );
+				$TTMServer = TTMServer::factory( $config );
 				if ( $TTMServer->isLocalSuggestion( $s ) ) {
 					$title = Title::newFromText( $s['location'] );
 					$symbol = isset( $config['symbol'] ) ? $config['symbol'] : '•';
 					$legend[$accuracy][] = self::ajaxEditLink( $title, '•' );
 				} else {
-					if ( $config['type'] === 'remote-ttmserver' ) {
+					if ( $TTMServer instanceof RemoteTTMServer ) {
 						$displayName = $config['displayname'];
 					} else {
 						$wiki = WikiMap::getWiki( $s['wiki'] );
@@ -397,9 +397,6 @@ class TranslationHelpers {
 		global $wgTranslateTranslationServices;
 
 		$handlers = array(
-			'ttmserver' => 'getTTMServerBox',
-			'shared-ttmserver' => 'getTTMServerBox',
-			'remote-ttmserver' => 'getRemoteTTMServerBox',
 			'microsoft' => 'getMicrosoftSuggestion',
 			'apertium'  => 'getApertiumSuggestion',
 		);
@@ -409,32 +406,44 @@ class TranslationHelpers {
 		$TTMSSug = array();
 		foreach ( $wgTranslateTranslationServices as $name => $config ) {
 			$type = $config['type'];
-			if ( $type !== 'ttmserver' ) {
-				if ( $async === 'async' ) {
-					$config['timeout'] = $config['timeout-async'];
-				} else {
-					$config['timeout'] = $config['timeout-sync'];
-				}
+
+			if ( !isset( $config['timeout'] ) ) {
+				$config['timeout'] = 3;
 			}
 
+			$method = null;
 			if ( isset( $handlers[$type] ) ) {
 				$method = $handlers[$type];
+
 				try {
-					if ( $type === 'ttmserver' || $type === 'remote-ttmserver' || $type === 'shared-ttmserver' ) {
-						$TTMSSug[$name] = array(
-							'config' => $config,
-							'suggestions' => $this->$method( $name, $config ),
-						);
-					} else {
-						$boxes[] = $this->$method( $name, $config );
-					}
+					$boxes[] = $this->$method( $name, $config );
 				} catch ( TranslationHelperExpection $e ) {
 					$errors .= "<!-- Box $name not available: {$e->getMessage()} -->\n";
 				}
-			} else {
+				continue;
+			}
+
+			$server = TTMServer::factory( $config );
+			if ( $server instanceof RemoteTTMServer ) {
+				$method = 'getRemoteTTMServerBox';
+			} elseif( $server instanceof ReadableTTMServer ) {
+				$method = 'getTTMServerBox';
+			}
+
+			if ( !$method ) {
 				throw new MWException( __METHOD__ . ": Unsupported type {$config['type']}" );
 			}
+
+			try {
+				$TTMSSug[$name] = array(
+					'config' => $config,
+					'suggestions' => $this->$method( $name, $config ),
+				);
+			} catch ( TranslationHelperExpection $e ) {
+				$errors .= "<!-- Box $name not available: {$e->getMessage()} -->\n";
+			}
 		}
+
 		if ( count( $TTMSSug ) ) {
 			array_unshift( $boxes, $this->formatTTMServerSuggestions( $TTMSSug ) );
 		}
