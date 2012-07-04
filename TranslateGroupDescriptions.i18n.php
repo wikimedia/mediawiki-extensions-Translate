@@ -1521,6 +1521,7 @@ $messages['km'] = array(
 /** Korean (한국어)
  * @author Kwj2772
  * @author ToePeu
+ * @author 아라
  */
 $messages['ko'] = array(
 	'translategroupdescriptions-desc' => '[http://mediawiki.org/wiki/Extension:Translate 번역] 확장 기능에서 지원하는 제품의 메시지 그룹 설명입니다',
@@ -1531,12 +1532,48 @@ $messages['ko'] = array(
 	'translate-group-desc-collection' => '미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:Collection Collection]의 모든 메시지를 포함하는 메타 그룹입니다.',
 	'translate-group-desc-flaggedrevs' => '미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]의 모든 메시지를 포함하는 메타 그룹입니다.',
 	'translate-group-desc-readerfeedback' => '미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]의 모든 메시지를 포함하는 메타 그룹입니다.',
+	'translate-group-desc-semantic' => '모든 [http://semantic-mediawiki.org/ Semantic MediaWiki] 확장 기능의 모든 메시지를 포함하는 메타 그룹입니다.',
+	'translate-group-desc-socialprofile' => '미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]의 모든 메시지를 포함하는 메타 그룹입니다.',
 	'translate-group-desc-translate' => '미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:Translate Translate]의 모든 메시지를 포함하는 메타 그룹입니다.',
 	'translate-group-desc-wikiaextensions' => '[http://www.wikia.com 위키아]에서 쓰이며 여기서 지원하는 미디어위키 확장 기능의 모든 메시지를 포함한 메타 그룹입니다.',
 	'translate-group-desc-wikimediaextensions' => '[http://wikimedia.org/ 위키미디어 재단]에서 쓰이며 여기서 지원하는 미디어위키 확장 기능의 모든 메시지를 포함한 메타 그룹입니다.',
 	'translate-group-desc-wikimediaextensions-main' => '위키미디어 [http://meta.wikimedia.org/wiki/Language_committee 언어 위원회]가 번역을 요구하는 미디어위키 확장 기능의 모든 메시지를 포함한 메타 그룹입니다.',
+	'translate-group-desc-uniwiki' => '[http://unicefinnovation.org/wiki.php Uniwiki]와 관련된 확장 기능에 있는 모든 메시지의 메타 그룹입니다.',
+	'translate-group-desc-ui' => '[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]와 관련된 확장 기능에 있는 모든 메시지의 메타 그룹입니다.',
+	'translate-group-desc-translatablepages' => '모든 번역 가능한 문서',
+	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]]은 턴제 전략 게임입니다',
+	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]]는 웹 기반 토론 포럼 소프트웨어입니다',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]]는 웹 기반 문제 추적 소프트웨어입니다',
+	'translate-group-desc-eol' => '[[Translating:EOL|백과사전 오브 생명]]에 대한 메시지 그룹입니다',
+	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS]]에 대한 메시지 그룹입니다',
+	'translate-group-desc-ihris-common' => '[[Translating:iHRIS|iHRIS]] 모듈 [[Special:Translate/out-ihris-common-0-all|iHRIS Common]]에 대한 메시지 그룹입니다',
+	'translate-group-desc-ihris-i2ce' => '[[Translating:iHRIS|iHRIS]] 모듈 [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]]에 대한 메시지 그룹입니다',
+	'translate-group-desc-ihris-manage' => '[[Translating:iHRIS|iHRIS]] 모듈 [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]]에 대한 메시지 그룹입니다',
+	'translate-group-desc-ihris-qualify' => '[[Translating:iHRIS|iHRIS]] 모듈 [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]]에 대한 메시지 그룹입니다',
+	'translate-group-desc-kiwix' => '[[Translating:Kiwix|Kiwix]]에 대한 메시지 그룹입니다',
+	'translate-group-desc-mantisbt-plugin-core' => '[[Translating:MantisBT|MantisBT]]에 대한 핵심 플러그인입니다',
 	'translate-group-desc-mediawiki-core-branch' => '[[Translating:MediaWiki|미디어위키]] 정식 버전의 메시지입니다.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]은 위키백과 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 애플리케이션입니다.',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]]는 소액 금융 경영 정보 시스템입니다',
+	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]]은 미디어위키 문서를 PDF 문서로 만들기 위한 라이브러리입니다',
+	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]]는 웹 메일 클라이언트입니다',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]]는 오프라인 위키백과 리더입니다',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]]는 오픈 미디어 플랫폼입니다',
+	'translate-group-desc-openimages-verifyemailtemplate' => '이 메시지는 [[Translating:Open Images|Open Images]] 이메일 인증 틀의 일부분입니다',
+	'translate-group-desc-openimages-all' => '이 메시지는 [[Translating:Open Images|Open Images]] 프로젝트의 일부분입니다.',
+	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]]는 자바스크립트 기반 동적 지도 생성기입니다',
+	'bw-desc-openstreetmap' => '[[Translating:OpenStreetMap|OpenStreetMap]]과 관련된 메시지입니다',
+	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]]은 자유롭게 편집할 수 있는 세계 지도입니다.',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]]는 플래시 기반 OpenStreetMap 편집기입니다',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]]는 위키백과에서 편집할 수 있는 도구 모음입니다',
+	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]]는 웹 기반 질문 및 답변 소프트웨어입니다',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]]은 마이크로블로깅 서버입니다',
+	'translate-group-desc-statusnet-plugin' => '이 메시지는 [[Translating:StatusNet|StatusNet]]에 대한 플러그인의 일부분입니다',
+	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver] 도구에 대한 i18n 시스템인 [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]에 대한 메시지 그룹입니다 (<span class="plainlinks">[[Translating talk:Toolserver|지원 요청]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition 기술 사항]</span>)',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]]는 전세계 하이킹, 자전거 타기, 산악 자전거, 인라인 스케이팅 경로를 보여주는 서비스입니다. GNU GPL 라이선스를 사용합니다.',
+	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]은 신속하게 위키미디어 위키에서 문서 일부의 저자를 찾을 수 있습니다',
+	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]는 모바일 장치에서 위키백과의 오프라인, 텍스트 전용 버전을 제공합니다',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]은 위키백과 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
+	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]]은 위키낱말사전 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
 );
 
 /** Colognian (Ripoarisch)

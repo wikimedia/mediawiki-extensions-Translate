@@ -1770,6 +1770,7 @@ $1',
 );
 
 /** Assamese (অসমীয়া)
+ * @author Bishnu Saikia
  * @author Chaipau
  * @author Gahori
  * @author Gitartha.bordoloi
@@ -1839,6 +1840,7 @@ $messages['as'] = array(
 	'translate-translations-fieldset-title' => 'বাৰ্তা',
 	'translate-translations-messagename' => 'নাম:',
 	'translate-translations-project' => 'প্ৰকল্প:',
+	'translate-translations-history-short' => 'ই',
 	'languagestats' => 'ভাষাৰ পৰিসংখ্যা',
 	'translate-langstats-expand' => 'বহলাওঁক',
 	'translate-langstats-collapse' => 'সংকোচ কৰক',
@@ -1849,14 +1851,20 @@ $messages['as'] = array(
 	'translate-language' => 'ভাষা',
 	'translate-total' => 'বাৰ্তাসমূহ',
 	'translate-untranslated' => 'ভাঙনি নোহোৱা',
+	'translate-mgs-column-language' => 'ভাষাসমূহ',
 	'supportedlanguages' => 'সমৰ্থন থকা ভাষাসমূহ',
 	'translate-save' => 'সাঁচি থওক ($1)',
 	'translate-jssti-add' => 'তালিকাত যোগ দিয়ক',
 	'translate-manage-import-new' => 'নতুন বাৰ্তা $1',
+	'translate-manage-action-import' => 'আমদানি',
 	'translate-import-err-dl-failed' => "ফাইল অৰ্জন কৰা নহ'ল:
 $1",
 	'translate-gs-code' => 'কোড',
+	'translate-gs-count' => 'গণনা',
 	'translate-gs-total' => 'মুঠ',
+	'translate-messagereview-submit' => 'স্বীকাৰ',
+	'translate-messagereview-done' => 'স্বীকাৰ কৰা হ’ল',
+	'translate-gethelp' => 'সহায়',
 );
 
 /** Asturian (asturianu)
@@ -9275,7 +9283,7 @@ $messages['gu'] = array(
 	'translate-statsf-width' => 'પહોળાઇ પિક્સેલ્સમાં:',
 	'translate-statsf-height' => 'ઉંચાઇ પિક્સેલ્સમાં:',
 	'translate-statsf-days' => 'સમયગાળો દિવસોમાં:',
-	'translate-statsf-start' => 'સમયગાળો દિવસોમાં:',
+	'translate-statsf-start' => 'આરંભ તારીખ:',
 	'translate-statsf-scale' => 'કણિકતા:',
 	'translate-statsf-scale-days' => 'દિવસો',
 	'translate-statsf-scale-hours' => 'કલાકો',
@@ -23636,6 +23644,7 @@ Pindutin ang pangalan ng pangkat ng mensahe upang tumanaw ng isang talaan ng mga
 	'translate-page-disabled' => "Hindi pinagana ang mga salinwika para sa wikang ito na nasa loob ng pangkat na ito. Dahilan:
 
 ''$1''",
+	'translate-language-disabled' => 'Hindi pinagagana ang pagsasalinwika papunta sa wikang ito.',
 	'translate-page-settings-legend' => 'Mga pagtatakda',
 	'translate-page-group' => 'Pangkat',
 	'translate-page-language' => 'Wika',
@@ -24667,7 +24676,7 @@ $1',
 	'translate-workflowstatus' => 'Статус: $1',
 	'translate-stats-workflow' => 'Статус',
 	'translate-dynagroup-recent-label' => 'Останні переклади',
-	'translate-dynagroup-recent-desc' => 'Ця група повідомлень відображає всі останні переклади цією мовою.
+	'translate-dynagroup-recent-desc' => 'Ця група повідомлень містить усі невичитані <!-- якщо перекладати слово в слово - то останні, але ж насправді - невичитані --> переклади цією мовою.
 Найзручніший режим для вичитки.',
 	'translate-dynagroup-by' => '{{GENDER:$1| Переклав|Переклала}}   $1',
 	'translate-dynagroup-byc' => '{{GENDER:$1| Переклав|Переклала}}   $1 ( $2 )',

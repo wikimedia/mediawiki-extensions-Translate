@@ -160,6 +160,13 @@ $messages['ar'] = array(
 	'translate-fs-permissions-submit' => 'إرسال طلب',
 );
 
+/** Assamese (অসমীয়া)
+ * @author Bishnu Saikia
+ */
+$messages['as'] = array(
+	'translate-fs-signup-title' => 'সদস্য ভুক্তি',
+);
+
 /** Asturian (asturianu)
  * @author Xuacu
  */
@@ -3058,6 +3065,7 @@ $messages['tl'] = array(
 	'firststeps' => 'Unang mga hakbang',
 	'firststeps-desc' => '[[Special:FirstSteps|Natatanging pahina]] upang magawang magsimula ang mga tagagamit sa isang wiki sa pamamagitan ng dugtong na Pagsasalinwika',
 	'translate-fs-pagetitle-done' => ' - gawa na!',
+	'translate-fs-pagetitle-pending' => '- nakabinbin',
 	'translate-fs-pagetitle' => 'Masalamangkang pagsisimula - $1',
 	'translate-fs-signup-title' => 'Magpatala',
 	'translate-fs-settings-title' => 'Isaayos ang mga nais mo',
@@ -3068,8 +3076,49 @@ $messages['tl'] = array(
 	'translate-fs-intro' => "Maligayang pagdating sa masalamangkang unang mga hakbang ng {{SITENAME}}. 
 Hakbang-hakbang na gagabayan ka sa proseso ng pagiging isang tagapagsalinwika.
 Sa huli, makakapagsalinwika ka ng ''mga mensahe ng ugnayang-mukha'' ng lahat ng tinatangkilik na mga proyekto sa {{SITENAME}}.",
+	'translate-fs-selectlanguage' => 'Pumili ng isang wika',
+	'translate-fs-settings-planguage' => 'Pangunahing wika:',
+	'translate-fs-settings-planguage-desc' => 'Ang pangunahing wika ay gumaganap din bilang wikang pang-ugnayang mukha mo sa wiking ito
+at bilang isang likas na nakatakdang puntiryang wika para sa mga pagsasalinwika.',
+	'translate-fs-settings-slanguage' => 'Katulong na wikang $1:',
+	'translate-fs-settings-slanguage-desc' => 'Maaaring magpakita ng mga salinwika ng mga mensahe sa ibang mga wika sa loob ng patnugot ng salinwika.
+Makakapili ka rito ng kung anong mga wika, kung mayroon, na nais mong makita.',
+	'translate-fs-settings-submit' => 'Sagipin ang mga nais',
+	'translate-fs-userpage-level-N' => 'Isa akong katutubong tagapagsalita ng',
+	'translate-fs-userpage-level-5' => 'Isa akong propesyunal na tagapagsalinwika ng',
+	'translate-fs-userpage-level-4' => 'Alam ko ito na katulad ng isang katutubong tagapagsalita',
+	'translate-fs-userpage-level-3' => 'Mayroon akong mabuting katatasan sa',
+	'translate-fs-userpage-level-2' => 'Mayroon akong bahagyang katatasan sa',
+	'translate-fs-userpage-level-1' => 'May alam akong kaunti',
+	'translate-fs-userpage-help' => 'Paki ipahiwatig ang mga kasanayang mo sa wika at magsabi sa amin ng ilang bagay patungkol sa iyong sarili. Kung maalam ka sa mahigit pa sa limang mga wika ay maaari ka pang magdagdag sa pagdaka.',
 	'translate-fs-userpage-submit' => 'Likhain ang aking pahina ng tagagamit',
 	'translate-fs-userpage-done' => 'Mahusay! Mayroon ka na ngayong isang pahina ng tagagamit.',
+	'translate-fs-permissions-planguage' => 'Pangunahing wika:',
+	'translate-fs-permissions-help' => 'Ngayon ay kailangan mo nang maglagay ng isang kahilingan upang maidagdag sa pangkat ng tagapagsalinwika.
+Piliin ang pangunahing wika na patutunguhan ng pagsasalinwika mo.
+
+Mababanggit mo ang iba pang mga wika at iba pang mga pahayag sa loob ng kahon ng tekstong nasa ibaba.',
+	'translate-fs-permissions-pending' => 'Ang kahilingan mo ay naipasa na sa [[$1]] at mayroong isang tao mula sa tauhan ng pook na magsusuri nito sa lalong madaling panahon.
+Kapag tiniyak mo ang iyong tirahan ng e-liham, makakatanggap ka ng isang pagpapabatid ng e-liham kapag nangyari na ito.',
+	'translate-fs-permissions-submit' => 'Ipadala ang kahilingan',
+	'translate-fs-target-text' => 'Maligayang bati!
+Makapagsisimula ka na sa pagsasalinwika.
+
+Huwag matakot kung bago at nakakalito pa rin ito sa pakiramdam mo.
+Doon sa [[Project list|Listahan ng Proyekto]] ay mayroong isang malawakang pagtalakay ng mga proyektong mapag-aambagan mo ng mga salinwika.
+Karamihan sa mga proyekto ay mayroong isang maiksing pahina ng paglalarawan na mayroong kawing na "\'\'Isalinwika ang proyektong ito\'\'", na magdadala sa iyo papunta sa isang pahinang naglilista ng lahat ng mga mensaheng hindi pa naisasalinwika.
+Makakakuha rin ang isang listahan ng lahat ng mga pangkat ng mensahe na mayroong [[Special:LanguageStats|pangkasalukuyang katayuan ng salinwika para sa isang wika]].
+
+Kung sa pakiramdam mo ay kailangan mong umunawa ng mas marami pa bago ka magsimulang magsalinwika, maaari mong basahin ang [[FAQ|Mga malilimit na itanong]].
+Sa kasamaang-palad, ang kasulatan ay maaaring hindi na napapanahon kung minsan.
+Kung mayroong kang naiisip na maaari mong gawin, subalit hindi malaman kung papaano, huwag mag-alinlangang itanong ito roon sa [[Support|pahina ng suporta]].
+
+Maaari ka ring makipag-ugnayan sa mga kasamahan mong tagapagsalinwika na nasa kaparehong wika roon sa [[Portal_talk:$1|pahina ng usapan]] ng iyong [[Portal:$1|lagusan ng wika mo]].
+Kung hindi mo pa nagagawa ito, [[Special:Preferences|baguhin mo ang wika ng ugnayang-mukha upang maging wikang nais mong pagsalinan ng wika]], upang magawa ng wiki na maipakita ang pinaka may kaugnayang mga kawing para sa iyo.',
+	'translate-fs-email-text' => 'Paki ibigay ang tirahan mo ng e-liham sa [[Special:Preferences|mga nais mo]] at tiyakin ito mula sa e-liham na ipinadala sa iyo.
+
+Nagpapahintulot ito sa ibang mga tagagamit na makapag-ugnayan sa iyo sa pamamagitan ng e-liham.
+Makakatanggap ka rin ng mga pahayagang paliham, maaari mong piliing huwag tumanggap nito sa loob ng panlaylay na "{{int:prefs-personal}}" ng iyong [[Special:Preferences|mga kanaisan]].',
 );
 
 /** Turkish (Türkçe)
