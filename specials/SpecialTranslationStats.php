@@ -4,7 +4,8 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2008-2012, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -49,8 +50,6 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	}
 
 	public function execute( $par ) {
-		global $wgOut, $wgRequest;
-
 		$opts = new FormOptions();
 		$opts->add( 'graphit', false );
 		$opts->add( 'preview', false );
@@ -63,7 +62,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		$opts->add( 'group', '' );
 		$opts->add( 'uselang', '' );
 		$opts->add( 'start', '' );
-		$opts->fetchValuesFromRequest( $wgRequest );
+		$opts->fetchValuesFromRequest( $this->getRequest() );
 
 		$pars = explode( ';', $par );
 
@@ -110,7 +109,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		}
 
 		if ( $this->including() ) {
-			$wgOut->addHTML( $this->image( $opts ) );
+			$this->getOutput()->addHTML( $this->image( $opts ) );
 		} elseif ( $opts['graphit'] ) {
 
 			if ( !class_exists( 'PHPlot' ) ) {
@@ -118,8 +117,8 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 				echo "PHPlot not found";
 			}
 
-			if ( !$wgRequest->getBool( 'debug' ) ) {
-				$wgOut->disable();
+			if ( !$this->getRequest()->getBool( 'debug' ) ) {
+				$this->getOutput()->disable();
 				header( 'Content-Type: image/png' );
 				header( 'Cache-Control: private, max-age=3600' );
 				header( 'Expires: ' . wfTimestamp( TS_RFC2822, time() + 3600 ) );
@@ -137,23 +136,24 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 * @param $opts FormOptions
 	 */
 	protected function form( FormOptions $opts ) {
-		global $wgOut, $wgScript;
+		global $wgScript;
 
 		$this->setHeaders();
-		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Statistics_and_reporting' );
-		$wgOut->addWikiMsg( 'translate-statsf-intro' );
+		$out = $this->getOutput();
+		TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Statistics_and_reporting' );
+		$out->addWikiMsg( 'translate-statsf-intro' );
 
-		$wgOut->addHTML(
-			Xml::fieldset( wfMsg( 'translate-statsf-options' ) ) .
+		$out->addHTML(
+			Xml::fieldset( $this->msg( 'translate-statsf-options' )->escaped() ) .
 			Html::openElement( 'form', array( 'action' => $wgScript ) ) .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Html::hidden( 'preview', 1 ) .
 			'<table>'
 		);
 
-		$submit = Xml::submitButton( wfMsg( 'translate-statsf-submit' ) );
+		$submit = Xml::submitButton( $this->msg( 'translate-statsf-submit' )->escaped() );
 
-		$wgOut->addHTML(
+		$out->addHTML(
 			$this->eInput( 'width', $opts ) .
 			$this->eInput( 'height', $opts ) .
 			'<tr><td colspan="2"><hr /></td></tr>' .
@@ -168,7 +168,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			'<tr><td colspan="2">' . $submit . '</td></tr>'
 		);
 
-		$wgOut->addHTML(
+		$out->addHTML(
 			'</table>' .
 			'</form>' .
 			'</fieldset>'
@@ -197,12 +197,12 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 		$titleText = $this->getTitle()->getPrefixedText();
 
-		$wgOut->addHTML(
+		$out->addHTML(
 			Html::element( 'hr' ) .
 			Html::element( 'pre', null, "{{{$titleText}{$spiParams}}}" )
 		);
 
-		$wgOut->addHTML(
+		$out->addHTML(
 			Html::element( 'hr' ) .
 			Html::rawElement( 'div', array( 'style' => 'margin: 1em auto; text-align: center;' ), $this->image( $opts ) )
 		);
@@ -231,7 +231,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 */
 	protected function eLabel( $name ) {
 		$label = 'translate-statsf-' . $name;
-		$label = wfMsgExt( $label, array( 'parsemag', 'escapenoentities' ) );
+		$label = $this->msg( $label )->escaped();
 
 		return Xml::tags( 'label', array( 'for' => $name ), $label );
 	}
@@ -245,7 +245,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 */
 	protected function eRadio( $name, FormOptions $opts, array $alts ) {
 		$label = 'translate-statsf-' . $name;
-		$label = wfMsgExt( $label, array( 'parsemag', 'escapenoentities' ) );
+		$label = $this->msg( $label )->escaped();
 		$s = '<tr><td>' . $label . '</td><td>';
 
 		$options = array();
@@ -286,9 +286,8 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 * @return \type{JsSelectToInput}
 	 */
 	protected function languageSelector() {
-		global $wgLang;
 		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
-			$languages = LanguageNames::getNames( $wgLang->getCode(),
+			$languages = LanguageNames::getNames( $this->getLanguage()->getCode(),
 				LanguageNames::FALLBACK_NORMAL,
 				LanguageNames::LIST_MW_AND_CLDR
 			);
@@ -378,7 +377,6 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 * @return \arrayof{String,Array} Data indexed by their date labels.
 	 */
 	protected function getData( FormOptions $opts ) {
-		global $wgLang;
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$class = $this->getGraphClass( $opts['count'] );
@@ -426,8 +424,9 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		$data = array();
 		// Allow 10 seconds in the future for processing time
 		$lastValue = $end !== null ? $end : $now + 10;
+		$lang = $this->getLanguage();
 		while ( $cutoff <= $lastValue ) {
-			$date = $wgLang->sprintfDate( $dateFormat, wfTimestamp( TS_MW, $cutoff ) );
+			$date = $lang->sprintfDate( $dateFormat, wfTimestamp( TS_MW, $cutoff ) );
 			$cutoff += $increment;
 			$data[$date] = $defaults;
 		}
@@ -446,7 +445,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 					continue;
 
 				}
-				$date = $wgLang->sprintfDate( $dateFormat, $so->getTimestamp( $row ) );
+				$date = $lang->sprintfDate( $dateFormat, $so->getTimestamp( $row ) );
 				// Ignore values outside range
 				if ( !isset( $data[$date] ) ) {
 					continue;
@@ -465,12 +464,12 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			if ( strpos( $label, '@' ) === false ) continue;
 			list( $groupId, $code ) = explode( '@', $label, 2 );
 			if ( $code && $groupId ) {
-				$code = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() ) . " ($code)";
+				$code = TranslateUtils::getLanguageName( $code, false, $lang->getCode() ) . " ($code)";
 				$group = MessageGroups::getGroup( $groupId );
 				$group = $group ? $group->getLabel() : $groupId;
 				$label = "$group @ $code";
 			} elseif ( $code ) {
-				$label = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() ) . " ($code)";
+				$label = TranslateUtils::getLanguageName( $code, false, $lang->getCode() ) . " ($code)";
 			} elseif ( $groupId ) {
 				$group = MessageGroups::getGroup( $groupId );
 				$label = $group ? $group->getLabel() : $groupId;
@@ -541,7 +540,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 * @param $opts FormOptions
 	 */
 	public function draw( FormOptions $opts ) {
-		global $wgTranslatePHPlotFont, $wgLang;
+		global $wgTranslatePHPlotFont;
 
 		$width = $opts->getValue( 'width' );
 		$height = $opts->getValue( 'height' );
@@ -567,7 +566,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			$i--;
 		}
 
-		$font = FCFontFinder::find( $wgLang->getCode() );
+		$font = FCFontFinder::find( $this->getLanguage()->getCode() );
 
 		if ( $font ) {
 			$plot->SetDefaultTTFont( $font );
@@ -585,7 +584,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		$plot->setFont( 'x_label', $numberFont, 8 );
 		$plot->setFont( 'y_label', $numberFont, 8 );
 
-		$yTitle = wfMsg( 'translate-stats-' . $opts['count'] );
+		$yTitle = $this->msg( 'translate-stats-' . $opts['count'] )->escaped();
 
 		// Turn off X axis ticks and labels because they get in the way:
 		$plot->SetYTitle( $yTitle );

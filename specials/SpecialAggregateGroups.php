@@ -5,7 +5,8 @@
  * @file
  * @author Santhosh Thottingal
  * @author Niklas Laxström
- * @copyright Copyright © 2012 Santhosh Thottingal
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2012 Santhosh Thottingal, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -22,9 +23,8 @@ class SpecialAggregateGroups extends SpecialPage {
 	public function execute( $parameters ) {
 		$this->setHeaders();
 
-		global $wgRequest, $wgOut, $wgUser;
-		$this->user = $wgUser;
-		$request = $wgRequest;
+		$this->user = $this->getUser();
+		$request = $this->getRequest();
 		$out = $this->getOutput();
 
 		// Check permissions
@@ -60,8 +60,8 @@ class SpecialAggregateGroups extends SpecialPage {
 	}
 
 	protected function showAggregateGroups( array $aggregates, array $pages ) {
-		global $wgOut;
-		$wgOut->addModules( 'ext.translate.special.aggregategroups' );
+		$out = $this->getOutput();
+		$out->addModules( 'ext.translate.special.aggregategroups' );
 
 		foreach ( $aggregates as $group ) {
 			$id = $group->getId();
@@ -71,49 +71,49 @@ class SpecialAggregateGroups extends SpecialPage {
 				'data-id' => $this->htmlIdForGroup( $group ),
 			) );
 
-			$wgOut->addHtml( $div );
+			$out->addHtml( $div );
 
 			$remove = Html::element( 'span', array( 'class' => 'tp-aggregate-remove-ag-button' ) );
 
 			$hid = $this->htmlIdForGroup( $group );
 			$header = Html::rawElement( 'h2', null, htmlspecialchars( $group->getLabel() ) . $remove );
-			$wgOut->addHtml( $header );
-			$wgOut->addWikiText( $group->getDescription() );
+			$out->addHtml( $header );
+			$out->addWikiText( $group->getDescription() );
 			$this->listSubgroups( $group );
 			$select = $this->getGroupSelector( $pages, $group );
-			$wgOut->addHtml( $select->getHtml() );
+			$out->addHtml( $select->getHtml() );
 			$addButton = Html::element( 'input',
 				array( 'type' => 'button',
-					'value' =>  wfMsg( 'tpt-aggregategroup-add' ),
+					'value' =>  $this->msg( 'tpt-aggregategroup-add' )->escaped(),
 					'class' => 'tp-aggregate-add-button' )
 				);
-			$wgOut->addHtml( $addButton );
-			$wgOut->addHtml( "</div>" );
+			$out->addHtml( $addButton );
+			$out->addHtml( "</div>" );
 		}
 
-		$wgOut->addHtml( Html::element( 'input',
+		$out->addHtml( Html::element( 'input',
 			array( 'type' => 'hidden',
 				'id' => 'token',
 				'value' => ApiAggregateGroups::getToken()
 				) ) );
-		$wgOut->addHtml( "<br/><a class='tpt-add-new-group' href='#'>" .
-			wfMsg( 'tpt-aggregategroup-add-new' ) .
+		$out->addHtml( "<br/><a class='tpt-add-new-group' href='#'>" .
+			$this->msg( 'tpt-aggregategroup-add-new' )->escaped() .
 			 "</a>" );
-		$newGroupNameLabel = wfMsg( 'tpt-aggregategroup-new-name' );
+		$newGroupNameLabel = $this->msg( 'tpt-aggregategroup-new-name' )->escaped();
 		$newGroupName = Html::element( 'input', array( 'class' => 'tp-aggregategroup-add-name', 'maxlength' => '200' ) );
-		$newGroupDescriptionLabel = wfMsg( 'tpt-aggregategroup-new-description' );
+		$newGroupDescriptionLabel = $this->msg( 'tpt-aggregategroup-new-description' )->escaped();
 		$newGroupDescription = Html::element( 'input',
 				array( 'class' => 'tp-aggregategroup-add-description' )
 			 );
 		$saveButton = Html::element( 'input',
 			array( 'type' => 'button',
-				'value' =>  wfMsg( 'tpt-aggregategroup-save' ),
+				'value' =>  $this->msg( 'tpt-aggregategroup-save' )->escaped(),
 				'id' => 'tpt-aggregategroups-save', 'class' => 'tp-aggregate-save-button' )
 			);
 		$newGroupDiv = Html::rawElement( 'div',
 			array( 'class' => 'tpt-add-new-group hidden' ) ,
-			"$newGroupNameLabel $newGroupName <br/> $newGroupDescriptionLabel $newGroupDescription <br/> $saveButton" );
-		$wgOut->addHtml( $newGroupDiv );
+			"$newGroupNameLabel $newGroupName <br /> $newGroupDescriptionLabel $newGroupDescription <br /> $saveButton" );
+		$out->addHtml( $newGroupDiv );
 	}
 
 	protected function listSubgroups( AggregateMessageGroup $parent ) {
@@ -169,8 +169,12 @@ class SpecialAggregateGroups extends SpecialPage {
 		$subgroups = array_flip( $subgroups );
 		foreach ( $availableGroups as $group ) {
 			$groupId = $group->getId();
+
 			// Do not include already included groups in the list
-			if ( isset( $subgroups[$groupId] ) ) continue;
+			if ( isset( $subgroups[$groupId] ) ) {
+				continue;
+			}
+
 			$select->addOption( $group->getLabel(), $groupId );
 		}
 

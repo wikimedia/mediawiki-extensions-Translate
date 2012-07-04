@@ -90,15 +90,11 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	public function __construct() {
 		parent::__construct( 'LanguageStats' );
 
-		global $wgLang;
-
-		$this->target = $wgLang->getCode();
+		$this->target = $this->getLanguage()->getCode();
 	}
 
 	function execute( $par ) {
-		global $wgRequest, $wgOut;
-
-		$request = $wgRequest;
+		$request = $this->getRequest();
 
 		$this->purge = $request->getVal( 'action' ) === 'purge';
 		$this->table = new StatsTable();
@@ -106,8 +102,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$this->setHeaders();
 		$this->outputHeader();
 
-		$wgOut->addModules( 'ext.translate.special.languagestats' );
-		$wgOut->addModules( 'ext.translate.messagetable' );
+		$out = $this->getOutput();
+
+		$out->addModules( 'ext.translate.special.languagestats' );
+		$out->addModules( 'ext.translate.messagetable' );
 
 		$params = explode( '/', $par  );
 
@@ -134,20 +132,20 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$this->noEmpty = $request->getBool( 'suppressempty', $this->noEmpty && !$submitted );
 
 		if ( !$this->including() ) {
-			TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Statistics_and_reporting' );
-			$wgOut->addHTML( $this->getForm() );
+			TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Statistics_and_reporting' );
+			$out->addHTML( $this->getForm() );
 		}
 
 		if ( $this->isValidValue( $this->target ) ) {
 			$this->outputIntroduction();
 			$output = $this->getTable();
 			if ( $this->incomplete ) {
-				$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-langstats-incomplete' );
+				$out->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-langstats-incomplete' );
 			}
 			if ( $this->nothing ) {
-				$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-mgs-nothing' );
+				$out->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-mgs-nothing' );
 			}
-			$wgOut->addHTML( $output );
+			$out->addHTML( $output );
 		} elseif ( $submitted ) {
 			$this->invalidTarget();
 		}
@@ -165,9 +163,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	/// Called when the target is unknown.
 	protected function invalidTarget() {
-		global $wgOut;
-
-		$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-page-no-such-language' );
+		$this->getOutput()->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-page-no-such-language' );
 	}
 
 	/**
@@ -176,19 +172,19 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * @todo duplicated code
 	 */
 	protected function getForm() {
-		global $wgScript, $wgRequest;
+		global $wgScript;
 
 		$out = Html::openElement( 'div' );
 		$out .= Html::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
 		$out .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
 		$out .= Html::hidden( 'x', 'D' ); // To detect submission
 		$out .= Html::openElement( 'fieldset' );
-		$out .= Html::element( 'legend', null, wfMsg( 'translate-language-code' ) );
+		$out .= Html::element( 'legend', null, $this->msg( 'translate-language-code' )->escaped() );
 		$out .= Html::openElement( 'table' );
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-label' ) );
-		$out .= Xml::label( wfMsg( 'translate-language-code-field-name' ), 'language' );
+		$out .= Xml::label( $this->msg( 'translate-language-code-field-name' )->escaped(), 'language' );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-input' ) );
 		$out .= Xml::input( 'language', 10, $this->target, array( 'id' => 'language' ) );
@@ -197,19 +193,19 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'colspan' => 2 ) );
-		$out .= Xml::checkLabel( wfMsg( 'translate-suppress-complete' ), 'suppresscomplete', 'suppresscomplete', $this->noComplete );
+		$out .= Xml::checkLabel( $this->msg( 'translate-suppress-complete' )->escaped(), 'suppresscomplete', 'suppresscomplete', $this->noComplete );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::closeElement( 'tr' );
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'colspan' => 2 ) );
-		$out .= Xml::checkLabel( wfMsg( 'translate-ls-noempty' ), 'suppressempty', 'suppressempty', $this->noEmpty );
+		$out .= Xml::checkLabel( $this->msg( 'translate-ls-noempty' )->escaped(), 'suppressempty', 'suppressempty', $this->noEmpty );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::closeElement( 'tr' );
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-input', 'colspan' => 2 ) );
-		$out .= Xml::submitButton( wfMsg( 'translate-ls-submit' ) );
+		$out .= Xml::submitButton( $this->msg( 'translate-ls-submit' )->escaped() );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::closeElement( 'tr' );
 
@@ -218,7 +214,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		/* Since these pages are in the tabgroup with Special:Translate,
 		 * it makes sense to retain the selected group/language parameter
 		 * on post requests even when not relevant to the current page. */
-		$val = $wgRequest->getVal( 'group' );
+		$val = $this->getRequest()->getVal( 'group' );
 		if ( $val !== null ) {
 			$out .= Html::hidden( 'group', $val );
 		}
@@ -232,21 +228,19 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * Output something helpful to guide the confused user.
 	 */
 	protected function outputIntroduction() {
-		global $wgOut, $wgLang, $wgUser;
-
-		$languageName = TranslateUtils::getLanguageName( $this->target, false, $wgLang->getCode() );
+		$languageName = TranslateUtils::getLanguageName( $this->target, false, $this->getLanguage()->getCode() );
 		$rcInLangLink = Linker::link(
 			SpecialPage::getTitleFor( 'Translate', '!recent' ),
-			wfMsgHtml( 'languagestats-recenttranslations' ),
+			$this->msg( 'languagestats-recenttranslations' )->escaped(),
 			array(),
 			array(
-				'task' => $wgUser->isAllowed( 'translate-messagereview' ) ? 'acceptqueue' : 'reviewall',
+				'task' => $this->getUser()->isAllowed( 'translate-messagereview' ) ? 'acceptqueue' : 'reviewall',
 				'language' => $this->target
 			)
 		);
 
-		$out = wfMessage( 'languagestats-stats-for', $languageName )->rawParams( $rcInLangLink )->parseAsBlock();
-		$wgOut->addHTML( $out );
+		$out = $this->msg( 'languagestats-stats-for', $languageName )->rawParams( $rcInLangLink )->parseAsBlock();
+		$this->getOutput()->addHTML( $out );
 	}
 
 	/**
@@ -259,7 +253,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$this->states = self::getWorkflowStates();
 
 			// An array where keys are state names and values are numbers
-			$this->table->addExtraColumn( wfMessage( 'translate-stats-workflow' ) );
+			$this->table->addExtraColumn( $this->msg( 'translate-stats-workflow' )->escaped() );
 		}
 
 		return;
@@ -303,7 +297,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			}
 		}
 
-		$stateMessage = wfMessage( "translate-workflow-state-$state" );
+		$stateMessage = $this->msg( "translate-workflow-state-$state" )->escaped();
 		$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
 
 		return "\n\t\t" . $this->table->element(
@@ -336,12 +330,12 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		}
 
 		if ( $out ) {
-			$table->setMainColumnHeader( wfMessage( 'translate-ls-column-group' ) );
+			$table->setMainColumnHeader( $this->msg( 'translate-ls-column-group' )->escaped() );
 			$out = $table->createHeader() . "\n" . $out;
 			$out .= Html::closeElement( 'tbody' );
 
 			$out .= Html::openElement( 'tfoot' );
-			$out .= $table->makeTotalRow( wfMessage( 'translate-languagestats-overall' ), $this->totals );
+			$out .= $table->makeTotalRow( $this->msg( 'translate-languagestats-overall' )->escaped(), $this->totals );
 			$out .= Html::closeElement( 'tfoot' );
 
 			$out .= Html::closeElement( 'table' );

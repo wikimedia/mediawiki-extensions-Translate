@@ -109,9 +109,9 @@ class SpecialManageGroups extends SpecialPage {
 		$attribs = array( 'type' => 'submit', 'class' => 'mw-translate-smg-submit' );
 		if ( !$allowed ) {
 			$attribs['disabled'] = 'disabled';
-			$attribs['title'] = wfMessage( 'translate-smg-notallowed' )->text();
+			$attribs['title'] = $this->msg( 'translate-smg-notallowed' )->text();
 		}
-		$button = Html::element( 'button', $attribs, wfMessage( 'translate-smg-submit' )->text() );
+		$button = Html::element( 'button', $attribs, $this->msg( 'translate-smg-submit' )->text() );
 		$out->addHtml( $button );
 		$out->addHtml( Html::closeElement( 'form' ) );
 	}
@@ -135,10 +135,10 @@ class SpecialManageGroups extends SpecialPage {
 				$wiki = '!!FUZZY!!' . str_replace( TRANSLATE_FUZZY, '', $wiki );
 			}
 
-			$actions .= ' ' . Xml::checkLabel( wfMsg( 'translate-manage-action-ignore' ), "i/$id", "i/$id" );
+			$actions .= ' ' . Xml::checkLabel( $this->msg( 'translate-manage-action-ignore' )->escaped(), "i/$id", "i/$id" );
 
 			if ( $group->getSourceLanguage() === $code ) {
-				$actions .= ' ' . Xml::checkLabel( wfMsg( 'translate-manage-action-fuzzy' ), "f/$id", "f/$id" );
+				$actions .= ' ' . Xml::checkLabel( $this->msg( 'translate-manage-action-fuzzy' )->escaped(), "f/$id", "f/$id" );
 			}
 		}
 

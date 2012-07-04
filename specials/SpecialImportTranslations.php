@@ -4,7 +4,8 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2009-2010, Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2009-2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -20,10 +21,9 @@ class SpecialImportTranslations extends SpecialPage {
 	 */
 	public function __construct() {
 		parent::__construct( 'ImportTranslations', 'translate-import' );
-		global $wgUser, $wgOut, $wgRequest;
-		$this->user = $wgUser;
-		$this->out = $wgOut;
-		$this->request = $wgRequest;
+		$this->user = $this->getUser();
+		$this->out = $this->getOutput;
+		$this->request = $this->getRequest();
 	}
 
 	/**
@@ -117,10 +117,8 @@ class SpecialImportTranslations extends SpecialPage {
 	 * Constructs and outputs file input form with supported methods.
 	 */
 	protected function outputForm() {
-		global $wgOut;
-
-		$wgOut->addModules( 'ext.translate.special.importtranslations' );
-		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Off-line_translation' );
+		$this->out->addModules( 'ext.translate.special.importtranslations' );
+		TranslateUtils::addSpecialHelpLink( $this->out, 'Help:Extension:Translate/Off-line_translation' );
 		/**
 		 * Ugly but necessary form building ahead, ohoy
 		 */
@@ -141,7 +139,7 @@ class SpecialImportTranslations extends SpecialPage {
 		$class = array( 'class' => 'mw-translate-import-inputs' );
 
 		$this->out->addHTML(
-			Xml::radioLabel( wfMsg( 'translate-import-from-url' ),
+			Xml::radioLabel( $this->msg( 'translate-import-from-url' )->escaped(),
 				'upload-type', 'url', 'mw-translate-up-url',
 				$this->request->getText( 'upload-type' ) === 'url' ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
@@ -153,7 +151,7 @@ class SpecialImportTranslations extends SpecialPage {
 		);
 
 		$this->out->addHTML(
-			Xml::radioLabel( wfMsg( 'translate-import-from-wiki' ),
+			Xml::radioLabel( $this->msg( 'translate-import-from-wiki' )->escaped(),
 				'upload-type', 'wiki', 'mw-translate-up-wiki',
 				$this->request->getText( 'upload-type' ) === 'wiki' ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
@@ -162,7 +160,7 @@ class SpecialImportTranslations extends SpecialPage {
 				array( 'id' => 'mw-translate-up-wiki-input' ) + $class ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
 			Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n" .
-			Xml::radioLabel( wfMsg( 'translate-import-from-local' ),
+			Xml::radioLabel( $this->msg( 'translate-import-from-local' )->escaped(),
 				'upload-type', 'local', 'mw-translate-up-local',
 				$this->request->getText( 'upload-type' ) === 'local' ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
@@ -171,7 +169,7 @@ class SpecialImportTranslations extends SpecialPage {
 				array( 'type' => 'file', 'id' => 'mw-translate-up-local-input' ) + $class ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
 			Xml::closeElement( 'table' ) .
-			Xml::submitButton( wfMsg( 'translate-import-load' ) ) .
+			Xml::submitButton( $this->msg( 'translate-import-load' )->escaped() ) .
 			Xml::closeElement( 'form' )
 		);
 	}
@@ -265,8 +263,7 @@ class SpecialImportTranslations extends SpecialPage {
 		 * unfortunately breaks submission.
 		 */
 		if ( isset( $metadata['warnings'] ) ) {
-			global $wgLang;
-			return array( 'warnings', $wgLang->commaList( $metadata['warnings'] ) );
+			return array( 'warnings', $this->getLanguage()->commaList( $metadata['warnings'] ) );
 		}
 
 		return array( 'ok', $data );
