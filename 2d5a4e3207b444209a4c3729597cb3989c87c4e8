@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8zU\u003d",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//8+w\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//8+s\u003d",
         "filename": "specials/SpecialAggregateGroups.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "Double escaping here...",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8zQ\u003d",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Changed to plain().",
+      "parentUuid": "AAAAPX//8+s\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8zM\u003d",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Changed to plain().",
+      "parentUuid": "AAAAPX//8+o\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//8+k\u003d",
         "filename": "specials/SpecialFirstSteps.php",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "Are those variables really needed?",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8zI\u003d",
+        "filename": "specials/SpecialFirstSteps.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Removed and replaced by getOutput() and getUser() respectively in the rest of the file.",
+      "parentUuid": "AAAAPX//8+k\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8zE\u003d",
+        "filename": "specials/SpecialFirstSteps.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Feel free to change in another change set. I\u0027m not yet familiar with this.",
+      "parentUuid": "AAAAPX//8+g\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//8+c\u003d",
         "filename": "specials/SpecialImportTranslations.php",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "Are those members really need or can\u0027t they simply be replaced?",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8zA\u003d",
+        "filename": "specials/SpecialImportTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Replaced.",
+      "parentUuid": "AAAAPX//8+c\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8y8\u003d",
+        "filename": "specials/SpecialImportTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//8+Y\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//8+U\u003d",
         "filename": "specials/SpecialImportTranslations.php",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "Double escaping too...",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8y4\u003d",
+        "filename": "specials/SpecialImportTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//8+U\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8y0\u003d",
+        "filename": "specials/SpecialImportTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//8+Q\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//8+M\u003d",
         "filename": "specials/SpecialImportTranslations.php",
         "patchSetId": 1
@@ -166,6 +328,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "Yes this one also :)",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8yw\u003d",
+        "filename": "specials/SpecialImportTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//8+M\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8ys\u003d",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//8+I\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//8+E\u003d",
         "filename": "specials/SpecialLanguageStats.php",
         "patchSetId": 1
@@ -200,6 +398,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "Double espcaping too...",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8yo\u003d",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//8+E\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8yk\u003d",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//8+A\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//898\u003d",
         "filename": "specials/SpecialLanguageStats.php",
         "patchSetId": 1
@@ -234,6 +468,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "As before :)",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8yg\u003d",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//898\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8yc\u003d",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//894\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//89w\u003d",
         "filename": "specials/SpecialLanguageStats.php",
         "patchSetId": 1
@@ -268,6 +538,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "This is likely to cause you a fatal error on the next line.",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8yY\u003d",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Removed the output format. Thanks. I could (should) have spotted that.",
+      "parentUuid": "AAAAPX//89w\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8yU\u003d",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//89s\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//89o\u003d",
         "filename": "specials/SpecialLanguageStats.php",
         "patchSetId": 1
@@ -302,6 +608,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "Same as above.",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8yQ\u003d",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//89o\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -325,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8yM\u003d",
+        "filename": "specials/SpecialMagic.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//89k\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//89g\u003d",
         "filename": "specials/SpecialMagic.php",
         "patchSetId": 1
@@ -336,6 +678,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "I think you will understand what should be changed here :)",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8yI\u003d",
+        "filename": "specials/SpecialMagic.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//89g\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -376,6 +736,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8yE\u003d",
+        "filename": "specials/SpecialMagic.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//89U\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//89Q\u003d",
         "filename": "specials/SpecialManageGroups.php",
         "patchSetId": 1
@@ -387,6 +765,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "I think you can imagine the problem :)",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8yA\u003d",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Yep. I recently learned to escape everything. Guess the next step is to learn what is escaped later on...",
+      "parentUuid": "AAAAPX//89Q\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -410,6 +806,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8x8\u003d",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//89M\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//89I\u003d",
         "filename": "specials/SpecialMessageGroupStats.php",
         "patchSetId": 1
@@ -421,6 +835,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "Double escaping :)",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8x4\u003d",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//89I\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -444,6 +876,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8x0\u003d",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//89E\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//89A\u003d",
         "filename": "specials/SpecialMessageGroupStats.php",
         "patchSetId": 1
@@ -455,6 +905,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "same...",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8xw\u003d",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//89A\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -478,6 +946,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8xs\u003d",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//888\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//884\u003d",
         "filename": "specials/SpecialMessageGroupStats.php",
         "patchSetId": 1
@@ -489,6 +975,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "same...",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8xo\u003d",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//884\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -512,6 +1016,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8xk\u003d",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done. But what if $username would not be the first parameter? Then everything should be added in this way, right?",
+      "parentUuid": "AAAAPX//880\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//88w\u003d",
         "filename": "specials/SpecialSupportedLanguages.php",
         "patchSetId": 1
@@ -523,6 +1045,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "Same as above.",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8xg\u003d",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//88w\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -546,6 +1086,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8xc\u003d",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done. But why?",
+      "parentUuid": "AAAAPX//88s\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//88M\u003d",
         "filename": "specials/SpecialTranslate.php",
         "patchSetId": 1
@@ -557,6 +1115,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "If you want to use the context, you have $this-\u003egetRequest()-\u003eresponse()-\u003eheader( ... ) to replace this.",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8xY\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Choose not to do this yet, because I don\u0027t understand this yet.",
+      "parentUuid": "AAAAPX//88M\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -580,6 +1156,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8xU\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//88o\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//88k\u003d",
         "filename": "specials/SpecialTranslate.php",
         "patchSetId": 1
@@ -591,6 +1185,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "Double escaping too :)",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8xM\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//88k\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -614,6 +1226,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8xI\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//88g\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//88c\u003d",
         "filename": "specials/SpecialTranslate.php",
         "patchSetId": 1
@@ -625,6 +1255,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "No $this-\u003emsg() here?",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8xE\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "I hadn\u0027t searched all the files I changed for this. Have done a full pass in the next change set.",
+      "parentUuid": "AAAAPX//88c\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -648,6 +1296,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8xA\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//88Y\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//88U\u003d",
         "filename": "specials/SpecialTranslate.php",
         "patchSetId": 1
@@ -659,6 +1325,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "This is likely to cause a fatal error on the line below.",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8w8\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//88U\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -682,6 +1366,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8w4\u003d",
+        "filename": "specials/SpecialTranslationStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Not using this yet, because I don\u0027t fully understand it yet.",
+      "parentUuid": "AAAAPX//88Q\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//88I\u003d",
         "filename": "specials/SpecialTranslationStats.php",
         "patchSetId": 1
@@ -693,6 +1395,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "Double escaping :)",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8w0\u003d",
+        "filename": "specials/SpecialTranslationStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done. Even found a few more that needed changing that already existed.",
+      "parentUuid": "AAAAPX//88I\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -716,6 +1436,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8ww\u003d",
+        "filename": "specials/SpecialTranslationStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//88E\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//88A\u003d",
         "filename": "specials/SpecialTranslations.php",
         "patchSetId": 1
@@ -727,6 +1465,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "Double escaping :)",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8wo\u003d",
+        "filename": "specials/SpecialTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//88A\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -750,6 +1506,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8wk\u003d",
+        "filename": "specials/SpecialTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//878\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//874\u003d",
         "filename": "specials/SpecialTranslations.php",
         "patchSetId": 1
@@ -767,6 +1541,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8wg\u003d",
+        "filename": "specials/SpecialTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//874\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//870\u003d",
         "filename": "specials/SpecialTranslations.php",
         "patchSetId": 1
@@ -778,6 +1570,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "same...",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8wc\u003d",
+        "filename": "specials/SpecialTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//870\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -812,6 +1622,24 @@
       "writtenOn": "2012-07-04T19:13:09Z",
       "side": 1,
       "message": "same...",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8wY\u003d",
+        "filename": "specials/SpecialTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-04T21:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPX//87s\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
