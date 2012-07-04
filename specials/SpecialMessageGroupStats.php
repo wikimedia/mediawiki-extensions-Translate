@@ -4,7 +4,8 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2011 Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2011-2012 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -32,7 +33,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 	/// Overwritten from SpecialPage
 	public function getDescription() {
-		return wfMessage( 'translate-mgs-pagename' )->text();
+		return $this->msg( 'translate-mgs-pagename' )->text();
 	}
 
 	/// Overwritten from SpecialLanguageStats
@@ -55,35 +56,33 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 	/// Overwritten from SpecialLanguageStats
 	protected function invalidTarget() {
-		global $wgOut;
-		$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", array( 'translate-mgs-invalid-group', $this->target ) );
+		$this->getOutput()->wrapWikiMsg( "<div class='error'>$1</div>", array( 'translate-mgs-invalid-group', $this->target ) );
 	}
 
 	/// Overwritten from SpecialLanguageStats
 	protected function outputIntroduction() {
-		global $wgRequest, $wgOut;
-		$group = $wgRequest->getVal( 'group' );
+		$group = $this->getRequest()->getVal( 'group' );
 		$priorityLangs = TranslateMetadata::get( $group, 'prioritylangs' );
 		if ( $priorityLangs ) {
-			$wgOut->addWikiMsg( 'tpt-priority-languages', $priorityLangs );
+			$this->getOutput()->addWikiMsg( 'tpt-priority-languages', $priorityLangs );
 		}
 	}
 
 	/// Overwriten from SpecialLanguageStats
 	function getform() {
-		global $wgScript, $wgRequest;
+		global $wgScript;
 
 		$out = Html::openElement( 'div' );
 		$out .= Html::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
 		$out .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
 		$out .= Html::hidden( 'x', 'D' ); // To detect submission
 		$out .= Html::openElement( 'fieldset' );
-		$out .= Html::element( 'legend', null, wfMsg( 'translate-mgs-fieldset' ) );
+		$out .= Html::element( 'legend', null, $this->msg( 'translate-mgs-fieldset' )->plain() );
 		$out .= Html::openElement( 'table' );
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-label' ) );
-		$out .= Xml::label( wfMsg( 'translate-mgs-group' ), 'group' );
+		$out .= Xml::label( $this->msg( 'translate-mgs-group' )->plain(), 'group' );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-input' ) );
 		$out .= TranslateUtils::groupSelector( $this->target )->getHTML();
@@ -92,19 +91,19 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'colspan' => 2 ) );
-		$out .= Xml::checkLabel( wfMsg( 'translate-mgs-nocomplete' ), 'suppresscomplete', 'suppresscomplete', $this->noComplete );
+		$out .= Xml::checkLabel( $this->msg( 'translate-mgs-nocomplete' )->plain(), 'suppresscomplete', 'suppresscomplete', $this->noComplete );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::closeElement( 'tr' );
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'colspan' => 2 ) );
-		$out .= Xml::checkLabel( wfMsg( 'translate-mgs-noempty' ), 'suppressempty', 'suppressempty', $this->noEmpty );
+		$out .= Xml::checkLabel( $this->msg( 'translate-mgs-noempty' )->plain(), 'suppressempty', 'suppressempty', $this->noEmpty );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::closeElement( 'tr' );
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-input', 'colspan' => 2 ) );
-		$out .= Xml::submitButton( wfMsg( 'translate-mgs-submit' ) );
+		$out .= Xml::submitButton( $this->msg( 'translate-mgs-submit' )->plain() );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::closeElement( 'tr' );
 
@@ -113,7 +112,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		/* Since these pages are in the tabgroup with Special:Translate,
 		 * it makes sense to retain the selected group/language parameter
 		 * on post requests even when not relevant to the current page. */
-		$val = $wgRequest->getVal( 'language' );
+		$val = $this->getRequest()->getVal( 'language' );
 		if ( $val !== null ) {
 			$out .= Html::hidden( 'language', $val );
 		}
@@ -152,12 +151,12 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		}
 
 		if ( $out ) {
-			$table->setMainColumnHeader( wfMessage( 'translate-mgs-column-language' ) );
+			$table->setMainColumnHeader( $this->msg( 'translate-mgs-column-language' ) );
 			$out = $table->createHeader() . "\n" . $out;
 			$out .= Html::closeElement( 'tbody' );
 
 			$out .= Html::openElement( 'tfoot' );
-			$out .= $table->makeTotalRow( wfMessage( 'translate-mgs-totals' ), $this->totals );
+			$out .= $table->makeTotalRow( $this->msg( 'translate-mgs-totals' ), $this->totals );
 			$out .= Html::closeElement( 'tfoot' );
 
 			$out .= Html::closeElement( 'table' );
@@ -248,8 +247,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	 */
 	protected function getMainColumnCell( $code, $params ) {
 		if ( !isset( $this->names ) ) {
-			global $wgLang;
-			$this->names = TranslateUtils::getLanguageNames( $wgLang->getCode() );
+			$this->names = TranslateUtils::getLanguageNames( $this->getLanguage()->getCode() );
 			$this->translate = SpecialPage::getTitleFor( 'Translate' );
 		}
 
