@@ -4,7 +4,8 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2009-2010, Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2009-2010, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -20,16 +21,7 @@ class SpecialImportTranslations extends SpecialPage {
 	 */
 	public function __construct() {
 		parent::__construct( 'ImportTranslations', 'translate-import' );
-		global $wgUser, $wgOut, $wgRequest;
-		$this->user = $wgUser;
-		$this->out = $wgOut;
-		$this->request = $wgRequest;
 	}
-
-	/**
-	 * Dependencies
-	 */
-	protected $user, $out, $request;
 
 	/**
 	 * Special page entry point.
@@ -38,26 +30,26 @@ class SpecialImportTranslations extends SpecialPage {
 		$this->setHeaders();
 
 		// Security and validity checks
-		if ( !$this->userCanExecute( $this->user ) ) {
+		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
 
-		if ( !$this->request->wasPosted() ) {
+		if ( !$this->getRequest()->wasPosted() ) {
 			$this->outputForm();
 			return;
 		}
 
-		if ( !$this->user->matchEditToken( $this->request->getVal( 'token' ) ) ) {
-			$this->out->addWikiMsg( 'session_fail_preview' );
+		if ( !$this->getUser()->matchEditToken( $this->getRequest()->getVal( 'token' ) ) ) {
+			$this->getOutput()->addWikiMsg( 'session_fail_preview' );
 			$this->outputForm();
 			return;
 		}
 
-		if ( $this->request->getCheck( 'process' ) ) {
+		if ( $this->getRequest()->getCheck( 'process' ) ) {
 			$data = $this->getCachedData();
 			if ( !$data ) {
-				$this->out->addWikiMsg( 'session_fail_preview' );
+				$this->getOutput()->addWikiMsg( 'session_fail_preview' );
 				$this->outputForm();
 				return;
 			}
@@ -83,7 +75,7 @@ class SpecialImportTranslations extends SpecialPage {
 
 		if ( !MessageGroups::exists( $group )  ) {
 			$errorWrap = "<div class='error'>\n$1\n</div>";
-			$this->out->wrapWikiMsg( $errorWrap, 'translate-import-err-stale-group' );
+			$this->getOutput()->wrapWikiMsg( $errorWrap, 'translate-import-err-stale-group' );
 			return;
 		}
 
@@ -106,7 +98,7 @@ class SpecialImportTranslations extends SpecialPage {
 		if ( $msg[0] !== 'ok' ) {
 			$errorWrap = "<div class='error'>\n$1\n</div>";
 			$msg[0] = 'translate-import-err-' . $msg[0];
-			$this->out->wrapWikiMsg( $errorWrap, $msg );
+			$this->getOutput()->wrapWikiMsg( $errorWrap, $msg );
 			$this->outputForm();
 			return true;
 		}
@@ -117,21 +109,19 @@ class SpecialImportTranslations extends SpecialPage {
 	 * Constructs and outputs file input form with supported methods.
 	 */
 	protected function outputForm() {
-		global $wgOut;
-
-		$wgOut->addModules( 'ext.translate.special.importtranslations' );
-		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Off-line_translation' );
+		$this->getOutput()->addModules( 'ext.translate.special.importtranslations' );
+		TranslateUtils::addSpecialHelpLink( $this->getOutput(), 'Help:Extension:Translate/Off-line_translation' );
 		/**
 		 * Ugly but necessary form building ahead, ohoy
 		 */
-		$this->out->addHTML(
+		$this->getOutput()->addHTML(
 			Xml::openElement( 'form', array(
 				'action' => $this->getTitle()->getLocalUrl(),
 				'method' => 'post',
 				'enctype' => 'multipart/form-data',
 				'id' => 'mw-translate-import',
 			) ) .
-			Html::hidden( 'token', $this->user->editToken() ) .
+			Html::hidden( 'token', $this->getUser()->editToken() ) .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Xml::openElement( 'table' ) .
 			Xml::openElement( 'tr' ) .
@@ -140,38 +130,38 @@ class SpecialImportTranslations extends SpecialPage {
 
 		$class = array( 'class' => 'mw-translate-import-inputs' );
 
-		$this->out->addHTML(
-			Xml::radioLabel( wfMsg( 'translate-import-from-url' ),
+		$this->getOutput()->addHTML(
+			Xml::radioLabel( $this->msg( 'translate-import-from-url' )->text(),
 				'upload-type', 'url', 'mw-translate-up-url',
-				$this->request->getText( 'upload-type' ) === 'url' ) .
+				$this->getRequest()->getText( 'upload-type' ) === 'url' ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
 			Xml::input( 'upload-url', 50,
-				$this->request->getText( 'upload-url' ),
+				$this->getRequest()->getText( 'upload-url' ),
 				array( 'id' => 'mw-translate-up-url-input' ) + $class ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
 			Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n"
 		);
 
-		$this->out->addHTML(
-			Xml::radioLabel( wfMsg( 'translate-import-from-wiki' ),
+		$this->getOutput()->addHTML(
+			Xml::radioLabel( $this->msg( 'translate-import-from-wiki' )->text(),
 				'upload-type', 'wiki', 'mw-translate-up-wiki',
-				$this->request->getText( 'upload-type' ) === 'wiki' ) .
+				$this->getRequest()->getText( 'upload-type' ) === 'wiki' ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
 			Xml::input( 'upload-wiki', 50,
-				$this->request->getText( 'upload-wiki', 'File:' ),
+				$this->getRequest()->getText( 'upload-wiki', 'File:' ),
 				array( 'id' => 'mw-translate-up-wiki-input' ) + $class ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
 			Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n" .
-			Xml::radioLabel( wfMsg( 'translate-import-from-local' ),
+			Xml::radioLabel( $this->msg( 'translate-import-from-local' )->text(),
 				'upload-type', 'local', 'mw-translate-up-local',
-				$this->request->getText( 'upload-type' ) === 'local' ) .
+				$this->getRequest()->getText( 'upload-type' ) === 'local' ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
 			Xml::input( 'upload-local', 50,
-				$this->request->getText( 'upload-local' ),
+				$this->getRequest()->getText( 'upload-local' ),
 				array( 'type' => 'file', 'id' => 'mw-translate-up-local-input' ) + $class ) .
 			"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
 			Xml::closeElement( 'table' ) .
-			Xml::submitButton( wfMsg( 'translate-import-load' ) ) .
+			Xml::submitButton( $this->msg( 'translate-import-load' )->text() ) .
 			Xml::closeElement( 'form' )
 		);
 	}
@@ -182,10 +172,10 @@ class SpecialImportTranslations extends SpecialPage {
 	 * @return array
 	 */
 	protected function loadFile( &$filedata ) {
-		$source = $this->request->getText( 'upload-type' );
+		$source = $this->getRequest()->getText( 'upload-type' );
 
 		if ( $source === 'url' ) {
-			$url = $this->request->getText( 'upload-url' );
+			$url = $this->getRequest()->getText( 'upload-url' );
 			$filedata = Http::get( $url ); ;
 			if ( $filedata ) {
 				return array( 'ok' );
@@ -193,7 +183,7 @@ class SpecialImportTranslations extends SpecialPage {
 				return array( 'dl-failed', 'Unknown reason' );
 			}
 		} elseif ( $source === 'local' ) {
-			$filename = $this->request->getFileTempname( 'upload-local' );
+			$filename = $this->getRequest()->getFileTempname( 'upload-local' );
 
 			if ( !is_uploaded_file( $filename ) ) {
 				return array( 'ul-failed' );
@@ -203,7 +193,7 @@ class SpecialImportTranslations extends SpecialPage {
 
 			return array( 'ok' );
 		} elseif ( $source === 'wiki' ) {
-			$filetitle = $this->request->getText( 'upload-wiki' );
+			$filetitle = $this->getRequest()->getText( 'upload-wiki' );
 			$title = Title::newFromText( $filetitle, NS_FILE );
 
 			if ( !$title ) {
@@ -265,25 +255,24 @@ class SpecialImportTranslations extends SpecialPage {
 		 * unfortunately breaks submission.
 		 */
 		if ( isset( $metadata['warnings'] ) ) {
-			global $wgLang;
-			return array( 'warnings', $wgLang->commaList( $metadata['warnings'] ) );
+			return array( 'warnings', $this->getLanguage()->commaList( $metadata['warnings'] ) );
 		}
 
 		return array( 'ok', $data );
 	}
 
 	protected function setCachedData( $data ) {
-		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
+		$key = wfMemcKey( 'translate', 'webimport', $this->getUser()->getId() );
 		wfGetCache( CACHE_DB )->set( $key, $data, 60 * 30 );
 	}
 
 	protected function getCachedData() {
-		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
+		$key = wfMemcKey( 'translate', 'webimport', $this->getUser()->getId() );
 		return wfGetCache( CACHE_DB )->get( $key );
 	}
 
 	protected function deleteCachedData() {
-		$key = wfMemcKey( 'translate', 'webimport', $this->user->getId() );
+		$key = wfMemcKey( 'translate', 'webimport', $this->getUser()->getId() );
 		return wfGetCache( CACHE_DB )->delete( $key );
 	}
 }

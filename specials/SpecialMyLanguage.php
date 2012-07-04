@@ -4,7 +4,8 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2010-2011 Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2010-2012 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -17,22 +18,19 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialMyLanguage extends UnlistedSpecialPage {
-
 	public function __construct() {
 		parent::__construct( 'MyLanguage' );
 	}
 
 	/// Only takes arguments from $par
 	public function execute( $par ) {
-		global $wgOut;
-
 		$title = $this->findTitle( $par );
 		// Go to the main page if given invalid title.
 		if ( !$title ) {
 			$title = Title::newMainPage();
 		}
 
-		$wgOut->redirect( $title->getLocalURL() );
+		$this->getOutput()->redirect( $title->getLocalURL() );
 	}
 
 	/**
@@ -42,7 +40,7 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 	 * @return Title|null
 	 */
 	protected function findTitle( $par ) {
-		global $wgLang, $wgLanguageCode;
+		global $wgLanguageCode;
 		// base = title without language code suffix
 		// provided = the title as it was given
 		$base = $provided = Title::newFromText( $par );
@@ -61,7 +59,7 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 			return null;
 		}
 
-		$uiCode = $wgLang->getCode();
+		$uiCode = $this->getLanguage()->getCode();
 		$proposed = Title::newFromText( $base->getPrefixedText() . "/$uiCode" );
 		if ( $uiCode !== $wgLanguageCode && $proposed && $proposed->exists() ) {
 			return $proposed;
