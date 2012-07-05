@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8mo\u003d",
+        "filename": "specials/SpecialImportTranslations.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-05T07:49:44Z",
+      "side": 1,
+      "message": "Oh lala, c\u0027est une parse error de magnifique!\n\n... boy, do we want linting for this.",
+      "parentUuid": "AAAAPX//8nU\u003d",
+      "revId": "ab9ba1668c03e08a0c2926e3df44c80887752a15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//8nQ\u003d",
         "filename": "specials/SpecialMagic.php",
         "patchSetId": 2
