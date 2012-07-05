@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//8nU\u003d",
+        "filename": "specials/SpecialImportTranslations.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-05T07:26:58Z",
+      "side": 1,
+      "message": "The first item should not have been changed.",
+      "revId": "ab9ba1668c03e08a0c2926e3df44c80887752a15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8nQ\u003d",
+        "filename": "specials/SpecialMagic.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-05T07:26:58Z",
+      "side": 1,
+      "message": "This should not have been changed :)",
+      "revId": "ab9ba1668c03e08a0c2926e3df44c80887752a15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8nM\u003d",
+        "filename": "specials/SpecialMagic.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-05T07:26:58Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "ab9ba1668c03e08a0c2926e3df44c80887752a15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8nY\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-05T07:26:58Z",
+      "side": 1,
+      "message": "Missing \u003e which leads to a fatal error.",
+      "revId": "ab9ba1668c03e08a0c2926e3df44c80887752a15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8nE\u003d",
+        "filename": "specials/SpecialTranslations.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-05T07:26:58Z",
+      "side": 1,
+      "message": "This one should be changed :)",
+      "revId": "ab9ba1668c03e08a0c2926e3df44c80887752a15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8nA\u003d",
+        "filename": "specials/SpecialTranslations.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-05T07:26:58Z",
+      "side": 1,
+      "message": "This one should be changed :)",
+      "revId": "ab9ba1668c03e08a0c2926e3df44c80887752a15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8m8\u003d",
+        "filename": "specials/SpecialTranslations.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-05T07:26:58Z",
+      "side": 1,
+      "message": "This one should be changed :)",
+      "revId": "ab9ba1668c03e08a0c2926e3df44c80887752a15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8m4\u003d",
+        "filename": "specials/SpecialTranslations.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-05T07:26:58Z",
+      "side": 1,
+      "message": "This one should be changed :)",
+      "revId": "ab9ba1668c03e08a0c2926e3df44c80887752a15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8m0\u003d",
+        "filename": "specials/SpecialTranslations.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-05T07:26:58Z",
+      "side": 1,
+      "message": "This one should be changed :)",
+      "revId": "ab9ba1668c03e08a0c2926e3df44c80887752a15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
