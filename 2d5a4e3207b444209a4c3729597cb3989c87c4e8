@@ -1034,6 +1034,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//8no\u003d",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-05T06:49:15Z",
+      "side": 1,
+      "message": "Correct, this simplification only works when those parameters are at the beginning.",
+      "parentUuid": "AAAAPX//8xk\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//88w\u003d",
         "filename": "specials/SpecialSupportedLanguages.php",
         "patchSetId": 1
@@ -1098,6 +1116,24 @@
       "side": 1,
       "message": "Done. But why?",
       "parentUuid": "AAAAPX//88s\u003d",
+      "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//8nk\u003d",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-05T06:49:15Z",
+      "side": 1,
+      "message": "As I can see on the next line, this is added raw to the output, so this is just as safety (and it should not really be dangerous to not have it).",
+      "parentUuid": "AAAAPX//8xc\u003d",
       "revId": "2d5a4e3207b444209a4c3729597cb3989c87c4e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
