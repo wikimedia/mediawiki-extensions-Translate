@@ -3155,6 +3155,7 @@ $messages['uk'] = array(
 	'firststeps' => 'Перші кроки',
 	'firststeps-desc' => '[[Special:FirstSteps|Спеціальна сторінка]], яка полегшує новим користувачам початок роботи з використанням розширення Translate',
 	'translate-fs-pagetitle-done' => ' - зроблено!',
+	'translate-fs-pagetitle-pending' => '- очікування',
 	'translate-fs-pagetitle' => 'Майстер "Початок роботи" - $1',
 	'translate-fs-signup-title' => 'Зареєструйтеся',
 	'translate-fs-settings-title' => 'Встановіть ваші налаштування',
@@ -3165,6 +3166,7 @@ $messages['uk'] = array(
 	'translate-fs-intro' => 'Ласкаво просимо до майстра "перші кроки" проекту {{SITENAME}}.
 Крок за кроком майстер проведе вас шляхом становлення як перекладача.
 Зрештою, ви зможете перекладати інтерфейсні повідомлення усіх проектів, що підтримуються на {{SITENAME}}.',
+	'translate-fs-selectlanguage' => 'Оберіть мову',
 	'translate-fs-settings-planguage' => 'Основна мова:',
 	'translate-fs-settings-planguage-desc' => 'Основна мова дублює мову інтерфейсу цієї вікі
 і є мовою за замовчуванням для перекладу.',
