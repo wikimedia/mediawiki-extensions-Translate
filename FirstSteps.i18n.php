@@ -1977,7 +1977,7 @@ Aam Engk kanns De de Täxte un Nohreeschte uß alle Projäkte övversäze, di {{
 	'translate-fs-settings-planguage' => 'Houpshprooch:',
 	'translate-fs-settings-planguage-desc' => 'De Houpshprooch is och di Schprooch, die heh dat Wiki met Der kallt, un des es och Ding shtandattmääßeje Shprooch för dren ze övversäze.',
 	'translate-fs-settings-slanguage' => 'Zohsäzlejje Shprooch Nommer $1:',
-	'translate-fs-settings-slanguage-desc' => 'Et es müjjelesch, sesch Övversäzonge en ander Shprooche beim sellver övversäze aanzeije ze lohße. Söhg uß, wat för esu en Shprooche De ze sinn krijje wells, wan De övverhoup wälsche han wells.',
+	'translate-fs-settings-slanguage-desc' => 'Et es müjjelesch, sesch Övversäzonge en ander Schprooche beim sellver Övversäze aanzeije ze lohße. Söhg uß, wat för esu en Shprooche De ze sinn krijje wells, wann De övverhoup wälsche han wells.',
 	'translate-fs-settings-submit' => 'Enstellunge faßhallde',
 	'translate-fs-userpage-level-N' => 'Ming Mottershprooch es:',
 	'translate-fs-userpage-level-5' => 'Esch ben ene beroofsmääßeje Övversäzer vun:',
