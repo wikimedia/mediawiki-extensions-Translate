@@ -16,6 +16,24 @@
       "revId": "da65a51457375ae490e2e08262d7bd1681c5936a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//+rE\u003d",
+        "filename": "specials/SpecialTranslationStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-07-09T19:34:03Z",
+      "side": 1,
+      "message": "Slightly larger, to be sure. Sometimes fonts are large and browsers may do it incorrectly. Either the font must be set meticulously, or the width can be larger. The latter is a lot simpler.",
+      "parentUuid": "AAAAQX//+rg\u003d",
+      "revId": "da65a51457375ae490e2e08262d7bd1681c5936a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
