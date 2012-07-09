@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQX//+rg\u003d",
+        "filename": "specials/SpecialTranslationStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-07-09T19:24:31Z",
+      "side": 1,
+      "message": "it requires 14 characters, but not a problem having 16 characters wide",
+      "revId": "da65a51457375ae490e2e08262d7bd1681c5936a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
