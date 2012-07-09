@@ -78,7 +78,7 @@ class TranslateEditAddons {
 		if ( $prev !== null ) {
 			$linktitle = Title::makeTitleSafe( $ns, "$prev/$code" );
 			$data = array(
-				'text' => wfMsg( 'translate-edit-tab-prev' ),
+				'text' => wfMessage( 'translate-edit-tab-prev' )->text(),
 				'href' => $linktitle->getLocalUrl( $nav_params ),
 			);
 			self::addTab( $skin, $tabs, 'prev', $data, $tabindex );
@@ -92,7 +92,7 @@ class TranslateEditAddons {
 			'limit' => 500,
 		);
 		$data = array(
-			'text' => wfMsg( 'translate-edit-tab-list' ),
+			'text' => wfMessage( 'translate-edit-tab-list' )->text(),
 			'href' => $translate->getLocalUrl( $params ) . $fragment,
 		);
 		self::addTab( $skin, $tabs, 'list', $data, $tabindex );
@@ -100,7 +100,7 @@ class TranslateEditAddons {
 		if ( $next !== null ) {
 			$linktitle = Title::makeTitleSafe( $ns, "$next/$code" );
 			$data = array(
-				'text' => wfMsg( 'translate-edit-tab-next' ),
+				'text' => wfMessage( 'translate-edit-tab-next' )->text(),
 				'href' => $linktitle->getLocalUrl( $nav_params ),
 			);
 			self::addTab( $skin, $tabs, 'next', $data, $tabindex );
@@ -136,7 +136,7 @@ class TranslateEditAddons {
 			}
 			return true;
 		}
-		$msg = wfMsgForContent( 'translate-edit-tag-warning' );
+		$msg = wfMessage( 'translate-edit-tag-warning' )->inContentLanguage()->plain();
 
 		if ( $msg !== '' && $msg !== '-' && TranslatablePage::isSourcePage( $editpage->mTitle ) ) {
 			global $wgOut;
@@ -175,14 +175,15 @@ class TranslateEditAddons {
 
 		if ( $handle->isDoc() ) {
 			$name = TranslateUtils::getLanguageName( $handle->getCode(), false, $wgLang->getCode() );
+			$accessKey = wfMessage( 'accesskey-save' )->plain();
 			$temp = array(
 				'id'        => 'wpSave',
 				'name'      => 'wpSave',
 				'type'      => 'submit',
 				'tabindex'  => ++$tabindex,
-				'value'     => wfMsg( 'translate-save', $name ),
-				'accesskey' => wfMsg( 'accesskey-save' ),
-				'title'     => wfMsg( 'tooltip-save' ) . ' [' . wfMsg( 'accesskey-save' ) . ']',
+				'value'     => wfMessage( 'translate-save', $name )->text(),
+				'accesskey' => $accessKey,
+				'title'     => wfMessage( 'tooltip-save' )->text() . ' [' . $accessKey . ']',
 			);
 			$buttons['save'] = Xml::element( 'input', $temp, '' );
 		}
@@ -207,8 +208,8 @@ class TranslateEditAddons {
 			'name'      => 'wpSupport',
 			'type'      => 'button',
 			'tabindex'  => ++$tabindex,
-			'value'     => wfMsg( 'translate-js-support' ),
-			'title'     => wfMsg( 'translate-js-support-title' ),
+			'value'     => wfMessage( 'translate-js-support' )->text(),
+			'title'     => wfMessage( 'translate-js-support-title' )->text(),
 			'data-load-url' => $supportTitle->getLocalUrl( $supportParams ),
 			'onclick'   => "window.open( jQuery(this).attr('data-load-url') );",
 		);

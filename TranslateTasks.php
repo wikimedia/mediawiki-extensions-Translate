@@ -82,7 +82,7 @@ abstract class TranslateTask {
 	 * @return \string
 	 */
 	public static function labelForTask( $id ) {
-		return wfMsg( 'translate-task-' . $id );
+		return wfMessage( 'translate-task-' . $id )->text();
 	}
 
 	/**
