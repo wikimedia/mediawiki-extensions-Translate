@@ -811,10 +811,10 @@ $specialPageAliases['th'] = array(
 /** Tagalog (Tagalog) */
 $specialPageAliases['tl'] = array(
 	'Translate' => array( 'Isalinwika' ),
-	'Magic' => array( 'Mas masulong na pagsasalinwika', 'Salamangka' ),
-	'TranslationStats' => array( 'Mga estadistika ng salinwika' ),
-	'Translations' => array( 'Mga salinwika' ),
-	'LanguageStats' => array( 'Mga estadistika ng wika' ),
+	'Magic' => array( 'Mas_masulong_na_pagsasalinwika', 'Salamangka' ),
+	'TranslationStats' => array( 'Mga_estadistika_ng_salinwika' ),
+	'Translations' => array( 'Mga_salinwika' ),
+	'LanguageStats' => array( 'Mga_estadistika_ng_wika' ),
 );
 
 /** толышә зывон (толышә зывон) */
