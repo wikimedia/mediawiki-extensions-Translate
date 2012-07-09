@@ -521,7 +521,7 @@ class ExtensionMessageGroup extends MessageGroupOld {
 		$desc = null;
 
 		if ( !wfEmptyMsg( $key ) ) {
-			$desc = wfMsgNoTrans( $key );
+			$desc = wfMessage( $key )->plain();
 		}
 
 		if ( $desc === null ) {
@@ -533,11 +533,11 @@ class ExtensionMessageGroup extends MessageGroupOld {
 		}
 
 		if ( $url ) {
-			$this->description .= wfMsgNoTrans( 'translate-ext-url', $url );
+			$this->description .= wfMessage( 'translate-ext-url', $url )->plain();
 		}
 
 		if ( $this->description === '' ) {
-			$this->description = wfMsgNoTrans( 'translate-group-desc-nodesc' );
+			$this->description = wfMessage( 'translate-group-desc-nodesc' )->plain();
 		}
 	}
 
@@ -783,7 +783,7 @@ class WikiMessageGroup extends MessageGroupOld {
 		$definitions = array();
 
 		// In theory the page could have templates that are substitued
-		$contents = wfMsg( $this->source );
+		$contents = wfMessage( $this->source )->parse();
 		$contents = preg_replace( '~^\s*#.*$~m', '', $contents );
 		$messages = preg_split( '/\s+/', $contents );
 
@@ -792,7 +792,7 @@ class WikiMessageGroup extends MessageGroupOld {
 				continue;
 			}
 
-			$definitions[$message] = wfMsgForContentNoTrans( $message );
+			$definitions[$message] = wfMessage( $message )->inContentLanguage()->plain();
 		}
 
 		return $definitions;
