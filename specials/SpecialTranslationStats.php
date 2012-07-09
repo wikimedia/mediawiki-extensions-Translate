@@ -160,7 +160,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			$this->eInput( 'width', $opts ) .
 			$this->eInput( 'height', $opts ) .
 			'<tr><td colspan="2"><hr /></td></tr>' .
-			$this->eInput( 'start', $opts, 12 ) .
+			$this->eInput( 'start', $opts, 16 ) . // Should fit yyyymmddhhmmss
 			$this->eInput( 'days', $opts ) .
 			$this->eRadio( 'scale', $opts, array( 'months', 'weeks', 'days', 'hours' ) ) .
 			$this->eRadio( 'count', $opts, $this->getGraphTypes() ) .
