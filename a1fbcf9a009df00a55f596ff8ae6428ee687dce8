@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQX//+tk\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-09T16:22:34Z",
+      "side": 1,
+      "message": "You can also replace wfEmptyMsg\n\n$msg \u003d wfMessage( $key );\nif ( !$msg-\u003eisDisabled() ) { $desc \u003d $msg-\u003eplain(); }",
+      "revId": "a1fbcf9a009df00a55f596ff8ae6428ee687dce8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//+tg\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-09T16:22:34Z",
+      "side": 1,
+      "message": "Why parse? It should be text().",
+      "revId": "a1fbcf9a009df00a55f596ff8ae6428ee687dce8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//+tc\u003d",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-09T16:22:34Z",
+      "side": 1,
+      "message": "Maybe text() here too.",
+      "revId": "a1fbcf9a009df00a55f596ff8ae6428ee687dce8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
