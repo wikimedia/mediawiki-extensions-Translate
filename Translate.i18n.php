@@ -2940,6 +2940,7 @@ $messages['bg'] = array(
 	'translate-language-code' => 'Езиков код',
 	'translate-language-code-field-name' => 'Езиков код:',
 	'translate-suppress-complete' => 'Скриване на изцяло преведените групи съобщения',
+	'translate-ls-noempty' => 'Скриване на изцяло непреведените групи съобщения',
 	'translate-language' => 'Език',
 	'translate-total' => 'Съобщения',
 	'translate-ls-submit' => 'Показване на статистики',
@@ -13627,7 +13628,7 @@ $1',
 	'translate-js-nonext' => '이것이 이 페이지의 마지막 메시지입니다.',
 	'translate-js-skip' => '다음으로 넘어가기',
 	'translate-js-save-failed' => '저장에 실패했습니다. 이 오류를 신고해주시기 바랍니다.',
-	'translate-js-history' => '번역 내력',
+	'translate-js-history' => '번역 내역',
 	'translate-js-support' => '질문하기',
 	'translate-js-support-title' => '이 메시지를 정확히 번역할 만한 정보가 부족하다면 도움을 요청하세요.',
 	'translate-js-support-unsaved-warning' => '번역을 저장하지 않았습니다.',
@@ -20114,6 +20115,7 @@ $messages['ru'] = array(
 	'translate-page-disabled' => "В этом разделе переводы на данный язык отключены. Причина:
 
 ''$1''",
+	'translate-language-disabled' => 'Возможность перевода на этот язык отключена.',
 	'translate-page-settings-legend' => 'Параметры',
 	'translate-page-group' => 'Группа',
 	'translate-page-language' => 'Язык',
@@ -24016,6 +24018,7 @@ $messages['tly'] = array(
  * @author Cekli829
  * @author Emperyan
  * @author Erdemaslancan
+ * @author Gorizon
  * @author Incelemeelemani
  * @author Joseph
  * @author Karduelis
@@ -24147,6 +24150,7 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-translations-messagename' => 'Ad:',
 	'translate-translations-project' => 'Proje:',
 	'languagestats' => 'Dil istatistikleri',
+	'languagestats-summary' => 'Bu sayfa tüm ileti grupları için dil çeviri istatistiklerini gösterir.',
 	'languagestats-stats-for' => '$1 için çeviri istatistikleri ($2).',
 	'languagestats-recenttranslations' => 'son çeviriler',
 	'translate-langstats-expand' => 'genişlet',

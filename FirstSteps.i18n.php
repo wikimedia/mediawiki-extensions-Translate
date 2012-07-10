@@ -2050,6 +2050,8 @@ Iech gëtt gewisen, Déi Dir Schrëtt fir Schrëtt zum Iwwersetzer gitt.
 Um Schluss kënnt Dir all ''Interface-Messagen'' vun de vun {{SITENAME}} ënnerstetzte Projeten iwwersetzen.",
 	'translate-fs-selectlanguage' => 'Eng Sprooch eraussichen',
 	'translate-fs-settings-planguage' => 'Haaptsprooch:',
+	'translate-fs-settings-planguage-desc' => "Déi éischt Sprooch ass gläichzäiteg d'Sprooch vun Ärem Interface op dëser Wiki
+an d'Standard-Zilsprooch fir Iwwersetzungen.",
 	'translate-fs-settings-slanguage' => 'Ënnerstetzungs-Sprooch $1:',
 	'translate-fs-settings-slanguage-desc' => 'Et ass méiglech fir Iwwersetzunge vu Messagen an anere Sproochen am Iwwersetzungsediteur ze weisen.
 Hei kënnt Dir eraussiche wat fir eng Sprooch, wann Dir dat wëllt, Dir gesi wëllt.',
