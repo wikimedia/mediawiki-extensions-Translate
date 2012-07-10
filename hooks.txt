@@ -1,0 +1,98 @@
+hooks.txt
+
+This document describes how event hooks work in the Translate extension;
+how to add hooks for an event; and how to run hooks for an event.
+
+For a more comprehensive guide to PHP hooks, navigate to your root MediaWiki
+directory, and then find /docs/hooks.txt.
+
+==Glossary==
+
+event
+     Something that happens with the wiki. For example: a user logs in. A wiki
+     page is saved. A wiki page is deleted. Often there are two events
+     associated with a single action: one before the code is run to make the
+     event happen, and one after. Each event has a name, preferably in
+     CamelCase. For example, 'UserLogin', 'ArticleSave', 'ArticleSaveComplete',
+     'ArticleDelete'.
+
+hook
+     A clump of code and data that should be run when an event happens. This can
+     be either a function and a chunk of data, or an object and a method.
+
+hook function
+     The function part of a hook.
+
+==Rationale==
+
+Hooks allow us to decouple optionally-run code from code that is run for
+everyone. It allows MediaWiki hackers, third-party developers and local
+administrators to define code that will be run at certain points in the mainline
+code, and to modify the data run by that mainline code. Hooks can keep mainline
+code simple, and make it easier to write extensions. Hooks are a principled
+alternative to local patches.
+
+==Writing hooks==
+A hook is a chunk of code run at some particular event. It consists of:
+
+  * a function with some optional accompanying data, or
+  * an object with a method and some optional accompanying data.
+
+=== PHP hooks ===
+PHP hooks are registered by adding them to the global $wgHooks array for a given
+event. All the following are valid ways to define hooks:
+
+	$wgHooks['EventName'][] = 'someFunction'; # function, no data
+	$wgHooks['EventName'][] = array('someFunction', $someData);
+	$wgHooks['EventName'][] = array('someFunction'); # weird, but OK
+
+	$wgHooks['EventName'][] = $object; # object only
+	$wgHooks['EventName'][] = array($object, 'someMethod');
+	$wgHooks['EventName'][] = array($object, 'someMethod', $someData);
+	$wgHooks['EventName'][] = array($object); # weird but OK
+
+Hooks can return three possible values:
+
+  * true: the hook has operated successfully
+  * "some string": an error occurred; processing should stop and the error
+                   should be shown to the user
+  * false: the hook has successfully done the work necessary and the calling
+           function should skip
+
+=== JavaScript hooks ===
+JavaScript hooks for the Translate extension are a little different; one way to
+define them is as follows:
+
+	mw.hooks = mw.hooks || {}; //Only need to do this once per file
+	mw.hooks.translate = mw.hooks.translate || {}; //Only need to do this once per file
+	mw.hooks.translate.eventName = mw.hooks.translate.eventName || [];
+	mw.hooks.translate.eventName.push( hookFunction );
+	
+where hookFunction is not a string (as in the case of PHP hooks) but a function reference.
+Hoook functions can also return the same values at PHP hooks, although they are at 
+present ignored.
+
+==Events and parameters==
+
+This is a list of known events and parameters; please add to it if you're going
+to add events to the Translate extension.
+
+=== PHP events ===
+'TranslateFormatMessageBeforeTable': Provides an opportunity to manipulate the display of translation strings (messages) in the main talbe
+	&$message: The message (translation string) as it stands
+
+'TranslateGetExtraInputs': Provides an opportunity to add extra form inputs to the standard Translation form
+	&$translation: The translation string as it stands
+	&$extraInputs: The extra input space, ready for HTML to be appended
+
+'TranslatePrefillTranslation': Provides an opportunity for a new translation to start not from as a carte blanche (the default) but from some prefilled string
+	&$translation: The translation string as it stands
+	$page: The current page name e.g. 'MediaWiki:Example/qqq'
+	$group: The current message group
+
+=== JavaScript events ===
+mw.hooks.translate.afterSubmit: Provides an opportunity to modify a Translate translation form immediately before it is submitted
+	form: The form being submitted
+
+mw.hooks.translate.beforeSubmit: Provides an opportunity to modify a Translate translation form immediately after it is submitted
+	form: The form that has just been submitted

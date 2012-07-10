@@ -237,24 +237,35 @@
 				callbacks.load && callbacks.load( $target );
 				var form = $target.find( 'form' );
 				registerFeatures( callbacks, form, page, group );
-				form.ajaxForm( {
-					dataType: 'json',
-					success: function(json) {
-						if ( json.error ) {
-							if( json.error.code === 'emptypage') {
-								alert( mw.msg( 'api-error-emptypage' ) );
-							} else {
-								alert( json.error.info + ' (' + json.error.code +')' );
-							}
-						} else if ( json.edit.result === 'Failure' ) {
-							alert( mw.msg( 'translate-js-save-failed' ) );
-						} else if ( json.edit.result === 'Success' ) {
-							callbacks.close && callbacks.close();
-							callbacks.success && callbacks.success( form.find( '.mw-translate-edit-area' ).val() );
-						} else {
-							alert( mw.msg( 'translate-js-save-failed' ) );
-						}
+				form.bind('submit', function() {
+					var hooks = mw.hooks.translate.beforeSubmit || [];
+					for( var i = 0; i < hooks.length; i++ ){
+						hooks[i]( form );
 					}
+					$(this).ajaxSubmit({
+						dataType: 'json',
+						success: function( json ) {
+							var hooks = mw.hooks.translate.afterSubmit || [];
+							for( var i = 0; i < hooks.length; i++ ){
+								hooks[i]( form );
+							}
+							if ( json.error ) {
+								if( json.error.code === 'emptypage') {
+									alert( mw.msg( 'api-error-emptypage' ) );
+								} else {
+									alert( json.error.info + ' (' + json.error.code +')' );
+								}
+							} else if ( json.edit.result === 'Failure' ) {
+								alert( mw.msg( 'translate-js-save-failed' ) );
+							} else if ( json.edit.result === 'Success' ) {
+								callbacks.close && callbacks.close();
+								callbacks.success && callbacks.success( form.find( '.mw-translate-edit-area' ).val() );
+							} else {
+								alert( mw.msg( 'translate-js-save-failed' ) );
+							}
+						}
+					} );
+					return false;
 				} );
 			} );
 		},
