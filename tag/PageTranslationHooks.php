@@ -295,7 +295,7 @@ class PageTranslationHooks {
 		$languages = implode( $sep, $languages );
 
 		$out = Html::openElement( 'div', array(
-			'class' => 'mw-pt-languages',
+			'class' => 'mw-pt-languages noprint',
 			'lang' => $userLangCode,
 			'dir' => $userLangDir
 		) );
@@ -586,7 +586,7 @@ class PageTranslationHooks {
 
 		$legend  = Html::rawElement(
 			'div',
-			array( 'class' => 'mw-pt-translate-header nomobile' ),
+			array( 'class' => 'mw-pt-translate-header noprint nomobile' ),
 			$wgLang->semicolonList( $actions )
 		) . Html::element( 'hr' );
 
