@@ -90,6 +90,10 @@ to add events to the Translate extension.
 	&$translation: The translation string as it stands
 	&$extraInputs: The extra input space, ready for HTML to be appended
 
+'TranslateGetOptions': Provides an opportunity for overriding task values
+	&$defaults: Associative array of default values
+	&$nondefaults: Associative array of nondefault (override) values
+
 'TranslatePrefillTranslation': Provides an opportunity for a new translation to start not from as a carte blanche (the default) but from some prefilled string
 	&$translation: The translation string as it stands
 	$page: The current page name e.g. 'MediaWiki:Example/qqq'

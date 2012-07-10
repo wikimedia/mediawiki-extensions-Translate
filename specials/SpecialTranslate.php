@@ -286,6 +286,7 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->defaults    = $defaults;
 		$this->nondefaults = $nondefaults;
+		wfRunHooks( 'TranslateGetOptions', array( &$defaults, &$nondefaults ) );
 		$this->options     = $nondefaults + $defaults;
 
 		$this->group = MessageGroups::getGroup( $this->options['group'] );
