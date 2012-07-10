@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQX//+HQ\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-10T17:34:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQX//+tk\u003d",
+      "revId": "a1fbcf9a009df00a55f596ff8ae6428ee687dce8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQX//+tg\u003d",
         "filename": "MessageGroups.php",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQX//+HM\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-10T17:34:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQX//+tg\u003d",
+      "revId": "a1fbcf9a009df00a55f596ff8ae6428ee687dce8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQX//+tc\u003d",
         "filename": "TranslateEditAddons.php",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2012-07-09T16:22:34Z",
       "side": 1,
       "message": "Maybe text() here too.",
+      "revId": "a1fbcf9a009df00a55f596ff8ae6428ee687dce8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//+HE\u003d",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-10T17:34:36Z",
+      "side": 1,
+      "message": "It\u0027s an accesskey. What use would this have? (not changed)",
+      "parentUuid": "AAAAQX//+tc\u003d",
       "revId": "a1fbcf9a009df00a55f596ff8ae6428ee687dce8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
