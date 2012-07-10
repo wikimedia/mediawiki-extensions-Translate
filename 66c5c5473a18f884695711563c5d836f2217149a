@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQX//+Wc\u003d",
+        "filename": "resources/ext.translate.quickedit.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 95
+      },
+      "writtenOn": "2012-07-10T14:38:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn///ks\u003d",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn///ko\u003d",
         "filename": "resources/ext.translate.quickedit.css",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQX//+WY\u003d",
+        "filename": "resources/ext.translate.quickedit.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 95
+      },
+      "writtenOn": "2012-07-10T14:38:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn///ko\u003d",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn///kk\u003d",
         "filename": "resources/ext.translate.quickedit.css",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2012-06-26T14:18:14Z",
       "side": 1,
       "message": "Could use explanation where the -3 comes from.",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//+WU\u003d",
+        "filename": "resources/ext.translate.quickedit.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 95
+      },
+      "writtenOn": "2012-07-10T14:38:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn///kk\u003d",
       "revId": "66c5c5473a18f884695711563c5d836f2217149a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQX//+SM\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 95
+      },
+      "writtenOn": "2012-07-10T14:38:49Z",
+      "side": 1,
+      "message": "Hmm? They see \"text{{Translation properties|...}}\" and no extra inputs, so they\u0027re fine if suboptimal. Fundamentally, properties *are* kept with the messages, they\u0027re just temporarily moved out and then put back again on the Translation form. And it works real nice :)",
+      "parentUuid": "AAAAOn///jQ\u003d",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn///jM\u003d",
         "filename": "resources/ext.translate.quickedit.js",
         "patchSetId": 1
@@ -98,6 +170,24 @@
       "writtenOn": "2012-06-26T14:18:14Z",
       "side": 1,
       "message": "} );",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//+WQ\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 95
+      },
+      "writtenOn": "2012-07-10T14:38:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn///jM\u003d",
       "revId": "66c5c5473a18f884695711563c5d836f2217149a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQX//+WE\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 95
+      },
+      "writtenOn": "2012-07-10T14:38:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn///jY\u003d",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn///jU\u003d",
         "filename": "utils/TranslationHelpers.php",
         "patchSetId": 1
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQX//+WA\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 95
+      },
+      "writtenOn": "2012-07-10T14:38:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn///jU\u003d",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOn///jc\u003d",
         "filename": "utils/TranslationHelpers.php",
         "patchSetId": 1
@@ -149,6 +275,24 @@
       "writtenOn": "2012-06-26T14:18:14Z",
       "side": 1,
       "message": "You can turn this into elseif",
+      "revId": "66c5c5473a18f884695711563c5d836f2217149a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//+V8\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 95
+      },
+      "writtenOn": "2012-07-10T14:38:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOn///jc\u003d",
       "revId": "66c5c5473a18f884695711563c5d836f2217149a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
