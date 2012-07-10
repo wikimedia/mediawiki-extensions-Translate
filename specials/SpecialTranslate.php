@@ -344,6 +344,7 @@ class SpecialTranslate extends SpecialPage {
 					Html::hidden( 'taction', $this->options['taction'] ) .
 						"$nonEssential\n$extra\n$button\n" .
 				Html::closeElement( 'form' ) .
+			Html::hidden( 'group', get_class( $this->group ) ) .
 			Html::closeElement( 'fieldset' );
 		return $form;
 	}
