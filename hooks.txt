@@ -96,6 +96,9 @@ to add events to the Translate extension.
 	$group: The current message group
 
 === JavaScript events ===
+mw.hooks.translate.afterRegisterFeatures: Provides an opportunity to register event handlers, etc., whenever a new form is opened.
+	form: The new form
+
 mw.hooks.translate.afterSubmit: Provides an opportunity to modify a Translate translation form immediately before it is submitted
 	form: The form being submitted
 
