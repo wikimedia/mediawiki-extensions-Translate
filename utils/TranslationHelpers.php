@@ -1332,7 +1332,9 @@ class TranslationHelpers {
 	}
 
 	public static function addModules( OutputPage $out ) {
-		$out->addModules( 'ext.translate.quickedit' );
+		$modules = array( 'ext.translate.quickedit' );
+		wfRunHooks( 'TranslateBeforeAddModules', array( &$modules ) );
+		$out->addModules( $modules );
 
 		// Might be needed, but ajax doesn't load it
 		// Globals :(
