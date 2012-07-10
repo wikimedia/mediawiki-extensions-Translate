@@ -26,6 +26,7 @@ $wgAutoloadClasses['MessageDefinitions'] = "$dir/MessageCollection.php";
 $wgAutoloadClasses['MessageGroup'] = "$dir/Groups.php";
 $wgAutoloadClasses['MessageGroupBase'] = "$dir/Groups.php";
 $wgAutoloadClasses['MessageGroupOld'] = "$dir/MessageGroups.php";
+$wgAutoloadClasses['WikiMessageGroup'] = "$dir/MessageGroups.php";
 $wgAutoloadClasses['MessageGroups'] = "$dir/MessageGroups.php";
 $wgAutoloadClasses['RecentMessageGroup'] = "$dir/MessageGroups.php";
 $wgAutoloadClasses['TMessage'] = "$dir/Message.php";
