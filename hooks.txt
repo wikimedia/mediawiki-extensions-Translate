@@ -81,6 +81,11 @@ to add events to the Translate extension.
 'TranslateFormatMessageBeforeTable': Provides an opportunity to manipulate the display of translation strings (messages) in the main talbe
 	&$message: The message (translation string) as it stands
 
+'TranslateGetBoxes': Provides an opportunity to add or remove "boxes" (translation helpers) from the interface
+	$group: The message group being used at the time
+	$handle: A MessageHandle object representing the translation page (e.g. 'MediaWiki:Example/qqq')
+	&$boxes: An associative array to be appended to (format: 'name' => 'some HTML string')
+
 'TranslateGetExtraInputs': Provides an opportunity to add extra form inputs to the standard Translation form
 	&$translation: The translation string as it stands
 	&$extraInputs: The extra input space, ready for HTML to be appended
