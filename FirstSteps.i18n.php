@@ -231,7 +231,7 @@ Tamién recibirás boletinos de noticies tolo más una vegada al mes.
 Si nun quies recibir boletinos de noticies, pues desapuntate na llingüeta "{{int:prefs-personal}}" de les tos [[Special:Preferences|preferencies]].',
 );
 
-/** Bashkir (Башҡортса)
+/** Bashkir (башҡортса)
  * @author Assele
  */
 $messages['ba'] = array(
@@ -2277,14 +2277,14 @@ Anda juga akan menerima surat berita selebih-lebihnya sebulan sekali.
 Jika anda tidak ingi menerima surat berita, anda boleh memilih untuk mengecualikan diri daripada senarai penghantaran kami dalam tab "{{int:prefs-personal}}" dalam [[Special:Preferences|keutamaan]] anda.',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
 	'firststeps' => 'Første steg',
 	'firststeps-desc' => '[[Special:FirstSteps|Spesialside]] for å få brukere igang med wikier som bruker Translate-utvidelsen',
 	'translate-fs-pagetitle-done' => ' – ferdig!',
+	'translate-fs-pagetitle-pending' => ' – venter',
 	'translate-fs-pagetitle' => 'Veiviser for å komme igang – $1',
 	'translate-fs-signup-title' => 'Registrer deg',
 	'translate-fs-settings-title' => 'Konfigurer innstillingene dine',
@@ -2295,8 +2295,30 @@ $messages['nb'] = array(
 	'translate-fs-intro' => "Velkommen til veiviseren for å komme igang med {{SITENAME}}.
 Du vil bli veiledet gjennom prosessen med å bli en oversetter steg for steg.
 Til slutt vil du kunne oversette ''grensesnittsmeldinger'' for alle støttede prosjekt på {{SITENAME}}.",
+	'translate-fs-selectlanguage' => 'Velg et språk',
+	'translate-fs-settings-planguage' => 'Hovedspråk:',
+	'translate-fs-settings-planguage-desc' => 'Hovedspråket fungerer også som grensesnittspråket ditt på denne wikien og som standardspråk for oversettelser.',
+	'translate-fs-settings-slanguage' => 'Hjelpespråk $1:',
+	'translate-fs-settings-slanguage-desc' => 'Det er mulig å vise oversettelser av meldinger på andre språk i oversettelseseditoren.
+Her kan du velge hvilke språk du ønsker å se, om noen.',
+	'translate-fs-settings-submit' => 'Lagre innstillinger',
+	'translate-fs-userpage-level-N' => 'Morsmålet mitt er',
+	'translate-fs-userpage-level-5' => 'Jeg er profesjonoll oversetter av',
+	'translate-fs-userpage-level-4' => 'Jeg er like god som en morsmålsbruker',
+	'translate-fs-userpage-level-3' => 'Jeg har god kjennskap til',
+	'translate-fs-userpage-level-2' => 'Jeg har grei kjennskap til',
+	'translate-fs-userpage-level-1' => 'Jeg kan litt',
+	'translate-fs-userpage-help' => 'Oppgi dine språkferdigheter og fortell oss litt om deg selv. Om du kan mer enn fem språk kan du legge til flere senere.',
 	'translate-fs-userpage-submit' => 'Opprett brukersiden min',
 	'translate-fs-userpage-done' => 'Flott! Nå har du en brukerside.',
+	'translate-fs-permissions-planguage' => 'Hovedspråk:',
+	'translate-fs-permissions-help' => 'Du må nå be om å få bli med i oversettergruppen.
+Velg språket du hovedsakelig vil oversette til.
+
+Du kan nevne andre språk og andre kommentarer i tekstboksen nedenfor.',
+	'translate-fs-permissions-pending' => 'Forespørselen din har blitt sendt til [[$1]], og noen av våre medarbeidere vil sjekke den så snart som mulig.
+Om du bekrefter e-postadressen din vil du få en melding så fort det skjer.',
+	'translate-fs-permissions-submit' => 'Send forespørsel',
 	'translate-fs-target-text' => "Gratulerer.
 Du kan nå begynne å oversette.
 
@@ -3214,7 +3236,7 @@ $messages['uk'] = array(
 Якщо ви не хочете отримувати розсилку новин, ви можете відмовитися від неї у вкладці "{{int:prefs-personal}}" ваших [Special:Preferences|налаштувань]].',
 );
 
-/** Veps (Vepsän kel’)
+/** Veps (vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(

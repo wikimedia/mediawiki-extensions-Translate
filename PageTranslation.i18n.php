@@ -768,7 +768,7 @@ $messages['az'] = array(
 	'pt-deletepage-reason' => 'Səbəb:',
 );
 
-/** Bashkir (Башҡортса)
+/** Bashkir (башҡортса)
  * @author Haqmar
  */
 $messages['ba'] = array(
@@ -1383,7 +1383,7 @@ Comproveu el [[Special:Log/pagetranslation|registre de traducció de pàgines]] 
 	'pt-locked-page' => 'Aquesta pàgina està bloquejada perquè la pàgina a traduir està en un procés de trasllat.',
 );
 
-/** Chechen (Нохчийн)
+/** Chechen (нохчийн)
  * @author Sasan700
  */
 $messages['ce'] = array(
@@ -5748,7 +5748,7 @@ $messages['mt'] = array(
 	'tpt-languages-legend' => 'Lingwi oħra:',
 );
 
-/** Erzya (Эрзянь)
+/** Erzya (эрзянь)
  * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
@@ -5765,9 +5765,8 @@ $messages['nah'] = array(
 	'translate-tag-translate-link-desc' => 'Tictlahtōlcuepāz inīn zāzanilli',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Audun
- * @author Jon Harald Søby
  * @author Laaknor
  * @author Nghtwlkr
  * @author Purodha
@@ -5802,13 +5801,30 @@ Den kan nå bli <span class="plainlinks">[$3 oversatt]</span>.',
 Før denne versjonen merkes for oversettelse, sjekk at endringene i avsnittene er minimert for å unngå unødvendig arbeid for oversetterne.',
 	'tpt-mark-summary' => 'Markerte denne versjonen for oversettelse',
 	'tpt-edit-failed' => 'Kunne ikke oppdatere siden: $1',
+	'tpt-duplicate' => 'Oversettelsens enhetsnavn $1 er brukt mer enn en gang.',
 	'tpt-already-marked' => 'Den siste versjonen av denne siden har allerede blitt markert for oversettelse.',
 	'tpt-unmarked' => 'Siden $1 er ikke lenger markert for oversettelse.',
 	'tpt-list-nopages' => 'Ingen sider er markert for oversettelse, eller er klare for å bli markert for oversettelse.',
+	'tpt-new-pages-title' => 'Sider foreslått for oversettelse',
+	'tpt-old-pages-title' => 'Sider som oversettes',
+	'tpt-other-pages-title' => 'Ødelagte sider',
+	'tpt-discouraged-pages-title' => 'Frarådede sider',
 	'tpt-new-pages' => '{{PLURAL:$1|Denne siden|Disse sidene}} inneholder tekst med oversettelsesmerker, men ingen versjon av {{PLURAL:$1|denne siden|disse sidene}} er for tiden markert for oversettelse.',
 	'tpt-old-pages' => 'En versjon av {{PLURAL:$1|denne siden|disse sidene}} har blitt markert for oversettelse.',
 	'tpt-other-pages' => '{{PLURAL:$1|En gammel versjon av denne siden|Eldre versjoner av disse sidene}} er markert for oversettelse, men den siste versjonen kan ikke markeres for oversettelse.',
-	'tpt-rev-unmark' => 'fjern denne siden fra oversettelse',
+	'tpt-discouraged-pages' => '{{PLURAL:$1|Denne siden|Disse sidene}} frafrådes videre oversettelse.',
+	'tpt-select-prioritylangs' => 'Kommaseparert liste over prioriterte språkkoder:',
+	'tpt-select-prioritylangs-force' => 'Forhindre oversettelser til andre språk enn de prioriterte språkene',
+	'tpt-select-prioritylangs-reason' => 'Årsak:',
+	'tpt-sections-prioritylangs' => 'Prioriterte språk',
+	'tpt-rev-mark' => 'merk for oversetting',
+	'tpt-rev-unmark' => 'fjern fra oversetting',
+	'tpt-rev-discourage' => 'fraråd',
+	'tpt-rev-encourage' => 'gjenopprett',
+	'tpt-rev-mark-tooltip' => 'Merk siste versjon av denne siden for oversetting.',
+	'tpt-rev-unmark-tooltip' => 'Fjern denne siden fra oversetting.',
+	'tpt-rev-discourage-tooltip' => 'Fraråd videre oversetting av denne siden.',
+	'tpt-rev-encourage-tooltip' => 'Gjenopprett denne siden til vanlig oversetting.',
 	'translate-tag-translate-link-desc' => 'Oversett denne siden',
 	'translate-tag-markthis' => 'Merk denne siden for oversettelse',
 	'translate-tag-markthisagain' => 'Denne siden har hatt <span class="plainlinks">[$1 endringer]</span> siden den sist ble <span class="plainlinks">[$2 markert for oversettelse]</span>.',
@@ -5816,12 +5832,31 @@ Før denne versjonen merkes for oversettelse, sjekk at endringene i avsnittene e
 	'tpt-translation-intro' => 'Denne siden er en <span class="plainlinks">[$1 oversatt versjon]</span> av en side [[$2]] og oversettelsen er $3% ferdig og oppdatert.',
 	'tpt-translation-intro-fuzzy' => 'Utdaterte oversettelser er markert på denne måten.',
 	'tpt-languages-legend' => 'Andre språk:',
+	'tpt-languages-zero' => 'Begynn oversettelse for dette språket',
 	'tpt-target-page' => 'Denne siden kan ikke oppdateres manuelt.
 Denne siden er en oversettelse av siden [[$1]] og oversettelsen kan bli oppdatert ved å bruke [$2 oversettelsesverktøyet].',
 	'tpt-unknown-page' => 'Dette navnerommet er reservert for oversettelser av innholdssider.
 Denne siden som du prøver å redigere ser ikke ut til å samsvare med noen av sidene som er markert for oversettelse.',
+	'tpt-translation-restricted' => 'Oversettelse av denne siden til dette språket har blitt forhindret av en oversettelsesadministrator.
+
+Årsak: $1',
+	'tpt-discouraged-language-force' => 'En oversettelsesadministrator har begrenset språkene denne siden kan oversettes til. Dette språket er ikke blant disse språkene.
+
+Årsak: $1',
+	'tpt-discouraged-language' => 'Dette språket er ikke blant prioritetsspråkene som er satt av en oversettelsesadministrator for denne siden.
+
+Årsak: $1',
+	'tpt-priority-languages' => 'En oversettelsesadministrator har satt prioritetsspråkene for denne gruppen til $1.',
 	'tpt-render-summary' => 'Oppdaterer for å svare til ny versjon av kildesiden',
 	'tpt-download-page' => 'Eksporter side med oversettelser',
+	'aggregategroups' => 'Samle sammen grupper',
+	'tpt-aggregategroup-add' => 'Legg til',
+	'tpt-aggregategroup-save' => 'Lagre',
+	'tpt-aggregategroup-add-new' => 'Legg til en ny samlet gruppe',
+	'tpt-aggregategroup-new-name' => 'Navn:',
+	'tpt-aggregategroup-new-description' => 'Beskrivelse (valgfri):',
+	'tpt-aggregategroup-remove-confirm' => 'Er du sikker på at du ønsker å slette denne gruppa?',
+	'tpt-aggregategroup-invalid-group' => 'Gruppa eksisterer ikke',
 	'pt-parse-open' => 'Ubalansert &lt;translate>-element.
 Oversettelsesmal: <pre>$1</pre>',
 	'pt-parse-close' => 'Ubalansert &lt;/translate>-element.
@@ -5835,14 +5870,25 @@ Seksjonstekst: <pre>$1</pre>',
 	'pt-shake-empty' => 'Tøm seksjon for markør $1.',
 	'pt-log-header' => 'Logg over handlinger relatert til systemet for sideoversettelser',
 	'pt-log-name' => 'Logg for sideoversettelser',
-	'pt-log-mark' => '{{GENDER:$2|markerte}} revisjon $3 av side «[[:$1]]» for oversettelse',
-	'pt-log-unmark' => '{{GENDER:$2|fjernet}} side «[[:$1]]» fra oversettelse',
-	'pt-log-moveok' => '{{GENDER:$2|fullførte}} omdøping av oversettbar side $1 til et nytt navn',
+	'pt-log-mark' => '{{GENDER:$2|markerte}} revisjon $3 av siden «[[:$1]]» for oversettelse',
+	'pt-log-unmark' => '{{GENDER:$2|fjernet}} siden «[[:$1]]» fra oversettelse',
+	'pt-log-moveok' => '{{GENDER:$2|fullførte}} omdøping av den oversettbare siden $1 til $3',
 	'pt-log-movenok' => '{{GENDER:$2|støtte på}} et problem under flytting av [[:$1]] til [[:$3]]',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|fullførte}} sletting av den oversettbare siden $1',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|fant}} et problem under sletting av den oversettbare siden [[:$1]]',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|fullførte}} sletting av den oversettbare siden $1',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|støtte på}} et problem under sletting av den oversettbare siden [[:$1]]',
+	'pt-log-encourage' => '{{GENDER:$2|oppmuntret}} oversettelse av side [[:$1]]',
+	'pt-log-discourage' => '{{GENDER:$2|frarådet}} oversettelse av side [[:$1]]',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|fjernet}} prioritetsspråk fra oversettbar side [[:$1]]',
+	'pt-log-priority-langs' => '{{GENDER:$2|satte}} prioritetsspråk for oversettbar side [[:$1]] til $3. Årsak: $4',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|begrenset}} språk for oversettbar side [[:$1]] til $3. Årsak: $4',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|la til}} oversettbar side [[:$1]] til samlet gruppe $3',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|fjernet}} oversettbar side [[:$1]] fra samlet gruppe $3',
 	'pt-movepage-title' => 'Flytt oversettbar side $1',
-	'pt-movepage-blockers' => 'Den oversettbare siden kan ikke flyttes til et nytt navn på grunn av følgende {{PLURAL:$1|feil|feil}}:',
-	'pt-movepage-block-base-exists' => 'Målbasesiden [[:$1]] finnes.',
-	'pt-movepage-block-base-invalid' => 'Målbasesiden er ikke en gyldig tittel.',
+	'pt-movepage-blockers' => 'Den oversettbare siden kan ikke flyttes til et nytt navn på grunn av følgende {{PLURAL:$1|feil}}:',
+	'pt-movepage-block-base-exists' => 'Målgrunnsiden [[:$1]] finnes.',
+	'pt-movepage-block-base-invalid' => 'Målgrunnsiden er ikke en gyldig tittel.',
 	'pt-movepage-block-tp-exists' => 'Måloversettelsessiden [[:$2]] finnes.',
 	'pt-movepage-block-tp-invalid' => 'Måloversettelsessidetittelen for [[:$1]] ville vært ugyldig (for lang?).',
 	'pt-movepage-block-section-exists' => 'Målavsnittssiden [[:$2]] finnes.',
@@ -5870,6 +5916,30 @@ Feil vil bli logget i [[Special:Log/pagetranslation|sideoversettelsesloggen]] og
 	'pt-movepage-started' => 'Basesiden har nå blitt flyttet.
 Kontroller [[Special:Log/pagetranslation|sideoversettelsesloggen]] for feil- og fullføringsmeldinger.',
 	'pt-locked-page' => 'Denne siden er låst fordi oversettelsessiden blir flyttet nå.',
+	'pt-deletepage-lang-title' => 'Sletter den oversettbare siden $1.',
+	'pt-deletepage-full-title' => 'Sletter den oversettbare siden $1.',
+	'pt-deletepage-invalid-title' => 'Den angitte siden er ikke gyldig.',
+	'pt-deletepage-invalid-text' => 'Den angitte siden er ikke en oversettbar side eller en oversettelse av den.',
+	'pt-deletepage-action-check' => 'List opp sider som skal slettes',
+	'pt-deletepage-action-perform' => 'Utfør slettingen',
+	'pt-deletepage-action-other' => 'Endre mål',
+	'pt-deletepage-lang-legend' => 'Slett oversettbar side',
+	'pt-deletepage-full-legend' => 'Slett oversettbar side',
+	'pt-deletepage-any-legend' => 'Slett oversettbar side eller oversettelse av oversettbar side',
+	'pt-deletepage-current' => 'Sidenavn:',
+	'pt-deletepage-reason' => 'Årsak:',
+	'pt-deletepage-subpages' => 'Slett alle undersider',
+	'pt-deletepage-list-pages' => 'Liste over sider å slette',
+	'pt-deletepage-list-translation' => 'Oversettelsessider',
+	'pt-deletepage-list-section' => 'Seksjonssider',
+	'pt-deletepage-list-other' => 'Andre undersider',
+	'pt-deletepage-list-count' => 'Totalt $1 {{PLURAL:$1|side|sider}} å slette.',
+	'pt-deletepage-full-logreason' => 'Del av den oversettbare siden $1.',
+	'pt-deletepage-lang-logreason' => 'Del av oversettelsessiden $1.',
+	'pt-deletepage-started' => 'Sjekk [[Special:Log/pagetranslation|sideoversettelsesloggen]] for feil- og fullføringsmeldinger.',
+	'pt-deletepage-intro' => 'Denne spesialsiden lar deg slette hele oversettbare sider eller oversettelser till ett språk.
+Slettingen vil ikke være umiddelbar, fordi mange sider må slettes.
+Feil vil logges i [[Special:Log/pagetranslation|sideoversettelsesloggen]], og må fikses manuelt.',
 );
 
 /** Dutch (Nederlands)
@@ -8579,7 +8649,7 @@ $messages['vec'] = array(
 	'translate-tag-translate-link-desc' => 'Tradusi sta pagina',
 );
 
-/** Veps (Vepsän kel’)
+/** Veps (vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(

@@ -2227,7 +2227,7 @@ $messages['az'] = array(
 	'translate-total' => 'Mesajlar',
 );
 
-/** Bashkir (Башҡортса)
+/** Bashkir (башҡортса)
  * @author Assele
  * @author Haqmar
  * @author Roustammr
@@ -3706,7 +3706,7 @@ $messages['bug'] = array(
 	'translate-statsf-submit' => 'Pribiu',
 );
 
-/** Буряад (Буряад)
+/** буряад (буряад)
  * @author ОйЛ
  */
 $messages['bxr'] = array(
@@ -3935,7 +3935,7 @@ $1",
 	'translate-documentation-language' => 'Documentació del missatge',
 );
 
-/** Chechen (Нохчийн)
+/** Chechen (нохчийн)
  * @author Sasan700
  */
 $messages['ce'] = array(
@@ -12818,7 +12818,7 @@ $messages['kk-arab'] = array(
 	'translate-checks-plural' => 'انىقتالىمدا <nowiki>{{PLURAL:}} پايدالانىلعان, بىراق اۋدارمادا بۇل جوق.',
 );
 
-/** Kazakh (Cyrillic script) (‪Қазақша (кирил)‬)
+/** Kazakh (Cyrillic script) (‪қазақша (кирил)‬)
  * @author AlefZet
  * @author GaiJin
  */
@@ -12894,7 +12894,7 @@ $messages['kk-cyrl'] = array(
 	'translate-rc-translation-filter-site' => 'Тек торап хабарларының өзгерістері',
 );
 
-/** Kazakh (Latin script) (‪Qazaqşa (latın)‬)
+/** Kazakh (Latin script) (‪qazaqşa (latın)‬)
  * @author AlefZet
  * @author Atabek
  * @author GaiJin
@@ -15063,7 +15063,7 @@ $messages['mg'] = array(
 	'translate-sidebar-alltrans' => "Amin'ny teny vahiny",
 );
 
-/** Eastern Mari (Олык Марий)
+/** Eastern Mari (олык марий)
  * @author Сай
  */
 $messages['mhr'] = array(
@@ -16329,7 +16329,7 @@ $messages['my'] = array(
 	'translate-gs-score' => 'ရမှတ်',
 );
 
-/** Erzya (Эрзянь)
+/** Erzya (эрзянь)
  * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
@@ -16433,7 +16433,7 @@ $messages['nah'] = array(
 	'translate-translations-fieldset-title' => 'Tītlantlahtōlli',
 );
 
-/** Norwegian Bokmål (‪Norsk (bokmål)‬)
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Byrial
  * @author Harald Khan
  * @author Jsoby
@@ -16448,7 +16448,21 @@ $messages['nb'] = array(
 	'translate-showsub' => 'Vis {{PLURAL:$1|undergruppen|de $1 undergruppene}}',
 	'translate-grouplisting' => 'Dette er listen over alle oversettbare grupper.
 Klikk på meldingsgruppenavnet for å vise en liste over uoversatte meldinger.',
-	'translate-grouplisting-empty' => 'Ingen beskjedgrupper er konfigurert for oversettels.',
+	'translate-grouplisting-empty' => 'Ingen meldingsgrupper er konfigurert for oversettelse.',
+	'translate-taskui-view' => 'Vis alle meldinger',
+	'translate-taskui-untranslated' => 'Vis uoversatte meldinger',
+	'translate-taskui-optional' => 'Vis valgfrie meldinger',
+	'translate-taskui-suggestions' => 'Vis meldinger med forslag fra oversettelsesminnet',
+	'translate-taskui-acceptqueue' => 'Kun meldinger jeg kan godkjenne',
+	'translate-taskui-reviewall' => 'Revider alle oversettelser',
+	'translate-taskui-export-to-file' => 'Eksporter i opprinnelig format',
+	'translate-taskui-export-as-po' => 'Eksporter for frakoblet oversettelse',
+	'translate-taction-translate' => 'Oversett',
+	'translate-taction-proofread' => 'Korrekturles',
+	'translate-taction-lstats' => 'Språkstatistikk',
+	'translate-taction-mstats' => 'Meldingsgruppestatistikk',
+	'translate-taction-export' => 'Eksporter',
+	'translate-taction-disabled' => 'Denne handlingen er deaktivert på denne wikien.',
 	'translate-page-no-such-language' => 'Oppgitt språk var ugyldig.',
 	'translate-page-no-such-group' => 'Oppgitt gruppe var ugyldig.',
 	'translate-page-disabled' => "Oversettelser til dette språket i denne gruppen har blitt deaktivert.
@@ -16468,9 +16482,9 @@ Klikk på meldingsgruppenavnet for å vise en liste over uoversatte meldinger.',
 	'translate-next' => 'Neste side',
 	'translate-prev' => 'Forrige side',
 	'translate-page-description-legend' => 'Informasjon om gruppen',
-	'translate-page-description-hasoptional' => 'Denne beskjedgruppen inneholder valgfrie beskjeder.
-Valgfrie beskjeder bør kun oversettes om språket ditt har spesielle behov, som at det ikke bruker mellomrom eller man må transkribere egennavn. $1',
-	'translate-page-description-hasoptional-open' => 'Vis valgfrie beskjeder.',
+	'translate-page-description-hasoptional' => 'Denne meldingsgruppen inneholder valgfrie meldinger.
+Valgfrie meldinger bør kun oversettes om språket ditt har spesielle behov, som at det ikke bruker mellomrom eller man må transkribere egennavn. $1',
+	'translate-page-description-hasoptional-open' => 'Vis valgfrie meldinger.',
 	'translate-page-edit' => 'rediger',
 	'translate-ext-url' => '<hr />Nettsted: $1',
 	'translate-optional' => '(valgfri)',
@@ -16487,6 +16501,7 @@ Valgfrie beskjeder bør kun oversettes om språket ditt har spesielle behov, som
 	'translate-edit-committed' => 'Nåværende oversettelse i programvaren',
 	'translate-edit-warnings' => 'Advarsler om ufullstendige oversettelser',
 	'translate-edit-tmsugs' => 'Forslag fra oversettelsesminnet',
+	'translate-edit-tmmatch-source' => 'Kildetekst for oversettelse: $1',
 	'translate-edit-tmmatch' => 'samsvarer $1 %',
 	'translate-use-suggestion' => 'Erstatt nåværende oversettelse med dette forslaget.',
 	'translate-edit-tab-list' => 'Meldingsliste',
@@ -16537,6 +16552,8 @@ Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-checks-pagename' => 'Navnerom forandret fra definisjonen',
 	'translate-checks-format' => 'Denne oversettelsen følger ikke definisjonen eller har ugyldig syntaks: $1',
 	'translate-checks-escape' => 'De følgende lekkasjene kan være tilfeldige: <strong>$1</strong>',
+	'translate-checks-parametersnotequal' => 'Parametertelleren er {{PLURAL:$1|$1}}; skulle vært {{PLURAL:$2|$2}}.',
+	'translate-checks-malformed' => '<nowiki>$1</nowiki> er feilaktig.',
 	'translate-checks-fudforum-syntax' => 'Bruk <nowiki>$1</nowiki> istedet for <nowiki>$2</nowiki> i dette prosjektet.',
 	'translate-pref-nonewsletter' => 'Ikke send meg nyhetsbrev på e-post',
 	'translate-pref-editassistlang' => 'Hjelpespråk:',
@@ -16548,10 +16565,12 @@ Standardlisten over språk avhenger av språket ditt.',
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Utvidet redigeringsvindu for oversettelser (JavaScript)',
 	'right-translate' => 'Rediger med oversettingsgrensesnittet',
-	'right-translate-manage' => 'Administrer beskjedgrupper',
+	'right-translate-manage' => 'Administrer meldingsgrupper',
+	'action-translate-manage' => 'håndtere meldingsgrupper',
 	'right-translate-import' => 'Importer frakoblede oversettelser',
+	'action-translate-import' => 'importer frakoblede oversettelser',
 	'right-translate-messagereview' => 'Revidere oversettelser',
-	'right-translate-groupreview' => 'Endre arbeidsflytstatusen til beskjedgrupper',
+	'right-translate-groupreview' => 'Endre arbeidsflytstatusen til meldingsgrupper',
 	'translate-rc-translation-filter' => 'Filtrer oversettelser:',
 	'translate-rc-translation-filter-no' => 'Ikke gjør noe',
 	'translate-rc-translation-filter-only' => 'Vis bare oversettelser',
@@ -16561,6 +16580,8 @@ Standardlisten over språk avhenger av språket ditt.',
 	'translate-stats-edits' => 'Redigeringer',
 	'translate-stats-users' => 'Oversettere',
 	'translate-stats-registrations' => 'Registreringer',
+	'translate-stats-reviews' => 'Revideringer',
+	'translate-stats-reviewers' => 'Revisorer',
 	'translate-statsf-intro' => 'Du kan generere enkel statistikk med dette skjemaet.
 Alle verdiene har øvre og nedre grenser.',
 	'translate-statsf-options' => 'Grafalternativer',
@@ -16577,6 +16598,8 @@ Alle verdiene har øvre og nedre grenser.',
 	'translate-statsf-count-edits' => 'Antall redigeringer',
 	'translate-statsf-count-users' => 'Aktive oversettere',
 	'translate-statsf-count-registrations' => 'Nye brukere',
+	'translate-statsf-count-reviews' => 'Oversettelsesrevideringer',
+	'translate-statsf-count-reviewers' => 'Revisorer',
 	'translate-statsf-language' => 'Kommaseparert liste over språkkoder:',
 	'translate-statsf-group' => 'Kommaseparert liste over gruppekoder:',
 	'translate-statsf-submit' => 'Forhåndsvisning',
@@ -16607,7 +16630,7 @@ Alle verdiene har øvre og nedre grenser.',
 	'translate-language-code' => 'Språkkode',
 	'translate-language-code-field-name' => 'Språkkode:',
 	'translate-suppress-complete' => 'Skjul ferdig oversatte meldingsgrupper',
-	'translate-ls-noempty' => 'Skjul helt uoversatte beskjedgrupper',
+	'translate-ls-noempty' => 'Skjul helt uoversatte meldingsgrupper',
 	'translate-language' => 'Språk',
 	'translate-total' => 'Meldinger',
 	'translate-untranslated' => 'Uoversatte',
@@ -16615,12 +16638,12 @@ Alle verdiene har øvre og nedre grenser.',
 	'translate-percentage-fuzzy' => 'Utdatert',
 	'translate-nothing-to-do' => 'Alle mulige oversettelser ser ut til å ha blitt gjort.
 Du oppfordres til å revidere meldinger gjennom [[Special:Translate|{{int:translate}}]].',
-	'translate-languagestats-overall' => 'Alle beskjedgrupper sammen',
+	'translate-languagestats-overall' => 'Alle meldingsgrupper sammen',
 	'translate-ls-submit' => 'Vis statistikk',
-	'translate-ls-column-group' => 'Beskjedgruppe',
-	'translate-mgs-pagename' => 'Beskjedgruppestatistikk',
+	'translate-ls-column-group' => 'Meldingsgruppe',
+	'translate-mgs-pagename' => 'Meldingsgruppestatistikk',
 	'translate-mgs-fieldset' => 'Visningsinnstillinger',
-	'translate-mgs-group' => 'Beskjedgruppe:',
+	'translate-mgs-group' => 'Meldingsgruppe:',
 	'translate-mgs-nocomplete' => 'Ikke vis språk som har fullført denne oversettelsen',
 	'translate-mgs-noempty' => 'Ikke vis språk som ikke har noen oversettelser',
 	'translate-mgs-submit' => 'Vis statistikk',
@@ -16638,15 +16661,10 @@ Du oppfordres til å revidere meldinger gjennom [[Special:Translate|{{int:transl
 	'translate-save' => 'Lagre ($1)',
 	'translate-jssti-add' => 'Legg til i listen',
 	'managemessagegroups' => 'Meldingsgruppehåndtering',
-	'translate-manage-groups' => 'Gruppehåndtering',
-	'translate-manage-listgroups' => 'Konfigurerte grupper',
-	'translate-manage-listgroups-old' => 'Grupper med gammel stil',
-	'translate-managegroups' => 'Gruppehåndtering',
-	'translate-manage-newgroup' => 'Denne meldingsgruppen har ikke blitt importert før.',
-	'translate-manage-cacheat' => 'Importert $1 kl. $2',
-	'translate-manage-return-to-group' => 'Tilbake til siden for gruppedetaljer',
-	'translate-manage-modlangs' => 'Vennligst sjekk for mulige forandringer i følgende {{PLURAL:$1|språk|språk}}:',
-	'translate-manage-modlang-new' => '$1 (ny)',
+	'translate-smg-notallowed' => 'Du har ikke tillatelse til å utføre dette.',
+	'translate-smg-nochanges' => 'Det er ingen endringer å bearbeide.',
+	'translate-smg-submit' => 'Lagre endringer for prosessering',
+	'translate-smg-submitted' => 'Meldingdefinisjoner har blitt oppdatert. Endringene prosesseres i bakgrunnen.',
 	'translate-manage-import-diff' => 'Melding $1 | Handlinger: $2',
 	'translate-manage-import-new' => 'Ny melding $1',
 	'translate-manage-import-deleted' => 'Slettet melding $1',
@@ -16654,7 +16672,6 @@ Du oppfordres til å revidere meldinger gjennom [[Special:Translate|{{int:transl
 	'translate-manage-action-conflict' => 'Importer og merk for revisjon («fuzzy»)',
 	'translate-manage-action-ignore' => 'Ignorer',
 	'translate-manage-action-fuzzy' => 'Importer og merk for revisjon («fuzzy»)',
-	'translate-manage-submit' => 'Utfør',
 	'translate-manage-nochanges' => 'Det er ingen endringer i meldingsdefinisjonene for denne gruppen.',
 	'translate-manage-nochanges-other' => 'Det var ingen forandringer for dette språket.
 Bruk lenken nedenfor for å returnere til gruppedataljene.',
@@ -16663,25 +16680,10 @@ Vennligst sjekk om det har vært endringer og prøv igjen.
 Detaljer: $1.',
 	'translate-manage-toolong' => 'Den maksimale behandlingstiden på {{PLURAL:$1|ett sekund|$1 sekund}} ble overskredet.
 Vennligst send skjemaet på nytt for å fortsette behandlingen.',
-	'translate-manage-import-ok' => 'Importerte ny versjon av siden $1.',
-	'translate-manage-import-noks' => 'Mislyktes å importere ny versjon av siden $1: $2',
-	'translate-manage-import-ignore' => 'Hopper over melding $1.',
 	'translate-manage-import-summary' => 'Importerer en ny versjon fra en ekstern kilde',
 	'translate-manage-conflict-summary' => 'Importerer en ny versjon fra en ekstern kilde.
 Vennligst sjekk.',
-	'translate-manage-fuzzy-summary' => 'Definisjonen er endret',
-	'translate-manage-import-fuzzy' => 'Importerer og merker for revisjon («fuzzy»): $1',
-	'translate-manage-import-done' => 'Alt gjort!',
-	'translate-manage-import-rebuild' => 'Bygg om mellomlager.',
-	'translate-manage-intro-en' => 'Nedenfor er en liste over meldingsendringer i denne gruppen.
-Vennligst revider endringene og velg hvilken handling du vil utføre for hver av meldingene.
-Når du har oppdatert meldingsdefinisjonene, kontroller for eksterne endringer i andre språk, om det finnes noen.
-Merk også at <code>ignorer</code> bare er midlertidig.',
-	'translate-manage-intro-other' => 'Nedenfor er en liste over endringer i oversettelser for språket $1.
-Vennligst revider endringene og velg hvilken handling du vil utføre for hver oversettelse.
-Dersom du velger å ignorere endringene vil de bli overkjørt ved neste eksportering.',
-	'translate-manage-subtitle' => 'Håndter',
-	'translate-manage-import-rebuild-all' => 'Bygg om alle språk og ignorer alle forandringer',
+	'translate-manage-fuzzy-summary' => 'Meldingsdefinisjonen har blitt endret',
 	'importtranslations' => 'Importer oversettelser',
 	'translate-import-from-url' => 'Nettadresse til filen:',
 	'translate-import-from-wiki' => 'Fil i denne wikien:',
@@ -16700,6 +16702,8 @@ Kunne ikke fastslå gruppe og språk fra filoverskriftene.',
 	'translate-import-err-warnings' => 'Filen er ikke velformatert.
 Kontroller at editoren ikke fjerner msgctxt-feltene.
 Detaljer: $1',
+	'translate-js-summary' => 'Forklaring:',
+	'translate-js-save' => 'Lagre',
 	'translate-js-next' => 'Lagre og åpne neste',
 	'translate-js-nonext' => 'Dette var den siste meldingen på siden.',
 	'translate-js-skip' => 'Hopp over til neste',
@@ -16707,6 +16711,7 @@ Detaljer: $1',
 	'translate-js-history' => 'Oversettelseshistorikk',
 	'translate-js-support' => 'Still spørsmål',
 	'translate-js-support-title' => 'Be om hjelp hvis det ikke er nok informasjon til å oversette denne meldingen korrekt.',
+	'translate-js-support-unsaved-warning' => 'Du har ulagrede oversettelser.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kode',
 	'translate-gs-continent' => 'Kontinent',
@@ -16729,7 +16734,7 @@ Detaljer: $1',
 	'translate-messagereview-reviewswithyou' => 'Godkjent av {{PLURAL:$1|én bruker|$1 brukere}} inkludert deg',
 	'translate-messagereview-reviewsyou' => 'Godkjent av deg',
 	'api-error-invalidrevision' => 'Oversettelsen ble ikke funnet',
-	'api-error-unknownmessage' => 'Beskjeden ble ikke funnet',
+	'api-error-unknownmessage' => 'Meldingen ble ikke funnet',
 	'api-error-fuzzymessage' => 'Oversettelsen er merket som foreldet',
 	'api-error-owntranslation' => 'Du kan ikke godkjenne dine egne oversettelser',
 	'translate-messagereview-no-fuzzy' => 'Foreldede oversettelser kan ikke godkjennes.',
@@ -16739,26 +16744,28 @@ Detaljer: $1',
 	'group-translate-proofr-member' => '{{GENDER:$1|oversettelsesreviderer}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Oversettelsesreviderere',
 	'log-name-translationreview' => 'Logg for oversettelsesrevidering',
-	'log-description-translationreview' => 'Logg over alle revideringer av oversettelser og beskjedgrupper.',
+	'log-description-translationreview' => 'Logg over alle revideringer av oversettelser og meldingsgrupper.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|godtok}} oversettelsen $3',
-	'logentry-groupreview-message' => '$1 {{GENDER:$2|endret}} statusen for $4 oversettelser i beskjedgruppen $3 fra $5 til $6',
+	'logentry-groupreview-message' => '$1 {{GENDER:$2|endret}} statusen for $4 oversettelser i meldingsgruppen $3 fra $5 til $6',
 	'translate-workflow-state-' => '(ikke satt)',
 	'translate-workflowstatus' => 'Status: $1',
 	'translate-workflow-set-do' => 'Sett',
 	'translate-workflow-set-doing' => 'Setter …',
 	'translate-workflow-set-done' => 'Satt!',
+	'translate-workflow-set-error-alreadyset' => 'Den forespurte tilstanden er identisk med den gjeldende tilstanden.',
 	'translate-workflow-autocreated-summary' => 'Automatisk oppretting av side for arbeidsflytstatus $1',
 	'translate-stats-workflow' => 'Status',
 	'translate-workflowgroup-label' => 'Arbeidsflytstatuser',
 	'translate-workflowgroup-desc' => 'Denne meldingsgruppen viser arbeidsflytsstatusene for oversettelse.
 Disse statusene defineres i konfigurasjonsvariabelen $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Nylige oversettelser',
-	'translate-dynagroup-recent-desc' => 'Denne beskjedgruppen viser alle nylige oversettelser til dette språket.
-Nyttigst for oppgavene «{{int:translate-task-acceptqueue}}» og «{{int:translate-task-reviewall}}».',
+	'translate-dynagroup-recent-desc' => 'Denne meldingsgruppen viser alle nylige oversettelser til dette språket.
+Mest nyttig for korrekturlesningsoppgaver.',
 	'translate-dynagroup-by' => 'Oversettelse gjort av {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Oversettelse gjort av {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Siste endring av {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Siste endring av {{GENDER:$1|$1}} ($2)',
+	'translate-gethelp' => 'Hjelp',
 );
 
 /** Low German (Plattdüütsch)
@@ -24853,7 +24860,7 @@ I canbiamenti no i xe salvà finché no te struchi el boton qua soto.',
 	'translate-save' => 'Salva ($1)',
 );
 
-/** Veps (Vepsän kel’)
+/** Veps (vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
@@ -25707,7 +25714,7 @@ Il est eployî copurade po les bouyes di verifiaedje.",
 	'translate-gethelp' => 'Aidance',
 );
 
-/** Kalmyk (Хальмг)
+/** Kalmyk (хальмг)
  * @author Huuchin
  */
 $messages['xal'] = array(

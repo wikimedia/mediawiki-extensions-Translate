@@ -570,7 +570,7 @@ $specialPageAliases['mwl'] = array(
 	'Translations' => array( 'Traduçones' ),
 );
 
-/** Erzya (Эрзянь) */
+/** Erzya (эрзянь) */
 $specialPageAliases['myv'] = array(
 	'Translate' => array( 'Ютавтомс' ),
 	'Magic' => array( 'ПревейстэЮтавтомс', 'Магия' ),
