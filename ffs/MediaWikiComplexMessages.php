@@ -42,7 +42,7 @@ abstract class ComplexMessages {
 	}
 
 	public function getTitle() {
-		return wfMsg( 'translate-magic-' . $this->id );
+		return wfMessage( 'translate-magic-' . $this->id )->text();
 	}
 
 	#
@@ -247,9 +247,9 @@ abstract class ComplexMessages {
 	public function header( $title ) {
 		$colspan = array( 'colspan' => 3 );
 		$header = Xml::element( 'th', $colspan, $this->getTitle() . ' - ' . $title );
-		$subheading[] = '<th>' . wfMsgHtml( 'translate-magic-cm-original' ) . '</th>';
-		$subheading[] = '<th>' . wfMsgHtml( 'translate-magic-cm-current' ) . '</th>';
-		$subheading[] = '<th>' . wfMsgHtml( 'translate-magic-cm-to-be' ) . '</th>';
+		$subheading[] = '<th>' . wfMessage( 'translate-magic-cm-original' )->escaped() . '</th>';
+		$subheading[] = '<th>' . wfMessage( 'translate-magic-cm-current' )->escaped() . '</th>';
+		$subheading[] = '<th>' . wfMessage( 'translate-magic-cm-to-be' )->escaped() . '</th>';
 		return '<tr>' . $header . '</tr>' .
 			'<tr>' . implode( "\n", $subheading )  . '</tr>';
 	}
@@ -307,8 +307,8 @@ abstract class ComplexMessages {
 
 	public function getButtons() {
 		return
-			Xml::inputLabel( wfMsg( 'translate-magic-cm-comment' ), 'comment', 'sp-translate-magic-comment' ) .
-			Xml::submitButton( wfMsg( 'translate-magic-cm-save' ), array( 'name' => 'savetodb' ) );
+			Xml::inputLabel( wfMessage( 'translate-magic-cm-comment' )->text(), 'comment', 'sp-translate-magic-comment' ) .
+			Xml::submitButton( wfMessage( 'translate-magic-cm-save' )->text(), array( 'name' => 'savetodb' ) );
 	}
 
 	public function formatElement( $element ) {
@@ -368,11 +368,11 @@ abstract class ComplexMessages {
 
 		$data = "# DO NOT EDIT THIS PAGE DIRECTLY! Use [[Special:AdvancedTranslate]].\n<pre>\n" . $this->formatForSave( $request ) . "\n</pre>";
 
-		$comment = $request->getText( 'comment', wfMsgForContent( 'translate-magic-cm-updatedusing' ) );
+		$comment = $request->getText( 'comment', wfMessage( 'translate-magic-cm-updatedusing' )->inContentLanguage()->text() );
 		$status = $article->doEdit( $data, $comment, 0 );
 
 		if ( $status === false || ( is_object( $status ) && !$status->isOK() ) ) {
-			throw new MWException( wfMsg( 'translate-magic-cm-savefailed' ) );
+			throw new MWException( wfMessage( 'translate-magic-cm-savefailed' )->text() );
 		}
 
 		/* Reset outdated array */
