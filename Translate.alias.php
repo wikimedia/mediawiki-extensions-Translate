@@ -850,9 +850,10 @@ $specialPageAliases['tt-cyrl'] = array(
 /** Ukrainian (українська) */
 $specialPageAliases['uk'] = array(
 	'Translate' => array( 'Перекласти' ),
+	'Magic' => array( 'Поглиблений_переклад' ),
 	'TranslationStats' => array( 'Статистика_перекладів' ),
 	'Translations' => array( 'Переклади' ),
-	'LanguageStats' => array( 'Статистика_для_цієї_мови' ),
+	'LanguageStats' => array( 'Статистика_мови' ),
 	'PageTranslation' => array( 'Переклад' ),
 	'ImportTranslations' => array( 'Імпорт_перекладів' ),
 	'FirstSteps' => array( 'Перші_кроки' ),
