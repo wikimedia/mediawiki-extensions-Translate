@@ -456,13 +456,13 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	protected function getWorkflowStates() {
 		$db = wfGetDB( DB_SLAVE );
-		$key = array_pop( $this->targetValueName );
-		switch ( $key ) {
-			case 'group':
+		$class = get_class( $this );
+		switch ( $class ) {
+			case 'SpecialMessageGroupStats':
 				$targetCol = 'tgr_group';
 				$selectKey = 'tgr_lang';
 				break;
-			case 'language':
+			case 'SpecialLanguageStats':
 				$targetCol = 'tgr_lang';
 				$selectKey = 'tgr_group';
 				break;
