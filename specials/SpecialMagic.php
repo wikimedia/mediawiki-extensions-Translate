@@ -4,7 +4,8 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2008-2012, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -46,16 +47,16 @@ class SpecialMagic extends SpecialPage {
 	 * @return string
 	 */
 	function getDescription() {
-		return wfMsg( 'translate-magic-pagename' );
+		return $this->msg( 'translate-magic-pagename' )->text();
 	}
 
 	/**
 	 * Returns HTML5 output of the form
-	 * GLOBALS: $wgLang, $wgScript
+	 * GLOBALS: $wgScript
 	 * @return string
 	 */
 	protected function getForm() {
-		global $wgLang, $wgScript;
+		global $wgScript;
 
 		$form = Xml::tags( 'form',
 			array(
@@ -64,16 +65,16 @@ class SpecialMagic extends SpecialPage {
 			),
 
 			'<table><tr><td>' .
-				wfMsgHtml( 'translate-page-language' ) .
+				$this->msg( 'translate-page-language' )->escaped() .
 			'</td><td>' .
-				TranslateUtils::languageSelector( $wgLang->getCode(), $this->options['language'] ) .
+				TranslateUtils::languageSelector( $this->getLanguage()->getCode(), $this->options['language'] ) .
 			'</td></tr><tr><td>' .
-				wfMsgHtml( 'translate-magic-module' ) .
+				$this->msg( 'translate-magic-module' )->escaped() .
 			'</td><td>' .
 				$this->moduleSelector( $this->options['module'] ) .
 			'</td></tr><tr><td colspan="2">' .
-				Xml::submitButton( wfMsg( 'translate-magic-submit' ) ) . ' ' .
-				Xml::submitButton( wfMsg( 'translate-magic-cm-export' ), array( 'name' => 'export' ) ) .
+				Xml::submitButton( $this->msg( 'translate-magic-submit' )->text() ) . ' ' .
+				Xml::submitButton( $this->msg( 'translate-magic-cm-export' )->text(), array( 'name' => 'export' ) ) .
 			'</td></tr></table>' .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() )
 		);
@@ -89,17 +90,15 @@ class SpecialMagic extends SpecialPage {
 	protected function moduleSelector( $selectedId ) {
 		$selector = new XmlSelect( 'module', 'module', $selectedId );
 		foreach ( $this->aModules as $code ) {
-			$selector->addOption( wfMsg( 'translate-magic-' . $code ), $code );
+			$selector->addOption( $this->msg( 'translate-magic-' . $code )->text(), $code );
 		}
 		return $selector->getHTML();
 	}
 
 	protected function setup( $parameters ) {
-		global $wgUser, $wgRequest;
-
 		$defaults = array(
 			/* str  */ 'module'   => '',
-			/* str  */ 'language' => $wgUser->getOption( 'language' ),
+			/* str  */ 'language' => $this->getUser()->getOption( 'language' ),
 			/* bool */ 'export'   => false,
 			/* bool */ 'savetodb' => false,
 		);
@@ -113,13 +112,14 @@ class SpecialMagic extends SpecialPage {
 		 * Temporary store possible values parsed from parameters.
 		 */
 		$options = $defaults;
+		$request = $this->getRequest();
 		foreach ( $options as $v => $t ) {
 			if ( is_bool( $t ) ) {
-				$r = $wgRequest->getBool( $v, $options[$v] );
+				$r = $request->getBool( $v, $options[$v] );
 			} elseif ( is_int( $t ) ) {
-				$r = $wgRequest->getInt( $v, $options[$v] );
+				$r = $request->getInt( $v, $options[$v] );
 			} elseif ( is_string( $t ) ) {
-				$r = $wgRequest->getText( $v, $options[$v] );
+				$r = $request->getText( $v, $options[$v] );
 			}
 			wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults );
 		}
@@ -131,16 +131,15 @@ class SpecialMagic extends SpecialPage {
 
 	/**
 	 * The special page running code
-	 * GLOBALS: $wgRequest, $wgOut, $wgUser
 	 */
 	public function execute( $parameters ) {
-		global $wgUser, $wgOut, $wgRequest;
-
 		$this->setup( $parameters );
 		$this->setHeaders();
-		TranslateUtils::addSpecialHelpLink( $wgOut, '//translatewiki.net/wiki/FAQ#Special:AdvancedTranslate', true );
 
-		$wgOut->addHTML( $this->getForm() );
+		$out = $this->getOutput();
+		TranslateUtils::addSpecialHelpLink( $out, '//translatewiki.net/wiki/FAQ#Special:AdvancedTranslate', true );
+
+		$out->addHTML( $this->getForm() );
 
 		if ( !$this->options['module'] ) {
 			return;
@@ -160,23 +159,24 @@ class SpecialMagic extends SpecialPage {
 				throw new MWException( "Unknown module {$this->options['module']}" );
 		}
 
-		if ( $wgRequest->wasPosted() && $this->options['savetodb'] ) {
-			if ( !$wgUser->isAllowed( 'translate' ) ) {
-				$wgOut->permissionRequired( 'translate' );
+		$request = $this->getRequest();
+		if ( $request->wasPosted() && $this->options['savetodb'] ) {
+			if ( !$this->getUser()->isAllowed( 'translate' ) ) {
+				$out->permissionRequired( 'translate' );
 			} else {
 				$errors = array();
-				$o->loadFromRequest( $wgRequest );
+				$o->loadFromRequest( $request );
 				$o->validate( $errors );
 				if ( $errors ) {
-					$wgOut->wrapWikiMsg( '<div class="error">$1</div>',
+					$out->wrapWikiMsg( '<div class="error">$1</div>',
 						'translate-magic-notsaved' );
 					$this->outputErrors( $errors );
-					$wgOut->addHTML( $o->output() );
+					$out->addHTML( $o->output() );
 					return;
 				} else {
-					$o->save( $wgRequest );
-					$wgOut->wrapWikiMsg( '<strong><b>$1</b></strong>', 'translate-magic-saved' );
-					$wgOut->addHTML( $o->output() );
+					$o->save( $request );
+					$out->wrapWikiMsg( '<strong><b>$1</b></strong>', 'translate-magic-saved' );
+					$out->addHTML( $o->output() );
 					return;
 				}
 			}
@@ -185,29 +185,29 @@ class SpecialMagic extends SpecialPage {
 		if ( $this->options['export'] ) {
 			$output = $o->export();
 			if ( $output === '' ) {
-				$wgOut->addWikiMsg( 'translate-magic-nothing-to-export' );
+				$out->addWikiMsg( 'translate-magic-nothing-to-export' );
 				return;
 			}
 			$result = Xml::element( 'textarea', array( 'rows' => '30' ), $output );
-			$wgOut->addHTML( $result );
+			$out->addHTML( $result );
 			return;
 		}
 
-		$wgOut->addWikiMsg( 'translate-magic-help' );
+		$out->addWikiMsg( 'translate-magic-help' );
 		$errors = array();
 		$o->validate( $errors );
 		if ( $errors ) $this->outputErrors( $errors );
-		$wgOut->addHTML( $o->output() );
+		$out->addHTML( $o->output() );
 	}
 
 	protected function outputErrors( $errors ) {
-		global $wgLang, $wgOut;
-		$count = $wgLang->formatNum( count( $errors ) );
-		$wgOut->addWikiMsg( 'translate-magic-errors', $count );
-		$wgOut->addHTML( '<ol>' );
+		$count = $this->getLanguage()->formatNum( count( $errors ) );
+		$out = $this->getOutput();
+		$out->addWikiMsg( 'translate-magic-errors', $count );
+		$out->addHTML( '<ol>' );
 		foreach ( $errors as $error ) {
-			$wgOut->addHTML( "<li>$error</li>" );
+			$out->addHTML( "<li>$error</li>" );
 		}
-		$wgOut->addHTML( '</ol>' );
+		$out->addHTML( '</ol>' );
 	}
 }

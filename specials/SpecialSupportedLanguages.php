@@ -31,34 +31,35 @@ class SpecialSupportedLanguages extends SpecialPage {
 	}
 
 	public function execute( $par ) {
-		global $wgLang, $wgOut, $wgRequest;
+		$out = $this->getOutput();
+		$lang = $this->getLanguage();
 
-		$this->purge = $wgRequest->getVal( 'action' ) === 'purge';
+		$this->purge = $this->getRequest()->getVal( 'action' ) === 'purge';
 
 		$this->setHeaders();
-		$wgOut->addModules( 'ext.translate.special.supportedlanguages' );
+		$out->addModules( 'ext.translate.special.supportedlanguages' );
 
 		// Do not add html content to OutputPage before this block of code!
 		$cache = wfGetCache( CACHE_ANYTHING );
-		$cachekey = wfMemcKey( 'translate-supportedlanguages', $wgLang->getCode() );
+		$cachekey = wfMemcKey( 'translate-supportedlanguages', $lang->getCode() );
 		$data = $cache->get( $cachekey );
 		if ( !$this->purge && is_string( $data ) ) {
-			TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators' );
-			$wgOut->addHtml( $data );
+			TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators' );
+			$out->addHtml( $data );
 			return;
 		}
 
-		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators' );
+		TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators' );
 
 		$this->outputHeader();
-		$wgOut->addWikiMsg( 'supportedlanguages-colorlegend', $this->getColorLegend() );
-		$wgOut->addWikiMsg( 'supportedlanguages-localsummary' );
+		$out->addWikiMsg( 'supportedlanguages-colorlegend', $this->getColorLegend() );
+		$out->addWikiMsg( 'supportedlanguages-localsummary' );
 
 		// Check if CLDR extension has been installed.
 		$cldrInstalled = class_exists( 'LanguageNames' );
 
 		if ( $cldrInstalled ) {
-			$locals = LanguageNames::getNames( $wgLang->getCode(),
+			$locals = LanguageNames::getNames( $lang->getCode(),
 				LanguageNames::FALLBACK_NORMAL,
 				LanguageNames::LIST_MW_AND_CLDR
 			);
@@ -83,32 +84,32 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		// Information to be used inside the foreach loop.
 		$linkInfo['rc']['title'] = SpecialPage::getTitleFor( 'Recentchanges' );
-		$linkInfo['rc']['msg'] = wfMsg( 'supportedlanguages-recenttranslations' );
+		$linkInfo['rc']['msg'] = $this->msg( 'supportedlanguages-recenttranslations' )->escaped();
 		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
-		$linkInfo['stats']['msg'] = wfMsg( 'languagestats' );
+		$linkInfo['stats']['msg'] = $this->msg( 'languagestats' )->escaped();
 
 		foreach ( array_keys( $natives ) as $code ) {
 			if ( !isset( $users[$code] ) ) continue;
 
 			// If CLDR is installed, add localised header and link title.
 			if ( $cldrInstalled ) {
-				$headerText = wfMsg( 'supportedlanguages-portallink', $code, $locals[$code], $natives[$code] );
+				$headerText = $this->msg( 'supportedlanguages-portallink' )->params( $code, $locals[$code], $natives[$code] )->escaped();
 			} else {
 				// No CLDR, so a less localised header and link title.
-				$headerText = wfMsg( 'supportedlanguages-portallink-nocldr', $code, $natives[$code] );
+				$headerText = $this->msg( 'supportedlanguages-portallink-nocldr' )->params( $code, $natives[$code] )->escaped();
 			}
 
 			$headerText = htmlspecialchars( $headerText );
 
-			$wgOut->addHtml( Html::openElement( 'h2', array( 'id' => $code ) ) );
+			$out->addHtml( Html::openElement( 'h2', array( 'id' => $code ) ) );
 			if ( defined( 'NS_PORTAL' ) ) {
 				$portalTitle = Title::makeTitleSafe( NS_PORTAL, $code );
-				$wgOut->addHtml( Linker::linkKnown( $portalTitle, $headerText ) );
+				$out->addHtml( Linker::linkKnown( $portalTitle, $headerText ) );
 			} else {
-				$wgOut->addHtml( $headerText );
+				$out->addHtml( $headerText );
 			}
 
-			$wgOut->addHTML( "</h2>" );
+			$out->addHTML( "</h2>" );
 
 			// Add useful links for language stats and recent changes for the language.
 			$links = array();
@@ -132,16 +133,16 @@ class SpecialSupportedLanguages extends SpecialPage {
 				),
 				array( 'known', 'noclasses' )
 			);
-			$linkList = $wgLang->listToText( $links );
+			$linkList = $lang->listToText( $links );
 
-			$wgOut->addHTML( "<p>" . $linkList . "</p>\n" );
+			$out->addHTML( "<p>" . $linkList . "</p>\n" );
 			$this->makeUserList( $users[$code], $editcounts, $lastedits );
 
 		}
-		$wgOut->addHtml( Html::element( 'hr' ) );
-		$wgOut->addWikiMsg( 'supportedlanguages-count', $wgLang->formatNum( count( $users ) ) );
+		$out->addHtml( Html::element( 'hr' ) );
+		$out->addWikiMsg( 'supportedlanguages-count', $lang->formatNum( count( $users ) ) );
 
-		$cache->set( $cachekey, $wgOut->getHTML(), 3600 );
+		$cache->set( $cachekey, $out->getHTML(), 3600 );
 	}
 
 	protected function languageCloud() {
@@ -247,10 +248,10 @@ class SpecialSupportedLanguages extends SpecialPage {
 	}
 
 	protected function outputLanguageCloud( $names ) {
-		global $wgOut;
+		$out = $this->getOutput();
 
 		$langs = $this->languageCloud();
-		$wgOut->addHtml( '<div class="tagcloud">' );
+		$out->addHtml( '<div class="tagcloud">' );
 		$langs = $this->shuffle_assoc( $langs );
 		foreach ( $langs as $k => $v ) {
 			$name = isset( $names[$k] ) ? $names[$k] : $k;
@@ -264,14 +265,12 @@ class SpecialSupportedLanguages extends SpecialPage {
 			);
 
 			$tag = Html::element( 'a', $params, $name );
-			$wgOut->addHtml( $tag . "\n" );
+			$out->addHtml( $tag . "\n" );
 		}
-		$wgOut->addHtml( '</div>' );
+		$out->addHtml( '</div>' );
 	}
 
 	protected function makeUserList( $users, $editcounts, $lastedits ) {
-		global $wgOut, $wgLang;
-
 		$day = 60 * 60 * 24;
 
 		// Scale of the activity colors, anything
@@ -293,8 +292,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 				$last = wfTimestamp( TS_UNIX ) - $lastedits[$username];
 				$last = round( $last / $day );
-				$attribs['title'] = wfMsgExt( 'supportedlanguages-activity', 'parsemag',
-					$username, $wgLang->formatNum( $count ), $wgLang->formatNum( $last ) );
+				$attribs['title'] = $this->msg( 'supportedlanguages-activity', $username )->numParams( $count, $last )->text();
 				$last = max( 1, min( $period, $last ) );
 				$styles['border-bottom'] = '3px solid #' . $this->getActivityColour( $period - $last, $period );
 				# $styles['color'] = '#' . $this->getBackgroundColour( $period - $last, $period );
@@ -308,12 +306,11 @@ class SpecialSupportedLanguages extends SpecialPage {
 			$links[] = Linker::link( $title, $enc, $attribs );
 		}
 
-		$wgOut->addHTML( "<p class='mw-translate-spsl-translators'>" . wfMsgExt(
-			'supportedlanguages-translators',
-			'parsemag',
-			$wgLang->listToText( $links ),
-			count( $links )
-		) . "</p>\n" );
+		$linkList = $this->getLanguage()->listToText( $links );
+		$html  = "<p class='mw-translate-spsl-translators'>";
+		$html .= $this->msg( 'supportedlanguages-translators', $linkList,	count( $links ) )->text();
+		$html .= "</p>\n";
+		$this->getOutput()->addHTML( $html );
 	}
 
 	protected function getUserStats() {
@@ -393,13 +390,11 @@ class SpecialSupportedLanguages extends SpecialPage {
 	}
 
 	protected function getColorLegend() {
-		global $wgLang;
-
 		$legend = '';
 		$period = $this->period;
 
 		for ( $i = 0; $i <= $period; $i += 30 ) {
-			$iFormatted = $wgLang->formatNum( $i );
+			$iFormatted = htmlspecialchars( $this->getLanguage()->formatNum( $i ) );
 			$legend .= '<span style="background-color:#' . $this->getActivityColour( $period - $i, $period ) . "\"> $iFormatted</span>";
 		}
 		return $legend;

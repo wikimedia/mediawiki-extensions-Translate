@@ -5,7 +5,8 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2010, Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2010-2012, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -16,26 +17,12 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialFirstSteps extends UnlistedSpecialPage {
-	/**
-	 * @var User
-	 */
-	protected $user;
-
-	/**
-	 * @var OutputPage
-	 */
-	protected $out;
-
 	public function __construct() {
 		parent::__construct( 'FirstSteps' );
 	}
 
 	public function execute( $params ) {
-		global $wgOut, $wgUser;
-		$this->out = $wgOut;
-		$this->user = $wgUser;
-
-		$this->out->addWikiMsg( 'translate-fs-intro' );
+		$this->getOutput()->addWikiMsg( 'translate-fs-intro' );
 		$step = false;
 
 		$step = $this->showSignup( $step );
@@ -46,11 +33,10 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$step = $this->showEmail( $step );
 
 		if ( $step === 'translate-fs-target-title' ) {
-			global $wgLang;
-			$this->out->redirect( SpecialPage::getTitleFor( 'LanguageStats', $wgLang->getCode() )->getLocalUrl() );
+			$this->getOutput()->redirect( SpecialPage::getTitleFor( 'LanguageStats', $this->getLanguage()->getCode() )->getLocalUrl() );
 		}
 
-		$this->out->setPageTitle( htmlspecialchars( wfMsg( 'translate-fs-pagetitle', wfMsg( $step ) ) ) );
+		$this->getOutput()->setPageTitle( htmlspecialchars( wfMsg( 'translate-fs-pagetitle', wfMsg( $step ) ) ) );
 	}
 
 	protected function showSignup( $step ) {
@@ -59,65 +45,64 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$header->style( 'opacity', 0.4 )->content( wfMsg( $step_message ) );
 
 		if ( $step ) {
-			$this->out->addHtml( $header );
+			$this->getOutput()->addHtml( $header );
 			return $step;
 		}
 
-		if ( $this->user->isLoggedIn() ) {
+		if ( $this->getUser()->isLoggedIn() ) {
 			$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-done' ) );
-			$this->out->addHtml( $header );
+			$this->getOutput()->addHtml( $header );
 			return $step;
 		} else {
 			// Go straight to create account (or login) page
 			$create = SpecialPage::getTitleFor( 'Userlogin' );
 			$returnto = $this->getTitle()->getPrefixedText();
-			$this->out->redirect( $create->getLocalUrl( array( 'returnto' => $returnto , 'type' => 'signup' ) ) );
+			$this->getOutput()->redirect( $create->getLocalUrl( array( 'returnto' => $returnto , 'type' => 'signup' ) ) );
 		}
 	}
 
 	protected function showSettings( $step ) {
-		global $wgRequest, $wgLang;
-
 		$header = new HtmlTag( 'h2' );
 		$step_message = 'translate-fs-settings-title';
 		$header->style( 'opacity', 0.4 )->content( wfMsg( $step_message ) );
 
 		if ( $step ) {
-			$this->out->addHtml( $header );
+			$this->getOutput()->addHtml( $header );
 			return $step;
 		}
 
-		if ( $wgRequest->wasPosted() &&
-			$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) &&
-			$wgRequest->getText( 'step' ) === 'settings' )
+		$request = $this->getRequest();
+		if ( $request->wasPosted() &&
+			$this->getUser()->matchEditToken( $request->getVal( 'token' ) ) &&
+			$request->getText( 'step' ) === 'settings' )
 		{
-			$this->user->setOption( 'language', $wgRequest->getVal( 'primary-language' ) );
-			$this->user->setOption( 'translate-firststeps', '1' );
+			$this->getUser()->setOption( 'language', $request->getVal( 'primary-language' ) );
+			$this->getUser()->setOption( 'translate-firststeps', '1' );
 
 			$assistant = array();
 			for ( $i = 0; $i < 10; $i++ ) {
-				$language = $wgRequest->getText( "assistant-language-$i", '-' );
+				$language = $request->getText( "assistant-language-$i", '-' );
 				if ( $language === '-' ) continue;
 				$assistant[] = $language;
 			}
 
 			if ( count( $assistant ) ) {
-				$this->user->setOption( 'translate-editlangs', implode( ',', $assistant ) );
+				$this->getUser()->setOption( 'translate-editlangs', implode( ',', $assistant ) );
 			}
-			$this->user->saveSettings();
+			$this->getUser()->saveSettings();
 			// Reload the page if language changed, just in case and this is the easieast way
-			$this->out->redirect( $this->getTitle()->getLocalUrl() );
+			$this->getOutput()->redirect( $this->getTitle()->getLocalUrl() );
 		}
 
-		if ( $this->user->getOption( 'translate-firststeps' ) === '1' ) {
+		if ( $this->getUser()->getOption( 'translate-firststeps' ) === '1' ) {
 			$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-done' ) );
-			$this->out->addHtml( $header );
+			$this->getOutput()->addHtml( $header );
 			return $step;
 		}
 
-		$this->out->addHtml( $header->style( 'opacity', false ) );
+		$this->getOutput()->addHtml( $header->style( 'opacity', false ) );
 
-		$code = $wgLang->getCode();
+		$code = $this->getLanguage()->getCode();
 
 		$languages = $this->languages( $code );
 		$selector = new XmlSelect();
@@ -126,31 +111,31 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		$output = Html::openElement( 'form', array( 'method' => 'post' ) );
 		$output .= Html::hidden( 'step', 'settings' );
-		$output .= Html::hidden( 'token', $this->user->editToken() );
+		$output .= Html::hidden( 'token', $this->getUser()->editToken() );
 		$output .= Html::hidden( 'title', $this->getTitle() );
 		$output .= Html::openElement( 'table' );
 
 		$name = $id = 'primary-language';
 		$selector->setAttribute( 'id', $id );
 		$selector->setAttribute( 'name', $name );
-		$text = wfMessage( 'translate-fs-settings-planguage' )->text();
+		$text = $this->msg( 'translate-fs-settings-planguage' )->text();
 		$row  = self::wrap( 'td', Xml::label( $text, $id ) );
 		$row .= self::wrap( 'td', $selector->getHtml() );
 		$output .= self::wrap( 'tr', $row );
 
-		$row = Html::rawElement( 'td', array( 'colspan' => 2 ), wfMessage( 'translate-fs-settings-planguage-desc' )->parse() );
+		$row = Html::rawElement( 'td', array( 'colspan' => 2 ), $this->msg( 'translate-fs-settings-planguage-desc' )->parse() );
 		$output .= self::wrap( 'tr', $row );
 
-		$helpers = $this->getHelpers( $this->user, $code );
+		$helpers = $this->getHelpers( $this->getUser(), $code );
 
 		$selector = new XmlSelect();
-		$selector->addOption( wfMessage( 'translate-fs-selectlanguage' )->text(), '-' );
+		$selector->addOption( $this->msg( 'translate-fs-selectlanguage' )->text(), '-' );
 		$selector->addOptions( $languages );
 
 		$num = max( 2, count( $helpers ) );
 		for ( $i = 0; $i < $num; $i++ ) {
 			$id = $name = "assistant-language-$i";
-			$text = wfMessage( 'translate-fs-settings-slanguage' )->numParams( $i + 1 )->text();
+			$text = $this->msg( 'translate-fs-settings-slanguage' )->numParams( $i + 1 )->text();
 			$selector->setDefault( isset( $helpers[$i] ) ? $helpers[$i] : false );
 			$selector->setAttribute( 'id', $id );
 			$selector->setAttribute( 'name', $name );
@@ -161,7 +146,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		}
 
 		$output .= Html::openElement( 'tr' );
-		$output .= Html::rawElement( 'td', array( 'colspan' => 2 ), wfMessage( 'translate-fs-settings-slanguage-desc' )->parse() );
+		$output .= Html::rawElement( 'td', array( 'colspan' => 2 ), $this->msg( 'translate-fs-settings-slanguage-desc' )->parse() );
 		$output .= Html::closeElement( 'tr' );
 		$output .= Html::openElement( 'tr' );
 		$output .= Html::rawElement( 'td', array( 'colspan' => 2 ), Xml::submitButton( wfMsg( 'translate-fs-settings-submit' ) ) );
@@ -169,7 +154,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$output .= Html::closeElement( 'table' );
 		$output .= Html::closeElement( 'form' );
 
-		$this->out->addHtml( $output );
+		$this->getOutput()->addHtml( $output );
 
 		return $step_message;
 	}
@@ -194,8 +179,6 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 	}
 
 	protected function showUserpage( $step ) {
-		global $wgRequest;
-
 		$textareaId = 'userpagetext';
 
 		$header = new HtmlTag( 'h2' );
@@ -203,22 +186,23 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$header->style( 'opacity', 0.4 )->content( wfMsg( $step_message ) );
 
 		if ( $step ) {
-			$this->out->addHtml( $header );
+			$this->getOutput()->addHtml( $header );
 			return $step;
 		}
 
-		$userpage = $this->user->getUserPage();
+		$userpage = $this->getUser()->getUserPage();
 		$preload = "I am My Name and....";
 
-		if ( $wgRequest->wasPosted() &&
-			$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) &&
-			$wgRequest->getText( 'step' ) === 'userpage' )
+		$request = $this->getRequest();
+		if ( $request->wasPosted() &&
+			$this->getUser()->matchEditToken( $request->getVal( 'token' ) ) &&
+			$request->getText( 'step' ) === 'userpage' )
 		{
 			$babel = array();
 			for ( $i = 0; $i < 5; $i++ ) {
-				$language = $wgRequest->getText( "babel-$i-language", '-' );
+				$language = $request->getText( "babel-$i-language", '-' );
 				if ( $language === '-' ) continue;
-				$level = $wgRequest->getText( "babel-$i-level", '-' );
+				$level = $request->getText( "babel-$i-level", '-' );
 				$babel[$language] = $level;
 			}
 
@@ -233,17 +217,17 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			$babeltext .= "}}\n";
 
 			$article = new Article( $userpage, 0 );
-			$status = $article->doEdit( $babeltext . $wgRequest->getText( $textareaId ), $this->getTitle() );
+			$status = $article->doEdit( $babeltext . $request->getText( $textareaId ), $this->getTitle() );
 
 			if ( $status->isOK() ) {
 				$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-done' ) );
-				$this->out->addHtml( $header );
-				$this->out->addWikiMsg( 'translate-fs-userpage-done' );
+				$this->getOutput()->addHtml( $header );
+				$this->getOutput()->addWikiMsg( 'translate-fs-userpage-done' );
 
 				return false;
 			} else {
-				$this->out->addWikiText( $status->getWikiText() );
-				$preload = $wgRequest->getText( 'userpagetext' );
+				$this->getOutput()->addWikiText( $status->getWikiText() );
+				$preload = $request->getText( 'userpagetext' );
 			}
 		}
 
@@ -254,44 +238,44 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 			if ( preg_match( '/{{#babel:/i', $text ) ) {
 				$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-done' ) );
-				$this->out->addHtml( $header );
+				$this->getOutput()->addHtml( $header );
 
 				return false;
 			}
 		}
 
-		$this->out->addHtml( $header->style( 'opacity', false ) );
+		$this->getOutput()->addHtml( $header->style( 'opacity', false ) );
 
-		$this->out->addWikiMsg( 'translate-fs-userpage-help' );
-		global $wgLang;
+		$this->getOutput()->addWikiMsg( 'translate-fs-userpage-help' );
 
 		$form = new HtmlTag( 'form' );
 		$items = new TagContainer();
 		$form->param( 'method', 'post' )->content( $items );
 
 		$items[] = new RawHtml( Html::hidden( 'step', 'userpage' ) );
-		$items[] = new RawHtml( Html::hidden( 'token', $this->user->editToken() ) );
+		$items[] = new RawHtml( Html::hidden( 'token', $this->getUser()->editToken() ) );
 		$items[] = new RawHtml( Html::hidden( 'title', $this->getTitle() ) );
 
-		$languages = $this->languages( $wgLang->getCode() );
+		$lang = $this->getLanguage();
+		$languages = $this->languages( $lang->getCode() );
 		$selector = new XmlSelect();
-		$selector->addOption( wfMessage( 'translate-fs-selectlanguage' )->text(), '-' );
+		$selector->addOption( $this->msg( 'translate-fs-selectlanguage' )->text(), '-' );
 		$selector->addOptions( $languages );
 
 		// Building a skill selector
 		$skill = new XmlSelect();
 		$levels = 'N,5,4,3,2,1';
 		foreach ( explode( ',', $levels ) as $level ) {
-			$skill->addOption( wfMessage( "translate-fs-userpage-level-$level" )->text(), $level );
+			$skill->addOption( $this->msg( "translate-fs-userpage-level-$level" )->text(), $level );
 		}
 		for ( $i = 0; $i < 5; $i++ ) {
 			// Prefill en-2 and [wgLang]-N if [wgLang] != en
 			if ( $i === 0 ) {
 				$skill->setDefault( '2' );
 				$selector->setDefault( 'en' );
-			} elseif ( $i === 1 && $wgLang->getCode() !== 'en' ) {
+			} elseif ( $i === 1 && $lang->getCode() !== 'en' ) {
 				$skill->setDefault( 'N' );
-				$selector->setDefault( $wgLang->getCode() );
+				$selector->setDefault( $lang->getCode() );
 			} else {
 				$skill->setDefault( false );
 				$selector->setDefault( false );
@@ -307,40 +291,40 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$items[] = $textarea->param( 'rows' , 5 )->id( $textareaId )->param( 'name', $textareaId );
 		$items[] = new RawHtml( Xml::submitButton( wfMsg( 'translate-fs-userpage-submit' ) ) );
 
-		$this->out->addHtml( $form );
+		$this->getOutput()->addHtml( $form );
 
 		return $step_message;
 	}
 
 	protected function showPermissions( $step ) {
-		global $wgLang, $wgRequest;
 		$header = new HtmlTag( 'h2' );
 		$step_message = 'translate-fs-permissions-title';
 		$header->content( wfMsg( $step_message ) )->style( 'opacity', 0.4 );
 
 		if ( $step ) {
-			$this->out->addHtml( $header );
+			$this->getOutput()->addHtml( $header );
 			return $step;
 		}
 
-		if ( $wgRequest->wasPosted() &&
-			$this->user->matchEditToken( $wgRequest->getVal( 'token' ) ) &&
-			$wgRequest->getText( 'step' ) === 'permissions' )
+		$request = $this->getRequest();
+		if ( $request->wasPosted() &&
+			$this->user->matchEditToken( $request->getVal( 'token' ) ) &&
+			$request->getText( 'step' ) === 'permissions' )
 		{
 			// This is ridiculous
 			global $wgCaptchaTriggers;
 			$captcha = $wgCaptchaTriggers;
 			$wgCaptchaTriggers = null;
 
-			$language = $wgRequest->getVal( 'primary-language' );
-			$message = $wgRequest->getText( 'message' );
+			$language = $request->getVal( 'primary-language' );
+			$message = $request->getText( 'message' );
 			if ( trim( $message ) === '' ) {
 				$message = '...';
 			}
 			$params = array(
 				'action' => 'threadaction',
 				'threadaction' => 'newthread',
-				'token' => $this->user->editToken(),
+				'token' => $this->getUser()->editToken(),
 				'talkpage' => 'Project:Translator',
 				'subject' => "{{LanguageHeader|$language}}",
 				'reason' => 'Using Special:FirstSteps',
@@ -352,42 +336,43 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			$result = $api->getResultData();
 			$wgCaptchaTriggers = $captcha;
 			$page = $result['threadaction']['thread']['thread-title'];
-			$this->user->setOption( 'translate-firststeps-request', $page );
-			$this->user->saveSettings();
+			$this->getUser()->setOption( 'translate-firststeps-request', $page );
+			$this->getUser()->saveSettings();
 		}
 
-		$page = $this->user->getOption( 'translate-firststeps-request' );
-		if ( $this->user->isAllowed( 'translate' ) ) {
+		$page = $this->getUser()->getOption( 'translate-firststeps-request' );
+		if ( $this->getUser()->isAllowed( 'translate' ) ) {
 			$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-done' ) );
-			$this->out->addHtml( $header );
+			$this->getOutput()->addHtml( $header );
 			return $step;
 		} elseif ( $page ) {
 			$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-pending' ) );
-			$this->out->addHtml( $header->style( 'opacity', false ) );
-			$this->out->addWikiMsg( 'translate-fs-permissions-pending', $page );
+			$this->getOutput()->addHtml( $header->style( 'opacity', false ) );
+			$this->getOutput()->addWikiMsg( 'translate-fs-permissions-pending', $page );
 			return $step_message;
 		}
 
-		$this->out->addHtml( $header->style( 'opacity', false ) );
-		$this->out->addWikiMsg( 'translate-fs-permissions-help' );
+		$this->getOutput()->addHtml( $header->style( 'opacity', false ) );
+		$this->getOutput()->addWikiMsg( 'translate-fs-permissions-help' );
 
 		$output = Html::openElement( 'form', array( 'method' => 'post' ) );
 		$output .= Html::hidden( 'step', 'permissions' );
-		$output .= Html::hidden( 'token', $this->user->editToken() );
+		$output .= Html::hidden( 'token', $this->getUser()->editToken() );
 		$output .= Html::hidden( 'title', $this->getTitle() );
 		$name = $id = 'primary-language';
 		$selector = new XmlSelect();
-		$selector->addOptions( $this->languages( $wgLang->getCode() ) );
+		$langCode = $this->getLanguage()->getCode();
+		$selector->addOptions( $this->languages( $langCode ) );
 		$selector->setAttribute( 'id', $id );
 		$selector->setAttribute( 'name', $name );
-		$selector->setDefault( $wgLang->getCode() );
-		$text = wfMessage( 'translate-fs-permissions-planguage' )->text();
+		$selector->setDefault( $langCode );
+		$text = $this->msg( 'translate-fs-permissions-planguage' )->text();
 		$output .= Xml::label( $text, $id ) . "&#160;" . $selector->getHtml() . '<br />';
 		$output .= Html::element( 'textarea', array( 'rows' => 5, 'name' => 'message' ), '' );
 		$output .= Xml::submitButton( wfMsg( 'translate-fs-permissions-submit' ) );
 		$output .= Html::closeElement( 'form' );
 
-		$this->out->addHtml( $output );
+		$this->getOutput()->addHtml( $output );
 		return $step_message;
 	}
 
@@ -398,14 +383,13 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		if ( $step ) {
 			$header->style( 'opacity', 0.4 );
-			$this->out->addHtml( $header );
+			$this->getOutput()->addHtml( $header );
 
 			return $step;
 		}
 
-		global $wgLang;
-		$this->out->addHtml( $header );
-		$this->out->addWikiMsg( 'translate-fs-target-text', $wgLang->getCode() );
+		$this->getOutput()->addHtml( $header );
+		$this->getOutput()->addWikiMsg( 'translate-fs-target-text', $this->getLanguage()->getCode() );
 
 		return $step_message;
 	}
@@ -416,18 +400,18 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$header->style( 'opacity', 0.4 )->content( wfMsg( $step_message ) );
 
 		if ( $step && ( $step !== 'translate-fs-target-title' && $step !== 'translate-fs-permissions-title' ) ) {
-			$this->out->addHtml( $header );
+			$this->getOutput()->addHtml( $header );
 			return $step;
 		}
 
-		if ( $this->user->isEmailConfirmed() ) {
+		if ( $this->getUser()->isEmailConfirmed() ) {
 			$header->content( $header->content . wfMsg( 'translate-fs-pagetitle-done' ) );
-			$this->out->addHtml( $header );
+			$this->getOutput()->addHtml( $header );
 			return $step; // Start translating step
 		}
 
-		$this->out->addHtml( $header->style( 'opacity', false ) );
-		$this->out->addWikiMsg( 'translate-fs-email-text' );
+		$this->getOutput()->addHtml( $header->style( 'opacity', false ) );
+		$this->getOutput()->addWikiMsg( 'translate-fs-email-text' );
 
 		return $step_message;
 	}
