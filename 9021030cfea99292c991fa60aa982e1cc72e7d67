@@ -16,6 +16,24 @@
       "revId": "9021030cfea99292c991fa60aa982e1cc72e7d67",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//7sY\u003d",
+        "filename": "tests/SpecialPagesTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-14T23:12:16Z",
+      "side": 1,
+      "message": "Yes, it is used by _autoload.php. It doesn\u0027t matter what the value is, we could just do $IP \u003d \u0027\u0027; too.",
+      "parentUuid": "AAAAQX//7s0\u003d",
+      "revId": "9021030cfea99292c991fa60aa982e1cc72e7d67",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
