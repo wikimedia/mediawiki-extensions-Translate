@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQX//8Uc\u003d",
+        "filename": "specials/SpecialFirstSteps.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-14T14:15:21Z",
+      "side": 1,
+      "message": "I would alias this locally $out \u003d $this-\u003egetOutput() to reduce repetition.",
+      "revId": "3155cc6ff2067812e924a93e8715f02605aba968",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//8Uo\u003d",
+        "filename": "specials/SpecialFirstSteps.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-14T14:15:21Z",
+      "side": 1,
+      "message": "I\u0027d split this into two lines:\n$title \u003d SpecialPage::getTitleFor( \u0027LanguageStats\u0027, $this-\u003egetLanguage()-\u003egetCode();\n$this-\u003egetOutput()-\u003eredirect( $title-\u003e-\u003egetLocalUrl() );",
+      "revId": "3155cc6ff2067812e924a93e8715f02605aba968",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//8U0\u003d",
+        "filename": "specials/SpecialFirstSteps.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-14T14:15:21Z",
+      "side": 1,
+      "message": "Did you not replace wfMsg here on purpose?",
+      "revId": "3155cc6ff2067812e924a93e8715f02605aba968",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//8UU\u003d",
+        "filename": "specials/SpecialFirstSteps.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-14T14:15:21Z",
+      "side": 1,
+      "message": "Here I would pull also $user \u003d $this-\u003egetUser(), and $out.",
+      "revId": "3155cc6ff2067812e924a93e8715f02605aba968",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//8UI\u003d",
+        "filename": "specials/SpecialImportTranslations.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-14T14:15:21Z",
+      "side": 1,
+      "message": "2012",
+      "revId": "3155cc6ff2067812e924a93e8715f02605aba968",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
