@@ -5,7 +5,7 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2008-2011 Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2008-2012 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -255,13 +255,12 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	public function listPages() {
-		global $wgOut;
-		$out = $wgOut;
+		$out = $this->getOutput();
 
 		$res = $this->loadPagesFromDB();
 		$allpages = $this->buildPageArray( $res );
 		if ( !count( $allpages ) ) {
-			$wgOut->addWikiMsg( 'tpt-list-nopages' );
+			$out->addWikiMsg( 'tpt-list-nopages' );
 			return;
 		}
 		$types = $this->classifyPages( $allpages );
@@ -269,7 +268,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$pages = $types['proposed'];
 		if ( count( $pages ) ) {
 			$out->wrapWikiMsg( '== $1 ==', 'tpt-new-pages-title' );
-			$wgOut->addWikiMsg( 'tpt-new-pages', count( $pages ) );
+			$out->addWikiMsg( 'tpt-new-pages', count( $pages ) );
 			$out->addHtml( '<ol>' );
 			foreach ( $pages as $page ) {
 				$link = Linker::link( $page['title'] );
