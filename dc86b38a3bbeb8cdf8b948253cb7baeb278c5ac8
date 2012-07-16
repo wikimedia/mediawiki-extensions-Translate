@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQX//7X0\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-16T18:33:59Z",
+      "side": 1,
+      "message": "The hook name is pretty generic, it could refer to any options instead of the options used on Special:Translate.\n\nIt can also be used to override any values, not just task values.",
+      "revId": "dc86b38a3bbeb8cdf8b948253cb7baeb278c5ac8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
