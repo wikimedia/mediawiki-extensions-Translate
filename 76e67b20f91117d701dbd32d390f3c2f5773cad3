@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQX//7X8\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-16T18:32:08Z",
+      "side": 1,
+      "message": "Do not call this group. That name is already used by the group selector. Perhaps you could add it as a class or data-groupclass attribute?",
+      "revId": "76e67b20f91117d701dbd32d390f3c2f5773cad3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
