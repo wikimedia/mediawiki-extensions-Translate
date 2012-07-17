@@ -501,7 +501,7 @@ class SpecialTranslate extends SpecialPage {
 
 			$navigation  = $this->msg( 'translate-page-showing' )->numParams( $start, $stop, $total )->parse();
 			$navigation .= ' ';
-			$navigation .= $this->msg( 'translate-page-paging-links' )->rawParams( $previous, $next )->escaped();
+			$navigation .= $this->msg( 'translate-page-paging-links' )->rawParams( $previous, $nextious )->escaped();
 		}
 
 		return
@@ -643,7 +643,7 @@ class SpecialTranslate extends SpecialPage {
 			$stateConfig
 		);
 
-		$user = $this-getUser();
+		$user = $this->getUser();
 		if ( $user->isAllowed( 'translate-groupreview' ) ) {
 			// Add an option for every state
 			foreach ( $stateConfig as $state => $config ) {
