@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQX//7PM\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-17T08:04:22Z",
+      "side": 1,
+      "message": "Isn\u0027t this obvious from the filename?",
+      "revId": "7ac28e60e407d79a7ae34ab86b4037f4770cbfb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//7PI\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-17T08:04:22Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be part of the comprehensive guide to avoid duplication?",
+      "revId": "7ac28e60e407d79a7ae34ab86b4037f4770cbfb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//7PE\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-17T08:04:22Z",
+      "side": 1,
+      "message": "Trailing space",
+      "revId": "7ac28e60e407d79a7ae34ab86b4037f4770cbfb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//7PA\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-17T08:04:22Z",
+      "side": 1,
+      "message": "Trailing space, typo: hoook",
+      "revId": "7ac28e60e407d79a7ae34ab86b4037f4770cbfb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//7O8\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-17T08:04:22Z",
+      "side": 1,
+      "message": "Typo: talbe",
+      "revId": "7ac28e60e407d79a7ae34ab86b4037f4770cbfb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//7O4\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-17T08:04:22Z",
+      "side": 1,
+      "message": "to the default translation editor",
+      "revId": "7ac28e60e407d79a7ae34ab86b4037f4770cbfb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//7Ow\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-17T08:04:22Z",
+      "side": 1,
+      "message": "Could use MessageHandle here for conveniency.",
+      "revId": "7ac28e60e407d79a7ae34ab86b4037f4770cbfb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//7O0\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-17T08:04:22Z",
+      "side": 1,
+      "message": "object, right?",
+      "revId": "7ac28e60e407d79a7ae34ab86b4037f4770cbfb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//7Oo\u003d",
+        "filename": "resources/ext.translate.quickedit.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-17T08:04:22Z",
+      "side": 1,
+      "message": "What do these rules do?",
+      "revId": "7ac28e60e407d79a7ae34ab86b4037f4770cbfb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//7Ok\u003d",
+        "filename": "resources/ext.translate.quickedit.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-17T08:04:22Z",
+      "side": 1,
+      "message": "Quote?",
+      "revId": "7ac28e60e407d79a7ae34ab86b4037f4770cbfb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//7Og\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-17T08:04:22Z",
+      "side": 1,
+      "message": "Some missing whitespace here and below",
+      "revId": "7ac28e60e407d79a7ae34ab86b4037f4770cbfb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//7OQ\u003d",
+        "filename": "utils/MessageTable.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-17T08:04:22Z",
+      "side": 1,
+      "message": "For more flexibility, I would pass the following variables; $m -\u003e message, $title, $message -\u003e translation and $rclasses",
+      "revId": "7ac28e60e407d79a7ae34ab86b4037f4770cbfb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//7OM\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-17T08:04:22Z",
+      "side": 1,
+      "message": "Just pass $this-\u003ehandle, you can all needed information from that.",
+      "revId": "7ac28e60e407d79a7ae34ab86b4037f4770cbfb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
