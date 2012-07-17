@@ -850,7 +850,8 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	 * @return array
 	 */
 	public function getDefinitions() {
-		$dbr = wfGetDB( DB_SLAVE );
+		// Avoid replication issues
+		$dbr = wfGetDB( DB_MASTER );
 		$tables = 'translate_sections';
 		$vars = array( 'trs_key', 'trs_text' );
 		$conds = array( 'trs_page' => $this->getTitle()->getArticleID() );
