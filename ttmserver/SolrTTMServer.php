@@ -19,12 +19,14 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 	protected $updates;
 
 	public function __construct( $config ) {
+		wfProfileIn( __METHOD__ );
 		parent::__construct( $config );
 		if ( isset( $config['config'] ) ) {
 			$this->client = new Solarium_Client( $config['config'] );
 		} else {
 			$this->client = new Solarium_Client();
 		}
+		wfProfileOut( __METHOD__ );
 	}
 
 	public function isLocalSuggestion( array $suggestion ) {
@@ -36,6 +38,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 	}
 
 	public function query( $sourceLanguage, $targetLanguage, $text ) {
+		wfProfileIn( __METHOD__ );
 		$len = mb_strlen( $text );
 		$min = ceil( max( $len * $this->config['cutoff'], 2 ) );
 		$max = floor( $len / $this->config['cutoff'] );
@@ -87,7 +90,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 				'uri' => $doc->uri . '/' . $targetLanguage,
 			);
 		}
-
+		wfProfileOut( __METHOD__ );
 		return $suggestions;
 	}
 
@@ -114,6 +117,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 			return false;
 		}
 
+		wfProfileIn( __METHOD__ );
 		$doc = $this->createDocument( $handle, $targetLanguage, $definition );
 
 		$query = $this->client->createSelect();
@@ -122,7 +126,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 
 		$found = count( $resultset );
 		if ( $found > 1 ) {
-			throw new MWException( 'Found multiple documents' );
+			error_log( "Found multiple documents with global id {$doc->globalid}" );
 		}
 
 		// Fill in the missing fields
@@ -144,6 +148,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		$update->addCommit();
 		$this->client->update( $update );
 
+		wfProfileOut( __METHOD__ );
 		return true;
 	}
 
