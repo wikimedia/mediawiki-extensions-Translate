@@ -43,20 +43,22 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 
 		$query = $this->client->createSelect();
 		$query->setFields( array( 'uri', 'wiki', 'content', $languageField, 'messageid' ) );
-		$query->setRows( 2000 );
+		$query->setRows( 250 );
 		$helper = $query->getHelper();
-		$dist = $helper->escapePhrase( $text );
-		$dist = "strdist($dist,text,edit)";
 
-		$queryString = 'content:%P1% _val_:%P2%';
-		$query->setQuery( $queryString, array( $text, $dist ) );
+		$queryString = 'content:%P1%';
+		$query->setQuery( $queryString, array( $text ) );
 
 		$query->createFilterQuery( 'lang' )
 			->setQuery( 'language:%T1%', array( $sourceLanguage ) );
 		$query->createFilterQuery( 'trans' )
 			->setQuery( '%T1%:["" TO *]', array( $languageField ) );
 		$query->createFilterQuery( 'len' )
-			->setQuery( "charcount:[%T1% TO %T2%]", array( $min, $max ) );
+			->setQuery( $helper->rangeQuery( 'charcount', $min, $max ) );
+
+		$dist = $helper->escapePhrase( $text );
+		$dist = "strdist($dist,text,edit)";
+		$query->addSort( $dist, 'asc' );
 
 		$resultset = $this->client->select( $query );
 
@@ -74,7 +76,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 				$edCache[$candidate] = $dist;
 			}
 			if ( $quality < $this->config['cutoff'] ) {
-				continue;
+				break;
 			}
 
 			$suggestions[] = array(
