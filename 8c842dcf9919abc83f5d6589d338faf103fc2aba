@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQX//6U8\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-18T21:57:01Z",
+      "side": 1,
+      "message": "page needs escaping\n\nyou can\u0027t use newText as html.\n\nSee around line 320 how this is done with the embedded editor.",
+      "revId": "8c842dcf9919abc83f5d6589d338faf103fc2aba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
