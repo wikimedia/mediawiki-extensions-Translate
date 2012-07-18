@@ -415,7 +415,6 @@ class CDBMessageIndex extends MessageIndex {
 
 	protected function get( $key ) {
 		$reader = $this->getReader();
-
 		// We might have the full cache loaded
 		if ( $this->index !== null ) {
 			if ( isset( $this->index[$key] ) ) {
@@ -454,12 +453,19 @@ class CDBMessageIndex extends MessageIndex {
 	}
 
 	protected function getReader() {
-		$file = TranslateUtils::cacheFile( $this->filename );
-		if ( $this->reader === null ) {
-			if ( !file_exists( $file ) ) {
-				$this->index = $this->rebuild();
-			}
+		if ( $this->reader ) {
+			return $this->reader;
 		}
+
+		$file = TranslateUtils::cacheFile( $this->filename );
+		if ( !file_exists( $file ) ) {
+			/* The rebuild() will call retrieve(), which we prevent from
+			 * recursing by setting the index to empty array now.
+			 */
+			$this->index = array();
+			$this->index = $this->rebuild();
+		}
+
 		return $this->reader = CdbReader::open( $file );
 	}
 
