@@ -212,8 +212,8 @@ class SpecialTranslate extends SpecialPage {
 			$errors['group'] = $this->msg( 'translate-page-no-such-group' )->text();
 			$this->options['group'] = $this->defaults['group'];
 		} else {
-			$translatableLanguages = $this->group->getTranslatableLanguages();
-			if ( !isset( $translatableLanguages[$this->options['language']] ) ) {
+			$languages = $this->group->getTranslatableLanguages();
+			if ( $languages !== null && !isset( $languages[$this->options['language']] ) ) {
 				$errors['language'] = $this->msg( 'translate-language-disabled' )->text();
 			}
 		}

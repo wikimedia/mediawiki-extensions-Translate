@@ -309,6 +309,13 @@ class StatsTable {
 			}
 		}
 
+
+		$group = MessageGroups::getGroup( $groupId );
+		$languages = $group->getTranslatableLanguages();
+		if ( $languages !== null && !isset( $languages[$code] ) ) {
+			$blacklisted = true;
+		}
+
 		$include = wfRunHooks( 'Translate:MessageGroupStats:isIncluded', array( $groupId, $code ) );
 		if ( !$include ) {
 			$blacklisted = true;

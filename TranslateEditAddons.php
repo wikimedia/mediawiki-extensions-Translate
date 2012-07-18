@@ -129,8 +129,8 @@ class TranslateEditAddons {
 		if ( $handle->isValid() ) {
 			$editpage->suppressIntro = true;
 			$group = $handle->getGroup();
-			$translatableLanguages = $group->getTranslatableLanguages( );
-			if ( $handle->getCode() && !isset( $translatableLanguages[$handle->getCode()] ) ) {
+			$languages = $group->getTranslatableLanguages();
+			if ( $handle->getCode() && $languages !== null && !isset( $languages[$handle->getCode()] ) ) {
 				$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-language-disabled' );
 				return false;
 			}
