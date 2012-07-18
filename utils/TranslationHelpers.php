@@ -291,6 +291,7 @@ class TranslationHelpers {
 			'sourcelanguage' => $source,
 			'targetlanguage' => $code,
 			'text' => $definition,
+			'*', // Because we hate IE
 		);
 
 		$json = Http::get( wfAppendQuery( $config['url'], $params ) );
