@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQX//6Ho\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-19T11:12:50Z",
+      "side": 1,
+      "message": "I think you meaned:\nreturn $( this ).data( \u0027title\u0027 ) \u003d\u003d\u003d page;",
+      "revId": "62df113ea280e5ae33c18b5fccfa0e93ef9f01e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//6Hk\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-19T11:12:50Z",
+      "side": 1,
+      "message": "I find tr.find( \u0027td\u0027 ).last() more readable.",
+      "revId": "62df113ea280e5ae33c18b5fccfa0e93ef9f01e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//6Hg\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-19T11:12:50Z",
+      "side": 1,
+      "message": "The code below should also add this class, for consistency.",
+      "revId": "62df113ea280e5ae33c18b5fccfa0e93ef9f01e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
