@@ -10,7 +10,6 @@
  * called from Special:Translate/editpage?page=Namespace:pagename.
  *
  * TODO list:
- * * On succesful save, update the MessageTable display too.
  * * Instead of hc'd onscript, give them a class and use necessary triggers
  *
  * @author Niklas Laxström
@@ -179,9 +178,18 @@
 			
 			var dialog = $( '<div>' ).attr( 'id', id ).appendTo( $( 'body' ) );
 			
-			var callbacks = {}
+			var callbacks = {};
 			callbacks.close = function () { dialog.dialog( 'close' ); };
 			callbacks.next = function () { mw.translate.openNext( page, group ); };
+			callbacks.success = function ( text ) {
+				var tr = $( 'tr', 'table.mw-sp-translate-table' ).filter( function () {
+					return $(this).data( 'title' ) == page;
+				} );
+				tr.find( 'td' ).last()
+					.html( convertWhiteSpaceToHTML( text ) )
+					.removeClass( 'untranslated' )
+					.addClass( 'justtranslated' );
+			};
 			mw.translate.openEditor( dialog, page, group, callbacks );
 
 			dialog.dialog( {
@@ -299,8 +307,9 @@
 			callbacks.success = function ( text ) {
 				// Update the cell value with the new translation
 				$this.find( 'td' ).last()
-					.removeClass( 'untranslated' )
 					.html( convertWhiteSpaceToHTML( text ) );
+					.removeClass( 'untranslated' )
+					.addClass( 'justtranslated' );
 			};
 			callbacks.close = function () {
 				$this.html( current );
