@@ -259,15 +259,24 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		return;
 	}
 
+	protected function getWorkflowStateValue( $target ) {
+		return isset( $this->states[$target] ) ? $this->states[$target] : '';
+	}
+
 	/**
 	 * If workflow states are configured, adds a cell with the workflow state to the row,
-	 * @param $target Whose workflow state do we want, such as language code or group id.
-	 * @return string
+	 * @param String $target Whose workflow state do we want, such as language code or group id.
+	 * @param String $state  The workflow state id
+	 * @return string Html
 	 */
-	function getWorkflowStateCell( $target ) {
+	function getWorkflowStateCell( $target, $state ) {
 		// This will be set by addWorkflowStatesColumn if needed
 		if ( !isset( $this->states ) ) {
 			return '';
+		}
+
+		if ( $state === '' ) {
+			return "\n\t\t" . $this->table->element( '', '', -1 );
 		}
 
 		if ( $this instanceof SpecialMessageGroupStats ) {
@@ -279,9 +288,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$group = MessageGroups::getGroup( $target );
 			$stateConfig = $group->getWorkflowConfiguration();
 		}
-
-
-		$state = isset( $this->states[$target] ) ? $this->states[$target] : '';
 
 		$sortValue = -1;
 		$stateColor = '';
@@ -441,40 +447,27 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= "\n\t\t" . Html::rawElement( 'td', array(),
 			$this->table->makeGroupLink( $group, $this->target, $extra ) );
 		$out .= $this->table->makeNumberColumns( $fuzzy, $translated, $total );
-		$out .= $this->getWorkflowStateCell( $groupId );
+		$state = $this->getWorkflowStateValue( $groupId );
+		$out .= $this->getWorkflowStateCell( $groupId, $state );
 
 		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
 
 		return $out;
 	}
 
-	protected function getWorkflowStates() {
+	protected function getWorkflowStates( $field = 'tgr_group', $filter = 'tgr_lang' ) {
 		$db = wfGetDB( DB_SLAVE );
-		$class = get_class( $this );
-		switch ( $class ) {
-			case 'SpecialMessageGroupStats':
-				$targetCol = 'tgr_group';
-				$selectKey = 'tgr_lang';
-				break;
-			case 'SpecialLanguageStats':
-				$targetCol = 'tgr_lang';
-				$selectKey = 'tgr_group';
-				break;
-		}
-
 		$res = $db->select(
 			'translate_groupreviews',
-			array( 'tgr_state', $selectKey ),
-			array( $targetCol => $this->target ),
+			array( 'tgr_state', $field ),
+			array( $filter => $this->target ),
 			__METHOD__
 		);
 
 		$states = array();
-
 		foreach ( $res as $row ) {
-			$states[$row->$selectKey] = $row->tgr_state;
+			$states[$row->$field] = $row->tgr_state;
 		}
-
 		return $states;
 	}
 }
