@@ -16,10 +16,20 @@ $dir = dirname( __FILE__ );
  * @name   Core Translate classes
  * @{
  */
+$wgAutoloadClasses['AcceptQueueMessagesTask'] = "$dir/TranslateTasks.php";
+$wgAutoloadClasses['AggregateMessageGroup'] = "$dir/Groups.php";
 $wgAutoloadClasses['AliasMessageGroup'] = "$dir/MessageGroups.php";
+$wgAutoloadClasses['CoreMessageGroup'] = "$dir/MessageGroups.php";
+$wgAutoloadClasses['CoreMostUsedMessageGroup'] = "$dir/MessageGroups.php";
+$wgAutoloadClasses['ExportAsPoMessagesTask'] = "$dir/TranslateTasks.php";
+$wgAutoloadClasses['ExportMessagesTask'] = "$dir/TranslateTasks.php";
+$wgAutoloadClasses['ExportToFileMessagesTask'] = "$dir/TranslateTasks.php";
+$wgAutoloadClasses['ExportToXliffMessagesTask'] = "$dir/TranslateTasks.php";
+$wgAutoloadClasses['ExtensionMessageGroup'] = "$dir/MessageGroups.php";
 $wgAutoloadClasses['FatMessage'] = "$dir/Message.php";
 $wgAutoloadClasses['FileBasedMessageGroup'] = "$dir/Groups.php";
 $wgAutoloadClasses['MediaWikiMessageChecker'] = "$dir/MediaWikiMessageChecker.php";
+$wgAutoloadClasses['MediaWikiMessageGroup'] = "$dir/Groups.php";
 $wgAutoloadClasses['MessageChecker'] = "$dir/MessageChecks.php";
 $wgAutoloadClasses['MessageCollection'] = "$dir/MessageCollection.php";
 $wgAutoloadClasses['MessageDefinitions'] = "$dir/MessageCollection.php";
@@ -28,17 +38,31 @@ $wgAutoloadClasses['MessageGroupBase'] = "$dir/Groups.php";
 $wgAutoloadClasses['MessageGroupOld'] = "$dir/MessageGroups.php";
 $wgAutoloadClasses['MessageGroups'] = "$dir/MessageGroups.php";
 $wgAutoloadClasses['RecentMessageGroup'] = "$dir/MessageGroups.php";
+$wgAutoloadClasses['ReviewAllMessagesTask'] = "$dir/TranslateTasks.php";
+$wgAutoloadClasses['ReviewMessagesTask'] = "$dir/TranslateTasks.php";
+$wgAutoloadClasses['SingleFileBasedMessageGroup'] = "$dir/MessageGroups.php";
 $wgAutoloadClasses['TMessage'] = "$dir/Message.php";
 $wgAutoloadClasses['TaskOptions'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ThinMessage'] = "$dir/Message.php";
 $wgAutoloadClasses['TranslateEditAddons'] = "$dir/TranslateEditAddons.php";
 $wgAutoloadClasses['TranslateHooks'] = "$dir/TranslateHooks.php";
 $wgAutoloadClasses['TranslateRcFilter'] = "$dir/RcFilter.php";
+$wgAutoloadClasses['TranslateTask'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['TranslateTasks'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['TranslateUtils'] = "$dir/TranslateUtils.php";
+$wgAutoloadClasses['ViewMessagesTask'] = "$dir/TranslateTasks.php";
+$wgAutoloadClasses['ViewOptionalTask'] = "$dir/TranslateTasks.php";
+$wgAutoloadClasses['ViewUntranslatedOptionalTask'] = "$dir/TranslateTasks.php";
+$wgAutoloadClasses['ViewUntranslatedTask'] = "$dir/TranslateTasks.php";
+$wgAutoloadClasses['ViewWithSuggestionsTask'] = "$dir/TranslateTasks.php";
+$wgAutoloadClasses['VoctrainMessageChecker'] = "$dir/ffs/Voctrain.php";
+$wgAutoloadClasses['VoctrainMessageGroup'] = "$dir/ffs/Voctrain.php";
+$wgAutoloadClasses['WikiMessageGroup'] = "$dir/MessageGroups.php";
 $wgAutoloadClasses['WikiPageMessageGroup'] = "$dir/MessageGroups.php";
 $wgAutoloadClasses['WorkflowStatesMessageGroup'] = "$dir/MessageGroups.php";
 /**@}*/
+
+
 
 /**
  * @name   MediaWiki core classes
@@ -85,7 +109,9 @@ $wgAutoloadClasses['XliffFormatWriter'] = "$dir/ffs/Xliff.php";
  * @name   Various utilities
  * @{
  */
+$wgAutoloadClasses['CachedMessageIndex'] = "$dir/utils/MessageIndex.php";
 $wgAutoloadClasses['FCFontFinder'] = "$dir/utils/Font.php";
+$wgAutoloadClasses['FileCachedMessageIndex'] = "$dir/utils/MessageIndex.php";
 $wgAutoloadClasses['FuzzyBot'] = "$dir/utils/FuzzyBot.php";
 $wgAutoloadClasses['HTMLJsSelectToInputField'] = "$dir/utils/HTMLJsSelectToInputField.php";
 $wgAutoloadClasses['JsSelectToInput'] = "$dir/utils/JsSelectToInput.php";
@@ -101,6 +127,7 @@ $wgAutoloadClasses['MessageUpdateJob'] = "$dir/utils/MessageUpdateJob.php";
 $wgAutoloadClasses['MessageTable'] = "$dir/utils/MessageTable.php";
 $wgAutoloadClasses['MessageWebImporter'] = "$dir/utils/MessageWebImporter.php";
 $wgAutoloadClasses['PHPVariableLoader'] = "$dir/utils/ResourceLoader.php";
+$wgAutoloadClasses['ReviewPerLanguageStats'] = "$dir/specials/SpecialTranslationStats.php";
 $wgAutoloadClasses['RevTag'] = "$dir/utils/RevTag.php";
 $wgAutoloadClasses['StatsTable'] = "$dir/utils/StatsTable.php";
 $wgAutoloadClasses['StringMangler'] = "$dir/utils/StringMatcher.php";
@@ -108,12 +135,17 @@ $wgAutoloadClasses['StringMatcher'] = "$dir/utils/StringMatcher.php";
 $wgAutoloadClasses['TTMServer'] = "$dir/utils/TTMServer.php";
 $wgAutoloadClasses['TranslateMetadata'] = "$dir/utils/TranslateMetadata.php";
 $wgAutoloadClasses['TranslatePreferences'] = "$dir/utils/UserToggles.php";
+$wgAutoloadClasses['TranslatePerLanguageStats'] = "$dir/specials/SpecialTranslationStats.php";
+$wgAutoloadClasses['TranslateRegistrationStats'] = "$dir/specials/SpecialTranslationStats.php";
+$wgAutoloadClasses['TranslateStatsOutput'] = "$dir/scripts/groupStatistics.php";
 $wgAutoloadClasses['TranslateToolbox'] = "$dir/utils/ToolBox.php";
 $wgAutoloadClasses['TranslateYaml'] = "$dir/utils/TranslateYaml.php";
 $wgAutoloadClasses['TranslationEditPage'] = "$dir/utils/TranslationEditPage.php";
+$wgAutoloadClasses['TranslationHelperExpection'] = "$dir/utils/TranslationHelpers.php";
 $wgAutoloadClasses['TranslationHelpers'] = "$dir/utils/TranslationHelpers.php";
 $wgAutoloadClasses['TranslationStats'] = "$dir/utils/TranslationStats.php";
-
+$wgAutoloadClasses['TranslationStatsBase'] = "$dir/specials/SpecialTranslationStats.php";
+$wgAutoloadClasses['TranslationStatsInterface'] = "$dir/specials/SpecialTranslationStats.php";
 /**@}*/
 
 /**
@@ -175,7 +207,8 @@ $wgAutoloadClasses['TTMServer'] = "$dir/ttmserver/TTMServer.php";
 $wgAutoloadClasses['DtdFFS'] = "$dir/ffs/DtdFFS.php";
 $wgAutoloadClasses['FFS'] = "$dir/ffs/FFS.php";
 $wgAutoloadClasses['FlatPhpFFS'] = "$dir/ffs/FlatPhpFFS.php";
-$wgAutoloadClasses['GettextFFS'] = "$dir/ffs/GettextFFS.php";
+$wgAutoloadCFlasses['GettextFFS'] = "$dir/ffs/GettextFFS.php";
+$wgAutoloadClasses['GettextPluralException'] = "$dir/ffs/GettextFFS.php";
 $wgAutoloadClasses['JavaFFS'] = "$dir/ffs/JavaFFS.php";
 $wgAutoloadClasses['JavaScriptFFS'] = "$dir/ffs/JavaScriptFFS.php";
 $wgAutoloadClasses['PythonSingleFFS'] = "$dir/ffs/PythonSingleFFS.php";
