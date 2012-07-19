@@ -36,6 +36,7 @@ $wgAutoloadClasses['TranslateHooks'] = "$dir/TranslateHooks.php";
 $wgAutoloadClasses['TranslateRcFilter'] = "$dir/RcFilter.php";
 $wgAutoloadClasses['TranslateTasks'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['TranslateUtils'] = "$dir/TranslateUtils.php";
+$wgAutoloadClasses['WikiMessageGroup'] = "$dir/MessageGroups.php";
 $wgAutoloadClasses['WikiPageMessageGroup'] = "$dir/MessageGroups.php";
 $wgAutoloadClasses['WorkflowStatesMessageGroup'] = "$dir/MessageGroups.php";
 /**@}*/
