@@ -34,6 +34,10 @@ This is a list of known events and parameters; please add to it if you're going
 to add events to the Translate extension.
 
 === PHP events ===
+'TranslateBeforeSpecialTranslate': Provides an opportunity for an extension to override the usual display of Special:Translate, e.g. to create parallels to the built-in Special:Translate/editpage
+	$parameters: The parameter string (e.g. the "editpage" in "Special:Translate/edtpage"), if any.
+	$group: The MessageGroup identified from the &group= parameter, if any.
+
 'TranslateFormatMessageBeforeTable': Provides an opportunity to manipulate the display of translation strings (messages) in the main table
 	&$message: The message that will be displayed
 	$translation: The current translation (or null if not yet translated)

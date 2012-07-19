@@ -57,6 +57,8 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->setup( $parameters );
 
+		wfRunHooks( 'TranslateBeforeSpecialTranslate', array( $parameters, $this->group ) );
+
 		if ( $this->options['group'] === '' ) {
 			TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Translation_example' );
 			$this->groupInformation();
