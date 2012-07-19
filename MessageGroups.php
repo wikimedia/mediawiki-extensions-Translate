@@ -1259,6 +1259,10 @@ class MessageGroups {
 			if ( isset( $dynamic[$id] ) ) {
 				return new $dynamic[$id];
 			}
+		} else {
+			$group = null;
+			wfRunHooks( 'TranslateNoSuchGroupFound', array( &$group, $id ) );
+			return $group;
 		}
 	}
 

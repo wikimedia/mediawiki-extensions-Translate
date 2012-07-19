@@ -48,6 +48,10 @@ to add events to the Translate extension.
 	&$defaults: Associative array of default values
 	&$nondefaults: Associative array of nondefault (override) values
 
+'TranslateNoSuchGroupFound': Provides to extend Translate's ability to match ids to groups
+	&$group: Null; hook to assign a group to it
+	$id: The id string (e.g. 'MediaWiki')
+
 'TranslatePrefillTranslation': Provides an opportunity for a new translation to start not from as a carte blanche (the default) but from some prefilled string
 	&$translation: The translation string as it stands
 	$handle: The current MessageHandle object
