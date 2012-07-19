@@ -335,8 +335,12 @@ class SpecialTranslate extends SpecialPage {
 
 		$button = Xml::submitButton( wfMsg( 'translate-submit' ) );
 
+		$groupType = isset( $this->group ) ? get_class( $this->group ) : 'N/A';
 		$form =
-			Html::openElement( 'fieldset', array( 'class' => 'mw-sp-translate-settings' ) ) .
+			Html::openElement( 'fieldset', array(
+				'class' => 'mw-sp-translate-settings',
+				'data-grouptype' => $groupType
+			) ) .
 				Html::element( 'legend', null, wfMsg( 'translate-page-settings-legend' ) ) .
 				Html::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
 					Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
