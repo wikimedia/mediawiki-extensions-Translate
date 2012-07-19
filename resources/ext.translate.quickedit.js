@@ -143,6 +143,11 @@
 
 			textarea.keyup( function() { checker.setup(); } );
 		}
+
+		var hooks = mw.translate.hooks.afterRegisterFeatures || [];
+		for( var i = 0; i < hooks.length; i++ ){
+			hooks[i]( form );
+		}
 	}
 
 	translate = {

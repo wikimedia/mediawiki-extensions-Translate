@@ -5,13 +5,13 @@ For a more comprehensive guide to hooks, navigate to your root MediaWiki
 directory, and then find /docs/hooks.txt.
 
 == Rationale ==
-
 Hooks allow us to decouple optionally-run code from code that is run for
 everyone. It allows MediaWiki hackers, third-party developers and local
 administrators to define code that will be run at certain points in the mainline
 code, and to modify the data run by that mainline code. Hooks can keep mainline
 code simple, and make it easier to write extensions. Hooks are a principled
 alternative to local patches.
+
 
 == Writing hooks ==
 A hook is a chunk of code run at some particular event. It consists of:
@@ -74,6 +74,9 @@ to add events to the Translate extension.
 	$handle: The current MessageHandle object
 
 === JavaScript events ===
+mw.hooks.translate.afterRegisterFeatures: Provides an opportunity to register event handlers, etc., whenever a new form is opened.
+	form: The new form
+
 mw.translate.hooks.afterSubmit: Provides an opportunity to modify a Translate translation form immediately before it is submitted
 	form: The form being submitted
 
