@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQX//55s\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-19T16:56:03Z",
+      "side": 1,
+      "message": "Does all this documentation really have to be duplicated in the Translate extension?",
+      "revId": "c18e05a54ab803c45684cf426dcfc683d603f2fb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//55g\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-19T16:56:03Z",
+      "side": 1,
+      "message": "Put these 2 lines in a separate module \u0027ext.translate.hooks\u0027 and let whatever uses that depend on it. That saves code, prevents duplication that gets outdated, and is future proof for when it changes:\n\n mw.translate.hooks \u003d {};\n\n\"mw.translate\" should not be created inside ext.translate.hooks, that object already exists, right? If not, create \"ext.translate.init\" and put that in there.",
+      "revId": "c18e05a54ab803c45684cf426dcfc683d603f2fb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//55I\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-19T16:56:03Z",
+      "side": 1,
+      "message": "Maybe something like this:\n\n var registry \u003d {};\n\n mw.translate.hooks \u003d {\n   add: function (hook, fn) {\n     if (!registry[hook]) {\n       registry[hook] \u003d [];\n     }\n     registry[hook].push(fn);\n   }\n };\n\nBasically the intention is that \"users\" of an API should not have to be aware or deal with the internal structure (which in this case is an array and the push method).",
+      "revId": "c18e05a54ab803c45684cf426dcfc683d603f2fb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//55A\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-19T16:56:03Z",
+      "side": 1,
+      "message": ".\n mw.translate.hooks.add( \u0027eventName\u0027, hookFunction );",
+      "revId": "c18e05a54ab803c45684cf426dcfc683d603f2fb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//54w\u003d",
+        "filename": "resources/ext.translate.quickedit.css",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-19T16:56:03Z",
+      "side": 1,
+      "message": "I don\u0027t have the extension installed or use it enough to know what this looks like here. I don\u0027t generally merge in ext.Translate, but in general display changes should not be in the same commit as introducing a hooks system.",
+      "revId": "c18e05a54ab803c45684cf426dcfc683d603f2fb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//54U\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-19T16:56:03Z",
+      "side": 1,
+      "message": "As of jQuery 1.7, the .on() method is preferred instead of .bind()",
+      "revId": "c18e05a54ab803c45684cf426dcfc683d603f2fb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//54o\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-19T16:56:03Z",
+      "side": 1,
+      "message": "This could be put into mw.translate.hooks.run( \u0027beforeSubmit\u0027 , /* arguments */ );",
+      "revId": "c18e05a54ab803c45684cf426dcfc683d603f2fb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQX//54Q\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-19T16:56:03Z",
+      "side": 1,
+      "message": "Missing space after \"for\" keyword.\n\nMissing space between parenthesis and block.",
+      "revId": "c18e05a54ab803c45684cf426dcfc683d603f2fb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

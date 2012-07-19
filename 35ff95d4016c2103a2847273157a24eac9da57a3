@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQX//54g\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-19T16:56:03Z",
+      "side": 0,
+      "message": "The ajaxForm method does more than just a plain \u0027onsubmit\u0027 and \u0027ajaxSubmit\u0027. I don\u0027t know if those other features are needed or used in Translate, but may need additional review for that.\n\nSee also source code of the jquery.form plugin (which implements the ajaxForm method)\nhttps://github.com/malsup/form/blob/master/jquery.form.js#L679",
+      "revId": "35ff95d4016c2103a2847273157a24eac9da57a3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
