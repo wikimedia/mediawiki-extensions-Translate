@@ -119,3 +119,13 @@
 .mw-translate-close {
 	float: right;
 }
+
+.mw-translate-inputs {
+	overflow: auto; /* Fix "100%" width after floats issue */
+	padding: 2px; /* Avoid random scrollbars (browsers suck) */
+}
+
+.mw-translate-bottom {
+	clear: both;
+	margin-top: -3px; /* Reduce excess whitespace */
+}
