@@ -406,35 +406,41 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$stats = $cache[$groupId];
 
 		list( $total, $translated, $fuzzy ) = $stats;
-		if ( $total === null ) {
-			$this->incomplete = true;
-			$extra = array();
-		} else {
-			if( $total === 0 ) {
-				error_log( $groupId . ' has 0 messages.' );
-			}
-
-			if ( $this->noComplete && $fuzzy === 0 && $translated === $total ) {
-				return '';
-			}
-
-			if ( $this->noEmpty && $translated === 0 && $fuzzy === 0 ) {
-				return '';
-			}
-
-			if ( $translated === $total ) {
-				$extra = array( 'task' => 'reviewall' );
-			} else {
-				$extra = array();
-			}
+		// Quick checks to see whether filters apply
+		if ( $this->noComplete && $fuzzy === 0 && $translated === $total ) {
+			return '';
+		}
+		if ( $this->noEmpty && $translated === 0 && $fuzzy === 0 ) {
+			return '';
 		}
 
+		// Calculation of summary row values
 		if ( !$group instanceof AggregateMessageGroup  ) {
 			if ( !isset( $this->statsCounted[$groupId] ) ) {
 				$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
 				$this->statsCounted[$groupId] = true;
 			}
 		}
+
+		$state = $this->getWorkflowStateValue( $groupId );
+
+		$params = $stats;
+		$params[] = $state;
+		$params[] = $groupId;
+		$params[] = $this->getLanguage()->getCode();
+		$cachekey = wfMemcKey( __METHOD__, implode( '-', $params ) );
+		$cacheval = wfGetCache( CACHE_ANYTHING )->get( $cachekey );
+		if ( !$this->purge && is_string( $cacheval ) ) {
+			return $cacheval;
+		}
+
+		$extra = array();
+		if ( $total === null ) {
+			$this->incomplete = true;
+		} elseif ( $translated === $total ) {
+			$extra = array( 'task' => 'reviewall' );
+		}
+
 
 		$rowParams = array();
 		$rowParams['data-groupid'] = $groupId;
@@ -447,11 +453,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= "\n\t\t" . Html::rawElement( 'td', array(),
 			$this->table->makeGroupLink( $group, $this->target, $extra ) );
 		$out .= $this->table->makeNumberColumns( $fuzzy, $translated, $total );
-		$state = $this->getWorkflowStateValue( $groupId );
 		$out .= $this->getWorkflowStateCell( $groupId, $state );
-
 		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
 
+		wfGetCache( CACHE_ANYTHING )->set( $cachekey, $out, 3600*24 );
 		return $out;
 	}
 
