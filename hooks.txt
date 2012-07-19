@@ -1,0 +1,60 @@
+This document describes how event hooks work in the Translate extension;
+how to add hooks for an event; and how to run hooks for an event.
+
+For a more comprehensive guide to hooks, navigate to your root MediaWiki
+directory, and then find /docs/hooks.txt.
+
+== Rationale ==
+
+Hooks allow us to decouple optionally-run code from code that is run for
+everyone. It allows MediaWiki hackers, third-party developers and local
+administrators to define code that will be run at certain points in the mainline
+code, and to modify the data run by that mainline code. Hooks can keep mainline
+code simple, and make it easier to write extensions. Hooks are a principled
+alternative to local patches.
+
+== Writing hooks ==
+
+=== PHP hooks ===
+For a more guide to PHP hooks, navigate to your root MediaWiki
+directory, and then find /docs/hooks.txt .
+
+=== JavaScript hooks ===
+JavaScript hooks for the Translate extension are a little different. To use them, declare a
+dependency on ext.translate.hooks . Then, use
+
+	mw.translateHook.add( name, hookFunction );
+
+where name is a string, but hookFunction is not (unlike in the case of PHP hooks)
+but rather a function reference. Return values from JavaScript hooks are ignored.
+
+== Events and parameters ==
+
+This is a list of known events and parameters; please add to it if you're going
+to add events to the Translate extension.
+
+=== PHP events ===
+'TranslateFormatMessageBeforeTable': Provides an opportunity to manipulate the display of translation strings (messages) in the main table
+	&$message: The message that will be displayed
+	$translation: The current translation (or null if not yet translated)
+	$original: The original (untranslated) message
+	&$attributes: An array of attributes that will
+
+'TranslateGetExtraInputs': Provides an opportunity to add extra form inputs to to the default translation editor
+	&$translation: The translation string as it stands
+	&$extraInputs: The extra input space, ready for HTML to be appended
+
+'TranslateGetSpecialTranslateOptions': Provides an opportunity for overriding task values
+	&$defaults: Associative array of default values
+	&$nondefaults: Associative array of nondefault (override) values
+
+'TranslatePrefillTranslation': Provides an opportunity for a new translation to start not from as a carte blanche (the default) but from some prefilled string
+	&$translation: The translation string as it stands
+	$handle: The current MessageHandle object
+
+=== JavaScript events ===
+afterSubmit: Provides an opportunity to modify a Translate translation form immediately before it is submitted
+	form: The form being submitted
+
+beforeSubmit: Provides an opportunity to modify a Translate translation form immediately after it is submitted
+	form: The form that has just been submitted
