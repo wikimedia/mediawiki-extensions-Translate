@@ -584,7 +584,7 @@ $messages['da'] = array(
  * @author Umherirrender
  */
 $messages['de'] = array(
-	'translategroupdescriptions-desc' => 'Beschreibung der Nachrichtengruppen von Projekten, die bei der Übersetzung von der Softwareerweiterung [http://mediawiki.org/wiki/Extension:Translate „Translate“] unterstützt werden',
+	'translategroupdescriptions-desc' => 'Beschreibung der Nachrichtengruppen von Projekten, die bei der Übersetzung von der Programmerweiterung [http://mediawiki.org/wiki/Extension:Translate „Translate“] unterstützt werden',
 	'translate-group-desc-nodesc' => 'Für diese Nachrichtengruppe ist keine Beschreibung verfügbar',
 	'translate-group-desc-mediawikicore' => 'Diese Gruppe beinhaltet alle Nachrichten der aktuellen alpha-Version von MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Diese Gruppe beinhaltet die [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 am häufigsten genutzten Nachrichten] in MediaWiki',
@@ -1639,11 +1639,12 @@ Jangk op di Sigge „<i lang="en">[[mw:Extension:PDF_Writer]]</i>“ un „<i la
 );
 
 /** Luxembourgish (Lëtzebuergesch)
+ * @author Kghbln
  * @author Les Meloures
  * @author Robby
  */
 $messages['lb'] = array(
-	'translategroupdescriptions-desc' => 'Beschreiwung vun de Gruppe vu Message vu Projeten, déi vun der Softwareerweiterung [http://mediawiki.org/wiki/Extension:Translate Translate] ënnerstëtzt ginn',
+	'translategroupdescriptions-desc' => 'Beschreiwung vun de Gruppe vu Message vu Projeten, déi vun der Programmerweiterung [http://mediawiki.org/wiki/Extension:Translate Translate] ënnerstëtzt ginn',
 	'translate-group-desc-nodesc' => 'Fir dëse Grupp vu Messagen ass keng Beschreiwung disponibel.',
 	'translate-group-desc-mediawikicore' => "An dëser Grupp mat Message sinn d'Messagen aus der aktueller alpha-Versioun vu MediaWiki ({{CURRENTVERSION}}) dran",
 	'translate-group-desc-mediawikimostused' => 'An dësem Grupp sinn déi [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 am dackste gebrauchte Systemmessagen] vu MediaWiki',
@@ -2886,6 +2887,7 @@ $messages['yi'] = array(
  * @author Bencmq
  * @author Hydra
  * @author Hzy980512
+ * @author Mys 721tx
  * @author PhiLiP
  * @author Tommyang
  * @author Xiaomingyan
@@ -2934,14 +2936,17 @@ $messages['zh-hans'] = array(
 	'bw-desc-openstreetmap' => '本组包含所有[[Translating:OpenStreetMap|OpenStreetMap]]信息',
 	'bw-desc-osm-site' => '本组包含[[Translating:Open Street Map|Open Street Map]]的界面信息。
 请见[http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} plural keys扩展包的Unicode CLDR页面]。',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]]是基于Flash的OpenStreetMap编辑器。',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]]是一个维基百科编辑工具集合。',
 	'bw-desc-shapado' => '本组包含免费开源问答软件[[Translating:Shapado|Shapado]]的信息',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]]是一个开源微博客服务',
 	'translate-group-desc-statusnet-plugin' => '这些消息属于[[Translating:StatusNet|StatusNet]]的插件',
 	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver]工具的国际化系统，[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]的消息组（<span class="plainlinks">[[Translating talk:Toolserver|帮助]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition 技术细节]</span>）',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]]是一个使用GNU GPL许可证的显示世界范围内远足、骑行、山地骑行、 轮滑路线的服务。',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame]可以快速找到某Wikimedia wiki中某页面的作者。',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] 是一个将离线、仅文字版本的维基百科传送到手机上的项目。',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]是一个用于阅读并编辑维基百科的手机、平板跨平台应用程序。',
+	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]]是用语阅读和贡献维基词典的跨平台手机／平板应用程序。',
 );
 
 /** Traditional Chinese (‪中文（繁體）‬)

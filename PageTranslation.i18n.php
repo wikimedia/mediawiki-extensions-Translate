@@ -571,6 +571,7 @@ $messages['as'] = array(
 	'translate-tag-translate-link-desc' => 'এই পৃষ্ঠা ভাঙনি কৰক',
 	'tpt-languages-legend' => 'অন্য ভাষা:',
 	'tpt-discouraged-language-reason' => 'কাৰণ: $1',
+	'tpt-aggregategroup-add' => 'যোগ কৰক',
 	'tpt-aggregategroup-save' => 'সাঁচি থওক',
 	'tpt-aggregategroup-new-name' => 'নাম:',
 	'pt-movepage-list-translation' => 'ভাঙনি পৃষ্ঠাসমূহ',
@@ -578,6 +579,7 @@ $messages['as'] = array(
 	'pt-movepage-new' => 'নতুন নাম:',
 	'pt-movepage-reason' => 'কাৰণ:',
 	'pt-movepage-action-perform' => 'স্থানান্তৰ নকৰিব',
+	'pt-deletepage-current' => 'পৃষ্ঠাৰ নাম:',
 	'pt-deletepage-reason' => 'কাৰণ:',
 );
 
@@ -1472,12 +1474,13 @@ Zdá se, že stránka, kterou se pokoušíte upravovat, neodpovídá žádné st
 	'tpt-translation-restricted' => 'Správce překladů zabránil překladu této stránky do tohoto jazyka.
 
 Zdůvodnění: $1',
-	'tpt-discouraged-language-force' => 'Správce překladů omezil jazyky, do kterých lze tuto stránku překládat. Tento jazyk mezi těmito jazyky není.
+	'tpt-discouraged-language-force' => "'''Tuto stránku nelze překládat do jazyka $2.'''
 
-Zdůvodnění: $1',
-	'tpt-discouraged-language' => 'Tento jazyk nepatří k prioritním jazykům nastaveným správcem překladů pro tuto stránku.
+Správce překladů se rozhodl, že tuto stránku lze překládat pouze do $3.",
+	'tpt-discouraged-language' => "'''Překlad do jazyka $2 není pro tuto stránku prioritní.'''
 
-Zdůvodnění: $1',
+Správce překladů se rozhodl zaměřit překladatelské úsilí na $3.",
+	'tpt-discouraged-language-reason' => 'Zdůvodnění: $1',
 	'tpt-priority-languages' => 'Správce překladů nastavil prioritní jazyky pro tuto skupinu na $1.',
 	'tpt-render-summary' => 'Aktualizace na novou verzi zdrojové stránky',
 	'tpt-download-page' => 'Exportovat stránky s překlady',
@@ -2413,12 +2416,21 @@ ja {{PLURAL:$1|uusimat versiooni|uusimaid versioone}} ei saa tõlgitavaks teha.'
 	'translate-tag-hasnew' => 'See lehekülg sisaldab <span class="plainlinks">[$1 muudatusi]</span>, mida pole märgitud tõlkimiseks.',
 	'tpt-translation-intro-fuzzy' => 'Iganenud tõlkeid märgitakse nii.',
 	'tpt-languages-legend' => 'Teistes keeltes:',
+	'aggregategroups' => 'Ühendrühmad',
+	'tpt-aggregategroup-add' => 'Lisa',
+	'tpt-aggregategroup-save' => 'Salvesta',
+	'tpt-aggregategroup-add-new' => 'Lisa uus ühendrühm',
+	'tpt-aggregategroup-new-name' => 'Nimi:',
+	'tpt-aggregategroup-new-description' => 'Kirjeldus (valikuline):',
+	'tpt-aggregategroup-remove-confirm' => 'Kas oled kindel, et soovid selle ühendrühma kustutada?',
 	'pt-log-header' => 'Lehekülgede tõlkesüsteemiga seotud toimingute logi',
 	'pt-log-name' => 'Lehekülgede tõlkelogi',
 	'pt-log-mark' => '{{GENDER:$2|märkis}} lehekülje "[[:$1]]" redaktsiooni $3 tõlkimiseks',
 	'pt-log-unmark' => '{{GENDER:$2|eemaldas}} lehekülje "[[:$1]]" tõlkimisest',
 	'pt-log-moveok' => '{{GENDER:$2|lõpetas}} tõlgitava lehekülje $1 ümbernimetamise kujule $3',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|lõpetas}} tõlgitava lehekülje $1 kustutamise',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|lisas}} tõlgitava lehekülje [[:$1]] ühendrühma $3',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|eemaldas}} tõlgitava lehekülje [[:$1]] ühendrühmast $3',
 	'pt-movepage-blockers' => '{{PLURAL:$1|Järgmise tõrke|Järgmiste tõrgete}} tõttu ei saa tõlgitavat lehekülge uue pealkirja alla teisaldada:',
 	'pt-movepage-list-translation' => 'Tõlkeleheküljed',
 	'pt-movepage-list-other' => 'Muud alamleheküljed',
@@ -4860,7 +4872,7 @@ $messages['ko'] = array(
 	'pt-movepage-subpages' => '모든 하위 문서 이동',
 	'pt-movepage-action-check' => '이동할 수 있는지 확인',
 	'pt-movepage-action-perform' => '이동하기',
-	'pt-movepage-action-other' => '대상 변경',
+	'pt-movepage-action-other' => '대상 바꾸기',
 	'pt-movepage-intro' => '이 특수 문서는 번역에 대해 표시한 문서를 이동할 수 있습니다.
 많은 문서가 이동해야 하기 때문에 즉시 이동 작업이 되지 않습니다.
 문서를 이동하는 동안 이는 질문의 문서와 상호 작용하는 것은 불가능합니다.
@@ -4875,7 +4887,7 @@ $messages['ko'] = array(
 	'pt-deletepage-invalid-text' => '지정한 문서는 이의 번역가능한 문서도 번역도 아닙니다.',
 	'pt-deletepage-action-check' => '삭제될 문서 목록',
 	'pt-deletepage-action-perform' => '삭제하기',
-	'pt-deletepage-action-other' => '대상 변경',
+	'pt-deletepage-action-other' => '대상 바꾸기',
 	'pt-deletepage-lang-legend' => '번역 문서 삭제',
 	'pt-deletepage-full-legend' => '번역 가능한 문서 삭제',
 	'pt-deletepage-any-legend' => '번역 가능한 문서 또는 번역 가능한 문서의 번역 삭제',
@@ -8938,6 +8950,7 @@ $messages['yi'] = array(
  * @author Hzy980512
  * @author Liangent
  * @author Linforest
+ * @author Mys 721tx
  * @author PhiLiP
  * @author Supaiku
  * @author Xiaomingyan
@@ -8981,7 +8994,7 @@ $messages['zh-hans'] = array(
 	'tpt-new-pages-title' => '提议翻译的页面',
 	'tpt-old-pages-title' => '正在翻译的页面',
 	'tpt-other-pages-title' => '损坏的页面',
-	'tpt-discouraged-pages-title' => '不推荐的页面',
+	'tpt-discouraged-pages-title' => '不建议的页面',
 	'tpt-new-pages' => '以下{{PLURAL:$1|此|这些}}页面包含具有翻译标记的文本，
 但没有被标记进行翻译的版本。',
 	'tpt-old-pages' => '以下{{PLURAL:$1|此|这些}}页面有被标记进行翻译的版本。',
@@ -8994,7 +9007,7 @@ $messages['zh-hans'] = array(
 	'tpt-sections-prioritylangs' => '优先语言',
 	'tpt-rev-mark' => '标记进行翻译',
 	'tpt-rev-unmark' => '从翻译中删除',
-	'tpt-rev-discourage' => '挫折',
+	'tpt-rev-discourage' => '不建议',
 	'tpt-rev-encourage' => '恢复',
 	'tpt-rev-mark-tooltip' => '标记本页的最新版本进行翻译。',
 	'tpt-rev-unmark-tooltip' => '从翻译中删除此页。',
@@ -9021,8 +9034,9 @@ $messages['zh-hans'] = array(
 	'tpt-discouraged-language' => '这种语言不在此页的翻译管理员所设置的优先语言之列。
 
 原因：$1',
-	'tpt-priority-languages' => '翻译管理员已经为为这个到$1的组设置了优先语言 。',
-	'tpt-render-summary' => '要匹配的源页的新版本更新',
+	'tpt-discouraged-language-reason' => '原因：$1',
+	'tpt-priority-languages' => '翻译管理员已将该组需优先翻译的语言设为$1。',
+	'tpt-render-summary' => '更新以匹配源页面内容的新版本',
 	'tpt-download-page' => '汇出含翻译的页面',
 	'aggregategroups' => '聚合组',
 	'tpt-aggregategroup-add' => '添加',
@@ -9043,41 +9057,41 @@ $messages['zh-hans'] = array(
 	'pt-shake-position' => '部分标记在意外位置。
 部分文本：<pre>$1</pre>',
 	'pt-shake-empty' => '空节标记为 $1。',
-	'pt-log-header' => '与有关的网页翻译系统操作日志',
-	'pt-log-name' => '网页翻译日志',
+	'pt-log-header' => '页面翻译系统的对应活动日志',
+	'pt-log-name' => '页面翻译日志',
 	'pt-log-mark' => '{{GENDER:$2|标记}}“[[:$1]]”页面$3版本进行翻译',
 	'pt-log-unmark' => '从翻译中{{GENDER:$2|删除}}“[[:$1]]”页面',
 	'pt-log-moveok' => '{{GENDER:$2|完成}}将$1改名成为$3',
-	'pt-log-movenok' => '当移动[[:$1]]至[[:$3]]{{GENDER:$2|遇到}}问题',
-	'pt-log-delete-full-ok' => '{{GENDER:$2|完成}}删除$1可翻译页面',
-	'pt-log-delete-full-nok' => '当删除[[:$1]]可翻译页面{{GENDER:$2|遇到}}问题',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|完成}}删除$1翻译页面',
-	'pt-log-delete-lang-nok' => '当删除[[:$1]]翻译页面{{GENDER:$2|遇到}}问题',
+	'pt-log-movenok' => '移动[[:$1]]至[[:$3]]{{GENDER:$2|遇到}}问题',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|已删除}}$1可翻译页面',
+	'pt-log-delete-full-nok' => '删除可翻译页面[[:$1]]时{{GENDER:$2|遇到}}问题',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|已删除}}$1翻译页面',
+	'pt-log-delete-lang-nok' => '删除翻译页面[[:$1]]时{{GENDER:$2|遇到}}问题',
 	'pt-log-encourage' => '{{GENDER:$2|鼓励}}翻译页面[[:$1]]',
 	'pt-log-discourage' => '{{GENDER:$2|不鼓励}}翻译页面[[:$1]]',
-	'pt-log-priority-langs-unset' => '从可翻译页面[[:$1]]{{GENDER:$2|已删除}}优先语言',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|已移出}}可翻译页面[[:$1]]中的优先语言',
 	'pt-log-priority-langs' => '{{GENDER:$2|设定}}可翻译页面[[:$1]]的优先语言为$3。原因：$4',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|已限制}}可翻译页面的[[:$1]]的语言为$3。原因：$4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|添加了}} 可翻译页 [[:$1]] 以聚合组$3',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|已删除}} 可翻译页 [[:$1]] 从聚合组$3',
+	'pt-log-aggregategroup-associate' => '已向聚合组$3{{GENDER:$2|添加了}}可翻译页面[[:$1]]',
+	'pt-log-aggregategroup-dissociate' => '已从聚合组$3{{GENDER:$2|删除了}}可翻译页面[[:$1]]',
 	'pt-movepage-title' => '移动可翻译页面$1',
-	'pt-movepage-blockers' => '可翻译页面无法移动至新名称，原因为以下这{{PLURAL:$1|个|些}}错误：',
-	'pt-movepage-block-base-exists' => '目标基页面 [[:$1]] 存在。',
-	'pt-movepage-block-base-invalid' => '目标基页不是一个有效的标题。',
-	'pt-movepage-block-tp-exists' => '目标翻译页面 [[:$2]] 存在。',
-	'pt-movepage-block-tp-invalid' => '为[[:$1]]的目标翻译页面的标题无效，可能因为太长。',
-	'pt-movepage-block-section-exists' => '目标部分页面 [[:$2]] 存在。',
-	'pt-movepage-block-section-invalid' => '为[[:$1]]的目标部分页面的标题无效，可能因为太长。',
-	'pt-movepage-block-subpage-exists' => '目标子页面 [[:$2]] 存在。',
-	'pt-movepage-block-subpage-invalid' => '为[[:$1]]的目标子页面的标题无效，可能因为太长。',
-	'pt-movepage-list-pages' => '移动到页面的列表',
-	'pt-movepage-list-translation' => '翻译网页',
-	'pt-movepage-list-section' => '部分页面',
+	'pt-movepage-blockers' => '可翻译页面因下列$1错误无法移动至新名称：',
+	'pt-movepage-block-base-exists' => '目标基础页面[[:$1]]存在。',
+	'pt-movepage-block-base-invalid' => '目标基础页面不是一个有效标题。',
+	'pt-movepage-block-tp-exists' => '目标翻译页面[[:$2]]存在。',
+	'pt-movepage-block-tp-invalid' => '[[:$1]]的目标翻译页面的标题无效（可能太长）。',
+	'pt-movepage-block-section-exists' => '目标部分页面[[:$2]]存在。',
+	'pt-movepage-block-section-invalid' => '[[:$1]]的目标章节标题无效（可能太长）。',
+	'pt-movepage-block-subpage-exists' => '目标子页面[[:$2]]存在。',
+	'pt-movepage-block-subpage-invalid' => '[[:$1]]的子页面标题无效（可能太长）。',
+	'pt-movepage-list-pages' => '需移动页面的列表',
+	'pt-movepage-list-translation' => '翻译页面',
+	'pt-movepage-list-section' => '章节页面',
 	'pt-movepage-list-other' => '其他子页面',
-	'pt-movepage-list-count' => '总计$1个页面即将移动。',
+	'pt-movepage-list-count' => '共移动$1个页面。',
 	'pt-movepage-legend' => '移动可翻译页面',
-	'pt-movepage-current' => '当前的名称：',
-	'pt-movepage-new' => '新的名称：',
+	'pt-movepage-current' => '当前名称：',
+	'pt-movepage-new' => '新名称：',
 	'pt-movepage-reason' => '原因：',
 	'pt-movepage-subpages' => '移动所有子页面',
 	'pt-movepage-action-check' => '检查是否可以移动',
@@ -9105,16 +9119,16 @@ $messages['zh-hans'] = array(
 	'pt-deletepage-reason' => '原因：',
 	'pt-deletepage-subpages' => '删除所有子页面',
 	'pt-deletepage-list-pages' => '若要删除的页面列表',
-	'pt-deletepage-list-translation' => '翻译网页',
-	'pt-deletepage-list-section' => '第页',
+	'pt-deletepage-list-translation' => '翻译页面',
+	'pt-deletepage-list-section' => '章节页面',
 	'pt-deletepage-list-other' => '其他子页面',
-	'pt-deletepage-list-count' => '总计$1个页面即将删除。',
-	'pt-deletepage-full-logreason' => '翻译页面的一部分 $1。',
-	'pt-deletepage-lang-logreason' => '翻译页面的一部分 $1。',
+	'pt-deletepage-list-count' => '共删除$1个页面。',
+	'pt-deletepage-full-logreason' => '翻译页面$1的一部分。',
+	'pt-deletepage-lang-logreason' => '翻译页面$1的一部分。',
 	'pt-deletepage-started' => '请检查[[Special:Log/pagetranslation|页面翻译日志]]内的错误和完成消息。',
 	'pt-deletepage-intro' => '本特殊页面允许您删除一种语言中全部可翻译页面与翻译作品。
-此移动操作将不会一瞬间，因为有很多页面要删除。
-任何删除失败将在[[Special:Log/pagetranslation|页面翻译日志]]记录，并且需要手动修理。',
+因为有很多页面要删除，此操作不会瞬间完成。
+失败操作记录于[[Special:Log/pagetranslation|页面翻译日志]]中并且需要手动修理。',
 );
 
 /** Traditional Chinese (‪中文（繁體）‬)

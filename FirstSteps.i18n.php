@@ -134,7 +134,7 @@ $messages['ar'] = array(
 	'firststeps' => 'الخطوات الأولى',
 	'translate-fs-pagetitle-done' => '- تمّ!',
 	'translate-fs-pagetitle-pending' => ' - معلقة',
-	'translate-fs-pagetitle' => 'بدأ الحصول على المعالج  - $1',
+	'translate-fs-pagetitle' => 'معالج البدء  - $1',
 	'translate-fs-signup-title' => 'سجّل',
 	'translate-fs-settings-title' => 'اضبط تفضيلاتك',
 	'translate-fs-userpage-title' => 'أنشئ صفحة المستخدم',
@@ -164,6 +164,7 @@ $messages['ar'] = array(
  * @author Bishnu Saikia
  */
 $messages['as'] = array(
+	'translate-fs-pagetitle-done' => ' - কৰা হ’ল!',
 	'translate-fs-signup-title' => 'সদস্য ভুক্তি',
 );
 
@@ -740,6 +741,24 @@ Bitte ändern Sie sie falls nötig.",
 Dies gibt anderen die Möglichkeit, Sie über E-Mail zu erreichen.
 Sie erhalten außerdem bis zu einmal im Monat einen Newsletter.
 Wenn Sie keinen Newsletter erhalten möchten, können Sie sich im Tab „{{int:prefs-personal}}“ in Ihren [[Special:Preferences|Einstellungen]] austragen.',
+);
+
+/** Zazaki (Zazaki)
+ * @author Erdemaslancan
+ */
+$messages['diq'] = array(
+	'firststeps' => 'Gamê sıfteyêni',
+	'translate-fs-pagetitle-done' => '- tamam!',
+	'translate-fs-signup-title' => 'Qeyd bı',
+	'translate-fs-settings-title' => 'Tercihanê cı saz ke',
+	'translate-fs-userpage-title' => 'Pela karberiya cı vıraze',
+	'translate-fs-target-title' => 'Açarnayışi rê dest pêke!',
+	'translate-fs-selectlanguage' => 'Zıwan berzê cı',
+	'translate-fs-settings-planguage' => 'Zıwanê dıyın:',
+	'translate-fs-settings-slanguage' => 'Asistan zıwan $1:',
+	'translate-fs-settings-submit' => 'Terciha qeyd ke',
+	'translate-fs-userpage-submit' => 'Pela karberi vırazê',
+	'translate-fs-permissions-planguage' => 'Zıwana sıfteyên:',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -1947,7 +1966,7 @@ $messages['ko'] = array(
 당신이 할 수 있어야 한다고 생각하는 무엇이 있지만 어떻게 할 수 있을지 찾을 수 없다면 [[Support|지원 문서]]에 이를 문의하십시오. 
 
 [[Portal:$1|당신의 언어 들머리]] [[Portal_talk:$1|토론 문서]]에서 자신과 같은 언어의 번역자와 연락할 수도 있습니다. 
-아직 변경하지 않았다면 [[Special:Preferences|자신의 언어 인터페이스를 번역 도착어로 변경하십시오]].  그러면 웹사이트에서 당신에게 가장 관련있는 링크를 보여줄 수 있습니다.',
+아직 바꾸지 않았다면 [[Special:Preferences|자신의 언어 인터페이스를 번역 도착어로 바꾸십시오]].  그러면 웹사이트에서 당신에게 가장 관련있는 링크를 보여줄 수 있습니다.',
 	'translate-fs-email-text' => '[[Special:Preferences|환경 설정]]에서 이메일 주소를 제공하고 받은 이메일로 그 주소를 확인하십시오.
 
 그러면 다른 사용자가 이메일로 당신과 연락할 수 있게 됩니다.

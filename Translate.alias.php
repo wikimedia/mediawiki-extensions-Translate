@@ -440,13 +440,13 @@ $specialPageAliases['ko'] = array(
 	'Translations' => array( '번역목록' ),
 	'LanguageStats' => array( '언어통계' ),
 	'MessageGroupStats' => array( '메시지그룹통계' ),
-	'PageTranslation' => array( '페이지번역' ),
+	'PageTranslation' => array( '문서번역' ),
 	'ImportTranslations' => array( '번역가져오기' ),
 	'ManageMessageGroups' => array( '메시지그룹관리' ),
 	'FirstSteps' => array( '첫단계' ),
 	'SupportedLanguages' => array( '지원하는언어' ),
 	'MyLanguage' => array( '내언어' ),
-	'PageTranslationDeletePage' => array( '페이지번역삭제문서' ),
+	'PageTranslationDeletePage' => array( '문서번역삭제문서' ),
 	'AggregateGroups' => array( '집계그룹' ),
 );
 
