@@ -1,5 +1,7 @@
 <?php
 
+require_once( __DIR__ . '/SuperUser.php' );
+
 /**
  * @group Database
  */
@@ -60,6 +62,29 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		$newLatest = $latest+1;
 		$this->assertSame( $newLatest, $translatablePage->getReadyTag( DB_MASTER ), 'Ready tag was updated after protection' );
 		$this->assertSame( $latest, $translatablePage->getMarkedTag( DB_MASTER ), 'Marked tag was not updated after protection' );
+	}
+
+	public function testTranslationPageRestrictions() {
+		$superUser = new SuperUser();
+		$title = Title::newFromText( 'Translatable page' );
+		$page = WikiPage::factory( $title );
+		$status = $page->doEdit( '<translate>Hello</translate>', 'New page', 0, false, $superUser );
+		$revision = $status->value['revision']->getId();
+		$translatablePage = TranslatablePage::newFromRevision( $title, $revision );
+		$translatablePage->addMarkedTag( $revision );
+
+		$translationPage = Title::newFromText( 'Translatable page/fi' );
+		RenderJob::newJob( $translationPage )->run();
+		$this->assertTrue( $translationPage->userCan( 'read', $superUser ),
+			'Users can read existing translation pages' );
+		$this->assertFalse( $translationPage->userCan( 'edit', $superUser ),
+			'Users can not edit existing translation pages' );
+
+		$translationPage = Title::newFromText( 'Translatable page/ab' );
+		$this->assertTrue( $translationPage->userCan( 'read', $superUser ),
+			'Users can read non-existing translation pages' );
+		$this->assertFalse( $translationPage->userCan( 'edit', $superUser ),
+			'Users can not edit non-existing translation pages' );
 	}
 
 }

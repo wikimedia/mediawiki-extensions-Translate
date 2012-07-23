@@ -483,7 +483,13 @@ class PageTranslationHooks {
 	 */
 	public static function preventDirectEditing( Title $title, User $user, $action, &$result ) {
 		$page = TranslatablePage::isTranslationPage( $title );
-		if ( $page !== false && $action !== 'delete' && $action !== 'read' ) {
+		$whitelist = array(
+			'read' => true,
+			'delete' => true,
+			'review' => true, // FlaggedRevs
+		);
+
+		if ( $page !== false && !isset( $whitelist[$action] ) ) {
 			if ( self::$allowTargetEdit ) {
 				return true;
 			}
