@@ -572,7 +572,8 @@ class TranslatablePage {
 	}
 
 	public function getMarkedRevs() {
-		$db = wfGetDB( DB_SLAVE );
+		// Avoid replication lag issues
+		$db = wfGetDB( DB_MASTER );
 
 		$fields = array( 'rt_revision', 'rt_value' );
 		$conds = array(
@@ -586,7 +587,8 @@ class TranslatablePage {
 
 	public function getTranslationPages() {
 		// Fetch the available translation pages from database
-		$dbr = wfGetDB( DB_SLAVE );
+		// Avoid replication lag issues
+		$dbr = wfGetDB( DB_MASTER );
 		$prefix = $this->getTitle()->getDBkey() . '/';
 		$likePattern = $dbr->buildLike( $prefix, $dbr->anyString() );
 		$res = $dbr->select(
@@ -711,7 +713,8 @@ class TranslatablePage {
 	public function getTransRev( $suffix ) {
 		$title = Title::makeTitle( NS_TRANSLATIONS, $suffix );
 
-		$db = wfGetDB( DB_SLAVE );
+		// Avoid replication lag issues
+		$db = wfGetDB( DB_MASTER );
 		$fields = 'rt_value';
 		$conds = array(
 			'rt_page' => $title->getArticleID(),
@@ -783,7 +786,8 @@ class TranslatablePage {
 
 	/// List of page ids where the latest revision is either tagged or marked
 	public static function getTranslatablePages() {
-		$dbr = wfGetDB( DB_SLAVE );
+		// Avoid replication lag issues
+		$dbr = wfGetDB( DB_MASTER );
 
 		$tables = array( 'revtag', 'page' );
 		$fields = 'rt_page';
