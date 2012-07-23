@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3///ZA\u003d",
+        "filename": "tests/PageTranslationTaggingTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-07-23T11:37:07Z",
+      "side": 1,
+      "message": "Need some other non existing page here.",
+      "revId": "fd2b0d546eb362797c23bb70d39a41843f365a03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
