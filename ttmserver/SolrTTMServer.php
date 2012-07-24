@@ -120,7 +120,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		}
 
 		wfProfileIn( __METHOD__ );
-		$doc = $this->createDocument( $handle, $targetLanguage, $definition );
+		$doc = $this->createDocument( $handle, $sourceLanguage, $definition );
 
 		$query = $this->client->createSelect();
 		$query->createFilterQuery( 'globalid' )->setQuery( 'globalid:%P1%', array( $doc->globalid ) );
