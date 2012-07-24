@@ -32,10 +32,9 @@ class BlackListTest extends MediaWikiTestCase {
 	);
 
 	protected function setUp() {
-		global $wgLang;
 		parent::setUp();
 		$this->group = MessageGroupBase::factory( $this->groupConfiguration );
-		$this->codes = array_flip( array_keys( TranslateUtils::getLanguageNames( $wgLang->getCode() ) ) );
+		$this->codes = array_flip( array_keys( TranslateUtils::getLanguageNames( 'en' ) ) );
 	}
 
 	protected function tearDown() {
@@ -45,7 +44,7 @@ class BlackListTest extends MediaWikiTestCase {
 
 	public function testNoLanguageConf() {
 		$translatableLanguages = $this->group->getTranslatableLanguages();
-		$this->assertEquals( $this->codes, $translatableLanguages );
+		$this->assertNull( $translatableLanguages );
 	}
 
 	public function testAllBlackList() {
@@ -55,7 +54,7 @@ class BlackListTest extends MediaWikiTestCase {
 			);
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
-		$this->assertEquals( count( $translatableLanguages ) , 0 );
+		$this->assertEquals( count( $translatableLanguages ), 0 );
 	}
 
 
@@ -66,7 +65,7 @@ class BlackListTest extends MediaWikiTestCase {
 			);
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
-		$this->assertEquals( $this->codes, $translatableLanguages );
+		$this->assertNull( $translatableLanguages );
 	}
 
 	public function testWhiteListOverrideBlackList() {

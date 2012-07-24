@@ -330,13 +330,10 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * Get all the translatable languages for a group, considering the whitelisting
 	 * and blacklisting.
-	 * @return array The language names as array keys.
+	 * @return array|null The language codes as array keys.
 	 */
 	public function getTranslatableLanguages() {
-		global $wgLang;
-		$codes = array_keys( TranslateUtils::getLanguageNames( $wgLang->getCode() ) );
-		$codes = array_flip( $codes );
-		return $codes;
+		return null;
 	}
 }
 
