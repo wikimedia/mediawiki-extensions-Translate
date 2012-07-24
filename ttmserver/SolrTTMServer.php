@@ -123,15 +123,15 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		$doc = $this->createDocument( $handle, $targetLanguage, $definition );
 
 		$query = $this->client->createSelect();
-		$query->createFilterQuery( 'globalid' )->setQuery( 'globalid:%T1%', array( $doc->globalid ) );
+		$query->createFilterQuery( 'globalid' )->setQuery( 'globalid:%P1%', array( $doc->globalid ) );
 		$resultset = $this->client->select( $query );
 
 		$found = count( $resultset );
 		if ( $found > 1 ) {
-			error_log( "Found multiple documents with global id {$doc->globalid}" );
+			throw new MWException( "Found multiple documents with global id {$doc->globalid}" );
 		}
 
-		// Fill in the missing fields
+		// Fill in the fields from existing entry if it exists
 		if ( $found === 1 ) {
 			foreach ( $resultset as $resultdoc ) {
 				foreach( $resultdoc as $field => $value ) {
