@@ -63,7 +63,11 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		$dist = "strdist($dist,text,edit)";
 		$query->addSort( $dist, 'asc' );
 
-		$resultset = $this->client->select( $query );
+		try {
+			$resultset = $this->client->select( $query );
+		} catch( Solarium_Exception $e ) {
+			throw new TranslationHelperExpection( 'Solarium exception' );
+		}
 
 		$edCache = array();
 		$suggestions = array();
@@ -124,7 +128,14 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 
 		$query = $this->client->createSelect();
 		$query->createFilterQuery( 'globalid' )->setQuery( 'globalid:%P1%', array( $doc->globalid ) );
-		$resultset = $this->client->select( $query );
+
+		try {
+			$resultset = $this->client->select( $query );
+		} catch( Solarium_Exception $e ) {
+			error_log( "SolrTTMServer update-read failed" );
+			wfProfileOut( __METHOD__ );
+			return false;
+		}
 
 		$found = count( $resultset );
 		if ( $found > 1 ) {
@@ -148,7 +159,14 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		$update = $this->client->createUpdate();
 		$update->addDocument( $doc );
 		$update->addCommit();
-		$this->client->update( $update );
+
+		try {
+			$this->client->update( $update );
+		} catch( Solarium_Exception $e ) {
+			error_log( "SolrTTMServer update-write failed" );
+			wfProfileOut( __METHOD__ );
+			return false;
+		}
 
 		wfProfileOut( __METHOD__ );
 		return true;
