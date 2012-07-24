@@ -227,7 +227,7 @@ class TranslationHelpers {
 	public function callBox( $type, $cb, $params = array() ) {
 		try {
 			return call_user_func_array( $cb, $params );
-		} catch ( TranslationHelperExpection $e ) {
+		} catch ( TranslationHelperException $e ) {
 			return "<!-- Box $type not available: {$e->getMessage()} -->";
 		}
 	}
@@ -264,7 +264,7 @@ class TranslationHelpers {
 		$TTMServer = TTMServer::factory( $config );
 		$suggestions = $TTMServer->query( $source, $code, $definition );
 		if ( count( $suggestions ) === 0 ) {
-			throw new TranslationHelperExpection( 'No suggestions' );
+			throw new TranslationHelperException( 'No suggestions' );
 		}
 
 		return $suggestions;
@@ -300,20 +300,20 @@ class TranslationHelpers {
 		if ( $json === false ) {
 			// Most likely a timeout or other general error
 			self::reportTranslationServiceFailure( $serviceName );
-			throw new TranslationHelperExpection( 'No reply from remote server' );
+			throw new TranslationHelperException( 'No reply from remote server' );
 		} elseif ( !is_array( $response ) ) {
 			error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
-			throw new TranslationHelperExpection( 'Malformed reply from remote server' );
+			throw new TranslationHelperException( 'Malformed reply from remote server' );
 		}
 
 		if ( !isset( $response['ttmserver'] ) ) {
 			self::reportTranslationServiceFailure( $serviceName );
-			throw new TranslationHelperExpection( 'Unexpected reply from remote server' );
+			throw new TranslationHelperException( 'Unexpected reply from remote server' );
 		}
 
 		$suggestions = $response['ttmserver'];
 		if ( count( $suggestions ) === 0 ) {
-			throw new TranslationHelperExpection( 'No suggestions' );
+			throw new TranslationHelperException( 'No suggestions' );
 		}
 
 		return $suggestions;
@@ -418,7 +418,7 @@ class TranslationHelpers {
 
 				try {
 					$boxes[] = $this->$method( $name, $config );
-				} catch ( TranslationHelperExpection $e ) {
+				} catch ( TranslationHelperException $e ) {
 					$errors .= "<!-- Box $name not available: {$e->getMessage()} -->\n";
 				}
 				continue;
@@ -440,7 +440,7 @@ class TranslationHelpers {
 					'config' => $config,
 					'suggestions' => $this->$method( $name, $config ),
 				);
-			} catch ( TranslationHelperExpection $e ) {
+			} catch ( TranslationHelperException $e ) {
 				$errors .= "<!-- Box $name not available: {$e->getMessage()} -->\n";
 			}
 		}
@@ -495,7 +495,7 @@ class TranslationHelpers {
 		$unsupported = wfGetCache( CACHE_ANYTHING )->get( $memckey );
 
 		if ( isset( $unsupported[$code] ) ) {
-			throw new TranslationHelperExpection( 'Unsupported language' );
+			throw new TranslationHelperException( 'Unsupported language' );
 		}
 
 		$options = array();
@@ -509,7 +509,7 @@ class TranslationHelpers {
 		if ( isset( $config['key'] ) ) {
 			$params['appId'] = $config['key'];
 		} else {
-			throw new TranslationHelperExpection( 'API key is not set' );
+			throw new TranslationHelperException( 'API key is not set' );
 		}
 
 		$url = $config['url'] . '?' . wfArrayToCgi( $params );
@@ -530,7 +530,7 @@ class TranslationHelpers {
 			if ( strpos( $error, 'must be a valid language' ) !== false ) {
 				$unsupported[$code] = true;
 				wfGetCache( CACHE_ANYTHING )->set( $memckey, $unsupported, 60 * 60 * 8 );
-				throw new TranslationHelperExpection( 'Unsupported language code' );
+				throw new TranslationHelperException( 'Unsupported language code' );
 			}
 
 			if ( $error ) {
@@ -583,7 +583,7 @@ class TranslationHelpers {
 				self::reportTranslationServiceFailure( $serviceName );
 			} elseif ( !is_object( $response ) ) {
 				error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
-				throw new TranslationHelperExpection( 'Malformed reply from remote server' );
+				throw new TranslationHelperException( 'Malformed reply from remote server' );
 			}
 
 			foreach ( $response->responseData as $pair ) {
@@ -605,7 +605,7 @@ class TranslationHelpers {
 		$code = str_replace( '-', '_', wfBCP47( $code ) );
 
 		if ( !isset( $pairs[$code] ) ) {
-			throw new TranslationHelperExpection( 'Unsupported language' );
+			throw new TranslationHelperException( 'Unsupported language' );
 		}
 
 		$suggestions = array();
@@ -648,7 +648,7 @@ class TranslationHelpers {
 		}
 
 		if ( !count( $suggestions ) ) {
-			throw new TranslationHelperExpection( 'No suggestions' );
+			throw new TranslationHelperException( 'No suggestions' );
 		}
 
 		$divider = Html::element( 'div', array( 'style' => 'margin-bottom: 0.5ex' ) );
@@ -818,7 +818,7 @@ class TranslationHelpers {
 		global $wgTranslateDocumentationLanguageCode, $wgOut;
 
 		if ( !$wgTranslateDocumentationLanguageCode ) {
-			throw new TranslationHelperExpection( 'Message documentation language code is not defined' );
+			throw new TranslationHelperException( 'Message documentation language code is not defined' );
 		}
 
 		$page = $this->handle->getKey();
@@ -1312,7 +1312,7 @@ class TranslationHelpers {
 		}
 
 		if ( $count >= self::$serviceFailureCount ) {
-			throw new TranslationHelperExpection( "web service $service is temporarily disabled" );
+			throw new TranslationHelperException( "web service $service is temporarily disabled" );
 		}
 	}
 
@@ -1339,7 +1339,7 @@ class TranslationHelpers {
 			error_log( "Translation service $service still suspended" );
 		}
 
-		throw new TranslationHelperExpection( "web service $service failed to provide valid response" );
+		throw new TranslationHelperException( "web service $service failed to provide valid response" );
 	}
 
 	public static function addModules( OutputPage $out ) {
@@ -1354,24 +1354,32 @@ class TranslationHelpers {
 	/// @since 2012-01-04
 	protected function mustBeKnownMessage() {
 		if ( !$this->group ) {
-			throw new TranslationHelperExpection( 'unknown group' );
+			throw new TranslationHelperException( 'unknown group' );
 		}
 	}
 	/// @since 2012-01-04
 	protected function mustBeTranslation() {
 		if ( !$this->handle->getCode() ) {
-			throw new TranslationHelperExpection( 'editing source language' );
+			throw new TranslationHelperException( 'editing source language' );
 		}
 	}
 
 	/// @since 2012-01-04
 	protected function mustHaveDefinition() {
 		if ( strval( $this->getDefinition() ) === '' ) {
-			throw new TranslationHelperExpection( 'message does not have definition' );
+			throw new TranslationHelperException( 'message does not have definition' );
 		}
 	}
 
 }
 
-/// @since 2012-01-04
-class TranslationHelperExpection extends MWException {}
+/**
+ * Translation helpers can throw this exception when they cannot do
+ * anything useful with the current message. This helps in debugging
+ * why some fields are not shown. See also helpers in TranslationHelpers:
+ * - mustBeKnownMessage()
+ * - mustBeTranslation()
+ * - mustHaveDefinition()
+ * @since 2012-01-04 (Renamed in 2012-07-24 to fix typo in name)
+ */
+class TranslationHelperException extends MWException {}
