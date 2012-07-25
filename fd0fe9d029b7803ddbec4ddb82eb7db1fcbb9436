@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//9+8\u003d",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-25T10:18:17Z",
+      "side": 1,
+      "message": "The third parameter should be tgs_lang, no?",
+      "revId": "fd0fe9d029b7803ddbec4ddb82eb7db1fcbb9436",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
