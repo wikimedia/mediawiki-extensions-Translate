@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//9ec\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2012-07-25T20:34:03Z",
+      "side": 1,
+      "message": "Good catch. Gold star.\n\nActually, it might be better to put the functions below inside this object, rather than assigning them with the dot operator. It\u0027s mostly a matter of style, but it means you don\u0027t have to type \u0027callbacks.\u0027 every time.",
+      "revId": "66b7302be3d37d9d8d551e29599fb0e2009671a0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//9eI\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2012-07-25T20:34:03Z",
+      "side": 1,
+      "message": "Bonus points if you signify jQuery objects with dollar signs (\u0027$\u0027) like `var $tr \u003d ....`",
+      "revId": "66b7302be3d37d9d8d551e29599fb0e2009671a0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//9eM\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2012-07-25T20:34:03Z",
+      "side": 1,
+      "message": "$( this ).data( .... // missing spaces\n\nThis is not enough for -1.",
+      "revId": "66b7302be3d37d9d8d551e29599fb0e2009671a0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
