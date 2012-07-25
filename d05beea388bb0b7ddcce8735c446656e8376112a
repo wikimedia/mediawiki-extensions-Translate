@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//9jw\u003d",
+        "filename": "resources/ext.translate.hooks.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-25T19:23:46Z",
+      "side": 1,
+      "message": "var registry \u003d {};",
+      "revId": "d05beea388bb0b7ddcce8735c446656e8376112a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//9j0\u003d",
+        "filename": "resources/ext.translate.hooks.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-25T19:23:46Z",
+      "side": 1,
+      "message": "This check is broken. mw.translate or mw.translateHooks?\n\nActually both are wrong, you want to store this in a local variable, not in the public object. Or add(\u0027add\u0027) or add(\u0027run\u0027) will be fun :)\n\n !registry[name] -\u003e registry[name] \u003d [];\n registry[name].push( func );",
+      "revId": "d05beea388bb0b7ddcce8735c446656e8376112a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//9js\u003d",
+        "filename": "resources/ext.translate.hooks.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-25T19:23:46Z",
+      "side": 1,
+      "message": "Why are you passing this (mw.translateHooks) as context?",
+      "revId": "d05beea388bb0b7ddcce8735c446656e8376112a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//9j4\u003d",
+        "filename": "resources/ext.translate.hooks.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-25T19:23:46Z",
+      "side": 1,
+      "message": "Missing new line at EOF.",
+      "revId": "d05beea388bb0b7ddcce8735c446656e8376112a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//9jc\u003d",
+        "filename": "resources/ext.translate.quickedit.css",
+        "patchSetId": 6
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-25T19:23:46Z",
+      "side": 1,
+      "message": "I don\u0027t know what this interface looks like, but this negative margin looks suspicious.",
+      "revId": "d05beea388bb0b7ddcce8735c446656e8376112a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//9jo\u003d",
+        "filename": "resources/ext.translate.quickedit.css",
+        "patchSetId": 6
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-07-25T19:23:46Z",
+      "side": 1,
+      "message": "Missing new line at EOF.",
+      "revId": "d05beea388bb0b7ddcce8735c446656e8376112a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
