@@ -71,12 +71,12 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 			$candidate = $doc->content;
 
 			if ( isset( $edCache[$candidate] ) ) {
-				$dist = $edCache[$candidate];
+				$quality = $edCache[$candidate];
 			} else {
 				$candidateLen = mb_strlen( $candidate );
 				$dist = TTMServer::levenshtein( $text, $candidate, $len, $candidateLen );
 				$quality = 1 - ( $dist * 0.9 / min( $len, $candidateLen ) );
-				$edCache[$candidate] = $dist;
+				$edCache[$candidate] = $quality;
 			}
 			if ( $quality < $this->config['cutoff'] ) {
 				break;
