@@ -193,6 +193,7 @@ class TranslateHooks {
 		$updater->addExtensionUpdate( array( 'addTable', 'translate_tms', "$dir/translate_tm.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addTable', 'translate_metadata', "$dir/translate_metadata.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addTable', 'translate_messageindex', "$dir/translate_messageindex.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addIndex', 'translate_groupstats', 'tgs_lang', "$dir/translate_groupstats-indexchange.sql", true ) );
 		return true;
 	}
 
