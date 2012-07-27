@@ -137,16 +137,16 @@ class TranslationHelpers {
 			$page, $code, $title->getNamespace()
 		);
 
-		if ( $translation !== null ) {
-			if ( !TranslateEditAddons::hasFuzzyString( $translation ) && TranslateEditAddons::isFuzzy( $title ) ) {
-				$translation = TRANSLATE_FUZZY . $translation;
-			}
-		} elseif ( $group && !$group instanceof FileBasedMessageGroup ) {
+		if ( $translation === null && $group && !$group instanceof FileBasedMessageGroup ) {
 			// Then try to load from files (old groups)
 			$translation = $group->getMessage( $page, $code );
-		} else {
+		}
+		wfRunHooks( 'TranslatePrefillTranslation', array( &$translation, $this->handle ) );
+		if ( $translation === null ) {
 			// Nothing to prefil
 			$translation = '';
+		} elseif ( !TranslateEditAddons::hasFuzzyString( $translation ) && TranslateEditAddons::isFuzzy( $title ) ) {
+			$translation = TRANSLATE_FUZZY . $translation;
 		}
 
 		$this->translation = $translation;
