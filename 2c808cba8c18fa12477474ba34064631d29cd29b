@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//8qk\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-27T08:20:36Z",
+      "side": 1,
+      "message": "I\u0027d do it like this:\n\n$formAttributes \u003d array();\n$formAttributes[\u0027class\u0027] \u003d \u0027mw-sp-translate-settings\u0027;\nif ( $this-\u003egroup ) {\n  $formAttributes[\u0027data-grouptype\u0027] \u003d get_class( $this-\u003egroup );\n}",
+      "revId": "2c808cba8c18fa12477474ba34064631d29cd29b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
