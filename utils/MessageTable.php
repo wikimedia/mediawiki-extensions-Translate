@@ -114,16 +114,18 @@ class MessageTable {
 			$title = $titleMap[$key];
 
 			$original = $m->definition();
-
+			$translation = $m->translation();
 			if ( $m->translation() !== null ) {
-				$message = $m->translation();
-				$rclasses = self::getLanguageAttributes( $targetLang );
-				$rclasses['class'] = 'translated';
+				$message = $translation;
+				$attributes = self::getLanguageAttributes( $targetLang );
+				$attributes['class'] = 'translated';
 			} else {
 				$message = $original;
-				$rclasses = self::getLanguageAttributes( $sourceLang );
-				$rclasses['class'] = 'untranslated';
+				$attributes = self::getLanguageAttributes( $sourceLang );
+				$attributes['class'] = 'untranslated';
 			}
+
+			wfRunHooks( 'TranslateFormatMessageBeforeTable', array( &$message, $translation, $original, &$attributes ) );
 
 			global $wgLang;
 			$niceTitle = htmlspecialchars( $wgLang->truncate( $title->getPrefixedText(), -35 ) );
@@ -160,12 +162,12 @@ class MessageTable {
 				);
 
 				$output .= Xml::tags( 'tr', array( 'class' => 'new tqe-inlineeditable' ) + $tqeData,
-					Xml::tags( 'td', $rclasses, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
+					Xml::tags( 'td', $attributes, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			} else {
 				$output .= Xml::tags( 'tr', array( 'class' => 'def tqe-inlineeditable' ) + $tqeData,
 					Xml::tags( 'td', null, $leftColumn ) .
-					Xml::tags( 'td', $rclasses, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
+					Xml::tags( 'td', $attributes, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			}
 			$output .= "\n";
