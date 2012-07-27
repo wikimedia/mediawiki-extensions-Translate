@@ -101,6 +101,40 @@
       "revId": "d05beea388bb0b7ddcce8735c446656e8376112a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//8sY\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-27T07:56:40Z",
+      "side": 1,
+      "message": "Missing space before (",
+      "revId": "d05beea388bb0b7ddcce8735c446656e8376112a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//8sU\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-27T07:56:40Z",
+      "side": 1,
+      "message": "Two missing spaces",
+      "revId": "d05beea388bb0b7ddcce8735c446656e8376112a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
