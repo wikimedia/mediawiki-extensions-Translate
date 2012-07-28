@@ -97,6 +97,9 @@ class TranslationEditPage {
 			$textareaParams['readonly'] = 'readonly';
 		}
 
+		$extraInputs = '';
+		wfRunHooks( 'TranslateGetExtraInputs', array( &$translation, &$extraInputs ) );
+
 		$textarea = Html::element( 'textarea', $textareaParams, $translation );
 
 		$hidden = array();
@@ -150,7 +153,8 @@ class TranslationEditPage {
 		$form = Html::rawElement( 'form', $formParams,
 			implode( "\n", $hidden ) . "\n" .
 			$helpers->getBoxes( $this->suggestions ) . "\n" .
-			"$textarea\n$bottom"
+			Html::rawElement( 'div', array( 'class' => 'mw-translate-inputs' ), "$textarea\n$extraInputs" ) . "\n" .
+			Html::rawElement( 'div', array( 'class' => 'mw-translate-bottom' ), $bottom )
 		);
 
 		echo Html::rawElement( 'div', array( 'class' => 'mw-ajax-dialog' ), $form );
