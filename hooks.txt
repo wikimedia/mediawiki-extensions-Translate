@@ -23,7 +23,7 @@ directory, and then find /docs/hooks.txt .
 JavaScript hooks for the Translate extension are a little different. To use them, declare a
 dependency on ext.translate.hooks . Then, use
 
-	mw.translateHook.add( name, hookFunction );
+	mw.translateHooks.add( name, hookFunction );
 
 where name is a string, but hookFunction is not (unlike in the case of PHP hooks)
 but rather a function reference. Return values from JavaScript hooks are ignored.
@@ -53,8 +53,11 @@ to add events to the Translate extension.
 	$handle: The current MessageHandle object
 
 === JavaScript events ===
-afterSubmit: Provides an opportunity to modify a Translate translation form immediately before it is submitted
+'afterRegisterFeatures': Provides an opportunity to register event handlers, etc., whenever a new form is opened.
+	form: The new form
+
+'afterSubmit': Provides an opportunity to modify a Translate translation form immediately before it is submitted
 	form: The form being submitted
 
-beforeSubmit: Provides an opportunity to modify a Translate translation form immediately after it is submitted
+'beforeSubmit': Provides an opportunity to modify a Translate translation form immediately after it is submitted
 	form: The form that has just been submitted
