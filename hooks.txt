@@ -34,6 +34,9 @@ This is a list of known events and parameters; please add to it if you're going
 to add events to the Translate extension.
 
 === PHP events ===
+'TranslateBeforeAddModules': Provides an opportunity to load extra modules
+	&$modules: Array of module names to be loaded
+
 'TranslateFormatMessageBeforeTable': Provides an opportunity to manipulate the display of translation strings (messages) in the main table
 	&$message: The message that will be displayed
 	$translation: The current translation (or null if not yet translated)
