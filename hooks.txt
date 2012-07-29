@@ -43,6 +43,11 @@ to add events to the Translate extension.
 	$original: The original (untranslated) message
 	&$attributes: An array of attributes that will
 
+'TranslateGetBoxes': Provides an opportunity to add or remove "boxes" (translation helpers) from the translation interface
+	$group: The message group being used at the time
+	$handle: A MessageHandle object representing the translation page (e.g. 'MediaWiki:Example/qqq')
+	&$boxes: An associative array to be appended to (format: 'name' => 'some HTML string')
+
 'TranslateGetExtraInputs': Provides an opportunity to add extra form inputs to to the default translation editor
 	&$translation: The translation string as it stands
 	&$extraInputs: The extra input space, ready for HTML to be appended
