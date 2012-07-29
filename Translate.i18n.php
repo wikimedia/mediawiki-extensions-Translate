@@ -364,8 +364,7 @@ Details: $1',
 	'translate-messagereview-failure' => 'Accepting... failed: $1',
 	'translate-messagereview-done' => 'Accepted',
 	'translate-messagereview-reviews' => 'Accepted by {{PLURAL:$1|one user|$1 users}}',
-	'translate-messagereview-reviewswithyou' => 'Accepted by {{PLURAL:$1|one user|$1 users}} including you',
-	'translate-messagereview-reviewsyou' => 'Accepted by you',
+	'translate-messagereview-reviewswithyou' => 'Accepted by {{PLURAL:$1|you|$1 users including you}}',
 
 	// Localisation for extension specific API errors
 	'api-error-invalidrevision' => 'Translation was not found',
