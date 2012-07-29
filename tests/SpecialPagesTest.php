@@ -8,6 +8,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
+require_once( __DIR__ . '/SuperUser.php' );
 /**
  * Unit tests for making sure special pages execute
  * @group Database
@@ -56,17 +57,3 @@ class SpecialPagesTest extends MediaWikiTestCase {
 	}
 }
 
-
-class SuperUser extends User {
-	public function getId() {
-		return 666;
-	}
-
-	public function getName() {
-		return 'SuperUser';
-	}
-
-	public function isAllowed( $right = '' ) {
-		return true;
-	}
-}
