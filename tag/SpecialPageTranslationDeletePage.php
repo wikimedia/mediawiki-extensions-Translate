@@ -44,73 +44,66 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 
 	protected $translationPages;
 
-	/**
-	 * User instance.
-	 *
-	 * @var User
-	 */
-	protected $user;
-
 	public function __construct() {
 		parent::__construct( 'PageTranslationDeletePage' );
 	}
 
 	public function execute( $par ) {
-		global $wgOut, $wgRequest, $wgUser;
+		$request = $this->getRequest();
 
 		// Yes, the use of getVal() and getText() is wanted, see bug 20365
-		$this->text = $wgRequest->getVal( 'wpTitle', $par );
+		$this->text = $request->getVal( 'wpTitle', $par );
 		$this->title = Title::newFromText( $this->text );
-		$this->reason = $wgRequest->getText( 'reason' );
+		$this->reason = $request->getText( 'reason' );
 		// Checkboxes that default being checked are tricky
-		$this->doSubpages = $wgRequest->getBool( 'subpages', !$wgRequest->wasPosted() );
+		$this->doSubpages = $request->getBool( 'subpages', !$request->wasPosted() );
 
-		$this->user = $wgUser;
+		$user = $this->getUser();
 
 		if ( $this->doBasicChecks() !== true ) {
 			return;
 		}
 
+		$out = $this->getOutput();
+
 		// Real stuff starts here
 		if ( TranslatablePage::isSourcePage( $this->title ) ) {
-			$wgOut->setPagetitle( wfMsg( 'pt-deletepage-full-title', $this->title->getPrefixedText() ) );
+			$out->setPagetitle( $this->msg( 'pt-deletepage-full-title', $this->title->getPrefixedText() )->text() );
 
 			$this->code = '';
 			$this->page = TranslatablePage::newFromTitle( $this->title );
 		} else {
 			$page = TranslatablePage::isTranslationPage( $this->title );
 			if ( $page ) {
-				$wgOut->setPagetitle( wfMsg( 'pt-deletepage-lang-title', $this->title->getPrefixedText() ) );
+				$out->setPagetitle( $this->msg( 'pt-deletepage-lang-title', $this->title->getPrefixedText() )->text() );
 
 				list( , $this->code ) = TranslateUtils::figureMessage( $this->title->getText() );
 				$this->page = $page;
 			} else {
-				$wgOut->showErrorPage( 'pt-deletepage-invalid-title', 'pt-deletepage-invalid-text' );
-				return;
+				throw new ErrorPageError( 'pt-deletepage-invalid-title', 'pt-deletepage-invalid-text' );
 			}
 		}
 
-		if ( !$this->user->isAllowed( 'pagetranslation' ) ) {
-			$wgOut->permissionRequired( 'pagetranslation' );
-			return;
+		if ( !$user->isAllowed( 'pagetranslation' ) ) {
+			throw new PermissionsError( 'pagetranslation' );
 		}
 
 		// Is there really no better way to do this?
-		$subactionText = $wgRequest->getText( 'subaction' );
+		$subactionText = $request->getText( 'subaction' );
 		switch ( $subactionText ) {
-		case wfMsg( 'pt-deletepage-action-check' ):
-			$subaction = 'check'; break;
-		case wfMsg( 'pt-deletepage-action-perform' ):
-			$subaction = 'perform'; break;
-		case wfMsg( 'pt-deletepage-action-other' ):
-			$subaction = ''; break;
-		default:
-			$subaction = '';
+			case $this->msg( 'pt-deletepage-action-check' )->text():
+				$subaction = 'check'; break;
+			case $this->msg( 'pt-deletepage-action-perform' )->text():
+				$subaction = 'perform'; break;
+			case $this->msg( 'pt-deletepage-action-other' )->text():
+				$subaction = ''; break;
+			default:
+				$subaction = '';
 		}
 
-		if ( $subaction === 'check' && $this->checkToken() && $wgRequest->wasPosted() ) {
+		if ( $subaction === 'check' && $this->checkToken() && $request->wasPosted() ) {
 			$this->showConfirmation();
-		} elseif ( $subaction === 'perform' && $this->checkToken() && $wgRequest->wasPosted() ) {
+		} elseif ( $subaction === 'perform' && $this->checkToken() && $request->wasPosted() ) {
 			$this->performAction();
 		} else {
 			$this->showForm();
@@ -124,28 +117,23 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	 * @return bool
 	 */
 	protected function doBasicChecks() {
-		global $wgOut;
 		# Check for database lock
 		if ( wfReadOnly() ) {
-			$wgOut->readOnlyPage();
-			return false;
+			throw new ReadOnlyError;
 		}
 
 		if ( $this->title === null ) {
-			$wgOut->showErrorPage( 'notargettitle', 'notargettext' );
-			return false;
+			throw new ErrorPageError( 'notargettitle', 'notargettext' );
 		}
 
 		if ( !$this->title->exists() ) {
-			$wgOut->showErrorPage( 'nopagetitle', 'nopagetext' );
-			return false;
+			throw new ErrorPageError( 'nopagetitle', 'nopagetext' );
 		}
 
 		# Check rights
-		$permErrors = $this->title->getUserPermissionsErrors( 'delete', $this->user );
+		$permErrors = $this->title->getUserPermissionsErrors( 'delete', $this->getUser() );
 		if ( !empty( $permErrors ) ) {
-			$wgOut->showPermissionsErrorPage( $permErrors );
-			return false;
+			throw new PermissionsError( 'delete', $permErrors );
 		}
 
 		// Let the caller know it's safe to continue
@@ -158,31 +146,28 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	 * @return bool
 	 */
 	protected function checkToken() {
-		global $wgRequest;
-		return $this->user->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) );
+		return $this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) );
 	}
 
 	/**
 	 * The query form.
 	 */
 	protected function showForm() {
-		global $wgOut;
-
-		$wgOut->addWikiMsg( 'pt-deletepage-intro' );
+		$this->getOutput()->addWikiMsg( 'pt-deletepage-intro' );
 
 		$subaction = array( 'name' => 'subaction' );
 		$formParams = array( 'method' => 'post', 'action' => $this->getTitle( $this->text )->getLocalURL() );
 
 		$form = array();
-		$form[] = Xml::fieldset( wfMsg( 'pt-deletepage-any-legend' ) );
+		$form[] = Xml::fieldset( $this->msg( 'pt-deletepage-any-legend' )->text() );
 		$form[] = Html::openElement( 'form', $formParams );
-		$form[] = Html::hidden( 'wpEditToken', $this->user->editToken() );
-		$this->addInputLabel( $form, wfMsg( 'pt-deletepage-current' ), 'wpTitle', 30, $this->text );
-		$this->addInputLabel( $form, wfMsg( 'pt-deletepage-reason' ), 'reason', 60, $this->reason );
-		$form[] = Xml::submitButton( wfMsg( 'pt-deletepage-action-check' ), $subaction );
+		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->editToken() );
+		$this->addInputLabel( $form, $this->msg( 'pt-deletepage-current' )->text(), 'wpTitle', 30, $this->text );
+		$this->addInputLabel( $form, $this->msg( 'pt-deletepage-reason' )->text(), 'reason', 60, $this->reason );
+		$form[] = Xml::submitButton( $this->msg( 'pt-deletepage-action-check' )->text(), $subaction );
 		$form[] = Xml::closeElement( 'form' );
 		$form[] = Xml::closeElement( 'fieldset' );
-		$wgOut->addHTML( implode( "\n", $form ) );
+		$this->getOutput()->addHTML( implode( "\n", $form ) );
 	}
 
 	/**
@@ -206,33 +191,33 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	 * Lists all the action which would take place.
 	 */
 	protected function showConfirmation() {
-		global $wgOut, $wgLang;
+		$out = $this->getOutput();
 
-		$wgOut->addWikiMsg( 'pt-deletepage-intro' );
+		$out->addWikiMsg( 'pt-deletepage-intro' );
 
 		$target = $this->title;
 		$count = 1; // Base page
 
-		$wgOut->wrapWikiMsg( '== $1 ==', 'pt-deletepage-list-pages' );
+		$out->wrapWikiMsg( '== $1 ==', 'pt-deletepage-list-pages' );
 		if ( !$this->singleLanguage() ) {
 			$this->printChangeLine( $this->title );
 		}
 
-		$wgOut->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-translation' );
+		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-translation' );
 		$translationPages = $this->getTranslationPages();
 		foreach ( $translationPages as $old ) {
 			$count++;
 			$this->printChangeLine( $old );
 		}
 
-		$wgOut->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-section' );
+		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-section' );
 		$sectionPages = $this->getSectionPages( $target );
 		foreach ( $sectionPages as $old ) {
 			$count++;
 			$this->printChangeLine( $old );
 		}
 
-		$wgOut->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-other' );
+		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-other' );
 		$subpages = $this->getSubpages();
 		foreach ( $subpages as $old ) {
 			if ( TranslatablePage::isTranslationPage( $old ) ) continue;
@@ -240,8 +225,8 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 			$this->printChangeLine( $old, $this->doSubpages );
 		}
 
-		$wgOut->addWikiText( "----\n" );
-		$wgOut->addWikiMsg( 'pt-deletepage-list-count', $wgLang->formatNum( $count ) );
+		$out->addWikiText( "----\n" );
+		$out->addWikiMsg( 'pt-deletepage-list-count', $this->getLanguage()->formatNum( $count ) );
 
 		$br = Html::element( 'br' );
 		$readonly =  array( 'readonly' => 'readonly' );
@@ -251,20 +236,20 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 
 		$form = array();
 		if ( $this->singleLanguage() ) {
-			$form[] = Xml::fieldset( wfMsg( 'pt-deletepage-lang-legend' ) );
+			$form[] = Xml::fieldset( $this->msg( 'pt-deletepage-lang-legend' )->text() );
 		} else {
-			$form[] = Xml::fieldset( wfMsg( 'pt-deletepage-full-legend' ) );
+			$form[] = Xml::fieldset( $this->msg( 'pt-deletepage-full-legend' )->text() );
 		}
 		$form[] = Html::openElement( 'form', $formParams );
-		$form[] = Html::hidden( 'wpEditToken', $this->user->editToken() );
-		$this->addInputLabel( $form, wfMsg( 'pt-deletepage-current' ), 'wpTitle', 30, $this->text, $readonly );
-		$this->addInputLabel( $form, wfMsg( 'pt-deletepage-reason' ), 'reason', 60, $this->reason );
-		$form[] = Xml::checkLabel( wfMsg( 'pt-deletepage-subpages' ), 'subpages', 'mw-subpages', $this->doSubpages, $readonly ) . $br;
-		$form[] = Xml::submitButton( wfMsg( 'pt-deletepage-action-perform' ), $subaction );
-		$form[] = Xml::submitButton( wfMsg( 'pt-deletepage-action-other' ), $subaction );
+		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->editToken() );
+		$this->addInputLabel( $form, $this->msg( 'pt-deletepage-current' )->text(), 'wpTitle', 30, $this->text, $readonly );
+		$this->addInputLabel( $form, $this->msg( 'pt-deletepage-reason' )->text(), 'reason', 60, $this->reason );
+		$form[] = Xml::checkLabel( $this->msg( 'pt-deletepage-subpages' )->text(), 'subpages', 'mw-subpages', $this->doSubpages, $readonly ) . $br;
+		$form[] = Xml::submitButton( $this->msg( 'pt-deletepage-action-perform' )->text(), $subaction );
+		$form[] = Xml::submitButton( $this->msg( 'pt-deletepage-action-other' )->text(), $subaction );
 		$form[] = Xml::closeElement( 'form' );
 		$form[] = Xml::closeElement( 'fieldset' );
-		$wgOut->addHTML( implode( "\n", $form ) );
+		$out->addHTML( implode( "\n", $form ) );
 	}
 
 	/**
@@ -272,11 +257,10 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	 * @param $enabled bool
 	 */
 	protected function printChangeLine( $title, $enabled = true ) {
-		global $wgOut;
 		if ( $enabled ) {
-			$wgOut->addWikiText( '* ' . $title->getPrefixedText() );
+			$this->getOutput()->addWikiText( '* ' . $title->getPrefixedText() );
 		} else {
-			$wgOut->addWikiText( '* <s>' . $title->getPrefixedText() . '</s>' );
+			$this->getOutput()->addWikiText( '* <s>' . $title->getPrefixedText() . '</s>' );
 		}
 	}
 
@@ -286,13 +270,14 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$base = $this->title->getPrefixedText();
 
 		$translationPages = $this->getTranslationPages();
+		$user = $this->getUser();
 		foreach ( $translationPages as $old ) {
-			$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, $base, !$this->singleLanguage(), $this->user );
+			$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, $base, !$this->singleLanguage(), $user );
 		}
 
 		$sectionPages = $this->getSectionPages();
 		foreach ( $sectionPages as $old ) {
-			$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, $base, !$this->singleLanguage(), $this->user );
+			$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, $base, !$this->singleLanguage(), $user );
 		}
 
 		if ( !$this->doSubpages ) {
@@ -302,7 +287,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 					continue;
 				}
 
-				$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, $base, !$this->singleLanguage(), $this->user );
+				$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, $base, !$this->singleLanguage(), $user );
 			}
 		}
 
@@ -320,8 +305,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		MessageGroups::clearCache();
 		MessageIndexRebuildJob::newJob()->insert();
 
-		global $wgOut;
-		$wgOut->addWikiMsg( 'pt-deletepage-started' );
+		$this->getOutput()->addWikiMsg( 'pt-deletepage-started' );
 	}
 
 	protected function clearMetadata() {

@@ -76,7 +76,7 @@ class ApiAggregateGroups extends ApiBase {
 			);
 
 			$title = $group ? $group->getTitle() : Title::newFromText( "Group:$id" );
-			$logger->addEntry( $action, $title, null, array( serialize( $logparams ) ) );
+			$logger->addEntry( $action, $title, null, array( serialize( $logparams ) ), $wgUser );
 		} elseif ( $action === 'remove' ) {
 			if ( !isset( $params['aggregategroup'] ) ) {
 				$this->dieUsageMsg( array( 'missingparam', 'aggregategroup' ) );

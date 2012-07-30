@@ -23,7 +23,7 @@ class RenderJob extends Job {
 		$job = new self( $target );
 		$job->setUser( FuzzyBot::getUser() );
 		$job->setFlags( EDIT_FORCE_BOT );
-		$job->setSummary( wfMsgForContent( 'tpt-render-summary' ) );
+		$job->setSummary( wfMessage( 'tpt-render-summary' )->inContentLanguage()->text() );
 
 		return $job;
 	}

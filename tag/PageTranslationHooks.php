@@ -561,7 +561,7 @@ class PageTranslationHooks {
 			);
 
 			$translate = SpecialPage::getTitleFor( 'Translate' );
-			$linkDesc  = wfMsgHtml( 'translate-tag-translate-link-desc' );
+			$linkDesc  = wfMessage( 'translate-tag-translate-link-desc' )->escaped();
 			$actions[] = Linker::link( $translate, $linkDesc, array(), $par );
 		}
 
@@ -573,14 +573,14 @@ class PageTranslationHooks {
 			if ( $wgUser->isAllowed( 'pagetranslation' ) ) {
 				// This page has never been marked
 				if ( $marked === false ) {
-					$linkDesc  = wfMsgHtml( 'translate-tag-markthis' );
+					$linkDesc  = wfMessage( 'translate-tag-markthis' )->escaped();
 					$actions[] = Linker::link( $translate, $linkDesc, array(), $par );
 				} else {
 					$markUrl = $translate->getFullUrl( $par );
-					$actions[] = wfMsgExt( 'translate-tag-markthisagain', 'parseinline', $diffUrl, $markUrl );
+					$actions[] = wfMessage( 'translate-tag-markthisagain', $diffUrl, $markUrl )->parse();
 				}
 			} else {
-				$actions[] = wfMsgExt( 'translate-tag-hasnew', 'parseinline', $diffUrl );
+				$actions[] = wfMessage( 'translate-tag-hasnew', $diffUrl )->parse();
 			}
 		}
 
@@ -667,6 +667,7 @@ class PageTranslationHooks {
 		}
 		$user =  $_['user'];
 
+		//@todo Use wfMessage() here.
 		if ( $action === 'mark' ) {
 			return wfMsgExt( 'pt-log-mark', $opts, $title->getPrefixedText(), $user, $_['revision'] );
 		} elseif ( $action === 'unmark' ) {
@@ -770,7 +771,7 @@ class PageTranslationHooks {
 						$c++;
 
 						if ( $c > 1 ) {
-							$subpages .= wfMsgExt( 'pipe-separator', 'escapenoentities' );
+							$subpages .= wfMessage( 'pipe-separator' )->plain();
 						} else  {
 							// This one is stupid imho, doesn't work with chihuahua
 							// $subpages .= '&lt; ';
