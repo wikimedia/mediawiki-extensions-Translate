@@ -291,7 +291,7 @@ class PageTranslationHooks {
 		// mess the display
 		$lang = Language::factory( $userLangCode );
 		$sep = wfMessage( 'tpt-languages-separator' )->inLanguage( $lang )->plain();
-		$sep .= $lang->getDirMarkEntity();
+		$sep .= $lang->getDirMark();
 		$languages = implode( $sep, $languages );
 
 		$out = Html::openElement( 'div', array(
