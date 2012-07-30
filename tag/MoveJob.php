@@ -26,7 +26,9 @@ class MoveJob extends Job {
 		$job = new self( $source );
 		$job->setUser( FuzzyBot::getUser() );
 		$job->setTarget( $target->getPrefixedText() );
-		$job->setSummary( wfMsgForContent( 'pt-movepage-logreason', $params['base-source'] ) );
+		$summary = wfMessage( 'pt-movepage-logreason', $params['base-source'] );
+		$summary = $summary->inContentLanguage()->text();
+		$job->setSummary( $summary );
 		$job->setParams( $params );
 		$job->setPerformer( $performer );
 		$job->lock();
@@ -71,7 +73,6 @@ class MoveJob extends Job {
 
 		$this->unlock();
 
-
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$key = wfMemcKey( 'translate-pt-move', $base );
 
@@ -85,8 +86,13 @@ class MoveJob extends Job {
 				'user' => $this->getPerformer(),
 				'target' => $this->params['base-target'],
 			);
-			$doer = User::newFromName( $this->getPerformer() );
-			$logger->addEntry( 'moveok', Title::newFromText( $base ), null, array( serialize( $params ) ), $doer );
+			$logger->addEntry(
+				'moveok',
+				Title::newFromText( $base ),
+				null,
+				array( serialize( $params ) ),
+				User::newFromName( $this->getPerformer() )
+			);
 		}
 
 		$wgUser = $oldUser;
