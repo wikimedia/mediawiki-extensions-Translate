@@ -40,6 +40,8 @@ class SpecialPageTranslation extends SpecialPage {
 		$revision = $wgRequest->getInt( 'revision', 0 );
 		$action = $request->getVal( 'do' );
 
+		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Page_translation_example' );
+
 		// No specific page or invalid input
 		$title = Title::newFromText( $target );
 		if ( !$title ) {
