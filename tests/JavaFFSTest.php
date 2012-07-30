@@ -67,6 +67,7 @@ PROPERTIES;
 			array( 'k!ey', '=', 'value', 'row with ! inside key' ),
 			array( '#key', '=', 'value', 'row with # at the beginning of key' ),
 			array( 'k#ey', '=', 'value', 'row with # inside key' ),
+			array( 'k{ey}', '=', 'value', 'row with { and } inside key' ),
 			array( 'k\\tey', '=', 'value\\', 'row with escapes' ),
 			array( '01234', '=', '13.34', 'row with numbers' ),
 			array( '\\n\\tкая', '=', 'кая', 'row with annoying characteres' ),
