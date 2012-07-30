@@ -19,7 +19,6 @@
  * @ingroup SpecialPage PageTranslation
  */
 class SpecialPageTranslation extends SpecialPage {
-
 	/**
 	 * @var User
 	 */
@@ -32,21 +31,21 @@ class SpecialPageTranslation extends SpecialPage {
 	public function execute( $parameters ) {
 		$this->setHeaders();
 
-		global $wgRequest, $wgOut, $wgUser;
-		$this->user = $wgUser;
-		$request = $wgRequest;
+		$this->user = $this->getUser();
+		$request = $this->getRequest();
 
-		$target = $wgRequest->getText( 'target', $parameters );
-		$revision = $wgRequest->getInt( 'revision', 0 );
+		$target = $request->getText( 'target', $parameters );
+		$revision = $request->getInt( 'revision', 0 );
 		$action = $request->getVal( 'do' );
+		$out = $out;
 
-		TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Page_translation_example' );
+		TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Page_translation_example' );
 
 		// No specific page or invalid input
 		$title = Title::newFromText( $target );
 		if ( !$title ) {
 			if ( $target !== '' ) {
-				$wgOut->addWikiMsg( 'tpt-badtitle' );
+				$out->addWikiMsg( 'tpt-badtitle' );
 			} else {
 				$this->listPages();
 			}
@@ -56,20 +55,20 @@ class SpecialPageTranslation extends SpecialPage {
 
 		// Check permissions
 		if ( !$this->user->isAllowed( 'pagetranslation' ) ) {
-			$wgOut->permissionRequired( 'pagetranslation' );
+			$out->permissionRequired( 'pagetranslation' );
 			return;
 		}
 
 		// Check permissions
-		if ( $wgRequest->wasPosted() && !$this->user->matchEditToken( $wgRequest->getText( 'token' ) ) ) {
+		if ( $request->wasPosted() && !$this->user->matchEditToken( $request->getText( 'token' ) ) ) {
 			self::superDebug( __METHOD__, "token failure", $this->user );
-			$wgOut->permissionRequired( 'pagetranslation' );
+			$out->permissionRequired( 'pagetranslation' );
 			return;
 		}
 
 		// We are processing some specific page
 		if ( !$title->exists() ) {
-			$wgOut->addWikiMsg( 'tpt-nosuchpage', $title->getPrefixedText() );
+			$out->addWikiMsg( 'tpt-nosuchpage', $title->getPrefixedText() );
 			return;
 		}
 
@@ -84,7 +83,7 @@ class SpecialPageTranslation extends SpecialPage {
 			);
 
 			$logger = new LogPage( 'pagetranslation' );
-			$params = array( 'user' => $wgUser->getName() );
+			$params = array( 'user' => $this->user->getName() );
 
 			$priority = MessageGroups::getPriority( $id );
 
@@ -117,9 +116,9 @@ class SpecialPageTranslation extends SpecialPage {
 			$page->getTitle()->invalidateCache();
 
 			$logger = new LogPage( 'pagetranslation' );
-			$params = array( 'user' => $wgUser->getName() );
+			$params = array( 'user' => $this->user->getName() );
 			$logger->addEntry( 'unmark', $page->getTitle(), null, array( serialize( $params ) ) );
-			$wgOut->addWikiMsg( 'tpt-unmarked', $title->getPrefixedText() );
+			$out->addWikiMsg( 'tpt-unmarked', $title->getPrefixedText() );
 			self::superDebug( __METHOD__, "unmarked page", $this->user, $title );
 
 			return;
@@ -132,7 +131,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$page = TranslatablePage::newFromRevision( $title, $revision );
 		if ( !$page instanceof TranslatablePage ) {
-			$wgOut->addWikiMsg( 'tpt-notsuitable', $title->getPrefixedText(), $revision );
+			$out->addWikiMsg( 'tpt-notsuitable', $title->getPrefixedText(), $revision );
 
 			return;
 		}
@@ -141,14 +140,14 @@ class SpecialPageTranslation extends SpecialPage {
 			// We do want to notify the reviewer if the underlying page changes during review
 			$target = $title->getFullUrl( array( 'oldid' => $revision ) );
 			$link = "<span class='plainlinks'>[$target $revision]</span>";
-			$wgOut->addWikiMsg( 'tpt-oldrevision', $title->getPrefixedText(), $link );
+			$out->addWikiMsg( 'tpt-oldrevision', $title->getPrefixedText(), $link );
 			self::superDebug( __METHOD__, "revision mismatch while marking", $this->user, $title, $revision, intval( $title->getLatestRevID() ) );
 			return;
 		}
 
 		$lastrev = $page->getMarkedTag();
 		if ( $lastrev !== false && $lastrev === $revision ) {
-			$wgOut->addWikiMsg( 'tpt-already-marked' );
+			$out->addWikiMsg( 'tpt-already-marked' );
 			$this->listPages();
 
 			return;
@@ -159,11 +158,11 @@ class SpecialPageTranslation extends SpecialPage {
 		$sections = $this->checkInput( $page, $error );
 
 		// Non-fatal error which prevents saving
-		if ( $error === false && $wgRequest->wasPosted() ) {
+		if ( $error === false && $request->wasPosted() ) {
 			$err = $this->markForTranslation( $page, $sections );
 
 			if ( $err ) {
-				call_user_func_array( array( $wgOut, 'addWikiMsg' ), $err );
+				call_user_func_array( array( $out, 'addWikiMsg' ), $err );
 			} else {
 				$this->showSuccess( $page );
 				$this->listPages();
@@ -177,14 +176,12 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	public function showSuccess( TranslatablePage $page ) {
-		global $wgOut, $wgLang;
-
 		$titleText = $page->getTitle()->getPrefixedText();
-		$num = $wgLang->formatNum( $page->getParse()->countSections() );
+		$num = $this->getLanguage()->formatNum( $page->getParse()->countSections() );
 		$link = SpecialPage::getTitleFor( 'Translate' )->getFullUrl(
 			array( 'group' => $page->getMessageGroupId() ) );
 
-		$wgOut->addWikiMsg( 'tpt-saveok', $titleText, $num, $link );
+		$this->getOutput()->addWikiMsg( 'tpt-saveok', $titleText, $num, $link );
 	}
 
 	public function loadPagesFromDB() {
@@ -345,8 +342,8 @@ class SpecialPageTranslation extends SpecialPage {
 			if ( $type === 'proposed' || $pending ) {
 				$actions[] = Linker::link(
 					$this->getTitle(),
-					wfMsgHtml( 'tpt-rev-mark' ),
-					array( 'title' => wfMsg( 'tpt-rev-mark-tooltip' ) ),
+					$this->msg( 'tpt-rev-mark' )->escaped(),
+					array( 'title' => $this->msg( 'tpt-rev-mark-tooltip' )->text() ),
 					array(
 						'do' => 'mark',
 						'target' => $title->getPrefixedText(),
@@ -357,8 +354,8 @@ class SpecialPageTranslation extends SpecialPage {
 			} elseif ( $type === 'broken' ) {
 				$actions[] = Linker::link(
 					$this->getTitle(),
-					wfMsgHtml( 'tpt-rev-unmark' ),
-					array( 'title' => wfMsg( 'tpt-rev-unmark-tooltip' ) ),
+					$this->msg( 'tpt-rev-unmark' )->escaped(),
+					array( 'title' => $this->msg( 'tpt-rev-unmark-tooltip' )->text() ),
 					array(
 						'do' => 'unmark',
 						'target' => $title->getPrefixedText(),
@@ -371,8 +368,8 @@ class SpecialPageTranslation extends SpecialPage {
 			if ( $type === 'active' ) {
 				$actions[] = Linker::link(
 					$this->getTitle(),
-					wfMsgHtml( 'tpt-rev-discourage' ),
-					array( 'title' => wfMsg( 'tpt-rev-discourage-tooltip' ) ),
+					$this->msg( 'tpt-rev-discourage' )->escaped(),
+					array( 'title' => $this->msg( 'tpt-rev-discourage-tooltip' )->text() ),
 					array(
 						'do' => 'discourage',
 						'target' => $title->getPrefixedText(),
@@ -383,8 +380,8 @@ class SpecialPageTranslation extends SpecialPage {
 			} elseif ( $type === 'discouraged' ) {
 				$actions[] = Linker::link(
 					$this->getTitle(),
-					wfMsgHtml( 'tpt-rev-encourage' ),
-					array( 'title' => wfMsg( 'tpt-rev-encourage-tooltip' ) ),
+					$this->msg( 'tpt-rev-encourage' )->escaped(),
+					array( 'title' => $this->msg( 'tpt-rev-encourage-tooltip' )->text() ),
 					array(
 						'do' => 'encourage',
 						'target' => $title->getPrefixedText(),
@@ -398,14 +395,16 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( !count( $actions ) ) {
 			return '';
 		}
-		global $wgLang;
-		$flattened = $wgLang->semicolonList( $actions );
-		return Html::rawElement( 'span', array( 'class' => 'mw-tpt-actions' ), "($flattened)" );
+
+		$flattened = $this->getLanguage()->semicolonList( $actions );
+		return Html::rawElement(
+			'span',
+			array( 'class' => 'mw-tpt-actions' ),
+			$this->msg( 'parentheses', $flattened )
+		);
 	}
 
 	public function checkInput( TranslatablePage $page, &$error = false ) {
-		global $wgOut, $wgRequest;
-
 		$usedNames = array();
 
 		$parse = $page->getParse();
@@ -416,7 +415,7 @@ class SpecialPageTranslation extends SpecialPage {
 			// the new id only after it is saved into db and the page.
 			// Do not allow changing names for old sections
 			if ( $s->type === 'new' ) {
-				$name = $wgRequest->getText( 'tpt-sect-' . $s->id, $s->id );
+				$name = $this->getRequest()->getText( 'tpt-sect-' . $s->id, $s->id );
 			} else {
 				$name = $s->id;
 			}
@@ -425,7 +424,7 @@ class SpecialPageTranslation extends SpecialPage {
 			// Someone might have tampered with the page source adding
 			// duplicate or invalid markers.
 			if ( isset( $usedNames[$name] ) ) {
-				$wgOut->addWikiMsg( 'tpt-duplicate', $name );
+				$this->getOutput()->addWikiMsg( 'tpt-duplicate', $name );
 				$error = true;
 			}
 			$usedNames[$name] = true;
@@ -437,7 +436,7 @@ class SpecialPageTranslation extends SpecialPage {
 			);
 
 			if ( trim( $name ) === '' || !$sectionTitle ) {
-				$wgOut->addWikiMsg( 'tpt-badsect', $name, $s->id );
+				$this->getOutput()->addWikiMsg( 'tpt-badsect', $name, $s->id );
 				$error = true;
 			} else {
 				// Update the name
@@ -454,12 +453,14 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param $sections array
 	 */
 	public function showPage( TranslatablePage $page, Array $sections ) {
-		global $wgOut, $wgContLang, $wgLang;
+		global $wgContLang;
 
-		$wgOut->setSubtitle( Linker::link( $page->getTitle() ) );
-		$wgOut->addModules( 'ext.translate.special.pagetranslation' );
+		$out = $this->getOutput();
 
-		$wgOut->addWikiMsg( 'tpt-showpage-intro' );
+		$out->setSubtitle( Linker::link( $page->getTitle() ) );
+		$out->addModules( 'ext.translate.special.pagetranslation' );
+
+		$out->addWikiMsg( 'tpt-showpage-intro' );
 
 		$formParams = array(
 			'method' => 'post',
@@ -467,7 +468,7 @@ class SpecialPageTranslation extends SpecialPage {
 			'class'  => 'mw-tpt-sp-markform',
 		);
 
-		$wgOut->addHTML(
+		$out->addHTML(
 			Xml::openElement( 'form', $formParams ) .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Html::hidden( 'revision', $page->getRevision() ) .
@@ -475,17 +476,17 @@ class SpecialPageTranslation extends SpecialPage {
 			Html::hidden( 'token', $this->user->editToken() )
 		);
 
-		$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-oldnew' );
+		$out->wrapWikiMsg( '==$1==', 'tpt-sections-oldnew' );
 
-		$diffOld = wfMsgHtml( 'tpt-diff-old' );
-		$diffNew = wfMsgHtml( 'tpt-diff-new' );
+		$diffOld = $this->msg( 'tpt-diff-old' )->escaped();
+		$diffNew = $this->msg( 'tpt-diff-new' )->escaped();
 
 		foreach ( $sections as $s ) {
 			if ( $s->type === 'new' ) {
 				$input = Xml::input( 'tpt-sect-' . $s->id, 15, $s->name );
-				$name = wfMsgHtml( 'tpt-section-new', $input );
+				$name = $this->msg( 'tpt-section-new', $input )->escaped();
 			} else {
-				$name = wfMsgHtml( 'tpt-section', htmlspecialchars( $s->name ) );
+				$name = $this->msg( 'tpt-section', htmlspecialchars( $s->name ) )->escaped();
 			}
 
 			if ( $s->type === 'changed' ) {
@@ -500,24 +501,24 @@ class SpecialPageTranslation extends SpecialPage {
 				$diff->showDiffStyle();
 
 				$id = "tpt-sect-{$s->id}-action-nofuzzy";
-				$text = Xml::checkLabel( wfMsg( 'tpt-action-nofuzzy' ), $id, $id, false ) . $text;
+				$text = Xml::checkLabel( $this->msg( 'tpt-action-nofuzzy' )->text(), $id, $id, false ) . $text;
 			} else {
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
 			}
 
 			# For changed text, the language is set by $diff->setTextLanguage()
 			$lang = $s->type === 'changed' ? null : $wgContLang;
-			$wgOut->addHTML( MessageWebImporter::makeSectionElement( $name, $s->type, $text, $lang ) );
+			$out->addHTML( MessageWebImporter::makeSectionElement( $name, $s->type, $text, $lang ) );
 		}
 
 		$deletedSections = $page->getParse()->getDeletedSections();
 		if ( count( $deletedSections ) ) {
-			$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
+			$out->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
 
 			foreach ( $deletedSections as $s ) {
-				$name = wfMsgHtml( 'tpt-section-deleted', htmlspecialchars( $s->id ) );
+				$name = $this->msg( 'tpt-section-deleted', htmlspecialchars( $s->id ) )->escaped();
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
-				$wgOut->addHTML( MessageWebImporter::makeSectionElement( $name, $s->type, $text, $wgContLang ) );
+				$out->addHTML( MessageWebImporter::makeSectionElement( $name, $s->type, $text, $wgContLang ) );
 			}
 		}
 
@@ -528,39 +529,40 @@ class SpecialPageTranslation extends SpecialPage {
 			$oldTemplate = $oldPage->getParse()->getTemplatePretty();
 
 			if ( $oldTemplate !== $newTemplate ) {
-				$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-template' );
+				$out->wrapWikiMsg( '==$1==', 'tpt-sections-template' );
 
 				$diff = new DifferenceEngine;
 				if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
 					$diff->setTextLanguage( $wgContLang );
 				}
 				$diff->setText( $oldTemplate, $newTemplate );
-				$text = $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
+				$text = $diff->getDiff( $this->msg( 'tpt-diff-old' )->escaped(), $this->msg( 'tpt-diff-new' )->escaped() );
 				$diff->showDiffStyle();
 				$diff->setReducedLineNumbers();
 
 				$contentParams = array( 'class' => 'mw-tpt-sp-content' );
-				$wgOut->addHTML( Xml::tags( 'div', $contentParams, $text ) );
+				$out->addHTML( Xml::tags( 'div', $contentParams, $text ) );
 			}
 		}
 
 		$this->priorityLanguagesForm( $page );
 
-		$wgOut->addHTML(
-			Xml::submitButton( wfMsg( 'tpt-submit' ) ) .
+		$out->addHTML(
+			Xml::submitButton( $this->msg( 'tpt-submit' )->text() ) .
 			Xml::closeElement( 'form' )
 		);
 	}
 
 	protected function priorityLanguagesForm( TranslatablePage $page ) {
-		global $wgOut, $wgContLang, $wgLang;
-		$groupId = $page->getMessageGroupId();
-		$wgOut->wrapWikiMsg( '==$1==', 'tpt-sections-prioritylangs' );
+		global $wgContLang;
 
-		$langSelector = Xml::languageSelector( $wgContLang->getCode(), false, $wgLang->getCode() );
+		$groupId = $page->getMessageGroupId();
+		$this->getOutput()->wrapWikiMsg( '==$1==', 'tpt-sections-prioritylangs' );
+
+		$langSelector = Xml::languageSelector( $wgContLang->getCode(), false, $this->getLanguage()->getCode() );
 
 		$hLangs = Xml::inputLabelSep(
-			wfMsg( 'tpt-select-prioritylangs' ),
+			$this->msg( 'tpt-select-prioritylangs' )->text(),
 			'prioritylangs', // name
 			'tpt-prioritylangs', // id
 			50,
@@ -568,21 +570,21 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 
 		$hForce = Xml::checkLabel(
-			wfMsg( 'tpt-select-prioritylangs-force' ),
+			$this->msg( 'tpt-select-prioritylangs-force' )->text(),
 			'forcelimit', // name
 			'tpt-priority-forcelimit', // id
 			TranslateMetadata::get( $groupId, 'priorityforce' ) === 'on'
 		);
 
 		$hReason = Xml::inputLabelSep(
-			wfMsg( 'tpt-select-prioritylangs-reason' ),
+			$this->msg( 'tpt-select-prioritylangs-reason' )->text(),
 			'priorityreason', // name
 			'tpt-priority-reason', // id
 			50, // size
 			TranslateMetadata::get( $groupId, 'priorityreason' )
 		);
 
-		$wgOut->addHTML(
+		$this->getOutput()->addHTML(
 			"<table>" .
 			"<tr><td class='mw-label'>$hLangs[0]</td><td class='mw-input'>$hLangs[1]$langSelector[1]</td></tr>" .
 			"<tr><td></td><td class='mw-inout'>$hForce</td></tr>" .
@@ -603,13 +605,11 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @return array|bool
 	 */
 	public function markForTranslation( TranslatablePage $page, Array $sections ) {
-		global $wgRequest;
-
 		// Add the section markers to the source page
 		$article = new Article( $page->getTitle(), 0 );
 		$status = $article->doEdit(
 			$page->getParse()->getSourcePageText(), // Content
-			wfMsgForContent( 'tpt-mark-summary' ),  // Summary
+			$this->msg( 'tpt-mark-summary' )->inContentLanguage()->text(),  // Summary
 			EDIT_FORCE_BOT | EDIT_UPDATE,           // Flags
 			$page->getRevision()                    // Based-on revision
 		);
@@ -642,7 +642,7 @@ class SpecialPageTranslation extends SpecialPage {
 		foreach ( array_values( $sections ) as $index => $s ) {
 			if ( $s->type === 'changed' ) {
 				// Allow silent changes to avoid fuzzying unnecessary.
-				if ( !$wgRequest->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {
+				if ( !$this->getRequest()->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {
 					$changed[] = $s->name;
 				}
 			}
@@ -654,7 +654,6 @@ class SpecialPageTranslation extends SpecialPage {
 				'trs_order' => $index
 			);
 		}
-
 
 		// Don't add stuff if no changes, use the plain null instead for prettiness
 		if ( !count( $changed ) ) {
@@ -676,16 +675,15 @@ class SpecialPageTranslation extends SpecialPage {
 		$page->addMarkedTag( $newrevision, $changed );
 		$this->addFuzzyTags( $page, $changed );
 
-		global $wgUser;
 		$logger = new LogPage( 'pagetranslation' );
 		$params = array(
-			'user' => $wgUser->getName(),
+			'user' => $this->getUser()->getName(),
 			'revision' => $newrevision,
 			'changed' => count( $changed ),
 		);
 		$logger->addEntry( 'mark', $page->getTitle(), null, array( serialize( $params ) ) );
 
-		$this->handlePriorityLanguages( $wgRequest, $page, $wgUser );
+		$this->handlePriorityLanguages( $this->getRequest(), $page, $this->getUser() );
 
 		// @todo FIXME: When translatable page X is tagged for translation and when X has <languages/>,
 		//              then there is no language bar on X after tagging and a job queue run. The below
@@ -824,8 +822,10 @@ class SpecialPageTranslation extends SpecialPage {
 	 */
 	protected function addInitialRenderJob( $page, $titles ) {
 		global $wgContLang;
+
 		$en = Title::newFromText( $page->getTitle()->getPrefixedText() . '/' . $wgContLang->getCode() );
 		$hasen = false;
+
 		foreach ( $titles as $t ) {
 			if ( $t->equals( $en ) ) {
 				$hasen = true;

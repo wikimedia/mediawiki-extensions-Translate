@@ -26,7 +26,7 @@ class MoveJob extends Job {
 		$job = new self( $source );
 		$job->setUser( FuzzyBot::getUser() );
 		$job->setTarget( $target->getPrefixedText() );
-		$job->setSummary( wfMsgForContent( 'pt-movepage-logreason', $params['base-source'] ) );
+		$job->setSummary( wfMessage( 'pt-movepage-logreason', $params['base-source'] )->inContentLanguage()->text() );
 		$job->setParams( $params );
 		$job->setPerformer( $performer );
 		$job->lock();

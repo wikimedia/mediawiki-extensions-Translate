@@ -70,20 +70,20 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 * extented in other ways.
 	 */
 	public function execute( $par ) {
-		global $wgOut, $wgRequest, $wgUser;
+		$request = $this->getRequest();
+		$this->user = $this->getUser();
 
 		// Yes, the use of getVal() and getText() is wanted, see bug 20365
-		$this->oldText = $wgRequest->getVal( 'wpOldTitle', $wgRequest->getVal( 'target', $par ) );
-		$this->newText = $wgRequest->getText( 'wpNewTitle' );
+		$this->oldText = $request->getVal( 'wpOldTitle', $request->getVal( 'target', $par ) );
+		$this->newText = $request->getText( 'wpNewTitle' );
 
 		$this->oldTitle = Title::newFromText( $this->oldText );
 		$this->newTitle = Title::newFromText( $this->newText );
 
-		$this->reason = $wgRequest->getText( 'reason' );
+		$this->reason = $request->getText( 'reason' );
 		// Checkboxes that default being checked are tricky
-		$this->moveSubpages = $wgRequest->getBool( 'subpages', !$wgRequest->wasPosted() );
+		$this->moveSubpages = $request->getBool( 'subpages', !$request->wasPosted() );
 
-		$this->user = $wgUser;
 
 		if ( $this->doBasicChecks() !== true ) {
 			return;
@@ -94,27 +94,27 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		if ( $page->getMarkedTag() !== false ) {
 			$this->page = $page;
 
-			$wgOut->setPagetitle( wfMsg( 'pt-movepage-title', $this->oldText ) );
+			$this->getOutput()->setPagetitle( $this->msg( 'pt-movepage-title', $this->oldText )->text() );
 
 			if ( !$this->user->isAllowed( 'pagetranslation' ) ) {
-				$wgOut->permissionRequired( 'pagetranslation' );
+				$this->getOutput()->permissionRequired( 'pagetranslation' );
 				return;
 			}
 
 			// Is there really no better way to do this?
-			$subactionText = $wgRequest->getText( 'subaction' );
+			$subactionText = $request->getText( 'subaction' );
 			switch ( $subactionText ) {
-			case wfMsg( 'pt-movepage-action-check' ):
+			case $this->msg( 'pt-movepage-action-check' )->text():
 				$subaction = 'check'; break;
-			case wfMsg( 'pt-movepage-action-perform' ):
+			case $this->msg( 'pt-movepage-action-perform' )->text():
 				$subaction = 'perform'; break;
-			case wfMsg( 'pt-movepage-action-other' ):
+			case $this->msg( 'pt-movepage-action-other' )->text():
 				$subaction = ''; break;
 			default:
 				$subaction = '';
 			}
 
-			if ( $subaction === 'check' && $this->checkToken() && $wgRequest->wasPosted() ) {
+			if ( $subaction === 'check' && $this->checkToken() && $request->wasPosted() ) {
 				$blockers = $this->checkMoveBlockers( );
 				if ( count( $blockers ) ) {
 					$this->showErrors( $blockers );
@@ -122,7 +122,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 				} else {
 					$this->showConfirmation();
 				}
-			} elseif ( $subaction === 'perform' && $this->checkToken() && $wgRequest->wasPosted() ) {
+			} elseif ( $subaction === 'perform' && $this->checkToken() && $request->wasPosted() ) {
 				$this->performAction();
 			} else {
 				$this->showForm();
@@ -144,27 +144,28 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 * @return bool
 	 */
 	protected function doBasicChecks() {
-		global $wgOut;
+		$out = $this->getOutput();
+
 		# Check for database lock
 		if ( wfReadOnly() ) {
-			$wgOut->readOnlyPage();
+			$out->readOnlyPage();
 			return false;
 		}
 
 		if ( $this->oldTitle === null ) {
-			$wgOut->showErrorPage( 'notargettitle', 'notargettext' );
+			$out->showErrorPage( 'notargettitle', 'notargettext' );
 			return false;
 		}
 
 		if ( !$this->oldTitle->exists() ) {
-			$wgOut->showErrorPage( 'nopagetitle', 'nopagetext' );
+			$out->showErrorPage( 'nopagetitle', 'nopagetext' );
 			return false;
 		}
 
 		# Check rights
 		$permErrors = $this->oldTitle->getUserPermissionsErrors( 'move', $this->user );
 		if ( !empty( $permErrors ) ) {
-			$wgOut->showPermissionsErrorPage( $permErrors );
+			$out->showPermissionsErrorPage( $permErrors );
 			return false;
 		}
 
@@ -178,9 +179,10 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	}
 
 	protected function doOldNormalMovePage() {
-		global $wgRequest;
 		$form = new MovePageForm( $this->oldTitle, $this->newTitle );
-		if ( 'submit' == $wgRequest->getVal( 'action' ) && $this->checkToken() && $wgRequest->wasPosted() ) {
+		$request = $this->getRequest();
+
+		if ( 'submit' == $request->getVal( 'action' ) && $this->checkToken() && $request->wasPosted() ) {
 			$form->doSubmit();
 		} else {
 			$form->showForm( '' );
@@ -194,8 +196,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 * @return bool
 	 */
 	protected function checkToken() {
-		global $wgRequest;
-		return $this->user->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) );
+		return $this->user->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) );
 	}
 
 	/**
@@ -203,17 +204,18 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 * @param $errors Array with message key and parameters
 	 */
 	protected function showErrors( array $errors ) {
-		global $wgOut, $wgLang;
 		if ( count( $errors ) ) {
-			$wgOut->addHTML( Html::openElement( 'div', array( 'class' => 'error' ) ) );
-			$wgOut->addWikiMsg( 'pt-movepage-blockers', $wgLang->formatNum( count( $errors ) ) );
-			$wgOut->addHTML( '<ul>' );
+			$out = $this->getOutput();
+
+			$out->addHTML( Html::openElement( 'div', array( 'class' => 'error' ) ) );
+			$out->addWikiMsg( 'pt-movepage-blockers', $this->getLanguage()->formatNum( count( $errors ) ) );
+			$out->addHTML( '<ul>' );
 			foreach ( $errors as $error ) {
 				// I have no idea what the parser is doing, but this is mad.
 				// <li>$1</li> doesn't work.
-				$wgOut->wrapWikiMsg( "<li>$1", $error );
+				$out->wrapWikiMsg( "<li>$1", $error );
 			}
-			$wgOut->addHTML( '</ul></div>' );
+			$out->addHTML( '</ul></div>' );
 		}
 	}
 
@@ -221,9 +223,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 * The query form.
 	 */
 	protected function showForm() {
-		global $wgOut;
-
-		$wgOut->addWikiMsg( 'pt-movepage-intro' );
+		$this->getOutput()->addWikiMsg( 'pt-movepage-intro' );
 
 		$br = Html::element( 'br' );
 		$subaction = array( 'name' => 'subaction' );
@@ -231,17 +231,17 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$formParams = array( 'method' => 'post', 'action' => $this->getTitle( $this->oldText )->getLocalURL() );
 
 		$form = array();
-		$form[] = Xml::fieldset( wfMsg( 'pt-movepage-legend' ) );
+		$form[] = Xml::fieldset( $this->msg( 'pt-movepage-legend' )->text() );
 		$form[] = Html::openElement( 'form', $formParams );
 		$form[] = Html::hidden( 'wpEditToken', $this->user->editToken() );
-		$this->addInputLabel( $form, wfMsg( 'pt-movepage-current' ), 'wpOldTitle', 30, $this->oldText, $readonly );
-		$this->addInputLabel( $form, wfMsg( 'pt-movepage-new' ), 'wpNewTitle', 30, $this->newText );
-		$this->addInputLabel( $form, wfMsg( 'pt-movepage-reason' ), 'reason', 45, $this->reason );
-		$form[] = Xml::checkLabel( wfMsg( 'pt-movepage-subpages' ), 'subpages', 'mw-subpages', $this->moveSubpages ) . $br;
-		$form[] = Xml::submitButton( wfMsg( 'pt-movepage-action-check' ), $subaction );
+		$this->addInputLabel( $form, $this->msg( 'pt-movepage-current' )->text(), 'wpOldTitle', 30, $this->oldText, $readonly );
+		$this->addInputLabel( $form, $this->msg( 'pt-movepage-new' )->text(), 'wpNewTitle', 30, $this->newText );
+		$this->addInputLabel( $form, $this->msg( 'pt-movepage-reason' )->text(), 'reason', 45, $this->reason );
+		$form[] = Xml::checkLabel( $this->msg( 'pt-movepage-subpages' )->text(), 'subpages', 'mw-subpages', $this->moveSubpages ) . $br;
+		$form[] = Xml::submitButton( $this->msg( 'pt-movepage-action-check' )->text(), $subaction );
 		$form[] = Xml::closeElement( 'form' );
 		$form[] = Xml::closeElement( 'fieldset' );
-		$wgOut->addHTML( implode( "\n", $form ) );
+		$this->getOutput()->addHTML( implode( "\n", $form ) );
 	}
 
 	/**
@@ -265,32 +265,32 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 * Lists all the action which would take place.
 	 */
 	protected function showConfirmation() {
-		global $wgOut, $wgLang;
+		$out = $this->getOutput();
 
-		$wgOut->addWikiMsg( 'pt-movepage-intro' );
+		$out->addWikiMsg( 'pt-movepage-intro' );
 
 		$base = $this->oldTitle->getPrefixedText();
 		$target = $this->newTitle;
 		$count = 1; // Base page
 
-		$wgOut->wrapWikiMsg( '== $1 ==', 'pt-movepage-list-pages' );
+		$out->wrapWikiMsg( '== $1 ==', 'pt-movepage-list-pages' );
 		$this->printChangeLine( $base, $this->oldTitle, $target );
 
-		$wgOut->wrapWikiMsg( '=== $1 ===', 'pt-movepage-list-translation' );
+		$out->wrapWikiMsg( '=== $1 ===', 'pt-movepage-list-translation' );
 		$translationPages = $this->getTranslationPages();
 		foreach ( $translationPages as $old ) {
 			$count++;
 			$this->printChangeLine( $base, $old, $target );
 		}
 
-		$wgOut->wrapWikiMsg( '=== $1 ===', 'pt-movepage-list-section' );
+		$out->wrapWikiMsg( '=== $1 ===', 'pt-movepage-list-section' );
 		$sectionPages = $this->getSectionPages();
 		foreach ( $sectionPages as $old ) {
 			$count++;
 			$this->printChangeLine( $base, $old, $target );
 		}
 
-		$wgOut->wrapWikiMsg( '=== $1 ===', 'pt-movepage-list-other' );
+		$out->wrapWikiMsg( '=== $1 ===', 'pt-movepage-list-other' );
 		$subpages = $this->getSubpages();
 		foreach ( $subpages as $old ) {
 			if ( TranslatablePage::isTranslationPage( $old ) ) continue;
@@ -298,8 +298,8 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 			$this->printChangeLine( $base, $old, $target, $this->moveSubpages );
 		}
 
-		$wgOut->addWikiText( "----\n" );
-		$wgOut->addWikiMsg( 'pt-movepage-list-count', $wgLang->formatNum( $count ) );
+		$out->addWikiText( "----\n" );
+		$out->addWikiMsg( 'pt-movepage-list-count', $this->getLanguage()->formatNum( $count ) );
 
 		$br = Html::element( 'br' );
 		$readonly =  array( 'readonly' => 'readonly' );
@@ -307,19 +307,19 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$formParams = array( 'method' => 'post', 'action' => $this->getTitle( $this->oldText )->getLocalURL() );
 
 		$form = array();
-		$form[] = Xml::fieldset( wfMsg( 'pt-movepage-legend' ) );
+		$form[] = Xml::fieldset( $this->msg( 'pt-movepage-legend' )->text() );
 		$form[] = Html::openElement( 'form', $formParams );
 		$form[] = Html::hidden( 'wpEditToken', $this->user->editToken() );
-		$this->addInputLabel( $form, wfMsg( 'pt-movepage-current' ), 'wpOldTitle', 30, $this->oldText, $readonly );
-		$this->addInputLabel( $form, wfMsg( 'pt-movepage-new' ), 'wpNewTitle', 30, $this->newText, $readonly );
-		$this->addInputLabel( $form, wfMsg( 'pt-movepage-reason' ), 'reason', 60, $this->reason );
+		$this->addInputLabel( $form, $this->msg( 'pt-movepage-current' )->text(), 'wpOldTitle', 30, $this->oldText, $readonly );
+		$this->addInputLabel( $form, $this->msg( 'pt-movepage-new' )->text(), 'wpNewTitle', 30, $this->newText, $readonly );
+		$this->addInputLabel( $form, $this->msg( 'pt-movepage-reason' )->text(), 'reason', 60, $this->reason );
 		$form[] = Html::hidden( 'subpages', $this->moveSubpages );
-		$form[] = Xml::checkLabel( wfMsg( 'pt-movepage-subpages' ), 'subpagesFake', 'mw-subpages', $this->moveSubpages, $readonly ) . $br;
-		$form[] = Xml::submitButton( wfMsg( 'pt-movepage-action-perform' ), $subaction );
-		$form[] = Xml::submitButton( wfMsg( 'pt-movepage-action-other' ), $subaction );
+		$form[] = Xml::checkLabel( $this->msg( 'pt-movepage-subpages' )->text(), 'subpagesFake', 'mw-subpages', $this->moveSubpages, $readonly ) . $br;
+		$form[] = Xml::submitButton( $this->msg( 'pt-movepage-action-perform' )->text(), $subaction );
+		$form[] = Xml::submitButton( $this->msg( 'pt-movepage-action-other' )->text(), $subaction );
 		$form[] = Xml::closeElement( 'form' );
 		$form[] = Xml::closeElement( 'fieldset' );
-		$wgOut->addHTML( implode( "\n", $form ) );
+		$out->addHTML( implode( "\n", $form ) );
 	}
 
 	/**
@@ -329,14 +329,12 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 * @param bool $enabled
 	 */
 	protected function printChangeLine( $base, $old, $target, $enabled = true ) {
-		global $wgOut;
-
 		$to = $this->newPageTitle( $base, $old, $target );
 
 		if ( $enabled ) {
-			$wgOut->addWikiText( '* ' . $old->getPrefixedText() . ' → ' . $to );
+			$this->getOutput()->addWikiText( '* ' . $old->getPrefixedText() . ' → ' . $to );
 		} else {
-			$wgOut->addWikiText( '* ' . $old->getPrefixedText() );
+			$this->getOutput()->addWikiText( '* ' . $old->getPrefixedText() );
 		}
 	}
 
@@ -404,8 +402,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		MessageGroups::clearCache();
 		MessageIndexRebuildJob::newJob()->insert();
 
-		global $wgOut;
-		$wgOut->addWikiMsg( 'pt-movepage-started' );
+		$this->getOutput()->addWikiMsg( 'pt-movepage-started' );
 	}
 
 	protected function moveMetadata( $oldGroupId, $newGroupId ) {
