@@ -1267,10 +1267,12 @@ class TranslationHelpers {
 	}
 
 	/**
+	 * Escapes $id such that it can be used in jQuery selector.
 	 * @param $id string
 	 * @return string
 	 */
 	public static function jQueryPathId( $id ) {
+		$id = preg_replace( '/[^A-Za-z0-9_-]/', '\\\\$0', $id );
 		return Xml::encodeJsVar( "#$id" );
 	}
 
