@@ -29,6 +29,7 @@ message = Welcome to \
           Wikipedia!
 # Add spaces to the key
 key\ with\ spaces = This is the value that could be looked up with the key "key with spaces".
+key-with-{curlies} = This is the value that could be looked up with the key "key-with-{curlies}".
 PROPERTIES;
 
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
@@ -39,6 +40,7 @@ PROPERTIES;
 			'language' => 'English',
 			'message' => 'Welcome to Wikipedia!',
 			'key with spaces' => 'This is the value that could be looked up with the key "key with spaces".',
+			'key-with-{curlies}' => 'This is the value that could be looked up with the key "key-with-{curlies}".',
 		);
 		$expected = array( 'MESSAGES' => $expected, 'AUTHORS' => array() );
 		$this->assertEquals( $expected, $parsed );
@@ -67,6 +69,7 @@ PROPERTIES;
 			array( 'k!ey', '=', 'value', 'row with ! inside key' ),
 			array( '#key', '=', 'value', 'row with # at the beginning of key' ),
 			array( 'k#ey', '=', 'value', 'row with # inside key' ),
+			array( 'k{ey}', '=', 'value', 'row with { and } inside key' ),
 			array( 'k\\tey', '=', 'value\\', 'row with escapes' ),
 			array( '01234', '=', '13.34', 'row with numbers' ),
 			array( '\\n\\tкая', '=', 'кая', 'row with annoying characteres' ),
