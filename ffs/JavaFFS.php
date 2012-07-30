@@ -147,10 +147,12 @@ class JavaFFS extends SimpleFFS {
 	 */
 	public static function readRow( /*string*/$line, /*string*/$sep ) {
 		if ( strpos( $line, '\\' ) === false ) {
+			/* Nothing appears to be escaped in this line.
+			 * Just read the key and the value. */
 			list( $key, $value ) = explode( $sep, $line, 2 );
 		} else {
-			/* There might be escaped separators in the key, using
-			 * slower method to find the separator. */
+			/* There might be escaped separators in the key.
+			 * Using slower method to find the separator. */
 
 			/* Make the key default to empty instead of value, because
 			 * empty key causes error on callers, while empty value
