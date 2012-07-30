@@ -167,7 +167,7 @@ class StringMatcher implements StringMangler {
 		if ( $reverse ) {
 			return $this->unMangleString( $string );
 		} elseif ( $this->match( $string ) ) {
-			return $this->sPrefix . $string;
+			return urlencode( $this->sPrefix . $string );
 		} else {
 			return $string;
 		}
@@ -179,10 +179,11 @@ class StringMatcher implements StringMangler {
 	 * @return \string Unmangled message key.
 	 */
 	protected function unMangleString( $string ) {
-		if ( strncmp( $string, $this->sPrefix, strlen( $this->sPrefix ) ) === 0 ) {
-			return substr( $string, strlen( $this->sPrefix ) );
+		$urlDecodedString = urldecode( $string );
+		if ( strncmp( $urlDecodedString, $this->sPrefix, strlen( $this->sPrefix ) ) === 0 ) {
+			return substr( $urlDecodedString, strlen( $this->sPrefix ) );
 		} else {
-			return $string;
+			return $urlDecodedString;
 		}
 	}
 
