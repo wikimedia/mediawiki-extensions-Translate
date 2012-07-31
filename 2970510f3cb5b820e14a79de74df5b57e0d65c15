@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQ3//7Jc\u003d",
+        "filename": "tag/MoveJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-31T10:15:23Z",
+      "side": 1,
+      "message": "Line over 100 chars",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//7NI\u003d",
         "filename": "tag/SpecialPageTranslation.php",
         "patchSetId": 1
@@ -30,6 +47,91 @@
       "writtenOn": "2012-07-31T09:27:00Z",
       "side": 1,
       "message": "Shouldn\u0027t this be $out \u003d $this-\u003egetOutput()?",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7JY\u003d",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-31T10:15:23Z",
+      "side": 1,
+      "message": "-\u003erawParams( $flattened )-\u003eescaped() ?",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7JU\u003d",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-31T10:15:23Z",
+      "side": 1,
+      "message": "$input should not be escaped",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7JQ\u003d",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-31T10:15:23Z",
+      "side": 1,
+      "message": "$s-\u003ename should not be double escaped",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7JM\u003d",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-31T10:15:23Z",
+      "side": 1,
+      "message": "$s-\u003eid should not be double escaped",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7JI\u003d",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-31T10:15:23Z",
+      "side": 1,
+      "message": "Line over 100 chars",
       "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -70,6 +172,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//7JA\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-31T10:15:23Z",
+      "side": 1,
+      "message": "In 1.18?",
+      "parentUuid": "AAAAQ3//7NA\u003d",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//7K0\u003d",
         "filename": "tag/SpecialPageTranslationDeletePage.php",
         "patchSetId": 1
@@ -81,6 +201,24 @@
       "writtenOn": "2012-07-31T09:27:00Z",
       "side": 1,
       "message": "This can be changed to\n\nthrow new MWException( \u0027pt-deletepage-invalid-title\u0027, \u0027pt-deletepage-invalid-text\u0027 );",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7JE\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-31T10:15:23Z",
+      "side": 1,
+      "message": "In 1.18?",
+      "parentUuid": "AAAAQ3//7K0\u003d",
       "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -104,6 +242,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//7I8\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-31T10:15:23Z",
+      "side": 1,
+      "message": "In 1.18?",
+      "parentUuid": "AAAAQ3//7M8\u003d",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//7K4\u003d",
         "filename": "tag/SpecialPageTranslationDeletePage.php",
         "patchSetId": 1
@@ -121,6 +277,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//7I4\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-31T10:15:23Z",
+      "side": 1,
+      "message": "In 1.18?",
+      "parentUuid": "AAAAQ3//7K4\u003d",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//7Kw\u003d",
         "filename": "tag/SpecialPageTranslationDeletePage.php",
         "patchSetId": 1
@@ -132,6 +306,24 @@
       "writtenOn": "2012-07-31T09:27:00Z",
       "side": 1,
       "message": "This can be changed to\n\nthrow new ErrorPageError( \u0027notargettitle\u0027, \u0027notargettext\u0027 );",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7I0\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-07-31T10:15:23Z",
+      "side": 1,
+      "message": "In 1.18?",
+      "parentUuid": "AAAAQ3//7Kw\u003d",
       "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
