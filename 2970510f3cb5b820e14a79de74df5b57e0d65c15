@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//7NI\u003d",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "Is it still needed to keep $this-\u003euser or could this be changed to $user?",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7NM\u003d",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be $out \u003d $this-\u003egetOutput()?",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7NE\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "Couldn\u0027t this be changed to $user?",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7NA\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "OutputPage::setPageTitle() accepts a Message object, so you don\u0027t need to call -\u003etext() here.",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7K0\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "This can be changed to\n\nthrow new MWException( \u0027pt-deletepage-invalid-title\u0027, \u0027pt-deletepage-invalid-text\u0027 );",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7M8\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "This can be changed to\n\nthrow new PermissionsError( \u0027pagetranslation\u0027 );",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7K4\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "This can be changed to \n\nthrow new ReadOnlyError;\n\nI would put this after other checks so that users don\u0027t think the error is temporary when another check below would also fail.",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7Kw\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "This can be changed to\n\nthrow new ErrorPageError( \u0027notargettitle\u0027, \u0027notargettext\u0027 );",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7Ko\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "This can be changed to\n\nthrow new ErrorPageError( \u0027nopagetitle\u0027, \u0027nopagetext\u0027 );",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7Kk\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "This can be changed to\n\nthrow new PermissionsError( \u0027delete\u0027, $permErrors );\n\n(the second parameter will only be used since 1.19)",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7Kg\u003d",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "Couldn\u0027t this be changed to $user?",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7Kc\u003d",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "This can be changed to\n\nthrow new PermissionsError( \u0027pagetranslation\u0027 )",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7KY\u003d",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "This can be changed to\n\nthrow new ReadOnlyError;\n\nI would put this after other checks so that users don\u0027t think the error is temporary when another check below would also fail.",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7KU\u003d",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "This can be changed to\n\nthrow new ErrorPageError( \u0027notargettitle\u0027, \u0027notargettext\u0027 );",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7KM\u003d",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "This can be changed to\n\nthrow new ErrorPageError( \u0027nopagetitle\u0027, \u0027nopagetext\u0027 );",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7KI\u003d",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 100
+      },
+      "writtenOn": "2012-07-31T09:27:00Z",
+      "side": 1,
+      "message": "This can be changed to\n\nthrow new PermissionsError( \u0027move\u0027, $permErrors );\n\n(the second parameter will only be used since 1.19)",
+      "revId": "2970510f3cb5b820e14a79de74df5b57e0d65c15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
