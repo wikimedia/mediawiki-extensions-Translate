@@ -76,7 +76,7 @@ class RubyYamlFFS extends YamlFFS {
 		$match = null;
 
 		while ( preg_match( $regex, $message, $match ) ) {
-			$uniqkey = $this->placeholder();
+			$uniqkey = TranslateUtils::getPlaceholder();
 			$placeholders[$uniqkey] = $match[0];
 			$search = preg_quote( $match[0], '~' );
 			$message = preg_replace( "~$search~", $uniqkey, $message );
@@ -88,7 +88,7 @@ class RubyYamlFFS extends YamlFFS {
 		$match = null;
 
 		while ( preg_match( $regex, $message, $match ) ) {
-			$uniqkey = $this->placeholder();
+			$uniqkey = TranslateUtils::getPlaceholder();
 			$matches[$uniqkey] = $match;
 			$message = preg_replace( $regex, $uniqkey, $message );
 		}
@@ -147,12 +147,4 @@ class RubyYamlFFS extends YamlFFS {
 		return $alts;
 	}
 
-	/**
-	 * @return string
-	 */
-	protected function placeholder() {
-		static $i = 0;
-
-		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . $i++;
-	}
 }
