@@ -538,7 +538,7 @@ PHP;
 
 	protected static function escape( $line ) {
 		// There may be \ as a last character, for keeping trailing whitespace
-		$line = preg_replace( '/\\\\$/', '', $line );
+		$line = preg_replace( '/(\s)\\\\$/', '\1', $line );
 		$line = addcslashes( $line, '\\"' );
 		$line = str_replace( "\n", '\n', $line );
 		$line = '"' . $line . '"';
