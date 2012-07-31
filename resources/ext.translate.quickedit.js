@@ -143,6 +143,8 @@
 
 			textarea.keyup( function() { checker.setup(); } );
 		}
+
+		mw.translateHooks.run( 'afterRegisterFeatures', form );
 	}
 
 	translate = {
