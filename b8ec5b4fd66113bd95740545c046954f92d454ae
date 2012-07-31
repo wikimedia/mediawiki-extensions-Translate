@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//6v8\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-31T20:25:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQ3//7Bw\u003d",
+      "revId": "b8ec5b4fd66113bd95740545c046954f92d454ae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//7Bc\u003d",
         "filename": "tag/SpecialPageTranslationMovePage.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-07-31T16:17:57Z",
       "side": 1,
       "message": "This is no longer needed.",
+      "revId": "b8ec5b4fd66113bd95740545c046954f92d454ae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//6v4\u003d",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-07-31T20:25:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQ3//7Bc\u003d",
       "revId": "b8ec5b4fd66113bd95740545c046954f92d454ae",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
