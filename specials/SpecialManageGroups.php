@@ -59,19 +59,33 @@ class SpecialManageGroups extends SpecialPage {
 		$this->processSubmit();
 	}
 
+	protected function getLegend() {
+		$this->diff->setText( '', '' );
+		$text = $this->diff->getDiff(
+			$this->msg( 'translate-smg-left' )->text(),
+			$this->msg( 'translate-smg-right' )->text()
+		);
+		return Html::rawElement( 'div', array( 'class' => "mw-translate-smg-header" ), $text );
+	}
+
 	protected function showChanges( $allowed ) {
 		global $wgContLang;
 
-		$out = $this->getOutput();
-		$user = $this->getUser();
-
-		$out->addHtml( Html::openElement( 'form', array( 'method' => 'post' ) ) );
-		$out->addHtml( Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) );
-		$out->addHtml( Html::hidden( 'token', $user->getEditToken() ) );
-
 		$diff = new DifferenceEngine;
 		$diff->showDiffStyle();
+		$diff->setReducedLineNumbers();
+		$this->diff = $diff;
 
+		$out = $this->getOutput();
+		$out->addHtml( ''
+			. Html::openElement( 'form', array( 'method' => 'post' ) )
+			. Html::hidden( 'title', $this->getTitle()->getPrefixedText() )
+			. Html::hidden( 'token', $this->getUser()->getEditToken() )
+			. $this->getLegend()
+		);
+
+
+		$counter = 0;
 		$changefile = TranslateUtils::cacheFile( self::CHANGEFILE );
 		$reader = CdbReader::open( $changefile );
 		$groups = unserialize( $reader->get( '#keys' ) );
@@ -99,9 +113,14 @@ class SpecialManageGroups extends SpecialPage {
 			foreach ( $changes as $code => $subchanges ) {
 				foreach ( $subchanges as $type => $messages ) {
 					foreach ( $messages as $params ) {
+						$counter++;
 						$change = $this->formatChange( $group, $code, $type, $params );
 						$out->addHtml( $change );
 					}
+				}
+				if ( $counter > 10000 ) {
+					// Avoid creating too heave pages
+					break 2;
 				}
 			}
 		}
@@ -118,37 +137,48 @@ class SpecialManageGroups extends SpecialPage {
 
 	protected function formatChange( $group, $code, $type, $params ) {
 		$key = $params['key'];
-		$id = substr( sha1( "{$group->getId()}/$code/$type/$key" ), 0, 7 );
-		$id = Sanitizer::escapeId( "smg/$id" );
+		$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$code" );
 
-		$filesystem = $wiki = $actions = '';
-
-		if ( isset( $params['content'] ) ) {
-			$filesystem = $params['content'];
+		if ( $title->exists() && $type === 'addition' ) {
+			return '';
+		} elseif ( !$title->exists() && ( $type === 'deletion' || $type === 'change' ) ) {
+			return '';
 		}
 
-		$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$code" );
-		if ( $title->exists() ) {
+		if ( $type === 'deletion' ) {
+			$wiki = Revision::newFromTitle( $title )->getText();
+			$this->diff->setText( $wiki, '' );
+			$text = $this->diff->getDiff( Linker::link( $title ), '' );
+		}
+
+		if ( $type === 'addition' ) {
+			$this->diff->setText( '', $params['content'] );
+			$text = $this->diff->getDiff( '', Linker::link( $title ) );
+		}
+
+		if ( $type === 'change' ) {
 			$wiki = Revision::newFromTitle( $title )->getText();
 			$handle = new MessageHandle( $title );
 			if ( $handle->isFuzzy() ) {
 				$wiki = '!!FUZZY!!' . str_replace( TRANSLATE_FUZZY, '', $wiki );
 			}
 
-			$actions .= ' ' . Xml::checkLabel( $this->msg( 'translate-manage-action-ignore' )->text(), "i/$id", "i/$id" );
+			$label = $this->msg( 'translate-manage-action-ignore' )->text();
+			$actions = Xml::checkLabel( $label, "i/$id", "i/$id" );
 
 			if ( $group->getSourceLanguage() === $code ) {
-				$actions .= ' ' . Xml::checkLabel( $this->msg( 'translate-manage-action-fuzzy' )->text(), "f/$id", "f/$id" );
+				$label = $this->msg( 'translate-manage-action-fuzzy' )->text();
+				$actions .= ' ' . Xml::checkLabel( $label, "f/$id", "f/$id" );
 			}
+
+			$this->diff->setText( $wiki, $params['content'] );
+			$text = $this->diff->getDiff( $actions, Linker::link( $title ) );
 		}
 
-		$diff = new DifferenceEngine();
-		$diff->setReducedLineNumbers();
-		$diff->setText( $filesystem, $wiki );
-		$text = $diff->getDiff( $actions, Linker::link( $title ) );
-		$change = Html::rawElement( 'div', array( 'class' => "mw-translate-smg-change smg-change-$type" ), $text );
-		$hidden = Html::hidden( $id, 1 );
-		return $hidden . $change;
+		$hidden = Html::hidden( self::changeId( $group->getId(), $code, $type, $key ), 1 );
+		$text = $text . $hidden;
+		$classes = "mw-translate-smg-change smg-change-$type";
+		return Html::rawElement( 'div', array( 'class' => $classes ), $text );
 	}
 
 	protected function processSubmit() {
@@ -162,47 +192,37 @@ class SpecialManageGroups extends SpecialPage {
 		$reader = CdbReader::open( $changefile );
 		$groups = unserialize( $reader->get( '#keys' ) );
 
-		$toRebuild = array();
+		$postponed = array();
 
-		foreach ( $groups as $id ) {
-			$group = MessageGroups::getGroup( $id );
-			$changes = unserialize( $reader->get( $id ) );
+		foreach ( $groups as $groupId ) {
+			$group = MessageGroups::getGroup( $groupId );
+			$changes = unserialize( $reader->get( $groupId ) );
+
 			foreach ( $changes as $code => $subchanges ) {
 				foreach ( $subchanges as $type => $messages ) {
-					foreach ( $messages as $params ) {
-						$key = $params['key'];
-						$id = substr( sha1( "{$group->getId()}/$code/$type/$key" ), 0, 7 );
-						$id = Sanitizer::escapeId( "smg/$id" );
+					foreach ( $messages as $index => $params ) {
+						$id = self::changeId( $groupId, $code, $type, $params['key'] );
 						if ( $req->getVal( $id ) === null ) {
-							throw new MWException( "Request is inconsistent. Not found '$id'." );
+							// We probably hit the limit with number of post parameters.
+							$postponed[$groupId][$code][$type][$index] = $params;
+							break 1;
 						}
-						// Do nothing if message was deleted
-						if ( !isset( $params['content'] ) ) {
+
+						if ( $type === 'deletion' || $req->getCheck( "i/$id" ) ) {
 							continue;
 						}
 
-						if ( $req->getCheck( "i/$id" ) ) {
-							continue;
-						}
-
-						$fuzzy = false;
-						if ( $group->getSourceLanguage() === $code ) {
-							$fuzzy = $req->getCheck( "f/$id" ) ? 'fuzzy' : false;
-						}
-
-						$toRebuild[$group->getId()][$code] = true;
-
+						$fuzzy = $req->getCheck( "f/$id" ) ? 'fuzzy' : false;
+						$key = $params['key'];
 						$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$code" );
 						$jobs[] = MessageUpdateJob::newJob( $title, $params['content'], $fuzzy );
 					}
 				}
-			}
-		}
 
-		foreach ( $toRebuild as $groupId => $languages ) {
-			foreach ( array_keys( $languages ) as $language ) {
-				$cache = new MessageGroupCache( $groupId, $language );
-				$cache->create();
+				if ( !isset( $postponed[$groupId][$code] ) ) {
+					$cache = new MessageGroupCache( $groupId, $code );
+					$cache->create();
+				}
 			}
 		}
 
@@ -212,6 +232,23 @@ class SpecialManageGroups extends SpecialPage {
 		rename( $changefile, $changefile . '-' . wfTimestamp() );
 		$out->addWikiMsg( 'translate-smg-submitted' );
 
+		if ( count( $postponed ) ) {
+			$changefile = TranslateUtils::cacheFile( self::CHANGEFILE );
+			$writer = CdbWriter::open( $changefile );
+			$keys = array_keys( $postponed );
+			$writer->set( '#keys', serialize( $keys ) );
+			foreach ( $postponed as $groupId => $changes ) {
+				$writer->set( $groupId, serialize( $changes ) );
+			}
+			$writer->close();
+
+			$out->wrapWikiMsg( "<div class=warning>\n$1\n</div>", 'translate-smg-postponed' );
+		}
+
+	}
+
+	protected static function changeId( $groupId, $code, $type, $key ) {
+		return 'smg/' . substr( sha1( "$groupId/$code/$type/$key" ), 0, 7 );
 	}
 
 	/**
