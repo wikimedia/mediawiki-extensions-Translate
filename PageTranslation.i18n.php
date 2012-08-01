@@ -5175,6 +5175,9 @@ Grond: $1",
 	'tpt-discouraged-language-force' => "'''Dës Säit kann net op $2 iwwersat ginn.'''
 
 En Iwwersetzungs-Administrateur huet decidéiert datt dës Säit nëmmen op $3 iwwersat ka ginn.",
+	'tpt-discouraged-language' => "'''D'Iwwersetzung op $2ass keng Prioritéit fir dës Säit.'''
+
+En Iwwersetzungs-Administrateur huet decidéiert fir d'Iwwersetzungs-Efforten op $3 ze konzentréieren.",
 	'tpt-discouraged-language-reason' => 'Grond: $1',
 	'tpt-priority-languages' => 'En Iwwersetzungs-Administrateur huet déi prioritiséiert Sprooche fir dëse Grupp op $1 agestallt.',
 	'tpt-render-summary' => 'Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen',
@@ -5245,6 +5248,7 @@ Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir
 	'pt-deletepage-action-other' => 'Zil änneren',
 	'pt-deletepage-lang-legend' => 'Iwwersetzungssäit läschen',
 	'pt-deletepage-full-legend' => 'Iwwersetzbar Säit läschen',
+	'pt-deletepage-any-legend' => "Säit fir z'iwwersetzen oder Iwwersetzung vun enger Säit fir z0iiwrsetze läschen",
 	'pt-deletepage-current' => 'Numm vun der Säit:',
 	'pt-deletepage-reason' => 'Grond:',
 	'pt-deletepage-subpages' => 'All Ënnersäite läschen',
@@ -5532,6 +5536,7 @@ $messages['ml'] = array(
 	'tpt-rev-discourage' => 'നിരുത്സാഹപ്പെടുത്തുക',
 	'tpt-rev-encourage' => 'പുനഃസ്ഥാപിക്കുക',
 	'translate-tag-translate-link-desc' => 'ഈ താൾ പരിഭാഷപ്പെടുത്തുക',
+	'tpt-translation-intro' => 'ഈ താൾ [[$2]] എന്ന താളിന്റെ <span class="plainlinks">[$1 പരിഭാഷ]</span> ആണ്, പരിഭാഷ $3% പൂർണ്ണമാണ്.',
 	'tpt-languages-legend' => 'മറ്റു ഭാഷകൾ:',
 	'tpt-discouraged-language-reason' => 'കാരണം: $1',
 	'tpt-aggregategroup-add' => 'കൂട്ടിച്ചേർക്കുക',
@@ -8272,6 +8277,7 @@ subalit ang pinakabagong {{PLURAL:$1|bersyon|mga bersyon}} ay hindi matatatakan 
 	'tpt-translation-intro' => 'Ang pahinang ito ay isang <span class="plainlinks">[$1 naisalinwikang bersyon]</span> ng isang pahina [[$2]] at ang salinwika ay $3% kumpleto na.',
 	'tpt-translation-intro-fuzzy' => 'Tinatakan ng ganito ang mga pagsasalinwikang lipas na sa panahon.',
 	'tpt-languages-legend' => 'Iba pang mga wika:',
+	'tpt-languages-separator' => '&#160;•&#160;',
 	'tpt-languages-zero' => 'Simulan ang pagsasalinwika para sa wikang ito',
 	'tpt-target-page' => 'Hindi maaaring kinakamay na maisapanahon ang pahinang ito.
 Ang pahinang ito ay isang salinwika ng pahinang [[$1]] at maisasapanahon ang salinwika sa pamamagitan ng [$2 kasangkapang pansalinwika].',

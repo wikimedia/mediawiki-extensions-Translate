@@ -1644,7 +1644,7 @@ Jangk op di Sigge „<i lang="en">[[mw:Extension:PDF_Writer]]</i>“ un „<i la
  * @author Robby
  */
 $messages['lb'] = array(
-	'translategroupdescriptions-desc' => 'Beschreiwung vun de Gruppe vu Message vu Projeten, déi vun der Programmerweiterung [http://mediawiki.org/wiki/Extension:Translate Translate] ënnerstëtzt ginn',
+	'translategroupdescriptions-desc' => 'Beschreiwung vun de Gruppe vu Message vu Projeten, déi vun der Programmerweiderung [http://mediawiki.org/wiki/Extension:Translate Translate] ënnerstëtzt ginn',
 	'translate-group-desc-nodesc' => 'Fir dëse Grupp vu Messagen ass keng Beschreiwung disponibel.',
 	'translate-group-desc-mediawikicore' => "An dëser Grupp mat Message sinn d'Messagen aus der aktueller alpha-Versioun vu MediaWiki ({{CURRENTVERSION}}) dran",
 	'translate-group-desc-mediawikimostused' => 'An dësem Grupp sinn déi [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 am dackste gebrauchte Systemmessagen] vu MediaWiki',
