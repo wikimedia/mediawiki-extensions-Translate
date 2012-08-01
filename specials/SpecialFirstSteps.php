@@ -312,7 +312,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		$request = $this->getRequest();
 		if ( $request->wasPosted() &&
-			$this->user->matchEditToken( $request->getVal( 'token' ) ) &&
+			$this->getUser()->matchEditToken( $request->getVal( 'token' ) ) &&
 			$request->getText( 'step' ) === 'permissions' )
 		{
 			// This is ridiculous
