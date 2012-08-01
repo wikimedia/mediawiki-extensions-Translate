@@ -36,12 +36,18 @@ class ProcessMessageChanges extends Maintenance {
 
 	public function execute() {
 		$groups = MessageGroups::getGroupsByType( 'FileBasedMessageGroup' );
+		$this->counter = 0;
 		foreach ( $groups as $id => $group ) {
 			$this->output( "Processing $id\n" );
 			$this->processMessageGroup( $group );
+			if ( $this->counter > 25000 ) {
+				$this->output( "Too many changes. Rerun this script after processing current changes\n" );
+				break;
+			}
 		}
 		if ( count( $this->changes ) ) {
 			$this->writeChanges();
+			$this->output( "Process changes with Special:ManageMessageGroups\n" );
 		} else {
 			$this->output( "No changes found\n" );
 		}
@@ -177,6 +183,7 @@ class ProcessMessageChanges extends Maintenance {
 	}
 
 	protected function addChange( $type, $group, $language, $key, $content ) {
+		$this->counter++;
 		$this->changes[$group->getId()][$language][$type][] = array(
 			'key' => $key,
 			'content' => $content,

@@ -1,6 +1,5 @@
 .mw-translate-smg-change {
 	padding-bottom: 1em;
-	border-bottom: 1px solid #AAA;
 	margin-bottom: 2em;
 }
 
@@ -9,4 +8,14 @@
 	margin: auto;
 	width: 80%;
 	display: block;
+}
+
+.diff-lineno {
+	display: none;
+}
+
+.mw-translate-smg-header td {
+	font-size: 200%;
+	font-family: Verdana;
+	font-weight: bold;
 }
