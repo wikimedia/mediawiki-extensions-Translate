@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//5wM\u003d",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-02T08:25:53Z",
+      "side": 1,
+      "message": "And what would you do if it is null? In fact, if it is null it is because we are not mangling message keys properly and we want to know that.",
+      "parentUuid": "AAAAQ3//5z4\u003d",
+      "revId": "ead8792bc717a434135f2cdf8ad4960cc9df5cf9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQ3//5z0\u003d",
         "filename": "specials/SpecialManageGroups.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-08-02T00:53:09Z",
       "side": 1,
       "message": "Same as above, Revision::newFromTitle() may be null",
+      "revId": "ead8792bc717a434135f2cdf8ad4960cc9df5cf9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//5wA\u003d",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-02T08:25:53Z",
+      "side": 1,
+      "message": "We already checked that the title exists, so this should never be the case.",
+      "parentUuid": "AAAAQ3//5z0\u003d",
       "revId": "ead8792bc717a434135f2cdf8ad4960cc9df5cf9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
