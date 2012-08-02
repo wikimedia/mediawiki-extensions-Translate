@@ -257,11 +257,7 @@ class MessageTable {
 
 		$you = $wgUser->getId();
 		if ( in_array( $you, $reviewers ) ) {
-			if ( count( $reviewers ) === 1 ) {
-				$msg = wfMessage( 'translate-messagereview-reviewsyou' )->parse();
-			} else {
-				$msg = wfMessage( 'translate-messagereview-reviewswithyou' )->numParams( count( $reviewers ) )->parse();
-			}
+			$msg = wfMessage( 'translate-messagereview-reviewswithyou' )->numParams( count( $reviewers ) )->parse();
 		} else {
 			$msg = wfMessage( 'translate-messagereview-reviews' )->numParams( count( $reviewers ) )->parse();
 		}
