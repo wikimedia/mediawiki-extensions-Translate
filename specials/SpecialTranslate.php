@@ -402,11 +402,6 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function groupSelector() {
-		$activeId = false;
-		if ( $this->group ) {
-			$activeId = $this->group->getId();
-		}
-
 		$groups = MessageGroups::getAllGroups();
 		$dynamic = MessageGroups::getDynamicGroups();
 		$groups = array_keys( array_merge( $groups, $dynamic ) );
@@ -417,9 +412,6 @@ class SpecialTranslate extends SpecialPage {
 		$selector->setDefault( $selected );
 
 		foreach ( $groups as $id ) {
-			if ( $id === $activeId ) {
-				$activeId = false;
-			}
 			$group = MessageGroups::getGroup( $id );
 			$hide = MessageGroups::getPriority( $group ) === 'discouraged';
 
@@ -428,10 +420,6 @@ class SpecialTranslate extends SpecialPage {
 			}
 
 			$selector->addOption( $group->getLabel(), $id );
-		}
-
-		if ( $activeId ) {
-			$selector->addOption( $this->group->getLabel(), $activeId );
 		}
 
 		return $selector->getHTML();
