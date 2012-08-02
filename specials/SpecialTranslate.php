@@ -423,7 +423,7 @@ class SpecialTranslate extends SpecialPage {
 			$group = MessageGroups::getGroup( $id );
 			$hide = MessageGroups::getPriority( $group ) === 'discouraged';
 
-			if ( !$group->exists() || $hide ) {
+			if ( !$group->exists() || ( $hide && $id !== $selected ) ) {
 				continue;
 			}
 
