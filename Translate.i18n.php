@@ -102,11 +102,12 @@ Special page aliases and magic words can have multiple translations.
 Translations are separated by a comma (,).
 Namespaces can have only one translation.
 
-In namespace translations <code>$1 talk</code> is special. <code>$1</code> is replaced with sitename (for example <code>{{ns:project_talk}}</code>).
-If it is not possible in your language to form valid expression without changing sitename, please contact a developer.
+Translating the project talk namespace <code>$1 talk</code> may be complicated.
+<code>$1</code> is replaced with the project sitename (for example <code>{{ns:project_talk}}</code>).
+If it is not possible in your language to form a valid expression without changing the sitename, please let us know on [[Support]].
 
-You need to be in the translators group to save changes.
-Changes are not saved until you click save button below.',
+You need to be a translator to save changes.
+Changes are not saved until you click the save button below.',
 	'translate-magic-module'      => 'Module:',
 	'translate-magic-submit'      => 'Fetch',
 	'translate-magic-cm-export'   => 'Export', // cm- should be removed
