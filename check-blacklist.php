@@ -42,6 +42,7 @@ array(
 		'history-feed-item-nocomment', // Optional time parameters
 		'lastmodifiedatby', // Optional time parameters
 		'listusers-blocked', // Optional GENDER parameter
+		'logentry-delete-event',  // Optional GENDER parameter
 		'login-userblocked', // Optional GENDER parameter
 		'othercontribs', // Optional count parameter
 		'perfcachedts', // Optional time parameters
