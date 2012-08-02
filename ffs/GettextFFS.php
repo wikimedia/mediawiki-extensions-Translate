@@ -567,6 +567,14 @@ PHP;
 			return $text;
 		}
 
+		$placeholder = TranslateUtils::getPlaceHolder();
+		# The whole point is to to make sure there isn't extra | in
+		# the string, so make sure the placeholder doesn't have it.
+		$placeholder = strtr( $placeholder, '|', '' );
+		# |/| is commonly used in KDE to support inflections
+		$text = str_replace( '|/|', $placeholder, $text );
+
+
 		$splitPlurals = array();
 		for ( $i = 0; $i < $forms; $i++ ) {
 			$plurals = array();
@@ -586,6 +594,8 @@ PHP;
 					$pluralForm = str_replace( $pluralForm, $definition, $parsedFormsArray[$i] );
 				}
 			}
+
+			$pluralForm = str_replace( $placeholder, '|/|', $pluralForm );
 			$splitPlurals[$i] = $pluralForm;
 		}
 
