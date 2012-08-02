@@ -425,6 +425,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$params[] = $state;
 		$params[] = $groupId;
 		$params[] = $this->getLanguage()->getCode();
+		$params[] = $this->target;
 		$cachekey = wfMemcKey( __METHOD__, implode( '-', $params ) );
 		$cacheval = wfGetCache( CACHE_ANYTHING )->get( $cachekey );
 		if ( !$this->purge && is_string( $cacheval ) ) {
