@@ -284,14 +284,13 @@ class MessageGroupStats {
 		);
 
 		$dbw = wfGetDB( DB_MASTER );
-		$errors = $dbw->ignoreErrors( true );
 		$dbw->insert(
 			self::TABLE,
 			$data,
-			__METHOD__
+			__METHOD__,
+			array( 'IGNORE' )
 		);
 
-		$dbw->ignoreErrors( $errors );
 		return $aggregates;
 	}
 
