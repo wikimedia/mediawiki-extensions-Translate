@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//5u8\u003d",
+        "filename": "utils/StringMatcher.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-02T09:10:53Z",
+      "side": 1,
+      "message": "I\u0027d make it protected",
+      "revId": "497575f53fd3623f8ed7082ea89f324b382fbed9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//5uw\u003d",
+        "filename": "utils/StringMatcher.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-02T09:10:53Z",
+      "side": 1,
+      "message": "equalS sign which is used for escaping",
+      "revId": "497575f53fd3623f8ed7082ea89f324b382fbed9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//5u0\u003d",
+        "filename": "utils/StringMatcher.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-02T09:10:53Z",
+      "side": 1,
+      "message": "Either make $legalMessageKeyChar non-static or guard the initialization of that with if-clause to do it only once.",
+      "revId": "497575f53fd3623f8ed7082ea89f324b382fbed9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//5vA\u003d",
+        "filename": "utils/StringMatcher.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-02T09:10:53Z",
+      "side": 1,
+      "message": "Good that you are removing \u003d. I would do it with just strtr.",
+      "revId": "497575f53fd3623f8ed7082ea89f324b382fbed9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//5ug\u003d",
+        "filename": "utils/StringMatcher.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-02T09:10:53Z",
+      "side": 1,
+      "message": "Anonymous functions are available since 5.3.0. I think this is the first time they are used in Translate extension. I don\u0027t think PHP version requirement is mentioned anywhere, but requiring 5.3 is reasonable.",
+      "revId": "497575f53fd3623f8ed7082ea89f324b382fbed9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
