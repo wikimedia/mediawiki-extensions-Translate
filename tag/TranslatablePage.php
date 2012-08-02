@@ -730,7 +730,9 @@ class TranslatablePage {
 	 * @return bool|TranslatablePage
 	 */
 	public static function isTranslationPage( Title $title ) {
-		list( $key, $code ) = TranslateUtils::figureMessage( $title->getText() );
+		$handle = new MessageHandle( $title );
+		$key = $handle->getKey();
+		$code = $handle->getCode();
 
 		if ( $key === '' || $code === '' ) {
 			return false;
