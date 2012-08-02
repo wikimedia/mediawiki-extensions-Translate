@@ -408,8 +408,10 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$usedNames = array();
 
+		$highest = intval( TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' ) );
+
 		$parse = $page->getParse();
-		$sections = $parse->getSectionsForSave();
+		$sections = $parse->getSectionsForSave( $highest );
 		foreach ( $sections as $s ) {
 			// We want to preserve $id, because it is the only thing we can use
 			// to link the new names to current sections. Name will become
@@ -637,9 +639,12 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$inserts = array();
 		$changed = array();
+		$maxid = intval( TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' ) );
 
 		$pageId = $page->getTitle()->getArticleID();
 		foreach ( array_values( $sections ) as $index => $s ) {
+			$maxid = max( $maxid, intval( $s->name ) );
+
 			if ( $s->type === 'changed' ) {
 				// Allow silent changes to avoid fuzzying unnecessary.
 				if ( !$wgRequest->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {
@@ -670,6 +675,7 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 		$dbw->delete( 'translate_sections', array( 'trs_page' => $page->getTitle()->getArticleID() ), __METHOD__ );
 		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
+		TranslateMetadata::set( $page->getMessageGroupId(), 'maxid', $maxid );
 
 		/* Stores the names of changed sections in the database.
 		 * Used for calculating completion percentages for outdated messages */

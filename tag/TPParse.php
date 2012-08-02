@@ -69,13 +69,13 @@ class TPParse {
 
 	/**
 	 * Gets the sections and assigns section id for new sections
+	 * @param @highest int The largest used integer id (Since 2012-08-02)
 	 * @return \arrayof{String,TPSection}
 	 */
-	public function getSectionsForSave() {
+	public function getSectionsForSave( $highest = 0 ) {
 		$this->loadFromDatabase();
 
 		$sections = $this->sections;
-		$highest = 0;
 		foreach ( array_keys( $this->dbSections ) as $key ) {
 			$highest = max( $highest, intval( $key ) );
 		}

@@ -375,9 +375,7 @@ class PageTranslationHooks {
 
 		// Add the ready tag
 		$page = TranslatablePage::newFromTitle( $article->getTitle() );
-		if ( $page->getParse()->countSections() > 0 ) {
-			$page->addReadyTag( $revision->getId() );
-		}
+		$page->addReadyTag( $revision->getId() );
 
 		return true;
 	}
