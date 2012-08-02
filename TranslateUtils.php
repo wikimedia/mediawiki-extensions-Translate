@@ -363,4 +363,14 @@ class TranslateUtils {
 		}
 		return $method;
 	}
+
+	/**
+	 * Returns a random string that can be used as placeholder in strings.
+	 * @return string
+	 * @since 2012-07-31
+	 */
+	public static function getPlaceholder() {
+		static $i = 0;
+		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . '|' . $i++;
+	}
 }

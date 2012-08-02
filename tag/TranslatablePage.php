@@ -227,7 +227,7 @@ class TranslatablePage {
 		$displaytitle = new TPSection;
 		$displaytitle->id = $this->displayTitle;
 		$displaytitle->text = $this->getTitle()->getPrefixedText();
-		$sections[self::getUniq()] = $displaytitle;
+		$sections[TranslateUtils::getPlaceholder()] = $displaytitle;
 
 		$tagPlaceHolders = array();
 
@@ -241,7 +241,7 @@ class TranslatablePage {
 			}
 
 			// Do-placehold for the whole stuff
-			$ph    = self::getUniq();
+			$ph    = TranslateUtils::getPlaceholder();
 			$start = $matches[0][0][1];
 			$len   = strlen( $matches[0][0][0] );
 			$end   = $start + $len;
@@ -311,7 +311,7 @@ class TranslatablePage {
 		$re = '~(<nowiki>)(.*?)(</nowiki>)~s';
 
 		while ( preg_match( $re, $text, $matches ) ) {
-			$ph = self::getUniq();
+			$ph = TranslateUtils::getPlaceholder();
 			$text = str_replace( $matches[0], $ph, $text );
 			$holders[$ph] = $matches[0];
 		}
@@ -330,15 +330,6 @@ class TranslatablePage {
 		}
 
 		return $text;
-	}
-
-	/**
-	 * Returns a random string that can be used as placeholder.
-	 * @return string
-	 */
-	protected static function getUniq() {
-		static $i = 0;
-		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . '|' . $i++;
 	}
 
 	/**
@@ -369,7 +360,7 @@ class TranslatablePage {
 			if ( trim( $_ ) === '' ) {
 				$template .= $_;
 			} else {
-				$ph = self::getUniq();
+				$ph = TranslateUtils::getPlaceholder();
 				$sections[$ph] = $this->shakeSection( $_ );
 				$template .= $ph;
 			}
