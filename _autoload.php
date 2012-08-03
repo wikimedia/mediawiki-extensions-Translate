@@ -21,6 +21,7 @@ $wgAutoloadClasses['MediaWikiMessageChecker'] = "$dir/MediaWikiMessageChecker.ph
 $wgAutoloadClasses['MessageChecker'] = "$dir/MessageChecks.php";
 $wgAutoloadClasses['MessageCollection'] = "$dir/MessageCollection.php";
 $wgAutoloadClasses['MessageDefinitions'] = "$dir/MessageCollection.php";
+$wgAutoloadClasses['MessageGroups'] = "$dir/MessageGroups.php";
 $wgAutoloadClasses['TMessage'] = "$dir/Message.php";
 $wgAutoloadClasses['TaskOptions'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ThinMessage'] = "$dir/Message.php";
@@ -223,21 +224,20 @@ $wgAutoloadClasses['ViewWithSuggestionsTask'] = "$dir/TranslateTasks.php";
  * @name   Message group classes
  * @{
  */
-$wgAutoloadClasses['AggregateMessageGroup'] = "$dir/Groups.php";
-$wgAutoloadClasses['AliasMessageGroup'] = "$dir/MessageGroups.php";
-$wgAutoloadClasses['CoreMessageGroup'] = "$dir/MessageGroups.php";
-$wgAutoloadClasses['CoreMostUsedMessageGroup'] = "$dir/MessageGroups.php";
-$wgAutoloadClasses['ExtensionMessageGroup'] = "$dir/MessageGroups.php";
-$wgAutoloadClasses['FileBasedMessageGroup'] = "$dir/Groups.php";
-$wgAutoloadClasses['MediaWikiMessageGroup'] = "$dir/Groups.php";
-$wgAutoloadClasses['MessageGroup'] = "$dir/Groups.php";
-$wgAutoloadClasses['MessageGroupBase'] = "$dir/Groups.php";
-$wgAutoloadClasses['MessageGroupOld'] = "$dir/MessageGroups.php";
-$wgAutoloadClasses['MessageGroups'] = "$dir/MessageGroups.php";
-$wgAutoloadClasses['RecentMessageGroup'] = "$dir/MessageGroups.php";
-$wgAutoloadClasses['SingleFileBasedMessageGroup'] = "$dir/MessageGroups.php";
+$wgAutoloadClasses['AggregateMessageGroup'] = "$dir/messagegroups/AggregateMessageGroup.php";
+$wgAutoloadClasses['AliasMessageGroup'] = "$dir/messagegroups/AliasMessageGroup.php";
+$wgAutoloadClasses['CoreMessageGroup'] = "$dir/messagegroups/CoreMessageGroup.php";
+$wgAutoloadClasses['CoreMostUsedMessageGroup'] = "$dir/messagegroups/CoreMostUsedMessageGroup.php";
+$wgAutoloadClasses['ExtensionMessageGroup'] = "$dir/messagegroups/ExtensionMessageGroup.php";
+$wgAutoloadClasses['FileBasedMessageGroup'] = "$dir/messagegroups/FileBasedMessageGroup.php";
+$wgAutoloadClasses['MediaWikiMessageGroup'] = "$dir/messagegroups/MediaWikiMessageGroup.php";
+$wgAutoloadClasses['MessageGroup'] = "$dir/messagegroups/MessageGroup.php";
+$wgAutoloadClasses['MessageGroupBase'] = "$dir/messagegroups/MessageGroupBase.php";
+$wgAutoloadClasses['MessageGroupOld'] = "$dir/messagegroups/MessageGroupOld.php";
+$wgAutoloadClasses['RecentMessageGroup'] = "$dir/messagegroups/RecentMessageGroup.php";
+$wgAutoloadClasses['SingleFileBasedMessageGroup'] = "$dir/messagegroups/FileBasedMessageGroup.php";
 $wgAutoloadClasses['VoctrainMessageGroup'] = "$dir/ffs/Voctrain.php";
-$wgAutoloadClasses['WikiMessageGroup'] = "$dir/MessageGroups.php";
-$wgAutoloadClasses['WikiPageMessageGroup'] = "$dir/MessageGroups.php";
-$wgAutoloadClasses['WorkflowStatesMessageGroup'] = "$dir/MessageGroups.php";
+$wgAutoloadClasses['WikiMessageGroup'] = "$dir/messagegroups/WikiMessageGroup.php";
+$wgAutoloadClasses['WikiPageMessageGroup'] = "$dir/messagegroups/WikiPageMessageGroup.php";
+$wgAutoloadClasses['WorkflowStatesMessageGroup'] = "$dir/messagegroups/WorkflowStatesMessageGroup.php";
 /**@}*/
