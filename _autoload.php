@@ -179,15 +179,6 @@ $wgAutoloadClasses['YamlFFS'] = "$dir/ffs/YamlFFS.php";
 /**@}*/
 
 /**
- * @name   Classes for different kind of html building
- * @{
- */
-$wgAutoloadClasses['HtmlTag'] = "$dir/utils/Html.php";
-$wgAutoloadClasses['RawHtml'] = "$dir/utils/Html.php";
-$wgAutoloadClasses['TagContainer'] = "$dir/utils/Html.php";
-/**@}*/
-
-/**
  * @name   API modules
  * @{
  */
