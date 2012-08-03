@@ -117,6 +117,9 @@ class MessageHandle {
 	 */
 	public function getGroup() {
 		$ids = $this->getGroupIds();
+		if ( !isset( $ids[0] ) ) {
+			throw new MWException( 'called before isValid' );
+		}
 		return MessageGroups::getGroup( $ids[0] );
 	}
 

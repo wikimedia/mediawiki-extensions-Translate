@@ -173,6 +173,10 @@ class TranslationEditPage {
 		$api = new ApiMain( $params );
 		$api->execute();
 		$data = $api->getResultData();
+
+		if ( !isset( $data['query']['pages'] ) ) {
+			throw new MWException( 'Api query failed' );
+		}
 		$data = $data['query']['pages'];
 		$data = array_shift( $data );
 
