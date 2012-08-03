@@ -567,7 +567,7 @@ PHP;
 			return $text;
 		}
 
-		$placeholder = TranslateUtils::getPlaceHolder();
+		$placeholder = TranslateUtils::getPlaceholder();
 		# |/| is commonly used in KDE to support inflections
 		$text = str_replace( '|/|', $placeholder, $text );
 
