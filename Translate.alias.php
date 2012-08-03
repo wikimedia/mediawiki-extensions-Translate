@@ -829,12 +829,13 @@ $specialPageAliases['tr'] = array(
 	'TranslationStats' => array( 'Çeviriİstatistikleri' ),
 	'Translations' => array( 'Çeviriler' ),
 	'LanguageStats' => array( 'Dilİstatistikleri' ),
+	'MessageGroupStats' => array( 'MesajGrubuİstatistikleri', 'İletiGrubuİstatistikleri' ),
 	'PageTranslation' => array( 'SayfaÇevirisi' ),
 	'ImportTranslations' => array( 'ÇevirileriİçeAktar' ),
 	'ManageMessageGroups' => array( 'MesajGruplarınıYönet', 'İletiGruplarınıYönet' ),
 	'FirstSteps' => array( 'İlkAdımlar' ),
 	'SupportedLanguages' => array( 'DesteklenenDiller' ),
-	'MyLanguage' => array( 'Dilim' ),
+	'MyLanguage' => array( 'Dilim', 'BenimDilim' ),
 );
 
 /** Tatar (Cyrillic script) (татарча) */

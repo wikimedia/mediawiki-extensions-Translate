@@ -1543,7 +1543,7 @@ $messages['ko'] = array(
 	'translate-group-desc-translatablepages' => '모든 번역 가능한 문서',
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]]은 턴제 전략 게임입니다',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]]는 웹 기반 토론 포럼 소프트웨어입니다',
-	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]]는 웹 기반 문제 추적 소프트웨어입니다',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]]는 웹 기반 이슈 추적 소프트웨어입니다',
 	'translate-group-desc-eol' => '[[Translating:EOL|생명의 백과사전]]에 대한 메시지 그룹입니다',
 	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS]]에 대한 메시지 그룹입니다',
 	'translate-group-desc-ihris-common' => '[[Translating:iHRIS|iHRIS]] 모듈 [[Special:Translate/out-ihris-common-0-all|iHRIS Common]]에 대한 메시지 그룹입니다',
@@ -2775,6 +2775,7 @@ $messages['uk'] = array(
 	'bw-desc-freecol' => 'Перед тим, як перекладати FreeCol на вашу мову, прочитайте, будь ласка, [[Translating:FreeCol]]. Freecol використовує ліцензію GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] — веб-форум, написаний на PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] це вільна веб-система для відслідковування багів. Будь ласка, повідомляйте будь-які проблеми у [[Support|службу підтримки]].',
+	'translate-group-desc-eol' => 'Група повідомлень для перекладу [[Translating:EOL|Енциклопедії життя]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Повідомлення для стабільної версії [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] — система керування інформацією для мікрофінансування',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' це бібліотека на мові python для створення PDF-документів зі сторінок MediaWiki, які були проаналізовані mwlib.
@@ -2792,6 +2793,7 @@ $messages['uk'] = array(
 	'translate-group-desc-statusnet-plugin' => 'Ці повідомлення є частиною плагіна для [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дозволяє швидко знайти авторів сторінки в проектах Вікімедіа.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] є проектом для випуску автономної текстової версії Вікіпедії на мобільному пристрої.',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] є багатоплатформним застосунком для мобільних та планшетних пристроїв, який призначено для читання Вікіпедії та дописування до неї',
 );
 
 /** Veps (vepsän kel’)

@@ -1927,7 +1927,7 @@ $messages['ko'] = array(
 	'translate-fs-settings-title' => '환경 설정',
 	'translate-fs-userpage-title' => '사용자 문서 만들기',
 	'translate-fs-permissions-title' => '번역자 권한 신청',
-	'translate-fs-target-title' => '번역하기!',
+	'translate-fs-target-title' => '번역 시작하기!',
 	'translate-fs-email-title' => '이메일 주소 확인하기',
 	'translate-fs-intro' => "{{SITENAME}} 첫걸음 마법사에 오신 것을 환영합니다.
 번역자가 되는 과정을 차례로 거칠 것입니다.
