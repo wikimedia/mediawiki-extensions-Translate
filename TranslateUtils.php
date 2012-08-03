@@ -170,16 +170,33 @@ class TranslateUtils {
 	 * @return string
 	 */
 	public static function languageSelector( $language, $selectedId ) {
+		$selector = self::getLanguageSelector( $language );
+		$selector->setDefault( $selectedId );
+		$selector->setAttribute( 'id', 'language' );
+		$selector->setAttribute( 'name', 'language' );
+		return $selector->getHtml();
+	}
+
+	/**
+	 * Standard language selector in Translate extension.
+	 * @param $language \string Language code of the language the names should
+	 * be localised to.
+	 * @return XmlSelect
+	 */
+	public static function getLanguageSelector( $language, $labelOption = false ) {
 		$languages = self::getLanguageNames( $language );
 		ksort( $languages );
 
-		$selector = new XmlSelect( 'language', 'language' );
-		$selector->setDefault( $selectedId );
+		$selector = new XmlSelect();
+		if ( $labelOption !== false ) {
+			$selector->addOption( $labelOption, '-' );
+		}
+
 		foreach ( $languages as $code => $name ) {
 			$selector->addOption( "$code - $name", $code );
 		}
 
-		return $selector->getHTML();
+		return $selector;
 	}
 
 	/**

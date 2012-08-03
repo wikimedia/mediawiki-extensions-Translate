@@ -6,7 +6,7 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2009-2010, Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2009-2012, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -501,11 +501,12 @@ class MessageWebImporter {
 			$contentParams['lang'] = wfGetLangObj( $lang )->getCode();
 		}
 
-		$items = new TagContainer();
-		$items[] = new HtmlTag( 'div', new RawHtml( $legend ), $legendParams );
-		$items[] = new HtmlTag( 'div', new RawHtml( $content ), $contentParams );
+		$output = Html::rawElement( 'div', $containerParams,
+			Html::rawElement( 'div', $legendParams, $legend ) .
+			Html::rawElement( 'div', $contentParams, $content )
+		);
 
-		return new HtmlTag( 'div', $items, $containerParams );
+		return $output;
 	}
 
 	/**
