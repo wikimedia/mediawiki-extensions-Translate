@@ -153,7 +153,7 @@ class MessageGroupStats {
 
 		$values = array();
 		foreach ( array( 'total', 'translated', 'fuzzy' ) as $type ) {
-			if ( !isset( $changes[$type] ) ) {
+			if ( isset( $changes[$type] ) ) {
 				$values[] = "tgs_$type=tgs_$type" .
 					self::stringifyNumber( $changes[$type] );
 			}
