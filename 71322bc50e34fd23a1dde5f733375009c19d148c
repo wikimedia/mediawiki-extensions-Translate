@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///Lo\u003d",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-08-03T22:57:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///rE\u003d",
+      "revId": "71322bc50e34fd23a1dde5f733375009c19d148c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///q8\u003d",
         "filename": "tag/SpecialPageTranslation.php",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2012-08-03T12:38:22Z",
       "side": 1,
       "message": "Not introduced in this commit but this call is missing the fifth param: the performer",
+      "revId": "71322bc50e34fd23a1dde5f733375009c19d148c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///LY\u003d",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 780,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-08-03T22:57:06Z",
+      "side": 1,
+      "message": "Done. Found some more in this file that are also fixed, as well as in an API function.",
+      "parentUuid": "AAAARH///q8\u003d",
       "revId": "71322bc50e34fd23a1dde5f733375009c19d148c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///LU\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-08-03T22:57:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///qk\u003d",
+      "revId": "71322bc50e34fd23a1dde5f733375009c19d148c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///q0\u003d",
         "filename": "tag/SpecialPageTranslationDeletePage.php",
         "patchSetId": 3
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARH///LQ\u003d",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-08-03T22:57:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///q0\u003d",
+      "revId": "71322bc50e34fd23a1dde5f733375009c19d148c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARH///qo\u003d",
         "filename": "tag/SpecialPageTranslationMovePage.php",
         "patchSetId": 3
@@ -81,6 +153,24 @@
       "writtenOn": "2012-08-03T12:38:22Z",
       "side": 1,
       "message": "Can be removed",
+      "revId": "71322bc50e34fd23a1dde5f733375009c19d148c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///LM\u003d",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-08-03T22:57:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH///qo\u003d",
       "revId": "71322bc50e34fd23a1dde5f733375009c19d148c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
