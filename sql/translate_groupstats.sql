@@ -4,6 +4,7 @@ CREATE TABLE /*_*/translate_groupstats (
 	tgs_total int(5) unsigned,
 	tgs_translated int(5) unsigned,
 	tgs_fuzzy int(5) unsigned,
+	tgs_proofread int(5) unsigned,
 	PRIMARY KEY (tgs_group, tgs_lang)
 ) /*$wgDBTableOptions*/;
 CREATE INDEX /*i*/tgs_lang on /*_*/translate_groupstats (tgs_lang);
