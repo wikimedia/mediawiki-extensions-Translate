@@ -12,18 +12,13 @@
  * Groups multiple message groups together as one big group.
  *
  * Limitations:
- *  - Only groups of same type and in the same namespace.
+ *  - Only groups in the same namespace.
  * @ingroup MessageGroup
  */
 class AggregateMessageGroup extends MessageGroupBase {
 	public function exists() {
 		// Group exists if there are any subgroups.
 		$exists = (bool) $this->conf['GROUPS'];
-
-		if ( !$exists ) {
-			trigger_error( __METHOD__ . "[{$this->getId()}]: Group is empty" );
-		}
-
 		return $exists;
 	}
 
