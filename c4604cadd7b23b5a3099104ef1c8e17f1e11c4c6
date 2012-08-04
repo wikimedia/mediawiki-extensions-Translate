@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH///Cs\u003d",
+        "filename": "utils/StatsTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-08-04T12:36:00Z",
+      "side": 1,
+      "message": "Is this in the i18n file yet?",
+      "revId": "c4604cadd7b23b5a3099104ef1c8e17f1e11c4c6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
