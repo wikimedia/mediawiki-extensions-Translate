@@ -131,38 +131,38 @@ Tag text: <pre>$1</pre>',
 Section text: <pre>$1</pre>',
 	'pt-shake-position' => 'Section markers in unexpected position.
 Section text: <pre>$1</pre>',
-	'pt-shake-empty' => 'Empty section for marker $1.',
+	'pt-shake-empty' => 'Empty section for marker "$1".',
 
 	# logging system
 	'pt-log-header' => 'Log for actions related to the page translation system',
 	'pt-log-name' => 'Page translation log',
 	'pt-log-mark' => '{{GENDER:$2|marked}} revision $3 of page "[[:$1]]" for translation',
 	'pt-log-unmark' => '{{GENDER:$2|removed}} page "[[:$1]]" from translation',
-	'pt-log-moveok' => '{{GENDER:$2|completed}} renaming of translatable page $1 to $3',
-	'pt-log-movenok' => '{{GENDER:$2|encountered}} a problem while moving [[:$1]] to [[:$3]]',
-	'pt-log-delete-full-ok' => '{{GENDER:$2|completed}} deletion of translatable page $1',
-	'pt-log-delete-full-nok' => '{{GENDER:$2|encountered}} a problem while deleting translatable page [[:$1]]',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|completed}} deletion of translation page $1',
-	'pt-log-delete-lang-nok' => '{{GENDER:$2|encountered}} a problem while deleting translation page [[:$1]]',
-	'pt-log-encourage' => '{{GENDER:$2|encouraged}} translation of page [[:$1]]',
-	'pt-log-discourage' => '{{GENDER:$2|discouraged}} translation of page [[:$1]]',
-	'pt-log-priority-langs-unset' => '{{GENDER:$2|removed}} priority languages from translatable page [[:$1]]',
-	'pt-log-priority-langs' => '{{GENDER:$2|set}} the priority languages for translatable page [[:$1]] to $3. Reason: $4',
-	'pt-log-priority-langs-force' => '{{GENDER:$2|limited}} languages for translatable page [[:$1]] to $3. Reason: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|added}} translatable page [[:$1]] to aggregate group $3',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|removed}} translatable page [[:$1]] from aggregate group $3',
+	'pt-log-moveok' => '{{GENDER:$2|completed}} renaming of translatable page "$1" to $3',
+	'pt-log-movenok' => '{{GENDER:$2|encountered}} a problem while moving "[[:$1]]" to "[[:$3]]"',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|completed}} deletion of translatable page "$1"',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|encountered}} a problem while deleting translatable page "[[:$1]]"',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|completed}} deletion of translation page "$1"',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|encountered}} a problem while deleting translation page "[[:$1]]"',
+	'pt-log-encourage' => '{{GENDER:$2|encouraged}} translation of page "[[:$1]]"',
+	'pt-log-discourage' => '{{GENDER:$2|discouraged}} translation of page "[[:$1]]"',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|removed}} priority languages from translatable page "[[:$1]]"',
+	'pt-log-priority-langs' => '{{GENDER:$2|set}} the priority languages for translatable page "[[:$1]]" to $3. Reason: $4',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|limited}} languages for translatable page "[[:$1]]" to $3. Reason: $4',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|added}} translatable page "[[:$1]]" to aggregate group $3',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|removed}} translatable page "[[:$1]]" from aggregate group $3',
 
 	# move page replacement
-	'pt-movepage-title' => 'Move translatable page $1',
+	'pt-movepage-title' => 'Move translatable page "$1"',
 	'pt-movepage-blockers' => 'The translatable page cannot be moved to a new name because of the following {{PLURAL:$1|error|errors}}:',
-	'pt-movepage-block-base-exists' => 'The target base page [[:$1]] exists.',
+	'pt-movepage-block-base-exists' => 'The target base page "[[:$1]]" exists.',
 	'pt-movepage-block-base-invalid' => 'The target base page is not a valid title.',
-	'pt-movepage-block-tp-exists' => 'The target translation page [[:$2]] exists.',
-	'pt-movepage-block-tp-invalid' => 'The target translation page title for [[:$1]] would be invalid (too long?).',
-	'pt-movepage-block-section-exists' => 'The target section page [[:$2]] exists.',
-	'pt-movepage-block-section-invalid' => 'The target section page title for [[:$1]] would be invalid (too long?).',
-	'pt-movepage-block-subpage-exists' => 'The target subpage [[:$2]] exists.',
-	'pt-movepage-block-subpage-invalid' => 'The target subpage title for [[:$1]] would be invalid (too long?).',
+	'pt-movepage-block-tp-exists' => 'The target translation page "[[:$2]]" exists.',
+	'pt-movepage-block-tp-invalid' => 'The target translation page title for "[[:$1]]" would be invalid (too long?).',
+	'pt-movepage-block-section-exists' => 'The target section page "[[:$2]]" exists.',
+	'pt-movepage-block-section-invalid' => 'The target section page title for "[[:$1]]" would be invalid (too long?).',
+	'pt-movepage-block-subpage-exists' => 'The target subpage "[[:$2]]" exists.',
+	'pt-movepage-block-subpage-invalid' => 'The target subpage title for "[[:$1]]" would be invalid (too long?).',
 
 	'pt-movepage-list-pages' => 'List of pages to move',
 	'pt-movepage-list-translation' => 'Translation pages',
@@ -185,15 +185,15 @@ The move action will not be instant, because many pages will need to be moved.
 While the pages are being moved, it is not possible to interact with the pages in question.
 Failures will be logged in the [[Special:Log/pagetranslation|page translation log]] and they need to be repaired by hand.',
 
-	'pt-movepage-logreason' => 'Part of translatable page $1.',
+	'pt-movepage-logreason' => 'Part of translatable page "$1".',
 	'pt-movepage-started' => 'The base page is now moved.
 Please check the [[Special:Log/pagetranslation|page translation log]] for errors and completion message.',
 
 	'pt-locked-page' => 'This page is locked because the translatable page is currently being moved.',
 
 
-	'pt-deletepage-lang-title' => 'Deleting translation page $1.',
-	'pt-deletepage-full-title' => 'Deleting translatable page $1.',
+	'pt-deletepage-lang-title' => 'Deleting translation page "$1".',
+	'pt-deletepage-full-title' => 'Deleting translatable page "$1".',
 
 	'pt-deletepage-invalid-title' => 'The specified page is not valid.',
 	'pt-deletepage-invalid-text' => 'The specified page is not a translatable page nor translation of it.',
@@ -215,8 +215,8 @@ Please check the [[Special:Log/pagetranslation|page translation log]] for errors
 	'pt-deletepage-list-other' => 'Other subpages',
 	'pt-deletepage-list-count' => 'In total $1 {{PLURAL:$1|page|pages}} to delete.',
 
-	'pt-deletepage-full-logreason' => 'Part of translatable page $1.',
-	'pt-deletepage-lang-logreason' => 'Part of translation page $1.',
+	'pt-deletepage-full-logreason' => 'Part of translatable page "$1".',
+	'pt-deletepage-lang-logreason' => 'Part of translation page "$1".',
 	'pt-deletepage-started' => 'Please check the [[Special:Log/pagetranslation|page translation log]] for errors and completion message.',
 
 	'pt-deletepage-intro' => 'This special page allows you delete whole translatable pages or translations into one language.
