@@ -1,6 +1,6 @@
 <?php
 /**
- * This file a contains a  message group implementation.
+ * This file a contains a message group implementation.
  *
  * @file
  * @author Niklas Laxström
