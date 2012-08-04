@@ -18,14 +18,19 @@ class CoreMostUsedMessageGroup extends CoreMessageGroup {
 	protected $label = 'MediaWiki (most used)';
 	protected $id    = 'core-0-mostused';
 	protected $meta  = true;
+	protected $list;
 
 	protected $description = '{{int:translate-group-desc-mediawikimostused}}';
 
 	public function export( MessageCollection $messages ) { return 'Not supported'; }
 	public function exportToFile( MessageCollection $messages, $authors ) { return 'Not supported'; }
 
+	public function setListFile( $file ) {
+		$this->list = $file;
+	}
+
 	function getDefinitions() {
-		$data = file_get_contents( dirname( __FILE__ ) . '/wikimedia-mostused-2011.txt' );
+		$data = file_get_contents( $this->list );
 		$data = str_replace( "\r", '', $data );
 		$messages = explode( "\n", $data );
 		$contents = parent::getDefinitions();
