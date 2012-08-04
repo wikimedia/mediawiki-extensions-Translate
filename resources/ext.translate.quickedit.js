@@ -183,7 +183,7 @@
 			callbacks.next = function () { mw.translate.openNext( page, group ); };
 			callbacks.success = function ( text ) {
 				var $tr = $( 'tr', 'table.mw-sp-translate-table' ).filter( function () {
-					return $( this ).data( 'title' ) === page;
+					return $( this ).data( 'title' ) === page.replace( '_', ' ' );
 				} );
 				$tr.find( 'td' ).last()
 					.html( convertWhiteSpaceToHTML( text ) )
