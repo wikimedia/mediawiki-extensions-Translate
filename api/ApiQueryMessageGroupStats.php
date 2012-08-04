@@ -41,18 +41,17 @@ class ApiQueryMessageGroupStats extends ApiQueryBase {
 				continue;
 			}
 
-			list( $total, $translated, $fuzzy ) = $stats;
-
-			if ( $total === null ) {
+			if ( $stats[MessageGroupStats::TOTAL] === null ) {
 				$this->setContinueEnumParameter( 'offset', $code );
 				break;
 			}
 
 			$data = array(
 				'code' => $code,
-				'total' => $total,
-				'translated' => $translated,
-				'fuzzy' => $fuzzy,
+				'total' => $stats[MessageGroupStats::TOTAL],
+				'translated' => $stats[MessageGroupStats::TRANSLATED],
+				'fuzzy' => $stats[MessageGroupStats::FUZZY],
+				'proofread' => $stats[MessageGroupStats::PROOFREAD],
 			);
 
 			$result->addValue( array( 'query', $this->getModuleName() ), null, $data );

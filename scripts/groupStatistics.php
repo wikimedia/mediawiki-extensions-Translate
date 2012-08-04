@@ -392,7 +392,9 @@ foreach ( $groups as $groupName => $g ) {
 			continue;
 		}
 
-		list( $total, $translated, $fuzzy ) = $stats[$code];
+		$total = $stats[MessageGroupStats::TOTAL];
+		$translated = $stats[MessageGroupStats::TRANSLATED];
+		$fuzzy = $stats[MessageGroupStats::FUZZY];
 
 		$rows[$code][] = array( false, $translated, $total );
 
