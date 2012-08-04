@@ -181,7 +181,8 @@ foreach ( $groups as $groupId => $group ) {
 				unset( $langs[$index] );
 			}
 
-			list( $total, $translated, ) = $stats[$code];
+			$total = $stats[$code][MessageGroupStats::TOTAL];
+			$translated = $stats[$code][MessageGroupStats::TRANSLATED];
 			if ( $translated / $total * 100 < $threshold ) {
 				unset( $langs[$index] );
 			}

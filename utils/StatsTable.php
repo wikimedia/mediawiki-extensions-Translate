@@ -142,12 +142,10 @@ class StatsTable {
 	 * @param $numbers array ( total, translate, fuzzy )
 	 * @return string Html
 	 */
-	public function makeTotalRow( Message $message, $numbers ) {
-		list( $total, $translated, $fuzzy ) = $numbers;
-
+	public function makeTotalRow( Message $message, $stats ) {
 		$out  = "\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . Html::element( 'td', array(), $message->text() );
-		$out .= $this->makeNumberColumns( $fuzzy, $translated, $total );
+		$out .= $this->makeNumberColumns( $stats );
 		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
 
 		return $out;
@@ -160,7 +158,11 @@ class StatsTable {
 	 * @param $total int Total number of messages in this group
 	 * @return string Html
 	 */
-	public function makeNumberColumns( $fuzzy, $translated, $total ) {
+	public function makeNumberColumns( $stats ) {
+		$total = $stats[MessageGroupStats::TOTAL];
+		$translated = $stats[MessageGroupStats::TRANSLATED];
+		$fuzzy = $stats[MessageGroupStats::FUZZY];
+
 		if ( $total === null ) {
 			$na = "\n\t\t" . Html::element( 'td', array( 'data-sort-value' => -1 ), '...' );
 			$nap =  "\n\t\t" . $this->element( '...', 'AFAFAF', -1 );
