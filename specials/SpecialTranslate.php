@@ -57,6 +57,8 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->setup( $parameters );
 
+		wfRunHooks( 'TranslateBeforeSpecialTranslate', array( $parameters, $this->group ) );
+
 		if ( $this->options['group'] === '' ) {
 			TranslateUtils::addSpecialHelpLink( $wgOut, 'Help:Extension:Translate/Translation_example' );
 			$this->groupInformation();
@@ -286,8 +288,9 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->defaults    = $defaults;
 		$this->nondefaults = $nondefaults;
-		$this->options     = $nondefaults + $defaults;
+		wfRunHooks( 'TranslateGetSpecialTranslateOptions', array( &$defaults, &$nondefaults ) );
 
+		$this->options     = $nondefaults + $defaults;
 		$this->group = MessageGroups::getGroup( $this->options['group'] );
 		$this->task  = TranslateTasks::getTask( $this->options['task'] );
 
@@ -335,8 +338,12 @@ class SpecialTranslate extends SpecialPage {
 
 		$button = Xml::submitButton( wfMsg( 'translate-submit' ) );
 
+		$formAttributes = array( 'class' => 'mw-sp-translate-settings' );
+		if( $this->group ) {
+			$formAttributes['data-grouptype'] = get_class( $this->group );
+		}
 		$form =
-			Html::openElement( 'fieldset', array( 'class' => 'mw-sp-translate-settings' ) ) .
+			Html::openElement( 'fieldset', $formAttributes ) .
 				Html::element( 'legend', null, wfMsg( 'translate-page-settings-legend' ) ) .
 				Html::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
 					Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .

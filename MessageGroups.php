@@ -1242,7 +1242,6 @@ class MessageGroups {
 		self::init();
 
 		global $wgTranslateEC, $wgTranslateAC, $wgTranslateCC;
-
 		if ( in_array( $id, $wgTranslateEC ) ) {
 			$creater = $wgTranslateAC[$id];
 			if ( is_array( $creater ) ) {
@@ -1259,9 +1258,12 @@ class MessageGroups {
 			if ( isset( $dynamic[$id] ) ) {
 				return new $dynamic[$id];
 			}
+		} else {
+			$group = null;
+			wfRunHooks( 'TranslateNoSuchGroupFound', array( &$group, $id ) );
+			return $group;
 		}
 	}
-
 	/**
 	 * @param $id
 	 * @return bool
@@ -1276,6 +1278,14 @@ class MessageGroups {
 	 */
 	public static function getAllGroups() {
 		return self::singleton()->getGroups();
+	}
+
+	/**
+	 * Invalidate $this->classes cache
+	 * @return \void
+	 */
+	public function invalidateClassList(){
+		$this->classes = null;
 	}
 
 	/**

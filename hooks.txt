@@ -34,11 +34,19 @@ This is a list of known events and parameters; please add to it if you're going
 to add events to the Translate extension.
 
 === PHP events ===
+'TranslateBeforeAddModules': Provides an opportunity to load extra modules
+	&$modules: Array of module names to be loaded
+
 'TranslateFormatMessageBeforeTable': Provides an opportunity to manipulate the display of translation strings (messages) in the main table
 	&$message: The message that will be displayed
 	$translation: The current translation (or null if not yet translated)
 	$original: The original (untranslated) message
 	&$attributes: An array of attributes that will
+
+'TranslateGetBoxes': Provides an opportunity to add or remove "boxes" (translation helpers) from the translation interface
+	$group: The message group being used at the time
+	$handle: A MessageHandle object representing the translation page (e.g. 'MediaWiki:Example/qqq')
+	&$boxes: An associative array to be appended to (format: 'name' => 'some HTML string')
 
 'TranslateGetExtraInputs': Provides an opportunity to add extra form inputs to to the default translation editor
 	&$translation: The translation string as it stands
