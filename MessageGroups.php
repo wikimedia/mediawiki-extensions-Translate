@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 <?php
 /**
  * This file contains a class for working with message groups.
