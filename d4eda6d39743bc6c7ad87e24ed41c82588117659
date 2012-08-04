@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARH///DI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-08-04T12:29:59Z",
+      "side": 1,
+      "message": "Typo: Most",
+      "revId": "d4eda6d39743bc6c7ad87e24ed41c82588117659",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///DE\u003d",
+        "filename": "messagegroups/CoreMostUsedMessageGroup.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-08-04T12:29:59Z",
+      "side": 1,
+      "message": "Never spotted this before, but what\u0027s the % for?",
+      "revId": "d4eda6d39743bc6c7ad87e24ed41c82588117659",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
