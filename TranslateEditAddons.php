@@ -6,7 +6,7 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2007-2011 Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2007-2012 Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -21,8 +21,6 @@ class TranslateEditAddons {
 	 * Hooks: SkinTemplateNavigation, SkinTemplateTabs
 	 */
 	static function addNavigationTabs( Skin $skin, array &$tabs ) {
-		global $wgRequest;
-
 		$title = $skin->getTitle();
 		$handle = new MessageHandle( $title );
 
@@ -71,7 +69,7 @@ class TranslateEditAddons {
 
 		$nav_params = array();
 		$nav_params['loadgroup'] = $id;
-		$nav_params['action'] = $wgRequest->getText( 'action', 'edit' );
+		$nav_params['action'] = $skin->getRequest->getText( 'action', 'edit' );
 
 		$tabindex = 2;
 
@@ -376,7 +374,6 @@ class TranslateEditAddons {
 			$dbw->delete( 'revtag', $conds, __METHOD__ );
 		}
 	}
-
 
 	/**
 	 * Adds tag which identifies the revision of source message at that time.
