@@ -200,7 +200,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	protected function makeRow( $code, $cache ) {
 		$stats = $cache[$code];
 
-		list( $total, $translated, $fuzzy ) = $stats;
+		list( $total, $translated, $fuzzy, $proofread ) = $stats;
 		if ( $total === null ) {
 			$this->incomplete = true;
 			$extra = array();
@@ -229,7 +229,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 		$out  = "\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . $this->getMainColumnCell( $code, $extra );
-		$out .= $this->table->makeNumberColumns( $fuzzy, $translated, $total );
+		$out .= $this->table->makeNumberColumns( $stats );
 		$state = $this->getWorkflowStateValue( $code );
 		$out .= $this->getWorkflowStateCell( $code, $state );
 

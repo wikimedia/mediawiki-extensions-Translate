@@ -111,6 +111,7 @@ class StatsTable {
 			wfMessage( 'translate-total' ),
 			wfMessage( 'translate-untranslated' ),
 			wfMessage( 'translate-percentage-complete' ),
+			wfMessage( 'translate-percentage-proofread' ),
 			wfMessage( 'translate-percentage-fuzzy' ),
 		), $this->extraColumns );
 	}
@@ -142,12 +143,10 @@ class StatsTable {
 	 * @param $numbers array ( total, translate, fuzzy )
 	 * @return string Html
 	 */
-	public function makeTotalRow( Message $message, $numbers ) {
-		list( $total, $translated, $fuzzy ) = $numbers;
-
+	public function makeTotalRow( Message $message, $stats ) {
 		$out  = "\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . Html::element( 'td', array(), $message->text() );
-		$out .= $this->makeNumberColumns( $fuzzy, $translated, $total );
+		$out .= $this->makeNumberColumns( $stats );
 		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
 
 		return $out;
@@ -160,7 +159,9 @@ class StatsTable {
 	 * @param $total int Total number of messages in this group
 	 * @return string Html
 	 */
-	public function makeNumberColumns( $fuzzy, $translated, $total ) {
+	public function makeNumberColumns( $stats ) {
+		list( $total, $translated, $fuzzy, $proofread ) = $stats;
+
 		if ( $total === null ) {
 			$na = "\n\t\t" . Html::element( 'td', array( 'data-sort-value' => -1 ), '...' );
 			$nap =  "\n\t\t" . $this->element( '...', 'AFAFAF', -1 );
@@ -180,14 +181,21 @@ class StatsTable {
 		if ( $total === 0 ) {
 			$transRatio = 0;
 			$fuzzyRatio = 0;
+			$proofRatio = 0;
 		} else {
 			$transRatio = $translated / $total;
 			$fuzzyRatio = $fuzzy / $total;
+			$proofRatio = $proofread / $total;
 		}
 
 		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $transRatio, 'floor' ),
 			$this->getBackgroundColour( $translated, $total ),
 			sprintf( '%1.5f', $transRatio ) );
+
+
+		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $proofRatio, 'floor' ),
+			$this->getBackgroundColour( $proofread, $total ),
+			sprintf( '%1.5f', $proofRatio ) );
 
 		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzyRatio, 'ceil' ),
 			$this->getBackgroundColour( $fuzzy, $total, true ),

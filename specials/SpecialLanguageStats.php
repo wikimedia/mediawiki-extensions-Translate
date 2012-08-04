@@ -34,7 +34,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	/**
 	 * Most of the displayed numbers added together.
 	 */
-	protected $totals = array( 0, 0, 0 );
+	protected $totals = array( 0, 0, 0, 0 );
 
 	/**
 	 * How long spend time calculating missing numbers, before
@@ -401,6 +401,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		}
 
 		$stats = $cache[$groupId];
+		$total = $stats[MessageGroupStats::TOTAL];
+		$translated = $stats[MessageGroupStats::TRANSLATED];
+		$fuzzy = $stats[MessageGroupStats::FUZZY];
 
 		list( $total, $translated, $fuzzy ) = $stats;
 		// Quick checks to see whether filters apply
@@ -429,7 +432,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$cachekey = wfMemcKey( __METHOD__, implode( '-', $params ) );
 		$cacheval = wfGetCache( CACHE_ANYTHING )->get( $cachekey );
 		if ( !$this->purge && is_string( $cacheval ) ) {
-			return $cacheval;
+			#return $cacheval;
 		}
 
 		$extra = array();
@@ -450,7 +453,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out  = "\t" . Html::openElement( 'tr', $rowParams );
 		$out .= "\n\t\t" . Html::rawElement( 'td', array(),
 			$this->table->makeGroupLink( $group, $this->target, $extra ) );
-		$out .= $this->table->makeNumberColumns( $fuzzy, $translated, $total );
+		$out .= $this->table->makeNumberColumns( $stats );
 		$out .= $this->getWorkflowStateCell( $groupId, $state );
 		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
 
