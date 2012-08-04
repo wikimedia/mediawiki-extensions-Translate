@@ -33,6 +33,24 @@
       "revId": "d4eda6d39743bc6c7ad87e24ed41c82588117659",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH///Cg\u003d",
+        "filename": "messagegroups/CoreMostUsedMessageGroup.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-04T12:38:00Z",
+      "side": 1,
+      "message": "To prevent Doxygen linking it to the class MediaWiki",
+      "parentUuid": "AAAARH///DE\u003d",
+      "revId": "d4eda6d39743bc6c7ad87e24ed41c82588117659",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
