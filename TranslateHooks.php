@@ -211,18 +211,16 @@ class TranslateHooks {
 	}
 
 	/**
-	 * Set the right page content language for message group translations ("Page/xx").
+	 * Set the correct page content language for translation units.
 	 * Hook: PageContentLanguage
 	 * @param $title Title
 	 * @param $pageLang
 	 * @return bool
 	 */
-	public static function onPageContentLanguage( $title, &$pageLang ) {
-		global $wgTranslateMessageNamespaces;
-		// For translation pages, parse plural, grammar etc with correct language, and set the right direction
-		if ( in_array( $title->getNamespace(), $wgTranslateMessageNamespaces ) ) {
-			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
-			$pageLang = $code;
+	public static function onPageContentLanguage( Title $title, &$pageLang ) {
+		$handle = new MessageHandle( $title );
+		if ( $handle->isMessageNamespace() ) {
+			$pageLang = $handle->getEffectiveLanguageCode();
 		}
 		return true;
 	}

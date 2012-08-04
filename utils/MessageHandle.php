@@ -79,6 +79,20 @@ class MessageHandle {
 	}
 
 	/**
+	 * Return the code for the assumed language of the content, which might
+	 * be different from the subpage code (qqq, no subpage).
+	 * @return String
+	 * @since 2012-08-05
+	 */
+	public function getEffectiveLanguageCode() {
+		global $wgContLang;
+		$code = $this->getCode();
+		if ( $code === '' || $this->isDoc() ) {
+			return $wgContLang->getCode();
+		}
+	}
+
+	/**
 	 * Determine whether the current handle is for message documentation.
 	 * @return bool
 	 */
