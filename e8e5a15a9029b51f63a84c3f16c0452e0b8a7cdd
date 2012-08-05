@@ -16,6 +16,24 @@
       "revId": "e8e5a15a9029b51f63a84c3f16c0452e0b8a7cdd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARH//+xI\u003d",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-08-05T12:59:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARH//++U\u003d",
+      "revId": "e8e5a15a9029b51f63a84c3f16c0452e0b8a7cdd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
