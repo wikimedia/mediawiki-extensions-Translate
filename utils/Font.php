@@ -94,6 +94,57 @@ class FCFontFinder {
 	}
 
 	/**
+	 * Searches for suitable font family in the system.
+	 * @param $code \string Language code.
+	 *
+	 * @return bool|string Name of font family, false on failure
+	 */
+	public static function findFamily( $code ) {
+		if ( ini_get( 'open_basedir' ) ) {
+			wfDebugLog( 'fcfont', 'Disabled because of open_basedir is active' );
+			// Most likely we can't access any fonts we might find
+			return false;
+		}
+
+		$cache = self::getCache();
+		$cachekey = wfMemckey( 'fcfontfamily', $code );
+		$timeout = 60 * 60 * 12;
+
+		$cached = $cache->get( $cachekey );
+		if ( is_string( $cached ) ) {
+			return $cached === 'NEGATIVE' ? false : $cached;
+		}
+
+		$code = wfEscapeShellArg( ":lang=$code" );
+		$ok = 0;
+		$cmd = "fc-match $code";
+		$suggestion = wfShellExec( $cmd, $ok );
+
+		wfDebugLog( 'fcfont', "$cmd returned $ok" );
+
+		if ( $ok !== 0 ) {
+			wfDebugLog( 'fcfont', "fc-match error output: $suggestion" );
+			$cache->set( $cachekey, 'NEGATIVE', $timeout );
+			return false;
+		}
+
+		$pattern = '/^(.*?): "(.*)" "(.*)"$/';
+		$matches = array();
+
+		if ( !preg_match( $pattern, $suggestion, $matches ) ) {
+			wfDebugLog( 'fcfont', "fc-match: return format not understood: $suggestion" );
+			$cache->set( $cachekey, 'NEGATIVE', $timeout );
+			return false;
+		}
+
+		$family = $matches[2];
+		wfDebugLog( 'fcfont', "fc-match: got $family" );
+
+		$cache->set( $cachekey, $family, $timeout );
+		return $family;
+	}
+
+	/**
 	 * @return BagOStuff
 	 */
 	protected static function getCache() {
