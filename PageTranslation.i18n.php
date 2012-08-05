@@ -307,7 +307,7 @@ Used only if a reason was provided in the following messages:
 	'pt-shake-multiple' => 'Each translation (=section) unit can only contain one marker.',
 	'pt-shake-empty' => 'Translation unit (=section) is empty except for the translation marker (=<nowiki><!--T:1--></nowiki>)',
 	'pt-log-header' => '{{logentry|[[Special:Log/pagetranslation]]}}',
-	'pt-log-name' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'pt-log-name' => '{{doc-logpage}}',
 	'pt-log-mark' => '{{logentry|[[Special:Log/pagetranslation]]}}',
 	'pt-log-unmark' => '{{logentry|[[Special:Log/pagetranslation]]}}',
 	'pt-log-moveok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
@@ -3868,6 +3868,7 @@ Teks baliz la: <pre>$1</pre>',
  * @author Dani
  * @author Dj
  * @author Glanthor Reviol
+ * @author Xbspiro
  */
 $messages['hu'] = array(
 	'pagetranslation' => 'Lap fordítása',
@@ -3919,6 +3920,11 @@ Mielőtt fordításra jelölöd ezt a változatot, ellenőrizd hogy a szakaszok 
 A(z) [[$1]] lap fordítása, és a fordítását [$2 a fordítás segédeszköz] segítségével lehet frissíteni.',
 	'tpt-unknown-page' => 'Ez a névtér a tartalmi lapok fordításainak van fenntartva.
 A lap, amit szerkeszteni próbálsz, úgy tűnik hogy nem egyezik egy fordításra jelölt lappal sem.',
+	'tpt-discouraged-language' => "'''$2 — a fordítás erre a nyelvre nem a legfontosabb feladat.'''
+
+Az adminisztrátori javaslat szerint a legfontosabb nyelvek a következők: $3.
+
+Kérjük, ha beszéled ezek közül valamelyiket, fontold meg, hogy inkább arra a nyelvre fordítasz előbb: munkádnak így többek láthatják hasznát.",
 	'tpt-render-summary' => 'Frissítés, hogy megegyezzen a forráslap új változatával',
 	'tpt-download-page' => 'Lap exportálása fordításokkal együtt',
 	'aggregategroups' => 'Összesített csoportok',

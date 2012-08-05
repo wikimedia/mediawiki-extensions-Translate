@@ -736,6 +736,7 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'grouppage-translate-proofr' => '{{doc-group|translate-proofr|page}}',
 	'group-translate-proofr.css' => '{{doc-group|translate-proofr|css}}',
 	'group-translate-proofr.js' => '{{doc-group|translate-proofr|js}}',
+	'log-name-translationreview' => '{{doc-logpage}}',
 	'logentry-translationreview-message' => '{{Logentry}}',
 	'logentry-groupreview-message' => '{{Logentry}}
 
@@ -2000,17 +2001,17 @@ como nun usar espacios o pa treslliterar nomes propios. $1',
 	'translate-edit-nopermission' => 'Necesites permisu pa traducir mensaxes.',
 	'translate-edit-askpermission' => 'Solicitar permisu',
 	'translate-magic-pagename' => 'Traducción estendida de MediaWiki',
-	'translate-magic-help' => "Pues traducir los nomes de les páxines especiales, les pallabres máxiques y los nomes de los espacios de nome.
+	'translate-magic-help' => "Pues traducir los nomatos de les páxines especiales, les pallabres máxiques y los nomes de los espacios de nome.
 
-Los nomes de les páxines especiales y les pallabres máxiques puen tener múltiples traducciones.
+Los nomatos de les páxines especiales y les pallabres máxiques puen tener múltiples traducciones.
 Les traducciones se separten con una coma (,).
 Los espacios de nome namái puen tener una traducción.
 
-Nes traducciones de los espacios de nome <code>$1 talk</code> ye especial. <code>$1</code> se sustituye pol nome del sitiu (por exemplu <code>{{ns:project_talk}}</code>).
-Si na to llingua nun ye posible formar una espresión válida ensin camudar el nome del sitiu, por favor contauta con un desendolcador.
+Traducir l'espaciu de nomes d'alderique del proyeutu <code>$1 talk</code> pue ser abegoso. <code>$1</code> se sustituye pol nome del sitiu (por exemplu <code>{{ns:project_talk}}</code>).
+Si na to llingua nun ye posible formar una espresión válida ensin camudar el nome del sitiu, por favor informa d'ello en [[Support]].
 
 Necesites tar nel grupu de traductores pa guardar los cambios.
-Los cambios nun se graben hasta que calques nel botón guardar d'abaxo.",
+Los cambios nun se graben fasta que calques nel botón guardar d'abaxo.",
 	'translate-magic-module' => 'Módulu:',
 	'translate-magic-submit' => 'Amosar',
 	'translate-magic-cm-export' => 'Esportar',
@@ -2158,6 +2159,9 @@ El color del solliniáu indica'l tiempu que fai dende qu'un traductor tuvo activ
 	'translate-smg-nochanges' => 'Nun hai cambios que procesar.',
 	'translate-smg-submit' => 'Unviar cambios pa procesamientu',
 	'translate-smg-submitted' => "S'anovaron les definiciones de los mensaxes. Los cambios tan procesandose'n segundu planu.",
+	'translate-smg-postponed' => 'Nun se pudieron procesar dellos cambios. [[{{FULLPAGENAME}}|Vuelvi a probar]].',
+	'translate-smg-left' => 'Conteníu del mensaxe nel wiki',
+	'translate-smg-right' => 'Cambios entrantes',
 	'translate-manage-import-diff' => 'Mensaxe $1 | Aiciones: $2',
 	'translate-manage-import-new' => 'Mensaxe nuevu $1',
 	'translate-manage-import-deleted' => 'Mensaxe desaniciáu $1',
@@ -2224,7 +2228,7 @@ Detalles: $1",
 	'translate-messagereview-failure' => 'Aceutando... fallu: $1',
 	'translate-messagereview-done' => 'Aceutada',
 	'translate-messagereview-reviews' => 'Aceutada por {{PLURAL:$1|un usuariu|$1 usuarios}}',
-	'translate-messagereview-reviewswithyou' => 'Aceutada por {{PLURAL:$1|un usuariu|$1 usuarios}} incluyíu tú',
+	'translate-messagereview-reviewswithyou' => 'Aceutada por {{PLURAL:$1|ti|$1 usuarios incluyíu tu}}',
 	'api-error-invalidrevision' => "Nun s'alcontró la traducción",
 	'api-error-unknownmessage' => "Nun s'alcontró'l mensaxe",
 	'api-error-fuzzymessage' => 'La traducción ta marcada como aproximada',
@@ -2653,7 +2657,7 @@ $messages['be-tarask'] = array(
 Прасторы назваў могуць мець толькі адзін пераклад.
 
 У перакладах прастораў назваў радок <code>абмеркаваньне $1</code> мае спэцыяльнае значэньне. <code>$1</code> будзе замененае на назву сайта (напрыклад, <code>{{ns:project_talk}}</code>).
-Калі для Вашай мовы немагчыма стварыць адпаведны выраз бязь зьмены назвы сайта, калі ласка, зьвяжыцеся з распрацоўшчыкамі.
+Калі для Вашай мовы немагчыма стварыць адпаведны выраз бязь зьмены назвы сайта, калі ласка, [[Support|зьвяжыцеся з распрацоўшчыкамі]].
 
 Вам неабходна ўваходзіць у групу перакладчыкаў, каб захаваць зьмены.
 Зьмены ня будуць захаваныя, пакуль Вы не націсьніце кнопку ўнізе.',
@@ -2787,6 +2791,7 @@ $messages['be-tarask'] = array(
 	'translate-mgs-column-language' => 'Мова',
 	'translate-mgs-totals' => 'Усе мовы разам',
 	'translate-mgs-invalid-group' => 'Пазначаная група «$1» не існуе.',
+	'translate-mgs-nothing' => 'Па вашым запыце статыстыка адсутнічае.',
 	'supportedlanguages' => 'Мовы перакладу',
 	'supportedlanguages-summary' => 'На гэтай старонцы пададзены сьпіс усіх моваў, якія падтрымлівае {{SITENAME}},
 разам з імёнамі перакладчыкаў, якія перакладаюць на гэтыя мовы.
@@ -2800,6 +2805,9 @@ $messages['be-tarask'] = array(
 	'translate-save' => 'Захаваць ($1)',
 	'translate-jssti-add' => 'Дадаць у сьпіс',
 	'managemessagegroups' => 'Кіраваньне групамі паведамленьняў',
+	'translate-smg-notallowed' => 'Вам не дазволена выканаць гэтае дзеяньне.',
+	'translate-smg-nochanges' => 'Няма зьменаў для апрацоўкі.',
+	'translate-smg-submit' => 'Даслаць зьмены для апрацоўкі',
 	'translate-manage-import-diff' => 'Паведамленьне $1 | Дзеяньні: $2',
 	'translate-manage-import-new' => 'Новае паведамленьне $1',
 	'translate-manage-import-deleted' => 'Выдаленае паведамленьне $1',
@@ -5227,7 +5235,7 @@ Die zur Unterstreichung des Benutzernamens genutzte Farbe zeigt an, wann der Üb
 	'translate-smg-nochanges' => 'Es gibt keine zu verarbeitenden Änderungen.',
 	'translate-smg-submit' => 'Änderungen zum Verarbeiten übertragen',
 	'translate-smg-submitted' => 'Nachrichtendefinitionen wurden aktualisiert. Änderungen werden im Hintergrund verarbeitet.',
-	'translate-smg-postponed' => 'Einige Änderungen konnten nicht verarbeitet werden. [[{{FULLPAGENAME}}|Versuche es erneut]].',
+	'translate-smg-postponed' => 'Einige Änderungen konnten nicht verarbeitet werden. [[{{FULLPAGENAME}}|Versuche es bitte erneut]].',
 	'translate-smg-left' => 'Nachrichteninhalt im Wiki',
 	'translate-smg-right' => 'Eingehende Änderungen',
 	'translate-manage-import-diff' => 'Nachricht $1 | Aktionen: $2',
@@ -5371,6 +5379,7 @@ Sie müssen in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translations-summary' => 'Geben Sie einen Nachrichtennamen ein, um alle verfügbaren Übersetzungen anzuzeigen.',
 	'translate-translations-including-no-param' => 'Bitte geben Sie einen gültigen Nachrichtennamen als Unterseitenparameter an',
 	'translate-langstats-incomplete' => 'Einige der Statistiken auf dieser Seite sind unvollständig. Laden Sie sie erneut, um weitere Statistiken zu erhalten.',
+	'translate-smg-postponed' => 'Einige Änderungen konnten nicht verarbeitet werden. [[{{FULLPAGENAME}}|Versuchen Sie es bitte erneut]].',
 	'translate-manage-nochanges-other' => 'Es gibt keine Änderungen für diese Sprache.
 Verwenden Sie den Verweis unten, um zur Gruppendetailübersicht zurück zu gehen.',
 	'translate-manage-inconsistent' => 'Es wurden Inkonsistenzen in der Anfrage festgestellt.
@@ -5381,7 +5390,7 @@ Bitte schicken Sie das Formular noch einmal ab, um die Verarbeitung fortzusetzen
 	'translate-import-err-warnings' => 'Die Datei entspricht nicht dem erwarteten Format.
 Stellen Sie sicher, dass der Editor keine <tt>msgctxt</tt>-Felder entfernt.
 Details: $1',
-	'translate-messagereview-reviewswithyou' => 'Akzeptiert von {{PLURAL:$1|einem Benutzer|$1 Benutzern}}, einschließlich von Ihnen selbst',
+	'translate-messagereview-reviewswithyou' => 'Akzeptiert von {{PLURAL:$1|dir|$1 Benutzern, einschließlich von Ihnen selbst}}',
 	'api-error-owntranslation' => 'Sie können Ihre eigenen Übersetzungen nicht akzeptieren.',
 	'translate-messagereview-no-own' => 'Sie können Ihre eigenen Übersetzungen nicht akzeptieren.',
 );
@@ -5409,9 +5418,10 @@ $messages['diq'] = array(
 	'translate-page-group' => 'Grub',
 	'translate-page-language' => 'Zıwan',
 	'translate-page-limit' => 'Limit',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|mesac|mesac}} biya',
 	'translate-submit' => 'Biya',
 	'translate-page-navigation-legend' => 'Pusula',
-	'translate-page-showing' => '$3 mesacan ra $1 ra $2 mocneyênê',
+	'translate-page-showing' => '$3 mesacan ra [$1 ra $2] mocneyênê',
 	'translate-page-showing-all' => '$1 {{PLURAL:$1|mesac|mesaci}} asenê.',
 	'translate-page-showing-none' => 'Mesaco ke bımocneyo çınyo.',
 	'translate-next' => 'Pela peyêne',
@@ -5428,7 +5438,7 @@ $messages['diq'] = array(
 	'translate-edit-translation' => 'Çarnayışi',
 	'translate-edit-contribute' => 'iştıraq kewê',
 	'translate-edit-no-information' => 'No mesac wesiqe niyo. Şıma nêzanê na açarnayış konca dı sazkerê se, Açarnoğandê bina rê qandê peşti cı meveyê, nara qı şıma haldê cıd zanê se bıvurnê.',
-	'translate-edit-information' => 'Heq tê ($1) zanışe',
+	'translate-edit-information' => 'Mesacan de ($1) ra malumat esto',
 	'translate-edit-in-other-languages' => 'Zewbi zıwanan dê mesaci',
 	'translate-edit-tmsugs' => 'Hafıza da açarnayışi ra şıma rê tawsiyey',
 	'translate-edit-tab-list' => 'Lista mesacan',
@@ -5443,7 +5453,7 @@ $messages['diq'] = array(
 	'translate-magic-cm-save' => 'Star ke',
 	'translate-magic-cm-savefailed' => 'Starê nêkewt',
 	'translate-magic-special' => 'Xısusi nikê pelan',
-	'translate-magic-words' => 'Çequyê nuşteyıni',
+	'translate-magic-words' => 'Çekuyê nuşteyıni',
 	'translate-magic-namespace' => 'Nameyê heruna naman',
 	'translate-pref-editassistlang' => 'Zıwanê peşti:',
 	'translate-rc-translation-filter' => 'Açarnayışi Filtre fi',
@@ -5456,6 +5466,7 @@ $messages['diq'] = array(
 	'translate-statsf-scale-days' => 'Roci',
 	'translate-statsf-scale-hours' => 'Seati',
 	'translate-statsf-count-registrations' => 'Kerbero newe',
+	'translate-statsf-count-reviews' => 'Açarnayışi ercınayış',
 	'translate-statsf-submit' => 'Verqayt',
 	'translate-tag-page-desc' => 'Açarnayışê pela da [[$2|$1]] wiki',
 	'translate-sidebar-alltrans' => 'Zıwanê bini',
@@ -5599,9 +5610,10 @@ kaž na pśikład njewužywanje proznych znamuškow abo transliteraciju swójski
 
 Aliasy specialnych bokow a magiske słowa mógu měś někotare pśełožki. Pśełožki wótźěluju se pśez komu (,). Mjenjowe rumy mógu jano jaden pśełožk měś.
 
-W pśełožkach mjenjowych rumow <code>$1 diskusija</code> jo wósebna. <code>$1</code> se pśez mjenjom sedła wuměnja (na pśikład <code>{{SITENAME}} diskusija</code>). Jolic w twójej rěcy njejo móžno płaśiwy wuraz tworiś, mimo až dejš mě sedła změniš, staj se pšosym z wuwiwarjom do zwiska.
+Pśełožowanje mjenjowego ruma projektoweje diskusije <code>$1 talk</code> móžo komplicěrowane byś. <code>$1</code> se pśez mjenjom sedła wuměnja (na pśikład <code>{{ns:project_talk}}</code>). Jolic w twójej rěcy njejo móžno, płaśiwy wuraz tworiś, mimo až dejš mě sedła změniš, daj nam to na boku [[Support|Pódpěra]] k wěsći.
 
-Musyš w kupce pśełožowarjow byś, aby mogł změny cyniś. Změny se njeskładuju, až njekliknjoš tłocanko "Składowaś" dołojce.',
+Musyš pśełožowaŕ byś, aby mogł změny cyniś.
+Změny se njeskładuju, až njekliknjoš na tłocašk "Składowaś" dołojce.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Pokazaś',
 	'translate-magic-cm-export' => 'Eksportěrowaś',
@@ -5743,6 +5755,9 @@ Barwa pódsmužkowanja pśełožowarskego mjenja pokazujo, kak aktiwny pśełož
 	'translate-smg-nochanges' => 'Njejsu žedne změny za pśeźěłanje.',
 	'translate-smg-submit' => 'Změny na pśeźěłowanje pósłaś',
 	'translate-smg-submitted' => 'Definicije powěźeńkow su se zaktualizěrowali. Změny pśeźěłuju se w slězynje.',
+	'translate-smg-postponed' => 'Někotare změny njedaju se pśeźěłaś. [[{{FULLPAGENAME}}|Wopytaj hyšći raz]].',
+	'translate-smg-left' => 'Powěsćowe wopśimjeśe we wikiju',
+	'translate-smg-right' => 'Dochadajuce změny',
 	'translate-manage-import-diff' => 'Powěźeńka $1 | akcije: $2',
 	'translate-manage-import-new' => 'Nowa powěźeńka $1',
 	'translate-manage-import-deleted' => 'Wulašowana powěźeńka $1',
@@ -5809,7 +5824,7 @@ Drobnostki: $1',
 	'translate-messagereview-failure' => 'Akceptěrowanje... jo se njeraźiło: $1',
 	'translate-messagereview-done' => 'Akceptěrowany',
 	'translate-messagereview-reviews' => 'Wót {{PLURAL:$1|jadnogo wužywarja|$1 wužywarjowu|$1 wužywarjow|$1 wužywarjow}} akceptěrowany',
-	'translate-messagereview-reviewswithyou' => 'Wót {{PLURAL:$1|jadnogo wužywarja|$1 wužywarjowu|$1 wužywarjow|$1 wužywarjow}} akceptěrowany, inkluziwnje tebje',
+	'translate-messagereview-reviewswithyou' => 'Wót {{PLURAL:$1|tebje|$1 wužywarjowu inkluziwnje tebje|$1 wužywarjow inkluziwnje tebje|$1 wužywarjow inkluziwnje tebje}} akceptěrowany',
 	'api-error-invalidrevision' => 'Pśełožk njejo se namakał',
 	'api-error-unknownmessage' => 'Powěźeńka njejo se namakała',
 	'api-error-fuzzymessage' => 'Pśełožk jo ako zestarjony markěrowany',
@@ -6528,15 +6543,18 @@ Los mensajes opcionales deberían traducirse solo si tu idioma tiene caracterís
 	'translate-edit-nopermission' => 'Se necesita permiso para traducir mensajes.',
 	'translate-edit-askpermission' => 'Solicitar permiso',
 	'translate-magic-pagename' => 'Traducción extendida de MediaWiki',
-	'translate-magic-help' => 'Puedes traducir los nombres de las páginas especiales, las palabras mágicas, y los de los espacios de nombre
+	'translate-magic-help' => 'Puedes traducir los nombres de las páginas especiales, las palabras mágicas, y los de los espacios de nombres.
 
-Los nombres de las páginas especiales y las palabras mágicas pueden tener varias traducciones, que se separan por comas (,).
-los nombres de espacios de nombre sólo pueden tener una traducción
+Los nombres de las páginas especiales y las palabras mágicas pueden tener varias traducciones.
+Las traducciones se separan por comas (,).
+Los espacios de nombre sólo pueden tener una traducción.
 
-En las traducciones de espacios de nombre <code>$1 talk</code> es especial. <code>$1</code> se reemplaza por el nombre del sitio (por ejemplo <code>{{ns:project_talk}}</code>). Si en tu idioma no es posible formar una expresión válidad sin cambiar el nombre del sitio, contacta con un desarrollador, por favor.
+Traducir el espacio de nombres de discusión de proyecto <code>$1 talk</code> puede ser complicado.
+<code>$1</code> se reemplaza por el nombre del sitio del proyecto (por ejemplo <code>{{ns:project_talk}}</code>). 
+Si en tu idioma no es posible formar una expresión válida sin cambiar el nombre del sitio, contacta con un desarrollador, en la [[Support|página de axuda]].
 
 Para guardar los cambios debes pertenecer al grupo de traductores
-Los cambios no se graban hasta que no pulses el boton de guardar de abajo.',
+Los cambios no se graban hasta que no pulses el boton Guardar que aparece abajo.',
 	'translate-magic-module' => 'Módulo:',
 	'translate-magic-submit' => 'Obtener',
 	'translate-magic-cm-export' => 'Exportar',
@@ -6686,6 +6704,9 @@ El color del subrayado indica qué tan activo es un traductor aquí.',
 	'translate-smg-nochanges' => 'No hay cambios que procesar.',
 	'translate-smg-submit' => 'Enviar cambios para procesamiento',
 	'translate-smg-submitted' => 'Las definiciones de mensaje han sido actualizadas. Los cambios están siendo procesados en segundo plano.',
+	'translate-smg-postponed' => 'No se pudieron procesar algunos cambios. [[{{FULLPAGENAME}}|Vuelve a intentarlo]].',
+	'translate-smg-left' => 'Contenido del mensaje en el wiki',
+	'translate-smg-right' => 'Cambios entrantes',
 	'translate-manage-import-diff' => 'Mensaje $1 | Acciónes: $2',
 	'translate-manage-import-new' => 'Nuevo mensaje $1',
 	'translate-manage-import-deleted' => 'Mensaje $1 borrado',
@@ -6752,7 +6773,7 @@ Detalle: $1',
 	'translate-messagereview-failure' => 'Aceptando... error: $1',
 	'translate-messagereview-done' => 'Aceptado',
 	'translate-messagereview-reviews' => 'Aceptada por {{PLURAL:$1|un usuario|$1 usuarios}}',
-	'translate-messagereview-reviewswithyou' => 'Aceptada por {{PLURAL:$1|un usuario|$1 usuarios}} incluyéndote a ti',
+	'translate-messagereview-reviewswithyou' => 'Aceptada por {{PLURAL:$1|ti|$1 usuarios incluyéndote a ti}}',
 	'api-error-invalidrevision' => 'No se encontró la traducción',
 	'api-error-unknownmessage' => 'No se encontró el mensaje',
 	'api-error-fuzzymessage' => 'La traducción está marcada como desactualizada',
@@ -7950,16 +7971,18 @@ Si vous savez où ou comment il est utilisé, vous pouvez aider les autres tradu
 	'translate-edit-nopermission' => 'Vous devez obtenir la permission de traduire les messages.',
 	'translate-edit-askpermission' => 'Demander la permission',
 	'translate-magic-pagename' => 'Traduction étendue de MediaWiki',
-	'translate-magic-help' => 'Vous pouvez traduire les alias de pages spéciales, les mots magiques et les noms des espaces de noms.
+	'translate-magic-help' => "Vous pouvez traduire les alias de pages spéciales, les mots magiques et les noms des espaces de noms.
 
 Les alias de pages spéciales et les mots magiques peuvent avoir plusieurs traductions.
 Les traductions sont séparées par une virgule (,).
 Les espaces de noms ne peuvent avoir qu’une seule traduction.
 
-Dans les traductions d’espaces de noms, <code>$1 talk</code> est spécial. <code>$1</code> est remplacé par le nom du site (par exemple <code>{{ns:project_talk}}</code>).
-S’il n’est pas possible d’obtenir une expression valide dans votre langue sans changer le nom du site, veuillez contacter un développeur.
+Traduire l'espace de noms de discussion du projet <code>$1 talk</code> peut être compliqué.
+<code>$1</code> est remplacé par le nom du site (par exemple <code>{{ns:project_talk}}</code>).
+S’il n’est pas possible d’obtenir une expression valide dans votre langue sans changer le nom du site, veuillez nous contacter sur [[Support]].
+
 Vous devez appartenir au groupe des traducteurs pour enregistrer toute modification.
-Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué sur le bouton « {{int:translate-magic-cm-save}} ».',
+Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué sur le bouton « sauvegarder » en bas.",
 	'translate-magic-module' => 'Module :',
 	'translate-magic-submit' => 'Lister',
 	'translate-magic-cm-export' => 'Exporter',
@@ -8171,7 +8194,7 @@ Détails : $1',
 	'translate-messagereview-failure' => 'Acceptation... échouée: $1',
 	'translate-messagereview-done' => 'Accepté',
 	'translate-messagereview-reviews' => 'Accepté par  {{PLURAL:$1| un utilisateur| $1  utilisateurs}}',
-	'translate-messagereview-reviewswithyou' => 'Accepté par  {{PLURAL:$1| un utilisateur| $1  utilisateurs}}, vous y compris',
+	'translate-messagereview-reviewswithyou' => 'Accepté par {{PLURAL:$1|vous|$1 utilisateurs, vous y compris}}',
 	'api-error-invalidrevision' => "La traduction n'a pas été trouvée",
 	'api-error-unknownmessage' => "Le message n'a pas été trouvé",
 	'api-error-fuzzymessage' => 'La traduction est marquée comme « fuzzy »',
@@ -9526,16 +9549,17 @@ $messages['he'] = array(
 	'translate-edit-nopermission' => 'נדרשות הרשאות כדי לתרגם הודעות.',
 	'translate-edit-askpermission' => 'בקשת הרשאה',
 	'translate-magic-pagename' => 'תרגום מורחב של מדיה־ויקי',
-	'translate-magic-help' => 'באפשרותכם לתרגם שמות דפים מיוחדים, מילות קסם ושמות מרחבי שם.
+	'translate-magic-help' => 'באפשרותכם לתרגם כינויים לדפים מיוחדים, מילות קסם ושמות מרחבי שם.
 
 לשמות דפים מיוחדים ולמילות קסם יכולים להיות כמה תרגומים.
 יש להפריד את התרגומים באמצעות פסיק (,).
 למרחבי שם יכול להיות תרגום אחד בלבד.
 
-בתרגום מרחבי השם, <code>שיחת $1</code> הוא מקרה מיוחד. <code>$1</code> יוחלף בשם האתר (לדוגמה, <code>{{ns:project_talk}}</code>).
-אם אין זה אפשרי בשפתכם לתרגם את מרחב השם הזה מבלי לשנות את שם האתר, אנא צרו קשר עם מְפַתֵּחַ.
+תרגום מרחב השם של שיחת פרויקט <code>$1 talk</code> עשוי להיות מסובך.
+המחרוזת <code>$1</code> מוחלפת בשם האתר, למשל (for example <code>{{ns:project_talk}}</code>).
+אם בשפה שלך קשה ליצור ביטוי תקין בצורה הזאת, נא להודיע לנו בדף [[Support]].
 
-עליכם להיות בקבוצת המתרגמים כדי לשמור שינויים.
+עליכם להיות בקבוצת מתרגמים כדי לשמור שינויים.
 השינויים לא יישמרו עד שתלחצו על כפתור השמירה שלהלן.',
 	'translate-magic-module' => 'מידע לתרגום:',
 	'translate-magic-submit' => 'הצגה',
@@ -9685,6 +9709,9 @@ $messages['he'] = array(
 	'translate-smg-nochanges' => 'אין עוד שינויים שצריך לעבד.',
 	'translate-smg-submit' => 'שליחת שינויים לעיבוד',
 	'translate-smg-submitted' => 'הגדרות ההודעות עודכנו. השינויים מעובדים ברקע.',
+	'translate-smg-postponed' => 'לא ניתן היה לעבד חלק מהשינויים [[{{FULLPAGENAME}}|לנסות שוב]].',
+	'translate-smg-left' => 'תוכן ההודעה בוויקי',
+	'translate-smg-right' => 'שינויים קרובים',
 	'translate-manage-import-diff' => 'הודעה $1 | פעולות: $2',
 	'translate-manage-import-new' => 'הודעה חדשה $1',
 	'translate-manage-import-deleted' => 'הודעה שנמחקה $1',
@@ -9751,7 +9778,7 @@ $1',
 	'translate-messagereview-failure' => 'סימון אישור... נכשל: $1',
 	'translate-messagereview-done' => 'אושר',
 	'translate-messagereview-reviews' => 'אושרה על־ידי {{PLURAL:$1|משתמש אחד|$1 משתמשים}}',
-	'translate-messagereview-reviewswithyou' => 'אושרה על־ידי {{PLURAL:$1|משתמש אחד|$1 משתמשים}}, כולל אותך',
+	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|אישרת את ההודעה הזאת|ההודעה אושרה על־ידי $1 משתמשים, כולל אותך}}',
 	'api-error-invalidrevision' => 'התרגום לא נמצא',
 	'api-error-unknownmessage' => 'ההודעה לא נמצאה',
 	'api-error-fuzzymessage' => 'ההודעה מסומנת כמטושטשת',
@@ -13531,8 +13558,9 @@ $1',
 여러 개의 번역을 할 경우에는 쉼표(,)로 번역을 구별합니다.
 단, 이름공간은 오직 하나의 번역만 가능합니다.
 
-이름공간을 번역할 때 <code>$1 talk</code>는 특수한 경우입니다. <code>$1</code>는 사이트 이름(예시: <code>{{ns:project_talk}}</code>)으로 번역됩니다.
-사이트 이름을 바꾸지 않고서 적절한 표현 방법을 구성할 수 없다면 개발자에게 문의해 주십시오.
+번역할 때 프로젝트 토론 이름공간인 <code>$1 talk</code>은 복잡할 수 있습니다.
+<code>$1</code>(은)는 프로젝트 사이트 이름(예를 들어 <code>{{ns:project_talk}}</code>)으로 바뀝니다.
+사이트 이름을 바꾸지 않고서 적절한 표현 방법을 구성할 수 없다면 [[Support]]에서 문의하세요.
 
 이 편집을 저장하려면 번역자 권한이 필요합니다.
 아래의 저장 버튼을 누르기 전까지는 바뀐 내용이 저장되지 않습니다.',
@@ -13684,6 +13712,9 @@ $1',
 	'translate-smg-nochanges' => '과정에 대한 바뀜이 없습니다.',
 	'translate-smg-submit' => '과정에 대한 바뀜 전송',
 	'translate-smg-submitted' => '메시지 정의가 업데이트되었습니다. 바뀜은 백그라운드로 처리하고 있습니다.',
+	'translate-smg-postponed' => '일부 바뀜을 처리할 수 없습니다. [[{{FULLPAGENAME}}|다시 시도하세요]].',
+	'translate-smg-left' => '위키에서 메시지 내용',
+	'translate-smg-right' => '들어오는 바뀜',
 	'translate-manage-import-diff' => '메시지 $1 | 동작: $2',
 	'translate-manage-import-new' => '새 메시지 $1',
 	'translate-manage-import-deleted' => '메시지 $1을 삭제했습니다.',
@@ -13750,7 +13781,7 @@ $1',
 	'translate-messagereview-failure' => '승인 중... 실패: $1',
 	'translate-messagereview-done' => '승인함',
 	'translate-messagereview-reviews' => '{{PLURAL:$1|한 사용자|사용자 $1명}}에 의해 승인함',
-	'translate-messagereview-reviewswithyou' => '당신을 포함한 {{PLURAL:$1|한 사용자|사용자 $1명}}에 의해 승인함',
+	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|당신|당신을 포함한 사용자 $1명}}에 의해 승인함',
 	'api-error-invalidrevision' => '번역을 찾을 수 없습니다.',
 	'api-error-unknownmessage' => '메시지를 찾을 수 없습니다.',
 	'api-error-fuzzymessage' => '번역이 퍼지 처리되었습니다.',
@@ -15248,10 +15279,11 @@ $messages['mk'] = array(
 Преводите се одделуваат со запирка (,).
 Именските простори може да имаат само по еден превод.
 
-<code>Разговор за $1</code> е посебен случај во преводите на именските простори. <code>$1</code> се заменува со името на мрежното место (на пр. <code>Разговор за {{SITENAME}}</code>).
-Ако на вашиот не може да се обликува правилен израз без промена на името на страницата, тогаш обратете се кај некој од развивачите.
+Преведувањето на именскиот простор за разговор за проект <code>Разговор за $1</code> може да биде посложено.
+<code>$1</code> се заменува со проектот (на пр. <code>{{ns:project_talk}}</code>).
+Ако на вашиот не може да се обликува правилен израз без промена на името на страницата, тогаш известете нè на страницата „[[Support|Поддршка]]“.
 
-За да ги зачувате промените треба да припаѓате на групата преведувачи.
+За да ги зачувате промените, треба да сте преведувач.
 Промените нема да се зачуваат без да стиснете на долуприкажаното копче „Зачувај“.',
 	'translate-magic-module' => 'Модул:',
 	'translate-magic-submit' => 'Филтрирај',
@@ -15403,6 +15435,9 @@ $messages['mk'] = array(
 	'translate-smg-nochanges' => 'Нема измени за обработка.',
 	'translate-smg-submit' => 'Поднеси измени за обработка',
 	'translate-smg-submitted' => 'Формулациите на пораките се подновени. Измените се обработуваат во позадина.',
+	'translate-smg-postponed' => 'Не можев да обработам некои од промените. [[{{FULLPAGENAME}}|Обидете се пак]].',
+	'translate-smg-left' => 'Содржина на пораката во викито',
+	'translate-smg-right' => 'Престојни промени',
 	'translate-manage-import-diff' => 'Порака $1 | Дејства: $2',
 	'translate-manage-import-new' => 'Нова порака $1',
 	'translate-manage-import-deleted' => 'Избришана порака $1',
@@ -15469,7 +15504,7 @@ $1',
 	'translate-messagereview-failure' => 'Прифаќам... неуспешно: $1',
 	'translate-messagereview-done' => 'Прифатено',
 	'translate-messagereview-reviews' => 'Прифатено од {{PLURAL:$1|еден корисник|$1 корисници}}',
-	'translate-messagereview-reviewswithyou' => 'Прифатено од {{PLURAL:$1|еден корисник|$1 корисници}} заклучно со Вас',
+	'translate-messagereview-reviewswithyou' => 'Прифатено од {{PLURAL:$1|вас|$1 корисници, вклучувајќи ве и вас}}',
 	'api-error-invalidrevision' => 'Преводот не е пронајден',
 	'api-error-unknownmessage' => 'Пораката не е пронајдена',
 	'api-error-fuzzymessage' => 'Преводот е обележан како застарен',
@@ -17076,10 +17111,11 @@ Alternatieven voor speciale pagina\'s en magische woorden kunnen meerdere vertal
 Scheid vertalingen met een komma (,).
 Naamruimtebenamingen kunnen slechts één vertaling hebben.
 
-In naamruimtebenamingen is <code>$1 talk</code> een uitzondering. <code>$1</code> wordt vervangen door de sitenaam (bijvoorbeeld <code>{{ns:project_talk}}</code>).
-Als het in uw taal niet mogelijk is een geldige uitdrukking te vormen zonder de sitenaam te wijzigen, neem dan contact op met een ontwikkelaar.
+Het vertalen van naamruimte voor projectoverleg <code>$1 talk</code> kan lastig zijn.
+<code>$1</code> wordt vervangen door de projectsitenaam (bijvoorbeeld <code>{{ns:project_talk}}</code>).
+Als het in uw taal niet mogelijk is een geldige uitdrukking te vormen zonder de sitenaam te wijzigen, neem dan contact op met ons op via de [[Support|pagina voor ondersteuning]].
 
-Om wijzigingen op te slaan moet u lid zijn van de groep vertalers.
+U moet vertaler zijn om wijzigingen op te kunnen slaan.
 Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
 	'translate-magic-module' => 'Module:',
 	'translate-magic-submit' => 'Ophalen',
@@ -17229,6 +17265,9 @@ De kleur van een onderstreping geeft aan hoe recent een vertaler actief is gewee
 	'translate-smg-nochanges' => 'Er zijn geen veranderingen te verwerken.',
 	'translate-smg-submit' => 'Wijzigingen opslaan voor verwerking',
 	'translate-smg-submitted' => 'De berichtendefinities zijn bijgewerkt. De wijzigingen worden in de achtergrond verwerkt.',
+	'translate-smg-postponed' => 'Sommige wijzigingen kunnen niet worden verwerkt. [[{{FULLPAGENAME}}|Probeer het opnieuw]].',
+	'translate-smg-left' => 'Inhoud in wiki',
+	'translate-smg-right' => 'Inkomende wijzigingen',
 	'translate-manage-import-diff' => 'Bericht $1 | Handelingen: $2',
 	'translate-manage-import-new' => 'Nieuw bericht $1',
 	'translate-manage-import-deleted' => 'Verwijderd bericht $1',
@@ -17294,7 +17333,7 @@ Details: $1',
 	'translate-messagereview-failure' => 'Bezig met accepteren... Mislukt: $1',
 	'translate-messagereview-done' => 'Geaccepteerd',
 	'translate-messagereview-reviews' => 'Geaccepteerd door {{PLURAL:$1|één gebruiker|$1 gebruikers}}',
-	'translate-messagereview-reviewswithyou' => 'Geaccepteerd door {{PLURAL:$1|één gebruiker|$1 gebruikers}} inclusief uzelf.',
+	'translate-messagereview-reviewswithyou' => 'Geaccepteerd door {{PLURAL:$1|u|$1 gebruikers, inclusief uzelf}}',
 	'api-error-invalidrevision' => 'De vertaling is niet gevonden.',
 	'api-error-unknownmessage' => 'Het bericht is niet aangetroffen.',
 	'api-error-fuzzymessage' => 'De vertaling is gemarkeerd als verouderd.',
@@ -21600,7 +21639,7 @@ Razlog:
 	'translate-page-language' => 'Jezik',
 	'translate-page-limit' => 'Omejitev',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|sporočilo|sporočili|sporočila|sporočil}} na stran',
-	'translate-submit' => 'Dobi',
+	'translate-submit' => 'Pridobi',
 	'translate-page-navigation-legend' => 'Navigacija',
 	'translate-page-showing' => 'Prikazujem sporočila od $1 do $2 od skupno $3.',
 	'translate-page-showing-all' => 'Prikazujem $1 {{PLURAL:$1|sporočilo|sporočili|sporočila|sporočil}}.',
@@ -21641,13 +21680,14 @@ Vzdevki posebnih strani in čarobne besede imajo lahko več prevodov.
 Prevodi so ločeni z vejico (,).
 Imenski prostori imajo lahko samo en prevod.
 
-V prevodih imenskih prostorov je <code>$1 talk</code> posebnost. <code>$1</code> je zamenjano z imenom strani (na primer <code>{{ns:project_talk}}</code>).
-Če v vašem jeziku ni mogoče tvoriti veljavnega izraza brez spreminjanja imena strani, prosimo, stopite v stik z razvijalcem.
+Prevajanja projektnih imenskih prostorov za pogovor <code>$1 talk</code> je lahko zapleteno.
+<code>$1</code> se zamenja z imenom projektne strani (na primer <code>{{ns:project_talk}}</code>).
+Če v vašem jeziku ni mogoče tvoriti veljavnega izraza brez spreminjanja imena strani, prosimo, nas o tem obvestite na strani [[Support|Podpora]].
 
-Za shranjevanje sprememb morate biti v skupini prevajalcev.
+Za shranjevanje sprememb morate biti prevajalec.
 Spremembe niso shranjene dokler ne kliknete spodnjega gumba za shranjevanje.',
 	'translate-magic-module' => 'Modul:',
-	'translate-magic-submit' => 'Dobi',
+	'translate-magic-submit' => 'Pridobi',
 	'translate-magic-cm-export' => 'Izvoz',
 	'translate-magic-nothing-to-export' => 'Ni sporočil za izvoz.',
 	'translate-magic-cm-to-be' => 'Naj bo',
@@ -21861,7 +21901,7 @@ Podrobnosti: $1',
 	'translate-messagereview-failure' => 'Sprejemanje ... spodletelo: $1',
 	'translate-messagereview-done' => 'Sprejeto',
 	'translate-messagereview-reviews' => '{{PLURAL:$1|Sprejel $1 uporabnik|Sprejela $1 uporabnika|Sprejeli $1 uporabniki|Sprejelo $1 uporabnikov}}',
-	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|Sprejel $1 uporabnik|Sprejela $1 uporabnika|Sprejeli $1 uporabniki|Sprejelo $1 uporabnikov}}, vključno z vami',
+	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|Sprejeli ste vi|Sprejela $1 uporabnika, vključno z vami|Sprejeli $1 uporabniki, vključno z vami|Sprejelo $1 uporabnikov, vključno z vami}}',
 	'api-error-invalidrevision' => 'Prevoda ni bilo mogoče najti',
 	'api-error-unknownmessage' => 'Sporočila ni bilo mogoče najti',
 	'api-error-fuzzymessage' => 'Prevod je označen kot zastarel',
@@ -24183,6 +24223,7 @@ Pinaka nakakatulong para sa mga gawain ng pagwawasto.',
 );
 
 /** толышә зывон (толышә зывон)
+ * @author Erdemaslancan
  * @author Гусейн
  */
 $messages['tly'] = array(
@@ -24194,6 +24235,7 @@ $messages['tly'] = array(
 	'translate-edit-translation' => 'Пегордыније',
 	'translate-magic-cm-current' => 'Есәтнә',
 	'translate-magic-cm-save' => 'Огәте',
+	'translate-gethelp' => 'Арајиш',
 );
 
 /** Turkish (Türkçe)
@@ -24692,15 +24734,15 @@ $messages['uk'] = array(
 	'translate-edit-nopermission' => 'Вам потрібні права для перекладу повідомлень.',
 	'translate-edit-askpermission' => 'Дати запит на отримання прав',
 	'translate-magic-pagename' => 'Поглиблений переклад MediaWiki',
-	'translate-magic-help' => "Ви можете перекладати псевдоніми спеціальних сторінок, магічні слова й простори назв.
+	'translate-magic-help' => 'Ви можете перекладати псевдоніми спеціальних сторінок, магічні слова та назви простори.
 
 Псевдоніми спеціальних сторінок і магічні слова можуть мати декілька варіантів перекладу, які розділяються комою (,).
-Простори назв можуть мати тільки один переклад.
+Назви просторів можуть мати лише один переклад.
 
-У перекладах просторів назв рядок <code>Обговорення $1</code> обробляється по-особливому. <code>$1</code> замінюється на назву сайту (наприклад <code>{{ns:project_talk}}</code>). Зв'яжіться з розробниками, якщо подібна граматична конструкція неправильна для Вашої мови.
+Переклад назви простору обговорень проекту<code>$1 talk</code> може викликати труднощі. <code>$1</code> замінюється назвою сайту проекту (наприклад <code>{{ns:project_talk}}</code>). Якщо у Вашій мові неможливо утворити коректне словосполучення без зміни назви сайту (наприклад, якщо слід вживати родовий відмінок), повідомте про це [[Support|Службу підтримки]].
 
-Щоб зберегти зміни, Ви повинні належати до групи перекладачів.
-Зміни не будуть збережені, поки Ви не натиснете кнопку нижче.",
+Щоб зберегти зміни, Ви повинні бути перекладачем.
+Зміни не буде збережено, поки Ви не натиснете кнопку Зберегти нижче.',
 	'translate-magic-module' => 'Модуль:',
 	'translate-magic-submit' => 'Вивести',
 	'translate-magic-cm-export' => 'Експортувати',
