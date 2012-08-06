@@ -69,6 +69,7 @@ $messages['en'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] delivers an offline, text-only version of Wikipedia on a mobile device',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wikipedia',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wiktionary',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] is a mobile application for contributing to the [[:meta:Wiki Loves Monuments|Wiki Loves Monuments project]]',
 );
 
 /** Message documentation (Message documentation)
@@ -95,6 +96,7 @@ $messages['qqq'] = array(
 	'translate-group-desc-statusnet-plugin' => 'Do not translate the link target <code>Translating:StatusNet</code>.',
 	'bw-desc-wikiblame' => 'Do not translate the link target <code>Translating:WikiBlame</code>.',
 	'bw-desc-wikireader' => 'Do not translate the link target <code>Translating:WikiReader</code>.',
+	'translate-group-desc-wlmmobile' => 'Do not translate the link targets "<code>Translating:WLMMobile</code>" and "<code>:meta:Wiki Loves Monuments</code>".',
 );
 
 /** Afrikaans (Afrikaans)
