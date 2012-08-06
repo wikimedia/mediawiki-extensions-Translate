@@ -211,7 +211,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		}
 
 		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-section' );
-		$sectionPages = $this->getSectionPages( $target );
+		$sectionPages = $this->getSectionPages();
 		foreach ( $sectionPages as $old ) {
 			$count++;
 			$this->printChangeLine( $old );
@@ -335,26 +335,11 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 
 	/**
 	 * Returns all section pages, including those which are currently not active.
-	 * @return TitleArray.
+	 * @return Array of titles.
 	 */
 	protected function getSectionPages() {
-		if ( !isset( $this->sectionPages ) ) {
-			$base = $this->page->getTitle()->getPrefixedDBKey();
-
-			$dbw = wfGetDB( DB_MASTER );
-			if ( $this->singleLanguage() ) {
-				$like = $dbw->buildLike( "$base/", $dbw->anyString(), "/{$this->code}" );
-			} else {
-				$like = $dbw->buildLike( "$base/", $dbw->anyString() );
-			}
-
-			$fields = array( 'page_namespace', 'page_title' );
-			$titleCond = 'page_title ' . $like;
-			$conds = array( 'page_namespace' => NS_TRANSLATIONS, $titleCond );
-			$result = $dbw->select( 'page', $fields, $conds, __METHOD__ );
-			$this->sectionPages = TitleArray::newFromResult( $result );
-		}
-		return $this->sectionPages;
+		$code = $this->singleLanguage() ? $this->code : false;
+		return $this->page->getTranslationUnitPages( 'all', $code );
 	}
 
 	/**
