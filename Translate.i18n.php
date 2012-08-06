@@ -7060,7 +7060,7 @@ Meetodi <code>$1</code> tugi puudub.',
 	'translate-messagereview-failure' => 'Heakskiitmine... ebaõnnestus: $1',
 	'translate-messagereview-done' => 'Heaks kiidetud',
 	'translate-messagereview-reviews' => 'Heaks kiitnud {{PLURAL:$1|üks kasutaja|$1 kasutajat}}',
-	'translate-messagereview-reviewswithyou' => 'Koos sinuga heaks kiitnud {{PLURAL:$1|üks kasutaja|$1 kasutajat}}',
+	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|Sinu|$1 kasutaja ja sealhulgas sinu}} heaks kiidetud',
 	'api-error-invalidrevision' => 'Tõlget ei leitud',
 	'api-error-unknownmessage' => 'Sõnumit ei leitud',
 	'api-error-fuzzymessage' => 'Tõlge on märgitud ülevaatuseks',
@@ -11993,10 +11993,10 @@ Gli alias delle pagine speciali e le parole magiche possono avere più traduzion
 Le traduzioni sono separate da una virgola (,).
 I namespace possono avere solo una traduzione.
 
-Nelle traduzioni dei namespace <code>$1 talk</code> è speciale. <code>$1</code> viene rimpiazzato con il nome del sito (per esempio <code>{{ns:project_talk}}</code>).
-Se non è possibile formare un\'espressione valida nella tua lingua senza cambiare il nome del sito, per favore contatta uno sviluppatore.
+Tradurre il namespace di discussione delle pagine di progetto <code>$1 talk</code> può essere complicato. <code>$1</code> viene sostituito con il nome del sito (per esempio <code>{{ns:project_talk}}</code>).
+Se non è possibile formare un\'espressione valida nella tua lingua senza cambiare il nome del sito, per favore contatta il [[Support]].
 
-Devi essere nel gruppo dei traduttori per salvare le modifiche.
+Devi essere un traduttore per salvare le modifiche.
 Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.',
 	'translate-magic-module' => 'Modulo:',
 	'translate-magic-submit' => 'Riporta',
@@ -12139,6 +12139,8 @@ Si consiglia di revisionare i messaggi attraverso [[Special:Translate|{{int:tran
 	'translate-smg-nochanges' => 'Non ci sono modifiche da elaborare.',
 	'translate-smg-submit' => "Invia le modifiche per l'elaborazione",
 	'translate-smg-submitted' => 'Le definizioni dei messaggi sono state aggiornate. Le modifiche saranno elaborate in background.',
+	'translate-smg-postponed' => 'Alcune modifiche non possono essere elaborate. [[{{FULLPAGENAME}}|Riprova]].',
+	'translate-smg-left' => 'Contenuto del messaggio nel wiki',
 	'translate-manage-import-diff' => 'Messaggio $1 | Azioni: $2',
 	'translate-manage-import-new' => 'Nuovo messaggio $1',
 	'translate-manage-import-deleted' => 'Cancellato messaggio $1',
@@ -12203,7 +12205,7 @@ Dettagli: $1',
 	'translate-messagereview-failure' => 'Accettazione... non riuscita: $1',
 	'translate-messagereview-done' => 'Accettato',
 	'translate-messagereview-reviews' => 'Accettata da {{PLURAL:$1|un utente|$1 utenti}}',
-	'translate-messagereview-reviewswithyou' => 'Accettata da {{PLURAL:$1|un utente|$1 utenti}} te compreso',
+	'translate-messagereview-reviewswithyou' => 'Accettata da {{PLURAL:$1|te|$1 utenti, te compreso}}',
 	'api-error-invalidrevision' => 'Traduzione non trovata',
 	'api-error-unknownmessage' => 'Messaggio non trovato',
 	'api-error-fuzzymessage' => 'La traduzione è segnata come da aggiornare',
@@ -14486,6 +14488,7 @@ D'Faarf mat där den Numm vum Benotzer ënnerstrach ass weist wéi rezent dee Be
 	'translate-smg-nochanges' => 'Et gëtt keng Ännerunge fir ze verschaffen.',
 	'translate-smg-submit' => 'Ännerunge fir ze verschaffe schécken',
 	'translate-smg-submitted' => 'Definitioune vun de Message goufen aktualiséiert. Ännerunge ginn am Hannergrond gemaach.',
+	'translate-smg-left' => 'Inhalt vum Message op der Wiki',
 	'translate-manage-import-diff' => 'Message $1 | Aktiounen: $2',
 	'translate-manage-import-new' => 'Neie Message $1',
 	'translate-manage-import-deleted' => 'Geläschte Message $1',
@@ -24228,7 +24231,7 @@ Pinaka nakakatulong para sa mga gawain ng pagwawasto.',
  */
 $messages['tly'] = array(
 	'translate' => 'Пегордынијеј',
-	'translate-page-settings-legend' => 'Низамисә ној',
+	'translate-page-settings-legend' => 'Кукон',
 	'translate-page-language' => 'Зывон',
 	'translate-next' => 'Пешонә сәһифә',
 	'translate-page-edit' => 'сәрост кардеј',
