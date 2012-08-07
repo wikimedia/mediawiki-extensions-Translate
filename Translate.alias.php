@@ -375,6 +375,12 @@ $specialPageAliases['id'] = array(
 	'MyLanguage' => array( 'Bahasa_saya' ),
 );
 
+/** Icelandic (íslenska) */
+$specialPageAliases['is'] = array(
+	'Translate' => array( 'Þýða' ),
+	'FirstSteps' => array( 'Fyrstu_skrefin' ),
+);
+
 /** Italian (italiano) */
 $specialPageAliases['it'] = array(
 	'Translate' => array( 'Traduci' ),

@@ -518,6 +518,7 @@ Vysvětlení klíčů u funkce PLURAL najdete na [http://unicode.org/repos/cldr-
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt nabízející offline čistě textovou verzi Wikipedie pro mobilní zařízení.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] je mnohoplatformní mobilní a tabletová aplikace pro čtení Wikipedie a přispívání do ní',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] je mnohoplatformní mobilní a tabletová aplikace pro čtení Wikislovníku a přispívání do něj',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] je mobilní aplikace pro přispívání do [[:meta:Wiki Loves Monuments|projektu Wiki miluje památky]]',
 );
 
 /** Danish (dansk)
@@ -638,6 +639,7 @@ Weitere Information finden sich unter [[mw:Extension:PDF Writer]] und http://cod
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ist ein Projekt für eine offline, nur-Text-Version der Wikipedia auf Kleingeräte.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] ist eine plattformübergreifende Mobiltelefon- und Tablet-PC-Applikation zum Lesen und Bearbeiten der Wikipedia',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] ist eine plattformübergreifende Mobiltelefon- und Tablet-PC-Applikation zum Lesen und Bearbeiten des Wiktionarys',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] ist eine Mobiltelefon- und Tablet-PC-Applikation zum Mitmachen beim Projekt [[:meta:Wiki Loves Monuments|Wiki Loves Monuments]]',
 );
 
 /** Zazaki (Zazaki)
@@ -711,6 +713,7 @@ Pšosym glědaj [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wi
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] jo projekt, kótaryž stoj tekstowu wersiju Wikipedije offline na mobilnem rěźe k dispoziciji.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] jo platformu pśesegajuca aplikacija za mobilne telefony a tabletowe licadła za cytanje a wobźěłowanje Wikipedije',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] jo platformu pśesegajuca aplikacija za mobilne telefony a tabletowe licadła za cytanje a wobźěłowanje Wikisłownika',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] jo mobilna aplikacija, kótaraž pśinosujo k [[:meta:Wiki Loves Monuments|projektoju Wiki Loves Monuments]]',
 );
 
 /** Greek (Ελληνικά)
@@ -1227,6 +1230,7 @@ Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/m
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt, kotryž skići tekstowu wersiju Wikipedije offline na mobilnym graće.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] je platformu přesahaca aplikacija za mobilne telefony a tabletowe ličaki za čitanje a wobdźěłowanje Wikipedije',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] je platformu přesahaca aplikacija za mobilne telefony a tabletowe ličaki za čitanje a wobdźěłowanje Wikisłownika',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] je mobilna aplikacija, kotraž k [[:meta:Wiki Loves Monuments|projektej Wiki Loves Monuments]] přinošuje',
 );
 
 /** Hungarian (magyar)
@@ -1576,6 +1580,7 @@ $messages['ko'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]는 모바일 장치에서 위키백과의 오프라인, 텍스트 전용 버전을 제공합니다',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]은 위키백과 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]]은 위키낱말사전 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]]은 [[:meta:Wiki Loves Monuments|Wiki Loves Monuments project]]에 기여하기 위한 모바일 어플리케이션입니다',
 );
 
 /** Colognian (Ripoarisch)
@@ -1764,6 +1769,7 @@ $messages['mk'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|ВикиЧитач]] (WikiReader) е проект за создавање на текстуална верзија на Википедија наменета за мобилен уред.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|ВикипедијаМобилен]] е повеќеподложен додаток за мобилни и таблични уреди наменет за читање и уредување на Википедија',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|ВикиречникМобилен]] е повеќеподложен додаток за мобилни и таблични уреди наменет за читање и уредување на Викиречникот',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|ВикиГиСакаСпомениците - Мобилен]] е мобилен прилог за учествување во проектот „[[:meta:Wiki Loves Monuments|Вики ги сака спомениците]]“',
 );
 
 /** Malayalam (മലയാളം)
@@ -2734,6 +2740,7 @@ Mangyaring tingnan ang [[mw:Extension:PDF_Writer]] at ang http://code.pediapress
 	'bw-desc-wikireader' => 'Ang [[Translating:WikiReader|WikiReader]] ay isang proyekto upang dalhin ang isang bersyon ng Wikipediang hindi nakakunekta sa internet at may bersyong teksto lamang mula sa isang aparatong mobil.',
 	'translate-group-desc-wikipediamobile' => 'Ang [[Translating:WikipediaMobile|WikipediaMobile]] ay isang platapormang tumatawid ng mobil at aplikasyon ng tablet para sa pagbasa at pag-aambag sa Wikipedia',
 	'translate-group-desc-wiktionarymobile' => 'Ang [[Translating:WiktionaryMobile|WiktionaryMobile]] ay isang platapormang tumatawid ng mobil at aplikasyon ng tablet para sa pagbabasa at pag-aambag sa Wiktionary',
+	'translate-group-desc-wlmmobile' => 'Ang [[Translating:WLMMobile|Mobil na Maibigin ang Wiki sa mga Bantayog]] ay isang aplikasyong naililipat-lipat para sa pag-aambag sa [[:meta:Wiki Loves Monuments|proyektong Maibigin ang Wiki sa mga Bantayog]]',
 );
 
 /** Tatar (Cyrillic script) (татарча)

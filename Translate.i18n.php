@@ -6606,7 +6606,7 @@ La lista de idiomas por defecto depende de su idioma.',
 	'right-translate-import' => 'Importar traducciones offline',
 	'action-translate-import' => 'importar traducciones sin conexión',
 	'right-translate-messagereview' => 'Revisar traducciones',
-	'right-translate-groupreview' => 'Modificar el estado delflujo de trabajo de los grupos de mensajes',
+	'right-translate-groupreview' => 'Modificar el estado del flujo de trabajo de los grupos de mensajes',
 	'translate-rc-translation-filter' => 'Filtrar traducciones:',
 	'translate-rc-translation-filter-no' => 'No hacer nada',
 	'translate-rc-translation-filter-only' => 'Mostrar solo traducciones',
@@ -6711,11 +6711,11 @@ El color del subrayado indica qué tan activo es un traductor aquí.',
 	'translate-manage-import-new' => 'Nuevo mensaje $1',
 	'translate-manage-import-deleted' => 'Mensaje $1 borrado',
 	'translate-manage-action-import' => 'Importar',
-	'translate-manage-action-conflict' => 'Importar y combinar',
+	'translate-manage-action-conflict' => 'Importar y marcar traducciones para su revisión',
 	'translate-manage-action-ignore' => 'Ignorar',
 	'translate-manage-action-fuzzy' => 'Importar y combinar traducciones',
 	'translate-manage-nochanges' => 'No hay cambios en las definiciones de mensajes para este grupo.',
-	'translate-manage-nochanges-other' => 'No han habido cambios para este idioma.
+	'translate-manage-nochanges-other' => 'No hubo cambios para este idioma.
 Use el enlace siguiente para volver a la vista de grupo.',
 	'translate-manage-inconsistent' => 'Se detectaron inconsistencias en la solicitud.
 Por favor revise y pruebe nuevamente.
@@ -6778,21 +6778,21 @@ Detalle: $1',
 	'api-error-unknownmessage' => 'No se encontró el mensaje',
 	'api-error-fuzzymessage' => 'La traducción está marcada como desactualizada',
 	'api-error-owntranslation' => 'No puedes aceptar tus propias traducciones',
-	'translate-messagereview-no-fuzzy' => 'No se pueden aceptar las traducciones difusas.',
+	'translate-messagereview-no-fuzzy' => 'No se pueden aceptar las traducciones desactualizadas',
 	'translate-messagereview-no-own' => 'No puedes aceptar tus propias traducciones.',
 	'translate-messagereview-doit' => 'Aceptar esta traducción como una traducción correcta.',
-	'group-translate-proofr' => 'Revisores de la traducción',
-	'group-translate-proofr-member' => '{{GENDER:$1|revisor|revisora}} de las traducciones',
+	'group-translate-proofr' => 'Revisores de traducción',
+	'group-translate-proofr-member' => '{{GENDER:$1|revisor|revisora}} de traducciones',
 	'grouppage-translate-proofr' => '{{ns:project}}:Revisores de traducción',
 	'log-name-translationreview' => 'Registro de revisión de las traducciones',
 	'log-description-translationreview' => 'Registro de todas las revisiones de las traducciones y de los grupos de mensajes.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|aceptó}} la traducción "$3"',
 	'logentry-groupreview-message' => '$1 {{GENDER:$2|modificó}} el estado de las traducciones en $4 del grupo de mensajes $3, de «$5» a «$6»',
-	'translate-workflow-state-' => '(desactivado)',
+	'translate-workflow-state-' => '(no definido)',
 	'translate-workflowstatus' => 'Estado: $1',
 	'translate-workflow-set-do' => 'Activar',
 	'translate-workflow-set-doing' => 'Activando...',
-	'translate-workflow-set-done' => '¡Activado!',
+	'translate-workflow-set-done' => '¡Hecho!',
 	'translate-workflow-set-error-alreadyset' => 'El estado requerido es idéntico a la situación actual.',
 	'translate-workflow-autocreated-summary' => 'Creación automática de la página por el estado del flujo de trabajo $1',
 	'translate-stats-workflow' => 'Estado',
@@ -8249,16 +8249,16 @@ $messages['frc'] = array(
  */
 $messages['frp'] = array(
 	'translate' => 'Traduire',
-	'translate-desc' => '[[Special:Translate|Pâge spèciâla]] por traduire MediaWiki et en-delé.',
-	'translate-showsub' => 'Fâre vêre l{{PLURAL:$1|a sot-tropa|es $1 sot-tropes}}.',
-	'translate-page-no-such-language' => 'Lo code lengoua spècefiâ est fôx.',
-	'translate-page-no-such-group' => 'La tropa spècefiâ est fôssa.',
-	'translate-page-disabled' => "Les traduccions dens cela lengoua ont étâ dèsactivâs por ceta tropa.
+	'translate-desc' => '[[Special:Translate|Pâge spèciâla]] por traduire MediaWiki et en-delé',
+	'translate-showsub' => 'Fâre vêre {{PLURAL:$1|lo sot-groupo|los $1 sot-groupos}}.',
+	'translate-page-no-such-language' => 'Lo code lengoua spècifiâ est fôx.',
+	'translate-page-no-such-group' => 'Lo groupo spècifiâ est fôx.',
+	'translate-page-disabled' => "Les traduccions dens cela lengoua sont étâyes dèsactivâyes por ceti groupo.
 Rêson :
 
 ''$1''",
-	'translate-page-settings-legend' => 'Paramètres',
-	'translate-page-group' => 'Tropa',
+	'translate-page-settings-legend' => 'Configuracion',
+	'translate-page-group' => 'Groupo',
 	'translate-page-language' => 'Lengoua',
 	'translate-page-limit' => 'Limita',
 	'translate-page-limit-option' => '$1 mèssâjo{{PLURAL:$1||s}} per pâge',
@@ -8269,7 +8269,7 @@ Rêson :
 	'translate-page-showing-none' => 'Gins de mèssâjo a fâre vêre.',
 	'translate-next' => 'Pâge aprés',
 	'translate-prev' => 'Pâge devant',
-	'translate-page-description-legend' => 'Enformacions a propôs de la tropa',
+	'translate-page-description-legend' => 'Enformacions sur lo groupo',
 	'translate-page-description-hasoptional-open' => 'Fâre vêre los mèssâjos u chouèx.',
 	'translate-page-edit' => 'changiér',
 	'translate-ext-url' => '<hr />Seto vouèbe : $1',
@@ -8281,28 +8281,29 @@ Rêson :
 	'translate-edit-translation' => 'Traduccion',
 	'translate-edit-contribute' => 'édiér',
 	'translate-edit-no-information' => "''Ceti mèssâjo est pas documentâ.''
-''Se vos sâde yô ou ben coment il est utilisâ, vos pouede édiér los ôtros traductors en fassent la documentacion de ceti mèssâjo.''",
+''Se vos sâde yô ou ben coment il est empleyê, vos pouede édiér los ôtros traductors en fassent la documentacion de ceti mèssâjo.''",
 	'translate-edit-information' => 'Enformacions sur lo mèssâjo ($1)',
 	'translate-edit-in-other-languages' => 'Mèssâjo dens d’ôtres lengoues',
-	'translate-edit-committed' => 'Traduccion d’ora dens la programeria',
+	'translate-edit-committed' => 'Traduccion d’ora dedens la programeria',
 	'translate-edit-warnings' => 'Avèrtissements sur les traduccions encomplètes',
-	'translate-edit-tmsugs' => 'Consèlys de la mèmouère de traduccion',
+	'translate-edit-tmsugs' => 'Idês de mèmouères de traduccion et de la traduccion ôtomatica',
 	'translate-edit-tmmatch' => '$1 % de corrèspondance',
-	'translate-use-suggestion' => 'Remplaciér la traduccion d’ora per ceti consèly.',
+	'translate-use-suggestion' => 'Remplaciér la traduccion d’ora per cet’idê.',
 	'translate-edit-tab-list' => 'Lista de mèssâjos',
 	'translate-edit-askpermission' => 'Demandar la pèrmission',
 	'translate-magic-pagename' => 'Traduccion ètendua de MediaWiki',
-	'translate-magic-help' => 'Vos pouede traduire los noms paralèlos de les pâges spèciâles, los mots magicos et los noms des èspâços de noms.
+	'translate-magic-help' => 'Vos pouede traduire los aliâs de les pâges spèciâles, los mots magicos et los noms des èspâços de noms.
 
-Los noms paralèlos de les pâges spèciâles et los mots magicos pôvont avêr un mouél de traduccions.
-Les traduccions sont sèparâs per una virgula (,).
+Los aliâs de les pâges spèciâles et los mots magicos pôvont avêr un mouél de traduccions.
+Les traduccions sont sèparâyes per na virgula (,).
 Los èspâços de noms pôvont avêr ren que yona traduccion.
 
-Dens les traduccions des èspâços de noms, <code>$1 talk</code> est spèciâl. <code>$1</code> est remplaciê per lo nom du seto (per ègzemplo <code>{{ns:project_talk}}</code>).
-S’o est pas possiblo d’avêr una èxprèssion valida dens voutra lengoua sen changiér lo nom du seto, vos volyéd veriér vers un dèvelopor.
+Traduire l’èspâço de noms de discussion du projèt <code>$1 talk</code> pôt étre mâlésiê.
+<code>$1</code> est remplaciê per lo nom du seto (per ègzemplo <code>{{ns:project_talk}}</code>).
+S’o est pas possiblo d’obtegnir n’èxprèssion valida dens voutra lengoua sen changiér lo nom du seto, vos volyéd veriér vers l’[[Support|assistance]].
 
-Vos dête étre a la tropa ux traductors por encartar los changements.
-Los changements sont pas encartâs tant que vos éd pas clicâ sur lo boton « Encartar ».',
+Vos dête étre un traductor por encartar los changements.
+Los changements sont pas encartâs tant que vos éd pas clicâ sur lo boton « Encartar » d’avâl.',
 	'translate-magic-module' => 'Modulo :',
 	'translate-magic-submit' => 'Listar',
 	'translate-magic-cm-export' => 'Èxportar',
@@ -8314,15 +8315,15 @@ Los changements sont pas encartâs tant que vos éd pas clicâ sur lo boton « E
 	'translate-magic-cm-save' => 'Encartar',
 	'translate-magic-cm-updatedusing' => 'Betâ a jorn avouéc [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
 	'translate-magic-cm-savefailed' => 'L’encartâjo at pas reussi.',
-	'translate-magic-special' => 'Noms paralèlos de les pâges spèciâles',
+	'translate-magic-special' => 'Aliâs de les pâges spèciâles',
 	'translate-magic-words' => 'Mots magicos',
 	'translate-magic-namespace' => 'Noms des èspâços de noms',
-	'translate-magic-notsaved' => 'Voutron changement at pas étâ encartâ !',
-	'translate-magic-errors' => 'Volyéd corregiér {{PLURAL:$1|ceta èrror|cetes èrrors}} dens les traduccions :',
-	'translate-magic-saved' => 'Voutron changement at étâ encartâ avouéc reusséta.',
-	'translate-checks-parameters' => '{{PLURAL:$2|Ceti paramètre est pas utilisâ|Cetos paramètres sont pas utilisâs}} :
+	'translate-magic-notsaved' => 'Voutron changement est pas étâ encartâ !',
+	'translate-magic-errors' => 'Volyéd corregiér {{PLURAL:$1|ceta fôta|cetes fôtes}} dedens les traduccions :',
+	'translate-magic-saved' => 'Voutron changement est étâ encartâ avouéc reusséta.',
+	'translate-checks-parameters' => '{{PLURAL:$2|Ceti paramètro est pas empleyê|Cetos paramètros sont pas empleyês}} :
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Ceti paramètre est encognu|Cetos paramètres sont encognus}} :
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Ceti paramètro est encognu|Cetos paramètros sont encognus}} :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Y at un nombro mâl-par de parentès{{PLURAL:$2|a|es}} :
 <strong><nowiki>$1</nowiki></strong>',
@@ -8332,22 +8333,22 @@ Los changements sont pas encartâs tant que vos éd pas clicâ sur lo boton « E
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Volyéd corregiér {{PLURAL:$2|ceta balisa|cetes balises}} :
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-plural' => 'La dèfinicion utilise <nowiki>{{PLURAL:}}</nowiki> mas pas sa traduccion.',
+	'translate-checks-plural' => 'La dèfinicion empleye <nowiki>{{PLURAL:}}</nowiki> mas pas la sina traduccion.',
 	'translate-checks-pagename' => 'Èspâço de noms changiê dês la dèfinicion',
-	'translate-checks-format' => 'Ceta traduccion siut pas la dèfinicion ou ben el at una sintaxa fôssa : $1',
+	'translate-checks-format' => 'Ceta traduccion siut pas la dèfinicion ou ben el at na sintaxa fôssa : $1',
 	'translate-checks-escape' => 'Cetos èchapaments pôvont étre emprèvus : <strong>$1</strong>',
-	'translate-checks-fudforum-syntax' => 'Utilisâd <nowiki>$1</nowiki> nan pas <nowiki>$2</nowiki> dens ceti projèt.',
+	'translate-checks-fudforum-syntax' => 'Empleyéd <nowiki>$1</nowiki> nan pas <nowiki>$2</nowiki> dens ceti projèt.',
 	'translate-pref-nonewsletter' => 'Pas mè mandar les lètres de novèles per mèssageria èlèctronica',
 	'translate-pref-editassistlang' => 'Lengoues d’assistance :',
 	'prefs-translate' => 'Chouèx de traduccion',
-	'translate-pref-editassistlang-help' => 'Lista de codes lengoues sèparâs per des virgules.
-La traduccion d’un mèssâjo dens cetes lengoues est montrâ quand vos éte aprés lo traduire.
+	'translate-pref-editassistlang-help' => 'Lista de codes lengoues sèparâs per na virgula.
+La traduccion d’un mèssâjo dens cetes lengoues est montrâye quand vos éte aprés lo traduire.
 La lista de les lengoues per dèfôt dèpend de voutra lengoua.',
-	'translate-pref-editassistlang-bad' => 'Code lengoua envalido dens la lista :
+	'translate-pref-editassistlang-bad' => 'Code lengoua envalido dedens la lista :
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Èditor de traduccion mèlyorâ (at fôta de JavaScript)',
+	'translate-pref-jsedit' => 'Changior de traduccion bônâ (at fôta de JavaScript)',
 	'right-translate' => 'Changiér avouéc l’entèrface de traduccion',
-	'right-translate-manage' => 'Administrar les tropes de mèssâjos',
+	'right-translate-manage' => 'Administrar los groupos de mèssâjos',
 	'right-translate-import' => 'Importar les traduccions en defôr de legne',
 	'right-translate-messagereview' => 'Revêre les traduccions',
 	'translate-rc-translation-filter' => 'Filtrar les traduccions :',
@@ -8364,7 +8365,7 @@ Totes les valors ont des limites d’amont et desot.',
 	'translate-statsf-options' => 'Chouèx du diagramo',
 	'translate-statsf-width' => 'Largior en pixèls :',
 	'translate-statsf-height' => 'Hôtior en pixèls :',
-	'translate-statsf-days' => 'Dâta de comencement :',
+	'translate-statsf-days' => 'Temps en jorns :',
 	'translate-statsf-start' => 'Dâta de comencement :',
 	'translate-statsf-scale' => 'Granularitât :',
 	'translate-statsf-scale-months' => 'Mês',
@@ -8449,7 +8450,7 @@ Volyéd remandar lo formulèro por continuar lo trètament.',
 	'translate-manage-import-summary' => 'Importacion d’una novèla vèrsion dês una sôrsa de defôr.',
 	'translate-manage-conflict-summary' => 'Importacion d’una novèla vèrsion dês una sôrsa de defôr.
 Controlâd s’il vos plét.',
-	'translate-manage-fuzzy-summary' => 'La dèfinicion at changiê',
+	'translate-manage-fuzzy-summary' => 'La dèfinicion du mèssâjo at changiêye',
 	'importtranslations' => 'Importar les traduccions',
 	'translate-import-from-url' => 'URL de vers lo fichiér :',
 	'translate-import-from-wiki' => 'Fichiér sur cél vouiqui :',
@@ -8493,7 +8494,7 @@ Dètalys : $1',
 	'translate-messagereview-failure' => 'Accèptacion... pas reussia : $1',
 	'translate-messagereview-done' => 'Accèptâ',
 	'translate-messagereview-reviews' => 'Accèptâ per {{PLURAL:$1|yon usanciér|$1 usanciérs}}',
-	'translate-messagereview-reviewswithyou' => 'Accèptâ per {{PLURAL:$1|yon usanciér|$1 usanciérs}}, vos avouéc',
+	'translate-messagereview-reviewswithyou' => 'Accèptâ per {{PLURAL:$1|vos|$1 utilisators, vos avouéc}}',
 	'api-error-invalidrevision' => 'la traduccion at pas étâ trovâ',
 	'api-error-unknownmessage' => 'lo mèssâjo at pas étâ trovâ',
 	'api-error-fuzzymessage' => 'la traduccion est marcâ coment « fuzzy »',
@@ -12125,8 +12126,8 @@ Si consiglia di revisionare i messaggi attraverso [[Special:Translate|{{int:tran
 	'translate-mgs-totals' => 'Tutte le lingue insieme',
 	'translate-mgs-invalid-group' => 'Il gruppo indicato $1 non esiste.',
 	'translate-mgs-nothing' => 'Nulla da mostrare per le statistiche richieste.',
-	'supportedlanguages' => 'Lingue supportate',
-	'supportedlanguages-summary' => 'Questa pagina mostra un elenco di tutte le lingue supportate da {{SITENAME}}, insieme ai nomi dei traduttori che hanno lavorato su quella lingua. Il nome di un traduttore appare di dimensioni maggiori in proporzione al numero di modifiche che ha apportato, mentre il colore della sottolineatura indica quanto tempo è passato dalla sua ultima attività.',
+	'supportedlanguages' => 'Lingue mantenute',
+	'supportedlanguages-summary' => 'Questa pagina mostra un elenco di tutte le lingue mantenute da {{SITENAME}}, insieme ai nomi dei traduttori che hanno lavorato su quella lingua. Il nome di un traduttore appare di dimensioni maggiori in proporzione al numero di modifiche che ha apportato, mentre il colore della sottolineatura indica quanto tempo è passato dalla sua ultima attività.',
 	'supportedlanguages-colorlegend' => 'Legenda dei colori: ultima traduzione $1 giorni fa.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Traduttore|Traduttori}}: $1',
 	'supportedlanguages-recenttranslations' => 'traduzioni recenti',
@@ -13581,7 +13582,7 @@ $1',
 	'translate-magic-words' => '매직 워드',
 	'translate-magic-namespace' => '이름공간 이름',
 	'translate-magic-notsaved' => '당신의 편집이 저장되지 않았습니다!',
-	'translate-magic-errors' => '번역문에서 다음 오류{{PLURAL:$1|를|들을}} 수정하세요:',
+	'translate-magic-errors' => '번역문에서 다음 {{PLURAL:$1|오류}}를 수정하세요:',
 	'translate-magic-saved' => '당신의 편집 내용을 성공적으로 저장했습니다.',
 	'translate-checks-parameters' => '다음 {{PLURAL:$2|변수가}} 사용되지 않았습니다:
 <strong><nowiki>$1</nowiki></strong>',
