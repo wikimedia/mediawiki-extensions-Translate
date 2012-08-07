@@ -259,6 +259,6 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	}
 
 	protected function getWorkflowStates( $field = 'tgr_lang', $filter = 'tgr_group' ) {
-		return parent::getGetWorkflowStates( $field, $filter );
+		return parent::getWorkflowStates( $field, $filter );
 	}
 }

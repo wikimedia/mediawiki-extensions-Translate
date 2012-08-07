@@ -250,7 +250,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		global $wgTranslateWorkflowStates;
 
 		if ( $wgTranslateWorkflowStates ) {
-			$this->states = self::getWorkflowStates();
+			$this->states = $this->getWorkflowStates();
 
 			// An array where keys are state names and values are numbers
 			$this->table->addExtraColumn( $this->msg( 'translate-stats-workflow' ) );
@@ -269,7 +269,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * @param String $state  The workflow state id
 	 * @return string Html
 	 */
-	function getWorkflowStateCell( $target, $state ) {
+	protected function getWorkflowStateCell( $target, $state ) {
 		// This will be set by addWorkflowStatesColumn if needed
 		if ( !isset( $this->states ) ) {
 			return '';
