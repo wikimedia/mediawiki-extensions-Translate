@@ -609,6 +609,80 @@ class TranslatablePage {
 		return $filtered;
 	}
 
+	/**
+	 * Returns a list section ids.
+	 * @return List of string
+	 * @since 2012-08-06
+	 */
+	protected function getSections() {
+		$dbw = wfGetDB( DB_MASTER );
+		$conds = array( 'trs_page' => $this->getTitle()->getArticleID() );
+		$res = $dbw->select( 'translate_sections', 'trs_key', $conds, __METHOD__ );
+
+		$sections = array();
+		foreach ( $res as $row ) {
+			$sections[] = $row->trs_key;
+		}
+
+		return $sections;
+	}
+
+	/**
+	 * Returns a list of translation unit pages.
+	 * @param $set  String Can be either 'all', or 'active'
+	 * @param $code String Only list unit pages in given language.
+	 * @return List of Titles.
+	 * @since 2012-08-06
+	 */
+	public function getTranslationUnitPages( $set = 'active', $code = false ) {
+		$dbw = wfGetDB( DB_MASTER );
+		$base = $this->getTitle()->getPrefixedDBKey();
+		// Including the / used as separator
+		$baseLength = strlen( $base ) +1;
+
+		if ( $code !== false ) {
+			$like = $dbw->buildLike( "$base/", $dbw->anyString(), "/$code" );
+		} else {
+			$like = $dbw->buildLike( "$base/", $dbw->anyString() );
+		}
+
+		$fields = array( 'page_namespace', 'page_title' );
+		$conds = array(
+			'page_namespace' => NS_TRANSLATIONS,
+			'page_title ' . $like
+		);
+		$res = $dbw->select( 'page', $fields, $conds, __METHOD__ );
+
+		// Only include pages which belong to this translatable page.
+		// Problematic cases are when pages Foo and Foo/bar are both
+		// translatable. Then when querying for Foo, we also get units
+		// belonging to Foo/bar.
+		$sections = array_flip( $this->getSections() );
+		$units = array();
+		foreach ( $res as $row ) {
+			$title = Title::newFromRow( $row );
+
+			// Strip the language code and the name of the
+			// translatable to get plain section key
+			$handle = new MessageHandle( $title );
+			$key = substr( $handle->getKey(), $baseLength );
+			if ( strpos( $key, '/' ) !== false ) {
+				// Probably belongs to translatable subpage
+				continue;
+			}
+
+			// Check against list of sections if requested
+			if ( $set === 'active' && !isset( $sections[$key] ) ) {
+				continue;
+			}
+
+			// We have a match :)
+			$units[] = $title;
+		}
+		return $units;
+	}
+
+
 	public function getTranslationPercentages( $force = false ) {
 		global $wgRequest;
 
