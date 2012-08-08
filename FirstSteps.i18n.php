@@ -2904,7 +2904,7 @@ Väčšina projektov obsahuje stručný popis a odkaz ''Translate this project''
 Je tiež k dispozícii zoznam všetkých skupín správ spolu s [[Special:LanguageStats|aktuálnym stavom prekladu do daného jazyka]].
 
 Ak máte potrebu porozumieť veciam dôkladnejšie, ešte než začnete prekladať, môžete si prečítať [[FAQ|často kladené otázky]].
-Dokumentácia môže byť bohužiaľ niekedy zastaralá.
+Dokumentácia môže byť bohužiaľ niekedy zastaraná.
 Ak nájdete niečo, čo si myslíte, že by ste {{gender:|mal byť schopný|mala byť schopná|mali byť schopní}} robiť, ale nejde to, neváhajte sa opýtať na [[Support|stránke podpory]].
 
 Môžete tiež kontaktovať spoluprekladateľa do rovnakého jazyka pomocou [[Portal_talk:$1|diskusnej stránky]] [[Portal:$1|vášho jazykového portálu]].

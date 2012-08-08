@@ -821,6 +821,7 @@ Por favor mira [[mw:Extension:PDF_Writer]] y http://code.pediapress.com/wiki/wik
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es un proyecto para proveer una versión offline, sólo texto de Wikipedia para dispositivos móviles.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] es una aplicación para dispositivos móviles y tabletas-PC para leer y colaborar en Wikipedia',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] es una aplicación para dispositivos móviles y tabletas-PC para leer y colaborar en Wikipedia',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] es una aplicación móvil para contribuir al [[:meta:Wiki Loves Monuments|proyecto Wiki Loves Monuments]]',
 );
 
 /** Estonian (eesti)
@@ -1038,6 +1039,7 @@ Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pe
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] é un proxecto para ollar unha versión da Wikipedia sen conexión e en modo de só lectura nun dispositivo móbil.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar na Wikipedia',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar no Galizionario',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] é unha aplicación para dispositivos móbiles que serve para contribuír no [[:meta:Wiki Loves Monuments|proxecto Wiki Loves Monuments]]',
 );
 
 /** Swiss German (Alemannisch)

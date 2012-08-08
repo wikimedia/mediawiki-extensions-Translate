@@ -7600,6 +7600,7 @@ $messages['si'] = array(
  * @author Kusavica
  * @author Mormegil
  * @author Rudko
+ * @author Teslaton
  */
 $messages['sk'] = array(
 	'pagetranslation' => 'Preklad stránky',
@@ -7639,7 +7640,7 @@ Predtým než túto verziu označíte na preklad skontrolujte, že zmeny sekcií
 	'translate-tag-markthisagain' => 'Táto stránka obsahuje <span class="plainlinks">[$1 {{PLURAL:$1|zmenu|zmeny|zmien}}]</span> odkedy bola naposledy <span class="plainlinks">[$2 označená na preklad]</span>.',
 	'translate-tag-hasnew' => 'Táto stránka obsahuje <span class="plainlinks">[$1 zmeny]</span>, ktoré nie sú označené na preklad.',
 	'tpt-translation-intro' => 'Táto stránka je <span class="plainlinks">[$1 preloženou verziou]</span> stránky [[$2]] a preklad je hotový a aktuálny na $3 %.',
-	'tpt-translation-intro-fuzzy' => 'Zastaralé preklady sú označené takto.',
+	'tpt-translation-intro-fuzzy' => 'Zastarané preklady sú označené takto.',
 	'tpt-languages-legend' => 'Iné jazyky:',
 	'tpt-target-page' => 'Túto stránku nemožno aktualizovať ručne.
 Táto stránka je prekladom stránky [[$1]] a preklad možno aktualizovať pomocou [$2 nástroja na preklad].',
