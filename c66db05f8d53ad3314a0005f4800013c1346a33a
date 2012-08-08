@@ -16,6 +16,24 @@
       "revId": "c66db05f8d53ad3314a0005f4800013c1346a33a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX///Rs\u003d",
+        "filename": "utils/Font.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 95
+      },
+      "writtenOn": "2012-08-08T20:56:41Z",
+      "side": 1,
+      "message": "Does it? If you\u0027re going to return in the is_string case (for historical reasons) you\u0027re going to have to invent something for family i.e. you\u0027re probably going to screw up some findFamily calls where find() had previously been invoked and the result cached. Surely it\u0027s just better to ignore the cached result and run fc-match again to avoid this issue? Or am I missing something?",
+      "parentUuid": "AAAARH//+ZQ\u003d",
+      "revId": "c66db05f8d53ad3314a0005f4800013c1346a33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
