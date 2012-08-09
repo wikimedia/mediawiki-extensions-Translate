@@ -476,6 +476,13 @@ array(
 	)
 ),
 array(
+	'group' => 'ext-timemediahandler',
+	'check' => 'links',
+	'message' => array(
+		'timedmedia-subtitle-new-desc', // Contains links that are translated
+	)
+),
+array(
 	'group' => 'ext-titleblacklist',
 	'check' => 'variable',
 	'code' => array(
