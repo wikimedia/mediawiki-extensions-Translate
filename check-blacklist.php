@@ -476,7 +476,7 @@ array(
 	)
 ),
 array(
-	'group' => 'ext-timemediahandler',
+	'group' => 'ext-timedmediahandler',
 	'check' => 'links',
 	'message' => array(
 		'timedmedia-subtitle-new-desc', // Contains links that are translated
