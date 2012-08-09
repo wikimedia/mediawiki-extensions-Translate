@@ -1198,23 +1198,23 @@ Si vous ne souhaitez pas recevoir ce courrier d’informations, vous pouvez le d
  */
 $messages['frp'] = array(
 	'firststeps' => 'Premiérs pâs',
-	'firststeps-desc' => '[[Special:FirstSteps|Pâge spèciâla]] por guidar los usanciérs sur un vouiqui qu’utilise l’èxtension « Translate ».',
+	'firststeps-desc' => '[[Special:FirstSteps|Pâge spèciâla]] por guidar los utilisators sur un vouiqui qu’empleye l’èxtension « Translate »',
 	'translate-fs-pagetitle-done' => ' - fêt !',
 	'translate-fs-pagetitle' => 'Guido d’emmodâ - $1',
 	'translate-fs-signup-title' => 'Enscrîde-vos',
 	'translate-fs-settings-title' => 'Configurâd voutres prèferences',
-	'translate-fs-userpage-title' => 'Féte voutra pâge usanciér',
+	'translate-fs-userpage-title' => 'Féte voutra pâge utilisator',
 	'translate-fs-permissions-title' => 'Demandâd les pèrmissions de traductor',
-	'translate-fs-target-title' => 'Comenciéd a traduire !',
-	'translate-fs-email-title' => 'Confirmâd voutra adrèce èlèctronica',
-	'translate-fs-selectlanguage' => 'Chouèsésséd una lengoua',
+	'translate-fs-target-title' => 'Betâd-vos a traduire !',
+	'translate-fs-email-title' => 'Confirmâd voutron adrèce èlèctronica',
+	'translate-fs-selectlanguage' => 'Chouèsésséd na lengoua',
 	'translate-fs-settings-planguage' => 'Lengoua principâla :',
 	'translate-fs-settings-slanguage' => 'Lengoua d’assistance $1 :',
 	'translate-fs-settings-submit' => 'Encartar les prèferences',
-	'translate-fs-userpage-submit' => 'Fâre ma pâge usanciér',
-	'translate-fs-userpage-done' => 'Bien fêt ! Ora, vos avéd una pâge usanciér.',
+	'translate-fs-userpage-submit' => 'Fâre ma pâge utilisator',
+	'translate-fs-userpage-done' => 'Bien fêt ! Ora vos avéd na pâge utilisator.',
 	'translate-fs-permissions-planguage' => 'Lengoua principâla :',
-	'translate-fs-permissions-submit' => 'Mandar la requéta',
+	'translate-fs-permissions-submit' => 'Mandar la demanda',
 );
 
 /** Friulian (furlan)
@@ -1903,6 +1903,32 @@ Yu wi gaid chruu di pruoses fi ton chranslieta tep bi tep.
 Wen yu don yu wi iebl fi chransliet '''intafies mechiz''' a aal prajek wa supuot a {{SITENAME}}.",
 	'translate-fs-userpage-submit' => 'Kriet mi yuuza piej',
 	'translate-fs-userpage-done' => 'Yaa gwaan! Yu nou ab a yuuza piej.',
+);
+
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'firststeps' => 'პირველი ნაბიჯები',
+	'translate-fs-pagetitle-done' => ' - გაკეთდა!',
+	'translate-fs-signup-title' => 'დარეგისტრირდით',
+	'translate-fs-userpage-title' => 'შექმენით თქვენი მომხმარებლის გვერდი',
+	'translate-fs-target-title' => 'დაიწყეთ თარგმნა!',
+	'translate-fs-email-title' => 'დაადასტურეთ თქვენი ელ. ფოსტის მისამართი',
+	'translate-fs-selectlanguage' => 'აირჩიეთ ენა',
+	'translate-fs-settings-planguage' => 'ძირითადი ენა:',
+	'translate-fs-settings-slanguage' => 'დამხმარე ენა $1:',
+	'translate-fs-settings-submit' => 'კონფიგურაციის შენახვა',
+	'translate-fs-userpage-level-N' => 'ჩემი მშობლიური ენაა',
+	'translate-fs-userpage-level-5' => 'მე ვარ პროფესიონალი მთარგმნელი',
+	'translate-fs-userpage-level-4' => 'მე თავისუფლად ვფლობ',
+	'translate-fs-userpage-level-3' => 'მე კარგად ვიცი',
+	'translate-fs-userpage-level-2' => 'მე საშუალოდ ვფლობ',
+	'translate-fs-userpage-level-1' => 'საწყისი ცოდნა',
+	'translate-fs-userpage-submit' => 'ჩემი მომხმარებლის გვერდის შექმნა',
+	'translate-fs-userpage-done' => 'ყოჩაღ! ახლა თქვენ უკვე გაქვთ მომხმარებლის გვერდი.',
+	'translate-fs-permissions-planguage' => 'ძირითადი ენა:',
+	'translate-fs-permissions-submit' => 'მოთხოვნის გაგზავნა',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -2625,11 +2651,13 @@ $messages['ps'] = array(
 /** Portuguese (português)
  * @author Giro720
  * @author Hamilton Abreu
+ * @author SandroHc
  */
 $messages['pt'] = array(
 	'firststeps' => 'Primeiros passos',
 	'firststeps-desc' => '[[Special:FirstSteps|Página especial]] para familiarizar os utilizadores com o uso da extensão Translate numa wiki',
 	'translate-fs-pagetitle-done' => ' - terminado!',
+	'translate-fs-pagetitle-pending' => ' - pendente',
 	'translate-fs-pagetitle' => 'Assistente de iniciação - $1',
 	'translate-fs-signup-title' => 'Registe-se',
 	'translate-fs-settings-title' => 'Configure as suas preferências',
@@ -2640,8 +2668,23 @@ $messages['pt'] = array(
 	'translate-fs-intro' => "Bem-vindo ao assistente de iniciação da {{SITENAME}}.
 Será conduzido passo a passo através do processo necessário para se tornar um tradutor.
 No fim, será capaz de traduzir as ''mensagens da interface'' de todos os projectos suportados na {{SITENAME}}.",
+	'translate-fs-selectlanguage' => 'Escolha uma língua',
+	'translate-fs-settings-planguage' => 'Idioma principal:',
+	'translate-fs-settings-slanguage' => 'Idioma de ajuda $1:',
+	'translate-fs-settings-submit' => 'Salvar preferências',
+	'translate-fs-userpage-level-N' => 'Sou um falante nativo de',
+	'translate-fs-userpage-level-5' => 'Sou um tradutor profissional de',
+	'translate-fs-userpage-level-4' => 'Conheço como se fosse um falante nativo',
+	'translate-fs-userpage-level-3' => 'Tenho um bom domínio de',
+	'translate-fs-userpage-level-2' => 'Tenho conhecimentos moderados de',
+	'translate-fs-userpage-level-1' => 'Sei um pouco de',
+	'translate-fs-userpage-help' => 'Por favor, Indique-nos as suas habilidades em idiomas e nos fale algo sobre você. Caso tenha conhecimentos em mais de cinco idiomas, será possível especificá-los noutra altura.',
 	'translate-fs-userpage-submit' => 'Criar a minha página de utilizador',
 	'translate-fs-userpage-done' => 'Bom trabalho! Agora tem uma página de utilizador.',
+	'translate-fs-permissions-planguage' => 'Idioma principal:',
+	'translate-fs-permissions-pending' => 'O seu pedido foi enviado para [[$1]]. Alguém da equipa do site o verificará assim que possível.
+Você receberá uma notificação por e-mail quando isso acontecer se confirmar/validar o seu endereço de e-mail.',
+	'translate-fs-permissions-submit' => 'Enviar pedido',
 	'translate-fs-target-text' => 'Parabéns!
 Agora pode começar a traduzir.
 
@@ -2882,6 +2925,7 @@ $messages['rue'] = array(
 );
 
 /** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
  * @author බිඟුවා
  */
 $messages['si'] = array(
@@ -2889,6 +2933,10 @@ $messages['si'] = array(
 	'translate-fs-pagetitle-done' => ' - හරි!',
 	'translate-fs-signup-title' => 'ප්‍රවිෂ්ඨ වන්න',
 	'translate-fs-target-title' => 'පරිවර්තනය කිරීම අරඹන්න!',
+	'translate-fs-settings-planguage' => 'ප්‍රාථමික භාෂාව:',
+	'translate-fs-settings-submit' => 'අභිරුචීන් සුරකින්න',
+	'translate-fs-permissions-planguage' => 'ප්‍රාථමික භාෂාව:',
+	'translate-fs-permissions-submit' => 'ඉල්ලීම යවන්න',
 );
 
 /** Slovak (slovenčina)
@@ -3179,13 +3227,33 @@ $messages['tr'] = array(
  */
 $messages['ug-arab'] = array(
 	'firststeps' => 'تۇنجى قەدەم',
+	'firststeps-desc' => 'ئىشلەتكۈچىنىڭ ۋىكى تەرجىمىسىنى باشلايدىغان [[Special:FirstSteps|يېتەكلەش بېتى]]',
 	'translate-fs-pagetitle-done' => ' - تامام!',
+	'translate-fs-pagetitle-pending' => '- بەلگىلەنمىگەن',
 	'translate-fs-pagetitle' => 'باشلاش يېتەكچىسىگە ئېرىش - $1',
+	'translate-fs-signup-title' => 'خەتلىتىش',
 	'translate-fs-settings-title' => 'مايىللىقىڭىزنى سەپلەڭ',
 	'translate-fs-userpage-title' => 'ئىشلەتكۈچى بېتىڭىزنى قۇرۇڭ',
 	'translate-fs-permissions-title' => 'تەرجىمە قىلىش ھوقۇق ئىلتىماسى',
 	'translate-fs-target-title' => 'تەرجىمە قىلىشنى باشلا!',
 	'translate-fs-email-title' => 'ئېلخەت مەنزىلىڭىزنى جەزملەڭ',
+	'translate-fs-intro' => "{{SITENAME}} باشلانغۇچ يېتەكچىسىگە مەرھابا.
+سىزنى قانداق قىلىپ تەرجىمان بولۇشقا يېتەكلەيدۇ.
+ئاخىرىدا {{SITENAME}}دىكى ھەممە قۇرۇلۇشلارنىڭ ''ئارايۈز ئۇچۇرى''نى تەرجىمە قىلالايسىز.",
+	'translate-fs-selectlanguage' => 'تىلدىن بىرنى تاللاڭ',
+	'translate-fs-settings-planguage' => 'ئاساسىي تىل:',
+	'translate-fs-settings-planguage-desc' => 'ئاساسىي تىل بۇ ۋىكى قۇرۇلۇشىدىكى ئىشلەتكۈچى ئارايۈزى قىلىدۇ،
+تەرجىمە قىلىدىغان تىلنىڭ كۆڭۈلدىكى نىشان تىلى بولىدۇ.',
+	'translate-fs-settings-slanguage' => '$1 ياردەمچى تىل:',
+	'translate-fs-settings-slanguage-desc' => 'تەرجىمە تەھرىرلىگۈچتە باشقا تىلدىكى تەرجىمە ئۇچۇرىنى كۆرسىتەلەيدۇ.
+بۇ جايدا كۆرسەتمەكچى بولغان تىلنى تاللىيالايسىز.',
+	'translate-fs-settings-submit' => 'مايىللىق ساقلا',
+	'translate-fs-userpage-level-N' => 'ئانا تىلىم',
+	'translate-fs-userpage-level-5' => 'مەن كەسپىي تەرجىمە قىلالايدىغان تىل',
+	'translate-fs-userpage-level-4' => 'ئانا تىلىمدەك راۋان',
+	'translate-fs-userpage-level-3' => 'مەن ئادەتتىكىدەك پىششىق',
+	'translate-fs-userpage-level-2' => 'مەن ئوتتۇرىھال پىششىق',
+	'translate-fs-userpage-level-1' => 'ئازراق بىلىمەن',
 );
 
 /** Ukrainian (українська)
@@ -3424,6 +3492,7 @@ $messages['zh-hans'] = array(
 /** Traditional Chinese (‪中文（繁體）‬)
  * @author Lauhenry
  * @author Mark85296341
+ * @author Simon Shek
  */
 $messages['zh-hant'] = array(
 	'firststeps' => '第一步',
@@ -3439,8 +3508,16 @@ $messages['zh-hant'] = array(
 	'translate-fs-intro' => "歡迎來到 {{SITENAME}} 入門指導。
 你會被指導如何成為一名翻譯者。
 最後你將可以翻譯 {{SITENAME}} 裡所有計畫的''介面訊息''.",
+	'translate-fs-selectlanguage' => '選擇一種語言',
+	'translate-fs-settings-planguage' => '主要語言：',
+	'translate-fs-settings-slanguage' => '輔助語言$1：',
+	'translate-fs-settings-submit' => '儲存設定',
+	'translate-fs-userpage-level-N' => '我的母語是',
+	'translate-fs-userpage-level-1' => '我知道一點點',
 	'translate-fs-userpage-submit' => '建立我的使用者頁面',
 	'translate-fs-userpage-done' => '很好！現在你擁有了一個使用者頁面。',
+	'translate-fs-permissions-planguage' => '主要語言：',
+	'translate-fs-permissions-submit' => '發送請求',
 	'translate-fs-target-text' => '恭喜 ！
 您現在可以開始翻譯。
 

@@ -1968,6 +1968,7 @@ $messages['nl'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] levert een offlineversie van Wikipedia met alleen tekst op een mobiel apparaat',
 	'translate-group-desc-wikipediamobile' => "[[Translating:WikipediaMobile|WikipediaMobile]] is een platformonafhankelijke toepassing voor mobiele telefoons en tablet-pc's voor het lezen van en bijdragen aan Wikipedia",
 	'translate-group-desc-wiktionarymobile' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] is een platformonafhankelijke toepassing voor mobiele telefoons en tablet-pc's voor het lezen van en bijdragen aan Wikiwoordenboek",
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] is een mobiele toepassing voor het bijdragen aan het[[:meta:Wiki Loves Monuments|Wiki Loves Monuments-project]]',
 );
 
 /** Norwegian Nynorsk (‪norsk (nynorsk)‬)
@@ -2965,6 +2966,7 @@ $messages['zh-hans'] = array(
 /** Traditional Chinese (‪中文（繁體）‬)
  * @author Liangent
  * @author Mark85296341
+ * @author Simon Shek
  */
 $messages['zh-hant'] = array(
 	'translategroupdescriptions-desc' => '消息組說明 [http://mediawiki.org/wiki/Extension:Translate 翻譯] 擴展所支持的產品',
@@ -2978,9 +2980,12 @@ $messages['zh-hant'] = array(
 
 更多信息請見[[mw:Extension:PDF_Writer]]和http://code.pediapress.com/wiki/wiki/mwlibrl。",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] 是一個使用 PHP 編寫的 Web 郵件客戶端。請在 [[Support]] 內報告問題。',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]]是一個離線閱讀維基百科的軟件',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]]是一個開放媒體平台',
 	'bw-desc-openlayers' => 'OpenLayers 是一個開源的動態地圖生成器。請在 [[support]] 頁面內報告問題。',
 	'bw-desc-openstreetmap' => '本群組包含所有 [[Translating:OpenStreetMap|OpenStreetMap]] 的介面訊息',
 	'bw-desc-osm-site' => '本群組包含了 [[Translating:Open Street Map|Open Street Map]] 的介面訊息。',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]]是基於Flash的OpenStreetMap編輯軟件',
 	'bw-desc-shapado' => '本組包含免費開源問答軟件[[Translating:Shapado|Shapado]]的信息',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] 是一個開源微網誌服務',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] 可以快速找到 Wikimedia 的維基某一個頁面的作者。',
