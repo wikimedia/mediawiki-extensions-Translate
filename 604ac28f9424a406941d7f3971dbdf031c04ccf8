@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//9fc\u003d",
+        "filename": "api/ApiTranslateInfo.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-08-10T23:13:45Z",
+      "side": 1,
+      "message": "seem to have mixed prefix whitespace here...",
+      "revId": "604ac28f9424a406941d7f3971dbdf031c04ccf8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//9fQ\u003d",
+        "filename": "api/ApiTranslateInfo.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2012-08-10T23:13:45Z",
+      "side": 1,
+      "message": "Trailing whitespace",
+      "revId": "604ac28f9424a406941d7f3971dbdf031c04ccf8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
