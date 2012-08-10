@@ -3,7 +3,8 @@
  * Contains class with wrapper around font-config.
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @author Harry Burt
+ * @copyright Copyright © 2008-2012, Niklas Laxström
  * @license Public Domain
  * @file
  */
@@ -19,10 +20,38 @@ class FCFontFinder {
 	/**
 	 * Searches for suitable font in the system.
 	 * @param $code \string Language code.
-	 *
-	 * @return bool|string
+	 * @return bool|string Full path to the font file, false on failure
+	 */
+	public static function findFile( $code ) {
+		$data = self::callFontConfig( $code );
+		if ( is_array( $data ) ) {
+			return $data['file'];
+		}
+		return false;
+	}
+
+	/**
+	 * @deprecated Call findFile
 	 */
 	public static function find( $code ) {
+		return self::findFile( $code );
+	}
+
+	/**
+	 * Searches for suitable font family in the system.
+	 * @param $code \string Language code.
+	 * @return bool|string Name of font family, false on failure
+	 */
+	public static function findFamily( $code ) {
+		$data = self::callFontConfig( $code );
+		if ( is_array( $data ) ) {
+			return $data['family'];
+		}
+		return false;
+	}
+
+
+	protected static function callFontConfig( $code ) {
 		if ( ini_get( 'open_basedir' ) ) {
 			wfDebugLog( 'fcfont', 'Disabled because of open_basedir is active' );
 			// Most likely we can't access any fonts we might find
@@ -34,8 +63,10 @@ class FCFontFinder {
 		$timeout = 60 * 60 * 12;
 
 		$cached = $cache->get( $cachekey  );
-		if ( is_string( $cached ) ) {
-			return $cached === 'NEGATIVE' ? false : $cached;
+		if ( is_array( $cached ) ) {
+			return $cached;
+		} elseif ( $cached === 'NEGATIVE' ) {
+			return false;
 		}
 
 		$code = wfEscapeShellArg( ":lang=$code" );
@@ -89,8 +120,15 @@ class FCFontFinder {
 		$chosen = substr( $files[0], 0, -1 );
 
 		wfDebugLog( 'fcfont', "fc-list got $count candidates; using $chosen" );
-		$cache->set( $cachekey, $chosen, $timeout );
-		return $chosen;
+
+		$data = array(
+			'family' => $family,
+			'type' => $type,
+			'file' => $chosen,
+		);
+
+		$cache->set( $cachekey, $data, $timeout );
+		return $data;
 	}
 
 	/**
