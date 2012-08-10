@@ -187,6 +187,7 @@
 				} );
 				$tr.find( 'td' ).last()
 					.html( convertWhiteSpaceToHTML( text ) )
+					.attr( 'dir', 'auto' ) // (bug 29233) hacky, but better than nothing
 					.removeClass( 'untranslated' )
 					.addClass( 'justtranslated' );
 			};
@@ -308,6 +309,7 @@
 				// Update the cell value with the new translation
 				$this.find( 'td' ).last()
 					.html( convertWhiteSpaceToHTML( text ) )
+					.attr( 'dir', 'auto' ) // (bug 29233) hacky, but better than nothing
 					.removeClass( 'untranslated' )
 					.addClass( 'justtranslated' );
 			};
