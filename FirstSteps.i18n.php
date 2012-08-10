@@ -1200,6 +1200,7 @@ $messages['frp'] = array(
 	'firststeps' => 'Premiérs pâs',
 	'firststeps-desc' => '[[Special:FirstSteps|Pâge spèciâla]] por guidar los utilisators sur un vouiqui qu’empleye l’èxtension « Translate »',
 	'translate-fs-pagetitle-done' => ' - fêt !',
+	'translate-fs-pagetitle-pending' => ' - en cors',
 	'translate-fs-pagetitle' => 'Guido d’emmodâ - $1',
 	'translate-fs-signup-title' => 'Enscrîde-vos',
 	'translate-fs-settings-title' => 'Configurâd voutres prèferences',
@@ -3097,6 +3098,26 @@ Du kan ändra om det behövs.',
 Detta gör det möjligt för andra användare att kontakta dig via e-post.
 Du kommer också att få ett nyhetsbrev högst en gång i månaden.
 Om du inte vill få några nyhetsbrev så kan kan välja bort dem under fliken "{{int:prefs-personal}}" i dina [[Special:Preferences|inställningar]].',
+);
+
+/** Tamil (தமிழ்)
+ * @author Shanmugamp7
+ */
+$messages['ta'] = array(
+	'firststeps' => 'முதற் படிகள்',
+	'translate-fs-pagetitle-done' => ' - ஆச்சு!',
+	'translate-fs-pagetitle-pending' => ' - நிலுவையில்',
+	'translate-fs-signup-title' => 'பதிவுசெய்',
+	'translate-fs-settings-title' => 'உங்கள் விருப்பத்தேர்வுகளை அமைக்கவும்',
+	'translate-fs-userpage-title' => 'உங்கள் பயனர் பக்க்கத்தை உருவாக்கவும்',
+	'translate-fs-permissions-title' => 'மொழிபெயர்ப்பாளர் அனுமதியைக் கோரவும்',
+	'translate-fs-target-title' => 'மொழிபெயர்க்கத் தொடங்கவும்!',
+	'translate-fs-email-title' => 'உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவும்',
+	'translate-fs-selectlanguage' => 'ஒரு மொழியைத் தேர்ந்தெடு',
+	'translate-fs-settings-planguage' => 'முதன்மை மொழி:',
+	'translate-fs-settings-slanguage' => 'துணை மொழி $1:',
+	'translate-fs-settings-submit' => 'விருப்பங்களை சேமி',
+	'translate-fs-permissions-planguage' => 'முதன்மை மொழி:',
 );
 
 /** Tulu (ತುಳು)

@@ -3044,6 +3044,7 @@ mas niona vèrsion de {{PLURAL:$1|ceta pâge est marcâye por étre traduita|cet
 	'tpt-old-pages' => 'Des vèrsions de {{PLURAL:$1|ceta pâge|cetes pâges}} sont étâyes marcâyes por étre traduites.',
 	'tpt-other-pages' => '{{PLURAL:$1|Na vielye vèrsion de ceta pâge est étâye marcâye por étre traduita|Des vielyes vèrsions de cetes pâges sont étâyes marcâyes por étre traduites}},
 mas {{PLURAL:$1|la dèrriére vèrsion pôt pas étre marcâye|les dèrriéres vèrsions pôvont pas étre marcâyes}} d’ense.',
+	'tpt-select-prioritylangs-reason' => 'Rêson :',
 	'tpt-rev-mark' => 'marcar por étre traduita',
 	'tpt-rev-unmark' => 'enlevar de la traduccion',
 	'tpt-rev-discourage' => 'dècoragiér',
@@ -3059,8 +3060,14 @@ mas {{PLURAL:$1|la dèrriére vèrsion pôt pas étre marcâye|les dèrriéres v
 El est na traduccion de la pâge [[$1]] et la traduccion pôt étre betâye a jorn en empleyent l’[$2 outil de traduccion].',
 	'tpt-unknown-page' => 'Cet’èspâço de noms est resèrvâ por la traduccion de pâges de contegnu.
 La pâge que vos tâchiéd de changiér semble corrèspondre a gins de pâge marcâye por étre traduita.',
+	'tpt-discouraged-language-reason' => 'Rêson : $1',
 	'tpt-render-summary' => 'Misa a jorn por étre en acôrd avouéc la novèla vèrsion de la pâge sôrsa',
 	'tpt-download-page' => 'Èxportar la pâge avouéc les sines traduccions',
+	'tpt-aggregategroup-add' => 'Apondre',
+	'tpt-aggregategroup-save' => 'Encartar',
+	'tpt-aggregategroup-new-name' => 'Nom :',
+	'tpt-aggregategroup-new-description' => 'Dèscripcion (u chouèx) :',
+	'tpt-aggregategroup-invalid-group' => 'Lo groupo ègziste pas',
 	'pt-parse-open' => 'Balisa &lt;translate> asimètrica.
 Modèlo de traduccion : <pre>$1</pre>',
 	'pt-parse-close' => 'Balisa &lt;/translate> asimètrica.
@@ -3105,7 +3112,7 @@ Tèxto de la sèccion : <pre>$1</pre>',
 	'pt-movepage-action-check' => 'Controlar se lo changement de nom est possiblo',
 	'pt-movepage-action-perform' => 'Renomar',
 	'pt-movepage-action-other' => 'Changiér la ciba',
-	'pt-movepage-logreason' => 'Èxtrèt de la pâge traduisibla « $1 ».',
+	'pt-movepage-logreason' => 'Partia de la pâge traduisibla « $1 ».',
 	'pt-movepage-started' => 'Ora la pâge de bâsa est renomâye.
 Volyéd controlar lo [[Special:Log/pagetranslation|jornal de les traduccions de pâges]] por repèrar des fôtes et por liére lo mèssâjo d’avance.',
 	'pt-locked-page' => 'Ceta pâge est vèrrolyêye perce que la pâge traduisibla est aprés étre renomâye.',
@@ -3125,8 +3132,8 @@ Volyéd controlar lo [[Special:Log/pagetranslation|jornal de les traduccions de 
 	'pt-deletepage-list-section' => 'Pâges de sèccion',
 	'pt-deletepage-list-other' => 'Ôtres sot-pâges',
 	'pt-deletepage-list-count' => 'En tot $1 pâge{{PLURAL:$1||s}} a suprimar.',
-	'pt-deletepage-full-logreason' => 'Èxtrèt de la pâge a traduire $1.',
-	'pt-deletepage-lang-logreason' => 'Èxtrèt de la pâge de traduccion $1.',
+	'pt-deletepage-full-logreason' => 'Partia de la pâge traduisibla « $1 ».',
+	'pt-deletepage-lang-logreason' => 'Partia de la pâge de traduccion « $1 ».',
 );
 
 /** Friulian (furlan)
@@ -4663,8 +4670,9 @@ $messages['ja'] = array(
 	'tpt-discouraged-language-force' => "'''このページは $2 に翻訳できません。'''
 
 翻訳管理者がこのページの翻訳先言語を $3 のみに制限しています。",
-	'tpt-discouraged-language' => 'この言語は、翻訳管理者がこのページに設定した主要言語に含まれていません。
-理由：$1',
+	'tpt-discouraged-language' => "'''このページの$2への翻訳は重要ではありません。'''
+翻訳管理者が$3への翻訳作業に重点を置くことを決めました。",
+	'tpt-discouraged-language-reason' => '理由: $1',
 	'tpt-priority-languages' => '翻訳管理者が、このメッセージ群の主要言語を$1に設定しました。',
 	'tpt-render-summary' => '翻訳元ページの新版に適合するように更新中',
 	'tpt-download-page' => '翻訳付きでページを書き出し',
@@ -8260,6 +8268,8 @@ $messages['ta'] = array(
 	'translate-tag-translate-link-desc' => 'இப்பக்கத்தை மொழிபெயர்க்கவும்',
 	'translate-tag-markthis' => 'இந்த பக்கத்தை மொழிபெயர்ப்புக்காக குறியிடு',
 	'tpt-languages-legend' => 'மற்ற மொழிகள்:',
+	'tpt-aggregategroup-add' => 'சேர்',
+	'tpt-aggregategroup-save' => 'சேமி',
 	'pt-movepage-list-pages' => 'நகர்த்த வேண்டிய பக்கங்களின் பட்டியல்',
 	'pt-movepage-list-translation' => 'மொழிபெயர்ப்பு பக்கங்கள்',
 	'pt-movepage-list-section' => 'பிரிவு பக்கங்கள்',
