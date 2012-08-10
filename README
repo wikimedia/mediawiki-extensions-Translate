@@ -273,7 +273,7 @@ And for the code at:
 * 2012-01-06
 - Fixes to the sizing of the translation editor dialog
 * 2012-01-05
-- Fixed a fatal error that sometimes occured when translation page title used
+- Fixed a fatal error that sometimes occurred when translation page title used
   GRAMMAR and the page was viewed with English UI.
 * 2012-01-04
 - The summary row in Special:LanguageStats and Special:MessageGroupStats is no
