@@ -798,7 +798,7 @@ $messages['saz'] = array(
 	'translate-statsf-count-registrations' => 'ꢥꣁꢮ꣄ꢮꣁ ꢮꢮ꣄ꢬꢸꢥꢵꢬꢸꢥ꣄',
 );
 
-/** Ṫuroyo (Ṫuroyo)
+/** Turoyo (Ṫuroyo)
  * @author Ariyo
  */
 $messages['tru'] = array(
@@ -1053,7 +1053,6 @@ Besonderhede: $1',
 	'translate-messagereview-submit' => 'Aanvaar',
 	'translate-messagereview-progress' => 'Besig om te aanvaar...',
 	'translate-messagereview-done' => 'Aanvaar',
-	'translate-messagereview-reviewsyou' => 'Deur u aanvaar',
 	'api-error-invalidrevision' => 'Die vertaling is nie gevind nie.',
 	'api-error-unknownmessage' => 'Die boodskap is nie gevind nie.',
 	'api-error-fuzzymessage' => "Die vertaling is gemerk 'n fuzzy",
@@ -1925,7 +1924,6 @@ $1",
 	'translate-gs-total' => 'মুঠ',
 	'translate-messagereview-submit' => 'স্বীকাৰ',
 	'translate-messagereview-done' => 'স্বীকাৰ কৰা হ’ল',
-	'translate-messagereview-reviewsyou' => 'আপোনাৰ দ্বাৰা গ্ৰহণ কৰা হ’ল',
 	'translate-workflow-set-doing' => 'পছন্দসমূহ . . .',
 	'translate-stats-workflow' => 'স্থিতি',
 	'translate-gethelp' => 'সহায়',
@@ -15773,15 +15771,20 @@ $messages['ml'] = array(
 	'translate-taskui-suggestions' => 'പരിഭാഷാ ശേഖരത്തിൽ നിർദ്ദേശങ്ങളുള്ള സന്ദേശങ്ങൾ പ്രദർശിപ്പിക്കുക',
 	'translate-taskui-acceptqueue' => 'എനിക്ക് സ്വീകരിക്കാനാവുന്ന സന്ദേശങ്ങൾ മാത്രം',
 	'translate-taskui-reviewall' => 'എല്ലാ പരിഭാഷകളും സംശോധനം ചെയ്യുക',
+	'translate-taskui-export-to-file' => 'സഹജമായ ഫോർമാറ്റിൽ കയറ്റുമതി ചെയ്യുക',
+	'translate-taskui-export-as-po' => 'ഓഫ്-ലൈൻ പരിഭാഷയ്ക്കായി കയറ്റുമതി ചെയ്യുക',
 	'translate-taction-translate' => 'പരിഭാഷപ്പെടുത്തുക',
 	'translate-taction-proofread' => 'തെറ്റുതിരുത്തൽ വായന നടത്തുക',
 	'translate-taction-lstats' => 'ഭാഷയുടെ സ്ഥിതിവിവരക്കണക്കുകൾ',
 	'translate-taction-mstats' => 'സന്ദേശ ഗണത്തിന്റെ സ്ഥിതിവിവരക്കണക്കുകൾ',
+	'translate-taction-export' => 'കയറ്റുമതി ചെയ്യുക',
+	'translate-taction-disabled' => 'ഈ വിക്കിയിൽ ഈ പ്രവൃത്തി പ്രവർത്തനരഹിതമാക്കിയിരിക്കുകയാണ്.',
 	'translate-page-no-such-language' => 'തിരഞ്ഞെടുത്ത ഭാഷ അസാധുവാണ്‌.',
 	'translate-page-no-such-group' => 'തിരഞ്ഞെടുത്ത ഗണം അസാധുവാണ്‌.',
 	'translate-page-disabled' => "ഈ ഗണത്തിലുള്ള സന്ദേശങ്ങൾക്ക് ഈ ഭാഷയിലുള്ള പരിഭാഷ നിരോധിച്ചിരിക്കുന്നു. കാരണം:
 
 ''$1''",
+	'translate-language-disabled' => 'ഈ ഭാഷയിലേയ്ക്കുള്ള പരിഭാഷ പ്രവർത്തനരഹിതമാക്കിയിരിക്കുകയാണ്.',
 	'translate-page-settings-legend' => 'സജ്ജീകരണങ്ങൾ',
 	'translate-page-group' => 'ഗണം',
 	'translate-page-language' => 'ഭാഷ',
@@ -15812,6 +15815,7 @@ $messages['ml'] = array(
 	'translate-edit-committed' => 'സന്ദേശത്തിന്റെ നിലവിലുള്ള പരിഭാഷ',
 	'translate-edit-warnings' => 'അപൂർണ്ണമായ പരിഭാഷയെക്കുറിച്ചുള്ള മുന്നറിയിപ്പ്',
 	'translate-edit-tmsugs' => 'ഓർത്തുവെച്ച പരിഭാഷപ്പെടുത്തലുകളിൽ നിന്നുള്ള സൂചനകൾ',
+	'translate-edit-tmmatch-source' => 'പരിഭാഷയുടെ മൂലരൂപം: $1',
 	'translate-edit-tmmatch' => '$1% പൊരുത്തപ്പെടുന്നു',
 	'translate-edit-tab-list' => 'സന്ദേശങ്ങളുടെ പട്ടിക',
 	'translate-edit-askpermission' => 'അനുമതി അഭ്യർത്ഥിക്കുക',
@@ -15880,6 +15884,7 @@ $messages['ml'] = array(
 	'translate-statsf-count-edits' => 'ആകെ തിരുത്തലുകൾ',
 	'translate-statsf-count-users' => 'സജീവ പരിഭാഷകർ',
 	'translate-statsf-count-registrations' => 'പുതിയ ഉപയോക്താക്കൾ',
+	'translate-statsf-count-reviews' => 'പരിഭാഷാ സംശോധനകൾ',
 	'translate-statsf-count-reviewers' => 'സംശോധകർ',
 	'translate-statsf-submit' => 'എങ്ങനെയുണ്ടെന്ന് കാണുക',
 	'translate-tag-category' => 'പരിഭാഷപ്പെടുത്താവുന്ന താളുകൾ',
@@ -15961,7 +15966,6 @@ $messages['ml'] = array(
 	'translate-messagereview-progress' => 'സ്വീകരിക്കുന്നു...',
 	'translate-messagereview-failure' => 'സ്വീകരിക്കുന്നു... പരാജയപ്പെട്ടു: $1',
 	'translate-messagereview-done' => 'സ്വീകരിച്ചവ',
-	'translate-messagereview-reviewsyou' => 'സ്വീകരിച്ചത് താങ്കളാണ്',
 	'api-error-invalidrevision' => 'പരിഭാഷ കണ്ടെത്താനായില്ല',
 	'api-error-unknownmessage' => 'സന്ദേശം കണ്ടെത്താനായില്ല',
 	'api-error-owntranslation' => 'താങ്കൾക്ക് താങ്കളുടെ തന്നെ പരിഭാഷകൾ സ്വീകരിക്കാനാവില്ല',
@@ -18535,6 +18539,7 @@ Oam Beschde ischse fa Uffgawe vum Gescheleese.',
 );
 
 /** Polish (polski)
+ * @author Ankry
  * @author Beau
  * @author BeginaFelicysym
  * @author Derbeth
@@ -18625,10 +18630,11 @@ Aliasy stron specjalnych i magiczne słowa mogą mieć wiele tłumaczeń.
 Tłumaczenia rozdziela się przecinkiem (,).
 Przestrzenie nazw mogą mieć tylko jedno tłumaczenie.
 
-Podczas tłumaczenia przestrzeni nazw specjalne znaczenie ma zapis <code>Dyskusja $1</code>, gdzie <code>$1</code> zamieniane jest w nazwę serwisu – na przykład <code>{{ns:project_talk}}</code>.
-Jeśli w danym języku niemożliwe jest sformułowanie prawidłowego wpisu bez zmiany nazwy serwisu, należy skontaktować się z deweloperem.
+Tłumaczenie nazw przestrzeni nazw <code>Dyskusja $1</code> zawierających strony dyskusji może być bardziej złożone.
+<code>$1</code> zamieniane jest na nazwę serwisu – na przykład <code>{{ns:project_talk}}</code>.
+Jeśli w danym języku niemożliwe jest sformułowanie prawidłowego wpisu bez zmiany nazwy serwisu, należy nas zawiadomić przez [[Support]].
 
-Zapisanie zmian jest możliwe tylko dla członków grupy tłumaczy.
+Zapisanie zmian jest możliwe tylko przez członków grupy tłumaczy.
 Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poniżej przycisku „Zapisz”.',
 	'translate-magic-module' => 'Moduł:',
 	'translate-magic-submit' => 'Wyświetl',
@@ -18840,7 +18846,7 @@ Szczegóły – $1',
 	'translate-messagereview-failure' => 'Zatwierdzanie nieudane ponieważ $1',
 	'translate-messagereview-done' => 'Zatwierdzono',
 	'translate-messagereview-reviews' => 'Zaakceptowane przez {{PLURAL:$1|jednego użytkownika|$1 użytkowników}}',
-	'translate-messagereview-reviewswithyou' => 'Zaakceptowane przez {{PLURAL:$1|jednego użytkownika|$1 użytkowników}}, między innymi przez Ciebie',
+	'translate-messagereview-reviewswithyou' => 'Zaakceptowane przez {{PLURAL:$1|Ciebie|$1 użytkowników, między innymi przez Ciebie}}',
 	'api-error-invalidrevision' => 'nie można odnaleźć tłumaczenia',
 	'api-error-unknownmessage' => 'nie można odnaleźć komunikatu',
 	'api-error-fuzzymessage' => 'tłumaczenie oznaczone zostało jako niepewne',

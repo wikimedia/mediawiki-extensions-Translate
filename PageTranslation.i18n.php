@@ -3683,15 +3683,16 @@ $messages['he'] = array(
 
 /** Hindi (हिन्दी)
  * @author Ansumang
+ * @author Siddhartha Ghai
  */
 $messages['hi'] = array(
-	'pagetranslation' => 'पृष्ठ अनुबाद',
-	'tpt-section' => 'अनुबाद यूनिट $1',
+	'pagetranslation' => 'पृष्ठ अनुवाद',
+	'tpt-section' => 'अनुवाद यूनिट $1',
 	'tpt-template' => 'पृष्ठ साँचा',
 	'tpt-diff-old' => 'पूर्व लेख',
 	'tpt-diff-new' => 'नया लेख',
 	'tpt-other-pages-title' => 'टूटा पृष्ठ',
-	'pt-movepage-list-translation' => 'अनुबाद पृष्ठ',
+	'pt-movepage-list-translation' => 'अनुवाद पृष्ठ',
 	'pt-movepage-list-section' => 'अनुभाग पृष्ठ',
 	'pt-movepage-list-other' => 'अन्य उपपृष्ठ',
 	'pt-movepage-current' => 'सद्य सदस्यनाम:',
@@ -3700,7 +3701,7 @@ $messages['hi'] = array(
 	'pt-deletepage-current' => 'पृष्ठ नाम:',
 	'pt-deletepage-reason' => 'कारण:',
 	'pt-deletepage-list-pages' => 'पृष्ठ तालिका हटाने के लिए',
-	'pt-deletepage-list-translation' => 'अनुबाद पृष्ठ',
+	'pt-deletepage-list-translation' => 'अनुवाद पृष्ठ',
 	'pt-deletepage-list-section' => 'अनुभाग पृष्ठ',
 	'pt-deletepage-list-other' => 'अन्य उपपृष्ठ',
 );
