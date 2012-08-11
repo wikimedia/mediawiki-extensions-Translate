@@ -2646,7 +2646,16 @@ $messages['ps'] = array(
 	'translate-fs-userpage-title' => 'ستاسې کارن مخ جوړول',
 	'translate-fs-permissions-title' => 'د ژباړې د اجازې غوښتنه',
 	'translate-fs-target-title' => 'په ژباړې پيل وکړۍ',
+	'translate-fs-selectlanguage' => 'يوه ژبه وټاکۍ',
+	'translate-fs-settings-planguage' => 'آرنۍ ژبه:',
+	'translate-fs-settings-slanguage' => 'مرستياله ژبه $1:',
+	'translate-fs-settings-submit' => 'غوره توبونه خوندي کول',
+	'translate-fs-userpage-level-N' => 'دا زما مورنۍ ژبه ده',
+	'translate-fs-userpage-level-5' => 'زه د دې ژبې څانګپوه ژباړن يم',
+	'translate-fs-userpage-level-1' => 'يو څه پرې پوهېږم',
 	'translate-fs-userpage-submit' => 'خپل کارن مخ جوړول',
+	'translate-fs-permissions-planguage' => 'آرنۍ ژبه:',
+	'translate-fs-permissions-submit' => 'غوښتنه ورلېږل',
 );
 
 /** Portuguese (português)
@@ -2932,6 +2941,7 @@ $messages['rue'] = array(
 $messages['si'] = array(
 	'firststeps' => 'පළමු පියවරවල්',
 	'translate-fs-pagetitle-done' => ' - හරි!',
+	'translate-fs-pagetitle-pending' => ' - බලාපොරොත්තු වෙමින්',
 	'translate-fs-signup-title' => 'ප්‍රවිෂ්ඨ වන්න',
 	'translate-fs-target-title' => 'පරිවර්තනය කිරීම අරඹන්න!',
 	'translate-fs-settings-planguage' => 'ප්‍රාථමික භාෂාව:',
