@@ -33,6 +33,24 @@
       "revId": "8b3585ccd7954476447b5fe5c00fbf267b6f4712",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//9Ic\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-11T16:51:38Z",
+      "side": 1,
+      "message": "I\u0027m not totally sold about passing $this to the hook. It makes sense for simple classes with well defined public interface, but for classes like this it is nightmare to keep the compatibility.",
+      "parentUuid": "AAAAQ3//8p0\u003d",
+      "revId": "8b3585ccd7954476447b5fe5c00fbf267b6f4712",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
