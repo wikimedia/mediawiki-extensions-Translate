@@ -1208,14 +1208,48 @@ $messages['frp'] = array(
 	'translate-fs-permissions-title' => 'Demandâd les pèrmissions de traductor',
 	'translate-fs-target-title' => 'Betâd-vos a traduire !',
 	'translate-fs-email-title' => 'Confirmâd voutron adrèce èlèctronica',
+	'translate-fs-intro' => "Benvegnua sur l’assistent des premiérs pâs de {{SITENAME}}.
+Nos vos volens guidar a châ ètapa por sè fâre traductor.
+A la fin vos porréd traduire los ''mèssâjos de l’entèrface'' de tôs los projèts recognus per {{SITENAME}}.",
 	'translate-fs-selectlanguage' => 'Chouèsésséd na lengoua',
 	'translate-fs-settings-planguage' => 'Lengoua principâla :',
+	'translate-fs-settings-planguage-desc' => 'La lengoua principâla sèrvét avouéc coment la lengoua de voutron entèrface sur ceti vouiqui
+et pués coment la lengoua ciba per dèfôt por les traduccions.',
 	'translate-fs-settings-slanguage' => 'Lengoua d’assistance $1 :',
+	'translate-fs-settings-slanguage-desc' => 'O est possiblo de fâre vêre des traduccions de mèssâjos dens d’ôtres lengoues dedens lo changior de traduccion.
+Ique vos pouede chouèsir quintes lengoues, s’o est lo câs, vos ameriâd vêre.',
 	'translate-fs-settings-submit' => 'Encartar les prèferences',
+	'translate-fs-userpage-level-N' => 'Su un parlant natif de',
+	'translate-fs-userpage-level-5' => 'Su un traductor profèssionèl de',
+	'translate-fs-userpage-level-4' => 'La cognesso coment un parlant natif',
+	'translate-fs-userpage-level-3' => 'J’é na bôna mêtrise de',
+	'translate-fs-userpage-level-2' => 'J’é na mêtrise moderâye de',
+	'translate-fs-userpage-level-1' => 'Cognesso un pou',
+	'translate-fs-userpage-help' => 'Volyéd endicar voutres capacitâts lengouistiques et pués nos prègiér un pou de vos-mémo. Se vos cognesséd més de cinq lengoues, vos en porréd apondre ples târd.',
 	'translate-fs-userpage-submit' => 'Fâre ma pâge utilisator',
 	'translate-fs-userpage-done' => 'Bien fêt ! Ora vos avéd na pâge utilisator.',
 	'translate-fs-permissions-planguage' => 'Lengoua principâla :',
+	'translate-fs-permissions-help' => 'Ora vos dête fâre na demanda por étre apondu a la tropa des traductors.
+Chouèsésséd la lengoua principâla que vos voléd traduire.
+
+Vos pouede mencionar d’ôtres lengoues et d’ôtres remârques dedens la zona de changement ce-desot.',
+	'translate-fs-permissions-pending' => 'Voutra demanda est étâye mandâye a [[$1]] et pués yon du mondo du seto la controlerat setout que possiblo.
+Se vos confirmâd voutron adrèce èlèctronica, vos recevréd na notificacion per mèssageria èlèctronica setout que serat lo câs.',
 	'translate-fs-permissions-submit' => 'Mandar la demanda',
+	'translate-fs-target-text' => "Fèlicitacions !
+Ora vos vos pouede betar a traduire.
+
+Vos enquiètâd pas se cen vos parêt un pou novél et ètranjo.
+Sur la [[Project list|lista des projèts]] sè trove un apèrçu des projèts que vos pouede contribuar a traduire.
+Celos projèts ont, por la plepârt, na pâge que contint na côrta dèscripcion et un lim « ''Traduire ceti projèt'' » que vos menerat vers na pâge que liste tôs los mèssâjos pas traduits.
+Na lista de tôs los groupos de mèssâjos avouéc l’[[Special:LanguageStats|ètat d’ora de la traduccion por na lengoua balyêye]] est asse-ben disponibla.
+
+Se vos sentéd que vos avéd fôta de més d’enformacions devant que vos betar a traduire, vos pouede liére les [[FAQ|quèstions sovent posâyes]].
+Mâlherosament la documentacion pôt étre dèpassâye de temps en temps.
+Se vos pensâd que vos devriâd povêr fâre quârque-ren, sen arrevar a trovar coment, hèsitâd pas a posar la quèstion sur la [[Support|pâge d’assistance]].
+
+Vos vos pouede asse-ben veriér vers los ôtros traductors de la méma lengoua sur la [[Portal_talk:$1|pâge de discussion]] du [[Portal:$1|portâl de voutra lengoua]].
+Se vos l’éd p’oncor fêt, [[Special:Preferences|changiéd la lengoua de l’entèrface por que seye cela que vos voléd traduire]]. D’ense, los lims que vos propôse lo vouiqui seront los ples adaptâs a voutra situacion.",
 );
 
 /** Friulian (furlan)
@@ -2943,9 +2977,18 @@ $messages['si'] = array(
 	'translate-fs-pagetitle-done' => ' - හරි!',
 	'translate-fs-pagetitle-pending' => ' - බලාපොරොත්තු වෙමින්',
 	'translate-fs-signup-title' => 'ප්‍රවිෂ්ඨ වන්න',
+	'translate-fs-settings-title' => 'ඔබේ අභිරුචින් වින්‍යාසගත කරන්න',
+	'translate-fs-userpage-title' => 'ඔබේ පරිශීලක පිටුව තනන්න',
+	'translate-fs-permissions-title' => 'පරිවර්තක අවසර අයදින්න',
 	'translate-fs-target-title' => 'පරිවර්තනය කිරීම අරඹන්න!',
+	'translate-fs-email-title' => 'ඔබගේ විද්‍යුත් තැපැල් ලිපිනය තහවුරු කරන්න',
+	'translate-fs-selectlanguage' => 'භාෂාවක් තෝරාගන්න',
 	'translate-fs-settings-planguage' => 'ප්‍රාථමික භාෂාව:',
+	'translate-fs-settings-slanguage' => 'සහායක භෂාව $1:',
 	'translate-fs-settings-submit' => 'අභිරුචීන් සුරකින්න',
+	'translate-fs-userpage-level-1' => 'මම පොඩ්ඩක් දන්නවා',
+	'translate-fs-userpage-submit' => 'මගේ පරිශීලක පිටුව තනන්න',
+	'translate-fs-userpage-done' => 'නියමයි! ඔබට දැන් පරිශීලක පිටුවක් තිබේ.',
 	'translate-fs-permissions-planguage' => 'ප්‍රාථමික භාෂාව:',
 	'translate-fs-permissions-submit' => 'ඉල්ලීම යවන්න',
 );
@@ -3110,7 +3153,15 @@ Du kommer också att få ett nyhetsbrev högst en gång i månaden.
 Om du inte vill få några nyhetsbrev så kan kan välja bort dem under fliken "{{int:prefs-personal}}" i dina [[Special:Preferences|inställningar]].',
 );
 
+/** Swahili (Kiswahili)
+ * @author Stephenwanjau
+ */
+$messages['sw'] = array(
+	'translate-fs-pagetitle-done' => '- imefanyika!',
+);
+
 /** Tamil (தமிழ்)
+ * @author Karthi.dr
  * @author Shanmugamp7
  */
 $messages['ta'] = array(
@@ -3127,7 +3178,11 @@ $messages['ta'] = array(
 	'translate-fs-settings-planguage' => 'முதன்மை மொழி:',
 	'translate-fs-settings-slanguage' => 'துணை மொழி $1:',
 	'translate-fs-settings-submit' => 'விருப்பங்களை சேமி',
+	'translate-fs-userpage-level-N' => 'எனது தாய்மொழி',
+	'translate-fs-userpage-level-5' => 'நான் தொழில்முறையில் மொழிபெயர்க்கும் மொழி',
+	'translate-fs-userpage-submit' => 'என் பயனர் பக்கத்தை உருவாக்கு',
 	'translate-fs-permissions-planguage' => 'முதன்மை மொழி:',
+	'translate-fs-permissions-submit' => 'வேண்டுகோளை அனுப்பவும்',
 );
 
 /** Tulu (ತುಳು)
@@ -3457,6 +3512,7 @@ $messages['yi'] = array(
  * @author Chenxiaoqino
  * @author Hydra
  * @author Hzy980512
+ * @author Liangent
  * @author Mark85296341
  */
 $messages['zh-hans'] = array(
@@ -3467,7 +3523,7 @@ $messages['zh-hans'] = array(
 	'translate-fs-pagetitle' => '入门向导 - $1',
 	'translate-fs-signup-title' => '注册',
 	'translate-fs-settings-title' => '设置你的选项',
-	'translate-fs-userpage-title' => '创建你的用户页面',
+	'translate-fs-userpage-title' => '创建您的用户页',
 	'translate-fs-permissions-title' => '请求翻译者权限',
 	'translate-fs-target-title' => '开始翻译！',
 	'translate-fs-email-title' => '确认您的邮箱地址',

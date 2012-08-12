@@ -5935,6 +5935,8 @@ $messages['mt'] = array(
 	'pagetranslation' => 'Traduzzjoni tal-paġni',
 	'tpt-old-pages' => "Xi verżjonijiet ta' {{PLURAL:$1|din il-paġna ġiet immarkata|dawn il-paġni ġew immarkati}} għat-traduzzjoni.",
 	'tpt-languages-legend' => 'Lingwi oħra:',
+	'tpt-aggregategroup-add' => 'Żid',
+	'tpt-aggregategroup-save' => 'Salva',
 );
 
 /** Erzya (эрзянь)
@@ -7713,6 +7715,7 @@ $messages['si'] = array(
 	'tpt-discouraged-pages-title' => 'අධෛර්යකල පිටු',
 	'tpt-old-pages' => 'පරිවර්තනය සඳහා {{PLURAL:$1|මෙම පිටුවේ|මෙම පිටුවල}} සමහර අනුවාදයන් සලකුණු කරන ලදී.',
 	'tpt-select-prioritylangs-reason' => 'හේතුව:',
+	'tpt-sections-prioritylangs' => 'ප්‍රමුඛතා භාෂාවන්',
 	'tpt-rev-mark' => 'පරිවර්තනය සඳහා සලකුණු කරන්න',
 	'tpt-rev-unmark' => 'පරිවර්තනයෙන් ඉවත් කරන්න',
 	'tpt-rev-discourage' => 'අධෛර්ය කරන්න',
@@ -7726,8 +7729,11 @@ $messages['si'] = array(
 	'translate-tag-hasnew' => 'මෙම පිටුවේ අඩංගු වන <span class="plainlinks">[$1 වෙනස්කම්]</span> පරිවර්තනය සඳහා සලකුණු කොට නොමැත.',
 	'tpt-translation-intro-fuzzy' => 'යල්පැනපු පරිවර්තනයන් මෙලෙස සලකුණු කරයි.',
 	'tpt-languages-legend' => 'වෙනත් භාෂා:',
+	'tpt-languages-zero' => 'මෙම භාෂාව සඳහා පරිවර්තනය අරඹන්න',
+	'tpt-discouraged-language-reason' => 'හේතුව: $1',
 	'tpt-render-summary' => 'මූලාශ්‍ර පිටුවේ නව අනුවාදය වෙත ගැලපීම සඳහා යාවත්කාලීන කරමින්',
 	'tpt-download-page' => 'පරිවර්තනය සහිත පිටුව නිර්යාත කරන්න',
+	'aggregategroups' => 'සමස්ත කාණ්ඩයන්',
 	'tpt-aggregategroup-add' => 'එක් කරන්න',
 	'tpt-aggregategroup-save' => 'සුරකින්න',
 	'tpt-aggregategroup-new-name' => 'නම:',
@@ -8237,6 +8243,7 @@ Anledning: $1',
 );
 
 /** Tamil (தமிழ்)
+ * @author Karthi.dr
  * @author Shanmugamp7
  * @author TRYPPN
  */
@@ -8260,6 +8267,11 @@ $messages['ta'] = array(
 	'tpt-badtitle' => ' தரப்பட்ட பக்க பெயர் ( $1 ) செல்லத்தக்க தலைப்பு இல்லை',
 	'tpt-nosuchpage' => 'பக்க  $1  இல்லை',
 	'tpt-badsect' => 'மொழிபெயர்ப்பு அலகு   $2 க்கு \'\'$1 "ஒரு செல்லத்தக்க பெயர்  அல்ல.',
+	'tpt-edit-failed' => '$1 பக்கத்தை இற்றைப்படுத்த இயலவில்லை.',
+	'tpt-new-pages-title' => 'மொழிபெயர்ப்புக்குப் பரிந்துரைக்கப்பட்டுள்ள பக்கங்கள்',
+	'tpt-old-pages-title' => 'மொழிபெயர்க்கப்பட்டு வரும் பக்கங்கள்',
+	'tpt-select-prioritylangs-reason' => 'காரணம்:',
+	'tpt-sections-prioritylangs' => 'முன்னுரிமை தரப்பட்ட மொழிகள்',
 	'tpt-rev-mark' => 'மொழிபெயர்ப்புக்காக குறியிடு',
 	'tpt-rev-unmark' => 'மொழிபெயர்ப்பிலிருந்து நீக்கு',
 	'tpt-rev-discourage' => 'அதையரியப்படுத்து',
@@ -8271,8 +8283,15 @@ $messages['ta'] = array(
 	'translate-tag-translate-link-desc' => 'இப்பக்கத்தை மொழிபெயர்க்கவும்',
 	'translate-tag-markthis' => 'இந்த பக்கத்தை மொழிபெயர்ப்புக்காக குறியிடு',
 	'tpt-languages-legend' => 'மற்ற மொழிகள்:',
+	'tpt-languages-zero' => 'இம் மொழியின் சிறிய மொழிபெயர்ப்பு',
+	'tpt-translation-restricted' => 'இப்பக்கத்தை இந்த மொழிக்கு மொழிபெயர்ப்பது மொழிபெயர்ப்பு நிருவாகி ஒருவரால் காக்கப்பட்டுள்ளது.
+
+காரணம்: $1',
+	'tpt-discouraged-language-reason' => 'காரணம்: $1',
 	'tpt-aggregategroup-add' => 'சேர்',
 	'tpt-aggregategroup-save' => 'சேமி',
+	'tpt-aggregategroup-new-name' => 'பெயர்:',
+	'tpt-aggregategroup-invalid-group' => 'இந்தக் குழு இல்லை.',
 	'pt-movepage-list-pages' => 'நகர்த்த வேண்டிய பக்கங்களின் பட்டியல்',
 	'pt-movepage-list-translation' => 'மொழிபெயர்ப்பு பக்கங்கள்',
 	'pt-movepage-list-section' => 'பிரிவு பக்கங்கள்',

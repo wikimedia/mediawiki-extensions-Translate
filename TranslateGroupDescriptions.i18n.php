@@ -1155,6 +1155,7 @@ $messages['he'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] מביא גרסת טקסט של ויקיפדיה למכשיר נייד.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] הוא יישום מרובה־פלטפורמות לקריאה ועריכה של ויקיפדיה במכשירים ניידים ובמחשבי לוח',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|ויקימילון נייד]] הוא יישום מרובה־פלטפורמות למכשירים ניידים ומחשבי לוח לקריאה ותרומה לוויקימילון',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|ויקי אוהבת אתרי מורשת לניידים]] הוא יישום למכשירים ניידים שמיועד לתרומה ל[[:meta:Wiki Loves Monuments|מיזם ויקי אוהבת אתרי מורשת]]',
 );
 
 /** Croatian (hrvatski)
@@ -2192,6 +2193,13 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'translate-group-desc-wiktionarymobile' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wiktionary",
 );
 
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'translate-group-desc-translatablepages' => 'د ژباړې وړ ټول مخونه',
+);
+
 /** Portuguese (português)
  * @author Giro720
  * @author Hamilton Abreu
@@ -2414,6 +2422,24 @@ $messages['ru'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] — это проект, предоставляющий автономную текстовую версию Википедии на мобильном устройстве.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] является кросс-платформенным приложением для мобильных и планшетных устройств для чтения и внесения вклада в Википедию.',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] — это кросс-платформенное приложение для мобильных и планшетных устройств, предназначенное для чтения и редактирования Викисловаря',
+);
+
+/** Rusyn (русиньскый)
+ * @author Gazeb
+ */
+$messages['rue'] = array(
+	'translategroupdescriptions-desc' => 'Пописы ґруп повідомлїн продкуктів підпророваных росшырїнём [http://mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-nodesc' => 'Тота ґрупа повідомлїнь не мать попис',
+	'translate-group-desc-mediawikicore' => 'Тота ґрупа повідомлїнь обсягує повідомлїня хоснованы в сучасній алфаверзії alfaverzi MediaWiki ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Тота ґрупа повідомлїнь обсягує [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 найхоснованїшых повідомлїнь] в MediaWiki',
+	'translate-group-desc-mediawikiextensions' => 'Тота метаґрупа обсягує повідомлїня вшыткых підпорованых росшырїнь [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-collection' => 'Тота метаґрупа овсягує повідомлня росшырїня [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'Тота метаґрупа обсягує повідомлїня росшырїня  [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Тота метаґрупа овсягує повідомлня росшырїня [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'Тота метаґрупа обсягує вшыткы повідомлїня вшыткых росшырїнь [http://semantic-mediawiki.org/ Semantic MediaWiki]',
+	'translate-group-desc-socialprofile' => 'Тота метаґрупа обсягує вшыткы повідомлїня росшырїня [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
+	'translate-group-desc-translate' => 'Тота метаґрупа обсягує повідомлїня росшырїня  [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-wikiaextensions' => 'Тота метаґрупа обсягує повідомлїня MediaWiki-росшырїнь, котры ся хоснують на [http://www.wikia.com Wikia]',
 );
 
 /** Slovak (slovenčina)
@@ -2664,6 +2690,13 @@ Se [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_ru
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan snabbt hitta författarna till en sida på en Wikimedia wiki.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] är ett projekt  för att tillhandahålla en offline textversion av Wikipedia på en mobil enhet.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] är en korsplattform för mobil- and surfplattor för att läsa och bidra till Wikipedia',
+);
+
+/** Tamil (தமிழ்)
+ * @author Karthi.dr
+ */
+$messages['ta'] = array(
+	'translate-group-desc-translatablepages' => 'எல்லா மொழிபெயர்க்கக்கூடிய பக்கங்கள்',
 );
 
 /** Telugu (తెలుగు)
