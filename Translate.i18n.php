@@ -1384,7 +1384,7 @@ $messages['ar'] = array(
 	'translate-language-code' => 'رمز اللغة',
 	'translate-language-code-field-name' => 'رمز اللغة:',
 	'translate-suppress-complete' => 'تخطَ مجموعات الرسائل المترجمة كليا',
-	'translate-language' => 'اللغة:',
+	'translate-language' => 'اللغة',
 	'translate-total' => 'الرسائل',
 	'translate-untranslated' => 'غير المترجمة',
 	'translate-percentage-complete' => 'المكتمل',
@@ -3789,6 +3789,7 @@ $messages['bxr'] = array(
  * @author Sanbec
  * @author Ssola
  * @author Toniher
+ * @author පසිඳු කාවින්ද
  */
 $messages['ca'] = array(
 	'translate' => 'Tradueix',
@@ -3984,6 +3985,8 @@ El mètode <code>$1</code> no està suportat.",
 $1",
 	'translate-import-err-ul-failed' => "La càrrega del fitxer no s'ha completat",
 	'translate-import-err-invalid-title' => 'El nom del fitxer <nowiki>$1</nowiki> no és vàlid.',
+	'translate-js-summary' => 'Resum:',
+	'translate-js-save' => 'Desa',
 	'translate-js-next' => 'Desa i passa al següent',
 	'translate-js-nonext' => "Aquest era el darrer missatge d'aquesta pàgina.",
 	'translate-js-skip' => 'Salta al següent',
@@ -9953,6 +9956,7 @@ $1',
 /** Hindi (हिन्दी)
  * @author Ansumang
  * @author Ashishbhatnagar72
+ * @author Karthi.dr
  * @author Kaustubh
  * @author Knightsofdawn
  * @author Siddhartha Ghai
@@ -10066,6 +10070,7 @@ $messages['hi'] = array(
 	'translate-import-from-local' => 'स्थानीय फ़ाइल अपलोड:',
 	'translate-import-load' => 'लोड़ फ़ाइल',
 	'translate-import-err-ul-failed' => 'फ़ाइल अपलोड सफल नहीं रहा',
+	'translate-js-summary' => 'सारांश:',
 	'translate-js-next' => 'सहेजें और अगले सन्देश-कुंजी खोलें',
 	'translate-js-nonext' => 'ये अंतिम संदेश था इस पृष्ठ पे ।',
 	'translate-js-skip' => 'त्यागें और अगली सन्देश-कुंजी खोलें',
@@ -21584,6 +21589,7 @@ $1',
 	'translate-js-history' => 'පරිවර්තන ඉතිහාසය',
 	'translate-js-support' => 'ප්‍රශ්නයක් අසන්න',
 	'translate-js-support-title' => 'මෙම පණිවුඩය නිවැරදිව පරිවර්තනය කිරීම සඳහා ප්‍රමාණවත් තරම් තොරතුරු නොමැති නම් උදව් සඳහා විමසන්න.',
+	'translate-js-support-unsaved-warning' => 'ඔබ සතුව නොසුරැකූ පරිවර්තන ඇත.',
 	'translate-gs-pos' => 'ස්ථාන.',
 	'translate-gs-code' => 'කේතය',
 	'translate-gs-continent' => 'මහාද්වීපය',
@@ -23158,6 +23164,7 @@ Klicka på meddelandegruppens namn för att visa en lista över oöversatta medd
 	'translate-page-disabled' => "Översättningar till det här språket i den här gruppen har stängts av. Anledning:
 
 ''$1''",
+	'translate-language-disabled' => 'Översättning till detta språk är inaktiverad.',
 	'translate-page-settings-legend' => 'Inställningar',
 	'translate-page-group' => 'Grupp',
 	'translate-page-language' => 'Språk',

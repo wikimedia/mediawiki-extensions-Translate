@@ -2976,6 +2976,7 @@ $messages['si'] = array(
 	'firststeps' => 'පළමු පියවරවල්',
 	'translate-fs-pagetitle-done' => ' - හරි!',
 	'translate-fs-pagetitle-pending' => ' - බලාපොරොත්තු වෙමින්',
+	'translate-fs-pagetitle' => 'පටන් ගැනීමේ මායා අඳුන - $1',
 	'translate-fs-signup-title' => 'ප්‍රවිෂ්ඨ වන්න',
 	'translate-fs-settings-title' => 'ඔබේ අභිරුචින් වින්‍යාසගත කරන්න',
 	'translate-fs-userpage-title' => 'ඔබේ පරිශීලක පිටුව තනන්න',

@@ -1515,6 +1515,31 @@ $messages['ja'] = array(
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]]はウィクショナリーを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
 );
 
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'translate-group-desc-nodesc' => 'ამ ჯგუფის შეტყობინებებისათვის აღწერა არ არის ხელმისაწვდომი',
+	'translate-group-desc-mediawikiextensions' => 'შეტყობინებების მეტა-ჯგუფი, შეიცავს [[Translating:MediaWiki|მედიავიკის]] მხარდაჭერილი გაფართოებების ყველა შეტყობინებას',
+	'translate-group-desc-collection' => 'შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'შეტყობინებების მეტა-ჯგუფი, შეიცავს ყველა გაფართოების ყველა შეტყობინებას [http://semantic-mediawiki.org/ Semantic MediaWiki]',
+	'translate-group-desc-translate' => 'შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [http://www.mediawiki.org/wiki/Extension:Translate თარგმნა]',
+	'translate-group-desc-translatablepages' => 'ყველა თარგმნადი გვერდი',
+	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] არის სტარატეგიული თამაში',
+	'translate-group-desc-eol' => 'შეტყობინებათა ჯგუფი [[Translating:EOL|Encyclopedia of Life]]-თვის',
+	'translate-group-desc-ihris' => 'შეტყობინებათა ჯგუფი [[Translating:iHRIS|iHRIS]]-თვის',
+	'translate-group-desc-ihris-common' => 'შეტყობინებათა ჯგუფი [[Special:Translate/out-ihris-common-0-all|iHRIS Common]]-თვის, [[Translating:iHRIS|iHRIS]]-ის ნაწილი',
+	'translate-group-desc-ihris-i2ce' => 'შეტყობინებათა ჯგუფი [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]]-თვის, [[Translating:iHRIS|iHRIS]]-ის ნაწილი',
+	'translate-group-desc-ihris-manage' => 'შეტყობინებათა ჯგუფი [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]]-თვის, [[Translating:iHRIS|iHRIS]]-ის ნაწილი',
+	'translate-group-desc-ihris-qualify' => 'შეტყობინებათა ჯგუფი [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]]-თვის, [[Translating:iHRIS|iHRIS]]-ის ნაწილი',
+	'translate-group-desc-kiwix' => 'შეტყობინებათა ჯგუფი [[Translating:Kiwix|Kiwix]]-თვის',
+	'translate-group-desc-mantisbt-plugin-core' => 'ძირითადი პლაგინი [[Translating:MantisBT|MantisBT]]-თვის',
+	'translate-group-desc-mediawiki-core-branch' => 'შეტყობინებები [[Translating:MediaWiki|მედიავიკის]] სტაბილური ვერსიისათვის',
+	'bw-desc-openstreetmap' => 'შეტყობინებების ჯგუფი [[Translating:OpenStreetMap|OpenStreetMap]]-ის ყველა შეტყობინებისათვის',
+);
+
 /** Адыгэбзэ (Адыгэбзэ)
  * @author Тамэ Балъкъэрхэ
  */

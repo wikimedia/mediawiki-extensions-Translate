@@ -1339,6 +1339,7 @@ $messages['bug'] = array(
  * @author Jordi Roqué
  * @author SMP
  * @author Solde
+ * @author පසිඳු කාවින්ද
  */
 $messages['ca'] = array(
 	'pagetranslation' => "Traducció d'una pàgina",
@@ -1352,6 +1353,9 @@ $messages['ca'] = array(
 Assegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi vàlida.',
 	'translate-tag-translate-link-desc' => 'Traduir aquesta pàgina',
 	'tpt-languages-legend' => 'Altres idiomes:',
+	'tpt-aggregategroup-add' => 'Afegir',
+	'tpt-aggregategroup-save' => 'Desa',
+	'tpt-aggregategroup-new-name' => 'Nom:',
 	'pt-movepage-title' => 'Mou la pàgina traduïble $1',
 	'pt-movepage-blockers' => "La pàgina traduïble no pot ser reanomenada a causa {{PLURAL:$1|de l'error següent|dels errors següents}}:",
 	'pt-movepage-block-base-exists' => 'La pàgina base de destinació [[:$1]] ja existeix.',
@@ -1383,6 +1387,7 @@ Els errors sortiran indicats al [[Special:Log/pagetranslation|registre de traduc
 	'pt-movepage-started' => 'La pàgina base està traslladada.
 Comproveu el [[Special:Log/pagetranslation|registre de traducció de pàgines]] pels errors i el missatge de finalització.',
 	'pt-locked-page' => 'Aquesta pàgina està bloquejada perquè la pàgina a traduir està en un procés de trasllat.',
+	'pt-deletepage-reason' => 'Raó:',
 );
 
 /** Chechen (нохчийн)
@@ -8175,6 +8180,7 @@ Anledning: $1',
 	'tpt-discouraged-language' => 'Detta språk är inte bland de prioritetsspråk som är inställda av en översättningsadminstratör för denna sida.
 
 Anledning: $1',
+	'tpt-discouraged-language-reason' => 'Anledning: $1',
 	'tpt-priority-languages' => 'En översättningsadministratör har ställt in prioritetsspråken för denna grupp till $1.',
 	'tpt-render-summary' => 'Uppdaterar för att matcha den nya versionen av källpaketet',
 	'tpt-download-page' => 'Exportera sidan med översättningar',
@@ -8184,6 +8190,7 @@ Anledning: $1',
 	'tpt-aggregategroup-add-new' => 'Lägg till en ny samlad grupp',
 	'tpt-aggregategroup-new-name' => 'Namn:',
 	'tpt-aggregategroup-new-description' => 'Beskrivning (valfri):',
+	'tpt-aggregategroup-invalid-group' => 'Gruppen finns inte',
 	'pt-parse-open' => 'Obalanserad &lt;translate>-tagg.
 Översättningsmall: <pre>$1</pre>',
 	'pt-parse-close' => 'Obalanserad &lt;/translate>-tagg.
