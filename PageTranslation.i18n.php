@@ -5707,12 +5707,14 @@ $messages['ml'] = array(
 	'tpt-badtitle' => 'താളിനു നൽകിയ പേര് ($1) സാധുവായ തലക്കെട്ട് അല്ല',
 	'tpt-nosuchpage' => '$1 എന്ന താൾ നിലവിലില്ല.',
 	'tpt-edit-failed' => 'താൾ പുതുക്കാൻ കഴിഞ്ഞില്ല: $1',
+	'tpt-other-pages-title' => 'പൊട്ടിയ താളുകൾ',
 	'tpt-select-prioritylangs-reason' => 'കാരണം:',
 	'tpt-rev-discourage' => 'നിരുത്സാഹപ്പെടുത്തുക',
 	'tpt-rev-encourage' => 'പുനഃസ്ഥാപിക്കുക',
 	'translate-tag-translate-link-desc' => 'ഈ താൾ പരിഭാഷപ്പെടുത്തുക',
 	'tpt-translation-intro' => 'ഈ താൾ [[$2]] എന്ന താളിന്റെ <span class="plainlinks">[$1 പരിഭാഷ]</span> ആണ്, പരിഭാഷ $3% പൂർണ്ണമാണ്.',
 	'tpt-languages-legend' => 'മറ്റു ഭാഷകൾ:',
+	'tpt-languages-zero' => 'ഈ ഭാഷയിൽ പരിഭാഷ തുടങ്ങുക',
 	'tpt-target-page' => 'ഈ താൾ താങ്കൾക്ക് പുതുക്കാൻ കഴിയില്ല.
 ഈ താൾ [[$1]] എന്ന താളിന്റെ പരിഭാഷയാണ്, പരിഭാഷ പുതുക്കാൻ [$2 പരിഭാഷാ ഉപകരണം] ഉപയോഗിക്കുക.',
 	'tpt-discouraged-language-reason' => 'കാരണം: $1',
@@ -6962,9 +6964,12 @@ $messages['ps'] = array(
 	'tpt-old-pages-title' => 'د ژباړې مخونه',
 	'tpt-other-pages-title' => 'مات مخونه',
 	'tpt-select-prioritylangs-reason' => 'سبب:',
+	'tpt-sections-prioritylangs' => 'د لومړيتوب ژبې',
 	'translate-tag-translate-link-desc' => 'همدا مخ ژباړل',
 	'translate-tag-markthis' => 'همدا مخ د ژباړې لپاره په نښه کول',
 	'tpt-languages-legend' => 'نورې ژبې:',
+	'tpt-discouraged-language-reason' => 'سبب: $1',
+	'aggregategroups' => 'ډلې غونډول',
 	'tpt-aggregategroup-add' => 'ورګډول',
 	'tpt-aggregategroup-save' => 'خوندي کول',
 	'tpt-aggregategroup-new-name' => 'نوم:',
@@ -8249,10 +8254,25 @@ Anledning: $1',
 	'pt-deletepage-lang-logreason' => 'Del av översättningssida $1.',
 );
 
+/** Swahili (Kiswahili)
+ * @author Kwisha
+ */
+$messages['sw'] = array(
+	'tpt-select-prioritylangs-reason' => 'Sababu:',
+	'tpt-rev-discourage' => 'vunja moyo',
+	'tpt-rev-encourage' => 'rejesha',
+	'translate-tag-translate-link-desc' => 'Tafsiri ukurasa huu',
+	'tpt-languages-legend' => 'Lugha zingine:',
+	'tpt-discouraged-language-reason' => 'Sababu: $1',
+	'tpt-aggregategroup-add' => 'Ongeza',
+	'tpt-aggregategroup-save' => 'Hifadhi',
+);
+
 /** Tamil (தமிழ்)
  * @author Karthi.dr
  * @author Shanmugamp7
  * @author TRYPPN
+ * @author மதனாஹரன்
  */
 $messages['ta'] = array(
 	'pagetranslation' => 'பக்கத்தின் மொழிபெயர்ப்பு',
@@ -8277,6 +8297,7 @@ $messages['ta'] = array(
 	'tpt-edit-failed' => '$1 பக்கத்தை இற்றைப்படுத்த இயலவில்லை.',
 	'tpt-new-pages-title' => 'மொழிபெயர்ப்புக்குப் பரிந்துரைக்கப்பட்டுள்ள பக்கங்கள்',
 	'tpt-old-pages-title' => 'மொழிபெயர்க்கப்பட்டு வரும் பக்கங்கள்',
+	'tpt-other-pages-title' => 'உடைந்த பக்கங்கள்',
 	'tpt-select-prioritylangs-reason' => 'காரணம்:',
 	'tpt-sections-prioritylangs' => 'முன்னுரிமை தரப்பட்ட மொழிகள்',
 	'tpt-rev-mark' => 'மொழிபெயர்ப்புக்காக குறியிடு',

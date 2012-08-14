@@ -20432,6 +20432,7 @@ $messages['roa-tara'] = array(
 	'translate-showsub' => "Fa vedè {{PLURAL:$1|'u sottogruppe|le $1 sottogruppe}}.",
 	'translate-grouplisting' => "Quiste jè l'elenghe de tutte le gruppe traducibbele. <br />
 Cazze 'u nome d'u gruppe de le messagge pe vedè l'elenghe de le messagge da traducere.",
+	'translate-taction-translate' => 'Traduce',
 	'translate-page-settings-legend' => "'Mbostaziune",
 	'translate-page-group' => 'Gruppe',
 	'translate-page-language' => 'Lènghe',
@@ -20469,6 +20470,8 @@ Cazze 'u nome d'u gruppe de le messagge pe vedè l'elenghe de le messagge da tra
 	'translationstats' => 'Statisteche de le traduziune',
 	'translate-stats-edits' => 'Cangiaminde',
 	'translate-stats-users' => 'Tradutture',
+	'translate-stats-registrations' => 'Reggistraziune',
+	'translate-stats-reviews' => 'Reviste',
 	'translate-statsf-scale' => 'Granularità:',
 	'translate-statsf-scale-months' => 'Mise',
 	'translate-statsf-scale-weeks' => 'Sumáne',
@@ -20480,6 +20483,7 @@ Cazze 'u nome d'u gruppe de le messagge pe vedè l'elenghe de le messagge da tra
 	'translate-statsf-count-registrations' => 'Utinde nuève',
 	'translate-statsf-submit' => 'Andeprime',
 	'translate-tag-category' => 'Pàggene traducibbele',
+	'translate-sidebar-alltrans' => "Jndr'à l'otre lènghe",
 	'translations' => 'Tutte le traduziune',
 	'translations-summary' => "Mitte 'nu messagge sotte pe fa vedè tutte le traduziune disponibbele.",
 	'translate-translations-no-message' => '"$1" non g\'è \'nu messagge traducibbele',
@@ -20503,6 +20507,7 @@ Cazze 'u nome d'u gruppe de le messagge pe vedè l'elenghe de le messagge da tra
 	'translate-percentage-complete' => '% de Combletamende',
 	'translate-percentage-fuzzy' => 'Non aggiornete',
 	'translate-ls-submit' => 'Fà vedè le statisteche',
+	'translate-mgs-group' => "Messàgge d'u gruppe:",
 	'translate-mgs-submit' => 'Fà vedè le statisteche',
 	'translate-mgs-column-language' => 'Lènghe',
 	'supportedlanguages' => 'Lènghe supportate',
@@ -21374,16 +21379,21 @@ $messages['si'] = array(
 	'translate-taskui-view' => 'සියළු පණිවුඩ පෙන්වන්න',
 	'translate-taskui-untranslated' => 'පරිවර්තනය නොකල පණිවුඩ පෙන්වන්න',
 	'translate-taskui-optional' => 'අමතර පණිවුඩ පෙන්වන්න',
+	'translate-taskui-acceptqueue' => 'මට බාරගත හැකි පණිවුඩ පමණක්',
+	'translate-taskui-reviewall' => 'සියලු පරිවර්තන නිරීක්ෂණය කරන්න',
 	'translate-taction-translate' => 'පරිවර්තනය කරන්න',
 	'translate-taction-proofread' => 'සෝදුපත් බැලීම',
 	'translate-taction-lstats' => 'භාෂා සංඛ්‍යානයන්',
+	'translate-taction-mstats' => 'පණිවුඩ සමූහ සංඛ්‍යානය',
 	'translate-taction-export' => 'නිර්යාත කරන්න',
+	'translate-taction-disabled' => 'මෙම ක්‍රියාව මෙම විකියෙහි අක්‍රිය කර ඇත.',
 	'translate-page-no-such-language' => 'නම් කෙරුනු භාෂාව අනීතිකයි.',
 	'translate-page-no-such-group' => 'නම් කෙරුණු කාණ්ඩය අනීතිකයි.',
 	'translate-page-disabled' => "මෙම කාණ්ඩයේ මෙම භාෂාව සඳහා පරිවර්තන අක්‍රීය කොට ඇත.
 හේතුව:
 
 ''$1''",
+	'translate-language-disabled' => 'මෙම භාෂාව වෙත පරිවර්තනය අක්‍රිය කර ඇත.',
 	'translate-page-settings-legend' => 'සැකසුම්',
 	'translate-page-group' => 'කාණ්ඩය',
 	'translate-page-language' => 'භාෂාව',
@@ -21414,6 +21424,7 @@ $messages['si'] = array(
 	'translate-edit-committed' => 'මෘදුකාංගයෙහි වත්මන් පරිවර්තනය',
 	'translate-edit-warnings' => 'අසම්පුර්ණ පරිවර්තන පිලිබඳ අවවාද',
 	'translate-edit-tmsugs' => 'පෙර පරිවර්තන මතකයෙන්  සහ යන්ත්‍රික පරිවර්තනයෙන්',
+	'translate-edit-tmmatch-source' => 'පරිවර්තන මූලාශ්‍ර පාඨය: $1',
 	'translate-edit-tmmatch' => '$1% ගැලපේ',
 	'translate-use-suggestion' => 'මෙම යෝජනාව සමඟ වත්මන් පරිවර්තනය ප්‍රතිස්ථාපනය කරන්න.',
 	'translate-edit-tab-list' => 'පණිවුඩ ලැයිස්තුව',
@@ -21464,6 +21475,7 @@ $messages['si'] = array(
 	'right-translate-manage' => 'පණිවුඩ සමූහයන් කළමනාකරණය කරන්න',
 	'action-translate-manage' => 'පණිවුඩ කාණ්ඩ කළමනාකරණය කරන්න',
 	'right-translate-import' => 'මාර්ගඅපගත පරිවර්තන ආයාත කරන්න',
+	'action-translate-import' => 'මාර්ගඅපගත පරිවර්තන ආයාත කරන්න',
 	'right-translate-messagereview' => 'පරිවර්තන නිරීක්ෂණය කරන්න',
 	'right-translate-groupreview' => 'පණිවුඩ සමූහයන්වල කාර්යගැලීමේ තත්ත්වය වෙනස් කරන්න',
 	'translate-rc-translation-filter' => 'පරිවර්තන පෙරන්න:',
@@ -23457,6 +23469,7 @@ Mest användbar för korrekturläsningsuppgifter.',
 );
 
 /** Swahili (Kiswahili)
+ * @author Kwisha
  * @author Lloffiwr
  * @author Stephenwanjau
  */
@@ -23494,6 +23507,7 @@ $messages['sw'] = array(
 	'translate-statsf-width' => 'Upana kwa piseli:',
 	'translate-statsf-height' => 'Urefu kwa piseli:',
 	'translate-statsf-days' => 'Tarehe ya kuanza',
+	'translate-statsf-start' => 'Tarehe ya kuanza:',
 	'translate-statsf-scale-months' => 'Miezi',
 	'translate-statsf-scale-weeks' => 'Wiki',
 	'translate-statsf-scale-days' => 'Masiku',
@@ -23502,6 +23516,7 @@ $messages['sw'] = array(
 	'translate-statsf-count-edits' => 'Idadi ya hariri',
 	'translate-statsf-count-registrations' => 'Watumiaji wapya',
 	'translate-tag-category' => 'Kurasa zinaoweza kuharirika',
+	'translate-sidebar-alltrans' => 'Katika lugha nyingine',
 	'translations' => 'Tafsiri zote',
 	'translate-translations-fieldset-title' => 'Ujumbe',
 	'translate-translations-messagename' => 'Jina:',
@@ -23529,6 +23544,8 @@ $messages['sw'] = array(
 	'supportedlanguages-count' => '$1 {{PLURAL:$1|language|lugha}} kwa jumla.',
 	'translate-save' => 'Hifadhi ($1)',
 	'translate-jssti-add' => 'Ongeza kwa orodha',
+	'translate-smg-right' => 'Mabadiliko yanayoingia',
+	'translate-manage-import-new' => 'Ujumbe mpya $1',
 	'translate-manage-action-ignore' => 'Puuza',
 	'translate-import-from-url' => 'KISARA kuelekea kwa faili:',
 	'translate-import-from-wiki' => 'Faili katika hii wiki:',
@@ -23551,7 +23568,9 @@ $messages['sw'] = array(
 	'translate-messagereview-done' => 'Imekubaliwa',
 	'api-error-invalidrevision' => 'Tafsiri haikupatikana',
 	'api-error-unknownmessage' => 'Ujumbe haukupatikana',
+	'translate-workflowstatus' => 'Hali: $1',
 	'translate-stats-workflow' => 'Hali',
+	'translate-dynagroup-recent-label' => 'fasiri za hivi karibuni',
 	'translate-gethelp' => 'Msaada',
 );
 
@@ -23572,6 +23591,7 @@ $messages['szl'] = array(
  * @author TRYPPN
  * @author Trengarasu
  * @author செல்வா
+ * @author மதனாஹரன்
  */
 $messages['ta'] = array(
 	'translate' => 'மொழி பெயர்ப்பு',
@@ -23684,12 +23704,16 @@ $messages['ta'] = array(
 	'translate-tag-fuzzy-comment' => 'பரிசீலனை $2 வில் [[User:$1|$1]]  ஆல் மாற்றப்பட்ட விளக்கங்கள்',
 	'translate-sidebar-alltrans' => 'மற்ற மொழிகளில்',
 	'translations' => 'எல்லா மொழிபெயர்ப்புகளும்',
+	'translate-translations-no-message' => '"$1" ஒரு மொழிபெயர்க்கத்தக்க செய்தியல்ல',
+	'translate-translations-none' => '"$1" என்பதற்கு எந்தவொரு மொழிபெயர்ப்பும் இல்லை',
+	'translate-translations-count' => '{{PLURAL:$1|ஒரு மொழிபெயர்ப்புக் கண்டுபிடிக்கப்பட்டது|$1 மொழிபெயர்ப்புகள் கண்டுபிடிக்கப்பட்டன}}.',
 	'translate-translations-fieldset-title' => 'செய்தி',
 	'translate-translations-messagename' => 'பெயர்:',
 	'translate-translations-project' => 'திட்டம்:',
 	'translate-translations-history-short' => 'வர',
 	'languagestats' => 'மொழி குறித்த புள்ளிவிவரங்கள்',
 	'languagestats-recenttranslations' => 'அண்மைய மொழிபெயர்ப்புகள்',
+	'translate-langstats-incomplete' => 'இப்பக்கத்திலுள்ள புள்ளிவிபரங்களுள் சில முழுமையாக இல்லை. இன்னும் புள்ளிவிபரங்களைப் பெறுவதற்குத் தயவு செய்து மீண்டும் ஏற்றுங்கள்.',
 	'translate-langstats-expand' => 'விரிவாக்குக',
 	'translate-langstats-collapse' => 'சுருக்குக',
 	'translate-langstats-expandall' => 'அனைத்தையும் விரிவாக்குக',
@@ -23711,15 +23735,18 @@ $messages['ta'] = array(
 	'supportedlanguages' => 'ஆதரிக்கப்பட்ட மொழிகள்',
 	'supportedlanguages-portallink' => '[$1] $2 - $3',
 	'supportedlanguages-recenttranslations' => 'அண்மைய மொழிபெயர்ப்புகள்',
+	'supportedlanguages-count' => 'மொத்தமாக $1 {{PLURAL:$1|மொழி|மொழிகள்}}.',
 	'translate-save' => 'சேமி ($1)',
 	'translate-jssti-add' => 'பட்டியலில் சேர்',
 	'managemessagegroups' => 'தகவல் குழு மேலாண்மை',
+	'translate-manage-import-diff' => 'செய்தி $1 | செயல்கள்: $2',
 	'translate-manage-import-new' => 'புதிய செய்தி $1',
 	'translate-manage-import-deleted' => 'நீக்கப்பட்ட செய்தி $1',
 	'translate-manage-action-import' => 'இறக்கு',
 	'translate-manage-action-conflict' => 'இறக்கு மற்றும் மயக்குறு',
 	'translate-manage-action-ignore' => 'புறக்கணி',
 	'translate-manage-action-fuzzy' => 'இறக்கு மற்றும் மயக்குறு மொழிபெயர்ப்புகள்',
+	'translate-manage-import-summary' => 'வெளி மூலத்திலிருந்து ஒரு புதிய பதிப்பை உள்ளிடுகின்றது',
 	'translate-manage-fuzzy-summary' => 'செய்தி வரையறை மாறியுள்ளது.',
 	'importtranslations' => 'மொழிபெயர்ப்புகளை இறக்கு',
 	'translate-import-from-url' => 'இந்தக் கோப்பிற்கான URL',
@@ -23729,6 +23756,7 @@ $messages['ta'] = array(
 	'translate-import-err-type-not-supported' => 'கோப்பை ஏற்ற இயலவில்லை: <code>$1</code> முறை ஏற்கப்படாதது',
 	'translate-import-err-dl-failed' => 'கொண்டுவர இயலாத கோப்பு: $1',
 	'translate-import-err-ul-failed' => 'கோப்பு ஏற்றம் வெற்றியடையவில்லை',
+	'translate-import-err-invalid-title' => 'வழங்கப்பட்ட கோப்பின் பெயர் <nowiki>$1</nowiki> தவறானது.',
 	'translate-import-err-warnings' => 'இந்தக் கோப்பு சரியாக அமைக்கப்பெறவில்லை. உங்கள் தொகுப்பான் msgctxt புலங்களை நீக்காமல் இருக்க உறுதிசெய்யவும். விரிகுறிப்புகள்: $1',
 	'translate-js-summary' => 'சுருக்கம்:',
 	'translate-js-save' => 'சேமி',

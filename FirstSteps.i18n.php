@@ -2256,6 +2256,8 @@ $messages['ml'] = array(
 	'translate-fs-settings-submit' => 'ക്രമീകരണങ്ങൾ ഓർത്തുവെയ്ക്കുക',
 	'translate-fs-userpage-submit' => 'എന്റെ ഉപയോക്തൃ താൾ സൃഷ്ടിക്കുക',
 	'translate-fs-userpage-done' => 'കൊള്ളാം! താങ്കൾക്കിപ്പോൾ ഒരു ഉപയോക്തൃതാൾ ഉണ്ട്.',
+	'translate-fs-permissions-planguage' => 'പ്രാഥമികഭാഷ:',
+	'translate-fs-permissions-submit' => 'അഭ്യർത്ഥന അയയ്ക്കുക',
 );
 
 /** Marathi (मराठी)
@@ -3155,15 +3157,26 @@ Om du inte vill få några nyhetsbrev så kan kan välja bort dem under fliken "
 );
 
 /** Swahili (Kiswahili)
+ * @author Kwisha
  * @author Stephenwanjau
  */
 $messages['sw'] = array(
+	'firststeps' => 'Hatua za kwanza',
 	'translate-fs-pagetitle-done' => '- imefanyika!',
+	'translate-fs-signup-title' => 'Jisajili',
+	'translate-fs-target-title' => 'Anza kutafsiri!',
+	'translate-fs-email-title' => 'Dhibitisha anwani yako ya barua pepe',
+	'translate-fs-selectlanguage' => 'Chagua lugha',
+	'translate-fs-settings-planguage' => 'Lugha ya msingi:',
+	'translate-fs-settings-submit' => 'Hifadhi mapendekezo',
+	'translate-fs-permissions-planguage' => 'Lugha ya msingi:',
+	'translate-fs-permissions-submit' => 'Tuma ombi',
 );
 
 /** Tamil (தமிழ்)
  * @author Karthi.dr
  * @author Shanmugamp7
+ * @author மதனாஹரன்
  */
 $messages['ta'] = array(
 	'firststeps' => 'முதற் படிகள்',
@@ -3181,7 +3194,9 @@ $messages['ta'] = array(
 	'translate-fs-settings-submit' => 'விருப்பங்களை சேமி',
 	'translate-fs-userpage-level-N' => 'எனது தாய்மொழி',
 	'translate-fs-userpage-level-5' => 'நான் தொழில்முறையில் மொழிபெயர்க்கும் மொழி',
+	'translate-fs-userpage-level-1' => 'எனக்குச் சிறிதளவு தெரியும்',
 	'translate-fs-userpage-submit' => 'என் பயனர் பக்கத்தை உருவாக்கு',
+	'translate-fs-userpage-done' => 'நன்கே முடிந்தது! நீங்கள் இப்போது ஒரு பயனர் பக்கத்தைக் கொண்டுள்ளீர்கள்.',
 	'translate-fs-permissions-planguage' => 'முதன்மை மொழி:',
 	'translate-fs-permissions-submit' => 'வேண்டுகோளை அனுப்பவும்',
 );
