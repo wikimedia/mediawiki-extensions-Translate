@@ -48,7 +48,7 @@ class MagicExport extends Maintenance {
 	}
 
 	/**
-	 * Itterate through all groups, loading current data from the existing
+	 * Iterate through all groups, loading current data from the existing
 	 * extension and opening message files for message output.
 	 *  - If the group does not define a special page alias file or magic
 	 *    words file, or that file does not exist, it is ignored silently.
@@ -206,7 +206,8 @@ PHP
 
 			// Write data to handles.
 			$namesEn = LanguageNames::getNames( 'en' );
-				$namesNative = Language::getLanguageNames();
+			$namesNative = Language::getLanguageNames();
+
 			foreach ( $this->handles as $group => $handle ) {
 				// Find messages to write to this handle.
 				$messagesOut = array();
