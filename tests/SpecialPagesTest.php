@@ -16,8 +16,7 @@ require_once( __DIR__ . '/SuperUser.php' );
 class SpecialPagesTest extends MediaWikiTestCase {
 
 	public function specialPages() {
-		global $IP;
-		require( '../_autoload.php' );
+		require( __DIR__ . '/../_autoload.php' );
 		global $wgSpecialPages;
 
 		$pages = array();
