@@ -93,7 +93,7 @@
 				form.find( '.mw-translate-next' ).click( function () {
 					callbacks.next && callbacks.next();
 				} );
-				form.find( '.mw-translate-skip,' ).click( function () {
+				form.find( '.mw-translate-skip' ).click( function () {
 					callbacks.close && callbacks.close();
 					callbacks.next && callbacks.next();
 				} );
