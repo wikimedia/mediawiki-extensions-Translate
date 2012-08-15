@@ -16,6 +16,24 @@
       "revId": "2dbbf14b3087dc9f9495facf6b641a560b5e5902",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6Zo\u003d",
+        "filename": "api/ApiTranslateInfo.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 95
+      },
+      "writtenOn": "2012-08-15T10:38:02Z",
+      "side": 1,
+      "message": "It\u0027s imitating ApiImageInfo - presumably whitespace is preserved when the description is output.",
+      "parentUuid": "AAAARX//6cA\u003d",
+      "revId": "2dbbf14b3087dc9f9495facf6b641a560b5e5902",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
