@@ -90,6 +90,8 @@ class MessageHandle {
 		if ( $code === '' || $this->isDoc() ) {
 			return $wgContLang->getCode();
 		}
+
+		return $code;
 	}
 
 	/**
@@ -113,7 +115,7 @@ class MessageHandle {
 	/**
 	 * Returns all message group ids this message belongs to.
 	 * The primary message group id is always the first one.
-	 * If the handle does not correspond to any message, the returned array 
+	 * If the handle does not correspond to any message, the returned array
 	 * is empty.
 	 * @return array
 	 */

@@ -1289,13 +1289,13 @@ class TranslationHelpers {
 	/**
 	 * Checks whether the given service has exceeded failure count
 	 * @param $service string
-	 * @return bool
+	 * @throws TranslationHelperException
 	 */
 	public static function checkTranslationServiceFailure( $service ) {
 		$key = wfMemckey( "translate-service-$service" );
 		$value = wfGetCache( CACHE_ANYTHING )->get( $key );
 		if ( !is_string( $value ) ) {
-			return false;
+			return;
 		}
 		list( $count, $failed ) = explode( '|', $value, 2 );
 
@@ -1304,13 +1304,13 @@ class TranslationHelpers {
 				error_log( "Translation service $service (was) restored" );
 			}
 			wfGetCache( CACHE_ANYTHING )->delete( $key );
-			return false;
+			return;
 		} elseif ( $failed + self::$serviceFailurePeriod < wfTimestamp() ) {
 			/* We are in suspicious mode and one failure is enough to update
 			 * failed timestamp. If the service works however, let's use it.
 			 * Previous failures are forgotten after another failure period
 			 * has passed */
-			return false;
+			return;
 		}
 
 		if ( $count >= self::$serviceFailureCount ) {

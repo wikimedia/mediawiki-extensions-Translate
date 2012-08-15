@@ -55,13 +55,13 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		if ( $this->getUser()->isLoggedIn() ) {
 			$out->addHtml( $this->getHeader( $step_message, 'done' ) );
 			return $step;
-		} else {
-			// Go straight to create account (or login) page
-			$create = SpecialPage::getTitleFor( 'Userlogin' );
-			$returnto = $this->getTitle()->getPrefixedText();
-			$params = array( 'returnto' => $returnto , 'type' => 'signup' );
-			$out->redirect( $create->getLocalUrl( $params ) );
 		}
+
+		// Go straight to create account (or login) page
+		$create = SpecialPage::getTitleFor( 'Userlogin' );
+		$returnto = $this->getTitle()->getPrefixedText();
+		$params = array( 'returnto' => $returnto , 'type' => 'signup' );
+		$out->redirect( $create->getLocalUrl( $params ) );
 	}
 
 	protected function showSettings( $step ) {
