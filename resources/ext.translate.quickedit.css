@@ -25,7 +25,7 @@
 
 .mw-sp-translate-edit-fields fieldset {
 	line-height: normal;
-	margin: 0px;
+	margin: 0;
 	border: 1px solid #DBDBDB;
 	/* Browsers suck
 	max-height: 250px; */
@@ -68,7 +68,7 @@
 }
 
 .mw-translate-edit-deftext {
-	font-family: monospace, "Courier New";
+	font-family: monospace, "Courier New", Sans;
 }
 
 .mw-translate-edit-area {
@@ -100,7 +100,7 @@
 .mw-translate-edit-tmsugs { background-color: #C0F9B6; }
 
 .mw-sp-translate-latestchange {
-	padding-bottom: 0px;
+	padding-bottom: 0;
 }
 
 

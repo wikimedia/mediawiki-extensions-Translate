@@ -285,7 +285,6 @@
 				}
 			}
 			alert( mw.msg( 'translate-js-nonext' ) );
-			return;
 		},
 	
 		inlineEditor: function () {
