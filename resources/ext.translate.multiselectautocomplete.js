@@ -7,7 +7,7 @@
  * Credits: http://jqueryui.com/demos/autocomplete/#multiple
  */
 jQuery( function( $ ) {
-	"use strict"
+	"use strict";
 	
 	$.widget( "ui.multiselectautocomplete", {
 		options: { 

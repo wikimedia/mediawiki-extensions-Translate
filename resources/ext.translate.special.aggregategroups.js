@@ -32,7 +32,7 @@ jQuery( document ).ready( function ( $ ) {
 					'class': 'tp-aggregate-remove-button',
 				};
 
-				var $span = $( '<span>', spanAttr )
+				var $span = $( '<span>', spanAttr );
 				
 				var $ol = $( '#mw-tpa-grouplist-' + parentId );
 				$ol.append( $( '<li>' ).append( $a.after( $span ) ) );
