@@ -181,11 +181,10 @@ class YamlFFS extends SimpleFFS {
 				continue;
 			}
 
-			foreach ( $plurals as $key => $value ) {
-
-				$path = explode( '.', $key );
+			foreach ( $plurals as $keyPlural => $valuePlural ) {
+				$path = explode( '.', $keyPlural );
 				if ( count( $path ) == 1 ) {
-					$array[$key] = $value;
+					$array[$keyPlural] = $valuePlural;
 					continue;
 				}
 
@@ -212,7 +211,7 @@ class YamlFFS extends SimpleFFS {
 					 */
 					if ( count( $path ) === 1 ) {
 						$lastKey = array_shift( $path );
-						$pointer[$lastKey] = $value;
+						$pointer[$lastKey] = $valuePlural;
 					}
 				} while ( count( $path ) );
 			}
