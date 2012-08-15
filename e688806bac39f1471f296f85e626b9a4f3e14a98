@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//6X4\u003d",
+        "filename": "utils/MessageHandle.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:10:15Z",
+      "side": 1,
+      "message": "My bug, should return $code.",
+      "revId": "e688806bac39f1471f296f85e626b9a4f3e14a98",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6Xw\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1320,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:10:15Z",
+      "side": 1,
+      "message": "Nothing seems to be checking the return value, so we can drop the return values.",
+      "revId": "e688806bac39f1471f296f85e626b9a4f3e14a98",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
