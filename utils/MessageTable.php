@@ -125,7 +125,7 @@ class MessageTable {
 				$attributes['class'] = 'untranslated';
 			}
 
-			wfRunHooks( 'TranslateFormatMessageBeforeTable', array( &$message, $translation, $original, &$attributes ) );
+			wfRunHooks( 'TranslateFormatMessageBeforeTable', array( &$message, $m, $this->group, $targetLang, &$attributes ) );
 
 			global $wgLang;
 			$niceTitle = htmlspecialchars( $wgLang->truncate( $title->getPrefixedText(), -35 ) );

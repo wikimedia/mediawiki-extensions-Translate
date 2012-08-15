@@ -38,9 +38,10 @@ to add events to the Translate extension.
 	&$modules: Array of module names to be loaded
 
 'TranslateFormatMessageBeforeTable': Provides an opportunity to manipulate the display of translation strings (messages) in the main table
-	&$message: The message that will be displayed
-	$translation: The current translation (or null if not yet translated)
-	$original: The original (untranslated) message
+	&$message: The message (string) that will be displayed
+	$m: ThinMessage object representing the source object, useful for $m->original() and $m->translation()
+	$group: The source message group
+	$targetLanguage: The language for which translations are being shown
 	&$attributes: An array of attributes that will
 
 'TranslateGetBoxes': Provides an opportunity to add or remove "boxes" (translation helpers) from the translation interface
