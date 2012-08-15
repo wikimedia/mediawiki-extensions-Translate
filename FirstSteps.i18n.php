@@ -3337,7 +3337,7 @@ $messages['ug-arab'] = array(
 	'translate-fs-settings-title' => 'مايىللىقىڭىزنى سەپلەڭ',
 	'translate-fs-userpage-title' => 'ئىشلەتكۈچى بېتىڭىزنى قۇرۇڭ',
 	'translate-fs-permissions-title' => 'تەرجىمە قىلىش ھوقۇق ئىلتىماسى',
-	'translate-fs-target-title' => 'تەرجىمە قىلىشنى باشلا!',
+	'translate-fs-target-title' => 'تەرجىمە قىلىشنى باشلاڭ!',
 	'translate-fs-email-title' => 'ئېلخەت مەنزىلىڭىزنى جەزملەڭ',
 	'translate-fs-intro' => "{{SITENAME}} باشلانغۇچ يېتەكچىسىگە مەرھابا.
 سىزنى قانداق قىلىپ تەرجىمان بولۇشقا يېتەكلەيدۇ.

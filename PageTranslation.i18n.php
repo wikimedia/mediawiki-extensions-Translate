@@ -464,7 +464,7 @@ $messages['ar'] = array(
 	'tpt-new-pages' => '{{PLURAL:$1|هذه الصفحة تحتوي|هذه الصفحات تحتوي}} على نص بوسوم ترجمة، لكن لا نسخة من {{PLURAL:$1|هذه الصفحة|هذه الصفحات}} معلمة حاليا للترجمة.',
 	'tpt-old-pages' => 'إحدى نسخ {{PLURAL:$1||هذه الصفحة|هاتان الصفحتان|هذه الصفحات}} عُلّمت للترجمة.',
 	'tpt-rev-unmark' => 'إزالة هذه الصفحة من الترجمة',
-	'tpt-rev-encourage' => 'استرجع',
+	'tpt-rev-encourage' => 'استرجاع',
 	'translate-tag-translate-link-desc' => 'ترجم هذه الصفحة',
 	'translate-tag-markthis' => 'علّم هذه الصفحة للترجمة',
 	'translate-tag-markthisagain' => 'هذه الصفحة بها <span class="plainlinks">[$1 تغيير]</span> منذ تم <span class="plainlinks">[$2 تعليمها للترجمة]</span> لآخر مرة.',
@@ -2578,6 +2578,7 @@ Nurjumised logitakse [[Special:Log/pagetranslation|lehekülgede tõlkelogisse]] 
 /** Basque (euskara)
  * @author An13sa
  * @author Kobazulo
+ * @author පසිඳු කාවින්ද
  */
 $messages['eu'] = array(
 	'pagetranslation' => 'Orrialdearen itzulpena',
@@ -2592,6 +2593,7 @@ Izena: $1',
 	'translate-tag-translate-link-desc' => 'Itzuli orri hau',
 	'tpt-languages-legend' => 'Beste hizkuntzak:',
 	'tpt-discouraged-language-reason' => 'Arrazoia: $1',
+	'tpt-aggregategroup-save' => 'Gorde',
 	'tpt-aggregategroup-new-name' => 'Izena:',
 	'pt-movepage-list-translation' => 'Itzulpen orrialdeak',
 	'pt-movepage-list-other' => 'Bestelako azpiorrialdeak',
@@ -3148,6 +3150,16 @@ $messages['fur'] = array(
 	'translate-tag-translate-link-desc' => 'Tradûs cheste pagjine',
 	'tpt-languages-legend' => 'Altris lenghis:',
 	'pt-movepage-reason' => 'Reson:',
+);
+
+/** Irish (Gaeilge)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['ga'] = array(
+	'tpt-select-prioritylangs-reason' => 'Fáth:',
+	'tpt-aggregategroup-save' => 'Sábháil',
+	'tpt-aggregategroup-new-name' => 'Ainm:',
+	'pt-deletepage-reason' => 'Fáth:',
 );
 
 /** Galician (galego)
