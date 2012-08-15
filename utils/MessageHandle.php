@@ -90,6 +90,8 @@ class MessageHandle {
 		if ( $code === '' || $this->isDoc() ) {
 			return $wgContLang->getCode();
 		}
+
+		return '';
 	}
 
 	/**

@@ -1316,6 +1316,8 @@ class TranslationHelpers {
 		if ( $count >= self::$serviceFailureCount ) {
 			throw new TranslationHelperException( "web service $service is temporarily disabled" );
 		}
+
+		// @todo Should have a return value?
 	}
 
 	/**
