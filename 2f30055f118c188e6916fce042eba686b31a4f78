@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//6Xc\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:29:11Z",
+      "side": 1,
+      "message": "Spaces",
+      "revId": "2f30055f118c188e6916fce042eba686b31a4f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6XY\u003d",
+        "filename": "resources/ext.translate.selecttoinput.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:29:11Z",
+      "side": 1,
+      "message": "Spaces the full file",
+      "revId": "2f30055f118c188e6916fce042eba686b31a4f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6XQ\u003d",
+        "filename": "resources/ext.translate.special.aggregategroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:29:11Z",
+      "side": 1,
+      "message": "class doesn\u0027t need to be quoted.",
+      "revId": "2f30055f118c188e6916fce042eba686b31a4f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6XU\u003d",
+        "filename": "resources/ext.translate.special.aggregategroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:29:11Z",
+      "side": 1,
+      "message": "Spaces",
+      "revId": "2f30055f118c188e6916fce042eba686b31a4f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6XM\u003d",
+        "filename": "resources/ext.translate.special.aggregategroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:29:11Z",
+      "side": 1,
+      "message": "Should not remove spaces",
+      "revId": "2f30055f118c188e6916fce042eba686b31a4f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6XI\u003d",
+        "filename": "resources/ext.translate.special.aggregategroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:29:11Z",
+      "side": 1,
+      "message": "spaces",
+      "revId": "2f30055f118c188e6916fce042eba686b31a4f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6XE\u003d",
+        "filename": "resources/ext.translate.special.aggregategroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:29:11Z",
+      "side": 1,
+      "message": "Spaces",
+      "revId": "2f30055f118c188e6916fce042eba686b31a4f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6XA\u003d",
+        "filename": "resources/ext.translate.special.aggregategroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:29:11Z",
+      "side": 1,
+      "message": "Spaces",
+      "revId": "2f30055f118c188e6916fce042eba686b31a4f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6W8\u003d",
+        "filename": "resources/jquery.autoresize.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:29:11Z",
+      "side": 1,
+      "message": "Just make it $( \u0027\u003cspan\u003e\u0027 ). Upstream is missing btw.",
+      "revId": "2f30055f118c188e6916fce042eba686b31a4f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6W4\u003d",
+        "filename": "resources/jquery.autoresize.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:29:11Z",
+      "side": 1,
+      "message": "Spaces",
+      "revId": "2f30055f118c188e6916fce042eba686b31a4f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6Ws\u003d",
+        "filename": "resources/jquery.form.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:29:11Z",
+      "side": 1,
+      "message": "No point making changes to libs that are pulled from elsewhere",
+      "revId": "2f30055f118c188e6916fce042eba686b31a4f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6Wc\u003d",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:29:11Z",
+      "side": 1,
+      "message": "Shouldn\u0027t have a break.",
+      "revId": "2f30055f118c188e6916fce042eba686b31a4f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6WY\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T12:29:11Z",
+      "side": 1,
+      "message": "\u0027•\u0027 should be replaced with $symbol",
+      "revId": "2f30055f118c188e6916fce042eba686b31a4f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
