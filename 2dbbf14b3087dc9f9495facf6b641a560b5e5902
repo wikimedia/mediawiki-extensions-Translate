@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//6cA\u003d",
+        "filename": "api/ApiTranslateInfo.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T09:02:01Z",
+      "side": 1,
+      "message": "Where did this whitespace come from?",
+      "revId": "2dbbf14b3087dc9f9495facf6b641a560b5e5902",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
