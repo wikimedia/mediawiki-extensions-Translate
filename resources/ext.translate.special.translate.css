@@ -18,9 +18,8 @@ table.mw-sp-translate-subgroup {
 
 a.mw-sp-showmore {
 	display: block;
-	margin: 0.5em;
-	margin-left: 2em;
-	font-style: oblique;
+    margin: 0.5em 0.5em 0.5em 2em;
+    font-style: oblique;
 	cursor: pointer;
 }
 

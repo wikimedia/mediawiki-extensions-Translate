@@ -6,8 +6,7 @@
 
 .mw-sp-translate-table th {
 	background-color: #b2b2ff;
-	border-style: solid;
-	border-width: 1px;
+    border: 1px solid;
 }
 
 .mw-sp-translate-table tr.orig {
@@ -37,9 +36,7 @@
 
 .mw-sp-translate-table > tbody > tr > * {
 	vertical-align: top;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #909090;
+    border: 1px solid #909090;
 }
 
 .mw-translate-messagereviewbutton {
