@@ -29,11 +29,11 @@ jQuery( document ).ready( function ( $ ) {
 				var $a = $( '<a>', aAttr ).text( subgroupName );
 
 				var spanAttr = {
-					'class': 'tp-aggregate-remove-button',
-				};
+					'class': 'tp-aggregate-remove-button'
+                };
 
-				var $span = $( '<span>', spanAttr )
-				
+				var $span = $('<span>', spanAttr)
+
 				var $ol = $( '#mw-tpa-grouplist-' + parentId );
 				$ol.append( $( '<li>' ).append( $a.after( $span ) ) );
 
@@ -45,8 +45,8 @@ jQuery( document ).ready( function ( $ ) {
 
 		var params = $.extend( getApiParams( $target ), {
 			'do' : 'associate',
-			group: subgroupId,
-		} );
+			group: subgroupId
+        } );
 		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 	}
 
@@ -65,12 +65,12 @@ jQuery( document ).ready( function ( $ ) {
 					.appendTo( $select );
 				$target.parent( 'li' ).remove();
 			}
-		};
-		
-		var params = $.extend( getApiParams( $target ), {
+        }
+
+        var params = $.extend( getApiParams( $target ), {
 			'do' : 'dissociate',
-			group: $target.data( 'groupid' ),
-		} );
+			group: $target.data( 'groupid' )
+        } );
 		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 	}
 

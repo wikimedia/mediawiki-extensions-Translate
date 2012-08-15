@@ -131,7 +131,7 @@ foreach ( $groups as &$group ) {
 
 		STDOUT( "Modify time for $code: " . wfTimestamp( TS_ISO_8601, $ts ) );
 
-		$count = $cs->checkConflicts( $code, $start, $end, $ts );
+		$cs->checkConflicts( $code, $start, $end, $ts );
 	}
 
 	unset( $group );

@@ -62,7 +62,6 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 		$pageInfo = TranslateUtils::getContents( $titles, $namespace );
 
 		$result = $this->getResult();
-		$pages = array();
 		$count = 0;
 
 		foreach ( $pageInfo as $key => $info ) {

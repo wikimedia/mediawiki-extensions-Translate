@@ -137,6 +137,7 @@
 		createClone: function() {
 
 			var el = this.el,
+				// FIXME: The empty tag doesn't work in some browsers.
 				clone = this.nodeName === 'textarea' ? el.clone() : $('<span/>');
 
 			this.clone = clone;
@@ -264,7 +265,7 @@
 
 		injectClone: function() {
 			(
-				autoResize.cloneContainer ||
+                autoResize.cloneContainer ||
 				(autoResize.cloneContainer = $('<arclones/>').appendTo('body'))
 			).append(this.clone);
 		}

@@ -11,7 +11,7 @@ jQuery( function( $ ) {
 	
 	$.widget( "ui.multiselectautocomplete", {
 		options: { 
-			inputbox: null, // a jQuery selector for the input box where selections are written.
+			inputbox: null // a jQuery selector for the input box where selections are written.
 			// @TODO can have more options.
 		},
 		_create: function() {

@@ -271,9 +271,9 @@ $.fn.ajaxSubmit = function(options) {
 				t ? form.setAttribute('target', t) : $form.removeAttr('target');
 				$(extraInputs).remove();
 			}
-		};
+        }
 
-		if (opts.forceSync)
+        if (opts.forceSync)
 			doSubmit();
 		else
 			setTimeout(doSubmit, 10); // this lets dom updates render
@@ -365,8 +365,8 @@ $.fn.ajaxSubmit = function(options) {
 			else
 				doc = (new DOMParser()).parseFromString(s, 'text/xml');
 			return (doc && doc.documentElement && doc.documentElement.tagName != 'parsererror') ? doc : null;
-		};
-	};
+		}
+	}
 };
 
 /**
@@ -670,6 +670,6 @@ function log() {
 		else if (window.opera && window.opera.postError)
 			window.opera.postError(msg);
 	}
-};
+}
 
 })(jQuery);

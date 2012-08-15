@@ -51,7 +51,7 @@ class ApiTranslationReview extends ApiBase {
 			'trr_revision' => $revision->getId(),
 		);
 		$options = array( 'IGNORE' );
-		$res = $dbw->insert( $table, $row, __METHOD__, $options );
+		$dbw->insert( $table, $row, __METHOD__, $options );
 		if ( !$dbw->affectedRows() ) {
 			$this->setWarning( 'Already marked as reviewed by you' );
 		} else {

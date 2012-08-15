@@ -72,7 +72,7 @@ class ApiGroupReview extends ApiBase {
 			'tgr_state' => $targetState,
 		);
 		$index = array( 'tgr_group', 'tgr_language' );
-		$res = $dbw->replace( $table, array( $index ), $row, __METHOD__ );
+		$dbw->replace( $table, array( $index ), $row, __METHOD__ );
 
 		$logger = new LogPage( 'translationreview' );
 		$logParams = array(
