@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//6S8\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T13:16:51Z",
+      "side": 1,
+      "message": "Still spaces :(",
+      "revId": "1bc9b96390311e061c7e265d6b22209c57404ae1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6S0\u003d",
+        "filename": "resources/jquery.autoresize.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T13:16:51Z",
+      "side": 1,
+      "message": "Just fix it? Upstream seems dead. $(\u0027\u003cspan\u003e\u0027);",
+      "revId": "1bc9b96390311e061c7e265d6b22209c57404ae1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//6Sk\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-15T13:16:51Z",
+      "side": 1,
+      "message": "Restore the line above and replace \u0027•\u0027 with $symbol",
+      "revId": "1bc9b96390311e061c7e265d6b22209c57404ae1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
