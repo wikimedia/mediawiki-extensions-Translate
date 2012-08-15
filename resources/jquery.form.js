@@ -271,7 +271,7 @@ $.fn.ajaxSubmit = function(options) {
 				t ? form.setAttribute('target', t) : $form.removeAttr('target');
 				$(extraInputs).remove();
 			}
-		};
+		}
 
 		if (opts.forceSync)
 			doSubmit();
@@ -365,8 +365,8 @@ $.fn.ajaxSubmit = function(options) {
 			else
 				doc = (new DOMParser()).parseFromString(s, 'text/xml');
 			return (doc && doc.documentElement && doc.documentElement.tagName != 'parsererror') ? doc : null;
-		};
-	};
+		}
+	}
 };
 
 /**
@@ -670,6 +670,6 @@ function log() {
 		else if (window.opera && window.opera.postError)
 			window.opera.postError(msg);
 	}
-};
+}
 
 })(jQuery);

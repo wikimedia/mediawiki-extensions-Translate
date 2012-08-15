@@ -39,7 +39,6 @@ class TranslateEditAddons {
 		$collection = $group->initCollection( $group->getSourceLanguage() );
 		$collection->filter( 'optional' );
 		$keys = $collection->getMessageKeys();
-		$count = count( $keys );
 
 		$key = strtolower( strtr( $key, ' ', '_' ) );
 
@@ -122,7 +121,7 @@ class TranslateEditAddons {
 	 * Hook: AlternateEdit
 	 */
 	public static function intro( EditPage $editpage ) {
-		global $wgLang, $wgOut;
+		global $wgOut;
 		$handle = new MessageHandle( $editpage->mTitle );
 		if ( $handle->isValid() ) {
 			$editpage->suppressIntro = true;

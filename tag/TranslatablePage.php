@@ -133,6 +133,7 @@ class TranslatablePage {
 				break;
 			case 'title':
 				$this->revision = $this->getMarkedTag();
+				// @todo FIXME: Needs break;?
 			case 'revision':
 				$rev = Revision::newFromTitle( $this->getTitle(), $this->revision );
 				$this->text = $rev->getText();

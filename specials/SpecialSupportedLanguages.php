@@ -297,7 +297,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 				$styles['border-bottom'] = '3px solid #' . $this->getActivityColour( $period - $last, $period );
 				# $styles['color'] = '#' . $this->getBackgroundColour( $period - $last, $period );
 			} else {
-				$enc = "<s>$enc</s>";
+				$enc = "<del>$enc</del>";
 			}
 
 			$stylestr = $this->formatStyle( $styles );

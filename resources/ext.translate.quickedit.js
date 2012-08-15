@@ -199,8 +199,8 @@
 				title: page,
 				position: 'top',
 				resize: function() { $( '#' + id + ' textarea' ).width( '100%' ); },
-				resizeStop: function() { dialogwidth = $( '#' + id ).width(); },
-			} );
+				resizeStop: function() { dialogwidth = $( '#' + id ).width(); }
+            } );
 
 			return false;
 		},

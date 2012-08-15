@@ -295,7 +295,6 @@ class SpecialTranslate extends SpecialPage {
 
 	protected function settingsForm( $errors ) {
 		global $wgScript;
-		$user = $this->getUser();
 
 		$taction = $this->options['taction'];
 
@@ -460,7 +459,6 @@ class SpecialTranslate extends SpecialPage {
 		}
 
 		$start = $this->paging['start'] + 1 ;
-		$stop  = $start + $this->paging['count'] - 1;
 		$total = $this->paging['total'];
 
 		$allInThisPage = $start === 1 && $total <= $this->options['limit'];

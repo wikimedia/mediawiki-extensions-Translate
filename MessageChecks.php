@@ -261,7 +261,7 @@ class MessageChecker {
 	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function printfCheck( $messages, $code, &$warnings ) {
-		return $this->parameterCheck( $messages, $code, $warnings, '/%(\d+\$)?[sduf]/U' );
+		$this->parameterCheck( $messages, $code, $warnings, '/%(\d+\$)?[sduf]/U' );
 	}
 
 	/**
@@ -272,7 +272,7 @@ class MessageChecker {
 	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function rubyVariableCheck( $messages, $code, &$warnings ) {
-		return $this->parameterCheck( $messages, $code, $warnings, '/%{[a-zA-Z_]+}/' );
+		$this->parameterCheck( $messages, $code, $warnings, '/%{[a-zA-Z_]+}/' );
 	}
 
 	/**
@@ -283,7 +283,7 @@ class MessageChecker {
 	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function pythonInterpolationCheck( $messages, $code, &$warnings ) {
-		return $this->parameterCheck( $messages, $code, $warnings, '/\%\([a-zA-Z0-9]*?\)[diouxXeEfFgGcrs]/U' );
+		$this->parameterCheck( $messages, $code, $warnings, '/\%\([a-zA-Z0-9]*?\)[diouxXeEfFgGcrs]/U' );
 	}
 
 	/**

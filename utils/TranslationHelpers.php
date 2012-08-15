@@ -321,7 +321,6 @@ class TranslationHelpers {
 
 	/// Since 2012-03-05
 	protected function formatTTMServerSuggestions( $data ) {
-		$code = $this->handle->getCode();
 		$sugFields = array();
 
 		foreach ( $data as $service => $wrapper ) {
@@ -337,7 +336,6 @@ class TranslationHelpers {
 				$TTMServer = TTMServer::factory( $config );
 				if ( $TTMServer->isLocalSuggestion( $s ) ) {
 					$title = Title::newFromText( $s['location'] );
-					$symbol = isset( $config['symbol'] ) ? $config['symbol'] : '•';
 					$legend[$accuracy][] = self::ajaxEditLink( $title, '•' );
 				} else {
 					if ( $TTMServer instanceof RemoteTTMServer ) {

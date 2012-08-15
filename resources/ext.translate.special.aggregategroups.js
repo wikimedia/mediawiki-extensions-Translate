@@ -29,7 +29,7 @@ jQuery( document ).ready( function ( $ ) {
 				var $a = $( '<a>', aAttr ).text( subgroupName );
 
 				var spanAttr = {
-					'class': 'tp-aggregate-remove-button',
+					'class': 'tp-aggregate-remove-button'
 				};
 
 				var $span = $( '<span>', spanAttr );
@@ -45,7 +45,7 @@ jQuery( document ).ready( function ( $ ) {
 
 		var params = $.extend( getApiParams( $target ), {
 			'do' : 'associate',
-			group: subgroupId,
+			group: subgroupId
 		} );
 		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 	}
@@ -65,11 +65,11 @@ jQuery( document ).ready( function ( $ ) {
 					.appendTo( $select );
 				$target.parent( 'li' ).remove();
 			}
-		};
-		
+		}
+
 		var params = $.extend( getApiParams( $target ), {
 			'do' : 'dissociate',
-			group: $target.data( 'groupid' ),
+			group: $target.data( 'groupid' )
 		} );
 		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 	}
@@ -96,7 +96,7 @@ jQuery( document ).ready( function ( $ ) {
 	$( '.tp-aggregate-add-button' ).click( associate );
 	$( '.tp-aggregate-remove-button' ).click( dissociate );
 	$( '.tp-aggregate-remove-ag-button' ).click( removeGroup );
-	
+
 	$( 'a.tpt-add-new-group' ).on ( "click", function( event ){
 		$( 'div.tpt-add-new-group' ).removeClass( 'hidden' );
 	} );
