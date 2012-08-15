@@ -117,7 +117,7 @@
 			window.open( $(this).attr( 'data-load-url' ) );
 			return false;
 		} );
-		
+
 		form.find( 'input, textarea' ).focus( function() {
 			addAccessKeys( form );
 		} );
@@ -149,14 +149,14 @@
 			dialogwidth = $( window ).width() * 0.8;
 			var $inlines = $( '.tqe-inlineeditable' );
 			$inlines.dblclick( mw.translate.inlineEditor );
-			
+
 			var $first = $inlines.first();
 			if ( $first.length ) {
 				var title = $first.data( 'title' );
 				var group = $first.data( 'group' );
 				mw.translate.loadEditor( null, title, group, $.noop );
 			}
-			
+
 			var prev = null;
 			$inlines.each( function() {
 				if ( prev ) {
@@ -175,9 +175,9 @@
 				dialog.dialog( 'open' );
 				return false;
 			}
-			
+
 			var dialog = $( '<div>' ).attr( 'id', id ).appendTo( $( 'body' ) );
-			
+
 			var callbacks = {};
 			callbacks.close = function () { dialog.dialog( 'close' ); };
 			callbacks.next = function () { mw.translate.openNext( page, group ); };
@@ -199,12 +199,12 @@
 				title: page,
 				position: 'top',
 				resize: function() { $( '#' + id + ' textarea' ).width( '100%' ); },
-				resizeStop: function() { dialogwidth = $( '#' + id ).width(); },
+				resizeStop: function() { dialogwidth = $( '#' + id ).width(); }
 			} );
 
 			return false;
 		},
- 
+
 		loadEditor: function( $target, page, group, callback ) {
 			// Try if it has been cached
 			var id = 'preload-' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
@@ -236,7 +236,7 @@
 			}
 
 		},
- 
+
 		openEditor: function( element, page, group, callbacks ) {
 			var $target = $( element );
 			var spinner = $( '<div>' ).attr( 'class', 'mw-ajax-loader' );
@@ -286,19 +286,19 @@
 			}
 			alert( mw.msg( 'translate-js-nonext' ) );
 		},
-	
+
 		inlineEditor: function () {
 			var $this = $( this );
 			if ( $this.hasClass( 'tqe-editor-loaded' ) ) {
 				// Editor is open, do not replace it
 				return;
 			}
-			
+
 			var current = $this.html();
 			var $target = $( '<td>' ).attr( { colspan: 2 } );
 			$this.html( $target );
 			$this.addClass( 'tqe-editor-loaded' );
-			
+
 			var classes = $this.attr( 'class' );
 			var page = $this.data( 'title' );
 			var group = $this.data( 'group' );
@@ -320,7 +320,7 @@
 				var $header = $( '<div class="tqe-fakeheader"></div>' );
 				$header.text( page );
 				$header.append( '<input type=button class="mw-translate-close" value="X" />' );
-				
+
 				$( editor ).find( 'form' ).prepend( $header );
 			};
 			if ( next.length ) {
@@ -331,7 +331,7 @@
 				mw.translate.loadEditor( null, ntitle, ngroup, $.noop );
 			}
 			mw.translate.openEditor( $target, page, group, callbacks );
-			
+
 			// Remove any text selection caused by double clicking
 			var sel = window.getSelection ? window.getSelection() : document.selection;
 			if ( sel ) {

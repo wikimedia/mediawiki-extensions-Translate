@@ -254,8 +254,6 @@ class SpecialManageGroups extends SpecialPage {
 	 * @since 2012-05-14
 	 */
 	static function tabify( Skin $skin, array &$tabs ) {
-		global $wgRequest, $wgOut;
-
 		$title = $skin->getTitle();
 		list( $alias, $sub ) = SpecialPage::resolveAliasWithSubpage( $title->getText() );
 
@@ -269,7 +267,7 @@ class SpecialManageGroups extends SpecialPage {
 			return true;
 		}
 
-		$wgOut->addModules( 'ext.translate.tabgroup' );
+		$skin->getOutput()->addModules( 'ext.translate.tabgroup' );
 
 		$tabs['namespaces'] = array();
 		foreach ( $pagesInGroup as $spName => $section ) {

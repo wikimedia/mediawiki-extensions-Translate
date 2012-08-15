@@ -195,7 +195,6 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 
 		$out->addWikiMsg( 'pt-deletepage-intro' );
 
-		$target = $this->title;
 		$count = 1; // Base page
 
 		$out->wrapWikiMsg( '== $1 ==', 'pt-deletepage-list-pages' );
@@ -316,7 +315,6 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		TranslateMetadata::set( $groupId, 'priorityreason', false );
 		// remove the page from aggregate groups, if present in any of them.
 		$groups = MessageGroups::getAllGroups();
-		$aggregates = array();
 		foreach ( $groups as $group ) {
 			if ( $group instanceof AggregateMessageGroup ) {
 				$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' ) ;
