@@ -98,7 +98,7 @@ class MessageTable {
 	}
 
 	public function contents() {
-		$optional = wfMsgHtml( 'translate-optional' );
+		$optional = wfMessage( 'translate-optional' )->escaped();
 
 		$this->doLinkBatch();
 
@@ -115,14 +115,13 @@ class MessageTable {
 
 			$original = $m->definition();
 
-			if ( $m->translation() !== null ) {
+			$hasTranslation = $m->translation() !== null;
+			if ( $hasTranslation ) {
 				$message = $m->translation();
-				$rclasses = self::getLanguageAttributes( $targetLang );
-				$rclasses['class'] = 'translated';
+				$langAttribs = self::getLanguageAttributes( $targetLang );
 			} else {
 				$message = $original;
-				$rclasses = self::getLanguageAttributes( $sourceLang );
-				$rclasses['class'] = 'untranslated';
+				$langAttribs = self::getLanguageAttributes( $sourceLang );
 			}
 
 			global $wgLang;
@@ -148,24 +147,25 @@ class MessageTable {
 				'data-title' => $title->getPrefixedText(),
 				'data-group' => $this->group->getId(),
 				'id' => 'tqe-anchor-' . substr( sha1( $title->getPrefixedText() ), 0, 12 ),
-			);
+				'class' => trim( 'tqe-inlineeditable ' . ( $hasTranslation ? 'translated' : 'untranslated' ) )
+			) + $langAttribs;
 
 			$leftColumn = $this->getReviewButton( $m ) . $anchor . $tools['edit'] . $extra . $this->getReviewStatus( $m );
 
-			if ( $this->reviewMode && $original !== $message ) {
+			if ( $this->reviewMode ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
 					Xml::tags( 'td', array( 'rowspan' => '2' ), $leftColumn ) .
 					Xml::tags( 'td', self::getLanguageAttributes( $sourceLang ),
 						TranslateUtils::convertWhiteSpaceToHTML( $original ) )
 				);
 
-				$output .= Xml::tags( 'tr', array( 'class' => 'new tqe-inlineeditable' ) + $tqeData,
-					Xml::tags( 'td', $rclasses, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
+				$output .= Xml::tags( 'tr', null,
+					Xml::tags( 'td', $tqeData, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			} else {
-				$output .= Xml::tags( 'tr', array( 'class' => 'def tqe-inlineeditable' ) + $tqeData,
+				$output .= Xml::tags( 'tr', array( 'class' => 'def' ),
 					Xml::tags( 'td', null, $leftColumn ) .
-					Xml::tags( 'td', $rclasses, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
+					Xml::tags( 'td', $tqeData, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			}
 			$output .= "\n";

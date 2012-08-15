@@ -182,10 +182,10 @@
 			callbacks.close = function () { dialog.dialog( 'close' ); };
 			callbacks.next = function () { mw.translate.openNext( page, group ); };
 			callbacks.success = function ( text ) {
-				var $tr = $( 'tr', 'table.mw-sp-translate-table' ).filter( function () {
+				var $td = $( '.tqe-inlineeditable' ).filter( function () {
 					return $( this ).data( 'title' ) === page.replace( '_', ' ' );
 				} );
-				$tr.find( 'td' ).last()
+				$td
 					.html( convertWhiteSpaceToHTML( text ) )
 					.attr( 'dir', 'auto' ) // (bug 29233) hacky, but better than nothing
 					.removeClass( 'untranslated' )
@@ -295,8 +295,6 @@
 			}
 
 			var current = $this.html();
-			var $target = $( '<td>' ).attr( { colspan: 2 } );
-			$this.html( $target );
 			$this.addClass( 'tqe-editor-loaded' );
 
 			var classes = $this.attr( 'class' );
@@ -306,7 +304,7 @@
 			var callbacks = {};
 			callbacks.success = function ( text ) {
 				// Update the cell value with the new translation
-				$this.find( 'td' ).last()
+				$this
 					.html( convertWhiteSpaceToHTML( text ) )
 					.attr( 'dir', 'auto' ) // (bug 29233) hacky, but better than nothing
 					.removeClass( 'untranslated' )
@@ -330,7 +328,7 @@
 				var ngroup = next.data( 'group' );
 				mw.translate.loadEditor( null, ntitle, ngroup, $.noop );
 			}
-			mw.translate.openEditor( $target, page, group, callbacks );
+			mw.translate.openEditor( $this, page, group, callbacks );
 
 			// Remove any text selection caused by double clicking
 			var sel = window.getSelection ? window.getSelection() : document.selection;
