@@ -316,8 +316,6 @@ abstract class MessageGroupBase implements MessageGroup {
 		$lists = $groupConfiguration['LANGUAGES'];
 		$codes = array(); // The list of languages to return
 
-
-		$blacklist = array();
 		if ( isset( $lists['blacklist'] ) ) {
 			$blacklist = $lists['blacklist'];
 			if ( is_array( $blacklist ) ) {

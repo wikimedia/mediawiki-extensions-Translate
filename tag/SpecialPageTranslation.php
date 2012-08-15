@@ -287,7 +287,7 @@ class SpecialPageTranslation extends SpecialPage {
 			foreach ( $pages as $page ) {
 				$link = Linker::link( $page['title'] );
 				if ( $page['tp:mark'] !== $page['tp:tag'] ) {
-					$link = "<b>$link</b>";
+					$link = "<strong>$link</strong>";
 				}
 
 				$acts = $this->actionLinks( $page, 'active' );
@@ -317,7 +317,7 @@ class SpecialPageTranslation extends SpecialPage {
 			foreach ( $pages as $page ) {
 				$link = Linker::link( $page['title'] );
 				if ( $page['tp:mark'] !== $page['tp:tag'] ) {
-					$link = "<b>$link</b>";
+					$link = "<strong>$link</strong>";
 				}
 
 				$acts = $this->actionLinks( $page, 'discouraged' );

@@ -410,7 +410,7 @@ abstract class ComplexMessages {
 				if ( isset( $used[$v] ) ) {
 					$otherkey = $used[$v];
 					$first = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$otherkey" ), $otherkey );
-					$errors[] = "Translation <b>$v</b> is used more than once for $first and $link.";
+					$errors[] = "Translation <strong>$v</strong> is used more than once for $first and $link.";
 				} else {
 					$used[$v] = $key;
 				}
@@ -577,7 +577,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 				throw new MWException( "Something missing from values: " .  print_r( $values, true ) );
 			}
 
-			$values[0] = "<b>$values[0]</b>";
+			$values[0] = "<strong>$values[0]</strong>";
 		}
 		return $values;
 	}
@@ -595,13 +595,13 @@ class SpecialPageAliasesCM extends ComplexMessages {
 				if ( $title === null ) {
 					if ( $_ !== '' ) {
 						// Empty values checked elsewhere
-						$errors[] = "Translation <b>$_</b> is invalid title in $link.";
+						$errors[] = "Translation <strong>$_</strong> is invalid title in $link.";
 					}
 				} else {
 					$text = $title->getText();
 					$dbkey = $title->getDBkey();
 					if ( $text !== $_ && $dbkey !== $_ ) {
-						$errors[] = "Translation <b>$_</b> for $link is not in normalised form, which is <b>$text</b>";
+						$errors[] = "Translation <strong>$_</strong> for $link is not in normalised form, which is <strong>$text</strong>";
 					}
 				}
 			}
@@ -654,7 +654,7 @@ class MagicWordsCM extends ComplexMessages {
 
 	public function highlight( $key, $values ) {
 		if ( count( $values ) && $key === 'redirect' ) {
-			$values[0] = "<b>$values[0]</b>";
+			$values[0] = "<strong>$values[0]</strong>";
 		}
 
 		return $values;

@@ -175,7 +175,7 @@ class SpecialMagic extends SpecialPage {
 					return;
 				} else {
 					$o->save( $request );
-					$out->wrapWikiMsg( '<strong><b>$1</b></strong>', 'translate-magic-saved' );
+					$out->wrapWikiMsg( '<strong>$1</strong>', 'translate-magic-saved' );
 					$out->addHTML( $o->output() );
 					return;
 				}

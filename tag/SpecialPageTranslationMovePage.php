@@ -410,7 +410,6 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		}
 		// make the changes in aggregate groups metadata, if present in any of them.
 		$groups = MessageGroups::getAllGroups();
-		$aggregates = array();
 		foreach ( $groups as $group ) {
 			if ( $group instanceof AggregateMessageGroup ) {
 				$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' ) ;

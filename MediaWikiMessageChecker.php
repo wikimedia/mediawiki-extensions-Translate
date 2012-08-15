@@ -23,7 +23,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * @param $warnings \array Array where warnings are appended to.
 	 */
 	protected function wikiParameterCheck( $messages, $code, &$warnings ) {
-		return parent::parameterCheck( $messages, $code, $warnings, '/\$[1-9]/' );
+		parent::parameterCheck( $messages, $code, $warnings, '/\$[1-9]/' );
 	}
 
 	/**
@@ -247,7 +247,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 						$warnings[$key][] = array(
 							array( 'miscmw', $subcheck, $key, $code ),
 							'translate-checks-format',
-							"<tt><nowiki>$traItems[1] !== $defItems[1]</nowiki></tt>", // @todo FIXME: i18n missing.
+							"<samp><nowiki>$traItems[1] !== $defItems[1]</nowiki></samp>", // @todo FIXME: i18n missing.
 						);
 						continue;
 					}

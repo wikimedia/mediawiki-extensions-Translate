@@ -403,7 +403,6 @@ class MessageGroups {
 
 		// Determine the top level groups of the tree
 		$tree = $groups;
-		$structure = array();
 		foreach ( $groups as $id => $o ) {
 			if ( !$o->exists() ) {
 				unset( $groups[$id], $tree[$id] );
