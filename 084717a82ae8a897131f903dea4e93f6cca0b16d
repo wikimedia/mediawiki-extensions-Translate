@@ -16,6 +16,24 @@
       "revId": "084717a82ae8a897131f903dea4e93f6cca0b16d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//5g0\u003d",
+        "filename": "resources/ext.translate.quickedit.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-08-16T07:45:33Z",
+      "side": 1,
+      "message": "This commit cannot be found.",
+      "parentUuid": "AAAARX//5iE\u003d",
+      "revId": "084717a82ae8a897131f903dea4e93f6cca0b16d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
