@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//5iE\u003d",
+        "filename": "resources/ext.translate.quickedit.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-16T06:36:56Z",
+      "side": 1,
+      "message": "There is a reason the monospace is at front, see bb84b3907e0a8b5995b270cefdd8cf8978e660c5.",
+      "revId": "084717a82ae8a897131f903dea4e93f6cca0b16d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
