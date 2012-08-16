@@ -2590,9 +2590,11 @@ Izena: $1',
 	'tpt-diff-new' => 'Testu berria',
 	'tpt-edit-failed' => 'Ezin izan da orrialdea eguneratu: $1',
 	'tpt-select-prioritylangs-reason' => 'Arrazoia:',
+	'tpt-rev-encourage' => 'Leheneratu',
 	'translate-tag-translate-link-desc' => 'Itzuli orri hau',
 	'tpt-languages-legend' => 'Beste hizkuntzak:',
 	'tpt-discouraged-language-reason' => 'Arrazoia: $1',
+	'tpt-aggregategroup-add' => 'Gehitu',
 	'tpt-aggregategroup-save' => 'Gorde',
 	'tpt-aggregategroup-new-name' => 'Izena:',
 	'pt-movepage-list-translation' => 'Itzulpen orrialdeak',
@@ -2601,6 +2603,7 @@ Izena: $1',
 	'pt-movepage-new' => 'Izen berria:',
 	'pt-movepage-reason' => 'Arrazoia:',
 	'pt-movepage-subpages' => 'Azpiorrialde guztiak mugitu',
+	'pt-deletepage-current' => 'Orriaren izena:',
 	'pt-deletepage-reason' => 'Arrazoia:',
 );
 
@@ -2665,6 +2668,7 @@ $messages['fa'] = array(
 );
 
 /** Finnish (suomi)
+ * @author Beluga
  * @author Cimon Avaro
  * @author Crt
  * @author Nedergard
@@ -2716,6 +2720,7 @@ mutta mikään versio {{PLURAL:$1|tästä sivusta|näistä sivuista}} ei ole tä
 	'tpt-other-pages' => 'Vanha versio {{PLURAL:$1|tästä sivusta|näistä sivuista}} on merkitty käännettäväksi,
 mutta viimeisintä versiota ei voi merkitä käännettäväksi.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Tätä sivua|Näitä sivuja}} ei enää suositella käännettävän.',
+	'tpt-select-prioritylangs-reason' => 'Syy:',
 	'tpt-rev-mark' => 'merkitse käännettäväksi',
 	'tpt-rev-unmark' => 'poista käännettävistä sivuista',
 	'tpt-rev-discourage' => 'vältä uusia käännöksiä',
@@ -2735,6 +2740,7 @@ mutta viimeisintä versiota ei voi merkitä käännettäväksi.',
 Tämä sivu on käännös sivusta [[$1]] ja käännöstä voi päivittää käyttämällä [$2 käännöstyökalua].',
 	'tpt-unknown-page' => 'Tämä nimiavaruus on varattu sisältösivujen käännöksille.
 Sivu, jota yrität muokata, ei näytä vastaavan mitään sivua, joka on merkitty käännettäväksi.',
+	'tpt-discouraged-language-reason' => 'Syy: $1',
 	'tpt-render-summary' => 'Päivittäminen vastaamaan uutta versiota lähdesivusta',
 	'tpt-download-page' => 'Sivun vienti käännösten kera',
 	'tpt-aggregategroup-add' => 'Lisää',
@@ -4827,9 +4833,20 @@ Bifuo yu maak dis voerjan fi chranslieshan, chek se di chienj to sekshandem mini
 );
 
 /** Javanese (Basa Jawa)
+ * @author NoiX180
  * @author Pras
  */
 $messages['jv'] = array(
+	'pagetranslation' => 'Terjemahan kaca',
+	'right-pagetranslation' => 'Tandhai vèrsi kaca kanggo terjemahan',
+	'tpt-desc' => 'Èkstènsi kanggo nerjemahaké kaca kontèn',
+	'tpt-section' => 'Unit terjemahan $1',
+	'tpt-section-new' => 'Unit terjemahan anyar.
+Jeneng: $1',
+	'tpt-section-deleted' => 'Unit terjemahan $1',
+	'tpt-template' => 'Templat kaca',
+	'tpt-templatediff' => 'Templat kaca wis diganti.',
+	'tpt-diff-old' => 'Tèks sakdurungé',
 	'translate-tag-translate-link-desc' => 'Terjemahaké kaca iki',
 );
 
@@ -9220,6 +9237,7 @@ $messages['wuu'] = array(
 /** Yiddish (ייִדיש)
  * @author Imre
  * @author פוילישער
+ * @author පසිඳු කාවින්ද
  */
 $messages['yi'] = array(
 	'pagetranslation' => 'בלאט טײַטש',
@@ -9245,6 +9263,8 @@ $messages['yi'] = array(
 	'tpt-translation-intro-fuzzy' => 'פארעלטערטע איבערזעצונגען זענען מארקירט אזוי.',
 	'tpt-languages-legend' => 'אנדערע שפראַכן:',
 	'tpt-languages-zero' => 'אנהייבן איבערזעצן די דאזיקע שפראך',
+	'tpt-aggregategroup-save' => 'אויפֿהיטן',
+	'tpt-aggregategroup-new-name' => 'נאָמען:',
 	'pt-movepage-list-pages' => 'רשימה פון בלעטער צו באַוועגן',
 	'pt-movepage-list-translation' => 'טײַטש  בלעטער',
 	'pt-movepage-list-section' => 'אפטיילונג בלעטער',
