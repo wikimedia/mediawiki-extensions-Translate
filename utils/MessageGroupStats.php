@@ -187,13 +187,16 @@ class MessageGroupStats {
 		return $stats;
 	}
 
-	protected static function expandAggregates( MessageGroup $group ) {
-		$flattened = array( $group->getId() );
-		if ( $group instanceof AggregateMessageGroup ) {
-			foreach ( $group->getGroups() as $subgroup ) {
-				$flattened = array_merge( $flattened, self::expandAggregates( $subgroup ) );
+	protected static function expandAggregates( AggregateMessageGroup $agg) {
+		$flattened = array();
+		foreach ( $agg->getGroups() as $group ) {
+			if ( $group instanceof AggregateMessageGroup ) {
+				$flattened += self::expandAggregates( $group, $depth + 1 );
+			} else {
+				$flattened[$group->getId()] = $group;
 			}
 		}
+
 		return $flattened;
 	}
 
@@ -242,12 +245,12 @@ class MessageGroupStats {
 		}
 
 		if ( $group instanceof AggregateMessageGroup ) {
-			$ids = array_unique( self::expandAggregates( $group ) );
-			$res = self::selectRowsIdLang( $ids, $code );
+			$expanded = self::expandAggregates( $group );
+			$res = self::selectRowsIdLang( $expanded, $code );
 			$stats = self::extractResults( $res, $stats );
 
 			$aggregates = array( 0, 0, 0 );
-			foreach ( $group->getGroups() as $sid => $subgroup ) {
+			foreach ( $expanded as $sid => $subgroup ) {
 				# Discouraged groups may belong to a another group, usually if there
 				# is a aggregate group for all translatable pages. In that case
 				# calculate and store the statistics, but don't count them as part of
