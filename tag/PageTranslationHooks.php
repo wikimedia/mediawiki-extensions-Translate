@@ -455,18 +455,33 @@ class PageTranslationHooks {
 	 * @since 2012-03-01
 	 */
 	public static function preventRestrictedTranslations( Title $title, User $user, $action, &$result ) {
+		// Preventing editing (includes creation) should be enough
+		if ( $action !== 'edit' ) {
+			return true;
+		}
+
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
 			return true;
 		}
 
-		$groupId = $handle->getGroup()->getId();
-		$priorityForce = TranslateMetadata::get( $groupId, 'priorityforce' );
-		$priorityLangs = TranslateMetadata::get( $groupId, 'prioritylangs' );
-		$priorityReason = TranslateMetadata::get( $groupId, 'priorityreason' );
-		$filter = array_flip( explode( ',', $priorityLangs ) );
-		if ( !isset( $filter[$handle->getCode()] ) && $priorityForce === 'on' ) {
-			$result = array( 'tpt-translation-restricted', $priorityReason );
+		// Get the primary group id
+		$ids = $handle->getGroupIds();
+		$groupId = $ids[0];
+
+		// Check if anything is prevented for the group in the first place
+		$force = TranslateMetadata::get( $groupId, 'priorityforce' );
+		if ( $force !== 'on' ) {
+			return true;
+		}
+
+		// And finally check whether the language is not included in whitelist
+		$languages = TranslateMetadata::get( $groupId, 'prioritylangs' );
+		$filter = array_flip( explode( ',', $languages ) );
+		if ( !isset( $filter[$handle->getCode()] ) ) {
+			// TODO: default reason if none provided
+			$reason = TranslateMetadata::get( $groupId, 'priorityreason' );
+			$result = array( 'tpt-translation-restricted', $reason );
 			return false;
 		}
 
