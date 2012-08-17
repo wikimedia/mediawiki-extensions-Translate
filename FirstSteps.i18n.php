@@ -1940,6 +1940,37 @@ Wen yu don yu wi iebl fi chransliet '''intafies mechiz''' a aal prajek wa supuot
 	'translate-fs-userpage-done' => 'Yaa gwaan! Yu nou ab a yuuza piej.',
 );
 
+/** Javanese (Basa Jawa)
+ * @author NoiX180
+ */
+$messages['jv'] = array(
+	'firststeps' => 'Tahap wiwitan',
+	'firststeps-desc' => '[[Special:FirstSteps|Kaca astamiwa]] kanggo mayaraké panganggo nglekasi wiki nganggo èkstènsi Terjemahaké',
+	'translate-fs-pagetitle-done' => '- rampung!',
+	'translate-fs-pagetitle-pending' => '- ditundha',
+	'translate-fs-pagetitle' => 'Wisaya pangenalan - $1',
+	'translate-fs-signup-title' => 'Daptar',
+	'translate-fs-settings-title' => 'Atur prèferènsi Sampéyan',
+	'translate-fs-userpage-title' => 'Gawé kaca panganggo Sampéyan',
+	'translate-fs-permissions-title' => 'Njaluk idin panerjemah',
+	'translate-fs-target-title' => 'Mulai nerjemahaké!',
+	'translate-fs-email-title' => 'Konfirmasi alamat layang èlèktronik Sampéyan',
+	'translate-fs-selectlanguage' => 'Pilih basa',
+	'translate-fs-settings-planguage' => 'Basa utama:',
+	'translate-fs-settings-slanguage' => 'Basa panyengkuyung $1:',
+	'translate-fs-settings-submit' => 'Simpen préperensi',
+	'translate-fs-userpage-level-N' => 'Kula panutur iku saka',
+	'translate-fs-userpage-level-5' => 'Kula panerjemah profesional saka',
+	'translate-fs-userpage-level-4' => 'Kula ngerti kayata panutur ibu',
+	'translate-fs-userpage-level-3' => 'Kula ngertèni',
+	'translate-fs-userpage-level-2' => 'Kula cukup ngertèni',
+	'translate-fs-userpage-level-1' => 'Kula ngerti sithik',
+	'translate-fs-userpage-submit' => 'Gawé kaca panganggo kula',
+	'translate-fs-userpage-done' => 'Rampung! Sampéyan saiki nduwé kaca panganggo.',
+	'translate-fs-permissions-planguage' => 'Basa utama:',
+	'translate-fs-permissions-submit' => 'Kirim panjalukan',
+);
+
 /** Georgian (ქართული)
  * @author David1010
  */
@@ -3423,6 +3454,20 @@ $messages['uk'] = array(
 Це дозволить іншим користувачам зв\'язуватися з вами електронною поштою.
 Ви також будете отримувати розсилку новин не частіше одного разу на місяць.
 Якщо ви не хочете отримувати розсилку новин, ви можете відмовитися від неї у вкладці "{{int:prefs-personal}}" ваших [Special:Preferences|налаштувань]].',
+);
+
+/** Urdu (اردو)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['ur'] = array(
+	'firststeps' => 'پہلا قدم',
+	'translate-fs-signup-title' => 'سائن اپ کریں',
+	'translate-fs-selectlanguage' => 'ایک زبان منتخب',
+	'translate-fs-settings-planguage' => 'بنیادی زبان:',
+	'translate-fs-settings-submit' => 'ترجیحات کو محفوظ کریں',
+	'translate-fs-userpage-level-1' => 'میں جانتا ہوں کہ ایک چھوٹا سا',
+	'translate-fs-permissions-planguage' => 'بنیادی زبان:',
+	'translate-fs-permissions-submit' => 'بھیجنے کی درخواست',
 );
 
 /** Veps (vepsän kel’)
