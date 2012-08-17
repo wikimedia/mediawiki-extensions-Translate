@@ -187,11 +187,11 @@ class MessageGroupStats {
 		return $stats;
 	}
 
-	protected static function expandAggregates( AggregateMessageGroup $agg) {
+	protected static function expandAggregates( AggregateMessageGroup $agg ) {
 		$flattened = array();
 		foreach ( $agg->getGroups() as $group ) {
 			if ( $group instanceof AggregateMessageGroup ) {
-				$flattened += self::expandAggregates( $group, $depth + 1 );
+				$flattened += self::expandAggregates( $group );
 			} else {
 				$flattened[$group->getId()] = $group;
 			}
@@ -246,7 +246,7 @@ class MessageGroupStats {
 
 		if ( $group instanceof AggregateMessageGroup ) {
 			$expanded = self::expandAggregates( $group );
-			$res = self::selectRowsIdLang( $expanded, $code );
+			$res = self::selectRowsIdLang( array_keys( $expanded ), $code );
 			$stats = self::extractResults( $res, $stats );
 
 			$aggregates = array( 0, 0, 0 );
