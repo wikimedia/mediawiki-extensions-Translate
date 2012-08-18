@@ -45,7 +45,6 @@ class MessageUpdateJob extends Job {
 			$languages = array_keys( Language::getLanguageNames( false ) );
 
 			$dbw = wfGetDB( DB_MASTER );
-			$tables = 'page';
 			$fields = array( 'page_id', 'page_latest' );
 			$conds = array( 'page_namespace' => $title->getNamespace() );
 

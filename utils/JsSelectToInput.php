@@ -103,7 +103,7 @@ class JsSelectToInput {
 		$target = Xml::escapeJsString( $target );
 		$html = Xml::element( 'input', array(
 			'type' => 'button',
-			'value' => wfMsg( $msg ),
+			'value' => wfMessage( $msg )->text(),
 			'onclick' => "appendFromSelect( '$source', '$target' );"
 		) );
 

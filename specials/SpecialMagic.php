@@ -162,23 +162,23 @@ class SpecialMagic extends SpecialPage {
 		$request = $this->getRequest();
 		if ( $request->wasPosted() && $this->options['savetodb'] ) {
 			if ( !$this->getUser()->isAllowed( 'translate' ) ) {
-				$out->permissionRequired( 'translate' );
+				throw new PermissionsError( 'translate' );
+			}
+
+			$errors = array();
+			$o->loadFromRequest( $request );
+			$o->validate( $errors );
+			if ( $errors ) {
+				$out->wrapWikiMsg( '<div class="error">$1</div>',
+					'translate-magic-notsaved' );
+				$this->outputErrors( $errors );
+				$out->addHTML( $o->output() );
+				return;
 			} else {
-				$errors = array();
-				$o->loadFromRequest( $request );
-				$o->validate( $errors );
-				if ( $errors ) {
-					$out->wrapWikiMsg( '<div class="error">$1</div>',
-						'translate-magic-notsaved' );
-					$this->outputErrors( $errors );
-					$out->addHTML( $o->output() );
-					return;
-				} else {
-					$o->save( $request );
-					$out->wrapWikiMsg( '<strong>$1</strong>', 'translate-magic-saved' );
-					$out->addHTML( $o->output() );
-					return;
-				}
+				$o->save( $request );
+				$out->wrapWikiMsg( '<strong>$1</strong>', 'translate-magic-saved' );
+				$out->addHTML( $o->output() );
+				return;
 			}
 		}
 

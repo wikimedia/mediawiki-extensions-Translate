@@ -23,8 +23,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		// Check permissions
 		// TODO: allow read only for other users
 		if ( !$this->getUser()->isAllowed( 'translate-manage' ) ) {
-			$out->permissionRequired( 'translate-manage' );
-			return;
+			throw new PermissionsError( 'translate-manage' );
 		}
 
 		$groups = MessageGroups::getAllGroups();

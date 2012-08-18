@@ -62,7 +62,7 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 
 		foreach ( $codes as $code ) {
 			if ( !isset( $valid[$code] ) ) {
-				return wfMsgExt( 'translate-pref-editassistlang-bad', 'parse', $code );
+				return wfMessage( 'translate-pref-editassistlang-bad', $code )->parseAsBlock();
 			}
 		}
 

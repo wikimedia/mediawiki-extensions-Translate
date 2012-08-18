@@ -75,7 +75,7 @@ class MessageWebImporter {
 
 	/**
 	 * Group is either MessageGroup object or group id.
-	 * @param $group MessagerGroup|string
+	 * @param $group MessageGroup|string
 	 */
 	public function setGroup( $group ) {
 		if ( $group instanceof MessageGroup ) {
@@ -201,9 +201,8 @@ class MessageWebImporter {
 			}
 
 			if ( $old === false ) {
-				$name = wfMsgHtml( 'translate-manage-import-new',
-					'<code class="mw-tmi-new">' . htmlspecialchars( $key ) . '</code>'
-				);
+				$para = '<code class="mw-tmi-new">' . htmlspecialchars( $key ) . '</code>';
+				$name = wfMessage( 'translate-manage-import-new' )->rawParams( $para )->escaped();
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $value );
 				$changed[] = self::makeSectionElement( $name, 'new', $text );
 			} else {
@@ -220,7 +219,9 @@ class MessageWebImporter {
 					}
 
 					if ( $action === null ) {
-						$message = wfMsgExt( 'translate-manage-inconsistent', 'parseinline', wfEscapeWikiText( "action-$type-$key" ) );
+						$message = wfMessage(
+							'translate-manage-inconsistent',
+							wfEscapeWikiText( "action-$type-$key" ) )->parse();
 						$changed[] = "<li>$message</li></ul>";
 						$process = false;
 					} else {
@@ -239,13 +240,13 @@ class MessageWebImporter {
 
 						$key = array_shift( $message );
 						$params = $message;
-						$message = wfMsgExt( $key, 'parseinline', $params );
+						$message = wfMessage( $key, $params )->parse();
 						$changed[] = "<li>$message</li>";
 
 						if ( $this->checkProcessTime() ) {
 							$process = false;
-							$duration = $wgLang->formatNum( $this->processingTime );
-							$message = wfMsgExt( 'translate-manage-toolong', 'parseinline', $duration );
+							$message = wfMessage(
+								'translate-manage-toolong' )->numParams( $this->processingTime )->parse();
 							$changed[] = "<li>$message</li></ul>";
 						}
 						continue;
@@ -260,16 +261,16 @@ class MessageWebImporter {
 				$act = array();
 
 				foreach ( $actions as $action ) {
-					$label = wfMsg( "translate-manage-action-$action" );
+					$label = wfMessage( "translate-manage-action-$action" )->text();
 					$name = self::escapeNameForPHP( "action-$type-$key" );
 					$id = Sanitizer::escapeId( "action-$key-$action" );
 					$act[] = Xml::radioLabel( $label, $name, $action, $id, $action === $defaction );
 				}
 
-				$name = wfMsg( 'translate-manage-import-diff',
-					'<code class="mw-tmi-diff">' . htmlspecialchars( $key ) . '</code>',
+				$param = '<code class="mw-tmi-diff">' . htmlspecialchars( $key ) . '</code>';
+				$name = wfMessage( 'translate-manage-import-diff', $param,
 					implode( ' ', $act )
-				);
+				)->text();
 
 				$changed[] = self::makeSectionElement( $name, $type, $text );
 			}
@@ -282,9 +283,8 @@ class MessageWebImporter {
 			$diff = array_diff( $keys, array_keys( $messages ) );
 
 			foreach ( $diff as $s ) {
-				$name = wfMsgHtml( 'translate-manage-import-deleted',
-					'<code class="mw-tmi-deleted">' . htmlspecialchars( $s ) . '</code>'
-				);
+				$para = '<code class="mw-tmi-deleted">' . htmlspecialchars( $s ) . '</code>';
+				$name = wfMessage( 'translate-manage-import-deleted' )->rawParams( $para )->escaped();
 				$text = TranslateUtils::convertWhiteSpaceToHTML(  $collection[$s]->translation() );
 				$changed[] = self::makeSectionElement( $name, 'deleted', $text );
 			}
@@ -299,7 +299,7 @@ class MessageWebImporter {
 				$changed[] = '<ul>';
 			}
 
-			$message = wfMsgExt( 'translate-manage-import-done', 'parseinline' );
+			$message = wfMessage( 'translate-manage-import-done' )->parse();
 			$changed[] = "<li>$message</li></ul>";
 			$this->out->addHTML( implode( "\n", $changed ) );
 		} else {
@@ -313,7 +313,7 @@ class MessageWebImporter {
 				}
 				$this->out->addHTML( Html::hidden( 'language', $code ) );
 				$this->out->addHTML( implode( "\n", $changed ) );
-				$this->out->addHTML( Xml::submitButton( wfMsg( 'translate-manage-submit' ) ) );
+				$this->out->addHTML( Xml::submitButton( wfMessage( 'translate-manage-submit' )->text() ) );
 			} else {
 				$this->out->addWikiMsg( 'translate-manage-nochanges' );
 			}
@@ -343,9 +343,9 @@ class MessageWebImporter {
 
 		if ( $action === 'import' || $action === 'conflict' ) {
 			if ( $action === 'import' ) {
-				$comment = wfMsgForContentNoTrans( 'translate-manage-import-summary' );
+				$comment = wfMessage( 'translate-manage-import-summary' )->inContentLanguage()->plain();
 			} else {
-				$comment = wfMsgForContentNoTrans( 'translate-manage-conflict-summary' );
+				$comment = wfMessage( 'translate-manage-conflict-summary' )->inContentLanguage()->plain();
 				$message = self::makeTextFuzzy( $message );
 			}
 
@@ -404,7 +404,7 @@ class MessageWebImporter {
 		global $wgUser;
 
 		if ( !$wgUser->isAllowed( 'translate-manage' ) ) {
-			return wfMsg( 'badaccess-group0' );
+			return wfMessage( 'badaccess-group0' )->text();
 		}
 
 		$dbw = wfGetDB( DB_MASTER );
@@ -462,7 +462,7 @@ class MessageWebImporter {
 		$text = '';
 		foreach ( $changed as $c ) {
 			$key = array_shift( $c );
-			$text .= "* " . wfMsgExt( $key, array(), $c ) . "\n";
+			$text .= "* " . wfMessage( $key, $c )->plain() . "\n";
 		}
 
 		return array( 'translate-manage-import-fuzzy', "\n" . $text );

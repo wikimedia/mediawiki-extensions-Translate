@@ -50,15 +50,13 @@ class SpecialPageTranslation extends SpecialPage {
 
 		// Check permissions
 		if ( !$user->isAllowed( 'pagetranslation' ) ) {
-			$out->permissionRequired( 'pagetranslation' );
-			return;
+			throw new PermissionsError( 'pagetranslation' );
 		}
 
 		// Check permissions
 		if ( $request->wasPosted() && !$user->matchEditToken( $request->getText( 'token' ) ) ) {
 			self::superDebug( __METHOD__, "token failure", $user );
-			$out->permissionRequired( 'pagetranslation' );
-			return;
+			throw new PermissionsError( 'pagetranslation' );
 		}
 
 		// We are processing some specific page
