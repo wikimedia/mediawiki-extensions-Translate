@@ -15,11 +15,6 @@
  */
 class TranslateRcFilter {
 	/**
-	 * Default action for the filter: ('noaction', 'only', 'filter', 'site')
-	 */
-	protected static $defaultAction = 'filter';
-
-	/**
 	 * Hooks SpecialRecentChangesQuery. See the hook documentation for
 	 * documentation of the function parameters.
 	 *
@@ -28,13 +23,13 @@ class TranslateRcFilter {
 	 * @param $tables array|stromg
 	 * @param $join_conds array
 	 * @param $opts
-	 * @return \bool true
+	 * @return bool true
 	 */
 	public static function translationFilter( &$conds, &$tables, &$join_conds, $opts ) {
-		global $wgRequest, $wgTranslateMessageNamespaces;
+		global $wgRequest, $wgTranslateMessageNamespaces, $wgTranslateRcFilterDefault;
 
-		$translations = $wgRequest->getVal( 'translations', self::$defaultAction );
-		$opts->add( 'translations', self::$defaultAction );
+		$translations = $wgRequest->getVal( 'translations', $wgTranslateRcFilterDefault );
+		$opts->add( 'translations', $wgTranslateRcFilterDefault );
 		$opts->setValue( 'translations', $translations );
 
 		$dbr = wfGetDB( DB_SLAVE );

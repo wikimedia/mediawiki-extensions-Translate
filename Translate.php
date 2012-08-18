@@ -665,7 +665,12 @@ $wgTranslateYamlLibrary = 'spyc';
  * a page without having them be transformed upon save.
  */
 $wgTranslateUsePreSaveTransform = false;
-
+/**
+ * Default action for the RecentChanges filter, which makes it possible to filter
+ * translations away or show them only.
+ * Possible values: ('noaction', 'only', 'filter', 'site')
+ */
+$wgTranslateRcFilterDefault = 'filter';
 # </source>
 
 /** @cond cli_support */
