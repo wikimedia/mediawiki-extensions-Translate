@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//3yU\u003d",
+        "filename": "specials/SpecialMagic.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-18T09:47:23Z",
+      "side": 1,
+      "message": "Since exception stops code execution, it is possible to drop else and deindent the block one level.",
+      "revId": "1222a609cd98f19b6ac4aac3b80c53784f92f479",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//3yQ\u003d",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-18T09:47:23Z",
+      "side": 1,
+      "message": "I split the line before the operator, not after it. There is only one place in sandwiki codebase where the line splitting is done after operator.",
+      "revId": "1222a609cd98f19b6ac4aac3b80c53784f92f479",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//3yM\u003d",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-18T09:47:23Z",
+      "side": 1,
+      "message": "Possible place to use -\u003enumParam",
+      "revId": "1222a609cd98f19b6ac4aac3b80c53784f92f479",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//3yI\u003d",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-18T09:47:23Z",
+      "side": 1,
+      "message": "wfMessage( ... )-\u003einContentLanguage()-\u003eplain().",
+      "revId": "1222a609cd98f19b6ac4aac3b80c53784f92f479",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//3yE\u003d",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-18T09:47:23Z",
+      "side": 1,
+      "message": "I\u0027d use -\u003eplain()",
+      "revId": "1222a609cd98f19b6ac4aac3b80c53784f92f479",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
