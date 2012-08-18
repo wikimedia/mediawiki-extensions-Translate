@@ -81,7 +81,7 @@ class TranslateHooks {
 			// Namespaces
 			global $wgPageTranslationNamespace, $wgExtraNamespaces;
 			global $wgNamespacesWithSubpages, $wgNamespaceProtection;
-			global $wgTranslateMessageNamespaces, $wgVersion;
+			global $wgTranslateMessageNamespaces;
 
 			// Define constants for more readable core
 			if ( !defined( 'NS_TRANSLATIONS' ) ) {

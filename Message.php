@@ -50,13 +50,13 @@ abstract class TMessage {
 
 	/**
 	 * Get the message translation.
-	 * @return \types{\string,\null}
+	 * @return string|null
 	 */
 	abstract public function translation();
 
 	/**
 	 * Get the last translator of the message.
-	 * @return \types{\string,\null}
+	 * @return string|null
 	 */
 	abstract public function author();
 
@@ -70,7 +70,7 @@ abstract class TMessage {
 
 	/**
 	 * Returns the committed translation.
-	 * @return \types{\string,\null}
+	 * @return string|null
 	 */
 	public function infile() {
 		return $this->infile;

@@ -113,10 +113,20 @@ class TranslationEditPage {
 		$hidden[] = Html::hidden( 'format', 'json' );
 		$hidden[] = Html::hidden( 'action', 'edit' );
 
-		$summary = Xml::inputLabel( wfMsg( 'translate-js-summary' ), 'summary', 'summary', 40 );
-		$save = Xml::submitButton( wfMsg( 'translate-js-save' ), array( 'class' => 'mw-translate-save' ) );
-		$saveAndNext = Xml::submitButton( wfMsg( 'translate-js-next' ), array( 'class' => 'mw-translate-next' ) );
-		$skip = Html::element( 'input', array( 'class' => 'mw-translate-skip', 'type' => 'button', 'value' => wfMsg( 'translate-js-skip' ) ) );
+		$summary = Xml::inputLabel( wfMessage( 'translate-js-summary' )->text(), 'summary', 'summary', 40 );
+		$save = Xml::submitButton(
+			wfMessage( 'translate-js-save' )->text(),
+			array( 'class' => 'mw-translate-save' )
+		);
+		$saveAndNext = Xml::submitButton(
+			wfMessage( 'translate-js-next' )->text(),
+			array( 'class' => 'mw-translate-next' )
+		);
+		$skip = Html::element( 'input',	array(
+			'class' => 'mw-translate-skip',
+			'type' => 'button',
+			'value' => wfMessage( 'translate-js-skip' )->text()
+		) );
 
 		if ( $this->getTitle()->exists() ) {
 			$history = Html::element(
@@ -124,7 +134,7 @@ class TranslationEditPage {
 				array(
 					'class' => 'mw-translate-history',
 					'type' => 'button',
-					'value' => wfMsg( 'translate-js-history' )
+					'value' => wfMessage( 'translate-js-history' )->text()
 				)
 			);
 		} else {
@@ -213,7 +223,7 @@ class TranslationEditPage {
 
 		return array(
 			'onclick' => $onclick,
-			'title' => wfMsg( 'translate-edit-title', $title->getPrefixedText() )
+			'title' => wfMessage( 'translate-edit-title', $title->getPrefixedText() )->text()
 		);
 	}
 
@@ -234,8 +244,8 @@ class TranslationEditPage {
 			array(
 				'class' => 'mw-translate-support',
 				'type' => 'button',
-				'value' => wfMsg( 'translate-js-support' ),
-				'title' => wfMsg( 'translate-js-support-title' ),
+				'value' => wfMessage( 'translate-js-support' )->text(),
+				'title' => wfMessage( 'translate-js-support-title' )->text(),
 				'data-load-url' => $supportTitle->getLocalUrl( $supportParams ),
 			)
 		);
@@ -254,7 +264,7 @@ class TranslationEditPage {
 			array(
 				'class' => 'mw-translate-askpermission',
 				'type' => 'button',
-				'value' => wfMsg( 'translate-edit-askpermission' ),
+				'value' => wfMessage( 'translate-edit-askpermission' )->text(),
 				'data-load-url' => $title->getLocalUrl(),
 			)
 		);

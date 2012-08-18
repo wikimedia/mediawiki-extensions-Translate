@@ -187,7 +187,7 @@ class MessageTable {
 
 		list( $format, $value ) = $this->headers[$type];
 		if ( $format === 'msg' ) {
-			return wfMsgExt( $value, array( 'parsemag', 'escapenoentities' ) );
+			return wfMessage( $value )->escaped();
 		} elseif ( $format === 'raw' ) {
 			return $value;
 		} else {

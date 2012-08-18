@@ -85,7 +85,7 @@ jQuery( document ).ready( function ( $ ) {
 			} else {
 				$( event.target ).parents( '.mw-tpa-group' ).remove();
 			}
-		};
+		}
 
 		if ( confirm ( mw.msg( 'tpt-aggregategroup-remove-confirm' ) ) ) {
 			var params = $.extend( getApiParams( $target ), {'do' : 'remove' } );

@@ -672,7 +672,6 @@ class PageTranslationHooks {
 		global $wgLang, $wgContLang;
 
 		$language = $forUI === null ? $wgContLang : $wgLang;
-		$opts = array( 'parseinline', 'language' => $language );
 
 		// New logging system already unserializes it for us
 		if ( isset( $params['user'] ) ) {
@@ -682,41 +681,55 @@ class PageTranslationHooks {
 		}
 		$user =  $_['user'];
 
-		//@todo Use wfMessage() here.
 		if ( $action === 'mark' ) {
-			return wfMsgExt( 'pt-log-mark', $opts, $title->getPrefixedText(), $user, $_['revision'] );
+			return wfMessage( 'pt-log-mark', $title->getPrefixedText(), $user, $_['revision'] )->
+				inLanguage( $language )->parse();
 		} elseif ( $action === 'unmark' ) {
-			return wfMsgExt( 'pt-log-unmark', $opts, $title->getPrefixedText(), $user );
+			return wfMessage( 'pt-log-unmark', $title->getPrefixedText(), $user )->
+			inLanguage( $language )->parse();
 		} elseif ( $action === 'moveok' ) {
 			// Old entries are missing the target
 			$target = isset( $_['target'] ) ? $_['target'] : '[[]]';
-			return wfMsgExt( 'pt-log-moveok', $opts, $title->getPrefixedText(), $user, $target );
+			return wfMessage( 'pt-log-moveok', $title->getPrefixedText(), $user, $target )->
+			inLanguage( $language )->parse();
 		} elseif ( $action === 'movenok' ) {
-			return wfMsgExt( 'pt-log-movenok', $opts, $title->getPrefixedText(), $user, $_['target'] );
+			return wfMessage( 'pt-log-movenok', $title->getPrefixedText(), $user, $_['target'] )->
+			inLanguage( $language )->parse();
 		} elseif ( $action === 'deletefnok' ) {
-			return wfMsgExt( 'pt-log-delete-full-nok', $opts, $title->getPrefixedText(), $user, $_['target'] );
+			return wfMessage( 'pt-log-delete-full-nok', $title->getPrefixedText(), $user, $_['target'] )->
+			inLanguage( $language )->parse();
 		} elseif ( $action === 'deletelnok' ) {
-			return wfMsgExt( 'pt-log-delete-lang-nok', $opts, $title->getPrefixedText(), $user, $_['target'] );
+			return wfMessage( 'pt-log-delete-lang-nok', $title->getPrefixedText(), $user, $_['target'] )->
+			inLanguage( $language )->parse();
 		} elseif ( $action === 'deletefok' ) {
-			return wfMsgExt( 'pt-log-delete-full-ok', $opts, $title->getPrefixedText(), $user );
+			return wfMessage( 'pt-log-delete-full-ok', $title->getPrefixedText(), $user )->
+			inLanguage( $language )->parse();
 		} elseif ( $action === 'deletelok' ) {
-			return wfMsgExt( 'pt-log-delete-lang-ok', $opts, $title->getPrefixedText(), $user );
+			return wfMessage( 'pt-log-delete-lang-ok', $title->getPrefixedText(), $user )->
+			inLanguage( $language )->parse();
 		} elseif ( $action === 'encourage' ) {
-			return wfMsgExt( 'pt-log-encourage', $opts, $title->getPrefixedText(), $user );
+			return wfMessage( 'pt-log-encourage', $title->getPrefixedText(), $user )->
+			inLanguage( $language )->parse();
 		} elseif ( $action === 'discourage' ) {
-			return wfMsgExt( 'pt-log-discourage', $opts, $title->getPrefixedText(), $user );
+			return wfMessage( 'pt-log-discourage', $title->getPrefixedText(), $user )->
+			inLanguage( $language )->parse();
 		} elseif ( $action === 'prioritylanguages' ) {
 			if ( $_['languages'] === false ) {
-				return wfMsgExt( 'pt-log-priority-langs-unset', $opts, $title->getPrefixedText(), $user );
+				return wfMessage( 'pt-log-priority-langs-unset', $title->getPrefixedText(), $user )->
+					inLanguage( $language )->parse();
 			} elseif ( $_['force'] === 'on' ) {
-				return wfMsgExt( 'pt-log-priority-langs-force', $opts, $title->getPrefixedText(), $user, $_['languages'], $_['reason'] );
+				return wfMessage( 'pt-log-priority-langs-force', $title->getPrefixedText(), $user, $_['languages'], $_['reason'] )->
+					inLanguage( $language )->parse();
 			} else {
-				return wfMsgExt( 'pt-log-priority-langs', $opts, $title->getPrefixedText(), $user , $_['languages'], $_['reason'] );
+				return wfMessage( 'pt-log-priority-langs', $title->getPrefixedText(), $user , $_['languages'], $_['reason'] )->
+					inLanguage( $language )->parse();
 			}
 		} elseif ( $action === 'associate' ) {
-			return wfMsgExt( 'pt-log-aggregategroup-associate', $opts, $title->getPrefixedText(), $user, $_['aggregategroup'] );
+			return wfMessage( 'pt-log-aggregategroup-associate', $title->getPrefixedText(), $user, $_['aggregategroup'] )->
+				inLanguage( $language )->parse();
 		} elseif ( $action === 'dissociate' ) {
-			return wfMsgExt( 'pt-log-aggregategroup-dissociate', $opts, $title->getPrefixedText(), $user, $_['aggregategroup'] );
+			return wfMessage( 'pt-log-aggregategroup-dissociate', $title->getPrefixedText(), $user, $_['aggregategroup'] )->
+				inLanguage( $language )->parse();
 		}
 		return '';
 	}

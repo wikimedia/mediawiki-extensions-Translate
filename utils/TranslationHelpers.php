@@ -453,7 +453,7 @@ class TranslationHelpers {
 		// Enclose if there is more than one box
 		if ( count( $boxes ) ) {
 			$sep = Html::element( 'hr', array( 'class' => 'mw-translate-sep' ) );
-			return $errors . TranslateUtils::fieldset( wfMsgHtml( 'translate-edit-tmsugs' ),
+			return $errors . TranslateUtils::fieldset( wfMessage( 'translate-edit-tmsugs' )->escaped(),
 				implode( "$sep\n", $boxes ), array( 'class' => 'mw-translate-edit-tmsugs' ) );
 		} else {
 			return $errors;
@@ -668,9 +668,9 @@ class TranslationHelpers {
 		);
 
 		$label =
-			wfMsg( 'translate-edit-definition' ) .
-			wfMsg( 'word-separator' ) .
-			wfMsg( 'parentheses', $title );
+			wfMessage( 'translate-edit-definition' )->text() .
+				wfMessage( 'word-separator' )->text() .
+				wfMessage( 'parentheses', $title )->text();
 
 		// Source language object
 		$sl = Language::factory( $this->group->getSourceLanguage() );
@@ -698,7 +698,7 @@ class TranslationHelpers {
 		if ( $en === null ) {
 			return null;
 		}
-		$label = wfMsg( 'translate-edit-translation' );
+		$label = wfMessage( 'translate-edit-translation' )->text();
 		$class = array( 'class' => 'mw-translate-edit-translation' );
 		$msg = Html::rawElement( 'span',
 			array( 'class' => 'mw-translate-edit-translationtext' ),
@@ -745,12 +745,13 @@ class TranslationHelpers {
 		$checkMessages = array();
 		foreach ( $checks as $checkParams ) {
 			array_splice( $checkParams, 1, 0, 'parseinline' );
+			// @todo FIXME: Use Message class.
 			$checkMessages[] = call_user_func_array( 'wfMsgExt', $checkParams );
 		}
 
 		return Html::rawElement( 'div', array( 'class' => 'mw-translate-messagechecks' ),
 			TranslateUtils::fieldset(
-			wfMsgHtml( 'translate-edit-warnings' ), implode( '<hr />', $checkMessages ),
+			wfMessage( 'translate-edit-warnings' )->escaped(), implode( '<hr />', $checkMessages ),
 			array( 'class' => 'mw-sp-translate-edit-warnings' )
 		) );
 	}
@@ -771,8 +772,8 @@ class TranslationHelpers {
 
 			$label =
 				TranslateUtils::getLanguageName( $fbcode, false, $wgLang->getCode() ) .
-				wfMsg( 'word-separator' ) .
-				wfMsg( 'parentheses', wfBCP47( $fbcode ) );
+					wfMessage( 'word-separator' )->text() .
+					wfMessage( 'parentheses', wfBCP47( $fbcode ) )->text();
 
 			$target = Title::makeTitleSafe( $ns, "$page/$fbcode" );
 			if ( $target ) {
@@ -801,8 +802,14 @@ class TranslationHelpers {
 		if ( count( $boxes ) ) {
 			$sep = Html::element( 'hr', array( 'class' => 'mw-translate-sep' ) );
 
-			return TranslateUtils::fieldset( wfMsgHtml( 'translate-edit-in-other-languages' , $page ),
-				implode( "$sep\n", $boxes ), array( 'class' => 'mw-sp-translate-edit-inother' ) );
+			return TranslateUtils::fieldset(
+				wfMessage(
+					'translate-edit-in-other-languages',
+					$page
+				)->escaped(),
+				implode( "$sep\n", $boxes ),
+				array( 'class' => 'mw-sp-translate-edit-inother' )
+			);
 		}
 
 		return null;
@@ -823,7 +830,7 @@ class TranslationHelpers {
 		$ns = $this->handle->getTitle()->getNamespace();
 
 		$title = Title::makeTitle( $ns, $page . '/' . $wgTranslateDocumentationLanguageCode );
-		$edit = self::ajaxEditLink( $title, wfMsgHtml( 'translate-edit-contribute' ) );
+		$edit = self::ajaxEditLink( $title, wfMessage( 'translate-edit-contribute' )->escaped() );
 		$info = TranslateUtils::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns );
 
 		$class = 'mw-sp-translate-edit-info';
@@ -837,7 +844,7 @@ class TranslationHelpers {
 
 		if ( strval( $info ) === '' ) {
 			global $wgLang;
-			$info = wfMsg( 'translate-edit-no-information' );
+			$info = wfMessage( 'translate-edit-no-information' )->text();
 			$class = 'mw-sp-translate-edit-noinfo';
 			// The message saying that there's no info, should be translated
 			$divAttribs = array( 'dir' => $wgLang->getDir(), 'lang' => $wgLang->getCode() );
@@ -849,8 +856,8 @@ class TranslationHelpers {
 		$contents = preg_replace( '~^<([a-z]+)>(.*)</\1>$~us', '\2', $contents );
 
 		return TranslateUtils::fieldset(
-			wfMsgHtml( 'translate-edit-information', $edit, $page ), Html::rawElement( 'div',
-			$divAttribs, $contents ), array( 'class' => $class )
+			wfMessage( 'translate-edit-information', $edit, $page )->escaped(),
+			Html::rawElement( 'div', $divAttribs, $contents ), array( 'class' => $class )
 		);
 
 	}
@@ -952,7 +959,10 @@ class TranslationHelpers {
 		$diff->setReducedLineNumbers();
 		$diff->showDiffStyle();
 
-		return $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
+		return $diff->getDiff(
+			wfMessage( 'tpt-diff-old' )->escaped(),
+			wfMessage( 'tpt-diff-new' )->escaped()
+		);
 	}
 
 	protected function getTranslationPageDiff() {
@@ -1006,7 +1016,10 @@ class TranslationHelpers {
 		$diff->setReducedLineNumbers();
 		$diff->showDiffStyle();
 
-		return $diff->getDiff( wfMsgHtml( 'tpt-diff-old' ), wfMsgHtml( 'tpt-diff-new' ) );
+		return $diff->getDiff(
+			wfMessage( 'tpt-diff-old' )->escaped(),
+			wfMessage( 'tpt-diff-new' )->escaped()
+		);
 	}
 
 	protected function getLastDiff() {
@@ -1209,7 +1222,7 @@ class TranslationHelpers {
 		$params = array(
 			'onclick' => "jQuery($target).val(jQuery($source).text()).focus(); return false;",
 			'href' => '#',
-			'title' => wfMsg( 'translate-use-suggestion' ),
+			'title' => wfMessage( 'translate-use-suggestion' )->text(),
 			'class' => 'mw-translate-adder mw-translate-adder-' . $dir,
 		);
 

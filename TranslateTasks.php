@@ -119,8 +119,8 @@ abstract class TranslateTask {
 
 	/**
 	 * Constructor.
-	 * @param $group \type{MessageGroup} Message group.
-	 * @param $options \type{TaskOptions} Options.
+	 * @param $group MessageGroup Message group.
+	 * @param $options TaskOptions Options.
 	 */
 	public final function init( MessageGroup $group, TaskOptions $options ) {
 		$this->group = $group;

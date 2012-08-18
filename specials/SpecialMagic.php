@@ -162,7 +162,7 @@ class SpecialMagic extends SpecialPage {
 		$request = $this->getRequest();
 		if ( $request->wasPosted() && $this->options['savetodb'] ) {
 			if ( !$this->getUser()->isAllowed( 'translate' ) ) {
-				$out->permissionRequired( 'translate' );
+				throw new PermissionsError( 'translate' );
 			} else {
 				$errors = array();
 				$o->loadFromRequest( $request );

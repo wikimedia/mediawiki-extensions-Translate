@@ -75,8 +75,8 @@ class PoImporter {
 	/**
 	 * Loads translations for comparison.
 	 *
-	 * @param $id Id of MessageGroup.
-	 * @param $code Language code.
+	 * @param $id string Id of MessageGroup.
+	 * @param $code string Language code.
 	 * @return MessageCollection
 	 */
 	protected function initMessages( $id, $code ) {
