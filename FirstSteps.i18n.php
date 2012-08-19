@@ -1863,7 +1863,7 @@ Se non vuoi ricevere la newsletter, puoi esserne escluso attraverso l\'apposita 
 $messages['ja'] = array(
 	'firststeps' => '開始手順',
 	'firststeps-desc' => 'Translate 拡張機能を使用するウィキで利用者が開始準備をするための[[Special:FirstSteps|特別ページ]]',
-	'translate-fs-pagetitle-done' => ' - 完了！',
+	'translate-fs-pagetitle-done' => ' - 完了!',
 	'translate-fs-pagetitle-pending' => ' - 保留中',
 	'translate-fs-pagetitle' => '開始準備ウィザード - $1',
 	'translate-fs-signup-title' => '利用者登録',

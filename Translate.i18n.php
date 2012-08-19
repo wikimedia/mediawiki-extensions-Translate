@@ -9709,9 +9709,9 @@ $messages['he'] = array(
 יש להפריד את התרגומים באמצעות פסיק (,).
 למרחבי שם יכול להיות תרגום אחד בלבד.
 
-תרגום מרחב השם של שיחת פרויקט <code>$1 talk</code> עשוי להיות מסובך.
-המחרוזת <code>$1</code> מוחלפת בשם האתר, למשל (for example <code>{{ns:project_talk}}</code>).
-אם בשפה שלך קשה ליצור ביטוי תקין בצורה הזאת, נא להודיע לנו בדף [[Support]].
+תרגום מרחב השם של שיחת פרויקט <code dir="ltr">$1 talk</code> עשוי להיות מסובך.
+המחרוזת <code>$1</code> מוחלפת בשם האתר, למשל (<code>{{ns:project_talk}}</code>).
+אם בשפה שלך קשה ליצור ביטוי תקין בצורה הזאת, נא להודיע לנו על כך בדף [[Support]].
 
 עליכם להיות בקבוצת מתרגמים כדי לשמור שינויים.
 השינויים לא יישמרו עד שתלחצו על כפתור השמירה שלהלן.',
@@ -12630,7 +12630,7 @@ $messages['ja'] = array(
 	'supportedlanguages-translators' => '{{PLURAL:$2|翻訳者}}: $1',
 	'supportedlanguages-recenttranslations' => '最近の翻訳',
 	'supportedlanguages-count' => '合計$1{{PLURAL:$1|言語|言語}}',
-	'supportedlanguages-activity' => '$1: $2回の{{PLURAL:$2|編集|編集}}・$3{{PLURAL:$3|日|日}}前に最後の編集',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|回の編集}}・$3 {{PLURAL:$3|日}}前に最終編集',
 	'translate-save' => '保存 ($1)',
 	'translate-jssti-add' => '追加',
 	'managemessagegroups' => 'メッセージ群の管理',
@@ -20474,12 +20474,15 @@ Dacă știți unde sau cum este folosit, îi puteți ajuta pe ceilalți traducă
 	'translate-pref-nonewsletter' => 'Nu-mi trimite știri prin e-mail',
 	'translate-pref-editassistlang' => 'Limbi ajutătoare',
 	'prefs-translate' => 'Opțiuni de traducere',
+	'translate-pref-editassistlang-help' => 'Listă de coduri de limbă separate prin virgulă.
+Traducerea unui mesaj în aceste limbi vă este afișată în timp ce traduceți.
+Lista implicită de limbi depinde de propria dumneavoastră limbă.',
 	'translate-pref-editassistlang-bad' => 'Cod de limbă incorect în lista:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Editor avansat de traducere (JavaScript)',
 	'right-translate' => 'Modifică utilizând interfața de traducere',
 	'right-translate-manage' => 'Gestionează grupurile de mesaje',
-	'action-translate-manage' => 'gestionează grupurile de mesaje',
+	'action-translate-manage' => 'gestionați grupurile de mesaje',
 	'right-translate-import' => 'Importă traduceri efectuate off-line',
 	'right-translate-messagereview' => 'Revizuiește traduceri',
 	'translate-rc-translation-filter' => 'Filtru de traduceri:',
@@ -26328,11 +26331,12 @@ Bí danh của các trang đặc biệt và câu thần chú có thể có nhi�
 Các bản dịch phân cách nhau bằng dấu phẩy (,).
 Tên hình dạng giao diện và không gian tên chỉ có thể có một bản dịch.
 
-Trong các bản dịch không gian tên, <code>$1 talk</code> có đặc biệt hơn. <code>$1</code> được thay thế bằng tên trang (ví dụ <code>{{ns:project_talk}}</code>).
-Nếu ngôn ngữ của bạn không thể hiển thị đúng nếu không đổi tên trang (SITENAME), xin hãy liên hệ với một lập trình viên.
+Việc dịch không gian tên dự án <code>$1 talk</code> có thể phức tạp hơn.
+<code>$1</code> được thay thế bằng tên trang (<code>SITENAME</code>) của dự án (ví dụ <code>{{ns:project_talk}}</code>).
+Nếu cần thay đổi tên trang trong không gian tên để đúng ngữ pháp trong ngôn ngữ của bạn, xin hãy cho chúng tôi biết tại [[Support]].
 
-Bạn cần phải thuộc nhóm biên dịch viên để có thể lưu các thay đổi.
-Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn vào nút lưu ở dưới.',
+Bạn cần phải là biên dịch viên để có thể lưu các thay đổi.
+Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn vào nút Lưu ở dưới.',
 	'translate-magic-module' => 'Gói:',
 	'translate-magic-submit' => 'Xem',
 	'translate-magic-cm-export' => 'Xuất',
@@ -26481,6 +26485,9 @@ Màu đường gạch dưới cho biết biên dịch viên đã tích cực t�
 	'translate-smg-nochanges' => 'Không có thay đổi để xử lý.',
 	'translate-smg-submit' => 'Lưu thay đổi để xử lý',
 	'translate-smg-submitted' => 'Các định nghĩa thông điệp đã thay đổi. Các thay đổi đang được xử lý trên nền.',
+	'translate-smg-postponed' => 'Không thể xử lý một số thay đổi. [[{{FULLPAGENAME}}|Thử lại]].',
+	'translate-smg-left' => 'Nội dung thông điệp trong wiki',
+	'translate-smg-right' => 'Các thay đổi để duyệt',
 	'translate-manage-import-diff' => 'Thông điệp $1 | Tác vụ: $2',
 	'translate-manage-import-new' => 'Thông điệp mới $1',
 	'translate-manage-import-deleted' => 'Thông điệp đã xóa $1',
@@ -26547,7 +26554,7 @@ Chi tiết:$1',
 	'translate-messagereview-failure' => 'Đang chấp nhận… thất bại: $1',
 	'translate-messagereview-done' => 'Đã chấp nhận',
 	'translate-messagereview-reviews' => 'Đã được $1 thành viên chấp nhận',
-	'translate-messagereview-reviewswithyou' => 'Đã được $1 thành chấp nhận, bao gồm bạn',
+	'translate-messagereview-reviewswithyou' => 'Đã được {{PLURAL:$1|bạn chấp nhận|$1 người dùng chấp nhận, bao gồm bạn}}',
 	'api-error-invalidrevision' => 'Không tìm thấy bản dịch',
 	'api-error-unknownmessage' => 'Không tìm thấy thông điệp',
 	'api-error-fuzzymessage' => 'Bản dịch được đánh dấu là lỗi thời',

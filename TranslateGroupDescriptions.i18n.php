@@ -2384,6 +2384,7 @@ $messages['ro'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] este un proiect ce are ca scop furnizarea unei versiuni off-line (care să conțină doar text) a Wikipediei pe un dispozitiv mobil.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] este o aplicație multiplatformă destinată dispozitivelor mobile cu ajutorul căreia se poate lectura sau contribui la conținutul Wikipediei',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] este o aplicație multiplatformă destinată dispozitivelor mobile cu ajutorul căreia se poate lectura sau contribui la conținutul Wikționarului',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] este o aplicație mobilă prin intermediul căreia se poate contribui la [[:meta:Wiki Loves Monuments|proiectul Wiki Loves Monuments]]',
 );
 
 /** Russian (русский)
