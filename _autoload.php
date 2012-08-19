@@ -164,6 +164,7 @@ $wgAutoloadClasses['TTMServer'] = "$dir/ttmserver/TTMServer.php";
  * @name   Classes for file format support (FFS)
  * @{
  */
+$wgAutoloadClasses['AndroidXmlFFS'] = "$dir/ffs/AndroidXmlFFS.php";
 $wgAutoloadClasses['DtdFFS'] = "$dir/ffs/DtdFFS.php";
 $wgAutoloadClasses['FFS'] = "$dir/ffs/FFS.php";
 $wgAutoloadClasses['FlatPhpFFS'] = "$dir/ffs/FlatPhpFFS.php";
