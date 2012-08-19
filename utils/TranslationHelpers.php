@@ -856,7 +856,10 @@ class TranslationHelpers {
 	}
 
 	protected function formatGettextComments() {
-		$this->mustBeKnownMessage();
+		if ( !$this->handle->isValid() ) {
+			return '';
+		}
+
 		// We need to get the primary group to get the correct file
 		// So $group can be different from $this->group
 		$group = $this->handle->getGroup();
