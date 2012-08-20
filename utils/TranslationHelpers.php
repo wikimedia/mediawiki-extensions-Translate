@@ -856,7 +856,7 @@ class TranslationHelpers {
 		$contents = preg_replace( '~^<([a-z]+)>(.*)</\1>$~us', '\2', $contents );
 
 		return TranslateUtils::fieldset(
-			wfMessage( 'translate-edit-information' )->rawParams( $edit )->params( $page )->escaped(),
+			wfMessage( 'translate-edit-information' )->rawParams( $edit )->escaped(),
 			Html::rawElement( 'div', $divAttribs, $contents ), array( 'class' => $class )
 		);
 
