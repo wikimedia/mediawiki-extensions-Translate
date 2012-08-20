@@ -1,0 +1,49 @@
+This document describes how event hooks work in the Translate extension;
+how to add hooks for an event; and how to run hooks for an event.
+
+For a more comprehensive guide to hooks, navigate to your root MediaWiki
+directory, and then find /docs/hooks.txt.
+
+== Rationale ==
+
+Hooks allow us to decouple optionally-run code from code that is run for
+everyone. It allows MediaWiki hackers, third-party developers and local
+administrators to define code that will be run at certain points in the mainline
+code, and to modify the data run by that mainline code. Hooks can keep mainline
+code simple, and make it easier to write extensions. Hooks are a principled
+alternative to local patches.
+
+== Writing hooks ==
+
+=== PHP hooks ===
+For a more guide to PHP hooks, navigate to your root MediaWiki
+directory, and then find /docs/hooks.txt .
+
+=== JavaScript hooks ===
+JavaScript hooks for the Translate extension are a little different. To use them, declare a
+dependency on ext.translate.hooks . Then, use
+
+	mw.translateHooks.add( name, hookFunction );
+
+where name is a string, but hookFunction is not (unlike in the case of PHP hooks)
+but rather a function reference. Return values from JavaScript hooks are ignored.
+
+== Events and parameters ==
+
+This is a list of known events and parameters; please add to it if you're going
+to add events to the Translate extension.
+
+=== PHP events ===
+'TranslateBeforeAddModules': Provides an opportunity to load extra modules
+	&$modules: Array of module names to be loaded
+
+'TranslateGetBoxes': Provides an opportunity to add or remove "boxes" (translation helpers) from the translation interface
+	$group: The message group being used at the time
+	$handle: A MessageHandle object representing the translation page (e.g. 'MediaWiki:Example/qqq')
+	&$boxes: An associative array to be appended to (format: 'name' => 'some HTML string')
+
+'TranslateGetSpecialTranslateOptions': Provides an opportunity for overriding task values
+	&$defaults: Associative array of default values
+	&$nondefaults: Associative array of nondefault (override) values
+
+=== JavaScript events ===
