@@ -72,6 +72,7 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		$revision = $status->value['revision']->getId();
 		$translatablePage = TranslatablePage::newFromRevision( $title, $revision );
 		$translatablePage->addMarkedTag( $revision );
+		MessageGroups::clearCache();
 
 		$translationPage = Title::newFromText( 'Translatable page/fi' );
 		RenderJob::newJob( $translationPage )->run();

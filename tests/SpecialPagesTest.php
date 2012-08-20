@@ -42,7 +42,10 @@ class SpecialPagesTest extends MediaWikiTestCase {
 			$page->run( null );
 		} catch ( PermissionsError $e ) {
 			// This is okay
+		} catch ( ErrorPageError $e ) {
+			// This is okay as well
 		}
+
 		$this->assertTrue( true, "Special page $name was executed succesfully with anon user" );
 
 		$user = new SuperUser();
@@ -50,7 +53,11 @@ class SpecialPagesTest extends MediaWikiTestCase {
 		$page->setContext( $context );
 
 		// This should not throw permission errors
-		$page->run( null );
+		try {
+			$page->run( null );
+		} catch ( ErrorPageError $e ) {
+			// This is okay here
+		}
 		$this->assertTrue( true, "Special page $name was executed succesfully with super user" );
 
 	}

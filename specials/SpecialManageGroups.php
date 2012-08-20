@@ -71,7 +71,7 @@ class SpecialManageGroups extends SpecialPage {
 	protected function showChanges( $allowed ) {
 		global $wgContLang;
 
-		$diff = new DifferenceEngine;
+		$diff = new DifferenceEngine( $this->getContext() );
 		$diff->showDiffStyle();
 		$diff->setReducedLineNumbers();
 		$this->diff = $diff;
@@ -91,6 +91,10 @@ class SpecialManageGroups extends SpecialPage {
 		$groups = unserialize( $reader->get( '#keys' ) );
 		foreach ( $groups as $id ) {
 			$group = MessageGroups::getGroup( $id );
+			if ( !$group ) {
+				continue;
+			}
+
 			$changes = unserialize( $reader->get( $id ) );
 			$out->addHtml( Html::element( 'h2', array(), $group->getLabel() ) );
 
