@@ -298,7 +298,7 @@ class SpecialTranslate extends SpecialPage {
 		$this->group = MessageGroups::getGroup( $this->options['group'] );
 		$this->task  = TranslateTasks::getTask( $this->options['task'] );
 
-		if ( $this->group instanceof RecentMessageGroup ) {
+		if ( $this->group && MessageGroups::isDynamic( $this->group ) ) {
 			$this->group->setLanguage( $this->options['language'] );
 		}
 	}
