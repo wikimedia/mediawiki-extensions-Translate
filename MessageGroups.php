@@ -15,13 +15,14 @@
  * @todo Clean up the mixed static/member method interface.
  */
 class MessageGroups {
+	protected static $loaded = false;
+
 	/// Initialises the list of groups (but not the groups itself if possible).
 	public static function init() {
-		static $loaded = false;
-		if ( $loaded ) {
+		if ( self::$loaded ) {
 			return;
 		}
-		$loaded = true;
+		self::$loaded = true;
 
 		global $wgTranslateCC, $wgTranslateEC, $wgTranslateAC;
 		global $wgAutoloadClasses;
@@ -52,6 +53,7 @@ class MessageGroups {
 	public static function clearCache() {
 		$key = wfMemckey( 'translate-groups' );
 		self::getCache()->delete( $key );
+		self::$loaded = false;
 	}
 
 	/**
