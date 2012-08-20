@@ -213,6 +213,8 @@ class TranslationHelpers {
 			}
 		}
 
+		wfRunHooks( 'TranslateGetBoxes', array( $this->group, $this->handle, &$boxes ) );
+
 		if ( count( $boxes ) ) {
 			return Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
 		} else {
@@ -1359,7 +1361,9 @@ class TranslationHelpers {
 	}
 
 	public static function addModules( OutputPage $out ) {
-		$out->addModules( 'ext.translate.quickedit' );
+		$modules = array( 'ext.translate.quickedit' );
+		wfRunHooks( 'TranslateBeforeAddModules', array( &$modules ) );
+		$out->addModules( $modules );
 
 		// Might be needed, but ajax doesn't load it
 		// Globals :(
