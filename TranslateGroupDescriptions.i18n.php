@@ -2945,6 +2945,7 @@ Xem thêm chi tiết tại [[MW:Extension:PDF Writer]] và http://code.pediapres
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] là dự án sản xuất phiên bản Wikipedia ngoại tuyến có văn bản thuần để đọc trên thiết bị di động.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] là một ứng dụng đa nền tảng dành cho máy tính di động và bảng để đọc và đóng góp vào Wikipedia.',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] là một ứng dụng đa nền tảng dành cho máy tính di động và bảng để đọc và đóng góp vào Wiktionary.',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Di động]] là một ứng dụng di động cho phép đóng góp vào dự án [[:meta:Wiki Loves Monuments|Wiki Yêu mến Đài tưởng niệm]]',
 );
 
 /** Yiddish (ייִדיש)
