@@ -366,6 +366,7 @@ class MessageGroups {
 	public static function getDynamicGroups() {
 		return array(
 			'!recent' => 'RecentMessageGroup',
+			'!additions' => 'RecentAdditionsMessageGroup',
 		);
 	}
 
