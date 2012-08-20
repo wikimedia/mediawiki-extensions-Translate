@@ -130,11 +130,25 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $this->mangler;
 	}
 
+	/**
+	 * Optimized version of array_keys( $_->getDefinitions() ).
+	 * @return array
+	 * @since 2012-08-21
+	 */
+	public function getKeys() {
+		$cache = new MessageGroupCache( $this, $this->getSourceLanguage() );
+		if ( !$cache->exists() ) {
+			return array_keys( $this->getDefinitions() );
+		} else {
+			return $cache->getKeys();
+		}
+	}
+
 	public function initCollection( $code ) {
 		$namespace = $this->getNamespace();
 		$messages = array();
 
-		$cache = new MessageGroupCache( $this );
+		$cache = new MessageGroupCache( $this, $this->getSourceLanguage() );
 		if ( !$cache->exists() ) {
 			wfWarn( "By-passing message group cache" );
 			$messages = $this->getDefinitions();

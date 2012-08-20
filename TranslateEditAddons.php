@@ -28,40 +28,21 @@ class TranslateEditAddons {
 			return true;
 		}
 
+
 		$group = $handle->getGroup();
 		// Happens when translation page move is in progress
 		if ( !$group ) {
 			return true;
 		}
 
-		$key = $handle->getKey();
-		$code = $handle->getCode();
-		$collection = $group->initCollection( $group->getSourceLanguage() );
-		$collection->filter( 'optional' );
-		$keys = $collection->getMessageKeys();
 
-		$key = strtolower( strtr( $key, ' ', '_' ) );
-
-		$next = $prev = null;
-
-		$match = -100;
-
-		foreach ( $keys as $index => $tkey ) {
-			if ( $key === strtolower( strtr( $tkey, ' ', '_' ) ) ) {
-				$match = $index;
-				break;
-			}
-		}
-
-		if ( isset( $keys[$match -1] ) ) {
-			$prev = $keys[$match -1];
-		}
-		if ( isset( $keys[$match + 1] ) ) {
-			$next = $keys[$match + 1];
+		$index = $next = $prev = $key = null;
+		if ( $skin->getUser()->isAllowed( 'translate' ) ) {
+			self::figureNextPrevMessages( $handle, $key, $index, $next, $prev );
 		}
 
 		$id = $group->getId();
-		$ns = $title->getNamespace();
+		$code = $handle->getCode();
 
 		$translate = SpecialPage::getTitleFor( 'Translate' );
 		$fragment = htmlspecialchars( "#msg_$key" );
@@ -73,10 +54,9 @@ class TranslateEditAddons {
 		$tabindex = 2;
 
 		if ( $prev !== null ) {
-			$linktitle = Title::makeTitleSafe( $ns, "$prev/$code" );
 			$data = array(
 				'text' => wfMessage( 'translate-edit-tab-prev' )->text(),
-				'href' => $linktitle->getLocalUrl( $nav_params ),
+				'href' => $prev->getLocalUrl( $nav_params ),
 			);
 			self::addTab( $skin, $tabs, 'prev', $data, $tabindex );
 		}
@@ -95,10 +75,9 @@ class TranslateEditAddons {
 		self::addTab( $skin, $tabs, 'list', $data, $tabindex );
 
 		if ( $next !== null ) {
-			$linktitle = Title::makeTitleSafe( $ns, "$next/$code" );
 			$data = array(
 				'text' => wfMessage( 'translate-edit-tab-next' )->text(),
-				'href' => $linktitle->getLocalUrl( $nav_params ),
+				'href' => $next->getLocalUrl( $nav_params ),
 			);
 			self::addTab( $skin, $tabs, 'next', $data, $tabindex );
 		}
@@ -113,6 +92,52 @@ class TranslateEditAddons {
 			$tabs['namespaces'][$name] = $data;
 		} else {
 			array_splice( $tabs, $index++, 0, array( $name => $data ) );
+		}
+	}
+
+	/**
+	 * Takes a MessageHandle, loads the keys of the primary group it belongs to
+	 * and tries to find messages coming before and after.
+	 * @param MessageHandle $handle
+	 * @param string &$key will be filled with message in correct case etc.
+	 * @param int &$index approximate index of the message, for setting offset
+	 *                    and limit on Special:Translate
+	 * @param Title &$next Title of the next message or null
+	 * @param Title &$prev Title of the previous message or null
+	 * @since 2012-08-21
+	 */
+	protected static function figureNextPrevMessages( MessageHandle $handle, &$key, &$index, &$next, &$prev ) {
+		$group = $handle->getGroup();
+
+		if ( $group instanceof MessageGroupBase ) {
+			$keys = $group->getKeys();
+		} else {
+			$keys = array_keys( $group->getDefinitions() );
+		}
+
+		$key = $handle->getKey();
+		$key = strtolower( strtr( $key, ' ', '_' ) );
+		$match = -100; // Stupid PHP thinks null is 0
+		foreach ( $keys as $index => $tkey ) {
+			// The cases may differ in first letter
+			if ( $key === strtolower( strtr( $tkey, ' ', '_' ) ) ) {
+				// Fill in the correct case
+				$key = $tkey;
+				$match = $index;
+				break;
+			}
+		}
+
+		$ns = $handle->getTitle()->getNamespace();
+		$code = $handle->getCode();
+
+		if ( isset( $keys[$match -1] ) ) {
+			$mkey = $keys[$match -1];
+			$prev = Title::makeTitleSafe( $ns, "$mkey/$code" );
+		}
+		if ( isset( $keys[$match + 1] ) ) {
+			$mkey = $keys[$match + 1];
+			$next = Title::makeTitleSafe( $ns, "$mkey/$code" );
 		}
 	}
 
