@@ -691,7 +691,7 @@ class SpecialTranslate extends SpecialPage {
 		global $wgRequest, $wgOut;
 
 		$title = $skin->getTitle();
-		list( $alias, $sub ) = SpecialPage::resolveAliasWithSubpage( $title->getText() );
+		list( $alias, $sub ) = SpecialPageFactory::resolveAlias( $title->getText() );
 
 		$pagesInGroup = array( 'Translate', 'LanguageStats', 'MessageGroupStats' );
 		if ( !in_array( $alias, $pagesInGroup, true ) ) {

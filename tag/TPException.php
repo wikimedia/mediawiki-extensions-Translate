@@ -21,6 +21,7 @@ class TPException extends MWException {
 	 */
 	public function __construct( $msg ) {
 		$this->msg = $msg;
+		// @todo FIXME: Use Message class.
 		parent::__construct( call_user_func_array( 'wfMsg', $msg ) );
 	}
 
