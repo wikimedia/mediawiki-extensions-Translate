@@ -114,15 +114,18 @@ class MessageTable {
 			$title = $titleMap[$key];
 
 			$original = $m->definition();
+			$translation = $m->translation();
 
-			$hasTranslation = $m->translation() !== null;
+			$hasTranslation = $translation !== null;
 			if ( $hasTranslation ) {
-				$message = $m->translation();
-				$langAttribs = self::getLanguageAttributes( $targetLang );
+				$message = $translation;
+				$extraAttribs = self::getLanguageAttributes( $targetLang );
 			} else {
 				$message = $original;
-				$langAttribs = self::getLanguageAttributes( $sourceLang );
+				$extraAttribs = self::getLanguageAttributes( $sourceLang );
 			}
+
+			wfRunHooks( 'TranslateFormatMessageBeforeTable', array( &$message, $m, $this->group, $targetLang, &$extraAttribs ) );
 
 			global $wgLang;
 			$niceTitle = htmlspecialchars( $wgLang->truncate( $title->getPrefixedText(), -35 ) );
@@ -143,12 +146,12 @@ class MessageTable {
 				$extra = '<br />' . $optional;
 			}
 
-			$tqeData = array(
+			$tqeData = $extraAttribs + array(
 				'data-title' => $title->getPrefixedText(),
 				'data-group' => $this->group->getId(),
 				'id' => 'tqe-anchor-' . substr( sha1( $title->getPrefixedText() ), 0, 12 ),
-				'class' => trim( 'tqe-inlineeditable ' . ( $hasTranslation ? 'translated' : 'untranslated' ) )
-			) + $langAttribs;
+				'class' => 'tqe-inlineeditable ' . ( $hasTranslation ? 'translated' : 'untranslated' )
+			);
 
 			$leftColumn = $this->getReviewButton( $m ) . $anchor . $tools['edit'] . $extra . $this->getReviewStatus( $m );
 

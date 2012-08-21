@@ -37,13 +37,30 @@ to add events to the Translate extension.
 'TranslateBeforeAddModules': Provides an opportunity to load extra modules
 	&$modules: Array of module names to be loaded
 
+'TranslateFormatMessageBeforeTable': Provides an opportunity to manipulate the display of translation strings (messages) in the main table
+	&$message: The message (string) that will be displayed
+	$m: ThinMessage object representing the source object, useful for $m->original() and $m->translation()
+	$group: The source message group
+	$targetLanguage: The language for which translations are being shown
+	&$extraAttribs: An array of attributes that will be added to the table row
+
 'TranslateGetBoxes': Provides an opportunity to add or remove "boxes" (translation helpers) from the translation interface
 	$group: The message group being used at the time
 	$handle: A MessageHandle object representing the translation page (e.g. 'MediaWiki:Example/qqq')
 	&$boxes: An associative array to be appended to (format: 'name' => 'some HTML string')
 
+'TranslateGetExtraInputs': Provides an opportunity to add extra form inputs to to the default translation editor
+	&$translation: The translation string as it stands
+	&$extraInputs: The extra input space, ready for HTML to be appended
+
 'TranslateGetSpecialTranslateOptions': Provides an opportunity for overriding task values
 	&$defaults: Associative array of default values
 	&$nondefaults: Associative array of nondefault (override) values
 
+'TranslatePrefillTranslation': Provides an opportunity for a new translation to start not from as a carte blanche (the default) but from some prefilled string
+	&$translation: The translation string as it stands
+	$handle: The current MessageHandle object
+
 === JavaScript events ===
+'afterRegisterFeatures': Provides an opportunity to register event handlers, etc., whenever a new form is opened.
+	form: The new form
