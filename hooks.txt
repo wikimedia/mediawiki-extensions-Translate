@@ -16,14 +16,20 @@ alternative to local patches.
 == Writing hooks ==
 
 === PHP hooks ===
-For a more guide to PHP hooks, navigate to your root MediaWiki
-directory, and then find /docs/hooks.txt .
+For a guide to PHP hooks, navigate to your root MediaWiki
+directory, and then find docs/hooks.txt.
 
 === JavaScript hooks ===
-JavaScript hooks for the Translate extension are a little different. To use them, declare a
-dependency on ext.translate.hooks . Then, use
+JavaScript hooks for the Translate extension are a little different. To use
+them, declare a dependency on ext.translate.hooks:
 
-	mw.translateHooks.add( name, hookFunction );
+ $wgResourceModules['...'] = array(
+ 	'scripts' => '...js',
+ 	'dependencies' => array( 'ext.translate.hooks' ),
+ );
+
+And then in that module use:
+ mw.translateHooks.add( name, hookFunction );
 
 where name is a string, but hookFunction is not (unlike in the case of PHP hooks)
 but rather a function reference. Return values from JavaScript hooks are ignored.
@@ -34,16 +40,33 @@ This is a list of known events and parameters; please add to it if you're going
 to add events to the Translate extension.
 
 === PHP events ===
-'TranslateBeforeAddModules': Provides an opportunity to load extra modules
-	&$modules: Array of module names to be loaded
+;TranslateBeforeAddModules: Provides an opportunity to load extra modules
+ array          &$modules: List of resource loader module names
 
-'TranslateGetBoxes': Provides an opportunity to add or remove "boxes" (translation helpers) from the translation interface
-	$group: The message group being used at the time
-	$handle: A MessageHandle object representing the translation page (e.g. 'MediaWiki:Example/qqq')
-	&$boxes: An associative array to be appended to (format: 'name' => 'some HTML string')
+;TranslateFormatMessageBeforeTable: Provides an opportunity to manipulate the display of translation strings (messages) in the main table
+ string         &$message: The message that will be displayed
+ TMessage        $m: Object representing the source object, useful for $m->original() and $m->translation()
+ MessageGroup    $group: The source message group
+ string          $targetLanguage: The language for which translations are being shown
+ array          &$extraAttribs: An array of attributes that will be added to the table row
 
-'TranslateGetSpecialTranslateOptions': Provides an opportunity for overriding task values
-	&$defaults: Associative array of default values
-	&$nondefaults: Associative array of nondefault (override) values
+;TranslateGetBoxes: Provides an opportunity to add or remove "boxes" (translation helpers) from the translation interface
+ MessageGroup    $group: The message group being worked on
+ MessageHandle   $handle: An object representing the translation page (e.g. 'MediaWiki:Example/qqq')
+ array          &$boxes: An associative array to be appended to (format: 'name' => 'some HTML string')
+
+;TranslateGetExtraInputs: Provides an opportunity to add extra form inputs to to the default translation editor
+ string         &$translation: The translation as it stands
+ string         &$extraInputs: The extra input space, ready for HTML to be appended
+
+;TranslateGetSpecialTranslateOptions: Provides an opportunity for overriding task values
+ array          &$defaults: Associative array of default values
+ array          &$nondefaults: Associative array of nondefault (override) values
+
+;TranslatePrefillTranslation: Provides an opportunity for a new translation to start not from as a carte blanche (the default) but from some prefilled string
+ string         &$translation: The translation string as it stands
+ MessageHandle   $handle: The current MessageHandle object
 
 === JavaScript events ===
+;afterRegisterFeatures: Provides an opportunity to register event handlers, etc., whenever a new form is opened.
+ jQuery         form: The new form

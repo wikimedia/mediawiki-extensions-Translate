@@ -184,6 +184,11 @@ $wgResourceModules['ext.translate'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.hooks'] = array(
+	'scripts' => 'resources/ext.translate.hooks.js',
+	'position' => 'top',
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.helplink'] = array(
 	'styles' => 'resources/ext.translate.helplink.css',
 	'position' => 'top',
@@ -222,6 +227,7 @@ $wgResourceModules['ext.translate.quickedit'] = array(
 	'styles' => 'resources/ext.translate.quickedit.css',
 	'messages' => array( 'translate-js-nonext', 'translate-js-save-failed' ),
 	'dependencies' => array(
+		'ext.translate.hooks',
 		'jquery.form',
 		'jquery.ui.dialog',
 		'jquery.autoresize',
