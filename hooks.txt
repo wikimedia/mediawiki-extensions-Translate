@@ -63,9 +63,25 @@ to add events to the Translate extension.
  array          &$defaults: Associative array of default values
  array          &$nondefaults: Associative array of nondefault (override) values
 
+;TranslateGetTranslateInfoParams: Allows extra parameters to be added to the action=query&prop=translateinfo module
+ array          &$params: An associative array of possible parameters (name => details; see files for correct format)
+
+;TranslateGetTranslateInfoParamDescs: Provides an opportunity to document any parameters added with 'TranslateGetTranslateInfoParams'.
+ array          &$paramDescs: An associative array of parameters, name => description.
+ string          $p: The prefix for action=query&prop=translateinfo (currently ti, but could change), useful for documentation
+
+;TranslateGetTranslateInfoPropertyList: Allows extra properties to be added to captured by action=query&prop=translateinfo&tiprop=foo|bar|bat module
+ array          &$properties: An associative array of properties, name => description.
+
 ;TranslatePrefillTranslation: Provides an opportunity for a new translation to start not from as a carte blanche (the default) but from some prefilled string
  string         &$translation: The translation string as it stands
  MessageHandle   $handle: The current MessageHandle object
+
+;TranslateProcessTranslateInfoProperties: Allows exrra property requests to be acted upon, and the new new properties returned
+ array          &$props: Associative array of the properties of $group that will be returned
+ array           $propsToReturn: Associative array ($name => true) of properties the user has specifically requested
+ array           $params: Parameter input by the user (unprefixed name => value)
+ MessageGroup    $group: The group in question
 
 === JavaScript events ===
 ;afterRegisterFeatures: Provides an opportunity to register event handlers, etc., whenever a new form is opened.
