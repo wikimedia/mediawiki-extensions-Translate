@@ -69,4 +69,10 @@ to add events to the Translate extension.
 
 === JavaScript events ===
 ;afterRegisterFeatures: Provides an opportunity to register event handlers, etc., whenever a new form is opened.
- jQuery         form: The new form
+ jQuery           form: The new form
+
+;afterSubmit: Provides an opportunity to modify a Translate translation form immediately before it is submitted
+ jQuery           form: The form being submitted
+
+;beforeSubmit: Provides an opportunity to modify a Translate translation form immediately after it is submitted
+ jQuery           form: The form that has just been submitted
