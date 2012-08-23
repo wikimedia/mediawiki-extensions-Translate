@@ -481,6 +481,27 @@ $messages['ca'] = array(
 	'translate-fs-pagetitle-done' => ' - fet!',
 );
 
+/** Sorani Kurdish (کوردی)
+ * @author Muhammed taha
+ */
+$messages['ckb'] = array(
+	'firststeps' => 'هەنگاوە سەرەتاییەکان',
+	'translate-fs-pagetitle-done' => '- تەواو!',
+	'translate-fs-signup-title' => '- تۆماربوون',
+	'translate-fs-settings-title' => 'هەڵبژاردنەکانت رێکبخە',
+	'translate-fs-userpage-title' => 'لاپەڕەی بەکارهێنەریت دروست بکە',
+	'translate-fs-permissions-title' => 'داوای دەسەڵاتەکانی وەرگێڕ بکە',
+	'translate-fs-target-title' => 'دەست بکە بەوەرگێڕان!',
+	'translate-fs-email-title' => 'ئیمەیلەکەت پشت‌ڕاست بکەرەوە',
+	'translate-fs-selectlanguage' => 'زمانێک دیاری بکە',
+	'translate-fs-settings-planguage' => 'زمانی سەرەکی:',
+	'translate-fs-settings-submit' => 'هەڵبژاردنەکانت بپارێزە',
+	'translate-fs-userpage-submit' => 'دروستکردنی پەڕەی بەکارهێنەریم',
+	'translate-fs-userpage-done' => 'باشە! ئێستا لاپەڕەی بەکارهێنەریت هەیە.',
+	'translate-fs-permissions-planguage' => 'زمانی سەرەکی:',
+	'translate-fs-permissions-submit' => 'ناردنی داواکاری',
+);
+
 /** Czech (česky)
  * @author Mormegil
  */

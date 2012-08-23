@@ -1401,6 +1401,7 @@ $messages['ce'] = array(
 /** Sorani Kurdish (کوردی)
  * @author Asoxor
  * @author Marmzok
+ * @author Muhammed taha
  * @author رزگار
  */
 $messages['ckb'] = array(
@@ -1411,11 +1412,20 @@ $messages['ckb'] = array(
 	'tpt-diff-new' => 'دەقی نوێ',
 	'tpt-submit' => 'نیشان‌کردنی ئەم وەشانە بۆ وەرگێڕان',
 	'tpt-sections-template' => 'داڕێژی لاپەڕەی وەرگێڕان',
+	'tpt-nosuchpage' => 'پەڕەی "$1" بوونی نیه‌',
+	'tpt-mark-summary' => 'نیشانکردنی ئەم وەشانە بۆ وەرگێڕان',
 	'tpt-already-marked' => 'دوایین وەشانی ئەم لاپەڕەیە لە پێش‌دا بۆ وەرگێڕان نیشان کراوە.',
+	'tpt-select-prioritylangs-reason' => 'هۆکار:',
+	'tpt-rev-encourage' => 'گەڕاندنەوە',
 	'translate-tag-translate-link-desc' => 'وەرگێڕانی ئەم پەڕە',
 	'translate-tag-markthis' => 'نیشان‌کردنی ئەم لاپەڕەیە بۆ وەرگێڕان',
 	'tpt-languages-legend' => 'زمانەکانی دیکە:',
+	'tpt-aggregategroup-add' => 'زێدەبکە',
+	'tpt-aggregategroup-save' => 'پاشەکەوتی بکە',
+	'tpt-aggregategroup-new-name' => 'ناو:',
 	'pt-movepage-reason' => 'هۆکار:',
+	'pt-deletepage-current' => 'ناوی پەڕە:',
+	'pt-deletepage-reason' => 'هۆکار:',
 );
 
 /** Czech (česky)
