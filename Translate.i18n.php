@@ -4571,7 +4571,7 @@ Does dim ond angen eu cyfieithu pan fod orgraff eich iaith yn gofyn am eu cyfiei
 	'translate-edit-translation' => 'Cyfieithiad',
 	'translate-edit-contribute' => 'cofnodi eglurhad',
 	'translate-edit-no-information' => "''Nid oes unrhyw wybodaeth wedi ei chofnodi am y neges hon eto.''
-''Os ydych yn gwybod ym mha le neu sut y defnyddir y neges hon, gallwch hwyluso gwaith y cyfieithwyr drwy gofnodi eglurhad arni.''",
+''Os ydych yn gwybod ymhle neu ym mha fodd y defnyddir y neges hon, gallwch hwyluso gwaith y cyfieithwyr drwy gofnodi eglurhad arni.''",
 	'translate-edit-information' => 'Gwybodaeth am y neges ($1)',
 	'translate-edit-in-other-languages' => 'Y neges mewn ieithoedd eraill',
 	'translate-edit-committed' => 'Y cyfieithiad cyfredol yn y meddalwedd',
@@ -12313,6 +12313,7 @@ Si consiglia di revisionare i messaggi attraverso [[Special:Translate|{{int:tran
 	'translate-smg-submitted' => 'Le definizioni dei messaggi sono state aggiornate. Le modifiche saranno elaborate in background.',
 	'translate-smg-postponed' => 'Alcune modifiche non possono essere elaborate. [[{{FULLPAGENAME}}|Riprova]].',
 	'translate-smg-left' => 'Contenuto del messaggio nel wiki',
+	'translate-smg-right' => 'Modifiche in arrivo',
 	'translate-manage-import-diff' => 'Messaggio $1 | Azioni: $2',
 	'translate-manage-import-new' => 'Nuovo messaggio $1',
 	'translate-manage-import-deleted' => 'Cancellato messaggio $1',
@@ -12554,9 +12555,9 @@ $messages['ja'] = array(
 	'translate-pref-jsedit' => '拡張版翻訳エディター（JavaScriptが必要）',
 	'right-translate' => '翻訳用インターフェイスを使用して編集',
 	'right-translate-manage' => 'メッセージ群を管理',
-	'action-translate-manage' => 'メッセージ群を管理',
-	'right-translate-import' => 'オフラインでの翻訳を取り込む',
-	'action-translate-import' => 'オフラインでの翻訳を取り込む',
+	'action-translate-manage' => 'メッセージ群の管理',
+	'right-translate-import' => 'オフラインでの翻訳を取り込み',
+	'action-translate-import' => 'オフラインでの翻訳の取り込み',
 	'right-translate-messagereview' => '翻訳を査読',
 	'right-translate-groupreview' => 'メッセージ群のワークフローの状態を変更',
 	'translate-rc-translation-filter' => '翻訳を絞り込み:',
@@ -15786,7 +15787,7 @@ $messages['mk'] = array(
 	'translate-magic-namespace' => 'Називи на именски простори',
 	'translate-magic-notsaved' => 'Вашето уредување не беше зачувано!',
 	'translate-magic-errors' => 'Поправете {{PLURAL:$1|ја следнава грешка|ги следниве грешки}} во преводот:',
-	'translate-magic-saved' => 'Вашите промени се успешно зачувани.',
+	'translate-magic-saved' => 'Промените се успешно зачувани.',
 	'translate-checks-parameters' => '{{PLURAL:$2|Следниов параметар не се користи|Следниве параметри се користат}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Следниов параметар е непознат|Следниве параметри се непознати}}:
