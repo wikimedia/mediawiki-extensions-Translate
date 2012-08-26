@@ -1584,6 +1584,7 @@ $messages['cy'] = array(
 	'pt-deletepage-list-translation' => 'Tudalennau cyfieithu',
 	'pt-deletepage-list-section' => 'Tudalennau adran gyfieithu',
 	'pt-deletepage-list-other' => 'Isdudalennau eraill',
+	'pt-deletepage-list-count' => "Cyfanswm y tudalennau i'w dileu yw {{PLURAL:$1|$1}}.",
 );
 
 /** Danish (dansk)

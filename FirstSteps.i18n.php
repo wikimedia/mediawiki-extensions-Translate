@@ -570,6 +570,7 @@ Pokud novinky nechcete dostávat, můžete se z odběru odhlásit na záložce �
  * @author Lloffiwr
  */
 $messages['cy'] = array(
+	'firststeps' => 'Y camau cyntaf',
 	'translate-fs-selectlanguage' => 'Dewiswch iaith',
 	'translate-fs-settings-planguage' => 'Prif iaith:',
 	'translate-fs-settings-submit' => 'Rhodder y dewisiadau ar gadw',
