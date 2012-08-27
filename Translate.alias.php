@@ -842,6 +842,8 @@ $specialPageAliases['tr'] = array(
 	'FirstSteps' => array( 'İlkAdımlar' ),
 	'SupportedLanguages' => array( 'DesteklenenDiller' ),
 	'MyLanguage' => array( 'Dilim', 'BenimDilim' ),
+	'PageTranslationDeletePage' => array( 'SayfaÇevirisiSayfaSilme' ),
+	'AggregateGroups' => array( 'GruplarıBirleştirme' ),
 );
 
 /** Tatar (Cyrillic script) (татарча) */
