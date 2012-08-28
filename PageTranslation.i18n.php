@@ -125,12 +125,12 @@ A translation administrator decided to focus the translation efforts on $3.",
 Translation template: <pre>$1</pre>',
 	'pt-parse-close' => 'Unbalanced &lt;/translate> tag.
 Translation template: <pre>$1</pre>',
-	'pt-parse-nested' => 'Nested &lt;translate> sections are not allowed.
+	'pt-parse-nested' => 'Nested &lt;translate> translation units are not allowed.
 Tag text: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Multiple section markers for one translation unit.
-Section text: <pre>$1</pre>',
-	'pt-shake-position' => 'Section markers in unexpected position.
-Section text: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Multiple translation unit markers for one translation unit.
+Translation unit text: <pre>$1</pre>',
+	'pt-shake-position' => 'Translation unit markers in unexpected position.
+Translation unit text: <pre>$1</pre>',
 	'pt-shake-empty' => 'Empty translation unit for marker "$1".',
 
 	# logging system
