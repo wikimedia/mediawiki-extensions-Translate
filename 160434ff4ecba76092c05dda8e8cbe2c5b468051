@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//ymQ\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-28T11:32:22Z",
+      "side": 1,
+      "message": "section marker -\u003e translation unit marker",
+      "revId": "160434ff4ecba76092c05dda8e8cbe2c5b468051",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//ymM\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-28T11:32:22Z",
+      "side": 1,
+      "message": "Translation unit source or Translation unit source text",
+      "revId": "160434ff4ecba76092c05dda8e8cbe2c5b468051",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//ymI\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-28T11:32:22Z",
+      "side": 1,
+      "message": "Translation unit markers",
+      "revId": "160434ff4ecba76092c05dda8e8cbe2c5b468051",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//ymE\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-08-28T11:32:22Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "160434ff4ecba76092c05dda8e8cbe2c5b468051",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
