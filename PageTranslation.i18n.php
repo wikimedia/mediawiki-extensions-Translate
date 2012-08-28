@@ -42,8 +42,8 @@ Make sure it has <nowiki><translate></nowiki> tags and has a valid syntax.',
 	'tpt-saveok' => 'The page [[$1]] has been marked up for translation with $2 {{PLURAL:$2|translation unit|translation units}}.
 The page can now be <span class="plainlinks">[$3 translated]</span>.',
 	'tpt-badsect' => '"$1" is not a valid name for translation unit $2.',
-	'tpt-showpage-intro' => 'Below new, existing and deleted sections are listed.
-Before marking this version for translation, check that the changes to sections are minimised to avoid unnecessary work for translators.',
+	'tpt-showpage-intro' => 'Below new, existing and deleted translation units are listed.
+Before marking this version for translation, check that the changes to translation units are minimised to avoid unnecessary work for translators.',
 	'tpt-mark-summary' => 'Marked this version for translation',
 	'tpt-edit-failed' => 'Could not update the page: $1',
 	'tpt-duplicate' => 'Translation unit name $1 is used more than once.',
@@ -127,11 +127,11 @@ Translation template: <pre>$1</pre>',
 Translation template: <pre>$1</pre>',
 	'pt-parse-nested' => 'Nested &lt;translate> sections are not allowed.
 Tag text: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Multiple section markers for one section.
+	'pt-shake-multiple' => 'Multiple section markers for one translation unit.
 Section text: <pre>$1</pre>',
 	'pt-shake-position' => 'Section markers in unexpected position.
 Section text: <pre>$1</pre>',
-	'pt-shake-empty' => 'Empty section for marker "$1".',
+	'pt-shake-empty' => 'Empty translation unit for marker "$1".',
 
 	# logging system
 	'pt-log-header' => 'Log for actions related to the page translation system',
@@ -159,14 +159,14 @@ Section text: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'The target base page is not a valid title.',
 	'pt-movepage-block-tp-exists' => 'The target translation page "[[:$2]]" exists.',
 	'pt-movepage-block-tp-invalid' => 'The target translation page title for "[[:$1]]" would be invalid (too long?).',
-	'pt-movepage-block-section-exists' => 'The target section page "[[:$2]]" exists.',
-	'pt-movepage-block-section-invalid' => 'The target section page title for "[[:$1]]" would be invalid (too long?).',
+	'pt-movepage-block-section-exists' => 'The target page "[[:$2]]" for the translation unit exists.',
+	'pt-movepage-block-section-invalid' => 'The target page title for "[[:$1]]" for the translation unit would be invalid (too long?).',
 	'pt-movepage-block-subpage-exists' => 'The target subpage "[[:$2]]" exists.',
 	'pt-movepage-block-subpage-invalid' => 'The target subpage title for "[[:$1]]" would be invalid (too long?).',
 
 	'pt-movepage-list-pages' => 'List of pages to move',
 	'pt-movepage-list-translation' => 'Translation pages',
-	'pt-movepage-list-section' => 'Section pages',
+	'pt-movepage-list-section' => 'Translation unit pages',
 	'pt-movepage-list-other' => 'Other subpages',
 	'pt-movepage-list-count' => 'In total $1 {{PLURAL:$1|page|pages}} to move.',
 
@@ -211,7 +211,7 @@ Please check the [[Special:Log/pagetranslation|page translation log]] for errors
 
 	'pt-deletepage-list-pages' => 'List of pages to delete',
 	'pt-deletepage-list-translation' => 'Translation pages',
-	'pt-deletepage-list-section' => 'Section pages',
+	'pt-deletepage-list-section' => 'Translation unit pages',
 	'pt-deletepage-list-other' => 'Other subpages',
 	'pt-deletepage-list-count' => 'In total $1 {{PLURAL:$1|page|pages}} to delete.',
 

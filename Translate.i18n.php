@@ -392,18 +392,18 @@ Details: $1',
 	'log-name-translationreview' => 'Translation review log',
 	'log-description-translationreview' => 'Log of all reviews to translations and message groups.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|accepted}} translation $3',
-	'logentry-groupreview-message' => '$1 {{GENDER:$2|changed}} the status of $4 translations of message group $3 from $5 to $6',
+	'logentry-groupreview-message' => '$1 {{GENDER:$2|changed}} the state of $4 translations of message group $3 from $5 to $6',
 
 	// The actual states, when set, come after the hyphen.
 	// The dangling hyphen hints that it's unset.
 	'translate-workflow-state-' => '(unset)',
-	'translate-workflowstatus' => 'Status: $1',
+	'translate-workflowstatus' => 'State: $1',
 	'translate-workflow-set-do' => 'Set',
 	'translate-workflow-set-doing' => 'Setting...',
 	'translate-workflow-set-done' => 'Set!',
 	'translate-workflow-set-error-alreadyset' => 'The requested state is identical to the current state.',
 	'translate-workflow-autocreated-summary' => 'Automatic creation of page for workflow state $1',
-	'translate-stats-workflow' => 'Status',
+	'translate-stats-workflow' => 'State',
 
 	'translate-workflowgroup-label' => 'Workflow states',
 	'translate-workflowgroup-desc' => 'This message group shows the translation workflow states.
