@@ -1466,8 +1466,8 @@ Vedi [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_
 $messages['ja'] = array(
 	'translategroupdescriptions-desc' => '[http://mediawiki.org/wiki/Extension:Translate Translate]拡張機能で利用可能な製品のメッセージ群の概略',
 	'translate-group-desc-nodesc' => 'このメッセージ群には説明がありません',
-	'translate-group-desc-mediawikicore' => 'このメッセージ群には[[Translating:MediaWiki|MediaWiki]]の現在のアルファ版({{CURRENTVERSION}})で使われているメッセージが含まれています',
-	'translate-group-desc-mediawikimostused' => 'このメッセージ群には[[Translating:MediaWiki|MediaWiki]]で[http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki もっともよく使われている500のメッセージ]が含まれています',
+	'translate-group-desc-mediawikicore' => 'このメッセージ群は、[[Translating:MediaWiki|MediaWiki]]の現在のアルファ版({{CURRENTVERSION}})で使用しているメッセージを含んでいます',
+	'translate-group-desc-mediawikimostused' => 'このメッセージ群は、[[Translating:MediaWiki|MediaWiki]]で[http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki もっともよく使われている500のメッセージ]を含んでいます',
 	'translate-group-desc-mediawikiextensions' => 'サポート対象の[[Translating:MediaWiki|MediaWiki]]拡張機能のすべてのメッセージを含む上位メッセージ群',
 	'translate-group-desc-collection' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:Collection Collection]のすべてのメッセージを含む上位メッセージ群',
 	'translate-group-desc-flaggedrevs' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]のすべてのメッセージを含む上位メッセージ群',
@@ -1514,6 +1514,7 @@ $messages['ja'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]は、携帯可能な機器で、オフラインかつ文字のみのウィキペディアを提供します',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]はウィキペディアを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]]はウィクショナリーを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]]は[[:meta:Wiki Loves Monuments|ウィキラブモニュメント プロジェクト]]を閲覧・編集するための携帯端末向けアプリケーションです',
 );
 
 /** Georgian (ქართული)
@@ -2217,6 +2218,7 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] a l'é un proget për fé na version ëd Wikipedia fòra linia, ëd sol test, dzora a na perifèrica mòbil.",
 	'translate-group-desc-wikipediamobile' => "[[Translating:WikipediaMobile|WikipediaMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wikipedia",
 	'translate-group-desc-wiktionarymobile' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wiktionary",
+	'translate-group-desc-wlmmobile' => "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] a l'é n'aplicassion sacociàbi për contribuì al [[:meta:Wiki Loves Monuments|proget Wiki Loves Monuments]]",
 );
 
 /** Pashto (پښتو)

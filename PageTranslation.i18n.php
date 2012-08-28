@@ -1773,8 +1773,8 @@ Stelle sicher, dass ein <nowiki><translate></nowiki>-Tag und gültige Syntax ver
 	'tpt-saveok' => 'Die Seite [[$1]] wurde mit {{PLURAL:$2|einem übersetzbaren Abschnitt|$2 übersetzbaren Abschnitten}} zur Übersetzung freigegeben.
 Diese Seite kann nun <span class="plainlinks">[$3 übersetzt]</span> werden.',
 	'tpt-badsect' => '„$1“ ist kein gültiger Name für Übersetzungseinheit $2.',
-	'tpt-showpage-intro' => 'Untenstehend sind neue, vorhandene und gelöschte Abschnitte aufgelistet.
-Bevor du diese Version zur Übersetzung freigibst, stelle bitte sicher, dass die Änderungen an den Abschnitten minimal sind, um unnötige Arbeit für Übersetzer zu verhindern.',
+	'tpt-showpage-intro' => 'Untenstehend sind neue, vorhandene und gelöschte Übersetzungseinheiten aufgelistet.
+Bevor du diese Version zur Übersetzung freigibst, stelle bitte sicher, dass die Änderungen an den Übersetzungseinheiten minimal sind. Damit verhinderst du unnötige Arbeit für die Übersetzer.',
 	'tpt-mark-summary' => 'Diese Seite wurde zum Übersetzen freigegeben',
 	'tpt-edit-failed' => 'Seite kann nicht aktualisiert werden: $1',
 	'tpt-duplicate' => 'Der Übersetzungseinheitname $1 wird mehr als einmal verwendet.',
@@ -1839,13 +1839,13 @@ Grund: $1',
 Übersetzungsvorlage: <pre>$1</pre>',
 	'pt-parse-close' => 'Eine &lt;&#47;translate&gt;-Markierung hat kein Gegenstück.
 Übersetzungsvorlage: <pre>$1</pre>',
-	'pt-parse-nested' => 'Verschachtelte &lt;translate&gt;-Abschnitte sind nicht möglich.
-Text des Tag: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Mehrere Abschnittsmarker für einen Abschnitt.
-Text des Abschnitts: <pre>$1</pre>',
-	'pt-shake-position' => 'Abschnittsmarker befinden sich an unerwarteter Stelle.
-Text des Abschnitts: <pre>$1</pre>',
-	'pt-shake-empty' => 'Der Abschnitt für Marker $1 ist leer.',
+	'pt-parse-nested' => 'Verschachtelte &lt;translate&gt;-Übersetzungseinheiten sind nicht möglich.
+Text des Tags: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Mehrere Übersetzungseinheitenmarker für eine Übersetzungseinheit.
+Text der Übersetzungseinheit: <pre>$1</pre>',
+	'pt-shake-position' => 'Übersetzungseinheitenmarker befinden sich an unerwarteter Stelle.
+Text der Übersetzungseinheit: <pre>$1</pre>',
+	'pt-shake-empty' => 'Die Übersetzungseinheit für Marker „$1“ ist leer.',
 	'pt-log-header' => 'Logbuch der Änderungen im Zusammenhang mit dem Übersetzungssystem für Seiten',
 	'pt-log-name' => 'Übersetzungs-Logbuch',
 	'pt-log-mark' => '{{GENDER:$2|gab}} Version $3 der Seite [[:$1]] zur Übersetzung frei',
@@ -1869,13 +1869,13 @@ Text des Abschnitts: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'Die Basisseite hat keine gültige Bezeichnung.',
 	'pt-movepage-block-tp-exists' => 'Die Übersetzungsseite [[:$2]] existiert bereits.',
 	'pt-movepage-block-tp-invalid' => 'Die Zielbezeichnung der Übersetzungsseite für [[:$1]] wäre ungültig (zu lang?).',
-	'pt-movepage-block-section-exists' => 'Die Abschnittsseite [[:$2]] existiert bereits.',
-	'pt-movepage-block-section-invalid' => 'Die Zielbezeichnung der Abschnittsseite für [[:$1]] wäre ungültig (zu lang?).',
+	'pt-movepage-block-section-exists' => 'Die Seite „[[:$2]]“ zur Übersetzungseinheit ist bereits vorhanden.',
+	'pt-movepage-block-section-invalid' => 'Die Zielseite der Übersetzungseinheit für „[[:$1]]“ wäre ungültig (zu lang?).',
 	'pt-movepage-block-subpage-exists' => 'Die Unterseite [[:$2]] existiert bereits.',
 	'pt-movepage-block-subpage-invalid' => 'Die Zielbezeichnung der Unterseite für [[:$1]] wäre ungültig (zu lang?).',
 	'pt-movepage-list-pages' => 'Liste der zu verschiebenden Seiten',
 	'pt-movepage-list-translation' => 'Übersetzte Seiten',
-	'pt-movepage-list-section' => 'Abschnittsseiten',
+	'pt-movepage-list-section' => 'Seiten der Übersetzungseinheiten',
 	'pt-movepage-list-other' => 'Weitere Unterseiten',
 	'pt-movepage-list-count' => 'Insgesamt gibt es $1 zu verschiebende {{PLURAL:$1|Seite|Seiten}}.',
 	'pt-movepage-legend' => 'Übersetzungsseite verschieben',
@@ -1909,7 +1909,7 @@ Bitte prüfe das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] auf Fehle
 	'pt-deletepage-subpages' => 'Alle Unterseiten löschen',
 	'pt-deletepage-list-pages' => 'Liste der zu löschenden Seiten',
 	'pt-deletepage-list-translation' => 'Übersetzte Seiten',
-	'pt-deletepage-list-section' => 'Abschnittsseiten',
+	'pt-deletepage-list-section' => 'Seiten der Übersetzungseinheiten',
 	'pt-deletepage-list-other' => 'Weitere Unterseiten',
 	'pt-deletepage-list-count' => 'Insgesamt gibt es $1 zu löschende {{PLURAL:$1|Seite|Seiten}}.',
 	'pt-deletepage-full-logreason' => 'Teil der übersetzbaren Seite $1.',
@@ -1931,8 +1931,8 @@ $messages['de-formal'] = array(
 	'tpt-action-nofuzzy' => 'Setzen Sie die Übersetzungen nicht außer Kraft',
 	'tpt-notsuitable' => 'Die Seite $1 ist nicht zum Übersetzen geeignet.
 Stellen Sie sicher, dass ein <nowiki><translate></nowiki>-Tag und gültige Syntax verwendet wird.',
-	'tpt-showpage-intro' => 'Untenstehend sind neue, vorhandene und gelöschte Abschnitte aufgelistet.
-Bevor Sie diese Version zur Übersetzung markieren, stellen Sie bitte sicher, dass die Änderungen an den Abschnitten minimal sind, um unnötige Arbeit für Übersetzer zu verhindern.',
+	'tpt-showpage-intro' => 'Untenstehend sind neue, vorhandene und gelöschte Übersetzungseinheiten aufgelistet.
+Bevor Sie diese Version zur Übersetzung freigeben, stellen Sie bitte sicher, dass die Änderungen an den Übersetzungseinheiten minimal sind. Damit verhindern Sie unnötige Arbeit für die Übersetzer.',
 	'pt-movepage-started' => 'Die Basisseite wurde nunmehr verschoben.
 Bitte prüfen Sie das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] auf Fehlermeldungen, bzw. die Vollzugsnachricht.',
 );
@@ -3579,8 +3579,8 @@ $messages['he'] = array(
 	'tpt-saveok' => 'הדף [[$1]] סומן לתרגום עם {{PLURAL:$2|יחידת תרגום אחת|$2 יחידות תרגום}}.
 עכשיו אפשר <span class="plainlinks">[$3 לתרגם]</span> את הדף.',
 	'tpt-badsect' => 'השם "$1" אינו שם תקין ליחידת התרגום $2.',
-	'tpt-showpage-intro' => 'להלן רשימת קטעים חדשים, קיימים ומחוקים.
-לפני סימון גרסה זו לתרגום, בדקו שהשינויים למקטעים מזעריים, כדי למנוע עבודה מיותרת של מתרגמים.',
+	'tpt-showpage-intro' => 'להלן רשימת יחידות תרגום חדשות, קיימות ומחוקות.
+לפני סימון גרסה זו לתרגום, בדקו שהשינויים ליחידות התרגום קטנים ככל שאפשר, כדי למנוע עבודה מיותרת של מתרגמים.',
 	'tpt-mark-summary' => 'גרסה זו סומנה לתרגום',
 	'tpt-edit-failed' => 'לא ניתן לעדכן את הדף: $1',
 	'tpt-duplicate' => 'נעשה שימוש מרובה בשם יחידת התרגום $1.',
@@ -3646,13 +3646,13 @@ $messages['he'] = array(
 תבנית תרגום: <pre>$1</pre>',
 	'pt-parse-close' => 'תג &lt;/translate> לא מאוזן.
 תבנית תרגום: <pre>$1</pre>',
-	'pt-parse-nested' => 'קטעים &lt;translate> מקוננים אינם מורשים.
+	'pt-parse-nested' => 'קטעי &lt;translate> מקוננים אינם מורשים.
 תוכן התג: <pre>$1</pre>',
-	'pt-shake-multiple' => 'סמני קטעים מרובים עבור קטע אחד.
-טקסט הקטע: <pre>$1</pre>',
-	'pt-shake-position' => 'סמני קטעים במיקום בלתי צפוי.
-תוכן הקטע: <pre>$1</pre>',
-	'pt-shake-empty' => 'קטע ריק עבור סמן $1.',
+	'pt-shake-multiple' => 'סמני יחידות תרגום מרובים עבור קטע אחד.
+טקסט יחידת התרגום: <pre>$1</pre>',
+	'pt-shake-position' => 'סמני יחידות תרגום במיקום בלתי־צפוי.
+תוכן היחידת התרגום: <pre>$1</pre>',
+	'pt-shake-empty' => 'יחידת תרגום ריקה עבור סמן "$1".',
 	'pt-log-header' => 'יומן של פעולות שמיוחדות למערכת תרגום דפים',
 	'pt-log-name' => 'יומן תרגום דפים',
 	'pt-log-mark' => '{{GENDER:$2|סימן|סימנה}} את גרסה $3 של הדף "[[:$1]]" לתרגום',
@@ -3676,13 +3676,13 @@ $messages['he'] = array(
 	'pt-movepage-block-base-invalid' => 'לדף הבסיס המיועד אין כותרת תקינה.',
 	'pt-movepage-block-tp-exists' => 'דף התרגום המיועד [[:$2]] קיים.',
 	'pt-movepage-block-tp-invalid' => 'כותרת דף התרגום המיועד עבור [[:$1]] אינה תקינה (אולי ארוכה מדי).',
-	'pt-movepage-block-section-exists' => 'דף הקטע המיועד [[:$2]] קיים.',
-	'pt-movepage-block-section-invalid' => 'כותרת דף הקטע המיועד עבור [[:$1]] תהיה בלתי תקינה (אולי ארוך מדי?).',
+	'pt-movepage-block-section-exists' => 'דף יחידת התרגום המיועד [[:$2]] קיים.',
+	'pt-movepage-block-section-invalid' => 'כותרת הדף המיועדת עבור "[[:$1]]" ליחידת התרגום תהיה בלתי־תקינה (אולי ארוכה מדי?).',
 	'pt-movepage-block-subpage-exists' => 'דף המשנה המיועד [[:$2]] קיים.',
 	'pt-movepage-block-subpage-invalid' => 'כותרת דף המשנה המיועד עבור [[:$1]] אינה תקינה (אולי ארוכה מדי).',
 	'pt-movepage-list-pages' => 'רשימת הדפים להעביר',
 	'pt-movepage-list-translation' => 'דפי תרגום',
-	'pt-movepage-list-section' => 'דפי קטע',
+	'pt-movepage-list-section' => 'דפי יחידת תרגום',
 	'pt-movepage-list-other' => 'דפי משנה אחרים',
 	'pt-movepage-list-count' => 'בסך הכול יש {{PLURAL:$1|דף אחד|$1 דפים}} להעברה.',
 	'pt-movepage-legend' => 'העברת דף שאפשר לתרגום',
@@ -3716,7 +3716,7 @@ $messages['he'] = array(
 	'pt-deletepage-subpages' => 'מחק את כל דפי המשנה',
 	'pt-deletepage-list-pages' => 'רשימת דפים למחיקה',
 	'pt-deletepage-list-translation' => 'דפי תרגום',
-	'pt-deletepage-list-section' => 'דפי קטע',
+	'pt-deletepage-list-section' => 'דפי יחידת תרגום',
 	'pt-deletepage-list-other' => 'דפי משנה אחרים',
 	'pt-deletepage-list-count' => 'סך הכול {{PLURAL:$1|דף אחד|$1 דפים}} למחוק.',
 	'pt-deletepage-full-logreason' => 'חלק מהדף הניתן לתרגום $1.',
@@ -4489,8 +4489,8 @@ Assicurarsi che abbia i tag <nowiki><translate></nowiki> e una sintassi valida.'
 	'tpt-saveok' => 'La pagina [[$1]] è stata segnalata per la traduzione con $2 {{PLURAL:$2|elemento di traduzione|elementi di traduzione}}.
 La pagina può ora essere <span class="plainlinks">[$3 tradotta]</span>.',
 	'tpt-badsect' => '"$1" non è un nome valido per l\'elemento $2 della traduzione.',
-	'tpt-showpage-intro' => 'Di seguito sono elencate le sezioni nuove, esistenti e cancellate.
-Prima di segnare questa versione per la traduzione, controllare che i cambiamenti per le sezioni siano ridotti al minimo per evitare lavoro superfluo ai traduttori.',
+	'tpt-showpage-intro' => 'Di seguito sono elencate gli elementi di traduzione nuovi, esistenti e cancellati.
+Prima di segnare questa versione per la traduzione, controllare che i cambiamenti per gli elementi di traduzione siano ridotti al minimo per evitare lavoro superfluo ai traduttori.',
 	'tpt-mark-summary' => 'Versione segnata per la traduzione',
 	'tpt-edit-failed' => 'Impossibile aggiornare la pagina: $1',
 	'tpt-duplicate' => "Il nome dell'elemento di traduzione $1 è usato più di una volta.",
@@ -4555,13 +4555,13 @@ Motivo: $1",
 Struttura della traduzione: <pre>$1</pre>',
 	'pt-parse-close' => 'Marcatore &lt;/translate> sbilanciato.
 Struttura della traduzione: <pre>$1</pre>',
-	'pt-parse-nested' => 'Non sono ammesse sezioni &lt;translate> nidificate.
+	'pt-parse-nested' => 'Non sono ammessi elementi di traduzione &lt;translate> nidificati.
 Testo del marcatore: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Sono presenti più marcatori di sezione per una singola sezione.
+	'pt-shake-multiple' => "Sono presenti più marcatori di elementi di traduzione per una singola sezione.
+Testo dell'elemento di traduzione: <pre>$1</pre>",
+	'pt-shake-position' => 'Sono presenti marcatori di elementi di traduzione in una posizione inaspettata.
 Testo della sezione: <pre>$1</pre>',
-	'pt-shake-position' => 'Sono presenti marcatori di sezione in una posizione inaspettata.
-Testo della sezione: <pre>$1</pre>',
-	'pt-shake-empty' => 'Sezione vuota per il marcatore $1.',
+	'pt-shake-empty' => 'Elemento di traduzione vuoto per il marcatore $1.',
 	'pt-log-header' => 'Registro per le azioni inerenti al sistema di traduzione delle pagine',
 	'pt-log-name' => 'Traduzioni di pagine',
 	'pt-log-mark' => '{{GENDER:$2|ha segnato}} la versione $3 della pagina "[[:$1]]" per la traduzione',
@@ -4669,8 +4669,8 @@ $messages['ja'] = array(
 	'tpt-saveok' => 'ページ「[[$1]]」は翻訳対象に指定されており、$2 {{PLURAL:$2|個の翻訳単位}}を含んでいます。
 このページを<span class="plainlinks">[$3 翻訳]</span>できます。',
 	'tpt-badsect' => '「$1」は翻訳単位$2の名前として正しくありません。',
-	'tpt-showpage-intro' => '以下は新規・既存・削除済みの節の一覧です。
-この版を翻訳対象に指定する前に、節の変更を最小限にすることで不要な翻訳作業を回避できないか確認してください。',
+	'tpt-showpage-intro' => '以下は、新規・既存・削除済みの翻訳単位の一覧です。
+この版を翻訳対象に指定する前に、翻訳単位の変更を最小限にすることで不要な翻訳作業を回避できないか確認してください。',
 	'tpt-mark-summary' => 'この版を翻訳対象に指定しました',
 	'tpt-edit-failed' => 'ページを更新できませんでした: $1',
 	'tpt-duplicate' => '翻訳単位名$1は、複数回使用されています。',
@@ -4727,21 +4727,21 @@ $messages['ja'] = array(
 	'tpt-aggregategroup-add' => '追加',
 	'tpt-aggregategroup-save' => '保存',
 	'tpt-aggregategroup-add-new' => '新しい集約群を追加',
-	'tpt-aggregategroup-new-name' => '名前：',
-	'tpt-aggregategroup-new-description' => '説明（省略可）：',
+	'tpt-aggregategroup-new-name' => '名前:',
+	'tpt-aggregategroup-new-description' => '説明 (省略可):',
 	'tpt-aggregategroup-remove-confirm' => 'この集約群を本当に削除してもよろしいですか？',
 	'tpt-aggregategroup-invalid-group' => 'グループは存在しません',
 	'pt-parse-open' => '&lt;translate>タグの対応がとれていません。
 翻訳の雛型：<pre>$1</pre>',
 	'pt-parse-close' => '&lt;/translate>タグの対応がとれていません。
 翻訳の雛型：<pre>$1</pre>',
-	'pt-parse-nested' => '&lt;translate>節の入れ子は許されません。
-タグの内容：<pre>$1</pre>',
-	'pt-shake-multiple' => '1つの節に対して、複数の節マーカーがあります。
-節の内容：<pre>$1</pre>',
-	'pt-shake-position' => '予期しない位置に節マーカーがあります。
-節の内容：<pre>$1</pre>',
-	'pt-shake-empty' => 'マーカー$1に対応する節が空です。',
+	'pt-parse-nested' => '&lt;translate>翻訳単位の入れ子は許されません。
+タグの内容: <pre>$1</pre>',
+	'pt-shake-multiple' => '1つの翻訳単位に対して、複数の翻訳単位マーカーがあります。
+翻訳単位の内容: <pre>$1</pre>',
+	'pt-shake-position' => '予期しない位置に翻訳単位マーカーがあります。
+翻訳単位の内容: <pre>$1</pre>',
+	'pt-shake-empty' => 'マーカー$1に対応する翻訳単位が空です。',
 	'pt-log-header' => 'ページ翻訳システムに関連した操作の記録',
 	'pt-log-name' => 'ページ翻訳記録',
 	'pt-log-mark' => 'ページ「[[:$1]]」の版 $3 を翻訳対象に{{GENDER:$2|指定}}',
@@ -4765,13 +4765,13 @@ $messages['ja'] = array(
 	'pt-movepage-block-base-invalid' => '対象の基底ページは有効なタイトルではありません。',
 	'pt-movepage-block-tp-exists' => '対象の翻訳ページ[[:$2]]は既に存在しています。',
 	'pt-movepage-block-tp-invalid' => '対象の翻訳ページの名前[[:$1]]が無効です（長過ぎる？）。',
-	'pt-movepage-block-section-exists' => '対象の節ページ[[:$2]]は既に存在しています。',
-	'pt-movepage-block-section-invalid' => '対象の節ページの名前[[:$1]]が無効です（長過ぎる？）。',
+	'pt-movepage-block-section-exists' => '翻訳単位の対象ページ「[[:$2]]」は既に存在しています。',
+	'pt-movepage-block-section-invalid' => '翻訳単位の対象ページ名「[[:$1]]」は無効です (長すぎる?)。',
 	'pt-movepage-block-subpage-exists' => '対象の下位ページ[[:$2]]は既に存在しています。',
 	'pt-movepage-block-subpage-invalid' => '対象の下位ページの名前[[:$1]]が無効です（長過ぎる？）。',
 	'pt-movepage-list-pages' => '移動するページの一覧',
 	'pt-movepage-list-translation' => '翻訳ページ',
-	'pt-movepage-list-section' => '節ページ',
+	'pt-movepage-list-section' => '翻訳単位ページ',
 	'pt-movepage-list-other' => 'その他の下位ページ',
 	'pt-movepage-list-count' => '合計で$1ページが移動',
 	'pt-movepage-legend' => '翻訳可能ページを移動',
@@ -4805,7 +4805,7 @@ $messages['ja'] = array(
 	'pt-deletepage-subpages' => '下位ページをすべて削除',
 	'pt-deletepage-list-pages' => '削除するページの一覧',
 	'pt-deletepage-list-translation' => '翻訳ページ',
-	'pt-deletepage-list-section' => '節ページ',
+	'pt-deletepage-list-section' => '翻訳単位ページ',
 	'pt-deletepage-list-other' => 'その他の下位ページ',
 	'pt-deletepage-list-count' => '合計で$1ページが削除',
 	'pt-deletepage-full-logreason' => '翻訳可能ページ$1の一部。',

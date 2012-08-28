@@ -658,9 +658,9 @@ These messages will only affect the interface on {{SITENAME}}.',
 	'translate-smg-nochanges' => 'Wikitext information message in [[Special:ManageMessageGroups]]',
 	'translate-smg-submit' => 'Button label in [[Special:ManageMessageGroups]]',
 	'translate-smg-submitted' => 'Confirmation wikitext information message in [[Special:ManageMessageGroups]]',
-	'translate-smg-postponed' => 'Message in Special:ManageMessageGroups.',
-	'translate-smg-left' => 'Label for first diff column in Special:ManageMessageGroups',
-	'translate-smg-right' => 'Label for last diff column in Special:ManageMessageGroups',
+	'translate-smg-postponed' => 'Message in [[Special:ManageMessageGroups]].',
+	'translate-smg-left' => 'Label for first diff column in [[Special:ManageMessageGroups]]',
+	'translate-smg-right' => 'Label for last diff column in [[Special:ManageMessageGroups]]',
 	'translate-manage-import-diff' => 'See screenshot [[File:Manage-2.png|150px|right|Group management interface]].
 Variables:
 *$1 - Message name
@@ -4249,17 +4249,18 @@ jako nepoužívání mezer nebo transkripce vlastních jmen. $1',
 	'translate-edit-nopermission' => 'K překládání zpráv potřebujete oprávnění.',
 	'translate-edit-askpermission' => 'Požádat o oprávnění',
 	'translate-magic-pagename' => 'Rozšířená možnost překladu MediaWiki',
-	'translate-magic-help' => "Můžete překládat aliasy speciálních stránek, kouzelná slova a názvy jmenných prostorů.
+	'translate-magic-help' => 'Můžete překládat aliasy speciálních stránek, kouzelná slova a názvy jmenných prostorů.
 
 Aliasy speciálních stránek a kouzelná slova mohou mít více překladů.
 Překlady se oddělují čárkou (,).
 Názvy jmenných prostorů mohou mít jen jeden překlad.
 
-V překladech jmenných prostorů se <code>$1 talk</code> chová zvláštně. <code>$1</code> se nahradí názvem projektu (např. <code>{{ns:project_talk}}</code>).
-Pokud není ve vašem jazyce možné vytvořit smysluplný výraz bez změny názvu projektu, kontaktujte vývojáře.
+V překladech jmenných prostorů se <code>$1 talk</code> chová zvláštně.
+<code>$1</code> se nahradí názvem projektu (např. <code>{{ns:project_talk}}</code>).
+Pokud není ve vašem jazyce možné vytvořit smysluplný výraz bez změny názvu projektu, dejte nám vědět na stránce [[Support]].
 
-Abyste mohli ukládat změny, musíte být členem skupiny ''překladatelé''.
-Změny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ pod editačním okénkem.",
+Abyste mohli ukládat změny, musíte být překladatel
+Změny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ dole.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Zobrazit',
 	'translate-magic-cm-export' => 'Exportovat',
@@ -4409,6 +4410,9 @@ Barva podtržení znázorňuje, jak nedávno zde byl překladatel aktivní.',
 	'translate-smg-nochanges' => 'Neexistují žádné změny k zapracování.',
 	'translate-smg-submit' => 'Odeslat změny ke zpracování',
 	'translate-smg-submitted' => 'Definice zpráv byly aktualizovány. Změny se zpracovávají na pozadí.',
+	'translate-smg-postponed' => 'Některé změny se nepodařilo zpracovat. [[{{FULLPAGENAME}}|Zkuste to znovu]].',
+	'translate-smg-left' => 'Obsah zprávy ve wiki',
+	'translate-smg-right' => 'Příchozí změny',
 	'translate-manage-import-new' => 'Nová zpráva $1',
 	'translate-manage-import-deleted' => 'Odstraněná zpráva $1',
 	'translate-manage-action-import' => 'Importovat',
@@ -4463,7 +4467,7 @@ Metoda <code>$1</code> není podporována.',
 	'translate-messagereview-failure' => 'Přijímám… chyba: $1',
 	'translate-messagereview-done' => 'Přijato',
 	'translate-messagereview-reviews' => 'Přijato {{PLURAL:$1|1 uživatelem|$1 uživateli}}',
-	'translate-messagereview-reviewswithyou' => 'Přijato {{PLURAL:$1|1 uživatelem|$1 uživateli}} včetně vás',
+	'translate-messagereview-reviewswithyou' => 'Přijato {{PLURAL:$1|vámi|$1 uživateli včetně vás}}',
 	'api-error-invalidrevision' => 'Překlad nebyl nalezen',
 	'api-error-unknownmessage' => 'Hlášení nebylo nalezeno',
 	'api-error-fuzzymessage' => 'Překlad je označen jako „fuzzy“',
