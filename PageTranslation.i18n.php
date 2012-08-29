@@ -1984,8 +1984,8 @@ Jano aktualne wersije daju se za pśełožowanje markěrowaś.',
 Zawěsć, až ma toflicki <nowiki><translate></nowiki> a płaśiwu syntaksu.',
 	'tpt-saveok' => 'Bok [[$1]] jo se markěrował za pśełožowanje z $2 {{PLURAL:$2|pśełožujobneju jadnotku|pśełožujobnyma jadnotkoma|pśełožujobnymi jadnotkami|pśełožujobnymi jadnotkami}}. Bok móže se něnto <span class="plainlinks">[$3 pśełožowaś]</span>.',
 	'tpt-badsect' => '"$1" njejo płaśiwe mě za pśełožowańsku jadnotku $2.',
-	'tpt-showpage-intro' => 'Dołojce su nowe, eksistěrujuce a wulašowane wótrězki nalicone.
-Nježli až markěrujoš toś tu wersiju za pśełožowanje, pśekontrolěruj, lěc změny na wótrězkach su zminiměrowane, aby se wobinuł njetrěbne źěło za pśełožowarjow.',
+	'tpt-showpage-intro' => 'Dołojce su nowe, eksistěrujuce a wulašowane pśełožowańske jadnotki nalicone.
+Nježli až markěrujoš toś tu wersiju za pśełožowanje, pśekontrolěruj, lěc změny na pśełožowańskich jadnotkach su zminiměrowane, aby se wobinuł njetrěbne źěło za pśełožowarjow.',
 	'tpt-mark-summary' => 'Jo toś tu wersiju za pśełožowanje markěrował',
 	'tpt-edit-failed' => 'Toś ten bok njejo se dał aktualizěrowaś: $1',
 	'tpt-duplicate' => 'Mě pśełožkoweje jadnotki $1 wužywa se wěcej ako jaden raz.',
@@ -2050,13 +2050,13 @@ Pśicyna: $1',
 Pśełožowańska pśedłoga: <pre>$1</pre>',
 	'pt-parse-close' => 'Asymetriska toflicka &lt;/translate>.
 Pśełožowańska pśedłoga: <pre>$1</pre>',
-	'pt-parse-nested' => 'Zakašćikowane wótrězki &lt;translate&gt; njejsu dowólone.
+	'pt-parse-nested' => 'Zakašćikowane pśełožowańske jadnotki &lt;translate&gt; njejsu dowólone.
 Tekst toflicki: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Někotare wótrězkowe marki za jaden wótrězk.
-Tekst wótrězka: <pre>$1</pre>',
-	'pt-shake-position' => 'Wótrězkowe marki na njewócakowanem městnje.
-Tekst wótrězka: <pre>$1</pre>',
-	'pt-shake-empty' => 'Prozny wótrězk za marku $1.',
+	'pt-shake-multiple' => 'Někotare marki pśełožowańskich jadnotkow za jadnu pśełožowańsku jadnotku.
+Tekst pśełožowańskeje jadnotki: <pre>$1</pre>',
+	'pt-shake-position' => 'Marki pśełožowańskich jadnotkow na njewócakowanem městnje.
+Tekst pśełožowańskeje jadnotki: <pre>$1</pre>',
+	'pt-shake-empty' => 'Prozna pśełožowańska jadnotka za marku "$1".',
 	'pt-log-header' => 'Protokol za akcije w zwisku z pśełožowańskim systemom',
 	'pt-log-name' => 'Protokol pśełožkow',
 	'pt-log-mark' => 'jo wersiju $3 boka "[[:$1]]" za pśełožowanje {{GENDER:$2|markěrował|markěrowała}}.',
@@ -2080,13 +2080,13 @@ Tekst wótrězka: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'Celowy zakładny bok njejo płaśiwy titel.',
 	'pt-movepage-block-tp-exists' => 'Celowy pśełožowański bok [[:$2]] eksistěrujo.',
 	'pt-movepage-block-tp-invalid' => 'Titel celowego pśełožowańskego boka za [[:$1]] by był njepłaśiwy (pśedłujki?).',
-	'pt-movepage-block-section-exists' => 'Celowy wótrězkowy bok [[:$2]] eksistěrujo.',
-	'pt-movepage-block-section-invalid' => 'Titel celowego wótrězkowego boka za [[:$1]] by był njepłaśiwy (pśedłujki?).',
+	'pt-movepage-block-section-exists' => 'Celowy bok "[[:$2]]" za pśełožowańsku jadnotku eksistěrujo.',
+	'pt-movepage-block-section-invalid' => 'Titel celowego boka za "[[:$1]]" za pśełožowańsku jadnotku by był njepłaśiwy (pśedłujki?).',
 	'pt-movepage-block-subpage-exists' => 'Celowy pódbok [[:$2]] eksistěrujo.',
 	'pt-movepage-block-subpage-invalid' => 'Titel celowego pódboka za [[:$1]] by był njepłaśiwy (pśedłuki?).',
 	'pt-movepage-list-pages' => 'Lisćina bokow, kótarež maju se pśesunuś',
 	'pt-movepage-list-translation' => 'Pśełožowańske boki',
-	'pt-movepage-list-section' => 'Wótrězkowe boki',
+	'pt-movepage-list-section' => 'Boki pśełožowańskich jadnotkow',
 	'pt-movepage-list-other' => 'Druge pódboki',
 	'pt-movepage-list-count' => 'Dogromady {{PLURAL:$1|ma se $1 bok|matej se $1 boka|maju se $1 boki|ma se $1 bokow}} pśesunuś.',
 	'pt-movepage-legend' => 'Pśełožujobny bok pśesunuś',
@@ -2121,7 +2121,7 @@ Pšosym pśekontrolěruj [[Special:Log/pagetranslation|pśełožowański protoko
 	'pt-deletepage-subpages' => 'Wšykne pódboki lašowaś:',
 	'pt-deletepage-list-pages' => 'Lisćina bokow, kótarež maju se wulašowaś',
 	'pt-deletepage-list-translation' => 'Pśełožowańske boki',
-	'pt-deletepage-list-section' => 'Wótrězkowe boki',
+	'pt-deletepage-list-section' => 'Boki pśełožowańskich jadnotkow',
 	'pt-deletepage-list-other' => 'Druge pódboki',
 	'pt-deletepage-list-count' => 'Dogromady {{PLURAL:$1|ma se $1 bok|matej se $1 boka|maju se $1 boki|ma se $1 bokow}} wulašowaś.',
 	'pt-deletepage-full-logreason' => 'Źěl pśełožujobnego boka $1.',
@@ -2277,8 +2277,8 @@ Asegúrate que tiene etiquetas <nowiki><translate></nowiki> y tiene una sintaxis
 	'tpt-saveok' => 'La página [[$1]] ha sido marcada para traducción con $2 {{PLURAL:$2|unidad de traducción |unidades de traducción}}.
 La página puede ser ahora <span class="plainlinks">[$3 traducida]</span>.',
 	'tpt-badsect' => '"$1" no es un nombre válido para una unidad de traducción $2.',
-	'tpt-showpage-intro' => 'Debajo están listadas secciones nuevas, existentes y borradas .
-Antes de marcar esta versión para traducción, verifica que los cambios a las secciones son mínimos para evitar trabajo innecesario a los traductores.',
+	'tpt-showpage-intro' => 'Debajo están listadas las unidades de traducción nuevas, existentes y borradas.
+Antes de marcar esta versión para traducción, verifica que los cambios a las unidades de traducción son mínimos para evitar trabajo innecesario a los traductores.',
 	'tpt-mark-summary' => 'Marcada esta sección para traducción',
 	'tpt-edit-failed' => 'No pudo actualizar la página : $1',
 	'tpt-duplicate' => 'El nombre de la unidad de traducción  $1 es utilizado más de una vez.',
@@ -2343,13 +2343,13 @@ Razón: $1',
 Plantilla de traducción: <pre>$1</pre>',
 	'pt-parse-close' => 'Etiqueta &lt;/translate> desequilibrada.
 Plantilla de traducción: <pre>$1</pre>',
-	'pt-parse-nested' => 'No se permite secciones anidadas &lt;translate>.
+	'pt-parse-nested' => 'No se permiten &lt;translate> unidades de traducción anidadas.
 Texto de etiqueta: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Múltiples marcadores de la sección para una sección.
-Texto de ección: <pre>$1</pre>',
-	'pt-shake-position' => 'Marcadores de sección en posición inesperada.
-Texto de sección: <pre>$1</pre>',
-	'pt-shake-empty' => 'Sección vacía para el marcador $1.',
+	'pt-shake-multiple' => 'Múltiples marcadores de unidades de traducción para una unidad de traducción.
+Texto de unidad de traducción: <pre>$1</pre>',
+	'pt-shake-position' => 'Marcadores de unidad de traducción en posición inesperada.
+Texto de unidad de traducción: <pre>$1</pre>',
+	'pt-shake-empty' => 'Unidad de traducción vacía para el marcador $1.',
 	'pt-log-header' => 'Registro para acciones relacionadas al sistema de traducción de página',
 	'pt-log-name' => 'Registro de traducción de página',
 	'pt-log-mark' => 'Revisión {{GENDER:$2|marcada}} $3 de página "[[:$1]]" para traducción',
@@ -3822,8 +3822,8 @@ Zaswěsć, zo ma taflički <nowiki><translate></nowiki> a płaćiwu syntaksu.',
 	'tpt-saveok' => 'Strona [[$1]] je so za přełožowanje z $2 {{PLURAL:$2|přełožujomnej jednotku|přełožujomnej jednotkomaj|přełožujomnymi jednotkami|přełožujomnymi jednotkami}} markěrowała.
 Strona hodźi so nětko <span class="plainlinks">[$3 přełožować]</span>.',
 	'tpt-badsect' => '"$1" płaćiwe mjeno za přełožowansku jednotku $2 njeje.',
-	'tpt-showpage-intro' => 'Deleka su nowe, eksistowace a wušmórnjene wotrězki nalistowane.
-Prjedy hač tutu wersiju za přełožowanje markěruješ, skontroluj, hač změny wotrězkow su miniměrowane, zo by njetrěbne dźěło za přełožowarjow wobešoł.',
+	'tpt-showpage-intro' => 'Deleka su nowe, eksistowace a zhašane přełožowanske jednotki nalistowane.
+Prjedy hač tutu wersiju za přełožowanje markěruješ, kontroluj, hač změny přełožowanskich jednotkow su miniměrowane, zo by njetrěbne dźěło za přełožowarjow wobešoł.',
 	'tpt-mark-summary' => 'Je tutu wersiju za přełožowanje markěrował',
 	'tpt-edit-failed' => 'Strona njeda so aktualizować: $1',
 	'tpt-duplicate' => 'Mjeno přełožkoweje jednotki $1 so wjace hač jedyn raz wužiwa.',
@@ -3888,13 +3888,13 @@ Přičina: $1',
 Přełožowanska předłoha: <pre>$1</pre>',
 	'pt-parse-close' => 'Asymetriska taflička &lt;/translate>.
 Přełožowanska předłoha: <pre>$1</pre>',
-	'pt-parse-nested' => 'Zakšćikowane wotrězki &lt;translate> njejsu dowolene.
+	'pt-parse-nested' => 'Zakšćikowane přełožowanske jednotki &lt;translate> njejsu dowolene.
 Tekst taflički: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Wjacore wotrězkowe marki za jedyn wotrězk.
-Tekst wotrězka: <pre>$1</pre>',
-	'pt-shake-position' => 'Wotrězkowe marki na njewočakowanym městnje.
-Tekst wotrězka: <pre>$1</pre>',
-	'pt-shake-empty' => 'Prózdny wotrězk za marku $1.',
+	'pt-shake-multiple' => 'Wjacore marki přełožowanskich jednotkow za jednu přełožowansku jednotku.
+Tekst přełožowanskeje jednotki: <pre>$1</pre>',
+	'pt-shake-position' => 'Marki přełožowanskich jednotkow na njewočakowanym městnje.
+Tekst přełožowanskeje jednotki: <pre>$1</pre>',
+	'pt-shake-empty' => 'Prózdna přełožowanska jednotka za marku "$1".',
 	'pt-log-header' => 'Protokol za akcije w zwisku z přełožowanskim systemom',
 	'pt-log-name' => 'Protokol přełožkow',
 	'pt-log-mark' => 'jo wersiju $3 strony "[[:$1]]" za přełožowanje {{GENDER:$2|markěrował|markěrowała}}.',
@@ -3918,13 +3918,13 @@ Tekst wotrězka: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'Zakładna cilowa strona płaćiwy titul njeje.',
 	'pt-movepage-block-tp-exists' => 'Cilowa přełožowanska strona [[:$2]] eksistuje.',
 	'pt-movepage-block-tp-invalid' => 'Titul ciloweje přełožowanskeje strony za [[:$1]] by płaćiwy był (předołho?).',
-	'pt-movepage-block-section-exists' => 'Cilowa wotrězkowa strona [[:$2]] eksistuje.',
-	'pt-movepage-block-section-invalid' => 'Titul ciloweje wotrězkoweje strony za [[:$1]] by płaćiwy był (předołho?).',
+	'pt-movepage-block-section-exists' => 'Cilowa strona "[[:$2]]" za přełožowansku jednotku eksistuje.',
+	'pt-movepage-block-section-invalid' => 'Titul ciloweje strony za "[[:$1]]" za přełožowansku jednotku by njepłaćiwy był (předołho?).',
 	'pt-movepage-block-subpage-exists' => 'Cilowa podstrona [[:$2]] eksistuje.',
 	'pt-movepage-block-subpage-invalid' => 'Titul ciloweje podstrony za [[:$1]] by płaćiwy był (předołho?).',
 	'pt-movepage-list-pages' => 'Lisćina strony, kotrež maja so přesunyć',
 	'pt-movepage-list-translation' => 'Přełožowanske strony',
-	'pt-movepage-list-section' => 'Wotrězkowe strony',
+	'pt-movepage-list-section' => 'Strony přełožowanskich jednotkow',
 	'pt-movepage-list-other' => 'Druhe podstrony',
 	'pt-movepage-list-count' => 'W cyłku {{PLURAL:$1|ma so $1 strona|matej so $1 stronje|maja so $1 strony|ma so $1 stronow}} přesunyć.',
 	'pt-movepage-legend' => 'Přełožujomnu stronu přesunyć',
@@ -3958,7 +3958,7 @@ Prošu skontroluj [[Special:Log/pagetranslation|přełožowanski protokol strony
 	'pt-deletepage-subpages' => 'Wšě podstrony wušmórnyć',
 	'pt-deletepage-list-pages' => 'Lisćina stronow, kotrež maja so zhašeć',
 	'pt-deletepage-list-translation' => 'Přełožene strony',
-	'pt-deletepage-list-section' => 'Wotrězkowe strony',
+	'pt-deletepage-list-section' => 'Strony přełožowanskich jednotkow',
 	'pt-deletepage-list-other' => 'Druhe podstrony',
 	'pt-deletepage-list-count' => 'W cyłku {{PLURAL:$1|ma so $1 strona|matej so $1 stronje|maja so $1 strony|ma so $1 stronow}} zhašeć.',
 	'pt-deletepage-full-logreason' => 'Dźěl přełožujomneje strony $1.',
@@ -5124,8 +5124,8 @@ $messages['ko'] = array(
 	'tpt-saveok' => '[[$1]] 문서는 $2 번역 단위로 번역에 대해 표시했습니다.
 문서는 지금 <span class="plainlinks">[$3 번역]</span>할 수 있습니다.',
 	'tpt-badsect' => '"$1"(은)는 $2 번역 유닉에 대해 올바른 이름이 아닙니다.',
-	'tpt-showpage-intro' => '다음은 새로와 기존, 삭제된 부분이 나열되어 있습니다.
-번역에 대한 이 버전을 표시하기 전에 부분에 대한 바뀜이 번역에 대한 불필요한 작업을 피하기 위해 최소화되어 있는지 확인하세요.',
+	'tpt-showpage-intro' => '다음은 새로와 기존, 삭제된 번역 단위가 나열되어 있습니다.
+번역에 대한 이 버전을 표시하기 전에 번역 단위에 대한 바뀜이 번역에 대한 불필요한 작업을 피하기 위해 최소화되어 있는지 확인하세요.',
 	'tpt-mark-summary' => '번역에 대해 이 버전 표시함',
 	'tpt-edit-failed' => '문서를 업데이트를 할 수 없습니다: $1',
 	'tpt-duplicate' => '$1 번역 단위 이름은 한 번 이상 사용합니다.',
@@ -5191,13 +5191,13 @@ $messages['ko'] = array(
 번역 틀: <pre>$1</pre>',
 	'pt-parse-close' => '불균형한 &lt;/translate> 태그입니다.
 번역 틀: <pre>$1</pre>',
-	'pt-parse-nested' => '중첩한 &lt;translate> 부분은 허용하지 않습니다.
+	'pt-parse-nested' => '중첩한 &lt;translate> 번역 단위는 허용하지 않습니다.
 태그 텍스트: <pre>$1</pre>',
-	'pt-shake-multiple' => '한 부분에 여러 부분을 표시했습니다.
-부분 텍스트: <pre>$1</pre>',
-	'pt-shake-position' => '예상하지 않은 위치에 부분을 표시했습니다.
-부분 텍스트: <pre>$1</pre>',
-	'pt-shake-empty' => '"$1" 표시에 대한 빈 부분입니다.',
+	'pt-shake-multiple' => '한 번역 단위에 여러 번역 단위를 표시했습니다.
+번역 단위 텍스트: <pre>$1</pre>',
+	'pt-shake-position' => '예상하지 않은 위치에 번역 단위를 표시했습니다.
+번역 단위 텍스트: <pre>$1</pre>',
+	'pt-shake-empty' => '"$1" 표시에 대한 빈 번역 단위입니다.',
 	'pt-log-header' => '문서 번역 시스템에 관련된 작업에 대한 기록',
 	'pt-log-name' => '문서 번역 기록',
 	'pt-log-mark' => '사용자가 번역에 대한 "[[:$1]]" 문서의 $3 버전을 {{GENDER:$2|표시함}}',
@@ -5221,13 +5221,13 @@ $messages['ko'] = array(
 	'pt-movepage-block-base-invalid' => '대상 기본 문서는 올바른 제목이 아닙니다.',
 	'pt-movepage-block-tp-exists' => '"[[:$2]]" 대상 번역 문서가 존재합니다.',
 	'pt-movepage-block-tp-invalid' => '"[[:$1]]"에 대한 대상 번역 문서 제목은 유효하지 않습니다 (너무 길어요?).',
-	'pt-movepage-block-section-exists' => '"[[:$2]]" 대상 부분 문서가 존재합니다.',
-	'pt-movepage-block-section-invalid' => '"[[:$1]]"에 대한 대상 부분 문서 제목은 유효하지 않습니다 (너무 길어요?).',
+	'pt-movepage-block-section-exists' => '번역 단위에 대한 "[[:$2]]" 대상 문서가 존재합니다.',
+	'pt-movepage-block-section-invalid' => '번역 단위에 대한 "[[:$1]]"에 대한 대상 부분 문서 제목은 유효하지 않습니다 (너무 길어요?).',
 	'pt-movepage-block-subpage-exists' => '"[[:$2]]" 대상 하위 문서가 존재합니다.',
 	'pt-movepage-block-subpage-invalid' => '"[[:$1]]"에 대한 대상 하위 문서 제목은 유효하지 않습니다 (너무 길어요?).',
 	'pt-movepage-list-pages' => '이동할 문서 목록',
 	'pt-movepage-list-translation' => '번역 문서',
-	'pt-movepage-list-section' => '부분 문서',
+	'pt-movepage-list-section' => '번역 단위 문서',
 	'pt-movepage-list-other' => '다른 하위 문서',
 	'pt-movepage-list-count' => '이동할 문서 총 $1개.',
 	'pt-movepage-legend' => '번역 가능한 문서 이동',
@@ -5261,7 +5261,7 @@ $messages['ko'] = array(
 	'pt-deletepage-subpages' => '모든 하위 문서 삭제',
 	'pt-deletepage-list-pages' => '삭제할 문서 목록',
 	'pt-deletepage-list-translation' => '번역 문서',
-	'pt-deletepage-list-section' => '부분 문서',
+	'pt-deletepage-list-section' => '번역 단위 문서',
 	'pt-deletepage-list-other' => '다른 하위 문서',
 	'pt-deletepage-list-count' => '삭제할 문서 총 $1개.',
 	'pt-deletepage-full-logreason' => '"$1" 번역 가능한 문서의 부분.',
@@ -5737,7 +5737,7 @@ $messages['mk'] = array(
 	'tpt-saveok' => 'Оваа страница [[$1]] е обележана за преведување со $2 {{PLURAL:$2|преводна единица|преводни единици}}.
 Страницата сега може да се <span class="plainlinks">[$3 преведува]</span>.',
 	'tpt-badsect' => '„$1“ е погрешно име за преводната единица $2.',
-	'tpt-showpage-intro' => 'Подолу не наведени нови, постоечки и избришани пасуси делови.
+	'tpt-showpage-intro' => 'Подолу се наведени нови, постоечки и избришани преводни единици.
 Пред да ја обележите оваа верзија за преведување, проверете дали промените во деловите се сведени на минимум со што би се избегнала непотреба работа за преведувачите.',
 	'tpt-mark-summary' => 'Ја означи оваа верзија за преведување',
 	'tpt-edit-failed' => 'Не можев да ја обновам страницата: $1',
@@ -5804,13 +5804,13 @@ $messages['mk'] = array(
 Шаблон за преводот: <pre>$1</pre>',
 	'pt-parse-close' => 'Неврамнотежена &lt;/translate> ознака.
 Шаблон за преводот: <pre>$1</pre>',
-	'pt-parse-nested' => 'Не се дозволени гвнездени &lt;translate> поднаслови.
+	'pt-parse-nested' => 'Не се дозволени гвнездени &lt;translate> преводни единици.
 Текст на ознаката: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Повеќекратни означувачи за поднаслови во еден поднаслов.
-Текст на поднасловот: <pre>$1</pre>',
-	'pt-shake-position' => 'Неочекувана положба на означувачите за поднаслови.
-Текст во поднасловот: <pre>$1</pre>',
-	'pt-shake-empty' => 'Празен поднаслов за означувачот $1.',
+	'pt-shake-multiple' => 'Повеќекратни означувачи за преводни единици во во една единица.
+Текст на единицата: <pre>$1</pre>',
+	'pt-shake-position' => 'Неочекувана положба на означувачите за преводни единици.
+Текст во преводната единица: <pre>$1</pre>',
+	'pt-shake-empty' => 'Празна преводна единица за означувачот „$1“.',
 	'pt-log-header' => 'Дневник на дејства кои се однесуваат на системот за превод на страници',
 	'pt-log-name' => 'Дневник на преводи на страници',
 	'pt-log-mark' => '{{GENDER:$2|ја означи}} за превод ревизијата $3 на стрaницата „[[:$1]]“.',
@@ -5834,13 +5834,13 @@ $messages['mk'] = array(
 	'pt-movepage-block-base-invalid' => 'Целната основна страница не претставува важечки наслов.',
 	'pt-movepage-block-tp-exists' => 'Целната страница со превод [[:$2]] постои.',
 	'pt-movepage-block-tp-invalid' => 'Насловот на целната страница за превод на [[:$1]] би била неважечка (предолга?).',
-	'pt-movepage-block-section-exists' => 'Целната страница за поднаслов [[:$2]] постои.',
-	'pt-movepage-block-section-invalid' => 'Насловот на целната страница за поднаслов на [[:$1]] би била неважечка (предолга?).',
+	'pt-movepage-block-section-exists' => 'Целната страница „[[:$2]]“ за преводната единица постои.',
+	'pt-movepage-block-section-invalid' => 'Целниот наслов на страницата за „[[:$1]]“ за преводната единица би била неважечки (предолг?).',
 	'pt-movepage-block-subpage-exists' => 'Целната потстраница [[:$2]] постои.',
 	'pt-movepage-block-subpage-invalid' => 'Насловот на целната потстраница на [[:$1]] би била неважечка (предолга?).',
 	'pt-movepage-list-pages' => 'Список на страници за преместување',
 	'pt-movepage-list-translation' => 'Страници со превод',
-	'pt-movepage-list-section' => 'Страници за поднаслови',
+	'pt-movepage-list-section' => 'Страници за преводни единици',
 	'pt-movepage-list-other' => 'Други потстраници',
 	'pt-movepage-list-count' => 'Вкупно $1 {{PLURAL:$1|страница|страници}} за преместување.',
 	'pt-movepage-legend' => 'Премести преводлива страница',
@@ -5875,7 +5875,7 @@ $messages['mk'] = array(
 	'pt-deletepage-subpages' => 'Избриши ги сите потстраници',
 	'pt-deletepage-list-pages' => 'Список на страници за бришење',
 	'pt-deletepage-list-translation' => 'Страници со превод',
-	'pt-deletepage-list-section' => 'Страници за поднаслови',
+	'pt-deletepage-list-section' => 'Страници за преводни единици',
 	'pt-deletepage-list-other' => 'Други потстраници',
 	'pt-deletepage-list-count' => 'Вкупно $1 {{PLURAL:$1|страница|страници}} за бришење.',
 	'pt-deletepage-full-logreason' => 'Дел од преводливата страница $1.',
@@ -6360,8 +6360,8 @@ Zorg ervoor dat de labels <nowiki><translate></nowiki> geplaatst zijn en dat dez
 	'tpt-saveok' => 'De pagina [[$1]] is gemarkeerd voor vertaling met $2 te vertalen {{PLURAL:$2|vertaaleenheid|vertaaleenheden}}.
 De pagina kan nu  <span class="plainlinks">[$3 vertaald]</span> worden.',
 	'tpt-badsect' => '"$1" is geen geldige naam voor vertaaleenheid $2.',
-	'tpt-showpage-intro' => 'Hieronder zijn nieuwe, bestaande en verwijderde secties opgenomen.
-Controleer voordat u deze versie voor vertaling markeert of de wijzigingen aan de secties zo klein mogelijk zijn om onnodig werk voor vertalers te voorkomen.',
+	'tpt-showpage-intro' => 'Hieronder zijn nieuwe, bestaande en verwijderde vertaaleenheden opgenomen.
+Controleer voordat u deze versie voor vertaling markeert of de wijzigingen aan de vertaaleenheden zo klein mogelijk zijn om onnodig werk voor vertalers te voorkomen.',
 	'tpt-mark-summary' => 'Heeft deze versie voor vertaling gemarkeerd',
 	'tpt-edit-failed' => 'De pagina "$1" kon niet bijgewerkt worden.',
 	'tpt-duplicate' => 'De vertaaleenheid "$1" wordt meer dan eens gebruikt.',
@@ -6427,13 +6427,13 @@ Reden: $1',
 Vertaalsjabloon: <pre>$1</pre>',
 	'pt-parse-close' => 'Ongebalanceerd label &lt;translate>.
 Vertaalsjabloon: <pre>$1</pre>',
-	'pt-parse-nested' => 'Geneste &lt;translate>-secties zijn niet toegestaan.
+	'pt-parse-nested' => 'Geneste vertaaleenheden met &lt;translate> zijn niet toegestaan.
 Labeltekst: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Meerdere sectiemarkeringen voor een enkele sectie aangetroffen.
-Sectietekst: <pre>$1</pre>',
-	'pt-shake-position' => 'Sectiemarkeringen op een onverwachte plaats.
-Sectietekst: <pre>$1</pre>',
-	'pt-shake-empty' => 'Lege sectie voor markering $1.',
+	'pt-shake-multiple' => 'Meerdere markeringen vertaaleenheden voor een enkele vertaaleeneheid aangetroffen.
+Tekst vertaaleenheid: <pre>$1</pre>',
+	'pt-shake-position' => 'Markeringen voor vertaaleenheden op een onverwachte plaats.
+Tekst vertaaleenheid: <pre>$1</pre>',
+	'pt-shake-empty' => 'Lege vertaaleenheid voor markering $1.',
 	'pt-log-header' => 'Logboek voor handelingen rerelateerd aan het paginavertalingsysteem',
 	'pt-log-name' => 'Logboek paginavertaling',
 	'pt-log-mark' => '{{GENDER:$2|heeft}} versie $3 van pagina "[[:$1]]" voor vertaling gemarkeerd',
@@ -6457,13 +6457,13 @@ Sectietekst: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'De doelpagina is geen geldige paginanaam.',
 	'pt-movepage-block-tp-exists' => 'De te vertalen doelpagina [[:$2]] bestaat al.',
 	'pt-movepage-block-tp-invalid' => 'De te vertalen doelpaginanaam voor [[:$1]] is ongeldig (te lang?).',
-	'pt-movepage-block-section-exists' => 'De doelpagina voor de sectie [[:$2]] bestaat al.',
-	'pt-movepage-block-section-invalid' => 'De doelpagina voor de sectienaam voor [[:$1]] is ongeldig (te lang?).',
+	'pt-movepage-block-section-exists' => 'De doelpagina voor de vertaaleenheid "[[:$2]]" bestaat al.',
+	'pt-movepage-block-section-invalid' => 'De doelpagina voor "[[:$1]]" voor de vertaaleenheid is ongeldig (te lang?).',
 	'pt-movepage-block-subpage-exists' => 'De doelsubpagina [[:$2]] bestaat al.',
 	'pt-movepage-block-subpage-invalid' => 'De doelsubpaginanaam voor [[:$1]] is ongeldig (te lang?).',
 	'pt-movepage-list-pages' => "Lijst van te hernoemen pagina's",
 	'pt-movepage-list-translation' => "Te vertalen pagina's",
-	'pt-movepage-list-section' => "Sectiepagina's",
+	'pt-movepage-list-section' => "Pagina's voor vertaaleenheden",
 	'pt-movepage-list-other' => "Overige subpagina's",
 	'pt-movepage-list-count' => "In totaal {{PLURAL:$1|is er $1 pagina|zijn er $1 pagina's}} te hernoemen.",
 	'pt-movepage-legend' => 'Te vertalen pagina hernoemen',
@@ -6497,7 +6497,7 @@ Kijk in het [[Special:Log/pagetranslation|logboek paginavertaling]] na of er fou
 	'pt-deletepage-subpages' => "Alle subpagina's verwijderen",
 	'pt-deletepage-list-pages' => "Lijst met te verwijderen pagina's",
 	'pt-deletepage-list-translation' => "Vertaalde pagina's",
-	'pt-deletepage-list-section' => "Sectiepagina's",
+	'pt-deletepage-list-section' => "Pagina's voor vertaaleenheden",
 	'pt-deletepage-list-other' => "Andere subpagina's",
 	'pt-deletepage-list-count' => "In totaal {{PLURAL:$1|wordt er $1 pagina|worden er $1 pagina's}} verwijderd.",
 	'pt-deletepage-full-logreason' => 'Onderdeel van te vertalen pagina $1.',
@@ -8713,8 +8713,8 @@ Tiyaking mayroon itong mga tatak na <nowiki><translate></nowiki> at may isang ta
 	'tpt-saveok' => 'Nilagyang ng tanda ang pahinang [[$1]] para sa pagsasalinwika na may $2 na {{PLURAL:$2|yunit ng salinwika|mga yunit ng salinwika}}.
 Maaari na ngayong <span class="plainlinks">[$3 isalinwika]</span> ang pahina.',
 	'tpt-badsect' => 'Ang $1" ay isang hindi tanggap na pangalan para sa yunit ng salinwikang $2.',
-	'tpt-showpage-intro' => 'Nakatala sa ibaba ang bago, umiiral at naburang mga seksyon.
-Bago tatakan ang bersyong ito para isalinwika, suriing nakauntian ang mga pagbabago sa mga seksyon upang maiwasan ang hindi kailangang gawain para sa mga tagapagsalinwika.',
+	'tpt-showpage-intro' => 'Nakatala sa ibaba ang bago, umiiral at naburang mga yunit ng salinwika.
+Bago tatakan ang bersyong ito para isalinwika, suriing nakauntian ang mga pagbabago sa mga yunit ng salinwika upang maiwasan ang hindi kailangang gawain para sa mga tagapagsalinwika.',
 	'tpt-mark-summary' => 'Tinatakan ang bersyong ito para isalinwika',
 	'tpt-edit-failed' => 'Hindi maisapanahon ang pahina:  $1',
 	'tpt-duplicate' => 'Ang pangalan ng yunit ng salinwika na $1 ay ginagamit nang mas marami kaysa sa isa.',
@@ -8781,13 +8781,13 @@ Isang tagapangasiwa ng salinwika ang nagpasyang ituon ang mga pagsisikap ng pags
 Suleras ng pagsasalinwika:  <pre>$1</pre>',
 	'pt-parse-close' => 'Hindi magkatimbang na tatak na &lt;translate>.
 Suleras ng pagsasalinwika:  <pre>$1</pre>',
-	'pt-parse-nested' => 'Hindi pinapayagan ang nakapugad na mga seksyong &lt;translate>.
+	'pt-parse-nested' => 'Hindi pinapayagan ang nakapugad na mga yunit ng salinwika &lt;translate>.
 Teksto ng tatak: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Mga pananda ng maramihang seksyon para sa isang seksyon.
-Teksto ng seksyon: <pre>$1</pre>',
-	'pt-shake-position' => 'Mga panandang pangseksyon sa loob ng posisyong hindi inaasahan.
-Teksto ng seksyon: <pre>$1</pre>',
-	'pt-shake-empty' => 'Seksyong walang laman para sa panandang $1.',
+	'pt-shake-multiple' => 'Mga pananda ng maramihang yunit ng salinwika para sa isang yunit ng salinwika.
+Teksto ng yunit ng salinwika: <pre>$1</pre>',
+	'pt-shake-position' => 'Mga pananda ng yunit ng salinwika sa loob ng posisyong hindi inaasahan.
+Teksto ng yunit ng salinwika: <pre>$1</pre>',
+	'pt-shake-empty' => 'Yunit ng salinwika na walang laman para sa panandang "$1".',
 	'pt-log-header' => 'Itala para sa mga gawaing may kaugnayan sa sistema ng pagsasalinwika ng pahina',
 	'pt-log-name' => 'Tala ng pagsasalinwika ng pahina',
 	'pt-log-mark' => '{{GENDER:$2|minarkahang}} rebisyong  $3 ng pahinang "[[:$1]]" para sa pagsasalinwika',
@@ -8811,13 +8811,13 @@ Teksto ng seksyon: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'Hindi isang tanggap na pamagat ang puntiryang batayang pahina.',
 	'pt-movepage-block-tp-exists' => 'Umiiral ang puntiryang pahina ng salinwika na [[:$2]].',
 	'pt-movepage-block-tp-invalid' => 'Ang pinupukol na pamagat ng pahinang maisasalinwika para sa [[:$1]] ay hindi matatanggap (napakahaba?).',
-	'pt-movepage-block-section-exists' => 'Umiiral ang pahina ng seksyong pinupukol na [[:$2]].',
-	'pt-movepage-block-section-invalid' => 'Ang pamagat ng pahina ng seksyong pinupukol para sa [[:$1]] ay hindi matatanggap (napakahaba?).',
+	'pt-movepage-block-section-exists' => 'Umiiral ang pahina ng yunit ng salinwikang pinupukol na "[[:$2]]".',
+	'pt-movepage-block-section-invalid' => 'Ang pamagat ng pahina ng seksiyong pinupukol para sa "[[:$1]]" na para sa yunit ng salinwika ay hindi magiging katanggap-tanggap (napakahaba?).',
 	'pt-movepage-block-subpage-exists' => 'Umiiral ang pinupukol na kabahaging pahinang [[:$2]].',
 	'pt-movepage-block-subpage-invalid' => 'Ang pinupukol na pamagat ng kabahaging pahina para sa [[:$1]] ay hindi matatanggap (napakahaba?).',
 	'pt-movepage-list-pages' => 'Talaan ng mga pahinang ililipat',
 	'pt-movepage-list-translation' => 'Mga pahina ng salinwika',
-	'pt-movepage-list-section' => 'Mga pahina ng seksyon',
+	'pt-movepage-list-section' => 'Mga pahina ng yunit ng salinwika',
 	'pt-movepage-list-other' => 'Iba pang kabahaging mga pahina',
 	'pt-movepage-list-count' => 'Sa kabuuan ay $1 ang {{PLURAL:$1|pahina|mga pahina}}ng ililipat.',
 	'pt-movepage-legend' => 'Ilipat ang pahinang maisasalinwika',
@@ -8851,7 +8851,7 @@ Pakisuri ang [[Special:Log/pagetranslation|talaan ng pagsasalinwika ng pahina]] 
 	'pt-deletepage-subpages' => 'Burahin ang lahat ng kabahaging mga pahina',
 	'pt-deletepage-list-pages' => 'Talaan ng mga pahinang buburahin',
 	'pt-deletepage-list-translation' => 'Mga pahina ng salinwika',
-	'pt-deletepage-list-section' => 'Mga pahina ng seksyon',
+	'pt-deletepage-list-section' => 'Mga pahina ng yunit ng salinwika',
 	'pt-deletepage-list-other' => 'Iba pang kabahaging mga pahina',
 	'pt-deletepage-list-count' => 'Sa kabuuan ay $1 ang {{PLURAL:$1|pahina|mga pahina}}ng buburahin.',
 	'pt-deletepage-full-logreason' => 'Bahagi ng maisasalinwikang pahinang $1.',
