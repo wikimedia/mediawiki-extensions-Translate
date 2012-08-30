@@ -2218,7 +2218,7 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] a l'é un proget për fé na version ëd Wikipedia fòra linia, ëd sol test, dzora a na perifèrica mòbil.",
 	'translate-group-desc-wikipediamobile' => "[[Translating:WikipediaMobile|WikipediaMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wikipedia",
 	'translate-group-desc-wiktionarymobile' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wiktionary",
-	'translate-group-desc-wlmmobile' => "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] a l'é n'aplicassion sacociàbi për contribuì al [[:meta:Wiki Loves Monuments|proget Wiki Loves Monuments]]",
+	'translate-group-desc-wlmmobile' => "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] a l'é n'aplicassion për ij sacociàbij për contribuì al [[:meta:Wiki Loves Monuments|proget Wiki Loves Monuments]]",
 );
 
 /** Pashto (پښتو)

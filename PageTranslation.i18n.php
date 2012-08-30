@@ -2373,13 +2373,13 @@ Texto de unidad de traducción: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'La página base de destino no es un título válido.',
 	'pt-movepage-block-tp-exists' => 'La página de traducción de destino [[:$2]] existe.',
 	'pt-movepage-block-tp-invalid' => 'El título de la página de traducción de destino para [[:$1]] sería inválido (demasiado largo?).',
-	'pt-movepage-block-section-exists' => 'La sección de página de destino [[:$2]] existe.',
-	'pt-movepage-block-section-invalid' => 'El título de sección de página de destino para [[:$1]] sería inválido (demasiado largo?).',
+	'pt-movepage-block-section-exists' => 'La unidad de traducción de la página de destino [[:$2]] existe.',
+	'pt-movepage-block-section-invalid' => 'El título de unidad de traducción de la página de destino "[[:$1]]" sería inválido (¿demasiado largo?).',
 	'pt-movepage-block-subpage-exists' => 'La subpágina de destino [[:$2]] existe.',
 	'pt-movepage-block-subpage-invalid' => 'El título de subpágina de destino para [[:$1]] sería inválido (demasiado largo?).',
 	'pt-movepage-list-pages' => 'Lista de páginas a mover',
 	'pt-movepage-list-translation' => 'Páginas de traducción',
-	'pt-movepage-list-section' => 'Páginas de sección',
+	'pt-movepage-list-section' => 'Páginas de las unidades de traducción',
 	'pt-movepage-list-other' => 'Otras subpáginas',
 	'pt-movepage-list-count' => 'En total $1 {{PLURAL:$1|página|páginas}} a mover',
 	'pt-movepage-legend' => 'Mover página traducible',
@@ -2413,7 +2413,7 @@ Por favor verifica el [[Special:Log/pagetranslation|registro de traducción de p
 	'pt-deletepage-subpages' => 'Eliminar todas las subpáginas',
 	'pt-deletepage-list-pages' => 'Lista de páginas para eliminar',
 	'pt-deletepage-list-translation' => 'Páginas de traducción',
-	'pt-deletepage-list-section' => 'Sección de página',
+	'pt-deletepage-list-section' => 'Páginas de unidades de traducción',
 	'pt-deletepage-list-other' => 'Otras subpáginas',
 	'pt-deletepage-list-count' => 'En total $1 {{PLURAL:$1|página|páginas}} a eliminar.',
 	'pt-deletepage-full-logreason' => 'Parte de la página traducible $1.',
@@ -5012,6 +5012,7 @@ Mangga priksa [[Special:Log/pagetranslation|log pamindhahan kaca]] kanggo layang
 );
 
 /** Georgian (ქართული)
+ * @author BRUTE
  * @author David1010
  * @author Temuri rajavi
  */
@@ -5042,6 +5043,7 @@ $messages['ka'] = array(
 	'pt-movepage-current' => 'მიმდინარე სახელი:',
 	'pt-movepage-new' => 'ახალი სახელი:',
 	'pt-movepage-reason' => 'მიზეზი:',
+	'pt-deletepage-action-other' => 'სამიზნის შეცვლა',
 	'pt-deletepage-current' => 'გვერდის სახელი:',
 	'pt-deletepage-reason' => 'მიზეზი:',
 	'pt-deletepage-subpages' => 'ყველა ქვეგვერდის წაშლა',
@@ -7883,8 +7885,8 @@ $messages['sah'] = array(
 	'tpt-saveok' => '[[$1]] сирэй тылбаастанарга бэлиэтэммит, кини иһигэр {{PLURAL:$2|биир тылбаастаныахтаах этии|$2 тылбаастаныахтаах этии}} баар.
 Билигин сирэйи <span class="plainlinks">[$3 тылбаастыахха]</span> сөп.',
 	'tpt-badsect' => '"$1" диэн аат $2 тылбаас единицатын аатыгар сөп түбэспэт.',
-	'tpt-showpage-intro' => 'Манна саҥа, билигин баар уонна сотуллубут салаалар көстөллөр.
-Бу барылы тылбаастаныахтаах курдук бэлиэтиэҥ иннинэ салааҕа уларытыы төһө кыалларынан аҕыйах буоларын ситиһэ сатыахтааххын өйдөө, ол тылбаасчыттар үлэлэрин аҕыйатыа.',
+	'tpt-showpage-intro' => 'Манна саҥа, билигин баар уонна сотуллубут тылбаастаныахтаах тыллар уонна этиилэр көстөллөр.
+Бу барылы тылбаастаныахтаах курдук бэлиэтиэҥ иннинэ уларытыыҥ төһө кыалларынан аҕыйах буоларын ситиһэ сатаа, ол тылбаасчыттар үлэлэрин аҕыйатыа.',
 	'tpt-mark-summary' => 'Бу барылы тылбастаныахтаах курдук бэлиэтииргэ',
 	'tpt-edit-failed' => 'Бу сирэйи саҥардар табыллыбата: $1',
 );
