@@ -95,10 +95,16 @@ class SpecialTranslate extends SpecialPage {
 			array( $this, 'cbAddPagingNumbers' )
 		);
 
+		$params = array( $this->getContext(), $this->task, $this->group, $this->options );
+		if ( !wfRunHooks( 'SpecialTranslate::executeTask', $params ) ) {
+			return;
+		}
+
 		// Initialise and get output.
 		if ( !$this->task ) {
 			return;
 		}
+
 		$this->task->init( $this->group, $taskOptions );
 		$output = $this->task->execute();
 

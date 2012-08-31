@@ -145,6 +145,9 @@ class TranslateHooks {
 
 			// Disable action=delete
 			$wgHooks['ArticleConfirmDelete'][] = 'PageTranslationHooks::disableDelete';
+
+			// Show page source code when export tab is opened
+			$wgHooks['SpecialTranslate::executeTask'][] = 'PageTranslationHooks::sourceExport';
 		}
 	}
 

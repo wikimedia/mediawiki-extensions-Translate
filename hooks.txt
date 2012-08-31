@@ -40,6 +40,12 @@ This is a list of known events and parameters; please add to it if you're going
 to add events to the Translate extension.
 
 === PHP events ===
+;SpecialTranslate::executeTask: You can output the default task output
+ RequestContext  $context: For adding output, accesing current interface language etc.
+ TranslateTask   $task = null: Current task if any
+ MessageGroup    $group
+ array           $options: Active options
+
 ;TranslateBeforeAddModules: Provides an opportunity to load extra modules
  array          &$modules: List of resource loader module names
 
