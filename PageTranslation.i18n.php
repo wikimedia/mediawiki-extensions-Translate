@@ -3219,8 +3219,8 @@ Comprobe que teña as etiquetas <nowiki><translate></nowiki> e mais unha sintaxe
 	'tpt-saveok' => 'A páxina "[[$1]]" foi marcada para ser traducida, {{PLURAL:$2|cunha unidade de tradución|con $2 unidades de tradución}}.
 A páxina agora pode ser <span class="plainlinks">[$3 traducida]</span>.',
 	'tpt-badsect' => '"$1" non é un nome válido para a unidade de tradución $2.',
-	'tpt-showpage-intro' => 'A continuación están listadas as seccións existentes e borradas.
-Antes de marcar esta versión para ser traducida, comprobe que as modificacións feitas ás seccións foron minimizadas para evitarlles traballo innecesario aos tradutores.',
+	'tpt-showpage-intro' => 'A continuación están listadas as unidades de tradución novas, existentes e borradas.
+Antes de marcar esta versión para ser traducida, comprobe que as modificacións feitas ás unidades de tradución foron minimizadas para evitarlles traballo innecesario aos tradutores.',
 	'tpt-mark-summary' => 'Marcou esta versión para ser traducida',
 	'tpt-edit-failed' => 'Non se puido actualizar a páxina: $1',
 	'tpt-duplicate' => 'O nome da unidade de tradución "$1" úsase máis dunha vez.',
@@ -3284,13 +3284,13 @@ Motivo: $1',
 Modelo de tradución: <pre>$1</pre>',
 	'pt-parse-close' => 'Etiqueta &lt;/translate> desequilibrada.
 Modelo de tradución: <pre>$1</pre>',
-	'pt-parse-nested' => 'Non se permiten as seccións &lt;translate> aniñadas.
+	'pt-parse-nested' => 'Non se permiten as unidades de tradución &lt;translate> aniñadas.
 Texto da etiqueta: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Hai demasiados marcadores de sección para unha soa.
-Texto da sección: <pre>$1</pre>',
-	'pt-shake-position' => 'Os marcadores de sección atópanse nunha posición inesperada.
-Texto da sección: <pre>$1</pre>',
-	'pt-shake-empty' => 'Sección baleira para o marcador $1.',
+	'pt-shake-multiple' => 'Hai demasiados marcadores de unidade de tradución para unha única unidade.
+Texto da unidade de tradución: <pre>$1</pre>',
+	'pt-shake-position' => 'Os marcadores de unidade de tradución atópanse nunha posición inesperada.
+Texto da unidade de tradución: <pre>$1</pre>',
+	'pt-shake-empty' => 'Unidade de tradución baleira para o marcador "$1".',
 	'pt-log-header' => 'Rexistro de accións e operacións relacionadas co sistema de tradución de páxinas',
 	'pt-log-name' => 'Rexistro de páxinas de tradución',
 	'pt-log-mark' => '{{GENDER:$2|marcou}} a revisión $3 da páxina "[[:$1]]" para traducir',
@@ -3314,13 +3314,13 @@ Texto da sección: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'A páxina de destino ten un título incorrecto.',
 	'pt-movepage-block-tp-exists' => 'Existe a páxina de tradución de destino "[[:$2]]".',
 	'pt-movepage-block-tp-invalid' => 'O título da páxina de tradución de destino para "[[:$1]]" é incorrecto (quizais sexa longo de máis).',
-	'pt-movepage-block-section-exists' => 'Existe a sección da páxina de destino "[[:$2]]".',
-	'pt-movepage-block-section-invalid' => 'O título da sección da páxina de destino para "[[:$1]]" é incorrecto (quizais sexa longo de máis).',
+	'pt-movepage-block-section-exists' => 'Existe a páxina de destino "[[:$2]]" para a unidade de tradución.',
+	'pt-movepage-block-section-invalid' => 'O título da páxina de destino para "[[:$1]]" para a unidade de tradución é incorrecto (quizais sexa longo de máis).',
 	'pt-movepage-block-subpage-exists' => 'Existe a subpáxina de destino "[[:$2]]".',
 	'pt-movepage-block-subpage-invalid' => 'O título da subpáxina de destino para "[[:$1]]" é incorrecto (quizais sexa longo de máis).',
 	'pt-movepage-list-pages' => 'Lista de páxinas a mover',
 	'pt-movepage-list-translation' => 'Páxinas de tradución',
-	'pt-movepage-list-section' => 'Sección de páxina',
+	'pt-movepage-list-section' => 'Páxinas de unidade de tradución',
 	'pt-movepage-list-other' => 'Outras subpáxinas',
 	'pt-movepage-list-count' => 'En total, $1 {{PLURAL:$1|páxina|páxinas}} a mover.',
 	'pt-movepage-legend' => 'Mover a páxina traducible',
@@ -3354,7 +3354,7 @@ Comprobe o [[Special:Log/pagetranslation|rexistro de páxinas de tradución]] po
 	'pt-deletepage-subpages' => 'Borrar todas as subpáxinas',
 	'pt-deletepage-list-pages' => 'Lista de páxinas a borrar',
 	'pt-deletepage-list-translation' => 'Páxinas de tradución',
-	'pt-deletepage-list-section' => 'Sección de páxina',
+	'pt-deletepage-list-section' => 'Páxinas de unidade de tradución',
 	'pt-deletepage-list-other' => 'Outras subpáxinas',
 	'pt-deletepage-list-count' => 'En total, $1 {{PLURAL:$1|páxina|páxinas}} a borrar.',
 	'pt-deletepage-full-logreason' => 'Parte da páxina traducible "$1".',
@@ -5768,7 +5768,7 @@ $messages['mk'] = array(
 	'tpt-rev-unmark-tooltip' => 'Отстрани ја страницава од преводот.',
 	'tpt-rev-discourage-tooltip' => 'Постави ја страницата како непрепорачана за понатамошното преведување.',
 	'tpt-rev-encourage-tooltip' => 'Врати ја страницата на нормално преведување.',
-	'translate-tag-translate-link-desc' => 'Преведи ја оваа страница',
+	'translate-tag-translate-link-desc' => 'Преведете ја страницава',
 	'translate-tag-markthis' => "Обележи ја оваа страница со 'за преведување'",
 	'translate-tag-markthisagain' => 'Оваа страница има <span class="plainlinks">[$1 промени]</span> од последниот пат кога <span class="plainlinks">[$2 обележана за преведување]</span>.',
 	'translate-tag-hasnew' => 'Оваа страница содржи <span class="plainlinks">[$1 промени]</span> кои не се обележани за преведување.',
