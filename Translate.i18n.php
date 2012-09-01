@@ -14994,6 +14994,7 @@ D'Faarf mat där den Numm vum Benotzer ënnerstrach ass weist wéi rezent dee Be
 	'translate-smg-nochanges' => 'Et gëtt keng Ännerunge fir ze verschaffen.',
 	'translate-smg-submit' => 'Ännerunge fir ze verschaffe schécken',
 	'translate-smg-submitted' => 'Definitioune vun de Message goufen aktualiséiert. Ännerunge ginn am Hannergrond gemaach.',
+	'translate-smg-postponed' => 'Eenzel Ännerungen konnten net verschafft ginn. [[{{FULLPAGENAME}}|Probéiert nach eng Kéier]].',
 	'translate-smg-left' => 'Inhalt vum Message op der Wiki',
 	'translate-manage-import-diff' => 'Message $1 | Aktiounen: $2',
 	'translate-manage-import-new' => 'Neie Message $1',

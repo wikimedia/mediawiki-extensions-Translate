@@ -5496,8 +5496,8 @@ Vergewëssert Iech ob se <nowiki><translate></nowiki>-Taggen  an eng valabel Syn
 	'tpt-saveok' => 'D\'Säit [[$1]] gouf fir d\'Iwwersetzung mat $2 {{PLURAL:$2|Iwwersetzungseenheet|Iwwersetzungseenheete}} markéiert.
 D\'Säit kann elo <span class="plainlinks">[$3 iwwersat]</span> ginn.',
 	'tpt-badsect' => '"$1" ass kee valbelen Numm fir d\'Iwwersetzungseenheet $2.',
-	'tpt-showpage-intro' => "Ënnendrënner stinn déi nei, aktuell a gescläschten Abschnitter.
-Ier dir dës Versioun fir d'iwwersetze markéiert, kuckt w.e.g. no datt d'Ännerunge vun den Abschnitter op e Minimum reduzéiert gi fir onnëtz Aarbecht vun den Iwwersezer ze vermeiden.",
+	'tpt-showpage-intro' => "Ënnendrënner stinn déi nei, aktuell a geläschten Abschnitter.
+Ier Dir dës Versioun fir d'iwwersetze markéiert, kuckt w.e.g. no datt d'Ännerunge vun den Abschnitter déi iwwersat solle ginn op e Minimum reduzéiert gi fir onnëtz Aarbecht vun den Iwwersetzer ze vermeiden.",
 	'tpt-mark-summary' => "huet dës Versioun fir d'Iwwersetzung markéiert",
 	'tpt-edit-failed' => "D'Säit $1 konnt net aktualiséiert ginn",
 	'tpt-duplicate' => 'Den Numm $1 vun der Iwwersetzungwseenheet gëtt méi wéi eemol benotzt.',
@@ -5561,13 +5561,13 @@ En Iwwersetzungs-Administrateur huet decidéiert fir d'Iwwersetzungs-Efforten op
 Iwwersetzungsschabloun: <pre>$1</pre>',
 	'pt-parse-close' => 'Netsymetreschen &lt;&#47;translate&gt;-Tag.
 Iwwersetzungsschabloun: <pre>$1</pre>',
-	'pt-parse-nested' => 'Verschachtelt &lt;translate&gt;-Abschnitter sinn net méiglech.
+	'pt-parse-nested' => 'Verschachtelt &lt;translate&gt;-Iwweraetzungs-Eenheete sinn net méiglech.
 Text vum Tag: <pre>$1</pre>',
-	'pt-shake-multiple' => 'E puer Abschnittsmarkéierungen fir een Abschnitt.
-Text vum Abschnitt: <pre>$1</pre>',
-	'pt-shake-position' => 'Abschnittsmarkéierungen op enger onerwaarter Plaz.
-Text vum Abschnitt: <pre>$1</pre>',
-	'pt-shake-empty' => 'Abschnitt fir Marker $1 eidelmaachen.',
+	'pt-shake-multiple' => 'E puer Iwwersetzungs-Eenheete-Markéierungen fir eng Iwwersetzungs-Eenheet.
+Text vun der Iwwersetzungs-Eenheet: <pre>$1</pre>',
+	'pt-shake-position' => 'Markéierungen fir Iwwersetzungseenheeten op enger onerwaarter Plaz.
+Text fir Iwwersetzungseenheet: <pre>$1</pre>',
+	'pt-shake-empty' => 'Iwwersetzungs-Eenheete fir Marker $1 eidelmaachen.',
 	'pt-log-header' => 'Logbuch vun den Aktiounee a Verbindung mat dem System vun der Säiteniwwersetzung',
 	'pt-log-name' => 'Logbuch vun de Säiteniwwersetzungen',
 	'pt-log-mark' => '{{GENDER:$2|huet}} d\'Versioun $3 vun der Säit "[[:$1]]" fir z\'iwwersetze markéiert',
@@ -5580,13 +5580,13 @@ Text vum Abschnitt: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => "D'Basiszilsäit huet kee valabelen Titel.",
 	'pt-movepage-block-tp-exists' => "D'Iwwersetzungszilsäit [[:$2]] gëtt et schonn.",
 	'pt-movepage-block-tp-invalid' => 'Den Numm vun der iwwersater Zilsäit fir [[:$1]] wier net valabel (ze laang?).',
-	'pt-movepage-block-section-exists' => 'Den Zilabschnitt [[:$2]] gëtt et schonn.',
-	'pt-movepage-block-section-invalid' => 'Den Numm vum Abschnitt vun der Zilsäit fir [[:$1]] wier net valabel (ze laang?).',
+	'pt-movepage-block-section-exists' => "Den Zilabschnitt ''[[:$2]]'' fir dës Iwwersetzungs-Eenheet gëtt et schonn.",
+	'pt-movepage-block-section-invalid' => "Den Numm vun der Iwwersetzungs-Eenheet vun der Zilsäit fir ''[[:$1]]'' wier net valabel (ze laang?).",
 	'pt-movepage-block-subpage-exists' => "D'Zil-Ënnersäit [[:$2]] gëtt et schonn.",
 	'pt-movepage-block-subpage-invalid' => 'Den Titel vun der Zil-Ënnersäit fir [[:$1]] wier net valabel (ze laang?).',
 	'pt-movepage-list-pages' => 'Lëscht vun de Säite fir ze réckelen',
 	'pt-movepage-list-translation' => 'Iwwersetzungssäiten',
-	'pt-movepage-list-section' => 'Abschnitter vu Säiten',
+	'pt-movepage-list-section' => 'Iwwersetzungseenheet vu Säiten',
 	'pt-movepage-list-other' => 'Aner Ënnersäiten',
 	'pt-movepage-list-count' => 'Am ganzen $1 {{PLURAL:$1|Säit|Säite}} fir ze réckelen.',
 	'pt-movepage-legend' => 'Iwwersetzbar Säit réckelen',
@@ -5621,7 +5621,7 @@ Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir
 	'pt-deletepage-subpages' => 'All Ënnersäite läschen',
 	'pt-deletepage-list-pages' => 'Lëscht vun de Säite fir ze läschen',
 	'pt-deletepage-list-translation' => 'Iwwersetzungssäiten',
-	'pt-deletepage-list-section' => 'Abschnitter vu Säiten',
+	'pt-deletepage-list-section' => 'Iwwersetzungseenheet vu Säiten',
 	'pt-deletepage-list-other' => 'Aner Ënnersäiten',
 	'pt-deletepage-list-count' => 'Am ganzen $1 {{PLURAL:$1|Säit|Säite}} fir ze läschen.',
 	'pt-deletepage-full-logreason' => 'Deel vun der iwwersetzbarer Säit $1.',
@@ -9311,8 +9311,8 @@ Hãy đảm bảo là nó có thẻ <nowiki><translate></nowiki> và có cú ph�
 	'tpt-saveok' => 'Trang [[$1]] đã được đánh dấu chờ dịch với $2 đơn vị dịch thuật.
 Bạn có thể <span class="plainlinks">[$3 dịch]</span> trang ngay bây giờ.',
 	'tpt-badsect' => '“$1” không phải là tên hợp lệ cho đơn vị dịch thuật $2.',
-	'tpt-showpage-intro' => 'Dưới đây là các mục mới, đang tồn tại hoặc đã bị xóa.
-Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra những thay đổi tại các mục đã được thu gọn lại để tránh công việc không cần thiết cho biên dịch viên chưa.',
+	'tpt-showpage-intro' => 'Dưới đây là các đơn vị dịch thuật mới, đang tồn tại, hoặc đã bị xóa.
+Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra những thay đổi tại các đơn vị dịch thuật đã được thu gọn lại để tránh công việc không cần thiết cho biên dịch viên chưa.',
 	'tpt-mark-summary' => 'Đánh dấu phiên bản này là cần dịch',
 	'tpt-edit-failed' => 'Không thể cập nhật trang: $1',
 	'tpt-duplicate' => 'Tên đơn vị dịch $1 được sử dụng hơn một lần.',
@@ -9376,13 +9376,13 @@ Lý do: $1',
 Bản mẫu thông dịch: <pre>$1</pre>',
 	'pt-parse-close' => 'Thẻ &lt;/translate> không đều.
 Bản mẫu thông dịch: <pre>$1</pre>',
-	'pt-parse-nested' => 'Không được phép bỏ phần &lt;translate> trong phần khác.
+	'pt-parse-nested' => 'Không được phép bỏ đơn vị dịch thuật &lt;translate> trong đơn vị dịch thuật khác.
 Văn bản thẻ: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Nhiều phần đánh dấu cho một mục.
-Phần văn bản: <pre>$1</pre>',
-	'pt-shake-position' => 'Phần đánh dấu ở vị trí không mong đợi.
-Phần văn bản: <pre>$1</pre>',
-	'pt-shake-empty' => 'Điểm đánh dấu $1 có phần rỗng.',
+	'pt-shake-multiple' => 'Nhiều dấu hiệu cho một đơn vị dịch thuật.
+Văn bản của đơn vị dịch thuật: <pre>$1</pre>',
+	'pt-shake-position' => 'Dấu hiệu đơn vị dịch thuật ở vị trí không mong đợi.
+Văn bản của đơn vị dịch thuật: <pre>$1</pre>',
+	'pt-shake-empty' => 'Dấu hiệu “$1” có đơn vị dịch thuật rỗng.',
 	'pt-log-header' => 'Nhật trình các tác vụ co liên quan đến hệ thống dịch trang',
 	'pt-log-name' => 'Nhật trình dịch trang',
 	'pt-log-mark' => '{{GENDER:$2|}}đã đánh dấu phiên bản $3 của trang “[[:$1]]” là cần được dịch',
@@ -9406,13 +9406,13 @@ Phần văn bản: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'Bản gốc của trang đích có tên không hợp lệ.',
 	'pt-movepage-block-tp-exists' => 'Bản dịch của trang đích [[:$2]] tồn tại.',
 	'pt-movepage-block-tp-invalid' => 'Bản dịch của trang đích [[:$1]] có tên không hợp lệ (có lẽ dài quá).',
-	'pt-movepage-block-section-exists' => 'Đề mục của trang đích [[:$2]] tồn tại.',
-	'pt-movepage-block-section-invalid' => 'Đề mục của trang đích [[:$1]] có tên không hợp lệ (có lẽ dài quá).',
+	'pt-movepage-block-section-exists' => 'Trang đích của đơn vị dịch thuật, “[[:$2]]”, đã tồn tại.',
+	'pt-movepage-block-section-invalid' => 'Trang đích của đơn vị dịch thuật, “[[:$1]]”, có tên không hợp lệ (có lẽ dài quá).',
 	'pt-movepage-block-subpage-exists' => 'Trang phụ của trang đích [[:$2]] tồn tại.',
 	'pt-movepage-block-subpage-invalid' => 'Trang phụ của trang đích [[:$1]] có tên không hợp lệ (có lẽ dài quá).',
 	'pt-movepage-list-pages' => 'Danh sách trang để di chuyển',
 	'pt-movepage-list-translation' => 'Trang dịch thuật',
-	'pt-movepage-list-section' => 'Trang phần',
+	'pt-movepage-list-section' => 'Trang đơn vị dịch thuật',
 	'pt-movepage-list-other' => 'Những trang phụ khác',
 	'pt-movepage-list-count' => 'Tổng cộng có $1 trang để di chuyển.',
 	'pt-movepage-legend' => 'Di chuyển trang dịch được',
@@ -9446,7 +9446,7 @@ Xin hãy kiểm tra những lỗi hay thông điệp kết quả thành công tr
 	'pt-deletepage-subpages' => 'Xóa mọi trang phụ',
 	'pt-deletepage-list-pages' => 'Danh sách các trang sẽ được xóa',
 	'pt-deletepage-list-translation' => 'Các trang dịch',
-	'pt-deletepage-list-section' => 'Các trang đề mục',
+	'pt-deletepage-list-section' => 'Trang đơn vị dịch thuật',
 	'pt-deletepage-list-other' => 'Những trang phụ khác',
 	'pt-deletepage-list-count' => 'Tổng cộng $1 trang sẽ được xóa.',
 	'pt-deletepage-full-logreason' => 'Một phần của trang dịch được $1.',
