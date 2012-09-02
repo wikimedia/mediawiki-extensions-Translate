@@ -613,8 +613,8 @@ Comprueba que tenga les etiquetes <nowiki><translate></nowiki> y una sintaxis v�
 	'tpt-saveok' => 'A páxina [[$1]] marcose pa traducir con {{PLURAL:$2|una unidá de traducción|$2 unidaes de traducción}}.
 La páxina agora se pue <span class="plainlinks">[$3 traducir]</span>.',
 	'tpt-badsect' => '"$1" nun ye un nome válidu pa la unidá de traducción $2.',
-	'tpt-showpage-intro' => 'Abaxo ta la llista de les seiciones nueves, esistentes y desaniciaes.
-Enantes de marcar esta versión pa traducir, comprueba que los cambios fechos nes seiciones tan amenorgaos pa evitar trabayu innecesariu de los traductores.',
+	'tpt-showpage-intro' => 'Abaxo ta la llista de les unidaes de traducción nueves, esistentes y desaniciaes.
+Enantes de marcar esta versión pa traducir, comprueba que los cambios fechos nes unidaes de traducción seyan mínimos pa evitar trabayu innecesariu de los traductores.',
 	'tpt-mark-summary' => 'Marcó esta versión pa traducir',
 	'tpt-edit-failed' => 'Nun se pudo anovar la páxina: $1',
 	'tpt-duplicate' => "El nome de la unidá de traducción  $1 s'utiliza más d'una vegada.",
@@ -678,13 +678,13 @@ Motivu: $1',
 Plantía de traducción: <pre>$1</pre>',
 	'pt-parse-close' => 'Etiqueta &lt;/translate> desequilibrada.
 Plantía de traducción: <pre>$1</pre>',
-	'pt-parse-nested' => 'Nun se permiten seiciones &lt;translate> añeraes.
+	'pt-parse-nested' => 'Nun se permiten unidaes de traducción &lt;translate> añeraes.
 Testu de la etiqueta: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Marcadores de seición múltiples pa una seición.
-Testu de la seición: <pre>$1</pre>',
-	'pt-shake-position' => 'Marcadores de seición en posición inesperada.
-Testu de la seición: <pre>$1</pre>',
-	'pt-shake-empty' => 'Seición balera pal marcador $1.',
+	'pt-shake-multiple' => "Marcadores d'unidá de traducción múltiples pa una unidá de traducción.
+Testu de la unidá de traducción: <pre>$1</pre>",
+	'pt-shake-position' => "Marcadores d'unidá de traducción en posición inesperada.
+Testu de la unidá de traducción: <pre>$1</pre>",
+	'pt-shake-empty' => 'Unidá de traducción balera pal marcador «$1».',
 	'pt-log-header' => 'Rexistru de les aiciones rellacionaes col sistema de traducción de páxines',
 	'pt-log-name' => 'Rexistru de traducción de páxines',
 	'pt-log-mark' => '{{GENDER:$2|marcó}} la revisión $3 de la páxina "[[:$1]]" pa traducir',
@@ -708,13 +708,13 @@ Testu de la seición: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'La páxina base de destín nun ye un títulu válidu.',
 	'pt-movepage-block-tp-exists' => 'La páxina de traducción de destín [[:$2]] yá esiste.',
 	'pt-movepage-block-tp-invalid' => 'El títulu de la páxina de traducción de destín pa [[:$1]] sedría inválidu (¿demasiao llargu?).',
-	'pt-movepage-block-section-exists' => 'La páxina de seición de destín [[:$2]] yá esiste.',
-	'pt-movepage-block-section-invalid' => 'El títulu de la páxina de seición de destín pa [[:$1]] sedría inválidu (¿demasiao llargu?).',
+	'pt-movepage-block-section-exists' => 'La páxina de destín [[:$2]] de la unidá de traducción yá esiste.',
+	'pt-movepage-block-section-invalid' => 'El títulu de la páxina de destín pa «[[:$1]]» de la unidá de traducción sedría inválidu (¿demasiao llargu?).',
 	'pt-movepage-block-subpage-exists' => 'La subpáxina de destín [[:$2]] yá esiste.',
 	'pt-movepage-block-subpage-invalid' => 'El títulu de la subpáxina de destín pa [[:$1]] sedría inválidu (¿demasiao llargu?).',
 	'pt-movepage-list-pages' => 'Llista de páxines a treslladar',
 	'pt-movepage-list-translation' => 'Páxines de traducción',
-	'pt-movepage-list-section' => 'Páxines de seición',
+	'pt-movepage-list-section' => 'Páxines de la unidá de traducción',
 	'pt-movepage-list-other' => 'Otres subpáxines',
 	'pt-movepage-list-count' => 'En total $1 {{PLURAL:$1|páxina|páxines}} a treslladar.',
 	'pt-movepage-legend' => 'Treslladar la páxina traducible',
@@ -748,7 +748,7 @@ Por favor, mira nel [[Special:Log/pagetranslation|rexistru de traducción de pá
 	'pt-deletepage-subpages' => 'Desaniciar toles subpáxines',
 	'pt-deletepage-list-pages' => 'Llista de páxines a desaniciar',
 	'pt-deletepage-list-translation' => 'Páxines de traducción',
-	'pt-deletepage-list-section' => 'Páxines de seición',
+	'pt-deletepage-list-section' => 'Páxines de la unidá de traducción',
 	'pt-deletepage-list-other' => 'Otres subpáxines',
 	'pt-deletepage-list-count' => 'En total $1 {{PLURAL:$1|páxina|páxines}} a desaniciar.',
 	'pt-deletepage-full-logreason' => 'Parte de la páxina traducible $1.',

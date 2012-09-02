@@ -1896,10 +1896,10 @@ $messages['ja'] = array(
 	'translate-fs-email-title' => 'あなたのメールアドレスを確認',
 	'translate-fs-intro' => '{{SITENAME}} 開始準備ウィザードへようこそ。これから翻訳者になるための手順について1つずつ案内していきます。それらを終えると、あなたは {{SITENAME}} でサポートしているすべてのプロジェクトのインターフェイスメッセージを翻訳できるようになります。',
 	'translate-fs-selectlanguage' => '言語を選択',
-	'translate-fs-settings-planguage' => '第一言語：',
+	'translate-fs-settings-planguage' => '第一言語:',
 	'translate-fs-settings-planguage-desc' => '第一言語は、このウィキのインターフェイスで使用する言語と、
 既定の翻訳先言語を兼ねます。',
-	'translate-fs-settings-slanguage' => '補助言語$1：',
+	'translate-fs-settings-slanguage' => '補助言語$1:',
 	'translate-fs-settings-slanguage-desc' => '翻訳編集画面で、そのメッセージの他の言語への翻訳を表示できます。
 見たい言語があれば、ここで選択してください。',
 	'translate-fs-settings-submit' => '設定を保存',
