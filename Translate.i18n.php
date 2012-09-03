@@ -12567,12 +12567,12 @@ $messages['ja'] = array(
 	'translate-checks-malformed' => '<nowiki>$1</nowiki>が不正な形式です。',
 	'translate-checks-fudforum-syntax' => 'このプロジェクトでは<nowiki>$2</nowiki>の代わりに<nowiki>$1</nowiki>を使用します。',
 	'translate-pref-nonewsletter' => 'メールのニュースレターを受け取らない',
-	'translate-pref-editassistlang' => '補助言語：',
+	'translate-pref-editassistlang' => '補助言語:',
 	'prefs-translate' => '翻訳設定',
 	'translate-pref-editassistlang-help' => '言語コードをカンマ区切りで列挙します。
 翻訳中に、これらの言語での翻訳が表示されます。
 既定の言語一覧は、自身の言語により変化します。',
-	'translate-pref-editassistlang-bad' => '一覧内の無効な言語コード：
+	'translate-pref-editassistlang-bad' => '無効な言語コードを含んでいます:
 <nowiki>$1</nowiki>',
 	'translate-pref-jsedit' => '拡張版翻訳エディター（JavaScriptが必要）',
 	'right-translate' => '翻訳用インターフェイスを使用して編集',

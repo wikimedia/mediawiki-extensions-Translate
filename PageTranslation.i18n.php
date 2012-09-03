@@ -2848,6 +2848,7 @@ Virheet merkitään [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne t
 );
 
 /** French (français)
+ * @author Cquoi
  * @author Crochet.david
  * @author DavidL
  * @author Gomoko
@@ -2989,7 +2990,7 @@ Texte de la section : <pre>$1</pre>',
 	'pt-movepage-block-subpage-invalid' => 'Le titre de la sous-page cible pour [[:$1]] serait incorrect (trop long ?).',
 	'pt-movepage-list-pages' => 'Liste des pages à déplacer',
 	'pt-movepage-list-translation' => 'Pages de traduction',
-	'pt-movepage-list-section' => 'Pages en section',
+	'pt-movepage-list-section' => "Pages d'unités de traduction",
 	'pt-movepage-list-other' => 'Autres sous-pages',
 	'pt-movepage-list-count' => '$1 {{PLURAL:$1|page|pages}} à déplacer au total.',
 	'pt-movepage-legend' => 'Déplacer la page à traduire',
@@ -3023,7 +3024,7 @@ Veuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] po
 	'pt-deletepage-subpages' => 'Supprimer tous les sous-pages',
 	'pt-deletepage-list-pages' => 'Liste des pages à supprimer',
 	'pt-deletepage-list-translation' => 'Pages de traduction',
-	'pt-deletepage-list-section' => 'Section pages',
+	'pt-deletepage-list-section' => "Pages d'unités de traduction",
 	'pt-deletepage-list-other' => 'Autres sous-pages',
 	'pt-deletepage-list-count' => 'Au total, $1 {{PLURAL:$1|page|pages}} à supprimer.',
 	'pt-deletepage-full-logreason' => 'Partie de la page à traduire $1.',
@@ -6915,13 +6916,13 @@ Powód: $1',
 Szablon tłumaczenia – <pre>$1</pre>',
 	'pt-parse-close' => 'Niezrównoważony znacznik &lt;/translate>.
 Szablon tłumaczenia – <pre>$1</pre>',
-	'pt-parse-nested' => 'Zagnieżdżanie sekcji &lt;translate> nie jest dopuszczalne.
-Tekst znacznika – <pre>$1</pre>',
-	'pt-shake-multiple' => 'Wiele wyróżników sekcji dla jednej sekcji.
-Tekst sekcji – <pre>$1</pre>',
-	'pt-shake-position' => 'Wyróżniki sekcji w nieoczekiwanym miejscu.
-Tekst sekcji – <pre>$1</pre>',
-	'pt-shake-empty' => 'Pusta sekcja dla wyróżnika $1.',
+	'pt-parse-nested' => 'Zagnieżdżanie jednostek tłumaczenia &lt;translate> nie jest dopuszczalne.
+Tekst znacznika: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Wiele wyróżników jednostki tłumaczenia dla jednej jednostki tłumaczenia.
+Tekst jednostki tłumaczenia: <pre>$1</pre>',
+	'pt-shake-position' => 'Wyróżniki jednostki tłumaczenia w nieoczekiwanym miejscu.
+Tekst jednostki tłumaczenia: <pre>$1</pre>',
+	'pt-shake-empty' => 'Pusta jednostka tłumaczenia dla wyróżnika $1.',
 	'pt-log-header' => 'Rejestr działań związanych z systemem tłumaczenia stron',
 	'pt-log-name' => 'Rejestr tłumaczenia stron',
 	'pt-log-mark' => '{{GENDER:$2|oznaczył|oznaczyła|oznaczył(‐a)}} wersję $3 strony „[[:$1]]“ jako przeznaczonej do tłumaczenia',
@@ -6945,13 +6946,13 @@ Tekst sekcji – <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'Nazwa docelowej strony nie jest poprawnym tytułem.',
 	'pt-movepage-block-tp-exists' => 'Istnieje docelowa strona tłumaczenia [[:$2]].',
 	'pt-movepage-block-tp-invalid' => 'Nazwa docelowej strony tłumaczenia [[:$1]] może być nieprawidłowa. Może jest zbyt długa?',
-	'pt-movepage-block-section-exists' => 'Istnieje docelowa sekcja strony [[:$2]].',
-	'pt-movepage-block-section-invalid' => 'Nazwa docelowej sekcji strony [[:$1]] jest nieprawidłowa. Może jest zbyt długa?',
+	'pt-movepage-block-section-exists' => 'Istnieje docelowa strona [[:$2]] dla jednostki tłumaczenia.',
+	'pt-movepage-block-section-invalid' => 'Nazwa docelowej strony [[:$1]] dla jednostki tłumaczenia jest nieprawidłowa. Może jest zbyt długa?',
 	'pt-movepage-block-subpage-exists' => 'Docelowa podstrona [[:$2]] istnieje.',
 	'pt-movepage-block-subpage-invalid' => 'Nazwa docelowej podstrony [[:$1]] jest nieprawidłowa. Może jest zbyt długa?',
 	'pt-movepage-list-pages' => 'Lista stron do przeniesienia',
 	'pt-movepage-list-translation' => 'Strony do przetłumaczenia',
-	'pt-movepage-list-section' => 'Sekcje stron',
+	'pt-movepage-list-section' => 'Strony jednostki tłumaczenia',
 	'pt-movepage-list-other' => 'Inne podstrony',
 	'pt-movepage-list-count' => 'W sumie do przeniesienia {{PLURAL:$1|jest $1 strona|są $1 strony|jest $1 stron}}.',
 	'pt-movepage-legend' => 'Przenieś przetłumaczalną stronę',
@@ -6985,7 +6986,7 @@ Proszę sprawdzić na [[Special:Log/pagetranslation|stronie rejestru tłumaczeń
 	'pt-deletepage-subpages' => 'Usuń wszystkie podstrony',
 	'pt-deletepage-list-pages' => 'Lista stron do usunięcia',
 	'pt-deletepage-list-translation' => 'Strony tłumaczeń',
-	'pt-deletepage-list-section' => 'Sekcje stron',
+	'pt-deletepage-list-section' => 'Strony jednostki tłumaczenia',
 	'pt-deletepage-list-other' => 'Inne podstrony',
 	'pt-deletepage-list-count' => 'W sumie  $1 {{PLURAL:$1|strona|strony|stron}} do usunięcia.',
 	'pt-deletepage-full-logreason' => 'Część strony do tłumaczenia  $1.',

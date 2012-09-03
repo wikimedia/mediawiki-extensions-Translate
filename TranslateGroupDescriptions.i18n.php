@@ -2903,7 +2903,7 @@ $messages['vi'] = array(
 	'translate-group-desc-collection' => 'Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [http://www.mediawiki.org/wiki/Extension:Collection Collection] cho MediaWiki',
 	'translate-group-desc-flaggedrevs' => 'Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] cho MediaWiki',
 	'translate-group-desc-readerfeedback' => 'Siêu nhóm thông điệp chứa tất cả các thông điệp dùng cho phần mở rộng MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-semantic' => 'Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [http://semantic-mediawiki.org/ Semantic MediaWiki]',
+	'translate-group-desc-semantic' => 'Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [http://semantic-mediawiki.org/?uselang=vi MediaWiki Ngữ nghĩa]',
 	'translate-group-desc-socialprofile' => 'Siêu nhóm thông điệp chứa thông điệp của các phần mở rộng có liên quan đến phần mở rộng [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] cho MediaWiki',
 	'translate-group-desc-translate' => 'Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [http://www.mediawiki.org/wiki/Extension:Translate Translate] cho MediaWiki',
 	'translate-group-desc-wikiaextensions' => 'Siêu nhóm thông điệp chứa thông điệp của các phần mở rộng MediaWiki được sử dụng tại [http://www.wikia.com Wikia]',
