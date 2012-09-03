@@ -11,6 +11,7 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		parent::setUp();
 		global $wgEnablePageTranslation;
 		$wgEnablePageTranslation = true;
+		TranslateHooks::setupTranslate();
 	}
 
 	protected function tearDown() {
