@@ -156,6 +156,11 @@ class SpecialSupportedLanguages extends SpecialPage {
 		}
 
 		$dbr = wfGetDB( DB_SLAVE );
+		if ( $dbr->getType() === 'sqlite' ) {
+			// @TODO Not supported in sqlite
+			return array();
+		}
+
 		$tables = array( 'recentchanges' );
 		$fields = array( 'substring_index(rc_title, \'/\', -1) as lang', 'count(*) as count' );
 		$conds = array(
