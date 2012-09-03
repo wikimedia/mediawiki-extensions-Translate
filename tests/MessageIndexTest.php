@@ -16,7 +16,7 @@ class MessageIndexTest extends MediaWikiTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->testdata = unserialize( file_get_contents( 'messageindexdata.ser' ) );
+		$this->testdata = unserialize( file_get_contents( __DIR__ . '/messageindexdata.ser' ) );
 		global $wgTranslateCacheDirectory;
 		$this->config = $wgTranslateCacheDirectory;
 		// Only in 1.20, but who runs tests again older versions anyway?
