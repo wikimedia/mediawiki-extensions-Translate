@@ -1900,8 +1900,8 @@ $messages['ja'] = array(
 	'translate-fs-settings-planguage-desc' => '第一言語は、このウィキのインターフェイスで使用する言語と、
 既定の翻訳先言語を兼ねます。',
 	'translate-fs-settings-slanguage' => '補助言語$1:',
-	'translate-fs-settings-slanguage-desc' => '翻訳編集画面で、そのメッセージの他の言語への翻訳を表示できます。
-見たい言語があれば、ここで選択してください。',
+	'translate-fs-settings-slanguage-desc' => '翻訳編集画面に、メッセージに対する他の言語への翻訳を表示できます。
+表示させたい言語があれば、ここで選択してください。',
 	'translate-fs-settings-submit' => '設定を保存',
 	'translate-fs-userpage-level-N' => '母語話者です',
 	'translate-fs-userpage-level-5' => '翻訳の専門家です',
