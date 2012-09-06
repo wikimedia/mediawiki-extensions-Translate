@@ -93,6 +93,8 @@ $wgAPIModules['translationreview'] = 'ApiTranslationReview';
 $wgAPIModules['groupreview'] = 'ApiGroupReview';
 $wgAPIModules['aggregategroups'] = 'ApiAggregateGroups';
 $wgAPIModules['ttmserver'] = 'ApiTTMServer';
+$wgAPIGeneratorModules['messagecollection'] = 'ApiQueryMessageCollection';
+
 // Before MW 1.20
 $wgHooks['APIQueryInfoTokens'][] = 'ApiTranslationReview::injectTokenFunction';
 $wgHooks['APIQueryInfoTokens'][] = 'ApiGroupReview::injectTokenFunction';
