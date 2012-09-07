@@ -145,7 +145,14 @@ class SpecialManageGroups extends SpecialPage {
 		$id = self::changeId( $group->getId(), $code, $type, $key );
 
 		if ( $title->exists() && $type === 'addition' ) {
-			return '';
+			// The message has for some reason dropped out from cache
+			// or perhaps it is being reused. In any case treat it
+			// as a change for display, so the admin can see if
+			// action is needed and let the message be processed.
+			// Otherwise it will end up in the postponed category
+			// forever and will prevent rebuilding the cache, which
+			// leads to many other annoying problems.
+			$type = 'change';
 		} elseif ( !$title->exists() && ( $type === 'deletion' || $type === 'change' ) ) {
 			return '';
 		}
