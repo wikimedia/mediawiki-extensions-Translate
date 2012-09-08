@@ -8108,8 +8108,8 @@ Prepričajte se, da ima oznake <nowiki><translate></nowiki> in veljavno sintakso
 	'tpt-saveok' => 'Stran [[$1]] je bila označena za prevod z $2 {{PLURAL:$2|prevajalsko enoto|prevajalskima enotama|prevajalskimi enotami}}.
 Stran je sedaj mogoče <span class="plainlinks">[$3 prevesti]</span>.',
 	'tpt-badsect' => '»$1« ni veljavno ime za prevajalsko enoto $2.',
-	'tpt-showpage-intro' => 'Spodaj so navedeni novi, obstoječi in izbrisani razdelki.
-Pred označitvijo te redakcije za prevajanje preverite, da so spremembe razdelkov čim manjše, saj tako prevajalcem prihranite nepotrebno delo.',
+	'tpt-showpage-intro' => 'Spodaj so navedene nove, obstoječe in izbrisane prevajalne enote.
+Pred označitvijo te redakcije za prevajanje preverite, da so spremembe prevajalnih enot čim manjše, saj tako prevajalcem prihranite nepotrebno delo.',
 	'tpt-mark-summary' => 'Označil to različico za prevajanje',
 	'tpt-edit-failed' => 'Ni mogoče posodobiti strani: $1',
 	'tpt-duplicate' => 'Ime prevajalne enote $1 se uporablja več kot enkrat.',
@@ -8126,6 +8126,7 @@ vendar ni trenutno nobena različica {{PLURAL:$1|te strani|teh strani}} označen
 	'tpt-other-pages' => '{{PLURAL:$1|Stara različica te strani je bila označena|Stari različici teh strani sta bili označeni|Stare različice teh strani so bile označene}} za prevajanje,
 vendar {{PLURAL:$1|trenutne različice|trenutnih različic}} ni mogoče označiti za prevajanje.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Naslednja stran je zatrta|Naslednji strani sta zatrti|Naslednje strani so zatrte}} pred nadaljnjimi prevodi.',
+	'tpt-select-prioritylangs-reason' => 'Razlog:',
 	'tpt-rev-mark' => 'Označi za prevajanje',
 	'tpt-rev-unmark' => 'odstrani iz prevoda',
 	'tpt-rev-discourage' => 'zatri',
@@ -8145,23 +8146,25 @@ vendar {{PLURAL:$1|trenutne različice|trenutnih različic}} ni mogoče označit
 Ta stran je prevod strani [[$1]], njen prevod lahko posodobite z uporabo [$2 prevajalskega orodja].',
 	'tpt-unknown-page' => 'Ta imenski prostor je pridržan za prevode vsebinskih strani.
 Stran, ki jo poskušate urediti, ne ustreza nobeni strani označeni za prevajanje.',
+	'tpt-discouraged-language-reason' => 'Razlog: $1',
 	'tpt-render-summary' => 'Posodabljanje za ujemanje nove različice izvorne strani',
 	'tpt-download-page' => 'Izvozi stran s prevodi',
 	'tpt-aggregategroup-add' => 'Dodaj',
 	'tpt-aggregategroup-save' => 'Shrani',
 	'tpt-aggregategroup-new-name' => 'Ime:',
 	'tpt-aggregategroup-new-description' => 'Opis (izbirno):',
+	'tpt-aggregategroup-invalid-group' => 'Skupina ne obstaja',
 	'pt-parse-open' => 'Neizenačena etiketa &lt;translate>.
 Prevajalna predloga: <pre>$1</pre>',
 	'pt-parse-close' => 'Neizenačena etiketa &lt;/translate>.
 Prevajalna predloga: <pre>$1</pre>',
-	'pt-parse-nested' => 'Gnezdeni razdelki &lt;translate> niso dovoljeni.
+	'pt-parse-nested' => 'Gnezdene prevajalne enote &lt;translate> niso dovoljene.
 Besedilo etikete: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Več označevalcev razdelkov za en razdelek.
-Besedilo razdelka: <pre>$1</pre>',
-	'pt-shake-position' => 'Označevalci razdelkov na nepričakovanem položaju.
-Besedilo razdelka: <pre>$1</pre>',
-	'pt-shake-empty' => 'Prazen razdelek za označevalec $1.',
+	'pt-shake-multiple' => 'Več označevalcev prevajalnih enot za eno prevajalno enoto.
+Besedilo prevajalne enote: <pre>$1</pre>',
+	'pt-shake-position' => 'Označevalci prevajalnih enot na nepričakovanem položaju.
+Besedilo prevajalne enote: <pre>$1</pre>',
+	'pt-shake-empty' => 'Prazna prevajalna enota označevalec »$1«.',
 	'pt-log-header' => 'Dnevnik dejanj, ki so povezana s sistemom prevajanja strani',
 	'pt-log-name' => 'Dnevnik prevajanja strani',
 	'pt-log-mark' => 'je {{GENDER:$2|označil|označila|označil(-a)}} redakcijo $3 strani »[[:$1]]« za prevajanje',
@@ -8178,13 +8181,13 @@ Besedilo razdelka: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'Ciljna izhodiščna stran ni veljaven naslov.',
 	'pt-movepage-block-tp-exists' => 'Ciljna stran s prevodom [[:$2]] obstaja.',
 	'pt-movepage-block-tp-invalid' => 'Naslov ciljne strani s prevodom za [[:$1]] bi bil neveljaven (predolg?).',
-	'pt-movepage-block-section-exists' => 'Ciljna stran razdelka [[:$2]] obstaja.',
-	'pt-movepage-block-section-invalid' => 'Naslov ciljne strani razdelka za [[:$1]] bi bil neveljaven (predolg?).',
+	'pt-movepage-block-section-exists' => 'Ciljna stran prevajalne enote »[[:$2]]« obstaja.',
+	'pt-movepage-block-section-invalid' => 'Naslov ciljne strani »[[:$1]]« za prevajalno enoto bi bil neveljaven (predolg?).',
 	'pt-movepage-block-subpage-exists' => 'Ciljna podstran [[:$2]] obstaja.',
 	'pt-movepage-block-subpage-invalid' => 'Naslov ciljne podstrani [[:$1]] bi bil neveljaven (predolg?).',
 	'pt-movepage-list-pages' => 'Seznam strani za prestavitev',
 	'pt-movepage-list-translation' => 'Strani s prevodi',
-	'pt-movepage-list-section' => 'Strani razdelkov',
+	'pt-movepage-list-section' => 'Strani prevajalnih enot',
 	'pt-movepage-list-other' => 'Ostale podstrani',
 	'pt-movepage-list-count' => 'Skupno je za prestaviti $1 {{PLURAL:$1|stran|strani}}.',
 	'pt-movepage-legend' => 'Premakni prevedljivo stran',
@@ -8218,7 +8221,7 @@ Prosimo, preverite [[Special:Log/pagetranslation|dnevnik strani prevodov]] za na
 	'pt-deletepage-subpages' => 'Izbriši vse podstrani',
 	'pt-deletepage-list-pages' => 'Seznam strani za izbris',
 	'pt-deletepage-list-translation' => 'Strani prevodov',
-	'pt-deletepage-list-section' => 'Strani razdelkov',
+	'pt-deletepage-list-section' => 'Strani prevajalnih enot',
 	'pt-deletepage-list-other' => 'Druge podstrani',
 	'pt-deletepage-list-count' => 'Skupno je za izbrisati $1 {{PLURAL:$1|stran|strani}}.',
 	'pt-deletepage-full-logreason' => 'Del prevedljive strani $1.',

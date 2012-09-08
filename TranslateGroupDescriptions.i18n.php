@@ -2555,6 +2555,7 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt za dostavljanje nepovezane, samo tekstovne različice Wikipedije na mobilne naprave.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] je večplatformni mobilni in tablični program za branje in prispevanje k Wikipediji',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] je večplatformni mobilni in tablični program za branje in prispevanje k Wikislovarju',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] je mobilna aplikacija za prispevanje k [[:meta:Wiki Loves Monuments|projektu Wiki Loves Monuments]]',
 );
 
 /** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
