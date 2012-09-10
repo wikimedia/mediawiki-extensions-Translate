@@ -2431,8 +2431,8 @@ $messages['et'] = array(
 	'pagetranslation' => 'Lehekülje tõlkimine',
 	'right-pagetranslation' => 'Märkida lehekülje versioone tõlkimiseks',
 	'tpt-desc' => 'Sisulehekülgede tõlkimise lisa',
-	'tpt-section' => 'Tõlkeühik $1',
-	'tpt-section-new' => 'Uus tõlkeühik.
+	'tpt-section' => 'Tõlkeüksus $1',
+	'tpt-section-new' => 'Uus tõlkeüksus.
 Nimi: $1',
 	'tpt-section-deleted' => 'Tõlkeüksus $1',
 	'tpt-template' => 'Lehekülje mall',
@@ -2441,7 +2441,7 @@ Nimi: $1',
 	'tpt-diff-new' => 'Uus tekst',
 	'tpt-submit' => 'Märgi see versioon tõlkimiseks',
 	'tpt-sections-oldnew' => 'Uued ja olemasolevad tõlkeüksused',
-	'tpt-sections-deleted' => 'Kustutatud tõlkeühikud',
+	'tpt-sections-deleted' => 'Kustutatud tõlkeüksused',
 	'tpt-sections-template' => 'Tõlkelehekülje mall',
 	'tpt-badtitle' => 'Pealkiri ($1) ei sobi.',
 	'tpt-nosuchpage' => 'Lehekülge $1 pole',
@@ -2452,8 +2452,8 @@ Veendu, et see sisaldab <nowiki><translate></nowiki>-silte ja selle süntaks on 
 	'tpt-saveok' => '{{PLURAL:$2|Ühe|$2}} tõlkeüksusega lehekülg [[$1]] on märgitud tõlkimiseks.
 Lehekülge saab nüüd <span class="plainlinks">[$3 tõlkida]</span>.',
 	'tpt-badsect' => '"$1" ei sobi tõlkeüksuse $2 nimeks.',
-	'tpt-showpage-intro' => 'Allpool on loetletud uued, olemasolevad ja kustutatud alaosad.
-Enne selle versiooni märkimist tõlkimiseks, veendu palun, et alaosades tehtud muudatused on võimalikult väikesed, et tõlkijad ei peaks tegema tarbetut tööd.',
+	'tpt-showpage-intro' => 'Allpool on loetletud uued, olemasolevad ja kustutatud tõlkeüksused.
+Enne selle versiooni märkimist tõlkimiseks, veendu palun, et tõlkeüksustes tehtud muudatused on võimalikult väikesed, et tõlkijad ei peaks tegema tarbetut tööd.',
 	'tpt-mark-summary' => 'See versioon on märgitud tõlkimiseks',
 	'tpt-edit-failed' => 'Lehekülje uuendamine ei õnnestunud: $1',
 	'tpt-duplicate' => 'Tõlkeüksust nimega $1 kasutatakse rohkem kui ühel korral.',
@@ -2517,13 +2517,13 @@ Tõlkeadministraator otsustas, et keskendutakse järgmistesse keeltesse tõlkimi
 Tõlkemall: <pre>$1</pre>',
 	'pt-parse-close' => 'Puudub sildile &lt;/translate> vastav algussilt.
 Tõlkemall: <pre>$1</pre>',
-	'pt-parse-nested' => 'Pesastatud &lt;translate>-alaosad pole lubatud.
+	'pt-parse-nested' => 'Pesastatud &lt;translate>-tõlkeüksused pole lubatud.
 Sildi tekst: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Ühel alaosal on mitu tähist.
-Alaosa tekst: <pre>$1</pre>',
-	'pt-shake-position' => 'Alaosa tähis on ootamatu koha peal.
-Alaosa tekst: <pre>$1</pre>',
-	'pt-shake-empty' => 'Alaosa tähisega "$1" on tühi.',
+	'pt-shake-multiple' => 'Ühel tõlkeüksusel on mitu tähist.
+Tõlkeüksuse tekst: <pre>$1</pre>',
+	'pt-shake-position' => 'Tõlkeüksuse tähis on ootamatu koha peal.
+Tõlkeüksuse tekst: <pre>$1</pre>',
+	'pt-shake-empty' => 'Tõlkeüksus tähisega "$1" on tühi.',
 	'pt-log-header' => 'Lehekülgede tõlkesüsteemiga seotud toimingute logi',
 	'pt-log-name' => 'Lehekülgede tõlkelogi',
 	'pt-log-mark' => '{{GENDER:$2|märkis}} lehekülje "[[:$1]]" redaktsiooni $3 tõlkimiseks',
@@ -2547,13 +2547,13 @@ Alaosa tekst: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'Sihtkohaks määratud põhilehekülje pealkiri ei sobi.',
 	'pt-movepage-block-tp-exists' => 'Sihtkohaks määratud tõlkelehekülg "[[:$2]]" on olemas.',
 	'pt-movepage-block-tp-invalid' => 'Lehekülje "[[:$1]]" sihtkohaks määratud tõlkelehekülje pealkiri oleks vigane (liiga pikk?).',
-	'pt-movepage-block-section-exists' => 'Sihtkohaks määratud alaosa lehekülg "[[:$2]]" on olemas.',
-	'pt-movepage-block-section-invalid' => 'Lehekülje "[[:$1]]" sihtkohaks määratud alaosa lehekülje pealkiri oleks vigane (liiga pikk?).',
+	'pt-movepage-block-section-exists' => 'Tõlkeüksuse sihtkohaks määratud lehekülg "[[:$2]]" on olemas.',
+	'pt-movepage-block-section-invalid' => 'Tõlkeüksuse sihtkohaks määratud lehekülje "[[:$1]]" pealkiri oleks vigane (liiga pikk?).',
 	'pt-movepage-block-subpage-exists' => 'Sihtkohaks määratud alamlehekülg "[[:$2]]" on olemas.',
 	'pt-movepage-block-subpage-invalid' => 'Lehekülje "[[:$1]]" sihtkohaks määratud alamlehekülje pealkiri oleks vigane (liiga pikk?).',
 	'pt-movepage-list-pages' => 'Teisaldamisele kuuluvate lehekülgede loend',
 	'pt-movepage-list-translation' => 'Tõlkeleheküljed',
-	'pt-movepage-list-section' => 'Alaosa leheküljed',
+	'pt-movepage-list-section' => 'Tõlkeüksuse leheküljed',
 	'pt-movepage-list-other' => 'Muud alamleheküljed',
 	'pt-movepage-list-count' => 'Teisaldamisele {{PLURAL:$1|kuulub kokku üks lehekülg|kuuluvad kokku $1 lehekülge}}.',
 	'pt-movepage-legend' => 'Tõlgitava lehekülje teisaldamine',
@@ -2587,7 +2587,7 @@ Palun kontrolli, kas [[Special:Log/pagetranslation|lehekülgede tõlkelogis]] on
 	'pt-deletepage-subpages' => 'Kustuta kõik alamleheküljed',
 	'pt-deletepage-list-pages' => 'Kustutamisele kuuluvate lehekülgede loend',
 	'pt-deletepage-list-translation' => 'Tõlkeleheküljed',
-	'pt-deletepage-list-section' => 'Alaosa leheküljed',
+	'pt-deletepage-list-section' => 'Tõlkeüksuse leheküljed',
 	'pt-deletepage-list-other' => 'Muud alamlehed',
 	'pt-deletepage-list-count' => 'Kustutamisele {{PLURAL:$1|kuulub kokku üks lehekülg|kuuluvad kokku $1 lehekülge}}.',
 	'pt-deletepage-full-logreason' => 'Osa tõlgitavast leheküljest $1.',
