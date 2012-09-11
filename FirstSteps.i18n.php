@@ -2221,6 +2221,71 @@ Dir kritt och Newsletteren awer héchstens eng pro Mount.
 Wann Dir keng Newslettere kréie wëllt, da kënnt Dir dat am Tab "{{int:prefs-personal}}"  vun Ären [[Special:Preferences|Astellungen]] ausschalten.',
 );
 
+/** Malagasy (Malagasy)
+ * @author Jagwar
+ */
+$messages['mg'] = array(
+	'firststeps' => 'Dingana voalohany',
+	'firststeps-desc' => '[[Special:FirstSteps|Pejy manokana]] hanoroana ireo mpikambana miasa eo amina wiki mampiasa ny fanitarana Translate',
+	'translate-fs-pagetitle-done' => '- vita!',
+	'translate-fs-pagetitle-pending' => '- mbola ampanaovana',
+	'translate-fs-pagetitle' => "Mpanampy amin'ny fanombohana - $1",
+	'translate-fs-signup-title' => 'Misorata anarana',
+	'translate-fs-settings-title' => 'Ovay ny safidinao',
+	'translate-fs-userpage-title' => 'Forony ny pejim-pikambanao',
+	'translate-fs-permissions-title' => 'Angataho ny sata mpandika teny',
+	'translate-fs-target-title' => 'Atombohy ny fandikana!',
+	'translate-fs-email-title' => 'Hamarino ny adiresy imailakao',
+	'translate-fs-intro' => "Tonga soa eto amin'ny mpanampin'i {{SITENAME}} manao ny dingana voalohany.
+Ho ampian'ity mpanampy ity ianao mba hahazoanao ny satan'ny mpandika teny.
+Amin'ny farany ianao dia hafaka mandika ny \"hafatra asehon'ny tranonkala\" eo amin'ny tetikasa rehetra izay zakan'i {{SITENAME}}.",
+	'translate-fs-selectlanguage' => 'Misafidia fiteny iray',
+	'translate-fs-settings-planguage' => 'Fiteny voalohany:',
+	'translate-fs-settings-planguage-desc' => "Ny fiteny voalohany no fitenin'ny ahehoana ny hafatra eto amin'ity wiki ity
+ary natao ho fiteny dikaina raha tsy misy zavatra hafa voalaza.",
+	'translate-fs-settings-slanguage' => 'Fiteny fanampiana $1:',
+	'translate-fs-settings-slanguage-desc' => "Azo atao ny maneho ny dikan-tenin'ny hafatra amin'ny fiteny hafa ao amin'ny mpanova dikan-teny.
+Eto ianao afaka mifidy fiteny izay tianao haseho.",
+	'translate-fs-settings-submit' => 'Tahirizina ny safidy',
+	'translate-fs-userpage-level-N' => "Izaho dia lehibe tamin'ny fiteny",
+	'translate-fs-userpage-level-5' => "Izaho dia mpandika teny arak'asa ny teny",
+	'translate-fs-userpage-level-4' => "Mahalala sahala ireo lehibe tamin'ny fiteny aho",
+	'translate-fs-userpage-level-3' => 'Mahalala tsara ny',
+	'translate-fs-userpage-level-2' => "Manana lenta antonontonony amin'ny",
+	'translate-fs-userpage-level-1' => 'Mahay kely ny',
+	'translate-fs-userpage-help' => "Lazao eto ambany ny mombamomba anao ary ny famehezanao ny fiteny. Raha mahery ny dimy ny isan'ny fiteny hainao tenenina, azonao ampiana rehefa avy eo izy ireo.",
+	'translate-fs-userpage-submit' => 'Hamorona ny pejin-pikambako',
+	'translate-fs-userpage-done' => "Manana pejim-pikambana amin'izay ianao.",
+	'translate-fs-permissions-planguage' => 'Fiteny voalohany:',
+	'translate-fs-permissions-help' => "Izao ianao mila mangataka mba hanampiana anao any amina vondrom-pandikan-teny.
+Safidio ny fiteny voalohany izay hodikainao.
+
+Azonao atao ny milaza fiteny ary hevitra hafa eo amin'ilay fampiritan-tsoratra eo ambany.",
+	'translate-fs-permissions-pending' => "Nalefa tany amin'i [[$1]] ny hatakao ary homarinan'ny olona ao amin'ny staff ny tranonkala izy io.
+Raha efa marinanao ny adiresy imailakao, dia hahazo imailaka fampahafantarana rehefa mitranga izay fanamarinana izay",
+	'translate-fs-permissions-submit' => 'Hangataka',
+	'translate-fs-target-text' => "Arahabaina!
+Efa afaka mandika teny amin'izay ianao.
+
+Aza matahotra raha somary vaovao na mahafanimpanina.
+Eo amin'ny [[Project list|lisitry ny tetikasa]] no ahitanao ny tetikasa rehetra azonao andraisana anjara.
+
+Manana famisavisana fohifohy ireo tetikasa ireo, miaraka amin'ilay rohy \"dikao teny\" izay hitondra anao any amina pejy ahitana ny hafatra rehetra izay tsy mbola voadika teny.
+Azo vangiana ihany koa ny lisitry ny vondron-kafatra miaraka amin'ny [[Special:LanguageStats|sata ankehitrinin'ny dikan-teny amin'ny fiteny iray]].
+
+Raha mila fampahalalana fanampiny ianao, dia jereo ny [[FAQ|Fanontaniana Apetraka Matetika]].
+Fa mety lany daty ihany ny toromarika tsindraindray.
+Raha misy zavatra heverinao fa afaka ataonao, fa tsy hainao hoe ahoaa, dia manontania ao amin'ny [[Support|pejy fanohanana]].
+
+Azonao atao ihany koa ny mifandray amin'ny mpndika teny miteny ny fiteninnao eo amin'ny [[Portal_talk:\$1|pejin-dresaky]] ny [[Portal:\$1|vahavadin'ny fiteninao]].
+Raha mbola tsy efan nanao izany ianao, [[Special:Preferences|Ovay ny fitenin'ny hafatra miseho amin'ny fiteny tianao dikaina]], mba hahafahan'ilay wiki maneho anao ny rohy ilainao indrindra.",
+	'translate-fs-email-text' => "Omeo ny adiresy mailakao ao amin'ny [[Special:Preferences|safidy]] ary manamarina fa tena nalefa ho anao ilay izy.
+
+Hahafahan'ny mpikambana hafa mifandray aminao amin'ny alalan'ny mailaka izany.
+Hahazo vaovao indray isam-bolana ianao farafahabetsany.
+Raha tsy tia hahazo vaovao ianao, dia azonao atao ny miala amin'izany ao amin'i \"{{int:prefs-personal}}\" ny [[Special:Preferences|safidinao]].",
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */

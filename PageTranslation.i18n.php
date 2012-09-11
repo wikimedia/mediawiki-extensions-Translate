@@ -2858,6 +2858,7 @@ Virheet merkitään [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne t
  * @author Peter17
  * @author Purodha
  * @author Sherbrooke
+ * @author Tititou36
  * @author Urhixidur
  * @author Verdy p
  * @author Wyz
@@ -2960,7 +2961,7 @@ Texte de la balise : <pre>$1</pre>',
 Texte de la section : <pre>$1</pre>',
 	'pt-shake-position' => 'Marqueurs de section à une position inattendue.
 Texte de la section : <pre>$1</pre>',
-	'pt-shake-empty' => 'Section vide pour le marqueur $1.',
+	'pt-shake-empty' => 'Section vide pour le marqueur "$1".',
 	'pt-log-header' => 'Journal des actions liées au système de traduction de pages',
 	'pt-log-name' => 'Journal des traductions de pages',
 	'pt-log-mark' => 'a {{GENDER:$2|marqué|marqué}} la révision $3 de la page « [[:$1]] » pour être traduite',
@@ -2984,8 +2985,8 @@ Texte de la section : <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'La page de base cible a un titre incorrect.',
 	'pt-movepage-block-tp-exists' => 'La page de traduction cible [[:$2]] existe.',
 	'pt-movepage-block-tp-invalid' => 'Le titre de la page de traduction cible pour [[:$1]] serait incorrect (trop long ?).',
-	'pt-movepage-block-section-exists' => 'La section de page cible [[:$2]] existe.',
-	'pt-movepage-block-section-invalid' => 'Le titre de section de page cible pour [[:$1]] serait incorrect (trop long ?).',
+	'pt-movepage-block-section-exists' => 'La page cible "[[:$2]]" pour la section existe.',
+	'pt-movepage-block-section-invalid' => 'Le titre de section de page cible pour "[[:$1]]" serait incorrect (trop long ?).',
 	'pt-movepage-block-subpage-exists' => 'La sous-page cible [[:$2]] existe.',
 	'pt-movepage-block-subpage-invalid' => 'Le titre de la sous-page cible pour [[:$1]] serait incorrect (trop long ?).',
 	'pt-movepage-list-pages' => 'Liste des pages à déplacer',

@@ -17899,11 +17899,20 @@ Dit is vooral nuttig voor de controletaken.',
 $messages['nn'] = array(
 	'translate' => 'Set om',
 	'translate-desc' => '[[Special:Translate|Spesialside]] for omsetjing av MediaWiki o.a.',
+	'translate-showsub' => 'Vis {{PLURAL:$1|undergruppa|dei $1 undergruppene}}.',
+	'translate-taskui-view' => 'Vis alle meldingar',
+	'translate-taskui-untranslated' => 'Vis uomsette meldingar',
+	'translate-taskui-optional' => 'Vis valfrie meldingar',
+	'translate-taskui-suggestions' => 'Vis meldingar med framlegg frå omsetjingsminnet',
+	'translate-taction-lstats' => 'Språkstatistikk',
+	'translate-taction-mstats' => 'Statistikk for meldingsgruppe',
+	'translate-taction-disabled' => 'Denne handlinga er slegen av på denne wikien.',
 	'translate-page-no-such-language' => 'Ugyldig språkkode.',
 	'translate-page-no-such-group' => 'Ikkje gyldig gruppe.',
 	'translate-page-disabled' => "Omsetjingar til dette språket i denne gruppa er slått av. Årsak:
 
 ''$1''",
+	'translate-language-disabled' => 'Omsetjing til dette språket er slege av.',
 	'translate-page-settings-legend' => 'Innstillingar',
 	'translate-page-group' => 'Gruppe',
 	'translate-page-language' => 'Språk',
@@ -17925,6 +17934,7 @@ Valfrie meldingar skal ein berre setja om når målet har særskilde krav, til d
 	'translate-ext-url' => '<hr />Nettstad: $1',
 	'translate-optional' => '(valfri)',
 	'translate-ignored' => '(ignorert)',
+	'translate-edit-jsopen' => 'endra',
 	'translate-edit-title' => 'Endra «$1»',
 	'translate-edit-definition' => 'Melding som skal setjast om',
 	'translate-edit-translation' => 'Omsetjing',
@@ -17935,21 +17945,22 @@ Valfrie meldingar skal ein berre setja om når målet har særskilde krav, til d
 	'translate-edit-committed' => 'Noverande omsetjing i programvaren',
 	'translate-edit-warnings' => 'Åtvaringar om ufullstendige omsetjingar',
 	'translate-edit-tmsugs' => 'Framlegg frå omsetjingsminnet',
+	'translate-edit-tmmatch-source' => 'Kjeldetekst for omsetjing: $1',
 	'translate-edit-tmmatch' => '$1% treff',
 	'translate-edit-tab-list' => 'Meldingsliste',
 	'translate-edit-nopermission' => 'Du treng løyve for å setja om meldingar',
 	'translate-edit-askpermission' => 'Bed om løyve',
 	'translate-magic-pagename' => 'Utvida MediaWiki-omsetjing',
-	'translate-magic-help' => 'Du kan setje om spesialsidenamn, magiske ord og namna på namnerom.
+	'translate-magic-help' => 'Du kan setja om tilleggsnamn på spesialsidenamn, magiske ord og namna på namnerom.
 
-Spesialsidenamn og magiske ord kan ha fleire omsetjingar.
+Tilleggsnamn på spesialsidenamn og magiske ord kan ha fleire omsetjingar.
 Omsetjingane vert fråskilde med komma (,).
 Namnerom kan berre ha éi omsetjing.
 
-I namneromomsetjingane er <code>$1 talk</code> spesiell. <code>$1</code> vert erstatta med namnet på sida (til dømes <code>{{ns:project_talk}}</code>).
-Om det ikkje er mogeleg å få til eit gyldig uttrykk på ditt språk her utan å endre sidenamnet, kontakt ein utviklar.
+I namneromomsetjingane kan <code>$1 talk</code> vera innfløkt. <code>$1</code> vert erstatta med namnet på nettstaden (til dømes <code>{{ns:project_talk}}</code>).
+Om det ikkje er mogeleg å få til eit gildt uttrykk på ditt språk her utan å endra sidenamnet, lat oss få vita på [[Support]].
 
-Du må vere i omsetjargruppar for å lagre endringar.
+Du må vera ein omsetjar for å lagra endringar.
 Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Hent',
@@ -17966,6 +17977,7 @@ Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 	'translate-magic-words' => 'Magiske ord',
 	'translate-magic-namespace' => 'Namneromnamn',
 	'translate-magic-notsaved' => 'Endringa di vart ikkje lagra!',
+	'translate-magic-errors' => 'Bøt på {{PLURAL:$1|den fylgjande feilen|dei fylgjande feila}} i omsetjingar:',
 	'translate-checks-parameters' => 'Følgjande {{PLURAL:$2|parameter|parametrar}} vert ikkje nytta:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Følgjande {{PLURAL:$2|parameter er ukjend|parametrar er ukjende}}:
@@ -17973,6 +17985,8 @@ Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 	'translate-checks-balance' => '{{PLURAL:$2|Det|Det}} er eit ujamt tal parentesar:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => 'Følgjande {{PLURAL:$2|lenke er problematisk|$2 lenker er problematiske}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Den fylgjande lenkja|Dei fylgjande $2 lenkjene}} saknar:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Erstatt følgjande {{PLURAL:$2|tagg|taggar}} med dei riktige:
 <strong><nowiki>$1</nowiki></strong>',
@@ -17987,7 +18001,7 @@ Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Udvida redigeringsvindu for omsetjingar (JavaScript)',
 	'right-translate' => 'Redigere med omsetjingsgrensesnittet',
-	'right-translate-manage' => 'Administrer omsetjingsgrupper',
+	'right-translate-manage' => 'Handsama meldingsgrupper',
 	'right-translate-import' => 'Importering av fråkopla omsetjingar',
 	'translate-rc-translation-filter' => 'Filtrer omsetjingar:',
 	'translate-rc-translation-filter-no' => 'Ikkje gjer noko',
@@ -18022,8 +18036,9 @@ Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 	'translate-sidebar-alltrans' => 'På andre språk',
 	'translations' => 'Alle omsetjingar',
 	'translations-summary' => 'Skriv inn eit meldingsnamn nedanfor for å visa alle tilgjengelege omsetjingar.',
-	'translate-translations-no-message' => '"$1" er ei melding som ikkje kan omsetjast',
+	'translate-translations-no-message' => '«$1» er ei melding som ikkje kan omsetjast',
 	'translate-translations-none' => 'Det finst ingen omsetjingar for «$1»',
+	'translate-translations-count' => 'Fann {{PLURAL:$1|éi omsetjing|$1 omsetjingar}}.',
 	'translate-translations-fieldset-title' => 'Melding',
 	'translate-translations-messagename' => 'Namn:',
 	'translate-translations-project' => 'Prosjekt:',
@@ -18053,6 +18068,7 @@ Sjå gjerne over meldingar gjennom [[Special:Translate|{{int:translate}}]].',
 	'translate-ls-submit' => 'Vis statistikk',
 	'translate-ls-column-group' => 'Meldingsgruppe',
 	'translate-mgs-group' => 'Meldingsgruppe:',
+	'translate-mgs-column-language' => 'Språk',
 	'supportedlanguages' => 'Støtta språk',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Omsetjar|Omsetjarar}}: $1',
 	'translate-save' => 'Lagra ($1)',
@@ -18075,6 +18091,8 @@ $1',
 	'translate-import-err-ul-failed' => 'Filopplastinga var ikkje vellukka',
 	'translate-import-err-invalid-title' => 'Det oppgjevne filnamnnet <nowiki>$1</nowiki> var ugyldig.',
 	'translate-import-err-no-such-file' => 'Fila <nowiki>$1</nowiki> finst ikkje eller er ikkje vorten lasta opp lokalt.',
+	'translate-js-summary' => 'Samandrag:',
+	'translate-js-save' => 'Lagra',
 	'translate-js-next' => 'Lagra og opna neste',
 	'translate-js-nonext' => 'Dette var den siste meldinga på sida.',
 	'translate-js-skip' => 'Hopp over til neste',
@@ -18082,8 +18100,12 @@ $1',
 	'translate-js-history' => 'Omsetjingshistorikk',
 	'translate-js-support' => 'Still spørsmål',
 	'translate-js-support-title' => 'Spør etter hjelp om det ikkje er nok informasjon til å setja om meldinga rett.',
+	'translate-js-support-unsaved-warning' => 'Du har omsetjingar som ikkje er lagra.',
+	'translate-gs-code' => 'Kode',
 	'translate-gs-continent' => 'Kontinent',
+	'translate-gs-count' => 'Tal',
 	'translate-documentation-language' => 'Meldingsdokumentasjon',
+	'translate-searchprofile' => 'Omsetjingar',
 	'translate-search-languagefilter' => 'Filtrer etter mål:',
 	'translate-search-nofilter' => 'Inga filtrering',
 	'translate-messagereview-submit' => 'Godtak',
