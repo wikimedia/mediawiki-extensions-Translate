@@ -54,6 +54,7 @@ class MessageGroups {
 		$key = wfMemckey( 'translate-groups' );
 		self::getCache()->delete( $key );
 		self::$loaded = false;
+		unset( self::singleton()->classes );
 	}
 
 	/**
