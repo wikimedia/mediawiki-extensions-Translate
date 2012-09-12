@@ -426,8 +426,7 @@ class TranslatablePage {
 	/**
 	 * Adds a tag which indicates that this page is
 	 * suitable for translation.
-	 * @param $revision integer|Revision
-	 * @param $value string
+	 * @param $revision integer
 	 */
 	public function addMarkedTag( $revision, $value = null ) {
 		$this->addTag( 'tp:mark', $revision, $value );
@@ -437,16 +436,13 @@ class TranslatablePage {
 	/**
 	 * Adds a tag which indicates that this page source is
 	 * ready for marking for translation.
-	 * @param $revision integer|Revision
+	 * @param $revision integer
 	 */
 	public function addReadyTag( $revision ) {
 		$this->addTag( 'tp:tag', $revision );
 	}
 
 	/**
-	 * @param $tag
-	 * @param $revision Revision
-	 * @param $value string
 	 * @throws MWException
 	 */
 	protected function addTag( $tag, $revision, $value = null ) {
