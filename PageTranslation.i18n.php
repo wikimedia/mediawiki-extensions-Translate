@@ -1945,16 +1945,27 @@ $messages['diq'] = array(
 	'tpt-section' => 'Yewronê açarnayışê $1',
 	'tpt-section-deleted' => 'Yewronê açarnayışê $1',
 	'tpt-template' => 'Pela şabloni',
+	'tpt-diff-old' => 'Metno verên',
+	'tpt-diff-new' => 'Metno newe',
+	'tpt-old-pages-title' => 'Pela açarnayışi',
+	'tpt-other-pages-title' => 'Pela şahtiyayi',
 	'tpt-discouraged-pages-title' => 'Vatenena pelayan',
+	'tpt-select-prioritylangs-reason' => 'Sebeb:',
+	'tpt-languages-legend' => 'Zıwanê bini:',
+	'tpt-discouraged-language-reason' => 'Sebeb: $1',
 	'aggregategroups' => 'Grubi pêro',
 	'tpt-aggregategroup-add' => 'Deke',
 	'tpt-aggregategroup-save' => 'Star ke',
 	'tpt-aggregategroup-new-name' => 'Name:',
+	'pt-movepage-list-translation' => 'Peleyê açarnayışin',
+	'pt-movepage-list-other' => 'Bınpeley bini',
 	'pt-movepage-current' => 'Nameyo raverde:',
 	'pt-movepage-new' => 'Nameyo newe:',
 	'pt-movepage-reason' => 'Sebeb:',
 	'pt-deletepage-current' => 'Nameyê pele:',
 	'pt-deletepage-reason' => 'Sebeb:',
+	'pt-deletepage-list-translation' => 'Peleyê açarnayışin',
+	'pt-deletepage-list-other' => 'Bınpeley bini',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -7183,7 +7194,7 @@ $messages['ps'] = array(
 	'pt-deletepage-reason' => 'سبب:',
 	'pt-deletepage-subpages' => 'ټول واړه مخونه ړنګول',
 	'pt-deletepage-list-translation' => 'د ژباړې مخونه',
-	'pt-deletepage-list-section' => 'د برخې مخونه',
+	'pt-deletepage-list-section' => 'د څپرکي د مخونو ژباړه',
 	'pt-deletepage-list-other' => 'نور واړه مخونه',
 );
 

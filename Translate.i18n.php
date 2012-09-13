@@ -10178,6 +10178,7 @@ $messages['hil'] = array(
  * @author Dalibor Bosits
  * @author Dnik
  * @author Ex13
+ * @author Roberta F.
  * @author SpeedyGonsales
  * @author Tivek
  */
@@ -10199,7 +10200,7 @@ $messages['hr'] = array(
 	'translate-page-showing' => 'Prikazane poruke od $1 do $2 od ukupno $3.',
 	'translate-page-showing-all' => 'Prikazano: $1 {{PLURAL:$1|poruka|poruke|poruka}}.',
 	'translate-page-showing-none' => 'Nema traženih poruka.',
-	'translate-next' => 'Slijedeća stranica',
+	'translate-next' => 'Sljedeća stranica',
 	'translate-prev' => 'Prethodna stranica',
 	'translate-page-description-legend' => 'Podaci o grupi',
 	'translate-page-edit' => 'uredi',
@@ -19564,6 +19565,7 @@ $messages['ps'] = array(
 	'translate-edit-contribute' => 'ونډه اخيستل',
 	'translate-edit-information' => 'د پيغام په اړه مالومات ($1)',
 	'translate-edit-in-other-languages' => 'پيغام په نورو ژبو کې',
+	'translate-edit-tab-list' => 'پيغام لړليک',
 	'translate-magic-help' => 'دلته تاسې د ځانګړو مخونو مستعار نومونه، کوډګريز وييونه او د نوم-تشيالونو نومونه ژباړلی شی.
 
 د ځانګړو مخونو مستعار نومونه او کوډګريز وييونه ګڼ شمېر ژباړې لري.
@@ -19598,6 +19600,7 @@ $messages['ps'] = array(
 	'translate-statsf-scale-weeks' => 'اونۍ',
 	'translate-statsf-scale-days' => 'ورځې',
 	'translate-statsf-scale-hours' => 'ساعتونه',
+	'translate-statsf-count' => 'مېچل:',
 	'translate-statsf-count-edits' => 'د سمونو شمېر:',
 	'translate-statsf-count-users' => 'فعاله ژباړونکي',
 	'translate-statsf-count-registrations' => 'نوي کارنان',
@@ -19624,12 +19627,14 @@ $messages['ps'] = array(
 	'translate-percentage-complete' => 'بشپړتابه',
 	'translate-ls-submit' => 'شمار ښکاره کول',
 	'translate-ls-column-group' => 'پيغام ډله',
+	'translate-mgs-pagename' => 'د پيغام ډلې شمار',
 	'translate-mgs-group' => 'پيغام ډله:',
 	'translate-mgs-submit' => 'شمارنې ښکاره کول',
 	'translate-mgs-column-language' => 'ژبه',
 	'supportedlanguages' => 'ملاتړې ژبې',
 	'supportedlanguages-translators' => '{{PLURAL:$2|ژباړن|ژباړونکي}}: $1',
 	'supportedlanguages-recenttranslations' => 'تازه ژباړې',
+	'supportedlanguages-count' => 'ټولټال $1 {{PLURAL:$1|ژبه|ژبې}}.',
 	'translate-save' => 'خوندي کول ($1)',
 	'translate-jssti-add' => 'لړليک کې ګډول',
 	'translate-manage-import-new' => 'نوی پيغام $1',
@@ -19641,11 +19646,14 @@ $messages['ps'] = array(
 	'translate-js-save' => 'خوندي کول',
 	'translate-js-nonext' => 'په دې مخ دا وروستی پيغام وو',
 	'translate-js-history' => 'د ژباړې پېښليک',
+	'translate-js-support' => 'پوښتنه پوښتل',
 	'translate-gs-code' => 'کوډ',
 	'translate-gs-continent' => 'لويه وچه',
 	'translate-gs-speakers' => 'وييونکي',
 	'translate-gs-count' => 'شمېرل',
 	'translate-gs-total' => 'ټولټال',
+	'translate-documentation-language' => 'د پيغام لاسوند',
+	'translate-searchprofile' => 'ژباړې',
 	'translate-search-languagefilter' => 'چاڼګر د ژبې له مخې:',
 	'translate-messagereview-submit' => 'منل',
 	'translate-messagereview-progress' => 'منل کېږي...',
