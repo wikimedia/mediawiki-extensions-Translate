@@ -14380,7 +14380,7 @@ Donn op en Jropp klecke, öm en Leßß met allem ze sinn ze krijje, wat doh dren
 	'translate-next' => 'Näx Sigk',
 	'translate-prev' => 'Förrije Sigk',
 	'translate-page-description-legend' => 'Enfommazjohne övver di {{int:translate-page-group}}',
-	'translate-page-description-hasoptional' => "En heh dä Jropp sin 'nit esu nüüdeje' Täxte un Nohreeschte.
+	'translate-page-description-hasoptional' => "En heh dä Jropp sinn_er 'nit esu nüüdeje' Täxte un Nohreeschte.
 Di sullte bloß övversaz wääde, wann Ding Shprooch jät besönders bruch, esu jät wi käin Zwescheräum udder anders jeschrevve Naame. $1",
 	'translate-page-description-hasoptional-open' => "Donn de 'nit esu nüüdeje' Täxte udder Nohreeschte aanzeije.",
 	'translate-page-edit' => 'Änndere',
@@ -20978,8 +20978,8 @@ $messages['ru'] = array(
 Переводы разделяются запятой (,).
 Названия пространств имён могут иметь только один вариант перевода.
 
-В переводах пространств имён строка «Обсуждение $1» обрабатывается особо, «$1» будет заменено на имя сайта (например «Обсуждение {{SITENAME}}»).
-Свяжитесь с разработчиками, если подобная грамматическая конструкция невозможна для вашего языка.
+Перевод названий пространств имён, содержащих страницы обсуждений («<code>$1 talk</code>») может оказаться сложнее, так как «<code>$1</code>» здесь будет заменено на имя сайта (например, «<code>{{ns:project_talk}}</code>»).
+Если подобная грамматическая конструкция для вашего языка некорректна без изменения имени сайта, дайте нам знать об этом на странице [[Support]].
 
 Чтобы сохранить изменения вы должны входить в группу переводчиков.
 Изменения не будут сохранены, пока вы не нажмёте кнопку ниже.',
@@ -21132,6 +21132,9 @@ $messages['ru'] = array(
 	'translate-smg-nochanges' => 'Нет изменений для обработки.',
 	'translate-smg-submit' => 'Отправить изменения для обработки',
 	'translate-smg-submitted' => 'Были обновлены описания сообщений. Изменения в настоящее время обрабатываются в фоновом режиме.',
+	'translate-smg-postponed' => 'Некоторые изменения не могут быть обработаны. [[{{FULLPAGENAME}}|Попробуйте снова]].',
+	'translate-smg-left' => 'Содержание сообщения в вики',
+	'translate-smg-right' => 'Входящие изменения',
 	'translate-manage-import-diff' => 'Сообщение $1 | Действия: $2',
 	'translate-manage-import-new' => 'Новое сообщение $1',
 	'translate-manage-import-deleted' => 'Удалённое сообщение $1',
@@ -21195,7 +21198,7 @@ $1',
 	'translate-messagereview-failure' => 'Принятие... не удалось: $1',
 	'translate-messagereview-done' => 'Принято',
 	'translate-messagereview-reviews' => 'Подтверждено {{PLURAL:$1|участником|$1 участниками}}',
-	'translate-messagereview-reviewswithyou' => 'Подтверждено {{PLURAL:$1|участником|$1 участниками}}, в том числе вами',
+	'translate-messagereview-reviewswithyou' => 'Подтверждено {{PLURAL:$1|$1-м участником|$1-мя участниками|$1-ю участниками}}, включая вас',
 	'api-error-invalidrevision' => 'Перевод не был найден',
 	'api-error-unknownmessage' => 'Сообщение не было найдено',
 	'api-error-fuzzymessage' => 'Перевод помечен как неточный',

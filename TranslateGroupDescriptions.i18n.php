@@ -1676,6 +1676,7 @@ Jangk op di Sigge „<i lang="en">[[mw:Extension:PDF_Writer]]</i>“ un „<i la
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es e Projäk för en offlain Version vun de Wikipedia, ävver bloß Täx, op klein Jeräte.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] es a Projramm för ongerscheidlijje Bedriefssyßteeme för de Wikipeedija op draachbaare Jerääte un Tablät-PCs ze lässe un ze schrieve.',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] en e Projramm för et Wikiwööterbooch ze beloore udder ze ändeere för et Funktellefoon un der Tablätt-PC.',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] es e Projramm för Händitellefonne, Tablättkompjuere, un esu, öm beim Projäk [[:meta:Wiki Loves Monuments|Wiki Loves Monuments]] mezemaache.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
