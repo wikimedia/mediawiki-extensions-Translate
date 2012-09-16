@@ -162,6 +162,116 @@ class MediaWikiMessageChecker extends MessageChecker {
 	}
 
 	/**
+	 * Checks if the translation uses too many plural forms
+	 * @since 2012-09-19
+	 */
+	protected function pluralFormsCheck( $messages, $code, &$warnings ) {
+		foreach ( $messages as $message ) {
+			$key = $message->key();
+			$translation = $message->translation();
+
+			if ( !method_exists( 'Language', 'getPluralRules' ) ) {
+				return;
+			}
+
+			if ( stripos( $translation, '{{plural:' ) === false ) {
+				return;
+			}
+
+			$plurals = self::getPluralForms( $translation );
+			$allowed = self::getPluralFormCount( $code );
+			foreach ( $plurals as $forms ) {
+				$forms = self::removeExplicitPluralForms( $forms );
+				$provided = count( $forms );
+
+				if ( $provided > $allowed ) {
+					$warnings[$key][] = array(
+						array( 'plural', 'forms', $key, $code ),
+						'translate-checks-plural-forms', $provided, $allowed
+					);
+				}
+
+				if ( $provided > 1 && $forms[$provided-1] === $forms[$provided-2] ) {
+					$warnings[$key][] = array(
+						array( 'plural', 'dupe', $key, $code ),
+						'translate-checks-plural-dupe'
+					);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Returns the number of plural forms %MediaWiki supports
+	 * for a language.
+	 * @since 2012-09-19
+	 * @param string $code Language code
+	 * @return int
+	 */
+	public static function getPluralFormCount( $code ) {
+		$forms = Language::factory( $code )->getPluralRules();
+		// +1 for the 'other' form
+		return count( $forms ) + 1;
+	}
+
+	/**
+	 * Ugly home made probably awfully slow looping parser
+	 * that parsers {{PLURAL}} instances from message and
+	 * returns array of invokations having array of forms.
+	 * @since 2012-09-19
+	 * @param string $translation
+	 * @return array[array]
+	 */
+	public static function getPluralForms( $translation ) {
+		$plurals = array();
+		while ( true ) {
+			$pos = stripos( $translation, '{{plural:' );
+			if ( $pos === false ) {
+				break;
+			}
+
+			$len = strlen( $translation );
+			$stack = 0;
+			for ( $i = $pos; $i < $len; $i++ ) {
+				if ( $translation[$i] === '{' ) {
+					$stack++;
+				} elseif ( $translation[$i] === '}' ) {
+					$stack--;
+				}
+				if ( $stack === 0 ) {
+					// The string '{{PLURAL...' (without closing }})
+					$pluralString = substr( $translation, $pos, $i - $pos - 1 );
+					$forms = explode( '|', $pluralString );
+					array_shift( $forms );
+
+					// Remove this from the current string to continue later
+					$translation = substr( $translation, $i );
+
+					$plurals[] = $forms;
+					break;
+				}
+			}
+		}
+		return $plurals;
+	}
+
+	/**
+	 * Imitiates the core plural form handling by removing
+	 * plural forms that start with 0= or 1=
+	 * @since 2012-09-19
+	 * @return array
+	 */
+	public static function removeExplicitPluralForms( array $forms ) {
+		// Handle explicit 0= and 1= forms
+		foreach ( $forms as $index => $form ) {
+			if ( isset( $form[1] ) && $form[1] === '=' ) {
+				unset( $forms[$index] );
+			}
+		}
+		return array_values( $forms );
+	}
+
+	/**
 	 * Checks for page names that they have an untranslated namespace.
 	 *
 	 * @param $messages \array Iterable list of TMessage objects.
