@@ -162,6 +162,78 @@ class MediaWikiMessageChecker extends MessageChecker {
 	}
 
 	/**
+	 * Checks if the translation uses too many plural forms
+	 */
+	protected function pluralFormsCheck( $messages, $code, &$warnings ) {
+		foreach ( $messages as $message ) {
+			$key = $message->key();
+			$translation = $message->translation();
+
+			if ( !method_exists( 'Language', 'getPluralRules' ) ) {
+				return;
+			}
+
+			if ( stripos( $translation, '{{plural:' ) === false ) {
+				return;
+			}
+
+			$forms = Language::factory( $code )->getPluralRules();
+			// +1 for the 'other' form
+			$formCount = count( $forms ) + 1;
+			while ( true ) {
+				$pos = stripos( $translation, '{{plural:' );
+				if ( $pos === false ) {
+					break;
+				}
+
+				$len = strlen( $translation );
+				$stack = 0;
+				for ( $i = $pos; $i < $len; $i++ ) {
+					if ( $translation[$i] === '{' ) {
+						$stack++;
+					} elseif ( $translation[$i] === '}' ) {
+						$stack--;
+					}
+					if ( $stack === 0 ) {
+						$forms = explode( '|', substr( $translation, $pos, $i - $pos - 1 ) );
+						array_shift( $forms );
+						$translation = substr( $translation, $i );
+						$forms = $this->removeExplicitPluralForms( $forms );
+
+						$provided = count( $forms );
+
+						if ( $provided > $formCount ) {
+							$warnings[$key][] = array(
+								array( 'plural', 'forms', $key, $code ),
+								'translate-checks-plural-forms', $provided, $formCount
+							);
+						}
+
+						if ( $provided > 1 && $forms[$provided-1] === $forms[$provided-2] ) {
+							$warnings[$key][] = array(
+								array( 'plural', 'dupe', $key, $code ),
+								'translate-checks-plural-dupe'
+							);
+						}
+
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	protected function removeExplicitPluralForms( $forms ) {
+		// Handle explicit 0= and 1= forms
+		foreach ( $forms as $index => $form ) {
+			if ( isset( $form[1] ) && $form[1] === '=' ) {
+				unset( $forms[$index] );
+			}
+		}
+		return array_values( $forms );
+	}
+
+	/**
 	 * Checks for page names that they have an untranslated namespace.
 	 *
 	 * @param $messages \array Iterable list of TMessage objects.

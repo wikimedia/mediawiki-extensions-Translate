@@ -145,6 +145,8 @@ Changes are not saved until you click the save button below.',
 	'translate-checks-xhtml'              => 'Please replace the following {{PLURAL:$2|tag|tags}} with correct ones:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'             => 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',
+	'translate-checks-plural-forms'       => '<nowiki>{{PLURAL:}}</nowiki> was given {{PLURAL:$1|one form|$1 forms}} but {{PLURAL:$2|only one form|$2 forms}} are supported (excluding 0= and 1= forms).',
+	'translate-checks-plural-dupe'        => '<nowiki>{{PLURAL:}}</nowiki> has duplicate forms at the end. <nowiki>{{PLURAL:$1|milk|milk}}</nowiki> should be written as <nowiki>{{PLURAL:$1|milk}}</nowiki>.',
 	'translate-checks-pagename'           => 'Namespace changed from the definition',
 	'translate-checks-format'             => 'This translation does not follow the definition or has invalid syntax: $1',
 	'translate-checks-escape'             => 'The following escapes may be accidental: <strong>$1</strong>',
