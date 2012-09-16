@@ -724,7 +724,8 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'translate-messagereview-failure' => 'Button label in [[Special:Translate]] review mode. Button is disabled. $1 can be {{msg-mw|translate-messagereview-apierror-invalidrevision}} or {{msg-mw|translate-messagereview-apierror-unknownmessage}} or {{msg-mw|translate-messagereview-apierror-fuzzymessage}}.',
 	'translate-messagereview-done' => 'Button label in [[Special:Translate]] review mode. Button is disabled.',
 	'translate-messagereview-reviews' => 'Status message in [[Special:Translate]] in review mode',
-	'translate-messagereview-reviewswithyou' => 'Status message in Special:Translate in review mode',
+	'translate-messagereview-reviewswithyou' => 'Status message in Special:Translate in review mode:
+*<code>$1</code> is the total number of users who reviewed the relevant message.',
 	'api-error-invalidrevision' => 'Error message for {{msg-mw|translate-messagereview-failure}}',
 	'api-error-unknownmessage' => 'Error message for {{msg-mw|translate-messagereview-failure}}',
 	'api-error-fuzzymessage' => 'Error message for {{msg-mw|translate-messagereview-failure}}',
