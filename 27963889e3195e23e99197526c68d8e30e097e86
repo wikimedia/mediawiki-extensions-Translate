@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//6t0\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-09-17T22:01:47Z",
+      "side": 1,
+      "message": "Message docs missing.",
+      "revId": "27963889e3195e23e99197526c68d8e30e097e86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
