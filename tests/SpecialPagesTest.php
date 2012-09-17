@@ -15,9 +15,10 @@ require_once( __DIR__ . '/SuperUser.php' );
  */
 class SpecialPagesTest extends MediaWikiTestCase {
 	public function setUp() {
-		global $wgTranslateCacheDirectory;
+		global $wgTranslateCacheDirectory, $wgTranslateMessageIndex;
 		// Only in 1.20, but who runs tests again older versions anyway?
 		$wgTranslateCacheDirectory = $this->getNewTempDirectory();
+		$wgTranslateMessageIndex = array( 'DatabaseMessageIndex' );
 		// For User::editToken
 		global $wgDeprecationReleaseLimit;
 		$wgDeprecationReleaseLimit = 1.18;
