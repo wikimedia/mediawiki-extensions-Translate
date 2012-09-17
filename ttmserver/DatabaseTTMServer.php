@@ -255,7 +255,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 			$b = $row->tms_text;
 			$lenB = mb_strlen( $b );
 			$len = min( $lenA, $lenB );
-			if ( $len > 1000 ) {
+			if ( $len > 600 ) {
 				// two strings of length 1500 ~ 10s
 				// two strings of length 2250 ~ 30s
 				$dist = $len;
