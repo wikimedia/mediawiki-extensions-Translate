@@ -29,115 +29,115 @@ class PluralCompare extends Maintenance {
 		$gtLanguages = $this->loadGettext();
 		$clLanguages = $this->loadCLDR();
 
-		$allkeys = array_keys( $mwLanguages + $gtLanguages + $clLanguages );
+		$all = Language::fetchLanguageNames( null, 'all' );
+		$allkeys = array_keys( $all + $mwLanguages + $gtLanguages + $clLanguages );
 		sort( $allkeys );
 
 		$this->output( sprintf( "%12s %3s %3s %4s\n", 'Code', 'MW', 'Get', 'CLDR' ) );
 		foreach ( $allkeys as $index => $code ) {
-			$mw = isset( $mwLanguages[$code] ) ? ( $mwLanguages[$code] === false ? '.' : '+' ) : '';
-			$gt = isset( $gtLanguages[$code] ) ? ( $gtLanguages[$code] === '(n != 1);' ? '.' : '+' ) : '';
-			$cl = isset( $clLanguages[$code] ) ? ( $clLanguages[$code][0] === 'Default' ? '.' : '+' ) : '';
-			$this->output( sprintf( "%12s %-3s %-3s %-4s\n", $code, $mw, $gt, $cl ) );
+			$mw = isset( $mwLanguages[$code] ) ? '+' : '';
+			$gt = isset( $gtLanguages[$code] ) ? '+' : '';
+			$cl = isset( $clLanguages[$code] ) ? '+' : '';
 
-			if ( substr_count( sprintf( '%s%s%s', $mw, $gt, $cl ), '+' ) < 2 ) {
-				unset( $allkeys[$index] );
-			}
-		}
-
-		$this->output( "\n" );
-		$c = count( $allkeys );
-		$this->output( "Proceeding to test differences in $c languages\n" );
-
-		foreach ( $allkeys as $code ) {
-			$output = sprintf( "%3s %3s %3s %4s for [$code]\n", 'I', 'MW', 'Get', 'CLDR' );
-
-			if ( isset( $mwLanguages[$code] ) && $mwLanguages[$code] !== false ) {
-				$obj = Language::factory( $code );
-			} else {
-				$obj = false;
-			}
-
-			if ( isset( $gtLanguages[$code] ) ) {
-				$gtExp = 'return (int) ' . str_replace( 'n', '$i', $gtLanguages[$code] ) . ';';
-			} else {
-				$gtExp = false;
-			}
-
-			if ( isset( $clLanguages[$code] ) ) {
-				$cldrExp = $clLanguages[$code][1];
-			} else {
-				$cldrExp = false;
-			}
-
-			$cldrmap = array();
-			$error = false;
-
-			for ( $i = 0; $i <= 200; $i++ ) {
-				$mw = $obj ? $obj->convertPlural( $i, array( 0, 1, 2, 3, 4, 5 ) ) : '?';
-				$gt = $gtExp ? eval( $gtExp ) : '?';
-				$cldr = $cldrExp !== false ? $this->evalCLDRRule( $i, $cldrExp ) : '?';
-
-				if ( self::comp( $mw, $gt ) ) {
-					$value = $gt !== '?' ? $gt : $mw;
-					if ( !isset( $cldrmap[$cldr] ) ) {
-						$cldrmap[$cldr] = $value;
-						if ( $cldr !== '?' ) {
-							$output .= sprintf( "%3s %-3s %-3s %-6s # Established that %-6s == $mw\n", $i, $mw, $gt, $cldr, $cldr );
-						}
-						continue;
-					} elseif ( self::comp( $cldrmap[$cldr], $value ) ) {
-						continue;
-					} elseif ( $i > 4 && $value === 1 && self::comp( $cldr, 'other' ) ) {
-						if ( $i === 5 ) {
-							$output .= "Supressing further output for this language.\n";
-						}
-						continue;
+			if ( $mw === '' ) {
+				$fallbacks = Language::getFallbacksFor( $code );
+				foreach ( $fallbacks as $fcode ) {
+					if ( $fcode !== 'en' && isset( $mwLanguages[$fcode] ) ) {
+						$mw = '.';
 					}
 				}
-				$error = true;
-				$output .= sprintf( "%3s %-3s %-3s %-6s\n", $i, $mw, $gt, $cldr );
 			}
 
-			if ( $error ) {
-				$this->output( "$output\n" );
+			$error = '';
+			if ( substr_count( sprintf( '%s%s%s', $mw, $gt, $cl ), '+' ) > 1 ) {
+				$error = $this->tryMatch( $code, $mw, $gtLanguages, $clLanguages );
 			}
+
+			$this->output( sprintf( "%12s %-3s %-3s %-4s %s\n", $code, $mw, $gt, $cl, $error ) );
+		}
+	}
+
+	protected function tryMatch( $code, $mws, $gtLanguages, $clLanguages ) {
+		if ( $mws !== '' ) {
+			$mwExp = true;
+			$lang = Language::factory( $code );
+		} else {
+			$mwExp = false;
 		}
 
+		if ( isset( $gtLanguages[$code] ) ) {
+			$gtExp = 'return (int) ' . str_replace( 'n', '$i', $gtLanguages[$code] ) . ';';
+		} else {
+			$gtExp = false;
+		}
+
+		if ( isset( $clLanguages[$code] ) ) {
+			$cldrExp = $clLanguages[$code];
+		} else {
+			$cldrExp = false;
+		}
+
+		$cldrmap = array();
+		$error = false;
+
+		for ( $i = 0; $i <= 250; $i++ ) {
+			$mw = $gt = $cl = '?';
+
+			if ( $mwExp ) {
+				$exp = $lang->getCompiledPluralRules();
+				$mw = CLDRPluralRuleEvaluator::evaluateCompiled( $i, $exp );
+			}
+
+			if ( $gtExp ) {
+				$gt = eval( $gtExp );
+			}
+
+			if ( $cldrExp ) {
+				$cl = CLDRPluralRuleEvaluator::evaluate( $i, $cldrExp );
+			}
+
+			if ( self::comp( $mw, $gt ) && self::comp( $gt, $cl ) && self::comp( $cl, $mw ) ) {
+				continue;
+			}
+
+			return "$i: $mw $gt $cl";
+		}
+
+		return '';
 	}
 
 	public static function comp( $a, $b ) {
 		return $a === '?' || $b === '?' || $a === $b;
 	}
 
-	public function loadCLDR() {
-		$filename = dirname( __FILE__ ) . '/../data/plural-cldr.yaml';
-		$data = TranslateYaml::load( $filename );
-		$languages = array();
-		$ruleExps = array();
-		foreach ( $data['rulesets'] as $name => $rules ) {
-			$ruleExps[$name] = array();
-			foreach ( $rules as $rulename => $rule ) {
-				$ruleExps[$name][$rulename] = $this->parseCLDRRule( $rule );
+	protected function loadPluralFile( $fileName ) {
+		$doc = new DOMDocument;
+		$doc->load( $fileName );
+		$rulesets = $doc->getElementsByTagName( "pluralRules" );
+		foreach ( $rulesets as $ruleset ) {
+			$codes = $ruleset->getAttribute( 'locales' );
+			$rules = array();
+			$ruleElements = $ruleset->getElementsByTagName( "pluralRule" );
+			foreach ( $ruleElements as $elt ) {
+				$rules[] = $elt->nodeValue;
+			}
+			foreach ( explode( ' ', $codes ) as $code ) {
+				$plurals[$code] = $rules;
 			}
 		}
+		return $plurals;
+	}
 
-		foreach ( $data['locales'] as $code => $rulename ) {
-			$languages[$code] = array( $rulename, $ruleExps[$rulename] );
-		}
-
-		return $languages;
+	public function loadCLDR() {
+		global $IP;
+		return $this->loadPluralFile( "$IP/languages/data/plurals.xml" );
 	}
 
 	public function loadMediaWiki() {
-		$mwLanguages = Language::getLanguageNames( true );
-		foreach ( $mwLanguages as $code => $name ) {
-			$obj = Language::factory( $code );
-			$method = new ReflectionMethod( $obj, 'convertPlural' );
-			if ( $method->getDeclaringClass()->name === 'Language' ) {
-				$mwLanguages[$code] = false;
-			}
-		}
-		return $mwLanguages;
+		global $IP;
+		$rules = $this->loadPluralFile( "$IP/languages/data/plurals.xml" );
+		$rulesMW = $this->loadPluralFile( "$IP/languages/data/plurals-mediawiki.xml" );
+		return array_merge( $rules, $rulesMW );
 	}
 
 	public function loadGettext() {
@@ -149,53 +149,6 @@ class PluralCompare extends Maintenance {
 			$gtLanguages[$code] = $rule;
 		}
 		return $gtLanguages;
-	}
-
-	public function evalCLDRRule( $i, $rules ) {
-		foreach ( $rules as $name => $rule ) {
-			if ( eval( "return $rule;" ) ) {
-				return $name;
-			}
-		}
-
-		return "other";
-	}
-
-	public function parseCLDRRule( $rule ) {
-		$rule = preg_replace( '/\bn\b/', '$i', $rule );
-		$rule = preg_replace( '/([^ ]+) mod (\d+)/', 'self::mod(\1,\2)', $rule );
-		$rule = preg_replace( '/([^ ]+) is not (\d+)/' , '\1!==\2', $rule );
-		$rule = preg_replace( '/([^ ]+) is (\d+)/', '\1===\2', $rule );
-		$rule = preg_replace( '/([^ ]+) not in (\d+)\.\.(\d+)/', '!self::in(\1,\2,\3)', $rule );
-		$rule = preg_replace( '/([^ ]+) not within (\d+)\.\.(\d+)/', '!self::within(\1,\2,\3)', $rule );
-		$rule = preg_replace( '/([^ ]+) in (\d+)\.\.(\d+)/', 'self::in(\1,\2,\3)', $rule );
-		$rule = preg_replace( '/([^ ]+) within (\d+)\.\.(\d+)/', 'self::within(\1,\2,\3)', $rule );
-		// AND takes precedence over OR
-		$andrule = '/([^ ]+) and ([^ ]+)/i';
-		while ( preg_match( $andrule, $rule ) ) {
-			$rule = preg_replace( $andrule, '(\1&&\2)', $rule );
-		}
-		$orrule = '/([^ ]+) or ([^ ]+)/i';
-		while ( preg_match( $orrule, $rule ) ) {
-			$rule = preg_replace( $orrule, '(\1||\2)', $rule );
-		}
-
-		return $rule;
-	}
-
-	public static function in( $num, $low, $high ) {
-		return is_int( $num ) && $num >= $low && $num <= $high;
-	}
-
-	public static function within( $num, $low, $high ) {
-		return $num >= $low && $num <= $high;
-	}
-
-	public static function mod( $num, $mod ) {
-		if ( is_int( $num ) ) {
-			return (int) fmod( $num, $mod );
-		}
-		return fmod( $num, $mod );
 	}
 
 }
