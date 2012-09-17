@@ -747,7 +747,7 @@ Additional parameters:
 * $5: Previous workflow state
 * $6: New workflow state',
 	'translate-workflow-state-' => 'Unselectable select option in Special:Translate if workflow state editing is on. The dangling hyphen in the message key hints that this state is unset; the actual states have the same key with something after the hyphen.',
-	'translate-workflowstatus' => 'In Special:Translate if workflow states are in use, $1 is selector or the current state.
+	'translate-workflowstatus' => 'In [[Special:Translate]] if workflow states are in use, $1 is selector or the current state.
 {{Identical|Status}}',
 	'translate-workflow-set-do' => 'Submit button text when active',
 	'translate-workflow-set-doing' => 'Submit button text when waiting for reply from server',
@@ -12506,15 +12506,15 @@ $messages['ja'] = array(
 	'translate-edit-title' => '「$1」を編集',
 	'translate-edit-definition' => 'メッセージ定義',
 	'translate-edit-translation' => '翻訳',
-	'translate-edit-contribute' => '投稿',
-	'translate-edit-no-information' => "''このメッセージに関する説明はありません。''
-''このメッセージがどこでどのように使用されているか知っている場合は、説明を投稿して他の翻訳者を助けてください。''",
+	'translate-edit-contribute' => '編集',
+	'translate-edit-no-information' => "''このメッセージについての説明文はありません。''
+''このメッセージがどこでどのように使用されているか知っている場合は、説明文を投稿して他の翻訳者を助けてください。''",
 	'translate-edit-information' => 'メッセージについての情報（$1）',
 	'translate-edit-in-other-languages' => '他言語でのメッセージ',
 	'translate-edit-committed' => '現在ソフトウェア上で採用されている翻訳メッセージ',
 	'translate-edit-warnings' => '不完全な翻訳に対する警告',
 	'translate-edit-tmsugs' => '翻訳メモリーおよび機械翻訳からの提案',
-	'translate-edit-tmmatch-source' => '翻訳元の文章：$1',
+	'translate-edit-tmmatch-source' => '翻訳元の文章: $1',
 	'translate-edit-tmmatch' => '$1%の一致',
 	'translate-use-suggestion' => 'この現在の翻訳を、この翻訳提案に置き換えます。',
 	'translate-edit-tab-list' => 'メッセージ一覧',
@@ -12619,7 +12619,7 @@ $messages['ja'] = array(
 	'translate-tag-category' => '翻訳可能なページ',
 	'translate-tag-page-desc' => 'ウィキページ[[$2|$1]]に対する翻訳です。',
 	'translate-tag-fuzzy-comment' => '[[User:$1|$1]] が版 $2 で定義を変更しました。',
-	'translate-tag-fuzzy-reason' => '「$1」が $2 で定義を変更しました(コメント：$3)。',
+	'translate-tag-fuzzy-reason' => '「$1」が $2 で定義を変更しました (コメント: $3)。',
 	'translate-sidebar-alltrans' => '他言語での翻訳',
 	'translations' => '全翻訳結果',
 	'translations-summary' => '既存のすべての翻訳を表示するには下欄にメッセージ名を入力してください。',
@@ -12683,7 +12683,7 @@ $messages['ja'] = array(
 	'translate-smg-postponed' => '処理できなかった変更があります。[[{{FULLPAGENAME}}|再試行してください]]。',
 	'translate-smg-left' => 'ウィキ内のメッセージ本文',
 	'translate-smg-right' => '新着の差分',
-	'translate-manage-import-diff' => 'メッセージ $1 | 操作：$2',
+	'translate-manage-import-diff' => 'メッセージ $1 | 操作: $2',
 	'translate-manage-import-new' => '新しいメッセージ $1',
 	'translate-manage-import-deleted' => '削除されたメッセージ $1',
 	'translate-manage-action-import' => '取り込む',
@@ -12693,9 +12693,9 @@ $messages['ja'] = array(
 	'translate-manage-nochanges' => 'この群のメッセージの定義には変更はありません。',
 	'translate-manage-nochanges-other' => 'この言語が対応すべき変更はありませんでした。
 下のリンクをクリックするとメッセージ群の詳細画面に戻ります。',
-	'translate-manage-inconsistent' => 'リクエスト内に矛盾を発見しました。
-変更を確認した後に再度実施してください。
-詳細：$1',
+	'translate-manage-inconsistent' => 'リクエスト内で矛盾を検出しました。
+変更点を確認してから、再度試してください。
+詳細: $1',
 	'translate-manage-toolong' => '処理時間の最大値である$1秒を超過しました。処理を続行するにはフォームを再投稿してください。',
 	'translate-manage-import-summary' => '外部ソースから新しい版を取り込み中',
 	'translate-manage-conflict-summary' => '外部ソースから新しい版を取り込み中。
@@ -12706,8 +12706,9 @@ $messages['ja'] = array(
 	'translate-import-from-wiki' => 'このウィキ内のファイル:',
 	'translate-import-from-local' => 'ローカルファイルをアップロード：',
 	'translate-import-load' => 'ファイル読み込み',
-	'translate-import-err-type-not-supported' => 'ファイルを読み込めませんでした：<code>$1</code>方式には対応していません。',
-	'translate-import-err-dl-failed' => 'ファイルを取得できませんでした：
+	'translate-import-err-type-not-supported' => 'ファイルを読み込めません:
+<code>$1</code> 方式には対応していません。',
+	'translate-import-err-dl-failed' => 'ファイルを取得できません:
 $1',
 	'translate-import-err-ul-failed' => 'ファイルのアップロードに失敗しました',
 	'translate-import-err-invalid-title' => '入力したファイル名 <nowiki>$1</nowiki> は無効です。',
@@ -12744,7 +12745,7 @@ $1',
 	'translate-search-nofilter' => 'すべて表示',
 	'translate-messagereview-submit' => '採用',
 	'translate-messagereview-progress' => '採用中...',
-	'translate-messagereview-failure' => '採用中... 失敗：$1',
+	'translate-messagereview-failure' => '採用中... 失敗: $1',
 	'translate-messagereview-done' => '採用済み',
 	'translate-messagereview-reviews' => '{{PLURAL:$1|$1人の利用者}}が採用',
 	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|あなた|あなたを含む$1人の利用者}}が採用',
@@ -12765,7 +12766,7 @@ $1',
 	'logentry-translationreview-message' => '$1が$3の翻訳を{{GENDER:$2|採用}}',
 	'logentry-groupreview-message' => '$1がメッセージ群$3の$4の翻訳の進捗状況を$5から$6に{{GENDER:$2|変更しました}}',
 	'translate-workflow-state-' => '(解除)',
-	'translate-workflowstatus' => '進捗状況：$1',
+	'translate-workflowstatus' => '進捗状況: $1',
 	'translate-workflow-set-do' => '設定',
 	'translate-workflow-set-doing' => '設定中...',
 	'translate-workflow-set-done' => '設定完了!',
@@ -14417,7 +14418,7 @@ De Name fö_de Appachtemangs könne nur eijn Övversätzong han.
 
 Beij de Övversäzonge för de Appachtemangs ier Name hät „<code>$1 talk</code>“ ene shpezjälle Senn.
 Dat „<code>$1</code>“ shteijt doh als enne Plazhallder för dä Projäkname (zem Beijshpöll dat „<code>{{SITENAME}}</code>“ en: „<code>Övver {{GRAMMAR:Akkusative|{{SITENAME}}}} klaafe</code>“).
-Wann Ding Shprooch ed nit heerjitt, dat_De ene grammatesch reschtejje Forrem henkreßß, ohne an dämm Projek singem Name ändere zo mößße, dann donn ene Äntwecklor do drop aansäzze.
+Wann Ding Shprooch ed nit heerjitt, dat_De ene grammatesch reschtejje Forrem henkreßß, ohne an dämm Projek singem Name ändere zo mößße, dann lohs_et ons weße. De kanns et op de [[Support|Öngerschtözongssigg]] schriive.
 
 Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 Änderongen weede ehts bem Klicke op unge dä Knopp förr_et Seschere faßjehallde.',
@@ -14565,6 +14566,9 @@ Jröhne jeschrevve han köözlesch noch jet jedonn, je rüüder ene Name, desto 
 	'translate-smg-submit' => 'Änderonge zom Verärbeide övverdraare',
 	'translate-smg-submitted' => 'De ojinaal Täxte udder Nohreeschte sen verändert woode.
 De Änderonge wääde em Hengerjrond verärbeidt.',
+	'translate-smg-postponed' => 'En paa Änderonge kunnte nit verärbeidt wääde. [[{{FULLPAGENAME}}|Versöhg et norr_ens]].',
+	'translate-smg-left' => 'Wat em Wiki schteiht',
+	'translate-smg-right' => 'Änderonge',
 	'translate-manage-import-diff' => 'Tittel: $1{{int:pipe-separator}}Donn: $2',
 	'translate-manage-import-new' => 'Neu Nohreesch $1',
 	'translate-manage-import-deleted' => 'Fottjeschmeße Nohreesch $1',
@@ -20919,7 +20923,7 @@ $messages['ru'] = array(
 	'translate-taskui-untranslated' => 'Показать непереведённые сообщения',
 	'translate-taskui-optional' => 'Показать дополнительные сообщения',
 	'translate-taskui-suggestions' => 'Показать сообщения с предложениями из памяти переводов',
-	'translate-taskui-acceptqueue' => 'Только одобренные мной сообщения',
+	'translate-taskui-acceptqueue' => 'Только сообщения, требующие моего одобрения',
 	'translate-taskui-reviewall' => 'Проверить все переводы',
 	'translate-taskui-export-to-file' => 'Экспорт в родном формате',
 	'translate-taskui-export-as-po' => 'Экспорт для оффлайнового перевод',
