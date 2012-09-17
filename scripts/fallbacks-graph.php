@@ -2,7 +2,7 @@
 /**
  * Script for creating graphml xml file of language fallbacks.
  *
- * @author Niklas Laxstrom
+ * @author Niklas Laxström
  *
  * @copyright Copyright © 2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
@@ -21,7 +21,7 @@ require_once( "$IP/maintenance/Maintenance.php" );
 class FallbacksCompare extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Creates graphml xml file of language fallbacks..';
+		$this->mDescription = 'Creates graphml xml file of language fallbacks.';
 	}
 
 	public function execute() {
@@ -47,7 +47,9 @@ XML;
 		foreach ( $langs as $code => $name ) {
 
 			$fallbacks = Language::getFallbacksFor( $code );
-			if ( $fallbacks === array( 'en' ) ) continue;
+			if ( $fallbacks === array( 'en' ) ) {
+				continue;
+			}
 
 			$nodes[$code] = $this->createNode( $code );
 
