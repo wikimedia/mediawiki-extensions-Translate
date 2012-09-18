@@ -17,9 +17,12 @@ class ApiGroupReview extends ApiBase {
 	protected static $salt = 'translate-groupreview';
 
 	public function execute() {
-		global $wgUser;
+		$user = $this->getUser();
 		$requestParams = $this->extractRequestParams();
+
 		$group = MessageGroups::getGroup( $requestParams['group'] );
+		$code = $requestParams['language'];
+
 		if ( !$group ) {
 			$this->dieUsageMsg( array( 'missingparam', 'group' ) );
 		}
@@ -28,28 +31,15 @@ class ApiGroupReview extends ApiBase {
 			$this->dieUsage( 'Message group review not in use', 'disabled' );
 		}
 
-		if ( !$wgUser->isallowed( self::$right ) ) {
+		if ( !$user->isallowed( self::$right ) ) {
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
 		$requestParams = $this->extractRequestParams();
 
 		$languages = Language::getLanguageNames( false );
-		if ( !isset( $languages[$requestParams['language']] ) ) {
+		if ( !isset( $languages[$code] ) ) {
 			$this->dieUsageMsg( array( 'missingparam', 'language' ) );
-		}
-
-		$dbr = wfGetDB( DB_SLAVE );
-		$groupid = $group->getId();
-		$currentState = $dbr->selectField(
-			'translate_groupreviews',
-			'tgr_state',
-			array( 'tgr_group' => $groupid, 'tgr_lang' => $requestParams['language'] ),
-			__METHOD__
-		);
-		$targetState = $requestParams['state'];
-		if ( $currentState === $targetState ) {
-			$this->dieUsage( 'The requested state is identical to the current state', 'sameworkflowstate' );
 		}
 
 		if ( !isset( $stateConfig[$targetState] ) ) {
@@ -63,39 +53,64 @@ class ApiGroupReview extends ApiBase {
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
-
-		$dbw = wfGetDB( DB_MASTER );
-		$table = 'translate_groupreviews';
-		$row = array(
-			'tgr_group' => $groupid,
-			'tgr_lang' => $requestParams['language'],
-			'tgr_state' => $targetState,
-		);
-		$index = array( 'tgr_group', 'tgr_language' );
-		$dbw->replace( $table, array( $index ), $row, __METHOD__ );
-
-		$logger = new LogPage( 'translationreview' );
-		$logParams = array(
-			$requestParams['language'],
-			$group->getLabel(),
-			$currentState,
-			$targetState,
-		);
-		$logger->addEntry(
-			'group',
-			SpecialPage::getTitleFor( 'Translate', $groupid ),
-			'', // No comments
-			$logParams,
-			$wgUser
-		);
+		$user = $this->getUser();
+		self::changeState( $group, $code, $targetState, $user );
 
 		$output = array( 'review' => array(
 			'group' => $group->getId(),
-			'language' => $requestParams['language'],
+			'language' => $code,
 			'state' => $targetState,
 		) );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
+	}
+
+	public static function getState( MessageGroup $group, $code ) {
+		$dbw = wfGetDB( DB_MASTER );
+		$table = 'translate_groupreviews';
+
+		$field = 'tgr_state';
+		$conds = array(
+			'tgr_group' => $group->getId(),
+			'tgr_lang' => $code
+		);
+		return $dbw->selectField( $table, $field, $conds, __METHOD__ );
+	}
+
+	public static function changeState( MessageGroup $group, $code, $newState, User $user ) {
+		$currentState = self::getState( $group, $code );
+		if ( $currentState === $newState ) {
+			return false;
+		}
+
+		$table = 'translate_groupreviews';
+		$index = array( 'tgr_group', 'tgr_language' );
+		$row = array(
+			'tgr_group' => $group->getId(),
+			'tgr_lang' => $code,
+			'tgr_state' => $newState,
+		);
+
+		$dbw = wfGetDB( DB_MASTER );
+		$dbw->replace( $table, array( $index ), $row, __METHOD__ );
+
+		$logger = new LogPage( 'translationreview' );
+		$logParams = array(
+			$code,
+			$group->getLabel(),
+			$currentState,
+			$newState,
+		);
+
+		$logger->addEntry(
+			'group',
+			SpecialPage::getTitleFor( 'Translate', $group->getId() ),
+			'', // No comments
+			$logParams,
+			$user
+		);
+
+		return true;
 	}
 
 	public function isWriteMode() {
