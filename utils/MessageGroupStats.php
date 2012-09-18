@@ -244,7 +244,7 @@ class MessageGroupStats {
 			$conds['tgs_lang'] = $codes;
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_MASTER );
 		$res = $dbr->select( self::TABLE, '*', $conds, __METHOD__ );
 		return $res;
 	}
