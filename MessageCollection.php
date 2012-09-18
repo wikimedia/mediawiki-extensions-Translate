@@ -496,9 +496,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		/* This removes messages from the list which have certain
 		 * reviewer (among others) */
-		$user = intval( $user );
+		$userId = intval( $user );
 		foreach ( $this->dbReviewData as $row ) {
-			if ( intval( $row->trr_user ) === $user ) {
+			if ( $user === null || intval( $row->trr_user ) === $userId ) {
 				unset( $keys[$this->rowToKey( $row )] );
 			}
 		}
