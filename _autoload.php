@@ -79,6 +79,7 @@ $wgAutoloadClasses['HTMLJsSelectToInputField'] = "$dir/utils/HTMLJsSelectToInput
 $wgAutoloadClasses['JsSelectToInput'] = "$dir/utils/JsSelectToInput.php";
 $wgAutoloadClasses['MessageGroupCache'] = "$dir/utils/MessageGroupCache.php";
 $wgAutoloadClasses['MessageGroupStats'] = "$dir/utils/MessageGroupStats.php";
+$wgAutoloadClasses['MessageGroupWorkflowStateUpdaterJob'] = "$dir/utils/MessageGroupWorkflowStateUpdaterJob.php";
 $wgAutoloadClasses['MessageHandle'] = "$dir/utils/MessageHandle.php";
 $wgAutoloadClasses['MessageIndex'] = "$dir/utils/MessageIndex.php";
 $wgAutoloadClasses['MessageIndexRebuildJob'] = "$dir/utils/MessageIndexRebuildJob.php";
