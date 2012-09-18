@@ -86,12 +86,16 @@ class PremadeMediawikiExtensionGroups {
 		if ( isset( $info['prefix'] ) ) {
 			$mangler = new StringMatcher( $info['prefix'], $info['mangle'] );
 			$group->setMangler( $mangler );
-			if ( isset( $info['ignored'] ) ) {
-				$info['ignored'] = $mangler->mangle( $info['ignored'] );
-			}
-			if ( isset( $info['optional'] ) ) {
-				$info['optional'] = $mangler->mangle( $info['optional'] );
-			}
+		} else {
+			$mangler = StringMatcher::emptyMatcher();
+			// No need to set to the group
+		}
+
+		if ( isset( $info['ignored'] ) ) {
+			$info['ignored'] = $mangler->mangle( $info['ignored'] );
+		}
+		if ( isset( $info['optional'] ) ) {
+			$info['optional'] = $mangler->mangle( $info['optional'] );
 		}
 
 		if ( !empty( $info['var'] ) ) $group->setVariableName( $info['var'] );
