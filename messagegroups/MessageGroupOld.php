@@ -120,14 +120,11 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * @return StringMatcher
 	 */
 	public function getMangler() {
-		$mangler = $this->mangler;
-
-		if ( !$mangler ) {
-			// TODO: Shouldn't this set $this->mangler
-			$mangler = StringMatcher::emptyMatcher();
+		if ( !isset( $this->mangler ) ) {
+			$this->mangler = StringMatcher::emptyMatcher();
 		}
 
-		return $mangler;
+		return $this->mangler;
 	}
 
 	public function setMangler( $value ) { $this->mangler = $value; }
@@ -266,9 +263,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $collection;
 	}
 
-	public function __construct() {
-		$this->mangler = StringMatcher::emptyMatcher();
-	}
+	public function __construct() {}
 
 	/**
 	 * Can be overwritten to retun false if something is wrong.

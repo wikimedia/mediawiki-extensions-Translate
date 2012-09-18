@@ -83,15 +83,17 @@ class CoreMessageGroup extends MessageGroupOld {
 
 	public function getTags( $type = null ) {
 		require( $this->getMetaDataPrefix() . '/messageTypes.inc' );
-		$this->optional = $this->mangler->mangle( $wgOptionalMessages );
-		$this->ignored = $this->mangler->mangle( $wgIgnoredMessages );
+		$mangler = $this->getMangler();
+		$this->optional = $mangler->mangle( $wgOptionalMessages );
+		$this->ignored = $mangler->mangle( $wgIgnoredMessages );
 		return parent::getTags( $type );
 	}
 
 	public function load( $code ) {
 		$file = $this->getMessageFileWithPath( $code );
 		// Can return null, convert to array.
-		$messages = (array) $this->mangler->mangle(
+		$mangler = $this->getMangler();
+		$messages = (array) $mangler->mangle(
 			PHPVariableLoader::loadVariableFromPHPFile( $file, 'messages' )
 		);
 
@@ -99,7 +101,7 @@ class CoreMessageGroup extends MessageGroupOld {
 			if ( !$this->isSourceLanguage( $code ) ) {
 				// For branches, load newer compatible messages for missing entries, if any.
 				$trunk = MessageGroups::getGroup( $this->parentId );
-				$messages += $trunk->mangler->unmangle( $trunk->load( $code ) );
+				$messages += $trunk->getMangler()->mangle( $trunk->load( $code ) );
 			}
 		}
 

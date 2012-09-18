@@ -59,8 +59,6 @@ class StringMatcher implements StringMangler {
 	/// Patterns that contain wildcard anywhere else than in the end
 	protected $aRegex  = array();
 
-	protected static $legalMessageKeyChars = '';
-
 	/**
 	 * Alias for making NO-OP string mangler.
 	 * @return StringMatcher
@@ -75,16 +73,20 @@ class StringMatcher implements StringMangler {
 	public function __construct( $prefix = '', $patterns = array() ) {
 		$this->sPrefix = $prefix;
 		$this->init( $patterns );
+	}
 
-		if ( self::$legalMessageKeyChars === '' ) {
-			// For escaping all illegal title chars and some others
+	protected static function getValidKeyChars() {
+		static $valid = null;
+		if ( $valid === null ) {
 			global $wgLegalTitleChars;
-			self::$legalMessageKeyChars = strtr( $wgLegalTitleChars, array(
+			$valid = strtr( $wgLegalTitleChars, array(
 				'=' => '', // equals sign, which is itself usef for escaping
 				'&' => '', // ampersand, for entities
 				'%' => '', // percent sign, which is used in URL encoding
 			) );
 		}
+
+		return $valid;
 	}
 
 	public function setConf( $conf ) {
@@ -177,8 +179,8 @@ class StringMatcher implements StringMangler {
 		}
 
 		// Apply a "quoted-printable"-like escaping
-		$legalMessageKeyChars = self::$legalMessageKeyChars;
-		$escapedString = preg_replace_callback( "/[^$legalMessageKeyChars]/",
+		$valid = self::getValidKeyChars();
+		$escapedString = preg_replace_callback( "/[^$valid]/",
 			function( $match ) {
 				return '=' . sprintf( '%02X', ord( $match[0] ) );
 			},
