@@ -17930,7 +17930,7 @@ $messages['nn'] = array(
 	'translate-page-showing-all' => 'Viser {{PLURAL:$1|éi melding|$1 meldingar}}.',
 	'translate-page-showing-none' => 'Ingen meldingar å vise.',
 	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
-	'translate-next' => 'Neste sida',
+	'translate-next' => 'Neste side',
 	'translate-prev' => 'Førre sida',
 	'translate-page-description-legend' => 'Informasjon om gruppa',
 	'translate-page-description-hasoptional' => 'Meldingsgruppa har valfrie meldingar.
@@ -17952,7 +17952,7 @@ Valfrie meldingar skal ein berre setja om når målet har særskilde krav, til d
 	'translate-edit-warnings' => 'Åtvaringar om ufullstendige omsetjingar',
 	'translate-edit-tmsugs' => 'Framlegg frå omsetjingsminnet',
 	'translate-edit-tmmatch-source' => 'Kjeldetekst for omsetjing: $1',
-	'translate-edit-tmmatch' => '$1% treff',
+	'translate-edit-tmmatch' => '$1% samsvar',
 	'translate-edit-tab-list' => 'Meldingsliste',
 	'translate-edit-nopermission' => 'Du treng løyve for å setja om meldingar',
 	'translate-edit-askpermission' => 'Bed om løyve',
