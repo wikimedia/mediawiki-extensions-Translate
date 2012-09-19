@@ -829,6 +829,37 @@ Stö sicher, daas a <nowiki><translate></nowiki>-Tag und gütige Syntax vawendt 
 	'pt-deletepage-started' => "Bittscheh 's [[Special:Log/pagetranslation|Ywersétzungs-Logbuach]] noch Feelern und Ausfiarungsnoochrichten priaffm.",
 );
 
+/** Bikol Central (Bikol Central)
+ * @author Geopoet
+ */
+$messages['bcl'] = array(
+	'pagetranslation' => 'Dakit-taramon kan pahina',
+	'right-pagetranslation' => 'Markahi an mga bersyon kan mga pahina para sa dakit-taramon',
+	'tpt-desc' => 'Ekstensyon para sa pagdadakit-taramon kan mga laman nin mga pahina',
+	'tpt-section' => 'Yunit kan dakit-taramon $1',
+	'tpt-section-new' => 'Bagong yunit kan dakit-taramon.
+Pangaran: $1',
+	'tpt-section-deleted' => 'Yunit kan dakit-taramon $1',
+	'tpt-template' => 'Panguyog kan pahina',
+	'tpt-templatediff' => 'An panguyog kan pahina pinagbago.',
+	'tpt-diff-old' => 'Dating teksto',
+	'tpt-diff-new' => 'Baguhong teksto',
+	'tpt-submit' => 'Markahi ining bersyon para sa pagdakit-taramon',
+	'tpt-sections-oldnew' => 'Baguhon asin dati nang yaon na mga yunit kan dakit-taramon',
+	'tpt-sections-deleted' => 'Pinagpurang mga yunit kan dakit-taramon',
+	'tpt-sections-template' => 'Panguyog kan pahina nin dakit-taramon',
+	'tpt-action-nofuzzy' => 'Dae pag-imbalidohon an mga dakit-taramon',
+	'tpt-badtitle' => 'Ngaran kan pahinang pinagtao ($1) bakong balidong titulo',
+	'tpt-nosuchpage' => 'An pahina $1 bakong eksistido',
+	'tpt-oldrevision' => 'An $2 bako an pinakabaguhong bersyon kan pahina [[$1]].
+An mga pinakabaguhong bersyon sana an puwedeng markahan para sa dakit-taramon.',
+	'tpt-notsuitable' => 'An pahina $1 bakong naaangay para sa dakit-taramon.
+Himoong segurado na ini igwang <nowiki><translate></nowiki> mga tatak asin igwa nin balidong sintaks.',
+	'tpt-saveok' => 'An pahina [[$1]] pinagmarkahan pra sa dakit-taramon na igwang $2 {{PLURAL:$2|yunit kan dakit-taramon|mga yunit kan dakit-taramon}}.
+An pahina mapuwede ngunyan na magin <span class="plainlinks">[$3 pinagdakit-taramon]</span>.',
+	'tpt-badsect' => 'An "$1" bakong balidong ngaran para sa yunit kan dakit-taramon $2.',
+);
+
 /** Belarusian (беларуская)
  * @author Тест
  */
