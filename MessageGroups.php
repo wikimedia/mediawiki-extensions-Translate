@@ -24,8 +24,7 @@ class MessageGroups {
 		}
 		self::$loaded = true;
 
-		global $wgTranslateCC, $wgTranslateEC, $wgTranslateAC;
-		global $wgAutoloadClasses;
+		global $wgTranslateCC, $wgAutoloadClasses;
 
 		$key = wfMemcKey( 'translate-groups' );
 		$value = DependencyWrapper::getValueFromCache( self::getCache(), $key );
@@ -36,8 +35,6 @@ class MessageGroups {
 		} else {
 			wfDebug( __METHOD__ . "-withcache\n" );
 			$wgTranslateCC = $value['cc'];
-			$wgTranslateAC = $value['ac'];
-			$wgTranslateEC = $value['ec'];
 
 			foreach ( $value['autoload'] as $class => $file ) {
 				$wgAutoloadClasses[$class] = $file;
@@ -54,7 +51,6 @@ class MessageGroups {
 		$key = wfMemckey( 'translate-groups' );
 		self::getCache()->delete( $key );
 		self::$loaded = false;
-		self::singleton()->classes = null;
 	}
 
 	/**
@@ -86,7 +82,6 @@ class MessageGroups {
 		$deps = array();
 		$deps[] = new GlobalDependency( 'wgEnablePageTranslation' );
 		$deps[] = new GlobalDependency( 'wgTranslateGroupFiles' );
-		$deps[] = new GlobalDependency( 'wgTranslateAC' );
 		$deps[] = new GlobalDependency( 'wgTranslateEC' );
 		$deps[] = new GlobalDependency( 'wgTranslateCC' );
 		$deps[] = new GlobalDependency( 'wgTranslateExtensionDirectory' );
@@ -148,10 +143,20 @@ class MessageGroups {
 		}
 		wfProfileOut( __METHOD__ . '-agg' );
 
+		// Convert $wgTranslateEC/AC to $wgTranslateCC to simplify handling
+		wfProfileIn( __METHOD__ . '-acec' );
+		foreach ( $wgTranslateEC as $id ) {
+			$creater = $wgTranslateAC[$id];
+			if ( is_array( $creater ) ) {
+				$wgTranslateCC[$id] = call_user_func( $creater, $id );
+			} else {
+				$wgTranslateCC[$id] = new $creater;
+			}
+		}
+		wfProfileOut( __METHOD__ . '-acec' );
+
 		$key = wfMemckey( 'translate-groups' );
 		$value = array(
-			'ac' => $wgTranslateAC,
-			'ec' => $wgTranslateEC,
 			'cc' => $wgTranslateCC,
 			'autoload' => $autoload,
 		);
@@ -178,15 +183,9 @@ class MessageGroups {
 		}
 		self::init();
 
-		global $wgTranslateEC, $wgTranslateAC, $wgTranslateCC;
+		global $wgTranslateCC;
 
-		if ( in_array( $id, $wgTranslateEC ) ) {
-			$creater = $wgTranslateAC[$id];
-			if ( is_array( $creater ) ) {
-				return call_user_func( $creater, $id );
-			}
-			return new $creater;
-		} elseif ( isset( $wgTranslateCC[$id] ) ) {
+		if ( isset( $wgTranslateCC[$id] ) ) {
 			if ( is_callable( $wgTranslateCC[$id] ) ) {
 				return call_user_func( $wgTranslateCC[$id], $id );
 			}
@@ -275,11 +274,7 @@ class MessageGroups {
 		return $ids;
 	}
 
-	/// @todo Make protected.
-	public $classes;
-	private function __construct() {
-		self::init();
-	}
+	private function __construct() {}
 
 	/**
 	 * Constructor function.
@@ -294,24 +289,19 @@ class MessageGroups {
 	}
 
 	/**
-	 * Get all enabled message groups.
+	 * Get all enabled non-dynamic message groups.
 	 * @return \array
 	 */
 	public function getGroups() {
-		if ( $this->classes === null ) {
-			$this->classes = array();
-			global $wgTranslateEC, $wgTranslateCC;
-
-			$all = array_merge( $wgTranslateEC, array_keys( $wgTranslateCC ) );
-			sort( $all );
-
-			foreach ( $all as $id ) {
-				$g = self::getGroup( $id );
-				$this->classes[$g->getId()] = $g;
+		self::init();
+		global $wgTranslateCC;
+		// Expand groups to objects
+		foreach ( $wgTranslateCC as $id => $mixed ) {
+			if ( !is_object( $mixed ) ) {
+				$wgTranslateCC[$id] = call_user_func( $mixed, $id );
 			}
 		}
-
-		return $this->classes;
+		return $wgTranslateCC;
 	}
 
 	/**
@@ -353,7 +343,7 @@ class MessageGroups {
 		$all = array();
 
 		$matcher = new StringMatcher( '', (array) $ids );
-		foreach ( self::singleton()->getGroups() as $id => $_ ) {
+		foreach ( self::getAllGroups() as $id => $_ ) {
 			if ( $matcher->match( $id ) ) {
 				$all[] = $id;
 			}
