@@ -128,11 +128,7 @@ class ExtensionMessageGroup extends MessageGroupOld {
 			throw new MWException( "Unable to load messages for $code in {$this->label}" );
 		}
 
-		if ( isset( $cache[$code] ) ) {
-			return $cache[$code];
-		} else {
-			return array();
-		}
+		return $cache;
 	}
 
 	public function getPath() {
