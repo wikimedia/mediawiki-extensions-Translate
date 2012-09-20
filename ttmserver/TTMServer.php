@@ -31,8 +31,6 @@ class TTMServer  {
 			switch( $type ) {
 			case 'ttmserver':
 				return new DatabaseTTMServer( $config );
-			case 'shared-ttmserver':
-				return new SharedDatabaseTTMServer( $config );
 			case 'remote-ttmserver':
 				return new RemoteTTMServer( $config );
 			default:

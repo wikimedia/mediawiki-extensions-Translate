@@ -9,8 +9,8 @@ jQuery( function( $ ) {
 		};
 	}
 
-	var $submit = $( "input#mw-translate-workflowset" );
-	var $select = $( "#mw-sp-translate-workflow select" );
+	var $submit = $( "#mw-translate-workflowset" );
+	var $select = $( "#mw-sp-translate-workflow").find( "select" );
 	$select.find( "option[value=]" ).attr( "disabled", "disabled" );
 
 	var submitFunction = function( event ) {

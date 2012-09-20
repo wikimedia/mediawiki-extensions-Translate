@@ -79,7 +79,7 @@ class TranslateHooks {
 			$wgJobClasses['DeleteJob'] = 'DeleteJob';
 
 			// Namespaces
-			global $wgPageTranslationNamespace, $wgExtraNamespaces;
+			global $wgPageTranslationNamespace;
 			global $wgNamespacesWithSubpages, $wgNamespaceProtection;
 			global $wgTranslateMessageNamespaces;
 
