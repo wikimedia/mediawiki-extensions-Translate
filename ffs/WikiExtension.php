@@ -78,12 +78,28 @@ class WikiExtensionFormatReader extends WikiFormatReader {
 
 		$ { $this->variableName } = array();
 		require( $this->filename );
+
 		$messages = $ { $this->variableName } ;
 		foreach ( $messages as $code => $value ) {
 			$messages[$code] = $mangler->mangle( $value );
 		}
 
 		return $messages;
+	}
+
+	public function parseMessagesForLanguage( StringMangler $mangler, $code ) {
+		if ( $this->filename === false ) {
+			return array();
+		}
+
+		$ { $this->variableName } = array();
+		require( $this->filename );
+
+		if ( isset( $messages[$code] ) ) {
+			return $mangler->mangle( $messages[$code] );
+		} else {
+			return array();
+		}
 	}
 }
 

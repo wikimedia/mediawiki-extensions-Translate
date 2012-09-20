@@ -122,7 +122,7 @@ class ExtensionMessageGroup extends MessageGroupOld {
 	 */
 	public function load( $code ) {
 		$reader = $this->getReader( $code );
-		$cache = $reader->parseMessages( $this->getMangler() );
+		$cache = $reader->parseMessagesForLanguage( $this->getMangler(), $code );
 
 		if ( $cache === null ) {
 			throw new MWException( "Unable to load messages for $code in {$this->label}" );
