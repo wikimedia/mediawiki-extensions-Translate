@@ -19,8 +19,8 @@ class PremadeMediawikiExtensionGroups {
 	protected $namespace = NS_MEDIAWIKI;
 
 	/**
-	 * @param $def Path to file
-	 * @param $path Path to extensions
+	 * @param $def string Path to file
+	 * @param $path string Path to extensions
 	 */
 	public function __construct( $def, $path ) {
 		$this->definitionFile = $def;

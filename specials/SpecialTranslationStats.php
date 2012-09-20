@@ -35,7 +35,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 	/**
 	 * @since 2012-03-05
-	 * @return list
+	 * @return array List of graph types
 	 */
 	public function getGraphTypes() {
 		return array_keys( self::$graphs );
@@ -569,7 +569,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			$i--;
 		}
 
-		$font = FCFontFinder::find( $this->getLanguage()->getCode() );
+		$font = FCFontFinder::findFile( $this->getLanguage()->getCode() );
 
 		if ( $font ) {
 			$plot->SetDefaultTTFont( $font );
@@ -582,7 +582,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			$plot->SetLegend( $legend );
 		}
 
-		$numberFont = FCFontFinder::find( 'en' );
+		$numberFont = FCFontFinder::findFile( 'en' );
 
 		$plot->setFont( 'x_label', $numberFont, 8 );
 		$plot->setFont( 'y_label', $numberFont, 8 );

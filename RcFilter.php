@@ -20,7 +20,7 @@ class TranslateRcFilter {
 	 *
 	 * Appends SQL filter conditions into $conds.
 	 * @param $conds array
-	 * @param $tables array|stromg
+	 * @param $tables array|string
 	 * @param $join_conds array
 	 * @param $opts
 	 * @return bool true

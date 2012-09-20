@@ -51,7 +51,7 @@
 			.replace( /^ /gm, '&#160;' )
 			.replace( / $/gm, '&#160;' )
 			.replace( /  /g, '&#160; ' )
-			.replace( /\n/g, '<br />' )
+			.replace( /\n/g, '<br />' );
 	}
 
 	function addAccessKeys( dialog ) {
@@ -88,14 +88,20 @@
 
 		if ( mw.config.get( 'trlKeys' ) || $( '.tqe-inlineeditable' ).length ) {
 			if ( callbacks.next === undefined ) {
-				form.find( '.mw-translate-next, .mw-translate-skip' ).attr( 'disabled', 'disabled' )
+				form.find( '.mw-translate-next, .mw-translate-skip' ).attr( 'disabled', 'disabled' );
 			} else {
 				form.find( '.mw-translate-next' ).click( function () {
-					callbacks.next && callbacks.next();
+					if ( callbacks.next ) {
+						callbacks.next();
+					}
 				} );
 				form.find( '.mw-translate-skip' ).click( function () {
-					callbacks.close && callbacks.close();
-					callbacks.next && callbacks.next();
+					if ( callbacks.close ) {
+						callbacks.close();
+					}
+					if ( callbacks.next ) {
+						callbacks.next();
+					}
 				} );
 			}
 		} else {
@@ -104,7 +110,9 @@
 				.css( 'display', 'none' );
 		}
 		form.find( '.mw-translate-close' ).click( function () {
-			callbacks.close && callbacks.close();
+			if ( callbacks.close ) {
+				callbacks.close();
+			}
 		} );
 
 		form.find( '.mw-translate-history' ).click( function() {
@@ -165,16 +173,16 @@
 					prev.next = this;
 				}
 				prev = this;
-			} )
+			} );
 		},
 
 		openDialog: function( page, group ) {
 			var id = 'jsedit' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
 
-			var dialog = $( '#' + id );
-			if ( dialog.size() > 0 ) {
-				dialog.dialog( 'option', 'position', 'top' );
-				dialog.dialog( 'open' );
+			var dialogElement = $( '#' + id );
+			if ( dialogElement.size() > 0 ) {
+				dialogElement.dialog( 'option', 'position', 'top' );
+				dialogElement.dialog( 'open' );
 				return false;
 			}
 
@@ -245,7 +253,9 @@
 			$target.html( $( '<div>' ).attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
 
 			mw.translate.loadEditor( $target, page, group, function() {
-				callbacks.load && callbacks.load( $target );
+				if ( callbacks.load ) {
+					callbacks.load( $target );
+				}
 				var form = $target.find( 'form' );
 				registerFeatures( callbacks, form, page, group );
 				form.on( 'submit', function () {
@@ -263,8 +273,12 @@
 							} else if ( json.edit.result === 'Failure' ) {
 								alert( mw.msg( 'translate-js-save-failed' ) );
 							} else if ( json.edit.result === 'Success' ) {
-								callbacks.close && callbacks.close();
-								callbacks.success && callbacks.success( form.find( '.mw-translate-edit-area' ).val() );
+								if ( callbacks.close ) {
+									callbacks.close();
+								}
+								if ( callbacks.success ) {
+									callbacks.success( form.find( '.mw-translate-edit-area' ).val() );
+								}
 							} else {
 								alert( mw.msg( 'translate-js-save-failed' ) );
 							}
@@ -340,13 +354,16 @@
 			// Remove any text selection caused by double clicking
 			var sel = window.getSelection ? window.getSelection() : document.selection;
 			if ( sel ) {
-				sel.removeAllRanges && sel.removeAllRanges();
-				sel.empty && sel.empty();
+				if ( sel.removeAllRanges ) {
+					sel.removeAllRanges();
+				}
+				if ( sel.empty ) {
+					sel.empty();
+				}
 			}
 		}
 	};
 
 	mw.translate = translate;
 	$( document ).ready( translate.init );
-
 } )( jQuery, mediaWiki );

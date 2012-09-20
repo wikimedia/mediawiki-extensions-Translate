@@ -35,8 +35,8 @@ class MessageGroupCache {
 
 	/**
 	 * Contructs a new cache object for given group and language code.
-	 * @param $group \types{String,FileBasedMessageGroup} Group object or id.
-	 * @param $code \string Language code. Default value 'en'.
+	 * @param $group string|FileBasedMessageGroup Group object or id.
+	 * @param $code string Language code. Default value 'en'.
 	 */
 	public function __construct( $group, $code = 'en' ) {
 		if ( is_object( $group ) ) {

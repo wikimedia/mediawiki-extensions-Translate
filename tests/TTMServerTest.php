@@ -9,7 +9,6 @@
  */
 
 class TTMServerTest extends MediaWikiTestCase {
-
 	protected $config;
 
 	protected function setUp() {
@@ -34,16 +33,6 @@ class TTMServerTest extends MediaWikiTestCase {
 			'type' => 'ttmserver',
 			'class' => 'RemoteTTMServer',
 		);
-
-		$wgTranslateTranslationServices['sharedtm'] = array(
-			'database' => 'sharedtm',
-			'cutoff' => 0.75,
-			'timeout-sync' => 4,
-			'timeout-async' => 4,
-			'type' => 'ttmserver',
-			'class' => 'SharedDatabaseTTMServer',
-		);
-
 	}
 
 	protected function tearDown() {

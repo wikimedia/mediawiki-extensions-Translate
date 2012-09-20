@@ -196,6 +196,8 @@ class MessageGroups {
 				return new $dynamic[$id];
 			}
 		}
+
+		return null;
 	}
 
 	/**

@@ -77,9 +77,6 @@ class PluralCompare extends Maintenance {
 			$cldrExp = false;
 		}
 
-		$cldrmap = array();
-		$error = false;
-
 		for ( $i = 0; $i <= 250; $i++ ) {
 			$mw = $gt = $cl = '?';
 
