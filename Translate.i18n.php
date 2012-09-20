@@ -145,6 +145,8 @@ Changes are not saved until you click the save button below.',
 	'translate-checks-xhtml'              => 'Please replace the following {{PLURAL:$2|tag|tags}} with correct ones:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural'             => 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',
+	'translate-checks-plural-forms'       => '<nowiki>{{PLURAL:}}</nowiki> was given {{PLURAL:$1|one form|$1 forms}} but {{PLURAL:$2|only one form|$2 forms}} are supported (excluding 0= and 1= forms).',
+	'translate-checks-plural-dupe'        => '<nowiki>{{PLURAL:}}</nowiki> has duplicate forms at the end. <nowiki>{{PLURAL:$1|milk|milk}}</nowiki> should be written as <nowiki>{{PLURAL:$1|milk}}</nowiki>.',
 	'translate-checks-pagename'           => 'Namespace changed from the definition',
 	'translate-checks-format'             => 'This translation does not follow the definition or has invalid syntax: $1',
 	'translate-checks-escape'             => 'The following escapes may be accidental: <strong>$1</strong>',
@@ -547,6 +549,7 @@ This warning indicates that the namespace in the translation does not match the 
 * $2 is the number of parameters used in the translated message.',
 	'translate-checks-malformed' => 'Warning message from automated syntax check for translators. Parameters:
 * $1 is ...',
+
 	'translate-pref-nonewsletter' => "Option in [[Special:Preferences]], 'Misc' tab.",
 	'translate-pref-editassistlang' => 'Used in [[Special:Preferences]] under the {{msg-mw|prefs-editing}} tab.',
 	'prefs-translate' => 'Caption of a section at [[Special:Preferences#prefsection-3|Special:Preferences]]',
@@ -760,6 +763,10 @@ Additional parameters:
 * $2 is the edit summary that was provided.',
 	'translate-gethelp' => 'Link to some Translate help page or tutorial.
 {{Identical|Help}}',
+	'translate-checks-plural-forms' => 'Warning message from automated syntax check for translators. Parameters:
+* $1 is number of forms provided
+* $2 is number of forms MediaWiki supports for the language in question',
+	'translate-checks-plural-dupe' => 'Warning message from automated syntax check for translators.',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)

@@ -112,6 +112,7 @@ class CoreMessageGroup extends MessageGroupOld {
 		$checker = new MediaWikiMessageChecker( $this );
 		$checker->setChecks( array(
 			array( $checker, 'pluralCheck' ),
+			array( $checker, 'pluralFormsCheck' ),
 			array( $checker, 'wikiParameterCheck' ),
 			array( $checker, 'wikiLinksCheck' ),
 			array( $checker, 'XhtmlCheck' ),
