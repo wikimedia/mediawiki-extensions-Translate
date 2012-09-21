@@ -230,6 +230,7 @@ Failures will be logged in the [[Special:Log/pagetranslation|page translation lo
  * @author Darth Kule
  * @author EugeneZelenko
  * @author Fryed-peach
+ * @author Liangent
  * @author Lloffiwr
  * @author Mormegil
  * @author Nemo bis
@@ -274,7 +275,7 @@ $3 is an URL.',
 	'tpt-rev-discourage-tooltip' => 'Tooltip for page action link text in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-rev-encourage-tooltip' => 'Tooltip for page action link text in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'translate-tag-markthisagain' => '"has changes" is to be understood as "has been altered/edited"',
-	'translate-tag-hasnew' => '"has changes" is to be understood as "has been altered/edited"',
+	'translate-tag-hasnew' => '"has changes" is to be understood as "has been altered/edited". $1 is a URL to view changes.',
 	'tpt-languages-legend' => 'The caption of a language selector displayed using <code>&lt;languages /&gt;</code>, e.g. on [[Project list]].',
 	'tpt-languages-separator' => '{{optional}}',
 	'tpt-languages-zero' => 'Tooltip for a link in &lt;language /> when language is included because it is a priority language, but translation does not yet exists. It links directly to the translation view.',
@@ -6577,6 +6578,7 @@ $messages['nn'] = array(
 	'tpt-sections-deleted' => 'Sletta omsetjingseiningar',
 	'tpt-sections-template' => 'Mal for omsetjingsside',
 	'tpt-badtitle' => 'Det gjevne sidenamnet ($1) er ikkje ein gyldig tittel',
+	'tpt-nosuchpage' => 'Sida $1 finst ikkje',
 	'tpt-oldrevision' => '$2 er ikkje den siste versjonen av sida [[$1]].
 Berre siste versjonar kan verta markert for omsetjing.',
 	'tpt-notsuitable' => 'Side $1 er ikkje høveleg for omsetjing.
@@ -6588,12 +6590,36 @@ Sjekk at sida er merkt med <nowiki><translate></nowiki>-merke og har ein gyldig 
 	'tpt-already-marked' => 'Den siste versjonen av denne sida har allereie vorte markert for omsetjing.',
 	'tpt-list-nopages' => 'Ingen sider er markerte for omsetjing, eller klar til å verta markert for omsetjing.',
 	'tpt-old-pages' => 'Ein versjon av {{PLURAL:$1|denne sida|desse sidene}} er vorten merkt for omsetjing.',
-	'translate-tag-translate-link-desc' => 'Set om denne sida',
+	'tpt-rev-mark' => 'merk for omsetjing',
+	'tpt-rev-unmark-tooltip' => 'Fjerna sida frå omsetjing.',
+	'translate-tag-translate-link-desc' => 'Set om sida',
 	'translate-tag-markthis' => 'Merk denne sida for omsetjing',
 	'tpt-translation-intro-fuzzy' => 'Utdaterte omsetjingar er merkte på dette viset.',
 	'tpt-languages-legend' => 'Andre språk:',
 	'tpt-render-summary' => 'Oppdatering for å svara til ny versjon av kjeldesida',
 	'tpt-download-page' => 'Eksporter side med omsetjingar',
+	'tpt-aggregategroup-add' => 'Legg til',
+	'tpt-aggregategroup-save' => 'Lagra',
+	'tpt-aggregategroup-new-name' => 'Namn:',
+	'pt-log-header' => 'Logg over handlingar i sideomsetjingssystemet',
+	'pt-log-name' => 'Sideomsetjingslogg',
+	'pt-log-mark' => '{{GENDER:$2|merkte}} versjon $3 av sida «[[:$1]]» for omsetjing',
+	'pt-log-unmark' => '{{GENDER:$2|fjerna}} sida «[[:$1]]» frå omsetjing',
+	'pt-movepage-list-pages' => 'Liste over sider som skal flyttast',
+	'pt-movepage-list-translation' => 'Omsetjingssider',
+	'pt-movepage-list-other' => 'Andre undersider',
+	'pt-movepage-list-count' => 'Totalt {{PLURAL:$1|éi side|$1 sider}} å flytta.',
+	'pt-movepage-legend' => 'Flytt side som kan setjast om',
+	'pt-movepage-current' => 'Namn no:',
+	'pt-movepage-new' => 'Nytt namn:',
+	'pt-movepage-reason' => 'Årsak:',
+	'pt-movepage-subpages' => 'Flytt alle undersider',
+	'pt-movepage-action-check' => 'Sjå om flyttinga er mogeleg',
+	'pt-movepage-action-perform' => 'Utfør flyttinga',
+	'pt-movepage-action-other' => 'Endra mål',
+	'pt-deletepage-current' => 'Sidenamn:',
+	'pt-deletepage-reason' => 'Årsak:',
+	'pt-deletepage-list-other' => 'Andre undersider',
 );
 
 /** Occitan (occitan)
@@ -9646,7 +9672,7 @@ $messages['zh-hans'] = array(
 	'translate-tag-translate-link-desc' => '翻译本页',
 	'translate-tag-markthis' => '标记此页面将进行翻译',
 	'translate-tag-markthisagain' => '此页面<span class="plainlinks">[$2 最近被标记进行翻译]</span>以来，已经过一些<span class="plainlinks">[$1 更改]</span>。',
-	'translate-tag-hasnew' => '此页面有未被标记进行翻译的<span class="plainlinks">[$1更改]</span>。',
+	'translate-tag-hasnew' => '此页面有未被标记进行翻译的<span class="plainlinks">[$1 更改]</span>。',
 	'tpt-translation-intro' => '本页是页面[[$2]]的<span class="plainlinks">[$1 翻译版本]</span>，翻译工作已完成$3%。',
 	'tpt-translation-intro-fuzzy' => '已过时的翻译就这样标记。',
 	'tpt-languages-legend' => '其他语言：',
@@ -9825,7 +9851,7 @@ $messages['zh-hant'] = array(
 	'translate-tag-translate-link-desc' => '翻譯本頁',
 	'translate-tag-markthis' => '標記此頁面的翻譯',
 	'translate-tag-markthisagain' => '此頁面<span class="plainlinks">[$2 最近被標記進行翻譯]</span>以來，已經過一些<span class="plainlinks">[$1 更改]</span>。',
-	'translate-tag-hasnew' => '此頁面有未被標記進行翻譯的<span class="plainlinks">[$1更改]</span>。',
+	'translate-tag-hasnew' => '此頁面有未被標記進行翻譯的<span class="plainlinks">[$1 更改]</span>。',
 	'tpt-translation-intro' => '此頁面是[[$2]]頁面的<span class="plainlinks">[$1 翻譯版本]</span>，而該翻譯工作已經$3%完成。',
 	'tpt-translation-intro-fuzzy' => '像這樣標記為過時的翻譯。',
 	'tpt-languages-legend' => '其他語言：',

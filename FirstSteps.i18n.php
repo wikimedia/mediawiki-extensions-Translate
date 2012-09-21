@@ -774,7 +774,7 @@ $messages['diq'] = array(
 	'translate-fs-signup-title' => 'Qeyd bı',
 	'translate-fs-settings-title' => 'Tercihanê cı saz ke',
 	'translate-fs-userpage-title' => 'Pela karberiya cı vıraze',
-	'translate-fs-target-title' => 'Açarnayışi rê dest pêke!',
+	'translate-fs-target-title' => 'Açarnayışi rê serokne!',
 	'translate-fs-selectlanguage' => 'Zıwan berzê cı',
 	'translate-fs-settings-planguage' => 'Zıwanê dıyın:',
 	'translate-fs-settings-slanguage' => 'Asistan zıwan $1:',
@@ -2609,7 +2609,14 @@ Als u geen nieuwsbrieven wilt ontvangen, dan kunt u dit aangeven in het tabblad 
  * @author Njardarlogar
  */
 $messages['nn'] = array(
+	'firststeps' => 'Dei fyrste stega',
+	'translate-fs-selectlanguage' => 'Vel eit språk',
+	'translate-fs-userpage-level-N' => 'Morsmålet mitt er',
+	'translate-fs-userpage-level-5' => 'Eg er ein profesjonell omsetjar av',
 	'translate-fs-userpage-submit' => 'Opprett brukarsida mi',
+	'translate-fs-userpage-done' => 'Bra! No har du ei brukarside.',
+	'translate-fs-permissions-planguage' => 'Hovudspråk:',
+	'translate-fs-permissions-submit' => 'Send førespurnad',
 );
 
 /** Deitsch (Deitsch)
