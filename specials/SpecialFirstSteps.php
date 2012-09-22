@@ -43,6 +43,10 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$out->setPageTitle( $this->msg( 'translate-fs-pagetitle', $stepText ) );
 	}
 
+	/**
+	 * @param $step string
+	 * @return mixed
+	 */
 	protected function showSignup( $step ) {
 		$step_message = 'translate-fs-signup-title';
 		$out = $this->getOutput();
@@ -62,6 +66,8 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$returnto = $this->getTitle()->getPrefixedText();
 		$params = array( 'returnto' => $returnto , 'type' => 'signup' );
 		$out->redirect( $create->getLocalUrl( $params ) );
+
+		return false;
 	}
 
 	protected function showSettings( $step ) {

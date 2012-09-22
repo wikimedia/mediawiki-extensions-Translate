@@ -16,9 +16,8 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslate extends SpecialPage {
-
 	/**
-	 * @var Task
+	 * @var TranslateTask
 	 */
 	protected $task = null;
 

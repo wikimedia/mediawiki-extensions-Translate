@@ -28,8 +28,8 @@ abstract class TMessage {
 	/**
 	 * Creates new message object.
 	 *
-	 * @param $key Unique key identifying this message.
-	 * @param $definition The authoritave definition of this message.
+	 * @param $key string Unique key identifying this message.
+	 * @param $definition string The authoritave definition of this message.
 	 */
 	public function __construct( $key, $definition ) {
 		$this->key = $key;
@@ -50,13 +50,13 @@ abstract class TMessage {
 
 	/**
 	 * Get the message translation.
-	 * @return \types{\string,\null}
+	 * @return string|null
 	 */
 	abstract public function translation();
 
 	/**
 	 * Get the last translator of the message.
-	 * @return \types{\string,\null}
+	 * @return string|null
 	 */
 	abstract public function author();
 
@@ -70,7 +70,7 @@ abstract class TMessage {
 
 	/**
 	 * Returns the committed translation.
-	 * @return \types{\string,\null}
+	 * @return string|null
 	 */
 	public function infile() {
 		return $this->infile;
@@ -95,7 +95,7 @@ abstract class TMessage {
 
 	/**
 	 * Return all tags for this message;
-	 * @return \list{String}
+	 * @return array of strings
 	 */
 	public function getTags() {
 		return $this->tags;
@@ -135,7 +135,7 @@ class ThinMessage extends TMessage {
 
 	/**
 	 * Set the database row this message is based on.
-	 * @param $row \type{Database Result Row}
+	 * @param $row stdObject Database Result Row
 	 */
 	public function setRow( $row ) {
 		$this->row = $row;

@@ -1,4 +1,4 @@
-jQuery( document ).ready( function ( $ ) {
+( function ( $, mw ) {
 	"use strict";
 
 	function getApiParams( $target ) {
@@ -10,9 +10,31 @@ jQuery( document ).ready( function ( $ ) {
 		};
 	}
 
+	function dissociate( event ) {
+		var	$target = $( event.target ),
+			parentId = $target.parents( '.mw-tpa-group' ).data( 'id' ),
+			$select = $( '#mw-tpa-groupselect-' + parentId );
+
+		function successFunction( data, textStatus ) {
+			if ( data.error ) {
+				alert( data.error.info );
+			}  else {
+				$( '<option>', { value: $target.data( 'groupid' ) } )
+					.text( $target.siblings( 'a' ).text() )
+					.appendTo( $select );
+				$target.parent( 'li' ).remove();
+			}
+		}
+
+		var params = $.extend( getApiParams( $target ), {
+			'do' : 'dissociate',
+			group: $target.data( 'groupid' )
+		} );
+		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
+	}
+
 	function associate( event ) {
-		var
-			$target = $( event.target ),
+		var	$target = $( event.target ),
 			parentId = $target.parents( '.mw-tpa-group' ).data( 'id' ),
 			$selected = $( '#mw-tpa-groupselect-' + parentId + ' option:selected' ),
 			subgroupId = $selected.val(),
@@ -50,34 +72,8 @@ jQuery( document ).ready( function ( $ ) {
 		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 	}
 
-	function dissociate( event ) {
-		var
-			$target = $( event.target ),
-			parentId = $target.parents( '.mw-tpa-group' ).data( 'id' ),
-			$select = $( '#mw-tpa-groupselect-' + parentId );
-
-		function successFunction( data, textStatus ) {
-			if ( data.error ) {
-				alert( data.error.info );
-			}  else {
-				$( '<option>', { value: $target.data( 'groupid' ) } )
-					.text( $target.siblings( 'a' ).text() )
-					.appendTo( $select );
-				$target.parent( 'li' ).remove();
-			}
-		}
-
-		var params = $.extend( getApiParams( $target ), {
-			'do' : 'dissociate',
-			group: $target.data( 'groupid' )
-		} );
-		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
-	}
-
 	function removeGroup( event ) {
-		var
-			$target = $( event.target ),
-			parentId = $target.parent( '.mw-tpa-group' ).data( 'groupid' );
+		var	$target = $( event.target );
 
 		function successFunction ( data, textStatus ) {
 			if ( data.error ) {
@@ -102,13 +98,15 @@ jQuery( document ).ready( function ( $ ) {
 	} );
 
 	$( '#tpt-aggregategroups-save' ). on ( "click", function( event ){
-		var aggregateGroupName = $( 'input.tp-aggregategroup-add-name' ).val();
-		var aggregateGroupDesc = $( 'input.tp-aggregategroup-add-description' ).val();
+		var aggGroupNameInputName = $( 'input.tp-aggregategroup-add-name' ),
+			aggGroupNameInputDesc = $( 'input.tp-aggregategroup-add-description' ),
+			aggregateGroupName = aggGroupNameInputName.val(),
+			aggregateGroupDesc = aggGroupNameInputDesc.val();
 
 		// Empty the fields. If they are not emptied, then when another group
 		// is added, the values will appear again. Bug 36296.
-		$( 'input.tp-aggregategroup-add-name' ).val( '' );
-		$( 'input.tp-aggregategroup-add-description' ).val( '' );
+		aggGroupNameInputName.val( '' );
+		aggGroupNameInputDesc.val( '' );
 
 		var $select = $( 'div.mw-tpa-group select' );
 
@@ -153,5 +151,5 @@ jQuery( document ).ready( function ( $ ) {
 			format: "json"
 		};
 		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
-	} )
-} );
+	} );
+} ( jQuery, mediaWiki ) );

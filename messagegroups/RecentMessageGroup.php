@@ -87,7 +87,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 	}
 
 	/**
-	 * Subpage language of any in the title is not used.
+	 * Subpage language code, if any in the title, is ignored.
 	 */
 	public function getMessageContent( MessageHandle $handle ) {
 		$groupId = MessageIndex::getPrimaryGroupId( $handle );
@@ -95,5 +95,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 		if ( $group ) {
 			return $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
 		}
+
+		throw new MWException( 'Could not find group for ' . $handle->getKey() );
 	}
 }

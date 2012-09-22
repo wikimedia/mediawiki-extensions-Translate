@@ -156,7 +156,6 @@ $wgAutoloadClasses['WritableTTMServer'] = "$dir/ttmserver/Interfaces.php";
 $wgAutoloadClasses['DatabaseTTMServer'] = "$dir/ttmserver/DatabaseTTMServer.php";
 $wgAutoloadClasses['FakeTTMServer'] = "$dir/ttmserver/FakeTTMServer.php";
 $wgAutoloadClasses['RemoteTTMServer'] = "$dir/ttmserver/RemoteTTMServer.php";
-$wgAutoloadClasses['SharedDatabaseTTMServer'] = "$dir/ttmserver/SharedDatabaseTTMServer.php";
 $wgAutoloadClasses['SolrTTMServer'] = "$dir/ttmserver/SolrTTMServer.php";
 $wgAutoloadClasses['TTMServer'] = "$dir/ttmserver/TTMServer.php";
 /**@}*/

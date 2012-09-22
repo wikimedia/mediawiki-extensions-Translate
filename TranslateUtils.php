@@ -40,7 +40,7 @@ class TranslateUtils {
 	/**
 	 * Splits page name into message key and language code.
 	 * @param $text \string
-	 * @return Array \type{Tuple[String,String]} Key and language code.
+	 * @return array \type{Tuple[String,String]} Key and language code.
 	 * @todo Handle names without slash.
 	 */
 	public static function figureMessage( $text ) {
