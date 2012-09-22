@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH///pc\u003d",
+        "filename": "ffs/JsonFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-09-22T17:25:16Z",
+      "side": 1,
+      "message": "Do we have the flexibility of authors can be single string or array?",
+      "revId": "c94fb15cdac37ff6b943ee6fe2d1ea7d8b7054bf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
