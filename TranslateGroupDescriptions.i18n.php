@@ -2877,6 +2877,13 @@ $messages['uk'] = array(
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] є багатоплатформним застосунком для мобільних та планшетних пристроїв, який призначено для читання Вікіпедії та дописування до неї',
 );
 
+/** Uzbek (oʻzbekcha)
+ * @author CoderSI
+ */
+$messages['uz'] = array(
+	'translate-group-desc-mediawikicore' => "Ushbu xabarlar guruhi MediaWiki ({{CURRENTVERSION}})ning joriy alfa-versiyasida foydalanilayotgan xabarlarni o'z ichiga oladi",
+);
+
 /** Veps (vepsän kel’)
  * @author Игорь Бродский
  */

@@ -9307,6 +9307,13 @@ $messages['ur'] = array(
 	'pt-deletepage-list-section' => 'سیکشن کے صفحات',
 );
 
+/** Uzbek (oʻzbekcha)
+ * @author CoderSI
+ */
+$messages['uz'] = array(
+	'aggregategroups' => 'Agregat guruhlar',
+);
+
 /** vèneto (vèneto)
  * @author Candalua
  */
