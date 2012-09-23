@@ -9,9 +9,9 @@
  */
 
 /**
- * JsonFFS implements message format where messages as encoded
- * as key-values in JSON objects. The format is extended to
- * support author information under special @metadata key.
+ * JsonFFS implements a message format where messages are encoded
+ * as key-value pairs in JSON objects. The format is extended to
+ * support author information under the special @metadata key.
  *
  * @ingroup FFS
  * @since 2012-09-21

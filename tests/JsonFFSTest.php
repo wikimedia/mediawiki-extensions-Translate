@@ -48,24 +48,36 @@ class JsonFFSTest extends MediaWikiTestCase {
 
 		$file1 =
 <<<JSON
-{"key": "value"}
+{
+	"one": "jeden",
+	"two": "dwa",
+	"three": "trzy"
+}
 JSON;
 
 		$values[] = array(
-			array( 'key' => 'value' ),
+			array(
+				'one' => 'jeden',
+				'two' => 'dwa',
+				'three' => 'trzy',
+			),
 			array(),
 			$file1,
 		);
 
 		$file2 =
 <<<JSON
-{ "@metadata": { "authors": ["A", "B"] },
-"key": "value"}
+{
+	"@metadata": {
+		"authors": ["Niklas", "Amir"]
+	},
+	"word": "слово"
+}
 JSON;
 
 		$values[] = array(
-			array( 'key' => 'value' ),
-			array( 'A', 'B' ),
+			array( 'word' => 'слово' ),
+			array( 'Niklas', 'Amir' ),
 			$file2,
 		);
 
