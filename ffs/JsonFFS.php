@@ -17,10 +17,18 @@
  * @since 2012-09-21
  */
 class JsonFFS extends SimpleFFS {
+	/**
+	 * @param $data
+	 * @return bool
+	 */
 	public static function isValid( $data ) {
 		return is_array( FormatJSON::decode( $data, $asArray = true ) );
 	}
 
+	/**
+	 * @param array $data
+	 * @return array
+	 */
 	public function readFromVariable( $data ) {
 		$messages = (array) FormatJSON::decode( $data, $asArray = true );
 		$authors = array();
@@ -37,15 +45,25 @@ class JsonFFS extends SimpleFFS {
 		);
 	}
 
+	/**
+	 * @param MessageCollection $collection
+	 * @return string
+	 */
 	protected function writeReal( MessageCollection $collection ) {
 		$messages = array();
+		$mangler = $this->group->getMangler();
 
+		/**
+		 * @var $m ThinMessage
+		 */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
-			if ( !$m->fuzzy() ) {
-				$key = $mangler->unmangle( $key );
-				$messages[$key] = $value;
+			if ( $m->hasTag( 'fuzzy' ) ) {
+				$value = str_replace( TRANSLATE_FUZZY, '', $value );
 			}
+
+			$key = $mangler->unmangle( $key );
+			$messages[$key] = $value;
 		}
 
 		$authors = $collection->getAuthors();
