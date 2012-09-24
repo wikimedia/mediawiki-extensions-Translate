@@ -7,7 +7,7 @@
  * @ingroup Script Stats
  * @author Niklas Laxstrom
  * @author Siebrand Mazeland
- * @copyright Copyright © 2007-2010, Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2007-2012, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -392,9 +392,9 @@ foreach ( $groups as $groupName => $g ) {
 			continue;
 		}
 
-		$total = $stats[MessageGroupStats::TOTAL];
-		$translated = $stats[MessageGroupStats::TRANSLATED];
-		$fuzzy = $stats[MessageGroupStats::FUZZY];
+		$total = $stats[$code][MessageGroupStats::TOTAL];
+		$translated = $stats[$code][MessageGroupStats::TRANSLATED];
+		$fuzzy = $stats[$code][MessageGroupStats::FUZZY];
 
 		$rows[$code][] = array( false, $translated, $total );
 
