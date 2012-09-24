@@ -29,7 +29,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 	public function __construct() {
 		SpecialPage::__construct( 'MessageGroupStats' );
-		$this->total = MessageGroupStats::getEmptyStats();
+		$this->totals = MessageGroupStats::getEmptyStats();
 	}
 
 	/// Overwritten from SpecialPage
