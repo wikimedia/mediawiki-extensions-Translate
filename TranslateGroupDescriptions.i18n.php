@@ -2882,6 +2882,7 @@ $messages['uk'] = array(
  */
 $messages['uz'] = array(
 	'translate-group-desc-mediawikicore' => "Ushbu xabarlar guruhi MediaWiki ({{CURRENTVERSION}})ning joriy alfa-versiyasida foydalanilayotgan xabarlarni o'z ichiga oladi",
+	'translate-group-desc-mediawikimostused' => "Ushbu xabarlar guruhi MediaWikida [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 tadan ziyod juda ko'p ishlatiladigan xabarlardan] tashkil topgan",
 );
 
 /** Veps (vepsän kel’)
