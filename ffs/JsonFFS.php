@@ -43,7 +43,7 @@ class JsonFFS extends SimpleFFS {
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
 			if ( !$m->fuzzy() ) {
-				$key = $mangler->unmangle( $key );
+				$key = $this->group->getMangler()->unmangle( $key );
 				$messages[$key] = $value;
 			}
 		}
