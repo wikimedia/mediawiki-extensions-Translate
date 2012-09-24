@@ -3,7 +3,7 @@
  * API module for marking translations as reviewed
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2011, Niklas Laxström
+ * @copyright Copyright © 2011-2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -17,56 +17,101 @@ class ApiTranslationReview extends ApiBase {
 	protected static $salt = 'translate-messagereview';
 
 	public function execute() {
-		global $wgUser;
-		if ( !$wgUser->isallowed( self::$right ) ) {
-			$this->dieUsage( 'Permission denied', 'permissiondenied' );
-		}
-
 		$params = $this->extractRequestParams();
-
 		$revision = Revision::newFromId( $params['revision'] );
+
 		if ( !$revision ) {
 			$this->dieUsage( 'Invalid revision', 'invalidrevision' );
 		}
 
-		$title = $revision->getTitle();
-		$handle = new MessageHandle( $title );
-		if ( !$handle->isValid() ) {
-			$this->dieUsage( 'Unknown message', 'unknownmessage' );
+		$error = self::getReviewBlockers( $this->getUser(), $handle, $revision );
+		switch ( $error ) {
+		case '':
+			// Everything is okay
+			break;
+		case 'permissiondenied':
+			$this-dieUsage( 'Permission denied', $error );
+		case 'unknownmessage':
+			$this->dieUsage( 'Unknown message', $error );
+		case 'owntranslation':
+			$this->dieUsage( 'Cannot review own translations', $error );
+		case 'fuzzymessage':
+			$this->dieUsage( 'Cannot review fuzzy translations', $error );
+		default:
+			$this->dieUsage( 'Unknown error', $error );
 		}
 
-		if ( $handle->isFuzzy() ) {
-			$this->dieUsage( 'Cannot review fuzzy translations', 'fuzzymessage' );
-		}
-
-		if ( $revision->getUser() == $wgUser->getId() ) {
-			$this->dieUsage( 'Cannot review own translations', 'owntranslation' );
-		}
-
-		$dbw = wfGetDB( DB_MASTER );
-		$table = 'translate_reviews';
-		$row = array(
-			'trr_user' => $wgUser->getId(),
-			'trr_page' => $revision->getPage(),
-			'trr_revision' => $revision->getId(),
-		);
-		$options = array( 'IGNORE' );
-		$dbw->insert( $table, $row, __METHOD__, $options );
-		if ( !$dbw->affectedRows() ) {
+		$ok = self::doReview( $this->getUser(), $revision );
+		if ( !$ok ) {
 			$this->setWarning( 'Already marked as reviewed by you' );
-		} else {
-			$logger = new LogPage( 'translationreview' );
-			$params = array( $revision->getId() );
-			$logger->addEntry( 'message', $title, null, $params, $wgUser );
 		}
 
 		$output = array( 'review' => array(
-			'title' => $title->getPrefixedText(),
+			'title' => $revision->getTitle()->getPrefixedText(),
 			'pageid' => $revision->getPage(),
 			'revision' => $revision->getId()
 		) );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
+	}
+
+	/**
+	 * Records a translation review action in the database. Does not
+	 * do any checks.
+	 * @return bool True if review was recorder, false if not.
+	 * @since 2012-09-24
+	 */
+	public static function doReview( User $user, Revision $revision, $comment = null ) {
+		$dbw = wfGetDB( DB_MASTER );
+		$table = 'translate_reviews';
+		$row = array(
+			'trr_user' => $user->getId(),
+			'trr_page' => $revision->getPage(),
+			'trr_revision' => $revision->getId(),
+		);
+		$options = array( 'IGNORE' );
+		$dbw->insert( $table, $row, __METHOD__, $options );
+
+		if ( !$dbw->affectedRows() ) {
+			return false;
+		} else {
+			$title = $revision->getTitle();
+
+			$logger = new LogPage( 'translationreview' );
+			$params = array( $revision->getId() );
+			$logger->addEntry( 'message', $title, $comment, $params, $user );
+
+			$handle = new MessageHandle( $title );
+			MessageGroupStats::clear( $handle );
+			return true;
+		}
+	}
+
+	/**
+	 * Validates review action by checking permissions and other things.
+	 * @return string Error key or empty string if review is allowed.
+	 * @since 2012-09-24
+	 */
+	public static function getReviewBlockers( User $user, Revision $revision ) {
+		if ( !$user->isallowed( self::$right ) ) {
+			return 'permissiondenied';
+		}
+
+		$title = $revision->getTitle();
+		$handle = new MessageHandle( $title );
+		if ( !$handle->isValid() ) {
+			return 'unknownmessage';
+		}
+
+		if ( $revision->getUser() == $user->getId() ) {
+			return 'owntranslation';
+		}
+
+		if ( $handle->isFuzzy() ) {
+			return 'fuzzymessage';
+		}
+
+		return '';
 	}
 
 	public function isWriteMode() {

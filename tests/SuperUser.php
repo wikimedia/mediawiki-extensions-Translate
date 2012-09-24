@@ -3,13 +3,11 @@
 /**
  * Just call SuperUser when you need to be able to do everything.
  */
-class SuperUser extends User {
-	public function getId() {
-		return 666;
-	}
+class SuperUser extends TestUser {
 
-	public function getName() {
-		return 'SuperUser';
+	function __construct( ) {
+		parent::__construct( 'SuperUser' );
+		$this->setId( 666 );
 	}
 
 	public function isAllowed( $right = '' ) {

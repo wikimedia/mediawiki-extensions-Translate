@@ -234,3 +234,11 @@ $wgAutoloadClasses['WikiMessageGroup'] = "$dir/messagegroups/WikiMessageGroup.ph
 $wgAutoloadClasses['WikiPageMessageGroup'] = "$dir/messagegroups/WikiPageMessageGroup.php";
 $wgAutoloadClasses['WorkflowStatesMessageGroup'] = "$dir/messagegroups/WorkflowStatesMessageGroup.php";
 /**@}*/
+
+/**
+ * @name   Test related
+ * @{
+ */
+$wgAutoloadClasses['TranslateTestCase'] = "$dir/tests/TranslateTestCase.php";
+$wgAutoloadClasses['SuperUser'] = "$dir/tests/SuperUser.php";
+/**@}*/
