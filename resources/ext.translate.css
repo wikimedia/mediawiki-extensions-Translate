@@ -15,6 +15,7 @@
 	border-collapse: collapse;
 	line-height: 1.2;
 	width: 100%;
+	clear: both;
 }
 
 .mw-pt-languages-label {
