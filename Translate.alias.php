@@ -465,7 +465,7 @@ $specialPageAliases['ksh'] = array(
 	'LanguageStats' => array( 'Shtatistike_vu_de_Shprooche' ),
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬) */
+/** Kurdish (Latin script) (Kurdî (latînî)‎) */
 $specialPageAliases['ku-latn'] = array(
 	'Translate' => array( 'Wergerîne' ),
 	'Translations' => array( 'Werger' ),
@@ -589,7 +589,7 @@ $specialPageAliases['nah'] = array(
 	'Translate' => array( 'Tlahtōlcuepāz', 'Traducir' ),
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬) */
+/** Norwegian Bokmål (norsk (bokmål)‎) */
 $specialPageAliases['nb'] = array(
 	'Translate' => array( 'Oversett' ),
 	'Magic' => array( 'Avansert_oversettelse', 'Avansert_oversetting', 'Magi' ),
@@ -644,7 +644,7 @@ $specialPageAliases['nl'] = array(
 	'AggregateGroups' => array( 'SamengevoegdeGroepen' ),
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬) */
+/** Norwegian Nynorsk (norsk (nynorsk)‎) */
 $specialPageAliases['nn'] = array(
 	'Translate' => array( 'Set_om' ),
 	'Translations' => array( 'Omsetjingar' ),
@@ -752,7 +752,7 @@ $specialPageAliases['sq'] = array(
 	'Translate' => array( 'Përkthe' ),
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬) */
+/** Serbian (Cyrillic script) (српски (ћирилица)‎) */
 $specialPageAliases['sr-ec'] = array(
 	'Translate' => array( 'Преведи' ),
 	'Magic' => array( 'Напредно_превођење' ),
@@ -907,7 +907,7 @@ $specialPageAliases['yue'] = array(
 	'MyLanguage' => array( '我個話' ),
 );
 
-/** Simplified Chinese (‪中文（简体）‬) */
+/** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'Translate' => array( '翻译' ),
 	'Magic' => array( '高级翻译' ),
@@ -922,7 +922,7 @@ $specialPageAliases['zh-hans'] = array(
 	'MyLanguage' => array( '我的语言' ),
 );
 
-/** Traditional Chinese (‪中文（繁體）‬) */
+/** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
 	'Translate' => array( '翻譯' ),
 	'Magic' => array( '高級翻譯' ),

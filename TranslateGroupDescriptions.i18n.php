@@ -2004,7 +2004,7 @@ $messages['nl'] = array(
 	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] is een mobiele toepassing voor het bijdragen aan het[[:meta:Wiki Loves Monuments|Wiki Loves Monuments-project]]',
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
+/** Norwegian Nynorsk (norsk (nynorsk)‎)
  * @author Harald Khan
  * @author Njardarlogar
  */
@@ -2158,9 +2158,12 @@ $messages['pl'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] jest opartym na otwartym kodzie serwerem mikroblogów',
 	'translate-group-desc-statusnet-plugin' => 'Te komunikaty są częścią wtyczki do [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Grupa wiadomości dla [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition] - systemu i18n narzędzia [http://toolserver.org Toolserver] (·<span class="plainlinks">[[Translating talk:Toolserver|wsparcie]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition szczegóły techniczne]</span>)',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] jest usługą wyświetlającą trasy wycieczek pieszych, rowerowych, kolarstwa górskiego i łyżworolkowych na całym świecie. Na licencji GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pozwala szybko odnaleźć autorów strony w Wikimedia wiki.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] jest projektem udostępniania offline, wyłącznie tekstowej wersji Wikipedii dla uradzeń mobilnych.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] jest wieloplatformową aplikacją na telefony i tablety do czytania i dodawania treści do Wikipedii',
+	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] jest wieloplatformową aplikacją na telefony i tablety do czytania i dodawania treści do Wiktionary',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] jest aplikacją mobilną do wzbogacania [[:meta:Wiki Loves Monuments|projektu Wiki Kocha Zabytki]]',
 );
 
 /** Piedmontese (Piemontèis)

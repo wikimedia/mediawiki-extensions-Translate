@@ -877,6 +877,7 @@ Bago mamarkahan nin bersyon para sa pagdakit-taramon, aramon mo na an mga kaliwa
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Ining pahina|Ining mga pahina}} dae pinagtutugutan sa dagos na pagdakit-taramon.',
 	'tpt-select-prioritylangs' => 'Lista na pinagpalaen nin kama kan mga koda nin pangenot na lengguwahe:',
 	'tpt-select-prioritylangs-force' => 'Dae pinagtutugot na mga pagdakit-taramon sa ibang mga lengguwahe kesa pangenot na mga lengguwahe',
+	'tpt-select-prioritylangs-reason' => 'Kadahilanan:',
 	'tpt-sections-prioritylangs' => 'Pangenot na mga lengguwahe',
 	'tpt-rev-mark' => 'markahan para sa pagdakit-taramon',
 	'tpt-rev-unmark' => 'haleon gikan sa pagdakit-taramon',
@@ -886,7 +887,57 @@ Bago mamarkahan nin bersyon para sa pagdakit-taramon, aramon mo na an mga kaliwa
 	'tpt-rev-unmark-tooltip' => 'Haleon ining pahina para sa pagdakit-taramon.',
 	'tpt-rev-discourage-tooltip' => 'Dae pagtugutan an dagos na pagdadakit-taramon kaining pahina.',
 	'tpt-rev-encourage-tooltip' => 'Balikon ining pahina sa normal na pagdakit-taramon.',
+	'translate-tag-translate-link-desc' => 'Ipagdakit-taramon ining pahina',
+	'translate-tag-markthis' => 'Markahan ining pahina para ipagdakit-taramon',
+	'translate-tag-markthisagain' => 'Ining pahina igwa nin <span class="plainlinks">[$1 mga kaliwatan]</span> poon pa kaitong huri ining <span class="plainlinks">[$2 pinagmarkahan para ipagdakit-taramon]</span>.',
+	'translate-tag-hasnew' => 'Ining pahina igwa nin <span class="plainlinks">[$1 mga kaliwatan]</span> na dae pinagmarkahan para ipagdakit-taramon.',
+	'tpt-translation-intro' => 'Ining pahina sarong <span class="plainlinks">[$1 pinagdakit-taramon na bersyon]</span> kan pahina [[$2]] asin an pagdakit-taramon na $3% nakumpleto na.',
+	'tpt-translation-intro-fuzzy' => 'An luwas sa panahon na mga pinagdakit-taramon pinagmarkahan nin arog kaini.',
+	'tpt-languages-legend' => 'Ibang mga lengguwahe:',
+	'tpt-languages-zero' => 'Magpoon sa pagdakit-taramon para sa lengguwaheng ini',
+	'tpt-target-page' => 'Ining pahina dae puwedeng manwal na pagpanumpayan.
+Ining pahina sarong dakit-taramon kan pahina [[$1]] asin an pinagdakit-taramon mapuwedeng panumbayan na gamit an [$2 an gamit sa pagdakit-taramon].',
+	'tpt-unknown-page' => 'Ining espasyong ngaran nakareserba para sa pahina kan laman nin mga dakit-taramon.
+An pahina na saimong boot na pagliliwaton garo habong magtutugot sa arinman na pahinang markado para ipagdakit-taramon.',
+	'tpt-translation-restricted' => 'An pagdakit-taramon kaining pahina sa lengguwaheng ini pinagpupugulan kan administrador nin pagdakit-taramon.
+
+Rason: $1',
+	'tpt-discouraged-language-force' => "'''Ining pahina dae puwedeng ipagdakit-taramon sa $2.'''
+
+An administrador kan pagdakit-taramon nagdesisyon na ining pahina mapuwedeng sanang ipagdakit-taramon sa $3.",
+	'tpt-discouraged-language' => "'''An pagdadakit-taramon sa $2 bakong prayoridad para sa pahinang ini.'''
+
+An administrador kan pagdakit-taramon nagdesisyon na itutok an gibong pagdakit-taramon sa $3.",
+	'tpt-discouraged-language-reason' => 'Rason: $1',
+	'tpt-priority-languages' => 'An administrador kan pagdakit-taramon ikinaag an prayoridad na mga lengguwahe para kaining grupo sa $1.',
+	'tpt-render-summary' => 'Panunumpayan tanganing ipagtugma sa baguhong bersyon kan ginikanang pahina',
+	'tpt-download-page' => 'Salimbagong pahina na igwang mga pinagdakit-taramon',
+	'aggregategroups' => 'Sinurumpay na mga grupo',
+	'tpt-aggregategroup-add' => 'Dugangan',
+	'tpt-aggregategroup-save' => 'Ipagtagama',
+	'tpt-aggregategroup-add-new' => 'Dugangan nin sarong baguhon na sinurumpay na grupo',
+	'tpt-aggregategroup-new-name' => 'An pangaran:',
+	'tpt-aggregategroup-new-description' => 'Paglaladawan (puwedeng mayo kaini):',
+	'tpt-aggregategroup-remove-confirm' => 'Segurado kan na gusto mong puraon ining sinurumpay na grupo?',
+	'tpt-aggregategroup-invalid-group' => 'An grupo bakong eksistido',
+	'pt-parse-open' => 'Bakong balansiyadong &lt;translate> marka.
+Panguyog sa pagdakit-taramon: <pre>$1</pre>',
+	'pt-parse-close' => 'Bakong balansiyadong &lt;/translate> marka.
+Panguyog sa pagdakit-taramon: <pre>$1</pre>',
+	'pt-parse-nested' => 'Pinagsalagang &lt;translate> mga yunit nin pagdakit-taramon dae itinutugot.
+Markang teksto: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Mga marka nin dagmangang yunit nin pagdakit-taramon para sa sarong yunit nin pagdakit-taramon.
+Teksto sa yunit nin pagdakit-taramon: <pre>$1</pre>',
+	'pt-shake-position' => 'Mga marka kan yunit nin dakit-taramon sa bakong pinag-aasahan na posisyon.
+Teksto sa yunit in pagdakit-taramon: <pre>$1</pre>',
 	'pt-shake-empty' => 'Mayong laman na yunit kan dakit-taramon para sa paramarka na "$1".',
+	'pt-log-header' => 'Magtala para sa mga aksyon na minasumpay sa sistema kan pahina nin dakit-taramon',
+	'pt-log-name' => 'Talaan kan dakit-taramong pahina',
+	'pt-log-mark' => '{{GENDER:$2|markado}} na rebisyon sa $3 kan pahina "[[:$1]]" para ipagdakit-taramon',
+	'pt-log-unmark' => '{{GENDER:$2|pinaghale}} na pahina "[[:$1]]" gikan sa dakit-taramon',
+	'pt-log-moveok' => '{{GENDER:$2|kumpletado}} pagbagong pangaran kan pahina na puwedeng maipagdakit-taramon na "%1" to $3',
+	'pt-log-movenok' => '{{GENDER:$2|naka-engkuwentro}} nin sarong problema habang binabalyo an "[[:$1]]" hanggan sa "[[:$3]]"',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|kumpletado}}ng pagpupura kan pahina na puwedeng maipagdakit-taramon sa "$1"',
 );
 
 /** Belarusian (беларуская)
@@ -6583,7 +6634,7 @@ Het verwijderen vindt niet per direct plaats, omdat het mogelijk is dat vele pag
 Fouten worden opgenomen in het [[Special:Log/pagetranslation|Logboek paginavertaling]] en deze moeten handmatig gecorrigeerd worden.",
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
+/** Norwegian Nynorsk (norsk (nynorsk)‎)
  * @author Eirik
  * @author Frokor
  * @author Gunnernett
@@ -9340,6 +9391,7 @@ $messages['ur'] = array(
  */
 $messages['uz'] = array(
 	'aggregategroups' => 'Agregat guruhlar',
+	'pt-log-name' => 'Sahifalarni tarjima qilish qaydlari',
 );
 
 /** vèneto (vèneto)
@@ -9633,7 +9685,7 @@ $messages['yi'] = array(
 	'pt-deletepage-lang-logreason' => 'טייל פון איבערזעצונג בלאט $1.',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Anakmalaysia
  * @author Chenxiaoqino
  * @author Gzdavidwong
@@ -9822,7 +9874,7 @@ $messages['zh-hans'] = array(
 失败操作记录于[[Special:Log/pagetranslation|页面翻译日志]]中并且需要手动修理。',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Anakmalaysia
  * @author Liangent
  * @author Mark85296341
