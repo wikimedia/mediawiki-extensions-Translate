@@ -94,7 +94,13 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		}
 
 		$title = Title::makeTitleSafe( $this->getNamespace(), "$key/$code" );
-		$rev = Revision::newFromTitle( $title );
+
+		// BC for MW 1.19 and older
+		if ( defined( 'Revision::READ_LATEST' ) ) {
+			$rev = Revision::newFromTitle( $title, false, Revision::READ_LATEST );
+		} else {
+			$rev = Revision::newFromTitle( $title );
+		}
 
 		if ( !$rev ) {
 			return null;
