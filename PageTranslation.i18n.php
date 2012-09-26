@@ -2977,6 +2977,7 @@ Virheet merkitään [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne t
  * @author Grondin
  * @author Houcinee1
  * @author IAlex
+ * @author Linedwell
  * @author Peter17
  * @author Purodha
  * @author Sherbrooke
@@ -3107,8 +3108,8 @@ Texte de la section : <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'La page de base cible a un titre incorrect.',
 	'pt-movepage-block-tp-exists' => 'La page de traduction cible [[:$2]] existe.',
 	'pt-movepage-block-tp-invalid' => 'Le titre de la page de traduction cible pour [[:$1]] serait incorrect (trop long ?).',
-	'pt-movepage-block-section-exists' => 'La page cible "[[:$2]]" pour la section existe.',
-	'pt-movepage-block-section-invalid' => 'Le titre de section de page cible pour "[[:$1]]" serait incorrect (trop long ?).',
+	'pt-movepage-block-section-exists' => 'La page cible « [[:$2]] » pour la section existe.',
+	'pt-movepage-block-section-invalid' => 'Le titre de section de page cible pour « [[:$1]] » serait incorrect (trop long ?).',
 	'pt-movepage-block-subpage-exists' => 'La sous-page cible [[:$2]] existe.',
 	'pt-movepage-block-subpage-invalid' => 'Le titre de la sous-page cible pour [[:$1]] serait incorrect (trop long ?).',
 	'pt-movepage-list-pages' => 'Liste des pages à déplacer',
@@ -8434,7 +8435,7 @@ $messages['sr-ec'] = array(
 	'pt-movepage-action-other' => 'Промени циљ',
 );
 
-/** Serbian (Latin script) (‪srpski (latinica)‬)
+/** Serbian (Latin script) (srpski (latinica)‎)
  * @author Michaello
  * @author Rancher
  */
@@ -8443,10 +8444,46 @@ $messages['sr-el'] = array(
 	'tpt-diff-old' => 'Prethodni tekst',
 	'tpt-diff-new' => 'Sledeći tekst',
 	'tpt-submit' => 'Označi ovu verziju za prevod',
+	'tpt-rev-mark' => 'označi za prevođenje',
+	'tpt-rev-unmark' => 'ukloni iz prevoda',
+	'tpt-rev-discourage' => 'nepreporučeno',
+	'tpt-rev-encourage' => 'vrati',
+	'tpt-rev-mark-tooltip' => 'Označi poslednju verziju stranice kao „za prevođenje“.',
+	'tpt-rev-unmark-tooltip' => 'Ukloni stranicu iz prevoda.',
+	'tpt-rev-discourage-tooltip' => 'Postavi stranicu kao nepreporučenu za daljnje prevođenje.',
+	'tpt-rev-encourage-tooltip' => 'Vrati stranicu za normalno prevođenje.',
 	'translate-tag-translate-link-desc' => 'Prevedite ovu stranu',
+	'translate-tag-markthis' => 'Označi stranicu kao „za prevođenje“',
 	'tpt-translation-intro' => 'Ova stranica je <span class="plainlinks">[$1 prevedeno izdanje]</span> stranice [[$2]]. Prevod je $3% završen.',
 	'tpt-languages-separator' => '&#160;•&#160;',
 	'pt-log-name' => 'Istorija prevoda stranice',
+	'pt-log-mark' => '{{GENDER:$2|je označio|je označila|je označio}} izmenu $3 stranice „[[:$1]]“ za prevod',
+	'pt-log-unmark' => '{{GENDER:$2|je uklonio|je uklonila|je uklonio}} stranicu „[[:$1]]“ iz prevoda',
+	'pt-log-moveok' => '{{GENDER:$2|je preimenovao|je preimenovala|je preimenovao}} prevodivu stranicu $1 u $3',
+	'pt-log-movenok' => '{{GENDER:$2|je naišao|je naišla|je naišao}} na problem pri premeštanju [[:$1]] u [[:$3]]',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|je obrisao|je obrisala|je obrisao}} prevodivu stranicu „$1“',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|je naišao|je naišla|je naišao}} na problem pri brisanju prevodive stranice „[[:$1]]“',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|je obrisao|je obrisala|je obrisao}} stranicu za prevod $1',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|je naišao|je naišla|je naišao}} na problem pri brisanju stranice za prevod „[[:$1]]“',
+	'pt-movepage-title' => 'Premeštanje prevodive stranice $1',
+	'pt-movepage-block-base-exists' => 'Ciljna osnovna stranica [[:$1]] postoji.',
+	'pt-movepage-block-base-invalid' => 'Cilj osnovne stranice ne predstavlja ispravan naslov.',
+	'pt-movepage-block-tp-exists' => 'Ciljna stranica za prevod [[:$2]] postoji.',
+	'pt-movepage-block-tp-invalid' => 'Naslov ciljne stranice za prevod za [[:$1]] bio bi neispravan (predugačak?).',
+	'pt-movepage-block-subpage-exists' => 'Ciljna podstranica [[:$2]] postoji.',
+	'pt-movepage-block-subpage-invalid' => 'Naslov ciljne podstranice za [[:$1]] bio bi neispravan (predugačak?).',
+	'pt-movepage-list-pages' => 'Spisak stranica za premeštanje',
+	'pt-movepage-list-translation' => 'Stranice za prevod',
+	'pt-movepage-list-other' => 'Druge podstranice',
+	'pt-movepage-list-count' => 'Ukupno $1 {{PLURAL:$1|stranica|stranice|stranica}} za premeštanje.',
+	'pt-movepage-legend' => 'Premesti prevodivu stranicu',
+	'pt-movepage-current' => 'Tekući naziv:',
+	'pt-movepage-new' => 'Novi naziv:',
+	'pt-movepage-reason' => 'Razlog:',
+	'pt-movepage-subpages' => 'Premesti sve podstranice',
+	'pt-movepage-action-check' => 'Proveri da li je premeštanje izvodljivo',
+	'pt-movepage-action-perform' => 'Premesti',
+	'pt-movepage-action-other' => 'Promeni cilj',
 );
 
 /** Seeltersk (Seeltersk)
@@ -9925,6 +9962,8 @@ $messages['zh-hant'] = array(
 	'tpt-other-pages' => '以下{{PLURAL:$1|此|這些}}頁面有舊版本被標記進行翻譯，
 但最新版本不得標記進行翻譯。',
 	'tpt-discouraged-pages' => '以下{{PLURAL:$1|此|這些}}頁面挫折更多翻譯。',
+	'tpt-select-prioritylangs' => '優先語言代碼的逗號分隔型列表',
+	'tpt-select-prioritylangs-force' => '防止向優先語言以外的語言的翻譯',
 	'tpt-select-prioritylangs-reason' => '原因：',
 	'tpt-sections-prioritylangs' => '優先語言',
 	'tpt-rev-mark' => '標記進行翻譯',
@@ -9947,13 +9986,27 @@ $messages['zh-hant'] = array(
 本頁面是[[$1]]頁面的翻譯版，可以使用[$2 翻譯工具]來更新該翻譯。',
 	'tpt-unknown-page' => '此命名空間是保留給內容頁面翻譯。
 您嘗試編輯的頁面似乎沒有對應任何被標記進行翻譯的頁面。',
+	'tpt-translation-restricted' => '此頁面到這種語言的翻譯，已被翻譯管理員禁止。
+
+原因：$1',
 	'tpt-discouraged-language-force' => "''''此頁面不能翻譯為 $2 。'''
 
 翻譯管理員限制只能把此頁為$3",
+	'tpt-discouraged-language' => '這種語言不在此頁的翻譯管理員所設置的優先語言之列。
+
+原因：$1',
 	'tpt-discouraged-language-reason' => '原因：$1',
+	'tpt-priority-languages' => '翻譯管理員已將該組需優先翻譯的語言設為$1。',
 	'tpt-render-summary' => '要匹配的源頁的新版本更新',
 	'tpt-download-page' => '匯出含翻譯的頁面',
+	'aggregategroups' => '聚合組',
+	'tpt-aggregategroup-add' => '添加',
 	'tpt-aggregategroup-save' => '儲存',
+	'tpt-aggregategroup-add-new' => '添加新的聚合組',
+	'tpt-aggregategroup-new-name' => '名稱：',
+	'tpt-aggregategroup-new-description' => '說明 （可選）：',
+	'tpt-aggregategroup-remove-confirm' => '確實要刪除此聚合組嗎？',
+	'tpt-aggregategroup-invalid-group' => '組別不存在',
 	'pt-parse-open' => '&lt;translate>標籤不平衡。
 翻譯模板：<pre>$1</pre>',
 	'pt-parse-close' => '&lt;/translate>標籤不平衡。
@@ -9975,6 +10028,13 @@ $messages['zh-hant'] = array(
 	'pt-log-delete-full-nok' => '當刪除[[:$1]]可翻譯頁面{{GENDER:$2|遇到}}問題',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|完成}}刪除$1翻譯頁面',
 	'pt-log-delete-lang-nok' => '當刪除[[:$1]]翻譯頁面{{GENDER:$2|遇到}}問題',
+	'pt-log-encourage' => '{{GENDER:$2|鼓勵}}翻譯頁面[[:$1]]',
+	'pt-log-discourage' => '{{GENDER:$2|不鼓勵}}翻譯頁面[[:$1]]',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|已移出}}可翻譯頁面[[:$1]]中的優先語言',
+	'pt-log-priority-langs' => '{{GENDER:$2|設定}}可翻譯頁面[[:$1]]的優先語言為$3。原因：$4',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|已限制}}可翻譯頁面的[[:$1]]的語言為$3。原因：$4',
+	'pt-log-aggregategroup-associate' => '已向聚合組$3{{GENDER:$2|添加了}}可翻譯頁面[[:$1]]',
+	'pt-log-aggregategroup-dissociate' => '已從聚合組$3{{GENDER:$2|刪除了}}可翻譯頁面[[:$1]]',
 	'pt-movepage-title' => '移動可翻譯頁面$1',
 	'pt-movepage-blockers' => '可翻譯頁面無法移動至新名稱，原因為以下這{{PLURAL:$1|個|些}}錯誤：',
 	'pt-movepage-block-base-exists' => '目標基頁 [[:$1]] 存在。',
@@ -9987,7 +10047,7 @@ $messages['zh-hant'] = array(
 	'pt-movepage-block-subpage-invalid' => '為[[:$1]]的目標子頁面的標題無效，可能因為字符太多。',
 	'pt-movepage-list-pages' => '移動到頁面的列表',
 	'pt-movepage-list-translation' => '翻譯網頁',
-	'pt-movepage-list-section' => '第頁',
+	'pt-movepage-list-section' => '翻譯單元頁面',
 	'pt-movepage-list-other' => '其他子頁面',
 	'pt-movepage-list-count' => '總計$1個頁面即將移動。',
 	'pt-movepage-legend' => '移動可翻譯頁面',
@@ -10021,7 +10081,7 @@ $messages['zh-hant'] = array(
 	'pt-deletepage-subpages' => '刪除所有子頁面',
 	'pt-deletepage-list-pages' => '若要刪除的頁面列表',
 	'pt-deletepage-list-translation' => '翻譯網頁',
-	'pt-deletepage-list-section' => '第頁',
+	'pt-deletepage-list-section' => '翻譯單元頁面',
 	'pt-deletepage-list-other' => '其他子頁面',
 	'pt-deletepage-list-count' => '總計$1個頁面即將刪除。',
 	'pt-deletepage-full-logreason' => '翻譯頁面的一部分 $1。',

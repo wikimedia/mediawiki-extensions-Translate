@@ -3731,7 +3731,7 @@ $messages['zh-hans'] = array(
 如果你不想收到通讯，你可以在[[Special:Preferences|选项]]"页面的{{int:prefs-personal}}"标签选择停止接收。',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Lauhenry
  * @author Mark85296341
  * @author Simon Shek
@@ -3740,6 +3740,7 @@ $messages['zh-hant'] = array(
 	'firststeps' => '第一步',
 	'firststeps-desc' => '讓用戶開始維基翻譯的[[Special:FirstSteps|引導頁面]]',
 	'translate-fs-pagetitle-done' => ' - 完成！',
+	'translate-fs-pagetitle-pending' => '- 待定',
 	'translate-fs-pagetitle' => '入門指導 - $1',
 	'translate-fs-signup-title' => '註冊',
 	'translate-fs-settings-title' => '設定你的偏好',
@@ -3752,13 +3753,28 @@ $messages['zh-hant'] = array(
 最後你將可以翻譯 {{SITENAME}} 裡所有計畫的''介面訊息''.",
 	'translate-fs-selectlanguage' => '選擇一種語言',
 	'translate-fs-settings-planguage' => '主要語言：',
+	'translate-fs-settings-planguage-desc' => '該首選語言作為此維基項目的用戶界面，
+並成為默認的翻譯目標語言。',
 	'translate-fs-settings-slanguage' => '輔助語言$1：',
+	'translate-fs-settings-slanguage-desc' => '在翻譯編輯器之內可以顯示其他語言翻譯的消息。
+您可以在此選擇您想顯示的語言。',
 	'translate-fs-settings-submit' => '儲存設定',
 	'translate-fs-userpage-level-N' => '我的母語是',
+	'translate-fs-userpage-level-5' => '我能專業地翻譯的語言是',
+	'translate-fs-userpage-level-4' => '我熟練像母語者一樣流利',
+	'translate-fs-userpage-level-3' => '我熟練不錯',
+	'translate-fs-userpage-level-2' => '我熟練平平',
 	'translate-fs-userpage-level-1' => '我知道一點點',
+	'translate-fs-userpage-help' => '請說明您的語言能力，並告訴我們關於您自己。如果您知道超過五種語言，您可以以後添加更多。',
 	'translate-fs-userpage-submit' => '建立我的使用者頁面',
 	'translate-fs-userpage-done' => '很好！現在你擁有了一個使用者頁面。',
 	'translate-fs-permissions-planguage' => '主要語言：',
+	'translate-fs-permissions-help' => '現在，您需要請求參加翻譯組。
+請選擇您想參入翻譯的首選語言。
+
+您可以在以下的文本框之內提及其他語言及其他備註。',
+	'translate-fs-permissions-pending' => '您的請求已提交至[[$1]]，站點管理員會儘快查閱您的請求。
+如果您已驗證您的電子郵箱，那麼這個請求有答覆後就會給您發送郵件。',
 	'translate-fs-permissions-submit' => '發送請求',
 	'translate-fs-target-text' => '恭喜 ！
 您現在可以開始翻譯。

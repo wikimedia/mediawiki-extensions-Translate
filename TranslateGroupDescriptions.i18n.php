@@ -3044,7 +3044,7 @@ $messages['zh-hans'] = array(
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]]是用语阅读和贡献维基词典的跨平台手机／平板应用程序。',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Liangent
  * @author Mark85296341
  * @author Simon Shek
@@ -3053,23 +3053,54 @@ $messages['zh-hant'] = array(
 	'translategroupdescriptions-desc' => '消息組說明 [http://mediawiki.org/wiki/Extension:Translate 翻譯] 擴展所支持的產品',
 	'translate-group-desc-nodesc' => '沒有描述用於此消息組',
 	'translate-group-desc-mediawikicore' => '此介面訊息群組包含了目前 MediaWiki alpha 版本所使用的訊息（{{CURRENTVERSION}}）',
+	'translate-group-desc-mediawikimostused' => '此消息組包含在[[Translating:MediaWiki|MediaWiki]]使用的[http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500條最常用的消息]。',
+	'translate-group-desc-mediawikiextensions' => '包含[[Translating:MediaWiki|MediaWiki]]支持擴展所有消息的元消息組。',
+	'translate-group-desc-collection' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection]擴展使用所有消息的元消息組。',
+	'translate-group-desc-flaggedrevs' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]擴展使用所有消息的元消息組。',
+	'translate-group-desc-readerfeedback' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]擴展使用所有消息的元消息組。',
+	'translate-group-desc-semantic' => '包含所有[http://semantic-mediawiki.org/ Semantic MediaWiki]擴展使用所有消息的元消息組。',
+	'translate-group-desc-socialprofile' => '包含與MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]擴展有關的擴展使用所有消息的元消息組。',
+	'translate-group-desc-translate' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]擴展使用所有消息的元消息組。',
+	'translate-group-desc-wikiaextensions' => '包含[http://www.wikia.com Wikia]專用受支持的MediaWiki擴展使用所有消息的元消息組。',
+	'translate-group-desc-wikimediaextensions' => '包含[http://wikimedia.org/ Wikimedia Foundation]專用受支持的MediaWiki擴展使用所有消息的元消息組。',
+	'translate-group-desc-wikimediaextensions-main' => '包含為維基媒體[http://meta.wikimedia.org/wiki/Language_committee 語言委員會]必須翻譯的受支持的MediaWiki擴展使用所有消息的元消息組。',
+	'translate-group-desc-uniwiki' => '包含與[http://unicefinnovation.org/wiki.php Uniwiki]有關的擴展使用所有消息的元消息組',
+	'translate-group-desc-ui' => '包含與[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative 維基百科可用性倡議]有關的擴展使用所有消息的元消息組',
 	'translate-group-desc-translatablepages' => '所有翻譯網頁',
 	'bw-desc-freecol' => '在翻譯 FreeCol 到您的語言之前，請閱讀 [[Translating:FreeCol]]。Freecol 使用 GPL 協議。',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum]，一個用 PHP 編寫的論壇。',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] 是一個基於 Web 的 Bug 追蹤系統。請在[[Support|技術支援頁面]]報告任何問題。',
+	'translate-group-desc-eol' => '[[Translating:EOL|Encyclopedia of Life]]的消息組',
+	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS]]的消息組',
+	'translate-group-desc-ihris-common' => '[[Translating:iHRIS|iHRIS]]模塊之一，[[Special:Translate/out-ihris-common-0-all|iHRIS Common]]的消息組',
+	'translate-group-desc-ihris-i2ce' => '[[Translating:iHRIS|iHRIS]]模塊之一，[[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]]的消息組',
+	'translate-group-desc-ihris-manage' => '[[Translating:iHRIS|iHRIS]]模塊之一，[[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]]的消息組',
+	'translate-group-desc-ihris-qualify' => '[[Translating:iHRIS|iHRIS]]模塊之一，[[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]]的消息組',
+	'translate-group-desc-kiwix' => '[[Translating:Kiwix|Kiwix]]的消息組',
+	'translate-group-desc-mantisbt-plugin-core' => '[[Translating:MantisBT|MantisBT]]的核心插件',
+	'translate-group-desc-mediawiki-core-branch' => '用於 [[Translating:MediaWiki|MediaWiki]] 穩定版本的消息。',
+	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]]是一種小額信貸管理信息系統。',
 	'bw-desc-mwlibrl' => "'''mwlib.rl'''是一個使用mwlib庫解析的python庫，用以將MediaWiki條目轉化為PDF文件。
 
 更多信息請見[[mw:Extension:PDF_Writer]]和http://code.pediapress.com/wiki/wiki/mwlibrl。",
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] 是一個使用 PHP 編寫的 Web 郵件客戶端。請在 [[Support]] 內報告問題。',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]]是一個離線閱讀維基百科的軟件',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]]是一個開放媒體平台',
+	'translate-group-desc-openimages-verifyemailtemplate' => '這些消息屬於[[Translating:Open Images|Open Images]]電子郵件驗證模板',
+	'translate-group-desc-openimages-all' => '這些消息屬於[[Translating:Open Images|Open Images]]項目',
 	'bw-desc-openlayers' => 'OpenLayers 是一個開源的動態地圖生成器。請在 [[support]] 頁面內報告問題。',
 	'bw-desc-openstreetmap' => '本群組包含所有 [[Translating:OpenStreetMap|OpenStreetMap]] 的介面訊息',
 	'bw-desc-osm-site' => '本群組包含了 [[Translating:Open Street Map|Open Street Map]] 的介面訊息。',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]]是基於Flash的OpenStreetMap編輯軟件',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]]是一個維基百科編輯工具集合。',
 	'bw-desc-shapado' => '本組包含免費開源問答軟件[[Translating:Shapado|Shapado]]的信息',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] 是一個開源微網誌服務',
+	'translate-group-desc-statusnet-plugin' => '這些消息屬於[[Translating:StatusNet|StatusNet]]的插件',
+	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver]工具的國際化系統，[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]的消息組（<span class="plainlinks">[[Translating talk:Toolserver|幫助]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition 技術細節]</span>）',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]]是一個使用GNU GPL許可證的顯示世界範圍內遠足、騎行、山地騎行、 輪滑路線的服務。',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] 可以快速找到 Wikimedia 的維基某一個頁面的作者。',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] 是一個將離線、僅文字版本的維基百科傳送到手機上的計畫。',
+	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]是一個用於閱讀並編輯維基百科的手機、平板跨平台應用程序。',
+	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]]是用語閱讀和貢獻維基詞典的跨平台手機／平板應用程序。',
 );
 
