@@ -73,6 +73,6 @@ class JsonFFS extends SimpleFFS {
 			$messages['@metadata']['authors'] = $authors;
 		}
 
-		return FormatJSON::encode( $messages, $pretty = true );
+		return FormatJSON::encode( $messages, true );
 	}
 }
