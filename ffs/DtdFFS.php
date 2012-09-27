@@ -22,14 +22,14 @@ class DtdFFS extends SimpleFFS {
 	 * @return array
 	 */
 	public function readFromVariable( $data ) {
-		preg_match_all( ',AUTHOR: ([^\n]+)\n,', $data, $matches );
+		preg_match_all( ',# Author: ([^\n]+)\n,', $data, $matches );
 		$authors = array();
 
 		for ( $i = 0; $i < count( $matches[1] ); $i++ ) {
 			$authors[] = $matches[1][$i];
 		}
 
-		preg_match_all( ',<!ENTITY[ ]+([^ ]+)[ ]+"([^"]+)"[^>]*>,', $data, $matches );
+		preg_match_all( ',<!ENTITY[ ]+([^ ]+)\s+"([^"]+)"[^>]*>,', $data, $matches );
 
 		$keys = $matches[1];
 		$values = $matches[2];
