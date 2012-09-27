@@ -77,7 +77,20 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	/// Hook: ArticleSaveComplete, PageContentSaveComplete
+	/**
+	 * Hook: ArticleSaveComplete, PageContentSaveComplete
+	 *
+	 * @param $article Article
+	 * @param User $user
+	 * @param $content string|TextContent
+	 * @param $summary string
+	 * @param $minor bool
+	 * @param $_
+	 * @param $_
+	 * @param $flags
+	 * @param $revision Revision
+	 * @return bool
+	 */
 	public static function onSectionSave( $article, User $user, $content, $summary,
 		$minor, $_, $_, $flags, $revision ) {
 		$title = $article->getTitle();
@@ -361,6 +374,16 @@ class PageTranslationHooks {
 	 * When attempting to save, last resort. Edit page would only display
 	 * edit conflict if there wasn't tpSyntaxCheckForEditPage
 	 * Hook: ArticleSave, PageContentSave
+	 * @param $article Article
+	 * @param $user User
+	 * @param $text string
+	 * @param $summary string
+	 * @param $minor bool
+	 * @param $_
+	 * @param $_
+	 * @param $flags
+	 * @param $status string
+	 * @return bool
 	 */
 	public static function tpSyntaxCheck( $article, $user, $content, $summary,
 			$minor, $_, $_, $flags, $status ) {
@@ -391,7 +414,19 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	/// Hook: ArticleSaveComplete, PageContentSaveComplete
+	/**
+	 * Hook: ArticleSaveComplete, PageContentSaveComplete
+	 * @param $article Article
+	 * @param $user User
+	 * @param $text string
+	 * @param $summary string
+	 * @param $minor bool
+	 * @param $_
+	 * @param $_
+	 * @param $flags
+	 * @param $revision Revision|null
+	 * @return bool
+	 */
 	public static function addTranstag( $article, $user, $content, $summary,
 			$minor, $_, $_, $flags, $revision ) {
 		// We are not interested in null revisions
@@ -566,6 +601,12 @@ class PageTranslationHooks {
 	/**
 	 * Redirects the delete action to our own for translatable pages.
 	 * Hook: ArticleConfirmDelete
+	 *
+	 * @param $article Article
+	 * @param $out OutputPage
+	 * @param $reason
+	 *
+	 * @return bool
 	 */
 	public static function disableDelete( $article, $out, &$reason ) {
 		$title = $article->getTitle();
@@ -576,7 +617,14 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	/// Hook: ArticleViewHeader
+	/**
+	 * Hook: ArticleViewHeader
+	 *
+	 * @param $article Article
+	 * @param $outputDone
+	 * @param $pcache
+	 * @return bool
+	 */
 	public static function translatablePageHeader( &$article, &$outputDone, &$pcache ) {
 		if ( $article->getOldID() ) {
 			return true;
@@ -697,7 +745,10 @@ class PageTranslationHooks {
 		$wgOut->addHTML( '<hr />' );
 	}
 
-	/// Hook: LinksUpdate
+	/**
+	 * @param $updater LinksUpdate
+	 * @return bool
+	 */
 	public static function preventCategorization( $updater ) {
 		$handle = new MessageHandle( $updater->getTitle() );
 		if ( $handle->isPageTranslation() && !$handle->isDoc() ) {
@@ -707,6 +758,11 @@ class PageTranslationHooks {
 	}
 
 	/**
+	 * @param $type
+	 * @param $action
+	 * @param $title Title
+	 * @param $forUI bool
+	 * @param $params array
 	 * @return string
 	 */
 	public static function formatLogEntry( $type, $action, $title, $forUI, $params ) {
