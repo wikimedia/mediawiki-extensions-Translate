@@ -938,6 +938,8 @@ Teksto sa yunit in pagdakit-taramon: <pre>$1</pre>',
 	'pt-log-moveok' => '{{GENDER:$2|kumpletado}} pagbagong pangaran kan pahina na puwedeng maipagdakit-taramon na "%1" to $3',
 	'pt-log-movenok' => '{{GENDER:$2|naka-engkuwentro}} nin sarong problema habang binabalyo an "[[:$1]]" hanggan sa "[[:$3]]"',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|kumpletado}}ng pagpupura kan pahina na puwedeng maipagdakit-taramon sa "$1"',
+	'pt-log-delete-full-nok' => '{{GENDER:$2|nakanagbo}} nin sarong problema mantang pinupura an pahinang puwedeng maipagdakit-taramon"[[:$1]]"',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|kumpletado}} an pagpupura kan pahina kan ipinagdadakit-taramon "$1"',
 );
 
 /** Belarusian (беларуская)
@@ -5751,6 +5753,7 @@ Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir
 	'pt-deletepage-list-count' => 'Am ganzen $1 {{PLURAL:$1|Säit|Säite}} fir ze läschen.',
 	'pt-deletepage-full-logreason' => 'Deel vun der iwwersetzbarer Säit $1.',
 	'pt-deletepage-lang-logreason' => 'Deel vun der iwwersater Säit $1.',
+	'pt-deletepage-started' => "Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir Feelermeldungen respektiv d'Meldung datt alles ok ass, no.",
 );
 
 /** Ganda (Luganda)
