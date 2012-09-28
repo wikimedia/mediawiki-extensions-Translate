@@ -2109,6 +2109,7 @@ $messages['pfl'] = array(
 /** Polish (polski)
  * @author BeginaFelicysym
  * @author Leinad
+ * @author Matma Rex
  * @author Sp5uhe
  * @author ToSter
  */
@@ -2163,7 +2164,7 @@ $messages['pl'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] jest projektem udostępniania offline, wyłącznie tekstowej wersji Wikipedii dla uradzeń mobilnych.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] jest wieloplatformową aplikacją na telefony i tablety do czytania i dodawania treści do Wikipedii',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] jest wieloplatformową aplikacją na telefony i tablety do czytania i dodawania treści do Wiktionary',
-	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] jest aplikacją mobilną do wzbogacania [[:meta:Wiki Loves Monuments|projektu Wiki Kocha Zabytki]]',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] jest aplikacją mobilną do wzbogacania [[:meta:Wiki Loves Monuments|projektu Wiki Lubi Zabytki]]',
 );
 
 /** Piedmontese (Piemontèis)

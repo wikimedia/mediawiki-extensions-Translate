@@ -1892,7 +1892,7 @@ $messages['ja'] = array(
 	'translate-fs-settings-title' => '個人設定の構成',
 	'translate-fs-userpage-title' => '自分の利用者ページを作成',
 	'translate-fs-permissions-title' => '翻訳者権限の申請',
-	'translate-fs-target-title' => '翻訳を始めましょう！',
+	'translate-fs-target-title' => '翻訳を始めましょう!',
 	'translate-fs-email-title' => 'あなたのメールアドレスを確認',
 	'translate-fs-intro' => '{{SITENAME}} 開始準備ウィザードへようこそ。これから翻訳者になるための手順について1つずつ案内していきます。それらを終えると、あなたは {{SITENAME}} でサポートしているすべてのプロジェクトのインターフェイスメッセージを翻訳できるようになります。',
 	'translate-fs-selectlanguage' => '言語を選択',
@@ -3143,6 +3143,7 @@ Ak ste tak dosiaľ {{gender:|neurobil|neurobila|neurobili}}, [[Special:Preferenc
 
 /** Slovenian (slovenščina)
  * @author Dbc334
+ * @author Eleassar
  */
 $messages['sl'] = array(
 	'firststeps' => 'Prvi koraki',
@@ -3190,7 +3191,7 @@ Sedaj lahko začnete prevajati.
 Ne bojte se, če se vam še vedno zdi novo in zmedeno.
 Na [[Project list|Seznamu projektov]] se nahaja pregled projektov, h katerim lahko prispevate s prevajanjem.
 Večina projektov ima kratko opisno stran s povezavo »''Prevedi ta projekt''«, ki vas bo ponesla na stran s seznamom neprevedenih sporočil.
-Na voljo je tudi seznam vseh skupin sporočil s [[Special:LanguageStats|trenutnim stanjem prevodov za jezik]].
+Na razpolago je tudi seznam vseh skupin sporočil s [[Special:LanguageStats|trenutnim stanjem prevodov za jezik]].
 
 Če menite, da morate razumeti več stvari, preden začnete prevajati, lahko preberete [[FAQ|Pogosto zastavljena vprašanja]].
 Žal je lahko dokumentacija ponekod zastarela.

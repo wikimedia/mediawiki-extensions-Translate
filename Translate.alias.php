@@ -93,6 +93,15 @@ $specialPageAliases['az'] = array(
 	'PageTranslation' => array( 'SəhifəTərcüməsi' ),
 );
 
+/** Bashkir (башҡортса) */
+$specialPageAliases['ba'] = array(
+	'Translate' => array( 'Translate' ),
+	'Magic' => array( 'AdvancedTranslate' ),
+	'Translations' => array( 'Translations' ),
+	'FirstSteps' => array( 'FirstSteps' ),
+	'MyLanguage' => array( 'MyLanguage' ),
+);
+
 /** Southern Balochi (بلوچی مکرانی) */
 $specialPageAliases['bcc'] = array(
 	'Translate' => array( 'ترجمه' ),
