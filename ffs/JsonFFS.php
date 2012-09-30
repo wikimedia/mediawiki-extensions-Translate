@@ -22,7 +22,7 @@ class JsonFFS extends SimpleFFS {
 	 * @return bool
 	 */
 	public static function isValid( $data ) {
-		return is_array( FormatJSON::decode( $data, $asArray = true ) );
+		return is_array( FormatJSON::decode( $data, /*as array*/true ) );
 	}
 
 	/**
@@ -30,7 +30,7 @@ class JsonFFS extends SimpleFFS {
 	 * @return array
 	 */
 	public function readFromVariable( $data ) {
-		$messages = (array) FormatJSON::decode( $data, $asArray = true );
+		$messages = (array) FormatJSON::decode( $data, /*as array*/true );
 		$authors = array();
 		if ( isset( $messages['@metadata']['authors'] ) ) {
 			$authors = (array) $messages['@metadata']['authors'];
@@ -73,6 +73,6 @@ class JsonFFS extends SimpleFFS {
 			$messages['@metadata']['authors'] = $authors;
 		}
 
-		return FormatJSON::encode( $messages, true );
+		return FormatJSON::encode( $messages, /*pretty*/true );
 	}
 }
