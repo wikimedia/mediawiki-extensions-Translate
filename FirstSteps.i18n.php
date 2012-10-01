@@ -1358,6 +1358,7 @@ $messages['gsw'] = array(
 	'firststeps' => 'Erschti Schritt',
 	'firststeps-desc' => '[[Special:FirstSteps|Spezialsyte]] as Hilf fir neji Benutzer zum Aafange uf eme Wiki mit dr „Translate“-Erwyterig',
 	'translate-fs-pagetitle-done' => '- erledigt!',
+	'translate-fs-pagetitle-pending' => '– hängig',
 	'translate-fs-pagetitle' => 'Hilfsprogramm zum Aafang - $1',
 	'translate-fs-signup-title' => 'Regischtriere',
 	'translate-fs-settings-title' => 'Dyy Yystellige aapasse',
@@ -1368,6 +1369,13 @@ $messages['gsw'] = array(
 	'translate-fs-intro' => "Willchuu bi dr {{SITENAME}}-Hilf zue dr erschte Schritt.
 Dir wird zeigt, wie Du Schritt fir Schritt e Ibersetzer wirsch.
 Am Änd wirsch alli ''Oberfleche-Nochrichte'' vu dr Projäkt, wu vu {{SITENAME}} unterstitzt wäre, chenne ibersetze.",
+	'translate-fs-selectlanguage' => 'Wehl e Sproch',
+	'translate-fs-settings-planguage' => 'Hauptsproch:',
+	'translate-fs-settings-planguage-desc' => 'D Hauptsproch isch zum eine Dyy Sproch fir d Benutzeroberflechi uf däm Wiki
+un zum andere d Ziilsproch fir Dyni Ibersetzige.',
+	'translate-fs-settings-slanguage' => 'Unterstitzigssproch $1:',
+	'translate-fs-settings-slanguage-desc' => 'Du chasch Dir us em Ibersetzigsspycher Ibersetzige vu Nochrichten in andere Sprochen aazeige loo.
+Do chasch wehle, weli Sproche Du, wänn iberhaupt, witt aazeigt kriege.',
 	'translate-fs-userpage-submit' => 'Myy Benutzersyte aalege',
 	'translate-fs-userpage-done' => 'Guet gmacht! Du hesch jetz e Benutzersyte',
 	'translate-fs-target-text' => "Glickwunsch!
