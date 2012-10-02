@@ -258,7 +258,7 @@ $messages['ba'] = array(
 	'translate-group-desc-flaggedrevs' => 'MediaWiki проектының [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] киңәйеүенең бөтә яҙмаларын үҙ эсенә алыусы мета төркөм.',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Renessaince
@@ -1880,7 +1880,7 @@ $messages['mt'] = array(
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] hu kapaċi li jsib veloċement l-awturi ta' paġna fuq sit tal-Wikimedia.",
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Audun
  * @author Laaknor
  * @author Nghtwlkr
@@ -2564,7 +2564,7 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] je mobilna aplikacija za prispevanje k [[:meta:Wiki Loves Monuments|projektu Wiki Loves Monuments]]',
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Rancher
  */
 $messages['sr-ec'] = array(
@@ -2614,7 +2614,7 @@ $messages['sr-ec'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|Викиридер]] пружа текстуалну верзију Википедије којој се може приступити ван мреже, и то на мобилном уређају',
 );
 
-/** Serbian (Latin script) (‪srpski (latinica)‬)
+/** Serbian (Latin script) (srpski (latinica)‎)
  * @author Rancher
  */
 $messages['sr-el'] = array(
@@ -2978,7 +2978,7 @@ $messages['yi'] = array(
 	'translate-group-desc-kiwix' => 'א מעלדונג גרופע פאר [[Translating:Kiwix|קיוויקס]]',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Anakmalaysia
  * @author Bencmq
  * @author Hydra

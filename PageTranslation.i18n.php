@@ -940,6 +940,11 @@ Teksto sa yunit in pagdakit-taramon: <pre>$1</pre>',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|kumpletado}}ng pagpupura kan pahina na puwedeng maipagdakit-taramon sa "$1"',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|nakanagbo}} nin sarong problema mantang pinupura an pahinang puwedeng maipagdakit-taramon"[[:$1]]"',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|kumpletado}} an pagpupura kan pahina kan ipinagdadakit-taramon "$1"',
+	'pt-log-delete-lang-nok' => '{{GENDER:$2|naka-engkuwentro}} in sarong problema mantang pinagpupura an pahina kan dakit-taramon "[[:$1]]"',
+	'pt-log-encourage' => '{{GENDER:$2|pinag-uungot}} an dakit-taramon kan pahina "[[:$1]]"',
+	'pt-log-discourage' => '{{GENDER:$2|dae pinag-uungot}} an dakit-taramon kan pahina "[[:$1]]"',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|pinaghale}} an paurog na mga lengguwahe gikan sa puwedeng maipagdakit-taramon na pahina "[[:$1]]"',
+	'pt-log-priority-langs' => '{{GENDER:$2|ipuwesto an pina-urog na mga lengguwahe gikan sa puwedeng maipagdakit-taramon na pahina "[[:$1]] to $3. Rason: $4',
 );
 
 /** Belarusian (беларуская)
@@ -949,7 +954,7 @@ $messages['be'] = array(
 	'pt-movepage-reason' => 'Прычына:',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Renessaince
@@ -2033,7 +2038,7 @@ Die Ausführung der Löschungen wird, je nach Anzahl der zu löschenden Seiten, 
 Fehler werden im [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] aufgezeichnet und müssen nachträglich manuell berichtigt werden.',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Imre
  * @author Kghbln
  * @author Purodha
@@ -3671,7 +3676,7 @@ $messages['gv'] = array(
 	'pt-movepage-reason' => 'Fa:',
 );
 
-/** Hausa (هَوُسَ) */
+/** Hausa (Hausa) */
 $messages['ha'] = array(
 	'pt-movepage-reason' => 'Dalili:',
 );
@@ -5572,7 +5577,7 @@ Dat Fottschmieße dohrt e Wielsche, weil en janze Aanzahl Sigge derbei fott jesc
 Fähler kumme en et [[Special:Log/pagetranslation|Logbooch vum Övversäze]] un möße vun Hand jraadjeröck wääde.',
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+/** Kurdish (Latin script) (Kurdî (latînî)‎)
  * @author George Animal
  * @author Gomada
  */
@@ -8427,7 +8432,7 @@ Dejanje izbrisa ne bo izvedeno takoj, ker je potrebno izbrisati veliko strani.
 Neuspehi bodo zabeleženi v [[Special:Log/pagetranslation|dnevniku prevajanja strani]] in jih morate urediti ročno.',
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Rancher
  * @author Михајло Анђелковић
  */

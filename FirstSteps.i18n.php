@@ -279,7 +279,7 @@ $messages['bar'] = array(
 	'firststeps' => "D' erschten Schriet",
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Renessaince
@@ -718,7 +718,7 @@ Du erhältst außerdem bis zu einmal im Monat einen Newsletter.
 Wenn du keinen Newsletter erhalten möchtest, kannst du dich im Tab „{{int:prefs-personal}}“ in deinen [[Special:Preferences|Einstellungen]] austragen.',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Kghbln
  * @author Purodha
  * @author The Evil IP address
@@ -2161,7 +2161,7 @@ Do kriß och Neueschkeite vum Wiki zohjescheck, esu ätwa eijmohl em Mohnd.
 Wann De dat nit han wells, kanns De et onger „{{int:prefs-personal}}“ en [[Special:Preferences|Dinge Enstellunge]] afschallde.',
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+/** Kurdish (Latin script) (Kurdî (latînî)‎)
  * @author George Animal
  * @author Gomada
  */
@@ -2485,7 +2485,7 @@ Anda juga akan menerima surat berita selebih-lebihnya sebulan sekali.
 Jika anda tidak ingi menerima surat berita, anda boleh memilih untuk mengecualikan diri daripada senarai penghantaran kami dalam tab "{{int:prefs-personal}}" dalam [[Special:Preferences|keutamaan]] anda.',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
@@ -3671,7 +3671,7 @@ $messages['yi'] = array(
 	'translate-fs-userpage-submit' => 'שאַפֿן מיין באַניצער בלאַט',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Anakmalaysia
  * @author Chenxiaoqino
  * @author Hydra
