@@ -170,16 +170,19 @@ class MediaWikiMessageChecker extends MessageChecker {
 			$key = $message->key();
 			$translation = $message->translation();
 
+			// Does this version of MediaWiki support v1.20-style CLDR plural rules?
 			if ( !method_exists( 'Language', 'getPluralRules' ) ) {
 				return;
 			}
 
+			// Are there any plural forms for this language in this message?
 			if ( stripos( $translation, '{{plural:' ) === false ) {
 				return;
 			}
 
 			$plurals = self::getPluralForms( $translation );
 			$allowed = self::getPluralFormCount( $code );
+
 			foreach ( $plurals as $forms ) {
 				$forms = self::removeExplicitPluralForms( $forms );
 				$provided = count( $forms );
@@ -191,7 +194,8 @@ class MediaWikiMessageChecker extends MessageChecker {
 					);
 				}
 
-				if ( $provided > 1 && $forms[$provided-1] === $forms[$provided-2] ) {
+				// Are the last two forms identical?
+				if ( $provided > 1 && $forms[$provided - 1] === $forms[$provided - 2] ) {
 					$warnings[$key][] = array(
 						array( 'plural', 'dupe', $key, $code ),
 						'translate-checks-plural-dupe'
@@ -216,7 +220,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 
 	/**
 	 * Ugly home made probably awfully slow looping parser
-	 * that parsers {{PLURAL}} instances from message and
+	 * that parses {{PLURAL}} instances from message and
 	 * returns array of invokations having array of forms.
 	 * @since 2012-09-19
 	 * @param string $translation
