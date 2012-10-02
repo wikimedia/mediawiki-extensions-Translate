@@ -821,6 +821,8 @@ $specialPageAliases['th'] = array(
 	'TranslationStats' => array( 'สถิติการแปล' ),
 	'Translations' => array( 'การแปล' ),
 	'LanguageStats' => array( 'สถิติภาษา' ),
+	'SupportedLanguages' => array( 'ภาษาที่รองรับ' ),
+	'MyLanguage' => array( 'ภาษาของฉัน' ),
 );
 
 /** Tagalog (Tagalog) */

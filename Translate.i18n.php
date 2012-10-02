@@ -16024,7 +16024,7 @@ $messages['mk'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Дефиницијата користи <nowiki>{{PLURAL:}}</nowiki> но преводот не.',
 	'translate-checks-plural-forms' => 'На <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|му е зададен еден облик|му се зададени $1 облици}}, но {{PLURAL:$2|поддржан е само еден облик|поддржани се $2 облици}} (освен облиците 0= и 1=).',
-	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> has duplicate forms at the end. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> should be written as <nowiki>{{PLURAL:$1|sheep}}</nowiki>.',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> има дуплирани облици на крајот. <nowiki>{{PLURAL:$1|деца|деца}}</nowiki> треба да се запише само како <nowiki>{{PLURAL:$1|деца}}</nowiki>.',
 	'translate-checks-pagename' => 'Именски простор променет од дефиницијата',
 	'translate-checks-format' => 'Овој превод не ја следи дефиницијата или има неправилна синтакса: $1',
 	'translate-checks-escape' => 'Следниве испуштања може да се ненамерни: <strong>$1</strong>',
