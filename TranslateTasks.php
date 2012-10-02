@@ -354,7 +354,6 @@ class ExportMessagesTask extends ViewMessagesTask {
 	protected function preinit() {
 		$code = $this->options->getLanguage();
 		$this->collection = $this->group->initCollection( $code );
-		$this->collection->setInfile( $this->group->load( $code ) );
 	}
 
 	// No paging should be done.

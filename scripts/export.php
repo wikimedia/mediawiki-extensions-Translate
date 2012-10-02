@@ -223,6 +223,7 @@ foreach ( $groups as $groupId => $group ) {
 			}
 
 			$collection->resetForNewLanguage( $lang );
+			$collection->loadTranslations();
 
 			if ( $noFuzzy ) {
 				$collection->filter( 'fuzzy' );
