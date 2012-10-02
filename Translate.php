@@ -466,7 +466,7 @@ $wgTranslatePermissionUrl = 'Project:Translator';
  * @defgroup PageTranslation Page Translation
  * @see http://translatewiki.net/wiki/Translating:Page_translation_feature
  */
-$wgEnablePageTranslation = false;
+$wgEnablePageTranslation = true;
 
 /**
  * Number for the Translations namespace. Change this if it conflicts with
