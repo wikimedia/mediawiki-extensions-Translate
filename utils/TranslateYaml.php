@@ -5,7 +5,7 @@
  * @file
  * @author Ævar Arnfjörð Bjarmason
  * @author Niklas Laxström
- * @copyright Copyright © 2009, Niklas Laxström, Ævar Arnfjörð Bjarmason
+ * @copyright Copyright © 2009-2012, Niklas Laxström, Ævar Arnfjörð Bjarmason
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -71,7 +71,7 @@ class TranslateYaml {
 
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'spyc':
-				require_once( dirname( __FILE__ ) . '/../spyc/spyc.php' );
+				require_once( __DIR__ . '/../libs/spyc/spyc.php' );
 				$yaml = spyc_load( $text );
 				return self::fixSpycSpaces( $yaml );
 			case 'syck':
@@ -126,7 +126,7 @@ class TranslateYaml {
 
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'spyc':
-				require_once( dirname( __FILE__ ) . '/../spyc/spyc.php' );
+				require_once( __DIR__ . '/../libs/spyc/spyc.php' );
 				return Spyc::YAMLDump( $text );
 			case 'syck-pecl':
 				// Just horrible output
