@@ -1604,7 +1604,7 @@ $messages['arc'] = array(
 	'translate-searchprofile' => 'ܬܘܪ̈ܓܡܐ',
 );
 
-/** Araucanian (mapudungun)
+/** Mapuche (mapudungun)
  * @author Poquil
  */
 $messages['arn'] = array(
@@ -5443,14 +5443,18 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
+ * @author Filzstift
  * @author MichaelFrey
  * @author The Evil IP address
  */
 $messages['de-ch'] = array(
+	'translate-page-description-hasoptional' => 'Diese Nachrichtengruppe enthält optionale Nachrichten.
+Optionale Nachrichten sollten nur dann übersetzt werden, sofern es in deiner Sprache Bedarf für sie gibt,
+wie beispielsweise die Nichtverwendung von Leerschlägen oder die Transkription von Eigennamen. $1',
 	'translate-edit-no-information' => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weisst, wo und in welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentation hinzufügst.''",
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Geitost
  * @author Imre
  * @author Kghbln
@@ -8090,8 +8094,8 @@ Tiedot: $1',
 	'translate-dynagroup-recent-label' => 'Tuoreet käännökset',
 	'translate-dynagroup-by' => 'Käännöksen teki {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Käännöksen teki {{GENDER:$1|$1}} ($2)',
-	'translate-dynagroup-last' => 'Viimeisimmän muutoksen tehnyt {{GENDER:$1|$1}}',
-	'translate-dynagroup-lastc' => 'Viimeisimmän muutoksen tehnyt {{GENDER:$1|$1}} ($2)',
+	'translate-dynagroup-last' => 'Viimeisimmän muutoksen teki {{GENDER:$1|$1}}',
+	'translate-dynagroup-lastc' => 'Viimeisimmän muutoksen teki {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Ohje',
 );
 
@@ -9813,7 +9817,7 @@ $messages['gv'] = array(
 	'translate-edit-in-other-languages' => 'Çhaghteraght ayns çhengaghyn elley',
 );
 
-/** Hausa (هَوُسَ) */
+/** Hausa (Hausa) */
 $messages['ha'] = array(
 	'translate-magic-cm-comment' => 'Bahasi:',
 );
@@ -9939,7 +9943,7 @@ $messages['he'] = array(
 	'translate-magic-words' => 'מילות קסם',
 	'translate-magic-namespace' => 'שמות מרחבי שם',
 	'translate-magic-notsaved' => 'עריכתכם לא נשמרה!',
-	'translate-magic-errors' => 'אנא תקנו את {{PLURAL:$1|השגיאה הבאה|$1 השגיאות הבאות}} בתרגום:',
+	'translate-magic-errors' => 'נא לתקן את {{PLURAL:$1|השגיאה הבאה|$1 השגיאות הבאות}} בתרגום:',
 	'translate-magic-saved' => 'השינויים שלכם נשמרו בהצלחה.',
 	'translate-checks-parameters' => '{{PLURAL:$2|הפרמטר הבא אינו|הפרמטרים הבאים אינם}} בשימוש:
 <strong><nowiki>$1</nowiki></strong>',
@@ -9955,7 +9959,7 @@ $messages['he'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'ההגדרה משתמשת ב־<nowiki>{{PLURAL:}}</nowiki>, אך התרגום אינו משתמש בו.',
 	'translate-checks-plural-forms' => 'בביטוי <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|נכתבה צורה אחת|נכתבו $1 צורות}}, אבל {{PLURAL:$2|נתמכת רק צורה אחת|נתמכות $2 צורות}} (לא כולל צורות 0= וצורות 1=).',
-	'translate-checks-plural-dupe' => 'בביטוי <nowiki>{{PLURAL:}}</nowiki> יש צורות שחוזרות על עצמן בסוף. במקום <nowiki>{{PLURAL:$1|קילומטר|קילומטר}}</nowiki> מומלץ לכתוב <nowiki>{{PLURAL:$1|קילומטר}}</nowiki>.',
+	'translate-checks-plural-dupe' => 'בביטוי <nowiki>{{PLURAL:}&#125;</nowiki> יש צורות שחוזרות על עצמן בסוף. במקום <nowiki>{{PLURAL:$1|קילומטר|קילומטר}&#125;</nowiki> מומלץ לכתוב <nowiki>{{PLURAL:$1|קילומטר}}</nowiki>.',
 	'translate-checks-pagename' => 'מרחבי שם ששונו מהגדרתם',
 	'translate-checks-format' => 'תרגום זה אינו תואם להגדרות או שהוא בעל תחביר שגוי: $1',
 	'translate-checks-escape' => 'ייתכן שהחילופים הבאים נוצרו בשגגה: <strong>$1</strong>',
@@ -13582,7 +13586,7 @@ $messages['kiu'] = array(
 	'translate-tag-page-desc' => 'Açarnayışê pela da [[$2|$1]] wiki',
 );
 
-/** Kazakh (Arabic script) (‫قازاقشا (تٴوتە)‬)
+/** Kazakh (Arabic script) (قازاقشا (تٴوتە)‏)
  * @author AlefZet
  */
 $messages['kk-arab'] = array(
@@ -13637,7 +13641,7 @@ $messages['kk-arab'] = array(
 	'translate-checks-plural' => 'انىقتالىمدا <nowiki>{{PLURAL:}} پايدالانىلعان, بىراق اۋدارمادا بۇل جوق.',
 );
 
-/** Kazakh (Cyrillic script) (‪қазақша (кирил)‬)
+/** Kazakh (Cyrillic script) (қазақша (кирил)‎)
  * @author AlefZet
  * @author GaiJin
  */
@@ -13713,7 +13717,7 @@ $messages['kk-cyrl'] = array(
 	'translate-rc-translation-filter-site' => 'Тек торап хабарларының өзгерістері',
 );
 
-/** Kazakh (Latin script) (‪qazaqşa (latın)‬)
+/** Kazakh (Latin script) (qazaqşa (latın)‎)
  * @author AlefZet
  * @author Atabek
  * @author GaiJin
@@ -14853,7 +14857,7 @@ Dat es et bäß för et Jääjelässe.',
 	'translate-gethelp' => 'Hölp',
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+/** Kurdish (Latin script) (Kurdî (latînî)‎)
  * @author George Animal
  * @author Gomada
  */
@@ -22876,7 +22880,7 @@ $messages['sq'] = array(
 	'translate-statsf-submit' => 'Parapamja',
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
@@ -27948,7 +27952,7 @@ $messages['yue'] = array(
 	'translate-checks-plural' => '用 <nowiki>{{PLURAL:}}</nowiki> 嘅解解釋但係翻譯無用到。',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Alexsh
  * @author Anakmalaysia
  * @author Bencmq
