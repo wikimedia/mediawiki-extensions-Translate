@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn///Mg\u003d",
+        "filename": "MediaWikiMessageChecker.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-10-02T14:26:40Z",
+      "side": 1,
+      "message": "That\u0027s actually wrong, it checks whether we are running new enough MediaWiki.",
+      "revId": "da47b52e0598faffe9471947aa6bb419bd863eaf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn///Mc\u003d",
+        "filename": "MediaWikiMessageChecker.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-10-02T14:26:40Z",
+      "side": 1,
+      "message": "in the message",
+      "revId": "da47b52e0598faffe9471947aa6bb419bd863eaf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
