@@ -18,11 +18,13 @@ class SimpleFormatReader {
 
 	// One reader per file
 	protected $filename = false;
+	protected $prefixLength;
 
 	public function __construct( $filename ) {
 		if ( is_readable( $filename ) ) {
 			$this->filename = $filename;
 		}
+		$this->prefixLength = strlen( self::AUTHORPREFIX );
 	}
 
 	protected $authors = null;
@@ -39,6 +41,8 @@ class SimpleFormatReader {
 	}
 
 	/**
+	 * Parses the static header, if needed, and returns it.
+	 *
 	 * @return string
 	 */
 	public function parseStaticHeader() {
@@ -48,12 +52,16 @@ class SimpleFormatReader {
 		return $this->staticHeader;
 	}
 
+	/**
+	 * Parses the header from the file and sets
+	 * the $authors and $staticHeader members.
+	 */
 	protected function parseHeader() {
 		$authors = array();
 		$staticHeader = '';
 
 		if ( $this->filename !== false ) {
-			$handle = fopen( $this->filename, "rt" );
+			$handle = fopen( $this->filename, 'rt' );
 			$state = 0;
 
 			while ( !feof( $handle ) ) {
@@ -65,10 +73,10 @@ class SimpleFormatReader {
 						continue;
 					}
 
-					$prefixLength = strlen( self::AUTHORPREFIX );
-					$prefix = substr( $line, 0, $prefixLength );
+					$prefix = substr( $line, 0, $this->prefixLength );
+
 					if ( strcasecmp( $prefix, self::AUTHORPREFIX ) === 0 ) {
-						$authors[] = substr( $line, $prefixLength );
+						$authors[] = substr( $line, $this->prefixLength );
 					}
 				} elseif ( $state === 1 ) {
 					if ( $line === self::SEPARATOR ) {
@@ -83,17 +91,17 @@ class SimpleFormatReader {
 
 		$this->authors = $authors;
 		$this->staticHeader = $staticHeader;
-
 	}
 
 	protected $messagePattern = '/([^\0]+)\0([^\0]+)\0\n/U';
 
 	/**
+	 * Reads the file contents and returns an array of keys and messages.
+	 *
 	 * @param $mangler StringMangler
 	 * @return array
 	 */
 	public function parseMessages( StringMangler $mangler ) {
-
 		$data = file_get_contents( $this->filename );
 		$messages = array();
 		$matches = array();
@@ -135,14 +143,17 @@ class SimpleFormatWriter {
 			$this->authors[$code] = array();
 		}
 
-		/* Assuming there is only numerical keys, array_merge does the right thing
-		 * here, and wfMergeArray() not, because it overwrites instead of appends */
+		/* Assuming there are only numerical keys, array_merge does
+		 * the right thing here, and wfMergeArray() does not, because
+		 * it overwrites instead of appending.
+		 */
 		$this->authors[$code] = array_merge( $this->authors[$code], $authors );
 		$this->authors[$code] = array_unique( $this->authors[$code] );
 	}
 
 	public function load( $code ) {
 		$reader = $this->group->getReader( $code );
+
 		if ( $reader ) {
 			$this->addAuthors( $reader->parseAuthors(), $code );
 			$this->staticHeader = $reader->parseStaticHeader();
@@ -167,7 +178,7 @@ class SimpleFormatWriter {
 			$handle = fopen( $target, 'wt' );
 
 			if ( $handle === false ) {
-				throw new MWException( "Unable to open target for writing" );
+				throw new MWException( 'Unable to open target for writing' );
 			}
 
 			$this->exportLanguage( $handle, $messages );
@@ -217,7 +228,9 @@ class SimpleFormatWriter {
 		fwrite( $handle, self::SEPARATOR . "\n" );
 	}
 
-
+	/*
+	 * @todo looks the same as FFS::filterAuthors, except the $groupId param. Can probably be discarded.
+	 */
 	public function filterAuthors( array $authors, $code, $groupId ) {
 		global $wgTranslateAuthorBlacklist;
 
@@ -227,6 +240,7 @@ class SimpleFormatWriter {
 			$blacklisted = false;
 			foreach ( $wgTranslateAuthorBlacklist as $rule ) {
 				list( $type, $regex ) = $rule;
+
 				if ( preg_match( $regex, $hash ) ) {
 					if ( $type === 'white' ) {
 						$blacklisted = false;
@@ -240,7 +254,6 @@ class SimpleFormatWriter {
 			if ( $blacklisted ) {
 				unset( $authors[$i] );
 			}
-
 		}
 
 		return $authors;
