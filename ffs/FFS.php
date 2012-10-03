@@ -20,13 +20,13 @@ interface FFS {
 	public function __construct( FileBasedMessageGroup $group );
 
 	/**
-	 * Set the file system location
+	 * Set the file's location in the system
 	 * @param $target \string Filesystem path for exported files.
 	 */
 	public function setWritePath( $target );
 
 	/**
-	 * Get the file system location
+	 * Get the file's location in the system
 	 * @return \string
 	 */
 	public function getWritePath();
@@ -41,8 +41,8 @@ interface FFS {
 	public function read( $code );
 
 	/**
-	 * Same as read(), but takes the data as a parameters. The caller
-	 * is supposed to know in what language the translations are in.
+	 * Same as read(), but takes the data as a parameter. The caller
+	 * is supposed to know in what language the translations are.
 	 * @param $data \string Formatted messages.
 	 * @return array of string|mixed Parsed data.
 	 */
@@ -67,8 +67,8 @@ interface FFS {
 }
 
 /**
- * Very basic FFS module that implements some basic functionality and
- * simple binary based file format.
+ * A very basic FFS module that implements some basic functionality and
+ * a simple binary based file format.
  * Other FFS classes can extend SimpleFFS and override suitable methods.
  * @ingroup FFS
  */
@@ -80,7 +80,14 @@ class SimpleFFS implements FFS {
 	protected $group;
 
 	protected $writePath;
+
+	/**
+	 * @todo doc!
+	 */
 	protected $extra;
+
+	const RECORD_SEPARATOR = "\0";
+	const PART_SEPARATOR = "\0\0\0\0";
 
 	public function __construct( FileBasedMessageGroup $group ) {
 		$this->setGroup( $group );
@@ -109,6 +116,9 @@ class SimpleFFS implements FFS {
 	public function getWritePath() { return $this->writePath; }
 
 	/**
+	 * Returns true if the file for this message group in language $code
+	 * exists. If no $code is given, the groups source language is assumed.
+	 *
 	 * @param $code string|bool
 	 * @return bool
 	 */
@@ -130,6 +140,11 @@ class SimpleFFS implements FFS {
 	}
 
 	/**
+	 * Reads messages from the file in language $code and returns an array
+	 * of AUTHORS and MESSAGES.
+	 * Returns false if the file doesn't exist.
+	 * Throws an exception if the file appears to exist, but cannot be read.
+	 *
 	 * @param $code string
 	 * @return array|bool
 	 * @throws MWException
@@ -149,22 +164,25 @@ class SimpleFFS implements FFS {
 	}
 
 	/**
-	 * @param $data array
+	 * Parse the message data given as a string in the SimpleFFS format
+	 * and return it as an array of AUTHORS and MESSAGES.
+	 *
+	 * @param $data string
 	 * @return array
 	 * @throws MWException
 	 */
 	public function readFromVariable( $data ) {
-		$parts = explode( "\0\0\0\0", $data );
+		$parts = explode( self::PART_SEPARATOR, $data );
 
 		if ( count( $parts ) !== 2 ) {
 			throw new MWException( 'Wrong number of parts.' );
 		}
 
 		list( $authorsPart, $messagesPart ) = $parts;
-		$authors = explode( "\0", $authorsPart );
+		$authors = explode( self::RECORD_SEPARATOR, $authorsPart );
 		$messages = array();
 
-		foreach ( explode( "\0", $messagesPart ) as $line ) {
+		foreach ( explode( self::RECORD_SEPARATOR, $messagesPart ) as $line ) {
 			if ( $line === '' ) {
 				continue;
 			}
@@ -189,13 +207,15 @@ class SimpleFFS implements FFS {
 	}
 
 	/**
+	 * Write the collection to file.
+	 *
 	 * @param $collection MessageCollection
 	 */
 	public function write( MessageCollection $collection ) {
 		$writePath = $this->writePath;
 
 		if ( $writePath === null ) {
-			throw new MWException( "Write path is not set." );
+			throw new MWException( 'Write path is not set.' );
 		}
 
 		if ( !file_exists( $writePath ) ) {
@@ -223,6 +243,9 @@ class SimpleFFS implements FFS {
 	}
 
 	/**
+	 * Read a collection from a file, and return it as
+	 * a SimpleFFS formatted string.
+	 *
 	 * @param $collection MessageCollection
 	 * @return string
 	 */
@@ -242,15 +265,16 @@ class SimpleFFS implements FFS {
 
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
-		$output .= implode( "\0", $authors );
-		$output .= "\0\0\0\0";
+
+		$output .= implode( self::RECORD_SEPARATOR, $authors );
+		$output .= self::PART_SEPARATOR;
 
 		$mangler = $this->group->getMangler();
 
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 			$trans = $m->translation();
-			$output .= "$key=$trans\0";
+			$output .= "$key=$trans" . self::RECORD_SEPARATOR;
 		}
 
 		return $output;
@@ -263,6 +287,7 @@ class SimpleFFS implements FFS {
 	protected function tryReadSource( $filename, $collection ) {
 		$sourceText = $this->tryReadFile( $filename );
 
+		// XXX And if it is false?
 		if ( $sourceText !== false ) {
 			$sourceData = $this->readFromVariable( $sourceText );
 
@@ -273,11 +298,16 @@ class SimpleFFS implements FFS {
 	}
 
 	/**
+	 * Read the contents of $filename and return it as a string.
+	 * Return false if the file doesn't exist.
+	 * Throw an exception if the file isn't readable
+	 * or if the reading fails strangely.
+	 *
 	 * @param $filename string
 	 * @return bool|string
 	 * @throws MWException
 	 */
-	protected function tryReadFile( $filename ) {
+	protected function tryReadFile( $filename ) { // XXX maybe $filename = false?
 		if ( !$filename ) {
 			return false;
 		}
@@ -291,7 +321,7 @@ class SimpleFFS implements FFS {
 		}
 
 		$data = file_get_contents( $filename );
-		if ( $data == false ) {
+		if ( $data === false ) {
 			throw new MWException( "Unable to read file $filename." );
 		}
 
@@ -299,6 +329,8 @@ class SimpleFFS implements FFS {
 	}
 
 	/**
+	 * Remove blacklisted authors.
+	 *
 	 * @param $authors array
 	 * @param $code string
 	 * @return array
@@ -333,6 +365,9 @@ class SimpleFFS implements FFS {
 	}
 
 	/**
+	 * Replaces all Windows and Mac line endings with Unix line endings.
+	 * This is needed in some file types.
+	 *
 	 * @param $data string
 	 * @return string
 	 */
@@ -343,5 +378,3 @@ class SimpleFFS implements FFS {
 		return $data;
 	}
 }
-
-
