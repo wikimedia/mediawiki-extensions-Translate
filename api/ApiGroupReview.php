@@ -42,18 +42,18 @@ class ApiGroupReview extends ApiBase {
 			$this->dieUsageMsg( array( 'missingparam', 'language' ) );
 		}
 
+		$targetState = $requestParams['state'];
 		if ( !isset( $stateConfig[$targetState] ) ) {
 			$this->dieUsage( 'The requested state is invalid', 'invalidstate' );
 		}
 
 		if ( is_array( $stateConfig[$targetState] )
 			&& isset( $stateConfig[$targetState]['right'] )
-			&& !$wgUser->isAllowed( $stateConfig[$targetState]['right'] ) )
+			&& !$user->isAllowed( $stateConfig[$targetState]['right'] ) )
 		{
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
-		$user = $this->getUser();
 		self::changeState( $group, $code, $targetState, $user );
 
 		$output = array( 'review' => array(
