@@ -137,7 +137,10 @@ HEADER
 
 		foreach ( $sortedMessages as $block => $messages ) {
 			# Skip if it's the block of unknown messages - handle that in the end of file
-			if ( $block == 'unknown' ) continue;
+			if ( $block === 'unknown' ) {
+				continue;
+			}
+
 			$this->writeMessagesBlockComment( $handle, $wgBlockComments[$block] );
 			$this->writeMessagesBlock( $handle, $messages );
 			fwrite( $handle, "\n" );
@@ -229,14 +232,15 @@ HEADER
 		# For readability
 		$single = "'";
 		$double = '"';
-		$quote = $single;
+		$quote = $single; // Default
 
 		# It is safe to use '-quoting, unless there is '-quote in the text
 		if ( strpos( $value, $single ) !== false ) {
-			# In case there is no variables that need to be escaped, just use "-quote
+			# In case there are no variables that need to be escaped, just use "-quote
 			if ( strpos( $value, $double ) === false && !preg_match( '/\$[^0-9]/', $value ) ) {
 				$quote = $double;
-			# Something needs quoting, pick the quote which causes less quoting
+
+			# Something needs quoting, so pick the quote which causes less quoting
 			} else {
 				$doubleEsc = substr_count( $value, $double ) + substr_count( $value, '$' );
 				$singleEsc = substr_count( $value, $single );
