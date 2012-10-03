@@ -1668,10 +1668,7 @@ Jangk op di Sigge „<i lang="en">[[mw:Extension:PDF_Writer]]</i>“ un „<i la
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es ene ẞööver för et Mini-Blogge met offe Quälltäxt.',
 	'translate-group-desc-statusnet-plugin' => 'Heh di Täxte un Nohreeschte sin Deil vun enem Zohsazprojramm för [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Heh di Jropp vun Täxte un Nohreeschte jehööt zom [http://toolserver.org/~krinkle/TsIntuition Tuulẞööver singem <i lang="en">Intuition</i>], enem Süßteem för et Övversäze vun  Projramme, di om [http://toolserver.org Tuulẞööver] loufe (<span class="plainlinks">[[Translating talk:Toolserver|{{int:bw-mainpage-support-title}}]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition täschnesch Einzelheite]</span>)',
-	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] es ene Deens, dä zeisch Wanderwääje, Raddwääje, Bärschraddwääje, un Rollschohwäje en de janze Wält onger dä alljemeine öffentlesche Lizänz vun dä GNU.
-
-
- .',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] es ene Deens, dä zeisch Wanderwääje, Raddwääje, Wääje för et Mauntenbaike, un Rollschohwäje en de janze Wält onger dä alljemeine öffentlesche Lizänz vun dä GNU.',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] kann flöck de Schriiver vun enem Stöck vun ener Sigg en enem Wikimedia Wiki fenge.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es e Projäk för en offlain Version vun de Wikipedia, ävver bloß Täx, op klein Jeräte.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] es a Projramm för ongerscheidlijje Bedriefssyßteeme för de Wikipeedija op draachbaare Jerääte un Tablät-PCs ze lässe un ze schrieve.',

@@ -17866,6 +17866,8 @@ Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
 	'translate-checks-xhtml' => 'Vervang de volgende {{PLURAL:$2|tag|tags}} door de juiste:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'De definitie bevat <nowiki>{{PLURAL:}}</nowiki>, maar de vertaling niet.',
+	'translate-checks-plural-forms' => 'Via <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|is één vorm|zijn $1 vormen}} opgegeven, maar {{PLURAL:$2|slechts één vorm wordt|$2 worden}} ondersteund (exclusief de vormen 0= en 1=).',
+	'translate-checks-plural-dupe' => 'Er zijn duplicaatvormen aan het einde van <nowiki>{{PLURAL:}}</nowiki> aangetroffen. <nowiki>{{PLURAL:$1|hersenen|hersenen}}</nowiki> moet genoteerd worden als <nowiki>{{PLURAL:$1|hersenen}}</nowiki>.',
 	'translate-checks-pagename' => 'Afwijkende naamruimte vergeleken met de brontekst',
 	'translate-checks-format' => 'Deze vertaling wijkt af van het bronbericht of heeft een ongeldige opmaak: $1',
 	'translate-checks-escape' => 'De volgende escapes zijn waarschijnlijk per ongeluk toegepast: <strong>$1</strong>',
