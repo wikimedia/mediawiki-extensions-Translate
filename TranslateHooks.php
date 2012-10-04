@@ -12,7 +12,6 @@
  * Some hooks for Translate extension.
  */
 class TranslateHooks {
-
 	/**
 	 * Hook: CanonicalNamespaces
 	 * @param $list array
@@ -422,6 +421,4 @@ JAVASCRIPT;
 		// If the language is in the list, return true to not hide it
 		return isset( $filter[$code] );
 	}
-
 }
-
