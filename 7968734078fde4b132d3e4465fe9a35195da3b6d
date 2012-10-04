@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAZ3////8\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-10-04T13:48:19Z",
+      "side": 1,
+      "message": "1. Should start with lower case, as this is replaced in \"You do not have the rights to $1\" or something similar.\n\n2. qqq missing ({{doc-action|pagetranslation}})",
+      "revId": "7968734078fde4b132d3e4465fe9a35195da3b6d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
