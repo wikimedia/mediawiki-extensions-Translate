@@ -58,6 +58,8 @@ class ApiTranslationReview extends ApiBase {
 			$logger = new LogPage( 'translationreview' );
 			$params = array( $revision->getId() );
 			$logger->addEntry( 'message', $title, null, $params, $wgUser );
+
+			wfRunHooks( 'TranslateEventTranslationReview', array( $handle ) );
 		}
 
 		$output = array( 'review' => array(

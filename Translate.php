@@ -152,6 +152,12 @@ $wgHooks['LinkBegin'][] = 'SpecialMyLanguage::linkfix';
 $wgHooks['Translate:MessageGroupStats:isIncluded'][] = 'TranslateHooks::hideDiscouragedFromStats';
 $wgHooks['Translate:MessageGroupStats:isIncluded'][] = 'TranslateHooks::hideRestrictedFromStats';
 
+// Internal event listeners
+$wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupStats::clear';
+$wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStats::clear';
+$wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupWorkflowStateUpdaterJob::onChange';
+$wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupWorkflowStateUpdaterJob::onChange';
+
 // New rights
 $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
