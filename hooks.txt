@@ -40,6 +40,10 @@ This is a list of known events and parameters; please add to it if you're going
 to add events to the Translate extension.
 
 === PHP events ===
+;Translate:MessageGroupStats:isIncluded: Controls whether message group is shown for a given language in language or message group statistics. Mostly used internally by Translate to hide discouraged groups and groups restricted to certain languages.
+ string          $groupId: Message group id
+ string          $code: Language code
+
 ;SpecialTranslate::executeTask: You can output the default task output
  RequestContext  $context: For adding output, accesing current interface language etc.
  TranslateTask   $task = null: Current task if any
@@ -69,6 +73,22 @@ to add events to the Translate extension.
  array          &$defaults: Associative array of default values
  array          &$nondefaults: Associative array of nondefault (override) values
 
+;Translate:GettextFFS:headerFields: Allows to customize headers of exported Gettext files per group. Certain X-headers nor Plural-Forms cannot be customized.
+ array          &$headers: List of prefilled headers. You can remove, change or add new headers.
+ MessageGroup    $group: Message group instance
+ string          $code: Language code
+
+;Translate:newTranslation: Event triggered when non-fuzzy translation has been made
+ MessageHandle   $handle
+ int             $revisionId
+ string          $text: Content of the new translation
+ User            $user: User who created or changed the translation
+
+;TranslatePostInitGroups: Hook to register new message groups to Translate. Manual cache clear may be needed to have this hook executed.
+ array          &$groups: Map of message group id to message group instance
+ array          &$deps: List of dependencies as supported by DependecyWrapper class from MediaWiki
+ array          &$autoload: List of autoloaded classes. Key is the name of the class and value is filename.
+
 ;TranslatePrefillTranslation: Provides an opportunity for a new translation to start not from as a carte blanche (the default) but from some prefilled string
  string         &$translation: The translation string as it stands
  MessageHandle   $handle: The current MessageHandle object
@@ -82,3 +102,8 @@ to add events to the Translate extension.
 
 ;beforeSubmit: Provides an opportunity to modify a Translate translation form immediately before it is submitted
  jQuery          form: The form being submitted
+
+<!--
+Post processing step to format in wiki
+^;([^ ]+): >>> ;<nowiki>\1<nowiki>:
+-->
