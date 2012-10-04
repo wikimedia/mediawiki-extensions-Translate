@@ -14,6 +14,8 @@ $messages = array();
 $messages['en'] = array(
 	'pagetranslation' => 'Page translation',
 	'right-pagetranslation' => 'Mark versions of pages for translation',
+	'action-pagetranslation' => 'Manage translatable pages',
+
 	'tpt-desc' => 'Extension for translating content pages',
 	'tpt-section' => 'Translation unit $1',
 	'tpt-section-new' => 'New translation unit.
