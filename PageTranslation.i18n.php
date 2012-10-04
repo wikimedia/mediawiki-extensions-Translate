@@ -14,6 +14,8 @@ $messages = array();
 $messages['en'] = array(
 	'pagetranslation' => 'Page translation',
 	'right-pagetranslation' => 'Mark versions of pages for translation',
+	'action-pagetranslation' => 'manage translatable pages',
+
 	'tpt-desc' => 'Extension for translating content pages',
 	'tpt-section' => 'Translation unit $1',
 	'tpt-section-new' => 'New translation unit.
@@ -343,6 +345,7 @@ Used only if a reason was provided in the following messages:
 	'pt-deletepage-reason' => '{{Identical|Reason}}',
 	'pt-deletepage-subpages' => "Checkbox label on special page 'Deleting translatable page'. see [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
 	'pt-deletepage-list-section' => "Heading in special page 'Deleting translatable page'. See [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
+	'action-pagetranslation' => '{{doc-action|pagetranslation}})',
 );
 
 /** ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ (ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ)
