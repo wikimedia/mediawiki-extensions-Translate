@@ -110,6 +110,9 @@ class ApiGroupReview extends ApiBase {
 			$user
 		);
 
+		wfRunHooks( 'TranslateEventMessageGroupStateChange',
+			array( $group, $code, $currentState, $newState ) );
+
 		return true;
 	}
 

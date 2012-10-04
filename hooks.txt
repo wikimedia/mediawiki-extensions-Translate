@@ -53,6 +53,12 @@ to add events to the Translate extension.
 ;TranslateBeforeAddModules: Provides an opportunity to load extra modules
  array          &$modules: List of resource loader module names
 
+;TranslateEventMessageGroupStateChange: Event triggered when a message group workflow state is changed in a language
+ MessageGroup    $group: Message group instance
+ string          $code: Language code
+ string          $oldState
+ string          $newState
+
 ;TranslateEventTranslationEdit: Event triggered when a translation is created or changed
  MessageHandle   $handle
 
