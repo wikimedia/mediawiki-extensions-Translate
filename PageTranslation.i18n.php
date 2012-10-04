@@ -244,6 +244,7 @@ Failures will be logged in the [[Special:Log/pagetranslation|page translation lo
 $messages['qqq'] = array(
 	'pagetranslation' => 'Title of [[Special:PageTranslation]] and its name in [[Special:SpecialPages]]. [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'right-pagetranslation' => '{{doc-right|pagetranslation}}',
+	'action-pagetranslation' => '{{doc-action|pagetranslation}})',
 	'tpt-desc' => '{{desc}}',
 	'tpt-section' => '[[File:Page_translation_mark_view.png|thumb|Page translation]]
 <code>$1</code> is the number of the unit. A screenshot of the translation administration page is available.',
@@ -345,7 +346,6 @@ Used only if a reason was provided in the following messages:
 	'pt-deletepage-reason' => '{{Identical|Reason}}',
 	'pt-deletepage-subpages' => "Checkbox label on special page 'Deleting translatable page'. see [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
 	'pt-deletepage-list-section' => "Heading in special page 'Deleting translatable page'. See [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
-	'action-pagetranslation' => '{{doc-action|pagetranslation}})',
 );
 
 /** ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ (ꢱꣃꢬꢵꢯ꣄ꢡ꣄ꢬꢵ)
@@ -1872,6 +1872,7 @@ Fejl vil blive registreret i [[Special:Log/pagetranslation|side oversættelses l
 $messages['de'] = array(
 	'pagetranslation' => 'Seiten übersetzen',
 	'right-pagetranslation' => 'Seitenversionen zur Übersetzung freigeben',
+	'action-pagetranslation' => 'übersetzbare Seiten zu verwalten',
 	'tpt-desc' => 'Ermöglicht das Übersetzen von Inhaltsseiten',
 	'tpt-section' => 'Übersetzungseinheit $1',
 	'tpt-section-new' => 'Neue Übersetzungseinheit. Name: $1',
@@ -2095,6 +2096,7 @@ $messages['diq'] = array(
 $messages['dsb'] = array(
 	'pagetranslation' => 'Pśełožowanje bokow',
 	'right-pagetranslation' => 'Wersije bokow za pśełožowanje markěrowaś',
+	'action-pagetranslation' => 'pśełožujobne boki zastojaś',
 	'tpt-desc' => 'Rozšyrjenje za pśełožowanje wopśimjeśowych bokow',
 	'tpt-section' => 'Pśełožowańska jadnotka $1',
 	'tpt-section-new' => 'Nowa pśełožowańska jadnotka. Mě: $1',
@@ -3937,6 +3939,7 @@ Kvarovi/pogreške biti će prijavljene u evidenciji prijevoda i trebaju se ručn
 $messages['hsb'] = array(
 	'pagetranslation' => 'Přełožowanje strony',
 	'right-pagetranslation' => 'Wersije strony za přełožowanje markěrować',
+	'action-pagetranslation' => 'přełožujomne strony zrjadować',
 	'tpt-desc' => 'Rozšěrjenje za přełožowanje wobsahowych stronow',
 	'tpt-section' => 'Přełožowanska jednotka $1',
 	'tpt-section-new' => 'Nowa přełožowanska jednotka. Mjeno: $1',
