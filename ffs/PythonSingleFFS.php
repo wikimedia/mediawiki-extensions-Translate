@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Generic file format support for Phython single dictionary formatted files.
+ * Generic file format support for Python single dictionary formatted files.
  * @ingroup FFS
  */
 class PythonSingleFFS extends SimpleFFS {
@@ -98,7 +98,7 @@ PHP;
 		$messages = array();
 
 		foreach ( $collection as $message ) {
-			if ( $message->translation() == '' ) {
+			if ( $message->translation() === '' ) {
 				continue;
 			}
 
