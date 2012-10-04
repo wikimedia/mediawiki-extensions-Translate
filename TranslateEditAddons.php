@@ -333,7 +333,7 @@ class TranslateEditAddons {
 
 		$fuzzy = self::checkNeedsFuzzy( $handle, $text );
 		self::updateFuzzyTag( $title, $rev, $fuzzy );
-		MessageGroupStats::clear( $handle );
+		wfRunHooks( 'TranslateEventTranslationChange', array( $handle ) );
 
 		if ( $fuzzy === false ) {
 			wfRunHooks( 'Translate:newTranslation', array( $handle, $rev, $text, $user ) );

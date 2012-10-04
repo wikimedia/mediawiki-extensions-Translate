@@ -49,6 +49,12 @@ to add events to the Translate extension.
 ;TranslateBeforeAddModules: Provides an opportunity to load extra modules
  array          &$modules: List of resource loader module names
 
+;TranslateEventTranslationEdit: Event triggered when a translation is created or changed
+ MessageHandle   $handle
+
+;TranslateEventTranslationReview: Event triggered when a translation is proofread
+ MessageHandle   $handle
+
 ;TranslateFormatMessageBeforeTable: Provides an opportunity to manipulate the display of translation strings (messages) in the main table
  string         &$message: The message that will be displayed
  TMessage        $m: Object representing the source object, useful for $m->original() and $m->translation()

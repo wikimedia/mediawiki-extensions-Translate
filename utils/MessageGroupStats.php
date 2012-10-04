@@ -112,6 +112,12 @@ class MessageGroupStats {
 		return $stats;
 	}
 
+	/**
+	 * Clears the cache for all groups associated with the message.
+	 *
+	 * Hook: TranslateEventTranslationEdit
+	 * Hook: TranslateEventTranslationReview
+	 */
 	public static function clear( MessageHandle $handle ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array(
@@ -121,6 +127,9 @@ class MessageGroupStats {
 
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
 		wfDebugLog( 'messagegroupstats', "Cleared " . serialize( $conds ) );
+
+		// Hooks must return value
+		return true;
 	}
 
 	public static function clearGroup( $id ) {

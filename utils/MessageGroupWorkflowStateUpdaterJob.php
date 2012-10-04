@@ -16,6 +16,16 @@
 class MessageGroupWorkflowStateUpdaterJob extends Job {
 
 	/**
+	 * Hook: TranslateEventTranslationEdit
+	 * Hook: TranslateEventTranslationReview
+	 */
+	public static function onChange( MessageHandle $handle ) {
+		$job = self::newJob( $handle->getTitle() );
+		$job->insert();
+		return true;
+	}
+
+	/**
 	 * @return MessageGroupWorkflowStateUpdaterJob
 	 */
 	public static function newJob( $title ) {
