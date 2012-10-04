@@ -39,7 +39,13 @@ but rather a function reference. Return values from JavaScript hooks are ignored
 This is a list of known events and parameters; please add to it if you're going
 to add events to the Translate extension.
 
+<!--
+Post processing step to format in wiki
+^;([^ ]+): >>> ;<nowiki>\1<nowiki>:
+-->
+
 === PHP events ===
+
 ;Translate:MessageGroupStats:isIncluded: Controls whether message group is shown for a given language in language or message group statistics. Mostly used internally by Translate to hide discouraged groups and groups restricted to certain languages.
  string          $groupId: Message group id
  string          $code: Language code
@@ -100,6 +106,7 @@ to add events to the Translate extension.
  MessageHandle   $handle: The current MessageHandle object
 
 === JavaScript events ===
+
 ;afterRegisterFeatures: Provides an opportunity to register event handlers, etc., whenever a new form is opened.
  jQuery          form: The new form
 
@@ -108,8 +115,3 @@ to add events to the Translate extension.
 
 ;beforeSubmit: Provides an opportunity to modify a Translate translation form immediately before it is submitted
  jQuery          form: The form being submitted
-
-<!--
-Post processing step to format in wiki
-^;([^ ]+): >>> ;<nowiki>\1<nowiki>:
--->
