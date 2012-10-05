@@ -1827,6 +1827,7 @@ $1',
  * @author Gitartha.bordoloi
  * @author Jaminianurag
  * @author Nilamdyuti
+ * @author Xqt
  */
 $messages['as'] = array(
 	'translate' => 'অনুবাদ কৰক',
@@ -12399,7 +12400,7 @@ Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.'
 	'translate-checks-xhtml' => 'Sostituire {{PLURAL:$2|il marcatore seguente|i marcatori seguenti}} con quelli corretti: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La definizione usa <nowiki>{{PLURAL:}}</nowiki> ma la traduzione no.',
 	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> è stato utilizzato con {{PLURAL:$1|una forma|$1 forme}}, ma {{PLURAL:$2|è supportata solo una forma|sono supportate $2 forme}} (escludendo le forme 0= e 1=).',
-	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> contiene una forma duplicata. <nowiki>{{PLURAL:$1|città|città}}</nowiki> dovrebbe essere scritto come <nowiki>{{PLURAL:$1|città}}</nowiki>.',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> contiene una forma duplicata. <nowiki>&#123;&#123;PLURAL:$1|città|città&#125;&#125;</nowiki> dovrebbe essere scritto come <nowiki>{{PLURAL:$1|città}}</nowiki>.',
 	'translate-checks-pagename' => 'Namespace cambiato rispetto alla definizione',
 	'translate-checks-format' => 'Questa traduzione non segue la definizione o ha una sintassi non valida: $1',
 	'translate-checks-escape' => 'I seguenti cambi di codice potrebbero essere accidentali: <strong>$1</strong>',
@@ -14451,7 +14452,7 @@ $1',
 	'translate-import-err-warnings' => '이 파일을 형식이 올바르지 않습니다.
 에디터가 msgctxt 칸을 지우지 않았는지 확인해주세요.
 자세한 내용: $1',
-	'translate-js-summary' => '편집 요약:',
+	'translate-js-summary' => '요약:',
 	'translate-js-save' => '저장',
 	'translate-js-next' => '저장하고 다음으로 넘어가기',
 	'translate-js-nonext' => '이것이 이 페이지의 마지막 메시지입니다.',

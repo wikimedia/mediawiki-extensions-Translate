@@ -1376,8 +1376,24 @@ un zum andere d Ziilsproch fir Dyni Ibersetzige.',
 	'translate-fs-settings-slanguage' => 'Unterstitzigssproch $1:',
 	'translate-fs-settings-slanguage-desc' => 'Du chasch Dir us em Ibersetzigsspycher Ibersetzige vu Nochrichten in andere Sprochen aazeige loo.
 Do chasch wehle, weli Sproche Du, wänn iberhaupt, witt aazeigt kriege.',
+	'translate-fs-settings-submit' => 'Yystellige spychere',
+	'translate-fs-userpage-level-N' => 'Ich bii ne Muetersprochler',
+	'translate-fs-userpage-level-5' => 'Ich bii ne professionälle Ibersetzer',
+	'translate-fs-userpage-level-4' => 'Ich cha s eso guet wie ne Muetersprochler',
+	'translate-fs-userpage-level-3' => 'Ich cha die Sproch guet',
+	'translate-fs-userpage-level-2' => 'Ich cha die Sproch mittelmäßig',
+	'translate-fs-userpage-level-1' => 'Ich cha die Sproch e bitzli',
+	'translate-fs-userpage-help' => 'Bitte gib Dyni Sprochchänntnis aa un schryb ebis iber Dii. Wänn Du zue meh wie fimf Sproche Chänntnis hesch, no chasch des speter aagee.',
 	'translate-fs-userpage-submit' => 'Myy Benutzersyte aalege',
 	'translate-fs-userpage-done' => 'Guet gmacht! Du hesch jetz e Benutzersyte',
+	'translate-fs-permissions-planguage' => 'Hauptsproch:',
+	'translate-fs-permissions-help' => 'Jetz muesch e Aafrog stelle, ass Du in d Benutzergruppe vu dr Ibersetzer chasch ufgnuu wäre.
+Wehl d Hauptsproch, wu du dryy ibersetze wettsch.
+
+Du chasch anderi Sproche un wyteri Hiiwys im Textfäld unten aagee.',
+	'translate-fs-permissions-pending' => 'Dyy Aafrog isch uf Syte [[$1]] gspycheret wore. Ein vu dr Mitarbeiter vu translatewiki.net wird si so schnäll wie megli priefe.
+Wänn Du dyni E-Mail-Adräss bstetigsch, chunnsch e E-Mail-Benochrichtigung iber, wänn des erfolgt isch.',
+	'translate-fs-permissions-submit' => 'Aafrog abschicke',
 	'translate-fs-target-text' => "Glickwunsch!
 Du chasch jetz aafange mit Ibersetze.
 
