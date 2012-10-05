@@ -77,6 +77,7 @@ $wgAutoloadClasses['FuzzyBot'] = "$dir/utils/FuzzyBot.php";
 $wgAutoloadClasses['HTMLJsSelectToInputField'] = "$dir/utils/HTMLJsSelectToInputField.php";
 $wgAutoloadClasses['JsSelectToInput'] = "$dir/utils/JsSelectToInput.php";
 $wgAutoloadClasses['MessageGroupCache'] = "$dir/utils/MessageGroupCache.php";
+$wgAutoloadClasses['MessageGroupStates'] = "$dir/utils/MessageGroupStates.php";
 $wgAutoloadClasses['MessageGroupStats'] = "$dir/utils/MessageGroupStats.php";
 $wgAutoloadClasses['MessageGroupWorkflowStateUpdaterJob'] = "$dir/utils/MessageGroupWorkflowStateUpdaterJob.php";
 $wgAutoloadClasses['MessageHandle'] = "$dir/utils/MessageHandle.php";

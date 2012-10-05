@@ -180,6 +180,7 @@ $wgLogNames['translationreview'] = 'log-name-translationreview';
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
 $wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
+$wgJobClasses['MessageGroupWorkflowStateUpdaterJob'] = 'MessageGroupWorkflowStateUpdaterJob';
 
 $resourcePaths = array(
 	'localBasePath' => dirname( __FILE__ ),

@@ -40,7 +40,7 @@ class MessageGroupWorkflowStateUpdaterJob extends Job {
 	public function run() {
 		$title = $this->title;
 		$handle = new MessageHandle( $title );
-		$code = $handle->code();
+		$code = $handle->getCode();
 
 		if ( !$handle->isValid() && !$code ) {
 			return;
@@ -48,7 +48,7 @@ class MessageGroupWorkflowStateUpdaterJob extends Job {
 
 		$groups = self::getGroupsWithTransitions( $handle );
 		foreach ( $groups as $id => $transitions ) {
-			$group = MessageGroup::getGroup( $id );
+			$group = MessageGroups::getGroup( $id );
 			$stats = MessageGroupStats::forItem( $id, $code );
 			$state = self::getNewState( $stats, $transitions );
 			if ( $state ) {
@@ -67,9 +67,9 @@ class MessageGroupWorkflowStateUpdaterJob extends Job {
 				continue;
 			}
 
-			$states = $group->getWorkflowStates();
-			if ( isset( $states['transitions'] ) ) {
-				$listeners[$id] = $states['transitions'];
+			$conds = $group->getMessageGroupStates()->getConditions();
+			if ( $conds ) {
+				$listeners[$id] = $conds;
 			}
 		}
 

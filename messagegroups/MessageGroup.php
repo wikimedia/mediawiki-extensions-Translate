@@ -134,9 +134,10 @@ interface MessageGroup {
 	public function getSourceLanguage();
 
 	/**
-	 * Get the workflow configuration for the group.
+	 * Get the message group workflow state configuration.
+	 * @return MessageGroupStates
 	 */
-	public function getWorkflowConfiguration();
+	public function getMessageGroupStates();
 
 	/**
 	 * Get all the translatable languages for a group, considering the whitelisting
