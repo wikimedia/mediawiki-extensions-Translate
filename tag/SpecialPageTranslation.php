@@ -454,7 +454,7 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param $page TranslatablePage
 	 * @param $sections array
 	 */
-	public function showPage( TranslatablePage $page, Array $sections ) {
+	public function showPage( TranslatablePage $page, array $sections ) {
 		global $wgContLang;
 
 		$out = $this->getOutput();
@@ -624,7 +624,7 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param $sections array
 	 * @return array|bool
 	 */
-	public function markForTranslation( TranslatablePage $page, Array $sections ) {
+	public function markForTranslation( TranslatablePage $page, array $sections ) {
 		// Add the section markers to the source page
 		$article = new Article( $page->getTitle(), 0 );
 		$status = $article->doEdit(

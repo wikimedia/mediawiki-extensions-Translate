@@ -100,7 +100,7 @@ class StringMatcher implements StringMangler {
 	 * speed up matching process.
 	 * @param $strings \list{String} Key patterns.
 	 */
-	protected function init( Array $strings ) {
+	protected function init( array $strings ) {
 		foreach ( $strings as $string ) {
 			$pos = strpos( $string, '*' );
 			if ( $pos === false ) {
@@ -218,7 +218,7 @@ class StringMatcher implements StringMangler {
 	 * @param $reverse \bool Direction of mangling or unmangling.
 	 * @return \list{String} (Un)mangled message keys.
 	 */
-	protected function mangleArray( Array $array, $reverse = false ) {
+	protected function mangleArray( array $array, $reverse = false ) {
 		$temp = array();
 
 		if ( isset( $array[0] ) ) {
