@@ -3,7 +3,7 @@
 /**
  * @group Database
  */
-class MessageGroupWorkflowStateUpdaterJobTest extends MediaWikiTestCase {
+class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 
 	protected $store;
 
@@ -44,7 +44,7 @@ class MessageGroupWorkflowStateUpdaterJobTest extends MediaWikiTestCase {
 
 	public function testGetGroupsWithTransitions() {
 		$handle = new MockMessageHandle();
-		$groups = MessageGroupWorkflowStateUpdaterJob::getGroupsWithTransitions( $handle );
+		$groups = MessageGroupStatesUpdaterJob::getGroupsWithTransitions( $handle );
 		foreach ( $groups as $id => $transitions ) {
 			$this->assertEquals( 'group-trans', $id );
 		}
@@ -60,7 +60,7 @@ class MessageGroupWorkflowStateUpdaterJobTest extends MediaWikiTestCase {
 			MessageGroupStats::TRANSLATED => 222,
 			MessageGroupStats::PROOFREAD => 111,
 		);
-		$actual = MessageGroupWorkflowStateUpdaterJob::getStatValue( $stats, $type );
+		$actual = MessageGroupStatesUpdaterJob::getStatValue( $stats, $type );
 		$this->assertEquals( $expected, $actual );
 	}
 
@@ -77,7 +77,7 @@ class MessageGroupWorkflowStateUpdaterJobTest extends MediaWikiTestCase {
 	 * @dataProvider MatchConditionProvider
 	 */
 	public function testMatchCondition( $expected, $value, $condition, $max) {
-		$actual = MessageGroupWorkflowStateUpdaterJob::matchCondition( $value, $condition, $max );
+		$actual = MessageGroupStatesUpdaterJob::matchCondition( $value, $condition, $max );
 		$this->assertEquals( $expected, $actual );
 	}
 
@@ -99,23 +99,23 @@ class MessageGroupWorkflowStateUpdaterJobTest extends MediaWikiTestCase {
 		$transitions = $states['transitions'];
 
 		$stats = array( 5, 0, 0, 0 );
-		$newstate = MessageGroupWorkflowStateUpdaterJob::getNewState( $stats, $transitions );
+		$newstate = MessageGroupStatesUpdaterJob::getNewState( $stats, $transitions );
 		$this->assertEquals( 'unset', $newstate, 'all zero, should be unset' );
 
 		$stats = array( 5, 1, 0, 0 );
-		$newstate = MessageGroupWorkflowStateUpdaterJob::getNewState( $stats, $transitions );
+		$newstate = MessageGroupStatesUpdaterJob::getNewState( $stats, $transitions );
 		$this->assertEquals( 'inprogress', $newstate, 'one translated message' );
 
 		$stats = array( 5, 0, 1, 0 );
-		$newstate = MessageGroupWorkflowStateUpdaterJob::getNewState( $stats, $transitions );
+		$newstate = MessageGroupStatesUpdaterJob::getNewState( $stats, $transitions );
 		$this->assertEquals( 'inprogress', $newstate, 'one outdated message' );
 
 		$stats = array( 5, 1, 1, 0 );
-		$newstate = MessageGroupWorkflowStateUpdaterJob::getNewState( $stats, $transitions );
+		$newstate = MessageGroupStatesUpdaterJob::getNewState( $stats, $transitions );
 		$this->assertEquals( 'inprogress', $newstate, 'one translated and one outdated message' );
 
 		$stats = array( 5, 5, 0, 0 );
-		$newstate = MessageGroupWorkflowStateUpdaterJob::getNewState( $stats, $transitions );
+		$newstate = MessageGroupStatesUpdaterJob::getNewState( $stats, $transitions );
 		$this->assertEquals( 'proofreading', $newstate, 'all translated' );
 	}
 

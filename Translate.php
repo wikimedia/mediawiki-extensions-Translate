@@ -155,8 +155,8 @@ $wgHooks['Translate:MessageGroupStats:isIncluded'][] = 'TranslateHooks::hideRest
 // Internal event listeners
 $wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupStats::clear';
 $wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStats::clear';
-$wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupWorkflowStateUpdaterJob::onChange';
-$wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupWorkflowStateUpdaterJob::onChange';
+$wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupStatesUpdaterJob::onChange';
+$wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStatesUpdaterJob::onChange';
 
 // New rights
 $wgAvailableRights[] = 'translate';
@@ -180,7 +180,7 @@ $wgLogNames['translationreview'] = 'log-name-translationreview';
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
 $wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
-$wgJobClasses['MessageGroupWorkflowStateUpdaterJob'] = 'MessageGroupWorkflowStateUpdaterJob';
+$wgJobClasses['MessageGroupStatesUpdaterJob'] = 'MessageGroupStatesUpdaterJob';
 
 $resourcePaths = array(
 	'localBasePath' => dirname( __FILE__ ),

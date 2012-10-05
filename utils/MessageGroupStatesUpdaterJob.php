@@ -13,7 +13,7 @@
  *
  * @ingroup JobQueue
  */
-class MessageGroupWorkflowStateUpdaterJob extends Job {
+class MessageGroupStatesUpdaterJob extends Job {
 
 	/**
 	 * Hook: TranslateEventTranslationEdit
@@ -26,7 +26,7 @@ class MessageGroupWorkflowStateUpdaterJob extends Job {
 	}
 
 	/**
-	 * @return MessageGroupWorkflowStateUpdaterJob
+	 * @return MessageGroupStatesUpdaterJob
 	 */
 	public static function newJob( $title ) {
 		$job = new self( $title );
