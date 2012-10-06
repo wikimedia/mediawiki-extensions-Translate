@@ -3696,6 +3696,7 @@ $messages['ha'] = array(
 $messages['he'] = array(
 	'pagetranslation' => 'תרגום דפים',
 	'right-pagetranslation' => 'סימון גרסאות של הדפים לתרגום',
+	'action-pagetranslation' => 'לנהל דפים שאפשר לתרגם',
 	'tpt-desc' => 'הרחבה לתרגום דפי תוכן',
 	'tpt-section' => 'יחידת תרגום $1',
 	'tpt-section-new' => 'יחידת תרגום חדשה.

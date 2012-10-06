@@ -3589,6 +3589,27 @@ $messages['ur'] = array(
 	'translate-fs-permissions-submit' => 'بھیجنے کی درخواست',
 );
 
+/** Uzbek (oʻzbekcha)
+ * @author CoderSI
+ */
+$messages['uz'] = array(
+	'firststeps' => 'Birinchi qadamlar',
+	'firststeps-desc' => "Vikining yangi ishtirokchilari uchun tarjima kengaytmasi o'rnatilgan [[Special:FirstSteps|maxsus sahifa]]",
+	'translate-fs-pagetitle-done' => ' — bajarildi!',
+	'translate-fs-pagetitle-pending' => ' — kutishda',
+	'translate-fs-pagetitle' => "Boshlang'ich o'rganish dasturi - $1",
+	'translate-fs-signup-title' => "Ro'yxatdan o'ting",
+	'translate-fs-settings-title' => "Moslamalarni o'rnating",
+	'translate-fs-userpage-title' => "O'z ishtirokchi sahifangizni yarating",
+	'translate-fs-permissions-title' => "Tarjimonlik huquqiga so'rov yuboring",
+	'translate-fs-target-title' => 'Tarjimani boshlang!',
+	'translate-fs-email-title' => "O'z elektron pochta manzilingizni tasdiqlang",
+	'translate-fs-selectlanguage' => 'Tilni tanlang',
+	'translate-fs-settings-planguage' => 'Asosiy til:',
+	'translate-fs-settings-slanguage' => 'Yordamchi til $1:',
+	'translate-fs-settings-submit' => 'Moslamalarni saqlash',
+);
+
 /** Veps (vepsän kel’)
  * @author Игорь Бродский
  */
