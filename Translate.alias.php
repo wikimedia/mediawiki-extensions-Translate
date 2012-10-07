@@ -422,6 +422,7 @@ $specialPageAliases['ja'] = array(
 	'SupportedLanguages' => array( 'サポートしている言語' ),
 	'MyLanguage' => array( '自分の言語' ),
 	'PageTranslationDeletePage' => array( 'ページ翻訳削除ページ' ),
+	'AggregateGroups' => array( '集約群' ),
 );
 
 /** Georgian (ქართული) */

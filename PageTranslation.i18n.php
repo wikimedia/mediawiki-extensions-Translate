@@ -966,6 +966,7 @@ $messages['be'] = array(
 $messages['be-tarask'] = array(
 	'pagetranslation' => 'Пераклад старонкі',
 	'right-pagetranslation' => 'пазначаць вэрсіяў старонак для перакладу',
+	'action-pagetranslation' => 'кіраваньне перакладам старонак',
 	'tpt-desc' => 'Пашырэньне для перакладу старонак зьместу',
 	'tpt-section' => 'Адзінка перакладу $1',
 	'tpt-section-new' => 'Новая адзінка перакладу. Назва: $1',
@@ -1038,16 +1039,22 @@ $messages['be-tarask'] = array(
 
 Адміністратар перакладу вырашыў сканцэнтраваць перакладніцкія высілкі на мовах $3.",
 	'tpt-discouraged-language-reason' => 'Прычына: $1',
+	'tpt-priority-languages' => 'Адміністратар перакладаў вызначыў прыярытэтныя мовы для гэтай групы: $1.',
 	'tpt-render-summary' => 'Абнаўленьне для адпаведнасьці новай вэрсіі крынічнай старонкі',
 	'tpt-download-page' => 'Экспартаваць старонку з перакладамі',
+	'aggregategroups' => 'Абагульняльныя групы',
 	'tpt-aggregategroup-add' => 'Дадаць',
 	'tpt-aggregategroup-save' => 'Захаваць',
+	'tpt-aggregategroup-add-new' => 'Дадаць новую абагульняльную групу',
 	'tpt-aggregategroup-new-name' => 'Назва:',
+	'tpt-aggregategroup-new-description' => 'Апісаньне (неабавязкова):',
+	'tpt-aggregategroup-remove-confirm' => 'Вы ўпэўненыя, што жадаеце выдаліць гэтую абагульняльную групу?',
+	'tpt-aggregategroup-invalid-group' => 'Група не існуе',
 	'pt-parse-open' => 'Незбалянсаваны тэг &lt;translate>.
 Шаблён перакладу: <pre>$1</pre>',
 	'pt-parse-close' => 'Незбалянсаваны тэг &lt;/translate>.
 Шаблён перакладу: <pre>$1</pre>',
-	'pt-parse-nested' => 'Укладзеныя сэкцыі &lt;translate> — недазволеныя.
+	'pt-parse-nested' => 'Укладзеныя сэкцыі &lt;translate> не дазволеныя.
 Тэкст тэгу: <pre>$1</pre>',
 	'pt-shake-multiple' => 'Некалькі маркераў сэкцыяў у адной сэкцыі.
 Тэкст сэкцыі: <pre>$1</pre>',
@@ -2768,6 +2775,7 @@ Izena: $1',
  * @author Huji
  * @author Mjbmr
  * @author ZxxZxxZ
+ * @author پاناروما
  */
 $messages['fa'] = array(
 	'pagetranslation' => 'ترجمهٔ صفحه',
@@ -2791,7 +2799,9 @@ $messages['fa'] = array(
 مطمئن شوید برچسب <nowiki><translate></nowiki> و نحو مناسبی دارد.',
 	'tpt-select-prioritylangs-reason' => 'دلیل:',
 	'tpt-rev-mark' => 'علامت‌گذاری برای ترجمه',
+	'tpt-rev-discourage' => 'دلسرد',
 	'tpt-rev-encourage' => 'احیا',
+	'tpt-rev-unmark-tooltip' => 'حذف این صفحه از ترجمه.',
 	'tpt-discouraged-language-reason' => 'دلیل: $1',
 	'tpt-aggregategroup-add' => 'افزودن',
 	'tpt-aggregategroup-save' => 'ذخیره',

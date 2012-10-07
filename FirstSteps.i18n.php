@@ -310,6 +310,7 @@ $messages['be-tarask'] = array(
 	'translate-fs-settings-submit' => 'Захаваць налады',
 	'translate-fs-userpage-level-N' => 'Мая родная мова',
 	'translate-fs-userpage-level-5' => 'Я — прафэсійны перакладчык на',
+	'translate-fs-userpage-level-4' => 'Ведаю яе як родную',
 	'translate-fs-userpage-submit' => 'Стварыць маю старонку ўдзельніка',
 	'translate-fs-userpage-done' => 'Выдатна! Цяпер Вы маеце старонку ўдзельніка.',
 	'translate-fs-permissions-planguage' => 'Асноўная мова:',
