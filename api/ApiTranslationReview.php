@@ -17,8 +17,7 @@ class ApiTranslationReview extends ApiBase {
 	protected static $salt = 'translate-messagereview';
 
 	public function execute() {
-		global $wgUser;
-		if ( !$wgUser->isallowed( self::$right ) ) {
+		if ( !$this->getUser()->isallowed( self::$right ) ) {
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
@@ -39,14 +38,14 @@ class ApiTranslationReview extends ApiBase {
 			$this->dieUsage( 'Cannot review fuzzy translations', 'fuzzymessage' );
 		}
 
-		if ( $revision->getUser() == $wgUser->getId() ) {
+		if ( $revision->getUser() == $this->getUser()->getId() ) {
 			$this->dieUsage( 'Cannot review own translations', 'owntranslation' );
 		}
 
 		$dbw = wfGetDB( DB_MASTER );
 		$table = 'translate_reviews';
 		$row = array(
-			'trr_user' => $wgUser->getId(),
+			'trr_user' => $this->getUser()->getId(),
 			'trr_page' => $revision->getPage(),
 			'trr_revision' => $revision->getId(),
 		);
@@ -57,7 +56,7 @@ class ApiTranslationReview extends ApiBase {
 		} else {
 			$logger = new LogPage( 'translationreview' );
 			$params = array( $revision->getId() );
-			$logger->addEntry( 'message', $title, null, $params, $wgUser );
+			$logger->addEntry( 'message', $title, null, $params, $this->getUser() );
 
 			wfRunHooks( 'TranslateEventTranslationReview', array( $handle ) );
 		}
