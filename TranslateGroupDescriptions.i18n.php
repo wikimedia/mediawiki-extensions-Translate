@@ -2505,10 +2505,11 @@ $messages['sk'] = array(
 
 /** Slovenian (slovenščina)
  * @author Dbc334
+ * @author Eleassar
  */
 $messages['sl'] = array(
 	'translategroupdescriptions-desc' => 'Opisi skupin sporočil izdelkov, ki jih podpira razširitev [http://mediawiki.org/wiki/Extension:Translate Translate] extension',
-	'translate-group-desc-nodesc' => 'Za to skupino sporočil opis ni na voljo',
+	'translate-group-desc-nodesc' => 'Za to skupino sporočil opis ni na razpolago',
 	'translate-group-desc-mediawikicore' => 'Ta skupina sporočil zajema sporočila, uporabljena v trenutni alfarazličici MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Ta skupina sporočil vsebuje [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najbolj uporabljanih sporočil] v MediaWiki',
 	'translate-group-desc-mediawikiextensions' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila podprtih razširitev MediaWiki',

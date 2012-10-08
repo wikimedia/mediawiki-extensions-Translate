@@ -3211,19 +3211,19 @@ V spodnjem polju lahko omenite tudi druge jezike in druge pripombe.',
 Če potrdite svoj e-poštni naslov, boste prejeli e-poštno obvestilo takoj, ko se to zgodi.',
 	'translate-fs-permissions-submit' => 'Pošlji zahtevo',
 	'translate-fs-target-text' => "Čestitamo!
-Sedaj lahko začnete prevajati.
+Zdaj lahko začnete prevajati.
 
-Ne bojte se, če se vam še vedno zdi novo in zmedeno.
-Na [[Project list|Seznamu projektov]] se nahaja pregled projektov, h katerim lahko prispevate s prevajanjem.
+Ne bojte se, če se vam vse še vedno zdi novo in zmedeno.
+Na [[Project list|Seznamu projektov]] boste našli pregled projektov, h katerim lahko prispevate prevode.
 Večina projektov ima kratko opisno stran s povezavo »''Prevedi ta projekt''«, ki vas bo ponesla na stran s seznamom neprevedenih sporočil.
-Na razpolago je tudi seznam vseh skupin sporočil s [[Special:LanguageStats|trenutnim stanjem prevodov za jezik]].
+Na razpolago je tudi seznam vseh skupin sporočil s [[Special:LanguageStats|trenutnim stanjem prevodov za  posamezen jezik]].
 
-Če menite, da morate razumeti več stvari, preden začnete prevajati, lahko preberete [[FAQ|Pogosto zastavljena vprašanja]].
-Žal je lahko dokumentacija ponekod zastarela.
-Če je kaj takega, kar bi morali storiti, vendar ne ugotovite kako, ne oklevajte in povprašajte na [[Support|podporni strani]].
+Če ste mnenja, da morate pred začetkom prevajanja okolje bolje spoznati, si lahko preberete odgovore na [[FAQ|Pogosto zastavljena vprašanja]].
+Žal je lahko dokumentacija na nekaterih mestih zastarela.
+Če se pojavi kaj, kar bi želeli storiti, vendar ne veste, kako, ne oklevajte in nas povprašajte na [[Support|podporni strani]].
 
 Prav tako lahko stopite v stik s kolegi prevajalci istega jezika na [[Portal_talk:$1|pogovorni strani]] [[Portal:$1|vašega jezikovnega portala]].
-Če še tega niste storili, nastavite [[Special:Preferences|jezik vašega uporabniškega vmesnika na jezik v katerega želite prevajati]], da bo wiki lahko prikazal povezave, ki vam najbolje ustrezajo.",
+Če tega niste morda že storili, lahko nastavite [[Special:Preferences|jezik vašega uporabniškega vmesnika na jezik, v katerega želite prevajati]], da bo wiki lahko prikazal za vas najustreznejše povezave.",
 	'translate-fs-email-text' => 'Prosimo, navedite svoj e-poštni naslov v [[Special:Preferences|svojih nastavitvah]] in ga potrdite iz e-pošte, ki vam bo poslana.
 
 To omogoča drugim uporabnikom, da stopijo v stik z vami preko e-pošte.
