@@ -746,9 +746,8 @@ class TranslationHelpers {
 
 		$checkMessages = array();
 		foreach ( $checks as $checkParams ) {
-			array_splice( $checkParams, 1, 0, 'parseinline' );
-			// @todo FIXME: Use Message class.
-			$checkMessages[] = call_user_func_array( 'wfMsgExt', $checkParams );
+			$key = array_shift( $checkParams );
+			$checkMessages[] = wfMessage( $key, $checkParams )->parse();
 		}
 
 		return Html::rawElement( 'div', array( 'class' => 'mw-translate-messagechecks' ),
