@@ -58,6 +58,10 @@ class JsonFFS extends SimpleFFS {
 		 */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
+			if ( $value === null ) {
+				continue;
+			}
+
 			if ( $m->hasTag( 'fuzzy' ) ) {
 				$value = str_replace( TRANSLATE_FUZZY, '', $value );
 			}
