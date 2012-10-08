@@ -17,16 +17,17 @@ class TPException extends MWException {
 	protected $msg = null;
 
 	/**
-	 * @param $msg \string Message key.
+	 * @todo Pass around Messages when Status class doesn't suck
+	 * @param array $msg Message key with parameters
 	 */
-	public function __construct( $msg ) {
+	public function __construct( array $msg ) {
 		$this->msg = $msg;
-		// @todo FIXME: Use Message class.
-		parent::__construct( call_user_func_array( 'wfMsg', $msg ) );
+		$wikitext = call_user_func_array( 'wfMessage', $msg )->text();
+		parent::__construct( $wikitext );
 	}
 
 	/**
-	 * @return \string A localised error message.
+	 * @return array
 	 */
 	public function getMsg() {
 		return $this->msg;

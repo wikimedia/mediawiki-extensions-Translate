@@ -331,7 +331,7 @@ class PageTranslationHooks {
 		try {
 			$page->getParse();
 		} catch ( TPException $e ) {
-			$error .= Html::rawElement( 'div', array( 'class' => 'error' ), $e->getMessage() );
+			$error .= Html::rawElement( 'div', array( 'class' => 'error' ), $e->getWikiText() );
 		}
 
 		return true;
