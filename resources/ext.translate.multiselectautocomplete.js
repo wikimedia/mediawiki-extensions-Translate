@@ -7,9 +7,9 @@
  * Credits: http://jqueryui.com/demos/autocomplete/#multiple
  */
 jQuery( function( $ ) {
-	"use strict";
+	'use strict';
 	
-	$.widget( "ui.multiselectautocomplete", {
+	$.widget( 'ui.multiselectautocomplete', {
 		options: { 
 			inputbox: null // a jQuery selector for the input box where selections are written.
 			// @TODO can have more options.
@@ -18,6 +18,7 @@ jQuery( function( $ ) {
 			var self = this,
 				select = this.element.hide(),
 				options = this.options;
+
 			function split( val ) {
 				return val.split( /,\s*/ );
 			}
@@ -27,11 +28,12 @@ jQuery( function( $ ) {
 				minLength: 0,
 				source: function( request, response ) {
 					var term = split( request.term ).pop();
-					var matcher = new RegExp( $.ui.autocomplete.escapeRegex( term ), "i" );
-					response( select.children( "option" ).map( function() {
-						var text = $( this ).text();
-						var value = $( this ).val();
-						var term = split( request.term ).pop();
+					var matcher = new RegExp( $.ui.autocomplete.escapeRegex( term ), 'i' );
+					response( select.children( 'option' ).map( function() {
+						var text = $( this ).text(),
+							value = $( this ).val(),
+							term = split( request.term ).pop();
+
 						if ( this.value && ( !request.term || matcher.test(text) ) ) {
 							return {
 								label: text.replace(
@@ -48,7 +50,7 @@ jQuery( function( $ ) {
 				},
 				select: function( event, ui ) {
 					ui.item.option.selected = true;
-					self._trigger( "selected", event, {
+					self._trigger( 'selected', event, {
 						item: ui.item.option
 					});
 					var terms = split( $(this).val() );
@@ -57,15 +59,15 @@ jQuery( function( $ ) {
 					// add the selected item
 					terms.push( ui.item.value );
 					// add placeholder to get the comma-and-space at the end
-					terms.push( "" );
-					$( this ).val( terms.join( ", " ) );
+					terms.push( '' );
+					$( this ).val( terms.join( ', ' ) );
 					return false;
 				}
 			} );
 
-			input.data( "autocomplete" )._renderItem = function( ul, item ) {
+			input.data( 'autocomplete' )._renderItem = function( ul, item ) {
 				return $( "<li>" )
-					.data( "item.autocomplete", item )
+					.data( 'item.autocomplete', item )
 					.append( "<a>" + item.label + "</a>" )
 					.appendTo( ul );
 			};
