@@ -1,5 +1,6 @@
 <?php
 /**
+ * Unit tests for message group state change api.
  *
  * @file
  * @author Niklas Laxström

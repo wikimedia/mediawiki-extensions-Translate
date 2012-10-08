@@ -27,7 +27,8 @@ class HookDocTest extends MediaWikiTestCase {
 		),
 	);
 
-	public function setUp() {
+	protected function setUp() {
+		parent::setUp();
 		$contents = file_get_contents( __DIR__ . "/../hooks.txt" );
 		$blocks = preg_split( '/\n\n/', $contents );
 		$type = false;
@@ -140,6 +141,5 @@ class HookDocTest extends MediaWikiTestCase {
 			$this->assertArrayHasKey( $hook, $this->documented['js'], "Documented js hook $hook exists" );
 		}
 	}
-
 
 }

@@ -13,7 +13,7 @@
  */
 class ApiTokensTest extends MediaWikiTestCase {
 
-	/** @dataProvider getTokenClasses */
+	/** @dataProvider provideTokenClasses */
 	public function testTokenRetrieval( $id, $class ) {
 		// For User::editToken
 		global $wgDeprecationReleaseLimit;
@@ -46,7 +46,7 @@ class ApiTokensTest extends MediaWikiTestCase {
 		}
 	}
 
-	public function getTokenClasses() {
+	public static function provideTokenClasses() {
 		return array(
 			array( 'groupreview', 'ApiGroupReview' ),
 			array( 'translationreview', 'ApiTranslationReview' ),

@@ -49,9 +49,9 @@ class BlackListTest extends MediaWikiTestCase {
 
 	public function testAllBlackList() {
 		$conf = $this->groupConfiguration;
-		$conf['LANGUAGES'] =  array(
+		$conf['LANGUAGES'] = array(
 			'blacklist' => '*',
-			);
+		);
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
 		$this->assertEquals( count( $translatableLanguages ), 0 );
@@ -60,9 +60,9 @@ class BlackListTest extends MediaWikiTestCase {
 
 	public function testAllWhiteList() {
 		$conf = $this->groupConfiguration;
-		$conf['LANGUAGES'] =  array(
+		$conf['LANGUAGES'] = array(
 			'whitelist' => '*',
-			);
+		);
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
 		$this->assertNull( $translatableLanguages );
@@ -70,10 +70,10 @@ class BlackListTest extends MediaWikiTestCase {
 
 	public function testWhiteListOverrideBlackList() {
 		$conf = $this->groupConfiguration;
-		$conf['LANGUAGES'] =  array(
+		$conf['LANGUAGES'] = array(
 			'whitelist' => array( 'en', 'hi', 'ta' ),
 			'blacklist' => array( 'ta' ),
-			);
+		);
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
 		$this->assertTrue( isset( $translatableLanguages['ta'] ) );
@@ -82,9 +82,9 @@ class BlackListTest extends MediaWikiTestCase {
 
 	public function testSomeBlackList() {
 		$conf = $this->groupConfiguration;
-		$conf['LANGUAGES'] =  array(
+		$conf['LANGUAGES'] = array(
 			'blacklist' =>  array( 'or', 'hi' ),
-			);
+		);
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
 		$this->assertTrue( !isset( $translatableLanguages['hi'] ) );
