@@ -28,13 +28,11 @@ class TranslateEditAddons {
 			return true;
 		}
 
-
 		$group = $handle->getGroup();
 		// Happens when translation page move is in progress
 		if ( !$group ) {
 			return true;
 		}
-
 
 		$index = $next = $prev = $key = null;
 		if ( $skin->getUser()->isAllowed( 'translate' ) ) {
@@ -146,14 +144,15 @@ class TranslateEditAddons {
 	 * Hook: AlternateEdit
 	 */
 	public static function intro( EditPage $editpage ) {
-		global $wgOut;
 		$handle = new MessageHandle( $editpage->mTitle );
 		if ( $handle->isValid() ) {
 			$editpage->suppressIntro = true;
 			$group = $handle->getGroup();
 			$languages = $group->getTranslatableLanguages();
 			if ( $handle->getCode() && $languages !== null && !isset( $languages[$handle->getCode()] ) ) {
-				$wgOut->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-language-disabled' );
+				$editpage->mArticle->getContext()->getOutput()->wrapWikiMsg(
+					"<div class='error'>$1</div>", 'translate-language-disabled'
+				);
 				return false;
 			}
 			return true;
@@ -161,8 +160,7 @@ class TranslateEditAddons {
 		$msg = wfMessage( 'translate-edit-tag-warning' )->inContentLanguage()->plain();
 
 		if ( $msg !== '' && $msg !== '-' && TranslatablePage::isSourcePage( $editpage->mTitle ) ) {
-			global $wgOut;
-			$editpage->editFormTextTop .= $wgOut->parse( $msg );
+			$editpage->editFormTextTop .= $editpage->mArticle->getContext()->getOutput()->parse( $msg );
 		}
 
 		return true;
@@ -188,24 +186,25 @@ class TranslateEditAddons {
 	 * Hook: EditPageBeforeEditButtons
 	 */
 	static function buttonHack( EditPage $editpage, &$buttons, $tabindex ) {
-		global $wgLang;
-
 		$handle = new MessageHandle( $editpage->mTitle );
 		if ( !$handle->isValid() ) {
 			return true;
 		}
 
+		$context = $editpage->mArticle->getContext();
+
 		if ( $handle->isDoc() ) {
-			$name = TranslateUtils::getLanguageName( $handle->getCode(), false, $wgLang->getCode() );
-			$accessKey = wfMessage( 'accesskey-save' )->plain();
+			$langCode = $context->getLanguage()->getCode();
+			$name = TranslateUtils::getLanguageName( $handle->getCode(), false, $langCode );
+			$accessKey = $context->msg( 'accesskey-save' )->plain();
 			$temp = array(
 				'id'        => 'wpSave',
 				'name'      => 'wpSave',
 				'type'      => 'submit',
 				'tabindex'  => ++$tabindex,
-				'value'     => wfMessage( 'translate-save', $name )->text(),
+				'value'     => $context->msg( 'translate-save', $name )->text(),
 				'accesskey' => $accessKey,
-				'title'     => wfMessage( 'tooltip-save' )->text() . ' [' . $accessKey . ']',
+				'title'     => $context->msg( 'tooltip-save' )->text() . ' [' . $accessKey . ']',
 			);
 			$buttons['save'] = Xml::element( 'input', $temp, '' );
 		}
@@ -230,8 +229,8 @@ class TranslateEditAddons {
 			'name'      => 'wpSupport',
 			'type'      => 'button',
 			'tabindex'  => ++$tabindex,
-			'value'     => wfMessage( 'translate-js-support' )->text(),
-			'title'     => wfMessage( 'translate-js-support-title' )->text(),
+			'value'     => $context->msg( 'translate-js-support' )->text(),
+			'title'     => $context->msg( 'translate-js-support-title' )->text(),
 			'data-load-url' => $supportTitle->getLocalUrl( $supportParams ),
 			'onclick'   => "window.open( jQuery(this).attr('data-load-url') );",
 		);
@@ -241,21 +240,22 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * @param $object
-	 * @return String
+	 * @param EditPage $editpage
+	 * @return string
 	 */
-	private static function editBoxes( EditPage $object ) {
-		global $wgOut, $wgRequest;
+	private static function editBoxes( EditPage $editpage ) {
+		$context = $editpage->mArticle->getContext();
+		$request = $context->getRequest();
 
-		$groupId = $wgRequest->getText( 'loadgroup', '' );
-		$th = new TranslationHelpers( $object->mTitle, $groupId );
-		if ( $object->firsttime && !$wgRequest->getCheck( 'oldid' ) && !$wgRequest->getCheck( 'undo' ) ) {
-			$object->textbox1 = (string) $th->getTranslation();
+		$groupId = $request->getText( 'loadgroup', '' );
+		$th = new TranslationHelpers( $editpage->mTitle, $groupId );
+		if ( $editpage->firsttime && !$request->getCheck( 'oldid' ) && !$request->getCheck( 'undo' ) ) {
+			$editpage->textbox1 = (string) $th->getTranslation();
 		} else {
-			$th->setTranslation( $object->textbox1 );
+			$th->setTranslation( $editpage->textbox1 );
 		}
 
-		TranslationHelpers::addModules( $wgOut );
+		TranslationHelpers::addModules( $context->getOutput() );
 
 		return $th->getBoxes();
 	}
@@ -298,12 +298,12 @@ class TranslateEditAddons {
 	/**
 	 * Hook: EditPage::showEditForm:fields
 	 */
-	public static function keepFields( EditPage $edit, OutputPage $out ) {
-		global $wgRequest;
+	public static function keepFields( EditPage $editpage, OutputPage $out ) {
+		$request = $editpage->mArticle->getContext()->getRequest();
 
 		$out->addHTML( "\n" .
-			Html::hidden( 'loadgroup', $wgRequest->getText( 'loadgroup' ) ) .
-			Html::hidden( 'loadtask', $wgRequest->getText( 'loadtask' ) ) .
+			Html::hidden( 'loadgroup', $request->getText( 'loadgroup' ) ) .
+			Html::hidden( 'loadtask', $request->getText( 'loadtask' ) ) .
 			"\n"
 		);
 
@@ -343,9 +343,11 @@ class TranslateEditAddons {
 	}
 
 	/**
+	 * @param MessageHandle $handle
+	 * @param string $text
 	 * @return bool
 	 */
-	protected static function checkNeedsFuzzy( MessageHandle $handle, /*string*/$text ) {
+	protected static function checkNeedsFuzzy( MessageHandle $handle, $text ) {
 		// Check for explicit tag.
 		$fuzzy = self::hasFuzzyString( $text );
 
@@ -448,6 +450,7 @@ class TranslateEditAddons {
 	 */
 	public static function disablePreSaveTransform( $article, ParserOptions $popts ) {
 		global $wgTranslateUsePreSaveTransform;
+
 		if ( !$wgTranslateUsePreSaveTransform ) {
 			$handle = new MessageHandle( $article->getTitle() );
 			if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
