@@ -1135,51 +1135,6 @@ class TranslationHelpers {
 	}
 
 	/**
-	 * @param $msg string
-	 * @param $code string
-	 * @param $title Title
-	 * @param $makelink
-	 * @return string
-	 */
-	protected function doBox( $msg, $code, $title = false, $makelink = false ) {
-		global $wgLang;
-
-		$name = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
-		$code = wfBCP47( $code );
-
-		$attributes = array();
-		if ( !$title ) {
-			$attributes['class'] = 'mw-sp-translate-in-other-big';
-		} elseif ( $code === 'en' ) {
-			$attributes['class'] = 'mw-sp-translate-edit-definition';
-		} else {
-			$attributes['class'] = 'mw-sp-translate-edit-committed';
-		}
-
-		if ( mb_strlen( $msg ) < 100 && !$title ) {
-			$attributes['class'] = 'mw-sp-translate-in-other-small';
-		}
-
-		$msg = TranslateUtils::convertWhiteSpaceToHTML( $msg );
-
-		if ( !$title ) {
-			$title = "$name ($code)";
-		}
-
-		if ( $makelink ) {
-			$linkTitle = Title::newFromText( $makelink );
-			$title = Linker::link(
-				$linkTitle,
-				htmlspecialchars( $title ),
-				array(),
-				array( 'action' => 'edit' )
-			);
-		}
-
-		return TranslateUtils::fieldset( $title, Html::element( 'span', null, $msg ), $attributes );
-	}
-
-	/**
 	 * @return null|string
 	 */
 	public function getLazySuggestionBox() {
