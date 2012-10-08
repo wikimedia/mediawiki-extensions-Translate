@@ -7,7 +7,7 @@
  */
 /*global mw:false*/
 jQuery( document ).ready( function( $ ) {
-	"use strict";
+	'use strict';
 
 	var
 		$translateTable = $( '.mw-sp-translate-table' ),
@@ -102,7 +102,7 @@ jQuery( document ).ready( function( $ ) {
 // When hovering a row, adjust brightness of the last two custom-colored cells as well
 // See also translate.langstats.css for the highlighting for the other normal rows
 mw.loader.using( 'jquery.colorUtil' , function() {
-	"use strict";
+	'use strict';
 	jQuery( document ).ready( function( $ ) {
 		$( '.mw-sp-translate-table.wikitable tr' ).hover( function() {
 			$( '> td.hover-color', this )

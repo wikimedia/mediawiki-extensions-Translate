@@ -1,5 +1,6 @@
 jQuery( function( $ ) {
-	"use strict";
+	'use strict';
+
 	var mw = mediaWiki;
 
 	// BC for MW < 1.18
@@ -9,48 +10,49 @@ jQuery( function( $ ) {
 		};
 	}
 
-	var $submit = $( "#mw-translate-workflowset" );
-	var $select = $( "#mw-sp-translate-workflow").find( "select" );
-	$select.find( "option[value=]" ).attr( "disabled", "disabled" );
+	var $submit = $( '#mw-translate-workflowset' ),
+		$select = $( '#mw-sp-translate-workflow').find( 'select' );
+
+	$select.find( 'option[value=]' ).attr( 'disabled', 'disabled' );
 
 	var submitFunction = function( event ) {
 		var successFunction = function( data, textStatus ) {
 			if ( data.error ) {
-				$submit.val( mw.msg( "translate-workflow-set-do" ) );
-				$submit.attr( "disabled", false );
+				$submit.val( mw.msg( 'translate-workflow-set-do' ) );
+				$submit.attr( 'disabled', false );
 				alert( data.error.info );
 			} else {
-				$submit.val( mw.msg( "translate-workflow-set-done" ) );
-				$select.find( "option[selected]" ).attr( "selected", false );
-				$select.find( "option[value=" + event.data.newstate +"]" ).attr( "selected", "selected" );
+				$submit.val( mw.msg( 'translate-workflow-set-done' ) );
+				$select.find( 'option[selected]' ).attr( 'selected', false );
+				$select.find( 'option[value=' + event.data.newstate + ']' ).attr( 'selected', 'selected' );
 			}
 		};
 
-		$submit.attr( "disabled", "disable" );
-		$submit.val( mw.msg( "translate-workflow-set-doing" ) );
+		$submit.attr( 'disabled', 'disable' );
+		$submit.val( mw.msg( 'translate-workflow-set-doing' ) );
 		var params = {
-			action: "groupreview",
-			token: $submit.data( "token" ),
-			group: $submit.data( "group" ),
-			language: $submit.data( "language" ),
+			action: 'groupreview',
+			token: $submit.data( 'token' ),
+			group: $submit.data( 'group' ),
+			language: $submit.data( 'language' ),
 			state: event.data.newstate,
-			format: "json"
+			format: 'json'
 		};
-		$.post( mw.util.wikiScript( "api" ), params, successFunction );
+		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 	};
 
 	$select.change( function( event ) {
-		var current = $(this).find( "option[selected]" ).val();
-		var tobe = event.target.value;
+		var current = $(this).find( 'option[selected]' ).val(),
+			tobe = event.target.value;
 
-		$submit.val( mw.msg( "translate-workflow-set-do" ) );
-		$submit.unbind( "click" );
+		$submit.val( mw.msg( 'translate-workflow-set-do' ) );
+		$submit.unbind( 'click' );
 		if ( current !== tobe ) {
-			$submit.css( "visibility", "visible" );
-			$submit.attr( "disabled", false );
+			$submit.css( 'visibility', 'visible' );
+			$submit.attr( 'disabled', false );
 			$submit.click( { newstate: tobe }, submitFunction );
 		} else {
-			$submit.attr( "disabled", "disabled" );
+			$submit.attr( 'disabled', 'disabled' );
 		}
 	} );
 } );
@@ -64,7 +66,8 @@ jQuery( function( $ ) {
  */
 
 ( function ( $, mw ) {
-	"use strict";
+	'use strict';
+
 	function ourWindowOnBeforeUnloadRegister() {
 		pageShowHandler();
 		if ( window.addEventListener ) {

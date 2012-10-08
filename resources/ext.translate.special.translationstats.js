@@ -10,7 +10,7 @@
  */
 
 jQuery( document ).ready( function( $ ) {
-	"use strict";
+	'use strict';
 
 	// Based on UploadWizard, TranslationNotifications
 	$( '#start' ).datepicker( {

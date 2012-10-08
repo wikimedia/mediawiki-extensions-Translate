@@ -8,8 +8,10 @@
  */
 
 ( function ( mw ) {
-	"use strict";
+	'use strict';
+
 	var registry = {};
+
 	mw.translateHooks = {
 		add: function ( name, func ) {
 			if ( !registry[name] ) {
@@ -19,10 +21,12 @@
 		},
 
 		run: function ( /* infinite list of parameters */ ) {
-			var args = Array.prototype.slice.call( arguments );
-			var name = args.shift();
+			var args = Array.prototype.slice.call( arguments ),
+				name = args.shift();
+
 			if ( registry[name] ) {
 				var length = registry[name].length;
+
 				for ( var i = 0; i < length; i++ ) {
 					registry[name][i].apply( null, args );
 				}
