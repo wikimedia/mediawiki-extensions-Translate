@@ -305,7 +305,7 @@ abstract class MessageGroupOld implements MessageGroup {
 
 
 	/**
-	 * @deprecated Use getMessageGroupStateConfig
+	 * @deprecated Use getMessageGroupStates
 	 */
 	public function getWorkflowConfiguration() {
 		global $wgTranslateWorkflowStates;
