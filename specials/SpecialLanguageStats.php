@@ -283,11 +283,11 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		if ( $this instanceof SpecialMessageGroupStats ) {
 			// Same for every language
 			$group = MessageGroups::getGroup( $this->target );
-			$stateConfig = $group->getWorkflowConfiguration();
+			$stateConfig = $group->getMessageGroupStates()->getStates();
 		} else {
 			// The message group for this row
 			$group = MessageGroups::getGroup( $target );
-			$stateConfig = $group->getWorkflowConfiguration();
+			$stateConfig = $group->getMessageGroupStates()->getStates();
 		}
 
 		$sortValue = -1;

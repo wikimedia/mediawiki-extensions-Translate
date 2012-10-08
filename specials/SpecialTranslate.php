@@ -620,7 +620,7 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function getWorkflowStatus() {
-		$stateConfig = $this->group->getWorkflowConfiguration();
+		$stateConfig = $this->group->getMessageGroupStates()->getStates();
 		if ( !$stateConfig ) {
 			return false;
 		}

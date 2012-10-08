@@ -292,29 +292,31 @@ abstract class MessageGroupBase implements MessageGroup {
 	protected function isSourceLanguage( $code ) {
 		return $code === $this->getSourceLanguage();
 	}
+
 	/**
-	 * Get the workflow configuration for the group.
+	 * @deprecated Use getMessageGroupStateConfig
 	 */
 	public function getWorkflowConfiguration() {
 		global $wgTranslateWorkflowStates;
-		// If set to false or empty string, return false;
-		if( !$wgTranslateWorkflowStates ) {
-			return false;
+		if ( !$wgTranslateWorkflowStates ) {
+			// Not configured
+			$conf = array();
+		} else {
+			$conf = $wgTranslateWorkflowStates;
 		}
-		if ( isset( $wgTranslateWorkflowStates[$this->getId()] ) ) {
-			return $wgTranslateWorkflowStates[$this->getId()];
-		}
-		// return default configuration
-		if ( isset( $wgTranslateWorkflowStates['default'] ) ) {
-			return $wgTranslateWorkflowStates['default'];
-		}
-		if( is_array( $wgTranslateWorkflowStates ) ) {
-			// It is not null, it does not have default entry, but still array.
-			// Assuming it is worflow states in old format.
-			return $wgTranslateWorkflowStates;
-		}
-		return false;
+
+		return $conf;
 	}
+
+	/**
+	 * Get the message group workflow state configuration.
+	 * @return MessageGroupStates
+	 */
+	public function getMessageGroupStates() {
+		$conf = $this->getWorkflowConfiguration();
+		return new MessageGroupStates( $conf );
+	}
+
 	/**
 	 * Get all the translatable languages for a group, considering the whitelisting
 	 * and blacklisting.

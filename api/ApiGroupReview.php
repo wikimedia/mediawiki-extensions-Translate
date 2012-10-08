@@ -26,7 +26,7 @@ class ApiGroupReview extends ApiBase {
 		if ( !$group ) {
 			$this->dieUsageMsg( array( 'missingparam', 'group' ) );
 		}
-		$stateConfig = $group->getWorkflowConfiguration();
+		$stateConfig = $group->getMessageGroupStates()->getStates();
 		if ( !$stateConfig ) {
 			$this->dieUsage( 'Message group review not in use', 'disabled' );
 		}
