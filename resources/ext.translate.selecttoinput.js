@@ -1,5 +1,6 @@
 window.appendFromSelect = function ( selectid, targetid ) {
-	"use strict";
+	'use strict';
+
 	var select = document.getElementById( selectid ),
 		target = document.getElementById( targetid );
 
