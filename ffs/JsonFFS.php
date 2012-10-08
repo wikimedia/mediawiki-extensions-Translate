@@ -32,9 +32,17 @@ class JsonFFS extends SimpleFFS {
 	public function readFromVariable( $data ) {
 		$messages = (array) FormatJSON::decode( $data, /*as array*/true );
 		$authors = array();
+		$metadata = array();
+
 		if ( isset( $messages['@metadata']['authors'] ) ) {
 			$authors = (array) $messages['@metadata']['authors'];
+			unset( $messages['@metadata']['authors'] );
 		}
+
+		if ( isset( $messages['@metadata'] ) ) {
+			$metadata = $messages['@metadata'];
+		}
+
 		unset( $messages['@metadata'] );
 
 		$messages = $this->group->getMangler()->mangle( $messages );
@@ -42,6 +50,7 @@ class JsonFFS extends SimpleFFS {
 		return array(
 			'MESSAGES' => $messages,
 			'AUTHORS' => $authors,
+			'METADATA' => $metadata,
 		);
 	}
 
@@ -51,6 +60,12 @@ class JsonFFS extends SimpleFFS {
 	 */
 	protected function writeReal( MessageCollection $collection ) {
 		$messages = array();
+		$template = $this->read( $collection->getLanguage() );
+
+		if ( isset( $template['METADATA'] ) ) {
+			$messages['@metadata'] = $template['METADATA'];
+		}
+
 		$mangler = $this->group->getMangler();
 
 		/**

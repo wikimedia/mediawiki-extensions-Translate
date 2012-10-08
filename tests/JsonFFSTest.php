@@ -39,7 +39,11 @@ class JsonFFSTest extends MediaWikiTestCase {
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new JsonFFS( $group );
 		$parsed = $ffs->readFromVariable( $file );
-		$expected = array( 'MESSAGES' => $messages, 'AUTHORS' => $authors );
+		$expected = array(
+			'MESSAGES' => $messages,
+			'AUTHORS' => $authors,
+			'METADATA' => array(),
+		);
 		$this->assertEquals( $expected, $parsed );
 
 		if ( $messages === array() ) {
@@ -115,6 +119,8 @@ JSON;
 		if ( array_key_exists( 'untranslatedmsg', $parsed['MESSAGES'] ) ) {
 			$this->fail( 'Untranslated messages should not be exported' );
 		}
+
+		$this->assertEquals( 'metavalue', $parsed['METADATA']['metakey'], 'metadata is preserved' );
 	}
 }
 
@@ -139,5 +145,9 @@ class Mock2MessageCollection extends MessageCollection {
 
 	public function getAuthors() {
 		return array( 'Nike the bunny' );
+	}
+
+	public function getLanguage() {
+		return 'fi';
 	}
 }
