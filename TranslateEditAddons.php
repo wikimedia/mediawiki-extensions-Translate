@@ -476,7 +476,12 @@ class TranslateEditAddons {
 
 		$th = new TranslationHelpers( $title, /*group*/false );
 		$th->setEditMode( false );
-		$th->setTranslation( $de->mNewtext );
+		global $wgVersion;
+		if( version_compare( $wgVersion, '1.21', '<' ) ) {
+			$th->setTranslation( $de->mNewtext );
+		} else {
+			$th->setTranslation( $de->mNewContent );
+		}
 		TranslationHelpers::addModules( $out );
 
 		$boxes = array();
