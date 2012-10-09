@@ -164,8 +164,15 @@ $messages['ar'] = array(
  * @author Bishnu Saikia
  */
 $messages['as'] = array(
+	'firststeps' => 'প্ৰথম পৰ্যায়',
 	'translate-fs-pagetitle-done' => ' - কৰা হ’ল!',
 	'translate-fs-signup-title' => 'সদস্য ভুক্তি',
+	'translate-fs-userpage-title' => 'আপোনাৰ সদস্য পৃষ্ঠা সৃষ্টি কৰক',
+	'translate-fs-target-title' => 'ভাঙনি আৰম্ভ কৰক',
+	'translate-fs-email-title' => 'আপোনাৰ ই-মেইল ঠিকনাটো প্ৰমাণিত কৰক',
+	'translate-fs-settings-planguage' => 'প্ৰাথমিক ভাষা:',
+	'translate-fs-permissions-planguage' => 'প্ৰাথমিক ভাষা:',
+	'translate-fs-permissions-submit' => 'অনুৰোধ প্ৰেৰণ কৰক',
 );
 
 /** Asturian (asturianu)
