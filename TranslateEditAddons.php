@@ -476,7 +476,16 @@ class TranslateEditAddons {
 
 		$th = new TranslationHelpers( $title, /*group*/false );
 		$th->setEditMode( false );
-		$th->setTranslation( $de->mNewtext );
+
+		if ( isset( $de->mNewContent ) && $de->mNewContent instanceof TextContent ) {
+			$th->setTranslation( $de->mNewContent->getNativeData() );
+		} elseif ( isset( $de->mNewtext ) ) {
+			// BC 1.20
+			$th->setTranslation( $de->mNewtext );
+		} else {
+			// Screw you, not interested.
+			return true;
+		}
 		TranslationHelpers::addModules( $out );
 
 		$boxes = array();
@@ -488,6 +497,6 @@ class TranslateEditAddons {
 		$output = Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), $output );
 		$out->addHtml( $output );
 
-		return false;
+		return true;
 	}
 }
