@@ -215,7 +215,7 @@ class TranslationEditPage {
 			return array();
 		}
 
-		if ( $type === 'default' && $wgRequest->getVal( 'translate-beta' ) ) {
+		if ( $type === 'default' ) {
 			$text = 'tqe-anchor-' . substr( sha1( $title->getPrefixedText() ), 0, 12 );
 			$onclick = "jQuery( '#$text' ).dblclick(); return false;";
 		} else {
