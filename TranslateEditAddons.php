@@ -312,11 +312,22 @@ class TranslateEditAddons {
 
 	/**
 	 * Runs message checks, adds tp:transver tags and updates statistics.
-	 * Hook: ArticleSaveComplete
+	 * Hook: ArticleSaveComplete, ArticleContentSaveComplete
 	 */
-	public static function onSave( $article, $user, $text, $summary,
+	public static function onSave( $article, $user, $content, $summary,
 			$minor, $_, $_, $flags, $revision
 	) {
+
+		if ( $content instanceof TextContent ) {
+			$text = $content->getNativeData();
+		} elseif ( is_string( $content ) ) {
+			// BC 1.20
+			$text = $content;
+		} else {
+			// Screw it, not interested
+			return true;
+		}
+
 		$title = $article->getTitle();
 		$handle = new MessageHandle( $title );
 

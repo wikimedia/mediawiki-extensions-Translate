@@ -100,8 +100,26 @@ class TranslateHooks {
 			/// @todo Register our css, is there a better place for this?
 			$wgHooks['OutputPageBeforeHTML'][] = 'PageTranslationHooks::injectCss';
 
-			// Add transver tags and update translation target pages
-			$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
+			if ( !method_exists( 'Title', 'getContentModel' ) ) {
+				// BC 1.20
+				$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
+				$wgHooks['ArticleSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
+				$wgHooks['EditFilterMerged'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';
+				$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::addTranstag';
+				$wgHooks['RevisionInsertComplete'][] = 'PageTranslationHooks::updateTranstagOnNullRevisions';
+
+			} else {
+				// Add transver tags and update translation target pages
+				$wgHooks['ArticleContentSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
+
+				// Check syntax for \<translate>
+				$wgHooks['ArticleContentSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
+				$wgHooks['EditFilterMergedContent'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';
+
+				// Add transtag to page props for discovery
+				$wgHooks['ArticleContentSaveComplete'][] = 'PageTranslationHooks::addTranstag';
+				$wgHooks['RevisionInsertComplete'][] = 'PageTranslationHooks::updateTranstagOnNullRevisions';
+			}
 
 			// Register \<languages/>
 			$wgHooks['ParserFirstCallInit'][] = 'TranslateHooks::setupParserHooks';
@@ -109,16 +127,8 @@ class TranslateHooks {
 			// Strip \<translate> tags etc. from source pages when rendering
 			$wgHooks['ParserBeforeStrip'][] = 'PageTranslationHooks::renderTagPage';
 
-			// Check syntax for \<translate>
-			$wgHooks['ArticleSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
-			$wgHooks['EditFilterMerged'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';
-
 			// Set the page content language
 			$wgHooks['PageContentLanguage'][] = 'PageTranslationHooks::onPageContentLanguage';
-
-			// Add transtag to page props for discovery
-			$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::addTranstag';
-			$wgHooks['RevisionInsertComplete'][] = 'PageTranslationHooks::updateTranstagOnNullRevisions';
 
 			// Prevent editing of unknown pages in Translations namespace
 			$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::preventUnknownTranslations';
@@ -127,8 +137,6 @@ class TranslateHooks {
 			// Prevent editing of translation pages directly
 			$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::preventDirectEditing';
 
-			// Locking during page moves
-			$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::lockedPagesCheck';
 
 			// Our custom header for translation pages
 			$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::translatablePageHeader';
@@ -138,12 +146,13 @@ class TranslateHooks {
 
 			// Custom move page that can move all the associated pages too
 			$wgHooks['SpecialPage_initList'][] = 'PageTranslationHooks::replaceMovePage';
+			// Locking during page moves
+			$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::lockedPagesCheck';
+			// Disable action=delete
+			$wgHooks['ArticleConfirmDelete'][] = 'PageTranslationHooks::disableDelete';
 
 			// Replace subpage logic behaviour
 			$wgHooks['SkinSubPageSubtitle'][] = 'PageTranslationHooks::replaceSubtitle';
-
-			// Disable action=delete
-			$wgHooks['ArticleConfirmDelete'][] = 'PageTranslationHooks::disableDelete';
 
 			// Show page source code when export tab is opened
 			$wgHooks['SpecialTranslate::executeTask'][] = 'PageTranslationHooks::sourceExport';
