@@ -48,7 +48,11 @@ class GettextFFS extends SimpleFFS {
 	public function parseGettext( $data ) {
 		$mangler = $this->group->getMangler();
 		$useCtxtAsKey = isset( $this->extra['CtxtAsKey'] ) && $this->extra['CtxtAsKey'];
-		return self::parseGettextData( $data, $useCtxtAsKey, $mangler );
+		$keyAlgorithm = 'legacy';
+		if ( isset( $this->extra['keyAlgorithm'] ) ) {
+			$keyAlgorithm = $this->extra['keyAlgorithm'];
+		}
+		return self::parseGettextData( $data, $useCtxtAsKey, $mangler, $keyAlgorithm );
 	}
 
 	/**
@@ -59,7 +63,7 @@ class GettextFFS extends SimpleFFS {
 	 * @param $mangler StringMangler
 	 * @return \array
 	 */
-	public static function parseGettextData( $data, $useCtxtAsKey = false, $mangler ) {
+	public static function parseGettextData( $data, $useCtxtAsKey, $mangler, $keyAlgorithm ) {
 		$potmode = false;
 
 		// Normalise newlines, to make processing easier
@@ -113,16 +117,21 @@ class GettextFFS extends SimpleFFS {
 
 		// Then parse the messages
 		foreach ( $sections as $section ) {
-			self::parseGettextSection(
-				$section,
-				$useCtxtAsKey,
-				$pluralCount,
-				$mangler,
-				$potmode,
-				$messages,
-				$template,
-				$metadata
-			);
+
+			$item = self::parseGettextSection( $section, $pluralCount, $metadata );
+			if ( $item === false ) {
+				continue;
+			}
+
+			if ( $useCtxtAsKey ) {
+				$key = $item['ctxt'];
+			} else {
+				$key = self::generateKeyFromItem( $item, $keyAlgorithm );
+			}
+
+			$key = $mangler->mangle( $key );
+			$messages[$key] = $potmode ? $item['id'] : $item['str'];
+			$template[$key] = $item;
 		}
 
 		return array(
@@ -133,7 +142,8 @@ class GettextFFS extends SimpleFFS {
 		);
 	}
 
-	public static function parseGettextSection( $section, $useCtxtAsKey, $pluralCount, $mangler, $potmode, &$messages, &$template, &$metadata ) {
+	public static function parseGettextSection( $section, $pluralCount, &$metadata ) {
+
 		if ( trim( $section ) === '' ) {
 			return false;
 		}
@@ -213,18 +223,7 @@ class GettextFFS extends SimpleFFS {
 			}
 		}
 
-		if ( $useCtxtAsKey ) {
-			$key = $item['ctxt'];
-		} else {
-			$key = self::generateKeyFromItem( $item );
-		}
-
-		$key = $mangler->mangle( $key );
-
-		$messages[$key] = $potmode ? $item['id'] : $item['str'];
-		$template[$key] = $item;
-		
-		return true;
+		return $item;
 	}
 
 	public static function processGettextPluralMessage( $pluralCount, $section ) {
@@ -274,21 +273,27 @@ class GettextFFS extends SimpleFFS {
 	/**
 	 * Generates unique key for each message. Changing this WILL BREAK ALL
 	 * existing pages!
-	 * @param $item
+	 * @param array $item
+	 * @param string $algorithm Algorithm used to generate message keys.
 	 * @return string
 	 */
-	public static function generateKeyFromItem( $item ) {
+	public static function generateKeyFromItem( array $item, $algorithm = 'legacy' ) {
 		$lang = Language::factory( 'en' );
 
-		global $wgLegalTitleChars;
-
-		$hash = sha1( $item['ctxt'] . $item['id'] );
-		$snippet = $item['id'];
-		$snippet = preg_replace( "/[^$wgLegalTitleChars]/", ' ', $snippet );
-		$snippet = preg_replace( "/[:&%\/_]/", ' ', $snippet );
-		$snippet = preg_replace( "/ {2,}/", ' ', $snippet );
-		$snippet = $lang->truncate( $snippet, 30, '' );
-		$snippet = str_replace( ' ', '_', trim( $snippet ) );
+		if ( $algorithm === 'simple' ) {
+			$hash = substr( sha1( $item['ctxt'] . $item['id'] ), 0, 6 );
+			$snippet = $lang->truncate( $item['id'], 30, '' );
+			$snippet = str_replace( ' ', '_', trim( $snippet ) );
+		} else { // legacy
+			global $wgLegalTitleChars;
+			$hash = sha1( $item['ctxt'] . $item['id'] );
+			$snippet = $item['id'];
+			$snippet = preg_replace( "/[^$wgLegalTitleChars]/", ' ', $snippet );
+			$snippet = preg_replace( "/[:&%\/_]/", ' ', $snippet );
+			$snippet = preg_replace( "/ {2,}/", ' ', $snippet );
+			$snippet = $lang->truncate( $snippet, 30, '' );
+			$snippet = str_replace( ' ', '_', trim( $snippet ) );
+		}
 
 		return "$hash-$snippet";
 	}
