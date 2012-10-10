@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA8X///7k\u003d",
+        "filename": "ffs/GettextFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-10-10T17:04:13Z",
+      "side": 1,
+      "message": "Unknown data type \"boool\", or were you checking if I actually read your code? ;)",
+      "revId": "0495bbb40a7385c05405a98e907e26b70f45e8aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
