@@ -77,10 +77,20 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	/// Hook: ArticleSaveComplete
-	public static function onSectionSave( $article, User $user, $text, $summary,
+	/// Hook: ArticleSaveComplete, ArticleContentSaveComplete
+	public static function onSectionSave( $article, User $user, $content, $summary,
 		$minor, $_, $_, $flags, $revision ) {
 		$title = $article->getTitle();
+
+		if ( $content instanceof TextContent ) {
+			$text = $content->getNativeData();
+		} elseif ( is_string( $content ) ) {
+			// BC 1.20
+			$text = $content;
+		} else {
+			// Screw it, not interested
+			return true;
+		}
 
 		// Some checks
 		$handle = new MessageHandle( $title );
@@ -320,9 +330,19 @@ class PageTranslationHooks {
 
 	/**
 	 * Display nice error for editpage.
-	 * Hook: EditFilterMerged
+	 * Hook: EditFilterMerged, EditFilterMergedContent
 	 */
-	public static function tpSyntaxCheckForEditPage( $editpage, $text, &$error, $summary ) {
+	public static function tpSyntaxCheckForEditPage( $editpage, $content, &$error, $summary ) {
+		if ( $content instanceof TextContent ) {
+			$text = $content->getNativeData();
+		} elseif ( is_string( $content ) ) {
+			// BC 1.20
+			$text = $content;
+		} else {
+			// Screw it, not interested
+			return true;
+		}
+
 		if ( strpos( $text, '<translate>' ) === false ) {
 			return true;
 		}
@@ -340,10 +360,21 @@ class PageTranslationHooks {
 	/**
 	 * When attempting to save, last resort. Edit page would only display
 	 * edit conflict if there wasn't tpSyntaxCheckForEditPage
-	 * Hook: ArticleSave
+	 * Hook: ArticleSave, ArticleContentSave
 	 */
-	public static function tpSyntaxCheck( $article, $user, $text, $summary,
+	public static function tpSyntaxCheck( $article, $user, $content, $summary,
 			$minor, $_, $_, $flags, $status ) {
+
+		if ( $content instanceof TextContent ) {
+			$text = $content->getNativeData();
+		} elseif ( is_string( $content ) ) {
+			// BC 1.20
+			$text = $content;
+		} else {
+			// Screw it, not interested
+			return true;
+		}
+
 		// Quick escape on normal pages
 		if ( strpos( $text, '<translate>' ) === false ) {
 			return true;
@@ -360,11 +391,21 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	/// Hook: ArticleSaveComplete
-	public static function addTranstag( $article, $user, $text, $summary,
+	/// Hook: ArticleSaveComplete, ArticleContentSaveComplete
+	public static function addTranstag( $article, $user, $content, $summary,
 			$minor, $_, $_, $flags, $revision ) {
 		// We are not interested in null revisions
 		if ( $revision === null ) {
+			return true;
+		}
+
+		if ( $content instanceof TextContent ) {
+			$text = $content->getNativeData();
+		} elseif ( is_string( $content ) ) {
+			// BC 1.20
+			$text = $content;
+		} else {
+			// Screw it, not interested
 			return true;
 		}
 
