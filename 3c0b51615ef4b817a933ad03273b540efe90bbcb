@@ -16,6 +16,24 @@
       "revId": "3c0b51615ef4b817a933ad03273b540efe90bbcb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA7H////Y\u003d",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-10-10T10:06:07Z",
+      "side": 1,
+      "message": "Translations are always textcontent, except those css and js pages which should not be messages.",
+      "parentUuid": "AAAA63////Y\u003d",
+      "revId": "3c0b51615ef4b817a933ad03273b540efe90bbcb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
