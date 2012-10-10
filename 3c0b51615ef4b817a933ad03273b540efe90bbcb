@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA63////Y\u003d",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2012-10-10T09:24:09Z",
+      "side": 1,
+      "message": "mNewContent is a Content object. To get at the text, you need to check whether it\u0027s an instance of TextContent, and if so, use getNativeData to get the text. If it\u0027s not an instance of TextContent, it should probably not be using the standard difference engine...",
+      "revId": "3c0b51615ef4b817a933ad03273b540efe90bbcb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
