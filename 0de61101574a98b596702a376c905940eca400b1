@@ -16,6 +16,24 @@
       "revId": "0de61101574a98b596702a376c905940eca400b1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA8X///9o\u003d",
+        "filename": "ffs/GettextFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-10-10T15:50:11Z",
+      "side": 1,
+      "message": "Indeed. Bunny will fix it.",
+      "parentUuid": "AAAA8X///+A\u003d",
+      "revId": "0de61101574a98b596702a376c905940eca400b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
