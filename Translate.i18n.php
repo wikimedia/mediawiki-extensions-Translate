@@ -5613,7 +5613,10 @@ $messages['diq'] = array(
 	'translate-edit-definition' => 'Şınasiya mesaci',
 	'translate-edit-translation' => 'Çarnayışi',
 	'translate-edit-contribute' => 'iştıraq kewê',
-	'translate-edit-no-information' => 'No mesac wesiqe niyo. Şıma nêzanê na açarnayış konca dı sazkerê se, Açarnoğandê bina rê qandê peşti cı meveyê, nara qı şıma haldê cıd zanê se bıvurnê.',
+	'translate-edit-no-information' => '{| style="border:1px solid forestgreen; margin-bottom: 1em" cellspacing="0" cellpadding="0" width="100%"
+| style="font: 100% verdana; color:black" align="left" bgcolor="Khaki" |
+No mesac wesiqe niyo. Şıma nêzanê na açarnayış konca dı sazkerê se, Açarnoğandê bina rê qandê peşti cı meveyê, nara qı şıma haldê cıd zanê se bıvurnê.
+|}',
 	'translate-edit-information' => 'Heqa mesacê ($1) de melumat',
 	'translate-edit-in-other-languages' => 'Zıwanan dê binan de mesaci',
 	'translate-edit-tmsugs' => 'hefıza da çarnayışi ra weseynayışi',
