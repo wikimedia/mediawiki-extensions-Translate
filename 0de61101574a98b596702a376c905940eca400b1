@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA8X///+A\u003d",
+        "filename": "ffs/GettextFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-10-10T15:37:16Z",
+      "side": 1,
+      "message": "Outdated message docs.",
+      "revId": "0de61101574a98b596702a376c905940eca400b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
