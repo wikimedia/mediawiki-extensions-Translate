@@ -110,14 +110,14 @@ class TranslateHooks {
 
 			} else {
 				// Add transver tags and update translation target pages
-				$wgHooks['ArticleContentSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
+				$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
 
 				// Check syntax for \<translate>
-				$wgHooks['ArticleContentSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
+				$wgHooks['PageContentSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
 				$wgHooks['EditFilterMergedContent'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';
 
 				// Add transtag to page props for discovery
-				$wgHooks['ArticleContentSaveComplete'][] = 'PageTranslationHooks::addTranstag';
+				$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::addTranstag';
 				$wgHooks['RevisionInsertComplete'][] = 'PageTranslationHooks::updateTranstagOnNullRevisions';
 			}
 

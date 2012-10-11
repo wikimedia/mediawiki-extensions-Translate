@@ -120,7 +120,7 @@ if ( !method_exists( 'Title', 'getContentModel' ) ) {
 	// BC 1.20
 	$wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
 } else {
-	$wgHooks['ArticleContentSaveComplete'][] = 'TranslateEditAddons::onSave';
+	$wgHooks['PageContentSaveComplete'][] = 'TranslateEditAddons::onSave';
 }
 
 $wgHooks['Translate:newTranslation'][] = 'TranslateEditAddons::updateTransverTag';

@@ -312,7 +312,7 @@ class TranslateEditAddons {
 
 	/**
 	 * Runs message checks, adds tp:transver tags and updates statistics.
-	 * Hook: ArticleSaveComplete, ArticleContentSaveComplete
+	 * Hook: ArticleSaveComplete, PageContentSaveComplete
 	 */
 	public static function onSave( $article, $user, $content, $summary,
 			$minor, $_, $_, $flags, $revision

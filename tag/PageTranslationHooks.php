@@ -77,7 +77,7 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	/// Hook: ArticleSaveComplete, ArticleContentSaveComplete
+	/// Hook: ArticleSaveComplete, PageContentSaveComplete
 	public static function onSectionSave( $article, User $user, $content, $summary,
 		$minor, $_, $_, $flags, $revision ) {
 		$title = $article->getTitle();
@@ -360,7 +360,7 @@ class PageTranslationHooks {
 	/**
 	 * When attempting to save, last resort. Edit page would only display
 	 * edit conflict if there wasn't tpSyntaxCheckForEditPage
-	 * Hook: ArticleSave, ArticleContentSave
+	 * Hook: ArticleSave, PageContentSave
 	 */
 	public static function tpSyntaxCheck( $article, $user, $content, $summary,
 			$minor, $_, $_, $flags, $status ) {
@@ -391,7 +391,7 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	/// Hook: ArticleSaveComplete, ArticleContentSaveComplete
+	/// Hook: ArticleSaveComplete, PageContentSaveComplete
 	public static function addTranstag( $article, $user, $content, $summary,
 			$minor, $_, $_, $flags, $revision ) {
 		// We are not interested in null revisions
