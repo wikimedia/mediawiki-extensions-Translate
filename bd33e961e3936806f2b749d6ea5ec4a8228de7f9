@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAA/n///9U\u003d",
+        "filename": "Translate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2012-10-11T16:00:46Z",
+      "side": 1,
+      "message": "I22d8a43e introduces MW_SUPPORTS_CONTENTHANDLER for this.",
+      "revId": "bd33e961e3936806f2b749d6ea5ec4a8228de7f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAA8X///8U\u003d",
         "filename": "Translate.php",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2012-10-10T16:56:55Z",
       "side": 1,
       "message": "Too bad this hook wasn\u0027t called PageContentSaveComplete, as it is called from WikiPage, and not Article.",
+      "revId": "bd33e961e3936806f2b749d6ea5ec4a8228de7f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA/n///9Y\u003d",
+        "filename": "Translate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2012-10-11T16:00:46Z",
+      "side": 1,
+      "message": "Well, it used to be called from article. And I tried to stay consistent. But yea, I guess I could have changed that.",
+      "parentUuid": "AAAA8X///8U\u003d",
       "revId": "bd33e961e3936806f2b749d6ea5ec4a8228de7f9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
