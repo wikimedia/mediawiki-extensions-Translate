@@ -9106,9 +9106,9 @@ como non empregar espazos ou para a transliteración de nomes propios. $1',
 	'translate-edit-nopermission' => 'Non ten os permisos necesarios para traducir mensaxes.',
 	'translate-edit-askpermission' => 'Solicitar os permisos',
 	'translate-magic-pagename' => 'Tradución estendida de MediaWiki',
-	'translate-magic-help' => 'Pode traducir os alias das páxinas especiais, as palabras máxicas e mais os nomes dos espazos de nomes.
+	'translate-magic-help' => 'Pode traducir os pseudónimos das páxinas especiais, as palabras máxicas e mais os nomes dos espazos de nomes.
 
-Os alias das páxinas especiais e as palabras máxicas poden ter numerosas traducións.
+Os pseudónimos das páxinas especiais e as palabras máxicas poden ter numerosas traducións.
 As traducións sepáranse mediante unha coma (",").
 Os nomes dos espazos de nomes só poden ter unha tradución.
 
@@ -9129,7 +9129,7 @@ Os cambios non se gardan ata que prema no botón "Gardar" que hai ao final.',
 	'translate-magic-cm-save' => 'Gardar',
 	'translate-magic-cm-updatedusing' => 'Actualizado mediante [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
 	'translate-magic-cm-savefailed' => 'Fallou o gardado',
-	'translate-magic-special' => 'Alias de páxinas especiais',
+	'translate-magic-special' => 'Pseudónimos das páxinas especiais',
 	'translate-magic-words' => 'Palabras máxicas',
 	'translate-magic-namespace' => 'Nomes dos espazos de nomes',
 	'translate-magic-notsaved' => 'A súa edición non foi gardada!',
