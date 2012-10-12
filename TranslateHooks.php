@@ -100,7 +100,7 @@ class TranslateHooks {
 			/// @todo Register our css, is there a better place for this?
 			$wgHooks['OutputPageBeforeHTML'][] = 'PageTranslationHooks::injectCss';
 
-			if ( !method_exists( 'Title', 'getContentModel' ) ) {
+			if ( !defined( 'MW_SUPPORTS_CONTENTHANDLER' ) ) {
 				// BC 1.20
 				$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
 				$wgHooks['ArticleSave'][] = 'PageTranslationHooks::tpSyntaxCheck';

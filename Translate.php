@@ -116,7 +116,7 @@ $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 $wgHooks['LanguageGetTranslatedLanguageNames'][] = 'TranslateHooks::translateMessageDocumentationLanguage';
 $wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
 // Fuzzy tags for speed.
-if ( !method_exists( 'Title', 'getContentModel' ) ) {
+if ( !defined( 'MW_SUPPORTS_CONTENTHANDLER' ) ) {
 	// BC 1.20
 	$wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
 } else {
