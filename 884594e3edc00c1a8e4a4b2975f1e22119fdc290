@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABCn///+c\u003d",
+        "filename": "tests/PageTranslationTaggingTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2012-10-12T09:59:48Z",
+      "side": 0,
+      "message": "moved to autoloadclass",
+      "revId": "884594e3edc00c1a8e4a4b2975f1e22119fdc290",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABCn///+Y\u003d",
+        "filename": "tests/SpecialPagesTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2012-10-12T09:59:48Z",
+      "side": 0,
+      "message": "moved to autoload class",
+      "revId": "884594e3edc00c1a8e4a4b2975f1e22119fdc290",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

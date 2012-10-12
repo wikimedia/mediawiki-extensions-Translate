@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABCn///+g\u003d",
+        "filename": "tests/ApiTranslationReviewTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2012-10-12T09:59:48Z",
+      "side": 1,
+      "message": "You might want to add a tearDown() call to delete the articles. Will ensure you are running the next test with a clean environment.",
+      "revId": "124fd3b58cae95b4f9257a61ac4cdac808b5fa84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABCn///+k\u003d",
+        "filename": "tests/ApiTranslationReviewTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2012-10-12T09:59:48Z",
+      "side": 1,
+      "message": "The provider are executed before running the tests() and setup() is only called just before a test. This mean that when the provider is executed, the little ponies are not build yet.\n\nYou should move the user creation from setup() to checkProvider() and use them locally.",
+      "revId": "124fd3b58cae95b4f9257a61ac4cdac808b5fa84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABCn///+U\u003d",
+        "filename": "tests/TranslateTestCase.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2012-10-12T09:59:48Z",
+      "side": 1,
+      "message": "smart. We definitely want to use similar in core. I guess we should really look at PHPUnit feature that automatically backup globals.\n\nYou can try adding a new property to this class:\n\n protected $backupGlobals \u003d true;\n\nShould enable PHPUnit backup system. I have never used it myself so you are in unknown lands :-]",
+      "revId": "124fd3b58cae95b4f9257a61ac4cdac808b5fa84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
