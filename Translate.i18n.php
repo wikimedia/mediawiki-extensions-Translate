@@ -6770,7 +6770,7 @@ Los cambios no se graban hasta que no pulses el boton Guardar que aparece abajo.
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'El mensaje original usa <nowiki>{{PLURAL:}}</nowiki> pero no así la traducción.',
 	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki>recibió {{PLURAL:$1|una forma|$1 formas}} pero únicamente {{PLURAL:$2|está soportada una forma|están soportadas $2 formas}} (excluyendo las formas 0= y 1=).',
-	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> tiene formas de plural duplicadas al final. <nowiki>{{PLURAL:$1|lunes|lunes}}</nowiki> debería escribirse como: <nowiki>{{PLURAL:$1|lunes}}</nowiki>.',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> tiene formas de plural duplicadas al final. <nowiki>{{PLURAL:$1|martes|martes}}</nowiki> debe escribirse así: <nowiki>{{PLURAL:$1|martes}}</nowiki>.',
 	'translate-checks-pagename' => 'Nombre del espacio cambiado desde la definición',
 	'translate-checks-format' => 'Esta traducción no sigue la definición o tiene sintaxis inválida: $1',
 	'translate-checks-escape' => 'Los siguientes escapes pueden ser accidentales: <strong>$1</strong>',
