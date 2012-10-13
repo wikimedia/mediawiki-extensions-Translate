@@ -1655,6 +1655,7 @@ $messages['hu'] = array(
 	'firststeps' => 'Első lépések',
 	'firststeps-desc' => '[[Special:FirstSteps|Speciális lap]], ami felkészíti az új felhasználókat a fordító kiterjesztés használatára',
 	'translate-fs-pagetitle-done' => ' - kész!',
+	'translate-fs-pagetitle-pending' => ' - függőben',
 	'translate-fs-pagetitle' => 'Első lépések varázsló – $1',
 	'translate-fs-signup-title' => 'Regisztráció',
 	'translate-fs-settings-title' => 'Nézd át a beállításaidat!',
@@ -1667,10 +1668,12 @@ Lépésről lépésre segítünk a fordítóvá válás folyamatában.
 A végén hozzákezdhetsz bármelyik, {{SITENAME}} által támogatott projekt ''felületének üzeneteinek'' fordításához.",
 	'translate-fs-selectlanguage' => 'Válassz egy nyelvet!',
 	'translate-fs-settings-planguage' => 'Elsődleges nyelv:',
+	'translate-fs-settings-slanguage' => 'Segédnyelv $1:',
 	'translate-fs-settings-submit' => 'Beállítások mentése',
 	'translate-fs-userpage-submit' => 'Felhasználói lap létrehozása',
 	'translate-fs-userpage-done' => 'Felhasználói lap létrehozva.',
 	'translate-fs-permissions-planguage' => 'Elsődleges nyelv:',
+	'translate-fs-permissions-submit' => 'Kérelem elküldése',
 	'translate-fs-target-text' => "Gratulálunk!
 Most már elkezdhetsz fordítani.
 

@@ -11187,6 +11187,7 @@ Kattints az üzenetcsoport nevére a fordítandó üzenetek listájának megteki
 	'translate-page-disabled' => "Ez a csoport nem fordítható erre a nyelvre. A tiltás oka:
 
 ''$1''",
+	'translate-language-disabled' => 'Erre a nyelvre a fordítás le van tiltva.',
 	'translate-page-settings-legend' => 'Beállítások',
 	'translate-page-group' => 'Csoport',
 	'translate-page-language' => 'Nyelv',
@@ -11381,7 +11382,11 @@ Egy fordító minél többet fordított, a neve annál nagyobb betűkkel jelenik
 	'managemessagegroups' => 'Üzenetcsoportok karbantartása',
 	'translate-smg-notallowed' => 'Ezt a tevékenységet nem hajthatod végre.',
 	'translate-smg-nochanges' => 'Nincsenek feldolgozandó változtatások.',
+	'translate-smg-submit' => 'Változtatások elküldése feldolgozásra',
 	'translate-smg-submitted' => 'Az üzenet definíciók frissítése megtörtént. A változások a háttérben kerülnek feldolgozásra.',
+	'translate-smg-postponed' => 'Néhány változtatást nem lehetett feldolgozni. [[{{FULLPAGENAME}} |Próbáld újra]]!',
+	'translate-smg-left' => 'Üzenet tartalom wikiben',
+	'translate-smg-right' => 'Bejövő változtatások',
 	'translate-manage-import-diff' => 'Üzenet: $1 | Műveletek: $2',
 	'translate-manage-import-new' => 'Új üzenet: $1',
 	'translate-manage-import-deleted' => 'Törölt üzenet: $1',
@@ -11462,6 +11467,7 @@ Részletek: $1',
 	'log-name-translationreview' => 'Fordítás-ellenőrzési napló',
 	'log-description-translationreview' => 'Valamennyi fordítás és üzenetcsoport ellenőrzésének a naplója.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|elfogadta}} a fordítást: $3',
+	'translate-workflow-state-' => '(nem beállított)',
 	'translate-workflowstatus' => 'Állapot: $1',
 	'translate-workflow-set-do' => 'Beállít',
 	'translate-workflow-set-doing' => 'Beállítás…',
@@ -22599,6 +22605,7 @@ Podrobnosti: $1',
 
 /** Slovenian (slovenščina)
  * @author Dbc334
+ * @author Eleassar
  * @author Smihael
  */
 $messages['sl'] = array(
@@ -22667,7 +22674,7 @@ kot sta neuporaba presledkov ali prečrkovanje izvirnih imen. $1',
 	'translate-use-suggestion' => 'Zamenjaj trenutni prevod s tem predlogom.',
 	'translate-edit-tab-list' => 'Seznam sporočil',
 	'translate-edit-nopermission' => 'Za prevajanje sporočil potrebujete dovoljenje.',
-	'translate-edit-askpermission' => 'Zaprosi za dovoljenje',
+	'translate-edit-askpermission' => 'Zaprosite za dovoljenje',
 	'translate-magic-pagename' => 'Razširjeno prevajanje MediaWiki',
 	'translate-magic-help' => 'Prevedete lahko vzdevke posebnih strani, čarobne besede in imena imenskih prostorov.
 
