@@ -18,7 +18,7 @@ class MessageGroupStates {
 
 	protected $config;
 
-	public function __construct( $config ) {
+	public function __construct( array $config = null ) {
 		$this->config = $config;
 	}
 

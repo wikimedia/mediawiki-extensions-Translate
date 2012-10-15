@@ -12,6 +12,14 @@
  * @group Database
  */
 class ApiGroupReviewTest extends MediaWikiTestCase {
+	protected function setUp() {
+		parent::setUp();
+
+		$this->setMwGlobals( array(
+			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
+			'wgTranslateWorkflowStates' => false,
+		) );
+	}
 
 	public function testGetSetState() {
 		$group = new WikiMessageGroup( 'testgroup', 'wewgweg' );

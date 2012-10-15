@@ -8,23 +8,22 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-require_once( __DIR__ . '/SuperUser.php' );
 /**
  * Unit tests for making sure special pages execute
  * @group Database
  */
 class SpecialPagesTest extends MediaWikiTestCase {
-	public function setUp() {
-		global $wgTranslateCacheDirectory, $wgTranslateMessageIndex;
-		// Only in 1.20, but who runs tests again older versions anyway?
-		$wgTranslateCacheDirectory = $this->getNewTempDirectory();
-		$wgTranslateMessageIndex = array( 'DatabaseMessageIndex' );
-		// For User::editToken
-		global $wgDeprecationReleaseLimit;
-		$wgDeprecationReleaseLimit = 1.18;
+	protected function setUp() {
+		parent::setUp();
+
+		$this->setMwGlobals( array(
+			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
+			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
+			'wgDeprecationReleaseLimit' => 1.18,
+		) );
 	}
 
-	public function specialPages() {
+	public static function provideSpecialPages() {
 		require( __DIR__ . '/../_autoload.php' );
 		global $wgSpecialPages;
 
@@ -38,7 +37,7 @@ class SpecialPagesTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @dataProvider specialPages
+	 * @dataProvider provideSpecialPages
 	 */
 	public function testSpecialPage( $name ) {
 		$page = SpecialPageFactory::getPage( $name );
@@ -57,7 +56,7 @@ class SpecialPagesTest extends MediaWikiTestCase {
 
 		$this->assertTrue( true, "Special page $name was executed succesfully with anon user" );
 
-		$user = new SuperUser();
+		$user = new MockSuperUser();
 		$context->setUser( $user );
 		$page->setContext( $context );
 
