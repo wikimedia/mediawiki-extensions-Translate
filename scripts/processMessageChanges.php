@@ -32,10 +32,22 @@ class ProcessMessageChanges extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = 'Script for processing message changes in file based message groups';
+		$this->addOption(
+			'group',
+			'Comma separated list of group IDs (can use * as wildcard)',
+			false, /*required*/
+			true /*has arg*/
+		);
 	}
 
 	public function execute() {
 		$groups = MessageGroups::getGroupsByType( 'FileBasedMessageGroup' );
+		$whitelist = $this->getOption( 'group' );
+
+		if ( $whitelist ) {
+			$groups = $this->filterGroups( $groups, $whitelist );
+		}
+
 		$this->counter = 0;
 		foreach ( $groups as $id => $group ) {
 			$this->output( "Processing $id\n" );
@@ -145,7 +157,7 @@ class ProcessMessageChanges extends Maintenance {
 			if ( !self::compareContent( $sourceContent, $wikiContent ) ) {
 				if ( $reason !== MessageGroupCache::NO_CACHE ) {
 					$cacheContent = $cache->get( $key );
-				  if ( self::compareContent( $sourceContent, $cacheContent ) ) {
+					if ( self::compareContent( $sourceContent, $cacheContent ) ) {
 						/* This message has only changed in the wiki, which means
 						 * we can ignore the difference and have it exported on
 						 * next export. */
@@ -159,7 +171,9 @@ class ProcessMessageChanges extends Maintenance {
 		$added = array_diff( $fileKeys, $wikiKeys );
 		foreach ( $added as $key ) {
 			$sourceContent = $file['MESSAGES'][$key];
-			if ( trim( $sourceContent ) === '' ) continue;
+			if ( trim( $sourceContent ) === '' ) {
+				continue;
+			}
 			$this->addChange( 'addition', $group, $code, $key, $sourceContent );
 		}
 
@@ -193,12 +207,34 @@ class ProcessMessageChanges extends Maintenance {
 	/**
 	 * Compares two strings ignoring fuzzy markers.
 	 * @since 2012-05-08
+	 * @param string $a
+	 * @param string $b
 	 * @return bool
 	 */
 	protected static function compareContent( $a, $b ) {
 		$a = str_replace( TRANSLATE_FUZZY, '', $a );
 		$b = str_replace( TRANSLATE_FUZZY, '', $b );
-		return  $a === $b;
+		return $a === $b;
+	}
+
+	/**
+	 * Filters groups.
+	 *
+	 * @since 2012-10-15
+	 * @param MessageGroupBase[] $allGroups
+	 * @param string $whitelist Comma separated list of group IDs that should be processed (can
+	 * use * as wildcard)
+	 * @return array of filtered groups
+	 */
+	protected function filterGroups( $groups, $whitelist ) {
+		$whitelist = explode( ',', trim( $whitelist ) );
+		$whitelist = MessageGroups::expandWildcards( $whitelist );
+
+		$filtered = array();
+		foreach ( $whitelist as $id ) {
+			$filtered[$id] = $groups[$id];
+		}
+		return $filtered;
 	}
 }
 
