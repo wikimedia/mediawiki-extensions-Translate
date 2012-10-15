@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABEn//+yg\u003d",
+        "filename": "ffs/PythonSingleFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-10-15T10:10:21Z",
+      "side": 1,
+      "message": "This caused a major issue where untranslated strings were being exported. See https://www.mediawiki.org/wiki/Special:Code/pywikipedia/10550 for details.",
+      "revId": "f676f5ca12d5979b35102f19b9123be7468e1047",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
