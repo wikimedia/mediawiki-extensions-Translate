@@ -586,6 +586,7 @@ $messages['da'] = array(
 /** German (Deutsch)
  * @author Kghbln
  * @author Lyzzy
+ * @author Metalhead64
  * @author Pill
  * @author The Evil IP address
  * @author Umherirrender
@@ -612,6 +613,7 @@ $messages['de'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], ein in PHP geschriebenes Web-Forum.',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] ist ein internetgestütztes Bug-Tracking-System',
 	'translate-group-desc-eol' => 'Nachrichten für die [[Translating:EOL|Enzyklopädie des Lebens]]',
+	'translate-group-desc-frontlinesms' => 'Eine Nachrichtengruppe für [[Translating:FrontlineSMS|FrontlineSMS]]',
 	'translate-group-desc-ihris' => 'Nachrichten für [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Nachrichten für [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], einem Modul von [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Nachrichten für [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], einem Modul von [[Translating:iHRIS|iHRIS]]',
