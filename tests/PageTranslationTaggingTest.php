@@ -1,21 +1,26 @@
 <?php
 
-require_once( __DIR__ . '/SuperUser.php' );
-
 /**
  * @group Database
  */
 class PageTranslationTaggingText extends MediaWikiTestCase {
-
 	protected function setUp() {
 		parent::setUp();
-		global $wgEnablePageTranslation;
-		$wgEnablePageTranslation = true;
-		TranslateHooks::setupTranslate();
-	}
 
-	protected function tearDown() {
-		parent::tearDown();
+		global $wgHooks;
+		$this->setMwGlobals( array(
+			'wgHooks' => $wgHooks,
+			'wgTranslateAC' => array(),
+			'wgTranslateCC' => array(),
+			'wgTranslateEC' => array(),
+			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
+			'wgTranslateWorkflowStates' => false,
+			'wgEnablePageTranslation' => true,
+		) );
+		TranslateHooks::setupTranslate();
+		$wgHooks['TranslatePostInitGroups'] = array();
+		MessageGroups::clearCache();
+		MessageIndexRebuildJob::newJob()->run();
 	}
 
 	public function testNormalPage() {
@@ -66,7 +71,7 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 	}
 
 	public function testTranslationPageRestrictions() {
-		$superUser = new SuperUser();
+		$superUser = new MockSuperUser();
 		$title = Title::newFromText( 'Translatable page' );
 		$page = WikiPage::factory( $title );
 		$status = $page->doEdit( '<translate>Hello</translate>', 'New page', 0, false, $superUser );
