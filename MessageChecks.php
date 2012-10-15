@@ -51,8 +51,12 @@ class MessageChecker {
 	 * @param $group MessageGroup
 	 */
 	public function __construct( MessageGroup $group ) {
-		if ( self::$globalBlacklist === null ) {
-			$file = dirname( __FILE__ ) . '/check-blacklist.php';
+		global $wgTranslateCheckBlacklist;
+
+		if( $wgTranslateCheckBlacklist === false ) {
+			self::$globalBlacklist = array();
+		} elseif ( self::$globalBlacklist === null) {
+			$file = $wgTranslateCheckBlacklist;
 			$list = PHPVariableLoader::loadVariableFromPHPFile( $file, 'checkBlacklist' );
 			$keys = array( 'group', 'check', 'subcheck', 'code', 'message' );
 
