@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABEn//+ks\u003d",
+        "filename": "api/ApiTranslationReview.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-10-15T15:38:08Z",
+      "side": 1,
+      "message": "trailing ws.",
+      "revId": "ea7f0600c3873772775c1f5b3de304fec88c6511",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
