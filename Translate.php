@@ -514,6 +514,13 @@ $wgPageTranslationNamespace = 1198;
 $wgTranslateBlacklist = array();
 
 /**
+ * File containing checks that are to be skipped.kipped checks. See
+ * https://gerrit.wikimedia.org/r/gitweb?p=translatewiki.git;a=blob;f=check-blacklist.php;hb=HEAD
+ * for example.
+ */
+$wgCheckBlacklist = false;
+
+/**
  * Two-dimensional array of rules that blacklists certain authors from appearing
  * in the exports. This is useful for keeping bots and people doing maintenance
  * work in translations not to appear besides real translators everywhere.
