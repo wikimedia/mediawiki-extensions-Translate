@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABEn//+1E\u003d",
+        "filename": "MessageChecks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-10-15T09:46:46Z",
+      "side": 1,
+      "message": "Space after if",
+      "revId": "e18592cd08a68db58483ca1c099fe47a9af07a3a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABEn//+08\u003d",
+        "filename": "Translate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-10-15T09:46:46Z",
+      "side": 1,
+      "message": "skipped.kipped\n\n@since 2012-10-15 would be nice addition.",
+      "revId": "e18592cd08a68db58483ca1c099fe47a9af07a3a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
