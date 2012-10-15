@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABEn//+3A\u003d",
+        "filename": "MessageChecks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-10-15T09:25:22Z",
+      "side": 1,
+      "message": "Don\u0027t use globals as static storage inside a method",
+      "revId": "de349f45fff66cfd8a4cc4348092cfbafdbee6d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABEn//+20\u003d",
+        "filename": "MessageChecks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-10-15T09:25:22Z",
+      "side": 1,
+      "message": "No such variable.",
+      "revId": "de349f45fff66cfd8a4cc4348092cfbafdbee6d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
