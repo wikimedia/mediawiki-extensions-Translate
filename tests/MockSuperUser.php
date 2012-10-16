@@ -3,7 +3,7 @@
 /**
  * Just call SuperUser when you need to be able to do everything.
  */
-class SuperUser extends User {
+class MockSuperUser extends User {
 	public function getId() {
 		return 666;
 	}
