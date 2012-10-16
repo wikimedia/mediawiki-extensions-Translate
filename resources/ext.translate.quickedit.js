@@ -139,6 +139,12 @@
 		textarea.autoResize( { maxHeight: 200 } );
 		textarea.focus();
 
+		// Optional Narayam integration
+		// @todo: update to ULS when applicable
+		if ( $.narayam ) {
+			$.narayam.addInputs( form.find( 'textarea, input' ) );
+		}
+
 		if ( form.find( '.mw-translate-messagechecks' ) ) {
 			var checker = new MessageCheckUpdater( function() {
 				var url = mw.config.get( 'wgScript' ) + '?title=Special:Translate/editpage&suggestions=checks&page=$1&loadgroup=$2';
