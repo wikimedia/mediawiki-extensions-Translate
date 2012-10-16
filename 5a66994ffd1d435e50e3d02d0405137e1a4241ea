@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABEn//+Gk\u003d",
+        "filename": "scripts/processMessageChanges.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-10-16T08:43:11Z",
+      "side": 1,
+      "message": "Suggesting to add space after if.",
+      "revId": "5a66994ffd1d435e50e3d02d0405137e1a4241ea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
