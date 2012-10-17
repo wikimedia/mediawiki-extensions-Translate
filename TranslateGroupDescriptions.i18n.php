@@ -838,6 +838,13 @@ $messages['et'] = array(
 	'bw-desc-freecol' => "Enne FreeCol'i tõlkimist oma keelde lugege palun [[Translating:FreeCol]]. FreeCol kasutab GPL litsentsi.",
 );
 
+/** Persian (فارسی)
+ * @author Huji
+ */
+$messages['fa'] = array(
+	'translate-group-desc-mediawikicore' => 'این گروه پیغام حاوی پیغام‌های مورد استفاده در نسخهٔ آلفای فعلی [[Translating:MediaWiki|مدیاویکی]] ({{CURRENTVERSION}}) است',
+);
+
 /** Finnish (suomi)
  * @author Centerlink
  * @author Cimon Avaro
@@ -1427,6 +1434,7 @@ $messages['it'] = array(
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]], un forum web scritto in PHP.',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] è un sistema gratuito di tracciamento bug web-based.',
 	'translate-group-desc-eol' => 'Un gruppo di messaggi per [[Translating:EOL|Encyclopedia of Life]]',
+	'translate-group-desc-frontlinesms' => 'Un gruppo di messaggi per [[Translating:FrontlineSMS|FrontlineSMS]]',
 	'translate-group-desc-ihris' => 'Un gruppo di messaggi per [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Un gruppo di messaggi per [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un modulo di [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Un gruppo di messaggi per [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], un modulo di [[Translating:iHRIS|iHRIS]]',
@@ -1590,6 +1598,7 @@ $messages['ko'] = array(
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]]는 웹 기반 토론 포럼 소프트웨어입니다',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]]는 웹 기반 이슈 추적 소프트웨어입니다',
 	'translate-group-desc-eol' => '[[Translating:EOL|생명의 백과사전]]에 대한 메시지 그룹입니다',
+	'translate-group-desc-frontlinesms' => '[[Translating:FrontlineSMS|FrontlineSMS]]에 대한 메시지 그룹입니다',
 	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS]]에 대한 메시지 그룹입니다',
 	'translate-group-desc-ihris-common' => '[[Translating:iHRIS|iHRIS]] 모듈 [[Special:Translate/out-ihris-common-0-all|iHRIS Common]]에 대한 메시지 그룹입니다',
 	'translate-group-desc-ihris-i2ce' => '[[Translating:iHRIS|iHRIS]] 모듈 [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]]에 대한 메시지 그룹입니다',
