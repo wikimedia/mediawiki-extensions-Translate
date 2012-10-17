@@ -13,27 +13,24 @@
  * @group large
  */
 class MessageIndexTest extends MediaWikiTestCase {
-	protected $config;
-
-	public function setUp() {
+	protected function setUp() {
 		parent::setUp();
-		$this->testdata = unserialize( file_get_contents( __DIR__ . '/messageindexdata.ser' ) );
-		global $wgTranslateCacheDirectory;
-		$this->config = $wgTranslateCacheDirectory;
-		// Only in 1.20, but who runs tests again older versions anyway?
-		$wgTranslateCacheDirectory = $this->getNewTempDirectory();
+		$this->setMwGlobals( 'wgTranslateCacheDirectory', $this->getNewTempDirectory() );
 	}
 
-	public function tearDown() {
-		global $wgTranslateCacheDirectory;
-		$wgTranslateCacheDirectory = $this->config;
+	protected static function getTestData() {
+		static $data = null;
+		if ( $data === null ) {
+			$data = unserialize( file_get_contents( __DIR__ . '/messageindexdata.ser' ) );
+		}
+		return $data;
 	}
 
 	/**
-	 * @dataProvider MessageIndexImplementationProvider
+	 * @dataProvider provideMessageIndexImplementation
 	 */
 	public function testMessageIndexImplementation( $mi ) {
-		$data = $this->testdata;
+		$data = self::getTestData();
 		$mi->store( $data );
 
 		$tests = array_rand( $data, 10 );
@@ -52,7 +49,7 @@ class MessageIndexTest extends MediaWikiTestCase {
 		$this->assertEquals( $data, $cached, 'Cache is preserved' );
 	}
 
-	public function MessageIndexImplementationProvider() {
+	public static function provideMessageIndexImplementation() {
 		return array(
 			array( new TestableDatabaseMessageIndex() ),
 			array( new TestableCDBMessageIndex() ),
