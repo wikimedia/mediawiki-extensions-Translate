@@ -62,6 +62,11 @@ class MediaWikiMessageCheckerTest extends MediaWikiTestCase {
 				'a{{PLURAL:#|0=0|1=one|1|2}}',
 				'one plural magic word with explicit forms is parsed correctly'
 			),
+			array(
+				array(),
+				'a{{PLURAL:#|0=0|1=one|1|2}',
+				'unclosed plural tag is ignored'
+			),
 		);
 	}
 
