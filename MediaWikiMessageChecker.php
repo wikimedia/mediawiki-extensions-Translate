@@ -255,6 +255,9 @@ class MediaWikiMessageChecker extends MessageChecker {
 					break;
 				}
 			}
+
+			// Unclosed plural, bail out
+			break;
 		}
 		return $plurals;
 	}
