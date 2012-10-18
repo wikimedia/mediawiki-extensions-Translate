@@ -6798,7 +6798,7 @@ Sjekk at sida er merkt med <nowiki><translate></nowiki>-merke og har ein gyldig 
 	'translate-tag-markthisagain' => 'Sida har <span class="plainlinks">[$1 vorten endra]</span> sidan ho sist vart <span class="plainlinks">[$2 merkt for omsetjing]</span>.',
 	'translate-tag-hasnew' => 'Sida inneheld <span class="plainlinks">[$1 endringar]</span> som ikkje er merkte for omsetjing.',
 	'tpt-translation-intro' => 'Sida er ein <span class="plainlinks">[$1 omsett versjon]</span> av sida [[$2]], og omsetjinga er $3% ferdig.',
-	'tpt-translation-intro-fuzzy' => 'Utdaterte omsetjingar er merkte på dette viset.',
+	'tpt-translation-intro-fuzzy' => 'Utdaterte omsetjingar er merkte slik.',
 	'tpt-languages-legend' => 'Andre språk:',
 	'tpt-languages-zero' => 'Byrja omsetjing for dette språket',
 	'tpt-translation-restricted' => 'Omsetjing av sida til dette språket er stogga av ein omsetjingsadministrator.

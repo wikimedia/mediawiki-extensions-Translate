@@ -6659,6 +6659,7 @@ Plej utila por provlegaj taskoj.',
  * @author Antur
  * @author Armando-Martin
  * @author Crazymadlover
+ * @author Dalton2
  * @author Dferg
  * @author Fitoschido
  * @author Imre
@@ -6887,8 +6888,8 @@ Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:transl
 	'supportedlanguages' => 'Idiomas admitidos',
 	'supportedlanguages-summary' => 'Esta página muestra una lista de todos los idiomas admitidos por {{SITENAME}},
 junto con los nombres de los traductores que trabajan en ese idioma.
-Mientras más haya traducido un traductor, su nombre aparecerá más grande.
-El color del subrayado indica qué tan activo es un traductor aquí.',
+Cuanto más haya traducido un traductor, más grande aparecerá su nombre.
+El color del subrayado indica cuán activo es un traductor aquí.',
 	'supportedlanguages-colorlegend' => 'Leyenda del color: Última traducción hecha hace $1 días.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Traductor|Traductores}}: $1',
 	'supportedlanguages-recenttranslations' => 'traducciones recientes',
@@ -21533,7 +21534,7 @@ $1',
 	'translate-messagereview-progress' => 'Принятие...',
 	'translate-messagereview-failure' => 'Принятие... не удалось: $1',
 	'translate-messagereview-done' => 'Принято',
-	'translate-messagereview-reviews' => 'Подтверждено {{PLURAL:$1|участником|$1 участниками}}',
+	'translate-messagereview-reviews' => 'Подтверждено {{PLURAL:$1|$1-м участником|$1-мя участниками|$1-ю участниками}}',
 	'translate-messagereview-reviewswithyou' => 'Подтверждено {{PLURAL:$1|$1-м участником|$1-мя участниками|$1-ю участниками}}, включая вас',
 	'api-error-invalidrevision' => 'Перевод не был найден',
 	'api-error-unknownmessage' => 'Сообщение не было найдено',
