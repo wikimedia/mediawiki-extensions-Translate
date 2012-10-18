@@ -96,6 +96,8 @@
 
 		$( 'a.tpt-add-new-group' ).on( 'click', function ( event ) {
 			$( 'div.tpt-add-new-group' ).removeClass( 'hidden' );
+			// Link has anchor which goes top of the page
+			event.preventDefault();
 		} );
 
 		$( '#tpt-aggregategroups-save' ).on( 'click', function ( event ) {
