@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABFX///tE\u003d",
+        "filename": "resources/ext.translate.special.aggregategroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-10-18T08:38:13Z",
+      "side": 1,
+      "message": "Trialing ws. Some more below.",
+      "revId": "8c4aa4b5e27a2d1e50583c22be738adc65904531",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
