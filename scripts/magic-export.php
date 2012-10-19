@@ -61,17 +61,30 @@ class MagicExport extends Maintenance {
 		$groups = MessageGroups::singleton()->getGroups();
 		$filename = null;
 		foreach ( $groups as $group ) {
-			if ( !$group instanceof ExtensionMessageGroup ) {
-				continue;
-			}
-
-			switch ( $this->type ) {
+			$filename = null;
+			if ( $group instanceof ExtensionMessageGroup ) {
+				switch ( $this->type ) {
 				case 'special':
 					$filename = $group->getAliasFile();
 					break;
 				case 'magic':
 					$filename = $group->getMagicFile();
 					break;
+				}
+			} elseif ( $group instanceof FileBasedMessageGroup ) {
+				$conf = $group->getConfiguration();
+				switch ( $this->type ) {
+				case 'special':
+					if ( isset( $conf['FFS']['aliasFile'] ) ) {
+						$filename = $conf['FFS']['aliasFile'];
+					}
+					break;
+				case 'magic':
+					if ( isset( $conf['FFS']['magicFile'] ) ) {
+						$filename = $conf['FFS']['magicFile'];
+					}
+					break;
+				}
 			}
 
 			if ( $filename === null ) {

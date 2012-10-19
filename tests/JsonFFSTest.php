@@ -107,7 +107,7 @@ JSON;
 	}
 
 	public function testExport() {
-		$collection = new Mock2MessageCollection();
+		$collection = new MockMessageCollectionForExport();
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new JsonFFS( $group );
 		$data = $ffs->writeIntoVariable( $collection );
@@ -121,33 +121,5 @@ JSON;
 		}
 
 		$this->assertEquals( 'metavalue', $parsed['METADATA']['metakey'], 'metadata is preserved' );
-	}
-}
-
-
-/// @todo standardize
-class Mock2MessageCollection extends MessageCollection {
-	public function __construct() {
-		$msg = new FatMessage( 'translatedmsg', 'definition' );
-		$msg->setTranslation( 'translation' );
-		$this->messages['translatedmsg'] = $msg;
-
-		$msg = new FatMessage( 'fuzzymsg', 'definition' );
-		$msg->addTag( 'fuzzy' );
-		$msg->setTranslation( '!!FUZZY!!translation' );
-		$this->messages['fuzzymsg'] = $msg;
-
-		$msg = new FatMessage( 'untranslatedmsg', 'definition' );
-		$this->messages['untranslatedmsg'] = $msg;
-
-		$this->keys = array_flip( array_keys( $this->messages ) );
-	}
-
-	public function getAuthors() {
-		return array( 'Nike the bunny' );
-	}
-
-	public function getLanguage() {
-		return 'fi';
 	}
 }

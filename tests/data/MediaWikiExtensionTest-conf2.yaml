@@ -1,0 +1,41 @@
+BASIC:
+  class: SingleFileBasedMessageGroup
+  id: ext-wikimediamessages
+  namespace: 8
+  label: Wikimedia Messages
+  description: Plop
+
+FILES:
+  class: MediaWikiExtensionFFS
+  sourcePattern: %GROUPROOT%/mediawiki-extensions/extensions/WikimediaMessages/WikimediaMessages.i18n.php
+  targetPattern: mediawiki-extensions/extensions/WikimediaMessages/WikimediaMessages.i18n.php
+  aliasFile: FooBar.alias.php
+  magicFile: FooBar.magic.php
+
+CHECKER:
+  class: MediaWikiMessageChecker
+  checks:
+   - pluralCheck
+   - pluralFormsCheck
+   - wikiParameterCheck
+   - wikiLinksCheck
+   - XhtmlCheck
+   - braceBalanceCheck
+   - pagenameMessagesCheck
+   - miscMWChecks
+
+MANGLER:
+  class: StringMatcher
+  prefix: wmf-
+  patterns:
+    - sidebar
+    - grouppage-Staff
+    - group-Staff
+    - group-Staff-member
+
+TAGS:
+  optional:
+    - grouppage-recursive-export
+  ignored:
+    - wmf-sidebar
+    - robots.txt

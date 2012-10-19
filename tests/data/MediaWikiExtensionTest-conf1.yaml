@@ -1,0 +1,23 @@
+BASIC:
+  class: SingleFileBasedMessageGroup
+  id: ext-exampleextension
+  namespace: 8
+  label: Example Extension
+  description: <exampleextension-desc>
+
+FILES:
+  class: MediaWikiExtensionFFS
+  sourcePattern: %GROUPROOT%/mediawiki-extensions/extensions/ExampleExtension/ExampleExtension.i18n.php
+  targetPattern: mediawiki-extensions/extensions/ExampleExtension/ExampleExtension.i18n.php
+
+CHECKER:
+  class: MediaWikiMessageChecker
+  checks:
+   - pluralCheck
+   - pluralFormsCheck
+   - wikiParameterCheck
+   - wikiLinksCheck
+   - XhtmlCheck
+   - braceBalanceCheck
+   - pagenameMessagesCheck
+   - miscMWChecks
