@@ -125,6 +125,10 @@ class GettextFFS extends SimpleFFS {
 			}
 
 			if ( $useCtxtAsKey ) {
+				if ( !isset( $item['ctxt'] ) ) {
+					error_log( "ctxt missing for: $section" );
+					continue;
+				}
 				$key = $item['ctxt'];
 			} else {
 				$key = self::generateKeyFromItem( $item, $keyAlgorithm );
@@ -175,9 +179,6 @@ class GettextFFS extends SimpleFFS {
 		$match = self::expectKeyword( 'msgctxt', $section );
 		if ( $match !== null ) {
 			$item['ctxt'] = self::formatForWiki( $match );
-		} elseif ( $useCtxtAsKey ) { // Invalid message
-			$metadata['warnings'][] = "Ctxt missing for {$item['id']}";
-			error_log( "Ctxt missing for {$item['id']}" );
 		}
 
 		$pluralMessage = false;
