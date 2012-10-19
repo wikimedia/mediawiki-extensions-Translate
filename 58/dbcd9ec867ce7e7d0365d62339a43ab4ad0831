@@ -1,0 +1,7 @@
+Verified+1: jenkins-bot
+Code-Review+2: Siebrand <siebrand@wikimedia.org>
+Submitted-by: Siebrand <siebrand@wikimedia.org>
+Submitted-at: Fri, 19 Oct 2012 09:50:50 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/28669
+Project: mediawiki/extensions/Translate
+Branch: refs/heads/master
