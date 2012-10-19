@@ -133,24 +133,11 @@ class MessageGroupCache {
 		$group = $this->group;
 		$groupId = $group->getId();
 
+		$filename = $group->getSourceFilePath( $this->code );
+
 		if ( $group instanceof SingleFileBasedMessageGroup ) {
-			$messages = $group->load( $this->code );
-
-			$cache = $this->exists();
-			$source = count( $messages ) > 0;
-
-			// Existence checks
-			if ( !$cache && !$source ) {
-				return true;
-			} elseif ( $cache xor $source ) {
-				// Either exists but not both
-				return false;
-			}
-
-			$created = false;
+			$source = $group->getFFS()->read( $this->code ) !== false;
 		} else {
-			$filename = $group->getSourceFilePath( $this->code );
-
 			static $globCache = null;
 			if ( !isset( $globCache[$groupId] ) ) {
 				$pattern = $group->getSourceFilePath( '*' );
@@ -158,34 +145,33 @@ class MessageGroupCache {
 				// Definition file might not match the above pattern
 				$globCache[$groupId][$group->getSourceFilePath( 'en' )] = true;
 			}
-
-			$cache = $this->exists();
 			$source = isset( $globCache[$groupId][$filename] );
+		}
 
-			// Timestamp and existence checks
-			if ( !$cache && !$source ) {
-				return true;
-			} elseif ( !$cache && $source ) {
-				$reason = self::NO_CACHE;
-				return false;
-			} elseif ( $cache && !$source ) {
-				$reason = self::NO_SOURCE;
-				return false;
-			} elseif ( filemtime( $filename ) <= $this->get( '#updated' ) ) {
-				return true;
-			}
+		$cache = $this->exists();
 
-			// From now on cache and source file exists, but source file mtime is newer
-			$created = $this->get( '#created' );
+		// Timestamp and existence checks
+		if ( !$cache && !$source ) {
+			return true;
+		} elseif ( !$cache && $source ) {
+			$reason = self::NO_CACHE;
+			return false;
+		} elseif ( $cache && !$source ) {
+			$reason = self::NO_SOURCE;
+			return false;
+		} elseif ( filemtime( $filename ) <= $this->get( '#updated' ) ) {
+			return true;
+		}
 
-			// File hash check
-			$newhash = md5( file_get_contents( $filename ) );
-			if ( $this->get( '#filehash' ) === $newhash ) {
-				// Update cache so that we don't need to compare hashes next time
-				$this->create( $created );
-				return true;
-			}
+		// From now on cache and source file exists, but source file mtime is newer
+		$created = $this->get( '#created' );
 
+		// File hash check
+		$newhash = md5( file_get_contents( $filename ) );
+		if ( $this->get( '#filehash' ) === $newhash ) {
+			// Update cache so that we don't need to compare hashes next time
+			$this->create( $created );
+			return true;
 		}
 
 		// Message count check
