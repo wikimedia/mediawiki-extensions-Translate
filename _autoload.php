@@ -174,6 +174,7 @@ $wgAutoloadClasses['GettextPluralException'] = "$dir/ffs/GettextFFS.php";
 $wgAutoloadClasses['JavaFFS'] = "$dir/ffs/JavaFFS.php";
 $wgAutoloadClasses['JavaScriptFFS'] = "$dir/ffs/JavaScriptFFS.php";
 $wgAutoloadClasses['JsonFFS'] = "$dir/ffs/JsonFFS.php";
+$wgAutoloadClasses['MediaWikiExtensionFFS'] = "$dir/ffs/MediaWikiExtensionFFS.php";
 $wgAutoloadClasses['PythonSingleFFS'] = "$dir/ffs/PythonSingleFFS.php";
 $wgAutoloadClasses['RubyYamlFFS'] = "$dir/ffs/RubyYamlFFS.php";
 $wgAutoloadClasses['ShapadoJsFFS'] = "$dir/ffs/JavaScriptFFS.php";
@@ -240,6 +241,7 @@ $wgAutoloadClasses['WorkflowStatesMessageGroup'] = "$dir/messagegroups/WorkflowS
  * @name   Test classes
  * @{
  */
+$wgAutoloadClasses['MockMessageCollectionForExport'] = "$dir/tests/MockMessageCollectionForExport.php";
 $wgAutoloadClasses['MockSuperUser'] = "$dir/tests/MockSuperUser.php";
 $wgAutoloadClasses['MockWikiMessageGroup'] = "$dir/tests/MockWikiMessageGroup.php";
 /**@}*/
