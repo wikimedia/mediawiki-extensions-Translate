@@ -119,3 +119,30 @@ mw.loader.using( 'jquery.colorUtil' , function() {
 		} );
 	} );
 } );
+
+(function( mw, $ ) {
+	'use strict';
+	$( document ).ready( function () {
+		var index,
+			sort = {},
+			re = /#sortable:(\d+)=(asc|desc)/,
+			match = re.exec( window.location.hash ),
+			$tables = $( '.statstable' );
+
+		if ( match ) {
+			index = parseInt( match[1], 10 );
+			sort[index] = match[2];
+		}
+		$tables.tablesorter( {sortList: [sort]} );
+
+		$tables.on( 'sortEnd.tablesorter', function () {
+			var $table = $( this );
+			$table.find( '.headerSortDown, .headerSortUp' ).each( function () {
+				var
+					index = $table.find( 'th' ).index( $( this ) ),
+					dir = $( this ).hasClass( 'headerSortUp' ) ? 'desc' : 'asc';
+				window.location.hash = 'sortable:' + index + '=' + dir;
+			} );
+		} );
+	} );
+}( mediaWiki, jQuery ) );

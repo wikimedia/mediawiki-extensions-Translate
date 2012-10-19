@@ -275,6 +275,7 @@ $wgResourceModules['ext.translate.special.languagestats'] = array(
 		'translate-langstats-expand',
 		'translate-langstats-collapse'
 	),
+	'dependencies' => 'jquery.tablesorter',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.multiselectautocomplete'] = array(

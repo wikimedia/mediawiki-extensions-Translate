@@ -106,7 +106,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out = $this->getOutput();
 
 		$out->addModules( 'ext.translate.special.languagestats' );
-		$out->addModules( 'ext.translate.messagetable' );
+		$out->addModuleStyles( 'ext.translate.messagetable' );
 
 		$params = explode( '/', $par  );
 
