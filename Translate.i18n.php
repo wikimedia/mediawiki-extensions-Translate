@@ -4847,6 +4847,7 @@ Mae gan pob gwerth derfyn uchaf ac isaf.",
  * @author Emilkris33
  * @author Hylle
  * @author Jon Harald Søby
+ * @author Kaare
  * @author MGA73
  * @author Nghtwlkr
  * @author Peter Alberti
@@ -4919,17 +4920,18 @@ Hvis du ved hvor eller hvordan denne besked bruges, kan du hjælpe andre oversæ
 	'translate-edit-nopermission' => 'Du skal have tilladelse til at oversætte meddelelser.',
 	'translate-edit-askpermission' => 'Anmod om tilladelse',
 	'translate-magic-pagename' => 'Udvidet MediaWiki-oversættelse',
-	'translate-magic-help' => 'Du kan oversætte specialside-aliaser, magiske ord og navnerumsnavne.
+	'translate-magic-help' => 'Du kan oversætte specialsiders aliaser, magiske ord og navnerumsnavne.
 
-Specialside-aliaser og magiske ord kan have flere oversættelser.
+Specialsiders aliaser og magiske ord kan have flere oversættelser.
 Oversættelserne adskilles med komma (,).
 Navnerum kan kun have én oversættelse.
 
-Ved navnerumsoversættelser er <code>$1 talk</code> speciel. <code>$1</code> erstattes med sidens navn (for eksempel <code>{{ns:project_talk}}</code>).
-Hvis det ikke er muligt i dit sprog at danne et gyldigt udtryk uden at ændre sidenavnet, bedes du venligst kontakte en udvikler.
+Oversættelse af projektdiskussionsnavnerummet <code>$1 talk</code> kan være kompliceret.
+<code>$1</code> erstattes af projektets webstedsnavn (eksempelvis <code>{{ns:project_talk}}</code>).
+Hvis det ikke er muligt på dit sprog, at danne en meningsgivende sætning uden at ændre webstedsnavnet, så giv os besked på [[Support]].
 
-Du skal være i oversættergruppen for at gemme ændringer.
-Ændringerne gemmes ikke før du klikker på gem-knappen nedenfor.',
+Du skal være oversætter for at kunne gemme ændringer.
+Ændringerne gemmes ikke før du klikker på gem-knappen herunder.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Hent',
 	'translate-magic-cm-export' => 'Eksportér',
@@ -4981,7 +4983,7 @@ Standardlisten afhænger af dit sprog.',
 	'right-translate-import' => 'Importere offline oversættelser',
 	'action-translate-import' => 'importere offline oversættelser',
 	'right-translate-messagereview' => 'Kontrollere oversættelser',
-	'right-translate-groupreview' => 'Gennemgå oversættelser af beskedgrupper',
+	'right-translate-groupreview' => 'Ændring af workflowstatus på meddelelsesgrupper',
 	'translate-rc-translation-filter' => 'Filtrér oversættelser:',
 	'translate-rc-translation-filter-no' => 'Gør ingenting',
 	'translate-rc-translation-filter-only' => 'Vis kun oversættelser',
@@ -5072,6 +5074,12 @@ Understregningsfarven angiver, hvor nyligt en oversætter har været aktiv.',
 	'translate-save' => 'Gem ($1)',
 	'translate-jssti-add' => 'Tilføj til listen',
 	'managemessagegroups' => 'Håndtering af beskedgrupper',
+	'translate-smg-notallowed' => 'Du har ikke tilladelse til at udføre denne handling.',
+	'translate-smg-nochanges' => 'Der er ingen ændringer at behandle.',
+	'translate-smg-submit' => 'Indsend ændringer til behandling',
+	'translate-smg-submitted' => 'Meddelelsesdefinitioner er opdateret. Ændringer bliver behandlet i baggrunden.',
+	'translate-smg-postponed' => 'Nogle ændringer kunne ikke behandles. [[{{FULLPAGENAME}}|Prøv igen]].',
+	'translate-smg-left' => 'Meddelelsesindhold i wiki',
 	'translate-smg-right' => 'Indkommende ændringer',
 	'translate-manage-import-diff' => 'Besked $1 | Handlinger: $2',
 	'translate-manage-import-new' => 'Ny meddelelse $1',
@@ -5153,13 +5161,21 @@ Detaljer: $1',
 	'log-name-translationreview' => 'Log for oversættelseskorrektur',
 	'log-description-translationreview' => 'Log over alle korrekturlæsninger til oversættelser og meddelelsesgrupper.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|godkendte}} oversættelsen $3',
+	'logentry-groupreview-message' => '$1 {{GENDER:$2|ændrede}} statussen på $4 oversættelser i meddelelsesgruppen $3 fra $5 til $6',
 	'translate-workflow-state-' => '(ikke sat)',
 	'translate-workflowstatus' => 'Status: $1',
 	'translate-workflow-set-do' => 'Sæt',
 	'translate-workflow-set-doing' => 'Sætter...',
 	'translate-workflow-set-done' => 'Sat!',
+	'translate-workflow-set-error-alreadyset' => 'Den ønskede status er identisk med den aktuelle status.',
+	'translate-workflow-autocreated-summary' => 'Automatisk oprettelse af side til workflowstatus $1',
 	'translate-stats-workflow' => 'Status',
+	'translate-workflowgroup-label' => 'Workflowstatusser',
+	'translate-workflowgroup-desc' => 'Denne meddelelsesgruppe viser workflowstatus for oversættelser.
+Statusserne er defineret i opsætningsvariablen $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Seneste oversættelser',
+	'translate-dynagroup-recent-desc' => 'Denne meddelelsesgruppe viser alle nylige oversættelser til dette sprog.
+Primært nyttig til korrekturlæsningsopgaver.',
 	'translate-dynagroup-by' => 'Oversat af {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Oversat af {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Sidste ændring af {{GENDER:$1|$1}}',
@@ -6782,7 +6798,7 @@ Los cambios no se graban hasta que no pulses el boton Guardar que aparece abajo.
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'El mensaje original usa <nowiki>{{PLURAL:}}</nowiki> pero no así la traducción.',
 	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki>recibió {{PLURAL:$1|una forma|$1 formas}} pero únicamente {{PLURAL:$2|está soportada una forma|están soportadas $2 formas}} (excluyendo las formas 0= y 1=).',
-	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> tiene formas de plural duplicadas al final. <nowiki>{{PLURAL:$1|martes|martes}}</nowiki> debe escribirse así: <nowiki>{{PLURAL:$1|martes}}</nowiki>.',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> tiene formas duplicadas al final. <nowiki>{{PLURAL:$1|lunes|lunes}}</nowiki> debería escribirse así: <nowiki>{{PLURAL:$1|lunes}}</nowiki>.',
 	'translate-checks-pagename' => 'Nombre del espacio cambiado desde la definición',
 	'translate-checks-format' => 'Esta traducción no sigue la definición o tiene sintaxis inválida: $1',
 	'translate-checks-escape' => 'Los siguientes escapes pueden ser accidentales: <strong>$1</strong>',
@@ -15127,7 +15143,7 @@ Optional Message sollen nëmmen iwwersat gi wann Är Sprooch speziell Ufuerderun
 	'translate-edit-definition' => 'Definitioun vum Message',
 	'translate-edit-translation' => 'Iwwersetzung',
 	'translate-edit-contribute' => 'matschaffen',
-	'translate-edit-no-information' => 'Dëse Message huet keng Dokumentatioun. Wann Dir wësst wou oder wéi dëse Message gebraucht gëtt, da kënnt Dir aneren Iwwersetzer hëllefen an dem dir Informatiounen iwwert dëse Message gitt.',
+	'translate-edit-no-information' => 'Dëse Message huet keng Dokumentatioun. Wann Dir wësst wou oder wéi dëse Message gebraucht gëtt, da kënnt Dir aneren Iwwersetzer hëllefen an deem Dir Informatiounen iwwert dëse Message gitt.',
 	'translate-edit-information' => 'Informatioun iwwert de Message ($1)',
 	'translate-edit-in-other-languages' => 'Message an anere Sproochen',
 	'translate-edit-committed' => 'Aktuell Iwwersetzung an der Software',

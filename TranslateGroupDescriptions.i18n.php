@@ -527,6 +527,7 @@ Vysvětlení klíčů u funkce PLURAL najdete na [http://unicode.org/repos/cldr-
  * @author Byrial
  * @author Emilkris33
  * @author Hylle
+ * @author Kaare
  * @author Peter Alberti
  */
 $messages['da'] = array(
@@ -551,6 +552,7 @@ $messages['da'] = array(
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] er en webbaseret  diskussion forum software',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] er en webbaseret problemsporing software',
 	'translate-group-desc-eol' => 'En besked gruppe for [[Translating:EOL|Encyclopedia of Life]]',
+	'translate-group-desc-frontlinesms' => 'En meddelelsesgruppe til [[Translating:FrontlineSMS|FrontlineSMS]]',
 	'translate-group-desc-ihris' => 'En besked gruppe for [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'En besked gruppe for [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], et modul af [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'En besked gruppe for [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], et modul af [[Translating:iHRIS|iHRIS]]',
@@ -2558,7 +2560,7 @@ $messages['sl'] = array(
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] je knjižnica za ustvarjanje dokumentov PDF iz strani MediaWiki',
 	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] je spletni odjemalec e-pošte',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] je nepovezan bralnik Wikipedije',
-	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] je odprta ploščad za predstavnost',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] je odprto okolje za predstavnostne vsebine',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Ta sporočila so del predloge [[Translating:Open Images|Open Images]] za preverjanje e-pošte',
 	'translate-group-desc-openimages-all' => 'Ta sporočila so del projekta [[Translating:Open Images|Open Images]]',
 	'bw-desc-openlayers' => 'OpenLayers je odprtokodni dinamični ustvarjalnik zemljevidov. Prosimo, sporočite morebitne težave na [[support|podpora]].',

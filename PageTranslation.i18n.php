@@ -1723,12 +1723,14 @@ $messages['cy'] = array(
 /** Danish (dansk)
  * @author Byrial
  * @author Emilkris33
+ * @author Kaare
  * @author Peter Alberti
  * @author Purodha
  */
 $messages['da'] = array(
 	'pagetranslation' => 'Sideoversættelse',
 	'right-pagetranslation' => 'Markere versioner af sider for oversættelse',
+	'action-pagetranslation' => 'håndter oversætbare sider',
 	'tpt-desc' => 'Udvidelse til oversættelse af indholdssider',
 	'tpt-section' => 'Oversættelsesenhed $1',
 	'tpt-section-new' => 'Ny oversættelsesenhed.
@@ -1752,25 +1754,33 @@ Sørg for at den har <nowiki><translate></nowiki>-tags og en gyldig syntaks.',
 	'tpt-saveok' => 'Siden [[$1]] har blevet markeret for oversættelse med $2 {{PLURAL:$2|oversættelsesenhed|oversættelsesenheder}}.
 Siden kan nu <span class="plainlinks">[$3 oversættes]</span>.',
 	'tpt-badsect' => '"$1" er ikke et gyldig navn for oversættelsesenhed $2.',
-	'tpt-showpage-intro' => 'Herunder er nye, eksisterende og slettede sektioner oplistet.
-kontrollér før denne version markeres for oversættelse, at ændringerne i sektionene er så små som muligt for at undgå unødigt arbejde for oversætterne.',
+	'tpt-showpage-intro' => 'Herunder listes der nye, eksisterende og slettede oversættelsesenheder.
+Før denne version markeres til oversættelse, kontrolleres at ændringerne i oversættelsesenhederne er minimeret for at undgå at give oversætterne unødigt arbejde.',
 	'tpt-mark-summary' => 'Markerede denne version for oversættelse',
 	'tpt-edit-failed' => 'Kunne ikke opdatere siden: $1',
+	'tpt-duplicate' => 'Oversættelsesenhedsnavnet $1 anvendes mere end en gang.',
 	'tpt-already-marked' => 'Den seneste version af denne side er allerede markeret for oversættelse.',
 	'tpt-unmarked' => 'Siden $1 er ikke længere markeret til oversættelse.',
 	'tpt-list-nopages' => 'Ingen sider er markeret for oversættelse eller parate til at blive markeret for oversættelse.',
+	'tpt-new-pages-title' => 'Sider foreslået til oversættelse',
+	'tpt-old-pages-title' => 'Sider som oversættes',
 	'tpt-other-pages-title' => 'Fejlbehæftede sider',
 	'tpt-discouraged-pages-title' => 'Frarådede sider',
 	'tpt-new-pages' => '{{PLURAL:$1|Denne side|Disse sider}} indeholder tekst med oversættelsestags, men ingen version af {{PLURAL:$1|siden|siderne}} er i øjeblikket markeret for oversættelse.',
 	'tpt-old-pages' => 'En version af {{PLURAL:$1|denne side|disse sider}} er markeret for oversættelse.',
 	'tpt-other-pages' => '{{PLURAL:$1|En gammel version af denne side er|Ældre versioner af disse sider er}} markeret til oversættelse,
 men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til oversættelse.',
+	'tpt-discouraged-pages' => '{{PLURAL:$1|Denne side|Disse sider}} er blevet forhindret i yderligere oversættelse.',
 	'tpt-select-prioritylangs' => 'Liste over sprogkoder for prioriterede sprog, adskilt med kommaer:',
+	'tpt-select-prioritylangs-force' => 'Forhindring af oversættelser til andre sprog end prioritetsprogene',
 	'tpt-select-prioritylangs-reason' => 'Begrundelse:',
 	'tpt-sections-prioritylangs' => 'Prioriterede sprog',
+	'tpt-rev-mark' => 'marker til oversættelse',
 	'tpt-rev-unmark' => 'fjern fra oversættelse',
 	'tpt-rev-discourage' => 'fraråd',
 	'tpt-rev-encourage' => 'gendan',
+	'tpt-rev-mark-tooltip' => 'Marker den seneste version af denne side til oversættelse.',
+	'tpt-rev-unmark-tooltip' => 'Fjern denne side fra oversættelse.',
 	'tpt-rev-discourage-tooltip' => 'Fraråd yderligere oversættelse af denne side.',
 	'tpt-rev-encourage-tooltip' => 'Gendan denne side til normal oversættelse.',
 	'translate-tag-translate-link-desc' => 'Oversæt denne side',
@@ -1785,25 +1795,38 @@ men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til 
 Siden er en oversættelse af siden [[$1]] og oversættelsen kan opdateres ved at bruge [$2 oversættelsesværktøjet].',
 	'tpt-unknown-page' => 'Dette navnerum er reserveret til oversættelser af indholdssider.
 Siden som du prøver at redigere, ser ikke ud til at svare til nogen side markeret for oversættelse.',
+	'tpt-translation-restricted' => 'Oversættelse af denne side til dette sprog blev forhindret af en oversættelsesadministrator.
+
+Årsag: $1',
+	'tpt-discouraged-language-force' => "'''Denne side kan ikke oversættes til $2.'''
+
+En oversættelsesadministrator besluttede at denne side kun kan oversættes til $3.",
+	'tpt-discouraged-language' => "'''Oversættelse til $2 er ikke en prioritet for denne side.'''
+
+En oversættelsesadministrator besluttede at fokusere oversættelsesarbejdet på $3.",
 	'tpt-discouraged-language-reason' => 'Begrundelse: $1',
+	'tpt-priority-languages' => 'En oversættelsesadministrator har sat prioritetssproget for denne gruppe til $1.',
 	'tpt-render-summary' => 'Opdaterer for at passe til en ny version af kildesiden',
 	'tpt-download-page' => 'Eksportér side med oversættelser',
+	'aggregategroups' => 'Samlegrupper',
 	'tpt-aggregategroup-add' => 'Tilføj',
 	'tpt-aggregategroup-save' => 'Gem',
+	'tpt-aggregategroup-add-new' => 'Tilføj en ny samlegruppe',
 	'tpt-aggregategroup-new-name' => 'Navn:',
 	'tpt-aggregategroup-new-description' => 'Beskrivelse (valgfri):',
+	'tpt-aggregategroup-remove-confirm' => 'Er du sikker på, at du vil slette denne samlegruppe?',
 	'tpt-aggregategroup-invalid-group' => 'Gruppen findes ikke',
 	'pt-parse-open' => 'Ubalanceret &lt;translate> tag.
 Oversættelse skabelon: <pre>$1</pre>',
 	'pt-parse-close' => 'Ubalanceret &lt;/translate> tag.
 Oversættelse skabelon: <pre>$1</pre>',
-	'pt-parse-nested' => 'Indlejrede &lt;translate> sektioner er ikke tilladt.
-Tag tekst: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Flere afsnit markører for et afsnit.
-Afsnit tekst: <pre>$1</pre>',
-	'pt-shake-position' => 'Afsnit markører i uvendet position.
-Afsnit tekst: <pre>$1</pre>',
-	'pt-shake-empty' => 'Tom section for markør $1.',
+	'pt-parse-nested' => 'Indlejrede &lt;translate>-oversættelsesenheder er ikke tilladt.
+Tagtekst: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Flere oversættelsesenhedsmarkører til en oversættelsesenhed.
+Oversættelsesenhedstekst: <pre>$1</pre>',
+	'pt-shake-position' => 'Oversættelsesenhedsmarkører på uventet position.
+Oversættelsesenhedstekst: <pre>$1</pre>',
+	'pt-shake-empty' => 'Tom oversættelsesenhed for markøren "$1".',
 	'pt-log-header' => 'Log for handlinger i forbindelse med side oversættelses systemet',
 	'pt-log-name' => 'Sideoversættelseslog',
 	'pt-log-mark' => '{{GENDER:$2|markerede}} version $3 af siden "[[:$1]]" til oversættelse',
@@ -1814,19 +1837,26 @@ Afsnit tekst: <pre>$1</pre>',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|stødte på}} et problem under sletning oversætbar side [[:$1]]',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|Fuldførte}} sletning af oversættelses side $1',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|stødte på}} et problem under sletning oversættelses side [[:$1]]',
+	'pt-log-encourage' => '{{GENDER:$2|opfordrede}} til oversættelse af siden "[[:$1]]"',
+	'pt-log-discourage' => '{{GENDER:$2|forhindrede}} oversættelse af siden "[[:$1]]"',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|fjernede}} prioritetssprog fra den oversætbare side "[[:$1]]"',
+	'pt-log-priority-langs' => '{{GENDER:$2|satte}} prioritetssproget for den oversætbare side "[[:$1]]" til $3. Årsag: $4',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|begrænsede}} sprog for den oversætbare side "[[:$1]]" til $3. Årsag: $4',
+	'pt-log-aggregategroup-associate' => '{{GENDER:$2|tilføjede}} oversætbare side "[[:$1]]" til samlegruppen $3',
+	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|fjernede}} oversætbar side "[[:$1]]" fra samlegruppen $3',
 	'pt-movepage-title' => 'Flyt oversætbare side $1',
 	'pt-movepage-blockers' => 'Den oversætbare side kan ikke flyttes til et nyt navn på grund af følgende {{PLURAL:$1|fejl|fejl}}:',
 	'pt-movepage-block-base-exists' => 'Målbase siden [[:$1]] findes.',
 	'pt-movepage-block-base-invalid' => 'Målbase siden er ikke en gyldig titel.',
 	'pt-movepage-block-tp-exists' => 'Mål oversættelsessiden [[:$2]] findes.',
 	'pt-movepage-block-tp-invalid' => 'Mål oversættelses side titlen for [[:$1]] ville være ugyldig (for lang?).',
-	'pt-movepage-block-section-exists' => 'Mål oversættelses sektionen [[:$2]] findes.',
-	'pt-movepage-block-section-invalid' => 'Mål sections side titlen for [[:$1]] ville være ugyldig (for lang?).',
+	'pt-movepage-block-section-exists' => 'Målsiden "[[:$2]]" hørende til oversættelsesenheden findes.',
+	'pt-movepage-block-section-invalid' => 'Målsidens titel for "[[:$1]]" til oversættelsesenheden ville blive ugyldig (for lang?).',
 	'pt-movepage-block-subpage-exists' => 'Mål undersiden [[:$2]] findes.',
 	'pt-movepage-block-subpage-invalid' => 'Mål underside titlen for [[:$1]] ville være ugyldig (for lang?).',
 	'pt-movepage-list-pages' => 'Liste over sider til at flytte',
 	'pt-movepage-list-translation' => 'Oversættelse sider',
-	'pt-movepage-list-section' => 'Afsnit sider',
+	'pt-movepage-list-section' => 'Oversættelsesenhedssider',
 	'pt-movepage-list-other' => 'Andre undersider',
 	'pt-movepage-list-count' => 'I alt $1 {{PLURAL:$1|side|sider}} til at flytte.',
 	'pt-movepage-legend' => 'Flyt oversætbare side',
@@ -1860,7 +1890,7 @@ Husk at tjekke [[Special:Log/pagetranslation|siden oversættelsen log]] for fejl
 	'pt-deletepage-subpages' => 'Slet alle undersider',
 	'pt-deletepage-list-pages' => 'Liste over sider til at slette',
 	'pt-deletepage-list-translation' => 'Oversættelses sider',
-	'pt-deletepage-list-section' => 'Afsnits sider',
+	'pt-deletepage-list-section' => 'Oversættelsesenhedssider',
 	'pt-deletepage-list-other' => 'Andre undersider',
 	'pt-deletepage-list-count' => 'I alt $1 {{PLURAL:$1|side|sider}} til at slette.',
 	'pt-deletepage-full-logreason' => 'Del af oversætbar side $1.',
