@@ -582,7 +582,7 @@ $messages['da'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] giver en frakoblet tekstudgave af Wikipedia på en mobil enhed.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] er et flerplatforms mobil- og tabletprogram til at læse og bidrage til Wikipedia',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] er et flerplatforms mobil- og tabletprogram til at læse og bidrage til Wiktionary',
-	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] er en mobil applikation der bidrager til [[:meta:Wiki Loves Monuments|Wiki Elsker Monumenter projektet]]',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] er en mobilapplikation til at bidrage til [[:meta:Wiki Loves Monuments|Wiki Loves Monuments-projektet]]',
 );
 
 /** German (Deutsch)
@@ -1660,6 +1660,7 @@ $messages['ksh'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], e Forumsprojramm för et Web, jeschrevve en dä Projrammiershprooch <i lang="en">PHP</i>.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] es e frei Süßteem för övver et Web Faählere un Fählermeldunge ze Verwallde. Wann Üsch jät opfällt, doht et op di Sigg „[[Support|{{int:bw-mainpage-support-title}}]]“ schriive.',
 	'translate-group-desc-eol' => 'Täxte un Nohreeschte för [[Translating:EOL|et Wööterbooch vum Levve]]',
+	'translate-group-desc-frontlinesms' => 'En Jropp för <i lang="en">[[Translating:FrontlineSMS|FrontlineSMS]]</i>',
 	'translate-group-desc-ihris' => 'En Jrop Täxte un Nohreeschte för [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Täxte un Nohreeschte för <i lang="en">[[Special:Translate/out-ihris-common-0-all|iHRIS Common]]</i>, enem Modul vum <i lang="en">[[Translating:iHRIS|iHRIS]]</i>',
 	'translate-group-desc-ihris-i2ce' => 'Täxte un Nohreeschte för <i lang="en">[[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]]</i>, enem Modul vum <i lang="en">[[Translating:iHRIS|iHRIS]]</i>',
@@ -1988,6 +1989,7 @@ $messages['nl'] = array(
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] is webgebaseerde forumsoftware',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] is webgebaseerde software voor het volgen van meldingen',
 	'translate-group-desc-eol' => 'Een berichtengroep voor [[Translating:EOL|Encyclopedia of Life]]',
+	'translate-group-desc-frontlinesms' => 'Een berichtengroep voor [[Translating:FrontlineSMS|FrontlineSMS]]',
 	'translate-group-desc-ihris' => 'Een berichtengroep voor [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Een berichtengroep voor [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], een module van [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Een berichtengroep voor [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], een module van [[Translating:iHRIS|iHRIS]]',
@@ -2248,6 +2250,8 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
  */
 $messages['ps'] = array(
 	'translate-group-desc-translatablepages' => 'د ژباړې وړ ټول مخونه',
+	'translate-group-desc-eol' => '[[Translating:EOL|د ژوند پوهنغونډ]] يوه پيغام ډله',
+	'translate-group-desc-kiwix' => 'د [[Translating:Kiwix|کيويکس]] يوه پيغام ډله',
 );
 
 /** Portuguese (português)
