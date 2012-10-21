@@ -27,6 +27,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		}
 
 		$groups = MessageGroups::getAllGroups();
+		uasort( $groups, array( 'MessageGroups', 'groupLabelSort' ) );
 		$aggregates = array();
 		$pages = array();
 		foreach ( $groups as $group ) {
@@ -45,8 +46,6 @@ class SpecialAggregateGroups extends SpecialPage {
 			$out->addWikiMsg( 'tpt-list-nopages' );
 			return;
 		}
-
-		usort( $aggregates, array( 'MessageGroups', 'groupLabelSort' ) );
 
 		$this->showAggregateGroups( $aggregates, $pages );
 	}
