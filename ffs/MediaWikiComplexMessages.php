@@ -550,12 +550,18 @@ class SpecialPageAliasesCM extends ComplexMessages {
 		global $wgTranslateExtensionDirectory;
 		$groups = MessageGroups::singleton()->getGroups();
 		foreach ( $groups as $g ) {
-			if ( !$g instanceof ExtensionMessageGroup ) {
-				continue;
-			}
-
-			$file = $g->getAliasFile();
-			if ( $file === null ) {
+			if ( $g instanceof ExtensionMessageGroup ) {
+				$file = $g->getAliasFile();
+				if ( $file === null ) {
+					continue;
+				}
+			} elseif ( $g instanceof FileBasedMessageGroup ) {
+				$conf = $g->getConfiguration();
+				if ( !isset( $conf['FFS']['aliasFile'] ) ) {
+					continue;
+				}
+				$file = $conf['FFS']['aliasFile'];
+			} else {
 				continue;
 			}
 
@@ -631,12 +637,18 @@ class MagicWordsCM extends ComplexMessages {
 		global $wgTranslateExtensionDirectory;
 		$groups = MessageGroups::singleton()->getGroups();
 		foreach ( $groups as $g ) {
-			if ( !$g instanceof ExtensionMessageGroup ) {
-				continue;
-			}
-
-			$file = $g->getMagicFile();
-			if ( $file === null ) {
+			if ( $g instanceof ExtensionMessageGroup ) {
+				$file = $g->getMagicFile();
+				if ( $file === null ) {
+					continue;
+				}
+			} elseif ( $g instanceof FileBasedMessageGroup ) {
+				$conf = $g->getConfiguration();
+				if ( !isset( $conf['FILES']['magicFile'] ) ) {
+					continue;
+				}
+				$file = $conf['FILES']['magicFile'];
+			} else {
 				continue;
 			}
 

@@ -19,8 +19,8 @@ class PremadeMediawikiExtensionGroups {
 	protected $namespace = NS_MEDIAWIKI;
 
 	/**
-	 * @param $def string Path to file
-	 * @param $path string Path to extensions
+	 * @param string $def Path to the definition file.
+	 * @param string $path Path to extensions
 	 */
 	public function __construct( $def, $path ) {
 		$this->definitionFile = $def;
@@ -53,7 +53,9 @@ class PremadeMediawikiExtensionGroups {
 
 	/// Initialisation function
 	public function init() {
-		if ( $this->groups !== null ) return;
+		if ( $this->groups !== null ) {
+			return;
+		}
 		$groups = $this->parseFile();
 		$this->groups = $this->processGroups( $groups );
 	}
@@ -63,12 +65,94 @@ class PremadeMediawikiExtensionGroups {
 		return preg_replace( '/\s+/', '', strtolower( $name ) );
 	}
 
-	/// Registers all extensions
-	public function addAll() {
-		global $wgTranslateAC, $wgTranslateEC;
-		$this->init();
+	/// Hook: TranslatePostInitGroups
+	public function register( array &$list, array &$deps ) {
+		$groups = $this->parseFile();
+		$groups = $this->processGroups( $groups );
+		foreach ( $groups as $id => $g ) {
+			$list[$id] = $this->createMessageGroup( $id, $g );
+		}
 
-		if ( !count( $this->groups ) ) return;
+		$deps[] = new FileDependency( $this->definitionFile );
+		return true;
+	}
+
+	/**
+	 * Creates SingleFileBasedMessageGroup objects from parsed data.
+	 * @param string $id unique group id already prefixed
+	 * @param array $info array of group info
+	 * @return FileBasedMessageGroup
+	 */
+	protected function createMessageGroup( $id, $info ) {
+		$conf = array();
+		$conf['BASIC']['class'] = 'SingleFileBasedMessageGroup';
+		$conf['BASIC']['id'] = $id;
+		$conf['BASIC']['namespace'] = $this->namespace;
+		$conf['BASIC']['label'] = $info['name'];
+
+		if ( isset( $info['desc'] ) ) {
+			$conf['BASIC']['description'] = $info['desc'];
+		} else {
+			$conf['BASIC']['description'] = wfMessage( $info['descmsg'], $info['url'] )->inContentLanguage()->plain();
+		}
+
+		$conf['FILES']['class'] = 'MediaWikiExtensionFFS';
+		$conf['FILES']['sourcePattern'] = "%GROUPROOT%/mediawiki-extensions/extensions/{$info['file']}";
+		$conf['FILES']['targetPattern'] = "mediawiki-extensions/extensions/{$info['file']}";
+		// @TODO: find a better way
+		if ( isset( $info['aliasfile'] ) ) {
+			$conf['FILES']['aliasFile'] =  $info['aliasfile'];
+		}
+		if ( isset( $info['magicfile'] ) ) {
+			$conf['FILES']['magicFile'] =  $info['magicfile'];
+		}
+
+		if ( isset( $info['prefix'] ) ) {
+			$conf['MANGLER']['class'] = 'StringMatcher';
+			$conf['MANGLER']['prefix'] = $info['prefix'];
+			$conf['MANGLER']['patterns'] = $info['mangle'];
+
+			$mangler = new StringMatcher( $info['prefix'], $info['mangle'] );
+			if ( isset( $info['ignored'] ) ) {
+				$info['ignored'] = $mangler->mangle( $info['ignored'] );
+			}
+			if ( isset( $info['optional'] ) ) {
+				$info['optional'] = $mangler->mangle( $info['optional'] );
+			}
+		}
+
+		$conf['CHECKER']['class'] = 'MediaWikiMessageChecker';
+		$conf['CHECKER']['checks'] = array(
+			'pluralCheck',
+			'pluralFormsCheck',
+			'wikiParameterCheck',
+			'wikiLinksCheck',
+			'XhtmlCheck',
+			'braceBalanceCheck',
+			'pagenameMessagesCheck',
+			'miscMWChecks',
+		);
+
+		if ( isset( $info['optional'] ) ) {
+			$conf['TAGS']['optional'] = $info['optional'];
+		}
+		if ( isset( $info['ignored'] ) ) {
+			$conf['TAGS']['ignored'] = $info['ignored'];
+		}
+
+		return MessageGroupBase::factory( $conf );
+	}
+
+	/// Registers all extensions, only for old style
+	/// @todo remove
+	public function addAll() {
+		$this->init();
+		if ( $this->groups === array() ) {
+			wfWarn( "No groups found in {$this->definitionFile}" );
+			return;
+		}
+
+		global $wgTranslateAC, $wgTranslateEC;
 
 		foreach ( $this->groups as $id => $g ) {
 			$wgTranslateAC[$id] = array( $this, 'factory' );
@@ -76,6 +160,10 @@ class PremadeMediawikiExtensionGroups {
 		}
 	}
 
+	/**
+	 * Creates old style message groups.
+	 * @todo remove.
+	 */
 	public function factory( $id ) {
 		$info = $this->groups[$id];
 		$group = ExtensionMessageGroup::factory( $info['name'], $id );

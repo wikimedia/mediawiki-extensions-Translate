@@ -282,10 +282,15 @@ class SimpleFFS implements FFS {
 	}
 
 	/**
+	 * @todo get rid of this
 	 * @param $filename string
 	 * @param $collection MessageCollection
 	 */
 	protected function tryReadSource( $filename, MessageCollection $collection ) {
+		if ( $this->group instanceof SingleFileBasedMessageGroup ) {
+			return;
+		}
+
 		$sourceText = $this->tryReadFile( $filename );
 
 		// No need to do anything in SimpleFFS if it's false,
