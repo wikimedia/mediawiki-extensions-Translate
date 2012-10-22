@@ -1,0 +1,8 @@
+Change-Id: Ib0509e722d9ff941e392129d303aea9f98adac70
+Verified+1: jenkins-bot
+Code-Review+2: Siebrand <siebrand@wikimedia.org>
+Submitted-by: Siebrand <siebrand@wikimedia.org>
+Submitted-at: Mon, 22 Oct 2012 09:22:39 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/29276
+Project: mediawiki/extensions/Translate
+Branch: refs/heads/master
