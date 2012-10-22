@@ -528,7 +528,7 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function getGroupDescription( MessageGroup $group ) {
-		$description = $group->getDescription();
+		$description = $group->getDescription( $this->getContext() );
 		if ( $description !== null ) {
 			return $this->getOutput()->parse( $description, false );
 		}

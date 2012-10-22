@@ -68,7 +68,7 @@ class SpecialAggregateGroups extends SpecialPage {
 
 			$header = Html::rawElement( 'h2', null, htmlspecialchars( $group->getLabel() ) . $remove );
 			$out->addHtml( $header );
-			$out->addWikiText( $group->getDescription() );
+			$out->addWikiText( $group->getDescription( $this->getContext() ) );
 			$this->listSubgroups( $group );
 			$select = $this->getGroupSelector( $pages, $group );
 			$out->addHtml( $select->getHtml() );
