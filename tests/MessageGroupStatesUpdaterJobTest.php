@@ -16,6 +16,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 			'wgTranslateEC' => array(),
 			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
 			'wgTranslateWorkflowStates' => false,
+			'wgTranslateGroupFiles' => array(),
 		) );
 		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
 		MessageGroups::clearCache();
