@@ -19,7 +19,7 @@ class MediaWikiExtensionMessageGroup extends SingleFileBasedMessageGroup {
 	 * to retrieve them. Also urls are included if available.
 	 * Needs the configure extension.
 	 */
-	public function getDescription() {
+	public function getDescription( IContextSource $context = null ) {
 
 		$language = $this->getSourceLanguage();
 		if ( $context ) {

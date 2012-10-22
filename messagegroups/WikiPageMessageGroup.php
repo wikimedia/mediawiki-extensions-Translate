@@ -125,18 +125,21 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		return $checker;
 	}
 
-	public function getDescription() {
+	public function getDescription( IContextSource $context = null ) {
 		$title = $this->title;
 		$target = SpecialPage::getTitleFor( 'MyLanguage', $title )->getPrefixedText();
 
 		// Allow for adding a custom group description by using
 		// "MediaWiki:Tp-custom-<group ID>".
 		$customText = '';
-		$customMessage = wfMessage( 'tp-custom-' . $this->id )->inContentLanguage();
-		if ( $customMessage->exists() ) {
-			$customText = $customMessage->plain();
+		$msg = wfMessage( 'tp-custom-' . $this->id );
+		self::addContext( $msg, $context );
+		if ( $msg->exists() ) {
+			$customText = $msg->plain();
 		}
 
-		return wfMessage( 'translate-tag-page-desc', $title, $target )->plain() . $customText;
+		$msg = wfMessage( 'translate-tag-page-desc', $title, $target );
+		self::addContext( $msg, $context );
+		return $msg->plain() . $customText;
 	}
 }

@@ -45,7 +45,7 @@ class ExtensionMessageGroup extends MessageGroupOld {
 	public function getMessageFile( $code ) { return $this->messageFile; }
 	public function setMessageFile( $value ) { $this->messageFile = $value; }
 
-	public function getDescription() {
+	public function getDescription( IContextSource $context = null ) {
 		if ( $this->description === null ) {
 			// Load the messages only when needed.
 			$this->setDescriptionMsgReal( $this->descriptionKey, $this->descriptionUrl );

@@ -20,12 +20,16 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 		return 'translate-workflow-states';
 	}
 
-	public function getLabel() {
-		return wfMessage( 'translate-workflowgroup-label' )->text();
+	public function getLabel( IContextSource $context = null ) {
+		$msg = wfMessage( 'translate-workflowgroup-label' );
+		$msg = self::addContext( $msg, $context );
+		return $msg->plain();
 	}
 
-	public function getDescription() {
-		return wfMessage( 'translate-workflowgroup-desc' )->plain();
+	public function getDescription( IContextSource $context = null ) {
+		$msg = wfMessage( 'translate-workflowgroup-desc' );
+		$msg = self::addContext( $msg, $context );
+		return $msg->plain();
 	}
 
 	public function getDefinitions() {

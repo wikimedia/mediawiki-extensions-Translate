@@ -26,7 +26,9 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * @return string
 	 */
-	public function getLabel() { return $this->label; }
+	public function getLabel( IContextSource $context = null ) {
+		return $this->label;
+	}
 
 	/**
 	 * @param $value string
@@ -95,7 +97,9 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * gives information about this group to translators.
 	 */
 	protected $description = null;
-	public function getDescription() { return $this->description; }
+	public function getDescription( IContextSource $context = null ) {
+		return $this->description;
+	}
 	public function setDescription( $value ) { $this->description = $value; }
 
 	/**
@@ -335,5 +339,12 @@ abstract class MessageGroupOld implements MessageGroup {
 	 */
 	public function getTranslatableLanguages() {
 		return null;
+	}
+
+	protected static function addContext( Message $message, IContextSource $context = null ) {
+		if ( $context ) {
+			$message->inLanguage( $context->getLanguage() );
+		}
+		return $message;
 	}
 }
