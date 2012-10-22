@@ -454,48 +454,57 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		// Don't spam the same errors for all pages if base page fails
 		if ( $blockers ) return $blockers;
 
-		$translationPages = $this->getTranslationPages();
-		foreach ( $translationPages as $old ) {
-			$new = $this->newPageTitle( $base, $old, $target );
-			if ( !$new ) {
-				$blockers[] = array( 'pt-movepage-block-tp-invalid', $old->getPrefixedText() );
-			} elseif ( $new->exists() ) {
-				$blockers[] = array( 'pt-movepage-block-tp-exists', $old->getPrefixedText(), $new->getPrefixedText() );
-			} else {
-				$errors = $old->isValidMoveOperation( $target, false );
-				if ( is_array( $errors ) ) $blockers = array_merge( $blockers, $errors );
-			}
+		// Collect all the old and new titles for checcks
+		$titles = array();
+
+		$pages = $this->getTranslationPages();
+		foreach ( $pages as $old ) {
+			$titles['tp'][] = array( $old, $this->newPageTitle( $base, $old, $target ) );
 		}
 
-		$sections = $this->getSectionPages();
-		foreach ( $sections as $old ) {
-			$new = $this->newPageTitle( $base, $old, $target );
-			if ( !$new ) {
-				$blockers[] = array( 'pt-movepage-block-section-invalid', $old->getPrefixedText() );
-			} elseif ( $new->exists() ) {
-				$blockers[] = array( 'pt-movepage-block-section-exists', $old->getPrefixedText(), $new->getPrefixedText() );
-			} else {
-				$errors = $old->isValidMoveOperation( $target, false );
-				if ( is_array( $errors ) ) $blockers = array_merge( $blockers, $errors );
-			}
+		$pages = $this->getSectionPages();
+		foreach ( $pages as $old ) {
+			$titles['section'][] = array( $old, $this->newPageTitle( $base, $old, $target ) );
 		}
 
+		$subpages = array();
 		if ( $this->moveSubpages ) {
 			$subpages = $this->getSubpages();
-			foreach ( $subpages as $old ) {
-				if ( TranslatablePage::isTranslationPage( $old ) ) {
+		}
+		foreach ( $subpages as $old ) {
+			if ( !TranslatablePage::isTranslationPage( $old ) ) {
+				$titles['subpage'][] = array( $old, $this->newPageTitle( $base, $old, $target ) );
+			}
+		}
+
+		// Check that all new titles are valid
+		$lb = new LinkBatch();
+		foreach ( $titles as $type => $list ) {
+			foreach ( $list as $pair ) {
+				list( $old, $new ) = $pair;
+				if ( $new === null ) {
+					$blockers[] = array( "pt-movepage-block-$type-invalid", $old->getPrefixedText() );
 					continue;
 				}
+				$lb->addObj( $old );
+				$lb->addObj( $new );
+			}
+		}
 
-				$new = $this->newPageTitle( $base, $old, $target );
+		if ( $blockers ) return $blockers;
 
-				if ( !$new ) {
-					$blockers[] = array( 'pt-movepage-block-subpage-invalid', $old->getPrefixedText() );
-				} elseif ( $new->exists() ) {
-					$blockers[] = array( 'pt-movepage-block-subpage-exists', $old->getPrefixedText(), $new->getPrefixedText() );
+		// Check that there are no move blockers
+		$lb->execute();
+		foreach ( $titles as $type => $list ) {
+			foreach ( $list as $pair ) {
+				list( $old, $new ) = $pair;
+				if ( $new->exists() ) {
+					$blockers[] = array( "pt-movepage-block-$type-exists", $old->getPrefixedText(), $new->getPrefixedText() );
 				} else {
 					$errors = $old->isValidMoveOperation( $target, false );
-					if ( is_array( $errors ) ) $blockers = array_merge( $blockers, $errors );
+					if ( is_array( $errors ) ) {
+						$blockers = array_merge( $blockers, $errors );
+					}
 				}
 			}
 		}
