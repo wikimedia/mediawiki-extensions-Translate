@@ -1,5 +1,5 @@
 BASIC:
-  class: SingleFileBasedMessageGroup
+  class: MediaWikiExtensionMessageGroup
   id: ext-wikimediamessages
   namespace: 8
   label: Wikimedia Messages

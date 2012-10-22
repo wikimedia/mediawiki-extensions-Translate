@@ -1,9 +1,10 @@
 BASIC:
-  class: SingleFileBasedMessageGroup
+  class: MediaWikiExtensionMessageGroup
   id: ext-exampleextension
   namespace: 8
   label: Example Extension
-  description: <exampleextension-desc>
+  descriptionmsg: exampleextension-desc
+  extensionurl: false
 
 FILES:
   class: MediaWikiExtensionFFS

@@ -85,7 +85,7 @@ class PremadeMediawikiExtensionGroups {
 	 */
 	protected function createMessageGroup( $id, $info ) {
 		$conf = array();
-		$conf['BASIC']['class'] = 'SingleFileBasedMessageGroup';
+		$conf['BASIC']['class'] = 'MediaWikiExtensionMessageGroup';
 		$conf['BASIC']['id'] = $id;
 		$conf['BASIC']['namespace'] = $this->namespace;
 		$conf['BASIC']['label'] = $info['name'];
@@ -93,7 +93,8 @@ class PremadeMediawikiExtensionGroups {
 		if ( isset( $info['desc'] ) ) {
 			$conf['BASIC']['description'] = $info['desc'];
 		} else {
-			$conf['BASIC']['description'] = wfMessage( $info['descmsg'], $info['url'] )->inContentLanguage()->plain();
+			$conf['BASIC']['descriptionmsg'] = $info['descmsg'];
+			$conf['BASIC']['extensionurl'] = $info['url'];
 		}
 
 		$conf['FILES']['class'] = 'MediaWikiExtensionFFS';
