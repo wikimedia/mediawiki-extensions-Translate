@@ -32,7 +32,7 @@ class PythonSingleFFS extends SimpleFFS {
 		}
 
 		if ( !isset( self::$data[$this->group->getId()][$code] ) ) {
-			return false;
+			self::$data[$this->group->getId()][$code] = array();
 		}
 
 		return array( 'MESSAGES' => self::$data[$this->group->getId()][$code] );
