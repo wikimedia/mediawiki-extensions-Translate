@@ -591,6 +591,7 @@ $messages['as'] = array(
 $messages['ast'] = array(
 	'pagetranslation' => 'Traducción de páxines',
 	'right-pagetranslation' => 'Marcar versiones de páxines pa traducir',
+	'action-pagetranslation' => 'alministrar les páxines traducibles',
 	'tpt-desc' => 'Estensión pa traducir páxines de conteníu',
 	'tpt-section' => 'Unidá de traducción $1',
 	'tpt-section-new' => 'Nueva unidá de traducción.
@@ -1797,7 +1798,7 @@ En oversættelsesadministrator besluttede at denne side kun kan oversættes til 
 
 En oversættelsesadministrator besluttede at fokusere oversættelsesarbejdet på $3.",
 	'tpt-discouraged-language-reason' => 'Begrundelse: $1',
-	'tpt-priority-languages' => 'En oversættelsesadministrator har sat prioritetssproget for denne gruppe til $1.',
+	'tpt-priority-languages' => 'En oversættelsesadministrator har sat prioritetssprogene for denne gruppe til $1.',
 	'tpt-render-summary' => 'Opdaterer for at passe til en ny version af kildesiden',
 	'tpt-download-page' => 'Eksportér side med oversættelser',
 	'aggregategroups' => 'Samlegrupper',

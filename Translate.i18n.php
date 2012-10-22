@@ -2092,6 +2092,8 @@ Los cambios nun se graben fasta que calques nel botón guardar d'abaxo.",
 	'translate-checks-xhtml' => 'Por favor sustitúi {{PLURAL:$2|la siguiente etiqueta cola correuta|les siguientes etiquetes coles correutes}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La definición usa <nowiki>{{PLURAL:}}</nowiki> pero la traducción non.',
+	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> se {{PLURAL:$1|dio una forma|dieron $1 formes}}, pero namái {{PLURAL:$2|tien sofitu una forma|tienen sofitu $2 formes}} (sacante les formes 0= y 1=).',
+	'translate-checks-plural-dupe' => "<nowiki>{{PLURAL:}}</nowiki> tien formes duplicaes al final. <nowiki>{{PLURAL:$1|llunes|llunes}}</nowiki> tien d'escribise asina: <nowiki>{{PLURAL:$1|llunes}}</nowiki>.",
 	'translate-checks-pagename' => 'Espaciu de nomes camudáu dende la definición',
 	'translate-checks-format' => 'Esta traducción nun sigue la definición o tien una sintaxis non válida: $1',
 	'translate-checks-escape' => "Les secuencies d'escape darréu pueden ser accidentales: <strong>$1</strong>",
