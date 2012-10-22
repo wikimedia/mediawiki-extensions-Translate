@@ -35,15 +35,22 @@ interface MessageGroup {
 
 	/**
 	 * Returns the human readable label (as plain text).
+	 * Parameter $context was added in 2012-10-22.
+	 * @param IContextSource $context Context can be used by subclasses to provide
+	 *   translated descriptions, for example.
 	 * @return string
 	 */
-	public function getLabel();
+	public function getLabel( IContextSource $context = null );
 
 	/**
-	 * Returns a longer description about the group. Description can use wiki text.
+	 * Returns a longer description about the group. Description can use wikitext.
+	 * Parameter $context was added in 2012-10-22.
+	 * @param IContextSource $context Context can be used by subclasses to provide
+	 *   translated descriptions, for example.
 	 * @return string
+	 *
 	 */
-	public function getDescription();
+	public function getDescription( IContextSource $context = null );
 
 	/**
 	 * Returns the namespace where messages are placed.
