@@ -24,6 +24,10 @@ class MockMessageCollectionForExport extends MessageCollection {
 		$msg = new FatMessage( 'untranslatedmsg', 'definition' );
 		$this->messages['untranslatedmsg'] = $msg;
 
+		$this->tags = array(
+			'fuzzy' => array( 'fuzzymsg' ),
+		);
+
 		$this->keys = array_flip( array_keys( $this->messages ) );
 	}
 

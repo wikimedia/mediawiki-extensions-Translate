@@ -203,7 +203,8 @@ foreach ( $groups as $groupId => $group ) {
 	if ( $group instanceof FileBasedMessageGroup ) {
 		$ffs = $group->getFFS();
 		$ffs->setWritePath( $options['target'] );
-		$collection = $group->initCollection( 'en' );
+		$sourceLanguage = $group->getSourceLanguage();
+		$collection = $group->initCollection( $sourceLanguage );
 
 		$definitionFile = false;
 
@@ -214,7 +215,8 @@ foreach ( $groups as $groupId => $group ) {
 			$wgMaxShellMemory = 402400;
 
 			$conf = $group->getConfiguration();
-			$definitionFile = str_replace( $wgTranslateGroupRoot, $options['ppgettext'], $group->getSourceFilePath( $group->getSourceLanguage() ) );
+			$path = $group->getSourceFilePath( $sourceLanguage );
+			$definitionFile = str_replace( $wgTranslateGroupRoot, $options['ppgettext'], $path );
 		}
 
 		foreach ( $langs as $lang ) {
@@ -224,6 +226,14 @@ foreach ( $groups as $groupId => $group ) {
 
 			$collection->resetForNewLanguage( $lang );
 			$collection->loadTranslations();
+			// Don't export ignored, unless it is the source language
+			// or message documentation
+			global $wgTranslateDocumentationLanguageCode;
+			if ( $lang !== $wgTranslateDocumentationLanguageCode
+				&& $lang !== $sourceLanguage )
+			{
+				$collection->filter( 'ignored' );
+			}
 
 			if ( $noFuzzy ) {
 				$collection->filter( 'fuzzy' );

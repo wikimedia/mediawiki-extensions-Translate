@@ -354,6 +354,15 @@ class ExportMessagesTask extends ViewMessagesTask {
 	protected function preinit() {
 		$code = $this->options->getLanguage();
 		$this->collection = $this->group->initCollection( $code );
+		// Don't export ignored, unless it is the source language
+		// or message documentation
+		global $wgTranslateDocumentationLanguageCode;
+		if ( $code !== $wgTranslateDocumentationLanguageCode
+			&& $code !== $this->group->getSourceLanguage() )
+		{
+			$this->collection->filter( 'ignored' );
+		}
+
 	}
 
 	// No paging should be done.
