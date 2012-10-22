@@ -1,0 +1,8 @@
+Change-Id: Ie11aeb3f5c97f5f73f29036c892d36a025191a13
+Code-Review+2: Siebrand <siebrand@wikimedia.org>
+Verified+1: Siebrand <siebrand@wikimedia.org>
+Submitted-by: Siebrand <siebrand@wikimedia.org>
+Submitted-at: Mon, 22 Oct 2012 02:22:31 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/29267
+Project: mediawiki/extensions/Translate
+Branch: refs/heads/master
