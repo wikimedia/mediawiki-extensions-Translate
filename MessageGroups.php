@@ -161,8 +161,10 @@ class MessageGroups {
 			'autoload' => $autoload,
 		);
 
+		wfProfileIn( __METHOD__ . '-save' );
 		$wrapper = new DependencyWrapper( $value, $deps );
 		$wrapper->storeToCache( self::getCache(), $key, 60 * 60 * 2 );
+		wfProfileOut( __METHOD__ . '-save' );
 
 		wfDebug( __METHOD__ . "-end\n" );
 		wfProfileOut( __METHOD__ );
