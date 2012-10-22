@@ -12,8 +12,9 @@
  */
 class MediaWikiExtensionTest extends MediaWikiTestCase {
 	public function testParsing() {
-		$file = __DIR__ . '/data/mediawiki-extensions.txt';
-		$foo = new PremadeMediawikiExtensionGroups( $file, 'ignored' );
+		$defs = __DIR__ . '/data/mediawiki-extensions.txt';
+		$path = '%GROUPROOT%/mediawiki-extensions/extensions';
+		$foo = new PremadeMediawikiExtensionGroups( $defs, $path );
 		$list = $deps = $autoload = array();
 		$foo->register( $list, $deps, $autoload );
 

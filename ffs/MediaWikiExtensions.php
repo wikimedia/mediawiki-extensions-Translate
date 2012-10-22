@@ -13,14 +13,30 @@
  */
 class PremadeMediawikiExtensionGroups {
 	protected $groups;
-	protected $definitionFile = null;
+
 	protected $useConfigure = true;
 	protected $idPrefix = 'ext-';
 	protected $namespace = NS_MEDIAWIKI;
 
 	/**
-	 * @param string $def Path to the definition file.
-	 * @param string $path Path to extensions
+	 * @var string
+	 * @see __construct
+	 */
+	protected $path;
+
+	/**
+	 * @var string
+	 * @see __construct
+	 */
+	protected $definitionFile;
+
+	/**
+	 * @param string $def Absolute path to the definition file. See
+	 *   tests/data/mediawiki-extensions.txt for example.
+	 * @param string $path General prefix to the file locations without
+	 *   the extension specific part. Should start with %GROUPROOT%/ or
+	 *   otherwise export path will be wrong. The export path is
+	 *   constructed by replacing %GROUPROOT%/ with target directory.
 	 */
 	public function __construct( $def, $path ) {
 		$this->definitionFile = $def;
@@ -98,8 +114,11 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		$conf['FILES']['class'] = 'MediaWikiExtensionFFS';
-		$conf['FILES']['sourcePattern'] = "%GROUPROOT%/mediawiki-extensions/extensions/{$info['file']}";
-		$conf['FILES']['targetPattern'] = "mediawiki-extensions/extensions/{$info['file']}";
+		$conf['FILES']['sourcePattern'] = $this->path . '/' . $info['file'];
+		// Kind of hacky, export path will be wrong if %GROUPROOT% not used.
+		$target = str_replace( '%GROUPROOT%/', '', $conf['FILES']['sourcePattern'] );
+		$conf['FILES']['targetPattern'] = $target;
+
 		// @TODO: find a better way
 		if ( isset( $info['aliasfile'] ) ) {
 			$conf['FILES']['aliasFile'] =  $info['aliasfile'];
