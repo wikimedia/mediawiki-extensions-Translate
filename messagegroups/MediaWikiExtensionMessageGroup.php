@@ -12,45 +12,39 @@
  * Message group for %MediaWiki extensions.
  * @ingroup MessageGroup
  */
-class MediaWikiMessageGroup extends SingleFileBasedMessageGroup {
-	public function mapCode( $code ) {
-		return ucfirst( str_replace( '-', '_', parent::mapCode( $code ) ) );
-	}
+class MediaWikiExtensionMessageGroup extends SingleFileBasedMessageGroup {
+	/**
+	 * MediaWiki extensions all should have key in their i18n files
+	 * describing them. This override method implements the logic
+	 * to retrieve them. Also urls are included if available.
+	 * Needs the configure extension.
+	 */
+	public function getDescription() {
 
-	public function getTags( $type = null ) {
-		$path = $this->getFromConf( 'BASIC', 'metadataPath' );
-
-		if ( $path === null ) {
-			throw new MWException( "metadataPath is not configured." );
+		$language = $this->getSourceLanguage();
+		if ( $context ) {
+			$language = $context->getLanguage()->getCode();
 		}
 
-		$filename = "$path/messageTypes.inc";
-
-		if ( !is_readable( $filename ) ) {
-			throw new MWException( "$filename is not readable." );
+		$msgkey = $this->getFromConf( 'BASIC', 'descriptionmsg' );
+		if ( $msgkey ) {
+			$desc = $this->getMessage( $msgkey, $language );
+			if ( strval( $desc ) === '' ) {
+				$desc = $this->getMessage( $msgkey, $this->getSourceLanguage() );
+			}
 		}
 
-		$data = file_get_contents( $filename );
-
-		if ( $data === false ) {
-			throw new MWException( "Failed to read $filename." );
+		if ( strval( $desc ) === '' ) {
+		// That failed, default to 'description'
+			$desc = parent::getDescription( $context );
 		}
 
-		$reader = new ConfEditor( $data );
-		$vars = $reader->getVars();
-
-		$tags = array();
-		$tags['optional'] = $vars['wgOptionalMessages'];
-		$tags['ignored'] = $vars['wgIgnoredMessages'];
-
-		if ( !$type ) {
-			return $tags;
+		$url = $this->getFromConf( 'BASIC', 'extensionurl' );
+		if ( $url ) {
+			$desc .= "\n\n$url";
 		}
 
-		if ( isset( $tags[$type] ) ) {
-			return $tags[$type];
-		}
+		return $desc;
 
-		return array();
 	}
 }

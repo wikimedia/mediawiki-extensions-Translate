@@ -226,6 +226,7 @@ $wgAutoloadClasses['CoreMostUsedMessageGroup'] = "$dir/messagegroups/CoreMostUse
 $wgAutoloadClasses['ExtensionMessageGroup'] = "$dir/messagegroups/ExtensionMessageGroup.php";
 $wgAutoloadClasses['FileBasedMessageGroup'] = "$dir/messagegroups/FileBasedMessageGroup.php";
 $wgAutoloadClasses['MediaWikiMessageGroup'] = "$dir/messagegroups/MediaWikiMessageGroup.php";
+$wgAutoloadClasses['MediaWikiExtensionMessageGroup'] = "$dir/messagegroups/MediaWikiExtensionMessageGroup.php";
 $wgAutoloadClasses['MessageGroup'] = "$dir/messagegroups/MessageGroup.php";
 $wgAutoloadClasses['MessageGroupBase'] = "$dir/messagegroups/MessageGroupBase.php";
 $wgAutoloadClasses['MessageGroupOld'] = "$dir/messagegroups/MessageGroupOld.php";

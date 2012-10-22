@@ -13,7 +13,7 @@
 class MediaWikiExtensionFFSTest extends MediaWikiTestCase {
 	protected $conf = array(
 		'BASIC' => array(
-			'class' => 'SingleFileBasedMessageGroup',
+			'class' => 'MediaWikiExtensionMessageGroup',
 			'id' => 'test-id',
 			'label' => 'Test Label',
 			'namespace' => 'NS_MEDIAWIKI',
