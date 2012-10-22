@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABFX//9AI\u003d",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-10-22T12:14:09Z",
+      "side": 1,
+      "message": "Trailing ws",
+      "revId": "233dae8ce8784278f1c41808db31328f259fdbb3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABFX//9AE\u003d",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-10-22T12:14:09Z",
+      "side": 1,
+      "message": "Leading spaces instead of tab",
+      "revId": "233dae8ce8784278f1c41808db31328f259fdbb3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
