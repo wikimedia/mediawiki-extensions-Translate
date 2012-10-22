@@ -2420,10 +2420,10 @@ $messages['ml'] = array(
  */
 $messages['mr'] = array(
 	'firststeps' => 'पहिल्या पायर्‍या',
-	'firststeps-desc' => '[[महत्त्वाचे; पहिली पायरी महत्त्वाचे पान]] भाषांतर विस्तार वापरून सुरु केलेल्या युजर्सना मिळण्यासाठी .',
+	'firststeps-desc' => '[[महत्त्वाचे; पहिली पायरी महत्त्वाचे पान]] भाषांतर विस्तार वापरून सुरु केलेल्या युजर्सना मिळण्यासाठी .', # Fuzzy
 	'translate-fs-pagetitle-done' => ' - झाले!',
 	'translate-fs-pagetitle-pending' => 'अनिर्णीत,राहिलेले,',
-	'translate-fs-pagetitle' => 'सुरु झालेले विझार्ड मिळण्यासाठी ‌-$१',
+	'translate-fs-pagetitle' => 'सुरु झालेले विझार्ड मिळण्यासाठी ‌-$१', # Fuzzy
 	'translate-fs-signup-title' => 'करार करणे.',
 	'translate-fs-userpage-title' => 'माझे सदस्यपान तयार करा.',
 	'translate-fs-permissions-title' => 'भाषांतर करण्याची परवानगी मिळण्यासाठी विनंती करा. (भाषांतर करणाऱ्या व्यक्तीस)',
@@ -2435,7 +2435,7 @@ $messages['mr'] = array(
 	'translate-fs-selectlanguage' => '(योग्य) भाषा निवडा.',
 	'translate-fs-settings-planguage' => 'मुख्य(महत्त्वाची) भाषा निवडा.',
 	'translate-fs-settings-planguage-desc' => 'तुमची मुख्य भाषा ही विकीवर तुमची दुवा साधणारी भाषा आणि भाषांतरासाठी दिफॉल्ट भाषा म्हणुन वापरली जाते.',
-	'translate-fs-settings-slanguage' => 'उप‌-भाषा $१:',
+	'translate-fs-settings-slanguage' => 'उप‌-भाषा $१:', # Fuzzy
 	'translate-fs-settings-slanguage-desc' => 'भाषांतर एडिटर मध्ये संदेशाचे  दुसऱ्या भाषेमध्ये भाषांतर सहज शक्य आहे.
 जर तुम्हाला एखादी भाषा पाहण्यासाठी आवडेल; तर इथे तुम्ही ती भाषा निवडू शकता.',
 	'translate-fs-settings-submit' => 'माझ्या पसंती जतन करा.',
@@ -2913,8 +2913,8 @@ Se não deseja receber as newsletters, pode optar por não recebê-las no separa
 );
 
 /** Brazilian Portuguese (português do Brasil)
- * @author 555
  * @author Giro720
+ * @author 555
  */
 $messages['pt-br'] = array(
 	'firststeps' => 'Primeiros passos',
@@ -3173,7 +3173,7 @@ Dokumentácia môže byť bohužiaľ niekedy zastaraná.
 Ak nájdete niečo, čo si myslíte, že by ste {{gender:|mal byť schopný|mala byť schopná|mali byť schopní}} robiť, ale nejde to, neváhajte sa opýtať na [[Support|stránke podpory]].
 
 Môžete tiež kontaktovať spoluprekladateľa do rovnakého jazyka pomocou [[Portal_talk:$1|diskusnej stránky]] [[Portal:$1|vášho jazykového portálu]].
-Ak ste tak dosiaľ {{gender:|neurobil|neurobila|neurobili}}, [[Special:Preferences|nastavte svoj jazyk rozhrania]] na jazyk, do ktorého chcete prekladať, aby vám táto wiki bola schopná zobrazovať čo najrelevantnejšie odkazy.",
+Ak ste tak dosiaľ {{gender:|neurobil|neurobila|neurobili}}, [[Special:Preferences|nastavte svoj jazyk rozhrania]] na jazyk, do ktorého chcete prekladať, aby vám táto wiki bola schopná zobrazovať čo najrelevantnejšie odkazy.", # Fuzzy
 );
 
 /** Slovenian (slovenščina)
@@ -3851,4 +3851,3 @@ $messages['zh-hant'] = array(
 
 如您不想收到月刊，可以到[[Special:Preferences|偏好設定]]頁面的{{int:prefs-personal}}標籤選擇停止接收。',
 );
-

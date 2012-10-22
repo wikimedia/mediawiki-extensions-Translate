@@ -2313,11 +2313,11 @@ Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 );
 
 /** Brazilian Portuguese (português do Brasil)
- * @author 555
  * @author Giro720
  * @author Hamilton Abreu
  * @author Helder.wiki
  * @author Heldergeovane
+ * @author 555
  */
 $messages['pt-br'] = array(
 	'translategroupdescriptions-desc' => 'Descrições dos grupos de mensagens dos produtos suportados pela extensão [http://mediawiki.org/wiki/Extension:Translate Translate]',
@@ -2485,8 +2485,8 @@ $messages['ru'] = array(
 $messages['rue'] = array(
 	'translategroupdescriptions-desc' => 'Пописы ґруп повідомлїн продкуктів підпророваных росшырїнём [http://mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-nodesc' => 'Тота ґрупа повідомлїнь не мать попис',
-	'translate-group-desc-mediawikicore' => 'Тота ґрупа повідомлїнь обсягує повідомлїня хоснованы в сучасній алфаверзії alfaverzi MediaWiki ({{CURRENTVERSION}})',
-	'translate-group-desc-mediawikimostused' => 'Тота ґрупа повідомлїнь обсягує [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 найхоснованїшых повідомлїнь] в MediaWiki',
+	'translate-group-desc-mediawikicore' => 'Тота ґрупа повідомлїнь обсягує повідомлїня хоснованы в сучасній алфаверзії alfaverzi MediaWiki ({{CURRENTVERSION}})', # Fuzzy
+	'translate-group-desc-mediawikimostused' => 'Тота ґрупа повідомлїнь обсягує [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 найхоснованїшых повідомлїнь] в MediaWiki', # Fuzzy
 	'translate-group-desc-mediawikiextensions' => 'Тота метаґрупа обсягує повідомлїня вшыткых підпорованых росшырїнь [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-collection' => 'Тота метаґрупа овсягує повідомлня росшырїня [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Тота метаґрупа обсягує повідомлїня росшырїня  [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
@@ -2906,8 +2906,8 @@ $messages['uk'] = array(
  * @author CoderSI
  */
 $messages['uz'] = array(
-	'translate-group-desc-mediawikicore' => "Ushbu xabarlar guruhi MediaWiki ({{CURRENTVERSION}})ning joriy alfa-versiyasida foydalanilayotgan xabarlarni o'z ichiga oladi",
-	'translate-group-desc-mediawikimostused' => "Ushbu xabarlar guruhi MediaWikida [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 tadan ziyod juda ko'p ishlatiladigan xabarlardan] tashkil topgan",
+	'translate-group-desc-mediawikicore' => "Ushbu xabarlar guruhi MediaWiki ({{CURRENTVERSION}})ning joriy alfa-versiyasida foydalanilayotgan xabarlarni o'z ichiga oladi", # Fuzzy
+	'translate-group-desc-mediawikimostused' => "Ushbu xabarlar guruhi MediaWikida [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 tadan ziyod juda ko'p ishlatiladigan xabarlardan] tashkil topgan", # Fuzzy
 );
 
 /** Veps (vepsän kel’)
@@ -3104,7 +3104,7 @@ $messages['zh-hant'] = array(
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]]是一種小額信貸管理信息系統。',
 	'bw-desc-mwlibrl' => "'''mwlib.rl'''是一個使用mwlib庫解析的python庫，用以將MediaWiki條目轉化為PDF文件。
 
-更多信息請見[[mw:Extension:PDF_Writer]]和http://code.pediapress.com/wiki/wiki/mwlibrl。",
+更多信息請見[[mw:Extension:PDF_Writer]]和http://code.pediapress.com/wiki/wiki/mwlibrl。", # Fuzzy
 	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] 是一個使用 PHP 編寫的 Web 郵件客戶端。請在 [[Support]] 內報告問題。',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]]是一個離線閱讀維基百科的軟件',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]]是一個開放媒體平台',
@@ -3125,4 +3125,3 @@ $messages['zh-hant'] = array(
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]是一個用於閱讀並編輯維基百科的手機、平板跨平台應用程序。',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]]是用語閱讀和貢獻維基詞典的跨平台手機／平板應用程序。',
 );
-
