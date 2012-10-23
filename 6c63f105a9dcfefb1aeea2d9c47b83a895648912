@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABFX//8Is\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-10-23T12:48:25Z",
+      "side": 1,
+      "message": "This empty line is not needed.",
+      "revId": "6c63f105a9dcfefb1aeea2d9c47b83a895648912",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAABFX//8CY\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-10-23T12:48:25Z",
+      "side": 1,
+      "message": "It would be useful to add a comment that says why 24 and not some other value (to other services, too...)",
+      "revId": "6c63f105a9dcfefb1aeea2d9c47b83a895648912",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
