@@ -21252,6 +21252,7 @@ $messages['rtm'] = array(
  * @author Kaganer
  * @author Lockal
  * @author MaxSem
+ * @author NBS
  * @author Rubin
  * @author Tempodivalse
  * @author Александр Сигачёв
@@ -21442,7 +21443,7 @@ $messages['ru'] = array(
 	'translate-language-code' => 'Код языка',
 	'translate-language-code-field-name' => 'Код языка:',
 	'translate-suppress-complete' => 'Не показывать полностью переведённые группы сообщений',
-	'translate-ls-noempty' => 'Не показывать полностью непереведенные группы сообщений',
+	'translate-ls-noempty' => 'Не показывать полностью непереведённые группы сообщений',
 	'translate-language' => 'Язык',
 	'translate-total' => 'Сообщения',
 	'translate-untranslated' => 'Непереведённые',
