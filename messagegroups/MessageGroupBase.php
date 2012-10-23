@@ -157,7 +157,7 @@ abstract class MessageGroupBase implements MessageGroup {
 
 		$cache = new MessageGroupCache( $this, $this->getSourceLanguage() );
 		if ( !$cache->exists() ) {
-			wfWarn( "By-passing message group cache" );
+			wfWarn( "By-passing message group cache for {$this->getId()}" );
 			$messages = $this->getDefinitions();
 		} else {
 			foreach ( $cache->getKeys() as $key ) {
