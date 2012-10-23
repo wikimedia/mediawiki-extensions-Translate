@@ -415,6 +415,12 @@ $wgTranslateTranslationServices['Apertium'] = array(
 	'type' => 'apertium',
 	'codemap' => array( 'no' => 'nb' ),
 );
+$wgTranslateTranslationServices['Yandex'] = array(
+	'url' => 'http://translate.yandex.net/api/v1/tr.json/translate',
+	'pairs' => 'http://translate.yandex.net/api/v1/tr.json/getLangs',
+	'timeout' => 3,
+	'type' => 'yandex',
+);
 /* Example configuration for remote TTMServer
 $wgTranslateTranslationServices['example'] = array(
 	'url' => 'http://example.com/w/api.php',

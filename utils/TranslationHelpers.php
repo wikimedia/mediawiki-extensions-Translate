@@ -403,6 +403,7 @@ class TranslationHelpers {
 		$handlers = array(
 			'microsoft' => 'getMicrosoftSuggestion',
 			'apertium'  => 'getApertiumSuggestion',
+			'yandex'  => 'getYandexSuggestion',
 		);
 
 		$errors = '';
@@ -648,6 +649,90 @@ class TranslationHelpers {
 			} else {
 				$sug = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
 				$sug = trim( $sug );
+				$sug = $this->suggestionField( $sug );
+				$suggestions[] = Html::rawElement( 'div',
+					array( 'title' => $text ),
+					self::legend( "$serviceName ($candidate)" ) . $sug . self::clear()
+				);
+			}
+		}
+
+		if ( !count( $suggestions ) ) {
+			throw new TranslationHelperException( 'No suggestions' );
+		}
+
+		$divider = Html::element( 'div', array( 'style' => 'margin-bottom: 0.5ex' ) );
+		return implode( "$divider\n", $suggestions );
+	}
+
+	protected function getYandexSuggestion( $serviceName, $config ) {
+		self::checkTranslationServiceFailure( $serviceName );
+
+		$page = $this->handle->getKey();
+		$code = $this->handle->getCode();
+		$ns = $this->handle->getTitle()->getNamespace();
+
+		$memckey = wfMemckey( 'translate-tmsug-pairs-' . $serviceName );
+		$pairs = wfGetCache( CACHE_ANYTHING )->get( $memckey );
+
+		if ( !$pairs ) {
+			$pairs = array();
+			$json = Http::get( $config['pairs'], 5 );
+			$response = FormatJson::decode( $json );
+
+			if ( $json === false ) {
+				self::reportTranslationServiceFailure( $serviceName );
+			} elseif ( !is_object( $response ) ) {
+				error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
+				throw new TranslationHelperException( 'Malformed reply from remote server' );
+			}
+
+			foreach ( $response->dirs as $pair ) {
+				list( $source, $target ) = explode( '-', $pair );
+				if ( !isset( $pairs[$target] ) ) {
+					$pairs[$target] = array();
+				}
+				$pairs[$target][$source] = true;
+			}
+
+			wfGetCache( CACHE_ANYTHING )->set( $memckey, $pairs, 60 * 60 * 24 );
+		}
+
+		if ( !isset( $pairs[$code] ) ) {
+			throw new TranslationHelperException( 'Unsupported language' );
+		}
+
+		$suggestions = array();
+
+		foreach ( $pairs[$code] as $candidate => $unused ) {
+			$text = TranslateUtils::getMessageContent( $page, $candidate, $ns );
+			if ( $text === null || TranslateEditAddons::hasFuzzyString( $text ) ) {
+				continue;
+			}
+
+			$title = Title::makeTitleSafe( $ns, "$page/$candidate" );
+			if ( $title && TranslateEditAddons::isFuzzy( $title ) ) {
+				continue;
+			}
+
+			$options = array(
+				'timeout' => $config['timeout'],
+				'postData' => array(
+					'lang' => "$candidate-$code",
+					'text' => $text,
+				)
+			);
+			wfProfileIn( 'TranslateWebServiceRequest-' . $serviceName );
+			$json = Http::post( $config['url'], $options );
+			wfProfileOut( 'TranslateWebServiceRequest-' . $serviceName );
+			$response = FormatJson::decode( $json );
+
+			if ( $json === false || !is_object( $response ) ) {
+				self::reportTranslationServiceFailure( $serviceName );
+			} elseif ( $response->code !== 200 ) {
+				error_log( __METHOD__ . " (HTTP {$response->code}) with ($serviceName ($candidate|$code))" );
+			} else {
+				$sug = Sanitizer::decodeCharReferences( $response->text[0] );
 				$sug = $this->suggestionField( $sug );
 				$suggestions[] = Html::rawElement( 'div',
 					array( 'title' => $text ),
