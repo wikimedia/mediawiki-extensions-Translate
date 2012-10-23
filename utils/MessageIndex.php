@@ -148,13 +148,7 @@ abstract class MessageIndex {
 	 */
 	protected function checkAndAdd( &$hugearray, $g, $ignore = false ) {
 		if ( $g instanceof MessageGroupBase ) {
-			$cache = new MessageGroupCache( $g );
-
-			if ( $cache->exists() ) {
-				$keys = $cache->getKeys();
-			} else {
-				$keys = array_keys( $g->getDefinitions() );
-			}
+			$keys = $g->getKeys();
 		} else {
 			$messages = $g->getDefinitions();
 
