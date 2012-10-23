@@ -78,9 +78,16 @@ class RecentMessageGroup extends WikiMessageGroup {
 			}
 
 			$mkey = $row->rc_namespace . ':' . $handle->getKey();
+
+			/* Note: due to bugs, getMessage might return null even for
+			 * known messages. These negatives are not cached, but that
+			 * should be rare enough case to not affect performance. */
 			if ( !isset( $defs[$mkey] ) ) {
 				$group = $handle->getGroup();
-				$defs[$mkey] = $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
+				$msg = $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
+				if ( $msg !== null ) {
+					$defs[$mkey] = $msg;
+				}
 			}
 		}
 		return $defs;

@@ -117,6 +117,13 @@ class AggregateMessageGroup extends MessageGroupBase {
 		$title = Title::makeTitle( $this->getNamespace(), $key );
 		$handle = new MessageHandle( $title );
 		$groupId = MessageIndex::getPrimaryGroupId( $handle );
+		if ( $groupId === $this->getId() ) {
+			// Message key owned by aggregate group.
+			// Should not ever happen, but it does.
+			error_log( "AggregateMessageGroup $groupId cannot be primary owner of key $key" );
+			return null;
+		}
+
 		$group = MessageGroups::getGroup( $groupId );
 		if ( $group ) {
 			return $group->getMessage( $key, $code );
@@ -133,5 +140,18 @@ class AggregateMessageGroup extends MessageGroupBase {
 		}
 
 		return $tags;
+	}
+
+	public function getKeys() {
+		$keys = array();
+		foreach ( $this->getGroups() as $group ) {
+			// @TODO: not all oldstyle groups have getKeys yet
+			if ( method_exists( $group, 'getKeys' ) ) {
+				$keys = array_merge( $keys, $group->getKeys() );
+			} else {
+				$keys = array_keys( $group->getDefinitions() );
+			}
+		}
+		return $keys;
 	}
 }
