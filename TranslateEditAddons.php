@@ -105,6 +105,7 @@ class TranslateEditAddons {
 	 * @since 2012-08-21
 	 */
 	protected static function figureNextPrevMessages( MessageHandle $handle, &$key, &$index, &$next, &$prev ) {
+		wfProfileIn( __METHOD__ );
 		$group = $handle->getGroup();
 
 		if ( $group instanceof MessageGroupBase ) {
@@ -137,6 +138,7 @@ class TranslateEditAddons {
 			$mkey = $keys[$match + 1];
 			$next = Title::makeTitleSafe( $ns, "$mkey/$code" );
 		}
+		wfProfileOut( __METHOD__ );
 	}
 
 	/**

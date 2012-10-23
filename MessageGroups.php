@@ -22,6 +22,8 @@ class MessageGroups {
 		if ( self::$loaded ) {
 			return;
 		}
+
+		wfProfileIn( __METHOD__ );
 		self::$loaded = true;
 
 		global $wgTranslateCC, $wgAutoloadClasses;
@@ -40,6 +42,7 @@ class MessageGroups {
 				$wgAutoloadClasses[$class] = $file;
 			}
 		}
+		wfProfileOut( __METHOD__ );
 	}
 
 	/**
