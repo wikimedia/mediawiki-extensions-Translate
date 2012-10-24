@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABG3////Y\u003d",
+        "filename": "utils/MessageTable.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-10-24T21:36:09Z",
+      "side": 1,
+      "message": "Can has bug report? This also goes towards things like RC with limit 5000 and such. It\u0027s probably worth looking into at some point.",
+      "revId": "e6abd62ecfb1030abe789b26d2a0ac8258a3eb90",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
