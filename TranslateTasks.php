@@ -186,7 +186,6 @@ class ViewMessagesTask extends TranslateTask {
 	protected function preinit() {
 		$code = $this->options->getLanguage();
 		$this->collection = $this->group->initCollection( $code );
-		$this->collection->setInfile( $this->group->load( $code ) );
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'optional' );
 	}
@@ -213,7 +212,6 @@ class ReviewMessagesTask extends ViewMessagesTask {
 		$code = $this->options->getLanguage();
 		$this->collection = $this->group->initCollection( $code );
 		$this->collection->setReviewMode( true );
-		$this->collection->setInfile( $this->group->load( $code ) );
 		$this->collection->filter( 'ignored' );
 	}
 
@@ -234,7 +232,6 @@ class ViewUntranslatedTask extends ViewMessagesTask {
 	protected function preinit() {
 		$code = $this->options->getLanguage();
 		$this->collection = $this->group->initCollection( $code );
-		$this->collection->setInfile( $this->group->load( $code ) );
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'optional' );
 		$this->collection->filter( 'translated' );
@@ -250,7 +247,6 @@ class ViewOptionalTask extends ViewMessagesTask {
 	protected function preinit() {
 		$code = $this->options->getLanguage();
 		$this->collection = $this->group->initCollection( $code );
-		$this->collection->setInfile( $this->group->load( $code ) );
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'optional', false );
 	}
@@ -268,7 +264,6 @@ class ViewWithSuggestionsTask extends ViewMessagesTask {
 		$sourceLanguage = $this->group->getSourceLanguage();
 
 		$this->collection = $this->group->initCollection( $code );
-		$this->collection->setInfile( $this->group->load( $code ) );
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'optional' );
 		$this->collection->filter( 'translated' );
@@ -306,7 +301,6 @@ class ViewUntranslatedOptionalTask extends ViewOptionalTask {
 	protected function preinit() {
 		$code = $this->options->getLanguage();
 		$this->collection = $this->group->initCollection( $code );
-		$this->collection->setInfile( $this->group->load( $code ) );
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'optional', false );
 		$this->collection->filter( 'translated' );
