@@ -127,16 +127,17 @@ class MessageTable {
 
 			wfRunHooks( 'TranslateFormatMessageBeforeTable', array( &$message, $m, $this->group, $targetLang, &$extraAttribs ) );
 
+			// Using Html::element( a ) because Linker::link is memory hog.
+			// It takes about 20 KiB per call, and that times 5000 is quite
+			// a lot of memory.
 			global $wgLang;
 			$niceTitle = htmlspecialchars( $wgLang->truncate( $title->getPrefixedText(), -35 ) );
-
-			$tools['edit'] = Linker::link(
-				$title,
-				$niceTitle,
-				TranslationEditPage::jsEdit( $title, $this->group->getId() ),
-				array( 'action' => 'edit' ) + $this->editLinkParams,
-				'known'
+			$linkAttribs = array(
+				'href' => $title->getLocalUrl( array( 'action' => 'edit' ) + $this->editLinkParams ),
 			);
+			$linkAttribs += TranslationEditPage::jsEdit( $title, $this->group->getId() );
+
+			$tools['edit'] = Html::element( 'a', $linkAttribs, $niceTitle );
 
 			$anchor = 'msg_' . $key;
 			$anchor = Xml::element( 'a', array( 'id' => $anchor, 'href' => "#$anchor" ), "↓" );
@@ -153,7 +154,9 @@ class MessageTable {
 				'class' => 'tqe-inlineeditable ' . ( $hasTranslation ? 'translated' : 'untranslated' )
 			);
 
-			$leftColumn = $this->getReviewButton( $m ) . $anchor . $tools['edit'] . $extra . $this->getReviewStatus( $m );
+			$button = $this->getReviewButton( $m );
+			$status = $this->getReviewStatus( $m );
+			$leftColumn = $button . $anchor . $tools['edit'] . $extra . $status;
 
 			if ( $this->reviewMode ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
@@ -171,6 +174,7 @@ class MessageTable {
 					Xml::tags( 'td', $tqeData, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			}
+
 			$output .= "\n";
 		}
 
@@ -247,6 +251,9 @@ class MessageTable {
 		return $review;
 	}
 
+	/// For optimization
+	protected $reviewStatusCache = array();
+
 	protected function getReviewStatus( TMessage $message ) {
 		global $wgUser;
 		if ( !$this->reviewMode ) {
@@ -254,17 +261,28 @@ class MessageTable {
 		}
 
 		$reviewers = (array) $message->getProperty( 'reviewers' );
-		if ( count( $reviewers ) === 0 ) {
+		$count = count( $reviewers );
+		if ( $count === 0 ) {
 			return '';
 		}
 
-		$you = $wgUser->getId();
-		if ( in_array( $you, $reviewers ) ) {
-			$msg = wfMessage( 'translate-messagereview-reviewswithyou' )->numParams( count( $reviewers ) )->parse();
+		$you = in_array( $wgUser->getId(), $reviewers );
+		$key = $you ? "y$count" : "n$count";
+
+		// ->text() (and ->parse()) invokes the parser. Each call takes
+		// about 70 KiB, so it makes sense to cache these messages which
+		// have high repetition.
+		if ( isset( $this->reviewStatusCache[$key] ) ) {
+			return $this->reviewStatusCache[$key];
+		} elseif( $you ) {
+			$msg = wfMessage( 'translate-messagereview-reviewswithyou' )->numParams( $count )->text();
 		} else {
-			$msg = wfMessage( 'translate-messagereview-reviews' )->numParams( count( $reviewers ) )->parse();
+			$msg = wfMessage( 'translate-messagereview-reviews' )->numParams( $count )->text();
 		}
-		return Html::rawElement( 'div', array( 'class' => 'mw-translate-messagereviewstatus' ), $msg );
+
+		$wrap = Html::rawElement( 'div', array( 'class' => 'mw-translate-messagereviewstatus' ), $msg );
+		$this->reviewStatusCache[$key] = $wrap;
+		return $wrap;
 	}
 
 	protected function doLinkBatch() {
