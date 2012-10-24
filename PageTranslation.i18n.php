@@ -1715,6 +1715,7 @@ $messages['cy'] = array(
 
 /** Danish (dansk)
  * @author Byrial
+ * @author Christian List
  * @author Emilkris33
  * @author Kaare
  * @author Peter Alberti
@@ -1748,7 +1749,7 @@ Sørg for at den har <nowiki><translate></nowiki>-tags og en gyldig syntaks.',
 Siden kan nu <span class="plainlinks">[$3 oversættes]</span>.',
 	'tpt-badsect' => '"$1" er ikke et gyldig navn for oversættelsesenhed $2.',
 	'tpt-showpage-intro' => 'Herunder listes der nye, eksisterende og slettede oversættelsesenheder.
-Før denne version markeres til oversættelse, kontrolleres at ændringerne i oversættelsesenhederne er minimeret for at undgå at give oversætterne unødigt arbejde.',
+Før denne version markeres til oversættelse, skal du kontrollere, at ændringerne i oversættelsesenhederne er minimeret for at undgå at give oversætterne unødigt arbejde.',
 	'tpt-mark-summary' => 'Markerede denne version for oversættelse',
 	'tpt-edit-failed' => 'Kunne ikke opdatere siden: $1',
 	'tpt-duplicate' => 'Oversættelsesenhedsnavnet $1 anvendes mere end en gang.',
@@ -1763,7 +1764,7 @@ Før denne version markeres til oversættelse, kontrolleres at ændringerne i ov
 	'tpt-old-pages' => 'En version af {{PLURAL:$1|denne side|disse sider}} er markeret for oversættelse.',
 	'tpt-other-pages' => '{{PLURAL:$1|En gammel version af denne side er|Ældre versioner af disse sider er}} markeret til oversættelse,
 men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til oversættelse.',
-	'tpt-discouraged-pages' => '{{PLURAL:$1|Denne side|Disse sider}} er blevet forhindret i yderligere oversættelse.',
+	'tpt-discouraged-pages' => '{{PLURAL:$1|Denne side|Disse sider}} er blevet frarådet yderligere oversættelse.',
 	'tpt-select-prioritylangs' => 'Liste over sprogkoder for prioriterede sprog, adskilt med kommaer:',
 	'tpt-select-prioritylangs-force' => 'Forhindring af oversættelser til andre sprog end prioritetsprogene',
 	'tpt-select-prioritylangs-reason' => 'Begrundelse:',

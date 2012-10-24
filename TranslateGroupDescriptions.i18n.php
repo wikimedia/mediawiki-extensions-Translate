@@ -489,6 +489,7 @@ $messages['cs'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webové fórum napsané v PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je webový systém pro správu chyb. Problémy hlaste na stránku [[Support]].',
 	'translate-group-desc-eol' => 'Skupina zpráv pro [[Translating:EOL|Encyclopedia of Life]]',
+	'translate-group-desc-frontlinesms' => 'Skupina zpráv pro [[Translating:FrontlineSMS|FrontlineSMS]]',
 	'translate-group-desc-ihris' => 'Skupina zpráv pro [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Skupina zpráv pro [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], modul [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Skupina zpráv pro [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], modul [[Translating:iHRIS|iHRIS]]',
