@@ -657,7 +657,7 @@ Weitere Information finden sich unter [[mw:Extension:PDF Writer]] und http://cod
  * @author Mirzali
  */
 $messages['diq'] = array(
-	'translate-group-desc-mediawikiextensions' => 'Meta ra qandê grub mesacanê [[Translating:MediaWiki|MediaWiki]]y dezgeyê destegdayışiyo',
+	'translate-group-desc-mediawikiextensions' => 'Mesacê gruba meta de mesacê ke pêro dezgehê destegdayışi rê qandê [[Translating:MediaWiki|MediaWiki]]y estê',
 	'translate-group-desc-collection' => 'MediaWiki ra qandê [http://www.mediawiki.org/wiki/Extension:Collection Koleksiyonanê] grube mesacê MediaWiki',
 	'translate-group-desc-translate' => 'MediaWiki ra qandê [http://www.mediawiki.org/wiki/Extension:Translate Açarnayışê] grube mesacê MediaWiki',
 	'translate-group-desc-wikiaextensions' => 'MediaWiki ra qandê mesacan dê [http://www.wikia.com Wikia] ra itad karêno',
