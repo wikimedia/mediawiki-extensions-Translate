@@ -11,6 +11,7 @@
 /**
  * Unit tests for making sure special pages execute
  * @group Database
+ * @group large
  */
 class SpecialPagesTest extends MediaWikiTestCase {
 	protected function setUp() {
