@@ -33,17 +33,21 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 	}
 
 	public function getDefinitions() {
-		global $wgTranslateWorkflowStates;
+		$groups = MessageGroups::getAllGroups();
+		$keys = array();
 
-		$defs = array();
+		foreach ( $groups as $g ) {
+			$states = $g->getMessageGroupStates()->getStates();
+			foreach ( array_keys( $states ) as $state ) {
+				$keys["Translate-workflow-state-$state"] = $state;
+			}
+		}
 
-		foreach ( array_keys( $wgTranslateWorkflowStates ) as $state ) {
-			$titleString = "Translate-workflow-state-$state";
-			$definitionText = $state;
-
-			// Automatically create pages for workflow states in the original language
-			$title = Title::makeTitle( $this->getNamespace(), $titleString );
-			if ( !$title->exists() ) {
+		$defs = TranslateUtils::getContents( array_keys( $keys ), $this->getNamespace() );
+		foreach ( $keys as $key => $state ) {
+			if ( !isset( $defs[$key] ) ) {
+				// TODO: use jobqueue
+				$title = Title::makeTitleSafe( $this->getNamespace(), $key );
 				$page = new WikiPage( $title );
 				$page->doEdit(
 					$state /*content*/,
@@ -52,10 +56,7 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 					false, /* base revision id */
 					FuzzyBot::getUser()
 				);
-			} else {
-				$definitionText = Revision::newFromTitle( $title )->getText();
 			}
-			$defs[$titleString] = $definitionText;
 		}
 
 		return $defs;
