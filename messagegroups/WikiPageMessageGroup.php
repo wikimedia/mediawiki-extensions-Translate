@@ -40,9 +40,19 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	}
 
 	/**
+	 * Only used for caching to avoid repeating database queries
+	 * for example during message index rebuild.
+	 */
+	protected $definitions;
+
+	/**
 	 * @return array
 	 */
 	public function getDefinitions() {
+		if ( is_array( $this->definitions ) ) {
+			return $this->definitions;
+		}
+
 		// Avoid replication issues
 		$dbr = wfGetDB( DB_MASTER );
 		$tables = 'translate_sections';
@@ -68,7 +78,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 			$new_defs[$prefix . $k] = $v;
 		}
 
-		return $new_defs;
+		return $this->definitions = $new_defs;
 	}
 
 	public function load( $code ) {
