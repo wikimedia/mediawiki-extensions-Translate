@@ -95,13 +95,13 @@ class MessageGroups {
 			$dbr = wfGetDB( DB_MASTER );
 
 			$tables = array( 'page', 'revtag' );
-			$vars   = array( 'page_id', 'page_namespace', 'page_title', );
+			$vars   = array( 'page_id', 'page_namespace', 'page_title' );
 			$conds  = array( 'page_id=rt_page', 'rt_type' => RevTag::getType( 'tp:mark' ) );
 			$options = array( 'GROUP BY' => 'rt_page' );
 			$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
 			foreach ( $res as $r ) {
-				$title = Title::makeTitle( $r->page_namespace, $r->page_title );
+				$title = Title::newFromRow( $r );
 				$id = TranslatablePage::getMessageGroupIdFromTitle( $title );
 				$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $title );
 				$wgTranslateCC[$id]->setLabel( $title->getPrefixedText() );
