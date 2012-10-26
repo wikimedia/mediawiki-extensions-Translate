@@ -126,8 +126,3 @@ class FileBasedMessageGroup extends MessageGroupBase {
 		return $this->mapCode( $code ) !== 'x-invalidLanguageCode';
 	}
 }
-
-/**
- * @ingroup MessageGroup
- */
-class SingleFileBasedMessageGroup extends FileBasedMessageGroup {}
