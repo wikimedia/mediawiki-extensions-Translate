@@ -2556,6 +2556,7 @@ $messages['sl'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], spletni forum napisan v PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je prost spletni sistem za sledenje hroščem. Prosimo, sporočite morebitne težave na [[Support|Podpora]].',
 	'translate-group-desc-eol' => 'Skupina sporočil za [[Translating:EOL|Encyclopedia of Life]]',
+	'translate-group-desc-frontlinesms' => 'Skupina sporočil za [[Translating:FrontlineSMS|FrontlineSMS]]',
 	'translate-group-desc-ihris' => 'Skupina sporočil za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Skupina sporočil za [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], modul [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Skupina sporočil za [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], modul [[Translating:iHRIS|iHRIS]]',
@@ -2861,6 +2862,7 @@ $messages['tt-cyrl'] = array(
 );
 
 /** Ukrainian (українська)
+ * @author A1
  * @author AS
  * @author Base
  * @author Olvin
@@ -2898,6 +2900,7 @@ $messages['uk'] = array(
 	'bw-desc-openstreetmap' => 'Група повідомлень [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Ця група містить повідомлення інтерфейсу [[Translating:Open Street Map|Open Street Map]].
 Глядіть [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} сторінку Unicode CLDR для пояснень щодо творення форми множини].',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] — набір інструментів для редагування Вікіпедії',
 	'bw-desc-shapado' => 'Група повідомлень відкритого та вільного програмного забезпечення питань та відповідей [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сервер мікроблогінгу з відкритим вихідним кодом',
 	'translate-group-desc-statusnet-plugin' => 'Ці повідомлення є частиною плагіна для [[Translating:StatusNet|StatusNet]]',
