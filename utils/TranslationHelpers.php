@@ -296,7 +296,10 @@ class TranslationHelpers {
 			'*', // Because we hate IE
 		);
 
+		wfProfileIn( 'TranslateWebServiceRequest-' . $serviceName );
 		$json = Http::get( wfAppendQuery( $config['url'], $params ) );
+		wfProfileOut( 'TranslateWebServiceRequest-' . $serviceName );
+
 		$response = FormatJson::decode( $json, true );
 
 		if ( $json === false ) {
@@ -523,7 +526,9 @@ class TranslationHelpers {
 			$req = HttpRequest::factory( $url, $options );
 		}
 
+		wfProfileIn( 'TranslateWebServiceRequest-' . $serviceName );
 		$status = $req->execute();
+		wfProfileOut( 'TranslateWebServiceRequest-' . $serviceName );
 
 		if ( !$status->isOK() ) {
 			$error = $req->getContent();
@@ -630,7 +635,11 @@ class TranslationHelpers {
 
 			$options = self::makeGoogleQueryParams( $text, "$candidate|$code", $config );
 			$options['postData']['format'] = 'html';
+
+			wfProfileIn( 'TranslateWebServiceRequest-' . $serviceName );
 			$json = Http::post( $config['url'], $options );
+			wfProfileOut( 'TranslateWebServiceRequest-' . $serviceName );
+
 			$response = FormatJson::decode( $json );
 			if ( $json === false || !is_object( $response ) ) {
 				self::reportTranslationServiceFailure( $serviceName );
