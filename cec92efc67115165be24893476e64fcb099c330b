@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABkn////Y\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-10-28T13:20:14Z",
+      "side": 1,
+      "message": "Either align or use just one space :)",
+      "revId": "cec92efc67115165be24893476e64fcb099c330b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
