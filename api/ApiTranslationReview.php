@@ -3,7 +3,7 @@
  * API module for marking translations as reviewed
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2011, Niklas Laxström
+ * @copyright Copyright © 2011-2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -28,18 +28,21 @@ class ApiTranslationReview extends ApiBase {
 			$this->dieUsage( 'Invalid revision', 'invalidrevision' );
 		}
 
-		$title = $revision->getTitle();
-		$handle = new MessageHandle( $title );
-		if ( !$handle->isValid() ) {
-			$this->dieUsage( 'Unknown message', 'unknownmessage' );
-		}
-
-		if ( $handle->isFuzzy() ) {
-			$this->dieUsage( 'Cannot review fuzzy translations', 'fuzzymessage' );
-		}
-
-		if ( $revision->getUser() == $this->getUser()->getId() ) {
-			$this->dieUsage( 'Cannot review own translations', 'owntranslation' );
+		$error = self::getReviewBlockers( $this->getUser(), $handle, $revision );
+		switch ( $error ) {
+		case '':
+			// Everything is okay
+			break;
+		case 'permissiondenied':
+			$this-dieUsage( 'Permission denied', $error );
+		case 'unknownmessage':
+			$this->dieUsage( 'Unknown message', $error );
+		case 'owntranslation':
+			$this->dieUsage( 'Cannot review own translations', $error );
+		case 'fuzzymessage':
+			$this->dieUsage( 'Cannot review fuzzy translations', $error );
+		default:
+			$this->dieUsage( 'Unknown error', $error );
 		}
 
 		$ok = self::doReview( $this->getUser(), $revision );
@@ -60,7 +63,7 @@ class ApiTranslationReview extends ApiBase {
 	 * Executes the real stuff. No checks done!
 	 * @return Bool, whether the action was recorded.
 	 */
-	public static function doReview( User $user, Revision $revision ) {
+	public static function doReview( User $user, Revision $revision, $comment = null ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$table = 'translate_reviews';
 		$row = array(
@@ -78,11 +81,38 @@ class ApiTranslationReview extends ApiBase {
 		$title = $revision->getTitle();
 		$logger = new LogPage( 'translationreview' );
 		$params = array( $revision->getId() );
-		$logger->addEntry( 'message', $title, null, $params, $user );
+		$logger->addEntry( 'message', $title, $comment, $params, $user );
 
 		$handle = new MessageHandle( $title );
 		wfRunHooks( 'TranslateEventTranslationReview', array( $handle ) );
 		return true;
+	}
+
+	/**
+	 * Validates review action by checking permissions and other things.
+	 * @return string Error key or empty string if review is allowed.
+	 * @since 2012-09-24
+	 */
+	public static function getReviewBlockers( User $user, Revision $revision ) {
+		if ( !$user->isallowed( self::$right ) ) {
+			return 'permissiondenied';
+		}
+
+		$title = $revision->getTitle();
+		$handle = new MessageHandle( $title );
+		if ( !$handle->isValid() ) {
+			return 'unknownmessage';
+		}
+
+		if ( $revision->getUser() == $user->getId() ) {
+			return 'owntranslation';
+		}
+
+		if ( $handle->isFuzzy() ) {
+			return 'fuzzymessage';
+		}
+
+		return '';
 	}
 
 	public function isWriteMode() {
