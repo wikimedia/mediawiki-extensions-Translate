@@ -4,8 +4,14 @@
  * Just call SuperUser when you need to be able to do everything.
  */
 class MockSuperUser extends User {
+	protected $id = 666;
+
+	public function setId( $id ) {
+		$this->id = $id;
+	}
+
 	public function getId() {
-		return 666;
+		return $this->id;
 	}
 
 	public function getName() {
