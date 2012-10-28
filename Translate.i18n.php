@@ -15674,7 +15674,7 @@ $messages['ltg'] = array(
 	'translate-gs-continent' => 'Koņtinents',
 );
 
-/** Lushai (Mizo ţawng)
+/** Mizo (Mizo ţawng)
  * @author RMizo
  */
 $messages['lus'] = array(
@@ -18373,7 +18373,7 @@ Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 	'languagestats-summary' => 'Sida viser omsetjingsstatistikk for alle meldingsgruppene for eit språk.',
 	'languagestats-stats-for' => 'Omsetjingsstatistikk for $1 ($2).',
 	'languagestats-recenttranslations' => 'siste omsetjingane',
-	'translate-langstats-incomplete' => 'Somt av statistikken på sida er uheilt. Lasta sida på nytt for å få meir statistikk.',
+	'translate-langstats-incomplete' => 'Somt av statistikken på sida er uheil. Lasta sida på nytt for å få meir statistikk.',
 	'translate-langstats-expand' => 'vid ut',
 	'translate-langstats-collapse' => 'slå saman',
 	'translate-langstats-expandall' => 'vid ut alle',

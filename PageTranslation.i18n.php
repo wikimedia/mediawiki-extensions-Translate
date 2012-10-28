@@ -3099,7 +3099,7 @@ mais {{PLURAL:$1|sa dernière version|leur dernière version respective}} ne peu
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Cette page a été découragée|Ces pages ont été découragées}} à être {{PLURAL:$1|traduite|traduites}} davantage.',
 	'tpt-select-prioritylangs' => 'Liste de codes de langue prioritaire séparés par des virgules:',
 	'tpt-select-prioritylangs-force' => "Empêcher les traductions en d'autres langues que les langues prioritaires",
-	'tpt-select-prioritylangs-reason' => 'Motif:',
+	'tpt-select-prioritylangs-reason' => 'Motif :',
 	'tpt-sections-prioritylangs' => 'Langues prioritaires',
 	'tpt-rev-mark' => 'marquer pour traduction',
 	'tpt-rev-unmark' => 'supprimer de la traduction',
