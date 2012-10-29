@@ -376,7 +376,7 @@ class PageTranslationHooks {
 	 * Hook: ArticleSave, PageContentSave
 	 * @param $article Article
 	 * @param $user User
-	 * @param $text string
+	 * @param $content string|TextContent
 	 * @param $summary string
 	 * @param $minor bool
 	 * @param $_
@@ -418,7 +418,7 @@ class PageTranslationHooks {
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
 	 * @param $article Article
 	 * @param $user User
-	 * @param $text string
+	 * @param $content string|TextContent
 	 * @param $summary string
 	 * @param $minor bool
 	 * @param $_
