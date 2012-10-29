@@ -238,7 +238,7 @@ class GettextFFS extends SimpleFFS {
 				$actualForms[] = self::formatForWiki( $match );
 			} else {
 				$actualForms[] = '';
-				error_log( "Plural $i not found, expecting total of $pluralCount for {$item['id']}" );
+				error_log( "Plural $i not found, expecting total of $pluralCount for $section" );
 			}
 		}
 
