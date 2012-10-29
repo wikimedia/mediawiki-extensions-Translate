@@ -14,7 +14,7 @@
  * language translations in single file.
  *
  * It triggers special handling when importing external changes, since we
- * actually need to parse the file to look what languages are present isntead
+ * actually need to parse the file to look what languages are present instead
  * of just checking whether files with specific names exist.
  *
  * The message group should go together with FFS implementation that handles
