@@ -388,6 +388,12 @@ if ( !defined( 'TRANSLATE_FUZZY' ) ) {
  * For Apertium, you should get an API key.
  * @see http://wiki.apertium.org/wiki/Apertium_web_service
  *
+ * Yandex translation helper also provides langlimit option to limit total
+ * number of suggestions (set to 0 to get all possible translations)
+ * and langorder array to sort languages. Yandex translate engine is based on
+ * wordnet, generated from search index, so number of indexed websites should be
+ * a good heuristic to define the default language order.
+ *
  * The machine translation services are provided with the following information:
  * - server ip address
  * - versions of MediaWiki and Translate extension
@@ -415,6 +421,14 @@ $wgTranslateTranslationServices['Apertium'] = array(
 	'timeout' => 3,
 	'type' => 'apertium',
 	'codemap' => array( 'no' => 'nb' ),
+);
+$wgTranslateTranslationServices['Yandex'] = array(
+	'url' => 'http://translate.yandex.net/api/v1/tr.json/translate',
+	'pairs' => 'http://translate.yandex.net/api/v1/tr.json/getLangs',
+	'timeout' => 3,
+	'langorder' => array( 'en', 'ru', 'uk', 'de', 'fr', 'pl', 'it', 'es', 'tr' ),
+	'langlimit' => 1,
+	'type' => 'yandex',
 );
 /* Example configuration for remote TTMServer
 $wgTranslateTranslationServices['example'] = array(
