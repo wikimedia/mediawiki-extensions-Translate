@@ -1560,12 +1560,14 @@ $messages['ckb'] = array(
 
 /** Czech (česky)
  * @author Chmee2
+ * @author Janet11
  * @author Matěj Grabovský
  * @author Mormegil
  */
 $messages['cs'] = array(
 	'pagetranslation' => 'Překlad stránek',
 	'right-pagetranslation' => 'Označování verzí stránek pro překlad',
+	'action-pagetranslation' => 'spravovat přeložitelné stránky',
 	'tpt-desc' => 'Rozšíření pro překládání stránek s obsahem',
 	'tpt-section' => 'Část překladu $1',
 	'tpt-section-new' => 'Nová část překladu.
@@ -1598,7 +1600,7 @@ Předtím než tuto verzi označíte pro překlad zkontrolujte, že změny čás
 	'tpt-other-pages-title' => 'Rozbité stránky',
 	'tpt-discouraged-pages-title' => 'Nedoporučené stránky',
 	'tpt-new-pages' => '{{PLURAL:$1|Tato stránka obsahuje|Tyto stránky obsahují}} text se značkami pro překlad, ale žádná verze {{PLURAL:$1|této stránky|těchto stránek}} není aktuálně označena pro překlad.',
-	'tpt-old-pages' => 'Některé verze {{PLURAL:$1|této stránky|těchto stránek}} bylo označeny pro překlad.',
+	'tpt-old-pages' => 'Některé verze {{PLURAL:$1|této stránky|těchto stránek}} byly označeny pro překlad.',
 	'tpt-other-pages' => 'Starší verze {{PLURAL:$1|této stránky je označena|těchto stránek jsou označeny}} pro překlad,
 ale nejnovější verze {{PLURAL:$1|nemůže být k překladu označena|nemohou být k překladu označeny}}.',
 	'tpt-discouraged-pages' => 'Další překlady {{PLURAL:$1|této stránky|těchto stránek}} se nedoporučují.',
