@@ -29,7 +29,6 @@ $wgAutoloadClasses['TranslateEditAddons'] = "$dir/TranslateEditAddons.php";
 $wgAutoloadClasses['TranslateHooks'] = "$dir/TranslateHooks.php";
 $wgAutoloadClasses['TranslateTasks'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['TranslateUtils'] = "$dir/TranslateUtils.php";
-$wgAutoloadClasses['VoctrainMessageChecker'] = "$dir/ffs/Voctrain.php";
 /**@}*/
 
 /**
@@ -57,8 +56,6 @@ $wgAutoloadClasses['SpecialTranslations'] = "$dir/specials/SpecialTranslations.p
  */
 $wgAutoloadClasses['SimpleFormatReader'] = "$dir/ffs/Simple.php";
 $wgAutoloadClasses['SimpleFormatWriter'] = "$dir/ffs/Simple.php";
-$wgAutoloadClasses['WikiExtensionFormatReader'] = "$dir/ffs/WikiExtension.php";
-$wgAutoloadClasses['WikiExtensionFormatWriter'] = "$dir/ffs/WikiExtension.php";
 $wgAutoloadClasses['WikiFormatReader'] = "$dir/ffs/Wiki.php";
 $wgAutoloadClasses['WikiFormatWriter'] = "$dir/ffs/Wiki.php";
 $wgAutoloadClasses['XliffFormatWriter'] = "$dir/ffs/Xliff.php";
@@ -220,10 +217,8 @@ $wgAutoloadClasses['ViewWithSuggestionsTask'] = "$dir/TranslateTasks.php";
  * @{
  */
 $wgAutoloadClasses['AggregateMessageGroup'] = "$dir/messagegroups/AggregateMessageGroup.php";
-$wgAutoloadClasses['AliasMessageGroup'] = "$dir/messagegroups/AliasMessageGroup.php";
 $wgAutoloadClasses['CoreMessageGroup'] = "$dir/messagegroups/CoreMessageGroup.php";
 $wgAutoloadClasses['CoreMostUsedMessageGroup'] = "$dir/messagegroups/CoreMostUsedMessageGroup.php";
-$wgAutoloadClasses['ExtensionMessageGroup'] = "$dir/messagegroups/ExtensionMessageGroup.php";
 $wgAutoloadClasses['FileBasedMessageGroup'] = "$dir/messagegroups/FileBasedMessageGroup.php";
 $wgAutoloadClasses['MediaWikiMessageGroup'] = "$dir/messagegroups/MediaWikiMessageGroup.php";
 $wgAutoloadClasses['MediaWikiExtensionMessageGroup'] = "$dir/messagegroups/MediaWikiExtensionMessageGroup.php";

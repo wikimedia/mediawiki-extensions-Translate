@@ -12,8 +12,6 @@
  * Class which handles special definition format for %MediaWiki extensions.
  */
 class PremadeMediawikiExtensionGroups {
-	protected $groups;
-
 	protected $useConfigure = true;
 	protected $idPrefix = 'ext-';
 	protected $namespace = NS_MEDIAWIKI;
@@ -67,15 +65,6 @@ class PremadeMediawikiExtensionGroups {
 		$this->namespace = $value;
 	}
 
-	/// Initialisation function
-	public function init() {
-		if ( $this->groups !== null ) {
-			return;
-		}
-		$groups = $this->parseFile();
-		$this->groups = $this->processGroups( $groups );
-	}
-
 	/// Makes an group id from extension name
 	static function foldId( $name ) {
 		return preg_replace( '/\s+/', '', strtolower( $name ) );
@@ -94,10 +83,10 @@ class PremadeMediawikiExtensionGroups {
 	}
 
 	/**
-	 * Creates SingleFileBasedMessageGroup objects from parsed data.
+	 * Creates MediaWikiExtensionMessageGroup objects from parsed data.
 	 * @param string $id unique group id already prefixed
 	 * @param array $info array of group info
-	 * @return FileBasedMessageGroup
+	 * @return MediaWikiExtensionMessageGroup
 	 */
 	protected function createMessageGroup( $id, $info ) {
 		$conf = array();
@@ -161,64 +150,6 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		return MessageGroupBase::factory( $conf );
-	}
-
-	/// Registers all extensions, only for old style
-	/// @todo remove
-	public function addAll() {
-		$this->init();
-		if ( $this->groups === array() ) {
-			wfWarn( "No groups found in {$this->definitionFile}" );
-			return;
-		}
-
-		global $wgTranslateAC, $wgTranslateEC;
-
-		foreach ( $this->groups as $id => $g ) {
-			$wgTranslateAC[$id] = array( $this, 'factory' );
-			$wgTranslateEC[] = $id;
-		}
-	}
-
-	/**
-	 * Creates old style message groups.
-	 * @todo remove.
-	 */
-	public function factory( $id ) {
-		$info = $this->groups[$id];
-		$group = ExtensionMessageGroup::factory( $info['name'], $id );
-		$group->setMessageFile( $info['file'] );
-		$group->setPath( $this->path );
-		$group->setNamespace( $this->namespace );
-
-		if ( isset( $info['prefix'] ) ) {
-			$mangler = new StringMatcher( $info['prefix'], $info['mangle'] );
-			$group->setMangler( $mangler );
-		} else {
-			$mangler = StringMatcher::emptyMatcher();
-			// No need to set to the group
-		}
-
-		if ( isset( $info['ignored'] ) ) {
-			$info['ignored'] = $mangler->mangle( $info['ignored'] );
-		}
-		if ( isset( $info['optional'] ) ) {
-			$info['optional'] = $mangler->mangle( $info['optional'] );
-		}
-
-		if ( !empty( $info['var'] ) ) $group->setVariableName( $info['var'] );
-		if ( !empty( $info['optional'] ) ) $group->setOptional( $info['optional'] );
-		if ( !empty( $info['ignored'] ) ) $group->setIgnored( $info['ignored'] );
-		if ( isset( $info['desc'] ) ) {
-			$group->setDescription( $info['desc'] );
-		} else {
-			$group->setDescriptionMsg( $info['descmsg'], $info['url'] );
-		}
-
-		if ( isset( $info['aliasfile'] ) ) $group->setAliasFile( $info['aliasfile'] );
-		if ( isset( $info['magicfile'] ) ) $group->setMagicFile( $info['magicfile'] );
-
-		return $group;
 	}
 
 	protected function parseFile() {

@@ -550,26 +550,20 @@ class SpecialPageAliasesCM extends ComplexMessages {
 		global $wgTranslateExtensionDirectory;
 		$groups = MessageGroups::singleton()->getGroups();
 		foreach ( $groups as $g ) {
-			if ( $g instanceof ExtensionMessageGroup ) {
-				$file = $g->getAliasFile();
-				if ( $file === null ) {
-					continue;
-				}
-			} elseif ( $g instanceof FileBasedMessageGroup ) {
-				$conf = $g->getConfiguration();
-				if ( !isset( $conf['FFS']['aliasFile'] ) ) {
-					continue;
-				}
-				$file = $conf['FFS']['aliasFile'];
-			} else {
+			if ( !$g instanceof MediaWikiExtensionMessageGroup ) {
 				continue;
 			}
+			$conf = $g->getConfiguration();
+			if ( !isset( $conf['FILES']['aliasFile'] ) ) {
+				continue;
+			}
+			$file = $conf['FILES']['aliasFile'];
 
 			$file = "$wgTranslateExtensionDirectory/$file";
 			if ( file_exists( $file ) ) {
 				$this->data[$g->getId()] = array(
 					'label' => $g->getLabel(),
-					'var'  => $g->getVariableNameAlias(),
+					'var'  => 'specialPageAliases',
 					'file' => $file,
 					'code' => $code,
 				);
@@ -637,20 +631,14 @@ class MagicWordsCM extends ComplexMessages {
 		global $wgTranslateExtensionDirectory;
 		$groups = MessageGroups::singleton()->getGroups();
 		foreach ( $groups as $g ) {
-			if ( $g instanceof ExtensionMessageGroup ) {
-				$file = $g->getMagicFile();
-				if ( $file === null ) {
-					continue;
-				}
-			} elseif ( $g instanceof FileBasedMessageGroup ) {
-				$conf = $g->getConfiguration();
-				if ( !isset( $conf['FILES']['magicFile'] ) ) {
-					continue;
-				}
-				$file = $conf['FILES']['magicFile'];
-			} else {
+			if ( !$g instanceof MediaWikiExtensionMessageGroup ) {
 				continue;
 			}
+			$conf = $g->getConfiguration();
+			if ( !isset( $conf['FILES']['magicFile'] ) ) {
+				continue;
+			}
+			$file = $conf['FILES']['magicFile'];
 
 			$file = "$wgTranslateExtensionDirectory/$file";
 			if ( file_exists( $file ) ) {
