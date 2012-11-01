@@ -62,16 +62,7 @@ class MagicExport extends Maintenance {
 		$filename = null;
 		foreach ( $groups as $group ) {
 			$filename = null;
-			if ( $group instanceof ExtensionMessageGroup ) {
-				switch ( $this->type ) {
-				case 'special':
-					$filename = $group->getAliasFile();
-					break;
-				case 'magic':
-					$filename = $group->getMagicFile();
-					break;
-				}
-			} elseif ( $group instanceof FileBasedMessageGroup ) {
+			if ( $group instanceof MediaWikiExtensionMessageGroup ) {
 				$conf = $group->getConfiguration();
 				switch ( $this->type ) {
 				case 'special':
