@@ -10,6 +10,7 @@
 /**
  * Tests for fuzzy flag change on edits.
  * @group Database
+ * @group medium
  */
 class TranslationFuzzyUpdaterTest extends MediaWikiTestCase {
 	protected function setUp() {

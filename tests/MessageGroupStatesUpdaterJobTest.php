@@ -2,6 +2,7 @@
 
 /**
  * @group Database
+ * @group medium
  */
 class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 
