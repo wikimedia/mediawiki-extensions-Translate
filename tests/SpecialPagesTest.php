@@ -30,7 +30,7 @@ class SpecialPagesTest extends MediaWikiTestCase {
 
 		$pages = array();
 		foreach ( $wgSpecialPages as $name => $class ) {
-			if ( isset( $wgAutoloadClasses[$class] )) {
+			if ( isset( $wgAutoloadClasses[$class] ) ) {
 				$pages[] = array( $name );
 			}
 		}

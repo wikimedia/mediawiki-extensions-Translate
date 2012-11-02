@@ -635,7 +635,7 @@ class TranslatablePage {
 		$dbw = wfGetDB( DB_MASTER );
 		$base = $this->getTitle()->getPrefixedDBKey();
 		// Including the / used as separator
-		$baseLength = strlen( $base ) +1;
+		$baseLength = strlen( $base ) + 1;
 
 		if ( $code !== false ) {
 			$like = $dbw->buildLike( "$base/", $dbw->anyString(), "/$code" );

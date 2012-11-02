@@ -65,7 +65,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 
 		try {
 			$resultset = $this->client->select( $query );
-		} catch( Solarium_Exception $e ) {
+		} catch ( Solarium_Exception $e ) {
 			throw new TranslationHelperException( 'Solarium exception' );
 		}
 
@@ -131,7 +131,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 
 		try {
 			$resultset = $this->client->select( $query );
-		} catch( Solarium_Exception $e ) {
+		} catch ( Solarium_Exception $e ) {
 			error_log( "SolrTTMServer update-read failed" );
 			wfProfileOut( __METHOD__ );
 			return false;
@@ -145,7 +145,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		// Fill in the fields from existing entry if it exists
 		if ( $found === 1 ) {
 			foreach ( $resultset as $resultdoc ) {
-				foreach( $resultdoc as $field => $value ) {
+				foreach ( $resultdoc as $field => $value ) {
 					if ( $field !== 'score' && !isset( $doc->$field ) ) {
 						$doc->$field = $value;
 					}
@@ -162,7 +162,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 
 		try {
 			$this->client->update( $update );
-		} catch( Solarium_Exception $e ) {
+		} catch ( Solarium_Exception $e ) {
 			error_log( "SolrTTMServer update-write failed" );
 			wfProfileOut( __METHOD__ );
 			return false;

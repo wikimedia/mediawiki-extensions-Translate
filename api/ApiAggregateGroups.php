@@ -71,7 +71,7 @@ class ApiAggregateGroups extends ApiBase {
 
 			$logparams = array(
 				'user' => $wgUser->getName() ,
-				//TODO: Why is this name and not id?
+				// TODO: Why is this name and not id?
 				'aggregategroup' => TranslateMetadata::get( $aggregateGroup, 'name' ),
 			);
 

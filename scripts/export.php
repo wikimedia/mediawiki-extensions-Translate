@@ -125,7 +125,7 @@ if ( !count( $groups ) ) {
 $changeFilter = false;
 if ( isset( $options['hours'] ) ) {
 	$namespaces = array();
-	foreach( $groups as $group ) {
+	foreach ( $groups as $group ) {
 		$namespaces[$group->getNamespace()] = true;
 	}
 	$namespaces = array_keys( $namespaces );
@@ -153,7 +153,7 @@ if ( isset( $options['hours'] ) ) {
 	}
 
 foreach ( $groups as $groupId => $group ) {
-	if( in_array( $groupId, $skipGroups ) ) {
+	if ( in_array( $groupId, $skipGroups ) ) {
 		STDERR( "Group $groupId is in skipgroup" );
 		continue;
 	}

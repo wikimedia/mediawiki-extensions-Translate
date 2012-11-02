@@ -274,7 +274,7 @@ class MessageTable {
 		// have high repetition.
 		if ( isset( $this->reviewStatusCache[$key] ) ) {
 			return $this->reviewStatusCache[$key];
-		} elseif( $you ) {
+		} elseif ( $you ) {
 			$msg = wfMessage( 'translate-messagereview-reviewswithyou' )->numParams( $count )->text();
 		} else {
 			$msg = wfMessage( 'translate-messagereview-reviews' )->numParams( $count )->text();
