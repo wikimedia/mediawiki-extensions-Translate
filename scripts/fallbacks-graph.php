@@ -56,7 +56,7 @@ XML;
 			$prev = $code;
 			foreach ( $fallbacks as $fb ) {
 				$nodes[$fb] = $this->createNode( $fb );
-				$edges[$fb.$prev] = Xml::element( 'edge', array( 'source' => $prev, 'target' => $fb ) );
+				$edges[$fb . $prev] = Xml::element( 'edge', array( 'source' => $prev, 'target' => $fb ) );
 				$prev = $fb;
 			}
 		}

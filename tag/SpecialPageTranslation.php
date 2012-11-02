@@ -89,7 +89,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$dbw->replace( $table, array( $index ), $row, __METHOD__ );
 
 				// Prevent duplicate log entries.
-				if( $priority !== 'discouraged' ) {
+				if ( $priority !== 'discouraged' ) {
 					$logger->addEntry( 'discourage', $title, null, array( serialize( $params ) ), $this->getUser() );
 				}
 			}
@@ -742,7 +742,7 @@ class SpecialPageTranslation extends SpecialPage {
 		// Remove invalid language codes.
 		$languages = Language::getLanguageNames();
 		foreach ( $npLangs as $index => $language ) {
-			if( !array_key_exists( $language, $languages ) ) {
+			if ( !array_key_exists( $language, $languages ) ) {
 				unset( $npLangs[$index] );
 			}
 		}

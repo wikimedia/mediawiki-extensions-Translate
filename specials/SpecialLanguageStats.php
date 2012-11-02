@@ -457,7 +457,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= $this->getWorkflowStateCell( $groupId, $state );
 		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
 
-		wfGetCache( CACHE_ANYTHING )->set( $cachekey, $out, 3600*24 );
+		wfGetCache( CACHE_ANYTHING )->set( $cachekey, $out, 3600 * 24 );
 		return $out;
 	}
 

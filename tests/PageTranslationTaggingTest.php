@@ -66,7 +66,7 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		$this->assertSame( $latest, $translatablePage->getMarkedTag( DB_MASTER ), 'Marked tag was added' );
 		$page->updateRestrictions( array( 'edit' => 'sysop' ), 'Test case' );
 
-		$newLatest = $latest+1;
+		$newLatest = $latest + 1;
 		$this->assertSame( $newLatest, $translatablePage->getReadyTag( DB_MASTER ), 'Ready tag was updated after protection' );
 		$this->assertSame( $latest, $translatablePage->getMarkedTag( DB_MASTER ), 'Marked tag was not updated after protection' );
 	}

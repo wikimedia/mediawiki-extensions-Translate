@@ -120,7 +120,7 @@ foreach ( $groups as &$group ) {
 
 		# Guess last modified date of the file from either git, svn or filesystem
 		$ts = false;
-		if( isset( $options['git'] ) ) {
+		if ( isset( $options['git'] ) ) {
 			$ts = $cs->getTimestampsFromGit( $file );
 		} else {
 			$ts = $cs->getTimestampsFromSvn( $file );

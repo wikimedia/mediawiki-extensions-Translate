@@ -65,7 +65,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 	/**
 	 * @dataProvider provideMatchCondition
 	 */
-	public function testMatchCondition( $expected, $value, $condition, $max) {
+	public function testMatchCondition( $expected, $value, $condition, $max ) {
 		$actual = MessageGroupStatesUpdaterJob::matchCondition( $value, $condition, $max );
 		$this->assertEquals( $expected, $actual );
 	}

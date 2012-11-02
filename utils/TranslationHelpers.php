@@ -431,7 +431,7 @@ class TranslationHelpers {
 			$server = TTMServer::factory( $config );
 			if ( $server instanceof RemoteTTMServer ) {
 				$method = 'getRemoteTTMServerBox';
-			} elseif( $server instanceof ReadableTTMServer ) {
+			} elseif ( $server instanceof ReadableTTMServer ) {
 				$method = 'getTTMServerBox';
 			}
 

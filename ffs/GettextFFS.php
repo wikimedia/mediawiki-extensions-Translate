@@ -193,7 +193,7 @@ class GettextFFS extends SimpleFFS {
 			$pluralMessageText = self::processGettextPluralMessage( $pluralCount, $section );
 
 			// Keep the translation empty if no form has translation
-			if( $pluralMessageText !== '' ) {
+			if ( $pluralMessageText !== '' ) {
 				$item['str'] = $pluralMessageText;
 			}
 		} else {

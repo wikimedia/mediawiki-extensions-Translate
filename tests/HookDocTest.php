@@ -37,7 +37,7 @@ class HookDocTest extends MediaWikiTestCase {
 			if ( $block === '=== PHP events ===' ) {
 				$type = 'php';
 				continue;
-			} elseif( $block === '=== JavaScript events ===' ) {
+			} elseif ( $block === '=== JavaScript events ===' ) {
 				$type = 'js';
 				continue;
 			} elseif ( !$type ) {
@@ -73,7 +73,7 @@ class HookDocTest extends MediaWikiTestCase {
 		$m = array();
 		preg_match_all( '/(?:mw\.translateHooks\.run)\(\s*([\'"])(.*?)\1/', $content, $m );
 		$hooks = array();
-		foreach( $m[2] as $hook ) {
+		foreach ( $m[2] as $hook ) {
 			$hooks[$hook] = array();
 		}
 
@@ -85,7 +85,7 @@ class HookDocTest extends MediaWikiTestCase {
 		$m = array();
 		preg_match_all( '/(?:wfRunHooks|Hooks\:\:run)\(\s*([\'"])(.*?)\1/', $content, $m );
 		$hooks = array();
-		foreach( $m[2] as $hook ) {
+		foreach ( $m[2] as $hook ) {
 			$hooks[$hook] = array();
 		}
 
