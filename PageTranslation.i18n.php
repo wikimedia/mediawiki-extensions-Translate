@@ -9672,7 +9672,7 @@ $messages['vep'] = array(
  * @author Vinhtantran
  */
 $messages['vi'] = array(
-	'pagetranslation' => 'Dịch trang',
+	'pagetranslation' => 'Biên dịch trang',
 	'right-pagetranslation' => 'Đánh dấu các phiên bản của trang là cần dịch',
 	'action-pagetranslation' => 'quản lý các trang dịch được',
 	'tpt-desc' => 'Phần mở rộng để dịch trang nội dung',

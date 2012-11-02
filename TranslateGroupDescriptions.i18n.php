@@ -2907,6 +2907,7 @@ $messages['uk'] = array(
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дозволяє швидко знайти авторів сторінки в проектах Вікімедіа.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] є проектом для випуску автономної текстової версії Вікіпедії на мобільному пристрої.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] є багатоплатформним застосунком для мобільних та планшетних пристроїв, який призначено для читання Вікіпедії та дописування до неї',
+	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] — це крос-платформенний додаток для мобільних і планшетних пристроїв, що призначений для читання і редагування Вікісловника',
 );
 
 /** Uzbek (oʻzbekcha)
@@ -2959,6 +2960,7 @@ $messages['vi'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], một diễn đàn mạng được viết bằng PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] là hệ thống miễn phí để theo dõi lỗi trên Web. Xin hãy báo cáo lỗi tại [[Support]].',
 	'translate-group-desc-eol' => 'Nhóm thông điệp của [[Translating:EOL|Bách khoa toàn thư Sự sống]]',
+	'translate-group-desc-frontlinesms' => 'Nhóm thông điệp cho [[Translating:FrontlineSMS|FrontlineSMS]]',
 	'translate-group-desc-ihris' => 'Nhóm thông điệp cho [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Nhóm thông điệp của [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], một mô đun của [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Nhóm thông điệp của [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], một mô đun của [[Translating:iHRIS|iHRIS]]',
