@@ -189,7 +189,7 @@ $wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
 $wgJobClasses['MessageGroupStatesUpdaterJob'] = 'MessageGroupStatesUpdaterJob';
 
 $resourcePaths = array(
-	'localBasePath' => dirname( __FILE__ ),
+	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'Translate'
 );
 
@@ -714,7 +714,7 @@ $wgTranslateUsePreSaveTransform = false;
 /**
  * Default action for the RecentChanges filter, which makes it possible to filter
  * translations away or show them only.
- * Possible values: ('noaction', 'only', 'filter', 'site')
+ * Possible values: ('no-action', 'only', 'filter', 'site')
  */
 $wgTranslateRcFilterDefault = 'filter';
 
