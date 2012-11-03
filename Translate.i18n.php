@@ -8176,6 +8176,7 @@ Tiedot: $1',
  * @author Gomoko
  * @author Grondin
  * @author Guillom
+ * @author Hello71
  * @author IAlex
  * @author Jean-Frédéric
  * @author Litlok
@@ -8304,7 +8305,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La définition utilise <nowiki>{{PLURAL:}}</nowiki> mais pas sa traduction.',
 	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> a reçu {{PLURAL:$1|une forme|$1 formes}} mais {{PLURAL:$2|une seule est supportée|seules $2 sont supportées}} (hors les formes 0= et 1=).',
-	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> a des formes dupliquées au final. <nowiki>{{PLURAL:$1|souris|souris}}</nowiki> devrait être écrit ainsi: <nowiki>{{PLURAL:$1|souris}}</nowiki>.', # Fuzzy
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> a des formes dupliquées au final. <nowiki>{{PLURAL:$1|mouton|moutons}}</nowiki> devrait être écrit ainsi: <nowiki>{{PLURAL:$1|moutons}}</nowiki>.',
 	'translate-checks-pagename' => 'Espace de noms modifié depuis la définition',
 	'translate-checks-format' => 'Cette traduction ne suit pas la définition ou a une syntaxe incorrecte : $1',
 	'translate-checks-escape' => 'Les échappements suivants peuvent être accidentels : <strong>$1</strong>',
