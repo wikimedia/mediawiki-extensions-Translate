@@ -357,8 +357,23 @@ $messages['bg'] = array(
  * @author Bellayet
  */
 $messages['bn'] = array(
+	'firststeps' => 'প্রথম ধাপ',
 	'translate-fs-pagetitle-done' => ' - সম্পন্ন!',
+	'translate-fs-pagetitle-pending' => ' - অমীমাংসিত',
+	'translate-fs-pagetitle' => 'আরম্ভ করার উইজার্ড - $1',
+	'translate-fs-signup-title' => 'নিবন্ধন',
+	'translate-fs-settings-title' => 'আপনার পছন্দসমূহ নির্ধারণ করুন',
 	'translate-fs-userpage-title' => 'আপনার ব্যবহারকারী পাতা তৈরি করুন',
+	'translate-fs-permissions-title' => 'অনুবাদক হিসেবে অনুমোদনের আবেদন',
+	'translate-fs-target-title' => 'অনুবাদ করা শুরু!',
+	'translate-fs-email-title' => 'আপনার ই-মেইলের ঠিকানা নিশ্চিত করুন',
+	'translate-fs-selectlanguage' => 'যেকোন ভাষা নির্বাচন করুন',
+	'translate-fs-settings-planguage' => 'প্রধান ভাষা:',
+	'translate-fs-settings-slanguage' => 'সহযোগী ভাষা:', # Fuzzy
+	'translate-fs-settings-submit' => 'পছন্দ সংরক্ষণ',
+	'translate-fs-userpage-submit' => 'আমার ব্যবহারকারী পাতা তৈরি করো',
+	'translate-fs-permissions-planguage' => 'প্রধান ভাষা:',
+	'translate-fs-permissions-submit' => 'অনুরোধ পাঠাও',
 );
 
 /** Tibetan (བོད་ཡིག)

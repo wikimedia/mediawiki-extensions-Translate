@@ -1162,9 +1162,13 @@ $messages['bn'] = array(
 	'pagetranslation' => 'পাতা অনুবাদ',
 	'tpt-diff-old' => 'পূর্বের লেখা',
 	'tpt-diff-new' => 'নতুন লেখা',
+	'tpt-select-prioritylangs-reason' => 'কারণ:',
 	'translate-tag-translate-link-desc' => 'এই পাতা অনুবাদ করুন',
 	'translate-tag-markthis' => 'অনুবাদের জন্য এই পাতা চিহ্নিত করুন',
 	'tpt-languages-legend' => 'অন্য ভাষা:',
+	'tpt-aggregategroup-add' => 'যোগ',
+	'tpt-aggregategroup-save' => 'সংরক্ষণ',
+	'tpt-aggregategroup-new-name' => 'নাম:',
 	'pt-movepage-reason' => 'কারণ:',
 	'pt-deletepage-reason' => 'কারণ:',
 );
