@@ -61,7 +61,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiTestCase {
 		$page->doEdit( '$1 van $2', __METHOD__ );
 		$this->assertFalse( $handle->isFuzzy(), 'Message is unfuzzy after edit' );
 
-		$status = $page->doEdit( '!!FUZZY!!$1 van $2', __METHOD__ );
+		$page->doEdit( '!!FUZZY!!$1 van $2', __METHOD__ );
 		$this->assertTrue( $handle->isFuzzy(), 'Message is fuzzy after manual fuzzying' );
 
 		// Update the translation without the fuzzy string
