@@ -102,8 +102,6 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 		$c = count( $messages );
 		if ( $c !== 1 ) {
 			throw new MWException( "MWEFFS3: Expected 1, got $c: $data" );
-			error_log( "Malformed section: $data" );
-			return false;
 		}
 
 		$messages = array_shift( $messages );
