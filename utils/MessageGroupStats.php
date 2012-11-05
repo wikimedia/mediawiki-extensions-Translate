@@ -266,11 +266,15 @@ class MessageGroupStats {
 		}
 
 		if ( $group instanceof AggregateMessageGroup ) {
+			$aggregates = self::getEmptyStats();
+
 			$expanded = self::expandAggregates( $group );
+			if ( $expanded === array() ) {
+				return $aggregates;
+			}
 			$res = self::selectRowsIdLang( array_keys( $expanded ), $code );
 			$stats = self::extractResults( $res, $stats );
 
-			$aggregates = self::getEmptyStats();
 			foreach ( $expanded as $sid => $subgroup ) {
 				# Discouraged groups may belong to a another group, usually if there
 				# is a aggregate group for all translatable pages. In that case
