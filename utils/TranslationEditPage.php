@@ -209,7 +209,7 @@ class TranslationEditPage {
 	 * @return \array
 	 */
 	public static function jsEdit( Title $title, $group = "", $type = 'default' ) {
-		global $wgUser, $wgRequest;
+		global $wgUser;
 
 		if ( !$wgUser->getOption( 'translate-jsedit' ) ) {
 			return array();
