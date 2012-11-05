@@ -28,12 +28,12 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 
 		$title = Title::newFromText( $params['title'] );
 		if ( !$title ) {
-			$this->dieUsage( 'Invalid title' );
+			$this->dieUsage( 'Invalid title', 'invalidtitle' );
 		}
 
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
-			$this->dieUsage( 'Title does not correspond to a translatable message' );
+			$this->dieUsage( 'Title does not correspond to a translatable message', 'nomessagefortitle' );
 		}
 
 		$base = Title::makeTitle( $title->getNamespace(), $handle->getKey() );
@@ -119,6 +119,13 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 
 	public function getDescription() {
 		return 'Query all translations for a single message';
+	}
+
+	public function getPossibleErrors() {
+		return array_merge( parent::getPossibleErrors(), array(
+			array( 'code' => 'invalidtitle', 'info' => 'The given title is invalid' ),
+			array( 'code' => 'nomessagefortitle', 'info' => 'Title does not correspond to a translatable message' ),
+		) );
 	}
 
 	protected function getExamples() {
