@@ -918,6 +918,7 @@ $messages['fr'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un forum internet écrit en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] est un système gratuit pour le suivi sur le web des anomalies. Rapportez tous les problèmes sur [[Support]].',
 	'translate-group-desc-eol' => "Un groupe de messages pour l’''[[Translating:EOL|Encyclopedia of Life]]''",
+	'translate-group-desc-frontlinesms' => 'Un groupe de message pour [[Translating:FrontlineSMS|FrontlineSMS]]',
 	'translate-group-desc-ihris' => 'Un groupe de messages pour [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Un groupe de messages pour [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un module de [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Un groupe de messages pour [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], un module de [[Translating:iHRIS|iHRIS]]',
@@ -949,6 +950,7 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] est un projet visant à offrir une version texte de Wikipedia en mode hors connexion sur un périphérique mobile.',
 	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] est une application pour mobile et tablette inter-plateformes pour la lecture et la contribution à Wikipédia',
 	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] est une application multi-plateformes pour mobiles et tablettes permettant de lire et contribuer à Wiktionnaire',
+	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] est une application mobile pour contribuer au [[:meta:Wiki Loves Monuments|projet Monuments Aimés sur Wiki]]',
 );
 
 /** Franco-Provençal (arpetan)
