@@ -18,10 +18,10 @@
  */
 
 (function ( $, mw, undefined ) {
-	"use strict";
+	'use strict';
 	var dialogwidth = false,
-	    translate,
-	    preloads = {};
+		translate,
+		preloads = {};
 
 	function MessageCheckUpdater( callback ) {
 		this.act = function() {
