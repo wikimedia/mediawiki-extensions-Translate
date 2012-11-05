@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAACdH////I\u003d",
+        "filename": "api/ApiQueryMessageTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2012-11-05T22:23:37Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be defined in getPossibleErrors() (which doesn\u0027t yet exist)",
+      "revId": "45279d90307ba0778766e169c414a5a184aeb247",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
