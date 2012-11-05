@@ -254,6 +254,7 @@ class TranslationHelpers {
 	 * Returns suggestions from a translation memory.
 	 * @param $serviceName
 	 * @param $config
+	 * @throws TranslationHelperException
 	 * @return string Html snippet which contains the suggestions.
 	 */
 	protected function getTTMServerBox( $serviceName, $config ) {
@@ -276,6 +277,7 @@ class TranslationHelpers {
 	 * Returns suggestions from a translation memory.
 	 * @param $serviceName
 	 * @param $config
+	 * @throws TranslationHelperException
 	 * @return string Html snippet which contains the suggestions.
 	 */
 	protected function getRemoteTTMServerBox( $serviceName, $config ) {
@@ -1403,6 +1405,7 @@ class TranslationHelpers {
 	/**
 	 * Increases the failure count for a given service
 	 * @param $service
+	 * @throws TranslationHelperException
 	 */
 	public static function reportTranslationServiceFailure( $service ) {
 		$key = wfMemckey( "translate-service-$service" );

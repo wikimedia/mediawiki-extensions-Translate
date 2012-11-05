@@ -114,6 +114,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	/**
 	 * Do the basic checks whether moving is possible and whether
 	 * the input looks anywhere near sane.
+	 * @throws PermissionsError|ErrorPageError|ReadOnlyError
 	 * @return bool
 	 */
 	protected function doBasicChecks() {

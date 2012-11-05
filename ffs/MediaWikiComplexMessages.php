@@ -509,6 +509,7 @@ abstract class ComplexMessages {
 	/**
 	 * Returns string with quotes that should be valid php
 	 * @param $data string
+	 * @throws MWException
 	 * @return string
 	 */
 	protected function normalize( $data ) {

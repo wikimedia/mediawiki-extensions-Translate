@@ -334,6 +334,7 @@ class MessageWebImporter {
 	 * @param $comment \string edit summary (default: empty) - see Article::doEdit
 	 * @param $user User User that will make the edit (default: null - $wgUser) - see Article::doEdit
 	 * @param $editFlags Integer bitfield: see Article::doEdit
+	 * @throws MWException
 	 * @return \string Action result
 	 */
 	public static function doAction( $action, $group, $key, $code, $message, $comment = '', $user = null, $editFlags = 0 ) {

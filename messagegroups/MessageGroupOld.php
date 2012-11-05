@@ -158,6 +158,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * This function returns array of type key => definition of all messages
 	 * this message group handles.
 	 *
+	 * @throws MWException
 	 * @return Array of messages definitions indexed by key.
 	 */
 	public function getDefinitions() {

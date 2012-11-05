@@ -83,6 +83,7 @@ class TranslatablePage {
 	 *
 	 * @param $title Title
 	 * @param $revision integer Revision number
+	 * @throws MWException
 	 * @return TranslatablePage
 	 */
 	public static function newFromRevision( Title $title, $revision ) {
@@ -124,7 +125,8 @@ class TranslatablePage {
 
 	/**
 	 * Returns the text for this translatable page.
-	 * @return \string
+	 * @throws MWException
+	 * @return string
 	 */
 	public function getText() {
 		if ( $this->init === false ) {
@@ -208,8 +210,8 @@ class TranslatablePage {
 
 	/**
 	 * Returns a TPParse object which represents the parsed page.
-	 * @throws TPExcetion if the page is malformed as a translatable
-	 * page.
+	 *
+	 * @throws TPException
 	 * @return TPParse
 	 */
 	public function getParse() {
@@ -379,6 +381,7 @@ class TranslatablePage {
 	 * markers.
 	 *
 	 * @param $content string Content of one section
+	 * @throws TPException
 	 * @return TPSection
 	 */
 	protected function shakeSection( $content ) {

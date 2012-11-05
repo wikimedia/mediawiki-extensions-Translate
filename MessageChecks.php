@@ -210,6 +210,7 @@ class MessageChecker {
 	 * Converts the special params to something nice. Currently useless, but
 	 * useful if in the future blacklist can work with parameter level too.
 	 * @param $warnings \array List of warnings
+	 * @throws MWException
 	 * @return List of warning messages with parameters.
 	 */
 	protected function fixMessageParams( $warnings ) {

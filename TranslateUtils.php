@@ -314,7 +314,7 @@ class TranslateUtils {
 	 * Gets the path for cache files
 	 * @param $filename \string
 	 * @return \string Full path.
-	 * @throws \type{MWException} If cache directory is not configured.
+	 * @throws MWException If cache directory is not configured.
 	 */
 	public static function cacheFile( $filename ) {
 		global $wgTranslateCacheDirectory, $wgCacheDirectory;

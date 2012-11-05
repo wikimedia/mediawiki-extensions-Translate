@@ -21,6 +21,7 @@ class RubyYamlFFS extends YamlFFS {
 	 *
 	 * @param $messages array
 	 *
+	 * @throws MWException
 	 * @return bool|string
 	 */
 	public function flattenPlural( $messages ) {

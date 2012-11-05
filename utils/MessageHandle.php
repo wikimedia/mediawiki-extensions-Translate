@@ -129,6 +129,7 @@ class MessageHandle {
 	/**
 	 * Get the primary MessageGroup this message belongs to.
 	 * You should check first that the handle is valid.
+	 * @throws MWException
 	 * @return MessageGroup
 	 */
 	public function getGroup() {

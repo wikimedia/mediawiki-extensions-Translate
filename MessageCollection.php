@@ -288,7 +288,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param $condition \bool Whether to return messages which do not satisfy
 	 * the given filter condition (true), or only which do (false).
 	 * @param $value Mixed Value for properties filtering.
-	 * @throws \type{MWException} If given invalid filter name.
+	 * @throws MWException If given invalid filter name.
 	 */
 	public function filter( $type, $condition = true, $value = null ) {
 		if ( !in_array( $type, self::getAvailableFilters(), true ) ) {
@@ -319,6 +319,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param $condition \bool Whether to return messages which do not satisfy
 	 * @param $value Mixed Value for properties filtering.
 	 * the given filter condition (true), or only which do (false).
+	 * @throws MWException
 	 */
 	protected function applyFilter( $filter, $condition, $value ) {
 		$keys = $this->keys;
@@ -818,6 +819,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Fail fast if trying to access unknown properties. @{
 	 * @param $name
+	 * @throws MWException
 	 */
 	public function __get( $name ) {
 		throw new MWException( __METHOD__ . ": Trying to access unknown property $name" );

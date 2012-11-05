@@ -35,6 +35,7 @@ class RevTag {
 	/**
 	 * Returns value suitable for rt_type field.
 	 * @param $tag string tag name
+	 * @throws MWException
 	 * @return int|string
 	 */
 	public static function getType( $tag ) {
@@ -55,6 +56,7 @@ class RevTag {
 	/**
 	 * Converts rt_type field back to the tag name.
 	 * @param $tag int rt_type value
+	 * @throws MWException
 	 * @return string
 	 */
 	public static function typeToTag( $tag ) {

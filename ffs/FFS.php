@@ -212,6 +212,7 @@ class SimpleFFS implements FFS {
 	 * Write the collection to file.
 	 *
 	 * @param $collection MessageCollection
+	 * @throws MWException
 	 */
 	public function write( MessageCollection $collection ) {
 		$writePath = $this->writePath;

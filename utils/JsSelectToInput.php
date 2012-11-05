@@ -71,6 +71,7 @@ class JsSelectToInput {
 
 	/**
 	 * Returns the whole input element and injects needed JavaScript
+	 * @throws MWException
 	 * @return \string Html code.
 	 */
 	public function getHtmlAndPrepareJS() {
