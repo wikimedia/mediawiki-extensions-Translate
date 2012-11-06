@@ -28,7 +28,7 @@ class ApiTranslationReview extends ApiBase {
 			$this->dieUsage( 'Invalid revision', 'invalidrevision' );
 		}
 
-		$error = self::getReviewBlockers( $this->getUser(), $handle, $revision );
+		$error = self::getReviewBlockers( $this->getUser(), $revision );
 		switch ( $error ) {
 		case '':
 			// Everything is okay
