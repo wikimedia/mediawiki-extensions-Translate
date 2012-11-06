@@ -555,9 +555,9 @@ Shown when editing translatable pages. Default is empty.',
 	'translate-checks-links' => 'Warning message from automated syntax check for translators.
 *$1 - links
 *$2 - number of links',
-	'translate-checks-links-missing' => 'Warning message from automated syntax check for translators.
-*$1 - links
-*$2 - number of links',
+	'translate-checks-links-missing' => '{{doc-important|Do not translate &lt;strong>&lt;nowiki>$1&lt;/nowiki>&lt;/strong>.}}Warning message from automated syntax check for translators.
+* $1 - links
+* $2 - number of links',
 	'translate-checks-xhtml' => 'Warning message from automated syntax check for translators.
 *$1 - tags
 *$2 - number of tags',
@@ -5692,8 +5692,8 @@ No mesac wesiqe niyo. Şıma nêzanê na açarnayış konca dı sazkerê se, Aç
 	'translate-langstats-collapse' => 'Kılm ke',
 	'translate-langstats-expandall' => 'Pêron hera ke',
 	'translate-langstats-collapseall' => 'Pêron  Kılm ke',
-	'translate-language-code' => 'Qodê zıwani',
-	'translate-language-code-field-name' => 'Qodê zıwani:',
+	'translate-language-code' => 'Kodê zıwani',
+	'translate-language-code-field-name' => 'Kodê zıwani:',
 	'translate-suppress-complete' => 'Peleyê kı açarneyayê êna biya',
 	'translate-ls-noempty' => 'Peleyê kı nè açarneyayê êna pıploğnê',
 	'translate-language' => 'Zıwan',
@@ -7541,6 +7541,7 @@ $messages['ext'] = array(
  * @author Ebraminio
  * @author Huji
  * @author Mjbmr
+ * @author Reza1615
  * @author Tofighi
  * @author Wayiran
  * @author ZxxZxxZ
@@ -7756,6 +7757,7 @@ $messages['fa'] = array(
 	'translate-mgs-invalid-group' => 'گروه مشخص‌شدهٔ $1 وجود ندارد.',
 	'translate-mgs-nothing' => 'دربارهٔ آمار درخواست‌شده چیزی برای نمایش وجود ندارد.',
 	'supportedlanguages' => 'زبان‌های پشتیبانی‌شده',
+	'supportedlanguages-colorlegend' => 'توضیح برای رنگ:زمان آخرین ترجمه  $1  روز پیش.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|مترجم|مترجمان}}: $1',
 	'supportedlanguages-recenttranslations' => 'ترجمه‌های اخیر',
 	'supportedlanguages-count' => 'در مجموع $1 {{PLURAL:$1|زبان|زبان}}.',
@@ -14255,7 +14257,7 @@ $messages['kn'] = array(
 	'translate-checks-parameters-unknown' => 'ಕೆಳಗಿನ {{PLURAL:$2|ಮಾನದಂಡವು|ಮಾನದಂಡಗಳು}} ಅಪರಿಚಿತ
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links-missing' => 'ಈ ಕೆಳಗಿನ {{PLURAL:$2|ಕೊಂಡಿಯು|$2 ಕೊಂಡಿಗಳು}}ಕಾಣೆಯಾಗಿವೆ:
-<ಬಲಿಷ್ಠ><nowiki>$1</nowiki></ಬಲಿಷ್ಠ>',
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'ವ್ಯಾಖ್ಯೆಗೆ ಉಪಯೋಗ <nowiki>{{PLURAL:}}</nowiki> ಆದರೆ ಭಾಷಾಂತರಕ್ಕೆ ಅಲ್ಲ.',
 	'translate-checks-format' => 'ಈ ಭಾಷಾಂತರವು ವ್ಯಾಖ್ಯೆಗ ಸರಿಹೊಂದುತ್ತಿಲ್ಲ ಅಥವಾ ತಪ್ಪು ಪದವಿನ್ಯಾಸವನ್ನು ಹೊಂದಿದೆ: $1',
 	'translate-checks-escape' => 'ಈ ಕೆಳಗಿನ ಗಮನಕ್ಕೆ ಬಾರದಿರುವ ವಿಷಯ ಆಕಸ್ಮಿಕವಿರಬಹುದು: <strong>$1</strong>',

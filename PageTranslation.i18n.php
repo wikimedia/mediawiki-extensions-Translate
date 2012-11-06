@@ -253,6 +253,7 @@ $messages['qqq'] = array(
 	'tpt-sections-oldnew' => '"New and existing" refers to the sum of: (a) new translation units in a translatable page, plus (b) the already existing ones from previous version of a translatable page.',
 	'tpt-sections-template' => '[[File:Page_translation_mark_view.png|thumb|Page translation]]
 The template used by translations of the translatable page, extracted from the source text. Shown on the translation administration page; a screenshot is available.',
+	'tpt-notsuitable' => '{{doc-important|Do not translate "&lt;nowiki>&lt;translate>&lt;/nowiki>"}}',
 	'tpt-saveok' => '$1 is a page title,
 $2 is a count of sections which can be used with PLURAL,
 $3 is an URL.',
@@ -3766,7 +3767,7 @@ $messages['gu'] = array(
 ફક્ત આધુનિક સંસ્કરણનેજ ભાષાંતર માટે ચિહ્નિત કરી શકાશે.',
 	'tpt-notsuitable' => 'પાનું $1 ભાષાંતર માટે યોગ્ય નથી.
 
-ખાતરી કરો કે તે <nowiki><ભાષાંતર></nowiki> ટેગ અને પ્રમાણભૂત વાક્યરચના ધરાવે છે.',
+ખાતરી કરો કે તે <nowiki><translate></nowiki> ટેગ અને પ્રમાણભૂત વાક્યરચના ધરાવે છે.',
 	'tpt-badsect' => '"$1" એ ભાષાંતર એકમ $2 માટેનું પ્રમાણભૂત નામ નથી.',
 	'tpt-mark-summary' => 'આ સંસ્કરણને ભાષાંતર માટે ચિહ્નિત કરાયું',
 	'tpt-edit-failed' => 'પાનાં: $1 ને અદ્યતન બનાવી શકાયું નહીં.',
