@@ -2217,6 +2217,7 @@ $messages['pms'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un forum web scrivù an PHP.',
 	'bw-desc-mantisbt' => "[http://www.mantisbt.org MantisBT] a l'é un sistema lìber ëd trassadura dj'eror web-based. Për piasì arpòrta minca problema an [[Support]].",
 	'translate-group-desc-eol' => "Na partìa ëd mëssagi për l'[[Translating:EOL|Enciclopedìa dla Vita]]",
+	'translate-group-desc-frontlinesms' => 'Na partìa ëd mëssagi për [[Translating:FrontlineSMS|FrontlineSMS]]',
 	'translate-group-desc-ihris' => 'Na partìa ëd mëssagi për [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => "Na partìa ëd mëssagi për [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un mòdul d'[[Translating:iHRIS|iHRIS]]",
 	'translate-group-desc-ihris-i2ce' => "Na partìa ëd mëssagi për [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], un mòdul d'[[Translating:iHRIS|iHRIS]]",
