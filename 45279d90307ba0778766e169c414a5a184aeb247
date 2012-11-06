@@ -16,6 +16,24 @@
       "revId": "45279d90307ba0778766e169c414a5a184aeb247",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAACe3////o\u003d",
+        "filename": "api/ApiQueryMessageTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-11-06T04:45:42Z",
+      "side": 1,
+      "message": "Not according to the documentation in ApiBase.php:\n\n\t/**\n\t * Throw a UsageException, which will (if uncaught) call the main module\u0027s\n\t * error handler and die with an error message.\n\t *\n\t * @param $description string One-line human-readable description of the\n\t *   error condition, e.g., \"The API requires a valid action parameter\"\n\t * @param $errorCode string Brief, arbitrary, stable string to allow easy\n\t *   automated identification of the error, e.g., \u0027unknown_action\u0027\n\t * @param $httpRespCode int HTTP response code\n\t * @param $extradata array Data to add to the \"\u003cerror\u003e\" element; array in ApiResult format\n\t * @throws UsageException\n\t */\n\tpublic function dieUsage( $description, $errorCode, $httpRespCode \u003d 0, $extradata \u003d null ) {}\n\nIs the documentation wrong?",
+      "parentUuid": "AAACdH////I\u003d",
+      "revId": "45279d90307ba0778766e169c414a5a184aeb247",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
