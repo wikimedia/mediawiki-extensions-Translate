@@ -143,7 +143,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 
 		// Change to translation
 		$page = WikiPage::factory( Title::newFromText( 'MediaWiki:key1/fi' ) );
-		$status = $page->doEdit( 'trans1 updated', __METHOD__, 0, false, $user );
+		$page->doEdit( 'trans1 updated', __METHOD__, 0, false, $user );
 		self::runJobs();
 		$currentState = ApiGroupReview::getState( $group, 'fi' );
 		$this->assertEquals( 'proofreading', $currentState, 'back to proofreading after translation changed' );
