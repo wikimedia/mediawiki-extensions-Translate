@@ -18,12 +18,12 @@ class TranslateToolbox {
 	 * available translations for a message. Only shown when it
 	 * actually is a translatable/translated message.
 	 *
-	 * @param $skin Skin
+	 * @param $quickTemplate QuickTemplate
 	 *
 	 * @return bool
 	 */
-	static function toolboxAllTranslations( &$skin ) {
-		$title = $skin->getSkin()->getTitle();
+	static function toolboxAllTranslations( &$quickTemplate ) {
+		$title = $quickTemplate->getSkin()->getTitle();
 		$handle = new MessageHandle( $title );
 		if ( $handle->isValid() ) {
 			$message = $title->getNsText() . ':' . $handle->getKey();
