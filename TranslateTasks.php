@@ -402,18 +402,6 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 }
 
 /**
- * Exports messages to xliff format.
- */
-class ExportToXliffMessagesTask extends ExportToFileMessagesTask {
-	protected $id = 'export-to-xliff';
-
-	public function output() {
-		$writer = new XliffFormatWriter( $this->group );
-		return $writer->webExport( $this->collection );
-	}
-}
-
-/**
  * Exports messages as special Gettext format that is suitable for off-line
  * translation with tools that support Gettext. These files can later be
  * imported back to the wiki.
