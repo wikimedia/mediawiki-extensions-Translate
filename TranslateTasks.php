@@ -495,11 +495,11 @@ class TranslateTasks {
 		if ( array_key_exists( $id, $wgTranslateTasks ) ) {
 			if ( is_callable( $wgTranslateTasks[$id] ) ) {
 				return call_user_func( $wgTranslateTasks[$id], $id );
-			} else {
-				return new $wgTranslateTasks[$id];
 			}
-		} else {
-			return null;
+
+			return new $wgTranslateTasks[$id];
 		}
+
+		return null;
 	}
 }
