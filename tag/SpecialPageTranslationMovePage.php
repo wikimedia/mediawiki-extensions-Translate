@@ -221,7 +221,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$form = array();
 		$form[] = Xml::fieldset( $this->msg( 'pt-movepage-legend' )->text() );
 		$form[] = Html::openElement( 'form', $formParams );
-		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->editToken() );
+		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 		$this->addInputLabel( $form, $this->msg( 'pt-movepage-current' )->text(), 'wpOldTitle', 30, $this->oldText, $readonly );
 		$this->addInputLabel( $form, $this->msg( 'pt-movepage-new' )->text(), 'wpNewTitle', 30, $this->newText );
 		$this->addInputLabel( $form, $this->msg( 'pt-movepage-reason' )->text(), 'reason', 45, $this->reason );
@@ -297,7 +297,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$form = array();
 		$form[] = Xml::fieldset( $this->msg( 'pt-movepage-legend' )->text() );
 		$form[] = Html::openElement( 'form', $formParams );
-		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->editToken() );
+		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 		$this->addInputLabel( $form, $this->msg( 'pt-movepage-current' )->text(), 'wpOldTitle', 30, $this->oldText, $readonly );
 		$this->addInputLabel( $form, $this->msg( 'pt-movepage-new' )->text(), 'wpNewTitle', 30, $this->newText, $readonly );
 		$this->addInputLabel( $form, $this->msg( 'pt-movepage-reason' )->text(), 'reason', 60, $this->reason );

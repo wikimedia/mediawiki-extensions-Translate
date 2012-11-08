@@ -114,7 +114,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		$output = Html::openElement( 'form', array( 'method' => 'post' ) );
 		$output .= Html::hidden( 'step', 'settings' );
-		$output .= Html::hidden( 'token', $user->editToken() );
+		$output .= Html::hidden( 'token', $user->getEditToken() );
 		$output .= Html::hidden( 'title', $this->getTitle() );
 		$output .= Html::openElement( 'table' );
 
@@ -257,7 +257,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$output = ''
 		 . Html::openElement( 'form', array( 'method' => 'post' ) )
 		 . Html::hidden( 'step', 'userpage' )
-		 . Html::hidden( 'token', $this->getUser()->editToken() )
+		 . Html::hidden( 'token', $this->getUser()->getEditToken() )
 		 . Html::hidden( 'title', $this->getTitle() )
 		;
 
@@ -335,7 +335,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			$params = array(
 				'action' => 'threadaction',
 				'threadaction' => 'newthread',
-				'token' => $user->editToken(),
+				'token' => $user->getEditToken(),
 				'talkpage' => 'Project:Translator',
 				'subject' => "{{LanguageHeader|$language}}",
 				'reason' => 'Using Special:FirstSteps',
@@ -366,7 +366,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		$output = Html::openElement( 'form', array( 'method' => 'post' ) );
 		$output .= Html::hidden( 'step', 'permissions' );
-		$output .= Html::hidden( 'token', $user->editToken() );
+		$output .= Html::hidden( 'token', $user->getEditToken() );
 		$output .= Html::hidden( 'title', $this->getTitle() );
 		$name = $id = 'primary-language';
 

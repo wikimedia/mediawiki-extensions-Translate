@@ -15,7 +15,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 /**
  * Version number used in extension credits and in other placed where needed.
  */
-define( 'TRANSLATE_VERSION', '2012-10-15' );
+define( 'TRANSLATE_VERSION', '2012-11-08' );
 
 /**
  * Extension credits properties.
@@ -179,9 +179,6 @@ $wgAddGroups['translate-proofr'] = array( 'translate-proofr' );
 $wgLogTypes[] = 'translationreview';
 $wgLogActionsHandlers['translationreview/message'] = 'TranslateHooks::formatTranslationreviewLogEntry';
 $wgLogActionsHandlers['translationreview/group'] = 'TranslateHooks::formatTranslationreviewLogEntry';
-// BC for <1.19
-$wgLogHeaders['translationreview'] = 'log-description-translationreview';
-$wgLogNames['translationreview'] = 'log-name-translationreview';
 
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
