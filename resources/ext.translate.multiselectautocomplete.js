@@ -15,20 +15,25 @@ jQuery( function( $ ) {
 			// @TODO can have more options.
 		},
 		_create: function() {
-			var self = this,
-				select = this.element.hide(),
-				options = this.options;
+			var self, select, options, input;
+
+			self = this;
+			select = this.element.hide();
+			options = this.options;
 
 			function split( val ) {
 				return val.split( /,\s*/ );
 			}
 			
-			var input = this.input = $( options.inputbox ).autocomplete( {
+			input = this.input = $( options.inputbox ).autocomplete( {
 				delay: 0,
 				minLength: 0,
 				source: function( request, response ) {
-					var term = split( request.term ).pop();
-					var matcher = new RegExp( $.ui.autocomplete.escapeRegex( term ), 'i' );
+					var term, matcher;
+
+					term = split( request.term ).pop();
+					matcher = new RegExp( $.ui.autocomplete.escapeRegex( term ), 'i' );
+
 					response( select.children( 'option' ).map( function() {
 						var text = $( this ).text(),
 							value = $( this ).val(),

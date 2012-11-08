@@ -1,21 +1,15 @@
 jQuery( function( $ ) {
 	'use strict';
 
-	var mw = mediaWiki;
+	var mw, $submit, $select, submitFunction, params;
+	mw = mediaWiki;
 
-	// BC for MW < 1.18
-	if ( !mw.util.wikiScript ) {
-		mw.util.wikiScript = function( str ) {
-			return mw.config.get( 'wgScriptPath' ) + '/' + ( str || 'index' ) + mw.config.get( 'wgScriptExtension' );
-		};
-	}
-
-	var $submit = $( '#mw-translate-workflowset' ),
-		$select = $( '#mw-sp-translate-workflow').find( 'select' );
+	$submit = $( '#mw-translate-workflowset' );
+	$select = $( '#mw-sp-translate-workflow').find( 'select' );
 
 	$select.find( 'option[value=]' ).attr( 'disabled', 'disabled' );
 
-	var submitFunction = function( event ) {
+	submitFunction = function( event ) {
 		var successFunction = function( data, textStatus ) {
 			if ( data.error ) {
 				$submit.val( mw.msg( 'translate-workflow-set-do' ) );
@@ -30,7 +24,7 @@ jQuery( function( $ ) {
 
 		$submit.attr( 'disabled', 'disable' );
 		$submit.val( mw.msg( 'translate-workflow-set-doing' ) );
-		var params = {
+		params = {
 			action: 'groupreview',
 			token: $submit.data( 'token' ),
 			group: $submit.data( 'group' ),
