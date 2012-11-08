@@ -459,7 +459,6 @@ $wgTranslateTasks = array(
 	'reviewall'            => 'ReviewAllMessagesTask',
 	'export-as-po'         => 'ExportasPoMessagesTask',
 	'export-to-file'       => 'ExportToFileMessagesTask',
-//	'export-to-xliff'      => 'ExportToXliffMessagesTask',
 );
 
 /**
