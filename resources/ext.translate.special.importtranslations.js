@@ -1,13 +1,6 @@
 jQuery( function( $ ) {
 	'use strict';
 
-	// BC for MW < 1.18
-	if ( !mw.util.wikiScript ) {
-		mw.util.wikiScript = function( str ) {
-			return mw.config.get( 'wgScriptPath' ) + '/' + ( str || 'index' ) + mw.config.get( 'wgScriptExtension' );
-		};
-	}
-
 	$( '.mw-translate-import-inputs' ).change( function() {
 		var id = $(this).attr( 'id' ).replace( /-input/, '' );
 
@@ -17,10 +10,12 @@ jQuery( function( $ ) {
 
 	$( '#mw-translate-up-wiki-input' ).autocomplete( {
 		source: function( request, response ) {
-			var api = mw.util.wikiScript( 'api' ),
-				data = { action: 'opensearch', format: 'json', namespace: 6, search: request.term };
+			var api, data, success;
 
-			var success = function( res ) {
+			api = mw.util.wikiScript( 'api' );
+			data = { action: 'opensearch', format: 'json', namespace: 6, search: request.term };
+
+			success = function( res ) {
 				response( res[1] );
 			};
 
