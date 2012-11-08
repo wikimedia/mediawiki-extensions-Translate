@@ -30,6 +30,8 @@ And for the code at:
  https://translatewiki.net/docs/Translate/html/
 
 == Change log ==
+* 2012-11-08
+- MediaWiki 1.19 or later is now required.
 * 2012-06-27
 - Fixed fatal errors in Special:MessageGroupStats
 * 2012-06-21

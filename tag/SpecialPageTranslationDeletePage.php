@@ -162,7 +162,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$form = array();
 		$form[] = Xml::fieldset( $this->msg( 'pt-deletepage-any-legend' )->text() );
 		$form[] = Html::openElement( 'form', $formParams );
-		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->editToken() );
+		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 		$this->addInputLabel( $form, $this->msg( 'pt-deletepage-current' )->text(), 'wpTitle', 30, $this->text );
 		$this->addInputLabel( $form, $this->msg( 'pt-deletepage-reason' )->text(), 'reason', 60, $this->reason );
 		$form[] = Xml::submitButton( $this->msg( 'pt-deletepage-action-check' )->text(), $subaction );
@@ -241,7 +241,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 			$form[] = Xml::fieldset( $this->msg( 'pt-deletepage-full-legend' )->text() );
 		}
 		$form[] = Html::openElement( 'form', $formParams );
-		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->editToken() );
+		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 		$this->addInputLabel( $form, $this->msg( 'pt-deletepage-current' )->text(), 'wpTitle', 30, $this->text, $readonly );
 		$this->addInputLabel( $form, $this->msg( 'pt-deletepage-reason' )->text(), 'reason', 60, $this->reason );
 		$form[] = Xml::checkLabel( $this->msg( 'pt-deletepage-subpages' )->text(), 'subpages', 'mw-subpages', $this->doSubpages, $readonly ) . $br;

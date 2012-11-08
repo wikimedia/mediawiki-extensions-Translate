@@ -20,7 +20,7 @@ class SpecialPagesTest extends MediaWikiTestCase {
 		$this->setMwGlobals( array(
 			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
 			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
-			'wgDeprecationReleaseLimit' => 1.18,
+			'wgDeprecationReleaseLimit' => 1.19,
 		) );
 	}
 

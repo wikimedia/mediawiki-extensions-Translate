@@ -46,10 +46,7 @@ class PageTranslationHooks {
 		$name = $page->getPageDisplayTitle( $code );
 
 		if ( $name ) {
-			// BC for MW < 1.19
-			if ( is_callable( array( $parser, 'recursivePreprocess' ) ) ) {
-				$name = $parser->recursivePreprocess( $name );
-			}
+			$name = $parser->recursivePreprocess( $name );
 			$parser->getOutput()->setDisplayTitle( $name );
 		}
 

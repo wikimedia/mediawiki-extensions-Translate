@@ -17,7 +17,7 @@ class ApiTokensTest extends MediaWikiTestCase {
 	public function testTokenRetrieval( $id, $class ) {
 		// For User::editToken
 		global $wgDeprecationReleaseLimit;
-		$wgDeprecationReleaseLimit = 1.18;
+		$wgDeprecationReleaseLimit = 1.19;
 
 		// Make sure we have the right to get the token
 		global $wgGroupPermissions, $wgUser;
