@@ -121,7 +121,7 @@ class SpecialImportTranslations extends SpecialPage {
 				'enctype' => 'multipart/form-data',
 				'id' => 'mw-translate-import',
 			) ) .
-			Html::hidden( 'token', $this->getUser()->editToken() ) .
+			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Xml::openElement( 'table' ) .
 			Xml::openElement( 'tr' ) .

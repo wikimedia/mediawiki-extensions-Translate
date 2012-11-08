@@ -191,7 +191,7 @@ class ApiGroupReview extends ApiBase {
 			return false;
 		}
 
-		return $wgUser->editToken( self::$salt );
+		return $wgUser->getEditToken( self::$salt );
 	}
 
 	public static function injectTokenFunction( &$list ) {

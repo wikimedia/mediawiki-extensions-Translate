@@ -113,7 +113,7 @@ class MessageWebImporter {
 		return
 			Xml::openElement( 'form', $formParams ) .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Html::hidden( 'token', $this->getUser()->editToken() ) .
+			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
 			Html::hidden( 'process', 1 );
 	}
 

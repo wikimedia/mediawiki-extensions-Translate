@@ -336,7 +336,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$user = $this->getUser();
 
 		if ( $user->isAllowed( 'pagetranslation' ) ) {
-			$token = $user->editToken();
+			$token = $user->getEditToken();
 
 			$pending = $type === 'active' && $page['latest'] !== $page['tp:mark'];
 			if ( $type === 'proposed' || $pending ) {
@@ -475,7 +475,7 @@ class SpecialPageTranslation extends SpecialPage {
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Html::hidden( 'revision', $page->getRevision() ) .
 			Html::hidden( 'target', $page->getTitle()->getPrefixedtext() ) .
-			Html::hidden( 'token', $this->getUser()->editToken() )
+			Html::hidden( 'token', $this->getUser()->getEditToken() )
 		);
 
 		$out->wrapWikiMsg( '==$1==', 'tpt-sections-oldnew' );

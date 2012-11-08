@@ -1233,17 +1233,9 @@ class TranslationHelpers {
 			$fallbacks = (array) $wgTranslateLanguageFallbacks[$code];
 		}
 
-		// BC <1.19
-		if ( method_exists( 'Language', 'getFallbacksFor' ) ) {
-			$list = Language::getFallbacksFor( $code );
-			array_pop( $list ); // Get 'en' away from the end
-			$fallbacks = array_merge( $list , $fallbacks );
-		} else {
-			$realFallback = $code ? Language::getFallbackFor( $code ) : false;
-			if ( $realFallback && $realFallback !== 'en' ) {
-				$fallbacks = array_merge( array( $realFallback ), $fallbacks );
-			}
-		}
+		$list = Language::getFallbacksFor( $code );
+		array_pop( $list ); // Get 'en' away from the end
+		$fallbacks = array_merge( $list , $fallbacks );
 
 		return array_unique( $fallbacks );
 	}
