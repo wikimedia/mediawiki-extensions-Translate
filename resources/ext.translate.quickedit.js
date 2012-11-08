@@ -55,14 +55,16 @@
 	}
 
 	function addAccessKeys( dialog ) {
-		var buttons = {
+		var key, buttons;
+
+		buttons = {
 			a: '.mw-translate-save',
 			s: '.mw-translate-next',
 			d: '.mw-translate-skip',
 			h: '.mw-translate-history'
 		};
 
-		for ( var key in buttons ) {
+		for ( key in buttons ) {
 			if ( !buttons.hasOwnProperty( key ) ) {
 				continue;
 			}
@@ -80,8 +82,10 @@
 	}
 
 	function registerFeatures( callbacks, form, page, group ) {
+		var $identical, textarea;
+
 		// Enable the collapsible element
-		var $identical = $( '.mw-identical-title' );
+		$identical = $( '.mw-identical-title' );
 		if ( $.isFunction( $identical.makeCollapsible ) ) {
 			$identical.makeCollapsible();
 		}
@@ -134,7 +138,7 @@
 			$( this ).css( 'width', '85%' );
 		} );
 
-		var textarea = form.find( '.mw-translate-edit-area' );
+		textarea = form.find( '.mw-translate-edit-area' );
 		textarea.css( 'display', 'block' );
 		textarea.autoResize( { maxHeight: 200 } );
 		textarea.focus();
@@ -162,18 +166,20 @@
 
 	translate = {
 		init: function() {
+			var $inlines, $first, title, group, prev;
+
 			dialogwidth = $( window ).width() * 0.8;
-			var $inlines = $( '.tqe-inlineeditable' );
+			$inlines = $( '.tqe-inlineeditable' );
 			$inlines.dblclick( mw.translate.inlineEditor );
 
-			var $first = $inlines.first();
+			$first = $inlines.first();
 			if ( $first.length ) {
-				var title = $first.data( 'title' );
-				var group = $first.data( 'group' );
+				title = $first.data( 'title' );
+				group = $first.data( 'group' );
 				mw.translate.loadEditor( null, title, group, $.noop );
 			}
 
-			var prev = null;
+			prev = null;
 			$inlines.each( function() {
 				if ( prev ) {
 					prev.next = this;
@@ -183,18 +189,20 @@
 		},
 
 		openDialog: function( page, group ) {
-			var id = 'jsedit' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
+			var id, dialogElement, dialog, callbacks;
 
-			var dialogElement = $( '#' + id );
+			id = 'jsedit' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
+			dialogElement = $( '#' + id );
+
 			if ( dialogElement.size() > 0 ) {
 				dialogElement.dialog( 'option', 'position', 'top' );
 				dialogElement.dialog( 'open' );
 				return false;
 			}
 
-			var dialog = $( '<div>' ).attr( 'id', id ).appendTo( $( 'body' ) );
+			dialog = $( '<div>' ).attr( 'id', id ).appendTo( $( 'body' ) );
 
-			var callbacks = {};
+			callbacks = {};
 			callbacks.close = function () { dialog.dialog( 'close' ); };
 			callbacks.next = function () { mw.translate.openNext( page, group ); };
 			callbacks.success = function ( text ) {
@@ -222,9 +230,12 @@
 		},
 
 		loadEditor: function( $target, page, group, callback ) {
+			var id, preload, url, params;
+
 			// Try if it has been cached
-			var id = 'preload-' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
-			var preload = preloads[id];
+			id = 'preload-' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
+			preload = preloads[id];
+
 			if ( preload !== undefined ) {
 				if ( $target ) {
 					$target.html( preloads[id] );
@@ -235,8 +246,8 @@
 			}
 
 			// Load the editor into provided target or cache it locally
-			var url = mw.util.wikiScript();
-			var params = {
+			url = mw.util.wikiScript();
+			params = {
 				title: 'Special:Translate/editpage',
 				suggestions: 'sync',
 				page: page,
@@ -254,14 +265,16 @@
 		},
 
 		openEditor: function( element, page, group, callbacks ) {
-			var $target = $( element );
-			var spinner = $( '<div>' ).attr( 'class', 'mw-ajax-loader' );
+			var $target = $( element ),
+				spinner = $( '<div>' ).attr( 'class', 'mw-ajax-loader' );
+
 			$target.html( $( '<div>' ).attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
 
 			mw.translate.loadEditor( $target, page, group, function() {
 				if ( callbacks.load ) {
 					callbacks.load( $target );
 				}
+
 				var form = $target.find( 'form' );
 				registerFeatures( callbacks, form, page, group );
 				form.on( 'submit', function () {
@@ -296,8 +309,8 @@
 		},
 
 		openNext: function( title, group ) {
-			var messages = mw.config.get( 'trlKeys' );
-			var found = false, key, value;
+			var messages = mw.config.get( 'trlKeys' ),
+				found = false, key, value;
 
 			for ( key in messages ) {
 				if ( !messages.hasOwnProperty( key ) ) {
@@ -315,20 +328,23 @@
 		},
 
 		inlineEditor: function () {
-			var $this = $( this );
+			var $this, current, classes, page, group, next, callbacks, ntitle, ngroup, sel;
+			$this = $( this );
+
 			if ( $this.hasClass( 'tqe-editor-loaded' ) ) {
 				// Editor is open, do not replace it
 				return;
 			}
 
-			var current = $this.html();
+			current = $this.html();
 			$this.addClass( 'tqe-editor-loaded' );
 
-			var classes = $this.attr( 'class' );
-			var page = $this.data( 'title' );
-			var group = $this.data( 'group' );
-			var next = $( this.next );
-			var callbacks = {};
+			classes = $this.attr( 'class' );
+			page = $this.data( 'title' );
+			group = $this.data( 'group' );
+			next = $( this.next );
+			callbacks = {};
+
 			callbacks.success = function ( text ) {
 				// Update the cell value with the new translation
 				$this
@@ -351,14 +367,16 @@
 			if ( next.length ) {
 				callbacks.next = function () { next.dblclick(); };
 				// Preload the next item
-				var ntitle = next.data( 'title' );
-				var ngroup = next.data( 'group' );
+				ntitle = next.data( 'title' );
+				ngroup = next.data( 'group' );
+
 				mw.translate.loadEditor( null, ntitle, ngroup, $.noop );
 			}
 			mw.translate.openEditor( $this, page, group, callbacks );
 
 			// Remove any text selection caused by double clicking
-			var sel = window.getSelection ? window.getSelection() : document.selection;
+			sel = window.getSelection ? window.getSelection() : document.selection;
+
 			if ( sel ) {
 				if ( sel.removeAllRanges ) {
 					sel.removeAllRanges();

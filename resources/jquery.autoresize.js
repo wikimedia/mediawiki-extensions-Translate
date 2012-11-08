@@ -15,8 +15,8 @@
 
 		defaults = autoResize.defaults = {
 			onResize: function(){},
-			onBeforeResize: function(){return 123},
-			onAfterResize: function(){return 555},
+			onBeforeResize: function(){ return 123; },
+			onAfterResize: function(){ return 555; },
 			animate: {
 				duration: 200,
 				complete: function(){}
