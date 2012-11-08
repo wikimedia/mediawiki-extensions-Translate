@@ -555,7 +555,8 @@ Shown when editing translatable pages. Default is empty.',
 	'translate-checks-links' => 'Warning message from automated syntax check for translators.
 *$1 - links
 *$2 - number of links',
-	'translate-checks-links-missing' => '{{doc-important|Do not translate &lt;strong>&lt;nowiki>$1&lt;/nowiki>&lt;/strong>.}}Warning message from automated syntax check for translators.
+	'translate-checks-links-missing' => '{{doc-important|Do not translate &lt;strong>&lt;nowiki>$1&lt;/nowiki>&lt;/strong>.}}
+Warning message from automated syntax check for translators.
 * $1 - links
 * $2 - number of links',
 	'translate-checks-xhtml' => 'Warning message from automated syntax check for translators.
@@ -5632,7 +5633,7 @@ $messages['diq'] = array(
 	'translate-page-description-hasoptional-open' => 'Mesacanê waşteyan bımocne.',
 	'translate-page-edit' => 'bıvurne',
 	'translate-ext-url' => '<hr />Web sitay cı: $1',
-	'translate-optional' => '(Waştışo keyfi)',
+	'translate-optional' => '(opsiyonel)',
 	'translate-ignored' => '(Nê hesıbneyine)',
 	'translate-edit-jsopen' => 'bıvurne',
 	'translate-edit-title' => '"$1"i timar ke',
@@ -19600,12 +19601,27 @@ $messages['pms'] = array(
 	'translate-grouplisting' => "Costa a l'é la lista ëd tute le partìe voltàbij.
 Ch'a sgnaca ël nòm dla partìa ëd mëssagi për vëdde na lista dij mëssagi nen voltà.",
 	'translate-grouplisting-empty' => 'Gnun-e partìe ëd mëssagi a son stàit configurà për la tradussion.',
+	'translate-taskui-view' => 'Smon-e tùit ij mëssagi',
+	'translate-taskui-untranslated' => 'Smon-e ij mëssagi nen voltà',
+	'translate-taskui-optional' => 'Smon-e ij mëssagi opsionaj.',
+	'translate-taskui-suggestions' => 'Smon-e ij mëssagi con ij sugeriment da la memòria ëd tradussion',
+	'translate-taskui-acceptqueue' => 'Mach ij mëssagi che i peuss aceté',
+	'translate-taskui-reviewall' => 'Revision-a tute le tradussion',
+	'translate-taskui-export-to-file' => 'Esporté an formà nativ',
+	'translate-taskui-export-as-po' => 'Esporté da le tradussion fòra linia',
+	'translate-taction-translate' => 'Volté',
+	'translate-taction-proofread' => 'Verìfica',
+	'translate-taction-lstats' => 'Statìstiche ëd lenga',
+	'translate-taction-mstats' => 'Statìstiche dle partìe ëd mëssagi',
+	'translate-taction-export' => 'Esporté',
+	'translate-taction-disabled' => "Costa assion a l'é disabilità ansima a costa wiki.",
 	'translate-page-no-such-language' => "La lenga spessificà a l'é nen vàlida.",
 	'translate-page-no-such-group' => "La partìa spessificà a l'é nen bon-a.",
 	'translate-page-disabled' => "Le tradussion an costa lenga an costa partìa a son ëstàite disativà.
 Rason:
 
 ''$1''",
+	'translate-language-disabled' => "La tradussion an sta lenga a l'é disabilità.",
 	'translate-page-settings-legend' => 'Configurassion',
 	'translate-page-group' => 'Partìa',
 	'translate-page-language' => 'Lenga',
@@ -19638,6 +19654,7 @@ S'a sa andoa o coma 's mëssagi a l'é dovrà, a peul giuté d'àutri tradutor a
 	'translate-edit-committed' => 'Tradussion corenta ant ël programa',
 	'translate-edit-warnings' => 'Avertensa an sle tradussion incomplete',
 	'translate-edit-tmsugs' => 'Sugeriment da le tradussion an memòria',
+	'translate-edit-tmmatch-source' => 'Test sorgiss dla tradussion: $1',
 	'translate-edit-tmmatch' => 'corëspondensa ëd $1%',
 	'translate-use-suggestion' => 'Rampiassé la tradussion corenta con cost sugeriment.',
 	'translate-edit-tab-list' => 'Lista ëd mëssagi',
@@ -19646,15 +19663,16 @@ S'a sa andoa o coma 's mëssagi a l'é dovrà, a peul giuté d'àutri tradutor a
 	'translate-magic-pagename' => 'Viragi estèis ëd MediaWiki',
 	'translate-magic-help' => "A peul volté j'àlias dle pàgine speciaj, le paròle màgiche e ij nòm ëd jë spassi nominaj.
 
-J'àlias dle pàgine soeciaj e le paròle màgiche a peulo avej pì che na tradussion.
-Le tradussion a son separà da 'd vìrgole (,).
-Ij nòm ëd jë spassi nominaj a peulo avej mach na tradussion.
+J'àlias dle pàgine speciaj e le paròle màgiche a peulo avèj pì che na tradussion.
+Le tradussion a son separà da na vìrgola (,).
+Ij nòm ëd jë spassi nominaj a peulo avèj mach na tradussion.
 
-Ant la tradussion djë spassi nominaj ël cas ëd <code>$1 talk</code> a l'é special. <code>$1</code> a ven rampiassà col nòm dël sit (pr'esempi <code>{{ns:project_talk}}</code>).
-Se sòn as peul nen fesse an soa lenga për rivé a n'espression bon-a sensa cambié ël nòm dël sit, për piasì, ch'as buta an contat con un programista.
+Volté lë spassi nominal ëd discussion dël proget <code>$1 talk</code> a peul esse complicà. 
+<code>$1</code> a l'é rampiassà col nòm dël sit dël proget (pr'esempi <code>{{ns:project_talk}}</code>).
+Se an soa lenga as peul nen rivé a n'espression bon-a sensa cambié ël nòm dël sit, për piasì, ch'as buta an contat con noi dzora a [[Support]].
 
-A venta ch'a sia ant la partìa dij tradutor për podej salvé soe modìfiche.
-Le modìfiche as salvo nen fin ch'a-i da nen un colp ansima al al boton ambelessì sota.", # Fuzzy
+A venta ch'a sia ant la partìa dij tradutor për podèj salvé le modìfiche.
+Le modìfiche as salvo nen fin ch'a-i da nen un colp ëd rat ansima al boton sì-sota.",
 	'translate-magic-module' => 'Mòdol:',
 	'translate-magic-submit' => 'Smon-e',
 	'translate-magic-cm-export' => 'Esporté',
