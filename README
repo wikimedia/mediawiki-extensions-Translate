@@ -32,6 +32,7 @@ And for the code at:
 == Change log ==
 * 2012-11-08
 - MediaWiki 1.19 or later is now required.
+- Support for XLIFF was removed. It was never used.
 * 2012-06-27
 - Fixed fatal errors in Special:MessageGroupStats
 * 2012-06-21

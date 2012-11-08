@@ -58,7 +58,6 @@ $wgAutoloadClasses['SimpleFormatReader'] = "$dir/ffs/Simple.php";
 $wgAutoloadClasses['SimpleFormatWriter'] = "$dir/ffs/Simple.php";
 $wgAutoloadClasses['WikiFormatReader'] = "$dir/ffs/Wiki.php";
 $wgAutoloadClasses['WikiFormatWriter'] = "$dir/ffs/Wiki.php";
-$wgAutoloadClasses['XliffFormatWriter'] = "$dir/ffs/Xliff.php";
 /**@}*/
 
 /**
