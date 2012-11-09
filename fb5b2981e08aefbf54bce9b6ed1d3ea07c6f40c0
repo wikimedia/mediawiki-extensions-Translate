@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAC5n////Y\u003d",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-11-09T11:04:39Z",
+      "side": 1,
+      "message": "getMsg perhaps? I don\u0027t see getMessage used for exceptions in core.",
+      "revId": "fb5b2981e08aefbf54bce9b6ed1d3ea07c6f40c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
