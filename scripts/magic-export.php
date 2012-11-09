@@ -66,13 +66,13 @@ class MagicExport extends Maintenance {
 				$conf = $group->getConfiguration();
 				switch ( $this->type ) {
 				case 'special':
-					if ( isset( $conf['FFS']['aliasFile'] ) ) {
-						$filename = $conf['FFS']['aliasFile'];
+					if ( isset( $conf['FILES']['aliasFile'] ) ) {
+						$filename = $conf['FILES']['aliasFile'];
 					}
 					break;
 				case 'magic':
-					if ( isset( $conf['FFS']['magicFile'] ) ) {
-						$filename = $conf['FFS']['magicFile'];
+					if ( isset( $conf['FILES']['magicFile'] ) ) {
+						$filename = $conf['FILES']['magicFile'];
 					}
 					break;
 				}
