@@ -16,6 +16,24 @@
       "revId": "fb5b2981e08aefbf54bce9b6ed1d3ea07c6f40c0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAC5n///7I\u003d",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-11-09T11:47:49Z",
+      "side": 1,
+      "message": "I just reverted, and tested with that. I didn\u0027t see any problems.\n\nI think this should be merged, and if you want to attempt improvement a second time, that can be done then?",
+      "parentUuid": "AAAC5n////Y\u003d",
+      "revId": "fb5b2981e08aefbf54bce9b6ed1d3ea07c6f40c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
