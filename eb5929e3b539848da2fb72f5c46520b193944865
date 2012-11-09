@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAC5X////8\u003d",
+        "filename": "tests/ApiTokensTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-11-09T10:24:59Z",
+      "side": 1,
+      "message": "These three lines can be removed now I think.",
+      "revId": "eb5929e3b539848da2fb72f5c46520b193944865",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
