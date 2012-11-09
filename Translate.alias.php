@@ -676,6 +676,11 @@ $specialPageAliases['or'] = array(
 	'Translations' => array( 'ଅନୁବାଦସମୂହ' ),
 );
 
+/** Punjabi (ਪੰਜਾਬੀ) */
+$specialPageAliases['pa'] = array(
+	'MyLanguage' => array( 'ਮੇਰੀ_ਭਾਸ਼ਾ' ),
+);
+
 /** Polish (polski) */
 $specialPageAliases['pl'] = array(
 	'Translate' => array( 'Przetłumacz' ),
@@ -933,7 +938,7 @@ $specialPageAliases['zh-hans'] = array(
 	'ImportTranslations' => array( '导入翻译' ),
 	'ManageMessageGroups' => array( '消息组管理' ),
 	'FirstSteps' => array( '首几步' ),
-	'SupportedLanguages' => array( '支持的语言' ),
+	'SupportedLanguages' => array( '支持语言' ),
 	'MyLanguage' => array( '我的语言' ),
 );
 
