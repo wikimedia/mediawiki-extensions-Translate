@@ -256,6 +256,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		unset( $this->tags['fuzzy'] );
 		$this->reverseMap = null;
+		$this->getReverseMap();
 	}
 
 	/**
