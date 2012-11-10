@@ -122,9 +122,12 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	}
 
 	public function getAllowedParams() {
+		$groups = MessageGroups::getAllGroups();
+		$dynamic = MessageGroups::getDynamicGroups();
+		$groups = array_keys( array_merge( $groups, $dynamic ) );
 		return array(
 			'group' => array(
-				ApiBase::PARAM_TYPE => array_keys( MessageGroups::getAllGroups() ),
+				ApiBase::PARAM_TYPE => $groups,
 				ApiBase::PARAM_REQUIRED => true,
 			),
 			'language' => array(
