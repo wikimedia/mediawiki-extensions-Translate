@@ -48,24 +48,33 @@ class RecentMessageGroup extends WikiMessageGroup {
 		return max( 0, $max - 50000 );
 	}
 
-	public function getDefinitions() {
-		if ( !$this->language ) {
-			throw new MWException( "Language not set" );
-		}
-
+	/**
+	 * Allows subclasses to partially customize the query.
+	 */
+	protected function getQueryConditions() {
 		global $wgTranslateMessageNamespaces;
 		$db = wfGetDB( DB_SLAVE );
-		$tables = 'recentchanges';
-		$fields = array( 'rc_namespace', 'rc_title' );
 		$conds = array(
 			'rc_title ' . $db->buildLike( $db->anyString(), '/' . $this->language ),
 			'rc_namespace' => $wgTranslateMessageNamespaces,
 			'rc_type != ' . RC_LOG,
 			'rc_id > ' . $this->getRCCutoff(),
 		);
+		return $conds;
+	}
+
+	public function getDefinitions() {
+		if ( !$this->language ) {
+			throw new MWException( "Language not set" );
+		}
+
+		$db = wfGetDB( DB_SLAVE );
+		$tables = 'recentchanges';
+		$fields = array( 'rc_namespace', 'rc_title' );
+		$conds = $this->getQueryConditions();
 		$options = array(
 			'ORDER BY' => 'rc_id DESC',
-			'LIMIT' => 1000
+			'LIMIT' => 5000
 		);
 		$res = $db->select( $tables, $fields, $conds, __METHOD__, $options );
 

@@ -415,6 +415,8 @@ The states are defined in the configuration variable $wgTranslateWorkflowStates.
 	'translate-dynagroup-recent-label' => 'Recent translations',
 	'translate-dynagroup-recent-desc' => 'This message group shows all recent translations into this language.
 Most useful for the proofreading tasks.',
+	'translate-dynagroup-additions-label' => 'Recent additions',
+	'translate-dynagroup-additions-desc' => 'This message group shows new and changed messages.',
 
 	'translate-dynagroup-by' => 'Translation made by {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Translation made by {{GENDER:$1|$1}} ($2)',
@@ -789,6 +791,10 @@ Additional parameters:
 	'translate-workflow-set-error-alreadyset' => 'An error message shown in a popup box after pressing the {{msg-mw|translate-workflow-set-do}} button.',
 	'translate-workflow-autocreated-summary' => 'This is an edit summary for the automatic creation of a workflow state page.',
 	'translate-stats-workflow' => 'Column header on Special:LanguageStats and Special:MessageGroupStats',
+	'translate-dynagroup-recent-label' => 'Label of a message group',
+	'translate-dynagroup-recent-desc' => 'Description of a message group.',
+	'translate-dynagroup-additions-label' => 'Label of a message group',
+	'translate-dynagroup-additions-desc' => 'Description of a message group.',
 	'translate-dynagroup-byc' => 'Additional information in a translation editor that contains information about the last change. Parameters:
 * $1 is a username
 * $2 is the edit summary that was provided.',
