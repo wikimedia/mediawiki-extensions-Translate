@@ -104,7 +104,7 @@ class SpecialTranslate extends SpecialPage {
 			return;
 		}
 
-		$this->task->init( $this->group, $taskOptions );
+		$this->task->init( $this->group, $taskOptions, $this->getContext() );
 		$output = $this->task->execute();
 
 		if ( $this->task->plainOutput() ) {

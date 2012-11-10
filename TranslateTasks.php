@@ -118,13 +118,19 @@ abstract class TranslateTask {
 	protected $options;
 
 	/**
+	 * @var IContextSource
+	 */
+	protected $context;
+
+	/**
 	 * Constructor.
 	 * @param $group \type{MessageGroup} Message group.
 	 * @param $options \type{TaskOptions} Options.
 	 */
-	public final function init( MessageGroup $group, TaskOptions $options ) {
+	public final function init( MessageGroup $group, TaskOptions $options, IContextSource $context ) {
 		$this->group = $group;
 		$this->options = $options;
+		$this->context = $context;
 	}
 
 	/**
@@ -325,13 +331,13 @@ class AcceptQueueMessagesTask extends ReviewMessagesTask {
 	protected $id = 'acceptqueue';
 
 	protected function preinit() {
-		global $wgUser;
+		$user = $this->context->getUser();
 		parent::preinit();
 		$this->collection->filter( 'ignored' );
 		$this->collection->filter( 'hastranslation', false );
 		$this->collection->filter( 'fuzzy' );
-		$this->collection->filter( 'reviewer', true, $wgUser->getId() );
-		$this->collection->filter( 'last-translator', true, $wgUser->getId() );
+		$this->collection->filter( 'reviewer', true, $user->getId() );
+		$this->collection->filter( 'last-translator', true, $user->getId() );
 	}
 
 	public function isAllowedFor( User $user ) {
