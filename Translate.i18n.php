@@ -519,6 +519,7 @@ Goes together with {{msg-mw|translate-taskui-reviewall}}',
 	'translate-edit-in-other-languages' => 'Caption for box which contains translation of message in other languages.',
 	'translate-edit-warnings' => 'Title of the warnings box when editing a message.
 This box list the problems found in the translation.',
+	'translate-edit-tmmatch' => '$1 is number between 1 and 100. This message is displayed in the translation interface when there is suggestions from translation memory.',
 	'translate-use-suggestion' => 'Used as a tooltip for the "down arrow" to insert translation suggestions in the translation edit page.',
 	'translate-edit-tab-prev' => '{{optional}}',
 	'translate-edit-tab-next' => '{{optional}}',
@@ -5537,6 +5538,7 @@ Die Status werden mit der Konfigurationsvariablen <code lang="en">$wgTranslateWo
 	'translate-dynagroup-recent-label' => 'Aktuelle Übersetzungen',
 	'translate-dynagroup-recent-desc' => 'Diese Nachrichtengruppe zeigt alle aktuellen Übersetzungen in diese Sprache an.
 Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
+	'translate-dynagroup-additions-desc' => 'Diese Nachrichtengruppe zeigt neue und geänderte Nachrichten.',
 	'translate-dynagroup-by' => 'Übersetzung von {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Übersetzung von {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Letzte Änderung von {{GENDER:$1|$1}}',
@@ -12856,7 +12858,7 @@ $messages['ja'] = array(
 	'translate-magic-cm-save' => '保存',
 	'translate-magic-cm-updatedusing' => '[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]による更新に成功しました',
 	'translate-magic-cm-savefailed' => '保存に失敗しました',
-	'translate-magic-special' => '特別ページへのエイリアス',
+	'translate-magic-special' => '特別ページの別名',
 	'translate-magic-words' => 'マジックワード',
 	'translate-magic-namespace' => '名前空間名',
 	'translate-magic-notsaved' => '編集は保存されませんでした!',
@@ -14201,6 +14203,7 @@ $messages['km'] = array(
 
 /** Kannada (ಕನ್ನಡ)
  * @author Dipin
+ * @author Munirathnam
  * @author Nayvik
  * @author VASANTH S.N.
  */
@@ -14244,7 +14247,7 @@ $messages['kn'] = array(
 	'translate-edit-committed' => 'ತಂತ್ರಾಂಶದಲ್ಲಿ ಪ್ರಸ್ತುತ ಭಾಷಾಂತರ',
 	'translate-edit-warnings' => 'ಅಸಂಪೂರ್ಣ ಭಾಷಾಂತರದ ಬಗ್ಗೆ ಎಚ್ಚರಿಕೆ',
 	'translate-edit-tmsugs' => 'ಭಾಷಾಂತರ ನೆನಪು ಹಾಗೂ ಭಾಷಾಂತರ ಯಂತ್ರಗಳ ಸಲಹೆ',
-	'translate-edit-tmmatch' => '$1% ಹೊಂದಿಕೆಯಾಗು',
+	'translate-edit-tmmatch' => '$1% ಹೊ೦ದಿಸಿ',
 	'translate-use-suggestion' => 'ಈಗಿನ ಭಾಷಾಂತರವನ್ನು ಈ ಸಲಹೆಯೊಂದಿಗೆ ಬದಲಾಯಿಸಿ',
 	'translate-edit-tab-list' => 'ಸಂದೇಶ ಪಟ್ಟಿ',
 	'translate-edit-nopermission' => 'ಭಾಷಾಂತರಿಸಲು ನಿಮಗೆ ಅನುಮತಿ ಬೇಕು',
@@ -14307,6 +14310,7 @@ $messages['kn'] = array(
 	'translate-translations-project' => 'ಯೋಜನೆ:',
 	'languagestats' => 'ಭಾಷಾ ಅಂಕಿಅಂಶಗಳು',
 	'translate-langstats-expand' => 'ಹಲವು',
+	'translate-langstats-collapse' => 'ಕುಸಿತ',
 	'translate-language-code' => 'ಭಾಷಾ ಸಂಕೇತ',
 	'translate-language-code-field-name' => 'ಭಾಷಾ ಸಂಕೇತ:',
 	'translate-language' => 'ಭಾಷೆ',
@@ -24454,6 +24458,7 @@ $messages['ta'] = array(
 	'translate-page-description-legend' => 'குழுவைப் பற்றிய தகவல்',
 	'translate-page-description-hasoptional-open' => 'விருப்பத் தகவல்களை காண்பி.',
 	'translate-page-edit' => 'தொகு',
+	'translate-ext-url' => '<hr />வலைத்தளம்: $1',
 	'translate-optional' => '(விருப்பதேர்வு)',
 	'translate-ignored' => '(புறக்கணிக்கப்பட்டது)',
 	'translate-edit-jsopen' => 'தொகு',
@@ -24475,6 +24480,7 @@ $messages['ta'] = array(
 	'translate-magic-pagename' => 'நீட்சிபெற்ற மீடியாவிக்கி மொழிபெயர்ப்பு',
 	'translate-magic-submit' => 'கொண்டு வா',
 	'translate-magic-cm-export' => 'ஏற்றுமதி செய்',
+	'translate-magic-nothing-to-export' => 'ஏற்றுமதி செய்வதற்கு அங்கே ஏதுமில்லை.',
 	'translate-magic-cm-current' => 'தற்போதைய',
 	'translate-magic-cm-original' => 'மூலம்',
 	'translate-magic-cm-comment' => 'கருத்து:',
@@ -24488,6 +24494,7 @@ $messages['ta'] = array(
 	'translate-pref-editassistlang' => 'உதவும் மொழிகள்:',
 	'prefs-translate' => 'மொழிபெயர்ப்பு விருப்பத் தேர்வுகள்',
 	'translate-pref-jsedit' => 'மேம்படுத்தப்பட்ட மொழிபெயர்ப்பு தொகுப்பான் (ஜாவாஸ்கிரிப்டு தேவை)',
+	'right-translate-import' => 'தொடரறுமொழிபெயர்ப்புக்களை உள்ளிடு',
 	'right-translate-messagereview' => 'மொழிபெயர்ப்புகளை மதிப்பீடுக',
 	'translate-rc-translation-filter' => 'மொழிபெயர்ப்புகளை வடிகட்டு',
 	'translate-rc-translation-filter-no' => 'எதுவும் செய்ய வேண்டாம்',
@@ -24498,6 +24505,8 @@ $messages['ta'] = array(
 	'translate-stats-edits' => 'திருத்தங்கள்',
 	'translate-stats-users' => 'மொழிபெயர்ப்பாளர்கள்',
 	'translate-stats-registrations' => 'பதிவுகள்',
+	'translate-stats-reviews' => 'மதிப்பீடுகள்',
+	'translate-stats-reviewers' => 'மதிப்பீட்டாளர்கள்',
 	'translate-statsf-intro' => 'இந்த படிவம் மூலம் நீங்கள் எளிய புள்ளிவிவரத்தை உருவாக்கலாம்.
 அனைத்து மதிப்புகளும் மேல் மற்றும் கீழ் வரம்புகளை கொண்டிருக்கும்.',
 	'translate-statsf-options' => 'வரைபட விருப்பத்தேர்வுகள்',
@@ -24513,6 +24522,7 @@ $messages['ta'] = array(
 	'translate-statsf-count-edits' => 'தொகுப்புகளின் எண்ணிக்கை:',
 	'translate-statsf-count-users' => 'நடப்பு மொழிபெயர்ப்பாளர்கள்',
 	'translate-statsf-count-registrations' => 'புதிய பயனர்கள்',
+	'translate-statsf-count-reviews' => 'மொழிபெயர்ப்பு மதிப்பீடுகள்',
 	'translate-statsf-count-reviewers' => 'மீள்பார்வையாளர்கள்',
 	'translate-statsf-language' => 'மொழிகளுக்கான குறியீடுகளின் காற்புள்ளிகளால் பிரித்த பட்டியல்:',
 	'translate-statsf-group' => 'குழுக்களுக்கான குறியீடுகளின் காற்புள்ளிகளால் பிரித்த பட்டியல்:',
@@ -24557,6 +24567,7 @@ $messages['ta'] = array(
 	'translate-save' => 'சேமி ($1)',
 	'translate-jssti-add' => 'பட்டியலில் சேர்',
 	'managemessagegroups' => 'தகவல் குழு மேலாண்மை',
+	'translate-smg-right' => 'உள்வரும் மாற்றங்கள்',
 	'translate-manage-import-diff' => 'செய்தி $1 | செயல்கள்: $2',
 	'translate-manage-import-new' => 'புதிய செய்தி $1',
 	'translate-manage-import-deleted' => 'நீக்கப்பட்ட செய்தி $1',
@@ -27427,6 +27438,8 @@ Các trạng thái được định rõ trong biến cấu hình $wgTranslateWor
 	'translate-dynagroup-recent-label' => 'Bản dịch gần đây',
 	'translate-dynagroup-recent-desc' => 'Nhóm thông điệp này bao gồm các bản dịch gần đây trong ngôn ngữ này.
 Nó có ích đối với các tác vụ hiệu đính.',
+	'translate-dynagroup-additions-label' => 'Thông điệp bổ sung gần đây',
+	'translate-dynagroup-additions-desc' => 'Nhóm thông điệp này chứa các thông điệp mới được bổ sung hoặc thay đổi gần đây.',
 	'translate-dynagroup-by' => 'Bản dịch của $1',
 	'translate-dynagroup-byc' => 'Bản dịch của $1 ($2)',
 	'translate-dynagroup-last' => 'Thay đổi cuối cùng của $1',
