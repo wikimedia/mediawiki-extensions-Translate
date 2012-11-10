@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAC/X////s\u003d",
+        "filename": "TranslateTasks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-11-10T06:33:26Z",
+      "side": 1,
+      "message": "Leading and trailing ws.",
+      "revId": "0e44bab8ac42fa4faba4f083f636505a37f60fc1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
