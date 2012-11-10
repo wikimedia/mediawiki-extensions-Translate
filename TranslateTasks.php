@@ -1,11 +1,11 @@
 <?php
 /**
- * Different tasks which encapsulate the processing of messages to requested
+ * Tasks which encapsulate the processing of messages to requested
  * format for the web interface.
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2010 Niklas Laxström
+ * @copyright Copyright © 2007-2012 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -13,22 +13,25 @@
  * Container for options that are passed to tasks.
  */
 class TaskOptions {
-	/// \string Language code.
+	/// @var string Language code.
 	protected $language;
-	/// \int Number of items to show.
+	/// @var int Number of items to show.
 	protected $limit = 0;
-	/// \int Offset to the results.
+	/// @var int Offset to the results.
 	protected $offset = 0;
-	/// \mixed Callback which is called to provide information about the result counts.
+	/// @var Callable Callback which is called to provide information about the result counts.
 	protected $pagingCB;
 
 	/**
-	 * @param $language \string Language code.
-	 * @param $limit \int Number of items to show.
-	 * @param $offset \int Offset to the results.
-	 * @param $pagingCB \mixed Callback which is called to provide information
-	 * about the result counts. The callback is provided with three parameters:
-	 * provided offset, number of messages to show, number of messages in total.
+	 * @param string $language Language code.
+	 * @param int $limit Number of items to show.
+	 * @param int $offset Offset to the results.
+	 * @param Callable $pagingCB  Callback which is called to provide
+	 *   information about the paging of results. The callback is provided
+	 *   with three parameters:
+	 *   - offset given
+   *   - number of messages displayed 
+	 *   - total number of messages
 	 */
 	public function __construct( $language, $limit = 0, $offset = 0, $pagingCB = null ) {
 		$this->language = $language;
@@ -38,28 +41,29 @@ class TaskOptions {
 	}
 
 	/**
-	 * @return \string Language code.
+	 * @return string Language code.
 	 */
 	public function getLanguage() {
 		return $this->language;
 	}
 
 	/**
-	 * @return \int Number of items to show.
+	 * @return int Number of items to show.
 	 */
 	public function getLimit() {
 		return $this->limit;
 	}
 
 	/**
-	 * @return \int Offset to the results.
+	 * @return int Offset to the results.
 	 */
 	public function getOffset() {
 		return $this->offset;
 	}
 
 	/**
-	 * @return \mixed Callback which is called to provide information about the result counts.
+	 * @return Callable Callback which is called to provide information about
+	 *   the result counts.
 	 */
 	public function getPagingCB() {
 		return $this->pagingCB;
@@ -72,14 +76,14 @@ class TaskOptions {
  * messages of given message group in given language.
  */
 abstract class TranslateTask {
-	/// \string Task identifier.
+	/// @var string Task identifier.
 	protected $id = '__BUG__';
 
 	// We need $id here because staticness prevents subclass overriding.
 	/**
 	 * Get label for task.
-	 * @param $id \string.
-	 * @return \string
+	 * @param string $id Task id
+	 * @return string
 	 */
 	public static function labelForTask( $id ) {
 		return wfMessage( 'translate-task-' . $id )->text();
@@ -87,16 +91,17 @@ abstract class TranslateTask {
 
 	/**
 	 * Get task identifier.
-	 * @return \string
+	 * @return string
 	 */
 	public function getId() {
 		return $this->id;
 	}
 
 	/**
-	 * Indicates whether the task itself will hand the full output page.
-	 * If false, the result is embedded in the normal results page.
-	 * @return \bool
+	 * Indicates whether the task itself will hand the full output page,
+	 * including headers. If false, the resulting html should be embedded
+	 * to the page of calling context.
+	 * @return bool
 	 */
 	public function plainOutput() {
 		return false;
@@ -108,12 +113,12 @@ abstract class TranslateTask {
 	protected $group;
 
 	/**
-	 * @var MessageCollection Options
+	 * @var MessageCollection
 	 */
 	protected $collection;
 
 	/**
-	 * @var TaskOptions Options
+	 * @var TaskOptions
 	 */
 	protected $options;
 
@@ -124,8 +129,8 @@ abstract class TranslateTask {
 
 	/**
 	 * Constructor.
-	 * @param $group \type{MessageGroup} Message group.
-	 * @param $options \type{TaskOptions} Options.
+	 * @param MessageGroup $group Message group.
+	 * @param TaskOptions $options Options.
 	 */
 	public final function init( MessageGroup $group, TaskOptions $options, IContextSource $context ) {
 		$this->group = $group;
@@ -135,7 +140,7 @@ abstract class TranslateTask {
 
 	/**
 	 * Outputs the results.
-	 * @return \string
+	 * @return string
 	 */
 	abstract protected function output();
 
@@ -147,7 +152,8 @@ abstract class TranslateTask {
 
 	/**
 	 * Executes the task with given options and outputs the results.
-	 * @return \string Html.
+	 * @return string Partial or full html.
+	 * @see plainOutput()
 	 */
 	public final function execute() {
 		$this->preinit();
@@ -175,8 +181,9 @@ abstract class TranslateTask {
 	}
 
 	/**
+	 * Determine whether this user can use this task.
 	 * Override this method if the task depends on user rights.
-	 * @return \string
+	 * @return string
 	 */
 	public function isAllowedFor( User $user ) {
 		return true;
@@ -184,7 +191,7 @@ abstract class TranslateTask {
 }
 
 /**
- * Lists all non-optional messages with translation if any.
+ * Lists all non-optional messages with translations if any.
  */
 class ViewMessagesTask extends TranslateTask {
 	protected $id = 'view';
@@ -209,7 +216,7 @@ class ViewMessagesTask extends TranslateTask {
 }
 
 /**
- * Basic class for review mode
+ * Basic task class for review mode.
  */
 class ReviewMessagesTask extends ViewMessagesTask {
 	protected $id = 'review';
@@ -230,7 +237,8 @@ class ReviewMessagesTask extends ViewMessagesTask {
 }
 
 /**
- * Lists untranslated non-optional messages.
+ * Lists untranslated non-optional messages. This is often good default
+ * task when translating.
  */
 class ViewUntranslatedTask extends ViewMessagesTask {
 	protected $id = 'untranslated';
@@ -326,7 +334,9 @@ class ReviewAllMessagesTask extends ReviewMessagesTask {
 	}
 }
 
-/// Lists all translations for accepting.
+/**
+ * Lists all translations the user can accept.
+ */
 class AcceptQueueMessagesTask extends ReviewMessagesTask {
 	protected $id = 'acceptqueue';
 
@@ -480,8 +490,8 @@ class TranslateTasks {
 
 	/**
 	 * Get task by id.
-	 * @param $id \string Task identifier.
-	 * @return \types{TranslateTask,Null} The task or null if no such task.
+	 * @param string $id Unique task identifier.
+	 * @return TranslateTask|null Null if no such task.
 	 */
 	public static function getTask( $id ) {
 		global $wgTranslateTasks;
