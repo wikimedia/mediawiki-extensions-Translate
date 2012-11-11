@@ -142,7 +142,7 @@ class PythonSingleFFS extends SimpleFFS {
 			$authorList .= "\t# Author: $author\n";
 		}
 
-		$section = "$authorList\t'$code' = {\n$block\t},";
+		$section = "$authorList\t'$code': {\n$block\t},";
 
 		// Store the written part, so that when next language is called,
 		// the new version will be used (instead of the old parsed version
