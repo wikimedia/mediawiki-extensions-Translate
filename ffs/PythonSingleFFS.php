@@ -5,114 +5,183 @@
  * @ingroup FFS
  */
 class PythonSingleFFS extends SimpleFFS {
-	private $fw = null;
-	static $data = null;
+	/**
+	 * To avoid parsing full files again and again when reading or exporting
+	 * multiple languages, keep cache of the sections of the latest active file.
+	 * @var array
+	 */
+	protected static $cache = array();
 
 	/**
-	 * @param $code
-	 * @return array
+	 * @param string $data Full file contents
+	 * @param string $filename Full path to file for debugging
+	 * @return string[] Sections indexed by language code, or 0 for header section
+	 * @throws MWException
 	 */
-	public function read( $code ) {
-		// Map codes
-		$code = $this->group->mapCode( $code );
+	protected function splitSections( $data, $filename = 'unknown' ) {
+		$data = SimpleFFS::fixNewLines( $data );
 
-		// TODO: Improve this code to not use static variables.
-		if ( !isset( self::$data[$this->group->getId()] ) ) {
-			/* N levels of escaping
-			 * - for PHP string
-			 * - for Python string
-			 * - for shell command
-			 * - and wfShellExec will wrap the whole command once more
-			 */
-			$filename = $this->group->getSourceFilePath( $code );
-			$filename = addcslashes( $filename, '\\"' );
-			$command = wfEscapeShellArg( "import simplejson as json; execfile(\"$filename\"); print json.dumps(msg)" );
-			$json = wfShellExec( "python -c $command" );
-			self::$data[$this->group->getId()] = FormatJson::decode( $json, true );
+		$splitter = 'msg = {';
+
+		$pos = strpos( $data, $splitter );
+		if ( $pos === false ) {
+			throw new MWException( "MWEFFS1: File $filename: splitter not found" );
 		}
 
-		if ( !isset( self::$data[$this->group->getId()][$code] ) ) {
+		$offset = $pos + strlen( $splitter );
+		$header = substr( $data, 0, $offset );
+
+		$pattern = '.*?},\n';
+		$regexp = "~$pattern~xsu";
+		$matches = array();
+		preg_match_all( $regexp, $data, $matches, PREG_SET_ORDER, $offset );
+
+		$sections = array();
+		$sections[] = $header;
+
+		foreach ( $matches as $data ) {
+			$pattern = "'([a-z-]+)'\s*:\s*{";
+			$regexp = "~$pattern~su";
+			$matches = array();
+			if ( !preg_match( $regexp, $data[0], $matches ) ) {
+				throw new MWException( "MWEFFS2: File $filename: malformed section: {$data[0]}" );
+			}
+			$code = $matches[1];
+			// Normalize number of newlines after each section
+			$sections[$code] = rtrim( $data[0] );
+		}
+
+		return $sections;
+	}
+
+	public function read( $code ) {
+		$filename = $this->group->getSourceFilePath( $code );
+		if ( !file_exists( $filename ) ) {
 			return false;
 		}
 
-		return array( 'MESSAGES' => self::$data[$this->group->getId()][$code] );
+		if ( isset( self::$cache[$filename]['parsed'][$code] ) ) {
+			return self::$cache[$filename]['parsed'][$code];
+		}
+
+		if ( !isset( self::$cache[$filename] ) ) {
+			// Clear the cache if the filename changes to reduce memory use
+			self::$cache = array();
+
+			$contents = file_get_contents( $filename );
+			self::$cache[$filename]['sections'] =
+				$this->splitSections( $contents, $filename );
+
+			self::$cache[$filename]['parsed'] = $this->parseFile();
+		}
+
+		if ( !isset( self::$cache[$filename]['parsed'][$code] ) ) {
+			return null;
+		}
+
+		return self::$cache[$filename]['parsed'][$code];
+	}
+
+	protected function parseFile() {
+		/* N levels of escaping
+		 * - for PHP string
+		 * - for Python string
+		 * - for shell command
+		 * - and wfShellExec will wrap the whole command once more
+		 */
+		$filename = $this->group->getSourceFilePath( 'mul' );
+		$filename = addcslashes( $filename, '\\"' );
+		$command = wfEscapeShellArg( "import simplejson as json; execfile(\"$filename\"); print json.dumps(msg)" );
+		$json = wfShellExec( "python -c $command" );
+
+		$parsed = FormatJson::decode( $json, true );
+		$sections = array();
+		foreach ( $parsed as $code => $messages ) {
+			$sections[$code] = array( 'MESSAGES' => $messages );
+		}
+
+		return $sections;
+	}
+
+	public function readFromVariable( $data ) {
+		throw new MWException( 'Not yet supported' );
 	}
 
 	/**
-	 * @param $collection MessageCollection
+	 * @param MessageCollection $collection
+	 * @return string
 	 */
-	public function write( MessageCollection $collection ) {
-		if ( $this->fw === null ) {
-			$sourceLanguage = $this->group->getSourceLanguage();
-			$outputFile = $this->writePath . '/' . $this->group->getTargetFilename( $sourceLanguage );
-			wfMkdirParents( dirname( $outputFile ), null, __METHOD__ );
-			$this->fw = fopen( $outputFile, 'w' );
-			$this->fw = fopen( $this->writePath . '/' . $this->group->getTargetFilename( $sourceLanguage ), 'w' );
-			fwrite( $this->fw, "# -*- coding: utf-8 -*-\nmsg = {\n" );
+	protected function writeReal( MessageCollection $collection ) {
+		$output = '';
+		$messages = array();
+		$mangler = $this->group->getMangler();
+		$code = $collection->getLanguage();
+
+		$block = $this->generateMessageBlock( $collection, $mangler );
+		if ( $block === '' ) {
+			return '';
 		}
 
-		// Not sure why this is needed, only continue if there are translations.
-		$collection->loadTranslations();
-		$ok = false;
-		foreach ( $collection as $messages ) {
-			if ( $messages->translation() != '' ) {
-				$ok = true;
+		// Ugly code, relies on side effects
+		$this->read( 'mul' );
+		$filename = $this->group->getSourceFilePath( $code );
+		$cache = &self::$cache[$filename];
+
+		// Generating authors
+		if ( isset( $cache['sections'][$code] ) ) {
+			// More premature optimization
+			$fromFile = self::parseAuthorsFromString( $cache['sections'][$code] );
+			$collection->addCollectionAuthors( $fromFile );
+		}
+
+		$authors = $collection->getAuthors();
+		$authors = $this->filterAuthors( $authors, $code );
+
+		$authorList = '';
+		foreach ( $authors as $author ) {
+			$authorList .= "\t# Author: $author\n";
+		}
+
+		$section = "$authorList\t'$code' = {\n$block\t},";
+
+		// Store the written part, so that when next language is called,
+		// the new version will be used (instead of the old parsed version
+		$cache['sections'][$code] = $section;
+
+		// Make a copy we can alter
+		$sections =  $cache['sections'];
+		$priority = array();
+
+		global $wgTranslateDocumentationLanguageCode;
+		$codes = array(
+			0, // File header
+			$this->group->getSourceLanguage(),
+			$wgTranslateDocumentationLanguageCode,
+		);
+		foreach ( $codes as $pcode ) {
+			if ( isset( $sections[$pcode] ) ) {
+				$priority[] = $sections[$pcode];
+				unset( $sections[$pcode] );
 			}
 		}
 
-		if ( !$ok ) {
-			return;
-		}
-
-		$authors = $this->doAuthors( $collection );
-		if ( $authors != '' ) {
-			fwrite( $this->fw, "$authors" );
-		}
-
-		$code = $this->group->mapCode( $collection->code );
-		fwrite( $this->fw, "\t'{$code}': {\n" );
-		fwrite( $this->fw, $this->writeBlock( $collection ) );
-		fwrite( $this->fw, "\t},\n" );
+		ksort( $sections );
+		return implode( "\n", $priority ) . implode( "\n", $sections ) . "\n};\n";
 	}
 
-	/**
-	 * @param $collection MessageCollection
-	 * @return string
-	 */
-	public function writeIntoVariable( MessageCollection $collection ) {
-		return <<<PHP
-# -*- coding: utf-8 -*-
-msg = {
-{$this->doAuthors($collection)}\t'{$collection->code}': {
-{$this->writeBlock( $collection )}\t}
-}
-PHP;
-	}
-
-	/**
-	 * @param $collection MessageCollection
-	 * @return string
-	 */
-	protected function writeBlock( MessageCollection $collection ) {
+	protected function generateMessageBlock( MessageCollection $collection, StringMatcher $mangler ) {
 		$block = '';
-		$messages = array();
 
 		foreach ( $collection as $message ) {
-			if ( $message->translation() == '' ) {
+			$translation = $message->translation();
+			if ( $translation === null ) {
 				continue;
 			}
 
-			$translation = str_replace( '\\', '\\\\', $message->translation() );
-			$translation = str_replace( '\'', '\\\'', $translation );
-			$translation = str_replace( "\n", '\n', $translation );
+			$key = addcslashes( $message->key(), "\n'\\" );
+			$translation = addcslashes( $translation, "\n'\\" );
 			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 
-			$messages[$message->key()] = $translation;
-		}
-
-		ksort( $messages );
-
-		foreach ( $messages as $key => $translation ) {
 			$block .= "\t\t'{$key}': u'{$translation}',\n";
 		}
 
@@ -120,43 +189,13 @@ PHP;
 	}
 
 	/**
-	 * @param $collection MessageCollection
-	 * @return string
+	 * Scans for author comments in the string.
+	 * @param string $string String containing the comments of a section
+	 * @return string[] List of authors
 	 */
-	protected function doAuthors( MessageCollection $collection ) {
-		$output = '';
-
-		// Read authors.
-		$fr = fopen( $this->group->getSourceFilePath( $collection->code ), 'r' );
-		$authors = array();
-
-		while ( !feof( $fr ) ) {
-			$line = fgets( $fr );
-
-			if ( strpos( $line, "\t# Author:" ) === 0 ) {
-				$authors[] = trim( substr( $line, strlen( "\t# Author: " ) ) );
-			} elseif ( $line === "\t'{$collection->code}': {\n" ) {
-				break;
-			} else {
-				$authors = array();
-			}
-		}
-
-		$authors2 = $collection->getAuthors();
-		$authors2 = $this->filterAuthors( $authors2, $collection->code );
-		$authors = array_unique( array_merge( $authors, $authors2 ) );
-
-		foreach ( $authors as $author ) {
-			$output .= "\t# Author: $author\n";
-		}
-
-		return $output;
+	protected static function parseAuthorsFromString( $string ) {
+		preg_match_all( '/# Author: (.*)/', $string, $m );
+		return $m[1];
 	}
 
-	public function __destruct() {
-		if ( $this->fw !== null ) {
-			fwrite( $this->fw, "}" );
-			fclose( $this->fw );
-		}
-	}
 }
