@@ -1940,15 +1940,14 @@ $messages['ja'] = array(
 	'translate-fs-pagetitle' => '開始準備ウィザード - $1',
 	'translate-fs-signup-title' => '利用者登録',
 	'translate-fs-settings-title' => '個人設定の構成',
-	'translate-fs-userpage-title' => '自分の利用者ページを作成',
+	'translate-fs-userpage-title' => '自分の利用者ページの作成',
 	'translate-fs-permissions-title' => '翻訳者権限の申請',
 	'translate-fs-target-title' => '翻訳を始めましょう!',
-	'translate-fs-email-title' => 'あなたのメールアドレスを確認',
+	'translate-fs-email-title' => '自分のメールアドレスの確認',
 	'translate-fs-intro' => '{{SITENAME}} 開始準備ウィザードへようこそ。これから翻訳者になるための手順について1つずつ案内していきます。それらを終えると、あなたは {{SITENAME}} でサポートしているすべてのプロジェクトのインターフェイスメッセージを翻訳できるようになります。',
 	'translate-fs-selectlanguage' => '言語を選択',
 	'translate-fs-settings-planguage' => '第一言語:',
-	'translate-fs-settings-planguage-desc' => '第一言語は、このウィキのインターフェイスで使用する言語と、
-既定の翻訳先言語を兼ねます。',
+	'translate-fs-settings-planguage-desc' => '第一言語は、このウィキのインターフェイスで使用する言語と、既定の翻訳先言語を兼ねます。',
 	'translate-fs-settings-slanguage' => '補助言語$1:',
 	'translate-fs-settings-slanguage-desc' => '翻訳編集画面に、メッセージに対する他の言語への翻訳を表示できます。
 表示させたい言語があれば、ここで選択してください。',
@@ -1970,7 +1969,7 @@ $messages['ja'] = array(
 	'translate-fs-permissions-pending' => '申請は[[$1]]に送信され、サイトのスタッフの誰かが早急に確認します。
 もしメールアドレスを設定していれば、メール通知によって結果をすぐに知ることができます。',
 	'translate-fs-permissions-submit' => '申請を送信',
-	'translate-fs-target-text' => "お疲れ様でした！
+	'translate-fs-target-text' => "お疲れ様でした!
 あなたが翻訳を開始する準備が整いました。
 
 まだ慣れないことや分かりにくいことがあっても、心配することはありません。
@@ -2214,6 +2213,7 @@ $messages['ku-latn'] = array(
 );
 
 /** Luxembourgish (Lëtzebuergesch)
+ * @author Les Meloures
  * @author Robby
  */
 $messages['lb'] = array(
@@ -2266,7 +2266,7 @@ Wann et eppes gëtt vun deem Dir mengt datt Dir e maache kënnt, awer Dir fannt 
 Dir kënnt och aner Iwwersetzer vun der selwechter Sprooch op der [[Portal_talk:\$1|Diskussiounssäit]] vun [[Portal:\$1|Ärem Sproocheportal]] kontaktéieren. Wann dir et net scho gemaach hutt, [[Special:Preferences|ännert d'Sprooch vum Interface an déi Sprooch an déi Dir iwwersetze wëllt]], esou datt d'Wiki Iech déi wichtegst Linke weise kann.",
 	'translate-fs-email-text' => 'Gitt w.e.g. Är E-Mailadress an [[Special:Preferences|Ären Astellungen]] un a confirméiert se vun der E-Mail aus déi Dir geschéckt kritt.
 
-Dëst erlaabte et anere Benotzer fir Iech per Mail ze kontaktéieren.
+Dat erlaabt et anere Benotzer fir Iech per Mail ze kontaktéieren.
 Dir kritt och Newsletteren awer héchstens eng pro Mount.
 Wann Dir keng Newslettere kréie wëllt, da kënnt Dir dat am Tab "{{int:prefs-personal}}"  vun Ären [[Special:Preferences|Astellungen]] ausschalten.',
 );
@@ -2814,6 +2814,7 @@ $messages['pms'] = array(
 	'firststeps' => 'Prim pass',
 	'firststeps-desc' => "[[Special:FirstSteps|Pàgina special]] për anandié j'utent an sna wiki dovrand l'estension Translate",
 	'translate-fs-pagetitle-done' => ' - fàit!',
+	'translate-fs-pagetitle-pending' => '- pëndent',
 	'translate-fs-pagetitle' => 'Guida për parte - $1',
 	'translate-fs-signup-title' => "Ch'as anscriva",
 	'translate-fs-settings-title' => 'Configura ij tò gust',
@@ -2824,8 +2825,27 @@ $messages['pms'] = array(
 	'translate-fs-intro' => "Bin ëvnù an sl'assistent dij prim pass ëd {{SITENAME}}.
 A sarà guidà pass për pass ant ël process dë vnì un tradutor.
 A la fin a sarà bon a volté ij ''mëssagi dj'antërfasse'' ëd tùit ij proget gestì da {{SITENAME}}.",
+	'translate-fs-selectlanguage' => 'Sern na lenga',
+	'translate-fs-settings-planguage' => 'Lenga primaria:',
+	'translate-fs-settings-planguage-desc' => "La lenga primaria a funsion-a com toa lenga d'antërfacia dzora a sta wiki
+e com lenga obietiv predefinìa për le tradussion.",
+	'translate-fs-settings-slanguage' => "Lenga dl'assistent $1:",
+	'translate-fs-settings-slanguage-desc' => "A l'é possìbil smon-e dle tradussion ëd mëssagi an àutre lenghe ant l'editor ëd tradussion. Ambelessì it peule serne che lenga, s'it veule, ch'at piaserìa vëdde.",
+	'translate-fs-settings-submit' => 'Salvé ij sò gust',
+	'translate-fs-userpage-level-N' => 'Mi i son un parlant nativ ëd',
+	'translate-fs-userpage-level-5' => 'Mi i son un tradutor professional ëd',
+	'translate-fs-userpage-level-4' => 'Mi i lo conòsso com un parlant nativ',
+	'translate-fs-userpage-level-3' => "Mi i l'heu na bon-a conossensa ëd",
+	'translate-fs-userpage-level-2' => "Mi i l'heu na conossensa moderà ëd",
+	'translate-fs-userpage-level-1' => 'Mi i conòsso un pòch',
+	'translate-fs-userpage-help' => "Për piasì ìndica toe conossense dla lenga e dis-ne quaicòs a propòsit ëd ti. S'it conòsse pi che sinch lenghe it peule giontene ëd pi pi tard.",
 	'translate-fs-userpage-submit' => 'Crea mia pàgina utent',
 	'translate-fs-userpage-done' => "Bin fàit! Adess it l'has na pàgina utent.",
+	'translate-fs-permissions-planguage' => 'Lenga primaria:',
+	'translate-fs-permissions-help' => "Adess it deuve buté n'arcesta për esse giontà a la partìa ëd tradutor.
+Selession-a la lenga primaria ch'it të stas andand a volté.
+
+It peule massioné autre lenghe e autr coment ant la forma sota.",
 	'translate-fs-target-text' => "Congratulassion!
 Adess a peul ancaminé a volté!
 

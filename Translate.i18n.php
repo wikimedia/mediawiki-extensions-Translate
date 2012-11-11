@@ -5183,6 +5183,8 @@ Statusserne er defineret i opsætningsvariablen $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Seneste oversættelser',
 	'translate-dynagroup-recent-desc' => 'Denne meddelelsesgruppe viser alle nylige oversættelser til dette sprog.
 Primært nyttig til korrekturlæsningsopgaver.',
+	'translate-dynagroup-additions-label' => 'De seneste tilføjelser',
+	'translate-dynagroup-additions-desc' => 'Denne meddelelsesgruppe viser nye og ændrede meddelelser.',
 	'translate-dynagroup-by' => 'Oversat af {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Oversat af {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Sidste ændring af {{GENDER:$1|$1}}',
@@ -5538,7 +5540,8 @@ Die Status werden mit der Konfigurationsvariablen <code lang="en">$wgTranslateWo
 	'translate-dynagroup-recent-label' => 'Aktuelle Übersetzungen',
 	'translate-dynagroup-recent-desc' => 'Diese Nachrichtengruppe zeigt alle aktuellen Übersetzungen in diese Sprache an.
 Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
-	'translate-dynagroup-additions-desc' => 'Diese Nachrichtengruppe zeigt neue und geänderte Nachrichten.',
+	'translate-dynagroup-additions-label' => 'Aktuelle Ergänzungen',
+	'translate-dynagroup-additions-desc' => 'Diese Nachrichtengruppe zeigt neue und geänderte Nachrichten an.',
 	'translate-dynagroup-by' => 'Übersetzung von {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Übersetzung von {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Letzte Änderung von {{GENDER:$1|$1}}',
@@ -6072,6 +6075,8 @@ Statuse definěruju se w konfiguraciskej wariabli $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Nejnowše pśełožki',
 	'translate-dynagroup-recent-desc' => 'Toś ta zdźěleńska kupka pokazujo wšykne aktualne pśełožki do toś teje rěcy.
 Jo nejwužytnjej za korigěrowańske nadawki.',
+	'translate-dynagroup-additions-label' => 'Aktualne dodanki',
+	'translate-dynagroup-additions-desc' => 'Toś ta powěsćowa kupka pokazujo nowe a změnjone pówěźeńki.',
 	'translate-dynagroup-by' => 'Pśełožk wót {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Pśełožk wót {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Nejnowša změna wót {{GENDER:$1|$1}}',
@@ -9970,6 +9975,7 @@ $messages['haw'] = array(
  * @author Ofrahod
  * @author Rotemliss
  * @author YaronSh
+ * @author חיים
  * @author ערן
  */
 $messages['he'] = array(
@@ -10299,6 +10305,7 @@ $1',
 	'translate-dynagroup-recent-label' => 'תרגומים אחרונים',
 	'translate-dynagroup-recent-desc' => 'קבוצת ההודעות הזאת מציגה את כל התרגומים האחרונים לשפה הזאת.
 זה שימושי בעיקר להגהה.',
+	'translate-dynagroup-additions-label' => 'תוספות אחרונות',
 	'translate-dynagroup-by' => '{{GENDER:$1|תרגם|תרגמה}}',
 	'translate-dynagroup-byc' => '{{GENDER:$1|תרגם|תרגמה}} ($2)',
 	'translate-dynagroup-last' => 'שונה לאחרונה על־ידי {{GENDER:$1|$1}}',
@@ -10962,6 +10969,8 @@ Statusy definuja so w konfiguraciskej wariabli $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Najnowše přełožki',
 	'translate-dynagroup-recent-desc' => 'Tuta zdźělenska skupina pokazuje wšě aktualne přełožki do tuteje rěče.
 Je najwužitnišo za korigowanske nadawki.',
+	'translate-dynagroup-additions-label' => 'Aktualne přidawki',
+	'translate-dynagroup-additions-desc' => 'Tuta zdźělenska skupina pokazuje nowe a změnjene zdźělenki.',
 	'translate-dynagroup-by' => 'Přełožk wot {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Přełožk wot {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Najnowša změna wot {{GENDER:$1|$1}}',
@@ -13095,8 +13104,10 @@ $1',
 	'translate-workflowgroup-desc' => 'このメッセージ群では翻訳作業の進捗状況を示します。
 進捗状況は、設定変数 $wgTranslateWorkflowStates で定義されています。',
 	'translate-dynagroup-recent-label' => '最近の翻訳',
-	'translate-dynagroup-recent-desc' => 'このメッセージ群はこの言語へのすべての最近の翻訳を表示しています。
+	'translate-dynagroup-recent-desc' => 'このメッセージ群ではこの言語への最近の翻訳をすべて表示します。
 校正作業に便利です。',
+	'translate-dynagroup-additions-label' => '最近の追加',
+	'translate-dynagroup-additions-desc' => 'このメッセージ群では新たに追加または変更されたメッセージを表示します。',
 	'translate-dynagroup-by' => '{{GENDER:$1|$1}}による翻訳',
 	'translate-dynagroup-byc' => '{{GENDER:$1|$1}}による翻訳 ($2)',
 	'translate-dynagroup-last' => '{{GENDER:$1|$1}}による最終更新',
@@ -14660,6 +14671,8 @@ $1',
 	'translate-dynagroup-recent-label' => '최근 번역',
 	'translate-dynagroup-recent-desc' => '이 메시지 그룹은 이 언어로의 최근 번역을 보여줍니다.
 교정 작업에 아주 유용합니다.',
+	'translate-dynagroup-additions-label' => '최근 추가',
+	'translate-dynagroup-additions-desc' => '이 메시지 그룹은 새 메시지와 바뀐 메시지를 보여줍니다.',
 	'translate-dynagroup-by' => '{{GENDER:$1|$1}}에 의해 번역',
 	'translate-dynagroup-byc' => '{{GENDER:$1|$1}} ($2)에 의해 번역',
 	'translate-dynagroup-last' => '{{GENDER:$1|$1}}에 의해 마지막으로 바뀜',
@@ -15440,6 +15453,8 @@ Detailler: $1',
 	'translate-dynagroup-recent-label' => 'Rezent Iwwersetzungen',
 	'translate-dynagroup-recent-desc' => "Dëse Grupp vu Message weist all rezent Iwwersetzungen an dës Sprooch.
 Dëst ass ganz nëtzlech fir d'Iwwerliesen.",
+	'translate-dynagroup-additions-label' => 'Rezent nei Message',
+	'translate-dynagroup-additions-desc' => 'Dëse Grupp vu Message weist nei oder geännert Messagen.',
 	'translate-dynagroup-by' => 'Iwwersetzung vum {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Iwwersetzung vum {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Lescht Ännerung vum {{GENDER:$1|$1}}',
@@ -16401,6 +16416,8 @@ $1',
 	'translate-dynagroup-recent-label' => 'Скорешни преводи',
 	'translate-dynagroup-recent-desc' => 'Оваа група пораки ги прикажува сите скорешни преводи на овој јазик.
 Ова е најкорисно при вршење на задачите за коректура.',
+	'translate-dynagroup-additions-label' => 'Неодамна додадени',
+	'translate-dynagroup-additions-desc' => 'Оваа група пораки прикажува нови и изменети пораки',
 	'translate-dynagroup-by' => 'Преводот го изврши {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Преводот го изврши {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Последната промена ја изврши {{GENDER:$1|$1}}',
@@ -19925,6 +19942,7 @@ Detaj: $1",
 	'translate-workflow-set-do' => 'Ampòsta',
 	'translate-workflow-set-doing' => 'Ativassion...',
 	'translate-workflow-set-done' => 'Ativà!',
+	'translate-workflow-set-error-alreadyset' => "Lë stat ciamà a l'é idéntich a lë stat corent",
 	'translate-workflow-autocreated-summary' => 'Creassion automàtica ëd la pàgina për lë stat dël process ëd travaj $1',
 	'translate-stats-workflow' => 'Stat',
 	'translate-workflowgroup-label' => 'Stat dël process ëd travaj',
@@ -19933,6 +19951,8 @@ Jë stat a son definì ant la variàbil ëd configurassion $wgTranslateWorkflowS
 	'translate-dynagroup-recent-label' => 'Tradussion recente',
 	'translate-dynagroup-recent-desc' => 'Sta partìa ëd mëssagi a smon tute le tradussion recente an costa lenga.
 A ven dzortut a taj con ij travaj ëd revision.',
+	'translate-dynagroup-additions-label' => 'Gionte ressente',
+	'translate-dynagroup-additions-desc' => 'Sta partìa ëd mësaagi a smon mëssagi neuv e cangià.',
 	'translate-dynagroup-by' => 'Tradussion fàite da {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Tradussion fàite da {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Ùltime modìfiche ëd {{GENDER:$1|$1}}',
@@ -25847,6 +25867,31 @@ $messages['tt-cyrl'] = array(
 	'translate-js-skip' => 'Киләсе биткә күчү',
 	'translate-js-history' => 'Тәрҗемә тарихы',
 	'translate-js-support' => 'Сорау бирү',
+);
+
+/** Central Atlas Tamazight (ⵜⴰⵎⴰⵣⵉⵖⵜ)
+ * @author Tifinaghes
+ */
+$messages['tzm'] = array(
+	'translate' => 'ⵜⴰⵙⵓⵖⵍⵜ',
+	'translate-page-language' => 'ⵜⵓⵜⵍⴰⵢⵜ',
+	'translate-rc-translation-filter-no' => 'ⴰⵡⵔ ⵜⵙⴽⵔⴷ ⴰⵎⵢⴰ',
+	'translate-stats-users' => 'ⵉⵎⵙⵓⵖⵍⵏ',
+	'translate-stats-registrations' => 'ⵉⵣⵎⵎⴻⵎⵏ',
+	'translate-statsf-scale-months' => 'ⴰⵢⵢⵓⵔⵏ',
+	'translate-statsf-scale-weeks' => 'ⵉⵎⴰⵍⴰⵙⵙⵏ',
+	'translate-statsf-scale-days' => 'ⵓⵙⵙⴰⵏ',
+	'translate-statsf-scale-hours' => 'ⵜⵉⵙⵔⴰⴳⵉⵏ',
+	'translate-sidebar-alltrans' => 'ⵙ ⵜⵓⵜⵍⴰⵢⵉⵏ ⵢⴰⴹⵏ (ⵏⵏⵉⴹⵏ)',
+	'translations' => 'ⵎⴰⵕⵕⴰ ⵜⵉⵙⵓⵖⴰⵍⵉⵏ',
+	'translate-translations-project' => 'ⴰⵙⵏⴼⴰⵔ:',
+	'translate-language' => 'ⵜⵓⵜⵍⴰⵢⵜ',
+	'translate-total' => 'ⵜⵉⴱⵔⴰⵜⵉⵏ',
+	'translate-ls-column-group' => 'ⵜⴰⴱⵔⴰⵜ ⵏ ⵜⵔⴰⴱⴱⵓⵜ',
+	'translate-mgs-group' => 'ⵜⴰⴱⵔⴰⵜ ⵏ ⵜⵔⴰⴱⴱⵓⵜ:',
+	'translate-mgs-column-language' => 'ⵜⵓⵜⵍⴰⵢⵜ',
+	'translate-save' => 'ⵣⵎⵎⴻⵎ ($1)',
+	'translate-manage-import-new' => 'ⵜⴰⴱⵔⴰⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ $1',
 );
 
 /** Uyghur (Arabic script) (ئۇيغۇرچە)
