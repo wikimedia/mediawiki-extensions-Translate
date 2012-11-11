@@ -98,7 +98,7 @@ PHP;
 		$messages = array();
 
 		foreach ( $collection as $message ) {
-			if ( $message->translation() == '' ) {
+			if ( $message->translation() === null ) {
 				continue;
 			}
 
