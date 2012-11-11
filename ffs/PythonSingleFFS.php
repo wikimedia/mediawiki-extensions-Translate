@@ -98,16 +98,16 @@ PHP;
 		$messages = array();
 
 		foreach ( $collection as $message ) {
-			if ( $message->translation() === null ) {
+			$translation = $message->translation();
+			if ( $translation === null ) {
 				continue;
 			}
 
-			$translation = str_replace( '\\', '\\\\', $message->translation() );
-			$translation = str_replace( '\'', '\\\'', $translation );
-			$translation = str_replace( "\n", '\n', $translation );
+			$translation = addcslashes( $translation, "\n'\\" );
 			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 
-			$messages[$message->key()] = $translation;
+			$key = addcslashes( $message->key(), "\n'\\" );
+			$messages[$keys] = $translation;
 		}
 
 		ksort( $messages );
