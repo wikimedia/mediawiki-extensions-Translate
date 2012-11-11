@@ -270,15 +270,17 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 			$count++;
 			$this->printChangeLine( $base, $old, $target );
 		}
-
-		$out->wrapWikiMsg( '=== $1 ===', 'pt-movepage-list-section' );
+		
 		$sectionPages = $this->getSectionPages();
+		$count = count($sectionPages);
+		$out->wrapWikiMsg( '=== $1 ===', array('pt-movepage-list-section', $count ));
+		
 		foreach ( $sectionPages as $old ) {
 			$count++;
 			$this->printChangeLine( $base, $old, $target );
 		}
 
-		$out->wrapWikiMsg( '=== $1 ===', 'pt-movepage-list-other' );
+		$out->wrapWikiMsg( '=== $1 ===', array('pt-movepage-list-other',$count ));
 		$subpages = $this->getSubpages();
 		foreach ( $subpages as $old ) {
 			if ( TranslatablePage::isTranslationPage( $old ) ) continue;
