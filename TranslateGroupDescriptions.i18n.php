@@ -64,9 +64,10 @@ $messages['en'] = array(
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] is a service showing routes for hiking, cycling, mountain biking and inline skating around the world. It uses the GNU GPL license',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] is able to quickly find the authors of a part of a page in a Wikimedia wiki',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] delivers an offline, text-only version of Wikipedia on a mobile device',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wikipedia',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wiktionary',
-	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] is a mobile application for contributing to the [[:meta:Wiki Loves Monuments|Wiki Loves Monuments project]]',
+	'translate-group-desc-wikimedia-mobile' => 'Aggregated message group containing mobile applications for Wikimedia projects',
+	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wikipedia',
+	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wiktionary',
+	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] is a mobile application for contributing to the [[:meta:Wiki Loves Monuments|Wiki Loves Monuments project]]',
 );
 
 /** Message documentation (Message documentation)
