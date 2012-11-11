@@ -264,22 +264,27 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$out->wrapWikiMsg( '== $1 ==', 'pt-movepage-list-pages' );
 		$this->printChangeLine( $base, $this->oldTitle, $target );
 
-		$out->wrapWikiMsg( '=== $1 ===', 'pt-movepage-list-translation' );
 		$translationPages = $this->getTranslationPages();
+		$countTranslationPages = count( $translationPages );
+		$out->wrapWikiMsg( '=== $1 ===', array( 'pt-movepage-list-translation', $countTranslationPages ) );
 		foreach ( $translationPages as $old ) {
 			$count++;
 			$this->printChangeLine( $base, $old, $target );
 		}
 
-		$out->wrapWikiMsg( '=== $1 ===', 'pt-movepage-list-section' );
 		$sectionPages = $this->getSectionPages();
+		$countSectionPages = count( $sectionPages );
+		$out->wrapWikiMsg( '=== $1 ===', array( 'pt-movepage-list-section', $countSectionPages ) );
+
 		foreach ( $sectionPages as $old ) {
 			$count++;
 			$this->printChangeLine( $base, $old, $target );
 		}
 
-		$out->wrapWikiMsg( '=== $1 ===', 'pt-movepage-list-other' );
 		$subpages = $this->getSubpages();
+		$countSubPages = count( $subpages );
+		$out->wrapWikiMsg( '=== $1 ===', array( 'pt-movepage-list-other', $countSubPages ) );
+
 		foreach ( $subpages as $old ) {
 			if ( TranslatablePage::isTranslationPage( $old ) ) continue;
 			if ( $this->moveSubpages ) { $count++; }

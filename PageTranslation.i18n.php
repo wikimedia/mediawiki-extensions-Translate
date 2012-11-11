@@ -167,9 +167,9 @@ Translation unit text: <pre>$1</pre>',
 	'pt-movepage-block-subpage-invalid' => 'The target subpage title for "[[:$1]]" would be invalid (too long?).',
 
 	'pt-movepage-list-pages' => 'List of pages to move',
-	'pt-movepage-list-translation' => 'Translation pages',
-	'pt-movepage-list-section' => 'Translation unit pages',
-	'pt-movepage-list-other' => 'Other subpages',
+	'pt-movepage-list-translation' => 'Translation {{PLURAL:$1|page|pages}}',
+	'pt-movepage-list-section' => 'Translation unit {{PLURAL:$1|page|pages}}',
+	'pt-movepage-list-other' => 'Other sub{{PLURAL:$1|page|pages}}',
 	'pt-movepage-list-count' => 'In total $1 {{PLURAL:$1|page|pages}} to move.',
 
 	'pt-movepage-legend' => 'Move translatable page',
