@@ -42,6 +42,10 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			$this->dieUsageMsg( array( 'missingparam', 'mcgroup' ) );
 		}
 
+		if ( MessageGroups::isDynamic( $group ) ) {
+			$group->setLanguage( $params['language'] );
+		}
+
 		$messages = $group->initCollection( $params['language'] );
 		$messages->setInFile( $group->load( $params['language'] ) );
 
