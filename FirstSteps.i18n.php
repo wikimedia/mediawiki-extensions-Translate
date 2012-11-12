@@ -2814,7 +2814,7 @@ $messages['pms'] = array(
 	'firststeps' => 'Prim pass',
 	'firststeps-desc' => "[[Special:FirstSteps|Pàgina special]] për anandié j'utent an sna wiki dovrand l'estension Translate",
 	'translate-fs-pagetitle-done' => ' - fàit!',
-	'translate-fs-pagetitle-pending' => '- pëndent',
+	'translate-fs-pagetitle-pending' => '- an cors',
 	'translate-fs-pagetitle' => 'Guida për parte - $1',
 	'translate-fs-signup-title' => "Ch'as anscriva",
 	'translate-fs-settings-title' => 'Configura ij tò gust',
@@ -2830,7 +2830,8 @@ A la fin a sarà bon a volté ij ''mëssagi dj'antërfasse'' ëd tùit ij proget
 	'translate-fs-settings-planguage-desc' => "La lenga primaria a funsion-a com toa lenga d'antërfacia dzora a sta wiki
 e com lenga obietiv predefinìa për le tradussion.",
 	'translate-fs-settings-slanguage' => "Lenga dl'assistent $1:",
-	'translate-fs-settings-slanguage-desc' => "A l'é possìbil smon-e dle tradussion ëd mëssagi an àutre lenghe ant l'editor ëd tradussion. Ambelessì it peule serne che lenga, s'it veule, ch'at piaserìa vëdde.",
+	'translate-fs-settings-slanguage-desc' => "A l'é possìbil smon-e dle tradussion ëd mëssagi an d'àutre lenghe ant l'editor ëd tradussion.
+Ambelessì chiel a peul serne che lenghe, s'a-i na j'é, ch'a-j piaserìa vëdde.",
 	'translate-fs-settings-submit' => 'Salvé ij sò gust',
 	'translate-fs-userpage-level-N' => 'Mi i son un parlant nativ ëd',
 	'translate-fs-userpage-level-5' => 'Mi i son un tradutor professional ëd',
@@ -2842,10 +2843,10 @@ e com lenga obietiv predefinìa për le tradussion.",
 	'translate-fs-userpage-submit' => 'Crea mia pàgina utent',
 	'translate-fs-userpage-done' => "Bin fàit! Adess it l'has na pàgina utent.",
 	'translate-fs-permissions-planguage' => 'Lenga primaria:',
-	'translate-fs-permissions-help' => "Adess it deuve buté n'arcesta për esse giontà a la partìa ëd tradutor.
-Selession-a la lenga primaria ch'it të stas andand a volté.
+	'translate-fs-permissions-help' => "Adess a dev fé n'arcesta për esse giontà a la partìa dij tradutor.
+Ch'a selession-a la lenga prinsipal ant la qual a veul volté.
 
-It peule massioné autre lenghe e autr coment ant la forma sota.",
+A peul massioné d'àutre lenghe e d'àutre armarche ant la zòna ëd test sì-sota.",
 	'translate-fs-target-text' => "Congratulassion!
 Adess a peul ancaminé a volté!
 
