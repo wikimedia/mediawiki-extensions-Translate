@@ -2317,6 +2317,8 @@ Los estaos se definen na variable de configuración $wgTranslateWorkflowStates.'
 	'translate-dynagroup-recent-label' => 'Traducciones recientes',
 	'translate-dynagroup-recent-desc' => 'Esti grupu de mensaxes amuesa toles traducciones más nueves nesta llingua.
 Ye enforma afayadizo pa les xeres de correición.',
+	'translate-dynagroup-additions-label' => 'Novedaes',
+	'translate-dynagroup-additions-desc' => 'Esti grupu de mensaxes amuesa los mensaxes nuevos y camudaos.',
 	'translate-dynagroup-by' => 'Traducción fecha por {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Traducción fecha por {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Caberu cambiu fechu por {{GENDER:$1|$1}}',
@@ -9410,6 +9412,8 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'translate-dynagroup-recent-label' => 'Traducións recentes',
 	'translate-dynagroup-recent-desc' => 'Este grupo de mensaxes mostra todas as traducións recentes feitas nesta lingua.
 É moi útil para as tarefas de corrección.',
+	'translate-dynagroup-additions-label' => 'Adicións recentes',
+	'translate-dynagroup-additions-desc' => 'Este grupo de mensaxes mostra as mensaxes novas e modificadas.',
 	'translate-dynagroup-by' => 'Tradución feita por {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Tradución feita por {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Última modificación feita por {{GENDER:$1|$1}}',
@@ -20888,6 +20892,7 @@ Sche vus savais nua e co che quai messadi vegn duvrà, pudais vus gidar auters t
 );
 
 /** Romanian (română)
+ * @author AdiJapan
  * @author Danutz
  * @author Firilacroco
  * @author KlaudiuMihaila
@@ -21079,7 +21084,7 @@ Toate valorile au limite superioare și inferioare.',
 	'translate-percentage-fuzzy' => 'Învechite',
 	'translate-nothing-to-do' => 'Se pare că toate traducerile posibile au fost efectuate.
 Sunteți încurajat să revizuiți mesaje prin metoda [[Special:Translate|{{int:translate}}]].',
-	'translate-languagestats-overall' => 'Toate grupurile de mesaje laolaltă',
+	'translate-languagestats-overall' => 'Toate grupurile de mesaje împreună',
 	'translate-ls-submit' => 'Afișează statisticile',
 	'translate-ls-column-group' => 'Grup de mesaje',
 	'translate-mgs-pagename' => 'Statistici pentru grupul de mesaje',
@@ -24371,7 +24376,7 @@ $messages['sw'] = array(
 	'languagestats-summary' => 'Ukurasa huu unaonyesha takwimu za kutafsiri kwa ajili ya vikundi vya jumbe vya lugha fulani.',
 	'languagestats-stats-for' => 'Takwimu za fasiri ya $1 ($2).',
 	'languagestats-recenttranslations' => 'fasiri za hivi karibuni',
-	'translate-language-code' => 'Kodi ya lugha',
+	'translate-language-code' => 'Msimbo wa lugha',
 	'translate-language-code-field-name' => 'Msimbo wa lugha:',
 	'translate-suppress-complete' => 'Isionyeshwe vikundi vya jumbe zilizotafsiriwa zote',
 	'translate-language' => 'Lugha',
