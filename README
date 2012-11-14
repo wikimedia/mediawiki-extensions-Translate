@@ -4,25 +4,25 @@ See http://www.gnu.org/licenses/gpl2.html
 == Installation ==
 For very very quick start add the following to LocalSettings.php:
 
-include("$IP/extensions/Translate/Translate.php");
-$wgTranslateEC = array_keys($wgTranslateAC); // All modules
-$wgTranslateFuzzyBotName = 'FuzzyBot';
-$wgGroupPermissions['Translators']['translate'] = true;
-
-Make sure you have configured $wgCacheDirectory properly.
+require( "$IP/extensions/Translate/Translate.php" );
+$wgEnablePageTranslation = true;
+$wgGroupPermissions['user']['translate'] = true;
+$wgGroupPermissions['user']['translate-messagereview'] = true;
+$wgGroupPermissions['sysop']['pagetranslation'] = true;
 
 More documenation is at
- http://translatewiki.net/wiki/Translating:Documentation#Documentation_for_system_administrators
+ https://www.mediawiki.org/wiki/Help:Extension:Translate/Configuration
 
 == Contributing ==
 * Translations? Go to https://translatewiki.net and sign up.
 * Code? File format handlers? New message groups? Graphics? Suggestions?
-* Bug reports? Please start a thread at http://translatewiki.net/wiki/Support,
+  Bug reports? Please start a thread at http://translatewiki.net/wiki/Support,
   report a bug in https://bugzilla.wikimedia.org or join us at #mediawiki-i18n
   and let us know what you have in mind.
 
-Some known bugs and feature requests are collected at:
- https://translatewiki.net/wiki/Issues_and_features
+Known bugs and feature requests are collected at:
+ https://translatewiki.net/wiki/Issues_and_features and
+ https://bugzilla.wikimedia.org/buglist.cgi?resolution=---&component=Translate
 
 Documentation for the extension is at:
  https://www.mediawiki.org/wiki/Help:Extension:Translate
