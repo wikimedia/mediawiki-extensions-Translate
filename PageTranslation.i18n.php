@@ -3520,9 +3520,9 @@ Texto da unidade de tradución: <pre>$1</pre>',
 	'pt-movepage-block-subpage-exists' => 'Existe a subpáxina de destino "[[:$2]]".',
 	'pt-movepage-block-subpage-invalid' => 'O título da subpáxina de destino para "[[:$1]]" é incorrecto (quizais sexa longo de máis).',
 	'pt-movepage-list-pages' => 'Lista de páxinas a mover',
-	'pt-movepage-list-translation' => 'Páxinas de tradución',
-	'pt-movepage-list-section' => 'Páxinas de unidade de tradución',
-	'pt-movepage-list-other' => 'Outras subpáxinas',
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Páxina|Páxinas}} de tradución',
+	'pt-movepage-list-section' => '{{PLURAL:$1|Páxina|Páxinas}} de unidade de tradución',
+	'pt-movepage-list-other' => '{{PLURAL:$1|Outra subpáxina|Outras subpáxinas}}',
 	'pt-movepage-list-count' => 'En total, $1 {{PLURAL:$1|páxina|páxinas}} a mover.',
 	'pt-movepage-legend' => 'Mover a páxina traducible',
 	'pt-movepage-current' => 'Nome actual:',
@@ -6961,6 +6961,17 @@ $messages['or'] = array(
 	'pt-deletepage-list-section' => 'ଅନୁଭାଗ ପୃଷ୍ଠାସବୁ', # Fuzzy
 );
 
+/** Pampanga (Kapampangan)
+ * @author Val2397
+ */
+$messages['pam'] = array(
+	'tpt-template' => '↓Bulung Ulma',
+	'tpt-aggregategroup-add' => '↓Dagdag',
+	'tpt-aggregategroup-save' => '↓Isikap',
+	'tpt-aggregategroup-add-new' => '↓Magdagdag a bayung piabeng lupung',
+	'tpt-aggregategroup-new-name' => '↓Lagiu:',
+);
+
 /** Deitsch (Deitsch)
  * @author Xqt
  */
@@ -7339,6 +7350,7 @@ Błędy będą rejestrowane [[Special:Log/pagetranslation|w dzienniku tłumaczen
 $messages['pms'] = array(
 	'pagetranslation' => 'Tradussion dle pàgine',
 	'right-pagetranslation' => 'Marché le version dle pàgine për la tradussion',
+	'action-pagetranslation' => 'gestì le pàgine da volté',
 	'tpt-desc' => 'Estension për fé la tradussion dle pàgine ëd contnù',
 	'tpt-section' => 'Unità ëd tradussion $1',
 	'tpt-section-new' => 'Neuva unità ëd tradussion.
@@ -7362,8 +7374,8 @@ Ch'a contròla ch'a l'abia le tichëtte <nowiki><translate></nowiki> e na sintas
 	'tpt-saveok' => 'La pàgina [[$1]] a l\'é stàita marcà për la tradussion con $2 {{PLURAL:$2|unità ëd tradussion|unità ëd tradussion}}.
 Adess la pàgina a peul esse <span class="plainlinks">[$3 voltà]</span>.',
 	'tpt-badsect' => "«$1» a l'é pa un nòm bon për l'unità ëd tradussion $2.",
-	'tpt-showpage-intro' => 'Sì-sota a son listà le session neuve, esistente e sganfà.
-Prima ëd marché costa version për la tradussion, controlé che le modìfiche a le session a son minimisà për evité dël travaj inùtil ai tradutor.', # Fuzzy
+	'tpt-showpage-intro' => 'Sì-sota a son listà le unità ëd tradussion neuve, esistente e sganfà.
+Prima ëd marché costa version për la tradussion, controlé che le modìfiche a le unità ëd tradussion a sio minimisà për evité dël travaj inùtil ai tradutor.',
 	'tpt-mark-summary' => "Costa version a l'é stàita marcà për la tradussion",
 	'tpt-edit-failed' => "Impossìbil d'agiorné la pàgina: $1",
 	'tpt-duplicate' => "Ël nòm dl'unità ëd tradussion $1 a l'é dovrà pi che na vira.",
@@ -7379,6 +7391,7 @@ Prima ëd marché costa version për la tradussion, controlé che le modìfiche 
 	'tpt-other-pages' => "{{PLURAL:$1|Na veja version ëd costa pàgina a l'é|Dle veje version ëd coste pàgine a son}} marcà për la tradussion,
 ma {{PLURAL:$1|l'ùltima version a peul|j'ùltime version a peulo}} pa esse marcà për la tradussion.",
 	'tpt-discouraged-pages' => "{{PLURAL:$1|Costa pàgina a l'é stàita|Coste pagine a son ëstaite}} dëscoragià da avèj d'àutre tradussion.",
+	'tpt-select-prioritylangs' => "Lista dij còdes prioritari ëd le lenghe separà da 'd vìrgole:",
 	'tpt-rev-mark' => 'marca për tradussion',
 	'tpt-rev-unmark' => 'gava da la tradussion',
 	'tpt-rev-discourage' => 'dëscoragia',
@@ -7432,9 +7445,9 @@ Test ëd la session: <pre>$1</pre>', # Fuzzy
 	'pt-movepage-block-subpage-exists' => 'La sotpàgina pontà [[:$2]] a esist.',
 	'pt-movepage-block-subpage-invalid' => 'Ël tìtol ëd la sotpàgina pontà për [[:$1]] a podrìa esse pa bon (tròp longh?).',
 	'pt-movepage-list-pages' => 'Lista dle pàgine da tramudé',
-	'pt-movepage-list-translation' => 'Pàgine ëd viragi',
+	'pt-movepage-list-translation' => 'Pàgine ëd viragi', # Fuzzy
 	'pt-movepage-list-section' => 'Pàgine ëd session', # Fuzzy
-	'pt-movepage-list-other' => 'Àutre sot-pàgine',
+	'pt-movepage-list-other' => 'Àutre sot-pàgine', # Fuzzy
 	'pt-movepage-list-count' => 'An total $1 {{PLURAL:$1|pàgina|pàgine}} da tramudé.',
 	'pt-movepage-legend' => 'Tramudé la pàgina da volté',
 	'pt-movepage-current' => 'Nòm corent:',
@@ -9318,6 +9331,20 @@ $messages['tt-cyrl'] = array(
 	'tpt-diff-new' => 'Яңа текст',
 	'translate-tag-translate-link-desc' => 'Бу битне тәрҗемә итү',
 	'tpt-translation-intro' => 'Әлеге бит [[$2]] сәхифәсенең <span class="plainlinks">[$1 тәрҗемәсе булып тора]</span>. Тәрҗемә $3% башкарылган.',
+);
+
+/** Central Atlas Tamazight (ⵜⴰⵎⴰⵣⵉⵖⵜ)
+ * @author Tifinaghes
+ */
+$messages['tzm'] = array(
+	'pagetranslation' => 'ⵜⴰⵙⵓⵖⵍⵜ ⵏ ⵜⴰⵙⵏⴰ',
+	'tpt-aggregategroup-add' => 'ⵔⵏⵓ',
+	'tpt-aggregategroup-save' => 'ⵣⵎⵎⴻⵎ',
+	'tpt-aggregategroup-new-name' => 'ⴰⵙⵙⴰⵖ:',
+	'pt-movepage-current' => 'ⴰⵙⵙⴰⵖ ⵏ ⵖⵉⵍⴰ:',
+	'pt-movepage-new' => 'ⴰⵙⵙⴰⵖ ⴰⵎⴰⵢⵏⵓ:',
+	'pt-movepage-reason' => 'ⴰⵙⵔⴰⴳ:',
+	'pt-deletepage-current' => 'ⴰⵙⵙⴰⵖ ⵏ ⵜⴰⵙⵏⴰ:',
 );
 
 /** Uyghur (Arabic script) (ئۇيغۇرچە)

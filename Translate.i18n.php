@@ -18887,6 +18887,18 @@ $messages['pa'] = array(
 	'translate-gs-avgscore' => 'ਔਸਤ ਸਕੋਰ',
 );
 
+/** Pampanga (Kapampangan)
+ * @author Val2397
+ */
+$messages['pam'] = array(
+	'translate-magic-cm-save' => '↓Isikap',
+	'translate-magic-cm-savefailed' => '↓Bigu ya ing pamanyikap',
+	'translate-rc-translation-filter-no' => '↓Ala kang gagawan',
+	'translate-stats-users' => '↓Talalikas',
+	'translate-js-save' => '↓Isikap',
+	'translate-messagereview-submit' => '↓Tanggapan',
+);
+
 /** Deitsch (Deitsch)
  * @author Xqt
  */
