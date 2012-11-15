@@ -2847,9 +2847,9 @@ Ambelessì chiel a peul serne che lenghe, s'a-i na j'é, ch'a-j piaserìa vëdde
 Ch'a selession-a la lenga prinsipal ant la qual a veul volté.
 
 A peul massioné d'àutre lenghe e d'àutre armarche ant la zòna ëd test sì-sota.",
-	'translate-fs-permissions-pending' => "Toa arcesta a l'é stàita spedìa a [[$1]] e e quaidun da l'echip dël sit a la controlerà prima possìbil.
-S'it confirme toa adrësa e-mail, it arsevras na notìfica e-amil pen-e ch'a càpita.",
-	'translate-fs-permissions-submit' => 'Manda arcesta',
+	'translate-fs-permissions-pending' => "Soa arcesta a l'é stàita spedìa a [[$1]] e quaidun ëd l'echip dël sit a la controlerà pen-a possìbil.
+S'a confirma toa adrëssa eletrònica, a arseivrà na notìfica për pòsta eletrònica cand ch'a sarà ël cas.",
+	'translate-fs-permissions-submit' => "Mandé l'arcesta",
 	'translate-fs-target-text' => "Congratulassion!
 Adess a peul ancaminé a volté!
 

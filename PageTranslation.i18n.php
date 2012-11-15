@@ -7374,8 +7374,8 @@ Ch'a contròla ch'a l'abia le tichëtte <nowiki><translate></nowiki> e na sintas
 	'tpt-saveok' => 'La pàgina [[$1]] a l\'é stàita marcà për la tradussion con $2 {{PLURAL:$2|unità ëd tradussion|unità ëd tradussion}}.
 Adess la pàgina a peul esse <span class="plainlinks">[$3 voltà]</span>.',
 	'tpt-badsect' => "«$1» a l'é pa un nòm bon për l'unità ëd tradussion $2.",
-	'tpt-showpage-intro' => 'Sì-sota a son listà le unità ëd tradussion neuve, esistente e sganfà.
-Prima ëd marché costa version për la tradussion, controlé che le modìfiche a le unità ëd tradussion a sio minimisà për evité dël travaj inùtil ai tradutor.',
+	'tpt-showpage-intro' => "Sì-sota a son listà j'unità ëd tradussion neuve, esistente e sganfà.
+Prima ëd marché costa version për la tradussion, controlé che le modìfiche a j'unità ëd tradussion a sio minimisà për evité dël travaj inùtil ai tradutor.",
 	'tpt-mark-summary' => "Costa version a l'é stàita marcà për la tradussion",
 	'tpt-edit-failed' => "Impossìbil d'agiorné la pàgina: $1",
 	'tpt-duplicate' => "Ël nòm dl'unità ëd tradussion $1 a l'é dovrà pi che na vira.",
