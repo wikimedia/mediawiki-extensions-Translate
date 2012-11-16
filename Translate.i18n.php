@@ -7031,6 +7031,8 @@ Los estados están definidos en la variable de configuración $wgTranslateWorkfl
 	'translate-dynagroup-recent-label' => 'Traducciones recientes',
 	'translate-dynagroup-recent-desc' => 'Este grupo de mensajes muestra todas las traducciones recientes en este idioma.
 Utilizado sobre todo para tareas de corrección.',
+	'translate-dynagroup-additions-label' => 'Adiciones recientes',
+	'translate-dynagroup-additions-desc' => 'Este grupo de mensajes muestra mensajes nuevos y cambiados.',
 	'translate-dynagroup-by' => 'Traducción hecha por  {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Traducción hecha por  {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Último cambio por  {{GENDER:$1|$1}}',
