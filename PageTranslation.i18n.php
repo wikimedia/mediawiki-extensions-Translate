@@ -2422,6 +2422,7 @@ La paĝo povas nun esti <span class="plainlinks">[$3 tradukita]</span>.',
  * @author Antur
  * @author Armando-Martin
  * @author Crazymadlover
+ * @author Dalton2
  * @author Dferg
  * @author Diego Grez
  * @author Imre
@@ -2549,7 +2550,7 @@ Texto de unidad de traducción: <pre>$1</pre>',
 	'pt-log-priority-langs-force' => '{{GENDER:$2|limitó}} los idiomas para la página traducible [[:$1]] a $3. Motivo: $4',
 	'pt-log-aggregategroup-associate' => '{{GENDER:$2|ha añadido}} la página traducible [[:$1]] al grupo agregado $3',
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|ha eliminado}} la página traducible [[:$1]] del grupo agregado $3',
-	'pt-movepage-title' => 'Mover página traducible $1',
+	'pt-movepage-title' => 'Trasladar la página traducible $1',
 	'pt-movepage-blockers' => 'La página traducible no puede ser movida a un nuevo nombre por los siguientes {{PLURAL:$1|error|errores}}:',
 	'pt-movepage-block-base-exists' => 'La página base de destino [[:$1]] existe.',
 	'pt-movepage-block-base-invalid' => 'La página base de destino no es un título válido.',
@@ -2559,27 +2560,27 @@ Texto de unidad de traducción: <pre>$1</pre>',
 	'pt-movepage-block-section-invalid' => 'El título de unidad de traducción de la página de destino "[[:$1]]" sería inválido (¿demasiado largo?).',
 	'pt-movepage-block-subpage-exists' => 'La subpágina de destino [[:$2]] existe.',
 	'pt-movepage-block-subpage-invalid' => 'El título de subpágina de destino para [[:$1]] sería inválido (demasiado largo?).',
-	'pt-movepage-list-pages' => 'Lista de páginas a mover',
+	'pt-movepage-list-pages' => 'Lista de páginas a trasladar',
 	'pt-movepage-list-translation' => '{{PLURAL:$1|página|páginas}} de traducción',
 	'pt-movepage-list-section' => '{{PLURAL:$1|página de unidad|páginas de unidades}} de traducción',
 	'pt-movepage-list-other' => '{{PLURAL:$1|Otra subpágina|Otras subpáginas}}',
-	'pt-movepage-list-count' => 'En total $1 {{PLURAL:$1|página|páginas}} a mover',
-	'pt-movepage-legend' => 'Mover página traducible',
+	'pt-movepage-list-count' => 'En total, $1 {{PLURAL:$1|página|páginas}} a trasladar.',
+	'pt-movepage-legend' => 'Trasladar página traducible',
 	'pt-movepage-current' => 'Nombre actual:',
 	'pt-movepage-new' => 'Nuevo nombre:',
 	'pt-movepage-reason' => 'Razón:',
-	'pt-movepage-subpages' => 'Mover todas las subpáginas',
+	'pt-movepage-subpages' => 'Trasladar todas las subpáginas',
 	'pt-movepage-action-check' => 'Verificar si el movimiento es posible',
 	'pt-movepage-action-perform' => 'Hacer el movimiento',
 	'pt-movepage-action-other' => 'Cambiar destino',
-	'pt-movepage-intro' => 'Esta página especial te permite mover páginas que están marcadas para su traducción.
-La acción de traslado no será instantánea, porque muchas páginas necesitarán ser movidas.
-Cuando la página está siendo movida, no es posible interactuar con la páginas en cuestión.
-Los fallos serán registrados en la [[Special:Log/pagetranslation|registro de página de traducción]] y necesitarán ser reparados manualmente.',
+	'pt-movepage-intro' => 'Esta página especial permite trasladar páginas que están marcadas para su traducción.
+La acción de traslado no será instantánea, porque necesitarán trasladarse muchas páginas.
+Mientras las páginas estén siendo trasladadas, no es posible interactuar con las páginas en cuestión.
+Los fallos serán registrados en el [[Special:Log/pagetranslation|registro de traducción de páginas]] y necesitarán ser reparados manualmente.',
 	'pt-movepage-logreason' => 'Parte de la página traducible $1.',
 	'pt-movepage-started' => 'La página base se ha trasladado.
 Por favor verifica el [[Special:Log/pagetranslation|registro de traducción de página]] para errores y mensaje de conclusión.',
-	'pt-locked-page' => 'Esta página está bloqueada porque la página traducible está siendo movida actualmente.',
+	'pt-locked-page' => 'Esta página está bloqueada porque la página traducible está siendo trasladada actualmente.',
 	'pt-deletepage-lang-title' => 'Eliminar la página de traducción $1.',
 	'pt-deletepage-full-title' => 'Eliminar la página traducible $1.',
 	'pt-deletepage-invalid-title' => 'La página especificada no es válida.',
@@ -7392,6 +7393,9 @@ Prima ëd marché costa version për la tradussion, controlé che le modìfiche 
 ma {{PLURAL:$1|l'ùltima version a peul|j'ùltime version a peulo}} pa esse marcà për la tradussion.",
 	'tpt-discouraged-pages' => "{{PLURAL:$1|Costa pàgina a l'é stàita|Coste pagine a son ëstaite}} dëscoragià da avèj d'àutre tradussion.",
 	'tpt-select-prioritylangs' => "Lista dij còdes prioritari ëd le lenghe separà da 'd vìrgole:",
+	'tpt-select-prioritylangs-force' => "Ampedì le tradussion an d'àutre lenghe che le lenghe prioritarie",
+	'tpt-select-prioritylangs-reason' => 'Rason:',
+	'tpt-sections-prioritylangs' => 'Lenghe prioritarie',
 	'tpt-rev-mark' => 'marca për tradussion',
 	'tpt-rev-unmark' => 'gava da la tradussion',
 	'tpt-rev-discourage' => 'dëscoragia',
@@ -7407,12 +7411,30 @@ ma {{PLURAL:$1|l'ùltima version a peul|j'ùltime version a peulo}} pa esse marc
 	'tpt-translation-intro' => 'Sta pàgina-sì a l\'é na <span class="plainlinks">[$1 vërsion traduvùa]</span> ëd na pàgina [[$2]] e la tradussion a l\'é $3% completa e agiornà.',
 	'tpt-translation-intro-fuzzy' => 'Tradussion pa agiornà a son marcà com costa.',
 	'tpt-languages-legend' => 'Àutre lenghe:',
+	'tpt-languages-zero' => 'Ancamin-a la tradussion për sta lenga',
 	'tpt-target-page' => "Sta pàgina-sì a peul pa esse modificà a man.
 Sta pàgina-sì a l'é na tradussion ëd la pàgina [[$1]] e la tradussion a peul esse modificà an dovrand [$2 l'utiss ëd tradussion].",
 	'tpt-unknown-page' => "Sto spassi nominal-sì a l'é riservà për tradussion ëd pàgine ëd contnù.
 La pàgina ch'it preuve a modifiché a smija pa ch'a corisponda a na pàgina marcà për tradussion.",
+	'tpt-translation-restricted' => "La tradussion dë sta pàgina an costa lenga a l'é stàita ampedìa da n'aministrator dle tradussion.
+
+Rason: $1",
+	'tpt-discouraged-language-force' => "'''Costa pàgina a peul pa esse voltà an $2.'''
+
+N'aministrator dle tradussion a l'ha decidù che costa pàgina a peul mach esse voltà an $3.",
+	'tpt-discouraged-language' => "'''La tradussion an $2 a l'é pa na priorità për costa pàgina.'''
+
+N'aministrator dle tradussion a l'ha decidù d'adressé jë sfòrs ëd tradussion su $3.",
+	'tpt-discouraged-language-reason' => 'Rason: $1',
+	'tpt-priority-languages' => "N'aministrator ëd tradussion a l'ha ampostà le lenghe prioritarie për sta partìa a $1.",
 	'tpt-render-summary' => 'Modifiché për esse com la neuva version dla pàgina sorgiss',
 	'tpt-download-page' => 'Espòrta pàgina con tradussion',
+	'aggregategroups' => 'Partìe agregà',
+	'tpt-aggregategroup-add' => 'Gionta',
+	'tpt-aggregategroup-save' => 'Salva',
+	'tpt-aggregategroup-add-new' => 'Gionta na neuva partìa agregà',
+	'tpt-aggregategroup-new-name' => 'Nòm:',
+	'tpt-aggregategroup-new-description' => 'Descrission (opsional):',
 	'pt-parse-open' => 'Tichëtta &lt;translate> pa bilansà.
 Stamp ëd viragi: <pre>$1</pre>',
 	'pt-parse-close' => 'Tichëtta &lt;/translate> pa bilansà.
@@ -7480,7 +7502,7 @@ Për piasì, ch'a contròla ël [[Special:Log/pagetranslation|registr ëd tradus
 	'pt-deletepage-subpages' => 'Scancelé tute le sot-pàgine',
 	'pt-deletepage-list-pages' => 'Lista dle pàgine da scancelé',
 	'pt-deletepage-list-translation' => 'Pàgine ëd tradussion',
-	'pt-deletepage-list-section' => 'Pàgine ëd session', # Fuzzy
+	'pt-deletepage-list-section' => "Pàgine dj'unità ëd tradussion",
 	'pt-deletepage-list-other' => 'Àutre sot-pàgine',
 	'pt-deletepage-list-count' => 'An total $1 {{PLURAL:$1|pàgina|pàgine}} da scancelé.',
 	'pt-deletepage-full-logreason' => 'Tòch ëd la pàgina da volté $1.',

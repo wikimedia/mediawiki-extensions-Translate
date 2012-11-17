@@ -400,11 +400,14 @@ $specialPageAliases['it'] = array(
 	'TranslationStats' => array( 'StatisticheTraduzione' ),
 	'Translations' => array( 'Traduzioni' ),
 	'LanguageStats' => array( 'StatisticheLingua' ),
+	'MessageGroupStats' => array( 'MessaggioGruppoStat' ),
 	'PageTranslation' => array( 'TraduzionePagina' ),
 	'ImportTranslations' => array( 'ImportaTraduzioni' ),
+	'ManageMessageGroups' => array( 'GestisciGruppiMessaggio' ),
 	'FirstSteps' => array( 'PrimiPassi' ),
 	'SupportedLanguages' => array( 'LingueSupportate' ),
 	'MyLanguage' => array( 'MiaLingua' ),
+	'AggregateGroups' => array( 'GruppiAggregati' ),
 );
 
 /** Japanese (日本語) */
