@@ -17942,6 +17942,7 @@ $messages['niu'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author Kippenvlees1
  * @author McDutchie
  * @author SPQRobin
  * @author Siebrand
@@ -18273,6 +18274,8 @@ Deze statussen zijn ingesteld in de instelling $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Recente vertalingen',
 	'translate-dynagroup-recent-desc' => 'Deze berichtengroep geeft alle recente wijzigingen weer in deze taal.
 Dit is vooral nuttig voor de controletaken.',
+	'translate-dynagroup-additions-label' => 'Recente toevoegingen',
+	'translate-dynagroup-additions-desc' => 'Deze groep berichten toont nieuwe en veranderde berichten.',
 	'translate-dynagroup-by' => 'Vertaling gemaakt door {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Vertaling gemaakt door {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Laatste wijziging door {{GENDER:$1|$1}}',
@@ -24087,10 +24090,10 @@ Alias för specialsidor och magiska ord kan ha flera översättningar.
 Namnrymder kan endast ha en översättning.
 
 Vid översättning av namnrymder så är <code>$1 talk</code> speciellt. <code>$1</code> ersätts med webbplatsens namn (till exempel <code>{{ns:project_talk}}</code>).
-Om det inte är möjligt att skapa en giltig översättning till ditt språk utan att ändra webbplatsens namn, så ta kontakt med en utvecklare.
+Om det inte är möjligt att skapa en giltig översättning till ditt språk utan att ändra webbplatsens namn, så ta [[Support|kontakt med en utvecklare]].
 
 För att kunna spara ändringar så behöver du tillhöra översättargruppen.
-Ändringar sparas inte förrän du klickar på spara-knappen nedan.', # Fuzzy
+Ändringar sparas inte förrän du klickar på spara-knappen nedan.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Hämta',
 	'translate-magic-cm-export' => 'Exportera',
@@ -24117,6 +24120,8 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen.
 	'translate-checks-links-missing' => 'Följande {{PLURAL:$2|länk|$2 länkar}} saknas: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Följande felaktiga {{PLURAL:$2|tagg|taggar}} bör ersättas: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => '<nowiki>{{PLURAL:}}</nowiki> används i definitionen, men inte i översättningen.',
+	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> fick {{PLURAL:$1|en form|$1 former}} men {{PLURAL:$2|endast en form|$2 former}} stöds (exklusive formerna 0= och 1=).',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> har dubbla former i slutet. <nowiki>{{PLURAL:$1|får|får}}</nowiki> bör skrivas som <nowiki>{{PLURAL:$1|får}}</nowiki>.',
 	'translate-checks-pagename' => 'Namnrymden ändrad från definitionen',
 	'translate-checks-format' => 'Den här översättningen följer inte definitionen eller har ogiltig syntax: $1',
 	'translate-checks-escape' => 'De följande läckorna kan vara tillfälliga: <strong>$1</strong>',
@@ -24231,6 +24236,13 @@ Färgen för underlinjen anger hur mycket en översättare har varit aktiv här 
 	'translate-save' => 'Spara ($1)',
 	'translate-jssti-add' => 'Lägg till i listan',
 	'managemessagegroups' => 'Meddelandegruppshantering',
+	'translate-smg-notallowed' => 'Du har inte tillåtelse att utföra denna åtgärd',
+	'translate-smg-nochanges' => 'Det finns inga ändringar att bearbeta.',
+	'translate-smg-submit' => 'Skicka in ändringar för bearbetning',
+	'translate-smg-submitted' => 'Meddelandedefinitioner har uppdaterats. Ändringarna behandlas i bakgrunden.',
+	'translate-smg-postponed' => 'En del ändringar kunde inte bearbetas. [[{{FULLPAGENAME}}|Försök igen]].',
+	'translate-smg-left' => 'Meddelandeinnehåll i wiki',
+	'translate-smg-right' => 'Inkommande ändringar',
 	'translate-manage-import-diff' => 'Meddelande $1 | Åtgärder: $2',
 	'translate-manage-import-new' => 'Nytt meddelande $1',
 	'translate-manage-import-deleted' => 'Radera meddelande $1',
@@ -24249,7 +24261,7 @@ Vänligen aktivera formuläret igen för att fortsätta behandla det.',
 	'translate-manage-import-summary' => 'Importerar en ny version från extern källa',
 	'translate-manage-conflict-summary' => 'Importerar ny version från extern källa.
 Vänligen kontrollera.',
-	'translate-manage-fuzzy-summary' => 'Definitionen har ändrats', # Fuzzy
+	'translate-manage-fuzzy-summary' => 'Meddelandedefinitionen har ändrats',
 	'importtranslations' => 'Importera översättningar',
 	'translate-import-from-url' => 'URL till filen:',
 	'translate-import-from-wiki' => 'Fil på denna wiki:',
@@ -24277,6 +24289,7 @@ Detaljer: $1',
 	'translate-js-history' => 'Översättningshistorik',
 	'translate-js-support' => 'Ställ en fråga',
 	'translate-js-support-title' => 'Fråga efter hjälp om det inte finns tillräckligt mycket information för att översätta detta meddelande korrekt.',
+	'translate-js-support-unsaved-warning' => 'Du har osparade översättningar.',
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kontinent',
@@ -24296,7 +24309,7 @@ Detaljer: $1',
 	'translate-messagereview-failure' => 'Accepterar... misslyckades: $1',
 	'translate-messagereview-done' => 'Accepterade',
 	'translate-messagereview-reviews' => 'Accepterad av {{PLURAL:$1|en användare|$1 användare}}',
-	'translate-messagereview-reviewswithyou' => 'Accepterad av {{PLURAL:$1|en användare|$1 användare}} inklusive dig', # Fuzzy
+	'translate-messagereview-reviewswithyou' => 'Accepterad av {{PLURAL:$1|dig|$1 användare inklusive dig}}',
 	'api-error-invalidrevision' => 'Översättning hittades inte',
 	'api-error-unknownmessage' => 'Meddelande hittades inte',
 	'api-error-fuzzymessage' => 'Översättning är märkt som föråldrad',
@@ -24325,6 +24338,8 @@ All status är definierad i konfigurationsvariabeln $wgTranslateWorkflowStates.'
 	'translate-dynagroup-recent-label' => 'Senaste översättningar',
 	'translate-dynagroup-recent-desc' => 'Denna meddelandegrupp visar alla senaste översättningar på detta språk.
 Mest användbar för korrekturläsningsuppgifter.',
+	'translate-dynagroup-additions-label' => 'Senaste tillägg',
+	'translate-dynagroup-additions-desc' => 'Denna meddelandegrupp visar nya och ändrade meddelanden.',
 	'translate-dynagroup-by' => 'Översatt av {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Översatt av {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Senaste ändring av {{GENDER:$1|$1}}',

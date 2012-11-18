@@ -6605,6 +6605,7 @@ Feil vil logges i [[Special:Log/pagetranslation|sideoversettelsesloggen]], og m√
 );
 
 /** Dutch (Nederlands)
+ * @author Kippenvlees1
  * @author SPQRobin
  * @author Siebrand
  */
@@ -6737,9 +6738,9 @@ Tekst vertaaleenheid: <pre>$1</pre>',
 	'pt-movepage-block-subpage-exists' => 'De doelsubpagina [[:$2]] bestaat al.',
 	'pt-movepage-block-subpage-invalid' => 'De doelsubpaginanaam voor [[:$1]] is ongeldig (te lang?).',
 	'pt-movepage-list-pages' => "Lijst van te hernoemen pagina's",
-	'pt-movepage-list-translation' => "Te vertalen pagina's",
-	'pt-movepage-list-section' => "Pagina's voor vertaaleenheden",
-	'pt-movepage-list-other' => "Overige subpagina's",
+	'pt-movepage-list-translation' => "Te vertalen {{PLURAL:$1|pagina|pagina's}}",
+	'pt-movepage-list-section' => "{{PLURAL:$1|Pagina|Pagina's}} voor vertaaleenheden",
+	'pt-movepage-list-other' => "Overige sub{{PLURAL:$1|pagina|pagina's}}",
 	'pt-movepage-list-count' => "In totaal {{PLURAL:$1|is er $1 pagina|zijn er $1 pagina's}} te hernoemen.",
 	'pt-movepage-legend' => 'Te vertalen pagina hernoemen',
 	'pt-movepage-current' => 'Huidige naam:',
