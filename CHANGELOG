@@ -1,7 +1,106 @@
 == Change log ==
+* 2012-11-11
+- Dynamic message groups are now shown in list=messagecollection WebAPI.
+* 2012-11-10
+- Add RecentAdditionsMessageGroup:
+  Like RecentMessageGroup, but instead of proofreading
+  you can translate new message as they come in. Make this
+  view the home page of your browser, for example.
+* 2012-11-09
+- Unbalanced translate tags on translatable pages now fail gracefully again.
 * 2012-11-08
-- MediaWiki 1.19 or later is now required.
-- Support for XLIFF was removed. It was never used.
+- MediaWiki 1.19 or later is now required: support for 1.18 was dropped.
+* 2012-11-06
+- Add prop=revision to list=messagecollection WebAPI.
+* 2012-11-05
+- Avoid fatal errors with empty aggregate groups
+* 2012-10-29
+- Add support for Yandex machine translation service.
+* 2012-10-29
+- Sort order of the statistics tables is now included in the URL to make it linkable.
+  Enhances both LanguageStats and MessageGroupStats.
+* 2012-10-24
+- The lists of messages are now rendered faster and with less memory.
+  For a table of 5000 messages in Special:Translate, from 175M to 12M.
+- Better performance also for proofreading and page moves.
+* 2012-10-22
+- Ignored messages are no longer exported.
+  Except for source language or message documentation
+* 2012-10-21
+- Dropdown items on Special:AggregateGroups are now sorted alphabetically.
+* 2012-10-21
+- MediaWiki i18n now with modern support format: MediaWikiExtensionFFS.
+- You should check your config so that the second parameter
+  to the PremadeMediawikiExtensionsGroups constructor is correct.
+- Label and desc of message groups now have $context parameter.
+* 2012-10-18
+- Fixed infinite loop in MediaWikiMessageChecker with unbalanced
+  {{PLURAL}} in translations which gave fatal error on editing.
+* 2012-10-18
+- The page translation languages lists no longer overlaps other elements.
+* 2012-10-18
+- Added framework for key generation algorithms in GettextFFS.
+  Can be invoked in YAML config; backwards compatibility preserved.
+* 2012-10-16
+- Narayam now works in translation editors.
+* 2012-10-10
+- Inline translation editor is now the default.
+* 2012-10-08
+- New JsonFFS and related changes. Useful for jquery.i18n.
+* 2012-10-04
+- Added the concept of events in several places.
+  Useful for future CentralNotice integration.
+* 2012-10-02
+- Page translation is now enabled by default.
+  Still restricted by user group rights, which are not set by default.
+* 2012-09-22
+- Framework for automatic group workflow state changes.
+* 2012-09-21
+- Added collection of stats of proofread messages.
+* 2012-09-20
+- Added checker for too many or redundant plural forms in MediaWiki translations.
+* 2012-09-17
+- New script to create pretty graphs of MediaWiki language fallbacks.
+- Also rewritten plural-comparison.php.
+- Performance fixes to reduce timeouts when translating.
+* 2012-09-07
+- Special:ManageMessageGroups now shows new messages
+  conflicting with existing pages in the wiki as changes.
+* 2012-09-05
+- Completed integration with the new TranslateSvg extension.
+* 2012-08-31
+- Interface usability: for page translation, export tab now
+  shows the wikitext source of the translatable page.
+* 2012-08-19
+- Added support for AndroidXml (Android apps' string.xml).
+* 2012-08-19
+- $wgTranslateRcFilterDefault can be used to show
+  translation changes in the RecentChanges by default.
+* 2012-08-17
+- Fixes to avoid double counting of messages in statistics.
+* 2012-08-07
+- Deleting a translatable page no longer deletes
+  translatable pages which are subpages of it.
+* 2012-08-02
+- Page translation no longer reuses deleted translation unit identifiers.
+* 2012-08-02
+- Special:ManageMessageGroups is now more efficient,
+  able to manage groups with more than 10 000 messages.
+* 2012-08-02
+- GettextFFS now handles messages ending in \ better
+* 2012-07-30
+- Restored compatibility with MediaWiki 1.18.
+* 2012-07-29
+- Dollar signs ($) can now be used in translatable pages without problems.
+* 2012-07-26
+- Introduction of and many improvements to
+  Solr TTMServer (translation memory).
+* 2012-07-09
+- Special:TranslationStats now has a date picker to easily fill
+  starting date field; it replaces the manual input of all the zeros.
+* 2012-07-02
+- Special:MessageGroupStats now doesn't show
+  languages under 2 % of translation by default.
 * 2012-06-27
 - Fixed fatal errors in Special:MessageGroupStats
 * 2012-06-21
