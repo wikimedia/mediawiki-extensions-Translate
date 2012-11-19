@@ -2112,6 +2112,8 @@ Bitte prüfen Sie das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] auf 
 $messages['diq'] = array(
 	'pagetranslation' => 'Pela açarnayışi',
 	'tpt-section' => 'Yewronê açarnayışê $1',
+	'tpt-section-new' => 'Yewena Açarnayış de newan.
+Name: $1',
 	'tpt-section-deleted' => 'Yewronê açarnayışê $1',
 	'tpt-template' => 'Pela şabloni',
 	'tpt-diff-old' => 'Metno verên',
@@ -2120,17 +2122,19 @@ $messages['diq'] = array(
 	'tpt-other-pages-title' => 'Pela şahtiyayi',
 	'tpt-discouraged-pages-title' => 'Vatenena pelayan',
 	'tpt-select-prioritylangs-reason' => 'Sebeb:',
+	'translate-tag-translate-link-desc' => 'Na perer açarnê',
 	'tpt-languages-legend' => 'Zıwanê bini:',
 	'tpt-discouraged-language-reason' => 'Sebeb: $1',
 	'aggregategroups' => 'Grubi pêro',
 	'tpt-aggregategroup-add' => 'Deke',
 	'tpt-aggregategroup-save' => 'Star ke',
 	'tpt-aggregategroup-new-name' => 'Name:',
-	'pt-movepage-list-translation' => 'Peleyê açarnayışin',
-	'pt-movepage-list-other' => 'Bınpeley bini',
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Pera|Perê}} açarnayışi',
+	'pt-movepage-list-other' => '{{PLURAL:$1|Pera bin|Perê bini}}',
 	'pt-movepage-current' => 'Nameyo raverde:',
 	'pt-movepage-new' => 'Nameyo newe:',
 	'pt-movepage-reason' => 'Sebeb:',
+	'pt-deletepage-action-other' => 'Etiketan bivurne',
 	'pt-deletepage-current' => 'Nameyê pele:',
 	'pt-deletepage-reason' => 'Sebeb:',
 	'pt-deletepage-list-translation' => 'Peleyê açarnayışin',
@@ -3189,9 +3193,9 @@ Texte de la section : <pre>$1</pre>',
 	'pt-movepage-block-subpage-exists' => 'La sous-page cible [[:$2]] existe.',
 	'pt-movepage-block-subpage-invalid' => 'Le titre de la sous-page cible pour [[:$1]] serait incorrect (trop long ?).',
 	'pt-movepage-list-pages' => 'Liste des pages à déplacer',
-	'pt-movepage-list-translation' => 'Pages de traduction',
-	'pt-movepage-list-section' => "Pages d'unités de traduction",
-	'pt-movepage-list-other' => 'Autres sous-pages',
+	'pt-movepage-list-translation' => '{{PLURAL:$1|page|pages}} de traduction',
+	'pt-movepage-list-section' => "{{PLURAL:$1|page|pages}} d'unités de traduction",
+	'pt-movepage-list-other' => '{{PLURAL:$1|Autre sous-page|Autres sous-pages}}',
 	'pt-movepage-list-count' => '$1 {{PLURAL:$1|page|pages}} à déplacer au total.',
 	'pt-movepage-legend' => 'Déplacer la page à traduire',
 	'pt-movepage-current' => 'Nom actuel :',
@@ -6436,6 +6440,7 @@ $messages['nah'] = array(
 $messages['nb'] = array(
 	'pagetranslation' => 'Sideoversetting',
 	'right-pagetranslation' => 'Merk versjoner av sider for oversettelse',
+	'action-pagetranslation' => 'behandle oversettbare sider',
 	'tpt-desc' => 'Utvidelse for oversetting av innholdssider',
 	'tpt-section' => 'Oversettelsesenhet $1',
 	'tpt-section-new' => 'Ny oversettelsesenhet.
@@ -6459,8 +6464,8 @@ Sjekk at siden har <nowiki><translate></nowiki>-merket og har en gyldig syntaks.
 	'tpt-saveok' => 'Siden [[$1]] har blitt markert for oversettelse med {{PLURAL:$2|én oversettelsesenhet|$2 oversettelsesenheter}}.
 Den kan nå bli <span class="plainlinks">[$3 oversatt]</span>.',
 	'tpt-badsect' => '«$1» er ikke et gyldig navn for oversettelsesenheten $2.',
-	'tpt-showpage-intro' => 'Nedenfor er nye, eksisterende og slettede avsnitt listet opp.
-Før denne versjonen merkes for oversettelse, sjekk at endringene i avsnittene er minimert for å unngå unødvendig arbeid for oversetterne.', # Fuzzy
+	'tpt-showpage-intro' => 'Nedenfor listes nye, eksisterende og slettede avsnitt opp.
+Før denne versjonen merkes for oversettelse, sjekk at endringene i avsnittene er minimert for å unngå unødvendig arbeid for oversetterne.',
 	'tpt-mark-summary' => 'Markerte denne versjonen for oversettelse',
 	'tpt-edit-failed' => 'Kunne ikke oppdatere siden: $1',
 	'tpt-duplicate' => 'Oversettelsens enhetsnavn $1 er brukt mer enn en gang.',
@@ -6508,6 +6513,7 @@ Denne siden som du prøver å redigere ser ikke ut til å samsvare med noen av s
 	'tpt-discouraged-language' => 'Dette språket er ikke blant prioritetsspråkene som er satt av en oversettelsesadministrator for denne siden.
 
 Årsak: $1',
+	'tpt-discouraged-language-reason' => 'Årsak: $1',
 	'tpt-priority-languages' => 'En oversettelsesadministrator har satt prioritetsspråkene for denne gruppen til $1.',
 	'tpt-render-summary' => 'Oppdaterer for å svare til ny versjon av kildesiden',
 	'tpt-download-page' => 'Eksporter side med oversettelser',
@@ -6524,12 +6530,12 @@ Oversettelsesmal: <pre>$1</pre>',
 	'pt-parse-close' => 'Ubalansert &lt;/translate>-element.
 Oversettelsesmal: <pre>$1</pre>',
 	'pt-parse-nested' => 'Nøstede &lt;translate>-seksjoner er ikke tillatt.
-Elementtekst: <pre>$1</pre>', # Fuzzy
-	'pt-shake-multiple' => 'Flere avsnittsmarkører for en seksjon.
-Seksjonstekst: <pre>$1</pre>', # Fuzzy
+Elementtekst: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Flere avsnittsmarkører for én seksjon.
+Seksjonstekst: <pre>$1</pre>',
 	'pt-shake-position' => 'Seksjonsmarkører i uventede posisjoner.
-Seksjonstekst: <pre>$1</pre>', # Fuzzy
-	'pt-shake-empty' => 'Tøm seksjon for markør $1.', # Fuzzy
+Seksjonstekst: <pre>$1</pre>',
+	'pt-shake-empty' => 'Tøm seksjon for markør «$1».',
 	'pt-log-header' => 'Logg over handlinger relatert til systemet for sideoversettelser',
 	'pt-log-name' => 'Logg for sideoversettelser',
 	'pt-log-mark' => '{{GENDER:$2|markerte}} revisjon $3 av siden «[[:$1]]» for oversettelse',
@@ -6553,14 +6559,14 @@ Seksjonstekst: <pre>$1</pre>', # Fuzzy
 	'pt-movepage-block-base-invalid' => 'Målgrunnsiden er ikke en gyldig tittel.',
 	'pt-movepage-block-tp-exists' => 'Måloversettelsessiden [[:$2]] finnes.',
 	'pt-movepage-block-tp-invalid' => 'Måloversettelsessidetittelen for [[:$1]] ville vært ugyldig (for lang?).',
-	'pt-movepage-block-section-exists' => 'Målavsnittssiden [[:$2]] finnes.', # Fuzzy
-	'pt-movepage-block-section-invalid' => 'Målavsnittssidetittelen for [[:$1]] ville vært ugyldig (for lang?).', # Fuzzy
+	'pt-movepage-block-section-exists' => 'Målavsnittssiden [[:$2]] finnes fra før.',
+	'pt-movepage-block-section-invalid' => 'Målavsnittssidetittelen for [[:$1]] ville vært ugyldig (for lang?).',
 	'pt-movepage-block-subpage-exists' => 'Målundersiden [[:$2]] finnes.',
 	'pt-movepage-block-subpage-invalid' => 'Målundersidetittelen for [[:$1]] ville vært ugyldig (for lang?).',
 	'pt-movepage-list-pages' => 'Liste over sider å flytte',
-	'pt-movepage-list-translation' => 'Oversettelsessider',
-	'pt-movepage-list-section' => 'Avsnittssider', # Fuzzy
-	'pt-movepage-list-other' => 'Andre undersider',
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Oversettelsesside|Oversettelsessider}}',
+	'pt-movepage-list-section' => '{{PLURAL:$1|Avsnittsside|Avsnittssider}}',
+	'pt-movepage-list-other' => '{{PLURAL:$1|Annen underside|Andre undersider}}',
 	'pt-movepage-list-count' => 'Totalt $1 {{PLURAL:$1|side|sider}} å flytte.',
 	'pt-movepage-legend' => 'Flytt oversettbar side',
 	'pt-movepage-current' => 'Nåværende navn:',
@@ -6593,7 +6599,7 @@ Kontroller [[Special:Log/pagetranslation|sideoversettelsesloggen]] for feil- og 
 	'pt-deletepage-subpages' => 'Slett alle undersider',
 	'pt-deletepage-list-pages' => 'Liste over sider å slette',
 	'pt-deletepage-list-translation' => 'Oversettelsessider',
-	'pt-deletepage-list-section' => 'Seksjonssider', # Fuzzy
+	'pt-deletepage-list-section' => 'Seksjonssider',
 	'pt-deletepage-list-other' => 'Andre undersider',
 	'pt-deletepage-list-count' => 'Totalt $1 {{PLURAL:$1|side|sider}} å slette.',
 	'pt-deletepage-full-logreason' => 'Del av den oversettbare siden $1.',
@@ -7436,17 +7442,19 @@ N'aministrator dle tradussion a l'ha decidù d'adressé jë sfòrs ëd tradussio
 	'tpt-aggregategroup-add-new' => 'Gionta na neuva partìa agregà',
 	'tpt-aggregategroup-new-name' => 'Nòm:',
 	'tpt-aggregategroup-new-description' => 'Descrission (opsional):',
+	'tpt-aggregategroup-remove-confirm' => "É-lo sicur ëd vorèj scancelé sta partìa d'agregà?",
+	'tpt-aggregategroup-invalid-group' => 'La partìa a esist pa',
 	'pt-parse-open' => 'Tichëtta &lt;translate> pa bilansà.
 Stamp ëd viragi: <pre>$1</pre>',
 	'pt-parse-close' => 'Tichëtta &lt;/translate> pa bilansà.
 Stamp ëd viragi: <pre>$1</pre>',
-	'pt-parse-nested' => 'Le session &lt;translate> anidà a son pa përmëttùe.
-Test ëd la tichëtta: <pre>$1</pre>', # Fuzzy
-	'pt-shake-multiple' => 'Marcador mùltipl ëd session për na session.
-Test ëd la session: <pre>$1</pre>', # Fuzzy
-	'pt-shake-position' => 'Marcador ëd session an na posission pa spetà.
-Test ëd la session: <pre>$1</pre>', # Fuzzy
-	'pt-shake-empty' => 'Session veuida për ël marcador $1.', # Fuzzy
+	'pt-parse-nested' => "J'unità ëd tradussion &lt;translate> anidà a son pa përmëttùe.
+Test ëd la tichëtta: <pre>$1</pre>",
+	'pt-shake-multiple' => "Marcador mùltipl d'unità ëd tradussion për un-a unità ëd tradussion.
+Test ëd l'unità ëd tradussion: <pre>$1</pre>",
+	'pt-shake-position' => "Marcador d'unità ëd tradussion an na posission pa spetà.
+Test ëd l'unità ëd tradussion: <pre>$1</pre>",
+	'pt-shake-empty' => 'Unità ëd tradussion veuida për ël marcador "$1".',
 	'pt-log-header' => "Registr ëd j'assion colegà al sistema ëd tradussion ëd pàgine",
 	'pt-log-name' => 'Registr dle tradussion ëd pàgine',
 	'pt-log-mark' => '{{GENDER:$2|marcà}} la revision $3 dla pàgina "[[:$1]]" për la tradussion',
@@ -7457,6 +7465,8 @@ Test ëd la session: <pre>$1</pre>', # Fuzzy
 	'pt-log-delete-full-nok' => "{{GENDER:$2|a l'ha rancontrà}} un problema an scanceland la pàgina da volté [[:$1]]",
 	'pt-log-delete-lang-ok' => "{{GENDER:$2|a l'ha completà}} le scancelament ëd la pàgina ëd tradussion $1",
 	'pt-log-delete-lang-nok' => "{{GENDER:$2|a l'ha rancontrà}} un problema an scanceland la pagina ëd tradussion [[:$1]]",
+	'pt-log-encourage' => "{{GENDER:$2|a l'ha ancoragià}} la tradussion ëd la pàgina «[[:$1]]»",
+	'pt-log-discourage' => "{{GENDER:$2|a l'ha dëscoragià}} la tradussion ëd la pàgina «[[:$1]]»",
 	'pt-movepage-title' => 'Tramudé la pàgina da volté $1',
 	'pt-movepage-blockers' => 'La pàgina da volté a peul pa esse tramudà a un nòm neuv a motiv ëd {{PLURAL:$1|cost eror|costi eror}}:',
 	'pt-movepage-block-base-exists' => 'La pàgina base pontà [[:$1]] a esist.',

@@ -923,6 +923,10 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] est un service affichant les chemins pour la randonnée, le cyclisme, le vélo-tourisme et le patinage à roulettes tout autour du monde. Il utilise la licence GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] permet de trouver rapidement les auteurs d’une page dans un wiki de Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] est un projet visant à offrir une version texte de Wikipedia en mode hors connexion sur un périphérique mobile.',
+	'translate-group-desc-wikimedia-mobile' => 'Le groupe de messages agrégés contient les applications mobiles pour les projets Wikimédia',
+	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] est une application inter-plateformes pour mobiles et tablettes permettant de lire et de contribuer à Wikipédia',
+	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] est une application inter-plateformes pour mobiles et tablettes permettant de lire et contribuer à Wiktionary',
+	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] est une application mobile pour contribuer au [[:meta:Wiki Loves Monuments|projet Monuments Appréciés de Wiki]]',
 );
 
 /** Franco-Provençal (arpetan)

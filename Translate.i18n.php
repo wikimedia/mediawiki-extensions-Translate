@@ -8569,6 +8569,8 @@ Les états sont définis dans la variable de configuration $wgTranslateWorkflowS
 	'translate-dynagroup-recent-label' => 'Traductions récentes',
 	'translate-dynagroup-recent-desc' => 'Ce groupe de message montre toutes les traductions récentes faites dans cette langue.
 Il est surtout utilisé pour les tâches de relecture.',
+	'translate-dynagroup-additions-label' => 'Ajouts récents',
+	'translate-dynagroup-additions-desc' => 'Ce groupe de messages affiche les messages nouveaux et modifiés.',
 	'translate-dynagroup-by' => 'Traduction faite par  {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Traduction faite par  {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Dernière modification par  {{GENDER:$1|$1}}',
@@ -17548,10 +17550,10 @@ Oversettelsene er adskilt med komma (,).
 Navnerom kan kun ha én oversettelse.
 
 I navneromoversettelsene er <code>$1 talk</code> spesiell. <code>$1</code> erstattes med nettstedsnavnet (for eksempel <code>{{ns:project_talk}}</code>).
-Om det ikke er mulig å få til et gyldig uttrykk på ditt språk uten å endre nettstedsnavnet, vennligst kontakt en utvikler.
+Om det ikke er mulig å få til et gyldig uttrykk på ditt språk uten å endre nettstedsnavnet, fortell oss det på [[Support]].
 
 Du må være i oversettergruppen for å lagre endringer.
-Endringer lagres ikke før du klikker på lagre-knappen nedenfor.', # Fuzzy
+Endringer lagres ikke før du klikker på lagre-knappen nedenfor.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Hent',
 	'translate-magic-cm-export' => 'Eksporter',
@@ -17582,6 +17584,8 @@ Endringer lagres ikke før du klikker på lagre-knappen nedenfor.', # Fuzzy
 	'translate-checks-xhtml' => 'Erstatt følgende {{PLURAL:$2|merke med det korrekte|merker med de korrekte}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definisjonen bruker <nowiki>{{PLURAL:}}</nowiki>, men oversettelsen gjør ikke det.',
+	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> ble gitt {{PLURAL:$1|én form|$1 former}}, men kun {{PLURAL:$2|én form|$2 former}} støttes (utenom 0- og 1-former).',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> har duplikatformer på slutten. <nowiki>{{PLURAL:$1|hus|hus}}</nowiki> bør skrives som <nowiki>{{PLURAL:$1|hus}}</nowiki>.',
 	'translate-checks-pagename' => 'Navnerom forandret fra definisjonen',
 	'translate-checks-format' => 'Denne oversettelsen følger ikke definisjonen eller har ugyldig syntaks: $1',
 	'translate-checks-escape' => 'De følgende lekkasjene kan være tilfeldige: <strong>$1</strong>',
@@ -17698,6 +17702,9 @@ Du oppfordres til å revidere meldinger gjennom [[Special:Translate|{{int:transl
 	'translate-smg-nochanges' => 'Det er ingen endringer å bearbeide.',
 	'translate-smg-submit' => 'Lagre endringer for prosessering',
 	'translate-smg-submitted' => 'Meldingdefinisjoner har blitt oppdatert. Endringene prosesseres i bakgrunnen.',
+	'translate-smg-postponed' => 'Noen endringer kunne ikke bearbeides. [[{{FULLPAGENAME}}|Prøv igjen]].',
+	'translate-smg-left' => 'Meldingsinnhold i wikien',
+	'translate-smg-right' => 'Kommende endringer',
 	'translate-manage-import-diff' => 'Melding $1 | Handlinger: $2',
 	'translate-manage-import-new' => 'Ny melding $1',
 	'translate-manage-import-deleted' => 'Slettet melding $1',
@@ -17764,7 +17771,7 @@ Detaljer: $1',
 	'translate-messagereview-failure' => 'Godkjenner … mislyktes: $1',
 	'translate-messagereview-done' => 'Godkjent',
 	'translate-messagereview-reviews' => 'Godkjent av {{PLURAL:$1|én bruker|$1 brukere}}',
-	'translate-messagereview-reviewswithyou' => 'Godkjent av {{PLURAL:$1|én bruker|$1 brukere}} inkludert deg', # Fuzzy
+	'translate-messagereview-reviewswithyou' => 'Godkjent av {{PLURAL:$1|deg|$1 brukere inkludert deg}}',
 	'api-error-invalidrevision' => 'Oversettelsen ble ikke funnet',
 	'api-error-unknownmessage' => 'Meldingen ble ikke funnet',
 	'api-error-fuzzymessage' => 'Oversettelsen er merket som foreldet',
@@ -17793,6 +17800,8 @@ Disse statusene defineres i konfigurasjonsvariabelen $wgTranslateWorkflowStates.
 	'translate-dynagroup-recent-label' => 'Nylige oversettelser',
 	'translate-dynagroup-recent-desc' => 'Denne meldingsgruppen viser alle nylige oversettelser til dette språket.
 Mest nyttig for korrekturlesningsoppgaver.',
+	'translate-dynagroup-additions-label' => 'Nylige tillegg',
+	'translate-dynagroup-additions-desc' => 'Denne meldingsgruppen viser nye og endrede meldinger.',
 	'translate-dynagroup-by' => 'Oversettelse gjort av {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Oversettelse gjort av {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Siste endring av {{GENDER:$1|$1}}',
