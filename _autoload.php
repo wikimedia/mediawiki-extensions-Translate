@@ -167,6 +167,7 @@ $wgAutoloadClasses['FFS'] = "$dir/ffs/FFS.php";
 $wgAutoloadClasses['FlatPhpFFS'] = "$dir/ffs/FlatPhpFFS.php";
 $wgAutoloadClasses['GettextFFS'] = "$dir/ffs/GettextFFS.php";
 $wgAutoloadClasses['GettextPluralException'] = "$dir/ffs/GettextFFS.php";
+$wgAutoloadClasses['IniFFS'] = "$dir/ffs/IniFFS.php";
 $wgAutoloadClasses['JavaFFS'] = "$dir/ffs/JavaFFS.php";
 $wgAutoloadClasses['JavaScriptFFS'] = "$dir/ffs/JavaScriptFFS.php";
 $wgAutoloadClasses['JsonFFS'] = "$dir/ffs/JsonFFS.php";
