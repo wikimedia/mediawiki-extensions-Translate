@@ -136,12 +136,19 @@ class ProcessMessageChanges extends Maintenance {
 		wfProfileIn( __METHOD__ );
 		/* This throws a warning if message definitions are not yet
 		 * cached and will read the file for definitions. */
+		wfSuppressWarnings();
 		$wiki = $group->initCollection( $code );
+		wfRestoreWarnings();
 		$wiki->filter( 'hastranslation', false );
 		$wiki->loadTranslations();
 		$wikiKeys = $wiki->getMessageKeys();
 
 		// By-pass cached message definitions
+		$ffs = $group->getFFS();
+		if ( $code === $group->getSourceLanguage() && !$ffs->exists( $code ) ) {
+			$path = $group->getSourceFilePath( $code );
+			$this->error( "Source message file for {$group->getId()} does not exist. Looking for $path", 1 );
+		}
 		$file = $group->getFFS()->read( $code );
 		if ( !isset( $file['MESSAGES'] ) ) {
 			error_log( "{$group->getId()} has an FFS - the FFS didn't return cake for $code" );
