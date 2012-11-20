@@ -30,6 +30,8 @@ class PythonSingleFFS extends SimpleFFS {
 
 		$offset = $pos + strlen( $splitter );
 		$header = substr( $data, 0, $offset );
+		// Avoid buildup of whitespace
+		$header = trim( $header );
 
 		$pattern = '.*?},\n';
 		$regexp = "~$pattern~xsu";
