@@ -71,7 +71,13 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 
 		$edCache = array();
 		$suggestions = array();
+		$timeLimit = microtime( true ) + 5;
 		foreach ( $resultset as $doc ) {
+			if ( microtime( true ) > $timeLimit ) {
+				// Having no suggestions is better than preventing translation
+				// altogether by timing out the request :(
+				break;
+			}
 			$candidate = $doc->content;
 
 			if ( isset( $edCache[$candidate] ) ) {
