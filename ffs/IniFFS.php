@@ -42,7 +42,7 @@ class IniFFS extends SimpleFFS {
 		// Remove comments
 		$data = preg_replace( '/^\s*;.*$/m', '', $data );
 		// Make sure values are quoted, PHP barks on stuff like ?{}|&~![()^
-		$data = preg_replace( '/(^.+?=\s*)([^\'"\\n]+)$/m', '\1"\2"', $data );
+		$data = preg_replace( '/(^.+?=\s*)([^\'"].+)$/m', '\1"\2"', $data );
 
 		$messages = parse_ini_string( $data );
 		if ( is_array( $messages ) ) {

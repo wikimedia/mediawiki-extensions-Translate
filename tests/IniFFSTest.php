@@ -38,6 +38,7 @@ class IniFFSTest extends MediaWikiTestCase {
 			'world' => 'World!',
 			'all' => 'all = all',
 			'foo.bar' => 'bar',
+			'quote' => "We're having fun?",
 		);
 		$expected = array( 'MESSAGES' => $expected, 'AUTHORS' => array( 'The king of very small kingdom' ) );
 		$this->assertEquals( $expected, $parsed );
