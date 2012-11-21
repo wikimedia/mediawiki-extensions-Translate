@@ -9184,7 +9184,7 @@ Os cambios non se gardan ata que prema no botón "Gardar" que hai ao final.',
 	'translate-magic-namespace' => 'Nomes dos espazos de nomes',
 	'translate-magic-notsaved' => 'A súa edición non foi gardada!',
 	'translate-magic-errors' => 'Por favor, corrixa {{PLURAL:$1|o seguinte erro|os seguintes erros}} nas traducións:',
-	'translate-magic-saved' => 'As súas modificacións gardáronse con éxito.',
+	'translate-magic-saved' => 'As súas modificacións gardáronse correctamente.',
 	'translate-checks-parameters' => '{{PLURAL:$2|Non se emprega o seguinte parámetro|Non se empregan os seguintes parámetros}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Descoñécese o seguinte parámetro|Descoñécense os seguintes parámetros}}:
@@ -18284,7 +18284,7 @@ Deze statussen zijn ingesteld in de instelling $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-desc' => 'Deze berichtengroep geeft alle recente wijzigingen weer in deze taal.
 Dit is vooral nuttig voor de controletaken.',
 	'translate-dynagroup-additions-label' => 'Recente toevoegingen',
-	'translate-dynagroup-additions-desc' => 'Deze groep berichten toont nieuwe en veranderde berichten.',
+	'translate-dynagroup-additions-desc' => 'In deze berichtengroep worden nieuwe en gewijzigde berichten weergegeven.',
 	'translate-dynagroup-by' => 'Vertaling gemaakt door {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Vertaling gemaakt door {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Laatste wijziging door {{GENDER:$1|$1}}',
@@ -26280,6 +26280,7 @@ $messages['ug-latn'] = array(
  * @author Ahonc
  * @author Aleksandrit
  * @author Apromix
+ * @author Base
  * @author Dim Grits
  * @author Hypers
  * @author Microcell
@@ -26436,7 +26437,7 @@ $messages['uk'] = array(
 	'translate-statsf-scale-days' => 'Дні',
 	'translate-statsf-scale-hours' => 'Години',
 	'translate-statsf-count' => 'Міра:',
-	'translate-statsf-count-edits' => 'Кількість редагувань',
+	'translate-statsf-count-edits' => 'Число редагувань',
 	'translate-statsf-count-users' => 'Активні перекладачі',
 	'translate-statsf-count-registrations' => 'Нові користувачі',
 	'translate-statsf-count-reviews' => 'Перегляди перекладу',
