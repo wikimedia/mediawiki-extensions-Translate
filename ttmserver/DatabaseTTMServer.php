@@ -248,9 +248,17 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 
 	protected function processQueryResults( $res, $text, $sourceLanguage, $targetLanguage ) {
 		wfProfileIn( __METHOD__ );
+		$timeLimit = microtime( true ) + 5;
+
 		$lenA = mb_strlen( $text );
 		$results = array();
 		foreach ( $res as $row ) {
+			if ( microtime( true ) > $timeLimit ) {
+				// Having no suggestions is better than preventing translation
+				// altogether by timing out the request :(
+				break;
+			}
+
 			$a = $text;
 			$b = $row->tms_text;
 			$lenB = mb_strlen( $b );
