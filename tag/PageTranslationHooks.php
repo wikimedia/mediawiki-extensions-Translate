@@ -743,18 +743,6 @@ class PageTranslationHooks {
 	}
 
 	/**
-	 * @param $updater LinksUpdate
-	 * @return bool
-	 */
-	public static function preventCategorization( $updater ) {
-		$handle = new MessageHandle( $updater->getTitle() );
-		if ( $handle->isPageTranslation() && !$handle->isDoc() ) {
-			$updater->mCategories = array();
-		}
-		return true;
-	}
-
-	/**
 	 * @param $type
 	 * @param $action
 	 * @param $title Title
