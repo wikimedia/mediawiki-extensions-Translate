@@ -759,6 +759,23 @@ $specialPageAliases['sa'] = array(
 	'LanguageStats' => array( 'भाषासांख्यिकी' ),
 );
 
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'Translate' => array( 'Traduci' ),
+	'Magic' => array( 'TraduciAvanzato' ),
+	'TranslationStats' => array( 'StatisticheTraduzione' ),
+	'Translations' => array( 'Traduzioni' ),
+	'LanguageStats' => array( 'StatisticheLingua' ),
+	'MessageGroupStats' => array( 'MessaggioGruppoStat' ),
+	'PageTranslation' => array( 'TraduzionePagina' ),
+	'ImportTranslations' => array( 'ImportaTraduzioni' ),
+	'ManageMessageGroups' => array( 'GestisciGruppiMessaggio' ),
+	'FirstSteps' => array( 'PrimiPassi' ),
+	'SupportedLanguages' => array( 'LingueSupportate' ),
+	'MyLanguage' => array( 'MiaLingua' ),
+	'AggregateGroups' => array( 'GruppiAggregati' ),
+);
+
 /** Sinhala (සිංහල) */
 $specialPageAliases['si'] = array(
 	'Translate' => array( 'පරිවර්තනය' ),
