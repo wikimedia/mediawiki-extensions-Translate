@@ -115,6 +115,8 @@ $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 $wgHooks['LanguageGetTranslatedLanguageNames'][] = 'TranslateHooks::translateMessageDocumentationLanguage';
 $wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
+// Prevent translations creating bogus categories
+$wgHooks['LinksUpdate'][] = 'TranslateHooks::preventCategorization';
 // Fuzzy tags for speed.
 if ( !defined( 'MW_SUPPORTS_CONTENTHANDLER' ) ) {
 	// BC 1.20

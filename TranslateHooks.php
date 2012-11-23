@@ -141,9 +141,6 @@ class TranslateHooks {
 			// Our custom header for translation pages
 			$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::translatablePageHeader';
 
-			// Prevent section pages appearing in categories
-			$wgHooks['LinksUpdate'][] = 'PageTranslationHooks::preventCategorization';
-
 			// Custom move page that can move all the associated pages too
 			$wgHooks['SpecialPage_initList'][] = 'PageTranslationHooks::replaceMovePage';
 			// Locking during page moves
@@ -429,5 +426,14 @@ JAVASCRIPT;
 		$filter = array_flip( explode( ',', $filterLangs ) );
 		// If the language is in the list, return true to not hide it
 		return isset( $filter[$code] );
+	}
+
+	/// Hook LinksUpdate
+	public static function preventCategorization( LinksUpdate $updater ) {
+		$handle = new MessageHandle( $updater->getTitle() );
+		if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
+			$updater->mCategories = array();
+		}
+		return true;
 	}
 }
