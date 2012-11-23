@@ -9376,6 +9376,10 @@ $messages['tt-cyrl'] = array(
  */
 $messages['tzm'] = array(
 	'pagetranslation' => 'ⵜⴰⵙⵓⵖⵍⵜ ⵏ ⵜⴰⵙⵏⴰ',
+	'tpt-template' => 'ⵜⴰⵍⵖⴰ ⵏ ⵜⴰⵙⵏⴰ',
+	'tpt-diff-new' => 'ⴰⴹⵔⵉⵙ ⴰⵎⴰⵢⵏⵓ',
+	'tpt-select-prioritylangs-reason' => 'ⴰⵙⵔⴰⴳ:',
+	'tpt-languages-legend' => 'ⵜⵓⵜⵍⴰⵢⵉⵏ ⵢⴰⴹⵏⵉ:',
 	'tpt-aggregategroup-add' => 'ⵔⵏⵓ',
 	'tpt-aggregategroup-save' => 'ⵣⵎⵎⴻⵎ',
 	'tpt-aggregategroup-new-name' => 'ⴰⵙⵙⴰⵖ:',
@@ -9383,6 +9387,7 @@ $messages['tzm'] = array(
 	'pt-movepage-new' => 'ⴰⵙⵙⴰⵖ ⴰⵎⴰⵢⵏⵓ:',
 	'pt-movepage-reason' => 'ⴰⵙⵔⴰⴳ:',
 	'pt-deletepage-current' => 'ⴰⵙⵙⴰⵖ ⵏ ⵜⴰⵙⵏⴰ:',
+	'pt-deletepage-reason' => 'ⴰⵙⵔⴰⴳ:',
 );
 
 /** Uyghur (Arabic script) (ئۇيغۇرچە)
@@ -10198,6 +10203,7 @@ $messages['zh-hans'] = array(
 $messages['zh-hant'] = array(
 	'pagetranslation' => '頁面翻譯',
 	'right-pagetranslation' => '為翻譯標記頁面的版本',
+	'action-pagetranslation' => '管理可翻譯頁面',
 	'tpt-desc' => '用於翻譯內容頁面的擴展',
 	'tpt-section' => '翻譯單元$1',
 	'tpt-section-new' => '新翻譯單元。
@@ -10323,9 +10329,9 @@ $messages['zh-hant'] = array(
 	'pt-movepage-block-subpage-exists' => '目標子頁面 [[:$2]] 存在。',
 	'pt-movepage-block-subpage-invalid' => '為[[:$1]]的目標子頁面的標題無效，可能因為字符太多。',
 	'pt-movepage-list-pages' => '移動到頁面的列表',
-	'pt-movepage-list-translation' => '翻譯網頁',
-	'pt-movepage-list-section' => '翻譯單元頁面',
-	'pt-movepage-list-other' => '其他子頁面',
+	'pt-movepage-list-translation' => '翻譯網頁', # Fuzzy
+	'pt-movepage-list-section' => '翻譯單元頁面', # Fuzzy
+	'pt-movepage-list-other' => '其他子頁面', # Fuzzy
 	'pt-movepage-list-count' => '總計$1個頁面即將移動。',
 	'pt-movepage-legend' => '移動可翻譯頁面',
 	'pt-movepage-current' => '當前的名稱：',
