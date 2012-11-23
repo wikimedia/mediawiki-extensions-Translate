@@ -141,7 +141,7 @@
 		textarea = form.find( '.mw-translate-edit-area' );
 		textarea.css( 'display', 'block' );
 		textarea.autoResize( { maxHeight: 200 } );
-		textarea.focus();
+		textarea[0].focus();
 
 		// Optional Narayam integration
 		// @todo: update to ULS when applicable
