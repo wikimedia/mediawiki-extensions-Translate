@@ -23111,6 +23111,8 @@ Stanja so opredeljena v konfiguracijski spremenljivki $wgTranslateWorkflowStates
 	'translate-dynagroup-recent-label' => 'Nedavni prevodi',
 	'translate-dynagroup-recent-desc' => 'Skupina sporočil prikazuje vse nedavne prevode v ta jezik.
 Najuporabnejše za opravila lektoriranja.',
+	'translate-dynagroup-additions-label' => 'Nedavna dodajanja',
+	'translate-dynagroup-additions-desc' => 'Ta skupina sporočil kaže nova in spremenjena sporočila.',
 	'translate-dynagroup-by' => '{{GENDER:$1|Prevedel|Prevedla|Prevedla oseba}} $1',
 	'translate-dynagroup-byc' => '{{GENDER:$1|Prevedel|Prevedla|Prevedla oseba}} $1 ($2)',
 	'translate-dynagroup-last' => 'Nazadnje {{GENDER:$1|spremenil|spremenila|spremenil(-a)}} $1',
