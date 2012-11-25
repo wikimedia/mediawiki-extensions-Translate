@@ -515,6 +515,7 @@ Vysvětlení klíčů u funkce PLURAL najdete na [http://unicode.org/repos/cldr-
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] je mnohoplatformní mobilní a tabletová aplikace pro čtení Wikipedie a přispívání do ní',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] je mnohoplatformní mobilní a tabletová aplikace pro čtení Wikislovníku a přispívání do něj',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] is a mobile application for contributing to the [[:meta:Wiki Loves Monuments|Wiki Loves Monuments project]]',
+	'translate-group-desc-waymarked-trails-help' => 'Nápověda na stránkách Waymarked Trails: http://waymarkedtrails.org/help/about',
 );
 
 /** Danish (dansk)
@@ -1452,7 +1453,7 @@ Vedi [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_
  * @author 青子守歌
  */
 $messages['ja'] = array(
-	'translategroupdescriptions-desc' => '[http://mediawiki.org/wiki/Extension:Translate Translate]拡張機能で利用可能な製品のメッセージ群の概略',
+	'translategroupdescriptions-desc' => '[http://mediawiki.org/wiki/Extension:Translate Translate] 拡張機能で利用できる製品のメッセージ群の説明',
 	'translate-group-desc-nodesc' => 'このメッセージ群には説明がありません',
 	'translate-group-desc-mediawikicore' => 'このメッセージ群は、[[Translating:MediaWiki|MediaWiki]]の現在のアルファ版({{CURRENTVERSION}})で使用しているメッセージを含んでいます',
 	'translate-group-desc-mediawikimostused' => 'このメッセージ群は、[[Translating:MediaWiki|MediaWiki]]で[http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki もっともよく使われている500のメッセージ]を含んでいます',
@@ -1599,6 +1600,7 @@ $messages['ko'] = array(
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]]은 위키백과 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]]은 위키낱말사전 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]]은 [[:meta:Wiki Loves Monuments|Wiki Loves Monuments project]]에 기여하기 위한 모바일 어플리케이션입니다',
+	'translate-group-desc-waymarked-trails-help' => 'Waymarked Trails 웹 사이트의 도움말 페이지입니다: http://waymarkedtrails.org/help/about',
 );
 
 /** Colognian (Ripoarisch)
@@ -1785,6 +1787,7 @@ $messages['mk'] = array(
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|ВикипедијаМобилен]] е повеќеподложен додаток за мобилни и таблични уреди наменет за читање и уредување на Википедија',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|ВикиречникМобилен]] е повеќеподложен додаток за мобилни и таблични уреди наменет за читање и уредување на Викиречникот',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|ВикиГиСакаСпомениците - Мобилен]] е мобилен прилог за учествување во проектот „[[:meta:Wiki Loves Monuments|Вики ги сака спомениците]]“',
+	'translate-group-desc-waymarked-trails-help' => "Страниците за помош на порталите на „Означени патеки“ (''Waymarked Trails''): http://waymarkedtrails.org/help/about",
 );
 
 /** Malayalam (മലയാളം)

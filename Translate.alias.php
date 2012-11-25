@@ -160,6 +160,16 @@ $specialPageAliases['bs'] = array(
 	'ImportTranslations' => array( 'UvozPrijevoda' ),
 );
 
+/** буряад (буряад) */
+$specialPageAliases['bxr'] = array(
+	'Translate' => array( 'Оршуулха' ),
+	'Translations' => array( 'Оршуулганууд' ),
+	'PageTranslation' => array( 'Хуудаһанай_оршуулга' ),
+	'FirstSteps' => array( 'Түрүүшын_алхамууд' ),
+	'SupportedLanguages' => array( 'Дэмжэдэг_хэлэн' ),
+	'MyLanguage' => array( 'Минии_хэлэн' ),
+);
+
 /** Cebuano (Cebuano) */
 $specialPageAliases['ceb'] = array(
 	'Translate' => array( 'Hubara' ),
@@ -324,6 +334,11 @@ $specialPageAliases['he'] = array(
 	'Translate' => array( 'תרגום' ),
 	'Magic' => array( 'תרגום_מתקדם' ),
 	'TranslationStats' => array( 'סטטיסטיקות_תרגום' ),
+);
+
+/** Hindi (हिन्दी) */
+$specialPageAliases['hi'] = array(
+	'Translate' => array( 'अनुवाद' ),
 );
 
 /** Croatian (hrvatski) */
@@ -687,6 +702,9 @@ $specialPageAliases['or'] = array(
 
 /** Punjabi (ਪੰਜਾਬੀ) */
 $specialPageAliases['pa'] = array(
+	'Translate' => array( 'ਅਨੁਵਾਦ' ),
+	'Magic' => array( 'ਐਡਵੈਨਸਟ_ਅਨੁਵਾਦ', 'ਜਾਦੂ' ),
+	'PageTranslation' => array( 'ਪੰਨਾ_ਅਨੁਵਾਦ' ),
 	'MyLanguage' => array( 'ਮੇਰੀ_ਭਾਸ਼ਾ' ),
 );
 

@@ -238,6 +238,7 @@ Failures will be logged in the [[Special:Log/pagetranslation|page translation lo
  * @author Nemo bis
  * @author Nike
  * @author Purodha
+ * @author Shirayuki
  * @author Siebrand
  * @author Umherirrender
  */
@@ -324,8 +325,10 @@ Used only if a reason was provided in the following messages:
 	'pt-log-encourage' => "A log message that appears when a translation manager marks a page as a page that should not be translated, for example if it's outdated.",
 	'pt-log-discourage' => '{{logentry|[[Special:Log/pagetranslation]]}}',
 	'pt-log-priority-langs-unset' => '{{logentry|[[Special:Log/pagetranslation]]}}',
-	'pt-log-priority-langs' => 'Used on [[Special:Log/pagetranslation]]. $3 is comma-separated list of languages.',
-	'pt-log-priority-langs-force' => 'Used on [[Special:Log/pagetranslation]]. $3 is a comma-separated list of languages.',
+	'pt-log-priority-langs' => 'Used on [[Special:Log/pagetranslation]].
+* $3 - comma-separated list of languages',
+	'pt-log-priority-langs-force' => "Used on [[Special:Log/pagetranslation]], after the performing user's name (in sentence format).
+* $3 - a comma-separated list of languages",
 	'pt-log-aggregategroup-associate' => 'Used on [[Special:Log/pagetranslation]],
 * $1 is link to a page,
 * $2 is the user,
@@ -2827,6 +2830,8 @@ $messages['fa'] = array(
 	'pagetranslation' => 'ترجمهٔ صفحه',
 	'right-pagetranslation' => 'علامت‌گذاری نسخه‌های صفحه برای ترجمه',
 	'tpt-section' => 'واحد ترجمهٔ $1',
+	'tpt-section-new' => 'واحد جدید ترجمه.
+نام: $1',
 	'tpt-section-deleted' => 'واحد ترجمهٔ $1',
 	'tpt-template' => 'قالب صفحه',
 	'tpt-templatediff' => 'قالب صفحه تغییر کرده‌است.',
@@ -2851,7 +2856,7 @@ $messages['fa'] = array(
 	'tpt-rev-unmark-tooltip' => 'حذف این صفحه از ترجمه.',
 	'translate-tag-translate-link-desc' => 'ترجمه این پروژه',
 	'translate-tag-markthis' => 'علامت‌گذاری این صفحه برای ترجمه',
-	'tpt-languages-legend' => 'زبان های دیگر:',
+	'tpt-languages-legend' => 'زبان‌های دیگر:',
 	'tpt-languages-zero' => 'شروع ترجمه برای این زبان',
 	'tpt-target-page' => 'این صفحه به صورت دستی به روز نمی‌شود.
 این صفحه یک ترجمه‌ای از صفحهٔ [[$1]] است و ترجمه را می‌توان از طریق [$2 ابزار ترجمه] به روز کرد.',
@@ -2864,9 +2869,9 @@ $messages['fa'] = array(
 	'pt-log-name' => 'سیاههٔ ترجمهٔ صفحه',
 	'pt-log-mark' => 'نسخه $3 از صفحهٔ «[[:$1]]» را برای ترجمه {{GENDER:$2|علامت زد}}',
 	'pt-log-unmark' => 'صفحهٔ «[[:$1]]» را از ترجمه {{GENDER:$2|حذف کرد}}',
-	'pt-movepage-list-translation' => 'صفحه‌های ترجمه',
-	'pt-movepage-list-section' => 'صفحه‌های واحد ترجمه',
-	'pt-movepage-list-other' => 'زیرصفحه‌های دیگر',
+	'pt-movepage-list-translation' => 'صفحه‌های ترجمه', # Fuzzy
+	'pt-movepage-list-section' => 'صفحه‌های واحد ترجمه', # Fuzzy
+	'pt-movepage-list-other' => 'زیرصفحه‌های دیگر', # Fuzzy
 	'pt-movepage-current' => 'نام فعلی:',
 	'pt-movepage-new' => 'نام جدید:',
 	'pt-movepage-reason' => 'دلیل:',
@@ -4844,7 +4849,7 @@ Testo della sezione: <pre>$1</pre>',
 	'pt-log-discourage' => '{{GENDER:$2|ha scoraggiato}} la traduzione della pagina [[:$1]]',
 	'pt-log-priority-langs-unset' => 'Lingue prioritarie {{GENDER:$2|rimosse}} dalla pagina [[:$1]] da tradurre',
 	'pt-log-priority-langs' => '{{GENDER:$2|Impostate}} le lingue prioritarie per la pagina traducibile [[:$1]] in $3. Motivo: $4',
-	'pt-log-priority-langs-force' => '{{GENDER:$2|Limitate}} le lingue per la pagina traducibile [[:$1]] in $3. Motivo: $4',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|ha limitato}} le lingue per la pagina traducibile [[:$1]] in $3. Motivo: $4',
 	'pt-log-aggregategroup-associate' => 'La pagina [[:$1]] da tradurre è stata {{GENDER:$2|aggiunta}} al gruppo aggregato $3',
 	'pt-log-aggregategroup-dissociate' => 'La pagina [[:$1]] da tradurre è stata {{GENDER:$2|rimossa}} dal gruppo aggregato $3',
 	'pt-movepage-title' => 'Sposta la pagina traducibile $1',
@@ -5011,16 +5016,16 @@ $messages['ja'] = array(
 	'pt-shake-position' => '予期しない位置に翻訳単位マーカーがあります。
 翻訳単位の内容: <pre>$1</pre>',
 	'pt-shake-empty' => 'マーカー「$1」に対応する翻訳単位が空です。',
-	'pt-log-header' => 'ページ翻訳システムに関連した操作の記録',
+	'pt-log-header' => 'ページ翻訳システムに関連する操作の記録',
 	'pt-log-name' => 'ページ翻訳記録',
-	'pt-log-mark' => 'ページ「[[:$1]]」の版 $3 を翻訳対象に{{GENDER:$2|指定}}',
-	'pt-log-unmark' => 'ページ「[[:$1]]」の翻訳対象指定を{{GENDER:$2|解除}}',
-	'pt-log-moveok' => '翻訳対象ページ「$1」を新しい名前 $3 に変更{{GENDER:$2|完了}}',
-	'pt-log-movenok' => '「[[:$1]]」を「[[:$3]]」に移動する際に問題点が{{GENDER:$2|発生しました}}',
-	'pt-log-delete-full-ok' => '翻訳対象ページ「$1」の削除が{{GENDER:$2|完了しました}}',
-	'pt-log-delete-full-nok' => '翻訳対象ページ「[[:$1]]」の削除する際に問題点が{{GENDER:$2|発生しました}}',
-	'pt-log-delete-lang-ok' => '翻訳ページ「$1」の削除が{{GENDER:$2|完了しました}}',
-	'pt-log-delete-lang-nok' => '翻訳ページ「[[:$1]]」を削除する際に問題点が{{GENDER:$2|発生しました}}',
+	'pt-log-mark' => 'がページ「[[:$1]]」の版 $3 を翻訳対象に{{GENDER:$2|指定しました}}',
+	'pt-log-unmark' => 'がページ「[[:$1]]」の翻訳対象指定を{{GENDER:$2|解除しました}}',
+	'pt-log-moveok' => 'が翻訳対象ページ「$1」を新しい名前 $3 に変更{{GENDER:$2|完了しました}}',
+	'pt-log-movenok' => 'が「[[:$1]]」を「[[:$3]]」に移動する際に問題点が{{GENDER:$2|発生しました}}',
+	'pt-log-delete-full-ok' => 'が翻訳対象ページ「$1」を削除{{GENDER:$2|完了しました}}',
+	'pt-log-delete-full-nok' => 'が翻訳対象ページ「[[:$1]]」を削除する際に問題点が{{GENDER:$2|発生しました}}',
+	'pt-log-delete-lang-ok' => 'が翻訳ページ「$1」を削除{{GENDER:$2|完了しました}}',
+	'pt-log-delete-lang-nok' => 'が翻訳ページ「[[:$1]]」を削除する際に問題点が{{GENDER:$2|発生しました}}',
 	'pt-log-encourage' => 'がページ「[[:$1]]」を翻訳対象に{{GENDER:$2|指定しました}}',
 	'pt-log-discourage' => 'がページ「[[:$1]]」の翻訳対象指定を{{GENDER:$2|解除しました}}',
 	'pt-log-priority-langs-unset' => 'が翻訳対象ページ「[[:$1]]」から主要言語を{{GENDER:$2|除去しました}}',

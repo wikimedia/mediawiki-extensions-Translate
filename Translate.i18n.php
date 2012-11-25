@@ -1502,6 +1502,8 @@ $messages['arc'] = array(
 	'translate-taskui-suggestions' => 'ܚܘܝ ܐܓܪ̈ܬܐ ܥܡ ܡܚܫܚܬ̈ܐ ܡܢ ܥܘܗܕܢܐ ܕܬܘܪܓܡܐ',
 	'translate-taction-translate' => 'ܬܪܓܡ',
 	'translate-taction-proofread' => 'ܢܩܕ ܟܬܒܬܐ',
+	'translate-taction-lstats' => 'ܚܒܝܫܘܬ ܡܢܝܢܐ ܕܠܫܢܐ',
+	'translate-taction-mstats' => 'ܚܒܝܫܘܬ ܡܢܝܢܐ ܕܟܢܘܫܬܐ ܕܐܓܪ̈ܬܐ',
 	'translate-taction-export' => 'ܐܦܩ',
 	'translate-page-settings-legend' => 'ܛܘܝܒ̈ܐ',
 	'translate-page-group' => 'ܟܢܘܫܬܐ',
@@ -1538,6 +1540,7 @@ $messages['arc'] = array(
 	'translate-magic-namespace' => 'ܫܡܗ̈ܐ ܕܚܩܠܬ̈ܐ',
 	'prefs-translate' => 'ܓܒܝܬ̈ܐ ܕܬܘܪܓܡܐ',
 	'translate-rc-translation-filter-only' => 'ܚܘܝ ܬܘܪ̈ܓܡܐ ܒܠܚܘܕ',
+	'translationstats' => 'ܚܒܝܫܘܬ ܡܢܝܢܐ ܕܬܘܪܓܡܐ',
 	'translate-stats-edits' => 'ܫܘܚܠܦ̈ܐ',
 	'translate-stats-users' => 'ܬܪ̈ܓܡܢܐ',
 	'translate-statsf-scale-days' => 'ܝܘܡܬ̈ܐ',
@@ -1551,6 +1554,7 @@ $messages['arc'] = array(
 	'translate-translations-messagename' => 'ܫܡܐ',
 	'translate-translations-project' => 'ܬܪܡܝܬܐ:',
 	'translate-translations-history-short' => 'ܬ',
+	'languagestats' => 'ܚܒܝܫܘܬ ܡܢܝܢܐ ܕܠܫܢܐ',
 	'translate-language' => 'ܠܫܢܐ',
 	'translate-total' => 'ܐܓܪ̈ܬܐ',
 	'translate-untranslated' => 'ܠܐ ܬܘܪ̈ܓܡܐ',
@@ -11552,6 +11556,13 @@ Részletek: $1',
 	'translate-gethelp' => 'Súgó',
 );
 
+/** Armenian (Հայերեն)
+ * @author Vadgt
+ */
+$messages['hy'] = array(
+	'translate' => 'Թագմանություն',
+);
+
 /** Interlingua (interlingua)
  * @author McDutchie
  */
@@ -14550,7 +14561,7 @@ $1',
 	'translate-total' => '메시지',
 	'translate-untranslated' => '미번역',
 	'translate-percentage-complete' => '완료',
-	'translate-percentage-fuzzy' => '업데이트 필요',
+	'translate-percentage-fuzzy' => '업데이트 필요함',
 	'translate-nothing-to-do' => '모든 번역이 완료된 것 같습니다.
 [[Special:Translate|{{int:translate}}]]를 통해 메시지를 검토해주십시오.',
 	'translate-languagestats-overall' => '모든 메시지 그룹의 합계',
