@@ -702,9 +702,9 @@ $specialPageAliases['or'] = array(
 
 /** Punjabi (ਪੰਜਾਬੀ) */
 $specialPageAliases['pa'] = array(
-	'Translate' => array( 'ਅਨੁਵਾਦ' ),
-	'Magic' => array( 'ਐਡਵੈਨਸਟ_ਅਨੁਵਾਦ', 'ਜਾਦੂ' ),
-	'PageTranslation' => array( 'ਪੰਨਾ_ਅਨੁਵਾਦ' ),
+	'Translate' => array( 'ਉਲਥਾ' ),
+	'Magic' => array( 'ਉੱਚੇ_ਦਰਜੇ_ਦਾ_ਉਲਥਾ', 'ਜਾਦੂ' ),
+	'PageTranslation' => array( 'ਪੰਨਾ_ਉਲਥਾ' ),
 	'MyLanguage' => array( 'ਮੇਰੀ_ਭਾਸ਼ਾ' ),
 );
 

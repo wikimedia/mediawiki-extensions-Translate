@@ -17128,6 +17128,8 @@ Keadaan-keadaan ini ditakrifkan dalam pembolehubah konfigurasi $wgTranslateWorkf
 	'translate-dynagroup-recent-label' => 'Terjemahan terkini',
 	'translate-dynagroup-recent-desc' => 'Kumpulan mesej ini menunjukkan semua terjemahan terkini ke dalam bahasa ini.
 Paling berguna dengan tugas menyemak (membaca pruf).',
+	'translate-dynagroup-additions-label' => 'Penambahan terbaru',
+	'translate-dynagroup-additions-desc' => 'Kumpulan mesej ini memaparkan mesej-mesej yang baru dan diubah.',
 	'translate-dynagroup-by' => 'Terjemahan dibuat oleh {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Terjemahan dibuat oleh {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Perubahan terkini oleh {{GENDER:$1|$1}}',
