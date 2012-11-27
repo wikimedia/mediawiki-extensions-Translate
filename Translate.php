@@ -572,10 +572,6 @@ $wgTranslateAC = array(
  *  $wgTranslateEC = $wgTranslateAC;
  */
 $wgTranslateEC = array();
-/**
- * Add MediaWiki core messages group.
- */
-$wgTranslateEC[] = 'core';
 
 /**
  * CC = Custom classes.
