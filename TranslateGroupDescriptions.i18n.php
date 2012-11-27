@@ -2836,11 +2836,9 @@ $messages['uk'] = array(
 	'translate-group-desc-collection' => 'Метагрупа, що містить повідомлення для розширення [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Метагрупа, що містить повідомлення для MediaWiki-розширення [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Метагрупа, що містить всі повідомлення розширення MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-socialprofile' => 'Метагрупа, що містить повідомлення для MediaWiki-розширення [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Метагрупа, що містить повідомлення для MediaWiki-розширення [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://wikimedia.org/ Фондом Вікімедіа]',
-	'translate-group-desc-uniwiki' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Усі сторінки, що можуть перекладатися',
 	'bw-desc-freecol' => 'Перед тим, як перекладати FreeCol на вашу мову, прочитайте, будь ласка, [[Translating:FreeCol]]. Freecol використовує ліцензію GPL.',
@@ -2852,10 +2850,9 @@ $messages['uk'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' це бібліотека на мові python для створення PDF-документів зі сторінок MediaWiki, які були проаналізовані mwlib.
 
 Гляньте, будь ласка, [[mw:Extension:PDF_Writer]] та http://code.pediapress.com/wiki/wiki/mwlibrl для доклднішої інформації.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] це клієнт веб-пошти (webmail) написаний на PHP. Будь ласка, повідомляйте про будь-які проблеми на [[Support|сторінці підтримки]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] це автономна читалка Вікіпедії',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] — відкрита медіа-платформа',
 	'translate-group-desc-openimages-all' => 'Ці повідомлення є частиною проекту [[Translating:Open Images|Open Images]]',
-	'bw-desc-openlayers' => 'OpenLayers це генератор динамічних карт з відкритими вихідними кодами. Будь ласка, повідомляйте про будь-які проблеми на [[Support|сторінці підтримки]].',
 	'bw-desc-openstreetmap' => 'Група повідомлень [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Ця група містить повідомлення інтерфейсу [[Translating:Open Street Map|Open Street Map]].
 Глядіть [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} сторінку Unicode CLDR для пояснень щодо творення форми множини].',
@@ -2865,8 +2862,6 @@ $messages['uk'] = array(
 	'translate-group-desc-statusnet-plugin' => 'Ці повідомлення є частиною плагіна для [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дозволяє швидко знайти авторів сторінки в проектах Вікімедіа.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] є проектом для випуску автономної текстової версії Вікіпедії на мобільному пристрої.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] є багатоплатформним застосунком для мобільних та планшетних пристроїв, який призначено для читання Вікіпедії та дописування до неї',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] — це крос-платформенний додаток для мобільних і планшетних пристроїв, що призначений для читання і редагування Вікісловника',
 );
 
 /** Uzbek (oʻzbekcha)

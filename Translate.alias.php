@@ -291,6 +291,7 @@ $specialPageAliases['fr'] = array(
 	'TranslationStats' => array( 'StatistiquesDesTraductions', 'Statistiques_des_traductions' ),
 	'Translations' => array( 'Traductions' ),
 	'LanguageStats' => array( 'StatistiquesDesLangues', 'Statistiques_des_langues' ),
+	'MyLanguage' => array( 'MaLangue', 'Ma_langue' ),
 );
 
 /** Franco-Provençal (arpetan) */
@@ -647,7 +648,7 @@ $specialPageAliases['nds'] = array(
 	'Translate' => array( 'Översetten' ),
 );
 
-/** Nedersaksisch (Nedersaksisch) */
+/** Nedersaksies (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'Translate' => array( 'Vertalen' ),
 	'Magic' => array( 'Uutebreid_vertalen' ),
