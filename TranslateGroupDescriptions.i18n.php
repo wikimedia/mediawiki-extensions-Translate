@@ -1443,6 +1443,7 @@ Vedi [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_
 	'translate-group-desc-wikimedia-mobile-wikipedia' => "[[Translating:WikipediaMobile|WikipediaMobile]] è un'applicazione multipiattaforma per dispositivi mobili e tavolette per leggere e modificare Wikipedia",
 	'translate-group-desc-wikimedia-mobile-wiktionary' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] è un'applicazione multipiattaforma per dispositivi mobili e tavolette per leggere e modificare Wiktionary",
 	'translate-group-desc-wikimedia-mobile-wlm' => "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] è un'applicazione per dispositivi mobili per contribuire al [[:meta:Wiki Loves Monuments|progetto Wiki Loves Monuments]]",
+	'translate-group-desc-waymarked-trails-help' => 'Le pagine di aiuto del sito web Waymarked Trails: http://waymarkedtrails.org/help/about',
 );
 
 /** Japanese (日本語)

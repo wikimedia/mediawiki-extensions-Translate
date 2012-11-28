@@ -11561,6 +11561,8 @@ Részletek: $1',
  */
 $messages['hy'] = array(
 	'translate' => 'Թագմանություն',
+	'translate-taction-translate' => 'Թագմանություն',
+	'translate-edit-translation' => 'Թագմանություն',
 );
 
 /** Interlingua (interlingua)
@@ -12996,7 +12998,8 @@ $messages['ja'] = array(
 	'translate-untranslated' => '未翻訳',
 	'translate-percentage-complete' => '完了',
 	'translate-percentage-fuzzy' => '要修正',
-	'translate-nothing-to-do' => '翻訳の可能なものはすべて翻訳されています。[[Special:Translate|{{int:translate}}]]を使ってメッセージを見直すことが推奨されます。',
+	'translate-nothing-to-do' => '翻訳可能なものはすべて翻訳されています。
+[[Special:Translate|{{int:translate}}]]を使用してメッセージを見直すことを推奨します。',
 	'translate-languagestats-overall' => '合計',
 	'translate-ls-submit' => '統計を表示',
 	'translate-ls-column-group' => 'メッセージ群',
@@ -13066,7 +13069,7 @@ $1',
 	'translate-import-err-no-headers' => 'ファイルが Translate 拡張機能の形式に正しく適応した gettext ファイルではありません。
 ファイル ヘッダーからメッセージ群と言語を決定できませんでした。',
 	'translate-import-err-warnings' => 'このファイルは形式が正しくありません。
-あなたの使ったエディターが msgctxt フィールドを除去していないか確認してください。
+あなたが使用したエディターが msgctxt フィールドを除去していないか確認してください。
 詳細: $1',
 	'translate-js-summary' => '要約:',
 	'translate-js-save' => '保存',
