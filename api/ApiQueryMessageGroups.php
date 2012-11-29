@@ -31,10 +31,12 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			$groups = MessageGroups::getAllGroups();
 		}
 
+		$props = array_flip( $params['prop'] );
+
 		$result = $this->getResult();
 
 		foreach ( $groups as $mixed ) {
-			$a = $this->formatGroup( $mixed );
+			$a = $this->formatGroup( $mixed, $props );
 			$id = $a['id'];
 
 			$result->setIndexedTagName( $a, 'group' );
@@ -55,7 +57,9 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 	 * @param array|MessageGroup $mixed
 	 * @return array
 	 */
-	protected function formatGroup( $mixed ) {
+	protected function formatGroup( $mixed, $props ) {
+		$params = $this->extractRequestParams();
+
 		// Default
 		$g = $mixed;
 		$subgroups = array();
@@ -67,15 +71,30 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		}
 
 		$a = array();
-		$a['id'] = $g->getId();
-		$a['label'] = $g->getLabel();
-		$a['description'] = $g->getDescription();
-		$a['class'] = get_class( $g );
-		$a['exists'] = $g->exists();
+
+		if ( isset( $props['id'] ) ) {
+			$a['id'] = $g->getId();
+		}
+
+		if ( isset( $props['label'] ) ) {
+			$a['label'] = $g->getLabel();
+		}
+
+		if ( isset( $props['description'] ) ) {
+			$a['description'] = $g->getDescription();
+		}
+
+		if ( isset( $props['class'] ) ) {
+			$a['class'] = get_class( $g );
+		}
+
+		if ( isset( $props['exists'] ) ) {
+			$a['exists'] = $g->exists();
+		}
 
 		if ( $subgroups !== array() ) {
 			foreach( $subgroups as $sg ) {
-				$a['groups'][] = $this->formatGroup( $sg );
+				$a['groups'][] = $this->formatGroup( $sg, $props );
 			}
 			$result = $this->getResult();
 			$result->setIndexedTagName( $a['groups'], 'group' );
@@ -89,6 +108,11 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			'format' => array(
 				ApiBase::PARAM_TYPE => array( 'flat', 'tree' ),
 				ApiBase::PARAM_DFLT => 'flat',
+			),
+			'prop' => array(
+				ApiBase::PARAM_TYPE => array( 'id', 'label', 'description', 'class', 'exists' ),
+				ApiBase::PARAM_DFLT => 'id|label|description|class|exists',
+				ApiBase::PARAM_ISMULTI => true,
 			)
 		);
 	}
