@@ -29,6 +29,11 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		$groups = array();
 		if ( $params['format'] === 'flat' ) {
 			$groups = MessageGroups::getAllGroups();
+			// Not sorted by default, so do it now
+			// Work around php bug: https://bugs.php.net/bug.php?id=50688
+			wfSuppressWarnings();
+			usort( $tree, array( __CLASS__, 'groupLabelSort' ) );
+			wfRestoreWarnings();
 
 		// format=tree from now on, as it is the only other valid option
 		} elseif ( $params['root'] !== '' ) {

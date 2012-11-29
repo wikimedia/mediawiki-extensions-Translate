@@ -417,10 +417,15 @@ class MessageGroups {
 			}
 		}
 
+		// Work around php bug: https://bugs.php.net/bug.php?id=50688
+		// Triggered by ApiQueryMessageGroups for example
+		wfSuppressWarnings();
+		usort( $tree, array( __CLASS__, 'groupLabelSort' ) );
+		wfRestoreWarnings();
+
 		/* Now we have two things left in $tree array:
 		 * - solitaries: top-level non-aggregate message groups
 		 * - top-level aggregate message groups */
-		usort( $tree, array( __CLASS__, 'groupLabelSort' ) );
 		foreach ( $tree as $index => $group ) {
 			if ( $group instanceof AggregateMessageGroup ) {
 				$tree[$index] = self::subGroups( $group );
