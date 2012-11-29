@@ -548,14 +548,18 @@ class SpecialTranslate extends SpecialPage {
 			return;
 		}
 
-		$output->addWikiMsg( 'translate-grouplisting' );
+	//	$output->addWikiMsg( 'translate-grouplisting' );
 
 		$out = '';
 		foreach ( $structure as $blocks ) {
 			$out .= $this->formatGroupInformation( $blocks );
 		}
-
-		$output->addHtml( Html::rawElement( 'table', array( 'class' => 'mw-sp-translate-grouplist wikitable' ), $out ) );
+		$output->addHtml ( '<div class="grid ext-translate-msggroup-selector">
+			<h3 class="three columns grouptitle expanded">Projects</h3>
+			<h3 class="three columns grouptitle grouplink" data-msggroup="all">All</h3>
+			</div>'
+		);
+		//$output->addHtml( Html::rawElement( 'table', array( 'class' => 'mw-sp-translate-grouplist wikitable' ), $out ) );
 	}
 
 	public function formatGroupInformation( $blocks, $level = 2 ) {
