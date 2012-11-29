@@ -208,7 +208,7 @@ class ViewMessagesTask extends TranslateTask {
 	}
 
 	protected function output() {
-		$table = new MessageTable( $this->collection, $this->group );
+		$table = MessageTable::newFromContext( $this->context, $this->collection, $this->group );
 		$table->appendEditLinkParams( 'loadtask', $this->getId() );
 
 		return $table->fullTable();
@@ -229,7 +229,7 @@ class ReviewMessagesTask extends ViewMessagesTask {
 	}
 
 	protected function output() {
-		$table = new MessageTable( $this->collection, $this->group );
+		$table = MessageTable::newFromContext( $this->context, $this->collection, $this->group );
 		$table->appendEditLinkParams( 'loadtask', $this->getId() );
 		$table->setReviewMode();
 		return $table->fullTable();

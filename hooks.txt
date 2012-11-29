@@ -96,6 +96,12 @@ Post processing step to format in wiki
  MessageGroup    $group: Message group instance
  string          $code: Language code
 
+;TranslateMessageTableInit: When creating new MessageTable
+ MessageTable   &$table: Default implementation that can be accessed or even replaced
+ IContextSource  $context:
+ MessageCollection $collection
+ MessageGroup    $group
+
 ;Translate:newTranslation: Event triggered when non-fuzzy translation has been made
  MessageHandle   $handle
  int             $revisionId
