@@ -1,4 +1,4 @@
-jQuery( function( $ ) {
+( function ( $ ) {
 	'use strict';
 
 	var mw, $submit, $select, submitFunction, params;
@@ -69,6 +69,8 @@ jQuery( function( $ ) {
 		} else if ( window.attachEvent ) {
 			window.attachEvent( 'pageshow', pageShowHandler );
 		}
+
+		$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector();
 	}
 
 	function pageShowHandler() {
