@@ -58,7 +58,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 	 * @param array $props List of props as the array keys
 	 * @return array
 	 */
-	protected function formatGroup( $mixed, $props ) {
+	protected function formatGroup( $mixed, $props, $depth = 0 ) {
 		$params = $this->extractRequestParams();
 
 		// Default
@@ -93,6 +93,14 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			$a['exists'] = $g->exists();
 		}
 
+		// Depth only applies to tree format
+		if ( $depth >= $params['depth'] && $params['format'] === 'tree' ) {
+			$a['groupcount'] = count( $subgroups );
+			// Prevent going further down in the three
+			return $a;
+		}
+
+		// Always empty array for flat format, only sometimes for tree format
 		if ( $subgroups !== array() ) {
 			foreach( $subgroups as $sg ) {
 				$a['groups'][] = $this->formatGroup( $sg, $props );
@@ -106,6 +114,10 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 	public function getAllowedParams() {
 		return array(
+			'depth' => array(
+				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_DFLT => '100',
+			),
 			'format' => array(
 				ApiBase::PARAM_TYPE => array( 'flat', 'tree' ),
 				ApiBase::PARAM_DFLT => 'flat',
@@ -120,6 +132,9 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 	public function getParamDescription() {
 		return array(
+			'depth' => 'When using the tree format, limit the depth to this many levels. '
+				. '0 means that no subgroups are listed. If there are hidden groups, a prop '
+				. 'groupcount is added and it states the number of direct children.',
 			'format' => 'In a tree format message groups can exist multiple places in the tree.',
 		);
 	}
