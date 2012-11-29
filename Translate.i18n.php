@@ -18921,6 +18921,7 @@ $messages['pa'] = array(
  * @author Val2397
  */
 $messages['pam'] = array(
+	'translate' => '↓Ilikas',
 	'translate-magic-cm-save' => '↓Isikap',
 	'translate-magic-cm-savefailed' => '↓Bigu ya ing pamanyikap',
 	'translate-rc-translation-filter-no' => '↓Ala kang gagawan',
@@ -21502,7 +21503,7 @@ $messages['ru'] = array(
 	'translate-magic-cm-updatedusing' => 'Обновлено с помощью [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
 	'translate-magic-cm-savefailed' => 'Сохранение не удалось',
 	'translate-magic-special' => 'Псевдонимы служебных страниц',
-	'translate-magic-words' => 'Магические слова',
+	'translate-magic-words' => 'Волшебные слова',
 	'translate-magic-namespace' => 'Пространства имён',
 	'translate-magic-notsaved' => 'Ваша правка не сохранена!',
 	'translate-magic-errors' => 'Пожалуйста, исправьте {{PLURAL:$1|следующую ошибку|следующие ошибки}} в переводе:',
@@ -24031,6 +24032,7 @@ Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan mo
  * @author Ainali
  * @author Boivie
  * @author Byrial
+ * @author Cybjit
  * @author Dafer45
  * @author Diupwijk
  * @author Fluff
@@ -24048,7 +24050,7 @@ $messages['sv'] = array(
 	'translate' => 'Översätt',
 	'translate-desc' => '[[Special:Translate|Specialsida]] för översättning av MediaWiki och annat',
 	'translate-showsub' => 'Visa {{PLURAL:$1|undergruppen|de $1 undergrupperna}}.',
-	'translate-grouplisting' => 'Det här är en lista över översättningsbara grupper.
+	'translate-grouplisting' => 'Det här är en lista över alla översättningsbara grupper.
 Klicka på meddelandegruppens namn för att visa en lista över oöversatta meddelanden.',
 	'translate-grouplisting-empty' => 'Inga meddelandegrupper har konfigurerats för översättning.',
 	'translate-taskui-view' => 'Visa alla meddelanden',
@@ -24067,7 +24069,8 @@ Klicka på meddelandegruppens namn för att visa en lista över oöversatta medd
 	'translate-taction-disabled' => 'Denna åtgärd är inaktiverad på denna wiki.',
 	'translate-page-no-such-language' => 'Det angivna språket är inte giltigt.',
 	'translate-page-no-such-group' => 'Den angivna gruppen är inte giltig.',
-	'translate-page-disabled' => "Översättningar till det här språket i den här gruppen har stängts av. Anledning:
+	'translate-page-disabled' => "Översättningar till det här språket i den här gruppen har stängts av.
+Anledning:
 
 ''$1''",
 	'translate-language-disabled' => 'Översättning till detta språk är inaktiverad.',
@@ -24085,8 +24088,8 @@ Klicka på meddelandegruppens namn för att visa en lista över oöversatta medd
 	'translate-prev' => 'Föregående sida',
 	'translate-page-description-legend' => 'Information om gruppen',
 	'translate-page-description-hasoptional' => 'Denna meddelandegrupp innehåller valfria meddelanden.
-Valfria meddelanden bör endast översättas när ditt språk har särskilda krav
-som inte använder blanksteg eller transkriberar egennamn. $1',
+Valfria meddelanden bör endast översättas när ditt språk har särskilda krav, 
+exempelvis att inte använda blanksteg eller transkribera egennamn. $1',
 	'translate-page-description-hasoptional-open' => 'Visa valfria meddelanden.',
 	'translate-page-edit' => 'redigera',
 	'translate-ext-url' => '<hr />Webbplats: $1',
@@ -24097,34 +24100,36 @@ som inte använder blanksteg eller transkriberar egennamn. $1',
 	'translate-edit-definition' => 'Definition av meddelandet',
 	'translate-edit-translation' => 'Översättning',
 	'translate-edit-contribute' => 'bidra',
-	'translate-edit-no-information' => "''Det här meddelandet har ingen dokumentation. Om du vet var eller hur detta meddelande används, så kan du hjälpa andra översättare genom att skriva dokumentation för meddelandet.''",
+	'translate-edit-no-information' => "''Det här meddelandet har ingen dokumentation.''
+''Om du vet var eller hur detta meddelande används, så kan du hjälpa andra översättare genom att skriva dokumentation för meddelandet.''",
 	'translate-edit-information' => 'Information om meddelandet ($1)',
 	'translate-edit-in-other-languages' => 'Meddelandet på andra språk',
 	'translate-edit-committed' => 'Nuvarande översättning i mjukvaran',
 	'translate-edit-warnings' => 'Varningar om fel i översättningen',
-	'translate-edit-tmsugs' => 'Förslag från översättningsminnet',
+	'translate-edit-tmsugs' => 'Förslag från översättningsminnet och maskinöversättningar',
 	'translate-edit-tmmatch-source' => 'Källtext för översättning: $1',
 	'translate-edit-tmmatch' => '$1% överensstämmelse',
 	'translate-use-suggestion' => 'Ersätt aktuell översättning med detta förslag.',
 	'translate-edit-tab-list' => 'Meddelandelista',
-	'translate-edit-nopermission' => 'Du behöver tillstånd för att översätta meddelanden.',
+	'translate-edit-nopermission' => 'Du behöver behörighet för att översätta meddelanden.',
 	'translate-edit-askpermission' => 'Begär behörighet',
 	'translate-magic-pagename' => 'Utökad MediaWiki-översättning',
 	'translate-magic-help' => 'Du kan översätta alias för specialsidor, magiska ord och namnrymdsnamn.
 
 Alias för specialsidor och magiska ord kan ha flera översättningar.
-Översättningar skiljs åt med ett komma (,).
+Översättningar skiljs åt med ett kommatecken (,).
 Namnrymder kan endast ha en översättning.
 
-Vid översättning av namnrymder så är <code>$1 talk</code> speciellt. <code>$1</code> ersätts med webbplatsens namn (till exempel <code>{{ns:project_talk}}</code>).
-Om det inte är möjligt att skapa en giltig översättning till ditt språk utan att ändra webbplatsens namn, så ta [[Support|kontakt med en utvecklare]].
+Översättning av projektets diskussionsnamnrymd <code>$1 talk</code> kan vara komplicerat.
+<code>$1</code> ersätts med projektets webbplatsnamn (till exempel <code>{{ns:project_talk}}</code>).
+Om det inte är möjligt att skapa en giltig översättning till ditt språk utan att ändra webbplatsens namn, var god [[Support|kontakta oss]].
 
-För att kunna spara ändringar så behöver du tillhöra översättargruppen.
+För att kunna spara ändringar så behöver du vara översättare.
 Ändringar sparas inte förrän du klickar på spara-knappen nedan.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Hämta',
 	'translate-magic-cm-export' => 'Exportera',
-	'translate-magic-nothing-to-export' => 'Det finns inget något att exportera.',
+	'translate-magic-nothing-to-export' => 'Det finns inget att exportera.',
 	'translate-magic-cm-to-be' => 'Att-bli',
 	'translate-magic-cm-current' => 'Nuvarande',
 	'translate-magic-cm-original' => 'Original',
@@ -24138,14 +24143,18 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen.
 	'translate-magic-notsaved' => 'Din redigering sparades inte!',
 	'translate-magic-errors' => 'Vänligen rätta följande {{PLURAL:$1|fel|fel}} i översättningen:',
 	'translate-magic-saved' => 'Dina ändringar har sparats',
-	'translate-checks-parameters' => 'Följande {{PLURAL:$2|parameter|parametrar}} används inte: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters' => 'Följande {{PLURAL:$2|parameter|parametrar}} används inte:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Följande {{PLURAL:$2|parameter är okänd|parametrar är okända}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Det är ett ojämnt antal {{PLURAL:$2|paranteser|paranteser}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => 'Följande {{PLURAL:$2|länk|länkar}} är problematiska: <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => 'Följande {{PLURAL:$2|länk|$2 länkar}} saknas: <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'Följande felaktiga {{PLURAL:$2|tagg|taggar}} bör ersättas: <strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links' => 'Följande {{PLURAL:$2|länk är problematisk|länkar är problematiska}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => 'Följande {{PLURAL:$2|länk|$2 länkar}} saknas:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Var vänligt rätta följande {{PLURAL:$2|tagg|taggar}}:
+<strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => '<nowiki>{{PLURAL:}}</nowiki> används i definitionen, men inte i översättningen.',
 	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> fick {{PLURAL:$1|en form|$1 former}} men {{PLURAL:$2|endast en form|$2 former}} stöds (exklusive formerna 0= och 1=).',
 	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> har dubbla former i slutet. <nowiki>{{PLURAL:$1|får|får}}</nowiki> bör skrivas som <nowiki>{{PLURAL:$1|får}}</nowiki>.',
@@ -24158,8 +24167,8 @@ För att kunna spara ändringar så behöver du tillhöra översättargruppen.
 	'translate-pref-nonewsletter' => 'Sänd mig inte nyhetsbrev',
 	'translate-pref-editassistlang' => 'Hjälpspråk:',
 	'prefs-translate' => 'Översättningsalternativ',
-	'translate-pref-editassistlang-help' => 'Komma separerad lista med språkkoder.
-Översättningar på dessa språk visas när du översätter.
+	'translate-pref-editassistlang-help' => 'Kommaseparerad lista med språkkoder.
+Översättningar av ett meddelande på dessa språk visas när du översätter.
 Standardlistan på språk avgörs av ditt språk.',
 	'translate-pref-editassistlang-bad' => 'Ogiltig språkkod i listan:
 <nowiki>$1</nowiki>.',
@@ -24220,8 +24229,8 @@ Standardlistan på språk avgörs av ditt språk.',
 	'languagestats' => 'Språkstatistik',
 	'languagestats-summary' => 'Den här sidan visar översättningsstatistik för alla meddelandegrupper för ett språk.',
 	'languagestats-stats-for' => 'Översättningsstatistik för $1 ($2).',
-	'languagestats-recenttranslations' => 'Senaste översättningar',
-	'translate-langstats-incomplete' => 'En del av statistikerna på denna sida är ofullständiga. Var god uppdatera sidan för att få mer statistik.',
+	'languagestats-recenttranslations' => 'senaste översättningar',
+	'translate-langstats-incomplete' => 'En del av statistiken på denna sida är ofullständig. Var god hämta om sidan för att få mer statistik.',
 	'translate-langstats-expand' => 'visa',
 	'translate-langstats-collapse' => 'göm',
 	'translate-langstats-expandall' => 'visa alla',

@@ -836,6 +836,7 @@ $messages['fa'] = array(
  * @author Centerlink
  * @author Cimon Avaro
  * @author Crt
+ * @author Nedergard
  * @author Nike
  * @author Silvonen
  * @author Str4nd
@@ -850,16 +851,16 @@ $messages['fi'] = array(
 	'translate-group-desc-collection' => 'Tämä metaviestiryhmä sisältää kaikki viestit, joita käytetään MediaWikin laajennuksessa [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Tämä metaviestiryhmä sisältää kaikki viestit MediaWikin [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs-laajennusta] varten',
 	'translate-group-desc-readerfeedback' => 'Tämä metaviestiryhmä sisältää kaikki MediaWikin [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback-laajennuksen] viestit',
-	'translate-group-desc-socialprofile' => 'Tämä metaviestiryhmä sisältää kaikki viestit, jotka liittyvä MediaWikin [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile -ohjelmalaajennukseen]',
 	'translate-group-desc-translate' => 'Tämä metaviestiryhmä sisältää kaikki viestit MediaWikin [http://www.mediawiki.org/wiki/Extension:Translate Käännöstyökalu-laajennusta] varten',
 	'translate-group-desc-wikiaextensions' => 'Tämä metaviestiryhmä sisältää kaikki ne tuetut MediaWikin laajennuksien viestit, joita [http://www.wikia.com Wikia] käyttää',
 	'translate-group-desc-wikimediaextensions' => 'Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [http://wikimedia.org/ Wikimedia Foundation] käyttää',
-	'translate-group-desc-uniwiki' => 'Metaviestiryhmä, joka sisältää kaikki [http://unicefinnovation.org/wiki.php Uniwikiin] liittyvien laajennuksien viestit.',
 	'translate-group-desc-translatablepages' => 'Kaikki käännettävät sivut',
 	'bw-desc-freecol' => 'Ennen kuin käännät FreeColia kielellesi, luethan sivun [[Translating:FreeCol]]. Freecol käyttää GPL-lisenssiä.',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] on verkkopohjainen keskustelufoorumi',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] on verkossa toimiva virheenseurantaohjelmisto',
-	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] on sähköpostiohjelma',
+	'translate-group-desc-eol' => '[[Translating:EOL|Encyclopedia of Life]] -viestiryhmä',
+	'translate-group-desc-frontlinesms' => '[[Translating:FrontlineSMS|FrontlineSMS]]-viestiryhmä',
+	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS-viestiryhmä]]',
 	'translate-group-desc-statusnet-plugin' => 'Nämä viestit ovat osa [[Translating:StatusNet|StatusNet]]in liitännäistä',
 );
 
