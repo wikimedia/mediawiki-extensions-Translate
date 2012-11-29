@@ -105,6 +105,7 @@ $wgAutoloadClasses['TranslationHelpers'] = "$dir/utils/TranslationHelpers.php";
 $wgAutoloadClasses['TranslationStats'] = "$dir/utils/TranslationStats.php";
 $wgAutoloadClasses['TranslationStatsBase'] = "$dir/specials/SpecialTranslationStats.php";
 $wgAutoloadClasses['TranslationStatsInterface'] = "$dir/specials/SpecialTranslationStats.php";
+$wgAutoloadClasses['TuxMessageTable'] = "$dir/utils/TuxMessageTable.php";
 /**@}*/
 
 /**
