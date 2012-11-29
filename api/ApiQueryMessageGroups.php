@@ -24,16 +24,20 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 	}
 
 	public function execute() {
-		$groups = MessageGroups::getAllGroups();
+		$params = $this->extractRequestParams();
+		if ( $params['format'] === 'tree' ) {
+			$groups = MessageGroups::getGroupStructure();
+		} else {
+			$groups = MessageGroups::getAllGroups();
+		}
+
 		$result = $this->getResult();
 
-		foreach ( $groups as $id => $g ) {
-			$a = array();
-			$a['id'] = $id;
-			$a['label'] = $g->getLabel();
-			$a['description'] = $g->getDescription();
-			$a['class'] = get_class( $g );
-			$a['exists'] = $g->exists();
+		foreach ( $groups as $mixed ) {
+			$a = $this->formatGroup( $mixed );
+			$id = $a['id'];
+
+			$result->setIndexedTagName( $a, 'group' );
 
 			// TODO: Add a continue?
 			$fit = $result->addValue( array( 'query', $this->getModuleName() ), null, $a );
@@ -46,6 +50,55 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 		$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'group' );
 	}
+
+	/**
+	 * @param array|MessageGroup $mixed
+	 * @return array
+	 */
+	protected function formatGroup( $mixed ) {
+		// Default
+		$g = $mixed;
+		$subgroups = array();
+
+		// Format = tree and has subgroups
+		if ( is_array( $mixed ) ) {
+			$g = array_shift( $mixed );
+			$subgroups = $mixed;
+		}
+
+		$a = array();
+		$a['id'] = $g->getId();
+		$a['label'] = $g->getLabel();
+		$a['description'] = $g->getDescription();
+		$a['class'] = get_class( $g );
+		$a['exists'] = $g->exists();
+
+		if ( $subgroups !== array() ) {
+			foreach( $subgroups as $sg ) {
+				$a['groups'][] = $this->formatGroup( $sg );
+			}
+			$result = $this->getResult();
+			$result->setIndexedTagName( $a['groups'], 'group' );
+		}
+
+		return $a;
+	}
+
+	public function getAllowedParams() {
+		return array(
+			'format' => array(
+				ApiBase::PARAM_TYPE => array( 'flat', 'tree' ),
+				ApiBase::PARAM_DFLT => 'flat',
+			)
+		);
+	}
+
+	public function getParamDescription() {
+		return array(
+			'format' => 'In a tree format message groups can exist multiple places in the tree.',
+		);
+	}
+
 
 	public function getDescription() {
 		return 'Return information about message groups';
