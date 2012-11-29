@@ -23,6 +23,23 @@ class MessageTable {
 		'default' => array( 'msg', 'allmessagesdefault' ),
 	);
 
+	/**
+	 * Use this rather than the constructor directly
+	 * to allow alternative implementations.
+	 *
+	 * @since 2012-11-29
+	 */
+	public static function newFromContext(
+		IContextSource $context,
+		MessageCollection $collection,
+		MessageGroup $group
+	) {
+
+		$table = new self( $collection, $group );
+		wfRunHooks( 'TranslateMessageTableInit', array( &$table, $context, $collection, $group ) );
+		return $table;
+	}
+
 	public function __construct( MessageCollection $collection, MessageGroup $group ) {
 		$this->collection = $collection;
 		$this->group = $group;
