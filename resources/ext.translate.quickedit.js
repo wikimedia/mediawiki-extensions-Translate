@@ -328,7 +328,7 @@
 		},
 
 		inlineEditor: function () {
-			var $this, current, classes, page, group, next, callbacks, ntitle, ngroup, sel;
+			var $this, current, page, group, next, callbacks, ntitle, ngroup, sel;
 			$this = $( this );
 
 			if ( $this.hasClass( 'tqe-editor-loaded' ) ) {
@@ -339,7 +339,6 @@
 			current = $this.html();
 			$this.addClass( 'tqe-editor-loaded' );
 
-			classes = $this.attr( 'class' );
 			page = $this.data( 'title' );
 			group = $this.data( 'group' );
 			next = $( this.next );
