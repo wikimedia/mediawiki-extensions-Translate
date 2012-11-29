@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//+jI\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-11-29T12:13:58Z",
+      "side": 1,
+      "message": "Are docs for the prop param missing?",
+      "revId": "453e8f75b31dd9204e6f4fc39fee76143ad9d5f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
