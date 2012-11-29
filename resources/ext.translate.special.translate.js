@@ -1,4 +1,4 @@
-jQuery( function( $ ) {
+( function ( $ ) {
 	'use strict';
 
 	var mw, $submit, $select, submitFunction, params;
@@ -9,8 +9,8 @@ jQuery( function( $ ) {
 
 	$select.find( 'option[value=]' ).attr( 'disabled', 'disabled' );
 
-	submitFunction = function( event ) {
-		var successFunction = function( data, textStatus ) {
+	submitFunction = function ( event ) {
+		var successFunction = function ( data, textStatus ) {
 			if ( data.error ) {
 				$submit.val( mw.msg( 'translate-workflow-set-do' ) );
 				$submit.attr( 'disabled', false );
@@ -35,7 +35,7 @@ jQuery( function( $ ) {
 		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 	};
 
-	$select.change( function( event ) {
+	$select.change( function ( event ) {
 		var current = $(this).find( 'option[selected]' ).val(),
 			tobe = event.target.value;
 
@@ -62,6 +62,29 @@ jQuery( function( $ ) {
 ( function ( $, mw ) {
 	'use strict';
 
+	function changeGroup( group ) {
+		var uri = new mw.Uri( window.location.href );
+		uri.extend( {
+			action: 'translate',
+			group: group
+		} );
+		window.location.href = uri.toString();
+	}
+
+	function groupSelectorHandler( msgGroup ) {
+		var $newLink;
+
+		if ( msgGroup.groupcount > 0 ) {
+			$newLink = $( '<h3>' ).addClass( 'three columns grouptitle grouplink' )
+				.attr( 'data-msggroup', msgGroup.id ).text( 'All' );
+			$( '.ext-translate-msggroup-selector .grouplink' ).after( $newLink );
+			$newLink.msggroupselector( {
+				onSelect: groupSelectorHandler
+			} );
+		} else {
+			changeGroup( msgGroup.id );
+		}
+	}
 	function ourWindowOnBeforeUnloadRegister() {
 		pageShowHandler();
 		if ( window.addEventListener ) {
@@ -69,6 +92,11 @@ jQuery( function( $ ) {
 		} else if ( window.attachEvent ) {
 			window.attachEvent( 'pageshow', pageShowHandler );
 		}
+
+
+		$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
+			onSelect: groupSelectorHandler
+		} );
 	}
 
 	function pageShowHandler() {

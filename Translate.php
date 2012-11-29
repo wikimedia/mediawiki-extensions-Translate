@@ -215,6 +215,15 @@ $wgResourceModules['ext.translate.grid'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.groupselector'] = array(
+	'styles' => 'resources/css/ext.translate.groupselector.css',
+	'scripts' => 'resources/js/ext.translate.groupselector.js',
+	'position' => 'top',
+	'dependencies' => array(
+		'ext.translate.grid'
+	),
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.messagetable'] = array(
 	'scripts' => 'resources/ext.translate.messagetable.js',
 	'styles' => 'resources/ext.translate.messagetable.css',
@@ -332,7 +341,10 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 	'styles' => 'resources/ext.translate.special.translate.css',
 	'scripts' => 'resources/ext.translate.special.translate.js',
 	'position' => 'top',
-	'dependencies' => array( 'mediawiki.util' ),
+	'dependencies' => array(
+		'mediawiki.util',
+		'ext.translate.groupselector',
+	),
 	'messages' => array(
 		'translate-workflow-set-do',
 		'translate-workflow-set-doing',
