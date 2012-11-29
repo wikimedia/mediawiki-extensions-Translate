@@ -32,7 +32,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			// Not sorted by default, so do it now
 			// Work around php bug: https://bugs.php.net/bug.php?id=50688
 			wfSuppressWarnings();
-			usort( $groups, array( __CLASS__, 'groupLabelSort' ) );
+			usort( $groups, array( 'MessageGroups', 'groupLabelSort' ) );
 			wfRestoreWarnings();
 
 		// format=tree from now on, as it is the only other valid option
