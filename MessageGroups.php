@@ -463,8 +463,15 @@ class MessageGroups {
 		return strcasecmp( $al, $bl );
 	}
 
-	/// Helper for getGroupStructure
-	protected static function subGroups( AggregateMessageGroup $parent ) {
+	/**
+	 * Like getGroupStructure but start from one root which must be an
+	 * AggregateMessageGroup.
+	 *
+	 * @return array
+	 * @throws MWException If cyclic structure is detected.
+	 * @since Public since 2012-11-29
+	 */
+	public static function subGroups( AggregateMessageGroup $parent ) {
 		static $recursionGuard = array();
 
 		$pid = $parent->getId();

@@ -25,10 +25,20 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 	public function execute() {
 		$params = $this->extractRequestParams();
-		if ( $params['format'] === 'tree' ) {
-			$groups = MessageGroups::getGroupStructure();
-		} else {
+
+		$groups = array();
+		if ( $params['format'] === 'flat' ) {
 			$groups = MessageGroups::getAllGroups();
+
+		// format=tree from now on, as it is the only other valid option
+		} elseif ( $params['root'] !== '' ) {
+			$group = MessageGroups::getGroup( $params['root'] );
+			if ( !$group instanceof AggregateMessageGroup ) {
+				$this->dieUsage( 'Invalid message group for root', 'invalidparam' );
+			}
+			$groups = MessageGroups::subGroups( $group );
+		} else {
+			$groups = MessageGroups::getGroupStructure();
 		}
 
 		$props = array_flip( $params['prop'] );
@@ -126,19 +136,34 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				ApiBase::PARAM_TYPE => array( 'id', 'label', 'description', 'class', 'exists' ),
 				ApiBase::PARAM_DFLT => 'id|label|description|class|exists',
 				ApiBase::PARAM_ISMULTI => true,
-			)
+			),
+			'root' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_DFLT => '',
+			),
 		);
 	}
 
 	public function getParamDescription() {
+		$indent = "\n" . str_repeat( ' ', 24 );
+		$wrapWidth = 100 - 24;
+
+		$depth = <<<TEXT
+When using the tree format, limit the depth to this many levels. Value 0 means
+that no subgroups are shown. If the limit is reached, a prop groupcount is
+added and it states the number of direct children.
+TEXT;
+		$root = <<<TEXT
+When using the tree format, instead of starting from top level start from the
+given message group, which must be aggregate message group.
+TEXT;
+
 		return array(
-			'depth' => 'When using the tree format, limit the depth to this many levels. '
-				. '0 means that no subgroups are listed. If there are hidden groups, a prop '
-				. 'groupcount is added and it states the number of direct children.',
+			'depth' => wordwrap( str_replace( "\n", ' ', $depth ), $wrapWidth, $indent ),
 			'format' => 'In a tree format message groups can exist multiple places in the tree.',
+			'root' => wordwrap( str_replace( "\n", ' ', $root ), $wrapWidth, $indent ),
 		);
 	}
-
 
 	public function getDescription() {
 		return 'Return information about message groups';
