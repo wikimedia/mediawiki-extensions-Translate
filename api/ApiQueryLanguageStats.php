@@ -1,43 +1,37 @@
 <?php
 /**
- * Api module for querying message group stats.
+ * Api module for language group stats.
  *
  * @file
- * @author Tim Gerundt
- * @copyright Copyright © 2012, Tim Gerundt
  * @copyright Copyright © 2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
- * Api module for querying message group stats.
+ * Api module for querying language stats.
  *
  * @ingroup API TranslateAPI
+ * @since 2012-11-30
  */
-class ApiQueryMessageGroupStats extends ApiStatsQuery {
+class ApiQueryLanguageStats extends ApiStatsQuery {
 	public function __construct( $query, $moduleName ) {
-		parent::__construct( $query, $moduleName, 'mgs' );
+		parent::__construct( $query, $moduleName, 'ls' );
 	}
 
 	protected function getData() {
 		$params = $this->extractRequestParams();
-		$group = MessageGroups::getGroup( $params['group'] );
-		if ( !$group ) {
-			$this->dieUsageMsg( array( 'missingparam', 'mcgroup' ) );
-		}
-		return MessageGroupStats::forGroup( $group->getId() );
+		return MessageGroupStats::forLanguage( $params['language'] );
 	}
 
 	protected function makeItem( $item, $stats ) {
 		$data = parent::makeItem( $item, $stats );
-		$data['code'] = $item; // For BC
-		$data['language'] = $item;
+		$data['group'] = $item;
 		return $data;
 	}
 
 	public function getAllowedParams() {
 		$params = parent::getAllowedParams();
-		$params['group'] = array(
+		$params['language'] = array(
 			ApiBase::PARAM_TYPE => 'string',
 			ApiBase::PARAM_REQUIRED => true,
 		);
@@ -46,20 +40,17 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 
 	public function getParamDescription() {
 		$desc = parent::getParamDescription();
-		$desc['group'] = 'Message group id';
+		$desc['language'] = 'Language code';
 		return $desc;
 	}
 
 	public function getDescription() {
-		return 'Query message group stats';
+		return 'Query language stats';
 	}
 
 	protected function getExamples() {
-		$groups = MessageGroups::getAllGroups();
-		$group = key( $groups );
-
 		return array(
-			"api.php?action=query&meta=messagegroupstats&mgsgroup=$group List of translation completion statistics for group $group",
+			"api.php?action=query&meta=messagegroupstats&code=fi List of translation completion statistics for language fi",
 		);
 	}
 }

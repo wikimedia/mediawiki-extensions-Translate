@@ -86,6 +86,7 @@ $wgSpecialPageGroups['AggregateGroups'] = 'wiki';
 
 // API
 $wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
+$wgAPIMetaModules['languagestats'] = 'ApiQueryLanguageStats';
 $wgAPIMetaModules['messagegroups'] = 'ApiQueryMessageGroups';
 $wgAPIMetaModules['messagegroupstats'] = 'ApiQueryMessageGroupStats';
 $wgAPIMetaModules['messagetranslations'] = 'ApiQueryMessageTranslations';

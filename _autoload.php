@@ -185,12 +185,14 @@ $wgAutoloadClasses['YamlFFS'] = "$dir/ffs/YamlFFS.php";
  */
 $wgAutoloadClasses['ApiAggregateGroups'] = "$dir/api/ApiAggregateGroups.php";
 $wgAutoloadClasses['ApiGroupReview'] = "$dir/api/ApiGroupReview.php";
+$wgAutoloadClasses['ApiQueryLanguageStats'] = "$dir/api/ApiQueryLanguageStats.php";
 $wgAutoloadClasses['ApiQueryMessageCollection'] = "$dir/api/ApiQueryMessageCollection.php";
 $wgAutoloadClasses['ApiQueryMessageGroupStats'] = "$dir/api/ApiQueryMessageGroupStats.php";
 $wgAutoloadClasses['ApiQueryMessageGroups'] = "$dir/api/ApiQueryMessageGroups.php";
 $wgAutoloadClasses['ApiQueryMessageTranslations'] = "$dir/api/ApiQueryMessageTranslations.php";
 $wgAutoloadClasses['ApiTTMServer'] = "$dir/api/ApiTTMServer.php";
 $wgAutoloadClasses['ApiTranslationReview'] = "$dir/api/ApiTranslationReview.php";
+$wgAutoloadClasses['ApiStatsQuery'] = "$dir/api/ApiStatsQuery.php";
 /**@}*/
 
 /**
