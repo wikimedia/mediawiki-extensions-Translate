@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//+i8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-11-29T12:20:05Z",
+      "side": 1,
+      "message": "typo: paramater -\u003e parameter",
+      "revId": "4d6656bc066f1d072c5e5141906441cc73e05b8a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
