@@ -86,6 +86,7 @@ $wgAutoloadClasses['PHPVariableLoader'] = "$dir/utils/ResourceLoader.php";
 $wgAutoloadClasses['RevTag'] = "$dir/utils/RevTag.php";
 $wgAutoloadClasses['ReviewPerLanguageStats'] = "$dir/specials/SpecialTranslationStats.php";
 $wgAutoloadClasses['SerializedMessageIndex'] = "$dir/utils/MessageIndex.php";
+$wgAutoloadClasses['StatsBar'] = "$dir/utils/StatsBar.php";
 $wgAutoloadClasses['StatsTable'] = "$dir/utils/StatsTable.php";
 $wgAutoloadClasses['StringMangler'] = "$dir/utils/StringMatcher.php";
 $wgAutoloadClasses['StringMatcher'] = "$dir/utils/StringMatcher.php";
@@ -104,6 +105,7 @@ $wgAutoloadClasses['TranslationHelpers'] = "$dir/utils/TranslationHelpers.php";
 $wgAutoloadClasses['TranslationStats'] = "$dir/utils/TranslationStats.php";
 $wgAutoloadClasses['TranslationStatsBase'] = "$dir/specials/SpecialTranslationStats.php";
 $wgAutoloadClasses['TranslationStatsInterface'] = "$dir/specials/SpecialTranslationStats.php";
+$wgAutoloadClasses['TuxMessageTable'] = "$dir/utils/TuxMessageTable.php";
 /**@}*/
 
 /**

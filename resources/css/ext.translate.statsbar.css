@@ -1,0 +1,29 @@
+.tux-statsbar {
+	max-width: 400px;
+	padding: 0px;
+	height: 20px;
+}
+
+.tux-statsbar span {
+	height: 8px;
+	float: left;
+	margin-top: 6px;
+	padding: 0px;
+	font-size: 0px;
+}
+
+.tux-statsbar .tux-proofread {
+	background-color: #23567F;
+}
+
+.tux-statsbar .tux-translated {
+	background-color: #3A89C9;
+}
+
+.tux-statsbar .tux-fuzzy {
+	background-color: #EBCC6E;
+}
+
+.tux-statsbar .tux-untranslated {
+	background-color: #878787;
+}

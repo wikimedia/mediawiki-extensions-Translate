@@ -47,3 +47,53 @@
 	clear: right;
 	text-align: right;
 }
+
+/* Default colors */
+.tux-messagelist {
+	color: #252525;
+	background-color: #FFFFFF;
+	max-width: 800px;
+}
+
+.tux-message {
+	height: 50px;
+	line-height: 50px;
+	vertical-align: middle;
+	border-bottom: 1px solid #C9C9C9;
+}
+
+.tux-message > div {
+	height: 50px;
+}
+
+.tux-message:hover {
+	background-color: #F0F0F0;
+}
+
+.tux-list-status span {
+	padding: 5px;
+}
+
+.tux-warning {
+	background-color: #FFFFCC;
+}
+
+.tux-info {
+	background-color: #F0F0F0;
+}
+
+.tux-list-source {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+	
+.tux-list-translation {
+	white-space: nowrap;
+	color: #565656;
+	padding-left: 5px;
+	text-overflow: ellipsis;
+}
+
+.tux-list-message {
+	overflow: hidden;
+}
