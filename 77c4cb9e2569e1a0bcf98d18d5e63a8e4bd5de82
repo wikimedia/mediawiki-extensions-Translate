@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//9PA\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-11-30T15:32:14Z",
+      "side": 0,
+      "message": "Unused messages and code should be removed.",
+      "revId": "77c4cb9e2569e1a0bcf98d18d5e63a8e4bd5de82",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
