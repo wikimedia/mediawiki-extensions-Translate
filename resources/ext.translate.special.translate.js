@@ -1,4 +1,4 @@
-jQuery( function( $ ) {
+( function ( $ ) {
 	'use strict';
 
 	var mw, $submit, $select, submitFunction, params;
@@ -62,13 +62,43 @@ jQuery( function( $ ) {
 ( function ( $, mw ) {
 	'use strict';
 
+	function changeGroup( group ) {
+		var uri = new mw.Uri( window.location.href );
+		uri.extend( {
+			action: 'translate',
+			group: group
+		} );
+		window.location.href = uri.toString();
+	}
+
+	function groupSelectorHandler( msgGroup ) {
+		var $newLink;
+
+		if ( msgGroup.groupcount > 0 ) {
+			$newLink = $( '<h3>' ).addClass( 'three columns grouptitle grouplink' )
+				.attr( 'data-msggroup', msgGroup.id )
+				.text(  mw.msg( 'translate-msggroupselector-search-all' ) );
+			$( '.ext-translate-msggroup-selector .grouplink' ).after( $newLink );
+			$newLink.msggroupselector( {
+				onSelect: groupSelectorHandler
+			} );
+		} else {
+			changeGroup( msgGroup.id );
+		}
+	}
+
 	function ourWindowOnBeforeUnloadRegister() {
 		pageShowHandler();
+
 		if ( window.addEventListener ) {
 			window.addEventListener( 'pageshow', pageShowHandler, false );
 		} else if ( window.attachEvent ) {
 			window.attachEvent( 'pageshow', pageShowHandler );
 		}
+
+		$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
+			onSelect: groupSelectorHandler
+		} );
 	}
 
 	function pageShowHandler() {
