@@ -238,6 +238,11 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 	),
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.statsbar'] = array(
+	'styles' => 'resources/css/ext.translate.statsbar.css',
+	'position' => 'top',
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.tabgroup'] = array(
 	'styles' => 'resources/ext.translate.tabgroup.css',
 	'position' => 'top',
