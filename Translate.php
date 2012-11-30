@@ -209,6 +209,12 @@ $wgResourceModules['ext.translate.helplink'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
+// TODO: jquery.uls uses the same grid system. So don't duplicate
+$wgResourceModules['ext.translate.grid'] = array(
+		'styles' => 'resources/css/ext.translate.grid.css',
+		'position' => 'top',
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.messagetable'] = array(
 	'scripts' => 'resources/ext.translate.messagetable.js',
 	'styles' => 'resources/ext.translate.messagetable.css',
