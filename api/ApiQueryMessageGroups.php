@@ -40,6 +40,8 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			$group = MessageGroups::getGroup( $params['root'] );
 			if ( $group instanceof AggregateMessageGroup ) {
 				$groups = MessageGroups::subGroups( $group );
+				// The parent group is the first, ignore it
+				array_shift( $groups );
 			}
 		} else {
 			$groups = MessageGroups::getGroupStructure();
