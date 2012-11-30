@@ -539,25 +539,21 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	/**
-	 * This funtion renders the default list of groups when no parameters
+	 * This function renders the default list of groups when no parameters
 	 * are passed.
 	 */
 	public function groupInformation() {
-		$structure = MessageGroups::getGroupStructure();
 		$output = $this->getOutput();
-		if ( !$structure ) {
-			$output->addWikiMsg( 'translate-grouplisting-empty' );
-			return;
-		}
 
-		$output->addWikiMsg( 'translate-grouplisting' );
-
-		$out = '';
-		foreach ( $structure as $blocks ) {
-			$out .= $this->formatGroupInformation( $blocks );
-		}
-
-		$output->addHtml( Html::rawElement( 'table', array( 'class' => 'mw-sp-translate-grouplist wikitable' ), $out ) );
+		$output->addHtml ( '<div class="grid ext-translate-msggroup-selector">
+			<h3 class="three columns grouptitle">'
+			. $this->msg( 'translate-msggroupselector-projects' )->escaped()
+			. '</h3>
+			<h3 class="three columns grouptitle grouplink">'
+			. $this->msg( 'translate-msggroupselector-search-all' )->escaped()
+			. '</h3>
+			</div>'
+		);
 	}
 
 	public function formatGroupInformation( $blocks, $level = 2 ) {

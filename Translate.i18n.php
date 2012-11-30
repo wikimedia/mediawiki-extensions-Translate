@@ -424,6 +424,13 @@ Most useful for the proofreading tasks.',
 	'translate-dynagroup-lastc' => 'Latest change by {{GENDER:$1|$1}} ($2)',
 
 	'translate-gethelp' => 'Help',
+
+	'translate-msggroupselector-projects'=> 'Projects',
+	'translate-msggroupselector-search-placeholder' => 'Search projects',
+	'translate-msggroupselector-search-all' => 'All',
+	'translate-msggroupselector-search-recent' => 'Recent',
+	'translate-msggroupselector-load-from-all' => 'Load messages from all projects',
+	'translate-msggroupselector-view-subprojects' => 'View $1 {{PLURAL:$1|sub-project|sub-projects}}'
 );
 
 /** Message documentation (Message documentation)
@@ -801,6 +808,14 @@ Additional parameters:
 * $2 is the edit summary that was provided.',
 	'translate-gethelp' => 'Link to some Translate help page or tutorial.
 {{Identical|Help}}',
+
+	'translate-msggroupselector-projects'=> 'Title text for the message group beadcrumb',
+	'translate-msggroupselector-search-placeholder' => 'Place holder text for the search box in message group selector',
+	'translate-msggroupselector-search-all' => 'Label to display all projects',
+	'translate-msggroupselector-search-recent' => 'Label to display recent projects',
+	'translate-msggroupselector-load-from-all' => 'Label for the button',
+	'translate-msggroupselector-view-subprojects' => 'Label for view sub projects expand button.
+* $1 is number of sub projects',
 );
 
 /** Afrikaans (Afrikaans)
@@ -6406,8 +6421,8 @@ Klaku la mesaĝan grupnomon por vidi liston de mesaĝoj sen traduko.',
 	'translate-next' => 'Sekva paĝo',
 	'translate-prev' => 'Antaŭa paĝo',
 	'translate-page-description-legend' => 'Informoj pri la grupo',
-	'translate-page-description-hasoptional' => 'Ĉi tiu mesaĝgrupo entenas opciajn mesaĝojn. 
-Opciaj mesaĝoj estu tradukitaj al via lingvo se via lingvo postulas ĝin 
+	'translate-page-description-hasoptional' => 'Ĉi tiu mesaĝgrupo entenas opciajn mesaĝojn.
+Opciaj mesaĝoj estu tradukitaj al via lingvo se via lingvo postulas ĝin
 kiel ne uzi spacojn aŭ transliterado de personaj nomoj. $1',
 	'translate-page-description-hasoptional-open' => 'Montru opciajn mesaĝojn.',
 	'translate-page-edit' => 'redakti',
@@ -6680,7 +6695,7 @@ Detaloj: $1',
 	'translate-workflowgroup-desc' => 'Ĉi tiu mesaĝgrupo montras la laborflustatusojn.
 La statusoj estas difinitaj en la konfigurvariablo $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Lastatempaj tradukoj',
-	'translate-dynagroup-recent-desc' => 'Ĉi tiu mesaĝgrupo montras ĉiuj novajn tradukojn en ĉi tiun lingvon. 
+	'translate-dynagroup-recent-desc' => 'Ĉi tiu mesaĝgrupo montras ĉiuj novajn tradukojn en ĉi tiun lingvon.
 Plej utila por provlegaj taskoj.',
 	'translate-dynagroup-by' => 'Traduko faris de {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Traduko faris de {{GENDER:$1|$1}} ($2)',
@@ -6731,7 +6746,7 @@ Pulse en el nombre del grupo de mensajes para ver la lista de mensajes sin tradu
 	'translate-taction-disabled' => 'Esta acción está deshabilitada en este wiki.',
 	'translate-page-no-such-language' => 'No se especificó un idioma válido',
 	'translate-page-no-such-group' => 'El grupo especificado no es válido.',
-	'translate-page-disabled' => "Se han deshabilitado las traducciones a este idioma en este grupo de mensajes. 
+	'translate-page-disabled' => "Se han deshabilitado las traducciones a este idioma en este grupo de mensajes.
 Razón:
 
 ''$1''",
@@ -6781,7 +6796,7 @@ Las traducciones se separan por comas (,).
 Los espacios de nombre sólo pueden tener una traducción.
 
 Traducir el espacio de nombres de discusión de proyecto <code>$1 talk</code> puede ser complicado.
-<code>$1</code> se reemplaza por el nombre del sitio del proyecto (por ejemplo <code>{{ns:project_talk}}</code>). 
+<code>$1</code> se reemplaza por el nombre del sitio del proyecto (por ejemplo <code>{{ns:project_talk}}</code>).
 Si en tu idioma no es posible formar una expresión válida sin cambiar el nombre del sitio, contacta con un desarrollador, en la [[Support|página de axuda]].
 
 Para guardar los cambios debes pertenecer al grupo de traductores
@@ -10324,6 +10339,13 @@ $1',
 	'translate-dynagroup-last' => 'שונה לאחרונה על־ידי {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'שונה לאחרונה על־ידי {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'עזרה',
+
+	'translate-msggroupselector-projects'=> 'מיזמים',
+	'translate-msggroupselector-search-placeholder' => 'חיפוש מיזמים',
+	'translate-msggroupselector-search-all' => 'הכול',
+	'translate-msggroupselector-search-recent' => 'חדשים',
+	'translate-msggroupselector-load-from-all' => 'טעינת הודעות מכל המיזמים',
+	'translate-msggroupselector-view-subprojects' => 'הצגת $1 תת־מיזמים'
 );
 
 /** Hindi (हिन्दी)
@@ -14276,7 +14298,7 @@ $messages['kn'] = array(
 	'translate-edit-definition' => 'ಸಂದೇಶ ವ್ಯಾಖ್ಯೆ',
 	'translate-edit-translation' => 'ಅನುವಾದ',
 	'translate-edit-contribute' => 'ನೆರವಾಗು',
-	'translate-edit-no-information' => '"ಈ ಸಂದೇಶಕ್ಕೆ ಯಾವುದೇ ದಾಖಲೆಗಳಿಲ್ಲ." 
+	'translate-edit-no-information' => '"ಈ ಸಂದೇಶಕ್ಕೆ ಯಾವುದೇ ದಾಖಲೆಗಳಿಲ್ಲ."
 "ನಿಮಗೆ ಈ ಸಂದೇಶ ಎಲ್ಲಿಯಾದರೂ ಅಥವಾ ಹೇಗಾದರೂ ಉಪಯೋಗದಲ್ಲಿರುವುದು ತಿಳಿದಿದ್ದರೆ,ನೀವು ಇದಕ್ಕೆ ತಕ್ಕ ದಾಖಲೆಗಳನ್ನು ಸೇರಿಸಿ ಬೇರಿ ಭಾಷಾಂತರಕಾರರಿಗೆ ಸಹಾಯ ಮಾಡಬಹುದು."',
 	'translate-edit-information' => 'ಸಂದೇಶದ ಬಗ್ಗೆ ಮಾಹಿತಿ ($1)',
 	'translate-edit-in-other-languages' => 'ಬೇರೆ ಭಾಷೆಗಳಲ್ಲಿ ಸಂದೇಶ',
@@ -16680,6 +16702,13 @@ $messages['ml'] = array(
 	'translate-stats-workflow' => 'സ്ഥിതി',
 	'translate-dynagroup-recent-label' => 'സമീപകാല പരിഭാഷകൾ',
 	'translate-gethelp' => 'സഹായം',
+
+	'translate-msggroupselector-projects'=> 'സംരംഭങ്ങള്‍',
+	'translate-msggroupselector-search-placeholder' => 'സംരംഭങ്ങള്‍ തിരയുക',
+	'translate-msggroupselector-search-all' => 'എല്ലാം',
+	'translate-msggroupselector-search-recent' => 'ഈയിടെ',
+	'translate-msggroupselector-load-from-all' => 'എല്ലാ സംരംഭങ്ങളില്‍ നിന്നും സന്ദേശങ്ങള്‍ കാണിക്കുക',
+	'translate-msggroupselector-view-subprojects' => '$1 ഉപസംരംഭങ്ങള്‍ കാണുക',
 );
 
 /** Mongolian (монгол)
@@ -19019,7 +19048,7 @@ Drigg uff die Grubb, um ä Lischd vunde uiwasedzbare Nochrischde zseje.',
 	'translate-page-no-such-language' => 'Die oagewene Schbrooch isch ugildisch.',
 	'translate-page-no-such-group' => 'Die oagewene Grubb isch ugildisch.',
 	'translate-page-disabled' => "Iwasedzunge in die Schbrooch ged ned fa die Grubb.
-Wesche: 
+Wesche:
 
 ''$1''",
 	'translate-page-settings-legend' => 'Oischdellunge',
@@ -19089,7 +19118,7 @@ Du mugschd inde Grubb vunde Iwasedza soi, um Änarunge schbaischare zu kenne.
 	'translate-magic-saved' => 'Doi Änarunge sin eafolschraisch gsischad worre',
 	'translate-checks-parameters' => 'Die folschndi {{PLURAL:$2|Kenngreeß wead|Kenngreeß werren}} ned bnudzd:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => 'Die folschndi {{PLURAL:$2|Kenngreeß isch|Kenngreeß sin}} ubkond: 
+	'translate-checks-parameters-unknown' => 'Die folschndi {{PLURAL:$2|Kenngreeß isch|Kenngreeß sin}} ubkond:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Do hodse uglaischi Oazahl vun {{PLURAL:$2|Klommare|Klommare}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -19747,7 +19776,7 @@ J'àlias dle pàgine speciaj e le paròle màgiche a peulo avèj pì che na trad
 Le tradussion a son separà da na vìrgola (,).
 Ij nòm ëd jë spassi nominaj a peulo avèj mach na tradussion.
 
-Volté lë spassi nominal ëd discussion dël proget <code>$1 talk</code> a peul esse complicà. 
+Volté lë spassi nominal ëd discussion dël proget <code>$1 talk</code> a peul esse complicà.
 <code>$1</code> a l'é rampiassà col nòm dël sit dël proget (pr'esempi <code>{{ns:project_talk}}</code>).
 Se an soa lenga as peul nen rivé a n'espression bon-a sensa cambié ël nòm dël sit, për piasì, ch'as buta an contat con noi dzora a [[Support]].
 
@@ -21623,7 +21652,7 @@ $messages['ru'] = array(
 	'translate-mgs-invalid-group' => 'Указанная группа $1 не существует.',
 	'translate-mgs-nothing' => 'Нет данных для отображения.',
 	'supportedlanguages' => 'Поддерживаемые языки',
-	'supportedlanguages-summary' => 'На этой странице приведён список поддерживаемых проектом {{SITENAME}} языков 
+	'supportedlanguages-summary' => 'На этой странице приведён список поддерживаемых проектом {{SITENAME}} языков
 вместе с именами тех, кто здесь трудится над переводами на эти языки.
 Имя переводчика отображается тем крупнее, чем больше правок он сделал.
 По цвету подчёркивания можно понять, насколько давно переводчик последний раз совершал здесь какое-либо действие.',
@@ -22553,7 +22582,7 @@ Kliknutím na názov skupiny zobrazíte zoznam nepreložených správ.',
 	'translate-prev' => 'Predošlá stránka',
 	'translate-page-description-legend' => 'Informácie o skupine',
 	'translate-page-description-hasoptional' => 'Táto skupina obsahuje voliteľné správy.
-Voliteľné správy sa majú prekladať len v prípade, ak má váš jazyk špecifické potreby, 
+Voliteľné správy sa majú prekladať len v prípade, ak má váš jazyk špecifické potreby,
 ako napr. nepoužívanie medzier, alebo transkripcie vlastných mien. $1',
 	'translate-page-description-hasoptional-open' => 'Zobraziť voliteľné správy.',
 	'translate-page-edit' => 'upraviť',
@@ -24088,7 +24117,7 @@ Anledning:
 	'translate-prev' => 'Föregående sida',
 	'translate-page-description-legend' => 'Information om gruppen',
 	'translate-page-description-hasoptional' => 'Denna meddelandegrupp innehåller valfria meddelanden.
-Valfria meddelanden bör endast översättas när ditt språk har särskilda krav, 
+Valfria meddelanden bör endast översättas när ditt språk har särskilda krav,
 exempelvis att inte använda blanksteg eller transkribera egennamn. $1',
 	'translate-page-description-hasoptional-open' => 'Visa valfria meddelanden.',
 	'translate-page-edit' => 'redigera',
@@ -25489,7 +25518,7 @@ Hinihikayat kang suriin ang mga mensahe sa pamamagitan ng [[Special:Translate|{{
 	'translate-mgs-invalid-group' => 'Hindi umiiral ang tinukoy na pangkat na $1.',
 	'translate-mgs-nothing' => 'Walang maipapakita para sa hiniling na estadistika.',
 	'supportedlanguages' => 'Tinatangkilik na mga wika',
-	'supportedlanguages-summary' => 'Nagpapakita ang pahinang ito ng isang talaan ng lahat ng tinatangkilik na mga wika ng {{SITENAME}}, 
+	'supportedlanguages-summary' => 'Nagpapakita ang pahinang ito ng isang talaan ng lahat ng tinatangkilik na mga wika ng {{SITENAME}},
 kasama ang mga pangalan ng mga tagapagsalinwikang gumagawa sa wikang iyon.
 Kung mas malaki ang anyo ng pangalan ng tagapagsalinwika, mas marami na ang mga pagbabagong naiambag ng tagapagsalinwika.
 Ang kulay ng salungguhit ay nagpapahiwatig kung kailan huling naging masigla rito ang isang tagapagsalinwika.',
@@ -26521,7 +26550,7 @@ $messages['uk'] = array(
 	'translate-mgs-invalid-group' => 'Зазначеної групи $1 не існує.',
 	'translate-mgs-nothing' => 'Немає статистики за вашим запитом.',
 	'supportedlanguages' => 'Підтримувані мови',
-	'supportedlanguages-summary' => "На цій сторінці перелічено всі мови, що підтримуються {{SITENAME}}, 
+	'supportedlanguages-summary' => "На цій сторінці перелічено всі мови, що підтримуються {{SITENAME}},
 разом з іменами перекладачів, що працюють цими мовами.
 Ім'я перекладача буде тим більшим, що більше редагувань він зробив.
 Колір підкреслення позначає як давно було вчинено останні дії.",
@@ -27726,7 +27755,7 @@ Les messaedjes di rawete sont-st opcionels et n' divèt esse ratournés k' si vo
 	'translate-edit-nopermission' => 'I vs fåt les permissions po pleur ratourner des messaedjes.',
 	'translate-edit-askpermission' => 'Dimander les permissions',
 	'translate-magic-pagename' => 'Ratournaedjes MediaWiki stindous',
-	'translate-magic-help' => "Vos ploz ratourner des alias po des pådjes sipeciåles, des mots madjikes eyet des nos d' espåces di lomaedje. 
+	'translate-magic-help' => "Vos ploz ratourner des alias po des pådjes sipeciåles, des mots madjikes eyet des nos d' espåces di lomaedje.
 
 Les alias di pådjes sipeciales et les mots madjikes polèt aveur pus d' on ratournaedje.
 Les ratournaedjes sont dispårtis avou l' coma (,).
@@ -27869,7 +27898,7 @@ Vos ploz bén ls aler verifyî viè «[[Special:Translate|{{int:translate}}]]».
 	'translate-mgs-invalid-group' => "Li groupe dimandé $1 n' egzistêye nén.",
 	'translate-mgs-nothing' => 'Rén a håyner po les statistikes dimandêyes',
 	'supportedlanguages' => 'Lingaedjes sopoirtés',
-	'supportedlanguages-summary' => "Cisse pådje ci mostere tos les lingaedjes sopoirtés pa {{SITENAME}}, 
+	'supportedlanguages-summary' => "Cisse pådje ci mostere tos les lingaedjes sopoirtés pa {{SITENAME}},
 avou les nos des ratourneus k' ovrèt e tchaeke lingaedje.
 Li no d'on ratourneu est metou pus grand sorlon l' cwantité di candjmints k' il a fwait.
 Li coleur do sorlignaedje mostere s' il a stî actif dierinnmint.",
