@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//9Ws\u003d",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-11-30T12:49:20Z",
+      "side": 1,
+      "message": "JavaScript",
+      "revId": "4149378bd71f5aa9616aa420235ae9ce153eb741",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
