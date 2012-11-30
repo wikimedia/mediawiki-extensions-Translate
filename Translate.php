@@ -94,6 +94,7 @@ $wgAPIModules['translationreview'] = 'ApiTranslationReview';
 $wgAPIModules['groupreview'] = 'ApiGroupReview';
 $wgAPIModules['aggregategroups'] = 'ApiAggregateGroups';
 $wgAPIModules['ttmserver'] = 'ApiTTMServer';
+$wgAPIModules['translateuser'] = 'ApiTranslateUser';
 $wgAPIGeneratorModules['messagecollection'] = 'ApiQueryMessageCollection';
 
 // Before MW 1.20
