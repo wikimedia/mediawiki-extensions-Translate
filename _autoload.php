@@ -191,6 +191,7 @@ $wgAutoloadClasses['ApiQueryMessageGroupStats'] = "$dir/api/ApiQueryMessageGroup
 $wgAutoloadClasses['ApiQueryMessageGroups'] = "$dir/api/ApiQueryMessageGroups.php";
 $wgAutoloadClasses['ApiQueryMessageTranslations'] = "$dir/api/ApiQueryMessageTranslations.php";
 $wgAutoloadClasses['ApiTTMServer'] = "$dir/api/ApiTTMServer.php";
+$wgAutoloadClasses['ApiTranslateUser'] = "$dir/api/ApiTranslateUser.php";
 $wgAutoloadClasses['ApiTranslationReview'] = "$dir/api/ApiTranslationReview.php";
 $wgAutoloadClasses['ApiStatsQuery'] = "$dir/api/ApiStatsQuery.php";
 /**@}*/
