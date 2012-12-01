@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//8fc\u003d",
+        "filename": "utils/MessageHandle.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2012-12-01T13:29:20Z",
+      "side": 1,
+      "message": "typos\n--\u003e substr returns false instead of",
+      "revId": "d73a547422eb3b2a3fe0e7fd5c85abcba39908e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
