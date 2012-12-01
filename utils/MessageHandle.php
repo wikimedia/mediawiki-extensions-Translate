@@ -52,7 +52,8 @@ class MessageHandle {
 			if ( $known || $pos === false ) {
 				$this->code = '';
 			} else {
-				$this->code = substr( $this->key, $pos + 1 );
+				// For keys like Foo/, substr returns false instead of ''
+				$this->code = strval( substr( $this->key, $pos + 1 ) );
 				$this->key = substr( $this->key, 0, $pos );
 			}
 		}
