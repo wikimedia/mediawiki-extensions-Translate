@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//8Yc\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-12-02T11:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADbX//9O0\u003d",
+      "revId": "858ad68d40a614ea7102876ef5680ef9c33e3bf6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//9PE\u003d",
         "filename": "resources/js/ext.translate.groupselector.js",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2012-11-30T15:32:14Z",
       "side": 1,
       "message": "Can you call it (Translate)(Message)GroupSelector, but not \"Msg\"?",
+      "revId": "858ad68d40a614ea7102876ef5680ef9c33e3bf6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//8YU\u003d",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-12-02T11:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADbX//9PE\u003d",
       "revId": "858ad68d40a614ea7102876ef5680ef9c33e3bf6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2012-11-30T15:32:14Z",
       "side": 1,
       "message": "All message output must be escaped.",
+      "revId": "858ad68d40a614ea7102876ef5680ef9c33e3bf6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//8W4\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-12-02T11:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADbX//9O8\u003d",
       "revId": "858ad68d40a614ea7102876ef5680ef9c33e3bf6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
