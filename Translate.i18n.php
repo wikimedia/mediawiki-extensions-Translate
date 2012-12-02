@@ -27326,7 +27326,7 @@ Các thay đổi sẽ không được lưu lại đến khi nào bạn nhấn v�
 	'translate-magic-saved' => 'Thay đổi của bạn đã được lưu.',
 	'translate-checks-parameters' => '{{PLURAL:$2|Tham số|Những tham số}} sau không sử dụng:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => '{{PLURAL:$2||Các}} tham số sau không rõ:
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Tham số|Các tham số}} sau không rõ:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Số {{PLURAL:$2|dấu ngoặc|dấu ngoặc}} bị lẻ:
 <strong><nowiki>$1</nowiki></strong>',

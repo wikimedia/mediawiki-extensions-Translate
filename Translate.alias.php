@@ -512,9 +512,13 @@ $specialPageAliases['ku-latn'] = array(
 /** Cornish (kernowek) */
 $specialPageAliases['kw'] = array(
 	'Translate' => array( 'Treylya' ),
-	'Magic' => array( 'TreylyaAvoncys' ),
+	'Magic' => array( 'TreylyaAvonsys' ),
+	'TranslationStats' => array( 'StatystygronTreylya' ),
 	'Translations' => array( 'Treylyansow' ),
-	'PageTranslation' => array( 'TreylyansFolednow' ),
+	'LanguageStats' => array( 'StatystygyonYeth' ),
+	'PageTranslation' => array( 'TreylyansFolennow' ),
+	'ImportTranslations' => array( 'YmperthyTreylyansow' ),
+	'SupportedLanguages' => array( 'YethowScoodhys' ),
 	'MyLanguage' => array( 'OwYeth' ),
 );
 
