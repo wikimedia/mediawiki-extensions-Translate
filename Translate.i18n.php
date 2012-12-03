@@ -15,11 +15,6 @@ $messages = array();
 $messages['en'] = array(
 	'translate'         => 'Translate',
 	'translate-desc'    => '[[Special:Translate|Special page]] for translating MediaWiki and beyond',
-	'translate-showsub' => 'Show the {{PLURAL:$1|subgroup|$1 subgroups}}.',
-
-	'translate-grouplisting' => 'This is the list of all translatable groups.
-Click the message group name to view a list of untranslated messages.',
-	'translate-grouplisting-empty' => 'No message groups have been configured for translation.',
 
 	'translate-taskui-view'                 => 'Show all messages',
 	'translate-taskui-untranslated'         => 'Show untranslated messages',

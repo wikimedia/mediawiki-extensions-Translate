@@ -556,67 +556,6 @@ class SpecialTranslate extends SpecialPage {
 		);
 	}
 
-	public function formatGroupInformation( $blocks, $level = 2 ) {
-		if ( is_array( $blocks ) ) {
-			foreach ( $blocks as $i => $block ) {
-				if ( !is_array( $block ) && MessageGroups::getPriority( $block ) === 'discouraged' ) {
-					unset( $blocks[$i] );
-				}
-			}
-			$block = array_shift( $blocks );
-		} else {
-			$block = $blocks;
-			if ( MessageGroups::getPriority( $block ) === 'discouraged' ) {
-				return '';
-			}
-		}
-
-		$id = $block->getId();
-
-		$title = $this->getTitle();
-
-		$queryParams = array(
-			'group' => $id,
-			'language' => $this->options['language'],
-			'taction' => $this->options['taction'],
-		);
-
-		$label = Linker::link(
-			$title,
-			htmlspecialchars( $block->getLabel() ),
-			array(),
-			$queryParams
-		);
-
-		$desc = $this->getGroupDescription( $block );
-		$hasSubblocks = is_array( $blocks ) && count( $blocks );
-
-		$subid = Sanitizer::escapeId( "mw-subgroup-$id" );
-
-		if ( $hasSubblocks ) {
-			$msg = $this->msg( 'translate-showsub' )->numParams( count( $blocks ) )->text();
-			$target = TranslationHelpers::jQueryPathId( $subid );
-			$desc .= Html::element( 'a', array( 'onclick' => "jQuery($target).toggle()", 'class' => 'mw-sp-showmore' ), $msg );
-		}
-
-		$out = "\n<tr><td>$label</td>\n<td>$desc</td></tr>\n";
-		if ( $hasSubblocks ) {
-			$out .= "<tr><td></td><td>\n";
-			$tableParams = array(
-				'id' => $subid,
-				'style' => 'display:none;',
-				'class' => "mw-sp-translate-subgroup depth-$level",
-			);
-			$out .= Html::openElement( 'table', $tableParams );
-			foreach ( $blocks as $subBlock ) {
-				$out .= $this->formatGroupInformation( $subBlock, $level + 1 );
-			}
-			$out .= '</table></td></tr>';
-		}
-
-		return $out;
-	}
-
 	protected function getWorkflowStatus() {
 		$stateConfig = $this->group->getMessageGroupStates()->getStates();
 		if ( !$stateConfig ) {
