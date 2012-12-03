@@ -282,7 +282,9 @@
 				format: 'json',
 				meta: 'messagegroups',
 				mgformat: 'tree',
-				mgprop: 'id|label|icon'
+				mgprop: 'id|label|icon',
+				// Keep this in sync with css!
+				mgiconsize: '36'
 			};
 
 			apiURL = mw.util.wikiScript( 'api' );
@@ -389,29 +391,37 @@
 	 * prepare MessageGroup item in the selector
 	 */
 	function prepareMessageGroup ( messagegroup ) {
-		var $msgGroup,$expandButton;
+		var $row, $icon, $label, $expandButton;
 
-		$msgGroup =  $( '<div>' ).addClass( 'row ext-translate-msggroup-item' )
+		$row = $( '<div>' ).addClass( 'row ext-translate-msggroup-item' )
 			.attr( 'data-msggroupid', messagegroup.id )
 			.data( 'msggroup', messagegroup );
-		$msgGroup.append( $( '<div>' )
-			.addClass( 'one column icon' ) )
-			.append( $( '<div>' )
-				.addClass( 'six columns label' )
-				.text( messagegroup.label )
-				.attr( {
-					title: messagegroup.description
-				} )
-			);
+
+		$icon = $( '<div>' ).addClass( 'one column icon' );
+
+		$label = $( '<div>' ).addClass( 'six columns label' )
+			.text( messagegroup.label )
+			.attr( { title: messagegroup.description } );
+
+		if ( messagegroup.icon ) {
+			if ( messagegroup.icon.vector ) {
+				$icon.css( 'background-image', "url( " + messagegroup.icon.vector + ")" );
+				
+			} else if ( messagegroup.icon.raster ) {
+				$icon.css( 'background-image', "url( " + messagegroup.icon.raster + ")" );
+			}
+		}
+
+		$expandButton = $( [] );
 
 		if ( messagegroup.groups && messagegroup.groups.length > 0 ) {
 			$expandButton = $( '<button>' )
 				.addClass( 'four columns expand' )
-				.text( mw.msg( 'translate-msggroupselector-view-subprojects', messagegroup.groups.length ) );
-			$msgGroup.append( $expandButton );
-			$expandButton.data ( 'msggroup', messagegroup );
+				.text( mw.msg( 'translate-msggroupselector-view-subprojects', messagegroup.groups.length ) )
+				.data( 'msggroup', messagegroup );
 		}
-		return $msgGroup;
+		
+		return $row.append( $icon, $label, $expandButton );
 	}
 
 }( jQuery ) );

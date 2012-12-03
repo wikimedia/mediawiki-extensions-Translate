@@ -108,9 +108,10 @@
 .ext-translate-msggroup-item .icon {
 	/* @embed */
 	background: url('../images/project.svg') no-repeat scroll right center transparent;
-	background-size: 30px;
-	height: 32px;
-	width: 32px;
+	/* Keep this in sync with js! */
+	background-size: 36px;
+	height: 50px;
+	width: 50px;
 }
 
 .ext-translate-msggroup-selector-menu button {
