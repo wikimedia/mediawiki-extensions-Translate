@@ -222,6 +222,7 @@ $wgResourceModules['ext.translate.groupselector'] = array(
 	'position' => 'top',
 	'dependencies' => array(
 		'ext.translate.grid',
+		'ext.translate.statsbar',
 		'mediawiki.jqueryMsg',
 	),
 	'messages' => array(
@@ -259,6 +260,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 
 $wgResourceModules['ext.translate.statsbar'] = array(
 	'styles' => 'resources/css/ext.translate.statsbar.css',
+	'scripts' => 'resources/js/ext.translate.statsbar.js',
 	'position' => 'top',
 ) + $resourcePaths;
 

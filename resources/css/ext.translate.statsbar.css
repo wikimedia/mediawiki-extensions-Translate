@@ -1,13 +1,12 @@
 .tux-statsbar {
 	max-width: 400px;
 	padding: 0px;
-	height: 20px;
+	height: 8px;
 }
 
 .tux-statsbar span {
 	height: 8px;
 	float: left;
-	margin-top: 6px;
 	padding: 0px;
 	font-size: 0px;
 }
