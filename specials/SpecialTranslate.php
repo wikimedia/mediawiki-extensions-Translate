@@ -545,8 +545,12 @@ class SpecialTranslate extends SpecialPage {
 	public function groupInformation() {
 		$output = $this->getOutput();
 
-		$output->addHtml ( '<div class="grid ext-translate-msggroup-selector">
-			<h3 class="three columns grouptitle">'
+		$output->addHtml(
+			Html::openElement( 'div', array(
+				'class' => 'grid ext-translate-msggroup-selector',
+				'data-language' => $this->options['language'],
+			) )
+			. '<h3 class="three columns grouptitle">'
 			. $this->msg( 'translate-msggroupselector-projects' )->escaped()
 			. '</h3>
 			<h3 class="three columns grouptitle grouplink">'
