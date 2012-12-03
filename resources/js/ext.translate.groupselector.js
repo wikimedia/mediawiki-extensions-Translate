@@ -284,7 +284,7 @@
 				mgformat: 'tree',
 				mgprop: 'id|label|icon',
 				// Keep this in sync with css!
-				mgiconsize: '36'
+				mgiconsize: '32'
 			};
 
 			apiURL = mw.util.wikiScript( 'api' );
@@ -391,7 +391,7 @@
 	 * prepare MessageGroup item in the selector
 	 */
 	function prepareMessageGroup ( messagegroup ) {
-		var $row, $icon, $label, $expandButton;
+		var $row, $icon, $label, $expandButton, style = '';
 
 		$row = $( '<div>' ).addClass( 'row ext-translate-msggroup-item' )
 			.attr( 'data-msggroupid', messagegroup.id )
@@ -403,12 +403,19 @@
 			.text( messagegroup.label )
 			.attr( { title: messagegroup.description } );
 
-		if ( messagegroup.icon ) {
-			if ( messagegroup.icon.vector ) {
-				$icon.css( 'background-image', "url( " + messagegroup.icon.vector + ")" );
-			} else if ( messagegroup.icon.raster ) {
-				$icon.css( 'background-image', "url( " + messagegroup.icon.raster + ")" );
-			}
+		if ( messagegroup.icon && messagegroup.icon.raster ) {
+			style += "background-image: url(--);";
+			style = style.replace( /--/g, messagegroup.icon.raster );
+		}
+		if ( messagegroup.icon && messagegroup.icon.vector ) {
+			style +=
+				"background-image: -webkit-linear-gradient(transparent, transparent), url(--);" +
+				"background-image: -moz-linear-gradient(transparent, transparent), url(--);" +
+				"background-image: linear-gradient(transparent, transparent), url(--);";
+			style = style.replace( /--/g, messagegroup.icon.vector );
+		}
+		if ( style !== '' ) {
+			$icon.attr( 'style', style );
 		}
 
 		$expandButton = $( [] );

@@ -107,9 +107,12 @@
 
 .ext-translate-msggroup-item .icon {
 	/* @embed */
-	background: url('../images/project.svg') no-repeat scroll right center transparent;
+	background: url(../images/project.png) no-repeat scroll right center transparent;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/project.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/project.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/project.svg);
 	/* Keep this in sync with js! */
-	background-size: 36px;
+	background-size: 32px;
 	height: 50px;
 	width: 50px;
 }
