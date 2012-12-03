@@ -221,7 +221,8 @@ $wgResourceModules['ext.translate.groupselector'] = array(
 	'scripts' => 'resources/js/ext.translate.groupselector.js',
 	'position' => 'top',
 	'dependencies' => array(
-		'ext.translate.grid'
+		'ext.translate.grid',
+		'mediawiki.jqueryMsg',
 	),
 	'messages' => array(
 		'translate-msggroupselector-projects',

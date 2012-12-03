@@ -379,7 +379,7 @@
 				} )
 			);
 
-		if ( messagegroup.groupcount > 0) {
+		if ( messagegroup.groupcount > 0 ) {
 			$expandButton = $( '<button>' )
 				.addClass( 'four columns expand' )
 				.attr ( {
