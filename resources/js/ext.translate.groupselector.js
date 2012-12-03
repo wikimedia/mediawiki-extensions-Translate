@@ -17,12 +17,24 @@
 		 * Initialize the plugin
 		 */
 		init: function () {
-			var parentGroupId;
+			var parentGroupId, queryParams, apiURL;
 			parentGroupId = this.$group.data( 'msggroup' ) && this.$group.data( 'msggroup' ).id;
 			this.prepareSelectorMenu();
 			this.position();
 
 			this.loadGroups( parentGroupId );
+			queryParams = {
+				action: 'query',
+				format: 'json',
+				meta: 'languagestats',
+				lslanguage: 'fi',
+			};
+
+			apiURL = mw.util.wikiScript( 'api' );
+			$.get( apiURL, queryParams, function ( result ) {
+				window.lsstats = result.query.languagestats;
+			} );
+
 		},
 
 		/**
@@ -391,7 +403,7 @@
 	 * prepare MessageGroup item in the selector
 	 */
 	function prepareMessageGroup ( messagegroup ) {
-		var $row, $icon, $label, $expandButton, style = '';
+		var $row, $icon, $label, $statsbar, $expandButton, i, style = '';
 
 		$row = $( '<div>' ).addClass( 'row ext-translate-msggroup-item' )
 			.attr( 'data-msggroupid', messagegroup.id )
@@ -399,9 +411,16 @@
 
 		$icon = $( '<div>' ).addClass( 'one column icon' );
 
+		for ( i = 0; i < lsstats.length; i++ ) {
+			if ( lsstats[i].group === messagegroup.id ) {
+				$statsbar = mw.translate.statsbar( messagegroup.id, 'fi', lsstats[i] );
+			}
+		}
+
 		$label = $( '<div>' ).addClass( 'six columns label' )
 			.text( messagegroup.label )
-			.attr( { title: messagegroup.description } );
+			.attr( { title: messagegroup.description } )
+			.append( $( '<div>' ).append( $statsbar ) );
 
 		if ( messagegroup.icon && messagegroup.icon.raster ) {
 			style += "background-image: url(--);";

@@ -10,13 +10,13 @@
 
 	mw.translate = mw.translate || {};
 	mw.translate.statsbar = function ( group, language, stats ) {
-		var $bar, proofread, translated, fuzzy, untranslated;
+		var $bar, proofread, translated, fuzzy, untranslated, untranslatedCount;
 
-		proofread = floor( 100 * stats.proofread / stats.total );
-		translated = floor( 100 * stats.translated / stats.total );
-		fuzzy = floor( 100 * stats.fuzzy / stats.total );
-		untranslatedCount = stats.total - stats.proofread - stats.translated - stats.fuzzy;
+		proofread = Math.floor( 100 * stats.proofread / stats.total );
+		translated = Math.floor( 100 * stats.translated / stats.total );
+		fuzzy = Math.floor( 100 * stats.fuzzy / stats.total );
 		untranslated = 100 - proofread - translated - fuzzy;
+		untranslatedCount = stats.total - stats.proofread - stats.translated - stats.fuzzy;
 
 		$bar = $( '<div>' )
 			.addClass( 'tux-statsbar' )
@@ -27,24 +27,23 @@
 		$( '<span>' )
 			.addClass( 'tux-proofread' )
 			.text( stats.proofread )
-			.style( 'width', proofread + '%' )
+			.css( 'width', proofread + '%' )
 			.appendTo( $bar );
 		$( '<span>' )
 			.addClass( 'tux-translated' )
 			.text( stats.translated )
-			.style( 'width', translate + '%' )
+			.css( 'width', translated + '%' )
 			.appendTo( $bar );
 		$( '<span>' )
 			.addClass( 'tux-fuzzy' )
 			.text( stats.fuzzy )
-			.style( 'width', fuzzy + '%' )
+			.css( 'width', fuzzy + '%' )
 			.appendTo( $bar );
 		$( '<span>' )
 			.addClass( 'tux-untranslated' )
 			.text( untranslatedCount )
-			.style( 'width', untranslated + '%' )
+			.css( 'width', untranslated + '%' )
 			.appendTo( $bar );
-
 		return $bar;
 	};
 

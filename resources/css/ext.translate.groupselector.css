@@ -98,12 +98,20 @@
 
 .ext-translate-msggroup-item .label {
 	font-weight: normal;
-	line-height: 1.25em;
+	line-height: 40px;
 	padding-bottom: 3px;
 	padding-left: 15px;
-	padding-top: 1.25em;
 	cursor: pointer;
+	white-space: nowrap;
 }
+
+
+.ext-translate-msggroup-item .label .tux-statsbar {
+	position: absolute;
+	bottom: 0px;
+	width: 150px;
+}
+
 
 .ext-translate-msggroup-item .icon {
 	/* @embed */
