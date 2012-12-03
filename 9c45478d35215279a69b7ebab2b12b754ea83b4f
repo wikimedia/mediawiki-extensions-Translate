@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//7wA\u003d",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-03T15:39:21Z",
+      "side": 1,
+      "message": "Superfluous newline.",
+      "revId": "9c45478d35215279a69b7ebab2b12b754ea83b4f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//7wE\u003d",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-03T15:39:21Z",
+      "side": 1,
+      "message": "trailing ws.",
+      "revId": "9c45478d35215279a69b7ebab2b12b754ea83b4f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
