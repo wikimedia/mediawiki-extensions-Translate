@@ -17,9 +17,12 @@
 		 * Initialize the plugin
 		 */
 		init: function () {
+			var parentGroupId;
+			parentGroupId = this.$group.data( 'msggroup' ) && this.$group.data( 'msggroup' ).id;
 			this.prepareSelectorMenu();
 			this.position();
-			this.getGroups( this.$group.data( 'msggroup' ) );
+
+			this.loadGroups( parentGroupId );
 		},
 
 		/**
@@ -130,7 +133,8 @@
 
 			groupSelector.$menu.on( 'click', 'button.expand', function( e ) {
 				$( this ).attr( 'disabled', true );
-				groupSelector.getGroups( $( this ).data( 'msggroupid' ) );
+				groupSelector.getGroups( $( this ).data( 'msggroup' ).id,
+					$( this ).data( 'msggroup' ).groups );
 
 				e.preventDefault();
 				e.stopPropagation();
@@ -262,57 +266,76 @@
 				}
 			} );
 		},
-
 		/**
 		 *
 		 * @param parentGroupId
 		 */
-		getGroups: function( parentGroupId ) {
-			var groupSelector = this, apiURL,
-				messagegroup,
+		loadGroups: function( parentGroupId ) {
+			var groupSelector = this,
 				queryParams,
-				$msgGroups,
-				$msgGroupList;
+				messageGroups,
+				apiURL;
 
 			queryParams = {
 				action: 'query',
 				format: 'json',
-				mgdepth: 0,
 				meta: 'messagegroups',
-				mgformat: 'tree'
+				mgformat: 'tree',
+				mgprop: 'id|label|icon'
 			};
 
 			apiURL = mw.util.wikiScript( 'api' );
+			messageGroups = 	$( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
+
+			if ( !messageGroups ) {
+				$.get( apiURL, queryParams, function ( result ) {
+					$( '.ext-translate-msggroup-selector' ).data( 'msggroups', result.query.messagegroups );
+					groupSelector.getGroups( parentGroupId );
+				} );
+			} else {
+				groupSelector.getGroups( parentGroupId );
+			}
+
+		},
+		/**
+		 *
+		 * @param parentGroupId
+		 */
+		getGroups: function( parentGroupId, msgGroups ) {
+			var groupSelector = this,
+				messagegroup,
+				messageGroups,
+				$msgGroups,
+				$msgGroupList,
+				$parent;
+
 			$msgGroupList = groupSelector.$menu.find( '.ext-translate-msggroup-list' );
 
 			if ( parentGroupId ) {
-				queryParams['mgroot'] = parentGroupId;
+				messageGroups = msgGroups || groupSelector.$group. data( 'msggroup' ).groups;
+			} else {
+				messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
+			}
+			$msgGroups = [];
+
+			$.each( messageGroups , function ( index ) {
+				messagegroup = messageGroups[index];
+				$msgGroups.push( prepareMessageGroup( messagegroup ) );
+			} );
+
+			if ( !parentGroupId ) {
+				$msgGroupList.append( $msgGroups );
+			} else{
+				$parent = $msgGroupList.find( '.ext-translate-msggroup-item[data-msggroupid=' +
+					parentGroupId + ']' );
+
+				if ( $parent.length ) {
+					$parent.after( $msgGroups );
+				} else {
+					$msgGroupList.append( $msgGroups );
+				}
 			}
 
-			$.get( apiURL, queryParams, function ( result ) {
-				var $parent;
-
-				$msgGroups = [];
-
-				$.each( result.query.messagegroups , function ( index ) {
-					messagegroup = result.query.messagegroups[index];
-					$msgGroups.push( prepareMessageGroup( messagegroup ) );
-				} );
-
-				if ( !parentGroupId ) {
-					$msgGroupList.append( $msgGroups );
-				} else{
-					$parent = $msgGroupList.find( '.ext-translate-msggroup-item button[data-msgGroupId=' +
-						parentGroupId + ']' );
-
-					if ( $parent.length ) {
-						$parent.parent().after( $msgGroups );
-					} else {
-						$msgGroupList.append( $msgGroups );
-					}
-				}
-
-			} );
 		},
 
 		/**
@@ -368,7 +391,8 @@
 		var $msgGroup,$expandButton;
 
 		$msgGroup =  $( '<div>' ).addClass( 'row ext-translate-msggroup-item' )
-			.data ( 'msggroup' , messagegroup );
+			.attr( 'data-msggroupid' , messagegroup.id )
+			.data( 'msggroup' , messagegroup );
 		$msgGroup.append( $( '<div>' )
 			.addClass( 'one column icon' ) )
 			.append( $( '<div>' )
@@ -379,14 +403,12 @@
 				} )
 			);
 
-		if ( messagegroup.groupcount > 0 ) {
+		if ( messagegroup.groups && messagegroup.groups.length > 0 ) {
 			$expandButton = $( '<button>' )
 				.addClass( 'four columns expand' )
-				.attr ( {
-					'data-msgGroupId': messagegroup.id
-				} )
-				.text( mw.msg( 'translate-msggroupselector-view-subprojects', messagegroup.groupcount ) );
+				.text( mw.msg( 'translate-msggroupselector-view-subprojects', messagegroup.groups.length ) );
 			$msgGroup.append( $expandButton );
+			$expandButton.data ( 'msggroup' , messagegroup );
 		}
 		return $msgGroup;
 	}
