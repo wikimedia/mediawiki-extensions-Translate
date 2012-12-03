@@ -102,6 +102,10 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 	public function setDescription( $value ) { $this->description = $value; }
 
+	public function getIcon() {
+		return null;
+	}
+
 	/**
 	 * Meta groups consist of multiple groups or parts of other groups. This info
 	 * is used on many places, like when creating message index.

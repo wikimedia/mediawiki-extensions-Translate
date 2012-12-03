@@ -109,6 +109,14 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			$a['exists'] = $g->exists();
 		}
 
+
+		if ( isset( $props['icon'] ) ) {
+			$formats = $this->getIcon( $g, $params['iconsize'] );
+			if ( $formats ) {
+				$a['icon'] = $formats;
+			}
+		}
+
 		// Depth only applies to tree format
 		if ( $depth >= $params['depth'] && $params['format'] === 'tree' ) {
 			$a['groupcount'] = count( $subgroups );
@@ -128,6 +136,35 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		return $a;
 	}
 
+	protected function getIcon( MessageGroup $g, $size ) {
+		global $wgServer;
+		$icon = $g->getIcon();
+		if ( substr( $icon, 0, 7 ) !== 'wiki://' ) {
+			return null;
+		}
+
+		$formats = array();
+
+		$filename = substr( $icon, 7 );
+		$file = wfFindFile( $filename );
+		if ( !$file ) {
+			$this->setWarning( "Unknown file $icon" );
+			return null;
+		}
+
+		if ( $file->isVectorized() ) {
+			$formats['vector'] = $file->getUrl();
+		}
+
+		$formats['raster'] = $wgServer . $file->createThumb( $size, $size );
+
+		foreach( $formats as $key => &$url ) {
+			$url = wfExpandUrl( $url, PROTO_RELATIVE );
+		}
+
+		return $formats;
+	}
+
 	public function getAllowedParams() {
 		return array(
 			'depth' => array(
@@ -138,8 +175,12 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				ApiBase::PARAM_TYPE => array( 'flat', 'tree' ),
 				ApiBase::PARAM_DFLT => 'flat',
 			),
+			'iconsize' => array(
+				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_DFLT => 64,
+			),
 			'prop' => array(
-				ApiBase::PARAM_TYPE => array( 'id', 'label', 'description', 'class', 'exists' ),
+				ApiBase::PARAM_TYPE => array( 'id', 'label', 'description', 'class', 'exists', 'icon' ),
 				ApiBase::PARAM_DFLT => 'id|label|description|class|exists',
 				ApiBase::PARAM_ISMULTI => true,
 			),
@@ -167,6 +208,7 @@ TEXT;
 		return array(
 			'depth' => wordwrap( str_replace( "\n", ' ', $depth ), $wrapWidth, $indent ),
 			'format' => 'In a tree format message groups can exist multiple places in the tree.',
+			'iconsize' => 'Preferred size of rasterised group icon',
 			'root' => wordwrap( str_replace( "\n", ' ', $root ), $wrapWidth, $indent ),
 		);
 	}

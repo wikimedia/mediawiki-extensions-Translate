@@ -52,6 +52,15 @@ interface MessageGroup {
 	 */
 	public function getDescription( IContextSource $context = null );
 
+
+	/**
+	 * Returns a icon for this message group if any.
+	 * @return string|null File reference in one of the supported protocols:
+	 *  - file://Filename.ext - Accessible via MediaWiki functions
+	 * @since 2012-12-04
+	 */
+	public function getIcon();
+
 	/**
 	 * Returns the namespace where messages are placed.
 	 * @return int

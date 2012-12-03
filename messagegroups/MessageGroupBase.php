@@ -55,6 +55,10 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $this->getFromConf( 'BASIC', 'description' );
 	}
 
+	public function getIcon() {
+		return $this->getFromConf( 'BASIC', 'icon' );
+	}
+
 	public function getNamespace() { return $this->namespace; }
 
 	public function isMeta() { return $this->getFromConf( 'BASIC', 'meta' ); }

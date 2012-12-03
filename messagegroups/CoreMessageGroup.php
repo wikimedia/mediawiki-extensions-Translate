@@ -19,6 +19,7 @@ class CoreMessageGroup extends MessageGroupOld {
 	protected $id          = 'core';
 	protected $type        = 'mediawiki';
 	protected $description = '{{int:translate-group-desc-mediawikicore}}';
+	protected $icon;
 
 	public function __construct() {
 		parent::__construct();
@@ -45,6 +46,15 @@ class CoreMessageGroup extends MessageGroupOld {
 		$group->setId( $id );
 
 		return $group;
+	}
+
+	/// @see MessageGroup::getIcon
+	public function setIcon( $icon ) {
+		$this->icon = $icon;
+	}
+
+	public function getIcon() {
+		return $this->icon;
 	}
 
 	public function getUniqueDefinitions() {
