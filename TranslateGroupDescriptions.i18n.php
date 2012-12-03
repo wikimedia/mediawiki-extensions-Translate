@@ -1149,6 +1149,11 @@ $messages['he'] = array(
 	'translate-group-desc-waymarked-trails' => 'אתר [[Translating:Waymarked Trails|Waymarked Trails]] הוא שירות להצגת שבילים לטיולי הליכה, טיולי אופניים, אופני הרי וגלגליות מסביב לעולם. הרישיון שלו הוא GPL.',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] מסוגל לזהות את הכותבים של חלק מדף האתר ויקי של ויקימדיה',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] מביא גרסת טקסט של ויקיפדיה למכשיר נייד.',
+	'translate-group-desc-wikimedia-mobile' => 'קבוצה משולבת עם יישומים ניידים למיזמי ויקימדיה',
+	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] הוא יישום מרובה־פלטפורמות למחשבי לוח ולמחשבים ניידים לקריאה ולתרומה לוויקיפדיה.',
+	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|ויקימילון נייד]] הוא יישום מרובה־פלטפורמות למכשירים ניידים ומחשבי לוח לקריאה ותרומה לוויקימילון',
+	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|ויקי אוהבת אתרי מורשת לניידים]] הוא יישום למכשירים ניידים שמיועד לתרומה ל[[:meta:Wiki Loves Monuments|מיזם ויקי אוהבת אתרי מורשת]]',
+	'translate-group-desc-waymarked-trails-help' => 'דפי עזרה של אתרי Waymarked Trails: http://waymarkedtrails.org/help/about',
 );
 
 /** Croatian (hrvatski)

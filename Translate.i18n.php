@@ -803,8 +803,7 @@ Additional parameters:
 * $2 is the edit summary that was provided.',
 	'translate-gethelp' => 'Link to some Translate help page or tutorial.
 {{Identical|Help}}',
-
-	'translate-msggroupselector-projects'=> 'Title text for the message group beadcrumb',
+	'translate-msggroupselector-projects' => 'Title text for the message group beadcrumb',
 	'translate-msggroupselector-search-placeholder' => 'Place holder text for the search box in message group selector',
 	'translate-msggroupselector-search-all' => 'Label to display all projects',
 	'translate-msggroupselector-search-recent' => 'Label to display recent projects',
@@ -5631,7 +5630,6 @@ Details: $1',
 $messages['diq'] = array(
 	'translate' => 'Açarnayış',
 	'translate-desc' => 'MediaWiki u vêşi açarnayışan rê [[Special:Translate|Pela xısusi]]',
-	'translate-showsub' => '{{PLURAL:$1|Gruba bınêne|Grubanê bınênan $1}} bımocne.',
 	'translate-taskui-view' => 'Mesacan pêro bımocne',
 	'translate-taskui-untranslated' => 'Mesacanê nêaçarniyayeyan bımocne',
 	'translate-taskui-optional' => 'Mesacanê waşteyan bımocne',
@@ -6380,10 +6378,6 @@ $messages['el'] = array(
 $messages['eo'] = array(
 	'translate' => 'Tradukado',
 	'translate-desc' => '[[Special:Translate|Speciala paĝo]] por traduki MediaWiki kaj alia',
-	'translate-showsub' => 'Montri la {{PLURAL:$1|subgrupon|$1 subgrupojn}}.',
-	'translate-grouplisting' => 'Jen listo de ĉiuj tradukeblaj grupoj.
-Klaku la mesaĝan grupnomon por vidi liston de mesaĝoj sen traduko.',
-	'translate-grouplisting-empty' => 'Neniu mesaĝgrupo estis konfigurita por tradukado.',
 	'translate-taskui-view' => 'Montru ĉiujn mesaĝojn',
 	'translate-taskui-untranslated' => 'Montru netradukitajn mesaĝojn',
 	'translate-taskui-optional' => 'Montru opciajn mesaĝojn',
@@ -6721,10 +6715,6 @@ Plej utila por provlegaj taskoj.',
 $messages['es'] = array(
 	'translate' => 'Traducir',
 	'translate-desc' => '[[Special:Translate|Página especial]] para traducir el software MediaWiki y otros',
-	'translate-showsub' => 'Mostrar {{PLURAL:$1|el subgrupo|los $1 subgrupos}}.',
-	'translate-grouplisting' => 'Esta es la lista de todos los grupos que se pueden traducir.
-Pulse en el nombre del grupo de mensajes para ver la lista de mensajes sin traducir.',
-	'translate-grouplisting-empty' => 'No se han configurado grupos de mensajes para traducir.',
 	'translate-taskui-view' => 'Mostrar todos los mensajes',
 	'translate-taskui-untranslated' => 'Mostrar mensajes sin traducir',
 	'translate-taskui-optional' => 'Mostrar mensajes opcionales.',
@@ -10003,10 +9993,6 @@ $messages['haw'] = array(
 $messages['he'] = array(
 	'translate' => 'תרגום',
 	'translate-desc' => '[[Special:Translate|דף מיוחד]] לתרגום מדיה־ויקי ומעבר לכך',
-	'translate-showsub' => 'להציג {{PLURAL:$1|קבוצת־משנה|$1 קבוצות־משנה}}.',
-	'translate-grouplisting' => 'זוהי רשימה של כל קבוצות ההודעות שאפשר לתרגם.
-לחצו על שם הקבוצה בשביל להציג רשימה של הודעות לא מתורגמות.',
-	'translate-grouplisting-empty' => 'לא הוגדרו קבוצות הודעות לתרגום.',
 	'translate-taskui-view' => 'הצגת כל ההודעות',
 	'translate-taskui-untranslated' => 'הצגת הודעות שאינן מתורגמות',
 	'translate-taskui-optional' => 'הצגת הודעות אופציונליות',
@@ -10334,13 +10320,12 @@ $1',
 	'translate-dynagroup-last' => 'שונה לאחרונה על־ידי {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'שונה לאחרונה על־ידי {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'עזרה',
-
-	'translate-msggroupselector-projects'=> 'מיזמים',
+	'translate-msggroupselector-projects' => 'מיזמים',
 	'translate-msggroupselector-search-placeholder' => 'חיפוש מיזמים',
 	'translate-msggroupselector-search-all' => 'הכול',
 	'translate-msggroupselector-search-recent' => 'חדשים',
 	'translate-msggroupselector-load-from-all' => 'טעינת הודעות מכל המיזמים',
-	'translate-msggroupselector-view-subprojects' => 'הצגת $1 תת־מיזמים'
+	'translate-msggroupselector-view-subprojects' => 'הצגת $1 תת־מיזמים',
 );
 
 /** Hindi (हिन्दी)
@@ -12818,10 +12803,6 @@ Utile per l'attività di correzione.",
 $messages['ja'] = array(
 	'translate' => '翻訳',
 	'translate-desc' => 'MediaWiki やその他のものを翻訳するための[[Special:Translate|特別ページ]]',
-	'translate-showsub' => '{{PLURAL:$1|下位群|$1個の下位群}}を表示する。',
-	'translate-grouplisting' => 'これは翻訳可能なすべての群の一覧です。
-メッセージ群名をクリックして、未翻訳メッセージの一覧を表示してください。',
-	'translate-grouplisting-empty' => '翻訳対象に設定されたメッセージ群はありません。',
 	'translate-taskui-view' => '全メッセージを表示',
 	'translate-taskui-untranslated' => '未翻訳メッセージを表示',
 	'translate-taskui-optional' => '省略可能なメッセージを表示',
@@ -12991,7 +12972,7 @@ $messages['ja'] = array(
 	'translations-summary' => '既存のすべての翻訳を表示するには下欄にメッセージ名を入力してください。',
 	'translate-translations-no-message' => '「$1」は翻訳対象メッセージではありません',
 	'translate-translations-none' => '「$1」には翻訳がありません',
-	'translate-translations-count' => '{{PLURAL:$1|翻訳|$1件の翻訳}}が見つかりました。',
+	'translate-translations-count' => '{{PLURAL:$1|$1 件の翻訳}}が見つかりました。',
 	'translate-translations-fieldset-title' => 'メッセージ',
 	'translate-translations-messagename' => '名前:',
 	'translate-translations-project' => 'プロジェクト:',
@@ -14263,8 +14244,6 @@ $messages['km'] = array(
 $messages['kn'] = array(
 	'translate' => 'ಭಾಷಾಂತರಿಸಿ',
 	'translate-desc' => '[[Special:Translate|ವಿಷೇಶ ಪುಟ]]ಮೀಡಿಯಾವಿಕಿ ಮತ್ತು ಹೆಚ್ಚಿನದನ್ನು ಭಾಷಾಂತರಿಸಲು',
-	'translate-grouplisting' => 'ಇದು ಭಾಷಾಂತರಿಸಬಹುದಾದ ಗುಂಪಿನ ಪಟ್ಟಿ. ಭಾಷಾಂತರಿಸದ ಸಂದೇಶಗಳನ್ನು ನೋಡಲು ಸಂದೇಶಗಳ ಗುಂಪಿನ ಹೆಸರನ್ನು ಆಯ್ಕೆ ಮಾಡಿ.',
-	'translate-grouplisting-empty' => 'ಭಾಷಾಂತರಿಸಲು ಯಾವುದೇ ಸಂದೇಶಗಳ ಗುಂಪುಗಳ  ಸಂರಚನೆಯಾಗಿಲ್ಲ.',
 	'translate-taskui-view' => 'ಎಲ್ಲಾ ಸಂದೇಶಗಳನ್ನು ತೋರಿಸಿ',
 	'translate-taction-lstats' => 'ಭಾಷಾ ಅಂಕಿಅಂಶಗಳು',
 	'translate-page-no-such-language' => 'ಉಲ್ಲೇಖಿಸಿದ ಭಾಷೆ ಅಸ್ತಿತ್ವದಲ್ಲಿ ಇಲ್ಲ',
@@ -16476,10 +16455,6 @@ $1',
 $messages['ml'] = array(
 	'translate' => 'വിവർത്തനം ചെയ്യുക',
 	'translate-desc' => 'മീഡിയവിക്കിയും മറ്റുള്ളവയും തർജ്ജമ ചെയ്യാനുള്ള [[Special:Translate|പ്രത്യേക താൾ]]',
-	'translate-showsub' => '{{PLURAL:$1|ഉപസംഘത്തെ|$1 ഉപസംഘങ്ങൾ}} പ്രദർശിപ്പിക്കുക.',
-	'translate-grouplisting' => 'പരിഭാഷായോഗ്യങ്ങളായ ഗണങ്ങളുടെ പട്ടികയാണിത്.
-പരിഭാഷപ്പെടുത്താനുള്ള സന്ദേശങ്ങളുടെ പട്ടികയ്ക്ക് ഓരോ സന്ദേശ ഗണത്തിന്റേയും പേരിൽ ഞെക്കുക.',
-	'translate-grouplisting-empty' => 'പരിഭാഷക്കായി ഒരു സന്ദേശഗണവും ക്രമീകരിച്ചിട്ടില്ല.',
 	'translate-taskui-view' => 'എല്ലാ സന്ദേശങ്ങളും പ്രദർശിപ്പിക്കുക',
 	'translate-taskui-untranslated' => 'പരിഭാഷപ്പെടുത്താത്ത സന്ദേശങ്ങൾ പ്രദർശിപ്പിക്കുക',
 	'translate-taskui-optional' => 'ഐച്ഛിക സന്ദേശങ്ങൾ പ്രദർശിപ്പിക്കുക',
@@ -16697,8 +16672,7 @@ $messages['ml'] = array(
 	'translate-stats-workflow' => 'സ്ഥിതി',
 	'translate-dynagroup-recent-label' => 'സമീപകാല പരിഭാഷകൾ',
 	'translate-gethelp' => 'സഹായം',
-
-	'translate-msggroupselector-projects'=> 'സംരംഭങ്ങള്‍',
+	'translate-msggroupselector-projects' => 'സംരംഭങ്ങള്‍',
 	'translate-msggroupselector-search-placeholder' => 'സംരംഭങ്ങള്‍ തിരയുക',
 	'translate-msggroupselector-search-all' => 'എല്ലാം',
 	'translate-msggroupselector-search-recent' => 'ഈയിടെ',
@@ -16825,10 +16799,6 @@ $messages['mr'] = array(
 $messages['ms'] = array(
 	'translate' => 'Terjemah',
 	'translate-desc' => '[[Special:Translate|Laman khas]] untuk menterjemah MediaWiki dan lain-lain',
-	'translate-showsub' => 'Tunjukkan {{PLURAL:$1|subkumpulan|$1 subkumpulan}}.',
-	'translate-grouplisting' => 'Berikut ialah senarai semua kumpulan yang boleh diterjemah.
-Klik nama kumpulan mesej untuk melihat senarai mesej yang belum diterjemah.',
-	'translate-grouplisting-empty' => 'Tiada kumpulan mesej yang dikonfigurasikan untuk penterjemahan.',
 	'translate-taskui-view' => 'Tunjukkan semua mesej',
 	'translate-taskui-untranslated' => 'Tunjukkan mesej yang belum diterjemahkan',
 	'translate-taskui-optional' => 'Tunjukkan mesej tidak wajib.',
@@ -19022,10 +18992,6 @@ $messages['pdc'] = array(
 $messages['pfl'] = array(
 	'translate' => 'Iwasedze',
 	'translate-desc' => '[[Special:Translate|Schbezialsaid]] fas iwasedze vun MediaWiki un waidares',
-	'translate-showsub' => 'Die {{PLURAL:$1|Unagrubb|$1 Unagrubbe}} zaische.',
-	'translate-grouplisting' => 'Des ische Lischd vunde iwasedzbare Grubbe.
-Drigg uff die Grubb, um ä Lischd vunde uiwasedzbare Nochrischde zseje.',
-	'translate-grouplisting-empty' => "S'isch kä Nochrischdegrubb fas Iwasedze org'rischd.",
 	'translate-taskui-view' => 'Alli Nochrischde zaische',
 	'translate-taskui-untranslated' => 'Ned iwasedzde Nochrischde zaische',
 	'translate-taskui-optional' => 'Alli obzionali Nochrischde zaische',
@@ -19701,10 +19667,6 @@ Jest najbardziej użyteczna dla zadań korekty.',
 $messages['pms'] = array(
 	'translate' => 'Viragi',
 	'translate-desc' => '[[Special:Translate|Pàgina special]] për le tradussion ëd MediaWiki e ancor ëd pì',
-	'translate-showsub' => 'Smon-e {{PLURAL:$1|la sot-partìa|le $1 sot-partìe}}.',
-	'translate-grouplisting' => "Costa a l'é la lista ëd tute le partìe voltàbij.
-Ch'a sgnaca ël nòm dla partìa ëd mëssagi për vëdde na lista dij mëssagi nen voltà.",
-	'translate-grouplisting-empty' => 'Gnun-e partìe ëd mëssagi a son stàit configurà për la tradussion.',
 	'translate-taskui-view' => 'Smon-e tùit ij mëssagi',
 	'translate-taskui-untranslated' => 'Smon-e ij mëssagi nen voltà',
 	'translate-taskui-optional' => 'Smon-e ij mëssagi opsionaj.',
@@ -21442,10 +21404,6 @@ $messages['rtm'] = array(
 $messages['ru'] = array(
 	'translate' => 'Перевод',
 	'translate-desc' => '[[Special:Translate|Служебная страница]] для перевода MediaWiki и прочих программ',
-	'translate-showsub' => 'Показать {{PLURAL:$1|подгруппу|$1 подгруппы|$1 подгрупп}}.',
-	'translate-grouplisting' => 'Это список всех переводимых групп.
-Нажмите на название группы сообщений, чтобы просмотреть список непереведённых сообщений.',
-	'translate-grouplisting-empty' => 'Групп сообщений, настроенных для перевода, нет.',
 	'translate-taskui-view' => 'Показать все сообщения',
 	'translate-taskui-untranslated' => 'Показать непереведённые сообщения',
 	'translate-taskui-optional' => 'Показать дополнительные сообщения',
@@ -22540,10 +22498,6 @@ $1',
 $messages['sk'] = array(
 	'translate' => 'Preložiť',
 	'translate-desc' => '[[Special:Translate|Špeciálna stránka]] na preklad MediaWiki a iného',
-	'translate-showsub' => 'Zobraziť {{PLURAL:$1|podskupinu|$1 podskupiny|$1 podskupín}}.',
-	'translate-grouplisting' => 'Toto je zoznam všetkých prekladateľných skupín správ.
-Kliknutím na názov skupiny zobrazíte zoznam nepreložených správ.',
-	'translate-grouplisting-empty' => 'Na preklad neboli nakonfigurované žiadne skupiny správ.',
 	'translate-taskui-view' => 'Zobraziť všetky správy',
 	'translate-taskui-untranslated' => 'Zobraziť nepreložené správy',
 	'translate-taskui-optional' => 'Zobraziť voliteľné správy',
@@ -24073,10 +24027,6 @@ Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan mo
 $messages['sv'] = array(
 	'translate' => 'Översätt',
 	'translate-desc' => '[[Special:Translate|Specialsida]] för översättning av MediaWiki och annat',
-	'translate-showsub' => 'Visa {{PLURAL:$1|undergruppen|de $1 undergrupperna}}.',
-	'translate-grouplisting' => 'Det här är en lista över alla översättningsbara grupper.
-Klicka på meddelandegruppens namn för att visa en lista över oöversatta meddelanden.',
-	'translate-grouplisting-empty' => 'Inga meddelandegrupper har konfigurerats för översättning.',
 	'translate-taskui-view' => 'Visa alla meddelanden',
 	'translate-taskui-untranslated' => 'Visa oöversatta meddelanden',
 	'translate-taskui-optional' => 'Visa valfria meddelanden',
@@ -25302,10 +25252,6 @@ Eger-de bu habarlaşygyň nirede we nähili ulanylýandygyny bilýän bolsaňyz,
 $messages['tl'] = array(
 	'translate' => 'Isalinwika',
 	'translate-desc' => '[[Special:Translate|Natatanging pahina]] para sa pagsasalinwika ng MediaWiki at lampas pa',
-	'translate-showsub' => 'Ipakita ang {{PLURAL:$1|kabahaging pangkat|$1 kabahaging mga pangkat}}.',
-	'translate-grouplisting' => 'Ito ang talaan ng lahat ng mga pangkat na maisasalinwika.
-Pindutin ang pangalan ng pangkat ng mensahe upang tumanaw ng isang talaan ng mga mensaheng hindi pa naisasalinwika.',
-	'translate-grouplisting-empty' => 'Walang mga pangkat ng mensahe na naisaayos para sa pagsasalinwika.',
 	'translate-taskui-view' => 'Ipakita ang lahat ng mga mensahe',
 	'translate-taskui-untranslated' => 'Ipakita ang mga mensaheng hindi pa nasasalinwika',
 	'translate-taskui-optional' => 'Ipakita ang mga mensaheng maaaring wala naman',
@@ -26339,15 +26285,12 @@ $messages['ug-latn'] = array(
  * @author Olvin
  * @author Prima klasy4na
  * @author Test
+ * @author Ата
  * @author Тест
  */
 $messages['uk'] = array(
 	'translate' => 'Переклад',
 	'translate-desc' => '[[Special:Translate|Спеціальна сторінка]] для перекладу MediaWiki та інших програм',
-	'translate-showsub' => 'Показати {{PLURAL:$1|підгрупу|$1 підгрупи|$1 підгруп}}.',
-	'translate-grouplisting' => 'Це список усіх груп, що можуть перекладатися.
-Натисніть на назву групи повідомлень, щоб подивитися список неперекладених повідомлень.',
-	'translate-grouplisting-empty' => 'Ніяких груп повідомлень для перекладу не налаштовано.',
 	'translate-taskui-view' => 'Показати всі повідомлення',
 	'translate-taskui-untranslated' => 'Показати неперекладені повідомлення',
 	'translate-taskui-optional' => 'Показати додаткові повідомлення.',
@@ -26443,6 +26386,8 @@ $messages['uk'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Будь ласка, виправте {{PLURAL:$2|наступний тег|наступні теги}}: <strong>$1</strong>',
 	'translate-checks-plural' => 'Оригінал використовує <nowiki>{{PLURAL:}}</nowiki>, а переклад — ні.',
+	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> було використано з {{PLURAL:$1|одною формою|$1 формами}}, але {{PLURAL:$2|лише одна форма|$2 форм}} підтримується (за вийнятком форм 0= та 1=).',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> має дублікати форм у кінці. <nowiki>{{PLURAL:$1|метро|метро}}</nowiki> повинно бути записано як <nowiki>{{PLURAL:$1|метро}}</nowiki>.',
 	'translate-checks-pagename' => 'Змінилося визначення простору назв',
 	'translate-checks-format' => 'Цей переклад не відповідає визначенню або має неправильний синтаксис: $1',
 	'translate-checks-escape' => 'Ці екрануючі послідовності можуть бути випадкові: <strong>$1</strong>',
@@ -26561,6 +26506,9 @@ $messages['uk'] = array(
 	'translate-smg-nochanges' => 'Немає ніяких змін для обробки.',
 	'translate-smg-submit' => 'Надіслати зміни на обробку',
 	'translate-smg-submitted' => 'Формулювання повідомлення було оновлено. Зміни обробляються у фоновому режимі.',
+	'translate-smg-postponed' => 'Не вдалося обробити деякі зміни. [[{{FULLPAGENAME}}|Повторіть спробу]].',
+	'translate-smg-left' => 'Зміст повідомлення у вікі',
+	'translate-smg-right' => 'Вхідні зміни',
 	'translate-manage-import-diff' => 'Повідомлення $1 | Дії: $2',
 	'translate-manage-import-new' => 'Нове повідомлення $1',
 	'translate-manage-import-deleted' => 'Вилучено повідомлення $1',
@@ -26626,7 +26574,7 @@ $1',
 	'translate-messagereview-failure' => 'Ухвалення... не вдалося: $1',
 	'translate-messagereview-done' => 'Ухвалено',
 	'translate-messagereview-reviews' => 'Ухвалено $1 {{PLURAL:$1|користувачем|користувачами}}',
-	'translate-messagereview-reviewswithyou' => 'Ухвалено $1 {{PLURAL:$1|користувачем|користувачами}} разом з вами', # Fuzzy
+	'translate-messagereview-reviewswithyou' => 'Ухвалено {{PLURAL:$1|Вами|$1 користувачами разом з Вами}}',
 	'api-error-invalidrevision' => 'Переклад не знайдено',
 	'api-error-unknownmessage' => 'Повідомлення не знайдено',
 	'api-error-fuzzymessage' => 'Переклад позначено як неточний',
@@ -26655,6 +26603,8 @@ $1',
 	'translate-dynagroup-recent-label' => 'Останні переклади',
 	'translate-dynagroup-recent-desc' => 'Ця група повідомлень містить усі невичитані <!-- якщо перекладати слово в слово - то останні, але ж насправді - невичитані --> переклади цією мовою.
 Найзручніший режим для вичитки.',
+	'translate-dynagroup-additions-label' => 'Останні доповнення',
+	'translate-dynagroup-additions-desc' => 'Ця група повідомлень містить нові та змінені повідомлення.',
 	'translate-dynagroup-by' => '{{GENDER:$1|Переклав|Переклала}} $1',
 	'translate-dynagroup-byc' => '{{GENDER:$1|Переклав|Переклала}} $1 ($2)',
 	'translate-dynagroup-last' => 'Востаннє змінено {{GENDER:$1|$1}}',
@@ -27255,10 +27205,6 @@ Om tarbhaižemb "Accept messages" vai "Review all translations" tönke.', # Fuzz
 $messages['vi'] = array(
 	'translate' => 'Biên dịch',
 	'translate-desc' => '[[Special:Translate|Trang đặc biệt]] dùng để dịch MediaWiki và các thứ khác',
-	'translate-showsub' => 'Hiện {{PLURAL:$1|nhóm con|$1 nhóm con}}.',
-	'translate-grouplisting' => 'Đây là danh sách tất cả các nhóm dịch được.
-Nhấn chuột vào tên nhóm thông điệp để xem một danh sách thông điệp chưa được dịch.',
-	'translate-grouplisting-empty' => 'Các nhóm thông điệp chưa được thiết lập để dịch.',
 	'translate-taskui-view' => 'Tất cả các thông điệp',
 	'translate-taskui-untranslated' => 'Các thông điệp chưa dịch',
 	'translate-taskui-optional' => 'Các thông điệp tùy dịch',
@@ -27686,10 +27632,6 @@ Kod:
 $messages['wa'] = array(
 	'translate' => 'Ratourner',
 	'translate-desc' => '[[Special:Translate|Padje sipeciåle]] po ratourner MediaWiki et ds ôtes',
-	'translate-showsub' => 'Mostrer {{PLURAL:$1|li dzo-groupe|les $1 dizo-groupes}}.',
-	'translate-grouplisting' => "Çouchal c' est l' djivêye di tos les groupes ki plèt esse ratournés.
-Clitchîz sol no d' on groupe di messaedjes po vey ene djivêye des messaedjes nén co ratournés.",
-	'translate-grouplisting-empty' => "Nou groupe di messaedjes n' a stî apontyî pol ratournaedje.",
 	'translate-taskui-view' => 'Mostrer tos les messaedjes',
 	'translate-taskui-untranslated' => 'Mostrer les messaedjes nén ratournés',
 	'translate-taskui-optional' => 'Mostrer les messaedjes opcionels',
