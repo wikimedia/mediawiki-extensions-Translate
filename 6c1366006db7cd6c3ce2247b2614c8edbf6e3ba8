@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//724\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-03T13:22:53Z",
+      "side": 0,
+      "message": "Looks like this is now unused.",
+      "revId": "6c1366006db7cd6c3ce2247b2614c8edbf6e3ba8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
