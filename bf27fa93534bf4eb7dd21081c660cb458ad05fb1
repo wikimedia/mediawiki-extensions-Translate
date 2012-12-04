@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//6qw\u003d",
+        "filename": "resources/ext.translate.special.aggregategroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-04T17:58:51Z",
+      "side": 1,
+      "message": "This it not really at the top of the function ;)",
+      "revId": "bf27fa93534bf4eb7dd21081c660cb458ad05fb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
