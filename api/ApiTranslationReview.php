@@ -61,6 +61,9 @@ class ApiTranslationReview extends ApiBase {
 
 	/**
 	 * Executes the real stuff. No checks done!
+	 * @param User $user
+	 * @param Revision $revision
+	 * @param null|string $comment
 	 * @return Bool, whether the action was recorded.
 	 */
 	public static function doReview( User $user, Revision $revision, $comment = null ) {
@@ -90,6 +93,8 @@ class ApiTranslationReview extends ApiBase {
 
 	/**
 	 * Validates review action by checking permissions and other things.
+	 * @param User $user
+	 * @param Revision $revision
 	 * @return string Error key or empty string if review is allowed.
 	 * @since 2012-09-24
 	 */

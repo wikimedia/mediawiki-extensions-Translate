@@ -76,6 +76,11 @@ class TTMServer  {
 	 * PHP implementation of Levenshtein edit distance algorithm.
 	 * Uses the native PHP implementation when possible for speed.
 	 * The native levenshtein is limited to 255 bytes.
+	 *
+	 * @param $str1
+	 * @param $str2
+	 * @param $length1
+	 * @param $length2
 	 * @return int
 	 */
 	public static function levenshtein( $str1, $str2, $length1, $length2 ) {

@@ -173,12 +173,12 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 
 	/**
 	 * Shortcut for keeping the code at least a bit readable. Adds label and input into $form array.
-	 * @param $form \list{String} Array where input element and label is appended.
-	 * @param $label \string Label text.
-	 * @param $name \string Name attribute.
-	 * @param $size \int Size attribute of the input element. Default false.
-	 * @param $text \string Text of the value attribute. Default false.
-	 * @param $attribs \array Extra attributes. Default empty array.
+	 * @param array $form \list{String} Array where input element and label is appended.
+	 * @param string $label Label text.
+	 * @param string $name Name attribute.
+	 * @param int|bool $size Size attribute of the input element. Default false.
+	 * @param string|bool $text Text of the value attribute. Default false.
+	 * @param array $attribs Extra attributes. Default empty array.
 	 */
 	protected function addInputLabel( &$form, $label, $name, $size = false , $text = false, $attribs = array() ) {
 		$br = Html::element( 'br' );

@@ -45,8 +45,8 @@ class TranslationHelpers {
 	protected $editMode = 'true';
 
 	/**
-	 * @param $title Title: Title of a page that holds a translation.
-	 * @param $group String: Group id that should be used, otherwise autodetected from title.
+	 * @param Title $title Title of a page that holds a translation.
+	 * @param string $groupId Group id that should be used, otherwise autodetected from title.
 	 */
 	public function __construct( Title $title, $groupId ) {
 		$this->handle = new MessageHandle( $title );
@@ -58,6 +58,8 @@ class TranslationHelpers {
 	 * group id from loadgroup GET-paramater, but fallbacks to messageIndex file
 	 * if no valid group was provided.
 	 *
+	 * @param MessageHandle $handle
+	 * @param string $groupId
 	 * @return MessageGroup which the key belongs to, or null.
 	 */
 	protected function getMessageGroup( MessageHandle $handle, $groupId ) {

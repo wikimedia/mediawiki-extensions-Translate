@@ -141,7 +141,7 @@ class TranslateUtils {
 	/**
 	 * Returns a localised language name.
 	 * @param $code \string Language code.
-	 * @param $native \string Use only native names.
+	 * @param bool|string $native Use only native names.
 	 * @param $language \string Language code of language the the name should be in.
 	 * @return \string Best-effort localisation of wanted language name.
 	 */
@@ -179,8 +179,8 @@ class TranslateUtils {
 
 	/**
 	 * Standard language selector in Translate extension.
-	 * @param $language \string Language code of the language the names should
-	 * be localised to.
+	 * @param string $language Language code of the language the names should be localised to.
+	 * @param bool $labelOption
 	 * @return XmlSelect
 	 */
 	public static function getLanguageSelector( $language, $labelOption = false ) {
@@ -201,6 +201,7 @@ class TranslateUtils {
 
 	/**
 	 * Get translated language names.
+	 * @param string $code
 	 * @return array
 	 */
 	public static function getLanguageNames( /*string */ $code ) {

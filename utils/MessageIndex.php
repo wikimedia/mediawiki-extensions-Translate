@@ -36,6 +36,7 @@ abstract class MessageIndex {
 	/**
 	 * Retrieves a list of groups given MessageHandle belongs to.
 	 * @since 2012-01-04
+	 * @param MessageHandle $handle
 	 * @return array
 	 */
 	public static function getGroupIds( MessageHandle $handle ) {
@@ -53,6 +54,7 @@ abstract class MessageIndex {
 
 	/**
 	 * @since 2012-01-04
+	 * @param MessageHandle $handle
 	 * @return MessageGroup|null
 	 */
 	public static function getPrimaryGroupId( MessageHandle $handle ) {

@@ -43,6 +43,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 	/**
 	 * @since 2012-03-05
+	 * @param $type
 	 * @return string
 	 */
 	public function getGraphClass( $type ) {
@@ -241,10 +242,10 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 	/**
 	 * Constructs a table row with label and radio input in two columns.
-	 * @param $name string Option name.
-	 * @param $opts FormOptions
-	 * @param $alts \list{String} List of alternatives.
-	 * @return \string Html.
+	 * @param string $name Option name.
+	 * @param FormOptions $opts
+	 * @param array $alts \list{String} List of alternatives.
+	 * @return string Html.
 	 */
 	protected function eRadio( $name, FormOptions $opts, array $alts ) {
 		$label = 'translate-statsf-' . $name;

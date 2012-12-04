@@ -21,7 +21,7 @@ class TranslationStats {
 	 *
 	 * @param $group \string Unique key identifying the group
 	 * @param $languages \array List of language codes
-	 * @param $threshold \int Minimum required percentage translated to
+	 * @param bool|int $threshold \int Minimum required percentage translated to
 	 * return. Other given language codes will not be returned.
 	 * @param $simple \bool Return only codes or code/pecentage pairs
 	 *

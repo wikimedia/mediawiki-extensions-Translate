@@ -268,6 +268,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * Imitiates the core plural form handling by removing
 	 * plural forms that start with 0= or 1=
 	 * @since 2012-09-19
+	 * @param array $forms
 	 * @return array
 	 */
 	public static function removeExplicitPluralForms( array $forms ) {

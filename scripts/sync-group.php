@@ -215,10 +215,10 @@ class ChangeSyncer {
 
 	/**
 	 * Do some conflict resolution for translations.
-	 * @param $code \string Language code.
-	 * @param $startTs \int Time of the last export (changes in wiki after this will conflict)
-	 * @param $endTs \int Time of the last export (changes in source before this wont conflict)
-	 * @param $changeTs \int When change happened in the source.
+	 * @param string $code Language code.
+	 * @param bool|int $startTs Time of the last export (changes in wiki after this will conflict)
+	 * @param bool|int $endTs Time of the last export (changes in source before this wont conflict)
+	 * @param bool|int $changeTs When change happened in the source.
 	 */
 	public function checkConflicts( $code, $startTs = false, $endTs = false, $changeTs = false ) {
 		$messages = $this->group->load( $code );
@@ -352,9 +352,9 @@ class ChangeSyncer {
 
 	/**
 	 * Try to identify when the translation was last changed in the wiki.
-	 * @param $title \type{Title} Title of the page which contains translation.
-	 * @param $startTs \int Timestamp how far back to go before giving up.
-	 * @return \int Timestamp or false.
+	 * @param Title $title Title of the page which contains translation.
+	 * @param int|bool $startTs Timestamp how far back to go before giving up.
+	 * @return int|bool Timestamp or false.
 	 */
 	public function getLastGoodChange( $title, $startTs = false ) {
 		global $wgTranslateFuzzyBotName;

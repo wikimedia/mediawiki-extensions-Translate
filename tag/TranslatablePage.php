@@ -430,6 +430,7 @@ class TranslatablePage {
 	 * Adds a tag which indicates that this page is
 	 * suitable for translation.
 	 * @param $revision integer
+	 * @param null|string $value
 	 */
 	public function addMarkedTag( $revision, $value = null ) {
 		$this->addTag( 'tp:mark', $revision, $value );
@@ -475,8 +476,8 @@ class TranslatablePage {
 
 	/**
 	 * Returns the latest revision which has marked tag, if any.
-	 * @param $db Database connection type
-	 * @return integer|false
+	 * @param int $db Database connection type
+	 * @return integer|bool false
 	 */
 	public function getMarkedTag( $db = DB_SLAVE ) {
 		return $this->getTag( 'tp:mark' );
@@ -484,8 +485,8 @@ class TranslatablePage {
 
 	/**
 	 * Returns the latest revision which has ready tag, if any.
-	 * @param $db Database connection type
-	 * @return integer|false
+	 * @param int $db Database connection type
+	 * @return int|bool false
 	 */
 	public function getReadyTag( $db = DB_SLAVE ) {
 		return $this->getTag( 'tp:tag' );
@@ -629,9 +630,9 @@ class TranslatablePage {
 
 	/**
 	 * Returns a list of translation unit pages.
-	 * @param $set  String Can be either 'all', or 'active'
-	 * @param $code String Only list unit pages in given language.
-	 * @return List of Titles.
+	 * @param string $set Can be either 'all', or 'active'
+	 * @param string|bool $code Only list unit pages in given language.
+	 * @return array List of Titles.
 	 * @since 2012-08-06
 	 */
 	public function getTranslationUnitPages( $set = 'active', $code = false ) {

@@ -37,6 +37,7 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 	 * Assuming the user's interface language is fi
 	 * Given input Page, it returns Page/fi if it exists, otherwise Page
 	 * Given input Page/de, it returns Page/fi if it exists, otherwise Page/de if it exists, otherwise Page
+	 * @param $par
 	 * @return Title|null
 	 */
 	protected function findTitle( $par ) {

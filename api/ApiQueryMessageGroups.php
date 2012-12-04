@@ -71,6 +71,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 	/**
 	 * @param array|MessageGroup $mixed
 	 * @param array $props List of props as the array keys
+	 * @param int $depth
 	 * @return array
 	 */
 	protected function formatGroup( $mixed, $props, $depth = 0 ) {
