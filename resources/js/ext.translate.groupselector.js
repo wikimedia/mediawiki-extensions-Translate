@@ -132,16 +132,6 @@
 				e.stopPropagation();
 			} );
 
-
-			groupSelector.$menu.on( 'click', 'button.expand', function ( e ) {
-				$( this ).attr( 'disabled', true );
-				groupSelector.getGroups( $( this ).data( 'msggroup' ).id,
-					$( this ).data( 'msggroup' ).groups );
-
-				e.preventDefault();
-				e.stopPropagation();
-			} );
-
 			groupSelector.$menu.on( 'click', '.ext-translate-msggroup-item .label', function () {
 				messageGroup = $( this ).parent().data( 'msggroup' );
 				groupSelector.$group.text( messageGroup.label );
@@ -312,6 +302,8 @@
 				} );
 			} else {
 				groupSelector.getGroups( parentGroupId );
+				// keep it open
+				groupSelector.show();
 			}
 
 		},
@@ -353,7 +345,6 @@
 					$msgGroupList.append( $msgGroups );
 				}
 			}
-
 		},
 
 		/**
@@ -408,7 +399,7 @@
 	 * prepare MessageGroup item in the selector
 	 */
 	function prepareMessageGroup ( messagegroup ) {
-		var $row, $icon, $label, $expandButton, style = '';
+		var $row, $icon, $label, $subGroupsLabel, style = '';
 
 		$row = $( '<div>' ).addClass( 'row ext-translate-msggroup-item' )
 			.attr( 'data-msggroupid', messagegroup.id )
@@ -435,17 +426,16 @@
 			$icon.attr( 'style', style );
 		}
 
-		$expandButton = $( [] );
+		$subGroupsLabel = $( [] );
 
 		if ( messagegroup.groups && messagegroup.groups.length > 0 ) {
-			$expandButton = $( '<button>' )
-				.addClass( 'four columns expand' )
+			$subGroupsLabel = $( '<div>' )
+				.addClass( 'four columns subgroup-info' )
 				.text( mw.msg( 'translate-msggroupselector-view-subprojects',
-					messagegroup.groups.length ) )
-				.data( 'msggroup', messagegroup );
+					messagegroup.groups.length ) );
 		}
 
-		return $row.append( $icon, $label, $expandButton );
+		return $row.append( $icon, $label, $subGroupsLabel );
 	}
 
 	/**

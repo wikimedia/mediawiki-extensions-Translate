@@ -123,6 +123,17 @@
 	font-weight: bold;
 }
 
+.ext-translate-msggroup-selector-menu .subgroup-info {
+	font-weight: normal;
+	line-height: 1.25em;
+	padding-bottom: 3px;
+	padding-left: 15px;
+	padding-top: 1.25em;
+	color: #555555;
+	cursor: pointer;
+	font-size: 10pt;
+}
+
 .ext-translate-msggroup-category {
 	cursor: pointer;
 }
