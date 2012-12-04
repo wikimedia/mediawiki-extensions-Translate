@@ -18,6 +18,7 @@
 		 */
 		init: function () {
 			var parentGroupId;
+
 			parentGroupId = this.$group.data( 'msggroup' ) && this.$group.data( 'msggroup' ).id;
 			this.prepareSelectorMenu();
 			this.position();
@@ -31,14 +32,16 @@
 		prepareSelectorMenu: function () {
 			var $groupTitle, $listTitles, $searchIcon, $search, $msgGroupList, $loadAllRow;
 
-			this.$menu = $( '<div class="ext-translate-msggroup-selector-menu grid" role="menu"></div>' );
+			this.$menu = $( '<div class="ext-translate-msggroup-selector-menu grid"></div>' );
 
 			$groupTitle = $( '<div>' ).addClass( 'row' )
 				.append( $( '<h3>' ).addClass( 'ten columns' )
 					.text( mw.msg( 'translate-msggroupselector-projects' ) )
 				);
 
-			$searchIcon = $( '<div>' ).addClass( 'one column offset-by-two ext-translate-msggroup-search-icon' );
+			$searchIcon = $( '<div>' )
+				.addClass( 'one column offset-by-two ext-translate-msggroup-search-icon' );
+
 			$search = $( '<div>' ).addClass( 'five columns' )
 				.append( $( '<input type="text">' ).addClass( 'ext-translate-msggroup-search-input' )
 					.attr( {
@@ -47,9 +50,11 @@
 				);
 
 			$listTitles = $( '<div>' ).addClass( 'row' )
-				.append( $( '<div>' ).addClass( 'two columns ext-translate-msggroup-category all selected' )
+				.append( $( '<div>' )
+					.addClass( 'two columns ext-translate-msggroup-category all selected' )
 					.text( mw.msg( 'translate-msggroupselector-search-all' ) ) )
-				.append( $( '<div>' ).addClass( 'two columns ext-translate-msggroup-category recent' )
+				.append( $( '<div>' )
+					.addClass( 'two columns ext-translate-msggroup-category recent' )
 					.text( mw.msg( 'translate-msggroupselector-search-recent' ) ) )
 				.append( $searchIcon )
 				.append( $search );
@@ -61,10 +66,7 @@
 					.text( mw.msg( 'translate-msggroupselector-load-from-all' ) )
 				);
 
-			this.$menu.append( $groupTitle )
-				.append( $listTitles )
-				.append( $msgGroupList )
-				.append( $loadAllRow );
+			this.$menu.append( $groupTitle, $listTitles, $msgGroupList, $loadAllRow );
 
 			$( 'body' ).append( this.$menu );
 		},
@@ -155,15 +157,19 @@
 				}
 			} );
 
-
 			groupSelector.$menu.find( '.ext-translate-msggroup-category' )
 				.on( 'click', function () {
+					var parentGroupId;
 					groupSelector.$menu.find( '.ext-translate-msggroup-category' )
 						.toggleClass( 'selected' );
 
-					if ( $( this ).hasClass( 'recent') ) {
-						// TODO: recent message groups, API need to be improved
-						// groupSelector.getRecentGroups();
+					if ( $( this ).hasClass( 'recent' ) ) {
+						groupSelector.getRecentGroups();
+					} else {
+						groupSelector.$menu.find( '.ext-translate-msggroup-list' ).empty();
+						parentGroupId = groupSelector.$group.data( 'msggroup' )
+							&& groupSelector.$group.data( 'msggroup' ).id;
+						groupSelector.loadGroups( parentGroupId );
 					}
 				} );
 
@@ -210,10 +216,12 @@
 
 		/**
 		 * Get recent message groups.
-		 * XXX : Incomeplete API.
 		 */
 		getRecentGroups: function () {
 			var queryParams,
+				apiURL,
+				messageGroups,
+				groupSelector = this,
 				$msgGroupList;
 
 			queryParams = {
@@ -223,11 +231,17 @@
 
 			apiURL = mw.util.wikiScript( 'api' );
 			$msgGroupList = groupSelector.$menu.find( '.ext-translate-msggroup-list' );
+			messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
 
+			$msgGroupList.empty();
 			$.get( apiURL, queryParams, function ( result ) {
-				$msgGroups = [];
+				var $msgGroups = [],
+					messageGroupId,
+					messagegroup;
+
 				$.each( result.translateuser.recentgroups, function ( index ) {
-					messageGroupId = result.query.messagegroups[index];
+					messageGroupId = result.translateuser.recentgroups[index];
+					messagegroup = getGroup( messageGroupId, messageGroups );
 					$msgGroups.push( prepareMessageGroup( messagegroup ) );
 				} );
 				$msgGroupList.append( $msgGroups );
@@ -292,7 +306,8 @@
 
 			if ( !messageGroups ) {
 				$.get( apiURL, queryParams, function ( result ) {
-					$( '.ext-translate-msggroup-selector' ).data( 'msggroups', result.query.messagegroups );
+					$( '.ext-translate-msggroup-selector' )
+						.data( 'msggroups', result.query.messagegroups );
 					groupSelector.getGroups( parentGroupId );
 				} );
 			} else {
@@ -372,7 +387,9 @@
 				data = $this.data( 'msggroupselector' );
 
 			if ( !data ) {
-				$this.data( 'msggroupselector', ( data = new TranslateMessageGroupSelector( this, options ) ) );
+				$this.data( 'msggroupselector',
+					( data = new TranslateMessageGroupSelector( this, options ) )
+				);
 			}
 
 			if ( typeof options === 'string' ) {
@@ -423,11 +440,42 @@
 		if ( messagegroup.groups && messagegroup.groups.length > 0 ) {
 			$expandButton = $( '<button>' )
 				.addClass( 'four columns expand' )
-				.text( mw.msg( 'translate-msggroupselector-view-subprojects', messagegroup.groups.length ) )
+				.text( mw.msg( 'translate-msggroupselector-view-subprojects',
+					messagegroup.groups.length ) )
 				.data( 'msggroup', messagegroup );
 		}
 
 		return $row.append( $icon, $label, $expandButton );
+	}
+
+	/**
+	 * Find a group from an array of message groups
+	 * recurse it through sub groups.
+	 *
+	 * @param messageGroupId
+	 * @param messageGroups Array of messageGroups
+	 * @return {Object} Messagegroup object
+	 */
+	function getGroup( messageGroupId, messageGroups ) {
+		var i, messageGroup;
+
+		for ( i = 0; i < messageGroups.length; i++ ) {
+			messageGroup = messageGroups[i];
+
+			if ( messageGroup.id === messageGroupId ) {
+				return messageGroup;
+			} else {
+				if ( messageGroup.groups ) {
+					messageGroup =  getGroup( messageGroupId, messageGroup.groups );
+
+					if ( messageGroup ) {
+						return messageGroup;
+					}
+				}
+			}
+		}
+
+		return false;
 	}
 
 }( jQuery ) );
