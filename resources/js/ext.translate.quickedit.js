@@ -360,10 +360,23 @@
 					.removeClass( 'untranslated' )
 					.addClass( 'justtranslated' );
 			};
+
 			callbacks.close = function () {
+				var nextTr, nextTextarea, nextImeSelector;
+
 				$this.html( current );
 				$this.removeClass( 'tqe-editor-loaded' );
+
+				nextTr = $this.parent().next();
+				if ( nextTr !== undefined ) {
+					nextTextarea = nextTr.find( 'textarea' );
+					nextImeSelector = nextTextarea.data( 'imeselector' );
+					if ( nextImeSelector !== undefined ) {
+						nextImeSelector.position();
+					}
+				}
 			};
+
 			callbacks.load = function ( editor ) {
 				var $header = $( '<div class="tqe-fakeheader"></div>' );
 				$header.text( page );
@@ -371,6 +384,7 @@
 
 				$( editor ).find( 'form' ).prepend( $header );
 			};
+
 			if ( next.length ) {
 				callbacks.next = function() {
 					next.dblclick();
