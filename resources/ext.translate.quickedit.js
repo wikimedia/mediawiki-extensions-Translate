@@ -266,9 +266,10 @@
 
 		openEditor: function( element, page, group, callbacks ) {
 			var $target = $( element ),
-				spinner = $( '<div>' ).attr( 'class', 'mw-ajax-loader' );
+				$div = $( '<div>' ),
+				spinner = $div.attr( 'class', 'mw-ajax-loader' );
 
-			$target.html( $( '<div>' ).attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
+			$target.html( $div.attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
 
 			mw.translate.loadEditor( $target, page, group, function() {
 				if ( callbacks.load ) {

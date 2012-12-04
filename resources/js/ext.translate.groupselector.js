@@ -30,38 +30,39 @@
 		 * Prepare the selector menu rendering
 		 */
 		prepareSelectorMenu: function () {
-			var $groupTitle, $listTitles, $searchIcon, $search, $msgGroupList, $loadAllRow;
+			var $div, $groupTitle, $listTitles, $searchIcon, $search, $msgGroupList, $loadAllRow;
 
 			this.$menu = $( '<div class="ext-translate-msggroup-selector-menu grid"></div>' );
 
-			$groupTitle = $( '<div>' ).addClass( 'row' )
+			$div = $( '<div>' );
+			$groupTitle = $div.addClass( 'row' )
 				.append( $( '<h3>' ).addClass( 'ten columns' )
 					.text( mw.msg( 'translate-msggroupselector-projects' ) )
 				);
 
-			$searchIcon = $( '<div>' )
+			$searchIcon = $div
 				.addClass( 'one column offset-by-two ext-translate-msggroup-search-icon' );
 
-			$search = $( '<div>' ).addClass( 'five columns' )
+			$search = $div.addClass( 'five columns' )
 				.append( $( '<input type="text">' ).addClass( 'ext-translate-msggroup-search-input' )
 					.attr( {
 						'placeholder': mw.msg( 'translate-msggroupselector-search-placeholder' )
 					} )
 				);
 
-			$listTitles = $( '<div>' ).addClass( 'row' )
-				.append( $( '<div>' )
+			$listTitles = $div.addClass( 'row' )
+				.append( $div
 					.addClass( 'two columns ext-translate-msggroup-category all selected' )
 					.text( mw.msg( 'translate-msggroupselector-search-all' ) ) )
-				.append( $( '<div>' )
+				.append( $div
 					.addClass( 'two columns ext-translate-msggroup-category recent' )
 					.text( mw.msg( 'translate-msggroupselector-search-recent' ) ) )
 				.append( $searchIcon )
 				.append( $search );
 
-			$msgGroupList = $( '<div>' ).addClass( 'row ext-translate-msggroup-list' );
+			$msgGroupList = $div.addClass( 'row ext-translate-msggroup-list' );
 
-			$loadAllRow = $( '<div>' ).addClass( 'row' )
+			$loadAllRow = $div.addClass( 'row' )
 				.append( $( '<button>' ).addClass( 'six columns ext-translate-load-all' )
 					.text( mw.msg( 'translate-msggroupselector-load-from-all' ) )
 				);
@@ -318,6 +319,7 @@
 		/**
 		 *
 		 * @param parentGroupId
+		 * @param msgGroups
 		 */
 		getGroups: function ( parentGroupId, msgGroups ) {
 			var groupSelector = this,
@@ -408,21 +410,23 @@
 	 * prepare MessageGroup item in the selector
 	 */
 	function prepareMessageGroup ( messagegroup ) {
-		var $row, $icon, $label, $statsbar, $expandButton, style = '';
+		var $row, $icon, $label, $statsbar, $expandButton,
+			style = '',
+			$div = $( '<div>' );
 
-		$row = $( '<div>' ).addClass( 'row ext-translate-msggroup-item' )
+		$row = $div.addClass( 'row ext-translate-msggroup-item' )
 			.attr( 'data-msggroupid', messagegroup.id )
 			.data( 'msggroup', messagegroup );
 
-		$icon = $( '<div>' ).addClass( 'one column icon' );
+		$icon = $div.addClass( 'one column icon' );
 
-		$statsbar = $( '<div>' ).languagestatsbar( {
+		$statsbar = $div.languagestatsbar( {
 			// FIXME: use the language code provided by Special:Translate
 			language: mw.config.get( 'wgUserLanguage' ),
 			group: messagegroup.id
 		} );
 
-		$label = $( '<div>' ).addClass( 'six columns label' )
+		$label = $div.addClass( 'six columns label' )
 			.text( messagegroup.label )
 			.attr( { title: messagegroup.description } )
 			.append( $statsbar );

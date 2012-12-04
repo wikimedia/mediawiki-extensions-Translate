@@ -62,7 +62,7 @@
 		},
 
 		render: function () {
-			var $bar, i, stats, proofread, translated, fuzzy, untranslated, untranslatedCount;
+			var $bar, $span, i, stats, proofread, translated, fuzzy, untranslated, untranslatedCount;
 
 			stats = {};
 
@@ -82,25 +82,26 @@
 			untranslated = 100 - proofread - translated - fuzzy;
 			untranslatedCount = stats.total - stats.proofread - stats.translated - stats.fuzzy;
 
+			$span = $( '<span>' );
 			$bar = $( '<div>' )
 				.addClass( 'tux-statsbar' )
 				.data( 'total', stats.total )
 				.data( 'group', this.group )
 				.data( 'language', this.language )
 				.append(
-					$( '<span>' )
+					$span
 						.addClass( 'tux-proofread' )
 						.text( stats.proofread )
 						.css( 'width', proofread + '%' ),
-					$( '<span>' )
+					$span
 						.addClass( 'tux-translated' )
 						.text( stats.translated )
 						.css( 'width', translated + '%' ),
-					$( '<span>' )
+					$span
 						.addClass( 'tux-fuzzy' )
 						.text( stats.fuzzy )
 						.css( 'width', fuzzy + '%' ),
-					$( '<span>' )
+					$span
 						.addClass( 'tux-untranslated' )
 						.text( untranslatedCount )
 						.css( 'width', untranslated + '%' )
