@@ -154,6 +154,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	/**
 	 * Return the list of allowed values for target here.
+	 * @param $value
 	 * @return array
 	 */
 	protected function isValidValue( $value ) {
@@ -392,6 +393,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	/**
 	 * Actually creates the table for single message group, unless it
 	 * is blacklisted or hidden by filters.
+	 * @param MessageGroup $group
+	 * @param array $cache
+	 * @param MessageGroup $parent
 	 * @return string
 	 */
 	protected function makeGroupRow( MessageGroup $group, array $cache, MessageGroup $parent = null ) {

@@ -228,7 +228,7 @@ class ProcessMessageChanges extends Maintenance {
 	 * Filters groups.
 	 *
 	 * @since 2012-10-15
-	 * @param MessageGroupBase[] $allGroups
+	 * @param MessageGroupBase[] $groups
 	 * @param string $whitelist Comma separated list of group IDs that should be processed (can
 	 * use * as wildcard)
 	 * @return array of filtered groups

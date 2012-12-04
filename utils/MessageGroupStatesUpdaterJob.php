@@ -26,6 +26,7 @@ class MessageGroupStatesUpdaterJob extends Job {
 	}
 
 	/**
+	 * @param $title
 	 * @return MessageGroupStatesUpdaterJob
 	 */
 	public static function newJob( $title ) {

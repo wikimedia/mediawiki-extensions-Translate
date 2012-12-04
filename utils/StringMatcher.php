@@ -98,7 +98,7 @@ class StringMatcher implements StringMangler {
 	 * Preprocesses the patterns.
 	 * They are split into exact keys, prefix matches and pattern matches to
 	 * speed up matching process.
-	 * @param $strings \list{String} Key patterns.
+	 * @param array $strings \list{String} Key patterns.
 	 */
 	protected function init( array $strings ) {
 		foreach ( $strings as $string ) {
@@ -214,8 +214,8 @@ class StringMatcher implements StringMangler {
 
 	/**
 	 * Mangles or unmangles list of message keys.
-	 * @param $array \list{String} Message keys.
-	 * @param $reverse \bool Direction of mangling or unmangling.
+	 * @param array $array \list{String} Message keys.
+	 * @param bool $reverse Direction of mangling or unmangling.
 	 * @return \list{String} (Un)mangled message keys.
 	 */
 	protected function mangleArray( array $array, $reverse = false ) {

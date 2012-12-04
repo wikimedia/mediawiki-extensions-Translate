@@ -127,10 +127,13 @@ class JavaFFS extends SimpleFFS {
 
 	/**
 	 * Writes well-formed properties file row with key and value.
+	 * @param string $key
+	 * @param string $sep
+	 * @param string $value
 	 * @return string
 	 * @since 2012-03-28
 	 */
-	public static function writeRow( /*string*/$key, /*string*/$sep, /*string*/$value ) {
+	public static function writeRow( $key, $sep, $value ) {
 		/* Keys containing the separator need escaping. Also escape comment
 		 * characters, though strictly they would only need escaping when
 		 * they are the first character. Plus the escape character itself. */
@@ -142,10 +145,12 @@ class JavaFFS extends SimpleFFS {
 
 	/**
 	 * Parses non-empty properties file row to key and value.
+	 * @param string $line
+	 * @param string $sep
 	 * @return string
 	 * @since 2012-03-28
 	 */
-	public static function readRow( /*string*/$line, /*string*/$sep ) {
+	public static function readRow( $line, $sep ) {
 		if ( strpos( $line, '\\' ) === false ) {
 			/* Nothing appears to be escaped in this line.
 			 * Just read the key and the value. */

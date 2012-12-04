@@ -138,8 +138,8 @@ class StatsTable {
 
 	/**
 	 * Makes a row with aggregate numbers.
-	 * @param $message Message
-	 * @param $numbers array ( total, translate, fuzzy )
+	 * @param Message $message
+	 * @param array $stats ( total, translate, fuzzy )
 	 * @return string Html
 	 */
 	public function makeTotalRow( Message $message, $stats ) {
@@ -153,9 +153,7 @@ class StatsTable {
 
 	/**
 	 * Makes partial row from completion numbers
-	 * @param $fuzzy int Number of fuzzy translations
-	 * @param $translated int Number of non-fuzzy translations
-	 * @param $total int Total number of messages in this group
+	 * @param array $stats
 	 * @return string Html
 	 */
 	public function makeNumberColumns( $stats ) {

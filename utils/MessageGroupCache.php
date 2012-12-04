@@ -90,7 +90,7 @@ class MessageGroupCache {
 
 	/**
 	 * Populates the cache from current state of the source file.
-	 * @param $created \string Unix timestamp when the cache is created (for automatic updates).
+	 * @param bool|string $created Unix timestamp when the cache is created (for automatic updates).
 	 */
 	public function create( $created = false ) {
 		$this->close(); // Close the reader instance just to be sure
@@ -127,6 +127,7 @@ class MessageGroupCache {
 	 * Checks whether the cache still reflects the source file.
 	 * It uses multiple conditions to speed up the checking from file
 	 * modification timestamps to hashing.
+	 * @param int $reason
 	 * @return \bool Whether the cache is up to date.
 	 */
 	public function isValid( &$reason = 0 ) {

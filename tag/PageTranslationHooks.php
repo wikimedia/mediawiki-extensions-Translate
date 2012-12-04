@@ -77,15 +77,15 @@ class PageTranslationHooks {
 	/**
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
 	 *
-	 * @param $article Article
+	 * @param Article $article
 	 * @param User $user
-	 * @param $content string|TextContent
-	 * @param $summary string
-	 * @param $minor bool
+	 * @param string|TextContent $content
+	 * @param string $summary
+	 * @param bool $minor
 	 * @param $_
 	 * @param $_
 	 * @param $flags
-	 * @param $revision Revision
+	 * @param Revision $revision
 	 * @return bool
 	 */
 	public static function onSectionSave( $article, User $user, $content, $summary,
@@ -371,15 +371,15 @@ class PageTranslationHooks {
 	 * When attempting to save, last resort. Edit page would only display
 	 * edit conflict if there wasn't tpSyntaxCheckForEditPage
 	 * Hook: ArticleSave, PageContentSave
-	 * @param $article Article
-	 * @param $user User
-	 * @param $content string|TextContent
-	 * @param $summary string
-	 * @param $minor bool
+	 * @param Article $article
+	 * @param User $user
+	 * @param string|TextContent $content
+	 * @param string $summary
+	 * @param bool $minor
 	 * @param $_
 	 * @param $_
 	 * @param $flags
-	 * @param $status string
+	 * @param string $status
 	 * @return bool
 	 */
 	public static function tpSyntaxCheck( $article, $user, $content, $summary,
@@ -413,15 +413,15 @@ class PageTranslationHooks {
 
 	/**
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
-	 * @param $article Article
-	 * @param $user User
-	 * @param $content string|TextContent
-	 * @param $summary string
-	 * @param $minor bool
+	 * @param Article $article
+	 * @param User $user
+	 * @param string|TextContent $content
+	 * @param string $summary
+	 * @param bool $minor
 	 * @param $_
 	 * @param $_
 	 * @param $flags
-	 * @param $revision Revision|null
+	 * @param Revision|null $revision
 	 * @return bool
 	 */
 	public static function addTranstag( $article, $user, $content, $summary,

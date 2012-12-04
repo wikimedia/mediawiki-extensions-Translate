@@ -131,6 +131,7 @@ abstract class TranslateTask {
 	 * Constructor.
 	 * @param MessageGroup $group Message group.
 	 * @param TaskOptions $options Options.
+	 * @param IContextSource $context
 	 */
 	public final function init( MessageGroup $group, TaskOptions $options, IContextSource $context ) {
 		$this->group = $group;
@@ -183,6 +184,7 @@ abstract class TranslateTask {
 	/**
 	 * Determine whether this user can use this task.
 	 * Override this method if the task depends on user rights.
+	 * @param User $user
 	 * @return string
 	 */
 	public function isAllowedFor( User $user ) {
@@ -461,7 +463,7 @@ class TranslateTasks {
 
 	/**
 	 * Return list of available tasks.
-	 * @param $pageTranslation Whether this group is page translation group.
+	 * @param bool $pageTranslation Whether this group is page translation group.
 	 * @todo Make the above parameter a group and check its class?
 	 * @return \list{String} Task identifiers.
 	 */

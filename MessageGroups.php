@@ -175,7 +175,7 @@ class MessageGroups {
 
 	/**
 	 * Fetch a message group by id.
-	 * @param $id \string Message group id.
+	 * @param string $id Message group id.
 	 * @return MessageGroup|null if it doesn't exist.
 	 */
 	public static function getGroup( $id ) {
@@ -262,6 +262,7 @@ class MessageGroups {
 	/**
 	 * Returns the message groups this message group is part of.
 	 * @since 2011-12-25
+	 * @param MessageGroup $group
 	 * @return array
 	 */
 	public static function getParentGroups( MessageGroup $group ) {
@@ -472,8 +473,9 @@ class MessageGroups {
 	 * Like getGroupStructure but start from one root which must be an
 	 * AggregateMessageGroup.
 	 *
+	 * @param AggregateMessageGroup $parent
+	 * @throws MWException
 	 * @return array
-	 * @throws MWException If cyclic structure is detected.
 	 * @since Public since 2012-11-29
 	 */
 	public static function subGroups( AggregateMessageGroup $parent ) {
