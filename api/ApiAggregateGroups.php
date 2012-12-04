@@ -71,10 +71,11 @@ class ApiAggregateGroups extends ApiBase {
 
 			$logparams = array(
 				'user' => $wgUser->getName() ,
-				// TODO: Why is this name and not id?
+				// @todo Why is this name and not id?
 				'aggregategroup' => TranslateMetadata::get( $aggregateGroup, 'name' ),
 			);
 
+			// @todo FIXME: Undefined variable $id
 			$title = $group ? $group->getTitle() : Title::newFromText( "Group:$id" );
 			$logger->addEntry( $action, $title, null, array( serialize( $logparams ) ), $wgUser );
 		} elseif ( $action === 'remove' ) {
@@ -82,7 +83,7 @@ class ApiAggregateGroups extends ApiBase {
 				$this->dieUsageMsg( array( 'missingparam', 'aggregategroup' ) );
 			}
 			TranslateMetadata::deleteGroup( $params['aggregategroup'] );
-			// TODO: logging
+			// @todo Logging
 
 		} elseif ( $action === 'add' ) {
 			if ( !isset( $params['groupname'] ) ) {
@@ -111,7 +112,7 @@ class ApiAggregateGroups extends ApiBase {
 			// Once new aggregate group added, we need to show all the pages that can be added to that.
 			$output['groups'] = self::getAllPages();
 			$output['aggregategroupId'] = $aggregateGroupId;
-			// TODO: logging
+			// @todo Logging
 
 		}
 
