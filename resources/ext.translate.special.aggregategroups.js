@@ -11,7 +11,9 @@
 	}
 
 	function dissociate( event ) {
-		var	$target = $( event.target ),
+		var params,
+
+			$target = $( event.target ),
 			parentId = $target.parents( '.mw-tpa-group' ).data( 'id' ),
 			$select = $( '#mw-tpa-groupselect-' + parentId );
 
@@ -26,7 +28,7 @@
 			}
 		}
 
-		var params = $.extend( getApiParams( $target ), {
+		params = $.extend( getApiParams( $target ), {
 			do: 'dissociate',
 			group: $target.data( 'groupid' )
 		} );
@@ -34,29 +36,34 @@
 	}
 
 	function associate( event ) {
-		var	$target = $( event.target ),
+		var successFunction, params,
+
+			$target = $( event.target ),
 			parentId = $target.parents( '.mw-tpa-group' ).data( 'id' ),
 			$selected = $( '#mw-tpa-groupselect-' + parentId + ' option:selected' ),
 			subgroupId = $selected.val(),
 			subgroupName = $selected.text();
 
-		var successFunction = function ( data, textStatus ) {
+		successFunction = function ( data, textStatus ) {
 			if ( data.error ) {
 				alert( data.error.info );
 			} else {
-				var aAttr = {
+				var aAttr, $a, spanAttr, $span, $ol;
+
+				aAttr = {
 					href: mw.util.wikiGetlink( subgroupName ),
 					title: subgroupName
 				};
-				var $a = $( '<a>', aAttr ).text( subgroupName );
 
-				var spanAttr = {
+				$a = $( '<a>', aAttr ).text( subgroupName );
+
+				spanAttr = {
 					class: 'tp-aggregate-remove-button'
 				};
 
-				var $span = $( '<span>', spanAttr );
+				$span = $( '<span>', spanAttr );
 
-				var $ol = $( '#mw-tpa-grouplist-' + parentId );
+				$ol = $( '#mw-tpa-grouplist-' + parentId );
 				$ol.append( $( '<li>' ).append( $a.after( $span ) ) );
 
 				// remove this group from the select.
@@ -65,7 +72,7 @@
 			}
 		};
 
-		var params = $.extend( getApiParams( $target ), {
+		params = $.extend( getApiParams( $target ), {
 			do: 'associate',
 			group: subgroupId
 		} );
@@ -101,7 +108,8 @@
 		} );
 
 		$( '#tpt-aggregategroups-save' ).on( 'click', function ( event ) {
-			var aggGroupNameInputName = $( 'input.tp-aggregategroup-add-name' ),
+			var $select, successFunction, params,
+				aggGroupNameInputName = $( 'input.tp-aggregategroup-add-name' ),
 				aggGroupNameInputDesc = $( 'input.tp-aggregategroup-add-description' ),
 				aggregateGroupName = aggGroupNameInputName.val(),
 				aggregateGroupDesc = aggGroupNameInputDesc.val();
@@ -111,13 +119,13 @@
 			aggGroupNameInputName.val( '' );
 			aggGroupNameInputDesc.val( '' );
 
-			var $select = $( 'div.mw-tpa-group select' );
+			$select = $( 'div.mw-tpa-group select' );
 
-			var successFunction = function ( data, textStatus ) {
+			successFunction = function ( data, textStatus ) {
 				if ( data.error ) {
 					alert( data.error.info );
 				} else {
-					var $removeSpan, $div,
+					var $removeSpan, $div, $groupSelector, $addButton,
 						aggregateGroupId = data.aggregategroups.aggregategroupId;
 
 					$removeSpan = $( '<span>' ).attr( 'id', aggregateGroupId ).addClass( 'tp-aggregate-remove-ag-button' );
@@ -130,11 +138,13 @@
 					$div.data( 'id', aggregateGroupId );
 
 					if ( $select.length > 0 ) {
-						var $groupSelector = $( '<select>' ).attr( 'id', 'mw-tpa-groupselect-' + aggregateGroupId );
+						$groupSelector = $( '<select>' ).attr( 'id', 'mw-tpa-groupselect-' + aggregateGroupId );
+
 						$.each( data.aggregategroups.groups, function ( key, value ) {
 							$groupSelector.append( $( '<option>', { value: key } ).text( value ) );
 						} );
-						var $addButton = $( $( 'input.tp-aggregate-add-button' )[0] ).clone();
+
+						$addButton = $( $( 'input.tp-aggregate-add-button' )[0] ).clone();
 						$addButton.attr( 'id', aggregateGroupId );
 						$div.append( $groupSelector ).append( $addButton );
 						$addButton.click( associate );
@@ -148,7 +158,7 @@
 				}
 			};
 
-			var params = {
+			params = {
 				action: 'aggregategroups',
 				do: 'add',
 				token: $( '#token' ).val(),
