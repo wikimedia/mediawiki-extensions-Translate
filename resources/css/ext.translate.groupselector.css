@@ -107,7 +107,7 @@
 
 .ext-translate-msggroup-item .label .tux-statsbar {
 	position: absolute;
-	bottom: 0px;
+	bottom: 0;
 	width: 150px;
 }
 

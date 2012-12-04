@@ -1,14 +1,14 @@
 .tux-statsbar {
 	max-width: 400px;
-	padding: 0px;
+	padding: 0;
 	height: 8px;
 }
 
 .tux-statsbar span {
 	height: 8px;
 	float: left;
-	padding: 0px;
-	font-size: 0px;
+	padding: 0;
+	font-size: 0;
 }
 
 .tux-statsbar .tux-proofread {
