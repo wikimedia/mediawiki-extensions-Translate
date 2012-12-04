@@ -72,7 +72,7 @@ class TranslateUtils {
 	 *
 	 * @param $titles \types{String,\list{String}} Database page names.
 	 * @param $namespace \int The number of the namespace.
-	 * @return Array \arrayof{\string,\type{Tuple[String,String]}} Tuples of page
+	 * @return array \arrayof{\string,\type{Tuple[String,String]}} Tuples of page
 	 * text and last author indexed by page name.
 	 */
 	public static function getContents( $titles, $namespace ) {
@@ -103,10 +103,10 @@ class TranslateUtils {
 	/**
 	 * Fetches recent changes for titles in given namespaces
 	 *
-	 * @param $hours \int Number of hours.
-	 * @param $bots \bool Should bot edits be included.
-	 * @param $ns \list{Integer} List of namespace IDs.
-	 * @return \array List of recent changes.
+	 * @param int $hours Number of hours.
+	 * @param bool $bots Should bot edits be included.
+	 * @param null|array $ns \list{Integer} List of namespace IDs.
+	 * @return array List of recent changes.
 	 */
 	public static function translationChanges( $hours = 24, $bots = false, $ns = null ) {
 		global $wgTranslateMessageNamespaces;
@@ -141,7 +141,7 @@ class TranslateUtils {
 	/**
 	 * Returns a localised language name.
 	 * @param $code \string Language code.
-	 * @param $native \string Use only native names.
+	 * @param bool|string $native Use only native names.
 	 * @param $language \string Language code of language the the name should be in.
 	 * @return \string Best-effort localisation of wanted language name.
 	 */
@@ -179,8 +179,8 @@ class TranslateUtils {
 
 	/**
 	 * Standard language selector in Translate extension.
-	 * @param $language \string Language code of the language the names should
-	 * be localised to.
+	 * @param string $language Language code of the language the names should be localised to.
+	 * @param bool $labelOption
 	 * @return XmlSelect
 	 */
 	public static function getLanguageSelector( $language, $labelOption = false ) {
@@ -201,6 +201,7 @@ class TranslateUtils {
 
 	/**
 	 * Get translated language names.
+	 * @param string $code
 	 * @return array
 	 */
 	public static function getLanguageNames( /*string */ $code ) {

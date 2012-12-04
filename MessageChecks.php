@@ -209,9 +209,9 @@ class MessageChecker {
 	/**
 	 * Converts the special params to something nice. Currently useless, but
 	 * useful if in the future blacklist can work with parameter level too.
-	 * @param $warnings \array List of warnings
+	 * @param array $warnings List of warnings
 	 * @throws MWException
-	 * @return List of warning messages with parameters.
+	 * @return array List of warning messages with parameters.
 	 */
 	protected function fixMessageParams( $warnings ) {
 		global $wgLang;
@@ -242,9 +242,9 @@ class MessageChecker {
 
 	/**
 	 * Compares two arrays return items that don't exist in the latter.
-	 * @param $defs \array
-	 * @param $trans \array
-	 * @return Items of $defs that are not in $trans.
+	 * @param array $defs
+	 * @param array $trans
+	 * @return array Items of $defs that are not in $trans.
 	 */
 	protected static function compareArrays( $defs, $trans ) {
 		$missing = array();
@@ -261,9 +261,9 @@ class MessageChecker {
 	/**
 	 * Checks for missing and unknown printf formatting characters in
 	 * translations.
-	 * @param $messages \mixed Iterable list of TMessage objects.
-	 * @param $code \string Language code
-	 * @param $warnings \array Array where warnings are appended to.
+	 * @param mixed $messages Iterable list of TMessage objects.
+	 * @param string $code Language code
+	 * @param array $warnings Array where warnings are appended to.
 	 */
 	protected function printfCheck( $messages, $code, &$warnings ) {
 		$this->parameterCheck( $messages, $code, $warnings, '/%(\d+\$)?[sduf]/U' );
@@ -272,9 +272,9 @@ class MessageChecker {
 	/**
 	 * Checks for missing and unknown Ruby variables (%{var}) in
 	 * translations.
-	 * @param $messages \mixed Iterable list of TMessage objects.
-	 * @param $code \string Language code
-	 * @param $warnings \array Array where warnings are appended to.
+	 * @param mixed $messages Iterable list of TMessage objects.
+	 * @param string $code Language code
+	 * @param array $warnings Array where warnings are appended to.
 	 */
 	protected function rubyVariableCheck( $messages, $code, &$warnings ) {
 		$this->parameterCheck( $messages, $code, $warnings, '/%{[a-zA-Z_]+}/' );
@@ -283,9 +283,9 @@ class MessageChecker {
 	/**
 	 * Checks for missing and unknown python string interpolation operators in
 	 * translations.
-	 * @param $messages \mixed Iterable list of TMessage objects.
-	 * @param $code \string Language code
-	 * @param $warnings \array Array where warnings are appended to.
+	 * @param mixed $messages Iterable list of TMessage objects.
+	 * @param string $code Language code
+	 * @param array $warnings Array where warnings are appended to.
 	 */
 	protected function pythonInterpolationCheck( $messages, $code, &$warnings ) {
 		$this->parameterCheck( $messages, $code, $warnings, '/\%\([a-zA-Z0-9]*?\)[diouxXeEfFgGcrs]/U' );
@@ -294,9 +294,9 @@ class MessageChecker {
 	/**
 	 * Checks if the translation has even number of opening and closing
 	 * parentheses. {, [ and ( are checked.
-	 * @param $messages \mixed Iterable list of TMessage objects.
-	 * @param $code \string Language code
-	 * @param $warnings \array Array where warnings are appended to.
+	 * @param mixed $messages Iterable list of TMessage objects.
+	 * @param string $code Language code
+	 * @param array $warnings Array where warnings are appended to.
 	 */
 	protected function braceBalanceCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -344,10 +344,10 @@ class MessageChecker {
 	/**
 	 * Checks for missing and unknown printf formatting characters in
 	 * translations.
-	 * @param $messages \mixed Iterable list of TMessage objects.
-	 * @param $code \string Language code
-	 * @param $warnings \array Array where warnings are appended to.
-	 * @param $pattern \string Regular expression for matching variables.
+	 * @param mixed $messages Iterable list of TMessage objects.
+	 * @param string $code Language code
+	 * @param array $warnings Array where warnings are appended to.
+	 * @param string $pattern Regular expression for matching variables.
 	 */
 	protected function parameterCheck( $messages, $code, &$warnings, $pattern ) {
 		foreach ( $messages as $message ) {
@@ -415,5 +415,4 @@ class MessageChecker {
 
 		libxml_clear_errors();
 	}
-
 }
