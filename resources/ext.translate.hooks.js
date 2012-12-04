@@ -21,7 +21,7 @@
 		},
 
 		run: function ( /* infinite list of parameters */ ) {
-			var args, name, length;
+			var args, name, length, i;
 
 			args = Array.prototype.slice.call( arguments );
 			name = args.shift();
@@ -29,7 +29,7 @@
 			if ( registry[name] ) {
 				length = registry[name].length;
 
-				for ( var i = 0; i < length; i++ ) {
+				for ( i = 0; i < length; i++ ) {
 					registry[name][i].apply( null, args );
 				}
 			}
