@@ -86,28 +86,25 @@
 				.addClass( 'tux-statsbar' )
 				.data( 'total', stats.total )
 				.data( 'group', this.group )
-				.data( 'language', this.language );
-
-			$( '<span>' )
-				.addClass( 'tux-proofread' )
-				.text( stats.proofread )
-				.css( 'width', proofread + '%' )
-				.appendTo( $bar );
-			$( '<span>' )
-				.addClass( 'tux-translated' )
-				.text( stats.translated )
-				.css( 'width', translated + '%' )
-				.appendTo( $bar );
-			$( '<span>' )
-				.addClass( 'tux-fuzzy' )
-				.text( stats.fuzzy )
-				.css( 'width', fuzzy + '%' )
-				.appendTo( $bar );
-			$( '<span>' )
-				.addClass( 'tux-untranslated' )
-				.text( untranslatedCount )
-				.css( 'width', untranslated + '%' )
-				.appendTo( $bar );
+				.data( 'language', this.language )
+				.append(
+					$( '<span>' )
+						.addClass( 'tux-proofread' )
+						.text( stats.proofread )
+						.css( 'width', proofread + '%' ),
+					$( '<span>' )
+						.addClass( 'tux-translated' )
+						.text( stats.translated )
+						.css( 'width', translated + '%' ),
+					$( '<span>' )
+						.addClass( 'tux-fuzzy' )
+						.text( stats.fuzzy )
+						.css( 'width', fuzzy + '%' ),
+					$( '<span>' )
+						.addClass( 'tux-untranslated' )
+						.text( untranslatedCount )
+						.css( 'width', untranslated + '%' )
+				);
 
 			// TODO: Add a tooltip for the statsbar that says the stats in words.
 			this.$container.append( $bar );
