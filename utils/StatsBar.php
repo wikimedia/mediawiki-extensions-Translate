@@ -47,7 +47,7 @@ class StatsBar {
 		$untranslated = $total - $proofread - $translated - $fuzzy;
 
 		$wproofread = floor( 100 * $proofread / $total );
-		$wtranslated = floor( 100 * $translated / $total );
+		$wtranslated = floor( 100 * ( $translated - $proofread ) / $total );
 		$wfuzzy = floor( 100 * $fuzzy / $total );
 		$wuntranslated = 100 - $wproofread - $wtranslated - $wfuzzy;
 

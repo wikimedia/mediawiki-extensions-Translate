@@ -74,7 +74,10 @@
 			}
 
 			proofread = Math.floor( 100 * stats.proofread / stats.total );
-			translated = Math.floor( 100 * stats.translated / stats.total );
+			// Proofread messages are also translated, so remove those for
+			// the bar showing only translated count.
+			translated = stats.translated - stats.proofread;
+			translated = Math.floor( 100 * translated / stats.total );
 			fuzzy = Math.floor( 100 * stats.fuzzy / stats.total );
 			untranslated = 100 - proofread - translated - fuzzy;
 			untranslatedCount = stats.total - stats.proofread - stats.translated - stats.fuzzy;
