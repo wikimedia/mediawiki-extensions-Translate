@@ -149,7 +149,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Returns stored message tags.
-	 * @param $type \string Tag type, usually optional or ignored.
+	 * @param string $type Tag type, usually optional or ignored.
 	 * @return \types{\list{String}} List of keys with given tag.
 	 */
 	public function getTags( $type ) {

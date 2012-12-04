@@ -148,10 +148,10 @@ class FuzzyScript {
 
 	/**
 	 * Does the actual edit if possible.
-	 * @param $title \type{Title}
-	 * @param $text \string
-	 * @param $dryrun \bool Whether to really do it or just show what would be done.
-	 * @param $comment \string Edit summary.
+	 * @param Title $title
+	 * @param string $text
+	 * @param bool $dryrun Whether to really do it or just show what would be done.
+	 * @param string $comment Edit summary.
 	 */
 	private function updateMessage( $title, $text, $dryrun, $comment = null ) {
 		global $wgTranslateDocumentationLanguageCode, $wgUser;

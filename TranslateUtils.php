@@ -72,7 +72,7 @@ class TranslateUtils {
 	 *
 	 * @param $titles \types{String,\list{String}} Database page names.
 	 * @param $namespace \int The number of the namespace.
-	 * @return Array \arrayof{\string,\type{Tuple[String,String]}} Tuples of page
+	 * @return array \arrayof{\string,\type{Tuple[String,String]}} Tuples of page
 	 * text and last author indexed by page name.
 	 */
 	public static function getContents( $titles, $namespace ) {
@@ -103,10 +103,10 @@ class TranslateUtils {
 	/**
 	 * Fetches recent changes for titles in given namespaces
 	 *
-	 * @param $hours \int Number of hours.
-	 * @param $bots \bool Should bot edits be included.
-	 * @param $ns \list{Integer} List of namespace IDs.
-	 * @return \array List of recent changes.
+	 * @param int $hours Number of hours.
+	 * @param bool $bots Should bot edits be included.
+	 * @param null|array $ns \list{Integer} List of namespace IDs.
+	 * @return array List of recent changes.
 	 */
 	public static function translationChanges( $hours = 24, $bots = false, $ns = null ) {
 		global $wgTranslateMessageNamespaces;
