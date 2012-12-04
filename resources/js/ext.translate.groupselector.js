@@ -272,7 +272,7 @@
 
 			$msgGroupList.find( '.ext-translate-msggroup-item' ).each( function () {
 				messageGroup = $( this ).data( 'msggroup' );
-				if (  matcher.test( messageGroup.label ) ||
+				if ( matcher.test( messageGroup.label ) ||
 					matcher.test( messageGroup.id )
 				) {
 					$( this ).show();
@@ -408,7 +408,7 @@
 	 * prepare MessageGroup item in the selector
 	 */
 	function prepareMessageGroup ( messagegroup ) {
-		var $row, $icon, $label, $expandButton, style = '';
+		var $row, $icon, $label, $statsbar, $expandButton, style = '';
 
 		$row = $( '<div>' ).addClass( 'row ext-translate-msggroup-item' )
 			.attr( 'data-msggroupid', messagegroup.id )
@@ -416,14 +416,22 @@
 
 		$icon = $( '<div>' ).addClass( 'one column icon' );
 
+		$statsbar = $( '<div>' ).languagestatsbar( {
+			// FIXME: use the language code provided by Special:Translate
+			language: mw.config.get( 'wgUserLanguage' ),
+			group: messagegroup.id
+		} );
+
 		$label = $( '<div>' ).addClass( 'six columns label' )
 			.text( messagegroup.label )
-			.attr( { title: messagegroup.description } );
+			.attr( { title: messagegroup.description } )
+			.append( $statsbar );
 
 		if ( messagegroup.icon && messagegroup.icon.raster ) {
 			style += "background-image: url(--);";
 			style = style.replace( /--/g, messagegroup.icon.raster );
 		}
+
 		if ( messagegroup.icon && messagegroup.icon.vector ) {
 			style +=
 				"background-image: -webkit-linear-gradient(transparent, transparent), url(--);" +
@@ -431,6 +439,7 @@
 				"background-image: linear-gradient(transparent, transparent), url(--);";
 			style = style.replace( /--/g, messagegroup.icon.vector );
 		}
+
 		if ( style !== '' ) {
 			$icon.attr( 'style', style );
 		}
