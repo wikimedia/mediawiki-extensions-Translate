@@ -14,7 +14,6 @@
  * @ingroup JobQueue
  */
 class MessageUpdateJob extends Job {
-
 	public static function newJob( Title $target, $content, $fuzzy = false ) {
 		$params = array(
 			'content' => $content,
@@ -35,9 +34,9 @@ class MessageUpdateJob extends Job {
 		$user = FuzzyBot::getUser();
 		$flags = EDIT_DEFER_UPDATES | EDIT_FORCE_BOT;
 
-		$article = new Article( $title, 0 );
+		$wikiPage = WikiPage::factory( $title );
 		$summary = wfMessage( 'translate-manage-import-summary' )->plain();
-		$article->doEdit( $params['content'], $summary, $flags, false, $user );
+		$wikiPage->doEdit( $params['content'], $summary, $flags, false, $user );
 
 		if ( $params['fuzzy'] ) {
 			$handle = new MessageHandle( $title );
@@ -75,5 +74,4 @@ class MessageUpdateJob extends Job {
 
 		return true;
 	}
-
 }
