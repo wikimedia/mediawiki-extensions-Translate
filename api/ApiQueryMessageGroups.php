@@ -25,10 +25,12 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 	public function execute() {
 		$params = $this->extractRequestParams();
+		$filter = $params['filter']; //Defaults to empty string
 
 		$groups = array();
 		if ( $params['format'] === 'flat' ) {
 			$groups = MessageGroups::getAllGroups();
+
 			// Not sorted by default, so do it now
 			// Work around php bug: https://bugs.php.net/bug.php?id=50688
 			wfSuppressWarnings();
@@ -52,6 +54,8 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		$result = $this->getResult();
 
 		foreach ( $groups as $mixed ) {
+			if( stripos( $mixed->getId(), $params['filter'] ) === false ) continue;
+
 			$a = $this->formatGroup( $mixed, $props );
 			$id = $a['id'];
 
@@ -105,10 +109,13 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			$a['class'] = get_class( $g );
 		}
 
+		if( isset( $propsToReturn['namespace'] ) ) {
+			$props['namespace'] = $group->getNamespace();
+		}
+
 		if ( isset( $props['exists'] ) ) {
 			$a['exists'] = $g->exists();
 		}
-
 
 		if ( isset( $props['icon'] ) ) {
 			$formats = $this->getIcon( $g, $params['iconsize'] );
@@ -116,6 +123,8 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				$a['icon'] = $formats;
 			}
 		}
+
+		wfRunHooks( 'TranslateProcessAPIMessageGroupsProperties', array( &$a, $props, $params, $g ) );
 
 		// Depth only applies to tree format
 		if ( $depth >= $params['depth'] && $params['format'] === 'tree' ) {
@@ -166,7 +175,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
+		$allowedParams = array(
 			'depth' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_DFLT => '100',
@@ -188,12 +197,18 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_DFLT => '',
 			),
+			'filter' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_DFLT => '',
+			),
 		);
+		wfRunHooks( 'TranslateGetAPIMessageGroupsParams', array( &$allowedParams ) );
+		return $allowedParams;
 	}
 
 	public function getParamDescription() {
 		$indent = "\n" . str_repeat( ' ', 24 );
-		$wrapWidth = 100 - 24;
+		$wrapWidth = 104 - 24;
 
 		$depth = <<<TEXT
 When using the tree format, limit the depth to this many levels. Value 0 means
@@ -205,12 +220,36 @@ When using the tree format, instead of starting from top level start from the
 given message group, which must be aggregate message group.
 TEXT;
 
-		return array(
+		$p = $this->getModulePrefix(); // Can be useful for documentation
+		$paramDescs = array(
 			'depth' => wordwrap( str_replace( "\n", ' ', $depth ), $wrapWidth, $indent ),
 			'format' => 'In a tree format message groups can exist multiple places in the tree.',
 			'iconsize' => 'Preferred size of rasterised group icon',
 			'root' => wordwrap( str_replace( "\n", ' ', $root ), $wrapWidth, $indent ),
+			'filter' => wordwrap( 'Only return messages with IDs that contain the given text (case-insensitive).' , $wrapWidth, $indent ),
+			'prop' => array_merge( array( 'What translation-related information to get:' ), self::getPropertyList() ),
 		);
+		wfRunHooks( 'TranslateGetAPIMessageGroupsParameterList', array( &$paramDescs, $p ) );
+		return $paramDescs;
+	}
+
+	/**
+	 * Returns array of key value pairs of properties and their descriptions
+	 *
+	 * @return array
+	 */
+	private static function getPropertyList() {
+		$properties = array(
+			'id   '       => ' id           - Adds the id of the group to the output',
+			'label'       => ' label        - Adds the label of the group to the output',
+			'description' => ' description  - Adds the description of the group to the output',
+			'class'       => ' class        - Adds the class name of the group to the output',
+			'namespace'   => ' namespace    - Adds the namespace of the group to the output',
+			'exists'      => ' exists       - Adds the self-calculated existence property of the group to the output',
+			'icon'        => ' icon         - Adds a (raster) icon of the group to the output',
+		);
+		wfRunHooks( 'TranslateGetAPIMessageGroupsPropertyList', array( &$descs ) );
+		return $properties;
 	}
 
 	public function getDescription() {

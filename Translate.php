@@ -90,6 +90,7 @@ $wgAPIMetaModules['languagestats'] = 'ApiQueryLanguageStats';
 $wgAPIMetaModules['messagegroups'] = 'ApiQueryMessageGroups';
 $wgAPIMetaModules['messagegroupstats'] = 'ApiQueryMessageGroupStats';
 $wgAPIMetaModules['messagetranslations'] = 'ApiQueryMessageTranslations';
+$wgAPIPropModules['translateinfo'] = 'ApiTranslateInfo';
 $wgAPIModules['translationreview'] = 'ApiTranslationReview';
 $wgAPIModules['groupreview'] = 'ApiGroupReview';
 $wgAPIModules['aggregategroups'] = 'ApiAggregateGroups';

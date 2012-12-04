@@ -113,9 +113,25 @@ Post processing step to format in wiki
  array          &$deps: List of dependencies as supported by DependecyWrapper class from MediaWiki
  array          &$autoload: List of autoloaded classes. Key is the name of the class and value is filename.
 
+;TranslateGetAPIMessageGroupsParams: Allows extra parameters to be added to the action=query&prop=translateinfo module
+ array          &$params: An associative array of possible parameters (name => details; see files for correct format)
+
+;TranslateGetAPIMessageGroupsParamDescs: Provides an opportunity to document any parameters added with 'TranslateGetAPIMessageGroupsParams'.
+ array          &$paramDescs: An associative array of parameters, name => description.
+ string          $p: The prefix for action=query&meta=messagegroups (currently mg, but could change), useful for documentation
+
+;TranslateGetAPIMessageGroupsPropertyList: Allows extra properties to be added to captured by action=query&prop=translateinfo&tiprop=foo|bar|bat module
+ array          &$properties: An associative array of properties, name => description.
+
 ;TranslatePrefillTranslation: Provides an opportunity for a new translation to start not from as a carte blanche (the default) but from some prefilled string
  string         &$translation: The translation string as it stands
  MessageHandle   $handle: The current MessageHandle object
+
+;TranslateProcessAPIMessageGroupsProperties: Allows exrra property requests to be acted upon, and the new new properties returned
+ array          &$a: Associative array of the properties of $group that will be returned
+ array           $props: Associative array ($name => true) of properties the user has specifically requested
+ array           $params: Parameter input by the user (unprefixed name => value)
+ MessageGroup    $g: The group in question
 
 === JavaScript events ===
 
