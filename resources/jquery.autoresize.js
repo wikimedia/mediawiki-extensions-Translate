@@ -79,10 +79,10 @@
 
 		this.value = el.val();
 
-		if (config.maxWidth === 'original') config.maxWidth = el.width();
-		if (config.minWidth === 'original') config.minWidth = el.width();
-		if (config.maxHeight === 'original') config.maxHeight = el.height();
-		if (config.minHeight === 'original') config.minHeight = el.height();
+		if (config.maxWidth === 'original') { config.maxWidth = el.width(); }
+		if (config.minWidth === 'original') { config.minWidth = el.width(); }
+		if (config.maxHeight === 'original') { config.maxHeight = el.height(); }
+		if (config.minHeight === 'original') { config.minHeight = el.height(); }
 
 		if (this.nodeName === 'textarea') {
 			el.css({
