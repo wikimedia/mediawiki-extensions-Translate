@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//7CE\u003d",
+        "filename": "resources/css/ext.translate.groupselector.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-04T07:37:32Z",
+      "side": 1,
+      "message": "Double newlines, apparently added by me :o",
+      "revId": "47cd54cb396f99967d9287d646866ac78478311a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//7CA\u003d",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-04T07:37:32Z",
+      "side": 1,
+      "message": "Did you intend to add empty line here?",
+      "revId": "47cd54cb396f99967d9287d646866ac78478311a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//7B8\u003d",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-04T07:37:32Z",
+      "side": 1,
+      "message": "It should be language code, so I think it is correct and fixme can be removed.",
+      "revId": "47cd54cb396f99967d9287d646866ac78478311a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//7Bw\u003d",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-04T07:37:32Z",
+      "side": 1,
+      "message": "Why translated? I originally envisioned that this could be used later on to update the bars on the fly anywhere on the page.",
+      "revId": "47cd54cb396f99967d9287d646866ac78478311a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//7B4\u003d",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-04T07:37:32Z",
+      "side": 1,
+      "message": "Now the name is different from PHP side...oh well I guess I can\u0027t have everything",
+      "revId": "47cd54cb396f99967d9287d646866ac78478311a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//7B0\u003d",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-04T07:37:32Z",
+      "side": 1,
+      "message": "Missing space",
+      "revId": "47cd54cb396f99967d9287d646866ac78478311a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
