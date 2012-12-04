@@ -5230,10 +5230,6 @@ Primært nyttig til korrekturlæsningsopgaver.',
 $messages['de'] = array(
 	'translate' => 'Übersetzen',
 	'translate-desc' => 'Ergänzt eine [[Special:Translate|Spezialseite]] zum Übersetzen von Nachrichten',
-	'translate-showsub' => 'Die {{PLURAL:$1|Untergruppe|$1 Untergruppen}} anzeigen',
-	'translate-grouplisting' => 'Dies ist die Liste aller übersetzbaren Gruppen.
-Klicke auf die jeweilige Gruppe, um eine Liste der nicht übersetzten Nachrichten anzusehen.',
-	'translate-grouplisting-empty' => 'Es wurden keine Nachrichtengruppen für das Übersetzen konfiguriert.',
 	'translate-taskui-view' => 'Alle Nachrichten anzeigen',
 	'translate-taskui-untranslated' => 'Alle nicht übersetzten Nachrichten anzeigen',
 	'translate-taskui-optional' => 'Alle optionalen Nachrichten anzeigen',
@@ -5562,6 +5558,12 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'translate-dynagroup-last' => 'Letzte Änderung von {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Letzte Änderung von {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Hilfe',
+	'translate-msggroupselector-projects' => 'Projekte',
+	'translate-msggroupselector-search-placeholder' => 'Projekte durchsuchen',
+	'translate-msggroupselector-search-all' => 'Alle',
+	'translate-msggroupselector-search-recent' => 'Aktuell',
+	'translate-msggroupselector-load-from-all' => 'Nachrichten von allen Projekten laden',
+	'translate-msggroupselector-view-subprojects' => '{{PLURAL:$1|Ein Unterprojekt|$1 Unterprojekte}} ansehen',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -7042,6 +7044,12 @@ Utilizado sobre todo para tareas de corrección.',
 	'translate-dynagroup-last' => 'Último cambio por  {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Último cambio por  {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Ayuda',
+	'translate-msggroupselector-projects' => 'Proyectos',
+	'translate-msggroupselector-search-placeholder' => 'Buscar proyectos',
+	'translate-msggroupselector-search-all' => 'Todos',
+	'translate-msggroupselector-search-recent' => 'Recientes',
+	'translate-msggroupselector-load-from-all' => 'Subir mensajes de todos los proyectos',
+	'translate-msggroupselector-view-subprojects' => 'Ver $1 {{PLURAL:$1|subproyecto|subproyectos}}',
 );
 
 /** Estonian (eesti)
@@ -8240,6 +8248,7 @@ Tiedot: $1',
  * @author PieRRoMaN
  * @author Seb35
  * @author Sherbrooke
+ * @author Sumone10154
  * @author Tititou36
  * @author Urhixidur
  * @author Verdy p
@@ -8251,10 +8260,6 @@ Tiedot: $1',
 $messages['fr'] = array(
 	'translate' => 'Traduire',
 	'translate-desc' => '[[Special:Translate|Page spéciale]] pour traduire MediaWiki et au-delà',
-	'translate-showsub' => 'Voir {{PLURAL:$1|le sous-groupe|les $1 sous-groupes}}.',
-	'translate-grouplisting' => 'Ceci est la liste de tous les groupes qui peuvent être traduits.
-Cliquer sur le nom du groupe de messages pour voir une liste des messages qui ne sont pas traduits.',
-	'translate-grouplisting-empty' => "Aucun groupe de message n'a été configuré pour la traduction.",
 	'translate-taskui-view' => 'Afficher tous les messages',
 	'translate-taskui-untranslated' => 'Afficher les messages non traduits',
 	'translate-taskui-optional' => 'Afficher les messages facultatifs',
@@ -8580,6 +8585,12 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'translate-dynagroup-last' => 'Dernière modification par  {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Dernière modification par  {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Aide',
+	'translate-msggroupselector-projects' => 'Projets',
+	'translate-msggroupselector-search-placeholder' => 'Rechercher les projets',
+	'translate-msggroupselector-search-all' => 'Tous',
+	'translate-msggroupselector-search-recent' => 'Récent',
+	'translate-msggroupselector-load-from-all' => 'Charger les messages pour tous les projets',
+	'translate-msggroupselector-view-subprojects' => 'Afficher $1 {{PLURAL:$1|sous-projet|sous-projets}}',
 );
 
 /** Cajun French (français cadien)
@@ -9095,10 +9106,6 @@ $messages['ga'] = array(
 $messages['gl'] = array(
 	'translate' => 'Traducir',
 	'translate-desc' => '[[Special:Translate|Páxina especial]] para traducir MediaWiki e outras extensións',
-	'translate-showsub' => 'Mostrar {{PLURAL:$1|o subgrupo|os $1 subgrupos}}.',
-	'translate-grouplisting' => 'Esta é a lista de todos os grupos que se poden traducir.
-Prema no nome do grupo de mensaxes para ollar a lista coas mensaxes sen traducir.',
-	'translate-grouplisting-empty' => 'Non hai grupo ningún configurado para a súa tradución.',
 	'translate-taskui-view' => 'Mostrar todas as mensaxes',
 	'translate-taskui-untranslated' => 'Mostrar as mensaxes sen traducir',
 	'translate-taskui-optional' => 'Mostrar as mensaxes opcionais',
@@ -9427,6 +9434,12 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'translate-dynagroup-last' => 'Última modificación feita por {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Última modificación feita por {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Axuda',
+	'translate-msggroupselector-projects' => 'Proxectos',
+	'translate-msggroupselector-search-placeholder' => 'Procurar nos proxectos',
+	'translate-msggroupselector-search-all' => 'Todos',
+	'translate-msggroupselector-search-recent' => 'Recentes',
+	'translate-msggroupselector-load-from-all' => 'Cargar as mensaxes de todos os proxectos',
+	'translate-msggroupselector-view-subprojects' => 'Ollar $1 {{PLURAL:$1|subproxecto|subproxectos}}',
 );
 
 /** Goan Konkani (Latin script) (Konknni)
@@ -12463,10 +12476,6 @@ Undirstrikið undir nafninu gefur til kynna hversu langt sé síðan að þýða
 $messages['it'] = array(
 	'translate' => 'Traduzione',
 	'translate-desc' => '[[Special:Translate|Pagina speciale]] per tradurre MediaWiki e non solo',
-	'translate-showsub' => 'Mostra {{PLURAL:$1|il sottogruppo|i $1 sottogruppi}}.',
-	'translate-grouplisting' => "Questo è un elenco di tutti i gruppi che si possono tradurre.
-Clicca sul nome del gruppo di messaggi per visualizzare l'elenco dei messaggi non tradotti.",
-	'translate-grouplisting-empty' => 'Non è stato configurato alcun gruppo di messaggi da tradurre.',
 	'translate-taskui-view' => 'Mostra tutti i messaggi',
 	'translate-taskui-untranslated' => 'Mostra solo i messaggi non tradotti',
 	'translate-taskui-optional' => 'Mostra i messaggi opzionali',
@@ -12761,7 +12770,7 @@ Dettagli: $1',
 	'log-name-translationreview' => 'Revisioni delle traduzioni',
 	'log-description-translationreview' => 'Registro di tutte le revisioni delle traduzioni e dei gruppi di messaggi.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|ha accettato}} la traduzione di $3',
-	'logentry-groupreview-message' => '$1 {{GENDER:$2|ha cambiato}} lo stato di $4 traduzioni del gruppo di messaggi $3 da $5 a $6',
+	'logentry-groupreview-message' => '$1 {{GENDER:$2|ha cambiato}} lo stato delle traduzioni in $4 del gruppo di messaggi $3 da $5 a $6',
 	'translate-workflow-state-' => '(disattivato)',
 	'translate-workflowstatus' => 'Stato: $1',
 	'translate-workflow-set-do' => 'Modifica',
@@ -12783,6 +12792,12 @@ Utile per l'attività di correzione.",
 	'translate-dynagroup-last' => 'Ultima modifica di {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Ultima modifica di {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Aiuto',
+	'translate-msggroupselector-projects' => 'Progetti',
+	'translate-msggroupselector-search-placeholder' => 'Ricerca progetti',
+	'translate-msggroupselector-search-all' => 'Tutti',
+	'translate-msggroupselector-search-recent' => 'Recenti',
+	'translate-msggroupselector-load-from-all' => 'Carica i messaggi da tutti i progetti',
+	'translate-msggroupselector-view-subprojects' => 'Mostra $1 {{PLURAL:$1|sotto-progetto|sotto-progetti}}',
 );
 
 /** Japanese (日本語)
@@ -13136,6 +13151,12 @@ $1',
 	'translate-dynagroup-last' => '{{GENDER:$1|$1}}による最終更新',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}}による最終更新 ($2)',
 	'translate-gethelp' => 'ヘルプ',
+	'translate-msggroupselector-projects' => 'プロジェクト',
+	'translate-msggroupselector-search-placeholder' => '検索対象のプロジェクト',
+	'translate-msggroupselector-search-all' => 'すべて',
+	'translate-msggroupselector-search-recent' => '最近のもの',
+	'translate-msggroupselector-load-from-all' => 'すべてのプロジェクトからメッセージを読み込む',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|件の下位プロジェクト}}を閲覧',
 );
 
 /** Jamaican Creole English (Patois)
@@ -16107,10 +16128,6 @@ $messages['mhr'] = array(
 $messages['mk'] = array(
 	'translate' => 'Преведување',
 	'translate-desc' => '[[Special:Translate|Специјална страница]] за преведување на МедијаВики и други пораки',
-	'translate-showsub' => 'Прикажи {{PLURAL:$1|ја подгрупата|ги $1-те подгрупи}}.',
-	'translate-grouplisting' => 'Ова е список на сите преводливи групи.
-Со кликнување на групата се отвора список на кој се наведени сите непреведени пораки.',
-	'translate-grouplisting-empty' => 'Нема групи пораки подготвени за превод.',
 	'translate-taskui-view' => 'Сите пораки',
 	'translate-taskui-untranslated' => 'Непреведени пораки',
 	'translate-taskui-optional' => 'Незадолжителни пораки',
@@ -16444,6 +16461,12 @@ $1',
 	'translate-dynagroup-last' => 'Последната промена ја изврши {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Последната промена ја изврши {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Помош',
+	'translate-msggroupselector-projects' => 'Проекти',
+	'translate-msggroupselector-search-placeholder' => 'Пребарување по проектите',
+	'translate-msggroupselector-search-all' => 'Сите',
+	'translate-msggroupselector-search-recent' => 'Скорешни',
+	'translate-msggroupselector-load-from-all' => 'Вчитај пораки од сите проекти',
+	'translate-msggroupselector-view-subprojects' => 'Погл. $1 {{PLURAL:$1|потпроект|потпроекти}}',
 );
 
 /** Malayalam (മലയാളം)
@@ -17971,10 +17994,6 @@ $messages['niu'] = array(
 $messages['nl'] = array(
 	'translate' => 'Vertalen',
 	'translate-desc' => '[[Special:Translate|Speciale pagina]] voor het vertalen van MediaWiki en meer',
-	'translate-showsub' => 'De {{PLURAL:$1|subgroep|$1 subgroepen}} weergeven.',
-	'translate-grouplisting' => 'Dit is een lijst met alle te vertalen berichtengroepen.
-Klik op een berichtengroep om de lijst met nog niet vertaalde berichten te bekijken.',
-	'translate-grouplisting-empty' => 'Er zijn geen te vertalen berichtengroepen.',
 	'translate-taskui-view' => 'Alle berichten weergeven',
 	'translate-taskui-untranslated' => 'Onvertaalde berichten weergeven',
 	'translate-taskui-optional' => 'Optionele berichten weergeven',
@@ -18300,6 +18319,12 @@ Dit is vooral nuttig voor de controletaken.',
 	'translate-dynagroup-last' => 'Laatste wijziging door {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Laatste wijziging door {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Hulp',
+	'translate-msggroupselector-projects' => 'Projecten',
+	'translate-msggroupselector-search-placeholder' => 'Zoek projecten',
+	'translate-msggroupselector-search-all' => 'Alle',
+	'translate-msggroupselector-search-recent' => 'Recent',
+	'translate-msggroupselector-load-from-all' => 'Berichten van alle projecten laden',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subproject|subprojecten}} bekijken',
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎)
@@ -27534,6 +27559,12 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'translate-dynagroup-last' => 'Thay đổi cuối cùng của $1',
 	'translate-dynagroup-lastc' => 'Thay đổi cuối cùng của $1 ($2)',
 	'translate-gethelp' => 'Trợ giúp',
+	'translate-msggroupselector-projects' => 'Dự án',
+	'translate-msggroupselector-search-placeholder' => 'Tìm dự án',
+	'translate-msggroupselector-search-all' => 'Tất cả',
+	'translate-msggroupselector-search-recent' => 'Gần đây',
+	'translate-msggroupselector-load-from-all' => 'Tải thông điệp từ tất cả các dự án',
+	'translate-msggroupselector-view-subprojects' => 'Xem $1 dự án con',
 );
 
 /** Volapük (Volapük)
