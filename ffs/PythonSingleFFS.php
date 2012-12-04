@@ -114,8 +114,6 @@ class PythonSingleFFS extends SimpleFFS {
 	 * @return string
 	 */
 	protected function writeReal( MessageCollection $collection ) {
-		$output = '';
-		$messages = array();
 		$mangler = $this->group->getMangler();
 		$code = $collection->getLanguage();
 

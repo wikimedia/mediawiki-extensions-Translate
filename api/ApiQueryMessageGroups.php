@@ -53,7 +53,6 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 		foreach ( $groups as $mixed ) {
 			$a = $this->formatGroup( $mixed, $props );
-			$id = $a['id'];
 
 			$result->setIndexedTagName( $a, 'group' );
 
