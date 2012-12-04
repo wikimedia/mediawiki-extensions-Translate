@@ -19,13 +19,12 @@ class ApiTranslateUser extends ApiBase {
 		$output = array();
 
 		$user = $this->getUser();
-		$groups = $user->getOption( 'translate-recent-groups', array() );
-		if ( !is_array( $groups ) ) {
-			$groups = explode( '|', $groups );
+		$groups = $user->getOption( 'translate-recent-groups', '' );
+		$output['recentgroups'] = array();
+		if ( strval( $groups ) !== '' ) {
+			$output['recentgroups'] = explode( '|', $groups );
+			$this->getResult()->setIndexedTagName( $output['recentgroups'], 'group' );
 		}
-
-		$output['recentgroups'] = $groups;
-		$this->getResult()->setIndexedTagName( $output['recentgroups'], 'group' );
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 	}
 
