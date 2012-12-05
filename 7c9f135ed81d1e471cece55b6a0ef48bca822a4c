@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//59Q\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-05T05:27:23Z",
+      "side": 1,
+      "message": "Does not look like a required change.",
+      "revId": "7c9f135ed81d1e471cece55b6a0ef48bca822a4c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
