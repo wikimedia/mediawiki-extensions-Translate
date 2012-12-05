@@ -30,9 +30,11 @@
 		 */
 		prepareSelectorMenu: function () {
 			var $groupTitle,
-				$listTitles,
-				$searchIcon,
+				$listFilters,
+				$listFiltersGroup,
 				$search,
+				$searchIcon,
+				$searchGroup,
 				$msgGroupList,
 				$loadAllRow,
 				groupSelector = this;
@@ -40,29 +42,34 @@
 			this.$menu = $( '<div class="ext-translate-msggroup-selector-menu grid"></div>' );
 
 			$groupTitle = $( '<div>' ).addClass( 'row' )
-				.append( $( '<h3>' ).addClass( 'ten columns' )
+				.append( $( '<h3>' ).addClass( 'ten columns title' )
 					.text( mw.msg( 'translate-msggroupselector-projects' ) )
 				);
 
 			$searchIcon = $( '<div>' )
-				.addClass( 'one column offset-by-two ext-translate-msggroup-search-icon' );
+				.addClass( 'two columns ext-translate-msggroup-search-icon' );
 
-			$search = $( '<div>' ).addClass( 'five columns' )
+			$search = $( '<div>' ).addClass( 'ten columns' )
 				.append( $( '<input type="text">' ).addClass( 'ext-translate-msggroup-search-input' )
 					.attr( {
 						'placeholder': mw.msg( 'translate-msggroupselector-search-placeholder' )
 					} )
 				);
 
-			$listTitles = $( '<div>' ).addClass( 'row' )
+			$listFilters = $( '<div>' ).addClass( 'filters six columns' )
 				.append( $( '<div>' )
-					.addClass( 'two columns ext-translate-msggroup-category all selected' )
+					.addClass( 'ext-translate-msggroup-category all selected' )
 					.text( mw.msg( 'translate-msggroupselector-search-all' ) ) )
 				.append( $( '<div>' )
-					.addClass( 'two columns ext-translate-msggroup-category recent' )
-					.text( mw.msg( 'translate-msggroupselector-search-recent' ) ) )
+					.addClass( 'ext-translate-msggroup-category recent' )
+					.text( mw.msg( 'translate-msggroupselector-search-recent' ) ) );
+
+			$searchGroup =$( '<div>' ).addClass( 'six columns search-group' )
 				.append( $searchIcon )
 				.append( $search );
+
+			$listFiltersGroup = $( '<div>' ).addClass( 'row' ).addClass( 'filters-group' )
+				.append($listFilters).append($searchGroup);
 
 			$msgGroupList = $( '<div>' ).addClass( 'row ext-translate-msggroup-list' );
 
@@ -70,7 +77,7 @@
 
 			if ( groupSelector.parentGroupId ) {
 				// Do not show the 'Load all messages' button if there is no parent
-				$loadAllRow = $( '<div>' ).addClass( 'row' )
+				$loadAllRow = $( '<div>' ).addClass( 'row footer' )
 					.append( $( '<button>' ).addClass( 'six columns ext-translate-load-all' )
 						.text( mw.msg( 'translate-msggroupselector-load-from-all' ) )
 					).click( function() {
@@ -78,7 +85,7 @@
 					} );
 			}
 
-			this.$menu.append( $groupTitle, $listTitles, $msgGroupList, $loadAllRow );
+			this.$menu.append( $groupTitle, $listFiltersGroup, $msgGroupList, $loadAllRow );
 
 			$( 'body' ).append( this.$menu );
 		},
@@ -430,7 +437,7 @@
 			group: messagegroup.id
 		} );
 
-		$label = $( '<div>' ).addClass( 'six columns label' )
+		$label = $( '<div>' ).addClass( 'seven columns label' )
 			.text( messagegroup.label )
 			.attr( { title: messagegroup.description } )
 			.append( $statsbar );
