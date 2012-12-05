@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//53c\u003d",
+        "filename": "MessageCollection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:15:12Z",
+      "side": 1,
+      "message": "These need @var I think.",
+      "revId": "0e8376549121e2fde40b5eb3800fb0f68265735c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//53Q\u003d",
+        "filename": "MessageCollection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:15:12Z",
+      "side": 1,
+      "message": "This doesn\u0027t return anything, wtf?",
+      "revId": "0e8376549121e2fde40b5eb3800fb0f68265735c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
