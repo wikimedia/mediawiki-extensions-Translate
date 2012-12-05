@@ -218,7 +218,7 @@ class StatsTable {
 
 		// Bold for meta groups.
 		if ( $group->isMeta() ) {
-			$groupLabel = Html::rawElement( 'b', null, $groupLabel );
+			$groupLabel = Html::rawElement( 'b', array(), $groupLabel );
 		}
 
 		return $groupLabel;

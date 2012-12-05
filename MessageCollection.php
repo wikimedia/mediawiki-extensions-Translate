@@ -17,10 +17,10 @@
  * ways.
  */
 class MessageCollection implements ArrayAccess, Iterator, Countable {
-	/// \string Language code.
+	/// string Language code.
 	public $code;
 
-	/// \type{MessageDefinitions}
+	/// MessageDefinitions
 	protected $definitions = null;
 
 	/// \arrayof{String,String} %Message key => translation.
@@ -59,7 +59,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 */
 	protected $properties = array();
 
-	/// \list{String} Authors.
+	/// string[] Authors.
 	protected $authors = array();
 
 	/// bool Whether review info is loaded
@@ -67,7 +67,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Constructors. Use newFromDefinitions() instead.
-	 * @param $code \string Language code.
+	 * @param string $code Language code.
 	 */
 	public function __construct( $code ) {
 		$this->code = $code;
@@ -75,8 +75,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Construct a new message collection from definitions.
-	 * @param $definitions MessageDefinitions
-	 * @param $code string Language code.
+	 * @param MessageDefinitions $definitions
+	 * @param string $code Language code.
 	 * @return MessageCollection
 	 */
 	public static function newFromDefinitions( MessageDefinitions $definitions, $code ) {
@@ -88,8 +88,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Constructs a new empty message collection. Suitable for example for testing.
-	 * @param $code \string Language Code.
-	 * @return \type{MessageCollection}
+	 * @param string $code Language code.
+	 * @return MessageCollection
 	 */
 	public static function newEmpty( $code ) {
 
@@ -115,7 +115,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Set message tags.
 	 * @param string $type Tag type, usually ignored or optional.
-	 * @param array $keys \list{String} List of display keys.
+	 * @param string[] $keys List of display keys.
 	 */
 	public function setTags( $type, array $keys ) {
 		$this->tags[$type] = $keys;
@@ -131,7 +131,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Returns list of titles of messages that are used in this collection after filtering.
-	 * @return \list{Title}
+	 * @return Title[]
 	 * @since 2011-12-28
 	 */
 	public function getTitles() {
@@ -140,7 +140,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Returns list of message keys that are used in this collection after filtering.
-	 * @return \list{String}
+	 * @return string[]
 	 * @since 2011-12-28
 	 */
 	public function getMessageKeys() {
@@ -160,7 +160,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * Lists all translators that have contributed to the latest revisions of
 	 * each translation. Causes translations to be loaded from the database.
 	 * Is not affected by filters.
-	 * @return \list{String} List of usernames.
+	 * @return string[] List of usernames.
 	 */
 	public function getAuthors() {
 		$this->loadTranslations();
