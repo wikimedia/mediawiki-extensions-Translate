@@ -33,8 +33,8 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 
 		$page->doEdit( 'kissa', 'Test case' );
 
-		$this->assertFalse( $translatablePage->getReadyTag( DB_MASTER ), 'No ready tag was added' );
-		$this->assertFalse( $translatablePage->getMarkedTag( DB_MASTER ), 'No marked tag was added' );
+		$this->assertFalse( $translatablePage->getReadyTag(), 'No ready tag was added' );
+		$this->assertFalse( $translatablePage->getMarkedTag(), 'No marked tag was added' );
 	}
 
 	public function testTranslatablePage() {
@@ -47,8 +47,8 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		$status = $page->doEdit( '<translate>kissa</translate>', 'Test case' );
 		$latest = $status->value['revision']->getId();
 
-		$this->assertSame( $latest, $translatablePage->getReadyTag( DB_MASTER ), 'Ready tag was added' );
-		$this->assertFalse( $translatablePage->getMarkedTag( DB_MASTER ), 'No marked tag was added' );
+		$this->assertSame( $latest, $translatablePage->getReadyTag(), 'Ready tag was added' );
+		$this->assertFalse( $translatablePage->getMarkedTag(), 'No marked tag was added' );
 	}
 
 	public function testTranslatablePageWithMarked() {
@@ -62,13 +62,13 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		$latest = $status->value['revision']->getId();
 
 		$translatablePage->addMarkedTag( $latest, array( 'foo' ) );
-		$this->assertSame( $latest, $translatablePage->getReadyTag( DB_MASTER ), 'Ready tag was added' );
-		$this->assertSame( $latest, $translatablePage->getMarkedTag( DB_MASTER ), 'Marked tag was added' );
+		$this->assertSame( $latest, $translatablePage->getReadyTag(), 'Ready tag was added' );
+		$this->assertSame( $latest, $translatablePage->getMarkedTag(), 'Marked tag was added' );
 		$page->updateRestrictions( array( 'edit' => 'sysop' ), 'Test case' );
 
 		$newLatest = $latest + 1;
-		$this->assertSame( $newLatest, $translatablePage->getReadyTag( DB_MASTER ), 'Ready tag was updated after protection' );
-		$this->assertSame( $latest, $translatablePage->getMarkedTag( DB_MASTER ), 'Marked tag was not updated after protection' );
+		$this->assertSame( $newLatest, $translatablePage->getReadyTag(), 'Ready tag was updated after protection' );
+		$this->assertSame( $latest, $translatablePage->getMarkedTag(), 'Marked tag was not updated after protection' );
 	}
 
 	public function testTranslationPageRestrictions() {
