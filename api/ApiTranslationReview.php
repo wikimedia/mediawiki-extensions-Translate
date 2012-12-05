@@ -34,13 +34,17 @@ class ApiTranslationReview extends ApiBase {
 			// Everything is okay
 			break;
 		case 'permissiondenied':
-			$this-dieUsage( 'Permission denied', $error );
+			$this->dieUsage( 'Permission denied', $error );
+			break; // Unreachable, but throws off code analyzer.
 		case 'unknownmessage':
 			$this->dieUsage( 'Unknown message', $error );
+			break; // Unreachable, but throws off code analyzer.
 		case 'owntranslation':
 			$this->dieUsage( 'Cannot review own translations', $error );
+			break; // Unreachable, but throws off code analyzer.
 		case 'fuzzymessage':
 			$this->dieUsage( 'Cannot review fuzzy translations', $error );
+			break; // Unreachable, but throws off code analyzer.
 		default:
 			$this->dieUsage( 'Unknown error', $error );
 		}

@@ -373,6 +373,7 @@ class TranslateUtils {
 	 * Convenience function that handles BC with changed way of
 	 * acquiring tokens via API.
 	 * @param string $token
+	 * @return string
 	 * @since 2012-05-03
 	 */
 	public static function getTokenAction( $token ) {
