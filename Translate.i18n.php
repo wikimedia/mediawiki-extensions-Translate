@@ -9514,10 +9514,6 @@ $messages['grc'] = array(
 $messages['gsw'] = array(
 	'translate' => 'Ibersetze',
 	'translate-desc' => '[[Special:Translate|Spezialsyte]] fir d Ibersetzig vu MediaWiki-Syschtemnochrichte',
-	'translate-showsub' => '{{PLURAL:$1|D Untergruppe|Di $1 Untergruppe}} aazeige',
-	'translate-grouplisting' => 'Des isch d Lischt vu allene ibersetzbare Gruppe.
-Klick uf d Nochrichtegruppe go ne Lischt vu dr nit ibersetzte Nochrichte aaluege.',
-	'translate-grouplisting-empty' => 'S sin kei Nochrichtegruppe fir s Ibersetze konfiguriert.',
 	'translate-taskui-view' => 'Alli Nochrichte aazeige',
 	'translate-taskui-untranslated' => 'Alli nit ibersetzte Mäldige aazeige',
 	'translate-taskui-optional' => 'Alli optionale Mäldige aazeige',
@@ -10683,10 +10679,6 @@ Molimo provjerite.',
 $messages['hsb'] = array(
 	'translate' => 'Přełožić',
 	'translate-desc' => '[[Special:Translate|Specialna strona]] za přełožowanje MediaWiki a druheho',
-	'translate-showsub' => '{{PLURAL:$1|Podskupinu|$1 podskupinje|$1 podskupiny|$1 podskupinow}} pokazać.',
-	'translate-grouplisting' => 'To je lisćina přełožujomnych skupinow.
-Klikń na mjeno skupiny zdźělinkow, zo by sej lisćinu njepřełoženych zdźělenkow wobhladał.',
-	'translate-grouplisting-empty' => 'Žane zdźělenske skupiny njejsu za přełožowanje skonfigurowane.',
 	'translate-taskui-view' => 'Wšě zdźělenki pokazać',
 	'translate-taskui-untranslated' => 'Njepřełožene zdźělenki pokazać',
 	'translate-taskui-optional' => 'Opcionalne zdźělenki pokazać',
@@ -20019,6 +20011,12 @@ A ven dzortut a taj con ij travaj ëd revision.',
 	'translate-dynagroup-last' => 'Ùltime modìfiche ëd {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Ùltime modìfiche ëd {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Agiut',
+	'translate-msggroupselector-projects' => 'Proget',
+	'translate-msggroupselector-search-placeholder' => 'Serca proget',
+	'translate-msggroupselector-search-all' => 'Tùit',
+	'translate-msggroupselector-search-recent' => 'Recent',
+	'translate-msggroupselector-load-from-all' => 'Carié mëssagi da tùit ij proget',
+	'translate-msggroupselector-view-subprojects' => 'Varda $1 {{PLURAL:$1|sot-proget|sot-proget}}', # Fuzzy
 );
 
 /** Western Punjabi (پنجابی)
@@ -21410,6 +21408,7 @@ $messages['rtm'] = array(
  * @author Ahonc
  * @author AlexSm
  * @author Askarmuk
+ * @author Base
  * @author Byulent
  * @author Eleferen
  * @author Eugrus
@@ -21565,7 +21564,7 @@ $messages['ru'] = array(
 	'translate-statsf-options' => 'Настройки графика',
 	'translate-statsf-width' => 'Ширина в пикселах:',
 	'translate-statsf-height' => 'Высота в пикселах:',
-	'translate-statsf-days' => 'Дата начала:',
+	'translate-statsf-days' => 'Период времени в днях:',
 	'translate-statsf-start' => 'Начальная дата:',
 	'translate-statsf-scale' => 'Степень детализации:',
 	'translate-statsf-scale-months' => 'Месяцы',
@@ -26450,7 +26449,7 @@ $messages['uk'] = array(
 	'translate-statsf-options' => 'Параметри графіка',
 	'translate-statsf-width' => 'Ширина в пікселях:',
 	'translate-statsf-height' => 'Висота в пікселях:',
-	'translate-statsf-days' => 'Дата початку:',
+	'translate-statsf-days' => 'Період часу у днях:',
 	'translate-statsf-start' => 'Дата початку:',
 	'translate-statsf-scale' => 'Ступінь деталізації:',
 	'translate-statsf-scale-months' => 'Місяці',
