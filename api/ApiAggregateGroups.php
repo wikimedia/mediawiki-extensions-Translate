@@ -75,8 +75,11 @@ class ApiAggregateGroups extends ApiBase {
 				'aggregategroup' => TranslateMetadata::get( $aggregateGroup, 'name' ),
 			);
 
-			// @todo FIXME: Undefined variable $id
-			$title = $group ? $group->getTitle() : Title::newFromText( "Group:$id" );
+			/* Note that to allow removing no longer existing groups from
+			 * aggregate message groups, the message group object $group
+			 * might not always be available. In this case we need to fake
+			 * some title. */
+			$title = $group ? $group->getTitle() : Title::newFromText( "Group:$subgroupId" );
 			$logger->addEntry( $action, $title, null, array( serialize( $logparams ) ), $wgUser );
 		} elseif ( $action === 'remove' ) {
 			if ( !isset( $params['aggregategroup'] ) ) {
