@@ -326,12 +326,15 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	/**
-	 * @param $page array
-	 * @param $type string
+	 * @param array $page
+	 * @param string $type
 	 * @return string
 	 */
 	protected function actionLinks( array $page, $type ) {
 		$actions = array();
+		/**
+		 * @var Title $title
+		 */
 		$title = $page['title'];
 		$user = $this->getUser();
 
@@ -483,6 +486,9 @@ class SpecialPageTranslation extends SpecialPage {
 		$diffOld = $this->msg( 'tpt-diff-old' )->escaped();
 		$diffNew = $this->msg( 'tpt-diff-new' )->escaped();
 
+		/**
+		 * @var TPSection $s
+		 */
 		foreach ( $sections as $s ) {
 			if ( $s->type === 'new' ) {
 				$input = Xml::input( 'tpt-sect-' . $s->id, 15, $s->name );
@@ -523,6 +529,9 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( count( $deletedSections ) ) {
 			$out->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
 
+			/**
+			 * @var $s TPSection
+			 */
 			foreach ( $deletedSections as $s ) {
 				$name = $this->msg( 'tpt-section-deleted', $s->id )->escaped();
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
@@ -626,8 +635,8 @@ class SpecialPageTranslation extends SpecialPage {
 	 */
 	public function markForTranslation( TranslatablePage $page, array $sections ) {
 		// Add the section markers to the source page
-		$article = new Article( $page->getTitle(), 0 );
-		$status = $article->doEdit(
+		$wikiPage = WikiPage::factory( $page->getTitle() );
+		$status = $wikiPage->doEdit(
 			$page->getParse()->getSourcePageText(), // Content
 			$this->msg( 'tpt-mark-summary' )->inContentLanguage()->text(),  // Summary
 			EDIT_FORCE_BOT | EDIT_UPDATE,           // Flags
@@ -660,6 +669,9 @@ class SpecialPageTranslation extends SpecialPage {
 		$maxid = intval( TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' ) );
 
 		$pageId = $page->getTitle()->getArticleID();
+		/**
+		 * @var TPSection $s
+		 */
 		foreach ( array_values( $sections ) as $index => $s ) {
 			$maxid = max( $maxid, intval( $s->name ) );
 
@@ -782,8 +794,8 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	/**
-	 * @param $page Article
-	 * @param $changed
+	 * @param TranslatablePage $page
+	 * @param array|null $changed
 	 */
 	public function addFuzzyTags( $page, $changed ) {
 		if ( !count( $changed ) ) {
@@ -837,6 +849,9 @@ class SpecialPageTranslation extends SpecialPage {
 
 		if ( count( $jobs ) < 10 ) {
 			self::superDebug( __METHOD__, 'renderjob-immediate' );
+			/**
+			 * @var RenderJob $j
+			 */
 			foreach ( $jobs as $j ) {
 				$j->run();
 			}
@@ -851,8 +866,8 @@ class SpecialPageTranslation extends SpecialPage {
 	 * If this page is marked for the first time, /en may not yet exists.
 	 * If this is the case, add a RenderJob for it, but don't execute it
 	 * immediately, since the message group doesn't exist during this request.
-	 * @param $page Article
-	 * @param $titles array
+	 * @param TranslatablePage $page
+	 * @param Title[] $titles
 	 */
 	protected function addInitialRenderJob( $page, $titles ) {
 		global $wgContLang;
@@ -876,8 +891,8 @@ class SpecialPageTranslation extends SpecialPage {
 	 * Enhanced version of wfDebug that allows more detailed debugging.
 	 * You can pass anything as varags and it will be serialized. Article
 	 * and User objects have special handling to only output name and id.
-	 * @param $method \string Calling method.
-	 * @param $msg \string Debug message.
+	 * @param string $method Calling method.
+	 * @param string $msg Debug message.
 	 * @todo Move to better place.
 	 */
 	public static function superDebug( $method, $msg /* varags */ ) {
