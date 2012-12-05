@@ -33,7 +33,7 @@
 			if ( mw.translate.languagestats ) {
 				this.render();
 			} else {
-				this.getStats( this.render );
+				this.getStats( this.language, this.render );
 			}
 		},
 
@@ -41,23 +41,24 @@
 		 * This need to be called only once per page. Before calling check
 		 * mw.translate.languagestats defined or not.
 		 *
+		 * @param language
 		 * @param callback
 		 */
-		getStats: function ( callback ) {
-			var queryParams, apiURL,
+		getStats: function ( language, callback ) {
+			var queryParams,
+				apiURL = mw.util.wikiScript( 'api' ),
  				statsbar = this;
 
 			queryParams = {
 				action: 'query',
 				format: 'json',
 				meta: 'languagestats',
-				lslanguage: this.language
+				lslanguage: language
 			};
 
-			apiURL = mw.util.wikiScript( 'api' );
-			$.get( apiURL, queryParams, function ( result ) {
+			return $.get( apiURL, queryParams, function ( result ) {
 				mw.translate.languagestats = result.query.languagestats;
-				callback.call( statsbar );
+				callback && callback.call( statsbar );
 			} );
 		},
 
@@ -129,5 +130,7 @@
 			}
 		} );
 	};
+
+	$.fn.languagestatsbar.Constructor = LanguageStatsBar;
 
 } ( mediaWiki, jQuery ) );

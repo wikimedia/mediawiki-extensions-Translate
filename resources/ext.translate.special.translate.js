@@ -96,9 +96,6 @@
 			window.attachEvent( 'pageshow', pageShowHandler );
 		}
 
-		$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
-			onSelect: groupSelectorHandler
-		} );
 	}
 
 	function pageShowHandler() {
@@ -113,6 +110,21 @@
 		}
 	}
 
-	$( document ).ready( ourWindowOnBeforeUnloadRegister );
+	$( document ).ready( function() {
+		var uiLanguage;
+
+		uiLanguage= mw.config.get( 'wgUserLanguage' );
+
+		ourWindowOnBeforeUnloadRegister();
+
+		$.when(
+			// Get ready with language stats
+			$.fn.languagestatsbar.Constructor.prototype.getStats( uiLanguage )
+		).then( function () {
+			$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
+				onSelect: groupSelectorHandler
+			} );
+		} );
+	} );
 
 } )( jQuery, mediaWiki );
