@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//5xs\u003d",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T10:42:18Z",
+      "side": 1,
+      "message": "Hmm wasn\u0027t this kind of code discouraged at some point.",
+      "revId": "563479ff90dce2eb357cdb9554cb3c819b10ecd9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
