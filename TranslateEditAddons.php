@@ -331,7 +331,7 @@ class TranslateEditAddons {
 	 * @return bool
 	 */
 	public static function onSave( $wikiPage, $user, $content, $summary,
-			$minor, $_, $_, $flags, Revision $revision
+			$minor, $_, $_, $flags, $revision
 	) {
 
 		if ( $content instanceof TextContent ) {
