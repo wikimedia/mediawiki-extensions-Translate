@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//5mk\u003d",
+        "filename": "TranslateTasks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-05T13:11:56Z",
+      "side": 1,
+      "message": "It does. But as some info was documented (return value type), I think it warned about incomplete docs.",
+      "parentUuid": "AAADbX//54I\u003d",
+      "revId": "78ed68b479c4b3a2f6fc940d357d4cbee929a5bf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//54A\u003d",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//5mg\u003d",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-05T13:11:56Z",
+      "side": 1,
+      "message": "/me sighs.",
+      "parentUuid": "AAADbX//54A\u003d",
+      "revId": "78ed68b479c4b3a2f6fc940d357d4cbee929a5bf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//538\u003d",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2012-12-05T09:08:00Z",
       "side": 1,
       "message": "Inconsistent with above change, suggesting just to remove these misleading comments.",
+      "revId": "78ed68b479c4b3a2f6fc940d357d4cbee929a5bf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//5mU\u003d",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-05T13:11:56Z",
+      "side": 1,
+      "message": "Actually, it can be Revision or null. When I type hinted Revision before, it fataled.",
+      "parentUuid": "AAADbX//538\u003d",
       "revId": "78ed68b479c4b3a2f6fc940d357d4cbee929a5bf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
