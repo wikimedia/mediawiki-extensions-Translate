@@ -1,0 +1,327 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//514\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "Space after // and perhaps have own line for the comment",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//52E\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "We are using wildcard syntax elsewhere (see MessageGroups::expandWildcards()), can you use it here too?",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//52A\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "if (",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//518\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "$props is subset of $params, do we need to pass both?",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//51Q\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "No ISMULTI?",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//51w\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "Unexplained change.",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//510\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "Extra space before comma. Please make the line shorter than 100 chars, or even 80 chars.",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//51o\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "So now even the users of this hook need to duplicate the wordwrapping logic which I\u0027ve duplicated in Translate from ApiMain?",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//51s\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "Make it protected",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//51g\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "Perhaps the Adds ... to the output is redundant for these. Maybe Include ... is shorter.",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//51k\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "Also vector icons!",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//51c\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 19
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "prop\u003dtranslateinfo?",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//51Y\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 19
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "what files?",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//51U\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 19
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "prop\u003dtranslateinfo",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//51M\u003d",
+        "filename": "tests/ApiQueryMessageGroupsTest.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "Copy the pattern used in other unit tests which use setMwGlobals to remove other groups to speed up tests.",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//51I\u003d",
+        "filename": "tests/ApiQueryMessageGroupsTest.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "Trailing tabs",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//500\u003d",
+        "filename": "tests/ApiQueryMessageGroupsTest.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "Move comments up to their own line",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//51E\u003d",
+        "filename": "tests/ApiQueryMessageGroupsTest.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "tigroups?",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//51A\u003d",
+        "filename": "tests/ApiQueryMessageGroupsTest.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:41:54Z",
+      "side": 1,
+      "message": "public static function, missing space",
+      "revId": "116e11e1e148ccbc62fd60ca53fdead62e4c8692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
