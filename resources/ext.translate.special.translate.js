@@ -3,6 +3,8 @@
 
 	var $submit, $select, submitFunction, params;
 
+	mw.translate = mw.translate || {};
+
 	$submit = $( '#mw-translate-workflowset' );
 	$select = $( '#mw-sp-translate-workflow').find( 'select' );
 
@@ -79,14 +81,14 @@
 		}
 	}
 
-	function changeGroup( group ) {
+	mw.translate.changeGroup = function( group ) {
 		var uri = new mw.Uri( window.location.href );
 		uri.extend( {
 			action: 'translate',
 			group: group
 		} );
 		window.location.href = uri.toString();
-	}
+	};
 
 	function groupSelectorHandler( msgGroup ) {
 		var $newLink;
@@ -100,7 +102,7 @@
 				onSelect: groupSelectorHandler
 			} );
 		} else {
-			changeGroup( msgGroup.id );
+			mw.translate.changeGroup( msgGroup.id );
 		}
 	}
 
