@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//5rc\u003d",
+        "filename": "MessageChecks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-05T12:04:33Z",
+      "side": 1,
+      "message": "I think the IDE will see Traversable as an object type.",
+      "parentUuid": "AAADbX//5uk\u003d",
+      "revId": "cf835f25303bd8c0ed1a99d12df774a9ea459cf7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//53E\u003d",
         "filename": "MessageChecks.php",
         "patchSetId": 1
