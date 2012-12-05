@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//5jQ\u003d",
+        "filename": "resources/css/ext.translate.groupselector.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T13:55:06Z",
+      "side": 1,
+      "message": "Missing inelinew",
+      "revId": "12116dc9c61131866f12294af7e3996d0bb2fdec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//5jI\u003d",
+        "filename": "resources/css/ext.translate.groupselector.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T13:55:06Z",
+      "side": 1,
+      "message": "0 is enough, otherwise siebrand will do cleanup commit later :o",
+      "revId": "12116dc9c61131866f12294af7e3996d0bb2fdec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//5i0\u003d",
+        "filename": "resources/css/ext.translate.groupselector.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T13:55:06Z",
+      "side": 1,
+      "message": "missing space",
+      "revId": "12116dc9c61131866f12294af7e3996d0bb2fdec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
