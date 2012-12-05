@@ -1,8 +1,7 @@
-( function ( $ ) {
+( function ( $, mw ) {
 	'use strict';
 
-	var mw, $submit, $select, submitFunction, params;
-	mw = mediaWiki;
+	var $submit, $select, submitFunction, params;
 
 	$submit = $( '#mw-translate-workflowset' );
 	$select = $( '#mw-sp-translate-workflow').find( 'select' );
@@ -49,18 +48,36 @@
 			$submit.attr( 'disabled', 'disabled' );
 		}
 	} );
-} );
 
-/**
- * A warning to be shown if a user tries to close the page or navigate away
- * from it without saving the written translation.
- *
- * Based on editWarning from the Vector extension, but greatly
- * simplified.
- */
+	/**
+	 * A warning to be shown if a user tries to close the page or navigate away
+	 * from it without saving the written translation.
+	 *
+	 * Based on editWarning from the Vector extension, but greatly
+	 * simplified.
+	 */
+	function ourWindowOnBeforeUnloadRegister() {
+		pageShowHandler();
 
-( function ( $, mw ) {
-	'use strict';
+		if ( window.addEventListener ) {
+			window.addEventListener( 'pageshow', pageShowHandler, false );
+		} else if ( window.attachEvent ) {
+			window.attachEvent( 'pageshow', pageShowHandler );
+		}
+
+	}
+
+	function pageShowHandler() {
+		// Re-add onbeforeunload handler
+		window.onbeforeunload = ourWindowOnBeforeUnload;
+	}
+
+	function ourWindowOnBeforeUnload() {
+		if ( $( '.mw-ajax-dialog:visible' ).length ) {
+			// Return our message
+			return mw.msg( 'translate-js-support-unsaved-warning' );
+		}
+	}
 
 	function changeGroup( group ) {
 		var uri = new mw.Uri( window.location.href );
@@ -87,32 +104,21 @@
 		}
 	}
 
-	function ourWindowOnBeforeUnloadRegister() {
-		pageShowHandler();
+	$( document ).ready( function () {
+		var uiLanguage;
 
-		if ( window.addEventListener ) {
-			window.addEventListener( 'pageshow', pageShowHandler, false );
-		} else if ( window.attachEvent ) {
-			window.attachEvent( 'pageshow', pageShowHandler );
-		}
+		uiLanguage = mw.config.get( 'wgUserLanguage' );
 
-		$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
-			onSelect: groupSelectorHandler
+		ourWindowOnBeforeUnloadRegister();
+
+		$.when(
+			// Get ready with language stats
+			$.fn.languagestatsbar.Constructor.prototype.getStats( uiLanguage )
+		).then( function () {
+			$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
+				onSelect: groupSelectorHandler
+			} );
 		} );
-	}
-
-	function pageShowHandler() {
-		// Re-add onbeforeunload handler
-		window.onbeforeunload = ourWindowOnBeforeUnload;
-	}
-
-	function ourWindowOnBeforeUnload() {
-		if ( $( '.mw-ajax-dialog:visible' ).length ) {
-			// Return our message
-			return mw.msg( 'translate-js-support-unsaved-warning' );
-		}
-	}
-
-	$( document ).ready( ourWindowOnBeforeUnloadRegister );
+	} );
 
 } )( jQuery, mediaWiki );
