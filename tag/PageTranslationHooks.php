@@ -76,21 +76,10 @@ class PageTranslationHooks {
 
 	/**
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
-	 *
-	 * @param Article $article
-	 * @param User $user
-	 * @param string|TextContent $content
-	 * @param string $summary
-	 * @param bool $minor
-	 * @param $_
-	 * @param $_
-	 * @param $flags
-	 * @param Revision $revision
-	 * @return bool
 	 */
-	public static function onSectionSave( $article, User $user, $content, $summary,
+	public static function onSectionSave( $wikiPage, User $user, $content, $summary,
 		$minor, $_, $_, $flags, $revision ) {
-		$title = $article->getTitle();
+		$title = $wikiPage->getTitle();
 
 		if ( $content instanceof TextContent ) {
 			$text = $content->getNativeData();
@@ -371,18 +360,8 @@ class PageTranslationHooks {
 	 * When attempting to save, last resort. Edit page would only display
 	 * edit conflict if there wasn't tpSyntaxCheckForEditPage
 	 * Hook: ArticleSave, PageContentSave
-	 * @param Article $article
-	 * @param User $user
-	 * @param string|TextContent $content
-	 * @param string $summary
-	 * @param bool $minor
-	 * @param $_
-	 * @param $_
-	 * @param $flags
-	 * @param string $status
-	 * @return bool
 	 */
-	public static function tpSyntaxCheck( $article, $user, $content, $summary,
+	public static function tpSyntaxCheck( $wikiPage, $user, $content, $summary,
 			$minor, $_, $_, $flags, $status ) {
 
 		if ( $content instanceof TextContent ) {
@@ -400,7 +379,7 @@ class PageTranslationHooks {
 			return true;
 		}
 
-		$page = TranslatablePage::newFromText( $article->getTitle(), $text );
+		$page = TranslatablePage::newFromText( $wikiPage->getTitle(), $text );
 		try {
 			$page->getParse();
 		} catch ( TPException $e ) {
@@ -413,18 +392,8 @@ class PageTranslationHooks {
 
 	/**
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
-	 * @param Article $article
-	 * @param User $user
-	 * @param string|TextContent $content
-	 * @param string $summary
-	 * @param bool $minor
-	 * @param $_
-	 * @param $_
-	 * @param $flags
-	 * @param Revision|null $revision
-	 * @return bool
 	 */
-	public static function addTranstag( $article, $user, $content, $summary,
+	public static function addTranstag( $wikiPage, $user, $content, $summary,
 			$minor, $_, $_, $flags, $revision ) {
 		// We are not interested in null revisions
 		if ( $revision === null ) {
@@ -447,7 +416,7 @@ class PageTranslationHooks {
 		}
 
 		// Add the ready tag
-		$page = TranslatablePage::newFromTitle( $article->getTitle() );
+		$page = TranslatablePage::newFromTitle( $wikiPage->getTitle() );
 		$page->addReadyTag( $revision->getId() );
 
 		return true;

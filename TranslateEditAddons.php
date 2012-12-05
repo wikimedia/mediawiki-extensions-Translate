@@ -271,8 +271,8 @@ class TranslateEditAddons {
 	/**
 	 * Check if a string contains the fuzzy string.
 	 *
-	 * @param $text \string Arbitrary text
-	 * @return \bool If string contains fuzzy string.
+	 * @param string $text Arbitrary text
+	 * @return bool If string contains fuzzy string.
 	 */
 	public static function hasFuzzyString( $text ) {
 		# wfDeprecated( __METHOD__, '1.19' );
@@ -281,8 +281,8 @@ class TranslateEditAddons {
 
 	/**
 	 * Check if a title is marked as fuzzy.
-	 * @param $title Title
-	 * @return \bool If title is marked fuzzy.
+	 * @param Title $title
+	 * @return bool If title is marked fuzzy.
 	 */
 	public static function isFuzzy( Title $title ) {
 		# wfDeprecated( __METHOD__, '1.19' );
@@ -319,16 +319,8 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * @param WikiPage $wikiPage
-	 * @param $user
-	 * @param $content
-	 * @param $summary
-	 * @param $minor
-	 * @param $_
-	 * @param $_
-	 * @param $flags
-	 * @param Revision $revision
-	 * @return bool
+	 * Runs message checks, adds tp:transver tags and updates statistics.
+	 * Hook: ArticleSaveComplete, PageContentSaveComplete
 	 */
 	public static function onSave( $wikiPage, $user, $content, $summary,
 			$minor, $_, $_, $flags, $revision
@@ -406,9 +398,9 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * @param $title Title
-	 * @param $revision int
-	 * @param $fuzzy bool
+	 * @param Title $title
+	 * @param int $revision
+	 * @param bool $fuzzy
 	 */
 	protected static function updateFuzzyTag( Title $title, $revision, $fuzzy ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -433,10 +425,10 @@ class TranslateEditAddons {
 	 * This is used to show diff against current version of source message
 	 * when updating a translation.
 	 * Hook: Translate:newTranslation
-	 * @param $handle MessageHandle
-	 * @param $revision int
-	 * @param $text string
-	 * @param $user User
+	 * @param MessageHandle $handle
+	 * @param int $revision
+	 * @param string $text
+	 * @param User $user
 	 * @return bool
 	 */
 	public static function updateTransverTag( MessageHandle $handle, $revision, $text, User $user ) {
