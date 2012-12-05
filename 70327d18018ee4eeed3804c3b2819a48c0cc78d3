@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//53k\u003d",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:10:26Z",
+      "side": 1,
+      "message": "Please don\u0027t add these useless comments.",
+      "revId": "70327d18018ee4eeed3804c3b2819a48c0cc78d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
