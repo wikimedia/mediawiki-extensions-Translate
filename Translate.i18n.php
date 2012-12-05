@@ -5491,7 +5491,7 @@ $1',
 	'translate-import-err-no-headers' => 'Die Datei ist keine Datei im Gettext-Format der Erweiterung „Translate“:
 Die Gruppen und Sprache konnte nicht aus dem Dateikopf ermittelt werden.',
 	'translate-import-err-warnings' => 'Die Datei entspricht nicht dem erwarteten Format.
-Stelle sicher, dass der Editor keine <tt>msgctxt</tt>-Felder entfernt.
+Stelle sicher, dass der Editor keine <code>msgctxt</code>-Felder entfernt.
 Details: $1',
 	'translate-js-summary' => 'Zusammenfassung:',
 	'translate-js-save' => 'Speichern',
@@ -5618,7 +5618,7 @@ Details: $1',
 	'translate-manage-toolong' => 'Die maximale Verarbeitungszeit von $1 {{PLURAL:$1|Sekunde|Sekunden}} ist abgelaufen.
 Bitte schicken Sie das Formular noch einmal ab, um die Verarbeitung fortzusetzen.',
 	'translate-import-err-warnings' => 'Die Datei entspricht nicht dem erwarteten Format.
-Stellen Sie sicher, dass der Editor keine <tt>msgctxt</tt>-Felder entfernt.
+Stellen Sie sicher, dass der Editor keine <code>msgctxt</code>-Felder entfernt.
 Details: $1',
 	'translate-messagereview-reviewswithyou' => 'Akzeptiert von {{PLURAL:$1|dir selbst|$1 Benutzern, einschließlich von Ihnen selbst}}',
 	'api-error-owntranslation' => 'Sie können Ihre eigenen Übersetzungen nicht akzeptieren.',
@@ -9766,7 +9766,7 @@ $1',
 	'translate-import-err-no-headers' => 'D Datei isch kei Datei im Gettext-Format vu dr Erwyterig „Translate“:
 D Gruppen un Sproche hän nit us em Dateichopf chenne ermittlet wäre.',
 	'translate-import-err-warnings' => 'D Datei entspricht nit em erwartete Format.
-Stell sicher, ass dr Editor kei <tt>msgctxt</tt>-Fälder usenimmt.
+Stell sicher, ass dr Editor kei <code>msgctxt</code>-Fälder usenimmt.
 Detail: $1',
 	'translate-js-summary' => 'Zämmefassig:',
 	'translate-js-save' => 'Spychere',
@@ -10937,7 +10937,7 @@ $1',
 	'translate-import-err-no-headers' => 'Dataja derje sformowana dataja Gettext we formaće rozšěrjenje "Translate" njeje:
 Njeje móžno skupinu a rěč z hłowy dataje zwěsćić.',
 	'translate-import-err-warnings' => 'Dataja derje sformowana njeje.
-Zawěsć, zo twój editor pola <tt>msgctxt</tt> njewotstronja.
+Zawěsć, zo twój editor pola <code>msgctxt</code> njewotstronja.
 Podrobnosće: $1',
 	'translate-js-summary' => 'Zjeće:',
 	'translate-js-save' => 'Składować',
@@ -19268,7 +19268,7 @@ $1',
 	'translate-import-err-no-headers' => 'Die Dadai isch ned im Gettext-Foamad vunde Eawaidarung "Iwasedze":
 Die Grubb un Schbrooch hodned ausm Dadaikopp bschdimmd werre kenne.',
 	'translate-import-err-warnings' => 'Midde Dadai schdimmd was ned.
-Schdell sischa, dassdo kä <tt>msgctxt</tt>-Felda gleschd werren.
+Schdell sischa, dassdo kä <code>msgctxt</code>-Felda gleschd werren.
 Hiwais: $1',
 	'translate-js-summary' => 'Zommefassung:',
 	'translate-js-save' => 'Schbaischare',
