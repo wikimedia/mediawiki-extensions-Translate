@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//56E\u003d",
+        "filename": "MessageChecks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-05T08:36:14Z",
+      "side": 1,
+      "message": "afaik this is your own comment. Feel free to improve :). This is used a dozen times or so in the code base.",
+      "parentUuid": "AAADbX//57I\u003d",
+      "revId": "d4468b7f095cc94ad117b89da5c7e4f7bdff7179",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//57A\u003d",
         "filename": "MessageCollection.php",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//56A\u003d",
+        "filename": "MessageCollection.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-05T08:36:14Z",
+      "side": 1,
+      "message": "Yep. I just don\u0027t understand all the type/arrayof/list annotations you made. So I haven\u0027t changed all of them yet. PHPStorm is complaining about a few tens remaining ones, indeed.",
+      "parentUuid": "AAADbX//57A\u003d",
+      "revId": "d4468b7f095cc94ad117b89da5c7e4f7bdff7179",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//56o\u003d",
         "filename": "TranslateUtils.php",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2012-12-05T08:23:35Z",
       "side": 1,
       "message": "\\list{Integer} can be removed imho, and array can be changed to int[] if it works.",
+      "revId": "d4468b7f095cc94ad117b89da5c7e4f7bdff7179",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//558\u003d",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-05T08:36:14Z",
+      "side": 1,
+      "message": "It probably does work. I\u0027ll remember that in the next round of fixes.",
+      "parentUuid": "AAADbX//56o\u003d",
       "revId": "d4468b7f095cc94ad117b89da5c7e4f7bdff7179",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
