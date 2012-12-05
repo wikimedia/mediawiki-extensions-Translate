@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//50k\u003d",
+        "filename": "resources/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:46:28Z",
+      "side": 1,
+      "message": "Should this also be moved down to the new block?",
+      "revId": "ddb4f4b3eb10347953ed5fb8c6c8bc3a72ae841a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//50s\u003d",
+        "filename": "resources/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:46:28Z",
+      "side": 1,
+      "message": "function ()",
+      "revId": "ddb4f4b3eb10347953ed5fb8c6c8bc3a72ae841a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//50o\u003d",
+        "filename": "resources/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:46:28Z",
+      "side": 1,
+      "message": "\" \u003d \"\n\nCan you try whether you can use the language provided by SpecialTranslate.php in data-language for example?",
+      "revId": "ddb4f4b3eb10347953ed5fb8c6c8bc3a72ae841a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//50g\u003d",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:46:28Z",
+      "side": 1,
+      "message": "Line has space in the beginning",
+      "revId": "ddb4f4b3eb10347953ed5fb8c6c8bc3a72ae841a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
