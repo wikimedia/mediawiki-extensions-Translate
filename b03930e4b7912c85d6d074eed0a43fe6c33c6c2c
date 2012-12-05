@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//59w\u003d",
+        "filename": "resources/ext.translate.quickedit.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-05T04:01:13Z",
+      "side": 1,
+      "message": "This is wrong approach. Translate should not be aware of IME. We need to identify click or blur events that can be used for this. Already we are re-positioning it inside jquery.ime\n\n\t// Possible resize of textarea\n\t\t\timeselector.$element.on( \u0027mouseup.ime\u0027, $.proxy( this.position, this ) );\n\t\t\timeselector.$element.on( \u0027keydown.ime\u0027, $.proxy( this.keydown, this ) );\n\nIf the events suppressed inside Translate, it should be fixed. If the positioning not responding to changes in underlying textarea, it should  be fixed in jquery.ime",
+      "revId": "b03930e4b7912c85d6d074eed0a43fe6c33c6c2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
