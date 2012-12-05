@@ -1,10 +1,12 @@
 <?php
 /**
- * %Message checking framework.
+ * Message checking framework.
  *
  * @file
  * @defgroup MessageCheckers Message Checkers
- *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2012, Niklas Laxström
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
@@ -37,9 +39,6 @@
  * </pre>
  *
  * @ingroup MessageCheckers
- * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 class MessageChecker {
 	protected $checks = array();
@@ -81,8 +80,8 @@ class MessageChecker {
 
 	/**
 	 * Normalises check keys.
-	 * @param $value \string check key
-	 * @return \string normalised check key
+	 * @param string $value check key
+	 * @return string Normalised check key
 	 */
 	protected function foldValue( $value ) {
 		return str_replace( ' ', '_', strtolower( $value ) );
@@ -90,7 +89,7 @@ class MessageChecker {
 
 	/**
 	 * Set the tests for this checker. Array of callables with descriptive keys.
-	 * @param $checks \array List of checks (suitable methods in this class)
+	 * @param array $checks List of checks (suitable methods in this class)
 	 */
 	public function setChecks( $checks ) {
 		foreach ( $checks as $k => $c ) {
@@ -105,7 +104,7 @@ class MessageChecker {
 	/**
 	 * Adds one tests for this checker.
 	 * @see setChecks()
-	 * @param $check
+	 * @param callable $check
 	 */
 	public function addCheck( $check ) {
 		if ( is_callable( $check ) ) {
@@ -117,9 +116,9 @@ class MessageChecker {
 	 * Checks one message, returns array of warnings that can be passed to
 	 * OutputPage::addWikiMsg or similar.
 	 *
-	 * @param $message TMessage
-	 * @param $code \string Language code
-	 * @return \array
+	 * @param TMessage $message
+	 * @param string $code Language code
+	 * @return array
 	 */
 	public function checkMessage( TMessage $message, $code ) {
 		$warningsArray = array();
@@ -142,9 +141,9 @@ class MessageChecker {
 
 	/**
 	 * Checks one message, returns true if any check matches.
-	 * @param $message TMessage
-	 * @param $code \string Language code
-	 * @return \bool True if there is a problem, false otherwise.
+	 * @param TMessage $message
+	 * @param string $code Language code
+	 * @return bool True if there is a problem, false otherwise.
 	 */
 	public function checkMessageFast( TMessage $message, $code ) {
 		$warningsArray = array();
@@ -162,8 +161,8 @@ class MessageChecker {
 
 	/**
 	 * Filters warnings defined in check-blacklist.php.
-	 * @param $warningsArray \array List of warnings produces by checkMessage().
-	 * @return \array List of filtered warnings.
+	 * @param array $warningsArray List of warnings produces by checkMessage().
+	 * @return array List of filtered warnings.
 	 */
 	protected function filterWarnings( $warningsArray ) {
 		$groupId = $this->group->getId();
@@ -192,9 +191,9 @@ class MessageChecker {
 
 	/**
 	 * Matches check information against blacklist pattern.
-	 * @param $pattern \string
-	 * @param $value \string The actual value in the warnings produces by the check
-	 * @return \bool True of the pattern matches the value.
+	 * @param string $pattern
+	 * @param string $value The actual value in the warnings produces by the check
+	 * @return bool True of the pattern matches the value.
 	 */
 	protected function match( $pattern, $value ) {
 		if ( $pattern === '#' ) {
@@ -261,44 +260,44 @@ class MessageChecker {
 	/**
 	 * Checks for missing and unknown printf formatting characters in
 	 * translations.
-	 * @param mixed $messages Iterable list of TMessage objects.
+	 * @param Traversable $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
 	 * @param array $warnings Array where warnings are appended to.
 	 */
-	protected function printfCheck( $messages, $code, &$warnings ) {
+	protected function printfCheck( $messages, $code, array &$warnings ) {
 		$this->parameterCheck( $messages, $code, $warnings, '/%(\d+\$)?[sduf]/U' );
 	}
 
 	/**
 	 * Checks for missing and unknown Ruby variables (%{var}) in
 	 * translations.
-	 * @param mixed $messages Iterable list of TMessage objects.
+	 * @param Traversable $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
 	 * @param array $warnings Array where warnings are appended to.
 	 */
-	protected function rubyVariableCheck( $messages, $code, &$warnings ) {
+	protected function rubyVariableCheck( $messages, $code, array &$warnings ) {
 		$this->parameterCheck( $messages, $code, $warnings, '/%{[a-zA-Z_]+}/' );
 	}
 
 	/**
 	 * Checks for missing and unknown python string interpolation operators in
 	 * translations.
-	 * @param mixed $messages Iterable list of TMessage objects.
+	 * @param Traversable $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
 	 * @param array $warnings Array where warnings are appended to.
 	 */
-	protected function pythonInterpolationCheck( $messages, $code, &$warnings ) {
+	protected function pythonInterpolationCheck( $messages, $code, array &$warnings ) {
 		$this->parameterCheck( $messages, $code, $warnings, '/\%\([a-zA-Z0-9]*?\)[diouxXeEfFgGcrs]/U' );
 	}
 
 	/**
 	 * Checks if the translation has even number of opening and closing
 	 * parentheses. {, [ and ( are checked.
-	 * @param TMessage[] $messages Iterable list of TMessage objects.
+	 * @param Traversable $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
 	 * @param array $warnings Array where warnings are appended to.
 	 */
-	protected function braceBalanceCheck( $messages, $code, &$warnings ) {
+	protected function braceBalanceCheck( $messages, $code, array &$warnings ) {
 		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$translation = $message->translation();
@@ -344,12 +343,12 @@ class MessageChecker {
 	/**
 	 * Checks for missing and unknown printf formatting characters in
 	 * translations.
-	 * @param TMessage[] $messages Iterable list of TMessage objects.
+	 * @param Traversable $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
 	 * @param array $warnings Array where warnings are appended to.
 	 * @param string $pattern Regular expression for matching variables.
 	 */
-	protected function parameterCheck( $messages, $code, &$warnings, $pattern ) {
+	protected function parameterCheck( $messages, $code, array &$warnings, $pattern ) {
 		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$definition = $message->definition();
@@ -387,11 +386,11 @@ class MessageChecker {
 	}
 
 	/**
-	 * @param TMessage[] $messages Iterable list of TMessage objects.
+	 * @param Traversable $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
 	 * @param array $warnings Array where warnings are appended to.
 	 */
-	protected function balancedTagsCheck( $messages, $code, &$warnings ) {
+	protected function balancedTagsCheck( $messages, $code, array &$warnings ) {
 		foreach ( $messages as $message ) {
 			$key = $message->key();
 			$translation = $message->translation();
