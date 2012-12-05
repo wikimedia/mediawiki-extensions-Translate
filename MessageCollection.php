@@ -20,18 +20,26 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/// string Language code.
 	public $code;
 
-	/// MessageDefinitions
+	/**
+	 * @var MessageDefinitions
+	 * */
 	protected $definitions = null;
 
-	/// \arrayof{String,String} %Message key => translation.
+	/**
+	 * @var array array( %Message key => translation, ... )
+	 */
 	protected $infile = array();
 
 	// Keys and messages.
 
-	/// \arrayof{String,String} %Message display key => database key.
+	/**
+	 * @var array array( %Message display key => database key, ... )
+	 */
 	protected $keys = null;
 
-	/// \arrayof{String,TMessage} %Message key => messages.
+	/**
+	 * @var array array( %Message String => TMessage, ... )
+	 */
 	protected $messages = null;
 
 	/// Array
@@ -123,7 +131,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Returns list of available message keys. This is affected by filtering.
-	 * @return \arrayof{String,String} List of database keys indexed by display keys.
+	 * @return array List of database keys indexed by display keys.
 	 */
 	public function keys() {
 		return $this->keys;
