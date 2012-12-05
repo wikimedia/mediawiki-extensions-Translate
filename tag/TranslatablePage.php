@@ -577,6 +577,9 @@ class TranslatablePage {
 		return $db->select( 'revtag', $fields, $conds, __METHOD__, $options );
 	}
 
+	/**
+	 * @return Title[]
+	 */
 	public function getTranslationPages() {
 		// Fetch the available translation pages from database
 		// Avoid replication lag issues
@@ -599,6 +602,9 @@ class TranslatablePage {
 		// Make sure we only get translation subpages while ignoring others
 		$codes = Language::getLanguageNames( false );
 		$prefix = $this->getTitle()->getText();
+		/**
+		 * @var Title $title
+		 */
 		foreach ( $titles as $title ) {
 			list( $name, $code ) = TranslateUtils::figureMessage( $title->getText() );
 			if ( !isset( $codes[$code] ) || $name !== $prefix ) {
