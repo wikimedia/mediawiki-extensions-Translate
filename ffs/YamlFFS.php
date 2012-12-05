@@ -49,6 +49,9 @@ class YamlFFS extends SimpleFFS {
 		$mangler = $this->group->getMangler();
 
 		$messages = array();
+		/**
+		 * @var $m TMessage
+		 */
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 			$value = $m->translation();

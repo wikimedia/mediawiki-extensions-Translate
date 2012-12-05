@@ -51,6 +51,9 @@ class TranslateEditAddons {
 
 		$tabindex = 2;
 
+		/**
+		 * @var $prev Title
+		 */
 		if ( $prev !== null ) {
 			$data = array(
 				'text' => wfMessage( 'translate-edit-tab-prev' )->text(),
@@ -72,6 +75,9 @@ class TranslateEditAddons {
 		);
 		self::addTab( $skin, $tabs, 'list', $data, $tabindex );
 
+		/**
+		 * @var $next Title
+		 */
 		if ( $next !== null ) {
 			$data = array(
 				'text' => wfMessage( 'translate-edit-tab-next' )->text(),
@@ -316,8 +322,8 @@ class TranslateEditAddons {
 	 * Runs message checks, adds tp:transver tags and updates statistics.
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
 	 */
-	public static function onSave( $article, $user, $content, $summary,
-			$minor, $_, $_, $flags, $revision
+	public static function onSave( Article $article, $user, $content, $summary,
+			$minor, $_, $_, $flags, Revision $revision
 	) {
 
 		if ( $content instanceof TextContent ) {
@@ -461,7 +467,7 @@ class TranslateEditAddons {
 	/**
 	 * Hook: ArticlePrepareTextForEdit
 	 */
-	public static function disablePreSaveTransform( $article, ParserOptions $popts ) {
+	public static function disablePreSaveTransform( Article $article, ParserOptions $popts ) {
 		global $wgTranslateUsePreSaveTransform;
 
 		if ( !$wgTranslateUsePreSaveTransform ) {

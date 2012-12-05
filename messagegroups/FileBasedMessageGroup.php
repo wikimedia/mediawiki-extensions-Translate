@@ -47,6 +47,9 @@ class FileBasedMessageGroup extends MessageGroupBase {
 	}
 
 	public function load( $code ) {
+		/**
+		 * @var $ffs FFS
+		 */
 		$ffs = $this->getFFS();
 		$data = $ffs->read( $code );
 

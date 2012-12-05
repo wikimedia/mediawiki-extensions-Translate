@@ -374,7 +374,6 @@ class ExportMessagesTask extends ViewMessagesTask {
 		{
 			$this->collection->filter( 'ignored' );
 		}
-
 	}
 
 	// No paging should be done.
