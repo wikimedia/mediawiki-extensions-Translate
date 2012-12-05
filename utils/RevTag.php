@@ -34,7 +34,7 @@ class RevTag {
 
 	/**
 	 * Returns value suitable for rt_type field.
-	 * @param $tag string tag name
+	 * @param string $tag Tag name
 	 * @throws MWException
 	 * @return int|string
 	 */
