@@ -319,10 +319,18 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * Runs message checks, adds tp:transver tags and updates statistics.
-	 * Hook: ArticleSaveComplete, PageContentSaveComplete
+	 * @param WikiPage $wikiPage
+	 * @param $user
+	 * @param $content
+	 * @param $summary
+	 * @param $minor
+	 * @param $_
+	 * @param $_
+	 * @param $flags
+	 * @param Revision $revision
+	 * @return bool
 	 */
-	public static function onSave( Article $article, $user, $content, $summary,
+	public static function onSave( $wikiPage, $user, $content, $summary,
 			$minor, $_, $_, $flags, Revision $revision
 	) {
 
@@ -336,7 +344,7 @@ class TranslateEditAddons {
 			return true;
 		}
 
-		$title = $article->getTitle();
+		$title = $wikiPage->getTitle();
 		$handle = new MessageHandle( $title );
 
 		if ( !$handle->isValid() ) {
@@ -345,7 +353,7 @@ class TranslateEditAddons {
 
 		// Update it.
 		if ( $revision === null ) {
-			$rev = $article->getTitle()->getLatestRevId();
+			$rev = $wikiPage->getTitle()->getLatestRevId();
 		} else {
 			$rev = $revision->getID();
 		}
