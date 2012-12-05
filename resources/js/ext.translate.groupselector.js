@@ -5,6 +5,7 @@
 		this.shown = false;
 		this.$group = $( element );
 		this.$menu = null;
+		this.parentGroupId = null;
 		this.options = options;
 		this.init();
 		this.listen();
@@ -17,20 +18,24 @@
 		 * Initialize the plugin
 		 */
 		init: function () {
-			var parentGroupId;
-
-			parentGroupId = this.$group.data( 'msggroup' ) && this.$group.data( 'msggroup' ).id;
+			this.parentGroupId = this.$group.data( 'msggroup' ) && this.$group.data( 'msggroup' ).id;
 			this.prepareSelectorMenu();
 			this.position();
 
-			this.loadGroups( parentGroupId );
+			this.loadGroups( this.parentGroupId );
 		},
 
 		/**
 		 * Prepare the selector menu rendering
 		 */
 		prepareSelectorMenu: function () {
-			var $groupTitle, $listTitles, $searchIcon, $search, $msgGroupList, $loadAllRow;
+			var $groupTitle,
+				$listTitles,
+				$searchIcon,
+				$search,
+				$msgGroupList,
+				$loadAllRow,
+				groupSelector = this;
 
 			this.$menu = $( '<div class="ext-translate-msggroup-selector-menu grid"></div>' );
 
@@ -61,10 +66,17 @@
 
 			$msgGroupList = $( '<div>' ).addClass( 'row ext-translate-msggroup-list' );
 
-			$loadAllRow = $( '<div>' ).addClass( 'row' )
-				.append( $( '<button>' ).addClass( 'six columns ext-translate-load-all' )
-					.text( mw.msg( 'translate-msggroupselector-load-from-all' ) )
-				);
+			$loadAllRow=  $( [] );
+
+			if ( groupSelector.parentGroupId ) {
+				// Do not show the 'Load all messages' button if the parent is all.
+				$loadAllRow = $( '<div>' ).addClass( 'row' )
+					.append( $( '<button>' ).addClass( 'six columns ext-translate-load-all' )
+						.text( mw.msg( 'translate-msggroupselector-load-from-all' ) )
+					).click( function() {
+						mw.translate.changeGroup( groupSelector.parentGroupId );
+					} );
+			}
 
 			this.$menu.append( $groupTitle, $listTitles, $msgGroupList, $loadAllRow );
 
