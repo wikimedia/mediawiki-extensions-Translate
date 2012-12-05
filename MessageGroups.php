@@ -343,8 +343,8 @@ class MessageGroups {
 	 * If the list of message group ids contains wildcards, this function will match
 	 * them against the list of all supported message groups and return matched
 	 * message group ids.
-	 * @param $ids \list{String}|String
-	 * @return \list{String}
+	 * @param string[]|string $ids
+	 * @return string[]
 	 * @since 2012-02-13
 	 */
 	public static function expandWildcards( $ids ) {

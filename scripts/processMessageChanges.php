@@ -41,6 +41,9 @@ class ProcessMessageChanges extends Maintenance {
 	}
 
 	public function execute() {
+		/**
+		 * @var $groups FileBasedMessageGroup[]
+		 */
 		$groups = MessageGroups::getGroupsByType( 'FileBasedMessageGroup' );
 		$whitelist = $this->getOption( 'group' );
 

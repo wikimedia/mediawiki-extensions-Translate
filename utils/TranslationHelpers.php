@@ -557,7 +557,7 @@ class TranslationHelpers {
 		$text = Sanitizer::decodeCharReferences( $text );
 		$text = self::unwrapUntranslatable( $text );
 		$text = $this->suggestionField( $text );
-		return Html::rawElement( 'div', null, self::legend( $serviceName ) . $text . self::clear() );
+		return Html::rawElement( 'div', array(), self::legend( $serviceName ) . $text . self::clear() );
 	}
 
 	protected static function wrapUntranslatable( $text ) {
@@ -1275,8 +1275,8 @@ class TranslationHelpers {
 	}
 
 	/**
-	 * @param $source jQuery selector for element containing the source
-	 * @param $lang Language code or object
+	 * @param string $source jQuery selector for element containing the source
+	 * @param string|Language $lang Language code or object
 	 * @return string
 	 */
 	public function adder( $source, $lang ) {

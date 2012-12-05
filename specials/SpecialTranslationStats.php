@@ -918,9 +918,9 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	/**
 	 * Cross-product of two lists with string results, where either
 	 * list can be empty.
-	 * @param $groups \list{String} Group names.
-	 * @param $codes \list{String} Language codes.
-	 * @return \list{String} Labels.
+	 * @param string[] $groups Group names.
+	 * @param string[] $codes Language codes.
+	 * @return string[] Labels.
 	 */
 	protected function combineTwoArrays( $groups, $codes ) {
 		if ( !count( $groups ) ) {
@@ -943,8 +943,8 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	/**
 	 * Returns unique index for given item in the scale being used.
 	 * Called a lot, so performance intensive.
-	 * @param $timestamp \string Timestamp in mediawiki format.
-	 * @return \string
+	 * @param string $timestamp Timestamp in mediawiki format.
+	 * @return string
 	 */
 	protected function formatTimestamp( $timestamp ) {
 		global $wgContLang;
