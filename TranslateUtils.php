@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2007, 2012 Niklas Laxström
+ * @copyright Copyright © 2007-2012 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -104,7 +104,7 @@ class TranslateUtils {
 	 *
 	 * @param int $hours Number of hours.
 	 * @param bool $bots Should bot edits be included.
-	 * @param null|array $ns \list{Integer} List of namespace IDs.
+	 * @param null|int[] $ns List of namespace IDs.
 	 * @return array List of recent changes.
 	 */
 	public static function translationChanges( $hours = 24, $bots = false, $ns = null ) {
@@ -343,6 +343,7 @@ class TranslateUtils {
 	}
 
 	/**
+	 * Adds help link with a icon to upper right corner.
 	 * @param OutputPage $out
 	 * @param string $to
 	 * @param bool $overrideBaseUrl
