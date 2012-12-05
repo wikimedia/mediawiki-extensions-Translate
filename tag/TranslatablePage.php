@@ -479,19 +479,17 @@ class TranslatablePage {
 
 	/**
 	 * Returns the latest revision which has marked tag, if any.
-	 * @param int $db Database connection type
 	 * @return integer|bool false
 	 */
-	public function getMarkedTag( $db = DB_SLAVE ) {
+	public function getMarkedTag() {
 		return $this->getTag( 'tp:mark' );
 	}
 
 	/**
 	 * Returns the latest revision which has ready tag, if any.
-	 * @param int $db Database connection type
 	 * @return int|bool false
 	 */
-	public function getReadyTag( $db = DB_SLAVE ) {
+	public function getReadyTag() {
 		return $this->getTag( 'tp:tag' );
 	}
 

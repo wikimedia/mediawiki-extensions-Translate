@@ -470,7 +470,7 @@ class PageTranslationHooks {
 		}
 
 		$page = TranslatablePage::newFromTitle( $title );
-		if ( $page->getReadyTag( DB_MASTER ) === $oldRevId ) {
+		if ( $page->getReadyTag() === $oldRevId ) {
 			$page->addReadyTag( $newRevId );
 		}
 		return true;
