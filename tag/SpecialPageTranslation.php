@@ -168,6 +168,9 @@ class SpecialPageTranslation extends SpecialPage {
 		$this->showPage( $page, $sections );
 	}
 
+	/**
+	 * @param TranslatablePage $page
+	 */
 	public function showSuccess( TranslatablePage $page ) {
 		$titleText = $page->getTitle()->getPrefixedText();
 		$num = $this->getLanguage()->formatNum( $page->getParse()->countSections() );
@@ -218,6 +221,10 @@ class SpecialPageTranslation extends SpecialPage {
 		return $pages;
 	}
 
+	/**
+	 * @param array $in
+	 * @return array
+	 */
 	protected function classifyPages( array $in ) {
 		$out = array(
 			'proposed' => array(),
@@ -326,12 +333,15 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	/**
-	 * @param $page array
-	 * @param $type string
+	 * @param array $page
+	 * @param string $type
 	 * @return string
 	 */
 	protected function actionLinks( array $page, $type ) {
 		$actions = array();
+		/**
+		 * @var Title $title
+		 */
 		$title = $page['title'];
 		$user = $this->getUser();
 
@@ -404,6 +414,11 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 	}
 
+	/**
+	 * @param TranslatablePage $page
+	 * @param bool $error
+	 * @return array
+	 */
 	public function checkInput( TranslatablePage $page, &$error = false ) {
 		$usedNames = array();
 
@@ -451,8 +466,8 @@ class SpecialPageTranslation extends SpecialPage {
 
 	/**
 	 * Displays the sections and changes for the user to review
-	 * @param $page TranslatablePage
-	 * @param $sections array
+	 * @param TranslatablePage $page
+	 * @param array $sections
 	 */
 	public function showPage( TranslatablePage $page, array $sections ) {
 		global $wgContLang;
@@ -483,6 +498,9 @@ class SpecialPageTranslation extends SpecialPage {
 		$diffOld = $this->msg( 'tpt-diff-old' )->escaped();
 		$diffNew = $this->msg( 'tpt-diff-new' )->escaped();
 
+		/**
+		 * @var TPSection $s
+		 */
 		foreach ( $sections as $s ) {
 			if ( $s->type === 'new' ) {
 				$input = Xml::input( 'tpt-sect-' . $s->id, 15, $s->name );
@@ -523,6 +541,9 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( count( $deletedSections ) ) {
 			$out->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
 
+			/**
+			 * @var TPSection $s
+			 */
 			foreach ( $deletedSections as $s ) {
 				$name = $this->msg( 'tpt-section-deleted', $s->id )->escaped();
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
@@ -569,6 +590,9 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 	}
 
+	/**
+	 * @param TranslatablePage $page
+	 */
 	protected function priorityLanguagesForm( TranslatablePage $page ) {
 		global $wgContLang;
 
@@ -620,14 +644,14 @@ class SpecialPageTranslation extends SpecialPage {
 	 * - Updates revtags table
 	 * - Setups renderjobs to update the translation pages
 	 * - Invalidates caches
-	 * @param $page TranslatablePage
-	 * @param $sections array
+	 * @param TranslatablePage $page
+	 * @param array $sections
 	 * @return array|bool
 	 */
 	public function markForTranslation( TranslatablePage $page, array $sections ) {
 		// Add the section markers to the source page
-		$article = new Article( $page->getTitle(), 0 );
-		$status = $article->doEdit(
+		$wikiPage = WikiPage::factory( $page->getTitle() );
+		$status = $wikiPage->doEdit(
 			$page->getParse()->getSourcePageText(), // Content
 			$this->msg( 'tpt-mark-summary' )->inContentLanguage()->text(),  // Summary
 			EDIT_FORCE_BOT | EDIT_UPDATE,           // Flags
@@ -660,6 +684,9 @@ class SpecialPageTranslation extends SpecialPage {
 		$maxid = intval( TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' ) );
 
 		$pageId = $page->getTitle()->getArticleID();
+		/**
+		 * @var TPSection $s
+		 */
 		foreach ( array_values( $sections ) as $index => $s ) {
 			$maxid = max( $maxid, intval( $s->name ) );
 
@@ -730,6 +757,11 @@ class SpecialPageTranslation extends SpecialPage {
 		return false;
 	}
 
+	/**
+	 * @param WebRequest $request
+	 * @param TranslatablePage $page
+	 * @param User $user
+	 */
 	protected function handlePriorityLanguages( WebRequest $request, TranslatablePage $page, User $user ) {
 		// new priority languages
 		$npLangs = rtrim( trim( $request->getVal( 'prioritylangs' ) ), ',' );
@@ -782,8 +814,8 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	/**
-	 * @param $page Article
-	 * @param $changed
+	 * @param TranslatablePage $page
+	 * @param array|null $changed
 	 */
 	public function addFuzzyTags( $page, $changed ) {
 		if ( !count( $changed ) ) {
@@ -825,6 +857,9 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 	}
 
+	/**
+	 * @param TranslatablePage $page
+	 */
 	public function setupRenderJobs( TranslatablePage $page ) {
 		$titles = $page->getTranslationPages();
 		$this->addInitialRenderJob( $page, $titles );
@@ -837,6 +872,9 @@ class SpecialPageTranslation extends SpecialPage {
 
 		if ( count( $jobs ) < 10 ) {
 			self::superDebug( __METHOD__, 'renderjob-immediate' );
+			/**
+			 * @var RenderJob $j
+			 */
 			foreach ( $jobs as $j ) {
 				$j->run();
 			}
@@ -851,10 +889,10 @@ class SpecialPageTranslation extends SpecialPage {
 	 * If this page is marked for the first time, /en may not yet exists.
 	 * If this is the case, add a RenderJob for it, but don't execute it
 	 * immediately, since the message group doesn't exist during this request.
-	 * @param $page Article
-	 * @param $titles array
+	 * @param TranslatablePage $page
+	 * @param Title[] $titles
 	 */
-	protected function addInitialRenderJob( $page, $titles ) {
+	protected function addInitialRenderJob( TranslatablePage $page, array $titles ) {
 		global $wgContLang;
 
 		$en = Title::newFromText( $page->getTitle()->getPrefixedText() . '/' . $wgContLang->getCode() );
@@ -876,8 +914,8 @@ class SpecialPageTranslation extends SpecialPage {
 	 * Enhanced version of wfDebug that allows more detailed debugging.
 	 * You can pass anything as varags and it will be serialized. Article
 	 * and User objects have special handling to only output name and id.
-	 * @param $method \string Calling method.
-	 * @param $msg \string Debug message.
+	 * @param string $method Calling method.
+	 * @param string $msg Debug message.
 	 * @todo Move to better place.
 	 */
 	public static function superDebug( $method, $msg /* varags */ ) {

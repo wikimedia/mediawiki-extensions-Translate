@@ -26,7 +26,9 @@ class TPParse {
 	 * @todo Encapsulate
 	 */
 	public $template   = null;
-	/// \arrayof{String,TPSection} Sections saved in the database.
+	/**
+	 * @var null|array Sections saved in the database. array( string => TPSection, ... )
+	 */
 	protected $dbSections = null;
 
 	/// Constructor
@@ -70,7 +72,7 @@ class TPParse {
 	/**
 	 * Gets the sections and assigns section id for new sections
 	 * @param int $highest The largest used integer id (Since 2012-08-02)
-	 * @return \arrayof{String,TPSection}
+	 * @return array array( string => TPSection, ... )
 	 */
 	public function getSectionsForSave( $highest = 0 ) {
 		$this->loadFromDatabase();
@@ -107,7 +109,7 @@ class TPParse {
 
 	/**
 	 * Returns list of deleted sections.
-	 * @return \arrayof{String,TPsection} List of sections indexed by id.
+	 * @return array List of sections indexed by id. array( string => TPsection, ... )
 	 */
 	public function getDeletedSections() {
 		$sections = $this->getSectionsForSave();
