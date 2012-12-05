@@ -466,12 +466,15 @@ class TranslateEditAddons {
 
 	/**
 	 * Hook: ArticlePrepareTextForEdit
+	 * @param WikiPage $wikiPage
+	 * @param ParserOptions $popts
+	 * @return bool
 	 */
-	public static function disablePreSaveTransform( Article $article, ParserOptions $popts ) {
+	public static function disablePreSaveTransform( $wikiPage, ParserOptions $popts ) {
 		global $wgTranslateUsePreSaveTransform;
 
 		if ( !$wgTranslateUsePreSaveTransform ) {
-			$handle = new MessageHandle( $article->getTitle() );
+			$handle = new MessageHandle( $wikiPage->getTitle() );
 			if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
 				$popts->setPreSaveTransform( false );
 			}
