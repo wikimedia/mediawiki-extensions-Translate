@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//54I\u003d",
+        "filename": "TranslateTasks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:08:00Z",
+      "side": 1,
+      "message": "Your IDE should really pick this up just from the type hint given below.",
+      "revId": "78ed68b479c4b3a2f6fc940d357d4cbee929a5bf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//54A\u003d",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:08:00Z",
+      "side": 1,
+      "message": "It\u0027s not Article! Didn\u0027t I threat to remove these useless comments before if I spot anything wrong in them?",
+      "revId": "78ed68b479c4b3a2f6fc940d357d4cbee929a5bf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//538\u003d",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:08:00Z",
+      "side": 1,
+      "message": "Inconsistent with above change, suggesting just to remove these misleading comments.",
+      "revId": "78ed68b479c4b3a2f6fc940d357d4cbee929a5bf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//534\u003d",
+        "filename": "ttmserver/TTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:08:00Z",
+      "side": 1,
+      "message": "This is useless btw. First two are string and latter two are ints.",
+      "revId": "78ed68b479c4b3a2f6fc940d357d4cbee929a5bf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//53w\u003d",
+        "filename": "utils/StatsTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:08:00Z",
+      "side": 1,
+      "message": "good catch, perhaps add See MessageGroupStats",
+      "revId": "78ed68b479c4b3a2f6fc940d357d4cbee929a5bf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//53s\u003d",
+        "filename": "utils/TranslationStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-05T09:08:00Z",
+      "side": 1,
+      "message": "\\int should be removed and the default could be changed to 0 to avoid having two types.",
+      "revId": "78ed68b479c4b3a2f6fc940d357d4cbee929a5bf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
