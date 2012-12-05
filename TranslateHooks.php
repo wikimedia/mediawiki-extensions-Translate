@@ -327,7 +327,7 @@ class TranslateHooks {
 	}
 
 	/// Log action handler
-	public static function formatTranslationreviewLogEntry( $type, $action, $title, $forUI, $params ) {
+	public static function formatTranslationreviewLogEntry( $type, $action, Title $title, $forUI, $params ) {
 		global $wgLang, $wgContLang;
 
 		$language = $forUI === null ? $wgContLang : $wgLang;

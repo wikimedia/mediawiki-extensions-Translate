@@ -18,9 +18,9 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * Checks if the translation uses all variables $[1-9] that the definition
 	 * uses and vice versa.
 	 *
-	 * @param $messages \array Iterable list of TMessage objects.
-	 * @param $code \string Language code of the translations.
-	 * @param $warnings \array Array where warnings are appended to.
+	 * @param TMessage[] $messages Iterable list of TMessage objects.
+	 * @param string $code Language code of the translations.
+	 * @param array $warnings Array where warnings are appended to.
 	 */
 	protected function wikiParameterCheck( $messages, $code, &$warnings ) {
 		parent::parameterCheck( $messages, $code, $warnings, '/\$[1-9]/' );
@@ -32,9 +32,9 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * MediaWiki messages like {{MediaWiki:helppage-url}}:. Also links in the
 	 * definition are allowed.
 	 *
-	 * @param $messages \array Iterable list of TMessage objects.
-	 * @param $code \string Language code of the translations.
-	 * @param $warnings \array Array where warnings are appended to.
+	 * @param TMessage[] $messages Iterable list of TMessage objects.
+	 * @param string $code Language code of the translations.
+	 * @param array $warnings Array where warnings are appended to.
 	 */
 	protected function wikiLinksCheck( $messages, $code, &$warnings ) {
 		$tc = Title::legalChars() . '#%{}';
@@ -93,9 +93,9 @@ class MediaWikiMessageChecker extends MessageChecker {
 	/**
 	 * Checks if the \<br /> and \<hr /> tags are using the correct syntax.
 	 *
-	 * @param $messages \array Iterable list of TMessage objects.
-	 * @param $code \string Language code of the translations.
-	 * @param $warnings \array Array where warnings are appended to.
+	 * @param TMessage[] $messages Iterable list of TMessage objects.
+	 * @param string $code Language code of the translations.
+	 * @param array $warnings Array where warnings are appended to.
 	 */
 	protected function XhtmlCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -138,9 +138,9 @@ class MediaWikiMessageChecker extends MessageChecker {
 	/**
 	 * Checks if the translation doesn't use plural while the definition has one.
 	 *
-	 * @param $messages \array Iterable list of TMessage objects.
-	 * @param $code \string Language code of the translations.
-	 * @param $warnings \array Array where warnings are appended to.
+	 * @param TMessage[] $messages Iterable list of TMessage objects.
+	 * @param string $code Language code of the translations.
+	 * @param array $warnings Array where warnings are appended to.
 	 */
 	protected function pluralCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -163,6 +163,9 @@ class MediaWikiMessageChecker extends MessageChecker {
 
 	/**
 	 * Checks if the translation uses too many plural forms
+	 * @param TMessage[] $messages
+	 * @param string $code
+	 * @param array $warnings
 	 * @since 2012-09-19
 	 */
 	protected function pluralFormsCheck( $messages, $code, &$warnings ) {
@@ -242,6 +245,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 				} elseif ( $translation[$i] === '}' ) {
 					$stack--;
 				}
+
 				if ( $stack === 0 ) {
 					// The string '{{PLURAL...' (without closing }})
 					$pluralString = substr( $translation, $pos, $i - $pos - 1 );
@@ -284,9 +288,9 @@ class MediaWikiMessageChecker extends MessageChecker {
 	/**
 	 * Checks for page names that they have an untranslated namespace.
 	 *
-	 * @param $messages \array Iterable list of TMessage objects.
-	 * @param $code \string Language code of the translations.
-	 * @param $warnings \array Array where warnings are appended to.
+	 * @param TMessage[] $messages Iterable list of TMessage objects.
+	 * @param string $code Language code of the translations.
+	 * @param array $warnings Array where warnings are appended to.
 	 */
 	protected function pagenameMessagesCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -311,9 +315,9 @@ class MediaWikiMessageChecker extends MessageChecker {
 	/**
 	 * Checks for some miscellaneous messages with special syntax.
 	 *
-	 * @param $messages \array Iterable list of TMessage objects.
-	 * @param $code \string Language code of the translations.
-	 * @param $warnings \array Array where warnings are appended to.
+	 * @param TMessage[] $messages Iterable list of TMessage objects.
+	 * @param string $code Language code of the translations.
+	 * @param array $warnings Array where warnings are appended to.
 	 */
 	protected function miscMWChecks( $messages, $code, &$warnings ) {
 		$timeList = array( 'protect-expiry-options', 'ipboptions' );

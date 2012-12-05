@@ -1102,7 +1102,7 @@ class TranslationHelpers {
 		$code = $this->handle->getCode();
 		$key = $this->handle->getKey();
 
-		// TODO: encapsulate somewhere
+		// @todo Encapsulate somewhere
 		$page = TranslatablePage::newFromTitle( $this->group->getTitle() );
 		$rev = $page->getTransRev( "$key/$code" );
 		$latest = $page->getMarkedTag();

@@ -35,6 +35,9 @@ XML;
 
 		$writer = new SimpleXMLElement( $template );
 
+		/**
+		 * @var $m TMessage
+		 */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
 			if ( $value === null ) {

@@ -331,12 +331,16 @@ class MessageGroupStats {
 		return $a;
 	}
 
+	/**
+	 * @param MessageGroup $group
+	 * @param string $code Language code
+	 * @return array ( total, translated, fuzzy, proofread )
+	 */
 	protected static function calculateGroup( $group, $code ) {
 		global $wgTranslateDocumentationLanguageCode;
 		# Calculate if missing and store in the db
 		$collection = $group->initCollection( $code );
 		$collection->setReviewMode( true );
-
 
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
 			$ffs = $group->getFFS();

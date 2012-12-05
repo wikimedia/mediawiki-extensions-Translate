@@ -33,8 +33,10 @@ $verbose = isset( $options['verbose'] );
 
 $groups = MessageGroups::singleton()->getGroups();
 
+/**
+ * @var $g MessageGroup
+ */
 foreach ( $groups as $g ) {
-
 	$id = $g->getId();
 
 	// Skip groups that are not requested
@@ -51,7 +53,9 @@ foreach ( $groups as $g ) {
 
 	// Initialise messages, using unique definitions if appropriate
 	$collection = $g->initCollection( 'en', true );
-	if ( !count( $collection ) ) continue;
+	if ( !count( $collection ) ) {
+		continue;
+	}
 
 	STDOUT( "Working with $id: ", $id );
 

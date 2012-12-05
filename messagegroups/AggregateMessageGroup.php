@@ -25,6 +25,9 @@ class AggregateMessageGroup extends MessageGroupBase {
 	public function load( $code ) {
 		$messages = array();
 
+		/**
+		 * @var $group MessageGroup
+		 */
 		foreach ( $this->getGroups() as $group ) {
 			$messages += $group->load( $code );
 		}
@@ -111,7 +114,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		 * group directly. This used to iterate over the subgroups looking for
 		 * the primary group, but that might actually be under some other
 		 * aggregate message group.
-		 * @TODO: implement getMessageContent to avoid hardcoding the namespace
+		 * @todo Implement getMessageContent to avoid hardcoding the namespace
 		 * here.
 		 */
 		$title = Title::makeTitle( $this->getNamespace(), $key );
@@ -135,6 +138,9 @@ class AggregateMessageGroup extends MessageGroupBase {
 	public function getTags( $type = null ) {
 		$tags = array();
 
+		/**
+		 * @var $group MessageGroup
+		 */
 		foreach ( $this->getGroups() as $group ) {
 			$tags = array_merge_recursive( $tags, $group->getTags( $type ) );
 		}
@@ -144,8 +150,11 @@ class AggregateMessageGroup extends MessageGroupBase {
 
 	public function getKeys() {
 		$keys = array();
+		/**
+		 * @var $group MessageGroup
+		 */
 		foreach ( $this->getGroups() as $group ) {
-			// @TODO: not all oldstyle groups have getKeys yet
+			// @todo Not all oldstyle groups have getKeys yet
 			if ( method_exists( $group, 'getKeys' ) ) {
 				$keys = array_merge( $keys, $group->getKeys() );
 			} else {

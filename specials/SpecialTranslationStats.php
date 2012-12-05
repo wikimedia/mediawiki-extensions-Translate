@@ -336,6 +336,9 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 */
 	protected function groupSelector() {
 		$groups = MessageGroups::singleton()->getGroups();
+		/**
+		 * @var $group MessageGroup
+		 */
 		foreach ( $groups as $key => $group ) {
 			if ( !$group->exists() ) {
 				unset( $groups[$key] );
@@ -346,6 +349,9 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		ksort( $groups );
 
 		$selector = new XmlSelect( 'mw-group-selector', 'mw-group-selector' );
+		/**
+		 * @var $name MessageGroup
+		 */
 		foreach ( $groups as $code => $name ) {
 			$selector->addOption( $name->getLabel(), $code );
 		}

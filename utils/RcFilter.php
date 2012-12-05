@@ -19,10 +19,10 @@ class TranslateRcFilter {
 	 * documentation of the function parameters.
 	 *
 	 * Appends SQL filter conditions into $conds.
-	 * @param $conds array
-	 * @param $tables array|string
-	 * @param $join_conds array
-	 * @param $opts
+	 * @param array $conds
+	 * @param array|string $tables
+	 * @param array $join_conds
+	 * @param FormOptions $opts
 	 * @return bool true
 	 */
 	public static function translationFilter( &$conds, &$tables, &$join_conds, $opts ) {
@@ -60,7 +60,7 @@ class TranslateRcFilter {
 	 *
 	 * Adds a HTMl selector into $items
 	 * @param $items
-	 * @param $opts
+	 * @param FormOptions $opts
 	 * @return bool true
 	 */
 	public static function translationFilterForm( &$items, $opts ) {

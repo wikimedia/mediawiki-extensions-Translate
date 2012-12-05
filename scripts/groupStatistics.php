@@ -347,7 +347,9 @@ if ( !$wmfscore ) {
 		$out->element( ( $l10n ? "{{int:translate-gs-score}}" : 'Score' ) . ' (' . $totalWeight . ')', true );
 	}
 
-
+	/**
+	 * @var $g MessageGroup
+	 */
 	foreach ( $groups as $g ) {
 		// Add unprocessed description of group as heading
 		if ( $reportScore ) {

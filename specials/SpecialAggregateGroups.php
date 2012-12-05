@@ -21,7 +21,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		$out = $this->getOutput();
 
 		// Check permissions
-		// TODO: allow read only for other users
+		// @todo Allow read only for other users
 		if ( !$this->getUser()->isAllowed( 'translate-manage' ) ) {
 			throw new PermissionsError( 'translate-manage' );
 		}
@@ -42,7 +42,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		}
 
 		if ( !count( $pages ) ) {
-			// @TODO use different message
+			// @todo Use different message
 			$out->addWikiMsg( 'tpt-list-nopages' );
 			return;
 		}
@@ -50,10 +50,17 @@ class SpecialAggregateGroups extends SpecialPage {
 		$this->showAggregateGroups( $aggregates, $pages );
 	}
 
+	/**
+	 * @param array $aggregates
+	 * @param array $pages
+	 */
 	protected function showAggregateGroups( array $aggregates, array $pages ) {
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.aggregategroups' );
 
+		/**
+		 * @var $group MessageGroup
+		 */
 		foreach ( $aggregates as $group ) {
 			$id = $group->getId();
 			$div = Html::openElement( 'div', array(
@@ -106,6 +113,9 @@ class SpecialAggregateGroups extends SpecialPage {
 		$out->addHtml( $newGroupDiv );
 	}
 
+	/**
+	 * @param AggregateMessageGroup $parent
+	 */
 	protected function listSubgroups( AggregateMessageGroup $parent ) {
 		$out = $this->getOutput();
 
@@ -147,6 +157,11 @@ class SpecialAggregateGroups extends SpecialPage {
 		$out->addHtml( Html::closeElement( 'ol' ) );
 	}
 
+	/**
+	 * @param $availableGroups
+	 * @param MessageGroup $parent
+	 * @return XmlSelect
+	 */
 	protected function getGroupSelector( $availableGroups, $parent ) {
 		$id = $this->htmlIdForGroup( $parent, 'mw-tpa-groupselect-' );
 		$select = new XmlSelect( 'group', $id );
@@ -154,6 +169,9 @@ class SpecialAggregateGroups extends SpecialPage {
 		// Not calling $parent->getGroups() because it has done filtering already
 		$subgroups = TranslateMetadata::getSubgroups( $parent->getId() );
 		$subgroups = array_flip( $subgroups );
+		/**
+		 * @var $group MessageGroup
+		 */
 		foreach ( $availableGroups as $group ) {
 			$groupId = $group->getId();
 
@@ -168,6 +186,11 @@ class SpecialAggregateGroups extends SpecialPage {
 		return $select;
 	}
 
+	/**
+	 * @param MessageGroup $group
+	 * @param string $prefix
+	 * @return string
+	 */
 	protected function htmlIdForGroup( MessageGroup $group, $prefix = '' ) {
 		$id = sha1( $group->getId() );
 		$id = substr( $id, 5, 8 );
