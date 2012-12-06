@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//4mg\u003d",
+        "filename": "_autoload.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-06T06:31:21Z",
+      "side": 1,
+      "message": "TranslateMessageTable seems to be the good name.",
+      "revId": "e63085ff3f0937b2b8ec63804de71a51b025fcb7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//4mA\u003d",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-06T06:31:21Z",
+      "side": 1,
+      "message": "text-center is for centering text? I think it can be with more specific tux-list-edit or tux-list-status",
+      "revId": "e63085ff3f0937b2b8ec63804de71a51b025fcb7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//4mE\u003d",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-06T06:31:21Z",
+      "side": 1,
+      "message": "trailing whitespace errors in line 91 and 69",
+      "revId": "e63085ff3f0937b2b8ec63804de71a51b025fcb7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
