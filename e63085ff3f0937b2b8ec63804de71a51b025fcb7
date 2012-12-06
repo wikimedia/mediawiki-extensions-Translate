@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//4gU\u003d",
+        "filename": "_autoload.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-06T11:26:39Z",
+      "side": 1,
+      "message": "Instead of prefixing every class with Translate, I\u0027d rather start using namespaces.",
+      "parentUuid": "AAADbX//4mg\u003d",
+      "revId": "e63085ff3f0937b2b8ec63804de71a51b025fcb7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//4mA\u003d",
         "filename": "utils/TuxMessageTable.php",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2012-12-06T06:31:21Z",
       "side": 1,
       "message": "text-center is for centering text? I think it can be with more specific tux-list-edit or tux-list-status",
+      "revId": "e63085ff3f0937b2b8ec63804de71a51b025fcb7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//4gY\u003d",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-06T11:26:39Z",
+      "side": 1,
+      "message": "text-center is in the foundation grid, is it not to be used?",
+      "parentUuid": "AAADbX//4mA\u003d",
       "revId": "e63085ff3f0937b2b8ec63804de71a51b025fcb7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
