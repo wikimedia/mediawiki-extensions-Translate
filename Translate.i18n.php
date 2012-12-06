@@ -5779,10 +5779,6 @@ No mesac wesiqe niyo. Şıma nêzanê na açarnayış konca dı sazkerê se, Aç
 $messages['dsb'] = array(
 	'translate' => 'Pśełožyś',
 	'translate-desc' => '[[Special:Translate|Specialny bok]] za pśełožowanje MediaWiki a druge',
-	'translate-showsub' => '{{PLURAL:$1|pódkupku|$1 pódkupce|$1 pódkupki|$1 pódkupkow}} pokazaś',
-	'translate-grouplisting' => 'To jo lisćina wšyknych pśełožujobnych kupkow.
-Klikni na mě kupki powěźeńkow, aby se woglědał lisćinu njepśełožonych powěźeńkow.',
-	'translate-grouplisting-empty' => 'Žedne zdźěleńske kupki njejsu za pśełožowanje skonfigurěrowane.',
 	'translate-taskui-view' => 'Wšykne powěźeńki pokazaś',
 	'translate-taskui-untranslated' => 'Njepśełožone powěźeńki pokazaś',
 	'translate-taskui-optional' => 'Opcionalne powěźeńki pokazaś',
@@ -6098,6 +6094,12 @@ Jo nejwužytnjej za korigěrowańske nadawki.',
 	'translate-dynagroup-last' => 'Nejnowša změna wót {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Nejnowša změna wót {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Pomoc',
+	'translate-msggroupselector-projects' => 'Projekty',
+	'translate-msggroupselector-search-placeholder' => 'Projekty pśepytaś',
+	'translate-msggroupselector-search-all' => 'Wšykne',
+	'translate-msggroupselector-search-recent' => 'Nejnowše',
+	'translate-msggroupselector-load-from-all' => 'Powěźeńki ze wšych projektow zacytaś',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|pódprojekt|pódprojekta|pódprojekty|pódprojektow}} se woglědaś',
 );
 
 /** Central Dusun (Dusun Bundu-liwan)
@@ -10996,6 +10998,12 @@ Je najwužitnišo za korigowanske nadawki.',
 	'translate-dynagroup-last' => 'Najnowša změna wot {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Najnowša změna wot {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Pomoc',
+	'translate-msggroupselector-projects' => 'Projekty',
+	'translate-msggroupselector-search-placeholder' => 'Projekty přepytać',
+	'translate-msggroupselector-search-all' => 'Wšě',
+	'translate-msggroupselector-search-recent' => 'Najnowše',
+	'translate-msggroupselector-load-from-all' => 'Zdźělenki ze wšěch projektow začitać',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|podprojekt|podprojektaj|podprojekty|podprojektow}} sej wobhladać',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -11564,11 +11572,13 @@ Részletek: $1',
 );
 
 /** Armenian (Հայերեն)
+ * @author Chaojoker
  * @author Vadgt
  */
 $messages['hy'] = array(
 	'translate' => 'Թագմանություն',
 	'translate-taction-translate' => 'Թագմանություն',
+	'translate-taction-proofread' => 'Սրբագրել',
 	'translate-edit-translation' => 'Թագմանություն',
 );
 
@@ -20012,10 +20022,10 @@ A ven dzortut a taj con ij travaj ëd revision.',
 	'translate-dynagroup-lastc' => 'Ùltime modìfiche ëd {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Agiut',
 	'translate-msggroupselector-projects' => 'Proget',
-	'translate-msggroupselector-search-placeholder' => 'Serca proget',
+	'translate-msggroupselector-search-placeholder' => 'Sërché ij proget',
 	'translate-msggroupselector-search-all' => 'Tùit',
 	'translate-msggroupselector-search-recent' => 'Recent',
-	'translate-msggroupselector-load-from-all' => 'Carié mëssagi da tùit ij proget',
+	'translate-msggroupselector-load-from-all' => 'Carié ij mëssagi da tùit ij proget',
 	'translate-msggroupselector-view-subprojects' => 'Varda $1 {{PLURAL:$1|sot-proget|sot-proget}}', # Fuzzy
 );
 
@@ -26634,6 +26644,12 @@ $1',
 	'translate-dynagroup-last' => 'Востаннє змінено {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Востаннє змінено {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Довідка',
+	'translate-msggroupselector-projects' => 'Проекти',
+	'translate-msggroupselector-search-placeholder' => 'Шукати проекти',
+	'translate-msggroupselector-search-all' => 'Усі',
+	'translate-msggroupselector-search-recent' => 'Останні',
+	'translate-msggroupselector-load-from-all' => 'Завантажувати повідомлення з усіх проектів',
+	'translate-msggroupselector-view-subprojects' => 'Переглянути $1 {{PLURAL:$1|підпроект|підпроекти|підпроектів}}',
 );
 
 /** Urdu (اردو)
