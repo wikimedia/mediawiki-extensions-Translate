@@ -2,7 +2,7 @@
 
 class TuxMessageTable extends MessageTable {
 	public function header() {
-		return '<div class="grid tux-messagelist">';
+		return '<div class="row tux-messagelist">';
 	}
 
 	public function contents() {
@@ -66,7 +66,7 @@ class TuxMessageTable extends MessageTable {
 				. '</span></div>'
 				. "<div class='two columns tux-list-status text-center'>$status</div>"
 				. "<div class='one column tux-list-edit text-center'>$edit</div>"
-				
+
 			);
 
 			$output .= "\n";
@@ -88,7 +88,7 @@ $bar = StatsBar::getNew( $this->group->getId(), $this->collection->getLanguage()
 		$more .= '<div class="tux-action-bar row"><div class="three columns">' . $html . '</div>';
 		$more .= '<div class="three columns text-center"><button>Hello world</button></div>';
 		$more .= '<div class="four columns text-center"><button>Do something</button></div>';
-		
+
 		return $this->header() . $this->contents() . $more . '</div>';
 	}
 }
