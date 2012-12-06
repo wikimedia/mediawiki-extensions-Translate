@@ -2,6 +2,21 @@
 	width: 600px;
 }
 
+.ext-translate-msggroup-selector .grouplink+.grouplink:before {
+	border-left: 4px solid #777;
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	content: "";
+	display:inline-block;
+	vertical-align: middle;
+	position:relative;
+	left: -5px;
+}
+
+.ext-translate-msggroup-list:last-child {
+	border-radius: 0 0 5px 5px;
+}
+
 .ext-translate-msggroup-selector h3 {
 	border: medium none;
 	color: #555555;
@@ -16,6 +31,13 @@
 .ext-translate-msggroup-selector h3.grouplink {
 	color: #0645AD;
 	cursor: pointer;
+}
+
+.ext-translate-msggroup-selector h3.grouplink {
+	float: left;
+	min-height: 1px;
+	padding: 0 6px;
+	position: relative;
 }
 
 .ext-translate-msggroup-selector .expanded:after {
@@ -34,8 +56,6 @@
 	padding: 0;
 	border: 1px solid #888;
 	background-color: #F0F0F0;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
 	border-radius: 5px;
 	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -94,12 +114,13 @@
 	position: absolute;
 	right: 0px;
 	bottom: 2px;
+	padding-right:0;
 }
 
 .ext-translate-msggroup-search-input {
 	font-size: 14px;
 	width: 100%;
-	height: 30px;
+	height: 28px;
 	border: 1px solid #C9C9C9;
 	padding: 0 5px;
 }
@@ -110,9 +131,9 @@
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/search.svg);
 	background-image: -moz-linear-gradient(transparent, transparent), url(../images/search.svg);
 	background-image: linear-gradient(transparent, transparent), url(../images/search.svg);
-	background-size: 26px;
-	height: 32px;
-	width: 32px;
+	background-size: 25px;
+	height: 28px;
+	width: 28px;
 	float: right;
 }
 
@@ -128,6 +149,7 @@
 	position: relative;
 	border-bottom: 1px solid #EEEEEE;
 	height: 50px;
+	cursor: pointer;
 }
 
 .ext-translate-msggroup-item .label {
@@ -173,10 +195,9 @@
 	position: absolute;
 	bottom: 0px;
 	right: 0;
-	padding: 0 20px 2px 0;
+	padding: 0 15px 2px 0;
 	text-align: right;
-	color: #555555;
-	cursor: pointer;
+	color: #777;
 	font-size: 10pt;
 }
 
