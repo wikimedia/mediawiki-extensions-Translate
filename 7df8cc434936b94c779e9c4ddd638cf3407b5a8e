@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//4es\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-06T13:37:42Z",
+      "side": 1,
+      "message": "the term \"Translation groups\" might not be easy for translators to understand and translate to other languages. it is a term that make sense to us, may not be for others. For others each of them are \"projects to translate\"",
+      "revId": "7df8cc434936b94c779e9c4ddd638cf3407b5a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//4eg\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-06T13:37:42Z",
+      "side": 1,
+      "message": "does not convey the meaning that it is a sub group",
+      "revId": "7df8cc434936b94c779e9c4ddd638cf3407b5a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
