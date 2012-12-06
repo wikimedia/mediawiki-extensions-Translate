@@ -153,6 +153,13 @@ class TranslateHooks {
 
 			// Show page source code when export tab is opened
 			$wgHooks['SpecialTranslate::executeTask'][] = 'PageTranslationHooks::sourceExport';
+
+			$wgHooks['TranslateMessageTableInit'][] = function( &$table, $context, $col, $g ) {
+				//if ( !beta condition ) { return true; }
+				$table = new TuxMessageTable( $col, $g );
+				$table->setContext( $context );
+				return true;
+			};
 		}
 	}
 

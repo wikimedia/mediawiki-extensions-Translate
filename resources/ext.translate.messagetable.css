@@ -99,6 +99,7 @@
 
 .tux-list-message {
 	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .tux-status-translated,
@@ -118,12 +119,14 @@
 	background-image: linear-gradient(transparent, transparent), url(images/label-flag.svg);
 }
 
-.tux-list-edit {
+.tux-list-edit a{
 	/* @embed */
-	background-image: url(images/action-edit.png);
+	background: transparent url(images/action-edit.png) left center no-repeat; 
 	background-image: -webkit-linear-gradient(transparent, transparent), url(images/action-edit.svg);
 	background-image: -moz-linear-gradient(transparent, transparent), url(images/action-edit.svg);
 	background-image: linear-gradient(transparent, transparent), url(images/action-edit.svg);
+	background-size: 18px 18px;
+	padding-left: 19px;
 }
 
 .tux-ajax-loader {
