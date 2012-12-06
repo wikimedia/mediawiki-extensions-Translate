@@ -215,9 +215,9 @@
 			this.$menu.css( 'top', position.top + this.$group.outerHeight() );
 
 			if ( $( 'body' ).hasClass( 'rtl' ) ) {
-				menuLeft = position.left - this.$menu.outerWidth() + 100;
+				menuLeft = position.left - this.$menu.outerWidth() + 90;
 			} else {
-				menuLeft = position.left - 100;
+				menuLeft = position.left - 90;
 			}
 
 			this.$menu.css( 'left', menuLeft );
