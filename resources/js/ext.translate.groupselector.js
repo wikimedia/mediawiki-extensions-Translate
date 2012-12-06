@@ -398,6 +398,10 @@
 				}
 			}
 
+			if ( !messageGroups ) {
+				return;
+			}
+
 			$msgGroupRows = [];
 
 			$.each( messageGroups, function ( index ) {
