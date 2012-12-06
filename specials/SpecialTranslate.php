@@ -58,15 +58,22 @@ class SpecialTranslate extends SpecialPage {
 		$this->setup( $parameters );
 
 		if ( $this->options['group'] === '' ) {
-			TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Translation_example' );
 			$this->groupInformation();
 			return;
 		}
 
-		TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Translation_example' );
-		// Show errors nicely.
 		$errors = $this->getFormErrors();
-		$out->addHTML( $this->settingsForm( $errors ) );
+		if ( !self::isBeta( $this->getRequest() ) ) {
+			TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Translation_example' );
+			// Show errors nicely.
+			$out->addHTML( $this->settingsForm( $errors ) );
+		} else {
+			$out->addHTML( Html::openElement( 'div', array(
+				'class' => 'grid ext-translate-container',
+				) ) );
+			$out->addHTML( $this->tuxSettingsForm( $errors ) );
+			$out->addHTML( $this->messageSelector() );
+		}
 
 		if ( count( $errors ) ) {
 			return;
@@ -195,15 +202,23 @@ class SpecialTranslate extends SpecialPage {
 
 			$links = $this->doStupidLinks();
 
-			if ( $this->paging['count'] === 0 ) {
-				$out->addHTML( $description . $links );
-			} elseif ( $this->paging['count'] === $this->paging['total'] ) {
-				$out->addHTML( $description . $output . $links );
+			if ( !self::isBeta( $this->getRequest() ) ) {
+				if ( $this->paging['count'] === 0 ) {
+					$out->addHTML( $description . $links );
+				} elseif ( $this->paging['count'] === $this->paging['total'] ) {
+					$out->addHTML( $description . $output . $links );
+				} else {
+					$out->addHTML( $description . $links . $output . $links );
+				}
 			} else {
-				$out->addHTML( $description . $links . $output . $links );
+				$out->addHTML( $output );
 			}
 
 			ApiTranslateUser::trackGroup( $this->group, $this->getUser() );
+		}
+
+		if ( self::isBeta( $this->getRequest() ) ) {
+			$out->addHTML( Html::closeElement( 'div' ) );
 		}
 	}
 
@@ -357,6 +372,88 @@ class SpecialTranslate extends SpecialPage {
 				Html::closeElement( 'form' ) .
 			Html::closeElement( 'fieldset' );
 		return $form;
+	}
+
+	protected function tuxSettingsForm( $errors ) {
+		$attrs = array( 'class' => 'row' );
+		$selectors = $this->tuxGroupSelector() . $this->tuxLanguageSelector();
+		return Html::rawElement( 'div', $attrs, $selectors );
+	}
+
+	protected function messageSelector( ) {
+		$output = Html::openElement( 'div', array( 'class' => 'row tux-message-selector' ) );
+		$tabs = array(
+			'All',
+			'Untranslated',
+			//'Hardest',
+			'Outdated',
+			'Translated',
+		);
+		foreach ( $tabs as $tab ) {
+			$selected = $tab === 0 ? ' selected' : '';
+			$output .= Html::element( 'span', array( 'class' => "column$selected" ), $tab );
+		}
+
+		$output .= Html::element( 'span',
+			array( 'class' => 'column text-right' ),
+			'...'
+		);
+
+		$options = array(
+			'Optional messages',
+			'Messages without suggestions',
+		);
+
+		foreach ( $options as $opt ) {
+			$output .= Xml::checkLabel( $opt, "$opt-name", "$opt-id", array( 'class' => "three columns" ) );
+		}
+
+		$output .= Html::closeElement( 'div' );
+		return $output;
+	}
+
+	protected function tuxGroupSelector() {
+		$group = MessageGroups::getGroup( $this->options['group'] );
+
+		// FIXME The selector should have expanded parent-child lists
+		$output = Html::openElement( 'div', array(
+			'class' => 'ten columns ext-translate-msggroup-selector',
+			'data-language' => $this->options['language'],
+		) ) .
+
+		Html::element( 'span',
+			array( 'class' => 'grouptitle' ),
+			$this->msg( 'translate-msggroupselector-projects' )->escaped()
+		) .
+
+		Html::element( 'span',
+			array( 'class' => 'grouptitle grouplink expanded' ),
+			$this->msg( 'translate-msggroupselector-search-all' )->escaped()
+		) .
+
+		Html::element( 'span',
+			array(
+				'class' => 'grouptitle grouplink',
+				'data-msggroupid' => $this->options['group'],
+			),
+			$group->getLabel()
+		) .
+
+		Html::closeElement( 'div' );
+
+		return $output;
+	}
+
+	protected function tuxLanguageSelector() {
+		return
+			Html::element( 'span',
+				array( 'class' => 'one column text-right ext-translate-language-selector' ),
+				'Language'
+			) .
+			Html::element( 'div',
+				array( 'class' => 'span columns ext-translate-language-selector uls' ),
+				Language::fetchLanguageName( $this->options['language'] )
+			);
 	}
 
 	/**
@@ -547,13 +644,13 @@ class SpecialTranslate extends SpecialPage {
 
 		$output->addHtml(
 			Html::openElement( 'div', array(
-				'class' => 'grid ext-translate-msggroup-selector',
+				'class' => 'ten columns ext-translate-msggroup-selector',
 				'data-language' => $this->options['language'],
 			) )
-			. '<h3 class="three columns grouptitle">'
+			. '<span class="grouptitle">'
 			. $this->msg( 'translate-msggroupselector-projects' )->escaped()
 			. '</h3>
-			<h3 class="three columns grouptitle grouplink">'
+			<span class="grouptitle grouplink">'
 			. $this->msg( 'translate-msggroupselector-search-all' )->escaped()
 			. '</h3>
 			</div>'
@@ -716,5 +813,19 @@ class SpecialTranslate extends SpecialPage {
 		);
 
 		return true;
+	}
+
+	public static function isBeta( WebRequest $request ) {
+		$tux = $request->getVal( 'tux', null );
+
+		if ( $tux === null ) {
+			$tux = $request->getCookie( 'tux', null, false );
+		} elseif ( $tux ) {
+			$request->response()->setCookie( 'tux', 1 );
+		} else {
+			$request->response()->setCookie( 'tux', '', 1 );
+		}
+
+		return $tux;
 	}
 }

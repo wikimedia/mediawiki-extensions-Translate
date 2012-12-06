@@ -94,7 +94,7 @@
 		var $newLink;
 
 		if ( msgGroup.groups && msgGroup.groups.length > 0 ) {
-			$newLink = $( '<h3>' ).addClass( 'three columns grouptitle grouplink' )
+			$newLink = $( '<span>' ).addClass( 'grouptitle grouplink' )
 				.text(  mw.msg( 'translate-msggroupselector-search-all' ) );
 			$( '.ext-translate-msggroup-selector .grouplink' ).after( $newLink );
 			$newLink.data( 'msggroupid', msgGroup.id );
