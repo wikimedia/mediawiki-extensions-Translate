@@ -432,8 +432,7 @@
 		$icon = $( '<div>' ).addClass( 'one column icon' );
 
 		$statsbar = $( '<div>' ).languagestatsbar( {
-			// FIXME: use the language code provided by Special:Translate
-			language: mw.config.get( 'wgUserLanguage' ),
+			language: $( '.ext-translate-msggroup-selector' ).data( 'language' ),
 			group: messagegroup.id
 		} );
 
