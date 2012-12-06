@@ -1,14 +1,19 @@
 .tux-statsbar {
 	max-width: 400px;
 	padding: 0;
-	height: 6px;
+	height: 5px;
+	background-color: #BBB;
 }
 
 .tux-statsbar span {
-	height: 6px;
+	height: 5px;
 	float: left;
 	padding: 0;
 	font-size: 0;
+	-webkit-transition: width 1s;
+	-moz-transition: width 1s;
+	-o-transition: width 1s;
+	transition: width 1s;
 }
 
 .tux-statsbar .tux-proofread {
@@ -24,5 +29,5 @@
 }
 
 .tux-statsbar .tux-untranslated {
-	background-color: #878787;
+	display: none;
 }

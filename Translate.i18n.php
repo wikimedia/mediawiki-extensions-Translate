@@ -420,12 +420,12 @@ Most useful for the proofreading tasks.',
 
 	'translate-gethelp' => 'Help',
 
-	'translate-msggroupselector-projects'=> 'Projects',
-	'translate-msggroupselector-search-placeholder' => 'Search projects',
+	'translate-msggroupselector-projects'=> 'Message groups',
+	'translate-msggroupselector-search-placeholder' => 'Search groups',
 	'translate-msggroupselector-search-all' => 'All',
 	'translate-msggroupselector-search-recent' => 'Recent',
-	'translate-msggroupselector-load-from-all' => 'Load messages from all projects',
-	'translate-msggroupselector-view-subprojects' => 'View $1 {{PLURAL:$1|sub-project|sub-projects}}'
+	'translate-msggroupselector-load-from-all' => 'Load messages from all groups',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgroup|subgroups}}'
 );
 
 /** Message documentation (Message documentation)
@@ -808,8 +808,8 @@ Additional parameters:
 	'translate-msggroupselector-search-all' => 'Label to display all projects',
 	'translate-msggroupselector-search-recent' => 'Label to display recent projects',
 	'translate-msggroupselector-load-from-all' => 'Label for the button',
-	'translate-msggroupselector-view-subprojects' => 'Label for view sub projects expand button.
-* $1 is number of sub projects',
+	'translate-msggroupselector-view-subprojects' => 'Label indicating that the current message group contains other groups.
+* $1 is number of sub groups',
 );
 
 /** Afrikaans (Afrikaans)
