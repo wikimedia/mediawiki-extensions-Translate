@@ -97,7 +97,7 @@
 			$newLink = $( '<h3>' ).addClass( 'three columns grouptitle grouplink' )
 				.text(  mw.msg( 'translate-msggroupselector-search-all' ) );
 			$( '.ext-translate-msggroup-selector .grouplink' ).after( $newLink );
-			$newLink.data( 'msggroup', msgGroup );
+			$newLink.data( 'msggroupid', msgGroup.id );
 			$newLink.msggroupselector( {
 				onSelect: groupSelectorHandler
 			} );
