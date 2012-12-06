@@ -2,7 +2,7 @@
 
 class TuxMessageTable extends MessageTable {
 	public function header() {
-		return '<div class="grid tux-messagelist">';
+		return '<div class="row tux-messagelist">';
 	}
 
 	public function contents() {
