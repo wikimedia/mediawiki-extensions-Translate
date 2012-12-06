@@ -18,7 +18,7 @@
 		 * Initialize the plugin
 		 */
 		init: function () {
-			this.parentGroupId = this.$group.data( 'msggroup' ) && this.$group.data( 'msggroup' ).id;
+			this.parentGroupId = this.$group.data( 'msggroupid' );
 			this.prepareSelectorMenu();
 			this.position();
 
@@ -176,8 +176,7 @@
 						groupSelector.getRecentGroups();
 					} else {
 						groupSelector.$menu.find( '.ext-translate-msggroup-list' ).empty();
-						parentGroupId = groupSelector.$group.data( 'msggroup' )
-							&& groupSelector.$group.data( 'msggroup' ).id;
+						parentGroupId = groupSelector.$group.data( 'msggroupid' );
 						groupSelector.loadGroups( parentGroupId );
 					}
 				} );
@@ -339,12 +338,12 @@
 				$parent;
 
 			$msgGroupList = groupSelector.$menu.find( '.ext-translate-msggroup-list' );
+			messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
 
 			if ( parentGroupId ) {
-				messageGroups = msgGroups || groupSelector.$group.data( 'msggroup' ).groups;
-			} else {
-				messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
+				messageGroups = msgGroups || getGroup(parentGroupId, messageGroups).groups;
 			}
+
 			$msgGroups = [];
 
 			$.each( messageGroups, function ( index ) {
