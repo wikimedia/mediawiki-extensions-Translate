@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//3do\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-07T16:24:36Z",
+      "side": 1,
+      "message": "if (",
+      "revId": "404381cfdaa61c3c5bbf766388d621a7c697cb70",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//3dk\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-07T16:24:36Z",
+      "side": 1,
+      "message": "You didn\u0027t want to the wildcard way?",
+      "revId": "404381cfdaa61c3c5bbf766388d621a7c697cb70",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//3dU\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-07T16:24:36Z",
+      "side": 1,
+      "message": "Seems premature optimization to me. It also prevents hooks adding information unconditionally.",
+      "revId": "404381cfdaa61c3c5bbf766388d621a7c697cb70",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//3ds\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-07T16:24:36Z",
+      "side": 1,
+      "message": "What use case do you envision for the namespace information? Not all message groups are confined to one namespace.",
+      "revId": "404381cfdaa61c3c5bbf766388d621a7c697cb70",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
