@@ -161,6 +161,11 @@ class AggregateMessageGroup extends MessageGroupBase {
 				$keys = array_keys( $group->getDefinitions() );
 			}
 		}
-		return $keys;
+
+		/* In case some groups are included directly and indirectly
+		 * via other subgroup, we might get the same keys multiple
+		 * times. Since this is a list we need to remove duplicates
+		 * manually */
+		return array_unique( $keys );
 	}
 }
