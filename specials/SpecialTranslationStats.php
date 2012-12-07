@@ -811,7 +811,8 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 
 		$conds = array(
 			'rc_namespace' => $wgTranslateMessageNamespaces,
-			'rc_bot' => 0
+			'rc_bot' => 0,
+			'rc_type != ' . RC_LOG,
 		);
 
 		$timeConds = self::makeTimeCondition( 'rc_timestamp', $start, $end );
