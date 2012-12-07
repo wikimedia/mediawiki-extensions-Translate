@@ -2,14 +2,14 @@
 	width: 600px;
 }
 
-.ext-translate-msggroup-selector .grouplink+.grouplink:before {
+.ext-translate-msggroup-selector .grouplink + .grouplink:before {
 	border-left: 4px solid #777;
 	border-top: 4px solid transparent;
 	border-bottom: 4px solid transparent;
 	content: "";
-	display:inline-block;
+	display: inline-block;
 	vertical-align: middle;
-	position:relative;
+	position: relative;
 	left: -5px;
 }
 
@@ -114,7 +114,7 @@
 	position: absolute;
 	right: 0px;
 	bottom: 2px;
-	padding-right:0;
+	padding-right: 0;
 }
 
 .ext-translate-msggroup-search-input {
