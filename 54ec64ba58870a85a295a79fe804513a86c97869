@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//3o4\u003d",
+        "filename": "resources/ext.translate.messagetable.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 386
+      },
+      "writtenOn": "2012-12-07T12:34:57Z",
+      "side": 1,
+      "message": "I tried on Chrome and Firefox and it works.",
+      "parentUuid": "AAADbX//3qo\u003d",
+      "revId": "54ec64ba58870a85a295a79fe804513a86c97869",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//3qQ\u003d",
         "filename": "resources/ext.translate.messagetable.css",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2012-12-07T12:25:31Z",
       "side": 1,
       "message": "What\u0027s this? Haven\u0027t seen this before. Any docs?",
+      "revId": "54ec64ba58870a85a295a79fe804513a86c97869",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//3pE\u003d",
+        "filename": "resources/ext.translate.messagetable.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 386
+      },
+      "writtenOn": "2012-12-07T12:34:57Z",
+      "side": 1,
+      "message": "CSS animations: http://www.w3schools.com/css3/css3_animations.asp\n\nThe code is a loading indicator sent to be part of the Agora design guideline (until it is integrated in core we are copying styles as we did with button style)",
+      "parentUuid": "AAADbX//3qQ\u003d",
       "revId": "54ec64ba58870a85a295a79fe804513a86c97869",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
