@@ -7,6 +7,8 @@
 		this.$menu = null;
 		this.parentGroupId = null;
 		this.options = options;
+		this.flatGroupList = null;
+
 		this.init();
 		this.listen();
 	}
@@ -169,6 +171,7 @@
 			groupSelector.$menu.find( '.ext-translate-msggroup-category' )
 				.on( 'click', function () {
 					var parentGroupId;
+
 					groupSelector.$menu.find( '.ext-translate-msggroup-category' )
 						.toggleClass( 'selected' );
 
@@ -194,6 +197,7 @@
 		},
 
 		/**
+		 * An event for instant searching.
 		 *
 		 * @param e Event
 		 */
@@ -202,6 +206,7 @@
 
 			$search = this.$menu.find( '.ext-translate-msggroup-search-input' );
 			query = $.trim( $search.val() ).toLowerCase();
+
 			this.filter( query );
 		},
 
@@ -227,10 +232,10 @@
 		 * Get recent message groups.
 		 */
 		getRecentGroups: function () {
-			var queryParams,
+			var groupSelector = this,
+				queryParams,
 				apiURL,
 				messageGroups,
-				groupSelector = this,
 				$msgGroupList;
 
 			queryParams = {
@@ -244,52 +249,70 @@
 
 			$msgGroupList.empty();
 			$.get( apiURL, queryParams, function ( result ) {
-				var $msgGroups = [],
+				var $msgGroupRows = [],
 					messageGroupId,
 					messagegroup;
 
 				$.each( result.translateuser.recentgroups, function ( index ) {
 					messageGroupId = result.translateuser.recentgroups[index];
 					messagegroup = getGroup( messageGroupId, messageGroups );
-					$msgGroups.push( prepareMessageGroup( messagegroup ) );
+					$msgGroupRows.push( prepareMessageGroupRow( messagegroup ) );
 				} );
-				$msgGroupList.append( $msgGroups );
+
+				$msgGroupList.append( $msgGroupRows );
 			} );
 
 		},
 
 		/**
-		 * Escape the search query for regex match
-		 * @param value
-		 * @returns
+		 * Flatten the message group tree
+		 * @param {Array} The messagegroups array
 		 */
-		escapeRegex: function ( value ) {
-			return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, "\\$&" );
+		getFlatGroupList: function ( messageGroups ) {
+			for ( var i = 0; i < messageGroups.length; i++ ) {
+				if ( messageGroups[i].groups ) {
+					this.getFlatGroupList( messageGroups[i].groups );
+				}
+
+				this.flatGroupList.push( messageGroups[i] );
+			}
 		},
 
 		/**
-		 * Search the message groups based on lable or id
+		 * Search the message groups based on label or id
+		 * Label match is prefix match, while id match is exact match.
 		 * @param query
 		 */
 		filter: function ( query ) {
-			var $msgGroupList,
-				messageGroup,
-				matcher = new RegExp( "^" + this.escapeRegex( query ), 'i' ),
-				groupSelector = this;
+			var  index,
+				matcher,
+				foundGroups = [];
 
-			$msgGroupList = groupSelector.$menu.find( '.ext-translate-msggroup-list' );
+			this.$menu.find( '.ext-translate-msggroup-list' ).empty();
 
-			$msgGroupList.find( '.ext-translate-msggroup-item' ).each( function () {
-				messageGroup = $( this ).data( 'msggroup' );
-				if ( matcher.test( messageGroup.label ) ||
-					matcher.test( messageGroup.id )
-				) {
-					$( this ).show();
-				} else {
-					$( this ).hide();
+			// Show the initial list if the query is empty/undefined/null
+			if ( !query ) {
+				this.addGroupRows( this.parentGroupId );
+				return;
+			}
+
+			if ( !this.flatGroupList ) {
+				this.flatGroupList = [];
+				this.getFlatGroupList( $( '.ext-translate-msggroup-selector' ).data( 'msggroups' ) );
+			}
+
+			matcher = new RegExp( '^' + escapeRegex( query ), 'i' );
+
+			for ( index = 0; index < this.flatGroupList.length; index++ ) {
+				if ( matcher.test( this.flatGroupList[index].label ) ||
+					query === this.flatGroupList[index].id ) {
+					foundGroups.push( this.flatGroupList[index] );
 				}
-			} );
+			}
+
+			this.addGroupRows( this.parentGroupId, foundGroups );
 		},
+
 		/**
 		 *
 		 * @param parentGroupId
@@ -317,24 +340,26 @@
 				$.get( apiURL, queryParams, function ( result ) {
 					$( '.ext-translate-msggroup-selector' )
 						.data( 'msggroups', result.query.messagegroups );
-					groupSelector.getGroups( parentGroupId );
+					groupSelector.addGroupRows( parentGroupId );
 				} );
 			} else {
-				groupSelector.getGroups( parentGroupId );
+				groupSelector.addGroupRows( parentGroupId );
 				// keep it open
 				groupSelector.show();
 			}
-
 		},
+
 		/**
+		 * Add rows with message groups to the selector.
 		 *
 		 * @param parentGroupId
+		 * @param msgGroups - groups to add
 		 */
-		getGroups: function ( parentGroupId, msgGroups ) {
+		addGroupRows: function ( parentGroupId, msgGroups ) {
 			var groupSelector = this,
 				messagegroup,
 				messageGroups,
-				$msgGroups,
+				$msgGroupRows,
 				$msgGroupList,
 				$parent;
 
@@ -343,25 +368,26 @@
 			if ( parentGroupId ) {
 				messageGroups = msgGroups || groupSelector.$group.data( 'msggroup' ).groups;
 			} else {
-				messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
+				messageGroups = msgGroups || $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
 			}
-			$msgGroups = [];
+
+			$msgGroupRows = [];
 
 			$.each( messageGroups, function ( index ) {
 				messagegroup = messageGroups[index];
-				$msgGroups.push( prepareMessageGroup( messagegroup ) );
+				$msgGroupRows.push( prepareMessageGroupRow( messagegroup ) );
 			} );
 
 			if ( !parentGroupId ) {
-				$msgGroupList.append( $msgGroups );
-			} else{
+				$msgGroupList.append( $msgGroupRows );
+			} else {
 				$parent = $msgGroupList.find( '.ext-translate-msggroup-item[data-msggroupid=' +
 					parentGroupId + ']' );
 
 				if ( $parent.length ) {
-					$parent.after( $msgGroups );
+					$parent.after( $msgGroupRows );
 				} else {
-					$msgGroupList.append( $msgGroups );
+					$msgGroupList.append( $msgGroupRows );
 				}
 			}
 		},
@@ -383,10 +409,9 @@
 			}
 
 			return isSupported;
-		}
+		},
 
 	};
-
 	/*
 	 * msggroupselector PLUGIN DEFINITION
 	 */
@@ -413,11 +438,20 @@
 	/*
 	 * Private functions
 	 */
+	/**
+	 * Escape the search query for regex match
+	 * @param value
+	 * @returns
+	 */
+	function escapeRegex( value ) {
+		return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, "\\$&" );
+	};
+
 
 	/**
-	 * prepare MessageGroup item in the selector
-	 */
-	function prepareMessageGroup ( messagegroup ) {
+	* prepare MessageGroup item in the selector
+	*/
+	function prepareMessageGroupRow( messagegroup ) {
 		var $row,
 			$icon,
 			$label,
