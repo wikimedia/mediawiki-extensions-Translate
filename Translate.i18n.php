@@ -803,13 +803,13 @@ Additional parameters:
 * $2 is the edit summary that was provided.',
 	'translate-gethelp' => 'Link to some Translate help page or tutorial.
 {{Identical|Help}}',
-	'translate-msggroupselector-projects' => 'Title text for the message group beadcrumb',
-	'translate-msggroupselector-search-placeholder' => 'Place holder text for the search box in message group selector',
+	'translate-msggroupselector-projects' => 'Title text for the message group beadcrumb', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'Place holder text for the search box in message group selector', # Fuzzy
 	'translate-msggroupselector-search-all' => 'Label to display all projects',
 	'translate-msggroupselector-search-recent' => 'Label to display recent projects',
-	'translate-msggroupselector-load-from-all' => 'Label for the button',
+	'translate-msggroupselector-load-from-all' => 'Label for the button', # Fuzzy
 	'translate-msggroupselector-view-subprojects' => 'Label indicating that the current message group contains other groups.
-* $1 is number of sub groups',
+* $1 is number of sub groups', # Fuzzy
 );
 
 /** Afrikaans (Afrikaans)
@@ -5558,12 +5558,12 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'translate-dynagroup-last' => 'Letzte Änderung von {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Letzte Änderung von {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Hilfe',
-	'translate-msggroupselector-projects' => 'Projekte',
-	'translate-msggroupselector-search-placeholder' => 'Projekte durchsuchen',
+	'translate-msggroupselector-projects' => 'Nachrichtengruppen',
+	'translate-msggroupselector-search-placeholder' => 'Gruppen durchsuchen',
 	'translate-msggroupselector-search-all' => 'Alle',
 	'translate-msggroupselector-search-recent' => 'Aktuell',
-	'translate-msggroupselector-load-from-all' => 'Nachrichten von allen Projekten laden',
-	'translate-msggroupselector-view-subprojects' => '{{PLURAL:$1|Ein Unterprojekt|$1 Unterprojekte}} ansehen',
+	'translate-msggroupselector-load-from-all' => 'Nachrichten von allen Gruppen laden',
+	'translate-msggroupselector-view-subprojects' => '{{PLURAL:$1|Eine Untergruppe|$1 Untergruppen}}',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -6094,12 +6094,12 @@ Jo nejwužytnjej za korigěrowańske nadawki.',
 	'translate-dynagroup-last' => 'Nejnowša změna wót {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Nejnowša změna wót {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Pomoc',
-	'translate-msggroupselector-projects' => 'Projekty',
-	'translate-msggroupselector-search-placeholder' => 'Projekty pśepytaś',
+	'translate-msggroupselector-projects' => 'Projekty', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'Projekty pśepytaś', # Fuzzy
 	'translate-msggroupselector-search-all' => 'Wšykne',
 	'translate-msggroupselector-search-recent' => 'Nejnowše',
-	'translate-msggroupselector-load-from-all' => 'Powěźeńki ze wšych projektow zacytaś',
-	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|pódprojekt|pódprojekta|pódprojekty|pódprojektow}} se woglědaś',
+	'translate-msggroupselector-load-from-all' => 'Powěźeńki ze wšych projektow zacytaś', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|pódprojekt|pódprojekta|pódprojekty|pódprojektow}} se woglědaś', # Fuzzy
 );
 
 /** Central Dusun (Dusun Bundu-liwan)
@@ -7046,12 +7046,12 @@ Utilizado sobre todo para tareas de corrección.',
 	'translate-dynagroup-last' => 'Último cambio por  {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Último cambio por  {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Ayuda',
-	'translate-msggroupselector-projects' => 'Proyectos',
-	'translate-msggroupselector-search-placeholder' => 'Buscar proyectos',
+	'translate-msggroupselector-projects' => 'Proyectos', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'Buscar proyectos', # Fuzzy
 	'translate-msggroupselector-search-all' => 'Todos',
 	'translate-msggroupselector-search-recent' => 'Recientes',
-	'translate-msggroupselector-load-from-all' => 'Subir mensajes de todos los proyectos',
-	'translate-msggroupselector-view-subprojects' => 'Ver $1 {{PLURAL:$1|subproyecto|subproyectos}}',
+	'translate-msggroupselector-load-from-all' => 'Subir mensajes de todos los proyectos', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => 'Ver $1 {{PLURAL:$1|subproyecto|subproyectos}}', # Fuzzy
 );
 
 /** Estonian (eesti)
@@ -8587,12 +8587,12 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'translate-dynagroup-last' => 'Dernière modification par  {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Dernière modification par  {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Aide',
-	'translate-msggroupselector-projects' => 'Projets',
-	'translate-msggroupselector-search-placeholder' => 'Rechercher les projets',
+	'translate-msggroupselector-projects' => 'Projets', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'Rechercher les projets', # Fuzzy
 	'translate-msggroupselector-search-all' => 'Tous',
 	'translate-msggroupselector-search-recent' => 'Récent',
-	'translate-msggroupselector-load-from-all' => 'Charger les messages pour tous les projets',
-	'translate-msggroupselector-view-subprojects' => 'Afficher $1 {{PLURAL:$1|sous-projet|sous-projets}}',
+	'translate-msggroupselector-load-from-all' => 'Charger les messages pour tous les projets', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => 'Afficher $1 {{PLURAL:$1|sous-projet|sous-projets}}', # Fuzzy
 );
 
 /** Cajun French (français cadien)
@@ -9436,12 +9436,12 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'translate-dynagroup-last' => 'Última modificación feita por {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Última modificación feita por {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Axuda',
-	'translate-msggroupselector-projects' => 'Proxectos',
-	'translate-msggroupselector-search-placeholder' => 'Procurar nos proxectos',
+	'translate-msggroupselector-projects' => 'Proxectos', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'Procurar nos proxectos', # Fuzzy
 	'translate-msggroupselector-search-all' => 'Todos',
 	'translate-msggroupselector-search-recent' => 'Recentes',
-	'translate-msggroupselector-load-from-all' => 'Cargar as mensaxes de todos os proxectos',
-	'translate-msggroupselector-view-subprojects' => 'Ollar $1 {{PLURAL:$1|subproxecto|subproxectos}}',
+	'translate-msggroupselector-load-from-all' => 'Cargar as mensaxes de todos os proxectos', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => 'Ollar $1 {{PLURAL:$1|subproxecto|subproxectos}}', # Fuzzy
 );
 
 /** Goan Konkani (Latin script) (Konknni)
@@ -10331,12 +10331,12 @@ $1',
 	'translate-dynagroup-last' => 'שונה לאחרונה על־ידי {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'שונה לאחרונה על־ידי {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'עזרה',
-	'translate-msggroupselector-projects' => 'מיזמים',
-	'translate-msggroupselector-search-placeholder' => 'חיפוש מיזמים',
+	'translate-msggroupselector-projects' => 'מיזמים', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'חיפוש מיזמים', # Fuzzy
 	'translate-msggroupselector-search-all' => 'הכול',
 	'translate-msggroupselector-search-recent' => 'חדשים',
-	'translate-msggroupselector-load-from-all' => 'טעינת הודעות מכל המיזמים',
-	'translate-msggroupselector-view-subprojects' => 'הצגת $1 תת־מיזמים',
+	'translate-msggroupselector-load-from-all' => 'טעינת הודעות מכל המיזמים', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => 'הצגת $1 תת־מיזמים', # Fuzzy
 );
 
 /** Hindi (हिन्दी)
@@ -10998,12 +10998,12 @@ Je najwužitnišo za korigowanske nadawki.',
 	'translate-dynagroup-last' => 'Najnowša změna wot {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Najnowša změna wot {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Pomoc',
-	'translate-msggroupselector-projects' => 'Projekty',
-	'translate-msggroupselector-search-placeholder' => 'Projekty přepytać',
+	'translate-msggroupselector-projects' => 'Projekty', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'Projekty přepytać', # Fuzzy
 	'translate-msggroupselector-search-all' => 'Wšě',
 	'translate-msggroupselector-search-recent' => 'Najnowše',
-	'translate-msggroupselector-load-from-all' => 'Zdźělenki ze wšěch projektow začitać',
-	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|podprojekt|podprojektaj|podprojekty|podprojektow}} sej wobhladać',
+	'translate-msggroupselector-load-from-all' => 'Zdźělenki ze wšěch projektow začitać', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|podprojekt|podprojektaj|podprojekty|podprojektow}} sej wobhladać', # Fuzzy
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -12794,12 +12794,12 @@ Utile per l'attività di correzione.",
 	'translate-dynagroup-last' => 'Ultima modifica di {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Ultima modifica di {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Aiuto',
-	'translate-msggroupselector-projects' => 'Progetti',
-	'translate-msggroupselector-search-placeholder' => 'Ricerca progetti',
+	'translate-msggroupselector-projects' => 'Progetti', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'Ricerca progetti', # Fuzzy
 	'translate-msggroupselector-search-all' => 'Tutti',
 	'translate-msggroupselector-search-recent' => 'Recenti',
-	'translate-msggroupselector-load-from-all' => 'Carica i messaggi da tutti i progetti',
-	'translate-msggroupselector-view-subprojects' => 'Mostra $1 {{PLURAL:$1|sotto-progetto|sotto-progetti}}',
+	'translate-msggroupselector-load-from-all' => 'Carica i messaggi da tutti i progetti', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => 'Mostra $1 {{PLURAL:$1|sotto-progetto|sotto-progetti}}', # Fuzzy
 );
 
 /** Japanese (日本語)
@@ -13047,7 +13047,7 @@ $messages['ja'] = array(
 	'translate-smg-nochanges' => '処理する変更はありません。',
 	'translate-smg-submit' => '処理するために変更を送信',
 	'translate-smg-submitted' => 'メッセージの定義が更新されました。変更をバックグラウンドで処理しています。',
-	'translate-smg-postponed' => '処理できなかった変更があります。[[{{FULLPAGENAME}}|再試行してください]]。',
+	'translate-smg-postponed' => '処理できなかった変更があります。[[{{FULLPAGENAME}}|再度試してください]]。',
 	'translate-smg-left' => 'ウィキ内のメッセージ本文',
 	'translate-smg-right' => '新着の差分',
 	'translate-manage-import-diff' => 'メッセージ $1 | 操作: $2',
@@ -13153,12 +13153,12 @@ $1',
 	'translate-dynagroup-last' => '{{GENDER:$1|$1}}による最終更新',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}}による最終更新 ($2)',
 	'translate-gethelp' => 'ヘルプ',
-	'translate-msggroupselector-projects' => 'プロジェクト',
-	'translate-msggroupselector-search-placeholder' => '検索対象のプロジェクト',
+	'translate-msggroupselector-projects' => 'メッセージ群',
+	'translate-msggroupselector-search-placeholder' => '検索対象のメッセージ群',
 	'translate-msggroupselector-search-all' => 'すべて',
 	'translate-msggroupselector-search-recent' => '最近のもの',
-	'translate-msggroupselector-load-from-all' => 'すべてのプロジェクトからメッセージを読み込む',
-	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|件の下位プロジェクト}}を閲覧',
+	'translate-msggroupselector-load-from-all' => 'すべてのメッセージ群からメッセージを読み込む',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|件の下位群}}を閲覧',
 );
 
 /** Jamaican Creole English (Patois)
@@ -14388,10 +14388,6 @@ $messages['kn'] = array(
 $messages['ko'] = array(
 	'translate' => '번역하기',
 	'translate-desc' => '미디어위키와 기타를 번역하기 위한 [[Special:Translate|특수 문서]]',
-	'translate-showsub' => '{{PLURAL:$1|하위 그룹 $1}}개 보기',
-	'translate-grouplisting' => '이는 모든 번역할 수 있는 그룹의 목록입니다.
-번역되지 않은 메시지의 목록을 보려면 메시지 그룹 이름을 클릭하세요.',
-	'translate-grouplisting-empty' => '번역에 대한 메시지 그룹이 구성되지 않았습니다.',
 	'translate-taskui-view' => '모든 메시지 보기',
 	'translate-taskui-untranslated' => '번역되지 않은 메시지 보기',
 	'translate-taskui-optional' => '선택적 메시지 보기',
@@ -14722,6 +14718,12 @@ $1',
 	'translate-dynagroup-last' => '{{GENDER:$1|$1}}에 의해 마지막으로 바뀜',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}} ($2)에 의해 마지막으로 바뀜',
 	'translate-gethelp' => '도움말',
+	'translate-msggroupselector-projects' => '프로젝트', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => '프로젝트 찾기', # Fuzzy
+	'translate-msggroupselector-search-all' => '모두',
+	'translate-msggroupselector-search-recent' => '최근',
+	'translate-msggroupselector-load-from-all' => '모든 프로젝트에서 메시지 불러오기', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => '{{PLURAL:$1|하위 프로젝트}} $1개 보기', # Fuzzy
 );
 
 /** Krio (Krio)
@@ -16463,12 +16465,12 @@ $1',
 	'translate-dynagroup-last' => 'Последната промена ја изврши {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Последната промена ја изврши {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Помош',
-	'translate-msggroupselector-projects' => 'Проекти',
-	'translate-msggroupselector-search-placeholder' => 'Пребарување по проектите',
+	'translate-msggroupselector-projects' => 'Проекти', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'Пребарување по проектите', # Fuzzy
 	'translate-msggroupselector-search-all' => 'Сите',
 	'translate-msggroupselector-search-recent' => 'Скорешни',
-	'translate-msggroupselector-load-from-all' => 'Вчитај пораки од сите проекти',
-	'translate-msggroupselector-view-subprojects' => 'Погл. $1 {{PLURAL:$1|потпроект|потпроекти}}',
+	'translate-msggroupselector-load-from-all' => 'Вчитај пораки од сите проекти', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => 'Погл. $1 {{PLURAL:$1|потпроект|потпроекти}}', # Fuzzy
 );
 
 /** Malayalam (മലയാളം)
@@ -16697,12 +16699,12 @@ $messages['ml'] = array(
 	'translate-stats-workflow' => 'സ്ഥിതി',
 	'translate-dynagroup-recent-label' => 'സമീപകാല പരിഭാഷകൾ',
 	'translate-gethelp' => 'സഹായം',
-	'translate-msggroupselector-projects' => 'സംരംഭങ്ങള്‍',
-	'translate-msggroupselector-search-placeholder' => 'സംരംഭങ്ങള്‍ തിരയുക',
+	'translate-msggroupselector-projects' => 'സംരംഭങ്ങള്‍', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'സംരംഭങ്ങള്‍ തിരയുക', # Fuzzy
 	'translate-msggroupselector-search-all' => 'എല്ലാം',
 	'translate-msggroupselector-search-recent' => 'ഈയിടെ',
-	'translate-msggroupselector-load-from-all' => 'എല്ലാ സംരംഭങ്ങളില്‍ നിന്നും സന്ദേശങ്ങള്‍ കാണിക്കുക',
-	'translate-msggroupselector-view-subprojects' => '$1 ഉപസംരംഭങ്ങള്‍ കാണുക',
+	'translate-msggroupselector-load-from-all' => 'എല്ലാ സംരംഭങ്ങളില്‍ നിന്നും സന്ദേശങ്ങള്‍ കാണിക്കുക', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => '$1 ഉപസംരംഭങ്ങള്‍ കാണുക', # Fuzzy
 );
 
 /** Mongolian (монгол)
@@ -18321,12 +18323,12 @@ Dit is vooral nuttig voor de controletaken.',
 	'translate-dynagroup-last' => 'Laatste wijziging door {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Laatste wijziging door {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Hulp',
-	'translate-msggroupselector-projects' => 'Projecten',
-	'translate-msggroupselector-search-placeholder' => 'Zoek projecten',
+	'translate-msggroupselector-projects' => 'Projecten', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'Zoek projecten', # Fuzzy
 	'translate-msggroupselector-search-all' => 'Alle',
 	'translate-msggroupselector-search-recent' => 'Recent',
-	'translate-msggroupselector-load-from-all' => 'Berichten van alle projecten laden',
-	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subproject|subprojecten}} bekijken',
+	'translate-msggroupselector-load-from-all' => 'Berichten van alle projecten laden', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subproject|subprojecten}} bekijken', # Fuzzy
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎)
@@ -20021,12 +20023,12 @@ A ven dzortut a taj con ij travaj ëd revision.',
 	'translate-dynagroup-last' => 'Ùltime modìfiche ëd {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Ùltime modìfiche ëd {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Agiut',
-	'translate-msggroupselector-projects' => 'Proget',
-	'translate-msggroupselector-search-placeholder' => 'Sërché ij proget',
+	'translate-msggroupselector-projects' => 'Proget', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'Sërché ij proget', # Fuzzy
 	'translate-msggroupselector-search-all' => 'Tùit',
 	'translate-msggroupselector-search-recent' => 'Recent',
-	'translate-msggroupselector-load-from-all' => 'Carié ij mëssagi da tùit ij proget',
-	'translate-msggroupselector-view-subprojects' => 'Varda $1 {{PLURAL:$1|sot-proget|sot-proget}}', # Fuzzy
+	'translate-msggroupselector-load-from-all' => 'Carié ij mëssagi da tùit ij proget', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => 'Varda $1 {{PLURAL:$1|sot-proget}}', # Fuzzy
 );
 
 /** Western Punjabi (پنجابی)
@@ -26644,12 +26646,12 @@ $1',
 	'translate-dynagroup-last' => 'Востаннє змінено {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Востаннє змінено {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Довідка',
-	'translate-msggroupselector-projects' => 'Проекти',
-	'translate-msggroupselector-search-placeholder' => 'Шукати проекти',
+	'translate-msggroupselector-projects' => 'Проекти', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'Шукати проекти', # Fuzzy
 	'translate-msggroupselector-search-all' => 'Усі',
 	'translate-msggroupselector-search-recent' => 'Останні',
-	'translate-msggroupselector-load-from-all' => 'Завантажувати повідомлення з усіх проектів',
-	'translate-msggroupselector-view-subprojects' => 'Переглянути $1 {{PLURAL:$1|підпроект|підпроекти|підпроектів}}',
+	'translate-msggroupselector-load-from-all' => 'Завантажувати повідомлення з усіх проектів', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => 'Переглянути $1 {{PLURAL:$1|підпроект|підпроекти|підпроектів}}', # Fuzzy
 );
 
 /** Urdu (اردو)
@@ -27574,12 +27576,12 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'translate-dynagroup-last' => 'Thay đổi cuối cùng của $1',
 	'translate-dynagroup-lastc' => 'Thay đổi cuối cùng của $1 ($2)',
 	'translate-gethelp' => 'Trợ giúp',
-	'translate-msggroupselector-projects' => 'Dự án',
-	'translate-msggroupselector-search-placeholder' => 'Tìm dự án',
+	'translate-msggroupselector-projects' => 'Dự án', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => 'Tìm dự án', # Fuzzy
 	'translate-msggroupselector-search-all' => 'Tất cả',
 	'translate-msggroupselector-search-recent' => 'Gần đây',
-	'translate-msggroupselector-load-from-all' => 'Tải thông điệp từ tất cả các dự án',
-	'translate-msggroupselector-view-subprojects' => 'Xem $1 dự án con',
+	'translate-msggroupselector-load-from-all' => 'Tải thông điệp từ tất cả các dự án', # Fuzzy
+	'translate-msggroupselector-view-subprojects' => 'Xem $1 dự án con', # Fuzzy
 );
 
 /** Volapük (Volapük)
