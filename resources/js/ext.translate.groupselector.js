@@ -3,6 +3,7 @@
 
 	function TranslateMessageGroupSelector( element, options ) {
 		this.shown = false;
+		this.filtering = false;
 		this.$group = $( element );
 		this.$menu = null;
 		this.parentGroupId = null;
@@ -227,10 +228,10 @@
 		 * Get recent message groups.
 		 */
 		getRecentGroups: function () {
-			var queryParams,
+			var groupSelector = this,
+				queryParams,
 				apiURL,
 				messageGroups,
-				groupSelector = this,
 				$msgGroupList;
 
 			queryParams = {
@@ -251,7 +252,7 @@
 				$.each( result.translateuser.recentgroups, function ( index ) {
 					messageGroupId = result.translateuser.recentgroups[index];
 					messagegroup = getGroup( messageGroupId, messageGroups );
-					$msgGroups.push( prepareMessageGroup( messagegroup ) );
+					$msgGroups.push( groupSelector.prepareMessageGroupRow( messagegroup ) );
 				} );
 				$msgGroupList.append( $msgGroups );
 			} );
@@ -267,29 +268,47 @@
 			return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, "\\$&" );
 		},
 
+		flatGroupList: function( source, target ) {
+			for ( var i = 0; i < source.length; i++ ) {
+				if ( source[i].groups ) {
+					this.flatGroupList( source[i].groups, target );
+				}
+
+				target.push( source[i] );
+			}
+		},
+
 		/**
 		 * Search the message groups based on lable or id
 		 * @param query
 		 */
 		filter: function ( query ) {
-			var $msgGroupList,
-				messageGroup,
-				matcher = new RegExp( "^" + this.escapeRegex( query ), 'i' ),
-				groupSelector = this;
+			var $msgGroupList, flatGroupList, $msgGroupList,
+				matcher = new RegExp( "^" + this.escapeRegex( query ), 'i' );
 
-			$msgGroupList = groupSelector.$menu.find( '.ext-translate-msggroup-list' );
+			if ( !this.filtering ) {
+				this.filtering = true;
+				this.$menu.find( '.ext-translate-msggroup-list' ).empty();
+				flatGroupList = [];
+				this.flatGroupList( $( '.ext-translate-msggroup-selector' ).data( 'msggroups' ), flatGroupList );
+				this.getGroups( this.parentGroupId, flatGroupList );
+			}
 
+			$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' );
 			$msgGroupList.find( '.ext-translate-msggroup-item' ).each( function () {
-				messageGroup = $( this ).data( 'msggroup' );
+				var $this = $( this ),
+					messageGroup = $this.data( 'msggroup' );
+
 				if ( matcher.test( messageGroup.label ) ||
 					matcher.test( messageGroup.id )
 				) {
-					$( this ).show();
+					$this.show();
 				} else {
-					$( this ).hide();
+					$this.hide();
 				}
 			} );
 		},
+
 		/**
 		 *
 		 * @param parentGroupId
@@ -340,7 +359,9 @@
 
 			$msgGroupList = groupSelector.$menu.find( '.ext-translate-msggroup-list' );
 
-			if ( parentGroupId ) {
+			if ( this.filtering ) {
+				messageGroups = msgGroups;
+			} else if ( parentGroupId ) {
 				messageGroups = msgGroups || groupSelector.$group.data( 'msggroup' ).groups;
 			} else {
 				messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
@@ -349,12 +370,12 @@
 
 			$.each( messageGroups, function ( index ) {
 				messagegroup = messageGroups[index];
-				$msgGroups.push( prepareMessageGroup( messagegroup ) );
+				$msgGroups.push( groupSelector.prepareMessageGroupRow( messagegroup ) );
 			} );
 
 			if ( !parentGroupId ) {
 				$msgGroupList.append( $msgGroups );
-			} else{
+			} else {
 				$parent = $msgGroupList.find( '.ext-translate-msggroup-item[data-msggroupid=' +
 					parentGroupId + ']' );
 
@@ -383,8 +404,64 @@
 			}
 
 			return isSupported;
-		}
+		},
 
+		/**
+		* prepare MessageGroup item in the selector
+		*/
+		prepareMessageGroupRow: function ( messagegroup ) {
+			var $row,
+				$icon,
+				$label,
+				$statsbar,
+				$subGroupsLabel,
+				style = '';
+
+			$row = $( '<div>' ).addClass( 'row ext-translate-msggroup-item' )
+				.attr( 'data-msggroupid', messagegroup.id )
+				.data( 'msggroup', messagegroup );
+
+			$icon = $( '<div>' ).addClass( 'one column icon' );
+
+			$statsbar = $( '<div>' ).languagestatsbar( {
+				// FIXME: use the language code provided by Special:Translate
+				language: mw.config.get( 'wgUserLanguage' ),
+				group: messagegroup.id
+			} );
+
+			$label = $( '<div>' ).addClass( 'seven columns label' )
+				.text( messagegroup.label )
+				.attr( { title: messagegroup.description } )
+				.append( $statsbar );
+
+			if ( messagegroup.icon && messagegroup.icon.raster ) {
+				style += "background-image: url(--);";
+				style = style.replace( /--/g, messagegroup.icon.raster );
+			}
+
+			if ( messagegroup.icon && messagegroup.icon.vector ) {
+				style +=
+					"background-image: -webkit-linear-gradient(transparent, transparent), url(--);" +
+					"background-image: -moz-linear-gradient(transparent, transparent), url(--);" +
+					"background-image: linear-gradient(transparent, transparent), url(--);";
+				style = style.replace( /--/g, messagegroup.icon.vector );
+			}
+
+			if ( style !== '' ) {
+				$icon.attr( 'style', style );
+			}
+
+			$subGroupsLabel = $( [] );
+
+			if ( messagegroup.groups && messagegroup.groups.length > 0 && !this.filtering ) {
+				$subGroupsLabel = $( '<div>' )
+					.addClass( 'four columns subgroup-info' )
+					.text( mw.msg( 'translate-msggroupselector-view-subprojects',
+						messagegroup.groups.length ) );
+			}
+
+			return $row.append( $icon, $label, $subGroupsLabel );
+		}
 	};
 
 	/*
@@ -413,63 +490,6 @@
 	/*
 	 * Private functions
 	 */
-
-	/**
-	 * prepare MessageGroup item in the selector
-	 */
-	function prepareMessageGroup ( messagegroup ) {
-		var $row,
-			$icon,
-			$label,
-			$statsbar,
-			$subGroupsLabel,
-			style = '';
-
-		$row = $( '<div>' ).addClass( 'row ext-translate-msggroup-item' )
-			.attr( 'data-msggroupid', messagegroup.id )
-			.data( 'msggroup', messagegroup );
-
-		$icon = $( '<div>' ).addClass( 'one column icon' );
-
-		$statsbar = $( '<div>' ).languagestatsbar( {
-			// FIXME: use the language code provided by Special:Translate
-			language: mw.config.get( 'wgUserLanguage' ),
-			group: messagegroup.id
-		} );
-
-		$label = $( '<div>' ).addClass( 'seven columns label' )
-			.text( messagegroup.label )
-			.attr( { title: messagegroup.description } )
-			.append( $statsbar );
-
-		if ( messagegroup.icon && messagegroup.icon.raster ) {
-			style += "background-image: url(--);";
-			style = style.replace( /--/g, messagegroup.icon.raster );
-		}
-
-		if ( messagegroup.icon && messagegroup.icon.vector ) {
-			style +=
-				"background-image: -webkit-linear-gradient(transparent, transparent), url(--);" +
-				"background-image: -moz-linear-gradient(transparent, transparent), url(--);" +
-				"background-image: linear-gradient(transparent, transparent), url(--);";
-			style = style.replace( /--/g, messagegroup.icon.vector );
-		}
-
-		if ( style !== '' ) {
-			$icon.attr( 'style', style );
-		}
-
-		$subGroupsLabel = $( [] );
-
-		if ( messagegroup.groups && messagegroup.groups.length > 0 ) {
-			$subGroupsLabel = $( '<div>' )
-				.addClass( 'four columns subgroup-info' )
-				.text( mw.msg( 'translate-msggroupselector-view-subprojects',
-					messagegroup.groups.length ) );
-		}
-
-		return $row.append( $icon, $label, $subGroupsLabel );
-	}
 
 	/**
 	 * Find a group from an array of message groups
