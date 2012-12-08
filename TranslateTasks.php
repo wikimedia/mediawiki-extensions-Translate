@@ -414,6 +414,9 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 			$writer = $this->group->getWriter();
 			$data = $writer->webExport( $this->collection );
 		}
+
+		$filename = basename( $this->group->getSourceFilePath( $this->collection->getLanguage() ) );
+		header( "Content-Disposition: attachment; filename=\"$filename\"" );
 		return $data;
 	}
 }
