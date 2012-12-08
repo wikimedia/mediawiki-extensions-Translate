@@ -78,14 +78,11 @@ class MessageGroups {
 		wfProfileIn( __METHOD__ );
 
 		global $wgEnablePageTranslation, $wgTranslateGroupFiles;
-		global $wgTranslateAC, $wgTranslateEC, $wgTranslateCC;
-		global $wgAutoloadClasses;
-		global $wgTranslateWorkflowStates;
+		global $wgTranslateCC, $wgAutoloadClasses, $wgTranslateWorkflowStates;
 
 		$deps = array();
 		$deps[] = new GlobalDependency( 'wgEnablePageTranslation' );
 		$deps[] = new GlobalDependency( 'wgTranslateGroupFiles' );
-		$deps[] = new GlobalDependency( 'wgTranslateEC' );
 		$deps[] = new GlobalDependency( 'wgTranslateCC' );
 		$deps[] = new GlobalDependency( 'wgTranslateExtensionDirectory' );
 		$deps[] = new GlobalDependency( 'wgTranslateWorkflowStates' );
@@ -145,18 +142,6 @@ class MessageGroups {
 			$wgTranslateCC[$id] = $group;
 		}
 		wfProfileOut( __METHOD__ . '-agg' );
-
-		// Convert $wgTranslateEC/AC to $wgTranslateCC to simplify handling
-		wfProfileIn( __METHOD__ . '-acec' );
-		foreach ( $wgTranslateEC as $id ) {
-			$creater = $wgTranslateAC[$id];
-			if ( is_array( $creater ) ) {
-				$wgTranslateCC[$id] = call_user_func( $creater, $id );
-			} else {
-				$wgTranslateCC[$id] = new $creater;
-			}
-		}
-		wfProfileOut( __METHOD__ . '-acec' );
 
 		$key = wfMemckey( 'translate-groups' );
 		$value = array(
