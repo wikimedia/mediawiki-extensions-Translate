@@ -224,6 +224,8 @@ class TranslateUtils {
 			unset( $languageNames[$dummyLanguageCode] );
 		}
 
+		wfRunHooks( 'TranslateSupportedLanguages', array( &$languageNames, $code ) );
+
 		return $languageNames;
 	}
 
