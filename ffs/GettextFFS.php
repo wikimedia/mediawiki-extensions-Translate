@@ -163,7 +163,7 @@ class GettextFFS extends SimpleFFS {
 		}
 
 		$item = array(
-			'ctxt'  => '',
+			'ctxt'  => false,
 			'id'    => '',
 			'str'   => '',
 			'flags' => array(),
@@ -283,13 +283,21 @@ class GettextFFS extends SimpleFFS {
 	public static function generateKeyFromItem( array $item, $algorithm = 'legacy' ) {
 		$lang = Language::factory( 'en' );
 
+		if ( $item['ctxt'] === '' ) {
+			/* Messages with msgctxt as empty string should be different
+			 * from messages without any msgctxt. To avoid BC break make
+			 * the empty ctxt a special case */
+			$hash = sha1( $item['id'] . 'MSGEMPTYCTXT' );
+		} else {
+			$hash = sha1( $item['ctxt'] . $item['id'] );
+		}
+
 		if ( $algorithm === 'simple' ) {
-			$hash = substr( sha1( $item['ctxt'] . $item['id'] ), 0, 6 );
+			$hash = substr( $hash, 0, 6 );
 			$snippet = $lang->truncate( $item['id'], 30, '' );
 			$snippet = str_replace( ' ', '_', trim( $snippet ) );
 		} else { // legacy
 			global $wgLegalTitleChars;
-			$hash = sha1( $item['ctxt'] . $item['id'] );
 			$snippet = $item['id'];
 			$snippet = preg_replace( "/[^$wgLegalTitleChars]/", ' ', $snippet );
 			$snippet = preg_replace( "/[:&%\/_]/", ' ', $snippet );
