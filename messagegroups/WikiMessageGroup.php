@@ -48,7 +48,12 @@ class WikiMessageGroup extends MessageGroupOld {
 		$definitions = array();
 
 		// In theory the page could have templates that are substitued
-		$contents = wfMessage( $this->source )->text();
+		$source = wfMessage( $this->source );
+		if ( $source->isDisabled() ) {
+			return array();
+		}
+
+		$contents = $source->text();
 		$contents = preg_replace( '~^\s*#.*$~m', '', $contents );
 		$messages = preg_split( '/\s+/', $contents );
 
