@@ -10,7 +10,8 @@
 
 /**
  * Custom testing framework for page translation parser.
- * @ingroup PageTranslation Database
+ * @ingroup PageTranslation
+ * @group Database
  */
 class PageTranslationParserTest extends MediaWikiTestCase {
 	public static function provideTestFiles() {
