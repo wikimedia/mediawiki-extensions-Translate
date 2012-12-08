@@ -53,7 +53,7 @@ Before marking this version for translation, check that the changes to translati
 	'tpt-unmarked' => 'Page $1 is no longer marked for translation.',
 
 	# Page list on the special page
-	'tpt-list-nopages' => 'No pages are marked for translation nor ready to be marked for translation.',
+	'tpt-list-nopages' => 'No pages are marked for translation or ready to be marked for translation.',
 
 	'tpt-new-pages-title' => 'Pages proposed for translation',
 	'tpt-old-pages-title' => 'Pages in translation',
@@ -68,7 +68,7 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 	'tpt-discouraged-pages' => '{{PLURAL:$1|This page has|These pages have}} been discouraged from further translation.',
 
 	'tpt-select-prioritylangs' => 'Comma-separated list of priority language codes:',
-	'tpt-select-prioritylangs-force' => 'Prevent translations to other languages than the priority languages',
+	'tpt-select-prioritylangs-force' => 'Prevent translations to languages other than the priority languages',
 	'tpt-select-prioritylangs-reason' => 'Reason:',
 	'tpt-sections-prioritylangs' => 'Priority languages',
 
@@ -88,7 +88,7 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 	'translate-tag-markthis' => 'Mark this page for translation',
 	'translate-tag-markthisagain' => 'This page has <span class="plainlinks">[$1 changes]</span> since it was last <span class="plainlinks">[$2 marked for translation]</span>.',
 	'translate-tag-hasnew' => 'This page contains <span class="plainlinks">[$1 changes]</span> which are not marked for translation.',
-	'tpt-translation-intro' => 'This page is a <span class="plainlinks">[$1 translated version]</span> of a page [[$2]] and the translation is $3% complete.',
+	'tpt-translation-intro' => 'This page is a <span class="plainlinks">[$1 translated version]</span> of a page [[$2]] and the translation is $3 % complete.',
 	'tpt-translation-intro-fuzzy' => 'Outdated translations are marked like this.',
 
 	'tpt-languages-legend' => 'Other languages:',
@@ -96,7 +96,7 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 	'tpt-languages-zero' => 'Start translation for this language',
 
 	'tpt-target-page' => 'This page cannot be updated manually.
-This page is a translation of page [[$1]] and the translation can be updated using [$2 the translation tool].',
+This page is a translation of the page [[$1]] and the translation can be updated using [$2 the translation tool].',
 	'tpt-unknown-page' => 'This namespace is reserved for content page translations.
 The page you are trying to edit does not seem to correspond any page marked for translation.',
 	'tpt-translation-restricted' => 'Translation of this page to this language has been prevented by a translation administrator.
@@ -136,6 +136,7 @@ Translation unit text: <pre>$1</pre>',
 	'pt-shake-empty' => 'Empty translation unit for marker "$1".',
 
 	# logging system
+	# @todo Switch to new log system
 	'pt-log-header' => 'Log for actions related to the page translation system',
 	'pt-log-name' => 'Page translation log',
 	'pt-log-mark' => '{{GENDER:$2|marked}} revision $3 of page "[[:$1]]" for translation',
@@ -157,8 +158,8 @@ Translation unit text: <pre>$1</pre>',
 	# move page replacement
 	'pt-movepage-title' => 'Move translatable page "$1"',
 	'pt-movepage-blockers' => 'The translatable page cannot be moved to a new name because of the following {{PLURAL:$1|error|errors}}:',
-	'pt-movepage-block-base-exists' => 'The target base page "[[:$1]]" exists.',
-	'pt-movepage-block-base-invalid' => 'The target base page is not a valid title.',
+	'pt-movepage-block-base-exists' => 'The target translatable page "[[:$1]]" exists.',
+	'pt-movepage-block-base-invalid' => 'The target translatable page name is not a valid title.',
 	'pt-movepage-block-tp-exists' => 'The target translation page "[[:$2]]" exists.',
 	'pt-movepage-block-tp-invalid' => 'The target translation page title for "[[:$1]]" would be invalid (too long?).',
 	'pt-movepage-block-section-exists' => 'The target page "[[:$2]]" for the translation unit exists.',
@@ -198,7 +199,7 @@ Please check the [[Special:Log/pagetranslation|page translation log]] for errors
 	'pt-deletepage-full-title' => 'Deleting translatable page "$1".',
 
 	'pt-deletepage-invalid-title' => 'The specified page is not valid.',
-	'pt-deletepage-invalid-text' => 'The specified page is not a translatable page nor translation of it.',
+	'pt-deletepage-invalid-text' => 'The specified page is not a translatable page nor a translation page.',
 
 	'pt-deletepage-action-check' => 'List pages to be deleted',
 	'pt-deletepage-action-perform' => 'Do the deletion',
@@ -206,7 +207,7 @@ Please check the [[Special:Log/pagetranslation|page translation log]] for errors
 
 	'pt-deletepage-lang-legend' => 'Delete translation page',
 	'pt-deletepage-full-legend' => 'Delete translatable page',
-	'pt-deletepage-any-legend' => 'Delete translatable page or translation of translatable page',
+	'pt-deletepage-any-legend' => 'Delete translatable page or translation page',
 	'pt-deletepage-current' => 'Page name:',
 	'pt-deletepage-reason' => 'Reason:',
 	'pt-deletepage-subpages' => 'Delete all subpages',
@@ -221,8 +222,8 @@ Please check the [[Special:Log/pagetranslation|page translation log]] for errors
 	'pt-deletepage-lang-logreason' => 'Part of translation page "$1".',
 	'pt-deletepage-started' => 'Please check the [[Special:Log/pagetranslation|page translation log]] for errors and completion message.',
 
-	'pt-deletepage-intro' => 'This special page allows you delete whole translatable pages or translations into one language.
-The delete action will not be instant, because many pages will need to be deleted.
+	'pt-deletepage-intro' => 'This special page allows you delete a whole translatable page, or an individual translation page in a language.
+The delete action will not be instant, because all the pages depending on them will also need to be deleted.
 Failures will be logged in the [[Special:Log/pagetranslation|page translation log]] and they need to be repaired by hand.',
 
 );
