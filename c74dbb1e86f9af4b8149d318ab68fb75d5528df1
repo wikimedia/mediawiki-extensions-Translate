@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAADbX//2Lw\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-09T16:33:25Z",
+      "side": 1,
+      "message": "There should not be a space here.",
+      "revId": "c74dbb1e86f9af4b8149d318ab68fb75d5528df1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//2p8\u003d",
         "filename": "PageTranslation.i18n.php",
         "patchSetId": 1
@@ -31,6 +48,58 @@
       "side": 1,
       "message": "Does it harm here?",
       "parentUuid": "AAADbX//2p8\u003d",
+      "revId": "c74dbb1e86f9af4b8149d318ab68fb75d5528df1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//2Ls\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-09T16:33:25Z",
+      "side": 1,
+      "message": "No. So this discussion is closed.",
+      "parentUuid": "AAADbX//2lc\u003d",
+      "revId": "c74dbb1e86f9af4b8149d318ab68fb75d5528df1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//2Lo\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-09T16:33:25Z",
+      "side": 1,
+      "message": "You changed nor to or above, so doing it here too seems consistent.",
+      "revId": "c74dbb1e86f9af4b8149d318ab68fb75d5528df1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//2LY\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-09T16:33:25Z",
+      "side": 1,
+      "message": "\"need to be deleted\", or simply \"deleted\"?",
       "revId": "c74dbb1e86f9af4b8149d318ab68fb75d5528df1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
