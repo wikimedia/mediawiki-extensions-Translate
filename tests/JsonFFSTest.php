@@ -14,6 +14,7 @@
 class JsonFFSTest extends MediaWikiTestCase {
 
 	public function setUp() {
+		parent::setUp();
 		$this->groupConfiguration = array(
 			'BASIC' => array(
 				'class' => 'FileBasedMessageGroup',
