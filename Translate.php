@@ -595,27 +595,11 @@ $wgTranslateAuthorBlacklist[] = array( 'black', '/^.*;.*;.*Bot$/Ui' );
 $wgTranslateMessageNamespaces = array( NS_MEDIAWIKI );
 
 /**
- * AC = Available classes.
- * Basic classes register themselves in here.
- */
-$wgTranslateAC = array(
-	'core'                => 'CoreMessageGroup',
-	'core-0-mostused'     => 'CoreMostUsedMessageGroup',
-);
-
-/**
- * EC = Enabled classes.
- * Which of the basic classes are enabled.
- * To enable them all, use:
- *  $wgTranslateEC = $wgTranslateAC;
- */
-$wgTranslateEC = array();
-
-/**
  * CC = Custom classes.
- * Custom classes register themselves here.
+ * Custom classes can register themselves here.
  * Key is always the group id, while the value is an message group object
  * or callable function.
+ * @deprecated Use TranslatePostInitGroups hook instead.
  */
 $wgTranslateCC = array();
 

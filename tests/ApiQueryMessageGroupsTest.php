@@ -19,9 +19,7 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		global $wgHooks;
 		$this->setMwGlobals( array(
 			'wgHooks' => $wgHooks,
-			'wgTranslateAC' => array(),
 			'wgTranslateCC' => array(),
-			'wgTranslateEC' => array(),
 			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
 			'wgTranslateWorkflowStates' => false,
 			'wgTranslateGroupFiles' => array(),
