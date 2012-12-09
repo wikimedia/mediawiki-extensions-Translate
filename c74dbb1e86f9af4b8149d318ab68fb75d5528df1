@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//2HI\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2012-12-09T18:37:34Z",
+      "side": 1,
+      "message": "After checking it better, I kept the \"nor\" here: above, the negation of the subject in \"No pages are\" should, I believe, extend to the coordinated predicate, so a further negation in the coordinator would be redundant; here, \"not\" may negate only \"a translatable page\".\nI didn\u0027t find much of use in the Oxford English Dictionary or Oxford English Grammar, except perhaps 5.12.16 in the latter, and I don\u0027t claim to have a good knowledge of English grammar, but it seems to make sense...",
+      "parentUuid": "AAADbX//2Lo\u003d",
+      "revId": "c74dbb1e86f9af4b8149d318ab68fb75d5528df1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//2LY\u003d",
         "filename": "PageTranslation.i18n.php",
         "patchSetId": 1
