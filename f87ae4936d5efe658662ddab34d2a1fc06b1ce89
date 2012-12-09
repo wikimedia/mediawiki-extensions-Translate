@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//2fQ\u003d",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-09T14:29:54Z",
+      "side": 1,
+      "message": "695: $changed \u003d null;\n715: $page-\u003eaddMarkedTag( $newrevision, $changed );\n\nThere\u0027s no exit between 695 and 715, so the second parameter of addMarkedTag can be called with null, so $changed here apparently is allowed to be null instead of array, too.\n\nIf my logic flawed or is the code bugged?",
+      "parentUuid": "AAADbX//2fk\u003d",
+      "revId": "f87ae4936d5efe658662ddab34d2a1fc06b1ce89",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//3og\u003d",
         "filename": "tag/SpecialPageTranslation.php",
         "patchSetId": 2
