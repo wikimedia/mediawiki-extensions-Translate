@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//2H8\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2012-12-09T17:56:17Z",
+      "side": 1,
+      "message": "SI requires it https://en.wikipedia.org/wiki/Percent_sign#Spacing and MediaWiki accepts this implicitly by automatically converting such spaces to nbsp",
+      "parentUuid": "AAADbX//2Lw\u003d",
+      "revId": "c74dbb1e86f9af4b8149d318ab68fb75d5528df1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//2p8\u003d",
         "filename": "PageTranslation.i18n.php",
         "patchSetId": 1
@@ -100,6 +118,24 @@
       "writtenOn": "2012-12-09T16:33:25Z",
       "side": 1,
       "message": "\"need to be deleted\", or simply \"deleted\"?",
+      "revId": "c74dbb1e86f9af4b8149d318ab68fb75d5528df1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//2H4\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2012-12-09T17:56:17Z",
+      "side": 1,
+      "message": "\"need to\" stresses the burden over the system, but yes, quite redundant",
+      "parentUuid": "AAADbX//2LY\u003d",
       "revId": "c74dbb1e86f9af4b8149d318ab68fb75d5528df1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
