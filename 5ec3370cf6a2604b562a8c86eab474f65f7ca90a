@@ -124,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//2NA\u003d",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-12-09T16:14:52Z",
+      "side": 1,
+      "message": "See comment on patch set 5.",
+      "parentUuid": "AAADbX//3pg\u003d",
+      "revId": "5ec3370cf6a2604b562a8c86eab474f65f7ca90a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//3pY\u003d",
         "filename": "resources/js/ext.translate.groupselector.js",
         "patchSetId": 3
