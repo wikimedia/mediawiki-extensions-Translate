@@ -588,6 +588,7 @@ This warning indicates that the namespace in the translation does not match the 
 	'translate-pref-editassistlang' => 'Used in [[Special:Preferences]] under the {{msg-mw|prefs-editing}} tab.',
 	'prefs-translate' => 'Caption of a section at [[Special:Preferences#prefsection-3|Special:Preferences]]',
 	'translate-pref-editassistlang-help' => 'Used in [[Special:Preferences]], tab Editing.',
+	'translate-pref-jsedit' => "Setting in the preferences which enables the Translate extension own editing tools, like pop-ups and inline editor, which are based on JavaScript/AJAX features and replace the normal editing screen in some, most or all cases depending on the wiki's configuration and release.",
 	'right-translate' => '{{doc-right|translate}}',
 	'right-translate-manage' => '{{doc-right|translate-manage}}',
 	'action-translate-manage' => '{{doc-action|translate-manage}}',
@@ -2596,19 +2597,21 @@ $1',
 );
 
 /** Bavarian (Boarisch)
+ * @author Bua333
  * @author Mucalexx
  */
 $messages['bar'] = array(
-	'translate' => 'Ywersétzen',
+	'translate' => 'Ibasetzn',
 	'translate-desc' => "Dagänzd a [[Special:Translate|Speziaalseiten]] zan Ywersétzen vah d' MediaWiki-Systémnoochrichtner und dénen eanerre weidern Auhwendunger.",
-	'translate-taction-translate' => 'Ywersétzen',
-	'translate-taction-proofread' => 'Korrekturleesen',
-	'translate-taction-lstats' => 'Staatistiken za da Sprooch',
-	'translate-taction-mstats' => 'Staatistiken za da Noochrichtengruppm',
-	'translate-taction-export' => 'Exportiern',
-	'translate-taction-disabled' => "Dé Akzión is a' dém Wiki deaktivierd.",
+	'translate-taction-translate' => 'Ibasetzn',
+	'translate-taction-proofread' => 'Korrekdualesen',
+	'translate-taction-lstats' => 'Statistikn zua Sproch',
+	'translate-taction-mstats' => 'Statistikn zua Nochrichtngruppm',
+	'translate-taction-export' => 'Exportian',
+	'translate-taction-disabled' => 'De Aktion is in em Wiki deaktiviad.',
 	'translate-page-language' => 'Sprooch',
 	'translate-page-limit' => 'Limit',
+	'translate-submit' => 'Hoin',
 	'translate-edit-information' => 'Informazión zur da Systémnoochricht ($1)',
 	'translate-edit-in-other-languages' => 'Systémnoochricht auf åndre Sproochen',
 	'translate-edit-tab-list' => 'Noochrichtenlisten',
@@ -2663,10 +2666,6 @@ $messages['bcl'] = array(
 $messages['be-tarask'] = array(
 	'translate' => 'Пераклад',
 	'translate-desc' => '[[Special:Translate|Спэцыяльная старонка]] для перакладу MediaWiki і іншых праграмаў',
-	'translate-showsub' => 'Паказаць $1 {{PLURAL:$1|падгрупу|падгрупы|падгрупаў}}.',
-	'translate-grouplisting' => 'Гэта сьпіс усіх групаў, якія можна перакладаць.
-Націсьніце на назву групы для паказу сьпісу неперакладзеных паведамленьняў.',
-	'translate-grouplisting-empty' => 'Няма групаў паведамленьняў, сканфігураваных для перакладу.',
 	'translate-taskui-view' => 'Паказаць усе паведамленьні',
 	'translate-taskui-untranslated' => 'Паказаць неперакладзеныя паведамленьні',
 	'translate-taskui-optional' => 'Паказаць неабавязковыя паведамленьні.',
@@ -2767,7 +2766,7 @@ $messages['be-tarask'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Крынічны тэкст выкарыстоўвае <nowiki>{{PLURAL:}}</nowiki>, а пераклад — не.',
 	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> быў выкарыстаны {{PLURAL:$1|з адной формай|з $1 формамі}}, але {{PLURAL:$2|падтрымліваецца толькі адна форма|падтрымліваюцца $2 формаў}} (за выняткам формаў 0= і 1=).',
-	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> мае аднолькавыя формы. <nowiki>{{PLURAL:$1|мэтро|мэтро}}</nowiki> мусіць быць замененае на <nowiki>{{PLURAL:$1|мэтро}}</nowiki>.', # Fuzzy
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> мае аднолькавыя формы на канцы. <nowiki>{{PLURAL:$1|мэтро|мэтро}}</nowiki> мусіць быць замененае на <nowiki>{{PLURAL:$1|мэтро}}</nowiki>.',
 	'translate-checks-pagename' => 'Прастора назваў зьменена ў крынічным тэксьце',
 	'translate-checks-format' => 'Гэты пераклад няслушна перакладае крынічны тэкст альбо ўтрымлівае сынтаксычныя памылкі: $1',
 	'translate-checks-escape' => 'Наступнае выдзяленьне можа быць выпадковым: <strong>$1</strong>',
@@ -2981,11 +2980,19 @@ $1',
 	'translate-dynagroup-recent-label' => 'Апошнія пераклады',
 	'translate-dynagroup-recent-desc' => 'Гэтая група паведамленьняў зьмяшчае ўсі апошнія пераклады на гэтую мову.
 Карысьней усяго для вычыткі.',
+	'translate-dynagroup-additions-label' => 'Апошнія дапаўненьні',
+	'translate-dynagroup-additions-desc' => 'Гэтая група зьмяшчае новыя і зьмененыя паведамленьні.',
 	'translate-dynagroup-by' => 'Пераклад выкананы {{GENDER:$1|ўдзельнікам|ўдзельніцай}} $1',
 	'translate-dynagroup-byc' => 'Пераклад выкананы {{GENDER:$1|ўдзельнікам|ўдзельніцай}} $1 ($2)',
 	'translate-dynagroup-last' => 'Апошняе зьмяненьне выкананае {{GENDER:$1|ўдзельнікам|ўдзельніцай}} $1',
 	'translate-dynagroup-lastc' => 'Апошняе зьмяненьне выкананае {{GENDER:$1|ўдзельнікам|ўдзельніцай}} $1 ( $2 )',
 	'translate-gethelp' => 'Дапамога',
+	'translate-msggroupselector-projects' => 'Групы паведамленьняў',
+	'translate-msggroupselector-search-placeholder' => 'Шукаць групы',
+	'translate-msggroupselector-search-all' => 'Усе',
+	'translate-msggroupselector-search-recent' => 'Апошнія',
+	'translate-msggroupselector-load-from-all' => 'Загрузіць паведамленьні з усіх групаў',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|падгрупа|падгрупы|падгрупаў}}',
 );
 
 /** Bulgarian (български)
@@ -7924,10 +7931,6 @@ $1',
 $messages['fi'] = array(
 	'translate' => 'Käännä',
 	'translate-desc' => '[[Special:Translate|Toimintosivu]], jolla voi kääntää MediaWikiä ja muutakin.',
-	'translate-showsub' => 'Näytä {{PLURAL:$1|alaryhmä|$1 alaryhmää}}.',
-	'translate-grouplisting' => 'Tämä on kaikkien käännettävien ryhmien luettelo.
-Saat listan kääntämättömistä viesteistä napsauttamalla ryhmän nimeä.',
-	'translate-grouplisting-empty' => 'Yhtään viestiryhmää ei ole asetettu käännettäväksi.',
 	'translate-taskui-view' => 'Näytä kaikki viestit',
 	'translate-taskui-untranslated' => 'Näytä kääntämättömät viestit',
 	'translate-taskui-optional' => 'Näytä valinnaiset viestit',
@@ -8230,6 +8233,12 @@ Tiedot: $1',
 	'translate-dynagroup-last' => 'Viimeisimmän muutoksen teki {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Viimeisimmän muutoksen teki {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Ohje',
+	'translate-msggroupselector-projects' => 'Viestiryhmät',
+	'translate-msggroupselector-search-placeholder' => 'Hae ryhmiä',
+	'translate-msggroupselector-search-all' => 'Kaikki',
+	'translate-msggroupselector-search-recent' => 'Äskettäiset',
+	'translate-msggroupselector-load-from-all' => 'Lataa viestit kaikista ryhmistä',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|alaryhmä|alaryhmää}}',
 );
 
 /** French (français)
@@ -8245,6 +8254,7 @@ Tiedot: $1',
  * @author Jean-Frédéric
  * @author Litlok
  * @author Louperivois
+ * @author Ltrlg
  * @author McDutchie
  * @author Peter17
  * @author PieRRoMaN
@@ -8570,7 +8580,7 @@ Détails : $1',
 	'translate-workflowstatus' => 'Statut: $1',
 	'translate-workflow-set-do' => 'Activé',
 	'translate-workflow-set-doing' => 'Activation...',
-	'translate-workflow-set-done' => 'Activé!',
+	'translate-workflow-set-done' => 'Activé !',
 	'translate-workflow-set-error-alreadyset' => "L'état demandé est identique à l'état courant.",
 	'translate-workflow-autocreated-summary' => "Création automatique de la page pour l'état du processus de travail $1",
 	'translate-stats-workflow' => 'Statut',
@@ -8587,12 +8597,12 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'translate-dynagroup-last' => 'Dernière modification par  {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Dernière modification par  {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Aide',
-	'translate-msggroupselector-projects' => 'Projets', # Fuzzy
-	'translate-msggroupselector-search-placeholder' => 'Rechercher les projets', # Fuzzy
+	'translate-msggroupselector-projects' => 'Groupes de messages',
+	'translate-msggroupselector-search-placeholder' => 'Groupes de recherche',
 	'translate-msggroupselector-search-all' => 'Tous',
 	'translate-msggroupselector-search-recent' => 'Récent',
-	'translate-msggroupselector-load-from-all' => 'Charger les messages pour tous les projets', # Fuzzy
-	'translate-msggroupselector-view-subprojects' => 'Afficher $1 {{PLURAL:$1|sous-projet|sous-projets}}', # Fuzzy
+	'translate-msggroupselector-load-from-all' => 'Charger les messages pour tous les groupes',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|sous-projet|sous-projets}}',
 );
 
 /** Cajun French (français cadien)
@@ -12532,7 +12542,7 @@ Se sai dove o come è usato questo messaggio, puoi aiutare gli altri traduttori 
 	'translate-edit-tmsugs' => 'Suggerimenti dalla memoria delle traduzioni',
 	'translate-edit-tmmatch-source' => 'Testo di origine per la traduzione: $1',
 	'translate-edit-tmmatch' => '$1&nbsp;% di corrispondenza',
-	'translate-use-suggestion' => 'Sostituisce la traduzione presente con questo suggerimento.',
+	'translate-use-suggestion' => 'Sostituisci la traduzione presente con questo suggerimento.',
 	'translate-edit-tab-list' => 'Elenco dei messaggi',
 	'translate-edit-nopermission' => "Hai bisogno dell'autorizzazione per tradurre i messaggi.",
 	'translate-edit-askpermission' => 'Richiedi autorizzazione',
@@ -12574,7 +12584,7 @@ Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.'
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Sostituire {{PLURAL:$2|il marcatore seguente|i marcatori seguenti}} con quelli corretti: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La definizione usa <nowiki>{{PLURAL:}}</nowiki> ma la traduzione no.',
-	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> è stato utilizzato con {{PLURAL:$1|una forma|$1 forme}}, ma {{PLURAL:$2|è supportata solo una forma|sono supportate $2 forme}} (escludendo le forme 0= e 1=).',
+	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> è stato usato con {{PLURAL:$1|una forma|$1 forme}}, ma {{PLURAL:$2|è accettata solo una forma|sono accettate $2 forme}} (a parte le forme 0= e 1=).',
 	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> contiene una forma duplicata. <nowiki>&#123;&#123;PLURAL:$1|città|città&#125;&#125;</nowiki> dovrebbe essere scritto come <nowiki>{{PLURAL:$1|città}}</nowiki>.',
 	'translate-checks-pagename' => 'Namespace cambiato rispetto alla definizione',
 	'translate-checks-format' => 'Questa traduzione non segue la definizione o ha una sintassi non valida: $1',
@@ -12590,7 +12600,7 @@ Le traduzioni di un messaggio in queste lingue sono mostrate durante la traduzio
 L'elenco predefinito (default) delle lingue dipende dalla propria lingua.",
 	'translate-pref-editassistlang-bad' => "Codice lingua non valido nell'elenco:
 <nowiki>$1</nowiki>.",
-	'translate-pref-jsedit' => 'Editor di traduzione migliorato (JavaScript)',
+	'translate-pref-jsedit' => 'Strumento di traduzione migliorato (JavaScript)',
 	'right-translate' => "Modifica usando l'interfaccia di traduzione",
 	'right-translate-manage' => 'Gestisce gruppi di messaggi',
 	'action-translate-manage' => 'gestire i gruppi di messaggi',
@@ -12687,7 +12697,7 @@ Si consiglia di revisionare i messaggi attraverso [[Special:Translate|{{int:tran
 	'translate-save' => 'Salva ($1)',
 	'translate-jssti-add' => "Aggiungi all'elenco",
 	'managemessagegroups' => 'Gestione del gruppo di mesaggi',
-	'translate-smg-notallowed' => 'Non sei autorizzato ad eseguire questa azione.',
+	'translate-smg-notallowed' => 'Non sei autorizzato a eseguire questa azione.',
 	'translate-smg-nochanges' => 'Non ci sono modifiche da elaborare.',
 	'translate-smg-submit' => "Invia le modifiche per l'elaborazione",
 	'translate-smg-submitted' => 'Le definizioni dei messaggi sono state aggiornate. Le modifiche saranno elaborate in background.',
@@ -12703,7 +12713,7 @@ Si consiglia di revisionare i messaggi attraverso [[Special:Translate|{{int:tran
 	'translate-manage-action-fuzzy' => 'Importa e richiedi aggiornamento',
 	'translate-manage-nochanges' => 'Non ci sono cambiamenti nelle definizioni dei messaggi per questo gruppo.',
 	'translate-manage-nochanges-other' => "Non c'era alcuna novità per questa lingua.
-Usa il link sottostante per rivedere i dettagli del gruppo.",
+Usa il collegamento sottostante per rivedere i dettagli del gruppo.",
 	'translate-manage-inconsistent' => "È stata rilevata un'incoerenza nella richiesta.
 Cerca i cambiamenti e riprova.
 Dettagli: $1",
@@ -12794,12 +12804,12 @@ Utile per l'attività di correzione.",
 	'translate-dynagroup-last' => 'Ultima modifica di {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Ultima modifica di {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Aiuto',
-	'translate-msggroupselector-projects' => 'Progetti', # Fuzzy
-	'translate-msggroupselector-search-placeholder' => 'Ricerca progetti', # Fuzzy
+	'translate-msggroupselector-projects' => 'Gruppi di messaggi',
+	'translate-msggroupselector-search-placeholder' => 'Ricerca gruppi',
 	'translate-msggroupselector-search-all' => 'Tutti',
 	'translate-msggroupselector-search-recent' => 'Recenti',
-	'translate-msggroupselector-load-from-all' => 'Carica i messaggi da tutti i progetti', # Fuzzy
-	'translate-msggroupselector-view-subprojects' => 'Mostra $1 {{PLURAL:$1|sotto-progetto|sotto-progetti}}', # Fuzzy
+	'translate-msggroupselector-load-from-all' => 'Carica i messaggi da tutti i gruppi',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|sotto-gruppo|sotto-gruppi}}',
 );
 
 /** Japanese (日本語)
@@ -16465,12 +16475,12 @@ $1',
 	'translate-dynagroup-last' => 'Последната промена ја изврши {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Последната промена ја изврши {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Помош',
-	'translate-msggroupselector-projects' => 'Проекти', # Fuzzy
-	'translate-msggroupselector-search-placeholder' => 'Пребарување по проектите', # Fuzzy
+	'translate-msggroupselector-projects' => 'Групи на пораки',
+	'translate-msggroupselector-search-placeholder' => 'Пребарајте групи',
 	'translate-msggroupselector-search-all' => 'Сите',
 	'translate-msggroupselector-search-recent' => 'Скорешни',
-	'translate-msggroupselector-load-from-all' => 'Вчитај пораки од сите проекти', # Fuzzy
-	'translate-msggroupselector-view-subprojects' => 'Погл. $1 {{PLURAL:$1|потпроект|потпроекти}}', # Fuzzy
+	'translate-msggroupselector-load-from-all' => 'Вчитај пораки од сите групи',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|подгрупа|подгрупи}}',
 );
 
 /** Malayalam (മലയാളം)
@@ -17159,6 +17169,12 @@ Paling berguna dengan tugas menyemak (membaca pruf).',
 	'translate-dynagroup-last' => 'Perubahan terkini oleh {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Perubahan terkini oleh {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Bantuan',
+	'translate-msggroupselector-projects' => 'Kumpulan mesej',
+	'translate-msggroupselector-search-placeholder' => 'Cari dalam kumpulan',
+	'translate-msggroupselector-search-all' => 'Semua',
+	'translate-msggroupselector-search-recent' => 'Terkini',
+	'translate-msggroupselector-load-from-all' => 'Muatkan mesej-mesej dari semua kumpulan',
+	'translate-msggroupselector-view-subprojects' => '$1 subkumpulan',
 );
 
 /** Maltese (Malti)
@@ -18323,12 +18339,12 @@ Dit is vooral nuttig voor de controletaken.',
 	'translate-dynagroup-last' => 'Laatste wijziging door {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Laatste wijziging door {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Hulp',
-	'translate-msggroupselector-projects' => 'Projecten', # Fuzzy
-	'translate-msggroupselector-search-placeholder' => 'Zoek projecten', # Fuzzy
+	'translate-msggroupselector-projects' => 'Berichtengroepen',
+	'translate-msggroupselector-search-placeholder' => 'Groepen zoeken',
 	'translate-msggroupselector-search-all' => 'Alle',
 	'translate-msggroupselector-search-recent' => 'Recent',
-	'translate-msggroupselector-load-from-all' => 'Berichten van alle projecten laden', # Fuzzy
-	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subproject|subprojecten}} bekijken', # Fuzzy
+	'translate-msggroupselector-load-from-all' => 'Berichten van alle groepen laden',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgroep|subgroepen}}',
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎)
