@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//2Hg\u003d",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-09T18:18:47Z",
+      "side": 1,
+      "message": "Get rid of the space, please. The source you refer to states: There is no consensus as to whether or not to include a space between the number and percent sign in English. Many authorities prescribe that there should be a space, whilst others advise against it.\n\nOr even: It is often recommended that the percent sign is only used in tables and other places with space restrictions. In running text, it should be spelled out as percent or per cent (often in newspapers).",
+      "revId": "b63e67267756d18f73f1b7c0da44710cf4c85631",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
