@@ -193,6 +193,49 @@ abstract class TranslateTask {
 }
 
 /**
+ * Provides essentially free-form filtering access via tasks.
+ * This essentially makes all other tasks redundant, and once
+ * TUX is finished and everything is using WebAPI we can get
+ * rid of these.
+ * @since 2012-12-12
+ */
+class CustomFilteredMessagesTask extends TranslateTask {
+	protected $id = 'custom';
+
+	protected function preinit() {
+		$code = $this->options->getLanguage();
+		$this->collection = $this->group->initCollection( $code );
+		$this->collection->filter( 'ignored' );
+		if ( $this->context->getRequest()->getBool( 'optional' ) ) {
+			$this->collection->filter( 'optional' );
+		}
+
+		$filter = $this->context->getRequest()->getVal( 'filter' );
+		if ( !$filter ) {
+			return;
+		}
+		$negate = false;
+		if ( $filter[0] === '!' ) {
+			$negate = true;
+			$filter = substr( $filter, 1 );
+		}
+		var_dump( $filter );
+		$this->collection->filter( $filter, $negate );
+	}
+
+	protected function postinit() {
+		$this->collection->loadTranslations();
+	}
+
+	protected function output() {
+		$table = MessageTable::newFromContext( $this->context, $this->collection, $this->group );
+		$table->appendEditLinkParams( 'loadtask', $this->getId() );
+
+		return $table->fullTable();
+	}
+}
+
+/**
  * Lists all non-optional messages with translations if any.
  */
 class ViewMessagesTask extends TranslateTask {

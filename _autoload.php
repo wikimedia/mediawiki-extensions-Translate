@@ -203,6 +203,7 @@ $wgAutoloadClasses['ApiStatsQuery'] = "$dir/api/ApiStatsQuery.php";
  * @{
  */
 $wgAutoloadClasses['AcceptQueueMessagesTask'] = "$dir/TranslateTasks.php";
+$wgAutoloadClasses['CustomFilteredMessagesTask'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ExportAsPoMessagesTask'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ExportMessagesTask'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ExportToFileMessagesTask'] = "$dir/TranslateTasks.php";
