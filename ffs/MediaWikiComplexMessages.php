@@ -22,7 +22,7 @@ abstract class ComplexMessages {
 	protected $language = null;
 	protected $id       = '__BUG__';
 	protected $variable = '__BUG__';
-	protected $data     = null;
+	protected $data     = array();
 	protected $elementsInArray = true;
 	protected $databaseMsg = '__BUG__';
 	protected $chainable = false;
@@ -59,7 +59,6 @@ abstract class ComplexMessages {
 		}
 
 		return $this->data;
-
 	}
 
 	public function cleanData( $defs, $current ) {

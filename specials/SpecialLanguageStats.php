@@ -181,7 +181,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
 		$out .= Html::hidden( 'x', 'D' ); // To detect submission
 		$out .= Html::openElement( 'fieldset' );
-		$out .= Html::element( 'legend', null, $this->msg( 'translate-language-code' )->text() );
+		$out .= Html::element( 'legend', array(), $this->msg( 'translate-language-code' )->text() );
 		$out .= Html::openElement( 'table' );
 
 		$out .= Html::openElement( 'tr' );

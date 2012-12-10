@@ -50,9 +50,15 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 */
 	protected $old;
 
+	/**
+	 * @var Title[]
+	 */
 	protected $translationPages;
 
-	protected $sectionPages;
+	/**
+	 * @var array
+	 */
+	protected $sectionPages = array();
 
 	public function __construct( $old ) {
 		parent::__construct( 'Movepage' );
@@ -564,7 +570,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 	/**
 	 * Returns all subpages, if the namespace has them enabled.
-	 * @return Empty array or TitleArray
+	 * @return mixed TitleArray, or empty array if this page's namespace doesn't allow subpages
 	 */
 	protected function getSubpages() {
 		return $this->page->getTitle()->getSubpages();

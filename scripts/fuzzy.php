@@ -75,7 +75,7 @@ class FuzzyScript {
 	public $skipLanguages = array();
 
 	/**
-	 * @param $titles \list{String}
+	 * @param string[] $titles
 	 */
 	public function __construct( $titles ) {
 		$this->titles = $titles;
