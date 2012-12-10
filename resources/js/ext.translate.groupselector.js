@@ -270,11 +270,11 @@
 		},
 
 		/**
-		 * Flatten the message group tree
+		 * Flattens a message group tree.
 		 * @param {Array} The messagegroups array or data object.
 		 * @param {Object} An array in which the keys are IDs of message groups that were found already.
 		 */
-		getFlatGroupList: function ( messageGroups, foundIDs ) {
+		flattenGroupList: function ( messageGroups, foundIDs ) {
 			var i;
 
 			if ( messageGroups.groups ) {
@@ -282,14 +282,15 @@
 			}
 
 			for ( i = 0; i < messageGroups.length; i++ ) {
-				if ( messageGroups[i].groups ) {
-					this.getFlatGroupList( messageGroups[i].groups, foundIDs );
-				}
-
-				// Avoid duplicate groups
+				// Avoid duplicate groups, and add the parent before subgroups
 				if ( !foundIDs[messageGroups[i].id] ) {
 					this.flatGroupList.push( messageGroups[i] );
 					foundIDs[messageGroups[i].id] = true;
+				}
+
+				// In case there are subgroups, add them recursively
+				if ( messageGroups[i].groups ) {
+					this.flattenGroupList( messageGroups[i].groups, foundIDs );
 				}
 			}
 		},
@@ -324,7 +325,7 @@
 				} else{
 					currentGroup = messageGroups;
 				}
-				this.getFlatGroupList( currentGroup, {} );
+				this.flattenGroupList( currentGroup, {} );
 			}
 
 			matcher = new RegExp( '^' + escapeRegex( query ), 'i' );
