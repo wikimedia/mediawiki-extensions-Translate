@@ -16,6 +16,24 @@
       "revId": "7e225b1db88f48887ca570e609786c3bb6291e47",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//1mE\u003d",
+        "filename": "MessageCollection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-10T11:07:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADbX//1nw\u003d",
+      "revId": "7e225b1db88f48887ca570e609786c3bb6291e47",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
