@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//1sA\u003d",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-10T08:38:09Z",
+      "side": 1,
+      "message": "The code could be better. The null is intended for addMarkedTag, bot for addFuzzyTags. I can add special casing for addMarkedTag.",
+      "parentUuid": "AAADbX//2fQ\u003d",
+      "revId": "f87ae4936d5efe658662ddab34d2a1fc06b1ce89",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//3og\u003d",
         "filename": "tag/SpecialPageTranslation.php",
         "patchSetId": 2
