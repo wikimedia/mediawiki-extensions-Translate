@@ -104,10 +104,10 @@ class TranslateEditAddons {
 	 * and tries to find messages coming before and after.
 	 * @param MessageHandle $handle
 	 * @param string &$key will be filled with message in correct case etc.
-	 * @param int &$index approximate index of the message, for setting offset
+	 * @param int|null &$index approximate index of the message, for setting offset
 	 *                    and limit on Special:Translate
-	 * @param Title &$next Title of the next message or null
-	 * @param Title &$prev Title of the previous message or null
+	 * @param Title|null &$next Title of the next message or null
+	 * @param Title|null &$prev Title of the previous message or null
 	 * @since 2012-08-21
 	 */
 	protected static function figureNextPrevMessages( MessageHandle $handle, &$key, &$index, &$next, &$prev ) {

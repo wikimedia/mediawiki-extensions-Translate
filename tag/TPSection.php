@@ -72,7 +72,7 @@ class TPSection {
 
 	/**
 	 * Returns array of variables defined on this section.
-	 * @return \arrayof{String,String} Values indexed with keys which are
+	 * @return array ( string => string ) Values indexed with keys which are
 	 * prefixed with a dollar sign.
 	 */
 	public function getVariables() {

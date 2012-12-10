@@ -22,7 +22,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 	/**
 	 * Entry point : initialise variables and call subfunctions.
-	 * @param $par \string Message key. Becomes "MediaWiki:Allmessages" when called like
+	 * @param string $par Message key. Becomes "MediaWiki:Allmessages" when called like
 	 *             Special:Translations/MediaWiki:Allmessages (default null)
 	 */
 	function execute( $par ) {
@@ -67,8 +67,8 @@ class SpecialTranslations extends SpecialAllpages {
 	/**
 	 * Message input fieldset
 	 *
-	 * @param $title Title (default: null)
-	 * @return \string HTML for fieldset.
+	 * @param Title $title (default: null)
+	 * @return string HTML for fieldset.
 	 */
 	function namespaceMessageForm( Title $title = null ) {
 		global $wgScript;
@@ -114,7 +114,7 @@ class SpecialTranslations extends SpecialAllpages {
 	/**
 	 * Returns sorted array of namespaces.
 	 *
-	 * @return \arrayof{String,Integer}
+	 * @return array ( string => int )
 	 */
 	public function getSortedNamespaces() {
 		global $wgTranslateMessageNamespaces, $wgContLang;
@@ -131,8 +131,7 @@ class SpecialTranslations extends SpecialAllpages {
 	/**
 	 * Builds a table with all translations of $title.
 	 *
-	 * @param $title Title (default: null)
-	 * @return void
+	 * @param Title $title (default: null)
 	 */
 	function showTranslations( Title $title ) {
 		$handle = new MessageHandle( $title );
@@ -249,8 +248,8 @@ class SpecialTranslations extends SpecialAllpages {
 	/**
 	 * Get code for a page name
 	 *
-	 * @param $name \string Page title (f.e. "MediaWiki:Main_page/nl").
-	 * @return \string Language code
+	 * @param string $name Page title (f.e. "MediaWiki:Main_page/nl").
+	 * @return string Language code
 	 */
 	private function getCode( $name ) {
 		$from = strrpos( $name, '/' );
@@ -259,8 +258,6 @@ class SpecialTranslations extends SpecialAllpages {
 
 	/**
 	 * Add JavaScript assets
-	 *
-	 * @return void
 	 */
 	private function includeAssets() {
 		$out = $this->getOutput();

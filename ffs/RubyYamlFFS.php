@@ -74,7 +74,7 @@ class RubyYamlFFS extends YamlFFS {
 		 */
 		$regex = '~\{[a-zA-Z_-]+}~';
 		$placeholders = array();
-		$match = null;
+		$match = array();
 
 		while ( preg_match( $regex, $message, $match ) ) {
 			$uniqkey = TranslateUtils::getPlaceholder();
@@ -86,7 +86,7 @@ class RubyYamlFFS extends YamlFFS {
 		// Then replace (possible multiple) plural instances into placeholders.
 		$regex = '~\{\{PLURAL\|(.*?)}}~s';
 		$matches = array();
-		$match = null;
+		$match = array();
 
 		while ( preg_match( $regex, $message, $match ) ) {
 			$uniqkey = TranslateUtils::getPlaceholder();

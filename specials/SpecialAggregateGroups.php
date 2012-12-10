@@ -59,7 +59,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		$out->addModules( 'ext.translate.special.aggregategroups' );
 
 		/**
-		 * @var $group MessageGroup
+		 * @var $group AggregateMessageGroup
 		 */
 		foreach ( $aggregates as $group ) {
 			$id = $group->getId();
@@ -73,7 +73,7 @@ class SpecialAggregateGroups extends SpecialPage {
 
 			$remove = Html::element( 'span', array( 'class' => 'tp-aggregate-remove-ag-button' ) );
 
-			$header = Html::rawElement( 'h2', null, htmlspecialchars( $group->getLabel() ) . $remove );
+			$header = Html::rawElement( 'h2', array(), htmlspecialchars( $group->getLabel() ) . $remove );
 			$out->addHtml( $header );
 			$out->addWikiText( $group->getDescription( $this->getContext() ) );
 			$this->listSubgroups( $group );
@@ -152,7 +152,7 @@ class SpecialAggregateGroups extends SpecialPage {
 				$note = $this->msg( 'tpt-aggregategroup-invalid-group' )->escaped();
 			}
 
-			$out->addHtml( Html::rawElement( 'li', null, "$text$remove $note" ) );
+			$out->addHtml( Html::rawElement( 'li', array(), "$text$remove $note" ) );
 		}
 		$out->addHtml( Html::closeElement( 'ol' ) );
 	}

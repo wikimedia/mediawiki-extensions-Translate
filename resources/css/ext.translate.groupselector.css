@@ -111,7 +111,7 @@
 
 .ext-translate-msggroup-selector-menu .search-group {
 	position: absolute;
-	right: 0px;
+	right: 0;
 	bottom: 2px;
 	padding-right: 0;
 }
@@ -192,7 +192,7 @@
 	font-weight: normal;
 	line-height: 1.25em;
 	position: absolute;
-	bottom: 0px;
+	bottom: 0;
 	right: 0;
 	padding: 0 15px 2px 0;
 	text-align: right;

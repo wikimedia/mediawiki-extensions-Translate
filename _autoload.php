@@ -13,7 +13,7 @@ $dir = dirname( __FILE__ );
 /** @endcond */
 
 /**
- * @name   Core Translate classes
+ * @name   "Core Translate classes"
  * @{
  */
 $wgAutoloadClasses['FatMessage'] = "$dir/Message.php";
@@ -32,7 +32,7 @@ $wgAutoloadClasses['TranslateUtils'] = "$dir/TranslateUtils.php";
 /**@}*/
 
 /**
- * @name   Special pages
+ * @name   "Special pages"
  * There are few more special pages in page translation section.
  * @{
  */
@@ -61,7 +61,7 @@ $wgAutoloadClasses['WikiFormatWriter'] = "$dir/ffs/Wiki.php";
 /**@}*/
 
 /**
- * @name   Various utilities
+ * @name   "Various utilities"
  * @{
  */
 $wgAutoloadClasses['CDBMessageIndex'] = "$dir/utils/MessageIndex.php";
@@ -109,7 +109,7 @@ $wgAutoloadClasses['TuxMessageTable'] = "$dir/utils/TuxMessageTable.php";
 /**@}*/
 
 /**
- * @name   Classes for predefined non-managed message groups
+ * @name   "Classes for predefined non-managed message groups"
  * @{
  */
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = "$dir/ffs/MediaWikiExtensions.php";
@@ -117,7 +117,7 @@ $wgAutoloadClasses['PremadeToolserverTextdomains'] = "$dir/ffs/ToolserverTextdom
 /**@}*/
 
 /**
- * @name   Support for MediaWiki non-message features
+ * @name   "Support for MediaWiki non-message features"
  * @{
  */
 $wgAutoloadClasses['ComplexMessages'] = "$dir/ffs/MediaWikiComplexMessages.php";
@@ -127,7 +127,7 @@ $wgAutoloadClasses['SpecialPageAliasesCM'] = "$dir/ffs/MediaWikiComplexMessages.
 /**@}*/
 
 /**
- * @name   Classes for page translation feature
+ * @name   "Classes for page translation feature"
  * @ingroup PageTranslation
  * @{
  */
@@ -145,7 +145,7 @@ $wgAutoloadClasses['TranslatablePage'] = "$dir/tag/TranslatablePage.php";
 /**@}*/
 
 /**
- * @name   Classes for TTMServer
+ * @name   "Classes for TTMServer"
  * @ingroup TTMServer
  * @{
  */
@@ -160,7 +160,7 @@ $wgAutoloadClasses['TTMServer'] = "$dir/ttmserver/TTMServer.php";
 /**@}*/
 
 /**
- * @name   Classes for file format support (FFS)
+ * @name   "Classes for file format support (FFS)"
  * @{
  */
 $wgAutoloadClasses['AndroidXmlFFS'] = "$dir/ffs/AndroidXmlFFS.php";
@@ -182,7 +182,7 @@ $wgAutoloadClasses['YamlFFS'] = "$dir/ffs/YamlFFS.php";
 /**@}*/
 
 /**
- * @name   API modules
+ * @name   "API modules"
  * @{
  */
 $wgAutoloadClasses['ApiAggregateGroups'] = "$dir/api/ApiAggregateGroups.php";
@@ -199,7 +199,7 @@ $wgAutoloadClasses['ApiStatsQuery'] = "$dir/api/ApiStatsQuery.php";
 /**@}*/
 
 /**
- * @name   Task classes
+ * @name   "Task classes"
  * @{
  */
 $wgAutoloadClasses['AcceptQueueMessagesTask'] = "$dir/TranslateTasks.php";
@@ -219,7 +219,7 @@ $wgAutoloadClasses['ViewWithSuggestionsTask'] = "$dir/TranslateTasks.php";
 /**@}*/
 
 /**
- * @name   Message group classes
+ * @name   "Message group classes"
  * @{
  */
 $wgAutoloadClasses['AggregateMessageGroup'] = "$dir/messagegroups/AggregateMessageGroup.php";
@@ -241,7 +241,7 @@ $wgAutoloadClasses['WorkflowStatesMessageGroup'] = "$dir/messagegroups/WorkflowS
 /**@}*/
 
 /**
- * @name   Test classes
+ * @name   "Test classes"
  * @{
  */
 $wgAutoloadClasses['MockFileBasedMessageGroup'] = "$dir/tests/MockFileBasedMessageGroup.php";
