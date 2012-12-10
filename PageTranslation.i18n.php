@@ -2029,7 +2029,7 @@ Bevor du diese Version zur Übersetzung freigibst, stelle bitte sicher, dass die
 Die neueste Version kann hingegen nicht zur Übersetzung freigegeben werden.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Diese Seite wurde|Diese Seiten wurden}} von der Übersetzung zurückgezogen.',
 	'tpt-select-prioritylangs' => 'Komma-getrennte Liste der Codes der zu priorisierenden Sprachen:',
-	'tpt-select-prioritylangs-force' => 'Übersetzungen in nicht priorisierte Sprachen verhindern',
+	'tpt-select-prioritylangs-force' => 'Übersetzungen in andere Sprachen als die priorisierte Sprache verhindern',
 	'tpt-select-prioritylangs-reason' => 'Grund:',
 	'tpt-sections-prioritylangs' => 'Priorisierte Sprachen',
 	'tpt-rev-mark' => 'Zum Übersetzen freigeben',
@@ -2103,8 +2103,8 @@ Text der Übersetzungseinheit: <pre>$1</pre>',
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|entfernte}} die übersetzbare Seite [[:$1]] von Hauptnachrichtengruppe $3',
 	'pt-movepage-title' => 'Die Übersetzungsseite $1 verschieben',
 	'pt-movepage-blockers' => 'Die zum Übersetzen vorgesehene Seite konnte aufgrund {{PLURAL:$1|folgendes Fehlers|folgender Fehler}} nicht zur neuen Bezeichnung verschoben werden:',
-	'pt-movepage-block-base-exists' => 'Die Basisseite [[:$1]] existiert bereits.',
-	'pt-movepage-block-base-invalid' => 'Die Basisseite hat keine gültige Bezeichnung.',
+	'pt-movepage-block-base-exists' => 'Die übersetzbare Zielseite „[[:$1]]“ existiert bereits.',
+	'pt-movepage-block-base-invalid' => 'Der Name der übersetzbaren Zielseite hat keine gültige Bezeichnung.',
 	'pt-movepage-block-tp-exists' => 'Die Übersetzungsseite [[:$2]] existiert bereits.',
 	'pt-movepage-block-tp-invalid' => 'Die Zielbezeichnung der Übersetzungsseite für [[:$1]] wäre ungültig (zu lang?).',
 	'pt-movepage-block-section-exists' => 'Die Seite „[[:$2]]“ zur Übersetzungseinheit ist bereits vorhanden.',
@@ -2135,13 +2135,13 @@ Bitte prüfe das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] auf Fehle
 	'pt-deletepage-lang-title' => 'Löschen der übersetzten Seite $1.',
 	'pt-deletepage-full-title' => 'Löschen der übersetzbaren Seite $1.',
 	'pt-deletepage-invalid-title' => 'Die angegebene Seite ist ungültig.',
-	'pt-deletepage-invalid-text' => 'Die angegebene Seite ist weder eine übersetzbare Seite noch eine Übersetzung.',
+	'pt-deletepage-invalid-text' => 'Die angegebene Seite ist weder eine übersetzbare Seite noch eine Übersetzungsseite.',
 	'pt-deletepage-action-check' => 'Zu löschende Seiten auflisten',
 	'pt-deletepage-action-perform' => 'Löschung ausführen',
 	'pt-deletepage-action-other' => 'Das Ziel ändern',
 	'pt-deletepage-lang-legend' => 'Übersetzte Seite löschen',
 	'pt-deletepage-full-legend' => 'Übersetzbare Seite löschen',
-	'pt-deletepage-any-legend' => 'Übersetzbare oder übersetzte Seite löschen',
+	'pt-deletepage-any-legend' => 'Übersetzbare Seite oder Übersetzungsseite löschen',
 	'pt-deletepage-current' => 'Seitenname:',
 	'pt-deletepage-reason' => 'Grund:',
 	'pt-deletepage-subpages' => 'Alle Unterseiten löschen',
@@ -2153,8 +2153,8 @@ Bitte prüfe das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] auf Fehle
 	'pt-deletepage-full-logreason' => 'Teil der übersetzbaren Seite $1.',
 	'pt-deletepage-lang-logreason' => 'Teil der übersetzten Seite $1.',
 	'pt-deletepage-started' => 'Bitte das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] nach Fehlern und Ausführungsnachrichten prüfen.',
-	'pt-deletepage-intro' => 'Diese Spezialseite ermöglicht die Löschung von in eine Sprache übersetzbare oder übersetzte Seiten.
-Die Ausführung der Löschungen wird, je nach Anzahl der zu löschenden Seiten, nicht unmittelbar erfolgen.
+	'pt-deletepage-intro' => 'Diese Spezialseite ermöglicht die Löschung einer ganzen übersetzbaren Seite oder einer individuellen Übersetzungsseite in einer Sprache.
+Die Ausführung erfolgt nicht unmittelbar, da auch alle dazugehörigen Seiten gelöscht werden.
 Fehler werden im [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] aufgezeichnet und müssen nachträglich manuell berichtigt werden.',
 );
 
@@ -2625,8 +2625,8 @@ Texto de unidad de traducción: <pre>$1</pre>',
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|ha eliminado}} la página traducible [[:$1]] del grupo agregado $3',
 	'pt-movepage-title' => 'Trasladar la página traducible $1',
 	'pt-movepage-blockers' => 'La página traducible no puede ser movida a un nuevo nombre por los siguientes {{PLURAL:$1|error|errores}}:',
-	'pt-movepage-block-base-exists' => 'La página base de destino [[:$1]] existe.',
-	'pt-movepage-block-base-invalid' => 'La página base de destino no es un título válido.',
+	'pt-movepage-block-base-exists' => 'Existe la página traducible de destino "[[:$1]]".',
+	'pt-movepage-block-base-invalid' => 'El nombre de la página traducible de destino no es un título válido.',
 	'pt-movepage-block-tp-exists' => 'La página de traducción de destino [[:$2]] existe.',
 	'pt-movepage-block-tp-invalid' => 'El título de la página de traducción de destino para [[:$1]] sería inválido (demasiado largo?).',
 	'pt-movepage-block-section-exists' => 'La unidad de traducción de la página de destino [[:$2]] existe.',
@@ -2657,13 +2657,13 @@ Por favor verifica el [[Special:Log/pagetranslation|registro de traducción de p
 	'pt-deletepage-lang-title' => 'Eliminar la página de traducción $1.',
 	'pt-deletepage-full-title' => 'Eliminar la página traducible $1.',
 	'pt-deletepage-invalid-title' => 'La página especificada no es válida.',
-	'pt-deletepage-invalid-text' => 'La página especificada no es una página traducible ni una traducción de la misma.',
+	'pt-deletepage-invalid-text' => 'La página especificada no es una página traducible ni una página de traducción.',
 	'pt-deletepage-action-check' => 'Lista de páginas a borrar',
 	'pt-deletepage-action-perform' => 'Realizar la eliminación',
 	'pt-deletepage-action-other' => 'Cambiar el destino',
 	'pt-deletepage-lang-legend' => 'Eliminar la página de traducción',
 	'pt-deletepage-full-legend' => 'Eliminar la página traducible',
-	'pt-deletepage-any-legend' => 'Eliminar la página traducible o la traducción de la página traducible',
+	'pt-deletepage-any-legend' => 'Eliminar la página traducible o la traducción de la página',
 	'pt-deletepage-current' => 'Nombre de la página:',
 	'pt-deletepage-reason' => 'Razón:',
 	'pt-deletepage-subpages' => 'Eliminar todas las subpáginas',
@@ -2675,7 +2675,8 @@ Por favor verifica el [[Special:Log/pagetranslation|registro de traducción de p
 	'pt-deletepage-full-logreason' => 'Parte de la página traducible $1.',
 	'pt-deletepage-lang-logreason' => 'Parte de la página de traducción $1.',
 	'pt-deletepage-started' => 'Compruebe los errores y los mensajes de conclusión en el [[Special:Log/pagetranslation|registro de traducción de páginas]].',
-	'pt-deletepage-intro' => 'Esta página especial permite eliminar páginas traducibles enteras o traducciones a un idioma. La eliminación no será instantánea, porque deben borrarse muchas páginas. Los fallos se registrarán en el [[Special:Log/pagetranslation|registro de traducción de la página]] y tendrán que ser reparados a mano.',
+	'pt-deletepage-intro' => 'Esta página especial te permite eliminar páginas traducibles enteras o una página de traducción individual a un idioma. La eliminación no será instantánea, porque deben borrarse todas las páginas dependientes de ella. 
+Los fallos se registrarán en el [[Special:Log/pagetranslation|registro de traducción de la página]] y tendrán que ser reparados a mano.',
 );
 
 /** Estonian (eesti)
@@ -3181,7 +3182,7 @@ Avant de marquer ces versions pour être traduites, vérifier que les modificati
 mais {{PLURAL:$1|sa dernière version|leur dernière version respective}} ne peut pas être marquée ainsi :',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Cette page a été découragée|Ces pages ont été découragées}} à être {{PLURAL:$1|traduite|traduites}} davantage.',
 	'tpt-select-prioritylangs' => 'Liste de codes de langue prioritaire séparés par des virgules:',
-	'tpt-select-prioritylangs-force' => "Empêcher les traductions en d'autres langues que les langues prioritaires",
+	'tpt-select-prioritylangs-force' => 'Empêcher les traductions en des langues autres que les langues prioritaires',
 	'tpt-select-prioritylangs-reason' => 'Motif :',
 	'tpt-sections-prioritylangs' => 'Langues prioritaires',
 	'tpt-rev-mark' => 'marquer pour traduction',
@@ -3255,8 +3256,8 @@ Texte de la section : <pre>$1</pre>',
 	'pt-log-aggregategroup-dissociate' => "{{GENDER:$2|a supprimé}} la page à traduire [[:$1]] du groupe d'agrégation $3",
 	'pt-movepage-title' => 'Déplacer la page à traduire $1',
 	'pt-movepage-blockers' => 'La page à traduire ne peut pas être renommée à cause {{PLURAL:$1|de l’erreur suivante|des erreurs suivantes}} :',
-	'pt-movepage-block-base-exists' => 'La page de base cible [[:$1]] existe.',
-	'pt-movepage-block-base-invalid' => 'La page de base cible a un titre incorrect.',
+	'pt-movepage-block-base-exists' => 'La page traduisible cible "[[:$1]]" existe.',
+	'pt-movepage-block-base-invalid' => "Le nom de la page traduisible cible n'est pas un titre correct.",
 	'pt-movepage-block-tp-exists' => 'La page de traduction cible [[:$2]] existe.',
 	'pt-movepage-block-tp-invalid' => 'Le titre de la page de traduction cible pour [[:$1]] serait incorrect (trop long ?).',
 	'pt-movepage-block-section-exists' => 'La page cible « [[:$2]] » pour la section existe.',
@@ -3293,7 +3294,7 @@ Veuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] po
 	'pt-deletepage-action-other' => 'Changer la cible',
 	'pt-deletepage-lang-legend' => 'Supprimer la page traduite',
 	'pt-deletepage-full-legend' => 'Supprimer la page à traduire',
-	'pt-deletepage-any-legend' => 'Supprimer la page à traduire ou la traduction de la page à traduire',
+	'pt-deletepage-any-legend' => 'Supprimer la page à traduire ou la page de traduction',
 	'pt-deletepage-current' => 'Nom de la page :',
 	'pt-deletepage-reason' => 'Motif :',
 	'pt-deletepage-subpages' => 'Supprimer tous les sous-pages',
@@ -3305,8 +3306,8 @@ Veuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] po
 	'pt-deletepage-full-logreason' => 'Partie de la page à traduire $1.',
 	'pt-deletepage-lang-logreason' => 'Partie de la page de traduction $1.',
 	'pt-deletepage-started' => 'Veuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] pour les erreurs et le message de la fin.',
-	'pt-deletepage-intro' => "Cette page spéciale vous permet de supprimer des pages à traduire entières ou des traductions dans une langue.
-La suppression n'est pas instantanée, car plusieurs pages seront supprimées.
+	'pt-deletepage-intro' => "Cette page spéciale vous permet de supprimer une page traduisible entièrement, ou une page traduisible individuelle dans une langue.
+L'action de suppression n'est pas instantanée, car plusieurs pages dépendantes de celle-ci seront aussi supprimées.
 Les échecs seront inscrits dans le [[Special:Log/pagetranslation|journal des traductions]] et ils doivent être corrigés à la main.",
 );
 
@@ -3996,8 +3997,8 @@ $messages['he'] = array(
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|הסיר|הסירה}} את הדף [[:$1]] מהקבוצה המשולבת $3',
 	'pt-movepage-title' => 'להעביר את הדף הניתן לתרגום $1',
 	'pt-movepage-blockers' => 'דף שניתן לתרגום אינו יכול להיות מועבר לשם חדש בגלל {{PLURAL:$1|השגיאה הבאה|השגיאות הבאות}}:',
-	'pt-movepage-block-base-exists' => 'דף הבסיס המיועד [[:$1]] קיים.',
-	'pt-movepage-block-base-invalid' => 'לדף הבסיס המיועד אין כותרת תקינה.',
+	'pt-movepage-block-base-exists' => 'כבר קיים דף לתרגום בשם [[:$1]].',
+	'pt-movepage-block-base-invalid' => 'לדף התרגום המיועד אין כותרת תקינה.',
 	'pt-movepage-block-tp-exists' => 'דף התרגום המיועד [[:$2]] קיים.',
 	'pt-movepage-block-tp-invalid' => 'כותרת דף התרגום המיועד עבור [[:$1]] אינה תקינה (אולי ארוכה מדי).',
 	'pt-movepage-block-section-exists' => 'דף יחידת התרגום המיועד [[:$2]] קיים.',
@@ -4046,8 +4047,8 @@ $messages['he'] = array(
 	'pt-deletepage-full-logreason' => 'חלק מהדף הניתן לתרגום $1.',
 	'pt-deletepage-lang-logreason' => 'חלק מדך התרגום $1.',
 	'pt-deletepage-started' => 'נא לבדוק את השגיאות ואת הודעת ההשלמה ב[[Special:Log/pagetranslation|יומן תרגום הדפים]]',
-	'pt-deletepage-intro' => 'הדך המיוחד הזה מאפשר למחוק בשלמותם דפים ניתנים לתרגום או תרגומים שלהם לשפה אחת.
-פעולת המחיקה לא תהיה מידית, כי יש למחוק דפים מרובים.
+	'pt-deletepage-intro' => 'הדך המיוחד הזה מאפשר לך למחוק בשלמותם דפים ניתנים לתרגום או תרגומים שלהם לשפה כלשהי.
+פעולת המחיקה לא תהיה מידית, כי יש למחוק את כל הדפים התלויים בהם.
 הכישלונות יירשמו ב[[Special:Log/pagetranslation|יומן תרגום דפים]] ויהיה צריך לתקן אותם ידנית.',
 );
 
@@ -4848,7 +4849,7 @@ ma al momento nessuna versione di {{PLURAL:$1|questa pagina|queste pagine}} è s
 ma {{PLURAL:$1|l'ultima versione non può essere segnata|le ultime versioni non possono essere segnate}} per la traduzione.",
 	'tpt-discouraged-pages' => "L'ulteriore traduzione di {{PLURAL:$1|questa pagina|queste pagine}} è scoraggiata.",
 	'tpt-select-prioritylangs' => 'Elenco dei codici lingua prioritari separati da virgole:',
-	'tpt-select-prioritylangs-force' => 'Evitare le traduzioni in lingue non ritenute prioritarie', # Fuzzy
+	'tpt-select-prioritylangs-force' => 'Evitare le traduzioni in lingue non ritenute prioritarie',
 	'tpt-select-prioritylangs-reason' => 'Motivo:',
 	'tpt-sections-prioritylangs' => 'Lingue prioritarie',
 	'tpt-rev-mark' => 'segna per la traduzione',
@@ -4953,13 +4954,13 @@ Controlla il [[Special:Log/pagetranslation|registro delle traduzioni di pagine]]
 	'pt-deletepage-lang-title' => 'Cancellazione della pagina di traduzione $1.',
 	'pt-deletepage-full-title' => 'Cancellazione della pagina traducibile $1 in corso.',
 	'pt-deletepage-invalid-title' => 'La pagina specificata non è valida.',
-	'pt-deletepage-invalid-text' => 'La pagina indicata non è una pagina da tradurre né una traduzione di essa.', # Fuzzy
+	'pt-deletepage-invalid-text' => 'La pagina indicata non è una pagina da tradurre né una pagina di traduzione.',
 	'pt-deletepage-action-check' => 'Elenca le pagine da cancellare',
 	'pt-deletepage-action-perform' => 'Esegui la cancellazione',
 	'pt-deletepage-action-other' => 'Modifica destinazione',
 	'pt-deletepage-lang-legend' => 'Cancella pagina di traduzione',
 	'pt-deletepage-full-legend' => 'Cancella la pagina traducibile',
-	'pt-deletepage-any-legend' => 'Cancella una pagina traducibile o la traduzione di una pagina traducibile', # Fuzzy
+	'pt-deletepage-any-legend' => 'Cancella una pagina traducibile o una pagina di traduzione',
 	'pt-deletepage-current' => 'Nome della pagina:',
 	'pt-deletepage-reason' => 'Motivo:',
 	'pt-deletepage-subpages' => 'Cancella tutte le sottopagine',
@@ -5029,7 +5030,7 @@ $messages['ja'] = array(
 最新の{{PLURAL:$1|版}}は翻訳対象に指定できません。',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|このページ|これらのページ}}の翻訳は中止されたため、これ以上の翻訳は不要です。',
 	'tpt-select-prioritylangs' => '主要言語コードを列挙 (カンマ区切り):',
-	'tpt-select-prioritylangs-force' => '主要言語以外への翻訳を禁止', # Fuzzy
+	'tpt-select-prioritylangs-force' => '主要言語以外への翻訳を禁止',
 	'tpt-select-prioritylangs-reason' => '理由:',
 	'tpt-sections-prioritylangs' => '主要言語',
 	'tpt-rev-mark' => '翻訳対象に指定',
@@ -5102,8 +5103,8 @@ $messages['ja'] = array(
 	'pt-log-aggregategroup-dissociate' => 'が翻訳対象ページ「[[:$1]]」を集約群 $3 から{{GENDER:$2|除去しました}}',
 	'pt-movepage-title' => '翻訳対象ページ「$1」の移動',
 	'pt-movepage-blockers' => '以下の{{PLURAL:$1|エラー}}が発生したため、翻訳対象ページを新しいページ名に移動できません:',
-	'pt-movepage-block-base-exists' => '移動先の基底ページ「[[:$1]]」は既に存在します。', # Fuzzy
-	'pt-movepage-block-base-invalid' => '移動先の基底ページのページ名が無効です。', # Fuzzy
+	'pt-movepage-block-base-exists' => '移動先の翻訳対象ページ「[[:$1]]」は既に存在します。',
+	'pt-movepage-block-base-invalid' => '移動先の翻訳対象ページの名前が無効です。',
 	'pt-movepage-block-tp-exists' => '移動先の翻訳ページ「[[:$2]]」は既に存在します。',
 	'pt-movepage-block-tp-invalid' => '移動先の翻訳ページの名前「[[:$1]]」が無効です (長すぎる?)。',
 	'pt-movepage-block-section-exists' => '移動先の翻訳単位ページ「[[:$2]]」は既に存在します。',
@@ -5134,13 +5135,13 @@ $messages['ja'] = array(
 	'pt-deletepage-lang-title' => '翻訳ページ「$1」を削除中。',
 	'pt-deletepage-full-title' => '翻訳対象ページ「$1」を削除中。',
 	'pt-deletepage-invalid-title' => '指定したページは無効です。',
-	'pt-deletepage-invalid-text' => '指定したページは、翻訳対象ページでも、翻訳対象ページの翻訳でもありません。', # Fuzzy
+	'pt-deletepage-invalid-text' => '指定したページは、翻訳対象ページでも翻訳ページでもありません。',
 	'pt-deletepage-action-check' => '削除するページを列挙',
 	'pt-deletepage-action-perform' => '削除を実行',
 	'pt-deletepage-action-other' => '対象を変更',
 	'pt-deletepage-lang-legend' => '翻訳ページの削除',
 	'pt-deletepage-full-legend' => '翻訳対象ページの削除',
-	'pt-deletepage-any-legend' => '翻訳対象ページまたはその翻訳の削除', # Fuzzy
+	'pt-deletepage-any-legend' => '翻訳対象ページまたは翻訳ページの削除',
 	'pt-deletepage-current' => 'ページ名:',
 	'pt-deletepage-reason' => '理由:',
 	'pt-deletepage-subpages' => '下位ページをすべて削除',
@@ -5152,9 +5153,9 @@ $messages['ja'] = array(
 	'pt-deletepage-full-logreason' => '翻訳対象ページ「$1」の一部。',
 	'pt-deletepage-lang-logreason' => '翻訳ページ「$1」の一部。',
 	'pt-deletepage-started' => '[[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認してください。',
-	'pt-deletepage-intro' => 'この特別ページでは、翻訳対象ページ全体、または指定した言語への翻訳すべてを削除できます。
-多数のページを削除する必要があるため、削除操作はすぐには完了しません。
-失敗した場合は[[Special:Log/pagetranslation|ページの翻訳記録]]に記録されるので、手動で修正する必要があります。', # Fuzzy
+	'pt-deletepage-intro' => 'この特別ページでは、翻訳対象ページ全体、または指定した言語への翻訳ページを個別に削除できます。
+依存関係があるページもすべて削除するため、削除操作はすぐには完了しません。
+失敗した場合は[[Special:Log/pagetranslation|ページの翻訳記録]]に記録されるので、手動で修正する必要があります。',
 );
 
 /** Jamaican Creole English (Patois)
@@ -6103,7 +6104,7 @@ $messages['mk'] = array(
 но {{PLURAL:$1|најновата верзија не може да се означи|најновите верзии не можат да се означат}} за преведување.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Се препорачува оваа страница повеќе да не се преведува|Се препорачува овие страници повеќе да не се преведуваат}}.',
 	'tpt-select-prioritylangs' => 'Список на кодови на приоритетните јазици, одделени со запирка:',
-	'tpt-select-prioritylangs-force' => 'Спречи преводи на јазици што не се приоритетни',
+	'tpt-select-prioritylangs-force' => 'Спречи преведување на јазици што не се приоритетни',
 	'tpt-select-prioritylangs-reason' => 'Причина:',
 	'tpt-sections-prioritylangs' => 'Приоритетни јазици',
 	'tpt-rev-mark' => 'означи за преведување',
@@ -6178,8 +6179,8 @@ $messages['mk'] = array(
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|ја отстрани}} преводливата страница [[:$1]] од збирната група $3',
 	'pt-movepage-title' => 'Преместување на преводливата страница $1',
 	'pt-movepage-blockers' => 'Преводливата страница не може да се премести на нов наслов заради {{PLURAL:$1|следнава грешка|следниве грешки}}:',
-	'pt-movepage-block-base-exists' => 'Целната основна страница [[:$1]] постои.',
-	'pt-movepage-block-base-invalid' => 'Целната основна страница не претставува важечки наслов.',
+	'pt-movepage-block-base-exists' => 'Целната преводлива страница „[[:$1]]“ постои.',
+	'pt-movepage-block-base-invalid' => 'Целната преводлива страница не претставува важечки наслов.',
 	'pt-movepage-block-tp-exists' => 'Целната страница со превод [[:$2]] постои.',
 	'pt-movepage-block-tp-invalid' => 'Насловот на целната страница за превод на [[:$1]] би била неважечка (предолга?).',
 	'pt-movepage-block-section-exists' => 'Целната страница „[[:$2]]“ за преводната единица постои.',
@@ -6211,13 +6212,13 @@ $messages['mk'] = array(
 	'pt-deletepage-lang-title' => 'Бришење на страницата со превод $1.',
 	'pt-deletepage-full-title' => 'Бришење на преводливата страница $1.',
 	'pt-deletepage-invalid-title' => 'Наведената страница е неважечка.',
-	'pt-deletepage-invalid-text' => 'Наведената страница не е преводлива, ниту пак нејзин превод.',
+	'pt-deletepage-invalid-text' => 'Наведената страница не е преводлива, ниту пак страница за преведување.',
 	'pt-deletepage-action-check' => 'Список на страници за бришење',
 	'pt-deletepage-action-perform' => 'Изврши го бришењето',
 	'pt-deletepage-action-other' => 'Смени цел',
 	'pt-deletepage-lang-legend' => 'Избриши ја страницата за превод',
 	'pt-deletepage-full-legend' => 'Избриши преводлива страница',
-	'pt-deletepage-any-legend' => 'Избриши преводлива страница или нејзин превод',
+	'pt-deletepage-any-legend' => 'Избриши преводлива страница или страница за превод',
 	'pt-deletepage-current' => 'Име на страницата:',
 	'pt-deletepage-reason' => 'Причина:',
 	'pt-deletepage-subpages' => 'Избриши ги сите потстраници',
@@ -6229,8 +6230,8 @@ $messages['mk'] = array(
 	'pt-deletepage-full-logreason' => 'Дел од преводливата страница $1.',
 	'pt-deletepage-lang-logreason' => 'Дел од страницата со превод $1.',
 	'pt-deletepage-started' => 'Погледајте го [[Special:Log/pagetranslation|дневникот со преводи на страници]] за грешки и порака при завршувањето.',
-	'pt-deletepage-intro' => 'Оваа специјална страница овозможува бришење на цели преводливи страници или преводи на еден јазик.
-Бришењето не делува веднаш, бидејќи се бришат многу страници.
+	'pt-deletepage-intro' => 'Оваа специјална страница овозможува бришење на цела преводлива страница или поединечна страница за превод на некој јазик.
+Бришењето не делува веднаш, бидејќи ќе се бришат и сите страници што зависат од неа.
 Неуспешните обиди ќе се заведуваат во [[Special:Log/pagetranslation|дневникот на страници за превод]] и ќе треба да се исправаат рачно.',
 );
 
@@ -8595,7 +8596,7 @@ vendar trenutno ni nobena različica {{PLURAL:$1|te strani|teh strani}} označen
 vendar {{PLURAL:$1|trenutne različice|trenutnih različic}} ni mogoče označiti za prevajanje.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Naslednja stran je zatrta|Naslednji strani sta zatrti|Naslednje strani so zatrte}} pred nadaljnjimi prevodi.',
 	'tpt-select-prioritylangs' => 'Z vejico ločen seznam kod prednostnih jezikov:',
-	'tpt-select-prioritylangs-force' => 'Prepreči prevejanje v druge jezike, razen v prednostne jezike', # Fuzzy
+	'tpt-select-prioritylangs-force' => 'Prepreči prevajanje v jezike, ki niso prednostni jeziki',
 	'tpt-select-prioritylangs-reason' => 'Razlog:',
 	'tpt-sections-prioritylangs' => 'Prednostni jeziki',
 	'tpt-rev-mark' => 'Označi za prevajanje',
@@ -8651,8 +8652,8 @@ Besedilo prevajalne enote: <pre>$1</pre>',
 	'pt-log-discourage' => 'je {{GENDER:$2|zatrl|zatrla|zatrl(-a)}} prevajanje strani »[[:$1]]«',
 	'pt-movepage-title' => 'Premakni prevedljivo stran $1',
 	'pt-movepage-blockers' => 'Prevedljive strani ni mogoče prestaviti na novo ime zaradi {{PLURAL:$1|naslednje napake|naslednjih napak}}:',
-	'pt-movepage-block-base-exists' => 'Ciljna izhodiščna stran [[:$1]] obstaja.', # Fuzzy
-	'pt-movepage-block-base-invalid' => 'Ciljna izhodiščna stran ni veljaven naslov.', # Fuzzy
+	'pt-movepage-block-base-exists' => 'Ciljna prevedljiva stran »[[:$1]]« obstaja.',
+	'pt-movepage-block-base-invalid' => 'Ime ciljne prevedljive strani ni veljaven naslov.',
 	'pt-movepage-block-tp-exists' => 'Ciljna stran s prevodom [[:$2]] obstaja.',
 	'pt-movepage-block-tp-invalid' => 'Naslov ciljne strani s prevodom za [[:$1]] bi bil neveljaven (predolg?).',
 	'pt-movepage-block-section-exists' => 'Ciljna stran prevajalne enote »[[:$2]]« obstaja.',
@@ -8683,13 +8684,13 @@ Prosimo, preverite [[Special:Log/pagetranslation|dnevnik strani prevodov]] za na
 	'pt-deletepage-lang-title' => 'Brisanje strani pravoda $1.',
 	'pt-deletepage-full-title' => 'Brisanje prevedljive strani $1.',
 	'pt-deletepage-invalid-title' => 'Določena stran ni veljavna.',
-	'pt-deletepage-invalid-text' => 'Določena stran ni prevedljiva stran niti njen prevod.', # Fuzzy
+	'pt-deletepage-invalid-text' => 'Izbrana stran ni niti prevedljiva stran niti stran s prevodom.',
 	'pt-deletepage-action-check' => 'Navedi strani za izbris',
 	'pt-deletepage-action-perform' => 'Izvedi izbris',
 	'pt-deletepage-action-other' => 'Spremeni cilj',
 	'pt-deletepage-lang-legend' => 'Izbriši stran prevoda',
 	'pt-deletepage-full-legend' => 'Izbriši prevedljivo stran',
-	'pt-deletepage-any-legend' => 'Izbriši prevedljivo stran ali prevod prevedljive strani', # Fuzzy
+	'pt-deletepage-any-legend' => 'Izbriši prevedljivo stran ali prevod strani',
 	'pt-deletepage-current' => 'Naslov strani:',
 	'pt-deletepage-reason' => 'Razlog:',
 	'pt-deletepage-subpages' => 'Izbriši vse podstrani',
@@ -8701,9 +8702,9 @@ Prosimo, preverite [[Special:Log/pagetranslation|dnevnik strani prevodov]] za na
 	'pt-deletepage-full-logreason' => 'Del prevedljive strani $1.',
 	'pt-deletepage-lang-logreason' => 'Del strani prevoda $1.',
 	'pt-deletepage-started' => 'Prosimo, preverite [[Special:Log/pagetranslation|dnevnik prevajanja strani]] za napake in sporočilo o dokončanju.',
-	'pt-deletepage-intro' => 'Ta posebna stran vam omogoča izbrisati celotne prevedljive strani ali prevode enega jezika.
-Dejanje izbrisa ne bo izvedeno takoj, ker je potrebno izbrisati veliko strani.
-Neuspehi bodo zabeleženi v [[Special:Log/pagetranslation|dnevniku prevajanja strani]] in jih morate urediti ročno.', # Fuzzy
+	'pt-deletepage-intro' => 'Ta posebna stran vam omogoča izbris celotne prevedljive strani ali individualne strani s prevodom v nekem jeziku.
+Dejanje izbrisa ne bo izvedeno takoj, ker je treba izbrisati tudi vse strani, ki so od njih odvisne.
+Neuspehi bodo zabeleženi v [[Special:Log/pagetranslation|dnevniku prevajanja strani]] in jih morate urediti ročno.',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
@@ -9593,7 +9594,7 @@ $messages['uk'] = array(
 але {{PLURAL:$1|остання версія не може бути відмічена|останні версії не можуть бути відмічені}} для перекладу.',
 	'tpt-discouraged-pages' => 'Подальший переклад {{PLURAL:$1|цієї сторінки|цих сторінок}} припинено.',
 	'tpt-select-prioritylangs' => 'Перелік кодів пріоритетних мов (відокремлюються комою)',
-	'tpt-select-prioritylangs-force' => 'Запобігти перекладу іншими мовами, крім пріоритетних', # Fuzzy
+	'tpt-select-prioritylangs-force' => 'Запобігати переклад іншими мовами, крім пріоритетних',
 	'tpt-select-prioritylangs-reason' => 'Причина:',
 	'tpt-sections-prioritylangs' => 'Пріоритет мов',
 	'tpt-rev-mark' => 'позначити для перекладу',
@@ -9667,8 +9668,8 @@ $messages['uk'] = array(
 	'pt-log-aggregategroup-dissociate' => 'Призначену для перекладу сторінку [[:$1]] {{GENDER:$2|вилучено}} з сукупної групи $3',
 	'pt-movepage-title' => 'Перемістити сторінку $1, доступну для перекладу',
 	'pt-movepage-blockers' => 'Сторінка перекладу не може бути перейменована через {{PLURAL:$1|таку помилку|такі помилки}}:',
-	'pt-movepage-block-base-exists' => 'Основна кінцева сторінка [[:$1]] вже існує.', # Fuzzy
-	'pt-movepage-block-base-invalid' => 'Недопустима назва основної кінцевої сторінки.', # Fuzzy
+	'pt-movepage-block-base-exists' => 'Перекладабельна цільова сторінка «[[:$1]]» вже існує.',
+	'pt-movepage-block-base-invalid' => 'Недопустима назва для основної кінцевої перекладної сторінки.',
 	'pt-movepage-block-tp-exists' => 'Переклад кінцевої сторінки [[:$2]] вже існує.',
 	'pt-movepage-block-tp-invalid' => 'Назва перекладу кінцевої сторінки [[:$1]] буде неправильною (можливо, занадто довга?).',
 	'pt-movepage-block-section-exists' => 'Цільова сторінка "[[:$2]]" для одиниці перекладу уже існує.',
@@ -9699,13 +9700,13 @@ $messages['uk'] = array(
 	'pt-deletepage-lang-title' => 'Вилучення сторінки перекладу  $1.',
 	'pt-deletepage-full-title' => 'Видалення сторінки доступної для перекладу  $1 .',
 	'pt-deletepage-invalid-title' => 'Зазначена сторінка є недійсною.',
-	'pt-deletepage-invalid-text' => 'Зазначена сторінка не є перекладом і не доступна для перекладу.', # Fuzzy
+	'pt-deletepage-invalid-text' => 'Зазначена сторінка недоступна для перекладу і не є перекладом.',
 	'pt-deletepage-action-check' => 'Список сторінок, які будуть вилучені',
 	'pt-deletepage-action-perform' => 'Виконати вилучення',
 	'pt-deletepage-action-other' => 'Змінити ціль',
 	'pt-deletepage-lang-legend' => 'Вилучити сторінку перекладу',
 	'pt-deletepage-full-legend' => 'Вилучити сторінку перекладу',
-	'pt-deletepage-any-legend' => 'Вилучити сторінку для перекладу або її переклад', # Fuzzy
+	'pt-deletepage-any-legend' => 'Вилучити сторінку для перекладу або її переклад',
 	'pt-deletepage-current' => 'Назва сторінки:',
 	'pt-deletepage-reason' => 'Причина:',
 	'pt-deletepage-subpages' => 'Вилучити всі підсторінки',
@@ -9717,9 +9718,9 @@ $messages['uk'] = array(
 	'pt-deletepage-full-logreason' => 'Частина сторінки для перекладу, $1.',
 	'pt-deletepage-lang-logreason' => 'Частина сторінки перекладу $1.',
 	'pt-deletepage-started' => 'Будь ласка, перевірте [[Special:Log/pagetranslation|журнал перекладу сторінок]] на наявність помилок і повідомлення про завершення.',
-	'pt-deletepage-intro' => 'Ця службова сторінка дозволяє Вам повністю вилучати сторінки, призначені для перекладу, або ж вилучати переклади визначеною мовою.
-Ця дія не буде миттєвою, бо потребуватиме вилучення багатьох сторінок.
-Якщо вилучення буде невдалим, його буде записано в [[Special:Log/pagetranslation|журналі перекладу]] і такі випадки потрібно буде усунути вручну.', # Fuzzy
+	'pt-deletepage-intro' => 'Ця службова сторінка дозволяє Вам вилучати сторінки, призначені для перекладу, разом з перекладами або ж вилучати переклади визначеною мовою.
+Ця дія не буде миттєвою, бо потребуватиме вилучення багатьох залежних сторінок.
+Якщо вилучення буде невдалим, його буде записано в [[Special:Log/pagetranslation|журналі перекладу]] і такі випадки потрібно буде усунути вручну.',
 );
 
 /** Urdu (اردو)

@@ -805,7 +805,7 @@ Additional parameters:
 	'translate-gethelp' => 'Link to some Translate help page or tutorial.
 {{Identical|Help}}',
 	'translate-msggroupselector-projects' => 'Title text for the message group beadcrumb', # Fuzzy
-	'translate-msggroupselector-search-placeholder' => 'Place holder text for the search box in message group selector', # Fuzzy
+	'translate-msggroupselector-search-placeholder' => "Place holder text for the search box in message group selector. It's supposed to tell the user that the box is for search a name of a group.",
 	'translate-msggroupselector-search-all' => 'Label to display all projects',
 	'translate-msggroupselector-search-recent' => 'Label to display recent projects',
 	'translate-msggroupselector-load-from-all' => 'Label for the button', # Fuzzy
@@ -7053,12 +7053,12 @@ Utilizado sobre todo para tareas de corrección.',
 	'translate-dynagroup-last' => 'Último cambio por  {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Último cambio por  {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Ayuda',
-	'translate-msggroupselector-projects' => 'Proyectos', # Fuzzy
-	'translate-msggroupselector-search-placeholder' => 'Buscar proyectos', # Fuzzy
+	'translate-msggroupselector-projects' => 'Grupos de mensajes',
+	'translate-msggroupselector-search-placeholder' => 'Buscar grupos',
 	'translate-msggroupselector-search-all' => 'Todos',
 	'translate-msggroupselector-search-recent' => 'Recientes',
-	'translate-msggroupselector-load-from-all' => 'Subir mensajes de todos los proyectos', # Fuzzy
-	'translate-msggroupselector-view-subprojects' => 'Ver $1 {{PLURAL:$1|subproyecto|subproyectos}}', # Fuzzy
+	'translate-msggroupselector-load-from-all' => 'Subir mensajes de todos los grupos',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgrupo|subgrupos}}',
 );
 
 /** Estonian (eesti)
@@ -10341,12 +10341,12 @@ $1',
 	'translate-dynagroup-last' => 'שונה לאחרונה על־ידי {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'שונה לאחרונה על־ידי {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'עזרה',
-	'translate-msggroupselector-projects' => 'מיזמים', # Fuzzy
-	'translate-msggroupselector-search-placeholder' => 'חיפוש מיזמים', # Fuzzy
+	'translate-msggroupselector-projects' => 'קבוצות הודעות',
+	'translate-msggroupselector-search-placeholder' => 'חיפוש קבוצה',
 	'translate-msggroupselector-search-all' => 'הכול',
 	'translate-msggroupselector-search-recent' => 'חדשים',
-	'translate-msggroupselector-load-from-all' => 'טעינת הודעות מכל המיזמים', # Fuzzy
-	'translate-msggroupselector-view-subprojects' => 'הצגת $1 תת־מיזמים', # Fuzzy
+	'translate-msggroupselector-load-from-all' => 'טעינת הודעות מכל הקבוצות',
+	'translate-msggroupselector-view-subprojects' => 'הצגת {{PLURAL:$1|תת־מיזם אחד|$1 תת־מיזמים}}',
 );
 
 /** Hindi (हिन्दी)
@@ -13164,7 +13164,7 @@ $1',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}}による最終更新 ($2)',
 	'translate-gethelp' => 'ヘルプ',
 	'translate-msggroupselector-projects' => 'メッセージ群',
-	'translate-msggroupselector-search-placeholder' => '検索対象のメッセージ群',
+	'translate-msggroupselector-search-placeholder' => '検索するメッセージ群',
 	'translate-msggroupselector-search-all' => 'すべて',
 	'translate-msggroupselector-search-recent' => '最近のもの',
 	'translate-msggroupselector-load-from-all' => 'すべてのメッセージ群からメッセージを読み込む',
@@ -15801,8 +15801,6 @@ $messages['ltg'] = array(
 $messages['lus'] = array(
 	'translate' => 'Lehlinna',
 	'translate-desc' => 'MediaWiki leh a bâk lehlinna [[Special:Translate|Phek vohbik]]',
-	'translate-showsub' => '{{PLURAL:$1|Páwlpéng|Páwlpéng $1-te}} chu tilang rawh.',
-	'translate-grouplisting-empty' => 'Lehlin atán thuthawn páwl pakhat mah herrem a la awm lo.',
 	'translate-taskui-view' => 'Thuthawn awm zawng zawng',
 	'translate-taskui-untranslated' => 'Thuthawn lehlin loh zawng',
 	'translate-taskui-optional' => 'Thuthawn duh-thlan zawng',
@@ -22832,10 +22830,6 @@ Podrobnosti: $1',
 $messages['sl'] = array(
 	'translate' => 'Prevedi',
 	'translate-desc' => '[[Special:Translate|Posebna stran]] za prevajanje MediaWiki in razširitev',
-	'translate-showsub' => 'Prikaži {{PLURAL:$1|podskupino|$1 podskupini|$1 podskupine|$1 podskupin}}.',
-	'translate-grouplisting' => 'To je seznam vseh prevedljivih skupin.
-Kliknite na skupino sporočil za prikaz seznama neprevedenih sporočil.',
-	'translate-grouplisting-empty' => 'Nobena skupina sporočil ni bila konfigurirana za prevajanje.',
 	'translate-taskui-view' => 'Pokaži vsa sporočila',
 	'translate-taskui-untranslated' => 'Pokaži neprevedena sporočila',
 	'translate-taskui-optional' => 'Pokaži izbirna sporočila',
@@ -23165,6 +23159,12 @@ Najuporabnejše za opravila lektoriranja.',
 	'translate-dynagroup-last' => 'Nazadnje {{GENDER:$1|spremenil|spremenila|spremenil(-a)}} $1',
 	'translate-dynagroup-lastc' => 'Nazadnje {{GENDER:$1|spremenil|spremenila|spremenil(-a)}} $1 ($2)',
 	'translate-gethelp' => 'Pomoč',
+	'translate-msggroupselector-projects' => 'Sporočila skupine',
+	'translate-msggroupselector-search-placeholder' => 'Iskanje skupin',
+	'translate-msggroupselector-search-all' => 'Vsi',
+	'translate-msggroupselector-search-recent' => 'Nedavni',
+	'translate-msggroupselector-load-from-all' => 'Naloži sporočila iz vseh skupin',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|podskupina|podskupini|podskupine|podskupin}}',
 );
 
 /** Somali (Soomaaliga)
@@ -26662,12 +26662,12 @@ $1',
 	'translate-dynagroup-last' => 'Востаннє змінено {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Востаннє змінено {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Довідка',
-	'translate-msggroupselector-projects' => 'Проекти', # Fuzzy
-	'translate-msggroupselector-search-placeholder' => 'Шукати проекти', # Fuzzy
+	'translate-msggroupselector-projects' => 'Групи повідомлень',
+	'translate-msggroupselector-search-placeholder' => 'Шукати групи',
 	'translate-msggroupselector-search-all' => 'Усі',
 	'translate-msggroupselector-search-recent' => 'Останні',
-	'translate-msggroupselector-load-from-all' => 'Завантажувати повідомлення з усіх проектів', # Fuzzy
-	'translate-msggroupselector-view-subprojects' => 'Переглянути $1 {{PLURAL:$1|підпроект|підпроекти|підпроектів}}', # Fuzzy
+	'translate-msggroupselector-load-from-all' => 'Завантажувати повідомлення з усіх груп',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|підгрупа|підгрупи|підгруп}}',
 );
 
 /** Urdu (اردو)
