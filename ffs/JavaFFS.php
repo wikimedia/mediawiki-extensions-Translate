@@ -69,8 +69,7 @@ class JavaFFS extends SimpleFFS {
 				}
 			}
 
-			/* TODO: this doesn't handle the pathological case of
-			 * even number of trailing \ */
+			// @todo This doesn't handle the pathological case of even number of trailing \
 			if ( strlen( $value ) && $value[strlen( $value ) - 1] === "\\" ) {
 				$value = substr( $value, 0, strlen( $value ) - 1 );
 				$linecontinuation = true;
