@@ -38,6 +38,9 @@ class DtdFFSTest extends MediaWikiTestCase {
 "Retro">
 DTD;
 
+		/**
+		 * @var FileBasedMessageGroup $group
+		 */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new DtdFFS( $group );
 		$parsed = $ffs->readFromVariable( $file );

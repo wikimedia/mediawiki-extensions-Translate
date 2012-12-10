@@ -40,6 +40,9 @@ key\ with\ spaces = This is the value that could be looked up with the key "key 
 key-with-{curlies} = This is the value that could be looked up with the key "key-with-{curlies}".
 PROPERTIES;
 
+		/**
+		 * @var FileBasedMessageGroup $group
+		 */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new JavaFFS( $group );
 		$parsed = $ffs->readFromVariable( $file );
