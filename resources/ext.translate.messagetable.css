@@ -156,6 +156,19 @@
 	color: #252525;
 	border-top: 1px solid black;
 	border-bottom: 1px solid gray;
+	height: 50px;
+	line-height: 50px;
+}
+
+.tux-action-bar .tux-statsbar {
+	position: relative;
+	top: 30px;
+}
+
+.tux-action-bar .button {
+	height: 35px;
+	font-size: 15px;
+	vertical-align: middle;
 }
 
 /* Loading indicator: */
