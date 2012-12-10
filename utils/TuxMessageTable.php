@@ -58,9 +58,9 @@ class TuxMessageTable extends MessageTable {
 
 			$output .= Xml::tags( 'div', $tqeData,
 				'<div class="nine columns tux-list-message"><span class="tux-list-source">' .
-				TranslateUtils::convertWhiteSpaceToHTML( $original ) . '</span>' .
+				htmlspecialchars( $original ) . '</span>' .
 				'<span class="tux-list-translation">' .
-				TranslateUtils::convertWhiteSpaceToHTML( $translation )
+				htmlspecialchars( $translation )
 				. '</span></div>'
 				. "<div class='two columns tux-list-status text-center'>$status</div>"
 				. "<div class='one column tux-list-edit text-center'>$edit</div>"
