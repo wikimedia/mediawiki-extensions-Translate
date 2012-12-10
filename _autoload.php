@@ -244,6 +244,7 @@ $wgAutoloadClasses['WorkflowStatesMessageGroup'] = "$dir/messagegroups/WorkflowS
  * @name   Test classes
  * @{
  */
+$wgAutoloadClasses['MockFileBasedMessageGroup'] = "$dir/tests/MockFileBasedMessageGroup.php";
 $wgAutoloadClasses['MockMessageCollectionForExport'] = "$dir/tests/MockMessageCollectionForExport.php";
 $wgAutoloadClasses['MockSuperUser'] = "$dir/tests/MockSuperUser.php";
 $wgAutoloadClasses['MockWikiMessageGroup'] = "$dir/tests/MockWikiMessageGroup.php";

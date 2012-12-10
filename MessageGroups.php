@@ -245,12 +245,13 @@ class MessageGroups {
 	}
 
 	/**
-	 * Returns the message groups this message group is part of.
-	 * @since 2011-12-25
+	 * Returns a list of message groups that share (certain) messages
+	 * with this group.
+	 * @since 2011-12-25; renamed in 2012-12-10 from getParentGroups.
 	 * @param MessageGroup $group
-	 * @return array
+	 * @return string[]
 	 */
-	public static function getParentGroups( MessageGroup $group ) {
+	public static function getSharedGroups( MessageGroup $group ) {
 		// Take the first message, get a handle for it and check
 		// if that message belongs to other groups. Those are the
 		// parent aggregate groups. Ideally we loop over all keys,
@@ -265,6 +266,82 @@ class MessageGroups {
 			}
 		}
 		return $ids;
+	}
+
+	/**
+	 * Returns a list of parent message groups. If message group exists
+	 * in multiple places in the tree, multiple lists are returned.
+	 * @since 2012-12-10
+	 * @param MessageGroup $group
+	 * @return array[]
+	 */
+	public static function getParentGroups( MessageGroup $targetGroup ) {
+		$ids = self::getSharedGroups( $targetGroup );
+		if ( $ids === array() ) {
+			return array();
+		}
+
+		$targetId = $targetGroup->getId();
+
+		/* Get the group structure. We will be using this to find which
+		 * of our candidates are top-level groups. Prefilter it to only
+		 * contain aggregate groups. */
+		$structure = self::getGroupStructure();
+		foreach ( $structure as $index => $group ) {
+			if ( $group instanceof MessageGroup ) {
+				unset( $structure[$index] );
+			} else {
+				$structure[$index] = array_shift( $group );
+			}
+		}
+
+		/* Now that we have all related groups, use them to find all paths
+		 * from top-level groups to target group with any number of subgroups
+		 * in between. */
+		$paths = array();
+
+		/* This function recursively finds paths to the target group */
+		$pathFinder = function( &$paths, $group, $targetId, $prefix = '' )
+			use ( &$pathFinder )
+		{
+			if ( $group instanceof AggregateMessageGroup ) {
+				foreach ( $group->getGroups() as $subgroup ) {
+					$subId = $subgroup->getId();
+					if ( $subId === $targetId ) {
+						$paths[] = $prefix;
+						continue;
+					}
+
+					$pathFinder( $paths, $subgroup, $targetId, "$prefix|$subId" );
+				}
+			}
+		};
+
+		// Iterate over the top-level groups only
+		foreach ( $ids as $id ) {
+			// First, find a top level groups
+			$group = self::getGroup( $id );
+
+			// Quick escape for leaf groups
+			if ( !$group instanceof AggregateMessageGroup ) {
+				continue;
+			}
+
+			foreach ( $structure as $rootGroup ) {
+				if ( $rootGroup->getId() === $group->getId() ) {
+					// Yay we found a top-level group
+					$pathFinder( $paths, $rootGroup, $targetId, $id );
+					break; // No we have one or more paths appended into $paths
+				}
+			}
+		}
+
+		// And finally explode the strings
+		foreach ( $paths as $index => $pathString ) {
+			$paths[$index] = explode( '|', $pathString );
+		}
+
+		return $paths;
 	}
 
 	private function __construct() {}
