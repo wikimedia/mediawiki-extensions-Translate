@@ -6,8 +6,6 @@ class TuxMessageTable extends MessageTable {
 	}
 
 	public function contents() {
-		$optional = wfMessage( 'translate-optional' )->escaped();
-
 		$this->doLinkBatch();
 
 		$sourceLang = Language::factory( $this->group->getSourceLanguage() );
