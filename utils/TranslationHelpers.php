@@ -378,6 +378,7 @@ class TranslationHelpers {
 			}
 		}
 
+		$boxes = array();
 		foreach ( $sugFields as $field ) {
 			list( $text, $params, $label ) = $field;
 			$legend = array();
