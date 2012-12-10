@@ -705,11 +705,6 @@ class SpecialPageTranslation extends SpecialPage {
 			);
 		}
 
-		// Don't add stuff if no changes, use the plain null instead for prettiness
-		if ( !count( $changed ) ) {
-			$changed = null;
-		}
-
 		$dbw = wfGetDB( DB_MASTER );
 		if ( !$dbw->fieldExists( 'translate_sections', 'trs_order', __METHOD__ ) ) {
 			error_log( 'Field trs_order does not exist. Please run update.php.' );
@@ -725,9 +720,10 @@ class SpecialPageTranslation extends SpecialPage {
 		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
 		TranslateMetadata::set( $page->getMessageGroupId(), 'maxid', $maxid );
 
-		/* Stores the names of changed sections in the database.
-		 * Used for calculating completion percentages for outdated messages */
-		$page->addMarkedTag( $newrevision, $changed );
+		/* Stores the names of changed sections in the database. They are
+		 * used for calculating completion percentages for outdated translations.
+		 * For prettiness use null instead of empty array */
+		$page->addMarkedTag( $newrevision, $changed === array() ? null : $changed );
 		$this->addFuzzyTags( $page, $changed );
 
 		$logger = new LogPage( 'pagetranslation' );
@@ -815,9 +811,9 @@ class SpecialPageTranslation extends SpecialPage {
 
 	/**
 	 * @param TranslatablePage $page
-	 * @param array|null $changed
+	 * @param string[] $changed
 	 */
-	public function addFuzzyTags( $page, $changed ) {
+	public function addFuzzyTags( TranslatablePage $page, array $changed ) {
 		if ( !count( $changed ) ) {
 			self::superDebug( __METHOD__, 'nochanged', $page->getTitle() );
 			return;
