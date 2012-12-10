@@ -1,0 +1,95 @@
+TEMPLATE:
+  BASIC:
+    label: TestGroup
+    meta: yes
+    class: AggregateMessageGroup
+    namespace: 8
+
+# Test case 1 starts
+---
+BASIC:
+  id: root1
+
+GROUPS:
+  - twoparents
+
+---
+BASIC:
+  id: root2
+
+GROUPS:
+  - twoparents
+
+---
+BASIC:
+  class: MockFileBasedMessageGroup
+  id: twoparents
+
+GROUPS:
+  -
+
+# Test case 2 starts
+---
+BASIC:
+  class: MockFileBasedMessageGroup
+  id: oneparent-twopaths
+
+GROUPS:
+  -
+
+---
+BASIC:
+  id: root3
+
+GROUPS:
+  - sub1
+  - sub2
+
+---
+BASIC:
+  id: sub1
+
+GROUPS:
+  - oneparent-twopaths
+
+---
+BASIC:
+  id: sub2
+
+GROUPS:
+  - oneparent-twopaths
+
+
+# Test case 3 starts
+---
+BASIC:
+  class: MockFileBasedMessageGroup
+  id: multilevelnested
+
+GROUPS:
+  -
+
+---
+BASIC:
+  id: root4
+
+GROUPS:
+  - multilevelnested
+  - nested1
+  - nested2
+
+---
+BASIC:
+  id: nested1
+
+GROUPS:
+  - multilevelnested
+  - nested2
+
+---
+BASIC:
+  id: nested2
+
+GROUPS:
+  - multilevelnested
+
