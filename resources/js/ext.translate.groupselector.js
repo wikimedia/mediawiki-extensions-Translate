@@ -275,11 +275,13 @@
 		 * @param {Object} An array in which the keys are IDs of message groups that were found already.
 		 */
 		getFlatGroupList: function ( messageGroups, foundIDs ) {
+			var i;
+
 			if ( messageGroups.groups ) {
 				messageGroups = messageGroups.groups;
 			}
 
-			for ( var i = 0; i < messageGroups.length; i++ ) {
+			for ( i = 0; i < messageGroups.length; i++ ) {
 				if ( messageGroups[i].groups ) {
 					this.getFlatGroupList( messageGroups[i].groups, foundIDs );
 				}
