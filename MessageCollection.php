@@ -407,6 +407,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	protected function filterFuzzy( array $keys, $condition ) {
 		$this->loadInfo( $keys );
 
+		$origKeys = array();
 		if ( $condition === false ) {
 			$origKeys = $keys;
 		}
