@@ -73,7 +73,6 @@ interface FFS {
  * @ingroup FFS
  */
 class SimpleFFS implements FFS {
-
 	/**
 	 * @var FileBasedMessageGroup
 	 */

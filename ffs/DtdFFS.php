@@ -16,7 +16,6 @@
  * @ingroup FFS
  */
 class DtdFFS extends SimpleFFS {
-
 	/**
 	 * @param $data string
 	 * @return array

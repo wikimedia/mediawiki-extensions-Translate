@@ -27,6 +27,9 @@ class IniFFSTest extends MediaWikiTestCase {
 	public function testParsing() {
 		$file = file_get_contents( __DIR__ . '/data/IniFFSTest1.ini' );
 
+		/**
+		 * @var FileBasedMessageGroup $group
+		 */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new IniFFS( $group );
 
@@ -50,6 +53,9 @@ class IniFFSTest extends MediaWikiTestCase {
 		$file = str_replace( '$wgSitename', $wgSitename, $file );
 
 		$collection = new MockMessageCollectionForExport();
+		/**
+		 * @var FileBasedMessageGroup $group
+		 */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new IniFFS( $group );
 		$this->assertEquals( $file, $ffs->writeIntoVariable( $collection ) );
