@@ -225,12 +225,13 @@ PHP
 
 				// If there are messages to write, write them.
 				if ( count( $messagesOut ) > 0 ) {
+					$out = '';
 					switch( $this->type ) {
 						case 'special':
-							$out = "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$specialPageAliases['{$l}'] = array(\n";
+							$out .= "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$specialPageAliases['{$l}'] = array(\n";
 							break;
 						case 'magic':
-							$out = "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$magicWords['{$l}'] = array(\n";
+							$out .= "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$magicWords['{$l}'] = array(\n";
 							break;
 					}
 					foreach ( $messagesOut as $key => $translations ) {
