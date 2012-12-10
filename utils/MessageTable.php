@@ -16,6 +16,7 @@ class MessageTable {
 	protected $collection;
 	protected $group;
 	protected $editLinkParams = array();
+	protected $context;
 
 	protected $headers = array(
 		'table' => array( 'msg', 'allmessagesname' ),
@@ -36,8 +37,13 @@ class MessageTable {
 	) {
 
 		$table = new self( $collection, $group );
+		$table->setContext( $context );
 		wfRunHooks( 'TranslateMessageTableInit', array( &$table, $context, $collection, $group ) );
 		return $table;
+	}
+
+	public function setContext( IContextSource $context ) {
+		$this->context = $context;
 	}
 
 	public function __construct( MessageCollection $collection, MessageGroup $group ) {
