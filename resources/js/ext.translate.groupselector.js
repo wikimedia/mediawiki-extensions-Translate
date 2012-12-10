@@ -270,7 +270,8 @@
 		},
 
 		/**
-		 * Flatten the message group tree
+		 * Flattens a message group tree.
+		 * @fixme: Do not call this getFoo if it doesn't return anything
 		 * @param {Array} The messagegroups array or data object.
 		 * @param {Object} An array in which the keys are IDs of message groups that were found already.
 		 */
@@ -282,14 +283,15 @@
 			}
 
 			for ( i = 0; i < messageGroups.length; i++ ) {
-				if ( messageGroups[i].groups ) {
-					this.getFlatGroupList( messageGroups[i].groups, foundIDs );
-				}
-
-				// Avoid duplicate groups
+				// Avoid duplicate groups, and add the parent before subgroups
 				if ( !foundIDs[messageGroups[i].id] ) {
 					this.flatGroupList.push( messageGroups[i] );
 					foundIDs[messageGroups[i].id] = true;
+				}
+
+				// In case there are subgroups, add them recursively
+				if ( messageGroups[i].groups ) {
+					this.getFlatGroupList( messageGroups[i].groups, foundIDs );
 				}
 			}
 		},
