@@ -15885,7 +15885,7 @@ Heng thuthawn duh-thlante hi i ţawngin mamawh bîk, entirnan hming roman hawraw
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'A hnuaia hmingrelh{{PLURAL:$2||te}} khu a dikin thlâk rawh:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-plural' => 'A thu hnarin <nowki>{{PLURAL:}}</nowiki> a hmang a, lehlinnain a hmang lo.',
+	'translate-checks-plural' => 'A thu hnarin <nowiki>{{PLURAL:}}</nowiki> a hmang a, lehlinnain a hmang lo.',
 	'translate-checks-pagename' => 'Hrilhfiahna aţang hminghmun thlâk a ni',
 	'translate-checks-format' => 'He lehlinna hian a thu-hnar a zui lo emaw a thu-chheh a dik lo emaw a nih hmel: $1',
 	'translate-checks-escape' => 'A hnuaia tlanchhiatna khu tih palh a nih hmel: <strong>$1</strong>',
