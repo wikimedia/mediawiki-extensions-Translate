@@ -5,6 +5,25 @@
 
 	mw.translate = mw.translate || {};
 
+	mw.translate = $.extend( mw.translate, {
+		changeGroup: function( group ) {
+			var uri = new mw.Uri( window.location.href );
+			uri.extend( {
+				action: 'translate',
+				group: group
+			} );
+			window.location.href = uri.toString();
+		},
+
+		changeLanguage: function( language ) {
+			var uri = new mw.Uri( window.location.href );
+			uri.extend( {
+				language: language
+			} );
+			window.location.href = uri.toString();
+		}
+	} );
+
 	$submit = $( '#mw-translate-workflowset' );
 	$select = $( '#mw-sp-translate-workflow').find( 'select' );
 
@@ -81,15 +100,6 @@
 		}
 	}
 
-	mw.translate.changeGroup = function( group ) {
-		var uri = new mw.Uri( window.location.href );
-		uri.extend( {
-			action: 'translate',
-			group: group
-		} );
-		window.location.href = uri.toString();
-	};
-
 	function groupSelectorHandler( msgGroup ) {
 		var $newLink;
 
@@ -121,6 +131,18 @@
 				onSelect: groupSelectorHandler
 			} );
 		} );
+
+		$( '.ext-translate-language-selector.uls' ).uls( {
+			onSelect: function ( language ) {
+				mw.translate.changeLanguage( language );
+			},
+			languages: mw.config.get( 'wgULSLanguages' ),
+			searchAPI: mw.util.wikiScript( 'api' ) + '?action=languagesearch',
+			quickList: function () {
+				return mw.uls.getFrequentLanguageList();
+			}
+		} );
+
 	} );
 
 } )( jQuery, mediaWiki );

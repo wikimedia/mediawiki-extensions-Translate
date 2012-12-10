@@ -20,9 +20,9 @@
 (function ( $, mw, undefined ) {
 	'use strict';
 	var dialogwidth = false,
-		translate,
 		preloads = {};
 
+	mw.translate = mw.translate || {};
 	function MessageCheckUpdater( callback ) {
 		this.act = function() {
 			callback();
@@ -164,7 +164,7 @@
 		mw.translateHooks.run( 'afterRegisterFeatures', form );
 	}
 
-	translate = {
+	mw.translate = $.extend( mw.translate, {
 		init: function() {
 			var $inlines, $first, title, group, prev;
 
@@ -385,8 +385,7 @@
 				}
 			}
 		}
-	};
+	} );
 
-	mw.translate = translate;
-	$( document ).ready( translate.init );
+	$( document ).ready( mw.translate.init );
 } )( jQuery, mediaWiki );
