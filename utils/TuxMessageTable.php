@@ -84,8 +84,8 @@ class TuxMessageTable extends MessageTable {
 		$more = '<div class="tux-ajax-loader mw-ajax-loader"><div class="tux-ajax-loader-count">666 more message</div><div class="tux-ajax-loader-more">Loading 15...</div></div>';
 
 		$more .= '<div class="tux-action-bar row"><div class="three columns">' . $html . '</div>';
-		$more .= '<div class="three columns text-center"><button>Hello world</button></div>';
-		$more .= '<div class="four columns text-center"><button>Do something</button></div>';
+		$more .= '<div class="three columns text-center"><button class="button">Clear translated</button></div>';
+		$more .= '<div class="four columns text-center"><button class="blue button">Proofreading mode</button></div>';
 
 		return $this->header() . $this->contents() . $more . '</div>';
 	}
