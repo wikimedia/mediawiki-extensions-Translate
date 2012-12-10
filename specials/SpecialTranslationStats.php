@@ -561,6 +561,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		$count = count( $resData );
 		$skip = intval( $count / ( $width / 60 ) - 1 );
 		$i = $count;
+		$data = array();
 
 		foreach ( $resData as $date => $edits ) {
 			if ( $skip > 0 ) {
@@ -617,7 +618,6 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		$yTick = self::roundToSignificant( $yTick );
 		$plot->SetYTickIncrement( $yTick );
 		$plot->SetPlotAreaWorld( null, 0, null, $max );
-
 
 		$plot->SetTransparentColor( 'white' );
 		$plot->SetBackgroundColor( 'white' );

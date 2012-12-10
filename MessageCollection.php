@@ -409,6 +409,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		if ( $condition === false ) {
 			$origKeys = $keys;
+		} else {
+			$origKeys = array();
 		}
 
 		foreach ( $this->dbInfo as $row ) {
