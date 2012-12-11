@@ -425,7 +425,12 @@ Most useful for the proofreading tasks.',
 	'translate-msggroupselector-search-all' => 'All',
 	'translate-msggroupselector-search-recent' => 'Recent',
 	'translate-msggroupselector-load-from-all' => 'Load messages from all groups',
-	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgroup|subgroups}}'
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgroup|subgroups}}',
+
+	'tux-tab-all' => 'All',
+	'tux-tab-untranslated' => 'Untranslated',
+	'tux-tab-outdated' => 'Outdated',
+	'tux-tab-translated' => 'Translated',
 );
 
 /** Message documentation (Message documentation)
@@ -811,6 +816,11 @@ Additional parameters:
 	'translate-msggroupselector-load-from-all' => 'Label for the button', # Fuzzy
 	'translate-msggroupselector-view-subprojects' => 'Label indicating that the current message group contains other groups.
 * $1 is number of sub groups', # Fuzzy
+
+	'tux-tab-all' => 'Tab in Special:Translate new ui to select which messages to show.',
+	'tux-tab-untranslated' => 'Tab in Special:Translate new ui to select which messages to show.',
+	'tux-tab-outdated' => 'Tab in Special:Translate new ui to select which messages to show.',
+	'tux-tab-translated' => 'Tab in Special:Translate new ui to select which messages to show.',
 );
 
 /** Afrikaans (Afrikaans)

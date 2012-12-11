@@ -383,11 +383,11 @@ class SpecialTranslate extends SpecialPage {
 	protected function messageSelector( ) {
 		$output = Html::openElement( 'div', array( 'class' => 'row tux-message-selector' ) );
 		$tabs = array(
-			'View' => null,
-			'Untranslated' => '!translated',
+			'tux-tab-all' => null,
+			'tux-tab-untranslated' => '!translated',
 			//'Hardest',
-			'Outdated' => 'fuzzy',
-			'Translated' => 'translated',
+			'tux-tab-outdated' => 'fuzzy',
+			'tux-tab-translated' => 'translated',
 		);
 
 		$params = $this->nondefaults;
@@ -398,7 +398,7 @@ class SpecialTranslate extends SpecialPage {
 			$taskParams = array( 'filter' => $filter ) + $params;
 			ksort( $taskParams );
 			$href = $this->getTitle()->getLocalUrl( $taskParams );
-			$link = Html::element( 'a', array( 'href' => $href ), $tab );
+			$link = Html::element( 'a', array( 'href' => $href ), $this->msg( $tab ) );
 			$output .= Html::rawElement( 'span', array( 'class' => "column$selected" ), $link );
 		}
 
