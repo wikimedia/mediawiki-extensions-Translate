@@ -219,7 +219,6 @@ class CustomFilteredMessagesTask extends TranslateTask {
 			$negate = true;
 			$filter = substr( $filter, 1 );
 		}
-		var_dump( $filter );
 		$this->collection->filter( $filter, $negate );
 	}
 
