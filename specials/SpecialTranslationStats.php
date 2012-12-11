@@ -203,7 +203,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 		$out->addHTML(
 			Html::element( 'hr' ) .
-			Html::element( 'pre', null, "{{{$titleText}{$spiParams}}}" )
+			Html::element( 'pre', array(), "{{{$titleText}{$spiParams}}}" )
 		);
 
 		$out->addHTML(

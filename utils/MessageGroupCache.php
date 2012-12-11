@@ -30,13 +30,15 @@ class MessageGroupCache {
 	 */
 	protected $cache;
 
-	/// \string
+	/**
+	 * @var string
+	 */
 	protected $code;
 
 	/**
 	 * Contructs a new cache object for given group and language code.
-	 * @param $group string|FileBasedMessageGroup Group object or id.
-	 * @param $code string Language code. Default value 'en'.
+	 * @param string|FileBasedMessageGroup $group Group object or id.
+	 * @param string $code Language code. Default value 'en'.
 	 */
 	public function __construct( $group, $code = 'en' ) {
 		if ( is_object( $group ) ) {
@@ -49,7 +51,7 @@ class MessageGroupCache {
 
 	/**
 	 * Returns whether cache exists for this language and group.
-	 * @return \bool
+	 * @return bool
 	 */
 	public function exists() {
 		return file_exists( $this->getCacheFileName() );
@@ -57,7 +59,7 @@ class MessageGroupCache {
 
 	/**
 	 * Returns list of message keys that are stored.
-	 * @return \list{String} Message keys that can be passed one-by-one to get() method.
+	 * @return string[] Message keys that can be passed one-by-one to get() method.
 	 */
 	public function getKeys() {
 		return unserialize( $this->open()->get( '#keys' ) );
@@ -65,7 +67,7 @@ class MessageGroupCache {
 
 	/**
 	 * Returns timestamp in unix-format about when this cache was first created.
-	 * @return \string Unix timestamp.
+	 * @return string Unix timestamp.
 	 */
 	public function getTimestamp() {
 		return $this->open()->get( '#created' );
@@ -73,7 +75,7 @@ class MessageGroupCache {
 
 	/**
 	 * ...
-	 * @return \string Unix timestamp.
+	 * @return string Unix timestamp.
 	 */
 	public function getUpdateTimestamp() {
 		return $this->open()->get( '#updated' );
@@ -81,7 +83,7 @@ class MessageGroupCache {
 
 	/**
 	 * Get an item from the cache.
-	 * @param $key
+	 * @param string $key
 	 * @return string
 	 */
 	public function get( $key ) {
@@ -128,7 +130,7 @@ class MessageGroupCache {
 	 * It uses multiple conditions to speed up the checking from file
 	 * modification timestamps to hashing.
 	 * @param int $reason
-	 * @return \bool Whether the cache is up to date.
+	 * @return bool Whether the cache is up to date.
 	 */
 	public function isValid( &$reason = 0 ) {
 		$group = $this->group;
@@ -233,7 +235,7 @@ class MessageGroupCache {
 
 	/**
 	 * Updates cache to cache format 2.
-	 * @param $oldcache CdbReader
+	 * @param CdbReader $oldcache
 	 */
 	protected function updateCacheFormat( $oldcache ) {
 		// Read the data from the old format
@@ -264,7 +266,5 @@ class MessageGroupCache {
 			$cache->set( $key, $value );
 		}
 		$cache->close();
-
 	}
-
 }

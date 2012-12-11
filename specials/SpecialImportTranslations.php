@@ -223,6 +223,7 @@ class SpecialImportTranslations extends SpecialPage {
 	protected function parseFile( $data ) {
 		/** Construct a dummy group for us...
 		 * @todo Time to rethink the interface again?
+		 * @var FileBasedMessageGroup $group
 		 */
 		$group = MessageGroupBase::factory( array(
 			'FILES' => array(

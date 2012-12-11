@@ -65,6 +65,7 @@ $w->execute();
 class PoImporter {
 	/**
 	 * Path to file to parse.
+	 * @var bool|string
 	 */
 	private $file = false;
 
@@ -75,8 +76,8 @@ class PoImporter {
 	/**
 	 * Loads translations for comparison.
 	 *
-	 * @param $id Id of MessageGroup.
-	 * @param $code Language code.
+	 * @param string $id Id of MessageGroup.
+	 * @param string $code Language code.
 	 * @return MessageCollection
 	 */
 	protected function initMessages( $id, $code ) {
@@ -183,10 +184,10 @@ class WikiWriter {
 	protected $user;
 
 	/**
-	 * @param $changes \array Array of key/langcode => translation.
-	 * @param $groupId \string Group ID.
-	 * @param $user \string User who makes the edits in wiki.
-	 * @param $dryrun \bool Do not do anything that affects the database.
+	 * @param array $changes Array of key/langcode => translation.
+	 * @param string $groupId Group ID.
+	 * @param string $user User who makes the edits in wiki.
+	 * @param bool $dryrun Do not do anything that affects the database.
 	 */
 	public function __construct( $changes, $groupId, $user, $dryrun = true ) {
 		$this->changes = $changes;
@@ -226,9 +227,9 @@ class WikiWriter {
 
 	/**
 	 * Actually adds the new translation.
-	 * @param $namespace
-	 * @param $page
-	 * @param $text
+	 * @param int $namespace
+	 * @param string $page
+	 * @param string $text
 	 */
 	private function updateMessage( $namespace, $page, $text ) {
 		$title = Title::makeTitleSafe( $namespace, $page );

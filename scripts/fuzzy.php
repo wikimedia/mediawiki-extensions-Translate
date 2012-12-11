@@ -63,19 +63,33 @@ $bot->execute();
  * Class for marking translation fuzzy.
  */
 class FuzzyScript {
-	/// \list{String} List of patterns to mark.
+	/**
+	/* @var string[] List of patterns to mark.
+	 */
 	private $titles = array();
-	/// \bool Check for configuration problems.
+
+	/**
+	 * @var bool Check for configuration problems.
+	 */
 	private $allclear = false;
-	/// \bool Dont do anything unless confirmation is given
+
+	/**
+	 * @var bool Dont do anything unless confirmation is given
+	 */
 	public $dryrun = true;
-	/// \string Edit summary.
+
+	/**
+	 * @var string Edit summary.
+	 */
 	public $comment = null;
-	/// \list{String} List of language codes to skip.
+
+	/**
+	 * string[] List of language codes to skip.
+	 */
 	public $skipLanguages = array();
 
 	/**
-	 * @param $titles \list{String}
+	 * @param string[] $titles
 	 */
 	public function __construct( $titles ) {
 		$this->titles = $titles;

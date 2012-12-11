@@ -27,7 +27,7 @@ class SpecialTranslate extends SpecialPage {
 	protected $group = null;
 
 	protected $defaults    = null;
-	protected $nondefaults = null;
+	protected $nondefaults = array();
 	protected $options     = null;
 
 	function __construct() {
@@ -364,7 +364,7 @@ class SpecialTranslate extends SpecialPage {
 		}
 		$form =
 			Html::openElement( 'fieldset', $formAttributes ) .
-				Html::element( 'legend', null, $this->msg( 'translate-page-settings-legend' )->text() ) .
+				Html::element( 'legend', array(), $this->msg( 'translate-page-settings-legend' )->text() ) .
 				Html::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
 					Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 					Html::hidden( 'taction', $this->options['taction'] ) .
@@ -505,14 +505,14 @@ class SpecialTranslate extends SpecialPage {
 			if ( $this->defaults['task'] === $id ) {
 				return '';
 			}
-			return $sep . Html::rawElement( 'label', null,
+			return $sep . Html::rawElement( 'label', array(),
 				Xml::radio( 'task', $id, true ) . ' ' .
 				$this->msg( "translate-taskui-$id" )->escaped()
 			);
 		} else {
 			$output = '';
 			foreach ( $tasks as $index => $id ) {
-				$output .= Html::rawElement( 'label', null,
+				$output .= Html::rawElement( 'label', array(),
 				Xml::radio( 'task', $id, $this->options['task'] === $id ) . ' ' .
 				$this->msg( "translate-taskui-$id" )->escaped()
 			) . ' ';
@@ -613,7 +613,7 @@ class SpecialTranslate extends SpecialPage {
 
 		return
 			Html::openElement( 'fieldset' ) .
-				Html::element( 'legend', null, $this->msg( 'translate-page-navigation-legend' )->text() ) .
+				Html::element( 'legend', array(), $this->msg( 'translate-page-navigation-legend' )->text() ) .
 				$navigation .
 			Html::closeElement( 'fieldset' );
 	}

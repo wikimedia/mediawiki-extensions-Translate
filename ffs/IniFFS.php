@@ -23,6 +23,9 @@ class IniFFS extends SimpleFFS {
 		}
 
 		$conf = array( 'BASIC' => array( 'class' => 'FileBasedMessageGroup', 'namespace' => 8 ) );
+		/**
+		 * @var FileBasedMessageGroup $group
+		 */
 		$group = MessageGroupBase::factory( $conf );
 
 		wfSuppressWarnings();

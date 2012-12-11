@@ -200,7 +200,7 @@ class MessageGroups {
 
 	/**
 	 * Get all enabled message groups.
-	 * @return \arrayof{String,MessageGroup}
+	 * @return array ( string => MessageGroup )
 	 */
 	public static function getAllGroups() {
 		return self::singleton()->getGroups();

@@ -260,7 +260,7 @@ class MessageChecker {
 	/**
 	 * Checks for missing and unknown printf formatting characters in
 	 * translations.
-	 * @param Traversable $messages Iterable list of TMessage objects.
+	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
 	 * @param array $warnings Array where warnings are appended to.
 	 */
@@ -271,7 +271,7 @@ class MessageChecker {
 	/**
 	 * Checks for missing and unknown Ruby variables (%{var}) in
 	 * translations.
-	 * @param Traversable $messages Iterable list of TMessage objects.
+	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
 	 * @param array $warnings Array where warnings are appended to.
 	 */
@@ -282,7 +282,7 @@ class MessageChecker {
 	/**
 	 * Checks for missing and unknown python string interpolation operators in
 	 * translations.
-	 * @param Traversable $messages Iterable list of TMessage objects.
+	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
 	 * @param array $warnings Array where warnings are appended to.
 	 */
@@ -293,7 +293,7 @@ class MessageChecker {
 	/**
 	 * Checks if the translation has even number of opening and closing
 	 * parentheses. {, [ and ( are checked.
-	 * @param Traversable $messages Iterable list of TMessage objects.
+	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
 	 * @param array $warnings Array where warnings are appended to.
 	 */
@@ -343,7 +343,7 @@ class MessageChecker {
 	/**
 	 * Checks for missing and unknown printf formatting characters in
 	 * translations.
-	 * @param Traversable $messages Iterable list of TMessage objects.
+	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
 	 * @param array $warnings Array where warnings are appended to.
 	 * @param string $pattern Regular expression for matching variables.
@@ -386,7 +386,7 @@ class MessageChecker {
 	}
 
 	/**
-	 * @param Traversable $messages Iterable list of TMessage objects.
+	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
 	 * @param array $warnings Array where warnings are appended to.
 	 */

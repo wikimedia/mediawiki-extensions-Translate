@@ -130,12 +130,14 @@ class ThinMessage extends TMessage {
 		'last-translator-id' => 'rev_user',
 	);
 
-	/// \type{Database Result Row}
+	/**
+	 * @var array Database Result Row
+	 */
 	protected $row;
 
 	/**
 	 * Set the database row this message is based on.
-	 * @param $row stdObject Database Result Row
+	 * @param array $row Database Result Row
 	 */
 	public function setRow( $row ) {
 		$this->row = $row;
@@ -169,7 +171,6 @@ class ThinMessage extends TMessage {
 
 		return $this->row->$field;
 	}
-
 }
 
 /**
@@ -182,7 +183,7 @@ class FatMessage extends TMessage {
 
 	/**
 	 * Set the current translation of this message.
-	 * @param $text \string
+	 * @param string $text
 	 */
 	public function setTranslation( $text ) {
 		$this->translation = $text;
