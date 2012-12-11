@@ -526,11 +526,7 @@ class TranslationHelpers {
 
 		$options['method'] = 'GET';
 
-		if ( class_exists( 'MWHttpRequest' ) ) {
-			$req = MWHttpRequest::factory( $url, $options );
-		} else {
-			$req = HttpRequest::factory( $url, $options );
-		}
+		$req = MWHttpRequest::factory( $url, $options );
 
 		wfProfileIn( 'TranslateWebServiceRequest-' . $serviceName );
 		$status = $req->execute();
@@ -1330,7 +1326,7 @@ class TranslationHelpers {
 	 * Ajax-enabled message editing link.
 	 * @param $target Title: Title of the target message.
 	 * @param $text String: Link text for Linker::link()
-	 * @return link
+	 * @return string HTML link
 	 */
 	public static function ajaxEditLink( $target, $text ) {
 		$handle = new MessageHandle( $target );

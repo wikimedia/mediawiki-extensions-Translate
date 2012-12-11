@@ -358,7 +358,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 
 	/**
 	 * Returns all subpages, if the namespace has them enabled.
-	 * @return Empty array or TitleArray
+	 * @return array|TitleArray Empty array or TitleArray.
 	 */
 	protected function getSubpages() {
 		return $this->title->getSubpages();

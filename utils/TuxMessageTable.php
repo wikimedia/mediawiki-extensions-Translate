@@ -15,7 +15,13 @@ class TuxMessageTable extends MessageTable {
 		$output = '';
 
 		$this->collection->initMessages(); // Just to be sure
+		/**
+		 * @var TMessage $m
+		 */
 		foreach ( $this->collection as $key => $m ) {
+			/**
+			 * @var Title $title
+			 */
 			$title = $titleMap[$key];
 			$original = $m->definition();
 			$translation = $m->translation();

@@ -216,7 +216,7 @@ class StringMatcher implements StringMangler {
 	 * Mangles or unmangles list of message keys.
 	 * @param array $array \list{String} Message keys.
 	 * @param bool $reverse Direction of mangling or unmangling.
-	 * @return \list{String} (Un)mangled message keys.
+	 * @return string[] (Un)mangled message keys.
 	 */
 	protected function mangleArray( array $array, $reverse = false ) {
 		$temp = array();

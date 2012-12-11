@@ -20,51 +20,56 @@ class JsSelectToInput {
 	 * @var XmlSelect
 	 */
 	protected $select;
+
 	/// Id on the button
 	protected $buttonId;
-	/// Text for the append button
+
+	/**
+	 * @var string Text for the append button
+	 */
 	protected $msg = 'translate-jssti-add';
 
-	/// Constructor
 	public function __construct( XmlSelect $select = null ) {
 		$this->select = $select;
 	}
 
 	/**
 	 * Set the source id of the selector
-	 * @param $id \string
+	 * @param string $id
 	 */
 	public function setSourceId( $id ) {
 		$this->sourceId = $id;
 	}
 
-	/// @return \string
+	/// @return string
 	public function getSourceId() {
 		return $this->sourceId;
 	}
 
 	/**
 	 * Set the id of the target text field
-	 * @param $id \string
+	 * @param string $id
 	 */
 	public function setTargetId( $id ) {
 		$this->targetId = $id;
 	}
 
-	/// @return \string
+	/**
+	 * @return string
+	 */
 	public function getTargetId() {
 		return $this->targetId;
 	}
 
 	/**
 	 * Set the message key.
-	 * @param $message \string
+	 * @param string $message
 	 */
 	public function setMessage( $message ) {
 		$this->msg = $message;
 	}
 
-	/// @return \string Message key.
+	/// @return string Message key.
 	public function getMessage() {
 		return $this->msg;
 	}
@@ -72,7 +77,7 @@ class JsSelectToInput {
 	/**
 	 * Returns the whole input element and injects needed JavaScript
 	 * @throws MWException
-	 * @return \string Html code.
+	 * @return string Html code.
 	 */
 	public function getHtmlAndPrepareJS() {
 		if ( $this->sourceId === false ) {
@@ -94,9 +99,9 @@ class JsSelectToInput {
 
 	/**
 	 * Constructs the append button.
-	 * @param $msg \string Message key.
-	 * @param $source \string Html id.
-	 * @param $target \string Html id.
+	 * @param string $msg Message key.
+	 * @param string $source Html id.
+	 * @param string $target Html id.
 	 * @return string
 	 */
 	protected function getButton( $msg, $source, $target ) {
