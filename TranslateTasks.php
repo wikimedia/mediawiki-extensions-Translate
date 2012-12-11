@@ -505,12 +505,11 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
  * Collection of functions to get tasks.
  */
 class TranslateTasks {
-
 	/**
 	 * Return list of available tasks.
 	 * @param bool $pageTranslation Whether this group is page translation group.
 	 * @todo Make the above parameter a group and check its class?
-	 * @return \list{String} Task identifiers.
+	 * @return string[] Task identifiers.
 	 */
 	public static function getTasks( $pageTranslation = false ) {
 		global $wgTranslateTasks, $wgTranslateTranslationServices;

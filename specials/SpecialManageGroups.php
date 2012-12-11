@@ -23,6 +23,11 @@ class SpecialManageGroups extends SpecialPage {
 	const CHANGEFILE = 'translate_messagechanges.cdb';
 	const RIGHT = 'translate-manage';
 
+	/**
+	 * @var DifferenceEngine
+	 */
+	protected $diff;
+
 	public function __construct() {
 		// Anyone is allowed to see, but actions are restricted
 		parent::__construct( 'ManageMessageGroups' );

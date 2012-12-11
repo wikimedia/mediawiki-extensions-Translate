@@ -87,6 +87,11 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 */
 	protected $statsCounted = array();
 
+	/**
+	 * @var array
+	 */
+	protected $states;
+
 	public function __construct() {
 		parent::__construct( 'LanguageStats' );
 

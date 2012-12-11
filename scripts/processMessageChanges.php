@@ -29,6 +29,11 @@ require_once( "$IP/maintenance/Maintenance.php" );
 class ProcessMessageChanges extends Maintenance {
 	protected $changes = array();
 
+	/**
+	 * @var int
+	 */
+	protected $counter;
+
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = 'Script for processing message changes in file based message groups';

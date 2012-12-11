@@ -55,6 +55,9 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 		$result = $this->getResult();
 		$matcher = new StringMatcher( '', $filter );
+		/**
+		 * @var MessageGroup $mixed
+		 */
 		foreach ( $groups as $mixed ) {
 			if ( $filter !== array() && !$matcher->match( $mixed->getId() ) ) {
 				continue;

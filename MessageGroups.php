@@ -191,7 +191,7 @@ class MessageGroups {
 	}
 
 	/**
-	 * @param $id
+	 * @param string $id
 	 * @return bool
 	 */
 	public static function exists( $id ) {
@@ -211,7 +211,7 @@ class MessageGroups {
 	 * They can still exist in the system, but should not appear in front
 	 * of translators looking to do some useful work.
 	 *
-	 * @param $group MessageGroup|string Message group ID
+	 * @param MessageGroup|string $group Message group ID
 	 * @return string Message group priority
 	 * @since 2011-12-12
 	 */
@@ -272,7 +272,7 @@ class MessageGroups {
 	 * Returns a list of parent message groups. If message group exists
 	 * in multiple places in the tree, multiple lists are returned.
 	 * @since 2012-12-10
-	 * @param MessageGroup $group
+	 * @param MessageGroup $targetGroup
 	 * @return array[]
 	 */
 	public static function getParentGroups( MessageGroup $targetGroup ) {
@@ -360,7 +360,7 @@ class MessageGroups {
 
 	/**
 	 * Get all enabled non-dynamic message groups.
-	 * @return \array
+	 * @return array
 	 */
 	public function getGroups() {
 		self::init();
@@ -377,8 +377,8 @@ class MessageGroups {
 	/**
 	 * Get message groups for corresponding message group ids.
 	 *
-	 * @param $ids array Group IDs
-	 * @param $skipMeta bool Skip aggregate message groups
+	 * @param string[] $ids Group IDs
+	 * @param bool $skipMeta Skip aggregate message groups
 	 * @return array
 	 * @since 2012-02-13
 	 */
@@ -606,5 +606,4 @@ class MessageGroups {
 		}
 		return $groups;
 	}
-
 }

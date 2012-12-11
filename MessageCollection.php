@@ -304,7 +304,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 *    (PAGEINFO, *INFILE).
 	 *  - changed: translation in database differs from infile.
 	 *    (INFILE, TRANSLATIONS)
-	 * @param book $condition Whether to return messages which do not satisfy
+	 * @param bool $condition Whether to return messages which do not satisfy
 	 * the given filter condition (true), or only which do (false).
 	 * @param mixed $value Value for properties filtering.
 	 * @throws MWException If given invalid filter name.
@@ -382,8 +382,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * are not in the second list (conditition = true and false respectively).
 	 * What makes this more complex is that second list of keys might not be a
 	 * subset of the first list of keys.
-	 * @param array string[] $keys List of keys to filter.
-	 * @param array string[] $condKeys Second list of keys for filtering.
+	 * @param string[] $keys List of keys to filter.
+	 * @param string[] $condKeys Second list of keys for filtering.
 	 * @param bool $condition True (default) to return keys which are on first
 	 * and second list, false to return keys which are on the first but not on
 	 * second.
@@ -673,6 +673,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * Of the current set of keys, construct database query conditions.
 	 * @since 2011-12-28
 	 * @param DatabaseBase $db
+	 * @return string
 	 */
 	protected function getTitleConds( $db ) {
 		// Array of array( namespace, pagename )
