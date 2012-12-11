@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//0UQ\u003d",
+        "filename": "MessageCollection.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-11T09:00:35Z",
+      "side": 0,
+      "message": "I like books!",
+      "revId": "2857de5ade73ea1fe0bca156267216492a3a4b03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
