@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAADbX//0KE\u003d",
+        "filename": "_autoload.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-11T14:49:29Z",
+      "side": 1,
+      "message": "The doxygen style is to prepend (what\u0027s the word in English) % to words that look like classes but aren\u0027t. I don\u0027t think we have classes like Core, Translate, Special or Various.",
+      "parentUuid": "AAADbX//0UI\u003d",
+      "revId": "45623a238e69afe6b08e0d7a1b8195d944580bf7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADbX//0Uw\u003d",
         "filename": "_autoload.php",
         "patchSetId": 2
