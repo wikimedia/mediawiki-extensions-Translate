@@ -1196,12 +1196,10 @@ $messages['hsb'] = array(
 	'translate-group-desc-flaggedrevs' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] wobsahuje',
 	'translate-group-desc-readerfeedback' => 'Metaskupina powěsćow, kotraž wšě powěsće za rozšěrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] wobsahuje',
 	'translate-group-desc-semantic' => 'Hłowna zdźělenska skupina, kotraž wšě zdźělenki za wšě rozšěrjenja [http://semantic-mediawiki.org/ Semantic MediaWiki] wobsahuje',
-	'translate-group-desc-socialprofile' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež su z rozšěrjenjom [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] přiwuzne',
-	'translate-group-desc-translate' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate] wobsahuje',
+	'translate-group-desc-translate' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate] wobsahuje; prošu zeznaj so z [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glosarom]',
 	'translate-group-desc-wikiaextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrowane rozšěrjenja MediaWiki wobsahuje, kotrež so wot [http://www.wikia.com Wikia] wužiwaja',
 	'translate-group-desc-wikimediaextensions' => 'Hłowna skupina, kotraž wšě zdźělenki za podpěrowane rozšěrjenja MediaWiki wobsahuje, kotrež so přez [http://wikimedia.org/ Wikimedia Foundation] wužiwaja',
 	'translate-group-desc-wikimediaextensions-main' => 'Metaskupina zdźělenkow, kotraž wšě powěsće za podpěrowane rozšěrjenja MediaWiki wobsahuje, kotrež dyrbja so za [http://meta.wikimedia.org/wiki/Language_committee rěčny komitej] Wikimedije přełožować',
-	'translate-group-desc-uniwiki' => 'Hłowna skupina, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež su z [http://unicefinnovation.org/wiki.php Uniwiki] přiwuzne',
 	'translate-group-desc-ui' => 'Metaskupina zdźělenkow, kotraž wšě zdźělenki za rozšěrjenja wobsahuje, kotrež so na [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciatiwu wužiwajomnosće Wikipedije] poćahuja.',
 	'translate-group-desc-translatablepages' => 'Wšě přełožujomne strony',
 	'bw-desc-freecol' => 'Prjedy hač přełožuješ FreeCol do swojeje rěče, přečitaj prošu [[Translating:FreeCol]]. FreeCol wužiwa licencu GPL.',
@@ -1221,12 +1219,10 @@ $messages['hsb'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je pythonowa biblioteka za wutworjenje PDF-dokumentow z nastawkow MediaWiki, kotrež buchu přez biblioteku mwlib analyzowane.
 
 Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/mwlibrl za dalše informacije.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] je webmejlowy klient spisany w PHP. Zdźěl prošu problemy na stronje [[Support|Podpěra]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] je čitak offline za Wikipediju',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] je platforma za swobodne medije',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Tute zdźělenki su dźěl předłohi za e-mejlowe přepruwowanje [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Tute zdźělenki su dźěl projekta [[Translating:Open Images|Open Images]]',
-	'bw-desc-openlayers' => 'OpenLayers je dynamiski generator kartow ze zjawnym žórłowym kodom. Prošu zdźěl problemy na stronje [[Support|Podpěra]]',
 	'bw-desc-openstreetmap' => 'Skupina zdźělenkow za wšě zdźělenki z [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Zdźělenki wužiwarskeho powjercha za [[Translating:OpenStreetMap|OpenStreetMap]], wobdźěłujomnu kartu cyłeho swěta',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] je editor za OpenStreetMap, kotryž na Flash bazěruje',
@@ -1238,9 +1234,6 @@ Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/m
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] je słužba, kotraž ruty za pućowanje, kolesowanje, mountainbikowanje a skating na cyłym swěće pokazuje. Wužiwa licencu GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] móže awtorow nastawka we wikiju Wikimedije spěšnje namakać.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt, kotryž skići tekstowu wersiju Wikipedije offline na mobilnym graće.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] je platformu přesahaca aplikacija za mobilne telefony a tabletowe ličaki za čitanje a wobdźěłowanje Wikipedije',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] je platformu přesahaca aplikacija za mobilne telefony a tabletowe ličaki za čitanje a wobdźěłowanje Wikisłownika',
-	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] je mobilna aplikacija, kotraž k [[:meta:Wiki Loves Monuments|projektej Wiki Loves Monuments]] přinošuje',
 );
 
 /** Hungarian (magyar)
@@ -1958,7 +1951,7 @@ $messages['nl'] = array(
 	'translate-group-desc-flaggedrevs' => 'Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Metaberichtengroep met alle berichten voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Metaberichtengroep die alle berichten bevat voor [http://http://semantic-mediawiki.org/ Semantische MediaWiki]-extensies',
-	'translate-group-desc-translate' => 'Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
+	'translate-group-desc-translate' => 'Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:Translate Translate]; stel uzelf alstublieft op de hoogte van de [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary woordenlijst]',
 	'translate-group-desc-wikiaextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door de [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikimediaextensions-main' => 'Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen die verplicht vertaald moeten worden voor het [http://meta.wikimedia.org/wiki/Language_committee Taalcomité] van Wikimedia',

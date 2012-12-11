@@ -6808,8 +6808,8 @@ Tekst vertaaleenheid: <pre>$1</pre>',
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|heeft}} de vertaalbare pagina [[:$1]] uit de samengestelde groep $3 verwijderd',
 	'pt-movepage-title' => 'Te vertalen pagina $1 hernoemen',
 	'pt-movepage-blockers' => 'De te vertalen pagina kan niet hernoemd worden vanwege de volgende {{PLURAL:$1|foutmelding|foutmeldingen}}:',
-	'pt-movepage-block-base-exists' => 'De doelpagina [[:$1]] bestaat al.',
-	'pt-movepage-block-base-invalid' => 'De doelpagina is geen geldige paginanaam.',
+	'pt-movepage-block-base-exists' => 'De vertaalbare doelpagina "[[:$1]]" bestaat al.',
+	'pt-movepage-block-base-invalid' => 'De vertaalbare doelpaginanaam is geen geldige paginanaam.',
 	'pt-movepage-block-tp-exists' => 'De te vertalen doelpagina [[:$2]] bestaat al.',
 	'pt-movepage-block-tp-invalid' => 'De te vertalen doelpaginanaam voor [[:$1]] is ongeldig (te lang?).',
 	'pt-movepage-block-section-exists' => 'De doelpagina voor de vertaaleenheid "[[:$2]]" bestaat al.',
@@ -6858,7 +6858,7 @@ Kijk in het [[Special:Log/pagetranslation|logboek paginavertaling]] na of er fou
 	'pt-deletepage-full-logreason' => 'Onderdeel van te vertalen pagina $1.',
 	'pt-deletepage-lang-logreason' => 'Onderdeel van de vertaalde pagina $1.',
 	'pt-deletepage-started' => 'Controleer het [[Special:Log/pagetranslation|Logboek paginavertaling]] op fouten en of de opdracht is afgerond.',
-	'pt-deletepage-intro' => "Via deze pagina kunt u vertaalbare pagina's of vertalingen in een taal verwijderen.
+	'pt-deletepage-intro' => "Via deze pagina kunt u vertaalbare pagina's of vertaalde pagina's in een taal verwijderen.
 Het verwijderen vindt niet per direct plaats, omdat het mogelijk is dat vele pagina's verwijderd moeten worden.
 Fouten worden opgenomen in het [[Special:Log/pagetranslation|Logboek paginavertaling]] en deze moeten handmatig gecorrigeerd worden.",
 );
@@ -9878,7 +9878,7 @@ Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra nhữn
 	'tpt-other-pages' => '{{PLURAL:$1|Một|Những}} phiên bản trước của trang này được đánh dấu là cần dịch, nhưng {{PLURAL:$1|phiên bản|các phiên bản}} gần đây nhất không thể được đánh dấu là cần dịch.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Trang|Các trang}} này đã được khuyên để yên không cần dịch tiếp.',
 	'tpt-select-prioritylangs' => 'Danh sách các mã ngôn ngữ quan trọng phân tách bằng dấu phẩy:',
-	'tpt-select-prioritylangs-force' => 'Không cho phép dịch ra các ngôn ngữ không quan trọng', # Fuzzy
+	'tpt-select-prioritylangs-force' => 'Không cho phép dịch ra các ngôn ngữ không quan trọng',
 	'tpt-select-prioritylangs-reason' => 'Lý do:',
 	'tpt-sections-prioritylangs' => 'Ngôn ngữ quan trọng',
 	'tpt-rev-mark' => 'đánh dấu cần dịch',
@@ -9952,8 +9952,8 @@ Văn bản của đơn vị dịch thuật: <pre>$1</pre>',
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2}}đã rút trang dịch được [[:$1]] khỏi nhóm tập hợp $3',
 	'pt-movepage-title' => 'Di chuyển trang dịch được $1',
 	'pt-movepage-blockers' => 'Trang dịch được không thể được đổi tên vì {{PLURAL:$1|lỗi|các lỗi}} sau:',
-	'pt-movepage-block-base-exists' => 'Bản gốc của trang đích [[:$1]] tồn tại.', # Fuzzy
-	'pt-movepage-block-base-invalid' => 'Bản gốc của trang đích có tên không hợp lệ.', # Fuzzy
+	'pt-movepage-block-base-exists' => 'Bản gốc của trang đích dịch được “[[:$1]]” tồn tại.',
+	'pt-movepage-block-base-invalid' => 'Trang đích dịch được có tên không hợp lệ.',
 	'pt-movepage-block-tp-exists' => 'Bản dịch của trang đích [[:$2]] tồn tại.',
 	'pt-movepage-block-tp-invalid' => 'Bản dịch của trang đích [[:$1]] có tên không hợp lệ (có lẽ dài quá).',
 	'pt-movepage-block-section-exists' => 'Trang đích của đơn vị dịch thuật, “[[:$2]]”, đã tồn tại.',
@@ -9984,13 +9984,13 @@ Xin hãy kiểm tra những lỗi hay thông điệp kết quả thành công tr
 	'pt-deletepage-lang-title' => 'Đang xóa trang dịch $1.',
 	'pt-deletepage-full-title' => 'Đang xóa trang dịch được $1.',
 	'pt-deletepage-invalid-title' => 'Trang đã chỉ định là không hợp lệ.',
-	'pt-deletepage-invalid-text' => 'Trang đã chỉ định không phải là trang dịch được mà cũng không phải là bản dịch của nó.', # Fuzzy
+	'pt-deletepage-invalid-text' => 'Trang đã chỉ định không phải là trang dịch được mà cũng không phải là trang biên dịch.',
 	'pt-deletepage-action-check' => 'Danh sách các trang sẽ được xóa',
 	'pt-deletepage-action-perform' => 'Thực hiện xóa',
 	'pt-deletepage-action-other' => 'Thay đổi trang đích',
 	'pt-deletepage-lang-legend' => 'Xóa trang dịch',
 	'pt-deletepage-full-legend' => 'Xóa trang dịch được',
-	'pt-deletepage-any-legend' => 'Xóa trang dịch được hoặc bản dịch của trang dịch được', # Fuzzy
+	'pt-deletepage-any-legend' => 'Xóa trang dịch được hoặc trang biên dịch',
 	'pt-deletepage-current' => 'Tên trang:',
 	'pt-deletepage-reason' => 'Lý do:',
 	'pt-deletepage-subpages' => 'Xóa mọi trang phụ',
@@ -10002,9 +10002,9 @@ Xin hãy kiểm tra những lỗi hay thông điệp kết quả thành công tr
 	'pt-deletepage-full-logreason' => 'Một phần của trang dịch được $1.',
 	'pt-deletepage-lang-logreason' => 'Một phần của trang dịch $1.',
 	'pt-deletepage-started' => 'Xin hãy kiểm tra những lỗi hay thông điệp kết quả thành công trong [[Special:Log/pagetranslation|nhật trình dịch trang]].',
-	'pt-deletepage-intro' => 'Trang đặc biệt này cho phép bạn xóa toàn bộ trang dịch được hoặc các bản dịch trong một ngôn ngữ nào đó.
-Tác vụ xóa sẽ không được thực hiện ngay, bởi vì nhiều trang sẽ cần phải bị xóa.
-Các thất bại được ghi vào [[Special:Log/pagetranslation|nhật trình dịch trang]] sẽ cần phải được sửa bằng tay.', # Fuzzy
+	'pt-deletepage-intro' => 'Trang đặc biệt này cho phép bạn xóa toàn bộ trang dịch được hoặc một trang biên dịch trong một ngôn ngữ nào đó.
+Tác vụ xóa sẽ không được thực hiện ngay, bởi vì tất cả mọi trang dựa vào nó cũng sẽ bị xóa.
+Các thất bại được ghi vào [[Special:Log/pagetranslation|nhật trình dịch trang]] sẽ cần phải được sửa bằng tay.',
 );
 
 /** Volapük (Volapük)
