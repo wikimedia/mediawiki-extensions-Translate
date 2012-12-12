@@ -1,4 +1,4 @@
-(function ( $, mw ) {
+( function ( $, mw ) {
 	'use strict';
 
 	$( 'document' ).ready( function () {
@@ -32,4 +32,4 @@
 			$.post( mw.util.wikiScript( 'api' ), params, successFunction ).fail( failFunction );
 		} );
 	} );
-} )( jQuery, mediaWiki );
+}( jQuery, mediaWiki ) );

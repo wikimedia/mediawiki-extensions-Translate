@@ -2,7 +2,7 @@ jQuery( function( $ ) {
 	'use strict';
 
 	$( '.mw-translate-import-inputs' ).change( function() {
-		var id = $(this).attr( 'id' ).replace( /-input/, '' );
+		var id = $( this ).attr( 'id' ).replace( /-input/, '' );
 
 		$( 'input[name=upload-type]:checked' ).attr( 'checked', false );
 		$( '#' + id ).attr( 'checked', 'checked' );

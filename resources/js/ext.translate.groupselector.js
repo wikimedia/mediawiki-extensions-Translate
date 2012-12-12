@@ -1,4 +1,4 @@
-( function ( $ ) {
+( function ( $, mw ) {
 	'use strict';
 
 	function TranslateMessageGroupSelector( element, options ) {
@@ -577,4 +577,4 @@
 		};
 	} () );
 
-}( jQuery ) );
+}( jQuery, mediaWiki ) );
