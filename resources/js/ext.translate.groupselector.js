@@ -96,7 +96,7 @@
 
 		/**
 		 * Show the selector
-		 * @returns {Boolean}
+		 * @returns {boolean}
 		 */
 		show: function () {
 			// Hide all other IME settings
@@ -109,7 +109,7 @@
 
 		/**
 		 * Hide the selector
-		 * @returns {Boolean}
+		 * @returns {boolean}
 		 */
 		hide: function () {
 			this.$menu.hide();
@@ -119,7 +119,7 @@
 
 		/**
 		 * Toggle the selector
-		 * @returns {Boolean}
+		 * @returns {boolean}
 		 */
 		toggle: function () {
 			if ( this.shown ) {
@@ -271,8 +271,8 @@
 
 		/**
 		 * Flattens a message group tree.
-		 * @param {Array} messageGroups An array or data object.
-		 * @param {Object} foundIDs The array in which the keys are IDs of message groups that were found already.
+		 * @param {array} messageGroups An array or data object.
+		 * @param {object} foundIDs The array in which the keys are IDs of message groups that were found already.
 		 */
 		flattenGroupList: function ( messageGroups, foundIDs ) {
 			var i;
@@ -379,8 +379,8 @@
 		/**
 		 * Add rows with message groups to the selector.
 		 *
-		 * @param {String|null} parentGroupId. If it's null, all groups are loaded. Otherwise, groups under this id are loaded.
-		 * @param {Array} msgGroups - array of message group objects to add.
+		 * @param {string|null} parentGroupId. If it's null, all groups are loaded. Otherwise, groups under this id are loaded.
+		 * @param {array} msgGroups - array of message group objects to add.
 		 */
 		addGroupRows: function ( parentGroupId, msgGroups ) {
 			var groupSelector = this,
@@ -429,7 +429,7 @@
 		/**
 		 *
 		 * @param eventName
-		 * @returns {Boolean}
+		 * @returns {boolean}
 		 */
 		eventSupported: function ( eventName ) {
 			var isSupported,
@@ -473,8 +473,8 @@
 	 */
 	/**
 	 * Escape the search query for regex match
-	 * @param {String} value A search string to be escaped.
-	 * @returns {String} Escaped string that is safe to use for a search.
+	 * @param {string} value A search string to be escaped.
+	 * @returns {string} Escaped string that is safe to use for a search.
 	 */
 	function escapeRegex( value ) {
 		return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, '\\$&' );
@@ -482,8 +482,8 @@
 
 	/**
 	 * Prepare a message group row in the selector.
-	 * @param {Object} messagegroup object.
-	 * @returns {Object} a jQuery object with the groups selector row (<div>).
+	 * @param {object} messagegroup object.
+	 * @returns {object} a jQuery object with the groups selector row (<div>).
 	 */
 	function prepareMessageGroupRow( messagegroup ) {
 		var $row,
@@ -542,9 +542,9 @@
 	 * Find a group from an array of message groups
 	 * recurse it through sub groups.
 	 *
-	 * @param messageGroupId
-	 * @param messageGroups Array of messageGroups
-	 * @return {Object|Boolean} Messagegroup object
+	 * @param {string} messageGroupId
+	 * @param {array} messageGroups Array of messageGroups
+	 * @return {object|boolean} Messagegroup object
 	 */
 	function getGroup( messageGroupId, messageGroups ) {
 		var i, messageGroup;
