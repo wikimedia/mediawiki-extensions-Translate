@@ -96,7 +96,7 @@
 
 		/**
 		 * Show the selector
-		 * @returns {Boolean}
+		 * @returns {boolean}
 		 */
 		show: function () {
 			// Hide all other IME settings
@@ -109,7 +109,7 @@
 
 		/**
 		 * Hide the selector
-		 * @returns {Boolean}
+		 * @returns {boolean}
 		 */
 		hide: function () {
 			this.$menu.hide();
@@ -119,7 +119,7 @@
 
 		/**
 		 * Toggle the selector
-		 * @returns {Boolean}
+		 * @returns {boolean}
 		 */
 		toggle: function () {
 			if ( this.shown ) {
@@ -379,7 +379,7 @@
 		/**
 		 * Add rows with message groups to the selector.
 		 *
-		 * @param {String|null} parentGroupId. If it's null, all groups are loaded. Otherwise, groups under this id are loaded.
+		 * @param {string|null} parentGroupId. If it's null, all groups are loaded. Otherwise, groups under this id are loaded.
 		 * @param {Array} msgGroups - array of message group objects to add.
 		 */
 		addGroupRows: function ( parentGroupId, msgGroups ) {
@@ -429,7 +429,7 @@
 		/**
 		 *
 		 * @param eventName
-		 * @returns {Boolean}
+		 * @returns {boolean}
 		 */
 		eventSupported: function ( eventName ) {
 			var isSupported,
@@ -473,8 +473,8 @@
 	 */
 	/**
 	 * Escape the search query for regex match
-	 * @param {String} value A search string to be escaped.
-	 * @returns {String} Escaped string that is safe to use for a search.
+	 * @param {string} value A search string to be escaped.
+	 * @returns {string} Escaped string that is safe to use for a search.
 	 */
 	function escapeRegex( value ) {
 		return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, '\\$&' );
@@ -542,9 +542,9 @@
 	 * Find a group from an array of message groups
 	 * recurse it through sub groups.
 	 *
-	 * @param messageGroupId
-	 * @param messageGroups Array of messageGroups
-	 * @return {Object|Boolean} Messagegroup object
+	 * @param {string} messageGroupId
+	 * @param {Array} messageGroups Array of messageGroups
+	 * @return {Object|boolean} Messagegroup object
 	 */
 	function getGroup( messageGroupId, messageGroups ) {
 		var i, messageGroup;
