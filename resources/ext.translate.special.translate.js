@@ -143,6 +143,10 @@
 			}
 		} );
 
+		if ( $.fn.translateeditor ) {
+			// New translation editor
+			$( '.tux-message' ).translateeditor();
+		}
 	} );
 
 } )( jQuery, mediaWiki );
