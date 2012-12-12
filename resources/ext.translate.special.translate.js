@@ -147,4 +147,4 @@
 		}
 	} );
 
-} )( jQuery, mediaWiki );
+}( jQuery, mediaWiki ) );
