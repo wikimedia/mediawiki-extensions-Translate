@@ -217,6 +217,18 @@ $wgResourceModules['ext.translate.grid'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.editor'] = array(
+	'scripts' => 'resources/js/ext.translate.editor.js',
+	'styles' => 'resources/css/ext.translate.editor.css',
+	'dependencies' => array(
+		'ext.translate.grid',
+		'mediawiki.util',
+		'mediawiki.jqueryMsg',
+	),
+	'position' => 'top',
+) + $resourcePaths;
+
+
 $wgResourceModules['ext.translate.groupselector'] = array(
 	'styles' => 'resources/css/ext.translate.groupselector.css',
 	'scripts' => 'resources/js/ext.translate.groupselector.js',
