@@ -1,0 +1,69 @@
+.tux-message-editor {
+	border: 1px solid #777;
+	background-color: #FFFFFF;
+}
+
+.tux-message-editor .close {
+	/* @embed */
+	background: url('../images/close.png') no-repeat scroll center center transparent;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/close.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/close.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/close.svg);
+	float: right;
+	padding: 15px;
+	cursor: pointer;
+}
+
+.tux-message-editor .editor-info-toggle {
+	float: right;
+	padding: 15px;
+	cursor: pointer;
+}
+
+.tux-message-editor .editor-contract {
+	/* @embed */
+	background: url('../images/contract-ltr.png') no-repeat scroll center center transparent;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/contract-ltr.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/contract-ltr.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/contract-ltr.svg);
+}
+
+.tux-message-editor .editor-expand {
+	/* @embed */
+	background: url('../images/expand-ltr.png') no-repeat scroll center center transparent;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/expand-ltr.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/expand-ltr.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/expand-ltr.svg);
+}
+
+.tux-message-editor .editcolumn {
+	border-right: 1px solid #777;
+}
+
+.tux-message-editor textarea {
+	border: 1px solid #555;
+	font-size: 12pt;
+	height: 100px;
+	margin: 10px;
+}
+
+.tux-message-editor .messagekey {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+.tux-message-editor .sourcemessage {
+	font-size: 12pt;
+	padding: 10px;
+}
+
+.tux-message-editor .button {
+	text-overflow: ellipsis;
+	font-size: 12pt;
+	height: 35px;
+}
+
+.tux-message-editor .shortcutinfo {
+	font-size: 12pt;
+	color: #555;
+}
