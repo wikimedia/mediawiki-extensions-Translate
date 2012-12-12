@@ -22,7 +22,6 @@
 	"trailing": true,
 	"laxbreak": true,
 	"browser": true,
-	"nomen": true,
 	"onevar": true,
 	"white": false
 }

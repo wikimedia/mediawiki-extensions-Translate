@@ -30,7 +30,7 @@
 	$select.find( 'option[value=]' ).attr( 'disabled', 'disabled' );
 
 	submitFunction = function( event ) {
-		var successFunction = function( data, textStatus ) {
+		var successFunction = function( data ) {
 			if ( data.error ) {
 				$submit.val( mw.msg( 'translate-workflow-set-do' ) );
 				$submit.attr( 'disabled', false );
@@ -147,4 +147,4 @@
 		}
 	} );
 
-} )( jQuery, mediaWiki );
+}( jQuery, mediaWiki ) );

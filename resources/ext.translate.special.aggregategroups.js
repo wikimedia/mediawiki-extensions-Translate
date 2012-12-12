@@ -16,7 +16,7 @@
 			parentId = $target.parents( '.mw-tpa-group' ).data( 'id' ),
 			$select = $( '#mw-tpa-groupselect-' + parentId );
 
-		function successFunction( data, textStatus ) {
+		function successFunction( data ) {
 			if ( data.error ) {
 				window.alert( data.error.info );
 			} else {
@@ -42,7 +42,7 @@
 			subgroupId = $selected.val(),
 			subgroupName = $selected.text();
 
-		successFunction = function ( data, textStatus ) {
+		successFunction = function ( data ) {
 			if ( data.error ) {
 				window.alert( data.error.info );
 			} else {
@@ -80,7 +80,7 @@
 	function removeGroup( event ) {
 		var params, $target = $( event.target );
 
-		function successFunction ( data, textStatus ) {
+		function successFunction ( data ) {
 			if ( data.error ) {
 				window.alert( data.error.info );
 			} else {
@@ -88,7 +88,9 @@
 			}
 		}
 
-		if ( confirm ( mw.msg( 'tpt-aggregategroup-remove-confirm' ) ) ) {
+		// XXX: 'confirm' is nonstandard.
+		if ( $.isFunction( window.confirm ) &&
+				window.confirm( mw.msg( 'tpt-aggregategroup-remove-confirm' ) ) ) {
 			params = $.extend( getApiParams( $target ), {
 				'do': 'remove'
 			} );
@@ -107,7 +109,7 @@
 			event.preventDefault();
 		} );
 
-		$( '#tpt-aggregategroups-save' ).on( 'click', function ( event ) {
+		$( '#tpt-aggregategroups-save' ).on( 'click', function () {
 			var $select, successFunction, params,
 				aggGroupNameInputName = $( 'input.tp-aggregategroup-add-name' ),
 				aggGroupNameInputDesc = $( 'input.tp-aggregategroup-add-description' ),
@@ -121,7 +123,7 @@
 
 			$select = $( 'div.mw-tpa-group select' );
 
-			successFunction = function ( data, textStatus ) {
+			successFunction = function ( data ) {
 				if ( data.error ) {
 					window.alert( data.error.info );
 				} else {

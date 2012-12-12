@@ -10,7 +10,7 @@ jQuery( function( $ ) {
 	'use strict';
 	
 	$.widget( 'ui.multiselectautocomplete', {
-		options: { 
+		options: {
 			inputbox: null // a jQuery selector for the input box where selections are written.
 			// TODO can have more options.
 		},
@@ -43,9 +43,9 @@ jQuery( function( $ ) {
 							return {
 								label: text.replace(
 									new RegExp(
-									"(?![^&;]+;)(?!<[^<>]*)(" +
+									'(?![^&;]+;)(?!<[^<>]*)(' +
 									$.ui.autocomplete.escapeRegex( term ) +
-									")(?![^<>]*>)(?![^&;]+;)", 'gi'
+									')(?![^<>]*>)(?![^&;]+;)', 'gi'
 									), '<strong>$1</strong>' ),
 								value: value,
 								option: this

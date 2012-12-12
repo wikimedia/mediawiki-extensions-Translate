@@ -47,6 +47,7 @@
 		getStats: function ( language, callback ) {
 			var queryParams,
 				apiURL = mw.util.wikiScript( 'api' ),
+				req,
 				statsbar = this;
 
 			queryParams = {
@@ -56,10 +57,16 @@
 				lslanguage: language
 			};
 
-			return $.get( apiURL, queryParams, function ( result ) {
+			req = $.get( apiURL, queryParams );
+
+			req.then( function ( result ) {
 				mw.translate.languagestats = result.query.languagestats;
-				callback && callback.call( statsbar );
+				if ( $.isFunction( callback ) ) {
+					callback.call( statsbar );
+				}
 			} );
+
+			return req;
 		},
 
 		render: function () {

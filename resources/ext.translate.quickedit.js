@@ -50,35 +50,29 @@
 		return mw.html.escape( text )
 			.replace( /^ /gm, '&#160;' )
 			.replace( / $/gm, '&#160;' )
-			.replace( /  /g, '&#160; ' )
+			.replace( / {2}/g, '&#160; ' )
 			.replace( /\n/g, '<br />' );
 	}
 
 	function addAccessKeys( dialog ) {
-		var key, buttons;
-
-		buttons = {
+		var buttons = {
 			a: '.mw-translate-save',
 			s: '.mw-translate-next',
 			d: '.mw-translate-skip',
 			h: '.mw-translate-history'
 		};
 
-		for ( key in buttons ) {
-			if ( !buttons.hasOwnProperty( key ) ) {
-				continue;
-			}
-
-			$( buttons[key] )
+		$.each( buttons, function ( key, selector ) {
+			$( selector )
 				.val( function( i, b ) { return b.replace( / \(.\)$/, '' ); } )
 				.removeAttr( 'accesskey' )
 				.attr( 'title', '' );
 
-			dialog.find( buttons[key] )
+			dialog.find( selector )
 				.val( function( i, b ) { return b + ' (_)'.replace( '_', key ); } )
 				.attr( 'accesskey', key )
 				.attr( 'title', '[' + mw.util.tooltipAccessKeyPrefix + key + ']' );
-		}
+		} );
 	}
 
 	function registerFeatures( callbacks, form, page, group ) {

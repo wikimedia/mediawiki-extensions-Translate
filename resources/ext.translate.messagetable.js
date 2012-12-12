@@ -1,4 +1,4 @@
-(function ( $, mw ) {
+( function ( $, mw ) {
 	'use strict';
 
 	$( 'document' ).ready( function () {
@@ -7,7 +7,7 @@
 			$b = $(this);
 
 			// TODO Avoid creating functions inside a loop
-			successFunction = function( data, textStatus ) {
+			successFunction = function( data ) {
 				if ( data.error ) {
 					var reason = mw.msg( 'api-error-' + data.error.code );
 					$b.val( mw.msg( 'translate-messagereview-failure', reason ) );
@@ -16,7 +16,7 @@
 				}
 			};
 
-			failFunction = function( jqXHR, textStatus ) {
+			failFunction = function( jqXHR ) {
 				$b.val( mw.msg( 'translate-messagereview-failure', jqXHR.statusText ) );
 			};
 
@@ -32,4 +32,4 @@
 			$.post( mw.util.wikiScript( 'api' ), params, successFunction ).fail( failFunction );
 		} );
 	} );
-} )( jQuery, mediaWiki );
+}( jQuery, mediaWiki ) );

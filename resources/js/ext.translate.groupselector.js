@@ -1,4 +1,4 @@
-( function ( $ ) {
+( function ( $, mw ) {
 	'use strict';
 
 	function TranslateMessageGroupSelector( element, options ) {
@@ -199,10 +199,8 @@
 
 		/**
 		 * Handle the keypress/keyup events in the message group search box.
-		 *
-		 * @param e Event
 		 */
-		keyup: function ( e ) {
+		keyup: function () {
 			var query,
 				groupSelector = this,
 				$search;
@@ -577,4 +575,4 @@
 		};
 	} () );
 
-}( jQuery ) );
+}( jQuery, mediaWiki ) );
