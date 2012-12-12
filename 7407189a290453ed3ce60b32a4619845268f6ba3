@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//yvU\u003d",
+        "filename": "resources/ext.translate.messagetable.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-12T21:23:14Z",
+      "side": 1,
+      "message": "Ah, I had some ugly code to remove this class when the editor opens, but this is good!",
+      "revId": "7407189a290453ed3ce60b32a4619845268f6ba3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//yvI\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-12T21:23:14Z",
+      "side": 1,
+      "message": "space",
+      "revId": "7407189a290453ed3ce60b32a4619845268f6ba3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//yvE\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-12T21:23:14Z",
+      "side": 1,
+      "message": "In the API plans there is \"translation helpers\" API which would provide all the needed information (message docs, in other languages, TM \u0026 MT in one call. We should probably start doing it now.",
+      "revId": "7407189a290453ed3ce60b32a4619845268f6ba3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADbX//yvA\u003d",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-12T21:23:14Z",
+      "side": 1,
+      "message": "space",
+      "revId": "7407189a290453ed3ce60b32a4619845268f6ba3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
