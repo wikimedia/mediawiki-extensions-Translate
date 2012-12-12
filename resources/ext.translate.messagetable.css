@@ -74,8 +74,7 @@
 	padding: 5px;
 	/* 15px space for icon */
 	padding-left: 20px;
-	background-position: 0 50%;
-	background-repeat: no-repeat;
+	background: no-repeat 0 50%;
 }
 
 .tux-warning {
@@ -134,11 +133,10 @@
 	border-top: 1px solid black;
 	border-bottom: 1px solid gray;
 	height: 75px;
-	background-color: #F0F0F0;
 	color: #565656;
 	padding: 15px;
 	top: 0;
-	background-position: 16px 50%;
+	background: #F0F0F0 16px 50%;
 }
 
 .tux-ajax-loader-count {
