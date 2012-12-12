@@ -657,10 +657,10 @@ class SpecialTranslate extends SpecialPage {
 			) )
 			. '<span class="grouptitle">'
 			. $this->msg( 'translate-msggroupselector-projects' )->escaped()
-			. '</h3>
+			. '</span>
 			<span class="grouptitle grouplink">'
 			. $this->msg( 'translate-msggroupselector-search-all' )->escaped()
-			. '</h3>
+			. '</span>
 			</div>'
 		);
 	}
