@@ -9,7 +9,7 @@
 jQuery( document ).ready( function( $ ) {
 	'use strict';
 
-	var $allChildRows, $allToggles_cache, $toggleAllButton,
+	var $allChildRows, $allTogglesCache, $toggleAllButton,
 		$translateTable = $( '.mw-sp-translate-table' ),
 		$metaRows = $( 'tr.AggregateMessageGroup', $translateTable );
 
@@ -65,14 +65,14 @@ jQuery( document ).ready( function( $ ) {
 
 	// Create, bind and append the toggle-all button
 	$allChildRows = $( 'tr[data-parentgroup]', $translateTable );
-	$allToggles_cache = null;
+	$allTogglesCache = null;
 	$toggleAllButton = $( '<span class="collapsed">[</span>' )
 		.append( $( '<a href="#"></a>' )
 		.text( mw.msg( 'translate-langstats-expandall' ) ) )
 		.append( ']' )
 		.click( function( e ) {
 			var $el = $( this ),
-				$allToggles = !!$allToggles_cache ? $allToggles_cache : $( '.groupexpander', $translateTable );
+				$allToggles = !!$allTogglesCache ? $allTogglesCache : $( '.groupexpander', $translateTable );
 
 			// Switch the state and toggle the rows
 			// and update the local toggles too
