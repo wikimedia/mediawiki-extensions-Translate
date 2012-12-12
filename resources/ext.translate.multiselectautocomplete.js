@@ -10,7 +10,7 @@ jQuery( function( $ ) {
 	'use strict';
 	
 	$.widget( 'ui.multiselectautocomplete', {
-		options: { 
+		options: {
 			inputbox: null // a jQuery selector for the input box where selections are written.
 			// TODO can have more options.
 		},

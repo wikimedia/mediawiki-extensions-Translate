@@ -1,4 +1,4 @@
-jQuery( function( $ ) {
+( function ( $, mw ) {
 	'use strict';
 
 	$( '.mw-translate-import-inputs' ).change( function() {
@@ -22,4 +22,4 @@ jQuery( function( $ ) {
 			$.get( api, data, success );
 		}
 	} );
-} );
+} ( jQuery, mediaWiki ) );

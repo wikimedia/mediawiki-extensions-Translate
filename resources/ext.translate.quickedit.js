@@ -50,7 +50,7 @@
 		return mw.html.escape( text )
 			.replace( /^ /gm, '&#160;' )
 			.replace( / $/gm, '&#160;' )
-			.replace( /  /g, '&#160; ' )
+			.replace( / {2}/g, '&#160; ' )
 			.replace( /\n/g, '<br />' );
 	}
 
