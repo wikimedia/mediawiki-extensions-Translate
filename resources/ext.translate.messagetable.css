@@ -59,13 +59,16 @@
 }
 
 .tux-message {
-	height: 50px;
+	height: auto;
+}
+
+.tux-message-item {
 	line-height: 50px;
 	vertical-align: middle;
 	border-bottom: 1px solid #C9C9C9;
 }
 
-.tux-message:hover {
+.tux-message-item :hover {
 	background-color: #F0F0F0;
 }
 
