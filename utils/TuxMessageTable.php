@@ -43,8 +43,9 @@ class TuxMessageTable extends MessageTable {
 			$tqeData = $extraAttribs + array(
 				'data-title' => $title->getPrefixedText(),
 				'data-group' => $this->group->getId(),
+				'data-source' => htmlspecialchars( $original ) ,
 				'id' => 'tqe-anchor-' . substr( sha1( $title->getPrefixedText() ), 0, 12 ),
-				'class' => 'row tux-message tqe-inlineeditable ' . ( $hasTranslation ? 'translated' : 'untranslated' )
+				'class' => 'row tux-message ' . ( $hasTranslation ? 'translated' : 'untranslated' )
 			);
 
 			$userId = $this->context->getUser()->getId();
@@ -62,7 +63,9 @@ class TuxMessageTable extends MessageTable {
 				$status = '<span class="tux-status-translated">Translated</span>';
 			}
 
-			$output .= Xml::tags( 'div', $tqeData,
+			$messageListItem =  Xml::tags( 'div', array(
+					'class' => 'row tux-message-item'
+				),
 				'<div class="nine columns tux-list-message"><span class="tux-list-source">' .
 				htmlspecialchars( $original ) . '</span>' .
 				'<span class="tux-list-translation">' .
@@ -72,6 +75,8 @@ class TuxMessageTable extends MessageTable {
 				. "<div class='one column tux-list-edit text-center'>$edit</div>"
 			);
 
+			$output .= Xml::tags( 'div', $tqeData, $messageListItem );
+
 			$output .= "\n";
 		}
 
@@ -80,7 +85,7 @@ class TuxMessageTable extends MessageTable {
 
 	public function fullTable() {
 		$this->includeAssets();
-		$this->context->getOutput()->addModules( 'ext.translate.grid' );
+		$this->context->getOutput()->addModules( 'ext.translate.editor' );
 
 		$bar = StatsBar::getNew( $this->group->getId(), $this->collection->getLanguage() );
 		$html = $bar->getHtml( $this->context );
