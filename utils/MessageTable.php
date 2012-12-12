@@ -12,12 +12,33 @@
  * Pretty formatter for MessageCollection objects.
  */
 class MessageTable {
+	/*
+	 * @var bool
+	 */
 	protected $reviewMode = false;
+
+	/**
+	 * @var MessageCollection
+	 */
 	protected $collection;
+
+	/**
+	 * @var MessageGroup
+	 */
 	protected $group;
+
+	/**
+	 * @var array
+	 */
 	protected $editLinkParams = array();
+	/**
+	 * @var IContextSource
+	 */
 	protected $context;
 
+	/**
+	 * @var array
+	 */
 	protected $headers = array(
 		'table' => array( 'msg', 'allmessagesname' ),
 		'current' => array( 'msg', 'allmessagescurrent' ),
@@ -136,8 +157,14 @@ class MessageTable {
 		$output =  '';
 
 		$this->collection->initMessages(); // Just to be sure
+		/**
+		 * @var TMessage $m
+		 */
 		foreach ( $this->collection as $key => $m ) {
 			$tools = array();
+			/**
+			 * @var Title $title
+			 */
 			$title = $titleMap[$key];
 
 			$original = $m->definition();
@@ -320,5 +347,4 @@ class MessageTable {
 		}
 		$batch->execute();
 	}
-
 }
