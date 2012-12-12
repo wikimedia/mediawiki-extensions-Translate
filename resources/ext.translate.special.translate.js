@@ -132,17 +132,19 @@
 			} );
 		} );
 
-		$( '.ext-translate-language-selector.uls' ).uls( {
-			onSelect: function ( language ) {
-				mw.translate.changeLanguage( language );
-			},
-			languages: mw.config.get( 'wgULSLanguages' ),
-			searchAPI: mw.util.wikiScript( 'api' ) + '?action=languagesearch',
-			quickList: function () {
-				return mw.uls.getFrequentLanguageList();
-			}
-		} );
-
+		// Use ULS for language selection if it's available
+		if ( $.uls ) {
+			$( '.ext-translate-language-selector.uls' ).uls( {
+				onSelect: function ( language ) {
+					mw.translate.changeLanguage( language );
+				},
+				languages: mw.config.get( 'wgULSLanguages' ),
+				searchAPI: mw.util.wikiScript( 'api' ) + '?action=languagesearch',
+				quickList: function () {
+					return mw.uls.getFrequentLanguageList();
+				}
+			} );
+		}
 	} );
 
 } )( jQuery, mediaWiki );
