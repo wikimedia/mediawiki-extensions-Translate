@@ -10368,6 +10368,10 @@ $1',
 	'translate-msggroupselector-search-recent' => 'חדשים',
 	'translate-msggroupselector-load-from-all' => 'טעינת הודעות מכל הקבוצות',
 	'translate-msggroupselector-view-subprojects' => 'הצגת {{PLURAL:$1|תת־מיזם אחד|$1 תת־מיזמים}}',
+	'tux-tab-all' => 'הכול',
+	'tux-tab-untranslated' => 'לא מתורגמות',
+	'tux-tab-outdated' => 'לא עדכניות',
+	'tux-tab-translated' => 'מתורגמות',
 );
 
 /** Hindi (हिन्दी)
@@ -15234,10 +15238,6 @@ $messages['la'] = array(
 $messages['lb'] = array(
 	'translate' => 'Iwwersetzt',
 	'translate-desc' => "[[Special:Translate|Spezialsäit]] fir d'Iwwersetzung vu MediaWiki-Systemmessagen a fir Aneres",
-	'translate-showsub' => "Weis {{PLURAL:$1|d'Ënnergrupp|déi $1 Ënnergruppen}}.",
-	'translate-grouplisting' => "Dëst ass d'Lëscht vun allen iwweretzbare Gruppen.
-Klickt den Numm vum Grupp vu Messagen u fir déi net iwwersate Messagen ze gesinn.",
-	'translate-grouplisting-empty' => "Et goufe keng Gruppe vu Messagen fir d'Iwwersetze configuréiert.",
 	'translate-taskui-view' => 'All Message weisen',
 	'translate-taskui-untranslated' => 'Net iwwersate Message weisen',
 	'translate-taskui-optional' => 'Optional Message weisen.',
@@ -15554,6 +15554,13 @@ Dëst ass ganz nëtzlech fir d'Iwwerliesen.",
 	'translate-dynagroup-last' => 'Lescht Ännerung vum {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Lescht Ännerung vum {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Hëllef',
+	'translate-msggroupselector-search-all' => 'All',
+	'translate-msggroupselector-search-recent' => 'Rezent',
+	'translate-msggroupselector-load-from-all' => 'Message vun alle Gruppe lueden',
+	'tux-tab-all' => 'All',
+	'tux-tab-untranslated' => 'Net iwwersat',
+	'tux-tab-outdated' => 'Vereelst',
+	'tux-tab-translated' => 'Iwwersat',
 );
 
 /** Ganda (Luganda)
@@ -16517,6 +16524,10 @@ $1',
 	'translate-msggroupselector-search-recent' => 'Скорешни',
 	'translate-msggroupselector-load-from-all' => 'Вчитај пораки од сите групи',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|подгрупа|подгрупи}}',
+	'tux-tab-all' => 'Сите',
+	'tux-tab-untranslated' => 'Непреведени',
+	'tux-tab-outdated' => 'Застарени',
+	'tux-tab-translated' => 'Преведени',
 );
 
 /** Malayalam (മലയാളം)
@@ -18381,6 +18392,10 @@ Dit is vooral nuttig voor de controletaken.',
 	'translate-msggroupselector-search-recent' => 'Recent',
 	'translate-msggroupselector-load-from-all' => 'Berichten van alle groepen laden',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgroep|subgroepen}}',
+	'tux-tab-all' => 'Alle',
+	'tux-tab-untranslated' => 'Onvertaald',
+	'tux-tab-outdated' => 'Verouderd',
+	'tux-tab-translated' => 'Vertaald',
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎)
@@ -26712,6 +26727,10 @@ $1',
 	'translate-msggroupselector-search-recent' => 'Останні',
 	'translate-msggroupselector-load-from-all' => 'Завантажувати повідомлення з усіх груп',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|підгрупа|підгрупи|підгруп}}',
+	'tux-tab-all' => 'Усі',
+	'tux-tab-untranslated' => 'Неперекладені',
+	'tux-tab-outdated' => 'Застарілі',
+	'tux-tab-translated' => 'Перекладені',
 );
 
 /** Urdu (اردو)
