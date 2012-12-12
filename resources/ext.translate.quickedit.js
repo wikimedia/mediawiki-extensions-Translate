@@ -50,7 +50,7 @@
 		return mw.html.escape( text )
 			.replace( /^ /gm, '&#160;' )
 			.replace( / $/gm, '&#160;' )
-			.replace( /  /g, '&#160; ' )
+			.replace( / {2}/g, '&#160; ' )
 			.replace( /\n/g, '<br />' );
 	}
 
@@ -285,12 +285,12 @@
 							mw.translateHooks.run( 'afterSubmit', form );
 							if ( json.error ) {
 								if( json.error.code === 'emptypage') {
-									alert( mw.msg( 'api-error-emptypage' ) );
+									window.alert( mw.msg( 'api-error-emptypage' ) );
 								} else {
-									alert( json.error.info + ' (' + json.error.code +')' );
+									window.alert( json.error.info + ' (' + json.error.code +')' );
 								}
 							} else if ( json.edit.result === 'Failure' ) {
-								alert( mw.msg( 'translate-js-save-failed' ) );
+								window.alert( mw.msg( 'translate-js-save-failed' ) );
 							} else if ( json.edit.result === 'Success' ) {
 								if ( callbacks.close ) {
 									callbacks.close();
@@ -299,7 +299,7 @@
 									callbacks.success( form.find( '.mw-translate-edit-area' ).val() );
 								}
 							} else {
-								alert( mw.msg( 'translate-js-save-failed' ) );
+								window.alert( mw.msg( 'translate-js-save-failed' ) );
 							}
 						}
 					} );
@@ -324,7 +324,7 @@
 					found = true;
 				}
 			}
-			alert( mw.msg( 'translate-js-nonext' ) );
+			window.alert( mw.msg( 'translate-js-nonext' ) );
 		},
 
 		inlineEditor: function () {

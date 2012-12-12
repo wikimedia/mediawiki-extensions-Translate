@@ -34,7 +34,7 @@
 			if ( data.error ) {
 				$submit.val( mw.msg( 'translate-workflow-set-do' ) );
 				$submit.attr( 'disabled', false );
-				alert( data.error.info );
+				window.alert( data.error.info );
 			} else {
 				$submit.val( mw.msg( 'translate-workflow-set-done' ) );
 				$select.find( 'option[selected]' ).attr( 'selected', false );
@@ -147,4 +147,4 @@
 		}
 	} );
 
-} )( jQuery, mediaWiki );
+}( jQuery, mediaWiki ) );

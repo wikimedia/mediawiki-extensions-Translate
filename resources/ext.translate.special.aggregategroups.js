@@ -18,7 +18,7 @@
 
 		function successFunction( data, textStatus ) {
 			if ( data.error ) {
-				alert( data.error.info );
+				window.alert( data.error.info );
 			} else {
 				$( '<option>', { value: $target.data( 'groupid' ) } )
 					.text( $target.siblings( 'a' ).text() )
@@ -44,7 +44,7 @@
 
 		successFunction = function ( data, textStatus ) {
 			if ( data.error ) {
-				alert( data.error.info );
+				window.alert( data.error.info );
 			} else {
 				var aAttr, $a, spanAttr, $span, $ol;
 
@@ -82,7 +82,7 @@
 
 		function successFunction ( data, textStatus ) {
 			if ( data.error ) {
-				alert( data.error.info );
+				window.alert( data.error.info );
 			} else {
 				$( event.target ).parents( '.mw-tpa-group' ).remove();
 			}
@@ -123,7 +123,7 @@
 
 			successFunction = function ( data, textStatus ) {
 				if ( data.error ) {
-					alert( data.error.info );
+					window.alert( data.error.info );
 				} else {
 					var $removeSpan, $div, $groupSelector, $addButton,
 						aggregateGroupId = data.aggregategroups.aggregategroupId;
