@@ -12,7 +12,6 @@
 
 	function dissociate( event ) {
 		var params,
-
 			$target = $( event.target ),
 			parentId = $target.parents( '.mw-tpa-group' ).data( 'id' ),
 			$select = $( '#mw-tpa-groupselect-' + parentId );
@@ -29,7 +28,7 @@
 		}
 
 		params = $.extend( getApiParams( $target ), {
-			do: 'dissociate',
+			'do': 'dissociate',
 			group: $target.data( 'groupid' )
 		} );
 		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
@@ -37,7 +36,6 @@
 
 	function associate( event ) {
 		var successFunction, params,
-
 			$target = $( event.target ),
 			parentId = $target.parents( '.mw-tpa-group' ).data( 'id' ),
 			$selected = $( '#mw-tpa-groupselect-' + parentId + ' option:selected' ),
@@ -58,7 +56,7 @@
 				$a = $( '<a>', aAttr ).text( subgroupName );
 
 				spanAttr = {
-					class: 'tp-aggregate-remove-button'
+					'class': 'tp-aggregate-remove-button'
 				};
 
 				$span = $( '<span>', spanAttr );
@@ -73,14 +71,14 @@
 		};
 
 		params = $.extend( getApiParams( $target ), {
-			do: 'associate',
+			'do': 'associate',
 			group: subgroupId
 		} );
 		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 	}
 
 	function removeGroup( event ) {
-		var	$target = $( event.target );
+		var params, $target = $( event.target );
 
 		function successFunction ( data, textStatus ) {
 			if ( data.error ) {
@@ -91,7 +89,9 @@
 		}
 
 		if ( confirm ( mw.msg( 'tpt-aggregategroup-remove-confirm' ) ) ) {
-			var params = $.extend( getApiParams( $target ), { do: 'remove' } );
+			params = $.extend( getApiParams( $target ), {
+				'do': 'remove'
+			} );
 			$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 		}
 	}
@@ -160,7 +160,7 @@
 
 			params = {
 				action: 'aggregategroups',
-				do: 'add',
+				'do': 'add',
 				token: $( '#token' ).val(),
 				groupname: aggregateGroupName,
 				groupdescription: aggregateGroupDesc,

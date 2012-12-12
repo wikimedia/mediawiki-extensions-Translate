@@ -82,7 +82,7 @@
 	}
 
 	function registerFeatures( callbacks, form, page, group ) {
-		var $identical, textarea;
+		var $identical, textarea, checker;
 
 		// Enable the collapsible element
 		$identical = $( '.mw-identical-title' );
@@ -144,13 +144,13 @@
 		textarea[0].focus();
 
 		// Optional Narayam integration
-		// @todo: update to ULS when applicable
+		// TODO Update to ULS when applicable
 		if ( $.narayam ) {
 			$.narayam.addInputs( form.find( 'textarea, input' ) );
 		}
 
 		if ( form.find( '.mw-translate-messagechecks' ) ) {
-			var checker = new MessageCheckUpdater( function() {
+			checker = new MessageCheckUpdater( function() {
 				var url = mw.config.get( 'wgScript' ) + '?title=Special:Translate/editpage&suggestions=checks&page=$1&loadgroup=$2';
 				url = url.replace( '$1', encodeURIComponent( page ) ).replace( '$2', encodeURIComponent( group ) );
 				$.post( url, { translation: textarea.val() }, function( mydata ) {

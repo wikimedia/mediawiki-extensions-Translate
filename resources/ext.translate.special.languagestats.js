@@ -9,7 +9,7 @@
 jQuery( document ).ready( function( $ ) {
 	'use strict';
 
-	var
+	var $allChildRows, $allToggles_cache, $toggleAllButton,
 		$translateTable = $( '.mw-sp-translate-table' ),
 		$metaRows = $( 'tr.AggregateMessageGroup', $translateTable );
 
@@ -19,7 +19,7 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	$metaRows.each( function() {
-		var
+		var $toggler,
 			$parent = $( this ),
 			thisGroupId = $parent.attr( 'data-groupid' ),
 			$children = $( 'tr[data-parentgroup="' + thisGroupId + '"]', $translateTable );
@@ -30,7 +30,7 @@ jQuery( document ).ready( function( $ ) {
 		}
 
 		// Build toggle link
-		var $toggler = $( '<span class="groupexpander collapsed">[</span>' )
+		$toggler = $( '<span class="groupexpander collapsed">[</span>' )
 			.append( $( '<a href="#"></a>' )
 			.text( mw.msg( 'translate-langstats-expand' ) ) )
 			.append( ']' )
@@ -64,33 +64,32 @@ jQuery( document ).ready( function( $ ) {
 	} );
 
 	// Create, bind and append the toggle-all button
-	var
-		$allChildRows = $( 'tr[data-parentgroup]', $translateTable ),
-		$allToggles_cache = null,
-		$toggleAllButton = $( '<span class="collapsed">[</span>' )
-			.append( $( '<a href="#"></a>' )
-			.text( mw.msg( 'translate-langstats-expandall' ) ) )
-			.append( ']' )
-			.click( function( e ) {
-				var
-					$el = $( this ),
-					$allToggles = !!$allToggles_cache ? $allToggles_cache : $( '.groupexpander', $translateTable );
-				// Switch the state and toggle the rows
-				// and update the local toggles too
-				if ( $el.hasClass( 'collapsed' ) ) {
-					$allChildRows.show();
-					$el.add( $allToggles ).removeClass( 'collapsed' ).addClass( 'expanded' );
-					$el.find( '> a' ).text( mw.msg( 'translate-langstats-collapseall' ) );
-					$allToggles.find( '> a' ).text( mw.msg( 'translate-langstats-collapse' ) );
-				} else {
-					$allChildRows.hide();
-					$el.add( $allToggles ).addClass( 'collapsed' ).removeClass( 'expanded' );
-					$el.find( '> a' ).text( mw.msg( 'translate-langstats-expandall' ) );
-					$allToggles.find( '> a' ).text( mw.msg( 'translate-langstats-expand' ) );
-				}
-				
-				e.preventDefault();
-			} );
+	$allChildRows = $( 'tr[data-parentgroup]', $translateTable );
+	$allToggles_cache = null;
+	$toggleAllButton = $( '<span class="collapsed">[</span>' )
+		.append( $( '<a href="#"></a>' )
+		.text( mw.msg( 'translate-langstats-expandall' ) ) )
+		.append( ']' )
+		.click( function( e ) {
+			var $el = $( this ),
+				$allToggles = !!$allToggles_cache ? $allToggles_cache : $( '.groupexpander', $translateTable );
+
+			// Switch the state and toggle the rows
+			// and update the local toggles too
+			if ( $el.hasClass( 'collapsed' ) ) {
+				$allChildRows.show();
+				$el.add( $allToggles ).removeClass( 'collapsed' ).addClass( 'expanded' );
+				$el.find( '> a' ).text( mw.msg( 'translate-langstats-collapseall' ) );
+				$allToggles.find( '> a' ).text( mw.msg( 'translate-langstats-collapse' ) );
+			} else {
+				$allChildRows.hide();
+				$el.add( $allToggles ).addClass( 'collapsed' ).removeClass( 'expanded' );
+				$el.find( '> a' ).text( mw.msg( 'translate-langstats-expandall' ) );
+				$allToggles.find( '> a' ).text( mw.msg( 'translate-langstats-expand' ) );
+			}
+
+			e.preventDefault();
+		} );
 
 	// Initially hide them
 	$allChildRows.hide();
@@ -138,8 +137,7 @@ mw.loader.using( 'jquery.colorUtil' , function() {
 		$tables.on( 'sortEnd.tablesorter', function () {
 			var $table = $( this );
 			$table.find( '.headerSortDown, .headerSortUp' ).each( function () {
-				var
-					index = $table.find( 'th' ).index( $( this ) ),
+				var index = $table.find( 'th' ).index( $( this ) ),
 					dir = $( this ).hasClass( 'headerSortUp' ) ? 'desc' : 'asc';
 				window.location.hash = 'sortable:' + index + '=' + dir;
 			} );

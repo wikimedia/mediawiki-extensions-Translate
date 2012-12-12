@@ -6,7 +6,7 @@
 			var $b, successFunction, failFunction, params;
 			$b = $(this);
 
-			// @todo Avoid creating functions inside a loop
+			// TODO Avoid creating functions inside a loop
 			successFunction = function( data, textStatus ) {
 				if ( data.error ) {
 					var reason = mw.msg( 'api-error-' + data.error.code );

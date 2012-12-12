@@ -271,8 +271,8 @@
 
 		/**
 		 * Flattens a message group tree.
-		 * @param {Array} The messagegroups array or data object.
-		 * @param {Object} An array in which the keys are IDs of message groups that were found already.
+		 * @param {Array} messageGroups An array or data object.
+		 * @param {Object} foundIDs The array in which the keys are IDs of message groups that were found already.
 		 */
 		flattenGroupList: function ( messageGroups, foundIDs ) {
 			var i;
@@ -379,7 +379,7 @@
 		/**
 		 * Add rows with message groups to the selector.
 		 *
-		 * @param {String or null} parentGroupId. If it's null, all groups are loaded. Otherwise, groups under this id are loaded.
+		 * @param {String|null} parentGroupId. If it's null, all groups are loaded. Otherwise, groups under this id are loaded.
 		 * @param {Array} msgGroups - array of message group objects to add.
 		 */
 		addGroupRows: function ( parentGroupId, msgGroups ) {
@@ -429,7 +429,7 @@
 		/**
 		 *
 		 * @param eventName
-		 * @returns
+		 * @returns {Boolean}
 		 */
 		eventSupported: function ( eventName ) {
 			var isSupported,
@@ -473,7 +473,7 @@
 	 */
 	/**
 	 * Escape the search query for regex match
-	 * @param {String} value, a search string to be escaped.
+	 * @param {String} value A search string to be escaped.
 	 * @returns {String} Escaped string that is safe to use for a search.
 	 */
 	function escapeRegex( value ) {
@@ -482,7 +482,7 @@
 
 	/**
 	 * Prepare a message group row in the selector.
-	 * @param {Object} message group object.
+	 * @param {Object} messagegroup object.
 	 * @returns {Object} a jQuery object with the groups selector row (<div>).
 	 */
 	function prepareMessageGroupRow( messagegroup ) {
@@ -544,7 +544,7 @@
 	 *
 	 * @param messageGroupId
 	 * @param messageGroups Array of messageGroups
-	 * @return {Object} Messagegroup object
+	 * @return {Object|Boolean} Messagegroup object
 	 */
 	function getGroup( messageGroupId, messageGroups ) {
 		var i, messageGroup;
