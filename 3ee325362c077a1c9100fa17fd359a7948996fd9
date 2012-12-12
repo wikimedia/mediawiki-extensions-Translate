@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//ysw\u003d",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2012-12-12T20:47:21Z",
+      "side": 1,
+      "message": "Small detail, but primitives should be type-documented with a lowercase character. An uppercase S would indicate that you expect a String object (new String(..)), which behaves differently than a regular string and may very well not be interchangeable. Similar to the way we denote primitive types in our PHP code docs (\"string, int, bool\" - except that int\u003enumber, bool\u003eboolean). \n\nSame for {Boolean} below.\n\nI\u0027ve added this to the code conventions for future reference. The ambiguity may be uncommon, but it does happen. Best to be explicit.",
+      "revId": "3ee325362c077a1c9100fa17fd359a7948996fd9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
