@@ -144,6 +144,11 @@
 					return mw.uls.getFrequentLanguageList();
 				}
 			} );
+
+			if ( $.fn.translateeditor ) {
+				// New translation editor
+				$( '.tux-message' ).translateeditor();
+			}
 		}
 	} );
 
