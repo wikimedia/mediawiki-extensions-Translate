@@ -45,8 +45,8 @@ jQuery( function( $ ) {
 									new RegExp(
 									"(?![^&;]+;)(?!<[^<>]*)(" +
 									$.ui.autocomplete.escapeRegex( term ) +
-									")(?![^<>]*>)(?![^&;]+;)", "gi"
-									), "<strong>$1</strong>" ),
+									")(?![^<>]*>)(?![^&;]+;)", 'gi'
+									), '<strong>$1</strong>' ),
 								value: value,
 								option: this
 							};
@@ -71,9 +71,9 @@ jQuery( function( $ ) {
 			} );
 
 			input.data( 'autocomplete' )._renderItem = function( ul, item ) {
-				return $( "<li>" )
+				return $( '<li>' )
 					.data( 'item.autocomplete', item )
-					.append( "<a>" + item.label + "</a>" )
+					.append( '<a>' + item.label + '</a>' )
 					.appendTo( ul );
 			};
 		}, // End of _create

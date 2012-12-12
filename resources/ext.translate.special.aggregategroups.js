@@ -129,7 +129,7 @@
 						aggregateGroupId = data.aggregategroups.aggregategroupId;
 
 					$removeSpan = $( '<span>' ).attr( 'id', aggregateGroupId ).addClass( 'tp-aggregate-remove-ag-button' );
-					$div = $( "<div class='mw-tpa-group'>" )
+					$div = $( '<div class=\'mw-tpa-group\'>' )
 						.append( $( '<h2>' ).text( aggregateGroupName ).append( $removeSpan ) )
 						.append( $( '<p>' ).text( aggregateGroupDesc ) )
 						.append( $( '<ol id=\'mw-tpa-grouplist-' + aggregateGroupId +'\'>' ) );
