@@ -130,8 +130,7 @@
 }
 
 .tux-ajax-loader {
-	border-top: 1px solid black;
-	border-bottom: 1px solid gray;
+	margin: 0 -5px;
 	height: 75px;
 	color: #565656;
 	padding: 15px;
@@ -152,8 +151,8 @@
 .tux-action-bar {
 	background-color: #F0F0F0;
 	color: #252525;
-	border-top: 1px solid black;
-	border-bottom: 1px solid gray;
+	border-top: 1px solid #565656;
+	border-bottom: 1px solid #565656;
 	height: 50px;
 	line-height: 50px;
 }
