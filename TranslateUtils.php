@@ -198,9 +198,11 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Get translated language names.
+	 * Get translated language names for the languages generally supported for
+	 * translation in the current wiki. Message groups can have further
+	 * exclusions.
 	 * @param string $code
-	 * @return array
+	 * @return array ( language code => language name )
 	 */
 	public static function getLanguageNames( /*string */ $code ) {
 		if ( is_callable( array( 'Language', 'fetchLanguageNames' ) ) ) {

@@ -4,12 +4,12 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
+ * @copyright Copyright © 2008-2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
 /**
- * Job for updating translation pages when translation or template changes.
+ * Job for updating translation pages when translation or message definition changes.
  *
  * @ingroup JobQueue
  */
@@ -29,6 +29,8 @@ class MessageUpdateJob extends Job {
 	}
 
 	function run() {
+		global $wgTranslateDocumentationLanguageCode;
+
 		$title = $this->title;
 		$params = $this->params;
 		$user = FuzzyBot::getUser();
@@ -38,10 +40,14 @@ class MessageUpdateJob extends Job {
 		$summary = wfMessage( 'translate-manage-import-summary' )->plain();
 		$wikiPage->doEdit( $params['content'], $summary, $flags, false, $user );
 
+		// NOTE: message documentation is excluded from fuzzying!
 		if ( $params['fuzzy'] ) {
 			$handle = new MessageHandle( $title );
 			$key = $handle->getKey();
-			$languages = array_keys( Language::getLanguageNames( false ) );
+
+			$languages = TranslateUtils::getLanguageNames( 'en' );
+			unset( $languages[$wgTranslateDocumentationLanguageCode] );
+			$languages = array_keys( $languages );
 
 			$dbw = wfGetDB( DB_MASTER );
 			$fields = array( 'page_id', 'page_latest' );
