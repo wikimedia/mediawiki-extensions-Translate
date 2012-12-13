@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADbX//yMA\u003d",
+        "filename": "resources/ext.translate.special.importtranslations.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-13T08:51:51Z",
+      "side": 1,
+      "message": "These two things are not the same. First is executing on document.ready while latter is immediately.",
+      "revId": "f0afbe1644a3776a62379ce0045a84c0e57b1b6a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
