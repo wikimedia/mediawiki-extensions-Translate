@@ -12587,7 +12587,7 @@ Tradurre il namespace di discussione delle pagine di progetto <code>$1 talk</cod
 Se non è possibile formare un\'espressione valida nella tua lingua senza cambiare il nome del sito, per favore contatta il [[Support]].
 
 Devi essere un traduttore per salvare le modifiche.
-Le modifiche non vengono salvate finché non clicchi sul bottone "Salva" sotto.',
+Le modifiche non vengono salvate finché non clicchi sul pulsante "Salva" sotto.',
 	'translate-magic-module' => 'Modulo:',
 	'translate-magic-submit' => 'Riporta',
 	'translate-magic-cm-export' => 'Esporta',
@@ -17222,6 +17222,10 @@ Paling berguna dengan tugas menyemak (membaca pruf).',
 	'translate-msggroupselector-search-recent' => 'Terkini',
 	'translate-msggroupselector-load-from-all' => 'Muatkan mesej-mesej dari semua kumpulan',
 	'translate-msggroupselector-view-subprojects' => '$1 subkumpulan',
+	'tux-tab-all' => 'Semua',
+	'tux-tab-untranslated' => 'Belum diterjemahkan',
+	'tux-tab-outdated' => 'Lapuk',
+	'tux-tab-translated' => 'Telah diterjemahkan',
 );
 
 /** Maltese (Malti)

@@ -195,7 +195,7 @@ $messages['ast'] = array(
 	'translate-group-desc-flaggedrevs' => 'Grupu de mensaxes Meta que contien tolos mensaxes pa la estensión [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] de MediaWiki',
 	'translate-group-desc-readerfeedback' => 'Grupu de mensaxes Meta que contien tolos mensaxes pa la estensión [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] de MediaWiki',
 	'translate-group-desc-semantic' => 'Grupu de mensaxes meta que contien tolos mensaxes de toles estensiones de [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-translate' => 'Grupu de mensaxes Meta que contien tolos mensaxes pa la estensión [http://www.mediawiki.org/wiki/Extension:Translate Translate] de MediaWiki',
+	'translate-group-desc-translate' => 'Grupu de mensaxes Meta que contien tolos mensaxes pa la estensión [http://www.mediawiki.org/wiki/Extension:Translate Translate] de MediaWiki; por favor, avezate al so [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glosariu]',
 	'translate-group-desc-wikiaextensions' => "Grupu de mensaxes Meta que contien tolos mensaxes pa les estensiones sofitaes por MediaWiki qu'usa [http://www.wikia.com Wikia]",
 	'translate-group-desc-wikimediaextensions' => "Grupu de mensaxes Meta que contien tolos mensaxes pa les estensiones sofitaes por MediaWiki qu'usa la [http://wikimedia.org/ Fundación Wikimedia]",
 	'translate-group-desc-wikimediaextensions-main' => 'Meta grupu de mensaxes que contién tolos mensaxes de les estensiones de MediaWiki sofitaes que necesiten traducción pal [http://meta.wikimedia.org/wiki/Language_committee comité de llingües] de Wikimedia',
@@ -233,8 +233,10 @@ $messages['ast'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ufre una versión de Wikipedia ensin conexón, en mou sólo testu, nun preséu móvil',
 	'translate-group-desc-wikimedia-mobile' => 'Grupu de mensaxes agrupaos que contién aplicaciones pa móviles de los proyeutos de Wikimedia',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Wikipedia',
+	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Uiquiesbilla',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Wiktionary',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] ye una aplicación pa preseos móviles que val pa collaborar col [[:meta:Wiki Loves Monuments|proyeutu Wiki Loves Monuments]]',
+	'translate-group-desc-waymarked-trails-help' => "Les páxines d'ayuda de los sitios web de Waymarked Trails: http://waymarkedtrails.org/gl/help/about",
 );
 
 /** Azerbaijani (azərbaycanca)
