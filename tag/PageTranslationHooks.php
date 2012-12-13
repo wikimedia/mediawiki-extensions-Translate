@@ -231,7 +231,10 @@ class PageTranslationHooks {
 		// This way the parser knows to fragment the parser cache by language code
 		$userLangCode = $parser->getOptions()->getUserLang();
 		$userLangDir = $parser->getOptions()->getUserLangObj()->getDir();
-		$sourceLanguage = $page->getMessageGroup()->getSourceLanguage();
+		// Should call $page->getMessageGroup()->getSourceLanguage(), but
+		// group is sometimes null on WMF during page moves, reason unknown.
+		// This should do the same thing for now.
+		$sourceLanguage = $pageTitle->getPageLanguage()->getCode();
 
 		$languages = array();
 		foreach ( $status as $code => $percent ) {
