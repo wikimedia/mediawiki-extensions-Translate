@@ -85,7 +85,7 @@ class TuxMessageTable extends MessageTable {
 		$bar = StatsBar::getNew( $this->group->getId(), $this->collection->getLanguage() );
 		$html = $bar->getHtml( $this->context );
 
-		$more = '<div class="tux-ajax-loader mw-ajax-loader"><div class="tux-ajax-loader-count">666 more message</div><div class="tux-ajax-loader-more">Loading 15...</div></div>';
+		$more = '<div class="tux-ajax-loader"><span class="tux-loading-indicator"></span><div class="tux-ajax-loader-count">666 more message</div><div class="tux-ajax-loader-more">Loading 15...</div></div>';
 
 		$more .= '<div class="tux-action-bar row"><div class="three columns">' . $html . '</div>';
 		$more .= '<div class="three columns text-center"><button class="button">Clear translated</button></div>';
