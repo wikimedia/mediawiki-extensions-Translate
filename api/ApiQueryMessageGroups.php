@@ -131,6 +131,11 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			}
 		}
 
+		if ( isset( $props['priority'] ) ) {
+			$priority = MessageGroups::getPriority( $g );
+			$a['priority'] = $priority ?: 'default';
+		}
+
 		wfRunHooks( 'TranslateProcessAPIMessageGroupsProperties', array( &$a, $props, $params, $g ) );
 
 		// Depth only applies to tree format
@@ -267,6 +272,7 @@ TEXT;
 			'namespace'   => ' namespace    - Include namespace of the group. Not all groups belong to a single namespace.',
 			'exists'      => ' exists       - Include self-calculated existence property of the group',
 			'icon'        => ' icon         - Include urls to icon of the group',
+			'priority'    => ' priority     - Include priority status like discouraged',
 		);
 		wfRunHooks( 'TranslateGetAPIMessageGroupsPropertyDescs', array( &$properties ) );
 		return $properties;
