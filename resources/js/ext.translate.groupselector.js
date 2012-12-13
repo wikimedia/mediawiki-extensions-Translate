@@ -353,7 +353,7 @@
 				format: 'json',
 				meta: 'messagegroups',
 				mgformat: 'tree',
-				mgprop: 'id|label|icon',
+				mgprop: 'id|label|icon|priority',
 				// Keep this in sync with css!
 				mgiconsize: '32'
 			};
@@ -407,6 +407,11 @@
 
 			$.each( messageGroups, function ( index ) {
 				messagegroup = messageGroups[index];
+				/* Hide discouraged groups from the selector, this is the only
+				 * priority value currently supproted. */
+				if ( messagegroup.priority === 'discouraged' ) {
+					return;
+				}
 				$msgGroupRows.push( prepareMessageGroupRow( messagegroup ) );
 			} );
 
