@@ -1,6 +1,12 @@
 <?php
 
 class TuxMessageTable extends MessageTable {
+	// TODO: MessageTable should extend context source
+	public function msg( /* $args */ ) {
+		$args = func_get_args();
+		return call_user_func_array( array( $this->context, 'msg' ), $args );
+	}
+
 	public function header() {
 		return '<div class="row tux-messagelist">';
 	}
@@ -13,8 +19,6 @@ class TuxMessageTable extends MessageTable {
 		$titleMap = $this->collection->keys();
 
 		$output = '';
-
-		$this->collection->initMessages(); // Just to be sure
 		/**
 		 * @var TMessage $m
 		 */
@@ -38,7 +42,7 @@ class TuxMessageTable extends MessageTable {
 			$linkAttribs['href'] = $title->getLocalUrl( $query );
 			$linkAttribs += TranslationEditPage::jsEdit( $title, $this->group->getId() );
 
-			$edit = Html::element( 'a', $linkAttribs, 'Edit' );
+			$edit = Html::element( 'a', $linkAttribs, $this->msg( 'tux-edit' )->text() );
 
 			$tqeData = $extraAttribs + array(
 				'data-title' => $title->getPrefixedText(),
@@ -53,14 +57,26 @@ class TuxMessageTable extends MessageTable {
 			$reviewers = $m->getProperty( 'reviewers' );
 
 			if ( $m->hasTag( 'optional' ) ) {
-				$status = '<span class="tux-info tux-optional">Optional</span>';
+				$status = Html::element( 'span',
+					array( 'class' => 'tux-info tux-optional' ),
+					$this->msg( 'tux-status-optional' )->text()
+				);
 			} elseif ( $m->hasTag( 'fuzzy' ) ) {
-				$status = '<span class="tux-warning tux-status-fuzzy">Review</span>';
+				$status = Html::element( 'span',
+					array( 'class' => 'tux-warning tux-status-fuzzy' ),
+					$this->msg( 'tux-status-fuzzy' )->text()
+				);
 				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 			} elseif ( is_array( $reviewers ) && in_array( $userId, $reviewers ) ) {
-				$status = '<span class="tux-status-proofread">Proofread</span>';
+				$status = Html::element( 'span',
+					array( 'class' => 'tux-status-proofread' ),
+					$this->msg( 'tux-status-proofread' )->text()
+				);
 			} elseif ( $translation !== null ) {
-				$status = '<span class="tux-status-translated">Translated</span>';
+				$status = Html::element( 'span',
+					array( 'class' => 'tux-status-translated' ),
+					$this->msg( 'tux-status-translated' )->text()
+				);
 			}
 
 			$messageListItem =  Xml::tags( 'div', array(

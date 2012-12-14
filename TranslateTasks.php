@@ -205,6 +205,7 @@ class CustomFilteredMessagesTask extends TranslateTask {
 	protected function preinit() {
 		$code = $this->options->getLanguage();
 		$this->collection = $this->group->initCollection( $code );
+		$this->collection->setReviewMode( true );
 		$this->collection->filter( 'ignored' );
 		if ( $this->context->getRequest()->getBool( 'optional' ) ) {
 			$this->collection->filter( 'optional' );
