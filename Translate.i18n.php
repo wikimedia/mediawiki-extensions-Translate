@@ -439,6 +439,18 @@ Most useful for the proofreading tasks.',
 	'tux-status-fuzzy' => 'Outdated',
 	'tux-status-proofread' => 'Proofread',
 	'tux-status-translated' => 'Translated',
+
+	'tux-editor-placeholder' => 'Your translation',
+	'tux-editor-save-button-label' => 'Save translation',
+	'tux-editor-skip-button-label' => 'Skip to next',
+	'tux-editor-shortcut-info' => 'Press "$1" to save or "$2" to skip to next message',
+	'tux-editor-no-message-doc' => 'No message documentation',
+	'tux-editor-edit-desc' => 'Edit description',
+	'tux-editor-suggestions-title' => 'Suggestions',
+	'tux-editor-in-other-languages' => 'In other languages',
+	'tux-editor-need-more-help' => 'Need more help?',
+	'tux-editor-ask-help' => 'Ask for more information',
+	'tux-editor-tm-match' => '$1% match'
 );
 
 /** Message documentation (Message documentation)
@@ -835,6 +847,21 @@ Additional parameters:
 	'tux-status-proofread' => 'Status label in [[Special:Translate]] indicating that you have proofread the translation.
 Read as in "proofRED" (past participle).',
 	'tux-status-translated' => 'Status label in Special:Translate indicating that translation exists',
+
+	'tux-editor-placeholder' => 'Placeholder text for the translation editor textbox',
+	'tux-editor-save-button-label' => 'Label for save translation button',
+	'tux-editor-skip-button-label' => 'Label for skip button',
+	'tux-editor-shortcut-info' => 'A help text for the keyboard shortcuts
+* $1 is shortcut key for save button
+* $2 is shortcut key for skip button',
+	'tux-editor-no-message-doc' => 'Text to be shown when no message documentation is present for the message',
+	'tux-editor-edit-desc' => 'Text for the link to edit message documentation',
+	'tux-editor-suggestions-title' => 'Title text for translation memory suggestions',
+	'tux-editor-in-other-languages' => 'Title text for suggestions from other languages',
+	'tux-editor-need-more-help' => 'Help text label',
+	'tux-editor-ask-help' => 'Link text for more information',
+	'tux-editor-tm-match' => 'Text showing the quality of suggestion in percentage
+* $1 is a value less than 100',
 );
 
 /** Afrikaans (Afrikaans)
@@ -16828,6 +16855,31 @@ $messages['ml'] = array(
 	'translate-msggroupselector-search-recent' => 'ഈയിടെ',
 	'translate-msggroupselector-load-from-all' => 'എല്ലാ സംരംഭങ്ങളില്‍ നിന്നും സന്ദേശങ്ങള്‍ കാണിക്കുക', # Fuzzy
 	'translate-msggroupselector-view-subprojects' => '$1 ഉപസംരംഭങ്ങള്‍ കാണുക', # Fuzzy
+
+	'tux-languageselector' => 'ഭാഷ',
+
+	'tux-tab-all' => 'എല്ലാം',
+	'tux-tab-untranslated' => 'പരിഭാഷപ്പെടുത്താത്തവ',
+	'tux-tab-outdated' => 'കാലഹരണപ്പെട്ടവ',
+	'tux-tab-translated' => 'പരിഭാഷപ്പെടുത്തിയവ',
+
+	'tux-edit' => 'പരിഭാഷപ്പെടുത്തുക',
+	'tux-status-optional' => 'ഐച്ഛികം',
+	'tux-status-fuzzy' => 'മാറിപ്പോയി',
+	'tux-status-proofread' => 'പരിശോധിച്ചു',
+	'tux-status-translated' => 'പരിഭാഷപ്പെടുത്തി',
+
+	'tux-editor-placeholder' => 'നിങ്ങളുടെ പരിഭാഷ',
+	'tux-editor-save-button-label' => 'പരിഭാഷ ചേര്‍ക്കുക',
+	'tux-editor-skip-button-label' => 'അടുത്തതിലേയ്ക്ക്',
+	'tux-editor-shortcut-info' => 'സംരക്ഷിക്കാന്‍  "$1" അമര്‍ക്കുക, അടുത്തതിലേയ്ക്ക് പോകാന്‍ "$2" അമര്‍ത്തുക.',
+	'tux-editor-no-message-doc' => 'സന്ദേശവിവരണം ലഭ്യമല്ല',
+	'tux-editor-edit-desc' => 'സന്ദേശവിവരണം തിരുത്തുക',
+	'tux-editor-suggestions-title' => 'സൂചനകള്‍',
+	'tux-editor-in-other-languages' => 'മറ്റു ഭാഷകളില്‍',
+	'tux-editor-need-more-help' => 'സഹായം ആവശ്യമാണോ?',
+	'tux-editor-ask-help' => 'കൂടുതല്‍ വിവരങ്ങള്‍ ചോദിക്കുക',
+	'tux-editor-tm-match' => '$1% ചേര്‍ച്ച'
 );
 
 /** Mongolian (монгол)

@@ -17,15 +17,32 @@
 		 * Initialize the plugin
 		 */
 		init: function () {
+			var $editorColumn,
+				$infoColumn;
+
+			$editorColumn = this.prepareEditorColumn();
+			$infoColumn = this.prepareInfoColumn();
+
+			this.$editor = $( '<div>' )
+				.addClass( 'row tux-message-editor' )
+				.append( $editorColumn, $infoColumn );
+
+			this.expanded = false;
+			this.$editTrigger.append( this.$editor );
+			this.$editor.hide();
+
+			this.getTranslationSuggestions();
+			this.getTranslationMemorySuggestions();
+		},
+
+		prepareEditorColumn: function () {
 			var translateEditor = this,
 				$editorColumn,
-				$infoColumn,
 				$messageKeyLabel,
 				$textArea,
 				$saveButton,
 				$skipButton,
 				$sourceString,
-				$editorControlIcons,
 				$closeIcon,
 				$infoToggleIcon;
 
@@ -37,7 +54,7 @@
 				.text( this.$editTrigger.data( 'title' ) );
 
 			$closeIcon = $( '<span>' )
-				.addClass( 'close' )
+				.addClass( 'one column close' )
 				.on( 'click', function () {
 					translateEditor.hide();
 				} ); // TODO: refactor event handler
@@ -45,18 +62,14 @@
 			$infoToggleIcon = $( '<span>' )
 				// Initially the editor column is contracted,
 				// so show the expand button first
-				.addClass( 'editor-info-toggle editor-expand' )
+				.addClass( 'one column editor-info-toggle editor-expand' )
 				.on( 'click', function () {
 					translateEditor.infoToggle( $( this ) );
 				} ); // TODO: refactor event handler
 
-			$editorControlIcons = $( '<div>' )
-				.addClass( 'two columns editor-control-icons text-right' )
-				.append( $infoToggleIcon, $closeIcon );
-
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row' )
-				.append( $messageKeyLabel, $editorControlIcons )
+				.append( $messageKeyLabel, $infoToggleIcon, $closeIcon )
 			);
 
 			$sourceString = $( '<span>' )
@@ -70,9 +83,13 @@
 
 			$textArea = $( '<textarea>' )
 				.attr( {
-					'placeholder': 'Your translation' //FIXME i18n
+					'placeholder': mw.msg( 'tux-editor-placeholder' )
 				} )
 				.addClass( 'eleven columns' );
+
+			if ( this.$editTrigger.data( 'translation' ) ) {
+				$textArea.text( this.$editTrigger.data( 'translation' ) );
+			}
 
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row' )
@@ -80,7 +97,7 @@
 			);
 
 			$saveButton = $( '<button>' )
-				.text( 'Save translation' ) //FIXME i18n
+				.text( mw.msg( 'tux-editor-save-button-label' ) )
 				.attr( {
 					'accesskey': 's',
 					'title': mw.util.tooltipAccessKeyPrefix + 's'
@@ -89,7 +106,7 @@
 			// TODO: add click handler for this button
 
 			$skipButton = $( '<button>' )
-				.text( 'Skip to next' ) //FIXME i18n
+				.text( mw.msg( 'tux-editor-skip-button-label' ) )
 				.attr( {
 					'accesskey': 'd',
 					'title': mw.util.tooltipAccessKeyPrefix + 'd'
@@ -104,37 +121,61 @@
 
 			$editorColumn.append( $( '<span>' )
 				.addClass( 'row text-left shortcutinfo' )
-				.text( 'Press "CTRL+S" to save or "CTRL+D" to skip to next message' ) //FIXME i18n
+				.text( mw.msg( 'tux-editor-shortcut-info',
+					$saveButton.attr( 'title').toUpperCase(),
+					$skipButton.attr( 'title').toUpperCase() )
+				)
 			);
 
+			return $editorColumn;
+		},
+
+		prepareInfoColumn: function () {
+			var $infoColumn;
+
 			$infoColumn = $( '<div>' )
-				.addClass( 'five columns infocolumn' );
+			.addClass( 'five columns infocolumn' );
 
 			$infoColumn.append( $( '<div>' )
 				.addClass( 'row text-left message-desc' )
-				.text( 'Message documentation goes here' ) //FIXME i18n
+				.text( mw.msg( 'tux-editor-no-message-doc' ) )
 			);
 
 			$infoColumn.append( $( '<div>' )
-				.addClass( 'row text-left tm-suggestions' )
-				.text( 'Translation memory suggestions' ) //FIXME i18n
+				.addClass( 'row text-left message-desc-edit' )
+				.append( $( '<a>')
+					.attr( {
+						href: ( new mw.Uri( window.location.href ) ).extend( {
+								language: 'qqq'
+							} ).toString(), // FIXME: this link is not correct
+						target: '_blank'
+					} )
+					.text( mw.msg( 'tux-editor-edit-desc' ) ) )
+			);
+
+			$infoColumn.append( $( '<div>' )
+				.addClass( 'row text-left tm-suggestions-title' )
+				.text( mw.msg( 'tux-editor-suggestions-title' ) )
+			);
+
+
+			$infoColumn.append( $( '<div>' )
+				.addClass( 'row text-left in-other-languages-title' )
+				.text( mw.msg( 'tux-editor-in-other-languages' ) )
 			);
 
 			$infoColumn.append( $( '<div>' )
 				.addClass( 'row text-left help' )
-				.text( 'Need more help? Ask for more information' ) //FIXME i18n
+				.append(
+					$( '<span>' )
+						.text( mw.msg( 'tux-editor-need-more-help' ) ),
+					$( '<a>' )
+						.attr( 'href', '#' ) // TODO: add help link for message
+						.text( mw.msg( 'tux-editor-ask-help' ) )
+				)
 			);
 
-			this.$editor = $( '<div>' )
-				.addClass( 'row tux-message-editor' );
-
-			this.$editor.append( $editorColumn, $infoColumn );
-			this.expanded = false;
-			this.$editTrigger.append( this.$editor );
-			this.$editor.hide();
-
-			this.getTranslationSuggestions();
-			this.getMessageDocumentation();
+			return $infoColumn;
 		},
 
 		show: function () {
@@ -143,7 +184,10 @@
 			}
 
 			// Hide all other editors in the page
-			$( '.tux-message' ).data( 'translateeditor' ).hide();
+			$( '.tux-message' ).each( function () {
+				$( this ).data( 'translateeditor' ).hide();
+			} );
+
 			this.$messageItem.hide();
 			this.$editor.show();
 			this.shown = true;
@@ -175,8 +219,8 @@
 			toggleIcon.removeClass( 'editor-contract' );
 			toggleIcon.addClass( 'editor-expand' );
 
-			this.$editor.find( 'div.infocolumn' ).show();
-			this.$editor.find( 'div.editcolumn' )
+			this.$editor.find( '.infocolumn' ).show();
+			this.$editor.find( '.editcolumn' )
 				.removeClass( 'twelve' )
 				.addClass( 'seven' );
 
@@ -196,14 +240,105 @@
 			this.expanded = true;
 		},
 
-		getMessageDocumentation: function() {
-			// API call to get message documentation.
-			// callback should render message documentation to the editor's info column
+		getTranslationSuggestions: function() {
+			// API call to get translation suggestions from other languages
+			// callback should render suggestions to the editor's info column
+			var queryParams,
+				translateEditor = this,
+				apiURL;
+
+			queryParams = {
+				action: 'query',
+				meta: 'messagetranslations',
+				mttitle: this.$editTrigger.data( 'title' ),
+				format: 'json'
+			};
+
+			apiURL = mw.util.wikiScript( 'api' );
+
+			$.get( apiURL, queryParams ).done( function ( result ) {
+				var translations;
+
+				if ( result.query ) {
+					translations = result.query.messagetranslations;
+					$.each( translations, function ( index ) {
+						var translation,
+							$otherLanguage;
+
+						translation = translations[index];
+
+						if ( translation.language === 'qqq' ) {
+							translateEditor.$editor.find( '.message-desc' )
+								.text( translation['*'] );
+						} else if ( translation.language !== translateEditor.$editTrigger.attr( 'lang' ) ) {
+							//Need to append this to a section "translation in other languages"
+							$otherLanguage = $( '<div>')
+								.addClass( 'row in-other-language' )
+								.append(
+									$( '<div>')
+										.addClass( 'nine columns' )
+										.text( translation['*'] ),
+									$( '<div>')
+										.addClass( 'three columns language text-right' )
+										.text( $.uls.data.getAutonym( translation.language ) )
+								);
+
+							translateEditor.$editor.find( '.in-other-languages-title' )
+								.after( $otherLanguage );
+						}
+					} );
+				}
+			} ).fail( function ( ) {
+				// what to do?
+			} );
 		},
 
-		getTranslationSuggestions: function() {
+		getTranslationMemorySuggestions: function() {
 			// API call to get translation memory suggestions.
 			// callback should render suggestions to the editor's info column
+			var queryParams,
+				translateEditor = this,
+				apiURL;
+
+			queryParams = {
+				action: 'ttmserver',
+				sourcelanguage: 'en', //FIXME: dont hardcode it
+				targetlanguage: this.$editTrigger.attr( 'lang' ),
+				text: this.$editTrigger.data( 'source' ),
+				format: 'json'
+			};
+
+			apiURL = mw.util.wikiScript( 'api' );
+
+			$.get( apiURL, queryParams ).done( function ( result ) {
+				var suggestions;
+
+				if ( result.ttmserver ) {
+					suggestions = result.ttmserver;
+					$.each( suggestions, function ( index ) {
+						var suggestion,
+							$suggestion;
+
+						suggestion = suggestions[index];
+
+						$suggestion = $( '<div>')
+							.addClass( 'row tm-suggestion' )
+							.append(
+								$( '<div>')
+									.addClass( 'nine columns' )
+									.text( suggestion.target ),
+								$( '<div>')
+									.addClass( 'three columns quality text-right' )
+									.text( mw.msg( 'tux-editor-tm-match', suggestion.quality*100 ) )
+								);
+
+						translateEditor.$editor.find( '.tm-suggestions-title' )
+							.after( $suggestion );
+					} );
+				}
+			} ).fail( function ( ) {
+				// what to do?
+			} );
 		},
 
 		/**
@@ -238,6 +373,5 @@
 			}
 		} );
 	};
-
 
 }( jQuery, mediaWiki ) );

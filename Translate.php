@@ -223,7 +223,21 @@ $wgResourceModules['ext.translate.editor'] = array(
 	'dependencies' => array(
 		'ext.translate.grid',
 		'mediawiki.util',
+		'mediawiki.Uri',
 		'mediawiki.jqueryMsg',
+	),
+	'messages' => array(
+		'tux-editor-placeholder',
+		'tux-editor-save-button-label',
+		'tux-editor-skip-button-label',
+		'tux-editor-shortcut-info',
+		'tux-editor-no-message-doc',
+		'tux-editor-edit-desc',
+		'tux-editor-suggestions-title',
+		'tux-editor-in-other-languages',
+		'tux-editor-need-more-help',
+		'tux-editor-ask-help',
+		'tux-editor-tm-match',
 	),
 	'position' => 'top',
 ) + $resourcePaths;
