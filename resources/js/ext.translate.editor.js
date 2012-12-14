@@ -112,12 +112,30 @@
 
 			$infoColumn.append( $( '<div>' )
 				.addClass( 'row text-left message-desc' )
-				.text( 'Message documentation goes here' ) //FIXME i18n
+				.text( 'No message documentation' )
 			);
 
 			$infoColumn.append( $( '<div>' )
-				.addClass( 'row text-left tm-suggestions' )
-				.text( 'Translation memory suggestions' ) //FIXME i18n
+				.addClass( 'row text-left message-desc-edit' )
+				.append( $( '<a>')
+					.attr( {
+						href: ( new mw.Uri( window.location.href ) ).extend( {
+								language: 'qqq'
+							} ).toString(), // FIXME: this link is not correct
+						target: '_blank'
+					} )
+					.text( 'Edit description' ) ) //FIXME i18n
+			);
+
+			$infoColumn.append( $( '<div>' )
+				.addClass( 'row text-left tm-suggestions-title' )
+				.text( 'Suggestions' ) //FIXME i18n
+			);
+
+
+			$infoColumn.append( $( '<div>' )
+				.addClass( 'row text-left in-other-languages-title' )
+				.text( 'In other languages' ) //FIXME i18n
 			);
 
 			$infoColumn.append( $( '<div>' )
@@ -204,6 +222,43 @@
 		getTranslationSuggestions: function() {
 			// API call to get translation memory suggestions.
 			// callback should render suggestions to the editor's info column
+			var queryParams,
+				translateEditor = this,
+				apiURL;
+
+			queryParams = {
+				action: 'query',
+				meta: 'messagetranslations',
+				mttitle: this.$editTrigger.data( 'title' ),
+				format: 'json'
+			};
+
+			apiURL = mw.util.wikiScript( 'api' );
+
+			$.get( apiURL, queryParams ).done( function ( result ) {
+				var translations;
+
+				if ( result.query ) {
+					translations = result.query.messagetranslations;
+					$.each( translations, function ( index ) {
+						var translation;
+
+						translation = translations[index];
+						if ( translation.language === 'qqq' ) {
+							translateEditor.$editor.find( '.message-desc' ).text( translation['*'] );
+						} else {
+							//Need to append this to a section "translation in other languages"
+							translateEditor.$editor.find( '.in-other-languages-title' )
+								.after( $( '<div>')
+									.addClass( 'row in-other-language' )
+									.text( translation['*']  )
+								);
+						}
+					} );
+				}
+			} ).fail( function ( result ) {
+				console.log( result );
+			} );
 		},
 
 		/**
