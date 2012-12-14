@@ -427,6 +427,8 @@ Most useful for the proofreading tasks.',
 	'translate-msggroupselector-load-from-all' => 'Load messages from all groups',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgroup|subgroups}}',
 
+	'tux-languageselector' => 'Language',
+
 	'tux-tab-all' => 'All',
 	'tux-tab-untranslated' => 'Untranslated',
 	'tux-tab-outdated' => 'Outdated',
@@ -816,6 +818,7 @@ Additional parameters:
 	'translate-msggroupselector-load-from-all' => 'Label for the button', # Fuzzy
 	'translate-msggroupselector-view-subprojects' => 'Label indicating that the current message group contains other groups.
 * $1 is number of sub groups', # Fuzzy
+	'tux-languageselector' => 'Label for language selector in Special:Translate',
 	'tux-tab-all' => 'Tab in Special:Translate new ui to select which messages to show.',
 	'tux-tab-untranslated' => 'Tab in Special:Translate new ui to select which messages to show.',
 	'tux-tab-outdated' => 'Tab in Special:Translate new ui to select which messages to show.',
