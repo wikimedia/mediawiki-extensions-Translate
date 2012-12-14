@@ -456,7 +456,7 @@ class SpecialTranslate extends SpecialPage {
 		return
 			Html::element( 'span',
 				array( 'class' => 'one column text-right ext-translate-language-selector' ),
-				'Language'
+				$this->msg( 'tux-languageselector' )
 			) .
 			Html::element( 'div',
 				array( 'class' => 'span columns ext-translate-language-selector uls' ),
