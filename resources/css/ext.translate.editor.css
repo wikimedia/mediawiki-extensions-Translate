@@ -9,13 +9,11 @@
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/close.svg);
 	background-image: -moz-linear-gradient(transparent, transparent), url(../images/close.svg);
 	background-image: linear-gradient(transparent, transparent), url(../images/close.svg);
-	float: right;
 	padding: 15px;
 	cursor: pointer;
 }
 
 .tux-message-editor .editor-info-toggle {
-	float: right;
 	padding: 15px;
 	cursor: pointer;
 }
@@ -66,4 +64,44 @@
 .tux-message-editor .shortcutinfo {
 	font-size: 12pt;
 	color: #555;
+}
+
+.tux-message-editor .infocolumn {
+	padding-left: 20px;
+	font-size: 12pt;
+}
+
+.message-desc,
+.message-desc-edit {
+	font-size: 12pt;
+}
+
+.message-desc-edit a{
+	/* @embed */
+	background: transparent url(../images/action-edit.png) left center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/action-edit.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/action-edit.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/action-edit.svg);
+	background-size: 18px 18px;
+	padding-left: 19px;
+}
+
+.tm-suggestions-title,
+.in-other-languages-title {
+	font-size: 12pt;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.tm-suggestion,
+.in-other-language {
+	font-size: 10pt;
+	border-left: 2px solid #3366BB;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	background-color: #F0F0F0;
+}
+
+.tux-message-editor .help {
+	font-size: 10pt;
 }

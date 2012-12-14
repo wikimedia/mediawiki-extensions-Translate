@@ -48,6 +48,7 @@ class TuxMessageTable extends MessageTable {
 				'data-title' => $title->getPrefixedText(),
 				'data-group' => $this->group->getId(),
 				'data-source' => $original,
+				'data-translation' => $translation,
 				'id' => 'tqe-anchor-' . substr( sha1( $title->getPrefixedText() ), 0, 12 ),
 				'class' => 'row tux-message ' . ( $hasTranslation ? 'translated' : 'untranslated' )
 			);
