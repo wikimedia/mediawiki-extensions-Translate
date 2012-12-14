@@ -64,6 +64,8 @@
 
 .tux-message-item {
 	line-height: 50px;
+	margin-right: 5px !important;
+	margin-left: 5px !important;
 	vertical-align: middle;
 	border-bottom: 1px solid #C9C9C9;
 }
@@ -137,7 +139,6 @@
 }
 
 .tux-ajax-loader {
-	margin: 0 -5px;
 	height: 75px;
 	color: #565656;
 	padding: 15px;
@@ -158,6 +159,7 @@
 }
 
 .tux-action-bar {
+	margin: 0 !important;
 	background-color: #F0F0F0;
 	color: #252525;
 	height: 50px;

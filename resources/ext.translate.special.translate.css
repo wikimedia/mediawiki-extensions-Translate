@@ -35,7 +35,7 @@
 
 .tux-message-selector {
 	padding-top: 2em;
-	border-bottom: 2px solid #777;
+	border-bottom: 1px solid #777;
 	-webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
 	box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
 	margin-bottom: 3px !important;
@@ -43,7 +43,6 @@
 
 .tux-message-selector span {
 	border: medium none;
-	color: #555555;
 	font-size: 14pt;
 	cursor: pointer;
 	font-weight: normal;
@@ -51,14 +50,23 @@
 	padding-bottom: 3px;
 	padding-left: 15px;
 	padding-top: 1.25em;
+	top: 1px;
 }
 
 .tux-message-selector span.selected {
-	color: #0645AD;
-	border-bottom: 2px solid #0645AD;
+	border-bottom: 2px solid #3366BB;
 }
 
+.tux-message-selector span.selected a {
+	color: #3366BB;
+}
+
+.tux-message-selector span a {
+	color: #555555;
+	text-decoration: none;
+}
 .tux-message-selector label {
 	font-size: 12pt;
 	color: #555555;
+	top: 1px;
 }
