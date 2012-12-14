@@ -829,7 +829,6 @@ Additional parameters:
 	'tux-tab-untranslated' => 'Tab in Special:Translate new ui to select which messages to show.',
 	'tux-tab-outdated' => 'Tab in Special:Translate new ui to select which messages to show.',
 	'tux-tab-translated' => 'Tab in Special:Translate new ui to select which messages to show.',
-
 	'tux-edit' => 'Link in Special:Translate to open message editor',
 	'tux-status-optional' => 'Status label in Special:Translate indicating that message should only be translated in special cases',
 	'tux-status-fuzzy' => 'Status label in Special:Translate indicating translation needs updating',
@@ -26746,10 +26745,16 @@ $1',
 	'translate-msggroupselector-search-recent' => 'Останні',
 	'translate-msggroupselector-load-from-all' => 'Завантажувати повідомлення з усіх груп',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|підгрупа|підгрупи|підгруп}}',
+	'tux-languageselector' => 'Мова',
 	'tux-tab-all' => 'Усі',
 	'tux-tab-untranslated' => 'Неперекладені',
 	'tux-tab-outdated' => 'Застарілі',
 	'tux-tab-translated' => 'Перекладені',
+	'tux-edit' => 'Редагувати',
+	'tux-status-optional' => "Необов'язково",
+	'tux-status-fuzzy' => 'Застарілі',
+	'tux-status-proofread' => 'Вичитка',
+	'tux-status-translated' => 'Перекладено',
 );
 
 /** Urdu (اردو)
