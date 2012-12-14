@@ -36,7 +36,7 @@ class MediaWikiExtensionFFSTest extends MediaWikiTestCase {
 			$this->markTestSkipped( 'Cldr extension is not installed' );
 		}
 
-		$this->conf['FILES']['sourcePattern'] = __DIR__ . '/data/Example.i18n.php';
+		$this->conf['FILES']['sourcePattern'] = __DIR__ . '/../data/Example.i18n.php';
 		$ffs = MessageGroupBase::factory( $this->conf )->getFFS();
 		$obj = new ReflectionObject( $ffs );
 		$method = $obj->getMethod( 'writeReal' );
@@ -44,7 +44,7 @@ class MediaWikiExtensionFFSTest extends MediaWikiTestCase {
 		$collection = new MockMessageCollectionForExport();
 		$result = $method->invoke( $ffs, $collection );
 
-		$expected = file_get_contents( __DIR__ . '/data/Example-result.i18n.php' );
+		$expected = file_get_contents( __DIR__ . '/../data/Example-result.i18n.php' );
 		$this->assertEquals( $expected, $result );
 	}
 
