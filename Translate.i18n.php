@@ -439,6 +439,19 @@ Most useful for the proofreading tasks.',
 	'tux-status-fuzzy' => 'Outdated',
 	'tux-status-proofread' => 'Proofread',
 	'tux-status-translated' => 'Translated',
+
+	'tux-editor-placeholder' => 'Your translation',
+	'tux-editor-save-button-label' => 'Save translation',
+	'tux-editor-skip-button-label' => 'Skip to next',
+	'tux-editor-shortcut-info' => 'Press "$1" to save or "$2" to skip to next message',
+	'tux-editor-no-message-doc' => 'No message documentation',
+	'tux-editor-edit-desc' => 'Edit description',
+	'tux-editor-suggestions-title' => 'Suggestions',
+	'tux-editor-in-other-languages' => 'In other languages',
+	'tux-editor-need-more-help' => 'Need more help?',
+	'tux-editor-ask-help' => 'Ask for more information',
+	'tux-editor-tm-match' => '$1% match'
+
 );
 
 /** Message documentation (Message documentation)
