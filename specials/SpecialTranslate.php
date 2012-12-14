@@ -255,6 +255,7 @@ class SpecialTranslate extends SpecialPage {
 		/* str  */ 'group'    => '',
 		/* int  */ 'offset'   => 0,
 		/* int  */ 'limit'    => 100,
+		/* str  */ 'filter'   => '', // Tux
 		);
 
 		// Dump everything here
@@ -394,7 +395,7 @@ class SpecialTranslate extends SpecialPage {
 		$params['task'] = 'custom';
 
 		foreach ( $tabs as $tab => $filter ) {
-			$selected = $tab === 0 ? ' selected' : '';
+			$selected = $this->options['filter'] === strval( $filter ) ? ' selected' : '';
 			$taskParams = array( 'filter' => $filter ) + $params;
 			ksort( $taskParams );
 			$href = $this->getTitle()->getLocalUrl( $taskParams );
