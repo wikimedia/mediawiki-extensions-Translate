@@ -74,7 +74,11 @@
 	padding: 5px;
 	/* 15px space for icon */
 	padding-left: 20px;
-	background: no-repeat 0 50%;
+	/* Do not combine these two, unless you also fix the
+	 * tux-status-* styles below. That includes you, Siebrand ;)
+	 */
+	background-position: 0 50%;
+	background-repeat: no-repeat;
 }
 
 .tux-warning {
@@ -113,10 +117,10 @@
 
 .tux-status-fuzzy {
 	/* @embed */
-	background-image: url(images/label-flag.png);
-	background-image: -webkit-linear-gradient(transparent, transparent), url(images/label-flag.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(images/label-flag.svg);
-	background-image: linear-gradient(transparent, transparent), url(images/label-flag.svg);
+	background-image: url(images/label-clock.png);
+	background-image: -webkit-linear-gradient(transparent, transparent), url(images/label-clock.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(images/label-clock.svg);
+	background-image: linear-gradient(transparent, transparent), url(images/label-clock.svg);
 }
 
 .tux-list-edit a {

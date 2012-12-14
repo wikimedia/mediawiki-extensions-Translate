@@ -431,6 +431,12 @@ Most useful for the proofreading tasks.',
 	'tux-tab-untranslated' => 'Untranslated',
 	'tux-tab-outdated' => 'Outdated',
 	'tux-tab-translated' => 'Translated',
+
+	'tux-edit' => 'Edit',
+	'tux-status-optional' => 'Optional',
+	'tux-status-fuzzy' => 'Outdated',
+	'tux-status-proofread' => 'Proofread',
+	'tux-status-translated' => 'Translated',
 );
 
 /** Message documentation (Message documentation)
@@ -820,6 +826,12 @@ Additional parameters:
 	'tux-tab-untranslated' => 'Tab in Special:Translate new ui to select which messages to show.',
 	'tux-tab-outdated' => 'Tab in Special:Translate new ui to select which messages to show.',
 	'tux-tab-translated' => 'Tab in Special:Translate new ui to select which messages to show.',
+
+	'tux-edit' => 'Link in Special:Translate to open message editor',
+	'tux-status-optional' => 'Status label in Special:Translate indicating that message should only be translated in special cases',
+	'tux-status-fuzzy' => 'Status label in Special:Translate indicating translation needs updating',
+	'tux-status-proofread' => 'Status label in Special:Translate indicating that you have proofread the translation',
+	'tux-status-translated' => 'Status label in Special:Translate indicating that translation exists',
 );
 
 /** Afrikaans (Afrikaans)
