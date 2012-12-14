@@ -25,7 +25,7 @@ class JsonFFSTest extends MediaWikiTestCase {
 			),
 			'FILES' => array(
 				'class' => 'JsonFFS',
-				'sourcePattern' =>  __DIR__ . '/data/jsontest_%CODE%.json',
+				'sourcePattern' =>  __DIR__ . '/../data/jsontest_%CODE%.json',
 				'targetPattern' => 'jsontest_%CODE%.json',
 			),
 		);

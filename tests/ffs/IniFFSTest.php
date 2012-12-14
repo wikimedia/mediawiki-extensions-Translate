@@ -25,7 +25,7 @@ class IniFFSTest extends MediaWikiTestCase {
 	);
 
 	public function testParsing() {
-		$file = file_get_contents( __DIR__ . '/data/IniFFSTest1.ini' );
+		$file = file_get_contents( __DIR__ . '/../data/IniFFSTest1.ini' );
 
 		/**
 		 * @var FileBasedMessageGroup $group
@@ -49,7 +49,7 @@ class IniFFSTest extends MediaWikiTestCase {
 
 	public function testExport() {
 		global $wgSitename;
-		$file = file_get_contents( __DIR__ . '/data/IniFFSTest2.ini' );
+		$file = file_get_contents( __DIR__ . '/../data/IniFFSTest2.ini' );
 		$file = str_replace( '$wgSitename', $wgSitename, $file );
 
 		$collection = new MockMessageCollectionForExport();
