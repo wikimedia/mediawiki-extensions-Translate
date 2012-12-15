@@ -824,15 +824,16 @@ Additional parameters:
 	'translate-msggroupselector-load-from-all' => 'Label for the button', # Fuzzy
 	'translate-msggroupselector-view-subprojects' => 'Label indicating that the current message group contains other groups.
 * $1 is number of sub groups', # Fuzzy
-	'tux-languageselector' => 'Label for language selector in Special:Translate',
+	'tux-languageselector' => 'Label for language selector in [[Special:Translate]]',
 	'tux-tab-all' => 'Tab in Special:Translate new ui to select which messages to show.',
 	'tux-tab-untranslated' => 'Tab in Special:Translate new ui to select which messages to show.',
 	'tux-tab-outdated' => 'Tab in Special:Translate new ui to select which messages to show.',
 	'tux-tab-translated' => 'Tab in Special:Translate new ui to select which messages to show.',
-	'tux-edit' => 'Link in Special:Translate to open message editor',
+	'tux-edit' => 'Link in [[Special:Translate]] to open message editor',
 	'tux-status-optional' => 'Status label in Special:Translate indicating that message should only be translated in special cases',
 	'tux-status-fuzzy' => 'Status label in Special:Translate indicating translation needs updating',
-	'tux-status-proofread' => 'Status label in Special:Translate indicating that you have proofread the translation',
+	'tux-status-proofread' => 'Status label in [[Special:Translate]] indicating that you have proofread the translation.
+Read as in "proofRED" (past participle).',
 	'tux-status-translated' => 'Status label in Special:Translate indicating that translation exists',
 );
 
@@ -5594,10 +5595,16 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'translate-msggroupselector-search-recent' => 'Aktuell',
 	'translate-msggroupselector-load-from-all' => 'Nachrichten von allen Gruppen laden',
 	'translate-msggroupselector-view-subprojects' => '{{PLURAL:$1|Eine Untergruppe|$1 Untergruppen}}',
+	'tux-languageselector' => 'Sprache',
 	'tux-tab-all' => 'Alle',
 	'tux-tab-untranslated' => 'Nicht übersetzt',
 	'tux-tab-outdated' => 'Veraltet',
 	'tux-tab-translated' => 'Übersetzt',
+	'tux-edit' => 'Bearbeiten',
+	'tux-status-optional' => 'Optional',
+	'tux-status-fuzzy' => 'Veraltet',
+	'tux-status-proofread' => 'Korrekturlesen',
+	'tux-status-translated' => 'Übersetzt',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -7090,6 +7097,16 @@ Utilizado sobre todo para tareas de corrección.',
 	'translate-msggroupselector-search-recent' => 'Recientes',
 	'translate-msggroupselector-load-from-all' => 'Subir mensajes de todos los grupos',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgrupo|subgrupos}}',
+	'tux-languageselector' => 'Idioma',
+	'tux-tab-all' => 'Todo',
+	'tux-tab-untranslated' => 'Sin traducir',
+	'tux-tab-outdated' => 'Desactualizado',
+	'tux-tab-translated' => 'Traducido',
+	'tux-edit' => 'Editar',
+	'tux-status-optional' => 'Opcional',
+	'tux-status-fuzzy' => 'Obsoleto',
+	'tux-status-proofread' => 'Corregido',
+	'tux-status-translated' => 'Traducido',
 );
 
 /** Estonian (eesti)
@@ -8270,6 +8287,12 @@ Tiedot: $1',
 	'translate-msggroupselector-search-recent' => 'Äskettäiset',
 	'translate-msggroupselector-load-from-all' => 'Lataa viestit kaikista ryhmistä',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|alaryhmä|alaryhmää}}',
+	'tux-languageselector' => 'Kieli',
+	'tux-edit' => 'Muokkaa',
+	'tux-status-optional' => 'Valinnainen',
+	'tux-status-fuzzy' => 'Vanhentunut',
+	'tux-status-proofread' => 'Oikoluettu',
+	'tux-status-translated' => 'Käännetty',
 );
 
 /** French (français)
@@ -12854,10 +12877,15 @@ Utile per l'attività di correzione.",
 	'translate-msggroupselector-search-recent' => 'Recenti',
 	'translate-msggroupselector-load-from-all' => 'Carica i messaggi da tutti i gruppi',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|sotto-gruppo|sotto-gruppi}}',
+	'tux-languageselector' => 'Lingua',
 	'tux-tab-all' => 'Tutti',
 	'tux-tab-untranslated' => 'Non tradotti',
 	'tux-tab-outdated' => 'Da aggiornare',
 	'tux-tab-translated' => 'Tradotti',
+	'tux-edit' => 'Modifica',
+	'tux-status-optional' => 'Opzionale',
+	'tux-status-fuzzy' => 'Da aggiornare',
+	'tux-status-translated' => 'Tradotti',
 );
 
 /** Japanese (日本語)
@@ -13171,7 +13199,7 @@ $1',
 	'translate-messagereview-submit' => '採用',
 	'translate-messagereview-progress' => '採用中...',
 	'translate-messagereview-failure' => '採用中... 失敗: $1',
-	'translate-messagereview-done' => '採用済み',
+	'translate-messagereview-done' => '採用済',
 	'translate-messagereview-reviews' => '{{PLURAL:$1|$1人の利用者}}が採用',
 	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|あなた|あなたを含む$1人の利用者}}が採用',
 	'api-error-invalidrevision' => '翻訳が見つかりませんでした',
@@ -13217,10 +13245,16 @@ $1',
 	'translate-msggroupselector-search-recent' => '最近のもの',
 	'translate-msggroupselector-load-from-all' => 'すべてのメッセージ群からメッセージを読み込む',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|件の下位群}}を閲覧',
+	'tux-languageselector' => '言語',
 	'tux-tab-all' => 'すべて',
 	'tux-tab-untranslated' => '未翻訳',
 	'tux-tab-outdated' => '要修正',
-	'tux-tab-translated' => '翻訳済み',
+	'tux-tab-translated' => '翻訳済',
+	'tux-edit' => '編集',
+	'tux-status-optional' => '省略可能',
+	'tux-status-fuzzy' => '要修正',
+	'tux-status-proofread' => '校正済',
+	'tux-status-translated' => '翻訳済',
 );
 
 /** Jamaican Creole English (Patois)
@@ -16538,10 +16572,16 @@ $1',
 	'translate-msggroupselector-search-recent' => 'Скорешни',
 	'translate-msggroupselector-load-from-all' => 'Вчитај пораки од сите групи',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|подгрупа|подгрупи}}',
+	'tux-languageselector' => 'Јазик',
 	'tux-tab-all' => 'Сите',
 	'tux-tab-untranslated' => 'Непреведени',
 	'tux-tab-outdated' => 'Застарени',
 	'tux-tab-translated' => 'Преведени',
+	'tux-edit' => 'Уреди',
+	'tux-status-optional' => 'Незадолжително',
+	'tux-status-fuzzy' => 'Застарено',
+	'tux-status-proofread' => 'Проверка',
+	'tux-status-translated' => 'Преведено',
 );
 
 /** Malayalam (മലയാളം)

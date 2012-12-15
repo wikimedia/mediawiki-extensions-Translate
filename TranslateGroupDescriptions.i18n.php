@@ -817,7 +817,7 @@ Por favor mira [[mw:Extension:PDF_Writer]] y http://code.pediapress.com/wiki/wik
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es un proyecto para proveer una versión offline, sólo texto de Wikipedia para dispositivos móviles.',
 	'translate-group-desc-wikimedia-mobile' => 'Grupo de mensajes agregados que contiene aplicaciones para móviles de los proyectos de Wikimedia',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] es una aplicación para dispositivos móviles y tabletas-PC para leer y colaborar en Wikipedia',
-	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] es una aplicación para dispositivos móviles y tabletas-PC para leer y colaborar en Wikisource', # Fuzzy
+	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] es una aplicación para dispositivos móviles y tabletas-PC para leer y colaborar en Wikisource',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] es una aplicación para dispositivos móviles y tabletas-PC para leer y colaborar en Wikipedia',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] es una aplicación móvil para contribuir al [[:meta:Wiki Loves Monuments|proyecto Wiki Loves Monuments]]',
 	'translate-group-desc-waymarked-trails-help' => 'Las páginas de ayuda de los sitios web de senderos señalizadosWaymarked Trails: http://waymarkedtrails.org/help/about',

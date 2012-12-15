@@ -842,6 +842,13 @@ $messages['az'] = array(
 	'pt-deletepage-reason' => 'Səbəb:',
 );
 
+/** South Azerbaijani (تورکجه)
+ * @author Mousa
+ */
+$messages['azb'] = array(
+	'tpt-languages-legend' => 'آیری دیل‌لر:',
+);
+
 /** Bashkir (башҡортса)
  * @author Haqmar
  */
@@ -5380,8 +5387,8 @@ $messages['ka'] = array(
 	'tpt-aggregategroup-new-description' => 'აღწერა (არასავალდებულო):',
 	'tpt-aggregategroup-invalid-group' => 'ჯგუფი არ არსებობს',
 	'pt-movepage-list-pages' => 'გადასატანი გვერდების სია',
-	'pt-movepage-list-translation' => 'სათარგმნი გვერდები',
-	'pt-movepage-list-other' => 'სხვა ქვეგვერდები',
+	'pt-movepage-list-translation' => 'სათარგმნი {{PLURAL:$1|გვერდი|გვერდები}}',
+	'pt-movepage-list-other' => 'სხვა ქვე{{PLURAL:$1|გვერდი|გვერდები}}',
 	'pt-movepage-current' => 'მიმდინარე სახელი:',
 	'pt-movepage-new' => 'ახალი სახელი:',
 	'pt-movepage-reason' => 'მიზეზი:',
