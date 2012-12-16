@@ -7810,6 +7810,7 @@ Os problemas que ocorrerem serão registados no [[Special:Log/pagetranslation|re
 $messages['pt-br'] = array(
 	'pagetranslation' => 'Tradução de páginas',
 	'right-pagetranslation' => 'Marca versões de páginas para tradução',
+	'action-pagetranslation' => 'gerir páginas traduzíveis',
 	'tpt-desc' => 'Extensão para traduzir páginas de conteúdo',
 	'tpt-section' => 'Unidade de tradução $1',
 	'tpt-section-new' => 'Nova unidade de tradução.
@@ -7833,8 +7834,8 @@ Tenha certeza que ela tenha marcas <nowiki><translate></nowiki> e sintaxe válid
 	'tpt-saveok' => 'A página [[$1]] foi marcada para tradução com $2 {{PLURAL:$2|unidade|unidades}} de tradução.
 A página já pode ser <span class="plainlinks">[$3 traduzida]</span>.',
 	'tpt-badsect' => '"$1" não é um nome válido para a unidade de tradução $2.',
-	'tpt-showpage-intro' => 'A seguir estão listadas as seções novas, existentes e removidas.
-Antes de marcar esta versão para tradução, verifique se as mudanças nas seções foram minimizadas de forma que seja evitado trabalho desnecessário para os tradutores.', # Fuzzy
+	'tpt-showpage-intro' => 'A seguir estão listadas as unidades de tradução novas, existentes e removidas.
+Antes de marcar esta versão para tradução, verifique se as mudanças nas unidades de tradução foram minimizadas, para que seja evitado trabalho desnecessário aos tradutores.',
 	'tpt-mark-summary' => 'Marcou esta versão para tradução',
 	'tpt-edit-failed' => 'Não foi possível atualizar a página: $1',
 	'tpt-duplicate' => '$1 é usado como nome de unidade de tradução mais de uma vez.',
@@ -7852,7 +7853,7 @@ mas nenhuma versão {{PLURAL:$1|desta página|destas páginas}} está marcada pa
 mas {{PLURAL:$1|a última versão não pode ser marcada|as últimas versões não podem ser marcadas}} para tradução.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Esta página deixou|Estas páginas deixaram}} de ser relevantes para novas traduções.',
 	'tpt-select-prioritylangs' => 'Códigos de idiomas prioritários, separados por vírgulas:',
-	'tpt-select-prioritylangs-force' => 'Impedir traduções para idiomas que não sejam os prioritários',
+	'tpt-select-prioritylangs-force' => 'Impedir traduções para idiomas que não sejam os prioritários', # Fuzzy
 	'tpt-select-prioritylangs-reason' => 'Motivo:',
 	'tpt-sections-prioritylangs' => 'Idiomas prioritários',
 	'tpt-rev-mark' => 'marcar para traduzir',
@@ -7884,6 +7885,7 @@ Motivo: $1',
 	'tpt-discouraged-language' => 'Este idioma não é um dos definidos como prioritários por um coordenador de traduções.
 
 Motivo: $1',
+	'tpt-discouraged-language-reason' => 'Motivo: $1',
 	'tpt-priority-languages' => 'Um coordenador de traduções definiu como idiomas prioritários para este grupo $1.',
 	'tpt-render-summary' => 'Atualizando para corresponder à nova versão da página de origem',
 	'tpt-download-page' => 'Exportar página e suas traduções',
@@ -7925,8 +7927,8 @@ Texto da seção: <pre>$1</pre>', # Fuzzy
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|removeu}} a página traduzível [[:$1]] do grupo agregador $3',
 	'pt-movepage-title' => 'Mover a página traduzível $1',
 	'pt-movepage-blockers' => 'A página traduzível não pode ser movida para outro nome devido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:',
-	'pt-movepage-block-base-exists' => 'A página-base de destino [[:$1]] já existe.',
-	'pt-movepage-block-base-invalid' => 'A página-base de destino não tem um título válido.',
+	'pt-movepage-block-base-exists' => 'A página-base de destino [[:$1]] já existe.', # Fuzzy
+	'pt-movepage-block-base-invalid' => 'A página-base de destino não tem um título válido.', # Fuzzy
 	'pt-movepage-block-tp-exists' => 'A página de tradução de destino [[:$2]] já existe.',
 	'pt-movepage-block-tp-invalid' => 'O título da página de tradução de destino para [[:$1]] seria inválido (talvez muito longo).',
 	'pt-movepage-block-section-exists' => 'A página da seção de destino [[:$2]] já existe.', # Fuzzy
@@ -7934,9 +7936,9 @@ Texto da seção: <pre>$1</pre>', # Fuzzy
 	'pt-movepage-block-subpage-exists' => 'A subpágina de destino [[:$2]] já existe.',
 	'pt-movepage-block-subpage-invalid' => 'O título da subpágina de destino para [[:$1]] seria inválido (talvez muito longo).',
 	'pt-movepage-list-pages' => 'Lista de páginas para serem movidas',
-	'pt-movepage-list-translation' => 'Páginas de tradução',
+	'pt-movepage-list-translation' => 'Páginas de tradução', # Fuzzy
 	'pt-movepage-list-section' => 'Páginas de seção', # Fuzzy
-	'pt-movepage-list-other' => 'Outras subpáginas',
+	'pt-movepage-list-other' => 'Outras subpáginas', # Fuzzy
 	'pt-movepage-list-count' => 'Há, no total, $1 {{PLURAL:$1|página para ser movida|páginas para serem movidas}}.',
 	'pt-movepage-legend' => 'Mover página traduzível',
 	'pt-movepage-current' => 'Nome atual:',
@@ -7957,13 +7959,13 @@ Verifique no [[Special:Log/pagetranslation|registo de tradução de páginas]] e
 	'pt-deletepage-lang-title' => 'Eliminar a página traduzível $1.',
 	'pt-deletepage-full-title' => 'Eliminando a página traduzível $1.',
 	'pt-deletepage-invalid-title' => 'A página especificada é inválida.',
-	'pt-deletepage-invalid-text' => 'A página especificada não é uma página traduzível, nem uma página traduzida.',
+	'pt-deletepage-invalid-text' => 'A página especificada não é uma página traduzível, nem uma página traduzida.', # Fuzzy
 	'pt-deletepage-action-check' => 'Listar páginas para eliminar',
 	'pt-deletepage-action-perform' => 'Eliminar',
 	'pt-deletepage-action-other' => 'Alterar o destino',
 	'pt-deletepage-lang-legend' => 'Elimina a página traduzida',
 	'pt-deletepage-full-legend' => 'Elimina a página traduzível',
-	'pt-deletepage-any-legend' => 'Elimina a página traduzível ou a tradução de uma página traduzível',
+	'pt-deletepage-any-legend' => 'Elimina a página traduzível ou a tradução de uma página traduzível', # Fuzzy
 	'pt-deletepage-current' => 'Nome da página:',
 	'pt-deletepage-reason' => 'Motivo:',
 	'pt-deletepage-subpages' => 'Eliminar todas as subpáginas',
@@ -7977,7 +7979,7 @@ Verifique no [[Special:Log/pagetranslation|registo de tradução de páginas]] e
 	'pt-deletepage-started' => 'Verifique no [[Special:Log/pagetranslation|registo de tradução de páginas]] eventuais mensagens de erro e/ou de atividade concluída.',
 	'pt-deletepage-intro' => 'Esta página especial permite eliminar todas as páginas de uma página traduzível ou apenas as traduções de um idioma.
 A eliminação não será instantânea por serem muitas as páginas integrantes de cada conjunto.
-Os erros serão reportados no [[Special:Log/pagetranslation|registro de tradução de páginas]] e precisarão ser corrigidos manualmente.',
+Os erros serão reportados no [[Special:Log/pagetranslation|registro de tradução de páginas]] e precisarão ser corrigidos manualmente.', # Fuzzy
 );
 
 /** Romansh (rumantsch)

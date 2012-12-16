@@ -14820,10 +14820,16 @@ $1',
 	'translate-msggroupselector-search-recent' => '최근',
 	'translate-msggroupselector-load-from-all' => '모든 그룹에서 메시지 불러오기',
 	'translate-msggroupselector-view-subprojects' => '{{PLURAL:$1|하위 그룹}} $1개 보기',
+	'tux-languageselector' => '언어',
 	'tux-tab-all' => '모두',
 	'tux-tab-untranslated' => '미번역',
 	'tux-tab-outdated' => '오래됨',
 	'tux-tab-translated' => '번역됨',
+	'tux-edit' => '편집',
+	'tux-status-optional' => '선택 사항',
+	'tux-status-fuzzy' => '오래됨',
+	'tux-status-proofread' => '교정하기',
+	'tux-status-translated' => '번역됨',
 );
 
 /** Krio (Krio)
@@ -15605,10 +15611,16 @@ Dëst ass ganz nëtzlech fir d'Iwwerliesen.",
 	'translate-msggroupselector-search-all' => 'All',
 	'translate-msggroupselector-search-recent' => 'Rezent',
 	'translate-msggroupselector-load-from-all' => 'Message vun alle Gruppe lueden',
+	'tux-languageselector' => 'Sprooch',
 	'tux-tab-all' => 'All',
 	'tux-tab-untranslated' => 'Net iwwersat',
 	'tux-tab-outdated' => 'Vereelst',
 	'tux-tab-translated' => 'Iwwersat',
+	'tux-edit' => 'Änneren',
+	'tux-status-optional' => 'Fakultativ',
+	'tux-status-fuzzy' => 'Vereelst',
+	'tux-status-proofread' => 'Iwwerliesen',
+	'tux-status-translated' => 'Iwwersat',
 );
 
 /** Ganda (Luganda)
@@ -18450,10 +18462,16 @@ Dit is vooral nuttig voor de controletaken.',
 	'translate-msggroupselector-search-recent' => 'Recent',
 	'translate-msggroupselector-load-from-all' => 'Berichten van alle groepen laden',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgroep|subgroepen}}',
+	'tux-languageselector' => 'Taal',
 	'tux-tab-all' => 'Alle',
 	'tux-tab-untranslated' => 'Onvertaald',
 	'tux-tab-outdated' => 'Verouderd',
 	'tux-tab-translated' => 'Vertaald',
+	'tux-edit' => 'Bewerken',
+	'tux-status-optional' => 'Optioneel',
+	'tux-status-fuzzy' => 'Verouderd',
+	'tux-status-proofread' => 'Gecontroleerd',
+	'tux-status-translated' => 'Vertaald',
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎)
@@ -20663,10 +20681,6 @@ Os estados são definidos na variável de configuração $wgTranslateWorkflowSta
 $messages['pt-br'] = array(
 	'translate' => 'Traduzir',
 	'translate-desc' => '[[Special:Translate|Página especial]] para traduzir o MediaWiki e mais',
-	'translate-showsub' => 'Mostrar {{PLURAL:$1|o subgrupo|os $1 subgrupos}}.',
-	'translate-grouplisting' => 'Esta é a lista de todos os grupos traduzíveis.
-Clique no nome do grupo de mensagens para ver a lista de mensagens por traduzir.',
-	'translate-grouplisting-empty' => 'Nenhum grupo de mensagens foi configurado para ser traduzido.',
 	'translate-taskui-view' => 'Exibir todas as mensagens',
 	'translate-taskui-untranslated' => 'Exibir mensagens ainda não traduzidas',
 	'translate-taskui-optional' => 'Exibir mensagens opcionais',
@@ -20687,6 +20701,7 @@ Clique no nome do grupo de mensagens para ver a lista de mensagens por traduzir.
 Motivo:
 
 ''$1''",
+	'translate-language-disabled' => 'As traduções para este idioma estão desativadas.',
 	'translate-page-settings-legend' => 'Configurações',
 	'translate-page-group' => 'Grupo',
 	'translate-page-language' => 'Idioma',
@@ -20733,11 +20748,12 @@ Os nomes alternativos de páginas especiais e palavras mágicas podem receber m�
 As traduções são separadas por vírgulas (,).
 Nomes de espaços nominais podem receber apenas uma tradução.
 
-Nas traduções de espaços nominais, a partícula <code>$1 talk</code> é especial. <code>$1</code> é substituído pelo nome do site (por exemplo, <code>{{ns:project_talk}}</code>).
-Se no seu idioma não é possível formar expressões válidas sem alterar o nome do site, contate um desenvolvedor.
+As traduções de espaços nominais de discussão de projeto <code>$1 talk</code> podem ser complexas.
+<code>$1</code> é substituído pelo nome do site (por exemplo, <code>{{ns:project_talk}}</code>).
+Se no seu idioma não é possível formar expressões válidas sem alterar o nome do site, contate-nos em [[Support]].
 
 É necessário pertencer ao grupo de tradutores para conseguir salvar as alterações.
-As alterações não serão salvas até que você clique no botão de salvar ao final do formulário.', # Fuzzy
+As alterações não serão salvas até que você clique no botão de salvar ao final do formulário.',
 	'translate-magic-module' => 'Módulo:',
 	'translate-magic-submit' => 'Mostrar',
 	'translate-magic-cm-export' => 'Exportar',
@@ -20816,7 +20832,7 @@ Todos os valores têm limites máximos e mínimos.',
 	'translate-statsf-count-edits' => 'Número de edições',
 	'translate-statsf-count-users' => 'Tradutores ativos',
 	'translate-statsf-count-registrations' => 'Novos usuários',
-	'translate-statsf-count-reviews' => 'Revisores de traduções', # Fuzzy
+	'translate-statsf-count-reviews' => 'Revisões de traduções',
 	'translate-statsf-count-reviewers' => 'Revisores',
 	'translate-statsf-language' => 'Códigos de idiomas, separados por vírgulas:',
 	'translate-statsf-group' => 'Códigos de grupos, separados por vírgulas:',
@@ -20886,6 +20902,8 @@ A cor do sublinhado é um indicativo de atividades recentes do usuário.',
 	'translate-smg-nochanges' => 'Não há alterações a processar.',
 	'translate-smg-submit' => 'Enviar alterações para processamento',
 	'translate-smg-submitted' => 'As definições de mensagens foram atualizadas. As alterações estão sendo processadas em segundo plano.',
+	'translate-smg-postponed' => 'Algumas alterações não puderam ser processadas. [[{{FULLPAGENAME}}|Tente novamente]].',
+	'translate-smg-left' => 'Mensagem no wiki',
 	'translate-manage-import-diff' => 'Mensagem $1 | Ações: $2',
 	'translate-manage-import-new' => 'Nova mensagem $1',
 	'translate-manage-import-deleted' => 'Mensagem apagada $1',
@@ -20952,7 +20970,7 @@ Detalhes: $1',
 	'translate-messagereview-failure' => 'Falha ao aprovar: $1',
 	'translate-messagereview-done' => 'Aprovada',
 	'translate-messagereview-reviews' => 'Aprovada por {{PLURAL:$1|um usuário|$1 usuários}}',
-	'translate-messagereview-reviewswithyou' => 'Aprovada por {{PLURAL:$1|um usuário|$1 usuários}}, incluindo você', # Fuzzy
+	'translate-messagereview-reviewswithyou' => 'Aceita por {{PLURAL:$1|você|$1 usuários, incluindo você}}',
 	'api-error-invalidrevision' => 'A tradução não foi encontrada',
 	'api-error-unknownmessage' => 'A mensagem não foi encontrada',
 	'api-error-fuzzymessage' => 'A tradução está sinalizada como obsoleta',
@@ -27725,10 +27743,16 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'translate-msggroupselector-search-recent' => 'Gần đây',
 	'translate-msggroupselector-load-from-all' => 'Tải thông điệp từ tất cả các nhóm',
 	'translate-msggroupselector-view-subprojects' => '$1 nhóm con',
+	'tux-languageselector' => 'Ngôn ngữ',
 	'tux-tab-all' => 'Tất cả',
 	'tux-tab-untranslated' => 'Chưa dịch',
 	'tux-tab-outdated' => 'Lỗi thời',
 	'tux-tab-translated' => 'Dịch rồi',
+	'tux-edit' => 'Sửa đổi',
+	'tux-status-optional' => 'Tùy chọn',
+	'tux-status-fuzzy' => 'Lỗi thời',
+	'tux-status-proofread' => 'Hiệu đính rồi',
+	'tux-status-translated' => 'Dịch rồi',
 );
 
 /** Volapük (Volapük)
