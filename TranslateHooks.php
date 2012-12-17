@@ -439,8 +439,9 @@ JAVASCRIPT;
 
 	/**
 	 * Hook: MakeGlobalVariablesScript
-	 * @param $vars Array
-	 * @return bool
+	 *
+	 * Adds $wgTranslateDocumentationLanguageCode to ResourceLoader configuration
+	 * when Special:Translate is shown.
 	 */
 	public static function addConfig( &$vars, $out ) {
 		$request = $out->getRequest();
@@ -449,8 +450,7 @@ JAVASCRIPT;
 
 		if ( SpecialTranslate::isBeta( $request )
 			&& $title->isSpecialPage()
-			&& $alias === 'Translate'
-			&& $request->getVal( 'action', null ) === 'translate' )
+			&& $alias === 'Translate' )
 		{
 			global $wgTranslateDocumentationLanguageCode;
 			$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
