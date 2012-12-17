@@ -122,8 +122,8 @@
 			$editorColumn.append( $( '<span>' )
 				.addClass( 'row text-left shortcutinfo' )
 				.text( mw.msg( 'tux-editor-shortcut-info',
-					$saveButton.attr( 'title').toUpperCase(),
-					$skipButton.attr( 'title').toUpperCase() )
+					$saveButton.attr( 'title' ).toUpperCase(),
+					$skipButton.attr( 'title' ).toUpperCase() )
 				)
 			);
 
@@ -142,6 +142,8 @@
 				.text( mw.msg( 'tux-editor-no-message-doc' ) )
 			);
 
+			// By default translateDocumentationLanguageCode is false.
+			// It's defined as the MediaWiki global $wgTranslateDocumentationLanguageCode.
 			translateDocumentationLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
 			if ( translateDocumentationLanguageCode ) {
 				$infoColumn.append( $( '<div>' )
@@ -209,7 +211,7 @@
 			return false;
 		},
 
-		infoToggle: function( toggleIcon ) {
+		infoToggle: function ( toggleIcon ) {
 			if ( this.expanded ) {
 				this.contract( toggleIcon );
 			} else {
@@ -217,7 +219,7 @@
 			}
 		},
 
-		contract: function( toggleIcon ) {
+		contract: function ( toggleIcon ) {
 			// Change the icon image
 			toggleIcon.removeClass( 'editor-contract' );
 			toggleIcon.addClass( 'editor-expand' );
@@ -230,7 +232,7 @@
 			this.expanded = false;
 		},
 
-		expand: function( toggleIcon ) {
+		expand: function ( toggleIcon ) {
 			// Change the icon image
 			toggleIcon.removeClass( 'editor-expand' );
 			toggleIcon.addClass( 'editor-contract' );
@@ -243,7 +245,7 @@
 			this.expanded = true;
 		},
 
-		getTranslationSuggestions: function() {
+		getTranslationSuggestions: function () {
 			// API call to get translation suggestions from other languages
 			// callback should render suggestions to the editor's info column
 			var queryParams,
@@ -274,14 +276,13 @@
 							translateEditor.$editor.find( '.message-desc' )
 								.text( translation['*'] );
 						} else if ( translation.language !== translateEditor.$editTrigger.attr( 'lang' ) ) {
-							//Need to append this to a section "translation in other languages"
-							$otherLanguage = $( '<div>')
+							$otherLanguage = $( '<div>' )
 								.addClass( 'row in-other-language' )
 								.append(
-									$( '<div>')
+									$( '<div>' )
 										.addClass( 'nine columns' )
 										.text( translation['*'] ),
-									$( '<div>')
+									$( '<div>' )
 										.addClass( 'three columns language text-right' )
 										.text( $.uls.data.getAutonym( translation.language ) )
 								);
@@ -296,7 +297,7 @@
 			} );
 		},
 
-		getTranslationMemorySuggestions: function() {
+		getTranslationMemorySuggestions: function () {
 			// API call to get translation memory suggestions.
 			// callback should render suggestions to the editor's info column
 			var queryParams,
@@ -324,15 +325,15 @@
 
 						suggestion = suggestions[index];
 
-						$suggestion = $( '<div>')
+						$suggestion = $( '<div>' )
 							.addClass( 'row tm-suggestion' )
 							.append(
-								$( '<div>')
+								$( '<div>' )
 									.addClass( 'nine columns' )
 									.text( suggestion.target ),
-								$( '<div>')
+								$( '<div>' )
 									.addClass( 'three columns quality text-right' )
-									.text( mw.msg( 'tux-editor-tm-match', suggestion.quality*100 ) )
+									.text( mw.msg( 'tux-editor-tm-match', suggestion.quality * 100 ) )
 								);
 
 						translateEditor.$editor.find( '.tm-suggestions-title' )
