@@ -163,6 +163,8 @@ $wgHooks['LinkBegin'][] = 'SpecialMyLanguage::linkfix';
 $wgHooks['Translate:MessageGroupStats:isIncluded'][] = 'TranslateHooks::hideDiscouragedFromStats';
 $wgHooks['Translate:MessageGroupStats:isIncluded'][] = 'TranslateHooks::hideRestrictedFromStats';
 
+$wgHooks['ResourceLoaderGetConfigVars'][] = 'TranslateHooks::addConfig';
+
 // Internal event listeners
 $wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupStats::clear';
 $wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStats::clear';

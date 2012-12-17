@@ -131,7 +131,8 @@
 		},
 
 		prepareInfoColumn: function () {
-			var $infoColumn;
+			var $infoColumn,
+				translateDocumentationLanguageCode;
 
 			$infoColumn = $( '<div>' )
 			.addClass( 'five columns infocolumn' );
@@ -141,23 +142,25 @@
 				.text( mw.msg( 'tux-editor-no-message-doc' ) )
 			);
 
-			$infoColumn.append( $( '<div>' )
-				.addClass( 'row text-left message-desc-edit' )
-				.append( $( '<a>')
-					.attr( {
-						href: ( new mw.Uri( window.location.href ) ).extend( {
-								language: 'qqq'
-							} ).toString(), // FIXME: this link is not correct
-						target: '_blank'
-					} )
-					.text( mw.msg( 'tux-editor-edit-desc' ) ) )
-			);
+			translateDocumentationLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
+			if ( translateDocumentationLanguageCode ) {
+				$infoColumn.append( $( '<div>' )
+					.addClass( 'row text-left message-desc-edit' )
+					.append( $( '<a>')
+						.attr( {
+							href: ( new mw.Uri( window.location.href ) ).extend( {
+									language: translateDocumentationLanguageCode
+								} ).toString(), // FIXME: this link is not correct
+							target: '_blank'
+						} )
+						.text( mw.msg( 'tux-editor-edit-desc' ) ) )
+				);
+			}
 
 			$infoColumn.append( $( '<div>' )
 				.addClass( 'row text-left tm-suggestions-title' )
 				.text( mw.msg( 'tux-editor-suggestions-title' ) )
 			);
-
 
 			$infoColumn.append( $( '<div>' )
 				.addClass( 'row text-left in-other-languages-title' )
@@ -267,7 +270,7 @@
 
 						translation = translations[index];
 
-						if ( translation.language === 'qqq' ) {
+						if ( translation.language === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 							translateEditor.$editor.find( '.message-desc' )
 								.text( translation['*'] );
 						} else if ( translation.language !== translateEditor.$editTrigger.attr( 'lang' ) ) {
