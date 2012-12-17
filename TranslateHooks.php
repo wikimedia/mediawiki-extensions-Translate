@@ -438,13 +438,24 @@ JAVASCRIPT;
 	}
 
 	/**
-	 * Hook: ResourceLoaderGetConfigVars
+	 * Hook: MakeGlobalVariablesScript
 	 * @param $vars Array
 	 * @return bool
 	 */
-	public static function addConfig( &$vars ) {
-		global $wgTranslateDocumentationLanguageCode;
-		$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
+	public static function addConfig( &$vars, $out ) {
+		$request = $out->getRequest();
+		$title = $out->getTitle();
+		list( $alias, $sub ) = SpecialPageFactory::resolveAlias( $title->getText() );
+
+		if ( SpecialTranslate::isBeta( $request )
+			&& $title->isSpecialPage()
+			&& $alias === 'Translate'
+			&& $request->getVal( 'action', null ) === 'translate' )
+		{
+			global $wgTranslateDocumentationLanguageCode;
+			$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
+		}
+
 		return true;
 	}
 }
