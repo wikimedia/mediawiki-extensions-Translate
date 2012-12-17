@@ -847,7 +847,6 @@ Additional parameters:
 	'tux-status-proofread' => 'Status label in [[Special:Translate]] indicating that you have proofread the translation.
 Read as in "proofRED" (past participle).',
 	'tux-status-translated' => 'Status label in Special:Translate indicating that translation exists',
-
 	'tux-editor-placeholder' => 'Placeholder text for the translation editor textbox',
 	'tux-editor-save-button-label' => 'Label for save translation button',
 	'tux-editor-skip-button-label' => 'Label for skip button',
@@ -2418,6 +2417,17 @@ $messages['az'] = array(
 	'translate-translations-project' => 'Layihə:',
 	'translate-language' => 'Dil',
 	'translate-total' => 'Mesajlar',
+);
+
+/** South Azerbaijani (تورکجه)
+ * @author E THP
+ */
+$messages['azb'] = array(
+	'translate-taction-lstats' => 'دیل آماری',
+	'translate-next' => 'سونراکی صحیفه',
+	'translate-rc-translation-filter' => 'چئویریلیری لیسته',
+	'languagestats' => 'دیل آماری',
+	'languagestats-summary' => 'بو صحیفه بیر دیلده اولان بوتون چئویرمه‌لری سیزه گؤستریر.',
 );
 
 /** Bashkir (башҡортса)
@@ -7652,6 +7662,7 @@ $messages['ext'] = array(
 );
 
 /** Persian (فارسی)
+ * @author E THP
  * @author Ebraminio
  * @author Huji
  * @author Mjbmr
@@ -7663,10 +7674,6 @@ $messages['ext'] = array(
 $messages['fa'] = array(
 	'translate' => 'ترجمه',
 	'translate-desc' => '[[Special:Translate|صفحهٔ ویژه‌ای]] برای ترجمهٔ مدیاویکی و فراتر از آن',
-	'translate-showsub' => 'نمایش {{PLURAL:$1|زیر گروه|$1 زیر گروه}}.',
-	'translate-grouplisting' => 'این فهرستی از تمام گروه‌های قابل ترجمه است.
-روی نام گروه پیغام‌ها کلیک کنید تا فهرستی از پیغام‌های ترجمه‌نشده را ببینید.',
-	'translate-grouplisting-empty' => 'هیچ گروه پیغامی برای ترجمه تنظیم نشده‌است.',
 	'translate-taskui-view' => 'نمایش تمام پیغام‌ها',
 	'translate-taskui-untranslated' => 'نمایش پیغام‌های ترجمه نشده',
 	'translate-taskui-optional' => 'نمایش پیغام‌های اختیاری',
@@ -7699,7 +7706,7 @@ $messages['fa'] = array(
 	'translate-page-showing-all' => 'نمایش $1 {{PLURAL:$1|پیغام|پیغام}}.',
 	'translate-page-showing-none' => 'پیغامی برای نمایش وجود ندارد.',
 	'translate-next' => 'صفحهٔ بعدی',
-	'translate-prev' => 'صفحهٔ قبلی',
+	'translate-prev' => 'اؤنجه‌کی صحیفه',
 	'translate-page-description-legend' => 'اطلاعات در مورد گروه',
 	'translate-page-description-hasoptional' => 'این گروه پیغام‌ها شامل پیغام‌های اختیاری است.
 پیغام‌های اختیاری باید تنها زمانی ترجمه شوند که زبان شما شرایط ویژه‌ای نظیر استفاده نکردن از فاصله یا نویسه‌گردانی اسامی خاص داشته باشد. $1',
@@ -8684,10 +8691,16 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'translate-msggroupselector-search-recent' => 'Récent',
 	'translate-msggroupselector-load-from-all' => 'Charger les messages pour tous les groupes',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|sous-projet|sous-projets}}',
+	'tux-languageselector' => 'Langue',
 	'tux-tab-all' => 'Tous',
 	'tux-tab-untranslated' => 'Non traduit',
 	'tux-tab-outdated' => 'Obsolète',
 	'tux-tab-translated' => 'Traduit',
+	'tux-edit' => 'Modifier',
+	'tux-status-optional' => 'Facultatif',
+	'tux-status-fuzzy' => 'Obsolète',
+	'tux-status-proofread' => 'Corrigée',
+	'tux-status-translated' => 'Traduit',
 );
 
 /** Cajun French (français cadien)
@@ -9531,12 +9544,22 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'translate-dynagroup-last' => 'Última modificación feita por {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Última modificación feita por {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Axuda',
-	'translate-msggroupselector-projects' => 'Proxectos', # Fuzzy
-	'translate-msggroupselector-search-placeholder' => 'Procurar nos proxectos', # Fuzzy
+	'translate-msggroupselector-projects' => 'Grupos de mensaxes',
+	'translate-msggroupselector-search-placeholder' => 'Procurar nos grupos',
 	'translate-msggroupselector-search-all' => 'Todos',
 	'translate-msggroupselector-search-recent' => 'Recentes',
-	'translate-msggroupselector-load-from-all' => 'Cargar as mensaxes de todos os proxectos', # Fuzzy
-	'translate-msggroupselector-view-subprojects' => 'Ollar $1 {{PLURAL:$1|subproxecto|subproxectos}}', # Fuzzy
+	'translate-msggroupselector-load-from-all' => 'Cargar as mensaxes de todos os grupos',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgrupo|subgrupos}}',
+	'tux-languageselector' => 'Lingua',
+	'tux-tab-all' => 'Todas',
+	'tux-tab-untranslated' => 'Sen traducir',
+	'tux-tab-outdated' => 'Anticuadas',
+	'tux-tab-translated' => 'Traducidas',
+	'tux-edit' => 'Editar',
+	'tux-status-optional' => 'Opcional',
+	'tux-status-fuzzy' => 'Anticuada',
+	'tux-status-proofread' => 'Corrixir',
+	'tux-status-translated' => 'Traducida',
 );
 
 /** Goan Konkani (Latin script) (Konknni)
@@ -10432,10 +10455,16 @@ $1',
 	'translate-msggroupselector-search-recent' => 'חדשים',
 	'translate-msggroupselector-load-from-all' => 'טעינת הודעות מכל הקבוצות',
 	'translate-msggroupselector-view-subprojects' => 'הצגת {{PLURAL:$1|תת־מיזם אחד|$1 תת־מיזמים}}',
+	'tux-languageselector' => 'שפה',
 	'tux-tab-all' => 'הכול',
 	'tux-tab-untranslated' => 'לא מתורגמות',
 	'tux-tab-outdated' => 'לא עדכניות',
 	'tux-tab-translated' => 'מתורגמות',
+	'tux-edit' => 'עריכה',
+	'tux-status-optional' => 'אופציונלית',
+	'tux-status-fuzzy' => 'לא מעודכנת',
+	'tux-status-proofread' => 'הגהה',
+	'tux-status-translated' => 'מתורגמות',
 );
 
 /** Hindi (हिन्दी)
@@ -16621,6 +16650,17 @@ $1',
 	'tux-status-fuzzy' => 'Застарено',
 	'tux-status-proofread' => 'Проверка',
 	'tux-status-translated' => 'Преведено',
+	'tux-editor-placeholder' => 'Ваш превод',
+	'tux-editor-save-button-label' => 'Зачувај превод',
+	'tux-editor-skip-button-label' => 'Прејди на следно',
+	'tux-editor-shortcut-info' => 'Стиснете на „$1“ за да зачувате или на „$2“ за да прејдете на следната порака',
+	'tux-editor-no-message-doc' => 'Пораката нема документација',
+	'tux-editor-edit-desc' => 'Уреди опис',
+	'tux-editor-suggestions-title' => 'Предлози',
+	'tux-editor-in-other-languages' => 'На други јазици',
+	'tux-editor-need-more-help' => 'Ви треба повеќе помош?',
+	'tux-editor-ask-help' => 'Побарајте уште информации',
+	'tux-editor-tm-match' => '$1% совпаѓање',
 );
 
 /** Malayalam (മലയാളം)
@@ -16855,20 +16895,16 @@ $messages['ml'] = array(
 	'translate-msggroupselector-search-recent' => 'ഈയിടെ',
 	'translate-msggroupselector-load-from-all' => 'എല്ലാ സംരംഭങ്ങളില്‍ നിന്നും സന്ദേശങ്ങള്‍ കാണിക്കുക', # Fuzzy
 	'translate-msggroupselector-view-subprojects' => '$1 ഉപസംരംഭങ്ങള്‍ കാണുക', # Fuzzy
-
 	'tux-languageselector' => 'ഭാഷ',
-
 	'tux-tab-all' => 'എല്ലാം',
 	'tux-tab-untranslated' => 'പരിഭാഷപ്പെടുത്താത്തവ',
 	'tux-tab-outdated' => 'കാലഹരണപ്പെട്ടവ',
 	'tux-tab-translated' => 'പരിഭാഷപ്പെടുത്തിയവ',
-
 	'tux-edit' => 'പരിഭാഷപ്പെടുത്തുക',
 	'tux-status-optional' => 'ഐച്ഛികം',
 	'tux-status-fuzzy' => 'മാറിപ്പോയി',
 	'tux-status-proofread' => 'പരിശോധിച്ചു',
 	'tux-status-translated' => 'പരിഭാഷപ്പെടുത്തി',
-
 	'tux-editor-placeholder' => 'നിങ്ങളുടെ പരിഭാഷ',
 	'tux-editor-save-button-label' => 'പരിഭാഷ ചേര്‍ക്കുക',
 	'tux-editor-skip-button-label' => 'അടുത്തതിലേയ്ക്ക്',
@@ -16879,7 +16915,7 @@ $messages['ml'] = array(
 	'tux-editor-in-other-languages' => 'മറ്റു ഭാഷകളില്‍',
 	'tux-editor-need-more-help' => 'സഹായം ആവശ്യമാണോ?',
 	'tux-editor-ask-help' => 'കൂടുതല്‍ വിവരങ്ങള്‍ ചോദിക്കുക',
-	'tux-editor-tm-match' => '$1% ചേര്‍ച്ച'
+	'tux-editor-tm-match' => '$1% ചേര്‍ച്ച',
 );
 
 /** Mongolian (монгол)
@@ -17340,10 +17376,16 @@ Paling berguna dengan tugas menyemak (membaca pruf).',
 	'translate-msggroupselector-search-recent' => 'Terkini',
 	'translate-msggroupselector-load-from-all' => 'Muatkan mesej-mesej dari semua kumpulan',
 	'translate-msggroupselector-view-subprojects' => '$1 subkumpulan',
+	'tux-languageselector' => 'Bahasa',
 	'tux-tab-all' => 'Semua',
 	'tux-tab-untranslated' => 'Belum diterjemahkan',
 	'tux-tab-outdated' => 'Lapuk',
 	'tux-tab-translated' => 'Telah diterjemahkan',
+	'tux-edit' => 'Sunting',
+	'tux-status-optional' => 'Pilihan',
+	'tux-status-fuzzy' => 'Lapuk',
+	'tux-status-proofread' => 'Telah disemak',
+	'tux-status-translated' => 'Telah diterjemahkan',
 );
 
 /** Maltese (Malti)
