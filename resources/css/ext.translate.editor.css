@@ -79,7 +79,7 @@
 	padding: 5px 5px 10px 0;
 }
 
-.message-desc-edit a{
+.message-desc-edit a {
 	/* @embed */
 	background: transparent url(../images/action-edit.png) left center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/action-edit.svg);

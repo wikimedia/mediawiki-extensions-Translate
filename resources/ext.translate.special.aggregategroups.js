@@ -80,7 +80,7 @@
 	function removeGroup( event ) {
 		var params, $target = $( event.target );
 
-		function successFunction ( data ) {
+		function successFunction( data ) {
 			if ( data.error ) {
 				window.alert( data.error.info );
 			} else {
@@ -90,7 +90,7 @@
 
 		// XXX: 'confirm' is nonstandard.
 		if ( $.isFunction( window.confirm ) &&
-				window.confirm( mw.msg( 'tpt-aggregategroup-remove-confirm' ) ) ) {
+			window.confirm( mw.msg( 'tpt-aggregategroup-remove-confirm' ) ) ) {
 			params = $.extend( getApiParams( $target ), {
 				'do': 'remove'
 			} );
@@ -134,7 +134,7 @@
 					$div = $( '<div class=\'mw-tpa-group\'>' )
 						.append( $( '<h2>' ).text( aggregateGroupName ).append( $removeSpan ) )
 						.append( $( '<p>' ).text( aggregateGroupDesc ) )
-						.append( $( '<ol id=\'mw-tpa-grouplist-' + aggregateGroupId +'\'>' ) );
+						.append( $( '<ol id=\'mw-tpa-grouplist-' + aggregateGroupId + '\'>' ) );
 
 					$div.data( 'groupid', aggregateGroupId );
 					$div.data( 'id', aggregateGroupId );

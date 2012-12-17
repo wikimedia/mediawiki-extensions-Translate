@@ -25,7 +25,7 @@
 	} );
 
 	$submit = $( '#mw-translate-workflowset' );
-	$select = $( '#mw-sp-translate-workflow').find( 'select' );
+	$select = $( '#mw-sp-translate-workflow' ).find( 'select' );
 
 	$select.find( 'option[value=]' ).attr( 'disabled', 'disabled' );
 
@@ -56,7 +56,7 @@
 	};
 
 	$select.change( function( event ) {
-		var current = $(this).find( 'option[selected]' ).val(),
+		var current = $( this ).find( 'option[selected]' ).val(),
 			tobe = event.target.value;
 
 		$submit.val( mw.msg( 'translate-workflow-set-do' ) );
@@ -105,7 +105,7 @@
 
 		if ( msgGroup.groups && msgGroup.groups.length > 0 ) {
 			$newLink = $( '<span>' ).addClass( 'grouptitle grouplink' )
-				.text(  mw.msg( 'translate-msggroupselector-search-all' ) );
+				.text( mw.msg( 'translate-msggroupselector-search-all' ) );
 			$( '.ext-translate-msggroup-selector .grouplink' ).after( $newLink );
 			$newLink.data( 'msggroupid', msgGroup.id );
 			$newLink.msggroupselector( {
@@ -127,10 +127,10 @@
 			// Get ready with language stats
 			$.fn.languagestatsbar.Constructor.prototype.getStats( uiLanguage )
 		).then( function () {
-			$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
-				onSelect: groupSelectorHandler
+				$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
+					onSelect: groupSelectorHandler
+				} );
 			} );
-		} );
 
 		// Use ULS for language selection if it's available
 		if ( $.uls ) {

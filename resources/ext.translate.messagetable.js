@@ -4,7 +4,7 @@
 	$( 'document' ).ready( function () {
 		$( '.mw-translate-messagereviewbutton' ).click( function() {
 			var $b, successFunction, failFunction, params;
-			$b = $(this);
+			$b = $( this );
 
 			// TODO Avoid creating functions inside a loop
 			successFunction = function( data ) {

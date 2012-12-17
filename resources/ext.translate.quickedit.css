@@ -1,4 +1,3 @@
-
 .mw-ajax-dialog .mw-ajax-loader {
 	margin: 2em;
 }
@@ -67,8 +66,8 @@ table .tqe-inlineeditable .mw-ajax-dialog {
 }
 
 .mw-translate-sep {
-	margin-bottom:1ex;
-	margin-top:0.5ex;
+	margin-bottom: 1ex;
+	margin-top: 0.5ex;
 }
 
 .mw-translate-edit-deftext {
@@ -97,20 +96,38 @@ table .tqe-inlineeditable .mw-ajax-dialog {
 	width: 5em;
 }
 
-
 /* Blue tints for translate fieldsets */
-.mw-sp-translate-edit-inother { background-color: #F8F8FF; }
-.mw-sp-translate-in-other-small { background-color: #F0F8FF; }
-.mw-sp-translate-in-other-big { background-color: #F0F8FF; }
-.mw-sp-translate-message-documentation { background-color: #EBEBEB; }
-.mw-sp-translate-edit-definition { background-color: #EAF3FC; }
-.mw-sp-translate-edit-warnings { background-color: #FFDBDB; }
-.mw-translate-edit-tmsugs { background-color: #C0F9B6; }
+.mw-sp-translate-edit-inother {
+	background-color: #F8F8FF;
+}
+
+.mw-sp-translate-in-other-small {
+	background-color: #F0F8FF;
+}
+
+.mw-sp-translate-in-other-big {
+	background-color: #F0F8FF;
+}
+
+.mw-sp-translate-message-documentation {
+	background-color: #EBEBEB;
+}
+
+.mw-sp-translate-edit-definition {
+	background-color: #EAF3FC;
+}
+
+.mw-sp-translate-edit-warnings {
+	background-color: #FFDBDB;
+}
+
+.mw-translate-edit-tmsugs {
+	background-color: #C0F9B6;
+}
 
 .mw-sp-translate-latestchange {
 	padding-bottom: 0;
 }
-
 
 .tqe-fakeheader {
 	border: 1px solid #CCC;

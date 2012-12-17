@@ -32,7 +32,6 @@
 	border-bottom-left-radius: 10px;
 }
 
-
 .tux-message-selector {
 	padding-top: 2em;
 	border-bottom: 1px solid #777;
@@ -65,6 +64,7 @@
 	color: #555555;
 	text-decoration: none;
 }
+
 .tux-message-selector label {
 	font-size: 12pt;
 	color: #555555;

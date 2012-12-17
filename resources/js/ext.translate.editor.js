@@ -122,9 +122,9 @@
 			$editorColumn.append( $( '<span>' )
 				.addClass( 'row text-left shortcutinfo' )
 				.text( mw.msg( 'tux-editor-shortcut-info',
-					$saveButton.attr( 'title').toUpperCase(),
-					$skipButton.attr( 'title').toUpperCase() )
-				)
+				$saveButton.attr( 'title' ).toUpperCase(),
+				$skipButton.attr( 'title' ).toUpperCase() )
+			)
 			);
 
 			return $editorColumn;
@@ -135,25 +135,27 @@
 				translateDocumentationLanguageCode;
 
 			$infoColumn = $( '<div>' )
-			.addClass( 'five columns infocolumn' );
+				.addClass( 'five columns infocolumn' );
 
 			$infoColumn.append( $( '<div>' )
 				.addClass( 'row text-left message-desc' )
 				.text( mw.msg( 'tux-editor-no-message-doc' ) )
 			);
 
+			// By default translateDocumentationLanguageCode is false.
+			// It's defined as the MediaWiki global $wgTranslateDocumentationLanguageCode.
 			translateDocumentationLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
 			if ( translateDocumentationLanguageCode ) {
 				$infoColumn.append( $( '<div>' )
 					.addClass( 'row text-left message-desc-edit' )
-					.append( $( '<a>')
-						.attr( {
-							href: ( new mw.Uri( window.location.href ) ).extend( {
-									language: translateDocumentationLanguageCode
-								} ).toString(), // FIXME: this link is not correct
-							target: '_blank'
-						} )
-						.text( mw.msg( 'tux-editor-edit-desc' ) ) )
+					.append( $( '<a>' )
+					.attr( {
+						href: ( new mw.Uri( window.location.href ) ).extend( {
+							language: translateDocumentationLanguageCode
+						} ).toString(), // FIXME: this link is not correct
+						target: '_blank'
+					} )
+					.text( mw.msg( 'tux-editor-edit-desc' ) ) )
 				);
 			}
 
@@ -170,12 +172,12 @@
 			$infoColumn.append( $( '<div>' )
 				.addClass( 'row text-left help' )
 				.append(
-					$( '<span>' )
-						.text( mw.msg( 'tux-editor-need-more-help' ) ),
-					$( '<a>' )
-						.attr( 'href', '#' ) // TODO: add help link for message
-						.text( mw.msg( 'tux-editor-ask-help' ) )
-				)
+				$( '<span>' )
+					.text( mw.msg( 'tux-editor-need-more-help' ) ),
+				$( '<a>' )
+					.attr( 'href', '#' )// TODO: add help link for message
+					.text( mw.msg( 'tux-editor-ask-help' ) )
+			)
 			);
 
 			return $infoColumn;
@@ -209,7 +211,7 @@
 			return false;
 		},
 
-		infoToggle: function( toggleIcon ) {
+		infoToggle: function ( toggleIcon ) {
 			if ( this.expanded ) {
 				this.contract( toggleIcon );
 			} else {
@@ -217,7 +219,7 @@
 			}
 		},
 
-		contract: function( toggleIcon ) {
+		contract: function ( toggleIcon ) {
 			// Change the icon image
 			toggleIcon.removeClass( 'editor-contract' );
 			toggleIcon.addClass( 'editor-expand' );
@@ -230,7 +232,7 @@
 			this.expanded = false;
 		},
 
-		expand: function( toggleIcon ) {
+		expand: function ( toggleIcon ) {
 			// Change the icon image
 			toggleIcon.removeClass( 'editor-expand' );
 			toggleIcon.addClass( 'editor-contract' );
@@ -243,7 +245,7 @@
 			this.expanded = true;
 		},
 
-		getTranslationSuggestions: function() {
+		getTranslationSuggestions: function () {
 			// API call to get translation suggestions from other languages
 			// callback should render suggestions to the editor's info column
 			var queryParams,
@@ -259,7 +261,7 @@
 
 			apiURL = mw.util.wikiScript( 'api' );
 
-			$.get( apiURL, queryParams ).done( function ( result ) {
+			$.get( apiURL, queryParams ).done(function ( result ) {
 				var translations;
 
 				if ( result.query ) {
@@ -274,29 +276,28 @@
 							translateEditor.$editor.find( '.message-desc' )
 								.text( translation['*'] );
 						} else if ( translation.language !== translateEditor.$editTrigger.attr( 'lang' ) ) {
-							//Need to append this to a section "translation in other languages"
-							$otherLanguage = $( '<div>')
+							$otherLanguage = $( '<div>' )
 								.addClass( 'row in-other-language' )
 								.append(
-									$( '<div>')
-										.addClass( 'nine columns' )
-										.text( translation['*'] ),
-									$( '<div>')
-										.addClass( 'three columns language text-right' )
-										.text( $.uls.data.getAutonym( translation.language ) )
-								);
+								$( '<div>' )
+									.addClass( 'nine columns' )
+									.text( translation['*'] ),
+								$( '<div>' )
+									.addClass( 'three columns language text-right' )
+									.text( $.uls.data.getAutonym( translation.language ) )
+							);
 
 							translateEditor.$editor.find( '.in-other-languages-title' )
 								.after( $otherLanguage );
 						}
 					} );
 				}
-			} ).fail( function ( ) {
-				// what to do?
-			} );
+			} ).fail( function () {
+					// what to do?
+				} );
 		},
 
-		getTranslationMemorySuggestions: function() {
+		getTranslationMemorySuggestions: function () {
 			// API call to get translation memory suggestions.
 			// callback should render suggestions to the editor's info column
 			var queryParams,
@@ -313,7 +314,7 @@
 
 			apiURL = mw.util.wikiScript( 'api' );
 
-			$.get( apiURL, queryParams ).done( function ( result ) {
+			$.get( apiURL, queryParams ).done(function ( result ) {
 				var suggestions;
 
 				if ( result.ttmserver ) {
@@ -324,24 +325,24 @@
 
 						suggestion = suggestions[index];
 
-						$suggestion = $( '<div>')
+						$suggestion = $( '<div>' )
 							.addClass( 'row tm-suggestion' )
 							.append(
-								$( '<div>')
-									.addClass( 'nine columns' )
-									.text( suggestion.target ),
-								$( '<div>')
-									.addClass( 'three columns quality text-right' )
-									.text( mw.msg( 'tux-editor-tm-match', suggestion.quality*100 ) )
-								);
+							$( '<div>' )
+								.addClass( 'nine columns' )
+								.text( suggestion.target ),
+							$( '<div>' )
+								.addClass( 'three columns quality text-right' )
+								.text( mw.msg( 'tux-editor-tm-match', suggestion.quality * 100 ) )
+						);
 
 						translateEditor.$editor.find( '.tm-suggestions-title' )
 							.after( $suggestion );
 					} );
 				}
-			} ).fail( function ( ) {
-				// what to do?
-			} );
+			} ).fail( function () {
+					// what to do?
+				} );
 		},
 
 		/**

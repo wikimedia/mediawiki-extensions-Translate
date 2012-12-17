@@ -46,13 +46,13 @@ jQuery( document ).ready( function( $ ) {
 					$el.addClass( 'collapsed' ).removeClass( 'expanded' );
 					$el.find( '> a' ).text( mw.msg( 'translate-langstats-expand' ) );
 				}
-				
+
 				e.preventDefault();
 			} );
 
 		// Add the toggle link to the first cell of the meta group table-row
 		$parent.find( ' > td:first' ).append( $toggler );
-		
+
 		// Handle hide/show recursively, so that collapsing parent group
 		// hides all sub groups regardless of nesting level
 		$parent.on( 'hide show', function( event ) {
@@ -70,7 +70,7 @@ jQuery( document ).ready( function( $ ) {
 		.append( $( '<a href="#"></a>' )
 		.text( mw.msg( 'translate-langstats-expandall' ) ) )
 		.append( ']' )
-		.click( function( e ) {
+		.click( function ( e ) {
 			var $el = $( this ),
 				$allToggles = !!$allTogglesCache ? $allTogglesCache : $( '.groupexpander', $translateTable );
 
@@ -100,21 +100,21 @@ jQuery( document ).ready( function( $ ) {
 
 // When hovering a row, adjust brightness of the last two custom-colored cells as well
 // See also translate.langstats.css for the highlighting for the other normal rows
-mw.loader.using( 'jquery.colorUtil' , function() {
+mw.loader.using( 'jquery.colorUtil', function() {
 	'use strict';
 	jQuery( document ).ready( function( $ ) {
 		$( '.mw-sp-translate-table.wikitable tr' ).hover( function() {
 			$( '> td.hover-color', this )
-			// 30% more brightness
-			.css( 'background-color', function( i, val ) {
-				return $.colorUtil.getColorBrightness( val, +0.3 );
-			} );
+				// 30% more brightness
+				.css( 'background-color', function( i, val ) {
+					return $.colorUtil.getColorBrightness( val, +0.3 );
+				} );
 		}, function() {
 			$( '> td.hover-color', this )
-			// 30% less brightness
-			.css( 'background-color', function( i, val ) {
-				return $.colorUtil.getColorBrightness( val, -0.3 );
-			} );
+				// 30% less brightness
+				.css( 'background-color', function( i, val ) {
+					return $.colorUtil.getColorBrightness( val, -0.3 );
+				} );
 		} );
 	} );
 } );

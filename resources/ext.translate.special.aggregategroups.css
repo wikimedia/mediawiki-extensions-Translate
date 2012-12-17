@@ -11,6 +11,7 @@ a.tpt-add-new-group {
 	background: url(images/add.png) no-repeat scroll left center transparent;
 	padding-left: 20px;
 }
+
 div.tpt-add-new-group.hidden {
 	display: none;
 }

@@ -9,7 +9,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-jQuery( document ).ready( function( $ ) {
+jQuery( document ).ready( function ( $ ) {
 	'use strict';
 
 	// Based on UploadWizard, TranslationNotifications
@@ -22,7 +22,7 @@ jQuery( document ).ready( function( $ ) {
 		showAnim: false,
 		showButtonPanel: true,
 		maxDate: new Date(),
-		onClose: function( dateText, inst ) {
+		onClose: function ( dateText, inst ) {
 			// TranslationStats works with the yyyymmddhhmmss format,
 			// so zeros that represents generic hh:mm:ss must be added.
 			// The zeros are added only if a date was actually selected

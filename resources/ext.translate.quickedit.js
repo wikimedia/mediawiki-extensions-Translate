@@ -64,12 +64,16 @@
 
 		$.each( buttons, function ( key, selector ) {
 			$( selector )
-				.val( function( i, b ) { return b.replace( / \(.\)$/, '' ); } )
+				.val( function( i, b ) {
+					return b.replace( / \(.\)$/, '' );
+				} )
 				.removeAttr( 'accesskey' )
 				.attr( 'title', '' );
 
 			dialog.find( selector )
-				.val( function( i, b ) { return b + ' (_)'.replace( '_', key ); } )
+				.val( function( i, b ) {
+					return b + ' (_)'.replace( '_', key );
+				} )
 				.attr( 'accesskey', key )
 				.attr( 'title', '[' + mw.util.tooltipAccessKeyPrefix + key + ']' );
 		} );
@@ -120,7 +124,7 @@
 
 		form.find( '.mw-translate-support, .mw-translate-askpermission' ).click( function() {
 			// Can use .data() only with 1.4.3 or newer
-			window.open( $(this).attr( 'data-load-url' ) );
+			window.open( $( this ).attr( 'data-load-url' ) );
 			return false;
 		} );
 
@@ -152,7 +156,9 @@
 				} );
 			} );
 
-			textarea.keyup( function() { checker.setup(); } );
+			textarea.keyup( function() {
+				checker.setup();
+			} );
 		}
 
 		mw.translateHooks.run( 'afterRegisterFeatures', form );
@@ -185,7 +191,7 @@
 		openDialog: function( page, group ) {
 			var id, dialogElement, dialog, callbacks;
 
-			id = 'jsedit' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
+			id = 'jsedit' + page.replace( /[^a-zA-Z0-9_]/g, '_' );
 			dialogElement = $( '#' + id );
 
 			if ( dialogElement.size() > 0 ) {
@@ -197,8 +203,12 @@
 			dialog = $( '<div>' ).attr( 'id', id ).appendTo( $( 'body' ) );
 
 			callbacks = {};
-			callbacks.close = function () { dialog.dialog( 'close' ); };
-			callbacks.next = function () { mw.translate.openNext( page, group ); };
+			callbacks.close = function() {
+				dialog.dialog( 'close' );
+			};
+			callbacks.next = function() {
+				mw.translate.openNext( page, group );
+			};
 			callbacks.success = function ( text ) {
 				var $td = $( '.tqe-inlineeditable' ).filter( function () {
 					return $( this ).data( 'title' ) === page.replace( '_', ' ' );
@@ -216,8 +226,12 @@
 				width: dialogwidth,
 				title: page,
 				position: 'top',
-				resize: function() { $( '#' + id + ' textarea' ).width( '100%' ); },
-				resizeStop: function() { dialogwidth = $( '#' + id ).width(); }
+				resize: function() {
+					$( '#' + id + ' textarea' ).width( '100%' );
+				},
+				resizeStop: function() {
+					dialogwidth = $( '#' + id ).width();
+				}
 			} );
 
 			return false;
@@ -227,7 +241,7 @@
 			var id, preload, url, params;
 
 			// Try if it has been cached
-			id = 'preload-' +  page.replace( /[^a-zA-Z0-9_]/g, '_' );
+			id = 'preload-' + page.replace( /[^a-zA-Z0-9_]/g, '_' );
 			preload = preloads[id];
 
 			if ( preload !== undefined ) {
@@ -278,10 +292,10 @@
 						success: function( json ) {
 							mw.translateHooks.run( 'afterSubmit', form );
 							if ( json.error ) {
-								if( json.error.code === 'emptypage') {
+								if ( json.error.code === 'emptypage' ) {
 									window.alert( mw.msg( 'api-error-emptypage' ) );
 								} else {
-									window.alert( json.error.info + ' (' + json.error.code +')' );
+									window.alert( json.error.info + ' (' + json.error.code + ')' );
 								}
 							} else if ( json.edit.result === 'Failure' ) {
 								window.alert( mw.msg( 'translate-js-save-failed' ) );
@@ -314,7 +328,7 @@
 				value = messages[key];
 				if ( found ) {
 					return mw.translate.openDialog( value, group );
-				} else if( value === title ) {
+				} else if ( value === title ) {
 					found = true;
 				}
 			}
@@ -358,7 +372,9 @@
 				$( editor ).find( 'form' ).prepend( $header );
 			};
 			if ( next.length ) {
-				callbacks.next = function () { next.dblclick(); };
+				callbacks.next = function() {
+					next.dblclick();
+				};
 				// Preload the next item
 				ntitle = next.data( 'title' );
 				ngroup = next.data( 'group' );

@@ -60,11 +60,11 @@
 
 			$listFilters = $( '<div>' ).addClass( 'filters six columns' )
 				.append( $( '<div>' )
-					.addClass( 'ext-translate-msggroup-category all selected' )
-					.text( mw.msg( 'translate-msggroupselector-search-all' ) ) )
+				.addClass( 'ext-translate-msggroup-category all selected' )
+				.text( mw.msg( 'translate-msggroupselector-search-all' ) ) )
 				.append( $( '<div>' )
-					.addClass( 'ext-translate-msggroup-category recent' )
-					.text( mw.msg( 'translate-msggroupselector-search-recent' ) )
+				.addClass( 'ext-translate-msggroup-category recent' )
+				.text( mw.msg( 'translate-msggroupselector-search-recent' ) )
 			);
 
 			$searchGroup = $( '<div>' ).addClass( 'six columns search-group' )
@@ -206,7 +206,7 @@
 				$search;
 
 			// Respond to the keypress events after a small timeout to avoid freeze when typed fast.
-			delay( function() {
+			delay( function () {
 				$search = groupSelector.$menu.find( '.ext-translate-msggroup-search-input' );
 				query = $.trim( $search.val() ).toLowerCase();
 				groupSelector.filter( query );
@@ -316,11 +316,11 @@
 
 			if ( !this.flatGroupList ) {
 				this.flatGroupList = [];
-				parentGroupId =  this.$group.data( 'msggroupid' );
+				parentGroupId = this.$group.data( 'msggroupid' );
 				messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
 				if ( parentGroupId ) {
 					currentGroup = getGroup( parentGroupId, messageGroups ).groups;
-				} else{
+				} else {
 					currentGroup = messageGroups;
 				}
 				this.flattenGroupList( currentGroup, {} );
@@ -571,10 +571,10 @@
 		return false;
 	}
 
-	var delay = ( function() {
+	var delay = ( function () {
 		var timer = 0;
 
-		return function( callback, milliseconds ) {
+		return function ( callback, milliseconds ) {
 			clearTimeout( timer );
 			timer = setTimeout( callback, milliseconds );
 		};

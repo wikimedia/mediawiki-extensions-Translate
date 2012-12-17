@@ -8,7 +8,7 @@
  */
 jQuery( function( $ ) {
 	'use strict';
-	
+
 	$.widget( 'ui.multiselectautocomplete', {
 		options: {
 			inputbox: null // a jQuery selector for the input box where selections are written.
@@ -24,7 +24,7 @@ jQuery( function( $ ) {
 			function split( val ) {
 				return val.split( /,\s*/ );
 			}
-			
+
 			input = this.input = $( options.inputbox ).autocomplete( {
 				delay: 0,
 				minLength: 0,
@@ -39,13 +39,13 @@ jQuery( function( $ ) {
 							value = $( this ).val(),
 							term = split( request.term ).pop();
 
-						if ( this.value && ( !request.term || matcher.test(text) ) ) {
+						if ( this.value && ( !request.term || matcher.test( text ) ) ) {
 							return {
 								label: text.replace(
 									new RegExp(
-									'(?![^&;]+;)(?!<[^<>]*)(' +
-									$.ui.autocomplete.escapeRegex( term ) +
-									')(?![^<>]*>)(?![^&;]+;)', 'gi'
+										'(?![^&;]+;)(?!<[^<>]*)('
+											+ $.ui.autocomplete.escapeRegex( term )
+											+ ')(?![^<>]*>)(?![^&;]+;)', 'gi'
 									), '<strong>$1</strong>' ),
 								value: value,
 								option: this
@@ -57,8 +57,8 @@ jQuery( function( $ ) {
 					ui.item.option.selected = true;
 					self._trigger( 'selected', event, {
 						item: ui.item.option
-					});
-					var terms = split( $(this).val() );
+					} );
+					var terms = split( $( this ).val() );
 					// remove the current input
 					terms.pop();
 					// add the selected item
