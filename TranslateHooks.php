@@ -438,13 +438,21 @@ JAVASCRIPT;
 	}
 
 	/**
-	 * Hook: ResourceLoaderGetConfigVars
+	 * Hook: MakeGlobalVariablesScript
 	 * @param $vars Array
 	 * @return bool
 	 */
-	public static function addConfig( &$vars ) {
-		global $wgTranslateDocumentationLanguageCode;
-		$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
+	public static function addConfig( &$vars, $out ) {
+		$request = $out->getRequest();
+
+		if ( SpecialTranslate::isBeta( $request )
+			&& $out->getTitle()->getPrefixedText() === 'Special:Translate'
+			&& $request->getVal( 'action', null ) === 'translate' )
+		{
+			global $wgTranslateDocumentationLanguageCode;
+			$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
+		}
+
 		return true;
 	}
 }
