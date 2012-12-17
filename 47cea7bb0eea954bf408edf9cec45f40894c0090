@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADfn///Ac\u003d",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-17T15:24:45Z",
+      "side": 1,
+      "message": "@param array $vars, though I don\u0027t see the point of these for hooks.",
+      "revId": "47cea7bb0eea954bf408edf9cec45f40894c0090",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
