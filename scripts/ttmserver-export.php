@@ -130,17 +130,13 @@ class TTMServerBootstrap extends Maintenance {
 			$inserts[$mkey] = array( $title, $sourceLanguage, $def );
 		}
 
-		$total = count( $inserts );
 		do {
 			$batch = array_splice( $inserts, 0, $this->mBatchSize );
 			$server->batchInsertDefinitions( $batch );
 		} while ( count( $inserts ) );
 
-		$this->statusLine( "Inserted $total source entries for $id\n" );
-
 
 		$inserts = array();
-		$total = 0;
 		foreach ( $stats as $targetLanguage => $numbers ) {
 			if ( $targetLanguage === $sourceLanguage ) {
 				continue;
@@ -159,8 +155,6 @@ class TTMServerBootstrap extends Maintenance {
 				$inserts[$mkey] = array( $title, $targetLanguage, $collection[$mkey]->translation() );
 			}
 
-			$total += count( $inserts );
-
 			do {
 				$batch = array_splice( $inserts, 0, $this->mBatchSize );
 				$server->batchInsertTranslations( $batch );
@@ -168,7 +162,6 @@ class TTMServerBootstrap extends Maintenance {
 		}
 
 		$server->endBatch();
-		$this->statusLine( "Inserted $total translations for $id\n" );
 	}
 
 }

@@ -179,20 +179,23 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 	}
 
 	protected function createDocument( MessageHandle $handle, $language, $text ) {
+		$translationTitle = $handle->getTitle();
+
 		$title = Title::makeTitle( $handle->getTitle()->getNamespace(), $handle->getKey() );
 		$wiki = wfWikiId();
 		$messageid = $title->getPrefixedText();
 		$globalid = "$wiki-$messageid-" . substr( sha1( $text ), 0, 8 );
 
 		$doc = new Solarium_Document_ReadWrite();
+		$doc->wiki = $wiki;
+		$doc->uri = $translationTitle->getCanonicalUrl();
+		$doc->messageid = $messageid;
+		$doc->globalid = $globalid;
+
 		$doc->language = $language;
 		$doc->content = $text;
 		$doc->charcount = mb_strlen( $text );
-
-		$doc->uri = $title->getCanonicalUrl();
-		$doc->wiki = $wiki;
-		$doc->messageid = $messageid;
-		$doc->globalid = $globalid;
+		$doc->setField( 'group', $handle->getGroupIds() );
 		return $doc;
 	}
 
@@ -207,40 +210,21 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 	}
 
 	public function batchInsertDefinitions( array $batch ) {
-		foreach ( $batch as $key => $data ) {
-			$this->updates[$key]['*'] = $data;
-		}
+		$this->batchInsertTranslations( $batch );
 	}
 
 	public function batchInsertTranslations( array $batch ) {
+		$update = $this->client->createUpdate();
 		foreach ( $batch as $key => $data ) {
 			list( $title, $language, $text ) = $data;
-			$this->updates[$key][$language] = $text;
-		}
-	}
-
-	public function endBatch() {
-		$update = $this->client->createUpdate();
-
-		foreach ( $this->updates as $key => $languages ) {
-			$definition = $languages['*'];
-			list( $title, $language, $text ) = $definition;
 			$handle = new MessageHandle( $title );
 			$doc = $this->createDocument( $handle, $language, $text );
-			unset( $languages['*'] );
-			$field = "text_$language";
-			$doc->$field = $text;
-
-			foreach ( $languages as $language => $text ) {
-				$field = "text_$language";
-				$doc->$field = $text;
-			}
 			$update->addDocument( $doc );
-
 		}
-
 		$this->client->update( $update );
 	}
+
+	public function endBatch() {}
 
 	public function endBootstrap() {
 		$update = $this->client->createUpdate();
