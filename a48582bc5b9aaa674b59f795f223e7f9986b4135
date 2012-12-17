@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADfn///Kw\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-17T10:01:10Z",
+      "side": 1,
+      "message": "qqq missing.",
+      "revId": "a48582bc5b9aaa674b59f795f223e7f9986b4135",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADfn///K0\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-17T10:01:10Z",
+      "side": 1,
+      "message": "Superfluous newline.",
+      "revId": "a48582bc5b9aaa674b59f795f223e7f9986b4135",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADfn///LA\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-17T10:01:10Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be hardcoded. $wgTranslateDocumentationLanguageCode",
+      "revId": "a48582bc5b9aaa674b59f795f223e7f9986b4135",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADfn///K8\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-17T10:01:10Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be hardcoded. Use $wgTranslateDocumentationLanguageCode.",
+      "revId": "a48582bc5b9aaa674b59f795f223e7f9986b4135",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
