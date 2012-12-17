@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADfn///BE\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-17T15:27:19Z",
+      "side": 1,
+      "message": "Just don\u0027t display anything? In PHP side I output \u003c!-- comments --\u003e that say why any given box is not visible to aid debugging.",
+      "revId": "b236cce21cb78a2e371c198ba3abc9e6903f152b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
