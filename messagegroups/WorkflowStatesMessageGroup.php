@@ -59,9 +59,14 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 					false, /* base revision id */
 					FuzzyBot::getUser()
 				);
+			} else {
+				// Use the wiki translation as definition if available.
+				// getContents returns array( content, last author )
+				list( $content, ) = $defs[$key];
+				$keys[$key] = $content;
 			}
 		}
 
-		return $defs;
+		return $keys;
 	}
 }
