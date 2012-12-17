@@ -436,4 +436,15 @@ JAVASCRIPT;
 		}
 		return true;
 	}
+
+	/**
+	 * Hook: ResourceLoaderGetConfigVars
+	 * @param $vars Array
+	 * @return bool
+	 */
+	public static function addConfig( &$vars ) {
+		global $wgTranslateDocumentationLanguageCode;
+		$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
+		return true;
+	}
 }
