@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADfn//+ZU\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-18T07:33:50Z",
+      "side": 1,
+      "message": "Was there some reason to change from tqe-inlineeditable to tux-message? More generally I think this class should be independent of any particular implementation of the editor or message list.",
+      "revId": "59727ccc11ff74b19f426f8af6479974a4e43cf6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADfn//+ZQ\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-18T07:33:50Z",
+      "side": 1,
+      "message": "function ()",
+      "revId": "59727ccc11ff74b19f426f8af6479974a4e43cf6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
