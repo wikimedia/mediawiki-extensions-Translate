@@ -35,7 +35,7 @@
 }
 
 .tux-message-editor .editcolumn {
-	border-right: 1px solid #777;
+	border-right: 1px solid #AAA;
 }
 
 .tux-message-editor textarea {
@@ -59,7 +59,7 @@
 	text-overflow: ellipsis;
 	font-size: 12pt;
 	height: 35px;
-	margin-bottom: 10px;
+	margin: 10px 5px;
 }
 
 .tux-message-editor .shortcutinfo {
@@ -71,6 +71,29 @@
 .tux-message-editor .infocolumn {
 	padding-left: 20px;
 	font-size: 12pt;
+	background: #FCFCFC;
+}
+
+.tux-message-editor .infocolumn .caret:before {
+border-top: 20px solid transparent;
+border-right: 20px solid #AAA;
+border-bottom: 20px solid transparent;
+content: "";
+display: inline-block;
+left: -20px;
+position: absolute;
+top: 90px;
+}
+
+.tux-message-editor .infocolumn .caret:after {
+border-top: 20px solid transparent;
+border-right: 20px solid #FCFCFC;
+border-bottom: 20px solid transparent;
+content: "";
+display: inline-block;
+left: -19px;
+position: absolute;
+top: 90px;
 }
 
 .message-desc,
