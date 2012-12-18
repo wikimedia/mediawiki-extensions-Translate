@@ -229,6 +229,8 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'mediawiki.jqueryMsg',
 	),
 	'messages' => array(
+		'tux-status-translated',
+		'tux-status-unsaved',
 		'tux-editor-placeholder',
 		'tux-editor-save-button-label',
 		'tux-editor-skip-button-label',
