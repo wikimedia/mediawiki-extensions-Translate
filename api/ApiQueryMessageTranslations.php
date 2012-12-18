@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2011, Niklas Laxström
+ * @copyright Copyright © 2011-2012, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -23,22 +23,15 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 		return 'public';
 	}
 
-	public function execute() {
-		$params = $this->extractRequestParams();
-
-		$title = Title::newFromText( $params['title'] );
-		if ( !$title ) {
-			$this->dieUsage( 'Invalid title', 'invalidtitle' );
-		}
-
-		$handle = new MessageHandle( $title );
-		if ( !$handle->isValid() ) {
-			$this->dieUsage( 'Title does not correspond to a translatable message', 'nomessagefortitle' );
-		}
-
-		$base = Title::makeTitle( $title->getNamespace(), $handle->getKey() );
-		$namespace = $base->getNamespace();
-		$message = $base->getDBKey();
+	/**
+	 * Returns all translations of a given message.
+	 * @param MessageHandle $handle Language code is ignored.
+	 * @return array[]
+	 * @since 2012-12-18
+	 */
+	public static function getTranslations( MessageHandle $handle ) {
+		$namespace = $handle->getTitle()->getNamespace();
+		$base = $handle->getKey();
 
 		$dbr = wfGetDB( DB_SLAVE );
 
@@ -46,7 +39,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 			array( 'page_namespace', 'page_title' ),
 			array(
 				'page_namespace' => $namespace,
-				'page_title ' . $dbr->buildLike( "$message/", $dbr->anyString() ),
+				'page_title ' . $dbr->buildLike( "$base/", $dbr->anyString() ),
 			),
 			__METHOD__,
 			array(
@@ -60,6 +53,24 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 			$titles[] = $row->page_title;
 		}
 		$pageInfo = TranslateUtils::getContents( $titles, $namespace );
+		return $pageInfo;
+	}
+
+	public function execute() {
+		$params = $this->extractRequestParams();
+
+		$title = Title::newFromText( $params['title'] );
+		if ( !$title ) {
+			$this->dieUsage( 'Invalid title', 'invalidtitle' );
+		}
+
+		$handle = new MessageHandle( $title );
+		if ( !$handle->isValid() ) {
+			$this->dieUsage( 'Title does not correspond to a translatable message', 'nomessagefortitle' );
+		}
+
+		$namespace = $title->getNamespace();
+		$pageInfo = self::getTranslations( $handle );
 
 		$result = $this->getResult();
 		$count = 0;
