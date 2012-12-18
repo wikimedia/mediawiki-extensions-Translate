@@ -6,6 +6,7 @@
 		this.$editor = null;
 		this.$messageItem = this.$editTrigger.find( '.tux-message-item' );
 		this.shown = false;
+		this.dirty = false;
 		this.expanded = false;
 		this.listen();
 	}
@@ -36,12 +37,51 @@
 		},
 
 		/**
+		 * Mark the message as unsaved, can be resumed later
+		 */
+		markUnsaved: function() {
+			this.$editTrigger.find( '.tux-list-status' )
+				.empty()
+				.append( $('<span>')
+					.addClass ( 'tux-status-unsaved' )
+					.text( mw.msg( 'tux-status-unsaved' ) )
+				);
+		},
+
+		/**
+		 * Mark the message as translated
+		 */
+		markTrasnslated: function() {
+			this.$editTrigger.find( '.tux-list-status' )
+				.empty()
+				.append( $('<span>')
+					.addClass ( 'tux-status-translated' )
+					.text( mw.msg( 'tux-status-translated' ) )
+				);
+		},
+
+		/**
+		 * Save the translation
+		 */
+		save: function () {
+			this.dirty = false;
+			this.markTrasnslated();
+			this.next();
+			// TODO: incomplete
+		},
+
+		/**
 		 * Jump to the next translation editor.
 		 *
 		 * @returns {Boolean}
 		 */
 		next: function () {
 			var $next;
+
+			if ( this.dirty ) {
+				this.markUnsaved();
+			}
+
 			$next = this.$editTrigger.next( '.tux-message' );
 
 			if ( !$next.length ) {
@@ -102,7 +142,10 @@
 				.attr( {
 					'placeholder': mw.msg( 'tux-editor-placeholder' )
 				} )
-				.addClass( 'eleven columns' );
+				.addClass( 'eleven columns' )
+				.on( 'keypress keyup keydown', function() {
+					translateEditor.dirty = true;
+				} );
 
 			if ( this.$editTrigger.data( 'translation' ) ) {
 				$textArea.text( this.$editTrigger.data( 'translation' ) );
@@ -119,8 +162,10 @@
 					'accesskey': 's',
 					'title': mw.util.tooltipAccessKeyPrefix + 's'
 				} )
-				.addClass( 'three columns offset-by-one blue button' );
-			// TODO: add click handler for this button
+				.addClass( 'three columns offset-by-one blue button' )
+				.on( 'click', function() {
+					translateEditor.save();
+				} );
 
 			$skipButton = $( '<button>' )
 				.text( mw.msg( 'tux-editor-skip-button-label' ) )
