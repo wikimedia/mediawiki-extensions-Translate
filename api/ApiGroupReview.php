@@ -176,6 +176,7 @@ class ApiGroupReview extends ApiBase {
 	public function getExamples() {
 		$groups = MessageGroups::getAllGroups();
 		$group = key( $groups );
+		$group = str_replace( ' ', '_', $group );
 		return array(
 			"api.php?action=groupreview&group=$group&language=de&state=ready",
 		);
