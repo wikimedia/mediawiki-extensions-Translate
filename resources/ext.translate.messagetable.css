@@ -60,6 +60,7 @@
 
 .tux-message {
 	height: auto;
+	cursor: pointer;
 }
 
 .tux-message-item {
