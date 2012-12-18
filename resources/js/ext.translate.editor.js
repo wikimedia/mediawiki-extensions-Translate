@@ -51,23 +51,56 @@
 		/**
 		 * Mark the message as translated
 		 */
-		markTrasnslated: function() {
+		markTranslated: function() {
 			this.$editTrigger.find( '.tux-list-status' )
 				.empty()
 				.append( $('<span>')
 					.addClass ( 'tux-status-translated' )
 					.text( mw.msg( 'tux-status-translated' ) )
 				);
+			this.dirty = false;
 		},
 
 		/**
 		 * Save the translation
 		 */
 		save: function () {
-			this.dirty = false;
-			this.markTrasnslated();
-			this.next();
-			// TODO: incomplete
+			var translateEditor = this,
+				api = new mw.Api(),
+				translation = translateEditor.$editor.find( 'textarea' ).val();
+
+			// XXX: Any validations to be done before proceeding?
+			api.postWithEditToken( {
+				action: 'edit',
+				title: translateEditor.$editTrigger.data( 'title' ),
+				text: translation
+			}, function ( response ) {
+				var $error;
+				// OK
+				if ( response.edit.result === 'Success' ) {
+					translateEditor.markTranslated();
+					translateEditor.next();
+
+					// Update the translation
+					translateEditor.$editTrigger.data( 'translation', translation );
+					translateEditor.$editTrigger.find( '.tux-list-translation' )
+						.text( translation );
+				} else {
+					// FIXME not tested
+					$error = $( '<div>' ).
+						addClass( 'row highlight' )
+						.text( response.warning );
+					translateEditor.$editor.find( 'textarea' ).before( $error );
+				}
+			}, function ( err ) {
+				// Error
+				// FIXME not tested
+				var $error;
+				$error = $( '<div>' ).
+					addClass( 'row highlight' )
+					.text( err.warning );
+				translateEditor.$editor.find( 'textarea' ).before( $error );
+			} );
 		},
 
 		/**
