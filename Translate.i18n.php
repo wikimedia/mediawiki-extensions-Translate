@@ -847,7 +847,7 @@ Additional parameters:
 	'tux-status-fuzzy' => 'Status label in Special:Translate indicating translation needs updating',
 	'tux-status-proofread' => 'Status label in [[Special:Translate]] indicating that you have proofread the translation.
 Read as in "proofRED" (past participle).',
-	'tux-status-translated' => 'Status label in Special:Translate indicating that translation exists',
+	'tux-status-translated' => 'Status label in Special:Translate indicating that a message is translated. An adjective that refers to a message.',
 	'tux-status-unsaved' => 'Status label in Special:Translate indicating that translation is not saved',
 	'tux-editor-placeholder' => 'Placeholder text for the translation editor textbox',
 	'tux-editor-save-button-label' => 'Label for save translation button',
@@ -2423,13 +2423,40 @@ $messages['az'] = array(
 
 /** South Azerbaijani (تورکجه)
  * @author E THP
+ * @author Ebrahimi-amir
  */
 $messages['azb'] = array(
+	'translate' => 'ترجومه ائت',
 	'translate-taction-lstats' => 'دیل آماری',
+	'translate-page-language' => 'دیل',
 	'translate-next' => 'سونراکی صحیفه',
+	'translate-edit-tab-list' => 'مئساژلار لیستی',
 	'translate-rc-translation-filter' => 'چئویریلیری لیسته',
+	'translate-rc-translation-filter-no' => 'هئچ ایش گؤرمه',
+	'translate-rc-translation-filter-only' => 'یالنیز چئویرمه‌لری گؤستر',
+	'translate-rc-translation-filter-filter' => 'چئویرمه‌لری گؤسترمه',
+	'translate-rc-translation-filter-site' => 'یالنیز سایت‌دا اولان دَییشیکلیکلری گؤستر',
+	'translate-sidebar-alltrans' => 'آیری دیللرده',
 	'languagestats' => 'دیل آماری',
 	'languagestats-summary' => 'بو صحیفه بیر دیلده اولان بوتون چئویرمه‌لری سیزه گؤستریر.',
+	'languagestats-stats-for' => '$1 ($2)اوچون چئویرمه آماری.',
+	'languagestats-recenttranslations' => 'سون چئویرمه‌لر',
+	'translate-language-code' => 'دیلین کودو',
+	'translate-language-code-field-name' => 'دیلین کودو:',
+	'translate-suppress-complete' => 'بوتولوکله چئوریلن مئساژ قوروپلارین اوست-باستدیر ائت',
+	'translate-ls-noempty' => 'بوتولوکله چئوریلمه‌یَن مئساژ قوروپلارین اوست-باستدیر ائت',
+	'translate-total' => 'مئساژلار',
+	'translate-untranslated' => 'چئوریلمه‌میش',
+	'translate-percentage-complete' => 'ایره‌لیلیش',
+	'translate-percentage-fuzzy' => 'تاریخی کئچمیش',
+	'translate-ls-submit' => 'آمارلاری گؤستر',
+	'translate-ls-column-group' => 'مئساژلار قوروپو',
+	'translate-mgs-group' => 'مئساژلار قوروپو:',
+	'translate-mgs-submit' => 'آمارلاری گؤستر',
+	'supportedlanguages-recenttranslations' => 'سون چئویرمه‌لر',
+	'translate-messagereview-submit' => 'قبول ائت',
+	'translate-messagereview-progress' => 'قبول ائتمکده...',
+	'translate-messagereview-done' => 'قبول ائدیلدی',
 );
 
 /** Bashkir (башҡортса)
@@ -5644,6 +5671,17 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-status-fuzzy' => 'Veraltet',
 	'tux-status-proofread' => 'Korrekturlesen',
 	'tux-status-translated' => 'Übersetzt',
+	'tux-editor-placeholder' => 'Deine Übersetzung',
+	'tux-editor-save-button-label' => 'Übersetzung speichern',
+	'tux-editor-skip-button-label' => 'Zur nächsten',
+	'tux-editor-shortcut-info' => 'Drücke „$1“ zum Speichern oder „$2“, um zur nächsten Nachricht zu gelangen.',
+	'tux-editor-no-message-doc' => 'Keine Nachrichtendokumentation',
+	'tux-editor-edit-desc' => 'Beschreibung bearbeiten',
+	'tux-editor-suggestions-title' => 'Vorschläge',
+	'tux-editor-in-other-languages' => 'In anderen Sprachen',
+	'tux-editor-need-more-help' => 'Mehr Hilfe?',
+	'tux-editor-ask-help' => 'Mehr Informationen erhalten',
+	'tux-editor-tm-match' => '$1% Übereinstimmung',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -8703,6 +8741,17 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-status-fuzzy' => 'Obsolète',
 	'tux-status-proofread' => 'Corrigée',
 	'tux-status-translated' => 'Traduit',
+	'tux-editor-placeholder' => 'Votre traduction',
+	'tux-editor-save-button-label' => 'Enregistrer la traduction',
+	'tux-editor-skip-button-label' => 'Aller au suivant',
+	'tux-editor-shortcut-info' => 'Appuyez sur "$1" pour enregistrer ou "$2" pour passer au message suivant',
+	'tux-editor-no-message-doc' => 'Pas de documentation du message',
+	'tux-editor-edit-desc' => 'Modifier la description',
+	'tux-editor-suggestions-title' => 'Suggestions',
+	'tux-editor-in-other-languages' => 'En d’autres langues',
+	'tux-editor-need-more-help' => 'Besoin d’aide?',
+	'tux-editor-ask-help' => 'Demander plus d’information',
+	'tux-editor-tm-match' => '$1% correspond',
 );
 
 /** Cajun French (français cadien)
@@ -10466,7 +10515,7 @@ $1',
 	'tux-status-optional' => 'אופציונלית',
 	'tux-status-fuzzy' => 'לא מעודכנת',
 	'tux-status-proofread' => 'הגהה',
-	'tux-status-translated' => 'מתורגמות',
+	'tux-status-translated' => 'מתורגמת',
 );
 
 /** Hindi (हिन्दी)
@@ -13313,6 +13362,17 @@ $1',
 	'tux-status-fuzzy' => '要修正',
 	'tux-status-proofread' => '校正済',
 	'tux-status-translated' => '翻訳済',
+	'tux-editor-placeholder' => 'あなたの翻訳を入力',
+	'tux-editor-save-button-label' => '翻訳を保存',
+	'tux-editor-skip-button-label' => '次へスキップ',
+	'tux-editor-shortcut-info' => '保存するには「$1」を、次のメッセージへスキップするには「$2」を押してください',
+	'tux-editor-no-message-doc' => 'メッセージについてのドキュメントはありません',
+	'tux-editor-edit-desc' => '説明を編集',
+	'tux-editor-suggestions-title' => '提案',
+	'tux-editor-in-other-languages' => '他言語での翻訳',
+	'tux-editor-need-more-help' => '助けが必要ですか?',
+	'tux-editor-ask-help' => '詳細について質問する',
+	'tux-editor-tm-match' => '$1%の一致',
 );
 
 /** Jamaican Creole English (Patois)
@@ -14888,6 +14948,17 @@ $1',
 	'tux-status-fuzzy' => '오래됨',
 	'tux-status-proofread' => '교정하기',
 	'tux-status-translated' => '번역됨',
+	'tux-editor-placeholder' => '내 번역',
+	'tux-editor-save-button-label' => '번역 저장',
+	'tux-editor-skip-button-label' => '다음으로 넘어가기',
+	'tux-editor-shortcut-info' => '저장하려면 "$1"을 누르거나 다음 메시지로 넘어가려면 "$2"를 누르세요',
+	'tux-editor-no-message-doc' => '메시지 도움말이 없습니다',
+	'tux-editor-edit-desc' => '설명 편집',
+	'tux-editor-suggestions-title' => '제안',
+	'tux-editor-in-other-languages' => '다른 언어',
+	'tux-editor-need-more-help' => '도움이 더 필요하십니까?',
+	'tux-editor-ask-help' => '자세한 정보에 대한 질문',
+	'tux-editor-tm-match' => '$1% 일치',
 );
 
 /** Krio (Krio)
@@ -17389,6 +17460,17 @@ Paling berguna dengan tugas menyemak (membaca pruf).',
 	'tux-status-fuzzy' => 'Lapuk',
 	'tux-status-proofread' => 'Telah disemak',
 	'tux-status-translated' => 'Telah diterjemahkan',
+	'tux-editor-placeholder' => 'Terjemahan anda',
+	'tux-editor-save-button-label' => 'Simpan terjemahan',
+	'tux-editor-skip-button-label' => 'Langkau ke mesej seterusnya',
+	'tux-editor-shortcut-info' => 'Tekan "$1" untuk menyimpan, atau "$2" untuk melangkau ke mesej seterusnya',
+	'tux-editor-no-message-doc' => 'Tiada dokumentasi mesej',
+	'tux-editor-edit-desc' => 'Sunting keterangan',
+	'tux-editor-suggestions-title' => 'Cadangan',
+	'tux-editor-in-other-languages' => 'Dalam bahasa lain',
+	'tux-editor-need-more-help' => 'Perlukan lagi bantuan?',
+	'tux-editor-ask-help' => 'Minta keterangan lanjut',
+	'tux-editor-tm-match' => '$1% berpadan',
 );
 
 /** Maltese (Malti)
@@ -18569,6 +18651,17 @@ Dit is vooral nuttig voor de controletaken.',
 	'tux-status-fuzzy' => 'Verouderd',
 	'tux-status-proofread' => 'Gecontroleerd',
 	'tux-status-translated' => 'Vertaald',
+	'tux-editor-placeholder' => 'Uw vertaling',
+	'tux-editor-save-button-label' => 'Vertaling opslaan',
+	'tux-editor-skip-button-label' => 'Overslaan en volgende',
+	'tux-editor-shortcut-info' => 'Druk op "$1" om op te slaan of druk op "$2" om naar het volgende bericht te gaan',
+	'tux-editor-no-message-doc' => 'Geen berichtbeschrijving',
+	'tux-editor-edit-desc' => 'Beschrijving bewerken',
+	'tux-editor-suggestions-title' => 'Suggesties',
+	'tux-editor-in-other-languages' => 'In andere talen',
+	'tux-editor-need-more-help' => 'Meer hulp nodig?',
+	'tux-editor-ask-help' => 'Meer informatie vragen',
+	'tux-editor-tm-match' => '$1% overeenkomst',
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎)
@@ -26568,6 +26661,7 @@ $messages['ug-latn'] = array(
  * @author NickK
  * @author Olvin
  * @author Prima klasy4na
+ * @author Steve.rusyn
  * @author Test
  * @author Ата
  * @author Тест
@@ -26910,6 +27004,8 @@ $1',
 	'tux-status-fuzzy' => 'Застарілі',
 	'tux-status-proofread' => 'Вичитка',
 	'tux-status-translated' => 'Перекладено',
+	'tux-editor-placeholder' => 'Ваш переклад',
+	'tux-editor-save-button-label' => 'Зберегти переклад',
 );
 
 /** Urdu (اردو)
@@ -27850,6 +27946,17 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-status-fuzzy' => 'Lỗi thời',
 	'tux-status-proofread' => 'Hiệu đính rồi',
 	'tux-status-translated' => 'Dịch rồi',
+	'tux-editor-placeholder' => 'Bản dịch của bạn',
+	'tux-editor-save-button-label' => 'Lưu bản dịch',
+	'tux-editor-skip-button-label' => 'Chuyển đến thông điệp kế',
+	'tux-editor-shortcut-info' => 'Bấm “$1” để lưu hoặc “$2” để chuyển đến thông điệp kế',
+	'tux-editor-no-message-doc' => 'Không có tài liệu cho thông điệp',
+	'tux-editor-edit-desc' => 'Sửa đổi miêu tả',
+	'tux-editor-suggestions-title' => 'Gợi ý',
+	'tux-editor-in-other-languages' => 'Theo ngôn ngữ khác',
+	'tux-editor-need-more-help' => 'Còn thắc mắc?',
+	'tux-editor-ask-help' => 'Hãy xin thêm thông tin',
+	'tux-editor-tm-match' => 'trùng $1%',
 );
 
 /** Volapük (Volapük)
