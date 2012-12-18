@@ -35,6 +35,23 @@
 			this.getTranslationMemorySuggestions();
 		},
 
+		/**
+		 * Jump to the next translation editor row.
+		 *
+		 * @returns {Boolean} false if there's no next row, true otherwise.
+		 */
+		next: function () {
+			var $next = this.$editTrigger.next( '.tux-message' );
+
+			if ( !$next.length ) {
+				return false;
+			}
+
+			$next.data( 'translateeditor' ).show();
+
+			return true;
+		},
+
 		prepareEditorColumn: function () {
 			var translateEditor = this,
 				$editorColumn,
@@ -111,8 +128,10 @@
 					'accesskey': 'd',
 					'title': mw.util.tooltipAccessKeyPrefix + 'd'
 				} )
-				.addClass( 'three columns offset-by-one button' );
-			// TODO: add click handler for this button
+				.addClass( 'three columns offset-by-one button' )
+				.on( 'click', function () {
+					translateEditor.next();
+				} );
 
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row' )
@@ -122,9 +141,9 @@
 			$editorColumn.append( $( '<span>' )
 				.addClass( 'row text-left shortcutinfo' )
 				.text( mw.msg( 'tux-editor-shortcut-info',
-				$saveButton.attr( 'title' ).toUpperCase(),
-				$skipButton.attr( 'title' ).toUpperCase() )
-			)
+					$saveButton.attr( 'title' ).toUpperCase(),
+					$skipButton.attr( 'title' ).toUpperCase() )
+				)
 			);
 
 			return $editorColumn;
@@ -195,6 +214,9 @@
 
 			this.$messageItem.hide();
 			this.$editor.show();
+
+			// Focus the textarea.
+			this.$editor.find( 'textarea' ).focus();
 			this.shown = true;
 
 			return false;
