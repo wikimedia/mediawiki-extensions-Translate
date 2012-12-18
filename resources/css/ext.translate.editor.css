@@ -1,6 +1,8 @@
 .tux-message-editor {
 	border: 1px solid #777;
 	background-color: #FFFFFF;
+	cursor: default;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .tux-message-editor .close {
@@ -11,11 +13,13 @@
 	background-image: linear-gradient(transparent, transparent), url(../images/close.svg);
 	padding: 15px;
 	cursor: pointer;
+	float: right;
 }
 
 .tux-message-editor .editor-info-toggle {
 	padding: 15px;
 	cursor: pointer;
+	float: right;
 }
 
 .tux-message-editor .editor-contract {
@@ -40,32 +44,48 @@
 
 .tux-message-editor textarea {
 	border: 1px solid #555;
-	font-size: 12pt;
+	font-size: 16px;
 	margin-left: 10px;
+	padding: 5px !important;
 	height: 100px;
 }
 
 .tux-message-editor .messagekey {
-	font-size: 12pt;
+	color: #252525;
+	font-size: 13px;
 	font-weight: bold;
+	padding: 5px 0 5px 10px;
 }
 
+.tux-message-editor .messagekey .caret {
+	border-top: 4px solid #252525;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 4px;
+}
+
+
+
+
 .tux-message-editor .sourcemessage {
-	font-size: 12pt;
-	padding: 10px;
+	font-size: 16px;
+	line-height: 1.6em;
+	padding: 5px 0 10px 10px;
 }
 
 .tux-message-editor .button {
 	text-overflow: ellipsis;
-	font-size: 12pt;
+	font-size: 16px;
 	height: 35px;
 	margin: 10px 5px;
 }
 
 .tux-message-editor .shortcutinfo {
-	font-size: 12pt;
+	font-size: 13px;
 	color: #555;
-	padding: 5px 5px 10px 10px;
+	padding: 0px 5px 5px 10px;
 }
 
 .tux-message-editor .infocolumn {
@@ -96,10 +116,13 @@
 	top: 90px;
 }
 
-.message-desc,
+.message-desc{
+	font-size: 16px;
+	padding: 5px 0;
+}
 .message-desc-edit {
-	font-size: 12pt;
-	padding: 5px 5px 10px 0;
+	font-size: 13px;
+	padding: 0 0 5px 0;
 }
 
 .message-desc-edit a {
@@ -110,18 +133,19 @@
 	background-image: linear-gradient(transparent, transparent), url(../images/action-edit.svg);
 	background-size: 18px 18px;
 	padding-left: 19px;
+
 }
 
 .tm-suggestions-title,
 .in-other-languages-title {
-	font-size: 12pt;
+	font-size: 16px;
 	font-weight: bold;
-	padding-bottom: 10px;
+	padding: 10px 0;
 }
 
 .tm-suggestion,
 .in-other-language {
-	font-size: 12pt;
+	font-size: 16px;
 	border-left: 2px solid #3366BB;
 	padding: 5px 5px 10px 10px;
 	background-color: #F0F0F0;
@@ -133,5 +157,11 @@
 }
 
 .tux-message-editor .help {
-	font-size: 12pt;
+	font-size: 16px;
+	padding: 10px 5px
+}
+
+.tux-message-editor .help a {
+	font-size: 13px;
+	padding: 0 0 0 5px;
 }
