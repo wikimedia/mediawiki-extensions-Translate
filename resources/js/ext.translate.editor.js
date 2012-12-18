@@ -136,6 +136,7 @@
 				$skipButton,
 				$sourceString,
 				$closeIcon,
+				$layoutActions,
 				$infoToggleIcon;
 
 			$editorColumn = $( '<div>' )
@@ -143,7 +144,10 @@
 
 			$messageKeyLabel = $( '<div>' )
 				.addClass( 'ten columns text-left messagekey' )
-				.text( this.$editTrigger.data( 'title' ) );
+				.text( this.$editTrigger.data( 'title' ) )
+				.append($('<span>')
+					.addClass('caret')
+				);
 
 			$closeIcon = $( '<span>' )
 				.addClass( 'one column close' )
@@ -159,11 +163,14 @@
 					translateEditor.infoToggle( $( this ) );
 				} ); // TODO: refactor event handler
 
+			$layoutActions = $('<div>')
+				.addClass( 'two columns layout-actions' )
+				.append($closeIcon, $infoToggleIcon);
+
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row' )
-				.append( $messageKeyLabel, $infoToggleIcon, $closeIcon )
+				.append( $messageKeyLabel, $layoutActions )
 			);
-
 			$sourceString = $( '<span>' )
 				.addClass( 'eleven column sourcemessage' )
 				.text( this.$editTrigger.data( 'source' ) );
@@ -222,7 +229,7 @@
 				.append( $buttonBlock )
 			);
 
-			$editorColumn.append( $( '<span>' )
+			$editorColumn.append( $( '<div>' )
 				.addClass( 'row text-left shortcutinfo' )
 				.text( mw.msg( 'tux-editor-shortcut-info',
 					$saveButton.attr( 'title' ).toUpperCase(),
