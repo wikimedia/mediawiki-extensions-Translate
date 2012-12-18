@@ -111,6 +111,15 @@
 	text-overflow: ellipsis;
 }
 
+.tux-status-unsaved {
+	/* @embed */
+	background-image: url(images/label-pen.png);
+	background-image: -webkit-linear-gradient(transparent, transparent), url(images/label-pen.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(images/label-pen.svg);
+	background-image: linear-gradient(transparent, transparent), url(images/label-pen.svg);
+	background-color: #C9C9C9;
+}
+
 .tux-status-translated,
 .tux-status-proofread {
 	/* @embed */
