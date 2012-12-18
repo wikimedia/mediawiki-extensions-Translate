@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgH///88\u003d",
+        "filename": "ttmserver/schema.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-18T14:39:40Z",
+      "side": 1,
+      "message": "Please remove trailing WS. Also below.",
+      "revId": "87fd56c8047deaad4cf0875ccc02e62a3cadc3e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
