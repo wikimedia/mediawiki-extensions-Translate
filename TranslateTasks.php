@@ -446,17 +446,12 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 	}
 
 	public function output() {
-		if ( $this->group instanceof MessageGroupBase ) {
-			if ( !$this->group instanceof FileBasedMessageGroup ) {
-				$data = 'Not supported';
-			} else {
-				$ffs = $this->group->getFFS();
-				$data = $ffs->writeIntoVariable( $this->collection );
-			}
-		} else {
-			$writer = $this->group->getWriter();
-			$data = $writer->webExport( $this->collection );
+		if ( !$this->group instanceof FileBasedMessageGroup ) {
+			return 'Not supported';
 		}
+
+		$ffs = $this->group->getFFS();
+		$data = $ffs->writeIntoVariable( $this->collection );
 
 		$filename = basename( $this->group->getSourceFilePath( $this->collection->getLanguage() ) );
 		header( "Content-Disposition: attachment; filename=\"$filename\"" );
