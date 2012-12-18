@@ -398,6 +398,12 @@
 							translateEditor.$editor.find( '.in-other-languages-title' )
 								.after( $otherLanguage );
 						}
+						if ( index > 2 ) {
+							// FIXME this is wrong way to filter. but to be addressed when
+							// there is a translation helper api to do this properly
+							return false;
+						}
+
 					} );
 				}
 			} ).fail( function () {
@@ -446,6 +452,12 @@
 
 						translateEditor.$editor.find( '.tm-suggestions-title' )
 							.after( $suggestion );
+
+						if ( index > 2 ) {
+							// FIXME this is wrong way to filter. but to be addressed when
+							// there is a translation helper api to do this properly
+							return false;
+						}
 					} );
 				}
 			} ).fail( function () {
