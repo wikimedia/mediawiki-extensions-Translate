@@ -145,7 +145,6 @@ class TTMServerBootstrap extends Maintenance {
 
 			$collection->resetForNewLanguage( $targetLanguage );
 			$collection->filter( 'ignored' );
-			$collection->filter( 'optional' );
 			$collection->filter( 'translated', false );
 			$collection->loadTranslations();
 
