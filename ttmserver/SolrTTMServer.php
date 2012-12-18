@@ -38,70 +38,113 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 	}
 
 	public function query( $sourceLanguage, $targetLanguage, $text ) {
+		/* Two query system:
+		 * 1) Find all strings in source language that match text
+		 * 2) Do another query for translations for those strings
+		 */
 		wfProfileIn( __METHOD__ );
-		$len = mb_strlen( $text );
-		$min = ceil( max( $len * $this->config['cutoff'], 2 ) );
-		$max = floor( $len / $this->config['cutoff'] );
-		$languageField = "text_$targetLanguage";
-
 		$query = $this->client->createSelect();
-		$query->setFields( array( 'uri', 'wiki', 'content', $languageField, 'messageid' ) );
-		$query->setRows( 250 );
+		$query->setFields( array( 'wiki', 'messageid', 'content', 'score' ) );
+
+		/* The interface usually displays three best candidates. These might
+		 * come from more than three matches, if the translation is the same.
+		 * This might not find all suggestions, if the top N best matching
+		 * source texts don't have translations, but worse matches do. We
+		 * could loop with start parameter to fetch more until we have enough
+		 * suggestions or the quality drops below the cutoff point. */
+		$query->setRows( 25 );
+
+		/* Our string can contain all kind of nasty characters, so we need
+		 * escape them with great pain. */
 		$helper = $query->getHelper();
-
-		$queryString = 'content:%P1%';
-		$query->setQuery( $queryString, array( $text ) );
-
-		$query->createFilterQuery( 'lang' )
-			->setQuery( 'language:%T1%', array( $sourceLanguage ) );
-		$query->createFilterQuery( 'trans' )
-			->setQuery( '%T1%:["" TO *]', array( $languageField ) );
-		$query->createFilterQuery( 'len' )
-			->setQuery( $helper->rangeQuery( 'charcount', $min, $max ) );
-
 		$dist = $helper->escapePhrase( $text );
-		$dist = "strdist($dist,text,edit)";
-		$query->addSort( $dist, 'asc' );
+		// "edit" could also be ngram of other algorithm
+		$dist = "strdist($dist,content,edit)";
+		/* Note how we need to escape twice here, first the string for strdist
+		 * and then the strdist call itself for the query. And of course every-
+		 * thing will be URL encoded once sent over the line. */
+		$query->setQuery( '_val_:%P1%', array( $dist ) );
 
+		/* Filter queries are supposed to be efficient as they are separately
+		 * cached, but I haven't done any benchmarks. */
+		$query->createFilterQuery( 'lang' )
+			->setQuery( 'language:%P1%', array( $sourceLanguage ) );
+
+		// Converting Solarium exceptions to our exceptions
 		try {
 			$resultset = $this->client->select( $query );
 		} catch ( Solarium_Exception $e ) {
-			throw new TranslationHelperException( 'Solarium exception' );
+			throw new TranslationHelperException( 'Solarium exception: ' . $e );
 		}
 
-		$edCache = array();
-		$suggestions = array();
-		$timeLimit = microtime( true ) + 5;
+		/* This query is doing two unrelated things:
+		 * 1) Collect the message contents and scores so that they can
+		 *    be accessed later for the translations we found.
+		 * 2) Build the query string for the query that fetches the
+		 *    translations.
+		 * This code is a bit uglier than I'd like it to be, since there
+		 * there is no field that globally identifies a message (message
+		 * definition and translations). */
+		$contents = $scores = array();
+		$queryString = '';
 		foreach ( $resultset as $doc ) {
-			if ( microtime( true ) > $timeLimit ) {
-				// Having no suggestions is better than preventing translation
-				// altogether by timing out the request :(
-				break;
-			}
-			$candidate = $doc->content;
+			$sourceId = $doc->wiki . '-'. $doc->messageid;
+			$contents[$sourceId] = $doc->content;
+			$scores[$sourceId] = $doc->score;
 
-			if ( isset( $edCache[$candidate] ) ) {
-				$quality = $edCache[$candidate];
-			} else {
-				$candidateLen = mb_strlen( $candidate );
-				$dist = TTMServer::levenshtein( $text, $candidate, $len, $candidateLen );
-				$quality = 1 - ( $dist * 0.9 / min( $len, $candidateLen ) );
-				$edCache[$candidate] = $quality;
-			}
+			$globalid = $helper->escapePhrase( "{$doc->wiki}-{$doc->messageid}/$targetLanguage" );
+			$queryString .= "globalid:$globalid ";
+		}
+
+		// Second query to fetch available translations
+		$fetchQuery = $this->client->createSelect();
+		$fetchQuery->setFields( array( 'wiki', 'uri', 'content', 'messageid' ) );
+		// This come in random order, so have to fetch all and sort
+		$fetchQuery->setRows( 25 );
+		$fetchQuery->setQuery( $queryString );
+		// With AND we would not find anything, obviously.
+		$fetchQuery->setQueryDefaultOperator( Solarium_Query_Select::QUERY_OPERATOR_OR );
+
+		try {
+			$translations = $this->client->select( $fetchQuery );
+		} catch ( Solarium_Exception $e ) {
+			throw new TranslationHelperException( 'Solarium exception: ' . $e );
+		}
+
+		$suggestions = array();
+		foreach ( $translations as $doc ) {
+			/* Construct the matching source id to message definition.
+			 * The field messageid is always without language code. */
+			$sourceId = $doc->wiki . '-' . $doc->messageid;
+
+			/* Unfortunately we cannot do this on the search server,
+			 * because score is not a real field and thus cannot be
+			 * used in a filter query. */
+			$quality = $scores[$sourceId];
 			if ( $quality < $this->config['cutoff'] ) {
-				break;
+				continue;
 			}
 
 			$suggestions[] = array(
-				'source' => $candidate,
-				'target' => $doc->$languageField,
+				'source' => $contents[$sourceId],
+				'target' => $doc->content,
 				'context' => $doc->messageid,
 				'quality' => $quality,
 				'wiki' => $doc->wiki,
 				'location' => $doc->messageid . '/' . $targetLanguage,
-				'uri' => $doc->uri . '/' . $targetLanguage,
+				'uri' => $doc->uri,
 			);
 		}
+
+		/* Like mentioned above, we get results in random order. Sort them
+		 * now to have best matches first as expected by callers. */
+		uasort( $suggestions, function( $a, $b ) {
+			if ( $a['quality'] === $b['quality'] ) {
+				return 0;
+			}
+			return ( $a['quality'] < $b['quality'] ) ? 1 : -1;
+		} );
+
 		wfProfileOut( __METHOD__ );
 		return $suggestions;
 	}
@@ -112,56 +155,8 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		if ( !$handle->isValid() || $handle->getCode() === '' ) {
 			return false;
 		}
-
-		$mkey  = $handle->getKey();
-		$group = $handle->getGroup();
-		$targetLanguage = $handle->getCode();
-		$sourceLanguage = $group->getSourceLanguage();
-
-		// Skip definitions to not slow down mass imports etc.
-		// These will be added when the first translation is made
-		if ( $targetLanguage === $sourceLanguage ) {
-			return false;
-		}
-
-		$definition = $group->getMessage( $mkey, $sourceLanguage );
-		if ( !is_string( $definition ) || !strlen( trim( $definition ) ) ) {
-			return false;
-		}
-
 		wfProfileIn( __METHOD__ );
-		$doc = $this->createDocument( $handle, $sourceLanguage, $definition );
-
-		$query = $this->client->createSelect();
-		$query->createFilterQuery( 'globalid' )->setQuery( 'globalid:%P1%', array( $doc->globalid ) );
-
-		try {
-			$resultset = $this->client->select( $query );
-		} catch ( Solarium_Exception $e ) {
-			error_log( "SolrTTMServer update-read failed" );
-			wfProfileOut( __METHOD__ );
-			return false;
-		}
-
-		$found = count( $resultset );
-		if ( $found > 1 ) {
-			throw new MWException( "Found multiple documents with global id {$doc->globalid}" );
-		}
-
-		// Fill in the fields from existing entry if it exists
-		if ( $found === 1 ) {
-			foreach ( $resultset as $resultdoc ) {
-				foreach ( $resultdoc as $field => $value ) {
-					if ( $field !== 'score' && !isset( $doc->$field ) ) {
-						$doc->$field = $value;
-					}
-				}
-			}
-		}
-
-		$languageField = "text_$targetLanguage";
-		$doc->$languageField = $targetText;
-
+		$doc = $this->createDocument( $handle, $targetText );
 		$update = $this->client->createUpdate();
 		$update->addDocument( $doc );
 		$update->addCommit();
@@ -178,73 +173,65 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		return true;
 	}
 
-	protected function createDocument( MessageHandle $handle, $language, $text ) {
+	/**
+	 * @see schema.xml
+	 */
+	protected function createDocument( MessageHandle $handle, $text ) {
+		$language = $handle->getCode();
+		$translationTitle = $handle->getTitle();
+
 		$title = Title::makeTitle( $handle->getTitle()->getNamespace(), $handle->getKey() );
 		$wiki = wfWikiId();
 		$messageid = $title->getPrefixedText();
-		$globalid = "$wiki-$messageid-" . substr( sha1( $text ), 0, 8 );
+		$globalid = "$wiki-$messageid/$language";
 
 		$doc = new Solarium_Document_ReadWrite();
-		$doc->language = $language;
-		$doc->content = $text;
-		$doc->charcount = mb_strlen( $text );
-
-		$doc->uri = $title->getCanonicalUrl();
 		$doc->wiki = $wiki;
+		$doc->uri = $translationTitle->getCanonicalUrl();
 		$doc->messageid = $messageid;
 		$doc->globalid = $globalid;
+
+		$doc->language = $language;
+		$doc->content = $text;
+		$doc->setField( 'group', $handle->getGroupIds() );
 		return $doc;
 	}
 
 	public function beginBootstrap() {
 		$update = $this->client->createUpdate();
-		$update->addDeleteQuery( 'wiki:%T1%', wfWikiId() );
+		$query = 'wiki:' .  $update->getHelper()->escapePhrase( wfWikiId() );
+		$update->addDeleteQuery( $query );
+		$update->addCommit();
 		$this->client->update( $update );
 	}
 
-	public function beginBatch() {
-		$this->updates = array();
-	}
+	public function beginBatch() {}
 
 	public function batchInsertDefinitions( array $batch ) {
-		foreach ( $batch as $key => $data ) {
-			$this->updates[$key]['*'] = $data;
-		}
+		$this->batchInsertTranslations( $batch );
 	}
 
 	public function batchInsertTranslations( array $batch ) {
+		$update = $this->client->createUpdate();
 		foreach ( $batch as $key => $data ) {
 			list( $title, $language, $text ) = $data;
-			$this->updates[$key][$language] = $text;
+			$handle = new MessageHandle( $title );
+			$doc = $this->createDocument( $handle, $text );
+			$update->addDocument( $doc );
 		}
+		$this->client->update( $update );
 	}
 
 	public function endBatch() {
 		$update = $this->client->createUpdate();
-
-		foreach ( $this->updates as $key => $languages ) {
-			$definition = $languages['*'];
-			list( $title, $language, $text ) = $definition;
-			$handle = new MessageHandle( $title );
-			$doc = $this->createDocument( $handle, $language, $text );
-			unset( $languages['*'] );
-			$field = "text_$language";
-			$doc->$field = $text;
-
-			foreach ( $languages as $language => $text ) {
-				$field = "text_$language";
-				$doc->$field = $text;
-			}
-			$update->addDocument( $doc );
-
-		}
-
+		$update->addCommit();
 		$this->client->update( $update );
 	}
 
 	public function endBootstrap() {
 		$update = $this->client->createUpdate();
-		$update->addOptimize( false, false, 2 );
+		$update->addCommit();
+		$update->addOptimize();
 		$this->client->update( $update );
 	}
 
