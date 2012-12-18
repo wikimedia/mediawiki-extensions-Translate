@@ -143,7 +143,10 @@
 
 			$messageKeyLabel = $( '<div>' )
 				.addClass( 'ten columns text-left messagekey' )
-				.text( this.$editTrigger.data( 'title' ) );
+				.text( this.$editTrigger.data( 'title' ) )
+				.append($('<span>')
+					.addClass('caret')
+				);
 
 			$closeIcon = $( '<span>' )
 				.addClass( 'one column close' )
@@ -222,7 +225,7 @@
 				.append( $buttonBlock )
 			);
 
-			$editorColumn.append( $( '<span>' )
+			$editorColumn.append( $( '<div>' )
 				.addClass( 'row text-left shortcutinfo' )
 				.text( mw.msg( 'tux-editor-shortcut-info',
 					$saveButton.attr( 'title' ).toUpperCase(),
