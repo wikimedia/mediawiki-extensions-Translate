@@ -463,7 +463,7 @@
 		listen: function () {
 			var translateEditor = this;
 
-			this.$editTrigger.dblclick( function () {
+			this.$editTrigger.click( function () {
 				translateEditor.show();
 			} );
 		}
