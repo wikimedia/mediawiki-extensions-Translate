@@ -57,6 +57,7 @@
 				$editorColumn,
 				$messageKeyLabel,
 				$textArea,
+				$buttonBlock,
 				$saveButton,
 				$skipButton,
 				$sourceString,
@@ -119,7 +120,7 @@
 					'accesskey': 's',
 					'title': mw.util.tooltipAccessKeyPrefix + 's'
 				} )
-				.addClass( 'three columns offset-by-one blue button' );
+				.addClass( 'blue button' );
 			// TODO: add click handler for this button
 
 			$skipButton = $( '<button>' )
@@ -128,14 +129,18 @@
 					'accesskey': 'd',
 					'title': mw.util.tooltipAccessKeyPrefix + 'd'
 				} )
-				.addClass( 'three columns offset-by-one button' )
+				.addClass( 'button' )
 				.on( 'click', function () {
 					translateEditor.next();
 				} );
 
+			$buttonBlock= $( '<div>' )
+				.addClass( 'twelve columns' )
+				.append( $saveButton, $skipButton );
+
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row' )
-				.append( $saveButton, $skipButton )
+				.append( $buttonBlock )
 			);
 
 			$editorColumn.append( $( '<span>' )
@@ -155,6 +160,8 @@
 
 			$infoColumn = $( '<div>' )
 				.addClass( 'five columns infocolumn' );
+
+			$infoColumn.append( $( '<span>' ).addClass( 'caret' ) );
 
 			$infoColumn.append( $( '<div>' )
 				.addClass( 'row text-left message-desc' )
