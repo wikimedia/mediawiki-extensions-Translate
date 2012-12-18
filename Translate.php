@@ -226,6 +226,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'ext.translate.grid',
 		'mediawiki.util',
 		'mediawiki.Uri',
+		'mediawiki.api.edit',
 		'mediawiki.jqueryMsg',
 	),
 	'messages' => array(
