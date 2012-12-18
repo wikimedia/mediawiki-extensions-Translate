@@ -9,7 +9,6 @@
 		changeGroup: function( group ) {
 			var uri = new mw.Uri( window.location.href );
 			uri.extend( {
-				action: 'translate',
 				group: group
 			} );
 			window.location.href = uri.toString();
