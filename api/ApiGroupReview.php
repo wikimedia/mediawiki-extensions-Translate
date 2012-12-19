@@ -176,8 +176,9 @@ class ApiGroupReview extends ApiBase {
 	public function getExamples() {
 		$groups = MessageGroups::getAllGroups();
 		$group = key( $groups );
+		$group = rawurlencode( $group );
 		return array(
-			"api.php?action=groupreview&group=$group&language=de&state=ready",
+			"api.php?action=groupreview&group=$group&language=de&state=ready&token=foo",
 		);
 	}
 
