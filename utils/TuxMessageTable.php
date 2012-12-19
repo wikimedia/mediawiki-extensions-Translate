@@ -8,14 +8,21 @@ class TuxMessageTable extends MessageTable {
 	}
 
 	public function header() {
-		return '<div class="row tux-messagelist">';
+		$sourceLang = Language::factory( $this->group->getSourceLanguage() );
+		$targetLang = Language::factory( $this->collection->getLanguage() );
+
+		return Xml::openElement( 'div', array(
+			'class' => 'row tux-messagelist',
+			'data-sourcelangcode' => $sourceLang->getCode(),
+			'data-sourcelangdir' => $sourceLang->getDir(),
+			'data-targetlangcode' => $targetLang->getCode(),
+			'data-targetlangdir' => $targetLang->getDir(),
+		) );
 	}
 
 	public function contents() {
 		$this->doLinkBatch();
 
-		$sourceLang = Language::factory( $this->group->getSourceLanguage() );
-		$targetLang = Language::factory( $this->collection->getLanguage() );
 		$titleMap = $this->collection->keys();
 
 		$output = '';
@@ -31,11 +38,6 @@ class TuxMessageTable extends MessageTable {
 			$translation = $m->translation();
 
 			$hasTranslation = $translation !== null;
-			if ( $hasTranslation ) {
-				$extraAttribs = self::getLanguageAttributes( $targetLang );
-			} else {
-				$extraAttribs = self::getLanguageAttributes( $sourceLang );
-			}
 
 			$linkAttribs = array();
 			$query = array( 'action' => 'edit' ) + $this->editLinkParams;
@@ -44,7 +46,7 @@ class TuxMessageTable extends MessageTable {
 
 			$edit = Html::element( 'a', $linkAttribs, $this->msg( 'tux-edit' )->text() );
 
-			$tqeData = $extraAttribs + array(
+			$tqeData = array(
 				'data-title' => $title->getPrefixedText(),
 				'data-group' => $this->group->getId(),
 				'data-source' => $original,
@@ -80,7 +82,7 @@ class TuxMessageTable extends MessageTable {
 				);
 			}
 
-			$messageListItem =  Xml::tags( 'div', array(
+			$messageListItem = Xml::tags( 'div', array(
 					'class' => 'row tux-message-item'
 				),
 				'<div class="nine columns tux-list-message"><span class="tux-list-source">' .

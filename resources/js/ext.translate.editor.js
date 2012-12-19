@@ -138,7 +138,8 @@
 				$sourceString,
 				$closeIcon,
 				$layoutActions,
-				$infoToggleIcon;
+				$infoToggleIcon,
+				$messageList;
 
 			$editorColumn = $( '<div>' )
 				.addClass( 'seven columns editcolumn' );
@@ -191,9 +192,12 @@
 				.append( $sourceString )
 			);
 
+			$messageList = $( '.tux-messagelist' );
 			$textArea = $( '<textarea>' )
 				.attr( {
-					'placeholder': mw.msg( 'tux-editor-placeholder' )
+					'placeholder': mw.msg( 'tux-editor-placeholder' ),
+					'lang': $messageList.data( 'targetlangcode' ),
+					'dir': $messageList.data( 'targetlangdir' )
 				} )
 				.addClass( 'eleven columns' )
 				.on( 'keypress keyup keydown', function () {
