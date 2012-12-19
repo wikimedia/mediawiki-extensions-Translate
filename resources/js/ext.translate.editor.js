@@ -145,15 +145,13 @@
 			$messageKeyLabel = $( '<div>' )
 				.addClass( 'ten columns text-left messagekey' )
 				.text( this.$editTrigger.data( 'title' ) )
-				.append($('<span>')
-					.addClass('caret')
-				);
+				.append( $('<span>').addClass( 'caret' ) );
 
 			$closeIcon = $( '<span>' )
 				.addClass( 'one column close' )
 				.on( 'click', function () {
 					translateEditor.hide();
-				} ); // TODO: refactor event handler
+				} );
 
 			$infoToggleIcon = $( '<span>' )
 				// Initially the editor column is contracted,
@@ -161,16 +159,17 @@
 				.addClass( 'one column editor-info-toggle editor-expand' )
 				.on( 'click', function () {
 					translateEditor.infoToggle( $( this ) );
-				} ); // TODO: refactor event handler
+				} );
 
-			$layoutActions = $('<div>')
+			$layoutActions = $( '<div>' )
 				.addClass( 'two columns layout-actions' )
-				.append($closeIcon, $infoToggleIcon);
+				.append( $closeIcon, $infoToggleIcon );
 
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row' )
 				.append( $messageKeyLabel, $layoutActions )
 			);
+
 			$sourceString = $( '<span>' )
 				.addClass( 'eleven column sourcemessage' )
 				.text( this.$editTrigger.data( 'source' ) );

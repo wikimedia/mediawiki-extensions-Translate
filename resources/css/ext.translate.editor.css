@@ -66,9 +66,6 @@
 	margin: 0 4px;
 }
 
-
-
-
 .tux-message-editor .sourcemessage {
 	font-size: 16px;
 	line-height: 1.6em;
@@ -116,10 +113,11 @@
 	top: 90px;
 }
 
-.message-desc{
+.message-desc {
 	font-size: 16px;
 	padding: 5px 0;
 }
+
 .message-desc-edit {
 	font-size: 13px;
 	padding: 0 0 5px 0;
@@ -133,7 +131,6 @@
 	background-image: linear-gradient(transparent, transparent), url(../images/action-edit.svg);
 	background-size: 18px 18px;
 	padding-left: 19px;
-
 }
 
 .tm-suggestions-title,
