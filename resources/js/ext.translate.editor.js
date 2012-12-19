@@ -198,6 +198,8 @@
 				.addClass( 'eleven columns' )
 				.on( 'keypress keyup keydown', function () {
 					translateEditor.dirty = true;
+					translateEditor.$editor.find( '.tux-editor-save-button' )
+						.removeAttr( 'disabled' );
 				} );
 
 			if ( this.$editTrigger.data( 'translation' ) ) {
@@ -213,9 +215,10 @@
 				.text( mw.msg( 'tux-editor-save-button-label' ) )
 				.attr( {
 					'accesskey': 's',
-					'title': mw.util.tooltipAccessKeyPrefix + 's'
+					'title': mw.util.tooltipAccessKeyPrefix + 's',
+					'disabled': true
 				} )
-				.addClass( 'blue button' )
+				.addClass( 'blue button tux-editor-save-button' )
 				.on( 'click', function () {
 					translateEditor.save();
 				} );
@@ -226,7 +229,7 @@
 					'accesskey': 'd',
 					'title': mw.util.tooltipAccessKeyPrefix + 'd'
 				} )
-				.addClass( 'button' )
+				.addClass( 'button tux-editor-skip-button' )
 				.on( 'click', function () {
 					translateEditor.next();
 				} );
