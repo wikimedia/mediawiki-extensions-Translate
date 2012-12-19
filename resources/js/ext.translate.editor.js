@@ -128,6 +128,7 @@
 
 		prepareEditorColumn: function () {
 			var translateEditor = this,
+				sourceString,
 				$editorColumn,
 				$messageKeyLabel,
 				$textArea,
@@ -171,9 +172,19 @@
 				.append( $messageKeyLabel, $layoutActions )
 			);
 
+			sourceString = this.$editTrigger.data( 'source' );
 			$sourceString = $( '<span>' )
 				.addClass( 'eleven column sourcemessage' )
-				.text( this.$editTrigger.data( 'source' ) );
+				.text( sourceString );
+
+			// Adjust the font size for the message string based on the length
+			if ( sourceString.length > 100 && sourceString.length < 200 ) {
+				$sourceString.addClass( 'long' );
+			}
+
+			if ( sourceString.length > 200 ) {
+				$sourceString.addClass( 'longer' );
+			}
 
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row' )

@@ -72,6 +72,14 @@
 	padding: 5px 0 10px 10px;
 }
 
+.tux-message-editor .sourcemessage.long {
+	font-size: 14px;
+}
+
+.tux-message-editor .sourcemessage.longer {
+	font-size: 12px;
+}
+
 .tux-message-editor .button {
 	text-overflow: ellipsis;
 	font-size: 16px;
