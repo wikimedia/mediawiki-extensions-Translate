@@ -138,7 +138,8 @@
 				$sourceString,
 				$closeIcon,
 				$layoutActions,
-				$infoToggleIcon;
+				$infoToggleIcon,
+				$messageList;
 
 			$editorColumn = $( '<div>' )
 				.addClass( 'seven columns editcolumn' );
@@ -172,9 +173,14 @@
 				.append( $messageKeyLabel, $layoutActions )
 			);
 
+			$messageList = $( '.tux-messagelist' );
 			sourceString = this.$editTrigger.data( 'source' );
 			$sourceString = $( '<span>' )
 				.addClass( 'eleven column sourcemessage' )
+				.attr( {
+					'lang': $messageList.data( 'sourcelangcode' ),
+					'dir': $messageList.data( 'sourcelangdir' )
+				} )
 				.text( sourceString );
 
 			// Adjust the font size for the message string based on the length
@@ -193,7 +199,9 @@
 
 			$textArea = $( '<textarea>' )
 				.attr( {
-					'placeholder': mw.msg( 'tux-editor-placeholder' )
+					'placeholder': mw.msg( 'tux-editor-placeholder' ),
+					'lang': $messageList.data( 'targetlangcode' ),
+					'dir': $messageList.data( 'targetlangdir' )
 				} )
 				.addClass( 'eleven columns' )
 				.on( 'keypress keyup keydown', function () {
@@ -397,7 +405,10 @@
 					translations = result.query.messagetranslations;
 					$.each( translations, function ( index ) {
 						var translation,
-							$otherLanguage;
+							$otherLanguage,
+							autonym,
+							autonymDir,
+							translationDir;
 
 						translation = translations[index];
 
@@ -405,15 +416,36 @@
 							translateEditor.$editor.find( '.message-desc' )
 								.text( translation['*'] );
 						} else if ( translation.language !== translateEditor.$editTrigger.attr( 'lang' ) ) {
+							if ( $.uls ) {
+								// ULS is available, so use its JS API to get autonym
+								// and direction.
+								autonym = $.uls.data.getAutonym( translation.language );
+								translationDir = autonymDir = $.uls.data.getDir( translation.language );
+							} else {
+								// No ULS, so use some simplified values for autonym and direction -
+								// just the language code, which is always ltr, and auto for the translation.
+								autonym = translation.language;
+								autonymDir = 'ltr';
+								translationDir = 'auto';
+							}
+
 							$otherLanguage = $( '<div>' )
 								.addClass( 'row in-other-language' )
 								.append(
 								$( '<div>' )
 									.addClass( 'nine columns' )
+									.attr( {
+										lang: translation.language,
+										dir: translationDir
+									} )
 									.text( translation['*'] ),
 								$( '<div>' )
 									.addClass( 'three columns language text-right' )
-									.text( $.uls.data.getAutonym( translation.language ) )
+									.attr( {
+										lang: translation.language,
+										dir: autonymDir
+									} )
+									.text( autonym )
 							);
 
 							translateEditor.$editor.find( '.in-other-languages-title' )
