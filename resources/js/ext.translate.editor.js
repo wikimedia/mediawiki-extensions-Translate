@@ -149,8 +149,9 @@
 
 			$closeIcon = $( '<span>' )
 				.addClass( 'one column close' )
-				.on( 'click', function () {
+				.on( 'click', function ( e ) {
 					translateEditor.hide();
+					e.stopPropagation();
 				} );
 
 			$infoToggleIcon = $( '<span>' )
