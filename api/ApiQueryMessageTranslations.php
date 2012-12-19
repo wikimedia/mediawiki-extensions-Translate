@@ -52,6 +52,11 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 		foreach ( $res as $row ) {
 			$titles[] = $row->page_title;
 		}
+
+		if ( $titles === array() ) {
+			return array();
+		}
+
 		$pageInfo = TranslateUtils::getContents( $titles, $namespace );
 		return $pageInfo;
 	}

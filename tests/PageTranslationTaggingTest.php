@@ -2,6 +2,7 @@
 
 /**
  * @group Database
+ * @group medium
  */
 class PageTranslationTaggingText extends MediaWikiTestCase {
 	protected function setUp() {

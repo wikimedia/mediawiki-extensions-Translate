@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxstrom
- * @copyright Copyright © 2008-2012, Niklas Laxström
+ * @copyright Copyright © 2008-2013, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -132,15 +132,43 @@ abstract class MessageIndex {
 	 */
 	protected function clearMessageGroupStats( array $old, array $new ) {
 		$changes = array();
-		foreach ( array_diff_assoc( $new, $old ) as $groups ) {
-			foreach ( (array) $groups as $group ) $changes[$group] = true;
+
+		foreach ( $new as $key => $groups ) {
+			// Using != here on purpose to ignore order of items
+			if ( !isset( $old[$key] ) ) {
+				$changes[$key] = array( array(), (array) $groups );
+			} elseif ( $groups != $old[$key] ) {
+				$changes[$key] = array( (array) $old[$key], (array) $groups );
+			}
 		}
 
-		foreach ( array_diff_assoc( $old, $new ) as $groups ) {
-			foreach ( (array) $groups as $group ) $changes[$group] = true;
+		foreach ( $old as $key => $groups ) {
+			if ( !isset( $new[$key] ) ) {
+				$changes[$key] = array( (array) $groups, array() );
+			}
+			// We already checked for diffs above
 		}
 
-		MessageGroupStats::clearGroup( array_keys( $changes ) );
+		$changedGroups = array();
+		foreach ( $changes as $data ) {
+			foreach( $data[0] as $group ) {
+				$changedGroups[$group] = true;
+			}
+			foreach( $data[1] as $group ) {
+				$changedGroups[$group] = true;
+			}
+		}
+
+		MessageGroupStats::clearGroup( array_keys( $changedGroups ) );
+
+		foreach ( $changes as $key => $data ) {
+			list( $ns, $pagename ) = explode( ':', $key, 2 );
+			$title = Title::makeTitle( $ns, $pagename );
+			$handle = new MessageHandle( $title );
+			list ( $oldGroups, $newGroups ) = $data;
+			wfRunHooks( 'TranslateEventMessageMembershipChange',
+				array( $handle, $oldGroups, $newGroups ) );
+		}
 	}
 
 	/**
@@ -257,6 +285,7 @@ class SerializedMessageIndex extends MessageIndex {
 		wfProfileIn( __METHOD__ );
 		$file = TranslateUtils::cacheFile( $this->filename );
 		file_put_contents( $file, serialize( $array ) );
+		$this->index = $array;
 		wfProfileOut( __METHOD__ );
 	}
 }
@@ -318,6 +347,8 @@ class DatabaseMessageIndex extends MessageIndex {
 		}
 		$dbw->delete( 'translate_messageindex', '*', __METHOD__ );
 		$dbw->replace( 'translate_messageindex', array( array( 'tmi_key' ) ), $rows, __METHOD__ );
+
+		$this->index = $array;
 		wfProfileOut( __METHOD__ );
 	}
 }
@@ -363,6 +394,8 @@ class CachedMessageIndex extends MessageIndex {
 		wfProfileIn( __METHOD__ );
 		$key = wfMemckey( $this->key );
 		$this->cache->set( $key, $array );
+
+		$this->index = $array;
 		wfProfileOut( __METHOD__ );
 	}
 }
@@ -445,6 +478,8 @@ class CDBMessageIndex extends MessageIndex {
 			$cache->set( $key, $value );
 		}
 		$cache->close();
+
+		$this->index = $array;
 		wfProfileOut( __METHOD__ );
 	}
 
