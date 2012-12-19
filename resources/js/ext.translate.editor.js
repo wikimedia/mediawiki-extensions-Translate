@@ -14,19 +14,15 @@
 	TranslateEditor.prototype = {
 
 		/**
-		 * TODO: Looong method- refactor!
 		 * Initialize the plugin
 		 */
 		init: function () {
-			var $editorColumn,
-				$infoColumn;
-
-			$editorColumn = this.prepareEditorColumn();
-			$infoColumn = this.prepareInfoColumn();
-
 			this.$editor = $( '<div>' )
 				.addClass( 'row tux-message-editor' )
-				.append( $editorColumn, $infoColumn );
+				.append(
+					this.prepareEditorColumn(),
+					this.prepareInfoColumn()
+				);
 
 			this.expanded = false;
 			this.$editTrigger.append( this.$editor );
@@ -58,6 +54,7 @@
 					.addClass( 'tux-status-translated' )
 					.text( mw.msg( 'tux-status-translated' ) )
 				);
+
 			this.dirty = false;
 		},
 
@@ -87,18 +84,22 @@
 						.text( translation );
 				} else {
 					// FIXME not tested
-					$error = $( '<div>' ).
-						addClass( 'row highlight' )
+					$error = $( '<div>' )
+						.addClass( 'row highlight' )
 						.text( response.warning );
-					translateEditor.$editor.find( 'textarea' ).before( $error );
+
+					translateEditor.$editor.find( 'textarea' )
+						.before( $error );
 				}
 			}, function ( err ) {
 				// Error
 				// FIXME not tested
 				var $error;
+
 				$error = $( '<div>' ).
 					addClass( 'row highlight' )
 					.text( err.warning );
+
 				translateEditor.$editor.find( 'textarea' ).before( $error );
 			} );
 		},
@@ -234,7 +235,7 @@
 					translateEditor.next();
 				} );
 
-			$buttonBlock= $( '<div>' )
+			$buttonBlock = $( '<div>' )
 				.addClass( 'twelve columns' )
 				.append( $saveButton, $skipButton );
 
@@ -298,12 +299,12 @@
 			$infoColumn.append( $( '<div>' )
 				.addClass( 'row text-left help' )
 				.append(
-				$( '<span>' )
-					.text( mw.msg( 'tux-editor-need-more-help' ) ),
-				$( '<a>' )
-					.attr( 'href', '#' )// TODO: add help link for message
-					.text( mw.msg( 'tux-editor-ask-help' ) )
-			)
+					$( '<span>' )
+						.text( mw.msg( 'tux-editor-need-more-help' ) ),
+					$( '<a>' )
+						.attr( 'href', '#' ) // TODO: add help link for message
+						.text( mw.msg( 'tux-editor-ask-help' ) )
+				)
 			);
 
 			return $infoColumn;
@@ -379,7 +380,7 @@
 			// callback should render suggestions to the editor's info column
 			var queryParams,
 				translateEditor = this,
-				apiURL;
+				apiURL = mw.util.wikiScript( 'api' );
 
 			queryParams = {
 				action: 'query',
@@ -388,13 +389,12 @@
 				format: 'json'
 			};
 
-			apiURL = mw.util.wikiScript( 'api' );
-
-			$.get( apiURL, queryParams ).done(function ( result ) {
+			$.get( apiURL, queryParams ).done( function ( result ) {
 				var translations;
 
 				if ( result.query ) {
 					translations = result.query.messagetranslations;
+
 					$.each( translations, function ( index ) {
 						var translation,
 							$otherLanguage;
@@ -408,28 +408,28 @@
 							$otherLanguage = $( '<div>' )
 								.addClass( 'row in-other-language' )
 								.append(
-								$( '<div>' )
-									.addClass( 'nine columns' )
-									.text( translation['*'] ),
-								$( '<div>' )
-									.addClass( 'three columns language text-right' )
-									.text( $.uls.data.getAutonym( translation.language ) )
-							);
+									$( '<div>' )
+										.addClass( 'nine columns' )
+										.text( translation['*'] ),
+									$( '<div>' )
+										.addClass( 'three columns language text-right' )
+										.text( $.uls.data.getAutonym( translation.language ) )
+								);
 
 							translateEditor.$editor.find( '.in-other-languages-title' )
 								.after( $otherLanguage );
 						}
+
 						if ( index > 2 ) {
 							// FIXME this is wrong way to filter. but to be addressed when
 							// there is a translation helper api to do this properly
 							return false;
 						}
-
 					} );
 				}
 			} ).fail( function () {
-					// what to do?
-				} );
+				// what to do?
+			} );
 		},
 
 		getTranslationMemorySuggestions: function () {
@@ -441,7 +441,7 @@
 
 			queryParams = {
 				action: 'ttmserver',
-				sourcelanguage: 'en', //FIXME: dont hardcode it
+				sourcelanguage: 'en', // FIXME: don't hardcode it
 				targetlanguage: this.$editTrigger.attr( 'lang' ),
 				text: this.$editTrigger.data( 'source' ),
 				format: 'json'
@@ -449,7 +449,7 @@
 
 			apiURL = mw.util.wikiScript( 'api' );
 
-			$.get( apiURL, queryParams ).done(function ( result ) {
+			$.get( apiURL, queryParams ).done( function ( result ) {
 				var suggestions;
 
 				if ( result.ttmserver ) {
@@ -463,13 +463,13 @@
 						$suggestion = $( '<div>' )
 							.addClass( 'row tm-suggestion' )
 							.append(
-							$( '<div>' )
-								.addClass( 'nine columns' )
-								.text( suggestion.target ),
-							$( '<div>' )
-								.addClass( 'three columns quality text-right' )
-								.text( mw.msg( 'tux-editor-tm-match', suggestion.quality * 100 ) )
-						);
+								$( '<div>' )
+									.addClass( 'nine columns' )
+									.text( suggestion.target ),
+								$( '<div>' )
+									.addClass( 'three columns quality text-right' )
+									.text( mw.msg( 'tux-editor-tm-match', suggestion.quality * 100 ) )
+							);
 
 						translateEditor.$editor.find( '.tm-suggestions-title' )
 							.after( $suggestion );
@@ -482,8 +482,8 @@
 					} );
 				}
 			} ).fail( function () {
-					// what to do?
-				} );
+				// what to do?
+			} );
 		},
 
 		/**
