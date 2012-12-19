@@ -46,18 +46,23 @@ Post processing step to format in wiki
 
 === PHP events ===
 
-;Translate:MessageGroupStats:isIncluded: Controls whether message group is shown for a given language in language or message group statistics. Mostly used internally by Translate to hide discouraged groups and groups restricted to certain languages.
- string          $groupId: Message group id
- string          $code: Language code
-
 ;SpecialTranslate::executeTask: You can output the default task output
  RequestContext  $context: For adding output, accesing current interface language etc.
  TranslateTask   $task = null: Current task if any
  MessageGroup    $group
  array           $options: Active options
 
+;Translate:MessageGroupStats:isIncluded: Controls whether message group is shown for a given language in language or message group statistics. Mostly used internally by Translate to hide discouraged groups and groups restricted to certain languages.
+ string          $groupId: Message group id
+ string          $code: Language code
+
 ;TranslateBeforeAddModules: Provides an opportunity to load extra modules
  array          &$modules: List of resource loader module names
+
+;TranslateEventMessageMembershipChange: When group gets new messages or loses messages
+ MessageHandle   $handle
+ array           $old Previous groups
+ array           $new Current groups
 
 ;TranslateEventMessageGroupStateChange: Event triggered when a message group workflow state is changed in a language
  MessageGroup    $group: Message group instance

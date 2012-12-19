@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2012, Niklas Laxström
+ * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @defgroup TTMServer The Translate extension translation memory interface
  */
@@ -111,5 +111,31 @@ class TTMServer  {
 			$prevRow = $currentRow;
 		}
 		return $prevRow[$length2];
+	}
+
+	/// Hook: ArticleDeleteComplete
+	public static function onDelete( $wikipage ) {
+		$handle = new MessageHandle( $wikipage->getTitle() );
+		TTMServer::primary()->update( $handle, null );
+		return true;
+	}
+
+	/// Called from TranslateEditAddons::onSave
+	public static function onChange( MessageHandle $handle, $text, $fuzzy ) {
+		if ( $fuzzy ) {
+			$text = null;
+		}
+		TTMServer::primary()->update( $handle, $text );
+	}
+
+	public static function onGroupChange( MessageHandle $handle, $old, $new ) {
+		if ( $old === array() ) {
+			// Don't bother for newly added messages
+			return true;
+		}
+
+		$job = TTMServerMessageUpdateJob::newJob( $handle );
+		$job->insert();
+		return true;
 	}
 }

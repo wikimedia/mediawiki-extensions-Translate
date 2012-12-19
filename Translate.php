@@ -148,8 +148,9 @@ $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter'
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 
-// Translation memory updates
-$wgHooks['Translate:newTranslation'][] = 'TranslateHooks::updateTM';
+// Translation memory related
+$wgHooks['ArticleDeleteComplete'][] = 'TTMServer::onDelete';
+$wgHooks['TranslateEventMessageMembershipChange'][] = 'TTMServer::onGroupChange';
 
 // Translation display related
 $wgHooks['ArticleContentOnDiff'][] = 'TranslateEditAddons::displayOnDiff';
@@ -193,6 +194,7 @@ $wgLogActionsHandlers['translationreview/group'] = 'TranslateHooks::formatTransl
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
 $wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
 $wgJobClasses['MessageGroupStatesUpdaterJob'] = 'MessageGroupStatesUpdaterJob';
+$wgJobClasses['TTMServerMessageUpdateJob'] = 'TTMServerMessageUpdateJob';
 
 $resourcePaths = array(
 	'localBasePath' => dirname( __FILE__ ),
@@ -757,6 +759,9 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
  */
 $wgTranslateYamlLibrary = 'spyc';
 
+# </source>
+# === Unsorted ===
+# <source lang=php>
 /**
  * Pre-save transform for message pages. MediaWiki does this by default
  * (including for pages in the MediaWiki-namespace). By setting this to
@@ -771,6 +776,13 @@ $wgTranslateUsePreSaveTransform = false;
  * Possible values: ('noaction', 'only', 'filter', 'site')
  */
 $wgTranslateRcFilterDefault = 'filter';
+
+/**
+ * Set this to config like $wgTranslateTranslationServices if you want to run
+ * SolrTTMServer tests.
+ * @since 2013-01-04
+ */
+$wgTranslateTestTTMServer = null;
 
 # </source>
 

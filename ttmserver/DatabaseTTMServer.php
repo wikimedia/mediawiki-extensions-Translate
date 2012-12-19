@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2012, Niklas Laxström
+ * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @ingroup TTMServer
  */
@@ -59,9 +59,6 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 			'tms_text' => $definition,
 		);
 
-		$extra = $this->getExtraConditions();
-		$conds = array_merge( $conds, $extra );
-
 		$sid = $dbw->selectField( 'translate_tms', 'tms_sid', $conds, __METHOD__ );
 		if ( $sid === false ) {
 			$sid = $this->insertSource( $context, $sourceLanguage, $definition );
@@ -75,18 +72,15 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		$dbw->delete( 'translate_tmt', $deleteConds, __METHOD__ );
 
 		// Insert the new translation
-		$row = $deleteConds + array(
-			'tmt_text' => $targetText,
-		);
+		if ( $targetText !== null ) {
+			$row = $deleteConds + array(
+				'tmt_text' => $targetText,
+			);
 
-		$dbw->insert( 'translate_tmt', $row, __METHOD__ );
+			$dbw->insert( 'translate_tmt', $row, __METHOD__ );
+		}
 
 		return true;
-	}
-
-	/// For subclasses
-	protected function getExtraConditions() {
-		return array();
 	}
 
 	protected function insertSource( Title $context, $sourceLanguage, $text ) {
@@ -97,9 +91,6 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 			'tms_text' => $text,
 			'tms_context' => $context->getPrefixedText(),
 		);
-
-		$extra = $this->getExtraConditions();
-		$row = array_merge( $row, $extra );
 
 		$dbw = $this->getDB( DB_MASTER );
 		$dbw->insert( 'translate_tms', $row, __METHOD__ );
@@ -228,10 +219,6 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 			"tms_len BETWEEN $min AND $max",
 			'tms_sid = tmt_sid',
 		);
-
-		$extra = $this->getExtraConditions();
-		$fields = array_merge( $fields, array_keys( $extra ) );
-		$conds = array_merge( $conds, $extra );
 
 		$fulltext = $this->filterForFulltext( $sourceLanguage, $text );
 		if ( $fulltext ) {

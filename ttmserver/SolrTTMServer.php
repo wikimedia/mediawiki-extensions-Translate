@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2012, Niklas Laxström
+ * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @ingroup TTMServer
  */
@@ -151,14 +151,63 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 	/* Write functions */
 
 	public function update( MessageHandle $handle, $targetText ) {
-		if ( !$handle->isValid() || $handle->getCode() === '' ) {
+		if ( $handle->getCode() === '' ) {
 			return false;
 		}
 		wfProfileIn( __METHOD__ );
-		// @todo FIXME: Required parameter missing.
-		$doc = $this->createDocument( $handle, $targetText );
+
+		/* There are various different cases here:
+		 * [new or updated] [fuzzy|non-fuzzy] [translation|definition]
+		 * 1) We don't distinguish between new or updated here.
+		 * 2) Delete old translation, but not definition
+		 * 3) Insert new translation or definition, if non-fuzzy
+		 * The definition should never be fuzzied anyway.
+		 *
+		 * These only apply to known messages.
+		 */
+
 		$update = $this->client->createUpdate();
-		$update->addDocument( $doc );
+		$title = $handle->getTitle();
+
+		$doDelete = true;
+		if ( $handle->isValid() ) {
+			$sourceLanguage = $handle->getGroup()->getSourceLanguage();
+			if ( $handle->getCode() === $sourceLanguage ) {
+				$doDelete = false;
+			}
+		}
+
+		if ( $doDelete ) {
+			$base = Title::makeTitle( $title->getNamespace(), $handle->getKey() );
+			$conds = array(
+				'wiki' => wfWikiId(),
+				'language' => $handle->getCode(),
+				'messageid' => $base->getPrefixedText(),
+			);
+			foreach ( $conds as $key => &$value ) {
+				$value = "$key:" . $update->getHelper()->escapePhrase( $value );
+			}
+			$update->addDeleteQuery( implode( ' AND ', $conds ) );
+		}
+
+		if ( $targetText !== null ) {
+			if ( $handle->isValid() ) {
+				// Of the message definition page
+				$targetTitle = $handle->getTitle();
+				$sourceTitle = Title::makeTitle( $targetTitle->getNamespace(),
+				$handle->getKey() . '/' . $sourceLanguage );
+				$revId = intval( $sourceTitle->getLatestRevID() );
+				/* Note: in some cases the source page might not exist, in this case
+				 * we use 0 as message version identifier, to differentiate them from
+				 * orphan messages */
+			} else {
+				$revId = 'orphan';
+			}
+
+			$doc = $this->createDocument( $handle, $targetText, $revId );
+			$update->addDocument( $doc );
+		}
+
 		$update->addCommit();
 
 		try {
@@ -247,4 +296,8 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		$this->client->update( $update );
 	}
 
+
+	public function getSolarium() {
+		return $this->client;
+	}
 }
