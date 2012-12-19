@@ -138,7 +138,8 @@
 				$sourceString,
 				$closeIcon,
 				$layoutActions,
-				$infoToggleIcon;
+				$infoToggleIcon,
+				$messageList;
 
 			$editorColumn = $( '<div>' )
 				.addClass( 'seven columns editcolumn' );
@@ -172,9 +173,14 @@
 				.append( $messageKeyLabel, $layoutActions )
 			);
 
+			$messageList = $( '.tux-messagelist' );
 			sourceString = this.$editTrigger.data( 'source' );
 			$sourceString = $( '<span>' )
 				.addClass( 'eleven column sourcemessage' )
+				.attr( {
+					'lang': $messageList.data( 'sourcelangcode' ),
+					'dir': $messageList.data( 'sourcelangdir' )
+				} )
 				.text( sourceString );
 
 			// Adjust the font size for the message string based on the length
@@ -193,7 +199,9 @@
 
 			$textArea = $( '<textarea>' )
 				.attr( {
-					'placeholder': mw.msg( 'tux-editor-placeholder' )
+					'placeholder': mw.msg( 'tux-editor-placeholder' ),
+					'lang': $messageList.data( 'targetlangcode' ),
+					'dir': $messageList.data( 'targetlangdir' )
 				} )
 				.addClass( 'eleven columns' )
 				.on( 'keypress keyup keydown', function () {
@@ -396,23 +404,31 @@
 				if ( result.query ) {
 					translations = result.query.messagetranslations;
 					$.each( translations, function ( index ) {
-						var translation,
-							$otherLanguage;
-
-						translation = translations[index];
+						var $otherLanguage, translationDir,
+							translation = translations[index];
 
 						if ( translation.language === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 							translateEditor.$editor.find( '.message-desc' )
 								.text( translation['*'] );
 						} else if ( translation.language !== translateEditor.$editTrigger.attr( 'lang' ) ) {
+							translationDir = $.uls.data.getDir( translation.language );
+
 							$otherLanguage = $( '<div>' )
 								.addClass( 'row in-other-language' )
 								.append(
 								$( '<div>' )
 									.addClass( 'nine columns' )
+									.attr( {
+										lang: translation.language,
+										dir: translationDir
+									} )
 									.text( translation['*'] ),
 								$( '<div>' )
 									.addClass( 'three columns language text-right' )
+									.attr( {
+										lang: translation.language,
+										dir: translationDir
+									} )
 									.text( $.uls.data.getAutonym( translation.language ) )
 							);
 
