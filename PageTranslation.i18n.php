@@ -843,9 +843,11 @@ $messages['az'] = array(
 );
 
 /** South Azerbaijani (تورکجه)
+ * @author Ebrahimi-amir
  * @author Mousa
  */
 $messages['azb'] = array(
+	'translate-tag-translate-link-desc' => 'یو لاییحه‌نی چئویر',
 	'tpt-languages-legend' => 'آیری دیل‌لر:',
 );
 
@@ -10308,7 +10310,7 @@ $messages['zh-hant'] = array(
 	'tpt-sections-template' => '翻譯頁面模版',
 	'tpt-action-nofuzzy' => '不要使翻譯作廢',
 	'tpt-badtitle' => '頁面名稱 ($1) 不是一個有效的標題',
-	'tpt-nosuchpage' => '頁面$1 不存在。',
+	'tpt-nosuchpage' => '頁面$1不存在。',
 	'tpt-oldrevision' => '$2 不是最新版本的頁面 [[$1]]。
 最新版本只可以將標記進行翻譯。',
 	'tpt-notsuitable' => '頁$1不適合翻譯。
@@ -10335,7 +10337,7 @@ $messages['zh-hant'] = array(
 但最新版本不得標記進行翻譯。',
 	'tpt-discouraged-pages' => '以下{{PLURAL:$1|此|這些}}頁面挫折更多翻譯。',
 	'tpt-select-prioritylangs' => '優先語言代碼的逗號分隔型列表',
-	'tpt-select-prioritylangs-force' => '防止向優先語言以外的語言的翻譯',
+	'tpt-select-prioritylangs-force' => '防止向優先語言以外的語言的翻譯', # Fuzzy
 	'tpt-select-prioritylangs-reason' => '原因：',
 	'tpt-sections-prioritylangs' => '優先語言',
 	'tpt-rev-mark' => '標記進行翻譯',
@@ -10409,8 +10411,8 @@ $messages['zh-hant'] = array(
 	'pt-log-aggregategroup-dissociate' => '已從聚合組$3{{GENDER:$2|刪除了}}可翻譯頁面[[:$1]]',
 	'pt-movepage-title' => '移動可翻譯頁面$1',
 	'pt-movepage-blockers' => '可翻譯頁面無法移動至新名稱，原因為以下這{{PLURAL:$1|個|些}}錯誤：',
-	'pt-movepage-block-base-exists' => '目標基頁 [[:$1]] 存在。',
-	'pt-movepage-block-base-invalid' => '目標基頁不是一個有效的標題。',
+	'pt-movepage-block-base-exists' => '目標基頁 [[:$1]] 存在。', # Fuzzy
+	'pt-movepage-block-base-invalid' => '目標基頁不是一個有效的標題。', # Fuzzy
 	'pt-movepage-block-tp-exists' => '目標翻譯頁 [[:$2]] 存在。',
 	'pt-movepage-block-tp-invalid' => '為[[:$1]]的目標翻譯頁面的標題無效，可能因為字符太多。',
 	'pt-movepage-block-section-exists' => '目標部分頁面 [[:$2]] 存在。', # Fuzzy
@@ -10441,13 +10443,13 @@ $messages['zh-hant'] = array(
 	'pt-deletepage-lang-title' => '刪除翻譯網頁 $1。',
 	'pt-deletepage-full-title' => '刪除可翻譯網頁 $1。',
 	'pt-deletepage-invalid-title' => '指定的頁不是有效的。',
-	'pt-deletepage-invalid-text' => '指定的頁不是可翻譯頁面也的翻譯。',
+	'pt-deletepage-invalid-text' => '指定的頁不是可翻譯頁面也的翻譯。', # Fuzzy
 	'pt-deletepage-action-check' => '要刪除的列表頁',
 	'pt-deletepage-action-perform' => '不要刪除',
 	'pt-deletepage-action-other' => '更改目標',
 	'pt-deletepage-lang-legend' => '刪除翻譯頁面',
 	'pt-deletepage-full-legend' => '刪除可翻譯頁面',
-	'pt-deletepage-any-legend' => '刪除可翻譯頁面或翻譯的翻譯頁面',
+	'pt-deletepage-any-legend' => '刪除可翻譯頁面或翻譯的翻譯頁面', # Fuzzy
 	'pt-deletepage-current' => '頁面名稱：',
 	'pt-deletepage-reason' => '原因：',
 	'pt-deletepage-subpages' => '刪除所有子頁面',
@@ -10461,5 +10463,5 @@ $messages['zh-hant'] = array(
 	'pt-deletepage-started' => '請檢查[[Special:Log/pagetranslation|頁面翻譯日誌]]內的錯誤和完成消息。',
 	'pt-deletepage-intro' => '本特殊頁面允許您刪除一種語言中全部可翻譯頁面與翻譯作品。
 此移動操作將不會一瞬間，因為有很多頁面要刪除。
-任何刪除失敗將在[[Special:Log/pagetranslation|頁面翻譯日誌]]記錄，並且需要手動修理。',
+任何刪除失敗將在[[Special:Log/pagetranslation|頁面翻譯日誌]]記錄，並且需要手動修理。', # Fuzzy
 );
