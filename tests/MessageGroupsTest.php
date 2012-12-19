@@ -11,7 +11,7 @@
 /**
  * @group Database
  */
-class MessageGroupsText extends MediaWikiTestCase {
+class MessageGroupsTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 
@@ -25,6 +25,7 @@ class MessageGroupsText extends MediaWikiTestCase {
 			'wgTranslateWorkflowStates' => false,
 			'wgEnablePageTranslation' => false,
 			'wgTranslateGroupFiles' => array( $conf ),
+			'wgTranslateTranslationServices' => array(),
 		) );
 		$wgHooks['TranslatePostInitGroups'] = array();
 		MessageGroups::clearCache();

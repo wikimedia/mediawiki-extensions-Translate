@@ -18,6 +18,7 @@ class ApiGroupReviewTest extends MediaWikiTestCase {
 		$this->setMwGlobals( array(
 			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
 			'wgTranslateWorkflowStates' => false,
+			'wgTranslateTranslationServices' => array(),
 		) );
 	}
 

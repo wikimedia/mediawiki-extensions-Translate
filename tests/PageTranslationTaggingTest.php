@@ -15,6 +15,7 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 			'wgTranslateWorkflowStates' => false,
 			'wgEnablePageTranslation' => true,
 			'wgTranslateGroupFiles' => array(),
+			'wgTranslateTranslationServices' => array(),
 		) );
 		TranslateHooks::setupTranslate();
 		$wgHooks['TranslatePostInitGroups'] = array();

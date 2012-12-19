@@ -17,16 +17,14 @@ class MessageIndexRebuildJobTest extends MediaWikiTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		global $wgTranslateMessageIndex, $wgTranslateDelayedMessageIndexRebuild;
-		$this->config['class'] = $wgTranslateMessageIndex;
-		$this->config['delay'] = $wgTranslateDelayedMessageIndexRebuild;
-		$wgTranslateMessageIndex = array( 'DatabaseMessageIndex' );
-	}
-
-	public function tearDown() {
-		global $wgTranslateMessageIndex, $wgTranslateDelayedMessageIndexRebuild;
-		$wgTranslateMessageIndex = $this->config['class'];
-		$wgTranslateDelayedMessageIndexRebuild = $this->config['delay'];
+		$this->setMwGlobals( array(
+			'wgTranslateCC' => array(),
+			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
+			'wgTranslateWorkflowStates' => false,
+			'wgEnablePageTranslation' => false,
+			'wgTranslateGroupFiles' => array(),
+			'wgTranslateTranslationServices' => array(),
+		) );
 	}
 
 	public function testNewJob() {
