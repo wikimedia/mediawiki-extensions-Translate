@@ -71,6 +71,10 @@ class MessageTable {
 		$this->context = $context;
 	}
 
+	/**
+	 * Use the newFromContext() function rather than the constructor directly
+	 * to construct the object to allow alternative implementations.
+	 */
 	public function __construct( MessageCollection $collection, MessageGroup $group ) {
 		$this->collection = $collection;
 		$this->group = $group;
