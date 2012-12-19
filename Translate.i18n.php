@@ -451,7 +451,8 @@ Most useful for the proofreading tasks.',
 	'tux-editor-in-other-languages' => 'In other languages',
 	'tux-editor-need-more-help' => 'Need more help?',
 	'tux-editor-ask-help' => 'Ask for more information',
-	'tux-editor-tm-match' => '$1% match'
+	'tux-editor-tm-match' => '$1% match',
+	'tux-editor-save-failed' => 'Error saving the message: $1',
 );
 
 /** Message documentation (Message documentation)
@@ -863,6 +864,7 @@ Read as in "proofRED" (past participle).',
 	'tux-editor-ask-help' => 'Link text for more information',
 	'tux-editor-tm-match' => 'Text showing the quality of suggestion in percentage
 * $1 is a value less than 100',
+	'tux-editor-save-failed' => 'An error shown above the edit box. $1 is the warning that the API returns.',
 );
 
 /** Afrikaans (Afrikaans)
