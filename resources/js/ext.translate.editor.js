@@ -73,6 +73,7 @@
 				text: translation
 			}, function ( response ) {
 				var $error;
+
 				// OK
 				if ( response.edit.result === 'Success' ) {
 					translateEditor.markTranslated();
@@ -83,22 +84,23 @@
 					translateEditor.$editTrigger.find( '.tux-list-translation' )
 						.text( translation );
 				} else {
-					// FIXME not tested
 					$error = $( '<div>' )
 						.addClass( 'row highlight' )
-						.text( response.warning );
+						.html( mw.msg( 'tux-editor-save-failed',
+							'<span dir="ltr" lang="en">' + mw.html.escape( response.warning ) + '</span>' ) );
 
 					translateEditor.$editor.find( 'textarea' )
 						.before( $error );
 				}
 			}, function ( err ) {
 				// Error
-				// FIXME not tested
 				var $error;
 
-				$error = $( '<div>' ).
-					addClass( 'row highlight' )
-					.text( err.warning );
+				// TODO err is just a short string, so no need for clever HTML here.
+				// It would be better to get a more meaningful error, however.
+				$error = $( '<div>' )
+					.addClass( 'row highlight' )
+					.text( mw.msg( 'tux-editor-save-failed', err ) );
 
 				translateEditor.$editor.find( 'textarea' ).before( $error );
 			} );
