@@ -95,6 +95,7 @@ $wgAPIModules['groupreview'] = 'ApiGroupReview';
 $wgAPIModules['aggregategroups'] = 'ApiAggregateGroups';
 $wgAPIModules['ttmserver'] = 'ApiTTMServer';
 $wgAPIModules['translateuser'] = 'ApiTranslateUser';
+$wgAPIModules['hardmessages'] = 'ApiHardMessages';
 $wgAPIGeneratorModules['messagecollection'] = 'ApiQueryMessageCollection';
 
 // Before MW 1.20
@@ -105,7 +106,7 @@ $wgHooks['APIQueryInfoTokens'][] = 'ApiAggregateGroups::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiTranslationReview::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiGroupReview::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiAggregateGroups::injectTokenFunction';
-
+$wgHooks['ApiHardMessages'][] = 'ApiHardMessages::injectTokenFunction';
 // Register hooks.
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::addNavigationTabs';
@@ -226,7 +227,8 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'ext.translate.grid',
 		'mediawiki.util',
 		'mediawiki.Uri',
-		'mediawiki.api.edit',
+		'mediawiki.api',
+		'mediawiki.user',
 		'mediawiki.jqueryMsg',
 	),
 	'messages' => array(
