@@ -287,12 +287,12 @@
 			}
 
 			$infoColumn.append( $( '<div>' )
-				.addClass( 'row text-left tm-suggestions-title' )
+				.addClass( 'row text-left tm-suggestions-title hide' )
 				.text( mw.msg( 'tux-editor-suggestions-title' ) )
 			);
 
 			$infoColumn.append( $( '<div>' )
-				.addClass( 'row text-left in-other-languages-title' )
+				.addClass( 'row text-left in-other-languages-title hide' )
 				.text( mw.msg( 'tux-editor-in-other-languages' ) )
 			);
 
@@ -417,6 +417,7 @@
 								);
 
 							translateEditor.$editor.find( '.in-other-languages-title' )
+								.removeClass( 'hide' )
 								.after( $otherLanguage );
 						}
 
@@ -472,6 +473,7 @@
 							);
 
 						translateEditor.$editor.find( '.tm-suggestions-title' )
+							.removeClass( 'hide' )
 							.after( $suggestion );
 
 						if ( index > 2 ) {
