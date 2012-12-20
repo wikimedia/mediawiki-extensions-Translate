@@ -15,7 +15,10 @@
 class MessageIndexTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
-		$this->setMwGlobals( 'wgTranslateCacheDirectory', $this->getNewTempDirectory() );
+		$this->setMwGlobals( array(
+			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
+			'wgTranslateTranslationServices' => array(),
+		) );
 	}
 
 	protected static function getTestData() {

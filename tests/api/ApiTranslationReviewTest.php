@@ -23,6 +23,7 @@ class ApiTranslationReviewTest extends MediaWikiTestCase {
 			'wgEnablePageTranslation' => false,
 			'wgTranslateGroupFiles' => array(),
 			'wgGroupPermissions' => array(),
+			'wgTranslateTranslationServices' => array(),
 		) );
 		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
 		MessageGroups::clearCache();

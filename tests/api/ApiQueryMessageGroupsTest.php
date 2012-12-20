@@ -24,6 +24,7 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 			'wgTranslateWorkflowStates' => false,
 			'wgTranslateGroupFiles' => array(),
 			'wgEnablePageTranslation' => false,
+			'wgTranslateTranslationServices' => array(),
 		) );
 		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
 		MessageGroups::clearCache();
