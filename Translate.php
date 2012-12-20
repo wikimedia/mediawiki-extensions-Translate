@@ -23,7 +23,7 @@ define( 'TRANSLATE_VERSION', '2012-11-08' );
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'Translate',
-	'version'        => TRANSLATE_VERSION,
+	'version'        => '[https://www.mediawiki.org/wiki/MLEB MLEB 2012.12]',
 	'author'         => array( 'Niklas Laxström', 'Siebrand Mazeland' ),
 	'descriptionmsg' => 'translate-desc',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Translate',

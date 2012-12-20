@@ -1,0 +1,28 @@
+== Translate 2012.12 ==
+Released at 2012-12-20.
+
+Lots of development is ongoing on the translation user interface
+redesign project conducted by the WMF Language Engineering Team.
+New message list and translation editor are in alpha stage, but
+interested users can activate them by using url parameter tux=1
+while on Special:Translate. Also, tux=0 gets back the old
+interface.
+
+$wgTranslateAC and $wgTranslateEC were removed. If you were still
+using these, switch over to the TranslatePostInitGroups hook or
+$wgTranslateCC.
+
+Other noteworthy changes:
+* MessageGroups::getParentGroups was renamed to getSharedGroups.
+* New MessageGroups::getParentGroups was added which returns
+  all the paths from top-level groups to reach to given group.
+* Bundled Solarium library was removed. Install it manually or
+  use the MediaWiki Solarium extensions.
+* ApiQueryMessageGroups module has lots of new functionality.
+* There is new ApiQueryLanguageStats module.
+* (Bug 39761) Special:TranslationStats counts for edits includes
+   also reviews
+* GettextFFS: Handle empty but existing msgctxt properly
+* WikiMessageGroup: check that message definition message exists
+* New hook: TranslateSupportedLanguages
+* Lots of code maintenance and translation updates.
