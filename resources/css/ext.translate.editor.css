@@ -46,10 +46,13 @@
 .tux-message-editor textarea {
 	border: 1px solid #555;
 	font-size: 16px;
-	margin-left: 10px;
 	padding: 5px !important;
 	height: 100px;
 	overflow-y: hidden;
+}
+
+.tux-message-editor .editarea {
+	position: relative;
 }
 
 .tux-message-editor .messagekey {
@@ -192,4 +195,15 @@
 .tux-message-editor .help a {
 	font-size: 14px;
 	padding: 0 0 0 5px;
+}
+
+.tux-warning {
+	background-color: #FFFFCC;
+}
+
+.tux-more-warnings {
+	background-color: #FBF6AD;
+	position: absolute !important;
+	right: 0;
+	cursor: pointer;
 }
