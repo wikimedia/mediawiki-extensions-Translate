@@ -1,6 +1,28 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	// TODO: We just need to delay the callback to 1000ms.
+	// We can just have a small function like ext.translate.groupselector.js/delay().
+	function MessageCheckUpdater( callback ) {
+		this.act = function () {
+			callback();
+			delete this.timeoutID;
+		};
+
+		this.setup = function () {
+			this.cancel();
+			var self = this;
+			this.timeoutID = window.setTimeout( self.act, 1000 );
+		};
+
+		this.cancel = function () {
+			if ( typeof this.timeoutID === 'number' ) {
+				window.clearTimeout( this.timeoutID );
+				delete this.timeoutID;
+			}
+		};
+	}
+
 	function TranslateEditor( element ) {
 		this.$editTrigger = $( element );
 		this.$editor = null;
@@ -47,7 +69,7 @@
 		/**
 		 * Mark the message as translated
 		 */
-		markTranslated: function() {
+		markTranslated: function () {
 			this.$editTrigger.find( '.tux-list-status' )
 				.empty()
 				.append( $( '<span>' )
@@ -74,8 +96,6 @@
 				token: mw.user.tokens.get( 'editToken' )
 			}, {
 			ok: function ( response ) {
-				var $error;
-				// OK
 				if ( response.edit.result === 'Success' ) {
 					translateEditor.markTranslated();
 					translateEditor.next();
@@ -85,25 +105,17 @@
 					translateEditor.$editTrigger.find( '.tux-list-translation' )
 						.text( translation );
 				} else {
-					// FIXME not tested
-					$error = $( '<div>' )
-						.addClass( 'row highlight' )
-						.text( response.warning );
-
-					translateEditor.$editor.find( 'textarea' )
-						.before( $error );
+					translateEditor.populateWarningsBoxes( [
+						mw.msg( 'tux-editor-save-failed', response.warning )
+					] );
 				}
 			},
+			// TODO: Should also handle complete failure,
+			// for example client or server going offline.
 			err: function ( errorCode, results ) {
-				// Error
-				// FIXME not tested
-				var $error;
-
-				$error = $( '<div>' ).
-					addClass( 'row highlight' )
-					.text( results.error.info );
-
-				translateEditor.$editor.find( 'textarea' ).before( $error );
+				translateEditor.populateWarningsBoxes( [
+					mw.msg( 'tux-editor-save-failed', results.error.info )
+				] );
 			} } );
 		},
 
@@ -146,8 +158,12 @@
 		prepareEditorColumn: function () {
 			var translateEditor = this,
 				sourceString,
+				messageChecker,
 				$editorColumn,
 				$messageKeyLabel,
+				$moreWarningsTab,
+				$warnings,
+				$warningsBlock,
 				$textArea,
 				$buttonBlock,
 				$saveButton,
@@ -214,13 +230,52 @@
 				.append( $sourceString )
 			);
 
+			$warnings = $( '<div>' )
+				.addClass( 'tux-warning' )
+				.hide();
+
+			$moreWarningsTab = $( '<div>' )
+				.addClass( 'tux-more-warnings' )
+				.on( 'click', function () {
+					var $this = $( this ),
+						$moreWarnings = $warnings.children(),
+						lastWarningIndex = $moreWarnings.length - 1;
+
+					// If the warning list is not open only one warning is shown
+					// TODO: This class is now removed from CSS files and is used only for identifying the tab's state.
+					// It's not necessarily bad, but there may be something more robust.
+					if ( $this.hasClass( 'open' ) ) {
+						$moreWarnings.each( function ( index, element ) {
+							// The first element must always be shown
+							if ( index ) {
+								// TODO: Suggestion by Santhosh: For hiding and showing, use the grid frameworks 'hide' class
+								$( element ).hide();
+							}
+						} );
+
+						$this.removeClass( 'open' );
+						$this.text( mw.msg( 'tux-warnings-more', lastWarningIndex ) );
+					} else {
+						$moreWarnings.each( function ( index, element ) {
+							// The first element must always be shown
+							if ( index ) {
+								// TODO: Suggestion by Santhosh: For hiding and showing, use the grid frameworks 'hide' class
+								$( element ).show();
+							}
+						} );
+
+						$this.addClass( 'open' );
+						$this.text( mw.msg( 'tux-warnings-hide' ) );
+					}
+				} )
+				.hide();
+
 			$textArea = $( '<textarea>' )
 				.attr( {
 					'placeholder': mw.msg( 'tux-editor-placeholder' ),
 					'lang': $messageList.data( 'targetlangcode' ),
 					'dir': $messageList.data( 'targetlangdir' )
 				} )
-				.addClass( 'eleven columns' )
 				.on( 'keypress keyup keydown', function () {
 					translateEditor.dirty = true;
 					translateEditor.$editor.find( '.tux-editor-save-button' )
@@ -235,13 +290,37 @@
 					}
 				} );
 
+			messageChecker = new MessageCheckUpdater( function () {
+				var url = new mw.Uri( mw.config.get( 'wgScript' ) );
+
+				// TODO: We need a better API for this
+				url.extend( {
+					title: 'Special:Translate/editpage',
+					suggestions: 'checks',
+					page: translateEditor.$editTrigger.data( 'title' ),
+					loadgroup: translateEditor.$editTrigger.data( 'group' )
+				} );
+
+				$.post( url.toString(), { translation: $textArea.val() }, function ( data ) {
+					translateEditor.populateWarningsBoxes( data );
+				} );
+			} );
+
+			$textArea.keyup( function () {
+				messageChecker.setup();
+			} );
+
 			if ( this.$editTrigger.data( 'translation' ) ) {
 				$textArea.text( this.$editTrigger.data( 'translation' ) );
 			}
 
+			$warningsBlock = $( '<div>' )
+				.addClass( 'tux-warnings-block' )
+				.append( $moreWarningsTab, $warnings );
+
 			$editorColumn.append( $( '<div>' )
-				.addClass( 'row' )
-				.append( $textArea )
+				.addClass( 'editarea eleven columns' )
+				.append( $warningsBlock, $textArea )
 			);
 
 			$saveButton = $( '<button>' )
@@ -288,6 +367,55 @@
 			);
 
 			return $editorColumn;
+		},
+
+		/**
+		 * Displays the supplied warnings from the bottom up near the translation edit area.
+		 * If no warnings are supplied, the warnings area is cleaned.
+		 *
+		 * @param {Array|string} warnings Strings of warnings to display. If it's not an array, it's assumed to be a JSON string.
+		 */
+		populateWarningsBoxes: function ( warnings ) {
+			var warningIndex, $newWarning,
+				$warnings = this.$editTrigger.find( '.tux-warning' ),
+				$moreWarningsTab = this.$editTrigger.find( '.tux-more-warnings' );
+
+			// TODO: We need an api that gives json always and avoid explicit json parsing here.
+			if ( !$.isArray( warnings ) ) {
+				warnings = jQuery.parseJSON( warnings );
+			}
+
+			this.$editTrigger.find( '.tux-warning' ).empty();
+
+			// TODO: if warnings is undefined, second part of this condition will throw error.
+			if ( warnings === null || warnings.length === 0 ) {
+				$moreWarningsTab.hide();
+				return;
+			}
+
+			for ( warningIndex = 0; warningIndex < warnings.length; warningIndex++ ) {
+				$newWarning = $( '<div>' )
+					.addClass( 'tux-warning-message' )
+					.html( warnings[warningIndex] );
+
+				// Initially hide all the warnings except the first one
+				if ( warningIndex ) {
+					$newWarning.hide();
+				}
+
+				$warnings.append( $newWarning );
+			}
+
+			$warnings.show();
+
+			if ( warnings.length > 1 ) {
+				$moreWarningsTab
+					.text( mw.msg( 'tux-warnings-more', warnings.length - 1 ) )
+					.show();
+			} else {
+				// TODO: Hide this by default and show when there are more warnings.
+				$moreWarningsTab.hide();
+			}
 		},
 
 		prepareInfoColumn: function () {
