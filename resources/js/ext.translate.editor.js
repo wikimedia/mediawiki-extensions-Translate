@@ -1,6 +1,26 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	function MessageCheckUpdater( callback ) {
+		this.act = function() {
+			callback();
+			delete this.timeoutID;
+		};
+
+		this.setup = function() {
+			this.cancel();
+			var self = this;
+			this.timeoutID = window.setTimeout( self.act, 1000 );
+		};
+
+		this.cancel = function() {
+			if ( typeof this.timeoutID === 'number' ) {
+				window.clearTimeout( this.timeoutID );
+				delete this.timeoutID;
+			}
+		};
+	}
+
 	function TranslateEditor( element ) {
 		this.$editTrigger = $( element );
 		this.$editor = null;
@@ -144,8 +164,11 @@
 		prepareEditorColumn: function () {
 			var translateEditor = this,
 				sourceString,
+				messageChecker,
 				$editorColumn,
 				$messageKeyLabel,
+				$moreWarningsTab,
+				$warnings,
 				$textArea,
 				$buttonBlock,
 				$saveButton,
@@ -212,13 +235,22 @@
 				.append( $sourceString )
 			);
 
+			$moreWarningsTab = $( '<div>' )
+				.addClass( 'tux-more-warnings one column' )
+				.text( mw.msg( 'tux-warnings-more', 2 ) ) // XXX need a real number, and it's not really supposed to be here anyway
+				.hide();
+
+			$warnings = $( '<div>' )
+				.addClass( 'tux-warning' )
+				.text( 'some warning' )
+				.hide();
+
 			$textArea = $( '<textarea>' )
 				.attr( {
 					'placeholder': mw.msg( 'tux-editor-placeholder' ),
 					'lang': $messageList.data( 'targetlangcode' ),
 					'dir': $messageList.data( 'targetlangdir' )
 				} )
-				.addClass( 'eleven columns' )
 				.on( 'keypress keyup keydown', function () {
 					translateEditor.dirty = true;
 					translateEditor.$editor.find( '.tux-editor-save-button' )
@@ -233,13 +265,30 @@
 					}
 				} );
 
+			messageChecker = new MessageCheckUpdater( function() {
+				var url = mw.config.get( 'wgScript' ) +
+						'?title=Special:Translate/editpage&suggestions=checks&page=' +
+						translateEditor.$editTrigger.data( 'title' ) +
+						'&loadgroup=' +
+						translateEditor.$editTrigger.data( 'group' );
+
+				$.post( url, { translation: $textArea.val() }, function( data ) {
+					// form.find( '.mw-translate-messagechecks' ).replaceWith( data );
+					console.log( data );
+				} );
+			} );
+
+			$textArea.keyup( function () {
+				messageChecker.setup();
+			} );
+
 			if ( this.$editTrigger.data( 'translation' ) ) {
 				$textArea.text( this.$editTrigger.data( 'translation' ) );
 			}
 
 			$editorColumn.append( $( '<div>' )
-				.addClass( 'row' )
-				.append( $textArea )
+				.addClass( 'editarea eleven columns' )
+				.append( $moreWarningsTab, $warnings, $textArea )
 			);
 
 			$saveButton = $( '<button>' )
