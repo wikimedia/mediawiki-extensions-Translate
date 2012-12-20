@@ -3074,8 +3074,8 @@ Käännösosion teksti: <pre>$1</pre>', # Fuzzy
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|huomasi}} ongelman poistaessaan käännössivua [[:$1]]',
 	'pt-movepage-title' => 'Käännettävän sivun $1 siirtäminen',
 	'pt-movepage-blockers' => 'Käännettävää sivua ei voi siirtää uudelle nimelle {{PLURAL:$1|seuraavasta syystä|seuraavista syistä}}:',
-	'pt-movepage-block-base-exists' => 'Kohdesivu [[:$1]] on olemassa.',
-	'pt-movepage-block-base-invalid' => 'Kohdesivun nimi ei ole kelvollinen.',
+	'pt-movepage-block-base-exists' => 'Kohdesivu [[:$1]] on olemassa.', # Fuzzy
+	'pt-movepage-block-base-invalid' => 'Kohdesivun nimi ei ole kelvollinen.', # Fuzzy
 	'pt-movepage-block-tp-exists' => 'Käännössivu [[:$2]] on olemassa.',
 	'pt-movepage-block-tp-invalid' => 'Käännössivun [[:$1]] uusi nimi ei ole kelvollinen (liian pitkä?)',
 	'pt-movepage-block-section-exists' => 'Käännösosiosivu [[:$2]] on olemassa.', # Fuzzy
@@ -3083,9 +3083,9 @@ Käännösosion teksti: <pre>$1</pre>', # Fuzzy
 	'pt-movepage-block-subpage-exists' => 'Alasivu [[:$2]] on olemassa.',
 	'pt-movepage-block-subpage-invalid' => 'Alasivun [[:$1]] uusi nimi ei ole kelvollinen (liian pitkä?)',
 	'pt-movepage-list-pages' => 'Lista siirrettävistä sivuista',
-	'pt-movepage-list-translation' => 'Käännössivut',
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Käännössivu|Käännössivut}}',
 	'pt-movepage-list-section' => 'Käännösosiosivut', # Fuzzy
-	'pt-movepage-list-other' => 'Muut alasivut',
+	'pt-movepage-list-other' => '{{PLURAL:$1|Muu alasivu|Muut alasivut}}',
 	'pt-movepage-list-count' => 'Yhteensä $1 {{PLURAL:$1|siirrettävä sivu|siirrettävää sivua}}.',
 	'pt-movepage-legend' => 'Siirrä käännettävä sivu',
 	'pt-movepage-current' => 'Nykyinen nimi',
@@ -3106,13 +3106,13 @@ Tarkista mahdolliset virheet ja valmistumisviestit [[Special:Log/pagetranslation
 	'pt-deletepage-lang-title' => 'Poistetaan käännössivu $1.',
 	'pt-deletepage-full-title' => 'Poistetaan käännettävissä oleva sivu $1.',
 	'pt-deletepage-invalid-title' => 'Määritetty sivu ei kelpaa.',
-	'pt-deletepage-invalid-text' => 'Sivu ei ole käännettävissä oleva sivu tai sellaisen käännös.',
+	'pt-deletepage-invalid-text' => 'Sivu ei ole käännettävissä oleva sivu tai sellaisen käännös.', # Fuzzy
 	'pt-deletepage-action-check' => 'Luetteloi poistettavat sivut',
 	'pt-deletepage-action-perform' => 'Suorita poisto',
 	'pt-deletepage-action-other' => 'Vaihda kohdetta',
 	'pt-deletepage-lang-legend' => 'Poista käännössivu',
 	'pt-deletepage-full-legend' => 'Poista käännettävissä oleva sivu',
-	'pt-deletepage-any-legend' => 'Poista käännettävissä oleva sivu tai käännettävissä olevan sivun käännös',
+	'pt-deletepage-any-legend' => 'Poista käännettävissä oleva sivu tai käännettävissä olevan sivun käännös', # Fuzzy
 	'pt-deletepage-current' => 'Sivun nimi',
 	'pt-deletepage-reason' => 'Syy',
 	'pt-deletepage-subpages' => 'Poista kaikki alasivut',
@@ -3126,7 +3126,7 @@ Tarkista mahdolliset virheet ja valmistumisviestit [[Special:Log/pagetranslation
 	'pt-deletepage-started' => 'Virheet ja valmistusviesti löytyvät [[Special:Log/pagetranslation|sivunkääntölokista]].',
 	'pt-deletepage-intro' => 'Tämän toimintosivun avulla voit poistaa koko käännettävän sivun tai tietynkieliset käännökset.
 Poisto ei tapahdu välittömästi, sillä useita sivuja täytyy poistaa.
-Virheet merkitään [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne täytyy korjata käsin.',
+Virheet merkitään [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne täytyy korjata käsin.', # Fuzzy
 );
 
 /** French (français)
@@ -3597,8 +3597,8 @@ Texto da unidade de tradución: <pre>$1</pre>',
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|eliminou}} a páxina traducible "[[:$1]]" do grupo de agregación $3',
 	'pt-movepage-title' => 'Mover a páxina traducible "$1"',
 	'pt-movepage-blockers' => 'Non se pode trasladar a páxina traducible a un novo nome debido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:',
-	'pt-movepage-block-base-exists' => 'Existe a páxina de destino "[[:$1]]".',
-	'pt-movepage-block-base-invalid' => 'A páxina de destino ten un título incorrecto.',
+	'pt-movepage-block-base-exists' => 'Existe a páxina traducible de destino "[[:$1]]".',
+	'pt-movepage-block-base-invalid' => 'O nome da páxina traducible de destino ten un título incorrecto.',
 	'pt-movepage-block-tp-exists' => 'Existe a páxina de tradución de destino "[[:$2]]".',
 	'pt-movepage-block-tp-invalid' => 'O título da páxina de tradución de destino para "[[:$1]]" é incorrecto (quizais sexa longo de máis).',
 	'pt-movepage-block-section-exists' => 'Existe a páxina de destino "[[:$2]]" para a unidade de tradución.',
@@ -3629,13 +3629,13 @@ Comprobe o [[Special:Log/pagetranslation|rexistro de páxinas de tradución]] po
 	'pt-deletepage-lang-title' => 'Borrar a páxina de tradución "$1".',
 	'pt-deletepage-full-title' => 'Borrar a páxina traducible "$1".',
 	'pt-deletepage-invalid-title' => 'A páxina especificada non é válida.',
-	'pt-deletepage-invalid-text' => 'A páxina especificada non é unha páxina traducible nin unha tradución dela.',
+	'pt-deletepage-invalid-text' => 'A páxina especificada non é unha páxina traducible nin unha páxina de tradución.',
 	'pt-deletepage-action-check' => 'Lista de páxinas a borrar',
 	'pt-deletepage-action-perform' => 'Realizar o borrado',
 	'pt-deletepage-action-other' => 'Cambiar o destino',
 	'pt-deletepage-lang-legend' => 'Borrar a páxina de tradución',
 	'pt-deletepage-full-legend' => 'Borrar a páxina traducible',
-	'pt-deletepage-any-legend' => 'Borrar a páxina traducible ou a tradución da páxina traducible',
+	'pt-deletepage-any-legend' => 'Borrar a páxina traducible ou a páxina de tradución',
 	'pt-deletepage-current' => 'Nome da páxina:',
 	'pt-deletepage-reason' => 'Motivo:',
 	'pt-deletepage-subpages' => 'Borrar todas as subpáxinas',
@@ -3647,8 +3647,8 @@ Comprobe o [[Special:Log/pagetranslation|rexistro de páxinas de tradución]] po
 	'pt-deletepage-full-logreason' => 'Parte da páxina traducible "$1".',
 	'pt-deletepage-lang-logreason' => 'Parte da páxina de tradución "$1".',
 	'pt-deletepage-started' => 'Comprobe os erros e as mensaxes de conclusión no [[Special:Log/pagetranslation|rexistro de páxinas de tradución]].',
-	'pt-deletepage-intro' => 'Esta páxina especial permite borrar por completo páxinas traducibles ou traducións nunha lingua.
-A acción de borrado non será inmediata porque cómpre eliminar moitas páxinas.
+	'pt-deletepage-intro' => 'Esta páxina especial permite borrar por completo páxinas traducibles ou páxinas de tradución individuais nunha lingua.
+A acción de borrado non será inmediata porque cómpre eliminar todas as páxinas dependentes delas.
 Os erros quedarán rexistrados no [[Special:Log/pagetranslation|rexistro de páxinas de tradución]] e terán que arranxarse manualmente.',
 );
 

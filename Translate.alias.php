@@ -957,6 +957,7 @@ $specialPageAliases['vi'] = array(
 	'ImportTranslations' => array( 'Nhập_bản_dịch' ),
 	'ManageMessageGroups' => array( 'Quản_lý_nhóm_thông_điệp', 'Quản_lý_nhóm' ),
 	'FirstSteps' => array( 'Bước_đầu' ),
+	'SupportedLanguages' => array( 'Ngôn_ngữ_đuọc_hỗ_trợ' ),
 	'MyLanguage' => array( 'Ngôn_ngữ_tôi' ),
 );
 

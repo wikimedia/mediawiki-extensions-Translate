@@ -8745,6 +8745,7 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-status-fuzzy' => 'Obsolète',
 	'tux-status-proofread' => 'Corrigée',
 	'tux-status-translated' => 'Traduit',
+	'tux-status-unsaved' => 'Non enregistrée',
 	'tux-editor-placeholder' => 'Votre traduction',
 	'tux-editor-save-button-label' => 'Enregistrer la traduction',
 	'tux-editor-skip-button-label' => 'Aller au suivant',
@@ -13021,6 +13022,16 @@ Utile per l'attività di correzione.",
 	'tux-status-optional' => 'Opzionale',
 	'tux-status-fuzzy' => 'Da aggiornare',
 	'tux-status-translated' => 'Tradotti',
+	'tux-status-unsaved' => 'Non salvate',
+	'tux-editor-placeholder' => 'La tua traduzione',
+	'tux-editor-save-button-label' => 'Salva traduzione',
+	'tux-editor-skip-button-label' => 'Passa al successivo',
+	'tux-editor-shortcut-info' => 'Premi "$1" per salvare o "$2" per passare al messaggio successivo',
+	'tux-editor-no-message-doc' => 'Nessuna documentazione del messaggio',
+	'tux-editor-edit-desc' => 'Modifica descrizione',
+	'tux-editor-suggestions-title' => 'Suggerimenti',
+	'tux-editor-in-other-languages' => 'In altre lingue',
+	'tux-editor-tm-match' => '$1&nbsp;% di corrispondenza',
 );
 
 /** Japanese (日本語)
@@ -18710,7 +18721,6 @@ Dit is vooral nuttig voor de controletaken.',
 $messages['nn'] = array(
 	'translate' => 'Set om',
 	'translate-desc' => '[[Special:Translate|Spesialside]] for omsetjing av MediaWiki o.a.',
-	'translate-showsub' => 'Vis {{PLURAL:$1|undergruppa|dei $1 undergruppene}}.',
 	'translate-taskui-view' => 'Vis alle meldingar',
 	'translate-taskui-untranslated' => 'Vis uomsette meldingar',
 	'translate-taskui-optional' => 'Vis valfrie meldingar',
@@ -18793,24 +18803,24 @@ Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 	'translate-magic-words' => 'Magiske ord',
 	'translate-magic-namespace' => 'Namneromnamn',
 	'translate-magic-notsaved' => 'Endringa di vart ikkje lagra!',
-	'translate-magic-errors' => 'Bøt på {{PLURAL:$1|den fylgjande feilen|dei fylgjande feila}} i omsetjingar:',
+	'translate-magic-errors' => 'Bøt på {{PLURAL:$1|denne feilen|desse feila}} i omsetjingane:',
 	'translate-magic-saved' => 'Endringane dine vart lagra.',
-	'translate-checks-parameters' => 'Følgjande {{PLURAL:$2|parameter|parametrar}} vert ikkje nytta:
+	'translate-checks-parameters' => '{{PLURAL:$2|Denne parameteren|Dessse parametrane}} vert ikkje nytta:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => 'Følgjande {{PLURAL:$2|parameter er ukjend|parametrar er ukjende}}:
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Denne parameteren er ukjend|Desse parametrane er ukjende}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => '{{PLURAL:$2|Det|Det}} er eit ujamt tal parentesar:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => 'Følgjande {{PLURAL:$2|lenke er problematisk|$2 lenker er problematiske}}:
+	'translate-checks-links' => '{{PLURAL:$2|Denne lenkja er problematisk|Desse $2 lenkjene er problematiske}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => '{{PLURAL:$2|Den fylgjande lenkja|Dei fylgjande $2 lenkjene}} saknar:
+	'translate-checks-links-missing' => '{{PLURAL:$2|Denne lenkja|Desse $2 lenkjene}} saknar:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'Erstatt følgjande {{PLURAL:$2|tagg|taggar}} med dei riktige:
+	'translate-checks-xhtml' => 'Byt ut {{PLURAL:$2|dette merket med det rette|desse merka med dei rette}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definisjonen nyttar <nowiki>{{PLURAL:}}</nowiki>, men omsetjinga gjer det ikkje.',
 	'translate-checks-pagename' => 'Namnerom endra frå definisjonen',
 	'translate-checks-format' => 'Denne omsetjinga følgjer ikkje definisjonen eller har ugyldig syntaks: $1',
-	'translate-checks-escape' => 'Dei fylgjande hendingane kan vera tilfeldige: <strong>$1</strong>',
+	'translate-checks-escape' => 'Desse unnataka kan koma frå uhell: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'Ikkje send meg nyhendebrev',
 	'translate-pref-editassistlang' => 'Hjelpespråk:',
 	'prefs-translate' => 'Omsetjingsval',
