@@ -492,7 +492,7 @@
 		listen: function () {
 			var translateEditor = this;
 
-			this.$editTrigger.click( function () {
+			this.$editTrigger.find( '.tux-message-item' ).click( function () {
 				translateEditor.show();
 			} );
 		}
