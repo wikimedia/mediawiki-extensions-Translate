@@ -413,9 +413,14 @@ class SpecialTranslate extends SpecialPage {
 			'Messages without suggestions',
 		);
 
+		$optionsContainer = '';
 		foreach ( $options as $opt ) {
-			$output .= Xml::checkLabel( $opt, "$opt-name", "$opt-id", array( 'class' => "three columns" ) );
+			$optionsContainer .= Xml::checkLabel( $opt, "$opt-name", "$opt-id", array( 'class' => "three columns" ) );
 		}
+
+		$output .= Html::openElement( 'span', array( 'class' => 'columns push-two' ) ).
+			$optionsContainer.
+			Html::closeElement( 'span' );
 
 		$output .= Html::closeElement( 'div' );
 		return $output;
