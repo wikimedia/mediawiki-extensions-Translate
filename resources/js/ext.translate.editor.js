@@ -67,10 +67,11 @@
 				translation = translateEditor.$editor.find( 'textarea' ).val();
 
 			// XXX: Any validations to be done before proceeding?
-			api.postWithEditToken( {
+			api.post( {
 				action: 'edit',
 				title: translateEditor.$editTrigger.data( 'title' ),
-				text: translation
+				text: translation,
+				token: mw.user.tokens.get( 'editToken' )
 			}, function ( response ) {
 				var $error;
 				// OK
@@ -107,24 +108,29 @@
 		/**
 		 * Jump to the next translation editor row.
 		 *
-		 * @returns {Boolean} false if there's no next row, true otherwise.
 		 */
 		next: function () {
-			var $next;
+			var $next,
+				translateEditor = this,
+				api = new mw.Api();
 
 			if ( this.dirty ) {
 				this.markUnsaved();
 			}
 
+			api.post( {
+				action: 'hardmessages',
+				title: translateEditor.$editTrigger.data( 'title' ),
+				token: mw.user.tokens.get( 'editToken' )
+			} );
+
 			$next = this.$editTrigger.next( '.tux-message' );
 
 			if ( !$next.length ) {
-				return false;
+				return;
 			}
 
 			$next.data( 'translateeditor' ).show();
-
-			return true;
 		},
 
 		prepareEditorColumn: function () {
@@ -220,8 +226,9 @@
 					'disabled': true
 				} )
 				.addClass( 'blue button tux-editor-save-button' )
-				.on( 'click', function () {
+				.on( 'click', function ( e ) {
 					translateEditor.save();
+					e.stopPropagation();
 				} );
 
 			$skipButton = $( '<button>' )
@@ -231,8 +238,9 @@
 					'title': mw.util.tooltipAccessKeyPrefix + 'd'
 				} )
 				.addClass( 'button tux-editor-skip-button' )
-				.on( 'click', function () {
+				.on( 'click', function ( e ) {
 					translateEditor.next();
+					e.stopPropagation();
 				} );
 
 			$buttonBlock = $( '<div>' )
