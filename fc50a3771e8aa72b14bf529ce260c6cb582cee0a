@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgH//+j4\u003d",
+        "filename": "api/ApiHardMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "You should check that Title::newFromText doesn\u0027t return null.",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+j0\u003d",
+        "filename": "api/ApiHardMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "\"  \" -\u003e \" \"",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+jw\u003d",
+        "filename": "api/ApiHardMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "Hmm?",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+jo\u003d",
+        "filename": "api/ApiHardMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "doMarkHark(",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+jY\u003d",
+        "filename": "api/ApiHardMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "perhaps array( \u0027rt_value \u003d rt_value + 1\u0027 ) would also be possible I think, but this is fine.",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+jg\u003d",
+        "filename": "api/ApiHardMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "Why are you not using the array( a \u003d\u003e b, c \u003d\u003e d ) syntax here like above?",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+jQ\u003d",
+        "filename": "api/ApiHardMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to validate anything.",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+jM\u003d",
+        "filename": "api/ApiHardMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "The since can be added to the class docs for new classes",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+jE\u003d",
+        "filename": "api/ApiHardMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "Type is int",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+jU\u003d",
+        "filename": "api/ApiHardMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "\"  \" -\u003e \" \"",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+i8\u003d",
+        "filename": "api/ApiHardMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "You can use $dbr-\u003eselectField() here to make it shorter, just convert the result to int.",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+iw\u003d",
+        "filename": "api/ApiHardMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "revision -\u003e title",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+iQ\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "Did you consider fixing the core api module to use this way of acquiring the token?",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+iA\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:31:36Z",
+      "side": 1,
+      "message": "Do I understand correctly that this is now also called when you click save, since this.save also calls this.next?",
+      "revId": "fc50a3771e8aa72b14bf529ce260c6cb582cee0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
