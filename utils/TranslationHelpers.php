@@ -826,9 +826,12 @@ class TranslationHelpers {
 	public function getCheckBox() {
 		$this->mustBeKnownMessage();
 
-		global $wgTranslateDocumentationLanguageCode;
+		global $wgTranslateDocumentationLanguageCode, $wgRequest;
+		$tux = SpecialTranslate::isBeta( $wgRequest );
 
-		$placeholder = Html::element( 'div', array( 'class' => 'mw-translate-messagechecks' ) );
+		$formattedChecks = $tux
+			? FormatJson::encode( array() )
+			: Html::element( 'div', array( 'class' => 'mw-translate-messagechecks' ) );
 
 		$page = $this->handle->getKey();
 		$translation = $this->getTranslation();
@@ -836,7 +839,7 @@ class TranslationHelpers {
 		$en = $this->getDefinition();
 
 		if ( strval( $translation ) === '' ) {
-			return $placeholder;
+			return $formattedChecks;
 		}
 
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
@@ -854,20 +857,27 @@ class TranslationHelpers {
 
 		$checks = $checker->checkMessage( $message, $code );
 		if ( !count( $checks ) ) {
-			return $placeholder;
+			return $formattedChecks;
 		}
 
 		$checkMessages = array();
+
 		foreach ( $checks as $checkParams ) {
 			$key = array_shift( $checkParams );
 			$checkMessages[] = wfMessage( $key, $checkParams )->parse();
 		}
 
-		return Html::rawElement( 'div', array( 'class' => 'mw-translate-messagechecks' ),
-			TranslateUtils::fieldset(
-			wfMessage( 'translate-edit-warnings' )->escaped(), implode( '<hr />', $checkMessages ),
-			array( 'class' => 'mw-sp-translate-edit-warnings' )
-		) );
+		if ( $tux ) {
+			$formattedChecks = FormatJson::encode( $checkMessages );
+		} else {
+			$formattedChecks = Html::rawElement( 'div', array( 'class' => 'mw-translate-messagechecks' ),
+				TranslateUtils::fieldset(
+				wfMessage( 'translate-edit-warnings' )->escaped(), implode( '<hr />', $checkMessages ),
+				array( 'class' => 'mw-sp-translate-edit-warnings' )
+			) );
+		}
+
+		return $formattedChecks;
 	}
 
 	public function getOtherLanguagesBox() {
