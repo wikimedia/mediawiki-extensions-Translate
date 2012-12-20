@@ -451,7 +451,9 @@ Most useful for the proofreading tasks.',
 	'tux-editor-in-other-languages' => 'In other languages',
 	'tux-editor-need-more-help' => 'Need more help?',
 	'tux-editor-ask-help' => 'Ask for more information',
-	'tux-editor-tm-match' => '$1% match'
+	'tux-editor-tm-match' => '$1% match',
+	'tux-warnings-more' => '{{PLURAL:$1|$1 more}}',
+	'tux-warnings-hide' => 'hide',
 );
 
 /** Message documentation (Message documentation)
@@ -863,6 +865,8 @@ Read as in "proofRED" (past participle).',
 	'tux-editor-ask-help' => 'Link text for more information',
 	'tux-editor-tm-match' => 'Text showing the quality of suggestion in percentage
 * $1 is a value less than 100',
+	'tux-warnings-more' => 'A label for a small tab above the edit area, clicking on which shows more warnings. $1 is the number of additional warnings that will be shown.',
+	'tux-warnings-hide' => 'A label for a small tab above the warnings about the edit area, clicking on which hides the warnings.',
 );
 
 /** Afrikaans (Afrikaans)

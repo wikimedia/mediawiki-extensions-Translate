@@ -1,6 +1,26 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	function MessageCheckUpdater( callback ) {
+		this.act = function() {
+			callback();
+			delete this.timeoutID;
+		};
+
+		this.setup = function() {
+			this.cancel();
+			var self = this;
+			this.timeoutID = window.setTimeout( self.act, 1000 );
+		};
+
+		this.cancel = function() {
+			if ( typeof this.timeoutID === 'number' ) {
+				window.clearTimeout( this.timeoutID );
+				delete this.timeoutID;
+			}
+		};
+	}
+
 	function TranslateEditor( element ) {
 		this.$editTrigger = $( element );
 		this.$editor = null;
@@ -144,8 +164,11 @@
 		prepareEditorColumn: function () {
 			var translateEditor = this,
 				sourceString,
+				messageChecker,
 				$editorColumn,
 				$messageKeyLabel,
+				$moreWarningsTab,
+				$warnings,
 				$textArea,
 				$buttonBlock,
 				$saveButton,
@@ -212,13 +235,46 @@
 				.append( $sourceString )
 			);
 
+			$warnings = $( '<div>' )
+				.addClass( 'tux-warning' )
+				.hide();
+
+			$moreWarningsTab = $( '<div>' )
+				.addClass( 'tux-more-warnings one column' )
+				.on( 'click', function () {
+					var $this = $( this ),
+						$moreWarnings = $warnings.children(),
+						lastWarningIndex = $moreWarnings.length - 1;
+
+					// If the value is 'auto', then only one warning is shown
+					if ( $this.css( 'top' ) === 'auto' ) {
+						$moreWarnings.each( function ( index, element ) {
+							// The first element must always be shown
+							if ( index !== lastWarningIndex ) {
+								$( element ).show();
+							}
+						} );
+
+						$this.css( 'top', -$warnings.outerHeight() );
+					} else {
+						$moreWarnings.each( function ( index, element ) {
+							// The first element must always be shown
+							if ( index !== lastWarningIndex ) {
+								$( element ).hide();
+							}
+						} );
+
+						$this.css( 'top', 'auto' );
+					}
+				} )
+				.hide();
+
 			$textArea = $( '<textarea>' )
 				.attr( {
 					'placeholder': mw.msg( 'tux-editor-placeholder' ),
 					'lang': $messageList.data( 'targetlangcode' ),
 					'dir': $messageList.data( 'targetlangdir' )
 				} )
-				.addClass( 'eleven columns' )
 				.on( 'keypress keyup keydown', function () {
 					translateEditor.dirty = true;
 					translateEditor.$editor.find( '.tux-editor-save-button' )
@@ -233,13 +289,29 @@
 					}
 				} );
 
+			messageChecker = new MessageCheckUpdater( function() {
+				var url = mw.config.get( 'wgScript' ) +
+						'?title=Special:Translate/editpage&suggestions=checks&page=' +
+						translateEditor.$editTrigger.data( 'title' ) +
+						'&loadgroup=' +
+						translateEditor.$editTrigger.data( 'group' );
+
+				$.post( url, { translation: $textArea.val() }, function( data ) {
+					translateEditor.populateWarningsBoxes( data );
+				} );
+			} );
+
+			$textArea.keyup( function () {
+				messageChecker.setup();
+			} );
+
 			if ( this.$editTrigger.data( 'translation' ) ) {
 				$textArea.text( this.$editTrigger.data( 'translation' ) );
 			}
 
 			$editorColumn.append( $( '<div>' )
-				.addClass( 'row' )
-				.append( $textArea )
+				.addClass( 'editarea eleven columns' )
+				.append( $moreWarningsTab, $warnings, $textArea )
 			);
 
 			$saveButton = $( '<button>' )
@@ -286,6 +358,44 @@
 			);
 
 			return $editorColumn;
+		},
+
+		populateWarningsBoxes: function( data ) {
+			var warningIndex, $newWarning,
+				$warnings = this.$editTrigger.find( '.tux-warning' ),
+				$moreWarningsTab = this.$editTrigger.find( '.tux-more-warnings' ),
+				warnings = jQuery.parseJSON( data );
+
+			this.$editTrigger.find( '.tux-warning' ).empty();
+
+			if ( warnings === null || warnings.length === 0 ) {
+				$moreWarningsTab.hide();
+				return;
+			}
+
+			for ( warningIndex = 0; warningIndex < warnings.length; warningIndex++ ) {
+				// TODO: Is this safe?
+				// We need HTML, because that's what the API returns, but security guys
+				// say that .html() is bad.
+				$newWarning = $( '<div>' ).html( warnings[warningIndex] );
+
+				// Initially hide all warnings except the first one
+				if ( warningIndex ) {
+					$newWarning.hide();
+				}
+
+				$warnings.prepend( $newWarning );
+			}
+
+			$warnings.show();
+
+			if ( warnings.length > 1 ) {
+				$moreWarningsTab
+					.text( mw.msg( 'tux-warnings-more', warnings.length - 1 ) )
+					.show();
+			} else {
+				$moreWarningsTab.hide();
+			}
 		},
 
 		prepareInfoColumn: function () {
