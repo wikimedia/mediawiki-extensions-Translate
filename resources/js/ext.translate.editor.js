@@ -468,7 +468,7 @@
 									.text( suggestion.target ),
 								$( '<div>' )
 									.addClass( 'three columns quality text-right' )
-									.text( mw.msg( 'tux-editor-tm-match', suggestion.quality * 100 ) )
+									.text( mw.msg( 'tux-editor-tm-match', Math.round( suggestion.quality )* 100 ) )
 							);
 
 						translateEditor.$editor.find( '.tm-suggestions-title' )
