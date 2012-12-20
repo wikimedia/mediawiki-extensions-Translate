@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgH//+kU\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:18:53Z",
+      "side": 1,
+      "message": "I never understood why English doesn\u0027t use the equivalent of the Finnish translation of these kind of messages: \"Saving the translation failed: $1\"",
+      "revId": "184b43733f6456812f673d92f5b862d7c0d68dd8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//+kM\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-20T08:18:53Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to pass the security criteria. You probably need to use mw.message.escaped().",
+      "revId": "184b43733f6456812f673d92f5b862d7c0d68dd8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
