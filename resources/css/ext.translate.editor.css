@@ -222,7 +222,7 @@
 	bottom: 0;
 }
 
-.editarea .tux-more-warnings:before{
+.editarea .tux-more-warnings:before {
 	content: "";
 	border-bottom: 1em solid #FBF6AD;
 	border-top: 1em solid transparent;
@@ -232,4 +232,7 @@
 	position: absolute;
 	right: 100%;
 	top: 0;
+
+.tm-suggestion .use-this-translation {
+	font-size: 12px;
 }

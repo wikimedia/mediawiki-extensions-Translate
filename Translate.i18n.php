@@ -455,6 +455,7 @@ Most useful for the proofreading tasks.',
 	'tux-warnings-more' => '{{PLURAL:$1|$1 more}}',
 	'tux-warnings-hide' => 'hide',
 	'tux-editor-save-failed' => 'Saving the translation failed: $1',
+	'tux-editor-use-this-translation' => 'Use as translation',
 );
 
 /** Message documentation (Message documentation)
@@ -869,6 +870,7 @@ Read as in "proofRED" (past participle).',
 	'tux-warnings-more' => 'A label for a small tab above the edit area, clicking on which shows more warnings. $1 is the number of additional warnings that will be shown.',
 	'tux-warnings-hide' => 'A label for a small tab above the warnings about the edit area, clicking on which hides the warnings.',
 	'tux-editor-save-failed' => 'An error shown above the edit box. $1 is the warning that the API returns.',
+	'tux-editor-use-this-translation' => 'Link text for using a suggestion as translation for the current message',
 );
 
 /** Afrikaans (Afrikaans)
@@ -17522,7 +17524,7 @@ $messages['ml'] = array(
 	'tux-editor-placeholder' => 'നിങ്ങളുടെ പരിഭാഷ',
 	'tux-editor-save-button-label' => 'പരിഭാഷ ചേര്‍ക്കുക',
 	'tux-editor-skip-button-label' => 'അടുത്തതിലേയ്ക്ക്',
-	'tux-editor-shortcut-info' => 'സംരക്ഷിക്കാന്‍  "$1" അമര്‍ക്കുക, അടുത്തതിലേയ്ക്ക് പോകാന്‍ "$2" അമര്‍ത്തുക.',
+	'tux-editor-shortcut-info' => 'സംരക്ഷിക്കാന്‍  "$1" അമര്‍ത്തുക, അടുത്തതിലേയ്ക്ക് പോകാന്‍ "$2" അമര്‍ത്തുക.',
 	'tux-editor-no-message-doc' => 'സന്ദേശവിവരണം ലഭ്യമല്ല',
 	'tux-editor-edit-desc' => 'സന്ദേശവിവരണം തിരുത്തുക',
 	'tux-editor-suggestions-title' => 'സൂചനകള്‍',
@@ -17530,6 +17532,7 @@ $messages['ml'] = array(
 	'tux-editor-need-more-help' => 'സഹായം ആവശ്യമാണോ?',
 	'tux-editor-ask-help' => 'കൂടുതല്‍ വിവരങ്ങള്‍ ചോദിക്കുക',
 	'tux-editor-tm-match' => '$1% ചേര്‍ച്ച',
+	'tux-editor-use-this-translation' => 'പരിഭാഷയ്ക്കുപയോഗിക്കുക',
 );
 
 /** Mongolian (монгол)
