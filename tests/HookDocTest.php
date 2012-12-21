@@ -23,7 +23,7 @@ class HookDocTest extends MediaWikiTestCase {
 			'utils',
 		),
 		'js' => array(
-			'resources',
+			'resources/js',
 		),
 	);
 
@@ -141,5 +141,4 @@ class HookDocTest extends MediaWikiTestCase {
 			$this->assertArrayHasKey( $hook, $this->documented['js'], "Documented js hook $hook exists" );
 		}
 	}
-
 }

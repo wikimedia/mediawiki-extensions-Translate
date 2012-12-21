@@ -8,7 +8,7 @@
 
 .mw-translate-helplink a {
 	/* @embed */
-	background: url(images/help.png) no-repeat scroll left center transparent;
+	background: url(../images/help.png) no-repeat scroll left center transparent;
 	padding-left: 20px;
 	float: right;
 }

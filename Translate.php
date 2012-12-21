@@ -199,17 +199,17 @@ $resourcePaths = array(
 
 // Client-side resource modules
 $wgResourceModules['ext.translate'] = array(
-	'styles' => 'resources/ext.translate.css',
+	'styles' => 'resources/css/ext.translate.css',
 	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.hooks'] = array(
-	'scripts' => 'resources/ext.translate.hooks.js',
+	'scripts' => 'resources/js/ext.translate.hooks.js',
 	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.helplink'] = array(
-	'styles' => 'resources/ext.translate.helplink.css',
+	'styles' => 'resources/css/ext.translate.helplink.css',
 	'position' => 'top',
 ) + $resourcePaths;
 
@@ -267,8 +267,8 @@ $wgResourceModules['ext.translate.groupselector'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.messagetable'] = array(
-	'scripts' => 'resources/ext.translate.messagetable.js',
-	'styles' => 'resources/ext.translate.messagetable.css',
+	'scripts' => 'resources/js/ext.translate.messagetable.js',
+	'styles' => 'resources/css/ext.translate.messagetable.css',
 	'position' => 'top',
 	'dependencies' => array(
 		'mediawiki.util',
@@ -296,13 +296,13 @@ $wgResourceModules['ext.translate.statsbar'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.tabgroup'] = array(
-	'styles' => 'resources/ext.translate.tabgroup.css',
+	'styles' => 'resources/css/ext.translate.tabgroup.css',
 	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.quickedit'] = array(
-	'scripts' => 'resources/ext.translate.quickedit.js',
-	'styles' => 'resources/ext.translate.quickedit.css',
+	'scripts' => 'resources/js/ext.translate.quickedit.js',
+	'styles' => 'resources/css/ext.translate.quickedit.css',
 	'messages' => array( 'translate-js-nonext', 'translate-js-save-failed' ),
 	'dependencies' => array(
 		'ext.translate.hooks',
@@ -314,24 +314,24 @@ $wgResourceModules['ext.translate.quickedit'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.selecttoinput'] = array(
-	'scripts' => 'resources/ext.translate.selecttoinput.js',
+	'scripts' => 'resources/js/ext.translate.selecttoinput.js',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.importtranslations'] = array(
-	'scripts' => 'resources/ext.translate.special.importtranslations.js',
+	'scripts' => 'resources/js/ext.translate.special.importtranslations.js',
 	'dependencies' => array(
 		'jquery.ui.autocomplete',
 	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.messagewebimporter'] = array(
-	'styles' => 'resources/ext.translate.messagewebimporter.css',
+	'styles' => 'resources/css/ext.translate.messagewebimporter.css',
 	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.languagestats'] = array(
-	'scripts' => 'resources/ext.translate.special.languagestats.js',
-	'styles' => 'resources/ext.translate.special.languagestats.css',
+	'scripts' => 'resources/js/ext.translate.special.languagestats.js',
+	'styles' => 'resources/css/ext.translate.special.languagestats.css',
 	'messages' => array(
 		'translate-langstats-expandall',
 		'translate-langstats-collapseall',
@@ -342,7 +342,7 @@ $wgResourceModules['ext.translate.special.languagestats'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.multiselectautocomplete'] = array(
-	'scripts' => 'resources/ext.translate.multiselectautocomplete.js',
+	'scripts' => 'resources/js/ext.translate.multiselectautocomplete.js',
 	'dependencies' => array(
 		'jquery.ui.autocomplete',
 	),
@@ -350,13 +350,13 @@ $wgResourceModules['ext.translate.multiselectautocomplete'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.managegroups'] = array(
-	'styles' => 'resources/ext.translate.special.managegroups.css',
+	'styles' => 'resources/css/ext.translate.special.managegroups.css',
 	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.pagetranslation'] = array(
-	'scripts' => 'resources/ext.translate.special.pagetranslation.js',
-	'styles' => 'resources/ext.translate.special.pagetranslation.css',
+	'scripts' => 'resources/js/ext.translate.special.pagetranslation.js',
+	'styles' => 'resources/css/ext.translate.special.pagetranslation.css',
 	'dependencies' => array(
 		'ext.translate.multiselectautocomplete',
 	),
@@ -364,15 +364,15 @@ $wgResourceModules['ext.translate.special.pagetranslation'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.translationstats'] = array(
-	'scripts' => 'resources/ext.translate.special.translationstats.js',
+	'scripts' => 'resources/js/ext.translate.special.translationstats.js',
 	'dependencies' => array(
 		'jquery.ui.datepicker',
 	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.aggregategroups'] = array(
-	'scripts' => 'resources/ext.translate.special.aggregategroups.js',
-	'styles' => 'resources/ext.translate.special.aggregategroups.css',
+	'scripts' => 'resources/js/ext.translate.special.aggregategroups.js',
+	'styles' => 'resources/css/ext.translate.special.aggregategroups.css',
 	'position' => 'top',
 	'dependencies' => array( 'mediawiki.util' ),
 	'messages' => array(
@@ -381,13 +381,13 @@ $wgResourceModules['ext.translate.special.aggregategroups'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.supportedlanguages'] = array(
-	'styles' => 'resources/ext.translate.special.supportedlanguages.css',
+	'styles' => 'resources/css/ext.translate.special.supportedlanguages.css',
 	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.translate'] = array(
-	'styles' => 'resources/ext.translate.special.translate.css',
-	'scripts' => 'resources/ext.translate.special.translate.js',
+	'styles' => 'resources/css/ext.translate.special.translate.css',
+	'scripts' => 'resources/js/ext.translate.special.translate.js',
 	'position' => 'top',
 	'dependencies' => array(
 		'mediawiki.util',
@@ -404,7 +404,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['jquery.autoresize'] = array(
-	'scripts' => 'resources/jquery.autoresize.js',
+	'scripts' => 'resources/js/jquery.autoresize.js',
 ) + $resourcePaths;
 
 /** @endcond */
