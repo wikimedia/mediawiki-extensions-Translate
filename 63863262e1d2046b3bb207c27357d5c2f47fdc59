@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgH//9gE\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-21T04:52:38Z",
+      "side": 1,
+      "message": "signature for error function is ( String code, Object results, XmlHttpRequest xhr, Exception exception )",
+      "revId": "63863262e1d2046b3bb207c27357d5c2f47fdc59",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
