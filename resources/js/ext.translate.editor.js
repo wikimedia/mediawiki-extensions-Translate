@@ -465,11 +465,27 @@
 							.addClass( 'row tm-suggestion' )
 							.append(
 								$( '<div>' )
-									.addClass( 'nine columns' )
-									.text( suggestion.target ),
+									.addClass( 'row tm-suggestion-top' )
+									.append(
+										$( '<div>' )
+											.addClass( 'nine columns' )
+											.text( suggestion.target ),
+										$( '<div>' )
+											.addClass( 'three columns quality text-right' )
+											.text( mw.msg( 'tux-editor-tm-match',
+												Math.round( suggestion.quality * 100 ) ) )
+									),
 								$( '<div>' )
-									.addClass( 'three columns quality text-right' )
-									.text( mw.msg( 'tux-editor-tm-match', Math.round( suggestion.quality * 100 ) ) )
+									.addClass( 'row tm-suggestion-bottom' )
+									.append(
+										$( '<a>' )
+											.addClass( 'nine columns use-this-translation' )
+											.text( mw.msg( 'tux-editor-use-this-translation' ) )
+											.on( 'click', function () {
+												translateEditor.$editor.find( 'textarea' )
+													.val( suggestion.target );
+											} )
+									)
 							);
 
 						translateEditor.$editor.find( '.tm-suggestions-title' )
