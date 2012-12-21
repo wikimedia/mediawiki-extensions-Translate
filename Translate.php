@@ -245,6 +245,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-editor-need-more-help',
 		'tux-editor-ask-help',
 		'tux-editor-tm-match',
+		'tux-editor-use-this-translation',
 	),
 	'position' => 'top',
 ) + $resourcePaths;
