@@ -2424,9 +2424,17 @@ $messages['az'] = array(
 /** South Azerbaijani (تورکجه)
  * @author E THP
  * @author Ebrahimi-amir
+ * @author Mousa
  */
 $messages['azb'] = array(
 	'translate' => 'ترجومه ائت',
+	'translate-taskui-view' => 'بوتون مئساژلاری گؤستر',
+	'translate-taskui-untranslated' => 'چئویریلمه‌میش مئساژلاری گؤستر',
+	'translate-taskui-optional' => 'ایستگه باغلی مئساژلاری گؤستر',
+	'translate-taskui-suggestions' => 'چئویرمه حافیظه‌سیندن اؤنرلری اولان مئساژلاری گؤستر',
+	'translate-taskui-acceptqueue' => 'یالنیز من قبول ائده بیلن مئساژلاری',
+	'translate-taskui-reviewall' => 'بوتون چئویریلری گؤزدن گئچیت',
+	'translate-taction-translate' => 'چئویرمک',
 	'translate-taction-lstats' => 'دیل آماری',
 	'translate-page-language' => 'دیل',
 	'translate-next' => 'سونراکی صحیفه',
