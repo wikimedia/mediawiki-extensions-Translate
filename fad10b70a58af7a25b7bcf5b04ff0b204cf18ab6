@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgH//9ZY\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-21T11:01:56Z",
+      "side": 1,
+      "message": "If this replaces the current translation, should this read \"Use as translation\"?",
+      "revId": "fad10b70a58af7a25b7bcf5b04ff0b204cf18ab6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
