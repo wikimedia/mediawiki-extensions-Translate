@@ -1,14 +1,14 @@
 span.tp-aggregate-remove-ag-button,
 span.tp-aggregate-remove-button {
 	/* @embed */
-	background: url(images/remove.png) no-repeat scroll left center transparent;
+	background: url(../images/remove.png) no-repeat scroll left center transparent;
 	padding: 10px;
 	cursor: pointer;
 }
 
 a.tpt-add-new-group {
 	/* @embed */
-	background: url(images/add.png) no-repeat scroll left center transparent;
+	background: url(../images/add.png) no-repeat scroll left center transparent;
 	padding-left: 20px;
 }
 
