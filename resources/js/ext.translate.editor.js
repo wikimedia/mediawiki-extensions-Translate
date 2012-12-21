@@ -273,12 +273,16 @@
 
 		prepareInfoColumn: function () {
 			var $infoColumn,
+				$infoColumnBlock,
 				translateDocumentationLanguageCode;
 
-			$infoColumn = $( '<div>' )
-				.addClass( 'five columns infocolumn' );
+			$infoColumnBlock = $( '<div>' )
+				.addClass( 'five columns infocolumn-block' );
 
-			$infoColumn.append( $( '<span>' ).addClass( 'caret' ) );
+			$infoColumnBlock.append( $( '<span>' ).addClass( 'caret' ) );
+
+			$infoColumn = $( '<div>' )
+				.addClass( 'infocolumn');
 
 			$infoColumn.append( $( '<div>' )
 				.addClass( 'row text-left message-desc' )
@@ -323,7 +327,8 @@
 				)
 			);
 
-			return $infoColumn;
+			$infoColumnBlock.append( $infoColumn );
+			return $infoColumnBlock;
 		},
 
 		show: function () {
