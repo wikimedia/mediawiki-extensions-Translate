@@ -451,7 +451,8 @@ Most useful for the proofreading tasks.',
 	'tux-editor-in-other-languages' => 'In other languages',
 	'tux-editor-need-more-help' => 'Need more help?',
 	'tux-editor-ask-help' => 'Ask for more information',
-	'tux-editor-tm-match' => '$1% match'
+	'tux-editor-tm-match' => '$1% match',
+	'tux-editor-use-this-translation' => 'Use in translation',
 );
 
 /** Message documentation (Message documentation)
@@ -863,6 +864,7 @@ Read as in "proofRED" (past participle).',
 	'tux-editor-ask-help' => 'Link text for more information',
 	'tux-editor-tm-match' => 'Text showing the quality of suggestion in percentage
 * $1 is a value less than 100',
+	'tux-editor-use-this-translation' => 'Link text for using a suggestion as translation for the current message',
 );
 
 /** Afrikaans (Afrikaans)
@@ -17024,7 +17026,7 @@ $messages['ml'] = array(
 	'tux-editor-placeholder' => 'നിങ്ങളുടെ പരിഭാഷ',
 	'tux-editor-save-button-label' => 'പരിഭാഷ ചേര്‍ക്കുക',
 	'tux-editor-skip-button-label' => 'അടുത്തതിലേയ്ക്ക്',
-	'tux-editor-shortcut-info' => 'സംരക്ഷിക്കാന്‍  "$1" അമര്‍ക്കുക, അടുത്തതിലേയ്ക്ക് പോകാന്‍ "$2" അമര്‍ത്തുക.',
+	'tux-editor-shortcut-info' => 'സംരക്ഷിക്കാന്‍  "$1" അമര്‍ത്തുക, അടുത്തതിലേയ്ക്ക് പോകാന്‍ "$2" അമര്‍ത്തുക.',
 	'tux-editor-no-message-doc' => 'സന്ദേശവിവരണം ലഭ്യമല്ല',
 	'tux-editor-edit-desc' => 'സന്ദേശവിവരണം തിരുത്തുക',
 	'tux-editor-suggestions-title' => 'സൂചനകള്‍',
@@ -17032,6 +17034,7 @@ $messages['ml'] = array(
 	'tux-editor-need-more-help' => 'സഹായം ആവശ്യമാണോ?',
 	'tux-editor-ask-help' => 'കൂടുതല്‍ വിവരങ്ങള്‍ ചോദിക്കുക',
 	'tux-editor-tm-match' => '$1% ചേര്‍ച്ച',
+	'tux-editor-use-this-translation' => 'പരിഭാഷയ്ക്കുപയോഗിക്കുക',
 );
 
 /** Mongolian (монгол)
