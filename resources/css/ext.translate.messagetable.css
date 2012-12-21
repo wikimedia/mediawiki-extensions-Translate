@@ -124,15 +124,15 @@
 .tux-status-translated,
 .tux-status-proofread {
 	/* @embed */
-	background-image: url(images/label-tick.png);
+	background-image: url(../images/label-tick.png);
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/label-tick.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(images/label-tick.svg);
-	background-image: linear-gradient(transparent, transparent), url(images/label-tick.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/label-tick.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/label-tick.svg);
 }
 
 .tux-status-fuzzy {
 	/* @embed */
-	background-image: url(images/label-clock.png);
+	background-image: url(../images/label-clock.png);
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/label-clock.svg);
 	background-image: -moz-linear-gradient(transparent, transparent), url(../images/label-clock.svg);
 	background-image: linear-gradient(transparent, transparent), url(../images/label-clock.svg);
