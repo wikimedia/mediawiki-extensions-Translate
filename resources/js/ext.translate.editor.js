@@ -201,6 +201,14 @@
 					translateEditor.dirty = true;
 					translateEditor.$editor.find( '.tux-editor-save-button' )
 						.removeAttr( 'disabled' );
+
+					// Expand the text area height as content grows
+					while ( $( this ).outerHeight() < this.scrollHeight
+						+ parseFloat( $( this ).css( "borderTopWidth" ) )
+						+ parseFloat( $( this ).css( "borderBottomWidth" ) ) ) {
+						$( this ).height( $( this ).height()
+							+ parseFloat( $( this ).css( "fontSize" ) ) );
+					}
 				} );
 
 			if ( this.$editTrigger.data( 'translation' ) ) {
