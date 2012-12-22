@@ -392,7 +392,7 @@
 			toggleIcon.removeClass( 'editor-contract' );
 			toggleIcon.addClass( 'editor-expand' );
 
-			this.$editor.find( '.infocolumn' ).show();
+			this.$editor.find( '.infocolumn-block' ).show();
 			this.$editor.find( '.editcolumn' )
 				.removeClass( 'twelve' )
 				.addClass( 'seven' );
@@ -405,7 +405,7 @@
 			toggleIcon.removeClass( 'editor-expand' );
 			toggleIcon.addClass( 'editor-contract' );
 
-			this.$editor.find( 'div.infocolumn' ).hide();
+			this.$editor.find( 'div.infocolumn-block' ).hide();
 			this.$editor.find( 'div.editcolumn' )
 				.removeClass( 'seven' )
 				.addClass( 'twelve' );
