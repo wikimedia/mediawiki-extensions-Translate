@@ -739,9 +739,11 @@ $messages['el'] = array(
 
 /** Esperanto (Esperanto)
  * @author ArnoLagrange
+ * @author Blahma
  * @author Petrus Adamus
  */
 $messages['eo'] = array(
+	'translategroupdescriptions-desc' => 'Priskriboj de la mesaĝgrupoj por produktoj subtenataj de la [http://mediawiki.org/wiki/Extension:Translate traduka kromprogramo]',
 	'translate-group-desc-nodesc' => 'Neniu priskribo estas havebla por ĉi tiu mesaĝogrupo',
 	'translate-group-desc-mediawikicore' => 'Ĉi tiu mesaĝogrupo enhavas la mesaĝojn uzitajn  en la aktuala alpha-versio  de MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Ĉi tiu mesaĝogrupo enhavas la [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWik 500 plej ofte uzitajn mesaĝojn] en MediaWiki',
@@ -749,11 +751,9 @@ $messages['eo'] = array(
 	'translate-group-desc-collection' => 'Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Kolekto]',
 	'translate-group-desc-flaggedrevs' => 'Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Reviziitaj versioj]',
 	'translate-group-desc-readerfeedback' => 'Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback Reagoj de legantoj]',
-	'translate-group-desc-socialprofile' => 'Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por etendaĵoj rilataj al la MediaWiki-etendaĵo [http://www.mediawiki.org/wiki/Extension:SocialProfile Socia Profilo]',
-	'translate-group-desc-translate' => 'Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Tradukado]',
+	'translate-group-desc-translate' => 'Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Tradukado]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj  MediaWiki-etendaĵoj uzitaj de [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj  MediaWiki-etendaĵoj uzitaj de [http://wikimedia.org/ Vikimedia Fondaĵo]',
-	'translate-group-desc-uniwiki' => 'Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por etendaĵoj rilataj al [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por etendaĵoj rilataj al [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Vikipedia Uzebleca Iniciato]',
 	'bw-desc-freecol' => 'Antaŭ tradukante FreeCol al via lingvo, bonvolu legi [[Translating:FreeCol]]. FreeCol uzas la Ĝeneralan Publikan Permesilon.',
 );
@@ -2840,7 +2840,7 @@ $messages['uk'] = array(
 	'translate-group-desc-collection' => 'Метагрупа, що містить повідомлення для розширення [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Метагрупа, що містить повідомлення для MediaWiki-розширення [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Метагрупа, що містить всі повідомлення розширення MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-translate' => 'Метагрупа, що містить повідомлення для MediaWiki-розширення [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Метагрупа, що містить повідомлення для MediaWiki-розширення [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://wikimedia.org/ Фондом Вікімедіа]',
 	'translate-group-desc-ui' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
@@ -2849,6 +2849,14 @@ $messages['uk'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] — веб-форум, написаний на PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] це вільна веб-система для відслідковування багів. Будь ласка, повідомляйте будь-які проблеми у [[Support|службу підтримки]].',
 	'translate-group-desc-eol' => 'Група повідомлень для перекладу [[Translating:EOL|Енциклопедії життя]]',
+	'translate-group-desc-frontlinesms' => 'Група повідомлень для [[Translating:FrontlineSMS|FrontlineSMS]]',
+	'translate-group-desc-ihris' => 'Група повідомлень для [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-common' => 'Група повідомлень для [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], модулю [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-i2ce' => 'Група повідомлень для [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], модулю [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-manage' => 'Група повідомлень для [[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]], модулю [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-ihris-qualify' => 'Група повідомлень для [[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]], модулю [[Translating:iHRIS|iHRIS]]',
+	'translate-group-desc-kiwix' => 'Група повідомлень для [[Translating:Kiwix|Kiwix]]',
+	'translate-group-desc-mantisbt-plugin-core' => 'Основний плаґін для [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Повідомлення для стабільної версії [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] — система керування інформацією для мікрофінансування',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' це бібліотека на мові python для створення PDF-документів зі сторінок MediaWiki, які були проаналізовані mwlib.

@@ -869,12 +869,14 @@ Jolic njocoš  powěsćowe listy dostaś, móžoš to na rejtarku "{{int:prefs-p
 
 /** Esperanto (Esperanto)
  * @author ArnoLagrange
+ * @author Blahma
  * @author Yekrats
  */
 $messages['eo'] = array(
 	'firststeps' => 'Unuaj paŝoj',
 	'firststeps-desc' => '[[Special:FirstSteps|Speciala paĝo]] por helpi novajn viki-uzantojn ekuzi la Traduk-etendaĵon',
 	'translate-fs-pagetitle-done' => '- farita!',
+	'translate-fs-pagetitle-pending' => '- pritraktota',
 	'translate-fs-pagetitle' => 'Asistilo por ekuzado - $1',
 	'translate-fs-signup-title' => 'Ensalutu',
 	'translate-fs-settings-title' => 'Agordu viajn preferojn.',
@@ -885,8 +887,30 @@ $messages['eo'] = array(
 	'translate-fs-intro' => "Bonvenon en la ekuz-asistilo de {{SITENAME}}.
 Vi estos gvidata tra la proceso por fariĝi tradukisto pason post paŝo.
 Fine vi kapablos traduki ''interfacajn mesaĝojn'' de ĉiuj eltenitaj projektoj je {{SITENAME}}.",
+	'translate-fs-selectlanguage' => 'Elektu lingvon',
+	'translate-fs-settings-planguage' => 'Ĉefa lingvo:',
+	'translate-fs-settings-planguage-desc' => 'Tiu ĉi ĉefa lingvo samtempe uziĝas kiel la lingvo de via uzantointerfaco en tiu ĉi vikio kaj kiel defaŭlta cellingvo de viaj tradukoj.',
+	'translate-fs-settings-slanguage' => 'Helpa lingvo $1:',
+	'translate-fs-settings-slanguage-desc' => 'En la tradukilo eblas montri alilingvajn tradukojn de la mesaĝoj.
+Se vi volas, ĉi tie vi povas elekti kiujn helpajn lingvojn vi ŝatus vidi.',
+	'translate-fs-settings-submit' => 'Konservi preferojn',
+	'translate-fs-userpage-level-N' => 'Mi estas denaska parolanto de',
+	'translate-fs-userpage-level-5' => 'Mi estas profesia tradukisto de',
+	'translate-fs-userpage-level-4' => 'Mi estas kvazaŭ-denaska parolanto de',
+	'translate-fs-userpage-level-3' => 'Mi bone regas la lingvon',
+	'translate-fs-userpage-level-2' => 'Mi sufiĉe regas la lingvon',
+	'translate-fs-userpage-level-1' => 'Mi iom regas la lingvon',
+	'translate-fs-userpage-help' => 'Bonvole indiku viajn linvosciojn kaj diru al ni ion pri vi mem. Se vi scias pli ol kvin lingvojn, vi povos aldoni pliajn poste.',
 	'translate-fs-userpage-submit' => 'Krei mian uzantopaĝon.',
 	'translate-fs-userpage-done' => 'Bone! Vi nun havas uzantopaĝon.',
+	'translate-fs-permissions-planguage' => 'Ĉefa lingvo:',
+	'translate-fs-permissions-help' => 'Nun vi devas peti ke oni aldonu vin en la grupon de tradukistoj.
+Elektu la ĉefan lingvon en kiun vi tradukados.
+
+Vi povas mencii aliajn lingvojn kaj aliajn rimarkojn en la suba tekstujo.',
+	'translate-fs-permissions-pending' => 'Via peto aldoniĝis al [[$1]] kaj iu el la administrantoj de la retejo pritraktos ĝin laŭeble baldaŭ.
+Se vi konfirmos vian retpoŝtadreson, vi ricevos poste sciigon per retpoŝto.',
+	'translate-fs-permissions-submit' => 'Sendi la peton',
 	'translate-fs-target-text' => "Gratulojn  !
 Vi povas nun ektraduki.
 

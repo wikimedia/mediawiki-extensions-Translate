@@ -568,6 +568,7 @@ $messages['ar'] = array(
  */
 $messages['arc'] = array(
 	'pagetranslation' => 'ܬܘܪܓܡܐ ܕܦܐܬܐ',
+	'aggregategroups' => 'ܐܠܐܡ ܟܢܘܫܬ̈ܐ',
 );
 
 /** Egyptian Spoken Arabic (مصرى)
@@ -702,7 +703,7 @@ Enantes de marcar esta versión pa traducir, comprueba que los cambios fechos ne
 	'tpt-other-pages' => "Hai {{PLURAL:$1|una versión vieya d'esta páxina marcada|delles versiones vieyes d'estes páxines marcaes}} pa traducir, pero {{PLURAL:$1|a cabera versión|les caberes versiones}} nun se {{PLURAL:$1|pue|pueden}} marcar pa traducir.",
 	'tpt-discouraged-pages' => "Ta desaconseyao facer más traducciones {{PLURAL:$1|d'esta páxina|d'estes páxines}}.",
 	'tpt-select-prioritylangs' => 'Llista de códigos de les llingües prioritaries separtaos por comes:',
-	'tpt-select-prioritylangs-force' => 'Torgar les traducciones a otres llingües distintes de les prioritaries',
+	'tpt-select-prioritylangs-force' => 'Torgar les traducciones a llingües distintes de les prioritaries',
 	'tpt-select-prioritylangs-reason' => 'Motivu:',
 	'tpt-sections-prioritylangs' => 'Llingües prioritaries',
 	'tpt-rev-mark' => 'marcar pa traducir',
@@ -776,8 +777,8 @@ Testu de la unidá de traducción: <pre>$1</pre>",
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|desanició}} la páxina traducible [[:$1]] del grupu agregáu $3',
 	'pt-movepage-title' => 'Treslladar la páxina traducible $1',
 	'pt-movepage-blockers' => 'Nun se pue treslladar la páxina traducible a un nome nuevu {{PLURAL:$1|pol siguiente error|polos siguientes errores}}:',
-	'pt-movepage-block-base-exists' => 'La páxina base de destín [[:$1]] yá esiste.',
-	'pt-movepage-block-base-invalid' => 'La páxina base de destín nun ye un títulu válidu.',
+	'pt-movepage-block-base-exists' => 'La páxina traducible de destín «[[:$1]]» yá esiste.',
+	'pt-movepage-block-base-invalid' => 'El nome de la páxina traducible de destín nun ye un títulu válidu.',
 	'pt-movepage-block-tp-exists' => 'La páxina de traducción de destín [[:$2]] yá esiste.',
 	'pt-movepage-block-tp-invalid' => 'El títulu de la páxina de traducción de destín pa [[:$1]] sedría inválidu (¿demasiao llargu?).',
 	'pt-movepage-block-section-exists' => 'La páxina de destín [[:$2]] de la unidá de traducción yá esiste.',
@@ -785,9 +786,9 @@ Testu de la unidá de traducción: <pre>$1</pre>",
 	'pt-movepage-block-subpage-exists' => 'La subpáxina de destín [[:$2]] yá esiste.',
 	'pt-movepage-block-subpage-invalid' => 'El títulu de la subpáxina de destín pa [[:$1]] sedría inválidu (¿demasiao llargu?).',
 	'pt-movepage-list-pages' => 'Llista de páxines a treslladar',
-	'pt-movepage-list-translation' => 'Páxines de traducción',
-	'pt-movepage-list-section' => 'Páxines de la unidá de traducción',
-	'pt-movepage-list-other' => 'Otres subpáxines',
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Páxina|Páxines}} de traducción',
+	'pt-movepage-list-section' => '{{PLURAL:$1|Páxina|Páxines}} de la unidá de traducción',
+	'pt-movepage-list-other' => '{{PLURAL:$1|Otra subpáxina|Otres subpáxines}}',
 	'pt-movepage-list-count' => 'En total $1 {{PLURAL:$1|páxina|páxines}} a treslladar.',
 	'pt-movepage-legend' => 'Treslladar la páxina traducible',
 	'pt-movepage-current' => 'Nome actual:',
@@ -808,13 +809,13 @@ Por favor, mira nel [[Special:Log/pagetranslation|rexistru de traducción de pá
 	'pt-deletepage-lang-title' => 'Desaniciando la páxina de traducción $1.',
 	'pt-deletepage-full-title' => 'Desaniciando la páxina traducible $1.',
 	'pt-deletepage-invalid-title' => 'La páxina especificada nun ye válida.',
-	'pt-deletepage-invalid-text' => 'La páxina especificada nun ye una páxina traducible nin una traducción de la mesma.',
+	'pt-deletepage-invalid-text' => 'La páxina especificada nun ye una páxina traducible nin una páxina de traducción.',
 	'pt-deletepage-action-check' => 'Llista de páxines a desaniciar',
 	'pt-deletepage-action-perform' => 'Facer el desaniciu',
 	'pt-deletepage-action-other' => 'Camudar el destín',
 	'pt-deletepage-lang-legend' => 'Desaniciar la páxina de traducción',
 	'pt-deletepage-full-legend' => 'Desaniciar la páxina traducible',
-	'pt-deletepage-any-legend' => 'Desaniciar la páxina traducible o la traducción de la páxina traducible',
+	'pt-deletepage-any-legend' => 'Desaniciar la páxina traducible o la páxina de traducción',
 	'pt-deletepage-current' => 'Nome de la páxina:',
 	'pt-deletepage-reason' => 'Motivu:',
 	'pt-deletepage-subpages' => 'Desaniciar toles subpáxines',
@@ -826,8 +827,8 @@ Por favor, mira nel [[Special:Log/pagetranslation|rexistru de traducción de pá
 	'pt-deletepage-full-logreason' => 'Parte de la páxina traducible $1.',
 	'pt-deletepage-lang-logreason' => 'Parte de la páxina de traducción $1.',
 	'pt-deletepage-started' => 'Por favor, mira nel [[Special:Log/pagetranslation|rexistru de traducción de páxines]] pa ver los errores y mensaxe de completáu.',
-	'pt-deletepage-intro' => "Esta páxina especial te permite desaniciar páxines traducibles enteres o les traducciones a una llingua.
-L'aición de desaniciu nun sedrá inmediata, porque ye necesario desaniciar munches páxines.
+	'pt-deletepage-intro' => "Esta páxina especial te permite desaniciar una páxina traducible entera o una páxina individual de traducción a una llingua.
+L'aición de desaniciu nun sedrá inmediata, porque tamién se desaniciarán toles páxines que dependan d'elles.
 Los fallos quedarán rexistraos nel [[Special:Log/pagetranslation|rexistru de traducción de páxines]] y tendrán de reparase a mano.",
 );
 
@@ -2809,8 +2810,8 @@ Tõlkeüksuse tekst: <pre>$1</pre>',
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|eemaldas}} tõlgitava lehekülje [[:$1]] ühendrühmast $3',
 	'pt-movepage-title' => 'Tõlgitava lehekülje "$1" teisaldamine',
 	'pt-movepage-blockers' => '{{PLURAL:$1|Järgmise tõrke|Järgmiste tõrgete}} tõttu ei saa tõlgitavat lehekülge uue pealkirja alla teisaldada:',
-	'pt-movepage-block-base-exists' => 'Sihtkohaks määratud põhilehekülg "[[:$1]]" on olemas.',
-	'pt-movepage-block-base-invalid' => 'Sihtkohaks määratud põhilehekülje pealkiri ei sobi.',
+	'pt-movepage-block-base-exists' => 'Sihtkohaks määratud tõlgitav lehekülg "[[:$1]]" on olemas.',
+	'pt-movepage-block-base-invalid' => 'Sihtkohaks määratud tõlgitava lehekülje pealkiri ei sobi.',
 	'pt-movepage-block-tp-exists' => 'Sihtkohaks määratud tõlkelehekülg "[[:$2]]" on olemas.',
 	'pt-movepage-block-tp-invalid' => 'Lehekülje "[[:$1]]" sihtkohaks määratud tõlkelehekülje pealkiri oleks vigane (liiga pikk?).',
 	'pt-movepage-block-section-exists' => 'Tõlkeüksuse sihtkohaks määratud lehekülg "[[:$2]]" on olemas.',
@@ -2818,9 +2819,9 @@ Tõlkeüksuse tekst: <pre>$1</pre>',
 	'pt-movepage-block-subpage-exists' => 'Sihtkohaks määratud alamlehekülg "[[:$2]]" on olemas.',
 	'pt-movepage-block-subpage-invalid' => 'Lehekülje "[[:$1]]" sihtkohaks määratud alamlehekülje pealkiri oleks vigane (liiga pikk?).',
 	'pt-movepage-list-pages' => 'Teisaldamisele kuuluvate lehekülgede loend',
-	'pt-movepage-list-translation' => 'Tõlkeleheküljed',
-	'pt-movepage-list-section' => 'Tõlkeüksuse leheküljed',
-	'pt-movepage-list-other' => 'Muud alamleheküljed',
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Tõlkelehekülg|Tõlkeleheküljed}}',
+	'pt-movepage-list-section' => 'Tõlkeüksuse {{PLURAL:$1|lehekülg|leheküljed}}',
+	'pt-movepage-list-other' => '{{PLURAL:$1|Muu alamlehekülg|Muud alamleheküljed}}',
 	'pt-movepage-list-count' => 'Teisaldamisele {{PLURAL:$1|kuulub kokku üks lehekülg|kuuluvad kokku $1 lehekülge}}.',
 	'pt-movepage-legend' => 'Tõlgitava lehekülje teisaldamine',
 	'pt-movepage-current' => 'Praegune nimi:',
@@ -2841,13 +2842,13 @@ Palun kontrolli, kas [[Special:Log/pagetranslation|lehekülgede tõlkelogis]] on
 	'pt-deletepage-lang-title' => 'Tõlkelehekülje "$1" kustutamine',
 	'pt-deletepage-full-title' => 'Tõlgitava lehekülje "$1" kustutamine',
 	'pt-deletepage-invalid-title' => 'Määratud lehekülg pole sobiv.',
-	'pt-deletepage-invalid-text' => 'Määratud lehekülg pole tõlgitav lehekülg ega selle tõlge.',
+	'pt-deletepage-invalid-text' => 'Määratud lehekülg pole tõlgitav lehekülg ega tõlkelehekülg.',
 	'pt-deletepage-action-check' => 'Loetle kustutamisele kuuluvad leheküljed',
 	'pt-deletepage-action-perform' => 'Kustuta',
 	'pt-deletepage-action-other' => 'Muuda sihtlehekülge',
 	'pt-deletepage-lang-legend' => 'Tõlkelehekülje kustutamine',
 	'pt-deletepage-full-legend' => 'Tõlgitava lehekülje kustutamine',
-	'pt-deletepage-any-legend' => 'Tõlgitava lehekülje või selle tõlke kustutamine',
+	'pt-deletepage-any-legend' => 'Tõlgitava lehekülje või tõlkelehekülje kustutamine',
 	'pt-deletepage-current' => 'Lehekülje nimi:',
 	'pt-deletepage-reason' => 'Põhjus:',
 	'pt-deletepage-subpages' => 'Kustuta kõik alamleheküljed',
@@ -2861,7 +2862,7 @@ Palun kontrolli, kas [[Special:Log/pagetranslation|lehekülgede tõlkelogis]] on
 	'pt-deletepage-started' => 'Palun kontrolli, kas [[Special:Log/pagetranslation|lehekülgede tõlkelogis]] on tõrkeid ja teade lõpulejõudmise kohta.',
 	'pt-deletepage-intro' => 'See erilehekülg võimaldab kustutada terveid tõlgitavaid lehekülgi või ühte keelde tehtud tõlkeid.
 Toiming pole kohene, sest kustutada tuleb palju lehekülgi.
-Nurjumised logitakse [[Special:Log/pagetranslation|lehekülgede tõlkelogisse]] ja need tuleb käsitsi parandada.',
+Nurjumised logitakse [[Special:Log/pagetranslation|lehekülgede tõlkelogisse]] ja need tuleb käsitsi parandada.', # Fuzzy
 );
 
 /** Basque (euskara)
@@ -2945,9 +2946,11 @@ $messages['fa'] = array(
 	'pt-log-name' => 'سیاههٔ ترجمهٔ صفحه',
 	'pt-log-mark' => 'نسخه $3 از صفحهٔ «[[:$1]]» را برای ترجمه {{GENDER:$2|علامت زد}}',
 	'pt-log-unmark' => 'صفحهٔ «[[:$1]]» را از ترجمه {{GENDER:$2|حذف کرد}}',
-	'pt-movepage-list-translation' => 'صفحه‌های ترجمه', # Fuzzy
-	'pt-movepage-list-section' => 'صفحه‌های واحد ترجمه', # Fuzzy
-	'pt-movepage-list-other' => 'زیرصفحه‌های دیگر', # Fuzzy
+	'pt-movepage-list-pages' => 'فهرست صفحه‌ها برای انتقال',
+	'pt-movepage-list-translation' => '{{PLURAL:$1|صفحهٔ|صفحه‌های}} ترجمه',
+	'pt-movepage-list-section' => '{{PLURAL:$1|صفحهٔ|صفحه‌های}} واحد ترجمه',
+	'pt-movepage-list-other' => 'زیر{{PLURAL:$1|صفحهٔ|صفحه‌های}} دیگر',
+	'pt-movepage-legend' => 'انتقال صفحهٔ قابل ترجمه',
 	'pt-movepage-current' => 'نام فعلی:',
 	'pt-movepage-new' => 'نام جدید:',
 	'pt-movepage-reason' => 'دلیل:',
@@ -2961,7 +2964,7 @@ $messages['fa'] = array(
 	'pt-deletepage-action-other' => 'تغییر هدف',
 	'pt-deletepage-lang-legend' => 'حذف صفحهٔ ترجمه',
 	'pt-deletepage-full-legend' => 'حذف صحفهٔ قابل ترجمه',
-	'pt-deletepage-any-legend' => 'حذف صفحهٔ قابل ترجمه یا ترجمهٔ صفحهٔ قابل ترجمه',
+	'pt-deletepage-any-legend' => 'حذف صفحهٔ قابل ترجمه یا ترجمهٔ صفحهٔ قابل ترجمه', # Fuzzy
 	'pt-deletepage-current' => 'نام صفحه:',
 	'pt-deletepage-reason' => 'دلیل:',
 	'pt-deletepage-subpages' => 'حذف تمام زیرصفحه‌ها',
@@ -7482,7 +7485,7 @@ Prima ëd marché costa version për la tradussion, controlé che le modìfiche 
 ma {{PLURAL:$1|l'ùltima version a peul|j'ùltime version a peulo}} pa esse marcà për la tradussion.",
 	'tpt-discouraged-pages' => "{{PLURAL:$1|Costa pàgina a l'é stàita|Coste pagine a son ëstaite}} dëscoragià da avèj d'àutre tradussion.",
 	'tpt-select-prioritylangs' => "Lista dij còdes prioritari ëd le lenghe separà da 'd vìrgole:",
-	'tpt-select-prioritylangs-force' => "Ampedì le tradussion an d'àutre lenghe che le lenghe prioritarie",
+	'tpt-select-prioritylangs-force' => 'Ampedì le tradussion an lenghe diferente da le lenghe prioritarie',
 	'tpt-select-prioritylangs-reason' => 'Rason:',
 	'tpt-sections-prioritylangs' => 'Lenghe prioritarie',
 	'tpt-rev-mark' => 'marca për tradussion',
@@ -7556,8 +7559,8 @@ Test ëd l'unità ëd tradussion: <pre>$1</pre>",
 	'pt-log-aggregategroup-dissociate' => "{{GENDER:$2|a l'ha gavà}} la pàgina da volté «[[:$1]]» da la partìa agregà $3",
 	'pt-movepage-title' => 'Tramudé la pàgina da volté $1',
 	'pt-movepage-blockers' => 'La pàgina da volté a peul pa esse tramudà a un nòm neuv a motiv ëd {{PLURAL:$1|cost eror|costi eror}}:',
-	'pt-movepage-block-base-exists' => 'La pàgina base pontà [[:$1]] a esist.',
-	'pt-movepage-block-base-invalid' => "La pàgina base pontà a l'é pa un tìtol bon.",
+	'pt-movepage-block-base-exists' => 'La pàgina voltàbil pontà "[[:$1]]" a esist.',
+	'pt-movepage-block-base-invalid' => "Ël nòm dla pàgina voltàbil pontà a l'é pa un tìtol bon.",
 	'pt-movepage-block-tp-exists' => 'La pàgina ëd viragi pontà [[:$2]] a esist.',
 	'pt-movepage-block-tp-invalid' => 'Ël tìtol ëd la pàgina ëd viragi pontà për [[:$1]] a podrìa esse pa bon (tròp longh?).',
 	'pt-movepage-block-section-exists' => "La pàgina bërsaj «[[:$2]]» për l'unità ëd tradussion a esist.",
@@ -7588,13 +7591,13 @@ Për piasì, ch'a contròla ël [[Special:Log/pagetranslation|registr ëd tradus
 	'pt-deletepage-lang-title' => 'Scancelassion ëd la pàgina ëd tradussion $1.',
 	'pt-deletepage-full-title' => 'Scancelassion ëd la pàgina da volté $1.',
 	'pt-deletepage-invalid-title' => "La pàgina spessificà a l'é pa bon-a.",
-	'pt-deletepage-invalid-text' => "La pàgina specificà a l'é nen na pàgina da volté ni na tradussion ëd cola.",
+	'pt-deletepage-invalid-text' => "La pàgina specificà a l'é nen na pàgina da volté ni na pàgina ëd tradussion.",
 	'pt-deletepage-action-check' => 'Listé le pàgine da scancelé',
 	'pt-deletepage-action-perform' => 'Fé la scancelassion',
 	'pt-deletepage-action-other' => 'Cangé ël bërsaj',
 	'pt-deletepage-lang-legend' => 'Scancelé la pàgina ëd tradussion',
 	'pt-deletepage-full-legend' => 'Scancelé la pàgina da volté',
-	'pt-deletepage-any-legend' => 'Scancelé la pàgina da volté o la tradussion ëd na pàgina da volté',
+	'pt-deletepage-any-legend' => 'Scancelé la pàgina da volté o la pàgina ëd tradussion',
 	'pt-deletepage-current' => 'Nòm ëd la pàgina:',
 	'pt-deletepage-reason' => 'Rason:',
 	'pt-deletepage-subpages' => 'Scancelé tute le sot-pàgine',
@@ -7606,8 +7609,8 @@ Për piasì, ch'a contròla ël [[Special:Log/pagetranslation|registr ëd tradus
 	'pt-deletepage-full-logreason' => 'Tòch ëd la pàgina da volté $1.',
 	'pt-deletepage-lang-logreason' => 'Tòch ëd la pàgina ëd tradussion $1.',
 	'pt-deletepage-started' => "Për piasì, ch'a contròla ël [[Special:Log/pagetranslation|registr ëd tradussion dle pàgine]] për j'eror e ël mëssagi ëd completament.",
-	'pt-deletepage-intro' => "Costa pàgina special a-j përmët dë scancelé qualsëssìa pàgina da volté o dle tradussion ant na lenga.
-L'assion dë scancelassion a sarà pa imedià, përché tante pàgine a devo esse scancelà.
+	'pt-deletepage-intro' => "Costa pàgina special a-j përmët dë scancelé na qualsëssìa pàgina, o na pàgina individual ëd tradussion ant na lenga.
+L'assion dë scancelassion a sarà pa imedià, përché tute le pàgine dipendente da cola a saran ëdcò scancelà.
 J'eror a saran registrà ant ël [[Special:Log/pagetranslation|registr ëd le tradussion ëd le pàgine]]  e a devo esse rangià a man.",
 );
 
