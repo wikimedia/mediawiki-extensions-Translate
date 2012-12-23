@@ -848,8 +848,131 @@ $messages['az'] = array(
  * @author Mousa
  */
 $messages['azb'] = array(
+	'pagetranslation' => 'صحیفه چئویرمه‌سی',
+	'right-pagetranslation' => 'صحیفه‌لرین نوسخه‌لرینی چئویرمک اوچون نیشانلا',
+	'action-pagetranslation' => 'چئویرمه‌لی صحیفه‌لری ایداره ائت',
+	'tpt-desc' => 'مقاله‌لری چئویرمک اوچون اوزانتی',
+	'tpt-section' => 'چئویرمه بیریمی $1',
+	'tpt-section-new' => 'یئنی چئویرمه بیریمی.
+آد: $1',
+	'tpt-section-deleted' => 'چئویرمه بیریمی $1',
+	'tpt-template' => 'صحیفه شابلونو',
+	'tpt-templatediff' => 'صحیفه شابلونو دَییشدیریلیب‌دیر.',
+	'tpt-diff-old' => 'قاباقکی یازی',
+	'tpt-diff-new' => 'یئنی یازی',
+	'tpt-submit' => 'بو نوسخه‌نی چئویرمگه نیشانلا',
+	'tpt-sections-oldnew' => 'یئنی و اولان چئویرمه بیریملری',
+	'tpt-sections-deleted' => 'سیلینمیش چئویرمه بیریملری',
+	'tpt-sections-template' => 'چئویرمک صحیفه‌سی شابلونو',
+	'tpt-action-nofuzzy' => 'چئویرمه‌لری اعتیبارسیز ائتمه',
+	'tpt-badtitle' => 'وئریلمیش صحیفه آدی ($1) گئچرلی بیر باشلیق دئییل',
+	'tpt-nosuchpage' => '$1 صحیفه‌سی یوخدور',
+	'tpt-oldrevision' => '$2، [[$1]] صحیفه‌سینین سون نوسخه‌سی دئییل.
+یالنیز سون وئرسیالاری چئویرمگه نیشانلاماق اولا بیلر.',
+	'tpt-notsuitable' => '$1 صحیفه‌سی چئویرمگه اویغون دئییل.
+آرخایین اولون اونون <nowiki><translate></nowiki> اِتیکِتلری و گئچرلی سینتکسی واردیر.',
+	'tpt-saveok' => '[[$1]] صحیفه‌سی {{PLURAL:$2|بیر|$2}} چئویرمک بیریمی‌له چئویرمگه نیشانلانیب‌دیر.
+بو صحیفه‌نی ایندی <span class="plainlinks">[$3 چئویرمک اولا بیلر]</span>.',
+	'tpt-badsect' => '$2 چئویرمک بیریمی اوچون «$1» اویغون آد دئییل.',
+	'tpt-showpage-intro' => 'آشاغیدا یئنی، اولان و سیلینن چئویرمه بیریملری لیست اولوبلار.
+بو نوسخه‌نی چئویرمگه نیشانلاماقدان قاباق، باخین کی چئویرمک بیریملرینه اولان دَییشیکلیکلر ان آز اولسون کی چئویرنلره آرتیق گرکسیز ایشین قاباغی آلینسین.',
+	'tpt-mark-summary' => 'بو نوسخه‌نی چئویرمگه نیشانلادی',
+	'tpt-edit-failed' => 'صحیفه گونجل‌لننمه‌دی: $1',
+	'tpt-duplicate' => '$1 چئویرمک بیریمی آدی بیر دفعه‌دن چوخ ایشلنیب‌دیر.',
+	'tpt-already-marked' => 'بو صحیفه‌نین سون نوسخه‌سی قاباقجادان چئویرمگه نیشانلانیب‌دیر.',
+	'tpt-unmarked' => '$1 صحیفه‌سی داها چئویرمگه نیشانلانماییب‌دیر.',
+	'tpt-list-nopages' => 'هئچ بیر صحیفه چئویرمگه نیشانلانماییب‌دیر یادا چئویرمگه حاضیر دئییل.',
+	'tpt-new-pages-title' => 'چئویرمگه اؤنریلن صحیفه‌لر',
+	'tpt-old-pages-title' => 'چئویرمه‌ده صحیفه‌لر',
+	'tpt-other-pages-title' => 'سینمیش صحیفه‌لر',
+	'tpt-discouraged-pages-title' => 'چئویرمه‌سی اؤنریلمه‌ین صحیفه‌لر',
+	'tpt-new-pages' => 'بو {{PLURAL:$1|صحیفه‌ده|صحیفه‌لرده}} چئویرمک اِتیکِتلری اولان یازیلار واردیر، اما ایندی بو {{PLURAL:$1|صحیفه‌نین|صحیفه‌لرین}} هئچ بیر {{PLURAL:$1|نوسخه‌سی|نوسخه‌لری}} چئویرمگه نیشانلانماییب‌دیر.',
+	'tpt-old-pages' => 'بو {{PLURAL:$1|صحیفه‌نین|صحیفه‌لرین}} بعضی نوسخه‌لری چئویرمگه نیشانلانیب‌دیر.',
+	'tpt-other-pages' => 'بو {{PLURAL:$1|صحیفه‌نین بیر اسکی نوسخه‌سی|صحیفه‌لرین اسکی نوسخه‌لری}} چئویرمگه نیشانلانیب‌دیر،
+اما سون {{PLURAL:$1|نوسخه چئویرمگه نیشانلانا بیلمز|نوسخه‌لر چئویرمگه نیشانلانا بیلمزلر}}.',
+	'tpt-discouraged-pages' => 'بو {{PLURAL:$1|صحیفه‌نین|صحیفه‌لرین}} داها چئویرمگی توصیه اولونمور.',
+	'tpt-select-prioritylangs' => 'کاما ایله آیریلمیش اؤنجه‌لیک دیل کودلاری:',
+	'tpt-select-prioritylangs-force' => 'اؤنجه‌لیک دیل‌لردن سونراکی دیل‌لره چئویرمه‌نین قاباغینی آل',
+	'tpt-select-prioritylangs-reason' => 'ندن:',
+	'tpt-sections-prioritylangs' => 'اؤنجه‌لیک دیل‌لری',
+	'tpt-rev-mark' => 'چئویرمگه نیشانلا',
+	'tpt-rev-unmark' => 'چئویرمک‌دن سیل',
+	'tpt-rev-discourage' => 'توصیه ائتمه',
+	'tpt-rev-encourage' => 'قایتار',
+	'tpt-rev-mark-tooltip' => 'بو صحیفه‌نین سون نوسخه‌سینی چئویرمگه نیشانلا.',
+	'tpt-rev-unmark-tooltip' => 'بو صحیفه‌نی چئویرمک‌دن سیل.',
+	'tpt-rev-discourage-tooltip' => 'بو صحیفه‌یه داها آرتیق چئویرمگی توصیه ائتمه.',
+	'tpt-rev-encourage-tooltip' => 'بو صحیفه‌نی نورمال چئویرمگه قایتار.',
 	'translate-tag-translate-link-desc' => 'یو لاییحه‌نی چئویر',
+	'translate-tag-markthis' => 'بو صحیفه‌نی چئویرمگه نیشانلا',
+	'translate-tag-markthisagain' => 'بو صحیفه‌نین سون دفعه <span class="plainlinks">[$2 چئویرمگه نیشانلان]</span>اندان بویانا <span class="plainlinks">[$1 دَییشیکلیکلر]</span>ی واردیر.',
+	'translate-tag-hasnew' => 'بو صحیفه‌نین <span class="plainlinks">[$1 دَییشیکلیکلری]</span> واردیر کی چئویرمگه نیشانلانماییب‌لار.',
+	'tpt-translation-intro' => 'بو صحیفه [[$2]] صحیفه‌سینین <span class="plainlinks">[$1 چئویریلمیش نوسخه‌سی]</span>‌دیر و $3٪ چئویرمگی قاباغا گئدیب‌دیر.',
+	'tpt-translation-intro-fuzzy' => 'تاریخی گئچمیش چئویرمه‌لر بونون کیمی نیشانلانیبلار.',
 	'tpt-languages-legend' => 'آیری دیل‌لر:',
+	'tpt-languages-zero' => 'بو دیله چئویرمگه باشلا',
+	'tpt-target-page' => 'بو صحیفه‌نی ال ایله گونج‌لَمک اولماز.
+بو صحیفه [[$1]] صحیفه‌سینین چئویرمه‌سیدیر و [$2 چئویرمک آراجی] ایله چئویریله بیلر.',
+	'tpt-unknown-page' => 'بو آدفضاسی مقاله‌لری چئویرمگه رِزِرو اولوب‌دور.
+سیز چئویرمگه چالیشدیغینیز صحیفه، هئچ بیر چئویرمگه نیشانلانمیش صحیفه‌یه مطابق نظره گلمیر.',
+	'tpt-translation-restricted' => 'بو صحیفه‌نین بو دیله چئویرمه‌سی بیر چئویرمک ایداره‌چیسی ایله قاباغی آلینیب‌دیر.
+
+ندن: $1',
+	'tpt-discouraged-language-force' => "'''بو صحیفه $2-ه چئویریله بیلمز.'''
+
+بیر چئویرمک ایداره‌چیسی بئله قرار آلیب کی بو صحیفه یالنیز $3-ه چئویریله بیلر.",
+	'tpt-discouraged-language' => "'''بو صحیفه‌نی $2-ه چئویرمک بیر اؤنجه‌لیک دئییل.'''
+
+بیر چئویرمک ایداره‌چیسی بئله قرار آلیب کی چئویرمک تمرکزی $3-ه اولسون.",
+	'tpt-discouraged-language-reason' => 'ندن: $1',
+	'tpt-priority-languages' => 'بیر چئویرمک ایداره‌چیسی، بو گروپون اؤنجه‌لیک دیلینی $1 سئچیب‌دیر.',
+	'tpt-render-summary' => 'قایناق صحیفه‌نین یئنی نوسخه‌سی ایله تطبیق اوچون گونجل‌لنیر',
+	'tpt-download-page' => 'صحیفه‌نی چئویرمه‌لرله ائشیگه چیخارت',
+	'aggregategroups' => 'بیرلشدیریلمیش گروپلار',
+	'tpt-aggregategroup-add' => 'آرتیر',
+	'tpt-aggregategroup-save' => 'قئید ائت',
+	'tpt-aggregategroup-add-new' => 'بیر یئنی بیرلشمه گروپو آرتیر',
+	'tpt-aggregategroup-new-name' => 'آد:',
+	'tpt-aggregategroup-new-description' => 'توضیح (ایستگه باغلی):',
+	'tpt-aggregategroup-remove-confirm' => 'بو بیرلشمه گروپونو سیلمکدن آرخایینسینیز؟',
+	'tpt-aggregategroup-invalid-group' => 'گروپ یوخدور',
+	'pt-parse-open' => 'بالانس اولمامیش &lt;translate> اِتیکِتی.
+چئویرمک شابلونو: <pre>$1</pre>',
+	'pt-parse-close' => 'بالانس اولمامیش &lt;/translate> اِتیکِتی.
+چئویرمک شابلونو: <pre>$1</pre>',
+	'pt-parse-nested' => 'بیر بیری ایچینده اولان &lt;translate> چئویرمه بیریملرینه ایجازه یوخدور.
+اِتیکِت یازیسی: <pre>$1</pre>',
+	'pt-log-priority-langs-unset' => '«[[:$1]]» چئویریله بیلن صحیفه‌دن اؤنجه‌لیک دیل‌لری {{GENDER:$2|سیلدی}}',
+	'pt-log-priority-langs' => '«[[:$1]]» چئویریله بیلن صحیفه‌نین اؤنجه‌لیک دیل‌لرینی $3-ه {{GENDER:$2|چئویردی}}. ندن: $4',
+	'pt-log-priority-langs-force' => '«[[:$1]]» چئویریله بیلن صحیفه اوچون دیل‌لری $3-ه {{GENDER:$2|محدودلاشدیردی}}. ندن: $4',
+	'pt-log-aggregategroup-associate' => '«[[:$1]]» چئویریله بیلن صحیفه‌نی $3 بیرلشمیش گروپونا {{GENDER:$2|آرتیردی}}',
+	'pt-log-aggregategroup-dissociate' => '«[[:$1]]» چئویریله بیلن صحیفه‌نی $3 بیرلشمیش گروپوندان {{GENDER:$2|سیلدی}}',
+	'pt-movepage-title' => '«$1» چئویریله بیلن صحیفه‌نین آدینی دَییشدیر',
+	'pt-movepage-blockers' => 'بو {{PLURAL:$1|خطا|خطالار}} اوچون چئویریله بیلن صحیفه‌نین آدی دَییشدیریلنمیر:',
+	'pt-movepage-block-base-exists' => '«[[:$1]]» هدف چئویریله بیلن صحیفه، قاباقجادان واردیر.',
+	'pt-movepage-block-base-invalid' => 'هدف چئویریله بیلن صحیفه‌نین آدی، گئچرلی بیر باشلیق دئییل.',
+	'pt-movepage-block-tp-exists' => '«[[:$2]]» هدف چئویرمک صحیفه‌سی قاباقجادان واردیر.',
+	'pt-movepage-block-tp-invalid' => '«[[:$1]]» اوچون هدف چئویرمک صحیفه‌سی باشلیغی گئچرسیز اولار (چوخ اوزون؟).',
+	'pt-movepage-block-section-exists' => 'چئویرمه بیریمی اوچون «[[:$2]]» هدف صحیفه‌سی قاباقجادان واردیر.',
+	'pt-movepage-block-section-invalid' => 'چئویرمک بیریمی اوچون «[[:$1]]»-ه هدف صحیفه باشلیغی گئچرسیز اولار (چوخ اوزون؟).',
+	'pt-movepage-block-subpage-exists' => '«[[:$2]]» هدف آلت‌صحیفه‌سی یوخدور.',
+	'pt-movepage-block-subpage-invalid' => '«[[:$1]]» اوچون هدف آلت‌صحیفه باشلیغی گئچرسیز اولار (چوخ اوزون؟).',
+	'pt-movepage-started' => 'اساس صحیفه ایندی آدی دَییشدیریلیب‌دیر.
+لوطفاً خطالار و قورتارماق مئساژلاری اوچون [[Special:Log/pagetranslation|صحیفه چئویرمک قئیدلری]]نی یوخلایین.',
+	'pt-locked-page' => 'ایندی چئویریله بیلن صحیفه‌نین آدی دَییشدیلماقدا اولماغینا گؤره، بو صحیفه قیفیل‌لانیب‌دیر.',
+	'pt-deletepage-lang-title' => '«$1» چئویرمک صحیفه‌سی سیلینیر.',
+	'pt-deletepage-full-title' => '«$1» چئویریله بیلن صحیفه سیلینیر.',
+	'pt-deletepage-invalid-title' => 'بیلیندیریلمیش صحیفه گئچرسیزدیر.',
+	'pt-deletepage-invalid-text' => 'بیلندیریلمیش صحیفه نه چئویرمک صحیفه‌سی‌دیر و نه چئویریله بیلن صحیفه.',
+	'pt-deletepage-action-check' => 'سیلینه‌جک صحیفه‌لری لیست ائت',
+	'pt-deletepage-action-perform' => 'سیلمه‌نی ائت',
+	'pt-deletepage-action-other' => 'هدفی دَییشدیر',
+	'pt-deletepage-lang-legend' => 'چئویرمک صحیفه‌سینی سیل',
+	'pt-deletepage-full-legend' => 'چئویریله بیلن صحیفه‌نی سیل',
+	'pt-deletepage-any-legend' => 'چئویریله بیلن صحیفه یادا چئویرمک صحیفه‌سینی سیل',
+	'pt-deletepage-current' => 'صحیفه آدی:',
+	'pt-deletepage-reason' => 'ندن:',
+	'pt-deletepage-subpages' => 'بوتون آلت‌صحیفه‌لری سیل',
 );
 
 /** Bashkir (башҡортса)
@@ -1215,17 +1338,19 @@ $messages['be-tarask'] = array(
 
 /** Bulgarian (български)
  * @author DCLXVI
+ * @author පසිඳු කාවින්ද
  */
 $messages['bg'] = array(
 	'tpt-diff-old' => 'Предишен текст',
 	'tpt-diff-new' => 'Нов текст',
+	'tpt-select-prioritylangs-reason' => 'Причина:',
 	'translate-tag-translate-link-desc' => 'Превеждане на тази страница',
 	'tpt-languages-legend' => 'Други езици:',
 	'tpt-download-page' => 'Изнасяне на страница с преводите',
 	'tpt-aggregategroup-add' => 'Добавяне',
 	'tpt-aggregategroup-save' => 'Съхраняване',
 	'tpt-aggregategroup-new-name' => 'Име:',
-	'pt-movepage-list-other' => 'Други подстраници',
+	'pt-movepage-list-other' => 'Други подстраници', # Fuzzy
 	'pt-movepage-current' => 'Текущо име:',
 	'pt-movepage-new' => 'Ново име:',
 	'pt-movepage-reason' => 'Причина:',
@@ -2446,6 +2571,7 @@ $messages['el'] = array(
 
 /** Esperanto (Esperanto)
  * @author ArnoLagrange
+ * @author Blahma
  * @author Yekrats
  */
 $messages['eo'] = array(
@@ -2487,18 +2613,61 @@ La paĝo povas nun esti <span class="plainlinks">[$3 tradukita]</span>.',
 	'tpt-download-page' => 'Eksporti paĝon kun tradukoj',
 	'pt-log-name' => 'Protokolo pri paĝaj tradukoj',
 	'pt-log-mark' => '{{GENDER:$2|markis}} revizion $3 de paĝo "[[:$1]]" por traduki',
-	'pt-movepage-list-translation' => 'Tradukaj paĝoj',
-	'pt-movepage-list-section' => 'Paĝoj en sekcio', # Fuzzy
-	'pt-movepage-list-other' => 'Aliaj subpaĝoj',
+	'pt-movepage-title' => 'Movi la tradukeblan paĝon "$1"',
+	'pt-movepage-blockers' => 'La tradukebla paĝo ne povis esti movita al nova nomo pro la {{PLURAL:$1|sekva eraro|sekvaj eraroj}}:',
+	'pt-movepage-block-base-exists' => 'La cela tradukebla paĝo "[[:$1]]" ekzistas.',
+	'pt-movepage-block-base-invalid' => 'Nomo de la cela tradukebla paĝo ne estas valida titolo.',
+	'pt-movepage-block-tp-exists' => 'La cela tradukpaĝo "[[:$2]]" ekzistas.',
+	'pt-movepage-block-tp-invalid' => 'Titolo de la cela tradukpaĝo por "[[:$1]]" estus malvalida (tro longa?).',
+	'pt-movepage-block-section-exists' => 'La celpaĝo "[[:$2]]" de la traduka unuo ekzistas.',
+	'pt-movepage-block-section-invalid' => 'Nomo de la celpaĝo por "[[:$1]]" de la traduka unuo estus malvalida (tro longa?).',
+	'pt-movepage-block-subpage-exists' => 'La cela subpaĝo "[[:$2]]" ekzistas.',
+	'pt-movepage-block-subpage-invalid' => 'Nomo de la cela subpaĝo por "[[:$1]]" estus malvalida (tro longa?).',
+	'pt-movepage-list-pages' => 'Listo de movotaj paĝoj',
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Traduka paĝo|Tradukaj paĝoj}}',
+	'pt-movepage-list-section' => '{{PLURAL:$1|Paĝo|Paĝoj}} de tradukaj unuoj',
+	'pt-movepage-list-other' => '{{PLURAL:$1|Alia subpaĝo|Aliaj subpaĝoj}}',
+	'pt-movepage-list-count' => 'Entute $1 {{PLURAL:$1|paĝo|paĝoj}} por movi.',
+	'pt-movepage-legend' => 'Movi tradukeblan paĝon',
 	'pt-movepage-current' => 'Nuna nomo:',
 	'pt-movepage-new' => 'Nova nomo:',
 	'pt-movepage-reason' => 'Kialo:',
+	'pt-movepage-subpages' => 'Movi ĉiujn subpaĝojn',
+	'pt-movepage-action-check' => 'Kontroli ĉu la movo fareblas',
+	'pt-movepage-action-perform' => 'Fari la movon',
+	'pt-movepage-action-other' => 'Ŝanĝi celon',
+	'pt-movepage-intro' => 'Tiu ĉi speciala paĝo permesas al vi movi paĝojn markitajn por traduko.
+La movo ne efektiviĝos tuj, ĉar necesos movi multajn paĝojn.
+Dum paĝoj estas movataj, ne eblas pri ili labori.
+Eventualaj fiaskoj estos protokolitaj en [[Special:Log/pagetranslation|protokolo pri paĝotradukado]] kaj ilin necesos ripari permane.',
+	'pt-movepage-logreason' => 'Parto de tradukebla paĝo "$1".',
+	'pt-movepage-started' => 'La baza paĝo nun estas movita.
+Bonvolu kontroli la [[Special:Log/pagetranslation|protokolon pri paĝotradukado]] por eraroj kaj mesaĝo pri kompletiĝo.',
+	'pt-locked-page' => 'Tiu ĉi paĝo estas ŝlosita ĉar la tradukebla paĝo nuntempe estas movata.',
+	'pt-deletepage-lang-title' => 'Foriganta la tradukpaĝon "$1".',
+	'pt-deletepage-full-title' => 'Foriganta la tradukeblan paĝon "$1".',
+	'pt-deletepage-invalid-title' => 'La specifita paĝo ne estas valida.',
+	'pt-deletepage-invalid-text' => 'La specifita paĝo ne estas tradukebla paĝo nek tradukpaĝo.',
+	'pt-deletepage-action-check' => 'Listigi forigotajn paĝojn',
 	'pt-deletepage-action-perform' => 'Fari la forigon',
+	'pt-deletepage-action-other' => 'Ŝanĝi celon:',
+	'pt-deletepage-lang-legend' => 'Forigi tradukpaĝon',
+	'pt-deletepage-full-legend' => 'Forigi tradukeblan paĝon',
+	'pt-deletepage-any-legend' => 'Forigi tradukeblan paĝon aŭ tradukpaĝon',
 	'pt-deletepage-current' => 'Nomo de paĝo:',
 	'pt-deletepage-reason' => 'Kialo:',
 	'pt-deletepage-subpages' => 'Forigi ĉiujn subpaĝojn',
-	'pt-deletepage-list-section' => 'Sekciaj paĝoj', # Fuzzy
+	'pt-deletepage-list-pages' => 'Listo de forigotaj paĝoj',
+	'pt-deletepage-list-translation' => 'Tradukpaĝoj',
+	'pt-deletepage-list-section' => 'Paĝoj de tradukada unuo',
+	'pt-deletepage-list-other' => 'Aliaj subpaĝoj',
 	'pt-deletepage-list-count' => 'Entute $1 {{PLURAL:$1|paĝo|paĝoj}} por forigi.',
+	'pt-deletepage-full-logreason' => 'Pato de la tradukebla paĝo "$1".',
+	'pt-deletepage-lang-logreason' => 'Pato de la tradukpaĝo "$1".',
+	'pt-deletepage-started' => 'Bonvolu rekontroli la [[Special:Log/pagetranslation|protokolon pri paĝotradukado]] por eraroj kaj mesaĝo pri kompletiĝo.',
+	'pt-deletepage-intro' => 'En tiu ĉi speciala paĝo vi povas forigi tutan tradukeblan paĝon aŭ individuan tradukpaĝon en iu lingvo.
+La forigo ne efektiviĝos tuj, ĉar ĉiuj dependaj paĝoj estos ankaŭ forigitaj.
+Fiaskoj estos protokolitaj en la [[Special:Log/pagetranslation|protokolo pri paĝotradukado]] kaj ilin necesos ripari permane.',
 );
 
 /** Spanish (español)
@@ -4675,6 +4844,7 @@ Fallimentos essera registrate in le [[Special:Log/pagetranslation|registro de tr
  * @author Irwangatot
  * @author IvanLanin
  * @author Rex
+ * @author පසිඳු කාවින්ද
  */
 $messages['id'] = array(
 	'pagetranslation' => 'Penerjemahan halaman',
@@ -4745,8 +4915,8 @@ Teks bagian: <pre>$1</pre>', # Fuzzy
 	'pt-log-movenok' => '{{GENDER:$2|mengalami}} masalah ketika memindahkan [[:$1]] ke [[:$3]]',
 	'pt-movepage-title' => 'Pindahkan halaman yang dapat diterjemahkan $1',
 	'pt-movepage-blockers' => 'Halaman yang dapat diterjemahkan tidak dapat dipindahkan ke nama baru karena {{PLURAL:$1|kesalahan|kesalahan}} berikut:',
-	'pt-movepage-block-base-exists' => 'Halaman dasar target [[:$1]] ditemukan.',
-	'pt-movepage-block-base-invalid' => 'Halaman dasar target memiliki judul yang tidak sah.',
+	'pt-movepage-block-base-exists' => 'Halaman dasar target [[:$1]] ditemukan.', # Fuzzy
+	'pt-movepage-block-base-invalid' => 'Halaman dasar target memiliki judul yang tidak sah.', # Fuzzy
 	'pt-movepage-block-tp-exists' => 'Halaman penerjemahan target [[:$2]] ditemukan.',
 	'pt-movepage-block-tp-invalid' => 'Judul halaman penerjemahan target untuk [[:$1]] salah (terlalu panjang?).',
 	'pt-movepage-block-section-exists' => 'Halaman bagian target [[:$2]] ditemukan.', # Fuzzy
@@ -4754,9 +4924,9 @@ Teks bagian: <pre>$1</pre>', # Fuzzy
 	'pt-movepage-block-subpage-exists' => 'Subhalaman taget [[:$2]] ditemukan.',
 	'pt-movepage-block-subpage-invalid' => 'Judul subhalaman target untuk [[:$1]] salah (terlalu panjang?).',
 	'pt-movepage-list-pages' => 'Daftar halaman yang akan dipindahkan',
-	'pt-movepage-list-translation' => 'Halaman penerjemahan',
+	'pt-movepage-list-translation' => 'Halaman penerjemahan', # Fuzzy
 	'pt-movepage-list-section' => 'Halaman bagian', # Fuzzy
-	'pt-movepage-list-other' => 'Subhalaman lain',
+	'pt-movepage-list-other' => 'Subhalaman lain', # Fuzzy
 	'pt-movepage-list-count' => 'Secara keseluruhan ada $1 {{PLURAL:$1|halaman|halaman}} yang akan dipindahkan.',
 	'pt-movepage-legend' => 'Pindahkan halaman yang dapat diterjemahkan',
 	'pt-movepage-current' => 'Nama sekarang:',
@@ -4774,6 +4944,7 @@ Kegagalan akan dicatat di [[Special:Log/pagetranslation|log terjemahan halaman]]
 	'pt-movepage-started' => 'Halaman dasar telah dipindahkan.
 Silakan periksa [[Special:Log/pagetranslation|log penerjemahan halaman]] untuk pesan kesalahan dan penyelesaian.',
 	'pt-locked-page' => 'Halaman ini dikunci karena halaman yang dapat diterjemahkan saat ini sedang dipindahkan.',
+	'pt-deletepage-reason' => 'Alasan:',
 );
 
 /** Igbo (Igbo)
@@ -8902,7 +9073,7 @@ Innan den här versionen märks för översättning, kontrollera att ändringarn
 men {{PLURAL:$1|den senaste versionen|de senaste versionerna}} kan inte markeras för översättning.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Denna sida|Dessa sidor}} har förhindrats från vidare översättning.',
 	'tpt-select-prioritylangs' => 'Kommaseparerad lista över prioriterade språkkoder:',
-	'tpt-select-prioritylangs-force' => 'Förhindra översättningar på andra språk än de prioriterade språken',
+	'tpt-select-prioritylangs-force' => 'Förhindra översättningar på andra språk än de prioriterade språken', # Fuzzy
 	'tpt-select-prioritylangs-reason' => 'Anledning:',
 	'tpt-sections-prioritylangs' => 'Prioriterade språk',
 	'tpt-rev-mark' => 'markera för översättning',
@@ -8985,13 +9156,13 @@ Anledning: $1',
 	'pt-deletepage-lang-title' => 'Raderar översättningssida $1.',
 	'pt-deletepage-full-title' => 'Raderar översättningsbar sida $1.',
 	'pt-deletepage-invalid-title' => 'Den angivna sidan är inte giltig.',
-	'pt-deletepage-invalid-text' => 'Den angivna sidan är varken en översättningsbar sida eller en översättning av den.',
+	'pt-deletepage-invalid-text' => 'Den angivna sidan är varken en översättbar sida eller en översättningssida.',
 	'pt-deletepage-action-check' => 'Lista över sidor som ska tas bort',
 	'pt-deletepage-action-perform' => 'Utför raderingen',
 	'pt-deletepage-action-other' => 'Ändra mål',
 	'pt-deletepage-lang-legend' => 'Radera översättningssida',
 	'pt-deletepage-full-legend' => 'Radera översättningsbar sida',
-	'pt-deletepage-any-legend' => 'Radera översättningsbar sida eller översättning av översättningsbar sida',
+	'pt-deletepage-any-legend' => 'Radera översättbar sida eller översättningssida',
 	'pt-deletepage-current' => 'Sidnamn:',
 	'pt-deletepage-reason' => 'Anledning:',
 	'pt-deletepage-subpages' => 'Radera alla undersidor',
@@ -10108,6 +10279,7 @@ $messages['yi'] = array(
  * @author Linforest
  * @author Mys 721tx
  * @author PhiLiP
+ * @author Shirayuki
  * @author Supaiku
  * @author Xiaomingyan
  * @author Yfdyh000
@@ -10116,6 +10288,7 @@ $messages['yi'] = array(
 $messages['zh-hans'] = array(
 	'pagetranslation' => '页面翻译',
 	'right-pagetranslation' => '标记翻译的页面版本',
+	'action-pagetranslation' => '管理可翻译页面',
 	'tpt-desc' => '用于翻译内容页面的扩展',
 	'tpt-section' => '翻译单元$1',
 	'tpt-section-new' => '新翻译单元。
@@ -10158,7 +10331,7 @@ $messages['zh-hans'] = array(
 但最新版本不得标记进行翻译。',
 	'tpt-discouraged-pages' => '以下{{PLURAL:$1|此|这些}}页面挫折更多翻译。',
 	'tpt-select-prioritylangs' => '优先语言代码的逗号分隔型列表',
-	'tpt-select-prioritylangs-force' => '防止向优先语言以外的语言的翻译',
+	'tpt-select-prioritylangs-force' => '防止向优先语言以外的语言的翻译', # Fuzzy
 	'tpt-select-prioritylangs-reason' => '原因：',
 	'tpt-sections-prioritylangs' => '优先语言',
 	'tpt-rev-mark' => '标记进行翻译',
@@ -10232,8 +10405,8 @@ $messages['zh-hans'] = array(
 	'pt-log-aggregategroup-dissociate' => '已从聚合组$3{{GENDER:$2|删除了}}可翻译页面[[:$1]]',
 	'pt-movepage-title' => '移动可翻译页面$1',
 	'pt-movepage-blockers' => '可翻译页面因下列$1错误无法移动至新名称：',
-	'pt-movepage-block-base-exists' => '目标基础页面[[:$1]]存在。',
-	'pt-movepage-block-base-invalid' => '目标基础页面不是一个有效标题。',
+	'pt-movepage-block-base-exists' => '目标基础页面[[:$1]]存在。', # Fuzzy
+	'pt-movepage-block-base-invalid' => '目标基础页面不是一个有效标题。', # Fuzzy
 	'pt-movepage-block-tp-exists' => '目标翻译页面[[:$2]]存在。',
 	'pt-movepage-block-tp-invalid' => '[[:$1]]的目标翻译页面的标题无效（可能太长）。',
 	'pt-movepage-block-section-exists' => '目标部分页面[[:$2]]存在。', # Fuzzy
@@ -10241,9 +10414,9 @@ $messages['zh-hans'] = array(
 	'pt-movepage-block-subpage-exists' => '目标子页面[[:$2]]存在。',
 	'pt-movepage-block-subpage-invalid' => '[[:$1]]的子页面标题无效（可能太长）。',
 	'pt-movepage-list-pages' => '需移动页面的列表',
-	'pt-movepage-list-translation' => '翻译页面',
-	'pt-movepage-list-section' => '翻译单元页面',
-	'pt-movepage-list-other' => '其他子页面',
+	'pt-movepage-list-translation' => '翻译页面', # Fuzzy
+	'pt-movepage-list-section' => '翻译单元页面', # Fuzzy
+	'pt-movepage-list-other' => '其他子页面', # Fuzzy
 	'pt-movepage-list-count' => '共移动$1个页面。',
 	'pt-movepage-legend' => '移动可翻译页面',
 	'pt-movepage-current' => '当前名称：',
@@ -10264,13 +10437,13 @@ $messages['zh-hans'] = array(
 	'pt-deletepage-lang-title' => '删除翻译网页 $1。',
 	'pt-deletepage-full-title' => '删除可翻译网页 $1。',
 	'pt-deletepage-invalid-title' => '指定的页不是有效的。',
-	'pt-deletepage-invalid-text' => '指定的页不是可翻译页面也的翻译。',
+	'pt-deletepage-invalid-text' => '指定的页不是可翻译页面也的翻译。', # Fuzzy
 	'pt-deletepage-action-check' => '要删除的列表页',
 	'pt-deletepage-action-perform' => '不要删除',
 	'pt-deletepage-action-other' => '更改目标',
 	'pt-deletepage-lang-legend' => '删除翻译页面',
 	'pt-deletepage-full-legend' => '删除可翻译页面',
-	'pt-deletepage-any-legend' => '删除可翻译页面或翻译的翻译页面',
+	'pt-deletepage-any-legend' => '删除可翻译页面或翻译的翻译页面', # Fuzzy
 	'pt-deletepage-current' => '页面名称：',
 	'pt-deletepage-reason' => '原因：',
 	'pt-deletepage-subpages' => '删除所有子页面',
@@ -10284,7 +10457,7 @@ $messages['zh-hans'] = array(
 	'pt-deletepage-started' => '请检查[[Special:Log/pagetranslation|页面翻译日志]]内的错误和完成消息。',
 	'pt-deletepage-intro' => '本特殊页面允许您删除一种语言中全部可翻译页面与翻译作品。
 因为有很多页面要删除，此操作不会瞬间完成。
-失败操作记录于[[Special:Log/pagetranslation|页面翻译日志]]中并且需要手动修理。',
+失败操作记录于[[Special:Log/pagetranslation|页面翻译日志]]中并且需要手动修理。', # Fuzzy
 );
 
 /** Traditional Chinese (中文（繁體）‎)

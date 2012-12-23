@@ -2620,7 +2620,7 @@ $messages['azb'] = array(
 	'translate-tag-page-desc' => '[[$2|$1]] ویکی صحیفه‌سی چئویرمه‌سی.',
 	'translate-tag-fuzzy-comment' => 'قایناق [[User:$1|$1]] ایله $2 نوسخه‌سینده دَییشدیریلیب‌دیر.',
 	'translate-tag-fuzzy-reason' => 'قایناق «$1» ایله «$3» شرحی ایله $2-ده دَییشدیریلیب‌دیر.',
-	'translate-sidebar-alltrans' => 'آیری دیللرده',
+	'translate-sidebar-alltrans' => 'آیری دیل‌لرده',
 	'translations' => 'بوتون چئویرمه‌لر',
 	'translations-summary' => 'آشاغیدا بوتون ال‌ده اولان چئویرمه‌لری گؤسترمک اوچون مئساژ آدینی وئرین.',
 	'translate-translations-no-message' => '«$1» بیر چئویریله بیلن مئساژ دئییل',
@@ -2771,6 +2771,49 @@ $1',
 	'translate-workflow-set-doing' => 'تنظیم‌لنیر...',
 	'translate-workflow-set-done' => 'تنظیملندی!',
 	'translate-workflow-set-error-alreadyset' => 'ایسته‌نیلمیش وضعیت، ایندیکی وضعیت ایله بیردیر.',
+	'translate-workflow-autocreated-summary' => '$1 وضعیتی ایش-آخیمی اوچون اوتوماتیک صحیفه یاراتما',
+	'translate-stats-workflow' => 'وضعیت',
+	'translate-workflowgroup-label' => 'ایش-آخیمی وضعیتلری',
+	'translate-workflowgroup-desc' => 'بو مئساژ گروپو، چئویرمه ایش-آخیمی وضعیتلرینی گؤستریر.
+وضعیتلر، $wgTranslateWorkflowStates تنظیملر دَیَرینده تانینیبلار.',
+	'translate-dynagroup-recent-label' => 'سون چئویرمه‌لر',
+	'translate-dynagroup-recent-desc' => 'بو مئساژ گروپو، بو دیلین بوتون سون چئویرمه‌لرینی گؤستریر.
+تصحیح ائتمه ایشلرینه ایشه گلن‌دیر.',
+	'translate-dynagroup-additions-label' => 'سون آرتیرمالار',
+	'translate-dynagroup-additions-desc' => 'بو مئساژ گروپو، یئنی و دَییشدیریلمیش مئساژلاری گؤستریر.',
+	'translate-dynagroup-by' => '{{GENDER:$1|$1}} ایله چئویریلیب‌دیر',
+	'translate-dynagroup-byc' => '{{GENDER:$1|$1}} ایله چئویریلیب‌دیر ($2)',
+	'translate-dynagroup-last' => 'سون دفعه {{GENDER:$1|$1}} ایله دَییشدیریلیب‌دیر',
+	'translate-dynagroup-lastc' => 'سون دفعه {{GENDER:$1|$1}} ایله دَییشدیریلیب‌دیر ($2)',
+	'translate-gethelp' => 'یاردیم',
+	'translate-msggroupselector-projects' => 'مئساژ گروپلاری',
+	'translate-msggroupselector-search-placeholder' => 'گروپلاری آختار',
+	'translate-msggroupselector-search-all' => 'هامیسی',
+	'translate-msggroupselector-search-recent' => 'سون',
+	'translate-msggroupselector-load-from-all' => 'بوتون گروپلاردان مئساژلاری یوکله',
+	'translate-msggroupselector-view-subprojects' => '{{PLURAL:$1|بیر|$1}} آلت‌گروپ',
+	'tux-languageselector' => 'دیل',
+	'tux-tab-all' => 'هامیسی',
+	'tux-tab-untranslated' => 'چئویریلمه‌میش',
+	'tux-tab-outdated' => 'تاریخی گئچمیش',
+	'tux-tab-translated' => 'چئویریلمیش',
+	'tux-edit' => 'دَییشدیر',
+	'tux-status-optional' => 'ایستگه باغلی',
+	'tux-status-fuzzy' => 'تاریخی گئچمیش',
+	'tux-status-proofread' => 'یئنی‌دن باخیش',
+	'tux-status-translated' => 'چئویریلمیش',
+	'tux-status-unsaved' => 'قئید ائدیلمه‌میش',
+	'tux-editor-placeholder' => 'سیزین چئویرمه‌نیز',
+	'tux-editor-save-button-label' => 'چئویرمه‌نی قئید ائت',
+	'tux-editor-skip-button-label' => 'سونراکینا آتلان',
+	'tux-editor-shortcut-info' => 'قئید ائتمک اوچون «$1»-ی و سونراکینا آتلانماق اوچون «$2»-ی وورون.',
+	'tux-editor-no-message-doc' => 'مئساژ سندلندیرمه‌سی یوخدور',
+	'tux-editor-edit-desc' => 'آچیقلامانی دَییشدیر',
+	'tux-editor-suggestions-title' => 'اؤنریلر',
+	'tux-editor-in-other-languages' => 'آیری دیل‌لرده',
+	'tux-editor-need-more-help' => 'آرتیق یاردیم گرکلی‌دیر؟',
+	'tux-editor-ask-help' => 'داها بیلگی ایسته',
+	'tux-editor-tm-match' => '$1٪ تطبیق',
 );
 
 /** Bashkir (башҡортса)
@@ -3401,11 +3444,11 @@ $1',
 
 /** Bulgarian (български)
  * @author DCLXVI
+ * @author පසිඳු කාවින්ද
  */
 $messages['bg'] = array(
 	'translate' => 'Превеждане',
 	'translate-desc' => '[[Special:Translate|Специална страница]] за превеждане на MediaWiki и др.',
-	'translate-showsub' => 'Показване на {{PLURAL:$1|една подгрупа|$1 подгрупи}}.',
 	'translate-taskui-view' => 'Показване на всички съобщения',
 	'translate-taskui-untranslated' => 'Показване на непреведените съобщения',
 	'translate-taskui-optional' => 'Показване на допълнителните съобщения',
@@ -3539,6 +3582,11 @@ $messages['bg'] = array(
 	'translate-searchprofile' => 'Преводи',
 	'translate-stats-workflow' => 'Статут',
 	'translate-gethelp' => 'Помощ',
+	'translate-msggroupselector-search-all' => 'Всички',
+	'tux-languageselector' => 'Език',
+	'tux-tab-all' => 'Всички',
+	'tux-edit' => 'Редактиране',
+	'tux-status-optional' => 'Незадължително',
 );
 
 /** Bhojpuri (भोजपुरी)
@@ -12544,13 +12592,13 @@ Es utile principalmente pro le correction de probas.',
  * @author Kenrick95
  * @author Meursault2004
  * @author Rex
+ * @author පසිඳු කාවින්ද
  */
 $messages['id'] = array(
 	'translate' => 'Terjemahan',
 	'translate-desc' => '[[Special:Translate|Halaman istimewa]] untuk menerjemahkan MediaWiki',
-	'translate-showsub' => 'Tampilkan {{PLURAL:$1|subkelompok|$1 subkelompok}}.',
-	'translate-grouplisting' => 'Berikut daftar dari semua kelompok yang dapat diterjemahkan.
-Klik nama kelompok pesan untuk melihat daftar pesan yang belum diterjemahkan.',
+	'translate-taction-translate' => 'Terjemahkan',
+	'translate-taction-export' => 'Ekspor',
 	'translate-page-no-such-language' => 'Bahasa yang dipilih tak valid.',
 	'translate-page-no-such-group' => 'Grup yang dipilih tak valid.',
 	'translate-page-disabled' => "Penerjemahan dalam bahasa ini telah dinon-aktifkan. Alasan:
@@ -12573,6 +12621,7 @@ Klik nama kelompok pesan untuk melihat daftar pesan yang belum diterjemahkan.',
 	'translate-ext-url' => '<hr />SitusWeb: $1',
 	'translate-optional' => '(opsional)',
 	'translate-ignored' => '(diabaikan)',
+	'translate-edit-jsopen' => 'sunting',
 	'translate-edit-title' => 'Sunting "$1"',
 	'translate-edit-definition' => 'Definisi pesan',
 	'translate-edit-translation' => 'Terjemahan',
@@ -12756,6 +12805,8 @@ Tidak dapat menentukan grup dan bahasa dari kepala berkas.',
 	'translate-import-err-warnings' => "Berkas ini tidak diciptakan dengan benar.
 Pastikan penyunting Anda tidak membuang ''field'' msgctxt.
 Detail: $1",
+	'translate-js-summary' => 'Ringkasan:',
+	'translate-js-save' => 'Simpan',
 	'translate-js-next' => 'Simpan dan buka selanjutnya',
 	'translate-js-nonext' => 'Ini adalah pesan terakhir di halaman ini.',
 	'translate-js-skip' => 'Lewati ke selanjutnya',
@@ -12784,6 +12835,12 @@ Detail: $1",
 	'api-error-invalidrevision' => 'Terjemahan tidak ditemukan',
 	'api-error-unknownmessage' => 'Pesan tidak ditemukan',
 	'api-error-owntranslation' => 'Anda tidak dapat menerima terjemahan sendiri',
+	'translate-gethelp' => 'Bantuan',
+	'translate-msggroupselector-search-all' => 'Semua',
+	'tux-languageselector' => 'Bahasa',
+	'tux-tab-all' => 'Semua',
+	'tux-edit' => 'Sunting',
+	'tux-status-optional' => 'Opsional',
 );
 
 /** Igbo (Igbo)
@@ -25217,6 +25274,9 @@ Mest användbar för korrekturläsningsuppgifter.',
 	'translate-dynagroup-last' => 'Senaste ändring av {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Senaste ändring av {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Hjälp',
+	'translate-msggroupselector-projects' => 'Meddelandegrupper',
+	'translate-msggroupselector-search-placeholder' => 'Sök grupper',
+	'translate-msggroupselector-search-all' => 'Alla',
 );
 
 /** Swahili (Kiswahili)
@@ -29543,15 +29603,28 @@ $1',
 	'translate-dynagroup-recent-label' => '最近的翻译',
 	'translate-dynagroup-recent-desc' => '此消息组显示了最近该语言的所有翻译。
 在校对时很有帮助。',
+	'translate-dynagroup-additions-label' => '最近添加',
 	'translate-dynagroup-by' => '{{GENDER:$1|$1}}作出翻译',
 	'translate-dynagroup-byc' => '{{GENDER:$1|$1}}作出翻译（$2）',
 	'translate-dynagroup-last' => '{{GENDER:$1|$1}}作出最近更改',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}}作出最近更改（$2）',
 	'translate-gethelp' => '帮助',
+	'translate-msggroupselector-projects' => '信息组',
+	'translate-msggroupselector-search-all' => '所有',
+	'translate-msggroupselector-search-recent' => '最近',
 	'tux-languageselector' => '语言',
+	'tux-tab-all' => '所有',
+	'tux-tab-untranslated' => '未翻译',
 	'tux-edit' => '编辑',
 	'tux-status-optional' => '可选',
+	'tux-status-proofread' => '已校对',
+	'tux-editor-placeholder' => '您的翻译',
+	'tux-editor-save-button-label' => '保存翻译',
+	'tux-editor-skip-button-label' => '跳至下一条',
+	'tux-editor-no-message-doc' => '没有信息说明文件',
+	'tux-editor-edit-desc' => '编辑说明',
 	'tux-editor-suggestions-title' => '建议',
+	'tux-editor-in-other-languages' => '其他语言',
 	'tux-editor-tm-match' => '$1%匹配',
 );
 
@@ -29892,7 +29965,22 @@ $1',
 	'translate-dynagroup-last' => '{{GENDER:$1|$1}}作出最近更改',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}}作出最近更改（$2）',
 	'translate-gethelp' => '說明',
+	'translate-msggroupselector-projects' => '訊息組',
+	'translate-msggroupselector-search-all' => '所有',
+	'translate-msggroupselector-search-recent' => '最近',
+	'tux-languageselector' => '語言',
+	'tux-tab-all' => '所有',
+	'tux-tab-untranslated' => '未翻譯',
 	'tux-edit' => '編輯',
+	'tux-status-proofread' => '已校對',
+	'tux-editor-placeholder' => '您的翻譯',
+	'tux-editor-save-button-label' => '保存翻譯',
+	'tux-editor-skip-button-label' => '跳至下一個',
+	'tux-editor-no-message-doc' => '沒有訊息說明文件',
+	'tux-editor-edit-desc' => '編輯說明',
+	'tux-editor-suggestions-title' => '建議',
+	'tux-editor-in-other-languages' => '其他語言',
+	'tux-editor-tm-match' => '$1% 符合',
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)
