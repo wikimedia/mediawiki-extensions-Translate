@@ -249,7 +249,7 @@ class SpecialTranslate extends SpecialPage {
 	protected function setup( $parameters ) {
 		$defaults = array(
 		/* str  */ 'taction'  => 'translate',
-		/* str  */ 'task'     => 'untranslated',
+		/* str  */ 'task'     => self::isBeta( $this->getRequest() ) ? 'custom' : 'untranslated',
 		/* str  */ 'sort'     => 'normal',
 		/* str  */ 'language' => $this->getLanguage()->getCode(),
 		/* str  */ 'group'    => '',
