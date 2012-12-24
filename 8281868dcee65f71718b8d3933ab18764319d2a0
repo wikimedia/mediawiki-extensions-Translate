@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgH//7LA\u003d",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-12-24T18:08:37Z",
+      "side": 1,
+      "message": "It\u0027s the first time that I used \"important\" and it did what I meant. But precisely because of that there may be a better way to do it.",
+      "revId": "8281868dcee65f71718b8d3933ab18764319d2a0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//7Kw\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-12-24T18:08:37Z",
+      "side": 1,
+      "message": "Copied from ext.translate.editor.js.",
+      "revId": "8281868dcee65f71718b8d3933ab18764319d2a0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgH//7Ko\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-12-24T18:08:37Z",
+      "side": 1,
+      "message": "Copied from ext.translate.editor.js with modifications.",
+      "revId": "8281868dcee65f71718b8d3933ab18764319d2a0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
