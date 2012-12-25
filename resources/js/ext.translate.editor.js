@@ -72,7 +72,8 @@
 				title: translateEditor.$editTrigger.data( 'title' ),
 				text: translation,
 				token: mw.user.tokens.get( 'editToken' )
-			}, function ( response ) {
+			}, {
+			ok: function ( response ) {
 				var $error;
 				// OK
 				if ( response.edit.result === 'Success' ) {
@@ -92,17 +93,18 @@
 					translateEditor.$editor.find( 'textarea' )
 						.before( $error );
 				}
-			}, function ( err ) {
+			},
+			err: function ( errorCode, results ) {
 				// Error
 				// FIXME not tested
 				var $error;
 
 				$error = $( '<div>' ).
 					addClass( 'row highlight' )
-					.text( err.warning );
+					.text( results.error.info );
 
 				translateEditor.$editor.find( 'textarea' ).before( $error );
-			} );
+			} } );
 		},
 
 		/**
