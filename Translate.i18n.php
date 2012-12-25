@@ -830,13 +830,13 @@ Additional parameters:
 * $2 is the edit summary that was provided.',
 	'translate-gethelp' => 'Link to some Translate help page or tutorial.
 {{Identical|Help}}',
-	'translate-msggroupselector-projects' => 'Title text for the message group beadcrumb', # Fuzzy
+	'translate-msggroupselector-projects' => 'Title text for the message group breadcrumb.',
 	'translate-msggroupselector-search-placeholder' => "Place holder text for the search box in message group selector. It's supposed to tell the user that the box is for search a name of a group.",
 	'translate-msggroupselector-search-all' => 'Label to display all projects',
 	'translate-msggroupselector-search-recent' => 'Label to display recent projects',
-	'translate-msggroupselector-load-from-all' => 'Label for the button', # Fuzzy
-	'translate-msggroupselector-view-subprojects' => 'Label indicating that the current message group contains other groups.
-* $1 is number of sub groups', # Fuzzy
+	'translate-msggroupselector-load-from-all' => 'Label for the button',
+	'translate-msggroupselector-view-subprojects' => 'Label indicating that the current message group contains other groups. Parameters:
+* $1 is number of sub groups',
 	'tux-languageselector' => 'Label for language selector in [[Special:Translate]]',
 	'tux-tab-all' => 'Tab in Special:Translate new ui to select which messages to show.',
 	'tux-tab-untranslated' => 'Tab in Special:Translate new ui to select which messages to show.',
@@ -2470,18 +2470,18 @@ $messages['azb'] = array(
 	'translate-taction-translate' => 'چئویرمک',
 	'translate-taction-proofread' => 'یئنی‌دن باخیش',
 	'translate-taction-lstats' => 'دیل آماری',
-	'translate-taction-mstats' => 'مئساژ گروپ آماری',
+	'translate-taction-mstats' => 'مئساژ قروپ آماری',
 	'translate-taction-export' => 'ائشیگه آپارماق',
 	'translate-taction-disabled' => 'بو ویکی‌ده بو ایش باغلانیب‌دیر.',
 	'translate-page-no-such-language' => 'بللندیریلمیش دیل گئچرسیزدیر.',
-	'translate-page-no-such-group' => 'بللندیریلمیش گروپ گئچرسیزدیر.',
+	'translate-page-no-such-group' => 'بللندیریلمیش قروپ گئچرسیزدیر.',
 	'translate-page-disabled' => "بو دیل‌ده بو گروپون چئویرمه‌سی باغلانیب‌دیر.
 دلیل:
 
 ''$1''",
 	'translate-language-disabled' => 'بو دیله چئویرمک باغلانیب‌دیر.',
 	'translate-page-settings-legend' => 'تنظیملر',
-	'translate-page-group' => 'گروپ',
+	'translate-page-group' => 'قروپ',
 	'translate-page-language' => 'دیل',
 	'translate-page-limit' => 'سایی',
 	'translate-page-limit-option' => 'صحیفه‌ده {{PLURAL:$1|بیر|$1}} مئساژ',
@@ -2492,7 +2492,7 @@ $messages['azb'] = array(
 	'translate-page-showing-none' => 'گؤسترمک اوچون بیر مئساژ یوخدور.',
 	'translate-next' => 'سونراکی صحیفه',
 	'translate-prev' => 'قاباقکی صحیفه',
-	'translate-page-description-legend' => 'بو گروپ اوچون بیلگیلر',
+	'translate-page-description-legend' => 'بو قروپ اوچون بیلگیلر',
 	'translate-page-description-hasoptional' => 'بو مئساژ گروپوندا، ایستگه باغلی مئساژلار واردیر.
 ایستگه باغلی مئساژلار یالنیز دیلین خاص شرطلری اولاندا چئویرمه‌لی‌دیرلر، مثلاً اگر دیل‌ده سؤزجوک آراسی بوشلوق یوخدور، یا بعضی آدلار گرک چئویریله. $1',
 	'translate-page-description-hasoptional-open' => 'ایستگه باغلی مئساژلاری گؤستر.',
@@ -2614,7 +2614,7 @@ $messages['azb'] = array(
 	'translate-statsf-count-reviews' => 'چئویرمک گؤزدن گئچیتمه‌لری',
 	'translate-statsf-count-reviewers' => 'گؤزدن گئچیردنلر',
 	'translate-statsf-language' => 'کاما ایله آیریلمیش دیل کودلار لیستی:',
-	'translate-statsf-group' => 'کاما ایله آیریلمیش گروپ کودلاری لیستی:',
+	'translate-statsf-group' => 'کاما ایله آیریلمیش قروپ کودلاری لیستی:',
 	'translate-statsf-submit' => 'اؤن‌گؤستریش',
 	'translate-tag-category' => 'چئویریله بیلن صحیفه‌لر',
 	'translate-tag-page-desc' => '[[$2|$1]] ویکی صحیفه‌سی چئویرمه‌سی.',
@@ -2654,7 +2654,7 @@ $messages['azb'] = array(
 	'translate-languagestats-overall' => 'بوتون مئساژ گروپلاری بیرلیکده',
 	'translate-ls-submit' => 'آماری گؤستر',
 	'translate-ls-column-group' => 'مئساژ گروپو',
-	'translate-mgs-pagename' => 'مئساژ گروپ آماری',
+	'translate-mgs-pagename' => 'مئساژ قروپ آماری',
 	'translate-mgs-fieldset' => 'گؤسترمک سئچمه‌لری',
 	'translate-mgs-group' => 'مئساژ گروپو:',
 	'translate-mgs-nocomplete' => 'چئویرمه‌لری قورتاریلمیش دیل‌لری گؤسترمه',
@@ -2676,7 +2676,7 @@ $messages['azb'] = array(
 	'supportedlanguages-activity' => '$1: {{PLURAL:$2|بیر|$2}} دَییشکلیک - سون دَییشیکلیک {{PLURAL:$3|بیر|$3}} گون قاباق',
 	'translate-save' => 'قئید ائت ($1)',
 	'translate-jssti-add' => 'لیسته آرتیر',
-	'managemessagegroups' => 'مئساژ گروپ ایداره‌سی',
+	'managemessagegroups' => 'مئساژ قروپ ایداره‌سی',
 	'translate-smg-notallowed' => 'سیز بو ایشی گؤرمگه ایجازه‌نیز یوخدور.',
 	'translate-smg-nochanges' => 'ایشله‌مک اوچون بیر دَییشیکلیک یوخدور.',
 	'translate-smg-submit' => 'دَییشیکلیکلری ایشله‌مگه گؤندر',
@@ -2691,9 +2691,9 @@ $messages['azb'] = array(
 	'translate-manage-action-conflict' => 'ایچری گتیر و موبهم نیشانلا',
 	'translate-manage-action-ignore' => 'یوخ سای',
 	'translate-manage-action-fuzzy' => 'چئویرمه‌لری ایچری گتیر و موبهم نیشانلا',
-	'translate-manage-nochanges' => 'بو گروپ اوچون قایناق مئساژلاردا بیر دَییشیکلیک یوخدور.',
+	'translate-manage-nochanges' => 'بو قروپ اوچون قایناق مئساژلاردا بیر دَییشیکلیک یوخدور.',
 	'translate-manage-nochanges-other' => 'بو دیل اوچون بیر دَییشیکلیک یوخدور.
-آشاغیداکی باغلانتی‌نی گروپ بیلگیلری گؤرونتوسونه قاییتماغا ایشلده بیلرسینیز.',
+آشاغیداکی باغلانتی‌نی قروپ بیلگیلری گؤرونتوسونه قاییتماغا ایشلده بیلرسینیز.',
 	'translate-manage-inconsistent' => 'ایستک‌ده توتارسیزلیق تاپیلدی.
 لوطفاً دَییشیکلیکلری یوخلایین و یئنی‌دن چالیشین.
 بیلگیلر: $1.',
@@ -2777,7 +2777,7 @@ $1',
 	'translate-workflowgroup-desc' => 'بو مئساژ گروپو، چئویرمه ایش-آخیمی وضعیتلرینی گؤستریر.
 وضعیتلر، $wgTranslateWorkflowStates تنظیملر دَیَرینده تانینیبلار.',
 	'translate-dynagroup-recent-label' => 'سون چئویرمه‌لر',
-	'translate-dynagroup-recent-desc' => 'بو مئساژ گروپو، بو دیلین بوتون سون چئویرمه‌لرینی گؤستریر.
+	'translate-dynagroup-recent-desc' => 'بو مئساژ قروپو، بو دیلین بوتون سون چئویرمه‌لرینی گؤستریر.
 تصحیح ائتمه ایشلرینه ایشه گلن‌دیر.',
 	'translate-dynagroup-additions-label' => 'سون آرتیرمالار',
 	'translate-dynagroup-additions-desc' => 'بو مئساژ گروپو، یئنی و دَییشدیریلمیش مئساژلاری گؤستریر.',
@@ -3595,14 +3595,11 @@ $messages['bg'] = array(
 $messages['bho'] = array(
 	'translate' => 'अनुवादन करीं',
 	'translate-desc' => '[[Special:Translate| विशेष पन्ना]] मिडीयाविकि के अनुवादन खातिर',
-	'translate-grouplisting' => 'हई सबे अनुवाद के लायक समूह के सूची बा
-अअनुवादित सन्देश सूची के सन्देश समूह देखे खातिर अहिजा च्लिक करीं',
-	'translate-grouplisting-empty' => 'हई सन्देश समूह मे अनुवादन खातिर कौनो विन्यास नैखे कईल बा',
-	'translate-taskui-view' => 'सभी सन्देश के दिखाईं',
+	'translate-taskui-view' => 'सभी सन्देश दिखाईं',
 	'translate-taskui-untranslated' => 'अअनुवादित सन्देश दिखाईं',
 	'translate-taskui-optional' => 'वैकल्पिक सन्देश दिखाईं',
 	'translate-taskui-suggestions' => 'अनुवाद स्म्रुति के सुझाव संग संदेश दिखाईं',
-	'translate-taskui-acceptqueue' => 'केवल संदेश जे हम स्वीकार कर सकीं',
+	'translate-taskui-acceptqueue' => 'संदेश, जे केवल हम स्वीकार कर सकीं',
 	'translate-taskui-reviewall' => 'सभी अनुवाद के समीक्षा करीं',
 	'translate-taskui-export-to-file' => 'मूल स्वरूप में निर्यात करीं',
 	'translate-taskui-export-as-po' => 'ऑफ़लाइन अनुवाद के खातिर निर्यात करीं',
@@ -12850,7 +12847,7 @@ $messages['ig'] = array(
 	'translate' => 'Kuwaria na asụsụ ozor',
 	'translate-page-settings-legend' => 'Otu ihe dị',
 	'translate-page-group' => 'Ọtú',
-	'translate-page-language' => 'Asụsụ',
+	'translate-page-language' => 'Ásụ̀sụ̀',
 	'translate-page-limit' => 'Nke orùrù',
 	'translate-submit' => 'Ga wèré',
 	'translate-page-navigation-legend' => 'Otú Uzọr',
@@ -12876,7 +12873,7 @@ $messages['ig'] = array(
 	'translate-translations-fieldset-title' => 'Ozi',
 	'translate-translations-messagename' => 'Áhà:',
 	'translate-translations-project' => 'Orü:',
-	'translate-language' => 'Asụsụ',
+	'translate-language' => 'Ásụ̀sụ̀',
 	'translate-percentage-complete' => 'Mmechá',
 	'translate-save' => 'Domá ($1)',
 	'translate-jssti-add' => 'Tinyé na ndetu',
@@ -13498,6 +13495,7 @@ Utile per l'attività di correzione.",
 	'tux-editor-edit-desc' => 'Modifica descrizione',
 	'tux-editor-suggestions-title' => 'Suggerimenti',
 	'tux-editor-in-other-languages' => 'In altre lingue',
+	'tux-editor-ask-help' => 'Chiedi per maggiori informazioni',
 	'tux-editor-tm-match' => '$1&nbsp;% di corrispondenza',
 );
 
@@ -20202,6 +20200,7 @@ Oam Beschde ischse fa Uffgawe vum Gescheleese.',
  * @author Leinad
  * @author Maikking
  * @author Marcin Łukasz Kiejzik
+ * @author Matma Rex
  * @author McMonster
  * @author Mikołka
  * @author Odie2
@@ -20318,7 +20317,7 @@ Zmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poni�
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definicja wykorzystuje funkcję <nowiki>{{PLURAL:}}</nowiki>, lecz w tłumaczeniu nie została ona użyta.',
 	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> posiada {{PLURAL:$1|jedną formę|$1 formy|$1 form}} ale {{PLURAL:$2|tylko jedna forma jest obsługiwana|$2 formy są obsługiwane|$2 form jest obsługiwanych}} (z wyłączeniem form 0= i 1= ).',
-	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> posiada w końcu formy wielokrotne. <nowiki>{{PLURAL:$1|ojca|ojców|ojców}}</nowiki> powinien być pisany jako <nowiki>{{PLURAL:$1|ojca|ojców}}</nowiki>.', # Fuzzy
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> posiada w końcu formy wielokrotne. <nowiki>{{PLURAL:$1|ojca|ojców|ojców}}</nowiki> powinien być pisany jako <nowiki>{{PLURAL:$1|ojca|ojców}}</nowiki>.',
 	'translate-checks-pagename' => 'Przestrzeń nazw zmieniona z definicji',
 	'translate-checks-format' => 'To tłumaczenie jest niezgodne z definicją lub ma nieprawidłową składnię: $1',
 	'translate-checks-escape' => 'Następujące wyjścia z procesu tłumaczenia mogą być przypadkowe: <strong>$1</strong>',
@@ -20531,6 +20530,8 @@ Stany są zdefiniowane w zmiennej konfiguracji $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Ostatnie tłumaczenia',
 	'translate-dynagroup-recent-desc' => 'Ta grupa wiadomości zawiera wszystkie ostatnie tłumaczenia na ten język.
 Jest najbardziej użyteczna dla zadań korekty.',
+	'translate-dynagroup-additions-label' => 'Ostatnio dodane',
+	'translate-dynagroup-additions-desc' => 'Ta grupa wiadomości wyświetla nowe i zmienione komunikaty.',
 	'translate-dynagroup-by' => 'Tłumaczenia dokonywane przez {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Tłumaczenia dokonywane przez {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Ostatnia zmiana wykonana przez {{GENDER:$1|$1}}',
@@ -20541,10 +20542,27 @@ Jest najbardziej użyteczna dla zadań korekty.',
 	'translate-msggroupselector-search-all' => 'Wszystko',
 	'translate-msggroupselector-search-recent' => 'Ostatnie',
 	'translate-msggroupselector-load-from-all' => 'Ładowanie wiadomości ze wszystkich grup',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|podgrupa|podgrupy|podgrupy}}', # Fuzzy
+	'tux-languageselector' => 'Język',
 	'tux-tab-all' => 'Wszystko',
 	'tux-tab-untranslated' => 'Nieprzetłumaczone',
 	'tux-tab-outdated' => 'Nieaktualne',
 	'tux-tab-translated' => 'Przetłumaczone',
+	'tux-edit' => 'Edytuj',
+	'tux-status-optional' => 'Opcjonalny',
+	'tux-status-fuzzy' => 'Zdezaktualizowany',
+	'tux-status-proofread' => 'Sprawdzone',
+	'tux-status-translated' => 'Przetłumaczony',
+	'tux-status-unsaved' => 'Niezapisane',
+	'tux-editor-placeholder' => 'Twoje tłumaczenie',
+	'tux-editor-save-button-label' => 'Zapisz tłumaczenie',
+	'tux-editor-skip-button-label' => 'Przejdź do następnego',
+	'tux-editor-no-message-doc' => 'Komunikat nie ma dokumentacji',
+	'tux-editor-edit-desc' => 'Edytuj opis',
+	'tux-editor-suggestions-title' => 'Sugestie',
+	'tux-editor-in-other-languages' => 'W innych językach',
+	'tux-editor-need-more-help' => 'Potrzebujesz pomocy?',
+	'tux-editor-tm-match' => 'pasuje $1%',
 );
 
 /** Piedmontese (Piemontèis)
@@ -21843,14 +21861,11 @@ Sche vus savais nua e co che quai messadi vegn duvrà, pudais vus gidar auters t
  * @author KlaudiuMihaila
  * @author McDutchie
  * @author Minisarm
+ * @author Stelistcristi
  */
 $messages['ro'] = array(
 	'translate' => 'Traducere',
 	'translate-desc' => '[[Special:Translate|Pagină specială]] pentru traducerea software-ului MediaWiki, dar nu numai',
-	'translate-showsub' => 'Arată {{PLURAL:$1|subgrupul|cele $1 subgrupuri}}.',
-	'translate-grouplisting' => 'Aceasta este lista tuturor grupurilor de mesaje traductibile.
-Apăsați pe numele grupului de mesaje pentru a vizualiza o listă a mesajelor netraduse.',
-	'translate-grouplisting-empty' => 'Nu a fost configurat niciun grup de mesaje pentru această traducere.',
 	'translate-taskui-view' => 'Arată toate mesajele',
 	'translate-taskui-untranslated' => 'Arată mesajele netraduse',
 	'translate-taskui-optional' => 'Arată mesajele opționale',
@@ -22145,6 +22160,13 @@ Detalii: $1',
 	'translate-dynagroup-last' => 'Ultima schimbare de către {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Ultima schimbare de către {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Ajutor',
+	'translate-msggroupselector-search-placeholder' => 'Căutați grupuri',
+	'tux-languageselector' => 'Limbă',
+	'tux-editor-edit-desc' => 'Modifică descrierea',
+	'tux-editor-suggestions-title' => 'Sugestii',
+	'tux-editor-in-other-languages' => 'În alte limbi',
+	'tux-editor-need-more-help' => 'Aveți nevoie de mai mult ajutor?',
+	'tux-editor-ask-help' => 'Cereți mai multe informații',
 );
 
 /** tarandíne (tarandíne)
@@ -29615,9 +29637,13 @@ $1',
 	'tux-languageselector' => '语言',
 	'tux-tab-all' => '所有',
 	'tux-tab-untranslated' => '未翻译',
+	'tux-tab-outdated' => '已过时',
+	'tux-tab-translated' => '已翻译',
 	'tux-edit' => '编辑',
 	'tux-status-optional' => '可选',
+	'tux-status-fuzzy' => '已过时',
 	'tux-status-proofread' => '已校对',
+	'tux-status-translated' => '已翻译',
 	'tux-editor-placeholder' => '您的翻译',
 	'tux-editor-save-button-label' => '保存翻译',
 	'tux-editor-skip-button-label' => '跳至下一条',

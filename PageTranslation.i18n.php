@@ -262,9 +262,9 @@ See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-sections-template' => '[[File:Page_translation_mark_view.png|thumb|Page translation]]
 The template used by translations of the translatable page, extracted from the source text. Shown on the translation administration page; a screenshot is available.',
 	'tpt-action-nofuzzy' => 'See [[mw:Help:Extension:Translate/Page translation administration#Changing the source text]] for context.',
-	'tpt-oldrevision' => '
-* $1 - page title
-* $2 - ...', # Fuzzy
+	'tpt-oldrevision' => 'Error message displayed when trying to mark an older page revision for translation. Parameters:
+* $1 is a page title.
+* $2 is a page link.',
 	'tpt-notsuitable' => '{{doc-important|Do not translate "&lt;nowiki>&lt;translate>&lt;/nowiki>"}}',
 	'tpt-saveok' => '* $1 - page title
 * $2 - count of sections which can be used with PLURAL
@@ -288,7 +288,7 @@ See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-other-pages' => '$1 is the number of pages in the following list. [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-discouraged-pages' => '$1 is the number of pages in the following list. [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-select-prioritylangs' => 'Label for the input box to enter preferred languages',
-	'tpt-select-prioritylangs-force' => 'Label for the checkbox to make the translation restriction', # Fuzzy
+	'tpt-select-prioritylangs-force' => 'Label for the checkbox to make the translation restriction',
 	'tpt-select-prioritylangs-reason' => 'Label for the textbox to enter reason for restriction',
 	'tpt-sections-prioritylangs' => 'Section title in [[Special:PageTranslation]]',
 	'tpt-rev-mark' => 'Possible page action and link text in [[Special:PageTranslation]]. In parenthesis after page name. [[Image:Page translation admin view.png|thumb|Admin view]]',
@@ -386,8 +386,9 @@ This message is followed by one of the following error messages:
 * {{msg-mw|Pt-movepage-block-section-invalid}}
 * {{msg-mw|Pt-movepage-block-subpage-exists}}
 * {{msg-mw|Pt-movepage-block-subpage-invalid}}',
-	'pt-movepage-block-base-exists' => "'''base page''' refers to the untranslated version of the translatable page.", # Fuzzy
-	'pt-movepage-block-base-invalid' => 'The "target base page" is the new title of the translatable page, see definition on [[mw:Help:Extension:Translate/Glossary]].', # Fuzzy
+	'pt-movepage-block-base-exists' => 'Error message to indicate a base page exists and a translatable page cannot be renamed. Parameters:
+* $1 is a pre-existing page name.',
+	'pt-movepage-block-base-invalid' => 'The "target page" is the new title of the translatable page, see definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-movepage-block-tp-exists' => 'translation page is a translated version of a translatable page',
 	'pt-movepage-block-tp-invalid' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-movepage-block-section-exists' => 'Section page is a translation of one section. Translation page consists of many translation sections.',
@@ -402,13 +403,13 @@ This message is followed by one of the following error messages:
 	'pt-locked-page' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-lang-title' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-full-title' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-deletepage-invalid-text' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].', # Fuzzy
+	'pt-deletepage-invalid-text' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-action-check' => 'This is a button label. "List" is an imperative verb.',
 	'pt-deletepage-action-perform' => "Submit button on special page 'Deleting translatable page'. See [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
 	'pt-deletepage-action-other' => "Button label on the special page 'Deleting translatable page'. See [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
 	'pt-deletepage-lang-legend' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-full-legend' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-deletepage-any-legend' => 'See definitions on [[mw:Help:Extension:Translate/Glossary]].', # Fuzzy
+	'pt-deletepage-any-legend' => 'See definitions on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-current' => '{{Identical|Page name}}',
 	'pt-deletepage-reason' => '{{Identical|Reason}}',
 	'pt-deletepage-subpages' => "Checkbox label on special page 'Deleting translatable page'. see [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
@@ -925,23 +926,40 @@ $messages['azb'] = array(
 
 بیر چئویرمک ایداره‌چیسی بئله قرار آلیب کی چئویرمک تمرکزی $3-ه اولسون.",
 	'tpt-discouraged-language-reason' => 'ندن: $1',
-	'tpt-priority-languages' => 'بیر چئویرمک ایداره‌چیسی، بو گروپون اؤنجه‌لیک دیلینی $1 سئچیب‌دیر.',
+	'tpt-priority-languages' => 'بیر چئویرمک ایداره‌چیسی، بو قروپون اؤنجه‌لیک دیلینی $1 سئچیب‌دیر.',
 	'tpt-render-summary' => 'قایناق صحیفه‌نین یئنی نوسخه‌سی ایله تطبیق اوچون گونجل‌لنیر',
 	'tpt-download-page' => 'صحیفه‌نی چئویرمه‌لرله ائشیگه چیخارت',
-	'aggregategroups' => 'بیرلشدیریلمیش گروپلار',
+	'aggregategroups' => 'بیرلشدیریلمیش قروپلار',
 	'tpt-aggregategroup-add' => 'آرتیر',
 	'tpt-aggregategroup-save' => 'قئید ائت',
-	'tpt-aggregategroup-add-new' => 'بیر یئنی بیرلشمه گروپو آرتیر',
+	'tpt-aggregategroup-add-new' => 'بیر یئنی بیرلشمه قروپو آرتیر',
 	'tpt-aggregategroup-new-name' => 'آد:',
 	'tpt-aggregategroup-new-description' => 'توضیح (ایستگه باغلی):',
-	'tpt-aggregategroup-remove-confirm' => 'بو بیرلشمه گروپونو سیلمکدن آرخایینسینیز؟',
-	'tpt-aggregategroup-invalid-group' => 'گروپ یوخدور',
+	'tpt-aggregategroup-remove-confirm' => 'بو بیرلشمه قروپونو سیلمکدن آرخایینسینیز؟',
+	'tpt-aggregategroup-invalid-group' => 'قروپ یوخدور',
 	'pt-parse-open' => 'بالانس اولمامیش &lt;translate> اِتیکِتی.
 چئویرمک شابلونو: <pre>$1</pre>',
 	'pt-parse-close' => 'بالانس اولمامیش &lt;/translate> اِتیکِتی.
 چئویرمک شابلونو: <pre>$1</pre>',
 	'pt-parse-nested' => 'بیر بیری ایچینده اولان &lt;translate> چئویرمه بیریملرینه ایجازه یوخدور.
 اِتیکِت یازیسی: <pre>$1</pre>',
+	'pt-shake-multiple' => 'بیر چئویرمه بیریمی اوچون، چوخلو چئویرمه بیریم نیشانلایانلاری.
+چئویرمه بیریم یازیسی: <pre>$1</pre>',
+	'pt-shake-position' => 'گؤزلنیمه‌ین یئرده چوخلو بیریم نیشانلایانلاری.
+چئویرمه بیریم یازیسی: <pre>$1</pre>',
+	'pt-shake-empty' => '«$1» نیشانلایانی اوچون بوش چئویرمه بیریمی.',
+	'pt-log-header' => 'صحیفه چئویرمه سیستِمینه ایلگیلی ایشلرین قئیدلری',
+	'pt-log-name' => 'صحیفه چئویرمک قئیدلری',
+	'pt-log-mark' => '«[[:$1]]» صحیفه‌سینین $3 نوسخه‌سینی چئویرمگه {{GENDER:$2|نیشانلادی}}',
+	'pt-log-unmark' => '«[[:$1]]» صحیفه‌سینی چئویرمک‌دن {{GENDER:$2|سیلدی}}',
+	'pt-log-moveok' => '«$1» چئویریله بیلن صحیفه‌نین آدینی $3-ه دَییشدیرمگی {{GENDER:$2|قورتاردی}}',
+	'pt-log-movenok' => '«[[:$1]]»-ی «[[:$3]]»-ه آپاراندا بیر موشکول ایله {{GENDER:$2|قارشیلاشدی}}',
+	'pt-log-delete-full-ok' => '«$1» چئویریله بیلن صحیفه‌نین سیلمگینی {{GENDER:$2|قورتاردی}}',
+	'pt-log-delete-full-nok' => '«[[:$1]]» چئویریله بیلن صحیفه‌نی سیلنده بیر موشکول ایله {{GENDER:$2|قارشیلاشدی}}',
+	'pt-log-delete-lang-ok' => '«$1» صحیفه‌سینین سیلمگینی {{GENDER:$2|قورتاردی}}',
+	'pt-log-delete-lang-nok' => '«[[:$1]]» چئویرمک صحیفه‌سینی سیلنده بیر موشکول ایله {{GENDER:$2|قارشیلاشدی}}',
+	'pt-log-encourage' => '«[[:$1]]» صحیفه‌سینین چئویرمگینی {{GENDER:$2|توصیه ائتدی}}',
+	'pt-log-discourage' => '«[[:$1]]» صحیفه‌سینین چئویرمگینی {{GENDER:$2|توصیه ائتمه‌دی}}',
 	'pt-log-priority-langs-unset' => '«[[:$1]]» چئویریله بیلن صحیفه‌دن اؤنجه‌لیک دیل‌لری {{GENDER:$2|سیلدی}}',
 	'pt-log-priority-langs' => '«[[:$1]]» چئویریله بیلن صحیفه‌نین اؤنجه‌لیک دیل‌لرینی $3-ه {{GENDER:$2|چئویردی}}. ندن: $4',
 	'pt-log-priority-langs-force' => '«[[:$1]]» چئویریله بیلن صحیفه اوچون دیل‌لری $3-ه {{GENDER:$2|محدودلاشدیردی}}. ندن: $4',
@@ -957,6 +975,24 @@ $messages['azb'] = array(
 	'pt-movepage-block-section-invalid' => 'چئویرمک بیریمی اوچون «[[:$1]]»-ه هدف صحیفه باشلیغی گئچرسیز اولار (چوخ اوزون؟).',
 	'pt-movepage-block-subpage-exists' => '«[[:$2]]» هدف آلت‌صحیفه‌سی یوخدور.',
 	'pt-movepage-block-subpage-invalid' => '«[[:$1]]» اوچون هدف آلت‌صحیفه باشلیغی گئچرسیز اولار (چوخ اوزون؟).',
+	'pt-movepage-list-pages' => 'آدینی دَییشدیره‌جک صحیفه‌لرین لیستی',
+	'pt-movepage-list-translation' => 'چئویرمک {{PLURAL:$1|صحیفه‌سی|صحیفه‌لری}}',
+	'pt-movepage-list-section' => 'چئویرمک بیریم {{PLURAL:$1|صحیفه‌سی|صحیفه‌لری}}',
+	'pt-movepage-list-other' => 'آیری آلت‌{{PLURAL:$1|صحیفه|صحیفه‌لر}}',
+	'pt-movepage-list-count' => 'توپلام‌دا آدینی دَییشدیرمگه {{PLURAL:$1|بیر|$1}} صحیفه.',
+	'pt-movepage-legend' => 'دَییشدیریله بیلن صحیفه‌نین آدینی دَییشدیر',
+	'pt-movepage-current' => 'ایندیکی آد:',
+	'pt-movepage-new' => 'یئنی آد:',
+	'pt-movepage-reason' => 'ندن:',
+	'pt-movepage-subpages' => 'بوتون آلت‌صحیفه‌لرین آدلارینی دَییشدیر',
+	'pt-movepage-action-check' => 'آدی دَییشدیرمگین ایمکانی اولماغینی یوخلا',
+	'pt-movepage-action-perform' => 'آدی دَییشدیر',
+	'pt-movepage-action-other' => 'هدفی دَییشدیر',
+	'pt-movepage-intro' => 'بو اؤزل صحیفه سیزه ایجازه وئریر چئویرمگه نیشانلانان صحیفه‌لرین آدلارینی دَییشدیره‌سینیز.
+آدی دَییشدیرمک ایشی، بیر آن‌دا اولمایاجاق، نییه کی چوخلو صحیفه‌لرین آدلاری دَییشدیرمک گرکلی اولا بیلر.
+صحیفه‌لرین آدلاری دَییشدیریلنده، او صحیفه‌لرله ایشله‌مک ایمکانی اولماز.
+موفقیت‌سیزلیکلر [[Special:Log/pagetranslation|صحیفه چئویرمک قئیدلرینده]] قئید اولوناجاقلار و اونلاری ال ایله دوزلتمک گرکلی‌دیر.',
+	'pt-movepage-logreason' => '«$1» چئویریله بیلن صحیفه‌نین پارچاسی.',
 	'pt-movepage-started' => 'اساس صحیفه ایندی آدی دَییشدیریلیب‌دیر.
 لوطفاً خطالار و قورتارماق مئساژلاری اوچون [[Special:Log/pagetranslation|صحیفه چئویرمک قئیدلری]]نی یوخلایین.',
 	'pt-locked-page' => 'ایندی چئویریله بیلن صحیفه‌نین آدی دَییشدیلماقدا اولماغینا گؤره، بو صحیفه قیفیل‌لانیب‌دیر.',
@@ -973,6 +1009,17 @@ $messages['azb'] = array(
 	'pt-deletepage-current' => 'صحیفه آدی:',
 	'pt-deletepage-reason' => 'ندن:',
 	'pt-deletepage-subpages' => 'بوتون آلت‌صحیفه‌لری سیل',
+	'pt-deletepage-list-pages' => 'سیلینه‌جک صحیفه‌لرین لیستی',
+	'pt-deletepage-list-translation' => 'چئویرمک صحیفه‌لری',
+	'pt-deletepage-list-section' => 'چئویرمک بیریم صحیفه‌لری',
+	'pt-deletepage-list-other' => 'آیری آلت‌صحیفه‌لر',
+	'pt-deletepage-list-count' => 'توپلام‌دا سیلمگه {{PLURAL:$1|بیر|$1}} صحیفه.',
+	'pt-deletepage-full-logreason' => '«$1» چئویریله بیلن صحیفه‌نین پارچاسی.',
+	'pt-deletepage-lang-logreason' => '«$1» چئویرمک صحیفه‌سینین پارچاسی.',
+	'pt-deletepage-started' => 'لوطفاً خطالار و قورتارماقلار مئساژلاری اوچون [[Special:Log/pagetranslation|صحیفه چئویرمک قئیدلری]]نه باخین.',
+	'pt-deletepage-intro' => 'بو اؤزل صحیفه سیزه ایجازه وئریر بیر بوتون چئویریله بیلن صحیفه‌نی، یا دا بیر دیل‌ده بیر تک چئویرمک صحیفه‌سینی سیله‌سینیز.
+سیلمک ایشی بیر آن‌دا اولمایاجاق‌دیر، نییه کی اونلارا دایانان بوتون صحیفه‌لر ده گرک سیلینسینلر.
+موفقیت‌سیزلیکلر [[Special:Log/pagetranslation|صحیفه چئویرمک قئیدلری]]نده قئید اولوناجاقلار و اونلاری ال ایله دوزلتمک گرکلی‌دیر.',
 );
 
 /** Bashkir (башҡортса)

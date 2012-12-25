@@ -2173,7 +2173,7 @@ $messages['pms'] = array(
 	'translate-group-desc-flaggedrevs' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Revision signalà]",
 	'translate-group-desc-readerfeedback' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback Artorn dij letor]",
 	'translate-group-desc-semantic' => "Partìa ëd mëssagi Meta contenent tùit ij mëssagi për tute j'estension [http://semantic-mediawiki.org/ Semantic MediaWiki]",
-	'translate-group-desc-translate' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Tradussion]",
+	'translate-group-desc-translate' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Tradussion]; për piasì familiariste con sò [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossari]",
 	'translate-group-desc-wikiaextensions' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension mantnùa MediaWiki dovrà da [http://www.wikia.com Wikia]",
 	'translate-group-desc-wikimediaextensions' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension mantnùa MediaWiki dovrà da [http://wikimedia.org/ Fondassion Wikimedia]",
 	'translate-group-desc-wikimediaextensions-main' => "Partìa ëd meta mëssagi contenent tùit ij mëssagi për j'estension MediaWiki mantnùe e ch'a venta volté për ël [http://meta.wikimedia.org/wiki/Language_committee Comità dle lenghe] ëd Wikimedia",
@@ -2211,6 +2211,13 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'translate-group-desc-waymarked-trails' => "[[Translating:Waymarked Trails|Waymarked Trails]] a l'é un servissi ch'a mostra le stra për j'escursion, la bici, ël rampichin e ël tapinagi an linia dantorn al mond. A deuvra la licensa GNU GPL",
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] a peil trové an pressa j'àutor ëd na pàgina an na wiki ëd Wikimedia.",
 	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] a l'é un proget për fé na version ëd Wikipedia fòra linia, ëd sol test, dzora a na perifèrica mòbil.",
+	'translate-group-desc-wikimedia-mobile' => 'Partìa ëd mëssagi agregà contenent aplicassion sacociàbil për proget Wikimedia',
+	'translate-group-desc-wikimedia-mobile-wikipedia' => "[[Translating:WikipediaMobile|WikipediaMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wikipedia",
+	'translate-group-desc-wikimedia-mobile-wikisource' => "[[Translating:WikisourceMobile|WikisourceMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wikisource",
+	'translate-group-desc-wikimedia-mobile-wiktionary' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wiktionary",
+	'translate-group-desc-wikimedia-mobile-wlm' => "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] a l'é n'aplicassion për ij sacociàbij për contribuì al [[:meta:Wiki Loves Monuments|proget Wiki Loves Monuments]]",
+	'translate-group-desc-waymarked-trails-help' => "Le pagine d'agiut dël sit web Waymarked Trails
+: http://waymarkedtrails.org/help/about",
 );
 
 /** Pashto (پښتو)
@@ -2830,9 +2837,11 @@ $messages['tt-cyrl'] = array(
  * @author Base
  * @author Olvin
  * @author Prima klasy4na
+ * @author Ата
  * @author Тест
  */
 $messages['uk'] = array(
+	'translategroupdescriptions-desc' => 'Описи груп повідомлень, що підтримуються розширенням [http://mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-nodesc' => 'Немає опису цієї групи повідомлень',
 	'translate-group-desc-mediawikicore' => 'Ця група містить повідомлення, які використовують у поточній альфа-версії MediaWiki ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'Ця група містить [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 найуживаніших повідомлень] [[Translating:MediaWiki|MediaWiki]]',
@@ -2840,9 +2849,11 @@ $messages['uk'] = array(
 	'translate-group-desc-collection' => 'Метагрупа, що містить повідомлення для розширення [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Метагрупа, що містить повідомлення для MediaWiki-розширення [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Метагрупа, що містить всі повідомлення розширення MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-translate' => 'Метагрупа, що містить повідомлення для MediaWiki-розширення [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
+	'translate-group-desc-semantic' => 'Метагрупа повідомлень, що містить усі повідомлення для усіх розширень [http://semantic-mediawiki.org/ Semantic MediaWiki]',
+	'translate-group-desc-translate' => 'Метагрупа повідомлень, що містить повідомлення для MediaWiki-розширення [http://www.mediawiki.org/wiki/Extension:Translate Translate]; будь ласка, ознайомтесь із його [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary глосарієм]',
 	'translate-group-desc-wikiaextensions' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://wikimedia.org/ Фондом Вікімедіа]',
+	'translate-group-desc-wikimediaextensions-main' => 'Метагрупа повідомлень, що містить усі повідомлення для підтримуваних розширень MediaWiki, які мають бути перекладені для [http://meta.wikimedia.org/wiki/Language_committee/uk Мовного комітету] Вікімедіа',
 	'translate-group-desc-ui' => 'Метагрупа, що містить повідомлення для MediaWiki-розширень, які використовуються [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Усі сторінки, що можуть перекладатися',
 	'bw-desc-freecol' => 'Перед тим, як перекладати FreeCol на вашу мову, прочитайте, будь ласка, [[Translating:FreeCol]]. Freecol використовує ліцензію GPL.',
@@ -2864,16 +2875,26 @@ $messages['uk'] = array(
 Гляньте, будь ласка, [[mw:Extension:PDF_Writer]] та http://code.pediapress.com/wiki/wiki/mwlibrl для доклднішої інформації.",
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] це автономна читалка Вікіпедії',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] — відкрита медіа-платформа',
+	'translate-group-desc-openimages-verifyemailtemplate' => 'Ці повідомлення є частиною шаблону верифікації електронною поштою [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Ці повідомлення є частиною проекту [[Translating:Open Images|Open Images]]',
 	'bw-desc-openstreetmap' => 'Група повідомлень [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Ця група містить повідомлення інтерфейсу [[Translating:Open Street Map|Open Street Map]].
 Глядіть [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} сторінку Unicode CLDR для пояснень щодо творення форми множини].',
+	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] — це базований на Flash редактор OpenStreetMap',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] — набір інструментів для редагування Вікіпедії',
 	'bw-desc-shapado' => 'Група повідомлень відкритого та вільного програмного забезпечення питань та відповідей [[Translating:Shapado|Shapado]]',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — сервер мікроблогінгу з відкритим вихідним кодом',
 	'translate-group-desc-statusnet-plugin' => 'Ці повідомлення є частиною плагіна для [[Translating:StatusNet|StatusNet]]',
+	'translate-group-desc-tsint' => 'Група повідомлень для [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], системи i18n для засобів [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|підтримка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технічні деталі]</span>)',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] — сервіс, що показує маршрути для прогулянок, велоспорту, поїздок на гірському велосипеді та катання на роликах по всьому світу. Використовує ліцензію GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дозволяє швидко знайти авторів сторінки в проектах Вікімедіа.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] є проектом для випуску автономної текстової версії Вікіпедії на мобільному пристрої.',
+	'translate-group-desc-wikimedia-mobile' => "Об'єднана група повідомлень мобільних додатків для проектів Вікімедіа",
+	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] є багатоплатформним застосунком для мобільних та планшетних пристроїв, який призначено для читання Вікіпедії та дописування до неї',
+	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] — багатоплатформний застосунок для мобільних та планшетних пристроїв, який призначено для перегляду Вікісховища і дописування у нього',
+	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] — це крос-платформний додаток для мобільних і планшетних пристроїв, що призначений для читання і редагування Вікісловника',
+	'translate-group-desc-wikimedia-mobile-wlm' => "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] — мобільний застосунок для внеску до [[:meta:Wiki Loves Monuments|проекту Вікі Любить Пам'ятки]]",
+	'translate-group-desc-waymarked-trails-help' => 'Сторінки допомоги сайтів Waymarked Trails: http://waymarkedtrails.org/help/about',
 );
 
 /** Uzbek (oʻzbekcha)
