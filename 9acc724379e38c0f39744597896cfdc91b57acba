@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX///ds\u003d",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-25T20:57:51Z",
+      "side": 1,
+      "message": "Many !important here I don\u0027t like. I think they should be documented if not possible to get rid of.",
+      "revId": "9acc724379e38c0f39744597896cfdc91b57acba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX///dg\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-25T20:57:51Z",
+      "side": 1,
+      "message": "These need to be urlencoded properly. Use mw.Uri or alternative.",
+      "revId": "9acc724379e38c0f39744597896cfdc91b57acba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX///dc\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-25T20:57:51Z",
+      "side": 1,
+      "message": "It should be safe coming from the API, but we can add structured format to the new translationhelpers API if needed.",
+      "revId": "9acc724379e38c0f39744597896cfdc91b57acba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX///dY\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 834,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-25T20:57:51Z",
+      "side": 1,
+      "message": "$Html???",
+      "revId": "9acc724379e38c0f39744597896cfdc91b57acba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX///dU\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 871,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-25T20:57:51Z",
+      "side": 1,
+      "message": "For consistency use FormatJson::encode",
+      "revId": "9acc724379e38c0f39744597896cfdc91b57acba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
