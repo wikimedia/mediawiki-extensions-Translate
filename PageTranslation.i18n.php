@@ -5873,7 +5873,7 @@ $messages['ksh'] = array(
 	'tpt-notsuitable' => 'Di Sigg „$1“ paß nit för et Övversäze. Maach <code><nowiki><translate></nowiki></code>-Makeerunge erin, un looer dat de Süntax shtemmp.',
 	'tpt-saveok' => 'De Sigg „$1“ es för ze Övversäze makeet. Doh dren {{PLURAL:$2|es eine Knubbel|sinn_er $2 Knubbelle|es ävver keine Knubbel}} för ze Övversäze. Di Sigg kam_mer <span class="plainlinks">[$3 jäz övversäze]</span>.',
 	'tpt-badsect' => '„$1“ es kein jöltejje Name för dä Knubbel zom Övversäze $2.',
-	'tpt-showpage-intro' => 'Hee dronger sen Övversäzongsaffschned opjeleß, di eruß jenumme woode, un di noch doh sin. Ih dat De hee di Version för ze Övversäze makeere deihß, loor drop, dat esu winnisch wi müjjelesch Änderonge aan Övversäzongsaffschnedde doh sin, öm dä Övversäzere et Levve leisch ze maache.',
+	'tpt-showpage-intro' => 'Hee dronger sen Övversäzongsaffschnedde opjeleß, di eruß jenumme woode, di neu sin, un di noch doh sin. Ih dat De hee di Version för ze Övversäze makeere deihß, loor drop, dat esu winnisch wi müjjelesch Änderonge aan Övversäzongsaffschnedde doh sin, öm dä Övversäzere et Levve leisch ze maache.',
 	'tpt-mark-summary' => 'Han di Version för ze Övversäze makeet',
 	'tpt-edit-failed' => 'Kunnt de Sigg „$1“ nit ändere',
 	'tpt-duplicate' => 'Dä Name „$1“ för ene Knubbel kütt mieh wi eijmohl vör.',
@@ -5906,7 +5906,7 @@ $messages['ksh'] = array(
 	'translate-tag-hasnew' => 'Hee di Sigg <span class="plainlinks">[$1 es jeändert woode]</span>, es ävver nit för ze Övversäze makeet woode.',
 	'tpt-translation-intro' => 'Hee di Sigg es en <span class="plainlinks">[$1 övversaz Version]</span> vun dä Sigg „[[$2]]“ un es zoh $3% jedonn un om aktoälle Shtandt.',
 	'tpt-translation-intro-fuzzy' => 'Övverhollte Övversäzunge wäde su makeet, wi hee dä Täx.',
-	'tpt-languages-legend' => 'Ander Shprooche:',
+	'tpt-languages-legend' => 'Ander Schprooche:',
 	'tpt-languages-zero' => 'Donn ens loßlääje mem Övversäze en heh di Schprooch',
 	'tpt-target-page' => 'Hee di Sigg kam_mer nit vun Hand ändere. Dat hee es en Översäzungß_Sigg vun dä Sigg [[$1]]. De Övversäzung kam_mer övver däm Wiki sing [$2 Övversäzungß_Wärkzüsch] op der neußte Shtand bränge.',
 	'tpt-unknown-page' => 'Dat Appachtemang hee es för Sigge vum Enhallt vum Wiki ze Övversäze jedaach. Di Sigg, di de jraad ze ändere versöhks, schingk ävver nit met ööhnds en Sigg ze donn ze han, di för zem Övversäze makeet es.',
@@ -5961,8 +5961,8 @@ Dä Täx vun däm Affschned es: <pre>$1</pre>',
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|Dä|Dat|Dä Metmaacher|De|Dat}} [[User:$2|$2]] hät di övversäzbaa Sigg „[[:$1]]“ uß dä Sammeljrop $3 eruß jenumme.', # Fuzzy
 	'pt-movepage-title' => 'De övversäzbaa Sigg „$1“ ömnänne',
 	'pt-movepage-blockers' => 'Di övversäbaa Sigg künne mer nit ömbenänne. {{PLURAL:$1|Der Jrond es:|De Jrönd sin:|Mer weße ävver kein Jrönd doför.}}',
-	'pt-movepage-block-base-exists' => 'De Zielsigg „[[:$1]]“ jidd_et ald.',
-	'pt-movepage-block-base-invalid' => 'De aanjejovve Zielsigg hät keine jölteje Siggetittel.',
+	'pt-movepage-block-base-exists' => 'De övversäzbaa Zielsigg „[[:$1]]“ jidd_et ald.',
+	'pt-movepage-block-base-invalid' => 'Di aanjejovve Zielsigg hät keine jölteje Siggetittel.',
 	'pt-movepage-block-tp-exists' => 'De övversäzbaa Zielsigg „[[:$2]]“ jidd_et ald.',
 	'pt-movepage-block-tp-invalid' => 'De aanjejovve övversäzbaa Zielsigg iere Tittel för „[[:$1]]“ wöhr nit jöltejsch, Velleisch zoh lang?',
 	'pt-movepage-block-section-exists' => 'En Zielsigg met dämm Övversäzongsafschned „[[:$2]]“ jidd_et ald.',
@@ -5970,9 +5970,9 @@ Dä Täx vun däm Affschned es: <pre>$1</pre>',
 	'pt-movepage-block-subpage-exists' => 'De Ziel_Ongersigg „[[:$2]]“ jidd_et ald.',
 	'pt-movepage-block-subpage-invalid' => 'Dä Tittel för de Onger_Sigg för „[[:$1]]“ wöhr nit jöltejsch, Velleisch zoh lang?',
 	'pt-movepage-list-pages' => 'De Leß met dä Sigge zom Ömbenänne',
-	'pt-movepage-list-translation' => 'Övversäzbaa Sigge',
-	'pt-movepage-list-section' => 'Övversäzongsaffschnets_Sigge',
-	'pt-movepage-list-other' => 'Ander Ongersigge',
+	'pt-movepage-list-translation' => 'Övversaz {{PLURAL:$1|Sigg|Sigge}}',
+	'pt-movepage-list-section' => 'Övversäzongsaffschnets_{{PLURAL:$1|Sigg|Sigge}}',
+	'pt-movepage-list-other' => 'Ander Onger_{{PLURAL:$1|Sigg|Sigge}}',
 	'pt-movepage-list-count' => 'Ensjesamp ham_mer {{PLURAL:$1|ein Sigg|$1 Sigge|kein Sigg}} för ömzenänne.',
 	'pt-movepage-legend' => 'Övversäzbaa Sigg ömnänne',
 	'pt-movepage-current' => 'Der Name em Momang:',
@@ -5994,7 +5994,7 @@ Don op jede Fall em [[Special:Log/pagetranslation|{{int:pt-log-name}}]] noh Fäh
 	'pt-deletepage-lang-title' => 'De Övversäzongssigg „$1“ fottschmieße',
 	'pt-deletepage-full-title' => 'De övversäzbaa Sigg „$1“ fottschmieße.',
 	'pt-deletepage-invalid-title' => 'Di aanjejovve Sigg es nit jöltesch.',
-	'pt-deletepage-invalid-text' => 'Di aanjejovve Sigg es nit övversäbaa un och kein Övversäzong vun einer.',
+	'pt-deletepage-invalid-text' => 'Di aanjejovve Sigg es kein övversäbaa Sigg un och kein Övversäzong vun einer.',
 	'pt-deletepage-action-check' => 'Don de Sigge opleßte, di fott sulle',
 	'pt-deletepage-action-perform' => 'Maach nu fott!',
 	'pt-deletepage-action-other' => 'Nemm ene andere Zieltittel',
@@ -6012,8 +6012,8 @@ Don op jede Fall em [[Special:Log/pagetranslation|{{int:pt-log-name}}]] noh Fäh
 	'pt-deletepage-full-logreason' => 'Deil vun dä övversäzbaa Sigg „$1“',
 	'pt-deletepage-lang-logreason' => 'Deil vun dä övversaz Sigg „$1“',
 	'pt-deletepage-started' => 'Loor em [[Special:Log/pagetranslation|Logbooch vun de Övversäzonge]] noh Fähler un Nohreeschte.',
-	'pt-deletepage-intro' => 'Heh di Söndersigg määd et müjjelesch kumplätte övversäbaa Sigge udder Övversäzonge en en beshtemmpte Shprooch fottzeschmieße.
-Dat Fottschmieße dohrt e Wielsche, weil en janze Aanzahl Sigge derbei fott jeschmeße wääde moß.
+	'pt-deletepage-intro' => 'Heh di Söndersigg määd et müjjelesch. kumplätte övversäbaa Sigge udder Övversäzonge en en beshtemmpte Shprooch fottzeschmieße.
+Dat Fottschmieße dohrt e Wielsche, weil alle dervun affhängeje Sigge derbei och fott jeschmeße wääde möße.
 Fähler kumme en et [[Special:Log/pagetranslation|Logbooch vum Övversäze]] un möße vun Hand jraadjeröck wääde.',
 );
 
@@ -10378,7 +10378,7 @@ $messages['zh-hans'] = array(
 但最新版本不得标记进行翻译。',
 	'tpt-discouraged-pages' => '以下{{PLURAL:$1|此|这些}}页面挫折更多翻译。',
 	'tpt-select-prioritylangs' => '优先语言代码的逗号分隔型列表',
-	'tpt-select-prioritylangs-force' => '防止向优先语言以外的语言的翻译', # Fuzzy
+	'tpt-select-prioritylangs-force' => '不允许向优先语言以外的语言的翻译',
 	'tpt-select-prioritylangs-reason' => '原因：',
 	'tpt-sections-prioritylangs' => '优先语言',
 	'tpt-rev-mark' => '标记进行翻译',
@@ -10432,7 +10432,7 @@ $messages['zh-hans'] = array(
 部分文本：<pre>$1</pre>', # Fuzzy
 	'pt-shake-position' => '部分标记在意外位置。
 部分文本：<pre>$1</pre>', # Fuzzy
-	'pt-shake-empty' => '空节标记为 $1。', # Fuzzy
+	'pt-shake-empty' => '为“$1”的翻译单位标记是空的。',
 	'pt-log-header' => '页面翻译系统的对应活动日志',
 	'pt-log-name' => '页面翻译日志',
 	'pt-log-mark' => '{{GENDER:$2|标记}}“[[:$1]]”页面$3版本进行翻译',
@@ -10452,18 +10452,18 @@ $messages['zh-hans'] = array(
 	'pt-log-aggregategroup-dissociate' => '已从聚合组$3{{GENDER:$2|删除了}}可翻译页面[[:$1]]',
 	'pt-movepage-title' => '移动可翻译页面$1',
 	'pt-movepage-blockers' => '可翻译页面因下列$1错误无法移动至新名称：',
-	'pt-movepage-block-base-exists' => '目标基础页面[[:$1]]存在。', # Fuzzy
-	'pt-movepage-block-base-invalid' => '目标基础页面不是一个有效标题。', # Fuzzy
+	'pt-movepage-block-base-exists' => '可翻译的目标页面“[[:$1]]”已存在。',
+	'pt-movepage-block-base-invalid' => '可翻译的目标页面名称不是一个有效标题。',
 	'pt-movepage-block-tp-exists' => '目标翻译页面[[:$2]]存在。',
 	'pt-movepage-block-tp-invalid' => '[[:$1]]的目标翻译页面的标题无效（可能太长）。',
-	'pt-movepage-block-section-exists' => '目标部分页面[[:$2]]存在。', # Fuzzy
+	'pt-movepage-block-section-exists' => '为目标页面“[[:$2]]”的翻译单位存在。',
 	'pt-movepage-block-section-invalid' => '[[:$1]]的目标章节标题无效（可能太长）。', # Fuzzy
 	'pt-movepage-block-subpage-exists' => '目标子页面[[:$2]]存在。',
 	'pt-movepage-block-subpage-invalid' => '[[:$1]]的子页面标题无效（可能太长）。',
 	'pt-movepage-list-pages' => '需移动页面的列表',
-	'pt-movepage-list-translation' => '翻译页面', # Fuzzy
-	'pt-movepage-list-section' => '翻译单元页面', # Fuzzy
-	'pt-movepage-list-other' => '其他子页面', # Fuzzy
+	'pt-movepage-list-translation' => '翻译{{PLURAL:$1|页面|页面}}',
+	'pt-movepage-list-section' => '翻译单元{{PLURAL:$1|页面|页面}}',
+	'pt-movepage-list-other' => '其他子{{PLURAL:$1|页面|页面}}',
 	'pt-movepage-list-count' => '共移动$1个页面。',
 	'pt-movepage-legend' => '移动可翻译页面',
 	'pt-movepage-current' => '当前名称：',
@@ -10484,13 +10484,13 @@ $messages['zh-hans'] = array(
 	'pt-deletepage-lang-title' => '删除翻译网页 $1。',
 	'pt-deletepage-full-title' => '删除可翻译网页 $1。',
 	'pt-deletepage-invalid-title' => '指定的页不是有效的。',
-	'pt-deletepage-invalid-text' => '指定的页不是可翻译页面也的翻译。', # Fuzzy
+	'pt-deletepage-invalid-text' => '指定的页面不是一个可翻译页面或一个翻译信息页面。',
 	'pt-deletepage-action-check' => '要删除的列表页',
 	'pt-deletepage-action-perform' => '不要删除',
 	'pt-deletepage-action-other' => '更改目标',
 	'pt-deletepage-lang-legend' => '删除翻译页面',
 	'pt-deletepage-full-legend' => '删除可翻译页面',
-	'pt-deletepage-any-legend' => '删除可翻译页面或翻译的翻译页面', # Fuzzy
+	'pt-deletepage-any-legend' => '删除可翻译的页面或翻译信息的页面',
 	'pt-deletepage-current' => '页面名称：',
 	'pt-deletepage-reason' => '原因：',
 	'pt-deletepage-subpages' => '删除所有子页面',
@@ -10512,6 +10512,7 @@ $messages['zh-hans'] = array(
  * @author Liangent
  * @author Mark85296341
  * @author Simon Shek
+ * @author Waihorace
  * @author Wrightbus
  */
 $messages['zh-hant'] = array(
@@ -10542,7 +10543,7 @@ $messages['zh-hant'] = array(
 本頁面現已可以<span class="plainlinks">[$3 翻譯]</span>。',
 	'tpt-badsect' => '「$1」對於$2翻譯單位不是有效的名稱。',
 	'tpt-showpage-intro' => '以下列出新創、現存及已刪除的部分。
-將此版本標記進行翻譯之前，請檢查來確定該部分極少受修改，以便翻譯員避免得到多餘的工作。', # Fuzzy
+將此版本標記進行翻譯之前，請檢查來確定該部分極少受修改，以便翻譯員避免得到多餘的工作。',
 	'tpt-mark-summary' => '標記此版本的翻譯',
 	'tpt-edit-failed' => '無法更新該頁面：$1',
 	'tpt-duplicate' => '翻譯單元名稱 $1 已被使用超過一次。',

@@ -246,6 +246,13 @@ $messages['az'] = array(
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] Vikimedia layihələrində səhifə müəlliflərini tez bir zamanda axtarıb tapmağa imkan verir.',
 );
 
+/** South Azerbaijani (تورکجه)
+ * @author Mousa
+ */
+$messages['azb'] = array(
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] بیر آفلاین ویکی‌پئدیا اوخویانی‌دیر',
+);
+
 /** Bashkir (башҡортса)
  * @author Assele
  */
@@ -1627,12 +1634,10 @@ $messages['ksh'] = array(
 	'translate-group-desc-flaggedrevs' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Zohsatzprojramm-Pöngel <code lang="en">[http://www.mediawiki.org/wiki/Extension:FlaggedRevs Flagged Revsisions]</code>',
 	'translate-group-desc-readerfeedback' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Pöngel vun Zohsatzprojramme mem Naame [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'En Sammeljropp för all de Täxte un Nohreeschte vum [http://semantic-mediawiki.org/ Semantic MediaWiki] un sing Zohsazprojramme',
-	'translate-group-desc-socialprofile' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vum MediaWiki singe Zohsatzprojramme, di en däm Zohsatzprojramm-Pakkät <code lang="en">[http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]</code> dren hange',
-	'translate-group-desc-translate' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Pöngel Zohsatzprojramme mem Name <code lang="en">[http://www.mediawiki.org/wiki/Extension:Translate Translate]</code>',
+	'translate-group-desc-translate' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Pöngel Zohsatzprojramme mem Name <code lang="en">[http://www.mediawiki.org/wiki/Extension:Translate Translate]</code>', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di bei [http://www.wikia.com Wikia] jebruch wäde',
 	'translate-group-desc-wikimediaextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di en en Wikis vun de  <i lang="en">[http://wikimedia.org/ Wikimedia Foundation]</i> jebruch wäde',
 	'translate-group-desc-wikimediaextensions-main' => 'En heh dä Sammeljropp sin all de Täxte un Nohreeschte us dä Zohsazprojramme vum MediaWiki, di et [http://meta.wikimedia.org/wiki/Language_committee Kumitte för de Shprooche] vun de Wikimedia Shteftong övversaz han well.',
-	'translate-group-desc-uniwiki' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mem <i lang="en">[http://unicefinnovation.org/wiki.php Uniwiki]</i> ze donn han',
 	'translate-group-desc-ui' => 'Hee di Sammeljropp hät all de Texnohreeschte uß de divärse Zohsazprojramme vun dä [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative „<i lang="en">Wikipedia Usability Initiative</i>“].',
 	'translate-group-desc-translatablepages' => 'All övversäzbaa Sigge',
 	'bw-desc-freecol' => 'Iih dat De <i lang="en">FreeCol</i> en Ding Shprooch övversäz, donn ens di Sigg „<i lang="en">[[Translating:FreeCol]]</i>“ lässe. <i lang="en">FreeCol</i> shteiht unger dä GPL.',
@@ -1652,12 +1657,10 @@ $messages['ksh'] = array(
 	'bw-desc-mwlibrl' => '\'\'\'<i lang="en">mwlib.rl</i>\'\'\' es en Versammlong udder Biplijoteek vun Projramme en dä Projrammierschprooch „<i lang="en">Python</i>“, öm Dateie em Fomaat PDF uß Sigge en enem MediaWiki Wiki ze maache, di dovöör vun dä Projramme uß dä Sammlong „<i lang="en">mwlib</i>“ opjeärbeidt woode wohre.
 
 Jangk op di Sigge „<i lang="en">[[mw:Extension:PDF_Writer]]</i>“ un „<i lang="en">http://code.pediapress.com/wiki/wiki/mwlibrl</i>“, wann De doh drövver mieh weße wells.',
-	'bw-desc-nocc' => '<i lang="en">[http://nocc.sourceforge.net NOCC]</i> es e Projramm för övver et Web <i lang="en">e-mail</i> ze krijje, ze schriive, un ze verwallde. Wann Üsch jät opfällt, un wann_er Froore hat, doht dat op dä Sigg „[[Support|{{int:bw-mainpage-support-title}}]]“ opschriive.',
 	'translate-group-desc-okawix' => 'Met [[Translating:Okawix|Okawix]] kam_mer offlain en de Wikipedia lässe.',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]]</i> es ene Werkplaz för offe Belder.',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Heh di Täxde un Nohreeschde sin Deil vum Fomulaa för de Addräß för de <i lang="en">e-mail</i> em Projäk <i lang="en">[[Translating:Open Images|Open Images]]</i> ze pröfe.',
 	'translate-group-desc-openimages-all' => 'Heh di Täxde un Nohreeschde sin Deil vum Projäk <i lang="en">[[Translating:Open Images|Open Images]]</i>.',
-	'bw-desc-openlayers' => '<i lang="en">OpenLayers</i> es en <i lang="en">open-source</i>-Süßteem för dünnamesch Landkaate ußzejävve. Wann Üsch jät opfällt, doht et op de Sigg „[[Support|{{int:bw-mainpage-support-title}}]]“ schriive.',
 	'bw-desc-openstreetmap' => 'En dä Jropp sen Täxde un Nohreeschte em Zosammehang, di met <i lang="en">[[Translating:OpenStreetMap|OpenStreetMap]]</i> shtonn.',
 	'bw-desc-osm-site' => 'Heh di Jropp hät de Nohreeschte uß dä Bovverfläsch vun <i lang="en">[[Translating:Open Street Map|Open Street Map]]</i>.',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] es e Projramm för <i lang="en">OpenStreetMap</i> ze beärbeide wad op <i lang="en">Flash</i> läuf.',
@@ -1669,9 +1672,12 @@ Jangk op di Sigge „<i lang="en">[[mw:Extension:PDF_Writer]]</i>“ un „<i la
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] es ene Deens, dä zeisch Wanderwääje, Raddwääje, Wääje för et Mauntenbaike, un Rollschohwäje en de janze Wält onger dä alljemeine öffentlesche Lizänz vun dä GNU.',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] kann flöck de Schriiver vun enem Stöck vun ener Sigg en enem Wikimedia Wiki fenge.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es e Projäk för en offlain Version vun de Wikipedia, ävver bloß Täx, op klein Jeräte.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] es a Projramm för ongerscheidlijje Bedriefssyßteeme för de Wikipeedija op draachbaare Jerääte un Tablät-PCs ze lässe un ze schrieve.',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] en e Projramm för et Wikiwööterbooch ze beloore udder ze ändeere för et Funktellefoon un der Tablätt-PC.',
-	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] es e Projramm för Händitellefonne, Tablättkompjuere, un esu, öm beim Projäk [[:meta:Wiki Loves Monuments|Wiki Loves Monuments]] mezemaache.',
+	'translate-group-desc-wikimedia-mobile' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun de mobiile Projäkte vun de Wikkimeedija-Schtefftong.',
+	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] es e Projramm för ongerscheidlijje Bedriefsyßteeme för de Wikipeedija op draachbaare Jerääte un Tablät-PCs ze lässe un ze schrieve.',
+	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] es e Projramm för ongerscheidlijje Bedriefsyßteeme för et QuälleWikki op draachbaare Jerääte un Tablät-PCs ze lässe un ze schrieve.',
+	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] es e Projramm för ongerscheidlijje Bedriefsyßteeme för et WikkiWööterbooch op draachbaare Jerääte un Tablät-PCs ze lässe un ze schrieve.',
+	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] is a mobile application for contributing to the [[:meta:Wiki Loves Monuments|Wiki Loves Monuments project]]',
+	'translate-group-desc-waymarked-trails-help' => 'De Hölpsigge uß de „Waymarked Trails“-Websigge: http://waymarkedtrails.org/help/about',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -2469,6 +2475,13 @@ $messages['rue'] = array(
 	'translate-group-desc-socialprofile' => 'Тота метаґрупа обсягує вшыткы повідомлїня росшырїня [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
 	'translate-group-desc-translate' => 'Тота метаґрупа обсягує повідомлїня росшырїня  [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
 	'translate-group-desc-wikiaextensions' => 'Тота метаґрупа обсягує повідомлїня MediaWiki-росшырїнь, котры ся хоснують на [http://www.wikia.com Wikia]',
+);
+
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'translate-group-desc-translatablepages' => 'පරිවර්තනය කල හැකි සියළුම පිටු',
 );
 
 /** Slovak (slovenčina)
