@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX///YQ\u003d",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-26T11:53:06Z",
+      "side": 1,
+      "message": "I don\u0027t see anything overriding this without !important",
+      "revId": "6f7739ab4900de55fb50245fce50fb62f36b1276",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX///YU\u003d",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-26T11:53:06Z",
+      "side": 1,
+      "message": "I don\u0027t see anything overriding this without !important\n\nThis rule does not match the specs.",
+      "revId": "6f7739ab4900de55fb50245fce50fb62f36b1276",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX///YI\u003d",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-26T11:53:06Z",
+      "side": 1,
+      "message": "This rule seems redundant",
+      "revId": "6f7739ab4900de55fb50245fce50fb62f36b1276",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX///YM\u003d",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-26T11:53:06Z",
+      "side": 1,
+      "message": "This is fine if documented",
+      "revId": "6f7739ab4900de55fb50245fce50fb62f36b1276",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX///YA\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-26T11:53:06Z",
+      "side": 1,
+      "message": "This will still break if title contains \u0026. Use mw.Uri.extend",
+      "revId": "6f7739ab4900de55fb50245fce50fb62f36b1276",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

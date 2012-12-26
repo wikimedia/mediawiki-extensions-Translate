@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX///YE\u003d",
+        "filename": "resources/css/ext.translate.messagetable.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-26T11:53:06Z",
+      "side": 0,
+      "message": "Still, you can\u0027t just remove this from here.",
+      "revId": "7e99ab6427ac360655793605994efcf2b02e71a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
