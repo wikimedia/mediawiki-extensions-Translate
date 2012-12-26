@@ -33,6 +33,24 @@
       "revId": "ee53c7024a9d3b762a721a0aada1f427c82725d3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX///bI\u003d",
+        "filename": "resources/css/ext.translate.messagetable.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-12-26T00:24:56Z",
+      "side": 0,
+      "message": "I moved it to ext.translate.editor.css.",
+      "parentUuid": "AAADgX///dk\u003d",
+      "revId": "ee53c7024a9d3b762a721a0aada1f427c82725d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
