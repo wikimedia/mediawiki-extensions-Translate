@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX///PI\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2012-12-26T20:16:59Z",
+      "side": 1,
+      "message": "This class is now removed from CSS files and is used only for identifying the tab\u0027s state. It\u0027s not necessarily bad, but there may be something more robust.",
+      "revId": "179d1bd4da4322577bdfc050c78a782900d165dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
