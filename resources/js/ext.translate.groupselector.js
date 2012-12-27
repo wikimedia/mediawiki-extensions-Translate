@@ -310,7 +310,7 @@
 
 			// Show the initial list if the query is empty/undefined/null
 			if ( !query ) {
-				this.addGroupRows( this.parentGroupId );
+				this.addGroupRows( this.parentGroupId, null );
 				return;
 			}
 
@@ -365,10 +365,10 @@
 				$.get( apiURL, queryParams, function ( result ) {
 					$( '.ext-translate-msggroup-selector' )
 						.data( 'msggroups', result.query.messagegroups );
-					groupSelector.addGroupRows( parentGroupId );
+					groupSelector.addGroupRows( parentGroupId, null );
 				} );
 			} else {
-				groupSelector.addGroupRows( parentGroupId );
+				groupSelector.addGroupRows( parentGroupId, null );
 				// keep it open
 				groupSelector.show();
 			}

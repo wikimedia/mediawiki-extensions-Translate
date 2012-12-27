@@ -712,5 +712,4 @@
 			}
 		} );
 	};
-
 }( jQuery, mediaWiki ) );
