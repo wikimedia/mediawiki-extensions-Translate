@@ -46,10 +46,15 @@
 .tux-message-editor textarea {
 	border: 1px solid #555;
 	font-size: 16px;
-	margin-left: 10px;
 	padding: 5px !important;
 	height: 100px;
 	overflow-y: hidden;
+	position: relative;
+	z-index: 100;
+}
+
+.tux-message-editor .editarea {
+	position: relative;
 }
 
 .tux-message-editor .messagekey {
@@ -192,4 +197,39 @@
 .tux-message-editor .help a {
 	font-size: 14px;
 	padding: 0 0 0 5px;
+}
+
+.editarea .tux-warnings-block {
+	position: relative;
+}
+
+.tux-warning {
+	background-color: #FFFFCC;
+}
+
+.tux-warning-message {
+	font-size: 14px;
+	padding: 2px 15% 2px 5px;
+}
+
+.editarea .tux-more-warnings {
+	background-color: #FBF6AD;
+	position: absolute;
+	right: 0;
+	padding: 2px 5px;
+	text-align: right;
+	cursor: pointer;
+	bottom: 0;
+}
+
+.editarea .tux-more-warnings:before{
+	content: "";
+	border-bottom: 1em solid #FBF6AD;
+	border-top: 1em solid transparent;
+	border-left: 1em solid transparent;
+	border-right: 1em solid #FBF6AD;
+	display: inline-block;
+	position: absolute;
+	right: 100%;
+	top: 0;
 }
