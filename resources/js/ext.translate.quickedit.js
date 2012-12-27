@@ -118,7 +118,7 @@
 		} );
 
 		form.find( '.mw-translate-history' ).click( function() {
-			window.open( mw.util.wikiScript() + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
+			window.open( mw.util.wikiScript( 'index' ) + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
 			return false;
 		} );
 
@@ -254,7 +254,7 @@
 			}
 
 			// Load the editor into provided target or cache it locally
-			url = mw.util.wikiScript();
+			url = mw.util.wikiScript( 'index' );
 			params = {
 				title: 'Special:Translate/editpage',
 				suggestions: 'sync',
