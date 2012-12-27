@@ -155,6 +155,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 			return false;
 		}
 		wfProfileIn( __METHOD__ );
+		// @todo FIXME: Required parameter missing.
 		$doc = $this->createDocument( $handle, $targetText );
 		$update = $this->client->createUpdate();
 		$update->addDocument( $doc );
