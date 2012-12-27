@@ -19,27 +19,27 @@ interface StringMangler {
 
 	/**
 	 * General way to pass configuration to the mangler.
-	 * @param $configuration \array
+	 * @param array $configuration
 	 */
 	public function setConf( $configuration );
 
 	/**
 	 * Match strings against a pattern.
 	 * If string matches, mangle() should mangle the key.
-	 * @param $string \string Message key.
+	 * @param string $string Message key.
 	 * @return \bool
 	 */
 	public function match( $string );
 	/**
 	 * Mangles a list of message keys.
-	 * @param $data \string or \list{String} Unmangled message keys.
-	 * @return \string or \list{String} Mangled message keys.
+	 * @param string|string[] $data Unmangled message keys.
+	 * @return string|string[] Mangled message keys.
 	 */
 	public function mangle( $data );
 	/**
 	 * Reverses the operation mangle() did.
-	 * @param $data \string or \list{String} Mangled message keys.
-	 * @return \string or \list{String} Umangled message keys.
+	 * @param string|string[] $data Mangled message keys.
+	 * @return string|string[] Umangled message keys.
 	 */
 	public function unMangle( $data );
 }
@@ -98,7 +98,7 @@ class StringMatcher implements StringMangler {
 	 * Preprocesses the patterns.
 	 * They are split into exact keys, prefix matches and pattern matches to
 	 * speed up matching process.
-	 * @param array $strings \list{String} Key patterns.
+	 * @param string[] $strings Key patterns.
 	 */
 	protected function init( array $strings ) {
 		foreach ( $strings as $string ) {
@@ -116,7 +116,7 @@ class StringMatcher implements StringMangler {
 	}
 
 	/**
-	 * @param $string string
+	 * @param string $string
 	 * @return bool
 	 */
 	public function match( $string ) {
@@ -139,6 +139,11 @@ class StringMatcher implements StringMangler {
 		return false;
 	}
 
+	/**
+	 * @param string $data
+	 * @return string|string[]
+	 * @throws MWException
+	 */
 	public function mangle( $data ) {
 		if ( is_array( $data ) ) {
 			return $this->mangleArray( $data );
@@ -165,9 +170,9 @@ class StringMatcher implements StringMangler {
 
 	/**
 	 * Mangles or unmangles single string.
-	 * @param $string \string Message key.
-	 * @param $reverse \bool Direction of mangling or unmangling.
-	 * @return \string
+	 * @param string $string Message key.
+	 * @param bool $reverse Direction of mangling or unmangling.
+	 * @return string
 	 */
 	protected function mangleString( $string, $reverse = false ) {
 		if ( $reverse ) {
@@ -192,8 +197,8 @@ class StringMatcher implements StringMangler {
 
 	/**
 	 * Unmangles the message key by removing the prefix it it exists.
-	 * @param $string \string Message key.
-	 * @return \string Unmangled message key.
+	 * @param string $string Message key.
+	 * @return string Unmangled message key.
 	 */
 	protected function unMangleString( $string ) {
 		// Unescape the "quoted-printable"-like escaping,
@@ -214,7 +219,7 @@ class StringMatcher implements StringMangler {
 
 	/**
 	 * Mangles or unmangles list of message keys.
-	 * @param array $array \list{String} Message keys.
+	 * @param string[] $array Message keys.
 	 * @param bool $reverse Direction of mangling or unmangling.
 	 * @return string[] (Un)mangled message keys.
 	 */
