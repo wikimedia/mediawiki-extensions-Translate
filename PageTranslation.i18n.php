@@ -3199,11 +3199,13 @@ $messages['fa'] = array(
  * @author Nike
  * @author Olli
  * @author Silvonen
+ * @author VezonThunder
  * @author ZeiP
  */
 $messages['fi'] = array(
 	'pagetranslation' => 'Sivujen kääntäminen',
 	'right-pagetranslation' => 'Merkitä sivuja käännettäviksi',
+	'action-pagetranslation' => 'hallita käännettäviä sivuja',
 	'tpt-desc' => 'Laajennus sisältösivujen kääntämiseen.',
 	'tpt-section' => 'Käännösosio $1',
 	'tpt-section-new' => 'Uusi käännösosio.
@@ -3231,6 +3233,7 @@ Sivu voidaan nyt <span class="plainlinks">[$3 kääntää]</span>.',
 Ennen kuin merkitset tämän version käännettäväksi, tarkista, että muutokset osioihin on minimoitu, jotta kääntäjille ei aiheudu tarpeetonta työtä.', # Fuzzy
 	'tpt-mark-summary' => 'Tämä versio merkittiin käännettäväksi',
 	'tpt-edit-failed' => 'Ei voitu tallentaa muutosta sivulle: $1',
+	'tpt-duplicate' => 'Käännösosion nimeä $1 on käytetty useammin kuin kerran.',
 	'tpt-already-marked' => 'Viimeisin versio tästä sivusta on jo merkitty käännettäväksi.',
 	'tpt-unmarked' => 'Sivu $1 ei ole enää käännettävänä.',
 	'tpt-list-nopages' => 'Yhtään sivua ei ole merkitty käännettäväksi eikä yhtään sivua ole valmiina käännettäväksi merkitsemistä varten.',
@@ -3260,16 +3263,25 @@ mutta viimeisintä versiota ei voi merkitä käännettäväksi.',
 	'tpt-translation-intro' => 'Tämä sivu on <span class="plainlinks">[$1 käännetty versio]</span> sivusta [[$2]] ja käännös on $3% täydellinen ja ajan tasalla.',
 	'tpt-translation-intro-fuzzy' => 'Vanhentuneet käännökset merkitään näin.',
 	'tpt-languages-legend' => 'Muut kielet:',
+	'tpt-languages-zero' => 'Aloita käännös tälle kielelle',
 	'tpt-target-page' => 'Tätä sivua ei voi muokata tavalliseen tapaan.
 Tämä sivu on käännös sivusta [[$1]] ja käännöstä voi päivittää käyttämällä [$2 käännöstyökalua].',
 	'tpt-unknown-page' => 'Tämä nimiavaruus on varattu sisältösivujen käännöksille.
 Sivu, jota yrität muokata, ei näytä vastaavan mitään sivua, joka on merkitty käännettäväksi.',
+	'tpt-translation-restricted' => 'Käännösylläpitäjä on estänyt tämän sivun kääntämisen tälle kielelle.
+
+Syy: $1',
+	'tpt-discouraged-language-force' => "'''Tätä sivua ei voi kääntää kielelle $2.'''
+
+Käännösylläpitäjä on päättänyt, että tämän sivun voi kääntää vain kielille $3.",
 	'tpt-discouraged-language-reason' => 'Syy: $1',
 	'tpt-render-summary' => 'Päivittäminen vastaamaan uutta versiota lähdesivusta',
 	'tpt-download-page' => 'Sivun vienti käännösten kera',
 	'tpt-aggregategroup-add' => 'Lisää',
 	'tpt-aggregategroup-save' => 'Tallenna',
 	'tpt-aggregategroup-new-name' => 'Nimi',
+	'tpt-aggregategroup-new-description' => 'Kuvaus (vapaaehtoinen):',
+	'tpt-aggregategroup-invalid-group' => 'Ryhmää ei ole',
 	'pt-parse-open' => 'Sulkematon &lt;translate>-tägi.
 Käännöspohja: <pre>$1</pre>',
 	'pt-parse-close' => 'Avaamaton &lt;/translate>-tägi.
@@ -8325,6 +8337,7 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (русский)
+ * @author Amire80
  * @author Askarmuk
  * @author DR
  * @author Eugrus
@@ -8341,6 +8354,7 @@ $messages['roa-tara'] = array(
 $messages['ru'] = array(
 	'pagetranslation' => 'Перевод страниц',
 	'right-pagetranslation' => 'отметка версий страниц для перевода',
+	'action-pagetranslation' => 'управлять переводимыми страницами',
 	'tpt-desc' => 'Расширение для перевода содержимого страниц',
 	'tpt-section' => 'Блок перевода $1',
 	'tpt-section-new' => 'Новый блок перевода. Название: $1',
@@ -8364,7 +8378,7 @@ $messages['ru'] = array(
 Теперь страницу можно <span class="plainlinks">[$3 переводить]</span>.',
 	'tpt-badsect' => '«$1» не является допустимым названием для блока перевода $2.',
 	'tpt-showpage-intro' => 'Ниже приведены новые, существующие и удалённые разделы.
-Перед отметкой этой версии для перевода, убедитесь, что изменения в разделе будут минимальны, это позволит сократить объём работы переводчиков.', # Fuzzy
+Перед отметкой этой версии для перевода, убедитесь, что изменения в разделе будут минимальны, чтобы сократить объём работы переводчикам.',
 	'tpt-mark-summary' => 'Отметить эту версию для перевода',
 	'tpt-edit-failed' => 'Невозможно обновить эту страницу: $1',
 	'tpt-duplicate' => 'Перевод элемента с названием  $1  используется более одного раза.',
@@ -8432,12 +8446,12 @@ $messages['ru'] = array(
 	'pt-parse-close' => 'Несбалансированный тег &lt;translate>.
 Шаблон перевода: <pre>$1</pre>',
 	'pt-parse-nested' => 'Недопустимы вложенные разделы &lt;translate>.
-Текст тега: <pre>$1</pre>', # Fuzzy
+Текст тега: <pre>$1</pre>',
 	'pt-shake-multiple' => 'Несколько маркеров раздела в одном разделе.
-Текст раздела: <pre>$1</pre>', # Fuzzy
+Текст раздела: <pre>$1</pre>',
 	'pt-shake-position' => 'Неожиданное положение маркеров разделов.
-Текст раздела: <pre>$1</pre>', # Fuzzy
-	'pt-shake-empty' => 'Пустой раздел для маркера $1.', # Fuzzy
+Текст раздела: <pre>$1</pre>',
+	'pt-shake-empty' => 'Пустой раздел для маркера «$1».',
 	'pt-log-header' => 'Журнал для действий, связанных с системой перевода страниц',
 	'pt-log-name' => 'Журнал перевода страниц',
 	'pt-log-mark' => '{{GENDER:$2|отметил|отметила}} для перевода версию $3 страницы «[[:$1]]»',
@@ -8457,8 +8471,8 @@ $messages['ru'] = array(
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|удалил|удалила}} доступную для перевода страницу [[:$1]] из агрегированной группы $3',
 	'pt-movepage-title' => 'Переименование доступной для перевода страницы $1',
 	'pt-movepage-blockers' => 'Страница с возможностью перевода не может быть переименована из-за {{PLURAL:$1|следующей ошибки|следующих ошибок}}:',
-	'pt-movepage-block-base-exists' => 'Основная целевая страница [[:$1]] уже существует.',
-	'pt-movepage-block-base-invalid' => 'Недопустимое название основной целевой страницы.',
+	'pt-movepage-block-base-exists' => 'Целевая страница «[[:$1]]» уже существует.',
+	'pt-movepage-block-base-invalid' => 'Недопустимое название основной целевой страницы.', # Fuzzy
 	'pt-movepage-block-tp-exists' => 'Перевод целевой страницы [[:$2]] уже существует.',
 	'pt-movepage-block-tp-invalid' => 'Название перевода целевой страницы [[:$1]] будет считаться недействительным (возможно, слишком длинное).',
 	'pt-movepage-block-section-exists' => 'Раздел целевой страницы [[:$2]] уже существует.', # Fuzzy
@@ -8466,9 +8480,9 @@ $messages['ru'] = array(
 	'pt-movepage-block-subpage-exists' => 'Целевая подстраница [[:$2]] уже существует.',
 	'pt-movepage-block-subpage-invalid' => 'Название целевой подстраницы [[:$1]] будет считаться недействительным (возможно, слишком длинным).',
 	'pt-movepage-list-pages' => 'Список страниц для переименования',
-	'pt-movepage-list-translation' => 'Страницы перевода',
+	'pt-movepage-list-translation' => 'Страницы перевода', # Fuzzy
 	'pt-movepage-list-section' => 'Разделы страниц', # Fuzzy
-	'pt-movepage-list-other' => 'Другие подстраницы',
+	'pt-movepage-list-other' => 'Другие подстраницы', # Fuzzy
 	'pt-movepage-list-count' => 'Всего переименовать $1 {{PLURAL:$1|страницу|страницы|страниц}}.',
 	'pt-movepage-legend' => 'Переименование переводимых страниц',
 	'pt-movepage-current' => 'Текущее название:',
@@ -8489,13 +8503,13 @@ $messages['ru'] = array(
 	'pt-deletepage-lang-title' => 'Удаление страницы перевода «$1».',
 	'pt-deletepage-full-title' => 'Удаление доступной для перевода страницы $1.',
 	'pt-deletepage-invalid-title' => 'Указана неверная страница.',
-	'pt-deletepage-invalid-text' => 'Указанная страница не относится к числу доступных для перевода страниц или их переводов.',
+	'pt-deletepage-invalid-text' => 'Указанная страница не относится к числу доступных для перевода страниц или их переводов.', # Fuzzy
 	'pt-deletepage-action-check' => 'Список подлежащих удалению страниц',
 	'pt-deletepage-action-perform' => 'Выполнить удаление',
 	'pt-deletepage-action-other' => 'Изменить цель',
 	'pt-deletepage-lang-legend' => 'Удалить страницу с переводом',
 	'pt-deletepage-full-legend' => 'Удалить доступную для перевода страницу',
-	'pt-deletepage-any-legend' => 'Удалить доступную для перевода страницу или её перевод',
+	'pt-deletepage-any-legend' => 'Удалить доступную для перевода страницу или её перевод', # Fuzzy
 	'pt-deletepage-current' => 'Название страницы:',
 	'pt-deletepage-reason' => 'Причина',
 	'pt-deletepage-subpages' => 'Удалить все подстраницы',
@@ -8509,7 +8523,7 @@ $messages['ru'] = array(
 	'pt-deletepage-started' => 'Пожалуйста, проверьте [[Special:Log/pagetranslation|журнал перевода страниц]] на предмет сообщений об ошибках и успешных завершениях.',
 	'pt-deletepage-intro' => 'Это специальная страница позволяет вам удалить целые страницы, доступные для перевода, или переводы на определённый язык.
 Действие по удалению не будет выполнено сразу же, так как в очереди на удаление будет много страниц.
-Сбои будут отмечены в [[Special:Log/pagetranslation|журнале перевода страниц]] и должны быть устранены вручную.',
+Сбои будут отмечены в [[Special:Log/pagetranslation|журнале перевода страниц]] и должны быть устранены вручную.', # Fuzzy
 );
 
 /** Rusyn (русиньскый)
@@ -8609,6 +8623,7 @@ $messages['scn'] = array(
 $messages['si'] = array(
 	'pagetranslation' => 'පිටුව පරිවර්තනය',
 	'right-pagetranslation' => 'පරිවර්තනය සඳහා පිටුවල අනුවාද සලකුණු කරන්න',
+	'action-pagetranslation' => 'පරිවර්තනය කල හැකි පිටු කළමනාකරණය කරන්න',
 	'tpt-desc' => 'අන්තර්ගත පිටු පරිවර්තනය කිරීම සඳහා විස්තීරණය',
 	'tpt-section' => '$1 පරිවර්තන ඒකකය',
 	'tpt-section-new' => 'නව පරිවර්තන ඒකකය.
@@ -8675,15 +8690,15 @@ $messages['si'] = array(
 	'pt-log-delete-lang-ok' => '$1 පරිවර්තන පිටුවේ මකාදැමීම {{GENDER:$2|සම්පූර්ණ කරන ලදී}}',
 	'pt-log-delete-lang-nok' => '[[:$1]] පරිවර්තන පිටුව මකමින් සිටිනා අතරතුර ගැටලුවක් {{GENDER:$2|හට ගැනිණි}}',
 	'pt-movepage-title' => 'පරිවර්තනය කල හැකි $1 පිටුව ගෙනයන්න',
-	'pt-movepage-block-base-exists' => 'ඉලක්කගත ආධාරක පිටුව [[:$1]] දැනටමත් පවතියි.',
-	'pt-movepage-block-base-invalid' => 'ඉලක්කගත ආධාරක පිටුව වලංගු මාතෘකාවක් නොවේ.',
+	'pt-movepage-block-base-exists' => 'ඉලක්කගත ආධාරක පිටුව [[:$1]] දැනටමත් පවතියි.', # Fuzzy
+	'pt-movepage-block-base-invalid' => 'ඉලක්කගත ආධාරක පිටුව වලංගු මාතෘකාවක් නොවේ.', # Fuzzy
 	'pt-movepage-block-tp-exists' => 'ඉලක්කගත පරිවර්තනමය පිටුව [[:$2]] දැනටමත් පවතියි.',
 	'pt-movepage-block-section-exists' => 'ඉලක්කගත අංශ පිටුව [[:$2]] දැනටමත් පවතියි.', # Fuzzy
 	'pt-movepage-block-subpage-exists' => 'ඉලක්කගත උපපිටුව [[:$2]] දැනටමත් පවතියි.',
 	'pt-movepage-list-pages' => 'ගෙනයාමට ඇති පිටු ලැයිස්තුව',
-	'pt-movepage-list-translation' => 'පරිවර්තන පිටු',
+	'pt-movepage-list-translation' => 'පරිවර්තන පිටු', # Fuzzy
 	'pt-movepage-list-section' => 'කාණ්ඩ පිටු', # Fuzzy
-	'pt-movepage-list-other' => 'වෙනත් උපපිටු',
+	'pt-movepage-list-other' => 'වෙනත් උපපිටු', # Fuzzy
 	'pt-movepage-list-count' => 'එකතුව වශයෙන් {{PLURAL:$1|පිටු|පිටු}} $1 ක් ගෙන යාමට ඇත.',
 	'pt-movepage-legend' => 'පරිවර්තනය කල හැකි පිටුව ගෙනයන්න',
 	'pt-movepage-current' => 'වත්මන් නාමය:',
@@ -8700,13 +8715,13 @@ $messages['si'] = array(
 	'pt-deletepage-lang-title' => '$1 පරිවර්තන පිටුව මකමින්.',
 	'pt-deletepage-full-title' => '$1 පරිවර්තනය කල හැකි පිටුව මකමින්.',
 	'pt-deletepage-invalid-title' => 'විශේෂණය කෙරූ පිටුව වලංගු නොවේ.',
-	'pt-deletepage-invalid-text' => 'විශේෂණය කෙරූ පිටුව පරිවර්තනය කල නොහැකි හෝ පරිවර්තනමය නොවේ.',
+	'pt-deletepage-invalid-text' => 'විශේෂණය කෙරූ පිටුව පරිවර්තනය කල නොහැකි හෝ පරිවර්තනමය නොවේ.', # Fuzzy
 	'pt-deletepage-action-check' => 'මැකීමට ඇති පිටු ලැයිස්තුගත කරන්න',
 	'pt-deletepage-action-perform' => 'මැකීම සිදු කරන්න',
 	'pt-deletepage-action-other' => 'ඉලක්කය වෙනස් කරන්න',
 	'pt-deletepage-lang-legend' => 'පරිවර්තන පිටුව මකමින්',
 	'pt-deletepage-full-legend' => 'පරිවර්තනය කල හැකි පිටුව මකන්න',
-	'pt-deletepage-any-legend' => 'පරිවර්තනය කළහැකි හෝ පරිවර්තනය කළහැකි පරිවර්තන පිටුවක් මකන්න',
+	'pt-deletepage-any-legend' => 'පරිවර්තනය කළහැකි හෝ පරිවර්තනය කළහැකි පරිවර්තන පිටුවක් මකන්න', # Fuzzy
 	'pt-deletepage-current' => 'පිටු නාමය:',
 	'pt-deletepage-reason' => 'හේතුව:',
 	'pt-deletepage-subpages' => 'සියලුම උපපිටු මකන්න',

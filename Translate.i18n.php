@@ -3602,7 +3602,7 @@ $messages['bg'] = array(
  */
 $messages['bho'] = array(
 	'translate' => 'अनुवादन करीं',
-	'translate-desc' => '[[Special:Translate| विशेष पन्ना]] मिडीयाविकि के अनुवादन खातिर',
+	'translate-desc' => '[[Special:Translate| विशेष पन्ना]] मीडीयाविकि के अनुवादन खातिर',
 	'translate-taskui-view' => 'सभी सन्देश दिखाईं',
 	'translate-taskui-untranslated' => 'अअनुवादित सन्देश दिखाईं',
 	'translate-taskui-optional' => 'वैकल्पिक सन्देश दिखाईं',
@@ -3611,8 +3611,25 @@ $messages['bho'] = array(
 	'translate-taskui-reviewall' => 'सभी अनुवाद के समीक्षा करीं',
 	'translate-taskui-export-to-file' => 'मूल स्वरूप में निर्यात करीं',
 	'translate-taskui-export-as-po' => 'ऑफ़लाइन अनुवाद के खातिर निर्यात करीं',
-	'translate-taction-translate' => 'अनुवादन करीं',
+	'translate-taction-translate' => 'अनुवाद करीं',
+	'translate-taction-proofread' => 'सुधार करीं',
+	'translate-taction-lstats' => 'ई भाषा के आंकड़ा',
+	'translate-taction-export' => 'निर्यात',
+	'translate-page-settings-legend' => 'सेटिंग्स',
+	'translate-page-group' => 'समूह',
 	'translate-page-language' => 'भाषा',
+	'translate-page-limit' => 'सीमा',
+	'translate-submit' => 'ढूंढीं',
+	'translate-page-navigation-legend' => 'परिभ्रमण',
+	'translate-page-showing' => '$३ से $१ से $२ तक सन्देश दिखावल बा', # Fuzzy
+	'translate-page-showing-none' => 'दिखावे खातिर कौनो सन्देश नईखे बा',
+	'translate-next' => 'अगला पन्ना',
+	'translate-prev' => 'पिछलका पन्ना',
+	'translate-page-description-legend' => 'ई समूह के बारे मे जानकारी',
+	'translate-edit-jsopen' => 'सम्पादन करीं',
+	'translate-edit-translation' => 'अनुवाद',
+	'translate-edit-contribute' => 'योगदान करीं',
+	'translate-use-suggestion' => 'ई सुझाव के संग ई अनुवाद के बदलीं',
 );
 
 /** Bengali (বাংলা)
@@ -6051,6 +6068,10 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-editor-need-more-help' => 'Mehr Hilfe?',
 	'tux-editor-ask-help' => 'Mehr Informationen erhalten',
 	'tux-editor-tm-match' => '$1% Übereinstimmung',
+	'tux-warnings-more' => '{{PLURAL:$1|Eine weitere|$1 weitere}}',
+	'tux-warnings-hide' => 'verstecken',
+	'tux-editor-save-failed' => 'Das Speichern der Übersetzung ist fehlgeschlagen: $1',
+	'tux-editor-use-this-translation' => 'Als Übersetzung verwenden',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -8496,6 +8517,7 @@ $1',
  * @author Silvonen
  * @author Str4nd
  * @author Usp
+ * @author VezonThunder
  * @author Vililikku
  * @author ZeiP
  */
@@ -8522,6 +8544,7 @@ $messages['fi'] = array(
 Syy:
 
 ''$1''",
+	'translate-language-disabled' => 'Kääntäminen tälle kielelle ei ole mahdollista.',
 	'translate-page-settings-legend' => 'Asetukset',
 	'translate-page-group' => 'Ryhmä',
 	'translate-page-language' => 'Kieli',
@@ -8600,6 +8623,8 @@ Muutoksia ei tallenneta, ennen kuin painat tallenna-painiketta.', # Fuzzy
 	'translate-checks-xhtml' => 'Korvaa {{PLURAL:$2|seuraava tägti oikealla|seuraavat tägi oikeilla}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Määritelmä käyttää <nowiki>{{PLURAL:}}</nowiki>-koodia, mutta käännös ei.',
+	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki>-komennolle annettiin {{PLURAL:$1|yksi muoto|$1 muotoa}}, mutta {{PLURAL:$2|vain yhtä muotoa|$2 muotoa}} tuetaan (ei sisällä muotoja 0= ja 1=).',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki>-komennon lopussa on samoja muotoja. <nowiki>{{PLURAL:$1|lampaani|lampaani}}</nowiki> tulisi kirjoittaa <nowiki>{{PLURAL:$1|lampaani}}</nowiki>.',
 	'translate-checks-pagename' => 'Nimiavaruus muuttui määritellystä',
 	'translate-checks-format' => 'Tämä käännös ei noudata alkuperäistä tekstiä tai sillä on virheellinen syntaksi: $1',
 	'translate-checks-escape' => 'Seuraavat escape-merkkijonot saattavat olla tahattomia: <strong>$1</strong>',
@@ -8617,6 +8642,7 @@ Asetuksen oletusarvoiset kielet riippuvat kielestä, jolle olet kääntämässä
 	'right-translate-manage' => 'Hallinnoida viestiryhmiä',
 	'action-translate-manage' => 'hallinnoida viestiryhmiä',
 	'right-translate-import' => 'Tuoda muilla työkaluilla tehtyjä käännöksiä',
+	'action-translate-import' => 'tuoda offline-käännöksiä',
 	'right-translate-messagereview' => 'Hyväksyä käännöksiä',
 	'right-translate-groupreview' => 'Muuttaa viestiryhmien tilaa',
 	'translate-rc-translation-filter' => 'Käännösten suodatus',
@@ -8711,6 +8737,9 @@ Alleviivauksen väri kertoo, milloin kääntäjä on viimeksi kääntänyt tää
 	'translate-jssti-add' => 'Lisää listaan',
 	'managemessagegroups' => 'Viestiryhmien hallinta',
 	'translate-smg-notallowed' => 'Sinulla ei ole oikeuksia suorittaa tätä toimintoa.',
+	'translate-smg-nochanges' => 'Ei muutoksia käsiteltäväksi.',
+	'translate-smg-submit' => 'Lähetä muutokset käsiteltäviksi',
+	'translate-smg-postponed' => 'Joitakin muutoksia ei voitu käsitellä. [[{{FULLPAGENAME}}|Yritä uudelleen]].',
 	'translate-manage-import-diff' => 'Viesti $1 | Toiminnot: $2',
 	'translate-manage-import-new' => 'Uusi viesti $1',
 	'translate-manage-import-deleted' => 'Poistettu viesti $1',
@@ -8799,6 +8828,8 @@ Tiedot: $1',
 	'translate-workflow-set-done' => 'Asetettu',
 	'translate-stats-workflow' => 'Tila',
 	'translate-dynagroup-recent-label' => 'Tuoreet käännökset',
+	'translate-dynagroup-additions-label' => 'Tuoreet lisäykset',
+	'translate-dynagroup-additions-desc' => 'Tämä viestiryhmä näyttää uudet ja muuttuneet viestit.',
 	'translate-dynagroup-by' => 'Käännöksen teki {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Käännöksen teki {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Viimeisimmän muutoksen teki {{GENDER:$1|$1}}',
@@ -8812,11 +8843,23 @@ Tiedot: $1',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|alaryhmä|alaryhmää}}',
 	'tux-languageselector' => 'Kieli',
 	'tux-tab-all' => 'Kaikki',
+	'tux-tab-untranslated' => 'Kääntämättömät',
+	'tux-tab-outdated' => 'Vanhentuneet',
+	'tux-tab-translated' => 'Käännetyt',
 	'tux-edit' => 'Muokkaa',
 	'tux-status-optional' => 'Valinnainen',
 	'tux-status-fuzzy' => 'Vanhentunut',
 	'tux-status-proofread' => 'Oikoluettu',
 	'tux-status-translated' => 'Käännetty',
+	'tux-editor-placeholder' => 'Käännöksesi',
+	'tux-editor-save-button-label' => 'Tallenna käännös',
+	'tux-editor-skip-button-label' => 'Hyppää seuraavaan',
+	'tux-editor-shortcut-info' => 'Paina "$1" tallentaaksesi tai "$2" hypätäksesi seuraavaan viestiin',
+	'tux-editor-edit-desc' => 'Muokkaa kuvausta',
+	'tux-editor-suggestions-title' => 'Ehdotukset',
+	'tux-editor-in-other-languages' => 'Muilla kielillä',
+	'tux-editor-need-more-help' => 'Tarvitsetko lisäapua?',
+	'tux-editor-ask-help' => 'Pyydä lisätietoja',
 );
 
 /** French (français)
@@ -9203,6 +9246,10 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-editor-need-more-help' => 'Besoin d’aide?',
 	'tux-editor-ask-help' => 'Demander plus d’information',
 	'tux-editor-tm-match' => '$1% correspond',
+	'tux-warnings-more' => '{{PLURAL:$1|$1 de plus}}',
+	'tux-warnings-hide' => 'masquer',
+	'tux-editor-save-failed' => "Échec de l'enregistrement de la traduction : $1",
+	'tux-editor-use-this-translation' => 'Utiliser comme traduction',
 );
 
 /** Cajun French (français cadien)
@@ -15943,6 +15990,64 @@ $messages['ku-latn'] = array(
 	'translate-gethelp' => 'Alîkarî',
 );
 
+/** Kirghiz (Кыргызча)
+ * @author Growingup
+ */
+$messages['ky'] = array(
+	'translate-taction-translate' => 'Которуу',
+	'translate-taction-proofread' => 'Окуп текшерүү',
+	'translate-taction-lstats' => 'Тил статистикасы',
+	'translate-taction-mstats' => 'Билдирүүлөр тобунун статистикасы',
+	'translate-taction-export' => 'Экспорт',
+	'translate-page-settings-legend' => 'Параметрлер',
+	'translate-page-group' => 'Топ',
+	'translate-page-language' => 'Тил',
+	'translate-page-navigation-legend' => 'Навигация',
+	'translate-next' => 'кийинки барак',
+	'translate-prev' => 'мурунку барак',
+	'translations' => 'Бүт котормолор',
+	'translate-translations-fieldset-title' => 'Билдирүү',
+	'translate-translations-messagename' => 'Ат:',
+	'translate-translations-project' => 'Долбоор:',
+	'languagestats' => 'Тил статистикасы',
+	'languagestats-stats-for' => '$1 тилдин котормо статистикасы ($2).',
+	'languagestats-recenttranslations' => 'жакындагы котормолор',
+	'translate-langstats-expand' => 'жаюу',
+	'translate-langstats-collapse' => 'түрүү',
+	'translate-langstats-expandall' => 'баарын жаюу',
+	'translate-langstats-collapseall' => 'баарын түрүү',
+	'translate-language-code' => 'Тилдин коду',
+	'translate-language-code-field-name' => 'Тилдин коду:',
+	'translate-language' => 'Тил',
+	'translate-total' => 'Билдирүүлөр',
+	'translate-untranslated' => 'Которулбагандар',
+	'translate-percentage-complete' => 'Бүтүрүлдү',
+	'translate-percentage-fuzzy' => 'Эскирди',
+	'translate-ls-submit' => 'Статистиканы көрсөтүү',
+	'translate-ls-column-group' => 'Билдирүүлөр тобу',
+	'translate-mgs-group' => 'Билдирүүлөр тобу:',
+	'translate-mgs-submit' => 'Статистиканы көрсөтүү',
+	'translate-mgs-column-language' => 'Тил',
+	'supportedlanguages' => 'Колдолгон тилдер',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Котормочу|Котормочулар}}: $1',
+	'supportedlanguages-recenttranslations' => 'жакындагы котормолор',
+	'translate-save' => 'Сактоо ($1)',
+	'translate-jssti-add' => 'Тизмеге кошуу',
+	'translate-manage-import-new' => 'Жаңы билдирүү $1',
+	'translate-manage-action-import' => 'Импорт',
+	'importtranslations' => 'Котормолорду импорттоо',
+	'translate-import-load' => 'Файлды жүктөө',
+	'translate-js-save' => 'Сактоо',
+	'translate-gs-code' => 'Код',
+	'translate-searchprofile' => 'Котормолор',
+	'translate-messagereview-submit' => 'Кабыл алуу',
+	'translate-gethelp' => 'Жардам',
+	'translate-msggroupselector-search-all' => 'Баары',
+	'tux-languageselector' => 'Тил',
+	'tux-tab-all' => 'Баары',
+	'tux-edit' => 'Оңдоо',
+);
+
 /** Latin (Latina)
  * @author SPQRobin
  * @author UV
@@ -19254,7 +19359,7 @@ $messages['nn'] = array(
 	'translate-prev' => 'Førre sida',
 	'translate-page-description-legend' => 'Informasjon om gruppa',
 	'translate-page-description-hasoptional' => 'Meldingsgruppa har valfrie meldingar.
-Valfrie meldingar skal ein berre setja om når målet har særskilde krav, til dømes at det ikkje nyttar mellomrom eller at det transkriberer eigennamn. $1',
+Valfrie meldingar skal ein berre setja om når språket ditt har særskilde krav, til dømes at det ikkje nyttar mellomrom eller at det transkriberer eigennamn. $1',
 	'translate-page-description-hasoptional-open' => 'Vis valfrie meldingar.',
 	'translate-page-edit' => 'endre',
 	'translate-ext-url' => '<hr />Nettstad: $1',
@@ -19319,6 +19424,7 @@ Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 	'translate-checks-xhtml' => 'Byt ut {{PLURAL:$2|dette merket med det rette|desse merka med dei rette}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definisjonen nyttar <nowiki>{{PLURAL:}}</nowiki>, men omsetjinga gjer det ikkje.',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> har duplikatformer på enden. <nowiki>{{PLURAL:$1|namn|namn}}</nowiki> bør skrivast som <nowiki>{{PLURAL:$1|namn}}</nowiki>.',
 	'translate-checks-pagename' => 'Namnerom endra frå definisjonen',
 	'translate-checks-format' => 'Denne omsetjinga følgjer ikkje definisjonen eller har ugyldig syntaks: $1',
 	'translate-checks-escape' => 'Desse unnataka kan koma frå uhell: <strong>$1</strong>',
@@ -20964,6 +21070,10 @@ A ven dzortut a taj con ij travaj ëd revision.',
 	'tux-editor-need-more-help' => "Dabzògn ëd pi d'agiut?",
 	'tux-editor-ask-help' => 'Ciama për savèjne ëd pi',
 	'tux-editor-tm-match' => 'corëspondensa ëd $1%',
+	'tux-warnings-more' => '{{PLURAL:$1|$1 pi}}',
+	'tux-warnings-hide' => 'stërma',
+	'tux-editor-save-failed' => 'Falì a salvé la tradussion: $1',
+	'tux-editor-use-this-translation' => 'Dòvra com tradussion',
 );
 
 /** Western Punjabi (پنجابی)
@@ -22358,6 +22468,7 @@ $messages['rtm'] = array(
 /** Russian (русский)
  * @author Ahonc
  * @author AlexSm
+ * @author Amire80
  * @author Askarmuk
  * @author Base
  * @author Byulent
@@ -22478,6 +22589,8 @@ $messages['ru'] = array(
 	'translate-checks-xhtml' => 'Пожалуйста, исправьте {{PLURAL:$2|следующий тег|следующие теги}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Оригинал использует <nowiki>{{PLURAL:}}</nowiki>, а перевод — нет.',
+	'translate-checks-plural-forms' => 'Выражению <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|была дана одна форма|были даны $1 формы|были даны $1 форм}}, но {{PLURAL:$2|поддерживается только одна форма|поддерживаются $2 формы|поддерживаются $2 форм}} (кроме форм 0= и 1=).',
+	'translate-checks-plural-dupe' => 'В конце выражения <nowiki>{{PLURAL:}}</nowiki> две одинаковых формы. Вместо <nowiki>{{PLURAL:$1|пальто|пальто}}</nowiki> лучше написать <nowiki>{{PLURAL:$1|пальто}}</nowiki>.',
 	'translate-checks-pagename' => 'Изменилось определение пространства имён',
 	'translate-checks-format' => 'Этот перевод не соответствует определению или содержит синтаксическую ошибку: $1',
 	'translate-checks-escape' => 'Следующие экранирующие последовательности могут быть случайны: <strong>$1</strong>',
@@ -22692,11 +22805,41 @@ $1',
 	'translate-dynagroup-recent-label' => 'Недавние переводы',
 	'translate-dynagroup-recent-desc' => 'Эта группа сообщений отображает все недавние переводы на данный язык.
 Этот режим наиболее полезен для задач вычитки.',
+	'translate-dynagroup-additions-label' => 'Недавние добавки',
+	'translate-dynagroup-additions-desc' => 'Эта группа показывает новые и изменённые сообщения.',
 	'translate-dynagroup-by' => 'Перевод выполнен  {{GENDER:$1|участником|участницей}} $1',
 	'translate-dynagroup-byc' => 'Перевод выполнен  {{GENDER:$1|участником|участницей}} $1 ($2)',
 	'translate-dynagroup-last' => 'Последние изменения от {{GENDER:$1|участника|участницы}} $1',
 	'translate-dynagroup-lastc' => 'Последние изменения от {{GENDER:$1|участника|участницы}} $1 ( $2 )',
 	'translate-gethelp' => 'Справка',
+	'translate-msggroupselector-projects' => 'Группы сообщений',
+	'translate-msggroupselector-search-placeholder' => 'Поиск групп',
+	'translate-msggroupselector-search-all' => 'Все',
+	'translate-msggroupselector-search-recent' => 'Недавние',
+	'translate-msggroupselector-load-from-all' => 'Загрузить сообщения из всех групп',
+	'translate-msggroupselector-view-subprojects' => '{{PLURAL:$1|Одна подгруппа|$1 подгруппы|$1 подгрупп}}',
+	'tux-languageselector' => 'Язык',
+	'tux-tab-all' => 'Все',
+	'tux-tab-untranslated' => 'Непереведённые',
+	'tux-tab-outdated' => 'Требующие обновления',
+	'tux-tab-translated' => 'Переведённые',
+	'tux-edit' => 'Правка',
+	'tux-status-optional' => 'Необязательно',
+	'tux-status-fuzzy' => 'Требуется обновление',
+	'tux-status-proofread' => 'Вычитка',
+	'tux-status-translated' => 'Переведено',
+	'tux-status-unsaved' => 'Не сохранено',
+	'tux-editor-placeholder' => 'Ваш перевод',
+	'tux-editor-save-button-label' => 'Сохранить перевод',
+	'tux-editor-skip-button-label' => 'Следующее',
+	'tux-editor-shortcut-info' => 'Нажмите «$1» для сохранения или «$2» для перехода к следующему сообщению.',
+	'tux-editor-no-message-doc' => 'Документации нет',
+	'tux-editor-edit-desc' => 'Правка описания',
+	'tux-editor-suggestions-title' => 'Подсказки',
+	'tux-editor-in-other-languages' => 'На других языках',
+	'tux-editor-need-more-help' => 'Нужна помощь?',
+	'tux-editor-ask-help' => 'Попросите дополнительное объяснение',
+	'tux-editor-tm-match' => 'соответствие $1%',
 );
 
 /** Rusyn (русиньскый)
@@ -23452,16 +23595,19 @@ $1',
 	'translate-workflow-set-done' => 'සැකසුවා!',
 	'translate-stats-workflow' => 'තත්වය',
 	'translate-dynagroup-recent-label' => 'මෑත පරිවර්තන',
+	'translate-dynagroup-additions-label' => 'මෑත එක් කිරීම්',
 	'translate-dynagroup-by' => '{{GENDER:$1|$1}} විසින් පරිවර්තනය සිදු කරන ලදී',
 	'translate-dynagroup-byc' => '{{GENDER:$1|$1}} විසින් පරිවර්තනය සිදු කරන ලදී ($2)',
 	'translate-dynagroup-last' => '{{GENDER:$1|$1}} විසින් සිදු කල අවසන් වෙනස',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}} විසින් සිදු කල අවසන් වෙනස ($2)',
 	'translate-gethelp' => 'උදව්',
 	'translate-msggroupselector-projects' => 'පණිවුඩ සමූහ',
+	'translate-msggroupselector-search-placeholder' => 'සමූහ සොයන්න',
 	'translate-msggroupselector-search-all' => 'සියල්ල',
 	'translate-msggroupselector-search-recent' => 'මෑත',
 	'tux-languageselector' => 'භාෂාව',
 	'tux-tab-all' => 'සියල්ල',
+	'tux-tab-untranslated' => 'පරිවර්තනය නොකල',
 	'tux-tab-outdated' => 'යල් පැන ගිය',
 	'tux-tab-translated' => 'පරිවර්තනය කෙරූ',
 	'tux-edit' => 'සංස්කරණය',
@@ -23469,11 +23615,16 @@ $1',
 	'tux-status-fuzzy' => 'යල් පැන ගිය',
 	'tux-status-proofread' => 'සෝදුපත් බැලීම',
 	'tux-status-translated' => 'පරිවර්තනය කෙරූ',
+	'tux-status-unsaved' => 'සුරක්ෂිත නොවේ',
 	'tux-editor-placeholder' => 'ඔබේ පරිවර්තනය',
 	'tux-editor-save-button-label' => 'පරිවර්තනය සුරකින්න',
 	'tux-editor-skip-button-label' => 'මීළඟ පියවරට පනින්න',
+	'tux-editor-no-message-doc' => 'පණිවුඩ ප්‍රලේඛනයක් නොමැත',
 	'tux-editor-edit-desc' => 'විස්තරය සංස්කරණය කරන්න',
 	'tux-editor-suggestions-title' => 'යෝජනා',
+	'tux-editor-in-other-languages' => 'වෙනත් භාෂා වලින්',
+	'tux-editor-need-more-help' => 'තවත් උදව් අවශ්‍යද?',
+	'tux-editor-ask-help' => 'තවත් තොරතුරු සඳහා විමසන්න',
 	'tux-editor-tm-match' => '$1% ගැලපේ',
 );
 

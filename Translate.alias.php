@@ -998,6 +998,7 @@ $specialPageAliases['zh-hant'] = array(
 	'Magic' => array( '高級翻譯' ),
 	'TranslationStats' => array( '翻譯統計' ),
 	'LanguageStats' => array( '語言統計' ),
+	'MessageGroupStats' => array( '信息組狀態' ),
 	'PageTranslation' => array( '頁面翻譯' ),
 	'ImportTranslations' => array( '匯入翻譯' ),
 	'ManageMessageGroups' => array( '消息組管理' ),
