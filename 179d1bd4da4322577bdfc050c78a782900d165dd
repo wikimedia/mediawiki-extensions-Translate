@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAADgX//+s4\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-27T05:21:43Z",
+      "side": 1,
+      "message": "If I understand correctly, we just need to delay the callback to 1000ms. Can\u0027t we just have a small function like ext.translate.groupselector.js/delay() ?",
+      "revId": "179d1bd4da4322577bdfc050c78a782900d165dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADgX///PI\u003d",
         "filename": "resources/js/ext.translate.editor.js",
         "patchSetId": 16
@@ -13,6 +30,91 @@
       "writtenOn": "2012-12-26T20:16:59Z",
       "side": 1,
       "message": "This class is now removed from CSS files and is used only for identifying the tab\u0027s state. It\u0027s not necessarily bad, but there may be something more robust.",
+      "revId": "179d1bd4da4322577bdfc050c78a782900d165dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//+s0\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-27T05:21:43Z",
+      "side": 1,
+      "message": "For hiding and showing, use the grid frameworks \u0027hide\u0027 class",
+      "revId": "179d1bd4da4322577bdfc050c78a782900d165dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//+so\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-27T05:21:43Z",
+      "side": 1,
+      "message": "We need an API for this",
+      "revId": "179d1bd4da4322577bdfc050c78a782900d165dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//+sk\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-27T05:21:43Z",
+      "side": 1,
+      "message": "We need an api that gives json always and avoid explicit json parsing here.",
+      "revId": "179d1bd4da4322577bdfc050c78a782900d165dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//+sg\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-27T05:21:43Z",
+      "side": 1,
+      "message": "if  warnings is undefined, second part of this condition will throw error.",
+      "revId": "179d1bd4da4322577bdfc050c78a782900d165dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//+s8\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2012-12-27T05:21:43Z",
+      "side": 1,
+      "message": "Hide this by default and show when there are more warnings.",
       "revId": "179d1bd4da4322577bdfc050c78a782900d165dd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
