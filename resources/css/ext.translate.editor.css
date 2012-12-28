@@ -187,6 +187,8 @@
 
 .in-other-language .language {
 	color: #565656;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .tux-message-editor .help {
