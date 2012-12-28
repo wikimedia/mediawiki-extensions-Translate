@@ -395,6 +395,7 @@ This message is followed by one of the following error messages:
 	'pt-movepage-block-subpage-exists' => 'Subpage is here any subpage of translation page, which is not a translated version of the translatable page.',
 	'pt-movepage-list-translation' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-movepage-list-section' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
+	'pt-movepage-list-other' => 'Header of a list of additional subpages (other than translation pages) of the translatable page being moved, when the user selected the option to move subpages as well.',
 	'pt-movepage-legend' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-movepage-reason' => '{{Identical|Reason}}',
 	'pt-movepage-action-other' => "Button label on the special page 'Move translateable page'. See [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_21._Move_confirm.png screenshot].",
@@ -3076,9 +3077,9 @@ Palun kontrolli, kas [[Special:Log/pagetranslation|lehekülgede tõlkelogis]] on
 	'pt-deletepage-full-logreason' => 'Osa tõlgitavast leheküljest $1.',
 	'pt-deletepage-lang-logreason' => 'Osa tõlkeleheküljest $1.',
 	'pt-deletepage-started' => 'Palun kontrolli, kas [[Special:Log/pagetranslation|lehekülgede tõlkelogis]] on tõrkeid ja teade lõpulejõudmise kohta.',
-	'pt-deletepage-intro' => 'See erilehekülg võimaldab kustutada terveid tõlgitavaid lehekülgi või ühte keelde tehtud tõlkeid.
-Toiming pole kohene, sest kustutada tuleb palju lehekülgi.
-Nurjumised logitakse [[Special:Log/pagetranslation|lehekülgede tõlkelogisse]] ja need tuleb käsitsi parandada.', # Fuzzy
+	'pt-deletepage-intro' => 'See erilehekülg võimaldab kustutada terve tõlgitava lehekülje või ühe keele üksiku tõlkelehekülje.
+Toiming pole kohene, sest kõik neist sõltuvad leheküljed kustutatakse samuti.
+Nurjumised logitakse [[Special:Log/pagetranslation|lehekülgede tõlkelogisse]] ja need tuleb käsitsi parandada.',
 );
 
 /** Basque (euskara)
@@ -3605,7 +3606,7 @@ mas {{PLURAL:$1|la dèrriére vèrsion pôt pas étre marcâye|les dèrriéres v
 	'translate-tag-translate-link-desc' => 'Traduire ceta pâge',
 	'translate-tag-markthis' => 'Marcar ceta pâge por étre traduita',
 	'translate-tag-markthisagain' => 'Ceta pâge at avu des <span class="plainlinks">[$1 changements]</span> dês qu’est étâye <span class="plainlinks">[$2 marcâye dèrriérement por étre traduita]</span>.',
-	'translate-tag-hasnew' => 'Ceta pâge contint des <span class="plainlinks">[$1 changements]</span> que sont pas marcâs por étre traduits.',
+	'translate-tag-hasnew' => 'Ceta pâge contint des <span class="plainlinks">[$1 changements]</span> que sont pas marcâs por la traduccion.',
 	'tpt-translation-intro' => 'Ceta pâge est na <span class="plainlinks">[$1 traduccion]</span> de la pâge [[$2]] et la traduccion est complètâye a $3 % et pués a jorn.',
 	'tpt-translation-intro-fuzzy' => 'Les traduccions dèpassâyes sont marcâyes d’ense.',
 	'tpt-languages-legend' => 'Ôtres lengoues :',
@@ -3634,7 +3635,7 @@ Tèxto de la sèccion : <pre>$1</pre>', # Fuzzy
 	'pt-shake-empty' => 'Sèccion voueda por lo marcor « $1 ».', # Fuzzy
 	'pt-log-header' => 'Jornal de les accions liyêyes u sistèmo de traduccion de pâges',
 	'pt-log-name' => 'Jornal de les traduccions de pâges',
-	'pt-log-mark' => 'at {{GENDER:$2|marcâ}} la vèrsion $3 de la pâge « [[:$1]] » por étre traduita',
+	'pt-log-mark' => 'at {{GENDER:$2|marcâ}} la vèrsion $3 de la pâge « [[:$1]] » por la traduccion',
 	'pt-log-unmark' => 'at {{GENDER:$2|enlevâ}} la pâge « [[:$1]] » de la traduccion',
 	'pt-log-moveok' => 'at {{GENDER:$2|chavonâ}} lo changement de nom de la pâge traduisibla de « $1 » en $3',
 	'pt-log-movenok' => 'at {{GENDER:$2|rencontrâ}} un problèmo pendent lo changement de nom de « [[:$1]] » de vers « [[:$3]] »',
@@ -3644,8 +3645,8 @@ Tèxto de la sèccion : <pre>$1</pre>', # Fuzzy
 	'pt-log-delete-lang-nok' => 'at {{GENDER:$2|rencontrâ}} un problèmo pendent la suprèssion de la pâge de traduccion « [[:$1]] »',
 	'pt-movepage-title' => 'Dèplaciér la pâge traduisibla « $1 »',
 	'pt-movepage-blockers' => 'La pâge traduisibla pôt pas étre renomâye a côsa de {{PLURAL:$1|ceta fôta|cetes fôtes}} :',
-	'pt-movepage-block-base-exists' => 'La pâge de bâsa ciba « [[:$1]] » ègziste.',
-	'pt-movepage-block-base-invalid' => 'La pâge de bâsa ciba at un titro fôx.',
+	'pt-movepage-block-base-exists' => 'La pâge de bâsa ciba « [[:$1]] » ègziste.', # Fuzzy
+	'pt-movepage-block-base-invalid' => 'La pâge de bâsa ciba at un titro fôx.', # Fuzzy
 	'pt-movepage-block-tp-exists' => 'La pâge de traduccion ciba « [[:$2]] » ègziste.',
 	'pt-movepage-block-tp-invalid' => 'Lo titro de la pâge de traduccion ciba por « [[:$1]] » serêt fôx (trop long ?).',
 	'pt-movepage-block-section-exists' => 'La pâge de sèccion ciba « [[:$2]] » ègziste.', # Fuzzy
@@ -3653,9 +3654,9 @@ Tèxto de la sèccion : <pre>$1</pre>', # Fuzzy
 	'pt-movepage-block-subpage-exists' => 'La sot-pâge ciba « [[:$2]] » ègziste.',
 	'pt-movepage-block-subpage-invalid' => 'Lo titro de la sot-pâge ciba por « [[:$1]] » serêt fôx (trop long ?).',
 	'pt-movepage-list-pages' => 'Lista de les pâges a dèplaciér',
-	'pt-movepage-list-translation' => 'Pâges de traduccion',
+	'pt-movepage-list-translation' => 'Pâges de traduccion', # Fuzzy
 	'pt-movepage-list-section' => 'Pâges de sèccion', # Fuzzy
-	'pt-movepage-list-other' => 'Ôtres sot-pâges',
+	'pt-movepage-list-other' => 'Ôtres sot-pâges', # Fuzzy
 	'pt-movepage-list-count' => 'En tot $1 pâge{{PLURAL:$1||s}} a dèplaciér.',
 	'pt-movepage-legend' => 'Dèplaciér la pâge traduisibla',
 	'pt-movepage-current' => 'Nom d’ora :',
@@ -6274,12 +6275,19 @@ $messages['ltg'] = array(
  * @author Papuass
  */
 $messages['lv'] = array(
+	'tpt-template' => 'Lapas veidne',
+	'tpt-templatediff' => 'Lapas veidne tika izmainīta.',
+	'tpt-select-prioritylangs-reason' => 'Iemesls:',
 	'translate-tag-translate-link-desc' => 'Tulkot šo lapu',
 	'tpt-languages-legend' => 'Citas valodas:',
+	'tpt-aggregategroup-add' => 'Pievienot',
+	'tpt-aggregategroup-save' => 'Saglabāt',
+	'tpt-aggregategroup-new-name' => 'Nosaukums:',
+	'tpt-aggregategroup-new-description' => 'Apraksts (nav obligāts):',
 	'pt-log-name' => 'Lapu tulkošanas žurnāls',
 	'pt-movepage-list-pages' => 'Pārvietojamo lapu saraksts',
-	'pt-movepage-list-translation' => 'Tulkojuma lapas',
-	'pt-movepage-list-other' => 'Citas apakšlapas',
+	'pt-movepage-list-translation' => 'Tulkojuma lapas', # Fuzzy
+	'pt-movepage-list-other' => 'Citas apakšlapas', # Fuzzy
 	'pt-movepage-current' => 'Esošais nosaukums:',
 	'pt-movepage-new' => 'Jaunais nosaukums:',
 	'pt-movepage-reason' => 'Iemesls:',
@@ -7868,9 +7876,9 @@ $messages['ps'] = array(
 	'tpt-aggregategroup-save' => 'خوندي کول',
 	'tpt-aggregategroup-new-name' => 'نوم:',
 	'pt-movepage-list-pages' => 'د لېږدون د مخونو لړليک',
-	'pt-movepage-list-translation' => 'د ژباړې مخونه',
-	'pt-movepage-list-section' => 'د څپرکي د مخونو ژباړه',
-	'pt-movepage-list-other' => 'نور واړه مخونه',
+	'pt-movepage-list-translation' => 'د ژباړې {{PLURAL:$1|مخ|مخونه}}',
+	'pt-movepage-list-section' => 'د څپرکي د مخونو ژباړه', # Fuzzy
+	'pt-movepage-list-other' => 'نور واړه مخونه', # Fuzzy
 	'pt-movepage-current' => 'اوسنی نوم:',
 	'pt-movepage-new' => 'نوی نوم:',
 	'pt-movepage-reason' => 'سبب:',

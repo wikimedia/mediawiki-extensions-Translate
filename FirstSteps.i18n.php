@@ -2359,6 +2359,15 @@ Dir kritt och Newsletteren awer héchstens eng pro Mount.
 Wann Dir keng Newslettere kréie wëllt, da kënnt Dir dat am Tab "{{int:prefs-personal}}"  vun Ären [[Special:Preferences|Astellungen]] ausschalten.',
 );
 
+/** Latvian (latviešu)
+ * @author Papuass
+ */
+$messages['lv'] = array(
+	'firststeps' => 'Pirmie soļi',
+	'translate-fs-selectlanguage' => 'Izvēlēties valodu',
+	'translate-fs-settings-planguage' => 'Galvenā valoda:',
+);
+
 /** Malagasy (Malagasy)
  * @author Jagwar
  */
@@ -3366,6 +3375,19 @@ Prav tako lahko stopite v stik s kolegi prevajalci istega jezika na [[Portal_tal
 To omogoča drugim uporabnikom, da stopijo v stik z vami preko e-pošte.
 Prav tako boste prejemali glasilo, največ enkrat mesečno.
 Če ne želite prejemati glasila, se lahko odjavite na zavihku »{{int:prefs-personal}}« v vaših [[Special:Preferences|nastavitvah]].',
+);
+
+/** Somali (Soomaaliga)
+ * @author Abshirdheere
+ */
+$messages['so'] = array(
+	'translate-fs-pagetitle' => 'Tilaabada hore ee - $1',
+	'translate-fs-settings-title' => 'Isku hagaajinta dooqyedaada',
+	'translate-fs-settings-planguage' => 'Luqada rasmiga ah',
+	'translate-fs-settings-planguage-desc' => 'Luqadaada rasmiga ah ee kuu gaarka ah aadna ku arki doonto qoraalada wiki waana turjimaad luqad tusaale ah.',
+	'translate-fs-settings-slanguage' => 'Luqada kaalmo $1:',
+	'translate-fs-settings-slanguage-desc' => 'Waxaa suutoowda in la arko fasiaada fariimaha luqadaha kale habaytna turjimidda, halkaan waxaad ka dooran kartaa luqada aad rabto inaad wax ku aragtid, hadiiba meesha laga helo.',
+	'translate-fs-settings-submit' => 'Kaydi dooqyeda',
 );
 
 /** Sundanese (Basa Sunda)

@@ -1746,6 +1746,13 @@ $messages['lt'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] projetas, kuris pateikia automatinę Vikipedijos versiją mobiliose įrangose.',
 );
 
+/** Latvian (latviešu)
+ * @author Papuass
+ */
+$messages['lv'] = array(
+	'translate-group-desc-translatablepages' => 'Visas tulkojamās lapas',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
