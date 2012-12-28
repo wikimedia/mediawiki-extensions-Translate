@@ -420,7 +420,7 @@ Most useful for the proofreading tasks.',
 
 	'translate-gethelp' => 'Help',
 
-	'translate-msggroupselector-projects'=> 'Message groups',
+	'translate-msggroupselector-projects'=> 'Message group',
 	'translate-msggroupselector-search-placeholder' => 'Search groups',
 	'translate-msggroupselector-search-all' => 'All',
 	'translate-msggroupselector-search-recent' => 'Recent',
