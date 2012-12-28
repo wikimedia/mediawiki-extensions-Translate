@@ -97,23 +97,23 @@
 				.data( 'group', this.group )
 				.data( 'language', this.language )
 				.append(
-				$( '<span>' )
-					.addClass( 'tux-proofread' )
-					.text( stats.proofread )
-					.css( 'width', proofread + '%' ),
-				$( '<span>' )
-					.addClass( 'tux-translated' )
-					.text( stats.translated )
-					.css( 'width', translated + '%' ),
-				$( '<span>' )
-					.addClass( 'tux-fuzzy' )
-					.text( stats.fuzzy )
-					.css( 'width', fuzzy + '%' ),
-				$( '<span>' )
-					.addClass( 'tux-untranslated' )
-					.text( untranslatedCount )
-					.css( 'width', untranslated + '%' )
-			);
+					$( '<span>' )
+						.addClass( 'tux-proofread' )
+						.data( 'proofread', stats.proofread )
+						.css( 'width', proofread + '%' ),
+					$( '<span>' )
+						.addClass( 'tux-translated' )
+						.data( 'translated', stats.translated )
+						.css( 'width', translated + '%' ),
+					$( '<span>' )
+						.addClass( 'tux-fuzzy' )
+						.data( 'fuzzy', stats.fuzzy )
+						.css( 'width', fuzzy + '%' ),
+					$( '<span>' )
+						.addClass( 'tux-untranslated' )
+						.data( 'untranslated', untranslatedCount )
+						.css( 'width', untranslated + '%' )
+				);
 
 			// TODO Add a tooltip for the statsbar that says the stats in words.
 			this.$container.append( $bar );

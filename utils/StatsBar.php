@@ -53,20 +53,34 @@ class StatsBar {
 		$wfuzzy = round( 100 * $fuzzy / $total, 2);
 		$wuntranslated = round( 100 - $wproofread - $wtranslated - $wfuzzy, 2);
 
-		$header = Html::openElement( 'div', array(
-			'class' => 'tux-statsbar',
-			'data-total' => $total,
-			'data-group' => $this->group,
-			'data-language' => $this->language,
-		) );
-
-		return <<<HTML
-$header
-	<span class="tux-proofread" style="width: $wproofread%">$proofread</span>
-	<span class="tux-translated" style="width: $wtranslated%">$translated</span>
-	<span class="tux-fuzzy" style="width: $wfuzzy%">$fuzzy</span>
-	<span class="tux-untranslated" style="width: $wuntranslated%">$untranslated</span>
-</div>
-HTML;
+		$moo = Html::rawElement( 'div', array(
+				'class' => 'tux-statsbar',
+				'data-total' => $total,
+				'data-group' => $this->group,
+				'data-language' => $this->language,
+			),
+			Html::element( 'span', array(
+				'class' => 'tux-proofread',
+				'style' => "width: $wproofread%",
+				'data-proofread' => $proofread,
+			) )
+			. Html::element( 'span', array(
+				'class' => 'tux-translated',
+				'style' => "width: $wtranslated%",
+				'data-translated' => $translated,
+			) )
+			. Html::element( 'span', array(
+				'class' => 'tux-fuzzy',
+				'style' => "width: $wfuzzy%",
+				'data-fuzzy' => $fuzzy,
+			) )
+			. Html::element( 'span', array(
+				'class' => 'tux-untranslated',
+				'style' => "width: $wuntranslated%",
+				'data-untranslated' => $untranslated,
+			) )
+		);
+		wfDebug( "moo: $moo\n" );
+		return $moo;
 	}
 }
