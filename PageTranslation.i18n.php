@@ -10342,6 +10342,7 @@ $messages['yi'] = array(
 /** Simplified Chinese (中文（简体）‎)
  * @author Anakmalaysia
  * @author Chenxiaoqino
+ * @author Dimension
  * @author Gzdavidwong
  * @author Hydra
  * @author Hzy980512
@@ -10382,8 +10383,8 @@ $messages['zh-hans'] = array(
 	'tpt-saveok' => '[[$1]]页面已被标记将进行翻译，一共$2个翻译单位。
 本页面现已可以<span class="plainlinks">[$3 翻译]</span>。',
 	'tpt-badsect' => '“$1”对于$2翻译单位不是有效的名称。',
-	'tpt-showpage-intro' => '以下列出新创、现存及已删除的部分。
-将此版本标记进行翻译之前，请检查来确定该部分极少受修改，以便翻译员避免得到多余的工作。', # Fuzzy
+	'tpt-showpage-intro' => '以下列出新创、现存及已删除的翻译单元。
+将此版本标记进行翻译之前，请检查来确定该部分极少受修改，以便翻译员避免得到多余的工作。',
 	'tpt-mark-summary' => '此版本已被标记将进行翻译',
 	'tpt-edit-failed' => '无法更新该页面：$1',
 	'tpt-duplicate' => '翻译单位名称$1已被使用超过一次。',
@@ -10453,8 +10454,8 @@ $messages['zh-hans'] = array(
 标签文本：$1', # Fuzzy
 	'pt-shake-multiple' => '有个部分含多余部分标记。
 部分文本：<pre>$1</pre>', # Fuzzy
-	'pt-shake-position' => '部分标记在意外位置。
-部分文本：<pre>$1</pre>', # Fuzzy
+	'pt-shake-position' => '翻译单元标记在意外位置。
+翻译单元文本：<pre>$1</pre>',
 	'pt-shake-empty' => '为“$1”的翻译单位标记是空的。',
 	'pt-log-header' => '页面翻译系统的对应活动日志',
 	'pt-log-name' => '页面翻译日志',
