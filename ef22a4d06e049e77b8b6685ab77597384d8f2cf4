@@ -16,6 +16,24 @@
       "revId": "ef22a4d06e049e77b8b6685ab77597384d8f2cf4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//8hA\u003d",
+        "filename": "utils/StatsBar.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-12-29T20:49:13Z",
+      "side": 1,
+      "message": "Moo!",
+      "parentUuid": "AAADgX//818\u003d",
+      "revId": "ef22a4d06e049e77b8b6685ab77597384d8f2cf4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
