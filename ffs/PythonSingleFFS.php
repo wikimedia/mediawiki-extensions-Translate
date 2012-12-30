@@ -33,7 +33,7 @@ class PythonSingleFFS extends SimpleFFS {
 		// Avoid buildup of whitespace
 		$header = trim( $header );
 
-		$pattern = '.*?},\n';
+		$pattern = '.*?},\s';
 		$regexp = "~$pattern~xsu";
 		$matches = array();
 		preg_match_all( $regexp, $data, $matches, PREG_SET_ORDER, $offset );
@@ -49,8 +49,8 @@ class PythonSingleFFS extends SimpleFFS {
 				throw new MWException( "MWEFFS2: File $filename: malformed section: {$data[0]}" );
 			}
 			$code = $matches[1];
-			// Normalize number of newlines after each section
-			$sections[$code] = rtrim( $data[0] );
+			// Normalize number of newlines
+			$sections[$code] = trim( $data[0], "\n" );
 		}
 
 		return $sections;
@@ -166,7 +166,8 @@ class PythonSingleFFS extends SimpleFFS {
 		}
 
 		ksort( $sections );
-		return implode( "\n", $priority ) . implode( "\n", $sections ) . "\n};\n";
+
+		return implode( "\n", $priority ) . "\n" . implode( "\n", $sections ) . "\n};\n";
 	}
 
 	protected function generateMessageBlock( MessageCollection $collection, StringMatcher $mangler ) {
