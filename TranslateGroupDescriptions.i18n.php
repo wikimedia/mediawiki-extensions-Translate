@@ -2488,7 +2488,23 @@ $messages['rue'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
+	'translate-group-desc-nodesc' => 'මෙම පණිවුඩ කාණ්ඩය සඳහා කිසිදු විස්තරයක් ලබා ගත නොහැක',
 	'translate-group-desc-translatablepages' => 'පරිවර්තනය කල හැකි සියළුම පිටු',
+	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] යනු හැරීම්-පාදක උපයඥාන ක්‍රීඩාවකි',
+	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] යනු ජාලය-පාදක කොටගත් සාකච්ඡා විනිශ්චයශාලා මෘදුකාංගයකි',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] යනු ජාලය-පාදක කොටගත් නිකුතු ඉලියීම් මෘදුකාංගයකි',
+	'translate-group-desc-eol' => '[[Translating:EOL|Encyclopedia of Life]] සඳහා පණිවුඩ සමූහය',
+	'translate-group-desc-frontlinesms' => '[[Translating:FrontlineSMS|FrontlineSMS]] සඳහා පණිවුඩ සමූහය',
+	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS]] සඳහා පණිවුඩ සමූහය',
+	'translate-group-desc-ihris-common' => '[[Special:Translate/out-ihris-common-0-all|iHRIS Common]] සඳහා පණිවුඩ සමූහය, [[Translating:iHRIS|iHRIS]] හී මොඩියුලයකි',
+	'translate-group-desc-ihris-i2ce' => '[[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]] සඳහා පණිවුඩ සමූහය, [[Translating:iHRIS|iHRIS]] හී මොඩියුලයකි',
+	'translate-group-desc-ihris-manage' => '[[Special:Translate/out-ihris-manage-0-all|iHRIS Manage]] සඳහා පණිවුඩ සමූහය, [[Translating:iHRIS|iHRIS]] හී මොඩියුලයකි',
+	'translate-group-desc-ihris-qualify' => '[[Special:Translate/out-ihris-qualify-0-all|iHRIS Qualify]] සඳහා පණිවුඩ සමූහය, [[Translating:iHRIS|iHRIS]] හී මොඩියුලයකි',
+	'translate-group-desc-kiwix' => '[[Translating:Kiwix|Kiwix]] සඳහා පණිවුඩ සමූහය',
+	'translate-group-desc-mantisbt-plugin-core' => '[[Translating:MantisBT|MantisBT]] සඳහා මධ්‍යය ප්ලගීනයක්',
+	'translate-group-desc-mediawiki-core-branch' => '[[Translating:MediaWiki|මාධ්‍යවිකි]] හී ස්ථාවර අනුවාදය සඳහා පණිවුඩ',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] යනු මාර්ගඅපගත විකිපීඩියා කියවනයකි',
+	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] යනු මයික්‍රෝබ්ලොගින් සර්වරයකි',
 );
 
 /** Slovak (slovenčina)

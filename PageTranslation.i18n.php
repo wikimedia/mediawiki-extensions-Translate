@@ -1820,6 +1820,7 @@ $messages['ckb'] = array(
  * @author Janet11
  * @author Matěj Grabovský
  * @author Mormegil
+ * @author Vks
  */
 $messages['cs'] = array(
 	'pagetranslation' => 'Překlad stránek',
@@ -1861,7 +1862,7 @@ Předtím než tuto verzi označíte pro překlad zkontrolujte, že změny čás
 	'tpt-other-pages' => 'Starší verze {{PLURAL:$1|této stránky je označena|těchto stránek jsou označeny}} pro překlad,
 ale nejnovější verze {{PLURAL:$1|nemůže být k překladu označena|nemohou být k překladu označeny}}.',
 	'tpt-discouraged-pages' => 'Další překlady {{PLURAL:$1|této stránky|těchto stránek}} se nedoporučují.',
-	'tpt-select-prioritylangs-force' => 'Zakázat překlady do jiných než prioritních jazyků',
+	'tpt-select-prioritylangs-force' => 'Zakázat překlady do jiných než prioritních jazyků', # Fuzzy
 	'tpt-select-prioritylangs-reason' => 'Důvod:',
 	'tpt-sections-prioritylangs' => 'Prioritní jazyky',
 	'tpt-rev-mark' => 'označit pro překlad',
@@ -1916,9 +1917,9 @@ Správce překladů se rozhodl zaměřit překladatelské úsilí na $3.",
 	'pt-log-aggregategroup-associate' => '{{GENDER:$2|přidal|přidala}} překladatelnou stránku [[:$1]] do skupiny $3',
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|odebral|odebrala}} překladatelnou stránku [[:$1]] ze skupiny $3',
 	'pt-movepage-list-pages' => 'Seznam stránek k přesunutí',
-	'pt-movepage-list-translation' => 'Překlad stránky',
+	'pt-movepage-list-translation' => 'Překlad stránky', # Fuzzy
 	'pt-movepage-list-section' => 'Sekce stránky', # Fuzzy
-	'pt-movepage-list-other' => 'Další podstránky',
+	'pt-movepage-list-other' => 'Další podstránky', # Fuzzy
 	'pt-movepage-list-count' => 'Celkem  $1   {{PLURAL:$1| stránka|stránek}} k přesunutí.',
 	'pt-movepage-legend' => 'Přesunout přeložitelnou stránku',
 	'pt-movepage-current' => 'Současný název:',
@@ -1928,6 +1929,7 @@ Správce překladů se rozhodl zaměřit překladatelské úsilí na $3.",
 	'pt-movepage-action-check' => 'Zkontrolovat, zda je přesun možný',
 	'pt-movepage-action-perform' => 'Přesunout',
 	'pt-movepage-action-other' => 'Změnit cíl',
+	'pt-deletepage-reason' => 'Důvod:',
 	'pt-deletepage-subpages' => 'Odstranit všechny podstránky',
 	'pt-deletepage-list-pages' => 'Seznam stránek ke smazání',
 );
@@ -2618,6 +2620,7 @@ $messages['el'] = array(
 );
 
 /** Esperanto (Esperanto)
+ * @author Anakmalaysia
  * @author ArnoLagrange
  * @author Blahma
  * @author Yekrats
@@ -2652,13 +2655,24 @@ La paĝo povas nun esti <span class="plainlinks">[$3 tradukita]</span>.',
 	'tpt-edit-failed' => 'Ne eblis ĝisdatigi la paĝon: $1',
 	'tpt-old-pages-title' => 'Paĝoj en traduko',
 	'tpt-other-pages-title' => 'Rompitaj paĝoj',
+	'tpt-discouraged-pages-title' => 'Malinstigitaj paĝoj',
+	'tpt-select-prioritylangs-reason' => 'Kialo:',
+	'tpt-sections-prioritylangs' => 'Primadaj lingvoj',
 	'tpt-rev-mark' => 'marki por traduki',
 	'tpt-rev-unmark' => 'forigi el traduko',
+	'tpt-rev-discourage' => 'malinstigi',
 	'tpt-rev-encourage' => 'restarigi',
 	'translate-tag-translate-link-desc' => 'Traduki ĉi tiun paĝon',
 	'translate-tag-markthis' => 'Marki ĉi tiun paĝon por tradukado',
 	'tpt-languages-legend' => 'Aliaj lingvoj:',
+	'tpt-languages-zero' => 'Ektraduki por ĉi tiu lingvo',
+	'tpt-discouraged-language-reason' => 'Kialo: $1',
 	'tpt-download-page' => 'Eksporti paĝon kun tradukoj',
+	'tpt-aggregategroup-add' => 'Aldoni',
+	'tpt-aggregategroup-save' => 'Konservi',
+	'tpt-aggregategroup-new-name' => 'Nomo:',
+	'tpt-aggregategroup-new-description' => 'Priskribo (nedevige):',
+	'tpt-aggregategroup-invalid-group' => 'La grupo ne ekzistas',
 	'pt-log-name' => 'Protokolo pri paĝaj tradukoj',
 	'pt-log-mark' => '{{GENDER:$2|markis}} revizion $3 de paĝo "[[:$1]]" por traduki',
 	'pt-movepage-title' => 'Movi la tradukeblan paĝon "$1"',
@@ -6568,7 +6582,7 @@ Nama: $1',
 	'tpt-sections-template' => 'Templat laman penterjemahan',
 	'tpt-action-nofuzzy' => 'Jangan taksahkan terjemahan',
 	'tpt-badtitle' => 'Nama laman yang diberikan ($1) bukan tajuk yang sah',
-	'tpt-nosuchpage' => 'Laman $1 tidak wujud',
+	'tpt-nosuchpage' => 'Halaman $1 tidak wujud',
 	'tpt-oldrevision' => '$2 bukan versi terkini laman [[$1]].
 Hanya versi terkini boleh ditandai untuk penterjemahan.',
 	'tpt-notsuitable' => 'Laman $1 tidak sesuai untuk diterjemah.
@@ -8686,6 +8700,7 @@ $messages['si'] = array(
 	'aggregategroups' => 'සමස්ත කාණ්ඩයන්',
 	'tpt-aggregategroup-add' => 'එක් කරන්න',
 	'tpt-aggregategroup-save' => 'සුරකින්න',
+	'tpt-aggregategroup-add-new' => 'නව ඓක්‍යය කාණ්ඩයක් එක් කරන්න',
 	'tpt-aggregategroup-new-name' => 'නම:',
 	'tpt-aggregategroup-new-description' => 'විස්තරය (අමතර):',
 	'tpt-aggregategroup-invalid-group' => 'කාණ්ඩය නොපවතියි',
