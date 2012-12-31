@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//7r0\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-31T16:33:40Z",
+      "side": 1,
+      "message": "Is it not possible to just pass translateEditor.keyup as the function instead of wrapping it inside a function?",
+      "revId": "85db54d734062b495f474b93636f75e0fc4c167e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//7rw\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-31T16:33:40Z",
+      "side": 1,
+      "message": "Double space",
+      "revId": "85db54d734062b495f474b93636f75e0fc4c167e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
