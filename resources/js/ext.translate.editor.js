@@ -1,28 +1,6 @@
 ( function ( $, mw ) {
 	'use strict';
 
-	// TODO: We just need to delay the callback to 1000ms.
-	// We can just have a small function like ext.translate.groupselector.js/delay().
-	function MessageCheckUpdater( callback ) {
-		this.act = function () {
-			callback();
-			delete this.timeoutID;
-		};
-
-		this.setup = function () {
-			this.cancel();
-			var self = this;
-			this.timeoutID = window.setTimeout( self.act, 1000 );
-		};
-
-		this.cancel = function () {
-			if ( typeof this.timeoutID === 'number' ) {
-				window.clearTimeout( this.timeoutID );
-				delete this.timeoutID;
-			}
-		};
-	}
-
 	function TranslateEditor( element ) {
 		this.$editTrigger = $( element );
 		this.$editor = null;
@@ -158,7 +136,6 @@
 		prepareEditorColumn: function () {
 			var translateEditor = this,
 				sourceString,
-				messageChecker,
 				$editorColumn,
 				$messageKeyLabel,
 				$moreWarningsTab,
@@ -290,24 +267,8 @@
 					}
 				} );
 
-			messageChecker = new MessageCheckUpdater( function () {
-				var url = new mw.Uri( mw.config.get( 'wgScript' ) );
-
-				// TODO: We need a better API for this
-				url.extend( {
-					title: 'Special:Translate/editpage',
-					suggestions: 'checks',
-					page: translateEditor.$editTrigger.data( 'title' ),
-					loadgroup: translateEditor.$editTrigger.data( 'group' )
-				} );
-
-				$.post( url.toString(), { translation: $textArea.val() }, function ( data ) {
-					translateEditor.populateWarningsBoxes( data );
-				} );
-			} );
-
 			$textArea.keyup( function () {
-				messageChecker.setup();
+				translateEditor.keyup();
 			} );
 
 			if ( this.$editTrigger.data( 'translation' ) ) {
@@ -367,6 +328,33 @@
 			);
 
 			return $editorColumn;
+		},
+
+		/**
+		 * Handle the keypress events in the translation editor.
+		 * After a few millisecond delay, validates the translation.
+		 */
+		keyup: function () {
+			var translateEditor = this;
+
+			delay( function () {
+				var url = new mw.Uri( mw.config.get( 'wgScript' ) ),
+					$textArea = translateEditor.$editor.find( 'textarea' );
+
+				// TODO: We need a better API for this
+				url.extend( {
+					title: 'Special:Translate/editpage',
+					suggestions: 'checks',
+					page: translateEditor.$editTrigger.data( 'title' ),
+					loadgroup: translateEditor.$editTrigger.data( 'group' )
+				} );
+
+				$.post( url.toString(),  {
+						translation: $textArea.val()
+					}, function ( data ) {
+						translateEditor.populateWarningsBoxes( data );
+				} );
+			}, 1000 );
 		},
 
 		/**
@@ -712,4 +700,14 @@
 			}
 		} );
 	};
+
+	var delay = ( function () {
+		var timer = 0;
+
+		return function ( callback, milliseconds ) {
+			clearTimeout( timer );
+			timer = setTimeout( callback, milliseconds );
+		};
+	} () );
+
 }( jQuery, mediaWiki ) );
