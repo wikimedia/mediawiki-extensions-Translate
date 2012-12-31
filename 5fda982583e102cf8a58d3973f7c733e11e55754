@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//7rc\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-31T16:35:18Z",
+      "side": 1,
+      "message": "double space",
+      "revId": "5fda982583e102cf8a58d3973f7c733e11e55754",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//7rg\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2012-12-31T16:35:18Z",
+      "side": 1,
+      "message": "Perhaps Html::rawElement?",
+      "revId": "5fda982583e102cf8a58d3973f7c733e11e55754",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
