@@ -250,3 +250,15 @@ $wgAutoloadClasses['MockMessageCollectionForExport'] = "$dir/tests/MockMessageCo
 $wgAutoloadClasses['MockSuperUser'] = "$dir/tests/MockSuperUser.php";
 $wgAutoloadClasses['MockWikiMessageGroup'] = "$dir/tests/MockWikiMessageGroup.php";
 /**@}*/
+
+/**
+ * @name   "Translation web services"
+ * @{
+ */
+$wgAutoloadClasses['ApertiumWebService'] = "$dir/webservices/ApertiumWebService.php";
+$wgAutoloadClasses['MicrosoftWebService'] = "$dir/webservices/MicrosoftWebService.php";
+$wgAutoloadClasses['TranslationWebService'] = "$dir/webservices/TranslationWebService.php";
+$wgAutoloadClasses['TranslationWebServiceException'] = "$dir/webservices/TranslationWebServiceException.php";
+$wgAutoloadClasses['ApertiumWebService'] = "$dir/webservices/ApertiumWebService.php";
+$wgAutoloadClasses['YandexWebService'] = "$dir/webservices/YandexWebService.php";
+/**@}*/
