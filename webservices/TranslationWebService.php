@@ -33,6 +33,7 @@ abstract class TranslationWebService {
 			'microsoft' => 'MicrosoftWebService',
 			'apertium' => 'ApertiumWebService',
 			'yandex' => 'YandexWebService',
+			'ttmserver' => 'RemoteTTMServerWebService',
 		);
 
 		if ( !isset( $config['timeout'] ) ) {
@@ -92,11 +93,10 @@ abstract class TranslationWebService {
 					}
 
 					$results[] = array(
-						'value' => $sug,
+						'target' => $sug,
 						'service' => $this->service,
-						'language' => $targetLanguage,
 						'source_language' => $language,
-						'source_text' => $text,
+						'source' => $text,
 					);
 				}
 
@@ -241,7 +241,7 @@ abstract class TranslationWebService {
 	/**
 	 * Increases the failure count for this service
 	 */
-	private function reportTranslationServiceFailure( Exception $e ) {
+	protected function reportTranslationServiceFailure( Exception $e ) {
 		$service = $this->service;
 		wfDebugLog( 'translationservices', "Translation service $service problem: " . $e->getMessage() );
 
