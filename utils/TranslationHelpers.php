@@ -124,36 +124,9 @@ class TranslationHelpers {
 	 * @return String
 	 */
 	public function getTranslation() {
-		if ( $this->translation !== null ) {
-			return $this->translation;
-		}
-
-		// Shorter names
-		$title = $this->handle->getTitle();
-		$page = $this->handle->getKey();
-		$code = $this->handle->getCode();
-		$group = $this->group;
-
-		// Try database first
-		$translation = TranslateUtils::getMessageContent(
-			$page, $code, $title->getNamespace()
-		);
-
-		if ( $translation === null && $group && !$group instanceof FileBasedMessageGroup ) {
-			// Then try to load from files (old groups)
-			$translation = $group->getMessage( $page, $code );
-		}
-		wfRunHooks( 'TranslatePrefillTranslation', array( &$translation, $this->handle ) );
-		if ( $translation === null ) {
-			// Nothing to prefil
-			$translation = '';
-		} elseif ( !TranslateEditAddons::hasFuzzyString( $translation ) && TranslateEditAddons::isFuzzy( $title ) ) {
-			$translation = TRANSLATE_FUZZY . $translation;
-		}
-
-		$this->translation = $translation;
-
-		return $translation;
+		$obj = new CurrentTranslationAid( $this->group, $this->handle, RequestContext::getMain() );
+		$aid = $obj->getData();
+		return $aid['value'];
 	}
 
 	/**
