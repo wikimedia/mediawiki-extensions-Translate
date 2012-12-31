@@ -412,6 +412,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'translate-workflow-set-done',
 		'translate-workflow-set-error-alreadyset',
 		'translate-js-support-unsaved-warning',
+		'translate-documentation-language',
 	),
 ) + $resourcePaths;
 

@@ -124,7 +124,8 @@
 	}
 
 	$( document ).ready( function () {
-		var uiLanguage, $translateContainer;
+		var uiLanguage, $translateContainer,
+			docLanguageAutonym, docLanguageCode, ulsOptions;
 
 		uiLanguage = mw.config.get( 'wgUserLanguage' );
 
@@ -142,7 +143,7 @@
 
 		// Use ULS for language selection if it's available
 		if ( $.uls ) {
-			$( '.ext-translate-language-selector .uls' ).uls( {
+			ulsOptions = {
 				onSelect: function ( language ) {
 					mw.translate.changeLanguage( language );
 				},
@@ -151,7 +152,25 @@
 				quickList: function () {
 					return mw.uls.getFrequentLanguageList();
 				}
-			} );
+			};
+
+			// If a documentation pseudo-language is defined,
+			// add it to the language selector
+			docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
+			if ( docLanguageCode ) {
+				docLanguageAutonym = mw.msg( 'translate-documentation-language' );
+				ulsOptions.languages[docLanguageCode] = docLanguageAutonym;
+
+				$.uls.data.addLanguage( docLanguageCode, {
+					script: $.uls.data.getScript( mw.config.get( 'wgContentLanguage' ) ),
+					regions: ['SP'],
+					autonym: docLanguageAutonym
+				} );
+
+				ulsOptions.showRegions = ['WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA'];
+			}
+
+			$( '.ext-translate-language-selector .uls' ).uls( ulsOptions );
 
 			if ( $.fn.translateeditor ) {
 				// New translation editor
