@@ -382,7 +382,7 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function messageSelector( ) {
-		$output = Html::openElement( 'div', array( 'class' => 'row tux-message-selector' ) );
+		$output = Html::openElement( 'ul', array( 'class' => 'row tux-message-selector' ) );
 		$tabs = array(
 			'tux-tab-all' => null,
 			'tux-tab-untranslated' => '!translated',
@@ -395,34 +395,35 @@ class SpecialTranslate extends SpecialPage {
 		$params['task'] = 'custom';
 
 		foreach ( $tabs as $tab => $filter ) {
-			$selected = $this->options['filter'] === strval( $filter ) ? ' selected' : '';
+			$selected = $this->options['filter'] === strval( $filter ) ? 'selected' : '';
 			$taskParams = array( 'filter' => $filter ) + $params;
 			ksort( $taskParams );
 			$href = $this->getTitle()->getLocalUrl( $taskParams );
 			$link = Html::element( 'a', array( 'href' => $href ), $this->msg( $tab ) );
-			$output .= Html::rawElement( 'span', array( 'class' => "column$selected" ), $link );
+			$output .= Html::rawElement( 'li', array( 'class' => "column $selected" ), $link );
 		}
-
-		$output .= Html::element( 'span',
-			array( 'class' => 'column text-right' ),
-			'...'
-		);
 
 		$options = array(
 			'Optional messages',
 			'Messages without suggestions',
 		);
 
-		$optionsContainer = '';
+		$container =  Html::openElement( 'ul' , array( 'class' => 'column tux-message-selector' ) );
 		foreach ( $options as $opt ) {
-			$optionsContainer .= Xml::checkLabel( $opt, "$opt-name", "$opt-id", array( 'class' => "three columns" ) );
+			$container .= Html::openElement( 'li', array( 'class' => 'column' ) ).
+				Xml::checkLabel( $opt, "$opt-name", "$opt-id" ).
+				Html::closeElement( 'li' );
 		}
 
-		$output .= Html::openElement( 'span', array( 'class' => 'columns push-two' ) ).
-			$optionsContainer.
-			Html::closeElement( 'span' );
+		$container .= Html::closeElement( 'ul' );
 
-		$output .= Html::closeElement( 'div' );
+		$output .= Html::openElement( 'li', array( 'class' => 'column more' ) ).
+			'...'.
+			$container.
+			Html::closeElement( 'li' );
+
+		$output .= Html::closeElement( 'ul' );
+
 		return $output;
 	}
 
