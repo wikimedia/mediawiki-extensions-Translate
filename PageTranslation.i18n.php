@@ -8253,6 +8253,7 @@ $messages['rm'] = array(
  * @author Firilacroco
  * @author KlaudiuMihaila
  * @author Minisarm
+ * @author Stelistcristi
  */
 $messages['ro'] = array(
 	'pagetranslation' => 'Traducere pagini',
@@ -8292,6 +8293,7 @@ Asigurați-vă că are eticheta <nowiki><translate></nowiki> și are o sintaxă 
 	'tpt-select-prioritylangs-reason' => 'Motiv:',
 	'tpt-sections-prioritylangs' => 'Limbi prioritare',
 	'tpt-rev-encourage' => 'restaurare',
+	'tpt-rev-unmark-tooltip' => 'Elimină această pagină de la traducere.',
 	'translate-tag-translate-link-desc' => 'Tradu această pagină',
 	'translate-tag-markthis' => 'Marchează această pagină pentru traducere',
 	'tpt-translation-intro' => 'Această pagină reprezintă <span class="plainlinks">[$1 versiunea tradusă]</span> a paginii [[$2]], procesul de traducere fiind completat în proporție de $3%.',
@@ -8300,14 +8302,16 @@ Asigurați-vă că are eticheta <nowiki><translate></nowiki> și are o sintaxă 
 	'tpt-discouraged-language-reason' => 'Motiv: $1',
 	'tpt-aggregategroup-add' => 'Adaugă',
 	'tpt-aggregategroup-save' => 'Salvează',
+	'tpt-aggregategroup-add-new' => 'Adaugă un grup de agregare nou',
 	'tpt-aggregategroup-new-name' => 'Nume:',
 	'tpt-aggregategroup-new-description' => 'Descriere (opțională):',
+	'tpt-aggregategroup-remove-confirm' => 'Sigur doriți să ștergeți acest grup de agregare?',
 	'tpt-aggregategroup-invalid-group' => 'Grupul nu există',
 	'pt-log-name' => 'Jurnal traducere pagini',
 	'pt-movepage-title' => 'Mută pagina traductibilă „$1”',
 	'pt-movepage-list-pages' => 'Listă de pagini de mutat',
-	'pt-movepage-list-translation' => 'Pagini de traducere',
-	'pt-movepage-list-other' => 'Alte subpagini',
+	'pt-movepage-list-translation' => 'Pagini de traducere', # Fuzzy
+	'pt-movepage-list-other' => 'Alte subpagini', # Fuzzy
 	'pt-movepage-list-count' => 'În total, $1 {{PLURAL:$1|pagină|pagini|de pagini}} de redenumit.',
 	'pt-movepage-legend' => 'Mută pagina traductibilă',
 	'pt-movepage-current' => 'Nume actual:',
@@ -8322,6 +8326,8 @@ Asigurați-vă că are eticheta <nowiki><translate></nowiki> și are o sintaxă 
 	'pt-deletepage-action-perform' => 'Efectuați ștergerea',
 	'pt-deletepage-action-other' => 'Schimbați ținta',
 	'pt-deletepage-lang-legend' => 'Șterge pagina traducerii',
+	'pt-deletepage-full-legend' => 'Șterge pagina traductibilă',
+	'pt-deletepage-any-legend' => 'Șterge pagina traductibilă sau pagina de traducere',
 	'pt-deletepage-current' => 'Numele paginii:',
 	'pt-deletepage-reason' => 'Motiv:',
 	'pt-deletepage-subpages' => 'Ștergeți toate subpaginile',
@@ -8671,6 +8677,7 @@ $messages['si'] = array(
 	'tpt-badsect' => '"$1" යනු $2 පරිවර්තන ඒකකය සඳහා නීතික මාතෘකාවක් නොවේ.',
 	'tpt-mark-summary' => 'පරිවර්තනය සඳහා මෙම අනුවාදය සලකුණු කරන ලදී',
 	'tpt-edit-failed' => 'පිටුව යාවත්කාලීන කල නොහැක: $1',
+	'tpt-duplicate' => '$1 පරිවතන ඒකක නාමය එකකට වඩා භාවිතා කර ඇත.',
 	'tpt-already-marked' => 'මෙම පිටුවෙහි නවතම අනුවාදය පරිවර්තනය සඳහා දැනටමත් සලකුණු කොට ඇත.',
 	'tpt-unmarked' => '$1 පිටුව පරිවර්තනය සඳහා තවදුරටත් සලකුණු කර නොමැත.',
 	'tpt-new-pages-title' => 'පරිවර්තනය සඳහා යෝජිත පිටු',
@@ -8678,6 +8685,8 @@ $messages['si'] = array(
 	'tpt-other-pages-title' => 'බිඳුණු පිටු',
 	'tpt-discouraged-pages-title' => 'අධෛර්යකල පිටු',
 	'tpt-old-pages' => 'පරිවර්තනය සඳහා {{PLURAL:$1|මෙම පිටුවේ|මෙම පිටුවල}} සමහර අනුවාදයන් සලකුණු කරන ලදී.',
+	'tpt-select-prioritylangs' => 'කොමාවෙන්-වෙන්වූ ප්‍රමුඛතා භාෂා කේතයන් ලැයිස්තුව:',
+	'tpt-select-prioritylangs-force' => 'ප්‍රමුඛතා භාෂාවන්ට වඩා වෙන භාෂාවන්ට කරන පරිවර්තන වලක්වන්න',
 	'tpt-select-prioritylangs-reason' => 'හේතුව:',
 	'tpt-sections-prioritylangs' => 'ප්‍රමුඛතා භාෂාවන්',
 	'tpt-rev-mark' => 'පරිවර්තනය සඳහා සලකුණු කරන්න',
@@ -9754,7 +9763,7 @@ $messages['ug-arab'] = array(
 	'tpt-other-pages-title' => 'بۇزۇلغان بەتلەر',
 	'tpt-discouraged-pages-title' => 'تەۋسىيە قىلىنمايدىغان بەتلەر',
 	'tpt-select-prioritylangs' => 'پەش بىلەن ئايرىلغان ئالدىنلىق تىل تىزىمى كودى:',
-	'tpt-select-prioritylangs-force' => 'ئالدىنلىق تىلدىن باشقا تىلغا تەرجىمە قىلىشنىڭ ئالدىنى ئالىدۇ',
+	'tpt-select-prioritylangs-force' => 'ئالدىنلىق تىلدىن باشقا تىلغا تەرجىمە قىلىشنىڭ ئالدىنى ئالىدۇ', # Fuzzy
 	'tpt-select-prioritylangs-reason' => 'سەۋەب:',
 	'tpt-sections-prioritylangs' => 'ئالدىنلىق تىل',
 	'tpt-rev-mark' => 'تەرجىمە بەلگىسى',
@@ -9780,13 +9789,13 @@ $messages['ug-arab'] = array(
 	'tpt-aggregategroup-remove-confirm' => 'راستلا بۇ توپلانما گۇرۇپپىنى ئۆچۈرەمسىز؟',
 	'tpt-aggregategroup-invalid-group' => 'گۇرۇپپا مەۋجۇت ئەمەس',
 	'pt-movepage-list-pages' => 'يۆتكەيدىغان بەتلەرنىڭ تىزىمى',
-	'pt-movepage-list-translation' => 'تەرجىمە قىلىدىغان بەتلەر',
+	'pt-movepage-list-translation' => 'تەرجىمە قىلىدىغان بەتلەر', # Fuzzy
 	'pt-movepage-list-section' => 'بۆلەك بەتلەر', # Fuzzy
-	'pt-movepage-list-other' => 'باشقا تارماق بەتلەر',
+	'pt-movepage-list-other' => 'باشقا تارماق بەتلەر', # Fuzzy
 	'pt-movepage-list-count' => 'جەمئى {{PLURAL:$1|بەت|بەت}} يۆتكىدى.',
 	'pt-movepage-legend' => 'تەرجىمە قىلغىلى بولىدىغان بەتنى يۆتكە',
 	'pt-movepage-current' => 'نۆۋەتتىكى ئاتى:',
-	'pt-movepage-new' => 'يېڭى ئاتى:',
+	'pt-movepage-new' => 'يېڭى ئات:',
 	'pt-movepage-reason' => 'سەۋەب:',
 	'pt-movepage-subpages' => 'ھەممە تارماق بەتنى يۆتكە',
 	'pt-movepage-action-check' => 'يۆتكەشچانلىقىنى تەكشۈر',
@@ -9795,16 +9804,18 @@ $messages['ug-arab'] = array(
 	'pt-deletepage-lang-title' => 'تەرجىمە بەت "$1" نى ئۆچۈرىدۇ.',
 	'pt-deletepage-full-title' => 'تەرجىمە قىلغىلى بولىدىغان بەت $1 نى ئۆچۈرىدۇ.',
 	'pt-deletepage-invalid-title' => 'بەلگىلەنگەن بەت ئىناۋەتلىك ئەمەس.',
-	'pt-deletepage-invalid-text' => 'بەلگىلەنگەن بەت تەرجىمە قىلغىلى بولىدىغان بەت بولمىسىمۇ ئۇنى تەرجىمە قىلىدۇ.',
+	'pt-deletepage-invalid-text' => 'بەلگىلەنگەن بەت تەرجىمە قىلغىلى بولىدىغان بەت بولمىسىمۇ ئۇنى تەرجىمە قىلىدۇ.', # Fuzzy
 	'pt-deletepage-action-check' => 'ئۆچۈرىدىغان تىزىم بەتلەر',
 	'pt-deletepage-action-perform' => 'ئۆچۈر',
 	'pt-deletepage-action-other' => 'نىشاننى ئۆزگەرت',
 	'pt-deletepage-lang-legend' => 'تەرجىمە بەتنى ئۆچۈر',
 	'pt-deletepage-full-legend' => 'تەرجىمە قىلغىلى بولىدىغان بەتنى ئۆچۈر',
-	'pt-deletepage-any-legend' => 'تەرجىمە قىلغىلى بولىدىغان بەتنى ئۆچۈر ياكى تەرجىمە قىلغىلى بولىدىغان بەتنىڭ تەرجىمىسى',
+	'pt-deletepage-any-legend' => 'تەرجىمە قىلغىلى بولىدىغان بەتنى ئۆچۈر ياكى تەرجىمە قىلغىلى بولىدىغان بەتنىڭ تەرجىمىسى', # Fuzzy
 	'pt-deletepage-current' => 'بەت ئاتى:',
 	'pt-deletepage-reason' => 'سەۋەب:',
 	'pt-deletepage-subpages' => 'ھەممە تارماق بەتنى ئۆچۈر',
+	'pt-deletepage-list-translation' => 'تەرجىمە قىلىدىغان بەتلەر',
+	'pt-deletepage-list-other' => 'باشقا تارماق بەتلەر',
 );
 
 /** Ukrainian (українська)

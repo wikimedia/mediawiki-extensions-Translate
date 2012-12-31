@@ -2735,7 +2735,7 @@ U kunt nu beginnen met vertalen.
 
 Wees niet bang als het nog wat verwarrend aanvoelt.
 In de [[Project list|Projectenlijst]] vindt u een overzicht van projecten waar u vertalingen aan kunt bijdragen.
-Het merendeel van de projecten heeft een korte beschrijvingspagina met een verwijzing "\'\'Dit project vertalen\'\'", die u naar een pagina leidt waarop alle onvertaalde berichten worden weergegeven.
+Het merendeel van de projecten heeft een korte beschrijvingspagina met een koppeling "\'\'Dit project vertalen\'\'", die u naar een pagina leidt waarop alle onvertaalde berichten worden weergegeven.
 Er is ook een lijst met alle berichtengroepen beschikbaar met de [[Special:LanguageStats|huidige status van de vertalingen voor een taal]].
 
 Als u denkt dat u meer informatie nodig hebt voordat u kunt beginnen met vertalen, lees dan de [[FAQ|Veel gestelde vragen]].
@@ -2743,7 +2743,7 @@ Helaas kan de documentatie soms verouderd zijn.
 Als er iets is waarvan u denkt dat het mogelijk moet zijn, maar u weet niet hoe, aarzel dan niet om het te vragen op de [[Support|pagina voor ondersteuning]].
 
 U kunt ook contact opnemen met collegavertalers van dezelfde taal op de [[Portal_talk:$1|overlegpagina]] van [[Portal:$1|uw taalportaal]].
-Als u het niet al hebt gedaan, [[Special:Preferences|wijzig dan de taal van de gebruikersinterface in de taal waarnaar u gaat vertalen]], zodat de wiki u de meest relevante verwijzingen kan presenteren.',
+Als u het niet al hebt gedaan, [[Special:Preferences|wijzig dan de taal van de gebruikersinterface in de taal waarnaar u gaat vertalen]], zodat de wiki u de meest relevante koppelingen kan presenteren.',
 	'translate-fs-email-text' => 'Geef uw e-mail adres in in [[Special:Preferences|uw voorkeuren]] en bevestig het via de e-mail die naar u verzonden is.
 
 Dit makt het mogelijk dat andere gebruikers contact met u opnemen per e-mail.
@@ -3646,13 +3646,13 @@ $messages['ug-arab'] = array(
 	'firststeps' => 'تۇنجى قەدەم',
 	'firststeps-desc' => 'ئىشلەتكۈچىنىڭ ۋىكى تەرجىمىسىنى باشلايدىغان [[Special:FirstSteps|يېتەكلەش بېتى]]',
 	'translate-fs-pagetitle-done' => ' - تامام!',
-	'translate-fs-pagetitle-pending' => '- بەلگىلەنمىگەن',
+	'translate-fs-pagetitle-pending' => ' - بەلگىلەنمىگەن',
 	'translate-fs-pagetitle' => 'باشلاش يېتەكچىسىگە ئېرىش - $1',
 	'translate-fs-signup-title' => 'خەتلىتىش',
 	'translate-fs-settings-title' => 'مايىللىقىڭىزنى سەپلەڭ',
 	'translate-fs-userpage-title' => 'ئىشلەتكۈچى بېتىڭىزنى قۇرۇڭ',
 	'translate-fs-permissions-title' => 'تەرجىمە قىلىش ھوقۇق ئىلتىماسى',
-	'translate-fs-target-title' => 'تەرجىمە قىلىشنى باشلاڭ!',
+	'translate-fs-target-title' => 'تەرجىمە قىلىشنى باشلا!',
 	'translate-fs-email-title' => 'ئېلخەت مەنزىلىڭىزنى جەزملەڭ',
 	'translate-fs-intro' => "{{SITENAME}} باشلانغۇچ يېتەكچىسىگە مەرھابا.
 سىزنى قانداق قىلىپ تەرجىمان بولۇشقا يېتەكلەيدۇ.
@@ -3671,6 +3671,7 @@ $messages['ug-arab'] = array(
 	'translate-fs-userpage-level-3' => 'مەن ئادەتتىكىدەك پىششىق',
 	'translate-fs-userpage-level-2' => 'مەن ئوتتۇرىھال پىششىق',
 	'translate-fs-userpage-level-1' => 'ئازراق بىلىمەن',
+	'translate-fs-permissions-planguage' => 'ئاساسىي تىل:',
 );
 
 /** Ukrainian (українська)
