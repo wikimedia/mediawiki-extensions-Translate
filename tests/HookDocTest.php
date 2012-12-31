@@ -19,8 +19,10 @@ class HookDocTest extends MediaWikiTestCase {
 			'messagegroups',
 			'specials',
 			'tag',
+			'translationaids',
 			'ttmserver',
 			'utils',
+			'webservices',
 		),
 		'js' => array(
 			'resources/js',
