@@ -95,6 +95,7 @@ $wgAPIModules['groupreview'] = 'ApiGroupReview';
 $wgAPIModules['aggregategroups'] = 'ApiAggregateGroups';
 $wgAPIModules['ttmserver'] = 'ApiTTMServer';
 $wgAPIModules['translateuser'] = 'ApiTranslateUser';
+$wgAPIModules['translationaids'] = 'ApiTranslationAids';
 $wgAPIModules['hardmessages'] = 'ApiHardMessages';
 $wgAPIGeneratorModules['messagecollection'] = 'ApiQueryMessageCollection';
 
