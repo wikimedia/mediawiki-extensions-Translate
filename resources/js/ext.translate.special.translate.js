@@ -121,7 +121,8 @@
 	}
 
 	$( document ).ready( function () {
-		var uiLanguage;
+		var uiLanguage,
+			ulsLanguages, docLanguageAutonym, docLanguageCode, ulsOptions;
 
 		uiLanguage = mw.config.get( 'wgUserLanguage' );
 
@@ -138,16 +139,33 @@
 
 		// Use ULS for language selection if it's available
 		if ( $.uls ) {
-			$( '.ext-translate-language-selector.uls' ).uls( {
+			ulsLanguages = mw.config.get( 'wgULSLanguages' );
+
+			ulsOptions = {
 				onSelect: function ( language ) {
 					mw.translate.changeLanguage( language );
 				},
-				languages: mw.config.get( 'wgULSLanguages' ),
+				languages: ulsLanguages,
 				searchAPI: mw.util.wikiScript( 'api' ) + '?action=languagesearch',
 				quickList: function () {
 					return mw.uls.getFrequentLanguageList();
 				}
-			} );
+			};
+
+			docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
+			if ( docLanguageCode ) {
+				docLanguageAutonym = 'Language documentation'; // TODO i18n
+				ulsLanguages[docLanguageCode] = docLanguageAutonym;
+				$.uls.data.addLanguage( docLanguageCode, {
+					script: $.uls.data.getScript( 'en' ), // TODO replace 'en' with wiki language
+					regions: ['SP'],
+					autonym: docLanguageAutonym
+				} );
+
+				ulsOptions.showRegions = ['WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA'];
+			}
+
+			$( '.ext-translate-language-selector.uls' ).uls( ulsOptions );
 
 			if ( $.fn.translateeditor ) {
 				// New translation editor
