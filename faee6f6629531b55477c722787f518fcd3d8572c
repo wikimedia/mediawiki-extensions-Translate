@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//64c\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-01T14:33:04Z",
+      "side": 1,
+      "message": "This should not be hard coded. $wgTranslatePermissionUrl",
+      "revId": "faee6f6629531b55477c722787f518fcd3d8572c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//64Y\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-01T14:33:04Z",
+      "side": 1,
+      "message": "canTranslate(), isAllowedToTranslate() or isAllowed( \u0027translate\u0027/\u0027review\u0027 ) (thinking of the future) would be better name for the function. The function could return a string value indicating why not (lack of permissions, blocked, etc.)",
+      "revId": "faee6f6629531b55477c722787f518fcd3d8572c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
