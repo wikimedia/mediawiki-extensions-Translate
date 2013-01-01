@@ -16,6 +16,24 @@
       "revId": "e6c31ee8c4131acd617d9e7bb1c4451ef2083a8a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//668\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-01T09:38:39Z",
+      "side": 1,
+      "message": "Just to avoid a warning that says $readMore is used before initializing in line 575-below.",
+      "parentUuid": "AAADgX//67E\u003d",
+      "revId": "e6c31ee8c4131acd617d9e7bb1c4451ef2083a8a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
