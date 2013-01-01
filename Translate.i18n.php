@@ -456,6 +456,7 @@ Most useful for the proofreading tasks.',
 	'tux-warnings-hide' => 'hide',
 	'tux-editor-save-failed' => 'Saving the translation failed: $1',
 	'tux-editor-use-this-translation' => 'Use as translation',
+	'tux-editor-message-desc-more' => 'View more',
 );
 
 /** Message documentation (Message documentation)
@@ -878,6 +879,7 @@ Read as in "proofRED" (past participle).',
 	'tux-editor-save-failed' => 'An error shown above the edit box.
 * $1 - the warning that the API returns',
 	'tux-editor-use-this-translation' => 'Link text for using a suggestion as translation for the current message',
+	'tux-editor-message-desc-more' => 'Link text for expanding long message documentation',
 );
 
 /** Afrikaans (Afrikaans)
@@ -17775,6 +17777,7 @@ $messages['ml'] = array(
 	'tux-editor-ask-help' => 'കൂടുതല്‍ വിവരങ്ങള്‍ ചോദിക്കുക',
 	'tux-editor-tm-match' => '$1% ചേര്‍ച്ച',
 	'tux-editor-use-this-translation' => 'പരിഭാഷയ്ക്കുപയോഗിക്കുക',
+	'tux-editor-message-desc-more' => 'മുഴുവന്‍ കാണിയ്ക്കുക',
 );
 
 /** Mongolian (монгол)

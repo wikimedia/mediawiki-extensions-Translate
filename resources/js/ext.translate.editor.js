@@ -429,15 +429,16 @@
 			translateDocumentationLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
 			if ( translateDocumentationLanguageCode ) {
 				$infoColumn.append( $( '<div>' )
-					.addClass( 'row text-left message-desc-edit' )
+					.addClass( 'row text-left message-desc-control' )
 					.append( $( '<a>' )
-					.attr( {
-						href: ( new mw.Uri( window.location.href ) ).extend( {
-							language: translateDocumentationLanguageCode
-						} ).toString(), // FIXME: this link is not correct
-						target: '_blank'
-					} )
-					.text( mw.msg( 'tux-editor-edit-desc' ) ) )
+						.addClass( 'text-left message-desc-edit' )
+						.attr( {
+							href: ( new mw.Uri( window.location.href ) ).extend( {
+								language: translateDocumentationLanguageCode
+							} ).toString(), // FIXME: this link is not correct
+							target: '_blank'
+						} )
+						.text( mw.msg( 'tux-editor-edit-desc' ) ) )
 				);
 			}
 
@@ -552,12 +553,45 @@
 					translations = result.query.messagetranslations;
 
 					$.each( translations, function ( index ) {
-						var $otherLanguage, translationDir,
+						var $otherLanguage,
+							translationDir,
+							$messageDoc,
+							messageDoc,
+							readMore,
+							$readMore = null,
 							translation = translations[index];
 
 						if ( translation.language === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
-							translateEditor.$editor.find( '.message-desc' )
-								.text( translation['*'] );
+							$messageDoc = translateEditor.$editor.find( '.message-desc' );
+							messageDoc = translation['*'];
+							$messageDoc.text( messageDoc );
+
+							if ( messageDoc.length > 500 ) {
+
+								readMore = function () {
+									$messageDoc.css( {
+										'height': '200px',
+										'overflow': 'auto',
+										'text-overflow': 'inherit'
+									} );
+									$readMore.remove();
+								};
+
+								$messageDoc.css( {
+									'height': '100px',
+									'overflow': 'hidden',
+									'text-overflow': 'ellipsis'
+								} );
+
+								$readMore = $( '<span>' )
+									.addClass( 'read-more column' )
+									.text( mw.msg( 'tux-editor-message-desc-more' ) )
+									.click( readMore );
+
+								translateEditor.$editor.find( '.message-desc-control')
+									.prepend(  $readMore );
+								$messageDoc.on( 'hover', readMore );
+							}
 						} else if ( translation.language !== translateEditor.$editTrigger.attr( 'lang' ) ) {
 							translationDir = $.uls.data.getDir( translation.language );
 
