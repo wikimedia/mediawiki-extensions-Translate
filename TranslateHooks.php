@@ -452,8 +452,10 @@ JAVASCRIPT;
 			&& $title->isSpecialPage()
 			&& $alias === 'Translate' )
 		{
-			global $wgTranslateDocumentationLanguageCode;
+			global $wgTranslateDocumentationLanguageCode, $wgTranslatePermissionUrl;
+			$vars['TranslateRight'] = $out->getUser()->isAllowed( 'translate' );
 			$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
+			$vars['wgTranslatePermissionUrl'] = $wgTranslatePermissionUrl;
 		}
 
 		return true;
