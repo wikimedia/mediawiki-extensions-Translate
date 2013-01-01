@@ -234,6 +234,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 	),
 	'messages' => array(
 		'tux-status-translated',
+		'tux-status-saving',
 		'tux-status-unsaved',
 		'tux-editor-placeholder',
 		'tux-editor-save-button-label',
