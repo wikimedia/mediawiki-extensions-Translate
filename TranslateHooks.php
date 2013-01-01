@@ -453,6 +453,7 @@ JAVASCRIPT;
 			&& $alias === 'Translate' )
 		{
 			global $wgTranslateDocumentationLanguageCode;
+			$vars['TranslateRight'] = $out->getUser()->isAllowed( 'translate' );
 			$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
 		}
 

@@ -20,6 +20,10 @@
 				language: language
 			} );
 			window.location.href = uri.toString();
+		},
+
+		hasTranslateRight: function() {
+			return mw.config.get( 'TranslateRight' );
 		}
 	} );
 

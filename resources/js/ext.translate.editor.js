@@ -143,7 +143,8 @@
 				$warningsBlock,
 				$textArea,
 				$buttonBlock,
-				$saveButton,
+				$saveButton = $( [] ),
+				$requestRight = $( [] ),
 				$skipButton,
 				$sourceString,
 				$closeIcon,
@@ -284,18 +285,30 @@
 				.append( $warningsBlock, $textArea )
 			);
 
-			$saveButton = $( '<button>' )
-				.text( mw.msg( 'tux-editor-save-button-label' ) )
-				.attr( {
-					'accesskey': 's',
-					'title': mw.util.tooltipAccessKeyPrefix + 's',
-					'disabled': true
-				} )
-				.addClass( 'blue button tux-editor-save-button' )
-				.on( 'click', function ( e ) {
-					translateEditor.save();
-					e.stopPropagation();
-				} );
+			if ( mw.translate.hasTranslateRight() ) {
+				$saveButton = $( '<button>' )
+					.text( mw.msg( 'tux-editor-save-button-label' ) )
+					.attr( {
+						'accesskey': 's',
+						'title': mw.util.tooltipAccessKeyPrefix + 's',
+						'disabled': true
+					} )
+					.addClass( 'blue button tux-editor-save-button' )
+					.on( 'click', function ( e ) {
+						translateEditor.save();
+						e.stopPropagation();
+					} );
+			} else {
+				$requestRight = $( '<span>' )
+					.text( mw.msg( 'translate-edit-nopermission' ) )
+					.append( $( '<a>' )
+						.text( mw.msg( 'translate-edit-askpermission' ) )
+						.addClass( 'tux-editor-ask-permission' )
+						.attr( {
+							'href': mw.util.wikiGetlink( 'Special:FirstSteps' )
+						} )
+					);
+			}
 
 			$skipButton = $( '<button>' )
 				.text( mw.msg( 'tux-editor-skip-button-label' ) )
@@ -312,7 +325,7 @@
 
 			$buttonBlock = $( '<div>' )
 				.addClass( 'twelve columns' )
-				.append( $saveButton, $skipButton );
+				.append( $requestRight, $saveButton, $skipButton );
 
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row' )
@@ -322,7 +335,9 @@
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row text-left shortcutinfo' )
 				.text( mw.msg( 'tux-editor-shortcut-info',
-					$saveButton.attr( 'title' ).toUpperCase(),
+					// Save button object may be null if user has no rights.
+					// So cannot depend its title attribute here.
+					( mw.util.tooltipAccessKeyPrefix + 's' ).toUpperCase(),
 					$skipButton.attr( 'title' ).toUpperCase() )
 				)
 			);
