@@ -147,12 +147,18 @@
 	padding: 5px 0;
 }
 
-.message-desc-edit {
+.message-desc-control {
 	font-size: 14px;
 	padding: 0 0 5px 0;
 }
 
-.message-desc-edit a {
+.message-desc-control .read-more {
+	font-size: 14px;
+	color: #3366BB;
+	cursor: pointer;
+}
+
+.message-desc-edit {
 	/* @embed */
 	background: transparent url(../images/action-edit.png) left center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/action-edit.svg);
