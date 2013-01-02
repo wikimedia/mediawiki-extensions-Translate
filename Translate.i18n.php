@@ -427,7 +427,7 @@ Most useful for the proofreading tasks.',
 	'translate-msggroupselector-load-from-all' => 'Load messages from all groups',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgroup|subgroups}}',
 
-	'tux-languageselector' => 'Language',
+	'tux-languageselector' => 'Translate to',
 
 	'tux-tab-all' => 'All',
 	'tux-tab-untranslated' => 'Untranslated',
