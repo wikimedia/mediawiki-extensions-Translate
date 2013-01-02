@@ -29,7 +29,6 @@
 			this.$editor.hide();
 
 			this.getTranslationSuggestions();
-			this.getTranslationMemorySuggestions();
 		},
 
 		/**
@@ -555,163 +554,127 @@
 				apiURL = mw.util.wikiScript( 'api' );
 
 			queryParams = {
-				action: 'query',
-				meta: 'messagetranslations',
-				mttitle: this.$editTrigger.data( 'title' ),
+				action: 'translationaids',
+				title: this.$editTrigger.data( 'title' ),
 				format: 'json'
 			};
 
 			$.get( apiURL, queryParams ).done( function ( result ) {
-				var translations;
+				var translations,
+					$messageDoc,
+					documentation,
+					readMore,
+					$readMore = null;
 
-				if ( result.query ) {
-					translations = result.query.messagetranslations;
-
-					$.each( translations, function ( index ) {
-						var $otherLanguage,
-							translationDir,
-							$messageDoc,
-							messageDoc,
-							readMore,
-							$readMore = null,
-							translation = translations[index];
-
-						if ( translation.language === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
-							$messageDoc = translateEditor.$editor.find( '.message-desc' );
-							messageDoc = translation['*'];
-							$messageDoc.text( messageDoc );
-
-							if ( messageDoc.length > 500 ) {
-
-								readMore = function () {
-									$messageDoc.css( {
-										'height': '200px',
-										'overflow': 'auto',
-										'text-overflow': 'inherit'
-									} );
-									$readMore.remove();
-								};
-
-								$messageDoc.css( {
-									'height': '100px',
-									'overflow': 'hidden',
-									'text-overflow': 'ellipsis'
-								} );
-
-								$readMore = $( '<span>' )
-									.addClass( 'read-more column' )
-									.text( mw.msg( 'tux-editor-message-desc-more' ) )
-									.click( readMore );
-
-								translateEditor.$editor.find( '.message-desc-control')
-									.prepend(  $readMore );
-								$messageDoc.on( 'hover', readMore );
-							}
-						} else if ( translation.language !== translateEditor.$editTrigger.attr( 'lang' ) ) {
-							translationDir = $.uls.data.getDir( translation.language );
-
-							$otherLanguage = $( '<div>' )
-								.addClass( 'row in-other-language' )
-								.append(
-									$( '<div>' )
-										.addClass( 'nine columns' )
-										.attr( {
-											lang: translation.language,
-											dir: translationDir
-										} )
-										.text( translation['*'] ),
-									$( '<div>' )
-										.addClass( 'three columns language text-right' )
-										.attr( {
-											lang: translation.language,
-											dir: translationDir
-										} )
-										.text( $.uls.data.getAutonym( translation.language ) )
-								);
-
-							translateEditor.$editor.find( '.in-other-languages-title' )
-								.removeClass( 'hide' )
-								.after( $otherLanguage );
-						}
-
-						if ( index > 2 ) {
-							// FIXME this is wrong way to filter. but to be addressed when
-							// there is a translation helper api to do this properly
-							return false;
-						}
-					} );
+				if ( !result.helpers ) {
+					return false; // That is unlikely. but to be safe.
 				}
-			} ).fail( function () {
-				// what to do?
-			} );
-		},
 
-		getTranslationMemorySuggestions: function () {
-			// API call to get translation memory suggestions.
-			// callback should render suggestions to the editor's info column
-			var queryParams,
-				translateEditor = this,
-				apiURL;
+				// Message documentation
+				documentation = result.helpers.documentation;
+				$messageDoc = translateEditor.$editor.find( '.message-desc' );
+				$messageDoc.html( documentation.html );
 
-			queryParams = {
-				action: 'ttmserver',
-				sourcelanguage: $( '.tux-messagelist' ).data( 'sourcelangcode' ),
-				targetlanguage: $( '.tux-messagelist' ).data( 'targetlangcode' ),
-				text: this.$editTrigger.data( 'source' ),
-				format: 'json'
-			};
+				if ( documentation.value.length > 500 ) {
 
-			apiURL = mw.util.wikiScript( 'api' );
+					readMore = function () {
+						$messageDoc.css( {
+							'height': '200px',
+							'overflow': 'auto',
+							'text-overflow': 'inherit'
+						} );
+						$readMore.remove();
+					};
 
-			$.get( apiURL, queryParams ).done( function ( result ) {
-				var suggestions;
+					$messageDoc.css( {
+						'height': '100px',
+						'overflow': 'hidden',
+						'text-overflow': 'ellipsis'
+					} );
 
-				if ( result.ttmserver ) {
-					suggestions = result.ttmserver;
-					$.each( suggestions, function ( index ) {
-						var suggestion,
-							$suggestion;
+					$readMore = $( '<span>' )
+						.addClass( 'read-more column' )
+						.text( mw.msg( 'tux-editor-message-desc-more' ) )
+						.click( readMore );
 
-						suggestion = suggestions[index];
+					translateEditor.$editor.find( '.message-desc-control')
+						.prepend(  $readMore );
+					$messageDoc.on( 'hover', readMore );
+				}
 
-						$suggestion = $( '<div>' )
-							.addClass( 'row tm-suggestion' )
+				// In other languages
+				translations = result.helpers.inotherlanguages;
+				$.each( translations, function ( index ) {
+					var $otherLanguage,
+						translationDir,
+						translation = translations[index];
+
+						translationDir = $.uls.data.getDir( translation.language );
+
+						$otherLanguage = $( '<div>' )
+							.addClass( 'row in-other-language' )
 							.append(
 								$( '<div>' )
-									.addClass( 'row tm-suggestion-top' )
-									.append(
-										$( '<div>' )
-											.addClass( 'nine columns' )
-											.text( suggestion.target ),
-										$( '<div>' )
-											.addClass( 'three columns quality text-right' )
-											.text( mw.msg( 'tux-editor-tm-match',
-												Math.round( suggestion.quality * 100 ) ) )
-									),
+									.addClass( 'nine columns' )
+									.attr( {
+										lang: translation.language,
+										dir: translationDir
+									} )
+									.text( translation.value ),
 								$( '<div>' )
-									.addClass( 'row tm-suggestion-bottom' )
-									.append(
-										$( '<a>' )
-											.addClass( 'nine columns use-this-translation' )
-											.text( mw.msg( 'tux-editor-use-this-translation' ) )
-											.on( 'click', function () {
-												translateEditor.$editor.find( 'textarea' )
-													.val( suggestion.target );
-											} )
-									)
+									.addClass( 'three columns language text-right' )
+									.attr( {
+										lang: translation.language,
+										dir: translationDir
+									} )
+									.text( $.uls.data.getAutonym( translation.language ) )
 							);
 
-						translateEditor.$editor.find( '.tm-suggestions-title' )
+						translateEditor.$editor.find( '.in-other-languages-title' )
 							.removeClass( 'hide' )
-							.after( $suggestion );
+							.after( $otherLanguage );
+				} );
 
-						if ( index > 2 ) {
-							// FIXME this is wrong way to filter. but to be addressed when
-							// there is a translation helper api to do this properly
-							return false;
-						}
-					} );
-				}
+				// Translation memory suggestions
+				translations = result.helpers.ttmserver;
+				$.each( translations, function ( index ) {
+					var translation,
+						$translation;
+
+					translation = translations[index];
+
+					$translation = $( '<div>' )
+					.addClass( 'row tm-suggestion' )
+					.append(
+						$( '<div>' )
+							.addClass( 'row tm-suggestion-top' )
+							.append(
+								$( '<div>' )
+									.addClass( 'nine columns' )
+									.text( translation.target ),
+								$( '<div>' )
+									.addClass( 'three columns quality text-right' )
+									.text( mw.msg( 'tux-editor-tm-match',
+										Math.round( translation.quality * 100 ) ) )
+							),
+						$( '<div>' )
+							.addClass( 'row tm-suggestion-bottom' )
+							.append(
+								$( '<a>' )
+									.addClass( 'nine columns use-this-translation' )
+									.text( mw.msg( 'tux-editor-use-this-translation' ) )
+									.on( 'click', function () {
+										translateEditor.$editor.find( 'textarea' )
+											.val( translation.target );
+									} )
+							)
+					);
+
+					translateEditor.$editor.find( '.tm-suggestions-title' )
+						.removeClass( 'hide' )
+						.after( $translation );
+				} );
+
 			} ).fail( function () {
 				// what to do?
 			} );
