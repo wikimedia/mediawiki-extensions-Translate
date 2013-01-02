@@ -10478,8 +10478,8 @@ $messages['zh-hans'] = array(
 翻译模板：<pre>$1</pre>',
 	'pt-parse-nested' => '不允许嵌套&lt;translate>部分。
 标签文本：$1', # Fuzzy
-	'pt-shake-multiple' => '有个部分含多余部分标记。
-部分文本：<pre>$1</pre>', # Fuzzy
+	'pt-shake-multiple' => '单一翻译单元含多个翻译单元标记。
+翻译单元文本：<pre>$1</pre>',
 	'pt-shake-position' => '翻译单元标记在意外位置。
 翻译单元文本：<pre>$1</pre>',
 	'pt-shake-empty' => '为“$1”的翻译单位标记是空的。',
