@@ -442,7 +442,7 @@ class SpecialTranslate extends SpecialPage {
 		) .
 
 		Html::element( 'span',
-			array( 'class' => 'grouptitle grouplink expanded' ),
+			array( 'class' => 'grouptitle grouplink expanded tail' ),
 			$this->msg( 'translate-msggroupselector-search-all' )->escaped()
 		) .
 
@@ -665,7 +665,7 @@ class SpecialTranslate extends SpecialPage {
 			. '<span class="grouptitle">'
 			. $this->msg( 'translate-msggroupselector-projects' )->escaped()
 			. '</span>
-			<span class="grouptitle grouplink">'
+			<span class="grouptitle grouplink tail">'
 			. $this->msg( 'translate-msggroupselector-search-all' )->escaped()
 			. '</span>
 			</div>'

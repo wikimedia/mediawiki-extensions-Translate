@@ -157,8 +157,11 @@
 
 			groupSelector.$menu.on( 'click', '.ext-translate-msggroup-item', function () {
 				messageGroup = $( this ).data( 'msggroup' );
-				groupSelector.$group.text( messageGroup.label );
-				groupSelector.$group.nextAll().remove();
+				groupSelector.$group
+					.text( messageGroup.label )
+					.removeClass ( 'tail')
+					.nextAll().remove();
+
 				groupSelector.hide();
 
 				if ( messageGroup.groupcount > 0 ) {
