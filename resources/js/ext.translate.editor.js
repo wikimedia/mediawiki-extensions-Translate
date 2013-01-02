@@ -466,13 +466,15 @@
 				.text( mw.msg( 'tux-editor-in-other-languages' ) )
 			);
 
+			// The actual href is set when translationhelpers are loaded
 			$infoColumn.append( $( '<div>' )
-				.addClass( 'row text-left help' )
+				.addClass( 'row text-left help hide' )
 				.append(
 					$( '<span>' )
 						.text( mw.msg( 'tux-editor-need-more-help' ) ),
 					$( '<a>' )
-						.attr( 'href', '#' ) // TODO: add help link for message
+						.attr( 'href', '#' )
+						.attr( 'target', '_blank' )
 						.text( mw.msg( 'tux-editor-ask-help' ) )
 				)
 			);
@@ -674,6 +676,12 @@
 						.removeClass( 'hide' )
 						.after( $translation );
 				} );
+
+				if ( result.helpers.support.url ) {
+					translateEditor.$editor.find( '.help' )
+						.find( 'a' ).attr( 'href', result.helpers.support.url )
+						.end().removeClass( 'hide' );
+				}
 
 			} ).fail( function () {
 				// what to do?

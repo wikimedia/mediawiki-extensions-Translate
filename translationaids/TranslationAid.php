@@ -125,6 +125,7 @@ abstract class TranslationAid {
 			'mt' => 'MachineTranslationAid',
 			'definition-diff' => 'UpdatedDefinitionAid',
 			'ttmserver' => 'TTMServerAid',
+			'support' => 'SupportAid',
 		);
 	}
 

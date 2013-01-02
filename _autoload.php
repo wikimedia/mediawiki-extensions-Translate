@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2012, Niklas Laxström
+ * @copyright Copyright © 2008-2013, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -261,8 +261,9 @@ $wgAutoloadClasses['DocumentationAid'] = "$dir/translationaids/DocumentationAid.
 $wgAutoloadClasses['InOtherLanguagesAid'] = "$dir/translationaids/InOtherLanguagesAid.php";
 $wgAutoloadClasses['MachineTranslationAid'] = "$dir/translationaids/MachineTranslationAid.php";
 $wgAutoloadClasses['MessageDefinitionAid'] = "$dir/translationaids/MessageDefinitionAid.php";
-$wgAutoloadClasses['TranslationAid'] = "$dir/translationaids/TranslationAid.php";
+$wgAutoloadClasses['SupportAid'] = "$dir/translationaids/SupportAid.php";
 $wgAutoloadClasses['TTMServerAid'] = "$dir/translationaids/TTMServerAid.php";
+$wgAutoloadClasses['TranslationAid'] = "$dir/translationaids/TranslationAid.php";
 $wgAutoloadClasses['UpdatedDefinitionAid'] = "$dir/translationaids/UpdatedDefinitionAid.php";
 /**@}*/
 
@@ -275,6 +276,5 @@ $wgAutoloadClasses['MicrosoftWebService'] = "$dir/webservices/MicrosoftWebServic
 $wgAutoloadClasses['RemoteTTMServerWebService'] = "$dir/webservices/RemoteTTMServerWebService.php";
 $wgAutoloadClasses['TranslationWebService'] = "$dir/webservices/TranslationWebService.php";
 $wgAutoloadClasses['TranslationWebServiceException'] = "$dir/webservices/TranslationWebServiceException.php";
-$wgAutoloadClasses['ApertiumWebService'] = "$dir/webservices/ApertiumWebService.php";
 $wgAutoloadClasses['YandexWebService'] = "$dir/webservices/YandexWebService.php";
 /**@}*/
