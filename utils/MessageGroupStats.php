@@ -51,6 +51,16 @@ class MessageGroupStats {
 	}
 
 	/**
+	 * Returns empty stats array that indicates stats are incomplete or
+	 * unknown.
+	 * @return array
+	 * @since 2013-01-02
+	 */
+	protected static function getUnknownStats() {
+		return array( null, null, null, null );
+	}
+
+	/**
 	 * Returns stats for given group in given language.
 	 * @param $id string Group id
 	 * @param $code string Language code
@@ -60,7 +70,13 @@ class MessageGroupStats {
 		$res = self::selectRowsIdLang( $id, $code );
 		$stats = self::extractResults( $res );
 
+		/* In case some code calls this for dynamic groups, return the default
+		 * values for unknown/incomplete stats. Calculating these numbers don't
+		 * make sense for dynamic groups, and would just throw an exception. */
 		$group = MessageGroups::getGroup( $id );
+		if ( MessageGroups::isDynamic( $group ) ) {
+			$stats[$id][$code] = self::getUnknownStats();
+		}
 
 		if ( !isset( $stats[$id][$code] ) ) {
 			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code );
@@ -262,7 +278,7 @@ class MessageGroupStats {
 		$id = $group->getId();
 
 		if ( self::$timeStart !== null && ( microtime( true ) - self::$timeStart ) > self::$limit ) {
-			return $stats[$id][$code] = array( null, null, null, null );
+			return $stats[$id][$code] = self::getUnknownStats();
 		}
 
 		if ( $group instanceof AggregateMessageGroup ) {
