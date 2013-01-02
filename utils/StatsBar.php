@@ -45,13 +45,18 @@ class StatsBar {
 		$translated = $this->stats[MessageGroupStats::TRANSLATED];
 		$fuzzy = $this->stats[MessageGroupStats::FUZZY];
 
-		// Proofread is subset of translated
-		$untranslated = $total - $translated - $fuzzy;
+		if ( $total === null ) {
+			$untranslated = null;
+			$wproofread = $wtranslated = $wfuzzy = $wuntranslated = 0;
+		} else {
+			// Proofread is subset of translated
+			$untranslated = $total - $translated - $fuzzy;
 
-		$wproofread = round( 100 * $proofread / $total, 2 );
-		$wtranslated = round( 100 * ( $translated - $proofread ) / $total, 2);
-		$wfuzzy = round( 100 * $fuzzy / $total, 2);
-		$wuntranslated = round( 100 - $wproofread - $wtranslated - $wfuzzy, 2);
+			$wproofread = round( 100 * $proofread / $total, 2 );
+			$wtranslated = round( 100 * ( $translated - $proofread ) / $total, 2 );
+			$wfuzzy = round( 100 * $fuzzy / $total, 2);
+			$wuntranslated = round( 100 - $wproofread - $wtranslated - $wfuzzy, 2 );
+		}
 
 		return Html::rawElement( 'div', array(
 				'class' => 'tux-statsbar',
