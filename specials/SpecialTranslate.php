@@ -432,7 +432,7 @@ class SpecialTranslate extends SpecialPage {
 
 		// FIXME The selector should have expanded parent-child lists
 		$output = Html::openElement( 'div', array(
-			'class' => 'ten columns ext-translate-msggroup-selector',
+			'class' => 'eight columns ext-translate-msggroup-selector',
 			'data-language' => $this->options['language'],
 		) ) .
 
@@ -461,13 +461,16 @@ class SpecialTranslate extends SpecialPage {
 
 	protected function tuxLanguageSelector() {
 		return
-			Html::element( 'span',
-				array( 'class' => 'one column text-right ext-translate-language-selector' ),
-				$this->msg( 'tux-languageselector' )->text()
-			) .
-			Html::element( 'div',
-				array( 'class' => 'span columns ext-translate-language-selector uls' ),
-				Language::fetchLanguageName( $this->options['language'] )
+			Html::rawElement( 'div',
+				array( 'class' => 'four columns ext-translate-language-selector' ),
+				Html::element( 'span',
+					array( 'class' => 'ext-translate-language-selector-label' ),
+					$this->msg( 'tux-languageselector' )->text()
+				) .
+				Html::element( 'span',
+					array( 'class' => 'uls' ),
+					Language::fetchLanguageName( $this->options['language'] )
+				)
 			);
 	}
 
@@ -659,7 +662,7 @@ class SpecialTranslate extends SpecialPage {
 
 		$output->addHtml(
 			Html::openElement( 'div', array(
-				'class' => 'ten columns ext-translate-msggroup-selector',
+				'class' => 'eight columns ext-translate-msggroup-selector',
 				'data-language' => $this->options['language'],
 			) )
 			. '<span class="grouptitle">'
