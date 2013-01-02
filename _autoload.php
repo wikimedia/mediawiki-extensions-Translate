@@ -195,6 +195,7 @@ $wgAutoloadClasses['ApiQueryMessageTranslations'] = "$dir/api/ApiQueryMessageTra
 $wgAutoloadClasses['ApiTTMServer'] = "$dir/api/ApiTTMServer.php";
 $wgAutoloadClasses['ApiTranslateUser'] = "$dir/api/ApiTranslateUser.php";
 $wgAutoloadClasses['ApiTranslationReview'] = "$dir/api/ApiTranslationReview.php";
+$wgAutoloadClasses['ApiTranslationAids'] = "$dir/api/ApiQueryTranslationAids.php";
 $wgAutoloadClasses['ApiStatsQuery'] = "$dir/api/ApiStatsQuery.php";
 $wgAutoloadClasses['ApiHardMessages'] = "$dir/api/ApiHardMessages.php";
 /**@}*/
@@ -252,11 +253,26 @@ $wgAutoloadClasses['MockWikiMessageGroup'] = "$dir/tests/MockWikiMessageGroup.ph
 /**@}*/
 
 /**
+ * @name   "Translation aids"
+ * @{
+ */
+$wgAutoloadClasses['CurrentTranslationAid'] = "$dir/translationaids/CurrentTranslationAid.php";
+$wgAutoloadClasses['DocumentationAid'] = "$dir/translationaids/DocumentationAid.php";
+$wgAutoloadClasses['InOtherLanguagesAid'] = "$dir/translationaids/InOtherLanguagesAid.php";
+$wgAutoloadClasses['MachineTranslationAid'] = "$dir/translationaids/MachineTranslationAid.php";
+$wgAutoloadClasses['MessageDefinitionAid'] = "$dir/translationaids/MessageDefinitionAid.php";
+$wgAutoloadClasses['TranslationAid'] = "$dir/translationaids/TranslationAid.php";
+$wgAutoloadClasses['TTMServerAid'] = "$dir/translationaids/TTMServerAid.php";
+$wgAutoloadClasses['UpdatedDefinitionAid'] = "$dir/translationaids/UpdatedDefinitionAid.php";
+/**@}*/
+
+/**
  * @name   "Translation web services"
  * @{
  */
 $wgAutoloadClasses['ApertiumWebService'] = "$dir/webservices/ApertiumWebService.php";
 $wgAutoloadClasses['MicrosoftWebService'] = "$dir/webservices/MicrosoftWebService.php";
+$wgAutoloadClasses['RemoteTTMServerWebService'] = "$dir/webservices/RemoteTTMServerWebService.php";
 $wgAutoloadClasses['TranslationWebService'] = "$dir/webservices/TranslationWebService.php";
 $wgAutoloadClasses['TranslationWebServiceException'] = "$dir/webservices/TranslationWebServiceException.php";
 $wgAutoloadClasses['ApertiumWebService'] = "$dir/webservices/ApertiumWebService.php";
