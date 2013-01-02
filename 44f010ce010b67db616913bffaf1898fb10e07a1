@@ -16,6 +16,24 @@
       "revId": "44f010ce010b67db616913bffaf1898fb10e07a1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//6VI\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-02T16:10:48Z",
+      "side": 1,
+      "message": "Easier rather. We can implement the logic in the api module with PHP instead of with JS in the frontend.",
+      "parentUuid": "AAADgX//6W4\u003d",
+      "revId": "44f010ce010b67db616913bffaf1898fb10e07a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
