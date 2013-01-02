@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//6W4\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-02T15:52:10Z",
+      "side": 1,
+      "message": "It\u0027s been requested to have a product specific support page (bug  38635  ). Does this solution make that harder in any way?",
+      "revId": "44f010ce010b67db616913bffaf1898fb10e07a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
