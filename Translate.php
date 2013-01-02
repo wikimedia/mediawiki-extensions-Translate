@@ -495,7 +495,6 @@ $wgTranslateTranslationServices['Apertium'] = array(
 	'key' => null,
 	'timeout' => 3,
 	'type' => 'apertium',
-	'codemap' => array( 'no' => 'nb' ),
 );
 $wgTranslateTranslationServices['Yandex'] = array(
 	'url' => 'http://translate.yandex.net/api/v1/tr.json/translate',
