@@ -138,7 +138,7 @@
 
 		// Use ULS for language selection if it's available
 		if ( $.uls ) {
-			$( '.ext-translate-language-selector.uls' ).uls( {
+			$( '.ext-translate-language-selector .uls' ).uls( {
 				onSelect: function ( language ) {
 					mw.translate.changeLanguage( language );
 				},

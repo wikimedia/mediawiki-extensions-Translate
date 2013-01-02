@@ -17,7 +17,6 @@
 	border-radius: 0 0 5px 5px;
 }
 
-.ext-translate-language-selector,
 .ext-translate-msggroup-selector span {
 	border: medium none;
 	color: #555555;
@@ -29,7 +28,24 @@
 	padding-top: 1.25em;
 }
 
-.ext-translate-language-selector.uls:after {
+.ext-translate-language-selector-label {
+	color: #555555;
+	padding-right: 1em;
+}
+
+.ext-translate-language-selector {
+	float: right;
+	text-align: right;
+	border: medium none;
+	font-size: 14pt;
+	font-weight: normal;
+	line-height: 1.25em;
+	padding-bottom: 3px;
+	padding-left: 15px;
+	padding-top: 1.25em;
+}
+
+.ext-translate-language-selector .uls:after {
 	margin-left: 4px;
 	border-left: 4px solid transparent;
 	border-right: 4px solid transparent;
@@ -222,11 +238,9 @@
 	border-bottom: 2px solid #0645AD;
 }
 
-.ext-translate-language-selector.uls {
+.ext-translate-language-selector .uls {
 	color: #0645AD;
 	cursor: pointer;
-	float: left;
 	min-height: 1px;
-	padding: 0 6px;
 	position: relative;
 }
