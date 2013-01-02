@@ -8,7 +8,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2006-2012, Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2006-2013, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -250,9 +250,6 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-warnings-hide',
 		'tux-editor-save-failed',
 		'tux-editor-use-this-translation',
-		'translate-edit-nopermission',
-		'translate-edit-askpermission',
-		'tux-editor-message-desc-more',
 	),
 	'position' => 'top',
 ) + $resourcePaths;
