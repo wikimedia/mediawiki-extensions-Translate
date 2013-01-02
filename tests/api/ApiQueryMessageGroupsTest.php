@@ -59,10 +59,21 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		$this->assertArrayHasKey( 'query', $data );
 		$this->assertCount( 1, $data['query'] );
 		$this->assertArrayHasKey( 'messagegroups', $data['query'] );
-		$this->assertCount( 2, $data['query']['messagegroups'] );
 
 		// Basic content checks
 		$items = $data['query']['messagegroups'];
+
+		// Ignore dynamic groups
+		foreach ( $items as $index => $group ) {
+			if ( $group['id'][0] === '!' ) {
+				unset( $items[$index] );
+			}
+		}
+
+		// Renumber keys
+		$items = array_values( $items );
+
+		$this->assertCount( 2, $items, 'Only the two groups specified are in the api' );
 		$this->assertStringEndsWith( 'id', $items[0]['id'] );
 		$this->assertStringEndsWith( 'id', $items[1]['id'] );
 		$this->assertSame( $items[0]['label'], 'thelabel' );

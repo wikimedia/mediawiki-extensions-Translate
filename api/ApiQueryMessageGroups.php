@@ -32,6 +32,9 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		$groups = array();
 		if ( $params['format'] === 'flat' ) {
 			$groups = MessageGroups::getAllGroups();
+			foreach ( MessageGroups::getDynamicGroups() as $id => $unused ) {
+				$groups[$id] = MessageGroups::getGroup( $id );
+			}
 
 			// Not sorted by default, so do it now
 			// Work around php bug: https://bugs.php.net/bug.php?id=50688
@@ -49,6 +52,9 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			}
 		} else {
 			$groups = MessageGroups::getGroupStructure();
+			foreach ( MessageGroups::getDynamicGroups() as $id => $unused ) {
+				$groups[$id] = MessageGroups::getGroup( $id );
+			}
 		}
 
 		$props = array_flip( $params['prop'] );
