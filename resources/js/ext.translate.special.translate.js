@@ -103,7 +103,8 @@
 		var $newLink;
 
 		if ( msgGroup.groups && msgGroup.groups.length > 0 ) {
-			$newLink = $( '<span>' ).addClass( 'grouptitle grouplink' )
+			$( '.ext-translate-msggroup-selector .tail' ).remove();
+			$newLink = $( '<span>' ).addClass( 'grouptitle grouplink tail' )
 				.text( mw.msg( 'translate-msggroupselector-search-all' ) );
 			$( '.ext-translate-msggroup-selector .grouplink' ).after( $newLink );
 			$newLink.data( 'msggroupid', msgGroup.id );
