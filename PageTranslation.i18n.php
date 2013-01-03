@@ -8376,6 +8376,7 @@ $messages['roa-tara'] = array(
  * @author Hypers
  * @author KPu3uC B Poccuu
  * @author Kaganer
+ * @author Lockal
  * @author Purodha
  * @author Александр Сигачёв
  */
@@ -8436,7 +8437,7 @@ $messages['ru'] = array(
 	'tpt-rev-encourage-tooltip' => 'Восстановить эту страницу для обычного перевода.',
 	'translate-tag-translate-link-desc' => 'Перевести эту страницу',
 	'translate-tag-markthis' => 'Отметить эту страницу для перевода',
-	'translate-tag-markthisagain' => 'На этой странице было произведено <span class="plainlinks">[$1 изменений]</span> с момента последней <span class="plainlinks">[$2 отметки о переводе]</span>.',
+	'translate-tag-markthisagain' => 'Эта страница была <span class="plainlinks">[$1 изменена]</span> с момента последней <span class="plainlinks">[$2 отметки о переводе]</span>.',
 	'translate-tag-hasnew' => 'На этой странице были произведены <span class="plainlinks">[$1 изменения]</span>, не отмеченные для перевода.',
 	'tpt-translation-intro' => 'Эта страница является <span class="plainlinks">[$1 переводом]</span> страницы [[$2]]. Перевод актуален и выполнен на $3%.',
 	'tpt-translation-intro-fuzzy' => 'Устаревшие переводы отмечены следующим образом.',

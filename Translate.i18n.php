@@ -10177,7 +10177,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'translate-dynagroup-last' => 'Última modificación feita por {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Última modificación feita por {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Axuda',
-	'translate-msggroupselector-projects' => 'Grupos de mensaxes', # Fuzzy
+	'translate-msggroupselector-projects' => 'Grupo de mensaxes',
 	'translate-msggroupselector-search-placeholder' => 'Procurar nos grupos',
 	'translate-msggroupselector-search-all' => 'Todos',
 	'translate-msggroupselector-search-recent' => 'Recentes',
@@ -10209,6 +10209,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-warnings-hide' => 'agochar',
 	'tux-editor-save-failed' => 'Houbo un erro ao gardar a tradución: $1',
 	'tux-editor-use-this-translation' => 'Utilizar como tradución',
+	'tux-editor-message-desc-more' => 'Ollar máis',
 );
 
 /** Goan Konkani (Latin script) (Konknni)
@@ -15597,7 +15598,7 @@ $1',
 	'translate-dynagroup-last' => '{{GENDER:$1|$1}}에 의해 마지막으로 바뀜',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}} ($2)에 의해 마지막으로 바뀜',
 	'translate-gethelp' => '도움말',
-	'translate-msggroupselector-projects' => '메시지 그룹', # Fuzzy
+	'translate-msggroupselector-projects' => '메시지 그룹',
 	'translate-msggroupselector-search-placeholder' => '그룹 찾기',
 	'translate-msggroupselector-search-all' => '모두',
 	'translate-msggroupselector-search-recent' => '최근',
@@ -15629,6 +15630,7 @@ $1',
 	'tux-warnings-hide' => '숨기기',
 	'tux-editor-save-failed' => '번역을 저장하는 데 실패했습니다: $1',
 	'tux-editor-use-this-translation' => '번역으로 사용',
+	'tux-editor-message-desc-more' => '더 보기',
 );
 
 /** Krio (Krio)
@@ -17184,6 +17186,14 @@ $messages['mhr'] = array(
 	'translate-pref-nonewsletter' => 'Увер бюллетеньым электрон почто дене мылам колташ огыл',
 );
 
+/** Minangkabau (Baso Minangkabau)
+ * @author Naval Scene
+ */
+$messages['min'] = array(
+	'translate-edit-tab-list' => 'Dafta pasan',
+	'translate-js-support' => 'Maajuan patanyaan',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  * @author Brest
@@ -17558,6 +17568,7 @@ $1',
 	'tux-warnings-hide' => 'скриј',
 	'tux-editor-save-failed' => 'Не успеав да го зачувам преводот: $1',
 	'tux-editor-use-this-translation' => 'Користи како превод',
+	'tux-editor-message-desc-more' => 'Погл. уште',
 );
 
 /** Malayalam (മലയാളം)
@@ -22583,10 +22594,15 @@ $messages['roa-tara'] = array(
 	'translate-taskui-suggestions' => "Fà vedè le messàgge cu suggereminde da 'a memorie de traduzione",
 	'translate-taskui-acceptqueue' => 'Sulamende le messàgge ca pozze accettà',
 	'translate-taskui-reviewall' => 'Revide tutte le traduziune',
+	'translate-taskui-export-to-file' => 'Esporte in formate native',
 	'translate-taction-translate' => 'Traduce',
 	'translate-taction-lstats' => "Statisteche d'a lènghe",
 	'translate-taction-mstats' => 'Statisteche de le gruppe de messàgge',
 	'translate-taction-export' => 'Esporte',
+	'translate-page-disabled' => "Le traduziune de sta lènghe jndr'à stu gruppe onne state disabbilitate.
+Mutive:
+
+''$1''",
 	'translate-page-settings-legend' => "'Mbostaziune",
 	'translate-page-group' => 'Gruppe',
 	'translate-page-language' => 'Lènghe',
@@ -22595,6 +22611,7 @@ $messages['roa-tara'] = array(
 	'translate-submit' => 'Analizze',
 	'translate-page-navigation-legend' => 'Navigazzione',
 	'translate-page-showing' => 'Stoche a fazze vedè le messàgge da $1 a $2 de $3.',
+	'translate-page-showing-none' => 'Nisciune messàgge da fà vedè.',
 	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
 	'translate-next' => 'Pàgena successive',
 	'translate-prev' => 'Pàgena precedende',
@@ -29064,7 +29081,7 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'translate-dynagroup-last' => 'Thay đổi cuối cùng của $1',
 	'translate-dynagroup-lastc' => 'Thay đổi cuối cùng của $1 ($2)',
 	'translate-gethelp' => 'Trợ giúp',
-	'translate-msggroupselector-projects' => 'Nhóm thông điệp', # Fuzzy
+	'translate-msggroupselector-projects' => 'Nhóm thông điệp',
 	'translate-msggroupselector-search-placeholder' => 'Tìm nhóm',
 	'translate-msggroupselector-search-all' => 'Tất cả',
 	'translate-msggroupselector-search-recent' => 'Gần đây',
@@ -29096,6 +29113,7 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-warnings-hide' => 'ẩn',
 	'tux-editor-save-failed' => 'Thất bại khi lưu bản dịch: $1',
 	'tux-editor-use-this-translation' => 'Dịch như thế này',
+	'tux-editor-message-desc-more' => 'Xem thêm',
 );
 
 /** Volapük (Volapük)

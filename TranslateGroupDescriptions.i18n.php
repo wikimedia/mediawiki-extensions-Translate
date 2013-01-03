@@ -2186,7 +2186,7 @@ $messages['pms'] = array(
 	'translate-group-desc-flaggedrevs' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Revision signalà]",
 	'translate-group-desc-readerfeedback' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback Artorn dij letor]",
 	'translate-group-desc-semantic' => "Partìa ëd mëssagi Meta contenent tùit ij mëssagi për tute j'estension [http://semantic-mediawiki.org/ Semantic MediaWiki]",
-	'translate-group-desc-translate' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Tradussion]; për piasì familiariste con sò [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossari]",
+	'translate-group-desc-translate' => "Partìa dij mëssagi Meta contenent tùit ij mëssagi për l'estension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Tradussion]; për piasì, ch'as familiarisa con sò [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossari]",
 	'translate-group-desc-wikiaextensions' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension mantnùa MediaWiki dovrà da [http://www.wikia.com Wikia]",
 	'translate-group-desc-wikimediaextensions' => "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension mantnùa MediaWiki dovrà da [http://wikimedia.org/ Fondassion Wikimedia]",
 	'translate-group-desc-wikimediaextensions-main' => "Partìa ëd meta mëssagi contenent tùit ij mëssagi për j'estension MediaWiki mantnùe e ch'a venta volté për ël [http://meta.wikimedia.org/wiki/Language_committee Comità dle lenghe] ëd Wikimedia",
@@ -2224,13 +2224,12 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'translate-group-desc-waymarked-trails' => "[[Translating:Waymarked Trails|Waymarked Trails]] a l'é un servissi ch'a mostra le stra për j'escursion, la bici, ël rampichin e ël tapinagi an linia dantorn al mond. A deuvra la licensa GNU GPL",
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] a peil trové an pressa j'àutor ëd na pàgina an na wiki ëd Wikimedia.",
 	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] a l'é un proget për fé na version ëd Wikipedia fòra linia, ëd sol test, dzora a na perifèrica mòbil.",
-	'translate-group-desc-wikimedia-mobile' => 'Partìa ëd mëssagi agregà contenent aplicassion sacociàbil për proget Wikimedia',
+	'translate-group-desc-wikimedia-mobile' => "La partìa ëd mëssagi agregà contenent j'aplicassion për sacociàbil për ij proget Wikimedia",
 	'translate-group-desc-wikimedia-mobile-wikipedia' => "[[Translating:WikipediaMobile|WikipediaMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wikipedia",
 	'translate-group-desc-wikimedia-mobile-wikisource' => "[[Translating:WikisourceMobile|WikisourceMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wikisource",
 	'translate-group-desc-wikimedia-mobile-wiktionary' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wiktionary",
 	'translate-group-desc-wikimedia-mobile-wlm' => "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] a l'é n'aplicassion për ij sacociàbij për contribuì al [[:meta:Wiki Loves Monuments|proget Wiki Loves Monuments]]",
-	'translate-group-desc-waymarked-trails-help' => "Le pagine d'agiut dël sit web Waymarked Trails
-: http://waymarkedtrails.org/help/about",
+	'translate-group-desc-waymarked-trails-help' => "Le pàgine d'agiut dël sit dl'aragnà Senté marcà: http://waymarkedtrails.org/help/about",
 );
 
 /** Pashto (پښتو)
