@@ -376,8 +376,11 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function tuxSettingsForm( $errors ) {
-		$attrs = array( 'class' => 'row' );
-		$selectors = $this->tuxGroupSelector() . $this->tuxLanguageSelector();
+		$attrs = array( 'class' => 'row tux-editor-header' );
+		$selectors = $this->tuxGroupSelector() .
+			$this->tuxLanguageSelector() .
+			$this->tuxGroupDescription();
+
 		return Html::rawElement( 'div', $attrs, $selectors );
 	}
 
@@ -471,6 +474,14 @@ class SpecialTranslate extends SpecialPage {
 					array( 'class' => 'uls' ),
 					Language::fetchLanguageName( $this->options['language'] )
 				)
+			);
+	}
+
+	protected function tuxGroupDescription() {
+		return
+			Html::rawElement( 'div',
+				array( 'class' => 'twelve columns description' ),
+				$this->getGroupDescription( $this->group )
 			);
 	}
 
