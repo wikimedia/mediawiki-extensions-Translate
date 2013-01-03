@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//5pI\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-03T12:39:22Z",
+      "side": 1,
+      "message": "Colon is inconsistent with message group selector",
+      "revId": "4e7975f0393e7563f97905cfc9a0600c11a63db2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//5pA\u003d",
+        "filename": "resources/css/ext.translate.groupselector.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-03T12:39:22Z",
+      "side": 1,
+      "message": "Why are the language and group selector styles mixed between each other?",
+      "revId": "4e7975f0393e7563f97905cfc9a0600c11a63db2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//5pE\u003d",
+        "filename": "resources/css/ext.translate.groupselector.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-03T12:39:22Z",
+      "side": 1,
+      "message": "no space added here?",
+      "revId": "4e7975f0393e7563f97905cfc9a0600c11a63db2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
