@@ -103,3 +103,13 @@
 	color: #555555;
 	top: 1px;
 }
+
+.tux-editor-header {
+	padding-bottom: 0.5em;
+}
+
+.tux-editor-header .description {
+	font-size: 13pt;
+	color: black;
+	padding-left: 11px;
+}
