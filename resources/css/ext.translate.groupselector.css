@@ -126,6 +126,11 @@
 	padding-right: 0;
 }
 
+.tux-editor-header .description {
+	font-size: 13pt;
+	color: black;
+}
+
 .ext-translate-msggroup-search-input {
 	font-size: 14px;
 	width: 100%;
