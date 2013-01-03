@@ -83,7 +83,7 @@
 	/* Do not combine these two, unless you also fix the
 	 * tux-status-* styles below. That includes you, Siebrand ;)
 	 */
-	background-position: 0 50%;
+	background-position: left;
 	background-repeat: no-repeat;
 }
 
