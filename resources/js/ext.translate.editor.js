@@ -247,8 +247,7 @@
 			);
 
 			$warnings = $( '<div>' )
-				.addClass( 'tux-warning' )
-				.hide();
+				.addClass( 'tux-warning hide' );
 
 			$moreWarningsTab = $( '<div>' )
 				.addClass( 'tux-more-warnings' )
@@ -400,59 +399,60 @@
 					loadgroup: translateEditor.$editTrigger.data( 'group' )
 				} );
 
-				$.post( url.toString(),  {
+				$.post( url.toString(), {
 						translation: $textArea.val()
 					}, function ( data ) {
-						translateEditor.populateWarningsBoxes( data );
+						var warningIndex,
+							warnings = jQuery.parseJSON( data );
+
+						if ( !warnings ) {
+							return;
+						}
+
+						translateEditor.removeWarning( 'validation' );
+						for ( warningIndex = 0; warningIndex < warnings.length; warningIndex++ ) {
+							translateEditor.addWarning( warnings[warningIndex], 'validation' );
+						}
 				} );
 			}, 1000 );
 		},
 
 		/**
-		 * Displays the supplied warnings from the bottom up near the translation edit area.
-		 * If no warnings are supplied, the warnings area is cleaned.
-		 *
-		 * @param {Array|string} warnings Strings of warnings to display. If it's not an array, it's assumed to be a JSON string.
+		 * Remove all warning of given type
+		 * @param type
 		 */
-		populateWarningsBoxes: function ( warnings ) {
-			var warningIndex, $newWarning,
+		removeWarning: function ( type ) {
+			this.$editTrigger.find( '.tux-warning' )
+				.find( '.' + type ).remove();
+		},
+
+		/**
+		 * Displays the supplied warning from the bottom up near the translation edit area.
+		 *
+		 * @param warning String used as html for the warning display
+		 * @param type String used to group the warnings.eg: validation, diff, error
+		 */
+		addWarning: function ( warning, type ) {
+			var warningCount,
 				$warnings = this.$editTrigger.find( '.tux-warning' ),
 				$moreWarningsTab = this.$editTrigger.find( '.tux-more-warnings' );
 
-			// TODO: We need an api that gives json always and avoid explicit json parsing here.
-			if ( !$.isArray( warnings ) ) {
-				warnings = jQuery.parseJSON( warnings );
-			}
+			$warnings
+				.removeClass( 'hide' )
+				.append( $( '<div>' )
+				.addClass( 'tux-warning-message hide' )
+				.addClass( type )
+				.html( warning ) );
 
-			this.$editTrigger.find( '.tux-warning' ).empty();
+			warningCount = $warnings.find( '.tux-warning-message' ).length;
 
-			// TODO: if warnings is undefined, second part of this condition will throw error.
-			if ( warnings === null || warnings.length === 0 ) {
-				$moreWarningsTab.hide();
-				return;
-			}
+			$warnings.find( '.tux-warning-message:first' ).removeClass( 'hide' );
 
-			for ( warningIndex = 0; warningIndex < warnings.length; warningIndex++ ) {
-				$newWarning = $( '<div>' )
-					.addClass( 'tux-warning-message' )
-					.html( warnings[warningIndex] );
-
-				// Initially hide all the warnings except the first one
-				if ( warningIndex ) {
-					$newWarning.hide();
-				}
-
-				$warnings.append( $newWarning );
-			}
-
-			$warnings.show();
-
-			if ( warnings.length > 1 ) {
+			if ( warningCount > 1 ) {
 				$moreWarningsTab
-					.text( mw.msg( 'tux-warnings-more', warnings.length - 1 ) )
+					.text( mw.msg( 'tux-warnings-more', warningCount - 1 ) )
 					.show();
 			} else {
-				// TODO: Hide this by default and show when there are more warnings.
 				$moreWarningsTab.hide();
 			}
 		},
