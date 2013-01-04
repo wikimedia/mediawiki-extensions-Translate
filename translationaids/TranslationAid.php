@@ -123,7 +123,7 @@ abstract class TranslationAid {
 			'inotherlanguages' => 'InOtherLanguagesAid',
 			'documentation' => 'DocumentationAid',
 			'mt' => 'MachineTranslationAid',
-			'definition-diff' => 'UpdatedDefinitionAid',
+			'definitiondiff' => 'UpdatedDefinitionAid',
 			'ttmserver' => 'TTMServerAid',
 			'support' => 'SupportAid',
 		);
