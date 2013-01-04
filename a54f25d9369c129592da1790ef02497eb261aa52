@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//4OY\u003d",
+        "filename": "hooks.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-04T19:57:08Z",
+      "side": 1,
+      "message": "Plain text file. Should break at 80 or before.",
+      "revId": "a54f25d9369c129592da1790ef02497eb261aa52",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
