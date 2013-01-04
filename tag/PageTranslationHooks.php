@@ -345,11 +345,21 @@ class PageTranslationHooks {
 			return true;
 		}
 
+		if ( $editpage instanceof IContextSource ) {
+			$title = $editpage->getTitle();
+		} elseif ( $editpage instanceof EditPage ) {
+			// BC 1.20
+			$title = $editpage->mTitle;
+		} else {
+			// Screw it, not interested
+			return true;
+		}
+
 		if ( strpos( $text, '<translate>' ) === false ) {
 			return true;
 		}
 
-		$page = TranslatablePage::newFromText( $editpage->mTitle, $text );
+		$page = TranslatablePage::newFromText( $title, $text );
 		try {
 			$page->getParse();
 		} catch ( TPException $e ) {
