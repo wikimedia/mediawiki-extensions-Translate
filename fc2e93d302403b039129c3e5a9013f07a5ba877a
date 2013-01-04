@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//4r0\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-04T12:02:11Z",
+      "side": 1,
+      "message": "You can use translate-documentation-language message.",
+      "revId": "fc2e93d302403b039129c3e5a9013f07a5ba877a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//4rw\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-04T12:02:11Z",
+      "side": 1,
+      "message": "mw.config.get( wgContentLanguage )?",
+      "revId": "fc2e93d302403b039129c3e5a9013f07a5ba877a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
