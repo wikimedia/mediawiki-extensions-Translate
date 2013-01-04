@@ -25,6 +25,14 @@ class TuxMessageTable extends MessageTable {
 
 		$titleMap = $this->collection->keys();
 
+		// dirMark is needed for proper display of source and translation in languages
+		// with different directionality.
+		// It can be removed when proper support for bidi-isolation is available everywhere.
+		global $wgLang;
+		$dirMark = $wgLang->getDirMark();
+		$sourceLang = Language::factory( $this->group->getSourceLanguage() );
+		$targetLang = Language::factory( $this->collection->getLanguage() );
+
 		$output = '';
 		/**
 		 * @var TMessage $m
@@ -82,14 +90,27 @@ class TuxMessageTable extends MessageTable {
 				);
 			}
 
-			$messageListItem = Xml::tags( 'div', array(
+			$sourceElement = Xml::element( 'span', array(
+				'class' => 'tux-list-source',
+				'lang' => $sourceLang->getCode(),
+				'dir' => $sourceLang->getDir(),
+			), $original );
+
+			$translatedElement = Xml::element( 'span', array(
+				'class' => 'tux-list-translation',
+				'lang' => $targetLang->getCode(),
+				'dir' => $targetLang->getDir(),
+			), $original );
+
+			$messageListItem = Xml::tags( 'div',
+				array(
 					'class' => 'row tux-message-item'
 				),
-				'<div class="nine columns tux-list-message"><span class="tux-list-source">' .
-				htmlspecialchars( $original ) . '</span>' .
-				'<span class="tux-list-translation">' .
-				htmlspecialchars( $translation )
-				. '</span></div>'
+				'<div class="nine columns tux-list-message">'
+				. $sourceElement
+				. $dirMark // Can be removed when the support for bidi-isolation is available
+				. $translatedElement
+				. '</div>'
 				. "<div class='two columns tux-list-status text-center'>$status</div>"
 				. "<div class='one column tux-list-edit text-center'>$edit</div>"
 			);
