@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2012, Niklas Laxström
+ * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  * @ingroup TTMServer
  */
@@ -56,9 +56,11 @@ interface WritableTTMServer {
 	/**
 	 * Shovels the new translation into translation memory.
 	 * Use this for single updates (=after message edit).
+	 * If no text is provided, entry will be removed from the translation
+	 * memory.
 	 *
-	 * @param $handle MessageHandle
-	 * @param $targetText String
+	 * @param MessageHandle $handle
+	 * @param string|null $targetText Use null to only delete.
 	 */
 	public function update( MessageHandle $handle, $targetText );
 

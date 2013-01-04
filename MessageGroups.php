@@ -5,7 +5,7 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2008-2012, Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2008-2013, Niklas Laxström, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -15,18 +15,18 @@
  * @todo Clean up the mixed static/member method interface.
  */
 class MessageGroups {
-	protected static $loaded = false;
+	protected static $groups = null;
 
 	/// Initialises the list of groups (but not the groups itself if possible).
 	public static function init() {
-		if ( self::$loaded ) {
+		if ( is_array( self::$groups ) ) {
 			return;
 		}
 
 		wfProfileIn( __METHOD__ );
-		self::$loaded = true;
+		self::$groups = array();
 
-		global $wgTranslateCC, $wgAutoloadClasses;
+		global $wgAutoloadClasses;
 
 		$key = wfMemcKey( 'translate-groups' );
 		$value = DependencyWrapper::getValueFromCache( self::getCache(), $key );
@@ -36,7 +36,7 @@ class MessageGroups {
 			self::loadGroupDefinitions();
 		} else {
 			wfDebug( __METHOD__ . "-withcache\n" );
-			$wgTranslateCC = $value['cc'];
+			self::$groups = $value['cc'];
 
 			foreach ( $value['autoload'] as $class => $file ) {
 				$wgAutoloadClasses[$class] = $file;
@@ -53,7 +53,7 @@ class MessageGroups {
 	public static function clearCache() {
 		$key = wfMemckey( 'translate-groups' );
 		self::getCache()->delete( $key );
-		self::$loaded = false;
+		self::$groups = null;
 	}
 
 	/**
@@ -70,9 +70,6 @@ class MessageGroups {
 	 * recreate the cache when configuration changes.
 	 * @todo Reduce the ways of which messages can be added. Target is just
 	 * to have three ways: Yaml files, translatable pages and with the hook.
-	 * @todo In conjuction with the above, reduce the number of global
-	 * variables like wgTranslate#C and have the message groups specify
-	 * their own cache dependencies.
 	 */
 	protected static function loadGroupDefinitions() {
 		wfProfileIn( __METHOD__ );
@@ -87,6 +84,8 @@ class MessageGroups {
 		$deps[] = new GlobalDependency( 'wgTranslateExtensionDirectory' );
 		$deps[] = new GlobalDependency( 'wgTranslateWorkflowStates' );
 
+		self::$groups = $wgTranslateCC;
+
 		if ( $wgEnablePageTranslation ) {
 			wfProfileIn( __METHOD__ . '-pt' );
 			$dbr = wfGetDB( DB_MASTER );
@@ -100,19 +99,19 @@ class MessageGroups {
 			foreach ( $res as $r ) {
 				$title = Title::newFromRow( $r );
 				$id = TranslatablePage::getMessageGroupIdFromTitle( $title );
-				$wgTranslateCC[$id] = new WikiPageMessageGroup( $id, $title );
-				$wgTranslateCC[$id]->setLabel( $title->getPrefixedText() );
+				self::$groups[$id] = new WikiPageMessageGroup( $id, $title );
+				self::$groups[$id]->setLabel( $title->getPrefixedText() );
 			}
 			wfProfileOut( __METHOD__ . '-pt' );
 		}
 
 		if ( $wgTranslateWorkflowStates ) {
-			$wgTranslateCC['translate-workflow-states'] = new WorkflowStatesMessageGroup();
+			self::$groups['translate-workflow-states'] = new WorkflowStatesMessageGroup();
 		}
 
 		wfProfileIn( __METHOD__ . '-hook' );
 		$autoload = array();
-		wfRunHooks( 'TranslatePostInitGroups', array( &$wgTranslateCC, &$deps, &$autoload ) );
+		wfRunHooks( 'TranslatePostInitGroups', array( &self::$groups, &$deps, &$autoload ) );
 		wfProfileOut( __METHOD__ . '-hook' );
 
 		wfProfileIn( __METHOD__ . '-yaml' );
@@ -131,7 +130,7 @@ class MessageGroups {
 					}
 				}
 				$group = MessageGroupBase::factory( $conf );
-				$wgTranslateCC[$id] = $group;
+				self::$groups[$id] = $group;
 			}
 		}
 		wfProfileOut( __METHOD__ . '-yaml' );
@@ -139,13 +138,13 @@ class MessageGroups {
 		wfProfileIn( __METHOD__ . '-agg' );
 		$aggregateGroups = self::getAggregateGroups();
 		foreach ( $aggregateGroups as $id => $group ) {
-			$wgTranslateCC[$id] = $group;
+			self::$groups[$id] = $group;
 		}
 		wfProfileOut( __METHOD__ . '-agg' );
 
 		$key = wfMemckey( 'translate-groups' );
 		$value = array(
-			'cc' => $wgTranslateCC,
+			'cc' => self::$groups,
 			'autoload' => $autoload,
 		);
 
@@ -173,13 +172,11 @@ class MessageGroups {
 		}
 		self::init();
 
-		global $wgTranslateCC;
-
-		if ( isset( $wgTranslateCC[$id] ) ) {
-			if ( is_callable( $wgTranslateCC[$id] ) ) {
-				return call_user_func( $wgTranslateCC[$id], $id );
+		if ( isset( self::$groups[$id] ) ) {
+			if ( is_callable( self::$groups[$id] ) ) {
+				return call_user_func( self::$groups[$id], $id );
 			}
-			return $wgTranslateCC[$id];
+			return self::$groups[$id];
 		} elseif ( strval( $id ) !== '' && $id[0] === '!' ) {
 			$dynamic = self::getDynamicGroups();
 			if ( isset( $dynamic[$id] ) ) {
@@ -364,14 +361,13 @@ class MessageGroups {
 	 */
 	public function getGroups() {
 		self::init();
-		global $wgTranslateCC;
 		// Expand groups to objects
-		foreach ( $wgTranslateCC as $id => $mixed ) {
+		foreach ( self::$groups as $id => $mixed ) {
 			if ( !is_object( $mixed ) ) {
-				$wgTranslateCC[$id] = call_user_func( $mixed, $id );
+				self::$groups[$id] = call_user_func( $mixed, $id );
 			}
 		}
-		return $wgTranslateCC;
+		return self::$groups;
 	}
 
 	/**

@@ -266,7 +266,8 @@ class TranslateUtils {
 	 * @return string
 	 */
 	public static function normaliseKey( $namespace, $key ) {
-		return strtr( strtolower( "$namespace:$key" ), " ", "_"  );
+		$key = lcfirst( $key );
+		return strtr( "$namespace:$key", " ", "_"  );
 	}
 
 	/**

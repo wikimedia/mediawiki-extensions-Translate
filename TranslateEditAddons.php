@@ -358,6 +358,8 @@ class TranslateEditAddons {
 			wfRunHooks( 'Translate:newTranslation', array( $handle, $rev, $text, $user ) );
 		}
 
+		TTMServer::onChange( $handle, $text, $fuzzy );
+
 		return true;
 	}
 
