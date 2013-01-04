@@ -439,6 +439,7 @@ Most useful for the proofreading tasks.',
 	'tux-status-fuzzy' => 'Outdated',
 	'tux-status-proofread' => 'Proofread',
 	'tux-status-translated' => 'Translated',
+	'tux-status-saving' => 'Saving...',
 	'tux-status-unsaved' => 'Unsaved',
 
 	'tux-editor-placeholder' => 'Your translation',
@@ -858,6 +859,7 @@ Additional parameters:
 	'tux-status-proofread' => 'Status label in [[Special:Translate]] indicating that you have proofread the translation.
 Read as in "proofRED" (past participle).',
 	'tux-status-translated' => 'Status label in Special:Translate indicating that a message is translated. An adjective that refers to a message.',
+	'tux-status-saving' => 'Status label in Special:Translate indicating that the translation is being saved.',
 	'tux-status-unsaved' => 'Status label in Special:Translate indicating that translation is not saved',
 	'tux-editor-placeholder' => 'Placeholder text for the translation editor textbox',
 	'tux-editor-save-button-label' => 'Label for save translation button',

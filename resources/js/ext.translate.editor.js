@@ -7,6 +7,7 @@
 		this.$messageItem = this.$editTrigger.find( '.tux-message-item' );
 		this.shown = false;
 		this.dirty = false;
+		this.saving = false;
 		this.expanded = false;
 		this.listen();
 	}
@@ -44,7 +45,24 @@
 		},
 
 		/**
-		 * Mark the message as translated
+		 * Mark the message as being saved
+		 */
+		markSaving: function () {
+			// Disable the save button
+			this.$editor.find( '.tux-editor-save-button' )
+				.prop( 'disabled', true );
+
+			// Add a "Saving" indicator
+			this.$editTrigger.find( '.tux-list-status' )
+				.empty()
+				.append( $( '<span>' )
+					.addClass( 'tux-status-unsaved' )
+					.text( mw.msg( 'tux-status-saving' ) )
+				);
+		},
+
+		/**
+		 * Mark the message as translated and successfully saved.
 		 */
 		markTranslated: function () {
 			this.$editTrigger.find( '.tux-list-status' )
@@ -65,6 +83,13 @@
 				api = new mw.Api(),
 				translation = translateEditor.$editor.find( 'textarea' ).val();
 
+			translateEditor.saving = true;
+
+			// For responsiveness and efficiency,
+			// immediately move to the next message.
+			// TODO: Handle last message
+			translateEditor.next();
+
 			// XXX: Any validations to be done before proceeding?
 			api.post( {
 				action: 'edit',
@@ -72,28 +97,40 @@
 				text: translation,
 				token: mw.user.tokens.get( 'editToken' )
 			}, {
-			ok: function ( response ) {
-				if ( response.edit.result === 'Success' ) {
-					translateEditor.markTranslated();
-					translateEditor.next();
+				ok: function ( response ) {
+					if ( response.edit.result === 'Success' ) {
+						translateEditor.markTranslated();
 
-					// Update the translation
-					translateEditor.$editTrigger.data( 'translation', translation );
-					translateEditor.$editTrigger.find( '.tux-list-translation' )
-						.text( translation );
-				} else {
-					translateEditor.populateWarningsBoxes( [
-						mw.msg( 'tux-editor-save-failed', response.warning )
-					] );
+						// Update the translation
+						translateEditor.$editTrigger.data( 'translation', translation );
+						translateEditor.$editTrigger.find( '.tux-list-translation' )
+							.text( translation );
+					} else {
+						translateEditor.savingError( response.warning );
+					}
+
+					translateEditor.saving = false;
+				},
+				// TODO: Should also handle complete failure,
+				// for example client or server going offline.
+				err: function ( errorCode, results ) {
+					translateEditor.savingError( results.error.info );
+
+					translateEditor.saving = false;
 				}
-			},
-			// TODO: Should also handle complete failure,
-			// for example client or server going offline.
-			err: function ( errorCode, results ) {
-				translateEditor.populateWarningsBoxes( [
-					mw.msg( 'tux-editor-save-failed', results.error.info )
-				] );
-			} } );
+			} );
+		},
+
+		/**
+		 * Marks that there was a problem saving a translation.
+		 * @param string error Strings of warnings to display.
+		 */
+		savingError: function ( error ) {
+			this.populateWarningsBoxes( [
+				mw.msg( 'tux-editor-save-failed', error )
+			] );
+
+			this.markUnsaved();
 		},
 
 		/**
@@ -114,13 +151,16 @@
 
 		/**
 		 * Jump to the next translation editor row.
-		 *
 		 */
 		next: function () {
 			var $next;
 
 			if ( this.dirty ) {
-				this.markUnsaved();
+				if ( this.saving ) {
+					this.markSaving();
+				} else {
+					this.markUnsaved();
+				}
 			}
 
 			$next = this.$editTrigger.next( '.tux-message' );
