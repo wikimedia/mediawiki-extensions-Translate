@@ -70,6 +70,7 @@ $messages['en'] = array(
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wiktionary',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] is a mobile application for contributing to the [[:meta:Wiki Loves Monuments|Wiki Loves Monuments project]]',
 	'translate-group-desc-waymarked-trails-help' => 'The help pages of the Waymarked Trails web sites: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] is a really-real time collaborative editor',
 );
 
 /** Message documentation (Message documentation)
