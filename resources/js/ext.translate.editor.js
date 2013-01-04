@@ -603,7 +603,9 @@
 					$messageDoc,
 					documentation,
 					readMore,
-					$readMore = null;
+					$readMore = null,
+					contentLanguage = mw.config.get( 'wgContentLanguage' ),
+					contentLanguageDir = $.uls.data.getDir( contentLanguage );
 
 				if ( !result.helpers ) {
 					return false; // That is unlikely. but to be safe.
@@ -612,9 +614,21 @@
 				// Message documentation
 				documentation = result.helpers.documentation;
 
+				// Display the documentation only if it's not empty
 				if ( documentation.value !== '' ) {
 					$messageDoc = translateEditor.$editor.find( '.message-desc' );
-					$messageDoc.html( documentation.html );
+
+					// Show the documentation and set appropriate
+					// lang and dir attributes.
+					// The message documentation is assumed to be written
+					// in the content language of the wiki.
+					$messageDoc
+						.attr( {
+							lang: contentLanguage,
+							dir: contentLanguageDir
+						} )
+						.addClass( contentLanguageDir ) // hack
+						.html( documentation.html );
 
 					if ( documentation.value.length > 500 ) {
 						readMore = function () {
