@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//4uM\u003d",
+        "filename": "resources/css/ext.translate.groupselector.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-04T11:44:11Z",
+      "side": 1,
+      "message": "These should be in ext.translate.special.translate.css",
+      "revId": "6bde336d9bc39865b20ee8d86baec2d7394c9979",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
