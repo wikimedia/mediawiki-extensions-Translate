@@ -201,9 +201,8 @@
 
 			$closeIcon = $( '<span>' )
 				.addClass( 'one column close' )
-				.on( 'click', function ( e ) {
+				.on( 'click', function () {
 					translateEditor.hide();
-					e.stopPropagation();
 				} );
 
 			$infoToggleIcon = $( '<span>' )
@@ -333,9 +332,8 @@
 						'disabled': true
 					} )
 					.addClass( 'blue button tux-editor-save-button' )
-					.on( 'click', function ( e ) {
+					.on( 'click', function () {
 						translateEditor.save();
-						e.stopPropagation();
 					} );
 			} else {
 				$requestRight = $( '<span>' )
@@ -356,10 +354,9 @@
 					'title': mw.util.tooltipAccessKeyPrefix + 'd'
 				} )
 				.addClass( 'button tux-editor-skip-button' )
-				.on( 'click', function ( e ) {
+				.on( 'click', function () {
 					translateEditor.skip();
 					translateEditor.next();
-					e.stopPropagation();
 				} );
 
 			$buttonBlock = $( '<div>' )
