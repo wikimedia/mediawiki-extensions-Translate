@@ -121,18 +121,24 @@ class TranslationHelpers {
 	/**
 	 * Gets the current message translation. Fuzzy messages will be marked as
 	 * such unless translation is provided manually.
-	 * @return String
+	 * @return string
 	 */
 	public function getTranslation() {
-		$obj = new CurrentTranslationAid( $this->group, $this->handle, RequestContext::getMain() );
-		$aid = $obj->getData();
-		return $aid['value'];
+		if ( $this->translation === null ) {
+			$obj = new CurrentTranslationAid( $this->group, $this->handle, RequestContext::getMain() );
+			$aid = $obj->getData();
+			$this->translation = $aid['value'];
+			if ( $aid['fuzzy'] ) {
+				$this->translation = TRANSLATE_FUZZY . $this->translation;
+			}
+		}
+		return $this->translation;
 	}
 
 	/**
 	 * Manual override for the translation. If not given or it is null, the code
 	 * will try to fetch it automatically.
-	 * @param $translation String or null
+	 * @param string|null $translation
 	 */
 	public function setTranslation( $translation ) {
 		$this->translation = $translation;
