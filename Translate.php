@@ -255,6 +255,8 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-editor-use-this-translation',
 		'translate-edit-nopermission',
 		'translate-edit-askpermission',
+		'tux-editor-outdated-warning',
+		'tux-editor-outdated-warning-diff-link',
 	),
 	'position' => 'top',
 ) + $resourcePaths;

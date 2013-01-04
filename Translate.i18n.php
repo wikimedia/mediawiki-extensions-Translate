@@ -458,8 +458,9 @@ Most useful for the proofreading tasks.',
 	'tux-editor-save-failed' => 'Saving the translation failed: $1',
 	'tux-editor-use-this-translation' => 'Use as translation',
 	'tux-editor-message-desc-more' => 'View more',
-
 	'tux-editor-clear-translated' => 'Clear translated',
+	'tux-editor-outdated-warning' => 'This translation may be outdated.',
+	'tux-editor-outdated-warning-diff-link' => 'Show differences',
 );
 
 /** Message documentation (Message documentation)
@@ -888,9 +889,10 @@ Read as in "proofRED" (past participle).',
 * $1 - the warning that the API returns',
 	'tux-editor-use-this-translation' => 'Link text for using a suggestion as translation for the current message',
 	'tux-editor-message-desc-more' => 'Link text for expanding long message documentation',
-
 	'tux-editor-clear-translated' => 'Label for the button that appears at the footer of the translation editor.
 Pressing the button clears all the messages that were translated from the page.',
+	'tux-editor-outdated-warning' => 'Warning message when source message is outdated',
+	'tux-editor-outdated-warning-diff-link' => 'Link text for showing the diff in the outdated message warning',
 );
 
 /** Afrikaans (Afrikaans)
@@ -17851,6 +17853,8 @@ $messages['ml'] = array(
 	'tux-editor-tm-match' => '$1% ചേര്‍ച്ച',
 	'tux-editor-use-this-translation' => 'പരിഭാഷയ്ക്കുപയോഗിക്കുക',
 	'tux-editor-message-desc-more' => 'മുഴുവന്‍ കാണിയ്ക്കുക',
+	'tux-editor-outdated-warning' => 'ഈ പരിഭാഷ കാലഹരണപ്പെട്ടതാവാം.',
+	'tux-editor-outdated-warning-diff-link' => 'വ്യത്യാസം കാണിക്കുക',
 );
 
 /** Mongolian (монгол)

@@ -237,6 +237,10 @@
 .tux-warning-message {
 	font-size: 14px;
 	padding: 2px 15% 2px 5px;
+	/* 15px space for icon */
+	padding-left: 20px;
+	background-position: left;
+	background-repeat: no-repeat;
 }
 
 .editarea .tux-more-warnings {
@@ -247,6 +251,28 @@
 	text-align: right;
 	cursor: pointer;
 	bottom: 0;
+}
+
+.tux-warning-message.validation {
+	/* @embed */
+	background-image: url(../images/label-flag.png);
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/label-flag.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/label-flag.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/label-flag.svg);
+}
+
+.tux-warning-message.diff {
+	/* @embed */
+	background-image: url(../images/label-clock.png);
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/label-clock.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/label-clock.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/label-clock.svg);
+}
+
+.tux-warning-message .show-diff-link {
+	color: #3366BB;
+	cursor: pointer;
+	padding-left: 5px;
 }
 
 .editarea .tux-more-warnings:before {

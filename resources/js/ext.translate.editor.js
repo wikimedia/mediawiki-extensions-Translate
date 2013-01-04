@@ -110,6 +110,10 @@
 					}
 
 					translateEditor.saving = false;
+
+					// remove warnings if any.
+					translateEditor.removeWarning( 'diff' );
+					translateEditor.removeWarning( 'validation' );
 				},
 				// TODO: Should also handle complete failure,
 				// for example client or server going offline.
@@ -430,8 +434,7 @@
 		 * @param type
 		 */
 		removeWarning: function ( type ) {
-			this.$editTrigger.find( '.tux-warning' )
-				.find( '.' + type ).remove();
+			this.$editor.find( '.tux-warning' ).find( '.' + type ).remove();
 		},
 
 		/**
@@ -442,8 +445,8 @@
 		 */
 		addWarning: function ( warning, type ) {
 			var warningCount,
-				$warnings = this.$editTrigger.find( '.tux-warning' ),
-				$moreWarningsTab = this.$editTrigger.find( '.tux-more-warnings' );
+				$warnings = this.$editor.find( '.tux-warning' ),
+				$moreWarningsTab = this.$editor.find( '.tux-more-warnings' );
 
 			$warnings
 				.removeClass( 'hide' )
@@ -738,10 +741,24 @@
 						.after( $translation );
 				} );
 
+				// Support URL
 				if ( result.helpers.support.url ) {
 					translateEditor.$editor.find( '.help' )
 						.find( 'a' ).attr( 'href', result.helpers.support.url )
 						.end().removeClass( 'hide' );
+				}
+
+				// Diff for outdated message
+				if ( result.helpers.definitiondiff ) {
+					translateEditor.addWarning( mw.msg( 'tux-editor-outdated-warning' )
+						+ '<span class="show-diff-link">'
+						+ mw.message( 'tux-editor-outdated-warning-diff-link' ).escaped()
+						+ '</span>', 'diff' );
+
+					translateEditor.$editor.find( '.tux-warning .show-diff-link' )
+						.on( 'click', function () {
+							$( this ).parent().html( result.helpers.definitiondiff.html );
+						} );
 				}
 
 			} ).fail( function () {
