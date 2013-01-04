@@ -653,6 +653,7 @@ Weitere Information finden sich unter [[mw:Extension:PDF Writer]] und http://cod
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] ist eine plattformunabhängige Mobil- und Tabletanwendung zum Lesen und Bearbeiten von Wiktionary',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] ist eine mobile Anwendung zur Teilnahme am [[:meta:Wiki Loves Monuments|„Wiki Loves Monuments“-Projekt]]',
 	'translate-group-desc-waymarked-trails-help' => 'Die Hilfeseiten der „Waymarked Trails“-Websites: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] ist ein kollaborativer Echtzeiteditor',
 );
 
 /** Zazaki (Zazaki)
@@ -1517,9 +1518,11 @@ $messages['ja'] = array(
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]は、携帯可能な機器で、オフラインかつ文字のみのウィキペディアを提供します',
 	'translate-group-desc-wikimedia-mobile' => 'ウィキメディアプロジェクトの携帯機器版アプリケーションのメッセージを含む集約群',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] はウィキペディアを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
+	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] はウィキソースを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] はウィクショナリーを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] は[[:meta:Wiki Loves Monuments|ウィキラブモニュメント プロジェクト]]を閲覧・編集するための携帯端末向けアプリケーションです',
 	'translate-group-desc-waymarked-trails-help' => 'Waymarked Trails ウェブサイトのヘルプページ: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] は真のリアルタイム共同編集を実現したエディターです',
 );
 
 /** Georgian (ქართული)
@@ -2231,6 +2234,7 @@ Për piasì varda [[mw:Extension:PDF_Writer]]  e http://code.pediapress.com/wiki
 	'translate-group-desc-wikimedia-mobile-wiktionary' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wiktionary",
 	'translate-group-desc-wikimedia-mobile-wlm' => "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] a l'é n'aplicassion për ij sacociàbij për contribuì al [[:meta:Wiki Loves Monuments|proget Wiki Loves Monuments]]",
 	'translate-group-desc-waymarked-trails-help' => "Le pàgine d'agiut dël sit dl'aragnà Senté marcà: http://waymarkedtrails.org/help/about",
+	'translate-group-desc-etherpad-lite' => "[[Translating:Etherpad lite|Etherpad lite]] a l'é n'editor colaborativ verament an temp real",
 );
 
 /** Pashto (پښتو)
@@ -2550,12 +2554,10 @@ $messages['sl'] = array(
 	'translate-group-desc-flaggedrevs' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitve MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitve MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila vseh razširitev [http://semantic-mediawiki.org/ Semantičnega MediaWiki]',
-	'translate-group-desc-socialprofile' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitev, povezana z razširitvijo MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitve MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitve MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]; prosimo, seznanite se z njenim [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary slovarjem]',
 	'translate-group-desc-wikiaextensions' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila podprtih razširitev MediaWiki, ki jih uporablja [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila podprtih razširitev MediaWiki, ki jih uporablja [http://wikimedia.org/ Fundacija Wikimedia]',
 	'translate-group-desc-wikimediaextensions-main' => 'Skupina sporočil Meta, ki vsebuje vsa sporočila za podprte razširitve MediaWiki, katera morajo biti prevedena za [http://meta.wikimedia.org/wiki/Language_committee Jezikovni odbor] Wikimedie',
-	'translate-group-desc-uniwiki' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitev, povezanih z [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Krovna skupina sporočil, ki vsebuje vsa sporočila razširitev, povezanih z [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedijino Pobudo za uporabnost]',
 	'translate-group-desc-translatablepages' => 'Vse prevedljive strani',
 	'bw-desc-freecol' => 'Pred prevajanjem FreeCol v svoj jezik si, prosimo, preberite [[Translating:FreeCol]]. Freecol uporablja licenco GPL.',
@@ -2573,12 +2575,10 @@ $messages['sl'] = array(
 	'translate-group-desc-mediawiki-core-branch' => 'Sporočila ustaljene različice [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] je vodstven informacijski sistem za mikrofinance',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] je knjižnica za ustvarjanje dokumentov PDF iz strani MediaWiki',
-	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] je spletni odjemalec e-pošte',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] je nepovezan bralnik Wikipedije',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] je odprto okolje za predstavnostne vsebine',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Ta sporočila so del predloge [[Translating:Open Images|Open Images]] za preverjanje e-pošte',
 	'translate-group-desc-openimages-all' => 'Ta sporočila so del projekta [[Translating:Open Images|Open Images]]',
-	'bw-desc-openlayers' => 'OpenLayers je odprtokodni dinamični ustvarjalnik zemljevidov. Prosimo, sporočite morebitne težave na [[support|podpora]].',
 	'bw-desc-openstreetmap' => 'Skupina sporočil za vsa sporočila [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Ta skupina sporočil zajema sporočila vmesnika [[Translating:Open Street Map|Open Street Map]].
 Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} stran Unicode CLDR za razlago množinskih ključev].',
@@ -2591,9 +2591,6 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] je storitev, ki prikazuje poti za pohodništvo, kolesarjenje, gorsko kolesarjenje in rolkanje po celem svetu. Uporablja licenco GNU GPL.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je zmožen hitro najti avtorje strani na wikiju Wikimedije.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt za dostavljanje nepovezane, samo tekstovne različice Wikipedije na mobilne naprave.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] je večplatformni mobilni in tablični program za branje in prispevanje k Wikipediji',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] je večplatformni mobilni in tablični program za branje in prispevanje k Wikislovarju',
-	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] je mobilna aplikacija za prispevanje k [[:meta:Wiki Loves Monuments|projektu Wiki Loves Monuments]]',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)

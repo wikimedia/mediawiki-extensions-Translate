@@ -3180,7 +3180,15 @@ Dacă nu doriți să recepționați acest newsletter, vă puteți dezabona în f
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'firststeps' => 'Prime passe',
 	'translate-fs-pagetitle-done' => '- apposte!',
+	'translate-fs-pagetitle-pending' => '- appese',
+	'translate-fs-signup-title' => 'Reggistrate',
+	'translate-fs-target-title' => 'Accuminze a traducere!',
+	'translate-fs-email-title' => "Conferme l'indirizze e-mail tune",
+	'translate-fs-selectlanguage' => "Pigghie 'na lènghe",
+	'translate-fs-settings-planguage' => 'Lènga prengepàle:',
+	'translate-fs-permissions-planguage' => 'Lènga prengepàle:',
 );
 
 /** Russian (русский)
