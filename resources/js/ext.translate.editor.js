@@ -163,7 +163,6 @@
 				.addClass( 'one column close' )
 				.on( 'click', function ( e ) {
 					translateEditor.hide();
-					e.stopPropagation();
 				} );
 
 			$infoToggleIcon = $( '<span>' )
@@ -295,7 +294,6 @@
 					.addClass( 'blue button tux-editor-save-button' )
 					.on( 'click', function ( e ) {
 						translateEditor.save();
-						e.stopPropagation();
 					} );
 			} else {
 				$requestRight = $( '<span>' )
@@ -319,7 +317,6 @@
 				.on( 'click', function ( e ) {
 					translateEditor.skip();
 					translateEditor.next();
-					e.stopPropagation();
 				} );
 
 			$buttonBlock = $( '<div>' )
