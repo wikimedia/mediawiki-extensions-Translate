@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//4aQ\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-04T16:26:20Z",
+      "side": 1,
+      "message": "\"Diff\" is jargon. Best use \"differences\".",
+      "revId": "c2b240a95a41a4bbc996243a57e627047f5a8c26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
