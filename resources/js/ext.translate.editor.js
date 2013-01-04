@@ -611,34 +611,36 @@
 
 				// Message documentation
 				documentation = result.helpers.documentation;
-				$messageDoc = translateEditor.$editor.find( '.message-desc' );
-				$messageDoc.html( documentation.html );
 
-				if ( documentation.value.length > 500 ) {
+				if ( documentation.value !== '' ) {
+					$messageDoc = translateEditor.$editor.find( '.message-desc' );
+					$messageDoc.html( documentation.html );
 
-					readMore = function () {
+					if ( documentation.value.length > 500 ) {
+						readMore = function () {
+							$messageDoc.css( {
+								'height': '200px',
+								'overflow': 'auto',
+								'text-overflow': 'inherit'
+							} );
+							$readMore.remove();
+						};
+
 						$messageDoc.css( {
-							'height': '200px',
-							'overflow': 'auto',
-							'text-overflow': 'inherit'
+							'height': '100px',
+							'overflow': 'hidden',
+							'text-overflow': 'ellipsis'
 						} );
-						$readMore.remove();
-					};
 
-					$messageDoc.css( {
-						'height': '100px',
-						'overflow': 'hidden',
-						'text-overflow': 'ellipsis'
-					} );
+						$readMore = $( '<span>' )
+							.addClass( 'read-more column' )
+							.text( mw.msg( 'tux-editor-message-desc-more' ) )
+							.click( readMore );
 
-					$readMore = $( '<span>' )
-						.addClass( 'read-more column' )
-						.text( mw.msg( 'tux-editor-message-desc-more' ) )
-						.click( readMore );
-
-					translateEditor.$editor.find( '.message-desc-control')
-						.prepend(  $readMore );
-					$messageDoc.on( 'hover', readMore );
+						translateEditor.$editor.find( '.message-desc-control')
+							.prepend(  $readMore );
+						$messageDoc.on( 'hover', readMore );
+					}
 				}
 
 				// In other languages
