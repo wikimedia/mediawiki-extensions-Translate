@@ -100,7 +100,7 @@ class TuxMessageTable extends MessageTable {
 				'class' => 'tux-list-translation',
 				'lang' => $targetLang->getCode(),
 				'dir' => $targetLang->getDir(),
-			), $original );
+			), $translation );
 
 			$messageListItem = Xml::tags( 'div',
 				array(
