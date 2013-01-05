@@ -170,6 +170,10 @@
 			}
 
 			$next.data( 'translateeditor' ).show();
+			// scroll the page a little bit up, slowly.
+			$( 'html' ).stop().animate( {
+				scrollTop: $( '.tux-message-editor:visible' ).offset().top - 55
+			}, 500 );
 		},
 
 		prepareEditorColumn: function () {
