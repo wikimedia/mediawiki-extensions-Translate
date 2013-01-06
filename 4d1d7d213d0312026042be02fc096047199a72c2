@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//3SA\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-06T20:46:25Z",
+      "side": 1,
+      "message": "I have a card which entails moving the .translated class to a inner div, just FYI.",
+      "revId": "4d1d7d213d0312026042be02fc096047199a72c2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//3SY\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-06T20:46:25Z",
+      "side": 1,
+      "message": "Indent",
+      "revId": "4d1d7d213d0312026042be02fc096047199a72c2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//3SM\u003d",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-06T20:46:25Z",
+      "side": 1,
+      "message": "You should know what is wrong with this line ;)",
+      "revId": "4d1d7d213d0312026042be02fc096047199a72c2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
