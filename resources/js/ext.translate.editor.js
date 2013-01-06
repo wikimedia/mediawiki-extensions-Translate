@@ -292,7 +292,7 @@
 					'lang': $messageList.data( 'targetlangcode' ),
 					'dir': $messageList.data( 'targetlangdir' )
 				} )
-				.on( 'keypress keyup keydown', function () {
+				.on( 'keypress keyup keydown paste', function () {
 					translateEditor.dirty = true;
 					translateEditor.$editor.find( '.tux-editor-save-button' )
 						.removeAttr( 'disabled' );
