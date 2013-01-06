@@ -121,7 +121,7 @@
 	}
 
 	$( document ).ready( function () {
-		var uiLanguage;
+		var uiLanguage, $translateContainer;
 
 		uiLanguage = mw.config.get( 'wgUserLanguage' );
 
@@ -153,6 +153,13 @@
 				// New translation editor
 				$( '.tux-message' ).translateeditor();
 			}
+
+			$translateContainer = $( '.ext-translate-container' );
+			$translateContainer.find( '.tux-editor-clear-translated' )
+				.click( function () {
+					$translateContainer.find( '.tux-message.translated' ).remove();
+				} );
+
 		}
 	} );
 

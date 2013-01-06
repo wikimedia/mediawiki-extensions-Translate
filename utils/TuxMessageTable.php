@@ -127,15 +127,29 @@ class TuxMessageTable extends MessageTable {
 		$this->includeAssets();
 		$this->context->getOutput()->addModules( 'ext.translate.editor' );
 
-		$bar = StatsBar::getNew( $this->group->getId(), $this->collection->getLanguage() );
-		$html = $bar->getHtml( $this->context );
+		$statsBar = StatsBar::getNew( $this->group->getId(), $this->collection->getLanguage() );
+		$statsBarHtml = $statsBar->getHtml( $this->context );
 
-		$more = '<div class="tux-ajax-loader"><span class="tux-loading-indicator"></span><div class="tux-ajax-loader-count">666 more message</div><div class="tux-ajax-loader-more">Loading 15...</div></div>';
+		$footer = '<div class="tux-ajax-loader">'
+			. '<span class="tux-loading-indicator"></span>'
+			. '<div class="tux-ajax-loader-count">666 more message</div>' // TODO i18n
+			. '<div class="tux-ajax-loader-more">Loading 15...</div>' // TODO i18n
+			. '</div>';
 
-		$more .= '<div class="tux-action-bar row"><div class="three columns">' . $html . '</div>';
-		$more .= '<div class="three columns text-center"><button class="button">Clear translated</button></div>';
-		$more .= '<div class="four columns text-center"><button class="blue button">Proofreading mode</button></div>';
+		$footer .= '<div class="tux-action-bar row"><div class="three columns">' .
+			$statsBarHtml
+			. '</div>';
+		$footer .= '<div class="three columns text-center">'
+			. '<button class="button tux-editor-clear-translated">'
+			. wfMessage( 'tux-editor-clear-translated' )->text()
+			. '</button>'
+			. '</div>';
+		$footer .= '<div class="four columns text-center">'
+			. '<button class="blue button">'
+			. 'Proofreading mode'
+			. '</button>'
+			. '</div>';
 
-		return $this->header() . $this->contents() . $more . '</div>';
+		return $this->header() . $this->contents() . $footer . '</div>';
 	}
 }
