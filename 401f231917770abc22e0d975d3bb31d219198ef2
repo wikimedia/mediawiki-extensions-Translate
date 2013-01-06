@@ -16,6 +16,24 @@
       "revId": "401f231917770abc22e0d975d3bb31d219198ef2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//3Qg\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-01-06T21:36:30Z",
+      "side": 1,
+      "message": "result may have an error. Try it on a translatable page and see what it returns for the page title message.",
+      "parentUuid": "AAADgX//3Rw\u003d",
+      "revId": "401f231917770abc22e0d975d3bb31d219198ef2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
