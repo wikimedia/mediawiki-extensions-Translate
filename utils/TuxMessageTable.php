@@ -28,8 +28,7 @@ class TuxMessageTable extends MessageTable {
 		// dirMark is needed for proper display of source and translation in languages
 		// with different directionality.
 		// It can be removed when proper support for bidi-isolation is available everywhere.
-		global $wgLang;
-		$dirMark = $wgLang->getDirMark();
+		$dirMark = $this->context->getLanguage()->getDirMark();
 		$sourceLang = Language::factory( $this->group->getSourceLanguage() );
 		$targetLang = Language::factory( $this->collection->getLanguage() );
 
