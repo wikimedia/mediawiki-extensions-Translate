@@ -605,6 +605,8 @@
 					readMore,
 					$readMore = null;
 
+				// TODO This returns an error for 'Page display title' in translatable pages.
+				// Something smarter must be done with it.
 				if ( !result.helpers ) {
 					return false; // That is unlikely. but to be safe.
 				}
@@ -612,7 +614,10 @@
 				// Message documentation
 				documentation = result.helpers.documentation;
 
-				if ( documentation.value !== '' ) {
+				if ( documentation.value === '' ) {
+					translateEditor.$editor.find( '.message-desc-edit' )
+						.text( mw.msg( 'tux-editor-add-desc' ) );
+				} else {
 					$messageDoc = translateEditor.$editor.find( '.message-desc' );
 					$messageDoc.html( documentation.html );
 
