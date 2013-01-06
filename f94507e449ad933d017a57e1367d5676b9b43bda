@@ -16,6 +16,24 @@
       "revId": "f94507e449ad933d017a57e1367d5676b9b43bda",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//3SU\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-01-06T20:44:53Z",
+      "side": 1,
+      "message": "It would be nice, but the \u0027change\u0027 event actually works only after the \u003ctextarea\u003e loses focus.",
+      "parentUuid": "AAADgX//3Sg\u003d",
+      "revId": "f94507e449ad933d017a57e1367d5676b9b43bda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
