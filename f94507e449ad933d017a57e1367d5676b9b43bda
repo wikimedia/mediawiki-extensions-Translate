@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//3Sg\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-06T20:41:13Z",
+      "side": 1,
+      "message": "Why can\u0027t we just use \"change\" here. I think it would also fix the issue that using access keys to skip to the next message marks it dirty.",
+      "revId": "f94507e449ad933d017a57e1367d5676b9b43bda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
