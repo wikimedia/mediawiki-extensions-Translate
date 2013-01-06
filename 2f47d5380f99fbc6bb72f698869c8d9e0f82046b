@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//3So\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-06T20:32:57Z",
+      "side": 1,
+      "message": "a ? b : c;",
+      "revId": "2f47d5380f99fbc6bb72f698869c8d9e0f82046b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//3Ss\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-06T20:32:57Z",
+      "side": 1,
+      "message": "Double space",
+      "revId": "2f47d5380f99fbc6bb72f698869c8d9e0f82046b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
