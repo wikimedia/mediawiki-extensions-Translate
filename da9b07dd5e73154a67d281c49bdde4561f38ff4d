@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//3TU\u003d",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-06T20:31:12Z",
+      "side": 1,
+      "message": "Inconsistent space before dot",
+      "revId": "da9b07dd5e73154a67d281c49bdde4561f38ff4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//3TA\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-06T20:31:12Z",
+      "side": 1,
+      "message": "I added the (guessed) language of documentation in the API just for this: http://translatewiki.net/w/api.php?action\u003dtranslationaids\u0026group\u003dcore\u0026title\u003dmediawiki:jan/fi\u0026format\u003djsonfm\n\nUse that.",
+      "revId": "da9b07dd5e73154a67d281c49bdde4561f38ff4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//3S4\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-06T20:31:12Z",
+      "side": 1,
+      "message": "documentation.value can also be undefined",
+      "revId": "da9b07dd5e73154a67d281c49bdde4561f38ff4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
