@@ -892,6 +892,7 @@ $messages['fi'] = array(
  * @author Sherbrooke
  * @author Urhixidur
  * @author Verdy p
+ * @author Wyz
  * @author Xapitoun
  */
 $messages['fr'] = array(
@@ -948,6 +949,7 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] est une application inter-plateformes pour mobiles et tablettes permettant de lire et contribuer à Wiktionary',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] est une application mobile pour contribuer au [[:meta:Wiki Loves Monuments|projet Monuments Appréciés de Wiki]]',
 	'translate-group-desc-waymarked-trails-help' => "Les pages d'aide des sites web des Chemins balises: http://waymarkedtrails.org/help/about",
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] est un éditeur collaboratif réellement en temps réel',
 );
 
 /** Franco-Provençal (arpetan)
@@ -1622,6 +1624,7 @@ $messages['ko'] = array(
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|위키낱말사전모바일]]은 위키낱말사전 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]]은 [[:meta:Wiki Loves Monuments|Wiki Loves Monuments project]]에 기여하기 위한 모바일 어플리케이션입니다',
 	'translate-group-desc-waymarked-trails-help' => 'Waymarked Trails 웹 사이트의 도움말 페이지입니다: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]]은 실시간 협업 편집기입니다',
 );
 
 /** Colognian (Ripoarisch)
@@ -1813,6 +1816,7 @@ $messages['mk'] = array(
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|ВикиречникМобилен]] е повеќеподложен додаток за мобилни и таблични уреди наменет за читање и уредување на Викиречникот',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|ВикиГиСакаСпомениците - Мобилен]] е мобилен прилог за учествување во проектот „[[:meta:Wiki Loves Monuments|Вики ги сака спомениците]]“',
 	'translate-group-desc-waymarked-trails-help' => "Страниците за помош на порталите на „Означени патеки“ (''Waymarked Trails''): http://waymarkedtrails.org/help/about",
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] е соработен уредувач во живо (сосема)',
 );
 
 /** Malayalam (മലയാളം)
@@ -1879,6 +1883,7 @@ $messages['ms'] = array(
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WikikamusMobile]] merupakan aplikasi merentas platform mudah alih/tablet yang digunakan untuk membaca dan menyumbang kepada Wikikamus',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] merupakan aplikasi mudah alih untuk menyumbang kepada [[:meta:Wiki Loves Monuments|projek Wiki Loves Monuments]]',
 	'translate-group-desc-waymarked-trails-help' => 'Halaman bantuan Waymarked Trails: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] ialah editor kerjasama masa nyata yang sejati',
 );
 
 /** Maltese (Malti)
@@ -2968,7 +2973,7 @@ $messages['vi'] = array(
 	'translate-group-desc-flaggedrevs' => 'Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] cho MediaWiki',
 	'translate-group-desc-readerfeedback' => 'Siêu nhóm thông điệp chứa tất cả các thông điệp dùng cho phần mở rộng MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [http://semantic-mediawiki.org/?uselang=vi MediaWiki Ngữ nghĩa]',
-	'translate-group-desc-translate' => 'Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [http://www.mediawiki.org/wiki/Extension:Translate Translate] cho MediaWiki', # Fuzzy
+	'translate-group-desc-translate' => 'Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [http://www.mediawiki.org/wiki/Extension:Translate Translate] cho MediaWiki; xin vui lòng đọc hiểu [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary?uselang=vi thuật ngữ]',
 	'translate-group-desc-wikiaextensions' => 'Siêu nhóm thông điệp chứa thông điệp của các phần mở rộng MediaWiki được sử dụng tại [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Siêu nhóm thông điệp chứa thông điệp của các phần mở rộng MediaWiki được [http://wikimedia.org/ Quỹ Wikimedia] sử dụng',
 	'translate-group-desc-wikimediaextensions-main' => 'Siêu nhóm thông điệp chứa thông điệp của các phần mở rộng MediaWiki được hỗ trợ cần dịch cho [http://meta.wikimedia.org/wiki/Language_committee?uselang=vi Ủy ban Ngôn ngữ]',
@@ -3012,6 +3017,7 @@ Xem thêm chi tiết tại [[MW:Extension:PDF Writer]] và http://code.pediapres
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] là một ứng dụng đa nền tảng dành cho máy tính di động và bảng để đọc và đóng góp vào Wiktionary.',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Di động]] là một ứng dụng di động cho phép đóng góp vào dự án [[:meta:Wiki Loves Monuments|Wiki Yêu mến Đài tưởng niệm]]',
 	'translate-group-desc-waymarked-trails-help' => 'Các trang trợ giúp của các trang Waymarked Trails: http://waymarkedtrails.org/vi/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] là một trình soạn hợp tác rất tức thời',
 );
 
 /** Yiddish (ייִדיש)

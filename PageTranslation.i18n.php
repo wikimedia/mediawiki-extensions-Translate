@@ -5179,8 +5179,8 @@ Testo della sezione: <pre>$1</pre>',
 	'pt-log-aggregategroup-dissociate' => 'ha {{GENDER:$2|rimosso}} la pagina traducibile [[:$1]] dal gruppo aggregato $3',
 	'pt-movepage-title' => 'Sposta la pagina traducibile $1',
 	'pt-movepage-blockers' => 'Questa pagina da tradurre non è stata spostata a un nuovo nome per {{PLURAL:$1|il seguente errore|i seguenti errori}}:',
-	'pt-movepage-block-base-exists' => 'La pagina base di destinazione [[:$1]] esiste già.', # Fuzzy
-	'pt-movepage-block-base-invalid' => 'La pagina base di destinazione non ha un titolo valido.', # Fuzzy
+	'pt-movepage-block-base-exists' => 'La pagina base di destinazione [[:$1]] esiste già.',
+	'pt-movepage-block-base-invalid' => 'La pagina base di destinazione non ha un titolo valido.',
 	'pt-movepage-block-tp-exists' => 'La pagina di traduzione di destinazione [[:$2]] esiste già.',
 	'pt-movepage-block-tp-invalid' => 'Il titolo di destinazione della pagina di traduzione di [[:$1]] sarebbe invalido (troppo lungo?).',
 	'pt-movepage-block-section-exists' => "La pagina di destinazione dell'elemento di traduzione [[:$2]] esiste già.",
@@ -5229,9 +5229,9 @@ Controlla il [[Special:Log/pagetranslation|registro delle traduzioni di pagine]]
 	'pt-deletepage-full-logreason' => 'Parte della pagina traducibile $1',
 	'pt-deletepage-lang-logreason' => 'Parte della pagina di traduzione $1',
 	'pt-deletepage-started' => 'Controlla il [[Special:Log/pagetranslation|registro delle traduzioni di pagine]] per verificare il messaggio di completamento ed eventuali errori.',
-	'pt-deletepage-intro' => 'Questa pagina speciale ti consente di cancellare del tutto una pagina traducibile o la sua traduzione in una lingua.
-La cancellazione non sarà istantanea, perché molte pagine devono essere cancellate.
-Gli errori sono riportati nel [[Special:Log/pagetranslation|registro delle traduzioni di pagine]] e devono essere corretti a mano.', # Fuzzy
+	'pt-deletepage-intro' => 'Questa pagina speciale ti consente di cancellare del tutto una pagina traducibile o una sua traduzione in una lingua.
+La cancellazione non sarà istantanea, perché anche tutte le pagine che dipendono da quella dovranno essere cancellate.
+Gli errori sono riportati nel [[Special:Log/pagetranslation|registro delle traduzioni di pagine]] e devono essere corretti a mano.',
 );
 
 /** Japanese (日本語)
