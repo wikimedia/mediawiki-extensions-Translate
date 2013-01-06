@@ -238,7 +238,7 @@ added and it states the number of direct children.
 TEXT;
 		$root = <<<TEXT
 When using the tree format, instead of starting from top level start from the
-given message group, which must be aggregate message group.
+given message group, which must be an aggregate message group.
 TEXT;
 		$filter = <<<TEXT
 Only return messages with IDs that match one or more of the input(s) given
@@ -276,15 +276,15 @@ TEXT;
 	 */
 	protected static function getPropertyList() {
 		$properties = array(
-			'id'          => ' id           - Include id of the group',
-			'label'       => ' label        - Include label of the group',
-			'description' => ' description  - Include description of the group',
-			'class'       => ' class        - Include class name of the group',
-			'namespace'   => ' namespace    - Include namespace of the group. Not all groups belong to a single namespace.',
-			'exists'      => ' exists       - Include self-calculated existence property of the group',
-			'icon'        => ' icon         - Include urls to icon of the group',
-			'priority'    => ' priority     - Include priority status like discouraged',
-			'prioritylangs'  => 'prioritylangs - Include prefered languages. If not set, this returns false',
+			'id'             => ' id            - Include id of the group',
+			'label'          => ' label         - Include label of the group',
+			'description'    => ' description   - Include description of the group',
+			'class'          => ' class         - Include class name of the group',
+			'namespace'      => ' namespace     - Include namespace of the group. Not all groups belong to a single namespace.',
+			'exists'         => ' exists        - Include self-calculated existence property of the group',
+			'icon'           => ' icon          - Include urls to icon of the group',
+			'priority'       => ' priority      - Include priority status like discouraged',
+			'prioritylangs'  => ' prioritylangs - Include prefered languages. If not set, this returns false',
 		);
 		wfRunHooks( 'TranslateGetAPIMessageGroupsPropertyDescs', array( &$properties ) );
 		return $properties;
