@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//3Rw\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-06T20:48:59Z",
+      "side": 1,
+      "message": "What returns an error where and why?",
+      "revId": "401f231917770abc22e0d975d3bb31d219198ef2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
