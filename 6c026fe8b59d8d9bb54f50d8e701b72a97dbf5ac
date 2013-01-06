@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//3TI\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-01-06T20:28:10Z",
+      "side": 1,
+      "message": "There\u0027s also the saving warning, that may have to be removed here. Not sure.",
+      "revId": "6c026fe8b59d8d9bb54f50d8e701b72a97dbf5ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//3TQ\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-01-06T20:28:10Z",
+      "side": 1,
+      "message": "We may also need a function that removes them all.",
+      "revId": "6c026fe8b59d8d9bb54f50d8e701b72a97dbf5ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//3TE\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 735,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-01-06T20:28:10Z",
+      "side": 1,
+      "message": "missing \u003e",
+      "revId": "6c026fe8b59d8d9bb54f50d8e701b72a97dbf5ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
