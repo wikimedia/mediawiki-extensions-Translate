@@ -35,7 +35,9 @@
 .tux-message-selector {
 	padding-top: 2em;
 	border-bottom: 1px solid #777;
+	/* @noflip */
 	-webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
+	/* @noflip */
 	box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
 	margin-bottom: 3px !important;
 	font-size: 14px;
