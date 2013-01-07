@@ -121,6 +121,11 @@ class SpecialMagic extends SpecialPage {
 			} elseif ( is_string( $t ) ) {
 				$r = $request->getText( $v, $options[$v] );
 			}
+
+			if ( !isset( $r ) ) {
+				throw new MWException( '$r was not set' );
+			}
+
 			wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults );
 		}
 
