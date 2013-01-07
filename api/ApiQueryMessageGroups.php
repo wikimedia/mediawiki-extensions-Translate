@@ -139,12 +139,12 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 		if ( isset( $props['priority'] ) ) {
 			$priority = MessageGroups::getPriority( $g );
-			$a['priority'] = $priority ?: 'default';
+			$a['priority'] = $priority ? : 'default';
 		}
 
 		if ( isset( $props['prioritylangs'] ) ) {
 			$prioritylangs = TranslateMetadata::get( $g->getId(), 'prioritylangs' );
-			$a['prioritylangs'] = $prioritylangs? explode( ',', $prioritylangs ): false;
+			$a['prioritylangs'] = $prioritylangs ? explode( ',', $prioritylangs ): false;
 		}
 
 		wfRunHooks( 'TranslateProcessAPIMessageGroupsProperties', array( &$a, $props, $params, $g ) );
