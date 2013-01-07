@@ -75,7 +75,7 @@ abstract class TranslationWebService {
 
 			// Try to use the source language when possible.
 			$supported = $this->getSupportedLanguagePairs();
-			if ( isset( $supported[$from][$to] ) ) {
+			if ( isset( $supported[$from][$to] ) && isset( $translations[$from] ) ) {
 				// Delete all the other languages.
 				// Use the unmapped code to avoid double mapping
 				$translations = array( $sourceLanguage => $translations[$from] );
