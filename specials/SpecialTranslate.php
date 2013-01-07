@@ -320,6 +320,7 @@ class SpecialTranslate extends SpecialPage {
 		$this->task = TranslateTasks::getTask( $this->options['task'] );
 
 		if ( $this->group && MessageGroups::isDynamic( $this->group ) ) {
+			// @todo FIXME: There is no MessageGroup::setLanguage().
 			$this->group->setLanguage( $this->options['language'] );
 		}
 	}
