@@ -441,9 +441,9 @@
 			$warnings
 				.removeClass( 'hide' )
 				.append( $( '<div>' )
-				.addClass( 'tux-warning-message hide' )
-				.addClass( type )
-				.html( warning ) );
+					.addClass( 'tux-warning-message hide' )
+					.addClass( type )
+					.html( warning ) );
 
 			warningCount = $warnings.find( '.tux-warning-message' ).length;
 
