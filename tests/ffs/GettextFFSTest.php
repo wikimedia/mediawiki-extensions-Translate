@@ -78,7 +78,7 @@ class GettextFFSTest extends MediaWikiTestCase {
 		);
 
 		$this->assertEquals(
-			substr( sha1( $item1['id'] ), 0, 6) . '-' . $item1['id'],
+			substr( sha1( $item1['id'] ), 0, 6 ) . '-' . $item1['id'],
 			GettextFFS::generateKeyFromItem( $item1, 'simple' )
 		);
 	}

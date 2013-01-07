@@ -15,7 +15,7 @@
  * Rewritten in 2012-06-27.
  * @ingroup TTMServer
  */
-class TTMServer  {
+class TTMServer {
 	protected $config;
 
 	protected function __construct( $config ) {
@@ -28,13 +28,13 @@ class TTMServer  {
 			return new $class( $config );
 		} elseif ( isset( $config['type'] ) ) {
 			$type = $config['type'];
-			switch( $type ) {
-			case 'ttmserver':
-				return new DatabaseTTMServer( $config );
-			case 'remote-ttmserver':
-				return new RemoteTTMServer( $config );
-			default:
-				return null;
+			switch ( $type ) {
+				case 'ttmserver':
+					return new DatabaseTTMServer( $config );
+				case 'remote-ttmserver':
+					return new RemoteTTMServer( $config );
+				default:
+					return null;
 			}
 		}
 
@@ -84,9 +84,15 @@ class TTMServer  {
 	 * @return int
 	 */
 	public static function levenshtein( $str1, $str2, $length1, $length2 ) {
-		if ( $length1 == 0 ) return $length2;
-		if ( $length2 == 0 ) return $length1;
-		if ( $str1 === $str2 ) return 0;
+		if ( $length1 == 0 ) {
+			return $length2;
+		}
+		if ( $length2 == 0 ) {
+			return $length1;
+		}
+		if ( $str1 === $str2 ) {
+			return 0;
+		}
 
 		$bytelength1 = strlen( $str1 );
 		$bytelength2 = strlen( $str2 );
@@ -100,12 +106,12 @@ class TTMServer  {
 		for ( $i = 0; $i < $length1; $i++ ) {
 			$currentRow = array();
 			$currentRow[0] = $i + 1;
-			$c1 = mb_substr( $str1, $i, 1 ) ;
+			$c1 = mb_substr( $str1, $i, 1 );
 			for ( $j = 0; $j < $length2; $j++ ) {
 				$c2 = mb_substr( $str2, $j, 1 );
 				$insertions = $prevRow[$j + 1] + 1;
 				$deletions = $currentRow[$j] + 1;
-				$substitutions = $prevRow[$j] + ( ( $c1 != $c2 ) ? 1:0 );
+				$substitutions = $prevRow[$j] + ( ( $c1 != $c2 ) ? 1 : 0 );
 				$currentRow[] = min( $insertions, $deletions, $substitutions );
 			}
 			$prevRow = $currentRow;

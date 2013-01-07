@@ -8,7 +8,7 @@
  */
 
 /**
-* Implementation of JsSelectToInput class which is extends HTMLTextField.
+ * Implementation of JsSelectToInput class which is extends HTMLTextField.
  */
 class HTMLJsSelectToInputField extends HTMLTextField {
 

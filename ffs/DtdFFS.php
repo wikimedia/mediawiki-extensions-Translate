@@ -84,7 +84,7 @@ class DtdFFS extends SimpleFFS {
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
 
-		$output  = "# Messages for $name ($native)\n";
+		$output = "# Messages for $name ($native)\n";
 		$output .= "# Exported from $wgSitename\n\n";
 
 		return $output;

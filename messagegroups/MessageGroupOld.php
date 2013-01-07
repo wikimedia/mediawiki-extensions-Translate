@@ -21,7 +21,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * Human-readable name of this group
 	 */
-	protected $label  = 'none';
+	protected $label = 'none';
 
 	/**
 	 * @param IContextSource $context
@@ -39,7 +39,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * Group-wide unique id of this group. Used also for sorting.
 	 */
-	protected $id     = 'none';
+	protected $id = 'none';
 
 	/**
 	 * @return string
@@ -57,8 +57,10 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * and look how RecentMessageGroup implements the definitions.
 	 */
 	protected $namespace = NS_MEDIAWIKI;
+
 	/// Get the namespace where all the messages of this group belong.
 	public function getNamespace() { return $this->namespace; }
+
 	/// Set the namespace where all the messages of this group belong.
 	public function setNamespace( $ns ) { $this->namespace = $ns; }
 
@@ -98,9 +100,11 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * gives information about this group to translators.
 	 */
 	protected $description = null;
+
 	public function getDescription( IContextSource $context = null ) {
 		return $this->description;
 	}
+
 	public function setDescription( $value ) { $this->description = $value; }
 
 	public function getIcon() {
@@ -244,6 +248,7 @@ abstract class MessageGroupOld implements MessageGroup {
 
 		return "$path/$file";
 	}
+
 	public function getSourceFilePath( $code ) {
 		return $this->getMessageFileWithPath( $code );
 	}

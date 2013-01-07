@@ -54,7 +54,7 @@ class FlatPhpFFS extends SimpleFFS {
 			$output = "<?php\n";
 		}
 
-		$output  .= $this->doHeader( $collection );
+		$output .= $this->doHeader( $collection );
 
 		$mangler = $this->group->getMangler();
 

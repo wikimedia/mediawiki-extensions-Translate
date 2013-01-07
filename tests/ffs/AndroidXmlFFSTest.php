@@ -26,8 +26,8 @@ class AndroidXmlFFSTest extends MediaWikiTestCase {
 
 	public function testParsing() {
 		$file =
-<<<XML
-<?xml version="1.0" encoding="utf-8"?>
+			<<<XML
+			<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="wpt_voicerec">Voice recording</string>
 	<string name="wpt_stillimage">Picture</string>

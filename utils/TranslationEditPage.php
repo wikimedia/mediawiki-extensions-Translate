@@ -125,7 +125,7 @@ class TranslationEditPage {
 			wfMessage( 'translate-js-next' )->text(),
 			array( 'class' => 'mw-translate-next' )
 		);
-		$skip = Html::element( 'input',	array(
+		$skip = Html::element( 'input', array(
 			'class' => 'mw-translate-skip',
 			'type' => 'button',
 			'value' => wfMessage( 'translate-js-skip' )->text()
@@ -162,9 +162,9 @@ class TranslationEditPage {
 
 		$form = Html::rawElement( 'form', $formParams,
 			implode( "\n", $hidden ) . "\n" .
-			$helpers->getBoxes( $this->suggestions ) . "\n" .
-			Html::rawElement( 'div', array( 'class' => 'mw-translate-inputs' ), "$textarea\n$extraInputs" ) . "\n" .
-			Html::rawElement( 'div', array( 'class' => 'mw-translate-bottom' ), $bottom )
+				$helpers->getBoxes( $this->suggestions ) . "\n" .
+				Html::rawElement( 'div', array( 'class' => 'mw-translate-inputs' ), "$textarea\n$extraInputs" ) . "\n" .
+				Html::rawElement( 'div', array( 'class' => 'mw-translate-bottom' ), $bottom )
 		);
 
 		echo Html::rawElement( 'div', array( 'class' => 'mw-ajax-dialog' ), $form );
@@ -234,10 +234,14 @@ class TranslationEditPage {
 
 	protected function getSupportButton( $title ) {
 		global $wgTranslateSupportUrl;
-		if ( !$wgTranslateSupportUrl ) return '';
+		if ( !$wgTranslateSupportUrl ) {
+			return '';
+		}
 
 		$supportTitle = Title::newFromText( $wgTranslateSupportUrl['page'] );
-		if ( !$supportTitle ) return '';
+		if ( !$supportTitle ) {
+			return '';
+		}
 
 		$supportParams = $wgTranslateSupportUrl['params'];
 		foreach ( $supportParams as &$value ) {
@@ -259,10 +263,14 @@ class TranslationEditPage {
 
 	protected function getPermissionPageButton() {
 		global $wgTranslatePermissionUrl;
-		if ( !$wgTranslatePermissionUrl ) return '';
+		if ( !$wgTranslatePermissionUrl ) {
+			return '';
+		}
 
 		$title = Title::newFromText( $wgTranslatePermissionUrl );
-		if ( !$title ) return '';
+		if ( !$title ) {
+			return '';
+		}
 
 		$button = Html::element(
 			'input',

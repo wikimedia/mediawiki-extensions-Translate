@@ -131,15 +131,15 @@ class TranslatablePage {
 	public function getText() {
 		if ( $this->init === false ) {
 			switch ( $this->source ) {
-			case 'text':
-				break;
-			case 'title':
-				$this->revision = $this->getMarkedTag();
+				case 'text':
+					break;
+				case 'title':
+					$this->revision = $this->getMarkedTag();
 				// @todo FIXME: Needs break;?
-			case 'revision':
-				$rev = Revision::newFromTitle( $this->getTitle(), $this->revision );
-				$this->text = $rev->getText();
-				break;
+				case 'revision':
+					$rev = Revision::newFromTitle( $this->getTitle(), $this->revision );
+					$this->text = $rev->getText();
+					break;
 			}
 		}
 
@@ -244,18 +244,18 @@ class TranslatablePage {
 			}
 
 			// Do-placehold for the whole stuff
-			$ph    = TranslateUtils::getPlaceholder();
+			$ph = TranslateUtils::getPlaceholder();
 			$start = $matches[0][0][1];
-			$len   = strlen( $matches[0][0][0] );
-			$end   = $start + $len;
+			$len = strlen( $matches[0][0][0] );
+			$end = $start + $len;
 			$text = self::index_replace( $text, $ph, $start, $end );
 
 			// Sectionise the contents
 			// Strip the surrounding tags
 			$contents = $matches[0][0][0]; // full match
 			$start = $matches[2][0][1] - $matches[0][0][1]; // bytes before actual content
-			$len   = strlen( $matches[2][0][0] ); // len of the content
-			$end   = $start + $len;
+			$len = strlen( $matches[2][0][0] ); // len of the content
+			$end = $start + $len;
 
 			$sectiontext = substr( $contents, $start, $len );
 
@@ -765,7 +765,9 @@ class TranslatablePage {
 				 */
 				$rev = $this->getTransrev( $key . '/' . $collection->code );
 				foreach ( $markedRevs as $r ) {
-					if ( $rev === $r->rt_revision ) break;
+					if ( $rev === $r->rt_revision ) {
+						break;
+					}
 					$changed = explode( '|', unserialize( $r->rt_value ) );
 
 					// Get a suitable section key

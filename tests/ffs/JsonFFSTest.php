@@ -25,7 +25,7 @@ class JsonFFSTest extends MediaWikiTestCase {
 			),
 			'FILES' => array(
 				'class' => 'JsonFFS',
-				'sourcePattern' =>  __DIR__ . '/../data/jsontest_%CODE%.json',
+				'sourcePattern' => __DIR__ . '/../data/jsontest_%CODE%.json',
 				'targetPattern' => 'jsontest_%CODE%.json',
 			),
 		);
@@ -61,8 +61,8 @@ class JsonFFSTest extends MediaWikiTestCase {
 		$values = array();
 
 		$file1 =
-<<<JSON
-{
+			<<<JSON
+			{
 	"one": "jeden",
 	"two": "dwa",
 	"three": "trzy"
@@ -80,8 +80,8 @@ JSON;
 		);
 
 		$file2 =
-<<<JSON
-{
+			<<<JSON
+			{
 	"@metadata": {
 		"authors": ["Niklas", "Amir"]
 	},
@@ -96,8 +96,8 @@ JSON;
 		);
 
 		$file3 =
-<<<JSON
-<This is not
+			<<<JSON
+			<This is not
 Json!>@£0 file
 JSON;
 

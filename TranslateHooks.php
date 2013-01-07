@@ -23,7 +23,7 @@ class TranslateHooks {
 			define( 'NS_TRANSLATIONS', $wgPageTranslationNamespace );
 			define( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace + 1 );
 		}
-		$list[NS_TRANSLATIONS]      = 'Translations';
+		$list[NS_TRANSLATIONS] = 'Translations';
 		$list[NS_TRANSLATIONS_TALK] = 'Translations_talk';
 		return true;
 	}
@@ -88,7 +88,7 @@ class TranslateHooks {
 				define( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace + 1 );
 			}
 
-			$wgNamespacesWithSubpages[NS_TRANSLATIONS]      = true;
+			$wgNamespacesWithSubpages[NS_TRANSLATIONS] = true;
 			$wgNamespacesWithSubpages[NS_TRANSLATIONS_TALK] = true;
 
 			// Standard protection and register it for filtering
@@ -377,9 +377,13 @@ class TranslateHooks {
 	 */
 	public static function translationDialogMagicWord( Parser $parser, $title = '', $linktext = '' ) {
 		$title = Title::newFromText( $title );
-		if ( !$title ) return '';
+		if ( !$title ) {
+			return '';
+		}
 		$handle = new MessageHandle( $title );
-		if ( !$handle->isValid() ) return '';
+		if ( !$handle->isValid() ) {
+			return '';
+		}
 		$group = $handle->getGroup();
 		$callParams = array( $title->getPrefixedText(), $group->getId() );
 		$call = Xml::encodeJsCall( 'mw.translate.openDialog', $callParams );
@@ -437,12 +441,12 @@ JAVASCRIPT;
 	public static function addConfig( &$vars, $out ) {
 		$request = $out->getRequest();
 		$title = $out->getTitle();
-		list( $alias, $sub ) = SpecialPageFactory::resolveAlias( $title->getText() );
+		list( $alias, ) = SpecialPageFactory::resolveAlias( $title->getText() );
 
 		if ( SpecialTranslate::isBeta( $request )
 			&& $title->isSpecialPage()
-			&& $alias === 'Translate' )
-		{
+			&& $alias === 'Translate'
+		) {
 			global $wgTranslateDocumentationLanguageCode, $wgTranslatePermissionUrl;
 			$vars['TranslateRight'] = $out->getUser()->isAllowed( 'translate' );
 			$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;

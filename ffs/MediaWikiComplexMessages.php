@@ -20,9 +20,9 @@ abstract class ComplexMessages {
 	const LANG_CURRENT  = 2;
 
 	protected $language = null;
-	protected $id       = '__BUG__';
+	protected $id = '__BUG__';
 	protected $variable = '__BUG__';
-	protected $data     = array();
+	protected $data = array();
 	protected $elementsInArray = true;
 	protected $databaseMsg = '__BUG__';
 	protected $chainable = false;
@@ -49,6 +49,7 @@ abstract class ComplexMessages {
 	# Data retrieval
 	#
 	protected $init = false;
+
 	public function getGroups() {
 		if ( !$this->init ) {
 			$saved = $this->getSavedData();
@@ -154,7 +155,7 @@ abstract class ComplexMessages {
 				continue;
 			}
 
-			if ( strpos( $line, '='  ) === false ) {
+			if ( strpos( $line, '=' ) === false ) {
 				continue;
 			}
 
@@ -250,7 +251,7 @@ abstract class ComplexMessages {
 		$subheading[] = '<th>' . wfMessage( 'translate-magic-cm-current' )->escaped() . '</th>';
 		$subheading[] = '<th>' . wfMessage( 'translate-magic-cm-to-be' )->escaped() . '</th>';
 		return '<tr>' . $header . '</tr>' .
-			'<tr>' . implode( "\n", $subheading )  . '</tr>';
+			'<tr>' . implode( "\n", $subheading ) . '</tr>';
 	}
 
 	public function output() {
@@ -354,7 +355,7 @@ abstract class ComplexMessages {
 				// Create final format.
 				$data = implode( ', ', $data );
 				if ( $data !== '' ) {
-					$text .= "$key = $data\n" ;
+					$text .= "$key = $data\n";
 				}
 			}
 		}
@@ -388,7 +389,7 @@ abstract class ComplexMessages {
 	public function validate( &$errors = array(), $filter = false ) {
 		$used = array();
 		foreach ( array_keys( $this->data ) as $group ) {
-			if (  $filter !== false && !in_array( $group, (array) $filter, true ) ) {
+			if ( $filter !== false && !in_array( $group, (array)$filter, true ) ) {
 				continue;
 			}
 
@@ -424,7 +425,7 @@ abstract class ComplexMessages {
 		foreach ( $errors as $_ ) $text .= "#!!# $_\n";
 
 		foreach ( $this->getGroups() as $group => $data ) {
-			if (  $filter !== false && !in_array( $group, (array) $filter, true ) ) {
+			if ( $filter !== false && !in_array( $group, (array)$filter, true ) ) {
 				continue;
 			}
 
@@ -563,7 +564,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 			if ( file_exists( $file ) ) {
 				$this->data[$g->getId()] = array(
 					'label' => $g->getLabel(),
-					'var'  => 'specialPageAliases',
+					'var' => 'specialPageAliases',
 					'file' => $file,
 					'code' => $code,
 				);
@@ -574,7 +575,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 	public function highlight( $key, $values ) {
 		if ( count( $values ) ) {
 			if ( !isset( $values[0] ) ) {
-				throw new MWException( "Something missing from values: " .  print_r( $values, true ) );
+				throw new MWException( "Something missing from values: " . print_r( $values, true ) );
 			}
 
 			$values[0] = "<strong>$values[0]</strong>";
@@ -644,7 +645,7 @@ class MagicWordsCM extends ComplexMessages {
 			if ( file_exists( $file ) ) {
 				$this->data[$g->getId()] = array(
 					'label' => $g->getLabel(),
-					'var'  => 'magicWords',
+					'var' => 'magicWords',
 					'file' => $file,
 					'code' => $code,
 				);
@@ -674,7 +675,7 @@ class NamespaceCM extends ComplexMessages {
 		parent::__construct( $code );
 		$this->data['core'] = array(
 			'label' => 'MediaWiki Core',
-			'var'  => 'namespaceNames',
+			'var' => 'namespaceNames',
 			'file' => Language::getMessagesFileName( '%CODE%' ),
 			'code' => false,
 		);

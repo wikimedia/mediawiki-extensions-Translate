@@ -22,7 +22,9 @@ while ( true ) {
 	while ( !feof( $handle ) ) {
 		$count++;
 		$input = fgets( $handle );
-		if ( $input !== false ) $line = $input;
+		if ( $input !== false ) {
+			$line = $input;
+		}
 	}
 
 	// I don't know why this is needed

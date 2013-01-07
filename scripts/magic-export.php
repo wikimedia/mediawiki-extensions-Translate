@@ -32,7 +32,7 @@ class MagicExport extends Maintenance {
 		$this->target = $this->getOption( 'target' );
 		$this->type = $this->getOption( 'type' );
 
-		switch( $this->type ) {
+		switch ( $this->type ) {
 			case 'special':
 			case 'magic':
 				break;
@@ -65,16 +65,16 @@ class MagicExport extends Maintenance {
 			if ( $group instanceof MediaWikiExtensionMessageGroup ) {
 				$conf = $group->getConfiguration();
 				switch ( $this->type ) {
-				case 'special':
-					if ( isset( $conf['FILES']['aliasFile'] ) ) {
-						$filename = $conf['FILES']['aliasFile'];
-					}
-					break;
-				case 'magic':
-					if ( isset( $conf['FILES']['magicFile'] ) ) {
-						$filename = $conf['FILES']['magicFile'];
-					}
-					break;
+					case 'special':
+						if ( isset( $conf['FILES']['aliasFile'] ) ) {
+							$filename = $conf['FILES']['aliasFile'];
+						}
+						break;
+					case 'magic':
+						if ( isset( $conf['FILES']['magicFile'] ) ) {
+							$filename = $conf['FILES']['magicFile'];
+						}
+						break;
 				}
 			}
 
@@ -85,12 +85,12 @@ class MagicExport extends Maintenance {
 			global $wgTranslateExtensionDirectory;
 			$inFile = "$wgTranslateExtensionDirectory/$filename";
 
-			if ( !file_exists( $inFile ) )  {
+			if ( !file_exists( $inFile ) ) {
 				continue;
 			}
 
 			include( $inFile );
-			switch( $this->type ) {
+			switch ( $this->type ) {
 				case 'special':
 					if ( isset( $aliases ) ) {
 						$this->messagesOld[$group->getId()] = $aliases;
@@ -139,7 +139,7 @@ class MagicExport extends Maintenance {
 	 */
 	protected function writeHeaders() {
 		foreach ( $this->handles as $handle ) {
-			switch( $this->type ) {
+			switch ( $this->type ) {
 				case 'special':
 					fwrite( $handle, <<<PHP
 
@@ -155,7 +155,7 @@ PHP
 \$magicWords = array();
 PHP
 					);
-				break;
+					break;
 			}
 		}
 	}
@@ -197,8 +197,8 @@ PHP
 				$segments = explode( "\n", $data );
 				array_shift( $segments );
 				array_shift( $segments );
-				unset( $segments[count( $segments ) -1] );
-				unset( $segments[count( $segments ) -1] );
+				unset( $segments[count( $segments ) - 1] );
+				unset( $segments[count( $segments ) - 1] );
 				$messagesNew = array();
 				foreach ( $segments as $segment ) {
 					$parts = explode( ' = ', $segment );
@@ -226,7 +226,7 @@ PHP
 				// If there are messages to write, write them.
 				if ( count( $messagesOut ) > 0 ) {
 					$out = '';
-					switch( $this->type ) {
+					switch ( $this->type ) {
 						case 'special':
 							$out .= "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$specialPageAliases['{$l}'] = array(\n";
 							break;
@@ -238,11 +238,11 @@ PHP
 						foreach ( $translations as $id => $translation ) {
 							$translations[$id] = addslashes( $translation );
 							if ( $this->type === 'magic' && $translation == '0' ) {
-									unset( $translations[$id] );
+								unset( $translations[$id] );
 							}
 						}
 						$translations = implode( "', '", $translations );
-						switch( $this->type ) {
+						switch ( $this->type ) {
 							case 'special':
 								$out .= "\t'$key' => array( '$translations' ),\n";
 								break;

@@ -57,7 +57,7 @@ class RubyYamlFFSTest extends MediaWikiTestCase {
 			),
 			array( 'key', '{{PLURAL|zero=0|one=1|two=2|few=3|many=160|other=898}}',
 				array( 'key.zero' => '0', 'key.one' => '1', 'key.two' => '2',
-				       'key.few' => '3', 'key.many' => '160', 'key.other' => '898' )
+					'key.few' => '3', 'key.many' => '160', 'key.other' => '898' )
 			),
 		);
 	}

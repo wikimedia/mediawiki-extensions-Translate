@@ -45,10 +45,10 @@ class MoveJob extends Job {
 		// Initialization
 		$title = $this->title;
 		// Other stuff
-		$user    = $this->getUser();
+		$user = $this->getUser();
 		$summary = $this->getSummary();
-		$target  = $this->getTarget();
-		$base    = $this->params['base-source'];
+		$target = $this->getTarget();
+		$base = $this->params['base-source'];
 
 		PageTranslationHooks::$allowTargetEdit = true;
 		$oldUser = $wgUser;
@@ -79,7 +79,7 @@ class MoveJob extends Job {
 		$count = $cache->decr( $key );
 		$last = strval( $count ) === "0";
 
-		if ( $last )  {
+		if ( $last ) {
 			$cache->delete( $key );
 			$logger = new LogPage( 'pagetranslation' );
 			$params = array(

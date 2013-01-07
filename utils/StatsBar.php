@@ -54,7 +54,7 @@ class StatsBar {
 
 			$wproofread = round( 100 * $proofread / $total, 2 );
 			$wtranslated = round( 100 * ( $translated - $proofread ) / $total, 2 );
-			$wfuzzy = round( 100 * $fuzzy / $total, 2);
+			$wfuzzy = round( 100 * $fuzzy / $total, 2 );
 			$wuntranslated = round( 100 - $wproofread - $wtranslated - $wfuzzy, 2 );
 		}
 
@@ -68,18 +68,15 @@ class StatsBar {
 				'class' => 'tux-proofread',
 				'style' => "width: $wproofread%",
 				'data-proofread' => $proofread,
-			) )
-			. Html::element( 'span', array(
+			) ) . Html::element( 'span', array(
 				'class' => 'tux-translated',
 				'style' => "width: $wtranslated%",
 				'data-translated' => $translated,
-			) )
-			. Html::element( 'span', array(
+			) ) . Html::element( 'span', array(
 				'class' => 'tux-fuzzy',
 				'style' => "width: $wfuzzy%",
 				'data-fuzzy' => $fuzzy,
-			) )
-			. Html::element( 'span', array(
+			) ) . Html::element( 'span', array(
 				'class' => 'tux-untranslated',
 				'style' => "width: $wuntranslated%",
 				'data-untranslated' => $untranslated,

@@ -57,9 +57,7 @@ class TranslateUtils {
 	 * @param int $namespace Namespace number.
 	 * @return string|null The contents or null.
 	 */
-	public static function getMessageContent( $key, $language,
-		$namespace = NS_MEDIAWIKI ) {
-
+	public static function getMessageContent( $key, $language, $namespace = NS_MEDIAWIKI ) {
 		$title = self::title( $key, $language );
 		$data = self::getContents( array( $title ), $namespace );
 
@@ -79,10 +77,10 @@ class TranslateUtils {
 		$rows = $dbr->select( array( 'page', 'revision', 'text' ),
 			array( 'page_title', 'old_text', 'old_flags', 'rev_user_text' ),
 			array(
-				'page_namespace'    => $namespace,
+				'page_namespace' => $namespace,
 				'page_latest=rev_id',
 				'rev_text_id=old_id',
-				'page_title'        => $titles
+				'page_title' => $titles
 			),
 			__METHOD__
 		);
@@ -125,10 +123,10 @@ class TranslateUtils {
 
 		// @todo Raw SQL
 		$sql = "SELECT $fields, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
-		"WHERE rc_timestamp >= '{$cutoff}' " .
-		( $bots ? '' : 'AND rc_bot = 0 ' ) .
-		"AND rc_namespace in ($namespaces) " .
-		"ORDER BY lang ASC, rc_timestamp DESC";
+			"WHERE rc_timestamp >= '{$cutoff}' " .
+			( $bots ? '' : 'AND rc_bot = 0 ' ) .
+			"AND rc_namespace in ($namespaces) " .
+			"ORDER BY lang ASC, rc_timestamp DESC";
 
 		$res = $dbr->query( $sql, __METHOD__ );
 		$rows = iterator_to_array( $res );
@@ -146,7 +144,7 @@ class TranslateUtils {
 	 */
 	public static function getLanguageName( $code, $native = false, $language = 'en' ) {
 		if ( !$native && is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
-			$languages = LanguageNames::getNames( $language ,
+			$languages = LanguageNames::getNames( $language,
 				LanguageNames::FALLBACK_NORMAL,
 				LanguageNames::LIST_MW_AND_CLDR
 			);
@@ -253,7 +251,7 @@ class TranslateUtils {
 		$normkey = self::normaliseKey( $namespace, $key );
 
 		if ( isset( $mi[$normkey] ) ) {
-			return (array) $mi[$normkey];
+			return (array)$mi[$normkey];
 		} else {
 			return array();
 		}
@@ -267,7 +265,7 @@ class TranslateUtils {
 	 */
 	public static function normaliseKey( $namespace, $key ) {
 		$key = lcfirst( $key );
-		return strtr( "$namespace:$key", " ", "_"  );
+		return strtr( "$namespace:$key", " ", "_" );
 	}
 
 	/**

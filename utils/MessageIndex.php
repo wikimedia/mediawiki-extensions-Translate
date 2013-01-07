@@ -46,7 +46,7 @@ abstract class MessageIndex {
 
 		$value = self::singleton()->get( $normkey );
 		if ( $value !== null ) {
-			return (array) $value;
+			return (array)$value;
 		} else {
 			return array();
 		}
@@ -80,6 +80,7 @@ abstract class MessageIndex {
 
 	/// @return array
 	abstract public function retrieve();
+
 	abstract protected function store( array $array );
 
 	public function rebuild() {
@@ -136,25 +137,25 @@ abstract class MessageIndex {
 		foreach ( $new as $key => $groups ) {
 			// Using != here on purpose to ignore order of items
 			if ( !isset( $old[$key] ) ) {
-				$changes[$key] = array( array(), (array) $groups );
+				$changes[$key] = array( array(), (array)$groups );
 			} elseif ( $groups != $old[$key] ) {
-				$changes[$key] = array( (array) $old[$key], (array) $groups );
+				$changes[$key] = array( (array)$old[$key], (array)$groups );
 			}
 		}
 
 		foreach ( $old as $key => $groups ) {
 			if ( !isset( $new[$key] ) ) {
-				$changes[$key] = array( (array) $groups, array() );
+				$changes[$key] = array( (array)$groups, array() );
 			}
 			// We already checked for diffs above
 		}
 
 		$changedGroups = array();
 		foreach ( $changes as $data ) {
-			foreach( $data[0] as $group ) {
+			foreach ( $data[0] as $group ) {
 				$changedGroups[$group] = true;
 			}
-			foreach( $data[1] as $group ) {
+			foreach ( $data[1] as $group ) {
 				$changedGroups[$group] = true;
 			}
 		}
@@ -208,17 +209,17 @@ abstract class MessageIndex {
 
 				if ( is_array( $hugearray[$key] ) ) {
 					// Hard work is already done, just add a new reference
-					$hugearray[$key][] = &$id;
+					$hugearray[$key][] = & $id;
 				} else {
 					// Store the actual reference, then remove it from array, to not
 					// replace the references value, but to store a array of new
 					// references instead. References are hard!
-					$value = &$hugearray[$key];
+					$value = & $hugearray[$key];
 					unset( $hugearray[$key] );
 					$hugearray[$key] = array( &$value, &$id );
 				}
 			} else {
-				$hugearray[$key] = &$id;
+				$hugearray[$key] = & $id;
 			}
 		}
 		unset( $id ); // Disconnect the previous references to this $id
@@ -289,8 +290,10 @@ class SerializedMessageIndex extends MessageIndex {
 		wfProfileOut( __METHOD__ );
 	}
 }
+
 /// BC
-class FileCachedMessageIndex extends SerializedMessageIndex {}
+class FileCachedMessageIndex extends SerializedMessageIndex {
+}
 
 /**
  * Storage on the database itself.

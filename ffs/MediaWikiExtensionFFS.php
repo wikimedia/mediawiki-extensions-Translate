@@ -149,7 +149,7 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 		}
 
 		// And putting all together
-		$name = TranslateUtils::getLanguageName( $code  );
+		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
 
 		$section = <<<PHP
@@ -163,7 +163,7 @@ PHP;
 		$cache['sections'][$code] = $section;
 
 		// Make a copy we can alter
-		$sections =  $cache['sections'];
+		$sections = $cache['sections'];
 		$priority = array();
 
 		global $wgTranslateDocumentationLanguageCode;

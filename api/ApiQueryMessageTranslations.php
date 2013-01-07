@@ -43,7 +43,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 			),
 			__METHOD__,
 			array(
-				'ORDER BY'  => 'page_title',
+				'ORDER BY' => 'page_title',
 				'USE INDEX' => 'name_title',
 			)
 		);

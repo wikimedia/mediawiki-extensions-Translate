@@ -47,7 +47,7 @@ class TPSection {
 	 * @return \string Wikitext.
 	 */
 	public function getMarkedText() {
-		$id = isset( $this->name ) ? $this->name : $this->id;
+		$id     = isset( $this->name ) ? $this->name : $this->id;
 		$header = "<!--T:{$id}-->";
 		$re     = '~^(=+.*?=+\s*?$)~m';
 		$rep    = "\\1 $header";

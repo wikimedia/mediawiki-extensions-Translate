@@ -18,7 +18,7 @@ class AndroidXmlFFS extends SimpleFFS {
 
 		$messages = array();
 		foreach ( $reader->string as $string ) {
-			$messages[(string) $string['name']] = (string) $string;
+			$messages[(string)$string['name']] = (string)$string;
 		}
 
 		return array(

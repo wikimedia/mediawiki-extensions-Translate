@@ -21,7 +21,7 @@ class MessageGroupStats {
 	const TABLE = 'translate_groupstats';
 
 	const TOTAL = 0; ///< Array index
-	const TRANSLATED = 1;  ///< Array index
+	const TRANSLATED = 1; ///< Array index
 	const FUZZY = 2; ///< Array index
 	const PROOFREAD = 3; ///< Array index
 
@@ -150,7 +150,9 @@ class MessageGroupStats {
 	}
 
 	public static function clearGroup( $id ) {
-		if ( !count( $id ) ) return;
+		if ( !count( $id ) ) {
+			return;
+		}
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array( 'tgs_group' => $id );
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
@@ -158,7 +160,9 @@ class MessageGroupStats {
 	}
 
 	public static function clearLanguage( $code ) {
-		if ( !count( $code ) ) return;
+		if ( !count( $code ) ) {
+			return;
+		}
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array( 'tgs_lang' => $code );
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
@@ -219,7 +223,9 @@ class MessageGroupStats {
 
 		$groups = MessageGroups::singleton()->getGroups();
 		foreach ( $groups as $id => $group ) {
-			if ( isset( $stats[$id][$code] ) ) continue;
+			if ( isset( $stats[$id][$code] ) ) {
+				continue;
+			}
 			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code );
 		}
 		return $stats;
@@ -248,7 +254,9 @@ class MessageGroupStats {
 		// This is for calculating things in correct order
 		sort( $languages );
 		foreach ( $languages as $code ) {
-			if ( isset( $stats[$id][$code] ) ) continue;
+			if ( isset( $stats[$id][$code] ) ) {
+				continue;
+			}
 			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code );
 		}
 

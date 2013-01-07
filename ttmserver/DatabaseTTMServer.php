@@ -30,7 +30,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 			return false;
 		}
 
-		$mkey  = $handle->getKey();
+		$mkey = $handle->getKey();
 		$group = $handle->getGroup();
 		$targetLanguage = $handle->getCode();
 		$sourceLanguage = $group->getSourceLanguage();
@@ -168,7 +168,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 	public function batchInsertTranslations( array $batch ) {
 		$rows = array();
 		foreach ( $batch as $key => $data ) {
-			list( $title, $language, $text ) = $data;
+			list( , $language, $text ) = $data;
 			$rows[] = array(
 				'tmt_sid' => $this->sids[$key],
 				'tmt_lang' => $language,
@@ -223,7 +223,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		$fulltext = $this->filterForFulltext( $sourceLanguage, $text );
 		if ( $fulltext ) {
 			$tables[] = 'translate_tmf';
-			$list = implode( ' ',  $fulltext );
+			$list = implode( ' ', $fulltext );
 			$conds[] = 'tmf_sid = tmt_sid';
 			$conds[] = "MATCH(tmf_text) AGAINST( '$list' )";
 		}

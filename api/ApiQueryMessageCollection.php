@@ -75,8 +75,8 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$props = array_flip( $params['prop'] );
 		foreach ( $messages->keys() as $mkey => $title ) {
 			if ( ++$count > $params['limit'] ) {
-					$this->setContinueEnumParameter( 'offset', $params['offset'] + $count - 1 );
-					break;
+				$this->setContinueEnumParameter( 'offset', $params['offset'] + $count - 1 );
+				break;
 			}
 
 			if ( is_null( $resultPageSet ) ) {

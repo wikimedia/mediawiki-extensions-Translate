@@ -60,10 +60,14 @@ class SpecialImportTranslations extends SpecialPage {
 			 */
 			$file = null;
 			$msg = $this->loadFile( $file );
-			if ( $this->checkError( $msg ) ) return;
+			if ( $this->checkError( $msg ) ) {
+				return;
+			}
 
 			$msg = $this->parseFile( $file );
-			if ( $this->checkError( $msg ) ) return;
+			if ( $this->checkError( $msg ) ) {
+				return;
+			}
 
 			$data = $msg[1];
 			$this->setCachedData( $data );
@@ -73,7 +77,7 @@ class SpecialImportTranslations extends SpecialPage {
 		$group = $data['METADATA']['group'];
 		$code = $data['METADATA']['code'];
 
-		if ( !MessageGroups::exists( $group )  ) {
+		if ( !MessageGroups::exists( $group ) ) {
 			$errorWrap = "<div class='error'>\n$1\n</div>";
 			$this->getOutput()->wrapWikiMsg( $errorWrap, 'translate-import-err-stale-group' );
 			return;
@@ -121,11 +125,11 @@ class SpecialImportTranslations extends SpecialPage {
 				'enctype' => 'multipart/form-data',
 				'id' => 'mw-translate-import',
 			) ) .
-			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
-			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Xml::openElement( 'table' ) .
-			Xml::openElement( 'tr' ) .
-			Xml::openElement( 'td' )
+				Html::hidden( 'token', $this->getUser()->getEditToken() ) .
+				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+				Xml::openElement( 'table' ) .
+				Xml::openElement( 'tr' ) .
+				Xml::openElement( 'td' )
 		);
 
 		$class = array( 'class' => 'mw-translate-import-inputs' );
@@ -134,35 +138,35 @@ class SpecialImportTranslations extends SpecialPage {
 			Xml::radioLabel( $this->msg( 'translate-import-from-url' )->text(),
 				'upload-type', 'url', 'mw-translate-up-url',
 				$this->getRequest()->getText( 'upload-type' ) === 'url' ) .
-			"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
-			Xml::input( 'upload-url', 50,
-				$this->getRequest()->getText( 'upload-url' ),
-				array( 'id' => 'mw-translate-up-url-input' ) + $class ) .
-			"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
-			Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n"
+				"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
+				Xml::input( 'upload-url', 50,
+					$this->getRequest()->getText( 'upload-url' ),
+					array( 'id' => 'mw-translate-up-url-input' ) + $class ) .
+				"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
+				Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n"
 		);
 
 		$this->getOutput()->addHTML(
 			Xml::radioLabel( $this->msg( 'translate-import-from-wiki' )->text(),
 				'upload-type', 'wiki', 'mw-translate-up-wiki',
 				$this->getRequest()->getText( 'upload-type' ) === 'wiki' ) .
-			"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
-			Xml::input( 'upload-wiki', 50,
-				$this->getRequest()->getText( 'upload-wiki', 'File:' ),
-				array( 'id' => 'mw-translate-up-wiki-input' ) + $class ) .
-			"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
-			Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n" .
-			Xml::radioLabel( $this->msg( 'translate-import-from-local' )->text(),
-				'upload-type', 'local', 'mw-translate-up-local',
-				$this->getRequest()->getText( 'upload-type' ) === 'local' ) .
-			"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
-			Xml::input( 'upload-local', 50,
-				$this->getRequest()->getText( 'upload-local' ),
-				array( 'type' => 'file', 'id' => 'mw-translate-up-local-input' ) + $class ) .
-			"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
-			Xml::closeElement( 'table' ) .
-			Xml::submitButton( $this->msg( 'translate-import-load' )->text() ) .
-			Xml::closeElement( 'form' )
+				"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
+				Xml::input( 'upload-wiki', 50,
+					$this->getRequest()->getText( 'upload-wiki', 'File:' ),
+					array( 'id' => 'mw-translate-up-wiki-input' ) + $class ) .
+				"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
+				Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n" .
+				Xml::radioLabel( $this->msg( 'translate-import-from-local' )->text(),
+					'upload-type', 'local', 'mw-translate-up-local',
+					$this->getRequest()->getText( 'upload-type' ) === 'local' ) .
+				"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
+				Xml::input( 'upload-local', 50,
+					$this->getRequest()->getText( 'upload-local' ),
+					array( 'type' => 'file', 'id' => 'mw-translate-up-local-input' ) + $class ) .
+				"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
+				Xml::closeElement( 'table' ) .
+				Xml::submitButton( $this->msg( 'translate-import-load' )->text() ) .
+				Xml::closeElement( 'form' )
 		);
 	}
 
@@ -176,7 +180,7 @@ class SpecialImportTranslations extends SpecialPage {
 
 		if ( $source === 'url' ) {
 			$url = $this->getRequest()->getText( 'upload-url' );
-			$filedata = Http::get( $url ); ;
+			$filedata = Http::get( $url );
 			if ( $filedata ) {
 				return array( 'ok' );
 			} else {
@@ -232,7 +236,7 @@ class SpecialImportTranslations extends SpecialPage {
 			),
 			'BASIC' => array(
 				'class' => 'FileBasedMessageGroup',
-				'namespace' => - 1,
+				'namespace' => -1,
 			)
 		) );
 

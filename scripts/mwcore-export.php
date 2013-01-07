@@ -24,7 +24,7 @@ Options:
   --lang        Comma separated list of language codes or *
   --type        namespace, special or magic
 EOT
-);
+	);
 	exit( 1 );
 }
 

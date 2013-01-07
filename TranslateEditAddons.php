@@ -136,8 +136,8 @@ class TranslateEditAddons {
 		$ns = $handle->getTitle()->getNamespace();
 		$code = $handle->getCode();
 
-		if ( isset( $keys[$match -1] ) ) {
-			$mkey = $keys[$match -1];
+		if ( isset( $keys[$match - 1] ) ) {
+			$mkey = $keys[$match - 1];
 			$prev = Title::makeTitleSafe( $ns, "$mkey/$code" );
 		}
 		if ( isset( $keys[$match + 1] ) ) {
@@ -206,13 +206,13 @@ class TranslateEditAddons {
 			$name = TranslateUtils::getLanguageName( $handle->getCode(), false, $langCode );
 			$accessKey = $context->msg( 'accesskey-save' )->plain();
 			$temp = array(
-				'id'        => 'wpSave',
-				'name'      => 'wpSave',
-				'type'      => 'submit',
-				'tabindex'  => ++$tabindex,
-				'value'     => $context->msg( 'translate-save', $name )->text(),
+				'id' => 'wpSave',
+				'name' => 'wpSave',
+				'type' => 'submit',
+				'tabindex' => ++$tabindex,
+				'value' => $context->msg( 'translate-save', $name )->text(),
 				'accesskey' => $accessKey,
-				'title'     => $context->msg( 'tooltip-save' )->text() . ' [' . $accessKey . ']',
+				'title' => $context->msg( 'tooltip-save' )->text() . ' [' . $accessKey . ']',
 			);
 			$buttons['save'] = Xml::element( 'input', $temp, '' );
 		}
@@ -233,14 +233,14 @@ class TranslateEditAddons {
 		}
 
 		$temp = array(
-			'id'        => 'wpSupport',
-			'name'      => 'wpSupport',
-			'type'      => 'button',
-			'tabindex'  => ++$tabindex,
-			'value'     => $context->msg( 'translate-js-support' )->text(),
-			'title'     => $context->msg( 'translate-js-support-title' )->text(),
+			'id' => 'wpSupport',
+			'name' => 'wpSupport',
+			'type' => 'button',
+			'tabindex' => ++$tabindex,
+			'value' => $context->msg( 'translate-js-support' )->text(),
+			'title' => $context->msg( 'translate-js-support-title' )->text(),
 			'data-load-url' => $supportTitle->getLocalUrl( $supportParams ),
-			'onclick'   => "window.open( jQuery(this).attr('data-load-url') );",
+			'onclick' => "window.open( jQuery(this).attr('data-load-url') );",
 		);
 		$buttons['ask'] = Html::element( 'input', $temp, '' );
 
@@ -258,7 +258,7 @@ class TranslateEditAddons {
 		$groupId = $request->getText( 'loadgroup', '' );
 		$th = new TranslationHelpers( $editpage->mTitle, $groupId );
 		if ( $editpage->firsttime && !$request->getCheck( 'oldid' ) && !$request->getCheck( 'undo' ) ) {
-			$editpage->textbox1 = (string) $th->getTranslation();
+			$editpage->textbox1 = (string)$th->getTranslation();
 		} else {
 			$th->setTranslation( $editpage->textbox1 );
 		}
@@ -323,7 +323,7 @@ class TranslateEditAddons {
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
 	 */
 	public static function onSave( $wikiPage, $user, $content, $summary,
-			$minor, $_, $_, $flags, $revision
+		$minor, $_, $_, $flags, $revision
 	) {
 
 		if ( $content instanceof TextContent ) {
@@ -498,7 +498,7 @@ class TranslateEditAddons {
 		$de->loadNewText();
 		$out->setRevisionId( $de->mNewRev->getId() );
 
-		$th = new TranslationHelpers( $title, /*group*/false );
+		$th = new TranslationHelpers( $title, /*group*/ false );
 		$th->setEditMode( false );
 
 		if ( isset( $de->mNewContent ) && $de->mNewContent instanceof TextContent ) {

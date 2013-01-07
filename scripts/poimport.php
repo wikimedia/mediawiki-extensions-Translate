@@ -23,7 +23,7 @@ Options:
   --really    Does not do anything unless this is specified.
 
 EOT
-);
+	);
 	exit( 1 );
 }
 
@@ -152,7 +152,7 @@ class PoImporter {
 				$translation = TRANSLATE_FUZZY . $translation;
 			}
 
-			$oldtranslation = (string) $contents[$key]->translation();
+			$oldtranslation = (string)$contents[$key]->translation();
 
 			if ( $translation !== $oldtranslation ) {
 				if ( $translation === '' ) {

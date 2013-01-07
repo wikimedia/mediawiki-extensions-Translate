@@ -2,12 +2,12 @@
 	'use strict';
 
 	$( 'document' ).ready( function () {
-		$( '.mw-translate-messagereviewbutton' ).click( function() {
+		$( '.mw-translate-messagereviewbutton' ).click( function () {
 			var $b, successFunction, failFunction, params;
 			$b = $( this );
 
 			// TODO Avoid creating functions inside a loop
-			successFunction = function( data ) {
+			successFunction = function ( data ) {
 				if ( data.error ) {
 					var reason = mw.msg( 'api-error-' + data.error.code );
 					$b.val( mw.msg( 'translate-messagereview-failure', reason ) );
@@ -16,7 +16,7 @@
 				}
 			};
 
-			failFunction = function( jqXHR ) {
+			failFunction = function ( jqXHR ) {
 				$b.val( mw.msg( 'translate-messagereview-failure', jqXHR.statusText ) );
 			};
 

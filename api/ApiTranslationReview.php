@@ -30,23 +30,23 @@ class ApiTranslationReview extends ApiBase {
 
 		$error = self::getReviewBlockers( $this->getUser(), $revision );
 		switch ( $error ) {
-		case '':
-			// Everything is okay
-			break;
-		case 'permissiondenied':
-			$this->dieUsage( 'Permission denied', $error );
-			break; // Unreachable, but throws off code analyzer.
-		case 'unknownmessage':
-			$this->dieUsage( 'Unknown message', $error );
-			break; // Unreachable, but throws off code analyzer.
-		case 'owntranslation':
-			$this->dieUsage( 'Cannot review own translations', $error );
-			break; // Unreachable, but throws off code analyzer.
-		case 'fuzzymessage':
-			$this->dieUsage( 'Cannot review fuzzy translations', $error );
-			break; // Unreachable, but throws off code analyzer.
-		default:
-			$this->dieUsage( 'Unknown error', $error );
+			case '':
+				// Everything is okay
+				break;
+			case 'permissiondenied':
+				$this->dieUsage( 'Permission denied', $error );
+				break; // Unreachable, but throws off code analyzer.
+			case 'unknownmessage':
+				$this->dieUsage( 'Unknown message', $error );
+				break; // Unreachable, but throws off code analyzer.
+			case 'owntranslation':
+				$this->dieUsage( 'Cannot review own translations', $error );
+				break; // Unreachable, but throws off code analyzer.
+			case 'fuzzymessage':
+				$this->dieUsage( 'Cannot review fuzzy translations', $error );
+				break; // Unreachable, but throws off code analyzer.
+			default:
+				$this->dieUsage( 'Unknown error', $error );
 		}
 
 		$ok = self::doReview( $this->getUser(), $revision );

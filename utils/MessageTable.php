@@ -124,7 +124,7 @@ class MessageTable {
 
 	public function header() {
 		$tableheader = Xml::openElement( 'table', array(
-			'class'   => 'mw-sp-translate-table'
+			'class' => 'mw-sp-translate-table'
 		) );
 
 		if ( $this->reviewMode ) {
@@ -158,7 +158,7 @@ class MessageTable {
 		$targetLang = Language::factory( $this->collection->getLanguage() );
 		$titleMap = $this->collection->keys();
 
-		$output =  '';
+		$output = '';
 
 		$this->collection->initMessages(); // Just to be sure
 		/**
@@ -219,8 +219,9 @@ class MessageTable {
 			if ( $this->reviewMode ) {
 				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
 					Xml::tags( 'td', array( 'rowspan' => '2' ), $leftColumn ) .
-					Xml::tags( 'td', self::getLanguageAttributes( $sourceLang ),
-						TranslateUtils::convertWhiteSpaceToHTML( $original ) )
+						Xml::tags( 'td', self::getLanguageAttributes( $sourceLang ),
+							TranslateUtils::convertWhiteSpaceToHTML( $original )
+						)
 				);
 
 				$output .= Xml::tags( 'tr', null,
@@ -229,7 +230,7 @@ class MessageTable {
 			} else {
 				$output .= Xml::tags( 'tr', array( 'class' => 'def' ),
 					Xml::tags( 'td', null, $leftColumn ) .
-					Xml::tags( 'td', $tqeData, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
+						Xml::tags( 'td', $tqeData, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			}
 
@@ -287,7 +288,7 @@ class MessageTable {
 			'name' => 'acceptbutton-' . $revision, // Otherwise Firefox disables buttons on page load
 		);
 
-		$reviewers = (array) $message->getProperty( 'reviewers' );
+		$reviewers = (array)$message->getProperty( 'reviewers' );
 		if ( in_array( $wgUser->getId(), $reviewers ) ) {
 			$attribs['value'] = wfMessage( 'translate-messagereview-done' )->text();
 			$attribs['disabled'] = 'disabled';
@@ -318,7 +319,7 @@ class MessageTable {
 			return '';
 		}
 
-		$reviewers = (array) $message->getProperty( 'reviewers' );
+		$reviewers = (array)$message->getProperty( 'reviewers' );
 		$count = count( $reviewers );
 		if ( $count === 0 ) {
 			return '';

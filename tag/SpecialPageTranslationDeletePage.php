@@ -92,11 +92,14 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$subactionText = $request->getText( 'subaction' );
 		switch ( $subactionText ) {
 			case $this->msg( 'pt-deletepage-action-check' )->text():
-				$subaction = 'check'; break;
+				$subaction = 'check';
+				break;
 			case $this->msg( 'pt-deletepage-action-perform' )->text():
-				$subaction = 'perform'; break;
+				$subaction = 'perform';
+				break;
 			case $this->msg( 'pt-deletepage-action-other' )->text():
-				$subaction = ''; break;
+				$subaction = '';
+				break;
 			default:
 				$subaction = '';
 		}
@@ -180,7 +183,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	 * @param string|bool $text Text of the value attribute. Default false.
 	 * @param array $attribs Extra attributes. Default empty array.
 	 */
-	protected function addInputLabel( &$form, $label, $name, $size = false , $text = false, $attribs = array() ) {
+	protected function addInputLabel( &$form, $label, $name, $size = false, $text = false, $attribs = array() ) {
 		$br = Html::element( 'br' );
 		list( $label, $input ) = Xml::inputLabelSep( $label, $name, $name, $size, $text, $attribs );
 		$form[] = $label . $br;
@@ -220,8 +223,14 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-other' );
 		$subpages = $this->getSubpages();
 		foreach ( $subpages as $old ) {
-			if ( TranslatablePage::isTranslationPage( $old ) ) continue;
-			if ( $this->doSubpages ) { $count++; }
+			if ( TranslatablePage::isTranslationPage( $old ) ) {
+				continue;
+			}
+
+			if ( $this->doSubpages ) {
+				$count++;
+			}
+
 			$this->printChangeLine( $old, $this->doSubpages );
 		}
 
@@ -229,7 +238,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$out->addWikiMsg( 'pt-deletepage-list-count', $this->getLanguage()->formatNum( $count ) );
 
 		$br = Html::element( 'br' );
-		$readonly =  array( 'readonly' => 'readonly' );
+		$readonly = array( 'readonly' => 'readonly' );
 
 		$subaction = array( 'name' => 'subaction' );
 		$formParams = array( 'method' => 'post', 'action' => $this->getTitle( $this->text )->getLocalURL() );
@@ -318,14 +327,14 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$groups = MessageGroups::getAllGroups();
 		foreach ( $groups as $group ) {
 			if ( $group instanceof AggregateMessageGroup ) {
-				$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' ) ;
+				$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' );
 				if ( $subgroups !== false ) {
 					$subgroups = explode( ',', $subgroups );
 					$subgroups = array_flip( $subgroups );
 					if ( isset( $subgroups[$groupId] ) ) {
 						unset( $subgroups[$groupId] );
 						$subgroups = array_flip( $subgroups );
-						TranslateMetadata::set( $group->getId(), 'subgroups', implode( ',', $subgroups ) ) ;
+						TranslateMetadata::set( $group->getId(), 'subgroups', implode( ',', $subgroups ) );
 					}
 				}
 			}

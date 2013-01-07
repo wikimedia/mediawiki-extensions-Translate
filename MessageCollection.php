@@ -219,7 +219,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @throws MWException If invalid $mode given.
 	 */
 	public function addCollectionAuthors( $authors, $mode = 'append' ) {
-		switch( $mode ) {
+		switch ( $mode ) {
 			case 'append':
 				$authors = array_merge( $this->authors, $authors );
 				break;
@@ -236,7 +236,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * Call this to load list of reviewers for each message.
 	 * Can be accessed from TMessage::getReviewers().
 	 */
-	public function setReviewMode( $value = true  ) {
+	public function setReviewMode( $value = true ) {
 		$this->reviewMode = $value;
 	}
 
@@ -263,14 +263,14 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param string $code
 	 */
 	public function resetForNewLanguage( $code ) {
-		$this->code     = $code;
-		$this->keys     = $this->fixKeys();
-		$this->dbInfo   = null;
-		$this->dbData   = null;
+		$this->code = $code;
+		$this->keys = $this->fixKeys();
+		$this->dbInfo = null;
+		$this->dbData = null;
 		$this->dbReviewData = null;
 		$this->messages = null;
-		$this->infile   = array();
-		$this->authors  = array();
+		$this->infile = array();
+		$this->authors = array();
 
 		unset( $this->tags['fuzzy'] );
 		$this->reverseMap = null;
@@ -597,12 +597,12 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$dbr = wfGetDB( $dbtype );
 		$tables = array( 'page', 'revtag' );
 		$fields = array( 'page_namespace', 'page_title', 'rt_type' );
-		$conds  = $this->getTitleConds( $dbr );
-		$joins  = array( 'revtag' =>
-			array(
-				'LEFT JOIN',
-				array( 'page_id=rt_page', 'page_latest=rt_revision', 'rt_type' => RevTag::getType( 'fuzzy' ) )
-			)
+		$conds = $this->getTitleConds( $dbr );
+		$joins = array( 'revtag' =>
+		array(
+			'LEFT JOIN',
+			array( 'page_id=rt_page', 'page_latest=rt_revision', 'rt_type' => RevTag::getType( 'fuzzy' ) )
+		)
 		);
 
 		$this->dbInfo = $dbr->select( $tables, $fields, $conds, __METHOD__, array(), $joins );
@@ -627,12 +627,12 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$dbr = wfGetDB( $dbtype );
 		$tables = array( 'page', 'translate_reviews' );
 		$fields = array( 'page_namespace', 'page_title', 'trr_user' );
-		$conds  = $this->getTitleConds( $dbr );
-		$joins  = array( 'translate_reviews' =>
-			array(
-				'JOIN',
-				array( 'page_id=trr_page', 'page_latest=trr_revision' )
-			)
+		$conds = $this->getTitleConds( $dbr );
+		$joins = array( 'translate_reviews' =>
+		array(
+			'JOIN',
+			array( 'page_id=trr_page', 'page_latest=trr_revision' )
+		)
 		);
 
 		$this->dbReviewData = $dbr->select( $tables, $fields, $conds, __METHOD__, array(), $joins );
@@ -658,7 +658,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		$tables = array( 'page', 'revision', 'text' );
 		$fields = array( 'page_namespace', 'page_title', 'page_latest', 'rev_user', 'rev_user_text', 'old_flags', 'old_text' );
-		$conds  = array(
+		$conds = array(
 			'page_latest = rev_id',
 			'old_id = rev_text_id',
 		);
@@ -838,6 +838,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	public function offsetUnset( $offset ) {
 		unset( $this->keys[$offset] );
 	}
+
 	/** @} */
 
 	/**
@@ -852,6 +853,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	public function __set( $name, $value ) {
 		throw new MWException( __METHOD__ . ": Trying to modify unknown property $name" );
 	}
+
 	/** @} */
 
 	/**

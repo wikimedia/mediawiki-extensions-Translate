@@ -97,7 +97,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$linkInfo['stats']['msg'] = $this->msg( 'languagestats' )->escaped();
 
 		foreach ( array_keys( $natives ) as $code ) {
-			if ( !isset( $users[$code] ) ) continue;
+			if ( !isset( $users[$code] ) ) {
+				continue;
+			}
 
 			// If CLDR is installed, add localised header and link title.
 			if ( $cldrInstalled ) {
@@ -241,12 +243,14 @@ class SpecialSupportedLanguages extends SpecialPage {
 			$text = $rev->getText();
 			$code = strtolower( preg_replace( '!/translators$!', '', $row->page_title ) );
 
-			preg_match_all( '!{{[Uu]ser\|([^}|]+)!', $text, $matches,  PREG_SET_ORDER );
+			preg_match_all( '!{{[Uu]ser\|([^}|]+)!', $text, $matches, PREG_SET_ORDER );
 			foreach ( $matches as $match ) {
 				$user = Title::capitalize( $match[1], NS_USER );
 				$lb->add( NS_USER, $user );
 				$lb->add( NS_USER_TALK, $user );
-				if ( !isset( $users[$code] ) ) $users[$code] = array();
+				if ( !isset( $users[$code] ) ) {
+					$users[$code] = array();
+				}
 				$users[$code][strtr( $user, '_', ' ' )] = -1;
 			}
 		}
@@ -294,7 +298,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 			$attribs = array();
 			$styles = array();
 			if ( isset( $editcounts[$username] ) ) {
-				if ( $count === -1 ) $count = $editcounts[$username];
+				if ( $count === -1 ) {
+					$count = $editcounts[$username];
+				}
 
 				$styles['font-size'] = round( log( $count, 10 ) * 30 ) + 70 . '%';
 
@@ -309,13 +315,15 @@ class SpecialSupportedLanguages extends SpecialPage {
 			}
 
 			$stylestr = $this->formatStyle( $styles );
-			if ( $stylestr ) $attribs['style'] = $stylestr;
+			if ( $stylestr ) {
+				$attribs['style'] = $stylestr;
+			}
 
 			$links[] = Linker::link( $title, $enc, $attribs );
 		}
 
 		$linkList = $this->getLanguage()->listToText( $links );
-		$html  = "<p class='mw-translate-spsl-translators'>";
+		$html = "<p class='mw-translate-spsl-translators'>";
 		$html .= $this->msg( 'supportedlanguages-translators', $linkList, count( $links ) )->text();
 		$html .= "</p>\n";
 		$this->getOutput()->addHTML( $html );
@@ -374,7 +382,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 	}
 
 	function shuffle_assoc( $list ) {
-		if ( !is_array( $list ) ) return $list;
+		if ( !is_array( $list ) ) {
+			return $list;
+		}
 
 		$keys = array_keys( $list );
 		shuffle( $keys );

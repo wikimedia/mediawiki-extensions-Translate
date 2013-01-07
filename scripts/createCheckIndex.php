@@ -14,8 +14,9 @@ require( dirname( __FILE__ ) . '/cli.inc' );
 $codes = Language::getLanguageNames( false );
 
 // Exclude this special language
-if ( $wgTranslateDocumentationLanguageCode )
+if ( $wgTranslateDocumentationLanguageCode ) {
 	unset( $codes[$wgTranslateDocumentationLanguageCode] );
+}
 
 // Skip source
 unset( $codes['en'] );
@@ -68,7 +69,7 @@ foreach ( $groups as $g ) {
 		$collection->loadTranslations();
 
 		foreach ( $collection as $key => $message ) {
-			$prob = $checker->checkMessageFast( $message,  $code );
+			$prob = $checker->checkMessageFast( $message, $code );
 			if ( $prob ) {
 
 				if ( $verbose ) {

@@ -125,7 +125,7 @@ class PythonSingleFFS extends SimpleFFS {
 		// Ugly code, relies on side effects
 		$this->read( 'mul' );
 		$filename = $this->group->getSourceFilePath( $code );
-		$cache = &self::$cache[$filename];
+		$cache = & self::$cache[$filename];
 
 		// Generating authors
 		if ( isset( $cache['sections'][$code] ) ) {
@@ -149,7 +149,7 @@ class PythonSingleFFS extends SimpleFFS {
 		$cache['sections'][$code] = $section;
 
 		// Make a copy we can alter
-		$sections =  $cache['sections'];
+		$sections = $cache['sections'];
 		$priority = array();
 
 		global $wgTranslateDocumentationLanguageCode;

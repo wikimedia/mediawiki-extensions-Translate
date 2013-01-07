@@ -91,10 +91,14 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 				if ( !$realTarget || !$realTarget->exists() ) {
 					$options[] = 'broken';
 					$index = array_search( 'known', $options, true );
-					if ( $index !== false ) unset( $options[$index] );
+					if ( $index !== false ) {
+						unset( $options[$index] );
+					}
 
 					$index = array_search( 'noclasses', $options, true );
-					if ( $index !== false ) unset( $options[$index] );
+					if ( $index !== false ) {
+						unset( $options[$index] );
+					}
 				}
 			}
 		}

@@ -35,7 +35,7 @@ class MediaWikiExtensionMessageGroup extends SingleFileBasedMessageGroup {
 		}
 
 		if ( strval( $desc ) === '' ) {
-		// That failed, default to 'description'
+			// That failed, default to 'description'
 			$desc = parent::getDescription( $context );
 		}
 

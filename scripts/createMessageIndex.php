@@ -24,7 +24,7 @@ Options:
   --quiet           Only output errors
 
 EOT
-);
+	);
 	exit( 1 );
 }
 

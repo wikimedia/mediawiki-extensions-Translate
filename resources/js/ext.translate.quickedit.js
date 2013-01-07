@@ -24,18 +24,18 @@
 
 	mw.translate = mw.translate || {};
 	function MessageCheckUpdater( callback ) {
-		this.act = function() {
+		this.act = function () {
 			callback();
 			delete this.timeoutID;
 		};
 
-		this.setup = function() {
+		this.setup = function () {
 			this.cancel();
 			var self = this;
 			this.timeoutID = window.setTimeout( self.act, 1000 );
 		};
 
-		this.cancel = function() {
+		this.cancel = function () {
 			if ( typeof this.timeoutID === 'number' ) {
 				window.clearTimeout( this.timeoutID );
 				delete this.timeoutID;
@@ -64,14 +64,14 @@
 
 		$.each( buttons, function ( key, selector ) {
 			$( selector )
-				.val( function( i, b ) {
+				.val( function ( i, b ) {
 					return b.replace( / \(.\)$/, '' );
 				} )
 				.removeAttr( 'accesskey' )
 				.attr( 'title', '' );
 
 			dialog.find( selector )
-				.val( function( i, b ) {
+				.val( function ( i, b ) {
 					return b + ' (_)'.replace( '_', key );
 				} )
 				.attr( 'accesskey', key )
@@ -117,22 +117,22 @@
 			}
 		} );
 
-		form.find( '.mw-translate-history' ).click( function() {
+		form.find( '.mw-translate-history' ).click( function () {
 			window.open( mw.util.wikiScript( 'index' ) + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
 			return false;
 		} );
 
-		form.find( '.mw-translate-support, .mw-translate-askpermission' ).click( function() {
+		form.find( '.mw-translate-support, .mw-translate-askpermission' ).click( function () {
 			// Can use .data() only with 1.4.3 or newer
 			window.open( $( this ).attr( 'data-load-url' ) );
 			return false;
 		} );
 
-		form.find( 'input, textarea' ).focus( function() {
+		form.find( 'input, textarea' ).focus( function () {
 			addAccessKeys( form );
 		} );
 
-		form.find( 'input#summary' ).focus( function() {
+		form.find( 'input#summary' ).focus( function () {
 			$( this ).css( 'width', '85%' );
 		} );
 
@@ -148,15 +148,15 @@
 		}
 
 		if ( form.find( '.mw-translate-messagechecks' ) ) {
-			checker = new MessageCheckUpdater( function() {
+			checker = new MessageCheckUpdater( function () {
 				var url = mw.config.get( 'wgScript' ) + '?title=Special:Translate/editpage&suggestions=checks&page=$1&loadgroup=$2';
 				url = url.replace( '$1', encodeURIComponent( page ) ).replace( '$2', encodeURIComponent( group ) );
-				$.post( url, { translation: textarea.val() }, function( mydata ) {
+				$.post( url, { translation: textarea.val() }, function ( mydata ) {
 					form.find( '.mw-translate-messagechecks' ).replaceWith( mydata );
 				} );
 			} );
 
-			textarea.keyup( function() {
+			textarea.keyup( function () {
 				checker.setup();
 			} );
 		}
@@ -165,7 +165,7 @@
 	}
 
 	mw.translate = $.extend( mw.translate, {
-		init: function() {
+		init: function () {
 			var $inlines, $first, title, group, prev;
 
 			dialogwidth = $( window ).width() * 0.8;
@@ -180,7 +180,7 @@
 			}
 
 			prev = null;
-			$inlines.each( function() {
+			$inlines.each( function () {
 				if ( prev ) {
 					prev.next = this;
 				}
@@ -188,7 +188,7 @@
 			} );
 		},
 
-		openDialog: function( page, group ) {
+		openDialog: function ( page, group ) {
 			var id, dialogElement, dialog, callbacks;
 
 			id = 'jsedit' + page.replace( /[^a-zA-Z0-9_]/g, '_' );
@@ -203,10 +203,10 @@
 			dialog = $( '<div>' ).attr( 'id', id ).appendTo( $( 'body' ) );
 
 			callbacks = {};
-			callbacks.close = function() {
+			callbacks.close = function () {
 				dialog.dialog( 'close' );
 			};
-			callbacks.next = function() {
+			callbacks.next = function () {
 				mw.translate.openNext( page, group );
 			};
 			callbacks.success = function ( text ) {
@@ -226,10 +226,10 @@
 				width: dialogwidth,
 				title: page,
 				position: 'top',
-				resize: function() {
+				resize: function () {
 					$( '#' + id + ' textarea' ).width( '100%' );
 				},
-				resizeStop: function() {
+				resizeStop: function () {
 					dialogwidth = $( '#' + id ).width();
 				}
 			} );
@@ -237,7 +237,7 @@
 			return false;
 		},
 
-		loadEditor: function( $target, page, group, callback ) {
+		loadEditor: function ( $target, page, group, callback ) {
 			var id, preload, url, params;
 
 			// Try if it has been cached
@@ -272,13 +272,13 @@
 
 		},
 
-		openEditor: function( element, page, group, callbacks ) {
+		openEditor: function ( element, page, group, callbacks ) {
 			var $target = $( element ),
 				spinner = $( '<div>' ).attr( 'class', 'mw-ajax-loader' );
 
 			$target.html( $( '<div>' ).attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
 
-			mw.translate.loadEditor( $target, page, group, function() {
+			mw.translate.loadEditor( $target, page, group, function () {
 				if ( callbacks.load ) {
 					callbacks.load( $target );
 				}
@@ -289,7 +289,7 @@
 					mw.translateHooks.run( 'beforeSubmit', form );
 					$( this ).ajaxSubmit( {
 						dataType: 'json',
-						success: function( json ) {
+						success: function ( json ) {
 							mw.translateHooks.run( 'afterSubmit', form );
 							if ( json.error ) {
 								if ( json.error.code === 'emptypage' ) {
@@ -316,7 +316,7 @@
 			} );
 		},
 
-		openNext: function( title, group ) {
+		openNext: function ( title, group ) {
 			var messages = mw.config.get( 'trlKeys' ),
 				found = false, key, value;
 
@@ -372,7 +372,7 @@
 				$( editor ).find( 'form' ).prepend( $header );
 			};
 			if ( next.length ) {
-				callbacks.next = function() {
+				callbacks.next = function () {
 					next.dblclick();
 				};
 				// Preload the next item

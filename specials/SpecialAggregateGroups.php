@@ -34,7 +34,7 @@ class SpecialAggregateGroups extends SpecialPage {
 			if ( $group instanceof WikiPageMessageGroup ) {
 				$pages[] = $group;
 			} elseif ( $group instanceof AggregateMessageGroup ) {
-				$subgroups = TranslateMetadata::getSubgroups( $group->getId() ) ;
+				$subgroups = TranslateMetadata::getSubgroups( $group->getId() );
 				if ( $subgroups !== false ) {
 					$aggregates[] = $group;
 				}
@@ -81,34 +81,35 @@ class SpecialAggregateGroups extends SpecialPage {
 			$out->addHtml( $select->getHtml() );
 			$addButton = Html::element( 'input',
 				array( 'type' => 'button',
-					'value' =>  $this->msg( 'tpt-aggregategroup-add' )->text(),
+					'value' => $this->msg( 'tpt-aggregategroup-add' )->text(),
 					'class' => 'tp-aggregate-add-button' )
-				);
+			);
 			$out->addHtml( $addButton );
 			$out->addHtml( "</div>" );
 		}
 
-		$out->addHtml( Html::element( 'input',
-			array( 'type' => 'hidden',
-				'id' => 'token',
-				'value' => ApiAggregateGroups::getToken()
-				) ) );
+		$out->addHtml( Html::element( 'input', array(
+			'type' => 'hidden',
+			'id' => 'token',
+			'value' => ApiAggregateGroups::getToken()
+		) ) );
 		$out->addHtml( "<br/><a class='tpt-add-new-group' href='#'>" .
 			$this->msg( 'tpt-aggregategroup-add-new' )->escaped() .
-			 "</a>" );
+			"</a>" );
 		$newGroupNameLabel = $this->msg( 'tpt-aggregategroup-new-name' )->escaped();
 		$newGroupName = Html::element( 'input', array( 'class' => 'tp-aggregategroup-add-name', 'maxlength' => '200' ) );
 		$newGroupDescriptionLabel = $this->msg( 'tpt-aggregategroup-new-description' )->escaped();
 		$newGroupDescription = Html::element( 'input',
-				array( 'class' => 'tp-aggregategroup-add-description' )
-			 );
-		$saveButton = Html::element( 'input',
-			array( 'type' => 'button',
-				'value' =>  $this->msg( 'tpt-aggregategroup-save' )->text(),
-				'id' => 'tpt-aggregategroups-save', 'class' => 'tp-aggregate-save-button' )
-			);
+			array( 'class' => 'tp-aggregategroup-add-description' )
+		);
+		$saveButton = Html::element( 'input', array(
+			'type' => 'button',
+			'value' => $this->msg( 'tpt-aggregategroup-save' )->text(),
+			'id' => 'tpt-aggregategroups-save',
+			'class' => 'tp-aggregate-save-button'
+		) );
 		$newGroupDiv = Html::rawElement( 'div',
-			array( 'class' => 'tpt-add-new-group hidden' ) ,
+			array( 'class' => 'tpt-add-new-group hidden' ),
 			"$newGroupNameLabel $newGroupName <br /> $newGroupDescriptionLabel $newGroupDescription <br /> $saveButton" );
 		$out->addHtml( $newGroupDiv );
 	}

@@ -16,8 +16,7 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 
-		global $wgHooks, $wgTranslateTranslationServices,
-			$wgTranslateTestTTMServer;
+		global $wgHooks, $wgTranslateTranslationServices, $wgTranslateTestTTMServer;
 		$this->setMwGlobals( array(
 			'wgHooks' => $wgHooks,
 			'wgTranslateCC' => array(),

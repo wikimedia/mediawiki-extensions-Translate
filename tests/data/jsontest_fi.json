@@ -1,7 +1,7 @@
 {
-	"@metadata": {
-		"metakey": "metavalue"
-	},
-        "translatedmsg": "käännös",
-        "fuzzymsg": "väännös"
+    "@metadata": {
+        "metakey": "metavalue"
+    },
+    "translatedmsg": "käännös",
+    "fuzzymsg": "väännös"
 }

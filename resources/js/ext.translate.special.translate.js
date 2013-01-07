@@ -2,7 +2,7 @@
 	'use strict';
 
 	/* Workflow selector code */
-	function prepareWorkflowSelector () {
+	function prepareWorkflowSelector() {
 		var $submit, $select, submitFunction, params;
 
 		$submit = $( '#mw-translate-workflowset' );
@@ -10,8 +10,8 @@
 
 		$select.find( 'option[value=]' ).prop( 'disabled', true );
 
-		submitFunction = function( event ) {
-			var successFunction = function( data ) {
+		submitFunction = function ( event ) {
+			var successFunction = function ( data ) {
 				if ( data.error ) {
 					$submit.val( mw.msg( 'translate-workflow-set-do' ) );
 					$submit.prop( 'disabled', false );
@@ -36,7 +36,7 @@
 			$.post( mw.util.wikiScript( 'api' ), params, successFunction );
 		};
 
-		$select.change( function( event ) {
+		$select.change( function ( event ) {
 			var current = $( this ).find( 'option[selected]' ).val(),
 				tobe = event.target.value;
 
@@ -55,7 +55,7 @@
 	mw.translate = mw.translate || {};
 
 	mw.translate = $.extend( mw.translate, {
-		changeGroup: function( group ) {
+		changeGroup: function ( group ) {
 			var uri = new mw.Uri( window.location.href );
 			uri.extend( {
 				group: group
@@ -63,7 +63,7 @@
 			window.location.href = uri.toString();
 		},
 
-		changeLanguage: function( language ) {
+		changeLanguage: function ( language ) {
 			var uri = new mw.Uri( window.location.href );
 			uri.extend( {
 				language: language
@@ -71,7 +71,7 @@
 			window.location.href = uri.toString();
 		},
 
-		canTranslate: function() {
+		canTranslate: function () {
 			return mw.config.get( 'TranslateRight' );
 		}
 	} );

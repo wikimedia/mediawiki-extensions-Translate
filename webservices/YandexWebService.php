@@ -37,7 +37,6 @@ class YandexWebService extends TranslationWebService {
 	}
 
 	protected function doRequest( $text, $from, $to ) {
-		$orig = $text;
 		$service = $this->service;
 
 		$text = trim( $text );
@@ -61,9 +60,9 @@ class YandexWebService extends TranslationWebService {
 		if ( !$status->isOK() ) {
 			$error = $req->getContent();
 			// Most likely a timeout or other general error
-			throw new TranslationWebServiceException(  "Http::get failed:\n"
-				. "* " . serialize( $error ) . "\n"
-				. "* " . serialize( $status )
+			throw new TranslationWebServiceException( "Http::get failed:\n" .
+					"* " . serialize( $error ) . "\n" .
+					"* " . serialize( $status )
 			);
 		}
 

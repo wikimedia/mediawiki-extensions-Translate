@@ -15,6 +15,7 @@
  */
 class TTMServerMessageUpdateJob extends Job {
 	/**
+	 * @param MessageHandle $handle
 	 * @return TTMServerMessageUpdateJob
 	 */
 	public static function newJob( MessageHandle $handle ) {
