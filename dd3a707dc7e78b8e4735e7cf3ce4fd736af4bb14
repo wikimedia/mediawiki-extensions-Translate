@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAADgX//28E\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-07T11:56:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADgX//3DM\u003d",
+      "revId": "dd3a707dc7e78b8e4735e7cf3ce4fd736af4bb14",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADgX//3DI\u003d",
         "filename": "resources/js/ext.translate.editor.js",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-01-07T09:46:30Z",
       "side": 1,
       "message": "No escaping?",
+      "revId": "dd3a707dc7e78b8e4735e7cf3ce4fd736af4bb14",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//28I\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-07T11:56:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADgX//3DI\u003d",
       "revId": "dd3a707dc7e78b8e4735e7cf3ce4fd736af4bb14",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
