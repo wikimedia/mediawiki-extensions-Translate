@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAADgX//3Jw\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-07T06:02:01Z",
+      "side": 1,
+      "message": "I dont think so. if we remove save errors here, users wont see it at all.",
+      "parentUuid": "AAADgX//3TI\u003d",
+      "revId": "6c026fe8b59d8d9bb54f50d8e701b72a97dbf5ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADgX//3TQ\u003d",
         "filename": "resources/js/ext.translate.editor.js",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAADgX//3J0\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-07T06:02:01Z",
+      "side": 1,
+      "message": "we will add when required",
+      "parentUuid": "AAADgX//3TQ\u003d",
+      "revId": "6c026fe8b59d8d9bb54f50d8e701b72a97dbf5ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADgX//3TE\u003d",
         "filename": "resources/js/ext.translate.editor.js",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2013-01-06T20:28:10Z",
       "side": 1,
       "message": "missing \u003e",
+      "revId": "6c026fe8b59d8d9bb54f50d8e701b72a97dbf5ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//3Js\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 735,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-07T06:02:01Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "AAADgX//3TE\u003d",
       "revId": "6c026fe8b59d8d9bb54f50d8e701b72a97dbf5ac",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
