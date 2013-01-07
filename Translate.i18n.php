@@ -458,6 +458,8 @@ Most useful for the proofreading tasks.',
 	'tux-editor-save-failed' => 'Saving the translation failed: $1',
 	'tux-editor-use-this-translation' => 'Use as translation',
 	'tux-editor-message-desc-more' => 'View more',
+
+	'tux-editor-clear-translated' => 'Clear translated',
 );
 
 /** Message documentation (Message documentation)
@@ -886,6 +888,9 @@ Read as in "proofRED" (past participle).',
 * $1 - the warning that the API returns',
 	'tux-editor-use-this-translation' => 'Link text for using a suggestion as translation for the current message',
 	'tux-editor-message-desc-more' => 'Link text for expanding long message documentation',
+
+	'tux-editor-clear-translated' => 'Label for the button that appears at the footer of the translation editor.
+Pressing the button clears all the messages that were translated from the page.',
 );
 
 /** Afrikaans (Afrikaans)
