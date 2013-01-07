@@ -59,34 +59,41 @@ class TuxMessageTable extends MessageTable {
 				'data-source' => $original,
 				'data-translation' => $translation,
 				'id' => 'tqe-anchor-' . substr( sha1( $title->getPrefixedText() ), 0, 12 ),
-				'class' => 'row tux-message ' . ( $hasTranslation ? 'translated' : 'untranslated' )
+				'class' => 'row tux-message'
 			);
 
 			$userId = $this->context->getUser()->getId();
 			$status = '';
+			$itemClass = 'untranslated';
 			$reviewers = $m->getProperty( 'reviewers' );
 
+			// The other statuses can override this.
 			if ( $m->hasTag( 'optional' ) ) {
 				$status = Html::element( 'span',
 					array( 'class' => 'tux-info tux-optional' ),
 					$this->msg( 'tux-status-optional' )->text()
 				);
-			} elseif ( $m->hasTag( 'fuzzy' ) ) {
+			}
+
+			if ( $m->hasTag( 'fuzzy' ) ) {
 				$status = Html::element( 'span',
 					array( 'class' => 'tux-warning tux-status-fuzzy' ),
 					$this->msg( 'tux-status-fuzzy' )->text()
 				);
 				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
+				$itemClass = 'fuzzy';
 			} elseif ( is_array( $reviewers ) && in_array( $userId, $reviewers ) ) {
 				$status = Html::element( 'span',
 					array( 'class' => 'tux-status-proofread' ),
 					$this->msg( 'tux-status-proofread' )->text()
 				);
+				$itemClass = 'proofread';
 			} elseif ( $translation !== null ) {
 				$status = Html::element( 'span',
 					array( 'class' => 'tux-status-translated' ),
 					$this->msg( 'tux-status-translated' )->text()
 				);
+				$itemClass = 'translated';
 			}
 
 			$sourceElement = Xml::element( 'span', array(
@@ -103,7 +110,7 @@ class TuxMessageTable extends MessageTable {
 
 			$messageListItem = Xml::tags( 'div',
 				array(
-					'class' => 'row tux-message-item'
+					'class' => "row tux-message-item $itemClass"
 				),
 				'<div class="nine columns tux-list-message">'
 				. $sourceElement

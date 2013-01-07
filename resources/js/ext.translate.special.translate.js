@@ -161,8 +161,7 @@
 			$translateContainer = $( '.ext-translate-container' );
 			$translateContainer.find( '.tux-editor-clear-translated' )
 				.click( function () {
-					// TODO Removes also FUZZY, and probably shouldn't
-					$translateContainer.find( '.tux-message.translated' ).remove();
+					$translateContainer.find( '.tux-message-item' ).filter( '.translated, .proofread' ).remove();
 				} );
 
 		}
