@@ -1059,6 +1059,7 @@ Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pe
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar no Wiktionary',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] é unha aplicación para dispositivos móbiles que serve para contribuír no [[:meta:Wiki Loves Monuments|proxecto Wiki Loves Monuments]]',
 	'translate-group-desc-waymarked-trails-help' => 'As páxinas de axuda da páxina web de Waymarked Trails: http://waymarkedtrails.org/gl/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] é un editor colaborativo en tempo real',
 );
 
 /** Swiss German (Alemannisch)

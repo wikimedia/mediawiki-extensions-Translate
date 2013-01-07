@@ -2165,12 +2165,13 @@ $messages['km'] = array(
 
 /** Korean (한국어)
  * @author Freebiekr
+ * @author LFM
  * @author 관인생략
  * @author 아라
  */
 $messages['ko'] = array(
 	'firststeps' => '첫걸음',
-	'firststeps-desc' => 'Translate  확장 기능을 사용하는 웹사이트에서 사용자가 활동할 수 있게 돕는 [[Special:FirstSteps|특수 문서]]',
+	'firststeps-desc' => '[[Special:FirstSteps|특수 문서]]로 Translate 확장기능을 사용해 기여를 시작할 수 있도록 합니다.',
 	'translate-fs-pagetitle-done' => '- 완료!',
 	'translate-fs-pagetitle-pending' => '- 처리 대기 중',
 	'translate-fs-pagetitle' => '시작 마법사 - $1',
@@ -2218,10 +2219,10 @@ $messages['ko'] = array(
 
 [[Portal:$1|당신의 언어 들머리]] [[Portal_talk:$1|토론 문서]]에서 자신과 같은 언어의 번역자와 연락할 수도 있습니다. 
 아직 바꾸지 않았다면 [[Special:Preferences|자신의 언어 인터페이스를 번역 도착어로 바꾸십시오]].  그러면 웹사이트에서 당신에게 가장 관련있는 링크를 보여줄 수 있습니다.',
-	'translate-fs-email-text' => '[[Special:Preferences|환경 설정]]에서 이메일 주소를 제공하고 받은 이메일로 그 주소를 확인하십시오.
+	'translate-fs-email-text' => '[[Special:Preferences|환경 설정]]에서 이메일 주소를 등록하고 그 계정으로 온 이메일을 확인해 주십시오.
 
-그러면 다른 사용자가 이메일로 당신과 연락할 수 있게 됩니다.
-많아야 한 달에 한 번 발송하는 소식지도 받을 것입니다.
+다른 사용자가 이메일로 당신과 연락할 수 있게 됩니다.
+보통 한 달에 한 번 발송하는 소식지도 받을 것입니다.
 소식지를 받고 싶지 않으면 [[Special:Preferences|환경 설정]] "{{int:prefs-personal}}" 탭에서 선택 해제하십시오.',
 );
 

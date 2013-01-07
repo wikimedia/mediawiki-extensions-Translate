@@ -877,7 +877,7 @@ Read as in "proofRED" (past participle).',
 * $2 is shortcut key for skip button',
 	'tux-editor-no-message-doc' => 'Text to be shown when no message documentation is present for the message',
 	'tux-editor-edit-desc' => 'Text for the link to edit message documentation',
-	'tux-editor-add-desc' => 'Text for the link to add message documentation when it doesn\'t exist',
+	'tux-editor-add-desc' => "Text for the link to add message documentation when it doesn't exist",
 	'tux-editor-suggestions-title' => 'Title text for translation memory suggestions',
 	'tux-editor-in-other-languages' => 'Title text for suggestions from other languages',
 	'tux-editor-need-more-help' => 'Help text label',
@@ -893,8 +893,6 @@ Read as in "proofRED" (past participle).',
 	'tux-editor-message-desc-more' => 'Link text for expanding long message documentation',
 	'tux-editor-clear-translated' => 'Label for the button that appears at the footer of the translation editor.
 Pressing the button clears all the messages that were translated from the page.',
-	'tux-editor-outdated-warning' => 'Warning message when source message is outdated',
-	'tux-editor-outdated-warning-diff-link' => 'Link text for showing the diff in the outdated message warning',
 );
 
 /** Afrikaans (Afrikaans)
@@ -4686,6 +4684,7 @@ $messages['ch'] = array(
 
 /** Sorani Kurdish (کوردی)
  * @author Asoxor
+ * @author Calak
  * @author Marmzok
  * @author Muhammed taha
  * @author رزگار
@@ -4806,6 +4805,8 @@ $messages['ckb'] = array(
 	'translate-workflow-set-done' => 'ڕێکخرا!',
 	'translate-stats-workflow' => 'ڕەوش',
 	'translate-gethelp' => 'یارمەتی',
+	'translate-msggroupselector-search-all' => 'ھەموو',
+	'tux-tab-all' => 'ھەموو',
 );
 
 /** Czech (česky)
@@ -5127,14 +5128,25 @@ Stavy jsou definovány v konfigurační proměnné $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Nedávné překlady',
 	'translate-dynagroup-recent-desc' => 'Tato skupina zpráv zobrazuje všechny nedávné překlady do tohoto jazyka.
 Užitečné hlavně pro korektury.',
+	'translate-dynagroup-additions-label' => 'Nedávné přírůstky',
+	'translate-dynagroup-additions-desc' => 'Tato skupina zpráv zobrazuje nové a změněné zprávy.',
 	'translate-dynagroup-by' => 'Překlad od {{GENDER:$1|uživatele|uživatelky|}} $1',
 	'translate-dynagroup-byc' => 'Překlad od {{GENDER:$1|uživatele|uživatelky|}} $1 ($2)',
 	'translate-dynagroup-last' => 'Poslední změna od {{GENDER:$1|uživatele|uživatelky|}} $1',
 	'translate-dynagroup-lastc' => 'Poslední změna od {{GENDER:$1|uživatele|uživatelky|}} $1 ($2)',
 	'translate-gethelp' => 'Nápověda',
+	'translate-msggroupselector-projects' => 'Skupina zpráv',
+	'translate-msggroupselector-search-placeholder' => 'Hledání skupiny',
 	'translate-msggroupselector-search-all' => 'Všechno',
+	'translate-msggroupselector-search-recent' => 'Nedávné',
+	'translate-msggroupselector-load-from-all' => 'Načíst zprávy ze všech skupin',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|podskupina|podskupiny|podskupin}}',
 	'tux-tab-all' => 'Všechno',
 	'tux-status-optional' => 'Volitelné',
+	'tux-editor-suggestions-title' => 'Návrhy',
+	'tux-editor-in-other-languages' => 'V jiných jazycích',
+	'tux-warnings-more' => '{{PLURAL:$1|$1 další|$1 další|$1 dalších}}',
+	'tux-warnings-hide' => 'skrýt',
 );
 
 /** Kashubian (kaszëbsczi)
@@ -6119,6 +6131,7 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-editor-shortcut-info' => 'Drücke „$1“ zum Speichern oder „$2“, um zur nächsten Nachricht zu gelangen.',
 	'tux-editor-no-message-doc' => 'Keine Nachrichtendokumentation',
 	'tux-editor-edit-desc' => 'Beschreibung bearbeiten',
+	'tux-editor-add-desc' => 'Beschreibung hinzufügen',
 	'tux-editor-suggestions-title' => 'Vorschläge',
 	'tux-editor-in-other-languages' => 'In anderen Sprachen',
 	'tux-editor-need-more-help' => 'Mehr Hilfe?',
@@ -6129,6 +6142,9 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-editor-save-failed' => 'Das Speichern der Übersetzung ist fehlgeschlagen: $1',
 	'tux-editor-use-this-translation' => 'Als Übersetzung verwenden',
 	'tux-editor-message-desc-more' => 'Mehr ansehen',
+	'tux-editor-clear-translated' => 'Übersetzte entfernen',
+	'tux-editor-outdated-warning' => 'Diese Übersetzung ist möglicherweise veraltet.',
+	'tux-editor-outdated-warning-diff-link' => 'Unterschiede zeigen',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -6683,6 +6699,7 @@ Jo nejwužytnjej za korigěrowańske nadawki.',
 	'tux-editor-shortcut-info' => 'Tłoc "$1", aby składował abo "$2", aby k pśiducemu powěźeńce  dostał',
 	'tux-editor-no-message-doc' => 'Žedna dokumentacija za powěźeńku',
 	'tux-editor-edit-desc' => 'Wopisanje wobźěłaś',
+	'tux-editor-add-desc' => 'Wopisanje pśidaś',
 	'tux-editor-suggestions-title' => 'Naraźenja',
 	'tux-editor-in-other-languages' => 'W drugich rěcach',
 	'tux-editor-need-more-help' => 'Trjebaš wěcej pomocy?',
@@ -6693,6 +6710,9 @@ Jo nejwužytnjej za korigěrowańske nadawki.',
 	'tux-editor-save-failed' => 'Pśełožk njedajo se składowaś: $1',
 	'tux-editor-use-this-translation' => 'Ako pśełožk wužywaś',
 	'tux-editor-message-desc-more' => 'Wěcej se woglědaś',
+	'tux-editor-clear-translated' => 'Pśełožki wulašowaś',
+	'tux-editor-outdated-warning' => 'Toś ten pśełožk je snaź zestarjony.',
+	'tux-editor-outdated-warning-diff-link' => 'Rozdźěle pokazaś',
 );
 
 /** Central Dusun (Dusun Bundu-liwan)
@@ -9295,7 +9315,7 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'translate-msggroupselector-search-recent' => 'Récent',
 	'translate-msggroupselector-load-from-all' => 'Charger les messages pour tous les groupes',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|sous-projet|sous-projets}}',
-	'tux-languageselector' => 'Langue', # Fuzzy
+	'tux-languageselector' => 'Traduire en',
 	'tux-tab-all' => 'Tous',
 	'tux-tab-untranslated' => 'Non traduit',
 	'tux-tab-outdated' => 'Obsolète',
@@ -9313,6 +9333,7 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-editor-shortcut-info' => 'Appuyez sur "$1" pour enregistrer ou "$2" pour passer au message suivant',
 	'tux-editor-no-message-doc' => 'Pas de documentation du message',
 	'tux-editor-edit-desc' => 'Modifier la description',
+	'tux-editor-add-desc' => 'Ajouter une description',
 	'tux-editor-suggestions-title' => 'Suggestions',
 	'tux-editor-in-other-languages' => 'En d’autres langues',
 	'tux-editor-need-more-help' => 'Besoin d’aide?',
@@ -9323,6 +9344,9 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-editor-save-failed' => "Échec de l'enregistrement de la traduction : $1",
 	'tux-editor-use-this-translation' => 'Utiliser comme traduction',
 	'tux-editor-message-desc-more' => 'Voir davantage',
+	'tux-editor-clear-translated' => 'Effacer la traduction',
+	'tux-editor-outdated-warning' => 'Cette traduction peut être obsolète.',
+	'tux-editor-outdated-warning-diff-link' => 'Afficher les différences',
 );
 
 /** Cajun French (français cadien)
@@ -10200,7 +10224,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'translate-msggroupselector-search-recent' => 'Recentes',
 	'translate-msggroupselector-load-from-all' => 'Cargar as mensaxes de todos os grupos',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgrupo|subgrupos}}',
-	'tux-languageselector' => 'Lingua', # Fuzzy
+	'tux-languageselector' => 'Traducir ao',
 	'tux-tab-all' => 'Todas',
 	'tux-tab-untranslated' => 'Sen traducir',
 	'tux-tab-outdated' => 'Anticuadas',
@@ -10210,6 +10234,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-status-fuzzy' => 'Anticuada',
 	'tux-status-proofread' => 'Corrixir',
 	'tux-status-translated' => 'Traducida',
+	'tux-status-saving' => 'Gardando...',
 	'tux-status-unsaved' => 'Sen gardar',
 	'tux-editor-placeholder' => 'A súa tradución',
 	'tux-editor-save-button-label' => 'Gardar a tradución',
@@ -10227,6 +10252,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-editor-save-failed' => 'Houbo un erro ao gardar a tradución: $1',
 	'tux-editor-use-this-translation' => 'Utilizar como tradución',
 	'tux-editor-message-desc-more' => 'Ollar máis',
+	'tux-editor-clear-translated' => 'Limpar as traducidas',
 );
 
 /** Goan Konkani (Latin script) (Konknni)
@@ -11835,6 +11861,7 @@ Je najwužitnišo za korigowanske nadawki.',
 	'tux-editor-shortcut-info' => 'Tłóč "$1", zo by składował abo "$2", zo by k přichodnej zdźělence dóšoł',
 	'tux-editor-no-message-doc' => 'Žana dokumentacija za zdźělenku',
 	'tux-editor-edit-desc' => 'Wopisanje wobdźěłać',
+	'tux-editor-add-desc' => 'Wopisanje přidać',
 	'tux-editor-suggestions-title' => 'Namjety',
 	'tux-editor-in-other-languages' => 'W druhich rěčach',
 	'tux-editor-need-more-help' => 'Trjebaš wjace pomocy?',
@@ -11845,6 +11872,9 @@ Je najwužitnišo za korigowanske nadawki.',
 	'tux-editor-save-failed' => 'Přełožk njeda so składować: $1',
 	'tux-editor-use-this-translation' => 'Jako přełožk wužiwać',
 	'tux-editor-message-desc-more' => 'Wjace sej wobhladać',
+	'tux-editor-clear-translated' => 'Přełožki wotstronić',
+	'tux-editor-outdated-warning' => 'Tutón přełožk je zestarjeny.',
+	'tux-editor-outdated-warning-diff-link' => 'Rozdźěle pokazać',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -12762,6 +12792,7 @@ Es utile principalmente pro le correction de probas.',
  * @author IvanLanin
  * @author Kenrick95
  * @author Meursault2004
+ * @author Naval Scene
  * @author Rex
  * @author පසිඳු කාවින්ද
  */
@@ -13008,7 +13039,7 @@ Detail: $1",
 	'api-error-owntranslation' => 'Anda tidak dapat menerima terjemahan sendiri',
 	'translate-gethelp' => 'Bantuan',
 	'translate-msggroupselector-search-all' => 'Semua',
-	'tux-languageselector' => 'Bahasa',
+	'tux-languageselector' => 'Bahasa', # Fuzzy
 	'tux-tab-all' => 'Semua',
 	'tux-edit' => 'Sunting',
 	'tux-status-optional' => 'Opsional',
@@ -13715,7 +13746,7 @@ $messages['ja'] = array(
 	'translate-page-no-such-language' => '言語の指定が正しくありません。',
 	'translate-page-no-such-group' => '群の指定が正しくありません。',
 	'translate-page-disabled' => "この群では、この言語への翻訳は停止されています。
-理由：
+理由:
 
 ''$1''",
 	'translate-language-disabled' => 'この言語への翻訳は無効になっています。',
@@ -13734,7 +13765,7 @@ $messages['ja'] = array(
 	'translate-prev' => '前のページ',
 	'translate-page-description-legend' => 'この群についての情報',
 	'translate-page-description-hasoptional' => 'このメッセージ群には省略可能なメッセージがあります。
-省略可能なメッセージは、その言語で特別な必要性（空白の除去、固有名詞の翻字など）がある場合のみ翻訳してください。$1',
+省略可能なメッセージは、その言語で特別な必要性 (空白の除去、固有名詞の翻字など) がある場合のみ翻訳してください。$1',
 	'translate-page-description-hasoptional-open' => '省略可能なメッセージを表示する。',
 	'translate-page-edit' => '編集',
 	'translate-ext-url' => '<hr />ウェブサイト: $1',
@@ -13780,7 +13811,7 @@ $messages['ja'] = array(
 	'translate-magic-cm-to-be' => '変更後',
 	'translate-magic-cm-current' => '現在',
 	'translate-magic-cm-original' => '元の内容',
-	'translate-magic-cm-comment' => '編集内容の要約：',
+	'translate-magic-cm-comment' => '編集内容の要約:',
 	'translate-magic-cm-save' => '保存',
 	'translate-magic-cm-updatedusing' => '[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]による更新に成功しました',
 	'translate-magic-cm-savefailed' => '保存に失敗しました',
@@ -13807,7 +13838,7 @@ $messages['ja'] = array(
 	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> での指定が重複しています。<nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> であれば <nowiki>{{PLURAL:$1|sheep}}</nowiki> と書いてください。',
 	'translate-checks-pagename' => '名前空間が変更されており、定義と異なっています',
 	'translate-checks-format' => 'この翻訳は定義に沿っていない、または無効な構文を使用しています: $1',
-	'translate-checks-escape' => '以下のエスケープは偶発のものかもしれません：<strong>$1</strong>',
+	'translate-checks-escape' => '以下のエスケープは偶発的なものかもしれません: <strong>$1</strong>',
 	'translate-checks-parametersnotequal' => '引数の数が{{PLURAL:$1|$1}}個ですが、{{PLURAL:$2|$2}}個である必要があります。',
 	'translate-checks-malformed' => '<nowiki>$1</nowiki>が不正な形式です。',
 	'translate-checks-fudforum-syntax' => 'このプロジェクトでは<nowiki>$2</nowiki>の代わりに<nowiki>$1</nowiki>を使用します。',
@@ -14055,6 +14086,7 @@ $1',
 	'tux-editor-shortcut-info' => '保存するには「$1」を、次のメッセージへスキップするには「$2」を押してください',
 	'tux-editor-no-message-doc' => 'メッセージについてのドキュメントはありません',
 	'tux-editor-edit-desc' => '説明を編集',
+	'tux-editor-add-desc' => '説明を追加',
 	'tux-editor-suggestions-title' => '提案',
 	'tux-editor-in-other-languages' => '他言語での翻訳',
 	'tux-editor-need-more-help' => '助けが必要ですか?',
@@ -14065,6 +14097,9 @@ $1',
 	'tux-editor-save-failed' => '翻訳の保存に失敗しました: $1',
 	'tux-editor-use-this-translation' => '翻訳として使用',
 	'tux-editor-message-desc-more' => '続きを表示',
+	'tux-editor-clear-translated' => '翻訳を消去',
+	'tux-editor-outdated-warning' => 'この翻訳は修正が必要かもしれません。',
+	'tux-editor-outdated-warning-diff-link' => '差分を表示',
 );
 
 /** Jamaican Creole English (Patois)
@@ -17217,8 +17252,11 @@ $messages['mhr'] = array(
  * @author Naval Scene
  */
 $messages['min'] = array(
+	'translate-edit-tmsugs' => 'Saran dari memori tajamahan',
 	'translate-edit-tab-list' => 'Dafta pasan',
+	'translate-sidebar-alltrans' => 'Dalam bahaso lain',
 	'translate-js-support' => 'Maajuan patanyaan',
+	'translate-searchprofile-tooltip' => 'Cari dari sado tajamahan',
 );
 
 /** Macedonian (македонски)
@@ -17587,6 +17625,7 @@ $1',
 	'tux-editor-shortcut-info' => 'Стиснете на „$1“ за да зачувате или на „$2“ за да прејдете на следната порака',
 	'tux-editor-no-message-doc' => 'Пораката нема документација',
 	'tux-editor-edit-desc' => 'Уреди опис',
+	'tux-editor-add-desc' => 'Додај опис',
 	'tux-editor-suggestions-title' => 'Предлози',
 	'tux-editor-in-other-languages' => 'На други јазици',
 	'tux-editor-need-more-help' => 'Ви треба повеќе помош?',
@@ -17597,6 +17636,9 @@ $1',
 	'tux-editor-save-failed' => 'Не успеав да го зачувам преводот: $1',
 	'tux-editor-use-this-translation' => 'Користи како превод',
 	'tux-editor-message-desc-more' => 'Погл. уште',
+	'tux-editor-clear-translated' => 'Тргни преведено',
+	'tux-editor-outdated-warning' => 'Преводов може да е застарен.',
+	'tux-editor-outdated-warning-diff-link' => 'Прик. разлики',
 );
 
 /** Malayalam (മലയാളം)
@@ -17856,7 +17898,6 @@ $messages['ml'] = array(
 	'tux-editor-use-this-translation' => 'പരിഭാഷയ്ക്കുപയോഗിക്കുക',
 	'tux-editor-message-desc-more' => 'മുഴുവന്‍ കാണിയ്ക്കുക',
 	'tux-editor-outdated-warning' => 'ഈ പരിഭാഷ കാലഹരണപ്പെട്ടതാവാം.',
-	'tux-editor-outdated-warning-diff-link' => 'വ്യത്യാസം കാണിക്കുക',
 );
 
 /** Mongolian (монгол)
@@ -24578,7 +24619,7 @@ Najuporabnejše za opravila lektoriranja.',
 	'translate-msggroupselector-search-recent' => 'Nedavni',
 	'translate-msggroupselector-load-from-all' => 'Naloži sporočila iz vseh skupin',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|podskupina|podskupini|podskupine|podskupin}}',
-	'tux-languageselector' => 'Jezik', # Fuzzy
+	'tux-languageselector' => 'Prevedi v',
 	'tux-tab-all' => 'Vse',
 	'tux-tab-untranslated' => 'Neprevedeno',
 	'tux-tab-outdated' => 'Zastarelo',
@@ -24596,6 +24637,7 @@ Najuporabnejše za opravila lektoriranja.',
 	'tux-editor-shortcut-info' => 'Pritisnite »$1« za shranitev ali »$2« za skok na naslednje sporočilo',
 	'tux-editor-no-message-doc' => 'Ni sporočila dokumentacije',
 	'tux-editor-edit-desc' => 'Uredi opis',
+	'tux-editor-add-desc' => 'Dodaj opis',
 	'tux-editor-suggestions-title' => 'Predlogi',
 	'tux-editor-in-other-languages' => 'V drugih jezikih',
 	'tux-editor-need-more-help' => 'Potrebujete dodatno pomoč?',
@@ -24606,6 +24648,9 @@ Najuporabnejše za opravila lektoriranja.',
 	'tux-editor-save-failed' => 'Shranjevanje prevoda ni uspelo: $1',
 	'tux-editor-use-this-translation' => 'Uporabi kot prevod',
 	'tux-editor-message-desc-more' => 'Pokaži več',
+	'tux-editor-clear-translated' => 'Počisti prevedeno',
+	'tux-editor-outdated-warning' => 'Prevod je morda zastarel.',
+	'tux-editor-outdated-warning-diff-link' => 'Prikaži razlike',
 );
 
 /** Somali (Soomaaliga)
@@ -30337,20 +30382,21 @@ $messages['zh-hant'] = array(
 	'translate-taction-disabled' => '該維基上已禁用此動作',
 	'translate-page-no-such-language' => '選擇的語言錯誤',
 	'translate-page-no-such-group' => '選擇的群組錯誤',
-	'translate-page-disabled' => "本群組已經停用翻譯至這個語言的功能，因為：
+	'translate-page-disabled' => "已停止本群組翻譯成該語言。
+原因：
 
 ''$1''",
-	'translate-language-disabled' => '到此語言的翻譯已禁用。',
+	'translate-language-disabled' => '已禁止翻譯成該語言。',
 	'translate-page-settings-legend' => '設定',
 	'translate-page-group' => '群組',
 	'translate-page-language' => '語言',
 	'translate-page-limit' => '每頁顯示',
-	'translate-page-limit-option' => '$1 個訊息',
+	'translate-page-limit-option' => '每頁顯示$1個訊息',
 	'translate-submit' => '擷取',
 	'translate-page-navigation-legend' => '導覽',
-	'translate-page-showing' => '顯示第 $1 到第 $2 個介面訊息，總共有 $3 個',
-	'translate-page-showing-all' => '顯示 $1 個介面訊息',
-	'translate-page-showing-none' => '沒有任何介面訊息',
+	'translate-page-showing' => '顯示第$1到第$2個介面訊息，共有$3個。',
+	'translate-page-showing-all' => '顯示$1個介面訊息。',
+	'translate-page-showing-none' => '沒有任何介面訊息。',
 	'translate-next' => '下一頁',
 	'translate-prev' => '上一頁',
 	'translate-page-description-legend' => '關於本群組',
@@ -30366,8 +30412,8 @@ $messages['zh-hant'] = array(
 	'translate-edit-definition' => '介面訊息原文',
 	'translate-edit-translation' => '翻譯',
 	'translate-edit-contribute' => '貢獻',
-	'translate-edit-no-information' => "''本介面訊息沒有任何說明資訊
-如果您知道這個訊息是使用在哪個地方，您可以增加說明資訊以協助其他翻譯者''",
+	'translate-edit-no-information' => "''本介面訊息沒有任何說明資訊。''
+''如果您知道這個訊息是使用在哪個地方，您可以增加說明資訊以協助其他翻譯者。''",
 	'translate-edit-information' => '關於訊息的資料（$1）',
 	'translate-edit-in-other-languages' => '其他語言的訊息',
 	'translate-edit-committed' => '目前翻譯',
@@ -30379,7 +30425,7 @@ $messages['zh-hant'] = array(
 	'translate-edit-tab-list' => '介面訊息清單',
 	'translate-edit-nopermission' => '您必須獲得權限才可以翻譯信息。',
 	'translate-edit-askpermission' => '請求權限',
-	'translate-magic-pagename' => '延伸的 MediaWiki 翻譯',
+	'translate-magic-pagename' => '延伸的MediaWiki翻譯',
 	'translate-magic-help' => "您可以使用本特殊頁面翻譯'''特殊頁面別名'''、'''魔術字'''以及'''名字空間名稱'''。
 
 翻譯魔術字時，新的名稱必需含有英文，否則無法生效。第一個字元也請避免 0 或 1 這兩個字元。
@@ -30390,7 +30436,8 @@ $messages['zh-hant'] = array(
 
 如果您的翻譯沒有更動網站名稱，但無法正確顯示的話，請聯絡 MediaWiki 開發者。
 
-您必需屬於翻譯者群組才能儲存這些更改。在按下儲存之前，這些更改均不會被更動。", # Fuzzy
+您必需成為翻譯者才能儲存這些更改。
+在按下儲存之前，這些更改均不會被更動。", # Fuzzy
 	'translate-magic-module' => '模組：',
 	'translate-magic-submit' => '擷取',
 	'translate-magic-cm-export' => '匯出',
@@ -30474,7 +30521,7 @@ $messages['zh-hant'] = array(
 	'translate-statsf-group' => '由逗號分隔的列表群組代碼',
 	'translate-statsf-submit' => '預覽',
 	'translate-tag-category' => '可翻譯的頁面',
-	'translate-tag-page-desc' => '這個 wiki 頁的翻譯 [[$2|$1]]。',
+	'translate-tag-page-desc' => '這個wiki頁[[$2|$1]]的翻譯。',
 	'translate-tag-fuzzy-comment' => '由 [[User:$1|$1]] 在版本 $2 對定義作出的改變。',
 	'translate-tag-fuzzy-reason' => '由「$1」的評論「$3」在 $2 作出的定義改變。',
 	'translate-sidebar-alltrans' => '其他翻譯',
@@ -30518,7 +30565,7 @@ $messages['zh-hant'] = array(
 	'translate-mgs-noempty' => '不要顯示沒有任何翻譯的語言',
 	'translate-mgs-submit' => '顯示統計',
 	'translate-mgs-column-language' => '語言',
-	'translate-mgs-totals' => '所有語言一起',
+	'translate-mgs-totals' => '所有語言總計',
 	'translate-mgs-invalid-group' => '指定的組$1不存在。',
 	'translate-mgs-nothing' => '對於請求的統計，沒有內容顯示。',
 	'supportedlanguages' => '支援的語言',
@@ -30543,7 +30590,7 @@ $messages['zh-hant'] = array(
 	'translate-smg-right' => '發生的變更',
 	'translate-manage-import-diff' => '訊息 $1 | 操作：$2',
 	'translate-manage-import-new' => '新訊息 $1',
-	'translate-manage-import-deleted' => '刪除的訊息  $1',
+	'translate-manage-import-deleted' => '已刪除訊息  $1',
 	'translate-manage-action-import' => '匯入',
 	'translate-manage-action-conflict' => '導入和模糊',
 	'translate-manage-action-ignore' => '忽略',
@@ -30643,25 +30690,44 @@ $1',
 	'translate-dynagroup-last' => '{{GENDER:$1|$1}}作出最近更改',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}}作出最近更改（$2）',
 	'translate-gethelp' => '說明',
-	'translate-msggroupselector-projects' => '訊息組', # Fuzzy
+	'translate-msggroupselector-projects' => '訊息組',
 	'translate-msggroupselector-search-placeholder' => '搜索群組',
 	'translate-msggroupselector-search-all' => '所有',
 	'translate-msggroupselector-search-recent' => '最近',
-	'tux-languageselector' => '語言',
+	'translate-msggroupselector-load-from-all' => '載入全部組的訊息',
+	'translate-msggroupselector-view-subprojects' => '$1個{{PLURAL:$1|分組|分組}}',
+	'tux-languageselector' => '翻譯成',
 	'tux-tab-all' => '所有',
 	'tux-tab-untranslated' => '未翻譯',
 	'tux-tab-outdated' => '已過時',
 	'tux-tab-translated' => '已翻譯',
 	'tux-edit' => '編輯',
+	'tux-status-optional' => '可選',
+	'tux-status-fuzzy' => '已過時',
 	'tux-status-proofread' => '已校對',
+	'tux-status-translated' => '已翻譯',
+	'tux-status-saving' => '儲存中...',
+	'tux-status-unsaved' => '未儲存',
 	'tux-editor-placeholder' => '您的翻譯',
 	'tux-editor-save-button-label' => '保存翻譯',
 	'tux-editor-skip-button-label' => '跳至下一個',
+	'tux-editor-shortcut-info' => '點擊「$1」儲存，或「$2」跳至下一訊息',
 	'tux-editor-no-message-doc' => '沒有訊息說明文件',
 	'tux-editor-edit-desc' => '編輯說明',
+	'tux-editor-add-desc' => '新增說明',
 	'tux-editor-suggestions-title' => '建議',
 	'tux-editor-in-other-languages' => '其他語言',
+	'tux-editor-need-more-help' => '需要更多幫助嗎？',
+	'tux-editor-ask-help' => '問問題',
 	'tux-editor-tm-match' => '$1% 符合',
+	'tux-warnings-more' => '{{PLURAL:$1|$1}}',
+	'tux-warnings-hide' => '隱藏',
+	'tux-editor-save-failed' => '儲存翻譯失敗：$1',
+	'tux-editor-use-this-translation' => '用作翻譯',
+	'tux-editor-message-desc-more' => '顯示更多',
+	'tux-editor-clear-translated' => '清除已翻譯',
+	'tux-editor-outdated-warning' => '此翻譯可能已過時。',
+	'tux-editor-outdated-warning-diff-link' => '顯示差異',
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)

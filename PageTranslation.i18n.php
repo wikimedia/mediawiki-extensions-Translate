@@ -1787,6 +1787,7 @@ $messages['ce'] = array(
 
 /** Sorani Kurdish (کوردی)
  * @author Asoxor
+ * @author Calak
  * @author Marmzok
  * @author Muhammed taha
  * @author رزگار
@@ -1810,6 +1811,7 @@ $messages['ckb'] = array(
 	'tpt-aggregategroup-add' => 'زێدەبکە',
 	'tpt-aggregategroup-save' => 'پاشەکەوتی بکە',
 	'tpt-aggregategroup-new-name' => 'ناو:',
+	'pt-movepage-new' => 'ناوی نوێ:',
 	'pt-movepage-reason' => 'هۆکار:',
 	'pt-deletepage-current' => 'ناوی پەڕە:',
 	'pt-deletepage-reason' => 'هۆکار:',
@@ -2515,8 +2517,8 @@ Tekst pśełožowańskeje jadnotki: <pre>$1</pre>',
 	'pt-log-aggregategroup-dissociate' => 'jo pśełožujobnu bok [[:$1]]  z głowneje kupki $3 {{GENDER:$2|wótpórał|wótpórała}}',
 	'pt-movepage-title' => 'Psełožujobny bok $1 psésunuś',
 	'pt-movepage-blockers' => 'Pśełožujobny bok njedajo se dla {{PLURAL:$1|slědujuceje zmólki|slědujuceju zmólkowu|slědujucych zmólkow|slědujucych zmólkow}} do nowego mjenja pśesunuś:',
-	'pt-movepage-block-base-exists' => 'Celowy zakładny bok  [[:$1]] eksistěrujo.',
-	'pt-movepage-block-base-invalid' => 'Celowy zakładny bok njejo płaśiwy titel.',
+	'pt-movepage-block-base-exists' => 'Celowy pśełožowański bok [[:$1]] eksistěrujo.',
+	'pt-movepage-block-base-invalid' => 'Mě celowego pśełožujobnego boka njejo płaśiwy titel.',
 	'pt-movepage-block-tp-exists' => 'Celowy pśełožowański bok [[:$2]] eksistěrujo.',
 	'pt-movepage-block-tp-invalid' => 'Titel celowego pśełožowańskego boka za [[:$1]] by był njepłaśiwy (pśedłujki?).',
 	'pt-movepage-block-section-exists' => 'Celowy bok "[[:$2]]" za pśełožowańsku jadnotku eksistěrujo.',
@@ -2524,9 +2526,9 @@ Tekst pśełožowańskeje jadnotki: <pre>$1</pre>',
 	'pt-movepage-block-subpage-exists' => 'Celowy pódbok [[:$2]] eksistěrujo.',
 	'pt-movepage-block-subpage-invalid' => 'Titel celowego pódboka za [[:$1]] by był njepłaśiwy (pśedłuki?).',
 	'pt-movepage-list-pages' => 'Lisćina bokow, kótarež maju se pśesunuś',
-	'pt-movepage-list-translation' => 'Pśełožowańske boki',
-	'pt-movepage-list-section' => 'Boki pśełožowańskich jadnotkow',
-	'pt-movepage-list-other' => 'Druge pódboki',
+	'pt-movepage-list-translation' => 'Pśełožowańske boki', # Fuzzy
+	'pt-movepage-list-section' => 'Boki pśełožowańskich jadnotkow', # Fuzzy
+	'pt-movepage-list-other' => 'Druge pódboki', # Fuzzy
 	'pt-movepage-list-count' => 'Dogromady {{PLURAL:$1|ma se $1 bok|matej se $1 boka|maju se $1 boki|ma se $1 bokow}} pśesunuś.',
 	'pt-movepage-legend' => 'Pśełožujobny bok pśesunuś',
 	'pt-movepage-current' => 'Aktualne mě:',
@@ -2548,13 +2550,13 @@ Pšosym pśekontrolěruj [[Special:Log/pagetranslation|pśełožowański protoko
 	'pt-deletepage-lang-title' => 'Pśełožony bok $1 so lašujo.',
 	'pt-deletepage-full-title' => 'Pśełožujobny bok $1 so lašujo.',
 	'pt-deletepage-invalid-title' => 'Pódany bok njejo płaśiwy.',
-	'pt-deletepage-invalid-text' => 'Pódany bok njejo ani pśełožujobny bok ani pśełožk.',
+	'pt-deletepage-invalid-text' => 'Pódany bok njejo ani pśełožujobny bok ani pśełožk.', # Fuzzy
 	'pt-deletepage-action-check' => 'Boki nalicyś, kótarež maju se wulašowaś',
 	'pt-deletepage-action-perform' => 'Lašowaś',
 	'pt-deletepage-action-other' => 'Cel změniś',
 	'pt-deletepage-lang-legend' => 'Pśełožony bok wulašowaś',
 	'pt-deletepage-full-legend' => 'Pśełožujobny bok wulašowaś',
-	'pt-deletepage-any-legend' => 'Přełožujobny bok abo pśełožk pśełožujobnego boka wulašowś',
+	'pt-deletepage-any-legend' => 'Přełožujobny bok abo pśełožk pśełožujobnego boka wulašowś', # Fuzzy
 	'pt-deletepage-current' => 'Mě boka:',
 	'pt-deletepage-reason' => 'Pśicyna:',
 	'pt-deletepage-subpages' => 'Wšykne pódboki lašowaś:',
@@ -2568,7 +2570,7 @@ Pšosym pśekontrolěruj [[Special:Log/pagetranslation|pśełožowański protoko
 	'pt-deletepage-started' => 'Pšosym pśekontrolěruj [[Special:Log/pagetranslation|pśełožowański protokol boka]] za zmólkami a zdźělenjami wuwjeźenja.',
 	'pt-deletepage-intro' => 'Toś ten specialny bok śi dowólujo, aby do rěcy pśełožujobne boki abo  pśełožki wulašował.
 Lašowanje njestanjo se ned, dokulaž wjele bokow musy se wulašowaś.
-Zmólki budu se w  [[Special:Log/pagetranslation|protokolu pśełožkow]] protokolěrowaś a wóne muse se manuelnje pórěźiś.',
+Zmólki budu se w  [[Special:Log/pagetranslation|protokolu pśełožkow]] protokolěrowaś a wóne muse se manuelnje pórěźiś.', # Fuzzy
 );
 
 /** Ewe (eʋegbe)
@@ -4495,8 +4497,8 @@ Tekst přełožowanskeje jednotki: <pre>$1</pre>',
 	'pt-log-aggregategroup-dissociate' => 'je přełožujomnu stronu [[:$1]]  z hłowneje skupiny $3 {{GENDER:$2|wotstronił|wotstroniła}}',
 	'pt-movepage-title' => 'Přełožujomnu stronu $1 přesunyć',
 	'pt-movepage-blockers' => 'Přełožujomna strona njeda so {{PLURAL:$1|slědowaceho zmylka|slědowaceju zmylkow|slědowacych zmylkow|slědowacych zmylkow}} dla do noweho mjena přesunyć:',
-	'pt-movepage-block-base-exists' => 'Zakładna cilowa strona [[:$1]] eksistuje.',
-	'pt-movepage-block-base-invalid' => 'Zakładna cilowa strona płaćiwy titul njeje.',
+	'pt-movepage-block-base-exists' => 'Cilowa přełožujomna strona "[[:$1]]" eksistuje.',
+	'pt-movepage-block-base-invalid' => 'Mjeno ciloweje přełožujomneje strony płaćiwy titul njeje.',
 	'pt-movepage-block-tp-exists' => 'Cilowa přełožowanska strona [[:$2]] eksistuje.',
 	'pt-movepage-block-tp-invalid' => 'Titul ciloweje přełožowanskeje strony za [[:$1]] by płaćiwy był (předołho?).',
 	'pt-movepage-block-section-exists' => 'Cilowa strona "[[:$2]]" za přełožowansku jednotku eksistuje.',
@@ -4504,9 +4506,9 @@ Tekst přełožowanskeje jednotki: <pre>$1</pre>',
 	'pt-movepage-block-subpage-exists' => 'Cilowa podstrona [[:$2]] eksistuje.',
 	'pt-movepage-block-subpage-invalid' => 'Titul ciloweje podstrony za [[:$1]] by płaćiwy był (předołho?).',
 	'pt-movepage-list-pages' => 'Lisćina strony, kotrež maja so přesunyć',
-	'pt-movepage-list-translation' => 'Přełožowanske strony',
-	'pt-movepage-list-section' => 'Strony přełožowanskich jednotkow',
-	'pt-movepage-list-other' => 'Druhe podstrony',
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Přełožowanska strona|Přełožowanskej stronje|Přełožowanske strony}}',
+	'pt-movepage-list-section' => '{{PLURAL:$1|Strona|Stronje|Strony}} přełožowanskich jednotkow',
+	'pt-movepage-list-other' => '{{PLURAL:$1|Druha podstrona|Druhej podstronje|Druhe podstrony}}',
 	'pt-movepage-list-count' => 'W cyłku {{PLURAL:$1|ma so $1 strona|matej so $1 stronje|maja so $1 strony|ma so $1 stronow}} přesunyć.',
 	'pt-movepage-legend' => 'Přełožujomnu stronu přesunyć',
 	'pt-movepage-current' => 'Aktualne mjeno:',
@@ -4527,13 +4529,13 @@ Prošu skontroluj [[Special:Log/pagetranslation|přełožowanski protokol strony
 	'pt-deletepage-lang-title' => 'Přełožena strona $1 so haša.',
 	'pt-deletepage-full-title' => 'Přełožujomna strona $1 so haša.',
 	'pt-deletepage-invalid-title' => 'Podata strona płaćiwa njeje.',
-	'pt-deletepage-invalid-text' => 'Podata strona ani přełožujomna strona ani přełožk njeje.',
+	'pt-deletepage-invalid-text' => 'Podata strona ani přełožujomna strona ani přełožowanska strona njeje.',
 	'pt-deletepage-action-check' => 'Strony nalistować, kotrež maja so zhašeć',
 	'pt-deletepage-action-perform' => 'Zhašeć',
 	'pt-deletepage-action-other' => 'Cil změnić',
 	'pt-deletepage-lang-legend' => 'Přełoženu stronu wušmórnyć',
 	'pt-deletepage-full-legend' => 'Přełožujomnu stronu wušmórnyć',
-	'pt-deletepage-any-legend' => 'Přełožujomnu stronu abo přełožk přełožujomneje strony zhašeć',
+	'pt-deletepage-any-legend' => 'Přełožujomnu stronu abo přełožowansku stronu zhašeć',
 	'pt-deletepage-current' => 'Mjeno strony:',
 	'pt-deletepage-reason' => 'Přičina:',
 	'pt-deletepage-subpages' => 'Wšě podstrony wušmórnyć',
@@ -4545,8 +4547,8 @@ Prošu skontroluj [[Special:Log/pagetranslation|přełožowanski protokol strony
 	'pt-deletepage-full-logreason' => 'Dźěl přełožujomneje strony $1.',
 	'pt-deletepage-lang-logreason' => 'Dźěl přełoženeje strony $1.',
 	'pt-deletepage-started' => 'Prošu přepruwuj [[Special:Log/pagetranslation|protokol přełožkow]] za zmylkami a wuwjedźenskimi zdźělenkami.',
-	'pt-deletepage-intro' => 'Tuta specialna strona ći dowoluje, zo by do rěče přełožujomne strony abo  přełožki zhašał.
-Zhašenje njestanje so hnydom, dokelž wjele stronow dyrbi so zhašeć.
+	'pt-deletepage-intro' => 'Tuta specialna strona ći zmóžnja, cyłu přełožujomnnu stronu abo  jednotliwu přełožwansku stronu zhašeć.
+Zhašenje njestanje so hnydom, dokelž wšě strony, kotrež z njej zwisuja, dyrbja so tež zhašeć.
 Zmylki budu so w  [[Special:Log/pagetranslation|protokolu přełožkow]] protokolować a wone dyrbja so manuelnje porjedźić.',
 );
 
@@ -10581,7 +10583,7 @@ $messages['zh-hant'] = array(
 	'tpt-diff-new' => '下一個文字',
 	'tpt-submit' => '標記此版本的翻譯',
 	'tpt-sections-oldnew' => '新的和現存的翻譯單元',
-	'tpt-sections-deleted' => '已刪除的翻譯模塊',
+	'tpt-sections-deleted' => '已刪除的翻譯單元',
 	'tpt-sections-template' => '翻譯頁面模版',
 	'tpt-action-nofuzzy' => '不要使翻譯作廢',
 	'tpt-badtitle' => '頁面名稱 ($1) 不是一個有效的標題',
@@ -10590,9 +10592,9 @@ $messages['zh-hant'] = array(
 最新版本只可以將標記進行翻譯。',
 	'tpt-notsuitable' => '頁$1不適合翻譯。
 請確保它具有 <nowiki><translate></nowiki> 標記，並具有有效的語法。',
-	'tpt-saveok' => '[[$1]]頁面已被標記將進行翻譯，一共$2個翻譯單位。
+	'tpt-saveok' => '[[$1]]頁面已被標記將進行翻譯，一共$2個翻譯單元。
 本頁面現已可以<span class="plainlinks">[$3 翻譯]</span>。',
-	'tpt-badsect' => '「$1」對於$2翻譯單位不是有效的名稱。',
+	'tpt-badsect' => '「$1」對於$2翻譯單元不是有效的名稱。',
 	'tpt-showpage-intro' => '以下列出新創、現存及已刪除的部分。
 將此版本標記進行翻譯之前，請檢查來確定該部分極少受修改，以便翻譯員避免得到多餘的工作。',
 	'tpt-mark-summary' => '標記此版本的翻譯',
@@ -10612,7 +10614,7 @@ $messages['zh-hant'] = array(
 但最新版本不得標記進行翻譯。',
 	'tpt-discouraged-pages' => '以下{{PLURAL:$1|此|這些}}頁面挫折更多翻譯。',
 	'tpt-select-prioritylangs' => '優先語言代碼的逗號分隔型列表',
-	'tpt-select-prioritylangs-force' => '防止向優先語言以外的語言的翻譯', # Fuzzy
+	'tpt-select-prioritylangs-force' => '防止翻譯成優先語言以外的語言',
 	'tpt-select-prioritylangs-reason' => '原因：',
 	'tpt-sections-prioritylangs' => '優先語言',
 	'tpt-rev-mark' => '標記進行翻譯',
@@ -10628,7 +10630,7 @@ $messages['zh-hant'] = array(
 	'translate-tag-markthisagain' => '此頁面<span class="plainlinks">[$2 最近被標記進行翻譯]</span>以來，已經過一些<span class="plainlinks">[$1 更改]</span>。',
 	'translate-tag-hasnew' => '此頁面有未被標記進行翻譯的<span class="plainlinks">[$1 更改]</span>。',
 	'tpt-translation-intro' => '此頁面是[[$2]]頁面的<span class="plainlinks">[$1 翻譯版本]</span>，而該翻譯工作已經$3%完成。',
-	'tpt-translation-intro-fuzzy' => '像這樣標記為過時的翻譯。',
+	'tpt-translation-intro-fuzzy' => '已過時的翻譯標記為這樣。',
 	'tpt-languages-legend' => '其他語言：',
 	'tpt-languages-zero' => '開始這種語言的翻譯',
 	'tpt-target-page' => '本頁面無法手動更新。
@@ -10641,9 +10643,9 @@ $messages['zh-hant'] = array(
 	'tpt-discouraged-language-force' => "''''此頁面不能翻譯為 $2 。'''
 
 翻譯管理員限制只能把此頁為$3",
-	'tpt-discouraged-language' => '這種語言不在此頁的翻譯管理員所設置的優先語言之列。
+	'tpt-discouraged-language' => "''''翻譯成$2不在本頁的優先之例。'''
 
-原因：$1', # Fuzzy
+翻譯管理員已設置本頁優先翻譯成$3。",
 	'tpt-discouraged-language-reason' => '原因：$1',
 	'tpt-priority-languages' => '翻譯管理員已將該組需優先翻譯的語言設為$1。',
 	'tpt-render-summary' => '要匹配的源頁的新版本更新',
@@ -10660,44 +10662,44 @@ $messages['zh-hant'] = array(
 翻譯模板：<pre>$1</pre>',
 	'pt-parse-close' => '&lt;/translate>標籤不平衡。
 翻譯模板：<pre>$1</pre>',
-	'pt-parse-nested' => '不允許嵌套&lt;translate>部分。
-標籤文本：$1', # Fuzzy
-	'pt-shake-multiple' => '有個部分含多餘部分標記。
-部分文本：<pre>$1</pre>', # Fuzzy
-	'pt-shake-position' => '部分標記在意外位置。
-部分文本：<pre>$1</pre>', # Fuzzy
-	'pt-shake-empty' => '空節標記為 $1。', # Fuzzy
+	'pt-parse-nested' => '不允許嵌套&lt;translate>翻譯單元。
+標記文本：<pre>$1</pre>',
+	'pt-shake-multiple' => '單一翻譯單元含多個翻譯單元標記。
+翻譯單元文本：<pre>$1</pre>',
+	'pt-shake-position' => '翻譯單元標記在意外位置。
+翻譯單元文本：<pre>$1</pre>',
+	'pt-shake-empty' => '空的翻譯單元標記為「$1」。',
 	'pt-log-header' => '與有關的網頁翻譯系統操作日誌',
 	'pt-log-name' => '網頁翻譯日誌',
 	'pt-log-mark' => '{{GENDER:$2|標記}}「[[:$1]]」頁面$3版本進行翻譯',
 	'pt-log-unmark' => '從翻譯中{{GENDER:$2|刪除}}「[[:$1]]」頁面',
-	'pt-log-moveok' => '{{GENDER:$2|完成}}將$1改名成為$3',
-	'pt-log-movenok' => '當移動[[:$1]]至[[:$3]]{{GENDER:$2|遇到}}問題',
-	'pt-log-delete-full-ok' => '{{GENDER:$2|完成}}刪除$1可翻譯頁面',
-	'pt-log-delete-full-nok' => '當刪除[[:$1]]可翻譯頁面{{GENDER:$2|遇到}}問題',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|完成}}刪除$1翻譯頁面',
-	'pt-log-delete-lang-nok' => '當刪除[[:$1]]翻譯頁面{{GENDER:$2|遇到}}問題',
-	'pt-log-encourage' => '{{GENDER:$2|鼓勵}}翻譯頁面[[:$1]]',
-	'pt-log-discourage' => '{{GENDER:$2|不鼓勵}}翻譯頁面[[:$1]]',
-	'pt-log-priority-langs-unset' => '{{GENDER:$2|已移出}}可翻譯頁面[[:$1]]中的優先語言',
-	'pt-log-priority-langs' => '{{GENDER:$2|設定}}可翻譯頁面[[:$1]]的優先語言為$3。原因：$4',
-	'pt-log-priority-langs-force' => '{{GENDER:$2|已限制}}可翻譯頁面的[[:$1]]的語言為$3。原因：$4',
-	'pt-log-aggregategroup-associate' => '已向聚合組$3{{GENDER:$2|添加了}}可翻譯頁面[[:$1]]',
-	'pt-log-aggregategroup-dissociate' => '已從聚合組$3{{GENDER:$2|刪除了}}可翻譯頁面[[:$1]]',
-	'pt-movepage-title' => '移動可翻譯頁面$1',
+	'pt-log-moveok' => '{{GENDER:$2|完成}}將「$1」改名成為$3',
+	'pt-log-movenok' => '當移動「[[:$1]]」至「[[:$3]]」{{GENDER:$2|遇到}}問題',
+	'pt-log-delete-full-ok' => '{{GENDER:$2|完成}}刪除可翻譯頁面「[[:$1]]」', # Fuzzy
+	'pt-log-delete-full-nok' => '當刪除可翻譯頁面「[[:$1]]」時{{GENDER:$2|遇到}}問題',
+	'pt-log-delete-lang-ok' => '{{GENDER:$2|完成}}刪除翻譯頁面「$1」',
+	'pt-log-delete-lang-nok' => '當刪除翻譯頁面「[[:$1]]」時{{GENDER:$2|遇到}}問題',
+	'pt-log-encourage' => '{{GENDER:$2|鼓勵}}翻譯頁面「[[:$1]]」',
+	'pt-log-discourage' => '{{GENDER:$2|不鼓勵}}翻譯頁面「[[:$1]]」',
+	'pt-log-priority-langs-unset' => '{{GENDER:$2|已移除}}可翻譯頁面「[[:$1]]」中的優先語言',
+	'pt-log-priority-langs' => '{{GENDER:$2|設定}}可翻譯頁面「[[:$1]]」的優先語言為$3。原因：$4',
+	'pt-log-priority-langs-force' => '{{GENDER:$2|已限制}}可翻譯頁面的「[[:$1]]」的語言為$3。原因：$4',
+	'pt-log-aggregategroup-associate' => '已向聚合組$3{{GENDER:$2|添加了}}可翻譯頁面「[[:$1]]」',
+	'pt-log-aggregategroup-dissociate' => '已從聚合組$3{{GENDER:$2|刪除了}}可翻譯頁面「[[:$1]]」',
+	'pt-movepage-title' => '移動可翻譯頁面「$1」',
 	'pt-movepage-blockers' => '可翻譯頁面無法移動至新名稱，原因為以下這{{PLURAL:$1|個|些}}錯誤：',
-	'pt-movepage-block-base-exists' => '目標基頁 [[:$1]] 存在。', # Fuzzy
-	'pt-movepage-block-base-invalid' => '目標基頁不是一個有效的標題。', # Fuzzy
-	'pt-movepage-block-tp-exists' => '目標翻譯頁 [[:$2]] 存在。',
-	'pt-movepage-block-tp-invalid' => '為[[:$1]]的目標翻譯頁面的標題無效，可能因為字符太多。',
-	'pt-movepage-block-section-exists' => '目標部分頁面 [[:$2]] 存在。', # Fuzzy
-	'pt-movepage-block-section-invalid' => '為[[:$1]]的目標部分頁面的標題無效，可能因為字符太多。', # Fuzzy
-	'pt-movepage-block-subpage-exists' => '目標子頁面 [[:$2]] 存在。',
-	'pt-movepage-block-subpage-invalid' => '為[[:$1]]的目標子頁面的標題無效，可能因為字符太多。',
+	'pt-movepage-block-base-exists' => '可翻譯的目標頁面「[[:$1]]」存在。',
+	'pt-movepage-block-base-invalid' => '可翻譯的目標頁面名稱不是一個有效的標題。',
+	'pt-movepage-block-tp-exists' => '目標翻譯頁「[[:$2]]」存在。',
+	'pt-movepage-block-tp-invalid' => '「[[:$1]]」為目標翻譯頁面的標題無效（太長？）。',
+	'pt-movepage-block-section-exists' => '目標頁面「[[:$2]]」的翻譯單元存在。',
+	'pt-movepage-block-section-invalid' => '目標頁面為「[[:$1]]」的翻譯單元可能無效（太長？）。',
+	'pt-movepage-block-subpage-exists' => '目標子頁面「[[:$2]]」 存在。',
+	'pt-movepage-block-subpage-invalid' => '「[[:$1]]」為目標子頁面的標題無效（太長？）。',
 	'pt-movepage-list-pages' => '移動到頁面的列表',
-	'pt-movepage-list-translation' => '翻譯網頁', # Fuzzy
-	'pt-movepage-list-section' => '翻譯單元頁面', # Fuzzy
-	'pt-movepage-list-other' => '其他子頁面', # Fuzzy
+	'pt-movepage-list-translation' => '翻譯{{PLURAL:$1|頁面|頁面}}',
+	'pt-movepage-list-section' => '翻譯單元{{PLURAL:$1|頁面|頁面}}',
+	'pt-movepage-list-other' => '其他子{{PLURAL:$1|頁面|頁面}}',
 	'pt-movepage-list-count' => '總計$1個頁面即將移動。',
 	'pt-movepage-legend' => '移動可翻譯頁面',
 	'pt-movepage-current' => '當前的名稱：',
@@ -10711,20 +10713,20 @@ $messages['zh-hant'] = array(
 此移動操作將不會一瞬間，因為有很多頁面要移動。
 當頁面移動中，不能與該頁面交互。
 任何移動失敗將在[[Special:Log/pagetranslation|頁面翻譯日誌]]記錄，並且需要手動修理。',
-	'pt-movepage-logreason' => '可翻譯頁面$1 的部分。',
+	'pt-movepage-logreason' => '可翻譯頁面「$1」的部分。',
 	'pt-movepage-started' => '基頁面現已移動。
 請檢查[[Special:Log/pagetranslation|頁面翻譯日誌]]內的錯誤和完成消息。',
 	'pt-locked-page' => '此頁面已被鎖定，因為可翻譯頁面正在被移動。',
-	'pt-deletepage-lang-title' => '刪除翻譯網頁 $1。',
-	'pt-deletepage-full-title' => '刪除可翻譯網頁 $1。',
+	'pt-deletepage-lang-title' => '刪除翻譯頁面「$1」。',
+	'pt-deletepage-full-title' => '刪除可翻譯頁面「$1」。',
 	'pt-deletepage-invalid-title' => '指定的頁不是有效的。',
-	'pt-deletepage-invalid-text' => '指定的頁不是可翻譯頁面也的翻譯。', # Fuzzy
-	'pt-deletepage-action-check' => '要刪除的列表頁',
-	'pt-deletepage-action-perform' => '不要刪除',
+	'pt-deletepage-invalid-text' => '指定的頁不是可翻譯頁面或翻譯訊息頁面。',
+	'pt-deletepage-action-check' => '要刪除的頁面列表',
+	'pt-deletepage-action-perform' => '確認刪除',
 	'pt-deletepage-action-other' => '更改目標',
 	'pt-deletepage-lang-legend' => '刪除翻譯頁面',
 	'pt-deletepage-full-legend' => '刪除可翻譯頁面',
-	'pt-deletepage-any-legend' => '刪除可翻譯頁面或翻譯的翻譯頁面', # Fuzzy
+	'pt-deletepage-any-legend' => '刪除可翻譯頁面或翻譯訊息頁面',
 	'pt-deletepage-current' => '頁面名稱：',
 	'pt-deletepage-reason' => '原因：',
 	'pt-deletepage-subpages' => '刪除所有子頁面',
@@ -10733,10 +10735,10 @@ $messages['zh-hant'] = array(
 	'pt-deletepage-list-section' => '翻譯單元頁面',
 	'pt-deletepage-list-other' => '其他子頁面',
 	'pt-deletepage-list-count' => '總計$1個頁面即將刪除。',
-	'pt-deletepage-full-logreason' => '翻譯頁面的一部分 $1。',
-	'pt-deletepage-lang-logreason' => '翻譯頁面的一部分 $1。',
+	'pt-deletepage-full-logreason' => '可翻譯頁面「$1」的一部分。',
+	'pt-deletepage-lang-logreason' => '翻譯頁面「$1」的一部分。',
 	'pt-deletepage-started' => '請檢查[[Special:Log/pagetranslation|頁面翻譯日誌]]內的錯誤和完成消息。',
-	'pt-deletepage-intro' => '本特殊頁面允許您刪除一種語言中全部可翻譯頁面與翻譯作品。
-此移動操作將不會一瞬間，因為有很多頁面要刪除。
-任何刪除失敗將在[[Special:Log/pagetranslation|頁面翻譯日誌]]記錄，並且需要手動修理。', # Fuzzy
+	'pt-deletepage-intro' => '本特殊頁面允許您刪除一頁可翻譯的頁面、或單一種語言的其中一頁頁面的翻譯訊息頁面。
+因為所有有關頁面將會被刪除，此刪除操作將不會一瞬間完成。
+任何刪除失敗將在[[Special:Log/pagetranslation|頁面翻譯日誌]]記錄，並且需要手動修理。',
 );
