@@ -102,6 +102,9 @@ abstract class MessageIndex {
 
 		STDOUT( "Working with ", 'main' );
 
+		/**
+		 * @var MessageGroup $g
+		 */
 		foreach ( $groups as $g ) {
 			if ( !$g->exists() ) {
 				continue;
@@ -174,10 +177,10 @@ abstract class MessageIndex {
 
 	/**
 	 * @param $hugearray array
-	 * @param $g
+	 * @param MessageGroup $g
 	 * @param $ignore bool
 	 */
-	protected function checkAndAdd( &$hugearray, $g, $ignore = false ) {
+	protected function checkAndAdd( &$hugearray, MessageGroup $g, $ignore = false ) {
 		if ( $g instanceof MessageGroupBase ) {
 			$keys = $g->getKeys();
 		} else {
@@ -242,7 +245,6 @@ abstract class MessageIndex {
 		}
 		return $data;
 	}
-
 }
 
 /**
@@ -502,5 +504,4 @@ class CDBMessageIndex extends MessageIndex {
 
 		return $this->reader = CdbReader::open( $file );
 	}
-
 }

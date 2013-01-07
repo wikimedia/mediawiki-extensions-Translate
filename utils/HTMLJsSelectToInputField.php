@@ -11,7 +11,6 @@
  * Implementation of JsSelectToInput class which is extends HTMLTextField.
  */
 class HTMLJsSelectToInputField extends HTMLTextField {
-
 	/**
 	 * @param $value
 	 * @return string
@@ -20,7 +19,11 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 		$input = parent::getInputHTML( $value );
 
 		if ( isset( $this->mParams['select'] ) ) {
-			$input = $this->mParams['select']->getHtmlAndPrepareJs() . '<br />' . $input;
+			/**
+			 * @var JsSelectToInput $select
+			 */
+			$select = $this->mParams['select'];
+			$input = $select->getHtmlAndPrepareJs() . '<br />' . $input;
 		}
 
 		return $input;

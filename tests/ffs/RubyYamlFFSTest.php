@@ -1,7 +1,6 @@
 <?php
 
 class RubyYamlFFSTest extends MediaWikiTestCase {
-
 	/**
 	 * @var MessageGroup
 	 */
@@ -35,6 +34,9 @@ class RubyYamlFFSTest extends MediaWikiTestCase {
 	 * @dataProvider unflattenDataProvider
 	 */
 	public function testUnflattenPural( $key, $value, $result ) {
+		/**
+		 * @var YamlFFS $ffs
+		 */
 		$ffs = $this->group->getFFS();
 		$this->assertEquals(
 			$result,
@@ -61,5 +63,4 @@ class RubyYamlFFSTest extends MediaWikiTestCase {
 			),
 		);
 	}
-
 }

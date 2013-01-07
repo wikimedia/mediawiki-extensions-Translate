@@ -43,6 +43,9 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		}
 
 		if ( MessageGroups::isDynamic( $group ) ) {
+			/**
+			 * @var RecentMessageGroup $group
+			 */
 			$group->setLanguage( $params['language'] );
 		}
 
