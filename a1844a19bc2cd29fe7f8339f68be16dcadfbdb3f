@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//3Gs\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-07T07:48:18Z",
+      "side": 1,
+      "message": "Don\u0027t we use \"@param {type} name Comment\" format?",
+      "revId": "a1844a19bc2cd29fe7f8339f68be16dcadfbdb3f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
