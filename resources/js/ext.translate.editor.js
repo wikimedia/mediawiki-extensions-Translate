@@ -472,6 +472,7 @@
 		prepareInfoColumn: function () {
 			var $infoColumn,
 				$infoColumnBlock,
+				descUri,
 				translateDocumentationLanguageCode;
 
 			$infoColumnBlock = $( '<div>' )
@@ -491,14 +492,21 @@
 			// It's defined as the MediaWiki global $wgTranslateDocumentationLanguageCode.
 			translateDocumentationLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
 			if ( translateDocumentationLanguageCode ) {
+				descUri = new mw.Uri( window.location.href );
+				descUri.query = {
+					action: 'edit',
+					title: this.$editTrigger.data( 'title' ).replace(
+						/\/[a-z\-]+$/,
+						'/' + translateDocumentationLanguageCode
+					)
+				};
+
 				$infoColumn.append( $( '<div>' )
 					.addClass( 'row text-left message-desc-control' )
 					.append( $( '<a>' )
 						.addClass( 'text-left message-desc-edit' )
 						.attr( {
-							href: ( new mw.Uri( window.location.href ) ).extend( {
-								language: translateDocumentationLanguageCode
-							} ).toString(), // FIXME: this link is not correct
+							href: descUri.toString(),
 							target: '_blank'
 					} )
 					.text( mw.msg( 'tux-editor-add-desc' ) ) )
