@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//3Kc\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-07T04:41:32Z",
+      "side": 1,
+      "message": "prop is preferred here instead of attr.\n\n\n.prop(\"disabled\", true);\n\nhttp://stackoverflow.com/questions/10242205/removeattr-not-removing-disabled-attribute-in-ie\n\nhttp://stackoverflow.com/questions/5874652/prop-vs-attr",
+      "revId": "232bbc691d4ff91d71dcbc03d68586c84c27a646",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//3KY\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-07T04:41:32Z",
+      "side": 1,
+      "message": ".prop(\"disabled\", true);",
+      "revId": "232bbc691d4ff91d71dcbc03d68586c84c27a646",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//3KU\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-07T04:41:32Z",
+      "side": 1,
+      "message": "same as above comments\n\n(even though these things are not introduced in this commit... )",
+      "revId": "232bbc691d4ff91d71dcbc03d68586c84c27a646",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
