@@ -253,6 +253,8 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-warnings-hide',
 		'tux-editor-save-failed',
 		'tux-editor-use-this-translation',
+		'translate-edit-nopermission',
+		'translate-edit-askpermission',
 	),
 	'position' => 'top',
 ) + $resourcePaths;
