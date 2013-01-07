@@ -603,7 +603,8 @@
 					$messageDoc,
 					documentation,
 					readMore,
-					$readMore = null;
+					$readMore = null,
+					contentLanguageDir;
 
 				if ( !result.helpers ) {
 					return false; // That is unlikely. but to be safe.
@@ -612,9 +613,22 @@
 				// Message documentation
 				documentation = result.helpers.documentation;
 
-				if ( documentation.value !== '' ) {
+				// Display the documentation only if it's not empty
+				if ( documentation.value ) {
 					$messageDoc = translateEditor.$editor.find( '.message-desc' );
-					$messageDoc.html( documentation.html );
+
+					contentLanguageDir = $.uls.data.getDir( documentation.language );
+					// Show the documentation and set appropriate
+					// lang and dir attributes.
+					// The message documentation is assumed to be written
+					// in the content language of the wiki.
+					$messageDoc
+						.attr( {
+							lang: documentation.language,
+							dir: contentLanguageDir
+						} )
+						.addClass( contentLanguageDir ) // hack
+						.html( documentation.html );
 
 					if ( documentation.value.length > 500 ) {
 						readMore = function () {
