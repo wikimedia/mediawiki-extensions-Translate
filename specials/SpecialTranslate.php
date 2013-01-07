@@ -280,6 +280,7 @@ class SpecialTranslate extends SpecialPage {
 		}
 
 		$request = $this->getRequest();
+
 		foreach ( $defaults as $v => $t ) {
 			if ( is_bool( $t ) ) {
 				$r = isset( $pars[$v] ) ? (bool)$pars[$v] : $defaults[$v];
@@ -292,7 +293,9 @@ class SpecialTranslate extends SpecialPage {
 				$r = $request->getText( $v, $r );
 			}
 
-			wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults );
+			if( isset( $r ) ) {
+				wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults );
+			}
 		}
 
 		// Fix defaults based on what we got
