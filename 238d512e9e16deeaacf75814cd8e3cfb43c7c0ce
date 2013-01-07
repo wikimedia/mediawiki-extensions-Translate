@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//2+s\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-07T10:52:11Z",
+      "side": 1,
+      "message": "Last ) should be on a separate line.",
+      "revId": "238d512e9e16deeaacf75814cd8e3cfb43c7c0ce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
