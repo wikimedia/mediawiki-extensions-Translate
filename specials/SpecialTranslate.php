@@ -280,6 +280,7 @@ class SpecialTranslate extends SpecialPage {
 		}
 
 		$request = $this->getRequest();
+
 		foreach ( $defaults as $v => $t ) {
 			if ( is_bool( $t ) ) {
 				$r = isset( $pars[$v] ) ? (bool)$pars[$v] : $defaults[$v];
@@ -290,6 +291,10 @@ class SpecialTranslate extends SpecialPage {
 			} elseif ( is_string( $t ) ) {
 				$r = isset( $pars[$v] ) ? (string)$pars[$v] : $defaults[$v];
 				$r = $request->getText( $v, $r );
+			}
+
+			if( !isset( $r ) ) {
+				throw new MWException( '$r was not set' );
 			}
 
 			wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults );
