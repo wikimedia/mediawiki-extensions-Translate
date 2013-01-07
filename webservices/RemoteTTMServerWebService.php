@@ -65,7 +65,7 @@ class RemoteTTMServerWebService extends TranslationWebService {
 
 		$parsed = FormatJson::decode( $response, true );
 		if ( !is_array( $parsed ) ) {
-			throw new TranslationWebServiceException( serialize( $content ) );
+			throw new TranslationWebServiceException( serialize( $response ) );
 		}
 
 		if ( !isset( $parsed['ttmserver'] ) ) {
