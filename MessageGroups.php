@@ -302,6 +302,9 @@ class MessageGroups {
 			use ( &$pathFinder )
 		{
 			if ( $group instanceof AggregateMessageGroup ) {
+				/**
+				 * @var MessageGroup $subgroup
+				 */
 				foreach ( $group->getGroups() as $subgroup ) {
 					$subId = $subgroup->getId();
 					if ( $subId === $targetId ) {
@@ -325,6 +328,9 @@ class MessageGroups {
 			}
 
 			foreach ( $structure as $rootGroup ) {
+				/**
+				 * @var MessageGroup $rootGroup
+				 */
 				if ( $rootGroup->getId() === $group->getId() ) {
 					// Yay we found a top-level group
 					$pathFinder( $paths, $rootGroup, $targetId, $id );
@@ -463,6 +469,9 @@ class MessageGroups {
 
 		// Determine the top level groups of the tree
 		$tree = $groups;
+		/**
+		 * @var MessageGroup $o
+		 */
 		foreach ( $groups as $id => $o ) {
 			if ( !$o->exists() ) {
 				unset( $groups[$id], $tree[$id] );
@@ -470,6 +479,9 @@ class MessageGroups {
 			}
 
 			if ( $o instanceof AggregateMessageGroup ) {
+				/**
+				 * @var AggregateMessageGroup $o
+				 */
 				foreach ( $o->getGroups() as $sid => $so ) {
 					unset( $tree[$sid] );
 				}

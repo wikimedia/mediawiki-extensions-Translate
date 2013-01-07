@@ -46,9 +46,7 @@ if ( !isset( $options['group'] ) ) {
 	exit( 1 );
 }
 
-if ( isset( $options['group'] ) ) {
-	$groupIds = explode( ',', trim( $options['group'] ) );
-}
+$groupIds = explode( ',', trim( $options['group'] ) );
 $groupIds = MessageGroups::expandWildcards( $groupIds );
 $groups = MessageGroups::getGroupsById( $groupIds );
 

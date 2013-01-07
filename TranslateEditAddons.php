@@ -321,6 +321,9 @@ class TranslateEditAddons {
 	/**
 	 * Runs message checks, adds tp:transver tags and updates statistics.
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
+	 *
+	 * Switch to this when BC goes no further than 1.21:
+	 * 	public static function onSave( WikiPage $wikiPage, $user, $content, $summary,
 	 */
 	public static function onSave( $wikiPage, $user, $content, $summary,
 		$minor, $_, $_, $flags, $revision

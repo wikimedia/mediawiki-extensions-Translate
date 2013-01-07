@@ -478,6 +478,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	protected function filterChanged( array $keys, $condition ) {
 		$this->loadData( $keys );
 
+		$origKeys = array();
 		if ( $condition === false ) {
 			$origKeys = $keys;
 		}

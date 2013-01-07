@@ -66,6 +66,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		// Check if CLDR extension has been installed.
 		$cldrInstalled = class_exists( 'LanguageNames' );
 
+		$locals = array();
 		if ( $cldrInstalled ) {
 			$locals = LanguageNames::getNames( $lang->getCode(),
 				LanguageNames::FALLBACK_NORMAL,

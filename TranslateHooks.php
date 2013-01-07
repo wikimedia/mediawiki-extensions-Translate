@@ -312,7 +312,7 @@ class TranslateHooks {
 	}
 
 	/// Hook: SpecialSearchSetupEngine
-	public static function searchProfileSetupEngine( $search, /*string*/ $profile, SearchEngine $engine ) {
+	public static function searchProfileSetupEngine( SpecialSearch $search, /*string*/ $profile, SearchEngine $engine ) {
 		if ( $profile !== 'translation' ) {
 			return true;
 		}
@@ -438,7 +438,7 @@ JAVASCRIPT;
 	 * Adds $wgTranslateDocumentationLanguageCode to ResourceLoader configuration
 	 * when Special:Translate is shown.
 	 */
-	public static function addConfig( &$vars, $out ) {
+	public static function addConfig( &$vars, OutputPage $out ) {
 		$request = $out->getRequest();
 		$title = $out->getTitle();
 		list( $alias, ) = SpecialPageFactory::resolveAlias( $title->getText() );

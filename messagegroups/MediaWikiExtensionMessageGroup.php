@@ -16,17 +16,17 @@ class MediaWikiExtensionMessageGroup extends SingleFileBasedMessageGroup {
 	/**
 	 * MediaWiki extensions all should have key in their i18n files
 	 * describing them. This override method implements the logic
-	 * to retrieve them. Also urls are included if available.
-	 * Needs the configure extension.
+	 * to retrieve them. Also URLs are included if available.
+	 * Needs the Configure extension.
 	 */
 	public function getDescription( IContextSource $context = null ) {
-
 		$language = $this->getSourceLanguage();
 		if ( $context ) {
 			$language = $context->getLanguage()->getCode();
 		}
 
 		$msgkey = $this->getFromConf( 'BASIC', 'descriptionmsg' );
+		$desc = '';
 		if ( $msgkey ) {
 			$desc = $this->getMessage( $msgkey, $language );
 			if ( strval( $desc ) === '' ) {
@@ -45,6 +45,5 @@ class MediaWikiExtensionMessageGroup extends SingleFileBasedMessageGroup {
 		}
 
 		return $desc;
-
 	}
 }
