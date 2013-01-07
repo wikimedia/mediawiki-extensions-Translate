@@ -64,7 +64,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		// Go straight to create account (or login) page
 		$create = SpecialPage::getTitleFor( 'Userlogin' );
 		$returnto = $this->getTitle()->getPrefixedText();
-		$params = array( 'returnto' => $returnto , 'type' => 'signup' );
+		$params = array( 'returnto' => $returnto, 'type' => 'signup' );
 		$out->redirect( $create->getLocalUrl( $params ) );
 
 		return false;
@@ -84,15 +84,17 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		if ( true
 			&& $request->wasPosted()
 			&& $user->matchEditToken( $request->getVal( 'token' ) )
-			&& $request->getText( 'step' ) === 'settings' )
-		{
+			&& $request->getText( 'step' ) === 'settings'
+		) {
 			$user->setOption( 'language', $request->getVal( 'primary-language' ) );
 			$user->setOption( 'translate-firststeps', '1' );
 
 			$assistant = array();
 			for ( $i = 0; $i < 10; $i++ ) {
 				$language = $request->getText( "assistant-language-$i", '-' );
-				if ( $language === '-' ) continue;
+				if ( $language === '-' ) {
+					continue;
+				}
 				$assistant[] = $language;
 			}
 
@@ -125,7 +127,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$selector->setAttribute( 'id', $id );
 		$selector->setAttribute( 'name', $name );
 		$text = $this->msg( 'translate-fs-settings-planguage' )->text();
-		$row  = self::wrap( 'td', Xml::label( $text, $id ) );
+		$row = self::wrap( 'td', Xml::label( $text, $id ) );
 		$row .= self::wrap( 'td', $selector->getHtml() );
 		$output .= self::wrap( 'tr', $row );
 
@@ -145,7 +147,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			$selector->setAttribute( 'id', $id );
 			$selector->setAttribute( 'name', $name );
 
-			$row  = self::wrap( 'td', Xml::label( $text, $id ) );
+			$row = self::wrap( 'td', Xml::label( $text, $id ) );
 			$row .= self::wrap( 'td', $selector->getHtml() );
 			$output .= self::wrap( 'tr', $row );
 		}
@@ -156,8 +158,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			. self::wrap( 'tr', self::wrapRow( $desc ) )
 			. self::wrap( 'tr', self::wrapRow( $submit ) )
 			. Html::closeElement( 'table' )
-			. Html::closeElement( 'form' )
-		;
+			. Html::closeElement( 'form' );
 
 		$out->addHtml( $output );
 
@@ -206,12 +207,14 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		if ( true
 			&& $request->wasPosted()
 			&& $user->matchEditToken( $request->getVal( 'token' ) )
-			&& $request->getText( 'step' ) === 'userpage' )
-		{
+			&& $request->getText( 'step' ) === 'userpage'
+		) {
 			$babel = array();
 			for ( $i = 0; $i < 5; $i++ ) {
 				$language = $request->getText( "babel-$i-language", '-' );
-				if ( $language === '-' ) continue;
+				if ( $language === '-' ) {
+					continue;
+				}
 				$level = $request->getText( "babel-$i-level", '-' );
 				$babel[$language] = $level;
 			}
@@ -219,8 +222,12 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			arsort( $babel );
 			$babeltext = '{{#babel:';
 			foreach ( $babel as $language => $level ) {
-				if ( $level === 'N' ) $level = '';
-				else $level = "-$level";
+				if ( $level === 'N' ) {
+					$level = '';
+				}
+				else {
+					$level = "-$level";
+				}
 				$babeltext .= "$language$level|";
 			}
 			$babeltext = trim( $babeltext, '|' );
@@ -255,11 +262,10 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$out->addWikiMsg( 'translate-fs-userpage-help' );
 
 		$output = ''
-		 . Html::openElement( 'form', array( 'method' => 'post' ) )
-		 . Html::hidden( 'step', 'userpage' )
-		 . Html::hidden( 'token', $this->getUser()->getEditToken() )
-		 . Html::hidden( 'title', $this->getTitle() )
-		;
+			. Html::openElement( 'form', array( 'method' => 'post' ) )
+			. Html::hidden( 'step', 'userpage' )
+			. Html::hidden( 'token', $this->getUser()->getEditToken() )
+			. Html::hidden( 'title', $this->getTitle() );
 
 		$code = $this->getLanguage()->getCode();
 		$labelOption = $this->msg( 'translate-fs-selectlanguage' )->text();
@@ -320,8 +326,8 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		if ( true
 			&& $request->wasPosted()
 			&& $user->matchEditToken( $request->getVal( 'token' ) )
-			&& $request->getText( 'step' ) === 'permissions' )
-		{
+			&& $request->getText( 'step' ) === 'permissions'
+		) {
 			// This is ridiculous
 			global $wgCaptchaTriggers;
 			$captcha = $wgCaptchaTriggers;
@@ -395,7 +401,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			return $step;
 		}
 
-		$out->addHtml( $this->getHeader( $step_message  ) );
+		$out->addHtml( $this->getHeader( $step_message ) );
 		$code = $this->getLanguage()->getCode();
 		$out->addWikiMsg( 'translate-fs-target-text', $code );
 

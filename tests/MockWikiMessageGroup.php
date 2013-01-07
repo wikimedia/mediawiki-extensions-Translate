@@ -16,6 +16,7 @@ class MockWikiMessageGroup extends WikiMessageGroup {
 		$this->id = $id;
 		$this->messages = $messages;
 	}
+
 	public function getDefinitions() {
 		return $this->messages;
 	}

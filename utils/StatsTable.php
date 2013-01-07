@@ -94,11 +94,11 @@ class StatsTable {
 		return $this->mainColumnHeader;
 	}
 
-	public function setMainColumnHeader( Message $msg  ) {
+	public function setMainColumnHeader( Message $msg ) {
 		$this->mainColumnHeader = $this->createColumnHeader( $msg );
 	}
 
-	public function createColumnHeader( Message $msg  ) {
+	public function createColumnHeader( Message $msg ) {
 		return Html::element( 'th', array(), $msg->text() );
 	}
 
@@ -143,7 +143,7 @@ class StatsTable {
 	 * @return string Html
 	 */
 	public function makeTotalRow( Message $message, $stats ) {
-		$out  = "\t" . Html::openElement( 'tr' );
+		$out = "\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . Html::element( 'td', array(), $message->text() );
 		$out .= $this->makeNumberColumns( $stats );
 		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
@@ -163,13 +163,13 @@ class StatsTable {
 
 		if ( $total === null ) {
 			$na = "\n\t\t" . Html::element( 'td', array( 'data-sort-value' => -1 ), '...' );
-			$nap =  "\n\t\t" . $this->element( '...', 'AFAFAF', -1 );
+			$nap = "\n\t\t" . $this->element( '...', 'AFAFAF', -1 );
 			$out = $na . $na . $nap . $nap;
 
 			return $out;
 		}
 
-		$out  = "\n\t\t" . Html::element( 'td',
+		$out = "\n\t\t" . Html::element( 'td',
 			array( 'data-sort-value' => $total ),
 			$this->lang->formatNum( $total ) );
 

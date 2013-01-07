@@ -54,9 +54,9 @@ class RenderJob extends Job {
 		$text = $page->getParse()->getTranslationPageText( $collection );
 
 		// Other stuff
-		$user    = $this->getUser();
+		$user = $this->getUser();
 		$summary = $this->getSummary();
-		$flags   = $this->getFlags();
+		$flags = $this->getFlags();
 
 		$article = new Article( $title, 0 );
 

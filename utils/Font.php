@@ -62,7 +62,7 @@ class FCFontFinder {
 		$cachekey = wfMemckey( 'fcfont', $code );
 		$timeout = 60 * 60 * 12;
 
-		$cached = $cache->get( $cachekey  );
+		$cached = $cache->get( $cachekey );
 		if ( is_array( $cached ) ) {
 			return $cached;
 		} elseif ( $cached === 'NEGATIVE' ) {
@@ -110,7 +110,7 @@ class FCFontFinder {
 		}
 
 		# trim spaces
-		$files = array_map( 'trim', explode( "\n",  $candidates ) );
+		$files = array_map( 'trim', explode( "\n", $candidates ) );
 		$count = count( $files );
 		if ( !$count ) {
 			wfDebugLog( 'fcfont', "fc-list got zero canditates: $candidates" );

@@ -21,11 +21,11 @@ class TPParse {
 	/** \arrayof{String,TPSection} Parsed sections indexed with placeholder.
 	 * @todo Encapsulate
 	 */
-	public $sections   = array();
+	public $sections = array();
 	/** \string Page source with content replaced with placeholders.
 	 * @todo Encapsulate
 	 */
-	public $template   = null;
+	public $template = null;
 	/**
 	 * @var null|array Sections saved in the database. array( string => TPSection, ... )
 	 */

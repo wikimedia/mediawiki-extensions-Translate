@@ -175,11 +175,11 @@ class TranslationHelpers {
 		if ( $suggestions === 'async' ) {
 			$all['translation-memory'] = array( $this, 'getLazySuggestionBox' );
 		} elseif ( $suggestions === 'only' ) {
-			return (string) $this->callBox( 'translation-memory', $all['translation-memory'], array( 'lazy' ) );
+			return (string)$this->callBox( 'translation-memory', $all['translation-memory'], array( 'lazy' ) );
 		} elseif ( $suggestions === 'checks' ) {
 			global $wgRequest;
 			$this->translation = $wgRequest->getText( 'translation' );
-			return (string) $this->callBox( 'check', $all['check'] );
+			return (string)$this->callBox( 'check', $all['check'] );
 		}
 
 		if ( $this->group instanceof RecentMessageGroup ) {
@@ -290,7 +290,7 @@ class TranslationHelpers {
 			self::reportTranslationServiceFailure( $serviceName );
 			throw new TranslationHelperException( 'No reply from remote server' );
 		} elseif ( !is_array( $response ) ) {
-			error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
+			error_log( __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
 			throw new TranslationHelperException( 'Malformed reply from remote server' );
 		}
 
@@ -520,7 +520,7 @@ class TranslationHelpers {
 			}
 
 			if ( $error ) {
-				error_log(  __METHOD__ . ': Http::get failed:' . $error );
+				error_log( __METHOD__ . ': Http::get failed:' . $error );
 			} else {
 				error_log( __METHOD__ . ': Unknown error, grr' );
 			}
@@ -529,7 +529,7 @@ class TranslationHelpers {
 		}
 
 		$ret = $req->getContent();
-		$text = preg_replace( '~<string.*>(.*)</string>~', '\\1', $ret  );
+		$text = preg_replace( '~<string.*>(.*)</string>~', '\\1', $ret );
 		$text = Sanitizer::decodeCharReferences( $text );
 		$text = self::unwrapUntranslatable( $text );
 		$text = $this->suggestionField( $text );
@@ -568,7 +568,7 @@ class TranslationHelpers {
 			if ( $json === false ) {
 				self::reportTranslationServiceFailure( $serviceName );
 			} elseif ( !is_object( $response ) ) {
-				error_log(  __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
+				error_log( __METHOD__ . ': Unable to parse reply: ' . strval( $json ) );
 				throw new TranslationHelperException( 'Malformed reply from remote server' );
 			}
 
@@ -851,9 +851,9 @@ class TranslationHelpers {
 		} else {
 			$formattedChecks = Html::rawElement( 'div', array( 'class' => 'mw-translate-messagechecks' ),
 				TranslateUtils::fieldset(
-				wfMessage( 'translate-edit-warnings' )->escaped(), implode( '<hr />', $checkMessages ),
-				array( 'class' => 'mw-sp-translate-edit-warnings' )
-			) );
+					wfMessage( 'translate-edit-warnings' )->escaped(), implode( '<hr />', $checkMessages ),
+					array( 'class' => 'mw-sp-translate-edit-warnings' )
+				) );
 		}
 
 		return $formattedChecks;
@@ -890,8 +890,8 @@ class TranslationHelpers {
 
 			$display = TranslateUtils::convertWhiteSpaceToHTML( $text );
 			$display = Html::rawElement( 'div', array(
-				'lang' => $fbcode,
-				'dir' => Language::factory( $fbcode )->getDir() ),
+					'lang' => $fbcode,
+					'dir' => Language::factory( $fbcode )->getDir() ),
 				$display
 			);
 
@@ -939,7 +939,9 @@ class TranslationHelpers {
 		$class = 'mw-sp-translate-edit-info';
 
 		$gettext = $this->formatGettextComments();
-		if ( $info !== null && $gettext ) $info .= Html::element( 'hr' );
+		if ( $info !== null && $gettext ) {
+			$info .= Html::element( 'hr' );
+		}
 		$info .= $gettext;
 
 		// The information is most likely in English
@@ -1185,7 +1187,7 @@ class TranslationHelpers {
 	 */
 	protected static function legend( $label ) {
 		# Float it to the opposite direction
-		return Html::rawElement( 'div',	array( 'class' => 'mw-translate-legend' ), $label );
+		return Html::rawElement( 'div', array( 'class' => 'mw-translate-legend' ), $label );
 	}
 
 	/**
@@ -1218,12 +1220,12 @@ class TranslationHelpers {
 		// Global configuration settings
 		$fallbacks = array();
 		if ( isset( $wgTranslateLanguageFallbacks[$code] ) ) {
-			$fallbacks = (array) $wgTranslateLanguageFallbacks[$code];
+			$fallbacks = (array)$wgTranslateLanguageFallbacks[$code];
 		}
 
 		$list = Language::getFallbacksFor( $code );
 		array_pop( $list ); // Get 'en' away from the end
-		$fallbacks = array_merge( $list , $fallbacks );
+		$fallbacks = array_merge( $list, $fallbacks );
 
 		return array_unique( $fallbacks );
 	}
@@ -1304,7 +1306,7 @@ class TranslationHelpers {
 		$dialogID = $this->dialogID();
 		$id = Sanitizer::escapeId( "tmsug-$dialogID-$counter" );
 		$contents = Html::rawElement( 'div', array( 'lang' => $code,
-			'dir' => Language::factory( $code )->getDir() ),
+				'dir' => Language::factory( $code )->getDir() ),
 			TranslateUtils::convertWhiteSpaceToHTML( $text ) );
 		$contents .= $this->wrapInsert( $id, $text );
 
@@ -1426,6 +1428,7 @@ class TranslationHelpers {
 			throw new TranslationHelperException( 'unknown group' );
 		}
 	}
+
 	/// @since 2012-01-04
 	protected function mustBeTranslation() {
 		if ( !$this->handle->getCode() ) {

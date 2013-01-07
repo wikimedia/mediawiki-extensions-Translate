@@ -252,7 +252,8 @@ if ( isset( $options['most'] ) && isset( $localisedWeights[$options['most']] ) )
 // check if l10n should be done
 $l10n = false;
 if ( ( $options['output'] == 'wiki' || $options['output'] == 'default' ) &&
-	  !isset( $options['nol10n'] ) ) {
+	!isset( $options['nol10n'] )
+) {
 	$l10n = true;
 }
 
@@ -370,7 +371,9 @@ if ( !$wmfscore ) {
 $rows = array();
 foreach ( $languages as $code => $name ) {
 	// Skip list
-	if ( in_array( $code, $skipLanguages ) ) continue;
+	if ( in_array( $code, $skipLanguages ) ) {
+		continue;
+	}
 	$rows[$code] = array();
 }
 
@@ -474,7 +477,7 @@ foreach ( $languages as $code => $name ) {
 		} else {
 			$continent = $l10n ?
 				"{{int:timezoneregion-" . $mostSpokenLanguages[$code][2] . "}}" :
-				ucfirst ( $mostSpokenLanguages[$code][2] );
+				ucfirst( $mostSpokenLanguages[$code][2] );
 		}
 
 		$out->element( $continent );

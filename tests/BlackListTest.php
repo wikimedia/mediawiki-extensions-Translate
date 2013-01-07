@@ -83,7 +83,7 @@ class BlackListTest extends MediaWikiTestCase {
 	public function testSomeBlackList() {
 		$conf = $this->groupConfiguration;
 		$conf['LANGUAGES'] = array(
-			'blacklist' =>  array( 'or', 'hi' ),
+			'blacklist' => array( 'or', 'hi' ),
 		);
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();

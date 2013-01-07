@@ -251,8 +251,8 @@ class PageTranslationHooks {
 			else                     { $image = 5; }
 
 			$percentImage = Xml::element( 'img', array(
-				'src'   => TranslateUtils::assetPath( "resources/images/prog-$image.png" ),
-				'alt'   => "$percent%", // @todo i18n missing.
+				'src' => TranslateUtils::assetPath( "resources/images/prog-$image.png" ),
+				'alt' => "$percent%", // @todo i18n missing.
 				'title' => "$percent%", // @todo i18n missing.
 				'width' => '9',
 				'height' => '9',
@@ -543,8 +543,6 @@ class PageTranslationHooks {
 		return true;
 	}
 
-
-
 	/**
 	 * Prevent editing of translation pages directly.
 	 * Hook: getUserPermissionsErrorsExpensive
@@ -611,7 +609,7 @@ class PageTranslationHooks {
 
 		$title = $article->getTitle();
 
-		if ( TranslatablePage::isTranslationPage( $title ) )  {
+		if ( TranslatablePage::isTranslationPage( $title ) ) {
 			self::translationPageHeader( $title );
 		} else {
 			// Check for pages that are tagged or marked
@@ -644,7 +642,7 @@ class PageTranslationHooks {
 			);
 
 			$translate = SpecialPage::getTitleFor( 'Translate' );
-			$linkDesc  = wfMessage( 'translate-tag-translate-link-desc' )->escaped();
+			$linkDesc = wfMessage( 'translate-tag-translate-link-desc' )->escaped();
 			$actions[] = Linker::link( $translate, $linkDesc, array(), $par );
 		}
 
@@ -656,7 +654,7 @@ class PageTranslationHooks {
 			if ( $wgUser->isAllowed( 'pagetranslation' ) ) {
 				// This page has never been marked
 				if ( $marked === false ) {
-					$linkDesc  = wfMessage( 'translate-tag-markthis' )->escaped();
+					$linkDesc = wfMessage( 'translate-tag-markthis' )->escaped();
 					$actions[] = Linker::link( $translate, $linkDesc, array(), $par );
 				} else {
 					$markUrl = $translate->getFullUrl( $par );
@@ -671,7 +669,7 @@ class PageTranslationHooks {
 			return;
 		}
 
-		$legend  = Html::rawElement(
+		$legend = Html::rawElement(
 			'div',
 			array( 'class' => 'mw-pt-translate-header noprint nomobile' ),
 			$wgLang->semicolonList( $actions )
@@ -743,7 +741,7 @@ class PageTranslationHooks {
 		} else {
 			$_ = unserialize( $params[0] );
 		}
-		$user =  $_['user'];
+		$user = $_['user'];
 
 		if ( $action === 'mark' ) {
 			return wfMessage(
@@ -762,7 +760,7 @@ class PageTranslationHooks {
 				'pt-log-moveok',
 				$title->getPrefixedText(),
 				$user,
-				$target )	->inLanguage( $language )->parse();
+				$target )->inLanguage( $language )->parse();
 		} elseif ( $action === 'movenok' ) {
 			return wfMessage( 'pt-log-movenok',
 				$title->getPrefixedText(),
@@ -770,8 +768,8 @@ class PageTranslationHooks {
 		} elseif ( $action === 'deletefnok' ) {
 			return wfMessage(
 				'pt-log-delete-full-nok',
-			 	$title->getPrefixedText(),
-			 	$user, $_['target'] )->inLanguage( $language )->parse();
+				$title->getPrefixedText(),
+				$user, $_['target'] )->inLanguage( $language )->parse();
 		} elseif ( $action === 'deletelnok' ) {
 			return wfMessage(
 				'pt-log-delete-lang-nok',
@@ -810,7 +808,7 @@ class PageTranslationHooks {
 				return wfMessage(
 					'pt-log-priority-langs',
 					$title->getPrefixedText(),
-					$user , $_['languages'],
+					$user, $_['languages'],
 					$_['reason'] )->inLanguage( $language )->parse();
 			}
 		} elseif ( $action === 'associate' ) {
@@ -853,7 +851,7 @@ class PageTranslationHooks {
 	}
 
 	/// Hook: SkinSubPageSubtitle
-	public static function replaceSubtitle( &$subpages, $skin = null , $out = null ) {
+	public static function replaceSubtitle( &$subpages, $skin = null, $out = null ) {
 		global $wgOut;
 		// $out was only added in some MW version
 		if ( $out === null ) {
@@ -861,7 +859,8 @@ class PageTranslationHooks {
 		}
 
 		if ( !TranslatablePage::isTranslationPage( $out->getTitle() )
-				&& !TranslatablePage::isSourcePage( $out->getTitle() ) ) {
+			&& !TranslatablePage::isSourcePage( $out->getTitle() )
+		) {
 			return true;
 		}
 
@@ -894,7 +893,7 @@ class PageTranslationHooks {
 
 						if ( $c > 1 ) {
 							$subpages .= wfMessage( 'pipe-separator' )->plain();
-						} else  {
+						} else {
 							// This one is stupid imho, doesn't work with chihuahua
 							// $subpages .= '&lt; ';
 						}
@@ -918,7 +917,8 @@ class PageTranslationHooks {
 		TranslateTask $task = null, MessageGroup $group, array $options
 	) {
 		if ( $task || $options['taction'] !== 'export'
-			|| !$group instanceof WikiPageMessageGroup ) {
+			|| !$group instanceof WikiPageMessageGroup
+		) {
 			return true;
 		}
 
@@ -926,7 +926,7 @@ class PageTranslationHooks {
 		$collection = $group->initCollection( $options['language'] );
 		$collection->loadTranslations( DB_MASTER );
 		$text = $page->getParse()->getTranslationPageText( $collection );
-		$display = $page->getPageDisplayTitle( $options['language']  );
+		$display = $page->getPageDisplayTitle( $options['language'] );
 		if ( $display ) {
 			$text = "{{DISPLAYTITLE:$display}}$text";
 		}

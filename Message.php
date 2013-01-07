@@ -38,15 +38,19 @@ abstract class TMessage {
 
 	/**
 	 * Get the message key.
-	 * @return \string
+	 * @return string
 	 */
-	public function key() { return $this->key; }
+	public function key() {
+		return $this->key;
+	}
 
 	/**
 	 * Get the message definition.
-	 * @return \string
+	 * @return string
 	 */
-	public function definition() { return $this->definition; }
+	public function definition() {
+		return $this->definition;
+	}
 
 	/**
 	 * Get the message translation.

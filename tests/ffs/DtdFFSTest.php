@@ -26,8 +26,8 @@ class DtdFFSTest extends MediaWikiTestCase {
 
 	public function testParsing() {
 		$file =
-<<<DTD
-<!--
+			<<<DTD
+			<!--
 # Messages for Interlingua (interlingua)
 # Exported from translatewiki.net
 

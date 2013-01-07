@@ -52,7 +52,7 @@ abstract class TranslationWebService {
 	 * Do the only supported thing for web services: get a suggestion for
 	 * translation. Prefers source language as input for suggestions.
 	 *
-	 * @param array $translation List of all translations listed by language code.
+	 * @param array $translations List of all translations listed by language code.
 	 * @param string $sourceLanguage Language code as used by MediaWiki.
 	 * @param string $targetLanguage Language code as used by MediaWiki.
 	 * @return array[] The returned suggestion arrays contain the following keys:
@@ -136,7 +136,7 @@ abstract class TranslationWebService {
 	 * Get the suggestion. See getSuggestions for the public method.
 	 *
 	 * @param string $text Text to translate.
-	 * @param string $code Language code of the text, as used by the service.
+	 * @param string $from Language code of the text, as used by the service.
 	 * @param string $to Language code of the translation, as used by the service.
 	 * @return string Translation suggestion.
 	 */

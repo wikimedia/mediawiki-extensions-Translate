@@ -119,7 +119,9 @@ class JsSelectToInput {
 	/// Inject needed JavaScript in the page.
 	public static function injectJs() {
 		static $done = false;
-		if ( $done ) return;
+		if ( $done ) {
+			return;
+		}
 
 		global $wgOut;
 		$wgOut->addModules( 'ext.translate.selecttoinput' );

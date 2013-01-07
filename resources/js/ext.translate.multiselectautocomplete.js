@@ -6,7 +6,7 @@
  * The input field is created in PHP code.
  * Credits: http://jqueryui.com/demos/autocomplete/#multiple
  */
-jQuery( function( $ ) {
+jQuery( function ( $ ) {
 	'use strict';
 
 	$.widget( 'ui.multiselectautocomplete', {
@@ -14,7 +14,7 @@ jQuery( function( $ ) {
 			inputbox: null // a jQuery selector for the input box where selections are written.
 			// TODO can have more options.
 		},
-		_create: function() {
+		_create: function () {
 			var self, select, options, input;
 
 			self = this;
@@ -28,13 +28,13 @@ jQuery( function( $ ) {
 			input = this.input = $( options.inputbox ).autocomplete( {
 				delay: 0,
 				minLength: 0,
-				source: function( request, response ) {
+				source: function ( request, response ) {
 					var term, matcher;
 
 					term = split( request.term ).pop();
 					matcher = new RegExp( $.ui.autocomplete.escapeRegex( term ), 'i' );
 
-					response( select.children( 'option' ).map( function() {
+					response( select.children( 'option' ).map( function () {
 						var text = $( this ).text(),
 							value = $( this ).val(),
 							term = split( request.term ).pop();
@@ -53,7 +53,7 @@ jQuery( function( $ ) {
 						}
 					} ) );
 				},
-				select: function( event, ui ) {
+				select: function ( event, ui ) {
 					ui.item.option.selected = true;
 					self._trigger( 'selected', event, {
 						item: ui.item.option
@@ -70,7 +70,7 @@ jQuery( function( $ ) {
 				}
 			} );
 
-			input.data( 'autocomplete' )._renderItem = function( ul, item ) {
+			input.data( 'autocomplete' )._renderItem = function ( ul, item ) {
 				return $( '<li>' )
 					.data( 'item.autocomplete', item )
 					.append( '<a>' + item.label + '</a>' )
@@ -78,7 +78,7 @@ jQuery( function( $ ) {
 			};
 		}, // End of _create
 
-		destroy: function() {
+		destroy: function () {
 			this.input.remove();
 			this.element.show();
 			$.Widget.prototype.destroy.call( this );

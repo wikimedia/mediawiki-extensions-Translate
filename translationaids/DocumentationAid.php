@@ -24,7 +24,6 @@ class DocumentationAid extends TranslationAid {
 		$page = $this->handle->getKey();
 		$ns = $this->handle->getTitle()->getNamespace();
 
-		$title = Title::makeTitle( $ns, $page . '/' . $wgTranslateDocumentationLanguageCode );
 		$info = TranslateUtils::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns );
 
 		$gettext = $this->formatGettextComments();

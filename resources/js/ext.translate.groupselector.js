@@ -159,7 +159,7 @@
 				messageGroup = $( this ).data( 'msggroup' );
 				groupSelector.$group
 					.text( messageGroup.label )
-					.removeClass ( 'tail')
+					.removeClass( 'tail' )
 					.nextAll().remove();
 
 				groupSelector.hide();

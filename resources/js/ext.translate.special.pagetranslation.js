@@ -1,7 +1,7 @@
 /*
  * @author Santhosh Thottingal
  */
-jQuery( function( $ ) {
+jQuery( function ( $ ) {
 	'use strict';
 
 	$( '#wpUserLanguage' ).multiselectautocomplete( { inputbox: '#tpt-prioritylangs' } );

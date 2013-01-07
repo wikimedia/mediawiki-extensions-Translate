@@ -107,7 +107,7 @@ class MessageWebImporter {
 		$formParams = array(
 			'method' => 'post',
 			'action' => $this->getAction(),
-			'class'  => 'mw-translate-manage'
+			'class' => 'mw-translate-manage'
 		);
 
 		return
@@ -132,7 +132,8 @@ class MessageWebImporter {
 
 		if ( $wgRequest->wasPosted() &&
 			$wgRequest->getBool( 'process', false ) &&
-			$this->getUser()->matchEditToken( $wgRequest->getVal( 'token' ) ) ) {
+			$this->getUser()->matchEditToken( $wgRequest->getVal( 'token' ) )
+		) {
 
 			return true;
 		}
@@ -285,7 +286,7 @@ class MessageWebImporter {
 			foreach ( $diff as $s ) {
 				$para = '<code class="mw-tmi-deleted">' . htmlspecialchars( $s ) . '</code>';
 				$name = wfMessage( 'translate-manage-import-deleted' )->rawParams( $para )->escaped();
-				$text = TranslateUtils::convertWhiteSpaceToHTML(  $collection[$s]->translation() );
+				$text = TranslateUtils::convertWhiteSpaceToHTML( $collection[$s]->translation() );
 				$changed[] = self::makeSectionElement( $name, 'deleted', $text );
 			}
 		}
@@ -504,7 +505,7 @@ class MessageWebImporter {
 
 		$output = Html::rawElement( 'div', $containerParams,
 			Html::rawElement( 'div', $legendParams, $legend ) .
-			Html::rawElement( 'div', $contentParams, $content )
+				Html::rawElement( 'div', $contentParams, $content )
 		);
 
 		return $output;

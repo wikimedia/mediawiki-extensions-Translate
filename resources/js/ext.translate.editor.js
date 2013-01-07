@@ -21,9 +21,9 @@
 			this.$editor = $( '<div>' )
 				.addClass( 'row tux-message-editor' )
 				.append(
-					this.prepareEditorColumn(),
-					this.prepareInfoColumn()
-				);
+				this.prepareEditorColumn(),
+				this.prepareInfoColumn()
+			);
 
 			this.expanded = false;
 			this.$editTrigger.append( this.$editor );
@@ -41,7 +41,7 @@
 				.append( $( '<span>' )
 					.addClass( 'tux-status-unsaved' )
 					.text( mw.msg( 'tux-status-unsaved' ) )
-				);
+			);
 		},
 
 		/**
@@ -58,7 +58,7 @@
 				.append( $( '<span>' )
 					.addClass( 'tux-status-unsaved' )
 					.text( mw.msg( 'tux-status-saving' ) )
-				);
+			);
 		},
 
 		/**
@@ -70,7 +70,7 @@
 				.append( $( '<span>' )
 					.addClass( 'tux-status-translated' )
 					.text( mw.msg( 'tux-status-translated' ) )
-				);
+			);
 
 			this.dirty = false;
 		},
@@ -209,7 +209,7 @@
 			$messageKeyLabel = $( '<div>' )
 				.addClass( 'ten columns text-left messagekey' )
 				.text( this.$editTrigger.data( 'title' ) )
-				.append( $('<span>').addClass( 'caret' ) );
+				.append( $( '<span>' ).addClass( 'caret' ) );
 
 			$closeIcon = $( '<span>' )
 				.addClass( 'one column close' )
@@ -354,8 +354,8 @@
 						.addClass( 'tux-editor-ask-permission' )
 						.attr( {
 							'href': mw.util.wikiGetlink( mw.config.get( 'wgTranslatePermissionUrl' ) )
-						} )
-					);
+					} )
+				);
 			}
 
 			$skipButton = $( '<button>' )
@@ -386,7 +386,7 @@
 					// So cannot depend its title attribute here.
 					( mw.util.tooltipAccessKeyPrefix + 's' ).toUpperCase(),
 					$skipButton.attr( 'title' ).toUpperCase() )
-				)
+			)
 			);
 
 			return $editorColumn;
@@ -412,19 +412,19 @@
 				} );
 
 				$.post( url.toString(), {
-						translation: $textArea.val()
-					}, function ( data ) {
-						var warningIndex,
-							warnings = jQuery.parseJSON( data );
+					translation: $textArea.val()
+				}, function ( data ) {
+					var warningIndex,
+						warnings = jQuery.parseJSON( data );
 
-						if ( !warnings ) {
-							return;
-						}
+					if ( !warnings ) {
+						return;
+					}
 
-						translateEditor.removeWarning( 'validation' );
-						for ( warningIndex = 0; warningIndex < warnings.length; warningIndex++ ) {
-							translateEditor.addWarning( warnings[warningIndex], 'validation' );
-						}
+					translateEditor.removeWarning( 'validation' );
+					for ( warningIndex = 0; warningIndex < warnings.length; warningIndex++ ) {
+						translateEditor.addWarning( warnings[warningIndex], 'validation' );
+					}
 				} );
 			}, 1000 );
 		},
@@ -454,7 +454,7 @@
 					.addClass( 'tux-warning-message hide' )
 					.addClass( type )
 					.html( warning )
-				);
+			);
 
 			warningCount = $warnings.find( '.tux-warning-message' ).length;
 
@@ -480,7 +480,7 @@
 			$infoColumnBlock.append( $( '<span>' ).addClass( 'caret' ) );
 
 			$infoColumn = $( '<div>' )
-				.addClass( 'infocolumn');
+				.addClass( 'infocolumn' );
 
 			$infoColumn.append( $( '<div>' )
 				.addClass( 'row text-left message-desc' )
@@ -500,8 +500,8 @@
 								language: translateDocumentationLanguageCode
 							} ).toString(), // FIXME: this link is not correct
 							target: '_blank'
-						} )
-						.text( mw.msg( 'tux-editor-add-desc' ) ) )
+					} )
+					.text( mw.msg( 'tux-editor-add-desc' ) ) )
 				);
 			}
 
@@ -668,8 +668,8 @@
 							.text( mw.msg( 'tux-editor-message-desc-more' ) )
 							.click( readMore );
 
-						translateEditor.$editor.find( '.message-desc-control')
-							.prepend(  $readMore );
+						translateEditor.$editor.find( '.message-desc-control' )
+							.prepend( $readMore );
 						$messageDoc.on( 'hover', readMore );
 					}
 				}
@@ -681,30 +681,30 @@
 						translationDir,
 						translation = translations[index];
 
-						translationDir = $.uls.data.getDir( translation.language );
+					translationDir = $.uls.data.getDir( translation.language );
 
-						$otherLanguage = $( '<div>' )
-							.addClass( 'row in-other-language' )
-							.append(
-								$( '<div>' )
-									.addClass( 'nine columns' )
-									.attr( {
-										lang: translation.language,
-										dir: translationDir
-									} )
-									.text( translation.value ),
-								$( '<div>' )
-									.addClass( 'three columns language text-right' )
-									.attr( {
-										lang: translation.language,
-										dir: translationDir
-									} )
-									.text( $.uls.data.getAutonym( translation.language ) )
-							);
+					$otherLanguage = $( '<div>' )
+						.addClass( 'row in-other-language' )
+						.append(
+							$( '<div>' )
+								.addClass( 'nine columns' )
+								.attr( {
+									lang: translation.language,
+									dir: translationDir
+								} )
+								.text( translation.value ),
+							$( '<div>' )
+								.addClass( 'three columns language text-right' )
+								.attr( {
+									lang: translation.language,
+									dir: translationDir
+								} )
+								.text( $.uls.data.getAutonym( translation.language ) )
+					);
 
-						translateEditor.$editor.find( '.in-other-languages-title' )
-							.removeClass( 'hide' )
-							.after( $otherLanguage );
+					translateEditor.$editor.find( '.in-other-languages-title' )
+						.removeClass( 'hide' )
+						.after( $otherLanguage );
 				} );
 
 				// Translation memory suggestions
@@ -716,19 +716,19 @@
 					translation = translations[index];
 
 					$translation = $( '<div>' )
-					.addClass( 'row tm-suggestion' )
-					.append(
+						.addClass( 'row tm-suggestion' )
+						.append(
 						$( '<div>' )
 							.addClass( 'row tm-suggestion-top' )
 							.append(
 								$( '<div>' )
 									.addClass( 'nine columns' )
-									.text( translation.target ),
+								.text( translation.target ),
 								$( '<div>' )
 									.addClass( 'three columns quality text-right' )
 									.text( mw.msg( 'tux-editor-tm-match',
-										Math.round( translation.quality * 100 ) ) )
-							),
+									Math.round( translation.quality * 100 ) ) )
+						),
 						$( '<div>' )
 							.addClass( 'row tm-suggestion-bottom' )
 							.append(
@@ -739,7 +739,7 @@
 										translateEditor.$editor.find( 'textarea' )
 											.val( translation.target );
 									} )
-							)
+						)
 					);
 
 					translateEditor.$editor.find( '.tm-suggestions-title' )

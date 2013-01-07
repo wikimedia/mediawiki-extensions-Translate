@@ -39,7 +39,9 @@ class GettextFFS extends SimpleFFS {
 		$parsedData['AUTHORS'] = $authors;
 
 		foreach ( $parsedData['MESSAGES'] as $key => $value ) {
-			if ( $value === '' ) unset( $parsedData['MESSAGES'][$key] );
+			if ( $value === '' ) {
+				unset( $parsedData['MESSAGES'][$key] );
+			}
 		}
 
 		return $parsedData;
@@ -163,9 +165,9 @@ class GettextFFS extends SimpleFFS {
 		}
 
 		$item = array(
-			'ctxt'  => false,
-			'id'    => '',
-			'str'   => '',
+			'ctxt' => false,
+			'id' => '',
+			'str' => '',
 			'flags' => array(),
 			'comments' => array(),
 		);
@@ -325,13 +327,14 @@ class GettextFFS extends SimpleFFS {
 		$data = stripcslashes( $data );
 
 		if ( preg_match( '/\s$/', $data ) ) {
-			if ( $whitespace === 'mark' )
+			if ( $whitespace === 'mark' ) {
 				$data .= '\\';
-			elseif ( $whitespace === 'trim' )
+			} elseif ( $whitespace === 'trim' ) {
 				$data = rtrim( $data );
-			else
+			} else {
 				// @todo Only triggered if there is trailing whitespace
 				throw new MWException( 'Unknown action for whitespace' );
+			}
 		}
 
 		return $data;
@@ -537,13 +540,19 @@ PHP;
 	protected function formatDocumentation( $key ) {
 		global $wgTranslateDocumentationLanguageCode;
 
-		if ( !$this->offlineMode ) return '';
+		if ( !$this->offlineMode ) {
+			return '';
+		}
 
 		$code = $wgTranslateDocumentationLanguageCode;
-		if ( !$code ) return '';
+		if ( !$code ) {
+			return '';
+		}
 
 		$documentation = TranslateUtils::getMessageContent( $key, $code, $this->group->getNamespace() );
-		if ( !is_string( $documentation ) ) return '';
+		if ( !is_string( $documentation ) ) {
+			return '';
+		}
 
 		$lines = explode( "\n", $documentation );
 		$out = '';
@@ -572,9 +581,13 @@ PHP;
 		$rulefile = dirname( __FILE__ ) . '/../data/plural-gettext.txt';
 		$rules = file_get_contents( $rulefile );
 		foreach ( explode( "\n", $rules ) as $line ) {
-			if ( trim( $line ) === '' ) continue;
+			if ( trim( $line ) === '' ) {
+				continue;
+			}
 			list( $rulecode, $rule ) = explode( "\t", $line );
-			if ( $rulecode === $code ) return $rule;
+			if ( $rulecode === $code ) {
+				return $rule;
+			}
 		}
 		return '';
 	}

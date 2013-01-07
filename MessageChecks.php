@@ -15,17 +15,17 @@
  * method of the following type:
  * @code
  * protected function myCheck( $messages, $code, &$warnings ) {
- * 	foreach ( $messages as $message ) {
- * 		$key = $message->key();
- * 		$translation = $message->translation();
- * 		if ( strpos( $translation, 'smelly' ) !== false ) {
- * 			$warnings[$key][] = array(
- * 				array( 'badword', 'smelly', $key, $code ),
- * 				'translate-checks-badword', // Needs to be defined in i18n file
- * 				array( 'PARAMS', 'smelly' ),
- * 			);
- * 		}
- * 	}
+ *     foreach ( $messages as $message ) {
+ *         $key = $message->key();
+ *         $translation = $message->translation();
+ *         if ( strpos( $translation, 'smelly' ) !== false ) {
+ *             $warnings[$key][] = array(
+ *                 array( 'badword', 'smelly', $key, $code ),
+ *                 'translate-checks-badword', // Needs to be defined in i18n file
+ *                 array( 'PARAMS', 'smelly' ),
+ *             );
+ *         }
+ *     }
  * }
  * @endcode
  *
@@ -42,7 +42,7 @@
  */
 class MessageChecker {
 	protected $checks = array();
-	protected $group  = null;
+	protected $group = null;
 	private static $globalBlacklist = null;
 
 	/**
@@ -174,11 +174,21 @@ class MessageChecker {
 				$check = array_shift( $warning );
 				// Check if the key is blacklisted...
 				foreach ( self::$globalBlacklist as $pattern ) {
-					if ( !$this->match( $pattern['group'], $groupId ) )     continue;
-					if ( !$this->match( $pattern['check'], $check[0] ) )    continue;
-					if ( !$this->match( $pattern['subcheck'], $check[1] ) ) continue;
-					if ( !$this->match( $pattern['message'], $check[2] ) )  continue;
-					if ( !$this->match( $pattern['code'], $check[3] ) )     continue;
+					if ( !$this->match( $pattern['group'], $groupId ) ) {
+						continue;
+					}
+					if ( !$this->match( $pattern['check'], $check[0] ) ) {
+						continue;
+					}
+					if ( !$this->match( $pattern['subcheck'], $check[1] ) ) {
+						continue;
+					}
+					if ( !$this->match( $pattern['message'], $check[2] ) ) {
+						continue;
+					}
+					if ( !$this->match( $pattern['code'], $check[3] ) ) {
+						continue;
+					}
 
 					// If all of the aboce match, filter the check
 					unset( $warningsArray[$mkey][$wkey] );
@@ -398,16 +408,22 @@ class MessageChecker {
 			libxml_use_internal_errors( true );
 			libxml_clear_errors();
 			$doc = simplexml_load_string( Xml::tags( 'root', null, $translation ) );
-			if ( $doc ) continue;
+			if ( $doc ) {
+				continue;
+			}
 
 			$errors = libxml_get_errors();
 			$params = array();
 			foreach ( $errors as $error ) {
-				if ( $error->code !== 76 && $error->code !== 73 ) continue;
+				if ( $error->code !== 76 && $error->code !== 73 ) {
+					continue;
+				}
 				$params[] = "<br />• [{$error->code}] $error->message";
 			}
 
-			if ( !count( $params ) ) continue;
+			if ( !count( $params ) ) {
+				continue;
+			}
 
 			$warnings[$key][] = array(
 				array( 'tags', 'balance', $key, $code ),

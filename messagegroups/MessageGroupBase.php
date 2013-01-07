@@ -37,15 +37,19 @@ abstract class MessageGroupBase implements MessageGroup {
 	 */
 	public static function factory( $conf ) {
 		$obj = new $conf['BASIC']['class']();
-		$obj->conf =  $conf;
+		$obj->conf = $conf;
 		$obj->namespace = $obj->parseNamespace();
 
 		return $obj;
 	}
 
-	public function getConfiguration() { return $this->conf; }
+	public function getConfiguration() {
+		return $this->conf;
+	}
 
-	public function getId() { return $this->getFromConf( 'BASIC', 'id' ); }
+	public function getId() {
+		return $this->getFromConf( 'BASIC', 'id' );
+	}
 
 	public function getLabel( IContextSource $context = null ) {
 		return $this->getFromConf( 'BASIC', 'label' );
@@ -59,9 +63,13 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $this->getFromConf( 'BASIC', 'icon' );
 	}
 
-	public function getNamespace() { return $this->namespace; }
+	public function getNamespace() {
+		return $this->namespace;
+	}
 
-	public function isMeta() { return $this->getFromConf( 'BASIC', 'meta' ); }
+	public function isMeta() {
+		return $this->getFromConf( 'BASIC', 'meta' );
+	}
 
 	public function getSourceLanguage() {
 		$conf = $this->getFromConf( 'BASIC', 'sourcelanguage' );

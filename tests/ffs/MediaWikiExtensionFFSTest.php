@@ -96,8 +96,8 @@ class MediaWikiExtensionFFSTest extends MediaWikiTestCase {
 
 	public static function provideComments() {
 		$comment =
-<<<PHP
-/** Message documentation (Message documentation)
+			<<<PHP
+			/** Message documentation (Message documentation)
  * @author Purodha
  * @author The Evil IP address
  */

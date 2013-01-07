@@ -91,8 +91,8 @@ class MessageGroups {
 			$dbr = wfGetDB( DB_MASTER );
 
 			$tables = array( 'page', 'revtag' );
-			$vars   = array( 'page_id', 'page_namespace', 'page_title' );
-			$conds  = array( 'page_id=rt_page', 'rt_type' => RevTag::getType( 'tp:mark' ) );
+			$vars = array( 'page_id', 'page_namespace', 'page_title' );
+			$conds = array( 'page_id=rt_page', 'rt_type' => RevTag::getType( 'tp:mark' ) );
 			$options = array( 'GROUP BY' => 'rt_page' );
 			$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
@@ -192,7 +192,7 @@ class MessageGroups {
 	 * @return bool
 	 */
 	public static function exists( $id ) {
-		return (bool) self::getGroup( $id );
+		return (bool)self::getGroup( $id );
 	}
 
 	/**
@@ -298,7 +298,7 @@ class MessageGroups {
 		$paths = array();
 
 		/* This function recursively finds paths to the target group */
-		$pathFinder = function( &$paths, $group, $targetId, $prefix = '' )
+		$pathFinder = function ( &$paths, $group, $targetId, $prefix = '' )
 			use ( &$pathFinder )
 		{
 			if ( $group instanceof AggregateMessageGroup ) {
@@ -408,7 +408,7 @@ class MessageGroups {
 	public static function expandWildcards( $ids ) {
 		$all = array();
 
-		$matcher = new StringMatcher( '', (array) $ids );
+		$matcher = new StringMatcher( '', (array)$ids );
 		foreach ( self::getAllGroups() as $id => $_ ) {
 			if ( $matcher->match( $id ) ) {
 				$all[] = $id;

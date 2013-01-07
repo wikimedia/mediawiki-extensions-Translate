@@ -43,7 +43,7 @@ class YamlFFS extends SimpleFFS {
 	 * @return string
 	 */
 	protected function writeReal( MessageCollection $collection ) {
-		$output  = $this->doHeader( $collection );
+		$output = $this->doHeader( $collection );
 		$output .= $this->doAuthors( $collection );
 
 		$mangler = $this->group->getMangler();
@@ -91,7 +91,7 @@ class YamlFFS extends SimpleFFS {
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
 		$native = TranslateUtils::getLanguageName( $code, true );
-		$output  = "# Messages for $name ($native)\n";
+		$output = "# Messages for $name ($native)\n";
 		$output .= "# Exported from $wgSitename\n";
 
 		if ( isset( $wgTranslateYamlLibrary ) ) {

@@ -1,5 +1,7 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
+if ( !defined( 'MEDIAWIKI' ) ) {
+	die();
+}
 /**
  * An extension to ease the translation of Mediawiki and other projects.
  *
@@ -809,22 +811,21 @@ if ( !defined( 'TRANSLATE_CLI' ) ) {
  * @param $name \string Name of the namespace
  */
 function wfAddNamespace( $id, $name ) {
-	global $wgExtraNamespaces, $wgContentNamespaces,
-		$wgTranslateMessageNamespaces, $wgNamespaceProtection,
-		$wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault;
+	global $wgExtraNamespaces, $wgContentNamespaces, $wgTranslateMessageNamespaces,
+		$wgNamespaceProtection, $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault;
 
 	$constant = strtoupper( "NS_$name" );
 
 	define( $constant, $id );
 	define( $constant . '_TALK', $id + 1 );
 
-	$wgExtraNamespaces[$id]   = $name;
+	$wgExtraNamespaces[$id] = $name;
 	$wgExtraNamespaces[$id + 1] = $name . '_talk';
 
-	$wgContentNamespaces[]           = $id;
-	$wgTranslateMessageNamespaces[]  = $id;
+	$wgContentNamespaces[] = $id;
+	$wgTranslateMessageNamespaces[] = $id;
 
-	$wgNamespacesWithSubpages[$id]   = true;
+	$wgNamespacesWithSubpages[$id] = true;
 	$wgNamespacesWithSubpages[$id + 1] = true;
 
 	$wgNamespaceProtection[$id] = array( 'translate' );

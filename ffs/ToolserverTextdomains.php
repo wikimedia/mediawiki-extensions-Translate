@@ -74,8 +74,13 @@ class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 
 			// Prevent E_NOTICE undefined index.
 			// PremadeMediawikiExtensionGroups::factory should probably check this better instead
-			if ( !isset( $g['ignored'] ) )  $g['ignored'] = array();
-			if ( !isset( $g['optional'] ) )  $g['optional'] = array();
+			if ( !isset( $g['ignored'] ) ) {
+				$g['ignored'] = array();
+			}
+
+			if ( !isset( $g['optional'] ) ) {
+				$g['optional'] = array();
+			}
 
 			$copyvars = array( 'ignored', 'optional', 'var', 'desc', 'prefix', 'mangle', 'magicfile', 'aliasfile' );
 			foreach ( $copyvars as $var ) {

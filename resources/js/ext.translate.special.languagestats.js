@@ -6,7 +6,7 @@
  * @license GPL v2, CC-BY-SA-3.0
  */
 /*global mw:false*/
-jQuery( document ).ready( function( $ ) {
+jQuery( document ).ready( function ( $ ) {
 	'use strict';
 
 	var $allChildRows, $allTogglesCache, $toggleAllButton,
@@ -18,7 +18,7 @@ jQuery( document ).ready( function( $ ) {
 		return;
 	}
 
-	$metaRows.each( function() {
+	$metaRows.each( function () {
 		var $toggler,
 			$parent = $( this ),
 			thisGroupId = $parent.attr( 'data-groupid' ),
@@ -34,7 +34,7 @@ jQuery( document ).ready( function( $ ) {
 			.append( $( '<a href="#"></a>' )
 			.text( mw.msg( 'translate-langstats-expand' ) ) )
 			.append( ']' )
-			.click( function( e ) {
+			.click( function ( e ) {
 				var $el = $( this );
 				// Switch the state and toggle the rows
 				if ( $el.hasClass( 'collapsed' ) ) {
@@ -55,7 +55,7 @@ jQuery( document ).ready( function( $ ) {
 
 		// Handle hide/show recursively, so that collapsing parent group
 		// hides all sub groups regardless of nesting level
-		$parent.on( 'hide show', function( event ) {
+		$parent.on( 'hide show', function ( event ) {
 			// Reuse $toggle, $parent and $children from parent scope
 			if ( $toggler.hasClass( 'expanded' ) ) {
 				$children.trigger( event.type )[event.type]();
@@ -100,26 +100,26 @@ jQuery( document ).ready( function( $ ) {
 
 // When hovering a row, adjust brightness of the last two custom-colored cells as well
 // See also translate.langstats.css for the highlighting for the other normal rows
-mw.loader.using( 'jquery.colorUtil', function() {
+mw.loader.using( 'jquery.colorUtil', function () {
 	'use strict';
-	jQuery( document ).ready( function( $ ) {
-		$( '.mw-sp-translate-table.wikitable tr' ).hover( function() {
+	jQuery( document ).ready( function ( $ ) {
+		$( '.mw-sp-translate-table.wikitable tr' ).hover( function () {
 			$( '> td.hover-color', this )
 				// 30% more brightness
-				.css( 'background-color', function( i, val ) {
+				.css( 'background-color', function ( i, val ) {
 					return $.colorUtil.getColorBrightness( val, +0.3 );
 				} );
-		}, function() {
+		}, function () {
 			$( '> td.hover-color', this )
 				// 30% less brightness
-				.css( 'background-color', function( i, val ) {
+				.css( 'background-color', function ( i, val ) {
 					return $.colorUtil.getColorBrightness( val, -0.3 );
 				} );
 		} );
 	} );
 } );
 
-(function( mw, $ ) {
+(function ( mw, $ ) {
 	'use strict';
 	$( document ).ready( function () {
 		var index,

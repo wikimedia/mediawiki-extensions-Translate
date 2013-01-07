@@ -177,7 +177,7 @@ class MessageHandle {
 
 		$tables = array( 'page', 'revtag' );
 		$field = 'rt_type';
-		$conds  = array(
+		$conds = array(
 			'page_namespace' => $this->title->getNamespace(),
 			'page_title' => $this->title->getDBkey(),
 			'rt_type' => RevTag::getType( 'fuzzy' ),

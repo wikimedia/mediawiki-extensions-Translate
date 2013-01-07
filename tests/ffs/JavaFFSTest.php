@@ -26,8 +26,8 @@ class JavaFFSTest extends MediaWikiTestCase {
 
 	public function testParsing() {
 		$file =
-<<<PROPERTIES
-# You are reading the ".properties" entry.
+			<<<PROPERTIES
+			# You are reading the ".properties" entry.
 ! The exclamation mark can also mark text as comments.
 website = <nowiki>http://en.wikipedia.org/</nowiki>
 language = English

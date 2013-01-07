@@ -110,10 +110,10 @@ class PremadeMediawikiExtensionGroups {
 
 		// @TODO: find a better way
 		if ( isset( $info['aliasfile'] ) ) {
-			$conf['FILES']['aliasFile'] =  $info['aliasfile'];
+			$conf['FILES']['aliasFile'] = $info['aliasfile'];
 		}
 		if ( isset( $info['magicfile'] ) ) {
-			$conf['FILES']['magicFile'] =  $info['magicfile'];
+			$conf['FILES']['magicFile'] = $info['magicfile'];
 		}
 
 		if ( isset( $info['prefix'] ) ) {
@@ -155,7 +155,7 @@ class PremadeMediawikiExtensionGroups {
 	protected function parseFile() {
 		$defines = file_get_contents( $this->definitionFile );
 		$linefeed = '(\r\n|\n)';
-		$sections = array_map( 'trim', preg_split( "/$linefeed{2,}/", $defines, - 1, PREG_SPLIT_NO_EMPTY ) );
+		$sections = array_map( 'trim', preg_split( "/$linefeed{2,}/", $defines, -1, PREG_SPLIT_NO_EMPTY ) );
 		$groups = array();
 
 		foreach ( $sections as $section ) {
@@ -163,7 +163,9 @@ class PremadeMediawikiExtensionGroups {
 			$newgroup = array();
 
 			foreach ( $lines as $line ) {
-				if ( $line === '' || $line[0] === '#' ) continue;
+				if ( $line === '' || $line[0] === '#' ) {
+					continue;
+				}
 
 				if ( strpos( $line, '=' ) === false ) {
 					if ( empty( $newgroup['name'] ) ) {
@@ -174,37 +176,39 @@ class PremadeMediawikiExtensionGroups {
 				} else {
 					list( $key, $value ) = array_map( 'trim', explode( '=', $line, 2 ) );
 					switch ( $key ) {
-					case 'file':
-					case 'var':
-					case 'id':
-					case 'descmsg':
-					case 'desc':
-					case 'magicfile':
-					case 'aliasfile':
-						$newgroup[$key] = $value;
-						break;
-					case 'optional':
-					case 'ignored':
-						$values = array_map( 'trim', explode( ',', $value ) );
-						if ( !isset( $newgroup[$key] ) ) {
-							$newgroup[$key] = array();
-						}
-						$newgroup[$key] = array_merge( $newgroup[$key], $values );
-						break;
-					case 'prefix':
-						list( $prefix, $messages ) = array_map( 'trim', explode( '|', $value, 2 ) );
-						if ( isset( $newgroup['prefix'] ) && $newgroup['prefix'] !== $prefix ) {
-							throw new MWException( "Only one prefix supported: {$newgroup['prefix']} !== $prefix" );
-						}
-						$newgroup['prefix'] = $prefix;
+						case 'file':
+						case 'var':
+						case 'id':
+						case 'descmsg':
+						case 'desc':
+						case 'magicfile':
+						case 'aliasfile':
+							$newgroup[$key] = $value;
+							break;
+						case 'optional':
+						case 'ignored':
+							$values = array_map( 'trim', explode( ',', $value ) );
+							if ( !isset( $newgroup[$key] ) ) {
+								$newgroup[$key] = array();
+							}
+							$newgroup[$key] = array_merge( $newgroup[$key], $values );
+							break;
+						case 'prefix':
+							list( $prefix, $messages ) = array_map( 'trim', explode( '|', $value, 2 ) );
+							if ( isset( $newgroup['prefix'] ) && $newgroup['prefix'] !== $prefix ) {
+								throw new MWException( "Only one prefix supported: {$newgroup['prefix']} !== $prefix" );
+							}
+							$newgroup['prefix'] = $prefix;
 
-						if ( !isset( $newgroup['mangle'] ) ) $newgroup['mangle'] = array();
+							if ( !isset( $newgroup['mangle'] ) ) {
+								$newgroup['mangle'] = array();
+							}
 
-						$messages = array_map( 'trim', explode( ',', $messages ) );
-						$newgroup['mangle'] = array_merge( $newgroup['mangle'], $messages );
-						break;
-					default:
-						throw new MWException( "Unknown key:" . $key );
+							$messages = array_map( 'trim', explode( ',', $messages ) );
+							$newgroup['mangle'] = array_merge( $newgroup['mangle'], $messages );
+							break;
+						default:
+							throw new MWException( "Unknown key:" . $key );
 					}
 				}
 			}

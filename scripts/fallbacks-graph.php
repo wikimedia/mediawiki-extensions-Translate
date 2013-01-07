@@ -68,17 +68,14 @@ XML;
 
 	protected function createNode( $code ) {
 		return
-			  Xml::openElement( 'node', array( 'id' => $code ) )
+			Xml::openElement( 'node', array( 'id' => $code ) )
 			. Xml::openElement( 'data', array( 'key' => "code" ) )
 			. Xml::openElement( 'y:Shpapenode' )
 			. Xml::element( 'y:NodeLabel', array(), $code )
 			. Xml::closeElement( 'y:Shpapenode' )
 			. Xml::closeElement( 'data' )
-			. Xml::closeElement( 'node' )
-		;
+			. Xml::closeElement( 'node' );
 	}
-
-
 }
 
 $maintClass = 'FallbacksCompare';

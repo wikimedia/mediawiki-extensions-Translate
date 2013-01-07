@@ -115,7 +115,7 @@ class TranslatePreferences {
 
 		ksort( $languages );
 
-		$selector = new XmlSelect( 'mw-language-selector', 'mw-language-selector'  );
+		$selector = new XmlSelect( 'mw-language-selector', 'mw-language-selector' );
 		foreach ( $languages as $code => $name ) {
 			$selector->addOption( "$code - $name", $code );
 		}

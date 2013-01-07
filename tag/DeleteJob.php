@@ -43,9 +43,9 @@ class DeleteJob extends Job {
 		// Initialization
 		$title = $this->title;
 		// Other stuff
-		$user    = $this->getUser();
+		$user = $this->getUser();
 		$summary = $this->getSummary();
-		$base    = $this->getBase();
+		$base = $this->getBase();
 
 		PageTranslationHooks::$allowTargetEdit = true;
 		$oldUser = $wgUser;
@@ -69,7 +69,7 @@ class DeleteJob extends Job {
 		PageTranslationHooks::$allowTargetEdit = false;
 
 		$cache = wfGetCache( CACHE_DB );
-		$pages = (array) $cache->get( wfMemcKey( 'pt-base', $base ) );
+		$pages = (array)$cache->get( wfMemcKey( 'pt-base', $base ) );
 		$lastitem = array_pop( $pages );
 		if ( $title->getPrefixedText() === $lastitem ) {
 			$cache->delete( wfMemcKey( 'pt-base', $base ) );

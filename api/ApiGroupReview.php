@@ -49,8 +49,8 @@ class ApiGroupReview extends ApiBase {
 
 		if ( is_array( $stateConfig[$targetState] )
 			&& isset( $stateConfig[$targetState]['right'] )
-			&& !$user->isAllowed( $stateConfig[$targetState]['right'] ) )
-		{
+			&& !$user->isAllowed( $stateConfig[$targetState]['right'] )
+		) {
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 

@@ -30,12 +30,14 @@ interface StringMangler {
 	 * @return \bool
 	 */
 	public function match( $string );
+
 	/**
 	 * Mangles a list of message keys.
 	 * @param string|string[] $data Unmangled message keys.
 	 * @return string|string[] Mangled message keys.
 	 */
 	public function mangle( $data );
+
 	/**
 	 * Reverses the operation mangle() did.
 	 * @param string|string[] $data Mangled message keys.
@@ -53,11 +55,11 @@ class StringMatcher implements StringMangler {
 	/// Prefix for mangled message keys
 	protected $sPrefix = '';
 	/// Exact message keys
-	protected $aExact  = array();
+	protected $aExact = array();
 	/// Patterns of type foo*
 	protected $aPrefix = array();
 	/// Patterns that contain wildcard anywhere else than in the end
-	protected $aRegex  = array();
+	protected $aRegex = array();
 
 	/**
 	 * Alias for making NO-OP string mangler.
@@ -106,7 +108,7 @@ class StringMatcher implements StringMangler {
 			if ( $pos === false ) {
 				$this->aExact[] = $string;
 			} elseif ( $pos + 1 === strlen( $string ) ) {
-				$prefix = substr( $string, 0, - 1 );
+				$prefix = substr( $string, 0, -1 );
 				$this->aPrefix[$prefix] = strlen( $prefix );
 			} else {
 				$string = str_replace( '\\*', '.+', preg_quote( $string ) );
@@ -186,7 +188,7 @@ class StringMatcher implements StringMangler {
 		// Apply a "quoted-printable"-like escaping
 		$valid = self::getValidKeyChars();
 		$escapedString = preg_replace_callback( "/[^$valid]/",
-			function( $match ) {
+			function ( $match ) {
 				return '=' . sprintf( '%02X', ord( $match[0] ) );
 			},
 			$string
@@ -204,7 +206,7 @@ class StringMatcher implements StringMangler {
 		// Unescape the "quoted-printable"-like escaping,
 		// which is applied in mangleString.
 		$unescapedString = preg_replace_callback( "/=([A-F0-9]{2})/",
-			function( $match ) {
+			function ( $match ) {
 				return chr( hexdec( $match[0] ) );
 			},
 			$string

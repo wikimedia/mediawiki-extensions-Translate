@@ -27,7 +27,7 @@ Options:
   --comment       Comment for updating
 
 EOT
-);
+	);
 	exit( 1 );
 }
 
@@ -121,13 +121,17 @@ class FuzzyScript {
 		foreach ( $this->titles as $title ) {
 			$title = Title::newFromText( $title );
 			$ns = $title->getNamespace();
-			if ( !isset( $search[$ns] ) ) $search[$ns] = array();
+			if ( !isset( $search[$ns] ) ) {
+				$search[$ns] = array();
+			}
 			$search[$ns][] = 'page_title' . $dbr->buildLike( $title->getDBKey(), $dbr->anyString() );
 		}
 
 		$title_conds = array();
 		foreach ( $search as $ns => $names ) {
-			if ( $ns == NS_MAIN ) $ns = $wgTranslateMessageNamespaces;
+			if ( $ns == NS_MAIN ) {
+				$ns = $wgTranslateMessageNamespaces;
+			}
 			$titles = $dbr->makeList( $names, LIST_OR );
 			$title_conds[] = $dbr->makeList( array( 'page_namespace' => $ns, $titles ), LIST_AND );
 		}

@@ -93,7 +93,7 @@ class JavaFFS extends SimpleFFS {
 	 * @return string
 	 */
 	protected function writeReal( MessageCollection $collection ) {
-		$header  = $this->doHeader( $collection );
+		$header = $this->doHeader( $collection );
 		$header .= $this->doAuthors( $collection );
 		$header .= "\n";
 
@@ -215,7 +215,7 @@ class JavaFFS extends SimpleFFS {
 			$code = $collection->code;
 			$name = TranslateUtils::getLanguageName( $code );
 			$native = TranslateUtils::getLanguageName( $code, true );
-			$output  = "# Messages for $name ($native)\n";
+			$output = "# Messages for $name ($native)\n";
 			$output .= "# Exported from $wgSitename\n";
 		}
 

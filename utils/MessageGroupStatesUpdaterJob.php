@@ -84,29 +84,29 @@ class MessageGroupStatesUpdaterJob extends Job {
 		$proofread = $stats[MessageGroupStats::PROOFREAD];
 
 		switch ( $type ) {
-		case 'UNTRANSLATED':
-			return $total - $translated - $outdated;
-		case 'OUTDATED':
-			return $outdated;
-		case 'TRANSLATED':
-			return $translated;
-		case 'PROOFREAD':
-			return $proofread;
-		default:
-			throw new MWException( "Unknown condition $type" );
+			case 'UNTRANSLATED':
+				return $total - $translated - $outdated;
+			case 'OUTDATED':
+				return $outdated;
+			case 'TRANSLATED':
+				return $translated;
+			case 'PROOFREAD':
+				return $proofread;
+			default:
+				throw new MWException( "Unknown condition $type" );
 		}
 	}
 
 	public static function matchCondition( $value, $condition, $max ) {
 		switch ( $condition ) {
-		case 'ZERO':
-			return $value === 0;
-		case 'NONZERO':
-			return $value > 0;
-		case 'MAX':
-			return $value === $max;
-		default:
-			throw new MWException( "Unknown condition value $condition" );
+			case 'ZERO':
+				return $value === 0;
+			case 'NONZERO':
+				return $value > 0;
+			case 'MAX':
+				return $value === $max;
+			default:
+				throw new MWException( "Unknown condition value $condition" );
 		}
 	}
 

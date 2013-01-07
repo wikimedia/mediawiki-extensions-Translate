@@ -175,7 +175,7 @@ abstract class TranslateTask {
 			$this->options->getOffset(),
 			$this->options->getLimit()
 		);
-		$left  = count( $this->collection );
+		$left = count( $this->collection );
 
 		$callback = $this->options->getPagingCB();
 		call_user_func( $callback, $this->options->getOffset(), $left, $total );
@@ -413,8 +413,8 @@ class ExportMessagesTask extends ViewMessagesTask {
 		// or message documentation
 		global $wgTranslateDocumentationLanguageCode;
 		if ( $code !== $wgTranslateDocumentationLanguageCode
-			&& $code !== $this->group->getSourceLanguage() )
-		{
+			&& $code !== $this->group->getSourceLanguage()
+		) {
 			$this->collection->filter( 'ignored' );
 		}
 	}

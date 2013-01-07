@@ -35,7 +35,7 @@ class TTMServerBootstrap extends Maintenance {
 	}
 
 	protected function statusLine( $text, $channel = null ) {
-		$pid =  sprintf( "%5s", getmypid() );
+		$pid = sprintf( "%5s", getmypid() );
 		$prefix = sprintf( "%6.2f", microtime( true ) - $this->start );
 		$mem = sprintf( "%5.1fM", ( memory_get_usage( true ) / ( 1024 * 1024 ) ) );
 		$this->output( "$pid $prefix $mem  $text", $channel );

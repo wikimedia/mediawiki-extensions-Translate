@@ -14,7 +14,7 @@
  * @since 2012-06-27
  * @ingroup TTMServer
  */
-class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMServer  {
+class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMServer {
 	protected $client;
 	protected $updates;
 
@@ -137,7 +137,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 
 		/* Like mentioned above, we get results in random order. Sort them
 		 * now to have best matches first as expected by callers. */
-		uasort( $suggestions, function( $a, $b ) {
+		uasort( $suggestions, function ( $a, $b ) {
 			if ( $a['quality'] === $b['quality'] ) {
 				return 0;
 			}
@@ -194,8 +194,10 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 			if ( $handle->isValid() ) {
 				// Of the message definition page
 				$targetTitle = $handle->getTitle();
-				$sourceTitle = Title::makeTitle( $targetTitle->getNamespace(),
-				$handle->getKey() . '/' . $sourceLanguage );
+				$sourceTitle = Title::makeTitle(
+					$targetTitle->getNamespace(),
+					$handle->getKey() . '/' . $sourceLanguage
+				);
 				$revId = intval( $sourceTitle->getLatestRevID() );
 				/* Note: in some cases the source page might not exist, in this case
 				 * we use 0 as message version identifier, to differentiate them from
@@ -248,7 +250,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 
 	public function beginBootstrap() {
 		$update = $this->client->createUpdate();
-		$query = 'wiki:' .  $update->getHelper()->escapePhrase( wfWikiId() );
+		$query = 'wiki:' . $update->getHelper()->escapePhrase( wfWikiId() );
 		$update->addDeleteQuery( $query );
 		$update->addCommit();
 		$this->client->update( $update );
@@ -275,7 +277,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 	public function batchInsertTranslations( array $batch ) {
 		$update = $this->client->createUpdate();
 		foreach ( $batch as $key => $data ) {
-			list( $title, $language, $text ) = $data;
+			list( $title, , $text ) = $data;
 			$handle = new MessageHandle( $title );
 			$doc = $this->createDocument( $handle, $text, $this->revIds[$key] );
 			$update->addDocument( $doc );

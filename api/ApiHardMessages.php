@@ -24,7 +24,7 @@ class ApiHardMessages extends ApiBase {
 		}
 
 		$params = $this->extractRequestParams();
-		$title =  Title::newFromText( $params['title'] );
+		$title = Title::newFromText( $params['title'] );
 
 		if ( !$title ) {
 			$this->dieUsage( 'Invalid title', 'invalidtitle' );
@@ -43,7 +43,7 @@ class ApiHardMessages extends ApiBase {
 		$count = self::getHardCount( $revision ) + 1;
 		self::doMarkHard( $revision, $count );
 
-		$output =  array(
+		$output = array(
 			'title' => $baseTitle->getPrefixedText(),
 			'pageid' => $revision->getPage(),
 			'revision' => $revision->getId(),
@@ -92,7 +92,6 @@ class ApiHardMessages extends ApiBase {
 	 * @return int How many times the message was skipped
 	 */
 	public static function getHardCount( Revision $revision ) {
-		$count = 0;
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->selectField(
 			'revtag',
@@ -103,7 +102,7 @@ class ApiHardMessages extends ApiBase {
 			__METHOD__
 		);
 
-		$count = intval( $res);
+		$count = intval( $res );
 
 		return $count;
 	}

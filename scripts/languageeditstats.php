@@ -27,7 +27,7 @@ Options:
   --ns        Comma separated list of Namespace IDs (default: all)
 
 EOT
-);
+	);
 	exit( 1 );
 }
 
@@ -104,7 +104,7 @@ foreach ( $rows as $_ ) {
  */
 arsort( $codes );
 $i = 0;
-foreach ( $codes as $code => $num  ) {
+foreach ( $codes as $code => $num ) {
 	if ( $i++ === $top ) {
 		break;
 	}

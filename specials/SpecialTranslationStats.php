@@ -149,33 +149,33 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 		$out->addHTML(
 			Xml::fieldset( $this->msg( 'translate-statsf-options' )->text() ) .
-			Html::openElement( 'form', array( 'action' => $wgScript ) ) .
-			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Html::hidden( 'preview', 1 ) .
-			'<table>'
+				Html::openElement( 'form', array( 'action' => $wgScript ) ) .
+				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+				Html::hidden( 'preview', 1 ) .
+				'<table>'
 		);
 
 		$submit = Xml::submitButton( $this->msg( 'translate-statsf-submit' )->text() );
 
 		$out->addHTML(
 			$this->eInput( 'width', $opts ) .
-			$this->eInput( 'height', $opts ) .
-			'<tr><td colspan="2"><hr /></td></tr>' .
-			$this->eInput( 'start', $opts, 16 ) . // Should fit yyyymmddhhmmss
-			$this->eInput( 'days', $opts ) .
-			$this->eRadio( 'scale', $opts, array( 'months', 'weeks', 'days', 'hours' ) ) .
-			$this->eRadio( 'count', $opts, $this->getGraphTypes() ) .
-			'<tr><td colspan="2"><hr /></td></tr>' .
-			$this->eLanguage( 'language', $opts ) .
-			$this->eGroup( 'group', $opts ) .
-			'<tr><td colspan="2"><hr /></td></tr>' .
-			'<tr><td colspan="2">' . $submit . '</td></tr>'
+				$this->eInput( 'height', $opts ) .
+				'<tr><td colspan="2"><hr /></td></tr>' .
+				$this->eInput( 'start', $opts, 16 ) . // Should fit yyyymmddhhmmss
+				$this->eInput( 'days', $opts ) .
+				$this->eRadio( 'scale', $opts, array( 'months', 'weeks', 'days', 'hours' ) ) .
+				$this->eRadio( 'count', $opts, $this->getGraphTypes() ) .
+				'<tr><td colspan="2"><hr /></td></tr>' .
+				$this->eLanguage( 'language', $opts ) .
+				$this->eGroup( 'group', $opts ) .
+				'<tr><td colspan="2"><hr /></td></tr>' .
+				'<tr><td colspan="2">' . $submit . '</td></tr>'
 		);
 
 		$out->addHTML(
 			'</table>' .
-			'</form>' .
-			'</fieldset>'
+				'</form>' .
+				'</fieldset>'
 		);
 
 		if ( !$opts['preview'] ) {
@@ -203,12 +203,12 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 		$out->addHTML(
 			Html::element( 'hr' ) .
-			Html::element( 'pre', array(), "{{{$titleText}{$spiParams}}}" )
+				Html::element( 'pre', array(), "{{{$titleText}{$spiParams}}}" )
 		);
 
 		$out->addHTML(
 			Html::element( 'hr' ) .
-			Html::rawElement( 'div', array( 'style' => 'margin: 1em auto; text-align: center;' ), $this->image( $opts ) )
+				Html::rawElement( 'div', array( 'style' => 'margin: 1em auto; text-align: center;' ), $this->image( $opts ) )
 		);
 	}
 
@@ -314,7 +314,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	/**
 	 * Constructs a table row with label and group selector in two columns.
 	 * @param string $name Option name.
-	 * @param FormOptions $opts 
+	 * @param FormOptions $opts
 	 * @return string Html.
 	 */
 	protected function eGroup( $name, FormOptions $opts ) {
@@ -407,7 +407,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		$start = $cutoff;
 
 		if ( $fixedStart ) {
-			$end = self::roundTimestampToCutoff( $opts['scale'], $start + $period, 'later' ) -1;
+			$end = self::roundTimestampToCutoff( $opts['scale'], $start + $period, 'later' ) - 1;
 		} else {
 			$end = null;
 		}
@@ -450,7 +450,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 				continue;
 			}
 
-			foreach ( (array) $indexLabels as $i ) {
+			foreach ( (array)$indexLabels as $i ) {
 				if ( !isset( $labelToIndex[$i] ) ) {
 					continue;
 
@@ -471,7 +471,9 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		}
 
 		foreach ( $labels as &$label ) {
-			if ( strpos( $label, '@' ) === false ) continue;
+			if ( strpos( $label, '@' ) === false ) {
+				continue;
+			}
 			list( $groupId, $code ) = explode( '@', $label, 2 );
 			if ( $code && $groupId ) {
 				$code = TranslateUtils::getLanguageName( $code, false, $lang->getCode() ) . " ($code)";
@@ -565,7 +567,9 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 		foreach ( $resData as $date => $edits ) {
 			if ( $skip > 0 ) {
-				if ( ( $count - $i ) % $skip !== 0 ) $date = '';
+				if ( ( $count - $i ) % $skip !== 0 ) {
+					$date = '';
+				}
 			}
 
 			if ( strpos( $date, ';' ) !== false ) {
@@ -639,8 +643,8 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 * @return int Rounded number.
 	 */
 	public static function roundToSignificant( $number, $significant = 1 ) {
-		$log = (int) log( $number, 10 );
-		$nonSignificant =  max( 0, $log - $significant + 1 );
+		$log = (int)log( $number, 10 );
+		$nonSignificant = max( 0, $log - $significant + 1 );
 		$factor = pow( 10, $nonSignificant );
 		return intval( ceil( $number / $factor ) * $factor );
 	}

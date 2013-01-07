@@ -17,8 +17,8 @@
  */
 class SpecialMagic extends SpecialPage {
 
-	const MODULE_MAGIC     = 'words';
-	const MODULE_SPECIAL   = 'special';
+	const MODULE_MAGIC = 'words';
+	const MODULE_SPECIAL = 'special';
 	const MODULE_NAMESPACE = 'namespace';
 
 	/**
@@ -66,17 +66,17 @@ class SpecialMagic extends SpecialPage {
 
 			'<table><tr><td>' .
 				$this->msg( 'translate-page-language' )->escaped() .
-			'</td><td>' .
+				'</td><td>' .
 				TranslateUtils::languageSelector( $this->getLanguage()->getCode(), $this->options['language'] ) .
-			'</td></tr><tr><td>' .
+				'</td></tr><tr><td>' .
 				$this->msg( 'translate-magic-module' )->escaped() .
-			'</td><td>' .
+				'</td><td>' .
 				$this->moduleSelector( $this->options['module'] ) .
-			'</td></tr><tr><td colspan="2">' .
+				'</td></tr><tr><td colspan="2">' .
 				Xml::submitButton( $this->msg( 'translate-magic-submit' )->text() ) . ' ' .
 				Xml::submitButton( $this->msg( 'translate-magic-cm-export' )->text(), array( 'name' => 'export' ) ) .
-			'</td></tr></table>' .
-			Html::hidden( 'title', $this->getTitle()->getPrefixedText() )
+				'</td></tr></table>' .
+				Html::hidden( 'title', $this->getTitle()->getPrefixedText() )
 		);
 		return $form;
 	}
@@ -124,9 +124,9 @@ class SpecialMagic extends SpecialPage {
 			wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults );
 		}
 
-		$this->defaults    = $defaults;
+		$this->defaults = $defaults;
 		$this->nondefaults = $nondefaults;
-		$this->options     = $nondefaults + $defaults;
+		$this->options = $nondefaults + $defaults;
 	}
 
 	/**
@@ -196,7 +196,9 @@ class SpecialMagic extends SpecialPage {
 		$out->addWikiMsg( 'translate-magic-help' );
 		$errors = array();
 		$o->validate( $errors );
-		if ( $errors ) $this->outputErrors( $errors );
+		if ( $errors ) {
+			$this->outputErrors( $errors );
+		}
 		$out->addHTML( $o->output() );
 	}
 

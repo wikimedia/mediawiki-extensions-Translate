@@ -82,11 +82,11 @@ class SpecialManageGroups extends SpecialPage {
 		$this->diff = $diff;
 
 		$out = $this->getOutput();
-		$out->addHtml( ''
-			. Html::openElement( 'form', array( 'method' => 'post' ) )
-			. Html::hidden( 'title', $this->getTitle()->getPrefixedText() )
-			. Html::hidden( 'token', $this->getUser()->getEditToken() )
-			. $this->getLegend()
+		$out->addHtml( '' .
+			Html::openElement( 'form', array( 'method' => 'post' ) ) .
+			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
+			$this->getLegend()
 		);
 
 
@@ -112,7 +112,9 @@ class SpecialManageGroups extends SpecialPage {
 					foreach ( $messages as $params ) {
 						// Constructing title objects is way slower
 						$key = $params['key'];
-						if ( $isCap ) $key = $wgContLang->ucfirst( $key );
+						if ( $isCap ) {
+							$key = $wgContLang->ucfirst( $key );
+						}
 						$lb->add( $ns, "$key/$code" );
 					}
 				}
@@ -271,7 +273,7 @@ class SpecialManageGroups extends SpecialPage {
 	 */
 	static function tabify( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
-		list( $alias, $sub ) = SpecialPageFactory::resolveAlias( $title->getText() );
+		list( $alias, ) = SpecialPageFactory::resolveAlias( $title->getText() );
 
 		$pagesInGroup = array(
 			'ManageMessageGroups' => 'namespaces',

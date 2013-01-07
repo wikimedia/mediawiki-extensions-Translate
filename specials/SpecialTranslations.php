@@ -80,7 +80,7 @@ class SpecialTranslations extends SpecialAllpages {
 			$namespaces->addOption( $text, $index );
 		}
 
-		$out  = Xml::openElement( 'div', array( 'class' => 'namespaceoptions' ) );
+		$out = Xml::openElement( 'div', array( 'class' => 'namespaceoptions' ) );
 		$out .= Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
 		$out .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
 		$out .= Xml::openElement( 'fieldset' );
@@ -88,20 +88,20 @@ class SpecialTranslations extends SpecialAllpages {
 		$out .= Xml::openElement( 'table', array( 'id' => 'nsselect', 'class' => 'allpages' ) );
 		$out .= "<tr>
 				<td class='mw-label'>" .
-				Xml::label( $this->msg( 'translate-translations-messagename' )->text(), 'message' ) .
-				"</td>
+			Xml::label( $this->msg( 'translate-translations-messagename' )->text(), 'message' ) .
+			"</td>
 				<td class='mw-input'>" .
-					Xml::input( 'message', 30, $title->getText(), array( 'id' => 'message' ) ) .
-				"</td>
+			Xml::input( 'message', 30, $title->getText(), array( 'id' => 'message' ) ) .
+			"</td>
 			</tr>
 			<tr>
 				<td class='mw-label'>" .
-					Xml::label( $this->msg( 'translate-translations-project' )->text(), 'namespace' ) .
-				"</td>
+			Xml::label( $this->msg( 'translate-translations-project' )->text(), 'namespace' ) .
+			"</td>
 				<td class='mw-input'>" .
-					$namespaces->getHTML() . ' ' .
-					Xml::submitButton( $this->msg( 'allpagessubmit' )->text() ) .
-				"</td>
+			$namespaces->getHTML() . ' ' .
+			Xml::submitButton( $this->msg( 'allpagessubmit' )->text() ) .
+			"</td>
 				</tr>";
 		$out .= Xml::closeElement( 'table' );
 		$out .= Xml::closeElement( 'fieldset' );
@@ -153,7 +153,7 @@ class SpecialTranslations extends SpecialAllpages {
 			),
 			__METHOD__,
 			array(
-				'ORDER BY'  => 'page_title',
+				'ORDER BY' => 'page_title',
 				'USE INDEX' => 'name_title',
 			)
 		);
@@ -175,7 +175,7 @@ class SpecialTranslations extends SpecialAllpages {
 		$pageInfo = TranslateUtils::getContents( $titles, $namespace );
 
 		$tableheader = Xml::openElement( 'table', array(
-			'class'   => 'mw-sp-translate-table sortable'
+			'class' => 'mw-sp-translate-table sortable'
 		) );
 
 		$tableheader .= Xml::openElement( 'tr' );
@@ -233,8 +233,8 @@ class SpecialTranslations extends SpecialAllpages {
 			$leftColumn = $tools['history'] . $tools['edit'];
 			$out .= Xml::tags( 'tr', array( 'class' => $class ),
 				Xml::tags( 'td', null, $leftColumn ) .
-				Xml::tags( 'td', array( 'lang' => $code, 'dir' => Language::factory( $code )->getDir() ),
-					TranslateUtils::convertWhiteSpaceToHTML( $pageInfo[$key][0] ) )
+					Xml::tags( 'td', array( 'lang' => $code, 'dir' => Language::factory( $code )->getDir() ),
+						TranslateUtils::convertWhiteSpaceToHTML( $pageInfo[$key][0] ) )
 			);
 		}
 

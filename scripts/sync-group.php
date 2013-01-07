@@ -12,7 +12,7 @@
 
 /// @cond
 
-$options         = array( 'git' );
+$options = array( 'git' );
 $optionsWithArgs = array( 'group', 'lang', 'start', 'end' );
 require( dirname( __FILE__ ) . '/cli.inc' );
 
@@ -33,7 +33,7 @@ Options:
   --end         End of the last export (changes in source after will conflict)
   --nocolor     Without colours
 EOT
-);
+	);
 	exit( 1 );
 }
 
@@ -187,7 +187,7 @@ class ChangeSyncer {
 	 * @return \string Timestamp or false.
 	 */
 	public function getTimestampsFromGit( $file ) {
-		$file   = escapeshellarg( $file );
+		$file = escapeshellarg( $file );
 		$retval = 0;
 		$output = wfShellExec( "git log -n 1 --format=%cd $file", $retval );
 

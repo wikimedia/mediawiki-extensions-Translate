@@ -115,13 +115,13 @@ class MessageGroupCache {
 			$cache->set( $key, $value );
 		}
 
-		$cache->set( '#created',  $created ? $created : wfTimestamp() );
-		$cache->set( '#updated',  wfTimestamp() );
+		$cache->set( '#created', $created ? $created : wfTimestamp() );
+		$cache->set( '#updated', wfTimestamp() );
 		$cache->set( '#filehash', $hash );
 		$cache->set( '#msgcount', count( $messages ) );
 		ksort( $messages );
-		$cache->set( '#msghash',  md5( serialize( $messages ) ) );
-		$cache->set( '#version',  '3' );
+		$cache->set( '#msghash', md5( serialize( $messages ) ) );
+		$cache->set( '#version', '3' );
 		$cache->close();
 	}
 
@@ -240,11 +240,11 @@ class MessageGroupCache {
 	protected function updateCacheFormat( $oldcache ) {
 		// Read the data from the old format
 		$conv = array(
-			'#keys'     => $oldcache->get( '<|keys#>' ),
-			'#created'  => $oldcache->get( '<|timestamp#>' ),
-			'#updated'  => wfTimestamp(),
+			'#keys' => $oldcache->get( '<|keys#>' ),
+			'#created' => $oldcache->get( '<|timestamp#>' ),
+			'#updated' => wfTimestamp(),
 			'#filehash' => $oldcache->get( '<|hash#>' ),
-			'#version'  => '3',
+			'#version' => '3',
 		);
 		$conv['#msgcount'] = count( $conv['#keys'] );
 

@@ -103,18 +103,21 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 			// Is there really no better way to do this?
 			$subactionText = $request->getText( 'subaction' );
 			switch ( $subactionText ) {
-			case $this->msg( 'pt-movepage-action-check' )->text():
-				$subaction = 'check'; break;
-			case $this->msg( 'pt-movepage-action-perform' )->text():
-				$subaction = 'perform'; break;
-			case $this->msg( 'pt-movepage-action-other' )->text():
-				$subaction = ''; break;
-			default:
-				$subaction = '';
+				case $this->msg( 'pt-movepage-action-check' )->text():
+					$subaction = 'check';
+					break;
+				case $this->msg( 'pt-movepage-action-perform' )->text():
+					$subaction = 'perform';
+					break;
+				case $this->msg( 'pt-movepage-action-other' )->text():
+					$subaction = '';
+					break;
+				default:
+					$subaction = '';
 			}
 
 			if ( $subaction === 'check' && $this->checkToken() && $request->wasPosted() ) {
-				$blockers = $this->checkMoveBlockers( );
+				$blockers = $this->checkMoveBlockers();
 				if ( count( $blockers ) ) {
 					$this->showErrors( $blockers );
 					$this->showForm();
@@ -221,7 +224,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 		$br = Html::element( 'br' );
 		$subaction = array( 'name' => 'subaction' );
-		$readonly =  array( 'readonly' => 'readonly' );
+		$readonly = array( 'readonly' => 'readonly' );
 		$formParams = array( 'method' => 'post', 'action' => $this->getTitle( $this->oldText )->getLocalURL() );
 
 		$form = array();
@@ -247,7 +250,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 * @param bool|string $text Text of the value attribute. Default false.
 	 * @param array $attribs Extra attributes. Default empty array.
 	 */
-	protected function addInputLabel( &$form, $label, $name, $size = false , $text = false, $attribs = array() ) {
+	protected function addInputLabel( &$form, $label, $name, $size = false, $text = false, $attribs = array() ) {
 		$br = Html::element( 'br' );
 		list( $label, $input ) = Xml::inputLabelSep( $label, $name, $name, $size, $text, $attribs );
 		$form[] = $label . $br;
@@ -292,8 +295,14 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$out->wrapWikiMsg( '=== $1 ===', array( 'pt-movepage-list-other', $countSubPages ) );
 
 		foreach ( $subpages as $old ) {
-			if ( TranslatablePage::isTranslationPage( $old ) ) continue;
-			if ( $this->moveSubpages ) { $count++; }
+			if ( TranslatablePage::isTranslationPage( $old ) ) {
+				continue;
+			}
+
+			if ( $this->moveSubpages ) {
+				$count++;
+			}
+
 			$this->printChangeLine( $base, $old, $target, $this->moveSubpages );
 		}
 
@@ -301,7 +310,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$out->addWikiMsg( 'pt-movepage-list-count', $this->getLanguage()->formatNum( $count ) );
 
 		$br = Html::element( 'br' );
-		$readonly =  array( 'readonly' => 'readonly' );
+		$readonly = array( 'readonly' => 'readonly' );
 		$subaction = array( 'name' => 'subaction' );
 		$formParams = array( 'method' => 'post', 'action' => $this->getTitle( $this->oldText )->getLocalURL() );
 
@@ -424,7 +433,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$groups = MessageGroups::getAllGroups();
 		foreach ( $groups as $group ) {
 			if ( $group instanceof AggregateMessageGroup ) {
-				$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' ) ;
+				$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' );
 				if ( $subgroups !== false ) {
 					$subgroups = explode( ',', $subgroups );
 					$subgroups = array_flip( $subgroups );
@@ -432,7 +441,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 						$subgroups[$newGroupId] = $subgroups[$oldGroupId];
 						unset( $subgroups[$oldGroupId] );
 						$subgroups = array_flip( $subgroups );
-						TranslateMetadata::set( $group->getId(), 'subgroups', implode( ',', $subgroups ) ) ;
+						TranslateMetadata::set( $group->getId(), 'subgroups', implode( ',', $subgroups ) );
 					}
 				}
 			}
@@ -460,11 +469,15 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 			$blockers[] = array( 'pt-movepage-block-base-exists', $target->getPrefixedText() );
 		} else {
 			$errors = $this->oldTitle->isValidMoveOperation( $target, true, $this->reason );
-			if ( is_array( $errors ) ) $blockers = array_merge( $blockers, $errors );
+			if ( is_array( $errors ) ) {
+				$blockers = array_merge( $blockers, $errors );
+			}
 		}
 
 		// Don't spam the same errors for all pages if base page fails
-		if ( $blockers ) return $blockers;
+		if ( $blockers ) {
+			return $blockers;
+		}
 
 		// Collect all the old and new titles for checcks
 		$titles = array();
@@ -503,7 +516,9 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 			}
 		}
 
-		if ( $blockers ) return $blockers;
+		if ( $blockers ) {
+			return $blockers;
+		}
 
 		// Check that there are no move blockers
 		$lb->execute();

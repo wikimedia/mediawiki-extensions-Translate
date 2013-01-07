@@ -1,5 +1,7 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
+if ( !defined( 'MEDIAWIKI' ) ) {
+	die();
+}
 /**
  * Very crude tools to track memory usage
  *

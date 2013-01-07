@@ -44,8 +44,6 @@ class TuxMessageTable extends MessageTable {
 			$original = $m->definition();
 			$translation = $m->translation();
 
-			$hasTranslation = $translation !== null;
-
 			$linkAttribs = array();
 			$query = array( 'action' => 'edit' ) + $this->editLinkParams;
 			$linkAttribs['href'] = $title->getLocalUrl( $query );
@@ -112,13 +110,13 @@ class TuxMessageTable extends MessageTable {
 				array(
 					'class' => "row tux-message-item $itemClass"
 				),
-				'<div class="nine columns tux-list-message">'
-				. $sourceElement
-				. $dirMark // Can be removed when the support for bidi-isolation is available
-				. $translatedElement
-				. '</div>'
-				. "<div class='two columns tux-list-status text-center'>$status</div>"
-				. "<div class='one column tux-list-edit text-center'>$edit</div>"
+				'<div class="nine columns tux-list-message">' .
+					$sourceElement .
+					$dirMark . // Can be removed when the support for bidi-isolation is available
+					$translatedElement .
+					'</div>' .
+					"<div class='two columns tux-list-status text-center'>$status</div>" .
+					"<div class='one column tux-list-edit text-center'>$edit</div>"
 			);
 
 			$output .= Xml::tags( 'div', $tqeData, $messageListItem );

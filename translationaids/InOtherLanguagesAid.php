@@ -63,12 +63,12 @@ class InOtherLanguagesAid extends TranslationAid {
 		// Global configuration settings
 		$fallbacks = array();
 		if ( isset( $wgTranslateLanguageFallbacks[$code] ) ) {
-			$fallbacks = (array) $wgTranslateLanguageFallbacks[$code];
+			$fallbacks = (array)$wgTranslateLanguageFallbacks[$code];
 		}
 
 		$list = Language::getFallbacksFor( $code );
 		array_pop( $list ); // Get 'en' away from the end
-		$fallbacks = array_merge( $list , $fallbacks );
+		$fallbacks = array_merge( $list, $fallbacks );
 
 		return array_unique( $fallbacks );
 	}

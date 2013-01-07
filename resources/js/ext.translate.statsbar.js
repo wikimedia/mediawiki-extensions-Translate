@@ -113,7 +113,7 @@
 						.addClass( 'tux-untranslated' )
 						.data( 'untranslated', untranslatedCount )
 						.css( 'width', untranslated + '%' )
-				);
+			);
 
 			// TODO Add a tooltip for the statsbar that says the stats in words.
 			this.$container.append( $bar );

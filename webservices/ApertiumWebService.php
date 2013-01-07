@@ -38,7 +38,6 @@ class ApertiumWebService extends TranslationWebService {
 	}
 
 	protected function doRequest( $text, $from, $to ) {
-		$orig = $text;
 		$service = $this->service;
 
 		$text = trim( $text );
@@ -66,9 +65,9 @@ class ApertiumWebService extends TranslationWebService {
 		if ( !$status->isOK() ) {
 			$error = $req->getContent();
 			// Most likely a timeout or other general error
-			throw new TranslationWebServiceException(  "Http::get failed:\n"
-				. "* " . serialize( $error ) . "\n"
-				. "* " . serialize( $status )
+			throw new TranslationWebServiceException( "Http::get failed:\n" .
+				"* " . serialize( $error ) . "\n" .
+				"* " . serialize( $status )
 			);
 		}
 
@@ -76,8 +75,8 @@ class ApertiumWebService extends TranslationWebService {
 		if ( !is_object( $response ) ) {
 			throw new TranslationWebServiceException( serialize( $req->getContent() ) );
 		} elseif ( $response->responseStatus !== 200 ) {
-			throw new TranslationWebServiceException( "(HTTP {$response->responseStatus}) with ($service ($from|$to)): "
-				. $response->responseDetails);
+			throw new TranslationWebServiceException( "(HTTP {$response->responseStatus}) with ($service ($from|$to)): " .
+				$response->responseDetails );
 		}
 
 		$sug = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
