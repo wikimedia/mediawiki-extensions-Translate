@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//3DM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-07T09:46:30Z",
+      "side": 1,
+      "message": "space before , should be removed",
+      "revId": "dd3a707dc7e78b8e4735e7cf3ce4fd736af4bb14",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//3DI\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-07T09:46:30Z",
+      "side": 1,
+      "message": "No escaping?",
+      "revId": "dd3a707dc7e78b8e4735e7cf3ce4fd736af4bb14",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
