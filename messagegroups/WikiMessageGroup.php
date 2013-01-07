@@ -36,6 +36,7 @@ class WikiMessageGroup extends MessageGroupOld {
 	/**
 	 * Defaults to wiki content language.
 	 * @return string Language code
+	 */
 	public function getSourceLanguage() {
 		global $wgLanguageCode;
 
