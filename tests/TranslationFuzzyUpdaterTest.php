@@ -41,7 +41,11 @@ class TranslationFuzzyUpdaterTest extends MediaWikiTestCase {
 		$page = WikiPage::factory( $title );
 		$status = $page->doEdit( '$1 van $2', __METHOD__ );
 		$value = $status->getValue();
-		$revision = $value['revision']->getId();
+		/**
+		 * @var Revision $rev
+		 */
+		$rev = $value['revision'];
+		$revision = $rev->getId();
 
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array(

@@ -100,6 +100,9 @@ class JavaFFS extends SimpleFFS {
 		$output = '';
 		$mangler = $this->group->getMangler();
 
+		/**
+		 * @var TMessage $m
+		 */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
@@ -122,7 +125,6 @@ class JavaFFS extends SimpleFFS {
 		}
 		return '';
 	}
-
 
 	/**
 	 * Writes well-formed properties file row with key and value.
@@ -200,7 +202,6 @@ class JavaFFS extends SimpleFFS {
 		$value = str_replace( '\n', "\n", $value );
 		return array( $key, $value );
 	}
-
 
 	/**
 	 * @param $collection MessageCollection

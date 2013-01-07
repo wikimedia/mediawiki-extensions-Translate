@@ -187,6 +187,9 @@ class TPParse {
 			$sectiontext = null;
 
 			if ( isset( $collection[$prefix . $s->id] ) ) {
+				/**
+				 * @var TMessage $msg
+				 */
 				$msg = $collection[$prefix . $s->id];
 				$translation = $msg->translation();
 

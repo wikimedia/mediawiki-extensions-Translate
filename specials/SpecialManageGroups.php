@@ -146,7 +146,14 @@ class SpecialManageGroups extends SpecialPage {
 		$out->addHtml( Html::closeElement( 'form' ) );
 	}
 
-	protected function formatChange( $group, $code, $type, $params ) {
+	/**
+	 * @param MessageGroup $group
+	 * @param string $code
+	 * @param string $type
+	 * @param array $params
+	 * @return string HTML
+	 */
+	protected function formatChange( MessageGroup $group, $code, $type, $params ) {
 		$key = $params['key'];
 		$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$code" );
 		$id = self::changeId( $group->getId(), $code, $type, $key );

@@ -76,9 +76,13 @@ class PageTranslationHooks {
 
 	/**
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
+	 *
+	 * Change to this line once BC is 1.21 and later:
+	 * public static function onSectionSave( WikiPage $wikiPage, User $user, $content, $summary,
 	 */
 	public static function onSectionSave( $wikiPage, User $user, $content, $summary,
-		$minor, $_, $_, $flags, $revision ) {
+		$minor, $_, $_, $flags, $revision
+	) {
 		$title = $wikiPage->getTitle();
 
 		if ( $content instanceof TextContent ) {
@@ -114,6 +118,9 @@ class PageTranslationHooks {
 
 		// Add a tracking mark
 		if ( $revision !== null ) {
+			/**
+			 * @var Revision $revision
+			 */
 			self::addSectionTag( $title, $revision->getId(), $page->getMarkedTag() );
 		}
 
