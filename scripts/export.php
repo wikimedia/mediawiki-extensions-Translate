@@ -98,6 +98,7 @@ if ( isset( $options['codemaponly'] ) ) {
 	$codemapOnly = true;
 }
 
+$groupIds = array();
 if ( isset( $options['group'] ) ) {
 	$groupIds = explode( ',', trim( $options['group'] ) );
 }

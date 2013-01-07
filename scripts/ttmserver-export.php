@@ -46,13 +46,12 @@ class TTMServerBootstrap extends Maintenance {
 
 		// TTMServer is the id of the enabled-by-default instance
 		$configKey = $this->getOption( 'ttmserver', 'TTMServer' );
-		if ( isset( $wgTranslateTranslationServices[$configKey] ) ) {
-			$this->config = $config = $wgTranslateTranslationServices[$configKey];
-			$server = TTMServer::factory( $config );
-		} else {
+		if ( !isset( $wgTranslateTranslationServices[$configKey] ) ) {
 			$this->error( "Translation memory is not configured properly", 1 );
 		}
 
+		$this->config = $config = $wgTranslateTranslationServices[$configKey];
+		$server = TTMServer::factory( $config );
 
 		$this->statusLine( "Loading groups...\n" );
 		$groups = MessageGroups::singleton()->getGroups();

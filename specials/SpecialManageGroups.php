@@ -164,6 +164,7 @@ class SpecialManageGroups extends SpecialPage {
 			return '';
 		}
 
+		$text = '';
 		if ( $type === 'deletion' ) {
 			$wiki = Revision::newFromTitle( $title )->getText();
 			$this->diff->setText( $wiki, '' );
@@ -187,11 +188,11 @@ class SpecialManageGroups extends SpecialPage {
 			}
 
 			$this->diff->setText( $wiki, $params['content'] );
-			$text = $this->diff->getDiff( Linker::link( $title ), $actions );
+			$text .= $this->diff->getDiff( Linker::link( $title ), $actions );
 		}
 
 		$hidden = Html::hidden( $id, 1 );
-		$text = $text . $hidden;
+		$text .= $hidden;
 		$classes = "mw-translate-smg-change smg-change-$type";
 		return Html::rawElement( 'div', array( 'class' => $classes ), $text );
 	}

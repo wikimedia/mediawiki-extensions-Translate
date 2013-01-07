@@ -36,6 +36,7 @@ class JavaFFS extends SimpleFFS {
 		$authors = $messages = array();
 		$linecontinuation = false;
 
+		$key = '';
 		$value = '';
 		foreach ( $lines as $line ) {
 			if ( $linecontinuation ) {

@@ -46,6 +46,7 @@ if ( !isset( $options['group'] ) ) {
 	exit( 1 );
 }
 
+$groupIds = array();
 if ( isset( $options['group'] ) ) {
 	$groupIds = explode( ',', trim( $options['group'] ) );
 }

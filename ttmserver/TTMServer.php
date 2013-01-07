@@ -120,7 +120,7 @@ class TTMServer {
 	}
 
 	/// Hook: ArticleDeleteComplete
-	public static function onDelete( $wikipage ) {
+	public static function onDelete( WikiPage $wikipage ) {
 		$handle = new MessageHandle( $wikipage->getTitle() );
 		TTMServer::primary()->update( $handle, null );
 		return true;

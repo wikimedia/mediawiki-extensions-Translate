@@ -170,6 +170,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		$title = $handle->getTitle();
 
 		$doDelete = true;
+		$sourceLanguage = '';
 		if ( $handle->isValid() ) {
 			$sourceLanguage = $handle->getGroup()->getSourceLanguage();
 			if ( $handle->getCode() === $sourceLanguage ) {

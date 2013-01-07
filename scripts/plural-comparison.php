@@ -111,6 +111,7 @@ class PluralCompare extends Maintenance {
 		$doc = new DOMDocument;
 		$doc->load( $fileName );
 		$rulesets = $doc->getElementsByTagName( "pluralRules" );
+		$plurals = array();
 		foreach ( $rulesets as $ruleset ) {
 			$codes = $ruleset->getAttribute( 'locales' );
 			$rules = array();
