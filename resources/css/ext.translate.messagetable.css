@@ -65,6 +65,8 @@
 
 .tux-message-item {
 	line-height: 50px;
+	height: 50px;
+	overflow: hidden;
 	margin-right: 5px !important;
 	margin-left: 5px !important;
 	vertical-align: middle;
