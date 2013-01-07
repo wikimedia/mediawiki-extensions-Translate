@@ -2,6 +2,10 @@
 	width: 600px;
 }
 
+.ext-translate-msggroup-selector {
+	margin-bottom: 10px;
+}
+
 .ext-translate-msggroup-selector .grouplink + .grouplink:before {
 	border-left: 4px solid #777;
 	border-top: 4px solid transparent;
@@ -57,7 +61,7 @@
 
 .ext-translate-msggroup-selector span.grouptitle {
 	float: left;
-	padding: 0 6px;
+	padding: 0 6px 0 0;
 }
 
 .ext-translate-msggroup-selector span.grouplink {

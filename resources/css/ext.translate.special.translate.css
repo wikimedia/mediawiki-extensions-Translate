@@ -55,7 +55,7 @@
 	padding-bottom: 3px;
 	padding-left: 15px;
 	padding-top: 1.25em;
-	top: 1px;
+	top: 2px;
 	display: block;
 	position: relative;
 	float: left;
@@ -104,4 +104,13 @@
 	font-size: 12pt;
 	color: #555555;
 	top: 1px;
+}
+
+.tux-editor-header {
+	padding-bottom: 25px;
+}
+
+.tux-editor-header .description {
+	font-size: 14px;
+	color: #252525;
 }
