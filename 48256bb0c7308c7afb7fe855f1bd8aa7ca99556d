@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//3Ko\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-07T04:20:54Z",
+      "side": 1,
+      "message": "We are:\n1) showing \"Edit description\" first , \n2) fetch message documentation, \n3) if no documentation change it to \"Add description\".\n\nSo  when that fetch is happening, user see \"Edit description\" without any  description.\n\nTo make it more consistent and more logical, consider doing this:\n\n\n1) By default show \"Add description\"\n2) When documentation is available change it to \"Edit\" description",
+      "revId": "48256bb0c7308c7afb7fe855f1bd8aa7ca99556d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
