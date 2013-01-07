@@ -42,7 +42,7 @@ abstract class MessageIndex {
 	public static function getGroupIds( MessageHandle $handle ) {
 		$namespace = $handle->getTitle()->getNamespace();
 		$key = $handle->getKey();
-		$normkey = strtr( strtolower( "$namespace:$key" ), " ", "_"  );
+		$normkey = TranslateUtils::normaliseKey( $namespace, $key );
 
 		$value = self::singleton()->get( $normkey );
 		if ( $value !== null ) {
