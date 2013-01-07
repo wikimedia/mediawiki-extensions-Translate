@@ -496,9 +496,8 @@
 					.append( $( '<a>' )
 						.addClass( 'text-left message-desc-edit' )
 						.attr( {
-							href: ( new mw.Uri( window.location.href ) ).extend( {
-								language: translateDocumentationLanguageCode
-							} ).toString(), // FIXME: this link is not correct
+							href: mw.translate.getDocumentationEditURL( this.$editTrigger.data( 'title' )
+								.replace( /\/[a-z\-]+$/, '' ) ),
 							target: '_blank'
 					} )
 					.text( mw.msg( 'tux-editor-add-desc' ) ) )

@@ -73,7 +73,25 @@
 
 		canTranslate: function () {
 			return mw.config.get( 'TranslateRight' );
+		},
+
+		/**
+		 * Get the documentation edit URL for a title
+		 * @param {String} title message title
+		 *
+		 * @returns{String} URL for editing the documentation
+		 */
+		getDocumentationEditURL: function ( title ) {
+			var descUri = new mw.Uri( window.location.href );
+
+			descUri.query = {
+				action: 'edit',
+				title: title + '/' +  mw.config.get( 'wgTranslateDocumentationLanguageCode' )
+			};
+
+			return descUri.toString();
 		}
+
 	} );
 
 	/**
