@@ -16,6 +16,24 @@
       "revId": "238d512e9e16deeaacf75814cd8e3cfb43c7c0ce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//26k\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-07T12:09:02Z",
+      "side": 1,
+      "message": "Not that I agree, but I also don\u0027t care.",
+      "parentUuid": "AAADgX//2+s\u003d",
+      "revId": "238d512e9e16deeaacf75814cd8e3cfb43c7c0ce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
