@@ -114,7 +114,7 @@ class TranslateHooks {
 
 				// Check syntax for \<translate>
 				$wgHooks['PageContentSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
-				$wgHooks['EditFilterMergedContent'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';
+				$wgHooks['EditFilterMergedContent'][] = 'PageTranslationHooks::tpSyntaxCheckForEditContent';
 
 				// Add transtag to page props for discovery
 				$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::addTranstag';

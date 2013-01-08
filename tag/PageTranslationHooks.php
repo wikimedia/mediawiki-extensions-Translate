@@ -331,42 +331,60 @@ class PageTranslationHooks {
 	}
 
 	/**
-	 * Display nice error for editpage.
-	 * Hook: EditFilterMerged, EditFilterMergedContent
+	 * Display nice error when editing content.
+	 * Hook: EditFilterMergedContent (since MW 1.21)
 	 */
-	public static function tpSyntaxCheckForEditPage( $editpage, $content, &$error, $summary ) {
-		if ( $content instanceof TextContent ) {
-			$text = $content->getNativeData();
-		} elseif ( is_string( $content ) ) {
-			// BC 1.20
-			$text = $content;
-		} else {
-			// Screw it, not interested
-			return true;
+	public static function tpSyntaxCheckForEditContent( $context, $content, $status, $summary ) {
+		if ( !( $content instanceof TextContent ) ) {
+			return true; // whatever.
 		}
 
-		if ( $editpage instanceof IContextSource ) {
-			$title = $editpage->getTitle();
-		} elseif ( $editpage instanceof EditPage ) {
-			// BC 1.20
-			$title = $editpage->mTitle;
-		} else {
-			// Screw it, not interested
-			return true;
+		$text = $content->getNativeData();
+		$title = $context->getTitle();
+
+		$e = self::tpSyntaxError( $title, $text );
+
+		if ( $e ) {
+			$msg = $e->getMsg();
+			//$msg is an array containing a message key followed by any parameters.
+			//todo: use Message object instead.
+
+			call_user_func_array( array( $status, 'fatal' ), $msg );
 		}
 
+		return true;
+	}
+
+	/**
+	 * Display nice error for editpage.
+	 * Hook: EditFilterMerged (until MW 1.20)
+	 */
+	public static function tpSyntaxCheckForEditPage( $editpage, $text, &$error, $summary ) {
+		$title = $editpage->mTitle;
+		$e = self::tpSyntaxError( $title, $text );
+
+		if ( $e ) {
+			$error .= Html::rawElement( 'div', array( 'class' => 'error' ), $e->getMessage() );
+		}
+
+		return true;
+	}
+
+	/**
+	 * Returns any syntax error.
+	 */
+	protected static function tpSyntaxError( $title, $text ) {
 		if ( strpos( $text, '<translate>' ) === false ) {
-			return true;
+			return null;
 		}
 
 		$page = TranslatablePage::newFromText( $title, $text );
 		try {
 			$page->getParse();
+			return null;
 		} catch ( TPException $e ) {
-			$error .= Html::rawElement( 'div', array( 'class' => 'error' ), $e->getMessage() );
+			return $e;
 		}
-
-		return true;
 	}
 
 	/**
