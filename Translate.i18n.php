@@ -6142,8 +6142,8 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-editor-save-failed' => 'Das Speichern der Übersetzung ist fehlgeschlagen: $1',
 	'tux-editor-use-this-translation' => 'Als Übersetzung verwenden',
 	'tux-editor-message-desc-more' => 'Mehr ansehen',
-	'tux-editor-clear-translated' => 'Übersetzte entfernen',
-	'tux-editor-outdated-warning' => 'Diese Übersetzung ist möglicherweise veraltet.',
+	'tux-editor-clear-translated' => 'Übersetzte verstecken',
+	'tux-editor-outdated-warning' => 'Diese Übersetzung muss eventuell aktualisiert werden.',
 	'tux-editor-outdated-warning-diff-link' => 'Unterschiede zeigen',
 );
 
@@ -6710,8 +6710,8 @@ Jo nejwužytnjej za korigěrowańske nadawki.',
 	'tux-editor-save-failed' => 'Pśełožk njedajo se składowaś: $1',
 	'tux-editor-use-this-translation' => 'Ako pśełožk wužywaś',
 	'tux-editor-message-desc-more' => 'Wěcej se woglědaś',
-	'tux-editor-clear-translated' => 'Pśełožki wulašowaś',
-	'tux-editor-outdated-warning' => 'Toś ten pśełožk je snaź zestarjony.',
+	'tux-editor-clear-translated' => 'Pśełožki wulašowaś', # Fuzzy
+	'tux-editor-outdated-warning' => 'Toś ten pśełožk je snaź zestarjony.', # Fuzzy
 	'tux-editor-outdated-warning-diff-link' => 'Rozdźěle pokazaś',
 );
 
@@ -9344,8 +9344,8 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-editor-save-failed' => "Échec de l'enregistrement de la traduction : $1",
 	'tux-editor-use-this-translation' => 'Utiliser comme traduction',
 	'tux-editor-message-desc-more' => 'Voir davantage',
-	'tux-editor-clear-translated' => 'Effacer la traduction',
-	'tux-editor-outdated-warning' => 'Cette traduction peut être obsolète.',
+	'tux-editor-clear-translated' => 'Effacer la traduction', # Fuzzy
+	'tux-editor-outdated-warning' => 'Cette traduction peut être obsolète.', # Fuzzy
 	'tux-editor-outdated-warning-diff-link' => 'Afficher les différences',
 );
 
@@ -10242,6 +10242,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-editor-shortcut-info' => 'Prema en "$1" para gardar ou en "$2" para pasar á seguinte mensaxe',
 	'tux-editor-no-message-doc' => 'A mensaxe non ten documentación',
 	'tux-editor-edit-desc' => 'Editar a descrición',
+	'tux-editor-add-desc' => 'Engadir unha descrición',
 	'tux-editor-suggestions-title' => 'Suxestións',
 	'tux-editor-in-other-languages' => 'Noutras linguas',
 	'tux-editor-need-more-help' => 'Necesita máis axuda?',
@@ -10252,7 +10253,9 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-editor-save-failed' => 'Houbo un erro ao gardar a tradución: $1',
 	'tux-editor-use-this-translation' => 'Utilizar como tradución',
 	'tux-editor-message-desc-more' => 'Ollar máis',
-	'tux-editor-clear-translated' => 'Limpar as traducidas',
+	'tux-editor-clear-translated' => 'Limpar as traducidas', # Fuzzy
+	'tux-editor-outdated-warning' => 'Esta tradución pode estar obsoleta.', # Fuzzy
+	'tux-editor-outdated-warning-diff-link' => 'Mostrar as diferenzas',
 );
 
 /** Goan Konkani (Latin script) (Konknni)
@@ -11872,8 +11875,8 @@ Je najwužitnišo za korigowanske nadawki.',
 	'tux-editor-save-failed' => 'Přełožk njeda so składować: $1',
 	'tux-editor-use-this-translation' => 'Jako přełožk wužiwać',
 	'tux-editor-message-desc-more' => 'Wjace sej wobhladać',
-	'tux-editor-clear-translated' => 'Přełožki wotstronić',
-	'tux-editor-outdated-warning' => 'Tutón přełožk je zestarjeny.',
+	'tux-editor-clear-translated' => 'Přełožki wotstronić', # Fuzzy
+	'tux-editor-outdated-warning' => 'Tutón přełožk je zestarjeny.', # Fuzzy
 	'tux-editor-outdated-warning-diff-link' => 'Rozdźěle pokazać',
 );
 
@@ -13700,6 +13703,7 @@ Utile per l'attività di correzione.",
 	'tux-editor-shortcut-info' => 'Premi "$1" per salvare o "$2" per passare al messaggio successivo',
 	'tux-editor-no-message-doc' => 'Nessuna documentazione del messaggio',
 	'tux-editor-edit-desc' => 'Modifica descrizione',
+	'tux-editor-add-desc' => 'Aggiungi descrizione',
 	'tux-editor-suggestions-title' => 'Suggerimenti',
 	'tux-editor-in-other-languages' => 'In altre lingue',
 	'tux-editor-need-more-help' => 'Hai bisogno di aiuto?',
@@ -14097,8 +14101,8 @@ $1',
 	'tux-editor-save-failed' => '翻訳の保存に失敗しました: $1',
 	'tux-editor-use-this-translation' => '翻訳として使用',
 	'tux-editor-message-desc-more' => '続きを表示',
-	'tux-editor-clear-translated' => '翻訳を消去',
-	'tux-editor-outdated-warning' => 'この翻訳は修正が必要かもしれません。',
+	'tux-editor-clear-translated' => '翻訳を消去', # Fuzzy
+	'tux-editor-outdated-warning' => 'この翻訳は修正が必要かもしれません。', # Fuzzy
 	'tux-editor-outdated-warning-diff-link' => '差分を表示',
 );
 
@@ -17636,8 +17640,8 @@ $1',
 	'tux-editor-save-failed' => 'Не успеав да го зачувам преводот: $1',
 	'tux-editor-use-this-translation' => 'Користи како превод',
 	'tux-editor-message-desc-more' => 'Погл. уште',
-	'tux-editor-clear-translated' => 'Тргни преведено',
-	'tux-editor-outdated-warning' => 'Преводов може да е застарен.',
+	'tux-editor-clear-translated' => 'Тргни преведено', # Fuzzy
+	'tux-editor-outdated-warning' => 'Преводов може да е застарен.', # Fuzzy
 	'tux-editor-outdated-warning-diff-link' => 'Прик. разлики',
 );
 
@@ -17897,7 +17901,7 @@ $messages['ml'] = array(
 	'tux-editor-tm-match' => '$1% ചേര്‍ച്ച',
 	'tux-editor-use-this-translation' => 'പരിഭാഷയ്ക്കുപയോഗിക്കുക',
 	'tux-editor-message-desc-more' => 'മുഴുവന്‍ കാണിയ്ക്കുക',
-	'tux-editor-outdated-warning' => 'ഈ പരിഭാഷ കാലഹരണപ്പെട്ടതാവാം.',
+	'tux-editor-outdated-warning' => 'ഈ പരിഭാഷ കാലഹരണപ്പെട്ടതാവാം.', # Fuzzy
 );
 
 /** Mongolian (монгол)
@@ -21382,7 +21386,7 @@ A ven dzortut a taj con ij travaj ëd revision.',
 	'translate-msggroupselector-search-recent' => 'Recent',
 	'translate-msggroupselector-load-from-all' => 'Carié ij mëssagi da tute le partìe',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|sot-partìa|sot-partìe}}',
-	'tux-languageselector' => 'Lenga', # Fuzzy
+	'tux-languageselector' => 'Volté an',
 	'tux-tab-all' => 'Tùit',
 	'tux-tab-untranslated' => 'Nen voltà',
 	'tux-tab-outdated' => 'Veje',
@@ -21400,6 +21404,7 @@ A ven dzortut a taj con ij travaj ëd revision.',
 	'tux-editor-shortcut-info' => 'Sgnaca "$1" për salvé o "$2" për sauté al mëssagi ch\'a ven',
 	'tux-editor-no-message-doc' => 'Gnun-a documentassion dël mëssagi',
 	'tux-editor-edit-desc' => 'Modifiché la descrission',
+	'tux-editor-add-desc' => 'Gionta descrission',
 	'tux-editor-suggestions-title' => 'Sugeriment',
 	'tux-editor-in-other-languages' => "Ant j'àutre lenghe",
 	'tux-editor-need-more-help' => "Dabzògn ëd pi d'agiut?",
@@ -21410,6 +21415,9 @@ A ven dzortut a taj con ij travaj ëd revision.',
 	'tux-editor-save-failed' => 'Falì a salvé la tradussion: $1',
 	'tux-editor-use-this-translation' => 'Dòvra com tradussion',
 	'tux-editor-message-desc-more' => 'Visualisé ëd pi',
+	'tux-editor-clear-translated' => 'Polida tradussion', # Fuzzy
+	'tux-editor-outdated-warning' => 'Sta tradussion a peul esse veja', # Fuzzy
+	'tux-editor-outdated-warning-diff-link' => 'Smon diferense',
 );
 
 /** Western Punjabi (پنجابی)
@@ -23161,13 +23169,13 @@ $1',
 	'translate-dynagroup-last' => 'Последние изменения от {{GENDER:$1|участника|участницы}} $1',
 	'translate-dynagroup-lastc' => 'Последние изменения от {{GENDER:$1|участника|участницы}} $1 ( $2 )',
 	'translate-gethelp' => 'Справка',
-	'translate-msggroupselector-projects' => 'Группы сообщений', # Fuzzy
+	'translate-msggroupselector-projects' => 'Группа сообщений',
 	'translate-msggroupselector-search-placeholder' => 'Поиск групп',
 	'translate-msggroupselector-search-all' => 'Все',
 	'translate-msggroupselector-search-recent' => 'Недавние',
 	'translate-msggroupselector-load-from-all' => 'Загрузить сообщения из всех групп',
 	'translate-msggroupselector-view-subprojects' => '{{PLURAL:$1|Одна подгруппа|$1 подгруппы|$1 подгрупп}}',
-	'tux-languageselector' => 'Язык', # Fuzzy
+	'tux-languageselector' => 'Переводить на',
 	'tux-tab-all' => 'Все',
 	'tux-tab-untranslated' => 'Непереведённые',
 	'tux-tab-outdated' => 'Требующие обновления',
@@ -23177,6 +23185,7 @@ $1',
 	'tux-status-fuzzy' => 'Требуется обновление',
 	'tux-status-proofread' => 'Вычитка',
 	'tux-status-translated' => 'Переведено',
+	'tux-status-saving' => 'Сохраняется...',
 	'tux-status-unsaved' => 'Не сохранено',
 	'tux-editor-placeholder' => 'Ваш перевод',
 	'tux-editor-save-button-label' => 'Сохранить перевод',
@@ -23184,11 +23193,20 @@ $1',
 	'tux-editor-shortcut-info' => 'Нажмите «$1» для сохранения или «$2» для перехода к следующему сообщению.',
 	'tux-editor-no-message-doc' => 'Документации нет',
 	'tux-editor-edit-desc' => 'Правка описания',
+	'tux-editor-add-desc' => 'Добавить описание',
 	'tux-editor-suggestions-title' => 'Подсказки',
 	'tux-editor-in-other-languages' => 'На других языках',
 	'tux-editor-need-more-help' => 'Нужна помощь?',
 	'tux-editor-ask-help' => 'Попросите дополнительное объяснение',
 	'tux-editor-tm-match' => 'соответствие $1%',
+	'tux-warnings-more' => '{{PLURAL:$1|ещё $1}}',
+	'tux-warnings-hide' => 'скрыть',
+	'tux-editor-save-failed' => 'Сохранение перевода не удалось: $1',
+	'tux-editor-use-this-translation' => 'Использовать этот перевод',
+	'tux-editor-message-desc-more' => 'Показать ещё',
+	'tux-editor-clear-translated' => 'Очистить переведённое', # Fuzzy
+	'tux-editor-outdated-warning' => 'Возможно, что этот перевод устарел', # Fuzzy
+	'tux-editor-outdated-warning-diff-link' => 'Показать отличия',
 );
 
 /** Rusyn (русиньскый)
@@ -24648,8 +24666,8 @@ Najuporabnejše za opravila lektoriranja.',
 	'tux-editor-save-failed' => 'Shranjevanje prevoda ni uspelo: $1',
 	'tux-editor-use-this-translation' => 'Uporabi kot prevod',
 	'tux-editor-message-desc-more' => 'Pokaži več',
-	'tux-editor-clear-translated' => 'Počisti prevedeno',
-	'tux-editor-outdated-warning' => 'Prevod je morda zastarel.',
+	'tux-editor-clear-translated' => 'Počisti prevedeno', # Fuzzy
+	'tux-editor-outdated-warning' => 'Prevod je morda zastarel.', # Fuzzy
 	'tux-editor-outdated-warning-diff-link' => 'Prikaži razlike',
 );
 
@@ -29211,6 +29229,7 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-editor-shortcut-info' => 'Bấm “$1” để lưu hoặc “$2” để chuyển đến thông điệp kế',
 	'tux-editor-no-message-doc' => 'Không có tài liệu cho thông điệp',
 	'tux-editor-edit-desc' => 'Sửa đổi miêu tả',
+	'tux-editor-add-desc' => 'Thêm miêu tả',
 	'tux-editor-suggestions-title' => 'Gợi ý',
 	'tux-editor-in-other-languages' => 'Theo ngôn ngữ khác',
 	'tux-editor-need-more-help' => 'Còn thắc mắc?',
@@ -29221,6 +29240,9 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-editor-save-failed' => 'Thất bại khi lưu bản dịch: $1',
 	'tux-editor-use-this-translation' => 'Dịch như thế này',
 	'tux-editor-message-desc-more' => 'Xem thêm',
+	'tux-editor-clear-translated' => 'Ẩn thông điệp đã dịch', # Fuzzy
+	'tux-editor-outdated-warning' => 'Bản dịch này có thể lỗi thời.', # Fuzzy
+	'tux-editor-outdated-warning-diff-link' => 'Trình bày khác biệt',
 );
 
 /** Volapük (Volapük)
@@ -30725,8 +30747,8 @@ $1',
 	'tux-editor-save-failed' => '儲存翻譯失敗：$1',
 	'tux-editor-use-this-translation' => '用作翻譯',
 	'tux-editor-message-desc-more' => '顯示更多',
-	'tux-editor-clear-translated' => '清除已翻譯',
-	'tux-editor-outdated-warning' => '此翻譯可能已過時。',
+	'tux-editor-clear-translated' => '清除已翻譯', # Fuzzy
+	'tux-editor-outdated-warning' => '此翻譯可能已過時。', # Fuzzy
 	'tux-editor-outdated-warning-diff-link' => '顯示差異',
 );
 
