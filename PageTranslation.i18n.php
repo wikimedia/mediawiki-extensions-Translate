@@ -2526,9 +2526,9 @@ Tekst pśełožowańskeje jadnotki: <pre>$1</pre>',
 	'pt-movepage-block-subpage-exists' => 'Celowy pódbok [[:$2]] eksistěrujo.',
 	'pt-movepage-block-subpage-invalid' => 'Titel celowego pódboka za [[:$1]] by był njepłaśiwy (pśedłuki?).',
 	'pt-movepage-list-pages' => 'Lisćina bokow, kótarež maju se pśesunuś',
-	'pt-movepage-list-translation' => 'Pśełožowańske boki', # Fuzzy
-	'pt-movepage-list-section' => 'Boki pśełožowańskich jadnotkow', # Fuzzy
-	'pt-movepage-list-other' => 'Druge pódboki', # Fuzzy
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Pśełožowański bok|Pśełožowańskej boka|Pśełožowańske boki}}',
+	'pt-movepage-list-section' => '{{PLURAL:$1|Bok|Boka|Boki}} pśełožowańskich jadnotkow',
+	'pt-movepage-list-other' => '{{PLURAL:$1|Drugi pódbok|Drugej pódboka|Druge pódboki}}',
 	'pt-movepage-list-count' => 'Dogromady {{PLURAL:$1|ma se $1 bok|matej se $1 boka|maju se $1 boki|ma se $1 bokow}} pśesunuś.',
 	'pt-movepage-legend' => 'Pśełožujobny bok pśesunuś',
 	'pt-movepage-current' => 'Aktualne mě:',
@@ -2550,13 +2550,13 @@ Pšosym pśekontrolěruj [[Special:Log/pagetranslation|pśełožowański protoko
 	'pt-deletepage-lang-title' => 'Pśełožony bok $1 so lašujo.',
 	'pt-deletepage-full-title' => 'Pśełožujobny bok $1 so lašujo.',
 	'pt-deletepage-invalid-title' => 'Pódany bok njejo płaśiwy.',
-	'pt-deletepage-invalid-text' => 'Pódany bok njejo ani pśełožujobny bok ani pśełožk.', # Fuzzy
+	'pt-deletepage-invalid-text' => 'Pódany bok njejo ani pśełožujobny bok ani pśełožowański bok.',
 	'pt-deletepage-action-check' => 'Boki nalicyś, kótarež maju se wulašowaś',
 	'pt-deletepage-action-perform' => 'Lašowaś',
 	'pt-deletepage-action-other' => 'Cel změniś',
 	'pt-deletepage-lang-legend' => 'Pśełožony bok wulašowaś',
 	'pt-deletepage-full-legend' => 'Pśełožujobny bok wulašowaś',
-	'pt-deletepage-any-legend' => 'Přełožujobny bok abo pśełožk pśełožujobnego boka wulašowś', # Fuzzy
+	'pt-deletepage-any-legend' => 'Přełožujobny bok abo pśełožowański bok wulašowaś',
 	'pt-deletepage-current' => 'Mě boka:',
 	'pt-deletepage-reason' => 'Pśicyna:',
 	'pt-deletepage-subpages' => 'Wšykne pódboki lašowaś:',
@@ -2568,9 +2568,9 @@ Pšosym pśekontrolěruj [[Special:Log/pagetranslation|pśełožowański protoko
 	'pt-deletepage-full-logreason' => 'Źěl pśełožujobnego boka $1.',
 	'pt-deletepage-lang-logreason' => 'Źěl pśełožonego boka $1.',
 	'pt-deletepage-started' => 'Pšosym pśekontrolěruj [[Special:Log/pagetranslation|pśełožowański protokol boka]] za zmólkami a zdźělenjami wuwjeźenja.',
-	'pt-deletepage-intro' => 'Toś ten specialny bok śi dowólujo, aby do rěcy pśełožujobne boki abo  pśełožki wulašował.
-Lašowanje njestanjo se ned, dokulaž wjele bokow musy se wulašowaś.
-Zmólki budu se w  [[Special:Log/pagetranslation|protokolu pśełožkow]] protokolěrowaś a wóne muse se manuelnje pórěźiś.', # Fuzzy
+	'pt-deletepage-intro' => 'Toś ten specialny bok śi zmóžnja, aby wulašował ceły pśełožujobne bok abo  jadnotliwy přełožowański bok w rěcy wulašował.
+Lašowanje njestanjo se ned, dokulaž wšykne boki, kótarež k njomu słušaju,  muse se wulašowaś.
+Zmólki budu se w  [[Special:Log/pagetranslation|protokolu pśełožkow]] protokolěrowaś a wóne muse se manuelnje pórěźiś.',
 );
 
 /** Ewe (eʋegbe)
@@ -4547,7 +4547,7 @@ Prošu skontroluj [[Special:Log/pagetranslation|přełožowanski protokol strony
 	'pt-deletepage-full-logreason' => 'Dźěl přełožujomneje strony $1.',
 	'pt-deletepage-lang-logreason' => 'Dźěl přełoženeje strony $1.',
 	'pt-deletepage-started' => 'Prošu přepruwuj [[Special:Log/pagetranslation|protokol přełožkow]] za zmylkami a wuwjedźenskimi zdźělenkami.',
-	'pt-deletepage-intro' => 'Tuta specialna strona ći zmóžnja, cyłu přełožujomnnu stronu abo  jednotliwu přełožwansku stronu zhašeć.
+	'pt-deletepage-intro' => 'Tuta specialna strona ći zmóžnja, cyłu přełožujomnnu stronu abo  jednotliwu přełožwansku stronu w rěči zhašeć.
 Zhašenje njestanje so hnydom, dokelž wšě strony, kotrež z njej zwisuja, dyrbja so tež zhašeć.
 Zmylki budu so w  [[Special:Log/pagetranslation|protokolu přełožkow]] protokolować a wone dyrbja so manuelnje porjedźić.',
 );
@@ -8503,17 +8503,17 @@ $messages['ru'] = array(
 	'pt-movepage-title' => 'Переименование доступной для перевода страницы $1',
 	'pt-movepage-blockers' => 'Страница с возможностью перевода не может быть переименована из-за {{PLURAL:$1|следующей ошибки|следующих ошибок}}:',
 	'pt-movepage-block-base-exists' => 'Целевая страница «[[:$1]]» уже существует.',
-	'pt-movepage-block-base-invalid' => 'Недопустимое название основной целевой страницы.', # Fuzzy
+	'pt-movepage-block-base-invalid' => 'Недопустимое название основной целевой страницы.',
 	'pt-movepage-block-tp-exists' => 'Перевод целевой страницы [[:$2]] уже существует.',
 	'pt-movepage-block-tp-invalid' => 'Название перевода целевой страницы [[:$1]] будет считаться недействительным (возможно, слишком длинное).',
-	'pt-movepage-block-section-exists' => 'Раздел целевой страницы [[:$2]] уже существует.', # Fuzzy
-	'pt-movepage-block-section-invalid' => 'Название раздела целевой страницы [[:$1]] будет считаться недействительным (возможно, слишком длинным).', # Fuzzy
+	'pt-movepage-block-section-exists' => 'Раздел целевой страницы "[[:$2]]" уже существует.',
+	'pt-movepage-block-section-invalid' => 'Название раздела целевой страницы "[[:$1]]" будет считаться недействительным (возможно, слишком длинным).',
 	'pt-movepage-block-subpage-exists' => 'Целевая подстраница [[:$2]] уже существует.',
 	'pt-movepage-block-subpage-invalid' => 'Название целевой подстраницы [[:$1]] будет считаться недействительным (возможно, слишком длинным).',
 	'pt-movepage-list-pages' => 'Список страниц для переименования',
-	'pt-movepage-list-translation' => 'Страницы перевода', # Fuzzy
-	'pt-movepage-list-section' => 'Разделы страниц', # Fuzzy
-	'pt-movepage-list-other' => 'Другие подстраницы', # Fuzzy
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Страница|Страницы}} перевода',
+	'pt-movepage-list-section' => 'Разделы {{PLURAL:$1|переводимой страницы|переводимых страниц}}',
+	'pt-movepage-list-other' => '{{PLURAL:$1|Другая подстраница|Другие подстраницы}}',
 	'pt-movepage-list-count' => 'Всего переименовать $1 {{PLURAL:$1|страницу|страницы|страниц}}.',
 	'pt-movepage-legend' => 'Переименование переводимых страниц',
 	'pt-movepage-current' => 'Текущее название:',
@@ -8534,27 +8534,27 @@ $messages['ru'] = array(
 	'pt-deletepage-lang-title' => 'Удаление страницы перевода «$1».',
 	'pt-deletepage-full-title' => 'Удаление доступной для перевода страницы $1.',
 	'pt-deletepage-invalid-title' => 'Указана неверная страница.',
-	'pt-deletepage-invalid-text' => 'Указанная страница не относится к числу доступных для перевода страниц или их переводов.', # Fuzzy
+	'pt-deletepage-invalid-text' => 'Указанная страница не относится к числу доступных для перевода страниц или их переводов.',
 	'pt-deletepage-action-check' => 'Список подлежащих удалению страниц',
 	'pt-deletepage-action-perform' => 'Выполнить удаление',
 	'pt-deletepage-action-other' => 'Изменить цель',
 	'pt-deletepage-lang-legend' => 'Удалить страницу с переводом',
 	'pt-deletepage-full-legend' => 'Удалить доступную для перевода страницу',
-	'pt-deletepage-any-legend' => 'Удалить доступную для перевода страницу или её перевод', # Fuzzy
+	'pt-deletepage-any-legend' => 'Удалить доступную для перевода страницу или её перевод',
 	'pt-deletepage-current' => 'Название страницы:',
 	'pt-deletepage-reason' => 'Причина',
 	'pt-deletepage-subpages' => 'Удалить все подстраницы',
 	'pt-deletepage-list-pages' => 'Список страниц для удаления',
 	'pt-deletepage-list-translation' => 'Страницы перевода',
-	'pt-deletepage-list-section' => 'Страницы раздела', # Fuzzy
+	'pt-deletepage-list-section' => 'Страницы разделов перевода',
 	'pt-deletepage-list-other' => 'Другие подстраницы',
 	'pt-deletepage-list-count' => 'В сумме $1 {{PLURAL:$1|страница|страниц}} для перевода.',
 	'pt-deletepage-full-logreason' => 'Часть доступной для перевода страницы «$1».',
 	'pt-deletepage-lang-logreason' => 'Часть страницы перевода «$1».',
 	'pt-deletepage-started' => 'Пожалуйста, проверьте [[Special:Log/pagetranslation|журнал перевода страниц]] на предмет сообщений об ошибках и успешных завершениях.',
-	'pt-deletepage-intro' => 'Это специальная страница позволяет вам удалить целые страницы, доступные для перевода, или переводы на определённый язык.
-Действие по удалению не будет выполнено сразу же, так как в очереди на удаление будет много страниц.
-Сбои будут отмечены в [[Special:Log/pagetranslation|журнале перевода страниц]] и должны быть устранены вручную.', # Fuzzy
+	'pt-deletepage-intro' => 'Это специальная страница позволяет вам удалить целую страницу, доступную для перевода, или переводы на определённый язык.
+Действие по удалению не будет выполнено сразу же, так как в очереди на удаление будут все зависящие от них страницы.
+Сбои будут отмечены в [[Special:Log/pagetranslation|журнале перевода страниц]] и должны быть устранены вручную.',
 );
 
 /** Rusyn (русиньскый)
