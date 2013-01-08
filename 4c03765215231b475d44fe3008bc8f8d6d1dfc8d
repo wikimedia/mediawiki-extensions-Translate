@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAADgn///5Q\u003d",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-08T16:45:28Z",
+      "side": 1,
+      "message": "The RecentMessageGroup is the only message group descendent that has setLanguage(), which is why I put this here :).",
+      "parentUuid": "AAADgX//1yM\u003d",
+      "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADgX//1yA\u003d",
         "filename": "resources/js/ext.translate.editor.js",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-01-08T06:58:16Z",
       "side": 1,
       "message": "Don\u0027t we use @param {type} name Desc format in JS?",
+      "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgn///5M\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-08T16:45:28Z",
+      "side": 1,
+      "message": "I\u0027d forgotten about that. Fixed.",
+      "parentUuid": "AAADgX//1yA\u003d",
       "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAADgn///5E\u003d",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-08T16:45:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADgX//1x8\u003d",
+      "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADgX//1x4\u003d",
         "filename": "utils/MessageIndex.php",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2013-01-08T06:58:16Z",
       "side": 1,
       "message": "I wish your IDE was more intelligent so that these would not be needed",
+      "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgn///5A\u003d",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-08T16:45:28Z",
+      "side": 1,
+      "message": "I wish I had a pony!",
+      "parentUuid": "AAADgX//1x4\u003d",
       "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAADgn///48\u003d",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-08T16:45:28Z",
+      "side": 1,
+      "message": "Done. Also checked and updated the rest of the file.",
+      "parentUuid": "AAADgX//1x0\u003d",
+      "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADgX//1xw\u003d",
         "filename": "utils/UserToggles.php",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2013-01-08T06:58:16Z",
       "side": 1,
       "message": "Isn\u0027t this a hook?",
+      "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgn///4Q\u003d",
+        "filename": "utils/UserToggles.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-08T16:45:28Z",
+      "side": 1,
+      "message": "Yes.\n\n Translate.php:$wgHooks[\u0027GetPreferences\u0027][] \u003d \u0027TranslatePreferences::translationAssistLanguages\u0027;\n utils/UserToggles.php:  public static function translationAssistLanguages( User $user, \u0026$preferences ) {",
+      "parentUuid": "AAADgX//1xw\u003d",
       "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
