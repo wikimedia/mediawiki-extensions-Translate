@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//10w\u003d",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:28:11Z",
+      "side": 1,
+      "message": "Doesn\u0027t this break BC?",
+      "revId": "8d3affe9a54e1b9970ced71cb42c2d43446fc268",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//10o\u003d",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:28:11Z",
+      "side": 1,
+      "message": "This isset is redundant with the check on line 44",
+      "revId": "8d3affe9a54e1b9970ced71cb42c2d43446fc268",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//10k\u003d",
+        "filename": "ttmserver/TTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:28:11Z",
+      "side": 1,
+      "message": "BC?",
+      "revId": "8d3affe9a54e1b9970ced71cb42c2d43446fc268",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
