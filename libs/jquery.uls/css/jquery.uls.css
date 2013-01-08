@@ -1,0 +1,658 @@
+.uls-trigger {
+	/* @embed */
+	background: url('../images/icon-language.png') no-repeat scroll left
+		center transparent;
+	padding-left: 30px;
+}
+
+.uls-menu {
+	position: absolute;
+	z-index: 1000;
+	display: none;
+	margin-top: 1px;
+	/* Styling */
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+.uls-wide {
+	min-width: 715px;
+	width: 45%;
+}
+
+.uls-title-region a {
+	padding-left: 15px;
+}
+
+.uls-menu .uls-title {
+	font-weight: normal;
+	border: none;
+	padding-top: 1.25em;
+	padding-left: 15px;
+	padding-bottom: 3px;
+	font-size: 18pt;
+	line-height: 1.25em;
+	color: #555;
+}
+
+.uls-menu .uls-no-results-found-title {
+	font-size: 16pt;
+	font-weight: bold;
+	line-height: 1.5em;
+	padding-left: 6px;
+	padding-top: 10px;
+	margin-top: 0;
+	margin-bottom: 15px;
+	border-bottom: none;
+	color: #555;
+}
+
+.uls-menu .uls-lcd-region-title {
+	color: #777;
+	font-size: 14pt;
+	line-height: 1.5em;
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 10px;
+	border-bottom: none;
+}
+
+.uls-worldmap {
+	/* @embed */
+	background: url('../images/world_map.png') no-repeat scroll right top
+		transparent;
+	background-size: 100%;
+}
+
+div.uls-region {
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+	height: 125px;
+	border-bottom-color: transparent;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+}
+
+.uls-worldmap .uls-region { /* The map doesn't flip */
+	/* @noflip */
+	float: left;
+}
+
+.uls-region a {
+	bottom: 2px;
+	left: 2px;
+	padding: 0;
+	position: absolute;
+	font-size: 13px;
+	line-height: 1.2em;
+	text-decoration: none;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 99%;
+}
+
+.uls-region:hover {
+	/*Cross-browser background transparency*/
+	background: #3366bb;
+	background: rgba(51, 102, 187, 0.1);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#253366bb,
+		endColorstr=#253366bb );
+	-ms-filter:
+		"progid:DXImageTransform.Microsoft.gradient(startColorstr=#253366bb, endColorstr=#253366bb)";
+}
+
+.map-block .active {
+	border-bottom-color: #3366bb;
+	border-bottom-style: solid;
+}
+
+.uls-menu .row .map-block {
+	top: 1px;
+	margin-right: 0;
+	padding-right: 0;
+	float: right;
+	overflow: hidden;
+	opacity: 0.7;
+	-moz-transition: opacity 0.2s linear;
+	-o-transition: opacity 0.2s linear;
+	-webkit-transition: opacity 0.2s linear;
+	transition: opacity 0.2s linear;
+}
+
+.map-block a {
+	color: #333;
+	opacity:0;
+	-moz-transition: opacity 0.15s linear;
+	-o-transition: opacity 0.15s linear;
+	-webkit-transition: opacity 0.15s linear;
+	transition: opacity 0.15s linear;
+}
+
+.uls-menu .map-block:hover,
+.uls-menu .map-block:hover a {
+	opacity: 1;
+	color: #333;
+}
+
+.map-block .uls-region-1 {
+	border-color: transparent;
+}
+
+.map-block:hover .active {
+	border-color: #3366bb;
+}
+
+.map-block .active a {
+	font-weight: bold;
+}
+
+.icon-close {
+	/* @embed */
+	background: url('../images/close.png') no-repeat scroll center center
+		transparent;
+	float: right;
+	padding: 15px;
+	cursor: pointer;
+}
+
+.uls-menu .languagefilter {
+	background-color: transparent;
+	border: 1px solid #c9c9c9;
+	border-radius: 2px 2px 2px 2px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+	color: #333;
+	display: block;
+	padding: 6px;
+	-moz-transition: border 0.15s linear 0s;
+	-o-transition: border 0.15s linear 0s;
+	-webkit-transition: border 0.15s linear 0s;
+	transition: border 0.15s linear 0s;
+}
+
+.uls-menu .languagefilter:focus {
+	border: 1px solid #3366bb;
+}
+
+.uls-menu .search {
+	position: relative;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0F0F0', endColorstr='#FBFBFB');
+	background: #f8f8f8;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F0F0F0), to(#FBFBFB));
+	background: -webkit-linear-gradient(top, #F0F0F0, #FBFBFB);
+	background: -moz-linear-gradient(top, #F0F0F0, #FBFBFB);
+	background: -ms-linear-gradient(top, #F0F0F0, #FBFBFB);
+	background: -o-linear-gradient(top, #F0F0F0, #FBFBFB);
+	background: linear-gradient(#F0F0F0, #FBFBFB);
+	border-top-color: #AAA;
+	border-top-style: solid;
+	border-top-width: 1px;
+	padding: 0.8em 0;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #EEE;
+}
+
+.uls-menu .search-label {
+	/* @embed */
+	background: url('../images/search.png') no-repeat scroll right center
+		transparent;
+	background-size: 30px;
+	height: 32px;
+	width: 32px;
+	float: right;
+}
+
+.uls-menu .languagefilter-clear {
+	/* @embed */
+	background: url('../images/clear.png') no-repeat scroll left center
+		transparent;
+	cursor: pointer;
+	height: 32px;
+	position: absolute;
+	width: 32px;
+	margin-left: -32px;
+}
+
+.uls-menu .filterinput {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 14px;
+	height: 32px;
+	width: 100%;
+	text-align: left;
+}
+
+.uls-menu .filtersuggestion {
+	padding: 6px;
+	background-color: white;
+	color: #888;
+	border: 1px transparent;
+	border-radius: 2px 2px 2px 2px;
+	box-shadow: 0 1px 2px transparent inset;
+	left: 1px;
+}
+
+.uls-menu .search-input-block {
+	position: relative;
+}
+
+/* Generated using Foundation http://foundation.zurb.com/docs/grid.php */
+/* Global Reset & Standards ---------------------- */
+.grid * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Misc ---------------------- */
+.grid .left {
+	float: left;
+}
+
+.grid .right {
+	float: right;
+}
+
+.grid .text-left {
+	text-align: left;
+}
+
+.grid .text-right {
+	text-align: right;
+}
+
+.grid .text-center {
+	text-align: center;
+}
+
+.grid .hide {
+	display: none;
+}
+
+.grid .highlight {
+	background: #ffff99;
+}
+
+/* The Grid ---------------------- */
+.grid .row {
+	width: 100%;
+	max-width: none;
+	min-width: 600px;
+	margin: 0 auto;
+}
+
+.grid .row .row {
+	width: auto;
+	max-width: none;
+	min-width: 0;
+	margin: 0 -5px;
+}
+
+.grid .row.collapse .column,
+.grid .row.collapse .columns {
+	padding: 0;
+}
+
+.grid .row .row {
+	width: auto;
+	max-width: none;
+	min-width: 0;
+	margin: 0 -5px;
+}
+
+.grid .row .row.collapse {
+	margin: 0;
+}
+
+.grid .column, .grid .columns {
+	float: left;
+	min-height: 1px;
+	padding: 0 5px;
+	position: relative;
+}
+
+.grid .column.centered, .grid .columns.centered {
+	float: none;
+	margin: 0 auto;
+}
+
+.grid .row .one {
+	width: 8.333%;
+}
+
+.grid .row .two {
+	width: 16.667%;
+}
+
+.grid .row .three {
+	width: 25%;
+}
+
+.grid .row .four {
+	width: 33.333%;
+}
+
+.grid .row .five {
+	width: 41.667%;
+}
+
+.grid .row .six {
+	width: 50%;
+}
+
+.grid .row .seven {
+	width: 58.333%;
+}
+
+.grid .row .eight {
+	width: 66.667%;
+}
+
+.grid .row .nine {
+	width: 75%;
+}
+
+.grid .row .ten {
+	width: 83.333%;
+}
+
+.grid .row .eleven {
+	width: 91.667%;
+}
+
+.grid .row .twelve {
+	width: 100%;
+}
+
+.grid .row .offset-by-one {
+	margin-left: 8.333%;
+}
+
+.grid .row .offset-by-two {
+	margin-left: 16.667%;
+}
+
+.grid .row .offset-by-three {
+	margin-left: 25%;
+}
+
+.grid .row .offset-by-four {
+	margin-left: 33.333%;
+}
+
+.grid .row .offset-by-five {
+	margin-left: 41.667%;
+}
+
+.grid .row .offset-by-six {
+	margin-left: 50%;
+}
+
+.grid .row .offset-by-seven {
+	margin-left: 58.333%;
+}
+
+.grid .row .offset-by-eight {
+	margin-left: 66.667%;
+}
+
+.grid .row .offset-by-nine {
+	margin-left: 75%;
+}
+
+.grid .row .offset-by-ten {
+	margin-left: 83.333%;
+}
+
+.grid .push-two {
+	left: 16.667%;
+}
+
+.grid .pull-two {
+	right: 16.667%;
+}
+
+.grid .push-three {
+	left: 25%;
+}
+
+.grid .pull-three {
+	right: 25%;
+}
+
+.grid .push-four {
+	left: 33.333%;
+}
+
+.grid .pull-four {
+	right: 33.333%;
+}
+
+.grid .push-five {
+	left: 41.667%;
+}
+
+.grid .pull-five {
+	right: 41.667%;
+}
+
+.grid .push-six {
+	left: 50%;
+}
+
+.grid .pull-six {
+	right: 50%;
+}
+
+.grid .push-seven {
+	left: 58.333%;
+}
+
+.grid .pull-seven {
+	right: 58.333%;
+}
+
+.grid .push-eight {
+	left: 66.667%;
+}
+
+.grid .pull-eight {
+	right: 66.667%;
+}
+
+.grid .push-nine {
+	left: 75%;
+}
+
+.grid .pull-nine {
+	right: 75%;
+}
+
+.grid .push-ten {
+	left: 83.333%;
+}
+
+.grid .pull-ten {
+	right: 83.333%;
+}
+
+/* Nicolas Gallagher's micro clearfix */
+.grid .row {
+	*zoom: 1;
+}
+
+.grid .row:before, .grid .row:after {
+	content: "";
+	display: table;
+}
+
+.grid .row:after {
+	clear: both;
+}
+
+/* Block Grids ---------------------- */
+/* These are 2-up, 3-up, 4-up and 5-up ULs, suited
+ for repeating blocks of content. Add 'mobile' to
+ them to switch them just like the layout grid
+ (one item per line) on phones
+
+ For IE7/8 compatibility block-grid items need to be
+ the same height. You can optionally uncomment the
+ lines below to support arbitrary height, but know
+ that IE7/8 do not support :nth-child.
+ -------------------------------------------------- */
+.grid .block-grid {
+	display: block;
+	overflow: hidden;
+	padding: 0;
+}
+
+.grid .block-grid > li {
+	display: block;
+	height: auto;
+	float: left;
+}
+
+.grid .block-grid.two-up {
+	margin: 0 -15px;
+}
+
+.grid .block-grid.two-up > li {
+	width: 50%;
+	padding: 0 15px 15px;
+}
+
+/* .block-grid.two-up>li:nth-child(2n+1) {clear: left;} */
+.grid .block-grid.three-up {
+	margin: 0 -12px;
+}
+
+.grid .block-grid.three-up > li {
+	width: 33.33%;
+	padding: 0 12px 12px;
+}
+
+/* .block-grid.three-up>li:nth-child(3n+1) {clear: left;} */
+.grid .block-grid.four-up {
+	margin: 0 -10px;
+}
+
+.grid .block-grid.four-up > li {
+	width: 25%;
+	padding: 0 10px 10px;
+}
+
+/* .block-grid.four-up>li:nth-child(4n+1) {clear: left;} */
+.grid .block-grid.five-up {
+	margin: 0 -8px;
+}
+
+.grid .block-grid.five-up > li {
+	width: 20%;
+	padding: 0 8px 8px;
+}
+
+.uls-lcd-region-section ul li:hover {
+	background-color: #eaeff7;
+}
+
+.uls-lcd-region-section {
+	margin-top:10px;
+}
+
+/* Language list */
+.uls-language-list {
+	height: 22em;
+	overflow: auto;
+	width: auto;
+}
+
+.uls-language-block ul {
+	margin: 0 0 1.5em;
+}
+
+.uls-language-list ul li {
+	cursor: pointer;
+	font-weight: normal;
+	overflow: hidden;
+	white-space: nowrap;
+
+	/*
+	 * Some languages have long names for various reasons and we still want
+	 * them to appear on one line.
+	 * To make it work correctly, the directionality must be set correctly
+	 * on the item level.
+	 */
+	text-overflow: ellipsis;
+
+	/*
+	 * The directionality (ltr/rtl) for each list item is set dynamically
+	 * as HTML attributes in JavaScript. Setting directionality also applies
+	 * alignment, but a list with mixed alignment is hard to read.
+	 * All items are therefore explicitly aligned to the left, including names
+	 * of right-to-left languages in left-to-right environment and vice versa.
+	 * As long as the directionality of the item is set correctly, the text
+	 * is readable.
+	 */
+	text-align: left;
+
+	/*
+	 * We don't want any visible bullets in this list.
+	 */
+	list-style-image: none;
+	list-style-type: none;
+}
+
+.uls-language-list strong {
+	text-decoration: underline;
+}
+
+.uls-language-list a {
+	font-weight: normal;
+	text-decoration: none;
+	color: #3366bb;
+	font-size: 14px;
+	line-height: 1.6em;
+}
+
+.uls-menu .uls-language-block .columns {
+	width: 22%;
+}
+.uls-language-block {
+	width: 100%;
+}
+
+.uls-no-results-view {
+	color: #555;
+	height: 100%;
+}
+
+.uls-no-found-more {
+	font-size: 0.9em;
+	background: #F8F8F8;
+	width: 100%;
+	margin-top: 1.6em;
+	line-height: 1.6em;
+	position:absolute;
+	bottom:0;
+	left:0;
+	-webkit-border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+}
+
+.uls-no-found-more a {
+	cursor: pointer;
+}
