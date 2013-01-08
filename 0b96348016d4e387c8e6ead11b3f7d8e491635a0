@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//11A\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:24:03Z",
+      "side": 1,
+      "message": "if (",
+      "revId": "0b96348016d4e387c8e6ead11b3f7d8e491635a0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
