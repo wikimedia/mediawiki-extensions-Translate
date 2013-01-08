@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAADgn///6Y\u003d",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-08T16:28:09Z",
+      "side": 1,
+      "message": "Probably. Removed and added comment for later use.",
+      "parentUuid": "AAADgX//10w\u003d",
+      "revId": "8d3affe9a54e1b9970ced71cb42c2d43446fc268",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADgX//10o\u003d",
         "filename": "scripts/sync-group.php",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAADgn///6Q\u003d",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-08T16:28:09Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "AAADgX//10o\u003d",
+      "revId": "8d3affe9a54e1b9970ced71cb42c2d43446fc268",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADgX//10k\u003d",
         "filename": "ttmserver/TTMServer.php",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-01-08T06:28:11Z",
       "side": 1,
       "message": "BC?",
+      "revId": "8d3affe9a54e1b9970ced71cb42c2d43446fc268",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgn///6M\u003d",
+        "filename": "ttmserver/TTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-08T16:28:09Z",
+      "side": 1,
+      "message": "Remove again and comment added.",
+      "parentUuid": "AAADgX//10k\u003d",
       "revId": "8d3affe9a54e1b9970ced71cb42c2d43446fc268",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
