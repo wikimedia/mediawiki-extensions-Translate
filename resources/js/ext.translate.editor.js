@@ -303,7 +303,7 @@
 					'lang': $messageList.data( 'targetlangcode' ),
 					'dir': $messageList.data( 'targetlangdir' )
 				} )
-				.on( 'keypress keyup keydown paste', function () {
+				.on( 'input propertychange', function () {
 					translateEditor.dirty = true;
 					translateEditor.$editor.find( '.tux-editor-save-button' )
 						.removeAttr( 'disabled' );
