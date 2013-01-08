@@ -754,7 +754,7 @@
 				}
 
 				// Diff for outdated message
-				if ( result.helpers.definitiondiff ) {
+				if ( result.helpers.definitiondiff && !result.helpers.definitiondiff.error ) {
 					translateEditor.addWarning( mw.msg( 'tux-editor-outdated-warning' )
 						+ '<span class="show-diff-link">'
 						+ mw.message( 'tux-editor-outdated-warning-diff-link' ).escaped()
