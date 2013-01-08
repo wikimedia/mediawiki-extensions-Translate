@@ -459,8 +459,8 @@ Most useful for the proofreading tasks.',
 	'tux-editor-save-failed' => 'Saving the translation failed: $1',
 	'tux-editor-use-this-translation' => 'Use as translation',
 	'tux-editor-message-desc-more' => 'View more',
-	'tux-editor-clear-translated' => 'Clear translated',
-	'tux-editor-outdated-warning' => 'This translation may be outdated.',
+	'tux-editor-clear-translated' => 'Hide translated',
+	'tux-editor-outdated-warning' => 'This translation may need to be updated.',
 	'tux-editor-outdated-warning-diff-link' => 'Show differences',
 );
 
