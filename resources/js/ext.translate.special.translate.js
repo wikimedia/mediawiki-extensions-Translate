@@ -147,10 +147,16 @@
 				onSelect: function ( language ) {
 					mw.translate.changeLanguage( language );
 				},
-				languages: mw.config.get( 'wgULSLanguages' ),
+				// Try to get the language list from the extension
+				// or from the standalone library.
+				languages: mw.uls ?
+					mw.config.get( 'wgULSLanguages' ) :
+					mw.config.get( 'wgTranslateULSLanguages' ),
 				searchAPI: mw.util.wikiScript( 'api' ) + '?action=languagesearch',
-				quickList: function () {
-					return mw.uls.getFrequentLanguageList();
+				quicklist: function () {
+					return mw.uls ?
+						mw.uls.getFrequentLanguageList() :
+						['en', 'de', 'fr', 'nl', 'it', 'es', 'ru', 'pl', 'ja', 'pt', 'zh', 'sv', 'vi'];
 				}
 			};
 

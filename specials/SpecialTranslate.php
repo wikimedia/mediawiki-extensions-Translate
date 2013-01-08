@@ -41,7 +41,10 @@ class SpecialTranslate extends SpecialPage {
 		global $wgTranslateBlacklist, $wgContLang;
 
 		$out = $this->getOutput();
-		$out->addModules( 'ext.translate.special.translate' );
+		$out->addModules( array(
+			'ext.translate.special.translate',
+			'jquery.uls'
+		) );
 
 		$this->setHeaders();
 
