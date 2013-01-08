@@ -426,6 +426,23 @@ $wgResourceModules['jquery.autoresize'] = array(
 	'scripts' => 'resources/js/jquery.autoresize.js',
 ) + $resourcePaths;
 
+$wgResourceModules['jquery.i18n'] = array(
+	'scripts' => 'libs/jquery.i18n.js',
+) + $resourcePaths;
+
+$wgResourceModules['jquery.uls'] = array(
+	'scripts' => array(
+		'libs/jquery.uls/jquery.uls.js',
+	),
+	'styles' => array(
+		'libs/jquery.uls/css/jquery.uls.css',
+	),
+	'dependencies' => array(
+		'jquery.i18n',
+	),
+	'position' => 'top',
+) + $resourcePaths;
+
 /** @endcond */
 
 

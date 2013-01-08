@@ -1,2 +1,4 @@
-# upstream lib
+# upstream libs
 resources/js/jquery.autoresize.js
+libs/jquery.uls/jquery.uls.js
+libs/jquery.i18n.js

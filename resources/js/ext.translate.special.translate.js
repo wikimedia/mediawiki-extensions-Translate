@@ -147,10 +147,28 @@
 				onSelect: function ( language ) {
 					mw.translate.changeLanguage( language );
 				},
-				languages: mw.config.get( 'wgULSLanguages' ),
+				// Try to get the language list from the extension
+				// or from the standalone library.
+				languages: mw.uls ?
+					mw.config.get( 'wgULSLanguages' ) :
+					mw.config.get( 'wgTranslateULSLanguages' ),
 				searchAPI: mw.util.wikiScript( 'api' ) + '?action=languagesearch',
 				quickList: function () {
-					return mw.uls.getFrequentLanguageList();
+					var userEditLangs, languages;
+
+					if ( mw.uls ) {
+						return mw.uls.getFrequentLanguageList();
+					}
+
+					languages = ['en', 'de', 'fr', 'nl', 'it', 'es', 'ru', 'pl', 'ja', 'pt', 'zh'];
+					userEditLangs = mw.user.options.get( 'translate-editlangs' );
+
+					if ( userEditLangs ) {
+						$.merge( languages, userEditLangs.split( ', ' ) );
+						$.unique( languages );
+					}
+
+					return languages;
 				}
 			};
 

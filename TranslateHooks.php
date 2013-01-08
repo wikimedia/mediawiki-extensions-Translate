@@ -451,6 +451,9 @@ JAVASCRIPT;
 			$vars['TranslateRight'] = $out->getUser()->isAllowed( 'translate' );
 			$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
 			$vars['wgTranslatePermissionUrl'] = $wgTranslatePermissionUrl;
+			$vars['wgTranslateULSLanguages'] = Language::fetchLanguageNames(
+				$out->getLanguage()->getCode(), 'mwfile'
+			);
 		}
 
 		return true;
