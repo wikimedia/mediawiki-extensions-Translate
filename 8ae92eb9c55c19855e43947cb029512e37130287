@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//10c\u003d",
+        "filename": "MessageChecks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:47:28Z",
+      "side": 1,
+      "message": "You could group the conditions with || to reduce wasted space",
+      "revId": "8ae92eb9c55c19855e43947cb029512e37130287",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//10U\u003d",
+        "filename": "specials/SpecialFirstSteps.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:47:28Z",
+      "side": 1,
+      "message": "???",
+      "revId": "8ae92eb9c55c19855e43947cb029512e37130287",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//10E\u003d",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:47:28Z",
+      "side": 1,
+      "message": "I prefer the previous style, more readable.",
+      "revId": "8ae92eb9c55c19855e43947cb029512e37130287",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//1zs\u003d",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:47:28Z",
+      "side": 1,
+      "message": "I see no reason to add newline here",
+      "revId": "8ae92eb9c55c19855e43947cb029512e37130287",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//1zI\u003d",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:47:28Z",
+      "side": 1,
+      "message": "The previous version was better imho.",
+      "revId": "8ae92eb9c55c19855e43947cb029512e37130287",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//10Q\u003d",
+        "filename": "specials/SpecialFirstSteps.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:47:28Z",
+      "side": 0,
+      "message": "My semicolons :(",
+      "revId": "5595801ce0a2efc8a4516a89e4f5b1703f5fe991",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
