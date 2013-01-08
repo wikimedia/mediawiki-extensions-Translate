@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgX//1yM\u003d",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:58:16Z",
+      "side": 1,
+      "message": "There is nothing that says is must be RecentMessageGroup...\n\nperhaps should create an interface",
+      "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//1yA\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:58:16Z",
+      "side": 1,
+      "message": "Don\u0027t we use @param {type} name Desc format in JS?",
+      "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//1x8\u003d",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:58:16Z",
+      "side": 1,
+      "message": "BC?",
+      "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//1x4\u003d",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:58:16Z",
+      "side": 1,
+      "message": "I wish your IDE was more intelligent so that these would not be needed",
+      "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//1x0\u003d",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:58:16Z",
+      "side": 1,
+      "message": "Mixed format in this doc block",
+      "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgX//1xw\u003d",
+        "filename": "utils/UserToggles.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-08T06:58:16Z",
+      "side": 1,
+      "message": "Isn\u0027t this a hook?",
+      "revId": "4c03765215231b475d44fe3008bc8f8d6d1dfc8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
