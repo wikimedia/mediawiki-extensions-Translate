@@ -349,6 +349,7 @@
 			} else {
 				$requestRight = $( '<span>' )
 					.text( mw.msg( 'translate-edit-nopermission' ) )
+					.addClass( 'tux-editor-request-right' )
 					.append( $( '<a>' )
 						.text( mw.msg( 'translate-edit-askpermission' ) )
 						.addClass( 'tux-editor-ask-permission' )
@@ -379,15 +380,15 @@
 				.append( $buttonBlock )
 			);
 
-			$editorColumn.append( $( '<div>' )
-				.addClass( 'row text-left shortcutinfo' )
-				.text( mw.msg( 'tux-editor-shortcut-info',
-					// Save button object may be null if user has no rights.
-					// So cannot depend its title attribute here.
-					( mw.util.tooltipAccessKeyPrefix + 's' ).toUpperCase(),
-					$skipButton.attr( 'title' ).toUpperCase() )
-			)
-			);
+			if ( mw.translate.canTranslate() ) {
+				$editorColumn.append( $( '<div>' )
+					.addClass( 'row text-left shortcutinfo' )
+					.text( mw.msg( 'tux-editor-shortcut-info',
+						$saveButton.attr( 'title' ).toUpperCase(),
+						$skipButton.attr( 'title' ).toUpperCase() )
+					)
+				);
+			}
 
 			return $editorColumn;
 		},
