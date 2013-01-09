@@ -1,0 +1,98 @@
+/**
+ * @author Niklas Laxström
+ * @author Pau Giner
+ * @since 2013-01-10
+ */
+
+/* Facets */
+.tux-searchpage .facet {
+	font-size: 24px;
+	color: #252525;
+	padding: 20px 0 10px 0;
+}
+
+.tux-searchpage .searchcontent .facets {
+	padding: 0 15px 0 5px;
+}
+
+.tux-searchpage .facet-item {
+	font-size: 16px;
+	padding: 4px 0;
+}
+
+.tux-searchpage .facet-item:hover {
+	background: #f8f8f8;
+	cursor: pointer;
+}
+
+.tux-searchpage .facet-item .facet-count {
+	color: #AAA;
+	float: right;
+	margin-right: 5%;
+}
+
+/* Results */
+.tux-searchpage .count {
+	color: #555;
+	font-size: 16px;
+	padding-bottom: 10px;
+}
+
+.tux-searchpage .searchcontent .results {
+	color: #252525;
+	padding-left: 10px;
+}
+
+.tux-searchpage .results .tux-text {
+	font-size: 16px;
+	padding-top: 20px;
+}
+
+.tux-searchpage .results .tux-title {
+	color: #555;
+}
+
+/* Search area */
+.tux-searchpage .searchinput {
+	padding: 10px 0;
+}
+
+.tux-searchpage .searchinput .searchinputbox {
+	font-size: 16px;
+	padding: 5px;
+	width: 60%;
+}
+
+.tux-searchpage .searchinput input.button {
+	font-size: 16px;
+	background-color: #E6E6E6;
+	background-image: -webkit-linear-gradient(top, #f0f0f0, #e6e6e6);
+	background-image: -moz-linear-gradient(center top, #F0F0F0, #E6E6E6);
+	background-image: linear-gradient(#F0F0F0, #E6E6E6);
+	border: 1px solid #C9C9C9;
+	border-radius: 3px 3px 3px 3px;
+	color: #252525;
+	cursor: pointer;
+	display: inline-block;
+	padding: 6px 20px;
+	text-align: center;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	margin: 0 5px;
+}
+
+.tux-searchpage .searchinput input.button:hover {
+	background-color: #F0F0F0;
+	background-image: -webkit-linear-gradient(top, #f8f8f8, #f0f0f0);
+	background-image: -moz-linear-gradient(center top, #F8F8F8, #F0F0F0);
+	background-image: linear-gradient(#F8F8F8, #F0F0F0);
+	border-color: #C9C9C9;
+}
+
+.tux-searchpage .searchinput input.button:active,
+.tux-searchpage .searchinput input.button.down {
+	background-color: #D8D8D8;
+	background-image: -webkit-linear-gradient(top, #d3d3d3, #d8d8d8);
+	background-image: -moz-linear-gradient(center top, #D3D3D3, #D8D8D8);
+	background-image: linear-gradient(#D3D3D3, #D8D8D8);
+	border-color: #C9C9C9;
+}

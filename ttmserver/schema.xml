@@ -45,7 +45,7 @@
 
 		<field name="content" type="string" indexed="true" stored="true" required="true" />
 
-		<field name="text" type="text_ws" indexed="true" stored="false" />
+		<field name="text" type="text_ws" indexed="true" stored="true" termVectors="true" termPositions="true" termOffsets="true" />
 		<copyField source="content" dest="text"/>
 	</fields>
 	<defaultSearchField>text</defaultSearchField>
