@@ -73,8 +73,15 @@
 	border-bottom: 1px solid #C9C9C9;
 }
 
-.tux-message-item:hover {
+.tux-message-item.translated,
+.tux-message-item.translated:hover,
+.tux-message-item.proofread,
+.tux-message-item.proofread:hover {
 	background-color: #F0F0F0;
+}
+
+.tux-message-item:hover {
+	background-color: #F8F8F8;
 }
 
 .tux-list-status span,
