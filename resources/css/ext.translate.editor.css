@@ -290,3 +290,13 @@
 .tm-suggestion .use-this-translation {
 	font-size: 12px;
 }
+
+.tux-editor-request-right {
+	font-size: 13px;
+	padding: 0 5px;
+	color: #555;
+}
+
+.tux-editor-ask-permission {
+	padding: 0 5px;
+}
