@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgn//+0A\u003d",
+        "filename": "TranslateSearch.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-09T13:18:47Z",
+      "side": 1,
+      "message": "Typo: Knowm",
+      "revId": "7d01aaa4abed4cef2dfe329844c78dcea928b09d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgn//+z8\u003d",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-09T13:18:47Z",
+      "side": 1,
+      "message": "Declare this class variable at the top of the class?",
+      "revId": "7d01aaa4abed4cef2dfe329844c78dcea928b09d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
