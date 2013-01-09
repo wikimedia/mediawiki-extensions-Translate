@@ -1,0 +1,36 @@
+.tux-searchpage .facet {
+	font-size: 24px;
+	color: #252525;
+	padding: 10px 0;
+}
+
+.tux-searchpage .searchcontent .facets{
+	padding: 0 15px 0 5px;
+}
+.tux-searchpage .facet-item {
+	font-size: 16px;
+	padding: 4px 0;
+}
+.tux-searchpage .facet-item:hover {
+	background: #f8f8f8;
+	cursor: pointer;
+}
+
+.tux-searchpage .facet-item .facet-count {
+	color: #AAA;
+	float: right;
+	margin-right: 5%;
+}
+
+.tux-searchpage .results {
+	color: #252525;
+}
+
+.tux-searchpage .results .tux-text {
+	font-size: 16px;
+	padding-top:20px;
+}
+
+.tux-searchpage .results .tux-title {
+	color: #555;
+}
