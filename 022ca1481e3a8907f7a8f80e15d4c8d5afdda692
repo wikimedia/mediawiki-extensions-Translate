@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgn//+1Q\u003d",
+        "filename": "Translate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-09T12:30:08Z",
+      "side": 1,
+      "message": "Is this in core? Since what version?",
+      "revId": "022ca1481e3a8907f7a8f80e15d4c8d5afdda692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgn//+1Y\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-09T12:30:08Z",
+      "side": 1,
+      "message": "Space",
+      "revId": "022ca1481e3a8907f7a8f80e15d4c8d5afdda692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgn//+1U\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-09T12:30:08Z",
+      "side": 1,
+      "message": "space",
+      "revId": "022ca1481e3a8907f7a8f80e15d4c8d5afdda692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgn//+1k\u003d",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-09T12:30:08Z",
+      "side": 1,
+      "message": "Use $collection-\u003eslice( 0, 10 ); after taking the count of all messages first.",
+      "revId": "022ca1481e3a8907f7a8f80e15d4c8d5afdda692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADgn//+1c\u003d",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-09T12:30:08Z",
+      "side": 1,
+      "message": "Double space",
+      "revId": "022ca1481e3a8907f7a8f80e15d4c8d5afdda692",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
