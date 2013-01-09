@@ -1,6 +1,29 @@
 ( function ( $, mw ) {
 	'use strict';
 
+
+	mw.translate = mw.translate || {};
+
+	mw.translate = $.extend( mw.translate, {
+		getMessages: function( messageGroup, language, offset, limit ) {
+			var queryParams,
+				apiURL = mw.util.wikiScript( 'api' );
+
+			queryParams = {
+				action: 'query',
+				list: 'messagecollection',
+				mcgroup: messageGroup,
+				format: 'json',
+				mclanguage: language,
+				mcoffset: offset,
+				mclimit: limit,
+				mcprop: [ 'definition', 'translation', 'tags', 'revision' ].join( '|' )
+			};
+
+			return $.get( apiURL, queryParams );
+		}
+	} );
+
 	$( 'document' ).ready( function () {
 		$( '.mw-translate-messagereviewbutton' ).click( function () {
 			var $b, successFunction, failFunction, params;
@@ -31,5 +54,108 @@
 
 			$.post( mw.util.wikiScript( 'api' ), params, successFunction ).fail( failFunction );
 		} );
+
+		$( '.tux-messagetable-loader' ).appear( function () {
+			var messagegroup, targetLanguage, pageSize, offset, total;
+
+			messagegroup = $( this ).data( 'messagegroup' );
+			pageSize = $( this ).data( 'pagesize' );
+			total = $( this ).data( 'total' );
+			offset = $( this ).data( 'offset' ) ? $( this ).data( 'offset' ) : pageSize;
+			targetLanguage = $( '.tux-messagelist' ).data( 'targetlangcode' );
+
+			if ( offset < 0 ) {
+				return false;
+			}
+
+			$.when(
+				mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize )
+			).then( function( result ) {
+					var messages = result.query.messagecollection;
+
+					$.each( messages, function ( index ) {
+						var message,
+							$message,
+							status = '',
+							statusClass ='',
+							statusMsg ='',
+							$messageWrapper;
+
+						message = messages[index];
+
+						if ( message.tags ) {
+							// FIXME: proofread is not coming in tags.
+							status += message.tags.join( ' ' );
+						} else if ( message.translation ) {
+							status += 'translated';
+						}
+
+						if ( status ) {
+							statusClass = statusMsg = 'tux-status-' + status;
+						}
+
+						$messageWrapper = $( '<div>' )
+							.addClass( 'row tux-message' )
+							.attr( {
+								'data-translation': message.translation,
+								'data-source': message.definition,
+								'data-title': message.key,
+								'data-group' : messagegroup
+							} );
+						$message = $( '<div>' )
+							.addClass( 'row tux-message-item ' + statusClass )
+							.attr( {
+								'data-translation': message.translation,
+								'data-source': message.definition,
+								'data-title': message.key,
+								'data-group' : messagegroup
+							} )
+							.append( $( '<div>' )
+								.addClass( 'nine columns tux-list-message' )
+								.append(
+									$( '<span>' )
+										.addClass( 'tux-list-source' )
+										.attr( 'lang', $( '.tux-messagelist' ).data( 'sourcelangcode' ) )
+										.text( message.definition ),
+									$( '<span>' )
+										.addClass( 'tux-list-translation' )
+										.attr( 'lang', $( '.tux-messagelist' ).data( 'targetlangcode' ) )
+										.text( message.translation )
+								),
+								$( '<div>' )
+									.addClass( 'two columns tux-list-status text-center ' + statusClass )
+									.text( statusMsg? mw.msg( statusMsg ): '' ),
+								$( '<div>' )
+									.addClass( 'one column tux-list-edit text-center' )
+									.append(
+										$( '<a>' )
+											.attr( {
+												'title': mw.msg( 'something' )
+											} )
+											.text( mw.msg( 'tux-edit' ) )
+									)
+							);
+
+						$messageWrapper.append( $message );
+						$( '.tux-messagetable-loader' ).before ( $messageWrapper );
+						$messageWrapper.translateeditor();
+					} );
+
+					if ( result['query-continue'] ) {
+						offset = result['query-continue'].messagecollection.mcoffset;
+						$( '.tux-messagetable-loader' ).data( 'offset', offset );
+						$( '.tux-messagetable-loader-count' )
+							.text( mw.msg( 'tux-messagetable-more-messages', total - offset  ) );
+					} else {
+						// End of messages
+						$( '.tux-messagetable-loader' ).data( 'offset', -1 )
+							.addClass( 'hide' );
+					}
+			} );
+		}, {
+			// Appear callback need to be called more than once.
+			one: false
+		} );
 	} );
+
 }( jQuery, mediaWiki ) );
