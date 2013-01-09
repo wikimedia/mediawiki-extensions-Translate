@@ -290,6 +290,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 	'position' => 'top',
 	'dependencies' => array(
 		'mediawiki.util',
+		'jquery.appear',
 	),
 	'messages' => array(
 		'translate-messagereview-submit',
@@ -303,7 +304,11 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'api-error-owntranslation',
 		'api-error-unknownmessage',
 		'api-error-unknownerror',
-		'tpt-unknown-page'
+		'tpt-unknown-page',
+		'tux-edit',
+		'translate-edit-title',
+		'tux-messagetable-more-messages',
+		'tux-messagetable-loading-messages',
 	),
 ) + $resourcePaths;
 

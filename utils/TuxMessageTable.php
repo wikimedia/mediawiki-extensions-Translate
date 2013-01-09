@@ -33,6 +33,7 @@ class TuxMessageTable extends MessageTable {
 		$targetLang = Language::factory( $this->collection->getLanguage() );
 
 		$output = '';
+
 		/**
 		 * @var TMessage $m
 		 */
@@ -131,14 +132,28 @@ class TuxMessageTable extends MessageTable {
 		$this->includeAssets();
 		$this->context->getOutput()->addModules( 'ext.translate.editor' );
 
+		// FIXME
+		$total = 666;
+		$batchSize = 100;
+
 		$statsBar = StatsBar::getNew( $this->group->getId(), $this->collection->getLanguage() );
 		$statsBarHtml = $statsBar->getHtml( $this->context );
 
-		$footer = '<div class="tux-ajax-loader">'
+		$footer =  Html::openElement( 'div',
+			array(
+				'class' => 'tux-messagetable-loader',
+				'data-messagegroup' => $this->group->getId(),
+				'data-total' => $total,
+				'data-pagesize' => $batchSize
+			) )
 			. '<span class="tux-loading-indicator"></span>'
-			. '<div class="tux-ajax-loader-count">666 more message</div>' // TODO i18n
-			. '<div class="tux-ajax-loader-more">Loading 15...</div>' // TODO i18n
-			. '</div>';
+			. '<div class="tux-messagetable-loader-count">'
+			. wfMessage( 'tux-messagetable-more-messages' )->numParams( $total - $batchSize )->escaped()
+			. '</div>'
+			. '<div class="tux-messagetable-loader-more">'
+			. wfMessage( 'tux-messagetable-loading-messages' )->numParams( $batchSize )->escaped()
+			. '</div>'
+			. Html::closeElement( 'div' );
 
 		$footer .= '<div class="tux-action-bar row"><div class="three columns">' .
 			$statsBarHtml

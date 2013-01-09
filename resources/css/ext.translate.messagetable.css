@@ -159,7 +159,7 @@
 	padding-left: 19px;
 }
 
-.tux-ajax-loader {
+.tux-messagetable-loader {
 	height: 75px;
 	color: #565656;
 	padding: 15px;
@@ -169,12 +169,12 @@
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
 }
 
-.tux-ajax-loader-count {
+.tux-messagetable-loader-count {
 	padding: 0 0 5px 46px;
 	font-size: 25px;
 }
 
-.tux-ajax-loader-more {
+.tux-messagetable-loader-more {
 	padding-left: 46px;
 	font-size: 15px;
 }
