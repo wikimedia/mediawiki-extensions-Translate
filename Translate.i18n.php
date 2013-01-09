@@ -687,14 +687,22 @@ These messages will only affect the interface on {{SITENAME}}.',
 * $1 is a localised language name
 * $2 is {{msg-mw|languagestats-recenttranslations}} of the language $1',
 	'languagestats-recenttranslations' => 'Substituted in {{msg-mw|languagestats-stats-for}} as $2.',
-	'translate-langstats-expand' => 'Used in [[Special:LanguageStats]] to expand subgroups {{Identical/Expand}}
-
-{{Doc-actionlink}}',
+	'translate-langstats-expand' => '{{Doc-actionlink}}
+Used in [[Special:LanguageStats]] to expand subgroups.
+{{Identical|Expand}}',
 	'translate-langstats-collapse' => 'Used in [[Special:LanguageStats]] to collapse subgroups {{Identical/Collapse}}
 
 {{Doc-actionlink}}',
-	'translate-langstats-expandall' => 'Used in [[Special:LanguageStats]] to expand all subgroups',
-	'translate-langstats-collapseall' => 'Used in [[Special:LanguageStats]] to collapse all subgroups',
+	'translate-langstats-expandall' => '{{doc-actionlink}}
+Used in [[Special:LanguageStats]] to expand all subgroups.
+
+See also:
+* {{msg-mw|Translate-langstats-collapseall}}',
+	'translate-langstats-collapseall' => '{{doc-actionlink}}
+Used in [[Special:LanguageStats]] to collapse all subgroups.
+
+See also:
+* {{msg-mw|Translate-langstats-expandall}}',
 	'translate-language-code' => 'Name of fieldset in [[Special:LanguageStats]].
 
 {{Identical|Language code}}',
@@ -2422,13 +2430,13 @@ Ye enforma afayadizo pa les xeres de correición.',
 	'translate-dynagroup-last' => 'Caberu cambiu fechu por {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Caberu cambiu fechu por {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Ayuda',
-	'translate-msggroupselector-projects' => 'Grupos de mensaxes', # Fuzzy
+	'translate-msggroupselector-projects' => 'Grupu de mensaxes',
 	'translate-msggroupselector-search-placeholder' => 'Guetar nos grupos',
 	'translate-msggroupselector-search-all' => 'Toos',
 	'translate-msggroupselector-search-recent' => 'De recién',
 	'translate-msggroupselector-load-from-all' => 'Cargar mensaxes de tolos grupos',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgrupu|subgrupos}}',
-	'tux-languageselector' => 'Llingua',
+	'tux-languageselector' => 'Traducir al',
 	'tux-tab-all' => 'Toos',
 	'tux-tab-untranslated' => 'Ensin traducir',
 	'tux-tab-outdated' => 'Anticuaos',
@@ -2438,6 +2446,7 @@ Ye enforma afayadizo pa les xeres de correición.',
 	'tux-status-fuzzy' => 'Anticuada',
 	'tux-status-proofread' => 'Correxida',
 	'tux-status-translated' => 'Traducíu',
+	'tux-status-saving' => 'Guardando...',
 	'tux-status-unsaved' => 'Ensin guardar',
 	'tux-editor-placeholder' => 'La to traducción',
 	'tux-editor-save-button-label' => 'Guardar la traducción',
@@ -2445,11 +2454,20 @@ Ye enforma afayadizo pa les xeres de correición.',
 	'tux-editor-shortcut-info' => 'Calca "$1" para guardar o "$2" pa saltar la siguiente mensaxe',
 	'tux-editor-no-message-doc' => 'El mensaxe nun tien documentación',
 	'tux-editor-edit-desc' => 'Editar la descripción',
+	'tux-editor-add-desc' => 'Amestar descripción',
 	'tux-editor-suggestions-title' => 'Suxerencies',
 	'tux-editor-in-other-languages' => "N'otres llingües",
 	'tux-editor-need-more-help' => '¿Necesites más ayuda?',
 	'tux-editor-ask-help' => 'Pidir más información',
 	'tux-editor-tm-match' => '$1% de coincidencia',
+	'tux-warnings-more' => '{{PLURAL:$1|$1 más}}',
+	'tux-warnings-hide' => 'anubrir',
+	'tux-editor-save-failed' => 'Falló guardar la traducción: $1',
+	'tux-editor-use-this-translation' => 'Usar como traducción',
+	'tux-editor-message-desc-more' => 'Ver más',
+	'tux-editor-clear-translated' => 'Anubrir traducíos',
+	'tux-editor-outdated-warning' => 'Esta traducción pue necesitar un anovamientu.',
+	'tux-editor-outdated-warning-diff-link' => 'Amosar les diferencies',
 );
 
 /** Azerbaijani (azərbaycanca)
@@ -9344,8 +9362,8 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-editor-save-failed' => "Échec de l'enregistrement de la traduction : $1",
 	'tux-editor-use-this-translation' => 'Utiliser comme traduction',
 	'tux-editor-message-desc-more' => 'Voir davantage',
-	'tux-editor-clear-translated' => 'Effacer la traduction', # Fuzzy
-	'tux-editor-outdated-warning' => 'Cette traduction peut être obsolète.', # Fuzzy
+	'tux-editor-clear-translated' => 'Masquer la traduction',
+	'tux-editor-outdated-warning' => 'Cette traduction peut nécessiter une mise à jour.',
 	'tux-editor-outdated-warning-diff-link' => 'Afficher les différences',
 );
 
@@ -10253,8 +10271,8 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-editor-save-failed' => 'Houbo un erro ao gardar a tradución: $1',
 	'tux-editor-use-this-translation' => 'Utilizar como tradución',
 	'tux-editor-message-desc-more' => 'Ollar máis',
-	'tux-editor-clear-translated' => 'Limpar as traducidas', # Fuzzy
-	'tux-editor-outdated-warning' => 'Esta tradución pode estar obsoleta.', # Fuzzy
+	'tux-editor-clear-translated' => 'Agochar as traducidas',
+	'tux-editor-outdated-warning' => 'Esta tradución pode necesitar unha actualización.',
 	'tux-editor-outdated-warning-diff-link' => 'Mostrar as diferenzas',
 );
 
@@ -13696,6 +13714,7 @@ Utile per l'attività di correzione.",
 	'tux-status-fuzzy' => 'Da aggiornare',
 	'tux-status-proofread' => 'Corretta',
 	'tux-status-translated' => 'Tradotti',
+	'tux-status-saving' => 'Salvataggio...',
 	'tux-status-unsaved' => 'Non salvate',
 	'tux-editor-placeholder' => 'La tua traduzione',
 	'tux-editor-save-button-label' => 'Salva traduzione',
@@ -13713,6 +13732,10 @@ Utile per l'attività di correzione.",
 	'tux-warnings-hide' => 'nascondi',
 	'tux-editor-save-failed' => 'Errore durante il salvataggio della traduzione: $1',
 	'tux-editor-use-this-translation' => 'Usa come traduzione',
+	'tux-editor-message-desc-more' => 'Mostra altri',
+	'tux-editor-clear-translated' => 'Nascondi tradotti',
+	'tux-editor-outdated-warning' => 'Questa traduzione richiede di essere aggiornata.',
+	'tux-editor-outdated-warning-diff-link' => 'Mostra le differenze',
 );
 
 /** Japanese (日本語)
@@ -14101,8 +14124,8 @@ $1',
 	'tux-editor-save-failed' => '翻訳の保存に失敗しました: $1',
 	'tux-editor-use-this-translation' => '翻訳として使用',
 	'tux-editor-message-desc-more' => '続きを表示',
-	'tux-editor-clear-translated' => '翻訳を消去', # Fuzzy
-	'tux-editor-outdated-warning' => 'この翻訳は修正が必要かもしれません。', # Fuzzy
+	'tux-editor-clear-translated' => '翻訳を非表示',
+	'tux-editor-outdated-warning' => 'この翻訳は修正が必要かもしれません。',
 	'tux-editor-outdated-warning-diff-link' => '差分を表示',
 );
 
@@ -15687,6 +15710,7 @@ $1',
 	'tux-editor-shortcut-info' => '저장하려면 "$1"을 누르거나 다음 메시지로 넘어가려면 "$2"를 누르세요',
 	'tux-editor-no-message-doc' => '메시지 도움말이 없습니다',
 	'tux-editor-edit-desc' => '설명 편집',
+	'tux-editor-add-desc' => '설명 추가',
 	'tux-editor-suggestions-title' => '제안',
 	'tux-editor-in-other-languages' => '다른 언어',
 	'tux-editor-need-more-help' => '도움이 더 필요하십니까?',
@@ -15697,6 +15721,9 @@ $1',
 	'tux-editor-save-failed' => '번역을 저장하는 데 실패했습니다: $1',
 	'tux-editor-use-this-translation' => '번역으로 사용',
 	'tux-editor-message-desc-more' => '더 보기',
+	'tux-editor-clear-translated' => '번역됨 숨기기',
+	'tux-editor-outdated-warning' => '이 번역은 업데이트해야 합니다.',
+	'tux-editor-outdated-warning-diff-link' => '차이 보기',
 );
 
 /** Krio (Krio)
@@ -17640,8 +17667,8 @@ $1',
 	'tux-editor-save-failed' => 'Не успеав да го зачувам преводот: $1',
 	'tux-editor-use-this-translation' => 'Користи како превод',
 	'tux-editor-message-desc-more' => 'Погл. уште',
-	'tux-editor-clear-translated' => 'Тргни преведено', # Fuzzy
-	'tux-editor-outdated-warning' => 'Преводов може да е застарен.', # Fuzzy
+	'tux-editor-clear-translated' => 'Скриј преведени',
+	'tux-editor-outdated-warning' => 'На преводов може да му треба поднова.',
 	'tux-editor-outdated-warning-diff-link' => 'Прик. разлики',
 );
 
@@ -30448,18 +30475,19 @@ $messages['zh-hant'] = array(
 	'translate-edit-nopermission' => '您必須獲得權限才可以翻譯信息。',
 	'translate-edit-askpermission' => '請求權限',
 	'translate-magic-pagename' => '延伸的MediaWiki翻譯',
-	'translate-magic-help' => "您可以使用本特殊頁面翻譯'''特殊頁面別名'''、'''魔術字'''以及'''名字空間名稱'''。
+	'translate-magic-help' => '您可以使用本特殊頁面翻譯特殊頁面別名、魔術字及名字空間名稱。
 
 翻譯魔術字時，新的名稱必需含有英文，否則無法生效。第一個字元也請避免 0 或 1 這兩個字元。
-特殊頁面別名以及魔術字可以使用複數的翻譯，請使用逗號（,）分隔。
+特殊頁面別名以及魔術字可有多個的翻譯。
+請以逗號（,）分隔它們。
 名字空間只能有一個翻譯。
 
-名字空間名稱中，要注意<code>$1 討論</code>這個空間名稱在翻譯時，<code>$1</code>會受到網站名稱影響（例如<code>{{ns:project_talk}}</code>）。
-
-如果您的翻譯沒有更動網站名稱，但無法正確顯示的話，請聯絡 MediaWiki 開發者。
+翻譯計劃討論名字空間<code>$1 討論</code>可能是很複雜的。
+<code>$1</code>是項目的網站名稱（例如<code>{{ns:project_talk}}</code>）。
+如無法完整地翻譯網站名稱成你的語言，請在[[Support]]上告知我們。
 
 您必需成為翻譯者才能儲存這些更改。
-在按下儲存之前，這些更改均不會被更動。", # Fuzzy
+在按下儲存之前，這些更改均不會被更動。',
 	'translate-magic-module' => '模組：',
 	'translate-magic-submit' => '擷取',
 	'translate-magic-cm-export' => '匯出',
@@ -30747,8 +30775,8 @@ $1',
 	'tux-editor-save-failed' => '儲存翻譯失敗：$1',
 	'tux-editor-use-this-translation' => '用作翻譯',
 	'tux-editor-message-desc-more' => '顯示更多',
-	'tux-editor-clear-translated' => '清除已翻譯', # Fuzzy
-	'tux-editor-outdated-warning' => '此翻譯可能已過時。', # Fuzzy
+	'tux-editor-clear-translated' => '隱藏已翻譯',
+	'tux-editor-outdated-warning' => '此翻譯可能要更新。',
 	'tux-editor-outdated-warning-diff-link' => '顯示差異',
 );
 

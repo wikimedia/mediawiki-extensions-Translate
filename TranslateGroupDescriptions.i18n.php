@@ -238,6 +238,7 @@ $messages['ast'] = array(
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Wiktionary',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] ye una aplicación pa preseos móviles que val pa collaborar col [[:meta:Wiki Loves Monuments|proyeutu Wiki Loves Monuments]]',
 	'translate-group-desc-waymarked-trails-help' => "Les páxines d'ayuda de los sitios web de Waymarked Trails: http://waymarkedtrails.org/gl/help/about",
+	'translate-group-desc-etherpad-lite' => "[[Translating:Etherpad lite|Etherpad lite]] ye un editor collaborativu n'auténticu tiempu real",
 );
 
 /** Azerbaijani (azərbaycanca)
@@ -1421,7 +1422,7 @@ $messages['it'] = array(
 	'translate-group-desc-flaggedrevs' => "Meta gruppo di messaggi contenente tutti i messaggi dell'estensione MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
 	'translate-group-desc-readerfeedback' => "Meta gruppo di messaggi contenente tutti i messaggi dell'estensione MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",
 	'translate-group-desc-semantic' => 'Meta gruppo di messaggi contentente tutti i messaggi di tutte le estensioni [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-translate' => "Meta gruppo di messaggi contenente tutti i messaggi dell'estensione MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]",
+	'translate-group-desc-translate' => "Meta gruppo di messaggi contenente tutti i messaggi dell'estensione MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]; si prega di familiarizzare con il suo [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossario]",
 	'translate-group-desc-wikiaextensions' => 'Meta gruppo di messaggi contenente tutti i messaggi per le estensioni di MediaWiki supportate usate da [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Meta gruppo di messaggi contenente tutti i messaggi per le estensioni di MediaWiki usate dalla [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikimediaextensions-main' => 'Meta gruppo di messaggi contenente tutti i messaggi delle estensioni MediaWiki supportate che devono essere tradotte per il [http://meta.wikimedia.org/wiki/Language_committee Comitato linguistico] di Wikimedia',
@@ -1460,9 +1461,11 @@ Vedi [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] è un progetto per fornire una versione offline, solo testo di Wikipedia per dispositivi mobili.',
 	'translate-group-desc-wikimedia-mobile' => 'Questo gruppo di messaggi contiene tutti i messaggi delle applicazioni per dispositivi mobili sui progetti Wikimedia.',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => "[[Translating:WikipediaMobile|WikipediaMobile]] è un'applicazione multipiattaforma per dispositivi mobili e tavolette per leggere e modificare Wikipedia",
+	'translate-group-desc-wikimedia-mobile-wikisource' => "[[Translating:WikisourceMobile|WikisourceMobile]] è un'applicazione multipiattaforma per dispositivi mobili e tavolette per leggere e modificare Wikisource",
 	'translate-group-desc-wikimedia-mobile-wiktionary' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] è un'applicazione multipiattaforma per dispositivi mobili e tavolette per leggere e modificare Wiktionary",
 	'translate-group-desc-wikimedia-mobile-wlm' => "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] è un'applicazione per dispositivi mobili per contribuire al [[:meta:Wiki Loves Monuments|progetto Wiki Loves Monuments]]",
 	'translate-group-desc-waymarked-trails-help' => 'Le pagine di aiuto del sito web Waymarked Trails: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] è un editor collaborativo in tempo reale',
 );
 
 /** Japanese (日本語)
@@ -1583,7 +1586,7 @@ $messages['ko'] = array(
 	'translate-group-desc-flaggedrevs' => '미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]의 모든 메시지를 포함하는 메타 그룹입니다.',
 	'translate-group-desc-readerfeedback' => '미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]의 모든 메시지를 포함하는 메타 그룹입니다.',
 	'translate-group-desc-semantic' => '모든 [http://semantic-mediawiki.org/ Semantic MediaWiki] 확장 기능의 모든 메시지를 포함하는 메타 그룹입니다.',
-	'translate-group-desc-translate' => '미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:Translate Translate]의 모든 메시지를 포함하는 메타 그룹입니다.', # Fuzzy
+	'translate-group-desc-translate' => '미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:Translate Translate]의 모든 메시지를 포함하는 메타 그룹입니다. 이 확장 기능의 [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary 용어집]을 참고하여 용어를 파악하세요.',
 	'translate-group-desc-wikiaextensions' => '[http://www.wikia.com 위키아]에서 쓰이며 여기서 지원하는 미디어위키 확장 기능의 모든 메시지를 포함한 메타 그룹입니다.',
 	'translate-group-desc-wikimediaextensions' => '[http://wikimedia.org/ 위키미디어 재단]에서 쓰이며 여기서 지원하는 미디어위키 확장 기능의 모든 메시지를 포함한 메타 그룹입니다.',
 	'translate-group-desc-wikimediaextensions-main' => '위키미디어 [http://meta.wikimedia.org/wiki/Language_committee 언어 위원회]가 번역을 요구하는 미디어위키 확장 기능의 모든 메시지를 포함한 메타 그룹입니다.',

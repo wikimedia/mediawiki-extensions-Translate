@@ -5747,7 +5747,7 @@ $messages['ko'] = array(
 하지만 최신 {{PLURAL:$1|버전}}은 번역에서 표시할 수 없었습니다.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|이 문서는}} 추가 번역에서 실종했습니다.',
 	'tpt-select-prioritylangs' => '우선 언어 코드의 쉼표로 구분한 목록:',
-	'tpt-select-prioritylangs-force' => '우선 언어 이외의 언어로 번역 방지',
+	'tpt-select-prioritylangs-force' => '우선 언어 이외의 언어로 번역 방지', # Fuzzy
 	'tpt-select-prioritylangs-reason' => '이유:',
 	'tpt-sections-prioritylangs' => '우선 언어',
 	'tpt-rev-mark' => '번역한 것으로 표시',
@@ -5821,8 +5821,8 @@ $messages['ko'] = array(
 	'pt-log-aggregategroup-dissociate' => '사용자가 "[[:$1]]" 번역 가능한 문서를 $3 집계 그룹에서 {{GENDER:$2|삭제함}}',
 	'pt-movepage-title' => '"$1" 번역 가능한 문서 이동',
 	'pt-movepage-blockers' => '번역 가능한 문서는 다음 {{PLURAL:$1|오류}} 때문에 새 이름으로 이동할 수 없습니다:',
-	'pt-movepage-block-base-exists' => '"[[:$1]]" 대상 기본 문서가 존재합니다.',
-	'pt-movepage-block-base-invalid' => '대상 기본 문서는 올바른 제목이 아닙니다.',
+	'pt-movepage-block-base-exists' => '"[[:$1]]" 대상 기본 문서가 존재합니다.', # Fuzzy
+	'pt-movepage-block-base-invalid' => '대상 기본 문서는 올바른 제목이 아닙니다.', # Fuzzy
 	'pt-movepage-block-tp-exists' => '"[[:$2]]" 대상 번역 문서가 존재합니다.',
 	'pt-movepage-block-tp-invalid' => '"[[:$1]]"에 대한 대상 번역 문서 제목은 유효하지 않습니다 (너무 길어요?).',
 	'pt-movepage-block-section-exists' => '번역 단위에 대한 "[[:$2]]" 대상 문서가 존재합니다.',
@@ -5830,9 +5830,9 @@ $messages['ko'] = array(
 	'pt-movepage-block-subpage-exists' => '"[[:$2]]" 대상 하위 문서가 존재합니다.',
 	'pt-movepage-block-subpage-invalid' => '"[[:$1]]"에 대한 대상 하위 문서 제목은 유효하지 않습니다 (너무 길어요?).',
 	'pt-movepage-list-pages' => '이동할 문서 목록',
-	'pt-movepage-list-translation' => '번역 문서',
-	'pt-movepage-list-section' => '번역 단위 문서',
-	'pt-movepage-list-other' => '다른 하위 문서',
+	'pt-movepage-list-translation' => '번역 문서', # Fuzzy
+	'pt-movepage-list-section' => '번역 단위 문서', # Fuzzy
+	'pt-movepage-list-other' => '다른 하위 문서', # Fuzzy
 	'pt-movepage-list-count' => '이동할 문서 총 $1개.',
 	'pt-movepage-legend' => '번역 가능한 문서 이동',
 	'pt-movepage-current' => '현재 이름:',
@@ -5844,7 +5844,7 @@ $messages['ko'] = array(
 	'pt-movepage-action-other' => '대상 바꾸기',
 	'pt-movepage-intro' => '이 특수 문서는 번역에 대해 표시한 문서를 이동할 수 있습니다.
 많은 문서가 이동해야 하기 때문에 즉시 이동 작업이 되지 않습니다.
-문서를 이동하는 동안 이는 질문의 문서와 상호 작용하는 것은 불가능합니다.
+문서를 이동하는 동안 질문의 문서와 상호 작용하는 것은 불가능합니다.
 실패하면 [[Special:Log/pagetranslation|문서 번역 기록]]에 기록되고 직접 복구할 필요가 있습니다.',
 	'pt-movepage-logreason' => '"$1" 번역 가능한 문서의 부분.',
 	'pt-movepage-started' => '기본 페이지가 지금 이동했습니다.
@@ -5853,13 +5853,13 @@ $messages['ko'] = array(
 	'pt-deletepage-lang-title' => '"$1" 번역 문서 삭제.',
 	'pt-deletepage-full-title' => '"$1" 번역 가능한 문서 삭제.',
 	'pt-deletepage-invalid-title' => '지정한 문서가 유효하지 않습니다.',
-	'pt-deletepage-invalid-text' => '지정한 문서는 이의 번역가능한 문서도 번역도 아닙니다.',
+	'pt-deletepage-invalid-text' => '지정한 문서는 이의 번역가능한 문서도 번역도 아닙니다.', # Fuzzy
 	'pt-deletepage-action-check' => '삭제될 문서 목록',
 	'pt-deletepage-action-perform' => '삭제하기',
 	'pt-deletepage-action-other' => '대상 바꾸기',
 	'pt-deletepage-lang-legend' => '번역 문서 삭제',
 	'pt-deletepage-full-legend' => '번역 가능한 문서 삭제',
-	'pt-deletepage-any-legend' => '번역 가능한 문서 또는 번역 가능한 문서의 번역 삭제',
+	'pt-deletepage-any-legend' => '번역 가능한 문서 또는 번역 가능한 문서의 번역 삭제', # Fuzzy
 	'pt-deletepage-current' => '문서 이름:',
 	'pt-deletepage-reason' => '이유:',
 	'pt-deletepage-subpages' => '모든 하위 문서 삭제',
@@ -5873,7 +5873,7 @@ $messages['ko'] = array(
 	'pt-deletepage-started' => '오류와 메시지 완료를 위한 [[Special:Log/pagetranslation|문서 번역 기록]]를 확인하세요.',
 	'pt-deletepage-intro' => '이 특수 문서는 하나의 언어로 전체 번역 가능한 문서 또는 번역을 삭제할 수 있습니다.
 여러 문서를 삭제해야 하기 때문에 즉시 삭제 작업이 되지 않습니다.
-실패하면 [[Special:Log/pagetranslation|문서 번역 기록]]에 기록되고 직접 복구할 필요가 있습니다.',
+실패하면 [[Special:Log/pagetranslation|문서 번역 기록]]에 기록되고 직접 복구할 필요가 있습니다.', # Fuzzy
 );
 
 /** Colognian (Ripoarisch)
