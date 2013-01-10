@@ -31,6 +31,22 @@
 	margin-right: 5%;
 }
 
+.tux-searchpage .facet-level-1 {
+	font-size: 95%;
+}
+
+.tux-searchpage .facet-level-2 {
+	font-size: 90%;
+}
+
+.tux-searchpage .facet-level-3 {
+	font-size: 85%;
+}
+
+.tux-searchpage .facet-level-4 {
+	font-size: 80%;
+}
+
 /* Results */
 .tux-searchpage .count {
 	color: #555;

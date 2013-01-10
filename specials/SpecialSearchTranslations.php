@@ -72,14 +72,14 @@ class SpecialSearchTranslations extends SpecialPage {
 			$this->msg( 'tux-sst-facet-language' )
 		);
 		$facet = $resultset->getFacetSet()->getFacet( 'language' );
-		$facets .= $this->renderFacet( $facet );
+		$facets .= $this->renderLanguageFacet( $facet );
 
 		$facets .= Html::element( 'div',
 			array( 'class' => 'row facet' ),
 			$this->msg( 'tux-sst-facet-group' )
 		);
 		$facet = $resultset->getFacetSet()->getFacet( 'group' );
-		$facets .= $this->renderFacet( $facet );
+		$facets .= $this->renderGroupFacet( $facet );
 
 		// Part 2: results
 		$results = '';
@@ -119,6 +119,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$dismax = $query->getDisMax();
 		$dismax->setQueryParser( 'edismax' );
 		$query->setQuery( $queryString );
+		$query->setRows( 20 );
 
 		list( $pre, $post ) = $this->hl;
 		$hl = $query->getHighlighting();
@@ -143,15 +144,14 @@ class SpecialSearchTranslations extends SpecialPage {
 		return $client->select( $query );
 	}
 
-	protected function renderFacet( Solarium_Result_Select_Facet_Field $facet ) {
+	protected function renderLanguageFacet( Solarium_Result_Select_Facet_Field $facet ) {
 		$output = '';
 
 		foreach ( $facet as $key => $value ) {
-			if ( $key === '' ) {
-				$key = $this->msg( 'tux-sst-facet-orphan' )->text();
-			}
 
+			$key = TranslateUtils::getLanguageName( $key, false, $this->getLanguage()->getCode() );
 			$name = Html::element( 'span', array( 'class' => 'facet-name' ), $key );
+
 			$value = $this->getLanguage()->formatNum( $value );
 			$count = Html::element( 'span', array( 'class' => 'facet-count' ), $value );
 
@@ -159,6 +159,45 @@ class SpecialSearchTranslations extends SpecialPage {
 				array( 'class' => 'row facet-item' ),
 				$name . $count
 			);
+		}
+		return $output;
+	}
+
+	protected function renderGroupFacet( Solarium_Result_Select_Facet_Field $facet ) {
+		$structure = MessageGroups::getGroupStructure();
+		$counts = iterator_to_array( $facet );
+		return $this->makeGroupFacetRows( $structure, $counts );
+	}
+
+	protected function makeGroupFacetRows( array $groups, $counts, $level = 0 ) {
+		$output = '';
+		foreach ( $groups as $mixed ) {
+			$subgroups = $group = $mixed;
+
+			if ( is_array( $mixed ) ) {
+				$group = array_shift( $subgroups );
+			} else {
+				$subgroups = array();
+			}
+
+			if ( !isset( $counts[$group->getId()] ) ) {
+				continue;
+			}
+
+			$value = $counts[$group->getId()];
+
+			$name = Html::element( 'span', array( 'class' => 'facet-name' ), $group->getLabel() );
+			$count = $this->getLanguage()->formatNum( $value );
+			$count = Html::element( 'span', array( 'class' => 'facet-count' ), $count );
+
+			$output .= Html::rawElement( 'div',
+				array( 'class' => "row facet-item facet-level-$level" ),
+				$name . $count
+			);
+
+			if ( $value > 15 ) {
+				$output .= $this->makeGroupFacetRows( $subgroups, $counts, $level + 1 );
+			}
 		}
 		return $output;
 	}
