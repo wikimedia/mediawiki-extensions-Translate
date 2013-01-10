@@ -23,7 +23,6 @@ $wgAutoloadClasses['MessageCollection'] = "$dir/MessageCollection.php";
 $wgAutoloadClasses['MessageDefinitions'] = "$dir/MessageCollection.php";
 $wgAutoloadClasses['MessageGroups'] = "$dir/MessageGroups.php";
 $wgAutoloadClasses['TMessage'] = "$dir/Message.php";
-$wgAutoloadClasses['TaskOptions'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ThinMessage'] = "$dir/Message.php";
 $wgAutoloadClasses['TranslateEditAddons'] = "$dir/TranslateEditAddons.php";
 $wgAutoloadClasses['TranslateHooks'] = "$dir/TranslateHooks.php";

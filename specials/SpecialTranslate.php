@@ -93,14 +93,6 @@ class SpecialTranslate extends SpecialPage {
 			}
 		}
 
-		// Proceed.
-		$taskOptions = new TaskOptions(
-			$this->options['language'],
-			$this->options['limit'],
-			$this->options['offset'],
-			array( $this, 'cbAddPagingNumbers' )
-		);
-
 		$params = array( $this->getContext(), $this->task, $this->group, $this->options );
 		if ( !wfRunHooks( 'SpecialTranslate::executeTask', $params ) ) {
 			return;
@@ -111,7 +103,7 @@ class SpecialTranslate extends SpecialPage {
 			return;
 		}
 
-		$this->task->init( $this->group, $taskOptions, $this->getContext() );
+		$this->task->init( $this->group, $this->options, $this->nondefaults, $this->getContext() );
 		$output = $this->task->execute();
 
 		if ( $this->task->plainOutput() ) {
@@ -200,16 +192,8 @@ class SpecialTranslate extends SpecialPage {
 				);
 			}
 
-			$links = $this->doStupidLinks();
-
 			if ( !self::isBeta( $this->getRequest() ) ) {
-				if ( $this->paging['count'] === 0 ) {
-					$out->addHTML( $description . $links );
-				} elseif ( $this->paging['count'] === $this->paging['total'] ) {
-					$out->addHTML( $description . $output . $links );
-				} else {
-					$out->addHTML( $description . $links . $output . $links );
-				}
+				$out->addHTML( $description . $output );
 			} else {
 				$out->addHTML( $output );
 			}
@@ -256,6 +240,7 @@ class SpecialTranslate extends SpecialPage {
 		/* str  */ 'offset'   => '', // Used to be int, now str
 		/* int  */ 'limit'    => 100,
 		/* str  */ 'filter'   => '', // Tux
+		/* int  */ 'optional' => '0',
 		);
 
 		// Dump everything here
@@ -412,15 +397,16 @@ class SpecialTranslate extends SpecialPage {
 		}
 
 		$options = array(
-			'Optional messages',
-			'Messages without suggestions',
+			'optional' => 'Optional messages',
+			//@todo: 'Messages without suggestions',
 		);
 
 		$container = Html::openElement( 'ul', array( 'class' => 'column tux-message-selector' ) );
-		foreach ( $options as $opt ) {
-			$container .= Html::openElement( 'li', array( 'class' => 'column' ) ) .
-				Xml::checkLabel( $opt, "$opt-name", "$opt-id" ) .
-				Html::closeElement( 'li' );
+		foreach ( $options as $index => $opt ) {
+			$container .= Html::rawElement( 'li',
+				array( 'class' => 'column' ),
+				Xml::checkLabel( $opt, $index, "tux-option-$index", isset( $this->nondefaults[$index] ) )
+			);
 		}
 
 		$container .= Html::closeElement( 'ul' );
@@ -584,71 +570,6 @@ class SpecialTranslate extends SpecialPage {
 		}
 
 		return $selector->getHTML();
-	}
-
-	private $paging = null;
-
-	public function cbAddPagingNumbers( $params ) {
-		$this->paging = $params;
-	}
-
-	protected function doStupidLinks() {
-		if ( $this->paging === null ) {
-			return '';
-		}
-
-		// Total number of messages for this query
-		$total = $this->paging['total'];
-		// Messages in this page
-		$count = $this->paging['count'];
-
-		$allInThisPage = $this->paging['start'] === 0 && $total === $count;
-
-		if ( $this->paging['count'] === 0 ) {
-			$navigation = $this->msg( 'translate-page-showing-none' )->parse();
-		} elseif ( $allInThisPage ) {
-			$navigation = $this->msg( 'translate-page-showing-all' )->numParams( $total )->parse();
-		} else {
-			$previous = $this->msg( 'translate-prev' )->escaped();
-			if ( $this->paging['backwardsOffset'] !== false ) {
-				$previous = $this->makeOffsetLink( $previous, $this->paging['backwardsOffset'] );
-			}
-
-			$nextious = $this->msg( 'translate-next' )->escaped();
-			if ( $this->paging['forwardsOffset'] !== false ) {
-				$nextious = $this->makeOffsetLink( $nextious, $this->paging['forwardsOffset'] );
-			}
-
-			$start = $this->paging['start'] + 1;
-			$stop = $start + $this->paging['count'] - 1;
-			$total = $this->paging['total'];
-
-			$navigation = $this->msg( 'translate-page-showing' )->numParams( $start, $stop, $total )->parse();
-			$navigation .= ' ';
-			$navigation .= $this->msg( 'translate-page-paging-links' )->rawParams( $previous, $nextious )->escaped();
-		}
-
-		return
-			Html::openElement( 'fieldset' ) .
-			Html::element( 'legend', array(), $this->msg( 'translate-page-navigation-legend' )->text() ) .
-			$navigation .
-			Html::closeElement( 'fieldset' );
-	}
-
-	private function makeOffsetLink( $label, $offset ) {
-		$query = array_merge(
-			$this->nondefaults,
-			array( 'offset' => $offset )
-		);
-
-		$link = Linker::link(
-			$this->getTitle(),
-			$label,
-			array(),
-			$query
-		);
-
-		return $link;
 	}
 
 	protected function getGroupDescription( MessageGroup $group ) {
