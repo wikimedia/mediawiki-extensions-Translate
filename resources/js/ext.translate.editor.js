@@ -72,6 +72,7 @@
 					.text( mw.msg( 'tux-status-translated' ) )
 			);
 
+			this.$messageItem.addClass( 'translated' );
 			this.dirty = false;
 		},
 
