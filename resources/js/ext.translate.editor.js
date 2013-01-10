@@ -486,7 +486,7 @@
 
 			$infoColumn.append( $( '<div>' )
 				.addClass( 'row text-left message-desc' )
-				.text( mw.msg( 'tux-editor-no-message-doc' ) )
+				.hide()
 			);
 
 			// By default translateDocumentationLanguageCode is false.
@@ -501,8 +501,9 @@
 							href: mw.translate.getDocumentationEditURL( this.$editTrigger.data( 'title' )
 								.replace( /\/[a-z\-]+$/, '' ) ),
 							target: '_blank'
-					} )
-					.text( mw.msg( 'tux-editor-add-desc' ) ) )
+						} )
+						.hide()
+					)
 				);
 			}
 
@@ -616,9 +617,10 @@
 					$messageDoc,
 					documentation,
 					expand,
+					$descEditLink,
+					contentLanguageDir,
 					readMore,
-					$readMore = null,
-					contentLanguageDir;
+					$readMore = null;
 
 				// TODO This returns an error for 'Page display title' in translatable pages.
 				// Something smarter must be done with it.
@@ -628,11 +630,11 @@
 
 				// Message documentation
 				documentation = result.helpers.documentation;
+				$descEditLink = translateEditor.$editor.find( '.message-desc-edit' );
+				$messageDoc = translateEditor.$editor.find( '.message-desc' );
 
 				// Display the documentation only if it's not empty
 				if ( documentation.value ) {
-					$messageDoc = translateEditor.$editor.find( '.message-desc' );
-
 					contentLanguageDir = $.uls.data.getDir( documentation.language );
 					// Show the documentation and set appropriate
 					// lang and dir attributes.
@@ -646,8 +648,7 @@
 						.addClass( contentLanguageDir ) // hack
 						.html( documentation.html );
 
-					translateEditor.$editor.find( '.message-desc-edit' )
-						.text( mw.msg( 'tux-editor-edit-desc' ) );
+					$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
 
 					if ( documentation.value.length > 500 ) {
 						expand = function () {
@@ -674,7 +675,13 @@
 
 						$messageDoc.addClass('long compact').on( 'hover', expand );
 					}
+				} else {
+					$messageDoc.text( mw.msg( 'tux-editor-no-message-doc' ) )
+					$descEditLink.text( mw.msg( 'tux-editor-add-desc' ) );
 				}
+
+				$messageDoc.show();
+				$descEditLink.show();
 
 				// In other languages
 				translations = result.helpers.inotherlanguages;
@@ -769,7 +776,6 @@
 							$( this ).parent().html( result.helpers.definitiondiff.html );
 						} );
 				}
-
 			} ).fail( function () {
 				// what to do?
 			} );
