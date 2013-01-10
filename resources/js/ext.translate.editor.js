@@ -171,6 +171,7 @@
 			$next = this.$editTrigger.next( '.tux-message' );
 
 			if ( !$next.length ) {
+				this.hide();
 				return;
 			}
 
