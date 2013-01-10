@@ -538,8 +538,8 @@
 				this.init();
 			}
 
-			// Hide all other editors in the page
-			$( '.tux-message' ).each( function () {
+			// Hide all other open editors in the page
+			$( '.tux-message.open' ).each( function () {
 				$( this ).data( 'translateeditor' ).hide();
 			} );
 
@@ -549,7 +549,7 @@
 			// Focus the textarea.
 			this.$editor.find( 'textarea' ).focus();
 			this.shown = true;
-
+			this.$editTrigger.addClass( 'open' );
 			return false;
 		},
 
@@ -557,7 +557,7 @@
 			if ( this.$editor ) {
 				this.$editor.hide();
 			}
-
+			this.$editTrigger.removeClass( 'open' );
 			this.$messageItem.show();
 			this.shown = false;
 
