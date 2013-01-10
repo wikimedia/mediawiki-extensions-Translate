@@ -55,20 +55,22 @@
 	mw.translate = mw.translate || {};
 
 	mw.translate = $.extend( mw.translate, {
+
 		changeGroup: function ( group ) {
-			var uri = new mw.Uri( window.location.href );
-			uri.extend( {
-				group: group,
+			mw.translate.changeUrl( {
+				'group': group,
 				filter: mw.Uri().query.filter || '!translated'
 			} );
-			window.location.href = uri.toString();
 		},
 
 		changeLanguage: function ( language ) {
-			var uri = new mw.Uri( window.location.href );
-			uri.extend( {
-				language: language
-			} );
+			mw.translate.changeUrl( { 'language': language } );
+		},
+
+		changeUrl: function ( params ) {
+			var uri;
+			uri = new mw.Uri( window.location.href );
+			uri.extend( params );
 			window.location.href = uri.toString();
 		},
 
@@ -151,6 +153,10 @@
 
 		ourWindowOnBeforeUnloadRegister();
 		prepareWorkflowSelector();
+
+		$( '#tux-option-optional' ).click( function () {
+			mw.translate.changeUrl( { 'optional': $( this ).prop( 'checked' ) ? 1 : 0 } );
+		} );
 
 		$.when(
 			// Get ready with language stats
