@@ -279,11 +279,62 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * For paging messages. One can count messages before and after slice.
-	 * @param int $offset
+	 * @param string $offset
 	 * @param int $limit
+	 * @return array Offsets than be used for paging backwards and forwards
+	 * @since String offests and return value since 2013-01-10
 	 */
 	public function slice( $offset, $limit ) {
+		$indexes = array_keys( $this->keys );
+
+		if ( $offset === '' ) {
+			$offset = 0;
+		}
+
+		// Handle string offsets
+		if ( !ctype_digit( strval( $offset ) ) ) {
+			$count = 0;
+			foreach ( array_keys( $this->keys ) as $index ) {
+				if ( $index === $offset ) {
+					break;
+				}
+				$count++;
+			}
+			// Now offset is always a integer, suitable for array_slice
+			$offset = $count;
+		}
+
+		// False means that cannot go back or forward
+		$backwardsOffset = $forwardsOffset = false;
+		// Backwards paging uses numerical indexes, see below
+
+		// Can only skip this if no offset has been provided or the
+		// offset is zero. (offset - limit ) > 1 does not work, because
+		// users can end in offest=2, limit=5 and can't see the first
+		// two messages. That's also why it is capped into zero with
+		// max(). And finally make the offsets to be strings even if
+		// they are numbers in this case.
+		if ( $offset > 0 ) {
+			$backwardsOffset = strval( max( 0, $offset - $limit ) );
+		}
+
+		// Forwards paging uses keys. If user opens view Untranslated,
+		// translates some messages and then clicks next, the first
+		// message visible in the page is the first message not shown
+		// in the previous page (unless someone else translated it at
+		// the same time). If we used integer offsets, we would skip
+		// same number of messages that were translated, because they
+		// are no longer in the list. For backwards paging this is not
+		// such a big issue, so it still uses integer offsets, because
+		// we would need to also implement "direction" to have it work
+		// correctly.
+		if ( isset( $indexes[$offset + $limit] ) ) {
+			$forwardsOffset = $indexes[$offset + $limit];
+		}
+
 		$this->keys = array_slice( $this->keys, $offset, $limit, true );
+
+		return array( $backwardsOffset, $forwardsOffset, $offset );
 	}
 
 	/**

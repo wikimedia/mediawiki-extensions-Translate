@@ -171,14 +171,22 @@ abstract class TranslateTask {
 	 */
 	protected function doPaging() {
 		$total = count( $this->collection );
-		$this->collection->slice(
+		$offsets = $this->collection->slice(
 			$this->options->getOffset(),
 			$this->options->getLimit()
 		);
 		$left = count( $this->collection );
 
+		$params = array(
+			'backwardsOffset' => $offsets[0],
+			'forwardsOffset' => $offsets[1],
+			'start' => $offsets[2],
+			'count' => $left,
+			'total' => $total,
+		);
+
 		$callback = $this->options->getPagingCB();
-		call_user_func( $callback, $this->options->getOffset(), $left, $total );
+		call_user_func( $callback, $params );
 	}
 
 	/**

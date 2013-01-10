@@ -253,7 +253,7 @@ class SpecialTranslate extends SpecialPage {
 		/* str  */ 'sort'     => 'normal',
 		/* str  */ 'language' => $this->getLanguage()->getCode(),
 		/* str  */ 'group'    => '',
-		/* int  */ 'offset'   => 0,
+		/* str  */ 'offset'   => '', // Used to be int, now str
 		/* int  */ 'limit'    => 100,
 		/* str  */ 'filter'   => '', // Tux
 		);
@@ -583,12 +583,8 @@ class SpecialTranslate extends SpecialPage {
 
 	private $paging = null;
 
-	public function cbAddPagingNumbers( $start, $count, $total ) {
-		$this->paging = array(
-			'start' => $start,
-			'count' => $count,
-			'total' => $total
-		);
+	public function cbAddPagingNumbers( $params ) {
+		$this->paging = $params;
 	}
 
 	protected function doStupidLinks() {
@@ -596,10 +592,12 @@ class SpecialTranslate extends SpecialPage {
 			return '';
 		}
 
-		$start = $this->paging['start'] + 1;
+		// Total number of messages for this query
 		$total = $this->paging['total'];
+		// Messages in this page
+		$count = $this->paging['count'];
 
-		$allInThisPage = $start === 1 && $total <= $this->options['limit'];
+		$allInThisPage = $this->paging['start'] === 0 && $total === $count;
 
 		if ( $this->paging['count'] === 0 ) {
 			$navigation = $this->msg( 'translate-page-showing-none' )->parse();
@@ -607,16 +605,13 @@ class SpecialTranslate extends SpecialPage {
 			$navigation = $this->msg( 'translate-page-showing-all' )->numParams( $total )->parse();
 		} else {
 			$previous = $this->msg( 'translate-prev' )->escaped();
-			if ( $this->options['offset'] > 0 ) {
-				$offset = max( 0, $this->options['offset'] - $this->options['limit'] );
-				$previous = $this->makeOffsetLink( $previous, $offset );
+			if ( $this->paging['backwardsOffset'] !== false ) {
+				$previous = $this->makeOffsetLink( $previous, $this->paging['backwardsOffset'] );
 			}
 
 			$nextious = $this->msg( 'translate-next' )->escaped();
-
-			if ( $this->paging['total'] != $this->paging['start'] + $this->paging['count'] ) {
-				$offset = $this->options['offset'] + $this->options['limit'];
-				$nextious = $this->makeOffsetLink( $nextious, $offset );
+			if ( $this->paging['forwardsOffset'] !== false ) {
+				$nextious = $this->makeOffsetLink( $nextious, $this->paging['forwardsOffset'] );
 			}
 
 			$start = $this->paging['start'] + 1;
