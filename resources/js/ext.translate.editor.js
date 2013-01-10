@@ -484,15 +484,16 @@
 			$infoColumn = $( '<div>' )
 				.addClass( 'infocolumn' );
 
-			$infoColumn.append( $( '<div>' )
-				.addClass( 'row text-left message-desc' )
-				.text( mw.msg( 'tux-editor-no-message-doc' ) )
-			);
-
 			// By default translateDocumentationLanguageCode is false.
 			// It's defined as the MediaWiki global $wgTranslateDocumentationLanguageCode.
 			translateDocumentationLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
 			if ( translateDocumentationLanguageCode ) {
+
+				$infoColumn.append( $( '<div>' )
+					.addClass( 'row text-left message-desc' )
+					.text( mw.msg( 'tux-editor-no-message-doc' ) )
+				);
+
 				$infoColumn.append( $( '<div>' )
 					.addClass( 'row text-left message-desc-control' )
 					.append( $( '<a>' )
@@ -617,6 +618,7 @@
 					documentation,
 					expand,
 					readMore,
+					translateDocumentationLanguageCode,
 					$readMore = null,
 					contentLanguageDir;
 
@@ -628,9 +630,10 @@
 
 				// Message documentation
 				documentation = result.helpers.documentation;
-
-				// Display the documentation only if it's not empty
-				if ( documentation.value ) {
+				translateDocumentationLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
+				// Display the documentation only if it's not empty and
+				// documentation language is configured
+				if ( documentation.value && translateDocumentationLanguageCode ) {
 					$messageDoc = translateEditor.$editor.find( '.message-desc' );
 
 					contentLanguageDir = $.uls.data.getDir( documentation.language );
