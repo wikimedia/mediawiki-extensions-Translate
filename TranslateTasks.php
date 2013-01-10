@@ -168,6 +168,7 @@ abstract class TranslateTask {
 	 * Takes a slice of messages according to limit and offset given
 	 * in option at initialisation time. Calls the callback to provide
 	 * information how much messages there is.
+	 * @return array|null
 	 */
 	protected function doPaging() {
 		$total = count( $this->collection );
@@ -187,6 +188,7 @@ abstract class TranslateTask {
 
 		$callback = $this->options->getPagingCB();
 		call_user_func( $callback, $params );
+		return $params;
 	}
 
 	/**
@@ -209,6 +211,8 @@ abstract class TranslateTask {
  */
 class CustomFilteredMessagesTask extends TranslateTask {
 	protected $id = 'custom';
+	/// Store some info
+	protected $offsets = array();
 
 	protected function preinit() {
 		$code = $this->options->getLanguage();
@@ -231,6 +235,11 @@ class CustomFilteredMessagesTask extends TranslateTask {
 		$this->collection->filter( $filter, $negate );
 	}
 
+	protected function doPaging() {
+		$this->offsets = parent::doPaging();
+		return $this->offsets;
+	}
+
 	protected function postinit() {
 		$this->collection->loadTranslations();
 	}
@@ -238,6 +247,9 @@ class CustomFilteredMessagesTask extends TranslateTask {
 	protected function output() {
 		$table = MessageTable::newFromContext( $this->context, $this->collection, $this->group );
 		$table->appendEditLinkParams( 'loadtask', $this->getId() );
+		if ( method_exists( $table, 'setOffsets' ) ) {
+			$table->setOffsets( $this->offsets );
+		}
 
 		return $table->fullTable();
 	}
