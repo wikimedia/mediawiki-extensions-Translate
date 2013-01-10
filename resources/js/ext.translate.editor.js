@@ -489,10 +489,9 @@
 			// It's defined as the MediaWiki global $wgTranslateDocumentationLanguageCode.
 			translateDocumentationLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
 			if ( translateDocumentationLanguageCode ) {
-
 				$infoColumn.append( $( '<div>' )
 					.addClass( 'row text-left message-desc' )
-					.text( mw.msg( 'tux-editor-no-message-doc' ) )
+					.hide()
 				);
 
 				$infoColumn.append( $( '<div>' )
@@ -503,8 +502,9 @@
 							href: mw.translate.getDocumentationEditURL( this.$editTrigger.data( 'title' )
 								.replace( /\/[a-z\-]+$/, '' ) ),
 							target: '_blank'
-					} )
-					.text( mw.msg( 'tux-editor-add-desc' ) ) )
+						} )
+						.hide()
+					)
 				);
 			}
 
@@ -620,10 +620,11 @@
 					$translationTextarea,
 					documentation,
 					expand,
-					readMore,
+					$descEditLink,
+					contentLanguageDir,
 					translateDocumentationLanguageCode,
-					$readMore = null,
-					contentLanguageDir;
+					readMore,
+					$readMore = null;
 
 				// TODO This returns an error for 'Page display title' in translatable pages.
 				// Something smarter must be done with it.
@@ -632,54 +633,63 @@
 				}
 
 				// Message documentation
-				documentation = result.helpers.documentation;
+
 				translateDocumentationLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
-				// Display the documentation only if it's not empty and
-				// documentation language is configured
-				if ( documentation.value && translateDocumentationLanguageCode ) {
+				if ( translateDocumentationLanguageCode ) {
+					documentation = result.helpers.documentation;
+					$descEditLink = translateEditor.$editor.find( '.message-desc-edit' );
 					$messageDoc = translateEditor.$editor.find( '.message-desc' );
 
-					contentLanguageDir = $.uls.data.getDir( documentation.language );
-					// Show the documentation and set appropriate
-					// lang and dir attributes.
-					// The message documentation is assumed to be written
-					// in the content language of the wiki.
-					$messageDoc
-						.attr( {
-							lang: documentation.language,
-							dir: contentLanguageDir
-						} )
-						.addClass( contentLanguageDir ) // hack
-						.html( documentation.html );
+					// Display the documentation only if it's not empty and
+					// documentation language is configured
+					if ( documentation.value ) {
+						contentLanguageDir = $.uls.data.getDir( documentation.language );
+						// Show the documentation and set appropriate
+						// lang and dir attributes.
+						// The message documentation is assumed to be written
+						// in the content language of the wiki.
+						$messageDoc
+							.attr( {
+								lang: documentation.language,
+								dir: contentLanguageDir
+							} )
+							.addClass( contentLanguageDir ) // hack
+							.html( documentation.html );
 
-					translateEditor.$editor.find( '.message-desc-edit' )
-						.text( mw.msg( 'tux-editor-edit-desc' ) );
+						$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
 
-					if ( documentation.value.length > 500 ) {
-						expand = function () {
-							$messageDoc.removeClass( 'compact' );
-							$readMore.text( mw.msg( 'tux-editor-message-desc-less' ) );
-						};
+						if ( documentation.value.length > 500 ) {
+							expand = function () {
+								$messageDoc.removeClass( 'compact' );
+								$readMore.text( mw.msg( 'tux-editor-message-desc-less' ) );
+							};
 
-						readMore = function () {
-							if ( $messageDoc.hasClass( 'compact' ) ) {
-								expand();
-							} else {
-								$messageDoc.addClass( 'compact' );
-								$readMore.text( mw.msg( 'tux-editor-message-desc-more' ) );
-							}
-						};
+							readMore = function () {
+								if ( $messageDoc.hasClass( 'compact' ) ) {
+									expand();
+								} else {
+									$messageDoc.addClass( 'compact' );
+									$readMore.text( mw.msg( 'tux-editor-message-desc-more' ) );
+								}
+							};
 
-						$readMore = $( '<span>' )
-							.addClass( 'read-more column' )
-							.text( mw.msg( 'tux-editor-message-desc-more' ) )
-							.click( readMore );
+							$readMore = $( '<span>' )
+								.addClass( 'read-more column' )
+								.text( mw.msg( 'tux-editor-message-desc-more' ) )
+								.click( readMore );
 
-						translateEditor.$editor.find( '.message-desc-control' )
-							.prepend( $readMore );
+							translateEditor.$editor.find( '.message-desc-control' )
+								.prepend( $readMore );
 
-						$messageDoc.addClass('long compact').on( 'hover', expand );
+							$messageDoc.addClass('long compact').on( 'hover', expand );
+						}
+					} else {
+						$messageDoc.text( mw.msg( 'tux-editor-no-message-doc' ) );
+						$descEditLink.text( mw.msg( 'tux-editor-add-desc' ) );
 					}
+
+					$messageDoc.show();
+					$descEditLink.show();
 				}
 
 				// In other languages
@@ -779,7 +789,6 @@
 							$( this ).parent().html( result.helpers.definitiondiff.html );
 						} );
 				}
-
 			} ).fail( function () {
 				// what to do?
 			} );
