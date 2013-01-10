@@ -1,12 +1,6 @@
 <?php
 
 class TuxMessageTable extends MessageTable {
-	protected $offsets = array();
-
-	public function setOffsets( array $offsets ) {
-		$this->offsets = $offsets;
-	}
-
 	// TODO: MessageTable should extend context source
 	public function msg( /* $args */ ) {
 		$args = func_get_args();
@@ -134,14 +128,13 @@ class TuxMessageTable extends MessageTable {
 		return $output;
 	}
 
-	public function fullTable() {
+	public function fullTable( $offsets, $nondefaults ) {
 		$this->includeAssets();
 		$this->context->getOutput()->addModules( 'ext.translate.editor' );
 
-		// FIXME
-		$total = $this->offsets['total'];
+		$total = $offsets['total'];
 		$batchSize = 100;
-		$remaining = $total - $this->offsets['start'] - $this->offsets['count'];
+		$remaining = $total - $offsets['start'] - $offsets['count'];
 
 		$statsBar = StatsBar::getNew( $this->group->getId(), $this->collection->getLanguage() );
 		$statsBarHtml = $statsBar->getHtml( $this->context );
@@ -150,9 +143,10 @@ class TuxMessageTable extends MessageTable {
 			array(
 				'class' => 'tux-messagetable-loader',
 				'data-messagegroup' => $this->group->getId(),
+				'data-total' => $total,
 				'data-pagesize' => $batchSize,
 				'data-remaining' => $remaining,
-				'data-offset' => $this->offsets['forwardsOffset'],
+				'data-offset' => $offsets['forwardsOffset'],
 			) )
 			. '<span class="tux-loading-indicator"></span>'
 			. '<div class="tux-messagetable-loader-count">'
