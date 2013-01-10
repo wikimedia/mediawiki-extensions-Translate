@@ -463,6 +463,8 @@ Most useful for the proofreading tasks.',
 	'tux-editor-clear-translated' => 'Hide translated',
 	'tux-editor-outdated-warning' => 'This translation may need to be updated.',
 	'tux-editor-outdated-warning-diff-link' => 'Show differences',
+	'tux-messagetable-more-messages' => '$1 more {{PLURAL:$1|message|messages}}',
+	'tux-messagetable-loading-messages' => 'Loading {{PLURAL:$1|message|messages}}...'
 );
 
 /** Message documentation (Message documentation)
@@ -903,6 +905,10 @@ Read as in "proofRED" (past participle).',
 	'tux-editor-message-desc-less' => 'Link text for collapsing long message documentation',
 	'tux-editor-clear-translated' => 'Label for the button that appears at the footer of the translation editor.
 Pressing the button clears all the messages that were translated from the page.',
+	'tux-messagetable-more-messages' => 'Text showing number of messages to be loaded in translation message table
+* $1 - number of messages',
+	'tux-messagetable-loading-messages' => 'A progress text saying messages are being loaded
+* $1 - number of messages',
 );
 
 /** Afrikaans (Afrikaans)
@@ -17932,6 +17938,8 @@ $messages['ml'] = array(
 	'tux-editor-message-desc-more' => 'മുഴുവന്‍ കാണിയ്ക്കുക',
 	'tux-editor-message-desc-less' => 'കുറച്ച് മാത്രം കാണിക്കുക',
 	'tux-editor-outdated-warning' => 'ഈ പരിഭാഷ കാലഹരണപ്പെട്ടതാവാം.', # Fuzzy
+	'tux-messagetable-more-messages' => '{{PLURAL:$1|ഒരു സന്ദേശം കൂടി|$1 സന്ദേശങ്ങള്‍ കൂടി}}',
+	'tux-messagetable-loading-messages' => '{{PLURAL:$1|ഒരു സന്ദേശം|$1 സന്ദേശങ്ങള്‍}} എടുക്കുന്നു...'
 );
 
 /** Mongolian (монгол)
