@@ -64,7 +64,8 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			}
 		}
 
-		$messages->slice( $params['offset'], $params['limit'] + 1 );
+		$offsets = $messages->slice( $params['offset'], $params['limit'] );
+		list( /*$backwardsOffset*/, $forwardsOffset, /*offset*/ ) = $offsets;
 
 		$messages->loadTranslations();
 
@@ -72,17 +73,19 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$pages = array();
 		$count = 0;
 
+
+		if ( $forwardsOffset !== false ) {
+			$this->setContinueEnumParameter( 'offset', $forwardsOffset );
+		}
+
 		$props = array_flip( $params['prop'] );
 		foreach ( $messages->keys() as $mkey => $title ) {
-			if ( ++$count > $params['limit'] ) {
-				$this->setContinueEnumParameter( 'offset', $params['offset'] + $count - 1 );
-				break;
-			}
 
 			if ( is_null( $resultPageSet ) ) {
 				$data = $this->extractMessageData( $result, $props, $messages[$mkey] );
 				$fit = $result->addValue( array( 'query', $this->getModuleName() ), null, $data );
 				if ( !$fit ) {
+					// @TODO Use string key here
 					$this->setContinueEnumParameter( 'offset', $params['offset'] + $count - 1 );
 					break;
 				}
@@ -146,8 +149,8 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_BIG2
 			),
 			'offset' => array(
-				ApiBase::PARAM_DFLT => 0,
-				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_DFLT => '',
+				ApiBase::PARAM_TYPE => 'string',
 			),
 			'filter' => array(
 				ApiBase::PARAM_TYPE => 'string',
@@ -166,7 +169,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		return array(
 			'group' => 'Message group',
 			'language' => 'Language code',
-			'offset' => 'How many messages to skip (after filtering)',
+			'offset' => 'Integer or key offset for start',
 			'limit' => 'How many messages to show (after filtering)',
 			'prop' => array(
 				'Which properties to get',
