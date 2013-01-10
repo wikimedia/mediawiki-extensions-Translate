@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgn//9mk\u003d",
+        "filename": "MessageCollection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-10T11:10:55Z",
+      "side": 1,
+      "message": "Offsets that can be used?",
+      "revId": "9d3881afa47cb6d0a48b1766008d387bc7aaafbc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
