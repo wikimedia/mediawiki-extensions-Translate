@@ -615,6 +615,7 @@
 				var translations,
 					$messageDoc,
 					documentation,
+					expand,
 					readMore,
 					$readMore = null,
 					contentLanguageDir;
@@ -649,20 +650,19 @@
 						.text( mw.msg( 'tux-editor-edit-desc' ) );
 
 					if ( documentation.value.length > 500 ) {
-						readMore = function () {
-							$messageDoc.css( {
-								'height': '200px',
-								'overflow': 'auto',
-								'text-overflow': 'inherit'
-							} );
-							$readMore.remove();
+						expand = function () {
+							$messageDoc.removeClass( 'compact' );
+							$readMore.text( mw.msg( 'tux-editor-message-desc-less' ) );
 						};
 
-						$messageDoc.css( {
-							'height': '100px',
-							'overflow': 'hidden',
-							'text-overflow': 'ellipsis'
-						} );
+						readMore = function () {
+							if ( $messageDoc.hasClass( 'compact' ) ) {
+								expand();
+							} else {
+								$messageDoc.addClass( 'compact' );
+								$readMore.text( mw.msg( 'tux-editor-message-desc-more' ) );
+							}
+						};
 
 						$readMore = $( '<span>' )
 							.addClass( 'read-more column' )
@@ -671,7 +671,8 @@
 
 						translateEditor.$editor.find( '.message-desc-control' )
 							.prepend( $readMore );
-						$messageDoc.on( 'hover', readMore );
+
+						$messageDoc.addClass('long compact').on( 'hover', expand );
 					}
 				}
 

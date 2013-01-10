@@ -142,9 +142,21 @@
 	bottom: 50%;
 }
 
-.message-desc {
+.infocolumn-block .infocolumn .message-desc {
 	font-size: 16px;
 	padding: 5px 0;
+	margin-right: 5px;
+}
+
+.infocolumn-block .infocolumn .message-desc.long {
+	font-size: 14px;
+	border-bottom: 1px solid #DDD;
+}
+
+.infocolumn-block .infocolumn .message-desc.compact {
+	max-height: 65%;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /* The message documentation section is likely to be different
@@ -168,13 +180,14 @@
 
 .message-desc-control {
 	font-size: 14px;
-	padding: 0 0 5px 0;
+	padding: 3px 0 5px 0;
 }
 
 .message-desc-control .read-more {
 	font-size: 14px;
 	color: #3366BB;
 	cursor: pointer;
+	margin-right: 5px;
 }
 
 .message-desc-edit {
