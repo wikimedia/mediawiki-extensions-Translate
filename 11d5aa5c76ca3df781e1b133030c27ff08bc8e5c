@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADgn//9go\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-10T12:48:34Z",
+      "side": 1,
+      "message": "Typo: of documentaion -\u003e if documentation",
+      "revId": "11d5aa5c76ca3df781e1b133030c27ff08bc8e5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
