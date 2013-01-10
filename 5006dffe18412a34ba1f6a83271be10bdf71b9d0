@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADg3///+Y\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 751,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-10T19:47:01Z",
+      "side": 1,
+      "message": "XXX?",
+      "revId": "5006dffe18412a34ba1f6a83271be10bdf71b9d0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
