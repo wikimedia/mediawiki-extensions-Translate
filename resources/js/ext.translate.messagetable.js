@@ -56,15 +56,16 @@
 		} );
 
 		$( '.tux-messagetable-loader' ).appear( function () {
-			var messagegroup, targetLanguage, pageSize, offset, total;
+			var messagegroup, targetLanguage, pageSize, offset, total, remaining;
 
 			messagegroup = $( this ).data( 'messagegroup' );
 			pageSize = $( this ).data( 'pagesize' );
 			total = $( this ).data( 'total' );
-			offset = $( this ).data( 'offset' ) ? $( this ).data( 'offset' ) : pageSize;
+			offset = $( this ).data( 'offset' );
+			remaining = $( this ).data( 'remaining' );
 			targetLanguage = $( '.tux-messagelist' ).data( 'targetlangcode' );
 
-			if ( offset < 0 ) {
+			if ( offset == -1 ) {
 				return false;
 			}
 
@@ -77,21 +78,22 @@
 						var message,
 							$message,
 							status = '',
-							statusClass ='',
-							statusMsg ='',
+							statusMsg = '',
 							$messageWrapper;
 
 						message = messages[index];
 
-						if ( message.tags ) {
+						if ( message.translation ) {
+							status = 'translated';
+						}
+
+						if ( message.tags.length ) {
 							// FIXME: proofread is not coming in tags.
-							status += message.tags.join( ' ' );
-						} else if ( message.translation ) {
-							status += 'translated';
+							//status += message.tags.join( ' ' );
 						}
 
 						if ( status ) {
-							statusClass = statusMsg = 'tux-status-' + status;
+							statusMsg = 'tux-status-' + status;
 						}
 
 						$messageWrapper = $( '<div>' )
@@ -103,28 +105,27 @@
 								'data-group': messagegroup
 							} );
 						$message = $( '<div>' )
-							.addClass( 'row tux-message-item ' + statusClass )
-							.attr( {
-								'data-translation': message.translation,
-								'data-source': message.definition,
-								'data-title': message.key,
-								'data-group' : messagegroup
-							} )
-							.append( $( '<div>' )
-								.addClass( 'nine columns tux-list-message' )
-								.append(
-									$( '<span>' )
-										.addClass( 'tux-list-source' )
-										.attr( 'lang', $( '.tux-messagelist' ).data( 'sourcelangcode' ) )
-										.text( message.definition ),
-									$( '<span>' )
-										.addClass( 'tux-list-translation' )
-										.attr( 'lang', $( '.tux-messagelist' ).data( 'targetlangcode' ) )
-										.text( message.translation )
-								),
+							.addClass( 'row tux-message-item ' + status )
+							.append(
 								$( '<div>' )
-									.addClass( 'two columns tux-list-status text-center ' + statusClass )
-									.text( statusMsg? mw.msg( statusMsg ): '' ),
+									.addClass( 'nine columns tux-list-message' )
+									.append(
+										$( '<span>' )
+											.addClass( 'tux-list-source' )
+											.attr( 'lang', $( '.tux-messagelist' ).data( 'sourcelangcode' ) )
+											.text( message.definition ),
+										$( '<span>' )
+											.addClass( 'tux-list-translation' )
+											.attr( 'lang', $( '.tux-messagelist' ).data( 'targetlangcode' ) )
+											.text( message.translation )
+										),
+								$( '<div>' )
+									.addClass( 'two columns tux-list-status text-center' )
+									.append(
+										$( '<span>' )
+											.addClass( 'tux-status-' + status )
+											.text( statusMsg? mw.msg( statusMsg ): '' )
+									),
 								$( '<div>' )
 									.addClass( 'one column tux-list-edit text-center' )
 									.append(
@@ -137,15 +138,16 @@
 							);
 
 						$messageWrapper.append( $message );
-						$( '.tux-messagetable-loader' ).before ( $messageWrapper );
+						$( '.tux-messagetable-loader' ).before( $messageWrapper );
 						$messageWrapper.translateeditor();
 					} );
 
 					if ( result['query-continue'] ) {
 						offset = result['query-continue'].messagecollection.mcoffset;
 						$( '.tux-messagetable-loader' ).data( 'offset', offset );
+						$( '.tux-messagetable-loader' ).data( 'remaining', remaining - pageSize );
 						$( '.tux-messagetable-loader-count' )
-							.text( mw.msg( 'tux-messagetable-more-messages', total - offset  ) );
+							.text( mw.msg( 'tux-messagetable-more-messages', remaining - pageSize  ) );
 					} else {
 						// End of messages
 						$( '.tux-messagetable-loader' ).data( 'offset', -1 )
