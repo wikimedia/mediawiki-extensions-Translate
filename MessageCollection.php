@@ -187,6 +187,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		foreach ( $this->messages as $m ) {
 			// Check if there are authors
+			/**
+			 * @var TMessage $m
+			 */
 			$author = $m->author();
 
 			if ( $author === null ) {

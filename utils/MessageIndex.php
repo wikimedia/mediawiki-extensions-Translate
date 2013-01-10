@@ -65,8 +65,8 @@ abstract class MessageIndex {
 	/**
 	 * Looks up the stored value for single key. Only for testing.
 	 * @since 2012-04-10
-	 * @param String $key
-	 * @return String|Array|null
+	 * @param string $key
+	 * @return string|array|null
 	 */
 	protected function get( $key ) {
 		// Default implementation
@@ -102,6 +102,9 @@ abstract class MessageIndex {
 
 		STDOUT( "Working with ", 'main' );
 
+		/**
+		 * @var MessageGroup $g
+		 */
 		foreach ( $groups as $g ) {
 			if ( !$g->exists() ) {
 				continue;
@@ -128,8 +131,8 @@ abstract class MessageIndex {
 
 	/**
 	 * Purge message group stats when set of keys have changed.
-	 * @param $old array
-	 * @param $new array
+	 * @param array $old
+	 * @param array $new
 	 */
 	protected function clearMessageGroupStats( array $old, array $new ) {
 		$changes = array();
@@ -173,11 +176,11 @@ abstract class MessageIndex {
 	}
 
 	/**
-	 * @param $hugearray array
-	 * @param $g
-	 * @param $ignore bool
+	 * @param array $hugearray
+	 * @param MessageGroup $g
+	 * @param bool $ignore
 	 */
-	protected function checkAndAdd( &$hugearray, $g, $ignore = false ) {
+	protected function checkAndAdd( &$hugearray, MessageGroup $g, $ignore = false ) {
 		if ( $g instanceof MessageGroupBase ) {
 			$keys = $g->getKeys();
 		} else {
@@ -242,7 +245,6 @@ abstract class MessageIndex {
 		}
 		return $data;
 	}
-
 }
 
 /**
@@ -403,7 +405,6 @@ class CachedMessageIndex extends MessageIndex {
 	}
 }
 
-
 /**
  * Storage on CDB files.
  *
@@ -418,13 +419,13 @@ class CachedMessageIndex extends MessageIndex {
  * @since 2012-04-10
  */
 class CDBMessageIndex extends MessageIndex {
-	/// @var Array
+	/// @var array
 	protected $index;
 
 	/// @var CdbReader
 	protected $reader;
 
-	/// @var String
+	/// @var string
 	protected $filename = 'translate_messageindex.cdb';
 
 	/** @return array */
@@ -502,5 +503,4 @@ class CDBMessageIndex extends MessageIndex {
 
 		return $this->reader = CdbReader::open( $file );
 	}
-
 }

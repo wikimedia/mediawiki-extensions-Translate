@@ -12,7 +12,6 @@
  * Unit tests for api token retrieval.
  */
 class ApiTokensTest extends MediaWikiTestCase {
-
 	/** @dataProvider provideTokenClasses */
 	public function testTokenRetrieval( $id, $class ) {
 		// Make sure we have the right to get the token

@@ -185,6 +185,9 @@ PHP;
 
 	protected function generateMessageBlock( MessageCollection $collection, StringMatcher $mangler ) {
 		$block = '';
+		/**
+		 * @var TMessage $m
+		 */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
 			if ( $value === null ) {

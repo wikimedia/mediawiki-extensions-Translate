@@ -173,6 +173,9 @@ class PythonSingleFFS extends SimpleFFS {
 	protected function generateMessageBlock( MessageCollection $collection, StringMatcher $mangler ) {
 		$block = '';
 
+		/**
+		 * @var TMessage $message
+		 */
 		foreach ( $collection as $message ) {
 			$translation = $message->translation();
 			if ( $translation === null ) {
@@ -198,5 +201,4 @@ class PythonSingleFFS extends SimpleFFS {
 		preg_match_all( '/# Author: (.*)/', $string, $m );
 		return $m[1];
 	}
-
 }

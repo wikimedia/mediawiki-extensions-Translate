@@ -127,7 +127,7 @@
 
 		/**
 		 * Marks that there was a problem saving a translation.
-		 * @param string error Strings of warnings to display.
+		 * @param {string} error Strings of warnings to display.
 		 */
 		savingError: function ( error ) {
 			this.addWarning(

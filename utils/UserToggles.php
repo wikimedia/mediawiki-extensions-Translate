@@ -55,11 +55,11 @@ class TranslatePreferences {
 	 * Add 'translate-editlangs' preference.
 	 * These are the languages also shown when translating.
 	 *
-	 * @param $user User
-	 * @param $preferences array
-	 * @return \bool true
+	 * @param User $user
+	 * @param array $preferences
+	 * @return bool true
 	 */
-	public static function translationAssistLanguages( $user, &$preferences ) {
+	public static function translationAssistLanguages( User $user, &$preferences ) {
 		// Get selector.
 		$select = self::languageSelector();
 		// Set target ID.
@@ -84,11 +84,11 @@ class TranslatePreferences {
 	 * Add 'translate-jsedit' preference.
 	 * An option to disable the javascript edit interface.
 	 *
-	 * @param $user User
-	 * @param $preferences array
-	 * @return \bool true
+	 * @param User $user
+	 * @param array $preferences
+	 * @return bool true
 	 */
-	public static function translationJsedit( $user, &$preferences ) {
+	public static function translationJsedit( User $user, &$preferences ) {
 		$preferences['translate-jsedit'] = array(
 			'class' => 'HTMLCheckField',
 			'section' => 'editing/translate',
@@ -100,7 +100,7 @@ class TranslatePreferences {
 
 	/**
 	 * JavsScript selector for language codes.
-	 * @return \JsSelectToInput
+	 * @return JsSelectToInput
 	 */
 	protected static function languageSelector() {
 		global $wgLang;

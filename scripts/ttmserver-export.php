@@ -63,6 +63,9 @@ class TTMServerBootstrap extends Maintenance {
 		$server->beginBootstrap();
 
 		foreach ( $groups as $id => $group ) {
+			/**
+			 * @var MessageGroup $group
+			 */
 			if ( $group->isMeta() ) {
 				continue;
 			}

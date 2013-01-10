@@ -126,6 +126,9 @@ if ( !count( $groups ) ) {
 $changeFilter = false;
 if ( isset( $options['hours'] ) ) {
 	$namespaces = array();
+	/**
+	 * @var MessageGroup $group
+	 */
 	foreach ( $groups as $group ) {
 		$namespaces[$group->getNamespace()] = true;
 	}

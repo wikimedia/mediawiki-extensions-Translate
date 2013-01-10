@@ -74,6 +74,9 @@ if ( $codes[0] === '*' ) {
 	$codes = $supportedCodes;
 }
 
+/**
+ * @var MessageGroup $group
+ */
 foreach ( $groups as &$group ) {
 	// No sync possible for meta groups
 	if ( $group->isMeta() ) {
@@ -90,8 +93,14 @@ foreach ( $groups as &$group ) {
 		}
 
 		if ( $group instanceof FileBasedMessageGroup ) {
+			/**
+			 * @var FileBasedMessageGroup $group
+			 */
 			$file = $group->getSourceFilePath( $code );
 		} else {
+			/**
+			 * @var MessageGroupOld $group
+			 */
 			$file = $group->getMessageFileWithPath( $code );
 		}
 
