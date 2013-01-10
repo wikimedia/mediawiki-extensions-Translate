@@ -56,18 +56,18 @@
 
 	mw.translate = $.extend( mw.translate, {
 		changeGroup: function ( group ) {
-			var uri = new mw.Uri( window.location.href );
-			uri.extend( {
-				group: group
-			} );
-			window.location.href = uri.toString();
+			mw.translate.changeUrl( 'group', group );
 		},
 
 		changeLanguage: function ( language ) {
-			var uri = new mw.Uri( window.location.href );
-			uri.extend( {
-				language: language
-			} );
+			mw.translate.changeUrl( 'language', language );
+		},
+
+		changeUrl: function ( param, value ) {
+			var uri, params = {};
+			params[param] = value;
+			uri = new mw.Uri( window.location.href );
+			uri.extend( params );
 			window.location.href = uri.toString();
 		},
 
@@ -149,6 +149,10 @@
 
 		ourWindowOnBeforeUnloadRegister();
 		prepareWorkflowSelector();
+
+		$( '#tux-option-optional' ).click( function () {
+			mw.translate.changeUrl( 'optional', $( this ).prop( 'checked' ) ? 1 : 0 );
+		} );
 
 		$.when(
 			// Get ready with language stats
