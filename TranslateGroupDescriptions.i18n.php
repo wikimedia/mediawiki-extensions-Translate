@@ -1133,7 +1133,7 @@ $messages['he'] = array(
 	'translate-group-desc-flaggedrevs' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות ל־[http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות ל־[http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'מטא־קבוצת הודעות שמכילה את כל ההודעות עובר כל ההרחבות ממשפחת [http://semantic-mediawiki.org/ מדיה־ויקי סמנטית]',
-	'translate-group-desc-translate' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות להרחבה [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
+	'translate-group-desc-translate' => 'מטא־קבוצה המכילה את כל ההודעות של ההרחבות הקשורות להרחבה [http://www.mediawiki.org/wiki/Extension:Translate Translate]; נא לערוך היכרות עם [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary המונחון]',
 	'translate-group-desc-wikiaextensions' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות לאתר [http://www.wikia.com ויקיה]',
 	'translate-group-desc-wikimediaextensions' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות מדיה־ויקי הקשורות ל[http://wikimedia.org/ קרן ויקימדיה]',
 	'translate-group-desc-wikimediaextensions-main' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות ל־[http://meta.wikimedia.org/wiki/Language_committee ועדה הלשונית של ויקימדיה]',
@@ -1175,6 +1175,7 @@ $messages['he'] = array(
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|ויקימילון נייד]] הוא יישום מרובה־פלטפורמות למכשירים ניידים ומחשבי לוח לקריאה ותרומה לוויקימילון',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|ויקי אוהבת אתרי מורשת לניידים]] הוא יישום למכשירים ניידים שמיועד לתרומה ל[[:meta:Wiki Loves Monuments|מיזם ויקי אוהבת אתרי מורשת]]',
 	'translate-group-desc-waymarked-trails-help' => 'דפי עזרה של אתרי Waymarked Trails: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] הוא עורך מסמכים בזמן אמת באמת',
 );
 
 /** Croatian (hrvatski)
