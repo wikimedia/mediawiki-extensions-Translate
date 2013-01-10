@@ -1,6 +1,12 @@
 <?php
 
 class TuxMessageTable extends MessageTable {
+	protected $offsets = array();
+
+	public function setOffsets( array $offsets ) {
+		$this->offsets = $offsets;
+	}
+
 	// TODO: MessageTable should extend context source
 	public function msg( /* $args */ ) {
 		$args = func_get_args();
@@ -133,8 +139,9 @@ class TuxMessageTable extends MessageTable {
 		$this->context->getOutput()->addModules( 'ext.translate.editor' );
 
 		// FIXME
-		$total = 666;
+		$total = $this->offsets['total'];
 		$batchSize = 100;
+		$remaining = $total - $this->offsets['start'] - $this->offsets['count'];
 
 		$statsBar = StatsBar::getNew( $this->group->getId(), $this->collection->getLanguage() );
 		$statsBarHtml = $statsBar->getHtml( $this->context );
@@ -143,12 +150,13 @@ class TuxMessageTable extends MessageTable {
 			array(
 				'class' => 'tux-messagetable-loader',
 				'data-messagegroup' => $this->group->getId(),
-				'data-total' => $total,
-				'data-pagesize' => $batchSize
+				'data-pagesize' => $batchSize,
+				'data-remaining' => $remaining,
+				'data-offset' => $this->offsets['forwardsOffset'],
 			) )
 			. '<span class="tux-loading-indicator"></span>'
 			. '<div class="tux-messagetable-loader-count">'
-			. wfMessage( 'tux-messagetable-more-messages' )->numParams( $total - $batchSize )->escaped()
+			. wfMessage( 'tux-messagetable-more-messages' )->numParams( $remaining )->escaped()
 			. '</div>'
 			. '<div class="tux-messagetable-loader-more">'
 			. wfMessage( 'tux-messagetable-loading-messages' )->numParams( $batchSize )->escaped()

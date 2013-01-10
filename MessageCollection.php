@@ -284,7 +284,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * For paging messages. One can count messages before and after slice.
 	 * @param string $offset
 	 * @param int $limit
-	 * @return array Offsets than be used for paging backwards and forwards
+	 * @return array Offsets that can be used for paging backwards and forwards
 	 * @since String offests and return value since 2013-01-10
 	 */
 	public function slice( $offset, $limit ) {
