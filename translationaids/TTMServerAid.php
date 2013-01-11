@@ -49,14 +49,7 @@ class TTMServerAid extends TranslationAid {
 			}
 		}
 
-		// Sort by better suggestions first
-		usort( $suggestions, function( $a, $b ) {
-			if ( $a['quality'] === $b['quality'] ) {
-				return 0;
-			}
-
-			return ( $a['quality'] < $b['quality'] ) ? 1 : -1;
-		} );
+		$suggestions = TTMServer::sortSuggestions( $suggestions );
 
 		$suggestions['**'] = 'suggestion';
 		return $suggestions;
