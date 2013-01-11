@@ -616,6 +616,8 @@
 			$.get( apiURL, queryParams ).done( function ( result ) {
 				var translations,
 					$messageDoc,
+					$tmSuggestions,
+					$translationTextarea,
 					documentation,
 					expand,
 					readMore,
@@ -715,44 +717,48 @@
 
 				// Translation memory suggestions
 				translations = result.helpers.ttmserver;
-				$.each( translations, function ( index ) {
-					var translation,
-						$translation;
-
-					translation = translations[index];
-
-					$translation = $( '<div>' )
-						.addClass( 'row tm-suggestion' )
-						.append(
-						$( '<div>' )
-							.addClass( 'row tm-suggestion-top' )
-							.append(
-								$( '<div>' )
-									.addClass( 'nine columns' )
-								.text( translation.target ),
-								$( '<div>' )
-									.addClass( 'three columns quality text-right' )
-									.text( mw.msg( 'tux-editor-tm-match',
-									Math.round( translation.quality * 100 ) ) )
-						),
-						$( '<div>' )
-							.addClass( 'row tm-suggestion-bottom' )
-							.append(
-								$( '<a>' )
-									.addClass( 'nine columns use-this-translation' )
-									.text( mw.msg( 'tux-editor-use-this-translation' ) )
-									.on( 'click', function () {
-										translateEditor.$editor.find( 'textarea' )
-											.val( translation.target )
-											.trigger( 'input' );
-									} )
-						)
-					);
-
+				if ( translations ) {
+					$tmSuggestions = $( '<div>' )
+						.addClass( 'tm-suggestions' );
 					translateEditor.$editor.find( '.tm-suggestions-title' )
 						.removeClass( 'hide' )
-						.after( $translation );
-				} );
+						.after( $tmSuggestions );
+					$translationTextarea = translateEditor.$editor.find( 'textarea' );
+
+					$.each( translations, function ( index, translation ) {
+						var $translation;
+
+						$translation = $( '<div>' )
+							.addClass( 'row tm-suggestion' )
+							.append(
+								$( '<div>' )
+									.addClass( 'row tm-suggestion-top' )
+									.append(
+										$( '<div>' )
+											.addClass( 'nine columns' )
+											.text( translation.target ),
+										$( '<div>' )
+											.addClass( 'three columns quality text-right' )
+											.text( mw.msg( 'tux-editor-tm-match',
+												Math.round( translation.quality * 100 ) ) )
+								),
+								$( '<div>' )
+									.addClass( 'row tm-suggestion-bottom' )
+									.append(
+										$( '<a>' )
+											.addClass( 'nine columns use-this-translation' )
+											.text( mw.msg( 'tux-editor-use-this-translation' ) )
+											.on( 'click', function () {
+												$translationTextarea
+													.val( translation.target )
+													.trigger( 'input' );
+											} )
+									)
+							);
+
+						$tmSuggestions.append( $translation );
+					} );
+				}
 
 				// Support URL
 				if ( result.helpers.support.url ) {
