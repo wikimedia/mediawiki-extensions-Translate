@@ -902,8 +902,16 @@ Read as in "proofRED" (past participle).',
 	'tux-editor-save-failed' => 'An error shown above the edit box.
 * $1 - the warning that the API returns',
 	'tux-editor-use-this-translation' => 'Link text for using a suggestion as translation for the current message',
-	'tux-editor-message-desc-more' => 'Link text for expanding long message documentation',
-	'tux-editor-message-desc-less' => 'Link text for collapsing long message documentation',
+	'tux-editor-message-desc-more' => '{{doc-actionlink}}
+Link text for expanding long message documentation.
+
+See also:
+* {{msg-mw|Tux-editor-message-desc-less}}',
+	'tux-editor-message-desc-less' => '{{doc-actionlink}}
+Link text for collapsing long message documentation.
+
+See also:
+* {{msg-mw|Tux-editor-message-desc-more}}',
 	'tux-editor-clear-translated' => 'Label for the button that appears at the footer of the translation editor.
 Pressing the button clears all the messages that were translated from the page.',
 	'tux-messagetable-more-messages' => 'Text showing number of messages to be loaded in translation message table
@@ -9374,9 +9382,12 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-editor-save-failed' => "Échec de l'enregistrement de la traduction : $1",
 	'tux-editor-use-this-translation' => 'Utiliser comme traduction',
 	'tux-editor-message-desc-more' => 'Voir davantage',
+	'tux-editor-message-desc-less' => 'Afficher moins',
 	'tux-editor-clear-translated' => 'Masquer la traduction',
 	'tux-editor-outdated-warning' => 'Cette traduction peut nécessiter une mise à jour.',
 	'tux-editor-outdated-warning-diff-link' => 'Afficher les différences',
+	'tux-messagetable-more-messages' => '$1 {{PLURAL:$1|message|messages}} de plus',
+	'tux-messagetable-loading-messages' => 'Chargement {{PLURAL:$1|du message|des messages}}…',
 );
 
 /** Cajun French (français cadien)
@@ -10283,9 +10294,12 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-editor-save-failed' => 'Houbo un erro ao gardar a tradución: $1',
 	'tux-editor-use-this-translation' => 'Utilizar como tradución',
 	'tux-editor-message-desc-more' => 'Ollar máis',
+	'tux-editor-message-desc-less' => 'Ollar menos',
 	'tux-editor-clear-translated' => 'Agochar as traducidas',
 	'tux-editor-outdated-warning' => 'Esta tradución pode necesitar unha actualización.',
 	'tux-editor-outdated-warning-diff-link' => 'Mostrar as diferenzas',
+	'tux-messagetable-more-messages' => '$1 {{PLURAL:$1|mensaxe|mensaxes}} máis',
+	'tux-messagetable-loading-messages' => 'Cargando {{PLURAL:$1|a mensaxe|as mensaxes}}...',
 );
 
 /** Goan Konkani (Latin script) (Konknni)
@@ -14140,9 +14154,12 @@ $1',
 	'tux-editor-save-failed' => '翻訳の保存に失敗しました: $1',
 	'tux-editor-use-this-translation' => '翻訳として使用',
 	'tux-editor-message-desc-more' => '続きを表示',
+	'tux-editor-message-desc-less' => '折り畳む',
 	'tux-editor-clear-translated' => '翻訳を非表示',
 	'tux-editor-outdated-warning' => 'この翻訳は修正が必要かもしれません。',
 	'tux-editor-outdated-warning-diff-link' => '差分を表示',
+	'tux-messagetable-more-messages' => '他 $1 {{PLURAL:$1|件のメッセージ}}',
+	'tux-messagetable-loading-messages' => '{{PLURAL:$1|メッセージ}}を読み込み中...',
 );
 
 /** Jamaican Creole English (Patois)
@@ -15459,7 +15476,7 @@ $1',
 	'translate-magic-special' => '특수 문서 이름',
 	'translate-magic-words' => '매직 워드',
 	'translate-magic-namespace' => '이름공간 이름',
-	'translate-magic-notsaved' => '당신의 편집이 저장되지 않았습니다!',
+	'translate-magic-notsaved' => '편집이 저장되지 않았습니다!',
 	'translate-magic-errors' => '번역문에서 다음 {{PLURAL:$1|오류}}를 수정하세요:',
 	'translate-magic-saved' => '바뀜을 성공적으로 저장했습니다.',
 	'translate-checks-parameters' => '다음 {{PLURAL:$2|변수가}} 사용되지 않았습니다:
@@ -15487,8 +15504,8 @@ $1',
 	'translate-pref-editassistlang' => '보조 언어:',
 	'prefs-translate' => '번역 옵션',
 	'translate-pref-editassistlang-help' => '쉼표로 언어 코드 목록을 구분하세요.
-당신이 번역할 때는 해당 언어로 메시지 번역이 보입니다.
-언어의 기본 목록은 당신의 언어에 따라 달라집니다.',
+번역할 때는 해당 언어로 메시지 번역이 보입니다.
+언어의 기본 목록은 내 언어에 따라 달라집니다.',
 	'translate-pref-editassistlang-bad' => '목록에서 잘못된 언어 코드:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => '향상된 번역용 편집기 (자바스크립트)',
@@ -15664,7 +15681,7 @@ $1',
 	'translate-messagereview-failure' => '수락 중... 실패: $1',
 	'translate-messagereview-done' => '수락함',
 	'translate-messagereview-reviews' => '{{PLURAL:$1|한 사용자|사용자 $1명}}에 의해 수락함',
-	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|당신|당신을 포함한 사용자 $1명}}에 의해 수락함',
+	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|나|나를 포함한 사용자 $1명}}에 의해 수락함',
 	'api-error-invalidrevision' => '번역을 찾을 수 없습니다.',
 	'api-error-unknownmessage' => '메시지를 찾을 수 없습니다.',
 	'api-error-fuzzymessage' => '번역이 퍼지 처리되었습니다.',
@@ -15737,9 +15754,12 @@ $1',
 	'tux-editor-save-failed' => '번역을 저장하는 데 실패했습니다: $1',
 	'tux-editor-use-this-translation' => '번역으로 사용',
 	'tux-editor-message-desc-more' => '더 보기',
+	'tux-editor-message-desc-less' => '덜 보기',
 	'tux-editor-clear-translated' => '번역됨 숨기기',
 	'tux-editor-outdated-warning' => '이 번역은 업데이트해야 합니다.',
 	'tux-editor-outdated-warning-diff-link' => '차이 보기',
+	'tux-messagetable-more-messages' => '{{PLRUAL:$1|메시지}} $1개 더 보기',
+	'tux-messagetable-loading-messages' => '{{PLURAL:$1|메시지}}를 불러오는 중...',
 );
 
 /** Krio (Krio)
@@ -17683,9 +17703,12 @@ $1',
 	'tux-editor-save-failed' => 'Не успеав да го зачувам преводот: $1',
 	'tux-editor-use-this-translation' => 'Користи како превод',
 	'tux-editor-message-desc-more' => 'Погл. уште',
+	'tux-editor-message-desc-less' => 'Погл. помалку',
 	'tux-editor-clear-translated' => 'Скриј преведени',
 	'tux-editor-outdated-warning' => 'На преводов може да му треба поднова.',
 	'tux-editor-outdated-warning-diff-link' => 'Прик. разлики',
+	'tux-messagetable-more-messages' => 'уште {{PLURAL:$1|една порака|$1 пораки}}',
+	'tux-messagetable-loading-messages' => '{{PLURAL:$1|Ја вчитувам пораката|Ги вчитувам пораките}}...',
 );
 
 /** Malayalam (മലയാളം)
@@ -27309,14 +27332,11 @@ $messages['tly'] = array(
 $messages['tr'] = array(
 	'translate' => 'Çevir',
 	'translate-desc' => "MediaWiki'yi ve ötesini çevirmek için [[Special:Translate|özel sayfa]]",
-	'translate-showsub' => '{{PLURAL:$1| alt grup| $1 alt grup}} göster',
-	'translate-grouplisting' => 'Bu, tüm çevrilebilir grupların listesi aşağıdadır.
-Çevrilmemiş iletilerin listesini görüntülemek için ileti grup adını tıklatın.',
-	'translate-grouplisting-empty' => 'Hiçbir ileti grup çevirisi için yapılandırılmamış.',
 	'translate-taskui-view' => 'Tüm iletileri göster',
 	'translate-taskui-untranslated' => 'Çevrilmeyen iletileri göster',
 	'translate-taskui-optional' => 'İsteğe bağlı iletileri göster',
 	'translate-taskui-suggestions' => 'Çeviri hakkında bilgi olan iletileri göster',
+	'translate-taskui-acceptqueue' => 'Ben yalnızca mesajları kabul edebilirim',
 	'translate-taskui-reviewall' => 'Tüm çevirileri gözden geçir',
 	'translate-taction-translate' => 'Çevir',
 	'translate-taction-proofread' => 'Düzelt',
@@ -27352,6 +27372,8 @@ Neden:
 	'translate-edit-definition' => 'İleti tanımı',
 	'translate-edit-translation' => 'Çeviri',
 	'translate-edit-contribute' => 'Katkıda bulun',
+	'translate-edit-no-information' => "''Bu ileti için tanım bulunmuyor.''
+''Eğer bu iletinin nerede ve nasıl kullanıldığını biliyorsanız, bu ileti için bir tanım ekleyerek diğer çevirmenlere yardımcı olabilirsiniz.''",
 	'translate-edit-information' => 'İleti hakkında bilgi(ler) ($1)',
 	'translate-edit-in-other-languages' => 'Diğer dillerdeki iletisi',
 	'translate-edit-warnings' => 'Tamamlanmamış çeviriler hakkındaki uyarılar',
@@ -27429,6 +27451,7 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-translations-fieldset-title' => 'İleti',
 	'translate-translations-messagename' => 'Ad:',
 	'translate-translations-project' => 'Proje:',
+	'translate-translations-history-short' => 't',
 	'languagestats' => 'Dil istatistikleri',
 	'languagestats-summary' => 'Bu sayfa tüm ileti grupları için dil çeviri istatistiklerini gösterir.',
 	'languagestats-stats-for' => '$1 için çeviri istatistikleri ($2).',
@@ -27459,6 +27482,7 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-save' => 'Kaydet ($1)',
 	'translate-jssti-add' => 'Listeye ekle',
 	'managemessagegroups' => 'İleti grubu yönetimi',
+	'translate-smg-right' => 'Gelen değişiklikler',
 	'translate-manage-import-new' => 'Yeni ileti: $1',
 	'translate-manage-import-deleted' => 'Silinmiş ileti: $1',
 	'translate-manage-action-import' => 'İçe aktar',
@@ -27490,7 +27514,19 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 	'translate-search-languagefilter' => 'Dile göre filtre uygula:',
 	'translate-search-nofilter' => 'Filtre yok',
 	'translate-messagereview-submit' => 'Onayla',
+	'translate-messagereview-progress' => 'Kabul ediliyor...',
+	'translate-messagereview-failure' => 'Kabul edilirken... hata oluştu: $1',
+	'translate-messagereview-done' => 'Kabul edildi',
+	'translate-messagereview-reviews' => '{{PLURAL:$1|Bir kullanıcı|$1 Kullanıcı}} tarafından kabul edildi',
+	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|Sizin|Siz dahil $1 kullanıcı}} tarafından kabul edildi',
+	'api-error-invalidrevision' => 'Çeviri bulunamadı',
 	'api-error-unknownmessage' => 'İleti bulunamadı',
+	'api-error-fuzzymessage' => 'Çeviri belirsiz olarak işaretlenmiş',
+	'api-error-owntranslation' => 'Kendi çevirilerinizi kabul edemezsiniz',
+	'group-translate-proofr' => 'Çeviri değerlendirenler',
+	'group-translate-proofr-member' => 'Çeviri yorumcuları', # Fuzzy
+	'grouppage-translate-proofr' => '{{ns:project}}:Çeviri değerlendirenler',
+	'translate-workflow-state-' => '(ayarla)',
 	'translate-workflowstatus' => 'Durum: $1',
 	'translate-workflow-set-do' => 'Ayarla',
 	'translate-workflow-set-doing' => 'Ayarlanıyor...',
@@ -27498,8 +27534,18 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 	'translate-stats-workflow' => 'Durum',
 	'translate-workflowgroup-label' => 'İş akışı durumları',
 	'translate-dynagroup-recent-label' => 'Son çeviriler',
+	'translate-dynagroup-additions-label' => 'Son eklenenler',
 	'translate-dynagroup-by' => '{{GENDER:$1|$1}} tarafından yapılan çeviri',
 	'translate-gethelp' => 'Yardım',
+	'translate-msggroupselector-projects' => 'İleti grubu',
+	'translate-msggroupselector-search-placeholder' => 'Arama grupları',
+	'translate-msggroupselector-search-all' => 'Tümü',
+	'translate-msggroupselector-search-recent' => 'Son',
+	'tux-tab-all' => 'Tümü',
+	'tux-edit' => 'Düzenle',
+	'tux-status-optional' => 'İsteğe Bağlı',
+	'tux-status-fuzzy' => 'Eski tarihli',
+	'tux-status-proofread' => 'Düzelt',
 );
 
 /** Turoyo (Ṫuroyo)
@@ -30820,7 +30866,7 @@ $1',
 	'tux-editor-outdated-warning' => '此翻譯可能要更新。',
 	'tux-editor-outdated-warning-diff-link' => '顯示差異',
 	'tux-messagetable-more-messages' => '$1則訊息',
-	'tux-messagetable-loading-messages' => '載入訊息...', # Fuzzy
+	'tux-messagetable-loading-messages' => '載入{{PLURAL:$1|訊息|訊息}}...',
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)

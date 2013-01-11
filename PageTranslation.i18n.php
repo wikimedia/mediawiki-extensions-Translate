@@ -326,7 +326,8 @@ Used only if a reason was provided in the following messages:
 * {{msg-mw|tpt-discouraged-language}}',
 	'tpt-priority-languages' => 'Message to be shown before the messagestats table. $1 is a comma-separated list of language codes.',
 	'aggregategroups' => 'Title of [[Special:AggregateGroups]] and its name in [[Special:AggregateGroups]].',
-	'tpt-aggregategroup-add' => 'Label for the button to add a new page to aggregate group in [[Special:AggregateGroups]]',
+	'tpt-aggregategroup-add' => 'Label for the button to add a new page to aggregate group in [[Special:AggregateGroups]].
+{{Identical|Add}}',
 	'tpt-aggregategroup-save' => 'Label for the button to save a new aggregate group in [[Special:AggregateGroups]]',
 	'tpt-aggregategroup-add-new' => 'Label for the link that gives a form to enter new group details in [[Special:AggregateGroups]]',
 	'tpt-aggregategroup-new-name' => 'Label for the name field in [[Special:AggregateGroups]]',
@@ -5871,9 +5872,9 @@ $messages['ko'] = array(
 	'pt-deletepage-full-logreason' => '"$1" 번역 가능한 문서의 부분.',
 	'pt-deletepage-lang-logreason' => '"$1" 번역 문서의 부분.',
 	'pt-deletepage-started' => '오류와 메시지 완료를 위한 [[Special:Log/pagetranslation|문서 번역 기록]]를 확인하세요.',
-	'pt-deletepage-intro' => '이 특수 문서는 하나의 언어로 전체 번역 가능한 문서 또는 번역을 삭제할 수 있습니다.
-여러 문서를 삭제해야 하기 때문에 즉시 삭제 작업이 되지 않습니다.
-실패하면 [[Special:Log/pagetranslation|문서 번역 기록]]에 기록되고 직접 복구할 필요가 있습니다.', # Fuzzy
+	'pt-deletepage-intro' => '이 특수 문서는 전체 번역 가능한 문서 또는 언어의 개별 번역 문서를 삭제할 수 있습니다.
+번역에 따라 모든 문서가 삭제되기 때문에 즉시 삭제 작업이 되지 않습니다.
+실패하면 [[Special:Log/pagetranslation|문서 번역 기록]]에 기록되고 직접 복구해야 합니다.',
 );
 
 /** Colognian (Ripoarisch)

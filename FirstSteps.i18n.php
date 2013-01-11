@@ -2186,7 +2186,8 @@ $messages['ko'] = array(
 결국에는 {{SITENAME}}에서 지원하는 모든 프로젝트의 ''인터페이스 메시지''를 번역할 수 있을 것입니다.",
 	'translate-fs-selectlanguage' => '언어 선택',
 	'translate-fs-settings-planguage' => '모어:',
-	'translate-fs-settings-planguage-desc' => '모어는 여기 웹사이트에서 당신의 인터페이스 언어이자 번역할 때 기본 도착어가 됩니다.',
+	'translate-fs-settings-planguage-desc' => '모어는 여기 웹사이트에서 인터페이스 언어이자
+번역할 때 기본 도착어가 됩니다.',
 	'translate-fs-settings-slanguage' => '보조 언어 $1:',
 	'translate-fs-settings-slanguage-desc' => '번역 편집기에서 다른 언어로 된 메시지의 번역을 나타낼 수도 있습니다. 여기서 보고 싶은 언어를 선택할 수 있습니다.',
 	'translate-fs-settings-submit' => '환경 설정 저장하기',
@@ -2198,32 +2199,33 @@ $messages['ko'] = array(
 	'translate-fs-userpage-level-1' => '나는 이 언어를 거의 모릅니다.',
 	'translate-fs-userpage-help' => '자신의 언어 능력을 밝히고 우리에게 자신을 소개하십시오. 언어를 여섯 가지 이상 안다면 나중에 첨가할 수 있습니다.',
 	'translate-fs-userpage-submit' => '내 사용자 문서 만들기',
-	'translate-fs-userpage-done' => '잘 했습니다! 이제 당신의 사용자 문서가 생겼습니다.',
+	'translate-fs-userpage-done' => '잘 했습니다! 이제 내 사용자 문서가 생겼습니다.',
 	'translate-fs-permissions-planguage' => '모어:',
 	'translate-fs-permissions-help' => '지금 번역자 그룹에 추가되도록 요청할 필요가 있습니다. 번역 모어를 선택하십시오.
 
 아래 상자에서 다른 언어 및 의견을 말할 수 있습니다.',
-	'translate-fs-permissions-pending' => '당신의 요청이 [[$1]]로 제출되었으며 여기 웹사이트 직원이 되도록 빨리 그 요청을 검토할 것입니다. 이메일 주소를 인증하면 요청 결과를 이메일로 받아볼 것입니다.',
+	'translate-fs-permissions-pending' => '요청이 [[$1]]로 제출되었으며 여기 웹사이트 직원이 되도록 빨리 그 요청을 검토할 것입니다.
+이메일 주소를 인증하면 요청 결과를 이메일로 받아볼 것입니다.',
 	'translate-fs-permissions-submit' => '요청 제출',
 	'translate-fs-target-text' => '축하합니다!
 지금부터 번역할 수 있습니다.
 
-아직 낯설고 혼란스러울지라도 두려워하지 마십시오.
-[[Project list]]에서 당신이 기여할 수 있는 프로젝트의 개요를 보십시오. 
+아직 낯설고 혼란스러울지라도 두려워하지 마세요.
+[[Project list]]에서 기여할 수 있는 프로젝트의 개요를 보세요. 
 프로젝트 대부분에는 "\'\'이 프로젝트를 번역하라\'\'"는 링크와 함께 간략한 설명이 있습니다. 그 링크를 클릭하면 미번역된 모든 메시지가 나타날 것입니다.
 [[Special:LanguageStats|언어 번역 공정]]이 있는 모든 메시지 그룹 목록도 이용할 수 있습니다.
 
-번역하기 전에 더 이해할 필요가 있다고 생각한다면  [[FAQ|자주 묻는 질문]]을 읽어 보십시오.
+번역하기 전에 더 이해할 필요가 있다고 생각한다면  [[FAQ|자주 묻는 질문]]을 읽으세요.
 불행하게도 문서는 종종 더 이상 유용하지 않을 수 있습니다. 
-당신이 할 수 있어야 한다고 생각하는 무엇이 있지만 어떻게 할 수 있을지 찾을 수 없다면 [[Support|지원 문서]]에 이를 문의하십시오. 
+할 수 있어야 한다고 생각하는 무엇이 있지만 어떻게 할 수 있을지 찾을 수 없다면 [[Support|지원 문서]]에 문의하세요.
 
-[[Portal:$1|당신의 언어 들머리]] [[Portal_talk:$1|토론 문서]]에서 자신과 같은 언어의 번역자와 연락할 수도 있습니다. 
-아직 바꾸지 않았다면 [[Special:Preferences|자신의 언어 인터페이스를 번역 도착어로 바꾸십시오]].  그러면 웹사이트에서 당신에게 가장 관련있는 링크를 보여줄 수 있습니다.',
-	'translate-fs-email-text' => '[[Special:Preferences|환경 설정]]에서 이메일 주소를 등록하고 그 계정으로 온 이메일을 확인해 주십시오.
+[[Portal:$1|언어 들머리]] [[Portal_talk:$1|토론 문서]]에서 자신과 같은 언어의 번역자와 연락할 수도 있습니다. 
+아직 바꾸지 않았다면 [[Special:Preferences|자신의 언어 인터페이스를 번역 도착어로 바꾸세요]]. 그러면 웹사이트에서 가장 관련있는 링크를 보여줄 수 있습니다.',
+	'translate-fs-email-text' => '[[Special:Preferences|환경 설정]]에서 이메일 주소를 등록하고 그 계정으로 온 이메일을 확인하세요.
 
-다른 사용자가 이메일로 당신과 연락할 수 있게 됩니다.
+다른 사용자가 이메일로 연락할 수 있게 됩니다.
 보통 한 달에 한 번 발송하는 소식지도 받을 것입니다.
-소식지를 받고 싶지 않으면 [[Special:Preferences|환경 설정]] "{{int:prefs-personal}}" 탭에서 선택 해제하십시오.',
+소식지를 받고 싶지 않으면 [[Special:Preferences|환경 설정]] "{{int:prefs-personal}}" 탭에서 선택 해제하세요.',
 );
 
 /** Colognian (Ripoarisch)
