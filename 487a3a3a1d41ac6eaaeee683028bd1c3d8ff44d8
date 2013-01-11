@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADg3///as\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-11T05:04:14Z",
+      "side": 1,
+      "message": "This change cancels the effect of I942db355. Donot show message documentation links if  translateDocumentationLanguageCode is null",
+      "revId": "487a3a3a1d41ac6eaaeee683028bd1c3d8ff44d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
