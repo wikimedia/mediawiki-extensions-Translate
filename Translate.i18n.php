@@ -542,8 +542,9 @@ Goes together with {{msg-mw|translate-taskui-reviewall}}',
 	'translate-page-paging-links' => '{{optional}}',
 	'translate-next' => '{{Identical|Next page}}',
 	'translate-prev' => '{{Identical|Previous page}}',
-	'translate-page-description-hasoptional' => '$1 is a link with {{msg|translate-page-description-hasoptional-open}} as the text.',
-	'translate-page-description-hasoptional-open' => 'Link text for message {{msg|translate-page-description-hasoptional}}',
+	'translate-page-description-hasoptional' => 'Parameters:
+* $1 - a link with {{msg-mw|translate-page-description-hasoptional-open}} as the text',
+	'translate-page-description-hasoptional-open' => 'Link text for message {{msg-mw|translate-page-description-hasoptional}}',
 	'translate-page-edit' => '{{Identical|Edit}}',
 	'translate-optional' => '{{Identical|Optional}}',
 	'translate-edit-jsopen' => 'Default linktext of <nowiki>{{#translationdialog:pagename}}</nowiki>.
@@ -720,9 +721,11 @@ See also:
 	'translate-untranslated' => 'Column header in [[Special:LanguageStats]] for number of untranslated messages in a message group.',
 	'translate-percentage-complete' => 'Used in [[Special:LanguageStats]].',
 	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
-	'translate-ls-column-group' => 'Column header in [[Special:LanguageStats]]',
+	'translate-ls-column-group' => 'Column header in [[Special:LanguageStats]].
+{{Identical|Message group}}',
 	'translate-mgs-fieldset' => 'Fieldset label in [[Special:MessageGroupStats]]',
-	'translate-mgs-group' => 'Label of drop-down box in [[Special:MessageGroupStats]]',
+	'translate-mgs-group' => 'Label of drop-down box in [[Special:MessageGroupStats]].
+{{Identical|Message group}}',
 	'translate-mgs-nocomplete' => 'Option in [[Special:MessageGroupStats]]',
 	'translate-mgs-noempty' => 'Option in [[Special:MessageGroupStats]]',
 	'translate-mgs-submit' => 'Submit button text',
@@ -860,7 +863,8 @@ Additional parameters:
 * $2 is the edit summary that was provided.',
 	'translate-gethelp' => 'Link to some Translate help page or tutorial.
 {{Identical|Help}}',
-	'translate-msggroupselector-projects' => 'Title text for the message group breadcrumb.',
+	'translate-msggroupselector-projects' => 'Title text for the message group breadcrumb.
+{{Identical|Message group}}',
 	'translate-msggroupselector-search-placeholder' => "Place holder text for the search box in message group selector. It's supposed to tell the user that the box is for a search for a name of a group.",
 	'translate-msggroupselector-search-all' => 'Label to display all projects',
 	'translate-msggroupselector-search-recent' => 'Label to display recent projects',
@@ -11224,9 +11228,12 @@ $1',
 	'tux-editor-save-failed' => 'שמירת התרגום נכשלה: $1',
 	'tux-editor-use-this-translation' => 'להשתמש בזה בתור תרגום',
 	'tux-editor-message-desc-more' => 'להציג עוד',
+	'tux-editor-message-desc-less' => 'להציג פחות',
 	'tux-editor-clear-translated' => 'הסתרת הודעות מתורגמות',
 	'tux-editor-outdated-warning' => 'ייתכן שצריך לעדכן את התרגום הזה.',
 	'tux-editor-outdated-warning-diff-link' => 'הצגת שינויים',
+	'tux-messagetable-more-messages' => 'עוד {{PLURAL:$1|הודעה אחת|$1 הודעות}}',
+	'tux-messagetable-loading-messages' => 'טעינת {{PLURAL:$1|הודעה|הודעות}}...',
 );
 
 /** Hindi (हिन्दी)
@@ -21509,9 +21516,12 @@ A ven dzortut a taj con ij travaj ëd revision.',
 	'tux-editor-save-failed' => 'Falì a salvé la tradussion: $1',
 	'tux-editor-use-this-translation' => 'Dòvra com tradussion',
 	'tux-editor-message-desc-more' => 'Visualisé ëd pi',
-	'tux-editor-clear-translated' => 'Polida tradussion', # Fuzzy
-	'tux-editor-outdated-warning' => 'Sta tradussion a peul esse veja', # Fuzzy
+	'tux-editor-message-desc-less' => 'Vëdde ëd men',
+	'tux-editor-clear-translated' => 'Stërma ij voltà',
+	'tux-editor-outdated-warning' => "Sta tradussion a peul avèj dzbzògn d'esse agiornà.",
 	'tux-editor-outdated-warning-diff-link' => 'Smon diferense',
+	'tux-messagetable-more-messages' => '$1 pi {{PLURAL:$1|mëssagi}}',
+	'tux-messagetable-loading-messages' => 'Carié {{PLURAL:$1|mëssagi}}...',
 );
 
 /** Western Punjabi (پنجابی)
@@ -24780,6 +24790,7 @@ $messages['so'] = array(
 	'translate-edit-tab-list' => 'Liiska fariimaha',
 	'translate-edit-nopermission' => 'Waxaad ubaahantahay ruqsad si aad u turjunto fariimaha.',
 	'translate-magic-submit' => 'Qaado',
+	'translate-tag-page-desc' => 'Turjumidda ee bogga wiki [[$2|$1]].',
 	'languagestats-summary' => 'Boggaan waxaa lagu soo bandhigay tirakoobka turjumaadda qayba kasta oo ka mid ah fariimaha luaqadaha.',
 	'languagestats-stats-for' => 'Tirakoobka turtumida luqadda  $1 ($2).',
 	'translate-language-code' => 'Sumadda luqadda',
@@ -24787,6 +24798,8 @@ $messages['so'] = array(
 	'translate-suppress-complete' => 'Gabi ahaanba qari qaybaha qoraalada turjuman',
 	'translate-ls-noempty' => 'Gabi ahaanba qari qaybaha qoraalada aan la turjumin',
 	'translate-language' => 'Luqad:',
+	'translate-ls-submit' => 'Itus tirakoobka',
+	'translate-mgs-submit' => 'Itus tirakoobka',
 	'translate-dynagroup-recent-desc' => 'Qaybtaan waxa ay ku tusaysaa dhamaan turjumiddii ugu dambaysay ee luqadaan.
 Ee faaiidada badan leh saxidda luqada.',
 );
@@ -29353,9 +29366,12 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-editor-save-failed' => 'Thất bại khi lưu bản dịch: $1',
 	'tux-editor-use-this-translation' => 'Dịch như thế này',
 	'tux-editor-message-desc-more' => 'Xem thêm',
-	'tux-editor-clear-translated' => 'Ẩn thông điệp đã dịch', # Fuzzy
-	'tux-editor-outdated-warning' => 'Bản dịch này có thể lỗi thời.', # Fuzzy
+	'tux-editor-message-desc-less' => 'Thu gọn',
+	'tux-editor-clear-translated' => 'Ẩn thông điệp đã dịch',
+	'tux-editor-outdated-warning' => 'Bản dịch này có thể cần được cập nhật.',
 	'tux-editor-outdated-warning-diff-link' => 'Trình bày khác biệt',
+	'tux-messagetable-more-messages' => '$1 thông điệp nữa',
+	'tux-messagetable-loading-messages' => 'Đang tải {{PLURAL:$1|thông điệp|các thông điệp}}…',
 );
 
 /** Volapük (Volapük)
@@ -30453,7 +30469,7 @@ $1',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}}作出最近更改（$2）',
 	'translate-gethelp' => '帮助',
 	'translate-msggroupselector-projects' => '信息组',
-	'translate-msggroupselector-search-placeholder' => '擦寻信息组',
+	'translate-msggroupselector-search-placeholder' => '搜索信息组',
 	'translate-msggroupselector-search-all' => '所有',
 	'translate-msggroupselector-search-recent' => '最近',
 	'translate-msggroupselector-load-from-all' => '加载全部组的信息',

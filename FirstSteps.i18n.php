@@ -3399,6 +3399,7 @@ Prav tako boste prejemali glasilo, največ enkrat mesečno.
 $messages['so'] = array(
 	'translate-fs-pagetitle' => 'Tilaabada hore ee - $1',
 	'translate-fs-settings-title' => 'Isku hagaajinta dooqyedaada',
+	'translate-fs-userpage-title' => 'Abuur Bogga adeegsedaha',
 	'translate-fs-settings-planguage' => 'Luqada rasmiga ah',
 	'translate-fs-settings-planguage-desc' => 'Luqadaada rasmiga ah ee kuu gaarka ah aadna ku arki doonto qoraalada wiki waana turjimaad luqad tusaale ah.',
 	'translate-fs-settings-slanguage' => 'Luqada kaalmo $1:',
