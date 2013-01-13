@@ -72,6 +72,22 @@ $messages['de'] = array(
 	'tux-sst-nosolr-body' => 'Dieses Wiki hat keinen Übersetzungssuchservice.',
 );
 
+/** Galician (galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'searchtranslations' => 'Procurar nas traducións',
+	'tux-sst-edit' => 'Editar a mensaxe',
+	'tux-sst-search' => 'Procurar',
+	'tux-sst-search-ph' => 'Procurar nas traducións',
+	'tux-sst-count' => '{{PLURAL:$1|Atopouse 1 resultado|Atopáronse $1 resultados}}',
+	'tux-sst-facet-language' => 'Linguas',
+	'tux-sst-facet-group' => 'Grupos de mensaxes',
+	'tux-sst-facet-orphan' => '(orfos)',
+	'tux-sst-nosolr-title' => 'A procura non está dispoñible',
+	'tux-sst-nosolr-body' => 'Este wiki non dispón dun servizo de procura de traducións.',
+);
+
 /** Japanese (日本語)
  * @author Shirayuki
  */
@@ -86,6 +102,22 @@ $messages['ja'] = array(
 	'tux-sst-facet-orphan' => '(孤立)',
 	'tux-sst-nosolr-title' => '検索は利用できません',
 	'tux-sst-nosolr-body' => 'このウィキには翻訳の検索サービスはありません。',
+);
+
+/** Macedonian (македонски)
+ * @author Bjankuloski06
+ */
+$messages['mk'] = array(
+	'searchtranslations' => 'Пребарување на преводи',
+	'tux-sst-edit' => 'Уреди порака',
+	'tux-sst-search' => 'Пребарај',
+	'tux-sst-search-ph' => 'Пребарајте преводи',
+	'tux-sst-count' => '{{PLURAL:$1|Пронајден е еден резултат|Пронајдени се $1 резултати}}',
+	'tux-sst-facet-language' => 'Јазици',
+	'tux-sst-facet-group' => 'Групи на пораки',
+	'tux-sst-facet-orphan' => '(осамена)',
+	'tux-sst-nosolr-title' => 'Пребарувањето е недостапно',
+	'tux-sst-nosolr-body' => 'Ова вики нема пребарувач.',
 );
 
 /** Piedmontese (Piemontèis)

@@ -2340,6 +2340,10 @@ Hei kënnt Dir eraussiche wat fir eng Sprooch, wann Dir dat wëllt, Dir gesi wë
 	'translate-fs-userpage-submit' => 'Meng Benotzersäit maachen',
 	'translate-fs-userpage-done' => 'Gutt gemaach! dir hutt elo eng Benotzersäit.',
 	'translate-fs-permissions-planguage' => 'Haaptsprooch:',
+	'translate-fs-permissions-help' => "Elo musst Dir eng Ufro maache fir an de Grupp vun den Iwwersetzer derbäigesat ze ginn.
+Sicht Är Haaptsprooch eraus an déi Dir iwwersetze wäert.
+
+Dir kënnt aner Sproochen an aner Bemierkungen an d'Textkëscht ënnendrënner derbäisetzen.",
 	'translate-fs-permissions-pending' => 'Är Ufro gouf op [[$1]] gespäichert an e vun de Mataarbechter vum Site wäert dat esou séier wéi méiglech nokucken. Wann Dir Är Mail-Adress confirméiert, da kritt Dir eng Confirmatioun esou bal wéi dat gemaaach ass.',
 	'translate-fs-permissions-submit' => 'Ufro schécken',
 	'translate-fs-target-text' => "Felicitatiounen!
