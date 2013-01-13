@@ -29,7 +29,7 @@
 			this.$editTrigger.append( this.$editor );
 			this.$editor.hide();
 
-			this.getTranslationSuggestions();
+			this.showTranslationHelpers();
 		},
 
 		/**
@@ -600,7 +600,213 @@
 			this.expanded = true;
 		},
 
-		getTranslationSuggestions: function () {
+		/**
+		 * Shows the message documentation.
+		 * @param {object} documentation A documentation object as returned by API.
+		 */
+		showMessageDocumentation: function ( documentation ) {
+			var $descEditLink,
+				contentLanguageDir,
+				expand,
+				$messageDoc,
+				readMore,
+				$readMore = null;
+
+			if ( !mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
+				return;
+			}
+
+			$descEditLink = this.$editor.find( '.message-desc-edit' );
+			$messageDoc = this.$editor.find( '.message-desc' );
+
+			// Display the documentation only if it's not empty and
+			// documentation language is configured
+			if ( documentation.value ) {
+				contentLanguageDir = $.uls.data.getDir( documentation.language );
+				// Show the documentation and set appropriate
+				// lang and dir attributes.
+				// The message documentation is assumed to be written
+				// in the content language of the wiki.
+				$messageDoc
+					.attr( {
+						lang: documentation.language,
+						dir: contentLanguageDir
+					} )
+					.addClass( contentLanguageDir ) // hack
+					.html( documentation.html );
+
+				$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
+
+				if ( documentation.value.length > 500 ) {
+					expand = function () {
+						$messageDoc.removeClass( 'compact' );
+						$readMore.text( mw.msg( 'tux-editor-message-desc-less' ) );
+					};
+
+					readMore = function () {
+						if ( $messageDoc.hasClass( 'compact' ) ) {
+							expand();
+						} else {
+							$messageDoc.addClass( 'compact' );
+							$readMore.text( mw.msg( 'tux-editor-message-desc-more' ) );
+						}
+					};
+
+					$readMore = $( '<span>' )
+						.addClass( 'read-more column' )
+						.text( mw.msg( 'tux-editor-message-desc-more' ) )
+						.click( readMore );
+
+					this.$editor.find( '.message-desc-control' )
+						.prepend( $readMore );
+
+					$messageDoc.addClass('long compact').on( 'hover', expand );
+				}
+			} else {
+				$messageDoc.text( mw.msg( 'tux-editor-no-message-doc' ) );
+				$descEditLink.text( mw.msg( 'tux-editor-add-desc' ) );
+			}
+
+			$messageDoc.show();
+			$descEditLink.show();
+		},
+
+		/**
+		 * Shows the machine translations.
+		 * @param {array} translations An inotherlanguages array as returned by the translation helpers API.
+		 */
+		showAssistantLanguages: function ( translations ) {
+			var translateEditor = this;
+
+			$.each( translations, function ( index ) {
+				var $otherLanguage,
+					translationDir,
+					translation = translations[index];
+
+				translationDir = $.uls.data.getDir( translation.language );
+
+				$otherLanguage = $( '<div>' )
+					.addClass( 'row in-other-language' )
+					.append(
+						$( '<div>' )
+							.addClass( 'nine columns' )
+							.attr( {
+								lang: translation.language,
+								dir: translationDir
+							} )
+							.text( translation.value ),
+						$( '<div>' )
+							.addClass( 'three columns language text-right' )
+							.attr( {
+								lang: translation.language,
+								dir: translationDir
+							} )
+							.text( $.uls.data.getAutonym( translation.language ) )
+				);
+
+				translateEditor.$editor.find( '.in-other-languages-title' )
+					.removeClass( 'hide' )
+					.after( $otherLanguage );
+			} );
+		},
+
+		/**
+		 * Shows the message documentation.
+		 * @param {array} suggestions A ttmserver array as returned by API.
+		 */
+		showTranslationMemory: function ( suggestions ) {
+			var $tmSuggestions,
+				$translationTextarea;
+
+			if ( !suggestions.length ) {
+				return;
+			}
+
+			$tmSuggestions = $( '<div>' )
+				.addClass( 'tm-suggestions' );
+			this.$editor.find( '.tm-suggestions-title' )
+				.removeClass( 'hide' )
+				.after( $tmSuggestions );
+			$translationTextarea = this.$editor.find( 'textarea' );
+
+			$.each( suggestions, function ( index, translation ) {
+				var $translation;
+
+				$translation = $( '<div>' )
+					.addClass( 'row tm-suggestion' )
+					.append(
+						$( '<div>' )
+							.addClass( 'row tm-suggestion-top' )
+							.append(
+								$( '<div>' )
+									.addClass( 'nine columns' )
+									.text( translation.target ),
+								$( '<div>' )
+									.addClass( 'three columns quality text-right' )
+									.text( mw.msg( 'tux-editor-tm-match',
+										Math.round( translation.quality * 100 ) ) )
+						),
+						$( '<div>' )
+							.addClass( 'row tm-suggestion-bottom' )
+							.append(
+								$( '<a>' )
+									.addClass( 'nine columns use-this-translation' )
+									.text( mw.msg( 'tux-editor-use-this-translation' ) )
+									.on( 'click', function () {
+										$translationTextarea
+											.val( translation.target )
+											.trigger( 'input' );
+									} )
+							)
+					);
+
+				$tmSuggestions.append( $translation );
+			} );
+		},
+
+		/**
+		 * Shows the support options for the translator.
+		 * @param {object} support A support object as returned by API.
+		 */
+		showSupportOptions: function ( support ) {
+			// Support URL
+			if ( support.url ) {
+				this.$editor.find( '.help' )
+					.find( 'a' )
+						.attr( 'href', support.url )
+						.end()
+					.removeClass( 'hide' );
+			}
+		},
+
+		/**
+		 * Adds the diff between old and current definitions to the view.
+		 * @param {object} definitiondiff A definitiondiff object as returned by API.
+		 */
+		addDefinitionDiff: function ( definitiondiff ) {
+			// TODO: Handle the error
+			if ( !definitiondiff || definitiondiff.error ) {
+				return;
+			}
+
+			this.addWarning(
+				mw.msg( 'tux-editor-outdated-warning' ) +
+					'<span class="show-diff-link">' +
+					mw.message( 'tux-editor-outdated-warning-diff-link' ).escaped() +
+					'</span>',
+				'diff'
+			);
+
+			this.$editor.find( '.tux-warning .show-diff-link' )
+				.on( 'click', function () {
+					$( this ).parent().html( definitiondiff.html );
+				} );
+		},
+
+		/**
+		 * Loads and shows the translation helpers.
+		 */
+		showTranslationHelpers: function () {
 			// API call to get translation suggestions from other languages
 			// callback should render suggestions to the editor's info column
 			var queryParams,
@@ -614,183 +820,18 @@
 			};
 
 			$.get( apiURL, queryParams ).done( function ( result ) {
-				var translations,
-					$messageDoc,
-					$tmSuggestions,
-					$translationTextarea,
-					documentation,
-					expand,
-					$descEditLink,
-					contentLanguageDir,
-					translateDocumentationLanguageCode,
-					readMore,
-					$readMore = null;
-
-				// TODO This returns an error for 'Page display title' in translatable pages.
-				// Something smarter must be done with it.
+				// TODO This may be an error that must be handled
 				if ( !result.helpers ) {
-					return false; // That is unlikely. but to be safe.
+					return false;
 				}
 
-				// Message documentation
-
-				translateDocumentationLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
-				if ( translateDocumentationLanguageCode ) {
-					documentation = result.helpers.documentation;
-					$descEditLink = translateEditor.$editor.find( '.message-desc-edit' );
-					$messageDoc = translateEditor.$editor.find( '.message-desc' );
-
-					// Display the documentation only if it's not empty and
-					// documentation language is configured
-					if ( documentation.value ) {
-						contentLanguageDir = $.uls.data.getDir( documentation.language );
-						// Show the documentation and set appropriate
-						// lang and dir attributes.
-						// The message documentation is assumed to be written
-						// in the content language of the wiki.
-						$messageDoc
-							.attr( {
-								lang: documentation.language,
-								dir: contentLanguageDir
-							} )
-							.addClass( contentLanguageDir ) // hack
-							.html( documentation.html );
-
-						$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
-
-						if ( documentation.value.length > 500 ) {
-							expand = function () {
-								$messageDoc.removeClass( 'compact' );
-								$readMore.text( mw.msg( 'tux-editor-message-desc-less' ) );
-							};
-
-							readMore = function () {
-								if ( $messageDoc.hasClass( 'compact' ) ) {
-									expand();
-								} else {
-									$messageDoc.addClass( 'compact' );
-									$readMore.text( mw.msg( 'tux-editor-message-desc-more' ) );
-								}
-							};
-
-							$readMore = $( '<span>' )
-								.addClass( 'read-more column' )
-								.text( mw.msg( 'tux-editor-message-desc-more' ) )
-								.click( readMore );
-
-							translateEditor.$editor.find( '.message-desc-control' )
-								.prepend( $readMore );
-
-							$messageDoc.addClass('long compact').on( 'hover', expand );
-						}
-					} else {
-						$messageDoc.text( mw.msg( 'tux-editor-no-message-doc' ) );
-						$descEditLink.text( mw.msg( 'tux-editor-add-desc' ) );
-					}
-
-					$messageDoc.show();
-					$descEditLink.show();
-				}
-
-				// In other languages
-				translations = result.helpers.inotherlanguages;
-				$.each( translations, function ( index ) {
-					var $otherLanguage,
-						translationDir,
-						translation = translations[index];
-
-					translationDir = $.uls.data.getDir( translation.language );
-
-					$otherLanguage = $( '<div>' )
-						.addClass( 'row in-other-language' )
-						.append(
-							$( '<div>' )
-								.addClass( 'nine columns' )
-								.attr( {
-									lang: translation.language,
-									dir: translationDir
-								} )
-								.text( translation.value ),
-							$( '<div>' )
-								.addClass( 'three columns language text-right' )
-								.attr( {
-									lang: translation.language,
-									dir: translationDir
-								} )
-								.text( $.uls.data.getAutonym( translation.language ) )
-					);
-
-					translateEditor.$editor.find( '.in-other-languages-title' )
-						.removeClass( 'hide' )
-						.after( $otherLanguage );
-				} );
-
-				// Translation memory suggestions
-				translations = result.helpers.ttmserver;
-				if ( translations ) {
-					$tmSuggestions = $( '<div>' )
-						.addClass( 'tm-suggestions' );
-					translateEditor.$editor.find( '.tm-suggestions-title' )
-						.removeClass( 'hide' )
-						.after( $tmSuggestions );
-					$translationTextarea = translateEditor.$editor.find( 'textarea' );
-
-					$.each( translations, function ( index, translation ) {
-						var $translation;
-
-						$translation = $( '<div>' )
-							.addClass( 'row tm-suggestion' )
-							.append(
-								$( '<div>' )
-									.addClass( 'row tm-suggestion-top' )
-									.append(
-										$( '<div>' )
-											.addClass( 'nine columns' )
-											.text( translation.target ),
-										$( '<div>' )
-											.addClass( 'three columns quality text-right' )
-											.text( mw.msg( 'tux-editor-tm-match',
-												Math.round( translation.quality * 100 ) ) )
-								),
-								$( '<div>' )
-									.addClass( 'row tm-suggestion-bottom' )
-									.append(
-										$( '<a>' )
-											.addClass( 'nine columns use-this-translation' )
-											.text( mw.msg( 'tux-editor-use-this-translation' ) )
-											.on( 'click', function () {
-												$translationTextarea
-													.val( translation.target )
-													.trigger( 'input' );
-											} )
-									)
-							);
-
-						$tmSuggestions.append( $translation );
-					} );
-				}
-
-				// Support URL
-				if ( result.helpers.support.url ) {
-					translateEditor.$editor.find( '.help' )
-						.find( 'a' ).attr( 'href', result.helpers.support.url )
-						.end().removeClass( 'hide' );
-				}
-
-				// Diff for outdated message
-				if ( result.helpers.definitiondiff && !result.helpers.definitiondiff.error ) {
-					translateEditor.addWarning( mw.msg( 'tux-editor-outdated-warning' )
-						+ '<span class="show-diff-link">'
-						+ mw.message( 'tux-editor-outdated-warning-diff-link' ).escaped()
-						+ '</span>', 'diff' );
-
-					translateEditor.$editor.find( '.tux-warning .show-diff-link' )
-						.on( 'click', function () {
-							$( this ).parent().html( result.helpers.definitiondiff.html );
-						} );
-				}
+				translateEditor.showMessageDocumentation( result.helpers.documentation );
+				translateEditor.showAssistantLanguages( result.helpers.inotherlanguages );
+				translateEditor.showTranslationMemory( result.helpers.ttmserver );
+				translateEditor.showSupportOptions( result.helpers.support );
+				translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
 			} ).fail( function () {
-				// what to do?
+				// TODO: This error must be handled
 			} );
 		},
 
