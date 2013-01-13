@@ -319,8 +319,8 @@
 					}
 				} );
 
-			$textArea.keyup( function () {
-				translateEditor.keyup();
+			$textArea.on( 'keyup', function () {
+				translateEditor.scheduleValidation();
 			} );
 
 			if ( this.$editTrigger.data( 'translation' ) ) {
@@ -399,37 +399,42 @@
 		 * Handle the keypress events in the translation editor.
 		 * After a few millisecond delay, validates the translation.
 		 */
-		keyup: function () {
-			var translateEditor = this;
+		validateTranslation: function () {
+			var translateEditor = this,
+				url = new mw.Uri( mw.config.get( 'wgScript' ) ),
+				$textArea = translateEditor.$editor.find( 'textarea' );
 
-			delay( function () {
-				var url = new mw.Uri( mw.config.get( 'wgScript' ) ),
-					$textArea = translateEditor.$editor.find( 'textarea' );
+			// TODO: We need a better API for this
+			url.extend( {
+				title: 'Special:Translate/editpage',
+				suggestions: 'checks',
+				page: translateEditor.$editTrigger.data( 'title' ),
+				loadgroup: translateEditor.$editTrigger.data( 'group' )
+			} );
 
-				// TODO: We need a better API for this
-				url.extend( {
-					title: 'Special:Translate/editpage',
-					suggestions: 'checks',
-					page: translateEditor.$editTrigger.data( 'title' ),
-					loadgroup: translateEditor.$editTrigger.data( 'group' )
-				} );
+			$.post( url.toString(), {
+				translation: $textArea.val()
+			}, function ( data ) {
+				var warningIndex,
+					warnings = jQuery.parseJSON( data );
 
-				$.post( url.toString(), {
-					translation: $textArea.val()
-				}, function ( data ) {
-					var warningIndex,
-						warnings = jQuery.parseJSON( data );
+				if ( !warnings ) {
+					return;
+				}
 
-					if ( !warnings ) {
-						return;
-					}
+				translateEditor.removeWarning( 'validation' );
+				for ( warningIndex = 0; warningIndex < warnings.length; warningIndex++ ) {
+					translateEditor.addWarning( warnings[warningIndex], 'validation' );
+				}
+			} );
+		},
 
-					translateEditor.removeWarning( 'validation' );
-					for ( warningIndex = 0; warningIndex < warnings.length; warningIndex++ ) {
-						translateEditor.addWarning( warnings[warningIndex], 'validation' );
-					}
-				} );
-			}, 1000 );
+		/**
+		 * Handle the keypress events in the translation editor.
+		 * After a few millisecond delay, validates the translation.
+		 */
+		scheduleValidation: function () {
+			delay( $.proxy( this.validateTranslation, this ), 1000 );
 		},
 
 		/**
