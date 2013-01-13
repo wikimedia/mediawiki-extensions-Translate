@@ -238,36 +238,34 @@
 		 * Get recent message groups.
 		 */
 		getRecentGroups: function () {
-			var groupSelector = this,
-				queryParams,
-				apiURL,
-				messageGroups,
-				$msgGroupList;
+			var queryParams,
+				apiURL = mw.util.wikiScript( 'api' ),
+				messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' ),
+				$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' );
 
 			queryParams = {
 				action: 'translateuser',
 				format: 'json'
 			};
 
-			apiURL = mw.util.wikiScript( 'api' );
-			$msgGroupList = groupSelector.$menu.find( '.ext-translate-msggroup-list' );
-			messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
-
 			$msgGroupList.empty();
 			$.get( apiURL, queryParams, function ( result ) {
-				var $msgGroupRows = [],
-					messageGroupId,
-					messagegroup;
+				var msgGroupRows = [];
 
-				$.each( result.translateuser.recentgroups, function ( index ) {
-					messageGroupId = result.translateuser.recentgroups[index];
+				$.each( result.translateuser.recentgroups, function ( index, messageGroupId ) {
+					var messagegroup;
+
+					// Skip groups with no ID
+					if ( !messageGroupId ) {
+						return true;
+					}
+
 					messagegroup = getGroup( messageGroupId, messageGroups );
-					$msgGroupRows.push( prepareMessageGroupRow( messagegroup ) );
+					msgGroupRows.push( prepareMessageGroupRow( messagegroup ) );
 				} );
 
-				$msgGroupList.append( $msgGroupRows );
+				$msgGroupList.append( msgGroupRows );
 			} );
-
 		},
 
 		/**
