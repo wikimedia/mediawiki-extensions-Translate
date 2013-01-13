@@ -47,6 +47,10 @@
 	font-size: 80%;
 }
 
+.tux-searchpage .facet-item.selected .facet-name {
+	font-weight: bold;
+}
+
 /* Results */
 .tux-searchpage .count {
 	color: #555;

@@ -55,9 +55,18 @@ class SpecialSearchTranslations extends SpecialPage {
 		$out->addModules( 'ext.translate.grid' );
 		$out->addModules( 'ext.translate.special.searchtranslations' );
 
-		$queryString = $this->getRequest()->getVal( 'query', null );
+		$this->opts = $opts = new FormOptions();
+		$opts->add( 'query', '' );
+		$opts->add( 'language', '' );
+		$opts->add( 'group', '' );
+		$opts->add( 'grouppath', '' );
 
-		if ( $queryString === null ) {
+		$opts->fetchValuesFromRequest( $this->getRequest() );
+
+
+		$queryString = $opts->getValue( 'query' );
+
+		if ( $queryString === '' ) {
 			$this->showEmptySearch();
 			return;
 		}
@@ -130,16 +139,32 @@ class SpecialSearchTranslations extends SpecialPage {
 		$hl->setFragSize( '5000' );
 		$hl->setSnippets( 1 );
 
+		$languageFilter = $this->opts->getValue( 'language' );
+		if ( $languageFilter !== '' ) {
+			$query->createFilterQuery( 'languageFilter' )
+				->setQuery( 'language:%P1%', array( $languageFilter ) )
+				->addTag( 'filter' );
+		}
+
+		$groupFilter = $this->opts->getValue( 'group' );
+		if ( $groupFilter !== '' ) {
+			$query->createFilterQuery( 'groupFilter' )
+				->setQuery( 'group:%P1%', array( $groupFilter ) )
+				->addTag( 'filter' );
+		}
+
 		$facetSet = $query->getFacetSet();
+
 		$language = $facetSet->createFacetField( 'language' );
 		$language->setField( 'language' );
 		$language->setMincount( 1 );
+		$language->addExclude( 'filter' );
 
-		$facetSet = $query->getFacetSet();
 		$group = $facetSet->createFacetField( 'group' );
 		$group->setField( 'group' );
 		$group->setMincount( 1 );
 		$group->setMissing( true );
+		$group->addExclude( 'filter' );
 
 		return $client->select( $query );
 	}
@@ -147,16 +172,31 @@ class SpecialSearchTranslations extends SpecialPage {
 	protected function renderLanguageFacet( Solarium_Result_Select_Facet_Field $facet ) {
 		$output = '';
 
-		foreach ( $facet as $key => $value ) {
+		$nondefaults = $this->opts->getChangedValues();
+		$selected = $this->opts->getValue( 'language' );
 
-			$key = TranslateUtils::getLanguageName( $key, false, $this->getLanguage()->getCode() );
-			$name = Html::element( 'span', array( 'class' => 'facet-name' ), $key );
+		foreach ( $facet as $key => $value ) {
+			if ( $key === $selected ) {
+				unset( $nondefaults['language'] );
+			} else {
+				$nondefaults['language'] = $key;
+			}
+
+			$text = TranslateUtils::getLanguageName( $key, false, $this->getLanguage()->getCode() );
+			$url = $this->getTitle()->getLocalUrl( $nondefaults );
+			$link = Html::element( 'a', array( 'href' => $url ), $text );
+			$name = Html::rawElement( 'span', array( 'class' => 'facet-name' ), $link );
 
 			$value = $this->getLanguage()->formatNum( $value );
 			$count = Html::element( 'span', array( 'class' => 'facet-count' ), $value );
 
+			$class = 'row facet-item';
+			if ( $key === $selected ) {
+				$class .= ' selected';
+			}
+
 			$output .= Html::rawElement( 'div',
-				array( 'class' => 'row facet-item' ),
+				array( 'class' => $class ),
 				$name . $count
 			);
 		}
@@ -169,8 +209,14 @@ class SpecialSearchTranslations extends SpecialPage {
 		return $this->makeGroupFacetRows( $structure, $counts );
 	}
 
-	protected function makeGroupFacetRows( array $groups, $counts, $level = 0 ) {
+	protected function makeGroupFacetRows( array $groups, $counts, $level = 0, $pathString = '' ) {
 		$output = '';
+
+		$nondefaults = $this->opts->getChangedValues();
+		$selected = $this->opts->getValue( 'group' );
+
+		$path = explode( '|', $this->opts->getValue( 'grouppath' ) );
+
 		foreach ( $groups as $mixed ) {
 			$subgroups = $group = $mixed;
 
@@ -180,23 +226,41 @@ class SpecialSearchTranslations extends SpecialPage {
 				$subgroups = array();
 			}
 
-			if ( !isset( $counts[$group->getId()] ) ) {
+			$id = $group->getId();
+
+			if ( $id !== $selected && !isset( $counts[$id] ) ) {
 				continue;
 			}
 
-			$value = $counts[$group->getId()];
+			if ( $id === $selected ) {
+				unset( $nondefaults['group'] );
+				$nondefaults['grouppath'] = $pathString;
+			} else {
+				$nondefaults['group'] = $id;
+				$nondefaults['grouppath'] = $pathString . $id;
+			}
 
-			$name = Html::element( 'span', array( 'class' => 'facet-name' ), $group->getLabel() );
+			$url = $this->getTitle()->getLocalUrl( $nondefaults );
+			$link = Html::element( 'a', array( 'href' => $url ), $group->getLabel() );
+			$name = Html::rawElement( 'span', array( 'class' => 'facet-name' ), $link );
+
+			$value = isset( $counts[$id] ) ? $counts[$id] : 0;
 			$count = $this->getLanguage()->formatNum( $value );
 			$count = Html::element( 'span', array( 'class' => 'facet-count' ), $count );
 
+
+			$class = "row facet-item facet-level-$level";
+			if ( isset( $path[$level] ) && $path[$level] === $id ) {
+				$class .= ' selected';
+			}
+
 			$output .= Html::rawElement( 'div',
-				array( 'class' => "row facet-item facet-level-$level" ),
+				array( 'class' => $class ),
 				$name . $count
 			);
 
-			if ( $value > 15 ) {
-				$output .= $this->makeGroupFacetRows( $subgroups, $counts, $level + 1 );
+			if ( isset( $path[$level] ) && $path[$level] === $id ) {
+				$output .= $this->makeGroupFacetRows( $subgroups, $counts, $level + 1, "$pathString$id|" );
 			}
 		}
 		return $output;
