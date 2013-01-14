@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADhH//++s\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-14T03:58:35Z",
+      "side": 1,
+      "message": "Please update the comments",
+      "revId": "7697cc19285c1f463003c8b5d5ed3671da90c42d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
