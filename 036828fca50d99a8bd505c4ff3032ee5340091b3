@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADhH//+uI\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-01-14T13:47:59Z",
+      "side": 1,
+      "message": "Used three times in this function, can probably saved in one variable.",
+      "revId": "036828fca50d99a8bd505c4ff3032ee5340091b3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
