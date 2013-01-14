@@ -165,7 +165,11 @@
 				$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
 					onSelect: groupSelectorHandler
 				} );
-			} );
+				$( '.tux-message-list-statsbar' ).languagestatsbar( {
+					language: uiLanguage,
+					group: $( '.tux-message-list-statsbar' ).data( 'messagegroup' )
+				} );
+		} );
 
 		// Use ULS for language selection if it's available
 		if ( $.uls ) {
