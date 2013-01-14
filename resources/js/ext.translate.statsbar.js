@@ -26,6 +26,7 @@
 		this.language = options.language;
 		this.$statsBar = null;
 		this.init();
+		this.listen();
 	};
 
 	LanguageStatsBar.prototype = {
@@ -68,6 +69,28 @@
 			} );
 
 			return req;
+		},
+
+		listen: function(){
+			var i, statsbar = this;
+
+			statsbar.$statsBar.on( 'change', function( e, to, from ) {
+				for ( i = 0; i < mw.translate.languagestats.length; i++ ) {
+					if ( mw.translate.languagestats[i].group === statsbar.group ) {
+						if ( to === 'translated' ) {
+							mw.translate.languagestats[i].translated++;
+						}
+						if ( to === 'proofread' ) {
+							mw.translate.languagestats[i].proofread++;
+						}
+						if ( from === 'fuzzy' ) {
+							mw.translate.languagestats[i].fuzzy--;
+						}
+						break;
+					}
+				}
+				statsbar.update();
+			} );
 		},
 
 		render: function () {
