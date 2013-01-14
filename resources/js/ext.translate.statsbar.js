@@ -26,6 +26,7 @@
 		this.language = options.language;
 		this.$statsBar = null;
 		this.init();
+		this.listen();
 	};
 
 	LanguageStatsBar.prototype = {
@@ -68,6 +69,44 @@
 			} );
 
 			return req;
+		},
+
+		/**
+		 * Listen for the change events and update the statsbar
+		 */
+		listen: function () {
+			var i, statsbar = this;
+
+			statsbar.$statsBar.on( 'change', function ( event, to, from ) {
+				for ( i = 0; i < mw.translate.languagestats.length; i++ ) {
+					if ( mw.translate.languagestats[i].group === statsbar.group ) {
+
+						if ( to === 'translated' ) {
+							mw.translate.languagestats[i].translated++;
+						}
+						if ( to === 'proofread' ) {
+							mw.translate.languagestats[i].proofread++;
+						}
+						if ( to === 'fuzzy' ) {
+							mw.translate.languagestats[i].fuzzy++;
+						}
+
+						if ( from === 'fuzzy' ) {
+							mw.translate.languagestats[i].fuzzy--;
+						}
+						if ( from === 'proofread' ) {
+							mw.translate.languagestats[i].proofread--;
+						}
+						if ( from === 'translated' ) {
+							mw.translate.languagestats[i].translated--;
+						}
+						break;
+					}
+				}
+
+				// Update the stats bar
+				statsbar.update();
+			} );
 		},
 
 		render: function () {
