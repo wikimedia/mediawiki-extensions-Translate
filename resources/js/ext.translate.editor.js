@@ -88,7 +88,6 @@
 
 			// For responsiveness and efficiency,
 			// immediately move to the next message.
-			// TODO: Handle last message
 			translateEditor.next();
 
 			// XXX: Any validations to be done before proceeding?
