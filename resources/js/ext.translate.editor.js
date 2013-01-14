@@ -82,7 +82,7 @@
 		save: function () {
 			var translateEditor = this,
 				api = new mw.Api(),
-				translation = translateEditor.$editor.find( 'textarea' ).val();
+				translation = translateEditor.$editor.find( '.editcolumn textarea' ).val();
 
 			translateEditor.saving = true;
 
@@ -121,6 +121,41 @@
 					translateEditor.savingError( results.error.info );
 
 					translateEditor.saving = false;
+				}
+			} );
+		},
+
+		/**
+		 * Save the documentation
+		 */
+		saveDocumentation: function () {
+			var translateEditor = this,
+				api = new mw.Api(),
+				translation = translateEditor.$editor.find( '.infocolumn-block textarea' ).val();
+
+			// XXX: Any validations to be done before proceeding?
+			api.post( {
+				action: 'edit',
+				title: translateEditor.$editTrigger.data( 'title' )
+					.replace( /\/[a-z\-]+$/, '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ),
+				text: translation,
+				token: mw.user.tokens.get( 'editToken' )
+			}, {
+				ok: function ( response ) {
+					if ( response.edit.result === 'Success' ) {
+						translateEditor.$editor.find( '.infocolumn-block .message-desc' )
+							.html( translation );
+						translateEditor.hideDocumentationEditor();
+					} else {
+						// TODO
+						window.console.log( 'Problem saving documentation' );
+					}
+				},
+				// TODO: Should also handle complete failure,
+				// for example client or server going offline.
+				err: function ( errorCode, results ) {
+					// TODO
+					window.console.log( 'Error saving documentation ' + errorCode + ' ' + results );
 				}
 			} );
 		},
@@ -475,39 +510,108 @@
 			}
 		},
 
+		showDocumentationEditor: function () {
+			var $infoColumnBlock = this.$editor.find( '.infocolumn-block' ),
+				$editColumn = this.$editor.find( '.editcolumn' ),
+				$messageDescEditor = $infoColumnBlock.find( '.message-desc-editor' ),
+				$messageDesc = $infoColumnBlock.find( '.message-desc' ),
+				$messageDescControl = $infoColumnBlock.find( '.message-desc-control' );
+
+			$infoColumnBlock
+				.removeClass( 'five' )
+				.addClass( 'seven' );
+			$editColumn
+				.removeClass( 'seven' )
+				.addClass( 'five' );
+
+			$messageDesc.hide();
+			$messageDescControl.hide();
+
+			$messageDescEditor.show();
+		},
+
+		hideDocumentationEditor: function () {
+			var $infoColumnBlock = this.$editor.find( '.infocolumn-block' ),
+				$editColumn = this.$editor.find( '.editcolumn' ),
+				$messageDescEditor = $infoColumnBlock.find( '.message-desc-editor' ),
+				$messageDesc = $infoColumnBlock.find( '.message-desc' ),
+				$messageDescControl = $infoColumnBlock.find( '.message-desc-control' );
+
+			$infoColumnBlock
+				.removeClass( 'seven' )
+				.addClass( 'five' );
+			$editColumn
+				.removeClass( 'five' )
+				.addClass( 'seven' );
+
+			$messageDescEditor.hide();
+
+			$messageDesc.show();
+			$messageDescControl.show();
+		},
+
 		prepareInfoColumn: function () {
-			var $infoColumn,
-				$infoColumnBlock,
-				translateDocumentationLanguageCode;
+			var $messageDescEditor,
+				$messageDescSaveButton, $messageDescCancelButton,
+				$messageDesc, $messageDescControl,
+				$infoColumn = $( '<div>' ).addClass( 'infocolumn' ),
+				translateEditor = this;
 
-			$infoColumnBlock = $( '<div>' )
-				.addClass( 'five columns infocolumn-block' );
+			if ( mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
+				if ( mw.translate.canTranslate() ) {
+					$messageDescSaveButton = $( '<button>' )
+						.text( mw.msg( 'tux-editor-doc-editor-save' ) )
+						.addClass( 'blue button tux-editor-save-button' )
+						.on( 'click', function () {
+							translateEditor.saveDocumentation();
+						} );
 
-			$infoColumnBlock.append( $( '<span>' ).addClass( 'caret' ) );
+					$messageDescCancelButton = $( '<button>' )
+						.text( mw.msg( 'tux-editor-doc-editor-cancel' ) )
+						.addClass( 'button tux-editor-skip-button' )
+						.on( 'click', function () {
+							translateEditor.hideDocumentationEditor();
+						} );
 
-			$infoColumn = $( '<div>' )
-				.addClass( 'infocolumn' );
+					$messageDescEditor = $( '<div>' )
+						.addClass( 'row text-left message-desc-editor' )
+						.append(
+							$( '<div>' )
+								.addClass( 'row text-left message-desc-editor-title' )
+								.text( mw.msg( 'tux-editor-doc-editor-title' ) ),
+							$( '<textarea>' ),
+							$( '<div>' )
+								.addClass( 'row' )
+								.append(
+									$messageDescSaveButton,
+									$messageDescCancelButton
+								)
+						)
+						.hide();
+				}
 
-			// By default translateDocumentationLanguageCode is false.
-			// It's defined as the MediaWiki global $wgTranslateDocumentationLanguageCode.
-			translateDocumentationLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
-			if ( translateDocumentationLanguageCode ) {
-				$infoColumn.append( $( '<div>' )
+				$messageDesc = $( '<div>' )
 					.addClass( 'row text-left message-desc' )
-					.hide()
-				);
+					.hide();
 
-				$infoColumn.append( $( '<div>' )
+				$messageDescControl = $( '<div>' )
 					.addClass( 'row text-left message-desc-control' )
 					.append( $( '<a>' )
 						.addClass( 'text-left message-desc-edit' )
-						.attr( {
-							href: mw.translate.getDocumentationEditURL( this.$editTrigger.data( 'title' )
-								.replace( /\/[a-z\-]+$/, '' ) ),
+						/*.attr( {
+							href: mw.translate.getDocumentationEditURL(
+								this.$editTrigger.data( 'title' ).replace( /\/[a-z\-]+$/, '' )
+							),
 							target: '_blank'
-						} )
+						} )*/
+						.on( 'click', $.proxy( this.showDocumentationEditor, this ) )
 						.hide()
-					)
+					);
+
+				$infoColumn.append(
+					$messageDescEditor,
+					$messageDesc,
+					$messageDescControl
 				);
 			}
 
@@ -534,8 +638,12 @@
 				)
 			);
 
-			$infoColumnBlock.append( $infoColumn );
-			return $infoColumnBlock;
+			return $( '<div>' )
+				.addClass( 'five columns infocolumn-block' )
+				.append(
+					$( '<span>' ).addClass( 'caret' ),
+					$infoColumn
+				);
 		},
 
 		show: function () {
@@ -609,7 +717,7 @@
 		 */
 		showMessageDocumentation: function ( documentation ) {
 			var $descEditLink,
-				contentLanguageDir,
+				documentationDir,
 				expand,
 				$messageDoc,
 				readMore,
@@ -625,7 +733,7 @@
 			// Display the documentation only if it's not empty and
 			// documentation language is configured
 			if ( documentation.value ) {
-				contentLanguageDir = $.uls.data.getDir( documentation.language );
+				documentationDir = $.uls.data.getDir( documentation.language );
 				// Show the documentation and set appropriate
 				// lang and dir attributes.
 				// The message documentation is assumed to be written
@@ -633,10 +741,17 @@
 				$messageDoc
 					.attr( {
 						lang: documentation.language,
-						dir: contentLanguageDir
+						dir: documentationDir
 					} )
-					.addClass( contentLanguageDir ) // hack
+					.addClass( documentationDir ) // hack
 					.html( documentation.html );
+
+				this.$editor.find( '.message-desc-editor textarea' )
+					.attr( {
+						lang: documentation.language,
+						dir: documentationDir
+					} )
+					.val( documentation.value );
 
 				$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
 
