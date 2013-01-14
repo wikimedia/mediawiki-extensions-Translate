@@ -143,9 +143,6 @@ class TuxMessageTable extends MessageTable {
 		$batchSize = 100;
 		$remaining = $total - $this->offsets['start'] - $this->offsets['count'];
 
-		$statsBar = StatsBar::getNew( $this->group->getId(), $this->collection->getLanguage() );
-		$statsBarHtml = $statsBar->getHtml( $this->context );
-
 		$footer =  Html::openElement( 'div',
 			array(
 				'class' => 'tux-messagetable-loader',
@@ -163,9 +160,12 @@ class TuxMessageTable extends MessageTable {
 			. '</div>'
 			. Html::closeElement( 'div' );
 
-		$footer .= '<div class="tux-action-bar row"><div class="three columns">' .
-			$statsBarHtml
-			. '</div>';
+		$footer .= '<div class="tux-action-bar row">'
+			. Html::element( 'div',
+				array(
+					'class' => 'three columns tux-message-list-statsbar',
+					'data-messagegroup' => $this->group->getId(),
+				) );
 		$footer .= '<div class="three columns text-center">'
 			. '<button class="button tux-editor-clear-translated">'
 			. wfMessage( 'tux-editor-clear-translated' )->escaped()
