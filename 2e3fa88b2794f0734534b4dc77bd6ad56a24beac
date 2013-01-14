@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADhH//+yQ\u003d",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-14T12:41:16Z",
+      "side": 1,
+      "message": "function () {",
+      "revId": "2e3fa88b2794f0734534b4dc77bd6ad56a24beac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADhH//+yM\u003d",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-14T12:41:16Z",
+      "side": 1,
+      "message": "function (",
+      "revId": "2e3fa88b2794f0734534b4dc77bd6ad56a24beac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADhH//+yI\u003d",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-14T12:41:16Z",
+      "side": 1,
+      "message": "Does not seem to handle the case proofread -\u003e translated or proofread -\u003e fuzzy or translate -\u003e fuzzy",
+      "revId": "2e3fa88b2794f0734534b4dc77bd6ad56a24beac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
