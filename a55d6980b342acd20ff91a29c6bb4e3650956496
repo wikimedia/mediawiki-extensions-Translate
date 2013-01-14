@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADhH//+xo\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-14T12:45:04Z",
+      "side": 1,
+      "message": "Why not do this server side, would be consistent with the API?",
+      "revId": "a55d6980b342acd20ff91a29c6bb4e3650956496",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
