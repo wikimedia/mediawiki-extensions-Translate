@@ -595,8 +595,8 @@
 			toggleIcon.removeClass( 'editor-expand' );
 			toggleIcon.addClass( 'editor-contract' );
 
-			this.$editor.find( 'div.infocolumn-block' ).hide();
-			this.$editor.find( 'div.editcolumn' )
+			this.$editor.find( '.infocolumn-block' ).hide();
+			this.$editor.find( '.editcolumn' )
 				.removeClass( 'seven' )
 				.addClass( 'twelve' );
 
