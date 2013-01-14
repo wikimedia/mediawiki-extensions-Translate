@@ -131,7 +131,7 @@
 			$( '.ext-translate-msggroup-selector .tail' ).remove();
 			$newLink = $( '<span>' ).addClass( 'grouptitle grouplink tail' )
 				.text( mw.msg( 'translate-msggroupselector-search-all' ) );
-			$( '.ext-translate-msggroup-selector .grouplink' ).after( $newLink );
+			$( '.ext-translate-msggroup-selector .grouplink:last' ).after( $newLink );
 			$newLink.data( 'msggroupid', msgGroup.id );
 			$newLink.msggroupselector( {
 				onSelect: groupSelectorHandler
