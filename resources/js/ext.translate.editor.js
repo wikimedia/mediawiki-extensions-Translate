@@ -323,7 +323,7 @@
 			} );
 
 			if ( this.$editTrigger.data( 'translation' ) ) {
-				$textArea.text( this.$editTrigger.data( 'translation' ) );
+				$textArea.text( this.$editTrigger.data( 'translation' ).replace( '!!FUZZY!!', '' ) );
 			}
 
 			$warningsBlock = $( '<div>' )
