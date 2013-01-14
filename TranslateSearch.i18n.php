@@ -72,6 +72,22 @@ $messages['de'] = array(
 	'tux-sst-nosolr-body' => 'Dieses Wiki hat keinen Übersetzungssuchservice.',
 );
 
+/** French (français)
+ * @author Gomoko
+ */
+$messages['fr'] = array(
+	'searchtranslations' => 'Recherche de traductions',
+	'tux-sst-edit' => 'Modifier le message',
+	'tux-sst-search' => 'Rechercher',
+	'tux-sst-search-ph' => 'Recherche de traductions',
+	'tux-sst-count' => '{{PLURAL:$1|Un résultat trouvé|$1 résultats trouvés}}',
+	'tux-sst-facet-language' => 'Langues',
+	'tux-sst-facet-group' => 'Groupes de message',
+	'tux-sst-facet-orphan' => '(orphelin)',
+	'tux-sst-nosolr-title' => 'Recherche indisponible',
+	'tux-sst-nosolr-body' => 'Ce wiki n’a pas de service de recherche de traduction.',
+);
+
 /** Galician (galego)
  * @author Toliño
  */
@@ -86,6 +102,22 @@ $messages['gl'] = array(
 	'tux-sst-facet-orphan' => '(orfos)',
 	'tux-sst-nosolr-title' => 'A procura non está dispoñible',
 	'tux-sst-nosolr-body' => 'Este wiki non dispón dun servizo de procura de traducións.',
+);
+
+/** Italian (italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'searchtranslations' => 'Ricerca traduzioni',
+	'tux-sst-edit' => 'Modifica messaggio',
+	'tux-sst-search' => 'Cerca',
+	'tux-sst-search-ph' => 'Cerca traduzioni',
+	'tux-sst-count' => '{{PLURAL:$1|Un risultato trovato|$1 risultati trovati}}',
+	'tux-sst-facet-language' => 'Lingue',
+	'tux-sst-facet-group' => 'Gruppi di messaggi',
+	'tux-sst-facet-orphan' => '(orfano)',
+	'tux-sst-nosolr-title' => 'Ricerca non disponibile',
+	'tux-sst-nosolr-body' => 'Questo wiki non ha un servizio di ricerca delle traduzioni.',
 );
 
 /** Japanese (日本語)
@@ -134,4 +166,20 @@ $messages['pms'] = array(
 	'tux-sst-facet-orphan' => '(orfanel)',
 	'tux-sst-nosolr-title' => 'Serca pa disponìbil',
 	'tux-sst-nosolr-body' => "La wiki a l'ha pa un sërvissi d'arserca ëd tradussion.",
+);
+
+/** Vietnamese (Tiếng Việt)
+ * @author Minh Nguyen
+ */
+$messages['vi'] = array(
+	'searchtranslations' => 'Tìm bản dịch',
+	'tux-sst-edit' => 'Sửa thông điệp',
+	'tux-sst-search' => 'Tìm kiếm',
+	'tux-sst-search-ph' => 'Tìm bản dịch',
+	'tux-sst-count' => 'Tìm thấy $1 kết quả',
+	'tux-sst-facet-language' => 'Ngôn ngữ',
+	'tux-sst-facet-group' => 'Nhóm thông điệp',
+	'tux-sst-facet-orphan' => '(mồ côi)',
+	'tux-sst-nosolr-title' => 'Không thể tìm kiếm',
+	'tux-sst-nosolr-body' => 'Wiki này không có công cụ tìm bản dịch.',
 );

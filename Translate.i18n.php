@@ -6823,6 +6823,7 @@ $messages['ee'] = array(
  * @author Dead3y3
  * @author Flyax
  * @author Geraki
+ * @author Glavkos
  * @author Lou
  * @author Omnipaedista
  * @author ZaDiak
@@ -6831,11 +6832,26 @@ $messages['ee'] = array(
 $messages['el'] = array(
 	'translate' => 'Μεταφράστε',
 	'translate-desc' => '[[Special:Translate|Ειδική σελίδα]] για την μετάφραση του MediaWiki και ακόμη παραπέρα',
+	'translate-taskui-view' => 'Εμφάνιση όλων των μηνυμάτων',
+	'translate-taskui-untranslated' => 'Εμφάνιση αμετάφραστων μηνυμάτων',
+	'translate-taskui-optional' => 'Εμφάνιση προαιρετικών μηνυμάτων',
+	'translate-taskui-suggestions' => 'Εμφάνιση μηνυμάτων με προτάσεις από μεταφραστική μνήμη',
+	'translate-taskui-acceptqueue' => 'Μόνο τα μηνύματα που μπορώ να αποδεχθώ',
+	'translate-taskui-reviewall' => 'Αναθεώρηση όλων των μεταφράσεων',
+	'translate-taskui-export-to-file' => 'Εξαγωγή σε εγγενή μορφή',
+	'translate-taskui-export-as-po' => 'Εξαγωγή για off-line μετάφραση',
+	'translate-taction-translate' => 'Μετάφραση',
+	'translate-taction-proofread' => 'Επιμέλεια',
+	'translate-taction-lstats' => 'Στατιστικά γλώσσας',
+	'translate-taction-mstats' => 'Στατιστικά ομάδας μηνυμάτων',
+	'translate-taction-export' => 'Εξαγωγή',
+	'translate-taction-disabled' => 'Αυτή η ενέργεια είναι απενεργοποιημένη σε αυτό wiki.',
 	'translate-page-no-such-language' => 'Η καθορισμένη γλώσσα ήταν άκυρη.',
 	'translate-page-no-such-group' => 'Η καθορισμένη ομάδα ήταν άκυρη.',
 	'translate-page-disabled' => "Οι μεταφράσεις σε αυτή τη γλώσσα αυτής της ομάδας έχουν απενεργοποιηθεί. Ο λόγος είναι:
 
 ''$1''",
+	'translate-language-disabled' => 'Μετάφραση στη γλώσσα αυτή είναι απενεργοποιημένη.',
 	'translate-page-settings-legend' => 'Ρυθμίσεις',
 	'translate-page-group' => 'Ομάδα',
 	'translate-page-language' => 'Γλώσσα',
@@ -6850,20 +6866,30 @@ $messages['el'] = array(
 	'translate-next' => 'Επόμενη σελίδα',
 	'translate-prev' => 'Προηγούμενη σελίδα',
 	'translate-page-description-legend' => 'Πληροφορίες σχετικά με την ομάδα',
+	'translate-page-description-hasoptional' => 'Αυτή η ομάδα μηνυμάτων περιέχει προαιρετικά μηνύματα.
+Τα προαιρετικά μηνύματα θα πρέπει να μεταφράζονται μόνο όταν η γλώσσα σας  έχει ειδικές απαιτήσεις όπως να μη  χρησιμοποιείτε κενά διαστήματα ή η μεταγλώττιση  κατάλληλων ονομάτων. $1',
+	'translate-page-description-hasoptional-open' => 'Εμφάνιση προαιρετικών μηνυμάτων',
 	'translate-page-edit' => 'επεξεργασία',
 	'translate-ext-url' => '<hr />Ιστοσελίδα: $1',
 	'translate-optional' => '(προαιρετικά)',
 	'translate-ignored' => '(αγνοήστε)',
+	'translate-edit-jsopen' => 'επεξεργασία',
+	'translate-edit-title' => 'Επεξεργασία "$1"',
 	'translate-edit-definition' => 'Ορισμός μηνύματος',
+	'translate-edit-translation' => 'Μετάφραση',
 	'translate-edit-contribute' => 'συμβάλλετε',
 	'translate-edit-no-information' => "''Αυτό το μήνυμα δεν έχει τεκμηρίωση. Αν γνωρίζετε πού ή πώς χρησιμοποιείται αυτό το μήνυμα, μπορείτε να βοηθήσετε άλλους μεταφραστές προσθέτοντας τεκμηρίωση σε αυτό.''",
-	'translate-edit-information' => 'Πληροφορίες σχετικά με το μήνυμα "$2" ($1)', # Fuzzy
-	'translate-edit-in-other-languages' => 'Το μήνυμα "$1" σε άλλες γλώσσες', # Fuzzy
+	'translate-edit-information' => 'Πληροφορίες σχετικά με το μήνυμα ( $1 )',
+	'translate-edit-in-other-languages' => 'Μήνυμα σε άλλες γλώσσες',
 	'translate-edit-committed' => 'Τρέχουσα μετάφραση στο λογισμικό',
 	'translate-edit-warnings' => 'Προειδοποιήσεις για ημιτελείς μεταφράσεις',
 	'translate-edit-tmsugs' => 'Προτάσεις από τη μνήμη μετάφρασης',
+	'translate-edit-tmmatch-source' => 'Μετάφραση κειμένου προέλευσης:$1',
 	'translate-edit-tmmatch' => '$1% αντιστοίχιση',
+	'translate-use-suggestion' => 'Αντικατάσταση τρέχουσας μετάφρασης με την πρόταση αυτή.',
 	'translate-edit-tab-list' => 'Λίστα μηνυμάτων',
+	'translate-edit-nopermission' => 'Χρειάζεστε άδεια για να μεταφράσετε τα μηνύματα.',
+	'translate-edit-askpermission' => 'Αίτημα για άδεια',
 	'translate-magic-pagename' => 'Μετάφραση εκτεταμένου MediaWiki',
 	'translate-magic-help' => 'Μπορείτε να μεταφράσετε ψευδώνυμα ειδικών σελίδων, μαγικές λέξεις και ονομασίες περιοχών ονομάτων.
 
@@ -6871,10 +6897,12 @@ $messages['el'] = array(
 Οι μεταφράσεις χωρίζονται με ένα κόμμα (,).
 Οι περιοχές ονομάτων μπορούν να έχουν μόνο μία μετάφραση.
 
-Στις μεταφράσεις περιοχών ονομάτων η σελίδα <code>$1 talk</code> είναι ειδική. Η μεταβλητή <code>$1</code> αντικαθίσταται με το όνομα του ιστοτόπου (για παράδειγμα <code>{{ns:project_talk}}</code>).
-Αν δεν είναι δυνατόν στη γλώσσα σας να σχηματίσετε έγκυρη έκφραση χωρίς να αλλάξετε το όνομα του ιστοτόπου, παρακαλούμε επικοινωνήστε με έναν developer.
+Οι  μεταφράσεις ονοματοχώρου σελίδων συζήτησης του εγχειρήματος <code>$1 talk</code> μπορεί να είναι πολύπλοκες. Η μεταβλητή <code>$1</code> αντικαθίσταται με το όνομα του ιστοτόπου (για παράδειγμα <code>{{ns:project_talk}}</code>).
+
+Αν δεν είναι δυνατόν στη γλώσσα σας να σχηματίσετε έγκυρη έκφραση χωρίς να αλλάξετε το όνομα του ιστοτόπου, παρακαλούμε επικοινωνήστε μαζί μας στην [[Support|υποστήριξη]].
 
 Πρέπει να είστε στην ομάδα των μεταφραστών για να αποθηκεύσετε αλλαγές.
+
 Οι αλλαγές δεν αποθηκεύονται μέχρι να κάνετε κλικ στο κουμπί την αποθήκευσης παρακάτω.', # Fuzzy
 	'translate-magic-module' => 'Ενότητα:',
 	'translate-magic-submit' => 'Προσκόμισε',
@@ -6913,7 +6941,8 @@ $messages['el'] = array(
 	'prefs-translate' => 'Επιλογές μετάφρασης',
 	'translate-pref-jsedit' => 'Ενισχυμένος επεξεργαστής μεταφράσεων (JavaScript)',
 	'right-translate' => 'Επεξεργασία χρησιμοποιώντας την διεπαφή μετάφρασης',
-	'right-translate-manage' => 'Διαχείριση ομάδων μετάφρασης', # Fuzzy
+	'right-translate-manage' => 'Διαχείριση  ομάδων μηνυμάτων',
+	'action-translate-manage' => 'διαχείριση ομάδων μηνυμάτων',
 	'right-translate-import' => 'Εισαγωγή μεταφράσεων εκτός σύνδεσης',
 	'translate-rc-translation-filter' => 'Φιλτράρισμα μεταφράσεων:',
 	'translate-rc-translation-filter-no' => 'Μην κάνεις τίποτα',
@@ -6929,7 +6958,7 @@ $messages['el'] = array(
 	'translate-statsf-width' => 'Πλάτος σε πίξελ:',
 	'translate-statsf-height' => 'Ύψος σε πίξελ:',
 	'translate-statsf-days' => 'Χρονική περίοδος σε ημέρες:',
-	'translate-statsf-start' => 'Χρονική περίοδος σε ημέρες:', # Fuzzy
+	'translate-statsf-start' => 'Ημερομηνία έναρξης:',
 	'translate-statsf-scale' => 'Λεπτομέρεια:',
 	'translate-statsf-scale-months' => 'Μήνες',
 	'translate-statsf-scale-weeks' => 'Εβδομάδες',
@@ -6985,7 +7014,7 @@ $messages['el'] = array(
 	'translate-manage-action-ignore' => 'Αγνόησε',
 	'translate-manage-action-fuzzy' => 'Εισαγωγή και ασαφοποίηση μεταφράσεων',
 	'translate-manage-nochanges' => 'Δεν υπάρχουν αλλαγές στους ορισμούς μηνυμάτων για αυτή την ομάδα.',
-	'translate-manage-fuzzy-summary' => 'Ο ορισμός άλλαξε', # Fuzzy
+	'translate-manage-fuzzy-summary' => 'Ο ορισμός του μηνύματος έχει αλλάξει',
 	'importtranslations' => 'Εισαγωγή μεταφράσεων',
 	'translate-import-from-url' => 'URL στο αρχείο:',
 	'translate-import-from-wiki' => 'Αρχείο σε αυτό το wiki:',
@@ -24809,6 +24838,7 @@ $messages['so'] = array(
 	'translate-language' => 'Luqad:',
 	'translate-ls-submit' => 'Itus tirakoobka',
 	'translate-mgs-submit' => 'Itus tirakoobka',
+	'translate-mgs-column-language' => 'Luqada',
 	'translate-dynagroup-recent-desc' => 'Qaybtaan waxa ay ku tusaysaa dhamaan turjumiddii ugu dambaysay ee luqadaan.
 Ee faaiidada badan leh saxidda luqada.',
 );
@@ -26190,6 +26220,7 @@ $messages['szl'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author Kanags
  * @author Karthi.dr
  * @author Logicwiki
  * @author Shanmugamp7
@@ -26234,7 +26265,7 @@ $messages['ta'] = array(
 	'translate-page-showing-none' => 'காட்டுவதற்கு எந்த தகவல்களும் இல்லை.',
 	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
 	'translate-next' => 'அடுத்த பக்கம்',
-	'translate-prev' => 'முந்தைய பக்கம்',
+	'translate-prev' => 'முந்திய பக்கம்',
 	'translate-page-description-legend' => 'குழுவைப் பற்றிய தகவல்',
 	'translate-page-description-hasoptional-open' => 'விருப்பத் தகவல்களை காண்பி.',
 	'translate-page-edit' => 'தொகு',
@@ -26431,7 +26462,7 @@ $messages['ta'] = array(
 	'translate-msggroupselector-search-recent' => 'அண்மைய',
 	'translate-msggroupselector-load-from-all' => 'தகவல்களை அனைத்து குழுக்களிலிருந்தும் ஏற்றவும்',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|துணைக்குழு|துணைக்குழுக்கள்}}',
-	'tux-languageselector' => 'மொழி',
+	'tux-languageselector' => 'மொழி', # Fuzzy
 	'tux-tab-all' => 'அனைத்தும்',
 	'tux-tab-untranslated' => 'மொழிபெயர்க்காதவை',
 	'tux-tab-outdated' => 'காலாவதியானது',
