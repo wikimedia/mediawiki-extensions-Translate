@@ -24,6 +24,7 @@
 		this.$container = $( container );
 		this.group = options.group;
 		this.language = options.language;
+		this.$statsBar = null;
 		this.init();
 	};
 
@@ -70,16 +71,29 @@
 		},
 
 		render: function () {
-			var $bar, i, stats, proofread, translated, fuzzy, untranslated, untranslatedCount;
+			this.$statsBar = $( '<div>' )
+				.addClass( 'tux-statsbar' )
+				.data( 'group', this.group )
+				.data( 'language', this.language );
 
-			stats = {};
+			this.$statsBar.append(
+				$( '<span>' ).addClass( 'tux-proofread' ),
+				$( '<span>' ).addClass( 'tux-translated' ),
+				$( '<span>' ).addClass( 'tux-fuzzy' ),
+				$( '<span>' ).addClass( 'tux-untranslated' )
+			);
 
-			for ( i = 0; i < mw.translate.languagestats.length; i++ ) {
-				if ( mw.translate.languagestats[i].group === this.group ) {
-					stats = mw.translate.languagestats[i];
-					break;
-				}
-			}
+			// TODO Add a tooltip for the statsbar that says the stats in words.
+			this.$container.append( this.$statsBar );
+			this.update();
+		},
+
+		update: function () {
+			var stats, proofread, translated, fuzzy, untranslated, untranslatedCount;
+
+			stats = getStatsForGroup( this.group );
+
+			this.$statsBar.data( 'total', stats.total );
 
 			proofread = 100 * stats.proofread / stats.total;
 			// Proofread messages are also translated, so remove those for
@@ -91,32 +105,18 @@
 			// Again, proofread counts are subset of translated counts
 			untranslatedCount = stats.total - stats.translated - stats.fuzzy;
 
-			$bar = $( '<div>' )
-				.addClass( 'tux-statsbar' )
-				.data( 'total', stats.total )
-				.data( 'group', this.group )
-				.data( 'language', this.language )
-				.append(
-					$( '<span>' )
-						.addClass( 'tux-proofread' )
+			this.$statsBar.find( '.tux-proofread' )
 						.data( 'proofread', stats.proofread )
-						.css( 'width', proofread + '%' ),
-					$( '<span>' )
-						.addClass( 'tux-translated' )
+						.css( 'width', proofread + '%' );
+			this.$statsBar.find( '.tux-translated' )
 						.data( 'translated', stats.translated )
-						.css( 'width', translated + '%' ),
-					$( '<span>' )
-						.addClass( 'tux-fuzzy' )
+						.css( 'width', translated + '%' );
+			this.$statsBar.find( '.tux-fuzzy' )
 						.data( 'fuzzy', stats.fuzzy )
-						.css( 'width', fuzzy + '%' ),
-					$( '<span>' )
-						.addClass( 'tux-untranslated' )
+						.css( 'width', fuzzy + '%' );
+			this.$statsBar.find( '.tux-untranslated' )
 						.data( 'untranslated', untranslatedCount )
-						.css( 'width', untranslated + '%' )
-			);
-
-			// TODO Add a tooltip for the statsbar that says the stats in words.
-			this.$container.append( $bar );
+						.css( 'width', untranslated + '%' );
 		}
 	};
 
@@ -141,4 +141,21 @@
 
 	$.fn.languagestatsbar.Constructor = LanguageStatsBar;
 
+	function getStatsForGroup ( group ) {
+		var i,
+			stats = {
+				proofread: 0,
+				total: 0,
+				fuzzy: 0,
+				translated: 0
+			};
+
+		for ( i = 0; i < mw.translate.languagestats.length; i++ ) {
+			if ( mw.translate.languagestats[i].group === group ) {
+				stats = mw.translate.languagestats[i];
+				break;
+			}
+		}
+		return stats;
+	}
 } ( mediaWiki, jQuery ) );
