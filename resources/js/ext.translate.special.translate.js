@@ -84,6 +84,7 @@
 		getDocumentationEditURL: function ( title ) {
 			var descUri = new mw.Uri( window.location.href );
 
+			descUri.path = mw.config.get( 'wgScript' );
 			descUri.query = {
 				action: 'edit',
 				title: title + '/' +  mw.config.get( 'wgTranslateDocumentationLanguageCode' )
