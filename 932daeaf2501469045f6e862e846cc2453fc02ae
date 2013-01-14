@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADhH//+7I\u003d",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-14T07:40:26Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this perhaps default to { total: 0, translated: 0, proofread: 0, fuzzy: 0 } or else checks should be added to update().",
+      "revId": "932daeaf2501469045f6e862e846cc2453fc02ae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
