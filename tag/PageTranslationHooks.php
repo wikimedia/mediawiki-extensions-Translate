@@ -367,7 +367,7 @@ class PageTranslationHooks {
 	 * Hook: EditFilterMerged (until MW 1.20)
 	 */
 	public static function tpSyntaxCheckForEditPage( $editpage, $text, &$error, $summary ) {
-		$title = $editpage->mTitle;
+		$title = $editpage->getTitle();
 		$e = self::tpSyntaxError( $title, $text );
 
 		if ( $e ) {

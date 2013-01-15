@@ -152,7 +152,7 @@ class TranslateEditAddons {
 	 * Hook: AlternateEdit
 	 */
 	public static function intro( EditPage $editpage ) {
-		$handle = new MessageHandle( $editpage->mTitle );
+		$handle = new MessageHandle( $editpage->getTitle() );
 		if ( $handle->isValid() ) {
 			$editpage->suppressIntro = true;
 			$group = $handle->getGroup();
@@ -167,7 +167,7 @@ class TranslateEditAddons {
 		}
 		$msg = wfMessage( 'translate-edit-tag-warning' )->inContentLanguage()->plain();
 
-		if ( $msg !== '' && $msg !== '-' && TranslatablePage::isSourcePage( $editpage->mTitle ) ) {
+		if ( $msg !== '' && $msg !== '-' && TranslatablePage::isSourcePage( $editpage->getTitle() ) ) {
 			$editpage->editFormTextTop .= $editpage->getArticle()->getContext()->getOutput()->parse( $msg );
 		}
 
@@ -179,7 +179,7 @@ class TranslateEditAddons {
 	 * Hook: EditPage::showEditForm:initial
 	 */
 	static function addTools( EditPage $object ) {
-		$handle = new MessageHandle( $object->mTitle );
+		$handle = new MessageHandle( $object->getTitle() );
 		if ( !$handle->isValid() ) {
 			return true;
 		}
@@ -194,7 +194,7 @@ class TranslateEditAddons {
 	 * Hook: EditPageBeforeEditButtons
 	 */
 	static function buttonHack( EditPage $editpage, &$buttons, $tabindex ) {
-		$handle = new MessageHandle( $editpage->mTitle );
+		$handle = new MessageHandle( $editpage->getTitle() );
 		if ( !$handle->isValid() ) {
 			return true;
 		}
@@ -256,7 +256,7 @@ class TranslateEditAddons {
 		$request = $context->getRequest();
 
 		$groupId = $request->getText( 'loadgroup', '' );
-		$th = new TranslationHelpers( $editpage->mTitle, $groupId );
+		$th = new TranslationHelpers( $editpage->getTitle(), $groupId );
 		if ( $editpage->firsttime && !$request->getCheck( 'oldid' ) && !$request->getCheck( 'undo' ) ) {
 			$editpage->textbox1 = (string)$th->getTranslation();
 		} else {
