@@ -350,7 +350,7 @@
 				format: 'json',
 				meta: 'messagegroups',
 				mgformat: 'tree',
-				mgprop: 'id|label|icon|priority',
+				mgprop: 'id|label|icon|priority|prioritylangs|priorityforce',
 				// Keep this in sync with css!
 				mgiconsize: '32'
 			};
@@ -378,15 +378,11 @@
 		 * @param {Array} msgGroups - array of message group objects to add.
 		 */
 		addGroupRows: function ( parentGroupId, msgGroups ) {
-			var groupSelector = this,
-				messagegroup,
-				messageGroups,
-				$msgGroupRows,
-				$msgGroupList,
-				$parent;
-
-			$msgGroupList = groupSelector.$menu.find( '.ext-translate-msggroup-list' );
-			messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
+			var $msgGroupRows,
+				$parent,
+				messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' ),
+				$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' ),
+				targetLanguage = $( '.ext-translate-msggroup-selector' ).data( 'language' );
 
 			if ( msgGroups ) {
 				messageGroups = msgGroups;
@@ -402,13 +398,19 @@
 
 			$msgGroupRows = [];
 
-			$.each( messageGroups, function ( index ) {
-				messagegroup = messageGroups[index];
-				/* Hide discouraged groups from the selector, this is the only
-				 * priority value currently supproted. */
-				if ( messagegroup.priority === 'discouraged' ) {
+			$.each( messageGroups, function ( index, messagegroup ) {
+				/* Hide from the selector:
+				 * - discouraged groups (the only priority value currently supported).
+				 * - groups that are recommended for other languages.
+				 */
+				if ( messagegroup.priority === 'discouraged' ||
+					( messagegroup.priorityforce &&
+						messagegroup.prioritylangs &&
+						$.inArray( targetLanguage, messagegroup.prioritylangs ) === -1 )
+				) {
 					return;
 				}
+
 				$msgGroupRows.push( prepareMessageGroupRow( messagegroup ) );
 			} );
 
@@ -576,5 +578,4 @@
 			timer = setTimeout( callback, milliseconds );
 		};
 	} () );
-
 }( jQuery, mediaWiki ) );

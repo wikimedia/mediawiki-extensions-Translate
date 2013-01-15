@@ -106,8 +106,9 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 		$a = array();
 
+		$groupId = $g->getId();
 		if ( isset( $props['id'] ) ) {
-			$a['id'] = $g->getId();
+			$a['id'] = $groupId;
 		}
 
 		if ( isset( $props['label'] ) ) {
@@ -143,8 +144,12 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		}
 
 		if ( isset( $props['prioritylangs'] ) ) {
-			$prioritylangs = TranslateMetadata::get( $g->getId(), 'prioritylangs' );
+			$prioritylangs = TranslateMetadata::get( $groupId, 'prioritylangs' );
 			$a['prioritylangs'] = $prioritylangs ? explode( ',', $prioritylangs ) : false;
+		}
+
+		if ( isset( $props['priorityforce'] ) ) {
+			$a['priorityforce'] = ( TranslateMetadata::get( $groupId, 'priorityforce' ) === 'on' );
 		}
 
 		wfRunHooks( 'TranslateProcessAPIMessageGroupsProperties', array( &$a, $props, $params, $g ) );
@@ -285,6 +290,7 @@ TEXT;
 			'icon'           => ' icon          - Include urls to icon of the group',
 			'priority'       => ' priority      - Include priority status like discouraged',
 			'prioritylangs'  => ' prioritylangs - Include prefered languages. If not set, this returns false',
+			'priorityforce'  => ' priorityforce - Include priority status - is the priority languages setting forced',
 		);
 		wfRunHooks( 'TranslateGetAPIMessageGroupsPropertyDescs', array( &$properties ) );
 		return $properties;
