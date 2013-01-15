@@ -417,8 +417,8 @@
 			if ( !parentGroupId ) {
 				$msgGroupList.append( $msgGroupRows );
 			} else {
-				$parent = $msgGroupList.find( '.ext-translate-msggroup-item[data-msggroupid=' +
-					parentGroupId + ']' );
+				$parent = $msgGroupList.find( '.ext-translate-msggroup-item[data-msggroupid="' +
+					parentGroupId + '"]' );
 
 				if ( $parent.length ) {
 					$parent.after( $msgGroupRows );
