@@ -249,10 +249,12 @@ $messages['qqq'] = array(
 	'action-pagetranslation' => '{{doc-action|pagetranslation}})',
 	'tpt-desc' => '{{desc}}',
 	'tpt-section' => '[[File:Page_translation_mark_view.png|thumb|Page translation]]
-<code>$1</code> is the number of the unit. A screenshot of the translation administration page is available.',
+* $1 - the identifier of the unit, or the string "Page display title"
+A screenshot of the translation administration page is available.',
 	'tpt-section-new' => '[[File:Page_translation_mark_view.png|thumb|Page translation]]
-<code>$1</code> is the number of the unit. A screenshot of the translation administration page is available.',
-	'tpt-section-deleted' => '* $1 - the number of the unit
+* $1 - the identifier of the unit, or the string "Page display title"
+A screenshot of the translation administration page is available.',
+	'tpt-section-deleted' => '* $1 - the identifier of the unit, or the string "Page display title"
 
 See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-template' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
@@ -284,7 +286,9 @@ See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-other-pages-title' => 'Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-discouraged-pages-title' => 'Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-new-pages' => '$1 is the number of pages in the following list. [[Image:Page translation admin view.png|thumb|Admin view]]',
-	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton. $1 is the number of pages [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton.
+* $1 - the number of pages
+[[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-other-pages' => '$1 is the number of pages in the following list. [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-discouraged-pages' => '$1 is the number of pages in the following list. [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-select-prioritylangs' => 'Label for the input box to enter preferred languages',
@@ -5249,16 +5253,16 @@ $messages['ja'] = array(
 	'right-pagetranslation' => 'ページの版を翻訳対象に指定',
 	'action-pagetranslation' => '翻訳対象ページの管理',
 	'tpt-desc' => '通常ページの本文を翻訳するための拡張機能',
-	'tpt-section' => '翻訳単位$1',
+	'tpt-section' => '翻訳単位 $1',
 	'tpt-section-new' => '新しい翻訳単位。
 名前: $1',
-	'tpt-section-deleted' => '翻訳単位$1',
+	'tpt-section-deleted' => '翻訳単位 $1',
 	'tpt-template' => 'ページの雛型',
 	'tpt-templatediff' => 'このページの雛型が変更されました。',
 	'tpt-diff-old' => '前のテキスト',
 	'tpt-diff-new' => '新しいテキスト',
 	'tpt-submit' => 'この版を翻訳対象に指定',
-	'tpt-sections-oldnew' => '新規および既存の翻訳単位',
+	'tpt-sections-oldnew' => '新規または既存の翻訳単位',
 	'tpt-sections-deleted' => '削除された翻訳単位',
 	'tpt-sections-template' => '翻訳ページの雛型',
 	'tpt-action-nofuzzy' => '翻訳を失効させない',
@@ -5271,7 +5275,7 @@ $messages['ja'] = array(
 	'tpt-saveok' => 'ページ [[$1]] は翻訳対象に指定されており、$2 {{PLURAL:$2|個の翻訳単位}}を含んでいます。
 このページを<span class="plainlinks">[$3 翻訳]</span>できます。',
 	'tpt-badsect' => '「$1」は翻訳単位$2の名前として有効ではありません。',
-	'tpt-showpage-intro' => '以下は、新規・既存・削除済みの翻訳単位の一覧です。
+	'tpt-showpage-intro' => '以下は、新規・既存の、または削除された翻訳単位の一覧です。
 この版を翻訳対象に指定する前に、翻訳単位の変更を最小限にすることで不要な翻訳作業を回避できないか確認してください。',
 	'tpt-mark-summary' => 'この版を翻訳対象に指定しました',
 	'tpt-edit-failed' => 'ページを更新できませんでした: $1',

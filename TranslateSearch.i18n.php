@@ -136,6 +136,22 @@ $messages['ja'] = array(
 	'tux-sst-nosolr-body' => 'このウィキには翻訳の検索サービスはありません。',
 );
 
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'searchtranslations' => '번역 찾기',
+	'tux-sst-edit' => '메시지 편집',
+	'tux-sst-search' => '찾기',
+	'tux-sst-search-ph' => '번역 찾기',
+	'tux-sst-count' => '{{PLURAL:$1|결과 한 개를 찾았습니다|결과 $1개를 찾았습니다}}',
+	'tux-sst-facet-language' => '언어',
+	'tux-sst-facet-group' => '메시지 그룹',
+	'tux-sst-facet-orphan' => '(외톨이)',
+	'tux-sst-nosolr-title' => '찾기를 사용할 수 없음',
+	'tux-sst-nosolr-body' => '이 위키는 번역 찾기 서비스가 없습니다.',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
