@@ -45,7 +45,9 @@ class TuxMessageTable extends MessageTable {
 			$original = $m->definition();
 			$translation = $m->translation();
 			// Remove !!FUZZY!! from translation if present.
-			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
+			if ( $translation !== null ) {
+				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
+			}
 
 			$linkAttribs = array();
 			$query = array( 'action' => 'edit' ) + $this->editLinkParams;
