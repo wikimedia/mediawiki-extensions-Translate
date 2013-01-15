@@ -24,6 +24,24 @@
 		}
 	} );
 
+	function messageFilterOverflowHandler () {
+		var actualWidth = 0;
+
+		// Calculate the total width required for the filters
+		$( '.row.tux-message-selector >li' ).each( function () {
+			actualWidth += $( this ).outerWidth( true );
+		} );
+
+		// Grid row has a min width. After that scrollbars will appear.
+		// We are checking whether the filters is wider than the current grid row width
+		if ( actualWidth >= parseInt( $( '.row' ).width(), 10 ) ) {
+			$( '.tux-message-selector .more ul' ) // Overflow menu
+				.prepend( $( '.row.tux-message-selector > li.column:last' ).prev() );
+			// See if more items to be pushed to the overflow menu
+			messageFilterOverflowHandler() ;
+		}
+	}
+
 	$( 'document' ).ready( function () {
 		$( '.mw-translate-messagereviewbutton' ).click( function () {
 			var $b, successFunction, failFunction, params;
@@ -159,6 +177,10 @@
 			// Appear callback need to be called more than once.
 			one: false
 		} );
+
+		messageFilterOverflowHandler();
 	} );
+
+	$( window ).resize( messageFilterOverflowHandler );
 
 }( jQuery, mediaWiki ) );
