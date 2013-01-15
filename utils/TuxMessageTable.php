@@ -44,6 +44,8 @@ class TuxMessageTable extends MessageTable {
 			$title = $titleMap[$key];
 			$original = $m->definition();
 			$translation = $m->translation();
+			// Remove !!FUZZY!! from translation if present.
+			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 
 			$linkAttribs = array();
 			$query = array( 'action' => 'edit' ) + $this->editLinkParams;
@@ -79,7 +81,6 @@ class TuxMessageTable extends MessageTable {
 					array( 'class' => 'tux-warning tux-status-fuzzy' ),
 					$this->msg( 'tux-status-fuzzy' )->text()
 				);
-				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 				$itemClass = 'fuzzy';
 			} elseif ( is_array( $reviewers ) && in_array( $userId, $reviewers ) ) {
 				$status = Html::element( 'span',
