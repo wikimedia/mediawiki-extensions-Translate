@@ -189,6 +189,11 @@
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+.tux-action-bar.floating {
+	position: fixed;
+	bottom: 0;
+}
+
 .tux-action-bar .tux-statsbar {
 	position: relative;
 	top: 30px;
