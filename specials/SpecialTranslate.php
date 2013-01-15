@@ -377,7 +377,7 @@ class SpecialTranslate extends SpecialPage {
 	protected function messageSelector() {
 		$output = Html::openElement( 'ul', array( 'class' => 'row tux-message-selector' ) );
 		$tabs = array(
-			'tux-tab-all' => null,
+			'tux-tab-all' => '',
 			'tux-tab-untranslated' => '!translated',
 			//'Hardest',
 			'tux-tab-outdated' => 'fuzzy',
