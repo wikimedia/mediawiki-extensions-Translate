@@ -182,6 +182,42 @@
 		messageFilterOverflowHandler();
 	} );
 
-	$( window ).resize( messageFilterOverflowHandler );
+	$( window ).resize( function () {
+		messageFilterOverflowHandler();
+		$( '.tux-action-bar' ).width( $( '.tux-messagelist' ).width() );
+	} );
+
+	$( window ).scroll( function () {
+		delay( messageListScrollHandler, 300 );
+	} );
+
+	function messageListScrollHandler () {
+		var $window = $( window ),
+			$messageList = $( '.tux-messagelist' ),
+			$tuxActionBar = $( '.tux-action-bar' ),
+			isFloating = $tuxActionBar.hasClass( 'floating' ),
+			needFloat = $window.scrollTop() + $window.height() < ( $messageList
+				.offset().top + $messageList.height() ),
+			needStick = $window.scrollTop() + $window.height() > (
+				$messageList.offset().top + $messageList.height() + $tuxActionBar.height() );
+
+		if ( !isFloating && needFloat ) {
+			$tuxActionBar.addClass( 'floating' );
+			$tuxActionBar.width( $messageList.width() );
+		} else if ( isFloating && needStick ) {
+			$tuxActionBar.removeClass( 'floating' );
+		}else if ( isFloating && needFloat ) {
+			$tuxActionBar.css('left', $messageList.offset().left - $window.scrollLeft() );
+		}
+	}
+
+	var delay = ( function () {
+		var timer = 0;
+
+		return function ( callback, milliseconds ) {
+			clearTimeout( timer );
+			timer = setTimeout( callback, milliseconds );
+		};
+	} () );
 
 }( jQuery, mediaWiki ) );
