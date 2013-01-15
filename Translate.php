@@ -264,6 +264,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-editor-doc-editor-title',
 		'tux-editor-doc-editor-save',
 		'tux-editor-doc-editor-cancel',
+		'tux-editor-edit-doc-new-window',
 		'translate-edit-nopermission',
 		'translate-edit-askpermission',
 		'tux-editor-outdated-warning',

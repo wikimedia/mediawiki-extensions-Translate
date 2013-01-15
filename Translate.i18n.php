@@ -466,6 +466,7 @@ Most useful for the proofreading tasks.',
 	'tux-editor-doc-editor-title' => 'Edit the documentation for this message',
 	'tux-editor-doc-editor-save' => 'Save documentation',
 	'tux-editor-doc-editor-cancel' => 'Cancel',
+	'tux-editor-edit-doc-new-window' => 'Edit in a new window',
 	'tux-messagetable-more-messages' => '$1 more {{PLURAL:$1|message|messages}}',
 	'tux-messagetable-loading-messages' => 'Loading {{PLURAL:$1|message|messages}}...'
 );
@@ -924,6 +925,8 @@ Pressing the button clears all the messages that were translated from the page.'
 	'tux-editor-doc-editor-title' => 'A heading that appears above the message documentation editor',
 	'tux-editor-doc-editor-save' => 'A button that saves the documentation string',
 	'tux-editor-doc-editor-cancel' => 'A Cancel button that doesn\'t save the documentation string',
+	'tux-editor-edit-doc-new-window' => 'A title for a link that appears near the inline message documentation editor.
+The link opens a full-screen editor for the message documentation in a new browser window or tab.',
 	'tux-messagetable-more-messages' => 'Text showing number of messages to be loaded in translation message table
 * $1 - number of messages',
 	'tux-messagetable-loading-messages' => 'A progress text saying messages are being loaded

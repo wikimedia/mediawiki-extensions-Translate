@@ -519,8 +519,7 @@
 			var $infoColumnBlock = this.$editor.find( '.infocolumn-block' ),
 				$editColumn = this.$editor.find( '.editcolumn' ),
 				$messageDescEditor = $infoColumnBlock.find( '.message-desc-editor' ),
-				$messageDesc = $infoColumnBlock.find( '.message-desc' ),
-				$messageDescControl = $infoColumnBlock.find( '.message-desc-control' );
+				$messageDescViewer = $infoColumnBlock.find( '.message-desc-viewer' );
 
 			$infoColumnBlock
 				.removeClass( 'five' )
@@ -529,9 +528,7 @@
 				.removeClass( 'seven' )
 				.addClass( 'five' );
 
-			$messageDesc.hide();
-			$messageDescControl.hide();
-
+			$messageDescViewer.hide();
 			$messageDescEditor.show();
 		},
 
@@ -539,8 +536,7 @@
 			var $infoColumnBlock = this.$editor.find( '.infocolumn-block' ),
 				$editColumn = this.$editor.find( '.editcolumn' ),
 				$messageDescEditor = $infoColumnBlock.find( '.message-desc-editor' ),
-				$messageDesc = $infoColumnBlock.find( '.message-desc' ),
-				$messageDescControl = $infoColumnBlock.find( '.message-desc-control' );
+				$messageDescViewer = $infoColumnBlock.find( '.message-desc-viewer' );
 
 			$infoColumnBlock
 				.removeClass( 'seven' )
@@ -550,15 +546,13 @@
 				.addClass( 'seven' );
 
 			$messageDescEditor.hide();
-
-			$messageDesc.show();
-			$messageDescControl.show();
+			$messageDescViewer.show();
 		},
 
 		prepareInfoColumn: function () {
 			var $messageDescEditor,
 				$messageDescSaveButton, $messageDescCancelButton,
-				$messageDesc, $messageDescControl,
+				$messageDescViewer,
 				$infoColumn = $( '<div>' ).addClass( 'infocolumn' ),
 				translateEditor = this;
 
@@ -580,6 +574,7 @@
 
 					$messageDescEditor = $( '<div>' )
 						.addClass( 'row text-left message-desc-editor' )
+						.hide()
 						.append(
 							$( '<div>' )
 								.addClass( 'row text-left message-desc-editor-title' )
@@ -590,33 +585,39 @@
 								.append(
 									$messageDescSaveButton,
 									$messageDescCancelButton
+								),
+							$( '<div>' )
+								.addClass( 'row text-left message-desc-control' )
+								.append( $( '<a>' )
+									.addClass( 'message-desc-edit' )
+									.attr( {
+										href: mw.translate.getDocumentationEditURL(
+											this.$editTrigger.data( 'title' ).replace( /\/[a-z\-]+$/, '' )
+										),
+										target: '_blank'
+									} )
+									.text( mw.msg( 'tux-editor-edit-doc-new-window' ) )
 								)
-						)
-						.hide();
+						);
 				}
 
-				$messageDesc = $( '<div>' )
-					.addClass( 'row text-left message-desc' )
-					.hide();
-
-				$messageDescControl = $( '<div>' )
-					.addClass( 'row text-left message-desc-control' )
-					.append( $( '<a>' )
-						.addClass( 'text-left message-desc-edit' )
-						/*.attr( {
-							href: mw.translate.getDocumentationEditURL(
-								this.$editTrigger.data( 'title' ).replace( /\/[a-z\-]+$/, '' )
-							),
-							target: '_blank'
-						} )*/
-						.on( 'click', $.proxy( this.showDocumentationEditor, this ) )
-						.hide()
+				$messageDescViewer = $( '<div>' )
+					.addClass( 'message-desc-viewer' )
+					.hide()
+					.append(
+						$( '<div>' )
+							.addClass( 'row text-left message-desc' ),
+						$( '<div>' )
+							.addClass( 'row text-left message-desc-control' )
+							.append( $( '<a>' )
+								.addClass( 'text-left message-desc-edit' )
+								.on( 'click', $.proxy( this.showDocumentationEditor, this ) )
+							)
 					);
 
 				$infoColumn.append(
 					$messageDescEditor,
-					$messageDesc,
-					$messageDescControl
+					$messageDescViewer
 				);
 			}
 
@@ -724,6 +725,7 @@
 			var $descEditLink,
 				documentationDir,
 				expand,
+				$messageDescViewer,
 				$messageDoc,
 				readMore,
 				$readMore = null;
@@ -732,8 +734,9 @@
 				return;
 			}
 
-			$descEditLink = this.$editor.find( '.message-desc-edit' );
-			$messageDoc = this.$editor.find( '.message-desc' );
+			$messageDescViewer = this.$editor.find( '.message-desc-viewer' );
+			$descEditLink = $messageDescViewer.find( '.message-desc-edit' );
+			$messageDoc = $messageDescViewer.find( '.message-desc' );
 
 			// Display the documentation only if it's not empty and
 			// documentation language is configured
@@ -780,7 +783,7 @@
 						.text( mw.msg( 'tux-editor-message-desc-more' ) )
 						.click( readMore );
 
-					this.$editor.find( '.message-desc-control' )
+					$messageDescViewer.find( '.message-desc-control' )
 						.prepend( $readMore );
 
 					$messageDoc.addClass('long compact').on( 'hover', expand );
@@ -790,8 +793,7 @@
 				$descEditLink.text( mw.msg( 'tux-editor-add-desc' ) );
 			}
 
-			$messageDoc.show();
-			$descEditLink.show();
+			$messageDescViewer.show();
 		},
 
 		/**
