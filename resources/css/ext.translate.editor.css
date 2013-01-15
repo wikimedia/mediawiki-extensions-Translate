@@ -149,6 +149,7 @@
 
 .infocolumn-block .infocolumn .message-desc-editor textarea {
 	height: 100px;
+	overflow: auto;
 }
 
 .infocolumn-block .infocolumn .message-desc {

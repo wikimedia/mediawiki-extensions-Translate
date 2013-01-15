@@ -533,6 +533,7 @@
 			$messageDescControl.hide();
 
 			$messageDescEditor.show();
+			$messageDescEditor.find( 'textarea' ).focus();
 		},
 
 		hideDocumentationEditor: function () {
@@ -567,6 +568,7 @@
 					$messageDescSaveButton = $( '<button>' )
 						.text( mw.msg( 'tux-editor-doc-editor-save' ) )
 						.addClass( 'blue button tux-editor-save-button' )
+						.prop( 'disabled', true )
 						.on( 'click', function () {
 							translateEditor.saveDocumentation();
 						} );
@@ -581,10 +583,13 @@
 					$messageDescEditor = $( '<div>' )
 						.addClass( 'row text-left message-desc-editor' )
 						.append(
-							$( '<div>' )
-								.addClass( 'row text-left message-desc-editor-title' )
-								.text( mw.msg( 'tux-editor-doc-editor-title' ) ),
-							$( '<textarea>' ),
+							$( '<textarea>' )
+								.attr( {
+									placeholder: mw.msg( 'tux-editor-doc-editor-placeholder' )
+								} )
+								.on( 'keyup keydown paste', function () {
+									$messageDescSaveButton.prop( 'disabled', false );
+								} ),
 							$( '<div>' )
 								.addClass( 'row' )
 								.append(
