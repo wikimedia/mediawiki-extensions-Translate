@@ -135,7 +135,7 @@
 										$( '<span>' )
 											.addClass( 'tux-list-translation' )
 											.attr( 'lang', $( '.tux-messagelist' ).data( 'targetlangcode' ) )
-											.text( message.translation )
+											.text( message.translation || '' )
 										),
 								$( '<div>' )
 									.addClass( 'two columns tux-list-status text-center' )
