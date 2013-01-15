@@ -58,7 +58,8 @@
 		changeGroup: function ( group ) {
 			var uri = new mw.Uri( window.location.href );
 			uri.extend( {
-				group: group
+				group: group,
+				filter: mw.Uri().query.filter || '!translated'
 			} );
 			window.location.href = uri.toString();
 		},
