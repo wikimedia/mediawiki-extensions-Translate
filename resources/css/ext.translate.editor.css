@@ -142,6 +142,15 @@
 	bottom: 50%;
 }
 
+.infocolumn-block .infocolumn .message-desc-editor {
+	padding: 5px 0;
+	margin-right: 5px;
+}
+
+.infocolumn-block .infocolumn .message-desc-editor textarea {
+	height: 100px;
+}
+
 .infocolumn-block .infocolumn .message-desc {
 	font-size: 16px;
 	padding: 5px 0;
