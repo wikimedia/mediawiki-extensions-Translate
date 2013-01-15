@@ -77,9 +77,9 @@
 
 		/**
 		 * Get the documentation edit URL for a title
-		 * @param {String} title message title
 		 *
-		 * @returns{String} URL for editing the documentation
+		 * @param {String} title Message title with namespace
+		 * @return {String} URL for editing the documentation
 		 */
 		getDocumentationEditURL: function ( title ) {
 			var descUri = new mw.Uri( window.location.href );
