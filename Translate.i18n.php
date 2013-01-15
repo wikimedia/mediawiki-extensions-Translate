@@ -463,7 +463,7 @@ Most useful for the proofreading tasks.',
 	'tux-editor-clear-translated' => 'Hide translated',
 	'tux-editor-outdated-warning' => 'This translation may need to be updated.',
 	'tux-editor-outdated-warning-diff-link' => 'Show differences',
-	'tux-editor-doc-editor-title' => 'Edit the documentation for this message',
+	'tux-editor-doc-editor-placeholder' => 'Message documentation',
 	'tux-editor-doc-editor-save' => 'Save documentation',
 	'tux-editor-doc-editor-cancel' => 'Cancel',
 	'tux-messagetable-more-messages' => '$1 more {{PLURAL:$1|message|messages}}',
@@ -921,7 +921,7 @@ See also:
 * {{msg-mw|Tux-editor-message-desc-more}}',
 	'tux-editor-clear-translated' => 'Label for the button that appears at the footer of the translation editor.
 Pressing the button clears all the messages that were translated from the page.',
-	'tux-editor-doc-editor-title' => 'A heading that appears above the message documentation editor',
+	'tux-editor-doc-editor-placeholder' => 'A placeholder that appears in the message documentation editor when it\'s empty',
 	'tux-editor-doc-editor-save' => 'A button that saves the documentation string',
 	'tux-editor-doc-editor-cancel' => 'A Cancel button that doesn\'t save the documentation string',
 	'tux-messagetable-more-messages' => 'Text showing number of messages to be loaded in translation message table
