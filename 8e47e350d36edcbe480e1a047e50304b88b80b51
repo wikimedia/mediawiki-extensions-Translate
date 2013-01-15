@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADhH//9eg\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-15T14:51:19Z",
+      "side": 1,
+      "message": "use \u0027input propertychange events",
+      "revId": "8e47e350d36edcbe480e1a047e50304b88b80b51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
