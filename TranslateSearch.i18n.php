@@ -104,6 +104,22 @@ $messages['gl'] = array(
 	'tux-sst-nosolr-body' => 'Este wiki non dispón dun servizo de procura de traducións.',
 );
 
+/** Hebrew (עברית)
+ * @author Amire80
+ */
+$messages['he'] = array(
+	'searchtranslations' => 'חיפוש בתרגומים',
+	'tux-sst-edit' => 'עריכת הודעה',
+	'tux-sst-search' => 'חיפוש',
+	'tux-sst-search-ph' => 'חיפוש בתרגומים',
+	'tux-sst-count' => '{{PLURAL:$1|נמצאה תוצאה אחת|נמצאו $1 תוצאות}}',
+	'tux-sst-facet-language' => 'שפות',
+	'tux-sst-facet-group' => 'קבוצות הודעות',
+	'tux-sst-facet-orphan' => '(יתומים)',
+	'tux-sst-nosolr-title' => 'החיפוש אינו זמין',
+	'tux-sst-nosolr-body' => 'בוויקי הזה אין שירות חיפוש בתרגומים.',
+);
+
 /** Italian (italiano)
  * @author Beta16
  */
