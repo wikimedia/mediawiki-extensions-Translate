@@ -31,13 +31,6 @@ class FCFontFinder {
 	}
 
 	/**
-	 * @deprecated Call findFile
-	 */
-	public static function find( $code ) {
-		return self::findFile( $code );
-	}
-
-	/**
 	 * Searches for suitable font family in the system.
 	 * @param $code \string Language code.
 	 * @return bool|string Name of font family, false on failure
