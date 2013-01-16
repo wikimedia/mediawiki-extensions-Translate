@@ -190,7 +190,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			/**
 			 * @var TMessage $m
 			 */
-			$author = $m->author();
+			$author = $m->getProperty( 'last-translator-text' );
 
 			if ( $author === null ) {
 				continue;
