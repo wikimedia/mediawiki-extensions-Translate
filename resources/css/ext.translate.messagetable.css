@@ -193,6 +193,7 @@
 	border-top: 1px solid #DDD;
 	position: fixed;
 	bottom: 0;
+	z-index: 101;
 }
 
 .tux-action-bar .tux-statsbar {
