@@ -59,12 +59,6 @@ abstract class TMessage {
 	abstract public function translation();
 
 	/**
-	 * Get the last translator of the message.
-	 * @return string|null
-	 */
-	abstract public function author();
-
-	/**
 	 * Set the committed translation.
 	 * @param $text \string
 	 */
@@ -163,14 +157,6 @@ class ThinMessage extends TMessage {
 		return Revision::getRevisionText( $this->row );
 	}
 
-	/// Deprecated, use getProperty( 'last-translator-text' )
-	public function author() {
-		if ( !isset( $this->row ) ) {
-			return null;
-		}
-		return $this->row->rev_user_text;
-	}
-
 	// Re-implemented
 	public function getProperty( $key ) {
 		if ( !isset( self::$propertyMap[$key] ) ) {
@@ -214,7 +200,4 @@ class FatMessage extends TMessage {
 		}
 		return $this->translation;
 	}
-
-	// Not implemented
-	public function author() {}
 }
