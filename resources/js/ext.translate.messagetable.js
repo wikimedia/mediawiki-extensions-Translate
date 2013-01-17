@@ -76,8 +76,8 @@
 		} );
 
 		$( '.tux-messagetable-loader' ).appear( function () {
-			var messagegroup, pageSize, targetLanguage, sourceLanguage,
-				remaining, $messageList,
+			var messagegroup, pageSize, remaining, $messageList,
+				targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
 				$this = $( this ),
 				offset = $this.data( 'offset' );
 
@@ -89,8 +89,11 @@
 			pageSize = $this.data( 'pagesize' );
 			remaining = $this.data( 'remaining' );
 			$messageList = $( '.tux-messagelist' );
+
 			sourceLanguage = $messageList.data( 'sourcelangcode' );
+			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
 			targetLanguage = $messageList.data( 'targetlangcode' );
+			targetLanguageDir = $.uls.data.getDir( targetLanguage );
 
 			$.when(
 				mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize )
@@ -133,11 +136,17 @@
 								.append(
 									$( '<span>' )
 										.addClass( 'tux-list-source' )
-										.attr( 'lang', sourceLanguage )
+										.attr( {
+											lang: sourceLanguage,
+											dir: sourceLanguageDir
+										} )
 										.text( message.definition ),
 									$( '<span>' )
 										.addClass( 'tux-list-translation' )
-										.attr( 'lang', targetLanguage )
+										.attr( {
+											lang: targetLanguage,
+											dir: targetLanguageDir
+										} )
 										.text( message.translation || '' )
 									),
 							$( '<div>' )
