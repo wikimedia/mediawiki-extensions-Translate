@@ -203,6 +203,7 @@ $specialPageAliases['de'] = array(
 	'MyLanguage' => array( 'Meine_Sprache' ),
 	'PageTranslationDeletePage' => array( 'Löschseite_für_Übersetzungen' ),
 	'AggregateGroups' => array( 'Zusammenfassende_Nachrichtengruppen' ),
+	'SearchTranslations' => array( 'Übersetzungen_suchen' ),
 );
 
 /** Zazaki (Zazaki) */

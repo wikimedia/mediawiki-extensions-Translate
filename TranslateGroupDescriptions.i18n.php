@@ -283,12 +283,10 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-flaggedrevs' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньня MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньня MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Мэта-група, якая ўтрымлівае ўсе паведамленьні для ўсіх пашырэньняў [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-socialprofile' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў зьвязаных з пашырэньнем [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньня MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньня MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для падтрымліваемых пашырэньняў MediaWiki, выкарыстоўваемых [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для падтрымліваемых пашырэньняў MediaWiki, выкарыстоўваемых [http://wikimedia.org/ фундацыяй «Вікімэдыя»]',
 	'translate-group-desc-wikimediaextensions-main' => 'Мэта-група паведамленьняў, якая утрымлівае ўсе паведамленьні для пашырэньняў MediaWiki, якія патрабуюць перакладу для [http://meta.wikimedia.org/wiki/Language_committee моўнага камітэту] Wikimedia',
-	'translate-group-desc-uniwiki' => 'Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў зьвязаных з [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Група мэта-паведамленьняў, якая ўтрымлівае ўсе паведамленьні для пашырэньняў, якія адносяцца да [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Усе старонкі, якія магчыма перакласьці',
 	'bw-desc-freecol' => 'Перад тым, як перакладаць FreeCol на Вашую мову, калі ласка, прачытайце [[Translating:FreeCol]]. Freecol выкарыстоўвае ліцэнзію GPL.',
@@ -307,12 +305,10 @@ $messages['be-tarask'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' — бібліятэка на Python для стварэньня PDF-дакумэнтаў з артыкулаў MediaWiki, прааналізаваных бібліятэкай mwlib.
 
 Для дадатковай інфармацыі, калі ласка, глядзіце [[mw:Extension:PDF_Writer]] і http://code.pediapress.com/wiki/wiki/mwlibrl.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] — кліент электроннай пошты, напісаны на PHP. Калі ласка, паведамляйце пра любыя праблемы на [[Support|Падтрымку]].',
-	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] — афляйн-чытальнік Вікіпэдыі',
+	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] — аўтаномы чытальнік Вікіпэдыі',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] — адкрытая мэдыя-плятформа',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Гэтыя паведамленьні зьяўляюцца часткай шаблёну вэрыфікацыі праз электронную пошту [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Гэтыя паведамленьні зьяўляюцца часткай праекту [[Translating:Open Images|Open Images]]',
-	'bw-desc-openlayers' => 'OpenLayers — генэратар дынамічных мапаў з адкрытым кодам. Калі ласка, паведамляйце пра ўсе праблемы на [[support|старонцы падтрымкі]].',
 	'bw-desc-openstreetmap' => 'Група паведамленьняў для ўсіх паведамленьняў [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Гэтая група зьмяшчае паведамленьні для [[Translating:Open Street Map|Open Street Map]].
 Глядзіце [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} старонку Unicode CLDR] зь інструкцыяй фармаваньня множнага ліку.',
@@ -324,8 +320,6 @@ $messages['be-tarask'] = array(
 	'translate-group-desc-tsint' => 'Група паведамленьняў [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], сыстэмы перакладаў для [http://tolserver.org сэрвэра інструмэнтаў] (<span class="plainlinks">[[Translating talk:Toolserver|падтрымка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition тэхнічныя дэталі]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дазваляе хутка знайсьці аўтараў пэўнай старонкі ці выказваньня ў праектах Фундацыі «Вікімэдыя».',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] — праект для аўтаномнага чытаньня тэкставай вэрсіі Вікіпэдыі для мабільных прылад.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] — крос-плятформавае мабільнае і пляншэтнае дастасаваньне для чытаньня і рэдагаваньня Вікіпэдыі',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] — крос-плятформавая праграма для тэлефонаў і пляншэтаў для чытаньня і рэдагаваньня Вікіслоўніка',
 );
 
 /** Bulgarian (български)

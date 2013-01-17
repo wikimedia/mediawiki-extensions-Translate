@@ -3553,6 +3553,9 @@ $1',
 	'tux-editor-clear-translated' => 'Схаваць перакладзеныя',
 	'tux-editor-outdated-warning' => 'Гэтаму перакладу, магчыма, патрабуецца абнаўленьне.',
 	'tux-editor-outdated-warning-diff-link' => 'Паказаць розьніцу',
+	'tux-editor-doc-editor-title' => 'Рэдагаваньне дакумэнтацыі для гэтага паведамленьня',
+	'tux-editor-doc-editor-save' => 'Захаваць дакумэнтацыю',
+	'tux-editor-doc-editor-cancel' => 'Скасаваць',
 	'tux-messagetable-more-messages' => 'Яшчэ $1 {{PLURAL:$1|паведамленьне|паведамленьні|паведамленьняў}}',
 	'tux-messagetable-loading-messages' => 'Загрузка {{PLURAL:$1|паведамленьня|паведамленьняў}}...',
 );
@@ -6874,6 +6877,7 @@ $messages['ee'] = array(
  * @author Glavkos
  * @author Lou
  * @author Omnipaedista
+ * @author Protnet
  * @author ZaDiak
  * @author Περίεργος
  */
@@ -6916,7 +6920,7 @@ $messages['el'] = array(
 	'translate-page-description-legend' => 'Πληροφορίες σχετικά με την ομάδα',
 	'translate-page-description-hasoptional' => 'Αυτή η ομάδα μηνυμάτων περιέχει προαιρετικά μηνύματα.
 Τα προαιρετικά μηνύματα θα πρέπει να μεταφράζονται μόνο όταν η γλώσσα σας  έχει ειδικές απαιτήσεις όπως να μη  χρησιμοποιείτε κενά διαστήματα ή η μεταγλώττιση  κατάλληλων ονομάτων. $1',
-	'translate-page-description-hasoptional-open' => 'Εμφάνιση προαιρετικών μηνυμάτων',
+	'translate-page-description-hasoptional-open' => 'Εμφάνιση προαιρετικών μηνυμάτων.',
 	'translate-page-edit' => 'επεξεργασία',
 	'translate-ext-url' => '<hr />Ιστοσελίδα: $1',
 	'translate-optional' => '(προαιρετικά)',
@@ -6927,12 +6931,12 @@ $messages['el'] = array(
 	'translate-edit-translation' => 'Μετάφραση',
 	'translate-edit-contribute' => 'συμβάλλετε',
 	'translate-edit-no-information' => "''Αυτό το μήνυμα δεν έχει τεκμηρίωση. Αν γνωρίζετε πού ή πώς χρησιμοποιείται αυτό το μήνυμα, μπορείτε να βοηθήσετε άλλους μεταφραστές προσθέτοντας τεκμηρίωση σε αυτό.''",
-	'translate-edit-information' => 'Πληροφορίες σχετικά με το μήνυμα ( $1 )',
+	'translate-edit-information' => 'Πληροφορίες σχετικά με το μήνυμα ($1)',
 	'translate-edit-in-other-languages' => 'Μήνυμα σε άλλες γλώσσες',
 	'translate-edit-committed' => 'Τρέχουσα μετάφραση στο λογισμικό',
 	'translate-edit-warnings' => 'Προειδοποιήσεις για ημιτελείς μεταφράσεις',
 	'translate-edit-tmsugs' => 'Προτάσεις από τη μνήμη μετάφρασης',
-	'translate-edit-tmmatch-source' => 'Μετάφραση κειμένου προέλευσης:$1',
+	'translate-edit-tmmatch-source' => 'Πηγαίο κείμενο μετάφρασης: $1',
 	'translate-edit-tmmatch' => '$1% αντιστοίχιση',
 	'translate-use-suggestion' => 'Αντικατάσταση τρέχουσας μετάφρασης με την πρόταση αυτή.',
 	'translate-edit-tab-list' => 'Λίστα μηνυμάτων',
@@ -6989,7 +6993,7 @@ $messages['el'] = array(
 	'prefs-translate' => 'Επιλογές μετάφρασης',
 	'translate-pref-jsedit' => 'Ενισχυμένος επεξεργαστής μεταφράσεων (JavaScript)',
 	'right-translate' => 'Επεξεργασία χρησιμοποιώντας την διεπαφή μετάφρασης',
-	'right-translate-manage' => 'Διαχείριση  ομάδων μηνυμάτων',
+	'right-translate-manage' => 'Διαχείριση ομάδων μηνυμάτων',
 	'action-translate-manage' => 'διαχείριση ομάδων μηνυμάτων',
 	'right-translate-import' => 'Εισαγωγή μεταφράσεων εκτός σύνδεσης',
 	'translate-rc-translation-filter' => 'Φιλτράρισμα μεταφράσεων:',
@@ -17634,7 +17638,7 @@ $messages['mk'] = array(
 	'translate-langstats-collapseall' => 'скриј сè',
 	'translate-language-code' => 'Јазичен код',
 	'translate-language-code-field-name' => 'Јазичен код:',
-	'translate-suppress-complete' => 'Скриј наполно преведени групи на пораки',
+	'translate-suppress-complete' => 'Не прикажувај наполно преведени групи на пораки',
 	'translate-ls-noempty' => 'Скриј наполно непреведени групи на пораки',
 	'translate-language' => 'Јазик',
 	'translate-total' => 'Пораки',
@@ -18566,6 +18570,7 @@ Paling berguna dengan tugas menyemak (membaca pruf).',
 	'tux-editor-shortcut-info' => 'Tekan "$1" untuk menyimpan, atau "$2" untuk melangkau ke mesej seterusnya',
 	'tux-editor-no-message-doc' => 'Tiada dokumentasi mesej',
 	'tux-editor-edit-desc' => 'Sunting keterangan',
+	'tux-editor-add-desc' => 'Isikan keterangan',
 	'tux-editor-suggestions-title' => 'Cadangan',
 	'tux-editor-in-other-languages' => 'Dalam bahasa lain',
 	'tux-editor-need-more-help' => 'Perlukan lagi bantuan?',
@@ -18576,6 +18581,15 @@ Paling berguna dengan tugas menyemak (membaca pruf).',
 	'tux-editor-save-failed' => 'Terjemahan tidak dapat disimpan: $1',
 	'tux-editor-use-this-translation' => 'Gunakan sebagai terjemahan',
 	'tux-editor-message-desc-more' => 'Lihat yang lain',
+	'tux-editor-message-desc-less' => 'Lihat kurang',
+	'tux-editor-clear-translated' => 'Sorokkan terjemahan',
+	'tux-editor-outdated-warning' => 'Terjemahan ini mungkin perlu dikemaskinikan.',
+	'tux-editor-outdated-warning-diff-link' => 'Tunjukkan perbezaan',
+	'tux-editor-doc-editor-title' => 'Sunting dokumentasi untuk mesej ini',
+	'tux-editor-doc-editor-save' => 'Simpan dokumentasi',
+	'tux-editor-doc-editor-cancel' => 'Batalkan',
+	'tux-messagetable-more-messages' => '$1 lagi mesej',
+	'tux-messagetable-loading-messages' => '{{PLURAL:$1|Mesej|Mesej-mesej}} sedang dimuatkan...',
 );
 
 /** Maltese (Malti)
