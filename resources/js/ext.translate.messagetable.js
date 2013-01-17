@@ -18,7 +18,7 @@
 				mcoffset: offset,
 				mclimit: limit,
 				mcfilter: mw.Uri().query.filter || '!translated',
-				mcprop: [ 'definition', 'translation', 'tags', 'revision' ].join( '|' )
+				mcprop: [ 'definition', 'translation', 'tags', 'revision', 'title' ].join( '|' )
 			};
 
 			return $.get( apiURL, queryParams );
@@ -119,9 +119,10 @@
 							.attr( {
 								'data-translation': message.translation,
 								'data-source': message.definition,
-								'data-title': message.key,
+								'data-title': message.title,
 								'data-group': messagegroup
 							} );
+
 						$message = $( '<div>' )
 							.addClass( 'row tux-message-item ' + status )
 							.append(
