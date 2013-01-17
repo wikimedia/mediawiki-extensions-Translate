@@ -119,9 +119,10 @@
 							.attr( {
 								'data-translation': message.translation,
 								'data-source': message.definition,
-								'data-title': message.key,
+								'data-title': message.title,
 								'data-group': messagegroup
 							} );
+
 						$message = $( '<div>' )
 							.addClass( 'row tux-message-item ' + status )
 							.append(

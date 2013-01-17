@@ -76,16 +76,18 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$pages = array();
 		$count = 0;
 
-
 		if ( $forwardsOffset !== false ) {
 			$this->setContinueEnumParameter( 'offset', $forwardsOffset );
 		}
 
 		$props = array_flip( $params['prop'] );
-		foreach ( $messages->keys() as $mkey => $title ) {
 
+		foreach ( $messages->keys() as $mkey => $title ) {
 			if ( is_null( $resultPageSet ) ) {
 				$data = $this->extractMessageData( $result, $props, $messages[$mkey] );
+
+				$data['title'] = $title->getPrefixedText();
+
 				$fit = $result->addValue( array( 'query', $this->getModuleName() ), null, $data );
 				if ( !$fit ) {
 					// @TODO Use string key here
@@ -102,7 +104,6 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		} else {
 			$resultPageSet->populateFromTitles( $pages );
 		}
-
 	}
 
 	/**
@@ -113,6 +114,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	 */
 	public function extractMessageData( $result, $props, $message ) {
 		$data['key'] = $message->key();
+
 		if ( isset( $props['definition'] ) ) {
 			$data['definition'] = $message->definition();
 		}
