@@ -177,6 +177,14 @@
 				.on( 'click', function () {
 					var parentGroupId;
 
+					/* Do nothing if user clicks active tab. Fixes two things:
+					 *  - The blue bottom border highlight doesn't jump around
+					 *  - No flash when clicking recent tab again
+					 */
+					if ( $( this ).hasClass( 'selected' ) ) {
+						return;
+					}
+
 					groupSelector.$menu.find( '.ext-translate-msggroup-category' )
 						.toggleClass( 'selected' );
 
