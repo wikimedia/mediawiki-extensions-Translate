@@ -125,9 +125,15 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			$data['tags'] = $message->getTags();
 			$result->setIndexedTagName( $data['tags'], 'tag' );
 		}
-
+		// BC
 		if ( isset( $props['revision'] ) ) {
 			$data['revision'] = $message->getProperty( 'revision' );
+		}
+		if ( isset( $props['properties'] ) ) {
+			foreach ( $message->getPropertyNames() as $prop ) {
+				$data['properties'][$prop] = $message->getProperty( $prop );
+				$result->setIndexedTagName_recursive( $data['properties'], 'val' );
+			}
 		}
 
 		return $data;
@@ -163,7 +169,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				ApiBase::PARAM_ISMULTI => true,
 			),
 			'prop' => array(
-				ApiBase::PARAM_TYPE => array( 'definition', 'translation', 'tags', 'revision' ),
+				ApiBase::PARAM_TYPE => array( 'definition', 'translation', 'tags', 'revision', 'properties' ),
 				ApiBase::PARAM_DFLT => 'definition|translation',
 				ApiBase::PARAM_ISMULTI => true,
 			),
@@ -181,7 +187,8 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				'definition  - message definition',
 				'translation - current translation',
 				'tags        - message tags, like optional, ignored and fuzzy',
-				'revision    - revision id of the provided translation - can be used for translation review',
+				'properties  - message properties, like status, revision, last-translator. Can vary between messages.',
+				'revision    - deprecated! use properties!',
 			),
 			'filter' => array(
 				'Message collection filters. Use ! to negate condition. For example !fuzzy means list only all non-fuzzy messages. Filters are applied in the order given.',

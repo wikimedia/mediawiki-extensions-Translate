@@ -58,7 +58,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	protected $dbData = null;
 
 	/// \type{Database Result Resource} Stored reviews in database.
-	protected $dbReviewData = null;
+	protected $dbReviewData = array();
 
 	/**
 	 * Tags, copied to thin messages
@@ -75,11 +75,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @var string[] Authors.
 	 */
 	protected $authors = array();
-
-	/**
-	 * @var bool Whether review info is loaded
-	 */
-	protected $reviewMode = false;
 
 	/**
 	 * Constructors. Use newFromDefinitions() instead.
@@ -236,12 +231,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	/**
-	 * Call this to load list of reviewers for each message.
-	 * Can be accessed from TMessage::getReviewers().
+	 * @deprecated 2013-01-18 enabled by default
 	 */
-	public function setReviewMode( $value = true ) {
-		$this->reviewMode = $value;
-	}
+	public function setReviewMode( $value = true ) {}
 
 	// Data modifiers
 
@@ -254,9 +246,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	public function loadTranslations( $dbtype = DB_SLAVE ) {
 		$this->loadData( $this->keys, $dbtype );
 		$this->loadInfo( $this->keys, $dbtype );
-		if ( $this->reviewMode ) {
-			$this->loadReviewInfo( $this->keys, $dbtype );
-		}
+		$this->loadReviewInfo( $this->keys, $dbtype );
 		$this->initMessages();
 	}
 
@@ -270,7 +260,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->keys = $this->fixKeys();
 		$this->dbInfo = null;
 		$this->dbData = null;
-		$this->dbReviewData = null;
+		$this->dbReviewData = array();
 		$this->messages = null;
 		$this->infile = array();
 		$this->authors = array();
@@ -669,7 +659,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param int $dbtype One of DB_* constants.
 	 */
 	protected function loadReviewInfo( array $keys, $dbtype = DB_SLAVE ) {
-		if ( $this->dbReviewData !== null ) {
+		if ( $this->dbReviewData !== array() ) {
 			return;
 		}
 
@@ -849,13 +839,24 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			}
 		}
 
-		if ( $this->dbReviewData !== null ) {
-			foreach ( $this->dbReviewData as $row ) {
-				$mkey = $this->rowToKey( $row );
-				if ( !isset( $messages[$mkey] ) ) {
-					continue;
-				}
-				$messages[$mkey]->appendProperty( 'reviewers', $row->trr_user );
+		foreach ( $this->dbReviewData as $row ) {
+			$mkey = $this->rowToKey( $row );
+			if ( !isset( $messages[$mkey] ) ) {
+				continue;
+			}
+			$messages[$mkey]->appendProperty( 'reviewers', $row->trr_user );
+		}
+
+		// Set the status property
+		foreach ( $messages as $obj ) {
+			if ( $obj->hasTag( 'fuzzy' ) ) {
+				$obj->setProperty( 'status', 'fuzzy' );
+			} elseif ( is_array( $obj->getProperty( 'reviewers' ) ) ) {
+				$obj->setProperty( 'status', 'proofread' );
+			} elseif ( $obj->translation() !== null ) {
+				$obj->setProperty( 'status', 'translated' );
+			} else {
+				$obj->setProperty( 'status', 'untranslated' );
 			}
 		}
 

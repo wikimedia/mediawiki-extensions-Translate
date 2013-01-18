@@ -120,6 +120,15 @@ abstract class TMessage {
 		return isset( $this->props[$key] ) ? $this->props[$key] : null;
 	}
 
+	/**
+	 * Get all the available property names.
+	 * @return array
+	 * @since 2013-01-17
+	 */
+	public function getPropertyNames() {
+		return array_keys( $this->props );
+	}
+
 }
 
 /**
@@ -175,6 +184,12 @@ class ThinMessage extends TMessage {
 
 		return $this->row->$field;
 	}
+
+	// Re-implemented
+	public function getPropertyNames() {
+		return array_merge( parent::getPropertyNames(), array_keys( self::$propertyMap ) );
+	}
+
 }
 
 /**
