@@ -206,7 +206,6 @@ class SimpleFormatWriter {
 
 	protected function getMessagesForExport( MessageGroup $group, $code ) {
 		$collection = $this->group->initCollection( $code );
-		$collection->setInfile( $this->group->load( $code ) );
 		$collection->filter( 'ignored' );
 		$collection->filter( 'hastranslation', false );
 		$collection->loadTranslations();

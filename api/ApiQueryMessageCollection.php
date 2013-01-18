@@ -50,7 +50,6 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		}
 
 		$messages = $group->initCollection( $params['language'] );
-		$messages->setInFile( $group->load( $params['language'] ) );
 
 		foreach ( $params['filter'] as $filter ) {
 			$value = null;
