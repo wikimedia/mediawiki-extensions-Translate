@@ -60,7 +60,7 @@ $specialPageAliases['arc'] = array(
 	'Translate' => array( 'ܬܪܓܡ' ),
 	'Translations' => array( 'ܬܘܪ̈ܓܡܐ' ),
 	'PageTranslation' => array( 'ܬܘܪܓܡܐ_ܕܦܐܬܐ' ),
-	'FirstSteps' => array( 'ܦܣܘܥܝܬ̈ܐ_ܩܕ̈ܡܝܬܐ' ),
+	'FirstSteps' => array( 'ܦܣܘܥܝ̈ܬܐ_ܩܕ̈ܡܝܬܐ' ),
 	'SupportedLanguages' => array( 'ܠܫܢ̈ܐ_ܣܡܝܟ̈ܐ' ),
 	'MyLanguage' => array( 'ܠܫܢܐ_ܕܝܠܝ' ),
 );

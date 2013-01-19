@@ -72,6 +72,14 @@ $messages['de'] = array(
 	'tux-sst-nosolr-body' => 'Dieses Wiki hat keinen Übersetzungssuchservice.',
 );
 
+/** Finnish (suomi)
+ * @author Stryn
+ */
+$messages['fi'] = array(
+	'searchtranslations' => 'Etsi käännöksiä',
+	'tux-sst-search-ph' => 'Etsi käännöksiä',
+);
+
 /** French (français)
  * @author Gomoko
  */
