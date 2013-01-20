@@ -1345,7 +1345,7 @@ $messages['be-tarask'] = array(
 	'pt-movepage-list-pages' => 'Сьпіс старонак да пераносу',
 	'pt-movepage-list-translation' => '{{PLURAL:$1|Старонка|Старонкі}} да перакладу',
 	'pt-movepage-list-section' => 'Старонкі сэкцыі', # Fuzzy
-	'pt-movepage-list-other' => 'Іншыя падстаронкі', # Fuzzy
+	'pt-movepage-list-other' => '{{PLURAL:$1|Іншая падстаронка|Іншыя падстаронкі}}',
 	'pt-movepage-list-count' => '$1 {{PLURAL:$1|старонка|старонкі|старонак}} для пераносу.',
 	'pt-movepage-legend' => 'Перанесьці старонкі, якія магчыма перакласьці',
 	'pt-movepage-current' => 'Цяперашняя назва:',
@@ -1378,7 +1378,7 @@ $messages['be-tarask'] = array(
 	'pt-deletepage-subpages' => 'Выдаліць усе падстаронкі',
 	'pt-deletepage-list-pages' => 'Сьпіс старонак да выдаленьня',
 	'pt-deletepage-list-translation' => 'Старонкі перакладаў',
-	'pt-deletepage-list-section' => 'Старонкі сэкцыі', # Fuzzy
+	'pt-deletepage-list-section' => 'Старонкі адзінкі перакладу',
 	'pt-deletepage-list-other' => 'Іншыя падстаронкі',
 	'pt-deletepage-list-count' => 'Агулам $1 {{PLURAL:$1|старонка|старонкі|старонак}} да выдаленьня.',
 	'pt-deletepage-full-logreason' => 'Частка старонкі $1, якую магчыма перакласьці.',
@@ -6806,7 +6806,7 @@ Kun siste versjoner kan bli markert for oversettelse.',
 	'tpt-notsuitable' => 'Side $1 er ikke egnet for oversettelse.
 Sjekk at siden har <nowiki><translate></nowiki>-merket og har en gyldig syntaks.',
 	'tpt-saveok' => 'Siden [[$1]] har blitt markert for oversettelse med {{PLURAL:$2|én oversettelsesenhet|$2 oversettelsesenheter}}.
-Den kan nå bli <span class="plainlinks">[$3 oversatt]</span>.',
+Den kan nå <span class="plainlinks">[$3 oversettes]</span>.',
 	'tpt-badsect' => '«$1» er ikke et gyldig navn for oversettelsesenheten $2.',
 	'tpt-showpage-intro' => 'Nedenfor listes nye, eksisterende og slettede avsnitt opp.
 Før denne versjonen merkes for oversettelse, sjekk at endringene i avsnittene er minimert for å unngå unødvendig arbeid for oversetterne.',
@@ -6825,7 +6825,7 @@ Før denne versjonen merkes for oversettelse, sjekk at endringene i avsnittene e
 	'tpt-other-pages' => '{{PLURAL:$1|En gammel versjon av denne siden|Eldre versjoner av disse sidene}} er markert for oversettelse, men den siste versjonen kan ikke markeres for oversettelse.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Denne siden|Disse sidene}} frarådes videre oversettelse.',
 	'tpt-select-prioritylangs' => 'Kommaseparert liste over prioriterte språkkoder:',
-	'tpt-select-prioritylangs-force' => 'Forhindre oversettelser til andre språk enn de prioriterte språkene',
+	'tpt-select-prioritylangs-force' => 'Forhindre oversettelser til andre språk enn de prioriterte språkene', # Fuzzy
 	'tpt-select-prioritylangs-reason' => 'Årsak:',
 	'tpt-sections-prioritylangs' => 'Prioriterte språk',
 	'tpt-rev-mark' => 'merk for oversetting',
@@ -6899,8 +6899,8 @@ Seksjonstekst: <pre>$1</pre>',
 	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|fjernet}} oversettbar side [[:$1]] fra samlet gruppe $3',
 	'pt-movepage-title' => 'Flytt oversettbar side $1',
 	'pt-movepage-blockers' => 'Den oversettbare siden kan ikke flyttes til et nytt navn på grunn av følgende {{PLURAL:$1|feil}}:',
-	'pt-movepage-block-base-exists' => 'Målgrunnsiden [[:$1]] finnes.',
-	'pt-movepage-block-base-invalid' => 'Målgrunnsiden er ikke en gyldig tittel.',
+	'pt-movepage-block-base-exists' => 'Målgrunnsiden [[:$1]] finnes.', # Fuzzy
+	'pt-movepage-block-base-invalid' => 'Målgrunnsiden er ikke en gyldig tittel.', # Fuzzy
 	'pt-movepage-block-tp-exists' => 'Måloversettelsessiden [[:$2]] finnes.',
 	'pt-movepage-block-tp-invalid' => 'Måloversettelsessidetittelen for [[:$1]] ville vært ugyldig (for lang?).',
 	'pt-movepage-block-section-exists' => 'Målavsnittssiden [[:$2]] finnes fra før.',
@@ -6931,13 +6931,13 @@ Kontroller [[Special:Log/pagetranslation|sideoversettelsesloggen]] for feil- og 
 	'pt-deletepage-lang-title' => 'Sletter den oversettbare siden $1.',
 	'pt-deletepage-full-title' => 'Sletter den oversettbare siden $1.',
 	'pt-deletepage-invalid-title' => 'Den angitte siden er ikke gyldig.',
-	'pt-deletepage-invalid-text' => 'Den angitte siden er ikke en oversettbar side eller en oversettelse av den.',
+	'pt-deletepage-invalid-text' => 'Den angitte siden er ikke en oversettbar side eller en oversettelse av den.', # Fuzzy
 	'pt-deletepage-action-check' => 'List opp sider som skal slettes',
 	'pt-deletepage-action-perform' => 'Utfør slettingen',
 	'pt-deletepage-action-other' => 'Endre mål',
 	'pt-deletepage-lang-legend' => 'Slett oversettbar side',
 	'pt-deletepage-full-legend' => 'Slett oversettbar side',
-	'pt-deletepage-any-legend' => 'Slett oversettbar side eller oversettelse av oversettbar side',
+	'pt-deletepage-any-legend' => 'Slett oversettbar side eller oversettelse av oversettbar side', # Fuzzy
 	'pt-deletepage-current' => 'Sidenavn:',
 	'pt-deletepage-reason' => 'Årsak:',
 	'pt-deletepage-subpages' => 'Slett alle undersider',
@@ -6951,7 +6951,7 @@ Kontroller [[Special:Log/pagetranslation|sideoversettelsesloggen]] for feil- og 
 	'pt-deletepage-started' => 'Sjekk [[Special:Log/pagetranslation|sideoversettelsesloggen]] for feil- og fullføringsmeldinger.',
 	'pt-deletepage-intro' => 'Denne spesialsiden lar deg slette hele oversettbare sider eller oversettelser till ett språk.
 Slettingen vil ikke være umiddelbar, fordi mange sider må slettes.
-Feil vil logges i [[Special:Log/pagetranslation|sideoversettelsesloggen]], og må fikses manuelt.',
+Feil vil logges i [[Special:Log/pagetranslation|sideoversettelsesloggen]], og må fikses manuelt.', # Fuzzy
 );
 
 /** Dutch (Nederlands)
