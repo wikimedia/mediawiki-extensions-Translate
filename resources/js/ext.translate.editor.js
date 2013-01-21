@@ -396,8 +396,11 @@
 						.addClass( 'tux-editor-ask-permission' )
 						.attr( {
 							'href': mw.util.wikiGetlink( mw.config.get( 'wgTranslatePermissionUrl' ) )
-					} )
-				);
+						} )
+					);
+				// Disable the text area if user has no translation rights.
+				// Use readonly to allow copy-pasting (except for placeholders)
+				$textArea.prop( 'readonly', true );
 			}
 
 			$skipButton = $( '<button>' )
