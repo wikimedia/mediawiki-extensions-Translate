@@ -146,20 +146,35 @@
 				token: mw.user.tokens.get( 'editToken' )
 			}, {
 				ok: function ( response ) {
+					var $messageDesc = translateEditor.$editor.find( '.infocolumn-block .message-desc' );
+
 					if ( response.edit.result === 'Success' ) {
-						translateEditor.$editor.find( '.infocolumn-block .message-desc' )
-							.html( translation );
+						api.post( {
+							action: 'parse',
+							text: translation,
+							prop: 'text'
+						}, {
+							ok: function ( parseResponse ) {
+								$messageDesc.html( parseResponse.parse.text['*'] );
+							},
+							err: function ( errorCode, results ) {
+								$messageDesc.html( translation );
+								// TODO
+								mw.log( 'Error parsing documentation ' + errorCode + ' ' + results );
+							}
+						} );
+
 						translateEditor.hideDocumentationEditor();
 					} else {
 						// TODO
-						window.console.log( 'Problem saving documentation' );
+						mw.log( 'Problem saving documentation' );
 					}
 				},
 				// TODO: Should also handle complete failure,
 				// for example client or server going offline.
 				err: function ( errorCode, results ) {
 					// TODO
-					window.console.log( 'Error saving documentation ' + errorCode + ' ' + results );
+					mw.log( 'Error saving documentation ' + errorCode + ' ' + results );
 				}
 			} );
 		},
