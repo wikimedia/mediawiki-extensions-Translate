@@ -147,9 +147,24 @@
 				token: mw.user.tokens.get( 'editToken' )
 			}, {
 				ok: function ( response ) {
+					var $messageDesc = translateEditor.$editor.find( '.infocolumn-block .message-desc' );
+
 					if ( response.edit.result === 'Success' ) {
-						translateEditor.$editor.find( '.infocolumn-block .message-desc' )
-							.html( translation );
+						api.post( {
+							action: 'parse',
+							text: translation,
+							prop: 'text'
+						}, {
+							ok: function ( parseResponse ) {
+								$messageDesc.html( parseResponse.parse.text['*'] );
+							},
+							err: function ( errorCode, results ) {
+								$messageDesc.html( translation );
+								// TODO
+								window.console.log( 'Problem parsing documentation' );
+							}
+						} );
+
 						translateEditor.hideDocumentationEditor();
 					} else {
 						// TODO
