@@ -135,31 +135,42 @@
 		saveDocumentation: function () {
 			var translateEditor = this,
 				api = new mw.Api(),
-				translation = translateEditor.$editor.find( '.infocolumn-block textarea' ).val();
+				newDocumentation = translateEditor.$editor.find( '.infocolumn-block textarea' ).val();
 
 			// XXX: Any validations to be done before proceeding?
 			api.post( {
 				action: 'edit',
 				title: translateEditor.$editTrigger.data( 'title' )
 					.replace( /\/[a-z\-]+$/, '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ),
-				text: translation,
+				text: newDocumentation,
 				token: mw.user.tokens.get( 'editToken' )
 			}, {
 				ok: function ( response ) {
+					var $messageDesc = translateEditor.$editor.find( '.infocolumn-block .message-desc' );
+
 					if ( response.edit.result === 'Success' ) {
-						translateEditor.$editor.find( '.infocolumn-block .message-desc' )
-							.html( translation );
+						api.parse( newDocumentation,
+							function ( parsedDocumentation ) {
+								$messageDesc.html( parsedDocumentation );
+							},
+							function ( errorCode, results ) {
+								$messageDesc.html( newDocumentation );
+								// TODO
+								mw.log( 'Error parsing documentation ' + errorCode + ' ' + results );
+							}
+						);
+
 						translateEditor.hideDocumentationEditor();
 					} else {
 						// TODO
-						window.console.log( 'Problem saving documentation' );
+						mw.log( 'Problem saving documentation' );
 					}
 				},
 				// TODO: Should also handle complete failure,
 				// for example client or server going offline.
 				err: function ( errorCode, results ) {
 					// TODO
-					window.console.log( 'Error saving documentation ' + errorCode + ' ' + results );
+					mw.log( 'Error saving documentation ' + errorCode + ' ' + results );
 				}
 			} );
 		},

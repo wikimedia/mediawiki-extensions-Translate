@@ -236,6 +236,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'mediawiki.util',
 		'mediawiki.Uri',
 		'mediawiki.api',
+		'mediawiki.api.parse',
 		'mediawiki.user',
 		'mediawiki.jqueryMsg',
 	),
