@@ -396,8 +396,10 @@
 						.addClass( 'tux-editor-ask-permission' )
 						.attr( {
 							'href': mw.util.wikiGetlink( mw.config.get( 'wgTranslatePermissionUrl' ) )
-					} )
-				);
+						} )
+					);
+				// Disable the text area if user has no translation rights
+				$textArea.prop( 'disabled', true );
 			}
 
 			$skipButton = $( '<button>' )
