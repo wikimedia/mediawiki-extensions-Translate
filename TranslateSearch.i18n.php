@@ -192,6 +192,19 @@ $messages['mk'] = array(
 	'tux-sst-nosolr-body' => 'Ова вики нема пребарувач.',
 );
 
+/** Occitan (occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'searchtranslations' => 'Recèrca de traduccions',
+	'tux-sst-edit' => 'Modificar lo messatge',
+	'tux-sst-search' => 'Recercar',
+	'tux-sst-facet-language' => 'Lengas',
+	'tux-sst-facet-group' => 'Gropes de messatge',
+	'tux-sst-facet-orphan' => '(orfanèl)',
+	'tux-sst-nosolr-title' => 'Recèrca indisponibla',
+);
+
 /** Piedmontese (Piemontèis)
  * @author Dragonòt
  */

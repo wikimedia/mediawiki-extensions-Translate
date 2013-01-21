@@ -7282,12 +7282,12 @@ Abans de marcar aquestas versions per èsser traduchas, verificatz que las modif
 	'tpt-translation-intro-fuzzy' => 'Las traduccions obsolètas son marcadas atal.',
 	'tpt-languages-legend' => 'Autras lengas :',
 	'tpt-target-page' => "Aquesta pagina pòt pas èsser mesa a jorn manualament.
-Es una version traducha de [[$1]] e la traduccion pòt èsser mesa a jorn en utilizant [$2 l'esplech de traduccion].",
+Es una version traducha de [[$1]] e la traduccion pòt èsser mesa a jorn en utilizant [$2 l'aisina de traduccion].",
 	'tpt-unknown-page' => "Aqueste espaci de noms es reservat per la traduccion de paginas.
 La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marcada per èsser traducha.",
 	'tpt-render-summary' => 'Mesa a jorn per èsser en acòrd amb la version novèla de la font de la pagina',
 	'tpt-download-page' => 'Exportar la pagina amb sas traduccions',
-	'pt-movepage-list-translation' => 'Paginas de traduccion',
+	'pt-movepage-list-translation' => 'Paginas de traduccion', # Fuzzy
 	'pt-movepage-new' => 'Nom novèl :',
 	'pt-movepage-reason' => 'Motiu :',
 	'pt-movepage-action-perform' => 'Tornar nomenar',

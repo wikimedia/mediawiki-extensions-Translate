@@ -2410,6 +2410,13 @@ $messages['ro'] = array(
 	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] este o aplicație mobilă prin intermediul căreia se poate contribui la [[:meta:Wiki Loves Monuments|proiectul Wiki Loves Monuments]]',
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'translate-group-desc-translatablepages' => 'Tutte le pàggene traducibbele',
+);
+
 /** Russian (русский)
  * @author Eleferen
  * @author Ferrer

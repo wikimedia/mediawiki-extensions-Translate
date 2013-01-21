@@ -3195,6 +3195,7 @@ $messages['roa-tara'] = array(
 	'translate-fs-email-title' => "Conferme l'indirizze e-mail tune",
 	'translate-fs-selectlanguage' => "Pigghie 'na lènghe",
 	'translate-fs-settings-planguage' => 'Lènga prengepàle:',
+	'translate-fs-settings-submit' => 'Reggistre le preferenze',
 	'translate-fs-permissions-planguage' => 'Lènga prengepàle:',
 );
 
