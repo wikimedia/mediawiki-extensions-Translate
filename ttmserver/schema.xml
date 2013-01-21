@@ -15,7 +15,7 @@
 			<analyzer type="query">
 				<tokenizer class="solr.StandardTokenizerFactory"/>
 				<filter class="solr.LowerCaseFilterFactory"/>
-				<filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+				<filter class="solr.KeywordMarkerFilterFactory"/>
 				<filter class="solr.PorterStemFilterFactory"/>
 			</analyzer>
 		</fieldType>
