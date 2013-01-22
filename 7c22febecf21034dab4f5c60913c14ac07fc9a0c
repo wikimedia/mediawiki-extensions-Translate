@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADhH//29I\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-22T05:59:01Z",
+      "side": 1,
+      "message": "Why not use mw.log if it is necessary.",
+      "revId": "7c22febecf21034dab4f5c60913c14ac07fc9a0c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
