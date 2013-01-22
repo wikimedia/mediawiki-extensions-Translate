@@ -161,7 +161,6 @@ class CustomFilteredMessagesTask extends TranslateTask {
 	protected function preinit() {
 		$code = $this->options['language'];
 		$this->collection = $this->group->initCollection( $code );
-		$this->collection->setReviewMode( true );
 		$this->collection->filter( 'ignored' );
 		if ( !isset( $this->nondefaults['optional'] ) ) {
 			$this->collection->filter( 'optional' );
@@ -228,7 +227,6 @@ class ReviewMessagesTask extends ViewMessagesTask {
 	protected function preinit() {
 		$code = $this->options['language'];
 		$this->collection = $this->group->initCollection( $code );
-		$this->collection->setReviewMode( true );
 		$this->collection->filter( 'ignored' );
 	}
 
