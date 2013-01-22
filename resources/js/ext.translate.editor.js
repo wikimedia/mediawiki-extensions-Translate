@@ -19,7 +19,7 @@
 		 */
 		init: function () {
 			this.$editor = $( '<div>' )
-				.addClass( 'row tux-message-editor' )
+				.addClass( 'row tux-message-editor hide' )
 				.append(
 				this.prepareEditorColumn(),
 				this.prepareInfoColumn()
@@ -27,7 +27,6 @@
 
 			this.expanded = false;
 			this.$editTrigger.append( this.$editor );
-			this.$editor.hide();
 
 			this.showTranslationHelpers();
 		},
@@ -212,6 +211,7 @@
 
 			if ( !$next.length ) {
 				this.hide();
+
 				return;
 			}
 
@@ -303,7 +303,7 @@
 				.addClass( 'tux-warning hide' );
 
 			$moreWarningsTab = $( '<div>' )
-				.addClass( 'tux-more-warnings' )
+				.addClass( 'tux-more-warnings hide' )
 				.on( 'click', function () {
 					var $this = $( this ),
 						$moreWarnings = $warnings.children(),
@@ -316,8 +316,7 @@
 						$moreWarnings.each( function ( index, element ) {
 							// The first element must always be shown
 							if ( index ) {
-								// TODO: Suggestion by Santhosh: For hiding and showing, use the grid frameworks 'hide' class
-								$( element ).hide();
+								$( element ).addClass( 'hide' );
 							}
 						} );
 
@@ -327,16 +326,14 @@
 						$moreWarnings.each( function ( index, element ) {
 							// The first element must always be shown
 							if ( index ) {
-								// TODO: Suggestion by Santhosh: For hiding and showing, use the grid frameworks 'hide' class
-								$( element ).show();
+								$( element ).removeClass( 'hide' );
 							}
 						} );
 
 						$this.addClass( 'open' );
 						$this.text( mw.msg( 'tux-warnings-hide' ) );
 					}
-				} )
-				.hide();
+				} );
 
 			$textArea = $( '<textarea>' )
 				.attr( {
@@ -509,9 +506,9 @@
 			if ( warningCount > 1 ) {
 				$moreWarningsTab
 					.text( mw.msg( 'tux-warnings-more', warningCount - 1 ) )
-					.show();
+					.removeClass( 'hide' );
 			} else {
-				$moreWarningsTab.hide();
+				$moreWarningsTab.addClass( 'hide' );
 			}
 		},
 
@@ -529,10 +526,10 @@
 				.removeClass( 'seven' )
 				.addClass( 'five' );
 
-			$messageDesc.hide();
-			$messageDescControl.hide();
+			$messageDesc.addClass( 'hide' );
+			$messageDescControl.addClass( 'hide' );
 
-			$messageDescEditor.show();
+			$messageDescEditor.removeClass( 'hide' );
 			$messageDescEditor.find( 'textarea' ).focus();
 		},
 
@@ -550,10 +547,10 @@
 				.removeClass( 'five' )
 				.addClass( 'seven' );
 
-			$messageDescEditor.hide();
+			$messageDescEditor.addClass( 'hide' );
 
-			$messageDesc.show();
-			$messageDescControl.show();
+			$messageDesc.removeClass( 'hide' );
+			$messageDescControl.removeClass( 'hide' );
 		},
 
 		prepareInfoColumn: function () {
@@ -581,7 +578,7 @@
 						} );
 
 					$messageDescEditor = $( '<div>' )
-						.addClass( 'row text-left message-desc-editor' )
+						.addClass( 'row text-left message-desc-editor hide' )
 						.append(
 							$( '<textarea>' )
 								.attr( {
@@ -596,18 +593,16 @@
 									$messageDescSaveButton,
 									$messageDescCancelButton
 								)
-						)
-						.hide();
+						);
 				}
 
 				$messageDesc = $( '<div>' )
-					.addClass( 'row text-left message-desc' )
-					.hide();
+					.addClass( 'row text-left message-desc hide' );
 
 				$messageDescControl = $( '<div>' )
 					.addClass( 'row text-left message-desc-control' )
 					.append( $( '<a>' )
-						.addClass( 'text-left message-desc-edit' )
+						.addClass( 'text-left message-desc-edit hide' )
 						/*.attr( {
 							href: mw.translate.getDocumentationEditURL(
 								this.$editTrigger.data( 'title' ).replace( /\/[a-z\-]+$/, '' )
@@ -615,7 +610,6 @@
 							target: '_blank'
 						} )*/
 						.on( 'click', $.proxy( this.showDocumentationEditor, this ) )
-						.hide()
 					);
 
 				$infoColumn.append(
@@ -666,22 +660,24 @@
 				$( this ).data( 'translateeditor' ).hide();
 			} );
 
-			this.$messageItem.hide();
-			this.$editor.show();
+			this.$messageItem.addClass( 'hide' );
+			this.$editor.removeClass( 'hide' );
 
 			// Focus the textarea.
 			this.$editor.find( 'textarea' ).focus();
 			this.shown = true;
 			this.$editTrigger.addClass( 'open' );
+
 			return false;
 		},
 
 		hide: function () {
 			if ( this.$editor ) {
-				this.$editor.hide();
+				this.$editor.addClass( 'hide' );
 			}
+
 			this.$editTrigger.removeClass( 'open' );
-			this.$messageItem.show();
+			this.$messageItem.removeClass( 'hide' );
 			this.shown = false;
 
 			return false;
@@ -700,7 +696,7 @@
 			toggleIcon.removeClass( 'editor-contract' );
 			toggleIcon.addClass( 'editor-expand' );
 
-			this.$editor.find( '.infocolumn-block' ).show();
+			this.$editor.find( '.infocolumn-block' ).removeClass( 'hide' );
 			this.$editor.find( '.editcolumn' )
 				.removeClass( 'twelve' )
 				.addClass( 'seven' );
@@ -713,7 +709,7 @@
 			toggleIcon.removeClass( 'editor-expand' );
 			toggleIcon.addClass( 'editor-contract' );
 
-			this.$editor.find( '.infocolumn-block' ).hide();
+			this.$editor.find( '.infocolumn-block' ).addClass( 'hide' );
 			this.$editor.find( '.editcolumn' )
 				.removeClass( 'seven' )
 				.addClass( 'twelve' );
@@ -795,8 +791,8 @@
 				$descEditLink.text( mw.msg( 'tux-editor-add-desc' ) );
 			}
 
-			$messageDoc.show();
-			$descEditLink.show();
+			$messageDoc.removeClass( 'hide' );
+			$descEditLink.removeClass( 'hide' );
 		},
 
 		/**
