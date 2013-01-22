@@ -84,7 +84,6 @@ class PoImporter {
 		$group = MessageGroups::getGroup( $id );
 
 		$messages = $group->initCollection( $code );
-		$messages->setInfile( $group->load( $code ) );
 		$messages->loadTranslations();
 
 		return $messages;
