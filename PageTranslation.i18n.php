@@ -308,7 +308,8 @@ See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'translate-tag-markthisagain' => '"has changes" is to be understood as "has been altered/edited"',
 	'translate-tag-hasnew' => '"has changes" is to be understood as "has been altered/edited". $1 is a URL to view changes.',
 	'tpt-translation-intro' => 'Header of a translation page (see definition on [[mw:Help:Extension:Translate/Glossary]]).',
-	'tpt-languages-legend' => 'The caption of a language selector displayed using <code>&lt;languages /&gt;</code>, e.g. on [[Project list]].',
+	'tpt-languages-legend' => 'The caption of a language selector displayed using <code>&lt;languages /&gt;</code>, e.g. on [[Project list]].
+{{Identical|Otherlanguages}}',
 	'tpt-languages-separator' => '{{optional}}',
 	'tpt-languages-zero' => 'Tooltip for a link in &lt;language /> when language is included because it is a priority language, but translation does not yet exists. It links directly to the translation view.',
 	'tpt-target-page' => 'Message displayed when trying to edit a translatable page directly. Parameters:
