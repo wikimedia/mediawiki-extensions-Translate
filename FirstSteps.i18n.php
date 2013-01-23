@@ -2773,6 +2773,14 @@ $messages['nn'] = array(
 	'translate-fs-permissions-submit' => 'Send førespurnad',
 );
 
+/** Occitan (occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'translate-fs-pagetitle-done' => ' - fach !',
+	'translate-fs-pagetitle-pending' => '- en cors',
+);
+
 /** Deitsch (Deitsch)
  * @author Xqt
  */
