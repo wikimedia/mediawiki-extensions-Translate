@@ -21,6 +21,10 @@
 			};
 
 			return $.get( apiURL, queryParams );
+		},
+
+		loadMessages: function () {
+			$( '.tux-messagetable-loader' ).trigger( 'appear' );
 		}
 	} );
 
@@ -128,6 +132,44 @@
 		$messageWrapper.translateeditor();
 	}
 
+	function messageTableLoader () {
+		var messagegroup,
+			pageSize,
+			remaining,
+			targetLanguage,
+			$loader = $( '.tux-messagetable-loader' ),
+			$messageList = $( '.tux-messagelist' ),
+			offset = $loader.data( 'offset' );
+
+		messagegroup = $loader.data( 'messagegroup' );
+		pageSize = $loader.data( 'pagesize' );
+		remaining = $loader.data( 'remaining' );
+		targetLanguage = $messageList.data( 'targetlangcode' );
+
+		$.when(
+			mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize )
+		).then( function ( result ) {
+			var messages = result.query.messagecollection;
+
+			$.each( messages, function ( index, message ) {
+				message.group = messagegroup;
+				addMessage( message );
+			} );
+
+			if ( result['query-continue'] ) {
+				remaining = remaining - pageSize;
+				offset = result['query-continue'].messagecollection.mcoffset;
+				$loader.data( 'offset', offset )
+					.data( 'remaining', remaining );
+				$( '.tux-messagetable-loader-count' )
+					.text( mw.msg( 'tux-messagetable-more-messages', remaining ) );
+			} else {
+				// End of messages
+				$loader.data( 'offset', -1 ).addClass( 'hide' );
+			}
+		} );
+	}
+
 	$( 'document' ).ready( function () {
 		// Currently used only in the pre-TUX editor
 		$( '.mw-translate-messagereviewbutton' ).click( function () {
@@ -160,44 +202,7 @@
 			$.post( mw.util.wikiScript( 'api' ), params, successFunction ).fail( failFunction );
 		} );
 
-		$( '.tux-messagetable-loader' ).appear( function () {
-			var messagegroup, pageSize, remaining, targetLanguage,
-				$this = $( this ),
-				$messageList = $( '.tux-messagelist' ),
-				offset = $this.data( 'offset' );
-
-			if ( offset === '-1' ) {
-				return false;
-			}
-
-			messagegroup = $this.data( 'messagegroup' );
-			pageSize = $this.data( 'pagesize' );
-			remaining = $this.data( 'remaining' );
-			targetLanguage = $messageList.data( 'targetlangcode' );
-
-			$.when(
-				mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize )
-			).then( function ( result ) {
-				var messages = result.query.messagecollection;
-
-				$.each( messages, function ( index, message ) {
-					message.group = messagegroup;
-					addMessage( message );
-				} );
-
-				if ( result['query-continue'] ) {
-					offset = result['query-continue'].messagecollection.mcoffset;
-					$( '.tux-messagetable-loader' ).data( 'offset', offset )
-						.data( 'remaining', remaining - pageSize );
-					$( '.tux-messagetable-loader-count' )
-						.text( mw.msg( 'tux-messagetable-more-messages', remaining - pageSize  ) );
-				} else {
-					// End of messages
-					$( '.tux-messagetable-loader' ).data( 'offset', -1 )
-						.addClass( 'hide' );
-				}
-			} );
-		}, {
+		$( '.tux-messagetable-loader' ).appear( messageTableLoader, {
 			// Appear callback need to be called more than once.
 			one: false
 		} );

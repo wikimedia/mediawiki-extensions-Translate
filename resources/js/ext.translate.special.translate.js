@@ -57,14 +57,37 @@
 	mw.translate = $.extend( mw.translate, {
 
 		changeGroup: function ( group ) {
-			mw.translate.changeUrl( {
-				'group': group,
-				filter: mw.Uri().query.filter || '!translated'
-			} );
+			var $loader;
+
+			$loader = $( '.tux-messagetable-loader' ).removeClass( 'hide' );
+
+			$loader.data( 'messagegroup', group )
+				// FIXME it should match filter.
+				.data( 'remaining', mw.translate.getStatsForGroup( group ).total )
+				.removeData( 'offset' )
+				.removeAttr( 'data-offset' );
+			// clear current messages;
+			$( '.tux-message' ).remove();
+			mw.translate.loadMessages();
+			// TODO: fix the URL
 		},
 
 		changeLanguage: function ( language ) {
-			mw.translate.changeUrl( { 'language': language } );
+			var $loader;
+
+			$loader = $( '.tux-messagetable-loader' ).removeClass( 'hide' );
+
+			$( '.ext-translate-language-selector > .uls' ).text( $.uls.data.getAutonym( language) );
+
+			$loader.data( 'remaining', mw.translate.getStatsForGroup( $loader.data( 'messagegroup' ) ).total )
+				.removeData( 'offset' )
+				.removeAttr( 'data-offset' );
+			$( '.tux-messagelist' ).data( 'targetlangcode', language );
+
+			// clear current messages;
+			$( '.tux-message' ).remove();
+			mw.translate.loadMessages();
+			// TODO: fix the URL
 		},
 
 		changeUrl: function ( params ) {
@@ -90,7 +113,7 @@
 			descUri.path = mw.config.get( 'wgScript' );
 			descUri.query = {
 				action: 'edit',
-				title: title + '/' +  mw.config.get( 'wgTranslateDocumentationLanguageCode' )
+				title: title + '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' )
 			};
 
 			return descUri.toString();
