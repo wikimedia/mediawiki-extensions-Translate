@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH///pc\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-23T08:23:03Z",
+      "side": 1,
+      "message": "After seeing https://gerrit.wikimedia.org/r/#/c/45239/1/resources/mediawiki.api/mediawiki.api.parse.js I think this should be:\napi.parse( \u0027translation\u0027 )\n  .done( ... )\n  .fail( ... );",
+      "revId": "58afe058311373b32a747ea83447649657e6870e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
