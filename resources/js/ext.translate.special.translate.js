@@ -67,7 +67,10 @@
 			// clear current messages;
 			$( '.tux-message' ).remove();
 			mw.translate.loadMessages();
-			// TODO: fix the URL
+			mw.translate.changeUrl( {
+				'group': group,
+				filter: mw.Uri().query.filter || '!translated'
+			} );
 		},
 
 		changeLanguage: function ( language ) {
@@ -83,14 +86,24 @@
 			// clear current messages;
 			$( '.tux-message' ).remove();
 			mw.translate.loadMessages();
-			// TODO: fix the URL
+			mw.translate.changeUrl( {
+				'language': language
+			} );
 		},
 
 		changeUrl: function ( params ) {
-			var uri;
-			uri = new mw.Uri( window.location.href );
+			var uri = new mw.Uri( window.location.href );
+
 			uri.extend( params );
-			window.location.href = uri.toString();
+
+			// Change the URL with this URI, but don't leave the page.
+			if ( history.pushState ) {
+				// IE<10 does not support pushState. Never mind.
+				history.pushState( uri, null, uri.toString() );
+			} else {
+				// For old browsers, just reload
+				window.location.href = uri.toString();
+			}
 		},
 
 		canTranslate: function () {
