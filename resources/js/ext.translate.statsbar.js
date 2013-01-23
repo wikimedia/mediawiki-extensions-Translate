@@ -130,7 +130,7 @@
 		update: function () {
 			var stats, proofread, translated, fuzzy, untranslated, untranslatedCount;
 
-			stats = getStatsForGroup( this.group );
+			stats = mw.translate.getStatsForGroup( this.group );
 
 			this.$statsBar.data( 'total', stats.total );
 
@@ -180,21 +180,25 @@
 
 	$.fn.languagestatsbar.Constructor = LanguageStatsBar;
 
-	function getStatsForGroup ( group ) {
-		var i,
-			stats = {
-				proofread: 0,
-				total: 0,
-				fuzzy: 0,
-				translated: 0
-			};
+	mw.translate = mw.translate || {};
 
-		for ( i = 0; i < mw.translate.languagestats.length; i++ ) {
-			if ( mw.translate.languagestats[i].group === group ) {
-				stats = mw.translate.languagestats[i];
-				break;
+	mw.translate = $.extend( mw.translate, {
+		getStatsForGroup: function ( group ) {
+			var i,
+				stats = {
+					proofread: 0,
+					total: 0,
+					fuzzy: 0,
+					translated: 0
+				};
+
+			for ( i = 0; i < mw.translate.languagestats.length; i++ ) {
+				if ( mw.translate.languagestats[i].group === group ) {
+					stats = mw.translate.languagestats[i];
+					break;
+				}
 			}
+			return stats;
 		}
-		return stats;
-	}
+	} );
 } ( mediaWiki, jQuery ) );
