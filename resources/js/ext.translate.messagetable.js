@@ -43,6 +43,91 @@
 		}
 	}
 
+	/**
+	 * Add a message to the message table
+	 */
+	function addMessage( message ) {
+		var $message,targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
+			status = '',
+			statusMsg = '',
+			$messageWrapper,
+			$messageList;
+
+		$messageList = $( '.tux-messagelist' );
+
+		sourceLanguage = $messageList.data( 'sourcelangcode' );
+		sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
+		targetLanguage = $messageList.data( 'targetlangcode' );
+		targetLanguageDir = $.uls.data.getDir( targetLanguage );
+
+		if ( message.translation ) {
+			status = 'translated';
+		}
+
+		//if ( message.tags.length ) {
+			// FIXME: proofread is not coming in tags.
+			//status += message.tags.join( ' ' );
+		//}
+
+		if ( status ) {
+			statusMsg = 'tux-status-' + status;
+		}
+
+		$messageWrapper = $( '<div>' )
+			.addClass( 'row tux-message' )
+			.attr( {
+				'data-translation': message.translation,
+				'data-source': message.definition,
+				'data-title': message.title,
+				'data-group': message.group
+			} );
+
+		$message = $( '<div>' )
+			.addClass( 'row tux-message-item ' + status )
+			.append(
+				$( '<div>' )
+					.addClass( 'nine columns tux-list-message' )
+					.append(
+						$( '<span>' )
+							.addClass( 'tux-list-source' )
+							.attr( {
+								lang: sourceLanguage,
+								dir: sourceLanguageDir
+							} )
+							.text( message.definition ),
+						$( '<span>' )
+							.addClass( 'tux-list-translation' )
+							.attr( {
+								lang: targetLanguage,
+								dir: targetLanguageDir
+							} )
+							.text( message.translation || '' )
+						),
+				$( '<div>' )
+					.addClass( 'two columns tux-list-status text-center' )
+					.append(
+						$( '<span>' )
+							.addClass( 'tux-status-' + status )
+							.text( statusMsg ? mw.msg( statusMsg ) : '' )
+					),
+				$( '<div>' )
+					.addClass( 'one column tux-list-edit text-center' )
+					.append(
+						$( '<a>' )
+							.attr( {
+								'title': mw.msg( 'translate-edit-title', message.key )
+							} )
+							.text( mw.msg( 'tux-edit' ) )
+					)
+			);
+
+		$messageWrapper.append( $message );
+		$( '.tux-messagetable-loader' ).before( $messageWrapper );
+
+		// Attach translate editor to the message
+		$messageWrapper.translateeditor();
+	}
+
 	$( 'document' ).ready( function () {
 		// Currently used only in the pre-TUX editor
 		$( '.mw-translate-messagereviewbutton' ).click( function () {
@@ -76,9 +161,9 @@
 		} );
 
 		$( '.tux-messagetable-loader' ).appear( function () {
-			var messagegroup, pageSize, remaining, $messageList,
-				targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
+			var messagegroup, pageSize, remaining, targetLanguage,
 				$this = $( this ),
+				$messageList = $( '.tux-messagelist' ),
 				offset = $this.data( 'offset' );
 
 			if ( offset === '-1' ) {
@@ -88,12 +173,7 @@
 			messagegroup = $this.data( 'messagegroup' );
 			pageSize = $this.data( 'pagesize' );
 			remaining = $this.data( 'remaining' );
-			$messageList = $( '.tux-messagelist' );
-
-			sourceLanguage = $messageList.data( 'sourcelangcode' );
-			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
 			targetLanguage = $messageList.data( 'targetlangcode' );
-			targetLanguageDir = $.uls.data.getDir( targetLanguage );
 
 			$.when(
 				mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize )
@@ -101,77 +181,8 @@
 				var messages = result.query.messagecollection;
 
 				$.each( messages, function ( index, message ) {
-					var $message,
-						status = '',
-						statusMsg = '',
-						$messageWrapper;
-
-					if ( message.translation ) {
-						status = 'translated';
-					}
-
-					//if ( message.tags.length ) {
-						// FIXME: proofread is not coming in tags.
-						//status += message.tags.join( ' ' );
-					//}
-
-					if ( status ) {
-						statusMsg = 'tux-status-' + status;
-					}
-
-					$messageWrapper = $( '<div>' )
-						.addClass( 'row tux-message' )
-						.attr( {
-							'data-translation': message.translation,
-							'data-source': message.definition,
-							'data-title': message.title,
-							'data-group': messagegroup
-						} );
-
-					$message = $( '<div>' )
-						.addClass( 'row tux-message-item ' + status )
-						.append(
-							$( '<div>' )
-								.addClass( 'nine columns tux-list-message' )
-								.append(
-									$( '<span>' )
-										.addClass( 'tux-list-source' )
-										.attr( {
-											lang: sourceLanguage,
-											dir: sourceLanguageDir
-										} )
-										.text( message.definition ),
-									$( '<span>' )
-										.addClass( 'tux-list-translation' )
-										.attr( {
-											lang: targetLanguage,
-											dir: targetLanguageDir
-										} )
-										.text( message.translation || '' )
-									),
-							$( '<div>' )
-								.addClass( 'two columns tux-list-status text-center' )
-								.append(
-									$( '<span>' )
-										.addClass( 'tux-status-' + status )
-										.text( statusMsg ? mw.msg( statusMsg ) : '' )
-								),
-							$( '<div>' )
-								.addClass( 'one column tux-list-edit text-center' )
-								.append(
-									$( '<a>' )
-										.attr( {
-											'title': mw.msg( 'translate-edit-title', message.key )
-										} )
-										.text( mw.msg( 'tux-edit' ) )
-								)
-						);
-
-					$messageWrapper.append( $message );
-					$( '.tux-messagetable-loader' ).before( $messageWrapper );
-
-					// Attach translate editor to the message
-					$messageWrapper.translateeditor();
+					message.group = messagegroup;
+					addMessage( message );
 				} );
 
 				if ( result['query-continue'] ) {
