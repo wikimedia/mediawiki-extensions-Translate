@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//+U8\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-24T11:47:42Z",
+      "side": 1,
+      "message": "This overrides fuzzy/translated/proofread statuses, but it should only override untranslated status.",
+      "revId": "b6fee9adf9a7688c0b6d27b803c1fd15df6c96cd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//+VQ\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-24T11:47:42Z",
+      "side": 1,
+      "message": "status should be always set here.",
+      "revId": "b6fee9adf9a7688c0b6d27b803c1fd15df6c96cd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
