@@ -356,7 +356,18 @@
 				} );
 
 			$textArea.on( 'keyup', function () {
-				translateEditor.scheduleValidation();
+				var $textArea = $(this);
+
+				delay( function () {
+						var saveButton = translateEditor.$editor
+							.find( 'button.tux-editor-save-button' );
+					translateEditor.validateTranslation();
+					saveButton.text ( mw.msg( 'tux-editor-save-button-label' ) );
+					if ( !$textArea.val() ) {
+						saveButton.text ( mw.msg( 'tux-editor-delete-button-label' ) );
+					}
+				}, 1000 );
+
 			} );
 
 			if ( this.$editTrigger.data( 'translation' ) ) {
@@ -384,6 +395,14 @@
 					.on( 'click', function () {
 						translateEditor.save();
 					} );
+
+				// When the user opens an outdated translation, the main button should be enabled
+				// and display a "confirm translation" label.
+				if ( this.$messageItem.hasClass( 'fuzzy') ) {
+					$saveButton.prop( 'disabled', false )
+						.text ( mw.msg( 'tux-editor-confirm-button-label' ) );
+				}
+
 			} else {
 				$requestRight = $( '<span>' )
 					.text( mw.msg( 'translate-edit-nopermission' ) )
@@ -466,13 +485,6 @@
 					translateEditor.addWarning( warnings[warningIndex], 'validation' );
 				}
 			} );
-		},
-
-		/**
-		 * Schedule translation validation, for example when the text is changed.
-		 */
-		scheduleValidation: function () {
-			delay( $.proxy( this.validateTranslation, this ), 1000 );
 		},
 
 		/**
