@@ -36,6 +36,42 @@
     },
     {
       "key": {
+        "uuid": "AAADiH//+Xw\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-24T11:08:07Z",
+      "side": 1,
+      "message": "Different namespaces though.",
+      "parentUuid": "AAADiH///kQ\u003d",
+      "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//+X0\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-24T11:08:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADiH//+cE\u003d",
+      "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADiH//+cA\u003d",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-01-24T09:19:28Z",
       "side": 1,
       "message": "It\u0027s usually \u0027function ()\u0027",
+      "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//+X4\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-24T11:08:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADiH//+cA\u003d",
       "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAADiH//+YQ\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-24T11:08:07Z",
+      "side": 1,
+      "message": "Loader is rendered from php. and pagesize also set there. We dont change it.",
+      "parentUuid": "AAADiH//+a8\u003d",
+      "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADiH//+b8\u003d",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 1
@@ -81,6 +153,24 @@
       "writtenOn": "2013-01-24T09:19:28Z",
       "side": 1,
       "message": "Can $loader be used here?",
+      "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//+YM\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-24T11:08:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADiH//+b8\u003d",
       "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAADiH//+X8\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-24T11:08:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADiH//+b0\u003d",
+      "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADiH//+b4\u003d",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 1
@@ -115,6 +223,24 @@
       "writtenOn": "2013-01-24T09:19:28Z",
       "side": 1,
       "message": "Can $loader be used here?",
+      "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//+YI\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-24T11:08:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADiH//+b4\u003d",
       "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAADiH//+Xs\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-24T11:08:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADiH//+bs\u003d",
+      "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADiH//+bk\u003d",
         "filename": "resources/js/ext.translate.special.translate.js",
         "patchSetId": 1
@@ -149,6 +293,24 @@
       "writtenOn": "2013-01-24T09:19:28Z",
       "side": 1,
       "message": "It\u0027s clearer to initialize $loader here in one line, and to change it on a separate line.",
+      "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//+Xo\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-24T11:08:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADiH//+bk\u003d",
       "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "AAADiH//+Xk\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-24T11:08:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADiH//+bY\u003d",
+      "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADiH//+bM\u003d",
         "filename": "resources/js/ext.translate.statsbar.js",
         "patchSetId": 1
@@ -183,6 +363,24 @@
       "writtenOn": "2013-01-24T09:19:28Z",
       "side": 1,
       "message": "Indent the function body.",
+      "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//+Xg\u003d",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-24T11:08:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAADiH//+bM\u003d",
       "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
