@@ -305,7 +305,7 @@ class MessageTable {
 			$attribs['value'] = wfMessage( 'translate-messagereview-submit' )->text();
 			$attribs['disabled'] = 'disabled';
 			$attribs['title'] = wfMessage( 'translate-messagereview-no-fuzzy' )->text();
-		} elseif ( $wgUser->getName() === $message->author() ) {
+		} elseif ( $wgUser->getName() === $message->getProperty( 'last-translator-text' ) ) {
 			$attribs['value'] = wfMessage( 'translate-messagereview-submit' )->text();
 			$attribs['disabled'] = 'disabled';
 			$attribs['title'] = wfMessage( 'translate-messagereview-no-own' )->text();
