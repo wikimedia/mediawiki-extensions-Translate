@@ -143,13 +143,11 @@ class TranslateUtils {
 	 * @return string Best-effort localisation of wanted language name.
 	 */
 	public static function getLanguageName( $code, $native = false, $language = 'en' ) {
-		if ( !$native && is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
-			$languages = LanguageNames::getNames( $language,
-				LanguageNames::FALLBACK_NORMAL,
-				LanguageNames::LIST_MW_AND_CLDR
-			);
-		} else {
+		if ( $native ) {
+			// TODO: deprecate this code path
 			$languages = Language::getLanguageNames( false );
+		} else {
+			$languages = TranslateUtils::getLanguageNames( $language );
 		}
 
 		if ( isset( $languages[$code] ) ) {
