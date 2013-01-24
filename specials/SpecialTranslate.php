@@ -238,7 +238,7 @@ class SpecialTranslate extends SpecialPage {
 		/* str  */ 'language' => $this->getLanguage()->getCode(),
 		/* str  */ 'group'    => self::isBeta( $this->getRequest() ) ? '!additions': '',
 		/* str  */ 'offset'   => '', // Used to be int, now str
-		/* int  */ 'limit'    => 100,
+		/* int  */ 'limit'    => self::isBeta( $this->getRequest() ) ? 0 : 100,
 		/* str  */ 'filter'   => self::isBeta( $this->getRequest() ) ? '!translated' : '', // Tux
 		/* int  */ 'optional' => '0',
 		);
