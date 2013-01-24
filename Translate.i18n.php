@@ -1337,6 +1337,7 @@ Ha de fer parte d'a colla de traductors ta poder alzar os cambeos. Ístos no que
  * @author Alnokta
  * @author Basharh
  * @author Meno25
+ * @author Mido
  * @author OsamaK
  * @author Ouda
  * @author ترجمان05
@@ -1346,7 +1347,6 @@ Ha de fer parte d'a colla de traductors ta poder alzar os cambeos. Ístos no que
 $messages['ar'] = array(
 	'translate' => 'ترجمة',
 	'translate-desc' => '[[Special:Translate|صفحة خاصة]] لترجمة الميدياويكي وما بعده',
-	'translate-showsub' => 'أظهر {{PLURAL:$1||المجموعة الفرعية|المجموعتين الفرعتين|$1 مجموعات فرعية|$1 مجموعة فرعية}}.',
 	'translate-taskui-view' => 'أظهر كل الرسائل',
 	'translate-taskui-untranslated' => 'أظهر الرسائل غير المترجمة',
 	'translate-taskui-optional' => 'أظهر الرسائل الاختيارية',
@@ -1512,6 +1512,7 @@ $messages['ar'] = array(
 	'translate-language-code' => 'رمز اللغة',
 	'translate-language-code-field-name' => 'رمز اللغة:',
 	'translate-suppress-complete' => 'تخطَ مجموعات الرسائل المترجمة كليا',
+	'translate-ls-noempty' => 'تخطَ مجموعات الرسائل الغير مترجمة كليا',
 	'translate-language' => 'اللغة',
 	'translate-total' => 'الرسائل',
 	'translate-untranslated' => 'غير المترجمة',
@@ -3569,6 +3570,7 @@ $1',
 	'tux-editor-clear-translated' => 'Схаваць перакладзеныя',
 	'tux-editor-outdated-warning' => 'Гэтаму перакладу, магчыма, патрабуецца абнаўленьне.',
 	'tux-editor-outdated-warning-diff-link' => 'Паказаць розьніцу',
+	'tux-editor-doc-editor-placeholder' => 'Дакумэнтацыя паведамленьня',
 	'tux-editor-doc-editor-save' => 'Захаваць дакумэнтацыю',
 	'tux-editor-doc-editor-cancel' => 'Скасаваць',
 	'tux-messagetable-more-messages' => 'Яшчэ $1 {{PLURAL:$1|паведамленьне|паведамленьні|паведамленьняў}}',
