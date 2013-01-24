@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//+TU\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-24T11:56:49Z",
+      "side": 1,
+      "message": "Is there extra tabs on this line or is just gerrit displaying it wrong?",
+      "revId": "480265db51f2739b1aa5a63d6c15f647a7f55dd8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//+TE\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-24T11:56:49Z",
+      "side": 1,
+      "message": "Extra space before (",
+      "revId": "480265db51f2739b1aa5a63d6c15f647a7f55dd8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
