@@ -142,6 +142,9 @@ Post processing step to format in wiki
  array          &$list: List of languages indexed by language code
  string          $language: Language code of the language of which language names are in
 
+;TranslateTranslationAids: Allows adding (and removing) new translation aids
+ array          &$types: List of translation aid classes indexed by type identifier
+
 === JavaScript events ===
 
 ;afterRegisterFeatures: Provides an opportunity to register event handlers, etc., whenever a new form is opened.

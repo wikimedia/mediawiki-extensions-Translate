@@ -81,7 +81,7 @@ abstract class TranslationAid {
 	 * Get the translations in all languages. Cached for performance.
 	 * Fuzzy translation are not included.
 	 *
-	 * @return array
+	 * @return array Language code => Translation
 	 */
 	public function getTranslations() {
 		static $cache = array();
@@ -117,7 +117,7 @@ abstract class TranslationAid {
 	 * @return array
 	 */
 	public static function getTypes() {
-		return array(
+		$types = array(
 			'definition' => 'MessageDefinitionAid',
 			'translation' => 'CurrentTranslationAid',
 			'inotherlanguages' => 'InOtherLanguagesAid',
@@ -127,6 +127,9 @@ abstract class TranslationAid {
 			'ttmserver' => 'TTMServerAid',
 			'support' => 'SupportAid',
 		);
+
+		wfRunHooks( 'TranslateTranslationAids', array( &$types ) );
+		return $types;
 	}
 
 }
