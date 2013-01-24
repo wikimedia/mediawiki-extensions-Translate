@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//+Rw\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-01-24T13:28:08Z",
+      "side": 1,
+      "message": "I agree with Niklas and Siebrand - functions with the same name are confusing. And you can probably simplify the jQuery call here to $( this ) if you move it into the callback.",
+      "revId": "812e46e77ab9b3e995522d336b01ff7f62964350",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
