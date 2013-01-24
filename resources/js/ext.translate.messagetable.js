@@ -50,6 +50,7 @@
 		var $message,targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
 			status = '',
 			statusMsg = '',
+			statusClass = '',
 			$messageWrapper,
 			$messageList;
 
@@ -62,12 +63,18 @@
 
 		if ( message.translation ) {
 			status = 'translated';
+			statusClass = 'tux-status-translated';
 		}
 
-		//if ( message.tags.length ) {
-			// FIXME: proofread is not coming in tags.
-			//status += message.tags.join( ' ' );
-		//}
+		if ( message.tags.length ) {
+			if ( $.inArray( 'optional', message.tags ) >= 0 ) {
+				status = 'optional';
+				statusClass = 'tux-status-optional';
+			} else if ( $.inArray( 'fuzzy', message.tags ) >= 0 ) {
+				status = 'fuzzy';
+				statusClass = 'tux-warning tux-status-fuzzy';
+			}
+		}
 
 		if ( status ) {
 			statusMsg = 'tux-status-' + status;
@@ -107,7 +114,7 @@
 					.addClass( 'two columns tux-list-status text-center' )
 					.append(
 						$( '<span>' )
-							.addClass( 'tux-status-' + status )
+							.addClass( statusClass )
 							.text( statusMsg ? mw.msg( statusMsg ) : '' )
 					),
 				$( '<div>' )
