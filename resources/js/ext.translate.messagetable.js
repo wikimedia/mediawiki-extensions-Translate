@@ -54,6 +54,7 @@
 		var $message,targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
 			status = '',
 			statusMsg = '',
+			statusClass = '',
 			$messageWrapper,
 			$messageList;
 
@@ -64,16 +65,24 @@
 		targetLanguage = $messageList.data( 'targetlangcode' );
 		targetLanguageDir = $.uls.data.getDir( targetLanguage );
 
-		if ( message.translation ) {
-			status = 'translated';
+		status = message.properties.status;
+		statusClass = 'tux-status-' + status;
+
+		if ( message.tags.length
+			&& $.inArray( 'optional', message.tags ) >= 0
+			&& status === 'untranslated'
+		) {
+			status = 'optional';
+			statusClass = 'tux-status-optional';
 		}
 
-		//if ( message.tags.length ) {
-			// FIXME: proofread is not coming in tags.
-			//status += message.tags.join( ' ' );
-		//}
+		// Fuzzy translations need warning class
+		if ( status === 'fuzzy' ) {
+			statusClass = statusClass + ' tux-warning';
+		}
 
-		if ( status ) {
+		// Label the status if it is not untranslated
+		if ( status !== 'untranslated' ) {
 			statusMsg = 'tux-status-' + status;
 		}
 
@@ -106,7 +115,7 @@
 					.addClass( 'two columns tux-list-status text-center' )
 					.append(
 						$( '<span>' )
-							.addClass( 'tux-status-' + status )
+							.addClass( statusClass )
 							.text( statusMsg ? mw.msg( statusMsg ) : '' )
 					),
 				$( '<div>' )
