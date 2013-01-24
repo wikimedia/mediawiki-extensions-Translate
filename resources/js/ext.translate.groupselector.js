@@ -249,18 +249,20 @@
 			var queryParams,
 				apiURL = mw.util.wikiScript( 'api' ),
 				messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' ),
-				$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' );
-
+				$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' ),
+				recentMessageGroups = $( '.ext-translate-msggroup-selector' )
+					.data( 'recentmsggroups' );
 			queryParams = {
 				action: 'translateuser',
 				format: 'json'
 			};
 
 			$msgGroupList.empty();
-			$.get( apiURL, queryParams, function ( result ) {
+
+			function addRecentMessageGroups ( recentgroups ) {
 				var msgGroupRows = [];
 
-				$.each( result.translateuser.recentgroups, function ( index, messageGroupId ) {
+				$.each( recentgroups, function ( index, messageGroupId ) {
 					var messagegroup = getGroup( messageGroupId, messageGroups );
 
 					if ( messagegroup ) {
@@ -269,7 +271,17 @@
 				} );
 
 				$msgGroupList.append( msgGroupRows );
-			} );
+			}
+
+			if ( !recentMessageGroups ) {
+				$.get( apiURL, queryParams, function ( result ) {
+					$( '.ext-translate-msggroup-selector' )
+						.data( 'recentmsggroups', result.translateuser.recentgroups );
+					addRecentMessageGroups( result.translateuser.recentgroups );
+				} );
+			} else {
+				addRecentMessageGroups( recentMessageGroups );
+			}
 		},
 
 		/**
