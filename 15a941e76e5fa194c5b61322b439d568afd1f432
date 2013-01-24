@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAADiH///kQ\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-24T09:25:25Z",
+      "side": 1,
+      "message": "It\u0027s quite confusing that there are two functions named loadMessages in the same file!",
+      "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADiH//+cA\u003d",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 1
@@ -30,6 +47,23 @@
       "writtenOn": "2013-01-24T09:19:28Z",
       "side": 1,
       "message": "It\u0027s usually \u0027function ()\u0027",
+      "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//+a8\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-24T09:25:25Z",
+      "side": 1,
+      "message": "So what fills this information when you change group or language? This info should be populated when we do the first API request to load first messages. This also avoids doing costly calculation twice (once in PHP and once in AJAX) in initial page load.",
       "revId": "15a941e76e5fa194c5b61322b439d568afd1f432",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
