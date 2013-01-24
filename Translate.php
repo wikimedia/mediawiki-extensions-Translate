@@ -246,6 +246,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-editor-placeholder',
 		'tux-editor-save-button-label',
 		'tux-editor-skip-button-label',
+		'tux-editor-confirm-button-label',
 		'tux-editor-shortcut-info',
 		'tux-editor-no-message-doc',
 		'tux-editor-edit-desc',
