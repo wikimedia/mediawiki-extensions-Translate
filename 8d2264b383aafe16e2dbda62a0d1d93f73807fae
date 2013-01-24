@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAADiH//+ak\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-24T09:29:34Z",
+      "side": 1,
+      "message": "message.status",
+      "revId": "8d2264b383aafe16e2dbda62a0d1d93f73807fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADiH//+ao\u003d",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 1
@@ -13,6 +30,40 @@
       "writtenOn": "2013-01-24T09:28:59Z",
       "side": 1,
       "message": "This way, if it\u0027s fuzzy, it won\u0027t be indicated. Fuzziness must always be indicated.",
+      "revId": "8d2264b383aafe16e2dbda62a0d1d93f73807fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//+ag\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-24T09:29:34Z",
+      "side": 1,
+      "message": "Should only override if status \u003d untranslated",
+      "revId": "8d2264b383aafe16e2dbda62a0d1d93f73807fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//+aU\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-24T09:29:34Z",
+      "side": 1,
+      "message": "This is not needed if line 65 is changed.",
       "revId": "8d2264b383aafe16e2dbda62a0d1d93f73807fae",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
