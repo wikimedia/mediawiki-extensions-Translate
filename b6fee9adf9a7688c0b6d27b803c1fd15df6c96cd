@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAADiH//+Sw\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-24T12:08:00Z",
+      "side": 1,
+      "message": "how it overrides, Optional is overridden by fuzzy and translated below.",
+      "parentUuid": "AAADiH//+U8\u003d",
+      "revId": "b6fee9adf9a7688c0b6d27b803c1fd15df6c96cd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAADiH//+VQ\u003d",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-01-24T11:47:42Z",
       "side": 1,
       "message": "status should be always set here.",
+      "revId": "b6fee9adf9a7688c0b6d27b803c1fd15df6c96cd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//+Ss\u003d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-24T12:08:00Z",
+      "side": 1,
+      "message": "you mean \"status is always set here?\", because of line 64?",
+      "parentUuid": "AAADiH//+VQ\u003d",
       "revId": "b6fee9adf9a7688c0b6d27b803c1fd15df6c96cd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
