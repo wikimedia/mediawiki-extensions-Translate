@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//9AE\u003d",
+        "filename": "resources/js/ext.translate.search.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-01-25T13:01:54Z",
+      "side": 1,
+      "message": "Space before paren, not after. Also in the following lines. And it should probably be $this \u003d $( this ).",
+      "revId": "92bf02c8cc24d3a8287bfa2360a36033b0a0fe96",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
