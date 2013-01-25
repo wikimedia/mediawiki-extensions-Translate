@@ -415,7 +415,7 @@
 				// and display a "confirm translation" label.
 				if ( this.$messageItem.hasClass( 'fuzzy') ) {
 					$saveButton.prop( 'disabled', false )
-						.text ( mw.msg( 'tux-editor-confirm-button-label' ) );
+						.text( mw.msg( 'tux-editor-confirm-button-label' ) );
 				}
 
 			} else {
