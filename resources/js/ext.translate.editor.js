@@ -77,7 +77,7 @@
 
 			// FIXME If status change is from fuzzy, it need to be passed to the trigger
 			// like .trigger( 'change' , ['translated', 'fuzzy' )
-			$( '.tux-action-bar .tux-statsbar' ).trigger( 'change', 'translated' );
+			$( '.tux-action-bar .tux-statsbar' ).trigger( 'change', [ 'translated', this.message.properties.state ] );
 			// TODO: Update any other statsbar for the same group in the page.
 		},
 

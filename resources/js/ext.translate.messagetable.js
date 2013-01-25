@@ -17,7 +17,7 @@
 				mcoffset: offset,
 				mclimit: limit,
 				mcfilter: mw.Uri().query.filter,
-				mcprop: [ 'definition', 'translation', 'tags', 'revision' ].join( '|' )
+				mcprop: [ 'definition', 'translation', 'tags', 'properties' ].join( '|' )
 			};
 
 			return $.get( apiURL, queryParams );
