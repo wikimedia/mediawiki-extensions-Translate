@@ -619,7 +619,7 @@
 							.append( $( '<a>' )
 								.attr( {
 									href: mw.translate.getDocumentationEditURL(
-										this.$editTrigger.data( 'title' ).replace( /\/[a-z\-]+$/, '' )
+										this.message.title.replace( /\/[a-z\-]+$/, '' )
 									),
 									target: '_blank'
 								} )
@@ -668,6 +668,11 @@
 		show: function () {
 			if ( !this.$editor ) {
 				this.init();
+				// don't waste time, get ready with next message
+				var $next = this.$editTrigger.next( '.tux-message' );
+				if ( $next.length ) {
+					$next.data( 'translateeditor' ).init();
+				}
 			}
 
 			// Hide all other open editors in the page
