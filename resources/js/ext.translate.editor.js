@@ -683,6 +683,11 @@
 		show: function () {
 			if ( !this.$editor ) {
 				this.init();
+				// don't waste time, get ready with next message
+				var $next = this.$editTrigger.next( '.tux-message' );
+				if ( $next.length ) {
+					$next.data( 'translateeditor' ).init();
+				}
 			}
 
 			// Hide all other open editors in the page
