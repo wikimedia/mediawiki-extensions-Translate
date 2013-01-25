@@ -110,10 +110,6 @@
 			}
 		},
 
-		canTranslate: function () {
-			return mw.config.get( 'TranslateRight' );
-		},
-
 		/**
 		 * Get the documentation edit URL for a title
 		 *
