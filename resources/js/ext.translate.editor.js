@@ -983,6 +983,7 @@
 
 			this.$editTrigger.find( '.tux-message-item' ).click( function () {
 				translateEditor.show();
+				return false;
 			} );
 		}
 	};

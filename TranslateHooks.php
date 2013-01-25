@@ -445,7 +445,7 @@ JAVASCRIPT;
 
 		if ( SpecialTranslate::isBeta( $request )
 			&& $title->isSpecialPage()
-			&& $alias === 'Translate'
+			&& ( $alias === 'Translate' || $alias === 'SearchTranslations' )
 		) {
 			global $wgTranslateDocumentationLanguageCode, $wgTranslatePermissionUrl;
 			$vars['TranslateRight'] = $out->getUser()->isAllowed( 'translate' );
