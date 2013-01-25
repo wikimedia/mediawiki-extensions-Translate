@@ -1623,7 +1623,7 @@ $messages['ko'] = array(
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|위키낱말사전모바일]]은 위키낱말사전 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]]은 [[:meta:Wiki Loves Monuments|Wiki Loves Monuments project]]에 기여하기 위한 모바일 어플리케이션입니다',
 	'translate-group-desc-waymarked-trails-help' => 'Waymarked Trails 웹 사이트의 도움말 페이지입니다: http://waymarkedtrails.org/help/about',
-	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]]은 실시간 협업 편집기입니다',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]]은 실시간 공동 작업 편집기입니다',
 );
 
 /** Colognian (Ripoarisch)
