@@ -207,6 +207,15 @@ $resourcePaths = array(
 );
 
 // Client-side resource modules
+
+$wgResourceModules['ext.translate.base'] = array(
+	'scripts' => 'resources/js/ext.translate.base.js',
+	'dependencies' => array(
+		'mediawiki.util',
+		'mediawiki.api',
+	),
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate'] = array(
 	'styles' => 'resources/css/ext.translate.css',
 	'position' => 'top',
@@ -232,6 +241,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 	'scripts' => 'resources/js/ext.translate.editor.js',
 	'styles' => 'resources/css/ext.translate.editor.css',
 	'dependencies' => array(
+		'ext.translate.base',
 		'ext.translate.grid',
 		'mediawiki.util',
 		'mediawiki.Uri',
@@ -422,7 +432,9 @@ $wgResourceModules['ext.translate.special.supportedlanguages'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.searchtranslations'] = array(
+	'scripts' => 'resources/js/ext.translate.search.js',
 	'styles' => 'resources/css/ext.translate.special.searchtranslations.css',
+	'dependencies' => array( 'ext.translate.editor' ),
 	'position' => 'top',
 ) + $resourcePaths;
 

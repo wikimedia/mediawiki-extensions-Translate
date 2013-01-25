@@ -998,6 +998,7 @@
 
 			this.$editTrigger.find( '.tux-message-item' ).click( function () {
 				translateEditor.show();
+				return false;
 			} );
 		}
 	};
@@ -1031,5 +1032,29 @@
 			timer = setTimeout( callback, milliseconds );
 		};
 	} () );
+
+
+
+	mw.translate = mw.translate || {};
+
+	mw.translate = $.extend( mw.translate, {
+	/**
+	 * Get the documentation edit URL for a title
+	 *
+	 * @param {String} title Message title with namespace
+	 * @return {String} URL for editing the documentation
+	 */
+		getDocumentationEditURL : function ( title ) {
+			var descUri = new mw.Uri( window.location.href );
+
+			descUri.path = mw.config.get( 'wgScript' );
+			descUri.query = {
+				action: 'edit',
+				title: title + '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' )
+			};
+
+			return descUri.toString();
+		}
+	} );
 
 }( jQuery, mediaWiki ) );

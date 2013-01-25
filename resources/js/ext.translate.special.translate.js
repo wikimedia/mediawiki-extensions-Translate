@@ -108,28 +108,6 @@
 				// For old browsers, just reload
 				window.location.href = uri.toString();
 			}
-		},
-
-		canTranslate: function () {
-			return mw.config.get( 'TranslateRight' );
-		},
-
-		/**
-		 * Get the documentation edit URL for a title
-		 *
-		 * @param {String} title Message title with namespace
-		 * @return {String} URL for editing the documentation
-		 */
-		getDocumentationEditURL: function ( title ) {
-			var descUri = new mw.Uri( window.location.href );
-
-			descUri.path = mw.config.get( 'wgScript' );
-			descUri.query = {
-				action: 'edit',
-				title: title + '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' )
-			};
-
-			return descUri.toString();
 		}
 
 	} );

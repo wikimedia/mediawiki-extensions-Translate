@@ -110,11 +110,24 @@ class SpecialSearchTranslations extends SpecialPage {
 				$text = str_replace( $post, '</strong>', $text );
 			}
 
-			$results .= Html::rawElement( 'div', array( 'class' => 'row tux-text' ), $text );
-			$results .= Html::element( 'div', array( 'class' => 'row tux-title' ), $document->messageid );
+			$result = Html::openElement( 'div', array(
+				'class' => 'row tux-message',
+				'data-title' => $document->messageid,
+				'data-definition' => $document->text, // FIXME wrong!
+				'data-translation' => $document->content,
+				'data-language' => $document->language,
+			) );
+
+			$result .= Html::rawElement( 'div', array( 'class' => 'row tux-text' ), $text );
+			$result .= Html::element( 'div', array( 'class' => 'row tux-title' ), $document->messageid );
 			$uri = wfAppendQuery( $document->uri, array( 'action' => 'edit' ) );
-			$link = Html::element( 'a', array( 'href' => $uri ), $this->msg( 'tux-sst-edit' ) );
-			$results .= Html::rawElement( 'div', array( 'class' => 'row tux-edit' ), $link );
+			$link = Html::element( 'a', array(
+				'href' => $uri,
+			), $this->msg( 'tux-sst-edit' ) );
+			$result .= Html::rawElement( 'div', array( 'class' => 'row tux-edit tux-message-item' ), $link );
+			$result .= Html::closeElement( 'div' );
+
+			$results .= $result;
 		}
 
 		$search = $this->getSearchInput( $queryString );
