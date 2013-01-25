@@ -619,7 +619,7 @@
 							.append( $( '<a>' )
 								.attr( {
 									href: mw.translate.getDocumentationEditURL(
-										this.$editTrigger.data( 'title' ).replace( /\/[a-z\-]+$/, '' )
+										this.message.title.replace( /\/[a-z\-]+$/, '' )
 									),
 									target: '_blank'
 								} )
