@@ -1,9 +1,10 @@
 ( function ( $, mw ) {
 	'use strict';
 
-	function TranslateEditor( element ) {
+	function TranslateEditor( element, options ) {
 		this.$editTrigger = $( element );
 		this.$editor = null;
+		this.message = options.message;
 		this.$messageItem = this.$editTrigger.find( '.tux-message-item' );
 		this.shown = false;
 		this.dirty = false;
@@ -97,7 +98,7 @@
 			// XXX: Any validations to be done before proceeding?
 			api.post( {
 				action: 'edit',
-				title: translateEditor.$editTrigger.data( 'title' ),
+				title: translateEditor.message.title,
 				text: translation,
 				token: mw.user.tokens.get( 'editToken' )
 			}, {
@@ -106,7 +107,7 @@
 						translateEditor.markTranslated();
 
 						// Update the translation
-						translateEditor.$editTrigger.data( 'translation', translation );
+						translateEditor.message.translation = translation;
 						translateEditor.$editTrigger.find( '.tux-list-translation' )
 							.text( translation );
 					} else {
@@ -140,7 +141,7 @@
 			// XXX: Any validations to be done before proceeding?
 			api.post( {
 				action: 'edit',
-				title: translateEditor.$editTrigger.data( 'title' )
+				title: translateEditor.message.title
 					.replace( /\/[a-z\-]+$/, '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ),
 				text: translation,
 				token: mw.user.tokens.get( 'editToken' )
@@ -187,7 +188,7 @@
 
 			api.post( {
 				action: 'hardmessages',
-				title: translateEditor.$editTrigger.data( 'title' ),
+				title: translateEditor.message.title,
 				token: mw.user.tokens.get( 'editToken' )
 			} );
 			// We don't care about the result of the above ajax call
@@ -249,7 +250,7 @@
 
 			$messageKeyLabel = $( '<div>' )
 				.addClass( 'ten columns text-left messagekey' )
-				.text( this.$editTrigger.data( 'title' ) )
+				.text( this.message.title )
 				.append( $( '<span>' ).addClass( 'caret' ) );
 
 			$closeIcon = $( '<span>' )
@@ -276,7 +277,7 @@
 			);
 
 			$messageList = $( '.tux-messagelist' );
-			sourceString = this.$editTrigger.data( 'source' );
+			sourceString = this.message.definition;
 			$sourceString = $( '<span>' )
 				.addClass( 'eleven column sourcemessage' )
 				.attr( {
@@ -359,8 +360,8 @@
 				translateEditor.scheduleValidation();
 			} );
 
-			if ( this.$editTrigger.data( 'translation' ) ) {
-				$textArea.text( this.$editTrigger.data( 'translation' ) );
+			if ( this.message.translation ) {
+				$textArea.text( this.message.translation );
 			}
 
 			$warningsBlock = $( '<div>' )
@@ -447,8 +448,8 @@
 			url.extend( {
 				title: 'Special:Translate/editpage',
 				suggestions: 'checks',
-				page: translateEditor.$editTrigger.data( 'title' ),
-				loadgroup: translateEditor.$editTrigger.data( 'group' )
+				page: translateEditor.message.title,
+				loadgroup: translateEditor.message.group
 			} );
 
 			$.post( url.toString(), {
@@ -942,7 +943,7 @@
 
 			queryParams = {
 				action: 'translationaids',
-				title: this.$editTrigger.data( 'title' ),
+				title: this.message.title,
 				format: 'json'
 			};
 

@@ -75,12 +75,7 @@
 
 		$messageWrapper = $( '<div>' )
 			.addClass( 'row tux-message' )
-			.attr( {
-				'data-translation': message.translation,
-				'data-source': message.definition,
-				'data-title': message.title,
-				'data-group': message.group
-			} );
+			.data( 'message', message );
 
 		$message = $( '<div>' )
 			.addClass( 'row tux-message-item ' + status )
@@ -125,7 +120,9 @@
 		$( '.tux-messagetable-loader' ).before( $messageWrapper );
 
 		// Attach translate editor to the message
-		$messageWrapper.translateeditor();
+		$messageWrapper.translateeditor( {
+			message: message
+		} );
 	}
 
 	$( 'document' ).ready( function () {
