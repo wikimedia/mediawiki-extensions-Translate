@@ -217,7 +217,7 @@ class MessageGroups {
 		if ( $groups === null ) {
 			$groups = array();
 			// Abusing this table originally intented for other purposes
-			$db = wfGetDB( DB_SLAVE );
+			$db = wfGetDB( DB_MASTER );
 			$table = 'translate_groupreviews';
 			$fields = array( 'tgr_group', 'tgr_state' );
 			$conds = array( 'tgr_lang' => '*priority' );
