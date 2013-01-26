@@ -172,6 +172,16 @@ class TranslatablePage {
 	// Public functions //
 
 	/**
+	 * Returns the source language of this translatable page. In other words
+	 * the language in which the page without language code is written.
+	 * @return string
+	 * @since 2013-01-28
+	 */
+	public function getSourceLanguageCode() {
+		return $this->getTitle()->getPageLanguage()->getCode();
+	}
+
+	/**
 	 * Returns MessageGroup id (to be) used for translating this page.
 	 * @return string
 	 */
