@@ -694,7 +694,16 @@ class SpecialPageTranslation extends SpecialPage {
 		 * used for calculating completion percentages for outdated translations.
 		 * For prettiness use null instead of empty array */
 		$page->addMarkedTag( $newrevision, $changed === array() ? null : $changed );
-		$this->addFuzzyTags( $page, $changed );
+		MessageGroups::clearCache();
+
+		$jobs = self::getRenderJobs( $page );
+		Job::batchInsert( $jobs );
+
+		$jobs = self::getTranslationUnitJobs( $page, $sections );
+		Job::batchInsert( $jobs );
+
+		// Logging
+		$this->handlePriorityLanguages( $this->getRequest(), $page, $this->getUser() );
 
 		$logger = new LogPage( 'pagetranslation' );
 		$params = array(
@@ -704,22 +713,8 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 		$logger->addEntry( 'mark', $page->getTitle(), null, array( serialize( $params ) ), $this->getUser() );
 
-		$this->handlePriorityLanguages( $this->getRequest(), $page, $this->getUser() );
-
-		// @todo FIXME: When translatable page X is tagged for translation and when X has <languages/>,
-		//              then there is no language bar on X after tagging and a job queue run. The below
-		//              tried to resolve that, but didn't. No correct solution known at the moment.
-		//              Manual fix is "action=purge" on X.
-		// This updates the language bars properly as well as the translatable page.
-		//$page->getTranslationPercentages( true );
-		//WikiPage::factory( $page->getTitle() )->doPurge();
-
+		// Clear more caches
 		$page->getTitle()->invalidateCache();
-		$jobs = self::getRenderJobs( $page );
-		Job::batchInsert( $jobs );
-
-		// Re-generate caches
-		MessageGroups::clearCache();
 		MessageIndexRebuildJob::newJob()->run();
 		return false;
 	}
@@ -781,66 +776,40 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	/**
-	 * @param TranslatablePage $page
-	 * @param string[] $changed
-	 */
-	public function addFuzzyTags( TranslatablePage $page, array $changed ) {
-		if ( !count( $changed ) ) {
-			return;
-		}
-
-		$titles = array();
-		$prefix = $page->getTitle()->getPrefixedText();
-		$db = wfGetDB( DB_MASTER );
-
-		foreach ( $changed as $c ) {
-			$title = Title::makeTitleSafe( NS_TRANSLATIONS, "$prefix/$c" );
-			if ( $title ) {
-				$titles[] = 'page_title ' . $db->buildLike( $title->getDBkey() . '/', $db->anyString() );
-			}
-		}
-
-		$titleCond = $db->makeList( $titles, LIST_OR );
-
-		$fields = array( 'page_id', 'page_latest' );
-		$conds = array( 'page_namespace' => NS_TRANSLATIONS, $titleCond );
-		$res = $db->select( 'page', $fields, $conds, __METHOD__ );
-
-		$inserts = array();
-
-		// @todo Filter out qqq so it is not marked as fuzzy.
-		foreach ( $res as $r ) {
-			$inserts[] = array(
-				'rt_page' => $r->page_id,
-				'rt_type' => RevTag::getType( 'fuzzy' ),
-				'rt_revision' => $r->page_latest,
-			);
-		}
-
-		if ( count( $inserts ) ) {
-			$db->replace( 'revtag', array( 'rt_type_page_revision' ), $inserts, __METHOD__ );
-		}
-	}
-
-	/**
 	 * Creates jobs needed to create or update all translation pages.
 	 * @param TranslatablePage $page
 	 * @return Job[]
+	 * @since 2013-01-28
 	 */
 	public static function getRenderJobs( TranslatablePage $page ) {
-		global $wgContLang;
-
 		$jobs = array();
-
-		// When marking the first time, also schedule update for the noop translation
-		$en = Title::newFromText( $page->getTitle()->getPrefixedText() . '/' . $wgContLang->getCode() );
-		if ( !$en->exists() ) {
-			$jobs[] = RenderJob::newJob( $en );
-		}
 
 		$titles = $page->getTranslationPages();
 		foreach ( $titles as $t ) {
 			$jobs[] = RenderJob::newJob( $t );
+		}
+
+		return $jobs;
+	}
+
+	/**
+	 * Creates jobs needed to create or update all translation page definitions.
+	 * @param TranslatablePage $page
+	 * @return Job[]
+	 * @since 2013-01-28
+	 */
+	public static function getTranslationUnitJobs( TranslatablePage $page, array $sections ) {
+		$jobs = array();
+
+		$code = $page->getSourceLanguageCode();
+		$prefix = $page->getTitle()->getPrefixedText();
+
+		foreach ( $sections as $s ) {
+			$unit = $s->name;
+			$title = Title::makeTitle( NS_TRANSLATIONS, "$prefix/$unit/$code" );
+
+			$fuzzy = $s->type === 'changed';
+			$jobs[] = MessageUpdateJob::newJob( $title, $s->text, $fuzzy );
 		}
 
 		return $jobs;
