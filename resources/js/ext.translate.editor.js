@@ -879,8 +879,7 @@
 		 * @param {array} suggestions A ttmserver array as returned by API.
 		 */
 		showTranslationMemory: function ( suggestions ) {
-			var $tmSuggestions,
-				$translationTextarea;
+			var $tmSuggestions, $translationTextarea;
 
 			if ( !suggestions.length ) {
 				return;
@@ -894,7 +893,29 @@
 			$translationTextarea = this.$editor.find( 'textarea' );
 
 			$.each( suggestions, function ( index, translation ) {
-				var $translation;
+				var $translation,
+					alreadyOnTheList = false;
+
+				// See if it is already listed, and increment use count
+				$tmSuggestions.find( '.tm-suggestion' ).each( function() {
+					var $sug = $( this ), $uses, count;
+					if ( $sug.find( '.suggestiontext ' ).text() === translation.target ) {
+						// Update the message and data value
+						$uses = $sug.find( '.n-uses' );
+						count = $uses.data( 'n' ) + 1;
+						$uses.data( 'n', count );
+						$uses.text( mw.msg( 'tux-editor-n-uses', count ) + '  〉' );
+
+						// Halt processing
+						alreadyOnTheList = true;
+						return false;
+					}
+				} );
+
+				if ( alreadyOnTheList ) {
+					// Continue to the next one
+					return true;
+				}
 
 				$translation = $( '<div>' )
 					.addClass( 'row tm-suggestion' )
@@ -903,7 +924,7 @@
 							.addClass( 'row tm-suggestion-top' )
 							.append(
 								$( '<div>' )
-									.addClass( 'nine columns' )
+									.addClass( 'nine columns suggestiontext' )
 									.text( translation.target ),
 								$( '<div>' )
 									.addClass( 'three columns quality text-right' )
@@ -920,7 +941,10 @@
 										$translationTextarea
 											.val( translation.target )
 											.trigger( 'input' );
-									} )
+									} ),
+								$( '<a>' )
+									.addClass( 'three columns n-uses text-right' )
+									.data( 'n', 1 )
 							)
 					);
 

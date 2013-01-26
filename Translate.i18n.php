@@ -459,6 +459,7 @@ Most useful for the proofreading tasks.',
 	'tux-warnings-hide' => 'hide',
 	'tux-editor-save-failed' => 'Saving the translation failed: $1',
 	'tux-editor-use-this-translation' => 'Use as translation',
+	'tux-editor-n-uses' => 'used $1 {{PLURAL:$1|time|times}}',
 	'tux-editor-message-desc-more' => 'View more',
 	'tux-editor-message-desc-less' => 'View less',
 	'tux-editor-clear-translated' => 'Hide translated',
@@ -916,6 +917,7 @@ Read as in "proofRED" (past participle).',
 	'tux-editor-save-failed' => 'An error shown above the edit box.
 * $1 - the warning that the API returns',
 	'tux-editor-use-this-translation' => 'Link text for using a suggestion as translation for the current message',
+	'tux-editor-n-uses' => 'Link text in the translation editor which tells how many times the same string was suggested as translation from the translation memory. $1 is a number.',
 	'tux-editor-message-desc-more' => '{{doc-actionlink}}
 Link text for expanding long message documentation.
 
