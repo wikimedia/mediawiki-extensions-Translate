@@ -420,6 +420,8 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @return array
 	 */
 	public function checkInput( TranslatablePage $page, &$error = false ) {
+		$request = $this->getRequest();
+
 		$usedNames = array();
 
 		$highest = intval( TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' ) );
@@ -427,38 +429,21 @@ class SpecialPageTranslation extends SpecialPage {
 		$parse = $page->getParse();
 		$sections = $parse->getSectionsForSave( $highest );
 		foreach ( $sections as $s ) {
-			// We want to preserve $id, because it is the only thing we can use
-			// to link the new names to current sections. Name will become
-			// the new id only after it is saved into db and the page.
-			// Do not allow changing names for old sections
-			if ( $s->type === 'new' ) {
-				$name = $this->getRequest()->getText( 'tpt-sect-' . $s->id, $s->id );
-			} else {
-				$name = $s->id;
-			}
-
 			// We need to do checks for both new and existing sections.
 			// Someone might have tampered with the page source adding
 			// duplicate or invalid markers.
-			if ( isset( $usedNames[$name] ) ) {
-				$this->getOutput()->addWikiMsg( 'tpt-duplicate', $name );
+			if ( isset( $usedNames[$s->id] ) ) {
+				$this->getOutput()->addWikiMsg( 'tpt-duplicate', $s->id );
 				$error = true;
 			}
-			$usedNames[$name] = true;
+			$usedNames[$s->id] = true;
+			$s->name = $s->id;
 
-			// Make sure valid title can be constructed
-			$sectionTitle = Title::makeTitleSafe(
-				NS_TRANSLATIONS,
-				$page->getTitle()->getPrefixedText() . '/' . $name . '/foo'
-			);
-
-			if ( trim( $name ) === '' || !$sectionTitle ) {
-				$this->getOutput()->addWikiMsg( 'tpt-badsect', $name, $s->id );
-				$error = true;
-			} else {
-				// Update the name
-				$s->name = $name;
+			// Allow silent changes to avoid fuzzying unnecessary.
+			if ( $request->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {
+				$s->type === 'old';
 			}
+
 		}
 
 		return $sections;
@@ -503,8 +488,7 @@ class SpecialPageTranslation extends SpecialPage {
 		 */
 		foreach ( $sections as $s ) {
 			if ( $s->type === 'new' ) {
-				$input = Xml::input( 'tpt-sect-' . $s->id, 15, $s->name );
-				$name = $this->msg( 'tpt-section-new' )->rawParams( $input )->escaped();
+				$name = $this->msg( 'tpt-section-new' )->params( $s->name )->escaped();
 			} else {
 				$name = $this->msg( 'tpt-section', $s->name )->escaped();
 			}
@@ -654,12 +638,10 @@ class SpecialPageTranslation extends SpecialPage {
 		$status = $wikiPage->doEdit(
 			$page->getParse()->getSourcePageText(), // Content
 			$this->msg( 'tpt-mark-summary' )->inContentLanguage()->text(), // Summary
-			EDIT_FORCE_BOT | EDIT_UPDATE, // Flags
-			$page->getRevision() // Based-on revision
+			EDIT_FORCE_BOT | EDIT_UPDATE // Flags
 		);
 
 		if ( !$status->isOK() ) {
-			self::superDebug( __METHOD__, 'edit-fail', $this->getUser(), $page->getTitle(), $status );
 			return array( 'tpt-edit-failed', $status->getWikiText() );
 		}
 
@@ -676,8 +658,6 @@ class SpecialPageTranslation extends SpecialPage {
 			// Get the latest revision manually
 			$newrevision = $page->getTitle()->getLatestRevId();
 		}
-
-		self::superDebug( __METHOD__, 'latestrev', $page->getTitle(), $newrevision );
 
 		$inserts = array();
 		$changed = array();
@@ -706,12 +686,6 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		$dbw = wfGetDB( DB_MASTER );
-		if ( !$dbw->fieldExists( 'translate_sections', 'trs_order', __METHOD__ ) ) {
-			error_log( 'Field trs_order does not exist. Please run update.php.' );
-			foreach ( array_keys( $inserts ) as $index ) {
-				unset( $inserts[$index]['trs_order'] );
-			}
-		}
 		$dbw->delete(
 			'translate_sections',
 			array( 'trs_page' => $page->getTitle()->getArticleID() ),
@@ -749,7 +723,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		// Re-generate caches
 		MessageGroups::clearCache();
-		MessageIndexRebuildJob::newJob()->insert();
+		MessageIndexRebuildJob::newJob()->run();
 		return false;
 	}
 
