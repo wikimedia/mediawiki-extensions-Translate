@@ -65,7 +65,6 @@ class RenderJob extends Job {
 
 		// Do the edit
 		$status = $article->doEdit( $text, $summary, $flags, false, $user );
-		SpecialPageTranslation::superDebug( __METHOD__, 'edit', $user, $title, $flags, $status );
 
 		PageTranslationHooks::$allowTargetEdit = false;
 
