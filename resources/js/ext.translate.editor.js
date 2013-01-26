@@ -22,9 +22,9 @@
 			this.$editor = $( '<div>' )
 				.addClass( 'row tux-message-editor hide' )
 				.append(
-				this.prepareEditorColumn(),
-				this.prepareInfoColumn()
-			);
+					this.prepareEditorColumn(),
+					this.prepareInfoColumn()
+				);
 
 			this.expanded = false;
 			this.$editTrigger.append( this.$editor );
@@ -681,10 +681,13 @@
 		},
 
 		show: function () {
+			var $next;
+
 			if ( !this.$editor ) {
 				this.init();
 				// don't waste time, get ready with next message
-				var $next = this.$editTrigger.next( '.tux-message' );
+				$next = this.$editTrigger.next( '.tux-message' );
+
 				if ( $next.length ) {
 					$next.data( 'translateeditor' ).init();
 				}
@@ -1037,8 +1040,6 @@
 			timer = setTimeout( callback, milliseconds );
 		};
 	} () );
-
-
 
 	mw.translate = mw.translate || {};
 
