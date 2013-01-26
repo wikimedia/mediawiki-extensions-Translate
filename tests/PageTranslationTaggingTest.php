@@ -1,29 +1,6 @@
 <?php
 
-/**
- * @group Database
- * @group medium
- */
-class PageTranslationTaggingText extends MediaWikiTestCase {
-	protected function setUp() {
-		parent::setUp();
-
-		global $wgHooks;
-		$this->setMwGlobals( array(
-			'wgHooks' => $wgHooks,
-			'wgTranslateCC' => array(),
-			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
-			'wgTranslateWorkflowStates' => false,
-			'wgEnablePageTranslation' => true,
-			'wgTranslateGroupFiles' => array(),
-			'wgTranslateTranslationServices' => array(),
-		) );
-		TranslateHooks::setupTranslate();
-		$wgHooks['TranslatePostInitGroups'] = array();
-		MessageGroups::clearCache();
-		MessageIndexRebuildJob::newJob()->run();
-	}
-
+class PageTranslationTaggingText extends TranslateIntegrationTestCase {
 	public function testNormalPage() {
 		$title = Title::newFromText( 'Fréttinga' );
 		$this->assertNotNull( $title, 'Title is valid' );
