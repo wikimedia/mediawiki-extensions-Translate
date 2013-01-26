@@ -55,7 +55,6 @@ class SpecialPageTranslation extends SpecialPage {
 
 		// Check permissions
 		if ( $request->wasPosted() && !$user->matchEditToken( $request->getText( 'token' ) ) ) {
-			self::superDebug( __METHOD__, "token failure", $user );
 			throw new PermissionsError( 'pagetranslation' );
 		}
 
@@ -112,7 +111,6 @@ class SpecialPageTranslation extends SpecialPage {
 			$params = array( 'user' => $user->getName() );
 			$logger->addEntry( 'unmark', $page->getTitle(), null, array( serialize( $params ) ), $this->getUser() );
 			$out->addWikiMsg( 'tpt-unmarked', $title->getPrefixedText() );
-			self::superDebug( __METHOD__, "unmarked page", $user, $title );
 
 			return;
 		}
@@ -134,7 +132,6 @@ class SpecialPageTranslation extends SpecialPage {
 			$target = $title->getFullUrl( array( 'oldid' => $revision ) );
 			$link = "<span class='plainlinks'>[$target $revision]</span>";
 			$out->addWikiMsg( 'tpt-oldrevision', $title->getPrefixedText(), $link );
-			self::superDebug( __METHOD__, "revision mismatch while marking", $user, $title, $revision, intval( $title->getLatestRevID() ) );
 			return;
 		}
 
@@ -164,7 +161,6 @@ class SpecialPageTranslation extends SpecialPage {
 			return;
 		}
 
-		self::superDebug( __METHOD__, "marking page", $user, $title, $revision );
 		$this->showPage( $page, $sections );
 	}
 
@@ -719,7 +715,8 @@ class SpecialPageTranslation extends SpecialPage {
 		//WikiPage::factory( $page->getTitle() )->doPurge();
 
 		$page->getTitle()->invalidateCache();
-		$this->setupRenderJobs( $page );
+		$jobs = self::getRenderJobs( $page );
+		Job::batchInsert( $jobs );
 
 		// Re-generate caches
 		MessageGroups::clearCache();
@@ -789,7 +786,6 @@ class SpecialPageTranslation extends SpecialPage {
 	 */
 	public function addFuzzyTags( TranslatablePage $page, array $changed ) {
 		if ( !count( $changed ) ) {
-			self::superDebug( __METHOD__, 'nochanged', $page->getTitle() );
 			return;
 		}
 
@@ -822,84 +818,31 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		if ( count( $inserts ) ) {
-			self::superDebug( __METHOD__, 'inserts', $inserts );
 			$db->replace( 'revtag', array( 'rt_type_page_revision' ), $inserts, __METHOD__ );
 		}
 	}
 
 	/**
+	 * Creates jobs needed to create or update all translation pages.
 	 * @param TranslatablePage $page
+	 * @return Job[]
 	 */
-	public function setupRenderJobs( TranslatablePage $page ) {
-		$titles = $page->getTranslationPages();
-		$this->addInitialRenderJob( $page, $titles );
+	public static function getRenderJobs( TranslatablePage $page ) {
+		global $wgContLang;
+
 		$jobs = array();
 
+		// When marking the first time, also schedule update for the noop translation
+		$en = Title::newFromText( $page->getTitle()->getPrefixedText() . '/' . $wgContLang->getCode() );
+		if ( !$en->exists() ) {
+			$jobs[] = RenderJob::newJob( $en );
+		}
+
+		$titles = $page->getTranslationPages();
 		foreach ( $titles as $t ) {
-			self::superDebug( __METHOD__, 'renderjob', $t );
 			$jobs[] = RenderJob::newJob( $t );
 		}
 
-		if ( count( $jobs ) < 10 ) {
-			self::superDebug( __METHOD__, 'renderjob-immediate' );
-			/**
-			 * @var RenderJob $j
-			 */
-			foreach ( $jobs as $j ) {
-				$j->run();
-			}
-		} else {
-			// Use the job queue
-			self::superDebug( __METHOD__, 'renderjob-delayed' );
-			Job::batchInsert( $jobs );
-		}
-	}
-
-	/**
-	 * If this page is marked for the first time, /en may not yet exists.
-	 * If this is the case, add a RenderJob for it, but don't execute it
-	 * immediately, since the message group doesn't exist during this request.
-	 * @param TranslatablePage $page
-	 * @param Title[] $titles
-	 */
-	protected function addInitialRenderJob( TranslatablePage $page, array $titles ) {
-		global $wgContLang;
-
-		$en = Title::newFromText( $page->getTitle()->getPrefixedText() . '/' . $wgContLang->getCode() );
-		$hasen = false;
-
-		foreach ( $titles as $t ) {
-			if ( $t->equals( $en ) ) {
-				$hasen = true;
-				break;
-			}
-		}
-
-		if ( !$hasen ) {
-			RenderJob::newJob( $en )->insert();
-		}
-	}
-
-	/**
-	 * Enhanced version of wfDebug that allows more detailed debugging.
-	 * You can pass anything as varags and it will be serialized. Article
-	 * and User objects have special handling to only output name and id.
-	 * @param string $method Calling method.
-	 * @param string $msg Debug message.
-	 * @todo Move to better place.
-	 */
-	public static function superDebug( $method, $msg /* varags */ ) {
-		$args = func_get_args();
-		$args = array_slice( $args, 2 );
-		foreach ( $args as &$arg ) {
-			if ( $arg instanceof User ) {
-				$arg = array( 'user' => $arg->getName(), 'id' => $arg->getId() );
-			} elseif ( $arg instanceof Title ) {
-				$arg = array( 'title' => $arg->getPrefixedText(), 'aid' => $arg->getArticleID() );
-			}
-			$arg = serialize( $arg );
-		}
-
-		wfDebugLog( 'pagetranslation', "$method: $msg [" . implode( " ", $args ) . "]\n" );
+		return $jobs;
 	}
 }
