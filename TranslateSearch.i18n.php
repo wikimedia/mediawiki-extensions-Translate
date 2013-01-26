@@ -221,6 +221,22 @@ $messages['pms'] = array(
 	'tux-sst-nosolr-body' => "La wiki a l'ha pa un sërvissi d'arserca ëd tradussion.",
 );
 
+/** Ukrainian (українська)
+ * @author Ата
+ */
+$messages['uk'] = array(
+	'searchtranslations' => 'Пошук перекладів',
+	'tux-sst-edit' => 'Редагувати повідомлення',
+	'tux-sst-search' => 'Пошук',
+	'tux-sst-search-ph' => 'Пошук перекладів',
+	'tux-sst-count' => '{{PLURAL:$1|Знайдено один результат|Знайдено $1 результати|Знайдено $1 результатів}}',
+	'tux-sst-facet-language' => 'Мови',
+	'tux-sst-facet-group' => 'Групи повідомлень',
+	'tux-sst-facet-orphan' => '(сирота)',
+	'tux-sst-nosolr-title' => 'Пошук недоступний',
+	'tux-sst-nosolr-body' => 'У цій вікі немає служби пошуку перекладів.',
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  */

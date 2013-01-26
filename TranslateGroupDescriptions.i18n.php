@@ -2939,6 +2939,7 @@ $messages['uk'] = array(
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] — це крос-платформний додаток для мобільних і планшетних пристроїв, що призначений для читання і редагування Вікісловника',
 	'translate-group-desc-wikimedia-mobile-wlm' => "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] — мобільний застосунок для внеску до [[:meta:Wiki Loves Monuments|проекту Вікі Любить Пам'ятки]]",
 	'translate-group-desc-waymarked-trails-help' => 'Сторінки допомоги сайтів Waymarked Trails: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] — це насправді сумісний з реальним часом редактор',
 );
 
 /** Uzbek (oʻzbekcha)
