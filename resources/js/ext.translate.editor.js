@@ -685,12 +685,6 @@
 
 			if ( !this.$editor ) {
 				this.init();
-				// don't waste time, get ready with next message
-				$next = this.$editTrigger.next( '.tux-message' );
-
-				if ( $next.length ) {
-					$next.data( 'translateeditor' ).init();
-				}
 			}
 
 			// Hide all other open editors in the page
@@ -705,6 +699,13 @@
 			this.$editor.find( 'textarea' ).focus();
 			this.shown = true;
 			this.$editTrigger.addClass( 'open' );
+
+			// don't waste time, get ready with next message
+			$next = this.$editTrigger.next( '.tux-message' );
+
+			if ( $next.length ) {
+				$next.data( 'translateeditor' ).init();
+			}
 
 			return false;
 		},
