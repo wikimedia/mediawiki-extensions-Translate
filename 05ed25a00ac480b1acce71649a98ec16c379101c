@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//7kI\u003d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-01-27T09:56:48Z",
+      "side": 1,
+      "message": "Is this the \"read queries that need to have absolutely newest information\" case? Maybe a comment can be helpful here.",
+      "revId": "05ed25a00ac480b1acce71649a98ec16c379101c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
