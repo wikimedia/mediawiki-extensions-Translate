@@ -228,9 +228,11 @@
 			}
 
 			$next.data( 'translateeditor' ).show();
+
 			// scroll the page a little bit up, slowly.
-			if ( $( document ).height()
-				- ( $( window ).height() + window.pageYOffset + $next.height() ) > 0 ) {
+			if ( $( document ).height() -
+				( $( window ).height() + window.pageYOffset + $next.height() ) > 0
+			) {
 				$( 'html, body' ).stop().animate( {
 					scrollTop: $( '.tux-message-editor:visible' ).offset().top - 55
 				}, 500 );
@@ -354,16 +356,19 @@
 					'dir': $messageList.data( 'targetlangdir' )
 				} )
 				.on( 'input propertychange', function () {
+					var $this = $( this );
+
 					translateEditor.dirty = true;
 					translateEditor.$editor.find( '.tux-editor-save-button' )
 						.removeAttr( 'disabled' );
 
 					// Expand the text area height as content grows
-					while ( $( this ).outerHeight() < this.scrollHeight
-						+ parseFloat( $( this ).css( 'borderTopWidth' ) )
-						+ parseFloat( $( this ).css( 'borderBottomWidth' ) ) ) {
-						$( this ).height( $( this ).height()
-							+ parseFloat( $( this ).css( 'fontSize' ) ) );
+					while ( $this.outerHeight() <
+						this.scrollHeight +
+						parseFloat( $this.css( 'borderTopWidth' ) ) +
+						parseFloat( $this.css( 'borderBottomWidth' ) )
+					) {
+						$this.height( $this.height() + parseFloat( $this.css( 'fontSize' ) ) );
 					}
 				} );
 
@@ -382,7 +387,6 @@
 						saveButton.prop( 'disabled', true );
 					}
 				}, 1000 );
-
 			} );
 
 			if ( this.message.translation ) {
@@ -898,16 +902,19 @@
 
 				// See if it is already listed, and increment use count
 				$tmSuggestions.find( '.tm-suggestion' ).each( function() {
-					var $sug = $( this ), $uses, count;
-					if ( $sug.find( '.suggestiontext ' ).text() === translation.target ) {
+					var $uses, count,
+						$suggestion = $( this );
+
+					if ( $suggestion.find( '.suggestiontext ' ).text() === translation.target ) {
 						// Update the message and data value
-						$uses = $sug.find( '.n-uses' );
+						$uses = $suggestion.find( '.n-uses' );
 						count = $uses.data( 'n' ) + 1;
 						$uses.data( 'n', count );
 						$uses.text( mw.msg( 'tux-editor-n-uses', count ) + '  〉' );
 
 						// Halt processing
 						alreadyOnTheList = true;
+
 						return false;
 					}
 				} );
@@ -1071,13 +1078,13 @@
 	mw.translate = mw.translate || {};
 
 	mw.translate = $.extend( mw.translate, {
-	/**
-	 * Get the documentation edit URL for a title
-	 *
-	 * @param {String} title Message title with namespace
-	 * @return {String} URL for editing the documentation
-	 */
-		getDocumentationEditURL : function ( title ) {
+		/**
+		* Get the documentation edit URL for a title
+		*
+		* @param {String} title Message title with namespace
+		* @return {String} URL for editing the documentation
+		*/
+		getDocumentationEditURL: function ( title ) {
 			var descUri = new mw.Uri( window.location.href );
 
 			descUri.path = mw.config.get( 'wgScript' );
@@ -1089,5 +1096,4 @@
 			return descUri.toString();
 		}
 	} );
-
 }( jQuery, mediaWiki ) );
