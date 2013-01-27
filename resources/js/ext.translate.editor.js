@@ -327,18 +327,21 @@
 				} );
 
 			$textArea.on( 'keyup', function () {
-				var $textArea = $(this);
+				var $textArea = $( this );
 
 				delay( function () {
-					var saveButton;
+					var $saveButton = translateEditor.$editor.find( 'button.tux-editor-save-button' ),
+						$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' );
 
-					saveButton = translateEditor.$editor
-						.find( 'button.tux-editor-save-button' );
 					translateEditor.validateTranslation();
-					saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
-					// Disable save button if content from editor is cleared.
-					if ( !$.trim( $textArea.val() ) ) {
-						saveButton.prop( 'disabled', true );
+					$saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
+
+					// When there is content in the editor
+					if ( $.trim( $textArea.val() ) ) {
+						$pasteSourceButton.addClass( 'hide' );
+					} else {
+						$saveButton.prop( 'disabled', true );
+						$pasteSourceButton.removeClass( 'hide' );
 					}
 				}, 1000 );
 			} );
@@ -358,10 +361,21 @@
 
 			if ( canTranslate ) {
 				$pasteOriginalButton = $( '<button>' )
+					.addClass( 'tux-editor-paste-original-button' )
 					.text( mw.msg( 'tux-editor-paste-original-button-label' ) )
 					.on( 'click', function () {
 						$textArea.val( sourceString );
+
+						delay( function () {
+							translateEditor.$editor
+								.find( '.tux-editor-paste-original-button' )
+								.addClass( 'hide' );
+						}, 500 );
 					} );
+
+				if ( this.message.translation ) {
+					$pasteOriginalButton.addClass( 'hide' );
+				}
 
 				$editingButtonBlock = $( '<div>' )
 					.addClass( 'twelve columns tux-editor-control-buttons' )
