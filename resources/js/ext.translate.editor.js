@@ -327,18 +327,26 @@
 				} );
 
 			$textArea.on( 'keyup', function () {
-				var $textArea = $(this);
+				var $textArea = $( this );
 
 				delay( function () {
-					var saveButton;
+					var $saveButton = translateEditor.$editor.find( 'button.tux-editor-save-button' ),
+						$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' );
 
-					saveButton = translateEditor.$editor
-						.find( 'button.tux-editor-save-button' );
 					translateEditor.validateTranslation();
-					saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
-					// Disable save button if content from editor is cleared.
-					if ( !$.trim( $textArea.val() ) ) {
-						saveButton.prop( 'disabled', true );
+					$saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
+
+					// When there is content in the editor
+					if ( $.trim( $textArea.val() ) ) {
+						// Disable the 'paste source' button
+						// when there is text in the editor
+						$pasteSourceButton.prop( 'disabled', true );
+					} else {
+						// Disable the save button
+						$saveButton.prop( 'disabled', true );
+
+						// Enable the 'paste source' button
+						$pasteSourceButton.prop( 'disabled', false );
 					}
 				}, 1000 );
 			} );
@@ -358,9 +366,12 @@
 
 			if ( canTranslate ) {
 				$pasteOriginalButton = $( '<button>' )
+					.addClass( 'tux-editor-paste-original-button' )
 					.text( mw.msg( 'tux-editor-paste-original-button-label' ) )
+					.prop( 'disabled', this.message.translation ? true : false )
 					.on( 'click', function () {
 						$textArea.val( sourceString );
+						$( this ).prop( 'disabled', true );
 					} );
 
 				$editingButtonBlock = $( '<div>' )
