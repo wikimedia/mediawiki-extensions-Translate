@@ -192,6 +192,22 @@ $messages['mk'] = array(
 	'tux-sst-nosolr-body' => 'Ова вики нема пребарувач.',
 );
 
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'searchtranslations' => 'Vertalingen zoeken',
+	'tux-sst-edit' => 'Bericht bewerken',
+	'tux-sst-search' => 'Zoeken',
+	'tux-sst-search-ph' => 'Vertalingen zoeken',
+	'tux-sst-count' => '{{PLURAL:$1|Eén resultaat|$1 resultaten}} gevonden',
+	'tux-sst-facet-language' => 'Talen',
+	'tux-sst-facet-group' => 'Berichtengroepen',
+	'tux-sst-facet-orphan' => '(wees)',
+	'tux-sst-nosolr-title' => 'Zoeken is niet beschikbaar',
+	'tux-sst-nosolr-body' => 'Deze wiki heeft geen dienst om vertalingen te zoeken.',
+);
+
 /** Occitan (occitan)
  * @author Cedric31
  */
@@ -251,4 +267,20 @@ $messages['vi'] = array(
 	'tux-sst-facet-orphan' => '(mồ côi)',
 	'tux-sst-nosolr-title' => 'Không thể tìm kiếm',
 	'tux-sst-nosolr-body' => 'Wiki này không có công cụ tìm bản dịch.',
+);
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Yfdyh000
+ */
+$messages['zh-hans'] = array(
+	'searchtranslations' => '搜索翻译',
+	'tux-sst-edit' => '编辑消息',
+	'tux-sst-search' => '搜索',
+	'tux-sst-search-ph' => '搜索翻译',
+	'tux-sst-count' => '找到$1个结果',
+	'tux-sst-facet-language' => '语言',
+	'tux-sst-facet-group' => '信息组',
+	'tux-sst-facet-orphan' => '（孤立）',
+	'tux-sst-nosolr-title' => '搜索不可用',
+	'tux-sst-nosolr-body' => '此wiki没有翻译搜索服务。',
 );
