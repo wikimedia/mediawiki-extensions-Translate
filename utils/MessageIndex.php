@@ -437,7 +437,7 @@ class CDBMessageIndex extends MessageIndex {
 		}
 
 		wfProfileIn( __METHOD__ );
-		$keys = $this->unserialize( $reader->get( '#keys' ) );
+		$keys = (array) $this->unserialize( $reader->get( '#keys' ) );
 		$this->index = array();
 		foreach ( $keys as $key ) {
 			$this->index[$key] = $this->unserialize( $reader->get( $key ) );
