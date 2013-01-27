@@ -83,12 +83,10 @@ $messages['qqq'] = array(
 	'translate-group-desc-mantisbt-plugin-core' => 'Do not translate the link target <code>Translating:MantisBT</code>.',
 	'translate-group-desc-mifos' => 'Do not translate the link target <code>Translating:Mifos</code>.',
 	'bw-desc-mwlibrl' => 'Do not translate the link target <code>Translating:Mwlib.rl</code>.',
-	'bw-desc-nocc' => 'Do not translate the link target <code>Translating:NOCC</code>.',
 	'translate-group-desc-okawix' => 'Do not translate the link target <code>Translating:Okawix</code>.',
 	'bw-desc-openimages' => 'Do not translate the link target <code>Translating:Open Images</code>.',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Do not translate the link target <code>Translating:Open Images</code>.',
 	'translate-group-desc-openimages-all' => 'Do not translate the link target <code>Translating:Open Images</code>.',
-	'bw-desc-openlayers' => 'Do not translate the link target <code>Translating:OpenLayers</code>.',
 	'bw-desc-openstreetmap' => 'Do not translate the link target <code>Translating:OpenStreetMap</code>.',
 	'bw-desc-osm-site' => 'Do not translate the link target <code>Translating:OpenStreetMap</code>.',
 	'translate-group-desc-pywikipedia' => 'Do not translate the link target <code>Translating:Pywikipedia</code>.',
@@ -97,7 +95,6 @@ $messages['qqq'] = array(
 	'translate-group-desc-statusnet-plugin' => 'Do not translate the link target <code>Translating:StatusNet</code>.',
 	'bw-desc-wikiblame' => 'Do not translate the link target <code>Translating:WikiBlame</code>.',
 	'bw-desc-wikireader' => 'Do not translate the link target <code>Translating:WikiReader</code>.',
-	'translate-group-desc-wlmmobile' => 'Do not translate the link targets "<code>Translating:WLMMobile</code>" and "<code>:meta:Wiki Loves Monuments</code>".',
 );
 
 /** Afrikaans (Afrikaans)
@@ -111,11 +108,9 @@ $messages['af'] = array(
 	'translate-group-desc-collection' => 'Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:Collection Collection] bevat',
 	'translate-group-desc-flaggedrevs' => 'Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] bevat',
 	'translate-group-desc-readerfeedback' => 'Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] bevat',
-	'translate-group-desc-socialprofile' => 'Meta-boodskapgroep wat alle boodskappe vir uitbreidings wat met die MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:SocialProfile Sosiale Profile] verband hou bevat',
-	'translate-group-desc-translate' => 'Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:Translate Translate] bevat',
+	'translate-group-desc-translate' => 'Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [http://www.mediawiki.org/wiki/Extension:Translate Translate] bevat', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Meta-boodskapgroep wat alle boodskappe vir ondersteude MediaWiki-uitbreidings wat deur [http://www.wikia.com Wikia] gebruik word bevat',
 	'translate-group-desc-wikimediaextensions' => 'Meta-boodskapgroep wat alle boodskappe te ondersteuning van MediaWiki-uitbreidings wat deur die [http://wikimedia.org/ Wikimedia Stigting] gebruik word bevat',
-	'translate-group-desc-uniwiki' => 'Meta-boodskapgroep wat alle boodskappe vir uitbreidings verwant aan [http://unicefinnovation.org/wiki.php Uniwiki] bevat',
 	'translate-group-desc-ui' => 'Meta-boodskapgroep wat alle boodskappe vir uitbreidings wat verband hou met [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia se Bruikbaarheidinisiatief] bevat',
 	'bw-desc-freecol' => 'Lees asseblief [[Translating:FreeCol]] alvorens u begin vertaal.
 FreeCol maak van die GPL-lisensie gebruik.',
@@ -124,8 +119,6 @@ FreeCol maak van die GPL-lisensie gebruik.',
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' is 'n pythonbiblioteek vir die skep van PDF-dokumente vanaf MediaWiki-artikels wat deur die mwlib-biblioteek  verwerk is.
 
 Sien [[mw:Extension:PDF Writer]] en [http://code.pediapress.com/wiki/wiki/mwlibrl PrediaPress] vir meer inligting.",
-	'bw-desc-nocc' => "[http://nocc.sourceforge.net NOCC] is 'n e-pos webkliënt wat in PHP geskryf is. Meld asseblief enige probleme aan by [[Support|Ondersteuning]].",
-	'bw-desc-openlayers' => "OpenLayers is 'n dinamiese en oopbron kaart-genereeder. Meld asseblief enige probleme aan by [[Support|Ondersteuning]].",
 	'bw-desc-osm-site' => 'Hierdie boodskapgroep bevat die koppelvlakboodskappe vir [[Translating:Open Street Map|Open Street Map]]',
 	'bw-desc-statusnet' => "[[Translating:StatusNet|StatusNet]] is 'n oopbron mikroblog-bediener",
 	'bw-desc-wikiblame' => "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] is in staat om vinnig die outeurs van 'n bladsy in 'n Wikimedia-wiki te vind.",
@@ -138,7 +131,6 @@ Sien [[mw:Extension:PDF Writer]] en [http://code.pediapress.com/wiki/wiki/mwlibr
 $messages['aln'] = array(
 	'translate-group-desc-nodesc' => 'Nuk ka përshkrim është në dispozicion për këtë grup mesazh',
 	'translate-group-desc-wikimediaextensions' => 'Grupi Meta mesazh që përmban të gjitha mesazhet e për të mbështetur zgjerimet MediaWiki përdorur nga http://wikimedia.org/ [] Wikimedia Foundation',
-	'translate-group-desc-uniwiki' => 'Grupi Meta mesazh që përmban të gjitha mesazhet për zgjerimet në lidhje me [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupi Meta mesazh që përmban të gjitha mesazhet për zgjerimet në lidhje me [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia] përdorshmërisë Nisma',
 );
 
@@ -154,11 +146,9 @@ $messages['ar'] = array(
 	'translate-group-desc-collection' => 'مجموعة رسائل علوية تحتوي كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:Collection Collection] لميدياويكي',
 	'translate-group-desc-flaggedrevs' => 'مجموعة رسائل علوية تحتوي كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] لميدياويكي',
 	'translate-group-desc-readerfeedback' => 'مجموعة رسائل علوية تحتوي كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] لميدياويكي',
-	'translate-group-desc-socialprofile' => 'مجموعة رسائل علوية تحتوي كل رسائل الامتدادات المتعلقة بامتداد [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] لميدياويكي',
-	'translate-group-desc-translate' => 'مجموعة رسائل علوية تحتوي كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:Translate Translate] لميدياويكي',
+	'translate-group-desc-translate' => 'مجموعة رسائل علوية تحتوي كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:Translate Translate] لميدياويكي', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'مجموعة رسائل علوية تحتوي كل رسائل امتدادات ميدياويكي المدعومة التي تستخدمها [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'مجموعة رسائل علوية تحتوي كل رسائل امتدادات ميدياويكي المدعومة التي تستخدمها [http://wikimedia.org/ مؤسسة ويكيميديا]',
-	'translate-group-desc-uniwiki' => 'مجموعة رسائل علوية تحتوي كل رسائل امتدادات ميدياويكي المدعومة التي تستخدمها [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'مجموعة رسائل علوية تحتوي كل رسائل الامتدادات المتعلقة ب[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative مبادرة استخدامية ويكيبيديا]',
 	'translate-group-desc-translatablepages' => 'جميع الصفحات التي يمكن ترجمتها',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] منتدى وب مكتوب بلغة PHP',
@@ -175,11 +165,9 @@ $messages['arz'] = array(
 	'translate-group-desc-collection' => 'مجموعه رسائل علويه تحتوى كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:Collection Collection] لميدياويكي',
 	'translate-group-desc-flaggedrevs' => 'مجموعه رسائل علويه تحتوى كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] لميدياويكي',
 	'translate-group-desc-readerfeedback' => 'مجموعه رسائل علويه تحتوى كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] لميدياويكي',
-	'translate-group-desc-socialprofile' => 'مجموعه رسائل علويه تحتوى كل رسائل الامتدادات المتعلقه بامتداد [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] لميدياويكي',
-	'translate-group-desc-translate' => 'مجموعه رسائل علويه تحتوى كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:Translate Translate] لميدياويكي',
+	'translate-group-desc-translate' => 'مجموعه رسائل علويه تحتوى كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:Translate Translate] لميدياويكي', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'مجموعه رسائل علويه تحتوى كل رسائل امتدادات ميدياويكى المدعومه التى تستخدمها [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'مجموعه رسائل علويه تحتوى كل رسائل امتدادات ميدياويكى المدعومه التى تستخدمها [http://wikimedia.org/ مؤسسه ويكيميديا]',
-	'translate-group-desc-uniwiki' => 'مجموعه رسائل علويه تحتوى كل رسائل امتدادات ميدياويكى المدعومه التى تستخدمها [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'مجموعه رسائل علويه تحتوى كل رسائل الامتدادات المتعلقه ب[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative مبادره استخداميه ويكيبيديا]',
 );
 
@@ -329,7 +317,6 @@ $messages['be-tarask'] = array(
 $messages['bg'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], форум, написан на PHP.',
 	'translate-group-desc-mediawiki-core-branch' => 'Съобщения за стабилна версия на [[Translating:MediaWiki|MediaWiki]]',
-	'bw-desc-openlayers' => 'OpenLayers е динамичен генератор на карти, публикуван под отворен код. Моля, съобщавайте за възникнали проблеми на  [[support|екипа по поддръжката]].',
 	'bw-desc-osm-site' => 'Тази група съобщения съдържа интерфейсните съобщения за [[Translating:Open Street Map|Open Street Map]].
 Вижте [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} страницата от сайта на проект Unicode CLDR] за обяснение на ключовете за множествено число в съобщенията.',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] е набор от инструменти за редактиране на Уикипедия',
@@ -356,12 +343,10 @@ $messages['br'] = array(
 	'translate-group-desc-flaggedrevs' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Stroll kemennadennoù Meta ennañ an holl gemennadennoù evit holl astennoù [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-socialprofile' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Treiñ]',
+	'translate-group-desc-translate' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astenn MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Treiñ]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikimediaextensions-main' => 'Stroll kemennadennoù Meta enno holl gemennadennoù an astennoù MediaWiki skoret a zle bezañ troet evit [http://meta.wikimedia.org/wiki/Language_committee Bodad yezh] wikimedia',
-	'translate-group-desc-uniwiki' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù stag ouzh [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'An holl bajennoù da dreiñ',
 	'bw-desc-freecol' => 'Kent stagañ da dreiñ FreeCol en ho yezh, lennit [[Translating:FreeCol]]. Ober a ra Freecol gant an aotre GPL.',
@@ -380,12 +365,10 @@ $messages['br'] = array(
 	'bw-desc-mwlibrl' => "Ul levraoueg Python, da skrivañ teulioù PDF diwar pennadoù eus Mediawiki bet dielfennet gant levraoueg mwlib, eo '''mwlib.rl'''.
 
 Sellit 'ta [[mw:Extension:PDF_Writer]] hag http://code.pediapress.com/wiki/wiki/mwlibrl evit gouzout hiroc'h.",
-	'bw-desc-nocc' => "Ur c'hliant webmail skrivet e PHP eo [http://nocc.sourceforge.net NOCC]. Kasit keloù da [[Support]] ma verzit kudenn pe gudenn.",
 	'translate-group-desc-okawix' => 'Ul lenner wikipedia ezlinenn eo [[Translating:Okawix|Okawix]]',
 	'bw-desc-openimages' => 'Ur savenn vedia frank eo [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-verifyemailtemplate' => "Ul lodenn eus patrom gwiriañ chomlec'hioù postel [[Translating:Open Images|Open Images]] eo ar c'hemennadennoù-mañ",
 	'translate-group-desc-openimages-all' => "Ul lodenn eus [[Translating:Open Images|raktres Open Images]] eo ar c'hemennadennoù-mañ",
-	'bw-desc-openlayers' => 'Ur ganer kartennoù dinamek digor o zarzh eo OpenLayers. Kasit keloù da [[Support]] ma verzit kudenn pe gudenn.',
 	'bw-desc-openstreetmap' => 'An holl gemennadennoù a denn da [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Er strollad kemennadennoù-mañ emañ kemennadennoù etrefas [[Translating:Open Street Map|Open Street Map]].',
 	'translate-group-desc-pywikipedia' => 'Un dastumad ostilhoù da zegas kemmoù e Wikipedia eo [[Translating:Pywikipedia|Pywikipedia]]',
@@ -411,12 +394,10 @@ $messages['bs'] = array(
 	'translate-group-desc-flaggedrevs' => 'Grupa meta poruka koja sadrži sve poruke za MediaWiki proširenje [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Grupa meta poruka koja sadrži sve poruke za MediaWiki proširenje [http://www.mediawiki.org/wiki/Extension:FlaggedRevs ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Grupa meta poruka koja sadrži sve poruke za sva [http://semantic-mediawiki.org/ Semantic MediaWiki] proširenja',
-	'translate-group-desc-socialprofile' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za MediaWiki proširenje [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Grupa meta poruka koje sadrže sve poruke za MediaWiki proširenje [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Grupa meta poruka koje sadrže sve poruke za MediaWiki proširenje [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Grupa meta poruka koja sadrži sve poruke za podržana MediaWiki proširenja za [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Grupa meta poruka koja sadrži sve poruke za podržana MediaWiki proširenja korištena od strane [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikimediaextensions-main' => 'Grupa meta poruka koja sadrži sve poruke za podršku MediaWiki proširenja neophodnih za prevođenje za Wikimedia [http://meta.wikimedia.org/wiki/Language_committee Jezični komitet]',
-	'translate-group-desc-uniwiki' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupa meta poruka koja sadrži sve poruke za proširenja vezana za [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia inicijativu upotrebljivosti]',
 	'translate-group-desc-translatablepages' => 'Sve stranice koje se mogu prevesti',
 	'bw-desc-freecol' => 'Prije nego što počnete da prevodite FreeCol na Vaš jezik, molimo pročitajte [[Translating:FreeCol]]. FreeCol koristi GPL licencu.',
@@ -435,12 +416,10 @@ $messages['bs'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je python biblioteka za pisanje PDF dokumenata iz MediaWiki članaka koji su obrađeni putem mwlib biblioteke.
 
 Molimo pogledajte [[mw:Extension:PDF_Writer]] i http://code.pediapress.com/wiki/wiki/mwlibrl za više informacija.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] je klijent za webmail napisan u PHP. Molimo prijavite sve greške na stranicu [[Support]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] je program za vanmrežno čitanje Wikipedije',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] je otvorena medijska platforma',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Ove poruke su dio [[Translating:Open Images|Open Images]] šablona potvrđivanja emaila',
 	'translate-group-desc-openimages-all' => 'Ove poruke su dio [[Translating:Open Images|Open Images]] projekta',
-	'bw-desc-openlayers' => 'OpenLayers je generator dinamičkih mapa otvorenog koda. Molimo prijavite sve greške na [[support]].',
 	'bw-desc-openstreetmap' => 'Sve poruke vezane za [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Ova grupa poruka sadrži poruke interfejsa za [[Translating:Open Street Map|Open Street Map]].
 Pogledajte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} Unicode CLDR stranicu za objašnjenje o ključevima množine].',
@@ -460,8 +439,6 @@ $messages['ca'] = array(
 	'bw-desc-freecol' => 'Abans de traduir FreeCol al vostre idioma, llegeiu [[Translating:FreeCol]]. Freecol utilitza una llicència GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un fòrum web escrit en PHP.',
 	'bw-desc-mantisbt' => "[http://www.mantisbt.org MantisBT] és un sistema de gestió d'errors via web. Si us plau, informeu de qualsevol problema a [[Support]].",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] és un client de correu electrònic desenvolupat en PHP. Si us plau, informeu de qualsevol problema a [[Support]].',
-	'bw-desc-openlayers' => 'OpenLayers és un programa lliure de generació dinàmica de mapes. Si us plau, informeu de qualsevol incidència a [[support]].',
 );
 
 /** Czech (česky)
@@ -478,7 +455,7 @@ $messages['cs'] = array(
 	'translate-group-desc-flaggedrevs' => 'Nadskupina zpráv obsahující všechny zprávy rozšíření [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Nadskupina zpráv obsahující všechny zprávy rozšíření [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Nadskupina zpráv obsahující všechny zprávy pro všechna rozšíření [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-translate' => 'Nadskupina zpráv obsahující všechny zprávy rozšíření [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Nadskupina zpráv obsahující všechny zprávy rozšíření [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních MediaWiki používaných na [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Nadskupina zpráv obsahující všechny zprávy používané v rozšířeních MediaWiki používaných na wiki [http://wikimedia.org/ nadace Wikimedia Foundation]',
 	'translate-group-desc-wikimediaextensions-main' => 'Nadskupina zpráv obsahující všechny zprávy v podporovaných rozšířeních MediaWiki, jejichž překlad vyžaduje [http://meta.wikimedia.org/wiki/Language_committee Jazyková komise nadace Wikimedia]',
@@ -541,12 +518,10 @@ $messages['da'] = array(
 	'translate-group-desc-flaggedrevs' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Metabeskedgruppe, der indeholder alle beskeder for alle udvidelser til [http://semantic-mediawiki.org/ Semantisk MediaWiki]',
-	'translate-group-desc-socialprofile' => 'Meta besked gruppe der indeholder alle beskeder relateret til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Meta besked gruppe der indeholder alle beskeder til understøttede MediaWiki udvidelser brugt af [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Meta besked gruppe der indeholder alle beskeder til understøttede MediaWiki udvidelser brugt af [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikimediaextensions-main' => 'Meta besked gruppe der indeholder alle beskeder til understøttede MediaWiki udvidelser der kræves oversættelse af for Wikimedia [http://meta.wikimedia.org/wiki/Language_committee Language committee]',
-	'translate-group-desc-uniwiki' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelser relateret til [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelser relateret til [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Alle sider som kan oversættes',
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] er et turbaseret strategispil',
@@ -564,12 +539,10 @@ $messages['da'] = array(
 	'translate-group-desc-mediawiki-core-branch' => 'Beskeder til en stabil version af [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] er et management informationssystem for mikrofinansiering',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] er et bibliotek til at oprette PDF-dokumenter fra MediaWiki sider',
-	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] er en webmail klient',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] er en offline Wikipedia læser',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] er en åben media platform',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Disse meddelelser er en del af [[Translating:Open Images|Open Images]] verifikation emailskabelonen',
 	'translate-group-desc-openimages-all' => 'Disse meddelelser er en del af [[Translating:Open Images|Open Images]] projektet',
-	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] er en dynamisk kort generator i JavaScript',
 	'bw-desc-openstreetmap' => 'Alle meddelelser relateret til [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] er et redigerbart kort over hele verden',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] er et Flash-baseret redigeringsprogram til OpenStreetMap',
@@ -581,9 +554,6 @@ $messages['da'] = array(
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] er en tjeneste, der viser vandre-, cykel-, mountainbike- og rulleskøjteruter for hele verden. Den bruger GNU GPL-licensen.',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] er i stand til hurtigt at finde forfatterne til en del af en side i en Wikimedia wiki',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] giver en frakoblet tekstudgave af Wikipedia på en mobil enhed.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] er et flerplatforms mobil- og tabletprogram til at læse og bidrage til Wikipedia',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] er et flerplatforms mobil- og tabletprogram til at læse og bidrage til Wiktionary',
-	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] er en mobilapplikation til at bidrage til [[:meta:Wiki Loves Monuments|Wiki Loves Monuments-projektet]]',
 );
 
 /** German (Deutsch)
@@ -658,7 +628,7 @@ Weitere Information finden sich unter [[mw:Extension:PDF Writer]] und http://cod
 $messages['diq'] = array(
 	'translate-group-desc-mediawikiextensions' => 'Mesacê gruba meta de mesacê ke pêro dezgehê destegdayışi rê qandê [[Translating:MediaWiki|MediaWiki]]y estê',
 	'translate-group-desc-collection' => 'MediaWiki ra qandê [http://www.mediawiki.org/wiki/Extension:Collection Koleksiyonanê] grube mesacê MediaWiki',
-	'translate-group-desc-translate' => 'MediaWiki ra qandê [http://www.mediawiki.org/wiki/Extension:Translate Açarnayışê] grube mesacê MediaWiki',
+	'translate-group-desc-translate' => 'MediaWiki ra qandê [http://www.mediawiki.org/wiki/Extension:Translate Açarnayışê] grube mesacê MediaWiki', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'MediaWiki ra qandê mesacan dê [http://www.wikia.com Wikia] ra itad karêno',
 	'translate-group-desc-eol' => 'Seba [[Translating:EOL|Ensiklopediya Cıwiyayışi]] yew mesacê grube',
 	'translate-group-desc-ihris' => 'Seba [[Translating:iHRIS|iHRIS]]i yew mesacê grube',
@@ -679,7 +649,7 @@ $messages['dsb'] = array(
 	'translate-group-desc-readerfeedback' => 'Metakupka powěźeńkow, kótaraž wopśimujo wše powěźeńki za rozšyrjenje MediaWiki
 [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Głowna zdźěleńska kupka, kótaraž wopśimujo wšykne powěźeńki za wšykne rozšyrjenja [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-translate' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež wužywaju se pśez [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež wužywaju se pśez [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikimediaextensions-main' => 'Metakupka powěźeńkow, kótaraž wopśimujo wšykne powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež muse se za [http://meta.wikimedia.org/wiki/Language_committee Rěcny komitej] Wikimedije pśełožyś',
@@ -732,8 +702,6 @@ $messages['el'] = array(
 	'bw-desc-mwlibrl' => "Η '''mwlib.rl''' είναι μια βιβλιοθήκη python για τη σύνταξη εγγράφων PDF από άρθρα MediaWiki τα οποία έχουν αναλυθεί από την βιβλιοθήκη mwlib.
 
 Παρακαλώ δείτε τις σελίδες [[mw:Extension:PDF_Writer]] και http://code.pediapress.com/wiki/wiki/mwlibrl για περισσότερες πληροφορίες.",
-	'bw-desc-nocc' => 'To [http://nocc.sourceforge.net NOCC] είναι ένας webmail client γραμμένος στη PHP. Παρακαλώ αναφέρετε οποιαδήποτε προβλήματα στην [[Support|Υποστήριξη]].',
-	'bw-desc-openlayers' => 'Το OpenLayers είναι ένας δυναμικός δημιουργητής χάρτη ανοιχτού λογισμικού. Παρακαλώ αναφέρετε οποιαδήποτε προβλήματα στην [[support|υποστήριξη]].',
 	'bw-desc-osm-site' => 'Αυτή η ομάδα μηνυμάτων περιέχει τα μηνύματα διεπαφής για το [[Translating:Open Street Map|Open Street Map]].
 Δείτε την [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} σελίδα Unicode CLDR για εξήγηση των κλειδιών πληθυντικού].',
 	'bw-desc-statusnet' => 'Το [[Translating:StatusNet|StatusNet]] είναι ένας εξυπηρετητής ανοικτού λογισμικού microblogging',
@@ -958,11 +926,9 @@ $messages['frp'] = array(
 	'translate-group-desc-collection' => 'Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de l’èxtension MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Colèccion].',
 	'translate-group-desc-flaggedrevs' => 'Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de l’èxtension MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs].',
 	'translate-group-desc-readerfeedback' => 'Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de l’èxtension MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback].',
-	'translate-group-desc-socialprofile' => 'Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions liyês a l’èxtension MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile].',
-	'translate-group-desc-translate' => 'Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de l’èxtension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate].',
+	'translate-group-desc-translate' => 'Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de l’èxtension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate].', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions MediaWiki utilisâs per [http://www.wikia.com Wikia].',
 	'translate-group-desc-wikimediaextensions' => 'Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions MediaWiki utilisâs per la [http://wikimedia.org/ Wikimedia Foundation].',
-	'translate-group-desc-uniwiki' => 'Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions liyês a [http://unicefinnovation.org/wiki.php Uniwiki].',
 	'translate-group-desc-ui' => 'Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions liyês a l’[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative iniciativa d’utilisabilitât de Vouiquipèdia].',
 	'translate-group-desc-translatablepages' => 'Totes les pâges a traduire',
 	'bw-desc-freecol' => 'Devant que traduire FreeCol dens voutra lengoua, volyéd liére [[Translating:FreeCol]]. FreeCol utilise la licence GPL.',
@@ -979,8 +945,6 @@ $messages['frp'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' est una bibliotèca Python por fâre des documents PDF dês des articllos de MediaWiki qu’ont étâ analisâs per la bibliotèca mwlib.
 
 Vêde [[mw:Extension:PDF_Writer]] et pués http://code.pediapress.com/wiki/wiki/mwlibrl por més d’enformacions.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] est un cliant webmail ècrit en PHP. Volyéd raportar tôs los problèmos dessus [[Support|Assistance]].',
-	'bw-desc-openlayers' => 'OpenLayers est un g·ènèrator dinamico de mapes a sôrsa uvèrta. Volyéd raportar tôs los problèmos dessus [[Support|Assistance]].',
 	'bw-desc-openstreetmap' => 'Ceta tropa de mèssâjos contint tôs los mèssâjos d’[[Translating:OpenStreetMap|OpenStreetMap]].',
 	'bw-desc-osm-site' => 'Ceta tropa de mèssâjos contint los mèssâjos de l’entèrface d’[[Translating:Open Street Map|Open Street Map]].
 Vêde la [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} pâge de l’Unicode CLDR por una èxplicacion de l’usâjo des plurâls].',
@@ -1071,12 +1035,10 @@ $messages['gsw'] = array(
 	'translate-group-desc-flaggedrevs' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir d MediaWiki-Erwyterig [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Meta-Nochrichte-Gruppe, wu s alli Nochrichte din het fir d MediaWiki-Erwyterig [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'In dere Meta Mäldigsgruppe sin alli Systemmädlige für d MediaWiki-Erwyyterig [http://semantic-mediawiki.org/wiki/Semantic_MediaWiki_–_Startsyte Semantic MediaWiki] un de Erwyyterige wo dört yybunde sin',
-	'translate-group-desc-socialprofile' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir verwandti Erwyterige vu dr MediaWiki-Erwyterig  f[http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir d MediaWiki-Erwyterig [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir d MediaWiki-Erwyterig [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu  [http://www.wikia.com Wikia] brucht wäre',
 	'translate-group-desc-wikimediaextensions' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu dr [http://wikimedia.org/ Wikimedia Foundation] brucht wäre',
 	'translate-group-desc-wikimediaextensions-main' => 'Meta-Nochrichte-Gruppe, wu s alli Syschtemnochrichte din het vu dr unterstitzte MediaWiki-Erwyterige, wu fir s Wikimedia [http://meta.wikimedia.org/wiki/Language_committee Sprochekomitee] mien ibersetzt wäre.',
-	'translate-group-desc-uniwiki' => 'In däre Hauptgruppe het s alli Syschtemnochrichte fir verwandti Erwyterige vu [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'In däre Hauptgruppe het s alli Syschtemnochrichte vu dr [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Benutzerfrejndligkeits-Initiative]',
 	'translate-group-desc-translatablepages' => 'Alli ibersetzbare Syte',
 	'bw-desc-freecol' => 'Voreb Du aafangsch mit Ibersetze vu FreeCol, liis bitte zerscht [[Translating:FreeCol]]. Freecol nutzt d GPL-Lizänz.',
@@ -1095,12 +1057,10 @@ $messages['gsw'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' isch e Python-Bibliothek zum Schrybe vu PDF-Dokumänt us MediaWiki-Artikel, wu dur d mwlib-Bibliothek parsed wore sin.
 
 Bitte lueg uf [[mw:Extension:PDF_Writer]] un uf http://code.pediapress.com/wiki/wiki/mwlibrl fir meh Informatione.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] isch e Webmail-Client, wu in PHP gschribe isch. Froge un Fähler sotte uf [[Support]] berichtet wäre.',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] isch e Offline-Programm zum Läse vu dr Wikipedia',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] isch e Plattform fir frej verwändbari Medie',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Die Nochrichte sin Teil vu dr Vorlag zue dr E-Mail-Verifikation vu [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Die Nochrichte sin Teil vum [[Translating:Open Images|Open Images]]-Projäkt',
-	'bw-desc-openlayers' => 'OpenLayers isch e dynamische Open-Source-Chartegenerator. Froge un Fähler sotte uf [[Support]] berichtet wäre.',
 	'bw-desc-openstreetmap' => 'Nochrichtegruppe fir alli [[Translating:OpenStreetMap|OpenStreetMap]]-Nochrichte',
 	'bw-desc-osm-site' => 'In däre Gruppe het s Nochrichte vu dr Benutzeroberflechi fir [[Translating:Open Street Map|Open Street Map]].',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] isch e Sammlig vu Wärchzyyg zum Bearbeite vu dr Wikipedia',
@@ -1183,11 +1143,9 @@ $messages['hr'] = array(
 	'translate-group-desc-collection' => 'Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [http://www.mediawiki.org/wiki/Extension:Collection Zbirke]',
 	'translate-group-desc-flaggedrevs' => 'Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Označene promjene]',
 	'translate-group-desc-readerfeedback' => "Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [http://www.mediawiki.org/wiki/Extension:ReaderFeedback Odgovor čitatelja (''ReaderFeedback'')]",
-	'translate-group-desc-socialprofile' => 'Grupa poruka koja sadrži sve poruke za dogradnje povezane s MediaWiki dogradnjom [http://www.mediawiki.org/wiki/Extension:SocialProfile Društveni profil]',
-	'translate-group-desc-translate' => 'Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [http://www.mediawiki.org/wiki/Extension:Translate Prijevod sistemskih poruka]',
+	'translate-group-desc-translate' => 'Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [http://www.mediawiki.org/wiki/Extension:Translate Prijevod sistemskih poruka]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Grupa poruka koja sadrži sve poruke za podržane MediaWiki dogradnje koje rabi [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Grupa poruka koja sadrži sve poruke za podržane MediaWiki dogradnje koje rabi [http://wikimedia.org/ Zaklada Wikimedia]',
-	'translate-group-desc-uniwiki' => 'Grupa poruka koja sadrži sve poruke za podržane MediaWiki dogradnje koje rabi [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grupa poruka koja sadrži sve poruke za podržane MediaWiki dogradnje koje rabi [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Inicijativa za povećanje uporabljivosti Wikipedije]',
 	'bw-desc-openstreetmap' => 'Sve poruke povezane s [[Translating:OpenStreetMap|OpenStreetMap]] projektom',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] je karta svijeta koju može svatko uređivati',
@@ -1258,11 +1216,9 @@ $messages['hu'] = array(
 	'translate-group-desc-collection' => 'Gyűjtőcsoport, ami a [http://www.mediawiki.org/wiki/Extension:Collection Collection] MediaWiki-kiterjesztéshez tartozó összes üzenetet tartalmazza',
 	'translate-group-desc-flaggedrevs' => 'Gyűjtőcsoport, ami a [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] MediaWiki-kiterjesztéshez tartozó összes üzenetet tartalmazza',
 	'translate-group-desc-readerfeedback' => 'Gyűjtőcsoport, ami a [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] MediaWiki-kiterjesztéshez tartozó összes üzenetet tartalmazza',
-	'translate-group-desc-socialprofile' => 'Gyűjtőcsoport, ami a [http://www.mediawiki.org/wiki/Extension:SocialProfile Közösségi Profil] MediaWiki-kiterjesztéshez tartozó összes üzenetet tartalmazza',
-	'translate-group-desc-translate' => 'Gyűjtőcsoport, ami a [http://www.mediawiki.org/wiki/Extension:Translate Translate] MediaWiki-kiterjesztéshez tartozó összes üzenetet tartalmazza',
+	'translate-group-desc-translate' => 'Gyűjtőcsoport, ami a [http://www.mediawiki.org/wiki/Extension:Translate Translate] MediaWiki-kiterjesztéshez tartozó összes üzenetet tartalmazza', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Gyűjtőcsoport, ami a [http://www.wikia.com Wikia] által használt MediaWiki-kiterjesztések összes üzenetét tartalmazza',
 	'translate-group-desc-wikimediaextensions' => 'Gyűjtőcsoport, ami a [http://wikimedia.org/ Wikimédia Alapítvány] által használt MediaWiki-kiterjesztések összes üzenetét tartalmazza',
-	'translate-group-desc-uniwiki' => 'Gyűjtőcsoport, ami az [http://unicefinnovation.org/wiki.php Uniwiki]hez kapcsolódó MediaWiki-kiterjesztések összes üzenetét tartalmazza',
 	'translate-group-desc-ui' => 'Gyűjtőcsoport, ami a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]-hez kapcsolódó MediaWiki-kiterjesztések összes üzenetét tartalmazza',
 	'translate-group-desc-translatablepages' => 'Az összes fordítható lap',
 	'bw-desc-freecol' => 'Mielőtt elkezdenéd fordítani a FreeColt a saját nyelvedre, olvasd el a [[Translating:FreeCol]] lapot. A FreeCol GPL-licencet használ.',
@@ -1271,11 +1227,9 @@ $messages['hu'] = array(
 	'bw-desc-mwlibrl' => "Az '''mwlib.rl''' egy python-könyvtár, ami segítségével PDF-dokumentumok készíthetőek az mwlib-könyvtár által elemzett MediaWiki-szócikkekből.
 
 További információkat az [[mw:Extension:PDF_Writer]] és a http://code.pediapress.com/wiki/wiki/mwlibrl lapokon találhatsz.",
-	'bw-desc-nocc' => 'A [http://nocc.sourceforge.net NOCC] egy PHP-ban írt webmail-kliens. A problémákat [[Support|Segítség]] oldalon jelezheted.',
 	'translate-group-desc-okawix' => 'Az [[Translating:Okawix|Okawix]] egy offline Wikipédia-olvasó',
 	'bw-desc-openimages' => 'Az [[Translating:Open Images|Open Images]] egy nyílt médiaplatform',
 	'translate-group-desc-openimages-all' => 'Ezek az üzenetek az [[Translating:Open Images|Open Images]] projekt részei',
-	'bw-desc-openlayers' => 'Az OpenLayers egy nyílt forráskódú dinamikus térképgenerátor. A problémákat [[Support|Segítség]] oldalon jelezheted.',
 	'bw-desc-osm-site' => 'Ez a csoport tartalmazza az [[Translating:Open Street Map|Open Street Map]] felhasználói felületének szövegeit.
 A többesszám formátumáról [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} itt] tudhatsz meg többet.',
 	'translate-group-desc-pywikipedia' => 'A [[Translating:Pywikipedia|Pywikipedia]] a Wikipédia szerkesztéséhez szükséges eszközök gyűjteménye',
@@ -1299,12 +1253,10 @@ $messages['ia'] = array(
 	'translate-group-desc-flaggedrevs' => 'Metagruppo con tote le messages pro le extension de MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Marcaversiones].',
 	'translate-group-desc-readerfeedback' => 'Metagruppo con tote le messages pro le extension MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Meta-gruppo que contine le messages pro tote le extensiones de [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-socialprofile' => 'Metagruppo con tote le messages pro le extensiones connexe al extension de MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Profilo social]',
-	'translate-group-desc-translate' => 'Metagruppo con tote le messages pro le extension de MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Traducer].',
+	'translate-group-desc-translate' => 'Metagruppo con tote le messages pro le extension de MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Traducer].', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per le [http://wikimedia.org/ Fundation Wikimedia]',
 	'translate-group-desc-wikimediaextensions-main' => 'Metagruppo que contine tote le messages pro le extensiones supportate per MediaWiki que debe esser traducite pro le [http://meta.wikimedia.org/wiki/Language_committee Comité de linguas] del Fundation Wikimedia',
-	'translate-group-desc-uniwiki' => 'Metagruppo con tote le messages pro le extensiones connexe a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagruppo de messages continente tote le messages pro extensiones connexe al [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Initiativa de Usabilitate de Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Tote le paginas traducibile',
 	'bw-desc-freecol' => 'Ante de traducer FreeCol in tu lingua, per favor lege [[Translating:FreeCol]]. FreeCol usa le licentia GPL.',
@@ -1323,12 +1275,10 @@ $messages['ia'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' es un bibliotheca de Python pro facer documentos PDF ex articulos MediaWiki convertite per le bibliotheca mwlib.
 
 Vide [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl pro plus information.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] es un cliente de e-mail via web, scribite in PHP. Per favor reporta omne problema in [[Support]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] es un lector foras de linea de Wikipedia',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] es un platteforma pro multimedia libere',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Iste messages face parte del patrono de verification de e-mail de [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Iste messages face parte del projecto [[Translating:Open Images|Open Images]]',
-	'bw-desc-openlayers' => 'OpenLayers es un generator open source de cartas geographic dynamic. Per favor reporta omne problema in [[Support]].',
 	'bw-desc-openstreetmap' => 'Gruppo pro tote le messages de [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Iste gruppo de messages contine le messages de interfacie pro [[Translating:Open Street Map|Open Street Map]].
 Vide le [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} pagina CLDR Unicode] pro un explication de como se codifica le plurales.',
@@ -1341,8 +1291,6 @@ Vide le [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plur
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] es un servicio que monstra routes de sport pedestre, cyclismo, mountain bike e patinage in linea in tote le mundo. Illo usa le licentia GNU GPL.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pote rapidemente trovar le autores de un pagina in un wiki de Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es un projecto pro facer un version de Wikipedia usabile sin connexion, e con texto solmente, in un apparato mobile.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] es un application multi-platteforma pro apparatos mobile e tablettas pro leger e contribuer a Wikipedia',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] es un application multi-platteforma pro apparatos mobile e tablettas pro leger e contribuer a Wiktionario',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1361,12 +1309,10 @@ $messages['id'] = array(
 	'translate-group-desc-collection' => 'Grup pesan meta yang berisikan semua pesan sistem untuk ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Kelompok pesan meta yang berisi semua pesan untuk ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-socialprofile' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi MediaWiki yang didukung yang digunakan oleh [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Grup pesan meta yang berisikan semua pesan sistem untuk ekstensi MediaWiki yang didukung yang digunakan oleh [http://wikimedia.org Wikimedia Foundation]',
 	'translate-group-desc-wikimediaextensions-main' => 'Kelompok pesan meta yang berisi semua pesan untuk ekstensi MediaWiki yang didukung yang perlu diterjemahkan untuk [http://meta.wikimedia.org/wiki/Language_committee Komite bahasa] Wikimedia',
-	'translate-group-desc-uniwiki' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grup pesan meta yang berisikan semua pesan untuk ekstensi yang berkaitan dengan [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Proyek Inisiatif Kebergunaan Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Semua halaman yang dapat diterjemahkan',
 	'bw-desc-freecol' => 'Sebelum menerjemahkan FreeCol ke bahasa Anda, harap baca [[Translating:FreeCol]] terlebih dahulu. FreeCol menggunakan lisensi GPL.',
@@ -1383,12 +1329,10 @@ $messages['id'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' adalah sebuah pustaka python untuk membuat dokumen PDF dari artikel-artikel MediaWiki yang diparser menggunakan pustaka mwlib.
 
 Lihat pula [[mw:Extension:PDF Writer]] dan http://code.pediapress.com/wiki/wiki/mwlibrl untuk informasi lebih lanjut.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] adalah sebuah klien webmail yang ditulis menggunakan PHP. Laporkan temuan-temuan masalah di [[Support]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] adalah pembaca Wikipedia luring',
 	'bw-desc-openimages' => '[[Translating:Open Images|Gambar terbuka]] adalah suatu platform media terbuka',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Pesan berikut adalah bagian dari templat verifikasi surel [[Translating:Open Images|Gambar Terbuka]]',
 	'translate-group-desc-openimages-all' => 'Pesan berikut adalah bagian dari proyek [[Translating:Open Images|Gambar Terbuka]]',
-	'bw-desc-openlayers' => 'OpenLayers adalah sebuah generator peta dinamis bersumber terbuka. Laporkan temuan-temuan masalah di [[Support]].',
 	'bw-desc-openstreetmap' => 'Kumpulan pesan untuk semua pesan [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Kelompok pesan ini berisi pesan antarmuka untuk [[Translating:Open Street Map|Peta jalan terbuka]].',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] adalah koleksi peralatan untuk menyunting Wikipedia',
@@ -1536,7 +1480,7 @@ $messages['ka'] = array(
 	'translate-group-desc-flaggedrevs' => 'შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'შეტყობინებების მეტა-ჯგუფი, შეიცავს ყველა გაფართოების ყველა შეტყობინებას [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-translate' => 'შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [http://www.mediawiki.org/wiki/Extension:Translate თარგმნა]',
+	'translate-group-desc-translate' => 'შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [http://www.mediawiki.org/wiki/Extension:Translate თარგმნა]', # Fuzzy
 	'translate-group-desc-translatablepages' => 'ყველა თარგმნადი გვერდი',
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] არის სტარატეგიული თამაში',
 	'translate-group-desc-eol' => 'შეტყობინებათა ჯგუფი [[Translating:EOL|Encyclopedia of Life]]-თვის',
@@ -1745,8 +1689,6 @@ $messages['lt'] = array(
 	'bw-desc-freecol' => 'Prieš verčiant FreeCol į jūsų kalbą, skaitykite [[Translating:FreeCol]]. FreeCol naudoja GPL licenciją.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], PHP kalba parašytas internetinis forumas.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] yra nemokama klaidų stebėjimo sistema. [[Support]] puslapyje prašome pranešti bet kokius netikslumus ar klaidas.',
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] yra elektroninio pašto klientas, parašytas PHP kodu. [[Support]] prašome pranešti apie bet kokias problemas ar klaidas.',
-	'bw-desc-openlayers' => 'OpenLayers yra atviro kodo dinaminis žemėlapių generatorius. [[Support]] prašome pranešti apie bet kokias problemas ar klaidas.',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] - tai redaguojamas pasaulio žemėlapis',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] padeda greitai surasti puslapio autorių įvairuose Vikimedia projektuose.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] projetas, kuris pateikia automatinę Vikipedijos versiją mobiliose įrangose.',
@@ -1908,12 +1850,10 @@ $messages['nb'] = array(
 	'translate-group-desc-flaggedrevs' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Metabeskjedgruppe for alle [http://semantic-mediawiki.org/ Semantic MediaWiki]-utvidelser',
-	'translate-group-desc-socialprofile' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Metameldingsgruppen inneholder alle meldinger for MediaWiki-utvidelsen [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Metameldingsgruppen inneholder alle meldinger for støttede MediaWiki-utvidelser brukt av [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikimediaextensions-main' => 'Metameldingsgruppe som inneholder alle meldinger for støttede MediaWikiutvidelser som kreves for å bli oversatt for Wikimedias [http://meta.wikimedia.org/wiki/Language_committee språkkomite]',
-	'translate-group-desc-uniwiki' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metameldingsgruppen inneholder alle meldinger for utvidelser relatert til [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Alle sider som kan oversettes',
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] er et turbasert strategispill',
@@ -1930,12 +1870,10 @@ $messages['nb'] = array(
 	'translate-group-desc-mediawiki-core-branch' => 'Beskjeder for en stabil versjon av [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] er et informasjonhåndteringssystem for mikrofinans',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] er et bibliotek for oppritting av PDF-dokumenter fra MediaWiki-sider',
-	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] er en nettbasert e-postklient',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] er en frakoblet Wikipedialeser',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] er en åpen mediaplattform',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Disse meldingene er en del av e-postbekreftelsesmalen for [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Disse meldingene er en del av [[Translating:Open Images|Open Images]]-prosjektet',
-	'bw-desc-openlayers' => 'OpenLayers er en dynamisk kartgenerator med åpen kildekode. Vennligst rapporter problemer til [[support]].',
 	'bw-desc-openstreetmap' => 'Meldingsgruppe for alle [[Translating:OpenStreetMap|OpenStreetMap]]-meldinger',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] er et redigerbart verdenskart',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] er en Flash-basert OpenStreetMap-editor',
@@ -1947,8 +1885,6 @@ $messages['nb'] = array(
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] er en tjeneste som viser ruter for gå-, sykkel- og rulleskøyteturer verden rundt. Tjenesten bruker GNU GPL-lisensen.',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] kan raskt finne forfatterne av en del av en side på Wikimedia-wikier',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] er et prosjekt for å levere en frakoblet tekstversjon av Wikipedia på en mobil enhet.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] er en flerplattforms mobil- og lesebrettapplikasjon for å bidra til og lese på Wikipedia.',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] er en flerplattforms mobil- og nettbrettapplikasjon for å lese og bidra til Wiktionary',
 );
 
 /** Nepali (नेपाली)
@@ -2015,6 +1951,7 @@ $messages['nl'] = array(
 	'translate-group-desc-wikimedia-mobile-wiktionary' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] is een platformonafhankelijke toepassing voor mobiele telefoons en tablet-pc's voor het lezen van en bijdragen aan Wikiwoordenboek",
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] is een mobiele toepassing voor het bijdragen aan het[[:meta:Wiki Loves Monuments|Wiki Loves Monuments-project]]',
 	'translate-group-desc-waymarked-trails-help' => "De hulppagina's van de websites van Waymarked Trails: http://waymarkedtrails.org/help/about",
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] is een echte tekstverwerker om real-time mee samen te werken',
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎)
@@ -2043,11 +1980,9 @@ $messages['oc'] = array(
 	'translate-group-desc-collection' => 'Grop de messatges Meta que contenon totes los messages de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Colleccion]',
 	'translate-group-desc-flaggedrevs' => 'Grop dels messatges Meta que conten totes los messatges de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Grop dels messatges Meta que conten totes los messatges de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-socialprofile' => 'Grop dels messatges Meta que contenon totes los messatges de las extensions ligadas a l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Grop dels messatges Meta que contenon totes los messatges de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Grop dels messatges Meta que contenon totes los messatges de l’extension MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Grop dels messatges Meta que contenon totes los messatges de las extensions MediaWiki utilizadas per [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Meta grop de messatges que contenon totes los messatges per las extensions utilizadas per la [http://wikimedia.org/ Wikimedia Foundation]',
-	'translate-group-desc-uniwiki' => 'Meta grop de messatges que contenon totes los messatges per las extensions aparentadas a [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grop de messatges Meta que contenon totes los messatges de las extensions ligadas a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'bw-desc-freecol' => 'Abans de traduire FreeCol dins vòstra lenga, legissètz [[Translating: FreeCol]]. Freecol utiliza la licéncia GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un forum internet escrich en PHP.',
@@ -2055,8 +1990,6 @@ $messages['oc'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' es una bibliotèca en python per escriure de documents PDF dempuèi d'articles de MediaWiki que son estats analisats per la bibliotèca mwlib.
 
 Vejatz [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl per mai d'entresenhas.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] es un client webmail escrich en PHP. Raportatz totes los problèmas sus [[Support]].',
-	'bw-desc-openlayers' => 'OpenLayers es generador dinamic de cartas open source. Raportatz totes los problèmas sus [[Support]].',
 	'bw-desc-osm-site' => "Aqueste grop de messatges conten los messatges de l'interfàcia d'[[Translating:Open Street Map|Open Street Map]].",
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] es un servidor de microblogging en font dobèrta',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] es en mesura de trobar rapidament los autors d’una pagina dins un wiki Wikimedia.',
@@ -2076,12 +2009,10 @@ $messages['pfl'] = array(
 	'translate-group-desc-flaggedrevs' => 'Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] hod.',
 	'translate-group-desc-readerfeedback' => 'Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] hod.',
 	'translate-group-desc-semantic' => 'Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [http://semantic-mediawiki.org/ Semantic MediaWiki] hod.',
-	'translate-group-desc-socialprofile' => 'Meda-Nochrischdegrubb, wu alli Nochrischde im Zommehong midde MediaWiki-Eawaidarung [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] hod.',
-	'translate-group-desc-translate' => 'Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [http://www.mediawiki.org/wiki/Extension:Translate Translate] hod.',
+	'translate-group-desc-translate' => 'Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [http://www.mediawiki.org/wiki/Extension:Translate Translate] hod.', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Meda-Nochrischdegrubb, wu alli Nochrischde fa unaschdizdi MediaWiki-Eawaidarung vun [http://www.wikia.com Wikia] hod.',
 	'translate-group-desc-wikimediaextensions' => 'Meda-Nochrischdegrubb, wu alli Nochrischde fa unaschdizdi MediaWiki-Eawaidarung vun [http://wikimedia.org/ Wikimedia Foundation] hod.',
 	'translate-group-desc-wikimediaextensions-main' => 'Meda-Nochrischdegrubb, wu alli Nochrischde fa unaschdizdi MediaWiki-Eawaidarung hod, wu fas Iwasedze vun [http://meta.wikimedia.org/wiki/Language_committee Language committee] nodwendisch sin.',
-	'translate-group-desc-uniwiki' => 'Meda-Nochrischdegrubb, wu alli Nochrischde im Zommehong midde MediaWiki-Eawaidarung [http://unicefinnovation.org/wiki.php Uniwiki] hod.',
 	'translate-group-desc-ui' => 'Meda-Nochrischdegrubb, wu alli Nochrischde im Zommehong midde MediaWiki-Eawaidarung [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative] hod.',
 	'translate-group-desc-translatablepages' => 'Alli iwasedzbari Saide',
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] ischä rundebasiades Schdradegieschbiel',
@@ -2098,12 +2029,10 @@ $messages['pfl'] = array(
 	'translate-group-desc-mediawiki-core-branch' => 'Nochrischde fa ä schdabieli Ausgab vun [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] ischä MIS fa Gläkabidal',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] ischä Bibliodeeg fas Schaffe vun PDF Unalaache vun MediaWiki-Saide',
-	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] ischn Webmail-Client',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] ischn offline Wikipedia Lesebrogram',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] ischä Bladdfoam fa fraiji Medije',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Die Nochrischde sinen Deel vunde Voalaach fadie E-Mail-Bschdedischung vun [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Die Nochrischde sinen Deel vum [[Translating:Open Images|Open Images]]-Voahawe',
-	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] ischn dinamische Kaade-Eazaischa in JavaScript',
 	'bw-desc-openstreetmap' => 'Alli Nochrischde zu [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] ischä vaänabari Kaad vunde gonse Weld',
 	'translate-group-desc-potlatch2' => "[[Translating:OpenStreetMap|Potlatch2]] ischä Flash-gschdidzds OpenStreetMap B'awaidungsbrogram",
@@ -2115,8 +2044,6 @@ $messages['pfl'] = array(
 	'translate-group-desc-waymarked-trails' => "[[Translating:Waymarked Trails|Waymarked Trails]] ischn Dinschd fa Weesche fas Woandare, Radle, Beaschradle un Rollschuh laafe uffde gonse Weld. Bnudzd die GNU GPL G'nehmischung",
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] eameschlischds Uffinne vunem Audoa vuner Said inem Wikimedia Wiki.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] gibdä offline Ausgab vun Wikipedia fa Mobili Grääd als Tegschd',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] ischä bladdfoamiwagraifndi mobili un Täbled-Oawendung fas Lese un Baidraache vun Wikipedia',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] ischä bladdfoamiwagraifndi mobili un Täbled-Oawendung fas Lese un Baidraache vun Wiktionary',
 );
 
 /** Polish (polski)
@@ -2136,12 +2063,10 @@ $messages['pl'] = array(
 	'translate-group-desc-flaggedrevs' => 'Metagrupa zawiera wszystkie komunikaty rozszerzenia MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Metagrupa komunikatów, zawierająca wszystkie komunikaty rozszerzenia MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Grupa meta wiadomości zawierająca wszystkie wiadomości dla wszystkich rozszerzeń [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-socialprofile' => 'Metagrupa komunikatów, zawierająca wszystkie komunikaty rozszerzeń związanych z rozszerzeniem MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń MediaWiki używanych przez [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń MediaWiki używanych przez [http://wikimedia.org/ Fundację Wikimedia]',
 	'translate-group-desc-wikimediaextensions-main' => 'Grupa meta komunikatów zawierająca wszystkie wymagające przetłumaczenia komunikaty wspieranych rozszerzeń MediaWiki na potrzeby [http://meta.wikimedia.org/wiki/Language_committee komitetu językowego] Wikimedia',
-	'translate-group-desc-uniwiki' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń związanych z [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń związanych z [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Inicjatywą użyteczności Wikipedii]',
 	'translate-group-desc-translatablepages' => 'Wszystkie przetłumaczalne strony',
 	'bw-desc-freecol' => 'Zanim rozpoczniesz tłumaczenie FreeCol, zapoznaj się z [[Translating:FreeCol]]. Freecol udostępniane jest na licencji GPL.',
@@ -2158,12 +2083,10 @@ $messages['pl'] = array(
 	'translate-group-desc-mediawiki-core-branch' => 'Komunikaty stabilnej wersji oprogramowania [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] jest systemem zarządzania informacją dla mikrofinansów',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] jest biblioteką do tworzenia dokumentów PDF ze stron MediaWiki',
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] jest internetowym klientem poczty napisanym w PHP. Prosimy o zgłaszanie wszelkich problemów [[Support|obsłudze]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] jest czytnikiem offline Wikipedii',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] to otwarta platforma multimediów',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Komunikaty szablonu weryfikacji poprzez e‐mail dla [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Komunikaty projektu [[Translating:Open Images|Open Images]]',
-	'bw-desc-openlayers' => 'OpenLayers jest oprogramowaniem z otwartym kodem generującym dynamiczne mapy. Prosimy o zgłaszanie wszelkich problemów [[support|obsłudze]].',
 	'bw-desc-openstreetmap' => 'Grupa wszystkich komunikatów [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Ta grupa komunikatów zawiera interfejs [[Translating:Open Street Map|Open Street Map]]. Zobacz [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} stronę Unicode CLDR wyjaśniającą zasady tworzenia liczby mnogiej].',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] jest edytorem OpenStreetMap opartym na technologii Flash',
@@ -2175,9 +2098,6 @@ $messages['pl'] = array(
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] jest usługą wyświetlającą trasy wycieczek pieszych, rowerowych, kolarstwa górskiego i łyżworolkowych na całym świecie. Na licencji GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pozwala szybko odnaleźć autorów strony w Wikimedia wiki.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] jest projektem udostępniania offline, wyłącznie tekstowej wersji Wikipedii dla uradzeń mobilnych.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] jest wieloplatformową aplikacją na telefony i tablety do czytania i dodawania treści do Wikipedii',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] jest wieloplatformową aplikacją na telefony i tablety do czytania i dodawania treści do Wiktionary',
-	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] jest aplikacją mobilną do wzbogacania [[:meta:Wiki Loves Monuments|projektu Wiki Lubi Zabytki]]',
 );
 
 /** Piedmontese (Piemontèis)
@@ -2266,12 +2186,10 @@ $messages['pt'] = array(
 	'translate-group-desc-flaggedrevs' => 'Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Revisão de Edições]',
 	'translate-group-desc-readerfeedback' => 'Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Este meta-grupo contém todas as mensagens para todas as extensões do [http://semantic-mediawiki.org/ MediaWiki Semântico]',
-	'translate-group-desc-socialprofile' => 'Este meta-grupo contém todas as mensagens para as extensões relacionadas com a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Perfil Social]',
-	'translate-group-desc-translate' => 'Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Traduzir]',
+	'translate-group-desc-translate' => 'Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Traduzir]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Este meta-grupo contém todas as mensagens para as extensões suportadas do MediaWiki que são usadas pela [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Este meta-grupo contém todas as mensagens para as extensões MediaWiki suportadas, usadas pela [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikimediaextensions-main' => 'Este meta-grupo contém todas as mensagens para as extensões MediaWiki suportadas, que requerem tradução para o [http://meta.wikimedia.org/wiki/Language_committee Comité de Línguas] da Wikimedia',
-	'translate-group-desc-uniwiki' => 'Este meta-grupo contém todas as mensagens para as extensões relacionadas com o [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Este meta-grupo contém todas as mensagens para as extensões relacionadas com a [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciativa de Usabilidade da Wikipédia]',
 	'translate-group-desc-translatablepages' => 'Todas as páginas traduzíveis',
 	'bw-desc-freecol' => 'Antes de traduzir o FreeCol para a sua língua, por favor leia [[Translating:FreeCol]]. O Freecol utiliza a licença GPL.',
@@ -2290,12 +2208,10 @@ $messages['pt'] = array(
 	'bw-desc-mwlibrl' => "O '''mwlib.rl''' é uma biblioteca em python para produzir documentos PDF a partir de artigos MediaWiki que forem analisados pela biblioteca mwlib.
 
 Por favor veja [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl para mais informações.",
-	'bw-desc-nocc' => 'O [http://nocc.sourceforge.net NOCC] é um cliente de email escrito em PHP. Por favor reporte quaisquer problemas em [[Support]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] é um leitor da Wikipédia em offline',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] é uma plataforma multimédia aberta',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Estas mensagens fazem parte do modelo de verificação de correio electrónico do [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Estas mensagens fazem parte do projecto [[Translating:Open Images|Open Images]]',
-	'bw-desc-openlayers' => 'O OpenLayers é um gerador dinâmico de mapas de código aberto. Por favor reporte quaisquer problemas em [[support]].',
 	'bw-desc-openstreetmap' => 'Grupo para todas as mensagens do [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Este grupo contém as mensagens de interface do [[Translating:Open Street Map|Open Street Map]].
 Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} a página Unicode CLDR para uma explicação das chaves plurais].',
@@ -2366,12 +2282,10 @@ $messages['ro'] = array(
 	'translate-group-desc-flaggedrevs' => 'Grup de mesaje meta conținând toate mesajele extensiei [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] a MediaWiki',
 	'translate-group-desc-readerfeedback' => 'Grup de mesaje meta conținând toate mesajele extensiei [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] a MediaWiki',
 	'translate-group-desc-semantic' => 'Grup de mesaje meta care conține toate mesajele tuturor extensiilor [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-socialprofile' => 'Grup de mesaje meta conținând toate mesajele extensiilor asociate extensiei [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile] a MediaWiki',
-	'translate-group-desc-translate' => 'Grup de mesaje meta conținând toate mesajele extensiei [http://www.mediawiki.org/wiki/Extension:Translate Translate] a MediaWiki',
+	'translate-group-desc-translate' => 'Grup de mesaje meta conținând toate mesajele extensiei [http://www.mediawiki.org/wiki/Extension:Translate Translate] a MediaWiki', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Grup de mesaje meta conținând toate mesajele extensiilor susținute de MediaWiki și utilizate de [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Grup de mesaje meta conținând toate mesajele extensiilor susținute de MediaWiki și utilizate de [http://wikimedia.org/ Fundația Wikimedia]',
 	'translate-group-desc-wikimediaextensions-main' => 'Grup de mesaje meta conținând toate mesajele extensiilor susținute de MediaWiki și solicitate a fi traduse pentru [http://meta.wikimedia.org/wiki/Language_committee Comitetul lingvistic] al Wikimedia',
-	'translate-group-desc-uniwiki' => 'Grup de mesaje meta conținând toate mesajele extensiilor asociate [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Grup de mesaje meta conținând toate mesajele extensiilor asociate [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Inițiativei de Utilizabilitate a Wikipediei]',
 	'translate-group-desc-translatablepages' => 'Toate paginile traductibile',
 	'bw-desc-freecol' => "[[Translating:FreeCol|FreeCol]] este un joc de strategie de tip ''turn-based''",
@@ -2388,12 +2302,10 @@ $messages['ro'] = array(
 	'translate-group-desc-mediawiki-core-branch' => 'Mesaje pentru una din versiunile stabile ale [[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]] este un sistem pentru microfinanțare de administrare a informației',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] este o bibliotecă pentru salvarea paginilor MediaWiki ca documente PDF',
-	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] este un client de poștă electronică',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] este un navigator off-line pentru Wikipedia',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] este o platformă media deschisă',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Aceste mesaje sunt componente ale formatului [[Translating:Open Images|Open Images]] de verificare a e-mailului',
 	'translate-group-desc-openimages-all' => 'Aceste mesaje sunt componente ale proiectului [[Translating:Open Images|Open Images]]',
-	'bw-desc-openlayers' => '[[Translating:OpenLayers|OpenLayers]] este un generator dinamic de hărți în JavaScript',
 	'bw-desc-openstreetmap' => 'Toate mesajele asociate cu [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] este o hartă a lumii care poate fi liber modificată',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] este un editor OpenStreetMap bazat în Flash',
@@ -2405,9 +2317,6 @@ $messages['ro'] = array(
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] este un serviciu care afișează itinerarii pentru drumeții, ciclism, ciclism montan și patinaj cu role în jurul lumii. Utilizează licența GNU GPL',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] este capabil să găsească rapid autorii unei pagini dintr-un site wiki susținut de Wikimedia',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] este un proiect ce are ca scop furnizarea unei versiuni off-line (care să conțină doar text) a Wikipediei pe un dispozitiv mobil.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] este o aplicație multiplatformă destinată dispozitivelor mobile cu ajutorul căreia se poate lectura sau contribui la conținutul Wikipediei',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] este o aplicație multiplatformă destinată dispozitivelor mobile cu ajutorul căreia se poate lectura sau contribui la conținutul Wikționarului',
-	'translate-group-desc-wlmmobile' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] este o aplicație mobilă prin intermediul căreia se poate contribui la [[:meta:Wiki Loves Monuments|proiectul Wiki Loves Monuments]]',
 );
 
 /** tarandíne (tarandíne)
@@ -2436,12 +2345,10 @@ $messages['ru'] = array(
 	'translate-group-desc-flaggedrevs' => 'Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Мета-группа сообщений, содержащая все сообщения для всех расширений [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-socialprofile' => 'Мета-группа сообщений, содержащая все сообщения расширений, связанных с расширением MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Мета-группа сообщений, содержащая все сообщения поддерживаемых расширений MediaWiki, используемых [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Мета-группа сообщений, содержащая все сообщения поддерживаемых расширений MediaWiki, используемых [http://wikimedia.org/ Фондом Викимедиа]',
 	'translate-group-desc-wikimediaextensions-main' => 'Мета-группа сообщений, содержащая все сообщения расширений MediaWiki, которые требуется перевести для [http://meta.wikimedia.org/wiki/Language_committee Языкового комитета] Викимедии',
-	'translate-group-desc-uniwiki' => 'Мета-группа сообщений, содержащая все сообщения расширений, связанных с [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Мета-группа сообщений, содержащая все сообщения расширений, относящихся к [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Инициативе юзабилити Википедии]',
 	'translate-group-desc-translatablepages' => 'Все страницы для перевода',
 	'bw-desc-freecol' => 'Прежде чем переводить FreeCol на ваш язык, пожалуйста, прочтите [[Translating:FreeCol]]. Freecol использует лицензию GPL.',
@@ -2460,12 +2367,10 @@ $messages['ru'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' — python-библиотека для создания PDF-документов из статей MediaWiki, обработанных библиотекой mwlib.
 
 Дополнительную информацию можно найти на страницах [[mw:Extension:PDF_Writer]] и http://code.pediapress.com/wiki/wiki/mwlibrl.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] — почтовый веб-клиент, написанный на PHP. Пожалуйста, сообщайте о любых недостатках на [[Support|странице поддержки]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] — автономная читалка Википедии',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] — открытая медиа-платформа',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Эти сообщения являются частью шаблона верификации по электронной почте [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Эти сообщения относятся к проекту [[Translating:Open Images|Open Images]]',
-	'bw-desc-openlayers' => 'OpenLayers — генератор динамических карт с открытым исходным кодом. Пожалуйста, сообщайте о любых недостатках на [[Support|странице поддержки]].',
 	'bw-desc-openstreetmap' => 'Группа сообщений для всех сообщений [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Эта группа сообщений содержит сообщения пользовательского интерфейса [[Translating:Open Street Map|Open Street Map]].',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] — это основанный на Flash редактор OpenStreetMap',
@@ -2477,8 +2382,6 @@ $messages['ru'] = array(
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] — сервис, показывающий маршруты и места по всему миру, подходящие для пеших прогулок, велоспорта, поездок на горном велосипеде и катания на роликовых коньках. Использует лицензию GNU GPL.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] позволяет быстро найти авторов страницы в проектах Викимедиа.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] — это проект, предоставляющий автономную текстовую версию Википедии на мобильном устройстве.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] является кросс-платформенным приложением для мобильных и планшетных устройств для чтения и внесения вклада в Википедию.',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] — это кросс-платформенное приложение для мобильных и планшетных устройств, предназначенное для чтения и редактирования Викисловаря',
 );
 
 /** Rusyn (русиньскый)
@@ -2494,8 +2397,7 @@ $messages['rue'] = array(
 	'translate-group-desc-flaggedrevs' => 'Тота метаґрупа обсягує повідомлїня росшырїня  [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Тота метаґрупа овсягує повідомлня росшырїня [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Тота метаґрупа обсягує вшыткы повідомлїня вшыткых росшырїнь [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-socialprofile' => 'Тота метаґрупа обсягує вшыткы повідомлїня росшырїня [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Тота метаґрупа обсягує повідомлїня росшырїня  [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Тота метаґрупа обсягує повідомлїня росшырїня  [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Тота метаґрупа обсягує повідомлїня MediaWiki-росшырїнь, котры ся хоснують на [http://www.wikia.com Wikia]',
 );
 
@@ -2533,11 +2435,9 @@ $messages['sk'] = array(
 	'translate-group-desc-collection' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Kolekcia]',
 	'translate-group-desc-flaggedrevs' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-socialprofile' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Spoločenský profil]',
-	'translate-group-desc-translate' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki, ktoré používa [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki, ktoré používa [http://wikimedia.org/ Wikimedia Foundation]',
-	'translate-group-desc-uniwiki' => 'Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki súvisiace s [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metaskupina správ obsahujúca všetky správy rozšírení týkajúcich sa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciatívy použiteľnosti Wikipédie]',
 	'bw-desc-freecol' => 'Pred prekladaním FreeCol do vášho jazyka si prosím prečítajte [[Translating:FreeCol]]. Freecol používa licenciu GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webové fórum napísané v PHP.',
@@ -2545,8 +2445,6 @@ $messages['sk'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' je knižnica v Pythone na tvorbu dokumentov PDF z článkov MediaWiki, ktoré spracuje knižnica mwlib.
 
 Ďalšie informácie nájdete na [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/mwlibrl",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] je webmailový klient napísaný v PHP. Akékoľvek problémy hláste na [[Support|stránke Podpory]].',
-	'bw-desc-openlayers' => 'OpenLayers je open source generátor dynamických máp. Akékoľvek problémy hláste na [[Support|stránke Podpory]].',
 	'bw-desc-osm-site' => 'Táto skupina správ obsahuje správy rozhrania pre  [[Translating:Open Street Map|Open Street Map]].',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] dokáže rýchlo nájsť autorov stránky vo wiki projektov Wikimedia.',
 );
@@ -2616,12 +2514,10 @@ $messages['sr-ec'] = array(
 	'translate-group-desc-collection' => 'Мета група порука која садржи све поруке проширења [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Мета група порука која садржи све поруке проширења [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Мета група порука која садржи све поруке проширења [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-socialprofile' => 'Мета група порука која садржи све поруке проширења везане за [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Мета група порука која садржи све поруке проширења [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Мета група порука која садржи све поруке проширења [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Мета група порука која садржи све поруке за подржана проширења које користи [http://www.wikia.com Викија]',
 	'translate-group-desc-wikimediaextensions' => 'Мета група порука која садржи све поруке за подржана проширења које користи [http://wikimedia.org/ Задужбина Викимедија]',
 	'translate-group-desc-wikimediaextensions-main' => 'Мета група порука која садржи све поруке подржаних проширења Медијавикија. Поруке је потребно превести за Викимедијин [http://meta.wikimedia.org/wiki/Language_committee језички одбор]',
-	'translate-group-desc-uniwiki' => 'Мета група порука која садржи све поруке везане за [http://unicefinnovation.org/wiki.php Унивики]',
 	'translate-group-desc-ui' => 'Мета група порука која садржи све поруке проширења везане за [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Све преводиве странице',
 	'bw-desc-freecol' => '[[Translating:FreeCol|Фрикол]] је стратешка игра',
@@ -2637,12 +2533,10 @@ $messages['sr-ec'] = array(
 	'translate-group-desc-mediawiki-core-branch' => 'Поруке за стабилно издање [[Translating:MediaWiki|Медијавикија]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Мифоз]] је систем за управљање подацима о микрофинансирању',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] је библиотека за прављење PDF докумената са страница Медијавикија',
-	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] је клијент за мрежну пошту',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Окавикс]] је програм за читање Википедије ван мреже',
 	'bw-desc-openimages' => '[[Translating:Open Images|Отворене слике]] је отворена платформа за мултимедију',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Ове поруке су део шаблона за потврду е-адресе (пројекат [[Translating:Open Images|Отворене слике]])',
 	'translate-group-desc-openimages-all' => 'Ове поруке су део пројекта [[Translating:Open Images|Отворене слике]]',
-	'bw-desc-openlayers' => '[[Translating:OpenLayers|Опенлејерс]] је динамички генератор мапи',
 	'bw-desc-openstreetmap' => '[[Translating:OpenStreetMap|Опенстритмап]] је бесплатна мапа целог света',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|Опенстритмап]] је бесплатна мапа целог света',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Пајвикипедија]] је збирка алатки за уређивање Википедије',
@@ -2666,12 +2560,10 @@ $messages['sr-el'] = array(
 	'translate-group-desc-collection' => 'Meta grupa poruka koja sadrži sve poruke proširenja [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
 	'translate-group-desc-flaggedrevs' => 'Meta grupa poruka koja sadrži sve poruke proširenja [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Meta grupa poruka koja sadrži sve poruke proširenja [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-socialprofile' => 'Meta grupa poruka koja sadrži sve poruke proširenja vezane za [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Meta grupa poruka koja sadrži sve poruke proširenja [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Meta grupa poruka koja sadrži sve poruke proširenja [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Meta grupa poruka koja sadrži sve poruke za podržana proširenja koje koristi [http://www.wikia.com Vikija]',
 	'translate-group-desc-wikimediaextensions' => 'Meta grupa poruka koja sadrži sve poruke za podržana proširenja koje koristi [http://wikimedia.org/ Zadužbina Vikimedija]',
 	'translate-group-desc-wikimediaextensions-main' => 'Meta grupa poruka koja sadrži sve poruke podržanih proširenja Medijavikija. Poruke je potrebno prevesti za Vikimedijin [http://meta.wikimedia.org/wiki/Language_committee jezički odbor]',
-	'translate-group-desc-uniwiki' => 'Meta grupa poruka koja sadrži sve poruke vezane za [http://unicefinnovation.org/wiki.php Univiki]',
 	'translate-group-desc-ui' => 'Meta grupa poruka koja sadrži sve poruke proširenja vezane za [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Sve prevodive stranice',
 	'bw-desc-freecol' => '[[Translating:FreeCol|Frikol]] je strateška igra',
@@ -2687,12 +2579,10 @@ $messages['sr-el'] = array(
 	'translate-group-desc-mediawiki-core-branch' => 'Poruke za stabilno izdanje [[Translating:MediaWiki|Medijavikija]]',
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifoz]] je sistem za upravljanje podacima o mikrofinansiranju',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] je biblioteka za pravljenje PDF dokumenata sa stranica Medijavikija',
-	'bw-desc-nocc' => '[[Translating:NOCC|NOCC]] je klijent za mrežnu poštu',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okaviks]] je program za čitanje Vikipedije van mreže',
 	'bw-desc-openimages' => '[[Translating:Open Images|Otvorene slike]] je otvorena platforma za multimediju',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Ove poruke su deo šablona za potvrdu e-adrese (projekat [[Translating:Open Images|Otvorene slike]])',
 	'translate-group-desc-openimages-all' => 'Ove poruke su deo projekta [[Translating:Open Images|Otvorene slike]]',
-	'bw-desc-openlayers' => '[[Translating:OpenLayers|Openlejers]] je dinamički generator mapi',
 	'bw-desc-openstreetmap' => '[[Translating:OpenStreetMap|Openstritmap]] je besplatna karta celog sveta',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|Openstritmap]] je besplatna karta celog sveta',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pajvikipedija]] je zbirka alatki za uređivanje Vikipedije',
@@ -2724,12 +2614,10 @@ $messages['sv'] = array(
 	'translate-group-desc-flaggedrevs' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Metameddelandegrupp som innehåller alla meddelanden för alla tillägg till [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-socialprofile' => 'Metagrupp som innehåller alla meddelanden för tillägg relaterade till MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]',
-	'translate-group-desc-translate' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:Translate Translate]',
+	'translate-group-desc-translate' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägg som används av [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägg som används av [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikimediaextensions-main' => 'Metameddelandegrupp som innehåller alla meddelanden för stödjande MediaWiki-tillägg som krävs för att översättas för Wikimedias [http://meta.wikimedia.org/wiki/Language_committee språkkommitté]',
-	'translate-group-desc-uniwiki' => 'Metagrupp som innehåller alla meddelanden för tillägg relaterade till [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Metagrupp som innehåller alla meddelanden för tillägg relaterade till [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Alla översättningsbara sidor',
 	'bw-desc-freecol' => 'Innan du översätter FreeCol till ditt språk, var god läs [[Translating:FreeCol]]. FreeCol använder GPL-licensen.',
@@ -2748,12 +2636,10 @@ $messages['sv'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl''' är ett pythonbibliotek för att skapa PDF-document från MediaWiki-artiklar som tolkats av mwlib-biblioteket.
 
 Se [[mw:Extension:PDF_Writer]] och http://code.pediapress.com/wiki/wiki/mwlibrl för mer information.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] är en e-postklient som är skriven i PHP. Var god att rapportera några problem [[Support|här]].',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] är en offline Wikipedia-läsare',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]] är en plattform för öppen media',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Dessa meddelanden är en del av e-postbekräftelsemallen för [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Dessa meddelanden är en del av [[Translating:Open Images|Open Images]]-projektet',
-	'bw-desc-openlayers' => 'OpenLayers är en dynamisk kartgenerator med öppen källkod. Vänligen rapportera problem till [[support]].',
 	'bw-desc-openstreetmap' => 'Alla meddelanden som rör [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Den här gruppen av meddelanden innehåller gränssnittet för [[Translating:Open Street Map|Open Street Map]].
 Se [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} Unicode CLDR sida för förklaring av plural hantering].',
@@ -2765,7 +2651,6 @@ Se [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_ru
 	'translate-group-desc-tsint' => 'En meddelandegrupp för [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-systemet för verktyg till [http://toolserver.org Toolserver](<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tekniska detaljer]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan snabbt hitta författarna till en sida på en Wikimedia wiki.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] är ett projekt  för att tillhandahålla en offline textversion av Wikipedia på en mobil enhet.',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]] är en korsplattform för mobil- and surfplattor för att läsa och bidra till Wikipedia',
 );
 
 /** Tamil (தமிழ்)
@@ -2792,11 +2677,9 @@ $messages['th'] = array(
 	'translate-group-desc-collection' => 'เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม[http://www.mediawiki.org/wiki/Extension:Collection แหล่งสะสม]ของมีเดียวิกิ',
 	'translate-group-desc-flaggedrevs' => 'เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] ของมีเดียวิกิ',
 	'translate-group-desc-readerfeedback' => 'เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม[http://www.mediawiki.org/wiki/Extension:ReaderFeedback การตอบรับจากผู้อ่าน]ของมีเดียวิกิ',
-	'translate-group-desc-socialprofile' => 'เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม ที่เกี่ยวข้องกับส่วนเพิ่มเติม[http://www.mediawiki.org/wiki/Extension:SocialProfile โปรไฟล์ทางสังคม]ของมีเดียวิกิ',
-	'translate-group-desc-translate' => 'เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม[http://www.mediawiki.org/wiki/Extension:Translate การแปล]ของมีเดียวิกิ',
+	'translate-group-desc-translate' => 'เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม[http://www.mediawiki.org/wiki/Extension:Translate การแปล]ของมีเดียวิกิ', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติมมีเดียวิกิที่ใช้บน [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติมมีเดียวิกิที่ใช้โดย [http://wikimedia.org/ มูลนิธิวิกิมีเดีย]',
-	'translate-group-desc-uniwiki' => 'เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติมที่เกี่ยวข้องกับ [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติมที่เกี่ยวข้องกับ [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 );
 
@@ -2813,12 +2696,10 @@ $messages['tl'] = array(
 	'translate-group-desc-flaggedrevs' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para dugtong ng MediaWiki na [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Binandilang mga Pagbabago]',
 	'translate-group-desc-readerfeedback' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para dugtong ng MediaWiki na [http://www.mediawiki.org/wiki/Extension:ReaderFeedback Katugunan ng Mambabasa]',
 	'translate-group-desc-semantic' => 'Pangkat ng mensahe ng meta na naglalaman ng lahat ng mga mensahe para sa lahat ng mga dugtong ng [http://semantic-mediawiki.org/ Semantikong MediaWiki]',
-	'translate-group-desc-socialprofile' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensaheng may kaugnayan sa dugtong ng MediaWiki na [http://www.mediawiki.org/wiki/Extension:SocialProfile Balangkas Panlipunan]',
-	'translate-group-desc-translate' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para dugtong ng MediaWiki na [http://www.mediawiki.org/wiki/Extension:Translate Isalinwika]',
+	'translate-group-desc-translate' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para dugtong ng MediaWiki na [http://www.mediawiki.org/wiki/Extension:Translate Isalinwika]', # Fuzzy
 	'translate-group-desc-wikiaextensions' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa tinatangkilik na mga dugtong ng MediaWiki na ginagamit ng [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa tinatangkilik na mga dugtong ng MediaWiki na ginagamit ng [http://wikimedia.org/ Pundasyong Wikimedia]',
 	'translate-group-desc-wikimediaextensions-main' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat  [http://meta.wikimedia.org/wiki/Language_committee lupon ng Wika] ng Wikimedia',
-	'translate-group-desc-uniwiki' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa mga dugtong na may kaugnayan sa [http://unicefinnovation.org/wiki.php Uniwiki]',
 	'translate-group-desc-ui' => 'Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa mga dugtong na may kaugnayan sa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Pagpapanimula ng Pagkanagagamit ng Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Lahat ng mga pahinang maisasalinwika',
 	'bw-desc-freecol' => 'Bago isalin ang FreeCol sa wika mo, paki basa ang [[Translating:FreeCol]]. Gumagamit ang Freecol ng lisensyang GPL.',
@@ -2837,12 +2718,10 @@ $messages['tl'] = array(
 	'bw-desc-mwlibrl' => "Ang '''mwlib.rl''' ay isang aklatang-sawa para pagsusulat ng mga kasulatang PDF mula sa mga artikulo ng MediaWiki na nilitis ng aklatang mwlib.
 
 Mangyaring tingnan ang [[mw:Extension:PDF_Writer]] at ang http://code.pediapress.com/wiki/wiki/mwlibrl para sa mas marami pang kabatiran.",
-	'bw-desc-nocc' => 'Ang [http://nocc.sourceforge.net NOCC] ay isang kliyente ng webmail na nakasulat sa PHP.  Paki-ulat ang anumang mga paksa sa [[Support]].',
 	'translate-group-desc-okawix' => 'Ang [[Translating:Okawix|Okawix]] ay isang hindi nakakunekta sa Internet na pambasa ng Wikipedia',
 	'bw-desc-openimages' => 'Ang [[Translating:Open Images|Open Images]] ay isang bukas na batalan ng midya',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Ang mga mensaheng ito ay bahagi ng suleras ng pagpapatunay ng e-liham ng [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Ang mga mensaheng ito ay bahagi ng proyektong [[Translating:Open Images|Open Images]]',
-	'bw-desc-openlayers' => 'Ang OpenLayers ay isang manlilikha ng mapang masisigla na may bukas na pinagmumulan.  Mangyaring paki-ulat ang anumang mga paksa sa [[support]].',
 	'bw-desc-openstreetmap' => 'Lahat ng mga mensaheng may kaugnayan sa [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Naglalaman ang pangkat na pangmensaheng ito ng mga mensaheng panghangganang-mukha para sa [[Translating:Open Street Map|Bukas na Mapa ng Kalye]].  Tingnan ang [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} pahina ng Unikodigong CLDR para sa paliwanag ng mga susing pangmaramihan].',
 	'translate-group-desc-potlatch2' => 'Ang [[Translating:OpenStreetMap|Potlatch2]] ay isang patnugot ng OpenStreetMap na nakahimpil sa Flash',
@@ -2854,9 +2733,6 @@ Mangyaring tingnan ang [[mw:Extension:PDF_Writer]] at ang http://code.pediapress
 	'translate-group-desc-waymarked-trails' => 'Ang [[Translating:Waymarked Trails|Waymarked Trails]] ay isang paglilingkod na nagpapakita ng mga ruta sa nakasisiyang mahabang paglalakad, pagbibisikleta, pambundok na pamimisikleta at pag-iiskeyt na nasa linya sa buong mundo. Gumagamit ito ng lisensiyang GNU GPL',
 	'bw-desc-wikiblame' => 'Kayang mabilisang hanapin ng [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] ang mga may-akda ng isang pahinang nasa loob ng isang wiki ng Wikimedia.',
 	'bw-desc-wikireader' => 'Ang [[Translating:WikiReader|WikiReader]] ay isang proyekto upang dalhin ang isang bersyon ng Wikipediang hindi nakakunekta sa internet at may bersyong teksto lamang mula sa isang aparatong mobil.',
-	'translate-group-desc-wikipediamobile' => 'Ang [[Translating:WikipediaMobile|WikipediaMobile]] ay isang platapormang tumatawid ng mobil at aplikasyon ng tablet para sa pagbasa at pag-aambag sa Wikipedia',
-	'translate-group-desc-wiktionarymobile' => 'Ang [[Translating:WiktionaryMobile|WiktionaryMobile]] ay isang platapormang tumatawid ng mobil at aplikasyon ng tablet para sa pagbabasa at pag-aambag sa Wiktionary',
-	'translate-group-desc-wlmmobile' => 'Ang [[Translating:WLMMobile|Mobil na Maibigin ang Wiki sa mga Bantayog]] ay isang aplikasyong naililipat-lipat para sa pag-aambag sa [[:meta:Wiki Loves Monuments|proyektong Maibigin ang Wiki sa mga Bantayog]]',
 );
 
 /** Tatar (Cyrillic script) (татарча)
@@ -2868,7 +2744,6 @@ $messages['tt-cyrl'] = array(
 	'bw-desc-freecol' => 'FreeCol проектын узегезнең телегезгә тәрҗемә иткәнче башта [[Translating:FreeCol]]ны карагыз, чөнки ул GPL лицензиясен куллана.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] —  PHPда язылган веб-форум.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT — килгән хаталарны карау өчен нигезләнгән веб-система. Зинһар, булган кимчелекләрне [[Support]] битендә әйтегез.',
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] — PHP телендә язылган почта веб-клиенты. Зинхар очен, барлык җитешсезлекләр турында [[Support|ярдәм битенә]] хәбәр итегез.',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] — Википедияне рәтләү өчен җиһазлар җыентыгы',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] — ачык кодлы микроблогинг үзәге',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] Викимедиа авторларының битен табарга ярдәм итә.',
@@ -2960,8 +2835,6 @@ $messages['vep'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl'''  om python-kirjišt, kudamb om tehtud käta MediaWikin kirjutesid PDF-formatha; nened kirjutesed ümbriratas mwlib-kirjišton abul.
 
 Ližainformacijad sab löuta [[mw:Extension:PDF_Writer]] da http://code.pediapress.com/wiki/wiki/mwlibrl-lehtsilpäi.",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] om PHP-kelel kirjutadud web-klijent. Olgat hüväd, kirjutagat erazvuiččiš petusiš [[Support|Abulehtpolel]].',
-	'bw-desc-openlayers' => "OpenLayers om dinamižiden kartoiden generator avaitud äugotižkodanke. Olgat hüväd, kirjutagat kaikiš vigoiš [[Support|pid'oitelemižen lehtpolel]].",
 	'bw-desc-osm-site' => 'Nece tedotusiden gruppas om [[Translating:Open Street Map|Open Street Map]]-interfeisan tedotusid.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] laskeb löuta teravas lehtpolen avtorid Wikimedii-projektoiš.',
 );
@@ -3050,6 +2923,7 @@ $messages['yi'] = array(
  * @author Tommyang
  * @author Xiaomingyan
  * @author Yanmiao liu
+ * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'translategroupdescriptions-desc' => '消息组说明 [http://mediawiki.org/wiki/Extension:Translate 翻译] 扩展所支持的产品',
@@ -3061,18 +2935,17 @@ $messages['zh-hans'] = array(
 	'translate-group-desc-flaggedrevs' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]扩展使用所有消息的元消息组。',
 	'translate-group-desc-readerfeedback' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]扩展使用所有消息的元消息组。',
 	'translate-group-desc-semantic' => '包含所有[http://semantic-mediawiki.org/ Semantic MediaWiki]扩展使用所有消息的元消息组。',
-	'translate-group-desc-socialprofile' => '包含与MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]扩展有关的扩展使用所有消息的元消息组。',
-	'translate-group-desc-translate' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]扩展使用所有消息的元消息组。',
+	'translate-group-desc-translate' => '元消息组包含着MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]扩展使用的所有消息。；请您熟知其[//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary 术语表]',
 	'translate-group-desc-wikiaextensions' => '包含[http://www.wikia.com Wikia]专用受支持的MediaWiki扩展使用所有消息的元消息组。',
 	'translate-group-desc-wikimediaextensions' => '包含[http://wikimedia.org/ Wikimedia Foundation]专用受支持的MediaWiki扩展使用所有消息的元消息组。',
 	'translate-group-desc-wikimediaextensions-main' => '包含为维基媒体[http://meta.wikimedia.org/wiki/Language_committee 语言委员会]必须翻译的受支持的MediaWiki扩展使用所有消息的元消息组。',
-	'translate-group-desc-uniwiki' => '包含与[http://unicefinnovation.org/wiki.php Uniwiki]有关的扩展使用所有消息的元消息组',
 	'translate-group-desc-ui' => '包含与[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative 维基百科可用性倡议]有关的扩展使用所有消息的元消息组',
 	'translate-group-desc-translatablepages' => '所有翻译网页',
 	'bw-desc-freecol' => '在将FreeCol翻译至你的语言之前，请阅读[[Translating:FreeCol]]。Freecol使用GPL许可协议。',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum]，一个用PHP编写的论坛。',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT]是一个免费的基于Web的Bug追踪系统。请在[[Support|支持]]报告问题。',
 	'translate-group-desc-eol' => '[[Translating:EOL|Encyclopedia of Life]]的消息组',
+	'translate-group-desc-frontlinesms' => '[[Translating:FrontlineSMS|FrontlineSMS]]的消息组',
 	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS]]的消息组',
 	'translate-group-desc-ihris-common' => '[[Translating:iHRIS|iHRIS]]模块之一，[[Special:Translate/out-ihris-common-0-all|iHRIS Common]]的消息组',
 	'translate-group-desc-ihris-i2ce' => '[[Translating:iHRIS|iHRIS]]模块之一，[[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]]的消息组',
@@ -3085,12 +2958,10 @@ $messages['zh-hans'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl'''是一个使用mwlib库解析的python库，用以将MediaWiki条目转化为PDF文件。
 
 更多信息请见[[mw:Extension:PDF_Writer]]和http://code.pediapress.com/wiki/wiki/mwlibrl。",
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] 是一个使用PHP编写的收发邮件客户端。请在[[Support|支持]]报告问题。',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]]是一种离线维基百科阅读器。',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]]是一种开放媒体平台。',
 	'translate-group-desc-openimages-verifyemailtemplate' => '这些消息属于[[Translating:Open Images|Open Images]]电子邮件验证模板',
 	'translate-group-desc-openimages-all' => '这些消息属于[[Translating:Open Images|Open Images]]项目',
-	'bw-desc-openlayers' => 'OpenLayers是一个开源的动态地图生成器。请在[[Support|支持]]报告问题。',
 	'bw-desc-openstreetmap' => '本组包含所有[[Translating:OpenStreetMap|OpenStreetMap]]信息',
 	'bw-desc-osm-site' => '本组包含[[Translating:Open Street Map|Open Street Map]]的界面信息。
 请见[http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} plural keys扩展包的Unicode CLDR页面]。',
@@ -3103,8 +2974,13 @@ $messages['zh-hans'] = array(
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]]是一个使用GNU GPL许可证的显示世界范围内远足、骑行、山地骑行、 轮滑路线的服务。',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame]可以快速找到某Wikimedia wiki中某页面的作者。',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] 是一个将离线、仅文字版本的维基百科传送到手机上的项目。',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]是一个用于阅读并编辑维基百科的手机、平板跨平台应用程序。',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]]是用语阅读和贡献维基词典的跨平台手机／平板应用程序。',
+	'translate-group-desc-wikimedia-mobile' => '包含维基媒体项目移动应用的聚合消息组',
+	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]]是一个跨平台的手机和平板电脑应用，用于阅读和编辑维基百科',
+	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]]是一个跨平台的手机和平板电脑应用，用于阅读和编辑维基文库',
+	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]]是一个跨平台的手机和平板电脑应用，用于阅读和编辑维基词典',
+	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]]是一个手机应用，用于编辑[[:meta:Wiki Loves Monuments|维基爱古迹项目]]',
+	'translate-group-desc-waymarked-trails-help' => 'Waymarked Trails网站的帮助页面: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]]是一个真正的实时协同编辑器',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
@@ -3122,12 +2998,10 @@ $messages['zh-hant'] = array(
 	'translate-group-desc-flaggedrevs' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]擴展使用所有消息的元消息組。',
 	'translate-group-desc-readerfeedback' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]擴展使用所有消息的元消息組。',
 	'translate-group-desc-semantic' => '包含所有[http://semantic-mediawiki.org/ Semantic MediaWiki]擴展使用所有消息的元消息組。',
-	'translate-group-desc-socialprofile' => '包含與MediaWiki [http://www.mediawiki.org/wiki/Extension:SocialProfile Social Profile]擴展有關的擴展使用所有消息的元消息組。',
-	'translate-group-desc-translate' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]擴展使用所有消息的元消息組。',
+	'translate-group-desc-translate' => '包含MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]擴展使用所有消息的元消息組。', # Fuzzy
 	'translate-group-desc-wikiaextensions' => '包含[http://www.wikia.com Wikia]專用受支持的MediaWiki擴展使用所有消息的元消息組。',
 	'translate-group-desc-wikimediaextensions' => '包含[http://wikimedia.org/ Wikimedia Foundation]專用受支持的MediaWiki擴展使用所有消息的元消息組。',
 	'translate-group-desc-wikimediaextensions-main' => '包含為維基媒體[http://meta.wikimedia.org/wiki/Language_committee 語言委員會]必須翻譯的受支持的MediaWiki擴展使用所有消息的元消息組。',
-	'translate-group-desc-uniwiki' => '包含與[http://unicefinnovation.org/wiki.php Uniwiki]有關的擴展使用所有消息的元消息組',
 	'translate-group-desc-ui' => '包含與[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative 維基百科可用性倡議]有關的擴展使用所有消息的元消息組',
 	'translate-group-desc-translatablepages' => '所有翻譯網頁',
 	'bw-desc-freecol' => '在翻譯 FreeCol 到您的語言之前，請閱讀 [[Translating:FreeCol]]。Freecol 使用 GPL 協議。',
@@ -3146,12 +3020,10 @@ $messages['zh-hant'] = array(
 	'bw-desc-mwlibrl' => "'''mwlib.rl'''是一個使用mwlib庫解析的python庫，用以將MediaWiki條目轉化為PDF文件。
 
 更多信息請見[[mw:Extension:PDF_Writer]]和http://code.pediapress.com/wiki/wiki/mwlibrl。", # Fuzzy
-	'bw-desc-nocc' => '[http://nocc.sourceforge.net NOCC] 是一個使用 PHP 編寫的 Web 郵件客戶端。請在 [[Support]] 內報告問題。',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]]是一個離線閱讀維基百科的軟件',
 	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]]是一個開放媒體平台',
 	'translate-group-desc-openimages-verifyemailtemplate' => '這些消息屬於[[Translating:Open Images|Open Images]]電子郵件驗證模板',
 	'translate-group-desc-openimages-all' => '這些消息屬於[[Translating:Open Images|Open Images]]項目',
-	'bw-desc-openlayers' => 'OpenLayers 是一個開源的動態地圖生成器。請在 [[support]] 頁面內報告問題。',
 	'bw-desc-openstreetmap' => '本群組包含所有 [[Translating:OpenStreetMap|OpenStreetMap]] 的介面訊息',
 	'bw-desc-osm-site' => '本群組包含了 [[Translating:Open Street Map|Open Street Map]] 的介面訊息。',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]]是基於Flash的OpenStreetMap編輯軟件',
@@ -3163,6 +3035,4 @@ $messages['zh-hant'] = array(
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]]是一個使用GNU GPL許可證的顯示世界範圍內遠足、騎行、山地騎行、 輪滑路線的服務。',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] 可以快速找到 Wikimedia 的維基某一個頁面的作者。',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] 是一個將離線、僅文字版本的維基百科傳送到手機上的計畫。',
-	'translate-group-desc-wikipediamobile' => '[[Translating:WikipediaMobile|WikipediaMobile]]是一個用於閱讀並編輯維基百科的手機、平板跨平台應用程序。',
-	'translate-group-desc-wiktionarymobile' => '[[Translating:WiktionaryMobile|WiktionaryMobile]]是用語閱讀和貢獻維基詞典的跨平台手機／平板應用程序。',
 );

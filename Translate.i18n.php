@@ -951,10 +951,6 @@ Pressing the button clears all the messages that were translated from the page.'
 $messages['af'] = array(
 	'translate' => 'Vertaal',
 	'translate-desc' => '[[Special:Translate|Spesiale bladsy]] vir vertaal van MediaWiki en meer',
-	'translate-showsub' => 'Wys die {{PLURAL:$1|subgroep|$1 subgroepe}}.',
-	'translate-grouplisting' => "Hier volg 'n lys van al die vertaalbare groepe.
-Kliek op die boodskapgroep se naam om die lys van onvertaalde boodskappe te sien.",
-	'translate-grouplisting-empty' => 'Geen boodskap is ingestel vir die vertaling.',
 	'translate-page-no-such-language' => 'Gespesifiseerde taal is ongeldig.',
 	'translate-page-no-such-group' => 'Die gespesifiseerde groep bestaan nie.',
 	'translate-page-disabled' => "Vertalings in die taal vir hierdie groep is gedeaktiveer. Rede:
@@ -1947,10 +1943,6 @@ $1',
 $messages['as'] = array(
 	'translate' => 'অনুবাদ কৰক',
 	'translate-desc' => 'মেডিয়াৱিকি আৰু অন্য ভাঙনিৰ কাৰণে [[Special:Translate|বিশেষ পৃষ্ঠা]]',
-	'translate-showsub' => ' {{PLURAL:$1|subgroup|$1 subgroups}} দেখুৱাওক',
-	'translate-grouplisting' => 'এইখন ভাঙনি কৰিব পৰা সকলো গোটৰ তালিকা।
-ভাঙনি নোহোৱা বাৰ্ত্তাবোৰ চাবলৈ বাৰ্ত্তাগোটৰ নামটোত ক্লিক কৰক।',
-	'translate-grouplisting-empty' => 'ভাঙনিৰ বাবে কোনো বাৰ্তা গোট নিৰ্বাচন কৰা হোৱা নাই।',
 	'translate-taskui-view' => 'সকলো বাৰ্তা দেখুৱাওক',
 	'translate-taskui-untranslated' => 'ভাঙনি নোহোৱা বাৰ্তাসমূহ দেখুৱাওক',
 	'translate-taskui-optional' => 'বৈকল্পিক বাৰ্তাসমূহ দেখুৱাওক',
@@ -2928,9 +2920,6 @@ $1',
 $messages['ba'] = array(
 	'translate' => 'Тәржемә',
 	'translate-desc' => 'MediaWiki һәм башка программалар тәржемә итеү өсөн [[Special:Translate|Махсус бит]]',
-	'translate-showsub' => '{{PLURAL:$1|Эске төркөмдө|$1 эске төркөмдө}} күрһәтергә.',
-	'translate-grouplisting' => 'Был — бөтә тәржемә ителә торған хәбәрҙәр исемлеге.
-Бөтә тәржемә ителмәгән хәбәрҙәр исемлеген ҡарау өсөн, хәбәрҙәр төркөмөнөң исеменә баҫығыҙ.',
 	'translate-page-no-such-language' => 'Тел коды дөрөҫ түгел.',
 	'translate-page-no-such-group' => 'Төркөм дөрөҫ күрһәтелмәгән.',
 	'translate-page-disabled' => "Һайланған төркөмдә был телгә тәржемә итеү мөмкин түгел. Сәбәбе:
@@ -3203,6 +3192,14 @@ $messages['bcl'] = array(
 	'translate-magic-cm-original' => 'Orihinal',
 	'translate-magic-cm-save' => 'Itagama',
 	'translate-magic-cm-savefailed' => 'Bigô an pagtagama',
+);
+
+/** Belarusian (беларуская)
+ * @author Nemo bis
+ */
+$messages['be'] = array(
+	'translate-checks-balance' => 'Няпарная колькасьць {{PLURAL:$2|дужак}}:
+<strong><nowiki>$1</nowiki></strong>',
 );
 
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
@@ -3724,7 +3721,7 @@ $messages['bg'] = array(
 	'translate-stats-workflow' => 'Статут',
 	'translate-gethelp' => 'Помощ',
 	'translate-msggroupselector-search-all' => 'Всички',
-	'tux-languageselector' => 'Език',
+	'tux-languageselector' => 'Език', # Fuzzy
 	'tux-tab-all' => 'Всички',
 	'tux-edit' => 'Редактиране',
 	'tux-status-optional' => 'Незадължително',
@@ -3889,8 +3886,6 @@ $messages['bn'] = array(
  */
 $messages['bo'] = array(
 	'translate' => 'ཡིག་སྒྱུར།',
-	'translate-showsub' => ' {{PLURAL:$1|subgroup|$1 subgroups}} སྟོན།',
-	'translate-grouplisting' => 'འདི་ནི་ཡིག་སྒྱུར་བྱ་ཆོག་པའི་ཚོ་ཁག་ཡོངས་ཀྱི་ཐོ་གཞུང་རེད། བསྒྱུར་བྱའི་སྡེ་ཁག་གི་ཁ་བྱང་ལ་གནུན་ཏེ་བསྒྱུར་མ་ཟིན་པའི་ཚིག་གི་ཐོ་ཡིག་ལ་ལྟོས།',
 	'translate-page-disabled' => 'སྡེ་ཁག་འདིའི་ནང་དུ་སྐད་རིགས་འདིའི་ཡིག་སྒྱུར་ནུས་མེད་ཆགས་འདུག རྒྱུ་མཚན་ནི། $1',
 	'translate-page-settings-legend' => 'སྒྲིག་བཀོད།',
 	'translate-page-group' => 'སྡེ་ཁག',
@@ -3940,10 +3935,6 @@ $messages['bpy'] = array(
 $messages['br'] = array(
 	'translate' => 'Treiñ',
 	'translate-desc' => "[[Special:Translate|Pajenn dibar]] evit treiñ MediaWiki ha pelloc'h",
-	'translate-showsub' => 'Diskouez {{PLURAL:$1|an istrollad|$1 istrollad}}.',
-	'translate-grouplisting' => "Hemañ eo roll an holl strolladoù a c'haller da dreiñ.
-Klikañ war anv ar strollad kemennadennoù evit gwelet ur roll eus ar c'hemennadennoù didro.",
-	'translate-grouplisting-empty' => "N'eus ket bet kefluniet a strolladoù kemennadennoù evit an droidigezh.",
 	'translate-taskui-view' => 'Diskouez an holl gemennadennoù',
 	'translate-taskui-untranslated' => "Diskouez ar c'hemennadennoù da dreiñ",
 	'translate-taskui-optional' => "Diskouez ar c'hemennadennoù diret",
@@ -4265,9 +4256,6 @@ Talvoudus evit adlenn ha reizhañ.',
 $messages['bs'] = array(
 	'translate' => 'Prijevod',
 	'translate-desc' => '[[Special:Translate|Posebna stranica]] za prevođenje MediaWiki i još mnogo više',
-	'translate-showsub' => 'Pokaži {{PLURAL:$1|podgrupu|$1 podgrupe|$1 podgrupa}}.',
-	'translate-grouplisting' => 'Ovo je spisak svih grupa koje se mogu prevoditi.
-Kliknite na ime grupe poruka da pogledate spisak neprevedenih poruka.',
 	'translate-page-no-such-language' => 'Navedeni jezik ne postoji.',
 	'translate-page-no-such-group' => 'Navedena grupa ne postoji.',
 	'translate-page-disabled' => "Prijevodi na ovaj jezik u ovoj grupi su onemogućeni. Razlog:
@@ -6279,6 +6267,7 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-warnings-hide' => 'verstecken',
 	'tux-editor-save-failed' => 'Das Speichern der Übersetzung ist fehlgeschlagen: $1',
 	'tux-editor-use-this-translation' => 'Als Übersetzung verwenden',
+	'tux-editor-n-uses' => '{{PLURAL:$1|Einmal|$1 Mal}} verwendet',
 	'tux-editor-message-desc-more' => 'Mehr ansehen',
 	'tux-editor-message-desc-less' => 'Weniger ansehen',
 	'tux-editor-clear-translated' => 'Übersetzte verstecken',
@@ -6392,10 +6381,8 @@ $messages['diq'] = array(
 	'translate-edit-definition' => 'Şınasiya mesaci',
 	'translate-edit-translation' => 'Çarnayışi',
 	'translate-edit-contribute' => 'iştıraq kewê',
-	'translate-edit-no-information' => '{| style="border:1px solid forestgreen; margin-bottom: 1em" cellspacing="0" cellpadding="0" width="100%"
-| style="font: 100% verdana; color:black" align="left" bgcolor="Khaki" |
-No mesac wesiqe niyo. Şıma nêzanê na açarnayış konca dı sazkerê se, Açarnoğandê bina rê qandê peşti cı meveyê, nara qı şıma haldê cıd zanê se bıvurnê.
-|}',
+	'translate-edit-no-information' => "''Wesiqaya nê mesaci çışniya.'' 
+''Şıma ke zanê koti ya zi no mesac gureniyeno, şıma şenê açarnoğanê binan rê qandê wesiqa ilawekerdış be nê mesaci ra peşti cı dê.''",
 	'translate-edit-information' => 'Heqa mesacê ($1) de melumat',
 	'translate-edit-in-other-languages' => 'Zıwanan dê binan de mesaci',
 	'translate-edit-tmsugs' => 'Virê çarnayışi u çarnayışê makina ra weşenayışi',
@@ -7914,13 +7901,13 @@ Utilizado sobre todo para tareas de corrección.',
 	'translate-dynagroup-last' => 'Último cambio por  {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Último cambio por  {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Ayuda',
-	'translate-msggroupselector-projects' => 'Grupos de mensajes',
+	'translate-msggroupselector-projects' => 'Grupos de mensajes', # Fuzzy
 	'translate-msggroupselector-search-placeholder' => 'Buscar grupos',
 	'translate-msggroupselector-search-all' => 'Todos',
 	'translate-msggroupselector-search-recent' => 'Recientes',
 	'translate-msggroupselector-load-from-all' => 'Subir mensajes de todos los grupos',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgrupo|subgrupos}}',
-	'tux-languageselector' => 'Idioma',
+	'tux-languageselector' => 'Idioma', # Fuzzy
 	'tux-tab-all' => 'Todo',
 	'tux-tab-untranslated' => 'Sin traducir',
 	'tux-tab-outdated' => 'Desactualizado',
@@ -8239,7 +8226,7 @@ Sobib ennekõike tõlgete ülevaatuseks.',
 	'translate-dynagroup-last' => 'Viimase muudatuse tegi {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Viimase muudatuse tegi {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Abi',
-	'tux-languageselector' => 'Keel',
+	'tux-languageselector' => 'Keel', # Fuzzy
 	'tux-tab-all' => 'Kõik',
 	'tux-tab-untranslated' => 'Tõlkimata',
 	'tux-tab-outdated' => 'Aegunud',
@@ -8255,9 +8242,6 @@ Sobib ennekõike tõlgete ülevaatuseks.',
 $messages['eu'] = array(
 	'translate' => 'Itzuli',
 	'translate-desc' => '[[Special:Translate|Orrialde berezia]] MediaWiki eta bestelakoak itzultzeko',
-	'translate-showsub' => 'Erakutsi {{PLURAL:$1|azpitaldea|$1 azpitaldeak}}.',
-	'translate-grouplisting' => 'Zerrenda honetan itzuli daitezken talde guztiak daude.
-Klikatu mezu-talde bat, itzuli gabeko mezuen zerrenda ikusteko.',
 	'translate-taskui-view' => 'Mezu guztiak erakutsi',
 	'translate-taskui-untranslated' => 'Itzuli gabeko mezuak erakutsi',
 	'translate-taskui-optional' => 'Hautazko mezuak erakutsi',
@@ -9949,7 +9933,6 @@ Il est surtot empleyê por los travâlys de relèctura.',
  */
 $messages['fur'] = array(
 	'translate' => 'Traduzion',
-	'translate-showsub' => 'Mostre {{PLURAL:$1|il sotgrup|i $1 sotgrups}}.',
 	'translate-page-settings-legend' => 'Impuestazions',
 	'translate-page-group' => 'Grup',
 	'translate-page-language' => 'Lenghe',
@@ -12127,9 +12110,6 @@ Je najwužitnišo za korigowanske nadawki.',
 $messages['ht'] = array(
 	'translate' => 'Tradui',
 	'translate-desc' => '[[Special:Translate|Paj espesyal]] pou tradui MediaWiki e plis ankò.',
-	'translate-showsub' => 'Montre {{PLURAL:$1|sougwoup|$1 sougwoup yo}}.',
-	'translate-grouplisting' => 'Sa se lis tout gwoup ki kapab tradui yo.
-Klike sou non gwoup mesaj la pou wè yon lis mesaj ki pa tradui.',
 	'translate-page-no-such-language' => 'Lang ki endike a pa bon.',
 	'translate-page-no-such-group' => 'Gwoup ki endike a pa bon',
 	'translate-page-disabled' => "Tradiksyon nan lang sa a te deaktive pou gwoup sa.
@@ -12365,10 +12345,6 @@ Detay: $1',
 $messages['hu'] = array(
 	'translate' => 'Fordítás',
 	'translate-desc' => '[[Special:Translate|Speciális lap]] a MediaWiki és más projektek fordítására',
-	'translate-showsub' => '{{PLURAL:$1|Alcsoport|$1 alcsoport}} megjelenítése.',
-	'translate-grouplisting' => 'Ez az összes fordítható csoport listája.
-Kattints az üzenetcsoport nevére a fordítandó üzenetek listájának megtekintéséhez.',
-	'translate-grouplisting-empty' => 'Nincs fordítható üzenet csoport.',
 	'translate-taskui-view' => 'Összes üzenet megjelenítése',
 	'translate-taskui-untranslated' => 'Lefordítatlan üzenetek megjelenítése',
 	'translate-taskui-optional' => 'Opcionális üzenetek megjelenítése.',
@@ -12701,10 +12677,6 @@ $messages['hy'] = array(
 $messages['ia'] = array(
 	'translate' => 'Traducer',
 	'translate-desc' => '[[Special:Translate|Pagina special]] pro traducer MediaWiki e ultra',
-	'translate-showsub' => 'Monstrar le {{PLURAL:$1|subgruppo|$1 subgruppos}}.',
-	'translate-grouplisting' => 'Isto es le lista de tote le gruppos traducibile.
-Clicca sur le nomine de un gruppo de messages pro vider un lista de messages non traducite.',
-	'translate-grouplisting-empty' => 'Nulle gruppo de messages ha essite configurate pro traduction.',
 	'translate-taskui-view' => 'Monstrar tote le messages',
 	'translate-taskui-untranslated' => 'Monstrar messages non traducite',
 	'translate-taskui-optional' => 'Monstrar messages optional',
@@ -14368,9 +14340,6 @@ $1',
 $messages['jam'] = array(
 	'translate' => 'Chransliet',
 	'translate-desc' => '[[Special:Translate|Special page]] fi chransliet MediaWiki ahn biyan',
-	'translate-showsub' => 'Shuo di {{PLURAL:$1|sobgruup|$1 sobgruup}}.',
-	'translate-grouplisting' => 'Dis a di laas a aal chranslietobl gruup.
-Klik di mechiz gruup niem fi vyuu a lis a anchranslietobl mechiz',
 	'translate-page-no-such-language' => 'Spesifai langwij ehn invalid.',
 	'translate-page-no-such-group' => 'Spesifai gruup ehn invalid.',
 	'translate-page-disabled' => "Chranslieshan tu dis langwij ina dis gruup disiebl.
@@ -14419,10 +14388,6 @@ Ef yu nuo we ar ou dis mechiz yuuz, yu kiahn elp ada chranslieta bai ad dakiumen
 $messages['jv'] = array(
 	'translate' => 'Pertalna/Terjemahna',
 	'translate-desc' => '[[Special:Translate|Kaca astaméwa]] kanggo mertal MediaWiki lan liyané',
-	'translate-showsub' => 'Tuduhaké {{PLURAL:$1|subklompok|$1 subklompok}}.',
-	'translate-grouplisting' => 'Iki daptar kabèh klompok sing bisa diterjemahaké.
-Klik jeneng klompok layang kanggo ndelok daptar layang sing durung diterjemahaké.',
-	'translate-grouplisting-empty' => 'Ora ana klompok layang sing wis diatur kanggo terjemahan.',
 	'translate-taskui-view' => 'Tuduhaké kabèh layang',
 	'translate-taskui-untranslated' => 'Tuduhaké layang sing durung diterjemahaké',
 	'translate-taskui-optional' => 'Tuduhaké layang pilihan',
@@ -15235,9 +15200,6 @@ $messages['kl'] = array(
 $messages['km'] = array(
 	'translate' => 'បកប្រែ',
 	'translate-desc' => '[[Special:Translate|ទំព័រ​ពិសេស]] សម្រាប់ប្រែសម្រួល​មេឌាវិគី​ និង របស់​ផ្សេងទៀត',
-	'translate-showsub' => 'បង្ហាញ{{PLURAL:$1|អនុក្រុម|អនុក្រុមចំនួន $1}} នេះ។',
-	'translate-grouplisting' => 'នេះជាបញ្ជីក្រុមសារដែលអាចបកប្រែបានទាំងអស់។
-សូមចុចលើឈ្មោះក្រុមសារដើម្បីបើកមើលបញ្ជីសារដែលមិនទាន់បកប្រែហើយ។',
 	'translate-taskui-view' => 'បង្ហាញសារទាំងអស់',
 	'translate-taskui-untranslated' => 'បង្ហាញសារដែលមិនទាន់បកប្រែ',
 	'translate-taskui-optional' => 'បង្ហាញសារមិនសូវចាំបាច់អោយបកប្រែ',
@@ -16313,7 +16275,7 @@ Dat es et bäß för et Jääjelässe.',
 	'translate-msggroupselector-search-recent' => 'Jöngere',
 	'translate-msggroupselector-load-from-all' => 'Täte un Nohreeschte us alle Jroppe laade',
 	'translate-msggroupselector-view-subprojects' => '{{PLURAL:$1|Ein Ongerjropp|$1 Ongerjroppe|Kein Ongerjroppe}}',
-	'tux-languageselector' => 'De Schprooch',
+	'tux-languageselector' => 'De Schprooch', # Fuzzy
 	'tux-tab-all' => 'All',
 	'tux-tab-untranslated' => 'Nit övversaz',
 	'tux-tab-outdated' => 'Övverhollt',
@@ -18210,9 +18172,6 @@ $messages['mn'] = array(
 $messages['mo'] = array(
 	'translate' => 'Традуче',
 	'translate-desc' => '[[Special:Translate|Паӂинэ спечиалэ]] пентру традучеря програмулуй МедияВики, дар ну нумай',
-	'translate-showsub' => 'Аратэ {{PLURAL:$1|субгрупул|челе $1 субгрупурь}}.',
-	'translate-grouplisting' => 'Ачаста есте листа тутурор групурилор де месаже традуктибиле.
-Апасэ пе нумеле групулуй де месаже пентру а визуализа о листэ а месажелор нетрадусе.',
 	'translate-page-no-such-language' => 'Лимба спечификатэ есте инкоректэ.',
 	'translate-page-no-such-group' => 'Групул спечификат есте инвалид.',
 	'translate-page-disabled' => "Посибилитатя де а традуче ачест груп ын ачастэ лимбэ а фост дезактиватэ.
@@ -18699,9 +18658,6 @@ Paling berguna dengan tugas menyemak (membaca pruf).',
 $messages['mt'] = array(
 	'translate' => 'Traduzzjoni',
 	'translate-desc' => '[[Special:Translate|Paġna speċjali]] biex tittraduċi lil MediaWiki u mhux biss',
-	'translate-showsub' => 'Uri l-{{PLURAL:$1|sottogrupp|$1 sottogruppi}}.',
-	'translate-grouplisting' => "Din hija lista ta' kull grupp traduċibbli.
-Agħfas l-isem tal-grupp ta' messaġġi sabiex tara lista sħiħa ta' messaġġi li għadhom ma ġewx tradotti.",
 	'translate-page-no-such-language' => 'Il-lingwa speċifikata hi invalida.',
 	'translate-page-no-such-group' => 'Il-grupp speċifikat huwa invalidu.',
 	'translate-page-disabled' => "Traduzzjonijiet f'din il-lingwa għal dan il-grupp ġew diżabilitati.
@@ -19047,10 +19003,6 @@ $messages['nah'] = array(
 $messages['nb'] = array(
 	'translate' => 'Oversett',
 	'translate-desc' => '[[Special:Translate|Spesialside]] for oversettelse av MediaWiki og annet',
-	'translate-showsub' => 'Vis {{PLURAL:$1|undergruppen|de $1 undergruppene}}',
-	'translate-grouplisting' => 'Dette er listen over alle oversettbare grupper.
-Klikk på meldingsgruppenavnet for å vise en liste over uoversatte meldinger.',
-	'translate-grouplisting-empty' => 'Ingen meldingsgrupper er konfigurert for oversettelse.',
 	'translate-taskui-view' => 'Vis alle meldinger',
 	'translate-taskui-untranslated' => 'Vis uoversatte meldinger',
 	'translate-taskui-optional' => 'Vis valgfrie meldinger',
@@ -19390,7 +19342,7 @@ $messages['nds'] = array(
 	'translate-magic-special' => 'Spezialsieden-Alternativnaams',
 );
 
-/** Nedersaksisch (Nedersaksisch)
+/** Nedersaksies (Nedersaksies)
  * @author Servien
  */
 $messages['nds-nl'] = array(
@@ -19406,9 +19358,6 @@ $messages['nds-nl'] = array(
 $messages['ne'] = array(
 	'translate' => 'अनुवाद गर्ने',
 	'translate-desc' => 'मीडियाविकि तथा अन्यको अनुवादको निम्ति [[Special:Translate|विशेष पृष्ठ]]',
-	'translate-showsub' => '{{PLURAL:$1|उप समूह|$1 उपसमूहहरु}} हेर्ने।',
-	'translate-grouplisting' => 'यो सूची अनुवाद गर्नु पर्ने सबै समूहको  हो।
-अनुवाद नगरिएका सन्देशहरु हेर्न सन्देश समूहको नाममा क्लिक गर्नुहोस्।',
 	'translate-page-no-such-language' => 'निर्दिष्ट भाषा अमान्य थियो',
 	'translate-page-no-such-group' => 'निर्दिष्ट समूह अमान्य थियो',
 	'translate-page-disabled' => "यस भाषामा यो समूहको अनुवाद कार्य निस्क्रिय गरिएको छ।
@@ -19861,7 +19810,7 @@ Dit is vooral nuttig voor de controletaken.',
 	'translate-msggroupselector-search-recent' => 'Recent',
 	'translate-msggroupselector-load-from-all' => 'Berichten van alle groepen laden',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgroep|subgroepen}}',
-	'tux-languageselector' => 'Taal', # Fuzzy
+	'tux-languageselector' => 'Vertalen naar',
 	'tux-tab-all' => 'Alle',
 	'tux-tab-untranslated' => 'Onvertaald',
 	'tux-tab-outdated' => 'Verouderd',
@@ -19876,6 +19825,7 @@ Dit is vooral nuttig voor de controletaken.',
 	'tux-editor-placeholder' => 'Uw vertaling',
 	'tux-editor-save-button-label' => 'Vertaling opslaan',
 	'tux-editor-skip-button-label' => 'Overslaan en volgende',
+	'tux-editor-confirm-button-label' => 'Vertaling bevestigen',
 	'tux-editor-shortcut-info' => 'Druk op "$1" om op te slaan of druk op "$2" om naar het volgende bericht te gaan',
 	'tux-editor-no-message-doc' => 'Geen berichtbeschrijving',
 	'tux-editor-edit-desc' => 'Beschrijving bewerken',
@@ -19889,7 +19839,17 @@ Dit is vooral nuttig voor de controletaken.',
 	'tux-warnings-hide' => 'verbergen',
 	'tux-editor-save-failed' => 'Het opslaan van de vertaling is mislukt: $1',
 	'tux-editor-use-this-translation' => 'Als vertaling gebruiken',
+	'tux-editor-n-uses' => '{{PLURAL:$1|Eén|$1}} keer gebruikt',
+	'tux-editor-message-desc-more' => 'Meer weergeven',
+	'tux-editor-message-desc-less' => 'Minder weergeven',
+	'tux-editor-clear-translated' => 'Vertaald verbergen',
+	'tux-editor-outdated-warning' => 'Deze vertaling moet mogelijk bijgewerkt worden.',
+	'tux-editor-outdated-warning-diff-link' => 'Verschillen weergeven',
+	'tux-editor-doc-editor-placeholder' => 'Berichtbeschrijving',
+	'tux-editor-doc-editor-save' => 'Documentatie opslaan',
 	'tux-editor-doc-editor-cancel' => 'Annuleren',
+	'tux-messagetable-more-messages' => 'Nog {{PLURAL:$1|één bericht|$1 berichten}}',
+	'tux-messagetable-loading-messages' => 'Bezig met laden van {{PLURAL:$1|bericht|berichten}}...',
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎)
@@ -22025,10 +21985,6 @@ $messages['ps'] = array(
 $messages['pt'] = array(
 	'translate' => 'Traduzir',
 	'translate-desc' => '[[Special:Translate|Página especial]] para traduzir o MediaWiki e outras aplicações',
-	'translate-showsub' => 'Mostrar {{PLURAL:$1|o subgrupo|os $1 subgrupos}}.',
-	'translate-grouplisting' => 'Esta é a lista de todos os grupos traduzíveis.
-Clique o nome do grupo de mensagens para ver a lista de mensagens não traduzidas.',
-	'translate-grouplisting-empty' => 'Não foi configurado nenhum grupo de mensagens para tradução.',
 	'translate-taskui-view' => 'Mostrar todas as mensagens',
 	'translate-taskui-untranslated' => 'Mostrar as mensagens não traduzidas',
 	'translate-taskui-optional' => 'Mostrar as mensagens opcionais',
@@ -23664,10 +23620,6 @@ $1',
 $messages['rue'] = array(
 	'translate' => 'Перекладаня',
 	'translate-desc' => '[[Special:Translate|Шпеціална сторінка]] про переклад MediaWiki і іншых проґрамів',
-	'translate-showsub' => 'Укаж {{PLURAL:$1|підґрупу|$1 підґрупы}}.',
-	'translate-grouplisting' => 'Тото є список вшыткых перекладательный ґруп.
-Кликните на назву ґрупы повідомлїнь, жебы сьте відїли список непереложеных повідомлїнь.',
-	'translate-grouplisting-empty' => 'На переклад не были наштелёваны жадны ґрупы повідомлїнь.',
 	'translate-taskui-view' => 'Вказати вшыткы повідомлїня',
 	'translate-taskui-untranslated' => 'Вказати непереложены повідомлїня',
 	'translate-taskui-optional' => 'Вказати додатковы повідомлїня',
@@ -23933,10 +23885,6 @@ $messages['sa'] = array(
 $messages['sah'] = array(
 	'translate' => 'Тылбаас',
 	'translate-desc' => 'MediaWiki движогу уонна атын бырагырааммалары тылбаастыырга [[Special:Translate|аналлаах сирэй]]',
-	'translate-showsub' => '{{PLURAL:$1|бөлөх иһинээҕи бөлөҕү|$1 бөлөх иһинээҕи бөлөхтөрү}} көрдөр.',
-	'translate-grouplisting' => 'Тылбаастанар бөлөхтөр тиһиликтэрэю
-Бөлөх аатын баттаатаххына тылбаастамматах этиилэр көстүөхтэрэ',
-	'translate-grouplisting-empty' => 'Тылбаастанар туруктаах этиилэр бөлөхтөрө суох эбитю',
 	'translate-taskui-view' => 'Этиилэри барыларын көрдөр',
 	'translate-taskui-optional' => 'Эбии этиилэри көрдөр',
 	'translate-taskui-suggestions' => 'Урукку тылбаастартан барылларын кытта көрдөр',
@@ -25509,10 +25457,6 @@ $1',
 $messages['sr-el'] = array(
 	'translate' => 'Prevod',
 	'translate-desc' => '[[Special:Translate|Posebna stranica]] za prevođenje Medijavikija',
-	'translate-showsub' => 'prikaži {{PLURAL:$1|podgrupu|$1 podgrupe|$1 podgrupa}}',
-	'translate-grouplisting' => 'Ovo je spisak svih grupa poruka koje se mogu prevesti.
-Kliknite na naziv grupe da biste videli spisak neprevedenih poruka.',
-	'translate-grouplisting-empty' => 'Nema grupa poruka koje su podešene za prevođenje.',
 	'translate-taskui-view' => 'Prikaži sve poruke',
 	'translate-taskui-untranslated' => 'Prikaži neprevedene poruke',
 	'translate-taskui-optional' => 'Prikaži neobavezne poruke',
@@ -26817,7 +26761,6 @@ $messages['tcy'] = array(
 $messages['te'] = array(
 	'translate' => 'అనువదించు',
 	'translate-desc' => 'మీడియావికీ మరియు ఇతరాలను అనువదించడానికి [[Special:Translate|ప్రత్యేక పుట]]',
-	'translate-showsub' => '{{PLURAL:$1|ఉపసమూహాన్ని|$1 ఉపసమూహాలను}} చూపించు.',
 	'translate-taskui-view' => 'అన్ని సందేశాలను చూపించు',
 	'translate-taskui-untranslated' => 'అనువాదంకాని సందేశాలను చూపించు',
 	'translate-taskui-optional' => 'ఐచ్చిక సందేశాలను చూపించు',
@@ -28872,10 +28815,6 @@ $messages['ur'] = array(
 $messages['uz'] = array(
 	'translate' => 'Tarjima',
 	'translate-desc' => 'MediaWiki va boshqa dasturlarni tarjima qilish uchun [[Special:Translate|maxsus sahifa]]',
-	'translate-showsub' => "{{PLURAL:$1|ostguruh|$1 ostguruhlar}}ni ko'rsatish",
-	'translate-grouplisting' => "Bu barcha tarjuma qilinadigan guruhlarning ro'yxati
-Tarjima qilinmagan xabaqlar ro'yxatini ko'rish uchun xabarlar guruhi nomini bosing.",
-	'translate-grouplisting-empty' => 'Tarjima qilish uchun sozlangan xabarlar guruhi mavjud emas.',
 	'translate-taskui-view' => "Barcha xabarlarni ko'rsatish",
 	'translate-taskui-untranslated' => "Tarjima qilinmagan xabarlarni ko'rsatish",
 	'translate-taskui-optional' => "Qo'shimcha xabarlarni ko'rsatish",
@@ -30166,10 +30105,6 @@ $messages['xmf'] = array(
 $messages['yi'] = array(
 	'translate' => 'פֿארטײַטשן',
 	'translate-desc' => '[[Special:Translate|באזונדערער בלאט]] פֿאר פֿארטײַטשן מעדיעוויקי און ווײַטער',
-	'translate-showsub' => 'ווײַזן די {{PLURAL:$1|אונטערגרופע|$1 אונטערגרופעס}}.',
-	'translate-grouplisting' => 'דאָס איז די ליסטע פֿון אַלע איבערזעצבאַרע גרופעס.
-קליקט דעם מעלדונג גרופע נאָמען צו ווײַזן א ליסטע פֿון אַלע נישט־פֿאַרטײַטשע מעלדונגען.',
-	'translate-grouplisting-empty' => 'קיין מעלדונג גרופעס נישט קאנפיגורירט פאר איבערזעצן.',
 	'translate-taskui-view' => 'ווײַזן אלע מעלדונגען',
 	'translate-taskui-untranslated' => 'ווײַזן די נישט איבערגעזעצטע מעלדונגען',
 	'translate-taskui-optional' => 'ווײַזן אפציאנאלע מעלדונגן.',
