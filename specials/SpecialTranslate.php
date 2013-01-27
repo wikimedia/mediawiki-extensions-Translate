@@ -45,9 +45,10 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->setHeaders();
 
+		$request = $this->getRequest();
 		// @todo Move to api or so
 		if ( $parameters === 'editpage' ) {
-			$editpage = TranslationEditPage::newFromRequest( $this->getRequest() );
+			$editpage = TranslationEditPage::newFromRequest( $request );
 
 			if ( $editpage ) {
 				$editpage->execute();
@@ -63,16 +64,18 @@ class SpecialTranslate extends SpecialPage {
 		}
 
 		$errors = $this->getFormErrors();
-		if ( !self::isBeta( $this->getRequest() ) ) {
-			TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Translation_example' );
-			// Show errors nicely.
-			$out->addHTML( $this->settingsForm( $errors ) );
-		} else {
+		$isBeta = self::isBeta( $request );
+
+		if ( $isBeta ) {
 			$out->addHTML( Html::openElement( 'div', array(
 				'class' => 'grid ext-translate-container',
 			) ) );
 			$out->addHTML( $this->tuxSettingsForm( $errors ) );
 			$out->addHTML( $this->messageSelector() );
+		} else {
+			TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Translation_example' );
+			// Show errors nicely.
+			$out->addHTML( $this->settingsForm( $errors ) );
 		}
 
 		if ( count( $errors ) ) {
@@ -192,16 +195,16 @@ class SpecialTranslate extends SpecialPage {
 				);
 			}
 
-			if ( !self::isBeta( $this->getRequest() ) ) {
-				$out->addHTML( $description . $output );
-			} else {
+			if ( $isBeta ) {
 				$out->addHTML( $output );
+			} else {
+				$out->addHTML( $description . $output );
 			}
 
 			ApiTranslateUser::trackGroup( $this->group, $this->getUser() );
 		}
 
-		if ( self::isBeta( $this->getRequest() ) ) {
+		if ( $isBeta ) {
 			$out->addHTML( Html::closeElement( 'div' ) );
 		}
 	}
@@ -231,15 +234,18 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function setup( $parameters ) {
+		$request = $this->getRequest();
+		$isBeta = self::isBeta( $request );
+
 		$defaults = array(
 		/* str  */ 'taction'  => 'translate',
-		/* str  */ 'task'     => self::isBeta( $this->getRequest() ) ? 'custom' : 'untranslated',
+		/* str  */ 'task'     => $isBeta ? 'custom' : 'untranslated',
 		/* str  */ 'sort'     => 'normal',
 		/* str  */ 'language' => $this->getLanguage()->getCode(),
-		/* str  */ 'group'    => self::isBeta( $this->getRequest() ) ? '!additions': '',
+		/* str  */ 'group'    => $isBeta ? '!additions': '',
 		/* str  */ 'offset'   => '', // Used to be int, now str
-		/* int  */ 'limit'    => self::isBeta( $this->getRequest() ) ? 0 : 100,
-		/* str  */ 'filter'   => self::isBeta( $this->getRequest() ) ? '!translated' : '', // Tux
+		/* int  */ 'limit'    => $isBeta ? 0 : 100,
+		/* str  */ 'filter'   => $isBeta ? '!translated' : '', // Tux
 		/* int  */ 'optional' => '0',
 		);
 
@@ -263,8 +269,6 @@ class SpecialTranslate extends SpecialPage {
 
 			$pars[$key] = $value;
 		}
-
-		$request = $this->getRequest();
 
 		foreach ( $defaults as $v => $t ) {
 			if ( is_bool( $t ) ) {
