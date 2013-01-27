@@ -246,15 +246,18 @@
 				$warnings,
 				$warningsBlock,
 				$textArea,
-				$buttonBlock,
-				$saveButton = $( [] ),
-				$requestRight = $( [] ),
+				$controlButtonBlock,
+				$editingButtonBlock,
+				$pasteOriginalButton,
+				$saveButton,
+				$requestRight,
 				$skipButton,
 				$sourceString,
 				$closeIcon,
 				$layoutActions,
 				$infoToggleIcon,
-				$messageList;
+				$messageList,
+				canTranslate = mw.translate.canTranslate();
 
 			$editorColumn = $( '<div>' )
 				.addClass( 'seven columns editcolumn' );
@@ -398,7 +401,19 @@
 				.append( $warningsBlock, $textArea )
 			);
 
-			if ( mw.translate.canTranslate() ) {
+			if ( canTranslate ) {
+				$pasteOriginalButton = $( '<button>' )
+					.text( mw.msg( 'tux-editor-paste-original-button-label' ) )
+					.on( 'click', function () {
+						$textArea.val( sourceString );
+					} );
+
+				$editingButtonBlock = $( '<div>' )
+					.addClass( 'twelve columns tux-editor-control-buttons' )
+					.append( $pasteOriginalButton );
+
+				$requestRight = $( [] );
+
 				$saveButton = $( '<button>' )
 					.text( mw.msg( 'tux-editor-save-button-label' ) )
 					.attr( {
@@ -417,8 +432,9 @@
 					$saveButton.prop( 'disabled', false )
 						.text( mw.msg( 'tux-editor-confirm-button-label' ) );
 				}
-
 			} else {
+				$editingButtonBlock = $( [] );
+
 				$requestRight = $( '<span>' )
 					.text( mw.msg( 'translate-edit-nopermission' ) )
 					.addClass( 'tux-editor-request-right' )
@@ -429,9 +445,12 @@
 							'href': mw.util.wikiGetlink( mw.config.get( 'wgTranslatePermissionUrl' ) )
 						} )
 					);
+
 				// Disable the text area if user has no translation rights.
 				// Use readonly to allow copy-pasting (except for placeholders)
 				$textArea.prop( 'readonly', true );
+
+				$saveButton = $( [] );
 			}
 
 			$skipButton = $( '<button>' )
@@ -446,16 +465,16 @@
 					translateEditor.next();
 				} );
 
-			$buttonBlock = $( '<div>' )
-				.addClass( 'twelve columns' )
+			$controlButtonBlock = $( '<div>' )
+				.addClass( 'twelve columns tux-editor-control-buttons' )
 				.append( $requestRight, $saveButton, $skipButton );
 
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row' )
-				.append( $buttonBlock )
+				.append( $editingButtonBlock, $controlButtonBlock )
 			);
 
-			if ( mw.translate.canTranslate() ) {
+			if ( canTranslate ) {
 				$editorColumn.append( $( '<div>' )
 					.addClass( 'row text-left shortcutinfo' )
 					.text( mw.msg( 'tux-editor-shortcut-info',
