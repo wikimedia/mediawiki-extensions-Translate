@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//7ec\u003d",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-27T16:21:54Z",
+      "side": 1,
+      "message": "This is a little ambiguous, I think. Will this paste the translation before I started messing with it, for example?\n\nI think it should read something like \"Paste source text\".",
+      "revId": "27d9a8136782ac9f9504236d06b9f504c7d47e6b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
