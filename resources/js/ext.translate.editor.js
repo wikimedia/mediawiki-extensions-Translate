@@ -170,7 +170,7 @@
 				// TODO: Should also handle complete failure,
 				// for example client or server going offline.
 				err: function ( errorCode, results ) {
-					// TODO
+					// TODO better handling is needed
 					mw.log( 'Error saving documentation ' + errorCode + ' ' + results );
 				}
 			} );
@@ -997,29 +997,31 @@
 		showTranslationHelpers: function () {
 			// API call to get translation suggestions from other languages
 			// callback should render suggestions to the editor's info column
-			var queryParams,
-				translateEditor = this,
-				apiURL = mw.util.wikiScript( 'api' );
+			var translateEditor = this,
+				api = new mw.Api();
 
-			queryParams = {
+			api.get( {
 				action: 'translationaids',
 				title: this.message.title,
 				format: 'json'
-			};
+			}, {
+				ok: function ( result ) {
+					// TODO This may be an error that must be handled
+					if ( !result.helpers ) {
+						mw.log( 'API did not return any translation helpers.' );
+						return false;
+					}
 
-			$.get( apiURL, queryParams ).done( function ( result ) {
-				// TODO This may be an error that must be handled
-				if ( !result.helpers ) {
-					return false;
+					translateEditor.showMessageDocumentation( result.helpers.documentation );
+					translateEditor.showAssistantLanguages( result.helpers.inotherlanguages );
+					translateEditor.showTranslationMemory( result.helpers.ttmserver );
+					translateEditor.showSupportOptions( result.helpers.support );
+					translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
+				},
+				err: function () {
+					// TODO: proper handling is needed
+					mw.log( 'Error loading translation aids' );
 				}
-
-				translateEditor.showMessageDocumentation( result.helpers.documentation );
-				translateEditor.showAssistantLanguages( result.helpers.inotherlanguages );
-				translateEditor.showTranslationMemory( result.helpers.ttmserver );
-				translateEditor.showSupportOptions( result.helpers.support );
-				translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
-			} ).fail( function () {
-				// TODO: This error must be handled
 			} );
 		},
 
