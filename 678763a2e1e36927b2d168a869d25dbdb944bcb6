@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//7jI\u003d",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-27T11:12:46Z",
+      "side": 1,
+      "message": "It will never be SearchTranslations",
+      "revId": "678763a2e1e36927b2d168a869d25dbdb944bcb6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
