@@ -805,8 +805,14 @@ class TranslationHelpers {
 	public function getCheckBox() {
 		$this->mustBeKnownMessage();
 
-		global $wgTranslateDocumentationLanguageCode, $wgRequest;
-		$tux = SpecialTranslate::isBeta( $wgRequest );
+		global $wgTranslateDocumentationLanguageCode, $wgRequest, $wgOut;
+
+		$title = $wgOut->getTitle();
+		list( $alias, ) = SpecialPageFactory::resolveAlias( $title->getText() );
+
+		$tux = SpecialTranslate::isBeta( $wgRequest )
+			&& $title->isSpecialPage()
+			&& ( $alias === 'Translate' );
 
 		$formattedChecks = $tux
 			? FormatJson::encode( array() )
