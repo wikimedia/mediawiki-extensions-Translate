@@ -242,15 +242,18 @@
 				$warnings,
 				$warningsBlock,
 				$textArea,
-				$buttonBlock,
-				$saveButton = $( [] ),
-				$requestRight = $( [] ),
+				$controlButtonBlock,
+				$editingButtonBlock,
+				$pasteOriginalButton,
+				$saveButton,
+				$requestRight,
 				$skipButton,
 				$sourceString,
 				$closeIcon,
 				$layoutActions,
 				$infoToggleIcon,
-				$messageList;
+				$messageList,
+				canTranslate = mw.translate.canTranslate();
 
 			$editorColumn = $( '<div>' )
 				.addClass( 'seven columns editcolumn' );
@@ -367,18 +370,26 @@
 				} );
 
 			$textArea.on( 'keyup', function () {
-				var $textArea = $(this);
+				var $textArea = $( this );
 
 				delay( function () {
-					var saveButton;
+					var $saveButton = translateEditor.$editor.find( 'button.tux-editor-save-button' ),
+						$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' );
 
-					saveButton = translateEditor.$editor
-						.find( 'button.tux-editor-save-button' );
 					translateEditor.validateTranslation();
-					saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
-					// Disable save button if content from editor is cleared.
-					if ( !$.trim( $textArea.val() ) ) {
-						saveButton.prop( 'disabled', true );
+					$saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
+
+					// When there is content in the editor
+					if ( $.trim( $textArea.val() ) ) {
+						// Disable the 'paste source' button
+						// when there is text in the editor
+						$pasteSourceButton.prop( 'disabled', true );
+					} else {
+						// Disable the save button
+						$saveButton.prop( 'disabled', true );
+
+						// Enable the 'paste source' button
+						$pasteSourceButton.prop( 'disabled', false );
 					}
 				}, 1000 );
 			} );
@@ -396,7 +407,25 @@
 				.append( $warningsBlock, $textArea )
 			);
 
-			if ( mw.translate.canTranslate() ) {
+			if ( canTranslate ) {
+				$pasteOriginalButton = $( '<button>' )
+					.addClass( 'tux-editor-paste-original-button' )
+					.text( mw.msg( 'tux-editor-paste-original-button-label' ) )
+					.prop( 'disabled', this.message.translation ? true : false )
+					.on( 'click', function () {
+						$textArea.val( sourceString );
+						$( this ).prop( 'disabled', true );
+					} );
+
+				$pasteOriginalButton
+					.prop( 'disabled', false );
+
+				$editingButtonBlock = $( '<div>' )
+					.addClass( 'twelve columns tux-editor-control-buttons' )
+					.append( $pasteOriginalButton );
+
+				$requestRight = $( [] );
+
 				$saveButton = $( '<button>' )
 					.text( mw.msg( 'tux-editor-save-button-label' ) )
 					.attr( {
@@ -415,8 +444,9 @@
 					$saveButton.prop( 'disabled', false )
 						.text( mw.msg( 'tux-editor-confirm-button-label' ) );
 				}
-
 			} else {
+				$editingButtonBlock = $( [] );
+
 				$requestRight = $( '<span>' )
 					.text( mw.msg( 'translate-edit-nopermission' ) )
 					.addClass( 'tux-editor-request-right' )
@@ -427,9 +457,12 @@
 							'href': mw.util.wikiGetlink( mw.config.get( 'wgTranslatePermissionUrl' ) )
 						} )
 					);
+
 				// Disable the text area if user has no translation rights.
 				// Use readonly to allow copy-pasting (except for placeholders)
 				$textArea.prop( 'readonly', true );
+
+				$saveButton = $( [] );
 			}
 
 			$skipButton = $( '<button>' )
@@ -444,16 +477,16 @@
 					translateEditor.next();
 				} );
 
-			$buttonBlock = $( '<div>' )
-				.addClass( 'twelve columns' )
+			$controlButtonBlock = $( '<div>' )
+				.addClass( 'twelve columns tux-editor-control-buttons' )
 				.append( $requestRight, $saveButton, $skipButton );
 
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row' )
-				.append( $buttonBlock )
+				.append( $editingButtonBlock, $controlButtonBlock )
 			);
 
-			if ( mw.translate.canTranslate() ) {
+			if ( canTranslate ) {
 				$editorColumn.append( $( '<div>' )
 					.addClass( 'row text-left shortcutinfo' )
 					.text( mw.msg( 'tux-editor-shortcut-info',
