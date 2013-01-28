@@ -375,7 +375,7 @@ class SpecialTranslate extends SpecialPage {
 			$this->tuxLanguageSelector() .
 			$this->tuxGroupDescription();
 
-		return Html::rawElement( 'div', $attrs, $selectors );
+		return Html::rawElement( 'div', $attrs, $selectors ) . $this->tuxWorkflowSelector();
 	}
 
 	protected function messageSelector() {
@@ -605,6 +605,77 @@ class SpecialTranslate extends SpecialPage {
 				'</span>
 			</div>'
 		);
+	}
+
+	protected function tuxWorkflowSelector() {
+		$stateConfig = $this->group->getMessageGroupStates()->getStates();
+		if ( !$stateConfig ) {
+			return false;
+		}
+
+		if ( MessageGroups::isDynamic( $this->group ) ) {
+			return false;
+		}
+
+		$dbr = wfGetDB( DB_SLAVE );
+		$current = $dbr->selectField(
+				'translate_groupreviews',
+				'tgr_state',
+				array(
+					'tgr_group' => $this->options['group'],
+					'tgr_lang' => $this->options['language']
+				),
+				__METHOD__
+		);
+
+		$selector = Html::element( 'div', array(
+			'class' => 'tux-workflow-status three columns',
+			'data-token' => ApiGroupReview::getToken( 0, '' ),
+			'data-group' => $this->options['group'],
+			'data-language' => $this->options['language'],
+		), $this->msg( "translate-workflow-state-" )->escaped() );
+
+		$selectorRow = Html::openElement( 'div', array( 'class' => 'row' ) );
+
+		$options = Html::openElement( 'ul', array( 'class' => 'tux-workflow-status-selector hide' ) );
+
+		$user = $this->getUser();
+		if ( $user->isAllowed( 'translate-groupreview' ) ) {
+			// Add an option for every state
+			foreach ( $stateConfig as $state => $config ) {
+				$stateMessage = $this->msg( "translate-workflow-state-$state" );
+				$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
+
+				$attributes = array( 'data-state' => $state );
+
+				if ( $state === strval( $current ) ) {
+					$attributes['class'] = 'selected';
+
+					$selector = Html::element( 'div', array(
+						'class' => 'tux-workflow-status three columns',
+						'data-token' => ApiGroupReview::getToken( 0, '' ),
+						'data-group' => $this->options['group'],
+						'data-language' => $this->options['language'],
+					), $this->msg( 'translate-workflowstatus', $stateText )->escaped() );
+
+					$selectorRow .= $selector;
+				}
+
+				if ( is_array( $config )
+					&& isset( $config['right'] )
+					&& !$user->isAllowed( $config['right'] )
+				) {
+					// Dont add - continue
+					continue;
+				}
+
+				$options .= Html::element( 'li', $attributes, $stateText );
+			}
+		}
+
+		$options .= Html::closeElement( 'ul');
+
+		return $selectorRow . $options . Html::closeElement( 'div' );
 	}
 
 	protected function getWorkflowStatus() {
