@@ -69,10 +69,10 @@ class WikiFormatReader extends SimpleFormatReader {
 			return array();
 		}
 
-		$ { $this->variableName } = array();
+		${$this->variableName} = array();
 		require( $this->filename );
 
-		return $mangler->mangle( $ { $this->variableName } );
+		return $mangler->mangle( ${$this->variableName} );
 	}
 
 }

@@ -98,22 +98,30 @@ class SimpleFFS implements FFS {
 	/**
 	 * @param $group FileBasedMessageGroup
 	 */
-	public function setGroup( FileBasedMessageGroup $group ) { $this->group = $group; }
+	public function setGroup( FileBasedMessageGroup $group ) {
+		$this->group = $group;
+	}
 
 	/**
 	 * @return FileBasedMessageGroup
 	 */
-	public function getGroup() { return $this->group; }
+	public function getGroup() {
+		return $this->group;
+	}
 
 	/**
 	 * @param $writePath string
 	 */
-	public function setWritePath( $writePath ) { $this->writePath = $writePath; }
+	public function setWritePath( $writePath ) {
+		$this->writePath = $writePath;
+	}
 
 	/**
 	 * @return string
 	 */
-	public function getWritePath() { return $this->writePath; }
+	public function getWritePath() {
+		return $this->writePath;
+	}
 
 	/**
 	 * Returns true if the file for this message group in a given language

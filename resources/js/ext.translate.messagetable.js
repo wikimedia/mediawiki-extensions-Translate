@@ -28,7 +28,7 @@
 		}
 	} );
 
-	function messageFilterOverflowHandler () {
+	function messageFilterOverflowHandler() {
 		var actualWidth = 0;
 
 		// Calculate the total width required for the filters
@@ -43,7 +43,7 @@
 				.prepend( $( '.row.tux-message-selector > li.column:last' ).prev() );
 
 			// See if more items to be pushed to the overflow menu
-			messageFilterOverflowHandler() ;
+			messageFilterOverflowHandler();
 		}
 	}
 
@@ -51,7 +51,7 @@
 	 * Add a message to the message table
 	 */
 	function addMessage( message ) {
-		var $message,targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
+		var $message, targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
 			status = '',
 			statusMsg = '',
 			statusClass = '',
@@ -138,7 +138,7 @@
 		} );
 	}
 
-	function messageTableLoader () {
+	function messageTableLoader() {
 		var messagegroup,
 			pageSize,
 			remaining,
@@ -225,7 +225,7 @@
 		delay( messageListScrollHandler, 300 );
 	} );
 
-	function messageListScrollHandler () {
+	function messageListScrollHandler() {
 		var $window = $( window ),
 			$messageList = $( '.tux-messagelist' ),
 			$tuxActionBar = $( '.tux-action-bar' ),
@@ -253,5 +253,4 @@
 			timer = setTimeout( callback, milliseconds );
 		};
 	} () );
-
 }( jQuery, mediaWiki ) );

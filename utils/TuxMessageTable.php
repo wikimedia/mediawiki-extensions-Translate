@@ -28,7 +28,7 @@ class TuxMessageTable extends MessageTable {
 		$batchSize = 100;
 		$remaining = $total - $offsets['count'];
 
-		$footer =  Html::openElement( 'div',
+		$footer = Html::openElement( 'div',
 			array(
 				'class' => 'tux-messagetable-loader',
 				'data-messagegroup' => $this->group->getId(),

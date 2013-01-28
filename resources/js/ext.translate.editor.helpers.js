@@ -62,7 +62,7 @@
 					.replace( /\/[a-z\-]+$/, '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ),
 				text: newDocumentation,
 				token: mw.user.tokens.get( 'editToken' )
-			} ).done( function ( response ) {
+			} ).done(function ( response ) {
 				var $messageDesc = translateEditor.$editor.find( '.infocolumn-block .message-desc' );
 
 				if ( response.edit.result === 'Success' ) {
@@ -83,8 +83,8 @@
 					mw.log( 'Problem saving documentation' );
 				}
 			} ).fail( function ( errorCode, results ) {
-					// TODO better handling is needed
-					mw.log( 'Error saving documentation ' + errorCode + ' ' + results.error.info );
+				// TODO better handling is needed
+				mw.log( 'Error saving documentation ' + errorCode + ' ' + results.error.info );
 			} );
 		},
 
@@ -157,7 +157,7 @@
 					$messageDescViewer.find( '.message-desc-control' )
 						.prepend( $readMore );
 
-					$messageDoc.addClass('long compact').on( 'hover', expand );
+					$messageDoc.addClass( 'long compact' ).on( 'hover', expand );
 				}
 			} else {
 				$messageDoc.text( mw.msg( 'tux-editor-no-message-doc' ) );
@@ -229,7 +229,7 @@
 					alreadyOnTheList = false;
 
 				// See if it is already listed, and increment use count
-				$tmSuggestions.find( '.tm-suggestion' ).each( function() {
+				$tmSuggestions.find( '.tm-suggestion' ).each( function () {
 					var $sug = $( this ), $uses, count;
 					if ( $sug.find( '.suggestiontext ' ).text() === translation.target ) {
 						// Update the message and data value
@@ -313,7 +313,7 @@
 				action: 'translationaids',
 				title: this.message.title,
 				format: 'json'
-			} ).done( function ( result ) {
+			} ).done(function ( result ) {
 					// TODO This may be an error that must be handled
 					if ( !result.helpers ) {
 						mw.log( 'API did not return any translation helpers.' );
@@ -336,11 +336,11 @@
 
 	mw.translate = $.extend( mw.translate, {
 		/**
-		* Get the documentation edit URL for a title
-		*
-		* @param {String} title Message title with namespace
-		* @return {String} URL for editing the documentation
-		*/
+		 * Get the documentation edit URL for a title
+		 *
+		 * @param {String} title Message title with namespace
+		 * @return {String} URL for editing the documentation
+		 */
 		getDocumentationEditURL: function ( title ) {
 			var descUri = new mw.Uri( window.location.href );
 

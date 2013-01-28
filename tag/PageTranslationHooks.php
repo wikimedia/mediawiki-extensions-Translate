@@ -251,11 +251,17 @@ class PageTranslationHooks {
 			/* Percentages are too accurate and take more
 			 * space than simple images */
 			$percent *= 100;
-			if     ( $percent < 20 ) { $image = 1; }
-			elseif ( $percent < 40 ) { $image = 2; }
-			elseif ( $percent < 60 ) { $image = 3; }
-			elseif ( $percent < 80 ) { $image = 4; }
-			else                     { $image = 5; }
+			if ( $percent < 20 ) {
+				$image = 1;
+			} elseif ( $percent < 40 ) {
+				$image = 2;
+			} elseif ( $percent < 60 ) {
+				$image = 3;
+			} elseif ( $percent < 80 ) {
+				$image = 4;
+			} else {
+				$image = 5;
+			}
 
 			$percentImage = Xml::element( 'img', array(
 				'src' => TranslateUtils::assetPath( "resources/images/prog-$image.png" ),

@@ -145,17 +145,17 @@
 			untranslatedCount = stats.total - stats.translated - stats.fuzzy;
 
 			this.$statsBar.find( '.tux-proofread' )
-						.data( 'proofread', stats.proofread )
-						.css( 'width', proofread + '%' );
+				.data( 'proofread', stats.proofread )
+				.css( 'width', proofread + '%' );
 			this.$statsBar.find( '.tux-translated' )
-						.data( 'translated', stats.translated )
-						.css( 'width', translated + '%' );
+				.data( 'translated', stats.translated )
+				.css( 'width', translated + '%' );
 			this.$statsBar.find( '.tux-fuzzy' )
-						.data( 'fuzzy', stats.fuzzy )
-						.css( 'width', fuzzy + '%' );
+				.data( 'fuzzy', stats.fuzzy )
+				.css( 'width', fuzzy + '%' );
 			this.$statsBar.find( '.tux-untranslated' )
-						.data( 'untranslated', untranslatedCount )
-						.css( 'width', untranslated + '%' );
+				.data( 'untranslated', untranslatedCount )
+				.css( 'width', untranslated + '%' );
 		}
 	};
 

@@ -259,7 +259,7 @@
 
 			$msgGroupList.empty();
 
-			function addRecentMessageGroups ( recentgroups ) {
+			function addRecentMessageGroups( recentgroups ) {
 				var msgGroupRows = [];
 
 				$.each( recentgroups, function ( index, messageGroupId ) {
