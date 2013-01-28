@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//6Xo\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-28T17:20:53Z",
+      "side": 1,
+      "message": "Why do this in PHP? You will have problems updating the selector when changing message group without page load.",
+      "revId": "5334c3ce89ccb8e47b337a27d1a0b89ed6eac3c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
