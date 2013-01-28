@@ -2,7 +2,7 @@
 	'use strict';
 
 	$( document ).ready( function () {
-		$( '.tux-message' ).each( function() {
+		$( '.tux-message' ).each( function () {
 			var $this = $( this );
 
 			$this.translateeditor( {

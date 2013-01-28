@@ -80,7 +80,7 @@
 
 			$loader = $( '.tux-messagetable-loader' ).removeClass( 'hide' );
 
-			$( '.ext-translate-language-selector > .uls' ).text( $.uls.data.getAutonym( language) );
+			$( '.ext-translate-language-selector > .uls' ).text( $.uls.data.getAutonym( language ) );
 
 			$loader.data( 'remaining', mw.translate.getStatsForGroup( $loader.data( 'messagegroup' ) ).total )
 				.removeData( 'offset' )

@@ -53,8 +53,13 @@ class MessageWebImporter {
 	 *
 	 * @return Title
 	 */
-	public function getTitle() { return $this->title; }
-	public function setTitle( Title $title ) { $this->title = $title; }
+	public function getTitle() {
+		return $this->title;
+	}
+
+	public function setTitle( Title $title ) {
+		$this->title = $title;
+	}
 
 	public function getUser() {
 		global $wgUser;
@@ -532,14 +537,14 @@ class MessageWebImporter {
 	 */
 	public static function escapeNameForPHP( $name ) {
 		$replacements = array(
-			"("  => '(OP)',
-			" "  => '(SP)',
+			"(" => '(OP)',
+			" " => '(SP)',
 			"\t" => '(TAB)',
-			"."  => '(DOT)',
-			"'"  => '(SQ)',
+			"." => '(DOT)',
+			"'" => '(SQ)',
 			"\"" => '(DQ)',
-			"%"  => '(PC)',
-			"&"  => '(AMP)',
+			"%" => '(PC)',
+			"&" => '(AMP)',
 		);
 
 		/* How nice of you PHP. No way to split array into keys and values in one

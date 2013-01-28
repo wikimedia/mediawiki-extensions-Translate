@@ -299,8 +299,7 @@ class MessageGroups {
 
 		/* This function recursively finds paths to the target group */
 		$pathFinder = function ( &$paths, $group, $targetId, $prefix = '' )
-			use ( &$pathFinder )
-		{
+		use ( &$pathFinder ) {
 			if ( $group instanceof AggregateMessageGroup ) {
 				/**
 				 * @var MessageGroup $subgroup

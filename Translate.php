@@ -23,12 +23,12 @@ define( 'TRANSLATE_VERSION', '2013-01-15' );
  * Extension credits properties.
  */
 $wgExtensionCredits['specialpage'][] = array(
-	'path'           => __FILE__,
-	'name'           => 'Translate',
-	'version'        => TRANSLATE_VERSION,
-	'author'         => array( 'Niklas Laxström', 'Siebrand Mazeland' ),
+	'path' => __FILE__,
+	'name' => 'Translate',
+	'version' => TRANSLATE_VERSION,
+	'author' => array( 'Niklas Laxström', 'Siebrand Mazeland' ),
 	'descriptionmsg' => 'translate-desc',
-	'url'            => 'https://www.mediawiki.org/wiki/Extension:Translate',
+	'url' => 'https://www.mediawiki.org/wiki/Extension:Translate',
 );
 
 /**
@@ -574,17 +574,17 @@ $wgTranslateTranslationServices['example'] = array(
  *  unset($wgTranslateTasks['optional']);
  */
 $wgTranslateTasks = array(
-	'view'                 => 'ViewMessagesTask',
-	'untranslated'         => 'ViewUntranslatedTask',
-	'optional'             => 'ViewOptionalTask',
-	'suggestions'          => 'ViewWithSuggestionsTask',
+	'view' => 'ViewMessagesTask',
+	'untranslated' => 'ViewUntranslatedTask',
+	'optional' => 'ViewOptionalTask',
+	'suggestions' => 'ViewWithSuggestionsTask',
 //	'untranslatedoptional' => 'ViewUntranslatedOptionalTask',
 //	'review'               => 'ReviewMessagesTask',
-	'acceptqueue'          => 'AcceptQueueMessagesTask',
-	'reviewall'            => 'ReviewAllMessagesTask',
-	'export-as-po'         => 'ExportasPoMessagesTask',
-	'export-to-file'       => 'ExportToFileMessagesTask',
-	'custom'               => 'CustomFilteredMessagesTask',
+	'acceptqueue' => 'AcceptQueueMessagesTask',
+	'reviewall' => 'ReviewAllMessagesTask',
+	'export-as-po' => 'ExportasPoMessagesTask',
+	'export-to-file' => 'ExportToFileMessagesTask',
+	'custom' => 'CustomFilteredMessagesTask',
 );
 
 /**
@@ -837,8 +837,8 @@ $wgTranslateTestTTMServer = null;
 
 /** @cond cli_support */
 if ( !defined( 'TRANSLATE_CLI' ) ) {
-	function STDOUT() { }
-	function STDERR() { }
+	function STDOUT() {}
+	function STDERR() {}
 }
 /** @endcond */
 

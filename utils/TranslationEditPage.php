@@ -48,12 +48,17 @@ class TranslationEditPage {
 	 * Change the title of the page we are working on.
 	 * @param $title Title
 	 */
-	public function setTitle( Title $title ) { $this->title = $title; }
+	public function setTitle( Title $title ) {
+		$this->title = $title;
+	}
+
 	/**
 	 * Get the title of the page we are working on.
 	 * @return Title
 	 */
-	public function getTitle() { return $this->title; }
+	public function getTitle() {
+		return $this->title;
+	}
 
 	/**
 	 * Generates the html snippet for ajax edit. Echoes it to the output and

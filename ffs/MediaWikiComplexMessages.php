@@ -15,9 +15,9 @@
  */
 abstract class ComplexMessages {
 
-	const LANG_MASTER   = 0;
-	const LANG_CHAIN    = 1;
-	const LANG_CURRENT  = 2;
+	const LANG_MASTER = 0;
+	const LANG_CHAIN = 1;
+	const LANG_CURRENT = 2;
 
 	protected $language = null;
 	protected $id = '__BUG__';
@@ -212,15 +212,15 @@ abstract class ComplexMessages {
 			$file = str_replace( '%CODE%', str_replace( '-', '_', ucfirst( $code ) ), $file );
 		}
 
-		$ { $group['var'] } = array(); # Initialize
+		${$group['var']} = array(); # Initialize
 		if ( file_exists( $file ) ) {
 			require( $file ); # Include
 		}
 
 		if ( $group['code'] ) {
-			$data = (array) @$ { $group['var'] } [$code];
+			$data = (array)@${$group['var']} [$code];
 		} else {
-			$data = $ { $group['var'] } ;
+			$data = ${$group['var']};
 		}
 
 		return self::arrayMapRecursive( 'strval', $data );
@@ -684,16 +684,16 @@ class NamespaceCM extends ComplexMessages {
 	protected $constants = array(
 		-2 => 'NS_MEDIA',
 		-1 => 'NS_SPECIAL',
-		 0 => 'NS_MAIN',
-		 1 => 'NS_TALK',
-		 2 => 'NS_USER',
-		 3 => 'NS_USER_TALK',
-		 4 => 'NS_PROJECT',
-		 5 => 'NS_PROJECT_TALK',
-		 6 => 'NS_FILE',
-		 7 => 'NS_FILE_TALK',
-		 8 => 'NS_MEDIAWIKI',
-		 9 => 'NS_MEDIAWIKI_TALK',
+		0 => 'NS_MAIN',
+		1 => 'NS_TALK',
+		2 => 'NS_USER',
+		3 => 'NS_USER_TALK',
+		4 => 'NS_PROJECT',
+		5 => 'NS_PROJECT_TALK',
+		6 => 'NS_FILE',
+		7 => 'NS_FILE_TALK',
+		8 => 'NS_MEDIAWIKI',
+		9 => 'NS_MEDIAWIKI_TALK',
 		10 => 'NS_TEMPLATE',
 		11 => 'NS_TEMPLATE_TALK',
 		12 => 'NS_HELP',

@@ -13,17 +13,17 @@ $messages = array();
  * @author Siebrand
  */
 $messages['en'] = array(
-	'translate'         => 'Translate',
-	'translate-desc'    => '[[Special:Translate|Special page]] for translating MediaWiki and beyond',
+	'translate' => 'Translate',
+	'translate-desc' => '[[Special:Translate|Special page]] for translating MediaWiki and beyond',
 
-	'translate-taskui-view'                 => 'Show all messages',
-	'translate-taskui-untranslated'         => 'Show untranslated messages',
-	'translate-taskui-optional'             => 'Show optional messages',
-	'translate-taskui-suggestions'          => 'Show messages with suggestions from translation memory',
-	'translate-taskui-acceptqueue'          => 'Only messages I can accept',
-	'translate-taskui-reviewall'            => 'Review all translations',
-	'translate-taskui-export-to-file'       => 'Export in native format',
-	'translate-taskui-export-as-po'         => 'Export for off-line translation',
+	'translate-taskui-view' => 'Show all messages',
+	'translate-taskui-untranslated' => 'Show untranslated messages',
+	'translate-taskui-optional' => 'Show optional messages',
+	'translate-taskui-suggestions' => 'Show messages with suggestions from translation memory',
+	'translate-taskui-acceptqueue' => 'Only messages I can accept',
+	'translate-taskui-reviewall' => 'Review all translations',
+	'translate-taskui-export-to-file' => 'Export in native format',
+	'translate-taskui-export-as-po' => 'Export for off-line translation',
 
 	'translate-taction-translate' => 'Translate',
 	'translate-taction-proofread' => 'Proofread',
@@ -33,65 +33,65 @@ $messages['en'] = array(
 	'translate-taction-disabled' => 'This action is disabled on this wiki.',
 
 	'translate-page-no-such-language' => 'Specified language was invalid.',
-	'translate-page-no-such-group'    => 'Specified group was invalid.',
+	'translate-page-no-such-group' => 'Specified group was invalid.',
 
-	'translate-page-disabled'  => "Translations to this language in this group have been disabled.
+	'translate-page-disabled' => "Translations to this language in this group have been disabled.
 Reason:
 
 ''$1''",
 	'translate-language-disabled' => 'Translation to this language is disabled.',
 	'translate-page-settings-legend' => 'Settings',
-	'translate-page-group'           => 'Group',
-	'translate-page-language'        => 'Language',
-	'translate-page-limit'           => 'Limit',
-	'translate-page-limit-option'    => '$1 {{PLURAL:$1|message|messages}} per page',
-	'translate-submit'               => 'Fetch',
+	'translate-page-group' => 'Group',
+	'translate-page-language' => 'Language',
+	'translate-page-limit' => 'Limit',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|message|messages}} per page',
+	'translate-submit' => 'Fetch',
 
 	'translate-page-navigation-legend' => 'Navigation',
-	'translate-page-showing'           => 'Showing messages from $1 to $2 of $3.',
-	'translate-page-showing-all'       => 'Showing $1 {{PLURAL:$1|message|messages}}.',
-	'translate-page-showing-none'      => 'No messages to show.',
-	'translate-page-paging-links'      => '[ $1 ] [ $2 ]',
-	'translate-next'                   => 'Next page',
-	'translate-prev'                   => 'Previous page',
+	'translate-page-showing' => 'Showing messages from $1 to $2 of $3.',
+	'translate-page-showing-all' => 'Showing $1 {{PLURAL:$1|message|messages}}.',
+	'translate-page-showing-none' => 'No messages to show.',
+	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
+	'translate-next' => 'Next page',
+	'translate-prev' => 'Previous page',
 
-	'translate-page-description-legend'           => 'Information about the group',
-	'translate-page-description-hasoptional'      => 'This message group contains optional messages.
+	'translate-page-description-legend' => 'Information about the group',
+	'translate-page-description-hasoptional' => 'This message group contains optional messages.
 Optional messages should only be translated when your language has special requirements
 like not using spaces or transliterating proper names. $1',
 	'translate-page-description-hasoptional-open' => 'Show optional messages.',
-	'translate-page-edit'                         => 'edit',
-	'translate-ext-url'                           => '<hr />Website: $1',
+	'translate-page-edit' => 'edit',
+	'translate-ext-url' => '<hr />Website: $1',
 
 	'translate-optional' => '(optional)',
-	'translate-ignored'  => '(ignored)',
+	'translate-ignored' => '(ignored)',
 
-	'translate-edit-jsopen'             => 'edit',
-	'translate-edit-title'              => 'Edit "$1"',
-	'translate-edit-definition'         => 'Message definition',
-	'translate-edit-translation'        => 'Translation',
-	'translate-edit-contribute'         => 'contribute',
-	'translate-edit-no-information'     => "''This message has no documentation.''
+	'translate-edit-jsopen' => 'edit',
+	'translate-edit-title' => 'Edit "$1"',
+	'translate-edit-definition' => 'Message definition',
+	'translate-edit-translation' => 'Translation',
+	'translate-edit-contribute' => 'contribute',
+	'translate-edit-no-information' => "''This message has no documentation.''
 ''If you know where or how this message is used, you can help other translators by adding documentation to this message.''",
-	'translate-edit-information'        => 'Information about message ($1)',
+	'translate-edit-information' => 'Information about message ($1)',
 	'translate-edit-in-other-languages' => 'Message in other languages',
-	'translate-edit-committed'          => 'Current translation in software',
-	'translate-edit-warnings'           => 'Warnings about incomplete translations',
-	'translate-edit-tmsugs'             => 'Suggestions from translation memories and machine translation',
-	'translate-edit-tmmatch-source'     => 'Translation source text: $1',
-	'translate-edit-tmmatch'            => '$1% match',
-	'translate-use-suggestion'          => 'Replace current translation with this suggestion.',
+	'translate-edit-committed' => 'Current translation in software',
+	'translate-edit-warnings' => 'Warnings about incomplete translations',
+	'translate-edit-tmsugs' => 'Suggestions from translation memories and machine translation',
+	'translate-edit-tmmatch-source' => 'Translation source text: $1',
+	'translate-edit-tmmatch' => '$1% match',
+	'translate-use-suggestion' => 'Replace current translation with this suggestion.',
 
-	'translate-edit-tab-prev'          => '<<<',
-	'translate-edit-tab-next'          => '>>>',
-	'translate-edit-tab-list'          => 'Message list',
-	'translate-edit-nopermission'      => 'You need permission to translate messages.',
-	'translate-edit-askpermission'     => 'Request permission',
+	'translate-edit-tab-prev' => '<<<',
+	'translate-edit-tab-next' => '>>>',
+	'translate-edit-tab-list' => 'Message list',
+	'translate-edit-nopermission' => 'You need permission to translate messages.',
+	'translate-edit-askpermission' => 'Request permission',
 
 	'translate-edit-tag-warning' => '',
 
-	'translate-magic-pagename'    => 'Extended MediaWiki translation',
-	'translate-magic-help'        => 'You can translate special pages aliases, magic words and namespace names.
+	'translate-magic-pagename' => 'Extended MediaWiki translation',
+	'translate-magic-help' => 'You can translate special pages aliases, magic words and namespace names.
 
 Special page aliases and magic words can have multiple translations.
 Translations are separated by a comma (,).
@@ -103,51 +103,51 @@ If it is not possible in your language to form a valid expression without changi
 
 You need to be a translator to save changes.
 Changes are not saved until you click the save button below.',
-	'translate-magic-module'      => 'Module:',
-	'translate-magic-submit'      => 'Fetch',
-	'translate-magic-cm-export'   => 'Export', // cm- should be removed
+	'translate-magic-module' => 'Module:',
+	'translate-magic-submit' => 'Fetch',
+	'translate-magic-cm-export' => 'Export', // cm- should be removed
 
 	'translate-magic-nothing-to-export' => 'There is nothing to export.',
 
-	'translate-magic-cm-to-be'    => 'To-be',
-	'translate-magic-cm-current'  => 'Current',
+	'translate-magic-cm-to-be' => 'To-be',
+	'translate-magic-cm-current' => 'Current',
 	'translate-magic-cm-original' => 'Original',
 
 	'translate-magic-cm-comment' => 'Comment:',
-	'translate-magic-cm-save'    => 'Save',
+	'translate-magic-cm-save' => 'Save',
 
 	'translate-magic-cm-updatedusing' => 'Updated using [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
-	'translate-magic-cm-savefailed'   => 'Save failed',
+	'translate-magic-cm-savefailed' => 'Save failed',
 
-	'translate-magic-special'   => 'Special page aliases',
-	'translate-magic-words'     => 'Magic words',
+	'translate-magic-special' => 'Special page aliases',
+	'translate-magic-words' => 'Magic words',
 	'translate-magic-namespace' => 'Namespace names',
 
 	'translate-magic-notsaved' => 'Your edit was not saved!',
 	'translate-magic-errors' => 'Please fix following {{PLURAL:$1|error|errors}} in translations:',
-	'translate-magic-saved'  => 'Your changes were saved successfully.',
+	'translate-magic-saved' => 'Your changes were saved successfully.',
 
-	'translate-checks-parameters'         => 'Following {{PLURAL:$2|parameter is|parameters are}} not used:
+	'translate-checks-parameters' => 'Following {{PLURAL:$2|parameter is|parameters are}} not used:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Following {{PLURAL:$2|parameter is|parameters are}} unknown:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance'            => 'There is an uneven amount of {{PLURAL:$2|parentheses|parentheses}}:
+	'translate-checks-balance' => 'There is an uneven amount of {{PLURAL:$2|parentheses|parentheses}}:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links'              => 'Following {{PLURAL:$2|link is|$2 links are}} problematic:
+	'translate-checks-links' => 'Following {{PLURAL:$2|link is|$2 links are}} problematic:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing'      => 'Following {{PLURAL:$2|link is|$2 links are}} missing:
+	'translate-checks-links-missing' => 'Following {{PLURAL:$2|link is|$2 links are}} missing:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml'              => 'Please replace the following {{PLURAL:$2|tag|tags}} with correct ones:
+	'translate-checks-xhtml' => 'Please replace the following {{PLURAL:$2|tag|tags}} with correct ones:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-plural'             => 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',
-	'translate-checks-plural-forms'       => '<nowiki>{{PLURAL:}}</nowiki> was given {{PLURAL:$1|one form|$1 forms}} but {{PLURAL:$2|only one form is|$2 forms are}} supported (excluding 0= and 1= forms).',
-	'translate-checks-plural-dupe'        => '<nowiki>{{PLURAL:}}</nowiki> has duplicate forms at the end. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> should be written as <nowiki>{{PLURAL:$1|sheep}}</nowiki>.',
-	'translate-checks-pagename'           => 'Namespace changed from the definition',
-	'translate-checks-format'             => 'This translation does not follow the definition or has invalid syntax: $1',
-	'translate-checks-escape'             => 'The following escapes may be accidental: <strong>$1</strong>',
+	'translate-checks-plural' => 'Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.',
+	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> was given {{PLURAL:$1|one form|$1 forms}} but {{PLURAL:$2|only one form is|$2 forms are}} supported (excluding 0= and 1= forms).',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> has duplicate forms at the end. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> should be written as <nowiki>{{PLURAL:$1|sheep}}</nowiki>.',
+	'translate-checks-pagename' => 'Namespace changed from the definition',
+	'translate-checks-format' => 'This translation does not follow the definition or has invalid syntax: $1',
+	'translate-checks-escape' => 'The following escapes may be accidental: <strong>$1</strong>',
 	'translate-checks-parametersnotequal' => 'Parameter count is {{PLURAL:$1|$1}}; should be {{PLURAL:$2|$2}}.',
-	'translate-checks-malformed'          => '<nowiki>$1</nowiki> is malformed.',
-	'translate-checks-fudforum-syntax'    => 'Use <nowiki>$1</nowiki> instead of <nowiki>$2</nowiki> in this project.',
+	'translate-checks-malformed' => '<nowiki>$1</nowiki> is malformed.',
+	'translate-checks-fudforum-syntax' => 'Use <nowiki>$1</nowiki> instead of <nowiki>$2</nowiki> in this project.',
 
 	'translate-pref-nonewsletter' => 'Do not send me e-mail newsletters',
 	'translate-pref-editassistlang' => 'Assistant languages:',
@@ -207,9 +207,9 @@ All values have upper and lower limits.',
 	'translate-tag-page-desc' => 'Translation of the wiki page [[$2|$1]].',
 
 	'translate-tag-fuzzy-comment' => 'Definition changed by [[User:$1|$1]] in revision $2.',
-	'translate-tag-fuzzy-reason'  => 'Definition changed by "$1" with comment "$3" in $2.',
+	'translate-tag-fuzzy-reason' => 'Definition changed by "$1" with comment "$3" in $2.',
 
-	'translate-sidebar-alltrans'  => 'In other languages',
+	'translate-sidebar-alltrans' => 'In other languages',
 
 	# Special:Translations
 	'translations' => 'All translations',
@@ -383,7 +383,7 @@ Details: $1',
 	'grouppage-translate-proofr' => '{{ns:project}}:Translation reviewers',
 
 	'group-translate-proofr.css' => '/* CSS placed here will affect translation reviewers only */', # only translate this message to other languages if you have to change it
-	'group-translate-proofr.js'  => '/* JS placed here will affect translation reviewer only */', # only translate this message to other languages if you have to change it
+	'group-translate-proofr.js' => '/* JS placed here will affect translation reviewer only */', # only translate this message to other languages if you have to change it
 
 	// Less damn for the 32 character limit for log names
 	'log-name-translationreview' => 'Translation review log',
@@ -420,7 +420,7 @@ Most useful for the proofreading tasks.',
 
 	'translate-gethelp' => 'Help',
 
-	'translate-msggroupselector-projects'=> 'Message group',
+	'translate-msggroupselector-projects' => 'Message group',
 	'translate-msggroupselector-search-placeholder' => 'Search groups',
 	'translate-msggroupselector-search-all' => 'All',
 	'translate-msggroupselector-search-recent' => 'Recent',

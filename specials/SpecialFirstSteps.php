@@ -224,8 +224,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			foreach ( $babel as $language => $level ) {
 				if ( $level === 'N' ) {
 					$level = '';
-				}
-				else {
+				} else {
 					$level = "-$level";
 				}
 				$babeltext .= "$language$level|";

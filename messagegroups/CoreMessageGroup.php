@@ -15,9 +15,9 @@
  * @ingroup MessageGroup
  */
 class CoreMessageGroup extends MessageGroupOld {
-	protected $label       = 'MediaWiki';
-	protected $id          = 'core';
-	protected $type        = 'mediawiki';
+	protected $label = 'MediaWiki';
+	protected $id = 'core';
+	protected $type = 'mediawiki';
 	protected $description = '{{int:translate-group-desc-mediawikicore}}';
 	protected $icon;
 
@@ -31,12 +31,24 @@ class CoreMessageGroup extends MessageGroupOld {
 	}
 
 	protected $prefix = '';
-	public function getPrefix() { return $this->prefix; }
-	public function setPrefix( $value ) { $this->prefix = $value; }
+
+	public function getPrefix() {
+		return $this->prefix;
+	}
+
+	public function setPrefix( $value ) {
+		$this->prefix = $value;
+	}
 
 	protected $metaDataPrefix = '';
-	public function getMetaDataPrefix() { return $this->metaDataPrefix; }
-	public function setMetaDataPrefix( $value ) { $this->metaDataPrefix = $value; }
+
+	public function getMetaDataPrefix() {
+		return $this->metaDataPrefix;
+	}
+
+	public function setMetaDataPrefix( $value ) {
+		$this->metaDataPrefix = $value;
+	}
 
 	public $parentId = null;
 

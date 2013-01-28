@@ -34,7 +34,9 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * @param $value string
 	 */
-	public function setLabel( $value ) { $this->label = $value; }
+	public function setLabel( $value ) {
+		$this->label = $value;
+	}
 
 	/**
 	 * Group-wide unique id of this group. Used also for sorting.
@@ -44,12 +46,16 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * @return string
 	 */
-	public function getId() { return $this->id; }
+	public function getId() {
+		return $this->id;
+	}
 
 	/**
 	 * @param $value string
 	 */
-	public function setId( $value ) { $this->id = $value; }
+	public function setId( $value ) {
+		$this->id = $value;
+	}
 
 	/**
 	 * The namespace where all the messages of this group belong.
@@ -59,10 +65,14 @@ abstract class MessageGroupOld implements MessageGroup {
 	protected $namespace = NS_MEDIAWIKI;
 
 	/// Get the namespace where all the messages of this group belong.
-	public function getNamespace() { return $this->namespace; }
+	public function getNamespace() {
+		return $this->namespace;
+	}
 
 	/// Set the namespace where all the messages of this group belong.
-	public function setNamespace( $ns ) { $this->namespace = $ns; }
+	public function setNamespace( $ns ) {
+		$this->namespace = $ns;
+	}
 
 	/**
 	 * List of messages that are hidden by default, but can still be translated if
@@ -73,12 +83,16 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * @return array
 	 */
-	public function getOptional() { return $this->optional; }
+	public function getOptional() {
+		return $this->optional;
+	}
 
 	/**
 	 * @param $value array
 	 */
-	public function setOptional( $value ) { $this->optional = $value; }
+	public function setOptional( $value ) {
+		$this->optional = $value;
+	}
 
 	/**
 	 * List of messages that are always hidden and cannot be translated.
@@ -88,12 +102,16 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * @return array
 	 */
-	public function getIgnored() { return $this->ignored; }
+	public function getIgnored() {
+		return $this->ignored;
+	}
 
 	/**
 	 * @param $value array
 	 */
-	public function setIgnored( $value ) { $this->ignored = $value; }
+	public function setIgnored( $value ) {
+		$this->ignored = $value;
+	}
 
 	/**
 	 * Holds descripton of this group. Description is a wiki text snippet that
@@ -105,7 +123,9 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $this->description;
 	}
 
-	public function setDescription( $value ) { $this->description = $value; }
+	public function setDescription( $value ) {
+		$this->description = $value;
+	}
 
 	public function getIcon() {
 		return null;
@@ -116,8 +136,14 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * is used on many places, like when creating message index.
 	 */
 	protected $meta = false;
-	public function isMeta() { return $this->meta; }
-	public function setMeta( $value ) { $this->meta = $value; }
+
+	public function isMeta() {
+		return $this->meta;
+	}
+
+	public function setMeta( $value ) {
+		$this->meta = $value;
+	}
 
 	public function getSourceLanguage() {
 		return 'en';
@@ -140,7 +166,9 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $this->mangler;
 	}
 
-	public function setMangler( $value ) { $this->mangler = $value; }
+	public function setMangler( $value ) {
+		$this->mangler = $value;
+	}
 
 	public function getReader( $code ) {
 		return null;
@@ -231,8 +259,13 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * @param string $code
 	 * @return string Path to the file or false if not applicable.
 	 */
-	public function getMessageFile( $code ) { return false; }
-	public function getPath() { return false; }
+	public function getMessageFile( $code ) {
+		return false;
+	}
+
+	public function getPath() {
+		return false;
+	}
 
 	/**
 	 * @param $code
@@ -314,9 +347,12 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	// Unsupported stuff, just to satisfy the new interface
-	public function setConfiguration( $conf ) { }
-	public function getConfiguration() { }
-	public function getFFS() { return null; }
+	public function setConfiguration( $conf ) {}
+	public function getConfiguration() {}
+
+	public function getFFS() {
+		return null;
+	}
 
 
 	/**
