@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//628\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1082,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-28T07:28:55Z",
+      "side": 1,
+      "message": "Please align the stars!",
+      "revId": "746d396f42cc57fbe51f2e0328288a5b7b0a36eb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
