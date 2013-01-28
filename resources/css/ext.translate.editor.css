@@ -48,9 +48,9 @@
 .tux-message-editor textarea {
 	border: 1px solid #555;
 	font-size: 16px;
-	padding: 5px !important;
+	padding: 5px 5px 30px 5px;
 	height: 100px;
-	overflow-y: hidden;
+	overflow-y: auto;
 	position: relative;
 	z-index: 100;
 }
@@ -326,4 +326,35 @@
 
 .tux-editor-ask-permission {
 	padding: 0 5px;
+}
+
+.tux-editor-editarea-block {
+	padding: 0 5px;
+}
+
+.tux-editor-actions-block {
+	position: relative;
+}
+
+.tux-editor-actions-block .tux-editor-insert-buttons {
+	position: absolute;
+	top: -38px;
+	margin:0 10px;
+	z-index: 110;
+}
+
+.tux-editor-insert-buttons button {
+	padding: 4px 4px 4px 4px;
+	border: 1px solid #DDD;
+	color: #252525;
+	font-size: 13px;
+}
+
+.tux-editor-insert-buttons .tux-editor-paste-original-button{
+	background: transparent url(../images/paste.png) left center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/paste.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/paste.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/paste.svg);
+	background-size: 16px 16px;
+	padding-left: 18px;
 }
