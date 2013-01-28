@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//644\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-28T04:20:42Z",
+      "side": 1,
+      "message": "Add a class for this button, helps Pau to style it",
+      "revId": "edd3a3028b544fd8afc96fe559db75f412331b13",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//648\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-28T04:20:42Z",
+      "side": 1,
+      "message": "At this point you need to hide the paste button",
+      "revId": "edd3a3028b544fd8afc96fe559db75f412331b13",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
