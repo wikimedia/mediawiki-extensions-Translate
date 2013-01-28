@@ -238,7 +238,10 @@ $wgResourceModules['ext.translate.grid'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.editor'] = array(
-	'scripts' => 'resources/js/ext.translate.editor.js',
+	'scripts' => array(
+		'resources/js/ext.translate.editor.js',
+		'resources/js/ext.translate.editor.helpers.js',
+	),
 	'styles' => 'resources/css/ext.translate.editor.css',
 	'dependencies' => array(
 		'ext.translate.base',

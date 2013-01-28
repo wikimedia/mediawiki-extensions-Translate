@@ -128,6 +128,7 @@
 		},
 
 		/**
+<<<<<<< HEAD
 		 * Save the documentation
 		 */
 		saveDocumentation: function () {
@@ -171,6 +172,8 @@
 		},
 
 		/**
+=======
+>>>>>>> cee7fad... Refactor Translate editor
 		 * Marks that there was a problem saving a translation.
 		 * @param {string} error Strings of warnings to display.
 		 */
@@ -559,45 +562,6 @@
 			}
 		},
 
-		showDocumentationEditor: function () {
-			var $infoColumnBlock = this.$editor.find( '.infocolumn-block' ),
-				$editColumn = this.$editor.find( '.editcolumn' ),
-				$messageDescEditor = $infoColumnBlock.find( '.message-desc-editor' ),
-				$messageDescViewer = $infoColumnBlock.find( '.message-desc-viewer' );
-
-			$infoColumnBlock
-				.removeClass( 'five' )
-				.addClass( 'seven' );
-			$editColumn
-				.removeClass( 'seven' )
-				.addClass( 'five' );
-
-			$messageDescViewer.addClass( 'hide' );
-			$messageDescEditor.removeClass( 'hide' );
-
-			$messageDescEditor.find( 'textarea' ).focus();
-
-			// So that the link won't be followed
-			return false;
-		},
-
-		hideDocumentationEditor: function () {
-			var $infoColumnBlock = this.$editor.find( '.infocolumn-block' ),
-				$editColumn = this.$editor.find( '.editcolumn' ),
-				$messageDescEditor = $infoColumnBlock.find( '.message-desc-editor' ),
-				$messageDescViewer = $infoColumnBlock.find( '.message-desc-viewer' );
-
-			$infoColumnBlock
-				.removeClass( 'seven' )
-				.addClass( 'five' );
-			$editColumn
-				.removeClass( 'five' )
-				.addClass( 'seven' );
-
-			$messageDescEditor.addClass( 'hide' );
-			$messageDescViewer.removeClass( 'hide' );
-		},
-
 		prepareInfoColumn: function () {
 			var $messageDescEditor,
 				$messageDescSaveButton, $messageDescCancelButton,
@@ -774,6 +738,7 @@
 		},
 
 		/**
+<<<<<<< HEAD
 		 * Shows the message documentation.
 		 * @param {object} documentation A documentation object as returned by API.
 		 */
@@ -988,6 +953,8 @@
 		},
 
 		/**
+=======
+>>>>>>> cee7fad... Refactor Translate editor
 		 * Adds the diff between old and current definitions to the view.
 		 * @param {object} definitiondiff A definitiondiff object as returned by API.
 		 */
@@ -1012,6 +979,7 @@
 		},
 
 		/**
+<<<<<<< HEAD
 		 * Loads and shows the translation helpers.
 		 */
 		showTranslationHelpers: function () {
@@ -1043,6 +1011,8 @@
 		},
 
 		/**
+=======
+>>>>>>> cee7fad... Refactor Translate editor
 		 * Attach event listeners
 		 */
 		listen: function () {
@@ -1076,6 +1046,8 @@
 		} );
 	};
 
+	$.fn.translateeditor.Constructor = TranslateEditor;
+
 	var delay = ( function () {
 		var timer = 0;
 
@@ -1085,25 +1057,4 @@
 		};
 	} () );
 
-	mw.translate = mw.translate || {};
-
-	mw.translate = $.extend( mw.translate, {
-		/**
-		* Get the documentation edit URL for a title
-		*
-		* @param {String} title Message title with namespace
-		* @return {String} URL for editing the documentation
-		*/
-		getDocumentationEditURL: function ( title ) {
-			var descUri = new mw.Uri( window.location.href );
-
-			descUri.path = mw.config.get( 'wgScript' );
-			descUri.query = {
-				action: 'edit',
-				title: title + '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' )
-			};
-
-			return descUri.toString();
-		}
-	} );
 }( jQuery, mediaWiki ) );
