@@ -575,17 +575,19 @@ $specialPageAliases['mk'] = array(
 
 /** Malayalam (മലയാളം) */
 $specialPageAliases['ml'] = array(
-	'Translate' => array( 'തർജ്ജമ' ),
-	'Magic' => array( 'വിപുലീകൃതതർജ്ജമ', 'മായാജാലം' ),
-	'TranslationStats' => array( 'തർജ്ജമസ്ഥിതിവിവരം' ),
-	'Translations' => array( 'തർജ്ജമകൾ' ),
+	'Translate' => array( 'പരിഭാഷ' ),
+	'Magic' => array( 'വിപുലീകൃതപരിഭാഷ', 'മായാജാലം' ),
+	'TranslationStats' => array( 'പരിഭാഷാസ്ഥിതിവിവരം' ),
+	'Translations' => array( 'പരിഭാഷകൾ' ),
 	'LanguageStats' => array( 'ഭാഷാസ്ഥിതിവിവരം' ),
-	'PageTranslation' => array( 'താളിന്റെതർജ്ജമ' ),
-	'ImportTranslations' => array( 'തർജ്ജമ_ഇറക്കുമതി' ),
+	'MessageGroupStats' => array( 'സന്ദേശഗണസ്ഥിതിവിവരം' ),
+	'PageTranslation' => array( 'താളിന്റെപരിഭാഷ' ),
+	'ImportTranslations' => array( 'പരിഭാഷാ_ഇറക്കുമതി' ),
 	'ManageMessageGroups' => array( 'സന്ദേശസംഘങ്ങളുടെകൈകാര്യം' ),
 	'FirstSteps' => array( 'ആദ്യചുവടുകൾ' ),
 	'SupportedLanguages' => array( 'പിന്തുണയുള്ളഭാഷകൾ' ),
 	'MyLanguage' => array( 'എന്റെഭാഷ' ),
+	'SearchTranslations' => array( 'പരിഭാഷകളിൽതിരയുക' ),
 );
 
 /** Marathi (मराठी) */
@@ -656,7 +658,7 @@ $specialPageAliases['nds'] = array(
 	'Translate' => array( 'Översetten' ),
 );
 
-/** Nedersaksies (Nedersaksies) */
+/** Low Saxon (Netherlands) (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'Translate' => array( 'Vertalen' ),
 	'Magic' => array( 'Uutebreid_vertalen' ),
@@ -688,6 +690,7 @@ $specialPageAliases['nl'] = array(
 	'MyLanguage' => array( 'MijnTaal' ),
 	'PageTranslationDeletePage' => array( 'PaginavertalingpaginaVerwijderen' ),
 	'AggregateGroups' => array( 'SamengevoegdeGroepen' ),
+	'SearchTranslations' => array( 'VertalingenZoeken' ),
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎) */
