@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//62s\u003d",
+        "filename": "resources/js/ext.translate.editor.helpers.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-28T07:32:16Z",
+      "side": 1,
+      "message": "Not based on master? Weren\u0027t ok and err fixed already?",
+      "revId": "6a8996490393263ddd0eb7663986b60947b26cdb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
