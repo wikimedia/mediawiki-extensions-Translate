@@ -198,6 +198,7 @@
 				$moreWarningsTab,
 				$warnings,
 				$warningsBlock,
+				$editAreaBlock,
 				$textArea,
 				$controlButtonBlock,
 				$editingButtonBlock,
@@ -354,10 +355,14 @@
 				.addClass( 'tux-warnings-block' )
 				.append( $moreWarningsTab, $warnings );
 
-			$editorColumn.append( $( '<div>' )
-				.addClass( 'editarea eleven columns' )
-				.append( $warningsBlock, $textArea )
-			);
+			$editAreaBlock = $( '<div>' )
+				.addClass( 'row tux-editor-editarea-block' )
+				.append( $( '<div>' )
+					.addClass( 'editarea eleven columns' )
+					.append( $warningsBlock, $textArea )
+				);
+
+			$editorColumn.append( $editAreaBlock );
 
 			if ( canTranslate ) {
 				$pasteOriginalButton = $( '<button>' )
@@ -367,10 +372,7 @@
 						$textArea
 							.focus()
 							.val( sourceString );
-
-						delay( function () {
-							$pasteOriginalButton.addClass( 'hide' );
-						}, 500 );
+						$pasteOriginalButton.addClass( 'hide' );
 					} );
 
 				if ( this.message.translation ) {
@@ -378,7 +380,7 @@
 				}
 
 				$editingButtonBlock = $( '<div>' )
-					.addClass( 'twelve columns tux-editor-control-buttons' )
+					.addClass( 'ten columns tux-editor-insert-buttons' )
 					.append( $pasteOriginalButton );
 
 				$requestRight = $( [] );
@@ -439,7 +441,7 @@
 				.append( $requestRight, $saveButton, $skipButton );
 
 			$editorColumn.append( $( '<div>' )
-				.addClass( 'row' )
+				.addClass( 'row tux-editor-actions-block' )
 				.append( $editingButtonBlock, $controlButtonBlock )
 			);
 
