@@ -101,32 +101,29 @@
 				title: translateEditor.message.title,
 				text: translation,
 				token: mw.user.tokens.get( 'editToken' )
-			}, {
-				ok: function ( response ) {
-					if ( response.edit.result === 'Success' ) {
-						translateEditor.markTranslated();
+			} ).done( function ( response ) {
+				if ( response.edit.result === 'Success' ) {
+					translateEditor.markTranslated();
 
-						// Update the translation
-						translateEditor.message.translation = translation;
-						translateEditor.$editTrigger.find( '.tux-list-translation' )
-							.text( translation );
-					} else {
-						translateEditor.savingError( response.warning );
-					}
+					// Update the translation
+					translateEditor.message.translation = translation;
+					translateEditor.$editTrigger.find( '.tux-list-translation' )
+						.text( translation );
+				} else {
+					translateEditor.savingError( response.warning );
+				}
 
-					translateEditor.saving = false;
+				translateEditor.saving = false;
 
-					// remove warnings if any.
-					translateEditor.removeWarning( 'diff' );
-					translateEditor.removeWarning( 'validation' );
-				},
+				// remove warnings if any.
+				translateEditor.removeWarning( 'diff' );
+				translateEditor.removeWarning( 'validation' );
+			} ).fail( function ( errorCode, results ) {
 				// TODO: Should also handle complete failure,
 				// for example client or server going offline.
-				err: function ( errorCode, results ) {
-					translateEditor.savingError( results.error.info );
+				translateEditor.savingError( results.error.info );
 
-					translateEditor.saving = false;
-				}
+				translateEditor.saving = false;
 			} );
 		},
 
@@ -145,34 +142,31 @@
 					.replace( /\/[a-z\-]+$/, '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ),
 				text: newDocumentation,
 				token: mw.user.tokens.get( 'editToken' )
-			}, {
-				ok: function ( response ) {
-					var $messageDesc = translateEditor.$editor.find( '.infocolumn-block .message-desc' );
+			} ).done( function ( response ) {
+				var $messageDesc = translateEditor.$editor.find( '.infocolumn-block .message-desc' );
 
-					if ( response.edit.result === 'Success' ) {
-						api.parse( newDocumentation,
-							function ( parsedDocumentation ) {
-								$messageDesc.html( parsedDocumentation );
-							},
-							function ( errorCode, results ) {
-								$messageDesc.html( newDocumentation );
-								// TODO
-								mw.log( 'Error parsing documentation ' + errorCode + ' ' + results );
-							}
-						);
+				if ( response.edit.result === 'Success' ) {
+					api.parse( newDocumentation,
+						function ( parsedDocumentation ) {
+							$messageDesc.html( parsedDocumentation );
+						},
+						function ( errorCode, results ) {
+							$messageDesc.html( newDocumentation );
+							// TODO
+							mw.log( 'Error parsing documentation ' + errorCode + ' ' + results );
+						}
+					);
 
-						translateEditor.hideDocumentationEditor();
-					} else {
-						// TODO
-						mw.log( 'Problem saving documentation' );
-					}
-				},
-				// TODO: Should also handle complete failure,
-				// for example client or server going offline.
-				err: function ( errorCode, results ) {
-					// TODO better handling is needed
-					mw.log( 'Error saving documentation ' + errorCode + ' ' + results.error.info );
+					translateEditor.hideDocumentationEditor();
+				} else {
+					// TODO
+					mw.log( 'Problem saving documentation' );
 				}
+			} ).fail( function ( errorCode, results ) {
+				// TODO: More robust handing is needed.
+				// Should also handle complete failure,
+				// for example client or server going offline.
+				mw.log( 'Error saving documentation ' + errorCode + ' ' + results.error.info );
 			} );
 		},
 
@@ -1011,24 +1005,21 @@
 				action: 'translationaids',
 				title: this.message.title,
 				format: 'json'
-			}, {
-				ok: function ( result ) {
-					// TODO This may be an error that must be handled
-					if ( !result.helpers ) {
-						mw.log( 'API did not return any translation helpers.' );
-						return false;
-					}
-
-					translateEditor.showMessageDocumentation( result.helpers.documentation );
-					translateEditor.showAssistantLanguages( result.helpers.inotherlanguages );
-					translateEditor.showTranslationMemory( result.helpers.ttmserver );
-					translateEditor.showSupportOptions( result.helpers.support );
-					translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
-				},
-				err: function ( errorCode, results ) {
-					// TODO: proper handling is needed
-					mw.log( 'Error loading translation aids' + errorCode + results.error.info );
+			} ).done( function ( result ) {
+				// TODO This may be an error that must be handled
+				if ( !result.helpers ) {
+					mw.log( 'API did not return any translation helpers.' );
+					return false;
 				}
+
+				translateEditor.showMessageDocumentation( result.helpers.documentation );
+				translateEditor.showAssistantLanguages( result.helpers.inotherlanguages );
+				translateEditor.showTranslationMemory( result.helpers.ttmserver );
+				translateEditor.showSupportOptions( result.helpers.support );
+				translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
+			} ).fail( function ( errorCode, results ) {
+				// TODO: proper handling is needed
+				mw.log( 'Error loading translation aids' + errorCode + results.error.info );
 			} );
 		},
 
