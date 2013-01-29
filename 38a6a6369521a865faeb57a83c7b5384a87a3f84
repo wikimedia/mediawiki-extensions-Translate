@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//5WE\u003d",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-29T08:31:52Z",
+      "side": 1,
+      "message": "Use translate-manage as per lines 25-26",
+      "revId": "38a6a6369521a865faeb57a83c7b5384a87a3f84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
