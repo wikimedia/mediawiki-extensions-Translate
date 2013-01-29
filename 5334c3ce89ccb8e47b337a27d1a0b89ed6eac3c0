@@ -16,6 +16,24 @@
       "revId": "5334c3ce89ccb8e47b337a27d1a0b89ed6eac3c0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//5Y8\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-29T05:15:42Z",
+      "side": 1,
+      "message": "Yes, I understood this later. I doubt whether we have enough data from APIs to do this at client side now. MessageCollection Api need to give workflow status too.",
+      "parentUuid": "AAADiH//6Xo\u003d",
+      "revId": "5334c3ce89ccb8e47b337a27d1a0b89ed6eac3c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
