@@ -21,10 +21,6 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		parent::__construct( $query, $moduleName, 'mg' );
 	}
 
-	public function getCacheMode( $params ) {
-		return 'public';
-	}
-
 	public function execute() {
 		$params = $this->extractRequestParams();
 		$filter = $params['filter'];
@@ -107,6 +103,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		$a = array();
 
 		$groupId = $g->getId();
+
 		if ( isset( $props['id'] ) ) {
 			$a['id'] = $groupId;
 		}
@@ -150,6 +147,10 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 		if ( isset( $props['priorityforce'] ) ) {
 			$a['priorityforce'] = ( TranslateMetadata::get( $groupId, 'priorityforce' ) === 'on' );
+		}
+
+		if ( isset( $props['workflowstates'] ) ) {
+			$a['workflowstates'] = $this->getWorkflowStates( $g );
 		}
 
 		wfRunHooks( 'TranslateProcessAPIMessageGroupsProperties', array( &$a, $props, $params, $g ) );
@@ -202,11 +203,48 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		return $formats;
 	}
 
+	/**
+	 * Get the workflow states applicable to the given message group
+	 *
+	 * @param MessageGroup $group
+	 * @return boolean|array Associative array with states as key and localized state labels as values
+	 */
+	protected function getWorkflowStates( MessageGroup $group ) {
+		$stateConfig = $group->getMessageGroupStates()->getStates();
+
+		if ( !is_array( $stateConfig ) ) {
+			return $stateConfig;
+		}
+
+		$user = $this->getUser();
+
+		foreach ( $stateConfig as $state => $config ) {
+			if ( is_array( $config ) ) {
+				// Check if user is allowed to change states generally
+				$allowed = $user->isAllowed( 'translate-groupreview' );
+				// Check further restrictions
+				if ( $allowed && isset( $config['right'] ) ) {
+					$allowed = $user->isAllowed( $config['right'] );
+				}
+
+				$stateConfig[$state]['_canchange'] = $allowed;
+				$stateConfig[$state]['_name'] = $this->msg( "translate-workflow-state-$state" )->text();
+			}
+		}
+
+		return $stateConfig;
+	}
+
 	public function getAllowedParams() {
 		$allowedParams = array(
 			'depth' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_DFLT => '100',
+			),
+			'filter' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_DFLT => '',
+				ApiBase::PARAM_ISMULTI => true,
 			),
 			'format' => array(
 				ApiBase::PARAM_TYPE => array( 'flat', 'tree' ),
@@ -224,11 +262,6 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			'root' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_DFLT => '',
-			),
-			'filter' => array(
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => '',
-				ApiBase::PARAM_ISMULTI => true,
 			),
 		);
 		wfRunHooks( 'TranslateGetAPIMessageGroupsParameterList', array( &$allowedParams ) );
@@ -281,23 +314,24 @@ TEXT;
 	 */
 	protected static function getPropertyList() {
 		$properties = array(
-			'id'             => ' id            - Include id of the group',
-			'label'          => ' label         - Include label of the group',
-			'description'    => ' description   - Include description of the group',
-			'class'          => ' class         - Include class name of the group',
-			'namespace'      => ' namespace     - Include namespace of the group. Not all groups belong to a single namespace.',
-			'exists'         => ' exists        - Include self-calculated existence property of the group',
-			'icon'           => ' icon          - Include urls to icon of the group',
-			'priority'       => ' priority      - Include priority status like discouraged',
-			'prioritylangs'  => ' prioritylangs - Include prefered languages. If not set, this returns false',
-			'priorityforce'  => ' priorityforce - Include priority status - is the priority languages setting forced',
+			'id'             => ' id             - Include id of the group',
+			'label'          => ' label          - Include label of the group',
+			'description'    => ' description    - Include description of the group',
+			'class'          => ' class          - Include class name of the group',
+			'namespace'      => ' namespace      - Include namespace of the group. Not all groups belong to a single namespace.',
+			'exists'         => ' exists         - Include self-calculated existence property of the group',
+			'icon'           => ' icon           - Include urls to icon of the group',
+			'priority'       => ' priority       - Include priority status like discouraged',
+			'prioritylangs'  => ' prioritylangs  - Include prefered languages. If not set, this returns false',
+			'priorityforce'  => ' priorityforce  - Include priority status - is the priority languages setting forced',
+			'workflowstates' => ' workflowstates - Include the workflow states for the message group',
 		);
 		wfRunHooks( 'TranslateGetAPIMessageGroupsPropertyDescs', array( &$properties ) );
 		return $properties;
 	}
 
 	public function getDescription() {
-		return 'Return information about message groups';
+		return 'Return information about message groups. Note that uselang parameter affects the output of language dependent parts.';
 	}
 
 	protected function getExamples() {
