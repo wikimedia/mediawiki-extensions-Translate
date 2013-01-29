@@ -98,6 +98,12 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			}
 		}
 
+		$result->addValue(
+			array( 'query', 'messagegroupproperties' ),
+			'workflowstate',
+			$this->getWorkflowState( $group->getId(), $params['language'] )
+		);
+
 		if ( is_null( $resultPageSet ) ) {
 			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'message' );
 		} else {
@@ -138,6 +144,27 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		return $data;
 	}
 
+	/**
+	 * Get the current workflow state for the message group for the given language
+	 *
+	 * @param String $groupId
+	 * @param String $langCode
+	 * @return String|null
+	 */
+	protected function getWorkflowState( $groupId, $langCode ) {
+		$dbr = wfGetDB( DB_SLAVE );
+		$current = $dbr->selectField(
+				'translate_groupreviews',
+				'tgr_state',
+				array(
+					'tgr_group' => $groupId,
+					'tgr_lang' => $langCode
+				),
+				__METHOD__
+		);
+		return $current;
+	}
+
 	public function getAllowedParams() {
 		$groups = MessageGroups::getAllGroups();
 		$dynamic = MessageGroups::getDynamicGroups();
@@ -168,7 +195,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				ApiBase::PARAM_ISMULTI => true,
 			),
 			'prop' => array(
-				ApiBase::PARAM_TYPE => array( 'definition', 'translation', 'tags', 'revision', 'properties' ),
+				ApiBase::PARAM_TYPE => array( 'workflowstate', 'definition', 'translation', 'tags', 'revision', 'properties' ),
 				ApiBase::PARAM_DFLT => 'definition|translation',
 				ApiBase::PARAM_ISMULTI => true,
 			),
