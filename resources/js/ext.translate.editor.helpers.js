@@ -123,7 +123,6 @@
 						lang: documentation.language,
 						dir: documentationDir
 					} )
-					.addClass( documentationDir ) // hack
 					.html( documentation.html );
 
 				this.$editor.find( '.message-desc-editor textarea' )

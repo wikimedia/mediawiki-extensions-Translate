@@ -173,25 +173,6 @@
 	text-overflow: ellipsis;
 }
 
-/* The message documentation section is likely to be different
- * from the user's language, so these rtl/ltr styles must not be affected
- * by auto-flipping.
- *
- * TODO: The row classes still override these, so it must be resolved somehow.
- */
-
-/* @noflip */
-.message-desc .ltr {
-	text-align: left;
-	margin-left: 0.5em;
-}
-
-/* @noflip */
-.message-desc .rtl {
-	text-align: right;
-	margin-right: 0.5em;
-}
-
 .message-desc-control {
 	font-size: 14px;
 	padding: 3px 0 5px 0;
