@@ -119,7 +119,6 @@ class MessageTable {
 		}
 		$vars = array( 'trlKeys' => $pages );
 		$wgOut->addScript( Skin::makeVariablesScript( $vars ) );
-		$wgOut->addModules( 'ext.translate.messagetable' );
 	}
 
 	public function header() {
