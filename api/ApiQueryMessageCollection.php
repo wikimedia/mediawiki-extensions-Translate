@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2010, Niklas Laxström
+ * @copyright Copyright © 2010-2013, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -98,6 +98,12 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			}
 		}
 
+		$result->addValue(
+			array( 'query', 'metadata' ),
+			'state',
+			self::getWorkflowState( $group->getId(), $params['language'] )
+		);
+
 		if ( is_null( $resultPageSet ) ) {
 			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'message' );
 		} else {
@@ -136,6 +142,26 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		}
 
 		return $data;
+	}
+
+	/**
+	 * Get the current workflow state for the message group for the given language
+	 *
+	 * @param string $groupId Group id.
+	 * @param string $language Language tag.
+	 * @return string|bool State id or false.
+	 */
+	protected static function getWorkflowState( $groupId, $language ) {
+		$dbr = wfGetDB( DB_SLAVE );
+		return $dbr->selectField(
+			'translate_groupreviews',
+			'tgr_state',
+			array(
+				'tgr_group' => $groupId,
+				'tgr_lang' => $language
+			),
+			__METHOD__
+		);
 	}
 
 	public function getAllowedParams() {
