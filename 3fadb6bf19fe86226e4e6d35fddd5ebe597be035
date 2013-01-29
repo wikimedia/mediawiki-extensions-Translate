@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//5GM\u003d",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-29T15:31:29Z",
+      "side": 1,
+      "message": "Extra space",
+      "revId": "3fadb6bf19fe86226e4e6d35fddd5ebe597be035",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//5GI\u003d",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-29T15:31:29Z",
+      "side": 1,
+      "message": "ULS could also go into the list.",
+      "revId": "3fadb6bf19fe86226e4e6d35fddd5ebe597be035",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//5GE\u003d",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-29T15:31:29Z",
+      "side": 1,
+      "message": "CLDR could go into this list later on.",
+      "revId": "3fadb6bf19fe86226e4e6d35fddd5ebe597be035",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
