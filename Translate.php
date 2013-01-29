@@ -451,6 +451,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'mediawiki.util',
 		'mediawiki.Uri',
 		'ext.translate.groupselector',
+		'ext.translate.messagetable',
 	),
 	'messages' => array(
 		'translate-workflow-set-do',
