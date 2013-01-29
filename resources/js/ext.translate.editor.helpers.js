@@ -20,14 +20,15 @@
 				.addClass( 'five' );
 
 			$messageDescViewer.addClass( 'hide' );
-			$messageDescEditor.removeClass( 'hide' );
 
-			$messageDescEditor.find( 'textarea' ).focus();
+			$messageDescEditor
+				.removeClass( 'hide' )
+				.find( 'textarea' )
+					.focus();
 
 			// So that the link won't be followed
 			return false;
 		},
-
 
 		hideDocumentationEditor: function () {
 			var $infoColumnBlock = this.$editor.find( '.infocolumn-block' ),
@@ -45,7 +46,6 @@
 			$messageDescEditor.addClass( 'hide' );
 			$messageDescViewer.removeClass( 'hide' );
 		},
-
 
 		/**
 		 * Save the documentation
@@ -73,7 +73,7 @@
 						function ( errorCode, results ) {
 							$messageDesc.html( newDocumentation );
 							// TODO
-							mw.log( 'Error parsing documentation ' + errorCode + ' ' + results );
+							mw.log( 'Error parsing documentation ' + errorCode + ' ' + results.error.info );
 						}
 					);
 
@@ -113,6 +113,7 @@
 			// documentation language is configured
 			if ( documentation.value ) {
 				documentationDir = $.uls.data.getDir( documentation.language );
+
 				// Show the documentation and set appropriate
 				// lang and dir attributes.
 				// The message documentation is assumed to be written
@@ -230,10 +231,12 @@
 
 				// See if it is already listed, and increment use count
 				$tmSuggestions.find( '.tm-suggestion' ).each( function () {
-					var $sug = $( this ), $uses, count;
-					if ( $sug.find( '.suggestiontext ' ).text() === translation.target ) {
+					var $uses, count,
+						$suggestion = $( this );
+
+					if ( $suggestion.find( '.suggestiontext ' ).text() === translation.target ) {
 						// Update the message and data value
-						$uses = $sug.find( '.n-uses' );
+						$uses = $suggestion.find( '.n-uses' );
 						count = $uses.data( 'n' ) + 1;
 						$uses.data( 'n', count );
 						$uses.text( mw.msg( 'tux-editor-n-uses', count ) + '  〉' );
@@ -262,7 +265,7 @@
 									.addClass( 'three columns quality text-right' )
 									.text( mw.msg( 'tux-editor-tm-match',
 										Math.round( translation.quality * 100 ) ) )
-						),
+							),
 						$( '<div>' )
 							.addClass( 'row tm-suggestion-bottom' )
 							.append(
@@ -283,7 +286,6 @@
 				$tmSuggestions.append( $translation );
 			} );
 		},
-
 
 		/**
 		 * Shows the support options for the translator.
@@ -313,21 +315,21 @@
 				action: 'translationaids',
 				title: this.message.title,
 				format: 'json'
-			} ).done(function ( result ) {
-					// TODO This may be an error that must be handled
-					if ( !result.helpers ) {
-						mw.log( 'API did not return any translation helpers.' );
-						return false;
-					}
+			} ).done( function ( result ) {
+				// TODO This may be an error that must be handled
+				if ( !result.helpers ) {
+					mw.log( 'API did not return any translation helpers.' );
+					return false;
+				}
 
-					translateEditor.showMessageDocumentation( result.helpers.documentation );
-					translateEditor.showAssistantLanguages( result.helpers.inotherlanguages );
-					translateEditor.showTranslationMemory( result.helpers.ttmserver );
-					translateEditor.showSupportOptions( result.helpers.support );
-					translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
+				translateEditor.showMessageDocumentation( result.helpers.documentation );
+				translateEditor.showAssistantLanguages( result.helpers.inotherlanguages );
+				translateEditor.showTranslationMemory( result.helpers.ttmserver );
+				translateEditor.showSupportOptions( result.helpers.support );
+				translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
 			} ).fail( function ( errorCode, results ) {
-					// TODO: proper handling is needed
-					mw.log( 'Error loading translation aids' + errorCode + results.error.info );
+				// TODO: proper handling is needed
+				mw.log( 'Error loading translation aids ' + errorCode + results.error.info );
 			} );
 		}
 	};
