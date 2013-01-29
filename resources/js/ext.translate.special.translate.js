@@ -52,21 +52,45 @@
 
 	mw.translate = $.extend( mw.translate, {
 
+		/**
+		 * Change the group that is currently displayed
+		 * in the TUX translation editor.
+		 * @param {Object} group a message group object.
+		 */
 		changeGroup: function ( group ) {
-			var $loader;
+			var $loader = $( '.tux-messagetable-loader' ),
+				api = new mw.Api(),
+				$description = $( '.tux-editor-header .description' );
 
-			$loader = $( '.tux-messagetable-loader' ).removeClass( 'hide' );
-
-			$loader.data( 'messagegroup', group )
+			$loader
+				.data( 'messagegroup', group.id )
 				// FIXME it should match filter.
-				.data( 'remaining', mw.translate.getStatsForGroup( group ).total )
+				.data( 'remaining', mw.translate.getStatsForGroup( group.id ).total )
 				.removeData( 'offset' )
-				.removeAttr( 'data-offset' );
-			// clear current messages;
+				.removeAttr( 'data-offset' )
+				.removeClass( 'hide' );
+
+			// Clear the current messages
 			$( '.tux-message' ).remove();
+
+			// Update the group description in the header
+			api.parse( group.description,
+				function ( parsedDescription ) {
+					// The parsed text is returned in a <p> tag,
+					// so it's removed here.
+					$description.html( $( parsedDescription ).html() );
+				},
+				function ( errorCode, results ) {
+					$description.html( group.description );
+					// TODO
+					mw.log( 'Error parsing description for group ' +
+						group.id + ': ' + errorCode + ' ' + results.error.info );
+				}
+			);
+
 			mw.translate.loadMessages();
 			mw.translate.changeUrl( {
-				'group': group,
+				group: group.id,
 				filter: mw.Uri().query.filter || '!translated'
 			} );
 		},
@@ -81,6 +105,7 @@
 			$loader.data( 'remaining', mw.translate.getStatsForGroup( $loader.data( 'messagegroup' ) ).total )
 				.removeData( 'offset' )
 				.removeAttr( 'data-offset' );
+
 			$( '.tux-messagelist' ).data( 'targetlangcode', language );
 
 			// clear current messages;
@@ -164,7 +189,7 @@
 				onSelect: groupSelectorHandler
 			} );
 		} else {
-			mw.translate.changeGroup( msgGroup.id );
+			mw.translate.changeGroup( msgGroup );
 		}
 	}
 

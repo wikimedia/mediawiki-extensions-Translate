@@ -80,13 +80,17 @@
 
 			if ( groupSelector.parentGroupId ) {
 				// Do not show the 'Load all messages' button if there is no parent
-				$loadAllRow = $( '<div>' ).addClass( 'row footer' )
-					.append( $( '<button>' ).addClass( 'six columns ext-translate-load-all' )
-					.text( mw.msg( 'translate-msggroupselector-load-from-all' ) )
-				).click( function () {
-						mw.translate.changeGroup( groupSelector.parentGroupId );
-					}
-				);
+				$loadAllRow = $( '<div>' )
+					.addClass( 'row footer' )
+					.append( $( '<button>' )
+						.addClass( 'six columns ext-translate-load-all' )
+						.text( mw.msg( 'translate-msggroupselector-load-from-all' ) )
+					)
+					.click( function () {
+						mw.translate.changeGroup(
+							getGroup( groupSelector.parentGroupId, $( '.ext-translate-msggroup-selector' ).data( 'msggroups' ) )
+						);
+					} );
 			}
 
 			this.$menu.append( $groupTitle, $listFiltersGroup, $msgGroupList, $loadAllRow );
