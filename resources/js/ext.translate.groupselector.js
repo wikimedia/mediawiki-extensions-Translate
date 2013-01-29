@@ -376,7 +376,7 @@
 				format: 'json',
 				meta: 'messagegroups',
 				mgformat: 'tree',
-				mgprop: 'id|label|description|icon|priority|prioritylangs|priorityforce',
+				mgprop: 'id|label|description|icon|priority|prioritylangs|priorityforce|workflowstates',
 				// Keep this in sync with css!
 				mgiconsize: '32'
 			};
