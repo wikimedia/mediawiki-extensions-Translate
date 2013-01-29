@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//5Hs\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-01-29T15:15:00Z",
+      "side": 1,
+      "message": "pressing the use translation will not trigger keyup event, it is input event. Any keyup also trigger this event",
+      "revId": "ce798daf531befca2a75b43b0972476910be1142",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
