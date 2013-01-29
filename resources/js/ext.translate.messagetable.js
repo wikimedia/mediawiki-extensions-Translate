@@ -94,7 +94,7 @@
 			.addClass( 'row tux-message-item ' + status )
 			.append(
 				$( '<div>' )
-					.addClass( 'nine columns tux-list-message' )
+					.addClass( 'eight columns tux-list-message' )
 					.append(
 						$( '<span>' )
 							.addClass( 'tux-list-source' )
@@ -119,7 +119,7 @@
 							.text( statusMsg ? mw.msg( statusMsg ) : '' )
 					),
 				$( '<div>' )
-					.addClass( 'one column tux-list-edit text-center' )
+					.addClass( 'two column tux-list-edit text-right' )
 					.append(
 						$( '<a>' )
 							.attr( {
