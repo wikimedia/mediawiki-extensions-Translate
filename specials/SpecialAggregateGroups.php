@@ -12,7 +12,7 @@
 
 class SpecialAggregateGroups extends SpecialPage {
 	function __construct() {
-		parent::__construct( 'AggregateGroups' );
+		parent::__construct( 'AggregateGroups' , 'translate-import' );
 	}
 
 	public function execute( $parameters ) {
