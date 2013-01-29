@@ -217,7 +217,7 @@
 				.addClass( 'seven columns editcolumn' );
 
 			$messageKeyLabel = $( '<div>' )
-				.addClass( 'ten columns text-left messagekey' )
+				.addClass( 'ten columns messagekey' )
 				.text( this.message.title )
 				.append( $( '<span>' ).addClass( 'caret' ) );
 
@@ -447,7 +447,7 @@
 
 			if ( canTranslate ) {
 				$editorColumn.append( $( '<div>' )
-					.addClass( 'row text-left shortcutinfo' )
+					.addClass( 'row shortcutinfo' )
 					.text( mw.msg( 'tux-editor-shortcut-info',
 						$saveButton.attr( 'title' ).toUpperCase(),
 						$skipButton.attr( 'title' ).toUpperCase() )
@@ -557,7 +557,7 @@
 						} );
 
 					$messageDescEditor = $( '<div>' )
-						.addClass( 'row text-left message-desc-editor hide' )
+						.addClass( 'row message-desc-editor hide' )
 						.append(
 							$( '<textarea>' )
 								.attr( {
@@ -579,9 +579,9 @@
 					.addClass( 'message-desc-viewer hide' )
 					.append(
 						$( '<div>' )
-							.addClass( 'row text-left message-desc' ),
+							.addClass( 'row message-desc' ),
 						$( '<div>' )
-							.addClass( 'row text-left message-desc-control' )
+							.addClass( 'row message-desc-control' )
 							.append( $( '<a>' )
 								.attr( {
 									href: mw.translate.getDocumentationEditURL(
@@ -589,7 +589,7 @@
 									),
 									target: '_blank'
 								} )
-								.addClass( 'text-left message-desc-edit' )
+								.addClass( 'message-desc-edit' )
 								.on( 'click', $.proxy( this.showDocumentationEditor, this ) )
 							)
 					);
@@ -601,18 +601,18 @@
 			}
 
 			$infoColumn.append( $( '<div>' )
-				.addClass( 'row text-left tm-suggestions-title hide' )
+				.addClass( 'row tm-suggestions-title hide' )
 				.text( mw.msg( 'tux-editor-suggestions-title' ) )
 			);
 
 			$infoColumn.append( $( '<div>' )
-				.addClass( 'row text-left in-other-languages-title hide' )
+				.addClass( 'row in-other-languages-title hide' )
 				.text( mw.msg( 'tux-editor-in-other-languages' ) )
 			);
 
 			// The actual href is set when translationhelpers are loaded
 			$infoColumn.append( $( '<div>' )
-				.addClass( 'row text-left help hide' )
+				.addClass( 'row help hide' )
 				.append(
 					$( '<span>' )
 						.text( mw.msg( 'tux-editor-need-more-help' ) ),
