@@ -169,7 +169,7 @@
 		},
 
 		/**
-		 * Shows the machine translations.
+		 * Shows the translations from other languages
 		 * @param {array} translations An inotherlanguages array as returned by the translation helpers API.
 		 */
 		showAssistantLanguages: function ( translations ) {
@@ -208,7 +208,7 @@
 		},
 
 		/**
-		 * Shows the message documentation.
+		 * Shows the translation suggestions from Translation Memory
 		 * @param {array} suggestions A ttmserver array as returned by API.
 		 */
 		showTranslationMemory: function ( suggestions ) {
@@ -288,6 +288,63 @@
 		},
 
 		/**
+		 * Shows the translation from machine translation systems
+		 * @param {array} suggestions
+		 */
+		showMachineTranslations: function ( suggestions ) {
+			var $mtSuggestions, $translationTextarea;
+
+			if ( !suggestions.length ) {
+				return;
+			}
+
+			$mtSuggestions = this.$editor.find( '.tm-suggestions' );
+
+			if ( !$mtSuggestions.length ) {
+				$mtSuggestions = $( '<div>' ).addClass( 'tm-suggestions' );
+			}
+
+			this.$editor.find( '.tm-suggestions-title' )
+				.removeClass( 'hide' )
+				.after( $mtSuggestions );
+			$translationTextarea = this.$editor.find( 'textarea' );
+
+			$.each( suggestions, function ( index, translation ) {
+				var $translation;
+
+				$translation = $( '<div>' )
+					.addClass( 'row tm-suggestion' )
+					.append(
+						$( '<div>' )
+							.addClass( 'row tm-suggestion-top' )
+							.append(
+								$( '<div>' )
+									.addClass( 'nine columns suggestiontext end' )
+									.text( translation.target )
+							),
+						$( '<div>' )
+							.addClass( 'row tm-suggestion-bottom' )
+							.append(
+								$( '<a>' )
+									.addClass( 'nine columns use-this-translation' )
+									.text( mw.msg( 'tux-editor-use-this-translation' ) )
+									.on( 'click', function () {
+										$translationTextarea
+											.val( translation.target )
+											.trigger( 'input' );
+									} ),
+								$( '<span>' )
+									.addClass( 'three columns service text-right' )
+									.text( translation.service )
+							)
+					);
+
+				$mtSuggestions.append( $translation );
+			} );
+		},
+
+
+		/**
 		 * Shows the support options for the translator.
 		 * @param {object} support A support object as returned by API.
 		 */
@@ -325,6 +382,7 @@
 				translateEditor.showMessageDocumentation( result.helpers.documentation );
 				translateEditor.showAssistantLanguages( result.helpers.inotherlanguages );
 				translateEditor.showTranslationMemory( result.helpers.ttmserver );
+				translateEditor.showMachineTranslations( result.helpers.mt );
 				translateEditor.showSupportOptions( result.helpers.support );
 				translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
 			} ).fail( function ( errorCode, results ) {

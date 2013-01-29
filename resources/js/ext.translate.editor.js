@@ -327,7 +327,7 @@
 					}
 				} );
 
-			$textArea.on( 'keyup', function () {
+			$textArea.on( 'input propertychange', function () {
 				var $textArea = $( this );
 
 				delay( function () {
