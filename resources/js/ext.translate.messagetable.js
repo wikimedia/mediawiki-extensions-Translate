@@ -226,22 +226,33 @@
 	} );
 
 	function messageListScrollHandler() {
-		var $window = $( window ),
-			$messageList = $( '.tux-messagelist' ),
-			$tuxActionBar = $( '.tux-action-bar' ),
-			isFloating = $tuxActionBar.hasClass( 'floating' ),
-			needFloat = $window.scrollTop() + $window.height() < (
-				$messageList.offset().top + $messageList.height() ),
-			needStick = $window.scrollTop() + $window.height() > (
-				$messageList.offset().top + $messageList.height() + $tuxActionBar.height() );
+		var $window,
+			$tuxActionBar,
+			isFloating,
+			needFloat, needStick,
+			windowScrollBottom,
+			messageListOffset, messageListHeight, messageListBottom,
+			$messageList = $( '.tux-messagelist' );
+
+		$window = $( window );
+		$tuxActionBar = $( '.tux-action-bar' );
+		isFloating = $tuxActionBar.hasClass( 'floating' );
+
+		windowScrollBottom = $window.scrollTop() + $window.height();
+		messageListOffset = $messageList.offset();
+		messageListHeight = $messageList.height();
+		messageListBottom = messageListOffset.top + messageListHeight;
+		needFloat = windowScrollBottom < messageListBottom;
+		needStick = windowScrollBottom > ( messageListBottom + $tuxActionBar.height() );
 
 		if ( !isFloating && needFloat ) {
-			$tuxActionBar.addClass( 'floating' );
-			$tuxActionBar.width( $messageList.width() );
+			$tuxActionBar
+				.addClass( 'floating' )
+				.width( $messageList.width() );
 		} else if ( isFloating && needStick ) {
 			$tuxActionBar.removeClass( 'floating' );
 		} else if ( isFloating && needFloat ) {
-			$tuxActionBar.css( 'left', $messageList.offset().left - $window.scrollLeft() );
+			$tuxActionBar.css( 'left', messageListOffset.left - $window.scrollLeft() );
 		}
 	}
 
