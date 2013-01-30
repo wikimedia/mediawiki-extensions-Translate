@@ -56,6 +56,22 @@ The body of error message is {{msg-mw|Tux-sst-nosolr-body}}.',
 The page title for this message is {{msg-mw|Tux-sst-nosolr-title}}.',
 );
 
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
+ * @author Wizardist
+ */
+$messages['be-tarask'] = array(
+	'searchtranslations' => 'Пошук перакладаў',
+	'tux-sst-edit' => 'Зьмяніць паведамленьне',
+	'tux-sst-search' => 'Шукаць',
+	'tux-sst-search-ph' => 'Пошук перакладаў',
+	'tux-sst-count' => '{{PLURAL:$1|Знойдзены $1 вынік|Знойдзена $1 вынікі|Знойдзена $1 вынікаў}}',
+	'tux-sst-facet-language' => 'Мовы',
+	'tux-sst-facet-group' => 'Групы паведамленьняў',
+	'tux-sst-facet-orphan' => '(сіраціна)',
+	'tux-sst-nosolr-title' => 'Пошук недаступны',
+	'tux-sst-nosolr-body' => 'Гэтая вікі ня мае службы пошуку перакладаў.',
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  */
