@@ -246,3 +246,19 @@
 	width: 34px;
 	backface-visibility: hidden;
 }
+
+.tux-message-filter-result {
+	line-height: 50px;
+	height: 50px;
+	font-size: 15px;
+	vertical-align: middle;
+	border-bottom: 1px solid #C9C9C9;
+}
+
+.tux-message-filter-result .button {
+	height: 30px;
+	padding: 5px;
+	margin-top: 5px;
+	font-size: 15px;
+	vertical-align: middle;
+}
