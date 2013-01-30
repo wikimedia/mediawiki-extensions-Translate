@@ -252,6 +252,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'mediawiki.api.parse',
 		'mediawiki.user',
 		'mediawiki.jqueryMsg',
+		'jquery.makeCollapsible',
 	),
 	'messages' => array(
 		'tux-status-translated',
