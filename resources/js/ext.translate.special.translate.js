@@ -74,19 +74,18 @@
 			$( '.tux-message' ).remove();
 
 			// Update the group description in the header
-			api.parse( group.description,
-				function ( parsedDescription ) {
-					// The parsed text is returned in a <p> tag,
-					// so it's removed here.
-					$description.html( $( parsedDescription ).html() );
-				},
-				function ( errorCode, results ) {
-					$description.html( group.description );
-					// TODO
-					mw.log( 'Error parsing description for group ' +
-						group.id + ': ' + errorCode + ' ' + results.error.info );
-				}
-			);
+			api.parse(
+				group.description
+			).done( function ( parsedDescription ) {
+				// The parsed text is returned in a <p> tag,
+				// so it's removed here.
+				$description.html( $( parsedDescription ).html() );
+			} ).fail( function ( errorCode, results ) {
+				$description.html( group.description );
+				// TODO
+				mw.log( 'Error parsing description for group ' +
+					group.id + ': ' + errorCode + ' ' + results.error.info );
+			} );
 
 			mw.translate.loadMessages();
 			mw.translate.changeUrl( {
