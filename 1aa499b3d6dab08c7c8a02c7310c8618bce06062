@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//4Iw\u003d",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-30T10:45:33Z",
+      "side": 1,
+      "message": "String in lower case. IIRC selectField returns false if no such row (please check)",
+      "revId": "1aa499b3d6dab08c7c8a02c7310c8618bce06062",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//4I0\u003d",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-30T10:45:33Z",
+      "side": 1,
+      "message": "Extra level of indentation.",
+      "revId": "1aa499b3d6dab08c7c8a02c7310c8618bce06062",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//4II\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-30T10:45:33Z",
+      "side": 1,
+      "message": "Method is not documented. What is the return value for example?\n\nHow is i18n of state names handled?",
+      "revId": "1aa499b3d6dab08c7c8a02c7310c8618bce06062",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//4IM\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-30T10:45:33Z",
+      "side": 1,
+      "message": "MessageGroup $group",
+      "revId": "1aa499b3d6dab08c7c8a02c7310c8618bce06062",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//4IU\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-30T10:45:33Z",
+      "side": 1,
+      "message": "Do not introduce new global state variables. In API you can use $this-\u003egetUser(), but if you do so you need to change the cache type of the module.\n\nAlternative solution here would be to just return the rights needed and check the permissions on the client side (in which case we need to make the rights available in JS).",
+      "revId": "1aa499b3d6dab08c7c8a02c7310c8618bce06062",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//4H8\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-30T10:45:33Z",
+      "side": 1,
+      "message": "Doesn\u0027t the above check cover for dynamic groups too?",
+      "revId": "1aa499b3d6dab08c7c8a02c7310c8618bce06062",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
