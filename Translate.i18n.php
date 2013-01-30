@@ -470,7 +470,10 @@ Most useful for the proofreading tasks.',
 	'tux-editor-doc-editor-save' => 'Save documentation',
 	'tux-editor-doc-editor-cancel' => 'Cancel',
 	'tux-messagetable-more-messages' => '$1 more {{PLURAL:$1|message|messages}}',
-	'tux-messagetable-loading-messages' => 'Loading {{PLURAL:$1|message|messages}}...'
+	'tux-messagetable-loading-messages' => 'Loading {{PLURAL:$1|message|messages}}...',
+	'tux-message-filter-placeholder' => 'Filter list',
+	'tux-message-filter-result' => 'Found $1 {{PLURAL:$1|result|results}} for "$2"',
+	'tux-message-filter-advanced-button' => 'Advanced search',
 );
 
 /** Message documentation (Message documentation)
@@ -940,6 +943,11 @@ Pressing the button clears all the messages that were translated from the page.'
 * $1 - number of messages',
 	'tux-messagetable-loading-messages' => 'A progress text saying messages are being loaded
 * $1 - number of messages',
+	'tux-message-filter-placeholder' => 'Placeholder text for the message table filter search box',
+	'tux-message-filter-result' => 'Search result for filtering the message table
+* $1 - number of results
+* $2 - query string',
+	'tux-message-filter-advanced-button' => 'Button label for searching the messages using [[Special:SearchTranslations]]',
 );
 
 /** Afrikaans (Afrikaans)
@@ -6395,7 +6403,7 @@ $messages['diq'] = array(
 	'translate-edit-definition' => 'Şınasiya mesaci',
 	'translate-edit-translation' => 'Çarnayışi',
 	'translate-edit-contribute' => 'iştıraq kewê',
-	'translate-edit-no-information' => "''Wesiqaya nê mesaci çışniya.'' 
+	'translate-edit-no-information' => "''Wesiqaya nê mesaci çışniya.''
 ''Şıma ke zanê koti ya zi no mesac gureniyeno, şıma şenê açarnoğanê binan rê qandê wesiqa ilawekerdış be nê mesaci ra peşti cı dê.''",
 	'translate-edit-information' => 'Heqa mesacê ($1) de melumat',
 	'translate-edit-in-other-languages' => 'Zıwanan dê binan de mesaci',
@@ -18260,6 +18268,9 @@ $messages['ml'] = array(
 	'tux-editor-outdated-warning' => 'ഈ പരിഭാഷ കാലഹരണപ്പെട്ടതാവാം.', # Fuzzy
 	'tux-messagetable-more-messages' => '{{PLURAL:$1|ഒരു സന്ദേശം കൂടി|$1 സന്ദേശങ്ങള്‍ കൂടി}}',
 	'tux-messagetable-loading-messages' => '{{PLURAL:$1|ഒരു സന്ദേശം|$1 സന്ദേശങ്ങള്‍}} എടുക്കുന്നു...',
+	'tux-message-filter-placeholder' => 'തിരയുക',
+	'tux-message-filter-result' => '"$2" എന്നതിനു് {{PLURAL:$1|ഒരു ഫലം|$1 ഫലങ്ങള്‍}} കണ്ടു',
+	'tux-message-filter-advanced-button' => 'വിപുലമായ തിരച്ചില്‍',
 );
 
 /** Mongolian (монгол)

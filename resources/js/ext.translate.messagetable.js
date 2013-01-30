@@ -38,7 +38,7 @@
 
 		// Grid row has a min width. After that scrollbars will appear.
 		// We are checking whether the filters is wider than the current grid row width
-		if ( actualWidth >= parseInt( $( '.row' ).width(), 10 ) ) {
+		if ( actualWidth >= parseInt( $( '.nine.columns' ).width(), 10 ) ) {
 			$( '.tux-message-selector .more ul' ) // Overflow menu
 				.prepend( $( '.row.tux-message-selector > li.column:last' ).prev() );
 
@@ -143,6 +143,7 @@
 			pageSize,
 			remaining,
 			targetLanguage,
+			query,
 			$loader = $( '.tux-messagetable-loader' ),
 			$messageList = $( '.tux-messagelist' ),
 			offset = $loader.data( 'offset' ),
@@ -152,6 +153,10 @@
 		pageSize = $loader.data( 'pagesize' );
 		remaining = $loader.data( 'remaining' );
 		targetLanguage = $messageList.data( 'targetlangcode' );
+
+		if ( offset === -1 ) {
+			return;
+		}
 
 		$.when(
 			mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize, filter )
@@ -174,7 +179,64 @@
 				// End of messages
 				$loader.data( 'offset', -1 ).addClass( 'hide' );
 			}
+
+			// Dynamically loaded messages should pass the search filter if present.
+			query = $( '.tux-message-filter-box' ).val();
+			if ( query ) {
+				search( query );
+			}
 		} );
+	}
+
+	/**
+	 * Search the message filter
+	 *
+	 * @param {String} query
+	 */
+	function search( query ) {
+		var $messageTable,
+			resultCount = 0,
+			$result,
+			matcher = new RegExp( '\\b' + escapeRegex( query ), 'i' );
+
+		$messageTable = $( '.tux-messagelist' );
+		$messageTable.find( '.tux-message' ).each( function () {
+			var $message = $( this ),
+				message = $message.data( 'message' );
+
+			if ( matcher.test( message.definition ) || matcher.test( message.translation ) ) {
+				$message.removeClass( 'hide' );
+				resultCount++;
+			} else {
+				$message.addClass( 'hide' );
+			}
+		} );
+
+		$result = $messageTable.find( '.tux-message-filter-result' );
+		if ( !$result.length ) {
+			$result = $( '<div>' ).addClass( 'row highlight tux-message-filter-result' )
+				.append(
+					$( '<div>' )
+						.addClass( 'ten columns advanced-search' ),
+					$( '<button>' )
+						.addClass( 'two columns button advanced-search' )
+						.text( mw.msg( 'tux-message-filter-advanced-button' ) )
+				);
+			$messageTable.prepend( $result );
+		}
+
+		if ( !query ) {
+			$result.addClass( 'hide' );
+		} else {
+			$result.removeClass( 'hide' )
+				.find( 'div' )
+				.text( mw.msg( 'tux-message-filter-result', resultCount, query ) );
+			$result.find( 'button' ).on( 'click', function () {
+				window.location.href = new mw.Uri( mw.util.wikiGetlink( 'Special:SearchTranslations' ) )
+					.extend( { query: query } );
+			} );
+			mw.translate.loadMessages();
+		}
 	}
 
 	$( 'document' ).ready( function () {
@@ -212,6 +274,10 @@
 		$( '.tux-messagetable-loader' ).appear( messageTableLoader, {
 			// Appear callback need to be called more than once.
 			one: false
+		} );
+
+		$( '.tux-message-filter-box' ).on( 'input propertychange', function () {
+			delay( search( $( this ).val() ), 300 );
 		} );
 
 		messageFilterOverflowHandler();
@@ -265,4 +331,14 @@
 			timer = setTimeout( callback, milliseconds );
 		};
 	} () );
+
+	/**
+	 * Escape the search query for regex match
+	 * @param {string} value A search string to be escaped.
+	 * @returns {string} Escaped string that is safe to use for a search.
+	 */
+	function escapeRegex( value ) {
+		return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, '\\$&' );
+	}
+
 }( jQuery, mediaWiki ) );
