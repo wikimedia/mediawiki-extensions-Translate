@@ -110,23 +110,39 @@ class SpecialSearchTranslations extends SpecialPage {
 				$text = str_replace( $post, '</strong>', $text );
 			}
 
-			$result = Html::openElement( 'div', array(
-				'class' => 'row tux-message',
-				'data-title' => $document->messageid,
-				'data-definition' => $document->text, // FIXME wrong!
-				'data-translation' => $document->content,
-				'data-language' => $document->language,
-			) );
+			$title = Title::newFromText( $document->messageid . '/' . $document->language );
+			if ( !$title ) {
+				// Should not ever happen but who knows...
+				continue;
+			}
 
+			$resultAttribs = array(
+				'class' => 'row tux-message',
+				'data-title' => $title->getPrefixedText(),
+				'data-language' => $document->language,
+			);
+
+			$handle = new MessageHandle( $title );
+			if ( $handle->isValid() ) {
+				$groupId = $handle->getGroup()->getId();
+				$helpers = new TranslationHelpers( $title, $groupId );
+				$resultAttribs['data-definition'] = $helpers->getDefinition();
+				$resultAttribs['data-translation'] = $helpers->getTranslation();
+				$resultAttribs['data-group'] = $groupId;
+			}
+
+			$result = Html::openElement( 'div', $resultAttribs );
 			$result .= Html::rawElement( 'div', array( 'class' => 'row tux-text' ), $text );
 			$result .= Html::element( 'div', array( 'class' => 'row tux-title' ), $document->messageid );
-			$uri = wfAppendQuery( $document->uri, array( 'action' => 'edit' ) );
-			$link = Html::element( 'a', array(
-				'href' => $uri,
-			), $this->msg( 'tux-sst-edit' ) );
-			$result .= Html::rawElement( 'div', array( 'class' => 'row tux-edit tux-message-item' ), $link );
-			$result .= Html::closeElement( 'div' );
+			if ( $handle->isValid() ) {
+				$uri = wfAppendQuery( $document->uri, array( 'action' => 'edit' ) );
+				$link = Html::element( 'a', array(
+					'href' => $uri,
+				), $this->msg( 'tux-sst-edit' ) );
+				$result .= Html::rawElement( 'div', array( 'class' => 'row tux-edit tux-message-item' ), $link );
+			}
 
+			$result .= Html::closeElement( 'div' );
 			$results .= $result;
 		}
 
