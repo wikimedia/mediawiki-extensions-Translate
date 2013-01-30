@@ -33,16 +33,9 @@
 }
 
 .tux-message-selector {
-	padding-top: 2em;
-	border-bottom: 1px solid #777;
-	/* @noflip */
-	-webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
-	/* @noflip */
-	box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
-	margin-bottom: 3px !important;
 	font-size: 14px;
 	margin: 0;
-	padding: 0;
+	padding: 6px 0 0 0;
 	list-style: none;
 }
 
@@ -177,4 +170,37 @@ ul.tux-workflow-status-selector li:hover {
 ul.tux-workflow-status-selector li.selected {
 /* @embed */
 	background: url(../images/label-tick.png) right no-repeat;
+}
+
+.tux-messagetable-header {
+	padding-top: 2em;
+	border-bottom: 1px solid #777;
+	/* @noflip */
+	-webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
+	/* @noflip */
+	box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.tux-messagetable-header input.tux-message-filter-box {
+	font-size: 14px;
+	height: 28px;
+	border: 1px solid #C9C9C9;
+	padding: 0 5px;
+}
+
+.tux-messagetable-header span.tux-message-filter-box-icon {
+	/* @embed */
+	background: url('../images/search.png') no-repeat scroll right center transparent;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/search.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/search.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/search.svg);
+	background-size: 25px;
+	height: 28px;
+	width: 28px;
+	position: relative;
+	left: -5px;
 }
