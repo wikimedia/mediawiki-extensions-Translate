@@ -316,6 +316,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 	'dependencies' => array(
 		'mediawiki.util',
 		'jquery.appear',
+		'mediawiki.jqueryMsg',
 	),
 	'messages' => array(
 		'translate-messagereview-submit',
@@ -338,6 +339,8 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'translate-edit-title',
 		'tux-messagetable-more-messages',
 		'tux-messagetable-loading-messages',
+		'tux-message-filter-result',
+		'tux-message-filter-advanced-button',
 	),
 ) + $resourcePaths;
 

@@ -379,7 +379,9 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function messageSelector() {
-		$output = Html::openElement( 'ul', array( 'class' => 'row tux-message-selector' ) );
+		$output = Html::openElement( 'div', array( 'class' => 'row tux-messagetable-header' ) );
+		$output .= Html::openElement( 'div', array( 'class' => 'nine columns' ) );
+		$output .= Html::openElement( 'ul', array( 'class' => 'row tux-message-selector' ) );
 		$tabs = array(
 			'tux-tab-all' => '',
 			'tux-tab-untranslated' => '!translated',
@@ -422,7 +424,17 @@ class SpecialTranslate extends SpecialPage {
 			Html::closeElement( 'li' );
 
 		$output .= Html::closeElement( 'ul' );
+		$output .= Html::closeElement( 'div' ); //close nine columns
+		$output .= Html::openElement( 'div', array( 'class' => 'three columns' ) );
+		$output .= Html::element( 'span', array( 'class' => 'two columns tux-message-filter-box-icon' ) );
+		$output .= Html::element( 'input', array(
+			'class' => 'ten columns tux-message-filter-box',
+			'type' => 'text',
+			'placeholder' => $this->msg( 'tux-message-filter-placeholder' )->escaped()
+		) );
+		$output .= Html::closeElement( 'div' ); // close three columns
 
+		$output .= Html::closeElement( 'div' ); // close the row
 		return $output;
 	}
 
