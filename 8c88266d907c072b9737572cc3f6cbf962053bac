@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//4K4\u003d",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-30T10:22:35Z",
+      "side": 1,
+      "message": "Why is the click bound on the row and not on the button?",
+      "revId": "8c88266d907c072b9737572cc3f6cbf962053bac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//4Kc\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-30T10:22:35Z",
+      "side": 1,
+      "message": "This syntax is also deprecated in favor of .done() and .fail()",
+      "revId": "8c88266d907c072b9737572cc3f6cbf962053bac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
