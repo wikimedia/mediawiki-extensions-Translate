@@ -9,7 +9,8 @@
 				message: {
 					title: $this.data( 'title' ),
 					definition: $this.data( 'definition' ),
-					translation: $this.data( 'translation' )
+					translation: $this.data( 'translation' ),
+					group: $this.data( 'group' )
 				}
 			} );
 		} );

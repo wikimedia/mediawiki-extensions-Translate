@@ -110,12 +110,28 @@ class SpecialSearchTranslations extends SpecialPage {
 				$text = str_replace( $post, '</strong>', $text );
 			}
 
+			$title = Title::newFromText( $document->messageid . '/' . $document->language );
+
+			if ( !$title ) {
+				// FIXME solr search and current messages are not in sync? how to handle?
+				continue;
+			}
+
+			$handle = new MessageHandle( $title );
+			if ( !$handle->isValid() ) {
+				// FIXME solr search and current messages are not in sync? how to handle?
+				continue;
+			}
+
+			$helpers = new TranslationHelpers( $title, $handle->getGroup()->getId() );
+
 			$result = Html::openElement( 'div', array(
 				'class' => 'row tux-message',
-				'data-title' => $document->messageid,
-				'data-definition' => $document->text, // FIXME wrong!
-				'data-translation' => $document->content,
+				'data-title' => $title->getPrefixedText(),
+				'data-definition' => $helpers->getDefinition(),
+				'data-translation' => $helpers->getTranslation(),
 				'data-language' => $document->language,
+				'data-group' => $handle->getGroup()->getId(),
 			) );
 
 			$result .= Html::rawElement( 'div', array( 'class' => 'row tux-text' ), $text );
