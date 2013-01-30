@@ -39,6 +39,7 @@
 				$searchGroup,
 				$msgGroupList,
 				$loadAllRow,
+				$loadAllButton,
 				groupSelector = this;
 
 			this.$menu = $( '<div class="ext-translate-msggroup-selector-menu grid"></div>' );
@@ -78,19 +79,20 @@
 
 			$loadAllRow = $( [] );
 
+			// Show the 'Load all messages' button only if there is a parent group
 			if ( groupSelector.parentGroupId ) {
-				// Do not show the 'Load all messages' button if there is no parent
-				$loadAllRow = $( '<div>' )
-					.addClass( 'row footer' )
-					.append( $( '<button>' )
-						.addClass( 'six columns ext-translate-load-all' )
-						.text( mw.msg( 'translate-msggroupselector-load-from-all' ) )
-					)
+				$loadAllButton = $( '<button>' )
+					.addClass( 'six columns ext-translate-load-all' )
+					.text( mw.msg( 'translate-msggroupselector-load-from-all' ) )
 					.click( function () {
 						mw.translate.changeGroup(
 							getGroup( groupSelector.parentGroupId, $( '.ext-translate-msggroup-selector' ).data( 'msggroups' ) )
 						);
 					} );
+
+				$loadAllRow = $( '<div>' )
+					.addClass( 'row footer' )
+					.append( $loadAllButton );
 			}
 
 			this.$menu.append( $groupTitle, $listFiltersGroup, $msgGroupList, $loadAllRow );
