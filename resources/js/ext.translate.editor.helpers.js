@@ -77,6 +77,9 @@
 						}
 					);
 
+					// A collapsible element may have been added
+					$( '.mw-identical-title' ).makeCollapsible();
+
 					translateEditor.hideDocumentationEditor();
 				} else {
 					// TODO
@@ -159,6 +162,10 @@
 
 					$messageDoc.addClass( 'long compact' ).on( 'hover', expand );
 				}
+
+				// Enable the collapsible elements,
+				// used in {{Identical}} on translatewiki.net
+				$( '.mw-identical-title' ).makeCollapsible();
 			} else {
 				$messageDoc.text( mw.msg( 'tux-editor-no-message-doc' ) );
 				$descEditLink.text( mw.msg( 'tux-editor-add-desc' ) );
