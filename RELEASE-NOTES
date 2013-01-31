@@ -1,0 +1,31 @@
+== Translate 2013.01 ==
+Released at 2013-01-31.
+
+=== Highlights ===
+Work continues with the new Translate UX. Many new features have been added,
+many issues fixed and WebAPIs have been extented to support the new features.
+It is not yet ready for production use, but can be tested by appending query
+param tux=1 to the url on Special:Translate (tux=0 to get back).
+
+New search page Special:SearchTranslations was created. It depends on working
+TTMServer configuration with Solr backend. More info:
+https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories
+
+=== Developer and compatiblity changes ===
+All translation helpers were refactored into TranslationAids and
+TranslationWebService classes. The old interfaces will be kept around
+for a while, until they are refactored to use these new classes.
+
+Translatons aids are now also available in the WebApi. More information:
+https://www.mediawiki.org/wiki/Help:Extension:Translate/Components#Translation_aids_.28helpers.29
+
+Short notes:
+* New method: TMessage::getPropertyNames()
+* Deprecated: MessageCollection::setReviewMode() (no-op)
+* MessageCollection::slice() now returns information
+* css and js files are now in subdirectories under resources/
+* ApiQueryMessageCollection: new property "properties" was added and "revision" was deprecated.
+
+== Other noteworthy changes ==
+* Unused messageDust.php removed.
+* (bug 42611) Superfluous newlines added in PythonSingleFFS
