@@ -66,12 +66,23 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			}
 		}
 
+		$resultSize = count( $messages );
 		$offsets = $messages->slice( $params['offset'], $params['limit'] );
-		list( /*$backwardsOffset*/, $forwardsOffset, /*offset*/ ) = $offsets;
+		$batchSize = count( $messages );
+		list( /*$backwardsOffset*/, $forwardsOffset, $startOffset ) = $offsets;
+
+		$result = $this->getResult();
+		$result->addValue(
+			array( 'query', 'metadata' ),
+			'state',
+			self::getWorkflowState( $group->getId(), $params['language'] )
+		);
+
+		$result->addValue( array( 'query', 'metadata' ), 'resultsize', $resultSize );
+		$result->addValue( array( 'query', 'metadata' ), 'remaining', $resultSize - $startOffset - $batchSize );
 
 		$messages->loadTranslations();
 
-		$result = $this->getResult();
 		$pages = array();
 		$count = 0;
 
@@ -84,25 +95,13 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		foreach ( $messages->keys() as $mkey => $title ) {
 			if ( is_null( $resultPageSet ) ) {
 				$data = $this->extractMessageData( $result, $props, $messages[$mkey] );
-
 				$data['title'] = $title->getPrefixedText();
 
-				$fit = $result->addValue( array( 'query', $this->getModuleName() ), null, $data );
-				if ( !$fit ) {
-					// @TODO Use string key here
-					$this->setContinueEnumParameter( 'offset', $params['offset'] + $count - 1 );
-					break;
-				}
+				$result->addValue( array( 'query', $this->getModuleName() ), null, $data );
 			} else {
 				$pages[] = $title;
 			}
 		}
-
-		$result->addValue(
-			array( 'query', 'metadata' ),
-			'state',
-			self::getWorkflowState( $group->getId(), $params['language'] )
-		);
 
 		if ( is_null( $resultPageSet ) ) {
 			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'message' );
