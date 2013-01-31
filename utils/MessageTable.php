@@ -57,11 +57,8 @@ class MessageTable {
 		MessageGroup $group
 	) {
 
-		if ( SpecialTranslate::isBeta( $context->getRequest() ) ) {
-			$table = new TuxMessageTable( $collection, $group );
-		} else {
-			$table = new self( $collection, $group );
-		}
+
+		$table = new self( $collection, $group );
 		$table->setContext( $context );
 		wfRunHooks( 'TranslateMessageTableInit', array( &$table, $context, $collection, $group ) );
 		return $table;
