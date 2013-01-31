@@ -158,38 +158,15 @@ abstract class TranslateTask {
 class CustomFilteredMessagesTask extends TranslateTask {
 	protected $id = 'custom';
 
-	protected function preinit() {
-		$code = $this->options['language'];
-		$this->collection = $this->group->initCollection( $code );
-		$this->collection->filter( 'ignored' );
-		if ( !isset( $this->nondefaults['optional'] ) ) {
-			$this->collection->filter( 'optional' );
-		}
+	protected function preinit() {}
 
-		$filter = $this->options['filter'];
+	protected function postinit() {}
 
-		foreach ( explode( '|', $filter ) as $cond ) {
-			if ( trim( $cond ) === '' ) {
-				continue;
-			}
-
-			$negate = false;
-			if ( $cond[0] === '!' ) {
-				$negate = true;
-				$cond = substr( $cond, 1 );
-			}
-			$this->collection->filter( $cond, $negate );
-		}
-	}
-
-	protected function postinit() {
-		$this->collection->loadTranslations();
-	}
+	protected function doPaging() {}
 
 	protected function output() {
-		$table = MessageTable::newFromContext( $this->context, $this->collection, $this->group );
-		$table->appendEditLinkParams( 'loadtask', $this->getId() );
-		return $table->fullTable( $this->offsets, $this->nondefaults );
+		$table = new TuxMessageTable( $this->context, $this->group, $this->options['language'] );
+		return $table->fullTable();
 	}
 }
 

@@ -149,7 +149,6 @@
 
 		messagegroup = $loader.data( 'messagegroup' );
 		pageSize = $loader.data( 'pagesize' );
-		remaining = $loader.data( 'remaining' );
 		targetLanguage = $messageList.data( 'targetlangcode' );
 
 		$.when(
@@ -162,17 +161,21 @@
 				addMessage( message );
 			} );
 
-			if ( result['query-continue'] ) {
-				remaining = remaining - pageSize;
-				offset = result['query-continue'].messagecollection.mcoffset;
-				$loader.data( 'offset', offset )
-					.data( 'remaining', remaining );
-				$( '.tux-messagetable-loader-count' )
-					.text( mw.msg( 'tux-messagetable-more-messages', remaining ) );
-			} else {
+			if ( result['query-continue'] === undefined ) {
 				// End of messages
 				$loader.data( 'offset', -1 ).addClass( 'hide' );
+				return;
 			}
+
+			$loader.data( 'offset', result['query-continue'].messagecollection.mcoffset );
+
+			remaining = result.query.metadata.remaining;
+			$( '.tux-messagetable-loader-count' ).text(
+				mw.msg( 'tux-messagetable-more-messages', remaining )
+			);
+			$( '.tux-messagetable-loader-more' ).text(
+				mw.msg( 'tux-messagetable-loading-messages', Math.min( remaining, pageSize ) )
+			);
 		} );
 	}
 
