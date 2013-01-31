@@ -42,42 +42,48 @@
 				$loadAllButton,
 				groupSelector = this;
 
-			this.$menu = $( '<div class="ext-translate-msggroup-selector-menu grid"></div>' );
+			this.$menu = $( '<div class="ext-translate-msggroup-selector-menu grid">' );
 
-			$groupTitle = $( '<div>' ).addClass( 'row' )
-				.append( $( '<h3>' ).addClass( 'ten columns title' )
-				.text( mw.msg( 'translate-msggroupselector-projects' ) )
-			);
+			$groupTitle = $( '<div>' )
+				.addClass( 'row' )
+				.append(
+					$( '<h3>' )
+						.addClass( 'ten columns title' )
+						.text( mw.msg( 'translate-msggroupselector-projects' ) )
+				);
 
 			$searchIcon = $( '<div>' )
 				.addClass( 'two columns ext-translate-msggroup-search-icon' );
 
 			$search = $( '<div>' ).addClass( 'ten columns' )
-				.append( $( '<input type="text">' ).addClass( 'ext-translate-msggroup-search-input' )
-				.attr( {
-					'placeholder': mw.msg( 'translate-msggroupselector-search-placeholder' )
-				} )
-			);
+				.append(
+					$( '<input type="text">' )
+						.addClass( 'ext-translate-msggroup-search-input' )
+						.attr( {
+							placeholder: mw.msg( 'translate-msggroupselector-search-placeholder' )
+						} )
+				);
 
 			$listFilters = $( '<div>' ).addClass( 'filters six columns' )
-				.append( $( '<div>' )
-				.addClass( 'ext-translate-msggroup-category all selected' )
-				.text( mw.msg( 'translate-msggroupselector-search-all' ) ) )
-				.append( $( '<div>' )
-				.addClass( 'ext-translate-msggroup-category recent' )
-				.text( mw.msg( 'translate-msggroupselector-search-recent' ) )
-			);
+				.append(
+					$( '<div>' )
+						.addClass( 'ext-translate-msggroup-category all selected' )
+						.text( mw.msg( 'translate-msggroupselector-search-all' ) ),
+					$( '<div>' )
+						.addClass( 'ext-translate-msggroup-category recent' )
+						.text( mw.msg( 'translate-msggroupselector-search-recent' ) )
+				);
 
-			$searchGroup = $( '<div>' ).addClass( 'six columns search-group' )
-				.append( $searchIcon )
-				.append( $search );
+			$searchGroup = $( '<div>' )
+				.addClass( 'six columns search-group' )
+				.append( $searchIcon, $search );
 
-			$listFiltersGroup = $( '<div>' ).addClass( 'row' ).addClass( 'filters-group' )
-				.append( $listFilters ).append( $searchGroup );
+			$listFiltersGroup = $( '<div>' )
+				.addClass( 'row filters-group' )
+				.append( $listFilters, $searchGroup );
 
-			$msgGroupList = $( '<div>' ).addClass( 'row ext-translate-msggroup-list' );
-
-			$loadAllRow = $( [] );
+			$msgGroupList = $( '<div>' )
+				.addClass( 'row ext-translate-msggroup-list' );
 
 			// Show the 'Load all messages' button only if there is a parent group
 			if ( groupSelector.parentGroupId ) {
@@ -93,6 +99,8 @@
 				$loadAllRow = $( '<div>' )
 					.addClass( 'row footer' )
 					.append( $loadAllButton );
+			} else {
+				$loadAllRow = $( [] );
 			}
 
 			this.$menu.append( $groupTitle, $listFiltersGroup, $msgGroupList, $loadAllRow );
@@ -110,6 +118,7 @@
 
 			this.$menu.show();
 			this.shown = true;
+
 			return false;
 		},
 
@@ -120,6 +129,7 @@
 		hide: function () {
 			this.$menu.hide();
 			this.shown = false;
+
 			return false;
 		},
 
@@ -142,9 +152,9 @@
 		 */
 		listen: function () {
 			var groupSelector = this,
-				messageGroup,
 				$search;
 
+			// Hide the selector panel when clicking outside of it
 			$( 'html' ).on( 'click', function () {
 				groupSelector.hide();
 			} );
@@ -162,7 +172,8 @@
 			} );
 
 			groupSelector.$menu.on( 'click', '.ext-translate-msggroup-item', function () {
-				messageGroup = $( this ).data( 'msggroup' );
+				var messageGroup = $( this ).data( 'msggroup' );
+
 				groupSelector.$group
 					.text( messageGroup.label )
 					.removeClass( 'tail' )
@@ -179,29 +190,28 @@
 				}
 			} );
 
-			groupSelector.$menu.find( '.ext-translate-msggroup-category' )
-				.on( 'click', function () {
-					var parentGroupId;
+			groupSelector.$menu.find( '.ext-translate-msggroup-category' ).on( 'click', function () {
+				var $this = $( this );
 
-					/* Do nothing if user clicks active tab. Fixes two things:
-					 *  - The blue bottom border highlight doesn't jump around
-					 *  - No flash when clicking recent tab again
-					 */
-					if ( $( this ).hasClass( 'selected' ) ) {
-						return;
-					}
+				/* Do nothing if user clicks the active tab.
+				* Fixes two things:
+				* - The blue bottom border highlight doesn't jump around
+				* - No flash when clicking recent tab again
+				*/
+				if ( $this.hasClass( 'selected' ) ) {
+					return;
+				}
 
-					groupSelector.$menu.find( '.ext-translate-msggroup-category' )
-						.toggleClass( 'selected' );
+				groupSelector.$menu.find( '.ext-translate-msggroup-category' )
+					.toggleClass( 'selected' );
 
-					if ( $( this ).hasClass( 'recent' ) ) {
-						groupSelector.getRecentGroups();
-					} else {
-						groupSelector.$menu.find( '.ext-translate-msggroup-list' ).empty();
-						parentGroupId = groupSelector.$group.data( 'msggroupid' );
-						groupSelector.loadGroups( parentGroupId );
-					}
-				} );
+				if ( $this.hasClass( 'recent' ) ) {
+					groupSelector.getRecentGroups();
+				} else {
+					groupSelector.$menu.find( '.ext-translate-msggroup-list' ).empty();
+					groupSelector.loadGroups( groupSelector.$group.data( 'msggroupid' ) );
+				}
+			} );
 
 			$search = this.$menu.find( '.ext-translate-msggroup-search-input' );
 			$search.on( 'click', $.proxy( this.show, this ) )
@@ -211,7 +221,6 @@
 			if ( this.eventSupported( 'keydown' ) ) {
 				$search.on( 'keydown', $.proxy( this.keyup, this ) );
 			}
-
 		},
 
 		/**
@@ -258,6 +267,7 @@
 				$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' ),
 				recentMessageGroups = $( '.ext-translate-msggroup-selector' )
 					.data( 'recentmsggroups' );
+
 			queryParams = {
 				action: 'translateuser',
 				format: 'json'
@@ -334,6 +344,7 @@
 			// Show the initial list if the query is empty/undefined/null
 			if ( !query ) {
 				this.addGroupRows( this.parentGroupId, null );
+
 				return;
 			}
 
@@ -341,14 +352,18 @@
 				this.flatGroupList = [];
 				parentGroupId = this.$group.data( 'msggroupid' );
 				messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
+
 				if ( parentGroupId ) {
 					currentGroup = mw.translate.getGroup( parentGroupId, messageGroups ).groups;
 				} else {
 					currentGroup = messageGroups;
 				}
+
 				this.flattenGroupList( currentGroup, {} );
 			}
 
+			// Optimization, assuming that people search the beginning
+			// of the group name.
 			matcher = new RegExp( '^' + escapeRegex( query ), 'i' );
 
 			for ( index = 0; index < this.flatGroupList.length; index++ ) {
@@ -362,6 +377,9 @@
 		},
 
 		/**
+		 * Load message groups and relevant properties
+		 * using the API and display the loaded groups
+		 * in the group selector.
 		 *
 		 * @param parentGroupId
 		 */
@@ -440,9 +458,7 @@
 				$msgGroupRows.push( prepareMessageGroupRow( messagegroup ) );
 			} );
 
-			if ( !parentGroupId ) {
-				$msgGroupList.append( $msgGroupRows );
-			} else {
+			if ( parentGroupId ) {
 				$parent = $msgGroupList.find( '.ext-translate-msggroup-item[data-msggroupid="' +
 					parentGroupId + '"]' );
 
@@ -451,19 +467,20 @@
 				} else {
 					$msgGroupList.append( $msgGroupRows );
 				}
+			} else {
+				$msgGroupList.append( $msgGroupRows );
 			}
 		},
 
 		/**
+		 * Check that a DOM event is supported by the $menu jQuery object.
 		 *
 		 * @param eventName
 		 * @returns {boolean}
 		 */
 		eventSupported: function ( eventName ) {
-			var isSupported,
-				$search = this.$menu.find( '.ext-translate-msggroup-search-input' );
-
-			isSupported = eventName in $search;
+			var $search = this.$menu.find( '.ext-translate-msggroup-search-input' ),
+				isSupported = eventName in $search;
 
 			if ( !isSupported ) {
 				this.$element.setAttribute( eventName, 'return;' );
@@ -473,6 +490,7 @@
 			return isSupported;
 		}
 	};
+
 	/*
 	 * msggroupselector PLUGIN DEFINITION
 	 */
@@ -534,7 +552,7 @@
 
 		$label = $( '<div>' ).addClass( 'seven columns label' )
 			.text( messagegroup.label )
-			.attr( { title: messagegroup.description } )
+			.attr( 'title', messagegroup.description )
 			.append( $statsbar );
 
 		if ( messagegroup.icon && messagegroup.icon.raster ) {
@@ -545,8 +563,8 @@
 		if ( messagegroup.icon && messagegroup.icon.vector ) {
 			style +=
 				'background-image: -webkit-linear-gradient(transparent, transparent), url(--);' +
-					'background-image: -moz-linear-gradient(transparent, transparent), url(--);' +
-					'background-image: linear-gradient(transparent, transparent), url(--);';
+				'background-image: -moz-linear-gradient(transparent, transparent), url(--);' +
+				'background-image: linear-gradient(transparent, transparent), url(--);';
 			style = style.replace( /--/g, messagegroup.icon.vector );
 		}
 
@@ -560,7 +578,7 @@
 			$subGroupsLabel = $( '<div>' )
 				.addClass( 'four columns subgroup-info' )
 				.text( mw.msg( 'translate-msggroupselector-view-subprojects',
-				messagegroup.groups.length ) );
+					messagegroup.groups.length ) );
 		}
 
 		return $row.append( $icon, $label, $subGroupsLabel );
@@ -588,13 +606,13 @@
 
 			if ( messageGroup.id === messageGroupId ) {
 				return messageGroup;
-			} else {
-				if ( messageGroup.groups ) {
-					messageGroup = mw.translate.getGroup( messageGroupId, messageGroup.groups );
+			}
 
-					if ( messageGroup ) {
-						return messageGroup;
-					}
+			if ( messageGroup.groups ) {
+				messageGroup = mw.translate.getGroup( messageGroupId, messageGroup.groups );
+
+				if ( messageGroup ) {
+					return messageGroup;
 				}
 			}
 		}
