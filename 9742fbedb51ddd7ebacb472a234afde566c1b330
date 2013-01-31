@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//2+U\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-31T12:12:52Z",
+      "side": 1,
+      "message": "Shouldn\u0027t loadMessages happen after changeUrl, in case changeUrl triggers page reload?",
+      "revId": "9742fbedb51ddd7ebacb472a234afde566c1b330",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//2+E\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-31T12:12:52Z",
+      "side": 1,
+      "message": "$( this ) repeated three times.",
+      "revId": "9742fbedb51ddd7ebacb472a234afde566c1b330",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//294\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-01-31T12:12:52Z",
+      "side": 1,
+      "message": "Why not $this.siblings().removeClass( \u0027selected\u0027 ); ?",
+      "revId": "9742fbedb51ddd7ebacb472a234afde566c1b330",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
