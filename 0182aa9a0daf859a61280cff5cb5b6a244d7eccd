@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//3DI\u003d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-01-31T06:53:34Z",
+      "side": 1,
+      "message": "You can use $this-\u003emsg() here instead of wfMessage.",
+      "revId": "0182aa9a0daf859a61280cff5cb5b6a244d7eccd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
