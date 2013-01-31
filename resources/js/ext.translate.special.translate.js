@@ -115,6 +115,24 @@
 			} );
 		},
 
+		changeFilter: function ( filter ) {
+			var $loader;
+
+			$loader = $( '.tux-messagetable-loader' ).removeClass( 'hide' );
+
+			$loader.data( 'remaining', mw.translate.getStatsForGroup( $loader.data( 'messagegroup' ) ).total )
+				.data( 'filter', filter )
+				.removeData( 'offset' )
+				.removeAttr( 'data-offset' );
+
+			// clear current messages;
+			$( '.tux-message' ).remove();
+			mw.translate.loadMessages();
+			mw.translate.changeUrl( {
+				'filter': filter
+			} );
+		},
+
 		changeUrl: function ( params ) {
 			var uri = new mw.Uri( window.location.href );
 
@@ -286,6 +304,17 @@
 					$selector.text( mw.msg( 'translate-workflowstatus', stateText ) );
 				} );
 			} );
+
+		// Message filter click handler
+		$translateContainer.find( 'ul.tux-message-selector > li' ).on( 'click', function () {
+			var filter;
+
+			filter = $( this ).data( 'filter' );
+			mw.translate.changeFilter( filter );
+			$( this ).parent().find( '.selected' ).removeClass( 'selected' );
+			$( this ).addClass( 'selected' );
+			return false;
+		} );
 
 	} );
 
