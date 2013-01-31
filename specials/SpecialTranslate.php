@@ -397,7 +397,10 @@ class SpecialTranslate extends SpecialPage {
 			ksort( $taskParams );
 			$href = $this->getTitle()->getLocalUrl( $taskParams );
 			$link = Html::element( 'a', array( 'href' => $href ), $this->msg( $tab ) );
-			$output .= Html::rawElement( 'li', array( 'class' => "column $selected" ), $link );
+			$output .= Html::rawElement( 'li', array(
+				'class' => "column $selected",
+				'data-filter' => strval( $filter )
+			), $link );
 		}
 
 		$options = array(

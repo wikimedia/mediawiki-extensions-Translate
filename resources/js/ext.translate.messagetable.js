@@ -4,7 +4,7 @@
 	mw.translate = mw.translate || {};
 
 	mw.translate = $.extend( mw.translate, {
-		getMessages: function ( messageGroup, language, offset, limit ) {
+		getMessages: function ( messageGroup, language, offset, limit, filter ) {
 			var queryParams,
 				apiURL = mw.util.wikiScript( 'api' );
 
@@ -16,7 +16,7 @@
 				mclanguage: language,
 				mcoffset: offset,
 				mclimit: limit,
-				mcfilter: mw.Uri().query.filter,
+				mcfilter: filter || mw.Uri().query.filter,
 				mcprop: [ 'definition', 'translation', 'tags', 'properties' ].join( '|' )
 			};
 
@@ -145,7 +145,8 @@
 			targetLanguage,
 			$loader = $( '.tux-messagetable-loader' ),
 			$messageList = $( '.tux-messagelist' ),
-			offset = $loader.data( 'offset' );
+			offset = $loader.data( 'offset' ),
+			filter = $loader.data( 'filter' );
 
 		messagegroup = $loader.data( 'messagegroup' );
 		pageSize = $loader.data( 'pagesize' );
@@ -153,7 +154,7 @@
 		targetLanguage = $messageList.data( 'targetlangcode' );
 
 		$.when(
-			mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize )
+			mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize, filter )
 		).then( function ( result ) {
 			var messages = result.query.messagecollection;
 
