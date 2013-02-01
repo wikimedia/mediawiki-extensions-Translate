@@ -93,7 +93,6 @@
 			// immediately move to the next message.
 			translateEditor.next();
 
-			// XXX: Any validations to be done before proceeding?
 			api.post( {
 				action: 'edit',
 				title: translateEditor.message.title,
@@ -117,8 +116,6 @@
 				translateEditor.removeWarning( 'diff' );
 				translateEditor.removeWarning( 'validation' );
 			} ).fail( function ( errorCode, results ) {
-				// TODO: Should also handle complete failure,
-				// for example client or server going offline.
 				translateEditor.savingError( results.error.info );
 
 				translateEditor.saving = false;
@@ -277,8 +274,6 @@
 						lastWarningIndex = $moreWarnings.length - 1;
 
 					// If the warning list is not open only one warning is shown
-					// TODO: This class is now removed from CSS files and is used only for identifying the tab's state.
-					// It's not necessarily bad, but there may be something more robust.
 					if ( $this.hasClass( 'open' ) ) {
 						$moreWarnings.each( function ( index, element ) {
 							// The first element must always be shown
@@ -710,8 +705,9 @@
 		 * @param {object} definitiondiff A definitiondiff object as returned by API.
 		 */
 		addDefinitionDiff: function ( definitiondiff ) {
-			// TODO: Handle the error
+
 			if ( !definitiondiff || definitiondiff.error ) {
+				mw.log( 'Error loading translation diff ' + definitiondiff && definitiondiff.error );
 				return;
 			}
 

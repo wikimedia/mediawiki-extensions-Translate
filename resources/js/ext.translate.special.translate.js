@@ -64,7 +64,6 @@
 
 			$loader
 				.data( 'messagegroup', group.id )
-				// FIXME it should match filter.
 				.data( 'remaining', mw.translate.getStatsForGroup( group.id ).total )
 				.removeData( 'offset' )
 				.removeAttr( 'data-offset' )
@@ -82,7 +81,6 @@
 				$description.html( $( parsedDescription ).html() );
 			} ).fail( function ( errorCode, results ) {
 				$description.html( group.description );
-				// TODO
 				mw.log( 'Error parsing description for group ' +
 					group.id + ': ' + errorCode + ' ' + results.error.info );
 			} );
