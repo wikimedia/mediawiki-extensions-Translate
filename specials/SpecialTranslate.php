@@ -644,43 +644,11 @@ class SpecialTranslate extends SpecialPage {
 			'data-token' => ApiGroupReview::getToken( 0, '' ),
 			'data-group' => $this->options['group'],
 			'data-language' => $this->options['language'],
-		), $this->msg( "translate-workflow-state-" )->escaped() );
+		) );
 
 		$selectorRow = Html::openElement( 'div', array( 'class' => 'row' ) );
 		$selectorRow .= $selector;
-
 		$options = Html::openElement( 'ul', array( 'class' => 'tux-workflow-status-selector hide' ) );
-
-		$user = $this->getUser();
-		if ( $user->isAllowed( 'translate-groupreview' ) ) {
-			// Add an option for every state
-			foreach ( $stateConfig as $state => $config ) {
-				$stateMessage = $this->msg( "translate-workflow-state-$state" );
-				$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
-
-				$attributes = array( 'data-state' => $state );
-
-				if ( $state === strval( $current ) ) {
-					$attributes['class'] = 'selected';
-					$selector = Html::element( 'div', array(
-						'class' => 'tux-workflow-status three columns',
-						'data-token' => ApiGroupReview::getToken( 0, '' ),
-						'data-group' => $this->options['group'],
-						'data-language' => $this->options['language'],
-					), $this->msg( 'translate-workflowstatus', $stateText )->escaped() );
-					$selectorRow .= $selector;
-				}
-
-				if ( is_array( $config ) && isset( $config['right'] )
-					&& !$user->isAllowed( $config['right'] )
-				) {
-					// Dont add - continue
-					continue;
-				}
-
-				$options .= Html::element( 'li', $attributes, $stateText );
-			}
-		}
 		$options .= Html::closeElement( 'ul');
 		return $selectorRow. $options. Html::closeElement( 'div');
 	}

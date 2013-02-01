@@ -92,6 +92,7 @@
 				group: group.id,
 				filter: mw.Uri().query.filter || '!translated'
 			} );
+			mw.translate.prepareWorkflowSelector( group );
 		},
 
 		changeLanguage: function ( language ) {
@@ -160,6 +161,32 @@
 				};
 
 			return api.post( params );
+		},
+
+
+		prepareWorkflowSelector: function ( group ) {
+			var $selector = $( 'ul.tux-workflow-status-selector' ),
+				workflowstates = group.workflowstates;
+
+			$selector.empty();
+
+			$.each( workflowstates, function ( id, workflowstate ) {
+				console.log( workflowstate  );
+				if ( workflowstate._canchange ) {
+					workflowstate.id = id;
+					$selector.append( $('<li>')
+						.data( 'state', workflowstate )
+						.text( workflowstate._name )
+						.on( 'click', function() {
+							$selector.find( '.selected' ).removeClass( 'selected' );
+							$( this ).addClass( 'selected' )
+								.parent().addClass( 'hide' );
+							workflowSelectionHandler( $( this ).data( 'state' ) );
+						})
+					);
+				}
+			} );
+			return $selector;
 		}
 	} );
 
@@ -209,6 +236,19 @@
 			mw.translate.changeGroup( msgGroup );
 		}
 	}
+
+	function workflowSelectionHandler ( state ) {
+		var $status = $( '.tux-workflow-status' );
+
+		$status.text( mw.msg( 'translate-workflow-set-doing' ) );
+		mw.translate.changeWorkflowStatus( $status.data( 'group' ),
+			$status.data( 'language' ),
+			state.id,
+			$status.data( 'token' )
+		).done( function() {
+			$status.text( mw.msg( 'translate-workflowstatus', state._name ) );
+		} );
+	};
 
 	$( document ).ready( function () {
 		var uiLanguage, $translateContainer,
@@ -283,26 +323,6 @@
 		$translateContainer.find( '.tux-workflow-status' )
 			.on( 'click', function () {
 				$( this ).next( 'ul' ).toggleClass( 'hide' );
-			} );
-
-		$translateContainer.find( '.tux-workflow-status-selector li' )
-			.on( 'click', function () {
-				var state, stateText, $selector;
-
-				state = $( this ).data( 'state' );
-				stateText = $( this ).text();
-				$selector  = $translateContainer.find( '.tux-workflow-status' );
-				$( this ).parent().find( '.selected' ).removeClass( 'selected' );
-				$( this ).addClass( 'selected' )
-					.parent().addClass( 'hide' );
-				$selector.text( mw.msg( 'translate-workflow-set-doing' ) );
-				mw.translate.changeWorkflowStatus( $selector.data( 'group' ),
-					$selector.data( 'language' ),
-					state,
-					$selector.data( 'token' )
-				).done( function() {
-					$selector.text( mw.msg( 'translate-workflowstatus', stateText ) );
-				} );
 			} );
 
 		// Message filter click handler

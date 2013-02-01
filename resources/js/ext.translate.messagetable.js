@@ -161,7 +161,24 @@
 		$.when(
 			mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize, filter )
 		).then( function ( result ) {
-			var messages = result.query.messagecollection;
+			var messages = result.query.messagecollection,
+				$workflowSelector = $( 'ul.tux-workflow-status-selector > li' );
+
+			if ( result.query.metadata && result.query.metadata.state ) {
+
+				$workflowSelector.each( function () {
+					var $this = $( this );
+
+					if ( $this.data( 'state' ) === result.query.metadata.state ) {
+						$( '.tux-workflow-status' ).text( mw.msg( 'translate-workflowstatus',  $this.text() ) );
+						$this.addClass( 'selected' );
+					} else {
+						$this.removeClass( 'selected' );
+					}
+				} );
+			} else {
+				$( '.tux-workflow-status' ).text( mw.msg( 'translate-workflow-state-' ) );
+			}
 
 			$.each( messages, function ( index, message ) {
 				message.group = messagegroup;
