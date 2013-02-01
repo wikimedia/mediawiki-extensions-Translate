@@ -55,7 +55,6 @@
 				api = new mw.Api(),
 				newDocumentation = translateEditor.$editor.find( '.infocolumn-block textarea' ).val();
 
-			// XXX: Any validations to be done before proceeding?
 			api.post( {
 				action: 'edit',
 				title: translateEditor.message.title
@@ -72,7 +71,6 @@
 						},
 						function ( errorCode, results ) {
 							$messageDesc.html( newDocumentation );
-							// TODO
 							mw.log( 'Error parsing documentation ' + errorCode + ' ' + results.error.info );
 						}
 					);
@@ -82,11 +80,9 @@
 
 					translateEditor.hideDocumentationEditor();
 				} else {
-					// TODO
 					mw.log( 'Problem saving documentation' );
 				}
 			} ).fail( function ( errorCode, results ) {
-				// TODO better handling is needed
 				mw.log( 'Error saving documentation ' + errorCode + ' ' + results.error.info );
 			} );
 		},
@@ -379,7 +375,6 @@
 				title: this.message.title,
 				format: 'json'
 			} ).done( function ( result ) {
-				// TODO This may be an error that must be handled
 				if ( !result.helpers ) {
 					mw.log( 'API did not return any translation helpers.' );
 					return false;
@@ -392,7 +387,6 @@
 				translateEditor.showSupportOptions( result.helpers.support );
 				translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
 			} ).fail( function ( errorCode, results ) {
-				// TODO: proper handling is needed
 				mw.log( 'Error loading translation aids ' + errorCode + results.error.info );
 			} );
 		}

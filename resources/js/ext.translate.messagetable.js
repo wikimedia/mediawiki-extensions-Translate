@@ -245,7 +245,6 @@
 			var $b, successFunction, failFunction, params;
 			$b = $( this );
 
-			// TODO Avoid creating functions inside a loop
 			successFunction = function ( data ) {
 				if ( data.error ) {
 					var reason = mw.msg( 'api-error-' + data.error.code );
