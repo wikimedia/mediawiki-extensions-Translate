@@ -8364,11 +8364,14 @@ Asigurați-vă că are eticheta <nowiki><translate></nowiki> și are o sintaxă 
  */
 $messages['roa-tara'] = array(
 	'pagetranslation' => 'Pàgene de traduzione',
+	'tpt-section-new' => 'Nova unità de traduzione.
+Nome: $1',
 	'tpt-section-deleted' => 'Unità de traduzione $1',
 	'tpt-template' => "Pàgene d'u template",
 	'tpt-diff-old' => 'Teste precedende',
 	'tpt-diff-new' => 'Teste nuève',
 	'tpt-nosuchpage' => "Pàgene $1 non g'esiste",
+	'tpt-edit-failed' => "Non ge pozze aggiornà 'a pàgene: $1",
 	'tpt-select-prioritylangs-reason' => 'Mutive:',
 	'tpt-rev-mark' => 'signe da traducere',
 	'tpt-rev-unmark' => "live da 'a traduzione",
@@ -8380,12 +8383,15 @@ $messages['roa-tara'] = array(
 	'tpt-aggregategroup-add' => 'Aggiunge',
 	'tpt-aggregategroup-save' => 'Reggìstre',
 	'tpt-aggregategroup-new-name' => 'Nome:',
+	'pt-log-name' => 'Archivije de le traduziune de le pàggene',
+	'pt-movepage-list-pages' => 'Elenghe de le pàggene da spustà',
 	'pt-movepage-current' => 'Nome de mò:',
 	'pt-movepage-new' => 'Nome nuève:',
 	'pt-movepage-reason' => 'Mutive:',
 	'pt-movepage-subpages' => 'Spuèste tutte le sottopàggene',
 	'pt-movepage-action-perform' => "Fà 'u spostamende",
 	'pt-movepage-action-other' => "Cange 'a destinazione",
+	'pt-deletepage-action-other' => "Cange 'a destinazione",
 	'pt-deletepage-current' => "Nome d'a pàgene:",
 	'pt-deletepage-reason' => 'Mutive:',
 );
