@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADiH//2IM\u003d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 708,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-01T09:29:04Z",
+      "side": 1,
+      "message": "todo?",
+      "revId": "424ad5c2bc9f27349bf67194db0ba3ba7738a6ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAADiH//2II\u003d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-01T09:29:04Z",
+      "side": 1,
+      "message": "This line should be removed too, no?",
+      "revId": "424ad5c2bc9f27349bf67194db0ba3ba7738a6ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
