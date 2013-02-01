@@ -270,7 +270,8 @@
 			$.when(
 				mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize, filter )
 			).then( function ( result ) {
-				var messages = result.query.messagecollection;
+				var messages = result.query.messagecollection,
+					$workflowSelector = $( 'ul.tux-workflow-status-selector ' );
 
 				$.each( messages, function ( index, message ) {
 					message.group = messagegroup;
@@ -301,6 +302,20 @@
 				$( '.tux-messagetable-loader-more' ).text(
 					mw.msg( 'tux-messagetable-loading-messages', Math.min( remaining, pageSize ) )
 				);
+
+				mw.translate.prepareWorkflowSelector( mw.translate.getGroup( messagegroup ) );
+				if ( result.query.metadata && result.query.metadata.state ) {
+					$workflowSelector.find( 'li' ).each( function () {
+						var $this = $( this );
+
+						if ( $this.data( 'state' ).id === result.query.metadata.state ) {
+							$( '.tux-workflow-status' ).text( mw.msg( 'translate-workflowstatus',  $this.text() ) );
+							$this.addClass( 'selected' );
+						} else {
+							$this.removeClass( 'selected' );
+						}
+					} );
+				}
 			} );
 		},
 
@@ -394,7 +409,6 @@
 			$( this ).addClass( 'hide' );
 		} );
 
-		$( '.tux-messagelist' ).messagetable();
 	} );
 
 	var delay = ( function () {
