@@ -86,7 +86,7 @@
 					.text( mw.msg( 'translate-msggroupselector-load-from-all' ) )
 					.click( function () {
 						mw.translate.changeGroup(
-							getGroup( groupSelector.parentGroupId, $( '.ext-translate-msggroup-selector' ).data( 'msggroups' ) )
+							mw.translate.getGroup( groupSelector.parentGroupId, $( '.ext-translate-msggroup-selector' ).data( 'msggroups' ) )
 						);
 					} );
 
@@ -269,7 +269,7 @@
 				var msgGroupRows = [];
 
 				$.each( recentgroups, function ( index, messageGroupId ) {
-					var messagegroup = getGroup( messageGroupId, messageGroups );
+					var messagegroup = mw.translate.getGroup( messageGroupId, messageGroups );
 
 					if ( messagegroup ) {
 						msgGroupRows.push( prepareMessageGroupRow( messagegroup ) );
@@ -342,7 +342,7 @@
 				parentGroupId = this.$group.data( 'msggroupid' );
 				messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
 				if ( parentGroupId ) {
-					currentGroup = getGroup( parentGroupId, messageGroups ).groups;
+					currentGroup = mw.translate.getGroup( parentGroupId, messageGroups ).groups;
 				} else {
 					currentGroup = messageGroups;
 				}
@@ -414,7 +414,7 @@
 				messageGroups = msgGroups;
 			} else {
 				if ( parentGroupId ) {
-					messageGroups = getGroup( parentGroupId, messageGroups ).groups;
+					messageGroups = mw.translate.getGroup( parentGroupId, messageGroups ).groups;
 				}
 			}
 
@@ -566,6 +566,8 @@
 		return $row.append( $icon, $label, $subGroupsLabel );
 	}
 
+	mw.translate = mw.translate || {};
+
 	/**
 	 * Find a group from an array of message groups
 	 * recurse it through sub groups.
@@ -574,8 +576,12 @@
 	 * @param {Array} messageGroups Array of messageGroups
 	 * @return {Object|boolean} Messagegroup object
 	 */
-	function getGroup( messageGroupId, messageGroups ) {
+	mw.translate.getGroup = function ( messageGroupId, messageGroups ) {
 		var i, messageGroup;
+
+		if ( !messageGroups ) {
+			messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
+		}
 
 		for ( i = 0; i < messageGroups.length; i++ ) {
 			messageGroup = messageGroups[i];
@@ -584,7 +590,7 @@
 				return messageGroup;
 			} else {
 				if ( messageGroup.groups ) {
-					messageGroup = getGroup( messageGroupId, messageGroup.groups );
+					messageGroup = mw.translate.getGroup( messageGroupId, messageGroup.groups );
 
 					if ( messageGroup ) {
 						return messageGroup;
@@ -594,7 +600,7 @@
 		}
 
 		return false;
-	}
+	};
 
 	var delay = ( function () {
 		var timer = 0;
