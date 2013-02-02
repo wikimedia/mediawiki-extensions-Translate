@@ -2593,6 +2593,7 @@ $messages['ee'] = array(
  * @author Dead3y3
  * @author Flyax
  * @author Lou
+ * @author Protnet
  * @author ZaDiak
  */
 $messages['el'] = array(
@@ -2608,7 +2609,7 @@ $messages['el'] = array(
 	'tpt-diff-old' => 'Προηγούμενο κείμενο',
 	'tpt-diff-new' => 'Νέο κείμενο',
 	'tpt-submit' => 'Σήμανση αυτής της έκδοσης για μετάφραση',
-	'tpt-sections-oldnew' => 'Νέες και υπάρχοντες μονάδες μετάφρασης',
+	'tpt-sections-oldnew' => 'Νέες και υπάρχουσες μονάδες μετάφρασης',
 	'tpt-sections-deleted' => 'Διαγραμμένες μονάδες μετάφρασης',
 	'tpt-sections-template' => 'Πρότυπο μετάφρασης σελίδας',
 	'tpt-badtitle' => 'Ο τίτλος σελίδας που δόθηκε ($1) δεν είναι έγκυρος τίτλος',
@@ -8394,6 +8395,7 @@ Nome: $1',
 	'pt-deletepage-action-other' => "Cange 'a destinazione",
 	'pt-deletepage-current' => "Nome d'a pàgene:",
 	'pt-deletepage-reason' => 'Mutive:',
+	'pt-deletepage-list-pages' => 'Elenghe de le pàggene da scangellà',
 );
 
 /** Russian (русский)
@@ -9017,6 +9019,15 @@ Prosimo, preverite [[Special:Log/pagetranslation|dnevnik strani prevodov]] za na
 	'pt-deletepage-intro' => 'Ta posebna stran vam omogoča izbris celotne prevedljive strani ali individualne strani s prevodom v nekem jeziku.
 Dejanje izbrisa ne bo izvedeno takoj, ker je treba izbrisati tudi vse strani, ki so od njih odvisne.
 Neuspehi bodo zabeleženi v [[Special:Log/pagetranslation|dnevniku prevajanja strani]] in jih morate urediti ročno.',
+);
+
+/** Somali (Soomaaliga)
+ * @author Abshirdheere
+ */
+$messages['so'] = array(
+	'tpt-discouraged-language' => "'''Turjumidda $2 Maaha muhiimadda koowaad ee Boggaan.'''
+
+Maamulka waxa uu muhiimad uu siiyey turjumidda $3.",
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
