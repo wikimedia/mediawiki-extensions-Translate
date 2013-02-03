@@ -58,7 +58,7 @@
 				.append( $( '<span>' )
 					.addClass( 'tux-status-unsaved' )
 					.text( mw.msg( 'tux-status-saving' ) )
-			);
+				);
 		},
 
 		/**
@@ -70,7 +70,7 @@
 				.append( $( '<span>' )
 					.addClass( 'tux-status-translated' )
 					.text( mw.msg( 'tux-status-translated' ) )
-			);
+				);
 
 			this.$messageItem.addClass( 'translated' );
 			this.dirty = false;
@@ -244,8 +244,8 @@
 			$sourceString = $( '<span>' )
 				.addClass( 'eleven column sourcemessage' )
 				.attr( {
-					'lang': $messageList.data( 'sourcelangcode' ),
-					'dir': $messageList.data( 'sourcelangdir' )
+					lang: $messageList.data( 'sourcelangcode' ),
+					dir: $messageList.data( 'sourcelangdir' )
 				} )
 				.text( sourceString );
 
@@ -282,8 +282,9 @@
 							}
 						} );
 
-						$this.removeClass( 'open' );
-						$this.text( mw.msg( 'tux-warnings-more', lastWarningIndex ) );
+						$this
+							.removeClass( 'open' )
+							.text( mw.msg( 'tux-warnings-more', lastWarningIndex ) );
 					} else {
 						$moreWarnings.each( function ( index, element ) {
 							// The first element must always be shown
@@ -292,16 +293,17 @@
 							}
 						} );
 
-						$this.addClass( 'open' );
-						$this.text( mw.msg( 'tux-warnings-hide' ) );
+						$this
+							.addClass( 'open' )
+							.text( mw.msg( 'tux-warnings-hide' ) );
 					}
 				} );
 
 			$textArea = $( '<textarea>' )
 				.attr( {
-					'placeholder': mw.msg( 'tux-editor-placeholder' ),
-					'lang': $messageList.data( 'targetlangcode' ),
-					'dir': $messageList.data( 'targetlangdir' )
+					placeholder: mw.msg( 'tux-editor-placeholder' ),
+					lang: $messageList.data( 'targetlangcode' ),
+					dir: $messageList.data( 'targetlangdir' )
 				} )
 				.on( 'input propertychange', function () {
 					var $this = $( this );
@@ -365,6 +367,7 @@
 						$textArea
 							.focus()
 							.val( sourceString );
+
 						$pasteOriginalButton.addClass( 'hide' );
 					} );
 
@@ -379,13 +382,13 @@
 				$requestRight = $( [] );
 
 				$saveButton = $( '<button>' )
-					.text( mw.msg( 'tux-editor-save-button-label' ) )
 					.attr( {
-						'accesskey': 's',
-						'title': mw.util.tooltipAccessKeyPrefix + 's',
-						'disabled': true
+						accesskey: 's',
+						title: mw.util.tooltipAccessKeyPrefix + 's',
+						disabled: true
 					} )
 					.addClass( 'blue button tux-editor-save-button' )
+					.text( mw.msg( 'tux-editor-save-button-label' ) )
 					.on( 'click', function () {
 						translateEditor.save();
 					} );
@@ -393,20 +396,21 @@
 				// When the user opens an outdated translation, the main button should be enabled
 				// and display a "confirm translation" label.
 				if ( this.$messageItem.hasClass( 'fuzzy' ) ) {
-					$saveButton.prop( 'disabled', false )
+					$saveButton
+						.prop( 'disabled', false )
 						.text( mw.msg( 'tux-editor-confirm-button-label' ) );
 				}
 			} else {
 				$editingButtonBlock = $( [] );
 
 				$requestRight = $( '<span>' )
-					.text( mw.msg( 'translate-edit-nopermission' ) )
 					.addClass( 'tux-editor-request-right' )
+					.text( mw.msg( 'translate-edit-nopermission' ) )
 					.append( $( '<a>' )
 						.text( mw.msg( 'translate-edit-askpermission' ) )
 						.addClass( 'tux-editor-ask-permission' )
 						.attr( {
-							'href': mw.util.wikiGetlink( mw.config.get( 'wgTranslatePermissionUrl' ) )
+							href: mw.util.wikiGetlink( mw.config.get( 'wgTranslatePermissionUrl' ) )
 						} )
 					);
 
@@ -418,12 +422,12 @@
 			}
 
 			$skipButton = $( '<button>' )
-				.text( mw.msg( 'tux-editor-skip-button-label' ) )
 				.attr( {
-					'accesskey': 'd',
-					'title': mw.util.tooltipAccessKeyPrefix + 'd'
+					accesskey: 'd',
+					title: mw.util.tooltipAccessKeyPrefix + 'd'
 				} )
 				.addClass( 'button tux-editor-skip-button' )
+				.text( mw.msg( 'tux-editor-skip-button-label' ) )
 				.on( 'click', function () {
 					translateEditor.skip();
 					translateEditor.next();
@@ -507,10 +511,9 @@
 			$warnings
 				.removeClass( 'hide' )
 				.append( $( '<div>' )
-					.addClass( 'tux-warning-message hide' )
-					.addClass( type )
+					.addClass( 'tux-warning-message hide ' + type )
 					.html( warning )
-			);
+				);
 
 			warningCount = $warnings.find( '.tux-warning-message' ).length;
 
@@ -535,16 +538,16 @@
 			if ( mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				if ( mw.translate.canTranslate() ) {
 					$messageDescSaveButton = $( '<button>' )
-						.text( mw.msg( 'tux-editor-doc-editor-save' ) )
 						.addClass( 'blue button tux-editor-save-button' )
 						.prop( 'disabled', true )
+						.text( mw.msg( 'tux-editor-doc-editor-save' ) )
 						.on( 'click', function () {
 							translateEditor.saveDocumentation();
 						} );
 
 					$messageDescCancelButton = $( '<button>' )
-						.text( mw.msg( 'tux-editor-doc-editor-cancel' ) )
 						.addClass( 'button tux-editor-skip-button' )
+						.text( mw.msg( 'tux-editor-doc-editor-cancel' ) )
 						.on( 'click', function () {
 							translateEditor.hideDocumentationEditor();
 						} );
@@ -610,8 +613,10 @@
 					$( '<span>' )
 						.text( mw.msg( 'tux-editor-need-more-help' ) ),
 					$( '<a>' )
-						.attr( 'href', '#' )
-						.attr( 'target', '_blank' )
+						.attr( {
+							href: '#',
+							target: '_blank'
+						} )
 						.text( mw.msg( 'tux-editor-ask-help' ) )
 				)
 			);
@@ -637,10 +642,11 @@
 			} );
 
 			this.$messageItem.addClass( 'hide' );
-			this.$editor.removeClass( 'hide' );
+			this.$editor
+				.removeClass( 'hide' )
+				.find( 'textarea' )
+					.focus();
 
-			// Focus the textarea.
-			this.$editor.find( 'textarea' ).focus();
 			this.shown = true;
 			this.$editTrigger.addClass( 'open' );
 
@@ -676,10 +682,12 @@
 
 		contract: function ( toggleIcon ) {
 			// Change the icon image
-			toggleIcon.removeClass( 'editor-contract' );
-			toggleIcon.addClass( 'editor-expand' );
+			toggleIcon
+				.removeClass( 'editor-contract' )
+				.addClass( 'editor-expand' );
 
-			this.$editor.find( '.infocolumn-block' ).removeClass( 'hide' );
+			this.$editor.find( '.infocolumn-block' )
+				.removeClass( 'hide' );
 			this.$editor.find( '.editcolumn' )
 				.removeClass( 'twelve' )
 				.addClass( 'seven' );
@@ -689,10 +697,12 @@
 
 		expand: function ( toggleIcon ) {
 			// Change the icon image
-			toggleIcon.removeClass( 'editor-expand' );
-			toggleIcon.addClass( 'editor-contract' );
+			toggleIcon
+				.removeClass( 'editor-expand' )
+				.addClass( 'editor-contract' );
 
-			this.$editor.find( '.infocolumn-block' ).addClass( 'hide' );
+			this.$editor.find( '.infocolumn-block' )
+				.addClass( 'hide' );
 			this.$editor.find( '.editcolumn' )
 				.removeClass( 'seven' )
 				.addClass( 'twelve' );
@@ -711,6 +721,7 @@
 				return;
 			}
 
+			// TODO add an option to hide diff
 			this.addWarning(
 				mw.msg( 'tux-editor-outdated-warning' ) +
 					'<span class="show-diff-link">' +
@@ -733,6 +744,7 @@
 
 			this.$editTrigger.find( '.tux-message-item' ).click( function () {
 				translateEditor.show();
+
 				return false;
 			} );
 		}
