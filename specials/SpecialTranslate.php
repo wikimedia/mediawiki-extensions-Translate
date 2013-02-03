@@ -163,7 +163,6 @@ class SpecialTranslate extends SpecialPage {
 
 				$priorityReason = TranslateMetadata::get( $groupId, 'priorityreason' );
 				if ( $priorityReason !== '' ) {
-					// @todo Output format is implicit.
 					$priorityReason = "\n\n" . $this->msg(
 						'tpt-discouraged-language-reason',
 						Xml::element( 'span',
@@ -174,7 +173,7 @@ class SpecialTranslate extends SpecialPage {
 							),
 							$priorityReason
 						)
-					);
+					)->parse();
 				}
 
 				$description .= Html::RawElement( 'div',
