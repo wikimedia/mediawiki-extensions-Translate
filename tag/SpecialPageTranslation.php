@@ -795,6 +795,7 @@ class SpecialPageTranslation extends SpecialPage {
 	/**
 	 * Creates jobs needed to create or update all translation page definitions.
 	 * @param TranslatablePage $page
+	 * @param array $sections
 	 * @return Job[]
 	 * @since 2013-01-28
 	 */
