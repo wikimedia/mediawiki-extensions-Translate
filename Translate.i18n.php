@@ -7236,7 +7236,7 @@ $messages['el'] = array(
 	'group-translate-proofr-member' => '{{GENDER:$1|αναθεωρητής μετάφρασης}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Αναθεωρητές μετάφρασης',
 	'log-description-translationreview' => 'Αρχείο καταγραφής όλων των αναθεωρήσεων σε μεταφράσεις και ομάδες μηνυμάτων.',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|αποδέχτηκε}} μετάφραση $3',
+	'logentry-translationreview-message' => '{{GENDER:$2|Ο|Η}} $1 αποδέχτηκε τη μετάφραση $3',
 	'translate-stats-workflow' => 'Κατάσταση',
 	'translate-dynagroup-recent-label' => 'Πρόσφατες μεταφράσεις',
 	'translate-dynagroup-additions-label' => 'Πρόσφατες προσθήκες',
@@ -7264,7 +7264,7 @@ $messages['el'] = array(
 	'tux-status-saving' => 'Γίνεται αποθήκευση...',
 	'tux-status-unsaved' => 'Μη αποθηκευμένα',
 	'tux-editor-placeholder' => 'Η μετάφρασή σας',
-	'tux-editor-paste-original-button-label' => 'Επικόλληση κειμένου πηγής',
+	'tux-editor-paste-original-button-label' => 'Επικόλληση πηγαίου κειμένου',
 	'tux-editor-save-button-label' => 'Αποθήκευση μετάφρασης',
 	'tux-editor-skip-button-label' => 'Προχωρήστε στο επόμενο',
 	'tux-editor-confirm-button-label' => 'Επιβεβαίωση μετάφρασης',
@@ -7294,7 +7294,7 @@ $messages['el'] = array(
 	'tux-messagetable-loading-messages' => 'Φόρτωση {{PLURAL:$1|μηνύματος|μηνυμάτων}}...',
 	'tux-message-filter-placeholder' => 'Κατάλογος φίλτρου',
 	'tux-message-filter-result' => '$1   {{PLURAL:$1|αποτέλεσμα βρέθηκε|αποτελέσματα βρέθηκαν}} για " $2 "',
-	'tux-message-filter-advanced-button' => 'Αναλυτική αναζήτηση',
+	'tux-message-filter-advanced-button' => 'Σύνθετη αναζήτηση',
 );
 
 /** Esperanto (Esperanto)
@@ -8535,6 +8535,7 @@ Hautazko mezuak zure hizkuntzaren berezitasunak direla-eta, espazioak ez daudene
 	'translate-stats-workflow' => 'Egoera',
 	'translate-dynagroup-recent-label' => 'Azken itzulpenak',
 	'translate-gethelp' => 'Laguntza',
+	'tux-editor-doc-editor-cancel' => 'Utzi',
 );
 
 /** Extremaduran (estremeñu)
@@ -16070,6 +16071,9 @@ $1',
 	'tux-editor-doc-editor-cancel' => '취소',
 	'tux-messagetable-more-messages' => '{{PLRUAL:$1|메시지}} $1개 더 보기',
 	'tux-messagetable-loading-messages' => '{{PLURAL:$1|메시지}}를 불러오는 중...',
+	'tux-message-filter-placeholder' => '필터 목록',
+	'tux-message-filter-result' => '"$2"에 대한 {{PLURAL:$1|결과}} $1개를 찾았습니다',
+	'tux-message-filter-advanced-button' => '고급 찾기',
 );
 
 /** Krio (Krio)
@@ -23764,8 +23768,10 @@ $1',
 	'tux-status-saving' => 'Сохраняется...',
 	'tux-status-unsaved' => 'Не сохранено',
 	'tux-editor-placeholder' => 'Ваш перевод',
+	'tux-editor-paste-original-button-label' => 'Вставить исходный текст',
 	'tux-editor-save-button-label' => 'Сохранить перевод',
 	'tux-editor-skip-button-label' => 'Следующее',
+	'tux-editor-confirm-button-label' => 'Подтвердить перевод',
 	'tux-editor-shortcut-info' => 'Нажмите «$1» для сохранения или «$2» для перехода к следующему сообщению.',
 	'tux-editor-no-message-doc' => 'Документации нет',
 	'tux-editor-edit-desc' => 'Правка описания',
@@ -23779,6 +23785,7 @@ $1',
 	'tux-warnings-hide' => 'скрыть',
 	'tux-editor-save-failed' => 'Сохранение перевода не удалось: $1',
 	'tux-editor-use-this-translation' => 'Использовать этот перевод',
+	'tux-editor-n-uses' => 'использован $1 {{PLURAL:$1|раз|раза|раз}}',
 	'tux-editor-message-desc-more' => 'Показать подробно',
 	'tux-editor-message-desc-less' => 'Показать компактно',
 	'tux-editor-clear-translated' => 'Скрыть переведённое',
@@ -23789,6 +23796,9 @@ $1',
 	'tux-editor-doc-editor-cancel' => 'Отмена',
 	'tux-messagetable-more-messages' => 'Ещё $1 {{PLURAL:$1|сообщение|сообщения|сообщений}}',
 	'tux-messagetable-loading-messages' => '{{PLURAL:$1|Загружается сообщение|Загружаются сообщения}}...',
+	'tux-message-filter-placeholder' => 'Список фильтров',
+	'tux-message-filter-result' => 'По запросу «$2» {{PLURAL:$1|найден|найдены|найдено}} $1 {{PLURAL:$1|результат|результата|результатов}}',
+	'tux-message-filter-advanced-button' => 'Расширенный поиск',
 );
 
 /** Rusyn (русиньскый)
@@ -29857,6 +29867,9 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-editor-doc-editor-cancel' => 'Hủy bỏ',
 	'tux-messagetable-more-messages' => '$1 thông điệp nữa',
 	'tux-messagetable-loading-messages' => 'Đang tải {{PLURAL:$1|thông điệp|các thông điệp}}…',
+	'tux-message-filter-placeholder' => 'Lọc danh sách',
+	'tux-message-filter-result' => 'Tìm thấy $1 kết quả cho “$2”',
+	'tux-message-filter-advanced-button' => 'Tìm kiếm nâng cao',
 );
 
 /** Volapük (Volapük)
@@ -30627,6 +30640,7 @@ $messages['yue'] = array(
  * @author Wmr89502270
  * @author Xiaomingyan
  * @author Yfdyh000
+ * @author 乌拉跨氪
  */
 $messages['zh-hans'] = array(
 	'translate' => '翻译',
@@ -30969,8 +30983,10 @@ $1',
 	'tux-status-saving' => '保存中...',
 	'tux-status-unsaved' => '未保存',
 	'tux-editor-placeholder' => '您的翻译',
+	'tux-editor-paste-original-button-label' => '粘贴源文本',
 	'tux-editor-save-button-label' => '保存翻译',
 	'tux-editor-skip-button-label' => '跳至下一条',
+	'tux-editor-confirm-button-label' => '确认翻译',
 	'tux-editor-shortcut-info' => '点击"$1"保存，"$2"跳至下一条信息',
 	'tux-editor-no-message-doc' => '没有信息说明文件',
 	'tux-editor-edit-desc' => '编辑说明',
@@ -30983,15 +30999,20 @@ $1',
 	'tux-warnings-hide' => '隐藏',
 	'tux-editor-save-failed' => '保存翻译失败：$1',
 	'tux-editor-use-this-translation' => '用作翻译',
+	'tux-editor-n-uses' => '已使用$1次',
 	'tux-editor-message-desc-more' => '查看更多',
 	'tux-editor-message-desc-less' => '查看更少',
 	'tux-editor-clear-translated' => '隐藏已翻译',
 	'tux-editor-outdated-warning' => '此翻译可能需要更新。',
 	'tux-editor-outdated-warning-diff-link' => '显示差异',
+	'tux-editor-doc-editor-placeholder' => '信息说明文件',
 	'tux-editor-doc-editor-save' => '保存文档',
 	'tux-editor-doc-editor-cancel' => '取消',
 	'tux-messagetable-more-messages' => '$1条消息',
 	'tux-messagetable-loading-messages' => '正在载入$1条消息...',
+	'tux-message-filter-placeholder' => '筛选器列表',
+	'tux-message-filter-result' => '共找到含“$2”的$1个结果',
+	'tux-message-filter-advanced-button' => '高级搜索',
 );
 
 /** Traditional Chinese (中文（繁體）‎)

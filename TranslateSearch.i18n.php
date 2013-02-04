@@ -88,6 +88,15 @@ $messages['de'] = array(
 	'tux-sst-nosolr-body' => 'Dieses Wiki hat keinen Übersetzungssuchservice.',
 );
 
+/** Basque (euskara)
+ * @author An13sa
+ */
+$messages['eu'] = array(
+	'tux-sst-edit' => 'Mezua aldatu',
+	'tux-sst-search' => 'Bilatu',
+	'tux-sst-facet-language' => 'Hizkuntzak',
+);
+
 /** Finnish (suomi)
  * @author Stryn
  */
