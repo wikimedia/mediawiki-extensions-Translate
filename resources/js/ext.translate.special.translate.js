@@ -208,8 +208,17 @@
 		}
 	}
 
+	// Returns an array of jQuery objects of rows of translated
+	// and proofread messages in the TUX editors.
+	// Used several times.
+	function getTranslatedMessages( $translateContainer ) {
+		$translateContainer = $translateContainer || $( '.ext-translate-container' );
+		return $translateContainer.find( '.tux-message-item' )
+			.filter( '.translated, .proofread' );
+	}
+
 	$( document ).ready( function () {
-		var uiLanguage, $translateContainer,
+		var uiLanguage, $translateContainer, $hideTranslatedButton,
 			docLanguageAutonym, docLanguageCode, ulsOptions;
 
 		uiLanguage = mw.config.get( 'wgUserLanguage' );
@@ -268,9 +277,13 @@
 		}
 
 		$translateContainer = $( '.ext-translate-container' );
-		$translateContainer.find( '.tux-editor-clear-translated' )
+
+		$hideTranslatedButton = $translateContainer.find( '.tux-editor-clear-translated' );
+		$hideTranslatedButton
+			.prop( 'disabled', !getTranslatedMessages( $translateContainer ).length )
 			.click( function () {
-				$translateContainer.find( '.tux-message-item' ).filter( '.translated, .proofread' ).remove();
+				getTranslatedMessages( $translateContainer ).remove();
+				$( this ).prop( 'disabled', true );
 			} );
 
 		// Workflow state selector
@@ -301,22 +314,39 @@
 
 		// Message filter click handler
 		$translateContainer.find( '.row.tux-message-selector > li' ).on( 'click', function () {
-			var $this = $( this );
+			var newFilter,
+				$this = $( this );
 
 			if ( $this.hasClass( 'more' ) ) {
 				return false;
 			}
+
+			newFilter = $this.data( 'filter' );
 
 			// Remove the 'selected' class from all the items.
 			// Some of them could have been moved to under the "more" menu,
 			// so everything under .row.tux-message-selector is searched.
 			$translateContainer.find( '.row.tux-message-selector .selected' )
 				.removeClass( 'selected' );
-			mw.translate.changeFilter( $this.data( 'filter' ) );
+			mw.translate.changeFilter( newFilter );
 			$this.addClass( 'selected' );
+
+			if ( newFilter === '!translated' ) {
+				$hideTranslatedButton
+					.removeClass( 'hide' )
+					.prop( 'disabled', !getTranslatedMessages( $translateContainer ).length );
+			} else {
+				$hideTranslatedButton.addClass( 'hide' );
+			}
 
 			return false;
 		} );
+
+		if ( $( '.tux-messagetable-loader' ).data( 'filter' ) === '!translated' ) {
+			$hideTranslatedButton.removeClass( 'hide' );
+		} else {
+			$hideTranslatedButton.addClass( 'hide' );
+		}
 
 		// Don't let clicking the items in the "more" menu
 		// affect the rest of it.

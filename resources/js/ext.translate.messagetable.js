@@ -29,7 +29,7 @@
 		var actualWidth = 0;
 
 		// Calculate the total width required for the filters
-		$( '.row.tux-message-selector >li' ).each( function () {
+		$( '.row.tux-message-selector > li' ).each( function () {
 			actualWidth += $( this ).outerWidth( true );
 		} );
 
