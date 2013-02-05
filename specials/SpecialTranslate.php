@@ -404,16 +404,27 @@ class SpecialTranslate extends SpecialPage {
 			), $link );
 		}
 
+		// Check boxes for the "more" tab.
+		// The array keys are used as the name attribute of the checkbox.
+		// in the id attribute as tux-option-KEY,
+		// and and also for the data-filter attribute.
+		// The message is shown as the check box's label.
 		$options = array(
-			'optional' => 'Optional messages',
+			'optional' => $this->msg( 'tux-message-filter-optional-messages-label' )->escaped(),
 			//@todo: 'Messages without suggestions',
 		);
 
 		$container = Html::openElement( 'ul', array( 'class' => 'column tux-message-selector' ) );
-		foreach ( $options as $index => $opt ) {
+		foreach ( $options as $optFilter => $optLabel ) {
 			$container .= Html::rawElement( 'li',
 				array( 'class' => 'column' ),
-				Xml::checkLabel( $opt, $index, "tux-option-$index", isset( $this->nondefaults[$index] ) )
+				Xml::checkLabel(
+					$optLabel,
+					$optFilter,
+					"tux-option-$optFilter",
+					isset( $this->nondefaults[$optFilter] ),
+					array( 'data-filter' => $optFilter )
+				)
 			);
 		}
 
