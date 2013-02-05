@@ -2345,7 +2345,7 @@ $messages['ru'] = array(
 	'translate-group-desc-flaggedrevs' => 'Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Мета-группа сообщений, содержащая все сообщения для всех расширений [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-translate' => 'Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
+	'translate-group-desc-translate' => 'Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]; пожалуйста, ознакомьтесь с его [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary словарём терминов]',
 	'translate-group-desc-wikiaextensions' => 'Мета-группа сообщений, содержащая все сообщения поддерживаемых расширений MediaWiki, используемых [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Мета-группа сообщений, содержащая все сообщения поддерживаемых расширений MediaWiki, используемых [http://wikimedia.org/ Фондом Викимедиа]',
 	'translate-group-desc-wikimediaextensions-main' => 'Мета-группа сообщений, содержащая все сообщения расширений MediaWiki, которые требуется перевести для [http://meta.wikimedia.org/wiki/Language_committee Языкового комитета] Викимедии',
@@ -2355,6 +2355,7 @@ $messages['ru'] = array(
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum] — веб-форум, написанный на PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] — свободная веб-система отслеживания ошибок. Пожалуйста, сообщайте о любых недостатках на странице [[Support]].',
 	'translate-group-desc-eol' => 'Группа сообщений для [[Translating:EOL|Энциклопедия жизни]]',
+	'translate-group-desc-frontlinesms' => 'Группа сообщений для [[Translating:FrontlineSMS|FrontlineSMS]]',
 	'translate-group-desc-ihris' => 'Группа сообщений для [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Группа сообщений для [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], части [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Группа сообщений для [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], части [[Translating:iHRIS|iHRIS]]',
@@ -2382,6 +2383,7 @@ $messages['ru'] = array(
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] — сервис, показывающий маршруты и места по всему миру, подходящие для пеших прогулок, велоспорта, поездок на горном велосипеде и катания на роликовых коньках. Использует лицензию GNU GPL.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] позволяет быстро найти авторов страницы в проектах Викимедиа.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] — это проект, предоставляющий автономную текстовую версию Википедии на мобильном устройстве.',
+	'translate-group-desc-wikimedia-mobile' => 'Агрегированная группа, содержащая сообщения всех мобильных приложений для проектов Фонда Викимедиа',
 );
 
 /** Rusyn (русиньскый)
