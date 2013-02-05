@@ -217,10 +217,6 @@
 		ourWindowOnBeforeUnloadRegister();
 		prepareWorkflowSelector();
 
-		$( '#tux-option-optional' ).click( function () {
-			mw.translate.changeUrl( { 'optional': $( this ).prop( 'checked' ) ? 1 : 0 } );
-		} );
-
 		$.when(
 			// Get ready with language stats
 			$.fn.languagestatsbar.Constructor.prototype.getStats( uiLanguage )
@@ -304,16 +300,39 @@
 			} );
 
 		// Message filter click handler
-		$translateContainer.find( 'ul.tux-message-selector > li' ).on( 'click', function () {
+		$translateContainer.find( '.row.tux-message-selector > li' ).on( 'click', function () {
 			var $this = $( this );
 
-			$this.siblings().removeClass( 'selected' );
+			if ( $this.hasClass( 'more' ) ) {
+				return false;
+			}
+
+			// Remove the 'selected' class from all the items.
+			// Some of them could have been moved to under the "more" menu,
+			// so everything under .row.tux-message-selector is searched.
+			$translateContainer.find( '.row.tux-message-selector .selected' )
+				.removeClass( 'selected' );
 			mw.translate.changeFilter( $this.data( 'filter' ) );
 			$this.addClass( 'selected' );
 
 			return false;
 		} );
 
+		// Don't let clicking the items in the "more" menu
+		// affect the rest of it.
+		$( '.row.tux-message-selector .more ul' )
+			.on( 'click', function ( e ) {
+				e.stopPropagation();
+			} );
+
+		$( '#tux-option-optional' )
+			.on( 'change', function ( e ) {
+				var checked = $( this ).prop( 'checked' );
+
+				mw.translate.changeUrl( { optional: checked ? 1 : 0 } );
+
+
+			} );
 	} );
 
 }( jQuery, mediaWiki ) );

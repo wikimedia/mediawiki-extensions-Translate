@@ -474,6 +474,7 @@ Most useful for the proofreading tasks.',
 	'tux-message-filter-placeholder' => 'Filter list',
 	'tux-message-filter-result' => 'Found $1 {{PLURAL:$1|result|results}} for "$2"',
 	'tux-message-filter-advanced-button' => 'Advanced search',
+	'tux-message-filter-optional-messages-label' => 'Optional messages',
 );
 
 /** Message documentation (Message documentation)
@@ -949,6 +950,7 @@ Pressing the button clears all the messages that were translated from the page.'
 * $2 - query string',
 	'tux-message-filter-advanced-button' => 'Button label for searching the messages using [[Special:SearchTranslations]].
 {{Identical|Advanced search}}',
+	'tux-message-filter-optional-messages-label' => 'A label for a checkbox. Checking the box causes message editor to show optional messages.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -7067,8 +7069,8 @@ $messages['el'] = array(
 	'translate-pref-nonewsletter' => 'Μην μου στέλνετε e-mail newsletters',
 	'translate-pref-editassistlang' => 'Βοηθητικές γλώσσες:',
 	'prefs-translate' => 'Επιλογές μετάφρασης',
-	'translate-pref-editassistlang-help' => 'Κατάλογος κωδικών γλωσσών χωρισμένοι με κόμματα. 
-Η μετάφραση ενός μηνύματος σε αυτές τις γλώσσες εμφανίζεται όταν μεταφράζεις. 
+	'translate-pref-editassistlang-help' => 'Κατάλογος κωδικών γλωσσών χωρισμένοι με κόμματα.
+Η μετάφραση ενός μηνύματος σε αυτές τις γλώσσες εμφανίζεται όταν μεταφράζεις.
 Η προεπιλεγμένη λίστα των γλωσσών εξαρτάται από τη γλώσσα σου.',
 	'translate-pref-editassistlang-bad' => 'Μη έγκυρος κωδικός γλώσσας στον κατάλογο:
 <nowiki>$1</nowiki>.',
