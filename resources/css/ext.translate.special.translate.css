@@ -118,15 +118,25 @@
 }
 
 .tux-workflow-status {
-	font-size: 16px;
+	font-size: 14px;
+	background: #eee;
+	border: 1px solid #ddd;
 	color: #252525;
+	cursor: pointer;
+	display: inline-block;
+	padding: 2px 4px;
+	margin: 0 5px;
+}
+
+.tux-workflow-status:hover {
+	border: 1px solid #c9c9c9;
 }
 
 .tux-workflow-status:after {
-	margin-left: 4px;
-	border-left: 4px solid transparent;
-	border-right: 4px solid transparent;
-	border-top: 4px solid #0645AD;
+	margin-left: 3px;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-top: 3px solid #555;
 	content: "";
 	display: inline-block;
 	vertical-align: middle;
@@ -134,21 +144,16 @@
 
 ul.tux-workflow-status-selector {
 	padding-top: 2em;
-	border-bottom: 1px solid #777;
+	border: 1px solid #c9c9c9;
 	/* @noflip */
 	-webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
 	/* @noflip */
 	box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
 	font-size: 14px;
-	margin: 0;
-	margin-top: 1em;
-	margin-bottom: 3px;
-	padding: 0;
+	margin: 0 5px;
 	list-style: none;
-	cursor: default;
-	border: 1px solid #777;
-	border-top: 2px solid transparent;
-	padding: 3px 5px 10px 5px;
+	cursor: pointer;
+	padding: 4px;
 	width: 200px;
 	z-index: 10;
 	background: #fff;
@@ -158,18 +163,19 @@ ul.tux-workflow-status-selector {
 
 ul.tux-workflow-status-selector li {
 	color: #555555;
-	font-size: 16px;
-	padding-left: 10px;
+	font-size: 14px;
+	padding: 0 2px;
 }
 
 ul.tux-workflow-status-selector li:hover {
 	background-color: #f0f0f0;
-	color: #000;
+	color: #252525;
 }
 
 ul.tux-workflow-status-selector li.selected {
 /* @embed */
 	background: url(../images/label-tick.png) right no-repeat;
+	color: #252525;
 }
 
 .tux-messagetable-header {

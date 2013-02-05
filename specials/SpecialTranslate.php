@@ -640,7 +640,7 @@ class SpecialTranslate extends SpecialPage {
 		);
 
 		$selector = Html::element( 'div', array(
-			'class' => 'tux-workflow-status three columns',
+			'class' => 'tux-workflow-status',
 			'data-token' => ApiGroupReview::getToken( 0, '' ),
 			'data-group' => $this->options['group'],
 			'data-language' => $this->options['language'],
@@ -663,7 +663,7 @@ class SpecialTranslate extends SpecialPage {
 				if ( $state === strval( $current ) ) {
 					$attributes['class'] = 'selected';
 					$selector = Html::element( 'div', array(
-						'class' => 'tux-workflow-status three columns',
+						'class' => 'tux-workflow-status',
 						'data-token' => ApiGroupReview::getToken( 0, '' ),
 						'data-group' => $this->options['group'],
 						'data-language' => $this->options['language'],
