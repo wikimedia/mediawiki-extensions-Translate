@@ -2613,20 +2613,40 @@ $messages['el'] = array(
 	'tpt-sections-deleted' => 'Διαγραμμένες μονάδες μετάφρασης',
 	'tpt-sections-template' => 'Πρότυπο μετάφρασης σελίδας',
 	'tpt-badtitle' => 'Ο τίτλος σελίδας που δόθηκε ($1) δεν είναι έγκυρος τίτλος',
+	'tpt-nosuchpage' => 'Η σελίδα $1 δεν υπάρχει',
 	'tpt-notsuitable' => 'Η σελίδα $1 δεν είναι κατάλληλη για μετάφραση.
 Βεβαιωθείτε ότι έχει τις ετικέτες <nowiki><translate></nowiki> και έχει έγκυρη σύνταξη.',
-	'tpt-badsect' => 'Το "$1" δεν είναι έγκυρο όνομα για τη μονάδα μετάφρασης $2.',
+	'tpt-badsect' => 'Το «$1» δεν είναι έγκυρο όνομα για τη μονάδα μετάφρασης $2.',
 	'tpt-mark-summary' => 'Αυτή η έκδοση σημάνθηκε για μετάφραση',
 	'tpt-edit-failed' => 'Δεν ήταν δυνατό να ενημερωθεί η σελίδα: $1',
 	'tpt-already-marked' => 'Η τελευταία έκδοση της σελίδας έχει ήδη σημανθεί προς μετάφραση.',
 	'tpt-list-nopages' => 'Καμιά σελίδα δεν έχει σημανθεί προς μετάφραση ούτε είναι έτοιμο για σήμανση προς μετάφραση.',
+	'tpt-new-pages-title' => 'Σελίδες που προτείνονται για μετάφραση',
+	'tpt-old-pages-title' => 'Σελίδες υπό μετάφραση',
+	'tpt-other-pages-title' => 'Προβληματικές σελίδες',
+	'tpt-select-prioritylangs-reason' => 'Αιτία:',
+	'tpt-rev-mark' => 'σήμανση για μετάφραση',
 	'translate-tag-translate-link-desc' => 'Μεταφράστε αυτή τη σελίδα',
 	'translate-tag-markthis' => 'Σήμανση αυτής της σελίδας για μετάφραση',
 	'tpt-translation-intro-fuzzy' => 'Ξεπερασμένες μεταφράσεις σημειώνονται ως εξής.',
 	'tpt-languages-legend' => 'Άλλες γλώσσες:',
+	'tpt-languages-zero' => 'Έναρξη μετάφρασης για αυτήν τη γλώσσα',
+	'tpt-discouraged-language-reason' => 'Αιτία: $1',
 	'tpt-render-summary' => 'Ενημέρωση για να αντιστοιχεί στη νέα έκδοση της σελίδας πηγής',
 	'tpt-download-page' => 'Εξαγωγή της σελίδας με τις μεταφράσεις',
 	'tpt-aggregategroup-new-name' => 'Όνομα:',
+	'tpt-aggregategroup-new-description' => 'Περιγραφή (προαιρετική):',
+	'tpt-aggregategroup-invalid-group' => 'Η ομάδα δεν υπάρχει',
+	'pt-movepage-list-pages' => 'Κατάλογος σελίδων προς μετακίνηση',
+	'pt-movepage-current' => 'Τρέχον όνομα:',
+	'pt-movepage-new' => 'Νέο όνομα:',
+	'pt-movepage-reason' => 'Αιτία:',
+	'pt-movepage-subpages' => 'Μετακίνηση όλων των υποσελίδων',
+	'pt-deletepage-current' => 'Όνομα σελίδας:',
+	'pt-deletepage-reason' => 'Αιτία:',
+	'pt-deletepage-subpages' => 'Διαγραφή όλων των υποσελίδων',
+	'pt-deletepage-list-pages' => 'Κατάλογος σελίδων προς διαγραφή',
+	'pt-deletepage-list-other' => 'Άλλες υποσελίδες',
 );
 
 /** Esperanto (Esperanto)
@@ -7528,6 +7548,7 @@ Fehla werren im [[Special:Log/pagetranslation|Iwasedzungs-Logbuch]] oigdraache u
 );
 
 /** Polish (polski)
+ * @author Amire80
  * @author BeginaFelicysym
  * @author Deejay1
  * @author Equadus
@@ -7593,7 +7614,7 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 	'tpt-rev-encourage-tooltip' => 'Przywrócić tę stronę do zwykłego tłumaczenia.',
 	'translate-tag-translate-link-desc' => 'Przetłumacz tę stronę',
 	'translate-tag-markthis' => 'Oznacz tę stronę do tłumaczenia',
-	'translate-tag-markthisagain' => 'Ta strona została <span class="plainlinks">[zmieniona $1 razy]</span>, od kiedy ostatnio była <span class="plainlinks">[$2 oznaczona do tłumaczenia]</span>.',
+	'translate-tag-markthisagain' => 'Ta strona została zmieniona <span class="plainlinks">[$1 razy]</span>, od kiedy ostatnio była <span class="plainlinks">[$2 oznaczona do tłumaczenia]</span>.',
 	'translate-tag-hasnew' => 'Ta strona została <span class="plainlinks">[zmieniona $1 razy]</span> i nie została oznaczona do tłumaczenia.',
 	'tpt-translation-intro' => 'Ta strona to <span class="plainlinks">[$1 przetłumaczona wersja]</span> strony [[$2]], a tłumaczenie jest ukończone lub aktualne w $3%.',
 	'tpt-translation-intro-fuzzy' => 'Tak są oznaczane nieaktualne tłumaczenia.',

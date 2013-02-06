@@ -262,6 +262,22 @@ $messages['pms'] = array(
 	'tux-sst-nosolr-body' => "La wiki a l'ha pa un sërvissi d'arserca ëd tradussion.",
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'searchtranslations' => 'Cirche le traduziune',
+	'tux-sst-edit' => "Cange 'u messàgge",
+	'tux-sst-search' => 'Cirche',
+	'tux-sst-search-ph' => 'Cirche le traduziune',
+	'tux-sst-count' => "{{PLURAL:$1|'Nu resultate acchiate|$1 resultate acchiate}}",
+	'tux-sst-facet-language' => 'Lènghe',
+	'tux-sst-facet-group' => 'Gruppe de messàgge',
+	'tux-sst-facet-orphan' => '(orfane)',
+	'tux-sst-nosolr-title' => 'Ricerche non disponibbile',
+	'tux-sst-nosolr-body' => "Sta uicchi non g'ave 'nu servizie de ricerche pe le traduziune.",
+);
+
 /** Ukrainian (українська)
  * @author Ата
  */
