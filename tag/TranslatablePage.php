@@ -506,9 +506,8 @@ class TranslatablePage {
 	/**
 	 * Removes all page translation feature data from the database.
 	 * Does not remove translated sections or translation pages.
-	 * @todo Change name to something better.
 	 */
-	public function removeTags() {
+	public function unmarkTranslatablePage() {
 		$aid = $this->getTitle()->getArticleID();
 
 		$dbw = wfGetDB( DB_MASTER );

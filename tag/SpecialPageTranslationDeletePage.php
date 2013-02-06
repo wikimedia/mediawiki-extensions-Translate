@@ -307,7 +307,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 
 
 		if ( !$this->singleLanguage() ) {
-			$this->page->removeTags();
+			$this->page->unmarkTranslatablePage();
 		}
 
 		$this->clearMetadata();

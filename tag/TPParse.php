@@ -1,6 +1,6 @@
 <?php
 /**
- * Helper code TranslatablePage.
+ * Helper code for TranslatablePage.
  *
  * @file
  * @author Niklas Laxström

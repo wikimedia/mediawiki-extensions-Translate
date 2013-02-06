@@ -104,7 +104,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		if ( $action === 'unmark' ) {
 			$page = TranslatablePage::newFromTitle( $title );
-			$page->removeTags();
+			$page->unmarkTranslatablePage();
 			$page->getTitle()->invalidateCache();
 
 			$logger = new LogPage( 'pagetranslation' );
@@ -795,6 +795,7 @@ class SpecialPageTranslation extends SpecialPage {
 	/**
 	 * Creates jobs needed to create or update all translation page definitions.
 	 * @param TranslatablePage $page
+	 * @param array $sections
 	 * @return Job[]
 	 * @since 2013-01-28
 	 */
