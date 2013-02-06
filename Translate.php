@@ -454,6 +454,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 	'dependencies' => array(
 		'mediawiki.util',
 		'mediawiki.Uri',
+		'mediawiki.api.parse',
 		'ext.translate.groupselector',
 		'ext.translate.messagetable',
 	),
