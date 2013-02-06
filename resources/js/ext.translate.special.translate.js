@@ -126,7 +126,7 @@
 			// clear current messages;
 			$( '.tux-message' ).remove();
 			mw.translate.changeUrl( {
-				'filter': filter
+				filter: filter
 			} );
 			mw.translate.loadMessages();
 		},
@@ -325,14 +325,31 @@
 				e.stopPropagation();
 			} );
 
-		$( '#tux-option-optional' )
-			.on( 'change', function () {
-				var checked = $( this ).prop( 'checked' );
+		$( '#tux-option-optional' ).on( 'change', function () {
+			var i, currentFilter, currentFilters, newFilters,
+				checked = $( this ).prop( 'checked' ),
+				uri = new mw.Uri( window.location.href );
 
-				mw.translate.changeUrl( { optional: checked ? 1 : 0 } );
+			newFilters = [];
+			currentFilter = uri.query.filter;
+			if ( currentFilter !== undefined ) {
+				currentFilters = currentFilter.split( '|' );
+				newFilters = [];
 
+				for ( i = 0; i < currentFilters.length; i++ ) {
+					if ( !currentFilters[i].match( 'optional' ) ) {
+						newFilters.push( currentFilters[i] );
+					}
+				}
+			}
 
-			} );
+			if ( !checked ) {
+				newFilters.push( '!optional' );
+			}
+
+			mw.translate.changeFilter( newFilters.join( '|' ) );
+			mw.translate.changeUrl( { optional: checked ? 1 : 0 } );
+		} );
 	} );
 
 }( jQuery, mediaWiki ) );
