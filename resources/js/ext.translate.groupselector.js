@@ -254,17 +254,11 @@
 		 * Get recent message groups.
 		 */
 		getRecentGroups: function () {
-			var queryParams,
-				apiURL = mw.util.wikiScript( 'api' ),
+			var api = new mw.Api(),
 				messageGroups = this.$menu.data( 'msggroups' ),
 				$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' ),
 				recentMessageGroups = $( '.ext-translate-msggroup-selector' )
 					.data( 'recentmsggroups' );
-
-			queryParams = {
-				action: 'translateuser',
-				format: 'json'
-			};
 
 			$msgGroupList.empty();
 
@@ -282,14 +276,17 @@
 				$msgGroupList.append( msgGroupRows );
 			}
 
-			if ( !recentMessageGroups ) {
-				$.get( apiURL, queryParams, function ( result ) {
+			if ( recentMessageGroups ) {
+				addRecentMessageGroups( recentMessageGroups );
+			} else {
+				api.get( {
+					action: 'translateuser',
+					format: 'json'
+				} ).done( function ( result ) {
 					$( '.ext-translate-msggroup-selector' )
 						.data( 'recentmsggroups', result.translateuser.recentgroups );
 					addRecentMessageGroups( result.translateuser.recentgroups );
 				} );
-			} else {
-				addRecentMessageGroups( recentMessageGroups );
 			}
 		},
 

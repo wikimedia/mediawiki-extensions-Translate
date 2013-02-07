@@ -5,10 +5,9 @@
 
 	mw.translate = $.extend( mw.translate, {
 		getMessages: function ( messageGroup, language, offset, limit, filter ) {
-			var queryParams,
-				apiURL = mw.util.wikiScript( 'api' );
+			var api = new mw.Api();
 
-			queryParams = {
+			return api.get( {
 				action: 'query',
 				list: 'messagecollection',
 				mcgroup: messageGroup,
@@ -17,10 +16,8 @@
 				mcoffset: offset,
 				mclimit: limit,
 				mcfilter: filter || mw.Uri().query.filter || '!translated',
-				mcprop: [ 'definition', 'translation', 'tags', 'properties' ].join( '|' )
-			};
-
-			return $.get( apiURL, queryParams );
+				mcprop: 'definition|translation|tags|properties'
+			} );
 		},
 
 		loadMessages: function () {
