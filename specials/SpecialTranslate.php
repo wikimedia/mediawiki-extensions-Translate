@@ -374,7 +374,7 @@ class SpecialTranslate extends SpecialPage {
 			$this->tuxLanguageSelector() .
 			$this->tuxGroupDescription();
 
-		return Html::rawElement( 'div', $attrs, $selectors ).$this->tuxWorkflowSelector();
+		return Html::rawElement( 'div', $attrs, $selectors ) . $this->tuxWorkflowSelector();
 	}
 
 	protected function messageSelector() {
@@ -691,8 +691,8 @@ class SpecialTranslate extends SpecialPage {
 				$options .= Html::element( 'li', $attributes, $stateText );
 			}
 		}
-		$options .= Html::closeElement( 'ul');
-		return $selectorRow. $options. Html::closeElement( 'div');
+		$options .= Html::closeElement( 'ul' );
+		return $selectorRow . $options . Html::closeElement( 'div' );
 	}
 
 	protected function getWorkflowStatus() {
