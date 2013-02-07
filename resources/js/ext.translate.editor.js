@@ -157,14 +157,6 @@
 		next: function () {
 			var $next;
 
-			if ( this.dirty ) {
-				if ( this.saving ) {
-					this.markSaving();
-				} else {
-					this.markUnsaved();
-				}
-			}
-
 			$next = this.$editTrigger.next( '.tux-message' );
 
 			if ( !$next.length ) {
@@ -663,6 +655,16 @@
 		},
 
 		hide: function () {
+			// If the user has made changes, make sure they are either
+			// in process of being saved or highlighted as unsaved.
+			if ( this.dirty ) {
+				if ( this.saving ) {
+					this.markSaving();
+				} else {
+					this.markUnsaved();
+				}
+			}
+
 			if ( this.$editor ) {
 				this.$editor.addClass( 'hide' );
 			}
