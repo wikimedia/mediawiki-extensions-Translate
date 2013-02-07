@@ -335,6 +335,7 @@
 					// When there is content in the editor
 					if ( $.trim( $textArea.val() ) ) {
 						$pasteSourceButton.addClass( 'hide' );
+						$saveButton.prop( 'disabled', false );
 					} else {
 						$saveButton.prop( 'disabled', true );
 						$pasteSourceButton.removeClass( 'hide' );
@@ -366,6 +367,7 @@
 					.on( 'click', function () {
 						$textArea
 							.focus()
+							.trigger( 'input' )
 							.val( sourceString );
 
 						$pasteOriginalButton.addClass( 'hide' );
