@@ -108,10 +108,6 @@
 	top: 1px;
 }
 
-.tux-editor-header {
-	padding-bottom: 25px;
-}
-
 .tux-editor-header .description {
 	font-size: 14px;
 	color: #252525;
@@ -179,7 +175,7 @@ ul.tux-workflow-status-selector li.selected {
 }
 
 .tux-messagetable-header {
-	padding-top: 2em;
+	padding-top: 25px;
 	border-bottom: 1px solid #777;
 	/* @noflip */
 	-webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
@@ -187,7 +183,6 @@ ul.tux-workflow-status-selector li.selected {
 	box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
 	font-size: 14px;
 	margin: 0;
-	padding: 0;
 	list-style: none;
 }
 
