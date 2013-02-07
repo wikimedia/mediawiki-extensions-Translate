@@ -16,7 +16,7 @@
 				mclanguage: language,
 				mcoffset: offset,
 				mclimit: limit,
-				mcfilter: filter || mw.Uri().query.filter,
+				mcfilter: filter || mw.Uri().query.filter || '!translated',
 				mcprop: [ 'definition', 'translation', 'tags', 'properties' ].join( '|' )
 			};
 
