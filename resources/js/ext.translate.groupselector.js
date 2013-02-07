@@ -91,6 +91,7 @@
 					.addClass( 'six columns ext-translate-load-all' )
 					.text( mw.msg( 'translate-msggroupselector-load-from-all' ) )
 					.click( function () {
+						groupSelector.hide();
 						mw.translate.changeGroup(
 							mw.translate.getGroup( groupSelector.parentGroupId, this.$menu.data( 'msggroups' ) )
 						);
