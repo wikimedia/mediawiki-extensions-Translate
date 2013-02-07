@@ -19,6 +19,13 @@
 		 * Initialize the plugin
 		 */
 		init: function () {
+			// In case we have already created the editor earlier,
+			// don't add a new one. The existing one may have unsaved
+			// changes.
+			if ( this.$editor ) {
+				return;
+			}
+
 			this.$editor = $( '<div>' )
 				.addClass( 'row tux-message-editor hide' )
 				.append(
