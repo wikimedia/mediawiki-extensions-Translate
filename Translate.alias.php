@@ -406,9 +406,14 @@ $specialPageAliases['id'] = array(
 	'TranslationStats' => array( 'Statistik_terjemahan', 'StatistikTerjemahan' ),
 	'Translations' => array( 'Terjemahan' ),
 	'LanguageStats' => array( 'Statistik_bahasa', 'StatistikBahasa' ),
+	'MessageGroupStats' => array( 'Statistik_pesan_grup', 'StatistikPesanGrup' ),
 	'PageTranslation' => array( 'Terjemahan_halaman', 'TerjemahanHalaman' ),
 	'ImportTranslations' => array( 'Impor_terjemahan', 'ImporTerjemahan' ),
+	'ManageMessageGroups' => array( 'Kelola_pesan_grup', 'KelolaPesanGrup' ),
+	'FirstSteps' => array( 'Langkap_pertama', 'LangkahPertama' ),
+	'SupportedLanguages' => array( 'Bahasa_yang_didukung', 'BahasaDidukung' ),
 	'MyLanguage' => array( 'Bahasa_saya' ),
+	'SearchTranslations' => array( 'Cari_terjemahan', 'CariTerjemahan' ),
 );
 
 /** Icelandic (íslenska) */
@@ -637,7 +642,7 @@ $specialPageAliases['nah'] = array(
 	'Translate' => array( 'Tlahtōlcuepāz', 'Traducir' ),
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎) */
+/** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = array(
 	'Translate' => array( 'Oversett' ),
 	'Magic' => array( 'Avansert_oversettelse', 'Avansert_oversetting', 'Magi' ),
@@ -693,7 +698,7 @@ $specialPageAliases['nl'] = array(
 	'SearchTranslations' => array( 'VertalingenZoeken' ),
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎) */
+/** Norwegian Nynorsk (norsk nynorsk) */
 $specialPageAliases['nn'] = array(
 	'Translate' => array( 'Set_om' ),
 	'Translations' => array( 'Omsetjingar' ),

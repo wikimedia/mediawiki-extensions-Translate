@@ -1672,9 +1672,13 @@ $messages['arc'] = array(
 	'translate-edit-definition' => 'ܬܘܚܡܐ ܕܐܓܪܬܐ',
 	'translate-edit-translation' => 'ܬܘܪܓܡܐ',
 	'translate-edit-contribute' => 'ܫܘܬܦ',
+	'translate-edit-information' => 'ܝܕ̈ܥܬܐ ܥܠ ܦܐܬܐ ($1)',
 	'translate-edit-in-other-languages' => 'ܐܓܪܬܐ ܒܠܫܢ̈ܐ ܐܚܪ̈ܢܐ',
+	'translate-edit-warnings' => 'ܙܘܗܪ̈ܐ ܥܠ ܬܘܪ̈ܓܡܐ ܠܐ ܓܡܝܪ̈ܐ',
+	'translate-edit-tmsugs' => 'ܡܚܫܚܬ̈ܐ ܡܢ ܥܘܗܕܢܐ ܕܬܘܪܓܡܐ',
 	'translate-edit-tmmatch' => '$1% ܠܚܡܐ',
 	'translate-edit-tab-list' => 'ܡܟܬܒܘܬܐ ܕܐܓܪ̈ܬܐ',
+	'translate-edit-askpermission' => 'ܨܒܝ ܦܣܣܐ',
 	'translate-magic-pagename' => 'ܬܘܪܓܡܐ ܕܡܝܕܝܐܘܝܩܝ ܡܬܝܚܬܐ',
 	'translate-magic-submit' => 'ܒܨܝܐ',
 	'translate-magic-cm-export' => 'ܐܦܩ',
@@ -6320,6 +6324,7 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-message-filter-placeholder' => 'Liste filtern',
 	'tux-message-filter-result' => '{{PLURAL:$1|Ein Ergebnis|$1 Ergebnisse}} für „$2“ gefunden',
 	'tux-message-filter-advanced-button' => 'Erweiterte Suche',
+	'tux-message-filter-optional-messages-label' => 'Optionale Nachrichten',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -11549,6 +11554,10 @@ $1',
 	'tux-editor-doc-editor-cancel' => 'ביטול',
 	'tux-messagetable-more-messages' => 'עוד {{PLURAL:$1|הודעה אחת|$1 הודעות}}',
 	'tux-messagetable-loading-messages' => 'טעינת {{PLURAL:$1|הודעה|הודעות}}...',
+	'tux-message-filter-placeholder' => 'סינון רשימה',
+	'tux-message-filter-result' => 'Found $1 {{PLURAL:$1|נמצאה תוצאה אחת|נמצאו $1 תוצאות}} עבור "$2"',
+	'tux-message-filter-advanced-button' => 'חיפוש מתקדם',
+	'tux-message-filter-optional-messages-label' => 'הודעות אופציונליות',
 );
 
 /** Hindi (हिन्दी)
@@ -14494,6 +14503,7 @@ $1',
 	'tux-messagetable-loading-messages' => '{{PLURAL:$1|メッセージ}}を読み込み中...',
 	'tux-message-filter-result' => '「$2」の検索結果 $1 {{PLURAL:$1|件}}',
 	'tux-message-filter-advanced-button' => '高度な検索',
+	'tux-message-filter-optional-messages-label' => '省略可能なメッセージ',
 );
 
 /** Jamaican Creole English (Patois)
