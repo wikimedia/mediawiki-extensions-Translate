@@ -17,13 +17,16 @@ class AndroidXmlFFS extends SimpleFFS {
 		$reader = new SimpleXMLElement( $data );
 
 		$messages = array();
+		$mangler = $this->group->getMangler();
+
 		foreach ( $reader->string as $string ) {
-			$messages[(string)$string['name']] = (string)$string;
+			$key = (string)$string['name'];
+			$messages[$key] = (string)$string;
 		}
 
 		return array(
 			'AUTHORS' => array(), // TODO
-			'MESSAGES' => $messages,
+			'MESSAGES' => $mangler->mangle( $messages ),
 		);
 	}
 
@@ -34,11 +37,14 @@ class AndroidXmlFFS extends SimpleFFS {
 XML;
 
 		$writer = new SimpleXMLElement( $template );
+		$mangler = $this->group->getMangler();
 
 		/**
 		 * @var $m TMessage
 		 */
 		foreach ( $collection as $key => $m ) {
+			$key = $mangler->unmangle( $key );
+
 			$value = $m->translation();
 			if ( $value === null ) {
 				continue;
