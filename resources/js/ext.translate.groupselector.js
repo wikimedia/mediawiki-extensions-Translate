@@ -14,6 +14,7 @@
 	}
 
 	TranslateMessageGroupSelector.prototype = {
+		loader: null,
 		constructor: TranslateMessageGroupSelector,
 
 		/**
@@ -92,7 +93,7 @@
 					.text( mw.msg( 'translate-msggroupselector-load-from-all' ) )
 					.click( function () {
 						mw.translate.changeGroup(
-							mw.translate.getGroup( groupSelector.parentGroupId, $( '.ext-translate-msggroup-selector' ).data( 'msggroups' ) )
+							mw.translate.getGroup( groupSelector.parentGroupId, this.$menu.data( 'msggroups' ) )
 						);
 					} );
 
@@ -263,7 +264,7 @@
 		getRecentGroups: function () {
 			var queryParams,
 				apiURL = mw.util.wikiScript( 'api' ),
-				messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' ),
+				messageGroups = this.$menu.data( 'msggroups' ),
 				$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' ),
 				recentMessageGroups = $( '.ext-translate-msggroup-selector' )
 					.data( 'recentmsggroups' );
@@ -351,7 +352,7 @@
 			if ( !this.flatGroupList ) {
 				this.flatGroupList = [];
 				parentGroupId = this.$group.data( 'msggroupid' );
-				messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
+				messageGroups = this.$menu.data( 'msggroups' );
 
 				if ( parentGroupId ) {
 					currentGroup = mw.translate.getGroup( parentGroupId, messageGroups ).groups;
@@ -384,35 +385,27 @@
 		 * @param parentGroupId
 		 */
 		loadGroups: function ( parentGroupId ) {
-			var groupSelector = this,
-				queryParams,
-				messageGroups,
-				apiURL;
+			var queryParams,
+				groupSelector = this;
 
-			queryParams = {
-				action: 'query',
-				format: 'json',
-				meta: 'messagegroups',
-				mgformat: 'tree',
-				mgprop: 'id|label|description|icon|priority|prioritylangs|priorityforce|workflowstates',
-				// Keep this in sync with css!
-				mgiconsize: '32'
-			};
+			if ( !TranslateMessageGroupSelector.loader ) {
+				queryParams = {
+					action: 'query',
+					format: 'json',
+					meta: 'messagegroups',
+					mgformat: 'tree',
+					mgprop: 'id|label|description|icon|priority|prioritylangs|priorityforce|workflowstates',
+					// Keep this in sync with css!
+					mgiconsize: '32'
+				};
 
-			apiURL = mw.util.wikiScript( 'api' );
-			messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
-
-			if ( !messageGroups ) {
-				$.get( apiURL, queryParams, function ( result ) {
-					$( '.ext-translate-msggroup-selector' )
-						.data( 'msggroups', result.query.messagegroups );
-					groupSelector.addGroupRows( parentGroupId, null );
-				} );
-			} else {
-				groupSelector.addGroupRows( parentGroupId, null );
-				// keep it open
-				groupSelector.show();
+				TranslateMessageGroupSelector.loader = new mw.Api().get( queryParams );
 			}
+
+			TranslateMessageGroupSelector.loader.done( function ( result ) {
+				groupSelector.$menu.data( 'msggroups', result.query.messagegroups );
+				groupSelector.addGroupRows( parentGroupId, null );
+			} );
 		},
 
 		/**
@@ -424,7 +417,7 @@
 		addGroupRows: function ( parentGroupId, msgGroups ) {
 			var $msgGroupRows,
 				$parent,
-				messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' ),
+				messageGroups = this.$menu.data( 'msggroups' ),
 				$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' ),
 				targetLanguage = $( '.ext-translate-msggroup-selector' ).data( 'language' );
 
@@ -598,7 +591,7 @@
 		var i, messageGroup;
 
 		if ( !messageGroups ) {
-			messageGroups = $( '.ext-translate-msggroup-selector' ).data( 'msggroups' );
+			messageGroups = this.$menu.data( 'msggroups' );
 		}
 
 		for ( i = 0; i < messageGroups.length; i++ ) {
