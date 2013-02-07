@@ -230,6 +230,7 @@
 
 		if ( !query ) {
 			$result.addClass( 'hide' );
+			$( '.tux-message-filter-box-clear' ).addClass( 'hide' );
 		} else {
 			$result.removeClass( 'hide' )
 				.find( 'div' )
@@ -238,6 +239,7 @@
 				window.location.href = new mw.Uri( mw.util.wikiGetlink( 'Special:SearchTranslations' ) )
 					.extend( { query: query } );
 			} );
+			$( '.tux-message-filter-box-clear' ).removeClass( 'hide' );
 			mw.translate.loadMessages();
 		}
 	}
@@ -280,6 +282,11 @@
 
 		$( '.tux-message-filter-box' ).on( 'input propertychange', function () {
 			delay( search( $( this ).val() ), 300 );
+		} );
+
+		$( '.tux-message-filter-box-clear' ).on( 'click', function () {
+			$( '.tux-message-filter-box' ).focus().val( '' );
+			$( this ).addClass( 'hide' );
 		} );
 
 		messageFilterOverflowHandler();

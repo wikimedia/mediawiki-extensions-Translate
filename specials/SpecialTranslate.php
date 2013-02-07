@@ -445,6 +445,7 @@ class SpecialTranslate extends SpecialPage {
 			'type' => 'text',
 			'placeholder' => $this->msg( 'tux-message-filter-placeholder' )->escaped()
 		) );
+		$output .= Html::element( 'span', array( 'class' => 'one columns tux-message-filter-box-clear hide' ) );
 		$output .= Html::closeElement( 'div' ); // close three columns
 
 		$output .= Html::closeElement( 'div' ); // close the row
