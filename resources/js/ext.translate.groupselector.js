@@ -2,7 +2,6 @@
 	'use strict';
 
 	function TranslateMessageGroupSelector( element, options ) {
-		this.shown = false;
 		this.$group = $( element );
 		this.$menu = null;
 		this.parentGroupId = null;
@@ -110,41 +109,33 @@
 
 		/**
 		 * Show the selector
-		 * @returns {boolean}
 		 */
 		show: function () {
-			// Hide all other IME settings
-			$( 'div.ext-translate-msggroup-selector-menu' ).hide();
+			// Hide all other open menus
+			$( '.ext-translate-msggroup-selector-menu.opened' )
+				.removeClass( 'opened' )
+				.hide();
 
-			this.$menu.show();
-			this.shown = true;
-
-			return false;
+			this.$menu.addClass( 'opened' ).show();
 		},
 
 		/**
 		 * Hide the selector
-		 * @returns {boolean}
 		 */
 		hide: function () {
 			this.$menu.hide();
-			this.shown = false;
-
-			return false;
+			this.$menu.removeClass( 'opened' );
 		},
 
 		/**
-		 * Toggle the selector
-		 * @returns {boolean}
+		 * Toggle the menu open/close state
 		 */
 		toggle: function () {
-			if ( this.shown ) {
+			if ( this.$menu.hasClass( 'opened' ) ) {
 				this.hide();
 			} else {
 				this.show();
 			}
-
-			return false;
 		},
 
 		/**
