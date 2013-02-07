@@ -103,6 +103,12 @@
 								dir: sourceLanguageDir
 							} )
 							.text( message.definition ),
+						// Bidirectional isolation.
+						// This should be removed some day when proper
+						// unicode-bidi: isolate
+						// is supported everywhere
+						$( '<span>' )
+							.html( $( 'body' ).hasClass( 'rtl' ) ? '&rlm;' : '&lrm;' ),
 						$( '<span>' )
 							.addClass( 'tux-list-translation' )
 							.attr( {
