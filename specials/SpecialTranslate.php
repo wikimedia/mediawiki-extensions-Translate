@@ -657,7 +657,6 @@ class SpecialTranslate extends SpecialPage {
 		), $this->msg( "translate-workflow-state-" )->escaped() );
 
 		$selectorRow = Html::openElement( 'div', array( 'class' => 'row' ) );
-		$selectorRow .= $selector;
 
 		$options = Html::openElement( 'ul', array( 'class' => 'tux-workflow-status-selector hide' ) );
 
@@ -678,7 +677,6 @@ class SpecialTranslate extends SpecialPage {
 						'data-group' => $this->options['group'],
 						'data-language' => $this->options['language'],
 					), $this->msg( 'translate-workflowstatus', $stateText )->escaped() );
-					$selectorRow .= $selector;
 				}
 
 				if ( is_array( $config ) && isset( $config['right'] )
@@ -690,6 +688,7 @@ class SpecialTranslate extends SpecialPage {
 
 				$options .= Html::element( 'li', $attributes, $stateText );
 			}
+			$selectorRow .= $selector;
 		}
 		$options .= Html::closeElement( 'ul');
 		return $selectorRow. $options. Html::closeElement( 'div');
