@@ -367,8 +367,8 @@
 					.on( 'click', function () {
 						$textArea
 							.focus()
-							.trigger( 'input' )
-							.val( sourceString );
+							.val( sourceString )
+							.trigger( 'input' );
 
 						$pasteOriginalButton.addClass( 'hide' );
 					} );
