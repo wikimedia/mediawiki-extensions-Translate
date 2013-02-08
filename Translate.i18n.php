@@ -298,7 +298,7 @@ The colour of an underline indicates how recently a translator has been active h
 	'translate-manage-action-fuzzy' => 'Import and fuzzy translations',
 	'translate-manage-nochanges' => 'There are no changes in message definitions for this group.',
 	'translate-manage-nochanges-other' => 'There were no changes for this language.
-Use the link below to return the group details view.',
+Use the link below to return to the group details view.',
 	'translate-manage-inconsistent' => 'Detected inconsistency in the request.
 Please check for changes and try again.
 Details: $1.',
