@@ -123,7 +123,12 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			$data['definition'] = $message->definition();
 		}
 		if ( isset( $props['translation'] ) ) {
-			$data['translation'] = $message->translation();
+			// Remove !!FUZZY!! from translation if present.
+			$translation = $message->translation();
+			if ( $translation !== null ) {
+				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
+			}
+			$data['translation'] = $translation;
 		}
 		if ( isset( $props['tags'] ) ) {
 			$data['tags'] = $message->getTags();
