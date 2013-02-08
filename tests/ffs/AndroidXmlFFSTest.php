@@ -56,7 +56,7 @@ XML;
 		$ffs = new AndroidXmlFFS( $group );
 
 		$messages = array(
-			'ko&ra' => 'wawe',
+			'ko=26ra' => 'wawe',
 			'foobar' => 'Kissa kala <koira>',
 		);
 		$collection = new MockMessageCollection( $messages );
