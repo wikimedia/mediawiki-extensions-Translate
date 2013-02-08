@@ -32,7 +32,7 @@ class TuxMessageTable extends ContextSource {
 
 		$footer = Html::openElement( 'div',
 			array(
-				'class' => 'tux-messagetable-loader',
+				'class' => 'tux-messagetable-loader hide',
 				'data-messagegroup' => $this->group->getId(),
 				'data-pagesize' => $batchSize,
 			) )
