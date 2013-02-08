@@ -58,19 +58,13 @@
 		 * @param {Object} group a message group object.
 		 */
 		changeGroup: function ( group ) {
-			var $loader = $( '.tux-messagetable-loader' ),
-				api = new mw.Api(),
-				$description = $( '.tux-editor-header .description' );
+			var api = new mw.Api(),
+				$description = $( '.tux-editor-header .description' ),
+				changes;
 
-			$loader
-				.data( 'messagegroup', group.id )
-				.data( 'remaining', mw.translate.getStatsForGroup( group.id ).total )
-				.removeData( 'offset' )
-				.removeAttr( 'data-offset' )
-				.removeClass( 'hide' );
-
-			// Clear the current messages
-			$( '.tux-message' ).remove();
+			changes = {
+				group: group.id
+			}
 
 			// Update the group description in the header
 			api.parse(
@@ -85,50 +79,36 @@
 					group.id + ': ' + errorCode + ' ' + results.error.info );
 			} );
 
-			mw.translate.loadMessages();
-			mw.translate.changeUrl( {
-				group: group.id,
-				filter: mw.Uri().query.filter || '!translated'
-			} );
+			mw.translate.loadMessages( changes );
+			mw.translate.changeUrl( changes );
 		},
 
 		changeLanguage: function ( language ) {
-			var $loader;
-
-			$loader = $( '.tux-messagetable-loader' ).removeClass( 'hide' );
+			var changes = {
+				language: language
+			}
 
 			$( '.ext-translate-language-selector > .uls' ).text( $.uls.data.getAutonym( language ) );
-
-			$loader.data( 'remaining', mw.translate.getStatsForGroup( $loader.data( 'messagegroup' ) ).total )
-				.removeData( 'offset' )
-				.removeAttr( 'data-offset' );
-
 			$( '.tux-messagelist' ).data( 'targetlangcode', language );
 
-			// clear current messages;
-			$( '.tux-message' ).remove();
+			mw.translate.changeUrl( changes );
 			mw.translate.loadMessages();
-			mw.translate.changeUrl( {
-				'language': language
-			} );
 		},
 
 		changeFilter: function ( filter ) {
-			var $loader;
+			var realFilters, uri;
 
-			$loader = $( '.tux-messagetable-loader' ).removeClass( 'hide' );
+			realFilters = [ '!ignored' ];
+			uri = new mw.Uri( window.location.href );
+			if ( uri.query.optional !== '1' ) {
+				realFilters.push( '!optional' );
+			}
+			if ( filter ) {
+				realFilters.push( filter );
+			}
 
-			$loader.data( 'remaining', mw.translate.getStatsForGroup( $loader.data( 'messagegroup' ) ).total )
-				.data( 'filter', filter )
-				.removeData( 'offset' )
-				.removeAttr( 'data-offset' );
-
-			// clear current messages;
-			$( '.tux-message' ).remove();
-			mw.translate.changeUrl( {
-				filter: filter
-			} );
-			mw.translate.loadMessages();
+			mw.translate.changeUrl( { filter: filter } );
+			mw.translate.loadMessages( { filter: realFilters.join( '|' ) } );
 		},
 
 		changeUrl: function ( params ) {
@@ -210,7 +190,19 @@
 
 	$( document ).ready( function () {
 		var uiLanguage, $translateContainer,
-			docLanguageAutonym, docLanguageCode, ulsOptions;
+			docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri;
+
+		var uri = new mw.Uri( window.location.href );
+		filter = uri.query.filter;
+		if ( filter === undefined ) {
+			filter = '!translated';
+		}
+		mw.translate.changeFilter( filter );
+		$( '.tux-message-selector li' ).each( function () {
+			if ( $( this ).data( 'filter' ) === filter ) {
+				$( this ).addClass( 'selected' );
+			}
+		} );
 
 		uiLanguage = mw.config.get( 'wgUserLanguage' );
 
@@ -326,29 +318,11 @@
 			} );
 
 		$( '#tux-option-optional' ).on( 'change', function () {
-			var i, currentFilter, currentFilters, newFilters,
-				checked = $( this ).prop( 'checked' ),
-				uri = new mw.Uri( window.location.href );
+			var checked = $( this ).prop( 'checked' ), uri;
 
-			newFilters = [];
-			currentFilter = uri.query.filter;
-			if ( currentFilter !== undefined ) {
-				currentFilters = currentFilter.split( '|' );
-				newFilters = [];
-
-				for ( i = 0; i < currentFilters.length; i++ ) {
-					if ( !currentFilters[i].match( 'optional' ) ) {
-						newFilters.push( currentFilters[i] );
-					}
-				}
-			}
-
-			if ( !checked ) {
-				newFilters.push( '!optional' );
-			}
-
-			mw.translate.changeFilter( newFilters.join( '|' ) );
+			var uri = new mw.Uri( window.location.href );
 			mw.translate.changeUrl( { optional: checked ? 1 : 0 } );
+			mw.translate.changeFilter( uri.query.filter );
 		} );
 	} );
 
