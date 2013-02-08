@@ -122,6 +122,10 @@
 				// remove warnings if any.
 				translateEditor.removeWarning( 'diff' );
 				translateEditor.removeWarning( 'validation' );
+
+				$( '.tux-editor-clear-translated' )
+					.removeClass( 'hide' )
+					.prop( 'disabled', false );
 			} ).fail( function ( errorCode, results ) {
 				translateEditor.savingError( results.error.info );
 
