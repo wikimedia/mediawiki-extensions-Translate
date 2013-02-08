@@ -123,7 +123,12 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			$data['definition'] = $message->definition();
 		}
 		if ( isset( $props['translation'] ) ) {
-			$data['translation'] = $message->translation();
+			// Remove !!FUZZY!! from translation if present.
+			$translation = $message->translation();
+			if ( $translation !== null ) {
+				$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
+			}
+			$data['translation'] = $translation;
 		}
 		if ( isset( $props['tags'] ) ) {
 			$data['tags'] = $message->getTags();
@@ -209,7 +214,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			'prop' => array(
 				'Which properties to get',
 				'definition  - message definition',
-				'translation - current translation',
+				'translation - current translation (without !!FUZZY!! string if any, use the tags to check for outdated or broken translations)',
 				'tags        - message tags, like optional, ignored and fuzzy',
 				'properties  - message properties, like status, revision, last-translator. Can vary between messages.',
 				'revision    - deprecated! use properties!',
