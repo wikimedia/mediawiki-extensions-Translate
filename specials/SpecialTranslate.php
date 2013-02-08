@@ -244,7 +244,6 @@ class SpecialTranslate extends SpecialPage {
 		/* str  */ 'group'    => $isBeta ? '!additions': '',
 		/* str  */ 'offset'   => '', // Used to be int, now str
 		/* int  */ 'limit'    => $isBeta ? 0 : 100,
-		/* str  */ 'filter'   => $isBeta ? '!translated' : '', // Tux
 		/* int  */ 'optional' => '0',
 		);
 
@@ -393,14 +392,13 @@ class SpecialTranslate extends SpecialPage {
 		$params['task'] = 'custom';
 
 		foreach ( $tabs as $tab => $filter ) {
-			$selected = $this->options['filter'] === strval( $filter ) ? 'selected' : '';
 			$taskParams = array( 'filter' => $filter ) + $params;
 			ksort( $taskParams );
 			$href = $this->getTitle()->getLocalUrl( $taskParams );
 			$link = Html::element( 'a', array( 'href' => $href ), $this->msg( $tab ) );
 			$output .= Html::rawElement( 'li', array(
-				'class' => "column $selected",
-				'data-filter' => strval( $filter )
+				'class' => 'column',
+				'data-filter' => $filter
 			), $link );
 		}
 
