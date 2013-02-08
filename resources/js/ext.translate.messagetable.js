@@ -15,13 +15,38 @@
 				mclanguage: language,
 				mcoffset: offset,
 				mclimit: limit,
-				mcfilter: filter || mw.Uri().query.filter || '!translated',
+				mcfilter: filter,
 				mcprop: 'definition|translation|tags|properties'
 			} );
 		},
 
-		loadMessages: function () {
-			$( '.tux-messagetable-loader' ).trigger( 'appear' );
+		loadMessages: function ( changes ) {
+			var $loader = $( '.tux-messagetable-loader' );
+
+			changes = changes || {};
+
+			// Clear current messages
+			$( '.tux-message' ).remove();
+
+			// Change the properties that are provided
+			if ( changes.filter !== undefined ) {
+				$loader.data( 'filter', changes.filter );
+			}
+			if ( changes.group !== undefined ) {
+				$loader.data( 'messagegroup', changes.group );
+			}
+
+			// Reset the number of messages remaining
+			$loader.find( '.tux-messagetable-loader-count' ).text( '' );
+
+			// Reset other info and make visible
+			$loader
+				.removeData( 'offset' )
+				.removeAttr( 'data-offset' )
+				.removeClass( 'hide' );
+
+			// And start loading
+			$loader.trigger( 'appear' );
 		}
 	} );
 
