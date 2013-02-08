@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADi3//910\u003d",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-08T09:28:10Z",
+      "side": 1,
+      "message": "You can combine these two if\u0027s into one, and no need to declare $reason before the loop. Also \"if (\"",
+      "revId": "7f5af8b129321cd53594b798f8b6d48742e7418a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
