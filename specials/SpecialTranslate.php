@@ -87,8 +87,12 @@ class SpecialTranslate extends SpecialPage {
 				'*'
 			);
 
+			$reason = null;
 			foreach ( $checks as $check ) {
-				$reason = @$wgTranslateBlacklist[$check][$this->options['language']];
+				if( isset( $wgTranslateBlacklist[$check][$this->options['language']] ) ) {
+					$reason = $wgTranslateBlacklist[$check][$this->options['language']];
+				}
+
 				if ( $reason !== null ) {
 					$out->addWikiMsg( 'translate-page-disabled', $reason );
 					return;
@@ -367,7 +371,7 @@ class SpecialTranslate extends SpecialPage {
 		return $form;
 	}
 
-	protected function tuxSettingsForm( $errors ) {
+	protected function tuxSettingsForm() {
 		$attrs = array( 'class' => 'row tux-editor-header' );
 		$selectors = $this->tuxGroupSelector() .
 			$this->tuxLanguageSelector() .
