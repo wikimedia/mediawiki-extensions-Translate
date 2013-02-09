@@ -92,6 +92,7 @@
 			$( '.tux-messagelist' ).data( 'targetlangcode', language );
 
 			mw.translate.changeUrl( changes );
+			$( '.tux-statsbar' ).trigger( 'refresh', language );
 			mw.translate.loadMessages();
 		},
 
@@ -220,15 +221,15 @@
 
 		$.when(
 			// Get ready with language stats
-			$.fn.languagestatsbar.Constructor.prototype.getStats( uiLanguage )
+			mw.translate.loadLanguageStats( uiLanguage )
 		).then( function () {
-				$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
-					onSelect: groupSelectorHandler
-				} );
-				$( '.tux-message-list-statsbar' ).languagestatsbar( {
-					language: uiLanguage,
-					group: $( '.tux-message-list-statsbar' ).data( 'messagegroup' )
-				} );
+			$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
+				onSelect: groupSelectorHandler
+			} );
+			$( '.tux-message-list-statsbar' ).languagestatsbar( {
+				language: uiLanguage,
+				group: $( '.tux-message-list-statsbar' ).data( 'messagegroup' )
+			} );
 		} );
 
 		// Use ULS for language selection if it's available
