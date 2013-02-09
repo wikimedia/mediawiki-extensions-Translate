@@ -26,76 +26,51 @@
 		this.language = options.language;
 		this.$statsBar = null;
 		this.init();
-		this.listen();
+		// no this.listen() here -
+		// init() calls render() and render() calls listen().
 	};
 
 	LanguageStatsBar.prototype = {
 		init: function () {
-
-			if ( mw.translate.languagestats ) {
+			if ( mw.translate.languagestats[this.language] ) {
 				this.render();
+				this.listen();
 			} else {
-				this.getStats( this.language, this.render );
+				mw.translate.loadLanguageStats( this.language )
+					.done( $.proxy( this.render, this ) );
 			}
-		},
-
-		/**
-		 * This need to be called only once per page. Before calling check
-		 * mw.translate.languagestats defined or not.
-		 *
-		 * @param language
-		 * @param callback
-		 */
-		getStats: function ( language, callback ) {
-			var req,
-				api = new mw.Api(),
-				statsbar = this;
-
-			req = api.get( {
-				action: 'query',
-				format: 'json',
-				meta: 'languagestats',
-				lslanguage: language
-			} );
-
-			req.then( function ( result ) {
-				mw.translate.languagestats = result.query.languagestats;
-				if ( $.isFunction( callback ) ) {
-					callback.call( statsbar );
-				}
-			} );
-
-			return req;
 		},
 
 		/**
 		 * Listen for the change events and update the statsbar
 		 */
 		listen: function () {
-			var i, statsbar = this;
+			var i,
+				statsbar = this,
+				languageStats = mw.translate.languagestats[this.language];
 
 			statsbar.$statsBar.on( 'change', function ( event, to, from ) {
-				for ( i = 0; i < mw.translate.languagestats.length; i++ ) {
-					if ( mw.translate.languagestats[i].group === statsbar.group ) {
+				for ( i = 0; i < languageStats.length; i++ ) {
+					if ( languageStats[i].group === statsbar.group ) {
 
 						if ( to === 'translated' ) {
-							mw.translate.languagestats[i].translated++;
+							languageStats[i].translated++;
 						}
 						if ( to === 'proofread' ) {
-							mw.translate.languagestats[i].proofread++;
+							languageStats[i].proofread++;
 						}
 						if ( to === 'fuzzy' ) {
-							mw.translate.languagestats[i].fuzzy++;
+							languageStats[i].fuzzy++;
 						}
 
 						if ( from === 'fuzzy' ) {
-							mw.translate.languagestats[i].fuzzy--;
+							languageStats[i].fuzzy--;
 						}
 						if ( from === 'proofread' ) {
-							mw.translate.languagestats[i].proofread--;
+							languageStats[i].proofread--;
 						}
 						if ( from === 'translated' ) {
-							mw.translate.languagestats[i].translated--;
+							languageStats[i].translated--;
 						}
 						break;
 					}
@@ -103,6 +78,10 @@
 
 				// Update the stats bar
 				statsbar.update();
+			} );
+
+			statsbar.$statsBar.on( 'refresh', function ( e, language ) {
+				mw.translate.loadLanguageStats( language ).done( $.proxy( statsbar.update, statsbar ) );
 			} );
 		},
 
@@ -122,12 +101,13 @@
 			// TODO Add a tooltip for the statsbar that says the stats in words.
 			this.$container.append( this.$statsBar );
 			this.update();
+
+			this.listen();
 		},
 
 		update: function () {
-			var stats, proofread, translated, fuzzy, untranslated, untranslatedCount;
-
-			stats = mw.translate.getStatsForGroup( this.group );
+			var proofread, translated, fuzzy, untranslated, untranslatedCount,
+				stats = this.getStatsForGroup( this.group );
 
 			this.$statsBar.data( 'total', stats.total );
 
@@ -153,6 +133,24 @@
 			this.$statsBar.find( '.tux-untranslated' )
 				.data( 'untranslated', untranslatedCount )
 				.css( 'width', untranslated + '%' );
+		},
+
+		getStatsForGroup: function ( group ) {
+			var i,
+				languageStats = mw.translate.languagestats[this.language];
+
+			for ( i = 0; i < languageStats.length; i++ ) {
+				if ( languageStats[i].group === group ) {
+					return languageStats[i];
+				}
+			}
+
+			return {
+				proofread: 0,
+				total: 0,
+				fuzzy: 0,
+				translated: 0
+			};
 		}
 	};
 
@@ -178,24 +176,4 @@
 	$.fn.languagestatsbar.Constructor = LanguageStatsBar;
 
 	mw.translate = mw.translate || {};
-
-	mw.translate = $.extend( mw.translate, {
-		getStatsForGroup: function ( group ) {
-			var i,
-				stats = {
-					proofread: 0,
-					total: 0,
-					fuzzy: 0,
-					translated: 0
-				};
-
-			for ( i = 0; i < mw.translate.languagestats.length; i++ ) {
-				if ( mw.translate.languagestats[i].group === group ) {
-					stats = mw.translate.languagestats[i];
-					break;
-				}
-			}
-			return stats;
-		}
-	} );
 } ( mediaWiki, jQuery ) );
