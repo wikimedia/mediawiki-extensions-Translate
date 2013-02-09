@@ -5647,6 +5647,10 @@ Mangga priksa [[Special:Log/pagetranslation|log pamindhahan kaca]] kanggo layang
  */
 $messages['ka'] = array(
 	'pagetranslation' => 'გვერდის თარგმანი',
+	'tpt-section' => 'თარგმნის ბლოკი $1',
+	'tpt-section-new' => 'თარგმნის ახალი ბლოკი.
+სახელი: $1',
+	'tpt-section-deleted' => 'თარგმნის ბლოკი $1',
 	'tpt-template' => 'გვერდის თარგი',
 	'tpt-diff-old' => 'წინა ტექსტი',
 	'tpt-diff-new' => 'ახალი ტექსტი',
@@ -5666,17 +5670,22 @@ $messages['ka'] = array(
 	'tpt-aggregategroup-new-name' => 'სახელი:',
 	'tpt-aggregategroup-new-description' => 'აღწერა (არასავალდებულო):',
 	'tpt-aggregategroup-invalid-group' => 'ჯგუფი არ არსებობს',
+	'pt-log-name' => 'გვერდის თარგმნის ჟურნალი',
+	'pt-movepage-block-subpage-exists' => 'სამიზნე ქვეგვერდი "[[:$2]]" უკვე არსებობს.',
 	'pt-movepage-list-pages' => 'გადასატანი გვერდების სია',
 	'pt-movepage-list-translation' => 'სათარგმნი {{PLURAL:$1|გვერდი|გვერდები}}',
 	'pt-movepage-list-other' => 'სხვა ქვე{{PLURAL:$1|გვერდი|გვერდები}}',
 	'pt-movepage-current' => 'მიმდინარე სახელი:',
 	'pt-movepage-new' => 'ახალი სახელი:',
 	'pt-movepage-reason' => 'მიზეზი:',
+	'pt-movepage-subpages' => 'ყველა ქვეგვერდის გადატანა',
+	'pt-movepage-action-other' => 'მიზნის შეცვლა',
 	'pt-deletepage-action-other' => 'სამიზნის შეცვლა',
 	'pt-deletepage-current' => 'გვერდის სახელი:',
 	'pt-deletepage-reason' => 'მიზეზი:',
 	'pt-deletepage-subpages' => 'ყველა ქვეგვერდის წაშლა',
 	'pt-deletepage-list-translation' => 'სათარგმნი გვერდები',
+	'pt-deletepage-list-other' => 'სხვა ქვეგვერდები',
 );
 
 /** Адыгэбзэ (Адыгэбзэ)
@@ -10547,8 +10556,8 @@ $messages['zh-hans'] = array(
 翻译模板：<pre>$1</pre>',
 	'pt-parse-close' => '&lt;/translate>标签不平衡。
 翻译模板：<pre>$1</pre>',
-	'pt-parse-nested' => '不允许嵌套&lt;translate>部分。
-标签文本：$1', # Fuzzy
+	'pt-parse-nested' => '不允许嵌套&lt;translate>翻译单元。
+标签文本：$1',
 	'pt-shake-multiple' => '单一翻译单元含多个翻译单元标记。
 翻译单元文本：<pre>$1</pre>',
 	'pt-shake-position' => '翻译单元标记在意外位置。
@@ -10578,8 +10587,8 @@ $messages['zh-hans'] = array(
 	'pt-movepage-block-tp-exists' => '目标翻译页面[[:$2]]存在。',
 	'pt-movepage-block-tp-invalid' => '[[:$1]]的目标翻译页面的标题无效（可能太长）。',
 	'pt-movepage-block-section-exists' => '为目标页面“[[:$2]]”的翻译单位存在。',
-	'pt-movepage-block-section-invalid' => '[[:$1]]的目标章节标题无效（可能太长）。', # Fuzzy
-	'pt-movepage-block-subpage-exists' => '目标子页面[[:$2]]存在。',
+	'pt-movepage-block-section-invalid' => '目标页面为 “[[:$1]]” 的翻译单元可能无效（太长？）。',
+	'pt-movepage-block-subpage-exists' => '目标子页面“[[:$2]]”存在。',
 	'pt-movepage-block-subpage-invalid' => '[[:$1]]的子页面标题无效（可能太长）。',
 	'pt-movepage-list-pages' => '需移动页面的列表',
 	'pt-movepage-list-translation' => '翻译{{PLURAL:$1|页面|页面}}',

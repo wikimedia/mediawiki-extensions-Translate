@@ -185,6 +185,19 @@ $messages['ja'] = array(
 	'tux-sst-nosolr-body' => 'このウィキには翻訳の検索サービスはありません。',
 );
 
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'searchtranslations' => 'თარგმანების ძიება',
+	'tux-sst-edit' => 'შეტყობინების რედაქტირება',
+	'tux-sst-search' => 'ძიება',
+	'tux-sst-search-ph' => 'თარგმანების ძიება',
+	'tux-sst-count' => '{{PLURAL:$1|ნაპოვნია ერთი შედეგი|ნაპოვნია $1 შედეგი}}',
+	'tux-sst-facet-language' => 'ენები',
+	'tux-sst-facet-group' => 'შეტყობინების ჯგუფები',
+);
+
 /** Korean (한국어)
  * @author 아라
  */

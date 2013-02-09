@@ -2136,6 +2136,7 @@ $messages['jv'] = array(
 $messages['ka'] = array(
 	'firststeps' => 'პირველი ნაბიჯები',
 	'translate-fs-pagetitle-done' => ' - გაკეთდა!',
+	'translate-fs-pagetitle-pending' => ' - მოლოდინში',
 	'translate-fs-signup-title' => 'დარეგისტრირდით',
 	'translate-fs-userpage-title' => 'შექმენით თქვენი მომხმარებლის გვერდი',
 	'translate-fs-target-title' => 'დაიწყეთ თარგმნა!',
