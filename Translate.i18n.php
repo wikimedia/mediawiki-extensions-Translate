@@ -20118,6 +20118,10 @@ Dit is vooral nuttig voor de controletaken.',
 	'tux-editor-doc-editor-cancel' => 'Annuleren',
 	'tux-messagetable-more-messages' => 'Nog {{PLURAL:$1|één bericht|$1 berichten}}',
 	'tux-messagetable-loading-messages' => 'Bezig met laden van {{PLURAL:$1|bericht|berichten}}...',
+	'tux-message-filter-placeholder' => 'Lijst filteren',
+	'tux-message-filter-result' => '{{PLURAL:$1|Eén resultaat|$1 resultaten}} gevonden voor "$2"',
+	'tux-message-filter-advanced-button' => 'Uitgebreid zoeken',
+	'tux-message-filter-optional-messages-label' => 'Optionele berichten',
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎)

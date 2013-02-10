@@ -291,6 +291,20 @@ $messages['roa-tara'] = array(
 	'tux-sst-nosolr-body' => "Sta uicchi non g'ave 'nu servizie de ricerche pe le traduziune.",
 );
 
+/** Turkish (Türkçe)
+ * @author Emperyan
+ */
+$messages['tr'] = array(
+	'searchtranslations' => 'Çevirileri ara',
+	'tux-sst-edit' => 'İletiyi düzenleme',
+	'tux-sst-search' => 'Ara',
+	'tux-sst-search-ph' => 'Çevirileri ara',
+	'tux-sst-count' => '{{PLURAL:$1|Bir sonuç bulundu|$1 sonuç bulundu}}',
+	'tux-sst-facet-language' => 'Diller',
+	'tux-sst-facet-group' => 'İleti grupları',
+	'tux-sst-facet-orphan' => '(yetim)',
+);
+
 /** Ukrainian (українська)
  * @author Ата
  */
