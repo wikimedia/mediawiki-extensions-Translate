@@ -312,8 +312,6 @@
 					var $this = $( this );
 
 					translateEditor.dirty = true;
-					translateEditor.$editor.find( '.tux-editor-save-button' )
-						.removeAttr( 'disabled' );
 
 					// Expand the text area height as content grows
 					while ( $this.outerHeight() <
@@ -329,7 +327,7 @@
 				var $textArea = $( this );
 
 				delay( function () {
-					var $saveButton = translateEditor.$editor.find( 'button.tux-editor-save-button' ),
+					var $saveButton = translateEditor.$editor.find( '.tux-editor-save-button' ),
 						$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' );
 
 					translateEditor.validateTranslation();
@@ -387,11 +385,7 @@
 				$requestRight = $( [] );
 
 				$saveButton = $( '<button>' )
-					.attr( {
-						accesskey: 's',
-						title: mw.util.tooltipAccessKeyPrefix + 's',
-						disabled: true
-					} )
+					.prop( 'disabled', true )
 					.addClass( 'blue button tux-editor-save-button' )
 					.text( mw.msg( 'tux-editor-save-button-label' ) )
 					.on( 'click', function () {
@@ -427,10 +421,6 @@
 			}
 
 			$skipButton = $( '<button>' )
-				.attr( {
-					accesskey: 'd',
-					title: mw.util.tooltipAccessKeyPrefix + 'd'
-				} )
 				.addClass( 'button tux-editor-skip-button' )
 				.text( mw.msg( 'tux-editor-skip-button-label' ) )
 				.on( 'click', function () {
@@ -451,8 +441,8 @@
 				$editorColumn.append( $( '<div>' )
 					.addClass( 'row shortcutinfo' )
 					.text( mw.msg( 'tux-editor-shortcut-info',
-						$saveButton.attr( 'title' ).toUpperCase(),
-						$skipButton.attr( 'title' ).toUpperCase() )
+						( mw.util.tooltipAccessKeyPrefix + 's' ).toUpperCase(),
+						( mw.util.tooltipAccessKeyPrefix + 'd' ).toUpperCase() )
 					)
 				);
 			}
@@ -543,7 +533,7 @@
 			if ( mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				if ( mw.translate.canTranslate() ) {
 					$messageDescSaveButton = $( '<button>' )
-						.addClass( 'blue button tux-editor-save-button' )
+						.addClass( 'blue button tux-editor-savedoc-button' )
 						.prop( 'disabled', true )
 						.text( mw.msg( 'tux-editor-doc-editor-save' ) )
 						.on( 'click', function () {
@@ -551,7 +541,7 @@
 						} );
 
 					$messageDescCancelButton = $( '<button>' )
-						.addClass( 'button tux-editor-skip-button' )
+						.addClass( 'button tux-editor-skipdoc-button' )
 						.text( mw.msg( 'tux-editor-doc-editor-cancel' ) )
 						.on( 'click', function () {
 							translateEditor.hideDocumentationEditor();
@@ -645,6 +635,11 @@
 			$( '.tux-message.open' ).each( function () {
 				$( this ).data( 'translateeditor' ).hide();
 			} );
+
+			// The access keys need to be shifted to the editor currently active
+			$( '.tux-editor-save-button, .tux-editor-save-button' ).removeAttr( 'accesskey' );
+			this.$editor.find( '.tux-editor-save-button' ).attr( 'accesskey', 's' );
+			this.$editor.find( '.tux-editor-skip-button' ).attr( 'accesskey', 'd' );
 
 			this.$messageItem.addClass( 'hide' );
 			this.$editor
