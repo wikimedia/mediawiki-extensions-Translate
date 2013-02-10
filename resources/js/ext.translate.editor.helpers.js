@@ -277,6 +277,7 @@
 									.on( 'click', function () {
 										$translationTextarea
 											.val( translation.target )
+											.focus()
 											.trigger( 'input' );
 									} ),
 								$( '<a>' )
@@ -333,6 +334,7 @@
 									.on( 'click', function () {
 										$translationTextarea
 											.val( translation.target )
+											.focus()
 											.trigger( 'input' );
 									} ),
 								$( '<span>' )
