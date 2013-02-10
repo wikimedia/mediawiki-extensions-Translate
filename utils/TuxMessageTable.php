@@ -49,8 +49,10 @@ class TuxMessageTable extends ContextSource {
 					'class' => 'three columns tux-message-list-statsbar',
 					'data-messagegroup' => $this->group->getId(),
 				) );
+
+		// Hide this button by default and show it only if the filter is relevant
 		$footer .= '<div class="three columns text-center">'
-			. '<button class="button tux-editor-clear-translated">'
+			. '<button class="button tux-editor-clear-translated hide">'
 			. $this->msg( 'tux-editor-clear-translated' )->escaped()
 			. '</button>'
 			. '</div>';
