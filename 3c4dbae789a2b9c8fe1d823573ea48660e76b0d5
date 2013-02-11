@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAADi3//7w0\u003d",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-11T07:13:18Z",
+      "side": 1,
+      "message": "if $group is not valid after call to isValid, then the messageindex is outdated.\n\nand \"if (\"",
+      "revId": "3c4dbae789a2b9c8fe1d823573ea48660e76b0d5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
