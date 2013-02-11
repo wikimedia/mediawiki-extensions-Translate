@@ -291,7 +291,7 @@
 
 				state = $( this ).data( 'state' );
 				stateText = $( this ).text();
-				$selector  = $translateContainer.find( '.tux-workflow-status' );
+				$selector = $translateContainer.find( '.tux-workflow-status' );
 				$( this ).parent().find( '.selected' ).removeClass( 'selected' );
 				$( this ).addClass( 'selected' )
 					.parent().addClass( 'hide' );

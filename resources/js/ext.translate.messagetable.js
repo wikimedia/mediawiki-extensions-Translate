@@ -66,8 +66,8 @@
 		listen: function () {
 			var messageTable = this;
 
-			$( window ).scroll( function () {
-				delay( function() {
+			$( window ).scroll(function () {
+				delay( function () {
 					messageTable.scroll();
 				}, 300 );
 			} ).resize( function () {
@@ -287,6 +287,7 @@
 
 				// Dynamically loaded messages should pass the search filter if present.
 				query = $( '.tux-message-filter-box' ).val();
+
 				if ( query ) {
 					messageTable.search( query );
 				}
@@ -294,13 +295,14 @@
 				messageTable.$loader.data( 'offset', result['query-continue'].messagecollection.mcoffset );
 
 				remaining = result.query.metadata.remaining;
+
 				$( '.tux-messagetable-loader-count' ).text(
 					mw.msg( 'tux-messagetable-more-messages', remaining )
 				);
+
 				$( '.tux-messagetable-loader-more' ).text(
 					mw.msg( 'tux-messagetable-loading-messages', Math.min( remaining, pageSize ) )
 				);
-
 			} );
 		},
 
