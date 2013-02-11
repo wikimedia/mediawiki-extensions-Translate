@@ -341,7 +341,7 @@
 						$saveButton.prop( 'disabled', true );
 						$pasteSourceButton.removeClass( 'hide' );
 					}
-				}, 1000 );
+				}, 500 );
 			} );
 
 			if ( this.message.translation ) {
