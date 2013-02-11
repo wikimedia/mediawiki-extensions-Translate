@@ -56,6 +56,22 @@ The body of error message is {{msg-mw|Tux-sst-nosolr-body}}.',
 The page title for this message is {{msg-mw|Tux-sst-nosolr-title}}.',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'searchtranslations' => 'Guetar nes traducciones',
+	'tux-sst-edit' => 'Editar mensaxe', # Fuzzy
+	'tux-sst-search' => 'Guetar',
+	'tux-sst-search-ph' => 'Guetar nes traducciones',
+	'tux-sst-count' => '{{PLURAL:$1|Alcontrose un resultáu|Alcontráronse $1 resultaos}}',
+	'tux-sst-facet-language' => 'Llingües',
+	'tux-sst-facet-group' => 'Grupos de mensaxes',
+	'tux-sst-facet-orphan' => '(güérfanos)',
+	'tux-sst-nosolr-title' => 'La gueta nun ta disponible',
+	'tux-sst-nosolr-body' => 'Esta wiki nun tien un serviciu de gueta de traducciones.',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Wizardist
  */
@@ -77,7 +93,7 @@ $messages['be-tarask'] = array(
  */
 $messages['de'] = array(
 	'searchtranslations' => 'Übersetzungen suchen',
-	'tux-sst-edit' => 'Nachricht bearbeiten',
+	'tux-sst-edit' => 'Übersetzung bearbeiten',
 	'tux-sst-search' => 'Suchen',
 	'tux-sst-search-ph' => 'Übersetzungen suchen',
 	'tux-sst-count' => '{{PLURAL:$1|Ein Ergebnis gefunden|$1 Ergebnisse gefunden}}',
@@ -92,17 +108,26 @@ $messages['de'] = array(
  * @author An13sa
  */
 $messages['eu'] = array(
-	'tux-sst-edit' => 'Mezua aldatu',
+	'tux-sst-edit' => 'Mezua aldatu', # Fuzzy
 	'tux-sst-search' => 'Bilatu',
 	'tux-sst-facet-language' => 'Hizkuntzak',
 );
 
 /** Finnish (suomi)
+ * @author Nike
  * @author Stryn
  */
 $messages['fi'] = array(
 	'searchtranslations' => 'Etsi käännöksiä',
+	'tux-sst-edit' => 'Muokkaa viestiä', # Fuzzy
+	'tux-sst-search' => 'Hae',
 	'tux-sst-search-ph' => 'Etsi käännöksiä',
+	'tux-sst-count' => '{{PLURAL:$1|Yksi hakutulos|$1 hakutulosta}}',
+	'tux-sst-facet-language' => 'Kielet',
+	'tux-sst-facet-group' => 'Viestiryhmät',
+	'tux-sst-facet-orphan' => '(orpo)',
+	'tux-sst-nosolr-title' => 'Haku ei ole käytössä',
+	'tux-sst-nosolr-body' => 'Hakupalvelu ei ole käytössä tässä wikissä.',
 );
 
 /** French (français)
@@ -190,7 +215,7 @@ $messages['ja'] = array(
  */
 $messages['ka'] = array(
 	'searchtranslations' => 'თარგმანების ძიება',
-	'tux-sst-edit' => 'შეტყობინების რედაქტირება',
+	'tux-sst-edit' => 'შეტყობინების რედაქტირება', # Fuzzy
 	'tux-sst-search' => 'ძიება',
 	'tux-sst-search-ph' => 'თარგმანების ძიება',
 	'tux-sst-count' => '{{PLURAL:$1|ნაპოვნია ერთი შედეგი|ნაპოვნია $1 შედეგი}}',
@@ -212,6 +237,19 @@ $messages['ko'] = array(
 	'tux-sst-facet-orphan' => '(외톨이)',
 	'tux-sst-nosolr-title' => '찾기를 사용할 수 없음',
 	'tux-sst-nosolr-body' => '이 위키는 번역 찾기 서비스가 없습니다.',
+);
+
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'searchtranslations' => 'Iwwersetzunge sichen',
+	'tux-sst-edit' => 'Message änneren', # Fuzzy
+	'tux-sst-search' => 'Sichen',
+	'tux-sst-search-ph' => 'Iwwersetzunge sichen',
+	'tux-sst-facet-language' => 'Sproochen',
+	'tux-sst-nosolr-title' => 'Sichen ass net disponibel',
+	'tux-sst-nosolr-body' => "Dës Wiki huet d'Sichfonctioun vun den Iwwersetzungen net.",
 );
 
 /** Macedonian (македонски)
@@ -280,7 +318,7 @@ $messages['pms'] = array(
  */
 $messages['roa-tara'] = array(
 	'searchtranslations' => 'Cirche le traduziune',
-	'tux-sst-edit' => "Cange 'u messàgge",
+	'tux-sst-edit' => "Cange 'u messàgge", # Fuzzy
 	'tux-sst-search' => 'Cirche',
 	'tux-sst-search-ph' => 'Cirche le traduziune',
 	'tux-sst-count' => "{{PLURAL:$1|'Nu resultate acchiate|$1 resultate acchiate}}",
@@ -296,7 +334,7 @@ $messages['roa-tara'] = array(
  */
 $messages['tr'] = array(
 	'searchtranslations' => 'Çevirileri ara',
-	'tux-sst-edit' => 'İletiyi düzenleme',
+	'tux-sst-edit' => 'İletiyi düzenleme', # Fuzzy
 	'tux-sst-search' => 'Ara',
 	'tux-sst-search-ph' => 'Çevirileri ara',
 	'tux-sst-count' => '{{PLURAL:$1|Bir sonuç bulundu|$1 sonuç bulundu}}',
