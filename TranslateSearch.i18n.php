@@ -14,7 +14,7 @@ $messages = array();
 $messages['en'] = array(
 	'searchtranslations' => 'Search translations',
 
-	'tux-sst-edit' => 'Edit message',
+	'tux-sst-edit' => 'Edit translation',
 
 	'tux-sst-search' => 'Search',
 	'tux-sst-search-ph' => 'Search translations',
