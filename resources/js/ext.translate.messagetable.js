@@ -268,7 +268,6 @@
 					.extend( { query: query } );
 			} );
 			$( '.tux-message-filter-box-clear' ).removeClass( 'hide' );
-			mw.translate.loadMessages();
 		}
 	}
 
