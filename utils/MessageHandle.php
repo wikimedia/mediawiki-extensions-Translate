@@ -147,7 +147,24 @@ class MessageHandle {
 	 * @return bool
 	 */
 	public function isValid() {
-		return $this->isMessageNamespace() && $this->getGroupIds();
+		if ( !$this->isMessageNamespace() ) {
+			return false;
+		}
+
+		$groups = $this->getGroupIds();
+		if ( !$groups ) {
+			return false;
+		}
+
+		// Do another check that the group actually exists
+		$group = $this->getGroup();
+		if ( !$group ) {
+			wfWarn( "MessageIndex is out of date – refers to unknown group {$groups[0]}. Doing a rebuild." );
+			MessageIndexRebuildJob::newJob()->run();
+			return false;
+		}
+
+		return true;
 	}
 
 	/**
