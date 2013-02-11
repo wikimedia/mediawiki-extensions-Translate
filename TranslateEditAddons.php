@@ -156,6 +156,11 @@ class TranslateEditAddons {
 		if ( $handle->isValid() ) {
 			$editpage->suppressIntro = true;
 			$group = $handle->getGroup();
+
+			if( !$group ) {
+				return true;
+			}
+
 			$languages = $group->getTranslatableLanguages();
 			if ( $handle->getCode() && $languages !== null && !isset( $languages[$handle->getCode()] ) ) {
 				$editpage->getArticle()->getContext()->getOutput()->wrapWikiMsg(
@@ -165,6 +170,7 @@ class TranslateEditAddons {
 			}
 			return true;
 		}
+
 		$msg = wfMessage( 'translate-edit-tag-warning' )->inContentLanguage()->plain();
 
 		if ( $msg !== '' && $msg !== '-' && TranslatablePage::isSourcePage( $editpage->getTitle() ) ) {
