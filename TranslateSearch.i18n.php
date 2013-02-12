@@ -151,7 +151,7 @@ $messages['fr'] = array(
  */
 $messages['gl'] = array(
 	'searchtranslations' => 'Procurar nas traducións',
-	'tux-sst-edit' => 'Editar a mensaxe',
+	'tux-sst-edit' => 'Editar a tradución',
 	'tux-sst-search' => 'Procurar',
 	'tux-sst-search-ph' => 'Procurar nas traducións',
 	'tux-sst-count' => '{{PLURAL:$1|Atopouse 1 resultado|Atopáronse $1 resultados}}',
@@ -199,7 +199,7 @@ $messages['it'] = array(
  */
 $messages['ja'] = array(
 	'searchtranslations' => '翻訳の検索',
-	'tux-sst-edit' => 'メッセージを編集',
+	'tux-sst-edit' => '翻訳を編集',
 	'tux-sst-search' => '検索',
 	'tux-sst-search-ph' => '翻訳の検索',
 	'tux-sst-count' => '{{PLURAL:$1|$1 件見つかりました}}',
@@ -239,6 +239,22 @@ $messages['ko'] = array(
 	'tux-sst-nosolr-body' => '이 위키는 번역 찾기 서비스가 없습니다.',
 );
 
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'searchtranslations' => 'Övversäzonge söhke',
+	'tux-sst-edit' => 'de Övversäzong ändere',
+	'tux-sst-search' => 'Lohß jonn!',
+	'tux-sst-search-ph' => 'Övversäzonge söhkre',
+	'tux-sst-count' => '{{PLURAL:$1|Eine|$1|Nix}} jefonge',
+	'tux-sst-facet-language' => 'Schprooche',
+	'tux-sst-facet-group' => 'Nohrechtejroppe',
+	'tux-sst-facet-orphan' => '(kein Jropp)',
+	'tux-sst-nosolr-title' => 'Söhke es nit müjjelesch.',
+	'tux-sst-nosolr-body' => 'En heh däm Wiki kammer nit noh Översäzonge söhke.',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
@@ -257,7 +273,7 @@ $messages['lb'] = array(
  */
 $messages['mk'] = array(
 	'searchtranslations' => 'Пребарување на преводи',
-	'tux-sst-edit' => 'Уреди порака',
+	'tux-sst-edit' => 'Уреди превод',
 	'tux-sst-search' => 'Пребарај',
 	'tux-sst-search-ph' => 'Пребарајте преводи',
 	'tux-sst-count' => '{{PLURAL:$1|Пронајден е еден резултат|Пронајдени се $1 резултати}}',
@@ -376,11 +392,12 @@ $messages['vi'] = array(
 );
 
 /** Simplified Chinese (中文（简体）‎)
+ * @author Hydra
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'searchtranslations' => '搜索翻译',
-	'tux-sst-edit' => '编辑消息',
+	'tux-sst-edit' => '编辑翻译',
 	'tux-sst-search' => '搜索',
 	'tux-sst-search-ph' => '搜索翻译',
 	'tux-sst-count' => '找到$1个结果',

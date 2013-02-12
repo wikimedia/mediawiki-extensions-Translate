@@ -6318,6 +6318,7 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-editor-message-desc-more' => 'Mehr ansehen',
 	'tux-editor-message-desc-less' => 'Weniger ansehen',
 	'tux-editor-clear-translated' => 'Übersetzte verstecken',
+	'tux-editor-proofreading-mode' => 'Korrekturlesungsmodus',
 	'tux-editor-outdated-warning' => 'Diese Übersetzung muss eventuell aktualisiert werden.',
 	'tux-editor-outdated-warning-diff-link' => 'Unterschiede zeigen',
 	'tux-editor-doc-editor-placeholder' => 'Nachrichtendokumentation',
@@ -10644,6 +10645,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-editor-message-desc-more' => 'Ollar máis',
 	'tux-editor-message-desc-less' => 'Ollar menos',
 	'tux-editor-clear-translated' => 'Agochar as traducidas',
+	'tux-editor-proofreading-mode' => 'Modo de corrección',
 	'tux-editor-outdated-warning' => 'Esta tradución pode necesitar unha actualización.',
 	'tux-editor-outdated-warning-diff-link' => 'Mostrar as diferenzas',
 	'tux-editor-doc-editor-placeholder' => 'Documentación da mensaxe',
@@ -14144,6 +14146,8 @@ Utile per l'attività di correzione.",
 	'tux-editor-doc-editor-cancel' => 'Annulla',
 	'tux-messagetable-more-messages' => '$1 {{PLURAL:$1|altro messaggio|altri messaggi}}',
 	'tux-messagetable-loading-messages' => 'Carico {{PLURAL:$1|messaggio|messaggi}}...',
+	'tux-message-filter-result' => '{{PLURAL:$1|Trovato|Trovati}} $1 {{PLURAL:$1|risultato|risultati}} per "$2"',
+	'tux-message-filter-advanced-button' => 'Ricerca avanzata',
 );
 
 /** Japanese (日本語)
@@ -14537,6 +14541,7 @@ $1',
 	'tux-editor-message-desc-more' => '続きを表示',
 	'tux-editor-message-desc-less' => '折り畳む',
 	'tux-editor-clear-translated' => '翻訳を非表示',
+	'tux-editor-proofreading-mode' => '校正モード',
 	'tux-editor-outdated-warning' => 'この翻訳は修正が必要かもしれません。',
 	'tux-editor-outdated-warning-diff-link' => '差分を表示',
 	'tux-editor-doc-editor-placeholder' => 'メッセージについてのドキュメント',
@@ -23451,8 +23456,16 @@ Mutive:
 	'translate-magic-words' => 'Parole maggeche',
 	'translate-magic-namespace' => 'Nome de le namespace',
 	'translate-magic-notsaved' => "'U cangiamende tune non g'à state reggistrate!",
+	'translate-magic-errors' => "Pe piacere corregge {{PLURAL:$1|'u seguende errore|le seguende errore}} jndr'à le traduziune:",
+	'translate-magic-saved' => 'Le cangiaminde tune onne state reggistrate correttamende.',
+	'translate-checks-parameters' => "{{PLURAL:$2|'U seguende parametre non g'è|'U seguende parametre non ge sonde}} ausate:
+<strong><nowiki>$1</nowiki></strong>",
+	'translate-checks-parameters-unknown' => "{{PLURAL:$2|'U seguende parametre jè|'U seguende parametre sò}} scanusciute:
+<strong><nowiki>$1</nowiki></strong>",
 	'translate-checks-malformed' => '<nowiki>$1</nowiki> jè malformate.',
 	'prefs-translate' => 'Opziune de traduzione',
+	'translate-pref-editassistlang-bad' => "Codece d'a lènghe invalide jndr'à l'elenghe:
+<nowiki>$1</nowiki>.",
 	'right-translate-manage' => 'Gestisce le gruppe de messàgge',
 	'action-translate-manage' => 'gestisce le gruppe de messàgge',
 	'right-translate-messagereview' => 'Revide le traduziune',
@@ -23519,6 +23532,7 @@ Mutive:
 	'translate-smg-nochanges' => 'Non ge stonne cangiaminde da processà.',
 	'translate-smg-submit' => 'Conferme le cangiaminde pu processe',
 	'translate-manage-import-new' => 'Messàgge nuève $1',
+	'translate-manage-import-deleted' => 'Messàgge scangellate $1',
 	'translate-manage-action-import' => "'Mborte",
 	'translate-manage-action-ignore' => 'Ignore',
 	'importtranslations' => "'Mborte le traduziune",
@@ -23547,6 +23561,7 @@ Mutive:
 	'translate-messagereview-reviews' => "Accettate da {{PLURAL:$1|'n'utende|$1 utinde}}",
 	'api-error-invalidrevision' => 'Traduzione none acchiate',
 	'api-error-unknownmessage' => 'Messàgge none acchiate',
+	'group-translate-proofr' => 'Revisitature de le traduziune',
 	'group-translate-proofr-member' => '{{GENDER:$1|revisitature de le traduziune}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Revisitature de le traduziune',
 	'logentry-translationreview-message' => '$1 traduzione {{GENDER:$2|accettate}} $3',
@@ -30893,11 +30908,13 @@ $messages['zh-hans'] = array(
 名字空间只能有一个翻译。
 
 翻译项目讨论名字空间<code>$1 talk</code>可能有些复杂。
+
 <code>$1</code>会被替换为项目名字（例如<code>{{ns:project_talk}}</code>）。
+
 如果在不改变站点名字的情况下，使用你的语言不可能构造一个有效的表达形式，请在[[Support]]联系我们。
 
 你需要成为翻译者以保存改变。
-在点击下面的保存按钮之前，改变不会被保存。', # Fuzzy
+在点击下面的保存按钮之前，改变不会被保存。',
 	'translate-magic-module' => '模块：',
 	'translate-magic-submit' => '获取',
 	'translate-magic-cm-export' => '导出',
@@ -30924,6 +30941,7 @@ $messages['zh-hans'] = array(
 	'translate-checks-xhtml' => '请替换以下 {{PLURAL:$2|标签|标签}} 与正确的：
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => '原始信息使用了<nowiki>{{PLURAL:}}</nowiki>，但翻译并未使用。',
+	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki>使用{{PLURAL:$1|one form|$1 forms}}表达，但{{PLURAL:$2|only one form is|$2 forms are}}形式同样支持。(不含 0= 和 1= 的形式).',
 	'translate-checks-pagename' => '名字空间与原文不符',
 	'translate-checks-format' => '这个翻译不遵从定义或有无效的语法：$1',
 	'translate-checks-escape' => '以下转义可能是意外：<strong>$1</strong>',
@@ -31188,6 +31206,7 @@ $1',
 	'tux-editor-message-desc-more' => '查看更多',
 	'tux-editor-message-desc-less' => '查看更少',
 	'tux-editor-clear-translated' => '隐藏已翻译',
+	'tux-editor-proofreading-mode' => '校对模式',
 	'tux-editor-outdated-warning' => '此翻译可能需要更新。',
 	'tux-editor-outdated-warning-diff-link' => '显示差异',
 	'tux-editor-doc-editor-placeholder' => '信息说明文件',

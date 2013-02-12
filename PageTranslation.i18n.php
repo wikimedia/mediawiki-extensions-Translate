@@ -10632,9 +10632,9 @@ $messages['zh-hans'] = array(
 	'pt-deletepage-full-logreason' => '翻译页面$1的一部分。',
 	'pt-deletepage-lang-logreason' => '翻译页面$1的一部分。',
 	'pt-deletepage-started' => '请检查[[Special:Log/pagetranslation|页面翻译日志]]内的错误和完成消息。',
-	'pt-deletepage-intro' => '本特殊页面允许您删除一种语言中全部可翻译页面与翻译作品。
-因为有很多页面要删除，此操作不会瞬间完成。
-失败操作记录于[[Special:Log/pagetranslation|页面翻译日志]]中并且需要手动修理。', # Fuzzy
+	'pt-deletepage-intro' => '本特殊页面允许您删除一种语言中一整个可翻译页面或单个翻译页面。
+因为所有相关页会一并删除，此操作不会即时完成。
+失败操作记录于[[Special:Log/pagetranslation|页面翻译日志]]中并且需要手动修理。',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
