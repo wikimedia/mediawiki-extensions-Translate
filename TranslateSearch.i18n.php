@@ -114,12 +114,13 @@ $messages['eu'] = array(
 );
 
 /** Finnish (suomi)
+ * @author Crt
  * @author Nike
  * @author Stryn
  */
 $messages['fi'] = array(
 	'searchtranslations' => 'Etsi käännöksiä',
-	'tux-sst-edit' => 'Muokkaa viestiä', # Fuzzy
+	'tux-sst-edit' => 'Muokkaa käännöstä',
 	'tux-sst-search' => 'Hae',
 	'tux-sst-search-ph' => 'Etsi käännöksiä',
 	'tux-sst-count' => '{{PLURAL:$1|Yksi hakutulos|$1 hakutulosta}}',
@@ -135,7 +136,7 @@ $messages['fi'] = array(
  */
 $messages['fr'] = array(
 	'searchtranslations' => 'Recherche de traductions',
-	'tux-sst-edit' => 'Modifier le message',
+	'tux-sst-edit' => 'Modifier la traduction',
 	'tux-sst-search' => 'Rechercher',
 	'tux-sst-search-ph' => 'Recherche de traductions',
 	'tux-sst-count' => '{{PLURAL:$1|Un résultat trouvé|$1 résultats trouvés}}',

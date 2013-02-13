@@ -3375,7 +3375,7 @@ Käännösosion teksti: <pre>$1</pre>', # Fuzzy
 Siirto ei tapahdu heti, koska useita sivuja täytyy siirtää.
 Sivut ovat lukittuna siirron ajan.
 Epäonnistuneet siirrot tallennetaan [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne täytyy korjata käsin.',
-	'pt-movepage-logreason' => 'Osa käännettävästä sivusta $1.',
+	'pt-movepage-logreason' => 'Osa käännettävää sivua $1.',
 	'pt-movepage-started' => 'Käännettävän sivun perussivu on siirretty.
 Tarkista mahdolliset virheet ja valmistumisviestit [[Special:Log/pagetranslation|sivunkääntölokista]].',
 	'pt-locked-page' => 'Tämä sivu on lukittu, koska käännettävän sivun siirtäminen on kesken.',
