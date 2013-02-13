@@ -29,6 +29,7 @@ class MessageIndexRebuildJob extends Job {
 
 	function run() {
 		MessageIndex::singleton()->rebuild();
+		return true;
 	}
 
 	/**

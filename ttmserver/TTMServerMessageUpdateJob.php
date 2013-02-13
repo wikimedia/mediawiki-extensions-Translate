@@ -38,5 +38,7 @@ class TTMServerMessageUpdateJob extends Job {
 			$tHandle = new MessageHandle( $tTitle );
 			TTMServer::onChange( $tHandle, $data[0], $tHandle->isFuzzy() );
 		}
+
+		return true;
 	}
 }
