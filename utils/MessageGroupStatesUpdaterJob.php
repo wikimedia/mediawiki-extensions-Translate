@@ -44,7 +44,7 @@ class MessageGroupStatesUpdaterJob extends Job {
 		$code = $handle->getCode();
 
 		if ( !$handle->isValid() && !$code ) {
-			return;
+			return true;
 		}
 
 		$groups = self::getGroupsWithTransitions( $handle );
@@ -56,6 +56,8 @@ class MessageGroupStatesUpdaterJob extends Job {
 				ApiGroupReview::changeState( $group, $code, $state, FuzzyBot::getUser() );
 			}
 		}
+
+		return true;
 	}
 
 	public static function getGroupsWithTransitions( MessageHandle $handle ) {
