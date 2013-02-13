@@ -20169,7 +20169,7 @@ Dit is vooral nuttig voor de controletaken.',
 	'tux-message-filter-optional-messages-label' => 'Optionele berichten',
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎)
+/** Norwegian Nynorsk (norsk nynorsk)
  * @author Byrial
  * @author Dittaeva
  * @author Frokor
@@ -20257,8 +20257,8 @@ Endringar vert ikkje lagra før du klikkar på lagreknappen nedanfor.',
 	'translate-magic-cm-export' => 'Eksporter',
 	'translate-magic-nothing-to-export' => 'Det er ingenting å eksportera.',
 	'translate-magic-cm-to-be' => 'Framtidig',
-	'translate-magic-cm-current' => 'Noverande',
-	'translate-magic-cm-original' => 'Original',
+	'translate-magic-cm-current' => 'Gjeldande',
+	'translate-magic-cm-original' => 'Opphavleg',
 	'translate-magic-cm-comment' => 'Kommentar:',
 	'translate-magic-cm-save' => 'Lagre',
 	'translate-magic-cm-updatedusing' => 'Oppdatert vha. [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
