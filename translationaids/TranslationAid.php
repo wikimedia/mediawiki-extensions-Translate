@@ -95,6 +95,8 @@ abstract class TranslationAid {
 		$data = ApiQueryMessageTranslations::getTranslations( $this->handle );
 		$namespace = $this->handle->getTitle()->getNamespace();
 
+		$cache[$key] = array();
+
 		foreach ( $data as $page => $info ) {
 			$tTitle = Title::makeTitle( $namespace, $page );
 			$tHandle = new MessageHandle( $tTitle );
@@ -107,6 +109,7 @@ abstract class TranslationAid {
 			$code = $tHandle->getCode();
 			$cache[$key][$code] = $info[0];
 		}
+
 		return $cache[$key];
 	}
 
