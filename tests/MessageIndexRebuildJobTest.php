@@ -49,6 +49,6 @@ class MessageIndexRebuildJobTest extends MediaWikiTestCase {
 		$this->assertTrue( $job->insert(), 'Job is inserted succesfully' );
 		$popJob = Job::pop_type( 'MessageIndexRebuildJob' );
 		$this->assertInstanceOf( 'MessageIndexRebuildJob', $popJob, 'There is a job in the JobQueue' );
-		$this->assertNull( $popJob->run(), 'Job is executed succesfully' );
+		$this->assertTrue( $popJob->run(), 'Job is executed succesfully' );
 	}
 }
