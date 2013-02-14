@@ -73,10 +73,9 @@
 				// The parsed text is returned in a <p> tag,
 				// so it's removed here.
 				$description.html( $( parsedDescription ).html() );
-			} ).fail( function ( errorCode, results ) {
+			} ).fail( function () {
 				$description.html( group.description );
-				mw.log( 'Error parsing description for group ' +
-					group.id + ': ' + errorCode + ' ' + results.error.info );
+				mw.log( 'Error parsing description for group ' + group.id );
 			} );
 
 			mw.translate.loadMessages( changes );
@@ -117,8 +116,12 @@
 
 			uri.extend( params );
 
+			if ( uri.toString() === window.location.href ) {
+				return;
+			}
+
 			// Change the URL with this URI, but don't leave the page.
-			if ( history.pushState ) {
+			if ( history.pushState && $( '.tux-messagelist' ).length ) {
 				// IE<10 does not support pushState. Never mind.
 				history.pushState( uri, null, uri.toString() );
 			} else {
@@ -202,17 +205,19 @@
 		var uiLanguage, $translateContainer, $hideTranslatedButton,
 			docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri;
 
-		uri = new mw.Uri( window.location.href );
-		filter = uri.query.filter;
-		if ( filter === undefined ) {
-			filter = '!translated';
-		}
-		mw.translate.changeFilter( filter );
-		$( '.tux-message-selector li' ).each( function () {
-			if ( $( this ).data( 'filter' ) === filter ) {
-				$( this ).addClass( 'selected' );
+		if ( $( '.tux-messagelist' ).length ) {
+			uri = new mw.Uri( window.location.href );
+			filter = uri.query.filter;
+			if ( filter === undefined ) {
+				filter = '!translated';
 			}
-		} );
+			mw.translate.changeFilter( filter );
+			$( '.tux-message-selector li' ).each( function () {
+				if ( $( this ).data( 'filter' ) === filter ) {
+					$( this ).addClass( 'selected' );
+				}
+			} );
+		}
 
 		uiLanguage = mw.config.get( 'wgUserLanguage' );
 
