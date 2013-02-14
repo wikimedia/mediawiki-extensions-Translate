@@ -531,7 +531,8 @@ Goes together with {{msg-mw|translate-taskui-reviewall}}',
 	'translate-taction-proofread' => 'A tab text used in Special pages Translate, LanguageStats and MessageGroupStats',
 	'translate-taction-lstats' => 'A tab text used in Special pages Translate, LanguageStats and MessageGroupStats',
 	'translate-taction-mstats' => 'A tab text used in Special pages Translate, LanguageStats and MessageGroupStats',
-	'translate-taction-export' => 'A tab text used in Special pages Translate, LanguageStats and MessageGroupStats',
+	'translate-taction-export' => 'A tab text used in Special pages Translate, LanguageStats and MessageGroupStats.
+{{Identical|Export}}',
 	'translate-taction-disabled' => 'Shown instead of the radio buttons for tasks when all tasks related to this action has been disabled.',
 	'translate-page-no-such-language' => "Shown when someone requests a language that doesn't exists. [{{FULLURL:Special:Translate|language=}} Example].",
 	'translate-page-no-such-group' => "Shown when someone requests a group that doesn't exists. [{{FULLURL:Special:Translate|group=invalidgroup}} Example].",
@@ -731,7 +732,8 @@ See also:
 	'translate-language' => 'Table header at [[Special:LanguageStats]].
 
 {{Identical|Language}}',
-	'translate-total' => 'Table header at [[Special:LanguageStats]].',
+	'translate-total' => 'Table header at [[Special:LanguageStats]].
+{{Identical|Message}}',
 	'translate-untranslated' => 'Column header in [[Special:LanguageStats]] for number of untranslated messages in a message group.',
 	'translate-percentage-complete' => 'Used in [[Special:LanguageStats]].',
 	'translate-percentage-fuzzy' => 'Used in [[Special:LanguageStats]].',
@@ -11588,6 +11590,7 @@ $1',
 	'tux-editor-message-desc-more' => 'להציג עוד',
 	'tux-editor-message-desc-less' => 'להציג פחות',
 	'tux-editor-clear-translated' => 'הסתרת הודעות מתורגמות',
+	'tux-editor-proofreading-mode' => 'מצב הגהה',
 	'tux-editor-outdated-warning' => 'ייתכן שצריך לעדכן את התרגום הזה.',
 	'tux-editor-outdated-warning-diff-link' => 'הצגת שינויים',
 	'tux-editor-doc-editor-placeholder' => 'תיעוד הודעה',
@@ -30063,6 +30066,7 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-editor-message-desc-more' => 'Xem thêm',
 	'tux-editor-message-desc-less' => 'Thu gọn',
 	'tux-editor-clear-translated' => 'Ẩn thông điệp đã dịch',
+	'tux-editor-proofreading-mode' => 'Chế độ hiệu đính',
 	'tux-editor-outdated-warning' => 'Bản dịch này có thể cần được cập nhật.',
 	'tux-editor-outdated-warning-diff-link' => 'Trình bày khác biệt',
 	'tux-editor-doc-editor-placeholder' => 'Tài liệu về thông điệp',
@@ -30073,6 +30077,7 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-message-filter-placeholder' => 'Lọc danh sách',
 	'tux-message-filter-result' => 'Tìm thấy $1 kết quả cho “$2”',
 	'tux-message-filter-advanced-button' => 'Tìm kiếm nâng cao',
+	'tux-message-filter-optional-messages-label' => 'Các thông điệp tùy dịch',
 );
 
 /** Volapük (Volapük)
