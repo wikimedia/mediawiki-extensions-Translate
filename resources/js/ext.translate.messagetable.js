@@ -59,9 +59,7 @@
 	}
 
 	MessageTable.prototype = {
-		init: function () {
-			this.load();
-		},
+		init: function () {},
 
 		listen: function () {
 			var messageTable = this;
