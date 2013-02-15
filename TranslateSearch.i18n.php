@@ -285,6 +285,22 @@ $messages['mk'] = array(
 	'tux-sst-nosolr-body' => 'Ова вики нема пребарувач.',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'searchtranslations' => 'Cari terjemahan',
+	'tux-sst-edit' => 'Suntingan terjemahan',
+	'tux-sst-search' => 'Cari',
+	'tux-sst-search-ph' => 'Cari terjemahan',
+	'tux-sst-count' => '$1 hasil dijumpai',
+	'tux-sst-facet-language' => 'Bahasa',
+	'tux-sst-facet-group' => 'Message groups',
+	'tux-sst-facet-orphan' => '(yatim)',
+	'tux-sst-nosolr-title' => 'Tidak boleh mencari',
+	'tux-sst-nosolr-body' => 'Wiki ini tiada ciri mencari terjemahan.',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */
