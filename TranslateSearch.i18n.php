@@ -72,6 +72,22 @@ $messages['ast'] = array(
 	'tux-sst-nosolr-body' => 'Esta wiki nun tien un serviciu de gueta de traducciones.',
 );
 
+/** Azerbaijani (azərbaycanca)
+ * @author Khan27
+ */
+$messages['az'] = array(
+	'searchtranslations' => 'Tərcümələri axtar',
+	'tux-sst-edit' => 'Tərcümələri redaktə et',
+	'tux-sst-search' => 'Axtar',
+	'tux-sst-search-ph' => 'Tərcümələri axtar',
+	'tux-sst-count' => '{{PLURAL:$1|Bir nəticə tapıldı|$1 nəticə tapıldı}}',
+	'tux-sst-facet-language' => 'Dillər',
+	'tux-sst-facet-group' => 'Mesaj qrupları',
+	'tux-sst-facet-orphan' => '(yetim)',
+	'tux-sst-nosolr-title' => 'Axtarış mümkün deyil',
+	'tux-sst-nosolr-body' => 'Bu viki üçün tərcümə axtarış sistemi yoxdur.',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Wizardist
  */
@@ -306,7 +322,7 @@ $messages['ms'] = array(
  */
 $messages['nl'] = array(
 	'searchtranslations' => 'Vertalingen zoeken',
-	'tux-sst-edit' => 'Bericht bewerken',
+	'tux-sst-edit' => 'Vertaling bewerken',
 	'tux-sst-search' => 'Zoeken',
 	'tux-sst-search-ph' => 'Vertalingen zoeken',
 	'tux-sst-count' => '{{PLURAL:$1|Eén resultaat|$1 resultaten}} gevonden',

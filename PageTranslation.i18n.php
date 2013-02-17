@@ -339,7 +339,7 @@ Used only if a reason was provided in the following messages:
 	'tpt-aggregategroup-new-name' => 'Label for the name field in [[Special:AggregateGroups]]',
 	'tpt-aggregategroup-new-description' => 'Label for the description field in [[Special:AggregateGroups]]',
 	'tpt-aggregategroup-remove-confirm' => 'Confirmation message shown while user tried to delete an aggregate group in [[Special:AggregateGroups]]',
-	'tpt-aggregategroup-invalid-group' => 'Show on Special:AggregateGroups after remove button of a group, if the stored group id does not match any currently known groups.',
+	'tpt-aggregategroup-invalid-group' => 'Show on [[Special:AggregateGroups]] after remove button of a group, if the stored group id does not match any currently known groups.',
 	'pt-parse-open' => '"Translation template" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.',
 	'pt-parse-close' => 'Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.',
 	'pt-parse-nested' => 'Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.
@@ -405,7 +405,7 @@ This message is followed by one of the following error messages:
 	'pt-movepage-list-other' => 'Header of a list of additional subpages (other than translation pages) of the translatable page being moved, when the user selected the option to move subpages as well.',
 	'pt-movepage-legend' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-movepage-reason' => '{{Identical|Reason}}',
-	'pt-movepage-action-other' => "Button label on the special page 'Move translateable page'. See [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_21._Move_confirm.png screenshot].",
+	'pt-movepage-action-other' => "Button label on the special page 'Move translateable page'. See [[mw:File:Translate_manual_-_Page_example_-_21._Move_confirm.png|screenshot]].",
 	'pt-movepage-intro' => 'See definitions on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-movepage-logreason' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-locked-page' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
@@ -413,16 +413,16 @@ This message is followed by one of the following error messages:
 	'pt-deletepage-full-title' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-invalid-text' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-action-check' => 'This is a button label. "List" is an imperative verb.',
-	'pt-deletepage-action-perform' => "Submit button on special page 'Deleting translatable page'. See [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
-	'pt-deletepage-action-other' => "Button label on the special page 'Deleting translatable page'. See [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
+	'pt-deletepage-action-perform' => "Submit button on special page 'Deleting translatable page'. See [[mw:File:Translate_manual_-_Page_example_-_25._Delete_confirm.png|screenshot]].",
+	'pt-deletepage-action-other' => "Button label on the special page 'Deleting translatable page'. See [[mw:File:Translate_manual_-_Page_example_-_25._Delete_confirm.png|screenshot]].",
 	'pt-deletepage-lang-legend' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-full-legend' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-any-legend' => 'See definitions on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-current' => '{{Identical|Page name}}',
 	'pt-deletepage-reason' => '{{Identical|Reason}}',
-	'pt-deletepage-subpages' => "Checkbox label on special page 'Deleting translatable page'. see [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
+	'pt-deletepage-subpages' => "Checkbox label on special page 'Deleting translatable page'. see [[mw:File:Translate_manual_-_Page_example_-_25._Delete_confirm.png|screenshot]].",
 	'pt-deletepage-list-translation' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-deletepage-list-section' => "Heading in special page 'Deleting translatable page'. See [http://www.mediawiki.org/wiki/File:Translate_manual_-_Page_example_-_25._Delete_confirm.png screenshot].",
+	'pt-deletepage-list-section' => "Heading in special page 'Deleting translatable page'. See [[mw:File:Translate_manual_-_Page_example_-_25._Delete_confirm.png|screenshot]].",
 	'pt-deletepage-full-logreason' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-lang-logreason' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 );
@@ -843,9 +843,35 @@ Los fallos quedarán rexistraos nel [[Special:Log/pagetranslation|rexistru de tr
 
 /** Azerbaijani (azərbaycanca)
  * @author Cekli829
+ * @author Khan27
  */
 $messages['az'] = array(
+	'pagetranslation' => 'Tərcümə səhifəsi',
+	'right-pagetranslation' => 'Tərcümə üçün səhifənin versiyalarını işarələ',
+	'action-pagetranslation' => 'tərcümə oluna bilən səhifələri idarə et',
+	'tpt-desc' => 'Məzmun səhifələrin tərcüməsi üçün əlavə olundu',
+	'tpt-section' => 'Tərcümə bölümü $1',
+	'tpt-section-new' => 'Yeni tərcümə bölümü.
+Ad: $1',
+	'tpt-section-deleted' => 'Tərcümə bölümü $1',
+	'tpt-template' => 'Səhifə şablonu',
+	'tpt-templatediff' => 'Səhifə şablonu dəyişdirildi.',
+	'tpt-diff-old' => 'Əvvəlki mətn',
 	'tpt-diff-new' => 'Yeni mətn',
+	'tpt-submit' => 'Bu versiyanı tərcümə üçün işarələ',
+	'tpt-sections-oldnew' => 'Yeni və mövcud tərcümə bölümləri',
+	'tpt-sections-deleted' => 'Tərcümə bölümləri silindi',
+	'tpt-sections-template' => 'Tərcümə səhifəsi şablonu',
+	'tpt-discouraged-language-reason' => 'Təsvir: $1',
+	'tpt-download-page' => 'Tərcüməli səhifələri köçür',
+	'aggregategroups' => 'Aqreqat qrupları',
+	'tpt-aggregategroup-add' => 'Əlavə et',
+	'tpt-aggregategroup-save' => 'Saxla',
+	'tpt-aggregategroup-add-new' => 'Yeni aqreqat qrupu əlavə et',
+	'tpt-aggregategroup-new-name' => 'Ad:',
+	'tpt-aggregategroup-new-description' => 'Açıqlama (istəyə bağlı):',
+	'tpt-aggregategroup-remove-confirm' => 'Bu aqreqat qrupunu silmək istədiyindən əminsən?',
+	'tpt-aggregategroup-invalid-group' => 'Qrup mövcud deyil',
 	'pt-movepage-new' => 'Yeni ad:',
 	'pt-movepage-reason' => 'Səbəb:',
 	'pt-deletepage-current' => 'Səhifə adı:',
@@ -6599,6 +6625,17 @@ $messages['mn'] = array(
 	'pt-movepage-reason' => 'Шалтгаан:',
 );
 
+/** Marathi (मराठी)
+ * @author Vb2055
+ */
+$messages['mr'] = array(
+	'pagetranslation' => 'माझे नाव विभावरी आहे. मी बीसीए त दुसरया वर्गात  शिकत आहे. मी फोरसाईट महाविद्यालयात शिकत आहे.मला फस्ट इयर  बीसीएत डिस्टिक्श्न मिलाले आहे.',
+	'right-pagetranslation' => 'मला स्वताला टेनिस खेलायला आवडते.',
+	'action-pagetranslation' => 'I am vibhavari, I  am goal oriented person,I became software enginner.;;;',
+	'tpt-desc' => 'A barcode is an optical machine readable representation of data  relating to the object to which it is attached originally barcodes systematically represented data by varying the width...........',
+	'tpt-section' => 'Barcodes originally were scanned by special optical scanners called barcode reader.Later scanners & interpractive.Software', # Fuzzy
+);
+
 /** Malay (Bahasa Melayu)
  * @author Anakmalaysia
  */
@@ -9913,7 +9950,7 @@ $messages['ug-arab'] = array(
  */
 $messages['uk'] = array(
 	'pagetranslation' => 'Переклад сторінок',
-	'right-pagetranslation' => 'позначення версій сторінок для перекладу',
+	'right-pagetranslation' => 'Позначення версій сторінок для перекладу',
 	'action-pagetranslation' => 'керування сторінками, що можна перекладати',
 	'tpt-desc' => 'Розширення для перекладу статей',
 	'tpt-section' => 'Блок перекладу $1',
@@ -9969,7 +10006,7 @@ $messages['uk'] = array(
 	'translate-tag-translate-link-desc' => 'Перекласти цю сторінку',
 	'translate-tag-markthis' => 'Позначити цю сторінку для перекладу',
 	'translate-tag-markthisagain' => 'На цій сторінці було здійснено <span class="plainlinks">[$1 змін]</span> з моменту, коли ця сторінка була востаннє <span class="plainlinks">[$2 відмічена до перекладу]</span>.',
-	'translate-tag-hasnew' => 'На цій сторінці було здійснено <span class="plainlinks">[$1 змін]</span>, які не відмічені для перекладу.',
+	'translate-tag-hasnew' => 'На цій сторінці було здійснено <span class="plainlinks">[$1 зміни]</span>, які не відмічені для перекладу.',
 	'tpt-translation-intro' => 'Ця сторінка є <span class="plainlinks">[$1 перекладом]</span> сторінки [[$2]]. Переклад виконано на $3%.',
 	'tpt-translation-intro-fuzzy' => 'Застарілі переклади позначені так.',
 	'tpt-languages-legend' => 'Інші мови:',
@@ -10012,8 +10049,8 @@ $messages['uk'] = array(
 	'pt-shake-empty' => 'Порожня одиниця перекладу під маркером "$1".',
 	'pt-log-header' => "Журнал для дій, пов'язаних з системою перекладу сторінок.",
 	'pt-log-name' => 'Журнал перекладу сторінок',
-	'pt-log-mark' => '{{GENDER:$2|позначив|позначила}} для перекладу версію $3 сторінки "[[:$1]]"',
-	'pt-log-unmark' => '{{GENDER:$2|зняв|зняла}} сторінку "[[:$1]]" з перекладу',
+	'pt-log-mark' => '{{GENDER:$2|позначив|позначила}} для перекладу версію $3 сторінки «[[:$1]]»',
+	'pt-log-unmark' => '{{GENDER:$2|зняв|зняла}} сторінку «[[:$1]]» з перекладу',
 	'pt-log-moveok' => '{{GENDER:$2|виконав|виконала}} перейменування сторінки для перекладу $1 на $3',
 	'pt-log-movenok' => '{{GENDER:$2|викликав|викликала}} помилку при переміщенні [[:$1]] до [[:$3]]',
 	'pt-log-delete-full-ok' => '{{GENDER:$2|видалив|видалила}} сторінку перекладу $1',
