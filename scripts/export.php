@@ -223,8 +223,15 @@ foreach ( $groups as $groupId => $group ) {
 			$definitionFile = str_replace( $wgTranslateGroupRoot, $options['ppgettext'], $path );
 		}
 
+		$translatebleLanguages = $group->getTranslatableLanguages();
+
 		foreach ( $langs as $lang ) {
 			if ( !$group->isValidLanguage( $lang ) ) {
+				continue;
+			}
+
+			// Do not export languges that are blacklisted (or not whitelisted)
+			if( !in_array( $lang, $translatebleLanguages ) ) {
 				continue;
 			}
 
