@@ -9,7 +9,17 @@
  * @file
  */
 
-$optionsWithArgs = array( 'target', 'lang', 'skip', 'group', 'skipgroup', 'threshold', 'ppgettext', 'hours' );
+$optionsWithArgs = array(
+	'group',
+	'hours',
+	'lang',
+	'ppgettext',
+	'skip',
+	'skipgroup',
+	'target',
+	'threshold',
+);
+
 require( dirname( __FILE__ ) . '/cli.inc' );
 
 function showUsage() {
@@ -223,8 +233,19 @@ foreach ( $groups as $groupId => $group ) {
 			$definitionFile = str_replace( $wgTranslateGroupRoot, $options['ppgettext'], $path );
 		}
 
+		$translatebleLanguages = $group->getTranslatableLanguages();
+
 		foreach ( $langs as $lang ) {
 			if ( !$group->isValidLanguage( $lang ) ) {
+				continue;
+			}
+
+			// Do not export languges that are blacklisted (or not whitelisted). As
+			// $translatebleLanguages can be null, only test if $translatebleLanguages
+			// is an array.
+			if ( is_array( $translatebleLanguages ) &&
+				!in_array( $lang, $translatebleLanguages )
+			) {
 				continue;
 			}
 
@@ -248,8 +269,10 @@ foreach ( $groups as $groupId => $group ) {
 			// Do post processing if requested.
 			if ( $definitionFile ) {
 				if ( is_file( $definitionFile ) ) {
-					$targetFileName = $ffs->getWritePath() . "/" . $group->getTargetFilename( $collection->code );
-					$cmd = "msgmerge --quiet " . $noLocation . "--output-file=" . $targetFileName . ' ' . $targetFileName . ' ' . $definitionFile;
+					$targetFileName = $ffs->getWritePath() .
+						"/" . $group->getTargetFilename( $collection->code );
+					$cmd = "msgmerge --quiet " . $noLocation . "--output-file=" .
+						$targetFileName . ' ' . $targetFileName . ' ' . $definitionFile;
 					wfShellExec( $cmd, $ret );
 
 					// Report on errors.
