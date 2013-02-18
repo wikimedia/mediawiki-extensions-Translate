@@ -8,7 +8,7 @@
  * @file
  * @defgroup FFS File format support
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2012, Niklas Laxström
+ * @copyright Copyright © 2008-2013, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
