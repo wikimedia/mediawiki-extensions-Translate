@@ -329,7 +329,8 @@ See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-discouraged-language-reason' => '$1 is the reason for the priority language definition.
 Used only if a reason was provided in the following messages:
 * {{msg-mw|tpt-discouraged-language-force}}
-* {{msg-mw|tpt-discouraged-language}}',
+* {{msg-mw|tpt-discouraged-language}}
+{{Identical|Reason}}',
 	'tpt-priority-languages' => 'Message to be shown before the messagestats table. $1 is a comma-separated list of language codes.',
 	'aggregategroups' => 'Title of [[Special:AggregateGroups]] and its name in [[Special:AggregateGroups]].',
 	'tpt-aggregategroup-add' => 'Label for the button to add a new page to aggregate group in [[Special:AggregateGroups]].
@@ -2204,6 +2205,7 @@ Fejl vil blive registreret i [[Special:Log/pagetranslation|side oversættelses l
  * @author Purodha
  * @author The Evil IP address
  * @author Umherirrender
+ * @author Vogone
  */
 $messages['de'] = array(
 	'pagetranslation' => 'Seiten übersetzen',
@@ -2314,7 +2316,7 @@ Text der Übersetzungseinheit: <pre>$1</pre>',
 	'pt-log-delete-full-nok' => '{{GENDER:$2|hatte}} ein Problem während des Löschens der übersetzbaren Seite [[:$1]]',
 	'pt-log-delete-lang-ok' => '{{GENDER:$2|schloss}} das Löschen der übersetzten Seite $1 ab',
 	'pt-log-delete-lang-nok' => '{{GENDER:$2|hatte}} ein Problem während des Löschens der übersetzten Seite [[:$1]]',
-	'pt-log-encourage' => '{{GENDER:$2|empfahl}} die Übersetzung von Seite [[:$1]]',
+	'pt-log-encourage' => '{{GENDER:$2|empfahl}} die Übersetzung der Seite [[:$1]]',
 	'pt-log-discourage' => '{{GENDER:$2|riet davon ab}} die Seite [[:$1]] zu übersetzen',
 	'pt-log-priority-langs-unset' => '{{GENDER:$2|entfernte}} die priorisierten Sprachen von der übersetzbaren Seite [[:$1]]',
 	'pt-log-priority-langs' => '{{GENDER:$2|legte}} die priorisierten Sprachen für die übersetzbare Seite [[:$1]] auf $3 fest. Grund: $4',

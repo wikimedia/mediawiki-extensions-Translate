@@ -4172,6 +4172,7 @@ $messages['br'] = array(
 Abeg :
 
 ''$1''",
+	'translate-language-disabled' => 'Diweredekaet eo an treiñ evit ar yezh-mañ.',
 	'translate-page-settings-legend' => 'Arventennoù',
 	'translate-page-group' => 'Strollad',
 	'translate-page-language' => 'Yezh',
@@ -4216,11 +4217,12 @@ Aliasoù ar pajennoù dibar hag ar gerioù burzhudus a c'hall kaout meur a droid
 Dispartiet eo an troidigezhioù dre skejoù (,).
 N'hall anvioù an esaouennoù anv kaout nemet un droidigezh.
 
-E troidigezhioù an esaouennoù anv eo dibar <code>$1 talk</code>. Erlec'hiet eo <code>$1</code> gant anv al lec'hienn (da skouer <code>{{ns:project_talk}}</code>).
-Ma n'haller ket sevel lavarennoù reizh en ho yezh hep kemmañ anv al lec'hienn, kit e darempred gant un diorroer.
+Treiñ esaouennoù anv ar raktres <code>$1 talk</code> a c'hall bezañ luziet.
+Erlec'hiet eo <code>$1</code> gant anv al lec'hienn (da skouer <code>{{ns:project_talk}}</code>).
+Ma n'haller ket sevel lavarennoù reizh en ho yezh hep kemmañ anv al lec'hienn, kit e darempred gant un diorroer [[Support]].
 
-Ret eo deoc'h bezañ ezel eus ar strollad troerien evit enrollañ ar c'hemmoù.
-Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton enrollañ dindan.", # Fuzzy
+Ret eo deoc'h bezañ ezel eus ar strollad troerien evit gallout enrollañ ar c'hemmoù.
+Ne vo ket enrollet ar c'hemmoù e-keit ha ne vo ket bet pouezet war ar bouton enrollañ dindan.",
 	'translate-magic-module' => 'Modulenn :',
 	'translate-magic-submit' => 'Klask',
 	'translate-magic-cm-export' => 'Ezporzhiañ',
@@ -4465,6 +4467,18 @@ Talvoudus evit adlenn ha reizhañ.',
 	'translate-dynagroup-last' => 'Kemm diwezhañ graet gant {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Kemm diwezhañ graet gant {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Skoazell',
+	'translate-msggroupselector-search-placeholder' => 'Klask strolladoù',
+	'tux-languageselector' => 'Treiñ e',
+	'tux-editor-suggestions-title' => 'Kinnigoù',
+	'tux-editor-in-other-languages' => 'E yezhoù all',
+	'tux-editor-need-more-help' => 'Ezhomm sikour ?',
+	'tux-editor-ask-help' => 'Goulenn resisadurioù',
+	'tux-editor-message-desc-more' => "Gwelet muioc'h",
+	'tux-editor-message-desc-less' => "Gwelet nebeutoc'h",
+	'tux-editor-clear-translated' => 'Kuzhat ar re bet troet',
+	'tux-editor-outdated-warning-diff-link' => "Diskouez ar c'hemmoù",
+	'tux-message-filter-placeholder' => 'Roll silañ',
+	'tux-message-filter-advanced-button' => 'Klask araokaet',
 );
 
 /** Bosnian (bosanski)
@@ -31860,8 +31874,10 @@ $1',
 	'tux-status-saving' => '儲存中...',
 	'tux-status-unsaved' => '未儲存',
 	'tux-editor-placeholder' => '您的翻譯',
+	'tux-editor-paste-original-button-label' => '貼上源文本',
 	'tux-editor-save-button-label' => '儲存翻譯',
 	'tux-editor-skip-button-label' => '跳至下一個',
+	'tux-editor-confirm-button-label' => '確認翻譯',
 	'tux-editor-shortcut-info' => '點擊「$1」儲存，或「$2」跳至下一訊息',
 	'tux-editor-no-message-doc' => '沒有訊息說明文件',
 	'tux-editor-edit-desc' => '編輯說明',
@@ -31875,13 +31891,22 @@ $1',
 	'tux-warnings-hide' => '隱藏',
 	'tux-editor-save-failed' => '儲存翻譯失敗：$1',
 	'tux-editor-use-this-translation' => '用作翻譯',
+	'tux-editor-n-uses' => '已使用$1次',
 	'tux-editor-message-desc-more' => '顯示更多',
 	'tux-editor-message-desc-less' => '顯示更少',
 	'tux-editor-clear-translated' => '隱藏已翻譯',
+	'tux-editor-proofreading-mode' => '校對模式',
 	'tux-editor-outdated-warning' => '此翻譯可能要更新。',
 	'tux-editor-outdated-warning-diff-link' => '顯示差異',
+	'tux-editor-doc-editor-placeholder' => '訊息說明文件',
+	'tux-editor-doc-editor-save' => '保存文檔',
+	'tux-editor-doc-editor-cancel' => '取消',
 	'tux-messagetable-more-messages' => '$1則訊息',
 	'tux-messagetable-loading-messages' => '載入{{PLURAL:$1|訊息|訊息}}...',
+	'tux-message-filter-placeholder' => '過濾列表',
+	'tux-message-filter-result' => '找到$1個結果含「$2」',
+	'tux-message-filter-advanced-button' => '進階搜尋',
+	'tux-message-filter-optional-messages-label' => '可選消息',
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)
