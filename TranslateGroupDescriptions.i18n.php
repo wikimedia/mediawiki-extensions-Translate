@@ -2325,6 +2325,9 @@ $messages['ro'] = array(
 $messages['roa-tara'] = array(
 	'translate-group-desc-nodesc' => 'Nisciune descrizione jè disponibbile pe stu gruppe de messàgge',
 	'translate-group-desc-translatablepages' => 'Tutte le pàggene traducibbele',
+	'translate-group-desc-eol' => "'Nu gruppe de messàgge pa [[Translating:EOL|'Ngrclopedije d'a Vite]]",
+	'translate-group-desc-frontlinesms' => "'Nu gruppe de messàgge pe [[Translating:FrontlineSMS|FrontlineSMS]]",
+	'translate-group-desc-ihris' => "'Nu gruppe de messàgge pe [[Translating:iHRIS|iHRIS]]",
 	'translate-group-desc-kiwix' => "'Nu gruppe de messàgge pe [[Translating:Kiwix|Kiwix]]",
 );
 

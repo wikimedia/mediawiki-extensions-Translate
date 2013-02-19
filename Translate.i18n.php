@@ -6267,7 +6267,7 @@ Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-rc-translation-filter-only' => 'Zeige nur Übersetzungen',
 	'translate-rc-translation-filter-filter' => 'Übersetzungen filtern',
 	'translate-rc-translation-filter-site' => 'Nur Änderungen an den Nachrichten des Wikis',
-	'translationstats' => 'Statistiken zu Übersetzungen',
+	'translationstats' => 'Übersetzungsstatistik',
 	'translate-stats-edits' => 'Bearbeitungen',
 	'translate-stats-users' => 'Übersetzer',
 	'translate-stats-registrations' => 'Registrierungen',
@@ -6311,7 +6311,7 @@ Alle Werte haben obere und untere Begrenzungen.',
 	'translate-translations-history-short' => 'V',
 	'languagestats' => 'Statistiken zur Sprache',
 	'languagestats-summary' => 'Diese Seite zeigt Statistiken zu Übersetzungen für alle Nachrichtengruppen einer Sprache.',
-	'languagestats-stats-for' => 'Statistiken zu Übersetzungen für $1 ($2).',
+	'languagestats-stats-for' => 'Übersetzungsstatistik für $1 ($2).',
 	'languagestats-recenttranslations' => 'Aktuelle Übersetzungen',
 	'translate-langstats-incomplete' => 'Einige der Statistiken auf dieser Seite sind unvollständig. Lade sie erneut, um weitere Statistiken zu erhalten.',
 	'translate-langstats-expand' => 'ausklappen',
@@ -13787,6 +13787,7 @@ $messages['io'] = array(
 );
 
 /** Icelandic (íslenska)
+ * @author Bjarki S
  * @author Jóna Þórunn
  * @author S.Örvarr.S
  * @author Snævar
@@ -13944,7 +13945,7 @@ Undirstrikið undir nafninu gefur til kynna hversu langt sé síðan að þýða
 	'translate-js-nonext' => 'Þetta voru síðustu skilaboðin á síðunni',
 	'translate-js-save-failed' => 'Vistun mistókst. Vinsamlegast tilkynntu villuna.',
 	'translate-js-history' => 'Breytingaskrá þýðingar',
-	'translate-js-support' => 'Spurja spurningar',
+	'translate-js-support' => 'Spyrja spurningar',
 	'translate-js-support-unsaved-warning' => 'Þú hefur óvistaðar þýðingar.',
 	'translate-dynagroup-recent-label' => 'Nýlegar þýðingar',
 	'translate-dynagroup-last' => 'Síðasta breyting eftir {{GENDER:$1|$1}}',
@@ -23763,6 +23764,7 @@ Mutive:
 	'translate-translations-project' => 'Pruggette:',
 	'translate-translations-history-short' => 'h',
 	'languagestats' => "Statisteche d'a lènghe",
+	'languagestats-summary' => "Sta pàgene face vedè le traduziune pe tutte le gruppe de messàgge pe 'na lènghe.",
 	'languagestats-stats-for' => 'Statisteche de le traduziune pe $1 ($2).',
 	'languagestats-recenttranslations' => 'traduziune recende',
 	'translate-langstats-expand' => 'spanne',
@@ -23797,6 +23799,7 @@ Mutive:
 	'translate-manage-import-deleted' => 'Messàgge scangellate $1',
 	'translate-manage-action-import' => "'Mborte",
 	'translate-manage-action-ignore' => 'Ignore',
+	'translate-manage-nochanges' => "Non ge stonne cangiaminde jndr'à le definiziune de le messàgge jndr'à stu gruppe.",
 	'importtranslations' => "'Mborte le traduziune",
 	'translate-import-from-url' => "URL d'u file:",
 	'translate-import-from-wiki' => 'File sus a sta uicchi:',
