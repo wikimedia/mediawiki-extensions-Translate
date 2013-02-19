@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dly3EpGA",
+        "filename": "api/ApiQueryMessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-02-19T11:56:17Z",
+      "side": 1,
+      "message": "No contribs in 2013, only original patch.",
+      "revId": "2284a1822a2bb999a33aee117bd37b2171f1b817",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dl03H8Gc",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-02-19T11:56:17Z",
+      "side": 1,
+      "message": "No contribs yet in 2013. :)",
+      "revId": "2284a1822a2bb999a33aee117bd37b2171f1b817",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
