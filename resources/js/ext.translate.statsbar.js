@@ -52,7 +52,6 @@
 			statsbar.$statsBar.on( 'change', function ( event, to, from ) {
 				for ( i = 0; i < languageStats.length; i++ ) {
 					if ( languageStats[i].group === statsbar.group ) {
-
 						if ( to === 'translated' ) {
 							languageStats[i].translated++;
 						}
@@ -81,7 +80,11 @@
 			} );
 
 			statsbar.$statsBar.on( 'refresh', function ( e, language ) {
-				mw.translate.loadLanguageStats( language ).done( $.proxy( statsbar.update, statsbar ) );
+				statsbar.language = language;
+
+				mw.translate.loadLanguageStats( language ).done( function () {
+					statsbar.update();
+				} );
 			} );
 		},
 
