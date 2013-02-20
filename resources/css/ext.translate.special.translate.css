@@ -186,6 +186,18 @@ ul.tux-workflow-status-selector li.selected {
 	list-style: none;
 }
 
+.tux-messagetable-header.floating {
+	background: white;
+	position: fixed;
+	padding-top:5px;
+	top: 0;
+	z-index: 200;
+}
+
+.tux-messagetable-header.floating + .tux-messagelist{
+	margin-top: 50px;
+}
+
 .tux-messagetable-header input.tux-message-filter-box {
 	font-size: 14px;
 	height: 28px;
