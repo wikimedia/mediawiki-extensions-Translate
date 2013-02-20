@@ -80,6 +80,7 @@
 
 			mw.translate.loadMessages( changes );
 			mw.translate.changeUrl( changes );
+			updateGroupWarning();
 		},
 
 		changeLanguage: function ( language ) {
@@ -93,6 +94,7 @@
 			mw.translate.changeUrl( changes );
 			$( '.tux-statsbar' ).trigger( 'refresh', language );
 			mw.translate.loadMessages();
+			updateGroupWarning();
 		},
 
 		changeFilter: function ( filter ) {
@@ -199,6 +201,47 @@
 		$translateContainer = $translateContainer || $( '.ext-translate-container' );
 		return $translateContainer.find( '.tux-message-item' )
 			.filter( '.translated, .proofread' );
+	}
+
+	function updateGroupWarning() {
+		var msgGroupData, targetLanguage, preferredLanguages, warningMessage,
+			$groupWarning = $( '.tux-editor-header .group-warning' ),
+			msgGroup = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
+
+		new mw.Api().get( {
+			action: 'query',
+			format: 'json',
+			meta: 'messagegroups',
+			mgfilter: msgGroup,
+			mgprop: 'prioritylangs|priorityforce'
+		} ).done( function ( result ) {
+			msgGroupData = result.query.messagegroups[0];
+			targetLanguage = $( '.tux-messagelist' ).data( 'targetlangcode' );
+
+			if ( msgGroupData.prioritylangs &&
+				$.inArray( targetLanguage, msgGroupData.prioritylangs ) === -1
+			) {
+				preferredLanguages = $.map( msgGroupData.prioritylangs, function ( code ) {
+					return $.uls.data.getAutonym( code );
+				} );
+				warningMessage = msgGroupData.priorityforce ?
+					'tpt-discouraged-language-force' :
+					'tpt-discouraged-language';
+
+				$groupWarning.html(
+					mw.message(
+						warningMessage,
+						'',
+						$.uls.data.getAutonym( targetLanguage ),
+						preferredLanguages.join( ', ' )
+					).parse()
+				);
+			} else {
+				$groupWarning.empty();
+			}
+		} ).fail( function ( errorCode, result ) {
+			mw.log( 'Error loading prioritylangs info for group ' + msgGroup + ': ' + errorCode + ' ' + result );
+		} );
 	}
 
 	$( document ).ready( function () {
@@ -363,6 +406,8 @@
 			mw.translate.changeUrl( { optional: checked ? 1 : 0 } );
 			mw.translate.changeFilter( uri.query.filter );
 		} );
+
+		updateGroupWarning();
 	} );
 
 }( jQuery, mediaWiki ) );
