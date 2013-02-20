@@ -120,6 +120,22 @@ $messages['de'] = array(
 	'tux-sst-nosolr-body' => 'Dieses Wiki hat keinen Übersetzungssuchservice.',
 );
 
+/** Lower Sorbian (dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'searchtranslations' => 'Pśełožki pytaś',
+	'tux-sst-edit' => 'Pśełožk wobźěłaś',
+	'tux-sst-search' => 'Pytaś',
+	'tux-sst-search-ph' => 'Pśełožki pytaś',
+	'tux-sst-count' => '{{PLURAL:$1|Jaden wuslědk namakany|$1 wuslědka namakanej|$1 wuslědki namakane|$1 wuslědkow namakane}}',
+	'tux-sst-facet-language' => 'Rěcy',
+	'tux-sst-facet-group' => 'Zdźěleńske kupki',
+	'tux-sst-facet-orphan' => '(wósyrośone)',
+	'tux-sst-nosolr-title' => 'Pytanje njestoj k dispoziciji',
+	'tux-sst-nosolr-body' => 'Toś ten wiki njama słužbu za pytanje pśełožkow.',
+);
+
 /** Basque (euskara)
  * @author An13sa
  */
@@ -193,6 +209,22 @@ $messages['he'] = array(
 	'tux-sst-facet-orphan' => '(יתומים)',
 	'tux-sst-nosolr-title' => 'החיפוש אינו זמין',
 	'tux-sst-nosolr-body' => 'בוויקי הזה אין שירות חיפוש בתרגומים.',
+);
+
+/** Upper Sorbian (hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'searchtranslations' => 'Přełožki pytać',
+	'tux-sst-edit' => 'Přełožk wobdźěłać',
+	'tux-sst-search' => 'Pytać',
+	'tux-sst-search-ph' => 'Přełožki pytać',
+	'tux-sst-count' => '{{PLURAL:$1|Jedyn wuslědk namakany|$1 wuslědkaj namakanej|$1 wuslědki namakane|$1 wuslědkow namakane}}',
+	'tux-sst-facet-language' => 'Rěče',
+	'tux-sst-facet-group' => 'Zdźělenske skupiny',
+	'tux-sst-facet-orphan' => '(wosyroćene)',
+	'tux-sst-nosolr-title' => 'Pytanje k dispoziciji njesteji',
+	'tux-sst-nosolr-body' => 'Tutón wiki nima słužbu za pytanje přełožkow.',
 );
 
 /** Italian (italiano)
