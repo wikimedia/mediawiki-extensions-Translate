@@ -8,6 +8,9 @@
 		// indexed by language code
 		languagestats: {},
 
+		// A cache for message groups stats loaded from API
+		messageGroups: {},
+
 		// Storage for language stats loader functions from API,
 		// indexed by language code
 		languageStatsLoader: {},
@@ -32,6 +35,26 @@
 			} );
 
 			return mw.translate.languageStatsLoader[language];
+		},
+
+		/**
+		 * Get message groups info from the API.
+		 * @return {deferred}
+		 */
+		loadMessageGroups: function () {
+			return new mw.Api().get( {
+				action: 'query',
+				format: 'json',
+				meta: 'messagegroups',
+				mgformat: 'tree',
+				mgprop: 'id|label|description|icon|priority|prioritylangs|priorityforce|workflowstates',
+				// Keep this in sync with css!
+				mgiconsize: '32'
+			} ).done( function ( result ) {
+				mw.translate.messageGroups = result.query.messagegroups;
+			} ).fail( function ( errorCode, result ) {
+				mw.log( 'Error loading message groups : ' + errorCode + ' ' + result );
+			} );
 		},
 
 		/**

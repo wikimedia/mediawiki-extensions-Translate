@@ -186,6 +186,7 @@ class SpecialTranslate extends SpecialPage {
 					)->parseAsBlock() . $priorityReason
 				);
 			}
+
 			if ( $description ) {
 				$description = Xml::fieldset(
 					$this->msg( 'translate-page-description-legend' )->text(),
@@ -371,9 +372,11 @@ class SpecialTranslate extends SpecialPage {
 		$attrs = array( 'class' => 'row tux-editor-header' );
 		$selectors = $this->tuxGroupSelector() .
 			$this->tuxLanguageSelector() .
-			$this->tuxGroupDescription();
+			$this->tuxGroupDescription() .
+			$this->tuxWorkflowSelector() .
+			$this->tuxGroupWarning();
 
-		return Html::rawElement( 'div', $attrs, $selectors ) . $this->tuxWorkflowSelector();
+		return Html::rawElement( 'div', $attrs, $selectors );
 	}
 
 	protected function messageSelector() {
@@ -498,6 +501,15 @@ class SpecialTranslate extends SpecialPage {
 			Html::rawElement( 'div',
 				array( 'class' => 'twelve columns description' ),
 				$this->getGroupDescription( $this->group )
+			);
+	}
+
+	protected function tuxGroupWarning() {
+		// Initialize an empty warning box to be filled client-side.
+		return
+			Html::element( 'div',
+				array( 'class' => 'twelve columns group-warning' ),
+				''
 			);
 	}
 
@@ -655,7 +667,7 @@ class SpecialTranslate extends SpecialPage {
 			'data-language' => $this->options['language'],
 		), $this->msg( "translate-workflow-state-" )->escaped() );
 
-		$selectorRow = Html::openElement( 'div', array( 'class' => 'row' ) );
+		$selectorRow = Html::openElement( 'div', array( 'class' => 'twelve columns' ) );
 
 		$options = Html::openElement( 'ul', array( 'class' => 'tux-workflow-status-selector hide' ) );
 
