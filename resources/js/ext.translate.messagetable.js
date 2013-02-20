@@ -306,34 +306,55 @@
 
 		scroll: function () {
 			var $window,
+				$tuxTableHeader,
 				$tuxActionBar,
-				isFloating,
-				needFloat, needStick,
+				isTableHeaderFloating,
+				isActionBarFloating,
+				needsTableHeaderFloat, needsTableHeaderStick,
+				needsActionBarFloat, needsActionBarStick,
 				windowScrollBottom,
 				messageListOffset,
 				messageListHeight,
+				messageListTop,
 				messageListBottom;
 
 			$window = $( window );
-			$tuxActionBar = $( '.tux-action-bar' );
-			isFloating = $tuxActionBar.hasClass( 'floating' );
 
 			windowScrollBottom = $window.scrollTop() + $window.height();
 			messageListOffset = this.$container.offset();
 			messageListHeight = this.$container.height();
 			messageListBottom = messageListOffset.top + messageListHeight;
-			needFloat = windowScrollBottom < messageListBottom;
-			needStick = windowScrollBottom > ( messageListBottom + $tuxActionBar.height() );
+			messageListTop = messageListOffset.top;
 
-			if ( !isFloating && needFloat ) {
+			//Header:
+			$tuxTableHeader =  $('.tux-messagetable-header');
+			isTableHeaderFloating = $tuxTableHeader.hasClass('floating');
+			needsTableHeaderFloat = messageListTop - $tuxTableHeader.height() - $window.scrollTop() < 0;
+			needsTableHeaderStick = messageListTop + $tuxTableHeader.height() - $window.scrollTop() >= 0;
+			if(needsTableHeaderFloat){
+				$tuxTableHeader
+					.addClass('floating')
+					.width( this.$container.width() );
+			}else if (needsTableHeaderStick){
+				$tuxTableHeader.removeClass('floating');
+			};
+
+			//Action bar:
+			$tuxActionBar = $( '.tux-action-bar' );
+			isActionBarFloating = $tuxActionBar.hasClass( 'floating' );
+			needsActionBarFloat = windowScrollBottom < messageListBottom;
+			needsActionBarStick = windowScrollBottom > ( messageListBottom + $tuxActionBar.height() );
+
+			if ( !isActionBarFloating && needsActionBarFloat ) {
 				$tuxActionBar
 					.addClass( 'floating' )
 					.width( this.$container.width() );
-			} else if ( isFloating && needStick ) {
+			} else if ( isActionBarFloating && needsActionBarStick ) {
 				$tuxActionBar.removeClass( 'floating' );
-			} else if ( isFloating && needFloat ) {
+			} else if ( isActionBarFloating && needsActionBarFloat ) {
 				$tuxActionBar.css( 'left', messageListOffset.left - $window.scrollLeft() );
 			}
+
 		}
 	};
 
