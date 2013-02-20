@@ -80,6 +80,7 @@
 
 			mw.translate.loadMessages( changes );
 			mw.translate.changeUrl( changes );
+			updateGroupWarning();
 		},
 
 		changeLanguage: function ( language ) {
@@ -93,6 +94,7 @@
 			mw.translate.changeUrl( changes );
 			$( '.tux-statsbar' ).trigger( 'refresh', language );
 			mw.translate.loadMessages();
+			updateGroupWarning();
 		},
 
 		changeFilter: function ( filter ) {
@@ -201,6 +203,43 @@
 			.filter( '.translated, .proofread' );
 	}
 
+	function updateGroupWarning() {
+		/*jshint loopfunc:true */
+		var i, msgGroupData, targetLanguage, preferredLanguages, warningMessage,
+			$groupWarning = $( '.tux-editor-header .group-warning' ),
+			msgGroup = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
+
+		for ( i = 0; i < mw.translate.messageGroups.length; i++ ) {
+			msgGroupData = mw.translate.messageGroups[i];
+
+			if ( msgGroupData.id === msgGroup ) {
+				if ( msgGroupData.prioritylangs &&
+					$.inArray( targetLanguage, msgGroupData.prioritylangs ) === -1
+				) {
+					preferredLanguages = $.map( msgGroupData.prioritylangs, function ( code ) {
+						return $.uls.data.getAutonym( code );
+					} );
+					warningMessage = msgGroupData.priorityforce ?
+						'tpt-discouraged-language-force' :
+						'tpt-discouraged-language';
+
+					$groupWarning.html(
+						mw.message(
+							warningMessage,
+							'',
+							$.uls.data.getAutonym( targetLanguage ),
+							preferredLanguages.join( ', ' )
+						).parse()
+					);
+				} else {
+					$groupWarning.empty();
+				}
+
+				break;
+			}
+		}
+	}
+
 	$( document ).ready( function () {
 		var uiLanguage, $translateContainer, $hideTranslatedButton,
 			docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri;
@@ -226,7 +265,9 @@
 
 		$.when(
 			// Get ready with language stats
-			mw.translate.loadLanguageStats( uiLanguage )
+			mw.translate.loadLanguageStats( uiLanguage ),
+			// Get ready with message groups
+			mw.translate.loadMessageGroups()
 		).then( function () {
 			$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
 				onSelect: groupSelectorHandler
@@ -363,6 +404,8 @@
 			mw.translate.changeUrl( { optional: checked ? 1 : 0 } );
 			mw.translate.changeFilter( uri.query.filter );
 		} );
+
+		updateGroupWarning();
 	} );
 
 }( jQuery, mediaWiki ) );

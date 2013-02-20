@@ -24,7 +24,7 @@
 			this.prepareSelectorMenu();
 			this.position();
 
-			this.loadGroups( this.parentGroupId );
+			this.addGroupRows( this.parentGroupId, null );
 		},
 
 		/**
@@ -93,7 +93,7 @@
 					.click( function () {
 						groupSelector.hide();
 						mw.translate.changeGroup(
-							mw.translate.getGroup( groupSelector.parentGroupId, this.$menu.data( 'msggroups' ) )
+							mw.translate.getGroup( groupSelector.parentGroupId, mw.translate.messageGroups )
 						);
 					} );
 
@@ -202,7 +202,7 @@
 					groupSelector.getRecentGroups();
 				} else {
 					groupSelector.$menu.find( '.ext-translate-msggroup-list' ).empty();
-					groupSelector.loadGroups( groupSelector.$group.data( 'msggroupid' ) );
+					groupSelector.addGroupRows( groupSelector.$group.data( 'msggroupid' ), null );
 				}
 			} );
 
@@ -255,7 +255,6 @@
 		 */
 		getRecentGroups: function () {
 			var api = new mw.Api(),
-				messageGroups = this.$menu.data( 'msggroups' ),
 				$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' ),
 				recentMessageGroups = $( '.ext-translate-msggroup-selector' )
 					.data( 'recentmsggroups' );
@@ -266,7 +265,7 @@
 				var msgGroupRows = [];
 
 				$.each( recentgroups, function ( index, messageGroupId ) {
-					var messagegroup = mw.translate.getGroup( messageGroupId, messageGroups );
+					var messagegroup = mw.translate.getGroup( messageGroupId, mw.translate.messageGroups );
 
 					if ( messagegroup ) {
 						msgGroupRows.push( prepareMessageGroupRow( messagegroup ) );
@@ -325,7 +324,6 @@
 			var index,
 				matcher,
 				parentGroupId,
-				messageGroups,
 				currentGroup,
 				foundGroups = [];
 
@@ -341,12 +339,11 @@
 			if ( !this.flatGroupList ) {
 				this.flatGroupList = [];
 				parentGroupId = this.$group.data( 'msggroupid' );
-				messageGroups = this.$menu.data( 'msggroups' );
 
 				if ( parentGroupId ) {
-					currentGroup = mw.translate.getGroup( parentGroupId, messageGroups ).groups;
+					currentGroup = mw.translate.getGroup( parentGroupId, mw.translate.messageGroups ).groups;
 				} else {
-					currentGroup = messageGroups;
+					currentGroup = mw.translate.messageGroups;
 				}
 
 				this.flattenGroupList( currentGroup, {} );
@@ -367,37 +364,6 @@
 		},
 
 		/**
-		 * Load message groups and relevant properties
-		 * using the API and display the loaded groups
-		 * in the group selector.
-		 *
-		 * @param parentGroupId
-		 */
-		loadGroups: function ( parentGroupId ) {
-			var queryParams,
-				groupSelector = this;
-
-			if ( !TranslateMessageGroupSelector.loader ) {
-				queryParams = {
-					action: 'query',
-					format: 'json',
-					meta: 'messagegroups',
-					mgformat: 'tree',
-					mgprop: 'id|label|description|icon|priority|prioritylangs|priorityforce|workflowstates',
-					// Keep this in sync with css!
-					mgiconsize: '32'
-				};
-
-				TranslateMessageGroupSelector.loader = new mw.Api().get( queryParams );
-			}
-
-			TranslateMessageGroupSelector.loader.done( function ( result ) {
-				groupSelector.$menu.data( 'msggroups', result.query.messagegroups );
-				groupSelector.addGroupRows( parentGroupId, null );
-			} );
-		},
-
-		/**
 		 * Add rows with message groups to the selector.
 		 *
 		 * @param {string|null} parentGroupId. If it's null, all groups are loaded. Otherwise, groups under this id are loaded.
@@ -406,7 +372,7 @@
 		addGroupRows: function ( parentGroupId, msgGroups ) {
 			var $msgGroupRows,
 				$parent,
-				messageGroups = this.$menu.data( 'msggroups' ),
+				messageGroups = mw.translate.messageGroups,
 				$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' ),
 				targetLanguage = $( '.ext-translate-msggroup-selector' ).data( 'language' );
 
@@ -414,7 +380,7 @@
 				messageGroups = msgGroups;
 			} else {
 				if ( parentGroupId ) {
-					messageGroups = mw.translate.getGroup( parentGroupId, messageGroups ).groups;
+					messageGroups = mw.translate.getGroup( parentGroupId, mw.translate.messageGroups ).groups;
 				}
 			}
 
@@ -580,7 +546,7 @@
 		var i, messageGroup;
 
 		if ( !messageGroups ) {
-			messageGroups = this.$menu.data( 'msggroups' );
+			messageGroups = mw.translate.messageGroups;
 		}
 
 		for ( i = 0; i < messageGroups.length; i++ ) {
