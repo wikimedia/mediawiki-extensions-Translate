@@ -186,6 +186,7 @@ class SpecialTranslate extends SpecialPage {
 					)->parseAsBlock() . $priorityReason
 				);
 			}
+
 			if ( $description ) {
 				$description = Xml::fieldset(
 					$this->msg( 'translate-page-description-legend' )->text(),
@@ -371,7 +372,8 @@ class SpecialTranslate extends SpecialPage {
 		$attrs = array( 'class' => 'row tux-editor-header' );
 		$selectors = $this->tuxGroupSelector() .
 			$this->tuxLanguageSelector() .
-			$this->tuxGroupDescription();
+			$this->tuxGroupDescription() .
+			$this->tuxGroupWarning();
 
 		return Html::rawElement( 'div', $attrs, $selectors ) . $this->tuxWorkflowSelector();
 	}
@@ -498,6 +500,15 @@ class SpecialTranslate extends SpecialPage {
 			Html::rawElement( 'div',
 				array( 'class' => 'twelve columns description' ),
 				$this->getGroupDescription( $this->group )
+			);
+	}
+
+	protected function tuxGroupWarning() {
+		// Initialize an empty warning box to be filled client-side.
+		return
+			Html::element( 'div',
+				array( 'class' => 'row twelve columns group-warning' ),
+				''
 			);
 	}
 
