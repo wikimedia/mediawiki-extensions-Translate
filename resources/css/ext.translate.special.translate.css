@@ -108,20 +108,34 @@
 	top: 1px;
 }
 
-.tux-editor-header .description {
-	font-size: 14px;
+.tux-editor-header{
 	color: #252525;
+	font-size: 14px;
+	padding-bottom: 20px;
+}
+
+.tux-editor-header .description {
+	margin: 5px 0;
+}
+
+.tux-editor-header .group-warning {
+	background: #FFF5AA;
+	padding: 5px;
+	margin: 5px 0;
+}
+
+.tux-editor-header .group-warning:empty {
+	display: none;
 }
 
 .tux-workflow-status {
-	font-size: 14px;
 	background: #eee;
 	border: 1px solid #ddd;
 	color: #252525;
 	cursor: pointer;
 	display: inline-block;
 	padding: 2px 4px;
-	margin: 0 5px;
+	margin: 5px 0;
 }
 
 .tux-workflow-status:hover {
@@ -175,7 +189,7 @@ ul.tux-workflow-status-selector li.selected {
 }
 
 .tux-messagetable-header {
-	padding-top: 25px;
+	padding-top: 5px;
 	border-bottom: 1px solid #777;
 	/* @noflip */
 	-webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);

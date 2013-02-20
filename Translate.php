@@ -452,6 +452,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 	'scripts' => 'resources/js/ext.translate.special.translate.js',
 	'position' => 'top',
 	'dependencies' => array(
+		'mediawiki.jqueryMsg',
 		'mediawiki.Uri',
 		'mediawiki.api.parse',
 		'ext.translate.base',
@@ -467,6 +468,8 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'translate-js-support-unsaved-warning',
 		'translate-documentation-language',
 		'translate-workflow-state-',
+		'tpt-discouraged-language-force',
+		'tpt-discouraged-language',
 	),
 ) + $resourcePaths;
 

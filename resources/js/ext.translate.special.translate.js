@@ -81,6 +81,7 @@
 			mw.translate.loadMessages( changes );
 			mw.translate.changeUrl( changes );
 			mw.translate.prepareWorkflowSelector( group );
+			updateGroupWarning();
 		},
 
 		changeLanguage: function ( language ) {
@@ -94,6 +95,7 @@
 			mw.translate.changeUrl( changes );
 			$( '.tux-statsbar' ).trigger( 'refresh', language );
 			mw.translate.loadMessages();
+			updateGroupWarning();
 		},
 
 		changeFilter: function ( filter ) {
@@ -239,6 +241,45 @@
 		).done( function() {
 			$status.text( mw.msg( 'translate-workflowstatus', state._name ) );
 		} );
+	}
+
+	function updateGroupWarning() {
+		/*jshint loopfunc:true */
+		var i, msgGroupData, targetLanguage, preferredLanguages, warningMessage,
+			$groupWarning = $( '.tux-editor-header .group-warning' ),
+			msgGroup = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
+
+		for ( i = 0; i < mw.translate.messageGroups.length; i++ ) {
+			msgGroupData = mw.translate.messageGroups[i];
+
+			if ( msgGroupData.id === msgGroup ) {
+				targetLanguage = $( '.tux-messagelist' ).data( 'targetlangcode' );
+
+				if ( msgGroupData.prioritylangs &&
+					$.inArray( targetLanguage, msgGroupData.prioritylangs ) === -1
+				) {
+					preferredLanguages = $.map( msgGroupData.prioritylangs, function ( code ) {
+						return $.uls.data.getAutonym( code );
+					} );
+					warningMessage = msgGroupData.priorityforce ?
+						'tpt-discouraged-language-force' :
+						'tpt-discouraged-language';
+
+					$groupWarning.html(
+						mw.message(
+							warningMessage,
+							'',
+							$.uls.data.getAutonym( targetLanguage ),
+							preferredLanguages.join( ', ' )
+						).parse()
+					);
+				} else {
+					$groupWarning.empty();
+				}
+
+				break;
+			}
+		}
 	}
 
 	$( document ).ready( function () {
@@ -405,6 +446,8 @@
 			mw.translate.changeUrl( { optional: checked ? 1 : 0 } );
 			mw.translate.changeFilter( uri.query.filter );
 		} );
+
+		updateGroupWarning();
 	} );
 
 }( jQuery, mediaWiki ) );
