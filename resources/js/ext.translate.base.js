@@ -12,6 +12,7 @@
 		// indexed by language code
 		languageStatsLoader: {},
 
+		messageGroups: {},
 		/**
 		 * Get language stats for a language from the API.
 		 * @param {string} language Language code.
@@ -32,6 +33,23 @@
 			} );
 
 			return mw.translate.languageStatsLoader[language];
+		},
+
+		loadMessageGroups: function () {
+			var loader,
+				queryParams = {
+					action: 'query',
+					format: 'json',
+					meta: 'messagegroups',
+					mgformat: 'tree',
+					mgprop: 'id|label|description|icon|priority|prioritylangs|priorityforce|workflowstates',
+					mgiconsize: '32'
+				};
+			loader = new mw.Api().get( queryParams );
+			loader.done( function ( result ) {
+				mw.translate.messageGroups = result.query.messagegroups;
+			} );
+			return loader;
 		},
 
 		/**

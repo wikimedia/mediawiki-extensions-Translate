@@ -80,6 +80,7 @@
 
 			mw.translate.loadMessages( changes );
 			mw.translate.changeUrl( changes );
+			mw.translate.prepareWorkflowSelector( group );
 		},
 
 		changeLanguage: function ( language ) {
@@ -142,6 +143,32 @@
 				};
 
 			return api.post( params );
+		},
+
+
+		prepareWorkflowSelector: function ( group ) {
+			var $selector = $( 'ul.tux-workflow-status-selector' ),
+				workflowstates = group.workflowstates;
+
+			$selector.empty();
+
+			$.each( workflowstates, function ( id, workflowstate ) {
+				if ( workflowstate._canchange ) {
+					workflowstate.id = id;
+					$selector.append( $('<li>')
+						.data( 'state', workflowstate )
+						.text( workflowstate._name )
+						.on( 'click', function() {
+							$selector.find( '.selected' ).removeClass( 'selected' );
+							$( this ).addClass( 'selected' )
+								.parent().addClass( 'hide' );
+							workflowSelectionHandler( $( this ).data( 'state' ) );
+						})
+					);
+				}
+			} );
+			$( '.tux-workflow-status' ).text( mw.msg( 'translate-workflow-state-' ) );
+			return $selector;
 		}
 	} );
 
@@ -201,6 +228,19 @@
 			.filter( '.translated, .proofread' );
 	}
 
+	function workflowSelectionHandler ( state ) {
+		var $status = $( '.tux-workflow-status' );
+
+		$status.text( mw.msg( 'translate-workflow-set-doing' ) );
+		mw.translate.changeWorkflowStatus( $status.data( 'group' ),
+			$status.data( 'language' ),
+			state.id,
+			$status.data( 'token' )
+		).done( function() {
+			$status.text( mw.msg( 'translate-workflowstatus', state._name ) );
+		} );
+	}
+
 	$( document ).ready( function () {
 		var uiLanguage, $translateContainer, $hideTranslatedButton,
 			docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri;
@@ -223,10 +263,11 @@
 
 		ourWindowOnBeforeUnloadRegister();
 		prepareWorkflowSelector();
-
 		$.when(
 			// Get ready with language stats
-			mw.translate.loadLanguageStats( uiLanguage )
+			mw.translate.loadLanguageStats( uiLanguage ),
+			// Get ready with message groups
+			mw.translate.loadMessageGroups()
 		).then( function () {
 			$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
 				onSelect: groupSelectorHandler
@@ -235,6 +276,7 @@
 				language: uiLanguage,
 				group: $( '.tux-message-list-statsbar' ).data( 'messagegroup' )
 			} );
+			$( '.tux-messagelist' ).messagetable();
 		} );
 
 		// Use ULS for language selection if it's available

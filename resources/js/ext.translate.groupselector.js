@@ -374,27 +374,8 @@
 		 * @param parentGroupId
 		 */
 		loadGroups: function ( parentGroupId ) {
-			var queryParams,
-				groupSelector = this;
-
-			if ( !TranslateMessageGroupSelector.loader ) {
-				queryParams = {
-					action: 'query',
-					format: 'json',
-					meta: 'messagegroups',
-					mgformat: 'tree',
-					mgprop: 'id|label|description|icon|priority|prioritylangs|priorityforce|workflowstates',
-					// Keep this in sync with css!
-					mgiconsize: '32'
-				};
-
-				TranslateMessageGroupSelector.loader = new mw.Api().get( queryParams );
-			}
-
-			TranslateMessageGroupSelector.loader.done( function ( result ) {
-				groupSelector.$menu.data( 'msggroups', result.query.messagegroups );
-				groupSelector.addGroupRows( parentGroupId, null );
-			} );
+			this.$menu.data( 'msggroups', mw.translate.messageGroups );
+			this.addGroupRows( parentGroupId, null );
 		},
 
 		/**
@@ -580,7 +561,7 @@
 		var i, messageGroup;
 
 		if ( !messageGroups ) {
-			messageGroups = this.$menu.data( 'msggroups' );
+			messageGroups = mw.translate.messageGroups;
 		}
 
 		for ( i = 0; i < messageGroups.length; i++ ) {
