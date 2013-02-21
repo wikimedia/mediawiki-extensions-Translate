@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DmNCm1MM",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-02-21T04:30:19Z",
+      "side": 1,
+      "message": "All messagegroups are available in the page by the time of page load. So use that data instead of doing another hit for same data.",
+      "revId": "7e33f21367c7f4cb22da16a5302cdef874598bec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
