@@ -337,7 +337,8 @@ Used only if a reason was provided in the following messages:
 {{Identical|Add}}',
 	'tpt-aggregategroup-save' => 'Label for the button to save a new aggregate group in [[Special:AggregateGroups]]',
 	'tpt-aggregategroup-add-new' => 'Label for the link that gives a form to enter new group details in [[Special:AggregateGroups]]',
-	'tpt-aggregategroup-new-name' => 'Label for the name field in [[Special:AggregateGroups]]',
+	'tpt-aggregategroup-new-name' => 'Label for the name field in [[Special:AggregateGroups]].
+{{Identical|Name}}',
 	'tpt-aggregategroup-new-description' => 'Label for the description field in [[Special:AggregateGroups]]',
 	'tpt-aggregategroup-remove-confirm' => 'Confirmation message shown while user tried to delete an aggregate group in [[Special:AggregateGroups]]',
 	'tpt-aggregategroup-invalid-group' => 'Show on [[Special:AggregateGroups]] after remove button of a group, if the stored group id does not match any currently known groups.',
@@ -6121,18 +6122,22 @@ $messages['ku-latn'] = array(
 	'tpt-diff-new' => 'Nivîsa nû',
 	'tpt-submit' => 'Vê versiyonê ji bo wergerê îşaret bike',
 	'tpt-nosuchpage' => 'Rûpela $1 tune.',
+	'tpt-select-prioritylangs-reason' => 'Sedem:',
 	'translate-tag-translate-link-desc' => 'Vê rûpelê werrgerrîne',
 	'translate-tag-markthis' => 'Vê rûpelê ji bo wergerê îşaret bike',
 	'tpt-languages-legend' => 'Zimanên din:',
 	'tpt-download-page' => 'Rûpela bi wergeran bişîne',
+	'tpt-aggregategroup-new-name' => 'Nav:',
 	'pt-movepage-list-translation' => 'Rûpelên wergerê', # Fuzzy
 	'pt-movepage-list-other' => 'Binrûpelên din', # Fuzzy
 	'pt-movepage-current' => 'Navê niha:',
 	'pt-movepage-new' => 'Navê nû:',
 	'pt-movepage-reason' => 'Sedem:',
 	'pt-movepage-subpages' => 'Hemû binrûpelan bigerîne',
+	'pt-deletepage-full-legend' => 'Rûpela wergerê jê bibe',
 	'pt-deletepage-current' => 'Navê rûpelê:',
 	'pt-deletepage-reason' => 'Sedem:',
+	'pt-deletepage-subpages' => 'Hemû binrûpelan jê bibe',
 );
 
 /** Luxembourgish (Lëtzebuergesch)

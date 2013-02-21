@@ -2389,6 +2389,12 @@ $messages['ru'] = array(
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] позволяет быстро найти авторов страницы в проектах Викимедиа.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] — это проект, предоставляющий автономную текстовую версию Википедии на мобильном устройстве.',
 	'translate-group-desc-wikimedia-mobile' => 'Агрегированная группа, содержащая сообщения всех мобильных приложений для проектов Фонда Викимедиа',
+	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] — кросспатформенное приложение для мобильных устройств и планшетов, обеспечивающее чтение и редактирование Википедии',
+	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] — кросспатформенное приложение для мобильных устройств и планшетов, обеспечивающее чтение и редактирование Викитеки',
+	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] — кросспатформенное приложение для мобильных устройств и планшетов, обеспечивающее чтение и редактирование Викисловаря',
+	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] мобильное приложение, позволяющее делать свой вклад в [[:meta:Wiki Loves Monuments|проект «Вики Любит Памятники» (Wiki Loves Monuments)]]',
+	'translate-group-desc-waymarked-trails-help' => 'Справочные страницы сайта Waymarked Trails: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] — это редактор, предназначенный для совместной работы в реальном времени',
 );
 
 /** Rusyn (русиньскый)

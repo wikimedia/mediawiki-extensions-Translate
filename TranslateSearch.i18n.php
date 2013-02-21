@@ -61,7 +61,7 @@ The page title for this message is {{msg-mw|Tux-sst-nosolr-title}}.',
  */
 $messages['ast'] = array(
 	'searchtranslations' => 'Guetar nes traducciones',
-	'tux-sst-edit' => 'Editar mensaxe', # Fuzzy
+	'tux-sst-edit' => 'Editar traducción',
 	'tux-sst-search' => 'Guetar',
 	'tux-sst-search-ph' => 'Guetar nes traducciones',
 	'tux-sst-count' => '{{PLURAL:$1|Alcontrose un resultáu|Alcontráronse $1 resultaos}}',
@@ -302,6 +302,20 @@ $messages['ksh'] = array(
 	'tux-sst-facet-orphan' => '(kein Jropp)',
 	'tux-sst-nosolr-title' => 'Söhke es nit müjjelesch.',
 	'tux-sst-nosolr-body' => 'En heh däm Wiki kammer nit noh Översäzonge söhke.',
+);
+
+/** Kurdish (Latin script) (Kurdî (latînî)‎)
+ * @author George Animal
+ */
+$messages['ku-latn'] = array(
+	'searchtranslations' => 'Li wergeran bigere',
+	'tux-sst-edit' => 'Wergerê biguherîne',
+	'tux-sst-search' => 'Lêgerîn',
+	'tux-sst-search-ph' => 'Li wergeran bigere',
+	'tux-sst-count' => '{{PLURAL:$1|Encamek hat dîtin|$1 encam hatin dîtin}}',
+	'tux-sst-facet-language' => 'Ziman',
+	'tux-sst-facet-group' => 'Komên peyaman',
+	'tux-sst-facet-orphan' => '(sêwî)',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
