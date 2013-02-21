@@ -4,8 +4,7 @@
  *
  * @author Amir E. Aharoni
  * @author Siebrand Mazeland
- * @copyright Copyright © 2012 Amir E. Aharoni
- * @copyright Copyright © 2012 Siebrand Mazeland
+ * @copyright Copyright © 2012-2013 Amir E. Aharoni, Siebrand Mazeland
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 

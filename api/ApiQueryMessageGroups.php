@@ -6,7 +6,7 @@
  * @author Niklas Laxström
  * @author Harry Burt
  * @copyright Copyright © 2010-2013, Niklas Laxström
- * @copyright Copyright © 2012, Harry Burt
+ * @copyright Copyright © 2012-2013, Harry Burt
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 

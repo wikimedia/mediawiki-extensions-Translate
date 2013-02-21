@@ -3,7 +3,7 @@
  * Code for caching the messages of file based message groups.
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2009-2012 Niklas Laxström
+ * @copyright Copyright © 2009-2013 Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
