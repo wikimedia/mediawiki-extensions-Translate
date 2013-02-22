@@ -239,6 +239,19 @@ Tamién recibirás boletinos de noticies tolo más una vegada al mes.
 Si nun quies recibir boletinos de noticies, pues desapuntate na llingüeta "{{int:prefs-personal}}" de les tos [[Special:Preferences|preferencies]].',
 );
 
+/** Azerbaijani (azərbaycanca)
+ * @author Khan27
+ */
+$messages['az'] = array(
+	'firststeps' => 'İlk addımlar',
+	'translate-fs-userpage-title' => 'İstifadəçi səhifəni yarat',
+	'translate-fs-target-title' => 'Tərcüməyə başla!',
+	'translate-fs-email-title' => 'E-poçt ünvanını təsdiq et',
+	'translate-fs-userpage-submit' => 'Öz istifadəçi səhifəmi yarat',
+	'translate-fs-permissions-planguage' => 'İlkin dil:',
+	'translate-fs-permissions-submit' => 'Sorğu göndər',
+);
+
 /** South Azerbaijani (تورکجه)
  * @author Mousa
  */

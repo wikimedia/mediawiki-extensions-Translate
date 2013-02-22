@@ -503,6 +503,11 @@ $specialPageAliases['ko'] = array(
 	'SearchTranslations' => array( '번역찾기' ),
 );
 
+/** Karachay-Balkar (къарачай-малкъар) */
+$specialPageAliases['krc'] = array(
+	'MyLanguage' => array( 'Мени_тилим' ),
+);
+
 /** Colognian (Ripoarisch) */
 $specialPageAliases['ksh'] = array(
 	'Translate' => array( 'Övversäze' ),
