@@ -1,0 +1,68 @@
+.tux-message-proofread {
+	height: auto;
+	min-height: 50px;
+	padding: 5px;
+	padding-bottom: 10px;
+	background-color: #FFF;
+	vertical-align: middle;
+	border-bottom: 1px solid #C9C9C9;
+}
+
+.tux-proofread-source {
+	font-size: 15px;
+}
+
+.tux-proofread-translation {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.tux-proofread-status.outdated {
+	/* @embed */
+	background: url(../images/outdated.png) left center no-repeat;
+	height: 40px;
+}
+
+.tux-proofread-status.translated {
+	/* @embed */
+	background: url(../images/translate.png) left center no-repeat;
+	height: 40px;
+}
+
+
+.tux-proofread-action {
+	/* @embed */
+	background: url(../images/uncheck.png) right center no-repeat;
+	height: 40px;
+	cursor: pointer;
+}
+
+.tux-proofread-action:hover {
+	/* @embed */
+	background: url(../images/uncheck-hi.png) right center no-repeat;
+	height: 40px;
+}
+
+.tux-proofread-action.proofread {
+	/* @embed */
+	background: url(../images/check.png) right center no-repeat;
+	height: 40px;
+}
+
+.tux-proofread-action.proofread:hover {
+	/* @embed */
+	background: url(../images/check-hi.png) right center no-repeat;
+	height: 40px;
+}
+
+.tux-proofread-edit {
+	/* @embed */
+	background-image: url(../images/label-pen.png);
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/label-pen.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/label-pen.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/label-pen.svg);
+	background-repeat: no-repeat;
+	background-position: right center;
+	height: 40px;
+	cursor: pointer;
+}
