@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DnFWHdrg",
+        "filename": "Translate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-02-22T11:51:31Z",
+      "side": 1,
+      "message": "Superfluous newline.",
+      "revId": "e30bf9343f6b26c8efdddafb7b1a3cb051231370",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnDWU.t8",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-02-22T11:51:31Z",
+      "side": 1,
+      "message": "Superfluous newline.",
+      "revId": "e30bf9343f6b26c8efdddafb7b1a3cb051231370",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnBWR-u8",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-02-22T11:51:31Z",
+      "side": 1,
+      "message": "Might as well do this right now?",
+      "revId": "e30bf9343f6b26c8efdddafb7b1a3cb051231370",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnJW97mQ",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-02-22T11:51:31Z",
+      "side": 1,
+      "message": "(not from this PS, but double space)",
+      "revId": "e30bf9343f6b26c8efdddafb7b1a3cb051231370",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnPW.YmE",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-02-22T11:51:31Z",
+      "side": 1,
+      "message": "Double space after *.",
+      "revId": "e30bf9343f6b26c8efdddafb7b1a3cb051231370",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnNXDZu8",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-02-22T11:51:31Z",
+      "side": 1,
+      "message": "Double space.",
+      "revId": "e30bf9343f6b26c8efdddafb7b1a3cb051231370",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnLW46nQ",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-02-22T11:51:31Z",
+      "side": 1,
+      "message": "Double space.",
+      "revId": "e30bf9343f6b26c8efdddafb7b1a3cb051231370",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
