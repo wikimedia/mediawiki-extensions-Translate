@@ -57,7 +57,7 @@ class TuxMessageTable extends ContextSource {
 			. '</button>'
 			. '</div>';
 		$footer .= '<div class="four columns text-center">'
-			. '<button class="blue button">'
+			. '<button class="blue button tux-proofread">'
 			. $this->msg( 'tux-editor-proofreading-mode' )->escaped()
 			. '</button>'
 			. '</div>';

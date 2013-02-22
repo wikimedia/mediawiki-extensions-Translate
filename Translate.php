@@ -241,8 +241,12 @@ $wgResourceModules['ext.translate.editor'] = array(
 	'scripts' => array(
 		'resources/js/ext.translate.editor.js',
 		'resources/js/ext.translate.editor.helpers.js',
+		'resources/js/ext.translate.proofread.js',
 	),
-	'styles' => 'resources/css/ext.translate.editor.css',
+	'styles' => array(
+		'resources/css/ext.translate.editor.css',
+		'resources/css/ext.translate.proofread.css',
+	),
 	'dependencies' => array(
 		'ext.translate.base',
 		'ext.translate.grid',
@@ -289,6 +293,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 	),
 	'position' => 'top',
 ) + $resourcePaths;
+
 
 $wgResourceModules['ext.translate.groupselector'] = array(
 	'styles' => 'resources/css/ext.translate.groupselector.css',

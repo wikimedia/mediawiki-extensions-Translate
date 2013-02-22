@@ -47,13 +47,19 @@
 
 			// And start loading
 			$loader.trigger( 'appear' );
+
 		}
 	} );
 
 	function MessageTable( container, options ) {
 		this.$container = $( container );
 		this.options = options;
+		this.options = $.extend( {}, $.fn.messagetable.defaults, options );
+		// mode can be proofread or translate
+		this.mode = this.options.mode;
 		this.$loader = $( '.tux-messagetable-loader' );
+		this.$actionBar = $( '.tux-action-bar' );
+		this.messages = [];
 		this.init();
 		this.listen();
 	}
@@ -84,12 +90,16 @@
 				// Appear callback need to be called more than once.
 				one: false
 			} );
+
+			this.$actionBar.find( 'button.tux-proofread' ).on( 'click', function () {
+				messageTable.switchMode( 'proofread' );
+			} );
 		},
 
 		/**
-		 * Add a message to the message table
+		 * Add a message to the message table for translate.
 		 */
-		add: function ( message ) {
+		addTranslate: function ( message ) {
 			var $message, targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
 				status = '',
 				statusMsg = '',
@@ -178,6 +188,53 @@
 			$messageWrapper.translateeditor( {
 				message: message
 			} );
+		},
+
+		/**
+		 * Add a message to the message table for proofreading.
+		 */
+		addProofread: function ( message ) {
+			var $message, targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
+				status = '';
+
+			sourceLanguage = this.$container.data( 'sourcelangcode' );
+			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
+			targetLanguage = this.$container.data( 'targetlangcode' );
+			targetLanguageDir = $.uls.data.getDir( targetLanguage );
+
+			status = message.properties.status;
+
+			$message = $( '<div>' )
+				.addClass( 'row tux-message-proofread' )
+				.data( 'message', message )
+				.append(
+					// TODO the below UI code can be moved to the proofread plugin.
+					$( '<div>' )
+						.addClass( 'one column tux-proofread-status ' + status ),
+					$( '<div>' )
+						.addClass( 'five columns tux-proofread-source' )
+						.attr( {
+							lang: sourceLanguage,
+							dir: sourceLanguageDir
+						} )
+						.text( message.definition ),
+					$( '<div>' )
+						.addClass( 'five columns tux-proofread-translation' )
+						.attr( {
+							lang: targetLanguage,
+							dir: targetLanguageDir
+						} )
+						.text( message.translation || '' ),
+					$( '<div>' )
+						.addClass( 'one column' )
+						.append( $( '<div>' )
+							.addClass( 'tux-proofread-action' ),
+							$( '<div>' )
+								.addClass( 'tux-proofread-edit' )
+						)
+				);
+			this.$loader.before( $message );
+			$message.proofread();
 		},
 
 		/**
@@ -276,7 +333,13 @@
 
 				$.each( messages, function ( index, message ) {
 					message.group = messagegroup;
-					messageTable.add( message );
+					if ( messageTable.mode === 'translate' ) {
+						messageTable.addTranslate( message );
+					}
+					if ( messageTable.mode === 'proofread' ) {
+						messageTable.addProofread( message );
+					}
+					messageTable.messages.push( message );
 				} );
 
 				if ( result['query-continue'] === undefined ) {
@@ -320,6 +383,34 @@
 			} );
 		},
 
+		/**
+		 * Switch the message table mode
+		 *
+		 * @param {string} mode The message table mode - proofread or translate
+		 */
+		switchMode: function ( mode ) {
+			var messageTable = this;
+
+			if ( messageTable.mode === mode ) {
+				// no change in the mode
+				return;
+			}
+			messageTable.mode = mode;
+			mw.translate.changeUrl( { action: this.mode } );
+			$( '.tux-message').remove();
+			$.each( messageTable.messages, function ( index, message ) {
+				if ( messageTable.mode === 'translate' ) {
+					messageTable.addTranslate( message );
+				}
+				if ( messageTable.mode === 'proofread' ) {
+					messageTable.addProofread( message );
+				}
+			} );
+		},
+
+		/**
+		 * The scroll handler
+		 */
 		scroll: function () {
 			var $window,
 				$tuxTableHeader,
@@ -390,6 +481,10 @@
 	};
 
 	$.fn.messagetable.Constructor = MessageTable;
+
+	$.fn.messagetable.defaults = {
+		mode: new mw.Uri().query.action || 'translate'
+	};
 
 	$( 'document' ).ready( function () {
 		// Currently used only in the pre-TUX editor
