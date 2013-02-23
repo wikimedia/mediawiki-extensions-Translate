@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DnU74B3k",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-23T10:25:01Z",
+      "side": 1,
+      "message": "Comment seems outdated now.",
+      "revId": "f356cfc865a8a2556c9cdf5fe767f7f5f3c99d7b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnS71y4A",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-23T10:25:01Z",
+      "side": 1,
+      "message": "What ensures that mw.translate.messageGroups is present when this line is executed?",
+      "revId": "f356cfc865a8a2556c9cdf5fe767f7f5f3c99d7b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnQ7yD5k",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-23T10:25:01Z",
+      "side": 1,
+      "message": "Is something still using $menu.data( \u0027msggroups\u0027 ) or why is it still setting this value above?",
+      "revId": "f356cfc865a8a2556c9cdf5fe767f7f5f3c99d7b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dna4xu1o",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-23T10:25:01Z",
+      "side": 1,
+      "message": "extra space, is \u0027ul\u0027 really needed here?",
+      "revId": "f356cfc865a8a2556c9cdf5fe767f7f5f3c99d7b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnY42-04",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-23T10:25:01Z",
+      "side": 1,
+      "message": "double space",
+      "revId": "f356cfc865a8a2556c9cdf5fe767f7f5f3c99d7b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnQ5DL7Q",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-23T10:25:01Z",
+      "side": 1,
+      "message": "Extra empty line",
+      "revId": "f356cfc865a8a2556c9cdf5fe767f7f5f3c99d7b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnW484y0",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-23T10:25:01Z",
+      "side": 1,
+      "message": "missing spaces",
+      "revId": "f356cfc865a8a2556c9cdf5fe767f7f5f3c99d7b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnS5G68M",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-23T10:25:01Z",
+      "side": 1,
+      "message": "This line is confusing. What exactly does .tux-workflow-status match?",
+      "revId": "f356cfc865a8a2556c9cdf5fe767f7f5f3c99d7b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
