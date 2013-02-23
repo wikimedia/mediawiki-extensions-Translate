@@ -6850,7 +6850,7 @@ $messages['nah'] = array(
 	'translate-tag-translate-link-desc' => 'Tictlahtōlcuepāz inīn zāzanilli',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Audun
  * @author Laaknor
  * @author Nghtwlkr
@@ -6937,7 +6937,7 @@ Denne siden som du prøver å redigere ser ikke ut til å samsvare med noen av s
 	'tpt-priority-languages' => 'En oversettelsesadministrator har satt prioritetsspråkene for denne gruppen til $1.',
 	'tpt-render-summary' => 'Oppdaterer for å svare til ny versjon av kildesiden',
 	'tpt-download-page' => 'Eksporter side med oversettelser',
-	'aggregategroups' => 'Samle sammen grupper',
+	'aggregategroups' => 'Samlingsgrupper',
 	'tpt-aggregategroup-add' => 'Legg til',
 	'tpt-aggregategroup-save' => 'Lagre',
 	'tpt-aggregategroup-add-new' => 'Legg til en ny samlet gruppe',

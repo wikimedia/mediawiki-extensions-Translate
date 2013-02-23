@@ -661,6 +661,8 @@ $specialPageAliases['nb'] = array(
 	'FirstSteps' => array( 'Første_steg' ),
 	'SupportedLanguages' => array( 'Støttede_språk' ),
 	'MyLanguage' => array( 'Mitt_språk' ),
+	'AggregateGroups' => array( 'Samlingsgrupper' ),
+	'SearchTranslations' => array( 'Søk_i_oversettelser' ),
 );
 
 /** Low German (Plattdüütsch) */
@@ -1007,6 +1009,7 @@ $specialPageAliases['zh-hans'] = array(
 	'FirstSteps' => array( '首几步' ),
 	'SupportedLanguages' => array( '支持语言' ),
 	'MyLanguage' => array( '我的语言' ),
+	'SearchTranslations' => array( '搜索翻译' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
