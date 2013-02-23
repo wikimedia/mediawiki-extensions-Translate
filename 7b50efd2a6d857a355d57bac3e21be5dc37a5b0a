@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DnS7ia6Q",
+        "filename": "resources/css/ext.translate.proofread.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-23T11:58:39Z",
+      "side": 1,
+      "message": "missing space",
+      "revId": "7b50efd2a6d857a355d57bac3e21be5dc37a5b0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnQ7fr9Q",
+        "filename": "resources/css/ext.translate.proofread.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-23T11:58:39Z",
+      "side": 1,
+      "message": "Extra tab",
+      "revId": "7b50efd2a6d857a355d57bac3e21be5dc37a5b0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dne7sU5U",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-23T11:58:39Z",
+      "side": 1,
+      "message": "for translation",
+      "revId": "7b50efd2a6d857a355d57bac3e21be5dc37a5b0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dnc7xl2s",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-23T11:58:39Z",
+      "side": 1,
+      "message": "Why not keep add() as wrapper that calls the correct function depending on the mode?",
+      "revId": "7b50efd2a6d857a355d57bac3e21be5dc37a5b0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dna7mW7E",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-23T11:58:39Z",
+      "side": 1,
+      "message": "We are already using tux-proofread class for other purposes. Should be more specific.",
+      "revId": "7b50efd2a6d857a355d57bac3e21be5dc37a5b0a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
