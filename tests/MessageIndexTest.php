@@ -34,6 +34,7 @@ class MessageIndexTest extends MediaWikiTestCase {
 	 */
 	public function testMessageIndexImplementation( $mi ) {
 		$data = self::getTestData();
+		/** @var MessageIndex $mi */
 		$mi->store( $data );
 
 		$tests = array_rand( $data, 10 );
@@ -60,7 +61,6 @@ class MessageIndexTest extends MediaWikiTestCase {
 			// Not testing CachedMessageIndex because there is no easy way to mockup those.
 		);
 	}
-
 }
 
 class TestableDatabaseMessageIndex extends DatabaseMessageIndex {
