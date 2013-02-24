@@ -117,11 +117,17 @@
 				// lang and dir attributes.
 				// The message documentation is assumed to be written
 				// in the content language of the wiki.
+				// Possible classes:
+				// * mw-content-ltr
+				// * mw-content-rtl
+				// (The direction classes are needed, because the documentation
+				// is likely to be MediaWiki-formatted text.)
 				$messageDoc
 					.attr( {
 						lang: documentation.language,
 						dir: documentationDir
 					} )
+					.addClass( 'mw-content-' + documentationDir )
 					.html( documentation.html );
 
 				this.$editor.find( '.message-desc-editor textarea' )
