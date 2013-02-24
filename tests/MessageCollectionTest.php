@@ -53,6 +53,7 @@ class MessageCollectionTest extends MediaWikiTestCase {
 		$collection = $group->initCollection( 'fi' );
 		$collection->loadTranslations();
 
+		/** @var TMessage $translated */
 		$translated = $collection['translated'];
 		$this->assertInstanceof( 'TMessage', $translated );
 		$this->assertEquals( 'translated', $translated->key() );
@@ -63,6 +64,7 @@ class MessageCollectionTest extends MediaWikiTestCase {
 		$this->assertEquals( 'translated', $translated->getProperty( 'status' ), 'message status is translated' );
 		$this->assertEquals( $revision, $translated->getProperty( 'revision' ) );
 
+		/** @var TMessage $untranslated */
 		$untranslated = $collection['untranslated'];
 		$this->assertInstanceof( 'TMessage', $untranslated );
 		$this->assertEquals( null, $untranslated->translation(), 'no translation is null' );
