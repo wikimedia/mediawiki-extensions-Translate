@@ -84,7 +84,6 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$messages->loadTranslations();
 
 		$pages = array();
-		$count = 0;
 
 		if ( $forwardsOffset !== false ) {
 			$this->setContinueEnumParameter( 'offset', $forwardsOffset );
