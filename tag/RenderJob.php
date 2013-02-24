@@ -64,7 +64,7 @@ class RenderJob extends Job {
 		PageTranslationHooks::$allowTargetEdit = true;
 
 		// Do the edit
-		$status = $article->doEdit( $text, $summary, $flags, false, $user );
+		$article->doEdit( $text, $summary, $flags, false, $user );
 
 		PageTranslationHooks::$allowTargetEdit = false;
 

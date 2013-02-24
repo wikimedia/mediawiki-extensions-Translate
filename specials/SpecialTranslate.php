@@ -641,7 +641,7 @@ class SpecialTranslate extends SpecialPage {
 		}
 
 		$dbr = wfGetDB( DB_SLAVE );
-		$current = $dbr->selectField(
+		$dbr->selectField(
 				'translate_groupreviews',
 				'tgr_state',
 				array( 'tgr_group' => $this->options['group'], 'tgr_lang' => $this->options['language'] ),
