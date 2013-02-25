@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DnfEK89I",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-02-25T11:57:34Z",
+      "side": 1,
+      "message": "space before )",
+      "revId": "b12ef907e6be7aab9d52e1642305a8c185905e53",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DndEP9.A",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-02-25T11:57:34Z",
+      "side": 1,
+      "message": "space before )",
+      "revId": "b12ef907e6be7aab9d52e1642305a8c185905e53",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnbEUe-Q",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-02-25T11:57:34Z",
+      "side": 1,
+      "message": "Unneeded empty line.",
+      "revId": "b12ef907e6be7aab9d52e1642305a8c185905e53",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnZH6n7k",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-02-25T11:57:34Z",
+      "side": 1,
+      "message": "Unneeded empty line.",
+      "revId": "b12ef907e6be7aab9d52e1642305a8c185905e53",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
