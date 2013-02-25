@@ -366,7 +366,15 @@
 			}
 			messageTable.mode = mode;
 			mw.translate.changeUrl( { action: this.mode } );
+
 			$( '.tux-message').remove();
+
+			if ( messageTable.mode === 'proofread' ) {
+				$( '.tux-message-selector > .tux-tab-untranslated' ).addClass( 'hide' );
+			} else {
+				$( '.tux-message-selector > .tux-tab-untranslated' ).removeClass( 'hide' );
+			}
+
 			$.each( messageTable.messages, function ( index, message ) {
 				if ( messageTable.mode === 'translate' ) {
 					messageTable.addTranslate( message );
