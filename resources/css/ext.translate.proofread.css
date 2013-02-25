@@ -1,20 +1,33 @@
-.tux-message-proofread {
+.ext-translate-container .tux-messagelist .tux-message-proofread {
 	height: auto;
 	min-height: 50px;
-	padding: 5px;
-	padding-bottom: 10px;
-	background-color: #FFF;
+	padding: 20px 0 10px 0;
+	margin: 0;
 	vertical-align: middle;
-	border-bottom: 1px solid #C9C9C9;
+	border-bottom: 1px solid #f8f8f8;
+	border-left: 1px solid #f0f0f0;
+	border-right: 1px solid #f0f0f0;
+}
+
+.tux-message-proofread:hover {
+	background: #fafafa;
 }
 
 .tux-proofread-source {
-	font-size: 15px;
+	color: #555;
+	font-size: 16px;
+	line-height: 1.5em;
 }
 
 .tux-proofread-translation {
+	color: #252525;
 	font-size: 16px;
-	font-weight: bold;
+	line-height: 1.5em;
+}
+
+.tux-proofread-status,
+.tux-proofread-action-block {
+	top: -10px;
 }
 
 .tux-proofread-status.outdated {
@@ -66,4 +79,9 @@
 	background-position: right center;
 	height: 40px;
 	cursor: pointer;
+	visibility: hidden;
+}
+
+.tux-message-proofread:hover .tux-proofread-edit {
+	visibility: visible;
 }

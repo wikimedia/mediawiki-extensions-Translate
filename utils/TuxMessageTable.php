@@ -57,13 +57,20 @@ class TuxMessageTable extends ContextSource {
 			. '</button>'
 			. '</div>';
 
+
+		$footer .= '<div class="six columns text-center">'
+				. '<button class="three column toggle-button down translate-mode-button">'
+				. $this->msg( 'tux-editor-translate-mode' )->escaped()
+				. '</button>';
+
+
 		if ( $this->getUser()->isallowed( 'translate-messagereview' ) ) {
-			$footer .= '<div class="four columns text-center">'
-				. '<button class="blue button tux-proofread-button">'
+			$footer .=  '<button class="three column toggle-button tux-proofread-button">'
 				. $this->msg( 'tux-editor-proofreading-mode' )->escaped()
-				. '</button>'
-				. '</div>';
+				. '</button>';
 		}
+
+		$footer .= '</div>';
 		// Actual message table is fetched and rendered at client side. This just provides
 		// the loader and action bar.
 		return $this->header() . $footer . '</div>';

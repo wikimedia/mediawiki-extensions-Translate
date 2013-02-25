@@ -464,7 +464,8 @@ Most useful for the proofreading tasks.',
 	'tux-editor-message-desc-more' => 'View more',
 	'tux-editor-message-desc-less' => 'View less',
 	'tux-editor-clear-translated' => 'Hide translated',
-	'tux-editor-proofreading-mode' => 'Proofreading mode',
+	'tux-editor-proofreading-mode' => 'Proofread',
+	'tux-editor-translate-mode' => 'List',
 	'tux-editor-outdated-warning' => 'This translation may need to be updated.',
 	'tux-editor-outdated-warning-diff-link' => 'Show differences',
 	'tux-editor-doc-editor-placeholder' => 'Message documentation',
@@ -946,6 +947,8 @@ See also:
 Pressing the button clears all the messages that were translated from the page.',
 	'tux-editor-proofreading-mode' => 'Label for the button that appears at the footer of the translation editor.
 Pressing the button goes to the proofreading mode.',
+	'tux-editor-translate-mode' => 'Label for the button that appears at the footer of the translation editor.
+Pressing the button goes to the translation mode.',
 	'tux-editor-doc-editor-placeholder' => 'A placeholder that appears in the message documentation editor.
 {{Identical|Message documentation}}',
 	'tux-editor-doc-editor-save' => 'A button that saves the documentation string',

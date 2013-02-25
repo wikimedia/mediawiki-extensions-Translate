@@ -201,10 +201,24 @@
 	top: 30px;
 }
 
-.tux-action-bar .button {
+.tux-action-bar .toggle-button {
 	height: 35px;
+	with: 50%;
 	font-size: 15px;
 	vertical-align: middle;
+}
+
+.tux-action-bar .translate-mode-button:before {
+	content: '☰ ';
+}
+
+.tux-action-bar .tux-proofread-button:before {
+	content: '✔ ';
+}
+
+.tux-action-bar .toggle-button.down {
+	color: #FFF;
+	background-color: #252525;
 }
 
 /* Loading indicator: */

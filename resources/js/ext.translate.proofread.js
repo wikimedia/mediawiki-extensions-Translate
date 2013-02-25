@@ -158,7 +158,7 @@
 					} )
 					.text( this.message.translation || '' ),
 				$( '<div>' )
-					.addClass( 'one column' )
+					.addClass( 'tux-proofread-action-block one column' )
 					.append( $( '<div>' )
 						.addClass( 'tux-proofread-action ' + this.message.properties.status),
 						$( '<div>' )
