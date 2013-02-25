@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DnXHEw5M",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-02-25T11:24:25Z",
+      "side": 1,
+      "message": "Space before comma",
+      "revId": "a0331a7a3c3c986671396862e30f7f7722f203ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
