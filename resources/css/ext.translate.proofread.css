@@ -1,25 +1,45 @@
-.tux-message-proofread {
+.ext-translate-container .tux-messagelist .tux-message-proofread {
 	height: auto;
 	min-height: 50px;
-	padding: 5px;
-	padding-bottom: 10px;
-	background-color: #FFF;
+	padding: 20px 0 10px 0;
+	margin: 0;
 	vertical-align: middle;
-	border-bottom: 1px solid #C9C9C9;
+	border-bottom: 1px solid #f8f8f8;
+	border-left: 1px solid #f0f0f0;
+	border-right: 1px solid #f0f0f0;
+}
+
+.tux-message-proofread:hover {
+	background: #fefefe;
 }
 
 .tux-proofread-source {
-	font-size: 15px;
+	color: #555;
+	font-size: 16px;
+	line-height: 1.5em;
 }
 
 .tux-proofread-translation {
+	color: #252525;
 	font-size: 16px;
-	font-weight: bold;
+	line-height: 1.5em;
+}
+
+.tux-proofread-action-block {
+	top: -10px;
+	right: -5px;
+}
+
+.tux-proofread-status {
+	top: -10px;
 }
 
 .tux-proofread-status.outdated {
 	/* @embed */
 	background: url(../images/outdated.png) left center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/outdated.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/outdated.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/outdated.svg);
 	height: 40px;
 }
 
@@ -27,6 +47,9 @@
 .tux-proofread-status.proofread {
 	/* @embed */
 	background: url(../images/translate.png) left center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/translate.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/translate.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/translate.svg);
 	height: 40px;
 }
 
@@ -34,6 +57,9 @@
 .tux-proofread-action {
 	/* @embed */
 	background: url(../images/uncheck.png) right center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/uncheck.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/uncheck.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/uncheck.svg);
 	height: 40px;
 	cursor: pointer;
 }
@@ -41,29 +67,43 @@
 .tux-proofread-action:hover {
 	/* @embed */
 	background: url(../images/uncheck-hi.png) right center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/uncheck-hi.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/uncheck-hi.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/uncheck-hi.svg);
 	height: 40px;
 }
 
 .tux-proofread-action.proofread {
 	/* @embed */
 	background: url(../images/check.png) right center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/check.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/check.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/check.svg);
 	height: 40px;
 }
 
 .tux-proofread-action.proofread:hover {
 	/* @embed */
 	background: url(../images/check-hi.png) right center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/check-hi.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/check-hi.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/check-hi.svg);
 	height: 40px;
 }
 
 .tux-proofread-edit {
 	/* @embed */
-	background-image: url(../images/label-pen.png);
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/label-pen.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/label-pen.svg);
-	background-image: linear-gradient(transparent, transparent), url(../images/label-pen.svg);
+	background-image: url(../images/edit-mark.png);
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/edit-mark.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/edit-mark.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/edit-mark.svg);
 	background-repeat: no-repeat;
 	background-position: right center;
 	height: 40px;
 	cursor: pointer;
+	visibility: hidden;
+}
+
+.tux-message-proofread:hover .tux-proofread-edit {
+	visibility: visible;
 }
