@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DnS7yZpk",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-25T05:40:00Z",
+      "side": 1,
+      "message": "This change makes no sense. The whole database call is useless.",
+      "revId": "85b3125b46592c4be2d8ed147f9c9fd43d3a8223",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
