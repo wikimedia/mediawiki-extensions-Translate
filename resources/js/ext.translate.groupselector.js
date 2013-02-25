@@ -93,7 +93,7 @@
 					.click( function () {
 						groupSelector.hide();
 						mw.translate.changeGroup(
-							mw.translate.getGroup( groupSelector.parentGroupId, this.$menu.data( 'msggroups' ) )
+							mw.translate.getGroup( groupSelector.parentGroupId, mw.translate.messageGroups )
 						);
 					} );
 
