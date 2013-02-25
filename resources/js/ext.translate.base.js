@@ -65,7 +65,7 @@
 		 * @return {boolean}
 		 */
 		canProofread: function () {
-			return mw.config.get( 'TranslateMessageReview' );
+			return mw.config.get( 'TranslateMessageReviewRight' );
 		}
 	} );
 }( jQuery, mediaWiki ) );

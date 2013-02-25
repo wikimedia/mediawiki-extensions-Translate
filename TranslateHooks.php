@@ -449,7 +449,7 @@ JAVASCRIPT;
 		) {
 			global $wgTranslateDocumentationLanguageCode, $wgTranslatePermissionUrl;
 			$vars['TranslateRight'] = $out->getUser()->isAllowed( 'translate' );
-			$vars['TranslateMessageReview'] = $out->getUser()->isAllowed( 'translate-messagereview' );
+			$vars['TranslateMessageReviewRight'] = $out->getUser()->isAllowed( 'translate-messagereview' );
 			$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
 			$vars['wgTranslatePermissionUrl'] = $wgTranslatePermissionUrl;
 		}

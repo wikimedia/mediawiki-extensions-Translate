@@ -202,45 +202,12 @@
 		 * Add a message to the message table for proofreading.
 		 */
 		addProofread: function ( message ) {
-			var $message, targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
-				status = '';
-
-			sourceLanguage = this.$container.data( 'sourcelangcode' );
-			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
-			targetLanguage = this.$container.data( 'targetlangcode' );
-			targetLanguageDir = $.uls.data.getDir( targetLanguage );
-
-			status = message.properties.status;
+			var $message;
 
 			$message = $( '<div>' )
 				.addClass( 'row tux-message-proofread' )
-				.data( 'message', message )
-				.append(
-					// TODO the below UI code can be moved to the proofread plugin.
-					$( '<div>' )
-						.addClass( 'one column tux-proofread-status ' + status ),
-					$( '<div>' )
-						.addClass( 'five columns tux-proofread-source' )
-						.attr( {
-							lang: sourceLanguage,
-							dir: sourceLanguageDir
-						} )
-						.text( message.definition ),
-					$( '<div>' )
-						.addClass( 'five columns tux-proofread-translation' )
-						.attr( {
-							lang: targetLanguage,
-							dir: targetLanguageDir
-						} )
-						.text( message.translation || '' ),
-					$( '<div>' )
-						.addClass( 'one column' )
-						.append( $( '<div>' )
-							.addClass( 'tux-proofread-action' ),
-							$( '<div>' )
-								.addClass( 'tux-proofread-edit' )
-						)
-				);
+				.data( 'message', message );
+
 			this.$loader.before( $message );
 			$message.proofread();
 		},

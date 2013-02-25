@@ -23,7 +23,8 @@
 	height: 40px;
 }
 
-.tux-proofread-status.translated {
+.tux-proofread-status.translated,
+.tux-proofread-status.proofread {
 	/* @embed */
 	background: url(../images/translate.png) left center no-repeat;
 	height: 40px;
