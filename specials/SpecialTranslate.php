@@ -397,7 +397,7 @@ class SpecialTranslate extends SpecialPage {
 			$href = $this->getTitle()->getLocalUrl( $taskParams );
 			$link = Html::element( 'a', array( 'href' => $href ), $this->msg( $tab ) );
 			$output .= Html::rawElement( 'li', array(
-				'class' => 'column',
+				'class' => 'column '. $tab ,
 				'data-filter' => $filter
 			), $link );
 		}
