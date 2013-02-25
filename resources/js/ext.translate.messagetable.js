@@ -26,8 +26,7 @@
 			changes = changes || {};
 
 			// Clear current messages
-			$( '.tux-message' ).remove();
-
+			$( '.tux-message, .tux-message-proofread' ).remove();
 			// Change the properties that are provided
 			if ( changes.filter !== undefined ) {
 				$loader.data( 'filter', changes.filter );
