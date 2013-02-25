@@ -242,10 +242,11 @@
 	}
 
 	$( document ).ready( function () {
-		var uiLanguage, $translateContainer, $hideTranslatedButton,
+		var targetLanguage, $translateContainer, $hideTranslatedButton,$messageList,
 			docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri;
 
-		if ( $( '.tux-messagelist' ).length ) {
+		$messageList = $( '.tux-messagelist' );
+		if ( $messageList.length ) {
 			uri = new mw.Uri( window.location.href );
 			filter = uri.query.filter;
 			if ( filter === undefined ) {
@@ -259,13 +260,13 @@
 			} );
 		}
 
-		uiLanguage = mw.config.get( 'wgUserLanguage' );
+		targetLanguage = $messageList.data( 'targetlangcode' );
 
 		ourWindowOnBeforeUnloadRegister();
 		prepareWorkflowSelector();
 		$.when(
 			// Get ready with language stats
-			mw.translate.loadLanguageStats( uiLanguage ),
+			mw.translate.loadLanguageStats( targetLanguage ),
 			// Get ready with message groups
 			mw.translate.loadMessageGroups()
 		).then( function () {
@@ -273,7 +274,7 @@
 				onSelect: groupSelectorHandler
 			} );
 			$( '.tux-message-list-statsbar' ).languagestatsbar( {
-				language: uiLanguage,
+				language: targetLanguage,
 				group: $( '.tux-message-list-statsbar' ).data( 'messagegroup' )
 			} );
 			$( '.tux-messagelist' ).messagetable();
