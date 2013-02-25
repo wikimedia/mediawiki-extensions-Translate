@@ -92,6 +92,7 @@
 
 	function Proofread( element ) {
 		this.$message = $( element );
+		this.$container =  $( '.tux-messagelist' );
 		this.message = this.$message.data( 'message' );
 		this.init();
 		this.listen();
@@ -104,6 +105,8 @@
 		 */
 		init: function () {
 			var proofread = this;
+
+			this.render();
 			// No self review
 			if ( this.message.properties['last-translator-text'] === mw.user.id() ) {
 				this.hide();
@@ -126,11 +129,47 @@
 			proofread.$message.translateeditor( {
 				message: proofread.message
 			} );
+
+		},
+
+		render: function () {
+			var targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir;
+
+			sourceLanguage = this.$container.data( 'sourcelangcode' );
+			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
+			targetLanguage = this.$container.data( 'targetlangcode' );
+			targetLanguageDir = $.uls.data.getDir( targetLanguage );
+
+			this.$message.append(
+				$( '<div>' )
+					.addClass( 'one column tux-proofread-status ' + this.message.properties.status ),
+				$( '<div>' )
+					.addClass( 'five columns tux-proofread-source' )
+					.attr( {
+						lang: sourceLanguage,
+						dir: sourceLanguageDir
+					} )
+					.text( this.message.definition ),
+				$( '<div>' )
+					.addClass( 'five columns tux-proofread-translation' )
+					.attr( {
+						lang: targetLanguage,
+						dir: targetLanguageDir
+					} )
+					.text( this.message.translation || '' ),
+				$( '<div>' )
+					.addClass( 'one column' )
+					.append( $( '<div>' )
+						.addClass( 'tux-proofread-action ' + this.message.properties.status),
+						$( '<div>' )
+							.addClass( 'tux-proofread-edit' )
+					)
+			);
 		},
 
 		hide: function () {
 			this.$message.find( '.tux-proofread-action' )
-			.addClass( 'hide' );
+				.addClass( 'hide' );
 		},
 
 		/**
