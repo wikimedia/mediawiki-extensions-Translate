@@ -58,6 +58,14 @@
 		 */
 		canTranslate: function () {
 			return mw.config.get( 'TranslateRight' );
+		},
+
+		/**
+		 * Check if the current user is allowed to proofread on this wiki.
+		 * @return {boolean}
+		 */
+		canProofread: function () {
+			return mw.config.get( 'TranslateMessageReview' );
 		}
 	} );
 }( jQuery, mediaWiki ) );

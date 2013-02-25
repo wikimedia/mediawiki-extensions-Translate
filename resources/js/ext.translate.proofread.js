@@ -106,25 +106,31 @@
 			var proofread = this;
 			// No self review
 			if ( this.message.properties['last-translator-text'] === mw.user.id() ) {
-				this.$message.find( '.tux-proofread-action' )
-					.addClass( 'hide' );
+				this.hide();
 			}
 
 			// No review before translating.
 			if ( !this.message.translation ) {
-				this.$message.find( '.tux-proofread-action' )
-					.addClass( 'hide' );
+				this.hide();
 			}
 
 			// No review for fuzzy messages.
 			if ( this.message.properties.status === 'fuzzy' ) {
-				this.$message.find( '.tux-proofread-action' )
-					.addClass( 'hide' );
+				this.hide();
+			}
+
+			if ( !mw.translate.canProofread() ) {
+				this.hide();
 			}
 
 			proofread.$message.translateeditor( {
 				message: proofread.message
 			} );
+		},
+
+		hide: function () {
+			this.$message.find( '.tux-proofread-action' )
+			.addClass( 'hide' );
 		},
 
 		/**
