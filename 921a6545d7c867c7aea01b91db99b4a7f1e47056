@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DnVEEJ8I",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-02-25T12:38:31Z",
+      "side": 1,
+      "message": "Nitpick: \"column $tab\" is cleaner to my taste.",
+      "revId": "921a6545d7c867c7aea01b91db99b4a7f1e47056",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
