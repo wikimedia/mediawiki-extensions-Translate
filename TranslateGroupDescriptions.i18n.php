@@ -1457,7 +1457,7 @@ $messages['ja'] = array(
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]]は、ウェブ上で動作する質問回答ソフトウェアです',
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] はオープンソースのマイクロブログサーバーです',
 	'translate-group-desc-statusnet-plugin' => 'これらのメッセージは、[[Translating:StatusNet|StatusNet]]のプラグインの一部です',
-	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver] にあるツールの国際化システム（<span class="plainlinks">[[Translating talk:Toolserver|サポート]]、[https://wiki.toolserver.org/view/Toolserver_Intuition 技術的詳細]</span>）である [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition] のメッセージ群',
+	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver] にあるツールの国際化システム (<span class="plainlinks">[[Translating talk:Toolserver|サポート]]、[https://wiki.toolserver.org/view/Toolserver_Intuition 技術的詳細]</span>) である [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition] のメッセージ群',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]]は、全世界のハイキング、サイクリング、マウンテンバイク、インラインスケートの経路を表示するサービスです。GNU GPL ライセンスを使用します',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]は、ウィキメディアウィキ内のページの一部の著者を素早く検索できます',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]は、携帯可能な機器で、オフラインかつ文字のみのウィキペディアを提供します',

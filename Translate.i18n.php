@@ -639,7 +639,8 @@ This warning indicates that the namespace in the translation does not match the 
 * $1 is ...',
 	'translate-checks-fudforum-syntax' => 'Warning message from automated syntax check for translators.',
 	'translate-pref-nonewsletter' => "Option in [[Special:Preferences]], 'Misc' tab.",
-	'translate-pref-editassistlang' => 'Used in [[Special:Preferences]] under the {{msg-mw|prefs-editing}} tab.',
+	'translate-pref-editassistlang' => 'Used in [[Special:Preferences]] under the {{msg-mw|prefs-editing}} tab.
+{{Identical|Assistant language}}',
 	'prefs-translate' => 'Caption of a section at [[Special:Preferences#prefsection-3|Special:Preferences]]',
 	'translate-pref-editassistlang-help' => 'Used in [[Special:Preferences]], tab Editing.',
 	'translate-pref-jsedit' => "Setting in the preferences which enables the Translate extension own editing tools, like pop-ups and inline editor, which are based on JavaScript/AJAX features and replace the normal editing screen in some, most or all cases depending on the wiki's configuration and release.",
@@ -16104,6 +16105,7 @@ $messages['kn'] = array(
  * @author Klutzy
  * @author Kwj2772
  * @author ToePeu
+ * @author 관인생략
  * @author 아라
  */
 $messages['ko'] = array(
@@ -16194,7 +16196,7 @@ $1',
 	'translate-magic-cm-updatedusing' => '[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]을 통해 업데이트함',
 	'translate-magic-cm-savefailed' => '저장 실패',
 	'translate-magic-special' => '특수 문서 이름',
-	'translate-magic-words' => '매직 워드',
+	'translate-magic-words' => '특수 명령',
 	'translate-magic-namespace' => '이름공간 이름',
 	'translate-magic-notsaved' => '편집이 저장되지 않았습니다!',
 	'translate-magic-errors' => '번역문에서 다음 {{PLURAL:$1|오류}}를 수정하세요:',
@@ -25826,6 +25828,9 @@ Najuporabnejše za opravila lektoriranja.',
 $messages['so'] = array(
 	'translate' => 'Fasir',
 	'translate-taskui-acceptqueue' => 'Fariimaha bis ayaan aqbalayaa',
+	'translate-taction-proofread' => 'Sixid',
+	'translate-taction-lstats' => 'Tirakoobka Luqadda',
+	'translate-taction-mstats' => 'Fariinta Tirakoobka Kooxda',
 	'translate-submit' => 'Qaado',
 	'translate-page-showing' => 'Soo bandhigista ka bilaabata $1 ilaa $2 of $3.',
 	'translate-page-showing-none' => 'Wax qoraal ah lama soo bandhigin.',
@@ -25842,6 +25847,7 @@ $messages['so'] = array(
 	'translate-ls-noempty' => 'Gabi ahaanba qari qaybaha qoraalada aan la turjumin',
 	'translate-language' => 'Luqad:',
 	'translate-ls-submit' => 'Itus tirakoobka',
+	'translate-mgs-pagename' => 'Fariinta Tirakoobka Kooxda',
 	'translate-mgs-submit' => 'Itus tirakoobka',
 	'translate-mgs-column-language' => 'Luqada',
 	'translate-dynagroup-recent-desc' => 'Qaybtaan waxa ay ku tusaysaa dhamaan turjumiddii ugu dambaysay ee luqadaan.

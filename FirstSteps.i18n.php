@@ -83,14 +83,18 @@ If you do not want to receive newsletters, you can opt-out in the tab "{{int:pre
  * @author EugeneZelenko
  * @author Lloffiwr
  * @author Purodha
+ * @author Shirayuki
  * @author The Evil IP address
  */
 $messages['qqq'] = array(
 	'translate-fs-signup-title' => '{{Identical|Sign up}}',
 	'translate-fs-selectlanguage' => "Default value in language selector, acts as 'nothing chosen'",
-	'translate-fs-settings-planguage' => 'Label for choosing interface language, followed by language selector',
+	'translate-fs-settings-planguage' => 'Label for choosing interface language, followed by language selector.
+{{Identical|Primary language}}',
 	'translate-fs-settings-planguage-desc' => 'Help message for choosing interface language',
-	'translate-fs-settings-slanguage' => 'Other languages shown while translating, followed by language selector, $1 is running number',
+	'translate-fs-settings-slanguage' => 'Other languages shown while translating, followed by language selector. Parameters:
+* $1 - running number
+{{Identical|Assistant language}}',
 	'translate-fs-settings-slanguage-desc' => 'Help message for choosing assistant languages',
 	'translate-fs-settings-submit' => 'Submit button',
 	'translate-fs-userpage-level-N' => 'A language skill level option.
@@ -123,6 +127,7 @@ It is used inside a selector, which is followed by another selector, where you c
 Wording of this message may refer to it per "this language" or "the selected language", for example.
 
 The data collected via the pair of selectors will later be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
+	'translate-fs-permissions-planguage' => '{{Identical|Primary language}}',
 );
 
 /** Arabic (العربية)
@@ -2069,7 +2074,7 @@ $messages['ja'] = array(
 	'translate-fs-userpage-help' => '自分の言語能力を紹介し、何か自己紹介をしてください。6つ以上の言語を知っている場合は、あとで追加できます。',
 	'translate-fs-userpage-submit' => '自分の利用者ページを作成',
 	'translate-fs-userpage-done' => 'お疲れ様です。あなたの利用者ページができました。',
-	'translate-fs-permissions-planguage' => '第一言語：',
+	'translate-fs-permissions-planguage' => '第一言語:',
 	'translate-fs-permissions-help' => '次に翻訳者グループへの追加申請をする必要があります。
 翻訳する予定の第一言語を選択してください。
 
