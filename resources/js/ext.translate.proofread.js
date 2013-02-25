@@ -185,7 +185,9 @@
 			}, function () {
 				proofread.$message.find( '.tux-proofread-action' )
 					.addClass( 'proofread' );
-				// TODO update stats
+
+				// Update stats
+				$( '.tux-action-bar .tux-statsbar' ).trigger( 'change', [ 'proofread', proofread.message.properties.state ] );
 			}, function () {
 				mw.log( 'Error while submitting the message for proofread.' );
 			} );
