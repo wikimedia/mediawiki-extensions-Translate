@@ -92,6 +92,10 @@
 			this.$actionBar.find( 'button.tux-proofread-button' ).on( 'click', function () {
 				messageTable.switchMode( 'proofread' );
 			} );
+
+			this.$actionBar.find( 'button.translate-mode-button' ).on( 'click', function () {
+				messageTable.switchMode( 'translate' );
+			} );
 		},
 
 		add: function ( message ) {
@@ -360,13 +364,22 @@
 		switchMode: function ( mode ) {
 			var messageTable = this;
 
+			messageTable.$actionBar.find( '.down').removeClass( 'down' );
+			if ( messageTable.mode === 'translate' ) {
+				messageTable.$actionBar.find( '.translate-mode-button' ).addClass( 'down' );
+			}
+			if ( messageTable.mode === 'proofread' ) {
+				messageTable.$actionBar.find( '.tux-proofread-button' ).addClass( 'down' );
+			}
+
 			if ( messageTable.mode === mode ) {
 				// no change in the mode
 				return;
 			}
 			messageTable.mode = mode;
 			mw.translate.changeUrl( { action: this.mode } );
-			$( '.tux-message').remove();
+			$( '.tux-message, .tux-message-proofread').remove();
+
 			$.each( messageTable.messages, function ( index, message ) {
 				if ( messageTable.mode === 'translate' ) {
 					messageTable.addTranslate( message );
