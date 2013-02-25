@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DnZFxf3k",
+        "filename": "resources/css/ext.translate.special.translate.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-02-25T11:45:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DnHUm8tI",
+      "revId": "dd49d4737de8e9595fb7ec6053dda09cb03689a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DnDUwegA",
         "filename": "resources/js/ext.translate.special.translate.js",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-22T13:56:40Z",
       "side": 1,
       "message": "Is there no getGroup( id ) function like in PHP yet?",
+      "revId": "dd49d4737de8e9595fb7ec6053dda09cb03689a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnfFh06w",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-02-25T11:45:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DnDUwegA",
       "revId": "dd49d4737de8e9595fb7ec6053dda09cb03689a7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "DnTFPazc",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-02-25T11:45:06Z",
+      "side": 1,
+      "message": "Yes, this is the line that I\u0027m suppressing. The function is for $.map - can it be omitted?",
+      "parentUuid": "DnFUj9sA",
+      "revId": "dd49d4737de8e9595fb7ec6053dda09cb03689a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DnBUtfqg",
         "filename": "specials/SpecialTranslate.php",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2013-02-22T13:56:40Z",
       "side": 1,
       "message": "Why not do this completely client side?",
+      "revId": "dd49d4737de8e9595fb7ec6053dda09cb03689a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnbFbW-M",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-02-25T11:45:06Z",
+      "side": 1,
+      "message": "I\u0027m trying to keep the initialization of all the header components in one place.",
+      "parentUuid": "DnBUtfqg",
       "revId": "dd49d4737de8e9595fb7ec6053dda09cb03689a7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
