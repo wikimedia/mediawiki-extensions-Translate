@@ -640,14 +640,6 @@ class SpecialTranslate extends SpecialPage {
 			return false;
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
-		$dbr->selectField(
-				'translate_groupreviews',
-				'tgr_state',
-				array( 'tgr_group' => $this->options['group'], 'tgr_lang' => $this->options['language'] ),
-				__METHOD__
-		);
-
 		$selector = Html::element( 'div', array(
 			'class' => 'tux-workflow-status',
 			'data-token' => ApiGroupReview::getToken( 0, '' ),
