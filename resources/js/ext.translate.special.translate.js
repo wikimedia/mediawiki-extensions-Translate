@@ -214,9 +214,10 @@
 			$newLink.msggroupselector( {
 				onSelect: groupSelectorHandler
 			} );
-		} else {
-			mw.translate.changeGroup( msgGroup );
 		}
+
+		mw.translate.changeGroup( msgGroup );
+
 	}
 
 	// Returns an array of jQuery objects of rows of translated
