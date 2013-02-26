@@ -63,7 +63,9 @@
 	}
 
 	MessageTable.prototype = {
-		init: function () {},
+		init: function () {
+			this.switchMode( this.mode );
+		},
 
 		listen: function () {
 			var messageTable = this;
@@ -365,10 +367,10 @@
 			var messageTable = this;
 
 			messageTable.$actionBar.find( '.down').removeClass( 'down' );
-			if ( messageTable.mode === 'translate' ) {
+			if ( mode === 'translate' ) {
 				messageTable.$actionBar.find( '.translate-mode-button' ).addClass( 'down' );
 			}
-			if ( messageTable.mode === 'proofread' ) {
+			if ( mode === 'proofread' ) {
 				messageTable.$actionBar.find( '.tux-proofread-button' ).addClass( 'down' );
 			}
 
