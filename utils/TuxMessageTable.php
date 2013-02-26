@@ -52,17 +52,20 @@ class TuxMessageTable extends ContextSource {
 
 		// Hide this button by default and show it only if the filter is relevant
 		$footer .= '<div class="three columns text-center">'
-			. '<button class="button tux-editor-clear-translated hide">'
+			. '<button class="toggle button tux-proofread-own-translations-button hide-own hide">'
+			. $this->msg( 'tux-editor-proofreading-hide-own-translations' )->escaped()
+			. '</button>';
+
+		// Hide this button by default and show it only if the filter is relevant
+		$footer .= '<button class="toggle button tux-editor-clear-translated hide">'
 			. $this->msg( 'tux-editor-clear-translated' )->escaped()
 			. '</button>'
 			. '</div>';
 
-
 		$footer .= '<div class="four columns text-center">'
-				. '<button class="toggle button down translate-mode-button">'
-				. $this->msg( 'tux-editor-translate-mode' )->escaped()
-				. '</button>';
-
+			. '<button class="toggle button down translate-mode-button">'
+			. $this->msg( 'tux-editor-translate-mode' )->escaped()
+			. '</button>';
 
 		if ( $this->getUser()->isallowed( 'translate-messagereview' ) ) {
 			$footer .=  '<button class="toggle button tux-proofread-button">'
@@ -71,6 +74,7 @@ class TuxMessageTable extends ContextSource {
 		}
 
 		$footer .= '</div>';
+
 		// Actual message table is fetched and rendered at client side. This just provides
 		// the loader and action bar.
 		return $this->header() . $footer . '</div>';

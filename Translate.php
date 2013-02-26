@@ -473,6 +473,8 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'translate-workflow-state-',
 		'tpt-discouraged-language-force',
 		'tpt-discouraged-language',
+		'tux-editor-proofreading-hide-own-translations',
+		'tux-editor-proofreading-show-own-translations',
 	),
 ) + $resourcePaths;
 
