@@ -424,7 +424,6 @@ Most useful for the proofreading tasks.',
 	'translate-msggroupselector-search-placeholder' => 'Search groups',
 	'translate-msggroupselector-search-all' => 'All',
 	'translate-msggroupselector-search-recent' => 'Recent',
-	'translate-msggroupselector-load-from-all' => 'Load messages from all groups',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgroup|subgroups}}',
 
 	'tux-languageselector' => 'Translate to',
@@ -890,7 +889,6 @@ Additional parameters:
 	'translate-msggroupselector-search-placeholder' => "Place holder text for the search box in message group selector. It's supposed to tell the user that the box is for a search for a name of a group.",
 	'translate-msggroupselector-search-all' => 'Label to display all projects',
 	'translate-msggroupselector-search-recent' => 'Label to display recent projects',
-	'translate-msggroupselector-load-from-all' => 'Label for the button',
 	'translate-msggroupselector-view-subprojects' => 'Label indicating that the current message group contains other groups. Parameters:
 * $1 is number of sub groups',
 	'tux-languageselector' => 'Label for language selector in [[Special:Translate]].

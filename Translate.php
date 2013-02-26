@@ -308,7 +308,6 @@ $wgResourceModules['ext.translate.groupselector'] = array(
 		'translate-msggroupselector-search-placeholder',
 		'translate-msggroupselector-search-all',
 		'translate-msggroupselector-search-recent',
-		'translate-msggroupselector-load-from-all',
 		'translate-msggroupselector-view-subprojects',
 	),
 ) + $resourcePaths;
