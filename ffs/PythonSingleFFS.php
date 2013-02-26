@@ -145,6 +145,7 @@ class PythonSingleFFS extends SimpleFFS {
 			$authorList .= "\t# Author: $author\n";
 		}
 
+		$code = $this->group->mapCode( $code );
 		$section = "$authorList\t'$code': {\n$block\t},";
 
 		// Store the written part, so that when next language is called,
