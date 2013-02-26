@@ -81,6 +81,7 @@
 			mw.translate.loadMessages( changes );
 			mw.translate.changeUrl( changes );
 			mw.translate.prepareWorkflowSelector( group );
+			updateGroupWarning();
 		},
 
 		changeLanguage: function ( language ) {
@@ -94,6 +95,7 @@
 			mw.translate.changeUrl( changes );
 			$( '.tux-statsbar' ).trigger( 'refresh', language );
 			mw.translate.loadMessages();
+			updateGroupWarning();
 		},
 
 		changeFilter: function ( filter ) {
@@ -242,6 +244,38 @@
 		} );
 	}
 
+	function updateGroupWarning() {
+		/*jshint loopfunc:true */
+		var preferredLanguages,
+			$groupWarning = $( '.tux-editor-header .group-warning' ),
+			targetLanguage = $( '.tux-messagelist' ).data( 'targetlangcode' ),
+			msgGroupData = mw.translate.getGroup(
+				$( '.tux-messagetable-loader' ).data( 'messagegroup' )
+			);
+
+		if ( msgGroupData.prioritylangs &&
+			$.inArray( targetLanguage, msgGroupData.prioritylangs ) === -1
+		) {
+			preferredLanguages = $.map( msgGroupData.prioritylangs, function ( code ) {
+				return $.uls.data.getAutonym( code );
+			} );
+
+			new mw.Api().parse(
+				mw.message( msgGroupData.priorityforce ?
+					'tpt-discouraged-language-force' :
+					'tpt-discouraged-language',
+					'',
+					$.uls.data.getAutonym( targetLanguage ),
+					preferredLanguages.join( ', ' )
+				).parse()
+			).done( function ( parsedWarning ) {
+				$groupWarning.html( parsedWarning );
+			} );
+		} else {
+			$groupWarning.empty();
+		}
+	}
+
 	$( document ).ready( function () {
 		var targetLanguage, $translateContainer, $hideTranslatedButton,$messageList,
 			docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri;
@@ -274,11 +308,15 @@
 			$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
 				onSelect: groupSelectorHandler
 			} );
+
 			$( '.tux-message-list-statsbar' ).languagestatsbar( {
 				language: targetLanguage,
 				group: $( '.tux-message-list-statsbar' ).data( 'messagegroup' )
 			} );
+
 			$( '.tux-messagelist' ).messagetable();
+
+			updateGroupWarning();
 		} );
 
 		// Use ULS for language selection if it's available
