@@ -231,6 +231,19 @@
 			.filter( '.translated, .proofread' );
 	}
 
+	function getOwnTranslatedMessages( $translateContainer ) {
+		$translateContainer = $translateContainer || $( '.ext-translate-container' );
+
+		return $translateContainer.find( '.tux-message-proofread' )
+			.filter( function () {
+				var $this = $( this );
+
+				return ( $this.hasClass( 'translated' ) &&
+					$this.data( 'message' ).properties['last-translator-text'] === mw.user.getName()
+				);
+			} );
+	}
+
 	function workflowSelectionHandler ( state ) {
 		var $status = $( '.tux-workflow-status' );
 
@@ -277,8 +290,8 @@
 	}
 
 	$( document ).ready( function () {
-		var targetLanguage, $translateContainer, $hideTranslatedButton,$messageList,
-			docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri;
+		var $translateContainer, $hideTranslatedButton, $controlOwnButton, $messageList,
+			targetLanguage, docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri;
 
 		$messageList = $( '.tux-messagelist' );
 		if ( $messageList.length ) {
@@ -358,7 +371,6 @@
 
 		$translateContainer = $( '.ext-translate-container' );
 
-		// TODO: this could should be in messagetable
 		$hideTranslatedButton = $translateContainer.find( '.tux-editor-clear-translated' );
 		$hideTranslatedButton
 			.prop( 'disabled', !getTranslatedMessages( $translateContainer ).length )
@@ -366,6 +378,22 @@
 				getTranslatedMessages( $translateContainer ).remove();
 				$( this ).prop( 'disabled', true );
 			} );
+
+		$controlOwnButton = $translateContainer.find( '.tux-proofread-own-translations-button' );
+		$controlOwnButton.click( function () {
+			var $this = $( this ),
+				ownTranslatedMessages = getOwnTranslatedMessages( $translateContainer ),
+				hideMessage = mw.msg( 'tux-editor-proofreading-hide-own-translations' ),
+				showMessage = mw.msg( 'tux-editor-proofreading-show-own-translations' );
+
+			if ( $this.hasClass( 'down' ) ) {
+				ownTranslatedMessages.removeClass( 'hide' );
+				$this.removeClass( 'down' );
+			} else {
+				ownTranslatedMessages.addClass( 'hide' );
+				$this.addClass( 'down' );
+			}
+		} );
 
 		// Workflow state selector
 		$translateContainer.find( '.tux-workflow-status' )
