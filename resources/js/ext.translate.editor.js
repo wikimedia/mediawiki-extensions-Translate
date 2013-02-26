@@ -4,7 +4,8 @@
 	function TranslateEditor( element, options ) {
 		this.$editTrigger = $( element );
 		this.$editor = null;
-		this.message = options.message;
+		this.options = options;
+		this.message = this.options.message;
 		this.$messageItem = this.$editTrigger.find( '.tux-message-item' );
 		this.shown = false;
 		this.dirty = false;
@@ -126,6 +127,11 @@
 				$( '.tux-editor-clear-translated' )
 					.removeClass( 'hide' )
 					.prop( 'disabled', false );
+
+				// Save callback
+				if ( translateEditor.options.onSave ) {
+					translateEditor.options.onSave( translation );
+				}
 			} ).fail( function ( errorCode, results ) {
 				translateEditor.savingError( results.error.info );
 

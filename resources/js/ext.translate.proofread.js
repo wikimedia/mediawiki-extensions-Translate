@@ -127,7 +127,12 @@
 			}
 
 			proofread.$message.translateeditor( {
-				message: proofread.message
+				message: proofread.message,
+				onSave: function ( translation ) {
+					proofread.$message.find( '.tux-proofread-translation' )
+						.text( translation );
+					proofread.message.translation = translation;
+				}
 			} );
 
 		},
