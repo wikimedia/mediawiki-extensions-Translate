@@ -13,6 +13,13 @@
 	background: #fefefe;
 }
 
+.tux-message-proofread.open .tux-proofread-status,
+.tux-message-proofread.open .tux-proofread-source,
+.tux-message-proofread.open .tux-proofread-translation,
+.tux-message-proofread.open .tux-proofread-action-block {
+	display:none;
+}
+
 .tux-proofread-source {
 	color: #555;
 	font-size: 16px;
