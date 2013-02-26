@@ -57,6 +57,7 @@ class PythonSingleFFS extends SimpleFFS {
 	}
 
 	public function read( $code ) {
+		$code = $this->group->mapCode( $code );
 		$filename = $this->group->getSourceFilePath( $code );
 		if ( !file_exists( $filename ) ) {
 			return false;
@@ -119,6 +120,7 @@ class PythonSingleFFS extends SimpleFFS {
 	protected function writeReal( MessageCollection $collection ) {
 		$mangler = $this->group->getMangler();
 		$code = $collection->getLanguage();
+		$code = $this->group->mapCode( $code );
 
 		$block = $this->generateMessageBlock( $collection, $mangler );
 		if ( $block === '' ) {
@@ -128,7 +130,7 @@ class PythonSingleFFS extends SimpleFFS {
 		// Ugly code, relies on side effects
 		$this->read( 'mul' );
 		$filename = $this->group->getSourceFilePath( $code );
-		$cache = & self::$cache[$filename];
+		$cache = &self::$cache[$filename];
 
 		// Generating authors
 		if ( isset( $cache['sections'][$code] ) ) {
