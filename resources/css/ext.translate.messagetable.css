@@ -203,7 +203,6 @@
 
 .tux-action-bar .toggle.button {
 	height: 35px;
-	width: 50%;
 	font-size: 15px;
 	vertical-align: middle;
 	border-radius: 0;
@@ -216,6 +215,10 @@
 
 .toggle.button:last-child {
 	border-radius: 0 3px 3px 0;
+}
+
+.tux-action-bar .tux-view-switcher .toggle.button {
+	width: 50%;
 }
 
 .tux-action-bar .translate-mode-button:before {

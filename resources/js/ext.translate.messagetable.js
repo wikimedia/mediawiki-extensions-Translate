@@ -369,7 +369,10 @@
 		 */
 		switchMode: function ( mode ) {
 			var messageTable = this,
-				filter = messageTable.$loader.data( 'filter' );
+				filter = messageTable.$loader.data( 'filter' ),
+				$tuxTabUntranslated,
+				$controlOwnButton,
+				$hideTranslatedButton;
 
 			messageTable.$actionBar.find( '.down' ).removeClass( 'down' );
 			if ( mode === 'translate' ) {
@@ -379,14 +382,14 @@
 				messageTable.$actionBar.find( '.tux-proofread-button' ).addClass( 'down' );
 			}
 
-			if ( messageTable.mode === mode ) {
-				// no change in the mode
-				return;
-			}
 			messageTable.mode = mode;
 			mw.translate.changeUrl( { action: this.mode } );
 
 			$( '.tux-message, .tux-message-proofread').remove();
+
+			$tuxTabUntranslated = $( '.tux-message-selector > .tux-tab-untranslated' );
+			$controlOwnButton = messageTable.$actionBar.find( '.tux-proofread-own-translations-button' );
+			$hideTranslatedButton = messageTable.$actionBar.find( '.tux-editor-clear-translated' );
 
 			if ( messageTable.mode === 'proofread' ) {
 				$( '.tux-message-selector > .tux-tab-untranslated' ).addClass( 'hide' );
@@ -397,8 +400,16 @@
 					mw.translate.changeFilter( 'translated' );
 					$( '.tux-message-selector > .tux-tab-translated' ).addClass( 'selected' );
 				}
+				$tuxTabUntranslated.addClass( 'hide' );
+				$controlOwnButton.removeClass( 'hide' );
+				$hideTranslatedButton.addClass( 'hide' );
 			} else {
-				$( '.tux-message-selector > .tux-tab-untranslated' ).removeClass( 'hide' );
+				$tuxTabUntranslated.removeClass( 'hide' );
+				$controlOwnButton.addClass( 'hide' );
+
+				if ( messageTable.$loader.data( 'filter' ).indexOf( '!translated' ) > -1 ) {
+					$hideTranslatedButton.removeClass( 'hide' );
+				}
 			}
 
 			$.each( messageTable.messages, function ( index, message ) {
