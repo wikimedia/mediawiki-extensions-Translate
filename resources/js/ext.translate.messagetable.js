@@ -364,7 +364,9 @@
 		 * @param {string} mode The message table mode - proofread or translate
 		 */
 		switchMode: function ( mode ) {
-			var messageTable = this;
+			var messageTable = this,
+				$tuxTabUntranslated,
+				$controlOwnButton;
 
 			messageTable.$actionBar.find( '.down').removeClass( 'down' );
 			if ( mode === 'translate' ) {
@@ -378,21 +380,28 @@
 				// no change in the mode
 				return;
 			}
+
 			messageTable.mode = mode;
 			mw.translate.changeUrl( { action: this.mode } );
 
 			$( '.tux-message, .tux-message-proofread').remove();
 
+			$tuxTabUntranslated = $( '.tux-message-selector > .tux-tab-untranslated' );
+			$controlOwnButton = messageTable.$actionBar.find( '.tux-proofread-own-translations-button' );
+
 			if ( messageTable.mode === 'proofread' ) {
-				$( '.tux-message-selector > .tux-tab-untranslated' ).addClass( 'hide' );
+				$tuxTabUntranslated.addClass( 'hide' );
+				$controlOwnButton.removeClass( 'hide' );
 			} else {
-				$( '.tux-message-selector > .tux-tab-untranslated' ).removeClass( 'hide' );
+				$tuxTabUntranslated.removeClass( 'hide' );
+				$controlOwnButton.addClass( 'hide' );
 			}
 
 			$.each( messageTable.messages, function ( index, message ) {
 				if ( messageTable.mode === 'translate' ) {
 					messageTable.addTranslate( message );
 				}
+
 				if ( messageTable.mode === 'proofread' ) {
 					messageTable.addProofread( message );
 				}

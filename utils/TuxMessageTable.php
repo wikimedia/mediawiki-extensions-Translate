@@ -50,19 +50,25 @@ class TuxMessageTable extends ContextSource {
 					'data-messagegroup' => $this->group->getId(),
 				) );
 
-		// Hide this button by default and show it only if the filter is relevant
-		$footer .= '<div class="three columns text-center">'
-			. '<button class="button tux-editor-clear-translated hide">'
-			. $this->msg( 'tux-editor-clear-translated' )->escaped()
-			. '</button>'
-			. '</div>';
+		//$footer .= '<div class="six columns text-center">';
 
+		// Hide this button by default and show it only if the view is relevant
+		$footer .= '<button class="three column toggle-button tux-proofread-own-translations-button hide-own">'
+			// Which label should be shown by default?
+			. $this->msg( 'tux-editor-proofreading-hide-own-translations' )->escaped()
+			. '</button>';
+
+		// Hide this button by default and show it only if the filter is relevant
+		$footer .= '<button class="three column toggle-button tux-editor-clear-translated hide">'
+			. $this->msg( 'tux-editor-clear-translated' )->escaped()
+			. '</button>';
+
+		//$footer .= '</div>';
 
 		$footer .= '<div class="six columns text-center">'
-				. '<button class="three column toggle-button down translate-mode-button">'
-				. $this->msg( 'tux-editor-translate-mode' )->escaped()
-				. '</button>';
-
+			. '<button class="three column toggle-button down translate-mode-button">'
+			. $this->msg( 'tux-editor-translate-mode' )->escaped()
+			. '</button>';
 
 		if ( $this->getUser()->isallowed( 'translate-messagereview' ) ) {
 			$footer .=  '<button class="three column toggle-button tux-proofread-button">'
@@ -71,6 +77,7 @@ class TuxMessageTable extends ContextSource {
 		}
 
 		$footer .= '</div>';
+
 		// Actual message table is fetched and rendered at client side. This just provides
 		// the loader and action bar.
 		return $this->header() . $footer . '</div>';
