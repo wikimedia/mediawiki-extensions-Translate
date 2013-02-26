@@ -169,7 +169,8 @@
 						$( '<div>' )
 							.addClass( 'tux-proofread-edit' )
 					)
-			);
+			)
+			.addClass( this.message.properties.status );
 		},
 
 		hide: function () {
