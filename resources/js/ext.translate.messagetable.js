@@ -429,8 +429,12 @@
 			needsTableHeaderStick = messageListTop + $tuxTableHeader.height() - $window.scrollTop() >= 0;
 			if ( needsTableHeaderFloat ) {
 				$tuxTableHeader.addClass( 'floating' ).width( this.$container.width() );
+				$( '#mw-navigation' ).hide();
+				$( '.mw-body' ).css( 'margin-left', 0 );
 			} else if ( needsTableHeaderStick ) {
 				$tuxTableHeader.removeClass( 'floating' );
+				$( '#mw-navigation' ).show();
+				$( '.mw-body' ).css( 'margin-left', '11em' );
 			}
 
 			// Action bar:
