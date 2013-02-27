@@ -405,6 +405,7 @@ PHP;
 		}
 		$specs['Content-Type'] = 'text/plain; charset=UTF-8';
 		$specs['Content-Transfer-Encoding'] = '8bit';
+		$specs['Language'] = $this->group->mapCode( $code );
 		wfRunHooks( 'Translate:GettextFFS:headerFields', array( &$specs, $this->group, $code ) );
 		$specs['X-Generator'] = $this->getGenerator();
 
