@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DneeDSM4",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-02-27T07:38:41Z",
+      "side": 1,
+      "message": "Can be shortened?\n\n return $this.hasClass( \u0027translated\u0027 ) \u0026\u0026\n   $this.data( \u0027message\u0027 ).properties[\u0027last-translator-text\u0027] \u003d\u003d\u003d mw.user.getName();",
+      "revId": "79e311ea306de2829da04f6be494c100cfd3d9c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnceITOs",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-02-27T07:38:41Z",
+      "side": 1,
+      "message": "Please don\u0027t leave commented out code behind.",
+      "revId": "79e311ea306de2829da04f6be494c100cfd3d9c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnaducC4",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-02-27T07:38:41Z",
+      "side": 1,
+      "message": "Please don\u0027t leave commented out code behind.",
+      "revId": "79e311ea306de2829da04f6be494c100cfd3d9c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
