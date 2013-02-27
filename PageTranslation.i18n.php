@@ -271,10 +271,10 @@ The template used by translations of the translatable page, extracted from the s
 	'tpt-saveok' => '* $1 - page title
 * $2 - count of sections which can be used with PLURAL
 * $3 - URL',
-	'tpt-badsect' => '* $1: the identifier of the unit
-* $2: the number of the unit
-
-See definition on [[mw:Help:Extension:Translate/Glossary]].',
+	'tpt-badsect' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].
+Parameters:
+* $1 - the identifier of the unit
+* $2 - the number of the unit',
 	'tpt-showpage-intro' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-mark-summary' => 'This message is used as an edit summary.',
 	'tpt-duplicate' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',

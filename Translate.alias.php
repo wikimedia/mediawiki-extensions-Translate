@@ -1026,4 +1026,5 @@ $specialPageAliases['zh-hant'] = array(
 	'FirstSteps' => array( '入門' ),
 	'SupportedLanguages' => array( '支持的語言' ),
 	'MyLanguage' => array( '我的語言' ),
+	'SearchTranslations' => array( '搜尋翻譯' ),
 );
