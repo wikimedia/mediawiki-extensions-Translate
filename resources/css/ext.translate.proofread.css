@@ -1,7 +1,7 @@
 .ext-translate-container .tux-messagelist .tux-message-proofread {
 	height: auto;
 	min-height: 50px;
-	padding: 20px 0 10px 0;
+	padding: 20px 0 20px 0;
 	margin: 0;
 	vertical-align: middle;
 	border-bottom: 1px solid #f8f8f8;
@@ -20,16 +20,18 @@
 	display:none;
 }
 
-.tux-proofread-source {
+.tux-messagelist .tux-message-proofread .tux-proofread-source {
 	color: #555;
 	font-size: 16px;
 	line-height: 1.5em;
+	padding-right: 25px;
 }
 
-.tux-proofread-translation {
+.tux-messagelist .tux-message-proofread .tux-proofread-translation {
 	color: #252525;
 	font-size: 16px;
 	line-height: 1.5em;
+	padding-left: 20px;
 }
 
 .tux-proofread-action-block {

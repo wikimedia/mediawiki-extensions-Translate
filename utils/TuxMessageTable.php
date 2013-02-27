@@ -59,13 +59,13 @@ class TuxMessageTable extends ContextSource {
 
 
 		$footer .= '<div class="six columns text-center">'
-				. '<button class="three column toggle-button down translate-mode-button">'
+				. '<button class="toggle button down translate-mode-button">'
 				. $this->msg( 'tux-editor-translate-mode' )->escaped()
 				. '</button>';
 
 
 		if ( $this->getUser()->isallowed( 'translate-messagereview' ) ) {
-			$footer .=  '<button class="three column toggle-button tux-proofread-button">'
+			$footer .=  '<button class="toggle button tux-proofread-button">'
 				. $this->msg( 'tux-editor-proofreading-mode' )->escaped()
 				. '</button>';
 		}
