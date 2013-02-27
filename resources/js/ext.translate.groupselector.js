@@ -97,6 +97,8 @@
 				.hide();
 
 			this.$menu.addClass( 'opened' ).show();
+			// Keep the focus in the message group search box.
+			this.$menu.find( 'input.ext-translate-msggroup-search-input' ).focus();
 		},
 
 		/**
