@@ -201,24 +201,64 @@
 	top: 30px;
 }
 
-.tux-action-bar .toggle-button {
+.tux-action-bar .toggle.button {
 	height: 35px;
-	with: 50%;
+	width: 50%;
 	font-size: 15px;
 	vertical-align: middle;
+	border-radius: 0;
+	text-shadow: none;
+}
+
+.toggle.button:first-child {
+	border-radius: 3px 0 0 3px;
+}
+
+.toggle.button:last-child {
+	border-radius: 0 3px 3px 0;
 }
 
 .tux-action-bar .translate-mode-button:before {
-	content: '☰ ';
+	content: "";
+	height: 15px;
+	width: 25px;
+	display: inline-block;
+	vertical-align: bottom;
+	background: transparent url(../images/view-list.png) center center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-list.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-list.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/view-list.svg);
+}
+
+.tux-action-bar .translate-mode-button.down:before {
+	background: transparent url(../images/view-list-hi.png) center center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-list-hi.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-list-hi.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/view-list-hi.svg);
 }
 
 .tux-action-bar .tux-proofread-button:before {
-	content: '✔ ';
+	content: "";
+	height: 15px;
+	width: 25px;
+	display: inline-block;
+	vertical-align: bottom;
+	background: transparent url(../images/view-proofread.png) center center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-proofread.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-proofread.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/view-proofread.svg);
 }
 
-.tux-action-bar .toggle-button.down {
+.tux-action-bar .tux-proofread-button.down:before {
+	background: transparent url(../images/view-proofread-hi.png) center center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-proofread-hi.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-proofread-hi.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/view-proofread-hi.svg);
+}
+
+.tux-action-bar .toggle.button.down {
 	color: #FFF;
-	background-color: #252525;
+	background: #252525;
 }
 
 /* Loading indicator: */
