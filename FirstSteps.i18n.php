@@ -26,7 +26,7 @@ $messages['en'] = array(
 	'translate-fs-userpage-title' => 'Create your user page',
 	'translate-fs-permissions-title' => 'Request translator permissions',
 	'translate-fs-target-title' => 'Start translating!',
-	'translate-fs-email-title' => 'Confirm your e-mail address',
+	'translate-fs-email-title' => 'Confirm your email address',
 
 	'translate-fs-intro' => "Welcome to the {{SITENAME}} first steps wizard.
 You will be guided through the process of becoming a translator step by step.
@@ -55,7 +55,7 @@ Select the primary language you are going to translate to.
 
 You can mention other languages and other remarks in textbox below.',
 	'translate-fs-permissions-pending' => 'Your request has been submitted to [[$1]] and someone from the site staff will check it as soon as possible.
-If you confirm your e-mail address, you will get an e-mail notification as soon as it happens.',
+If you confirm your email address, you will get an email notification as soon as it happens.',
 	'translate-fs-permissions-submit' => 'Send request',
 	'translate-fs-target-text' => 'Congratulations!
 You can now start translating.
@@ -72,9 +72,9 @@ If there is something that you think you should be able to do, but cannot find o
 You can also contact fellow translators of the same language at [[Portal:$1|your language portal]]\'s [[Portal_talk:$1|talk page]].
 If you have not already done so, [[Special:Preferences|change your user interface language to the language you want to translate in]], so that the wiki is able to show the most relevant links for you.',
 
-	'translate-fs-email-text' => 'Please provide your e-mail address in [[Special:Preferences|your preferences]] and confirm it from the e-mail that is sent to you.
+	'translate-fs-email-text' => 'Please provide your email address in [[Special:Preferences|your preferences]] and confirm it from the email that is sent to you.
 
-This allows other users to contact you by e-mail.
+This allows other users to contact you by email.
 You will also receive newsletters at most once a month.
 If you do not want to receive newsletters, you can opt-out in the tab "{{int:prefs-personal}}" of your [[Special:Preferences|preferences]].',
 );
