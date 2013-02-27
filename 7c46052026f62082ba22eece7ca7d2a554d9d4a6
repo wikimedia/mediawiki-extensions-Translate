@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DnWJrxoc",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-02-27T11:54:47Z",
+      "side": 1,
+      "message": "Wrong function comment format",
+      "revId": "7c46052026f62082ba22eece7ca7d2a554d9d4a6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DncJbmvI",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-02-27T11:54:47Z",
+      "side": 1,
+      "message": "Dont rely on the text of button. use classes or data attributes to make it clean and explicit.",
+      "revId": "7c46052026f62082ba22eece7ca7d2a554d9d4a6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
