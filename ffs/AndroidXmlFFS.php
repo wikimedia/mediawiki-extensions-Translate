@@ -21,7 +21,7 @@ class AndroidXmlFFS extends SimpleFFS {
 
 		foreach ( $reader->string as $string ) {
 			$key = (string)$string['name'];
-			$messages[$key] = (string)$string;
+			$messages[$key] = stripcslashes( (string)$string );
 		}
 
 		return array(
@@ -50,7 +50,8 @@ XML;
 				continue;
 			}
 
-			$string = $writer->addChild( 'string', $value );
+			// Kudos to the brilliant person who invented this braindead file format
+			$string = $writer->addChild( 'string', addcslashes( $value, '"\'' ) );
 			$string->addAttribute( 'name', $key );
 
 			// This is non-standard
