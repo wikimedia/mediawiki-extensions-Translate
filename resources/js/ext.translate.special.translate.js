@@ -157,14 +157,17 @@
 			$.each( workflowstates, function ( id, workflowstate ) {
 				if ( workflowstate._canchange ) {
 					workflowstate.id = id;
+
 					$selector.append( $('<li>')
 						.data( 'state', workflowstate )
 						.text( workflowstate._name )
 						.on( 'click', function() {
+							var $this = $( this );
+
 							$selector.find( '.selected' ).removeClass( 'selected' );
-							$( this ).addClass( 'selected' )
+							$this.addClass( 'selected' )
 								.parent().addClass( 'hide' );
-							workflowSelectionHandler( $( this ).data( 'state' ) );
+							workflowSelectionHandler( $this.data( 'state' ) );
 						})
 					);
 				}
@@ -284,13 +287,17 @@
 		if ( $messageList.length ) {
 			uri = new mw.Uri( window.location.href );
 			filter = uri.query.filter;
+
 			if ( filter === undefined ) {
 				filter = '!translated';
 			}
+
 			mw.translate.changeFilter( filter );
 			$( '.tux-message-selector li' ).each( function () {
-				if ( $( this ).data( 'filter' ) === filter ) {
-					$( this ).addClass( 'selected' );
+				var $this = $( this );
+
+				if ( $this.data( 'filter' ) === filter ) {
+					$this.addClass( 'selected' );
 				}
 			} );
 		}
@@ -375,15 +382,17 @@
 
 		$translateContainer.find( '.tux-workflow-status-selector li' )
 			.on( 'click', function () {
-				var state, stateText, $selector;
+				var state, stateText, $selector
+					$this = $( this );
 
-				state = $( this ).data( 'state' );
-				stateText = $( this ).text();
+				state = $this.data( 'state' );
+				stateText = $this.text();
 				$selector = $translateContainer.find( '.tux-workflow-status' );
-				$( this ).parent().find( '.selected' ).removeClass( 'selected' );
-				$( this ).addClass( 'selected' )
+				$this.parent().find( '.selected' ).removeClass( 'selected' );
+				$this.addClass( 'selected' )
 					.parent().addClass( 'hide' );
 				$selector.text( mw.msg( 'translate-workflow-set-doing' ) );
+
 				mw.translate.changeWorkflowStatus( $selector.data( 'group' ),
 					$selector.data( 'language' ),
 					state,
