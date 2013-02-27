@@ -31,10 +31,10 @@ class TranslatePreferences {
 
 		global $wgEnableEmail, $wgEnotifRevealEditorAddress;
 
-		// Only show if e-mail is enabled and user has a confirmed e-mail address.
+		// Only show if email is enabled and user has a confirmed email address.
 		if ( $wgEnableEmail && $user->isEmailConfirmed() ) {
 			// 'translate-pref-nonewsletter' is used as opt-out for
-			// users with a confirmed e-mail address
+			// users with a confirmed email address
 			$prefs = array(
 				'translate-nonewsletter' => array(
 					'type' => 'toggle',

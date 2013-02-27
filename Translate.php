@@ -501,7 +501,7 @@ $wgTranslateDocumentationLanguageCode = false;
 $wgTranslateFuzzyBotName = 'FuzzyBot';
 
 /**
- * Add a preference "Do not send me e-mail newsletters" in the e-mail preferences.
+ * Add a preference "Do not send me email newsletters" in the email preferences.
  */
 $wgTranslateNewsletterPreference = false;
 

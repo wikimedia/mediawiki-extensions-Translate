@@ -149,7 +149,7 @@ Changes are not saved until you click the save button below.',
 	'translate-checks-malformed' => '<nowiki>$1</nowiki> is malformed.',
 	'translate-checks-fudforum-syntax' => 'Use <nowiki>$1</nowiki> instead of <nowiki>$2</nowiki> in this project.',
 
-	'translate-pref-nonewsletter' => 'Do not send me e-mail newsletters',
+	'translate-pref-nonewsletter' => 'Do not send me email newsletters',
 	'translate-pref-editassistlang' => 'Assistant languages:',
 	'prefs-translate' => 'Translation options',
 	'translate-pref-editassistlang-help' => 'Comma separated list of language codes.
