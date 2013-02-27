@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DnWfiuKU",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-02-27T07:54:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DneeDSM4",
+      "revId": "79e311ea306de2829da04f6be494c100cfd3d9c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DnceITOs",
         "filename": "utils/TuxMessageTable.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-27T07:38:41Z",
       "side": 1,
       "message": "Please don\u0027t leave commented out code behind.",
+      "revId": "79e311ea306de2829da04f6be494c100cfd3d9c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnYfVtLc",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-02-27T07:54:52Z",
+      "side": 1,
+      "message": "I know, it\u0027s WIP. This code is probably needed, but it got in the way for initial development. Will certainly be cleaned up before merging.",
+      "parentUuid": "DnceITOs",
       "revId": "79e311ea306de2829da04f6be494c100cfd3d9c1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
