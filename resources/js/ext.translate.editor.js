@@ -330,23 +330,22 @@
 				} );
 
 			$textArea.on( 'input propertychange', function () {
-				var $textArea = $( this );
+				var $textArea = $( this ),
+					$saveButton = translateEditor.$editor.find( '.tux-editor-save-button' ),
+					$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' );
+
+				$saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
+				// When there is content in the editor
+				if ( $.trim( $textArea.val() ) ) {
+					$pasteSourceButton.addClass( 'hide' );
+					$saveButton.prop( 'disabled', false );
+				} else {
+					$saveButton.prop( 'disabled', true );
+					$pasteSourceButton.removeClass( 'hide' );
+				}
 
 				delay( function () {
-					var $saveButton = translateEditor.$editor.find( '.tux-editor-save-button' ),
-						$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' );
-
 					translateEditor.validateTranslation();
-					$saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
-
-					// When there is content in the editor
-					if ( $.trim( $textArea.val() ) ) {
-						$pasteSourceButton.addClass( 'hide' );
-						$saveButton.prop( 'disabled', false );
-					} else {
-						$saveButton.prop( 'disabled', true );
-						$pasteSourceButton.removeClass( 'hide' );
-					}
 				}, 500 );
 			} );
 
