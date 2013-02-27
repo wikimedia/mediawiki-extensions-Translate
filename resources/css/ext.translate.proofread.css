@@ -17,7 +17,7 @@
 .tux-message-proofread.open .tux-proofread-source,
 .tux-message-proofread.open .tux-proofread-translation,
 .tux-message-proofread.open .tux-proofread-action-block {
-	display:none;
+	display: none;
 }
 
 .tux-proofread-source {
