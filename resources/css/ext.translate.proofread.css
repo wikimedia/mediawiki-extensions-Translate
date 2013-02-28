@@ -35,7 +35,7 @@
 }
 
 .tux-proofread-action-block {
-	top: -10px;
+	top: -5px;
 	right: -5px;
 }
 
@@ -64,39 +64,24 @@
 
 .tux-proofread-action {
 	/* @embed */
-	background: url(../images/uncheck.png) right center no-repeat;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/uncheck.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/uncheck.svg);
-	background-image: linear-gradient(transparent, transparent), url(../images/uncheck.svg);
-	height: 40px;
+	background: url(../images/check-sprite.png) right top no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/check-sprite.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/check-sprite.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/check-sprite.svg);
+	height: 31px;
 	cursor: pointer;
 }
 
 .tux-proofread-action:hover {
-	/* @embed */
-	background: url(../images/uncheck-hi.png) right center no-repeat;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/uncheck-hi.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/uncheck-hi.svg);
-	background-image: linear-gradient(transparent, transparent), url(../images/uncheck-hi.svg);
-	height: 40px;
+	background-position-y:  -31px;
 }
 
 .tux-proofread-action.proofread {
-	/* @embed */
-	background: url(../images/check.png) right center no-repeat;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/check.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/check.svg);
-	background-image: linear-gradient(transparent, transparent), url(../images/check.svg);
-	height: 40px;
+	background-position-y:  -62px;
 }
 
 .tux-proofread-action.proofread:hover {
-	/* @embed */
-	background: url(../images/check-hi.png) right center no-repeat;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/check-hi.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/check-hi.svg);
-	background-image: linear-gradient(transparent, transparent), url(../images/check-hi.svg);
-	height: 40px;
+	background-position-y:  -93px;
 }
 
 .tux-proofread-edit {
