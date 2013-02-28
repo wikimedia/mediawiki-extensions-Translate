@@ -469,6 +469,7 @@ Most useful for the proofreading tasks.',
 	'tux-editor-translate-mode' => 'List',
 	'tux-editor-proofreading-hide-own-translations' => 'Hide my translations',
 	'tux-editor-proofreading-show-own-translations' => 'Show my translations',
+	'tux-editor-page-mode' => 'Page',
 	'tux-editor-outdated-warning' => 'This translation may need to be updated.',
 	'tux-editor-outdated-warning-diff-link' => 'Show differences',
 	'tux-editor-doc-editor-placeholder' => 'Message documentation',
@@ -974,6 +975,8 @@ Pressing the button shows the user's own translations in the list.
 
 See also:
 * {{msg-mw|Tux-editor-proofreading-hide-own-translations}}",
+	'tux-editor-page-mode' => 'Label for the button that appears at the footer of the translation editor.
+Pressing the button goes to the page mode.',
 	'tux-editor-doc-editor-placeholder' => 'A placeholder that appears in the message documentation editor.
 {{Identical|Message documentation}}',
 	'tux-editor-doc-editor-save' => 'A button that saves the documentation string',

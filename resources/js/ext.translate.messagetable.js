@@ -53,7 +53,7 @@
 		this.$container = $( container );
 		this.options = options;
 		this.options = $.extend( {}, $.fn.messagetable.defaults, options );
-		// mode can be proofread or translate
+		// mode can be proofread, page or translate
 		this.mode = this.options.mode;
 		this.$loader = $( '.tux-messagetable-loader' );
 		this.$actionBar = $( '.tux-action-bar' );
@@ -98,6 +98,10 @@
 			this.$actionBar.find( 'button.translate-mode-button' ).on( 'click', function () {
 				messageTable.switchMode( 'translate' );
 			} );
+
+			this.$actionBar.find( 'button.page-mode-button' ).on( 'click', function () {
+				messageTable.switchMode( 'page' );
+			} );
 		},
 
 		add: function ( message ) {
@@ -106,6 +110,9 @@
 			}
 			if ( this.mode === 'proofread' ) {
 				this.addProofread( message );
+			}
+			if ( this.mode === 'page' ) {
+				this.addPageModeMessage( message );
 			}
 		},
 
@@ -217,6 +224,39 @@
 			$message.proofread();
 		},
 
+		addPageModeMessage: function ( message ) {
+			var $message, targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir;
+
+			sourceLanguage = this.$container.data( 'sourcelangcode' );
+			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
+			targetLanguage = this.$container.data( 'targetlangcode' );
+			targetLanguageDir = $.uls.data.getDir( targetLanguage );
+
+			$message = $( '<div>' )
+				.addClass( 'row tux-message-proofread' )
+				.data( 'message', message )
+				.append(
+					$( '<div>' )
+						.addClass( 'six columns tux-proofread-source' )
+						.attr( {
+							lang: sourceLanguage,
+							dir: sourceLanguageDir
+						} )
+						// FIXME this should be parsed wiki text
+						.text( message.definition ),
+					$( '<div>' )
+						.addClass( 'six columns tux-proofread-translation' )
+						.attr( {
+							lang: targetLanguage,
+							dir: targetLanguageDir
+						} )
+						// FIXME this should be parsed wiki text
+						.text( message.translation || '' )
+				);
+
+			this.$loader.before( $message );
+		},
+
 		/**
 		 * Search the message filter
 		 *
@@ -228,6 +268,7 @@
 				matcher = new RegExp( '\\b' + escapeRegex( query ), 'i' ),
 				itemsClass = {
 					proofread: '.tux-message-proofread',
+					page: '.tux-message-proofread',
 					translate: '.tux-message'
 				};
 
@@ -381,6 +422,9 @@
 			if ( mode === 'proofread' ) {
 				messageTable.$actionBar.find( '.tux-proofread-button' ).addClass( 'down' );
 			}
+			if ( mode === 'page' ) {
+				messageTable.$actionBar.find( '.page-mode-button' ).addClass( 'down' );
+			}
 
 			messageTable.mode = mode;
 			mw.translate.changeUrl( { action: this.mode } );
@@ -391,7 +435,7 @@
 			$controlOwnButton = messageTable.$actionBar.find( '.tux-proofread-own-translations-button' );
 			$hideTranslatedButton = messageTable.$actionBar.find( '.tux-editor-clear-translated' );
 
-			if ( messageTable.mode === 'proofread' ) {
+			if ( messageTable.mode === 'proofread' || messageTable.mode === 'page' ) {
 				$( '.tux-message-selector > .tux-tab-untranslated' ).addClass( 'hide' );
 				// Fix the filter if it is untranslated. Untranslated does not make sense
 				// for proofread mode. Keep the filter if it is not 'untranslated'
