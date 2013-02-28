@@ -34,6 +34,24 @@
       "revId": "f3f2ca9c752248e15637277612c478da772e651a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnZX12YI",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 386
+      },
+      "writtenOn": "2013-02-28T15:50:41Z",
+      "side": 1,
+      "message": "Using \"You\" or My\" for referring to the user are both valid and common approaches. \n\nWhen talking about on-line communities it makes more sense to use \"You\", but I understand that it breaks current MediaWiki conventions so I\u0027m ok with if this gets reverted to \"my\" for consistency sake.\n\nMore info and examples on this at: http://www.designingsocialinterfaces.com/patterns.wiki/index.php?title\u003dYour_vs._My",
+      "parentUuid": "DnVWMAS8",
+      "revId": "f3f2ca9c752248e15637277612c478da772e651a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
