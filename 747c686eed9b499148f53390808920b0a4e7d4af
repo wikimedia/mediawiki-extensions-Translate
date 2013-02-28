@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DnfV-bWE",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-02-28T11:00:41Z",
+      "side": 1,
+      "message": "Noted this. my plan is to move the filters for message table as part of Message table plugin. but not in this commit.",
+      "parentUuid": "DnVVOQXE",
+      "revId": "747c686eed9b499148f53390808920b0a4e7d4af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DnRVYyS4",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-02-28T09:50:49Z",
       "side": 1,
       "message": "inddex?",
+      "revId": "747c686eed9b499148f53390808920b0a4e7d4af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DndWVkYc",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-02-28T11:00:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DnRVYyS4",
       "revId": "747c686eed9b499148f53390808920b0a4e7d4af",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
