@@ -295,7 +295,8 @@
 			} );
 		}
 
-		targetLanguage = $messageList.data( 'targetlangcode' );
+		targetLanguage = $messageList.data( 'targetlangcode' ) // for tux=1
+			|| mw.config.get( 'wgUserLanguage' ); // for tux=0
 
 		ourWindowOnBeforeUnloadRegister();
 		prepareWorkflowSelector();
