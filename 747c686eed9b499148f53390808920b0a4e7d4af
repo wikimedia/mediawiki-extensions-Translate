@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DnVVOQXE",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-28T09:50:49Z",
+      "side": 1,
+      "message": "The code highly violates separation of concerns. special.translate calling messagetable which is calling special.translate...\n\nThis can also lead to two tabs being highlighted as selected at the same time.",
+      "revId": "747c686eed9b499148f53390808920b0a4e7d4af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnRVYyS4",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-28T09:50:49Z",
+      "side": 1,
+      "message": "inddex?",
+      "revId": "747c686eed9b499148f53390808920b0a4e7d4af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
