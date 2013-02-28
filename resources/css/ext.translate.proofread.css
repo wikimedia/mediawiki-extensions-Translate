@@ -52,8 +52,7 @@
 	height: 40px;
 }
 
-.tux-proofread-status.translated,
-.tux-proofread-status.proofread {
+.tux-proofread-status.untranslated {
 	/* @embed */
 	background: url(../images/translate.png) left center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/translate.svg);
