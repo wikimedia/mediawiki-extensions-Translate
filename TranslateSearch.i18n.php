@@ -424,6 +424,22 @@ $messages['roa-tara'] = array(
 	'tux-sst-nosolr-body' => "Sta uicchi non g'ave 'nu servizie de ricerche pe le traduziune.",
 );
 
+/** Russian (русский)
+ * @author Kaganer
+ */
+$messages['ru'] = array(
+	'searchtranslations' => 'Поиск переводов',
+	'tux-sst-edit' => 'Редактировать перевод',
+	'tux-sst-search' => 'Найти',
+	'tux-sst-search-ph' => 'Поиск переводов',
+	'tux-sst-count' => '{{PLURAL:$1|Найден один результат|Найден $1 результат|Найдены $1 результата|Найдено $1 результатов}}',
+	'tux-sst-facet-language' => 'Языки',
+	'tux-sst-facet-group' => 'Группы сообщений',
+	'tux-sst-facet-orphan' => '(сирота)',
+	'tux-sst-nosolr-title' => 'Поиск недоступен',
+	'tux-sst-nosolr-body' => 'В этой вики отсутствует сервис поиска переводов.',
+);
+
 /** Turkish (Türkçe)
  * @author Emperyan
  */

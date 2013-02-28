@@ -247,7 +247,7 @@ $messages['qqq'] = array(
 	'pagetranslation' => 'Title of [[Special:PageTranslation]] and its name in [[Special:SpecialPages]]. [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'right-pagetranslation' => '{{doc-right|pagetranslation}}',
 	'action-pagetranslation' => '{{doc-action|pagetranslation}})',
-	'tpt-desc' => '{{desc}}',
+	'tpt-desc' => '{{desc|name=Translate - Page Translation|url=http://www.mediawiki.org/wiki/Extension:Translate/PageTranslation}}',
 	'tpt-section' => '[[File:Page_translation_mark_view.png|thumb|Page translation]]
 * $1 - the identifier of the unit, or the string "Page display title"
 A screenshot of the translation administration page is available.',
@@ -5203,7 +5203,7 @@ Motivo: $1",
 	'aggregategroups' => 'Gruppi aggregati',
 	'tpt-aggregategroup-add' => 'Aggiungi',
 	'tpt-aggregategroup-save' => 'Salva',
-	'tpt-aggregategroup-add-new' => 'Aggiungere un nuovo gruppo aggregato',
+	'tpt-aggregategroup-add-new' => 'Aggiungi un nuovo gruppo aggregato',
 	'tpt-aggregategroup-new-name' => 'Nome:',
 	'tpt-aggregategroup-new-description' => 'Descrizione (opzionale):',
 	'tpt-aggregategroup-remove-confirm' => 'Sei sicuro di voler cancellare questo gruppo aggregato?',
