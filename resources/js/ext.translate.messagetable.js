@@ -364,7 +364,8 @@
 		 * @param {string} mode The message table mode - proofread or translate
 		 */
 		switchMode: function ( mode ) {
-			var messageTable = this;
+			var messageTable = this,
+				filter = messageTable.$loader.data( 'filter' );;
 
 			messageTable.$actionBar.find( '.down').removeClass( 'down' );
 			if ( mode === 'translate' ) {
@@ -385,17 +386,19 @@
 
 			if ( messageTable.mode === 'proofread' ) {
 				$( '.tux-message-selector > .tux-tab-untranslated' ).addClass( 'hide' );
+				// Fix the filter if it is untranslated. Untranslated does not make sense
+				// for proofread mode. Keep the filter if it is not 'untranslated'
+				if ( filter.indexOf( '!translated' ) >= 0 )  {
+					messageTable.messages = [];
+					mw.translate.changeFilter( 'translated' );
+					$( '.tux-message-selector > .tux-tab-translated' ).addClass( 'selected' );
+				}
 			} else {
 				$( '.tux-message-selector > .tux-tab-untranslated' ).removeClass( 'hide' );
 			}
 
-			$.each( messageTable.messages, function ( index, message ) {
-				if ( messageTable.mode === 'translate' ) {
-					messageTable.addTranslate( message );
-				}
-				if ( messageTable.mode === 'proofread' ) {
-					messageTable.addProofread( message );
-				}
+			$.each( messageTable.messages, function ( inddex, message ) {
+				messageTable.add( message );
 			} );
 		},
 
