@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DnZJXLyU",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-02-28T07:38:04Z",
+      "side": 1,
+      "message": "needs space around this.mode.",
+      "revId": "01f3a417d7780724df39b0c31d2b29d843259697",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
