@@ -190,10 +190,10 @@ $wgAvailableRights[] = 'translate-groupreview';
 $wgGroupPermissions['translate-proofr']['translate-messagereview'] = true;
 $wgAddGroups['translate-proofr'] = array( 'translate-proofr' );
 
-// Logs
+// Logs. More logs are defined in TranslateHooks::setupTranslate
 $wgLogTypes[] = 'translationreview';
-$wgLogActionsHandlers['translationreview/message'] = 'TranslateHooks::formatTranslationreviewLogEntry';
-$wgLogActionsHandlers['translationreview/group'] = 'TranslateHooks::formatTranslationreviewLogEntry';
+$wgLogActionsHandlers['translationreview/message'] = 'TranslateLogFormatter';
+$wgLogActionsHandlers['translationreview/group'] = 'TranslateLogFormatter';
 
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';

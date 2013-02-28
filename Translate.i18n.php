@@ -389,7 +389,7 @@ Details: $1',
 	'log-name-translationreview' => 'Translation review log',
 	'log-description-translationreview' => 'Log of all reviews to translations and message groups.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|accepted}} translation $3',
-	'logentry-groupreview-message' => '$1 {{GENDER:$2|changed}} the state of $4 translations of message group $3 from $5 to $6',
+	'logentry-translationreview-group' => '$1 {{GENDER:$2|changed}} the state of $4 translations of $3 from $6 to $7',
 
 	// The actual states, when set, come after the hyphen.
 	// The dangling hyphen hints that it's unset.
@@ -861,11 +861,12 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'group-translate-proofr.js' => '{{doc-group|translate-proofr|js}}',
 	'log-name-translationreview' => '{{doc-logpage}}',
 	'logentry-translationreview-message' => '{{Logentry}}',
-	'logentry-groupreview-message' => '{{Logentry}}
+	'logentry-translationreview-group' => '{{Logentry}}
 Additional parameters:
-* $4 - Localised language name (with language code in parentheses)
-* $5 - Previous workflow state
-* $6 - New workflow state',
+* $4 - Localised language name
+* $5 - Label of the message group (unused)
+* $6 - Previous workflow state
+* $7 - New workflow state',
 	'translate-workflow-state-' => 'Unselectable select option in [[Special:Translate]] if workflow state editing is on. The dangling hyphen in the message key hints that this state is unset; the actual states have the same key with something after the hyphen.',
 	'translate-workflowstatus' => 'In [[Special:Translate]] if workflow states are in use, $1 is selector or the current state.
 {{Identical|Status}}',

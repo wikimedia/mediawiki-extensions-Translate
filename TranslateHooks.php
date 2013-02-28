@@ -326,52 +326,6 @@ class TranslateHooks {
 		return true;
 	}
 
-	/// Log action handler
-	public static function formatTranslationreviewLogEntry( $type, $action, Title $title, $forUI, $params ) {
-		global $wgLang, $wgContLang;
-
-		$language = $forUI === null ? $wgContLang : $wgLang;
-
-		if ( $action === 'message' ) {
-			$link = $forUI ?
-				Linker::link( $title, null, array(), array( 'oldid' => $params[0] ) ) :
-				$title->getPrefixedText();
-			return wfMessage( 'logentry-translationreview-message' )->params(
-				'', // User link in the new system
-				'#', // User name for gender in the new system
-				Message::rawParam( $link )
-			)->inLanguage( $language )->text();
-		}
-
-		if ( $action === 'group' ) {
-			$languageCode = $params[0];
-			$languageNames = Language::getTranslatedLanguageNames( $language->getCode() );
-			$languageName = "$languageNames[$languageCode] ($languageCode)";
-			$groupLabel = $params[1];
-			$oldState = $params[2];
-			$newState = $params[3];
-			$oldStateMessage = wfMessage( "translate-workflow-state-$oldState" );
-			$newStateMessage = wfMessage( "translate-workflow-state-$newState" );
-			$oldState = $oldStateMessage->isBlank() ? $oldState : $oldStateMessage->text();
-			$newState = $newStateMessage->isBlank() ? $newState : $newStateMessage->text();
-
-			$link = $forUI ?
-				Linker::link( $title, $groupLabel, array(), array( 'language' => $languageCode ) ) :
-				$groupLabel;
-
-			return wfMessage( 'logentry-groupreview-message' )->params(
-				'', // User link in the new system
-				'#', // User name for gender in the new system
-				Message::rawParam( $link ),
-				$languageName,
-				$oldState,
-				$newState
-			)->inLanguage( $language )->text();
-		}
-
-		return '';
-	}
-
 	/**
 	 * Parser function hook
 	 */

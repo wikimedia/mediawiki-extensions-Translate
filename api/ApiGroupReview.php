@@ -94,21 +94,21 @@ class ApiGroupReview extends ApiBase {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->replace( $table, array( $index ), $row, __METHOD__ );
 
-		$logger = new LogPage( 'translationreview' );
-		$logParams = array(
-			$code,
-			$group->getLabel(),
-			$currentState,
-			$newState,
-		);
 
-		$logger->addEntry(
-			'group',
-			SpecialPage::getTitleFor( 'Translate', $group->getId() ),
-			'', // No comments
-			$logParams,
-			$user
-		);
+		$entry = new ManualLogEntry( 'translationreview', 'group' );
+		$entry->setPerformer( $user );
+		$entry->setTarget( SpecialPage::getTitleFor( 'Translate', $group->getId() ) );
+		// @todo
+		// $entry->setComment( $comment );
+		$entry->setParameters( array(
+			'4::language' => $code,
+			'5::group-label' => $group->getLabel(),
+			'6::old-state' => $currentState,
+			'7::new-state' => $newState,
+		) );
+
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 
 		wfRunHooks( 'TranslateEventMessageGroupStateChange',
 			array( $group, $code, $currentState, $newState ) );
