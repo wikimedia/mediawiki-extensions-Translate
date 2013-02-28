@@ -127,9 +127,9 @@
 			status = message.properties.status;
 			statusClass = 'tux-status-' + status;
 
-			if ( message.tags.length
-				&& $.inArray( 'optional', message.tags ) >= 0
-				&& status === 'untranslated'
+			if ( message.tags.length &&
+				$.inArray( 'optional', message.tags ) >= 0 &&
+				status === 'untranslated'
 			) {
 				status = 'optional';
 				statusClass = 'tux-status-optional';
@@ -366,7 +366,7 @@
 		switchMode: function ( mode ) {
 			var messageTable = this;
 
-			messageTable.$actionBar.find( '.down').removeClass( 'down' );
+			messageTable.$actionBar.find( '.down' ).removeClass( 'down' );
 			if ( mode === 'translate' ) {
 				messageTable.$actionBar.find( '.translate-mode-button' ).addClass( 'down' );
 			}
