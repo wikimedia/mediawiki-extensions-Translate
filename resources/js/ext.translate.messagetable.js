@@ -225,9 +225,13 @@
 		search: function ( query ) {
 			var resultCount = 0,
 				$result,
-				matcher = new RegExp( '\\b' + escapeRegex( query ), 'i' );
+				matcher = new RegExp( '\\b' + escapeRegex( query ), 'i' ),
+				itemsClass = {
+					proofread: '.tux-message-proofread',
+					translate: '.tux-message'
+				};
 
-			this.$container.find( '.tux-message' ).each( function () {
+			this.$container.find( itemsClass[this.mode] ).each( function () {
 				var $message = $( this ),
 					message = $message.data( 'message' );
 
