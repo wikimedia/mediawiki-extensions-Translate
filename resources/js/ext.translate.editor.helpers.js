@@ -181,7 +181,10 @@
 		 * @param {array} translations An inotherlanguages array as returned by the translation helpers API.
 		 */
 		showAssistantLanguages: function ( translations ) {
-			var translateEditor = this;
+			var translateEditor = this,
+				$translationTextarea;
+
+			$translationTextarea = this.$editor.find( 'textarea' );
 
 			$.each( translations, function ( index ) {
 				var $otherLanguage,
@@ -194,20 +197,37 @@
 					.addClass( 'row in-other-language' )
 					.append(
 						$( '<div>' )
-							.addClass( 'nine columns' )
-							.attr( {
-								lang: translation.language,
-								dir: translationDir
-							} )
-							.text( translation.value ),
+						.addClass( 'row in-other-language-top' )
+						.append(
+							$( '<div>' )
+								.addClass( 'nine columns' )
+								.attr( {
+									lang: translation.language,
+									dir: translationDir
+								} )
+								.text( translation.value ),
+							$( '<div>' )
+								.addClass( 'three columns language text-right' )
+								.attr( {
+									lang: translation.language,
+									dir: translationDir
+								} )
+								.text( $.uls.data.getAutonym( translation.language ) )
+						),
 						$( '<div>' )
-							.addClass( 'three columns language text-right' )
-							.attr( {
-								lang: translation.language,
-								dir: translationDir
-							} )
-							.text( $.uls.data.getAutonym( translation.language ) )
-				);
+						.addClass( 'row in-other-language-bottom' )
+						.append(
+							$( '<a>' )
+								.addClass( 'nine columns use-this-translation' )
+								.text( mw.msg( 'tux-editor-use-this-translation' ) )
+								.on( 'click', function () {
+									$translationTextarea
+										.val( translation.value )
+										.focus()
+										.trigger( 'input' );
+								} )
+						)
+					);
 
 				translateEditor.$editor.find( '.in-other-languages-title' )
 					.removeClass( 'hide' )
