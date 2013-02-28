@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DnTWnRcI",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-02-28T14:30:23Z",
+      "side": 1,
+      "message": "Who is you? I think this should say \"my\" or \"own\"",
+      "revId": "f3f2ca9c752248e15637277612c478da772e651a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
