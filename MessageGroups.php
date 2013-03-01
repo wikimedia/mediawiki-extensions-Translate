@@ -15,6 +15,11 @@
  * @todo Clean up the mixed static/member method interface.
  */
 class MessageGroups {
+	/**
+	 * @var Array Cache for message group priorities
+	 */
+	protected static $prioritycache = null;
+
 	protected static $groups = null;
 
 	/// Initialises the list of groups (but not the groups itself if possible).
@@ -213,9 +218,8 @@ class MessageGroups {
 	 * @since 2011-12-12
 	 */
 	public static function getPriority( $group ) {
-		static $groups = null;
-		if ( $groups === null ) {
-			$groups = array();
+		if ( !isset( self::$prioritycache ) ) {
+			self::$prioritycache = array();
 			// Abusing this table originally intented for other purposes
 			$db = wfGetDB( DB_MASTER );
 			$table = 'translate_groupreviews';
@@ -223,7 +227,7 @@ class MessageGroups {
 			$conds = array( 'tgr_lang' => '*priority' );
 			$res = $db->select( $table, $fields, $conds, __METHOD__ );
 			foreach ( $res as $row ) {
-				$groups[$row->tgr_group] = $row->tgr_state;
+				self::$prioritycache[$row->tgr_group] = $row->tgr_state;
 			}
 		}
 
@@ -232,7 +236,41 @@ class MessageGroups {
 		} else {
 			$id = $group;
 		}
-		return isset( $groups[$id] ) ? $groups[$id] : '';
+		return isset( self::$prioritycache[$id] ) ? self::$prioritycache[$id] : '';
+	}
+
+	/**
+	 * Sets the message group priority.
+	 * @see MessageGroups::getPriority
+	 *
+	 * @param MessageGroup|string $group Message group
+	 * @param string Priority (empty string to unset)
+	 * @since 2013-03-01
+	 */
+	public static function setPriority( $group, $priority = '' ) {
+		if ( $group instanceof MessageGroup ) {
+			$id = $group->getId();
+		} else {
+			$id = $group;
+		}
+
+		self::$prioritycache[$id] = $priority;
+
+		$dbw = wfGetDB( DB_MASTER );
+		$table = 'translate_groupreviews';
+		$row = array(
+			'tgr_group' => $id,
+			'tgr_lang' => '*priority',
+			'tgr_state' => $priority,
+		);
+
+		if ( $priority === '' ) {
+			unset( $row['tgr_state'] );
+			$dbw->delete( $table, $row, __METHOD__ );
+		} else {
+			$index = array( 'tgr_group', 'tgr_lang' );
+			$dbw->replace( $table, array( $index ), $row, __METHOD__ );
+		}
 	}
 
 	/// @since 2011-12-28
