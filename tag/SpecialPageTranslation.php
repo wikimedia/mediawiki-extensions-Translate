@@ -66,37 +66,21 @@ class SpecialPageTranslation extends SpecialPage {
 
 		if ( $action === 'discourage' || $action === 'encourage' ) {
 			$id = TranslatablePage::getMessageGroupIdFromTitle( $title );
-			$dbw = wfGetDB( DB_MASTER );
-			$table = 'translate_groupreviews';
-			$row = array(
-				'tgr_group' => $id,
-				'tgr_lang' => '*priority',
-				'tgr_state' => 'discouraged',
-			);
+			$current = MessageGroups::getPriority( $id );
 
-			$priority = MessageGroups::getPriority( $id );
+			if ( $action === 'encourage' ) {
+				$new = '';
+			} else {
+				$new = 'discouraged';
+			}
 
-			// encouraged is default priority (''). Only do this if the priority is discouraged.
-			if ( $action === 'encourage' && $priority === 'discouraged' ) {
-				$dbw->delete( $table, $row, __METHOD__ );
-
-				$entry = new ManualLogEntry( 'pagetranslation', 'encourage' );
+			if ( $new !== $current ) {
+				MessageGroups::setPriority( $id, $new );
+				$entry = new ManualLogEntry( 'pagetranslation', $action );
 				$entry->setPerformer( $user );
 				$entry->setTarget( $title );
 				$logid = $entry->insert();
 				$entry->publish( $logid );
-			} else {
-				$index = array( 'tgr_group', 'tgr_lang' );
-				$dbw->replace( $table, array( $index ), $row, __METHOD__ );
-
-				// Prevent duplicate log entries.
-				if ( $priority !== 'discouraged' ) {
-					$entry = new ManualLogEntry( 'pagetranslation', 'discourage' );
-					$entry->setPerformer( $user );
-					$entry->setTarget( $title );
-					$logid = $entry->insert();
-					$entry->publish( $logid );
-				}
 			}
 
 			$this->listPages();
