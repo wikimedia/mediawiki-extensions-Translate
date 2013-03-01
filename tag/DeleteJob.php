@@ -46,6 +46,7 @@ class DeleteJob extends Job {
 		$user = $this->getUser();
 		$summary = $this->getSummary();
 		$base = $this->getBase();
+		$doer = User::newFromName( $this->getPerformer() );
 
 		PageTranslationHooks::$allowTargetEdit = true;
 		$oldUser = $wgUser;
@@ -55,15 +56,18 @@ class DeleteJob extends Job {
 		$article = new Article( $title, 0 );
 		$ok = $article->doDeleteArticle( $summary, false, 0, true, $error );
 		if ( !$ok ) {
-			$logger = new LogPage( 'pagetranslation' );
 			$params = array(
-				'user' => $this->getPerformer(),
-				'target' => $base,
-				'error' => base64_encode( serialize( $ok ) ), // This is getting ridiculous
+				'target' => $base
+				'error' => $ok,
 			);
-			$doer = User::newFromName( $this->getPerformer() );
-			$msg = $this->getFull() ? 'deletefnok' : 'deletelnok';
-			$logger->addEntry( $msg, $title, null, array( serialize( $params ) ), $doer );
+
+			$type = $this->getFull() ? 'deletefnok' : 'deletelnok';
+			$entry = new ManualLogEntry( 'pagetranslation', $type );
+			$entry->setPerformer( $doer );
+			$entry->setTarget( $title );
+			$entry->setParameters( $params );
+			$logid = $entry->insert();
+			$entry->publish( $logid );
 		}
 
 		PageTranslationHooks::$allowTargetEdit = false;
@@ -73,11 +77,13 @@ class DeleteJob extends Job {
 		$lastitem = array_pop( $pages );
 		if ( $title->getPrefixedText() === $lastitem ) {
 			$cache->delete( wfMemcKey( 'pt-base', $base ) );
-			$logger = new LogPage( 'pagetranslation' );
-			$params = array( 'user' => $this->getPerformer() );
-			$doer = User::newFromName( $this->getPerformer() );
-			$msg = $this->getFull() ? 'deletefok' : 'deletelok';
-			$logger->addEntry( $msg, Title::newFromText( $base ), null, array( serialize( $params ) ), $doer );
+
+			$type = $this->getFull() ? 'deletefok' : 'deletelok';
+			$entry = new ManualLogEntry( 'pagetranslation', $type );
+			$entry->setPerformer( $doer );
+			$entry->setTarget( Title::newFromText( $base ) );
+			$logid = $entry->insert();
+			$entry->publish( $logid );
 
 			$tpage = TranslatablePage::newFromTitle( $title );
 			$tpage->getTranslationPercentages( true );

@@ -49,6 +49,7 @@ class MoveJob extends Job {
 		$summary = $this->getSummary();
 		$target = $this->getTarget();
 		$base = $this->params['base-source'];
+		$doer = User::newFromName( $this->getPerformer() );
 
 		PageTranslationHooks::$allowTargetEdit = true;
 		$oldUser = $wgUser;
@@ -58,14 +59,17 @@ class MoveJob extends Job {
 		// Don't check perms, don't leave a redirect
 		$ok = $title->moveTo( $target, false, $summary, false );
 		if ( !$ok ) {
-			$logger = new LogPage( 'pagetranslation' );
 			$params = array(
-				'user' => $this->getPerformer(),
 				'target' => $target->getPrefixedText(),
-				'error' => base64_encode( serialize( $ok ) ), // This is getting ridiculous
+				'error' => $ok,
 			);
-			$doer = User::newFromName( $this->getPerformer() );
-			$logger->addEntry( 'movenok', $title, null, array( serialize( $params ) ), $doer );
+
+			$entry = new ManualLogEntry( 'pagetranslation', 'movenok' );
+			$entry->setPerformer( $doer );
+			$entry->setTarget( $title );
+			$entry->setParameters( $params );
+			$logid = $entry->insert();
+			$entry->publish( $logid );
 		}
 
 		self::forceRedirects( true );
@@ -81,18 +85,17 @@ class MoveJob extends Job {
 
 		if ( $last ) {
 			$cache->delete( $key );
-			$logger = new LogPage( 'pagetranslation' );
+
 			$params = array(
-				'user' => $this->getPerformer(),
 				'target' => $this->params['base-target'],
 			);
-			$logger->addEntry(
-				'moveok',
-				Title::newFromText( $base ),
-				null,
-				array( serialize( $params ) ),
-				User::newFromName( $this->getPerformer() )
-			);
+
+			$entry = new ManualLogEntry( 'pagetranslation', 'moveok' );
+			$entry->setPerformer( $doer );
+			$entry->setParameters( $params );
+			$entry->setTarget( Title::newFromText( $base ) );
+			$logid = $entry->insert();
+			$entry->publish( $logid );
 		}
 
 		$wgUser = $oldUser;
