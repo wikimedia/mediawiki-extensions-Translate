@@ -26,7 +26,6 @@ class ApiAggregateGroups extends ApiBase {
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
-		$logger = new LogPage( 'pagetranslation' );
 		$params = $this->extractRequestParams();
 		$action = $params['do'];
 		$output = array();
@@ -70,17 +69,26 @@ class ApiAggregateGroups extends ApiBase {
 			TranslateMetadata::setSubgroups( $aggregateGroup, $subgroups );
 
 			$logparams = array(
-				'user' => $wgUser->getName(),
-				// @todo Why is this name and not id?
 				'aggregategroup' => TranslateMetadata::get( $aggregateGroup, 'name' ),
+				'aggregategroup-id' => $aggregateGroup,
 			);
 
 			/* Note that to allow removing no longer existing groups from
 			 * aggregate message groups, the message group object $group
 			 * might not always be available. In this case we need to fake
 			 * some title. */
-			$title = $group ? $group->getTitle() : Title::newFromText( "Group:$subgroupId" );
-			$logger->addEntry( $action, $title, null, array( serialize( $logparams ) ), $wgUser );
+			$title = $group ? $group->getTitle() : Title::newFromText( "Special:Translate/$subgroupId" );
+
+			$entry = new ManualLogEntry( 'pagetranslation', $action );
+			$entry->setPerformer( $wgUser );
+			$entry->setTarget( $title );
+			// @todo
+			// $entry->setComment( $comment );
+			$entry->setParameters( $logparams );
+
+			$logid = $entry->insert();
+			$entry->publish( $logid );
+
 		} elseif ( $action === 'remove' ) {
 			if ( !isset( $params['aggregategroup'] ) ) {
 				$this->dieUsageMsg( array( 'missingparam', 'aggregategroup' ) );

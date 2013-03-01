@@ -56,21 +56,19 @@ class TranslateHooks {
 
 			global $wgLogNames, $wgLogActionsHandlers, $wgLogTypes, $wgLogHeaders;
 			$wgLogTypes[] = 'pagetranslation';
-			$wgLogHeaders['pagetranslation'] = 'pt-log-header';
-			$wgLogNames['pagetranslation'] = 'pt-log-name';
-			$wgLogActionsHandlers['pagetranslation/mark'] = 'PageTranslationHooks::formatLogEntry';
-			$wgLogActionsHandlers['pagetranslation/unmark'] = 'PageTranslationHooks::formatLogEntry';
-			$wgLogActionsHandlers['pagetranslation/moveok'] = 'PageTranslationHooks::formatLogEntry';
-			$wgLogActionsHandlers['pagetranslation/movenok'] = 'PageTranslationHooks::formatLogEntry';
-			$wgLogActionsHandlers['pagetranslation/deletelok'] = 'PageTranslationHooks::formatLogEntry';
-			$wgLogActionsHandlers['pagetranslation/deletefok'] = 'PageTranslationHooks::formatLogEntry';
-			$wgLogActionsHandlers['pagetranslation/deletelnok'] = 'PageTranslationHooks::formatLogEntry';
-			$wgLogActionsHandlers['pagetranslation/deletefnok'] = 'PageTranslationHooks::formatLogEntry';
-			$wgLogActionsHandlers['pagetranslation/encourage'] = 'PageTranslationHooks::formatLogEntry';
-			$wgLogActionsHandlers['pagetranslation/discourage'] = 'PageTranslationHooks::formatLogEntry';
-			$wgLogActionsHandlers['pagetranslation/prioritylanguages'] = 'PageTranslationHooks::formatLogEntry';
-			$wgLogActionsHandlers['pagetranslation/associate'] = 'PageTranslationHooks::formatLogEntry';
-			$wgLogActionsHandlers['pagetranslation/dissociate'] = 'PageTranslationHooks::formatLogEntry';
+			$wgLogActionsHandlers['pagetranslation/mark'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/unmark'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/moveok'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/movenok'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/deletelok'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/deletefok'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/deletelnok'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/deletefnok'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/encourage'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/discourage'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/prioritylanguages'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/associate'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/dissociate'] = 'PageTranslationLogFormatter';
 
 			global $wgJobClasses;
 			$wgJobClasses['RenderJob'] = 'RenderJob';
