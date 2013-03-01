@@ -57,7 +57,7 @@ XML;
 
 		$messages = array(
 			'ko=26ra' => 'wawe',
-			'foobar' => 'Kissa kala <koira>',
+			'foobar' => 'Kissa kala <koira> "a\'b',
 		);
 		$collection = new MockMessageCollection( $messages );
 
