@@ -9,7 +9,7 @@
 		this.flatGroupList = null;
 
 		this.init();
-		this.listen();
+
 	}
 
 	TranslateMessageGroupSelector.prototype = {
@@ -21,10 +21,12 @@
 		 */
 		init: function () {
 			this.parentGroupId = this.$group.data( 'msggroupid' );
-			this.prepareSelectorMenu();
-			this.position();
-
-			this.loadGroups( this.parentGroupId );
+			if ( this.hasChildGroups( this.parentGroupId ) ) {
+				this.prepareSelectorMenu();
+				this.position();
+				this.loadGroups( this.parentGroupId );
+				this.listen();
+			}
 		},
 
 		/**
@@ -145,17 +147,32 @@
 			} );
 
 			groupSelector.$menu.on( 'click', '.ext-translate-msggroup-item', function () {
-				var messageGroup = $( this ).data( 'msggroup' );
-
-				groupSelector.$group
-					.text( messageGroup.label )
-					.removeClass( 'tail' )
-					.nextAll().remove();
+				var $newLink,
+					messageGroup = $( this ).data( 'msggroup' );
 
 				groupSelector.hide();
 
-				if ( messageGroup.groupcount > 0 ) {
-					groupSelector.$group.addClass( 'expanded' );
+				groupSelector.$group
+					.removeClass( 'tail' )
+					.nextAll().remove();
+
+				groupSelector.$group.addClass( 'expanded' );
+				// FIXME In future, if we are going to have multiple groupselectors per page
+				// this will fail.
+				$( '.ext-translate-msggroup-selector .tail' ).remove();
+
+				$newLink = $( '<span>' )
+					.addClass( 'grouptitle grouplink tail' )
+					.text( messageGroup.label );
+				$( '.ext-translate-msggroup-selector .grouplink:last' ).after( $newLink );
+				$newLink.data( 'msggroupid', messageGroup.id );
+
+				if ( messageGroup.groups && messageGroup.groups.length > 0 ) {
+					$newLink.msggroupselector( {
+						onSelect: groupSelector.options.onSelect
+					} );
+					// keep it open
+					$newLink.data( 'msggroupselector' ).show();
 				}
 
 				if ( groupSelector.options.onSelect ) {
@@ -358,6 +375,13 @@
 			this.addGroupRows( parentGroupId, null );
 		},
 
+		hasChildGroups: function ( groupId ) {
+			if ( !groupId ) {
+				return true;
+			}
+			var childGroups = mw.translate.getGroup( groupId ).groups;
+			return childGroups && childGroups.length;
+		},
 		/**
 		 * Add rows with message groups to the selector.
 		 *
@@ -413,6 +437,8 @@
 			} else {
 				$msgGroupList.append( $msgGroupRows );
 			}
+
+			return;
 		},
 
 		/**

@@ -207,24 +207,6 @@
 		}
 	}
 
-	function groupSelectorHandler( msgGroup ) {
-		var $newLink;
-
-		if ( msgGroup.groups && msgGroup.groups.length > 0 ) {
-			$( '.ext-translate-msggroup-selector .tail' ).remove();
-			$newLink = $( '<span>' ).addClass( 'grouptitle grouplink tail' )
-				.text( mw.msg( 'translate-msggroupselector-search-all' ) );
-			$( '.ext-translate-msggroup-selector .grouplink:last' ).after( $newLink );
-			$newLink.data( 'msggroupid', msgGroup.id );
-			$newLink.msggroupselector( {
-				onSelect: groupSelectorHandler
-			} );
-		}
-
-		mw.translate.changeGroup( msgGroup );
-
-	}
-
 	// Returns an array of jQuery objects of rows of translated
 	// and proofread messages in the TUX editors.
 	// Used several times.
@@ -327,7 +309,7 @@
 			mw.translate.loadMessageGroups()
 		).then( function () {
 			$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
-				onSelect: groupSelectorHandler
+				onSelect: mw.translate.changeGroup
 			} );
 
 			$( '.tux-message-list-statsbar' ).languagestatsbar( {
