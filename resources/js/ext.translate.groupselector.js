@@ -9,7 +9,7 @@
 		this.flatGroupList = null;
 
 		this.init();
-		this.listen();
+
 	}
 
 	TranslateMessageGroupSelector.prototype = {
@@ -21,10 +21,12 @@
 		 */
 		init: function () {
 			this.parentGroupId = this.$group.data( 'msggroupid' );
+
 			this.prepareSelectorMenu();
 			this.position();
-
-			this.loadGroups( this.parentGroupId );
+			if ( this.loadGroups( this.parentGroupId ) ) {
+				this.listen();
+			}
 		},
 
 		/**
@@ -145,17 +147,30 @@
 			} );
 
 			groupSelector.$menu.on( 'click', '.ext-translate-msggroup-item', function () {
-				var messageGroup = $( this ).data( 'msggroup' );
-
-				groupSelector.$group
-					.text( messageGroup.label )
-					.removeClass( 'tail' )
-					.nextAll().remove();
+				var $newLink,
+					messageGroup = $( this ).data( 'msggroup' );
 
 				groupSelector.hide();
 
-				if ( messageGroup.groupcount > 0 ) {
-					groupSelector.$group.addClass( 'expanded' );
+				groupSelector.$group
+					.removeClass( 'tail' )
+					.nextAll().remove();
+
+				groupSelector.$group.addClass( 'expanded' );
+				$( '.ext-translate-msggroup-selector .tail' ).remove();
+
+				$newLink = $( '<span>' )
+					.addClass( 'grouptitle grouplink tail' )
+					.text( messageGroup.label );
+				$( '.ext-translate-msggroup-selector .grouplink:last' ).after( $newLink );
+				$newLink.data( 'msggroupid', messageGroup.id );
+
+				if ( messageGroup.groups && messageGroup.groups.length > 0 ) {
+					$newLink.msggroupselector( {
+						onSelect: groupSelector.options.onSelect
+					} );
+					// keep it open
+					$newLink.data( 'msggroupselector' ).show();
 				}
 
 				if ( groupSelector.options.onSelect ) {
@@ -352,10 +367,11 @@
 		 * in the group selector.
 		 *
 		 * @param parentGroupId
+		 * @return {boolean} Whether this group has child groups or not
 		 */
 		loadGroups: function ( parentGroupId ) {
 			this.$menu.data( 'msggroups', mw.translate.messageGroups );
-			this.addGroupRows( parentGroupId, null );
+			return this.addGroupRows( parentGroupId, null );
 		},
 
 		/**
@@ -363,6 +379,7 @@
 		 *
 		 * @param {string|null} parentGroupId. If it's null, all groups are loaded. Otherwise, groups under this id are loaded.
 		 * @param {Array} msgGroups - array of message group objects to add.
+		 * @return {boolean} Whether this group has child groups or not
 		 */
 		addGroupRows: function ( parentGroupId, msgGroups ) {
 			var $msgGroupRows,
@@ -380,7 +397,7 @@
 			}
 
 			if ( !messageGroups ) {
-				return;
+				return false;
 			}
 
 			$msgGroupRows = [];
@@ -413,6 +430,8 @@
 			} else {
 				$msgGroupList.append( $msgGroupRows );
 			}
+
+			return true;
 		},
 
 		/**

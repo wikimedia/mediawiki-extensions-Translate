@@ -466,12 +466,12 @@ class SpecialTranslate extends SpecialPage {
 				$this->msg( 'translate-msggroupselector-projects' )->escaped()
 			) .
 			Html::element( 'span',
-				array( 'class' => 'grouptitle grouplink expanded tail' ),
+				array( 'class' => 'grouptitle grouplink expanded' ),
 				$this->msg( 'translate-msggroupselector-search-all' )->escaped()
 			) .
 			Html::element( 'span',
 				array(
-					'class' => 'grouptitle grouplink',
+					'class' => 'grouptitle grouplink tail',
 					'data-msggroupid' => $this->options['group'],
 				),
 				$group->getLabel()
