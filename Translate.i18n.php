@@ -965,9 +965,15 @@ Pressing the button goes to the proofreading mode.
 Pressing the button goes to the translation mode.
 {{Identical|List}}',
 	'tux-editor-proofreading-hide-own-translations' => "A label for a button that appears at the bottom of the translation editor in proofreading mode.
-Pressing the button hides the user's own translations from the list.",
+Pressing the button hides the user's own translations from the list.
+
+See also:
+* {{msg-mw|Tux-editor-proofreading-show-own-translations}}",
 	'tux-editor-proofreading-show-own-translations' => "A label for a button that appears at the bottom of the translation editor in proofreading mode.
-Pressing the button shows the user's own translations in the list.",
+Pressing the button shows the user's own translations in the list.
+
+See also:
+* {{msg-mw|Tux-editor-proofreading-hide-own-translations}}",
 	'tux-editor-doc-editor-placeholder' => 'A placeholder that appears in the message documentation editor.
 {{Identical|Message documentation}}',
 	'tux-editor-doc-editor-save' => 'A button that saves the documentation string',
@@ -7136,6 +7142,8 @@ Jo nejwužytnjej za korigěrowańske nadawki.',
 	'tux-editor-clear-translated' => 'Pśełožki schowaś',
 	'tux-editor-proofreading-mode' => 'Korigěrowaś',
 	'tux-editor-translate-mode' => 'Lisćina',
+	'tux-editor-proofreading-hide-own-translations' => 'Móje pśełožki schowaś',
+	'tux-editor-proofreading-show-own-translations' => 'Móje pśełožki pokazaś',
 	'tux-editor-outdated-warning' => 'Toś ten pśełožk musy se snaź aktualizěrowaś.',
 	'tux-editor-outdated-warning-diff-link' => 'Rozdźěle pokazaś',
 	'tux-editor-doc-editor-placeholder' => 'Dokumentacija powěźeńki',
@@ -12590,6 +12598,8 @@ Je najwužitnišo za korigowanske nadawki.',
 	'tux-editor-clear-translated' => 'Přełožki schować',
 	'tux-editor-proofreading-mode' => 'Korigować',
 	'tux-editor-translate-mode' => 'Lisćina',
+	'tux-editor-proofreading-hide-own-translations' => 'Moje přełožki schować',
+	'tux-editor-proofreading-show-own-translations' => 'Moje přełožki pokazać',
 	'tux-editor-outdated-warning' => 'Tutón přełožk dyrbi so snano aktualizować.',
 	'tux-editor-outdated-warning-diff-link' => 'Rozdźěle pokazać',
 	'tux-editor-doc-editor-placeholder' => 'Dokumentacija zdźělenki',
@@ -14845,6 +14855,8 @@ $1',
 	'tux-editor-clear-translated' => '翻訳を非表示',
 	'tux-editor-proofreading-mode' => '校正',
 	'tux-editor-translate-mode' => '一覧',
+	'tux-editor-proofreading-hide-own-translations' => '自分の翻訳を非表示',
+	'tux-editor-proofreading-show-own-translations' => '自分の翻訳を表示',
 	'tux-editor-outdated-warning' => 'この翻訳は修正が必要かもしれません。',
 	'tux-editor-outdated-warning-diff-link' => '差分を表示',
 	'tux-editor-doc-editor-placeholder' => 'メッセージについての説明文',
@@ -16441,6 +16453,7 @@ $1',
 	'log-name-translationreview' => '번역 검토 기록',
 	'log-description-translationreview' => '번역과 메시지 그룹에 대한 모든 검토 기록입니다.',
 	'logentry-translationreview-message' => '$1 사용자가 $3 번역을 {{GENDER:$2|수락했습니다}}',
+	'logentry-translationreview-group' => '$1 사용자가 $3의 $4 번역의 상태를 $6에서 $7로 바꾸었습니다.', # Fuzzy
 	'translate-workflow-state-' => '(미설정)',
 	'translate-workflowstatus' => '상태: $1',
 	'translate-workflow-set-do' => '설정',
@@ -16503,6 +16516,8 @@ $1',
 	'tux-editor-clear-translated' => '번역됨 숨기기',
 	'tux-editor-proofreading-mode' => '교정하기',
 	'tux-editor-translate-mode' => '목록',
+	'tux-editor-proofreading-hide-own-translations' => '내 번역 숨기기',
+	'tux-editor-proofreading-show-own-translations' => '내 번역 보이기',
 	'tux-editor-outdated-warning' => '이 번역은 업데이트해야 합니다.',
 	'tux-editor-outdated-warning-diff-link' => '차이 보기',
 	'tux-editor-doc-editor-placeholder' => '메시지 설명문',
@@ -18090,13 +18105,14 @@ $messages['mhr'] = array(
 );
 
 /** Minangkabau (Baso Minangkabau)
+ * @author Iwan Novirion
  * @author Naval Scene
  */
 $messages['min'] = array(
 	'translate-edit-tmsugs' => 'Saran dari memori tajamahan',
 	'translate-edit-tab-list' => 'Dafta pasan',
 	'translate-sidebar-alltrans' => 'Dalam bahaso lain',
-	'translate-js-support' => 'Maajuan patanyaan',
+	'translate-js-support' => 'Batanyo',
 	'translate-searchprofile-tooltip' => 'Cari dari sado tajamahan',
 );
 
@@ -32045,6 +32061,8 @@ $1',
 	'tux-editor-clear-translated' => '隱藏已翻譯',
 	'tux-editor-proofreading-mode' => '校對',
 	'tux-editor-translate-mode' => '列表',
+	'tux-editor-proofreading-hide-own-translations' => '隱藏我的翻譯',
+	'tux-editor-proofreading-show-own-translations' => '顯示我的翻譯',
 	'tux-editor-outdated-warning' => '此翻譯可能要更新。',
 	'tux-editor-outdated-warning-diff-link' => '顯示差異',
 	'tux-editor-doc-editor-placeholder' => '訊息說明文件',
