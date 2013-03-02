@@ -57,14 +57,14 @@ class SpecialTranslate extends SpecialPage {
 		}
 
 		$this->setup( $parameters );
+		$isBeta = self::isBeta( $request );
 
-		if ( $this->options['group'] === '' ) {
+		if ( $this->options['group'] === '' || ( $isBeta && !$this->group ) ) {
 			$this->groupInformation();
 			return;
 		}
 
 		$errors = $this->getFormErrors();
-		$isBeta = self::isBeta( $request );
 
 		if ( $isBeta ) {
 			$out->addHTML( Html::openElement( 'div', array(
