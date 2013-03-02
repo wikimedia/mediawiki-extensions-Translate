@@ -15,7 +15,7 @@
  */
 class PageTranslationHooks {
 	// Uuugly hack
-	static $allowTargetEdit = false;
+	public static $allowTargetEdit = false;
 
 	/**
 	 * Hook: ParserBeforeStrip
