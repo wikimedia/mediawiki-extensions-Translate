@@ -48,38 +48,41 @@ class DocumentationAid extends TranslationAid {
 		}
 
 		$ffs = $group->getFFS();
-		if ( $ffs instanceof GettextFFS ) {
-			global $wgContLang;
-			$mykey = $wgContLang->lcfirst( $this->handle->getKey() );
-			$mykey = str_replace( ' ', '_', $mykey );
-			$data = $ffs->read( $group->getSourceLanguage() );
-			$help = $data['TEMPLATE'][$mykey]['comments'];
-			// Do not display an empty comment. That's no help and takes up unnecessary space.
-			$conf = $group->getConfiguration();
-			if ( isset( $conf['BASIC']['codeBrowser'] ) ) {
-				$out = '';
-				$pattern = $conf['BASIC']['codeBrowser'];
-				$pattern = str_replace( '%FILE%', '\1', $pattern );
-				$pattern = str_replace( '%LINE%', '\2', $pattern );
-				$pattern = "[$pattern \\1:\\2]";
-				foreach ( $help as $type => $lines ) {
-					if ( $type === ':' ) {
-						$files = '';
-						foreach ( $lines as $line ) {
-							$files .= ' ' . preg_replace( '/([^ :]+):(\d+)/', $pattern, $line );
-						}
-						$out .= "<nowiki>#:</nowiki> $files<br />";
-					} else {
-						foreach ( $lines as $line ) {
-							$out .= "<nowiki>#$type</nowiki> $line<br />";
-						}
-					}
+		if ( !$ffs instanceof GettextFFS ) {
+			return '';
+		}
+
+		global $wgContLang;
+		$mykey = $wgContLang->lcfirst( $this->handle->getKey() );
+		$mykey = str_replace( ' ', '_', $mykey );
+		$data = $ffs->read( $group->getSourceLanguage() );
+		$help = $data['TEMPLATE'][$mykey]['comments'];
+
+		$conf = $group->getConfiguration();
+		if ( isset( $conf['BASIC']['codeBrowser'] ) ) {
+			$pattern = $conf['BASIC']['codeBrowser'];
+			$pattern = str_replace( '%FILE%', '\1', $pattern );
+			$pattern = str_replace( '%LINE%', '\2', $pattern );
+			$pattern = "[$pattern \\1:\\2]";
+		} else {
+			$pattern = "\\1:\\2";
+		}
+
+		$out = '';
+		foreach ( $help as $type => $lines ) {
+			if ( $type === ':' ) {
+				$files = '';
+				foreach ( $lines as $line ) {
+					$files .= ' ' . preg_replace( '/([^ :]+):(\d+)/', $pattern, $line );
 				}
-				return "$out";
+				$out .= "<nowiki>#:</nowiki> $files<br />";
+			} else {
+				foreach ( $lines as $line ) {
+					$out .= "<nowiki>#$type</nowiki> $line<br />";
+				}
 			}
 		}
 
-		return '';
+		return $out;
 	}
-
 }
