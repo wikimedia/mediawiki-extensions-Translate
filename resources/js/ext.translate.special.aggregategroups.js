@@ -54,9 +54,10 @@
 				};
 
 				$a = $( '<a>', aAttr ).text( subgroupName );
-
+				
 				spanAttr = {
-					'class': 'tp-aggregate-remove-button'
+					'class': 'tp-aggregate-remove-button',
+					'data-groupid': subgroupId
 				};
 
 				$span = $( '<span>', spanAttr );
