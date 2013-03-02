@@ -129,6 +129,7 @@ abstract class TranslationAid {
 			'definitiondiff' => 'UpdatedDefinitionAid',
 			'ttmserver' => 'TTMServerAid',
 			'support' => 'SupportAid',
+			'gettext' => 'GettextDocumentationAid',
 		);
 
 		wfRunHooks( 'TranslateTranslationAids', array( &$types ) );

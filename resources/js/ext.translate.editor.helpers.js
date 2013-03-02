@@ -176,6 +176,29 @@
 		},
 
 		/**
+		 * Shows uneditable documentation.
+		 * @param {Object} documentation A gettext object as returned by API.
+		 */
+		showUneditableDocumentation: function ( documentation ) {
+			var dir;
+
+			if ( documentation.error ) {
+				return;
+			}
+
+			dir = $.uls.data.getDir( documentation.language );
+
+			this.$editor.find( '.uneditable-documentation' )
+				.attr( {
+					lang: documentation.language,
+					dir: dir
+				} )
+				.addClass( 'mw-content-' + dir )
+				.html( documentation.html )
+				.removeClass( 'hide' );
+		},
+
+		/**
 		 * Shows the translations from other languages
 		 * @param {array} translations An inotherlanguages array as returned by the translation helpers API.
 		 */
@@ -410,6 +433,7 @@
 				}
 
 				translateEditor.showMessageDocumentation( result.helpers.documentation );
+				translateEditor.showUneditableDocumentation( result.helpers.gettext );
 				translateEditor.showAssistantLanguages( result.helpers.inotherlanguages );
 				translateEditor.showTranslationMemory( result.helpers.ttmserver );
 				translateEditor.showMachineTranslations( result.helpers.mt );
