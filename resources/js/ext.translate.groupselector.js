@@ -334,7 +334,7 @@
 
 			// Optimization, assuming that people search the beginning
 			// of the group name.
-			matcher = new RegExp( '^' + escapeRegex( query ), 'i' );
+			matcher = new RegExp( '\\b' + escapeRegex( query ), 'i' );
 
 			for ( index = 0; index < this.flatGroupList.length; index++ ) {
 				if ( matcher.test( this.flatGroupList[index].label ) ||
