@@ -81,6 +81,6 @@ class TuxMessageTable extends ContextSource {
 
 		// Actual message table is fetched and rendered at client side. This just provides
 		// the loader and action bar.
-		return $this->header() . $footer . '</div>';
+		return $this->header() . '</div>' . $footer;
 	}
 }
