@@ -344,3 +344,24 @@
 	font-size: 15px;
 	vertical-align: middle;
 }
+
+.tux-empty-list div {
+	margin: 5px;
+}
+
+.tux-empty-list-header {
+	font-size: 25px;
+}
+
+.tux-empty-list-guide {
+	font-size: 10px;
+	color: #565656;
+}
+
+.tux-empty-list-actions {
+	font-size: 15px;
+}
+
+.tux-empty-list-actions a {
+	cursor: pointer;
+}

@@ -344,6 +344,15 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'tux-messagetable-loading-messages',
 		'tux-message-filter-result',
 		'tux-message-filter-advanced-button',
+		'tux-empty-list-all',
+		'tux-empty-list-all-guide',
+		'tux-empty-list-translated',
+		'tux-empty-list-translated-guide',
+		'tux-empty-list-translated-action',
+		'tux-empty-list-other',
+		'tux-empty-list-other-guide',
+		'tux-empty-list-other-action',
+		'tux-empty-list-other-link',
 	),
 ) + $resourcePaths;
 
