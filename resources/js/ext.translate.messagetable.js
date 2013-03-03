@@ -26,7 +26,7 @@
 			changes = changes || {};
 
 			// Clear current messages
-			$( '.tux-message, .tux-message-proofread' ).remove();
+			$( '.tux-messagelist' ).empty();
 			// Change the properties that are provided
 			if ( changes.filter !== undefined ) {
 				$loader.data( 'filter', changes.filter );
@@ -55,8 +55,8 @@
 		this.options = $.extend( {}, $.fn.messagetable.defaults, options );
 		// mode can be proofread, page or translate
 		this.mode = this.options.mode;
-		this.$loader = $( '.tux-messagetable-loader' );
-		this.$actionBar = $( '.tux-action-bar' );
+		this.$loader = this.$container.siblings( '.tux-messagetable-loader' );
+		this.$actionBar = this.$container.siblings( '.tux-action-bar' );
 		this.messages = [];
 		this.init();
 		this.listen();
@@ -202,7 +202,7 @@
 				);
 
 			$messageWrapper.append( $message );
-			this.$loader.before( $messageWrapper );
+			this.$container.append( $messageWrapper );
 
 			// Attach translate editor to the message
 			$messageWrapper.translateeditor( {
@@ -220,7 +220,7 @@
 				.addClass( 'row tux-message-proofread' )
 				.data( 'message', message );
 
-			this.$loader.before( $message );
+			this.$container.append( $message );
 			$message.proofread();
 		},
 
@@ -254,7 +254,7 @@
 						.text( message.translation || '' )
 				);
 
-			this.$loader.before( $message );
+			this.$container.append( $message );
 		},
 
 		/**
@@ -356,6 +356,14 @@
 				var messages = result.query.messagecollection,
 					$workflowSelector = $( 'ul.tux-workflow-status-selector ' );
 
+				// No new messges were loaded
+				if ( messages.length === 0 ) {
+					// And this is the first load for the filter...
+					if ( messageTable.$container.children().length === 0 ) {
+						messageTable.displayEmptyListHelp();
+					}
+				}
+
 				$.each( messages, function ( index, message ) {
 					message.group = messagegroup;
 					messageTable.add( message );
@@ -406,6 +414,61 @@
 		},
 
 		/**
+		 * If the user selection results nothing to show, give some pointers
+		 * what to do.
+		 */
+		displayEmptyListHelp: function () {
+			var tab, $actionButton, $filterLink,
+				messageTable = this,
+				$wrap = $( '<div>' ).addClass( 'tux-empty-list' ),
+				$empty = $( '<div>' ).addClass( 'tux-empty-list-header' ),
+				$guide = $( '<div>' ).addClass( 'tux-empty-list-guide' ),
+				$actions = $( '<div>' ).addClass( 'tux-empty-list-actions' );
+
+			// Ugly! This should be provided somehow
+			tab = $( '.tux-message-selector .selected' ).data( 'filter' );
+
+			if ( tab === '' ) {
+				$empty.text( mw.msg( 'tux-empty-list-all' ) );
+				$guide.text( mw.msg( 'tux-empty-list-all-guide' ) );
+
+			} else if ( tab === 'translated' ) {
+				$empty.text( mw.msg( 'tux-empty-list-translated' ) );
+				$guide.text( mw.msg( 'tux-empty-list-translated-guide' ) );
+				$actionButton = $( '<button>' )
+					.text( mw.msg( 'tux-empty-list-translated-action' ) )
+					.addClass( 'green button' )
+					.click( function () {
+						mw.translate.changeFilter( $( '.tux-tab-untranslated' ).click() );
+					} );
+				$actions.append( $actionButton );
+
+			} else {
+				$empty.text( mw.msg( 'tux-empty-list-other' ) );
+				if ( mw.translate.canProofread() ) {
+					$guide.text( mw.msg( 'tux-empty-list-other-guide' ) );
+					$actionButton = $( '<button>' )
+						.text( mw.msg( 'tux-empty-list-other-action' ) )
+						.addClass( 'green button' )
+						.click( function () {
+							messageTable.switchMode( 'proofread' );
+						} );
+					$actions.append( $actionButton );
+				}
+				$filterLink = $( '<a>' )
+					.text( mw.msg( 'tux-empty-list-other-link' ) )
+					.click( function () {
+						mw.translate.switchMode( $( '.tux-tab-all' ).click() );
+					} );
+				$actions.append( $filterLink );
+
+			}
+
+			$wrap.append( $empty, $guide, $actions );
+			this.$container.append( $wrap );
+		},
+
+		/**
 		 * Switch the message table mode
 		 *
 		 * @param {string} mode The message table mode - proofread or translate
@@ -431,7 +494,7 @@
 			messageTable.mode = mode;
 			mw.translate.changeUrl( { action: this.mode } );
 
-			$( '.tux-message, .tux-message-proofread').remove();
+			messageTable.$container.empty();
 
 			$tuxTabUntranslated = $( '.tux-message-selector > .tux-tab-untranslated' );
 			$controlOwnButton = messageTable.$actionBar.find( '.tux-proofread-own-translations-button' );

@@ -481,6 +481,19 @@ Most useful for the proofreading tasks.',
 	'tux-message-filter-result' => 'Found $1 {{PLURAL:$1|result|results}} for "$2"',
 	'tux-message-filter-advanced-button' => 'Advanced search',
 	'tux-message-filter-optional-messages-label' => 'Optional messages',
+
+	'tux-empty-list-all' => 'This message group is empty',
+	'tux-empty-list-all-guide' => 'Select a different message group to translate',
+
+	'tux-empty-list-translated' => 'No translated messages',
+	'tux-empty-list-translated-guide' => 'You can help translating',
+	'tux-empty-list-translated-action' => 'Translate',
+
+	'tux-empty-list-other' => 'Nothing to translate',
+	'tux-empty-list-other-guide' => 'You can help reviewing existing translations',
+	'tux-empty-list-other-action' => 'Proofread translations',
+	'tux-empty-list-other-link' => 'Show all messages',
+
 );
 
 /** Message documentation (Message documentation)
@@ -993,6 +1006,18 @@ Pressing the button goes to the page mode.
 	'tux-message-filter-advanced-button' => 'Button label for searching the messages using [[Special:SearchTranslations]].
 {{Identical|Advanced search}}',
 	'tux-message-filter-optional-messages-label' => 'A label for a checkbox. Checking the box causes message editor to show optional messages.',
+
+	'tux-empty-list-all' => '{{Tuxspec|7}} This is a heading.',
+	'tux-empty-list-all-guide' => '{{Tuxspec|7}} This is a secondary guide text.',
+
+	'tux-empty-list-translated' => '{{Tuxspec|7}} This is a heading.',
+	'tux-empty-list-translated-guide' => '{{Tuxspec|7}} This is a secondary guide text.',
+	'tux-empty-list-translated-action' => '{{Tuxspec|7}} This is a action button.',
+
+	'tux-empty-list-other' => '{{Tuxspec|7}} This is a heading.',
+	'tux-empty-list-other-guide' => '{{Tuxspec|7}} This is a secondary guide text.',
+	'tux-empty-list-other-action' => '{{Tuxspec|7}} This is a action button.',
+	'tux-empty-list-other-link' => '{{Tuxspec|7}} This is a link to change message filter.',
 );
 
 /** Afrikaans (Afrikaans)
