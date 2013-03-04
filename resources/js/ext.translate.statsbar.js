@@ -91,8 +91,7 @@
 		render: function () {
 			this.$statsBar = $( '<div>' )
 				.addClass( 'tux-statsbar' )
-				.data( 'group', this.group )
-				.data( 'language', this.language );
+				.data( 'group', this.group );
 
 			this.$statsBar.append(
 				$( '<span>' ).addClass( 'tux-proofread' ),
