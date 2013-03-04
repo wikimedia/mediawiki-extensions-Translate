@@ -202,7 +202,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$user = $this->getUser();
 		$request = $this->getRequest();
 		$userpage = $user->getUserPage();
-		$preload = "I am My Name and....";
+		$preload = "I am [Your Name] and....";
 
 		if ( true
 			&& $request->wasPosted()

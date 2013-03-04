@@ -47,7 +47,7 @@ Here you can choose which languages, if any, you would like to see.",
 	'translate-fs-userpage-level-2' => 'I have a moderate command of',
 	'translate-fs-userpage-level-1' => 'I know a little',
 	'translate-fs-userpage-help' => 'Please indicate your language skills and tell us something about yourself. If you know more than five languages you can add more later.',
-	'translate-fs-userpage-submit' => 'Create my userpage',
+	'translate-fs-userpage-submit' => 'Create your userpage',
 	'translate-fs-userpage-done' => 'Well done! You now have an user page.',
 	'translate-fs-permissions-planguage' => "Primary language:",
 	'translate-fs-permissions-help' => 'Now you need to place a request to be added to the translator group.
