@@ -26,7 +26,8 @@
 			changes = changes || {};
 
 			// Clear current messages
-			$( '.tux-message, .tux-message-proofread' ).remove();
+			$( '.tux-messagelist' ).trigger( 'clear' );
+
 			// Change the properties that are provided
 			if ( changes.filter !== undefined ) {
 				$loader.data( 'filter', changes.filter );
@@ -84,6 +85,8 @@
 				delay( messageTable.search( $( this ).val() ), 300 );
 			} );
 
+			this.$container.on( 'clear', messageTable.clear );
+
 			this.$loader.appear( function () {
 				messageTable.load();
 			}, {
@@ -102,6 +105,14 @@
 			this.$actionBar.find( 'button.page-mode-button' ).on( 'click', function () {
 				messageTable.switchMode( 'page' );
 			} );
+		},
+
+		/**
+		 * Clear the message table
+		 */
+		clear: function () {
+			$( '.tux-message, .tux-message-proofread' ).remove();
+			this.messages = [];
 		},
 
 		add: function ( message ) {
