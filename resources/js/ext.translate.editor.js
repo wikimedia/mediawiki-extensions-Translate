@@ -334,6 +334,18 @@
 					$saveButton = translateEditor.$editor.find( '.tux-editor-save-button' ),
 					$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' );
 
+				// Avoid untranslate marking when translated message
+				// is not changed in content length. Untranslated message
+				// contains null so making it empty for length check.
+				var translationMessage = translateEditor.message.translation;
+				if( translationMessage == null) {
+					translationMessage = '';
+				}
+				if( translationMessage.length == $textArea.val().length ) {
+					translateEditor.dirty = false;
+				}
+
+
 				$saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
 				// When there is content in the editor
 				if ( $.trim( $textArea.val() ) ) {
