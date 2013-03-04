@@ -332,7 +332,19 @@
 			$textArea.on( 'input propertychange', function () {
 				var $textArea = $( this ),
 					$saveButton = translateEditor.$editor.find( '.tux-editor-save-button' ),
-					$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' );
+					$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' ),
+					translationMessage = translateEditor.message.translation;
+
+				// Avoid untranslate marking when translated message
+				// is not changed in content length. Untranslated message
+				// contains null so making it empty for length check.
+				if ( translationMessage === null ) {
+					translationMessage = '';
+				}
+				if ( translationMessage.length === $textArea.val().length ) {
+					translateEditor.dirty = false;
+				}
+
 
 				$saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
 				// When there is content in the editor
