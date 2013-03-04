@@ -11,6 +11,7 @@
 		// Storage for language stats loader functions from API,
 		// indexed by language code
 		languageStatsLoader: {},
+		messageGroupsLoader: null,
 
 		messageGroups: {},
 		/**
@@ -35,7 +36,17 @@
 			return mw.translate.languageStatsLoader[language];
 		},
 
+		/**
+		 * Loads information about all message groups. Use getMessageGroup
+		 * instead.
+		 *
+		 * @return {jQuery.Deferred}
+		 */
 		loadMessageGroups: function () {
+			if ( mw.translate.messageGroupsLoader ) {
+				return mw.translate.messageGroupsLoader;
+			}
+
 			var loader,
 				queryParams = {
 					action: 'query',
@@ -49,7 +60,22 @@
 			loader.done( function ( result ) {
 				mw.translate.messageGroups = result.query.messagegroups;
 			} );
+
+			mw.translate.messageGroupsLoader = loader;
 			return loader;
+		},
+
+		/**
+		 * Load message group information asynchronously.
+		 * @param {string} Message group id
+		 * @return {jQuery.Deferred}
+		 */
+		getMessageGroup: function ( id ) {
+			var deferred = new $.Deferred();
+			mw.translate.loadMessageGroups().done( function () {
+				deferred.resolve( mw.translate.getGroup( id, mw.translate.messageGroups ) );
+			} );
+			return deferred;
 		},
 
 		/**

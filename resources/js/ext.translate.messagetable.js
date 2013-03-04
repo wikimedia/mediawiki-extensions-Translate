@@ -387,7 +387,9 @@
 					mw.msg( 'tux-messagetable-loading-messages', Math.min( remaining, pageSize ) )
 				);
 
-				mw.translate.prepareWorkflowSelector( mw.translate.getGroup( messagegroup ) );
+				mw.translate.getMessageGroup( messagegroup ).done( function ( group ) {
+					mw.translate.prepareWorkflowSelector( group );
+				} );
 				if ( result.query.metadata && result.query.metadata.state ) {
 					$workflowSelector.find( 'li' ).each( function () {
 						var $this = $( this );

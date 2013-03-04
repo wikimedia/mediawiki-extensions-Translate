@@ -173,7 +173,6 @@
 				}
 			} );
 			$( '.tux-workflow-status' ).text( mw.msg( 'translate-workflow-state-' ) );
-			return $selector;
 		}
 	} );
 
@@ -317,10 +316,10 @@
 				group: $( '.tux-message-list-statsbar' ).data( 'messagegroup' )
 			} );
 
-			$( '.tux-messagelist' ).messagetable();
-
 			updateGroupWarning();
 		} );
+
+		$( '.tux-messagelist' ).messagetable();
 
 		// Use ULS for language selection if it's available
 		if ( $.uls ) {
