@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoCy.-NE",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-04T17:03:41Z",
+      "side": 1,
+      "message": "translationMessage variable should be declared at the beginning of the function together with other variables",
+      "revId": "10e54bb44570c9a46577b629bc5841b552a12208",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DoEzu4O8",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-04T17:03:41Z",
+      "side": 1,
+      "message": "\u003d\u003d\u003d",
+      "revId": "10e54bb44570c9a46577b629bc5841b552a12208",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DoGzrpN4",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-04T17:03:41Z",
+      "side": 1,
+      "message": "\u003d\u003d\u003d",
+      "revId": "10e54bb44570c9a46577b629bc5841b552a12208",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
