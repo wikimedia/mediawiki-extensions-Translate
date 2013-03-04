@@ -31,7 +31,7 @@ Options:
   --noask       Skip all conflicts
   --start       Start of the last export (changes in wiki after will conflict)
   --end         End of the last export (changes in source after will conflict)
-  --nocolor     Without colours
+  --nocolor     Without colors
 EOT
 	);
 	exit( 1 );
@@ -153,7 +153,7 @@ class ChangeSyncer {
 	public $group; ///< \type{MessageGroup}
 	public $norc = false; ///< \bool Don't list changes in recent changes table.
 	public $interactive = true; ///< \bool Whether the script can ask questions.
-	public $nocolor = false; ///< \bool Disable colour output.
+	public $nocolor = false; ///< \bool Disable color output.
 
 	public function __construct( MessageGroup $group ) {
 		$this->group = $group;
@@ -339,7 +339,7 @@ class ChangeSyncer {
 	}
 
 	/**
-	 * Colours text for shell output
+	 * Colors text for shell output
 	 * @param $color \string Either blue, green or bold.
 	 * @param $text \string
 	 * @return \string
