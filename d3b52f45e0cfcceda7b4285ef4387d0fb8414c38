@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoMkUIk8",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-04T15:31:48Z",
+      "side": 0,
+      "message": "addSectionTag is now unused.",
+      "revId": "d3b52f45e0cfcceda7b4285ef4387d0fb8414c38",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
