@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoLerOoo",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-04T07:24:17Z",
+      "side": 1,
+      "message": "Missing semicolon - jshint failure",
+      "revId": "6ec89da006addabe3a0e648a432c68ad9e8634e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
