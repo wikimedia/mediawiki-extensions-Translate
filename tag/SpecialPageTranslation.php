@@ -66,31 +66,21 @@ class SpecialPageTranslation extends SpecialPage {
 
 		if ( $action === 'discourage' || $action === 'encourage' ) {
 			$id = TranslatablePage::getMessageGroupIdFromTitle( $title );
-			$dbw = wfGetDB( DB_MASTER );
-			$table = 'translate_groupreviews';
-			$row = array(
-				'tgr_group' => $id,
-				'tgr_lang' => '*priority',
-				'tgr_state' => 'discouraged',
-			);
+			$current = MessageGroups::getPriority( $id );
 
-			$logger = new LogPage( 'pagetranslation' );
-			$params = array( 'user' => $user->getName() );
-
-			$priority = MessageGroups::getPriority( $id );
-
-			// encouraged is default priority (''). Only do this if the priority is discouraged.
-			if ( $action === 'encourage' && $priority === 'discouraged' ) {
-				$dbw->delete( $table, $row, __METHOD__ );
-				$logger->addEntry( 'encourage', $title, null, array( serialize( $params ) ), $this->getUser() );
+			if ( $action === 'encourage' ) {
+				$new = '';
 			} else {
-				$index = array( 'tgr_group', 'tgr_lang' );
-				$dbw->replace( $table, array( $index ), $row, __METHOD__ );
+				$new = 'discouraged';
+			}
 
-				// Prevent duplicate log entries.
-				if ( $priority !== 'discouraged' ) {
-					$logger->addEntry( 'discourage', $title, null, array( serialize( $params ) ), $this->getUser() );
-				}
+			if ( $new !== $current ) {
+				MessageGroups::setPriority( $id, $new );
+				$entry = new ManualLogEntry( 'pagetranslation', $action );
+				$entry->setPerformer( $user );
+				$entry->setTarget( $title );
+				$logid = $entry->insert();
+				$entry->publish( $logid );
 			}
 
 			$this->listPages();
@@ -107,9 +97,12 @@ class SpecialPageTranslation extends SpecialPage {
 			$page->unmarkTranslatablePage();
 			$page->getTitle()->invalidateCache();
 
-			$logger = new LogPage( 'pagetranslation' );
-			$params = array( 'user' => $user->getName() );
-			$logger->addEntry( 'unmark', $page->getTitle(), null, array( serialize( $params ) ), $this->getUser() );
+			$entry = new ManualLogEntry( 'pagetranslation', 'unmark' );
+			$entry->setPerformer( $user );
+			$entry->setTarget( $page->getTitle() );
+			$logid = $entry->insert();
+			$entry->publish( $logid );
+
 			$out->addWikiMsg( 'tpt-unmarked', $title->getPrefixedText() );
 
 			return;
@@ -705,13 +698,16 @@ class SpecialPageTranslation extends SpecialPage {
 		// Logging
 		$this->handlePriorityLanguages( $this->getRequest(), $page, $this->getUser() );
 
-		$logger = new LogPage( 'pagetranslation' );
-		$params = array(
-			'user' => $this->getUser()->getName(),
+
+		$entry = new ManualLogEntry( 'pagetranslation', 'mark' );
+		$entry->setPerformer( $this->getUser() );
+		$entry->setTarget( $page->getTitle() );
+		$entry->setParameters( array(
 			'revision' => $newrevision,
 			'changed' => count( $changed ),
-		);
-		$logger->addEntry( 'mark', $page->getTitle(), null, array( serialize( $params ) ), $this->getUser() );
+		) );
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 
 		// Clear more caches
 		$page->getTitle()->invalidateCache();
@@ -759,19 +755,18 @@ class SpecialPageTranslation extends SpecialPage {
 
 		if ( $opLangs !== $npLangs || $opForce !== $npForce || $opReason !== $npReason ) {
 			$params = array(
-				'user' => $user->getName(),
 				'languages' => $npLangs,
 				'force' => $npForce,
 				'reason' => $npReason,
 			);
-			$logger = new LogPage( 'pagetranslation' );
-			$logger->addEntry(
-				'prioritylanguages',
-				$page->getTitle(),
-				null,
-				array( serialize( $params ) ),
-				$this->getUser()
-			);
+
+			$entry = new ManualLogEntry( 'pagetranslation', 'prioritylanguages' );
+			$entry->setPerformer( $this->getUser() );
+			$entry->setTarget( $page->getTitle() );
+			$entry->setParameters( $params );
+			$entry->setComment( $npReason );
+			$logid = $entry->insert();
+			$entry->publish( $logid );
 		}
 	}
 

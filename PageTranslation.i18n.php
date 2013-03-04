@@ -136,24 +136,29 @@ Translation unit text: <pre>$1</pre>',
 	'pt-shake-empty' => 'Empty translation unit for marker "$1".',
 
 	# logging system
-	# @todo Switch to new log system
-	'pt-log-header' => 'Log for actions related to the page translation system',
-	'pt-log-name' => 'Page translation log',
-	'pt-log-mark' => '{{GENDER:$2|marked}} revision $3 of page "[[:$1]]" for translation',
-	'pt-log-unmark' => '{{GENDER:$2|removed}} page "[[:$1]]" from translation',
-	'pt-log-moveok' => '{{GENDER:$2|completed}} renaming of translatable page "$1" to $3',
-	'pt-log-movenok' => '{{GENDER:$2|encountered}} a problem while moving "[[:$1]]" to "[[:$3]]"',
-	'pt-log-delete-full-ok' => '{{GENDER:$2|completed}} deletion of translatable page "$1"',
-	'pt-log-delete-full-nok' => '{{GENDER:$2|encountered}} a problem while deleting translatable page "[[:$1]]"',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|completed}} deletion of translation page "$1"',
-	'pt-log-delete-lang-nok' => '{{GENDER:$2|encountered}} a problem while deleting translation page "[[:$1]]"',
-	'pt-log-encourage' => '{{GENDER:$2|encouraged}} translation of page "[[:$1]]"',
-	'pt-log-discourage' => '{{GENDER:$2|discouraged}} translation of page "[[:$1]]"',
-	'pt-log-priority-langs-unset' => '{{GENDER:$2|removed}} priority languages from translatable page "[[:$1]]"',
-	'pt-log-priority-langs' => '{{GENDER:$2|set}} the priority languages for translatable page "[[:$1]]" to $3. Reason: $4',
-	'pt-log-priority-langs-force' => '{{GENDER:$2|limited}} languages for translatable page "[[:$1]]" to $3. Reason: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|added}} translatable page "[[:$1]]" to aggregate group $3',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|removed}} translatable page "[[:$1]]" from aggregate group $3',
+	'log-description-pagetranslation' => 'Log for actions related to the page translation system',
+	'log-name-pagetranslation' => 'Page translation log',
+
+	'logentry-pagetranslation-mark' => '$1 {{GENDER:$2|marked}} $3 for translation',
+	'logentry-pagetranslation-unmark' => '$1 {{GENDER:$2|removed}} $3 from translation',
+
+	'logentry-pagetranslation-moveok' => '$1 {{GENDER:$2|completed}} renaming of translatable page $3 to $4',
+	'logentry-pagetranslation-movenok' => '$1 {{GENDER:$2|encountered}} a problem while moving page $3 to $4',
+
+	'logentry-pagetranslation-deletefok' => '$1 {{GENDER:$2|completed}} deletion of translatable page $3',
+	'logentry-pagetranslation-deletefnok' => '$1 {{GENDER:$2|failed}} to delete $3 which belongs to translatable page $4',
+	'logentry-pagetranslation-deletelok' => '$1 {{GENDER:$2|completed}} deletion of translation page $3',
+	'logentry-pagetranslation-deletelnok' => '$1 {{GENDER:$2|failed}} to delete $3 which belongs to translation page $4',
+
+	'logentry-pagetranslation-encourage' => '$1 {{GENDER:$2|encouraged}} translation of $3',
+	'logentry-pagetranslation-discourage' => '$1 {{GENDER:$2|discouraged}} translation of $3',
+
+	'logentry-pagetranslation-prioritylanguages-unset' => '$1 {{GENDER:$2|removed}} priority languages from translatable page $3',
+	'logentry-pagetranslation-prioritylanguages' => '$1 {{GENDER:$2|set}} the priority languages for translatable page $3 to $5',
+	'logentry-pagetranslation-prioritylanguages-force' => '$1 {{GENDER:$2|limited}} languages for translatable page $3 to $5',
+
+	'logentry-pagetranslation-associate' => '$1 {{GENDER:$2|added}} translatable page $3 to aggregate group $4',
+	'logentry-pagetranslation-dissociate' => '$1 {{GENDER:$2|removed}} translatable page $3 from aggregate group $4',
 
 	# move page replacement
 	'pt-movepage-title' => 'Move translatable page "$1"',
@@ -352,37 +357,36 @@ See definitions on [[mw:Help:Extension:Translate/Glossary]].',
 
 See definitions on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-shake-empty' => 'Translation unit (=section) is empty except for the translation marker (=<nowiki><!--T:1--></nowiki>)',
-	'pt-log-header' => '{{logentry|[[Special:Log/pagetranslation]]}}',
-	'pt-log-name' => '{{doc-logpage}}',
-	'pt-log-mark' => '{{logentry|[[Special:Log/pagetranslation]]}}
 
-This message is preceded on the same line by the username of the user performing the action, who is the subject of this sentence.',
-	'pt-log-unmark' => '{{logentry|[[Special:Log/pagetranslation]]}}',
-	'pt-log-moveok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
-	'pt-log-movenok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
-	'pt-log-delete-full-ok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
-	'pt-log-delete-full-nok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
-	'pt-log-delete-lang-ok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
-	'pt-log-delete-lang-nok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
-	'pt-log-encourage' => "A log message that appears when a translation manager marks a page as a page that should not be translated, for example if it's outdated.",
-	'pt-log-discourage' => '{{logentry|[[Special:Log/pagetranslation]]}}',
-	'pt-log-priority-langs-unset' => '{{logentry|[[Special:Log/pagetranslation]]}}',
-	'pt-log-priority-langs' => 'Used on [[Special:Log/pagetranslation]].
-* $3 - comma-separated list of languages',
-	'pt-log-priority-langs-force' => "Used on [[Special:Log/pagetranslation]], after the performing user's name (in sentence format).
-* $3 - a comma-separated list of languages",
-	'pt-log-aggregategroup-associate' => 'Used on [[Special:Log/pagetranslation]],
-* $1 is link to a page,
-* $2 is the user,
-* $3 is an aggregate group name.
 
-This message is preceded on the same line by the username of the user performing the action, who is the subject of this sentence.
+	'log-description-pagetranslation' => 'Description of a log type',
+	'log-name-pagetranslation' => '{{doc-logpage}}',
 
-See definitions on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-log-aggregategroup-dissociate' => 'Used on [[Special:Log/pagetranslation]],
-* $1 is link to a page,
-* $2 is the user,
-* $3 is an aggregate group name.',
+	'logentry-pagetranslation-mark' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'logentry-pagetranslation-unmark' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+
+	'logentry-pagetranslation-moveok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'logentry-pagetranslation-movenok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+
+	'logentry-pagetranslation-deletefok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'logentry-pagetranslation-deletefnok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'logentry-pagetranslation-deletelok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'logentry-pagetranslation-deletelnok' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+
+	'logentry-pagetranslation-encourage' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'logentry-pagetranslation-discourage' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+
+	'logentry-pagetranslation-prioritylanguages-unset' => '{{logentry|[[Special:Log/pagetranslation]]}}',
+	'logentry-pagetranslation-prioritylanguages' => '{{logentry|[[Special:Log/pagetranslation]]}}
+* $5 is list of languages (A, B and C)',
+	'logentry-pagetranslation-prioritylanguages-force' => '{{logentry|[[Special:Log/pagetranslation]]}}
+* $5 is list of languages (A, B and C)',
+
+	'logentry-pagetranslation-associate' => '{{logentry|[[Special:Log/pagetranslation]]}}
+* $4 is the name of the aggregate group',
+	'logentry-pagetranslation-dissociate' => '{{logentry|[[Special:Log/pagetranslation]]}}
+* $4 is the name of the aggregate group',
+
 	'pt-movepage-title' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-movepage-blockers' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].
 
