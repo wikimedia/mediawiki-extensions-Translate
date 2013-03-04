@@ -758,6 +758,7 @@ Hvis du ikke ønsker at modtage nyhedsbreve, kan du framelde det i fanebladet "{
 /** German (Deutsch)
  * @author Als-Holder
  * @author Kghbln
+ * @author Metalhead64
  * @author Purodha
  * @author The Evil IP address
  */
@@ -791,7 +792,7 @@ Hier kannst du wählen, welche Sprachen du, wenn überhaupt, angezeigt bekommen 
 	'translate-fs-userpage-level-2' => 'Ich habe mittelmäßige Kenntnisse',
 	'translate-fs-userpage-level-1' => 'Ich habe kaum Kenntnisse',
 	'translate-fs-userpage-help' => 'Bitte gib deine Sprachkenntnisse an und teile uns etwas über dich mit. Sofern du Kenntnisse zu mehr als fünf Sprachen hast, kannst du diese später angeben.',
-	'translate-fs-userpage-submit' => 'Benutzerseite erstellen',
+	'translate-fs-userpage-submit' => 'Erstelle deine Benutzerseite',
 	'translate-fs-userpage-done' => 'Gut gemacht! Du hast nun eine Benutzerseite',
 	'translate-fs-permissions-planguage' => 'Hauptsprache:',
 	'translate-fs-permissions-help' => 'Jetzt musst du eine Anfrage stellen, um in die Benutzergruppe der Übersetzer aufgenommen werden zu können.
@@ -1313,7 +1314,7 @@ Ici, vous pouvez choisir quelles langues, si c'est le cas, vous aimeriez voir.",
 	'translate-fs-userpage-level-2' => "J'ai une maîtrise modérée de",
 	'translate-fs-userpage-level-1' => 'Je connais un peu',
 	'translate-fs-userpage-help' => 'Veuillez indiquer vos compétences linguistiques et nous parler un peu de vous-même. Si vous connaissez plus de cinq langues, vous pourrez en ajouter plus tard.',
-	'translate-fs-userpage-submit' => 'Créer ma page utilisateur',
+	'translate-fs-userpage-submit' => 'Créer votre page utilisateur',
 	'translate-fs-userpage-done' => 'Bien joué ! Vous avez à présent une page utilisateur.',
 	'translate-fs-permissions-planguage' => 'Langue principale:',
 	'translate-fs-permissions-help' => "Maintenant, vous devez faire une demande pour être ajouté au groupe des traducteurs.
@@ -1901,7 +1902,7 @@ $messages['id'] = array(
 	'translate-fs-intro' => "Selamat datang di wisaya tahapan pertama {{SITENAME}}.
 Anda akan dipandu melalui proses untuk menjadi seorang penerjemah tahap demi tahap.
 Hasilnya Anda akan mampu menerjemahkan ''pesan antarmuka'' semua proyek yang didukung di {{SITENAME}}.",
-	'translate-fs-userpage-submit' => 'Buat halaman pengguna saya',
+	'translate-fs-userpage-submit' => 'Buat halaman pengguna saya', # Fuzzy
 	'translate-fs-userpage-done' => 'Bagus! Sekarang Anda memiliki halaman pengguna.',
 	'translate-fs-target-text' => 'Selamat!
 Sekarang Anda dapat mulai menerjemahkan.
@@ -2499,7 +2500,7 @@ $messages['mk'] = array(
 	'translate-fs-userpage-level-2' => 'Умерено го владеам',
 	'translate-fs-userpage-level-1' => 'Знам по малку',
 	'translate-fs-userpage-help' => 'Тука наведете кои јазици ги познавате и колку добро го владеете секој од нив. Воедно напишете и нешто за себе. Доколку знаете повеќе од пет јазика, останатите додајте ги подоцна.',
-	'translate-fs-userpage-submit' => 'Создај корисничка страница',
+	'translate-fs-userpage-submit' => 'Создајте своја корисничка страница',
 	'translate-fs-userpage-done' => 'Одлично! Сега имате корисничка страница.',
 	'translate-fs-permissions-planguage' => 'Главен јазик:',
 	'translate-fs-permissions-help' => 'Сега ќе треба да поставите барање за да ве додадеме во групата на преведувачи.

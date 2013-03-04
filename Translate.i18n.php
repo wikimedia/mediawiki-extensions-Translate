@@ -535,7 +535,8 @@ $messages['qqq'] = array(
 
 {{Identical|Translate}}',
 	'translate-desc' => '{{desc|name=Translate|url=http://www.mediawiki.org/wiki/Extension:Translate}}',
-	'translate-taskui-view' => 'Task in [[Special:Translate]] on action Translate',
+	'translate-taskui-view' => 'Task in [[Special:Translate]] on action Translate.
+{{Identical|Show all messages}}',
 	'translate-taskui-untranslated' => 'Task in [[Special:Translate]] on action Translate',
 	'translate-taskui-optional' => 'Task in [[Special:Translate]] on action Translate',
 	'translate-taskui-suggestions' => 'Task in [[Special:Translate]] on action Translate',
@@ -1006,18 +1007,18 @@ Pressing the button goes to the page mode.
 	'tux-message-filter-advanced-button' => 'Button label for searching the messages using [[Special:SearchTranslations]].
 {{Identical|Advanced search}}',
 	'tux-message-filter-optional-messages-label' => 'A label for a checkbox. Checking the box causes message editor to show optional messages.',
-
 	'tux-empty-list-all' => '{{Tuxspec|7}} This is a heading.',
 	'tux-empty-list-all-guide' => '{{Tuxspec|7}} This is a secondary guide text.',
-
 	'tux-empty-list-translated' => '{{Tuxspec|7}} This is a heading.',
 	'tux-empty-list-translated-guide' => '{{Tuxspec|7}} This is a secondary guide text.',
-	'tux-empty-list-translated-action' => '{{Tuxspec|7}} This is a action button.',
-
-	'tux-empty-list-other' => '{{Tuxspec|7}} This is a heading.',
+	'tux-empty-list-translated-action' => '{{Tuxspec|7}} This is a action button.
+{{Identical|Translate}}',
+	'tux-empty-list-other' => '{{Tuxspec|7}} This is a heading.
+{{Identical|Nothing to translate}}',
 	'tux-empty-list-other-guide' => '{{Tuxspec|7}} This is a secondary guide text.',
 	'tux-empty-list-other-action' => '{{Tuxspec|7}} This is a action button.',
-	'tux-empty-list-other-link' => '{{Tuxspec|7}} This is a link to change message filter.',
+	'tux-empty-list-other-link' => '{{Tuxspec|7}} This is a link to change message filter.
+{{Identical|Show all messages}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -2587,8 +2588,9 @@ Ye enforma afayadizo pa les xeres de correición.',
 	'tux-editor-clear-translated' => 'Anubrir traducíos',
 	'tux-editor-proofreading-mode' => 'Correxir',
 	'tux-editor-translate-mode' => 'Llista',
-	'tux-editor-proofreading-hide-own-translations' => 'Anubrir les mios traducciones',
-	'tux-editor-proofreading-show-own-translations' => 'Amosar les mios traducciones',
+	'tux-editor-proofreading-hide-own-translations' => 'Anubrir les mios traducciones', # Fuzzy
+	'tux-editor-proofreading-show-own-translations' => 'Amosar les mios traducciones', # Fuzzy
+	'tux-editor-page-mode' => 'Páxina',
 	'tux-editor-outdated-warning' => 'Esta traducción pue necesitar un anovamientu.',
 	'tux-editor-outdated-warning-diff-link' => 'Amosar les diferencies',
 	'tux-editor-doc-editor-placeholder' => 'Documentación del mensaxe',
@@ -6592,8 +6594,8 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-editor-clear-translated' => 'Übersetzte verstecken',
 	'tux-editor-proofreading-mode' => 'Korrekturlesen',
 	'tux-editor-translate-mode' => 'Liste',
-	'tux-editor-proofreading-hide-own-translations' => 'Meine Übersetzungen verstecken',
-	'tux-editor-proofreading-show-own-translations' => 'Meine Übersetzungen anzeigen',
+	'tux-editor-proofreading-hide-own-translations' => 'Deine Übersetzungen verstecken',
+	'tux-editor-proofreading-show-own-translations' => 'Deine Übersetzungen anzeigen',
 	'tux-editor-page-mode' => 'Seite',
 	'tux-editor-outdated-warning' => 'Diese Übersetzung muss eventuell aktualisiert werden.',
 	'tux-editor-outdated-warning-diff-link' => 'Unterschiede zeigen',
@@ -6606,6 +6608,15 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-message-filter-result' => '{{PLURAL:$1|Ein Ergebnis|$1 Ergebnisse}} für „$2“ gefunden',
 	'tux-message-filter-advanced-button' => 'Erweiterte Suche',
 	'tux-message-filter-optional-messages-label' => 'Optionale Nachrichten',
+	'tux-empty-list-all' => 'Diese Nachrichtengruppe ist leer',
+	'tux-empty-list-all-guide' => 'Wähle eine andere Nachrichtengruppe zum Übersetzen aus',
+	'tux-empty-list-translated' => 'Keine übersetzten Nachrichten',
+	'tux-empty-list-translated-guide' => 'Du kannst beim Übersetzen helfen',
+	'tux-empty-list-translated-action' => 'Übersetzen',
+	'tux-empty-list-other' => 'Es ist nichts zum Übersetzen vorhanden',
+	'tux-empty-list-other-guide' => 'Du kannst beim Überprüfen vorhandener Übersetzungen helfen',
+	'tux-empty-list-other-action' => 'Übersetzungen korrekturlesen',
+	'tux-empty-list-other-link' => 'Alle Nachrichten anzeigen',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -7175,8 +7186,8 @@ Jo nejwužytnjej za korigěrowańske nadawki.',
 	'tux-editor-clear-translated' => 'Pśełožki schowaś',
 	'tux-editor-proofreading-mode' => 'Korigěrowaś',
 	'tux-editor-translate-mode' => 'Lisćina',
-	'tux-editor-proofreading-hide-own-translations' => 'Móje pśełožki schowaś',
-	'tux-editor-proofreading-show-own-translations' => 'Móje pśełožki pokazaś',
+	'tux-editor-proofreading-hide-own-translations' => 'Móje pśełožki schowaś', # Fuzzy
+	'tux-editor-proofreading-show-own-translations' => 'Móje pśełožki pokazaś', # Fuzzy
 	'tux-editor-page-mode' => 'Bok',
 	'tux-editor-outdated-warning' => 'Toś ten pśełožk musy se snaź aktualizěrowaś.',
 	'tux-editor-outdated-warning-diff-link' => 'Rozdźěle pokazaś',
@@ -7606,6 +7617,16 @@ $messages['el'] = array(
 	'tux-message-filter-placeholder' => 'Κατάλογος φίλτρου',
 	'tux-message-filter-result' => '$1   {{PLURAL:$1|αποτέλεσμα βρέθηκε|αποτελέσματα βρέθηκαν}} για " $2 "',
 	'tux-message-filter-advanced-button' => 'Σύνθετη αναζήτηση',
+);
+
+/** British English (British English)
+ * @author Lloffiwr
+ */
+$messages['en-gb'] = array(
+	'supportedlanguages-summary' => "This page shows a list of all languages supported by {{SITENAME}},
+together with the names of the translators working on that language.
+A translator's name appears larger, the more edits the translator has contributed.
+The colour of an underline indicates how recently a translator has been active here.",
 );
 
 /** Esperanto (Esperanto)
@@ -10057,6 +10078,9 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-editor-clear-translated' => 'Masquer la traduction',
 	'tux-editor-proofreading-mode' => 'Relecture',
 	'tux-editor-translate-mode' => 'Liste',
+	'tux-editor-proofreading-hide-own-translations' => 'Masquer vos traductions',
+	'tux-editor-proofreading-show-own-translations' => 'Afficher vos traductions',
+	'tux-editor-page-mode' => 'Page',
 	'tux-editor-outdated-warning' => 'Cette traduction peut nécessiter une mise à jour.',
 	'tux-editor-outdated-warning-diff-link' => 'Afficher les différences',
 	'tux-editor-doc-editor-placeholder' => 'Documentation du message',
@@ -10068,6 +10092,15 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-message-filter-result' => '$1 {{PLURAL:$1|résultat trouvé|résultats trouvés}} pour "$2"',
 	'tux-message-filter-advanced-button' => 'Recherche avancée',
 	'tux-message-filter-optional-messages-label' => 'Messages facultatifs',
+	'tux-empty-list-all' => 'Ce groupe de messages est vide',
+	'tux-empty-list-all-guide' => 'Sélectionner un groupe de message différent à traduire',
+	'tux-empty-list-translated' => 'Aucun message traduit',
+	'tux-empty-list-translated-guide' => 'Vous pouvez aider à traduire',
+	'tux-empty-list-translated-action' => 'Traduire',
+	'tux-empty-list-other' => 'Rien à traduire',
+	'tux-empty-list-other-guide' => 'Vous pouvez aider à relire les traductions existantes',
+	'tux-empty-list-other-action' => 'Traductions corrigées',
+	'tux-empty-list-other-link' => 'Afficher tous les messages',
 );
 
 /** Cajun French (français cadien)
@@ -10979,8 +11012,8 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-editor-clear-translated' => 'Agochar as traducidas',
 	'tux-editor-proofreading-mode' => 'Corrixir',
 	'tux-editor-translate-mode' => 'Lista',
-	'tux-editor-proofreading-hide-own-translations' => 'Agochar as miñas traducións',
-	'tux-editor-proofreading-show-own-translations' => 'Mostrar as miñas traducións',
+	'tux-editor-proofreading-hide-own-translations' => 'Agochar as miñas traducións', # Fuzzy
+	'tux-editor-proofreading-show-own-translations' => 'Mostrar as miñas traducións', # Fuzzy
 	'tux-editor-page-mode' => 'Páxina',
 	'tux-editor-outdated-warning' => 'Esta tradución pode necesitar unha actualización.',
 	'tux-editor-outdated-warning-diff-link' => 'Mostrar as diferenzas',
@@ -11860,6 +11893,7 @@ $1',
 	'log-name-translationreview' => 'יומן סקירת תרגומים',
 	'log-description-translationreview' => 'יומן של כל הסקירות של תרגומים ושל קבוצות תרגומים.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|אישר|אישרה}} את התרגום $3',
+	'logentry-translationreview-group' => '$1 {{GENDER:$2|שינה|שינתה}} את המצב של התרגומים של $3 ל{{GRAMMAR|תחילית|$4}} מ$6 ל$7',
 	'translate-workflow-state-' => '(לא מוגדר)',
 	'translate-workflowstatus' => 'מצב: $1',
 	'translate-workflow-set-do' => 'הגדרה',
@@ -11922,6 +11956,9 @@ $1',
 	'tux-editor-clear-translated' => 'הסתרת הודעות מתורגמות',
 	'tux-editor-proofreading-mode' => 'הגהה',
 	'tux-editor-translate-mode' => 'רשימה',
+	'tux-editor-proofreading-hide-own-translations' => 'הסתרת התרגומים שלי', # Fuzzy
+	'tux-editor-proofreading-show-own-translations' => 'הצגת התרגומים שלי', # Fuzzy
+	'tux-editor-page-mode' => 'דף',
 	'tux-editor-outdated-warning' => 'ייתכן שצריך לעדכן את התרגום הזה.',
 	'tux-editor-outdated-warning-diff-link' => 'הצגת שינויים',
 	'tux-editor-doc-editor-placeholder' => 'תיעוד הודעה',
@@ -12635,8 +12672,8 @@ Je najwužitnišo za korigowanske nadawki.',
 	'tux-editor-clear-translated' => 'Přełožki schować',
 	'tux-editor-proofreading-mode' => 'Korigować',
 	'tux-editor-translate-mode' => 'Lisćina',
-	'tux-editor-proofreading-hide-own-translations' => 'Moje přełožki schować',
-	'tux-editor-proofreading-show-own-translations' => 'Moje přełožki pokazać',
+	'tux-editor-proofreading-hide-own-translations' => 'Moje přełožki schować', # Fuzzy
+	'tux-editor-proofreading-show-own-translations' => 'Moje přełožki pokazać', # Fuzzy
 	'tux-editor-page-mode' => 'Strona',
 	'tux-editor-outdated-warning' => 'Tutón přełožk dyrbi so snano aktualizować.',
 	'tux-editor-outdated-warning-diff-link' => 'Rozdźěle pokazać',
@@ -14425,7 +14462,7 @@ Dettagli: $1',
 	'log-name-translationreview' => 'Revisioni delle traduzioni',
 	'log-description-translationreview' => 'Registro di tutte le revisioni delle traduzioni e dei gruppi di messaggi.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|ha accettato}} la traduzione di $3',
-	'logentry-translationreview-group' => '$1 {{GENDER:$2|ha cambiato}} lo stato delle traduzioni in $4 di $3 da $5 a $6', # Fuzzy
+	'logentry-translationreview-group' => '$1 {{GENDER:$2|ha cambiato}} lo stato delle traduzioni in $4 di $3 da $6 a $7',
 	'translate-workflow-state-' => '(disattivato)',
 	'translate-workflowstatus' => 'Stato: $1',
 	'translate-workflow-set-do' => 'Modifica',
@@ -14488,6 +14525,9 @@ Utile per l'attività di correzione.",
 	'tux-editor-clear-translated' => 'Nascondi tradotti',
 	'tux-editor-proofreading-mode' => 'Correggi',
 	'tux-editor-translate-mode' => 'Elenca',
+	'tux-editor-proofreading-hide-own-translations' => 'Nascondi le mie traduzioni', # Fuzzy
+	'tux-editor-proofreading-show-own-translations' => 'Mostra le mie traduzioni', # Fuzzy
+	'tux-editor-page-mode' => 'Pagina',
 	'tux-editor-outdated-warning' => 'Questa traduzione richiede di essere aggiornata.',
 	'tux-editor-outdated-warning-diff-link' => 'Mostra le differenze',
 	'tux-editor-doc-editor-placeholder' => 'Documentazione del messaggio',
@@ -14907,6 +14947,15 @@ $1',
 	'tux-message-filter-result' => '「$2」の検索結果 $1 {{PLURAL:$1|件}}',
 	'tux-message-filter-advanced-button' => '高度な検索',
 	'tux-message-filter-optional-messages-label' => '省略可能なメッセージ',
+	'tux-empty-list-all' => 'このメッセージ群は空です',
+	'tux-empty-list-all-guide' => '翻訳する別のメッセージ群を選択してください',
+	'tux-empty-list-translated' => '翻訳済みメッセージはありません',
+	'tux-empty-list-translated-guide' => '翻訳で貢献することもできます',
+	'tux-empty-list-translated-action' => '翻訳',
+	'tux-empty-list-other' => '翻訳できるものはありません',
+	'tux-empty-list-other-guide' => '既存の翻訳の査読で貢献することもできます',
+	'tux-empty-list-other-action' => '翻訳を校正',
+	'tux-empty-list-other-link' => '全メッセージを表示',
 );
 
 /** Jamaican Creole English (Patois)
@@ -16555,8 +16604,8 @@ $1',
 	'tux-editor-clear-translated' => '번역됨 숨기기',
 	'tux-editor-proofreading-mode' => '교정하기',
 	'tux-editor-translate-mode' => '목록',
-	'tux-editor-proofreading-hide-own-translations' => '내 번역 숨기기',
-	'tux-editor-proofreading-show-own-translations' => '내 번역 보이기',
+	'tux-editor-proofreading-hide-own-translations' => '내 번역 숨기기', # Fuzzy
+	'tux-editor-proofreading-show-own-translations' => '내 번역 보이기', # Fuzzy
 	'tux-editor-outdated-warning' => '이 번역은 업데이트해야 합니다.',
 	'tux-editor-outdated-warning-diff-link' => '차이 보기',
 	'tux-editor-doc-editor-placeholder' => '메시지 설명문',
@@ -17479,8 +17528,8 @@ Dëst ass ganz nëtzlech fir d'Iwwerliesen.",
 	'tux-editor-clear-translated' => 'Déi Iwwersate verstoppen',
 	'tux-editor-proofreading-mode' => 'Iwwerliesen',
 	'tux-editor-translate-mode' => 'Lëscht',
-	'tux-editor-proofreading-hide-own-translations' => 'Meng Iwwersetzunge verstoppen',
-	'tux-editor-proofreading-show-own-translations' => 'Meng Iwwersetzunge weisen',
+	'tux-editor-proofreading-hide-own-translations' => 'Meng Iwwersetzunge verstoppen', # Fuzzy
+	'tux-editor-proofreading-show-own-translations' => 'Meng Iwwersetzunge weisen', # Fuzzy
 	'tux-editor-page-mode' => 'Säit',
 	'tux-editor-outdated-warning' => 'Dës Iwwersetzung muss eventuell aktualiséiert ginn.',
 	'tux-editor-outdated-warning-diff-link' => 'Ënnerscheeder weisen',
@@ -18561,6 +18610,15 @@ $1',
 	'tux-message-filter-result' => 'Пронајдов $1 {{PLURAL:$1|резултат|резултати}} за „$2“',
 	'tux-message-filter-advanced-button' => 'Напредно пребарување',
 	'tux-message-filter-optional-messages-label' => 'Незадолжителни пораки',
+	'tux-empty-list-all' => 'Оваа група пораки е празна',
+	'tux-empty-list-all-guide' => 'Изберете друга група пораки за преведување',
+	'tux-empty-list-translated' => 'Нема преведени пораки',
+	'tux-empty-list-translated-guide' => 'Можете да помогнете со преводите',
+	'tux-empty-list-translated-action' => 'Преведи',
+	'tux-empty-list-other' => 'Нема ништо за преведување',
+	'tux-empty-list-other-guide' => 'Можете да помогнете со проверката на постоечките преводи',
+	'tux-empty-list-other-action' => 'Провери преводи',
+	'tux-empty-list-other-link' => 'Прик. сите пораки',
 );
 
 /** Malayalam (മലയാളം)
@@ -19358,6 +19416,9 @@ Paling berguna dengan tugas menyemak (membaca pruf).',
 	'tux-editor-clear-translated' => 'Sorokkan terjemahan',
 	'tux-editor-proofreading-mode' => 'Semak',
 	'tux-editor-translate-mode' => 'Senarai',
+	'tux-editor-proofreading-hide-own-translations' => 'Sorokkan terjemahan saya', # Fuzzy
+	'tux-editor-proofreading-show-own-translations' => 'Paparkan terjemahan saya', # Fuzzy
+	'tux-editor-page-mode' => 'Halaman',
 	'tux-editor-outdated-warning' => 'Terjemahan ini mungkin perlu dikemaskinikan.',
 	'tux-editor-outdated-warning-diff-link' => 'Tunjukkan perbezaan',
 	'tux-editor-doc-editor-placeholder' => 'Dokumentasi mesej',
@@ -30563,8 +30624,8 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-editor-clear-translated' => 'Ẩn thông điệp đã dịch',
 	'tux-editor-proofreading-mode' => 'Hiệu đính',
 	'tux-editor-translate-mode' => 'Danh sách',
-	'tux-editor-proofreading-hide-own-translations' => 'Ẩn các bản dịch của tôi',
-	'tux-editor-proofreading-show-own-translations' => 'Hiện các bản dịch của tôi',
+	'tux-editor-proofreading-hide-own-translations' => 'Ẩn các bản dịch của tôi', # Fuzzy
+	'tux-editor-proofreading-show-own-translations' => 'Hiện các bản dịch của tôi', # Fuzzy
 	'tux-editor-outdated-warning' => 'Bản dịch này có thể cần được cập nhật.',
 	'tux-editor-outdated-warning-diff-link' => 'Trình bày khác biệt',
 	'tux-editor-doc-editor-placeholder' => 'Tài liệu về thông điệp',
@@ -32072,7 +32133,7 @@ $1',
 	'translate-dynagroup-lastc' => '{{GENDER:$1|$1}}作出最近更改（$2）',
 	'translate-gethelp' => '說明',
 	'translate-msggroupselector-projects' => '訊息組',
-	'translate-msggroupselector-search-placeholder' => '搜索群組',
+	'translate-msggroupselector-search-placeholder' => '搜尋訊息組',
 	'translate-msggroupselector-search-all' => '所有',
 	'translate-msggroupselector-search-recent' => '最近',
 	'translate-msggroupselector-view-subprojects' => '$1個{{PLURAL:$1|分組|分組}}',
@@ -32112,8 +32173,9 @@ $1',
 	'tux-editor-clear-translated' => '隱藏已翻譯',
 	'tux-editor-proofreading-mode' => '校對',
 	'tux-editor-translate-mode' => '列表',
-	'tux-editor-proofreading-hide-own-translations' => '隱藏我的翻譯',
-	'tux-editor-proofreading-show-own-translations' => '顯示我的翻譯',
+	'tux-editor-proofreading-hide-own-translations' => '隱藏您的翻譯',
+	'tux-editor-proofreading-show-own-translations' => '顯示您的翻譯',
+	'tux-editor-page-mode' => '頁面',
 	'tux-editor-outdated-warning' => '此翻譯可能要更新。',
 	'tux-editor-outdated-warning-diff-link' => '顯示差異',
 	'tux-editor-doc-editor-placeholder' => '訊息說明文件',
@@ -32125,6 +32187,15 @@ $1',
 	'tux-message-filter-result' => '找到$1個結果含「$2」',
 	'tux-message-filter-advanced-button' => '進階搜尋',
 	'tux-message-filter-optional-messages-label' => '可選消息',
+	'tux-empty-list-all' => '此訊息組是空',
+	'tux-empty-list-all-guide' => '選擇其他訊息組翻譯',
+	'tux-empty-list-translated' => '沒有已翻譯的訊息',
+	'tux-empty-list-translated-guide' => '您可以幫助翻譯',
+	'tux-empty-list-translated-action' => '翻譯',
+	'tux-empty-list-other' => '沒有要翻譯的內容',
+	'tux-empty-list-other-guide' => '幫助校對現有的翻譯',
+	'tux-empty-list-other-action' => '校對翻譯',
+	'tux-empty-list-other-link' => '顯示所有訊息',
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)
