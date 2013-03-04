@@ -73,15 +73,15 @@
 }
 
 .tux-proofread-action:hover {
-	background-position-y:  -31px;
+	background-position: right -31px;
 }
 
 .tux-proofread-action.proofread {
-	background-position-y:  -62px;
+	background-position: right -62px;
 }
 
 .tux-proofread-action.proofread:hover {
-	background-position-y:  -93px;
+	background-position: right -93px;
 }
 
 .tux-proofread-edit {
