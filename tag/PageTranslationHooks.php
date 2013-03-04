@@ -116,14 +116,6 @@ class PageTranslationHooks {
 		// Finally we know the title and can construct a Translatable page
 		$page = TranslatablePage::newFromTitle( $group->getTitle() );
 
-		// Add a tracking mark
-		if ( $revision !== null ) {
-			/**
-			 * @var Revision $revision
-			 */
-			self::addSectionTag( $title, $revision->getId(), $page->getMarkedTag() );
-		}
-
 		// Update the target translation page
 		if ( !$handle->isDoc() ) {
 			$code = $handle->getCode();
