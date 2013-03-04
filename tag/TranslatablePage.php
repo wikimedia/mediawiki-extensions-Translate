@@ -79,7 +79,7 @@ class TranslatablePage {
 	/**
 	 * Constructs a translatable page from given revision.
 	 * The revision must belong to the title given or unspecified
-	 * behaviour will happen.
+	 * behavior will happen.
 	 *
 	 * @param Title $title
 	 * @param integer $revision Revision number

@@ -9,7 +9,7 @@
  */
 
 /**
- * This class implements default behaviour for file based message groups.
+ * This class implements default behavior for file based message groups.
  *
  * File based message groups are primary type of groups at translatewiki.net,
  * while other projects may use mainly page translation message groups, or

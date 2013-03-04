@@ -148,7 +148,7 @@ class TranslateHooks {
 			// Disable action=delete
 			$wgHooks['ArticleConfirmDelete'][] = 'PageTranslationHooks::disableDelete';
 
-			// Replace subpage logic behaviour
+			// Replace subpage logic behavior
 			$wgHooks['SkinSubPageSubtitle'][] = 'PageTranslationHooks::replaceSubtitle';
 
 			// Show page source code when export tab is opened
