@@ -309,8 +309,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 				$last = round( $last / $day );
 				$attribs['title'] = $this->msg( 'supportedlanguages-activity', $username )->numParams( $count, $last )->text();
 				$last = max( 1, min( $period, $last ) );
-				$styles['border-bottom'] = '3px solid #' . $this->getActivityColour( $period - $last, $period );
-				# $styles['color'] = '#' . $this->getBackgroundColour( $period - $last, $period );
+				$styles['border-bottom'] = '3px solid #' . $this->getActivityColor( $period - $last, $period );
 			} else {
 				$enc = "<del>$enc</del>";
 			}
@@ -365,7 +364,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 	}
 
 	/// FIXME: copied from Special:LanguageStats
-	protected function getActivityColour( $subset, $total ) {
+	protected function getActivityColor( $subset, $total ) {
 		$v = @round( 255 * $subset / $total );
 
 		if ( $v < 128 ) {
@@ -414,7 +413,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		for ( $i = 0; $i <= $period; $i += 30 ) {
 			$iFormatted = htmlspecialchars( $this->getLanguage()->formatNum( $i ) );
-			$legend .= '<span style="background-color:#' . $this->getActivityColour( $period - $i, $period ) . "\"> $iFormatted</span>";
+			$legend .= '<span style="background-color:#' . $this->getActivityColor( $period - $i, $period ) . "\"> $iFormatted</span>";
 		}
 		return $legend;
 	}

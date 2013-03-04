@@ -267,7 +267,7 @@ You are encouraged to review messages through [[Special:Translate|{{int:translat
 	'supportedlanguages-summary' => 'This page shows a list of all languages supported by {{SITENAME}},
 together with the names of the translators working on that language.
 A translator\'s name appears larger, the more edits the translator has contributed.
-The colour of an underline indicates how recently a translator has been active here.',
+The color of an underline indicates how recently a translator has been active here.',
 	'supportedlanguages-colorlegend' => 'Legend for the color: Last translation $1 days ago.',
 	'supportedlanguages-localsummary' => '',
 	'supportedlanguages-portallink' => '[$1] $2 - $3',
@@ -760,7 +760,7 @@ See also:
 	'supportedlanguages' => 'Title of [[Special:SupportedLanguages]]',
 	'supportedlanguages-summary' => 'Header for [[Special:SupportedLanguages]] page.',
 	'supportedlanguages-colorlegend' => 'Used on [[Special:SupportedLanguages]]. Parameters:
-* $1 is not a single number, but a series of numbers with different background colours, serving as a legend to match each colour with a number of days passed since the last contributed translation. See [[Special:SupportedLanguages]] to see the final rendering.',
+* $1 is not a single number, but a series of numbers with different background colors, serving as a legend to match each color with a number of days passed since the last contributed translation. See [[Special:SupportedLanguages]] to see the final rendering.',
 	'supportedlanguages-localsummary' => '{{notranslate}}
 Place any site specific message here.',
 	'supportedlanguages-portallink' => '{{optional}}',

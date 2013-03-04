@@ -62,7 +62,7 @@ class StatsTable {
 		return $element;
 	}
 
-	public function getBackgroundColour( $subset, $total, $fuzzy = false ) {
+	public function getBackgroundColor( $subset, $total, $fuzzy = false ) {
 		$v = @round( 255 * $subset / $total );
 
 		if ( $fuzzy ) {
@@ -186,11 +186,11 @@ class StatsTable {
 		}
 
 		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $transRatio, 'floor' ),
-			$this->getBackgroundColour( $translated, $total ),
+			$this->getBackgroundColor( $translated, $total ),
 			sprintf( '%1.5f', $transRatio ) );
 
 		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzyRatio, 'ceil' ),
-			$this->getBackgroundColour( $fuzzy, $total, true ),
+			$this->getBackgroundColor( $fuzzy, $total, true ),
 			sprintf( '%1.5f', $fuzzyRatio ) );
 		return $out;
 	}
