@@ -223,7 +223,6 @@ class TranslationHelpers {
 			'other-languages' => array( $this, 'getOtherLanguagesBox' ),
 			'translation-memory' => array( $this, 'getSuggestionBox' ),
 			'translation-diff' => array( $this, 'getPageDiff' ),
-			'page-translation' => array( $this, 'getTranslationPageDiff' ),
 			'separator' => array( $this, 'getSeparatorBox' ),
 			'documentation' => array( $this, 'getDocumentationBox' ),
 			'definition' => array( $this, 'getDefinitionBox' ),
@@ -1027,7 +1026,7 @@ class TranslationHelpers {
 		$title = $this->handle->getTitle();
 		$key = $this->handle->getKey();
 
-		if ( $group instanceof WikiPageMessageGroup || !$title->exists() ) {
+		if ( !$title->exists() ) {
 			return null;
 		}
 
@@ -1060,63 +1059,6 @@ class TranslationHelpers {
 		}
 		$oldtext = $oldrev->getText();
 		$newtext = Revision::newFromTitle( $definitionTitle, $latestRevision )->getText();
-
-		if ( $oldtext === $newtext ) {
-			return null;
-		}
-
-		$diff = new DifferenceEngine;
-		if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
-			$diff->setTextLanguage( $this->group->getSourceLanguage() );
-		}
-		$diff->setText( $oldtext, $newtext );
-		$diff->setReducedLineNumbers();
-		$diff->showDiffStyle();
-
-		return $diff->getDiff(
-			wfMessage( 'tpt-diff-old' )->escaped(),
-			wfMessage( 'tpt-diff-new' )->escaped()
-		);
-	}
-
-	protected function getTranslationPageDiff() {
-
-		global $wgEnablePageTranslation;
-
-		if ( !$wgEnablePageTranslation ) {
-			return null;
-		}
-
-		$this->mustBeKnownMessage();
-		if ( !$this->group instanceof WikiPageMessageGroup ) {
-			return null;
-		}
-
-		// Shortcuts
-		$code = $this->handle->getCode();
-		$key = $this->handle->getKey();
-
-		// @todo Encapsulate somewhere
-		$page = TranslatablePage::newFromTitle( $this->group->getTitle() );
-		$rev = $page->getTransRev( "$key/$code" );
-		$latest = $page->getMarkedTag();
-		if ( $rev === $latest ) {
-			return null;
-		}
-
-		$oldpage = TranslatablePage::newFromRevision( $this->group->getTitle(), $rev );
-		$oldtext = $newtext = null;
-		foreach ( $oldpage->getParse()->getSectionsForSave() as $section ) {
-			if ( $this->group->getTitle()->getPrefixedDBKey() . '/' . $section->id === $key ) {
-				$oldtext = $section->getTextForTrans();
-			}
-		}
-
-		foreach ( $page->getParse()->getSectionsForSave() as $section ) {
-			if ( $this->group->getTitle()->getPrefixedDBKey() . '/' . $section->id === $key ) {
-				$newtext = $section->getTextForTrans();
-			}
-		}
 
 		if ( $oldtext === $newtext ) {
 			return null;
