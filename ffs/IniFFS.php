@@ -102,4 +102,8 @@ class IniFFS extends SimpleFFS {
 		$header .= '[' . $collection->getLanguage() . "]\n";
 		return $header . $output;
 	}
+
+	public function supportsFuzzy() {
+		return 'write';
+	}
 }

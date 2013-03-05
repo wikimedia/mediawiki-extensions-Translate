@@ -630,4 +630,9 @@ PHP;
 
 		return $splitPlurals;
 	}
+
+	public function supportsFuzzy() {
+		return 'yes';
+	}
+
 }
