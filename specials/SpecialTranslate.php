@@ -750,8 +750,6 @@ class SpecialTranslate extends SpecialPage {
 	 * @since 2012-02-10
 	 */
 	static function tabify( Skin $skin, array &$tabs ) {
-		global $wgRequest, $wgOut;
-
 		$title = $skin->getTitle();
 		list( $alias, $sub ) = SpecialPageFactory::resolveAlias( $title->getText() );
 
@@ -760,7 +758,7 @@ class SpecialTranslate extends SpecialPage {
 			return true;
 		}
 
-		$wgOut->addModules( 'ext.translate.tabgroup' );
+		$skin->getOutput()->addModules( 'ext.translate.tabgroup' );
 
 		// Extract subpage syntax, otherwise the values are not passed forward
 		$params = array();
@@ -772,11 +770,13 @@ class SpecialTranslate extends SpecialPage {
 				$params['language'] = $sub;
 			}
 		}
+
+		$request = $skin->getRequest();
 		// However, query string params take precedence
-		$params = $wgRequest->getQueryValues() + $params;
+		$params = $request->getQueryValues() + $params;
 		asort( $params );
 
-		$taction = $wgRequest->getVal( 'taction', 'translate' );
+		$taction = $request->getVal( 'taction', 'translate' );
 
 		$translate = SpecialPage::getTitleFor( 'Translate' );
 		$languagestats = SpecialPage::getTitleFor( 'LanguageStats' );
@@ -797,11 +797,14 @@ class SpecialTranslate extends SpecialPage {
 			'href' => $translate->getLocalUrl( array( 'taction' => 'translate' ) + $params ),
 			'class' => $alias === 'Translate' && $taction === 'translate' ? 'selected' : '',
 		);
-		$tabs['namespaces']['proofread'] = $data = array(
-			'text' => wfMessage( 'translate-taction-proofread' )->text(),
-			'href' => $translate->getLocalUrl( array( 'taction' => 'proofread' ) + $params ),
-			'class' => $alias === 'Translate' && $taction === 'proofread' ? 'selected' : '',
-		);
+
+		if ( !self::isBeta( $request ) ) {
+			$tabs['namespaces']['proofread'] = $data = array(
+				'text' => wfMessage( 'translate-taction-proofread' )->text(),
+				'href' => $translate->getLocalUrl( array( 'taction' => 'proofread' ) + $params ),
+				'class' => $alias === 'Translate' && $taction === 'proofread' ? 'selected' : '',
+			);
+		}
 
 		// Limit only applies to the above
 		unset( $params['limit'] );
