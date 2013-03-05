@@ -43,7 +43,7 @@
 	top: -10px;
 }
 
-.tux-proofread-status.outdated {
+.tux-proofread-status.outdated, .tux-proofread-status.fuzzy {
 	/* @embed */
 	background: url(../images/outdated.png) left center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/outdated.svg);
