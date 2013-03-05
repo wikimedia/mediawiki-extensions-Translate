@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoJM5Y9g",
+        "filename": "resources/js/ext.translate.editor.helpers.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-05T04:31:33Z",
+      "side": 0,
+      "message": "Since we are removing this message, we need to remove from other places too. from Translate.php and from Translate.i18n.php(en and qqq sections)",
+      "revId": "145b2f659219cbbed5c48d7db9b33288bdbcf109",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
