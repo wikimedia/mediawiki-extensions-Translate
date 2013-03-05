@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoPOmrxE",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-05T05:25:55Z",
+      "side": 1,
+      "message": "Instead of checking length, compare the original translation and the text in the text area. Your logic fails when I changed \"ab\" to \"cd\".\n\nif ( translateEditor.message.translation \u003d\u003d\u003d $textArea.val() ) {\n        translateEditor.dirty \u003d false;\n}",
+      "revId": "bf98b8a72252cd184e0faca7a840cf841b0e4a7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
