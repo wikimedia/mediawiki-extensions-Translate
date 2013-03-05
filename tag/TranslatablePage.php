@@ -728,8 +728,7 @@ class TranslatablePage {
 		}
 
 		// Content language is always up-to-date
-		global $wgContLang;
-		$stats[$wgContLang->getCode()] = 1.00;
+		$stats[$this->getSourceLanguageCode()] = 1.00;
 
 		return $stats;
 	}
