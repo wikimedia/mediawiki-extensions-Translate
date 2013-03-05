@@ -49,7 +49,6 @@ class RenderJob extends Job {
 
 		$group = $page->getMessageGroup();
 		$collection = $group->initCollection( $code );
-		$collection->loadTranslations( DB_MASTER );
 
 		$text = $page->getParse()->getTranslationPageText( $collection );
 
