@@ -71,7 +71,12 @@ class SpecialSearchTranslations extends SpecialPage {
 			return;
 		}
 
-		$resultset = $this->doSearch( $server->getSolarium(), $queryString );
+		try {
+			$resultset = $this->doSearch( $server->getSolarium(), $queryString );
+		} catch ( Solarium_Client_HttpException $e ) {
+			error_log( 'Translate: Solr search server unavailable' );
+			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
+		}
 
 		// Part 1: facets
 		$facets = '';
