@@ -492,6 +492,8 @@ Most useful for the proofreading tasks.',
 	'tux-empty-list-other-guide' => 'You can help reviewing existing translations',
 	'tux-empty-list-other-action' => 'Proofread translations',
 	'tux-empty-list-other-link' => 'Show all messages',
+	'tux-editor-close-tooltip' => 'Close',
+	'tux-editor-expand-tooltip' => 'Expand',
 
 );
 
@@ -1016,6 +1018,8 @@ Pressing the button goes to the page mode.
 	'tux-empty-list-other-action' => '{{Tuxspec|7}} This is a action button.',
 	'tux-empty-list-other-link' => '{{Tuxspec|7}} This is a link to change message filter.
 {{Identical|Show all messages}}',
+	'tux-editor-close-tooltip' => 'Tooltip for close icon of translate editor',
+	'tux-editor-expand-tooltip' => 'Tooltip for expand icon of translate editor',
 );
 
 /** Afrikaans (Afrikaans)

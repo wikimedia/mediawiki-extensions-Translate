@@ -227,6 +227,7 @@
 
 			$closeIcon = $( '<span>' )
 				.addClass( 'one column close' )
+				.attr( 'title', mw.msg( 'tux-editor-close-tooltip' ) )
 				.on( 'click', function () {
 					translateEditor.hide();
 				} );
@@ -235,6 +236,7 @@
 				// Initially the editor column is contracted,
 				// so show the expand button first
 				.addClass( 'one column editor-info-toggle editor-expand' )
+				.attr( 'title', mw.msg( 'tux-editor-expand-tooltip' ) )
 				.on( 'click', function () {
 					translateEditor.infoToggle( $( this ) );
 				} );
