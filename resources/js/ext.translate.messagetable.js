@@ -269,7 +269,7 @@
 		search: function ( query ) {
 			var resultCount = 0,
 				$result,
-				matcher = new RegExp( '\\b' + escapeRegex( query ), 'i' ),
+				matcher = new RegExp( '(^|\\s)' + escapeRegex( query ), 'gi' ),
 				itemsClass = {
 					proofread: '.tux-message-proofread',
 					page: '.tux-message-proofread',
