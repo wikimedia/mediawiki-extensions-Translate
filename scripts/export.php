@@ -233,15 +233,13 @@ foreach ( $groups as $groupId => $group ) {
 			$definitionFile = str_replace( $wgTranslateGroupRoot, $options['ppgettext'], $path );
 		}
 
-		$translatebleLanguages = $group->getTranslatableLanguages();
+		$whitelist = $group->getTranslatableLanguages();
 
 		foreach ( $langs as $lang ) {
-			// Do not export languges that are blacklisted (or not whitelisted). As
-			// $translatebleLanguages can be null, only test if $translatebleLanguages
-			// is an array.
-			if ( is_array( $translatebleLanguages ) &&
-				!in_array( $lang, $translatebleLanguages )
-			) {
+			// Do not export languges that are blacklisted (or not whitelisted).
+			// Also check that whitelist is not null, which means that all
+			// languages are allowed for translation and export.
+			if ( is_array( $whitelist ) && !isset( $whitelist[$lang] ) ) {
 				continue;
 			}
 
