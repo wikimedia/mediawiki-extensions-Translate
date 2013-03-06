@@ -452,7 +452,7 @@ $wgResourceModules['ext.translate.special.supportedlanguages'] = array(
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.searchtranslations'] = array(
-	'scripts' => 'resources/js/ext.translate.search.js',
+	'scripts' => 'resources/js/ext.translate.special.searchtranslations.js',
 	'styles' => 'resources/css/ext.translate.special.searchtranslations.css',
 	'dependencies' => array( 'ext.translate.editor' ),
 	'position' => 'top',
