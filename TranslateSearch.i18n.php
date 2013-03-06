@@ -53,13 +53,15 @@ $messages['qqq'] = array(
 {{Identical|Orphan}}",
 	'tux-sst-nosolr-title' => 'Used as title of error page.
 
-The body of error message is {{msg-mw|Tux-sst-nosolr-body}}.',
+The body of error message is {{msg-mw|Tux-sst-nosolr-body}}.
+{{Identical|Search unavailable}}',
 	'tux-sst-nosolr-body' => 'Used as error message.
 
 The page title for this message is {{msg-mw|Tux-sst-nosolr-title}}.',
 	'tux-sst-solr-offline-title' => 'Used as title of error page.
 
-The body of error message is {{msg-mw|Tux-sst-solr-offline-body}}.',
+The body of error message is {{msg-mw|Tux-sst-solr-offline-body}}.
+{{Identical|Search unavailable}}',
 	'tux-sst-solr-offline-body' => 'Used as error message.
 
 The page title for this message is {{msg-mw|tux-sst-solr-offline-title}}.',
@@ -127,6 +129,8 @@ $messages['de'] = array(
 	'tux-sst-facet-orphan' => '(verwaist)',
 	'tux-sst-nosolr-title' => 'Suche nicht verfügbar',
 	'tux-sst-nosolr-body' => 'Dieses Wiki hat keinen Übersetzungssuchservice.',
+	'tux-sst-solr-offline-title' => 'Die Suche ist nicht verfügbar',
+	'tux-sst-solr-offline-body' => 'Der Suchdienst ist derzeit nicht verfügbar.',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -186,6 +190,8 @@ $messages['fr'] = array(
 	'tux-sst-facet-orphan' => '(orphelin)',
 	'tux-sst-nosolr-title' => 'Recherche indisponible',
 	'tux-sst-nosolr-body' => 'Ce wiki n’a pas de service de recherche de traduction.',
+	'tux-sst-solr-offline-title' => 'Recherche indisponible',
+	'tux-sst-solr-offline-body' => 'Le service de recherche est temporairement indisponible.',
 );
 
 /** Galician (galego)
@@ -234,6 +240,8 @@ $messages['hsb'] = array(
 	'tux-sst-facet-orphan' => '(wosyroćene)',
 	'tux-sst-nosolr-title' => 'Pytanje k dispoziciji njesteji',
 	'tux-sst-nosolr-body' => 'Tutón wiki nima słužbu za pytanje přełožkow.',
+	'tux-sst-solr-offline-title' => 'Pytanje k dispoziciji njesteji',
+	'tux-sst-solr-offline-body' => 'Pytanska słužba tuchwilu k dispoziciji njesteji.',
 );
 
 /** Italian (italiano)
@@ -266,6 +274,8 @@ $messages['ja'] = array(
 	'tux-sst-facet-orphan' => '(孤立)',
 	'tux-sst-nosolr-title' => '検索は利用できません',
 	'tux-sst-nosolr-body' => 'このウィキには翻訳の検索サービスはありません。',
+	'tux-sst-solr-offline-title' => '検索は利用できません',
+	'tux-sst-solr-offline-body' => '検索サービスは一時的に利用できません。',
 );
 
 /** Georgian (ქართული)
@@ -354,6 +364,8 @@ $messages['mk'] = array(
 	'tux-sst-facet-orphan' => '(осамена)',
 	'tux-sst-nosolr-title' => 'Пребарувањето е недостапно',
 	'tux-sst-nosolr-body' => 'Ова вики нема пребарувач.',
+	'tux-sst-solr-offline-title' => 'Пребарувањето е недостапно',
+	'tux-sst-solr-offline-body' => 'Пребарувањето е привремено недостапно.',
 );
 
 /** Malay (Bahasa Melayu)
@@ -422,7 +434,7 @@ $messages['pms'] = array(
  */
 $messages['roa-tara'] = array(
 	'searchtranslations' => 'Cirche le traduziune',
-	'tux-sst-edit' => "Cange 'u messàgge", # Fuzzy
+	'tux-sst-edit' => "Cange 'a traduzione",
 	'tux-sst-search' => 'Cirche',
 	'tux-sst-search-ph' => 'Cirche le traduziune',
 	'tux-sst-count' => "{{PLURAL:$1|'Nu resultate acchiate|$1 resultate acchiate}}",
@@ -431,6 +443,8 @@ $messages['roa-tara'] = array(
 	'tux-sst-facet-orphan' => '(orfane)',
 	'tux-sst-nosolr-title' => 'Ricerche non disponibbile',
 	'tux-sst-nosolr-body' => "Sta uicchi non g'ave 'nu servizie de ricerche pe le traduziune.",
+	'tux-sst-solr-offline-title' => 'Ricerche non disponibbile',
+	'tux-sst-solr-offline-body' => "'U servizie de ricerche jè temboraneamende indisponibbile.",
 );
 
 /** Russian (русский)

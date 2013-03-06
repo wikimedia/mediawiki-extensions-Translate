@@ -1450,7 +1450,7 @@ Aquí pode elixir, se quere, as linguas que queira ver.',
 	'translate-fs-userpage-level-2' => 'Teño un dominio moderado de',
 	'translate-fs-userpage-level-1' => 'Sei un pouco de',
 	'translate-fs-userpage-help' => 'Indique as súas competencias lingüísticas e cóntenos algo sobre vostede. Se sabe máis de cinco linguas pódeas engadir máis adiante.',
-	'translate-fs-userpage-submit' => 'Crear a miña páxina de usuario',
+	'translate-fs-userpage-submit' => 'Crear a súa páxina de usuario',
 	'translate-fs-userpage-done' => 'Ben feito! Agora xa ten unha páxina de usuario.',
 	'translate-fs-permissions-planguage' => 'Lingua principal:',
 	'translate-fs-permissions-help' => 'Agora ten que facer unha petición para pasar a formar parte do grupo de tradutores.
@@ -1977,6 +1977,7 @@ Ef þú villt ekki fá send fréttabréf þá getur þú afvirkjað möguleikann
 );
 
 /** Italian (italiano)
+ * @author Beta16
  * @author Nemo bis
  */
 $messages['it'] = array(
@@ -2008,7 +2009,7 @@ Qui puoi scegliere eventualmente quali lingue vuoi vedere.",
 	'translate-fs-userpage-level-2' => 'Ho una discreta conoscenza di',
 	'translate-fs-userpage-level-1' => "Conosco un po' di",
 	'translate-fs-userpage-help' => 'Indica le tue abilità linguistiche e dicci qualcosa di te. Se conosci più di cinque lingue puoi aggiungerne altre in seguito.',
-	'translate-fs-userpage-submit' => 'Crea la mia pagina utente',
+	'translate-fs-userpage-submit' => 'Crea la tua pagina utente',
 	'translate-fs-userpage-done' => 'Ben fatto! Ora hai una pagina utente.',
 	'translate-fs-permissions-planguage' => 'Lingua principale:',
 	'translate-fs-permissions-help' => 'Ora devi fare richiesta per essere aggiunto al gruppo dei traduttori.

@@ -709,6 +709,13 @@ $messages['el'] = array(
 	'bw-desc-wikireader' => 'Το [[Translating:WikiReader|WikiReader]] είναι ενα εγχείρημα για παράδοση μιας εκτός σύνδεσης, μόνο κειμένου έκδοσης της Βικιπαίδειας σε μια κινητή συσκευή.',
 );
 
+/** British English (British English)
+ * @author Shirayuki
+ */
+$messages['en-gb'] = array(
+	'translate-group-desc-translate' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:Translate Translate]; please familiarise yourself with its [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossary]',
+);
+
 /** Esperanto (Esperanto)
  * @author ArnoLagrange
  * @author Blahma
