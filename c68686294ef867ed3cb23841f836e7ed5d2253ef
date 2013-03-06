@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoLnYBe8",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-06T05:03:24Z",
+      "side": 1,
+      "message": "Why the above condition required? if translationMessage is null or \u0027\u0027 it will fail comparison with $textArea.val(). So this condition does not make sense.",
+      "revId": "c68686294ef867ed3cb23841f836e7ed5d2253ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
