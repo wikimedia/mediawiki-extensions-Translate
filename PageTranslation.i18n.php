@@ -45,7 +45,7 @@ Make sure it has <nowiki><translate></nowiki> tags and has a valid syntax.',
 The page can now be <span class="plainlinks">[$3 translated]</span>.',
 	'tpt-badsect' => '"$1" is not a valid name for translation unit $2.',
 	'tpt-showpage-intro' => 'Below new, existing and deleted translation units are listed.
-Before marking this version for translation, check that the changes to translation units are minimised to avoid unnecessary work for translators.',
+Before marking this version for translation, check that the changes to translation units are minimized to avoid unnecessary work for translators.',
 	'tpt-mark-summary' => 'Marked this version for translation',
 	'tpt-edit-failed' => 'Could not update the page: $1',
 	'tpt-duplicate' => 'Translation unit name $1 is used more than once.',
