@@ -119,13 +119,4 @@ class FileBasedMessageGroup extends MessageGroupBase {
 			return $code;
 		}
 	}
-
-	/**
-	 * Checks whether a language code can be used in this group.
-	 * @param $code \string
-	 * @return \bool
-	 */
-	public function isValidLanguage( $code ) {
-		return $this->mapCode( $code ) !== 'x-invalidLanguageCode';
-	}
 }

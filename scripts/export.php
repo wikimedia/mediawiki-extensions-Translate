@@ -236,10 +236,6 @@ foreach ( $groups as $groupId => $group ) {
 		$translatebleLanguages = $group->getTranslatableLanguages();
 
 		foreach ( $langs as $lang ) {
-			if ( !$group->isValidLanguage( $lang ) ) {
-				continue;
-			}
-
 			// Do not export languges that are blacklisted (or not whitelisted). As
 			// $translatebleLanguages can be null, only test if $translatebleLanguages
 			// is an array.
