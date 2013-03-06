@@ -45,6 +45,11 @@ XML;
 		$writer = new SimpleXMLElement( $template );
 		$mangler = $this->group->getMangler();
 
+		$collection->filter( 'hastranslation', false );
+		if ( count( $collection ) === 0 ) {
+			return '';
+		}
+
 		/**
 		 * @var $m TMessage
 		 */
@@ -52,9 +57,6 @@ XML;
 			$key = $mangler->unmangle( $key );
 
 			$value = $m->translation();
-			if ( $value === null ) {
-				continue;
-			}
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 
 			// Kudos to the brilliant person who invented this braindead file format
