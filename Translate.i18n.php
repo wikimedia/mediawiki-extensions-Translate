@@ -449,7 +449,6 @@ Most useful for the proofreading tasks.',
 	'tux-editor-skip-button-label' => 'Skip to next',
 	'tux-editor-confirm-button-label' => 'Confirm translation',
 	'tux-editor-shortcut-info' => 'Press "$1" to save or "$2" to skip to next message',
-	'tux-editor-no-message-doc' => 'No message documentation',
 	'tux-editor-edit-desc' => 'Edit description',
 	'tux-editor-add-desc' => 'Add description',
 	'tux-editor-suggestions-title' => 'Suggestions',
@@ -942,8 +941,6 @@ Read as in "proofRED" (past participle).
 	'tux-editor-shortcut-info' => 'A help text for the keyboard shortcuts
 * $1 is shortcut key for save button
 * $2 is shortcut key for skip button',
-	'tux-editor-no-message-doc' => 'Text to be shown when no message documentation is present for the message.
-{{Identical|Message documentation}}',
 	'tux-editor-edit-desc' => 'Text for the link to edit message documentation',
 	'tux-editor-add-desc' => "Text for the link to add message documentation when it doesn't exist",
 	'tux-editor-suggestions-title' => 'Title text for translation memory suggestions',

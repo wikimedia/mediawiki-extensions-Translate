@@ -169,7 +169,6 @@
 				// used in {{Identical}} on translatewiki.net
 				$( '.mw-identical-title' ).makeCollapsible();
 			} else {
-				$messageDoc.text( mw.msg( 'tux-editor-no-message-doc' ) );
 				$descEditLink.text( mw.msg( 'tux-editor-add-desc' ) );
 			}
 
