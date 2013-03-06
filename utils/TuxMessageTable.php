@@ -62,7 +62,7 @@ class TuxMessageTable extends ContextSource {
 			. '</button>'
 			. '</div>';
 
-		$footer .= '<div class="six columns text-center">'
+		$footer .= '<div class="six columns tux-view-switcher text-center">'
 				. '<button class="toggle button down translate-mode-button">'
 				. $this->msg( 'tux-editor-translate-mode' )->escaped()
 				. '</button>'
