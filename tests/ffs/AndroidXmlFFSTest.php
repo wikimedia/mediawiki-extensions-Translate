@@ -30,7 +30,7 @@ class AndroidXmlFFSTest extends MediaWikiTestCase {
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="wpt_voicerec">Voice recording</string>
-	<string name="wpt_stillimage">Picture</string>
+	<string name="wpt_stillimage" fuzzy="true">Picture</string>
 </resources>
 XML;
 
@@ -42,7 +42,7 @@ XML;
 		$parsed = $ffs->readFromVariable( $file );
 		$expected = array(
 			'wpt_voicerec' => 'Voice recording',
-			'wpt_stillimage' => 'Picture',
+			'wpt_stillimage' => '!!FUZZY!!Picture',
 		);
 		$expected = array( 'MESSAGES' => $expected, 'AUTHORS' => array() );
 		$this->assertEquals( $expected, $parsed );
@@ -57,7 +57,7 @@ XML;
 
 		$messages = array(
 			'ko=26ra' => 'wawe',
-			'foobar' => 'Kissa kala <koira> "a\'b',
+			'foobar' => '!!FUZZY!!Kissa kala <koira> "a\'b',
 		);
 		$collection = new MockMessageCollection( $messages );
 
@@ -81,4 +81,6 @@ class MockMessageCollection extends MessageCollection {
 
 		$this->messages['foobar']->addTag( 'fuzzy' );
 	}
+
+	public function filter( $type, $condition = true, $value = null ) {}
 }
