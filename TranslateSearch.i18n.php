@@ -26,6 +26,9 @@ $messages['en'] = array(
 
 	'tux-sst-nosolr-title' => 'Search unavailable',
 	'tux-sst-nosolr-body' => 'This wiki does not have a translation search service.',
+	'tux-sst-solr-offline-title' => 'Search unavailable',
+	'tux-sst-solr-offline-body' => 'Search service is temporarily unavailable.',
+
 );
 
 /** Message documentation (Message documentation)
@@ -54,6 +57,12 @@ The body of error message is {{msg-mw|Tux-sst-nosolr-body}}.',
 	'tux-sst-nosolr-body' => 'Used as error message.
 
 The page title for this message is {{msg-mw|Tux-sst-nosolr-title}}.',
+	'tux-sst-solr-offline-title' => 'Used as title of error page.
+
+The body of error message is {{msg-mw|Tux-sst-solr-offline-body}}.',
+	'tux-sst-solr-offline-body' => 'Used as error message.
+
+The page title for this message is {{msg-mw|tux-sst-solr-offline-title}}.',
 );
 
 /** Asturian (asturianu)
