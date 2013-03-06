@@ -21,7 +21,13 @@ class AndroidXmlFFS extends SimpleFFS {
 
 		foreach ( $reader->string as $string ) {
 			$key = (string)$string['name'];
-			$messages[$key] = stripcslashes( (string)$string );
+			$value = stripcslashes( (string)$string );
+
+			if ( isset( $string['fuzzy'] ) && (string)$string['fuzzy'] === 'true' ) {
+				$value = TRANSLATE_FUZZY . $value;
+			}
+
+			$messages[$key] = $value;
 		}
 
 		return array(
@@ -39,6 +45,11 @@ XML;
 		$writer = new SimpleXMLElement( $template );
 		$mangler = $this->group->getMangler();
 
+		$collection->filter( 'hastranslation', false );
+		if ( count( $collection ) === 0 ) {
+			return '';
+		}
+
 		/**
 		 * @var $m TMessage
 		 */
@@ -46,9 +57,7 @@ XML;
 			$key = $mangler->unmangle( $key );
 
 			$value = $m->translation();
-			if ( $value === null ) {
-				continue;
-			}
+			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 
 			// Kudos to the brilliant person who invented this braindead file format
 			$string = $writer->addChild( 'string', addcslashes( $value, '"\'' ) );
@@ -62,5 +71,9 @@ XML;
 		}
 
 		return $writer->asXml();
+	}
+
+	public function supportsFuzzy() {
+		return 'yes';
 	}
 }
