@@ -240,7 +240,6 @@ class SpecialTranslate extends SpecialPage {
 		$defaults = array(
 		/* str  */ 'taction'  => 'translate',
 		/* str  */ 'task'     => $isBeta ? 'custom' : 'untranslated',
-		/* str  */ 'sort'     => 'normal',
 		/* str  */ 'language' => $this->getLanguage()->getCode(),
 		/* str  */ 'group'    => $isBeta ? '!additions': '',
 		/* str  */ 'offset'   => '', // Used to be int, now str
@@ -301,6 +300,16 @@ class SpecialTranslate extends SpecialPage {
 			}
 		}
 
+		if ( $isBeta ) {
+			/* @todo fix all the places in Translate to create correct links.
+			 * The least effort way is to change them once we totally drop the
+			 * old UI. The penalty is only http redirect in some cases. More
+			 * effort would be to create utilities like makeTranslationLink
+			 * and makeProofreadLink.
+			 */
+			$this->rewriteLegacyUrls( $nondefaults );
+		}
+
 		$this->defaults = $defaults;
 		$this->nondefaults = $nondefaults;
 		wfRunHooks( 'TranslateGetSpecialTranslateOptions', array( &$defaults, &$nondefaults ) );
@@ -312,6 +321,45 @@ class SpecialTranslate extends SpecialPage {
 		if ( $this->group && MessageGroups::isDynamic( $this->group ) ) {
 			$this->group->setLanguage( $this->options['language'] );
 		}
+	}
+
+	protected function rewriteLegacyUrls( $params ) {
+		if ( !isset( $params['task'] ) || $params['task'] === 'custom' ) {
+			return;
+		}
+
+		// Not used in TUX
+		unset( $params['taction'], $params['limit'], $params['offset'] );
+
+		$out = $this->getOutput();
+
+		switch ( $params['task'] ) {
+		case 'reviewall':
+		case 'acceptqueue':
+			// @todo handle these two separately
+			unset( $params['task'] );
+			$params['action'] = 'proofread';
+			$out->redirect( $this->getTitle()->getLocalUrl( $params ) );
+			break;
+
+		case 'view':
+			unset( $params['task'] );
+			$params['filter'] = '';
+			$out->redirect( $this->getTitle()->getLocalUrl( $params ) );
+			break;
+
+		// Optional and suggestions do not directly map to the new UI.
+		// Handle them as untranslated.
+		case 'optional':
+			$params['optional'] = 1;
+		case 'suggestions':
+		case 'untranslated':
+			unset( $params['task'] );
+			$params['filter'] = '!translated';
+			$out->redirect( $this->getTitle()->getLocalUrl( $params ) );
+			break;
+		}
+
 	}
 
 	protected function settingsForm( $errors ) {
