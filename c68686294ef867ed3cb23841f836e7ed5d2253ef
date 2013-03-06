@@ -16,6 +16,24 @@
       "revId": "c68686294ef867ed3cb23841f836e7ed5d2253ef",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DoCQ0yKk",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 517
+      },
+      "writtenOn": "2013-03-06T08:58:09Z",
+      "side": 1,
+      "message": "Because for untranslated messages, the translationMessage value is null. I got a TypeError when doing comparision with value in textarea. So I made it empty string so that i can do a check.\nIf we dont do this, the message is marked as unsaved.",
+      "parentUuid": "DoLnYBe8",
+      "revId": "c68686294ef867ed3cb23841f836e7ed5d2253ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
