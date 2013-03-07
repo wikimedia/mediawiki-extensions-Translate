@@ -372,7 +372,7 @@
 					message.group = messagegroup;
 					messageTable.add( message );
 					messageTable.messages.push( message );
-					if ( index === 0 ) {
+					if ( index === 0 && messageTable.mode === 'translate' ) {
 						$( '.tux-message:first' ).data( 'translateeditor' ).init();
 					}
 				} );
