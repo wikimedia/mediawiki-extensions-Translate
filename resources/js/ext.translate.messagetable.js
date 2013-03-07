@@ -372,6 +372,9 @@
 					message.group = messagegroup;
 					messageTable.add( message );
 					messageTable.messages.push( message );
+					if ( index === 0 ) {
+						$( '.tux-message:first' ).data( 'translateeditor' ).init();
+					}
 				} );
 
 				if ( result['query-continue'] === undefined ) {
