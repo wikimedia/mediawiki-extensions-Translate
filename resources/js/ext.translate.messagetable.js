@@ -358,8 +358,17 @@
 				mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize, filter )
 			).then( function ( result ) {
 				var messages = result.query.messagecollection,
+					error = result.query.error,
 					$workflowSelector = $( 'ul.tux-workflow-status-selector ' );
 
+				if ( error ) {
+					$( '.tux-editor-header .group-warning' ).text( mw.msg( error.message ) )
+						.show();
+					messageTable.$loader.data( 'offset', -1 ).addClass( 'hide' );
+					return;
+				} else {
+					$( '.tux-editor-header .group-warning' ).hide();
+				}
 				// No new messges were loaded
 				if ( messages.length === 0 ) {
 					// And this is the first load for the filter...
