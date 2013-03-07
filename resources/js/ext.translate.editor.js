@@ -708,7 +708,8 @@
 			// Change the icon image
 			toggleIcon
 				.removeClass( 'editor-contract' )
-				.addClass( 'editor-expand' );
+				.addClass( 'editor-expand' )
+				.attr( 'title', mw.msg( 'tux-editor-expand-tooltip' ) );
 
 			this.$editor.find( '.infocolumn-block' )
 				.removeClass( 'hide' );
@@ -723,7 +724,8 @@
 			// Change the icon image
 			toggleIcon
 				.removeClass( 'editor-expand' )
-				.addClass( 'editor-contract' );
+				.addClass( 'editor-contract' )
+				.attr( 'title', mw.msg( 'tux-editor-collapse-tooltip' ) );
 
 			this.$editor.find( '.infocolumn-block' )
 				.addClass( 'hide' );
