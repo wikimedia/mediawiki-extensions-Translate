@@ -239,4 +239,8 @@ class JavaFFS extends SimpleFFS {
 
 		return $output;
 	}
+
+	public function supportsFuzzy() {
+		return 'write';
+	}
 }

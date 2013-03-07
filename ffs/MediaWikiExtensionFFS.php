@@ -263,4 +263,8 @@ PHP;
 		return $quote . $value . $quote;
 	}
 
+	public function supportsFuzzy() {
+		return 'write';
+	}
+
 }

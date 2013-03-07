@@ -158,7 +158,7 @@ class ProcessMessageChanges extends Maintenance {
 			$path = $group->getSourceFilePath( $code );
 			$this->error( "Source message file for {$group->getId()} does not exist. Looking for $path", 1 );
 		}
-		$file = $group->getFFS()->read( $code );
+		$file = $ffs->read( $code );
 		if ( !isset( $file['MESSAGES'] ) ) {
 			error_log( "{$group->getId()} has an FFS - the FFS didn't return cake for $code" );
 		}
@@ -166,22 +166,43 @@ class ProcessMessageChanges extends Maintenance {
 
 		$common = array_intersect( $fileKeys, $wikiKeys );
 
+		$supportsFuzzy = $ffs->supportsFuzzy();
+
 		foreach ( $common as $key ) {
 			$sourceContent = $file['MESSAGES'][$key];
 			$wikiContent = $wiki[$key]->translation();
 
-			if ( !self::compareContent( $sourceContent, $wikiContent ) ) {
-				if ( $reason !== MessageGroupCache::NO_CACHE ) {
-					$cacheContent = $cache->get( $key );
-					if ( self::compareContent( $sourceContent, $cacheContent ) ) {
-						/* This message has only changed in the wiki, which means
-						 * we can ignore the difference and have it exported on
-						 * next export. */
-						continue;
-					}
-				}
-				$this->addChange( 'change', $group, $code, $key, $sourceContent );
+			// If FFS doesn't support it, ignore fuzziness as difference
+			$wikiContent = str_replace( TRANSLATE_FUZZY, '', $wikiContent );
+			// But if it does, ensure we have exactly one fuzzy marker prefixed
+			if ( $supportsFuzzy === 'yes' && $wiki[$key]->hasTag( 'fuzzy' ) ) {
+				$wikiContent = TRANSLATE_FUZZY . $wikiContent;
 			}
+
+			if ( self::compareContent( $sourceContent, $wikiContent ) ) {
+				// File and wiki stage agree, nothing to do
+				continue;
+			}
+
+			// Check against interim cache to see whether we have changes
+			// in the wiki, in the file or both.
+
+			if ( $reason !== MessageGroupCache::NO_CACHE ) {
+				$cacheContent = $cache->get( $key );
+
+				/* We want to ignore the common situation that the string
+				 * in the wiki has been changed since the last export.
+				 * Hence we check that source === cache && cache !== wiki
+				 * and if so we skip this string. */
+				if (
+					!self::compareContent( $wikiContent, $cacheContent ) &&
+					self::compareContent( $sourceContent, $cacheContent )
+				) {
+					continue;
+				}
+			}
+
+			$this->addChange( 'change', $group, $code, $key, $sourceContent );
 		}
 
 		$added = array_diff( $fileKeys, $wikiKeys );
@@ -221,15 +242,13 @@ class ProcessMessageChanges extends Maintenance {
 	}
 
 	/**
-	 * Compares two strings ignoring fuzzy markers.
+	 * Compares two strings.
 	 * @since 2012-05-08
 	 * @param string $a
 	 * @param string $b
-	 * @return bool
+	 * @return bool Whether two strings are equal
 	 */
 	protected static function compareContent( $a, $b ) {
-		$a = str_replace( TRANSLATE_FUZZY, '', $a );
-		$b = str_replace( TRANSLATE_FUZZY, '', $b );
 		return $a === $b;
 	}
 

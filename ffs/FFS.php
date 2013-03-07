@@ -64,6 +64,16 @@ interface FFS {
 	 * @return \string
 	 */
 	public function writeIntoVariable( MessageCollection $collection );
+
+	/**
+	 * Query the capabilities of this FFS. Allowed values are:
+	 *  - yes
+	 *  - write (ignored on read)
+	 *  - no (stripped on write)
+	 * @return string
+	 * @since 2013-03-05
+	 */
+	public function supportsFuzzy();
 }
 
 /**
@@ -391,5 +401,9 @@ class SimpleFFS implements FFS {
 		$data = str_replace( "\r", "\n", $data );
 
 		return $data;
+	}
+
+	public function supportsFuzzy() {
+		return 'no';
 	}
 }
