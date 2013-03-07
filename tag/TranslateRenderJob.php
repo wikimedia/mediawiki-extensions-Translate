@@ -13,11 +13,11 @@
  *
  * @ingroup PageTranslation JobQueue
  */
-class RenderJob extends Job {
+class TranslateRenderJob extends Job {
 
 	/**
 	 * @param $target Title
-	 * @return RenderJob
+	 * @return TranslateRenderJob
 	 */
 	public static function newJob( Title $target ) {
 		$job = new self( $target );

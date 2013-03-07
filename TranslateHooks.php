@@ -71,9 +71,12 @@ class TranslateHooks {
 			$wgLogActionsHandlers['pagetranslation/dissociate'] = 'PageTranslationLogFormatter';
 
 			global $wgJobClasses;
-			$wgJobClasses['RenderJob'] = 'RenderJob';
-			$wgJobClasses['MoveJob'] = 'MoveJob';
-			$wgJobClasses['DeleteJob'] = 'DeleteJob';
+			$wgJobClasses['TranslateRenderJob'] = 'TranslateRenderJob';
+			$wgJobClasses['RenderJob'] = 'TranslateRenderJob';
+			$wgJobClasses['TranslateMoveJob'] = 'TranslateMoveJob';
+			$wgJobClasses['MoveJob'] = 'TranslateMoveJob';
+			$wgJobClasses['TranslateDeleteJob'] = 'TranslateDeleteJob';
+			$wgJobClasses['DeleteJob'] = 'TranslateDeleteJob';
 
 			// Namespaces
 			global $wgPageTranslationNamespace;
