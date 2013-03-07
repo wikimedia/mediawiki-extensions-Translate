@@ -699,101 +699,39 @@ class TranslatablePage {
 		return $units;
 	}
 
-	public function getTranslationPercentages( $force = false ) {
-		global $wgRequest;
-
-		// Check the cache, as this is relatively slow to calculate
-		$memcKey = wfMemcKey( 'pt', 'status', $this->getTitle()->getPrefixedText() );
-		$cached = wfGetCache( CACHE_ANYTHING )->get( $memcKey );
-
-		$force = $force || $wgRequest->getText( 'action' ) === 'purge';
-		if ( !$force && is_array( $cached ) ) {
-			return $cached;
-		}
-
-		$titles = $this->getTranslationPages();
-
+	/**
+	 *
+	 * @return array
+	 */
+	public function getTranslationPercentages() {
 		// Calculate percentages for the available translations
 		$group = $this->getMessageGroup();
 		if ( !$group instanceof WikiPageMessageGroup ) {
-			return null;
+			return array();
 		}
 
-		$markedRevs = $this->getMarkedRevs();
+		$titles = $this->getTranslationPages();
+		$temp = MessageGroupStats::forGroup( $this->getMessageGroupId() );
+		$stats = array();
 
-		$temp = array();
 		foreach ( $titles as $t ) {
-			list( , $code ) = TranslateUtils::figureMessage( $t->getText() );
-			$collection = $group->initCollection( $code );
+			$handle = new MessageHandle( $t );
+			$code = $handle->getCode();
 
-			$percent = $this->getPercentageInternal( $collection, $markedRevs );
-			// To avoid storing 40 decimals of inaccuracy, truncate to two decimals
-			$temp[$collection->code] = sprintf( '%.2f', $percent );
+			// Sometimes we want to display 0.00 for pages which translation
+			// hasn't started yet.
+			$stats[$code] = 0.00;
+			if ( isset( $temp[$code] ) && $temp[$code][MessageGroupStats::TOTAL] > 0 ) {
+				$per = $temp[$code][MessageGroupStats::TRANSLATED] / $temp[$code][MessageGroupStats::TOTAL];
+				$stats[$code] = sprintf( '%.2f', $per );
+			}
 		}
 
 		// Content language is always up-to-date
 		global $wgContLang;
+		$stats[$wgContLang->getCode()] = 1.00;
 
-		$temp[$wgContLang->getCode()] = 1.00;
-
-		wfGetCache( CACHE_ANYTHING )->set( $memcKey, $temp, 60 * 60 * 12 );
-
-		return $temp;
-	}
-
-	/**
-	 * @param MessageCollection $collection
-	 * @param $markedRevs
-	 * @return float|int
-	 */
-	protected function getPercentageInternal( $collection, $markedRevs ) {
-		$count = count( $collection );
-		if ( $count === 0 ) {
-			return 0;
-		}
-
-		// We want to get fuzzy though
-		$collection->filter( 'hastranslation', false );
-		$collection->initMessages();
-
-		$total = 0;
-
-		/**
-		 * @var TMessage $message
-		 */
-		foreach ( $collection as $key => $message ) {
-			$score = 1;
-
-			// Fuzzy halves score
-			if ( $message->hasTag( 'fuzzy' ) ) {
-				$score *= 0.5;
-
-				/* Reduce 20% for every newer revision than what is translated against.
-				 * This is inside fuzzy clause, because there might be silent changes
-				 * which we don't want to decrease the translation percentage.
-				 */
-				$rev = $this->getTransrev( $key . '/' . $collection->code );
-				foreach ( $markedRevs as $r ) {
-					if ( $rev === $r->rt_revision ) {
-						break;
-					}
-					$changed = explode( '|', unserialize( $r->rt_value ) );
-
-					// Get a suitable section key
-					$parts = explode( '/', $key );
-					$ikey = $parts[count( $parts ) - 1];
-
-					// If the section was changed, reduce the score
-					if ( in_array( $ikey, $changed, true ) ) {
-						$score *= 0.8;
-					}
-				}
-			}
-			$total += $score;
-		}
-
-		// Divide score by count to get completion percentage
-		return $total / $count;
+		return $stats;
 	}
 
 	public function getTransRev( $suffix ) {
