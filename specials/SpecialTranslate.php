@@ -819,11 +819,23 @@ class SpecialTranslate extends SpecialPage {
 			'href' => $messagegroupstats->getLocalUrl( $params ),
 			'class' => $alias === 'MessageGroupStats' ? 'selected' : '',
 		);
-		$tabs['views']['export'] = array(
-			'text' => wfMessage( 'translate-taction-export' )->text(),
-			'href' => $translate->getLocalUrl( array( 'taction' => 'export' ) + $params ),
-			'class' => $alias === 'Translate' && $taction === 'export' ? 'selected' : '',
-		);
+
+		// Kind of hackish, but works for now
+		global $wgTranslateTasks;
+		foreach ( array_keys( $wgTranslateTasks ) as $taskname ) {
+			if ( !preg_match( '/^export-/', $taskname ) ) {
+				continue;
+			}
+
+			$tabs['views']['export'] = array(
+				'text' => wfMessage( 'translate-taction-export' )->text(),
+				'href' => $translate->getLocalUrl( array( 'taction' => 'export' ) + $params ),
+				'class' => $alias === 'Translate' && $taction === 'export' ? 'selected' : '',
+			);
+
+			// We only need the tab to apper once ;)
+			break;
+		}
 
 		return true;
 	}
