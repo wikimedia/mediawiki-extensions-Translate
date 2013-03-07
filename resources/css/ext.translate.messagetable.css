@@ -54,7 +54,7 @@
 /* Default colors */
 .tux-messagelist {
 	color: #252525;
-	background-color: #FFFFFF;
+	background-color: #F8F8F8;
 	max-width: 800px;
 }
 
@@ -71,6 +71,7 @@
 	margin-left: 5px !important;
 	vertical-align: middle;
 	border-bottom: 1px solid #C9C9C9;
+	background: #FFFFFF;
 }
 
 .tux-message-item.translated,
@@ -209,24 +210,33 @@
 	text-shadow: none;
 }
 
-.toggle.button:first-child {
-	border-radius: 3px 0 0 3px;
-}
-
-.toggle.button:last-child {
-	border-radius: 0 3px 3px 0;
+.tux-action-bar .tux-view-switcher {
+	padding: 0 5px;
 }
 
 .tux-action-bar .tux-view-switcher .toggle.button {
-	width: 50%;
+	width: 33%;
 }
 
-.tux-action-bar .translate-mode-button:before {
+.tux-action-bar .tux-view-switcher .toggle.button:first-child {
+	border-radius: 3px 0 0 3px;
+	border-right: none;
+}
+
+.tux-action-bar .tux-view-switcher .toggle.button:last-child {
+	border-radius: 0 3px 3px 0;
+	border-left: none;
+}
+
+.tux-action-bar .tux-view-switcher .toggle.button:before {
 	content: "";
 	height: 15px;
 	width: 25px;
 	display: inline-block;
 	vertical-align: bottom;
+}
+
+.tux-action-bar .translate-mode-button:before {
 	background: transparent url(../images/view-list.png) center center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-list.svg);
 	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-list.svg);
@@ -241,11 +251,6 @@
 }
 
 .tux-action-bar .page-mode-button:before {
-	content: "";
-	height: 15px;
-	width: 25px;
-	display: inline-block;
-	vertical-align: bottom;
 	background: transparent url(../images/view-page.png) center center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-page.svg);
 	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-page.svg);
@@ -260,11 +265,6 @@
 }
 
 .tux-action-bar .tux-proofread-button:before {
-	content: "";
-	height: 15px;
-	width: 25px;
-	display: inline-block;
-	vertical-align: bottom;
 	background: transparent url(../images/view-proofread.png) center center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-proofread.svg);
 	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-proofread.svg);
