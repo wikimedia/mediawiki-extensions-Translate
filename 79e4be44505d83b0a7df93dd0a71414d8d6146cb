@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoGtluB4",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-07T18:21:38Z",
+      "side": 1,
+      "message": "\"this\" will not work, use messageTable.mode. We are inside an anonymous function scope here.",
+      "revId": "79e4be44505d83b0a7df93dd0a71414d8d6146cb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
