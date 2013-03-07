@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoCHSb1k",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-03-07T21:55:14Z",
+      "side": 1,
+      "message": "Is this a feature we\u0027re dropping (I\u0027m ambivalent...). Should we create a bugzilla bug, and ask Pau\u0027s opinion?",
+      "revId": "127d498fabae05fb71903a78bfef60b299f6ab29",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
