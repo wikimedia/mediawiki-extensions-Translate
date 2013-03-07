@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoNBrU7c",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-07T07:29:50Z",
+      "side": 1,
+      "message": "Why are you not using dieUsageMsg?",
+      "revId": "4223440151addb8c831d5dbd957f53fc4284c3a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
