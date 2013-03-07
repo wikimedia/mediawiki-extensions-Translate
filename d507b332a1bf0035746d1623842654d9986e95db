@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DoJBXCyU",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-03-07T14:26:50Z",
+      "side": 1,
+      "message": "I think you can use $skin-\u003emsg() here, right?",
+      "revId": "d507b332a1bf0035746d1623842654d9986e95db",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
