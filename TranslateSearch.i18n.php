@@ -208,8 +208,6 @@ $messages['gl'] = array(
 	'tux-sst-facet-orphan' => '(orfos)',
 	'tux-sst-nosolr-title' => 'A procura non está dispoñible',
 	'tux-sst-nosolr-body' => 'Este wiki non dispón dun servizo de procura de traducións.',
-	'tux-sst-solr-offline-title' => 'A procura non está dispoñible',
-	'tux-sst-solr-offline-body' => 'O servizo de procura non está dispoñible temporalmente.',
 );
 
 /** Hebrew (עברית)

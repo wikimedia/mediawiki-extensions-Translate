@@ -494,6 +494,7 @@ Most useful for the proofreading tasks.',
 	'tux-empty-list-other-link' => 'Show all messages',
 	'tux-editor-close-tooltip' => 'Close',
 	'tux-editor-expand-tooltip' => 'Expand',
+	'tux-editor-collapse-tooltip' => 'Collapse',
 
 );
 
@@ -1018,10 +1019,9 @@ Pressing the button goes to the page mode.
 	'tux-empty-list-other-action' => '{{Tuxspec|7}} This is a action button.',
 	'tux-empty-list-other-link' => '{{Tuxspec|7}} This is a link to change message filter.
 {{Identical|Show all messages}}',
-	'tux-editor-close-tooltip' => 'Tooltip for close icon of translate editor.
-{{Identical|Close}}',
-	'tux-editor-expand-tooltip' => 'Tooltip for expand icon of translate editor.
-{{Identical|Expand}}',
+	'tux-editor-close-tooltip' => 'Tooltip for close icon of translate editor',
+	'tux-editor-expand-tooltip' => 'Tooltip for expand icon of translate editor',
+	'tux-editor-collapse-tooltip' => 'Tooltip for the collapse icon of translate editor',
 );
 
 /** Afrikaans (Afrikaans)
@@ -11062,8 +11062,6 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-empty-list-other-guide' => 'Pode axudar na revisión das traducións existentes',
 	'tux-empty-list-other-action' => 'Corrixir as traducións',
 	'tux-empty-list-other-link' => 'Mostrar todas as mensaxes',
-	'tux-editor-close-tooltip' => 'Pechar',
-	'tux-editor-expand-tooltip' => 'Expandir',
 );
 
 /** Goan Konkani (Latin script) (Konknni)
@@ -12016,8 +12014,6 @@ $1',
 	'tux-empty-list-other-guide' => 'ביכולתך לעזור לסקור את התרגומים הקיימים',
 	'tux-empty-list-other-action' => 'הגהת תרגומים',
 	'tux-empty-list-other-link' => 'הצגת כל ההודעות',
-	'tux-editor-close-tooltip' => 'סגירה',
-	'tux-editor-expand-tooltip' => 'הרחבה',
 );
 
 /** Hindi (हिन्दी)
@@ -14593,7 +14589,7 @@ Utile per l'attività di correzione.",
 	'tux-editor-doc-editor-cancel' => 'Annulla',
 	'tux-messagetable-more-messages' => '$1 {{PLURAL:$1|altro messaggio|altri messaggi}}',
 	'tux-messagetable-loading-messages' => 'Carico {{PLURAL:$1|messaggio|messaggi}}...',
-	'tux-message-filter-placeholder' => 'Filtra la lista',
+	'tux-message-filter-placeholder' => 'Elenco filtri', # Fuzzy
 	'tux-message-filter-result' => '{{PLURAL:$1|Trovato|Trovati}} $1 {{PLURAL:$1|risultato|risultati}} per "$2"',
 	'tux-message-filter-advanced-button' => 'Ricerca avanzata',
 	'tux-message-filter-optional-messages-label' => 'Messaggi opzionali',
@@ -14606,8 +14602,6 @@ Utile per l'attività di correzione.",
 	'tux-empty-list-other-guide' => 'Puoi aiutare a rivedere le traduzioni esistenti',
 	'tux-empty-list-other-action' => 'Correggi traduzioni',
 	'tux-empty-list-other-link' => 'Mostra tutti i messaggi',
-	'tux-editor-close-tooltip' => 'Chiudi',
-	'tux-editor-expand-tooltip' => 'Espandi',
 );
 
 /** Japanese (日本語)
@@ -15011,7 +15005,7 @@ $1',
 	'tux-editor-doc-editor-cancel' => 'キャンセル',
 	'tux-messagetable-more-messages' => '他 $1 {{PLURAL:$1|件のメッセージ}}',
 	'tux-messagetable-loading-messages' => '{{PLURAL:$1|メッセージ}}を読み込み中...',
-	'tux-message-filter-placeholder' => '絞り込み条件を入力',
+	'tux-message-filter-placeholder' => 'リストを絞込み',
 	'tux-message-filter-result' => '「$2」の検索結果 $1 {{PLURAL:$1|件}}',
 	'tux-message-filter-advanced-button' => '高度な検索',
 	'tux-message-filter-optional-messages-label' => '省略可能なメッセージ',
@@ -15024,8 +15018,6 @@ $1',
 	'tux-empty-list-other-guide' => '既存の翻訳の査読で貢献することもできます',
 	'tux-empty-list-other-action' => '翻訳を校正',
 	'tux-empty-list-other-link' => '全メッセージを表示',
-	'tux-editor-close-tooltip' => '閉じる',
-	'tux-editor-expand-tooltip' => '展開する',
 );
 
 /** Jamaican Creole English (Patois)
