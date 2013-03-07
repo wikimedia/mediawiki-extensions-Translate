@@ -442,10 +442,6 @@ class TranslateEditAddons {
 		}
 
 		$group = $handle->getGroup();
-		if ( $group instanceof WikiPageMessageGroup ) {
-			// WikiPageMessageGroup has different method
-			return true;
-		}
 
 		$title = $handle->getTitle();
 		$name = $handle->getKey() . '/' . $group->getSourceLanguage();

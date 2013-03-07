@@ -116,14 +116,6 @@ class PageTranslationHooks {
 		// Finally we know the title and can construct a Translatable page
 		$page = TranslatablePage::newFromTitle( $group->getTitle() );
 
-		// Add a tracking mark
-		if ( $revision !== null ) {
-			/**
-			 * @var Revision $revision
-			 */
-			self::addSectionTag( $title, $revision->getId(), $page->getMarkedTag() );
-		}
-
 		// Update the target translation page
 		if ( !$handle->isDoc() ) {
 			$code = $handle->getCode();
@@ -131,25 +123,6 @@ class PageTranslationHooks {
 		}
 
 		return true;
-	}
-
-	protected static function addSectionTag( Title $title, $revision, $pageRevision ) {
-		if ( $pageRevision === null ) {
-			throw new MWException( 'Page revision is null' );
-		}
-
-		$dbw = wfGetDB( DB_MASTER );
-
-		$conds = array(
-			'rt_page' => $title->getArticleID(),
-			'rt_type' => RevTag::getType( 'tp:transver' ),
-			'rt_revision' => $revision
-		);
-		$dbw->delete( 'revtag', $conds, __METHOD__ );
-
-		$conds['rt_value'] = $pageRevision;
-
-		$dbw->insert( 'revtag', $conds, __METHOD__ );
 	}
 
 	public static function updateTranslationPage( TranslatablePage $page,
