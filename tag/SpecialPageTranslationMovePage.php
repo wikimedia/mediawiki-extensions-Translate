@@ -361,13 +361,13 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$translationPages = $this->getTranslationPages();
 		foreach ( $translationPages as $old ) {
 			$to = $this->newPageTitle( $base, $old, $target );
-			$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $params, $user );
+			$jobs[$old->getPrefixedText()] = TranslateMoveJob::newJob( $old, $to, $params, $user );
 		}
 
 		$sectionPages = $this->getSectionPages();
 		foreach ( $sectionPages as $old ) {
 			$to = $this->newPageTitle( $base, $old, $target );
-			$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $params, $user );
+			$jobs[$old->getPrefixedText()] = TranslateMoveJob::newJob( $old, $to, $params, $user );
 		}
 
 		if ( $this->moveSubpages ) {
@@ -378,22 +378,22 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 				}
 
 				$to = $this->newPageTitle( $base, $old, $target );
-				$jobs[$old->getPrefixedText()] = MoveJob::newJob( $old, $to, $params, $user );
+				$jobs[$old->getPrefixedText()] = TranslateMoveJob::newJob( $old, $to, $params, $user );
 			}
 		}
 
-		// This is used by MoveJob
+		// This is used by TranslateMoveJob
 		wfGetCache( CACHE_ANYTHING )->set( wfMemcKey( 'translate-pt-move', $base ), count( $jobs ) );
 		Job::batchInsert( $jobs );
 
-		MoveJob::forceRedirects( false );
+		TranslateMoveJob::forceRedirects( false );
 
 		$errors = $this->oldTitle->moveTo( $this->newTitle, true, $this->reason, false );
 		if ( is_array( $errors ) ) {
 			$this->showErrors( $errors );
 		}
 
-		MoveJob::forceRedirects( true );
+		TranslateMoveJob::forceRedirects( true );
 
 		$newTpage = TranslatablePage::newFromTitle( $this->newTitle );
 		$newTpage->addReadyTag( $this->newTitle->getLatestRevId( Title::GAID_FOR_UPDATE ) );

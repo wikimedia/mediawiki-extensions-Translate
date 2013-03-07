@@ -781,7 +781,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$titles = $page->getTranslationPages();
 		foreach ( $titles as $t ) {
-			$jobs[] = RenderJob::newJob( $t );
+			$jobs[] = TranslateRenderJob::newJob( $t );
 		}
 
 		return $jobs;

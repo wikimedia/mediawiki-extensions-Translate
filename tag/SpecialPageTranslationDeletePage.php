@@ -281,12 +281,12 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$translationPages = $this->getTranslationPages();
 		$user = $this->getUser();
 		foreach ( $translationPages as $old ) {
-			$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, $base, !$this->singleLanguage(), $user );
+			$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob( $old, $base, !$this->singleLanguage(), $user );
 		}
 
 		$sectionPages = $this->getSectionPages();
 		foreach ( $sectionPages as $old ) {
-			$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, $base, !$this->singleLanguage(), $user );
+			$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob( $old, $base, !$this->singleLanguage(), $user );
 		}
 
 		if ( !$this->doSubpages ) {
@@ -296,7 +296,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 					continue;
 				}
 
-				$jobs[$old->getPrefixedText()] = DeleteJob::newJob( $old, $base, !$this->singleLanguage(), $user );
+				$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob( $old, $base, !$this->singleLanguage(), $user );
 			}
 		}
 

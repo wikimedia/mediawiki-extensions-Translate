@@ -135,7 +135,7 @@ class PageTranslationHooks {
 		$flags &= ~EDIT_NEW & ~EDIT_UPDATE;
 
 		// Update the target page
-		$job = RenderJob::newJob( $target );
+		$job = TranslateRenderJob::newJob( $target );
 		$job->setUser( $user );
 		$job->setSummary( $summary );
 		$job->setFlags( $flags );

@@ -13,14 +13,14 @@
  *
  * @ingroup PageTranslation JobQueue
  */
-class DeleteJob extends Job {
+class TranslateDeleteJob extends Job {
 	/**
 	 * @static
 	 * @param $target Title
 	 * @param $base
 	 * @param $full
 	 * @param $performer
-	 * @return DeleteJob
+	 * @return TranslateDeleteJob
 	 */
 	public static function newJob( Title $target, $base, $full, /*User*/ $performer ) {
 		$job = new self( $target );

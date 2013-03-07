@@ -82,7 +82,7 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		MessageGroups::clearCache();
 
 		$translationPage = Title::newFromText( 'Translatable page/fi' );
-		RenderJob::newJob( $translationPage )->run();
+		TranslateRenderJob::newJob( $translationPage )->run();
 		$this->assertTrue( $translationPage->userCan( 'read', $superUser ),
 			'Users can read existing translation pages' );
 		$this->assertFalse( $translationPage->userCan( 'edit', $superUser ),

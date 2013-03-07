@@ -13,14 +13,14 @@
  *
  * @ingroup PageTranslation JobQueue
  */
-class MoveJob extends Job {
+class TranslateMoveJob extends Job {
 
 	/**
 	 * @param $source Title
 	 * @param $target Title
 	 * @param $params array, should include base-source and base-target
 	 * @param $performer
-	 * @return MoveJob
+	 * @return TranslateMoveJob
 	 */
 	public static function newJob( Title $source, Title $target, array $params, /*User*/ $performer ) {
 		$job = new self( $source );

@@ -132,11 +132,11 @@ $wgAutoloadClasses['SpecialPageAliasesCM'] = "$dir/ffs/MediaWikiComplexMessages.
  * @ingroup PageTranslation
  * @{
  */
-$wgAutoloadClasses['DeleteJob'] = "$dir/tag/DeleteJob.php";
-$wgAutoloadClasses['MoveJob'] = "$dir/tag/MoveJob.php";
+$wgAutoloadClasses['TranslateDeleteJob'] = "$dir/tag/TranslateDeleteJob.php";
+$wgAutoloadClasses['TranslateMoveJob'] = "$dir/tag/TranslateMoveJob.php";
 $wgAutoloadClasses['PageTranslationHooks'] = "$dir/tag/PageTranslationHooks.php";
 $wgAutoloadClasses['PageTranslationLogFormatter'] = "$dir/tag/PageTranslationLogFormatter.php";
-$wgAutoloadClasses['RenderJob'] = "$dir/tag/RenderJob.php";
+$wgAutoloadClasses['TranslateRenderJob'] = "$dir/tag/TranslateRenderJob.php";
 $wgAutoloadClasses['SpecialPageTranslation'] = "$dir/tag/SpecialPageTranslation.php";
 $wgAutoloadClasses['SpecialPageTranslationDeletePage'] = "$dir/tag/SpecialPageTranslationDeletePage.php";
 $wgAutoloadClasses['SpecialPageTranslationMovePage'] = "$dir/tag/SpecialPageTranslationMovePage.php";
