@@ -49,6 +49,14 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			$group->setLanguage( $params['language'] );
 		}
 
+		$result = $this->getResult();
+
+		$languages = $group->getTranslatableLanguages();
+
+		if ( $languages !== null && !isset( $languages[$params['language'] ] ) ) {
+			$this->dieUsage( wfMessage( 'translate-language-disabled' ), 'translate-language-disabled' );
+		}
+
 		$messages = $group->initCollection( $params['language'] );
 
 		foreach ( $params['filter'] as $filter ) {
@@ -71,7 +79,6 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$batchSize = count( $messages );
 		list( /*$backwardsOffset*/, $forwardsOffset, $startOffset ) = $offsets;
 
-		$result = $this->getResult();
 		$result->addValue(
 			array( 'query', 'metadata' ),
 			'state',
