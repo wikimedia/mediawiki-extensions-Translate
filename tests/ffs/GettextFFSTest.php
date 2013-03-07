@@ -13,6 +13,23 @@
  */
 class GettextFFSTest extends MediaWikiTestCase {
 
+	public function setUp() {
+		parent::setUp();
+		$this->groupConfiguration = array(
+			'BASIC' => array(
+				'class' => 'FileBasedMessageGroup',
+				'id' => 'test-id',
+				'label' => 'Test Label',
+				'namespace' => 'NS_MEDIAWIKI',
+				'description' => 'Test description',
+			),
+			'FILES' => array(
+				'class' => 'GettextFFS',
+				'sourcePattern' => __DIR__ . '/../data/gettext.po',
+			),
+		);
+	}
+
 	/**
 	 * @dataProvider provideMangling
 	 */
@@ -83,4 +100,58 @@ class GettextFFSTest extends MediaWikiTestCase {
 		);
 	}
 
+	public function testMsgctxtExport() {
+		/** @var FileBasedMessageGroup $group */
+		$group = MessageGroupBase::factory( $this->groupConfiguration );
+		$ffs = new GettextFFS( $group );
+
+		$object = new ReflectionObject( $ffs );
+		$method = $object->getMethod( 'formatMessageBlock' );
+		$method->setAccessible( true );
+
+		$key = 'key';
+		$m = new FatMessage( 'key', 'definition' );
+		$m->setTranslation( 'translation' );
+		$trans = array();
+		$pot = array();
+		$pluralCount = 0;
+
+		$results = <<<GETTEXT
+#
+msgid "definition"
+msgstr "translation"
+
+#
+msgctxt ""
+msgid "definition"
+msgstr "translation"
+
+#
+msgctxt "context"
+msgid "definition"
+msgstr "translation"
+GETTEXT;
+
+		$results = preg_split( '/\n\n/', $results );
+
+		// Case 1: no context
+		$this->assertEquals(
+			$results[0],
+			trim( $method->invoke( $ffs, $key, $m, $trans, $pot, $pluralCount ) )
+		);
+
+		// Case 2: empty context
+		$pot['ctxt'] = '';
+		$this->assertEquals(
+			$results[1],
+			trim( $method->invoke( $ffs, $key, $m, $trans, $pot, $pluralCount ) )
+		);
+
+		// Case 3: context
+		$pot['ctxt'] = 'context';
+		$this->assertEquals(
+			$results[2],
+			trim(  $method->invoke( $ffs, $key, $m, $trans, $pot, $pluralCount ) )
+		);
+	}
 }
