@@ -494,6 +494,7 @@ Most useful for the proofreading tasks.',
 	'tux-empty-list-other-link' => 'Show all messages',
 	'tux-editor-close-tooltip' => 'Close',
 	'tux-editor-expand-tooltip' => 'Expand',
+	'tux-editor-collapse-tooltip' => 'Collapse',
 
 );
 
@@ -1020,6 +1021,7 @@ Pressing the button goes to the page mode.
 {{Identical|Show all messages}}',
 	'tux-editor-close-tooltip' => 'Tooltip for close icon of translate editor',
 	'tux-editor-expand-tooltip' => 'Tooltip for expand icon of translate editor',
+	'tux-editor-collapse-tooltip' => 'Tooltip for the collapse icon of translate editor',
 );
 
 /** Afrikaans (Afrikaans)
