@@ -16,6 +16,24 @@
       "revId": "d507b332a1bf0035746d1623842654d9986e95db",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DoEuLFCE",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-07T16:35:29Z",
+      "side": 1,
+      "message": "Yes but it should be done in separate patch.",
+      "parentUuid": "DoJBXCyU",
+      "revId": "d507b332a1bf0035746d1623842654d9986e95db",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
