@@ -257,6 +257,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'mediawiki.user',
 		'mediawiki.jqueryMsg',
 		'jquery.makeCollapsible',
+		'jquery.tipsy',
 	),
 	'messages' => array(
 		'tux-status-translated',
@@ -289,6 +290,9 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'translate-edit-askpermission',
 		'tux-editor-outdated-warning',
 		'tux-editor-outdated-warning-diff-link',
+		'tux-unproofread-action-tooltip',
+		'tux-proofread-action-tooltip',
+		'tux-proofread-edit-tooltip',
 		'tux-editor-close-tooltip',
 		'tux-editor-expand-tooltip',
 		'tux-editor-collapse-tooltip',
