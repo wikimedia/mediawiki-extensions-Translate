@@ -468,7 +468,7 @@ PHP;
 			$content .= 'msgctxt ' . self::escape( $key ) . "\n";
 		} else {
 			$ctxt = self::chainGetter( 'ctxt', $pot, $trans, false );
-			if ( $ctxt ) {
+			if ( $ctxt !== false ) {
 				$content .= 'msgctxt ' . self::escape( $ctxt ) . "\n";
 			}
 		}
