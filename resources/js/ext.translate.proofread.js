@@ -138,12 +138,22 @@
 		},
 
 		render: function () {
-			var targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir;
+			var targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
+				$proofreadAction, $proofreadEdit;
 
 			sourceLanguage = this.$container.data( 'sourcelangcode' );
 			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
 			targetLanguage = this.$container.data( 'targetlangcode' );
 			targetLanguageDir = $.uls.data.getDir( targetLanguage );
+
+			$proofreadAction = $( '<div>' )
+				.attr( 'title', mw.msg( 'tux-proofread-action-tooltip' ) )
+				.addClass(
+					'tux-proofread-action ' + this.message.properties.status
+				);
+			$proofreadEdit = $( '<div>' )
+				.attr( 'title', mw.msg( 'tux-proofread-edit-tooltip' ) )
+				.addClass( 'tux-proofread-edit' );
 
 			this.$message.append(
 				$( '<div>' )
@@ -165,19 +175,25 @@
 				$( '<div>' )
 					.addClass( 'tux-proofread-action-block one column' )
 					.append(
-						$( '<div>' )
-							.addClass( 'tux-proofread-action ' + this.message.properties.status ),
+						$proofreadAction,
 						this.message.properties.reviewers ?
 							$( '<div>' )
 								.addClass( 'tux-proofread-count right' )
 								.text( mw.language.convertNumber(
 									this.message.properties.reviewers.length ) ) :
 							$( [] ),
-						$( '<div>' )
-							.addClass( 'tux-proofread-edit' )
+						$proofreadEdit
 					)
 			)
 			.addClass( this.message.properties.status );
+
+			$proofreadAction.tipsy( {
+				gravity: 's'
+			} );
+
+			$proofreadEdit.tipsy( {
+				gravity: 'n'
+			} );
 		},
 
 		hide: function () {
