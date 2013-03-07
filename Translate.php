@@ -359,6 +359,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'tux-empty-list-other-guide',
 		'tux-empty-list-other-action',
 		'tux-empty-list-other-link',
+		'translate-language-disabled',
 	),
 ) + $resourcePaths;
 
