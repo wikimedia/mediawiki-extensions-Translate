@@ -153,6 +153,9 @@
 
 			// Label the status if it is not untranslated
 			if ( status !== 'untranslated' ) {
+				// Give grep a chance to find the usages:
+				// tux-status-optional, tux-status-fuzzy, tux-status-proofread,
+				// tux-status-translated, tux-status-saving, tux-status-unsaved
 				statusMsg = 'tux-status-' + status;
 			}
 
@@ -619,6 +622,9 @@
 
 			successFunction = function ( data ) {
 				if ( data.error ) {
+					// Give grep a chance to find the usages:
+					// api-error-invalidrevision, api-error-unknownmessage,
+					// api-error-fuzzymessage, api-error-owntranslation
 					var reason = mw.msg( 'api-error-' + data.error.code );
 					$b.val( mw.msg( 'translate-messagereview-failure', reason ) );
 				} else {

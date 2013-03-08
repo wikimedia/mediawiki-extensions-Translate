@@ -598,7 +598,9 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 		$plot->setFont( 'x_label', $numberFont, 8 );
 		$plot->setFont( 'y_label', $numberFont, 8 );
-
+		// Give grep a chance to find the usages:
+		// translate-stats-edits, translate-stats-users, translate-stats-registrations,
+		// translate-stats-reviews, translate-stats-reviewers
 		$yTitle = $this->msg( 'translate-stats-' . $opts['count'] )->escaped();
 
 		// Turn off X axis ticks and labels because they get in the way:

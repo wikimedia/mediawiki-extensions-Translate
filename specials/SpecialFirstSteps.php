@@ -273,6 +273,9 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		// Building a skill selector
 		$skill = new XmlSelect();
 		foreach ( explode( ',', 'N,5,4,3,2,1' ) as $level ) {
+			// Give grep a chance to find the usages:
+			// translate-fs-userpage-level-N, translate-fs-userpage-level-5, translate-fs-userpage-level-4,
+			// translate-fs-userpage-level-3, translate-fs-userpage-level-2, translate-fs-userpage-level-1
 			$skill->addOption( $this->msg( "translate-fs-userpage-level-$level" )->text(), $level );
 		}
 

@@ -266,6 +266,9 @@ class MessageWebImporter {
 
 				$act = array();
 
+				// Give grep a chance to find the usages:
+				// translate-manage-action-import, translate-manage-action-conflict,
+				// translate-manage-action-ignore, translate-manage-action-fuzzy
 				foreach ( $actions as $action ) {
 					$label = wfMessage( "translate-manage-action-$action" )->text();
 					$name = self::escapeNameForPHP( "action-$type-$key" );
