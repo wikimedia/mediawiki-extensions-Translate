@@ -16,6 +16,24 @@
       "revId": "127d498fabae05fb71903a78bfef60b299f6ab29",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DpUBUcB8",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-08T06:55:45Z",
+      "side": 1,
+      "message": "It is in the designs, but I have not ever used nor liked it -- it\u0027s not fast enough for production code.",
+      "parentUuid": "DoCHSb1k",
+      "revId": "127d498fabae05fb71903a78bfef60b299f6ab29",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
