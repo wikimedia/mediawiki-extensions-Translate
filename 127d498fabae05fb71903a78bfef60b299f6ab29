@@ -34,6 +34,24 @@
       "revId": "127d498fabae05fb71903a78bfef60b299f6ab29",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DpcAZYIQ",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-03-08T07:35:26Z",
+      "side": 1,
+      "message": "Okay. Let\u0027s consider it dropped, then. Can you add a comment here, and also in the non-TUX code that the feature is deprecated (possibly remove it already?)",
+      "parentUuid": "DpUBUcB8",
+      "revId": "127d498fabae05fb71903a78bfef60b299f6ab29",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
