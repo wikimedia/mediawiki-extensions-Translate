@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DpcMt6kU",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-08T09:54:32Z",
+      "side": 1,
+      "message": "We don\u0027t use localised error messages in the API, especially not parsed ones.",
+      "revId": "961f05df07062c63a579cd27512f174a298320da",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
