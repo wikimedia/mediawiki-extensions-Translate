@@ -36,6 +36,9 @@ class TranslateHooks {
 	public static function setupTranslate() {
 		global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
 
+		// Workaround for bug 42430
+		RevTag::checkSchema();
+
 		if ( $wgTranslatePHPlot ) {
 			$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
 		}
