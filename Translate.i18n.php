@@ -735,9 +735,9 @@ These messages will only affect the interface on {{SITENAME}}.',
 	'translate-langstats-expand' => '{{Doc-actionlink}}
 Used in [[Special:LanguageStats]] to expand subgroups.
 {{Identical|Expand}}',
-	'translate-langstats-collapse' => 'Used in [[Special:LanguageStats]] to collapse subgroups {{Identical/Collapse}}
-
-{{Doc-actionlink}}',
+	'translate-langstats-collapse' => '{{doc-actionlink}}
+Used in [[Special:LanguageStats]] to collapse subgroups.
+{{Identical|Collapse}}',
 	'translate-langstats-expandall' => '{{doc-actionlink}}
 Used in [[Special:LanguageStats]] to expand all subgroups.
 
@@ -1019,9 +1019,12 @@ Pressing the button goes to the page mode.
 	'tux-empty-list-other-action' => '{{Tuxspec|7}} This is a action button.',
 	'tux-empty-list-other-link' => '{{Tuxspec|7}} This is a link to change message filter.
 {{Identical|Show all messages}}',
-	'tux-editor-close-tooltip' => 'Tooltip for close icon of translate editor',
-	'tux-editor-expand-tooltip' => 'Tooltip for expand icon of translate editor',
-	'tux-editor-collapse-tooltip' => 'Tooltip for the collapse icon of translate editor',
+	'tux-editor-close-tooltip' => 'Tooltip for close icon of translate editor.
+{{Identical|Close}}',
+	'tux-editor-expand-tooltip' => 'Tooltip for expand icon of translate editor.
+{{Identical|Expand}}',
+	'tux-editor-collapse-tooltip' => 'Tooltip for the collapse icon of translate editor.
+{{Identical|Collapse}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -4567,17 +4570,35 @@ Talvoudus evit adlenn ha reizhañ.',
 	'translate-dynagroup-lastc' => 'Kemm diwezhañ graet gant {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Skoazell',
 	'translate-msggroupselector-search-placeholder' => 'Klask strolladoù',
+	'translate-msggroupselector-search-all' => 'Pep tra',
 	'tux-languageselector' => 'Treiñ e',
+	'tux-edit' => 'Aozañ',
+	'tux-status-translated' => 'Troet',
+	'tux-editor-placeholder' => 'Ho troidigezh',
+	'tux-editor-save-button-label' => 'Enrollañ an droidigezh',
+	'tux-editor-confirm-button-label' => 'Kadarnaat an droidigezh',
 	'tux-editor-suggestions-title' => 'Kinnigoù',
 	'tux-editor-in-other-languages' => 'E yezhoù all',
 	'tux-editor-need-more-help' => 'Ezhomm sikour ?',
 	'tux-editor-ask-help' => 'Goulenn resisadurioù',
+	'tux-warnings-more' => '{{PLURAL:$1|$1 ouzhpenn}}',
+	'tux-warnings-hide' => 'kuzhat',
+	'tux-editor-use-this-translation' => 'Implijout da droidigezh',
 	'tux-editor-message-desc-more' => "Gwelet muioc'h",
 	'tux-editor-message-desc-less' => "Gwelet nebeutoc'h",
 	'tux-editor-clear-translated' => 'Kuzhat ar re bet troet',
+	'tux-editor-translate-mode' => 'Roll',
+	'tux-editor-proofreading-hide-own-translations' => 'Kuzhat ho troidigezhioù',
+	'tux-editor-proofreading-show-own-translations' => 'Diskouez ho troidigezhioù',
+	'tux-editor-page-mode' => 'Pajenn',
 	'tux-editor-outdated-warning-diff-link' => "Diskouez ar c'hemmoù",
+	'tux-editor-doc-editor-cancel' => 'Nullañ',
 	'tux-message-filter-placeholder' => 'Roll silañ',
 	'tux-message-filter-advanced-button' => 'Klask araokaet',
+	'tux-empty-list-translated-action' => 'Treiñ',
+	'tux-empty-list-other' => 'Netra da dreiñ',
+	'tux-empty-list-other-link' => 'Diskouez an holl gemennadennoù',
+	'tux-editor-close-tooltip' => 'Serriñ',
 );
 
 /** Bosnian (bosanski)
@@ -6630,6 +6651,7 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-empty-list-other-link' => 'Alle Nachrichten anzeigen',
 	'tux-editor-close-tooltip' => 'Schließen',
 	'tux-editor-expand-tooltip' => 'Ausklappen',
+	'tux-editor-collapse-tooltip' => 'Einklappen',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -10129,6 +10151,7 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-empty-list-other-link' => 'Afficher tous les messages',
 	'tux-editor-close-tooltip' => 'Fermer',
 	'tux-editor-expand-tooltip' => 'Développer',
+	'tux-editor-collapse-tooltip' => 'Replier',
 );
 
 /** Cajun French (français cadien)
@@ -11062,6 +11085,8 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-empty-list-other-guide' => 'Pode axudar na revisión das traducións existentes',
 	'tux-empty-list-other-action' => 'Corrixir as traducións',
 	'tux-empty-list-other-link' => 'Mostrar todas as mensaxes',
+	'tux-editor-close-tooltip' => 'Pechar',
+	'tux-editor-expand-tooltip' => 'Expandir',
 );
 
 /** Goan Konkani (Latin script) (Konknni)
@@ -12014,6 +12039,8 @@ $1',
 	'tux-empty-list-other-guide' => 'ביכולתך לעזור לסקור את התרגומים הקיימים',
 	'tux-empty-list-other-action' => 'הגהת תרגומים',
 	'tux-empty-list-other-link' => 'הצגת כל ההודעות',
+	'tux-editor-close-tooltip' => 'סגירה',
+	'tux-editor-expand-tooltip' => 'הרחבה',
 );
 
 /** Hindi (हिन्दी)
@@ -13309,6 +13336,7 @@ $messages['hy'] = array(
 	'translate-taction-translate' => 'Թագմանություն',
 	'translate-taction-proofread' => 'Սրբագրել',
 	'translate-edit-translation' => 'Թագմանություն',
+	'translate-sidebar-alltrans' => 'Այլ լեզուներով',
 	'translate-manage-import-new' => 'Նոր Հաղորդագրություն $1',
 );
 
@@ -14589,7 +14617,7 @@ Utile per l'attività di correzione.",
 	'tux-editor-doc-editor-cancel' => 'Annulla',
 	'tux-messagetable-more-messages' => '$1 {{PLURAL:$1|altro messaggio|altri messaggi}}',
 	'tux-messagetable-loading-messages' => 'Carico {{PLURAL:$1|messaggio|messaggi}}...',
-	'tux-message-filter-placeholder' => 'Elenco filtri', # Fuzzy
+	'tux-message-filter-placeholder' => 'Filtra la lista',
 	'tux-message-filter-result' => '{{PLURAL:$1|Trovato|Trovati}} $1 {{PLURAL:$1|risultato|risultati}} per "$2"',
 	'tux-message-filter-advanced-button' => 'Ricerca avanzata',
 	'tux-message-filter-optional-messages-label' => 'Messaggi opzionali',
@@ -14602,6 +14630,8 @@ Utile per l'attività di correzione.",
 	'tux-empty-list-other-guide' => 'Puoi aiutare a rivedere le traduzioni esistenti',
 	'tux-empty-list-other-action' => 'Correggi traduzioni',
 	'tux-empty-list-other-link' => 'Mostra tutti i messaggi',
+	'tux-editor-close-tooltip' => 'Chiudi',
+	'tux-editor-expand-tooltip' => 'Espandi',
 );
 
 /** Japanese (日本語)
@@ -15005,7 +15035,7 @@ $1',
 	'tux-editor-doc-editor-cancel' => 'キャンセル',
 	'tux-messagetable-more-messages' => '他 $1 {{PLURAL:$1|件のメッセージ}}',
 	'tux-messagetable-loading-messages' => '{{PLURAL:$1|メッセージ}}を読み込み中...',
-	'tux-message-filter-placeholder' => 'リストを絞込み',
+	'tux-message-filter-placeholder' => '絞り込み条件を入力',
 	'tux-message-filter-result' => '「$2」の検索結果 $1 {{PLURAL:$1|件}}',
 	'tux-message-filter-advanced-button' => '高度な検索',
 	'tux-message-filter-optional-messages-label' => '省略可能なメッセージ',
@@ -15018,6 +15048,9 @@ $1',
 	'tux-empty-list-other-guide' => '既存の翻訳の査読で貢献することもできます',
 	'tux-empty-list-other-action' => '翻訳を校正',
 	'tux-empty-list-other-link' => '全メッセージを表示',
+	'tux-editor-close-tooltip' => '閉じる',
+	'tux-editor-expand-tooltip' => '展開する',
+	'tux-editor-collapse-tooltip' => '折り畳む',
 );
 
 /** Jamaican Creole English (Patois)
@@ -16534,7 +16567,7 @@ $1',
 	'translate-manage-inconsistent' => '요청에서 일치하지 않음을 발견했습니다.
 바뀜을 확인하고 다시 시도하세요.
 자세한 정보: $1.',
-	'translate-manage-toolong' => '최대 처리 시간 $1초가 초과했습니다.
+	'translate-manage-toolong' => '최대 처리 시간이 $1초 초과했습니다.
 처리를 계속하려면 양식을 다시 전송하세요.',
 	'translate-manage-import-summary' => '바깥에서 새 버전을 가져옴',
 	'translate-manage-conflict-summary' => '바깥 소스로부터 새 버전을 가져옵니다.
@@ -16603,7 +16636,7 @@ $1',
 	'log-name-translationreview' => '번역 검토 기록',
 	'log-description-translationreview' => '번역과 메시지 그룹에 대한 모든 검토 기록입니다.',
 	'logentry-translationreview-message' => '$1 사용자가 $3 번역을 {{GENDER:$2|수락했습니다}}',
-	'logentry-translationreview-group' => '$1 사용자가 $3의 $4 번역의 상태를 $6에서 $7로 바꾸었습니다.', # Fuzzy
+	'logentry-translationreview-group' => '$1 사용자가 $3의 $4 번역의 상태를 $6에서 $7로 {{GENDER:$2|바꾸었습니다}}',
 	'translate-workflow-state-' => '(미설정)',
 	'translate-workflowstatus' => '상태: $1',
 	'translate-workflow-set-do' => '설정',
@@ -16665,8 +16698,9 @@ $1',
 	'tux-editor-clear-translated' => '번역됨 숨기기',
 	'tux-editor-proofreading-mode' => '교정하기',
 	'tux-editor-translate-mode' => '목록',
-	'tux-editor-proofreading-hide-own-translations' => '내 번역 숨기기', # Fuzzy
-	'tux-editor-proofreading-show-own-translations' => '내 번역 보이기', # Fuzzy
+	'tux-editor-proofreading-hide-own-translations' => '내 번역 숨기기',
+	'tux-editor-proofreading-show-own-translations' => '내 번역 보이기',
+	'tux-editor-page-mode' => '문서',
 	'tux-editor-outdated-warning' => '이 번역은 업데이트해야 합니다.',
 	'tux-editor-outdated-warning-diff-link' => '차이 보기',
 	'tux-editor-doc-editor-placeholder' => '메시지 설명문',
@@ -16678,6 +16712,18 @@ $1',
 	'tux-message-filter-result' => '"$2"에 대한 {{PLURAL:$1|결과}} $1개를 찾았습니다',
 	'tux-message-filter-advanced-button' => '고급 찾기',
 	'tux-message-filter-optional-messages-label' => '선택적 메시지',
+	'tux-empty-list-all' => '이 메시지 그룹은 비어 있습니다',
+	'tux-empty-list-all-guide' => '번역할 다른 메시지 그룹을 선택하세요',
+	'tux-empty-list-translated' => '번역한 메시지가 없습니다',
+	'tux-empty-list-translated-guide' => '번역을 도울 수 있습니다',
+	'tux-empty-list-translated-action' => '번역',
+	'tux-empty-list-other' => '번역할 것이 없습니다',
+	'tux-empty-list-other-guide' => '기존 번역의 검토를 도울 수 있습니다',
+	'tux-empty-list-other-action' => '번역 교정',
+	'tux-empty-list-other-link' => '모든 메시지 보기',
+	'tux-editor-close-tooltip' => '닫기',
+	'tux-editor-expand-tooltip' => '펼치기',
+	'tux-editor-collapse-tooltip' => '접기',
 );
 
 /** Krio (Krio)
@@ -17588,8 +17634,8 @@ Dëst ass ganz nëtzlech fir d'Iwwerliesen.",
 	'tux-editor-clear-translated' => 'Déi Iwwersate verstoppen',
 	'tux-editor-proofreading-mode' => 'Iwwerliesen',
 	'tux-editor-translate-mode' => 'Lëscht',
-	'tux-editor-proofreading-hide-own-translations' => 'Meng Iwwersetzunge verstoppen', # Fuzzy
-	'tux-editor-proofreading-show-own-translations' => 'Meng Iwwersetzunge weisen', # Fuzzy
+	'tux-editor-proofreading-hide-own-translations' => 'Är Iwwersetzunge verstoppen',
+	'tux-editor-proofreading-show-own-translations' => 'Är Iwwersetzunge weisen',
 	'tux-editor-page-mode' => 'Säit',
 	'tux-editor-outdated-warning' => 'Dës Iwwersetzung muss eventuell aktualiséiert ginn.',
 	'tux-editor-outdated-warning-diff-link' => 'Ënnerscheeder weisen',
@@ -17602,6 +17648,16 @@ Dëst ass ganz nëtzlech fir d'Iwwerliesen.",
 	'tux-message-filter-result' => '$1 {{PLURAL:$1|Resultat|Resultater}} fonnt fir "$2"',
 	'tux-message-filter-advanced-button' => 'Erweidert Sich',
 	'tux-message-filter-optional-messages-label' => 'Optional Messagen',
+	'tux-empty-list-all' => 'Dëse Grupp vu Messagen ass eidel',
+	'tux-empty-list-translated' => 'Keng iwwersate Messagen',
+	'tux-empty-list-translated-guide' => 'Dir kënnt beim Iwwersetzen hëllefen',
+	'tux-empty-list-translated-action' => 'Iwwersetzen',
+	'tux-empty-list-other' => "Näischt fir z'iwwersetzen.",
+	'tux-empty-list-other-guide' => 'Dir kënnt beim Nokucke vun den Iwwersetzungen hëllefen',
+	'tux-empty-list-other-action' => 'Iwwersetzungen iwwerliesen',
+	'tux-empty-list-other-link' => 'All Message weisen',
+	'tux-editor-close-tooltip' => 'Zoumaachen',
+	'tux-editor-expand-tooltip' => 'Opklappen',
 );
 
 /** Ganda (Luganda)
@@ -18680,6 +18736,7 @@ $1',
 	'tux-empty-list-other-link' => 'Прик. сите пораки',
 	'tux-editor-close-tooltip' => 'Затвори',
 	'tux-editor-expand-tooltip' => 'Прикажи',
+	'tux-editor-collapse-tooltip' => 'Скриј',
 );
 
 /** Malayalam (മലയാളം)
@@ -20622,6 +20679,7 @@ Details: $1',
 	'log-name-translationreview' => 'Logboek vertalingscontrole',
 	'log-description-translationreview' => 'Logboek met alle controles van vertalingen en berichtengroepen.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|heeft}} de vertaling $3 geaccepteerd',
+	'logentry-translationreview-group' => '$1 {{GENDER:$2|wijzigde}} de status van vertalingen in het "$4" van $3 van "$6" naar "$7"',
 	'translate-workflow-state-' => '(niet ingesteld)',
 	'translate-workflowstatus' => 'Status: $1',
 	'translate-workflow-set-do' => 'Instellen',
@@ -30336,7 +30394,7 @@ Om tarbhaižemb "Accept messages" vai "Review all translations" tönke.', # Fuzz
 $messages['vi'] = array(
 	'translate' => 'Biên dịch',
 	'translate-desc' => '[[Special:Translate|Trang đặc biệt]] dùng để dịch MediaWiki và các thứ khác',
-	'translate-taskui-view' => 'Tất cả các thông điệp',
+	'translate-taskui-view' => 'Hiện tất cả các thông điệp',
 	'translate-taskui-untranslated' => 'Các thông điệp chưa dịch',
 	'translate-taskui-optional' => 'Các thông điệp tùy dịch',
 	'translate-taskui-suggestions' => 'Các thông điệp có gợi ý từ bộ nhớ biên dịch',
@@ -30705,8 +30763,9 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-editor-clear-translated' => 'Ẩn thông điệp đã dịch',
 	'tux-editor-proofreading-mode' => 'Hiệu đính',
 	'tux-editor-translate-mode' => 'Danh sách',
-	'tux-editor-proofreading-hide-own-translations' => 'Ẩn các bản dịch của tôi', # Fuzzy
-	'tux-editor-proofreading-show-own-translations' => 'Hiện các bản dịch của tôi', # Fuzzy
+	'tux-editor-proofreading-hide-own-translations' => 'Ẩn các bản dịch của mình',
+	'tux-editor-proofreading-show-own-translations' => 'Hiện các bản dịch của mình',
+	'tux-editor-page-mode' => 'Trang',
 	'tux-editor-outdated-warning' => 'Bản dịch này có thể cần được cập nhật.',
 	'tux-editor-outdated-warning-diff-link' => 'Trình bày khác biệt',
 	'tux-editor-doc-editor-placeholder' => 'Tài liệu về thông điệp',
@@ -30718,6 +30777,18 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-message-filter-result' => 'Tìm thấy $1 kết quả cho “$2”',
 	'tux-message-filter-advanced-button' => 'Tìm kiếm nâng cao',
 	'tux-message-filter-optional-messages-label' => 'Các thông điệp tùy dịch',
+	'tux-empty-list-all' => 'Nhóm thông điệp này đang trống',
+	'tux-empty-list-all-guide' => 'Hãy chọn một nhóm thông điệp khác để dịch',
+	'tux-empty-list-translated' => 'Chưa dịch thông điệp nào',
+	'tux-empty-list-translated-guide' => 'Mời bạn cùng biên dịch',
+	'tux-empty-list-translated-action' => 'Biên dịch',
+	'tux-empty-list-other' => 'Không có gì để dịch',
+	'tux-empty-list-other-guide' => 'Bạn có thể giúp xem lại các bản dịch hiện có',
+	'tux-empty-list-other-action' => 'Hiệu đính các bản dịch',
+	'tux-empty-list-other-link' => 'Hiện tất cả các thông điệp',
+	'tux-editor-close-tooltip' => 'Đóng',
+	'tux-editor-expand-tooltip' => 'Mở rộng',
+	'tux-editor-collapse-tooltip' => 'Thu gọn',
 );
 
 /** Volapük (Volapük)

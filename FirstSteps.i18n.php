@@ -2365,7 +2365,7 @@ Hei kënnt Dir eraussiche wat fir eng Sprooch, wann Dir dat wëllt, Dir gesi wë
 	'translate-fs-userpage-level-2' => 'Ech hu mëttelméisseg Kenntnisser vu(n)',
 	'translate-fs-userpage-level-1' => 'Ech kann a bëssen',
 	'translate-fs-userpage-help' => 'Gitt w.e.g. Är Sproochkenntnisser un an erziel eis eppes iwwer Iech. Wann Dir méi wéi fënnef Sprooche kënnt da kënnt Dir déi méi spéit derbäisetzen.',
-	'translate-fs-userpage-submit' => 'Meng Benotzersäit maachen',
+	'translate-fs-userpage-submit' => 'Är Benotzersäit maachen',
 	'translate-fs-userpage-done' => 'Gutt gemaach! dir hutt elo eng Benotzersäit.',
 	'translate-fs-permissions-planguage' => 'Haaptsprooch:',
 	'translate-fs-permissions-help' => "Elo musst Dir eng Ufro maache fir an de Grupp vun den Iwwersetzer derbäigesat ze ginn.

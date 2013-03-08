@@ -115,6 +115,17 @@ $messages['be-tarask'] = array(
 	'tux-sst-nosolr-body' => 'Гэтая вікі ня мае службы пошуку перакладаў.',
 );
 
+/** Breton (brezhoneg)
+ * @author Fohanno
+ */
+$messages['br'] = array(
+	'tux-sst-search' => 'Klask',
+	'tux-sst-search-ph' => 'Klask troidigezhioù',
+	'tux-sst-count' => "{{PLURAL:$1|Un disoc'h kavet|$1 disoc'h kavet}}",
+	'tux-sst-facet-language' => 'Yezhoù',
+	'tux-sst-facet-orphan' => '(emzivad)',
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  */
@@ -208,6 +219,8 @@ $messages['gl'] = array(
 	'tux-sst-facet-orphan' => '(orfos)',
 	'tux-sst-nosolr-title' => 'A procura non está dispoñible',
 	'tux-sst-nosolr-body' => 'Este wiki non dispón dun servizo de procura de traducións.',
+	'tux-sst-solr-offline-title' => 'A procura non está dispoñible',
+	'tux-sst-solr-offline-body' => 'O servizo de procura non está dispoñible temporalmente.',
 );
 
 /** Hebrew (עברית)
@@ -296,7 +309,7 @@ $messages['ka'] = array(
  */
 $messages['ko'] = array(
 	'searchtranslations' => '번역 찾기',
-	'tux-sst-edit' => '메시지 편집',
+	'tux-sst-edit' => '번역 편집',
 	'tux-sst-search' => '찾기',
 	'tux-sst-search-ph' => '번역 찾기',
 	'tux-sst-count' => '{{PLURAL:$1|결과 한 개를 찾았습니다|결과 $1개를 찾았습니다}}',
@@ -305,6 +318,8 @@ $messages['ko'] = array(
 	'tux-sst-facet-orphan' => '(외톨이)',
 	'tux-sst-nosolr-title' => '찾기를 사용할 수 없음',
 	'tux-sst-nosolr-body' => '이 위키는 번역 찾기 서비스가 없습니다.',
+	'tux-sst-solr-offline-title' => '찾기를 사용할 수 없음',
+	'tux-sst-solr-offline-body' => '찾기 서비스를 일시적으로 사용할 수 없습니다.',
 );
 
 /** Colognian (Ripoarisch)
