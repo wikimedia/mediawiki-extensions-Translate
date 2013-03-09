@@ -553,6 +553,10 @@ class SpecialTranslate extends SpecialPage {
 			if ( $this->defaults['task'] === $id ) {
 				return '';
 			}
+			// Give grep a chance to find the usages:
+			// translate-taskui-view, translate-taskui-untranslated, translate-taskui-optional,
+			// translate-taskui-suggestions, translate-taskui-acceptqueue, translate-taskui-reviewall,
+			// translate-taskui-export-to-file, translate-taskui-export-as-po
 			return $sep . Html::rawElement( 'label', array(),
 				Xml::radio( 'task', $id, true ) . ' ' .
 					$this->msg( "translate-taskui-$id" )->escaped()
@@ -560,6 +564,10 @@ class SpecialTranslate extends SpecialPage {
 		} else {
 			$output = '';
 			foreach ( $tasks as $index => $id ) {
+				// Give grep a chance to find the usages:
+				// translate-taskui-view, translate-taskui-untranslated, translate-taskui-optional,
+				// translate-taskui-suggestions, translate-taskui-acceptqueue, translate-taskui-reviewall,
+				// translate-taskui-export-to-file, translate-taskui-export-as-po
 				$output .= Html::rawElement( 'label', array(),
 					Xml::radio( 'task', $id, $this->options['task'] === $id ) . ' ' .
 						$this->msg( "translate-taskui-$id" )->escaped()
