@@ -203,9 +203,6 @@ $wgJobClasses['TTMServerMessageUpdateJob'] = 'TTMServerMessageUpdateJob';
 
 require( "$dir/Resources.php" );
 
-/** @endcond */
-
-
 # == Configuration variables ==
 
 # === Basic configuration ===
