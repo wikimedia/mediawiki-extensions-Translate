@@ -246,16 +246,14 @@
 							lang: sourceLanguage,
 							dir: sourceLanguageDir
 						} )
-						// FIXME this should be parsed wiki text
-						.text( message.definition ),
+						.html( mw.translate.formatMessageGently( message.definition, message.key ) ),
 					$( '<div>' )
 						.addClass( 'six columns tux-proofread-translation' )
 						.attr( {
 							lang: targetLanguage,
 							dir: targetLanguageDir
 						} )
-						// FIXME this should be parsed wiki text
-						.text( message.translation || '' )
+						.html( mw.translate.formatMessageGently( message.translation || '', message.key ) )
 				);
 
 			this.$container.append( $message );
