@@ -81,6 +81,8 @@ $messages['ast'] = array(
 	'tux-sst-facet-orphan' => '(güérfanos)',
 	'tux-sst-nosolr-title' => 'La gueta nun ta disponible',
 	'tux-sst-nosolr-body' => 'Esta wiki nun tien un serviciu de gueta de traducciones.',
+	'tux-sst-solr-offline-title' => 'La gueta nun ta disponible',
+	'tux-sst-solr-offline-body' => 'El serviciu de gueta nun ta disponible temporalmente.',
 );
 
 /** Azerbaijani (azərbaycanca)
@@ -104,7 +106,7 @@ $messages['az'] = array(
  */
 $messages['be-tarask'] = array(
 	'searchtranslations' => 'Пошук перакладаў',
-	'tux-sst-edit' => 'Зьмяніць паведамленьне',
+	'tux-sst-edit' => 'Зьмяніць пераклад',
 	'tux-sst-search' => 'Шукаць',
 	'tux-sst-search-ph' => 'Пошук перакладаў',
 	'tux-sst-count' => '{{PLURAL:$1|Знойдзены $1 вынік|Знойдзена $1 вынікі|Знойдзена $1 вынікаў}}',
@@ -113,6 +115,8 @@ $messages['be-tarask'] = array(
 	'tux-sst-facet-orphan' => '(сіраціна)',
 	'tux-sst-nosolr-title' => 'Пошук недаступны',
 	'tux-sst-nosolr-body' => 'Гэтая вікі ня мае службы пошуку перакладаў.',
+	'tux-sst-solr-offline-title' => 'Пошук недаступны',
+	'tux-sst-solr-offline-body' => 'Служба пошуку часова недаступная.',
 );
 
 /** Breton (brezhoneg)
@@ -357,12 +361,15 @@ $messages['ku-latn'] = array(
  */
 $messages['lb'] = array(
 	'searchtranslations' => 'Iwwersetzunge sichen',
-	'tux-sst-edit' => 'Message änneren', # Fuzzy
+	'tux-sst-edit' => 'Iwwersetzung änneren',
 	'tux-sst-search' => 'Sichen',
 	'tux-sst-search-ph' => 'Iwwersetzunge sichen',
+	'tux-sst-count' => '{{PLURAL:$1|Ee Resultat|$1 Resultater}} fonnt',
 	'tux-sst-facet-language' => 'Sproochen',
+	'tux-sst-facet-orphan' => '(verwaist)',
 	'tux-sst-nosolr-title' => 'Sichen ass net disponibel',
 	'tux-sst-nosolr-body' => "Dës Wiki huet d'Sichfonctioun vun den Iwwersetzungen net.",
+	'tux-sst-solr-offline-title' => 'Sichen ass net disponibel',
 );
 
 /** Macedonian (македонски)
@@ -476,6 +483,23 @@ $messages['ru'] = array(
 	'tux-sst-facet-orphan' => '(сирота)',
 	'tux-sst-nosolr-title' => 'Поиск недоступен',
 	'tux-sst-nosolr-body' => 'В этой вики отсутствует сервис поиска переводов.',
+);
+
+/** Swedish (svenska)
+ * @author WikiPhoenix
+ */
+$messages['sv'] = array(
+	'searchtranslations' => 'Sök översättningar',
+	'tux-sst-edit' => 'Redigera översättning',
+	'tux-sst-search' => 'Sök',
+	'tux-sst-search-ph' => 'Sök översättningar',
+	'tux-sst-count' => '{{PLURAL:$1|Ett|$1}} resultat hittades',
+	'tux-sst-facet-language' => 'Språk',
+	'tux-sst-facet-group' => 'Meddelandegrupper',
+	'tux-sst-nosolr-title' => 'Sökning är inte tillgänglig',
+	'tux-sst-nosolr-body' => 'Denna wiki har inte en tjänst för att söka efter översättningar.',
+	'tux-sst-solr-offline-title' => 'Sökning är inte tillgänglig',
+	'tux-sst-solr-offline-body' => 'Söktjänsten är inte tillgänglig för tillfället.',
 );
 
 /** Turkish (Türkçe)

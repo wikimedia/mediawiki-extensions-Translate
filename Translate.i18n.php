@@ -2604,7 +2604,7 @@ Ye enforma afayadizo pa les xeres de correición.',
 	'tux-editor-doc-editor-cancel' => 'Encaboxar',
 	'tux-messagetable-more-messages' => '$1 {{PLURAL:$1|mensaxe|mensaxes}} más',
 	'tux-messagetable-loading-messages' => 'Cargando $1 {{PLURAL:$1|mensaxe|mensaxes}}...',
-	'tux-message-filter-placeholder' => 'Llista de peñeres', # Fuzzy
+	'tux-message-filter-placeholder' => 'Peñerar llista',
 	'tux-message-filter-result' => '{{PLURAL:$1|Alcontrose un resultáu|Alcontraronse $1 resultaos}} pa "$2"',
 	'tux-message-filter-advanced-button' => 'Gueta avanzada',
 	'tux-message-filter-optional-messages-label' => 'Mensaxes opcionales',
@@ -2617,6 +2617,9 @@ Ye enforma afayadizo pa les xeres de correición.',
 	'tux-empty-list-other-guide' => 'Pue ayudar revisando les traducciones esistentes',
 	'tux-empty-list-other-action' => 'Correxir les traducciones',
 	'tux-empty-list-other-link' => 'Ver tolos mensaxes',
+	'tux-editor-close-tooltip' => 'Zarrar',
+	'tux-editor-expand-tooltip' => 'Espander',
+	'tux-editor-collapse-tooltip' => 'Plegar',
 );
 
 /** Azerbaijani (azərbaycanca)
@@ -2818,6 +2821,30 @@ Səbəb:
 	'translate-messagereview-submit' => 'Təsdiqlə',
 	'translate-messagereview-progress' => 'Qəbul edilir...',
 	'translate-messagereview-done' => 'Qəbul olundu',
+	'translate-gethelp' => 'Kömək',
+	'translate-msggroupselector-projects' => 'Mesaj qrupu',
+	'translate-msggroupselector-search-placeholder' => 'Qrupları axtar',
+	'translate-msggroupselector-search-all' => 'Hamısı',
+	'translate-msggroupselector-search-recent' => 'Son',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|altqrup|altqrup}}',
+	'tux-languageselector' => 'Tərcümə',
+	'tux-tab-all' => 'Hamısı',
+	'tux-tab-untranslated' => 'Tərcümə olunmamış',
+	'tux-tab-outdated' => 'Köhnə tarixli',
+	'tux-tab-translated' => 'Tərcümə edilmiş',
+	'tux-edit' => 'Redaktə et',
+	'tux-status-optional' => 'İstəyə bağlı',
+	'tux-status-fuzzy' => 'Köhnə tarixli',
+	'tux-status-proofread' => 'Düzənləmə',
+	'tux-status-translated' => 'Tərcümə edilmiş',
+	'tux-status-saving' => 'Saxlanılır...',
+	'tux-status-unsaved' => 'Saxlanılmayıb',
+	'tux-editor-placeholder' => 'Sənin tərcümələrin',
+	'tux-editor-paste-original-button-label' => 'Mənbə mətn yapışdır',
+	'tux-editor-save-button-label' => 'Tərcüməni saxla',
+	'tux-editor-skip-button-label' => 'Sonrakına keç',
+	'tux-editor-confirm-button-label' => 'Tərcüməni təsdiq edin',
+	'tux-editor-shortcut-info' => '"$1" seçərək saxla ya da "$2" seçərək növbəti mesaja keç',
 );
 
 /** South Azerbaijani (تورکجه)
@@ -5277,6 +5304,9 @@ $messages['ckb'] = array(
 	'translate-js-next' => 'پاشەکەتی بکە و دواتر بکەوە',
 	'translate-js-skip' => 'باز ببە بۆ دواتر',
 	'translate-js-support' => 'پرسیار بکە',
+	'translate-gs-code' => 'کۆد',
+	'translate-gs-total' => 'سەرجەم',
+	'translate-searchprofile' => 'وەرگێڕانەکان',
 	'translate-workflowstatus' => 'ڕەوش: $1',
 	'translate-workflow-set-do' => 'ڕێک بخە',
 	'translate-workflow-set-doing' => 'ڕێکخستن...',
@@ -5285,7 +5315,9 @@ $messages['ckb'] = array(
 	'translate-gethelp' => 'یارمەتی',
 	'translate-msggroupselector-search-all' => 'ھەموو',
 	'tux-tab-all' => 'ھەموو',
+	'tux-editor-suggestions-title' => 'پێشنیارەکان',
 	'tux-editor-in-other-languages' => 'بە زمانەکانی تر',
+	'tux-editor-translate-mode' => 'پێرست',
 );
 
 /** Czech (česky)
@@ -7245,6 +7277,7 @@ Jo nejwužytnjej za korigěrowańske nadawki.',
 	'tux-empty-list-other-link' => 'Wšykne powěźeńki pokazaś',
 	'tux-editor-close-tooltip' => 'Zacyniś',
 	'tux-editor-expand-tooltip' => 'Pokazaś',
+	'tux-editor-collapse-tooltip' => 'Schowaś',
 );
 
 /** Central Dusun (Dusun Bundu-liwan)
@@ -11087,6 +11120,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-empty-list-other-link' => 'Mostrar todas as mensaxes',
 	'tux-editor-close-tooltip' => 'Pechar',
 	'tux-editor-expand-tooltip' => 'Expandir',
+	'tux-editor-collapse-tooltip' => 'Contraer',
 );
 
 /** Goan Konkani (Latin script) (Konknni)
@@ -12041,6 +12075,7 @@ $1',
 	'tux-empty-list-other-link' => 'הצגת כל ההודעות',
 	'tux-editor-close-tooltip' => 'סגירה',
 	'tux-editor-expand-tooltip' => 'הרחבה',
+	'tux-editor-collapse-tooltip' => 'צמצום',
 );
 
 /** Hindi (हिन्दी)
@@ -12767,6 +12802,7 @@ Je najwužitnišo za korigowanske nadawki.',
 	'tux-empty-list-other-link' => 'Wšě zdźělenki pokazać',
 	'tux-editor-close-tooltip' => 'Začinić',
 	'tux-editor-expand-tooltip' => 'Pokazać',
+	'tux-editor-collapse-tooltip' => 'Schować',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -32330,7 +32366,7 @@ $1',
 	'tux-editor-outdated-warning' => '此翻譯可能要更新。',
 	'tux-editor-outdated-warning-diff-link' => '顯示差異',
 	'tux-editor-doc-editor-placeholder' => '訊息說明文件',
-	'tux-editor-doc-editor-save' => '保存文檔',
+	'tux-editor-doc-editor-save' => '儲存說明',
 	'tux-editor-doc-editor-cancel' => '取消',
 	'tux-messagetable-more-messages' => '$1則訊息',
 	'tux-messagetable-loading-messages' => '載入{{PLURAL:$1|訊息|訊息}}...',
@@ -32347,6 +32383,9 @@ $1',
 	'tux-empty-list-other-guide' => '幫助校對現有的翻譯',
 	'tux-empty-list-other-action' => '校對翻譯',
 	'tux-empty-list-other-link' => '顯示所有訊息',
+	'tux-editor-close-tooltip' => '關閉',
+	'tux-editor-expand-tooltip' => '展開',
+	'tux-editor-collapse-tooltip' => '摺叠',
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)
