@@ -68,8 +68,14 @@ class PageTranslationHooks {
 	}
 
 	/// Hook: OutputPageBeforeHTML
-	public static function injectCss( OutputPage $outputpage, /*string*/ $text ) {
-		$outputpage->addModules( 'ext.translate' );
+	public static function injectCss( OutputPage $out, /*string*/ $text ) {
+		$title = $out->getTitle();
+		if ( TranslatablePage::isSourcePage( $title ) || TranslatablePage::isTranslationPage( $title ) ) {
+			$out->addModules( 'ext.translate' );
+			if ( $wgTranslatePageTranslationULS ) {
+				$out->addModules( 'ext.translate.pagetranslation.uls' );
+			}
+		}
 
 		return true;
 	}
