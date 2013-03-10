@@ -322,6 +322,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'mediawiki.util',
 		'jquery.appear',
 		'mediawiki.jqueryMsg',
+		'ext.translate.parsers',
 	),
 	'messages' => array(
 		'translate-messagereview-submit',
@@ -378,6 +379,13 @@ $wgResourceModules['ext.translate.quickedit'] = array(
 		'jquery.form',
 		'jquery.ui.dialog',
 		'jquery.autoresize',
+		'mediawiki.util',
+	),
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.parsers'] = array(
+	'scripts' => 'resources/js/ext.translate.parsers.js',
+	'dependencies' => array(
 		'mediawiki.util',
 	),
 ) + $resourcePaths;
