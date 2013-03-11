@@ -317,6 +317,8 @@
 				} );
 				$( '.tux-message-filter-box-clear' ).removeClass( 'hide' );
 			}
+
+			this.$loader.trigger( 'appear' );
 		},
 
 		resize: function () {
