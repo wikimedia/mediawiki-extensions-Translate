@@ -544,6 +544,11 @@
 				$infoColumn = $( '<div>' ).addClass( 'infocolumn' ),
 				translateEditor = this;
 
+			$infoColumn.append( $( '<div>' )
+				.addClass( 'row loading' )
+				.text( mw.msg( 'tux-editor-loading' ) )
+			);
+
 			if ( mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				if ( mw.translate.canTranslate() ) {
 					$messageDescSaveButton = $( '<button>' )

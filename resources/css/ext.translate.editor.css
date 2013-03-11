@@ -344,3 +344,9 @@
 .suggestiontext {
 	white-space: pre-wrap;
 }
+
+.infocolumn .loading {
+	padding: 10px;
+	font-size: 14px;
+	color: #565656;
+}
