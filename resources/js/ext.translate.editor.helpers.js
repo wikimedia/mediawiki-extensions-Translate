@@ -402,6 +402,8 @@
 				title: this.message.title,
 				format: 'json'
 			} ).done( function ( result ) {
+				translateEditor.$editor.find( '.infocolumn .loading' )
+					.addClass( 'hide' );
 				if ( !result.helpers ) {
 					mw.log( 'API did not return any translation helpers.' );
 					return false;
