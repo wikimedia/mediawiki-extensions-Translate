@@ -289,6 +289,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'translate-edit-askpermission',
 		'tux-editor-outdated-warning',
 		'tux-editor-outdated-warning-diff-link',
+		'tux-proofread-translated-by-self',
 		'tux-editor-close-tooltip',
 		'tux-editor-expand-tooltip',
 		'tux-editor-collapse-tooltip',

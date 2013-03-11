@@ -54,6 +54,13 @@
 	right: -5px;
 }
 
+.translated-by-self {
+	float: right;
+	text-align: right;
+	font-size: x-small;
+	margin-right: 5px;
+}
+
 .tux-proofread-status {
 	top: -10px;
 }

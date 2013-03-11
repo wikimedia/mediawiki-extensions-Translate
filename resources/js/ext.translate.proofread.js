@@ -107,11 +107,6 @@
 			var proofread = this;
 
 			this.render();
-			// No self review
-			if ( this.message.properties['last-translator-text'] === mw.user.id() ) {
-				this.hide();
-			}
-
 			// No review before translating.
 			if ( !this.message.translation ) {
 				this.hide();
@@ -171,6 +166,18 @@
 					)
 			)
 			.addClass( this.message.properties.status );
+
+			if ( this.message.properties['last-translator-text'] === mw.user.getName() ) {
+				this.$message.addClass( 'own-translation' );
+				this.$message.append(
+					$( '<div>' )
+						.addClass( 'translated-by-self' )
+						.text( mw.msg( 'tux-proofread-translated-by-self' ) )
+				);
+
+				// Hide it initially
+				this.hide();
+			}
 		},
 
 		hide: function () {
