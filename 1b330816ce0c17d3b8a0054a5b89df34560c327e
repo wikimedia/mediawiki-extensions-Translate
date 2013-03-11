@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dp-WA2E4",
+        "filename": "resources/js/ext.translate.parsers.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-11T12:20:57Z",
+      "side": 1,
+      "message": "Whitespace.",
+      "revId": "1b330816ce0c17d3b8a0054a5b89df34560c327e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DpxWGpGg",
+        "filename": "resources/js/ext.translate.parsers.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-11T12:20:57Z",
+      "side": 1,
+      "message": "JSHint reports p3 as unused.",
+      "revId": "1b330816ce0c17d3b8a0054a5b89df34560c327e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
