@@ -215,19 +215,6 @@
 			.filter( '.translated, .proofread' );
 	}
 
-	function getOwnTranslatedMessages( $translateContainer ) {
-		$translateContainer = $translateContainer || $( '.ext-translate-container' );
-
-		return $translateContainer.find( '.tux-message-proofread' )
-			.filter( function () {
-				var $this = $( this );
-
-				return ( $this.hasClass( 'translated' ) &&
-					$this.data( 'message' ).properties['last-translator-text'] === mw.user.getName()
-				);
-			} );
-	}
-
 	function workflowSelectionHandler ( state ) {
 		var $status = $( '.tux-workflow-status' );
 
@@ -371,7 +358,7 @@
 		$controlOwnButton = $translateContainer.find( '.tux-proofread-own-translations-button' );
 		$controlOwnButton.click( function () {
 			var $this = $( this ),
-				ownTranslatedMessages = getOwnTranslatedMessages( $translateContainer ),
+				ownTranslatedMessages = $translateContainer.find( '.own-translation' ),
 				hideMessage = mw.msg( 'tux-editor-proofreading-hide-own-translations' ),
 				showMessage = mw.msg( 'tux-editor-proofreading-show-own-translations' );
 
