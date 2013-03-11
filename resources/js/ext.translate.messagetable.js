@@ -317,6 +317,10 @@
 				} );
 				$( '.tux-message-filter-box-clear' ).removeClass( 'hide' );
 			}
+
+			// Trigger a scroll event for the window to make sure all floating toolbars
+			// are in their position.
+			$( window ).trigger( 'scroll' );
 		},
 
 		resize: function () {
