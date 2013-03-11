@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dp4prcx8",
+        "filename": "resources/js/ext.translate.pagetranslation.uls.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-11T08:45:15Z",
+      "side": 1,
+      "message": "jshint:\n\nresources/js/ext.translate.pagetranslation.uls.js: line 2, col 5, Missing \"use strict\" statement.",
+      "revId": "9b9b41e3647d0113796e8ffcab7b5b634544bec7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
