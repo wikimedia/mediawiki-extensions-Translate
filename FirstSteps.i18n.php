@@ -640,7 +640,7 @@ Zde si můžete zvolit, které jazyky, pokud vůbec nějaké, chcete vidět.',
 	'translate-fs-userpage-level-2' => 'Mám průměrnou znalost jazyka',
 	'translate-fs-userpage-level-1' => 'Umím trochu jazyk',
 	'translate-fs-userpage-help' => 'Uveďte své jazykové znalosti a řekněte nám něco o sobě. Pokud umíte víc než pět jazyků, budete později moci přidat další.',
-	'translate-fs-userpage-submit' => 'Založit mou uživatelskou stránku',
+	'translate-fs-userpage-submit' => 'Založte si uživatelskou stránku',
 	'translate-fs-userpage-done' => 'Výtečně! Teď máte svou uživatelskou stránku.',
 	'translate-fs-permissions-planguage' => 'Primární jazyk:',
 	'translate-fs-permissions-help' => 'Nyní bude potřeba požádat o přidání do skupiny překladatelů.

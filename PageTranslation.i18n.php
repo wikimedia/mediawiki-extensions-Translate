@@ -1861,7 +1861,7 @@ Ujistěte se, že obsahuje značky <code><nowiki><translate></nowiki></code> a m
 Tato stránka může být nyní <span class="plainlinks">[$3 přeložena]</span>.',
 	'tpt-badsect' => '„$1“ není platný název části překladu $2.',
 	'tpt-showpage-intro' => 'Níže jsou uvedeny nové, současné a smazané části.
-Předtím než tuto verzi označíte pro překlad zkontrolujte, že změny částí jsou minimální, abyste zabránili zbytečné práci překladatelů.', # Fuzzy
+Než tuto verzi označíte pro překlad, zkontrolujte, že změny částí jsou minimální, abyste zabránili zbytečné práci překladatelů.',
 	'tpt-mark-summary' => 'Tato verze je označená pro překlad',
 	'tpt-edit-failed' => 'Nelze aktualizovat stránku: $1',
 	'tpt-already-marked' => 'Nejnovější verze této stránky už byla označena pro překlad.',
@@ -1887,7 +1887,6 @@ ale nejnovější verze {{PLURAL:$1|nemůže být k překladu označena|nemohou 
 	'translate-tag-markthisagain' => 'Tato stránka byla <span class="plainlinks">[$1 změněna]</span> od posledního <span class="plainlinks">[$2 označení pro překlad]</span>.',
 	'translate-tag-hasnew' => 'Tato stránka obsahuje <span class="plainlinks">[$1 změny]</span>, které nebyly označeny pro překlad.',
 	'tpt-translation-intro' => 'Toto je <span class="plainlinks">[$1 přeložená verze]</span> stránky [[$2]], překlad je úplný a aktuální na $3 %.',
-	'tpt-translation-intro-fuzzy' => 'Takto jsou označeny zastaralé části překladu.',
 	'tpt-languages-legend' => 'Jiné jazyky:',
 	'tpt-languages-zero' => 'Začít překlad do tohoto jazyka',
 	'tpt-target-page' => 'Tuto stránku nelze ručně aktualizovat.
@@ -1912,23 +1911,8 @@ Správce překladů se rozhodl zaměřit překladatelské úsilí na $3.",
 	'tpt-aggregategroup-new-name' => 'Jméno:',
 	'tpt-aggregategroup-new-description' => 'Popis (nepovinné):',
 	'tpt-aggregategroup-invalid-group' => 'Skupina neexistuje',
-	'pt-log-header' => 'Protokol úkonů souvisejících se systémem překladu stránek',
-	'pt-log-name' => 'Kniha překladů stránek',
-	'pt-log-mark' => '{{GENDER:$2|označil|označila}} verzi $3 stránky „[[:$1]]“ k překladu',
-	'pt-log-unmark' => '{{GENDER:$2|odstranil|odstranila}} stránku „[[:$1]]“ z překládání',
-	'pt-log-moveok' => '{{GENDER:$2|dokončil|dokončila}} přejmenování překladatelné stránky $1 na $3',
-	'pt-log-movenok' => '{{GENDER:$2|narazil|narazila}} na problém při přesunu [[:$1]] na [[:$3]]',
-	'pt-log-delete-full-ok' => '{{GENDER:$2|dokončil|dokončila}} smazání překladatelné stránky $1',
-	'pt-log-delete-full-nok' => '{{GENDER:$2|narazil|narazila}} na problém při mazání překladatelné stránky [[:$1]]',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|dokončil|dokončila}} smazání překladové stránky $1',
-	'pt-log-delete-lang-nok' => '{{GENDER:$2|narazil|narazila}} na problém při mazání překladové stránky [[:$1]]',
-	'pt-log-encourage' => '{{GENDER:$2|vybídnul|vybídla}} k překladu stránky [[:$1]]',
-	'pt-log-discourage' => '{{GENDER:$2|odradil|odradila}} od překladu stránky [[:$1]]',
-	'pt-log-priority-langs-unset' => '{{GENDER:$2|odebral|odebrala}} prioritní jazyky z překladatelné stránky [[:$1]]',
-	'pt-log-priority-langs' => '{{GENDER:$2|nastavil|nastavila}} prioritní jazyky pro překladatelnou stránku [[:$1]] na $3. Zdůvodnění: $4',
-	'pt-log-priority-langs-force' => '{{GENDER:$2|omezil|omezila}} jazyky pro překladatelnou stránku [[:$1]] na $3. Zdůvodnění: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|přidal|přidala}} překladatelnou stránku [[:$1]] do skupiny $3',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|odebral|odebrala}} překladatelnou stránku [[:$1]] ze skupiny $3',
+	'log-description-pagetranslation' => 'Protokol úkonů souvisejících se systémem překladu stránek',
+	'log-name-pagetranslation' => 'Kniha překladů stránek',
 	'pt-movepage-list-pages' => 'Seznam stránek k přesunutí',
 	'pt-movepage-list-translation' => 'Překlad stránky', # Fuzzy
 	'pt-movepage-list-section' => 'Sekce stránky', # Fuzzy
@@ -6090,16 +6074,18 @@ Fähler kumme en et [[Special:Log/pagetranslation|Logbooch vum Övversäze]] un 
  * @author Gomada
  */
 $messages['ku-latn'] = array(
+	'pagetranslation' => 'Wergera rûpelê',
 	'right-pagetranslation' => 'Versiyonên rûpelên ji bo wergerê nîşan bike',
 	'tpt-diff-old' => 'Nivîsa pêşî',
 	'tpt-diff-new' => 'Nivîsa nû',
 	'tpt-submit' => 'Vê versiyonê ji bo wergerê îşaret bike',
 	'tpt-nosuchpage' => 'Rûpela $1 tune.',
 	'tpt-select-prioritylangs-reason' => 'Sedem:',
-	'translate-tag-translate-link-desc' => 'Vê rûpelê werrgerrîne',
+	'translate-tag-translate-link-desc' => 'Vê rûpelê werrgerîne',
 	'translate-tag-markthis' => 'Vê rûpelê ji bo wergerê îşaret bike',
 	'tpt-languages-legend' => 'Zimanên din:',
 	'tpt-download-page' => 'Rûpela bi wergeran bişîne',
+	'tpt-aggregategroup-add' => 'Lê zêde bike',
 	'tpt-aggregategroup-new-name' => 'Nav:',
 	'pt-movepage-list-translation' => 'Rûpelên wergerê', # Fuzzy
 	'pt-movepage-list-other' => 'Binrûpelên din', # Fuzzy
@@ -6111,6 +6097,7 @@ $messages['ku-latn'] = array(
 	'pt-deletepage-current' => 'Navê rûpelê:',
 	'pt-deletepage-reason' => 'Sedem:',
 	'pt-deletepage-subpages' => 'Hemû binrûpelan jê bibe',
+	'pt-deletepage-list-other' => 'Binrûpelên din',
 );
 
 /** Luxembourgish (Lëtzebuergesch)

@@ -366,10 +366,12 @@ $messages['lb'] = array(
 	'tux-sst-search-ph' => 'Iwwersetzunge sichen',
 	'tux-sst-count' => '{{PLURAL:$1|Ee Resultat|$1 Resultater}} fonnt',
 	'tux-sst-facet-language' => 'Sproochen',
+	'tux-sst-facet-group' => 'Gruppe vu Messagen',
 	'tux-sst-facet-orphan' => '(verwaist)',
 	'tux-sst-nosolr-title' => 'Sichen ass net disponibel',
 	'tux-sst-nosolr-body' => "Dës Wiki huet d'Sichfonctioun vun den Iwwersetzungen net.",
 	'tux-sst-solr-offline-title' => 'Sichen ass net disponibel',
+	'tux-sst-solr-offline-body' => "D'Sichfonctioun ass temporär net disponibel.",
 );
 
 /** Macedonian (македонски)
@@ -537,15 +539,17 @@ $messages['uk'] = array(
  */
 $messages['vi'] = array(
 	'searchtranslations' => 'Tìm bản dịch',
-	'tux-sst-edit' => 'Sửa thông điệp',
+	'tux-sst-edit' => 'Sửa bản dịch',
 	'tux-sst-search' => 'Tìm kiếm',
 	'tux-sst-search-ph' => 'Tìm bản dịch',
 	'tux-sst-count' => 'Tìm thấy $1 kết quả',
 	'tux-sst-facet-language' => 'Ngôn ngữ',
 	'tux-sst-facet-group' => 'Nhóm thông điệp',
 	'tux-sst-facet-orphan' => '(mồ côi)',
-	'tux-sst-nosolr-title' => 'Không thể tìm kiếm',
+	'tux-sst-nosolr-title' => 'Công cụ tìm kiếm không có sẵn',
 	'tux-sst-nosolr-body' => 'Wiki này không có công cụ tìm bản dịch.',
+	'tux-sst-solr-offline-title' => 'Công cụ tìm kiếm không có sẵn',
+	'tux-sst-solr-offline-body' => 'Công cụ tìm kiếm tạm thời không sẵn dùng.',
 );
 
 /** Simplified Chinese (中文（简体）‎)

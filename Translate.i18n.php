@@ -14668,6 +14668,7 @@ Utile per l'attività di correzione.",
 	'tux-empty-list-other-link' => 'Mostra tutti i messaggi',
 	'tux-editor-close-tooltip' => 'Chiudi',
 	'tux-editor-expand-tooltip' => 'Espandi',
+	'tux-editor-collapse-tooltip' => 'Comprimi',
 );
 
 /** Japanese (日本語)
