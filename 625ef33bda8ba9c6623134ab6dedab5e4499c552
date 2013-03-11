@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dp8qJeyY",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-11T05:56:43Z",
+      "side": 1,
+      "message": "this variable not defined here. add global $wgTranslatePageTranslationULS;",
+      "revId": "625ef33bda8ba9c6623134ab6dedab5e4499c552",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
