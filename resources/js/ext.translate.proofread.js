@@ -107,11 +107,6 @@
 			var proofread = this;
 
 			this.render();
-			// No self review
-			if ( this.message.properties['last-translator-text'] === mw.user.id() ) {
-				this.hide();
-			}
-
 			// No review before translating.
 			if ( !this.message.translation ) {
 				this.hide();
@@ -139,7 +134,8 @@
 
 		render: function () {
 			var targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
-				$proofreadAction, $proofreadEdit;
+				$proofreadAction, $proofreadEdit,
+				translatedBySelf = ( this.message.properties['last-translator-text'] === mw.user.getName() );
 
 			sourceLanguage = this.$container.data( 'sourcelangcode' );
 			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
@@ -175,6 +171,11 @@
 				$( '<div>' )
 					.addClass( 'tux-proofread-action-block one column' )
 					.append(
+						translatedBySelf ?
+							$( '<div>' )
+								.addClass( 'translated-by-self' )
+								.text( mw.msg( 'tux-proofread-translated-by-self' ) ) :
+							$( [] ),
 						$proofreadAction,
 						this.message.properties.reviewers ?
 							$( '<div>' )
@@ -186,6 +187,12 @@
 					)
 			)
 			.addClass( this.message.properties.status );
+
+			if ( translatedBySelf ) {
+				this.$message.addClass( 'own-translation' );
+				// Own translations cannot be reviewed, so hide the review button
+				this.hide();
+			}
 
 			$proofreadAction.tipsy( {
 				gravity: 's'
