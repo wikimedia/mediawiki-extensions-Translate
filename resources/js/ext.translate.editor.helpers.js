@@ -397,11 +397,15 @@
 			var translateEditor = this,
 				api = new mw.Api();
 
+			translateEditor.$editor.find( '.infocolumn' )
+				.addClass( 'tux-loading-indicator' );
 			api.get( {
 				action: 'translationaids',
 				title: this.message.title,
 				format: 'json'
 			} ).done( function ( result ) {
+				translateEditor.$editor.find( '.infocolumn' )
+					.removeClass( 'tux-loading-indicator' );
 				if ( !result.helpers ) {
 					mw.log( 'API did not return any translation helpers.' );
 					return false;
