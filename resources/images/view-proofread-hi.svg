@@ -7,38 +7,12 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
    width="25"
    height="15"
-   id="svg17805"
-   version="1.1"
-   inkscape:version="0.48.2 r9819"
-   sodipodi:docname="view-proofread-active.svg">
+   id="svg17805">
   <defs
      id="defs17807" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="-28.748974"
-     inkscape:cy="8.0819997"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     fit-margin-top="5"
-     fit-margin-left="5"
-     fit-margin-right="5"
-     fit-margin-bottom="5"
-     inkscape:window-width="1216"
-     inkscape:window-height="685"
-     inkscape:window-x="178"
-     inkscape:window-y="201"
-     inkscape:window-maximized="0" />
   <metadata
      id="metadata17810">
     <rdf:RDF>
@@ -52,14 +26,11 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Capa 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-159.64355,-100.30805)">
+     transform="translate(-159.64355,-100.30805)"
+     id="layer1">
     <path
-       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.65451980000000010;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
        d="m 175.4092,101.38615 -5.1875,8.93751 -2.0313,-1.5 -1.5937,2.125 3.25,2.4063 1.1875,0.875 0.75,-1.2813 5.9062,-10.25001 -2.2812,-1.3125 z"
        id="path12436-0-1-2-8-1-9-2-0"
-       inkscape:connector-curvature="0" />
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.6545198;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
   </g>
 </svg>
