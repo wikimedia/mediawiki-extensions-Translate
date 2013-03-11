@@ -54,6 +54,16 @@
 	right: -5px;
 }
 
+.translated-by-self {
+	text-align: right;
+	font-size: x-small;
+	margin-right: 5px;
+	padding-top: 18px; /* Icon height + 3px */
+	/* @embed */
+	background: url(../images/user-small.png) top right no-repeat;
+	background-image: url(../images/user-small.svg);
+}
+
 .tux-proofread-status {
 	top: -10px;
 }
