@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dp-Uz.ME",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-11T13:08:20Z",
+      "side": 1,
+      "message": "Hide what? What unhides it?",
+      "revId": "49d742b617f87db04ebfd2abf4a3b4e156b53748",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
