@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dpwpowx0",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-11T08:50:41Z",
+      "side": 1,
+      "message": "Could be bikeshedding but my opinion:\n\"Accept translation\"\n\"Open editor\" or \"Open translation editor\" or \"Change translation\" (The messages are already translated in proofread mode).",
+      "revId": "9fa05d1bef74dfdbfa42d66e0a7d3d399d8c691a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dp6qDz84",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 994,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-11T08:50:41Z",
+      "side": 1,
+      "message": "tooltop",
+      "revId": "9fa05d1bef74dfdbfa42d66e0a7d3d399d8c691a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
