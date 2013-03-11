@@ -319,6 +319,10 @@
 			}
 
 			this.$loader.trigger( 'appear' );
+
+			// Trigger a scroll event for the window to make sure all floating toolbars
+			// are in their position.
+			$( window ).trigger( 'scroll' );
 		},
 
 		resize: function () {
