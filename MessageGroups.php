@@ -244,7 +244,7 @@ class MessageGroups {
 	 * @see MessageGroups::getPriority
 	 *
 	 * @param MessageGroup|string $group Message group
-	 * @param string Priority (empty string to unset)
+	 * @param string $priority Priority (empty string to unset)
 	 * @since 2013-03-01
 	 */
 	public static function setPriority( $group, $priority = '' ) {
