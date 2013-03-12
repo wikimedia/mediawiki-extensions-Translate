@@ -577,8 +577,8 @@
 			// Header:
 			$tuxTableHeader = $( '.tux-messagetable-header' );
 			isTableHeaderFloating = $tuxTableHeader.hasClass( 'floating' );
-			needsTableHeaderFloat = messageListTop - $tuxTableHeader.height() - $window.scrollTop() < 0;
-			needsTableHeaderStick = messageListTop + $tuxTableHeader.height() - $window.scrollTop() >= 0;
+			needsTableHeaderFloat = messageListTop - $tuxTableHeader.height() - $window.scrollTop() + 10 < 0;
+			needsTableHeaderStick = messageListTop - $tuxTableHeader.height() - $window.scrollTop() - 10 >= 0;
 			if ( needsTableHeaderFloat ) {
 				$tuxTableHeader.addClass( 'floating' ).width( this.$container.width() );
 			} else if ( needsTableHeaderStick ) {
