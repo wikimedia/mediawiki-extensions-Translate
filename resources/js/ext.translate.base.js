@@ -67,7 +67,7 @@
 
 		/**
 		 * Load message group information asynchronously.
-		 * @param {string} Message group id
+		 * @param {string} id Message group id
 		 * @return {jQuery.Deferred}
 		 */
 		getMessageGroup: function ( id ) {
