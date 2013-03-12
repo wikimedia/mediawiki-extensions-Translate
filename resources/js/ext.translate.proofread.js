@@ -164,8 +164,15 @@
 					.text( this.message.translation || '' ),
 				$( '<div>' )
 					.addClass( 'tux-proofread-action-block one column' )
-					.append( $( '<div>' )
-						.addClass( 'tux-proofread-action ' + this.message.properties.status),
+					.append(
+						$( '<div>' )
+							.addClass( 'tux-proofread-action ' + this.message.properties.status ),
+						this.message.properties.reviewers ?
+							$( '<div>' )
+								.addClass( 'tux-proofread-count right' )
+								.text( mw.language.convertNumber(
+									this.message.properties.reviewers.length ) ) :
+							$( [] ),
 						$( '<div>' )
 							.addClass( 'tux-proofread-edit' )
 					)

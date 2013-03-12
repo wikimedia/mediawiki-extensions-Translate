@@ -115,3 +115,13 @@
 .tux-message-proofread:hover .tux-proofread-edit {
 	visibility: visible;
 }
+
+.tux-proofread-count {
+	color: #555555;
+	font-size: 14px;
+	padding-right: 5px;
+}
+
+.tux-proofread-count:before {
+	content: '✓';
+}
