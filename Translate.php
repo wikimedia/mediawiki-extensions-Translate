@@ -86,8 +86,8 @@ $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
 $wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
 $wgSpecialPages['AggregateGroups'] = 'SpecialAggregateGroups';
 $wgSpecialPageGroups['AggregateGroups'] = 'wiki';
-
 $wgSpecialPages['SearchTranslations'] = 'SpecialSearchTranslations';
+$wgSpecialPageGroups['SearchTranslations'] = 'wiki';
 
 // API
 $wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
