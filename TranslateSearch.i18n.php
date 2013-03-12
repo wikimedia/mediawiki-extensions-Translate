@@ -422,6 +422,8 @@ $messages['nl'] = array(
 	'tux-sst-facet-orphan' => '(wees)',
 	'tux-sst-nosolr-title' => 'Zoeken is niet beschikbaar',
 	'tux-sst-nosolr-body' => 'Deze wiki heeft geen dienst om vertalingen te zoeken.',
+	'tux-sst-solr-offline-title' => 'Zoeken is niet beschikbaar',
+	'tux-sst-solr-offline-body' => 'De zoekdienst is tijdelijk niet beschikbaar.',
 );
 
 /** Occitan (occitan)

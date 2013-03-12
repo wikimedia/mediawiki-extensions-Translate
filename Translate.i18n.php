@@ -1029,7 +1029,8 @@ Pressing the button goes to the page mode.
 {{Identical|Expand}}',
 	'tux-editor-collapse-tooltip' => 'Tooltip for the collapse icon of translate editor.
 {{Identical|Collapse}}',
-	'tux-editor-loading' => 'Loading message while translation editor is being prepared with helper information',
+	'tux-editor-loading' => 'Loading message while translation editor is being prepared with helper information.
+{{Identical|Loading}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -5145,6 +5146,7 @@ $1",
 	'tux-editor-suggestions-title' => 'Suggeriments',
 	'tux-editor-in-other-languages' => 'En altres llengües',
 	'tux-editor-translate-mode' => 'Llista',
+	'tux-editor-loading' => 'Carregant...',
 );
 
 /** Chechen (нохчийн)
@@ -6665,6 +6667,8 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-editor-translate-mode' => 'Liste',
 	'tux-editor-proofreading-hide-own-translations' => 'Deine Übersetzungen verstecken',
 	'tux-editor-proofreading-show-own-translations' => 'Deine Übersetzungen anzeigen',
+	'tux-proofread-action-tooltip' => 'Übersetzung akzeptieren',
+	'tux-proofread-edit-tooltip' => 'Übersetzen',
 	'tux-editor-page-mode' => 'Seite',
 	'tux-editor-outdated-warning' => 'Diese Übersetzung muss eventuell aktualisiert werden.',
 	'tux-editor-outdated-warning-diff-link' => 'Unterschiede zeigen',
@@ -6689,6 +6693,7 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-editor-close-tooltip' => 'Schließen',
 	'tux-editor-expand-tooltip' => 'Ausklappen',
 	'tux-editor-collapse-tooltip' => 'Einklappen',
+	'tux-editor-loading' => 'Lade …',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -7259,6 +7264,8 @@ Jo nejwužytnjej za korigěrowańske nadawki.',
 	'tux-editor-translate-mode' => 'Lisćina',
 	'tux-editor-proofreading-hide-own-translations' => 'Twóje pśełožki schowaś',
 	'tux-editor-proofreading-show-own-translations' => 'Twóje pśełožki pokazaś',
+	'tux-proofread-action-tooltip' => 'Pśełožk akceptěrowaś',
+	'tux-proofread-edit-tooltip' => 'Pśełožyś',
 	'tux-editor-page-mode' => 'Bok',
 	'tux-editor-outdated-warning' => 'Toś ten pśełožk musy se snaź aktualizěrowaś.',
 	'tux-editor-outdated-warning-diff-link' => 'Rozdźěle pokazaś',
@@ -7283,6 +7290,7 @@ Jo nejwužytnjej za korigěrowańske nadawki.',
 	'tux-editor-close-tooltip' => 'Zacyniś',
 	'tux-editor-expand-tooltip' => 'Pokazaś',
 	'tux-editor-collapse-tooltip' => 'Schowaś',
+	'tux-editor-loading' => 'Zacytujo se ...',
 );
 
 /** Central Dusun (Dusun Bundu-liwan)
@@ -12784,6 +12792,8 @@ Je najwužitnišo za korigowanske nadawki.',
 	'tux-editor-translate-mode' => 'Lisćina',
 	'tux-editor-proofreading-hide-own-translations' => 'Twoje přełožki schować',
 	'tux-editor-proofreading-show-own-translations' => 'Twoje přełožki pokazać',
+	'tux-proofread-action-tooltip' => 'Přełožk akceptować',
+	'tux-proofread-edit-tooltip' => 'Přełožić',
 	'tux-editor-page-mode' => 'Strona',
 	'tux-editor-outdated-warning' => 'Tutón přełožk dyrbi so snano aktualizować.',
 	'tux-editor-outdated-warning-diff-link' => 'Rozdźěle pokazać',
@@ -12808,6 +12818,7 @@ Je najwužitnišo za korigowanske nadawki.',
 	'tux-editor-close-tooltip' => 'Začinić',
 	'tux-editor-expand-tooltip' => 'Pokazać',
 	'tux-editor-collapse-tooltip' => 'Schować',
+	'tux-editor-loading' => 'Začituje so ...',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -15093,6 +15104,7 @@ $1',
 	'tux-editor-close-tooltip' => '閉じる',
 	'tux-editor-expand-tooltip' => '展開する',
 	'tux-editor-collapse-tooltip' => '折り畳む',
+	'tux-editor-loading' => '読み込み中...',
 );
 
 /** Jamaican Creole English (Patois)
@@ -16766,6 +16778,7 @@ $1',
 	'tux-editor-close-tooltip' => '닫기',
 	'tux-editor-expand-tooltip' => '펼치기',
 	'tux-editor-collapse-tooltip' => '접기',
+	'tux-editor-loading' => '불러오는 중...',
 );
 
 /** Krio (Krio)
@@ -17146,7 +17159,7 @@ Dat es et bäß för et Jääjelässe.',
  */
 $messages['ku-latn'] = array(
 	'translate' => 'Wergerîne',
-	'translate-taskui-view' => 'Hemû mesajan nîşan bide',
+	'translate-taskui-view' => 'Hemû peyaman nîşan bide',
 	'translate-taskui-untranslated' => 'Mesajên newergerandî nîşan bide',
 	'translate-taskui-acceptqueue' => 'Tenê mesajên ku ez dikarim bipejirînim',
 	'translate-taction-translate' => 'Wergerîne',
@@ -17233,6 +17246,39 @@ $messages['ku-latn'] = array(
 	'api-error-unknownmessage' => 'Peyam nehat dîtin',
 	'translate-dynagroup-recent-label' => 'Wergerên dawî',
 	'translate-gethelp' => 'Alîkarî',
+	'translate-msggroupselector-projects' => 'Koma peyamê',
+	'translate-msggroupselector-search-placeholder' => 'Li koman bigere',
+	'translate-msggroupselector-search-all' => 'Hemû',
+	'translate-msggroupselector-search-recent' => 'dawî',
+	'tux-languageselector' => 'Wergerîne',
+	'tux-tab-all' => 'Hemû',
+	'tux-edit' => 'Biguherîne',
+	'tux-status-translated' => 'wergerand',
+	'tux-status-saving' => 'Tê tomarkirin...',
+	'tux-status-unsaved' => 'Nehta tomarkirin',
+	'tux-editor-placeholder' => 'Wergera te',
+	'tux-editor-save-button-label' => 'Wergerê tomar bike',
+	'tux-editor-edit-desc' => 'Danasînê biguherîne',
+	'tux-editor-add-desc' => 'Danasînê lê zêde bike',
+	'tux-editor-in-other-languages' => 'Bi zimanên din',
+	'tux-editor-ask-help' => 'Ji bo agahiyên berfirehtir bipirse',
+	'tux-warnings-more' => '{{PLURAL:$1|zêdetir $1}}',
+	'tux-warnings-hide' => 'veşêre',
+	'tux-editor-use-this-translation' => 'Wek wergerê bi kar bîne',
+	'tux-editor-message-desc-more' => 'Zêdetir bibîne',
+	'tux-editor-message-desc-less' => 'Kêmtir bibîne',
+	'tux-editor-proofreading-hide-own-translations' => 'Wergerên xwe veşêre',
+	'tux-editor-proofreading-show-own-translations' => 'Wergerên xwe nîşan bide',
+	'tux-editor-page-mode' => 'Rûpel',
+	'tux-editor-outdated-warning' => 'Ev werger divê bê rojanekirin.',
+	'tux-editor-outdated-warning-diff-link' => 'Cudahiyan nîşan bide',
+	'tux-editor-doc-editor-cancel' => 'Betal bike',
+	'tux-message-filter-advanced-button' => 'Lêgerîna pêşketî',
+	'tux-empty-list-all' => 'Ev kom a peyamê vala ye',
+	'tux-empty-list-translated' => 'Peyamên newergerandî',
+	'tux-empty-list-translated-action' => 'Wergerîne',
+	'tux-empty-list-other-link' => 'Hemû peyaman nîşan bide',
+	'tux-editor-close-tooltip' => 'Bigre',
 );
 
 /** Kirghiz (Кыргызча)
@@ -18755,6 +18801,8 @@ $1',
 	'tux-editor-translate-mode' => 'Список',
 	'tux-editor-proofreading-hide-own-translations' => 'Скриј мои преводи',
 	'tux-editor-proofreading-show-own-translations' => 'Прикажи мои преводи',
+	'tux-proofread-action-tooltip' => 'Прифати превод',
+	'tux-proofread-edit-tooltip' => 'Преведи',
 	'tux-editor-page-mode' => 'Страница',
 	'tux-editor-outdated-warning' => 'На преводов може да му треба поднова.',
 	'tux-editor-outdated-warning-diff-link' => 'Прик. разлики',
@@ -18779,6 +18827,7 @@ $1',
 	'tux-editor-close-tooltip' => 'Затвори',
 	'tux-editor-expand-tooltip' => 'Прикажи',
 	'tux-editor-collapse-tooltip' => 'Скриј',
+	'tux-editor-loading' => 'Вчитувам...',
 );
 
 /** Malayalam (മലയാളം)
@@ -20783,6 +20832,11 @@ Dit is vooral nuttig voor de controletaken.',
 	'tux-editor-clear-translated' => 'Vertaald verbergen',
 	'tux-editor-proofreading-mode' => 'Proeflezen',
 	'tux-editor-translate-mode' => 'Lijst',
+	'tux-editor-proofreading-hide-own-translations' => 'Uw vertalingen verbergen',
+	'tux-editor-proofreading-show-own-translations' => 'uw vertalingen weergeven',
+	'tux-proofread-action-tooltip' => 'Vertaling accepteren',
+	'tux-proofread-edit-tooltip' => 'Vertalen',
+	'tux-editor-page-mode' => 'Pagina',
 	'tux-editor-outdated-warning' => 'Deze vertaling moet mogelijk bijgewerkt worden.',
 	'tux-editor-outdated-warning-diff-link' => 'Verschillen weergeven',
 	'tux-editor-doc-editor-placeholder' => 'Berichtbeschrijving',
@@ -20794,6 +20848,19 @@ Dit is vooral nuttig voor de controletaken.',
 	'tux-message-filter-result' => '{{PLURAL:$1|Eén resultaat|$1 resultaten}} gevonden voor "$2"',
 	'tux-message-filter-advanced-button' => 'Uitgebreid zoeken',
 	'tux-message-filter-optional-messages-label' => 'Optionele berichten',
+	'tux-empty-list-all' => 'Deze berichtengroep is leeg',
+	'tux-empty-list-all-guide' => 'Selecteer een andere berichtengroep om te vertalen',
+	'tux-empty-list-translated' => 'Geen vertaalde berichten',
+	'tux-empty-list-translated-guide' => 'U kunt helpen met vertalen',
+	'tux-empty-list-translated-action' => 'Vertalen',
+	'tux-empty-list-other' => 'Er is niets om te vertalen',
+	'tux-empty-list-other-guide' => 'U kunt helpen met het controleren van bestaande vertalingen',
+	'tux-empty-list-other-action' => 'Vertalingen proeflezen',
+	'tux-empty-list-other-link' => 'Alle berichten weergeven',
+	'tux-editor-close-tooltip' => 'Sluiten',
+	'tux-editor-expand-tooltip' => 'Uitvouwen',
+	'tux-editor-collapse-tooltip' => 'Inklappen',
+	'tux-editor-loading' => 'Bezig met laden…',
 );
 
 /** Norwegian Nynorsk (norsk nynorsk)
@@ -30831,6 +30898,7 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-editor-close-tooltip' => 'Đóng',
 	'tux-editor-expand-tooltip' => 'Mở rộng',
 	'tux-editor-collapse-tooltip' => 'Thu gọn',
+	'tux-editor-loading' => 'Đang tải…',
 );
 
 /** Volapük (Volapük)

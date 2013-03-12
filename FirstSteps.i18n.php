@@ -2755,7 +2755,7 @@ Hier kunt u kiezen welke talen u wilt zien.',
 	'translate-fs-userpage-level-2' => 'Deze taal beheers ik gemiddeld',
 	'translate-fs-userpage-level-1' => 'Deze taal ken ik een beetje',
 	'translate-fs-userpage-help' => 'Geef uw taalvaardigheden aan en vertel ons iets over uzelf. Als u meer dan vijf talen kent, kunt u er later meer toevoegen.',
-	'translate-fs-userpage-submit' => 'Mijn gebruikerspagina aanmaken',
+	'translate-fs-userpage-submit' => 'Uw gebruikerspagina aanmaken',
 	'translate-fs-userpage-done' => 'Goed gedaan!
 U hebt nu een gebruikerspagina.',
 	'translate-fs-permissions-planguage' => 'Primaire taal:',
