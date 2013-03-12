@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqIPhJAI",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-12T09:58:27Z",
+      "side": 1,
+      "message": "I wanted to replace this wfMessage with plain string \"Translations to this language are disabled\"",
+      "revId": "d928f54a08f55681f1f5440f3e5fc1832829bf8b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
