@@ -54,7 +54,7 @@ class TranslateHooks {
 			$wgSpecialPageGroups['PageTranslationDeletePage'] = 'pagetools';
 			$wgAvailableRights[] = 'pagetranslation';
 
-			global $wgLogNames, $wgLogActionsHandlers, $wgLogTypes, $wgLogHeaders;
+			global $wgLogActionsHandlers, $wgLogTypes;
 			$wgLogTypes[] = 'pagetranslation';
 			$wgLogActionsHandlers['pagetranslation/mark'] = 'PageTranslationLogFormatter';
 			$wgLogActionsHandlers['pagetranslation/unmark'] = 'PageTranslationLogFormatter';
