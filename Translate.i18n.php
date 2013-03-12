@@ -468,6 +468,8 @@ Most useful for the proofreading tasks.',
 	'tux-editor-translate-mode' => 'List',
 	'tux-editor-proofreading-hide-own-translations' => 'Hide your translations',
 	'tux-editor-proofreading-show-own-translations' => 'Show your translations',
+	'tux-proofread-action-tooltip' => 'Accept translation',
+	'tux-proofread-edit-tooltip' => 'Translate',
 	'tux-editor-page-mode' => 'Page',
 	'tux-editor-outdated-warning' => 'This translation may need to be updated.',
 	'tux-editor-outdated-warning-diff-link' => 'Show differences',
@@ -496,7 +498,6 @@ Most useful for the proofreading tasks.',
 	'tux-editor-expand-tooltip' => 'Expand',
 	'tux-editor-collapse-tooltip' => 'Collapse',
 	'tux-editor-loading' => 'Loading...',
-
 );
 
 /** Message documentation (Message documentation)
@@ -990,6 +991,8 @@ Pressing the button shows the user's own translations in the list.
 
 See also:
 * {{msg-mw|Tux-editor-proofreading-hide-own-translations}}",
+	'tux-proofread-action-tooltip' => 'A tooltip shown to new users next to the button that performs the proofreading.',
+	'tux-proofread-edit-tooltip' => 'A tooltip shown to new users next to the translation button in proofreading mode.',
 	'tux-editor-page-mode' => 'Label for the button that appears at the footer of the translation editor.
 Pressing the button goes to the page mode.
 {{Identical|Page}}',
