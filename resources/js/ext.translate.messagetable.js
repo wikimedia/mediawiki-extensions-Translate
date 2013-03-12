@@ -500,6 +500,8 @@
 			var messageTable = this,
 				filter = messageTable.$loader.data( 'filter' ),
 				$tuxTabUntranslated,
+				$tuxTabTranslated,
+				$tuxTabUnproofread,
 				$controlOwnButton,
 				$hideTranslatedButton;
 
@@ -520,27 +522,38 @@
 			messageTable.$container.empty();
 
 			$tuxTabUntranslated = $( '.tux-message-selector > .tux-tab-untranslated' );
+			$tuxTabUnproofread = $( '.tux-message-selector > .tux-tab-unproofread' );
 			$controlOwnButton = messageTable.$actionBar.find( '.tux-proofread-own-translations-button' );
 			$hideTranslatedButton = messageTable.$actionBar.find( '.tux-editor-clear-translated' );
 
 			if ( messageTable.mode === 'proofread' || messageTable.mode === 'page' ) {
-				$( '.tux-message-selector > .tux-tab-untranslated' ).addClass( 'hide' );
+				$tuxTabUntranslated.addClass( 'hide' );
+				$tuxTabUnproofread.removeClass( 'hide' );
 				// Fix the filter if it is untranslated. Untranslated does not make sense
 				// for proofread mode. Keep the filter if it is not 'untranslated'
-				if ( filter.indexOf( '!translated' ) >= 0 )  {
+				if ( !filter || filter.indexOf( '!translated' ) >= 0 )  {
 					messageTable.messages = [];
-					mw.translate.changeFilter( 'translated' );
-					$( '.tux-message-selector > .tux-tab-translated' ).addClass( 'selected' );
+					// default filter for proofread mode
+					mw.translate.changeFilter( 'translated|!reviewer|!last-translator' );
+					$tuxTabUnproofread.addClass( 'selected' );
 				}
 				$tuxTabUntranslated.addClass( 'hide' );
 				$controlOwnButton.removeClass( 'hide' );
 				$hideTranslatedButton.addClass( 'hide' );
 			} else {
 				$tuxTabUntranslated.removeClass( 'hide' );
+				$tuxTabUnproofread.addClass( 'hide' );
 				$controlOwnButton.addClass( 'hide' );
 
 				if ( messageTable.$loader.data( 'filter' ).indexOf( '!translated' ) > -1 ) {
 					$hideTranslatedButton.removeClass( 'hide' );
+				}
+
+				if ( filter && filter.indexOf( '!last-translator' ) >= 0 )  {
+					messageTable.messages = [];
+					// default filter for translate mode
+					mw.translate.changeFilter( '!translated' );
+					$tuxTabUntranslated.addClass( 'selected' );
 				}
 			}
 

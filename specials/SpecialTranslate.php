@@ -389,6 +389,7 @@ class SpecialTranslate extends SpecialPage {
 			//'Hardest',
 			'tux-tab-outdated' => 'fuzzy',
 			'tux-tab-translated' => 'translated',
+			'tux-tab-unproofread' => 'translated|!reviewer|!last-translator',
 		);
 
 		$params = $this->nondefaults;

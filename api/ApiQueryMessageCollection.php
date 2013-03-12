@@ -64,6 +64,10 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			if ( strpos( $filter, ':' ) !== false ) {
 				list( $filter, $value ) = explode( ':', $filter, 2 );
 			}
+
+			if ( $filter === '!last-translator' && !$value ) {
+				$value = $this->getUser()->getId();
+			}
 			/* The filtering params here are swapped wrt MessageCollection.
 			 * There (fuzzy) means do not show fuzzy, which is the same as !fuzzy
 			 * here and fuzzy here means (fuzzy, false) there. */
