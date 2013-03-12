@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqI5rix8",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-12T14:35:54Z",
+      "side": 1,
+      "message": "Given that wgUserId is available on JS, do we really need this shortcut? !last-translator:123 should work as well.\n\nThis also breaks the fact that one url has one content (assuming they are done at the same time), which is not nice.",
+      "revId": "e37c1f29ac2d046504b4bad2eac9e9c1f9d5b6b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqC54P.8",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-12T14:35:54Z",
+      "side": 1,
+      "message": "Here you could just append \u0027translated|!reviewer|!last-translator:\u0027 + mw.config.get( \u0027wgUserId\u0027 )\n\nIn the bugzilla it says:\n* Not approved by me\n* Not fuzzy\n* Not translated by me\n\nCurrently it is\n* Not approved by anyone\n* Not fuzzy\n* Not translated by me\n\nTo fix that you need to do the same to !reviewer as what I suggested for !last-translator.",
+      "revId": "e37c1f29ac2d046504b4bad2eac9e9c1f9d5b6b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqM5hgzs",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-12T14:35:54Z",
+      "side": 1,
+      "message": "Ah I see now why you did it, but I still don\u0027t like it. We have the user id available here too.",
+      "revId": "e37c1f29ac2d046504b4bad2eac9e9c1f9d5b6b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
