@@ -82,7 +82,7 @@ $wgSpecialPageGroups['ManageMessageGroups'] = 'wiki';
 $wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps';
 // Unlisted special page; does not need $wgSpecialPageGroups.
 $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
-// Unlisted special page; does not need $wgSpecialPageGroups.
+$wgSpecialPageGroups['SupportedLanguages'] = 'wiki';
 $wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
 $wgSpecialPages['AggregateGroups'] = 'SpecialAggregateGroups';
 $wgSpecialPageGroups['AggregateGroups'] = 'wiki';

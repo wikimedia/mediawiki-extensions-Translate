@@ -10,12 +10,12 @@
  */
 
 /**
- * Implements unlisted special page Special:SupportedLanguages. The wiki
- * administrator must define NS_PORTAL, otherwise this page does not work.
- * This page displays a list of language portals for all portals corresponding
- * with a language code defined for MediaWiki and a subpage called
- * "translators". The subpage "translators" must contain the template
- * [[:{{ns:template}}:User|User]], taking a user name as parameter.
+ * Implements special page Special:SupportedLanguages. The wiki administrator
+ * must define NS_PORTAL, otherwise this page does not work. This page displays
+ * a list of language portals for all portals corresponding with a language
+ * code defined for MediaWiki and a subpage called "translators". The subpage
+ * "translators" must contain the template [[:{{ns:template}}:User|User]],
+ * taking a user name as parameter.
  *
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
