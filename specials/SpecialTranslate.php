@@ -383,12 +383,14 @@ class SpecialTranslate extends SpecialPage {
 		$output = Html::openElement( 'div', array( 'class' => 'row tux-messagetable-header' ) );
 		$output .= Html::openElement( 'div', array( 'class' => 'nine columns' ) );
 		$output .= Html::openElement( 'ul', array( 'class' => 'row tux-message-selector' ) );
+		$userId = $this->getUser()->getId();
 		$tabs = array(
 			'tux-tab-all' => '',
 			'tux-tab-untranslated' => '!translated',
 			//'Hardest',
 			'tux-tab-outdated' => 'fuzzy',
 			'tux-tab-translated' => 'translated',
+			'tux-tab-unproofread' => "translated|!reviewer:$userId|!last-translator:$userId",
 		);
 
 		$params = $this->nondefaults;

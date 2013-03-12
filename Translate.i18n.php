@@ -434,6 +434,7 @@ Most useful for the proofreading tasks.',
 	'tux-tab-untranslated' => 'Untranslated',
 	'tux-tab-outdated' => 'Outdated',
 	'tux-tab-translated' => 'Translated',
+	'tux-tab-unproofread' => 'Unproofread',
 
 	'tux-edit' => 'Edit',
 	'tux-status-optional' => 'Optional',
@@ -926,6 +927,8 @@ Additional parameters:
 {{Identical|Outdated}}',
 	'tux-tab-translated' => 'Tab in [[Special:Translate]] new ui to select which messages to show.
 {{Identical|Translated}}',
+	'tux-tab-unproofread' => 'Tab in [[Special:Translate]] new ui to select which messages to show.
+{{Identical|Proofread}}',
 	'tux-edit' => 'Link in [[Special:Translate]] to open message editor',
 	'tux-status-optional' => 'Status label in [[Special:Translate]] indicating that message should only be translated in special cases.
 {{Identical|Optional}}',
@@ -19091,6 +19094,7 @@ $messages['ml'] = array(
 	'tux-tab-untranslated' => 'പരിഭാഷപ്പെടുത്താത്തവ',
 	'tux-tab-outdated' => 'കാലഹരണപ്പെട്ടവ',
 	'tux-tab-translated' => 'പരിഭാഷപ്പെടുത്തിയവ',
+	'tux-tab-unproofread' => 'സംശോധനം ചെയ്യാത്തവ',
 	'tux-edit' => 'പരിഭാഷപ്പെടുത്തുക',
 	'tux-status-optional' => 'ഐച്ഛികം',
 	'tux-status-fuzzy' => 'കാലഹരണപ്പെട്ടവ',
