@@ -437,8 +437,6 @@
 			} else {
 				$msgGroupList.append( $msgGroupRows );
 			}
-
-			return;
 		},
 
 		/**
