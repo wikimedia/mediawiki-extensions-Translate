@@ -16,6 +16,24 @@
       "revId": "d928f54a08f55681f1f5440f3e5fc1832829bf8b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqOMQIK0",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-12T10:06:58Z",
+      "side": 1,
+      "message": "yep, lost in rebase see https://gerrit.wikimedia.org/r/#/c/52589/3..4/api/ApiQueryMessageCollection.php\n\nwill fix",
+      "parentUuid": "DqIPhJAI",
+      "revId": "d928f54a08f55681f1f5440f3e5fc1832829bf8b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
