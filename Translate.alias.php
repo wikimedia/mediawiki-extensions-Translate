@@ -614,6 +614,7 @@ $specialPageAliases['mr'] = array(
 /** Malay (Bahasa Melayu) */
 $specialPageAliases['ms'] = array(
 	'Translate' => array( 'Terjemah' ),
+	'Translations' => array( 'Terjemahan' ),
 );
 
 /** Maltese (Malti) */

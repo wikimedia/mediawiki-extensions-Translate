@@ -2635,7 +2635,7 @@ Di sini anda boleh memilih bahasa-bahasa yang anda ingin lihat.',
 	'translate-fs-userpage-level-2' => 'Saya sederhana fasih',
 	'translate-fs-userpage-level-1' => 'Saya tahu sedikit',
 	'translate-fs-userpage-help' => 'Sila nyatakan kemahiran bahasa anda dan perihalkan diri anda kepada kami. Jika anda tahu lebih daripada lima bahasa, anda boleh tambahkan banyak lagi lain kali.',
-	'translate-fs-userpage-submit' => 'Cipta laman pengguna saya',
+	'translate-fs-userpage-submit' => 'Wujudkan halaman pengguna anda',
 	'translate-fs-userpage-done' => 'Syabas! Sekarang, anda ada laman pengguna.',
 	'translate-fs-permissions-planguage' => 'Bahasa utama:',
 	'translate-fs-permissions-help' => 'Kini, anda perlu membuat permintaan untuk disertakan dalam kumpulan penterjemah.
