@@ -172,10 +172,9 @@
 		 * Jump to the next translation editor row.
 		 */
 		next: function () {
-			var $next;
+			var $next = this.$editTrigger.next( '.tux-message' );
 
-			$next = this.$editTrigger.next( '.tux-message' );
-
+			// If this is the last message, just hide it
 			if ( !$next.length ) {
 				this.hide();
 
@@ -184,12 +183,12 @@
 
 			$next.data( 'translateeditor' ).show();
 
-			// scroll the page a little bit up, slowly.
+			// Scroll the page a little bit up, slowly.
 			if ( $( document ).height() -
 				( $( window ).height() + window.pageYOffset + $next.height() ) > 0
 			) {
 				$( 'html, body' ).stop().animate( {
-					scrollTop: $( '.tux-message-editor:visible' ).offset().top - 55
+					scrollTop: $( '.tux-message-editor:visible' ).offset().top - 85
 				}, 500 );
 			}
 		},
