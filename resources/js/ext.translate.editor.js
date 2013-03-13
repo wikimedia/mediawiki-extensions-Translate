@@ -174,6 +174,11 @@
 		next: function () {
 			var $next = this.$editTrigger.next( '.tux-message' );
 
+			// skip if the message is hidden. For eg: in a filter result.
+			if ( $next.length && $next.hasClass( 'hide' ) ) {
+				this.$editTrigger = $next;
+				return this.next();
+			}
 			// If this is the last message, just hide it
 			if ( !$next.length ) {
 				this.hide();
