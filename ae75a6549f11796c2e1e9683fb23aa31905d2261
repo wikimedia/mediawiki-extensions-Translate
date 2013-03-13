@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqDcJbzI",
+        "filename": "resources/css/ext.translate.proofread.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-13T09:35:44Z",
+      "side": 1,
+      "message": "This should be removed or fixed before submit.",
+      "revId": "ae75a6549f11796c2e1e9683fb23aa31905d2261",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqFcGYyM",
+        "filename": "resources/css/ext.translate.proofread.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-13T09:35:44Z",
+      "side": 1,
+      "message": "No embed?",
+      "revId": "ae75a6549f11796c2e1e9683fb23aa31905d2261",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqPr73hA",
+        "filename": "resources/css/ext.translate.proofread.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-13T09:35:44Z",
+      "side": 1,
+      "message": "This is not using the linear-gradient trick?",
+      "revId": "ae75a6549f11796c2e1e9683fb23aa31905d2261",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
