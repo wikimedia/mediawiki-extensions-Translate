@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqHrSbgE",
+        "filename": "resources/js/ext.translate.parsers.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-13T11:54:57Z",
+      "side": 1,
+      "message": "Should be a tad more detailed. Instead of \"Stuff related etc...\" should say something like \"A set of simple tools for partial parsing and formatting of translatable messages etc.\"",
+      "revId": "2b1e632186c8bffdbb631217c759404550fbaa1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqJrPQlc",
+        "filename": "resources/js/ext.translate.parsers.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-13T11:54:57Z",
+      "side": 1,
+      "message": "Doesn\u0027t parse nested lists, such as\n# item 1\n## nested item\n# item 2\n\nIf that is intended, then it\u0027s fine.",
+      "revId": "2b1e632186c8bffdbb631217c759404550fbaa1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqDrc9g4",
+        "filename": "resources/js/ext.translate.parsers.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-13T11:54:57Z",
+      "side": 1,
+      "message": "It\u0027s probably note very important, but is \u003cbr\u003e intended, or maybe \u003cbr /\u003e?",
+      "revId": "2b1e632186c8bffdbb631217c759404550fbaa1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
