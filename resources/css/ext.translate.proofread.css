@@ -54,9 +54,15 @@
 	right: -5px;
 }
 
+.ext-translate-container .tux-messagelist .tux-message-proofread.own-translation,
+.ext-translate-container .tux-messagelist .tux-message-proofread.own-translation:hover {
+	background: #FBFBFB;
+}
+
 .translated-by-self {
+	color: #777;
 	text-align: right;
-	font-size: x-small;
+	font-size: 12px;
 	margin-right: 5px;
 	padding-top: 18px; /* Icon height + 3px */
 	/* @embed */
