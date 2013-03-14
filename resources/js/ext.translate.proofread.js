@@ -14,23 +14,30 @@
 		 * If we have a cached token try using that, and if it fails, blank out the
 		 * cached token and start over.
 		 *
+		 * Also, if it's the first time that the user is proofreading using TUX,
+		 * the preference 'tux-did-proofread' is set to '1'.
+		 *
 		 * @param params {Object} API parameters
 		 * @param ok {Function} callback for success
 		 * @param err {Function} [optional] error callback
 		 * @return {jqXHR}
 		 */
 		proofread: function ( params, ok, err ) {
-			var useTokenToPost, getTokenIfBad,
-				api = this;
+			var useTokenToPost, getTokenIfBad, promise,
+				proofreadPlugin = this,
+				api = new mw.Api(),
+				didProofreadOption = 'tux-did-proofread';
+
 			if ( cachedToken === null ) {
 				// We don't have a valid cached token, so get a fresh one and try posting.
 				// We do not trap any 'badtoken' or 'notoken' errors, because we don't want
 				// an infinite loop. If this fresh token is bad, something else is very wrong.
 				useTokenToPost = function ( token ) {
 					params.token = token;
-					new mw.Api().post( params, ok, err );
+					api.post( params, ok, err );
 				};
-				return api.getProofreadToken( useTokenToPost, err );
+
+				promise = proofreadPlugin.getProofreadToken( useTokenToPost, err );
 			} else {
 				// We do have a token, but it might be expired. So if it is 'bad' then
 				// start over with a new token.
@@ -39,13 +46,35 @@
 					if ( code === 'badtoken' ) {
 						// force a new token, clear any old one
 						cachedToken = null;
-						api.proofread( params, ok, err );
+						proofreadPlugin.proofread( params, ok, err );
 					} else {
 						err( code, result );
 					}
 				};
-				return new mw.Api().post( params, { ok : ok, err : getTokenIfBad });
+
+				promise = api.post( params, {
+					ok: ok,
+					err: getTokenIfBad
+				} );
 			}
+
+			if ( mw.user.options.get( didProofreadOption ) !== '1' ) {
+				mw.user.options.set( didProofreadOption, '1' );
+
+				api.get( {
+					action: 'tokens',
+					type: 'options'
+				} ).done( function ( data ) {
+					api.post( {
+						action: 'options',
+						token: data.tokens.optionstoken,
+						optionname: didProofreadOption,
+						optionvalue: '1'
+					} );
+				} );
+			}
+
+			return promise;
 		},
 
 		/**
@@ -156,7 +185,7 @@
 			$proofreadAction = $( '<div>' )
 				.attr( 'title', mw.msg( 'tux-proofread-action-tooltip' ) )
 				.addClass(
-					'tux-proofread-action ' + this.message.properties.status + ' ' + (proofreadBySelf ? 'accepted' : '' )
+					'tux-proofread-action ' + this.message.properties.status + ' ' + ( proofreadBySelf ? 'accepted' : '' )
 				)
 				.tipsy( { gravity: 's' } );
 
@@ -189,7 +218,9 @@
 							$( '<div>' )
 								.addClass( 'translated-by-self' )
 								.attr( 'title', mw.msg( 'tux-proofread-translated-by-self' ) )
-								.tipsy( { gravity: 'e' } ):
+								.tipsy( {
+									gravity: $( 'body' ).hasClass( 'rtl' ) ? 'w' : 'e'
+								} ):
 							$( [] ),
 						$proofreadAction,
 						otherReviewers.length ?
@@ -214,7 +245,6 @@
 			if ( reviewers.length && otherReviewers.length ) {
 				this.$message.addClass( 'proofread-by-others' );
 			}
-
 		},
 
 		hide: function () {
