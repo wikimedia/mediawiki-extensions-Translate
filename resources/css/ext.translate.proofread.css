@@ -103,13 +103,30 @@
 	background-position: right -31px;
 }
 
-.tux-proofread-action.proofread {
+.tux-proofread-action.accepted {
 	background-position: right -62px;
 }
 
-.tux-proofread-action.proofread:hover {
+.tux-proofread-action.accepted:hover {
 	background-position: right -93px;
 }
+
+.proofread-by-others .tux-proofread-action {
+	background-position: right -124px;
+}
+
+.proofread-by-others .tux-proofread-action:hover {
+	background-position: right -155px;
+}
+
+.proofread-by-others .tux-proofread-action.accepted {
+	background-position: right -186px;
+}
+
+.proofread-by-others .tux-proofread-action.accepted:hover {
+	background-position: right -217px;
+}
+
 
 .tux-proofread-edit {
 	/* @embed */
@@ -129,11 +146,19 @@
 }
 
 .tux-proofread-count {
-	color: #555555;
-	font-size: 14px;
+	color: #777;
+	font-size: 15px;
 	padding-right: 5px;
+	text-align: right;
 }
 
 .tux-proofread-count:before {
-	content: '✓';
+	content: '';
+	display: inline-block;
+	background: url(../images/check-small.png) left bottom no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/check-small.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/check-small.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/check-small.svg);
+	height: 12px;
+	width: 14px;
 }
