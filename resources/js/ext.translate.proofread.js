@@ -7,7 +7,6 @@
 	mw.translate = mw.translate || {};
 
 	mw.translate = $.extend( mw.translate, {
-
 		/**
 		 * Post to translation review API with correct token.
 		 * If we have no token, get one and try to post.
@@ -20,17 +19,20 @@
 		 * @return {jqXHR}
 		 */
 		proofread: function ( params, ok, err ) {
-			var useTokenToPost, getTokenIfBad,
-				api = this;
+			var useTokenToPost, getTokenIfBad, promise,
+				translate = this,
+				api = new mw.Api();
+
 			if ( cachedToken === null ) {
 				// We don't have a valid cached token, so get a fresh one and try posting.
 				// We do not trap any 'badtoken' or 'notoken' errors, because we don't want
 				// an infinite loop. If this fresh token is bad, something else is very wrong.
 				useTokenToPost = function ( token ) {
 					params.token = token;
-					new mw.Api().post( params, ok, err );
+					api.post( params, ok, err );
 				};
-				return api.getProofreadToken( useTokenToPost, err );
+
+				promise = translate.getProofreadToken( useTokenToPost, err );
 			} else {
 				// We do have a token, but it might be expired. So if it is 'bad' then
 				// start over with a new token.
@@ -39,13 +41,19 @@
 					if ( code === 'badtoken' ) {
 						// force a new token, clear any old one
 						cachedToken = null;
-						api.proofread( params, ok, err );
+						translate.proofread( params, ok, err );
 					} else {
 						err( code, result );
 					}
 				};
-				return new mw.Api().post( params, { ok: ok, err: getTokenIfBad } );
+
+				promise = api.post( params, {
+					ok: ok,
+					err: getTokenIfBad
+				} );
 			}
+
+			return promise;
 		},
 
 		/**
@@ -156,14 +164,24 @@
 			$proofreadAction = $( '<div>' )
 				.attr( 'title', mw.msg( 'tux-proofread-action-tooltip' ) )
 				.addClass(
-					'tux-proofread-action ' + this.message.properties.status + ' ' + (proofreadBySelf ? 'accepted' : '' )
+					'tux-proofread-action ' + this.message.properties.status + ' ' + ( proofreadBySelf ? 'accepted' : '' )
 				)
 				.tipsy( { gravity: 's', delayIn: 2000 } );
 
 			$proofreadEdit = $( '<div>' )
 				.attr( 'title', mw.msg( 'tux-proofread-edit-tooltip' ) )
 				.addClass( 'tux-proofread-edit' )
-				.tipsy();
+				.append(
+					$( '<span>' )
+						.addClass( 'hide' )
+						.text( mw.msg( 'tux-proofread-edit-tooltip' ) )
+				)
+				.on( 'mouseover', function () {
+					$( this ).find( 'span' ).removeClass( 'hide' );
+				} )
+				.on( 'mouseout', function () {
+					$( this ).find( 'span' ).addClass( 'hide' );
+				} );
 
 			this.$message.append(
 				$( '<div>' )
@@ -214,7 +232,6 @@
 			if ( reviewers.length && otherReviewers.length ) {
 				this.$message.addClass( 'proofread-by-others' );
 			}
-
 		},
 
 		hide: function () {
