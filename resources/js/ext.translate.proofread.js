@@ -135,8 +135,8 @@
 		render: function () {
 			var targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
 				$proofreadAction, $proofreadEdit,
-				translatedBySelf = ( this.message.properties['last-translator-text'] === mw.user.getName() );
-
+				translatedBySelf = ( this.message.properties['last-translator-text'] === mw.user.getName() ),
+				proofreadByOthers = this.message.properties.reviewers ; //TODO: when the current user is the only reviewer it should not be considered here
 			sourceLanguage = this.$container.data( 'sourcelangcode' );
 			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
 			targetLanguage = this.$container.data( 'targetlangcode' );
@@ -179,7 +179,7 @@
 						$proofreadAction,
 						this.message.properties.reviewers ?
 							$( '<div>' )
-								.addClass( 'tux-proofread-count right' )
+								.addClass( 'tux-proofread-count' )
 								.text( mw.language.convertNumber(
 									this.message.properties.reviewers.length ) ) :
 							$( [] ),
@@ -192,6 +192,10 @@
 				this.$message.addClass( 'own-translation' );
 				// Own translations cannot be reviewed, so hide the review button
 				this.hide();
+			}
+			
+			if ( proofreadByOthers ) {
+				this.$message.addClass( 'proofread-by-others' );
 			}
 
 			$proofreadAction.tipsy( {

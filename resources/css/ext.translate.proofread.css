@@ -111,6 +111,23 @@
 	background-position: right -93px;
 }
 
+.proofread-by-others .tux-proofread-action {
+	background-position: right -124px;
+}
+
+.proofread-by-others .tux-proofread-action:hover {
+	background-position: right -155px;
+}
+
+.proofread-by-others .tux-proofread-action.proofread {
+	background-position: right -186px;
+}
+
+.proofread-by-others .tux-proofread-action.proofread:hover {
+	background-position: right -217px;
+}
+
+
 .tux-proofread-edit {
 	/* @embed */
 	background-image: url(../images/edit-mark.png);
@@ -132,6 +149,7 @@
 	color: #555555;
 	font-size: 14px;
 	padding-right: 5px;
+	text-align: right;
 }
 
 .tux-proofread-count:before {
