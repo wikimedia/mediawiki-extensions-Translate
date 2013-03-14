@@ -79,7 +79,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-editor-outdated-warning',
 		'tux-editor-outdated-warning-diff-link',
 		'tux-proofread-action-tooltip',
-		'tux-proofread-edit-tooltip',
+		'tux-proofread-edit-label',
 		'tux-proofread-translated-by-self',
 		'tux-editor-close-tooltip',
 		'tux-editor-expand-tooltip',
