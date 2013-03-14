@@ -331,6 +331,8 @@ class SpecialTranslate extends SpecialPage {
 
 		$options = array();
 		foreach ( $selectors as $g => $selector ) {
+			// Give grep a chance to find the usages:
+			// translate-page-group, translate-page-language, translate-page-limit
 			$options[] = self::optionRow(
 				$this->msg( 'translate-page-' . $g )->escaped(),
 				$selector,

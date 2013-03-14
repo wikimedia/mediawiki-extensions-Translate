@@ -234,6 +234,9 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 * @return string Html.
 	 */
 	protected function eLabel( $name ) {
+		// Give grep a chance to find the usages:
+		// translate-statsf-width, translate-statsf-height, translate-statsf-start, translate-statsf-days,
+		// translate-statsf-scale, translate-statsf-count, translate-statsf-language, translate-statsf-group
 		$label = 'translate-statsf-' . $name;
 		$label = $this->msg( $label )->escaped();
 
@@ -248,6 +251,8 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 * @return string Html.
 	 */
 	protected function eRadio( $name, FormOptions $opts, array $alts ) {
+		// Give grep a chance to find the usages:
+		// translate-statsf-scale, translate-statsf-count
 		$label = 'translate-statsf-' . $name;
 		$label = $this->msg( $label )->escaped();
 		$s = '<tr><td>' . $label . '</td><td>';

@@ -505,6 +505,8 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		// Check that all new titles are valid
 		$lb = new LinkBatch();
 		foreach ( $titles as $type => $list ) {
+			// Give grep a chance to find the usages:
+			// pt-movepage-block-tp-invalid, pt-movepage-block-section-invalid, pt-movepage-block-subpage-invalid
 			foreach ( $list as $pair ) {
 				list( $old, $new ) = $pair;
 				if ( $new === null ) {
@@ -523,6 +525,8 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		// Check that there are no move blockers
 		$lb->execute();
 		foreach ( $titles as $type => $list ) {
+			// Give grep a chance to find the usages:
+			// pt-movepage-block-tp-exists, pt-movepage-block-section-exists, pt-movepage-block-subpage-exists
 			foreach ( $list as $pair ) {
 				list( $old, $new ) = $pair;
 				if ( $new->exists() ) {
