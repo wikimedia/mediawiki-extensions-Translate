@@ -81,12 +81,15 @@ class SpecialSearchTranslations extends SpecialPage {
 		// Part 1: facets
 		$facets = '';
 
+		$facet = $resultset->getFacetSet()->getFacet( 'language' );
+
 		$facets .= Html::element( 'div',
-			array( 'class' => 'row facet' ),
+			array( 'class' => 'row facet languages',
+				'data-facets' => FormatJson::encode(  $this->getLanguages( $facet) ),
+				'data-language' => $opts->getValue( 'language' ),
+			),
 			$this->msg( 'tux-sst-facet-language' )
 		);
-		$facet = $resultset->getFacetSet()->getFacet( 'language' );
-		$facets .= $this->renderLanguageFacet( $facet );
 
 		$facets .= Html::element( 'div',
 			array( 'class' => 'row facet' ),
@@ -203,8 +206,9 @@ class SpecialSearchTranslations extends SpecialPage {
 		return $client->select( $query );
 	}
 
-	protected function renderLanguageFacet( Solarium_Result_Select_Facet_Field $facet ) {
-		$output = '';
+
+	protected function getLanguages( Solarium_Result_Select_Facet_Field $facet ) {
+		$output = array();
 
 		$nondefaults = $this->opts->getChangedValues();
 		$selected = $this->opts->getValue( 'language' );
@@ -228,14 +232,14 @@ class SpecialSearchTranslations extends SpecialPage {
 			if ( $key === $selected ) {
 				$class .= ' selected';
 			}
-
-			$output .= Html::rawElement( 'div',
-				array( 'class' => $class ),
-				$name . $count
+			$output[$key] =  array(
+				'count' => $value,
+				'url' => $url
 			);
 		}
 		return $output;
 	}
+
 
 	protected function renderGroupFacet( Solarium_Result_Select_Facet_Field $facet ) {
 		$structure = MessageGroups::getGroupStructure();

@@ -120,3 +120,15 @@
 h1.firstHeading {
 	display: none;
 }
+
+.translate-search-more-languages {
+	background-color: #F0F0F0;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.translate-search-more-languages-info {
+	padding: 5px;
+	color: #554;
+	font-size: 16px;
+}
