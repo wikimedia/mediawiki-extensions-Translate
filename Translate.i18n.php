@@ -470,7 +470,7 @@ Most useful for the proofreading tasks.',
 	'tux-editor-proofreading-hide-own-translations' => 'Hide your translations',
 	'tux-editor-proofreading-show-own-translations' => 'Show your translations',
 	'tux-proofread-action-tooltip' => 'Accept translation',
-	'tux-proofread-edit-tooltip' => 'Translate',
+	'tux-proofread-edit-label' => 'Edit',
 	'tux-editor-page-mode' => 'Page',
 	'tux-editor-outdated-warning' => 'This translation may need to be updated.',
 	'tux-editor-outdated-warning-diff-link' => 'Show differences',
@@ -1082,8 +1082,9 @@ Pressing the button shows the user's own translations in the list.
 See also:
 * {{msg-mw|Tux-editor-proofreading-hide-own-translations}}",
 	'tux-proofread-action-tooltip' => 'Used as a tooltip for the proofreading button in proofreading mode.',
-	'tux-proofread-edit-tooltip' => 'Used as a tooltip for the translation button in proofreading mode.
-{{Identical|Translate}}',
+	'tux-proofread-edit-label' => 'Used as a label that appears near the translation button in proofreading mode.
+Pressing the button enters translation mode.
+The message {{mw-msg|tux-proofread-action-tooltip}} is used as a tooltip for the button near it.',
 	'tux-editor-page-mode' => 'Label for the button that appears at the footer of the translation editor.
 Pressing the button goes to the page mode.
 {{Identical|Page}}',
