@@ -246,61 +246,6 @@ class ViewOptionalTask extends ViewMessagesTask {
 }
 
 /**
- * Lists messages with good translation memory suggestions.
- * The number of results is limited by the speed of translation memory.
- */
-class ViewWithSuggestionsTask extends ViewMessagesTask {
-	protected $id = 'suggestions';
-
-	protected function preinit() {
-		$code = $this->options['language'];
-		$sourceLanguage = $this->group->getSourceLanguage();
-
-		$this->collection = $this->group->initCollection( $code );
-		$this->collection->filter( 'ignored' );
-		$this->collection->filter( 'optional' );
-		$this->collection->filter( 'translated' );
-		$this->collection->filter( 'fuzzy' );
-		$this->collection->loadTranslations();
-
-		$start = time();
-
-		foreach ( $this->collection->getMessageKeys() as $key ) {
-			// Allow up to 10 seconds to search for suggestions.
-			if ( time() - $start > 10 ) {
-				unset( $this->collection[$key] );
-				continue;
-			}
-
-			$definition = $this->collection[$key]->definition();
-			$suggestions = TTMServer::primary()->query( $sourceLanguage, $code, $definition );
-			foreach ( $suggestions as $s ) {
-				// We have a good suggestion, do not filter.
-				if ( $s['quality'] > 0.80 ) {
-					continue 2;
-				}
-			}
-			unset( $this->collection[$key] );
-		}
-	}
-}
-
-/**
- * Lists untranslated optional messages.
- */
-class ViewUntranslatedOptionalTask extends ViewOptionalTask {
-	protected $id = 'untranslatedoptional';
-
-	protected function preinit() {
-		$code = $this->options['language'];
-		$this->collection = $this->group->initCollection( $code );
-		$this->collection->filter( 'ignored' );
-		$this->collection->filter( 'optional', false );
-		$this->collection->filter( 'translated' );
-	}
-}
-
-/**
  * Lists all translations for reviewing.
  */
 class ReviewAllMessagesTask extends ReviewMessagesTask {
@@ -446,7 +391,6 @@ class TranslateTasks {
 		// Tasks not to be available in page translation.
 		$filterTasks = array(
 			'optional',
-			'untranslatedoptional',
 			'export-to-file',
 		);
 
@@ -454,10 +398,6 @@ class TranslateTasks {
 
 		if ( $pageTranslation ) {
 			$allTasks = array_diff( $allTasks, $filterTasks );
-		}
-
-		if ( !isset( $wgTranslateTranslationServices['tmserver'] ) ) {
-			unset( $allTasks['suggestions'] );
 		}
 
 		return $allTasks;
