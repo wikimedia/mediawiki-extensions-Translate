@@ -9,78 +9,60 @@ class TuxMessageTable extends ContextSource {
 		$this->group = $group;
 		$this->language = $language;
 	}
+	public function fullTable() {
+		$modules = array( 'ext.translate.editor' );
+		wfRunHooks( 'TranslateBeforeAddModules', array( &$modules ) );
+		$this->getOutput()->addModules( $modules );
 
-	public function header() {
 		$sourceLang = Language::factory( $this->group->getSourceLanguage() );
 		$targetLang = Language::factory( $this->language );
+		$batchSize = 100;
 
-		return Xml::openElement( 'div', array(
+		$list = Html::element( 'div', array(
 			'class' => 'row tux-messagelist',
 			'data-sourcelangcode' => $sourceLang->getCode(),
 			'data-sourcelangdir' => $sourceLang->getDir(),
 			'data-targetlangcode' => $targetLang->getCode(),
 			'data-targetlangdir' => $targetLang->getDir(),
 		) );
-	}
 
-	public function fullTable() {
-		$modules = array( 'ext.translate.editor' );
-		wfRunHooks( 'TranslateBeforeAddModules', array( &$modules ) );
-		$this->getOutput()->addModules( $modules );
+		$groupId = htmlspecialchars( $this->group->getId() );
+		$msg = $this->msg( 'tux-messagetable-loading-messages' )
+			->numParams( $batchSize )
+			->escaped();
 
-		$batchSize = 100;
+		$loader = <<<HTML
+<div class="tux-messagetable-loader hide" data-messagegroup="$groupId" data-pagesize="$batchSize">
+	<span class="tux-loading-indicator"></span>
+	<div class="tux-messagetable-loader-count"></div>
+	<div class="tux-messagetable-loader-more">$msg</div>
+</div>
+HTML;
 
-		$footer = Html::openElement( 'div',
-			array(
-				'class' => 'tux-messagetable-loader hide',
-				'data-messagegroup' => $this->group->getId(),
-				'data-pagesize' => $batchSize,
-			) )
-			. '<span class="tux-loading-indicator"></span>'
-			. '<div class="tux-messagetable-loader-count"></div>'
-			. '<div class="tux-messagetable-loader-more">'
-			. $this->msg( 'tux-messagetable-loading-messages' )->numParams( $batchSize )->escaped()
-			. '</div>'
-			. Html::closeElement( 'div' );
+		$hideOwn = $this->msg( 'tux-editor-proofreading-hide-own-translations' )->escaped();
+		$clearTranslated = $this->msg( 'tux-editor-clear-translated' )->escaped();
+		$modeTranslate = $this->msg( 'tux-editor-translate-mode' )->escaped();
+		$modePage = $this->msg( 'tux-editor-page-mode' )->escaped();
+		$modeProofread = $this->msg( 'tux-editor-proofreading-mode' )->escaped();
 
-		$footer .= '<div class="tux-action-bar row">'
-			. Html::element( 'div',
-				array(
-					'class' => 'three columns tux-message-list-statsbar',
-					'data-messagegroup' => $this->group->getId(),
-				) );
-
-		// Hide this button by default and show it only if the filter is relevant
-		$footer .= '<div class="three columns text-center">'
-			. '<button class="toggle button tux-proofread-own-translations-button hide-own hide">'
-			. $this->msg( 'tux-editor-proofreading-hide-own-translations' )->escaped()
-			. '</button>';
-
-		// Hide this button by default and show it only if the filter is relevant
-		$footer .= '<button class="toggle button tux-editor-clear-translated hide">'
-			. $this->msg( 'tux-editor-clear-translated' )->escaped()
-			. '</button>'
-			. '</div>';
-
-		$footer .= '<div class="six columns tux-view-switcher text-center">'
-				. '<button class="toggle button down translate-mode-button">'
-				. $this->msg( 'tux-editor-translate-mode' )->escaped()
-				. '</button>'
-				. '<button class="toggle button down page-mode-button">'
-				. $this->msg( 'tux-editor-page-mode' )->escaped()
-				. '</button>';
-
-
-		if ( $this->getUser()->isallowed( 'translate-messagereview' ) ) {
-			$footer .=  '<button class="toggle button tux-proofread-button">'
-				. $this->msg( 'tux-editor-proofreading-mode' )->escaped()
-				. '</button>';
-		}
-
-		$footer .= '</div>';
+		$actionbar = <<<HTML
+<div class="tux-action-bar row">
+	<div class="three columns tux-message-list-statsbar" data-messagegroup="$groupId"></div>
+	<div class="three columns text-center">
+		<button class="toggle button tux-proofread-own-translations-button hide-own hide">$hideOwn</button>
+		<button class="toggle button tux-editor-clear-translated hide">$clearTranslated</button>
+	</div>
+	<div class="six columns tux-view-switcher text-center">
+		<button class="toggle button down translate-mode-button">$modeTranslate
+		</button><button class="toggle button down page-mode-button">$modePage
+		</button><button class="toggle button hide tux-proofread-button">$modeProofread
+		</button>
+	</div>
+</div>
+HTML;
 
 		// Actual message table is fetched and rendered at client side. This just provides
 		// the loader and action bar.
-		return $this->header() . '</div>' . $footer;
+		return $list . $loader . $actionbar;
 	}
 }
