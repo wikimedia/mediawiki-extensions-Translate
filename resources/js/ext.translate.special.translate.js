@@ -339,13 +339,7 @@
 			if ( docLanguageCode ) {
 				docLanguageAutonym = mw.msg( 'translate-documentation-language' );
 				ulsOptions.languages[docLanguageCode] = docLanguageAutonym;
-
-				$.uls.data.addLanguage( docLanguageCode, {
-					script: $.uls.data.getScript( mw.config.get( 'wgContentLanguage' ) ),
-					regions: ['SP'],
-					autonym: docLanguageAutonym
-				} );
-
+				mw.translate.addDocumentationLanguage();
 				ulsOptions.showRegions = ['WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA'];
 			}
 
