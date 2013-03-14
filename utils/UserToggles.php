@@ -14,38 +14,42 @@
  */
 class TranslatePreferences {
 	/**
-	 * Add 'translate-pref-nonewsletter' preference.
-	 * This is most probably specific to translatewiki.net. Can be enabled
+	 * Add 'translate-pref-nonewsletter' preference,
+	 * which is most probably specific to translatewiki.net. Can be enabled
 	 * with $wgTranslateNewsletterPreference.
+	 * Add 'tux-did-proofread', for tracking whether the user already proofread
+	 * anything using TUX.
 	 *
 	 * @param $user User
 	 * @param $preferences array
 	 * @return bool true
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
+		$preferences['tux-did-proofread'] = array(
+			'type' => 'api',
+		);
+
 		global $wgTranslateNewsletterPreference;
 
-		if ( !$wgTranslateNewsletterPreference ) {
-			return true;
-		}
+		if ( $wgTranslateNewsletterPreference ) {
+			global $wgEnableEmail, $wgEnotifRevealEditorAddress;
 
-		global $wgEnableEmail, $wgEnotifRevealEditorAddress;
+			// Only show if email is enabled and user has a confirmed email address.
+			if ( $wgEnableEmail && $user->isEmailConfirmed() ) {
+				// 'translate-pref-nonewsletter' is used as opt-out for
+				// users with a confirmed email address
+				$prefs = array(
+					'translate-nonewsletter' => array(
+						'type' => 'toggle',
+						'section' => 'personal/email',
+						'label-message' => 'translate-pref-nonewsletter'
+					)
+				);
 
-		// Only show if email is enabled and user has a confirmed email address.
-		if ( $wgEnableEmail && $user->isEmailConfirmed() ) {
-			// 'translate-pref-nonewsletter' is used as opt-out for
-			// users with a confirmed email address
-			$prefs = array(
-				'translate-nonewsletter' => array(
-					'type' => 'toggle',
-					'section' => 'personal/email',
-					'label-message' => 'translate-pref-nonewsletter'
-				)
-			);
-
-			// Add setting after 'enotifrevealaddr'.
-			$preferences = wfArrayInsertAfter( $preferences, $prefs,
-				$wgEnotifRevealEditorAddress ? 'enotifrevealaddr' : 'enotifminoredits' );
+				// Add setting after 'enotifrevealaddr'.
+				$preferences = wfArrayInsertAfter( $preferences, $prefs,
+					$wgEnotifRevealEditorAddress ? 'enotifrevealaddr' : 'enotifminoredits' );
+			}
 		}
 
 		return true;
