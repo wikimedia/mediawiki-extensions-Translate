@@ -269,6 +269,10 @@ See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-sections-template' => '[[File:Page_translation_mark_view.png|thumb|Page translation]]
 The template used by translations of the translatable page, extracted from the source text. Shown on the translation administration page; a screenshot is available.',
 	'tpt-action-nofuzzy' => 'See [[mw:Help:Extension:Translate/Page translation administration#Changing the source text]] for context.',
+	'tpt-badtitle' => 'Parameters:
+* $1 - page title',
+	'tpt-nosuchpage' => 'Parameters:
+* $1 - page title',
 	'tpt-oldrevision' => 'Error message displayed when trying to mark an older page revision for translation. Parameters:
 * $1 is a page title.
 * $2 is a page link.',
@@ -282,6 +286,8 @@ Parameters:
 * $2 - the number of the unit',
 	'tpt-showpage-intro' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-mark-summary' => 'This message is used as an edit summary.',
+	'tpt-edit-failed' => 'Parameters:
+* $1 - page title',
 	'tpt-duplicate' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-already-marked' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-unmarked' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
@@ -396,10 +402,24 @@ This message is followed by one of the following error messages:
 	'pt-movepage-block-tp-exists' => 'translation page is a translated version of a translatable page',
 	'pt-movepage-block-tp-invalid' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-movepage-block-section-exists' => 'Section page is a translation of one section. Translation page consists of many translation sections.',
+	'pt-movepage-block-section-invalid' => 'This message may mean:
+* The user tried to move the page "[[:$1]]" to a new page title.
+* If successful, the page, along with the translation units will be moved to the target pages.
+* But the destination page title for the translation unit would be invalid (too long?).
+Parameters:
+* $1 - old page title',
 	'pt-movepage-block-subpage-exists' => 'Subpage is here any subpage of translation page, which is not a translated version of the translatable page.',
+	'pt-movepage-block-subpage-invalid' => 'Parameters:
+* $1 - old page title',
 	'pt-movepage-list-translation' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-movepage-list-section' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-movepage-list-other' => 'Header of a list of additional subpages (other than translation pages) of the translatable page being moved, when the user selected the option to move subpages as well.',
+	'pt-movepage-list-count' => 'Used to indicate how many pages will be moved.
+
+Parameters:
+* $1 - number of pages
+See also:
+* {{msg-mw|Pt-deletepage-list-count}}',
 	'pt-movepage-legend' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-movepage-reason' => '{{Identical|Reason}}',
 	'pt-movepage-action-other' => "Button label on the special page 'Move translateable page'. See [[mw:File:Translate_manual_-_Page_example_-_21._Move_confirm.png|screenshot]].",
@@ -420,6 +440,12 @@ This message is followed by one of the following error messages:
 	'pt-deletepage-subpages' => "Checkbox label on special page 'Deleting translatable page'. see [[mw:File:Translate_manual_-_Page_example_-_25._Delete_confirm.png|screenshot]].",
 	'pt-deletepage-list-translation' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-list-section' => "Heading in special page 'Deleting translatable page'. See [[mw:File:Translate_manual_-_Page_example_-_25._Delete_confirm.png|screenshot]].",
+	'pt-deletepage-list-count' => 'Used to indicate how many pages will be deleted.
+
+Parameters:
+* $1 - number of pages
+See also:
+* {{msg-mw|Pt-movepage-list-count}}',
 	'pt-deletepage-full-logreason' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-lang-logreason' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 );
@@ -5184,8 +5210,8 @@ Testo della sezione: <pre>$1</pre>',
 	'pt-shake-empty' => 'Elemento di traduzione vuoto per il marcatore $1.',
 	'log-description-pagetranslation' => 'Registro per le azioni inerenti al sistema di traduzione delle pagine',
 	'log-name-pagetranslation' => 'Traduzioni di pagine',
-	'logentry-pagetranslation-mark' => '$1 {{GENERE:$2|ha contrassegnato}} $3 per la traduzione',
-	'logentry-pagetranslation-unmark' => '$1 {{GENERE:$2|ha rimosso}} $3 per la traduzione',
+	'logentry-pagetranslation-mark' => '$1 {{GENDER:$2|ha contrassegnato}} $3 per la traduzione',
+	'logentry-pagetranslation-unmark' => '$1 {{GENDER:$2|ha rimosso}} $3 per la traduzione',
 	'logentry-pagetranslation-moveok' => '$1 {{GENDER:$2|ha eseguito}} lo spostamento della pagina traducibile $3 a $4',
 	'logentry-pagetranslation-movenok' => '$1 {{GENDER:$2|ha incontrato}} un problema nello spostamento di $3 a $4',
 	'logentry-pagetranslation-deletefok' => '$1 {{GENDER:$2|ha eseguito}} la cancellazione della pagina traducibile $3',
@@ -5386,9 +5412,9 @@ $messages['ja'] = array(
 	'pt-movepage-block-tp-exists' => '移動先の翻訳ページ「[[:$2]]」は既に存在します。',
 	'pt-movepage-block-tp-invalid' => '移動先の翻訳ページの名前「[[:$1]]」が無効です (長すぎる?)。',
 	'pt-movepage-block-section-exists' => '移動先の翻訳単位ページ「[[:$2]]」は既に存在します。',
-	'pt-movepage-block-section-invalid' => '移動先の翻訳単位ページの名前「[[:$1]]」は無効です (長すぎる?)。',
+	'pt-movepage-block-section-invalid' => '「[[:$1]]」の移動先の翻訳単位ページ名が無効です (長すぎる?)。',
 	'pt-movepage-block-subpage-exists' => '移動先の下位ページ「[[:$2]]」は既に存在します。',
-	'pt-movepage-block-subpage-invalid' => '移動先の下位ページの名前「[[:$1]]」が無効です (長すぎる?)。',
+	'pt-movepage-block-subpage-invalid' => '「[[:$1]]」の移動先の下位ページ名が無効です (長すぎる?)。',
 	'pt-movepage-list-pages' => '移動するページの一覧',
 	'pt-movepage-list-translation' => '翻訳{{PLURAL:$1|ページ}}',
 	'pt-movepage-list-section' => '翻訳単位{{PLURAL:$1|ページ}}',

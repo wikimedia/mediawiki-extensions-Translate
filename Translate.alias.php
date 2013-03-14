@@ -437,6 +437,7 @@ $specialPageAliases['it'] = array(
 	'SupportedLanguages' => array( 'LingueSupportate' ),
 	'MyLanguage' => array( 'MiaLingua' ),
 	'AggregateGroups' => array( 'GruppiAggregati' ),
+	'SearchTranslations' => array( 'CercaTraduzioni' ),
 );
 
 /** Japanese (日本語) */

@@ -87,7 +87,39 @@ If you do not want to receive newsletters, you can opt-out in the tab "{{int:pre
  * @author The Evil IP address
  */
 $messages['qqq'] = array(
-	'translate-fs-signup-title' => '{{Identical|Sign up}}',
+	'translate-fs-pagetitle' => 'Used as page title. Parameters:
+* $1 - any one of the following messages:
+** {{msg-mw|translate-fs-signup-title}}
+** {{msg-mw|translate-fs-settings-title}}
+** {{msg-mw|translate-fs-userpage-title}}
+** {{msg-mw|translate-fs-permissions-title}}
+** {{msg-mw|translate-fs-target-title}}
+** {{msg-mw|translate-fs-email-title}}',
+	'translate-fs-signup-title' => 'Used as a part of the page title.
+
+See also:
+* {{msg-mw|Translate-fs-pagetitle}}
+{{Identical|Sign up}}',
+	'translate-fs-settings-title' => 'Used as a part of the page title.
+
+See also:
+* {{msg-mw|Translate-fs-pagetitle}}',
+	'translate-fs-userpage-title' => 'Used as a part of the page title.
+
+See also:
+* {{msg-mw|Translate-fs-pagetitle}}',
+	'translate-fs-permissions-title' => 'Used as a part of the page title.
+
+See also:
+* {{msg-mw|Translate-fs-pagetitle}}',
+	'translate-fs-target-title' => 'Used as a part of the page title.
+
+See also:
+* {{msg-mw|Translate-fs-pagetitle}}',
+	'translate-fs-email-title' => 'Used as a part of the page title.
+
+See also:
+* {{msg-mw|Translate-fs-pagetitle}}',
 	'translate-fs-selectlanguage' => "Default value in language selector, acts as 'nothing chosen'",
 	'translate-fs-settings-planguage' => 'Label for choosing interface language, followed by language selector.
 {{Identical|Primary language}}',
@@ -128,6 +160,15 @@ Wording of this message may refer to it per "this language" or "the selected lan
 
 The data collected via the pair of selectors will later be used in the <code>{<!-- -->{#Babel|&hellip;}}</code> context.',
 	'translate-fs-permissions-planguage' => '{{Identical|Primary language}}',
+	'translate-fs-permissions-pending' => 'Parameters:
+* $1 - page title of the thread',
+	'translate-fs-target-text' => 'Parameters:
+* $1 - language code (e.g. Fr)
+The title for this message is: "{{int:Translate-fs-pagetitle|{{int:Translate-fs-target-title}}}}"
+
+See also:
+* {{msg-mw|Translate-fs-pagetitle}}
+* {{msg-mw|Translate-fs-target-title}}',
 );
 
 /** Arabic (العربية)
@@ -249,10 +290,19 @@ Si nun quies recibir boletinos de noticies, pues desapuntate na llingüeta "{{in
  */
 $messages['az'] = array(
 	'firststeps' => 'İlk addımlar',
+	'translate-fs-pagetitle-done' => ' - hazırdı!',
+	'translate-fs-pagetitle-pending' => ' - gözləyir',
+	'translate-fs-signup-title' => 'Qeydiyyatdan keç',
+	'translate-fs-settings-title' => 'Təklifinizi nizamlayın',
 	'translate-fs-userpage-title' => 'İstifadəçi səhifəni yarat',
+	'translate-fs-permissions-title' => 'Tərcüməçi icazələrini istə',
 	'translate-fs-target-title' => 'Tərcüməyə başla!',
 	'translate-fs-email-title' => 'E-poçt ünvanını təsdiq et',
-	'translate-fs-userpage-submit' => 'Öz istifadəçi səhifəmi yarat',
+	'translate-fs-settings-planguage' => 'İlkin dil:',
+	'translate-fs-settings-slanguage' => 'Köməkçi dil $1:',
+	'translate-fs-settings-submit' => 'Nizamlamaları saxla',
+	'translate-fs-userpage-submit' => 'Öz istifadəçi səhifəmi yarat', # Fuzzy
+	'translate-fs-userpage-done' => 'Çox gözəl! İndi bir istifadəçi səhifəniz var.',
 	'translate-fs-permissions-planguage' => 'İlkin dil:',
 	'translate-fs-permissions-submit' => 'Sorğu göndər',
 );

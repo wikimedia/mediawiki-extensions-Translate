@@ -563,11 +563,17 @@ Goes together with {{msg-mw|translate-taskui-reviewall}}',
 	'translate-taction-disabled' => 'Shown instead of the radio buttons for tasks when all tasks related to this action has been disabled.',
 	'translate-page-no-such-language' => "Shown when someone requests a language that doesn't exists. [{{FULLURL:Special:Translate|language=}} Example].",
 	'translate-page-no-such-group' => "Shown when someone requests a group that doesn't exists. [{{FULLURL:Special:Translate|group=invalidgroup}} Example].",
+	'translate-page-disabled' => 'Parameters:
+* $1 - reason that the language has been blacklisted',
 	'translate-language-disabled' => 'Shown when someone requests a blacklisted language. [{{FULLURL:Special:Translate|language=}} Example].',
 	'translate-page-settings-legend' => '{{Identical|Settings}}',
 	'translate-page-group' => '{{Identical|Group}}',
 	'translate-page-language' => '{{Identical|Language}}',
 	'translate-page-limit' => '{{Identical|Limit}}',
+	'translate-page-limit-option' => 'Used as option for select box in [[Special:Translate]].
+
+Parameters:
+* $1 - number of messages, can be used for GENDER',
 	'translate-submit' => 'Button text in [[Special:Translate]] on action Translate, action Proofread and action Export.
 
 {{Identical|Fetch}}',
@@ -578,6 +584,12 @@ Goes together with {{msg-mw|translate-taskui-reviewall}}',
 *$3 is the total number of messages fetched by the program',
 	'translate-page-showing-all' => 'Information in the page navigation box of the translate special page, [{{canonicalurl:Special:Translate|taction=translate&limit=5000&language=en-gb&group=ext-translate-core}} for example].
 *$1 is the total number of messages fetched by the program',
+	'translate-page-showing-none' => 'Used in query result page.
+
+See also:
+* {{msg-mw|Translate-page-showing-all}}
+* {{msg-mw|Translate-page-showing}}
+* {{msg-mw|Translate-page-paging-links}}, {{msg-mw|Translate-prev}} and {{msg-mw|Translate-next}}',
 	'translate-page-paging-links' => '{{optional}}',
 	'translate-next' => '{{Identical|Next page}}',
 	'translate-prev' => '{{Identical|Previous page}}',
@@ -600,6 +612,10 @@ Goes together with {{msg-mw|translate-taskui-reviewall}}',
 	'translate-edit-in-other-languages' => 'Caption for box which contains translation of message in other languages.',
 	'translate-edit-warnings' => 'Title of the warnings box when editing a message.
 This box list the problems found in the translation.',
+	'translate-edit-tmmatch-source' => 'Used as tooltip for the message {{msg-mw|translate-edit-tmmatch}} in the translation suggestions by the server.
+
+Parameters:
+* $1 - translation source text',
 	'translate-edit-tmmatch' => '$1 is number between 1 and 100. This message is displayed in the translation interface when there is suggestions from translation memory.',
 	'translate-use-suggestion' => 'Used as a tooltip for the "down arrow" to insert translation suggestions in the translation edit page.',
 	'translate-edit-tab-prev' => '{{optional}}',
@@ -628,6 +644,10 @@ Shown when editing translatable pages. Default is empty.',
 	'translate-magic-cm-save' => 'Button text on [[Special:AdvancedTranslate]].
 
 {{Identical|Save}}',
+	'translate-magic-errors' => 'This message is followed by the error messages.
+
+Parameters:
+* $1 - number of error messages, can be used for PLURAL',
 	'translate-checks-parameters' => 'Warning message from automated syntax check for translators.
 *$1 - parameters
 *$2 - number of parameters',
@@ -669,6 +689,10 @@ This warning indicates that the namespace in the translation does not match the 
 {{Identical|Assistant language}}',
 	'prefs-translate' => 'Caption of a section at [[Special:Preferences#prefsection-3|Special:Preferences]]',
 	'translate-pref-editassistlang-help' => 'Used in [[Special:Preferences]], tab Editing.',
+	'translate-pref-editassistlang-bad' => 'Used as validation result.
+
+Parameters:
+* $1 - a language code, not list of codes',
 	'translate-pref-jsedit' => "Setting in the preferences which enables the Translate extension own editing tools, like pop-ups and inline editor, which are based on JavaScript/AJAX features and replace the normal editing screen in some, most or all cases depending on the wiki's configuration and release.",
 	'right-translate' => '{{doc-right|translate}}',
 	'right-translate-manage' => '{{doc-right|translate-manage}}',
@@ -714,6 +738,11 @@ These messages will only affect the interface on {{SITENAME}}.',
 	'translate-statsf-submit' => 'Submit button label on [[Special:TranslationStats|form]] for generating graph.
 
 {{Identical|Preview}}',
+	'translate-tag-page-desc' => 'Used as description for the message group in [[Special:Translate]].
+
+Parameters:
+* $1 - the page title
+* $2 - link to the translation page <code>Special:MyLanguage/$1</code>, not the source page',
 	'translate-sidebar-alltrans' => '{{Identical|Otherlanguages}}',
 	'translations' => 'Title of [[Special:Translations]].',
 	'translations-summary' => 'Used in [[Special:Translations]].',
@@ -778,6 +807,8 @@ See also:
 	'translate-mgs-submit' => 'Submit button text',
 	'translate-mgs-column-language' => '{{Identical|Language}}',
 	'translate-mgs-totals' => 'This is used in [[Special:MessageGroupStats]]',
+	'translate-mgs-invalid-group' => 'Used as error message. Parameters:
+* $1 - target message group name',
 	'supportedlanguages' => 'Title of [[Special:SupportedLanguages]]',
 	'supportedlanguages-summary' => 'Header for [[Special:SupportedLanguages]] page.',
 	'supportedlanguages-colorlegend' => 'Used on [[Special:SupportedLanguages]]. Parameters:
@@ -792,6 +823,14 @@ Place any site specific message here.',
 	'supportedlanguages-recenttranslations' => 'Link on [[Special:SupportedLanguages]] to [[Special:RecentChanges]].',
 	'supportedlanguages-count' => 'On [[Special:SupportedLanguages]]
 *$1 is the total number of supported languages.',
+	'supportedlanguages-activity' => "Used as tooltip text for username in users list, to show user's activity.
+
+See [{{canonicalurl:Special:SupportedLanguages}}#fr example].
+
+Parameters:
+* $1 - username
+* $2 - number of edits the user made
+* $3 - number of days",
 	'translate-save' => '{{Identical|Save}}',
 	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
 	'managemessagegroups' => 'Special page name and html title in [[Special:ManageMessageGroups]]',
@@ -809,6 +848,10 @@ Variables:
 **{{msg-mw|Translate-manage-action-import}}
 **{{msg-mw|Translate-manage-action-conflict}}
 **{{msg-mw|Translate-manage-action-ignore}}',
+	'translate-manage-import-new' => 'Parameters:
+* $1 - message ID, enclosed in <code><nowiki><code></nowiki></code> tag',
+	'translate-manage-import-deleted' => 'Parameters:
+* $1 - message ID, enclosed in <code><nowiki><code></nowiki></code> tag',
 	'translate-manage-action-import' => 'Used in the group management interface.
 {{doc-screenshot|Manage-4.png|twn}}
 {{Identical|Import}}',
@@ -819,6 +862,8 @@ fuzzy = mark translations for review/update.',
 	'translate-manage-action-fuzzy' => 'Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}
 
 fuzzy = mark translations for review',
+	'translate-manage-toolong' => 'Parameters:
+* $1 - number of seconds, can be used for PLURAL',
 	'importtranslations' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
 	'translate-import-from-url' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
 	'translate-import-from-wiki' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
@@ -902,13 +947,37 @@ Additional parameters:
 	'translate-workflow-set-error-alreadyset' => 'An error message shown in a popup box after pressing the {{msg-mw|translate-workflow-set-do}} button.',
 	'translate-workflow-autocreated-summary' => 'This is an edit summary for the automatic creation of a workflow state page.',
 	'translate-stats-workflow' => 'Column header on [[Special:LanguageStats]] and [[Special:MessageGroupStats]]',
+	'translate-workflowgroup-desc' => '{{doc-important|Do not translate the variable name <code>$wgTranslateWorkflowStates</code>.}}',
 	'translate-dynagroup-recent-label' => 'Label of a message group',
 	'translate-dynagroup-recent-desc' => 'Description of a message group.',
 	'translate-dynagroup-additions-label' => 'Label of a message group',
 	'translate-dynagroup-additions-desc' => 'Description of a message group.',
-	'translate-dynagroup-byc' => 'Additional information in a translation editor that contains information about the last change. Parameters:
-* $1 is a username
-* $2 is the edit summary that was provided.',
+	'translate-dynagroup-by' => 'Additional information in a translation editor that contains information about the last change.
+
+Parameters:
+* $1 - a username
+See also:
+* {{msg-mw|Translate-dynagroup-byc}}',
+	'translate-dynagroup-byc' => 'Additional information in a translation editor that contains information about the last change.
+
+Parameters:
+* $1 - a username
+* $2 - the edit summary that was provided
+See also:
+* {{msg-mw|Translate-dynagroup-by}}',
+	'translate-dynagroup-last' => 'Additional information in a translation editor that contains information about the last change.
+
+Parameters:
+* $1 - a username
+See also:
+* {{msg-mw|Translate-dynagroup-lastc}}',
+	'translate-dynagroup-lastc' => 'Additional information in a translation editor that contains information about the last change.
+
+Parameters:
+* $1 - a username
+* $2 - the edit summary that was provided
+See also:
+* {{msg-mw|Translate-dynagroup-last}}',
 	'translate-gethelp' => 'Link to some Translate help page or tutorial.
 {{Identical|Help}}',
 	'translate-msggroupselector-projects' => 'Title text for the message group breadcrumb.
@@ -929,6 +998,10 @@ Additional parameters:
 	'tux-tab-translated' => 'Tab in [[Special:Translate]] new ui to select which messages to show.
 {{Identical|Translated}}',
 	'tux-tab-unproofread' => 'Tab in [[Special:Translate]] new ui to select which messages to show.
+
+Read as in "unproofRED" (past participle).
+
+This "Unproofread" stands for "(messages which) have not been proofread".
 {{Identical|Proofread}}',
 	'tux-edit' => 'Link in [[Special:Translate]] to open message editor',
 	'tux-status-optional' => 'Status label in [[Special:Translate]] indicating that message should only be translated in special cases.
@@ -1001,6 +1074,12 @@ See also:
 	'tux-editor-page-mode' => 'Label for the button that appears at the footer of the translation editor.
 Pressing the button goes to the page mode.
 {{Identical|Page}}',
+	'tux-editor-outdated-warning' => 'Used as warning message.
+
+This message is followed by the link which is labeled {{msg-mw|tux-editor-outdated-warning-diff-link}}.',
+	'tux-editor-outdated-warning-diff-link' => 'Used as link text.
+
+This message follows the warning message {{msg-mw|Tux-editor-outdated-warning}}.',
 	'tux-editor-doc-editor-placeholder' => 'A placeholder that appears in the message documentation editor.
 {{Identical|Message documentation}}',
 	'tux-editor-doc-editor-save' => 'A button that saves the documentation string',
@@ -1016,7 +1095,10 @@ Pressing the button goes to the page mode.
 	'tux-message-filter-advanced-button' => 'Button label for searching the messages using [[Special:SearchTranslations]].
 {{Identical|Advanced search}}',
 	'tux-message-filter-optional-messages-label' => 'A label for a checkbox. Checking the box causes message editor to show optional messages.',
-	'tux-proofread-translated-by-self' => 'A small notification that appears in a proofreading box, saying that that message was translated by the current user.',
+	'tux-proofread-translated-by-self' => 'A small notification that appears in a proofreading box, saying that that message was translated by the current user.
+
+See also:
+* {{msg-mw|Translate-messagereview-reviewswithyou}}',
 	'tux-empty-list-all' => '{{Tuxspec|7}} This is a heading.',
 	'tux-empty-list-all-guide' => '{{Tuxspec|7}} This is a secondary guide text.',
 	'tux-empty-list-translated' => '{{Tuxspec|7}} This is a heading.',
@@ -2576,6 +2658,7 @@ Ye enforma afayadizo pa les xeres de correición.',
 	'tux-tab-untranslated' => 'Ensin traducir',
 	'tux-tab-outdated' => 'Anticuaos',
 	'tux-tab-translated' => 'Traducíos',
+	'tux-tab-unproofread' => 'Ensin correxir',
 	'tux-edit' => 'Editar',
 	'tux-status-optional' => 'Opcional',
 	'tux-status-fuzzy' => 'Anticuada',
@@ -2608,6 +2691,8 @@ Ye enforma afayadizo pa les xeres de correición.',
 	'tux-editor-translate-mode' => 'Llista',
 	'tux-editor-proofreading-hide-own-translations' => 'Anubrir les tos traducciones',
 	'tux-editor-proofreading-show-own-translations' => 'Amosar les tos traducciones',
+	'tux-proofread-action-tooltip' => 'Aceutar la traducción',
+	'tux-proofread-edit-tooltip' => 'Traducir',
 	'tux-editor-page-mode' => 'Páxina',
 	'tux-editor-outdated-warning' => 'Esta traducción pue necesitar un anovamientu.',
 	'tux-editor-outdated-warning-diff-link' => 'Amosar les diferencies',
@@ -2620,6 +2705,7 @@ Ye enforma afayadizo pa les xeres de correición.',
 	'tux-message-filter-result' => '{{PLURAL:$1|Alcontrose un resultáu|Alcontraronse $1 resultaos}} pa "$2"',
 	'tux-message-filter-advanced-button' => 'Gueta avanzada',
 	'tux-message-filter-optional-messages-label' => 'Mensaxes opcionales',
+	'tux-proofread-translated-by-self' => 'Traducío por ti',
 	'tux-empty-list-all' => 'Esti grupu de mensaxes ta baleru',
 	'tux-empty-list-all-guide' => 'Seleicione un grupu de mensaxes diferente pa traducir',
 	'tux-empty-list-translated' => 'Nun hai mensaxes traducíos',
@@ -2632,6 +2718,7 @@ Ye enforma afayadizo pa les xeres de correición.',
 	'tux-editor-close-tooltip' => 'Zarrar',
 	'tux-editor-expand-tooltip' => 'Espander',
 	'tux-editor-collapse-tooltip' => 'Plegar',
+	'tux-editor-loading' => 'Cargando...',
 );
 
 /** Azerbaijani (azərbaycanca)
@@ -15062,6 +15149,7 @@ $1',
 	'tux-tab-untranslated' => '未翻訳',
 	'tux-tab-outdated' => '要修正',
 	'tux-tab-translated' => '翻訳済',
+	'tux-tab-unproofread' => '未校正',
 	'tux-edit' => '編集',
 	'tux-status-optional' => '省略可能',
 	'tux-status-fuzzy' => '要修正',
@@ -15108,6 +15196,7 @@ $1',
 	'tux-message-filter-result' => '「$2」の検索結果 $1 {{PLURAL:$1|件}}',
 	'tux-message-filter-advanced-button' => '高度な検索',
 	'tux-message-filter-optional-messages-label' => '省略可能なメッセージ',
+	'tux-proofread-translated-by-self' => 'あなたが翻訳',
 	'tux-empty-list-all' => 'このメッセージ群は空です',
 	'tux-empty-list-all-guide' => '翻訳する別のメッセージ群を選択してください',
 	'tux-empty-list-translated' => '翻訳済みメッセージはありません',
@@ -30876,6 +30965,7 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-tab-untranslated' => 'Chưa dịch',
 	'tux-tab-outdated' => 'Lỗi thời',
 	'tux-tab-translated' => 'Dịch rồi',
+	'tux-tab-unproofread' => 'Chưa hiệu đính',
 	'tux-edit' => 'Sửa đổi',
 	'tux-status-optional' => 'Tùy chọn',
 	'tux-status-fuzzy' => 'Lỗi thời',
@@ -30908,6 +30998,8 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-editor-translate-mode' => 'Danh sách',
 	'tux-editor-proofreading-hide-own-translations' => 'Ẩn các bản dịch của mình',
 	'tux-editor-proofreading-show-own-translations' => 'Hiện các bản dịch của mình',
+	'tux-proofread-action-tooltip' => 'Chấp nhận bản dịch',
+	'tux-proofread-edit-tooltip' => 'Biên dịch',
 	'tux-editor-page-mode' => 'Trang',
 	'tux-editor-outdated-warning' => 'Bản dịch này có thể cần được cập nhật.',
 	'tux-editor-outdated-warning-diff-link' => 'Trình bày khác biệt',
@@ -30920,6 +31012,7 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-message-filter-result' => 'Tìm thấy $1 kết quả cho “$2”',
 	'tux-message-filter-advanced-button' => 'Tìm kiếm nâng cao',
 	'tux-message-filter-optional-messages-label' => 'Các thông điệp tùy dịch',
+	'tux-proofread-translated-by-self' => 'Bản dịch của bạn',
 	'tux-empty-list-all' => 'Nhóm thông điệp này đang trống',
 	'tux-empty-list-all-guide' => 'Hãy chọn một nhóm thông điệp khác để dịch',
 	'tux-empty-list-translated' => 'Chưa dịch thông điệp nào',
@@ -32438,6 +32531,7 @@ $1',
 	'tux-tab-untranslated' => '未翻譯',
 	'tux-tab-outdated' => '已過時',
 	'tux-tab-translated' => '已翻譯',
+	'tux-tab-unproofread' => '未校對',
 	'tux-edit' => '編輯',
 	'tux-status-optional' => '可選',
 	'tux-status-fuzzy' => '已過時',
@@ -32484,6 +32578,7 @@ $1',
 	'tux-message-filter-result' => '找到$1個結果含「$2」',
 	'tux-message-filter-advanced-button' => '進階搜尋',
 	'tux-message-filter-optional-messages-label' => '可選消息',
+	'tux-proofread-translated-by-self' => '您的翻譯',
 	'tux-empty-list-all' => '此訊息組是空',
 	'tux-empty-list-all-guide' => '選擇其他訊息組翻譯',
 	'tux-empty-list-translated' => '沒有已翻譯的訊息',
