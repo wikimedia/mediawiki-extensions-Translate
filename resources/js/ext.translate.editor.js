@@ -201,6 +201,7 @@
 		prepareEditorColumn: function () {
 			var translateEditor = this,
 				sourceString,
+				originalTranslation,
 				$editorColumn,
 				$messageKeyLabel,
 				$moreWarningsTab,
@@ -211,6 +212,7 @@
 				$controlButtonBlock,
 				$editingButtonBlock,
 				$pasteOriginalButton,
+				$revertTranslationButton,
 				$saveButton,
 				$requestRight,
 				$skipButton,
@@ -255,6 +257,7 @@
 			);
 
 			$messageList = $( '.tux-messagelist' );
+			originalTranslation = this.message.translation;
 			sourceString = this.message.definition;
 			$sourceString = $( '<span>' )
 				.addClass( 'eleven column sourcemessage' )
@@ -322,6 +325,11 @@
 				} )
 				.on( 'input propertychange', function () {
 					var $this = $( this );
+
+					if ( originalTranslation !== null ) {
+						$revertTranslationButton
+							.removeClass( 'hide' );
+					}
 
 					translateEditor.dirty = true;
 
@@ -392,13 +400,34 @@
 						$pasteOriginalButton.addClass( 'hide' );
 					} );
 
+				if ( originalTranslation === null ) {
+					$revertTranslationButton = $( [] );
+				} else {
+					$revertTranslationButton = $( '<button>' )
+						.addClass( 'tux-editor-revert-translation-button hide' ) // Initially hidden
+						.text( mw.msg( 'tux-editor-revert-translation-button-label' ) )
+						.on( 'click', function () {
+							// Restore the translation
+							$textArea
+								.focus()
+								.val( originalTranslation )
+								.trigger( 'input' );
+
+							// and go back to hiding.
+							$revertTranslationButton.addClass( 'hide' );
+						} );
+				}
+
 				if ( this.message.translation ) {
 					$pasteOriginalButton.addClass( 'hide' );
 				}
 
 				$editingButtonBlock = $( '<div>' )
 					.addClass( 'ten columns tux-editor-insert-buttons' )
-					.append( $pasteOriginalButton );
+					.append(
+						$pasteOriginalButton,
+						$revertTranslationButton
+					);
 
 				$requestRight = $( [] );
 
