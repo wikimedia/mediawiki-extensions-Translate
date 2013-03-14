@@ -145,10 +145,21 @@
 	height: 40px;
 	cursor: pointer;
 	visibility: hidden;
+	text-align: right;
 }
 
 .tux-message-proofread:hover .tux-proofread-edit {
 	visibility: visible;
+}
+
+.tux-proofread-edit-label {
+	position: relative;
+	color: #777777;
+	display: inline-block;
+	font-size: 13px;
+	padding-top: 35px;
+	padding-right: 2px;
+	text-align: right;
 }
 
 .tux-proofread-count {
