@@ -52,6 +52,24 @@
       "revId": "127d498fabae05fb71903a78bfef60b299f6ab29",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqIsBL7Q",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-14T07:10:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DpcAZYIQ",
+      "revId": "127d498fabae05fb71903a78bfef60b299f6ab29",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
