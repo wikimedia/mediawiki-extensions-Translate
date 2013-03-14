@@ -373,8 +373,9 @@
 
 		// Workflow state selector
 		$translateContainer.find( '.tux-workflow-status' )
-			.on( 'click', function () {
+			.on( 'click', function ( e ) {
 				$( this ).next( 'ul' ).toggleClass( 'hide' );
+				e.preventDefault();
 			} );
 
 		$translateContainer.find( '.tux-workflow-status-selector li' )
@@ -451,6 +452,14 @@
 			mw.translate.changeUrl( { optional: checked ? 1 : 0 } );
 			mw.translate.changeFilter( uri.query.filter );
 		} );
+
+		// Hide the workflow selector when clicking outside of it
+		$( 'html' ).on( 'click', function ( e ) {
+			if ( !e.isDefaultPrevented() ) {
+				$( 'ul.tux-workflow-status-selector' ).addClass( 'hide' );
+			}
+		} );
+
 	} );
 
 }( jQuery, mediaWiki ) );
