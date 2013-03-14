@@ -92,6 +92,18 @@
 		 */
 		canProofread: function () {
 			return mw.config.get( 'TranslateMessageReviewRight' );
+		},
+
+		addDocumentationLanguage: function() {
+			var docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
+			if( $.uls.data.languages[docLanguageCode] ) {
+				return;
+			}
+			$.uls.data.addLanguage( docLanguageCode, {
+				script: $.uls.data.getScript( mw.config.get( 'wgContentLanguage' ) ),
+				regions: ['SP'],
+				autonym: mw.msg( 'translate-documentation-language' )
+			} );
 		}
 	} );
 }( jQuery, mediaWiki ) );

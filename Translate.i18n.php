@@ -501,6 +501,7 @@ Most useful for the proofreading tasks.',
 	'tux-editor-expand-tooltip' => 'Expand',
 	'tux-editor-collapse-tooltip' => 'Collapse',
 	'tux-editor-loading' => 'Loading...',
+	'translate-search-more-languages-info' => '$1 more {{PLURAL:$1|language|languages}}',
 );
 
 /** Message documentation (Message documentation)
@@ -1132,6 +1133,9 @@ See also:
 {{Identical|Collapse}}',
 	'tux-editor-loading' => 'Loading message while translation editor is being prepared with helper information.
 {{Identical|Loading}}',
+	'translate-search-more-languages-info' => 'Information shown as number of languages matching the query using
+[[Special:SearchTranslations]]
+* $1 - number of languages',
 );
 
 /** Afrikaans (Afrikaans)
