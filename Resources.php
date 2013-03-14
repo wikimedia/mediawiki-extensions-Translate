@@ -7,7 +7,7 @@
  */
 
 $resourcePaths = array(
-	'localBasePath' => dirname( __FILE__ ),
+	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'Translate'
 );
 
