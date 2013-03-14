@@ -495,6 +495,14 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 	),
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.pagetranslation.uls'] = array(
+	'scripts' => 'resources/js/ext.translate.pagetranslation.uls.js',
+	'dependencies' => array(
+		'ext.uls.init',
+		'mediawiki.util',
+	),
+) + $resourcePaths;
+
 $wgResourceModules['jquery.autoresize'] = array(
 	'scripts' => 'resources/js/jquery.autoresize.js',
 ) + $resourcePaths;
@@ -659,6 +667,13 @@ $wgEnablePageTranslation = true;
  * other namespace in your wiki.
  */
 $wgPageTranslationNamespace = 1198;
+
+/**
+ * When user changes interface language via ULS, should we also switch the
+ * language of the translatable page.
+ * @since 2013-03-10
+ */
+$wgTranslatePageTranslationULS = false;
 
 # </source>
 # === Message group configuration ===
