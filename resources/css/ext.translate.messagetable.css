@@ -208,6 +208,8 @@
 	vertical-align: middle;
 	border-radius: 0;
 	text-shadow: none;
+	margin: 0;
+	text-indent: 0;
 }
 
 .tux-action-bar .tux-view-switcher {
