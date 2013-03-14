@@ -56,6 +56,7 @@
 		this.options = $.extend( {}, $.fn.messagetable.defaults, options );
 		// mode can be proofread, page or translate
 		this.mode = this.options.mode;
+		this.firstProofreadTipShown = false;
 		this.$loader = this.$container.siblings( '.tux-messagetable-loader' );
 		this.$actionBar = this.$container.siblings( '.tux-action-bar' );
 		this.messages = [];
@@ -120,15 +121,28 @@
 		},
 
 		add: function ( message ) {
+			var $message;
+
 			if ( this.mode === 'translate' ) {
-				this.addTranslate( message );
+				$message = this.addTranslate( message );
 			}
+
 			if ( this.mode === 'proofread' ) {
-				this.addProofread( message );
+				$message = this.addProofread( message );
+
+				if ( mw.user.options.get( 'tux-did-proofread' ) !== '1' &&
+					!this.firstProofreadTipShown
+				) {
+					$message.find( '.tux-proofread-action' ).tipsy( 'show' );
+					this.firstProofreadTipShown = true;
+				}
 			}
+
 			if ( this.mode === 'page' ) {
-				this.addPageModeMessage( message );
+				$message = this.addPageModeMessage( message );
 			}
+
+			return $message;
 		},
 
 		/**
@@ -226,6 +240,8 @@
 			$messageWrapper.translateeditor( {
 				message: message
 			} );
+
+			return $message;
 		},
 
 		/**
@@ -240,6 +256,8 @@
 
 			this.$container.append( $message );
 			$message.proofread();
+
+			return $message;
 		},
 
 		addPageModeMessage: function ( message ) {
@@ -271,6 +289,8 @@
 				);
 
 			this.$container.append( $message );
+
+			return $message;
 		},
 
 		/**
@@ -382,9 +402,12 @@
 					}
 
 					$.each( messages, function ( index, message ) {
+						var $message;
+
 						message.group = messagegroup;
-						messageTable.add( message );
+						$message = messageTable.add( message );
 						messageTable.messages.push( message );
+
 						if ( index === 0 && messageTable.mode === 'translate' ) {
 							$( '.tux-message:first' ).data( 'translateeditor' ).init();
 						}
@@ -418,6 +441,7 @@
 					mw.translate.getMessageGroup( messagegroup ).done( function ( group ) {
 						mw.translate.prepareWorkflowSelector( group );
 					} );
+
 					if ( result.query.metadata && result.query.metadata.state ) {
 						$workflowSelector.find( 'li' ).each( function () {
 							var $this = $( this );
@@ -505,6 +529,7 @@
 			var messageTable = this,
 				filter = messageTable.$loader.data( 'filter' ),
 				userId = mw.config.get( 'wgUserId' ),
+				$proofreadAction,
 				$tuxTabUntranslated,
 				$tuxTabUnproofread,
 				$controlOwnButton,
@@ -519,6 +544,17 @@
 			}
 			if ( mode === 'page' ) {
 				messageTable.$actionBar.find( '.page-mode-button' ).addClass( 'down' );
+			}
+
+			this.firstProofreadTipShown = false;
+
+			// "Accept message" tipsies may still be shown
+			if ( messageTable.mode === 'proofread' ) {
+				$proofreadAction = messageTable.$container.find( '.tux-proofread-action' );
+
+				if ( $proofreadAction.length ) {
+					$proofreadAction.tipsy( 'hide' );
+				}
 			}
 
 			messageTable.mode = mode;
@@ -539,8 +575,8 @@
 				if ( !filter || filter.indexOf( '!translated' ) >= 0 )  {
 					messageTable.messages = [];
 					// default filter for proofread mode
-					mw.translate.changeFilter( 'translated|!reviewer:' + userId
-						+ '|!last-translator:' + userId );
+					mw.translate.changeFilter( 'translated|!reviewer:' + userId +
+						'|!last-translator:' + userId );
 					$tuxTabUnproofread.addClass( 'selected' );
 				}
 				$tuxTabUntranslated.addClass( 'hide' );
@@ -679,9 +715,6 @@
 
 			$.post( mw.util.wikiScript( 'api' ), params, successFunction ).fail( failFunction );
 		} );
-
-
-
 	} );
 
 	var delay = ( function () {
