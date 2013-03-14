@@ -5,6 +5,7 @@
  * @file
  * @author Siebrand Mazeland
  * @author Niklas Laxström
+ * @author Amir E. Aharoni
  * @copyright Copyright © 2008-2010 Siebrand Mazeland, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
@@ -14,18 +15,24 @@
  */
 class TranslatePreferences {
 	/**
-	 * Add 'translate-pref-nonewsletter' preference.
-	 * This is most probably specific to translatewiki.net. Can be enabled
+	 * Add 'translate-pref-nonewsletter' preference,
+	 * which is most probably specific to translatewiki.net. Can be enabled
 	 * with $wgTranslateNewsletterPreference.
+	 * Add 'tux-did-proofread', for tracking whether the user already proofread
+	 * anything using TUX.
 	 *
 	 * @param $user User
 	 * @param $preferences array
 	 * @return bool true
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
+		$preferences['tux-did-proofread'] = array(
+			'type' => 'api',
+		);
+
 		global $wgTranslateNewsletterPreference;
 
-		if ( !$wgTranslateNewsletterPreference ) {
+		if ( $wgTranslateNewsletterPreference ) {
 			return true;
 		}
 
