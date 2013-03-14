@@ -116,3 +116,15 @@
 	background-image: linear-gradient(#D3D3D3, #D8D8D8);
 	border-color: #C9C9C9;
 }
+
+.translate-search-more-languages {
+	background-color: #F0F0F0;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.translate-search-more-languages-info {
+	padding: 5px;
+	color: #554;
+	font-size: 16px;
+}
