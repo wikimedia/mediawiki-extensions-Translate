@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqJ3JcV4",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-15T06:30:24Z",
+      "side": 1,
+      "message": "According to https://www.mediawiki.org/wiki/CC/JS#Comments , // should be used for comments.",
+      "revId": "878760961e1724a6bb952224ff4ce90ec87869d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqH2nvao",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-15T06:30:24Z",
+      "side": 1,
+      "message": "Space after opening parentheses.",
+      "revId": "878760961e1724a6bb952224ff4ce90ec87869d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqL3GtUo",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-15T06:30:24Z",
+      "side": 1,
+      "message": "// Comments",
+      "revId": "878760961e1724a6bb952224ff4ce90ec87869d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
