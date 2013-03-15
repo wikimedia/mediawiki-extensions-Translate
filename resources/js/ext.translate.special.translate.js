@@ -372,11 +372,15 @@
 		} );
 
 		// Workflow state selector
+
+		// Toggling menu visibility
 		$translateContainer.find( '.tux-workflow-status' )
-			.on( 'click', function () {
+			.on( 'click', function ( e ) {
 				$( this ).next( 'ul' ).toggleClass( 'hide' );
+				e.preventDefault();
 			} );
 
+		// Handling state changes
 		$translateContainer.find( '.tux-workflow-status-selector li' )
 			.on( 'click', function () {
 				var state, stateText, $selector,
@@ -398,6 +402,13 @@
 					$selector.text( mw.msg( 'translate-workflowstatus', stateText ) );
 				} );
 			} );
+
+		// Hide the workflow selector when clicking outside of it
+		$( 'html' ).on( 'click', function ( e ) {
+			if ( !e.isDefaultPrevented() ) {
+				$( 'ul.tux-workflow-status-selector' ).addClass( 'hide' );
+			}
+		} );
 
 		// Message filter click handler
 		$translateContainer.find( '.row.tux-message-selector > li' ).on( 'click', function () {
