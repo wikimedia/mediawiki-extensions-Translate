@@ -116,3 +116,7 @@
 	background-image: linear-gradient(#D3D3D3, #D8D8D8);
 	border-color: #C9C9C9;
 }
+
+h1.firstHeading {
+	display: none;
+}
