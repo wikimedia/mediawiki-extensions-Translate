@@ -24,7 +24,7 @@
 			if ( this.hasChildGroups( this.parentGroupId ) ) {
 				this.prepareSelectorMenu();
 				this.position();
-				this.loadGroups( this.parentGroupId );
+				//this.loadGroups( this.parentGroupId );
 				this.listen();
 			}
 		},
@@ -39,6 +39,7 @@
 				$search,
 				$searchIcon,
 				$searchGroup,
+				$loader,
 				$msgGroupList;
 
 			this.$menu = $( '<div class="ext-translate-msggroup-selector-menu grid">' );
@@ -84,7 +85,8 @@
 			$msgGroupList = $( '<div>' )
 				.addClass( 'row ext-translate-msggroup-list' );
 
-			this.$menu.append( $groupTitle, $listFiltersGroup, $msgGroupList );
+			$loader = $( '<div>' ).addClass( 'tux-loading-indicator' );
+			this.$menu.append( $groupTitle, $listFiltersGroup, $loader, $msgGroupList );
 
 			$( 'body' ).append( this.$menu );
 		},
@@ -252,6 +254,7 @@
 		 */
 		getRecentGroups: function () {
 			var api = new mw.Api(),
+				groupSelector = this,
 				messageGroups = this.$menu.data( 'msggroups' ),
 				$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' ),
 				recentMessageGroups = $( '.ext-translate-msggroup-selector' )
@@ -276,6 +279,7 @@
 			if ( recentMessageGroups ) {
 				addRecentMessageGroups( recentMessageGroups );
 			} else {
+				groupSelector.$menu.find( '.tux-loading-indicator' ).show()
 				api.get( {
 					action: 'translateuser',
 					format: 'json'
@@ -283,6 +287,7 @@
 					$( '.ext-translate-msggroup-selector' )
 						.data( 'recentmsggroups', result.translateuser.recentgroups );
 					addRecentMessageGroups( result.translateuser.recentgroups );
+					groupSelector.$menu.find( '.tux-loading-indicator' ).hide();
 				} );
 			}
 		},
@@ -437,6 +442,7 @@
 			} else {
 				$msgGroupList.append( $msgGroupRows );
 			}
+			this.$menu.find( '.tux-loading-indicator' ).hide();
 		},
 
 		/**
