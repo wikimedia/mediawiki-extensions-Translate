@@ -266,7 +266,7 @@ $messages['hsb'] = array(
  */
 $messages['it'] = array(
 	'searchtranslations' => 'Ricerca traduzioni',
-	'tux-sst-edit' => 'Modifica messaggio',
+	'tux-sst-edit' => 'Modifica traduzione',
 	'tux-sst-search' => 'Cerca',
 	'tux-sst-search-ph' => 'Cerca traduzioni',
 	'tux-sst-count' => '{{PLURAL:$1|Un risultato trovato|$1 risultati trovati}}',
@@ -275,6 +275,8 @@ $messages['it'] = array(
 	'tux-sst-facet-orphan' => '(orfano)',
 	'tux-sst-nosolr-title' => 'Ricerca non disponibile',
 	'tux-sst-nosolr-body' => 'Questo wiki non ha un servizio di ricerca delle traduzioni.',
+	'tux-sst-solr-offline-title' => 'Ricerca non disponibile',
+	'tux-sst-solr-offline-body' => 'Il servizio di ricerca è temporaneamente non disponibile.',
 );
 
 /** Japanese (日本語)

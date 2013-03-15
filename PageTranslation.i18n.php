@@ -6563,6 +6563,7 @@ $messages['mk'] = array(
 
 /** Malayalam (മലയാളം)
  * @author Praveenp
+ * @author Santhosh.thottingal
  */
 $messages['ml'] = array(
 	'pagetranslation' => 'താളിന്റെ പരിഭാഷ',
@@ -6572,6 +6573,7 @@ $messages['ml'] = array(
 	'tpt-badtitle' => 'താളിനു നൽകിയ പേര് ($1) സാധുവായ തലക്കെട്ട് അല്ല',
 	'tpt-nosuchpage' => '$1 എന്ന താൾ നിലവിലില്ല.',
 	'tpt-edit-failed' => 'താൾ പുതുക്കാൻ കഴിഞ്ഞില്ല: $1',
+	'tpt-old-pages-title' => 'പരിഭാഷയിലുള്ള താളുകൾ',
 	'tpt-other-pages-title' => 'പൊട്ടിയ താളുകൾ',
 	'tpt-select-prioritylangs-reason' => 'കാരണം:',
 	'tpt-rev-discourage' => 'നിരുത്സാഹപ്പെടുത്തുക',
@@ -6587,10 +6589,10 @@ $messages['ml'] = array(
 	'tpt-aggregategroup-save' => 'സേവ് ചെയ്യുക',
 	'tpt-aggregategroup-new-name' => 'പേര്:',
 	'tpt-aggregategroup-new-description' => 'വിവരണം (ഐച്ഛികം):',
-	'pt-log-name' => 'താൾ പരിഭാഷാ രേഖ',
+	'log-name-pagetranslation' => 'താൾ പരിഭാഷാ രേഖ',
 	'pt-movepage-block-subpage-exists' => 'ലക്ഷ്യം വെച്ച ഉപതാൾ [[:$2]] നിലവിലുണ്ട്.',
 	'pt-movepage-list-pages' => 'മാറ്റേണ്ട താളുകളുടെ പട്ടിക',
-	'pt-movepage-list-translation' => 'പരിഭാഷാ താളുകൾ', # Fuzzy
+	'pt-movepage-list-translation' => 'പരിഭാഷാ {{PLURAL:$1|താൾ|താളുകൾ}}',
 	'pt-movepage-list-section' => 'ഉപവിഭാഗ താളുകൾ', # Fuzzy
 	'pt-movepage-list-other' => 'മറ്റ് ഉപതാളുകൾ', # Fuzzy
 	'pt-movepage-legend' => 'പരിഭാഷപ്പെടുത്താവുന്ന താൾ നീക്കുക',

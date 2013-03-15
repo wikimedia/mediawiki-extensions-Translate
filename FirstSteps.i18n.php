@@ -2597,14 +2597,14 @@ $messages['ml'] = array(
 	'translate-fs-target-title' => 'പരിഭാഷപ്പെടുത്തൽ തുടങ്ങുക!',
 	'translate-fs-email-title' => 'ഇമെയിൽ വിലാസം സ്ഥിരീകരിക്കുക',
 	'translate-fs-intro' => "{{SITENAME}} ആദ്യചുവടുകൾ സഹായത്തിലേയ്ക്ക് സ്വാഗതം.
-പരിഭാഷക(ൻ) പദവിയിലേക്ക് എത്താനുള്ള ഘട്ടം ഘട്ടമായി എത്താനുള്ള വഴികാട്ടിയാണിത്.
+പരിഭാഷക(ൻ) പദവിയിലേക്ക് ഘട്ടം ഘട്ടമായി എത്താനുള്ള വഴികാട്ടിയാണിത്.
 അവസാനം {{SITENAME}} സംരംഭത്തിൽ പിന്തുണയുള്ള എല്ലാ പദ്ധതികളുടെയും ''സമ്പർക്കമുഖ സന്ദേശങ്ങൾ'' പരിഭാഷപ്പെടുത്താൻ താങ്കൾക്ക് സാധിച്ചിരിക്കും.",
 	'translate-fs-selectlanguage' => 'ഭാഷ തിരഞ്ഞെടുക്കുക',
 	'translate-fs-settings-planguage' => 'പ്രാഥമികഭാഷ:',
 	'translate-fs-settings-planguage-desc' => 'പ്രാഥമിക ഭാഷ നിങ്ങളുടെ സമ്പർക്കമുഖ ഭാഷയായും പരിഭാഷയ്ക്കുള്ള ഭാഷയായും മാറുന്നു.',
 	'translate-fs-settings-slanguage' => 'സഹായകഭാഷ $1:',
 	'translate-fs-settings-submit' => 'ക്രമീകരണങ്ങൾ ഓർത്തുവെയ്ക്കുക',
-	'translate-fs-userpage-submit' => 'എന്റെ ഉപയോക്തൃ താൾ സൃഷ്ടിക്കുക',
+	'translate-fs-userpage-submit' => 'എന്റെ ഉപയോക്തൃ താൾ സൃഷ്ടിക്കുക', # Fuzzy
 	'translate-fs-userpage-done' => 'കൊള്ളാം! താങ്കൾക്കിപ്പോൾ ഒരു ഉപയോക്തൃതാൾ ഉണ്ട്.',
 	'translate-fs-permissions-planguage' => 'പ്രാഥമികഭാഷ:',
 	'translate-fs-permissions-submit' => 'അഭ്യർത്ഥന അയയ്ക്കുക',

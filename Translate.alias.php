@@ -1004,6 +1004,7 @@ $specialPageAliases['zh-hans'] = array(
 	'Translate' => array( '翻译' ),
 	'Magic' => array( '高级翻译' ),
 	'TranslationStats' => array( '翻译统计' ),
+	'Translations' => array( '译文' ),
 	'LanguageStats' => array( '语言统计' ),
 	'MessageGroupStats' => array( '信息组状态' ),
 	'PageTranslation' => array( '页面翻译' ),
@@ -1012,6 +1013,8 @@ $specialPageAliases['zh-hans'] = array(
 	'FirstSteps' => array( '首几步' ),
 	'SupportedLanguages' => array( '支持语言' ),
 	'MyLanguage' => array( '我的语言' ),
+	'PageTranslationDeletePage' => array( '页面译文删除页面' ),
+	'AggregateGroups' => array( '合计组' ),
 	'SearchTranslations' => array( '搜索翻译' ),
 );
 
