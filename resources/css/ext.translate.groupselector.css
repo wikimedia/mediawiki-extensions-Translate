@@ -248,3 +248,9 @@
 	min-height: 1px;
 	position: relative;
 }
+
+.ext-translate-msggroup-selector-menu .tux-loading-indicator {
+	top: 50%;
+	left: 50%;
+	position: absolute;
+}
