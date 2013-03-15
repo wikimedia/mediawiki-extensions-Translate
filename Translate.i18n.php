@@ -21,7 +21,6 @@ $messages['en'] = array(
 	'translate-taskui-view' => 'Show all messages',
 	'translate-taskui-untranslated' => 'Show untranslated messages',
 	'translate-taskui-optional' => 'Show optional messages',
-	'translate-taskui-suggestions' => 'Show messages with suggestions from translation memory',
 	'translate-taskui-acceptqueue' => 'Only messages I can accept',
 	'translate-taskui-reviewall' => 'Review all translations',
 	'translate-taskui-export-to-file' => 'Export in native format',

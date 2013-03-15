@@ -212,15 +212,12 @@ $wgAutoloadClasses['CustomFilteredMessagesTask'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ExportAsPoMessagesTask'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ExportMessagesTask'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ExportToFileMessagesTask'] = "$dir/TranslateTasks.php";
-$wgAutoloadClasses['ExportToXliffMessagesTask'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ReviewAllMessagesTask'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ReviewMessagesTask'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['TranslateTask'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ViewMessagesTask'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ViewOptionalTask'] = "$dir/TranslateTasks.php";
-$wgAutoloadClasses['ViewUntranslatedOptionalTask'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['ViewUntranslatedTask'] = "$dir/TranslateTasks.php";
-$wgAutoloadClasses['ViewWithSuggestionsTask'] = "$dir/TranslateTasks.php";
 /**@}*/
 
 /**

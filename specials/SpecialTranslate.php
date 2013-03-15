@@ -343,7 +343,7 @@ class SpecialTranslate extends SpecialPage {
 		if ( $taction === 'proofread' ) {
 			$extra = $this->taskLinks( array( 'acceptqueue', 'reviewall' ) );
 		} elseif ( $taction === 'translate' ) {
-			$extra = $this->taskLinks( array( 'view', 'untranslated', 'optional', 'suggestions' ) );
+			$extra = $this->taskLinks( array( 'view', 'untranslated', 'optional' ) );
 		} elseif ( $taction === 'export' ) {
 			$extra = $this->taskLinks( array( 'export-as-po', 'export-to-file' ) );
 		} else {
@@ -416,7 +416,6 @@ class SpecialTranslate extends SpecialPage {
 		// The message is shown as the check box's label.
 		$options = array(
 			'optional' => $this->msg( 'tux-message-filter-optional-messages-label' )->escaped(),
-			//@todo: 'Messages without suggestions',
 		);
 
 		$container = Html::openElement( 'ul', array( 'class' => 'column tux-message-selector' ) );
@@ -559,7 +558,7 @@ class SpecialTranslate extends SpecialPage {
 			}
 			// Give grep a chance to find the usages:
 			// translate-taskui-view, translate-taskui-untranslated, translate-taskui-optional,
-			// translate-taskui-suggestions, translate-taskui-acceptqueue, translate-taskui-reviewall,
+			// translate-taskui-acceptqueue, translate-taskui-reviewall,
 			// translate-taskui-export-to-file, translate-taskui-export-as-po
 			return $sep . Html::rawElement( 'label', array(),
 				Xml::radio( 'task', $id, true ) . ' ' .
@@ -570,7 +569,7 @@ class SpecialTranslate extends SpecialPage {
 			foreach ( $tasks as $index => $id ) {
 				// Give grep a chance to find the usages:
 				// translate-taskui-view, translate-taskui-untranslated, translate-taskui-optional,
-				// translate-taskui-suggestions, translate-taskui-acceptqueue, translate-taskui-reviewall,
+				// translate-taskui-acceptqueue, translate-taskui-reviewall,
 				// translate-taskui-export-to-file, translate-taskui-export-as-po
 				$output .= Html::rawElement( 'label', array(),
 					Xml::radio( 'task', $id, $this->options['task'] === $id ) . ' ' .
