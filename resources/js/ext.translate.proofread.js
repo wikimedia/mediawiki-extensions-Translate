@@ -134,8 +134,19 @@
 
 		render: function () {
 			var targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
-				$proofreadAction, $proofreadEdit,
-				translatedBySelf = ( this.message.properties['last-translator-text'] === mw.user.getName() );
+				$proofreadAction, $proofreadEdit, userId, reviewers, otherReviewers,
+				translatedBySelf, proofreadBySelf;
+
+			// List of all reviewers
+			reviewers = $( this.message.properties.reviewers );
+			// The id of the current user, converted to string as the are in reviewers
+			userId = mw.config.get( 'wgUserId' ) + '';
+			// List of all reviewers excluding the current user.
+			otherReviewers = reviewers.not( [userId] );
+			/* Whether the current user if the last translator of this message.
+			 * Accepting own translations is prohibited. */
+			translatedBySelf = ( this.message.properties['last-translator-text'] === mw.user.getName() );
+			proofreadBySelf = $.inArray( userId, reviewers ) > -1;
 
 			sourceLanguage = this.$container.data( 'sourcelangcode' );
 			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
@@ -145,11 +156,14 @@
 			$proofreadAction = $( '<div>' )
 				.attr( 'title', mw.msg( 'tux-proofread-action-tooltip' ) )
 				.addClass(
-					'tux-proofread-action ' + this.message.properties.status
-				);
+					'tux-proofread-action ' + this.message.properties.status + ' ' + (proofreadBySelf ? 'accepted' : '' )
+				)
+				.tipsy( { gravity: 's' } );
+
 			$proofreadEdit = $( '<div>' )
 				.attr( 'title', mw.msg( 'tux-proofread-edit-tooltip' ) )
-				.addClass( 'tux-proofread-edit' );
+				.addClass( 'tux-proofread-edit' )
+				.tipsy();
 
 			this.$message.append(
 				$( '<div>' )
@@ -174,14 +188,15 @@
 						translatedBySelf ?
 							$( '<div>' )
 								.addClass( 'translated-by-self' )
-								.text( mw.msg( 'tux-proofread-translated-by-self' ) ) :
+								.attr( 'title', mw.msg( 'tux-proofread-translated-by-self' ) )
+								.tipsy( { gravity: 'e' } ):
 							$( [] ),
 						$proofreadAction,
-						this.message.properties.reviewers ?
+						otherReviewers.length ?
 							$( '<div>' )
-								.addClass( 'tux-proofread-count right' )
-								.text( mw.language.convertNumber(
-									this.message.properties.reviewers.length ) ) :
+								.addClass( 'tux-proofread-count' )
+								.data( 'reviewCount', reviewers.length ) // To update when accepting
+								.text( mw.language.convertNumber( reviewers.length ) ) :
 							$( [] ),
 						$proofreadEdit
 					)
@@ -194,13 +209,12 @@
 				this.hide();
 			}
 
-			$proofreadAction.tipsy( {
-				gravity: 's'
-			} );
+			/* Here we need to check that there are reviewers in the first place
+			 * before adding review markers */
+			if ( reviewers.length && otherReviewers.length ) {
+				this.$message.addClass( 'proofread-by-others' );
+			}
 
-			$proofreadEdit.tipsy( {
-				gravity: 'n'
-			} );
 		},
 
 		hide: function () {
@@ -212,7 +226,8 @@
 		 * Mark this message as proofread.
 		 */
 		proofread: function () {
-			var proofread = this;
+			var proofread = this,
+				reviews;
 
 			mw.translate.proofread( {
 				action: 'translationreview',
@@ -220,7 +235,11 @@
 				format: 'json'
 			}, function () {
 				proofread.$message.find( '.tux-proofread-action' )
-					.addClass( 'proofread' );
+					.addClass( 'accepted' );
+
+				reviews = proofread.$message.find( '.tux-proofread-count' ).data( 'reviewCount' );
+				proofread.$message.find( '.tux-proofread-count' )
+					.text( mw.language.convertNumber( reviews + 1 ) );
 
 				// Update stats
 				$( '.tux-action-bar .tux-statsbar' ).trigger( 'change', [ 'proofread', proofread.message.properties.state ] );
