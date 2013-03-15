@@ -1022,7 +1022,6 @@ class TranslationHelpers {
 	protected function getPageDiff() {
 		$this->mustBeKnownMessage();
 
-		$group = $this->group;
 		$title = $this->handle->getTitle();
 		$key = $this->handle->getKey();
 
