@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqM9IjDI",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-15T10:48:12Z",
+      "side": 1,
+      "message": "This needs udpating I think.",
+      "revId": "9b6324ae0402dd0c627127d88b16e91ed771a411",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqO9FUBg",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-15T10:48:12Z",
+      "side": 1,
+      "message": "Was here already but I\u0027d add space before )",
+      "revId": "9b6324ae0402dd0c627127d88b16e91ed771a411",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqE9dXOg",
+        "filename": "utils/UserToggles.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-15T10:48:12Z",
+      "side": 1,
+      "message": "Feel free to add yourself as an author",
+      "revId": "9b6324ae0402dd0c627127d88b16e91ed771a411",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqM9xbHg",
+        "filename": "utils/UserToggles.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-15T10:48:12Z",
+      "side": 1,
+      "message": "We usually try to avoid excessive indentation.",
+      "revId": "9b6324ae0402dd0c627127d88b16e91ed771a411",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
