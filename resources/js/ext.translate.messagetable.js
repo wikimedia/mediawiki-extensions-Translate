@@ -488,7 +488,7 @@
 				$filterLink = $( '<a>' )
 					.text( mw.msg( 'tux-empty-list-other-link' ) )
 					.click( function () {
-						mw.translate.switchMode( $( '.tux-tab-all' ).click() );
+						$( '.tux-tab-all' ).click();
 					} );
 				$actions.append( $filterLink );
 
