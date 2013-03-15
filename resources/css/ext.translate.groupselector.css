@@ -248,3 +248,31 @@
 	min-height: 1px;
 	position: relative;
 }
+
+@keyframes tux-loading-indicator-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.ext-translate-msggroup-list.loading {
+	float: left;
+	background: transparent url(../images/loading.gif) right bottom no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/loading.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/loading.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/loading.svg);
+	background-size: 10%;
+	-webkit-animation-name: tux-loading-indicator-spin;
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	animation-name: tux-loading-indicator-spin;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	height: 34px;
+	width: 34px;
+}

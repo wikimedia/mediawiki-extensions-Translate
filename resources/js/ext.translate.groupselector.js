@@ -82,7 +82,7 @@
 				.append( $listFilters, $searchGroup );
 
 			$msgGroupList = $( '<div>' )
-				.addClass( 'row ext-translate-msggroup-list' );
+				.addClass( 'row ext-translate-msggroup-list loading' );
 
 			this.$menu.append( $groupTitle, $listFiltersGroup, $msgGroupList );
 
@@ -276,6 +276,7 @@
 			if ( recentMessageGroups ) {
 				addRecentMessageGroups( recentMessageGroups );
 			} else {
+				$msgGroupList.addClass( 'loading' );
 				api.get( {
 					action: 'translateuser',
 					format: 'json'
@@ -283,6 +284,7 @@
 					$( '.ext-translate-msggroup-selector' )
 						.data( 'recentmsggroups', result.translateuser.recentgroups );
 					addRecentMessageGroups( result.translateuser.recentgroups );
+					$msgGroupList.removeClass( 'loading' );
 				} );
 			}
 		},
@@ -437,6 +439,8 @@
 			} else {
 				$msgGroupList.append( $msgGroupRows );
 			}
+
+			$msgGroupList.removeClass( 'loading' );
 		},
 
 		/**
