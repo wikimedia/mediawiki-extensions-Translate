@@ -236,6 +236,7 @@ class TranslateHooks {
 
 	/**
 	 * Hook: LanguageGetTranslatedLanguageNames
+	 * Hook: TranslateSupportedLanguages
 	 */
 	public static function translateMessageDocumentationLanguage( &$names, $code ) {
 		global $wgTranslateDocumentationLanguageCode;
