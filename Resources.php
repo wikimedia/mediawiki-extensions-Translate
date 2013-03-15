@@ -94,6 +94,12 @@ $wgResourceModules['ext.translate.grid'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.loader'] = array(
+	'styles' => 'resources/css/ext.translate.loader.css',
+	'position' => 'top',
+) + $resourcePaths;
+
+
 $wgResourceModules['ext.translate.groupselector'] = array(
 	'styles' => 'resources/css/ext.translate.groupselector.css',
 	'scripts' => 'resources/js/ext.translate.groupselector.js',
@@ -102,6 +108,7 @@ $wgResourceModules['ext.translate.groupselector'] = array(
 		'ext.translate.grid',
 		'ext.translate.statsbar',
 		'mediawiki.jqueryMsg',
+		'ext.translate.loader',
 	),
 	'messages' => array(
 		'translate-msggroupselector-projects',
@@ -131,6 +138,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'jquery.appear',
 		'mediawiki.jqueryMsg',
 		'ext.translate.parsers',
+		'ext.translate.loader',
 	),
 	'messages' => array(
 		'translate-messagereview-submit',
