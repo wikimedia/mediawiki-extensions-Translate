@@ -1590,9 +1590,9 @@ Testenn ar rannbennad : <pre>$1</pre>", # Fuzzy
 	'pt-movepage-block-subpage-exists' => 'Bez ez eus eus an is-pajenn voned [[:$2]].',
 	'pt-movepage-block-subpage-invalid' => 'Direizh e vefe titl an is-pajenn voned evit [[:$1]] (re hir ?).',
 	'pt-movepage-list-pages' => 'Roll ar pajennoù da fiñval',
-	'pt-movepage-list-translation' => 'Pajennoù treiñ', # Fuzzy
-	'pt-movepage-list-section' => 'Pajennoù e rann', # Fuzzy
-	'pt-movepage-list-other' => 'Ispajennoù all', # Fuzzy
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Pajenn|Pajennoù}} treiñ',
+	'pt-movepage-list-section' => 'Pajennoù{{PLURAL:$1|}} e rann',
+	'pt-movepage-list-other' => 'Ispajenn{{PLURAL:$1||où}} all',
 	'pt-movepage-list-count' => "$1 {{PLURAL:bajenn|pajenn}} da zilec'hiañ en holl.",
 	'pt-movepage-legend' => 'Fiñval ar bajenn da dreiñ',
 	'pt-movepage-current' => 'Anv red :',
@@ -3764,6 +3764,8 @@ Volyéd controlar lo [[Special:Log/pagetranslation|jornal de les traduccions de 
 $messages['fur'] = array(
 	'translate-tag-translate-link-desc' => 'Tradûs cheste pagjine',
 	'tpt-languages-legend' => 'Altris lenghis:',
+	'tpt-aggregategroup-save' => 'Salve',
+	'tpt-aggregategroup-new-name' => 'Non:',
 	'pt-movepage-reason' => 'Reson:',
 );
 
@@ -6177,6 +6179,7 @@ Ier Dir dës Versioun fir d'iwwersetze markéiert, kuckt w.e.g. no datt d'Änner
 	'tpt-old-pages' => "Eng Versioun vun {{PLURAL:$1|dëser Säit|dëse Säite}} gouf fir d'Iwwersetze markéiert.",
 	'tpt-other-pages' => "Al Versioun vun {{PLURAL:$1|dëser Säit|dëse Säite}} sinn als z'iwwesetze markéiert,
 awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
+	'tpt-discouraged-pages' => '{{PLURAL:$1|Dës Säit gouf|Dës Säite goufe}} vun der Lëscht vun de recommandéierten Iwwersetzungen erofgeholl.',
 	'tpt-select-prioritylangs' => 'Komma-getrennte Lëscht vun de prioritäre Sproochcoden:',
 	'tpt-select-prioritylangs-force' => 'Iwwersetzungen an aner Sprooche wéi déi prioritär Sprooche verhënneren',
 	'tpt-select-prioritylangs-reason' => 'Grond:',
@@ -6194,7 +6197,6 @@ awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
 	'translate-tag-markthisagain' => 'Dës Säit huet <span class="plainlinks">[$1 Ännerungen]</span> zënter datt se fir d\'lescht <span class="plainlinks">[$2 fir d\'Iwwersetzung markéiert gouf]</span>.',
 	'translate-tag-hasnew' => 'Op dëser Säit si(nn)s <span class="plainlinks">[$1 Ännerungen]</span> déi net fir d\'iwwersetzung markéiert sinn.',
 	'tpt-translation-intro' => 'Dës Säit ass eng <span class="plainlinks">[$1 iwwersate Versioun]</span> vun der Säit [[$2]] an d\'Iwweersetzung ass zu $3 % ofgeschloss an aktuell.',
-	'tpt-translation-intro-fuzzy' => 'Net aktuell Iwwersetzunge sinn esou markéiert.',
 	'tpt-languages-legend' => 'aner Sproochen:',
 	'tpt-languages-zero' => 'Iwwersetzung fir dës Sprooch ufänken',
 	'tpt-target-page' => "Dës Säit kann net manuell aktualiséiert ginn.
@@ -6233,12 +6235,8 @@ Text vun der Iwwersetzungs-Eenheet: <pre>$1</pre>',
 	'pt-shake-position' => 'Markéierungen fir Iwwersetzungseenheeten op enger onerwaarter Plaz.
 Text fir Iwwersetzungseenheet: <pre>$1</pre>',
 	'pt-shake-empty' => 'Iwwersetzungs-Eenheete fir Marker $1 eidelmaachen.',
-	'pt-log-header' => 'Logbuch vun den Aktiounee a Verbindung mat dem System vun der Säiteniwwersetzung',
-	'pt-log-name' => 'Logbuch vun de Säiteniwwersetzungen',
-	'pt-log-mark' => '{{GENDER:$2|huet}} d\'Versioun $3 vun der Säit "[[:$1]]" fir z\'iwwersetze markéiert',
-	'pt-log-unmark' => '{{GENDER:$2|huet}} d\'Säit "[[:$1]]" vun der Iwwersetzung ewechgeholl',
-	'pt-log-moveok' => "{{GENDER:$2|huet}} d'iwwersetzbar Säit $1 op $3 ëmbenannt",
-	'pt-log-movenok' => '{{GENDER:$2|hat}} e Problem beim Réckele vu(n) [[:$1]] op [[:$3]]',
+	'log-description-pagetranslation' => 'Logbuch vun den Aktiounee a Verbindung mat dem System vun der Säiteniwwersetzung',
+	'log-name-pagetranslation' => 'Logbuch vun de Säiteniwwersetzungen',
 	'pt-movepage-title' => 'Déi iwwersetzbar Säit $1 réckelen',
 	'pt-movepage-blockers' => 'déi iwwersetzbar Säit kann net op den neien Numm geréckelt gi wéinst {{PLURAL:$1|dësem|dëse}} Feeler:',
 	'pt-movepage-block-base-exists' => 'D\'Ziliwwersetzungssäit "[[:$1]]" gëtt et schonn.',

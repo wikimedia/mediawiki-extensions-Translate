@@ -76,12 +76,22 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Purodha
+ * @author Shirayuki
  */
 $messages['qqq'] = array(
-	'bw-desc-freecol' => 'Do not translate the link target <code>Translating:FreeCol</code>.',
-	'bw-desc-fudforum' => 'Do not translate the link target <code>Translating:FUDforum</code>.',
-	'bw-desc-mantisbt' => 'Do not translate the link target <code>Translating:MantisBT</code>.',
+	'translate-group-desc-mediawikicore' => '{{doc-important|Do not translate the link target <code>Translating:MediaWiki</code>.}}',
+	'translate-group-desc-mediawikimostused' => '{{doc-important|Do not translate the link target <code>Translating:MediaWiki</code>.}}',
+	'translate-group-desc-mediawikiextensions' => '{{doc-important|Do not translate the link target <code>Translating:MediaWiki</code>.}}',
+	'bw-desc-freecol' => '{{doc-important|Do not translate the link target <code>Translating:FreeCol</code>.}}',
+	'bw-desc-fudforum' => '{{doc-important|Do not translate the link target <code>Translating:FUDforum</code>.}}',
+	'bw-desc-mantisbt' => '{{doc-important|Do not translate the link target <code>Translating:MantisBT</code>.}}',
+	'translate-group-desc-eol' => '{{doc-important|Do not translate the link target <code>Translating:EOL</code>.}}',
+	'translate-group-desc-frontlinesms' => '{{doc-important|Do not translate the link target <code>Translating:FrontlineSMS</code>.}}',
+	'translate-group-desc-ihris' => '{{doc-important|Do not translate the link target <code>Translating:iHRIS</code>.}}',
+	'translate-group-desc-ihris-common' => '{{doc-important|Do not translate the link target <code>Special:Translate/out-ihris-common-0-all</code> and <code>Translating:iHRIS</code>.}}',
+	'translate-group-desc-kiwix' => '{{doc-important|Do not translate the link target <code>Translating:Kiwix</code>.}}',
 	'translate-group-desc-mantisbt-plugin-core' => 'Do not translate the link target <code>Translating:MantisBT</code>.',
+	'translate-group-desc-mediawiki-core-branch' => '{{doc-important|Do not translate the link target <code>Translating:MediaWiki</code>.}}',
 	'translate-group-desc-mifos' => 'Do not translate the link target <code>Translating:Mifos</code>.',
 	'bw-desc-mwlibrl' => 'Do not translate the link target <code>Translating:Mwlib.rl</code>.',
 	'translate-group-desc-okawix' => 'Do not translate the link target <code>Translating:Okawix</code>.',
@@ -90,12 +100,20 @@ $messages['qqq'] = array(
 	'translate-group-desc-openimages-all' => 'Do not translate the link target <code>Translating:Open Images</code>.',
 	'bw-desc-openstreetmap' => 'Do not translate the link target <code>Translating:OpenStreetMap</code>.',
 	'bw-desc-osm-site' => 'Do not translate the link target <code>Translating:OpenStreetMap</code>.',
+	'translate-group-desc-potlatch2' => '{{doc-important|Do not translate the link target <code>Translating:OpenStreetMap</code>.}}',
 	'translate-group-desc-pywikipedia' => 'Do not translate the link target <code>Translating:Pywikipedia</code>.',
 	'bw-desc-shapado' => 'Do not translate the link target <code>Translating:Shapado</code>.',
 	'bw-desc-statusnet' => 'Do not translate the link target <code>Translating:StatusNet</code>.',
 	'translate-group-desc-statusnet-plugin' => 'Do not translate the link target <code>Translating:StatusNet</code>.',
+	'translate-group-desc-waymarked-trails' => '{{doc-important|Do not translate the link target <code>Translating:Waymarked Trails</code>.}}',
 	'bw-desc-wikiblame' => 'Do not translate the link target <code>Translating:WikiBlame</code>.',
 	'bw-desc-wikireader' => 'Do not translate the link target <code>Translating:WikiReader</code>.',
+	'translate-group-desc-wikimedia-mobile-commons' => '{{doc-important|Do not translate the link target <code>Translating:WikipediaMobile</code>.}}',
+	'translate-group-desc-wikimedia-mobile-wikipedia' => '{{doc-important|Do not translate the link target <code>Translating:WikipediaMobile</code>.}}',
+	'translate-group-desc-wikimedia-mobile-wikisource' => '{{doc-important|Do not translate the link target <code>Translating:WikisourceMobile</code>.}}',
+	'translate-group-desc-wikimedia-mobile-wiktionary' => '{{doc-important|Do not translate the link target <code>Translating:WiktionaryMobile</code>.}}',
+	'translate-group-desc-wikimedia-mobile-wlm' => '{{doc-important|Do not translate the link target <code>Translating:WLMMobile</code>.}}',
+	'translate-group-desc-etherpad-lite' => '{{doc-important|Do not translate the link target <code>Translating:Etherpad lite</code>.}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -222,6 +240,7 @@ $messages['ast'] = array(
 	'bw-desc-wikiblame' => "[[Translating:WikiBlame|WikiBlame]] ye capaz d'alcontrar rápidamente los autores d'una parte d'una páxina nuna wiki de Wikimedia",
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ufre una versión de Wikipedia ensin conexón, en mou sólo testu, nun preséu móvil',
 	'translate-group-desc-wikimedia-mobile' => 'Grupu de mensaxes agrupaos que contién aplicaciones pa móviles de los proyeutos de Wikimedia',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|WikipediaMobile|Commons Móvil]] ye una aplicación pa Android o iOS pa xubir ficheros y navegar per Wikimedia Commons',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Wikipedia',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Uiquiesbilla',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Wiktionary',
@@ -614,6 +633,7 @@ Weitere Information finden sich unter [[mw:Extension:PDF Writer]] und http://cod
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] ermöglicht das schnelle Finden eines Autoren einer Seite auf Wikis der Wikimedia Foundation.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ist ein Projekt für eine offline, nur-Text-Version der Wikipedia auf Kleingeräte.',
 	'translate-group-desc-wikimedia-mobile' => 'Die zusammengefasste Nachrichtengruppe enthält mobile Anwendungen für Wikimedia-Projekte',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]] ist eine App für Android und iOS zum Hochladen von Dateien und Durchstöbern von Wikimedia Commons',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] ist eine plattformunabhängige Mobil- und Tabletanwendung zum Lesen und Bearbeiten von Wikipedia',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] ist eine plattformunabhängige Mobil- und Tabletanwendung zum Lesen und Bearbeiten von Wikisource',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] ist eine plattformunabhängige Mobil- und Tabletanwendung zum Lesen und Bearbeiten von Wiktionary',
@@ -1470,6 +1490,7 @@ $messages['ja'] = array(
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]は、ウィキメディアウィキ内のページの一部の著者を素早く検索できます',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]は、携帯可能な機器で、オフラインかつ文字のみのウィキペディアを提供します',
 	'translate-group-desc-wikimedia-mobile' => 'ウィキメディアプロジェクトの携帯機器版アプリケーションのメッセージを含む集約群',
+	'translate-group-desc-wikimedia-mobile-commons' => 'WikipediaMobile|Commons Mobileはウィキメディア・コモンズのアップロードや閲覧のためのAndroid/iOSアプリです', # Fuzzy
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] はウィキペディアを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] はウィキソースを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] はウィクショナリーを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
@@ -1570,6 +1591,7 @@ $messages['ko'] = array(
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]은 신속하게 위키미디어 위키에서 문서 일부의 저자를 찾을 수 있습니다',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]는 모바일 장치에서 위키백과의 오프라인, 텍스트 전용 버전을 제공합니다',
 	'translate-group-desc-wikimedia-mobile' => '위키미디어 프로젝트에 대한 모바일 어플리케이션을 포함하는 집계한 메시지 그룹입니다',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|위키백과모바일|공용 모바일]]은 위키미디어 공용에 올리고 찾아보기 위한 안드로이드 또는 iOS 앱입니다',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|위키백과모바일]]은 위키백과 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|위키문헌모바일]]은 위키문헌 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|위키낱말사전모바일]]은 위키낱말사전 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
@@ -1687,6 +1709,7 @@ $messages['lb'] = array(
 	'translate-group-desc-statusnet-plugin' => 'Dës Message sinn Deel vun engem Plugin fir [[Translating:StatusNet|StatusNet]]',
 	'bw-desc-wikiblame' => "[[Translating:WikiBlame|WikiBlame]] erlaabt et fir d'Auteure vun enger Säit op enger Wikimedia-Wiki séier ze fannen.",
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ass e Projet fir eng reng Textversioun vu Wikipedia offline op engem mobilen Apparat zur Verfügung ze stellen.',
+	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] ass eng Mobil Applikatioun fir beim [[:meta:Wiki Loves Monuments|Projet "Wiki Loves Monuments"]] matzemaachen',
 );
 
 /** Lithuanian (lietuvių)

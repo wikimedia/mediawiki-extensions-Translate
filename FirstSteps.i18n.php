@@ -3860,6 +3860,7 @@ $messages['ur'] = array(
 
 /** Uzbek (oʻzbekcha)
  * @author CoderSI
+ * @author Sociologist
  */
 $messages['uz'] = array(
 	'firststeps' => 'Birinchi qadamlar',
@@ -3869,7 +3870,7 @@ $messages['uz'] = array(
 	'translate-fs-pagetitle' => "Boshlang'ich o'rganish dasturi - $1",
 	'translate-fs-signup-title' => "Ro'yxatdan o'ting",
 	'translate-fs-settings-title' => "Moslamalarni o'rnating",
-	'translate-fs-userpage-title' => "O'z ishtirokchi sahifangizni yarating",
+	'translate-fs-userpage-title' => 'Foydalanuvchi sahifangizni yarating',
 	'translate-fs-permissions-title' => "Tarjimonlik huquqiga so'rov yuboring",
 	'translate-fs-target-title' => 'Tarjimani boshlang!',
 	'translate-fs-email-title' => "O'z elektron pochta manzilingizni tasdiqlang",
