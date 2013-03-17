@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqPbHZJc",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-17T21:01:25Z",
+      "side": 1,
+      "message": "Whitespace.",
+      "revId": "44154ead9f466592caeae302d1ae0bbca554b712",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
