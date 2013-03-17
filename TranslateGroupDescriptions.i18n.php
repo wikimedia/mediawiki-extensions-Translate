@@ -670,7 +670,7 @@ $messages['dsb'] = array(
 	'translate-group-desc-readerfeedback' => 'Metakupka powěźeńkow, kótaraž wopśimujo wše powěźeńki za rozšyrjenje MediaWiki
 [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Głowna zdźěleńska kupka, kótaraž wopśimujo wšykne powěźeńki za wšykne rozšyrjenja [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-translate' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
+	'translate-group-desc-translate' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za rozšyrjenje MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Translate]; pšosym wopóznaj se z jogo [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glosarom]',
 	'translate-group-desc-wikiaextensions' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež wužywaju se pśez [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Toś ta głowna kupka wopśimujo wše powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež wužywaju se pśez [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikimediaextensions-main' => 'Metakupka powěźeńkow, kótaraž wopśimujo wšykne powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež muse se za [http://meta.wikimedia.org/wiki/Language_committee Rěcny komitej] Wikimedije pśełožyś',
@@ -1041,6 +1041,7 @@ Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pe
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php?user_lang=gl Wikiblame] é capaz de atopar rapidamente os autores dunha páxina nun wiki da Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] é un proxecto para ollar unha versión da Wikipedia sen conexión e en modo de só lectura nun dispositivo móbil.',
 	'translate-group-desc-wikimedia-mobile' => 'Grupo de mensaxes agregadas para as aplicacións de móbil dos proxectos da Wikimedia',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|WikipediaMobile|Commons Mobile]] é unha aplicación para Android ou iOS para realizar cargas e explorar a Wikimedia Commons',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar na Wikipedia',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar na Wikisource',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar no Wiktionary',
@@ -1490,7 +1491,7 @@ $messages['ja'] = array(
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]は、ウィキメディアウィキ内のページの一部の著者を素早く検索できます',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]は、携帯可能な機器で、オフラインかつ文字のみのウィキペディアを提供します',
 	'translate-group-desc-wikimedia-mobile' => 'ウィキメディアプロジェクトの携帯機器版アプリケーションのメッセージを含む集約群',
-	'translate-group-desc-wikimedia-mobile-commons' => 'WikipediaMobile|Commons Mobileはウィキメディア・コモンズのアップロードや閲覧のためのAndroid/iOSアプリです', # Fuzzy
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]]はウィキメディア・コモンズのアップロードや閲覧のための Android/iOS アプリです',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] はウィキペディアを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] はウィキソースを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] はウィクショナリーを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
