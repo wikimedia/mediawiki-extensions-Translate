@@ -149,22 +149,30 @@
 
 
 		prepareWorkflowSelector: function ( group ) {
-			var $selector = $( 'ul.tux-workflow-status-selector' ),
-				workflowstates = group.workflowstates;
+			var $workflowStateSelector,
+				$workflowStatusTrigger = $( '.tux-workflow-status' );
 
-			$selector.empty();
+			if ( !group.workflowstates ) {
+				$workflowStatusTrigger.addClass( 'hide' );
 
-			$.each( workflowstates, function ( id, workflowstate ) {
+				return;
+			}
+
+			$workflowStateSelector = $( 'ul.tux-workflow-status-selector' );
+
+			$workflowStateSelector.empty();
+
+			$.each( group.workflowstates, function ( id, workflowstate ) {
 				if ( workflowstate._canchange ) {
 					workflowstate.id = id;
 
-					$selector.append( $('<li>')
+					$workflowStateSelector.append( $( '<li>' )
 						.data( 'state', workflowstate )
 						.text( workflowstate._name )
 						.on( 'click', function() {
 							var $this = $( this );
 
-							$selector.find( '.selected' ).removeClass( 'selected' );
+							$workflowStateSelector.find( '.selected' ).removeClass( 'selected' );
 							$this.addClass( 'selected' )
 								.parent().addClass( 'hide' );
 							workflowSelectionHandler( $this.data( 'state' ) );
@@ -172,7 +180,10 @@
 					);
 				}
 			} );
-			$( '.tux-workflow-status' ).text( mw.msg( 'translate-workflow-state-' ) );
+
+			$workflowStatusTrigger
+				.text( mw.msg( 'translate-workflow-state-' ) )
+				.removeClass( 'hide' );
 		}
 	} );
 

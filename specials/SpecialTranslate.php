@@ -701,17 +701,8 @@ class SpecialTranslate extends SpecialPage {
 		);
 	}
 	protected function tuxWorkflowSelector() {
-		$stateConfig = $this->group->getMessageGroupStates()->getStates();
-		if ( !$stateConfig ) {
-			return false;
-		}
-
-		if ( MessageGroups::isDynamic( $this->group ) ) {
-			return false;
-		}
-
 		$selector = Html::element( 'div', array(
-			'class' => 'tux-workflow-status',
+			'class' => 'tux-workflow-status hide',
 			'data-token' => ApiGroupReview::getToken( 0, '' ),
 			'data-group' => $this->options['group'],
 			'data-language' => $this->options['language'],
@@ -721,8 +712,9 @@ class SpecialTranslate extends SpecialPage {
 
 		$selectorRow .= $selector;
 		$options = Html::openElement( 'ul', array( 'class' => 'tux-workflow-status-selector hide' ) );
-		$options .= Html::closeElement( 'ul');
-		return $selectorRow. $options. Html::closeElement( 'div');
+		$options .= Html::closeElement( 'ul' );
+
+		return $selectorRow . $options . Html::closeElement( 'div' );
 	}
 
 	protected function getWorkflowStatus() {
