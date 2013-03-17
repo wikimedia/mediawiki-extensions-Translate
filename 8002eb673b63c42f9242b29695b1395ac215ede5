@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqFZ2UKE",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-17T20:35:07Z",
+      "side": 1,
+      "message": "Variable only used one, not really needed.",
+      "revId": "8002eb673b63c42f9242b29695b1395ac215ede5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqBY3eOM",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-17T20:35:07Z",
+      "side": 1,
+      "message": "deviSe A better algorithm",
+      "revId": "8002eb673b63c42f9242b29695b1395ac215ede5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqJZ86IE",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-17T20:35:07Z",
+      "side": 1,
+      "message": "Maybe check all except \u0027.translated\u0027?",
+      "revId": "8002eb673b63c42f9242b29695b1395ac215ede5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
