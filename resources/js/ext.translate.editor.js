@@ -37,6 +37,20 @@
 			this.expanded = false;
 			this.$editTrigger.append( this.$editor );
 
+			if ( this.$editTrigger.data( 'message' ).properties.status === 'fuzzy' ) {
+				this.addWarning(
+					mw.msg( 'tux-editor-outdated-warning' ),
+					'diff'
+				).append( $( '<span>' )
+					// Hide initially.
+					// Will be shows if there's a valid diff available.
+					.addClass( 'show-diff-link hide' )
+					.text(
+						mw.message( 'tux-editor-outdated-warning-diff-link' ).escaped()
+					)
+				);
+			}
+
 			this.showTranslationHelpers();
 		},
 
@@ -515,18 +529,19 @@
 		 *
 		 * @param {String} warning used as html for the warning display
 		 * @param {String} type used to group the warnings.eg: validation, diff, error
+		 * @return {jQuery} the new warning element
 		 */
 		addWarning: function ( warning, type ) {
 			var warningCount,
 				$warnings = this.$editor.find( '.tux-warning' ),
-				$moreWarningsTab = this.$editor.find( '.tux-more-warnings' );
+				$moreWarningsTab = this.$editor.find( '.tux-more-warnings' ),
+				$newWarning = $( '<div>' )
+					.addClass( 'tux-warning-message hide ' + type )
+					.html( warning );
 
 			$warnings
 				.removeClass( 'hide' )
-				.append( $( '<div>' )
-					.addClass( 'tux-warning-message hide ' + type )
-					.html( warning )
-				);
+				.append( $newWarning );
 
 			warningCount = $warnings.find( '.tux-warning-message' ).length;
 
@@ -539,6 +554,8 @@
 			} else {
 				$moreWarningsTab.addClass( 'hide' );
 			}
+
+			return $newWarning;
 		},
 
 		prepareInfoColumn: function () {
@@ -750,22 +767,14 @@
 		 * @param {object} definitiondiff A definitiondiff object as returned by API.
 		 */
 		addDefinitionDiff: function ( definitiondiff ) {
-
 			if ( !definitiondiff || definitiondiff.error ) {
 				mw.log( 'Error loading translation diff ' + definitiondiff && definitiondiff.error );
 				return;
 			}
 
 			// TODO add an option to hide diff
-			this.addWarning(
-				mw.msg( 'tux-editor-outdated-warning' ) +
-					'<span class="show-diff-link">' +
-					mw.message( 'tux-editor-outdated-warning-diff-link' ).escaped() +
-					'</span>',
-				'diff'
-			);
-
 			this.$editor.find( '.tux-warning .show-diff-link' )
+				.removeClass( 'hide' )
 				.on( 'click', function () {
 					$( this ).parent().html( definitiondiff.html );
 				} );
