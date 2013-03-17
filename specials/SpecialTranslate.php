@@ -70,6 +70,7 @@ class SpecialTranslate extends SpecialPage {
 			$out->addHTML( Html::openElement( 'div', array(
 				'class' => 'grid ext-translate-container',
 			) ) );
+
 			$out->addHTML( $this->tuxSettingsForm( $errors ) );
 			$out->addHTML( $this->messageSelector() );
 		} else {
@@ -226,10 +227,12 @@ class SpecialTranslate extends SpecialPage {
 			$this->options['group'] = $this->defaults['group'];
 		} else {
 			$languages = $this->group->getTranslatableLanguages();
+
 			if ( $languages !== null && !isset( $languages[$this->options['language']] ) ) {
 				$errors['language'] = $this->msg( 'translate-language-disabled' )->text();
 			}
 		}
+
 		return $errors;
 	}
 
@@ -685,6 +688,16 @@ class SpecialTranslate extends SpecialPage {
 	 */
 	public function groupInformation() {
 		$output = $this->getOutput();
+
+		// If we get here in the TUX mode, it means that invalid group
+		// was requested. There is default group for no params case.
+		if ( self::isBeta( $this->getRequest() ) ) {
+			$output->addHtml( Html::rawElement(
+				'div',
+				array( 'class' => 'twelve columns group-warning' ),
+				$this->msg( 'tux-translate-page-no-such-group' )->parse()
+			) );
+		}
 
 		$output->addHtml(
 			Html::openElement( 'div', array(

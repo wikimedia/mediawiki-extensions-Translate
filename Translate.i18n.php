@@ -486,6 +486,7 @@ Most useful for the proofreading tasks.',
 
 	'tux-empty-list-all' => 'This message group is empty',
 	'tux-empty-list-all-guide' => 'Select a different message group to translate',
+	'tux-translate-page-no-such-group' => "'''The indicated group does not exist.''' Select a different message group.",
 
 	'tux-empty-list-translated' => 'No translated messages',
 	'tux-empty-list-translated-guide' => 'You can help translating',
@@ -1099,6 +1100,7 @@ See also:
 * {{msg-mw|Translate-messagereview-reviewswithyou}}',
 	'tux-empty-list-all' => '{{Tuxspec|7}} This is a heading.',
 	'tux-empty-list-all-guide' => '{{Tuxspec|7}} This is a secondary guide text.',
+	'tux-translate-page-no-such-group' => 'An error message that appears about the group selector on Special:Translate when an invalid group was requested.',
 	'tux-empty-list-translated' => '{{Tuxspec|7}} This is a heading.',
 	'tux-empty-list-translated-guide' => '{{Tuxspec|7}} This is a secondary guide text.',
 	'tux-empty-list-translated-action' => '{{Tuxspec|7}} This is a action button.
