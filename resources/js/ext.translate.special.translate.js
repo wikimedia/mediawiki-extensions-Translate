@@ -264,8 +264,8 @@
 			} );
 		}
 
-		targetLanguage = $messageList.data( 'targetlangcode' ) // for tux=1
-			|| mw.config.get( 'wgUserLanguage' ); // for tux=0
+		targetLanguage = $messageList.data( 'targetlangcode' ) || // for tux=1
+			mw.config.get( 'wgUserLanguage' ); // for tux=0
 
 		prepareWorkflowSelector();
 		$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {

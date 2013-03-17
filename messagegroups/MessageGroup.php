@@ -127,8 +127,8 @@ interface MessageGroup {
 	public function getDefinitions();
 
 	/**
-	 * Returns message tags. If type is given, only messages keys with that
-	 * tag is returnted. Otherwise an array[tag => keys] is returnted.
+	 * Returns message tags. If type is given, only message keys with that
+	 * tag are returned. Otherwise an array[tag => keys] is returned.
 	 * @param $type string
 	 * @return array
 	 */

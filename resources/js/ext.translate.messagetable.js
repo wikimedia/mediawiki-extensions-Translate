@@ -377,7 +377,7 @@
 					var messages = result.query.messagecollection,
 						$workflowSelector = $( 'ul.tux-workflow-status-selector ' );
 
-					// No new messges were loaded
+					// No new messages were loaded
 					if ( messages.length === 0 ) {
 						// And this is the first load for the filter...
 						if ( messageTable.$container.children().length === 0 ) {
@@ -544,8 +544,8 @@
 				if ( !filter || filter.indexOf( '!translated' ) >= 0 ) {
 					messageTable.messages = [];
 					// default filter for proofread mode
-					mw.translate.changeFilter( 'translated|!reviewer:' + userId
-						+ '|!last-translator:' + userId );
+					mw.translate.changeFilter( 'translated|!reviewer:' + userId +
+						'|!last-translator:' + userId );
 					$tuxTabUnproofread.addClass( 'selected' );
 				}
 
