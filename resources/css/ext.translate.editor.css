@@ -251,6 +251,12 @@
 	background-repeat: no-repeat;
 }
 
+.tux-warning .diff {
+	font-size: 12px;
+	padding: 0 0 0 20px;
+	/* 15px space for icon */
+}
+
 .editarea .tux-more-warnings {
 	background-color: #FBF6AD;
 	position: absolute;
