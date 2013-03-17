@@ -157,15 +157,18 @@
 		 * Record it to mark as hard.
 		 */
 		skip: function () {
-			var translateEditor = this,
-				api = new mw.Api();
+			var api = new mw.Api();
 
-			api.post( {
-				action: 'hardmessages',
-				title: translateEditor.message.title,
-				token: mw.user.tokens.get( 'editToken' )
-			} );
-			// We don't care about the result of the above ajax call
+			// Only record skips of fuzzy or untranslated as hards
+			// @TODO device better algorithm
+			if ( this.$messageItem.is( '.fuzzy, .untranslated' ) ) {
+				// We can just ignore the result even if it fails
+				api.post( {
+					action: 'hardmessages',
+					title: this.message.title,
+					token: mw.user.tokens.get( 'editToken' )
+				} );
+			}
 		},
 
 		/**
