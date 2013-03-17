@@ -118,13 +118,13 @@
 	margin: 5px 0;
 }
 
-.tux-editor-header .group-warning {
+.group-warning {
 	background: #FFF5AA;
 	padding: 5px;
 	margin: 5px 0;
 }
 
-.tux-editor-header .group-warning:empty {
+.group-warning:empty {
 	display: none;
 }
 
