@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DqJaGKGc",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-17T20:50:49Z",
+      "side": 1,
+      "message": "Was there already..",
+      "parentUuid": "DqFZ2UKE",
+      "revId": "8002eb673b63c42f9242b29695b1395ac215ede5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DqBY3eOM",
         "filename": "resources/js/ext.translate.editor.js",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2013-03-17T20:35:07Z",
       "side": 1,
       "message": "Maybe check all except \u0027.translated\u0027?",
+      "revId": "8002eb673b63c42f9242b29695b1395ac215ede5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqDZ7nHo",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-17T20:50:49Z",
+      "side": 1,
+      "message": "Doesn\u0027t make sense for proofread either.",
+      "parentUuid": "DqJZ86IE",
       "revId": "8002eb673b63c42f9242b29695b1395ac215ede5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
