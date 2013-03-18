@@ -57,11 +57,22 @@
 		 */
 		markUnsaved: function () {
 			this.$editTrigger.find( '.tux-list-status' )
-				.empty()
+				.children().addClass( 'hide' ).end()
 				.append( $( '<span>' )
 					.addClass( 'tux-status-unsaved' )
 					.text( mw.msg( 'tux-status-unsaved' ) )
 				);
+		},
+
+		/**
+		* Mark the message as no longer unsaved
+		*/
+		markUnunsaved: function () {
+			this.$editTrigger.find( '.tux-list-status' )
+			.find( '.tux-status-unsaved' )
+			.remove()
+			.end()
+			.children().removeClass( 'hide' );
 		},
 
 		/**
@@ -214,6 +225,7 @@
 		prepareEditorColumn: function () {
 			var translateEditor = this,
 				sourceString,
+				originalTranslation,
 				$editorColumn,
 				$messageKeyLabel,
 				$moreWarningsTab,
@@ -224,6 +236,7 @@
 				$controlButtonBlock,
 				$editingButtonBlock,
 				$pasteOriginalButton,
+				$discardChangesButton,
 				$saveButton,
 				$requestRight,
 				$skipButton,
@@ -268,6 +281,7 @@
 			);
 
 			$messageList = $( '.tux-messagelist' );
+			originalTranslation = this.message.translation;
 			sourceString = this.message.definition;
 			$sourceString = $( '<span>' )
 				.addClass( 'eleven column sourcemessage' )
@@ -335,6 +349,11 @@
 				} )
 				.on( 'input propertychange', function () {
 					var $this = $( this );
+
+					if ( originalTranslation !== null ) {
+						$discardChangesButton
+							.removeClass( 'hide' );
+					}
 
 					translateEditor.dirty = true;
 
@@ -405,13 +424,39 @@
 						$pasteOriginalButton.addClass( 'hide' );
 					} );
 
+				if ( originalTranslation === null ) {
+					$discardChangesButton = $( [] );
+				} else {
+					$discardChangesButton = $( '<button>' )
+						.addClass( 'tux-editor-discard-changes-button hide' ) // Initially hidden
+						.text( mw.msg( 'tux-editor-discard-changes-button-label' ) )
+						.on( 'click', function () {
+							// Restore the translation
+							$textArea
+								.focus()
+								.val( originalTranslation )
+								.trigger( 'input' );
+
+							// and go back to hiding.
+							$discardChangesButton.addClass( 'hide' );
+
+							// There's nothing new to save
+							$saveButton.prop( 'disabled', true );
+
+							translateEditor.markUnunsaved();
+						} );
+				}
+
 				if ( this.message.translation ) {
 					$pasteOriginalButton.addClass( 'hide' );
 				}
 
 				$editingButtonBlock = $( '<div>' )
 					.addClass( 'ten columns tux-editor-insert-buttons' )
-					.append( $pasteOriginalButton );
+					.append(
+						$pasteOriginalButton,
+						$discardChangesButton
+					);
 
 				$requestRight = $( [] );
 

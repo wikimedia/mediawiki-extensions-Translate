@@ -333,12 +333,13 @@
 .tux-editor-insert-buttons button {
 	padding: 4px;
 	border: 1px solid #DDD;
+	background: #FBFBFB;
 	color: #252525;
 	font-size: 13px;
 }
 
 .tux-editor-insert-buttons .tux-editor-paste-original-button {
-	background: transparent url(../images/paste.png) left center no-repeat;
+	background: #FBFBFB url(../images/paste.png) left center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/paste.svg);
 	background-image: -moz-linear-gradient(transparent, transparent), url(../images/paste.svg);
 	background-image: linear-gradient(transparent, transparent), url(../images/paste.svg);
