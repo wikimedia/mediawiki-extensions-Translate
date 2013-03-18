@@ -554,40 +554,38 @@
 			);
 
 			if ( mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
-				if ( mw.translate.canTranslate() ) {
-					$messageDescSaveButton = $( '<button>' )
-						.addClass( 'blue button tux-editor-savedoc-button' )
-						.prop( 'disabled', true )
-						.text( mw.msg( 'tux-editor-doc-editor-save' ) )
-						.on( 'click', function () {
-							translateEditor.saveDocumentation();
-						} );
+				$messageDescSaveButton = $( '<button>' )
+					.addClass( 'blue button tux-editor-savedoc-button' )
+					.prop( 'disabled', true )
+					.text( mw.msg( 'tux-editor-doc-editor-save' ) )
+					.on( 'click', function () {
+						translateEditor.saveDocumentation();
+					} );
 
-					$messageDescCancelButton = $( '<button>' )
-						.addClass( 'button tux-editor-skipdoc-button' )
-						.text( mw.msg( 'tux-editor-doc-editor-cancel' ) )
-						.on( 'click', function () {
-							translateEditor.hideDocumentationEditor();
-						} );
+				$messageDescCancelButton = $( '<button>' )
+					.addClass( 'button tux-editor-skipdoc-button' )
+					.text( mw.msg( 'tux-editor-doc-editor-cancel' ) )
+					.on( 'click', function () {
+						translateEditor.hideDocumentationEditor();
+					} );
 
-					$messageDescEditor = $( '<div>' )
-						.addClass( 'row message-desc-editor hide' )
-						.append(
-							$( '<textarea>' )
-								.attr( {
-									placeholder: mw.msg( 'tux-editor-doc-editor-placeholder' )
-								} )
-								.on( 'input propertychange', function () {
-									$messageDescSaveButton.prop( 'disabled', false );
-								} ),
-							$( '<div>' )
-								.addClass( 'row' )
-								.append(
-									$messageDescSaveButton,
-									$messageDescCancelButton
-								)
-						);
-				}
+				$messageDescEditor = $( '<div>' )
+					.addClass( 'row message-desc-editor hide' )
+					.append(
+						$( '<textarea>' )
+							.attr( {
+								placeholder: mw.msg( 'tux-editor-doc-editor-placeholder' )
+							} )
+							.on( 'input propertychange', function () {
+								$messageDescSaveButton.prop( 'disabled', false );
+							} ),
+						$( '<div>' )
+							.addClass( 'row' )
+							.append(
+								$messageDescSaveButton,
+								$messageDescCancelButton
+							)
+					);
 
 				$messageDescViewer = $( '<div>' )
 					.addClass( 'message-desc-viewer hide' )
@@ -607,6 +605,10 @@
 								.on( 'click', $.proxy( this.showDocumentationEditor, this ) )
 							)
 					);
+
+				if ( !mw.translate.canTranslate() ) {
+					$messageDescViewer.find( '.message-desc-control' ).addClass( 'hide' );
+				}
 
 				$infoColumn.append(
 					$messageDescEditor,
