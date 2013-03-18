@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DqGUuNEM",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-18T17:10:49Z",
+      "side": 1,
+      "message": "I thought about it putting it after adding all the messages and then showing the tipsy on the first one, but I didn\u0027t see a big advantage. I\u0027ll have to do it in at least two places, it may fail if the first messages are self-translated, etc. Do you have a good reason to do it?",
+      "parentUuid": "DqCqey1E",
+      "revId": "fc5d0b9cd3f605bb0dbaa7e7962cfc70358a5761",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DqAqhh5g",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2013-03-18T15:10:14Z",
       "side": 1,
       "message": "Hmm. Is there need to check for the length? Usually jQuery does nothing if the selectors don\u0027t match.",
+      "revId": "fc5d0b9cd3f605bb0dbaa7e7962cfc70358a5761",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqAUkGF8",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-18T17:10:49Z",
+      "side": 1,
+      "message": "jQuery returns an empty array when there\u0027s nothing and .tipsy() will fail with it.",
+      "parentUuid": "DqAqhh5g",
       "revId": "fc5d0b9cd3f605bb0dbaa7e7962cfc70358a5761",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
