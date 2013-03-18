@@ -158,7 +158,7 @@
 				.addClass(
 					'tux-proofread-action ' + this.message.properties.status + ' ' + (proofreadBySelf ? 'accepted' : '' )
 				)
-				.tipsy( { gravity: 's' } );
+				.tipsy( { gravity: 's', delayIn: 2000 } );
 
 			$proofreadEdit = $( '<div>' )
 				.attr( 'title', mw.msg( 'tux-proofread-edit-tooltip' ) )
