@@ -15,6 +15,7 @@
  */
 class RecentMessageGroup extends WikiMessageGroup {
 	protected $language;
+	protected $groupInfoCache;
 
 	/**
 	 * These groups are always generated for one language. Method setLanguage
@@ -64,6 +65,16 @@ class RecentMessageGroup extends WikiMessageGroup {
 		return $conds;
 	}
 
+	/**
+	 * Allows subclasses to filter out more unwanted messages.
+	 *
+	 * @param MessageHandle $msg
+	 * @return boolean
+	 */
+	protected function matchingMessage( MessageHandle $msg ) {
+		return true;
+	}
+
 	public function getDefinitions() {
 		if ( !$this->language ) {
 			throw new MWException( "Language not set" );
@@ -80,26 +91,31 @@ class RecentMessageGroup extends WikiMessageGroup {
 		$res = $db->select( $tables, $fields, $conds, __METHOD__, $options );
 
 		$defs = array();
+		$this->groupInfoCache = array();
 		foreach ( $res as $row ) {
 			$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
 			$handle = new MessageHandle( $title );
-			if ( !$handle->isValid() ) {
+
+			if ( !$handle->isValid() || !$this->matchingMessage( $handle ) ) {
 				continue;
 			}
 
-			$mkey = $row->rc_namespace . ':' . $handle->getKey();
+			$messageKey = $handle->getKey();
+			$fullKey = $row->rc_namespace . ':' . $messageKey;
 
 			/* Note: due to bugs, getMessage might return null even for
 			 * known messages. These negatives are not cached, but that
 			 * should be rare enough case to not affect performance. */
-			if ( !isset( $defs[$mkey] ) ) {
+			if ( !isset( $defs[$fullKey] ) ) {
 				$group = $handle->getGroup();
-				$msg = $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
+				$msg = $group->getMessage( $messageKey, $group->getSourceLanguage() );
+
 				if ( $msg !== null ) {
-					$defs[$mkey] = $msg;
+					$defs[$fullKey] = $msg;
 				}
 			}
 		}
+
 		return $defs;
 	}
 
