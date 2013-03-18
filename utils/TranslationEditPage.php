@@ -86,7 +86,14 @@ class TranslationEditPage {
 			return;
 		}
 
-		$translation = $helpers->getTranslation();
+		$handle = new MessageHandle( $this->getTitle() );
+		$groupId = MessageIndex::getPrimaryGroupId( $handle );
+
+		$translatio = '';
+		if ( $groupId ) {
+			$translation = $helpers->getTranslation();
+		}
+
 		$targetLang = Language::factory( $helpers->getTargetLanguage() );
 		$textareaParams = array(
 			'name' => 'text',
@@ -98,7 +105,7 @@ class TranslationEditPage {
 			'dir' => $targetLang->getDir(),
 		);
 
-		if ( !$wgUser->isAllowed( 'translate' ) ) {
+		if ( $groupId || !$wgUser->isAllowed( 'translate' ) ) {
 			$textareaParams['readonly'] = 'readonly';
 		}
 
