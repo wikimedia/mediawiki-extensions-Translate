@@ -52,6 +52,24 @@
       "revId": "f3f2ca9c752248e15637277612c478da772e651a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DnfUZrYM",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-03-18T01:37:40Z",
+      "side": 1,
+      "message": "Thanks for pasting the link. We\u0027ve recently removed \"My ..\" from a bunch of link (my talk, my contributions, ...). Pau, I\u0027ll follow your lead in this case, and we\u0027ll happily go with \"Your ...\".",
+      "parentUuid": "DnZX12YI",
+      "revId": "f3f2ca9c752248e15637277612c478da772e651a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
