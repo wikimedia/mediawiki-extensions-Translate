@@ -70,6 +70,24 @@
       "revId": "f3f2ca9c752248e15637277612c478da772e651a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqNxoQYs",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-18T06:48:39Z",
+      "side": 1,
+      "message": "I can understand when it is \"Your apples\" as a label, but this is a button. I instruct the computer to hide *my* translations (they are done by me). There is no \"you\" in here that would make sense to me, unless you consider the system as a person.",
+      "parentUuid": "DnfUZrYM",
+      "revId": "f3f2ca9c752248e15637277612c478da772e651a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
