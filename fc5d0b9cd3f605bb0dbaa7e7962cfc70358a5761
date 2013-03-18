@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqCqey1E",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-18T15:10:14Z",
+      "side": 1,
+      "message": "Should this have .eq(0) to select only the first one?",
+      "revId": "fc5d0b9cd3f605bb0dbaa7e7962cfc70358a5761",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqAqhh5g",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-18T15:10:14Z",
+      "side": 1,
+      "message": "Hmm. Is there need to check for the length? Usually jQuery does nothing if the selectors don\u0027t match.",
+      "revId": "fc5d0b9cd3f605bb0dbaa7e7962cfc70358a5761",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
