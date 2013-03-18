@@ -617,6 +617,10 @@
 			}
 
 			$infoColumn.append( $( '<div>' )
+				.addClass( 'row uneditable-documentation hide' )
+			);
+
+			$infoColumn.append( $( '<div>' )
 				.addClass( 'row tm-suggestions-title hide' )
 				.text( mw.msg( 'tux-editor-suggestions-title' ) )
 			);

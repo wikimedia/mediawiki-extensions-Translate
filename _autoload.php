@@ -258,6 +258,7 @@ $wgAutoloadClasses['MockWikiMessageGroup'] = "$dir/tests/MockWikiMessageGroup.ph
  */
 $wgAutoloadClasses['CurrentTranslationAid'] = "$dir/translationaids/CurrentTranslationAid.php";
 $wgAutoloadClasses['DocumentationAid'] = "$dir/translationaids/DocumentationAid.php";
+$wgAutoloadClasses['GettextDocumentationAid'] = "$dir/translationaids/GettextDocumentationAid.php";
 $wgAutoloadClasses['InOtherLanguagesAid'] = "$dir/translationaids/InOtherLanguagesAid.php";
 $wgAutoloadClasses['MachineTranslationAid'] = "$dir/translationaids/MachineTranslationAid.php";
 $wgAutoloadClasses['MessageDefinitionAid'] = "$dir/translationaids/MessageDefinitionAid.php";
