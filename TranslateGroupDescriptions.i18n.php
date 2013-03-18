@@ -240,7 +240,7 @@ $messages['ast'] = array(
 	'bw-desc-wikiblame' => "[[Translating:WikiBlame|WikiBlame]] ye capaz d'alcontrar rápidamente los autores d'una parte d'una páxina nuna wiki de Wikimedia",
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ufre una versión de Wikipedia ensin conexón, en mou sólo testu, nun preséu móvil',
 	'translate-group-desc-wikimedia-mobile' => 'Grupu de mensaxes agrupaos que contién aplicaciones pa móviles de los proyeutos de Wikimedia',
-	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|WikipediaMobile|Commons Móvil]] ye una aplicación pa Android o iOS pa xubir ficheros y navegar per Wikimedia Commons',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|WikipediaMobile|Commons Móvil]] ye una aplicación pa Android o iOS pa xubir ficheros y navegar per Wikimedia Commons', # Fuzzy
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Wikipedia',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Uiquiesbilla',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Wiktionary',
@@ -935,6 +935,7 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] permet de trouver rapidement les auteurs d’une page dans un wiki de Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] est un projet visant à offrir une version texte de Wikipedia en mode hors connexion sur un périphérique mobile.',
 	'translate-group-desc-wikimedia-mobile' => 'Le groupe de messages agrégés contient les applications mobiles pour les projets Wikimédia',
+	'translate-group-desc-wikimedia-mobile-commons' => "[[Translating:WikipediaMobile|Commons Mobile]] est une application pour Android et iOS destinée à l'import et à la navigation sur Wikimedia Commons",
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] est une application inter-plateformes pour mobiles et tablettes permettant de lire et de contribuer à Wikipédia',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] est une application inter-plateformes pour mobiles et tablettes permettant de consulter et contribuer à Wikisource',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] est une application inter-plateformes pour mobiles et tablettes permettant de lire et contribuer à Wiktionary',
@@ -1041,7 +1042,7 @@ Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pe
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php?user_lang=gl Wikiblame] é capaz de atopar rapidamente os autores dunha páxina nun wiki da Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] é un proxecto para ollar unha versión da Wikipedia sen conexión e en modo de só lectura nun dispositivo móbil.',
 	'translate-group-desc-wikimedia-mobile' => 'Grupo de mensaxes agregadas para as aplicacións de móbil dos proxectos da Wikimedia',
-	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|WikipediaMobile|Commons Mobile]] é unha aplicación para Android ou iOS para realizar cargas e explorar a Wikimedia Commons',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|WikipediaMobile|Commons Mobile]] é unha aplicación para Android ou iOS para realizar cargas e explorar a Wikimedia Commons', # Fuzzy
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar na Wikipedia',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar na Wikisource',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar no Wiktionary',
@@ -1231,6 +1232,14 @@ Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/m
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] je słužba, kotraž ruty za pućowanje, kolesowanje, mountainbikowanje a skating na cyłym swěće pokazuje. Wužiwa licencu GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] móže awtorow nastawka we wikiju Wikimedije spěšnje namakać.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt, kotryž skići tekstowu wersiju Wikipedije offline na mobilnym graće.',
+	'translate-group-desc-wikimedia-mobile' => 'Zdźělenska metaskupina, kotraž mobilne aplikacije za Wikimedijowe projekty wobsahuje',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]] je aplikacija za Android abo iOS za nahrawanje datajow na Wikimedia Commons a přepytowanje projekta  Wikimedia Commons',
+	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] je aplikacija za mobilne graty a tablety za čitanje a sobudźěło we Wikipediji',
+	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] je aplikacija za mobilne graty a tablety za čitanje a sobudźěło we Wikižórle',
+	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] je aplikacija za mobilne graty a tablety za čitanje a sobudźěło we Wikisłowniku',
+	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] je mobilna aplikacija za sobudźěło na projekće  [[:meta:Wiki Loves Monuments|Wiki Loves Monuments]]',
+	'translate-group-desc-waymarked-trails-help' => 'Strony pomocy websydłow za Waymarked Trails: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] je editor we woprawdźitym času za zhromadne dźěło',
 );
 
 /** Hungarian (magyar)
@@ -1491,7 +1500,7 @@ $messages['ja'] = array(
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]は、ウィキメディアウィキ内のページの一部の著者を素早く検索できます',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]は、携帯可能な機器で、オフラインかつ文字のみのウィキペディアを提供します',
 	'translate-group-desc-wikimedia-mobile' => 'ウィキメディアプロジェクトの携帯機器版アプリケーションのメッセージを含む集約群',
-	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]]はウィキメディア・コモンズのアップロードや閲覧のための Android/iOS アプリです',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]]はウィキメディア・コモンズのアップロードや閲覧のための Android/iOS アプリです', # Fuzzy
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] はウィキペディアを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] はウィキソースを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] はウィクショナリーを閲覧・編集するためのクロスプラットフォームな携帯・タブレット端末向けアプリケーションです',
@@ -1592,7 +1601,7 @@ $messages['ko'] = array(
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]은 신속하게 위키미디어 위키에서 문서 일부의 저자를 찾을 수 있습니다',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]는 모바일 장치에서 위키백과의 오프라인, 텍스트 전용 버전을 제공합니다',
 	'translate-group-desc-wikimedia-mobile' => '위키미디어 프로젝트에 대한 모바일 어플리케이션을 포함하는 집계한 메시지 그룹입니다',
-	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|위키백과모바일|공용 모바일]]은 위키미디어 공용에 올리고 찾아보기 위한 안드로이드 또는 iOS 앱입니다',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|위키백과모바일|공용 모바일]]은 위키미디어 공용에 올리고 찾아보기 위한 안드로이드 또는 iOS 앱입니다', # Fuzzy
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|위키백과모바일]]은 위키백과 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|위키문헌모바일]]은 위키문헌 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|위키낱말사전모바일]]은 위키낱말사전 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
@@ -1978,6 +1987,7 @@ $messages['nl'] = array(
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] is in staat om snel de auteurs van een pagina in een Wikimedia-wiki te vinden',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] levert een offlineversie van Wikipedia met alleen tekst op een mobiel apparaat',
 	'translate-group-desc-wikimedia-mobile' => 'Samengevoegde groep die mobiele applicaties voor Wikimediaprojecten bevat',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]] is een app voor Android of iOS voor het uploaden naar en bekijken van Wikimedia Commons', # Fuzzy
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] is a cross-platform mobiele en tabletapplicatie voor het lezen en bijdragen aan Wikipedia',
 	'translate-group-desc-wikimedia-mobile-wikisource' => "[[Translating:WikisourceMobile|WikisourceMobile]] is een platformonafhankelijke toepassing voor mobiele telefoons en tablet-pc's voor het lezen van en bijdragen aan Wikisource",
 	'translate-group-desc-wikimedia-mobile-wiktionary' => "[[Translating:WiktionaryMobile|WiktionaryMobile]] is een platformonafhankelijke toepassing voor mobiele telefoons en tablet-pc's voor het lezen van en bijdragen aan Wikiwoordenboek",

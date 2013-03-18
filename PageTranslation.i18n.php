@@ -1441,6 +1441,7 @@ $messages['be-tarask'] = array(
 $messages['bg'] = array(
 	'tpt-diff-old' => 'Предишен текст',
 	'tpt-diff-new' => 'Нов текст',
+	'tpt-nosuchpage' => 'Страницата „$1“ не съществува',
 	'tpt-select-prioritylangs-reason' => 'Причина:',
 	'translate-tag-translate-link-desc' => 'Превеждане на тази страница',
 	'tpt-languages-legend' => 'Други езици:',
@@ -7129,7 +7130,7 @@ Tekst vertaaleenheid: <pre>$1</pre>',
 	'pt-shake-position' => 'Markeringen voor vertaaleenheden op een onverwachte plaats.
 Tekst vertaaleenheid: <pre>$1</pre>',
 	'pt-shake-empty' => 'Lege vertaaleenheid voor markering $1.',
-	'log-description-pagetranslation' => 'Logboek voor handelingen rerelateerd aan het paginavertalingsysteem',
+	'log-description-pagetranslation' => 'Logboek voor handelingen gerelateerd aan het paginavertalingsysteem',
 	'log-name-pagetranslation' => 'Logboek paginavertaling',
 	'logentry-pagetranslation-mark' => '$1 {{GENDER:$2|heeft}} $3 gemarkeerd voor vertaling',
 	'logentry-pagetranslation-unmark' => '$1 {{GENDER:$2|heeft}} $3 als te vertalen pagina verwijderd',
