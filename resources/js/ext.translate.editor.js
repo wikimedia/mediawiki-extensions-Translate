@@ -756,6 +756,9 @@
 				return;
 			}
 
+			// Load the diff styles
+			mw.loader.load( 'mediawiki.action.history.diff', undefined, true );
+
 			// TODO add an option to hide diff
 			this.addWarning(
 				mw.msg( 'tux-editor-outdated-warning' ) +
