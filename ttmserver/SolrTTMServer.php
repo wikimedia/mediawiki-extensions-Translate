@@ -38,11 +38,27 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 	}
 
 	public function query( $sourceLanguage, $targetLanguage, $text ) {
+		try {
+			return $this->doQuery( $sourceLanguage, $targetLanguage, $text );
+		} catch ( Solarium_Exception $e ) {
+			throw new TranslationHelperException( 'Solarium exception: ' . $e );
+		}
+	}
+
+	/// @see ReadableTTMServer::query
+	protected function doQuery( $sourceLanguage, $targetLanguage, $text ) {
 		/* Two query system:
 		 * 1) Find all strings in source language that match text
 		 * 2) Do another query for translations for those strings
 		 */
 		wfProfileIn( __METHOD__ );
+		// For now impose a length limit on query string to avoid doing
+		// very slow queries. Magic number.
+		if ( strlen( $text ) > 789 ) {
+			return array();
+		}
+
+
 		$query = $this->client->createSelect();
 		$query->setFields( array( 'globalid', 'content', 'score' ) );
 
@@ -70,12 +86,8 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		$query->createFilterQuery( 'lang' )
 			->setQuery( 'language:%P1%', array( $sourceLanguage ) );
 
-		// Converting Solarium exceptions to our exceptions
-		try {
-			$resultset = $this->client->select( $query );
-		} catch ( Solarium_Exception $e ) {
-			throw new TranslationHelperException( 'Solarium exception: ' . $e );
-		}
+
+		$resultset = $this->client->select( $query );
 
 		/* This query is doing two unrelated things:
 		 * 1) Collect the message contents and scores so that they can
@@ -105,11 +117,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		// With AND we would not find anything, obviously.
 		$fetchQuery->setQueryDefaultOperator( Solarium_Query_Select::QUERY_OPERATOR_OR );
 
-		try {
-			$translations = $this->client->select( $fetchQuery );
-		} catch ( Solarium_Exception $e ) {
-			throw new TranslationHelperException( 'Solarium exception: ' . $e );
-		}
+		$translations = $this->client->select( $fetchQuery );
 
 		$suggestions = array();
 		foreach ( $translations as $doc ) {
