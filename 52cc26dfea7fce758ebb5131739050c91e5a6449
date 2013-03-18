@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqCoNaz4",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-18T16:10:35Z",
+      "side": 1,
+      "message": "Who did this? \n\n/me hides",
+      "revId": "52cc26dfea7fce758ebb5131739050c91e5a6449",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
