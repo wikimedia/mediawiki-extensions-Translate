@@ -152,7 +152,10 @@
 			var $workflowStateSelector,
 				$workflowStatusTrigger = $( '.tux-workflow-status' );
 
-			if ( !group.workflowstates ) {
+			if ( !group.workflowstates ||
+				$.isArray( group.workflowstates ) && !group.workflowstates.length ||
+				$.isEmptyObject( group.workflowstates )
+			) {
 				$workflowStatusTrigger.addClass( 'hide' );
 
 				return;
