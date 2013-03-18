@@ -41,4 +41,44 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 		);
 		return $conds;
 	}
+
+	/**
+	 * Filters out messages that should not be displayed here
+	 * as they are not displayed in other places.
+	 *
+	 * @see https://bugzilla.wikimedia.org/43030
+	 * @param MessageHandle $msg
+	 * @return boolean
+	 */
+	protected function matchingMessage( MessageHandle $msg ) {
+		$group = $msg->getGroup();
+		$groupId = $group->getId();
+
+		if ( !array_key_exists( $groupId, $this->groupInfoCache ) ) {
+			$translatableLanguages = $group->getTranslatableLanguages();
+			$languageTranslatable = true;
+
+			global $wgRequest;
+			if ( is_array( $translatableLanguages ) &&
+				!array_key_exists( $wgRequest->getVal( 'mclanguage' ), $translatableLanguages )
+			) {
+				$languageTranslatable = false;
+			}
+
+			$this->groupInfoCache[$groupId] = array(
+				'tags' => $group->getTags(),
+				'relevant' => ( $languageTranslatable && ( MessageGroups::getPriority( $group ) !== 'discouraged' ) )
+					? true
+					: false,
+			);
+		}
+
+		foreach ( array( 'ignored', 'optional' ) as $tag ) {
+			if ( in_array( strtolower( $msg->getKey() ), $this->groupInfoCache[$groupId]['tags'][$tag] ) ) {
+				return false;
+			}
+		}
+
+		return $this->groupInfoCache[$groupId]['relevant'];
+	}
 }
