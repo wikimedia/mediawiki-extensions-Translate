@@ -210,6 +210,10 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 	 * @return boolean|array Associative array with states as key and localized state labels as values
 	 */
 	protected function getWorkflowStates( MessageGroup $group ) {
+		if ( MessageGroups::isDynamic( $group ) ) {
+			return false;
+		}
+
 		$stateConfig = $group->getMessageGroupStates()->getStates();
 
 		if ( !is_array( $stateConfig ) ) {
