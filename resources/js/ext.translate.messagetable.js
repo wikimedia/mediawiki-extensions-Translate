@@ -531,9 +531,10 @@
 			$controlOwnButton = messageTable.$actionBar.find( '.tux-proofread-own-translations-button' );
 			$hideTranslatedButton = messageTable.$actionBar.find( '.tux-editor-clear-translated' );
 
-			if ( messageTable.mode === 'proofread' || messageTable.mode === 'page' ) {
+			if ( messageTable.mode === 'proofread' ) {
 				$tuxTabUntranslated.addClass( 'hide' );
 				$tuxTabUnproofread.removeClass( 'hide' );
+
 				// Fix the filter if it is untranslated. Untranslated does not make sense
 				// for proofread mode. Keep the filter if it is not 'untranslated'
 				if ( !filter || filter.indexOf( '!translated' ) >= 0 )  {
@@ -543,7 +544,7 @@
 						+ '|!last-translator:' + userId );
 					$tuxTabUnproofread.addClass( 'selected' );
 				}
-				$tuxTabUntranslated.addClass( 'hide' );
+
 				$controlOwnButton.removeClass( 'hide' );
 				$hideTranslatedButton.addClass( 'hide' );
 			} else {
