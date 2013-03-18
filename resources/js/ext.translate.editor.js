@@ -39,7 +39,7 @@
 
 			if ( this.$editTrigger.data( 'message' ).properties.status === 'fuzzy' ) {
 				this.addWarning(
-					mw.msg( 'tux-editor-outdated-warning' ),
+					mw.message( 'tux-editor-outdated-warning' ).escaped(),
 					'diff'
 				).append( $( '<span>' )
 					// Hide initially.
