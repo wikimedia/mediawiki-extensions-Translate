@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqNy.Afs",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-18T06:15:11Z",
+      "side": 1,
+      "message": "Do we need to check the mode here?",
+      "revId": "8b78b761348855f64a9f1369afdb2f8255c346b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqHw0lao",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-18T06:15:11Z",
+      "side": 1,
+      "message": "This is not proofreadplugin and not part of Proofread plugin",
+      "revId": "8b78b761348855f64a9f1369afdb2f8255c346b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqFxD0RY",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-18T06:15:11Z",
+      "side": 1,
+      "message": "This code block can be moved to a separate method- something like markFirstProofread ...",
+      "revId": "8b78b761348855f64a9f1369afdb2f8255c346b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqDw.HYk",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-18T06:15:11Z",
+      "side": 1,
+      "message": "Can we use integer 1 instead of String 1? Or even a boolean true?",
+      "revId": "8b78b761348855f64a9f1369afdb2f8255c346b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqJw5aaM",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-18T06:15:11Z",
+      "side": 1,
+      "message": "Please avoid mixing unrelated changes to commits - Helps review and clean patches",
+      "revId": "8b78b761348855f64a9f1369afdb2f8255c346b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqPxIpTE",
+        "filename": "utils/UserToggles.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-18T06:15:11Z",
+      "side": 1,
+      "message": "why negation of this preference removed? And how that is related to the commit?",
+      "revId": "8b78b761348855f64a9f1369afdb2f8255c346b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
