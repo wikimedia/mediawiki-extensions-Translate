@@ -41,4 +41,39 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 		);
 		return $conds;
 	}
+
+	/**
+	 * Filters out messages that aren't useful.
+	 * See bug 43030.
+	 *
+	 * @param $group MessageGroup
+	 * @param $msg string message id
+	 * @return boolean
+	 */
+	protected function groupMatches( $group, $msg ) {
+		$groupId = $group->getId();
+
+		if ( !array_key_exists( $groupId, $this->groupInfoCache ) ) {
+			$this->groupInfoCache[$groupId] = array(
+				'tags' => $group->getTags(),
+				'translatableLanguages' => $group->getTranslatableLanguages(),
+				'discouraged' => ( MessageGroups::getPriority( $group ) === 'discouraged' ),
+			);
+		}
+
+		foreach ( array( 'ignored', 'optional' ) as $tag ) {
+			if ( in_array( $msg, $this->groupInfoCache[$groupId]['tags'][$tag] ) ) {
+				return false;
+			}
+		}
+
+		if ( $this->groupInfoCache[$groupId]['discouraged']
+			|| is_array( $this->groupInfoCache[$groupId]['translatableLanguages'] ) &&
+				in_array( $msg, $this->groupInfoCache[$groupId]['translatableLanguages'] )
+		) {
+			return false;
+		}
+
+		return true;
+	}
 }

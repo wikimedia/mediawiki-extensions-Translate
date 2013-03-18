@@ -18,6 +18,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 	protected $namespace = false;
 
 	protected $language;
+	protected $groupInfoCache;
 
 	public function __construct() {}
 
@@ -63,6 +64,17 @@ class RecentMessageGroup extends WikiMessageGroup {
 		return $conds;
 	}
 
+	/**
+	 * Allows subclasses to filter out more unwanted groups.
+	 *
+	 * @param $group MessageGroup
+	 * @param $msg string message id
+	 * @return boolean
+	 */
+	protected function groupMatches( $group, $msg ) {
+		return true;
+	}
+
 	public function getDefinitions() {
 		if ( !$this->language ) {
 			throw new MWException( "Language not set" );
@@ -79,6 +91,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 		$res = $db->select( $tables, $fields, $conds, __METHOD__, $options );
 
 		$defs = array();
+		$this->groupInfoCache = array();
 		foreach ( $res as $row ) {
 			$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
 			$handle = new MessageHandle( $title );
@@ -94,7 +107,8 @@ class RecentMessageGroup extends WikiMessageGroup {
 			if ( !isset( $defs[$mkey] ) ) {
 				$group = $handle->getGroup();
 				$msg = $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
-				if ( $msg !== null ) {
+
+				if ( $msg !== null && $this->groupMatches( $group, $msg )  ) {
 					$defs[$mkey] = $msg;
 				}
 			}
