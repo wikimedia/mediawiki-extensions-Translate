@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqB9GqyQ",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-18T12:01:55Z",
+      "side": 1,
+      "message": "Here you need escaping I think, because it is used as html.",
+      "revId": "6e4115dbdbcffb958f5e0ecfc4653e469db6909c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqP9IlzE",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-18T12:01:55Z",
+      "side": 1,
+      "message": "showN",
+      "revId": "6e4115dbdbcffb958f5e0ecfc4653e469db6909c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqD8.D4k",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-18T12:01:55Z",
+      "side": 1,
+      "message": "Does this now fit into one line?",
+      "revId": "6e4115dbdbcffb958f5e0ecfc4653e469db6909c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
