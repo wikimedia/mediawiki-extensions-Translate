@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqQJ-UN4",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-19T05:13:18Z",
+      "side": 1,
+      "message": "Looking at ApiQueryMessageGroups, workflowstates can never be an array. \n\nAlso the statement need more brackets to group conditions. To make it more readable",
+      "revId": "c588dbb53930de37e258f60c3fd82151ba503219",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
