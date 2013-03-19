@@ -89,7 +89,7 @@ class TranslationEditPage {
 		$handle = new MessageHandle( $this->getTitle() );
 		$groupId = MessageIndex::getPrimaryGroupId( $handle );
 
-		$translatio = '';
+		$translation = '';
 		if ( $groupId ) {
 			$translation = $helpers->getTranslation();
 		}
@@ -105,7 +105,7 @@ class TranslationEditPage {
 			'dir' => $targetLang->getDir(),
 		);
 
-		if ( $groupId || !$wgUser->isAllowed( 'translate' ) ) {
+		if ( !$groupId || !$wgUser->isAllowed( 'translate' ) ) {
 			$textareaParams['readonly'] = 'readonly';
 		}
 
