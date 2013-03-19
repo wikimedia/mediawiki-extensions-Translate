@@ -32,7 +32,7 @@ jQuery( document ).ready( function ( $ ) {
 		// Build toggle link
 		$toggler = $( '<span class="groupexpander collapsed">[</span>' )
 			.append( $( '<a href="#"></a>' )
-			.text( mw.msg( 'translate-langstats-expand' ) ) )
+				.text( mw.msg( 'translate-langstats-expand' ) ) )
 			.append( ']' )
 			.click( function ( e ) {
 				var $el = $( this );
@@ -68,7 +68,7 @@ jQuery( document ).ready( function ( $ ) {
 	$allTogglesCache = null;
 	$toggleAllButton = $( '<span class="collapsed">[</span>' )
 		.append( $( '<a href="#"></a>' )
-		.text( mw.msg( 'translate-langstats-expandall' ) ) )
+			.text( mw.msg( 'translate-langstats-expandall' ) ) )
 		.append( ']' )
 		.click( function ( e ) {
 			var $el = $( this ),

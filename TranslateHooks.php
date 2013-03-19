@@ -266,7 +266,9 @@ class TranslateHooks {
 	/**
 	 * Hook: SpecialSearchProfileForm
 	 */
-	public static function searchProfileForm( SpecialSearch $search, &$form, /*string*/ $profile, $term, array $opts ) {
+	public static function searchProfileForm( SpecialSearch $search, &$form,
+		/*string*/$profile, $term, array $opts
+	) {
 		if ( $profile !== 'translation' ) {
 			return true;
 		}
@@ -314,7 +316,9 @@ class TranslateHooks {
 	}
 
 	/// Hook: SpecialSearchSetupEngine
-	public static function searchProfileSetupEngine( SpecialSearch $search, /*string*/ $profile, SearchEngine $engine ) {
+	public static function searchProfileSetupEngine( SpecialSearch $search,
+		/*string*/$profile, SearchEngine $engine
+	) {
 		if ( $profile !== 'translation' ) {
 			return true;
 		}

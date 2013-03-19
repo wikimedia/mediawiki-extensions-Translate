@@ -53,7 +53,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 
 		$languages = $group->getTranslatableLanguages();
 
-		if ( $languages !== null && !isset( $languages[$params['language'] ] ) ) {
+		if ( $languages !== null && !isset( $languages[$params['language']] ) ) {
 			$this->dieUsage( 'Translation to this language is disabled', 'translate-language-disabled' );
 		}
 

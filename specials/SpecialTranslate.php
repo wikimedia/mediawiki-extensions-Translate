@@ -337,31 +337,30 @@ class SpecialTranslate extends SpecialPage {
 		$out = $this->getOutput();
 
 		switch ( $params['task'] ) {
-		case 'reviewall':
-		case 'acceptqueue':
-			// @todo handle these two separately
-			unset( $params['task'] );
-			$params['action'] = 'proofread';
-			$out->redirect( $this->getTitle()->getLocalUrl( $params ) );
-			break;
+			case 'reviewall':
+			case 'acceptqueue':
+				// @todo handle these two separately
+				unset( $params['task'] );
+				$params['action'] = 'proofread';
+				$out->redirect( $this->getTitle()->getLocalUrl( $params ) );
+				break;
 
-		case 'view':
-			unset( $params['task'] );
-			$params['filter'] = '';
-			$out->redirect( $this->getTitle()->getLocalUrl( $params ) );
-			break;
+			case 'view':
+				unset( $params['task'] );
+				$params['filter'] = '';
+				$out->redirect( $this->getTitle()->getLocalUrl( $params ) );
+				break;
 
-		// Optional does not directly map to the new UI.
-		// Handle it as untranslated with optional filter.
-		case 'optional':
-			$params['optional'] = 1;
-		case 'untranslated':
-			unset( $params['task'] );
-			$params['filter'] = '!translated';
-			$out->redirect( $this->getTitle()->getLocalUrl( $params ) );
-			break;
+			// Optional does not directly map to the new UI.
+			// Handle it as untranslated with optional filter.
+			case 'optional':
+				$params['optional'] = 1;
+			case 'untranslated':
+				unset( $params['task'] );
+				$params['filter'] = '!translated';
+				$out->redirect( $this->getTitle()->getLocalUrl( $params ) );
+				break;
 		}
-
 	}
 
 	protected function settingsForm( $errors ) {
@@ -713,6 +712,7 @@ class SpecialTranslate extends SpecialPage {
 			</div>'
 		);
 	}
+
 	protected function tuxWorkflowSelector() {
 		$selector = Html::element( 'div', array(
 			'class' => 'tux-workflow-status hide',

@@ -89,7 +89,6 @@ class SpecialManageGroups extends SpecialPage {
 			$this->getLegend()
 		);
 
-
 		$counter = 0;
 		$changefile = TranslateUtils::cacheFile( self::CHANGEFILE );
 		$reader = CdbReader::open( $changefile );

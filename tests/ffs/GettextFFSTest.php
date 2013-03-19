@@ -151,7 +151,7 @@ GETTEXT;
 		$pot['ctxt'] = 'context';
 		$this->assertEquals(
 			$results[2],
-			trim(  $method->invoke( $ffs, $key, $m, $trans, $pot, $pluralCount ) )
+			trim( $method->invoke( $ffs, $key, $m, $trans, $pot, $pluralCount ) )
 		);
 	}
 }

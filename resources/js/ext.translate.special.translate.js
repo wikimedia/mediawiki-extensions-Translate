@@ -169,14 +169,14 @@
 					$workflowStateSelector.append( $( '<li>' )
 						.data( 'state', workflowstate )
 						.text( workflowstate._name )
-						.on( 'click', function() {
+						.on( 'click', function () {
 							var $this = $( this );
 
 							$workflowStateSelector.find( '.selected' ).removeClass( 'selected' );
 							$this.addClass( 'selected' )
 								.parent().addClass( 'hide' );
 							workflowSelectionHandler( $this.data( 'state' ) );
-						})
+						} )
 					);
 				}
 			} );
@@ -226,7 +226,7 @@
 			.filter( '.translated, .proofread' );
 	}
 
-	function workflowSelectionHandler ( state ) {
+	function workflowSelectionHandler( state ) {
 		var $status = $( '.tux-workflow-status' );
 
 		$status.text( mw.msg( 'translate-workflow-set-doing' ) );

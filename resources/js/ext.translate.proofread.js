@@ -44,7 +44,7 @@
 						err( code, result );
 					}
 				};
-				return new mw.Api().post( params, { ok : ok, err : getTokenIfBad });
+				return new mw.Api().post( params, { ok: ok, err: getTokenIfBad } );
 			}
 		},
 
@@ -92,7 +92,7 @@
 
 	function Proofread( element ) {
 		this.$message = $( element );
-		this.$container =  $( '.tux-messagelist' );
+		this.$container = $( '.tux-messagelist' );
 		this.message = this.$message.data( 'message' );
 		this.init();
 		this.listen();

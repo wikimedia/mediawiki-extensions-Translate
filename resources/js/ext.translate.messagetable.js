@@ -541,7 +541,7 @@
 
 				// Fix the filter if it is untranslated. Untranslated does not make sense
 				// for proofread mode. Keep the filter if it is not 'untranslated'
-				if ( !filter || filter.indexOf( '!translated' ) >= 0 )  {
+				if ( !filter || filter.indexOf( '!translated' ) >= 0 ) {
 					messageTable.messages = [];
 					// default filter for proofread mode
 					mw.translate.changeFilter( 'translated|!reviewer:' + userId
@@ -560,7 +560,7 @@
 					$hideTranslatedButton.removeClass( 'hide' );
 				}
 
-				if ( filter && filter.indexOf( '!last-translator' ) >= 0 )  {
+				if ( filter && filter.indexOf( '!last-translator' ) >= 0 ) {
 					messageTable.messages = [];
 					// default filter for translate mode
 					mw.translate.changeFilter( '!translated' );
@@ -684,8 +684,6 @@
 
 			$.post( mw.util.wikiScript( 'api' ), params, successFunction ).fail( failFunction );
 		} );
-
-
 
 	} );
 
