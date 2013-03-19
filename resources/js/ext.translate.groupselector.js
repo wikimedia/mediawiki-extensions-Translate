@@ -24,8 +24,11 @@
 			if ( this.hasChildGroups( this.parentGroupId ) ) {
 				this.prepareSelectorMenu();
 				this.position();
-				this.loadGroups( this.parentGroupId );
 				this.listen();
+				if ( mw.translate.messageGroups !== {} ) {
+					// If data is ready, render now.
+					this.$group.trigger( 'dataready.translate' );
+				}
 			}
 		},
 
@@ -134,6 +137,12 @@
 			// Hide the selector panel when clicking outside of it
 			$( 'html' ).on( 'click', function () {
 				groupSelector.hide();
+			} );
+
+			groupSelector.$group.on( 'dataready.translate', function () {
+				if ( groupSelector.hasChildGroups( groupSelector.parentGroupId ) ) {
+					groupSelector.loadGroups( groupSelector.parentGroupId );
+				}
 			} );
 
 			groupSelector.$group.on( 'click', function ( e ) {

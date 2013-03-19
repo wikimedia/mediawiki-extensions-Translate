@@ -299,16 +299,17 @@
 
 		ourWindowOnBeforeUnloadRegister();
 		prepareWorkflowSelector();
+		$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
+			onSelect: mw.translate.changeGroup
+		} );
+
 		$.when(
 			// Get ready with language stats
 			mw.translate.loadLanguageStats( targetLanguage ),
 			// Get ready with message groups
 			mw.translate.loadMessageGroups()
 		).then( function () {
-			$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
-				onSelect: mw.translate.changeGroup
-			} );
-
+			$( '.ext-translate-msggroup-selector .grouplink' ).trigger( 'dataready.translate' );
 			$( '.tux-message-list-statsbar' ).languagestatsbar( {
 				language: targetLanguage,
 				group: $( '.tux-message-list-statsbar' ).data( 'messagegroup' )
