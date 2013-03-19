@@ -65,8 +65,8 @@
 		},
 
 		/**
-		* Mark the message as no longer unsaved
-		*/
+		 * Mark the message as no longer unsaved
+		 */
 		markUnunsaved: function () {
 			this.$editTrigger.find( '.tux-list-status' )
 			.find( '.tux-status-unsaved' )

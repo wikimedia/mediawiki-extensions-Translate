@@ -1,15 +1,15 @@
 {
 	"name": "mediawiki/translate",
-		"type": "mediawiki-extension",
-		"description": "Let your user translate any kind of text",
-		"homepage": "http://www.mediawiki.org/wiki/Extension:Translate",
-		"license" : "GPL-2.0+",
+	"type": "mediawiki-extension",
+	"description": "Let your user translate any kind of text",
+	"homepage": "http://www.mediawiki.org/wiki/Extension:Translate",
+	"license": "GPL-2.0+",
 
-		"require": {
-			"composer/installers" : "*"
-		},
+	"require": {
+		"composer/installers": "*"
+	},
 
-		"suggest": {
-			"mediawiki/translation-notifications": "Manage communication with translators"
-		}
+	"suggest": {
+		"mediawiki/translation-notifications": "Manage communication with translators"
+	}
 }

@@ -9,6 +9,7 @@ class TuxMessageTable extends ContextSource {
 		$this->group = $group;
 		$this->language = $language;
 	}
+
 	public function fullTable() {
 		$modules = array( 'ext.translate.editor' );
 		wfRunHooks( 'TranslateBeforeAddModules', array( &$modules ) );

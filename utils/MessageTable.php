@@ -83,7 +83,7 @@ class MessageTable {
 		$this->editLinkParams = $array;
 	}
 
-	public function appendEditLinkParams( /*string*/ $key, /*string*/ $value ) {
+	public function appendEditLinkParams( /*string*/$key, /*string*/$value ) {
 		$this->editLinkParams[$key] = $value;
 	}
 
