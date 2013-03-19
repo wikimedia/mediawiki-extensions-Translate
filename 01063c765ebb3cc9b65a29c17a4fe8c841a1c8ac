@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqW0QfU8",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-19T10:17:52Z",
+      "side": 1,
+      "message": "that should not be displayed here as they are not displayed in other places either.",
+      "revId": "01063c765ebb3cc9b65a29c17a4fe8c841a1c8ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dqc0K6SE",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-19T10:17:52Z",
+      "side": 1,
+      "message": "@see Url (if it really contains useful information, not always the case)",
+      "revId": "01063c765ebb3cc9b65a29c17a4fe8c841a1c8ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqUIGqCM",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-19T10:17:52Z",
+      "side": 1,
+      "message": "This is the latest style\n\n@param type $name Description",
+      "revId": "01063c765ebb3cc9b65a29c17a4fe8c841a1c8ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dqe37LRE",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-19T10:17:52Z",
+      "side": 1,
+      "message": "You can do MessageGroup $group",
+      "revId": "01063c765ebb3cc9b65a29c17a4fe8c841a1c8ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqQ0BwQc",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-19T10:17:52Z",
+      "side": 1,
+      "message": "Since the language is always the same, you don\u0027t need to store all languages, just check once if the current language is in the list.\n\nYou can even join this and the discouraged into single boolean.",
+      "revId": "01063c765ebb3cc9b65a29c17a4fe8c841a1c8ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dqa0FNRQ",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-19T10:17:52Z",
+      "side": 1,
+      "message": "We didn\u0027t speak about this yesterday, but we could also consider passing the optional tag forward so that the \"Show optional messages\" filter works. But we can do that in another patchset if wanted.",
+      "revId": "01063c765ebb3cc9b65a29c17a4fe8c841a1c8ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqY0N0Tg",
+        "filename": "messagegroups/RecentMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-19T10:17:52Z",
+      "side": 1,
+      "message": "messages actually",
+      "revId": "01063c765ebb3cc9b65a29c17a4fe8c841a1c8ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dqe0kjbY",
+        "filename": "messagegroups/RecentMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-19T10:17:52Z",
+      "side": 1,
+      "message": "Could perhaps think more clear name for this method, like shouldShowMessage (just a suggestions)",
+      "revId": "01063c765ebb3cc9b65a29c17a4fe8c841a1c8ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqS0ahW0",
+        "filename": "messagegroups/RecentMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-19T10:17:52Z",
+      "side": 1,
+      "message": "This variable could be in the RecentAdditions group as far as I can see.",
+      "revId": "01063c765ebb3cc9b65a29c17a4fe8c841a1c8ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqU0XuUQ",
+        "filename": "messagegroups/RecentMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-19T10:17:52Z",
+      "side": 1,
+      "message": "You could even skip loading the message def by doing groupMatches first.",
+      "revId": "01063c765ebb3cc9b65a29c17a4fe8c841a1c8ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
