@@ -59,6 +59,7 @@
 		this.$loader = this.$container.siblings( '.tux-messagetable-loader' );
 		this.$actionBar = this.$container.siblings( '.tux-action-bar' );
 		this.messages = [];
+		this.loading = false;
 		this.init();
 		this.listen();
 	}
@@ -117,6 +118,8 @@
 		clear: function () {
 			$( '.tux-messagelist' ).empty();
 			this.messages = [];
+			// Any ongoing loading process will notice this and will reject results.
+			this.loading = false;
 		},
 
 		add: function ( message ) {
@@ -372,12 +375,27 @@
 				return;
 			}
 
+			if ( messageTable.loading ) {
+				// Avoid duplicate loading - the offset will be wrong and it will result
+				// in duplicate messages shown in the page
+				return;
+			}
+
+			messageTable.loading = true;
+
 			mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize, filter )
 				.done( function ( result ) {
 					var messages = result.query.messagecollection,
 						$workflowSelector = $( 'ul.tux-workflow-status-selector ' );
 
-					// No new messages were loaded
+					if ( !messageTable.loading ) {
+						// reject. This was cancelled.
+						return;
+					}
+
+					messageTable.loading = false;
+
+					// No new messges were loaded
 					if ( messages.length === 0 ) {
 						// And this is the first load for the filter...
 						if ( messageTable.$container.children().length === 0 ) {
@@ -394,17 +412,17 @@
 						}
 					} );
 
-					if ( result['query-continue'] === undefined ) {
-						// End of messages
-						messageTable.$loader.data( 'offset', -1 ).addClass( 'hide' );
-						return;
-					}
-
 					// Dynamically loaded messages should pass the search filter if present.
 					query = $( '.tux-message-filter-box' ).val();
 
 					if ( query ) {
 						messageTable.search( query );
+					}
+
+					if ( result['query-continue'] === undefined ) {
+						// End of messages
+						messageTable.$loader.data( 'offset', -1 ).addClass( 'hide' );
+						return;
 					}
 
 					messageTable.$loader.data( 'offset', result['query-continue'].messagecollection.mcoffset );
@@ -442,6 +460,7 @@
 							.show();
 					}
 					messageTable.$loader.data( 'offset', -1 ).addClass( 'hide' );
+					messageTable.loading = false;
 				} );
 		},
 
@@ -705,3 +724,4 @@
 		return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, '\\$&' );
 	}
 }( jQuery, mediaWiki ) );
+
