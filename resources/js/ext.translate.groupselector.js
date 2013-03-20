@@ -23,7 +23,6 @@
 			this.parentGroupId = this.$group.data( 'msggroupid' );
 			if ( this.hasChildGroups( this.parentGroupId ) ) {
 				this.prepareSelectorMenu();
-				this.position();
 				this.listen();
 				if ( mw.translate.messageGroups !== {} ) {
 					// If data is ready, render now.
@@ -102,7 +101,7 @@
 			$( '.ext-translate-msggroup-selector-menu.opened' )
 				.removeClass( 'opened' )
 				.hide();
-
+			this.position();
 			this.$menu.addClass( 'opened' ).show();
 			// Keep the focus in the message group search box.
 			this.$menu.find( 'input.ext-translate-msggroup-search-input' ).focus();
@@ -244,10 +243,12 @@
 		 * Position the menu
 		 */
 		position: function () {
-			var position = this.$group.offset(),
+			var position = $.extend( {}, this.$group.offset(), {
+					height: this.$group[0].offsetHeight
+				} ),
 				menuLeft;
 
-			this.$menu.css( 'top', position.top + this.$group.outerHeight() );
+			this.$menu.css( 'top', position.top + position.height );
 
 			if ( $( 'body' ).hasClass( 'rtl' ) ) {
 				menuLeft = position.left - this.$menu.outerWidth() + 90;
