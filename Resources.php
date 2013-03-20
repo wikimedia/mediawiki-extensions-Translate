@@ -298,6 +298,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'ext.translate.base',
 		'ext.translate.groupselector',
 		'ext.translate.messagetable',
+		'ext.uls.init',
 	),
 	'messages' => array(
 		'translate-workflow-set-do',

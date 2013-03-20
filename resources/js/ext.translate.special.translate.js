@@ -288,32 +288,29 @@
 		} );
 
 		$( '.tux-messagelist' ).messagetable();
-
 		// Use ULS for language selection if it's available
-		if ( $.uls ) {
-			ulsOptions = {
-				onSelect: function ( language ) {
-					mw.translate.changeLanguage( language );
-				},
-				languages: mw.config.get( 'wgULSLanguages' ),
-				searchAPI: mw.util.wikiScript( 'api' ) + '?action=languagesearch',
-				quickList: function () {
-					return mw.uls.getFrequentLanguageList();
-				}
-			};
-
-			// If a documentation pseudo-language is defined,
-			// add it to the language selector
-			docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
-			if ( docLanguageCode ) {
-				docLanguageAutonym = mw.msg( 'translate-documentation-language' );
-				ulsOptions.languages[docLanguageCode] = docLanguageAutonym;
-				mw.translate.addDocumentationLanguage();
-				ulsOptions.showRegions = ['WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA'];
+		ulsOptions = {
+			onSelect: function ( language ) {
+				mw.translate.changeLanguage( language );
+			},
+			languages: mw.config.get( 'wgULSLanguages' ),
+			searchAPI: mw.util.wikiScript( 'api' ) + '?action=languagesearch',
+			quickList: function () {
+				return mw.uls.getFrequentLanguageList();
 			}
+		};
 
-			$( '.ext-translate-language-selector .uls' ).uls( ulsOptions );
+		// If a documentation pseudo-language is defined,
+		// add it to the language selector
+		docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
+		if ( docLanguageCode ) {
+			docLanguageAutonym = mw.msg( 'translate-documentation-language' );
+			ulsOptions.languages[docLanguageCode] = docLanguageAutonym;
+			mw.translate.addDocumentationLanguage();
+			ulsOptions.showRegions = ['WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA'];
 		}
+
+		$( '.ext-translate-language-selector .uls' ).uls( ulsOptions );
 
 		if ( $.fn.translateeditor ) {
 			// New translation editor
