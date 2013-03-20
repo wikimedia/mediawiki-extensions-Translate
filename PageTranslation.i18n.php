@@ -2193,6 +2193,7 @@ Fejl vil blive registreret i [[Special:Log/pagetranslation|side oversættelses l
  * @author ChrisiPK
  * @author Imre
  * @author Kghbln
+ * @author MF-Warburg
  * @author McDutchie
  * @author Metalhead64
  * @author Purodha
@@ -2301,7 +2302,7 @@ Text der Übersetzungseinheit: <pre>$1</pre>',
 	'log-description-pagetranslation' => 'Logbuch der Änderungen im Zusammenhang mit dem Übersetzungssystem für Seiten',
 	'log-name-pagetranslation' => 'Übersetzungs-Logbuch',
 	'logentry-pagetranslation-mark' => '$1 {{GENDER:$2|markierte}} die Seite „$3“ zum Übersetzen',
-	'logentry-pagetranslation-unmark' => '$1 {{GENDER:$2|entfernte}} die Seite $3 zur Übersetzung',
+	'logentry-pagetranslation-unmark' => '$1 {{GENDER:$2|entfernte}} die Seite $3 aus dem Übersetzungssystem',
 	'logentry-pagetranslation-moveok' => '$1 {{GENDER:$2|schloss}} die Umbenennung der übersetzbaren Seite von $3 in $4 ab',
 	'logentry-pagetranslation-movenok' => '$1 {{GENDER:$2|hatte}} ein Problem beim Verschieben der Seite von $3 nach $4',
 	'logentry-pagetranslation-deletefok' => '$1 {{GENDER:$2|schloss}} die Löschung der übersetzbaren Seite $3 ab',
@@ -3190,6 +3191,7 @@ Izena: $1',
 );
 
 /** Persian (فارسی)
+ * @author Dalba
  * @author Huji
  * @author Mjbmr
  * @author ZxxZxxZ
@@ -3198,6 +3200,8 @@ Izena: $1',
 $messages['fa'] = array(
 	'pagetranslation' => 'ترجمهٔ صفحه',
 	'right-pagetranslation' => 'علامت‌گذاری نسخه‌های صفحه برای ترجمه',
+	'action-pagetranslation' => 'مدیریت صفحه‌های ترجمه‌پذیر',
+	'tpt-desc' => 'افزونه‌ای برای ترجمهٔ صفحه‌های محتوایی',
 	'tpt-section' => 'واحد ترجمهٔ $1',
 	'tpt-section-new' => 'واحد جدید ترجمه.
 نام: $1',
@@ -3235,9 +3239,7 @@ $messages['fa'] = array(
 	'tpt-aggregategroup-new-name' => 'نام:',
 	'tpt-aggregategroup-new-description' => 'توضیحات (اختیاری):',
 	'tpt-aggregategroup-invalid-group' => 'گروه وجود ندارد',
-	'pt-log-name' => 'سیاههٔ ترجمهٔ صفحه',
-	'pt-log-mark' => 'نسخه $3 از صفحهٔ «[[:$1]]» را برای ترجمه {{GENDER:$2|علامت زد}}',
-	'pt-log-unmark' => 'صفحهٔ «[[:$1]]» را از ترجمه {{GENDER:$2|حذف کرد}}',
+	'log-name-pagetranslation' => 'سیاههٔ ترجمهٔ صفحه',
 	'pt-movepage-list-pages' => 'فهرست صفحه‌ها برای انتقال',
 	'pt-movepage-list-translation' => '{{PLURAL:$1|صفحهٔ|صفحه‌های}} ترجمه',
 	'pt-movepage-list-section' => '{{PLURAL:$1|صفحهٔ|صفحه‌های}} واحد ترجمه',
