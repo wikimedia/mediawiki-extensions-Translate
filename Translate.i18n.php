@@ -597,6 +597,8 @@ See also:
 * $1 - a link with {{msg-mw|translate-page-description-hasoptional-open}} as the text',
 	'translate-page-description-hasoptional-open' => 'Link text for message {{msg-mw|translate-page-description-hasoptional}}',
 	'translate-page-edit' => '{{Identical|Edit}}',
+	'translate-ext-url' => 'Unused at this time. Parameters:
+* $1 - URL',
 	'translate-optional' => '{{Identical|Optional}}',
 	'translate-edit-jsopen' => 'Default linktext of <nowiki>{{#translationdialog:pagename}}</nowiki>.
 {{Identical|Edit}}',
@@ -743,6 +745,13 @@ These messages will only affect the interface on {{SITENAME}}.',
 Parameters:
 * $1 - the page title
 * $2 - link to the translation page <code>Special:MyLanguage/$1</code>, not the source page',
+	'translate-tag-fuzzy-comment' => 'Unused at this time. Paramters:
+* $1 - username
+* $2 - revision ID',
+	'translate-tag-fuzzy-reason' => 'Unused at this time. Paramters:
+* $1 - username
+* $2 - revision ID?
+* $3 - comment',
 	'translate-sidebar-alltrans' => '{{Identical|Otherlanguages}}',
 	'translations' => 'Title of [[Special:Translations]].',
 	'translations-summary' => 'Used in [[Special:Translations]].',
@@ -862,6 +871,8 @@ fuzzy = mark translations for review/update.',
 	'translate-manage-action-fuzzy' => 'Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}
 
 fuzzy = mark translations for review',
+	'translate-manage-inconsistent' => 'Parameters:
+* $1 - a string (key name?) e.g. action-changed-XXXX',
 	'translate-manage-toolong' => 'Parameters:
 * $1 - number of seconds, can be used for PLURAL',
 	'importtranslations' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
@@ -7015,7 +7026,6 @@ $messages['diq'] = array(
 	'translate-taskui-view' => 'Mesacan pêro bımocne',
 	'translate-taskui-untranslated' => 'Mesacanê nêaçarniyayeyan bımocne',
 	'translate-taskui-optional' => 'Mesacanê waşteyan bımocne',
-	'translate-taskui-suggestions' => 'Virê açarnayışi ra mesacan be teklifan bımocne',
 	'translate-taskui-acceptqueue' => 'Tenya mesacê ke ez şenan qebul keri',
 	'translate-taskui-reviewall' => 'Açarnayışan pêro çım ra raviyarne',
 	'translate-taction-translate' => 'Açarnayış',
@@ -7148,6 +7158,8 @@ $messages['diq'] = array(
 	'translate-stats-workflow' => 'Weziyet',
 	'translate-dynagroup-recent-label' => 'Çarnayışe bahdoni',
 	'translate-gethelp' => 'Peşti',
+	'tux-editor-proofreading-hide-own-translations' => 'Çarnayışanê xo nişan bınımne',
+	'tux-editor-proofreading-show-own-translations' => 'Çarnayışanê xo nişan bıde',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -11362,6 +11374,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-status-unsaved' => 'Sen gardar',
 	'tux-editor-placeholder' => 'A súa tradución',
 	'tux-editor-paste-original-button-label' => 'Pegar o texto fonte',
+	'tux-editor-discard-changes-button-label' => 'Descartar as modificacións',
 	'tux-editor-save-button-label' => 'Gardar a tradución',
 	'tux-editor-skip-button-label' => 'Pasar á seguinte',
 	'tux-editor-confirm-button-label' => 'Confirmar a tradución',
@@ -11402,6 +11415,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-proofread-translated-by-self' => 'Traducida por vostede',
 	'tux-empty-list-all' => 'Este grupo de mensaxes está baleiro',
 	'tux-empty-list-all-guide' => 'Seleccione un grupo de mensaxes diferente',
+	'tux-translate-page-no-such-group' => "'''O grupo indicado non existe.''' Seleccione un grupo de mensaxes diferente.",
 	'tux-empty-list-translated' => 'Non hai mensaxes traducidas',
 	'tux-empty-list-translated-guide' => 'Pode axudar na tradución',
 	'tux-empty-list-translated-action' => 'Traducir',
@@ -12321,6 +12335,7 @@ $1',
 	'tux-status-unsaved' => 'לא שמורה',
 	'tux-editor-placeholder' => 'התרגום שלך',
 	'tux-editor-paste-original-button-label' => 'הדבקת טקסט המקור',
+	'tux-editor-discard-changes-button-label' => 'ביטול שינויים',
 	'tux-editor-save-button-label' => 'שמירת תרגום',
 	'tux-editor-skip-button-label' => 'מעבר לההודעה הבאה',
 	'tux-editor-confirm-button-label' => 'אישור תרגום',

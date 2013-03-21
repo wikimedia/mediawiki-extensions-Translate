@@ -1042,7 +1042,7 @@ Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pe
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php?user_lang=gl Wikiblame] é capaz de atopar rapidamente os autores dunha páxina nun wiki da Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] é un proxecto para ollar unha versión da Wikipedia sen conexión e en modo de só lectura nun dispositivo móbil.',
 	'translate-group-desc-wikimedia-mobile' => 'Grupo de mensaxes agregadas para as aplicacións de móbil dos proxectos da Wikimedia',
-	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|WikipediaMobile|Commons Mobile]] é unha aplicación para Android ou iOS para realizar cargas e explorar a Wikimedia Commons', # Fuzzy
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]] é unha aplicación para Android ou iOS para realizar cargas e explorar a Wikimedia Commons',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar na Wikipedia',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar na Wikisource',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar no Wiktionary',
