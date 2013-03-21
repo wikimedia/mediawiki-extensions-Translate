@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqrtHs3k",
+        "filename": "resources/css/ext.translate.proofread.css",
+        "patchSetId": 14
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-21T11:10:14Z",
+      "side": 1,
+      "message": "I suspect that this is redundant.",
+      "revId": "70a44e2c695ac737db689fe164a9093021bde047",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
