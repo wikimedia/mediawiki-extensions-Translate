@@ -125,6 +125,7 @@ h1.firstHeading {
 	display: none;
 }
 
+.translate-search-more-groups,
 .translate-search-more-languages {
 	background-color: #F0F0F0;
 	font-size: 16px;
@@ -134,11 +135,13 @@ h1.firstHeading {
 	border: 1px solid #EEE;
 }
 
+.translate-search-more-groups:hover,
 .translate-search-more-languages:hover {
 	border: 1px solid #CCC;
 	text-decoration: none;
 }
 
+.translate-search-more-groups-info,
 .translate-search-more-languages-info {
 	padding: 5px;
 	color: #888;
