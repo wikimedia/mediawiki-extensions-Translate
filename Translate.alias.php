@@ -242,9 +242,15 @@ $specialPageAliases['dv'] = array(
 /** Esperanto (Esperanto) */
 $specialPageAliases['eo'] = array(
 	'Translate' => array( 'Traduki' ),
+	'Magic' => array( 'Altnivela_tradukado' ),
+	'TranslationStats' => array( 'Statistikol_pri_tradukado' ),
+	'Translations' => array( 'Tradukoj' ),
 	'LanguageStats' => array( 'Lingvaj_statistikoj' ),
+	'ImportTranslations' => array( 'Enporti_tradukojn', 'Importi_tradukojn' ),
+	'FirstSteps' => array( 'Unuaj_paŝoj' ),
 	'SupportedLanguages' => array( 'Subtenataj_lingvoj' ),
 	'MyLanguage' => array( 'Mia_lingvo' ),
+	'SearchTranslations' => array( 'Serĉi_tradukojn' ),
 );
 
 /** Spanish (español) */

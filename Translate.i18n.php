@@ -943,8 +943,8 @@ It might be easier to translate it as "translation guidelines" or "translation h
 	'group-translate-proofr.css' => '{{doc-group|translate-proofr|css}}',
 	'group-translate-proofr.js' => '{{doc-group|translate-proofr|js}}',
 	'log-name-translationreview' => '{{doc-logpage}}',
-	'logentry-translationreview-message' => '{{Logentry}}',
-	'logentry-translationreview-group' => '{{Logentry}}
+	'logentry-translationreview-message' => '{{Logentry|[[Special:Log/translationreview]]}}',
+	'logentry-translationreview-group' => '{{Logentry|[[Special:Log/translationreview]]}}
 Additional parameters:
 * $4 - Localised language name
 * $5 - Label of the message group (unused)
@@ -4324,6 +4324,7 @@ $messages['bho'] = array(
 /** Bengali (বাংলা)
  * @author Bellayet
  * @author Gahori
+ * @author Leemon2010
  * @author Zaheen
  */
 $messages['bn'] = array(
@@ -4331,7 +4332,6 @@ $messages['bn'] = array(
 	'translate-taskui-view' => 'সব বার্তা দেখাও',
 	'translate-taskui-untranslated' => 'অনুবাদ হয়নি এমন বার্তা দেখাও',
 	'translate-taskui-optional' => 'ঐচ্ছিক বার্তা দেখাও',
-	'translate-taskui-suggestions' => 'ট্রান্সলেশন মেমরি থেকে পরামর্শ সহ বার্তা দেখাও',
 	'translate-taction-translate' => 'অনুবাদ',
 	'translate-taction-proofread' => 'প্রুফরিড',
 	'translate-taction-lstats' => 'ভাষার পরিসংখ্যান',
@@ -4368,8 +4368,11 @@ $messages['bn'] = array(
 	'translate-magic-cm-comment' => 'মন্তব্য:',
 	'translate-magic-cm-save' => 'সংরক্ষণ',
 	'translate-magic-cm-savefailed' => 'সংরক্ষণ ব্যর্থ',
+	'translate-magic-words' => 'ম্যাজিক শব্দগুলি',
 	'translate-magic-namespace' => 'নেমস্পেসের নাম',
+	'translate-magic-notsaved' => 'আপনার সম্পাদনা সংরক্ষিত হয়নি!',
 	'translate-pref-editassistlang' => 'সহযোগী ভাষা:',
+	'prefs-translate' => 'অনুবাদ অপশন',
 	'translate-rc-translation-filter-no' => 'কিছু করা হবে না',
 	'translate-rc-translation-filter-only' => 'শুধুমাত্র অনুবাদগুলো দেখাও',
 	'translationstats' => 'অনুবাদ পরিসংখ্যান',
@@ -6959,6 +6962,7 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-editor-expand-tooltip' => 'Ausklappen',
 	'tux-editor-collapse-tooltip' => 'Einklappen',
 	'tux-editor-loading' => 'Lade …',
+	'translate-search-more-languages-info' => '{{PLURAL:$1|Eine weitere Sprache|$1 weitere Sprachen}}',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -10043,6 +10047,7 @@ Soveltuu hyvin oikolukemiseen.',
 );
 
 /** French (français)
+ * @author Boniface
  * @author Brunoperel
  * @author ChrisPtDe
  * @author Crochet.david
@@ -10426,7 +10431,7 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-editor-add-desc' => 'Ajouter une description',
 	'tux-editor-suggestions-title' => 'Suggestions',
 	'tux-editor-in-other-languages' => 'En d’autres langues',
-	'tux-editor-need-more-help' => 'Besoin d’aide?',
+	'tux-editor-need-more-help' => 'Besoin d’aide ?',
 	'tux-editor-ask-help' => 'Demander plus d’information',
 	'tux-editor-tm-match' => '$1% correspond',
 	'tux-warnings-more' => '{{PLURAL:$1|$1 de plus}}',
@@ -10470,6 +10475,7 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-editor-expand-tooltip' => 'Développer',
 	'tux-editor-collapse-tooltip' => 'Replier',
 	'tux-editor-loading' => 'Chargement en cours…',
+	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|langue supplémentaire|langues supplémentaires}}',
 );
 
 /** Cajun French (français cadien)
@@ -11431,6 +11437,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-editor-expand-tooltip' => 'Expandir',
 	'tux-editor-collapse-tooltip' => 'Contraer',
 	'tux-editor-loading' => 'Cargando...',
+	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|lingua|linguas}} máis',
 );
 
 /** Goan Konkani (Latin script) (Konknni)
@@ -17066,7 +17073,7 @@ $1',
 	'tux-editor-translate-mode' => '목록',
 	'tux-editor-proofreading-hide-own-translations' => '내 번역 숨기기',
 	'tux-editor-proofreading-show-own-translations' => '내 번역 보이기',
-	'tux-proofread-action-tooltip' => '번역 승인하기',
+	'tux-proofread-action-tooltip' => '번역 수락하기',
 	'tux-proofread-edit-tooltip' => '번역하기',
 	'tux-editor-page-mode' => '문서',
 	'tux-editor-outdated-warning' => '이 번역은 업데이트해야 합니다.',
@@ -17080,9 +17087,10 @@ $1',
 	'tux-message-filter-result' => '"$2"에 대한 {{PLURAL:$1|결과}} $1개를 찾았습니다',
 	'tux-message-filter-advanced-button' => '고급 찾기',
 	'tux-message-filter-optional-messages-label' => '선택적 메시지',
-	'tux-proofread-translated-by-self' => '당신이 번역함',
+	'tux-proofread-translated-by-self' => '내가 번역함',
 	'tux-empty-list-all' => '이 메시지 그룹은 비어 있습니다',
 	'tux-empty-list-all-guide' => '번역할 다른 메시지 그룹을 선택하세요',
+	'tux-translate-page-no-such-group' => "'''지정한 그룹이 존재하지 않습니다.''' 다른 메시지 그룹을 선택하세요.",
 	'tux-empty-list-translated' => '번역한 메시지가 없습니다',
 	'tux-empty-list-translated-guide' => '번역을 도울 수 있습니다',
 	'tux-empty-list-translated-action' => '번역',
@@ -17094,6 +17102,7 @@ $1',
 	'tux-editor-expand-tooltip' => '펼치기',
 	'tux-editor-collapse-tooltip' => '접기',
 	'tux-editor-loading' => '불러오는 중...',
+	'translate-search-more-languages-info' => '{{PLURAL:$1|언어}} $1개 더 보기',
 );
 
 /** Krio (Krio)
@@ -21224,6 +21233,7 @@ Dit is vooral nuttig voor de controletaken.',
 	'tux-editor-expand-tooltip' => 'Uitvouwen',
 	'tux-editor-collapse-tooltip' => 'Inklappen',
 	'tux-editor-loading' => 'Bezig met laden…',
+	'translate-search-more-languages-info' => 'Nog $1 {{PLURAL:$1|taal|talen}}',
 );
 
 /** Norwegian Nynorsk (norsk nynorsk)
@@ -33012,6 +33022,7 @@ $1',
 	'tux-editor-expand-tooltip' => '展開',
 	'tux-editor-collapse-tooltip' => '摺叠',
 	'tux-editor-loading' => '正在載入...',
+	'translate-search-more-languages-info' => '還有$1種{{PLURAL:$1|語言|語言}}',
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)
