@@ -99,12 +99,13 @@ class SpecialSearchTranslations extends SpecialPage {
 			$this->msg( 'tux-sst-facet-language' )
 		);
 
+		$facet = $resultset->getFacetSet()->getFacet( 'group' );
 		$facets .= Html::element( 'div',
-			array( 'class' => 'row facet' ),
+			array( 'class' => 'row facet groups',
+				'data-facets' => FormatJson::encode(  $this->getGroups( $facet) ),
+				'data-group' => $opts->getValue( 'group' ), ),
 			$this->msg( 'tux-sst-facet-group' )
 		);
-		$facet = $resultset->getFacetSet()->getFacet( 'group' );
-		$facets .= $this->renderGroupFacet( $facet );
 
 		// Part 2: results
 		$results = '';
@@ -265,18 +266,17 @@ class SpecialSearchTranslations extends SpecialPage {
 	}
 
 
-	protected function renderGroupFacet( Solarium_Result_Select_Facet_Field $facet ) {
+	protected function getGroups( Solarium_Result_Select_Facet_Field $facet ) {
 		$structure = MessageGroups::getGroupStructure();
 		$counts = iterator_to_array( $facet );
 		return $this->makeGroupFacetRows( $structure, $counts );
 	}
 
 	protected function makeGroupFacetRows( array $groups, $counts, $level = 0, $pathString = '' ) {
-		$output = '';
+		$output = array();
 
 		$nondefaults = $this->opts->getChangedValues();
 		$selected = $this->opts->getValue( 'group' );
-
 		$path = explode( '|', $this->opts->getValue( 'grouppath' ) );
 
 		foreach ( $groups as $mixed ) {
@@ -303,26 +303,21 @@ class SpecialSearchTranslations extends SpecialPage {
 			}
 
 			$url = $this->getTitle()->getLocalUrl( $nondefaults );
-			$link = Html::element( 'a', array( 'href' => $url ), $group->getLabel() );
-			$name = Html::rawElement( 'span', array( 'class' => 'facet-name' ), $link );
 
 			$value = isset( $counts[$id] ) ? $counts[$id] : 0;
 			$count = $this->getLanguage()->formatNum( $value );
-			$count = Html::element( 'span', array( 'class' => 'facet-count' ), $count );
 
-
-			$class = "row facet-item facet-level-$level";
-			if ( isset( $path[$level] ) && $path[$level] === $id ) {
-				$class .= ' selected';
-			}
-
-			$output .= Html::rawElement( 'div',
-				array( 'class' => $class ),
-				$name . $count
+			$output[$id] = array(
+				'id' => $id,
+				'count' => $value,
+				'url' => $url,
+				'label' => $group->getLabel(),
+				'description' => $group->getDescription(),
+				'icon' => TranslateUtils::getIcon( $group, 100 ),
 			);
 
 			if ( isset( $path[$level] ) && $path[$level] === $id ) {
-				$output .= $this->makeGroupFacetRows( $subgroups, $counts, $level + 1, "$pathString$id|" );
+				$output[$id]['groups'] = $this->makeGroupFacetRows( $subgroups, $counts, $level + 1, "$pathString$id|" );
 			}
 		}
 		return $output;

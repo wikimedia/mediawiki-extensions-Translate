@@ -21,7 +21,7 @@
 		} );
 
 		showLanguages();
-
+		showMessageGroups();
 	} );
 
 	// ES5-compatible Chrome, IE 9+, FF 4+, or Safari 5+ has Object.keys.
@@ -140,11 +140,108 @@
 					window.location = languages[language].url;
 				},
 				lazyload: false,
+				compact: true,
 				languages: ulslanguages,
 				top: $languages.offset().top,
 				showRegions: regions
 			} );
 		}
+	}
+
+	function showMessageGroups() {
+		var currentGroup,
+			groupList,
+			$groups;
+
+		$groups = $( '.facet.groups' );
+		currentGroup = $groups.data( 'group' );
+		mw.translate.messageGroups = $groups.data( 'facets' );
+		if ( !mw.translate.messageGroups ) {
+			// at empty search screen
+			return;
+		}
+		groupList = Object.keys( mw.translate.messageGroups );
+		listGroups( groupList, currentGroup, $groups );
+	}
+
+	function listGroups( groupList, parentGroup, $parent, level ) {
+		var i,
+			$grouSelectorTrigger,
+			selectedClass = '',
+			group,
+			groupId,
+			$groupRow,
+			maxListSize = 10,
+			currentGroup = $( '.facet.groups' ).data( 'group' ),
+			resultCount = groupList.length;
+
+		level = level || 0;
+		groupList = groupList.splice( 0, maxListSize );
+		if ( currentGroup && mw.translate.messageGroups[currentGroup]
+			&& $.inArray( currentGroup, groupList ) < 0 ) {
+			// Make sure current selected group is displayed always.
+			groupList = groupList.concat( currentGroup );
+			groupList.sort( sortGroups );
+		}
+		groupList.sort( sortGroups );
+		for ( i = 0; i <= groupList.length; i++ ) {
+			groupId = groupList[i];
+			group = mw.translate.getGroup( groupId );
+			if ( !group ) {
+				continue;
+			}
+			if ( currentGroup === groupId ) {
+				selectedClass = 'selected';
+			} else {
+				selectedClass = '';
+			}
+			$groupRow = $( '<div>' )
+				.addClass( 'row facet-item ' + ' facet-level-' + level )
+				.append( $( '<span>' )
+					.addClass( 'facet-name ' + selectedClass)
+					.append( $( '<a>' )
+						.attr( {
+							href: group.url,
+							title: group.description
+						} )
+						.text( group.label )
+					),
+					$( '<span>' )
+						.addClass( 'facet-count ' + selectedClass )
+						.text( group.count )
+				);
+			$parent.append( $groupRow );
+			if ( group.groups && level < 2 ) {
+				listGroups( Object.keys( group.groups ), group, $groupRow, level + 1 );
+			}
+		}
+
+		if ( resultCount > maxListSize ) {
+			$grouSelectorTrigger = $( '<div>')
+				.addClass( 'rowfacet-item ' )
+				.append( $( '<a>' )
+					.text( '...' )
+					.addClass( 'translate-search-more-groups' ),
+					$( '<span>' )
+						.addClass( 'translate-search-more-groups-info' )
+						.text( mw.msg( 'translate-search-more-groups-info',
+							resultCount - groupList.length ) )
+				);
+			$parent.append( $grouSelectorTrigger );
+
+			$grouSelectorTrigger.msggroupselector( {
+				onSelect: function ( group ) {
+					window.location = group.url;
+				}
+			} );
+		}
+	}
+
+	function sortGroups ( groupIdA, groupIdB ) {
+		var groupAName = mw.translate.getGroup( groupIdA ).label,
+			groupBName = mw.translate.getGroup( groupIdB ).label;
+
+		return groupAName.localeCompare( groupBName );
 	}
 
 	function sortLanguages( languageA, languageB ) {

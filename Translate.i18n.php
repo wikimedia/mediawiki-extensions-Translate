@@ -509,6 +509,7 @@ Most useful for the proofreading tasks.',
 	'translate-search-more-languages-info' => '$1 more {{PLURAL:$1|language|languages}}',
 	'translate-statsbar-tooltip' => '$1% translated, $2% proofread',
 	'translate-statsbar-tooltip-with-fuzzy' => '$1% translated, $2% proofread, $3% outdated',
+	'translate-search-more-groups-info' => '$1 more {{PLURAL:$1|group|groups}}',
 );
 
 /** Message documentation (Message documentation)
@@ -1181,6 +1182,9 @@ See also:
 * $1 percentage of messages translated (does not include outdated)
 * $2 percentage of messages proofread
 * $3 percentage of messages outdated (not counted as translated)',
+	'translate-search-more-groups-info'=> 'Information shown as number of message groups matching the query using
+[[Special:SearchTranslations]]
+* $1 - number of groups',
 );
 
 /** Afrikaans (Afrikaans)

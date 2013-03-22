@@ -35,23 +35,23 @@
 	margin-right: 5%;
 }
 
+.tux-searchpage .facet-level-0 {
+	font-size: 16px;
+}
+
 .tux-searchpage .facet-level-1 {
-	font-size: 95%;
+	font-size: 14px;
 }
 
 .tux-searchpage .facet-level-2 {
-	font-size: 90%;
+	font-size: 12px;
 }
 
 .tux-searchpage .facet-level-3 {
-	font-size: 85%;
+	font-size: 10px;
 }
 
-.tux-searchpage .facet-level-4 {
-	font-size: 80%;
-}
-
-.tux-searchpage .facet-item.selected .facet-name {
+.tux-searchpage .facet-item .facet-name.selected {
 	font-weight: bold;
 }
 
@@ -125,6 +125,7 @@ h1.firstHeading {
 	display: none;
 }
 
+.translate-search-more-groups,
 .translate-search-more-languages {
 	background-color: #F0F0F0;
 	font-size: 16px;
@@ -134,11 +135,13 @@ h1.firstHeading {
 	border: 1px solid #EEE;
 }
 
+.translate-search-more-groups:hover,
 .translate-search-more-languages:hover {
 	border: 1px solid #CCC;
 	text-decoration: none;
 }
 
+.translate-search-more-groups-info,
 .translate-search-more-languages-info {
 	padding: 5px;
 	color: #888;
