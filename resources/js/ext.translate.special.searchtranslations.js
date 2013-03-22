@@ -21,7 +21,7 @@
 		} );
 
 		showLanguages();
-
+		showMessageGroups();
 	} );
 
 	// ES5-compatible Chrome, IE 9+, FF 4+, or Safari 5+ has Object.keys.
@@ -140,11 +140,95 @@
 					window.location = languages[language].url;
 				},
 				lazyload: false,
+				compact: true,
 				languages: ulslanguages,
 				top: $languages.offset().top,
 				showRegions: regions
 			} );
 		}
+	}
+
+	function showMessageGroups() {
+		var $grouSelectorTrigger,
+			selectedClasss = '',
+			currentGroup,
+			resultCount,
+			$count,
+			i,
+			group,
+			groupId,
+			groupList,
+			$groups;
+
+		$groups = $( '.facet.groups' );
+		currentGroup = $groups.data( 'group' );
+
+		mw.translate.messageGroups = $groups.data( 'facets' );
+
+		groupList = Object.keys( mw.translate.messageGroups );
+		resultCount = groupList.length;
+
+		if ( currentGroup && $.inArray( currentGroup, groupList ) < 0 ) {
+			groupList = groupList.splice( 0, 5 );
+			groupList = groupList.concat( currentGroup );
+			groupList.sort( sortGroups );
+		} else {
+			groupList = groupList.splice( 0, 6 );
+		}
+		groupList.sort( sortGroups );
+		for ( i = 0; i <= groupList.length; i++ ) {
+			groupId = groupList[i];
+			group = mw.translate.messageGroups[groupId];
+			if ( !group ) {
+				continue;
+			}
+			if ( currentGroup === groupId ) {
+				selectedClasss = 'selected';
+			} else {
+				selectedClasss = '';
+			}
+
+			$groups.append( $( '<div>')
+				.addClass( 'row facet-item ' + selectedClasss )
+				.append( $( '<span>')
+					.addClass('facet-name')
+					.append( $('<a>')
+						.attr( {
+							href: group.url,
+							title: group.description
+						} )
+						.text( group.label )
+					),
+					$( '<span>')
+						.addClass('facet-count')
+						.text( group.count )
+				)
+			);
+		}
+
+		if ( resultCount > 6 ) {
+			$grouSelectorTrigger = $( '<a>' )
+				.text( '...' )
+				.addClass( 'translate-search-more-groups' );
+
+			$count = $( '<span>' )
+				.addClass( 'translate-search-more-groups-info' )
+				.text( mw.msg( 'translate-search-more-groups-info', resultCount - groupList.length ) );
+			$groups.append( $grouSelectorTrigger, $count );
+
+			$grouSelectorTrigger.msggroupselector( {
+				onSelect: function ( group ) {
+					window.location = group.url;
+				}
+			} );
+		}
+	}
+
+	function sortGroups ( groupIdA, groupIdB ) {
+		var groupAName = mw.translate.messageGroups[groupIdA].label,
+			groupBName = mw.translate.messageGroups[groupIdB].label;
+
+		return groupAName.localeCompare( groupBName );
 	}
 
 	function sortLanguages ( languageA, languageB ) {

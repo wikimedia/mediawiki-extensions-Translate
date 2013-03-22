@@ -274,10 +274,12 @@ $wgResourceModules['ext.translate.special.searchtranslations'] = array(
 	'dependencies' => array(
 		'ext.translate.editor',
 		'ext.uls.init',
+		'ext.translate.groupselector',
 	),
 	'messages' => array(
 		'translate-documentation-language',
-		'translate-search-more-languages-info'
+		'translate-search-more-languages-info',
+		'translate-search-more-groups-info',
 	),
 	'position' => 'top',
 ) + $resourcePaths;
