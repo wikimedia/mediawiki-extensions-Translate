@@ -4,6 +4,7 @@
 	mw.translate = mw.translate || {};
 
 	mw.translate = $.extend( mw.translate, {
+		dirty: false,
 		// A cache for language stats loaded from API,
 		// indexed by language code
 		languagestats: {},
@@ -105,5 +106,32 @@
 				autonym: mw.msg( 'translate-documentation-language' )
 			} );
 		}
+	} );
+
+	/**
+	 * A warning to be shown if a user tries to close the page or navigate away
+	 * from it without saving the written translation.
+	 */
+	function translateOnBeforeUnloadRegister() {
+		pageShowHandler();
+		$( window ).on( 'pageshow.translate', pageShowHandler );
+	}
+
+	function pageShowHandler() {
+		$( window ).on( 'beforeunload.translate', function () {
+			if ( $( '.mw-ajax-dialog:visible' ).length // For old Translate
+				// For new Translate, something being typed in the current editor.
+				|| mw.translate.dirty
+				// For new translate, previous editors has some unsaved edits
+				|| $( '.tux-status-unsaved' ).length
+			) {
+				// Return our message
+				return mw.msg( 'translate-js-support-unsaved-warning' );
+			}
+		} );
+	}
+
+	$( document ).ready( function () {
+		translateOnBeforeUnloadRegister();
 	} );
 }( jQuery, mediaWiki ) );

@@ -155,6 +155,8 @@
 				if ( translateEditor.options.onSave ) {
 					translateEditor.options.onSave( translation );
 				}
+
+				mw.translate.dirty = false;
 			} ).fail( function ( errorCode, results ) {
 				translateEditor.savingError( results.error.info );
 
@@ -356,7 +358,7 @@
 					}
 
 					translateEditor.dirty = true;
-
+					mw.translate.dirty = true;
 					// Expand the text area height as content grows
 					while ( $this.outerHeight() <
 						this.scrollHeight +
@@ -377,6 +379,7 @@
 				// is not changed in content.
 				if ( translationMessage === $textArea.val() ) {
 					translateEditor.dirty = false;
+					mw.translate.dirty = true;
 				}
 
 				$saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
