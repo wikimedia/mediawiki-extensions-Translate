@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqukPmoc",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-24T11:36:43Z",
+      "side": 1,
+      "message": "I am not completely sure about this line. Is this the best way to get the target language?",
+      "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
