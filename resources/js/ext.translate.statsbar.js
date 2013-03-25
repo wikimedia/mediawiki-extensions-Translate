@@ -85,6 +85,12 @@
 					statsbar.update();
 				} );
 			} );
+
+			statsbar.$container.hover( function () {
+				statsbar.$statsBar.find( '.tux-statsbar-info' ).removeClass( 'hide' );
+			}, function () {
+				statsbar.$statsBar.find( '.tux-statsbar-info' ).addClass( 'hide' );
+			} );
 		},
 
 		render: function () {
@@ -96,7 +102,8 @@
 				$( '<span>' ).addClass( 'tux-proofread' ),
 				$( '<span>' ).addClass( 'tux-translated' ),
 				$( '<span>' ).addClass( 'tux-fuzzy' ),
-				$( '<span>' ).addClass( 'tux-untranslated' )
+				$( '<span>' ).addClass( 'tux-untranslated' ),
+				$( '<div>' ).addClass( 'tux-statsbar-info hide' )
 			);
 
 			// TODO Add a tooltip for the statsbar that says the stats in words.
@@ -134,6 +141,12 @@
 			this.$statsBar.find( '.tux-untranslated' )
 				.data( 'untranslated', untranslatedCount )
 				.css( 'width', untranslated + '%' );
+
+			translated = ( !translated ) ? 0 : translated;
+			proofread = ( !proofread ) ? 0 : proofread;
+			this.$statsBar.find( '.tux-statsbar-info' )
+				.text( mw.msg( 'translate-statsbar-tooltip',
+					translated.toFixed( 2 ), proofread.toFixed( 2 ) ) );
 		},
 
 		getStatsForGroup: function ( group ) {
@@ -178,3 +191,4 @@
 
 	mw.translate = mw.translate || {};
 } ( mediaWiki, jQuery ) );
+
