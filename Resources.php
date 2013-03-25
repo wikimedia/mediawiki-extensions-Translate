@@ -298,13 +298,13 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'ext.translate.base',
 		'ext.translate.groupselector',
 		'ext.translate.messagetable',
+		'ext.translate.workflowselector',
 		'ext.uls.init',
 	),
 	'messages' => array(
 		'translate-workflow-set-do',
 		'translate-workflow-set-doing',
 		'translate-workflow-set-done',
-		'translate-workflowstatus',
 		'translate-workflow-set-error-alreadyset',
 		'translate-documentation-language',
 		'translate-workflow-state-',
@@ -331,6 +331,14 @@ $wgResourceModules['ext.translate.statsbar'] = array(
 $wgResourceModules['ext.translate.tabgroup'] = array(
 	'styles' => 'resources/css/ext.translate.tabgroup.css',
 	'position' => 'top',
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.workflowselector'] = array(
+	'styles' => 'resources/css/ext.translate.workflowselector.css',
+	'scripts' => 'resources/js/ext.translate.workflowselector.js',
+	'messages' => array(
+		'translate-workflowstatus',
+	),
 ) + $resourcePaths;
 
 $wgResourceModules['jquery.autoresize'] = array(

@@ -714,20 +714,7 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function tuxWorkflowSelector() {
-		$selector = Html::element( 'div', array(
-			'class' => 'tux-workflow-status hide',
-			'data-token' => ApiGroupReview::getToken( 0, '' ),
-			'data-group' => $this->options['group'],
-			'data-language' => $this->options['language'],
-		) );
-
-		$selectorRow = Html::openElement( 'div', array( 'class' => 'twelve columns' ) );
-
-		$selectorRow .= $selector;
-		$options = Html::openElement( 'ul', array( 'class' => 'tux-workflow-status-selector hide' ) );
-		$options .= Html::closeElement( 'ul' );
-
-		return $selectorRow . $options . Html::closeElement( 'div' );
+		return Html::element( 'div', array( 'class' => 'tux-workflow twelve columns' ) );
 	}
 
 	protected function getWorkflowStatus() {

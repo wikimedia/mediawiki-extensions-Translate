@@ -375,7 +375,7 @@
 			mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize, filter )
 				.done( function ( result ) {
 					var messages = result.query.messagecollection,
-						$workflowSelector = $( 'ul.tux-workflow-status-selector ' );
+						state;
 
 					// No new messages were loaded
 					if ( messages.length === 0 ) {
@@ -393,6 +393,9 @@
 							$( '.tux-message:first' ).data( 'translateeditor' ).init();
 						}
 					} );
+
+					state = result.query.metadata && result.query.metadata.state;
+					$( '.tux-workflow' ).workflowselector( messagegroup, targetLanguage, state );
 
 					if ( result['query-continue'] === undefined ) {
 						// End of messages
@@ -419,21 +422,6 @@
 						mw.msg( 'tux-messagetable-loading-messages', Math.min( remaining, pageSize ) )
 					);
 
-					mw.translate.getMessageGroup( messagegroup ).done( function ( group ) {
-						mw.translate.prepareWorkflowSelector( group );
-					} );
-					if ( result.query.metadata && result.query.metadata.state ) {
-						$workflowSelector.find( 'li' ).each( function () {
-							var $this = $( this );
-
-							if ( $this.data( 'state' ).id === result.query.metadata.state ) {
-								$( '.tux-workflow-status' ).text( mw.msg( 'translate-workflowstatus', $this.text() ) );
-								$this.addClass( 'selected' );
-							} else {
-								$this.removeClass( 'selected' );
-							}
-						} );
-					}
 				} )
 				.fail( function ( errorCode, response ) {
 					if ( response.error.code === 'mctranslate-language-disabled' ) {
