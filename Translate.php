@@ -572,6 +572,13 @@ $wgTranslateRcFilterDefault = 'filter';
  */
 $wgTranslateTestTTMServer = null;
 
+/**
+ * Whether to use the TUX interface by default. tux=1 and tux=0 in the url can
+ * be used to switch between old and new. This variable will be removed after
+ * transition time.
+ */
+$wgTranslateUseTux = false;
+
 # </source>
 
 /** @cond cli_support */

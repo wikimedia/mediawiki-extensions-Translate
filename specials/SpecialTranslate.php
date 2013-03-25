@@ -891,14 +891,16 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	public static function isBeta( WebRequest $request ) {
+		global $wgTranslateUseTux;
+
 		$tux = $request->getVal( 'tux', null );
 
 		if ( $tux === null ) {
-			$tux = $request->getCookie( 'tux', null, false );
+			$tux = $request->getCookie( 'tux', null, $wgTranslateUseTux );
 		} elseif ( $tux ) {
 			$request->response()->setCookie( 'tux', 1 );
 		} else {
-			$request->response()->setCookie( 'tux', '', 1 );
+			$request->response()->setCookie( 'tux', 0 );
 		}
 
 		return $tux;
