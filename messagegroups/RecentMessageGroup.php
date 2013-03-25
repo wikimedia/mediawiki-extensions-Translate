@@ -14,11 +14,12 @@
  * @ingroup MessageGroup
  */
 class RecentMessageGroup extends WikiMessageGroup {
-	// Ugly
-	protected $namespace = false;
-
 	protected $language;
 
+	/**
+	 * These groups are always generated for one language. Method setLanguage
+	 * must be called before calling getDefinitions.
+	 */
 	public function __construct() {}
 
 	public function setLanguage( $code ) {
