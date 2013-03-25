@@ -243,34 +243,14 @@
 		},
 
 		addPageModeMessage: function ( message ) {
-			var $message, targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir;
-
-			sourceLanguage = this.$container.data( 'sourcelangcode' );
-			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
-			targetLanguage = this.$container.data( 'targetlangcode' );
-			targetLanguageDir = $.uls.data.getDir( targetLanguage );
+			var $message;
 
 			$message = $( '<div>' )
-				.addClass( 'row tux-message-proofread' )
-				.data( 'message', message )
-				.append(
-					$( '<div>' )
-						.addClass( 'six columns tux-proofread-source' )
-						.attr( {
-							lang: sourceLanguage,
-							dir: sourceLanguageDir
-						} )
-						.html( mw.translate.formatMessageGently( message.definition, message.key ) ),
-					$( '<div>' )
-						.addClass( 'six columns tux-proofread-translation' )
-						.attr( {
-							lang: targetLanguage,
-							dir: targetLanguageDir
-						} )
-						.html( mw.translate.formatMessageGently( message.translation || '', message.key ) )
-				);
+				.addClass( 'row tux-message tux-message-pagemode' )
+				.data( 'message', message );
 
 			this.$container.append( $message );
+			$message.pagemode();
 		},
 
 		/**
@@ -705,3 +685,4 @@
 		return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, '\\$&' );
 	}
 }( jQuery, mediaWiki ) );
+
