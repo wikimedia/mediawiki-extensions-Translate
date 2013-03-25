@@ -325,6 +325,10 @@ $wgResourceModules['ext.translate.special.translationstats'] = array(
 $wgResourceModules['ext.translate.statsbar'] = array(
 	'styles' => 'resources/css/ext.translate.statsbar.css',
 	'scripts' => 'resources/js/ext.translate.statsbar.js',
+	'messages' => array(
+		'translate-statsbar-tooltip',
+		'translate-statsbar-tooltip-with-fuzzy',
+	),
 	'position' => 'top',
 ) + $resourcePaths;
 

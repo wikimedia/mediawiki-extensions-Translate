@@ -502,6 +502,8 @@ Most useful for the proofreading tasks.',
 	'tux-editor-collapse-tooltip' => 'Collapse',
 	'tux-editor-loading' => 'Loading...',
 	'translate-search-more-languages-info' => '$1 more {{PLURAL:$1|language|languages}}',
+	'translate-statsbar-tooltip' => '$1% translated, $2% proofread',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% translated, $2% proofread, $3% outdated',
 );
 
 /** Message documentation (Message documentation)
@@ -1138,6 +1140,13 @@ See also:
 	'translate-search-more-languages-info' => 'Information shown as number of languages matching the query using
 [[Special:SearchTranslations]]
 * $1 - number of languages',
+	'translate-statsbar-tooltip' => 'Descriptive text to show for the stats bar for message groups on mouse over.
+* $1 percentage of messages translated
+* $2 percentage of messages proofread',
+	'translate-statsbar-tooltip-with-fuzzy'=> 'Descriptive text to show for the stats bar for message groups on mouse over.
+* $1 percentage of messages translated
+* $2 percentage of messages proofread
+* $3 percentage of messages outdated',
 );
 
 /** Afrikaans (Afrikaans)
