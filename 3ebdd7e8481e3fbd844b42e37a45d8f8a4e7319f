@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqkoLFdg",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-25T10:37:21Z",
+      "side": 1,
+      "message": "Spec uses · as separator.",
+      "revId": "3ebdd7e8481e3fbd844b42e37a45d8f8a4e7319f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DquoPieA",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-25T10:37:21Z",
+      "side": 1,
+      "message": "Why parenthesis?",
+      "revId": "3ebdd7e8481e3fbd844b42e37a45d8f8a4e7319f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dqqr68bg",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-25T10:37:21Z",
+      "side": 1,
+      "message": "I\u0027d drop the decimals.",
+      "revId": "3ebdd7e8481e3fbd844b42e37a45d8f8a4e7319f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
