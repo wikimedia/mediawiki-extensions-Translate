@@ -23,7 +23,7 @@
 			text = $( '<div>' ).text( text ).html();
 
 			// Hack for page translation page titles
-			if ( key && key.match( /\/Page_display_title$/ ) ) {
+			if ( text && key && key.match( /\/Page_display_title$/ ) ) {
 				text = '=' + text + '=';
 			}
 
