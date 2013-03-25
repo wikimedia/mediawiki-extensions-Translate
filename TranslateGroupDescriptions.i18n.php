@@ -2949,6 +2949,7 @@ Xem thêm chi tiết tại [[MW:Extension:PDF Writer]] và http://code.pediapres
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] có thể nhanh chóng tìm ra tác giả của trang trong wiki của Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] là dự án sản xuất phiên bản Wikipedia ngoại tuyến có văn bản thuần để đọc trên thiết bị di động.',
 	'translate-group-desc-wikimedia-mobile' => 'Nhóm tổng hợp các thông điệp ứng dụng di động của các dự án Wikimedia',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Di động]] là một ứng dụng dành cho Android hoặc iOS để tải tập tin lên và duyệt Wikimedia Commons',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] là một ứng dụng đa nền tảng dành cho máy tính di động và bảng để đọc và đóng góp vào Wikipedia.',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] là một ứng dụng đa nền tảng dành cho máy tính di động và bảng để đọc và đóng góp vào Wikisource.',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] là một ứng dụng đa nền tảng dành cho máy tính di động và bảng để đọc và đóng góp vào Wiktionary.',

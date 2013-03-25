@@ -162,6 +162,26 @@ $messages['dsb'] = array(
 	'tux-sst-facet-orphan' => '(wósyrośone)',
 	'tux-sst-nosolr-title' => 'Pytanje njestoj k dispoziciji',
 	'tux-sst-nosolr-body' => 'Toś ten wiki njama słužbu za pytanje pśełožkow.',
+	'tux-sst-solr-offline-title' => 'Pytanje njestoj k dispoziciji',
+	'tux-sst-solr-offline-body' => 'Pytańska słužba njestoj tuchylu k dispoziciji.',
+);
+
+/** Estonian (eesti)
+ * @author Pikne
+ */
+$messages['et'] = array(
+	'searchtranslations' => 'Tõlgete otsimine',
+	'tux-sst-edit' => 'Redigeeri tõlget',
+	'tux-sst-search' => 'Otsi',
+	'tux-sst-search-ph' => 'Otsi tõlkeid',
+	'tux-sst-count' => '{{PLURAL:$1|Üks tulemus leitud|$1 tulemust leitud}}',
+	'tux-sst-facet-language' => 'Keeled',
+	'tux-sst-facet-group' => 'Sõnumirühmad',
+	'tux-sst-facet-orphan' => '(orb)',
+	'tux-sst-nosolr-title' => 'Otsing pole saadaval',
+	'tux-sst-nosolr-body' => 'Sellel vikil pole tõlkeotsimisteenust.',
+	'tux-sst-solr-offline-title' => 'Otsing pole saadaval',
+	'tux-sst-solr-offline-body' => 'Otsimisteenus pole ajutiselt saadaval.',
 );
 
 /** Basque (euskara)
@@ -176,6 +196,7 @@ $messages['eu'] = array(
 /** Finnish (suomi)
  * @author Crt
  * @author Nike
+ * @author Silvonen
  * @author Stryn
  */
 $messages['fi'] = array(
@@ -189,6 +210,7 @@ $messages['fi'] = array(
 	'tux-sst-facet-orphan' => '(orpo)',
 	'tux-sst-nosolr-title' => 'Haku ei ole käytössä',
 	'tux-sst-nosolr-body' => 'Hakupalvelu ei ole käytössä tässä wikissä.',
+	'tux-sst-solr-offline-title' => 'Haku ei ole käytössä',
 );
 
 /** French (français)

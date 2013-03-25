@@ -249,7 +249,8 @@ Failures will be logged in the [[Special:Log/pagetranslation|page translation lo
  * @author Umherirrender
  */
 $messages['qqq'] = array(
-	'pagetranslation' => 'Title of [[Special:PageTranslation]] and its name in [[Special:SpecialPages]]. [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'pagetranslation' => '{{doc-special|PageTranslation}}
+[[Image:Page translation admin view.png|thumb|Admin view]]',
 	'right-pagetranslation' => '{{doc-right|pagetranslation}}',
 	'action-pagetranslation' => '{{doc-action|pagetranslation}})',
 	'tpt-desc' => '{{desc|name=Translate - Page Translation|url=http://www.mediawiki.org/wiki/Extension:Translate/PageTranslation}}',

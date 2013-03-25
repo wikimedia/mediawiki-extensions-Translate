@@ -3985,6 +3985,7 @@ $messages['yi'] = array(
  * @author Hzy980512
  * @author Liangent
  * @author Mark85296341
+ * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'firststeps' => '第一步',
@@ -4016,7 +4017,7 @@ $messages['zh-hans'] = array(
 	'translate-fs-userpage-level-2' => '我熟练平平',
 	'translate-fs-userpage-level-1' => '我知道一点点',
 	'translate-fs-userpage-help' => '请说明您的语言能力，并告诉我们关于您自己。如果您知道超过五种语言，您可以以后添加更多。',
-	'translate-fs-userpage-submit' => '创建我的用户页面',
+	'translate-fs-userpage-submit' => '创建你的用户页',
 	'translate-fs-userpage-done' => '很好！现在你有了一个用户页面。',
 	'translate-fs-permissions-planguage' => '主要语言：',
 	'translate-fs-permissions-help' => '现在，您需要请求参加翻译组。
