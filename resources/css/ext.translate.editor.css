@@ -168,7 +168,7 @@
 }
 
 .infocolumn-block .infocolumn .message-desc.compact {
-	max-height: 65%;
+	max-height: 100px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
