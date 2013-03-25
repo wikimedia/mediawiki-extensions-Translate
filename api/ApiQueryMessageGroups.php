@@ -216,8 +216,8 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 		$stateConfig = $group->getMessageGroupStates()->getStates();
 
-		if ( !is_array( $stateConfig ) ) {
-			return $stateConfig;
+		if ( !is_array( $stateConfig ) || $stateConfig === array() ) {
+			return false;
 		}
 
 		$user = $this->getUser();
