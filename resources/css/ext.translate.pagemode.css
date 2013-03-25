@@ -1,0 +1,110 @@
+.ext-translate-container .tux-messagelist .tux-message-pagemode {
+	height: auto;
+	min-height: 50px;
+	padding: 40px 0;
+	margin: 0 auto;
+	vertical-align: middle;
+	border-bottom: 1px solid #f0f0f0;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	max-width: 900px;
+	background: #FFFFFF;
+	cursor: default;
+}
+
+.ext-translate-container .tux-messagelist .tux-message-pagemode:hover {
+	background: #FCFCFC;
+}
+
+.ext-translate-container .tux-messagelist .tux-message-pagemode:first-child {
+	margin-top: 10px;
+	padding-top: 60px;
+	border-top: 1px solid #DDDDDD;
+}
+
+.ext-translate-container .tux-messagelist .tux-message-pagemode:last-child {
+	margin-bottom: 10px;
+	padding-bottom: 60px;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.tux-message-pagemode.open .tux-pagemode-status,
+.tux-message-pagemode.open .tux-pagemode-source,
+.tux-message-pagemode.open .tux-pagemode-translation,
+.tux-message-pagemode.open .tux-pagemode-action-block {
+	display: none;
+}
+
+.tux-messagelist .tux-message-pagemode .tux-pagemode-source {
+	color: #555;
+	font-size: 16px;
+	line-height: 1.5em;
+	padding-right: 25px;
+	padding-left: 25px;
+}
+
+.tux-messagelist .tux-message-pagemode .tux-pagemode-translation {
+	color: #252525;
+	font-size: 16px;
+	line-height: 1.5em;
+	padding-left: 20px;
+}
+
+.tux-pagemode-action-block {
+	top: -5px;
+	right: -5px;
+}
+
+.tux-pagemode-status {
+	top: -10px;
+}
+
+.tux-pagemode-status.fuzzy {
+	/* @embed */
+	background: url(../images/outdated.png) left center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/outdated.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/outdated.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/outdated.svg);
+	height: 40px;
+}
+
+.tux-pagemode-status.untranslated {
+	/* @embed */
+	background: url(../images/translate.png) left center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/translate.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/translate.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/translate.svg);
+	height: 40px;
+}
+
+.tux-pagemode-action {
+	/* @embed */
+	background: url(../images/check-sprite.png) right top no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/check-sprite.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/check-sprite.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/check-sprite.svg);
+	height: 31px;
+	cursor: pointer;
+}
+
+.tux-pagemode-action:hover {
+	background-position: right -31px;
+}
+
+.tux-pagemode-edit {
+	/* @embed */
+	background-image: url(../images/edit-mark.png);
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/edit-mark.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/edit-mark.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/edit-mark.svg);
+	background-repeat: no-repeat;
+	background-position: right center;
+	height: 40px;
+	cursor: pointer;
+	visibility: hidden;
+}
+
+.tux-message-pagemode:hover .tux-pagemode-edit {
+	visibility: visible;
+}
+
