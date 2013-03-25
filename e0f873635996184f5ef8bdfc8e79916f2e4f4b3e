@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqsSfG-8",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-25T07:56:22Z",
+      "side": 1,
+      "message": "This probably will get changed anyway, but the order in the bar is proofread first, then translated (excluding proofread) and then the rest.",
+      "revId": "e0f873635996184f5ef8bdfc8e79916f2e4f4b3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
