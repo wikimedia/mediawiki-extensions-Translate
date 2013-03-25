@@ -262,6 +262,7 @@
 				.attr( 'title', mw.msg( 'tux-editor-close-tooltip' ) )
 				.on( 'click', function () {
 					translateEditor.hide();
+					return false;
 				} );
 
 			$infoToggleIcon = $( '<span>' )
@@ -271,6 +272,7 @@
 				.attr( 'title', mw.msg( 'tux-editor-expand-tooltip' ) )
 				.on( 'click', function () {
 					translateEditor.infoToggle( $( this ) );
+					return false;
 				} );
 
 			$layoutActions = $( '<div>' )
@@ -469,6 +471,7 @@
 					.text( mw.msg( 'tux-editor-save-button-label' ) )
 					.on( 'click', function () {
 						translateEditor.save();
+						return false;
 					} );
 
 				// When the user opens an outdated translation, the main button should be enabled
@@ -505,6 +508,7 @@
 				.on( 'click', function () {
 					translateEditor.skip();
 					translateEditor.next();
+					return false;
 				} );
 
 			$controlButtonBlock = $( '<div>' )
