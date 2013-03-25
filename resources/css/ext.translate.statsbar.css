@@ -30,3 +30,12 @@
 .tux-statsbar .tux-untranslated {
 	display: none;
 }
+
+.tux-statsbar-info {
+	font-weight: normal;
+	line-height: 1.25em;
+	color: #777;
+	font-size: 10pt;
+	position: absolute;
+	padding-top: 5px;
+}
