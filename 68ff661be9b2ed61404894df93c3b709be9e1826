@@ -16,6 +16,109 @@
       "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqkSUa.A",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-25T08:07:06Z",
+      "side": 1,
+      "message": "Definitely not. It would only work with the api when language is passed explicitly. Use $this-\u003elanguage (See RecentMessageGroup)",
+      "parentUuid": "DqukPmoc",
+      "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqmSRb.8",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-25T08:07:06Z",
+      "side": 1,
+      "message": "This line is a big long, I\u0027d pull the second comparison into a variable too.",
+      "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqgS-U18",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-25T08:07:06Z",
+      "side": 1,
+      "message": "In PHP \u0026\u0026 and || and always return true, so these are not needed.",
+      "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqiTE1-Y",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-25T08:07:06Z",
+      "side": 1,
+      "message": "strtolower is likely incorrect here. lcfirst I guess.\n\nYou could avoid the looping here by doing array_flip on line 69 and then using isset here.",
+      "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqsS4e3Y",
+        "filename": "messagegroups/RecentMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-25T08:07:06Z",
+      "side": 1,
+      "message": "I\u0027ll ask again, why not move this to RecentAdditionsMessageGroup? it\u0027s not really used in this class.",
+      "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DquS9f2M",
+        "filename": "messagegroups/RecentMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-25T08:07:06Z",
+      "side": 1,
+      "message": "more?\n\nI guess you refer to filtering done after sql query.",
+      "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
