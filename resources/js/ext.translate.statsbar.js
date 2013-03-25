@@ -34,7 +34,6 @@
 		init: function () {
 			if ( mw.translate.languagestats[this.language] ) {
 				this.render();
-				this.listen();
 			} else {
 				mw.translate.loadLanguageStats( this.language )
 					.done( $.proxy( this.render, this ) );
@@ -186,3 +185,4 @@
 
 	mw.translate = mw.translate || {};
 } ( mediaWiki, jQuery ) );
+
