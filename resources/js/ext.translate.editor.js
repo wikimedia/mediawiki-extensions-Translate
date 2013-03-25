@@ -260,8 +260,9 @@
 			$closeIcon = $( '<span>' )
 				.addClass( 'one column close' )
 				.attr( 'title', mw.msg( 'tux-editor-close-tooltip' ) )
-				.on( 'click', function () {
+				.on( 'click', function ( e ) {
 					translateEditor.hide();
+					e.stopPropagation();
 				} );
 
 			$infoToggleIcon = $( '<span>' )
@@ -269,8 +270,9 @@
 				// so show the expand button first
 				.addClass( 'one column editor-info-toggle editor-expand' )
 				.attr( 'title', mw.msg( 'tux-editor-expand-tooltip' ) )
-				.on( 'click', function () {
+				.on( 'click', function ( e ) {
 					translateEditor.infoToggle( $( this ) );
+					e.stopPropagation();
 				} );
 
 			$layoutActions = $( '<div>' )
@@ -467,8 +469,9 @@
 					.prop( 'disabled', true )
 					.addClass( 'blue button tux-editor-save-button' )
 					.text( mw.msg( 'tux-editor-save-button-label' ) )
-					.on( 'click', function () {
+					.on( 'click', function ( e ) {
 						translateEditor.save();
+						e.stopPropagation();
 					} );
 
 				// When the user opens an outdated translation, the main button should be enabled
@@ -502,9 +505,10 @@
 			$skipButton = $( '<button>' )
 				.addClass( 'button tux-editor-skip-button' )
 				.text( mw.msg( 'tux-editor-skip-button-label' ) )
-				.on( 'click', function () {
+				.on( 'click', function ( e ) {
 					translateEditor.skip();
 					translateEditor.next();
+					e.stopPropagation();
 				} );
 
 			$controlButtonBlock = $( '<div>' )
