@@ -32,10 +32,12 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'resources/js/ext.translate.editor.js',
 		'resources/js/ext.translate.editor.helpers.js',
 		'resources/js/ext.translate.proofread.js',
+		'resources/js/ext.translate.pagemode.js',
 	),
 	'styles' => array(
 		'resources/css/ext.translate.editor.css',
 		'resources/css/ext.translate.proofread.css',
+		'resources/css/ext.translate.pagemode.css',
 	),
 	'dependencies' => array(
 		'ext.translate.base',
