@@ -135,6 +135,13 @@
 			this.$statsBar.find( '.tux-untranslated' )
 				.data( 'untranslated', untranslatedCount )
 				.css( 'width', untranslated + '%' );
+			this.$statsBar.attr( 'title',
+				mw.msg( 'translate-statsbar-tooltip', stats.total,
+					translated.toFixed(2),
+					proofread.toFixed(2),
+					fuzzy.toFixed(2),
+					untranslated.toFixed(2) )
+				);
 		},
 
 		getStatsForGroup: function ( group ) {

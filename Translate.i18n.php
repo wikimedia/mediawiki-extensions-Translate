@@ -502,6 +502,7 @@ Most useful for the proofreading tasks.',
 	'tux-editor-collapse-tooltip' => 'Collapse',
 	'tux-editor-loading' => 'Loading...',
 	'translate-search-more-languages-info' => '$1 more {{PLURAL:$1|language|languages}}',
+	'translate-statsbar-tooltip' => 'Total $1 messages. $2% translated, $3% proofread, $4% fuzzy, $5% untranslated',
 );
 
 /** Message documentation (Message documentation)
@@ -1136,6 +1137,12 @@ See also:
 	'translate-search-more-languages-info' => 'Information shown as number of languages matching the query using
 [[Special:SearchTranslations]]
 * $1 - number of languages',
+	'translate-statsbar-tooltip' => 'Tooltip to show for the stats bar for message groups
+* $1 total number of messages
+* $2 percentage of messages translated
+* $3 percentage of messages proofread
+* $4 percentage of messages fuzzy
+* $5 percentage of messages untranslated',
 );
 
 /** Afrikaans (Afrikaans)
