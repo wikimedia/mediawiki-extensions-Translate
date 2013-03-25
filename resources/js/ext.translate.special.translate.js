@@ -78,9 +78,8 @@
 				mw.log( 'Error parsing description for group ' + group.id );
 			} );
 
-			mw.translate.loadMessages( changes );
 			mw.translate.changeUrl( changes );
-			mw.translate.prepareWorkflowSelector( group );
+			mw.translate.loadMessages( changes );
 			updateGroupWarning();
 		},
 
@@ -131,59 +130,6 @@
 				// For old browsers, just reload
 				window.location.href = uri.toString();
 			}
-		},
-
-		changeWorkflowStatus: function ( group, language, state, token ) {
-			var api = new mw.Api(),
-				params = {
-					action: 'groupreview',
-					group: group,
-					language: language,
-					state: state,
-					token: token,
-					format: 'json'
-				};
-
-			return api.post( params );
-		},
-
-
-		prepareWorkflowSelector: function ( group ) {
-			var $workflowStateSelector,
-				$workflowStatusTrigger = $( '.tux-workflow-status' );
-
-			if ( !group.workflowstates ) {
-				$workflowStatusTrigger.addClass( 'hide' );
-
-				return;
-			}
-
-			$workflowStateSelector = $( 'ul.tux-workflow-status-selector' );
-
-			$workflowStateSelector.empty();
-
-			$.each( group.workflowstates, function ( id, workflowstate ) {
-				if ( workflowstate._canchange ) {
-					workflowstate.id = id;
-
-					$workflowStateSelector.append( $( '<li>' )
-						.data( 'state', workflowstate )
-						.text( workflowstate._name )
-						.on( 'click', function () {
-							var $this = $( this );
-
-							$workflowStateSelector.find( '.selected' ).removeClass( 'selected' );
-							$this.addClass( 'selected' )
-								.parent().addClass( 'hide' );
-							workflowSelectionHandler( $this.data( 'state' ) );
-						} )
-					);
-				}
-			} );
-
-			$workflowStatusTrigger
-				.text( mw.msg( 'translate-workflow-state-' ) )
-				.removeClass( 'hide' );
 		}
 	} );
 
@@ -194,19 +140,6 @@
 		$translateContainer = $translateContainer || $( '.ext-translate-container' );
 		return $translateContainer.find( '.tux-message-item' )
 			.filter( '.translated, .proofread' );
-	}
-
-	function workflowSelectionHandler( state ) {
-		var $status = $( '.tux-workflow-status' );
-
-		$status.text( mw.msg( 'translate-workflow-set-doing' ) );
-		mw.translate.changeWorkflowStatus( $status.data( 'group' ),
-			$status.data( 'language' ),
-			state.id,
-			$status.data( 'token' )
-		).done( function() {
-			$status.text( mw.msg( 'translate-workflowstatus', state._name ) );
-		} );
 	}
 
 	function updateGroupWarning() {
@@ -267,6 +200,7 @@
 		targetLanguage = $messageList.data( 'targetlangcode' ) || // for tux=1
 			mw.config.get( 'wgUserLanguage' ); // for tux=0
 
+		// This is the selector for non-TUX mode
 		prepareWorkflowSelector();
 		$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
 			onSelect: mw.translate.changeGroup
