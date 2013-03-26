@@ -92,9 +92,9 @@ $wgResourceModules['ext.translate.editor'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
-// TODO: jquery.uls uses the same grid system. So don't duplicate
+
 $wgResourceModules['ext.translate.grid'] = array(
-	'styles' => 'resources/css/ext.translate.grid.css',
+	'dependencies' => 'jquery.uls.grid',
 	'position' => 'top',
 ) + $resourcePaths;
 
