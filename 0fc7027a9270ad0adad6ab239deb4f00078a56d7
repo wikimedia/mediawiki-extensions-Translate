@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dqh8R1a4",
+        "filename": "Resources.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-26T08:56:29Z",
+      "side": 1,
+      "message": "Since this has nothing but dependency, why not replace ext.translate.grid with jquery.uls.grid directly?",
+      "revId": "0fc7027a9270ad0adad6ab239deb4f00078a56d7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
