@@ -125,6 +125,7 @@
 
 				state = $this.data( 'state' ).id;
 
+				$display.text( mw.msg( 'translate-workflow-set-doing' ) );
 				instance.changeState( state )
 					.done( function () {
 						instance.receiveState( instance.groupId, instance.language, state );

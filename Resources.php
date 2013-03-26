@@ -337,6 +337,7 @@ $wgResourceModules['ext.translate.workflowselector'] = array(
 	'styles' => 'resources/css/ext.translate.workflowselector.css',
 	'scripts' => 'resources/js/ext.translate.workflowselector.js',
 	'messages' => array(
+		'translate-workflow-set-doing',
 		'translate-workflowstatus',
 	),
 ) + $resourcePaths;
