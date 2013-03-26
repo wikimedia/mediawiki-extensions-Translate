@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dql9GbcQ",
+        "filename": "resources/js/ext.translate.pagemode.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-26T08:55:03Z",
+      "side": 1,
+      "message": "Isn\u0027t container usually the element for which the jquery constructor is called? Perhaps call this something else?",
+      "revId": "9c435fd626b2ed4a8f30128d76fd8a6e6c9416fa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
