@@ -174,6 +174,13 @@ $messages['ar'] = array(
 	'translate-group-desc-mediawiki-core-branch' => 'رسائل لنسخة المستقرة من [[Translating:MediaWiki|ميديا ويكي]]',
 );
 
+/** Aramaic (ܐܪܡܝܐ)
+ * @author Basharh
+ */
+$messages['arc'] = array(
+	'translate-group-desc-mediawikicore' => 'ܬܚܒܘܫ ܟܢܘܫܬܐ ܕܐܓܪ̈ܬܐ ܗܕܐ ܥܠ ܐܓܪ̈ܬܐ ܦܠܝܚܬ̈ܐ ܒܨܚܚܐ ܕܐܠܦܐ ܗܫܝܬܐ ܡܢ [[Translating:MediaWiki|ܡܝܕܝܐܘܝܩܝ ]] ({{CURRENTVERSION}})',
+);
+
 /** Egyptian Spoken Arabic (مصرى)
  * @author Meno25
  */

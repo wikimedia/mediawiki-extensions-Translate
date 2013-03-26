@@ -560,8 +560,11 @@ $messages['ar'] = array(
 	'tpt-already-marked' => 'آخر نسخة من هذه الصفحة مُعلّمة بالفعل للترجمة.',
 	'tpt-unmarked' => 'الصفحة $1 لم تعد مُعلّمة للترجمة',
 	'tpt-list-nopages' => 'لا صفحات مُعلّمة للترجمة أو جاهزة للتعليم للترجمة.',
+	'tpt-new-pages-title' => 'صفحات مقترحة للترجمة',
+	'tpt-old-pages-title' => 'صفحات تحت الترجمة',
 	'tpt-new-pages' => '{{PLURAL:$1|هذه الصفحة تحتوي|هذه الصفحات تحتوي}} على نص بوسوم ترجمة، لكن لا نسخة من {{PLURAL:$1|هذه الصفحة|هذه الصفحات}} معلمة حاليا للترجمة.',
 	'tpt-old-pages' => 'إحدى نسخ {{PLURAL:$1||هذه الصفحة|هاتان الصفحتان|هذه الصفحات}} عُلّمت للترجمة.',
+	'tpt-select-prioritylangs-reason' => 'السبب:',
 	'tpt-rev-unmark' => 'إزالة هذه الصفحة من الترجمة', # Fuzzy
 	'tpt-rev-encourage' => 'استرجاع',
 	'translate-tag-translate-link-desc' => 'ترجم هذه الصفحة',
@@ -569,7 +572,6 @@ $messages['ar'] = array(
 	'translate-tag-markthisagain' => 'هذه الصفحة بها <span class="plainlinks">[$1 تغيير]</span> منذ تم <span class="plainlinks">[$2 تعليمها للترجمة]</span> لآخر مرة.',
 	'translate-tag-hasnew' => 'هذه الصفحة تحتوي على <span class="plainlinks">[$1 تغييرات]</span> غير معلمة للترجمة.',
 	'tpt-translation-intro' => 'هذه الصفحة هي <span class="plainlinks">[$1 نسخة مترجمة]</span> لصفحة [[$2]] والترجمة مكتملة ومحدثة بنسبة $3%.',
-	'tpt-translation-intro-fuzzy' => 'الترجمات غير المُحدّثة مُعلّمة بما يشبه هذه.',
 	'tpt-languages-legend' => 'لغات أخرى:',
 	'tpt-target-page' => 'لا يمكن تحديث هذه الصفحة يدويًا.
 هذه الصفحة ترجمة لصفحة [[$1]] ويمكن تحديث الترجمة باستخدام [$2 أداة الترجمة].',
@@ -577,9 +579,9 @@ $messages['ar'] = array(
 الصفحة التي تحاول تعديلها لا يبدو أنها تتبع أي صفحة معلمة للترجمة.',
 	'tpt-render-summary' => 'تحديث لمطابقة نسخة صفحة المصدر الجديدة',
 	'tpt-download-page' => 'صدّر الصفحة مع الترجمات',
-	'pt-log-mark' => '{{GENDER:$2|marked}} تنقيح $3 صفحة "[[:$1]]" ل الترجمة',
-	'pt-log-movenok' => '{{GENDER:$2|encountered}} خطأ اثناء النقل [[:$1]] to [[:$3]]',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|completed}} شطب صفحة الترجمة $1',
+	'tpt-aggregategroup-add' => 'أضف',
+	'tpt-aggregategroup-save' => 'احفظ',
+	'tpt-aggregategroup-new-name' => 'الاسم:',
 	'pt-movepage-block-tp-exists' => 'صفحة الهدف المترجمة [[:$2]] موجودة.',
 	'pt-movepage-list-pages' => 'قائمة الصفحات التي ستنقل',
 	'pt-movepage-list-translation' => 'صفحات الترجمة', # Fuzzy
@@ -591,9 +593,12 @@ $messages['ar'] = array(
 	'pt-movepage-action-check' => 'تحقق اذا كان النقل ممكنا',
 	'pt-movepage-action-perform' => 'لا تنقل',
 	'pt-movepage-action-other' => 'تغيير الهدف',
+	'pt-deletepage-action-other' => 'غيّر الهدف',
 	'pt-deletepage-current' => 'اسم الصفحة:',
 	'pt-deletepage-reason' => 'السبب:',
+	'pt-deletepage-subpages' => 'أحذف جميع الصفحات الفرعية',
 	'pt-deletepage-list-translation' => 'صفحات الترجمة',
+	'pt-deletepage-list-other' => 'صفحات فرعية أخرى',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
