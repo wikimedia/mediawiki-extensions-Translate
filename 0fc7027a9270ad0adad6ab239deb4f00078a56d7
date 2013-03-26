@@ -16,6 +16,24 @@
       "revId": "0fc7027a9270ad0adad6ab239deb4f00078a56d7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dqv8PQYc",
+        "filename": "Resources.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-26T09:00:04Z",
+      "side": 1,
+      "message": "For now that is fine. I thought of keeping a grid module inside so that we can have extended layout features for translate in this module. ie On top of jquery.uls.grid",
+      "parentUuid": "Dqh8R1a4",
+      "revId": "0fc7027a9270ad0adad6ab239deb4f00078a56d7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
