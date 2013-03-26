@@ -111,11 +111,8 @@
 }
 
 .tux-proofread-action.accepted {
+	cursor: default;
 	background-position: right -62px;
-}
-
-.tux-proofread-action.accepted:hover {
-	background-position: right -93px;
 }
 
 .proofread-by-others .tux-proofread-action {
@@ -127,11 +124,8 @@
 }
 
 .proofread-by-others .tux-proofread-action.accepted {
+	cursor: default;
 	background-position: right -186px;
-}
-
-.proofread-by-others .tux-proofread-action.accepted:hover {
-	background-position: right -217px;
 }
 
 .tux-proofread-edit {
