@@ -129,7 +129,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		}
 
 		if ( isset( $props['icon'] ) ) {
-			$formats = $this->getIcon( $g, $params['iconsize'] );
+			$formats = self::getIcon( $g, $params['iconsize'] );
 			if ( $formats ) {
 				$a['icon'] = $formats;
 			}
@@ -174,7 +174,13 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		return $a;
 	}
 
-	protected function getIcon( MessageGroup $g, $size ) {
+	/**
+	 * Gets urls for icons if available.
+	 * @param MessageGroup $g The message group, in case you didn't guess.
+	 * @param int $size Length of the edge of a bounding box to fit the icon.
+	 * @return null|array
+	 */
+	public static function getIcon( MessageGroup $g, $size ) {
 		global $wgServer;
 		$icon = $g->getIcon();
 		if ( substr( $icon, 0, 7 ) !== 'wiki://' ) {
@@ -186,7 +192,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		$filename = substr( $icon, 7 );
 		$file = wfFindFile( $filename );
 		if ( !$file ) {
-			$this->setWarning( "Unknown file $icon" );
+			wfWarn( "Unknown message group icon file $icon" );
 			return null;
 		}
 
