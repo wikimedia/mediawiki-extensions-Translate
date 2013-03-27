@@ -1030,6 +1030,7 @@ $specialPageAliases['zh-hant'] = array(
 	'Translate' => array( '翻譯' ),
 	'Magic' => array( '高級翻譯' ),
 	'TranslationStats' => array( '翻譯統計' ),
+	'Translations' => array( '譯文' ),
 	'LanguageStats' => array( '語言統計' ),
 	'MessageGroupStats' => array( '信息組狀態' ),
 	'PageTranslation' => array( '頁面翻譯' ),
@@ -1038,5 +1039,7 @@ $specialPageAliases['zh-hant'] = array(
 	'FirstSteps' => array( '入門' ),
 	'SupportedLanguages' => array( '支持的語言' ),
 	'MyLanguage' => array( '我的語言' ),
+	'PageTranslationDeletePage' => array( '刪除譯文頁面' ),
+	'AggregateGroups' => array( '聚合組' ),
 	'SearchTranslations' => array( '搜尋翻譯' ),
 );

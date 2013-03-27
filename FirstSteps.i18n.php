@@ -87,6 +87,7 @@ If you do not want to receive newsletters, you can opt-out in the tab "{{int:pre
  * @author The Evil IP address
  */
 $messages['qqq'] = array(
+	'firststeps' => '{{doc-special|FirstSteps|unlisted=1}}',
 	'translate-fs-pagetitle' => 'Used as page title. Parameters:
 * $1 - any one of the following messages:
 ** {{msg-mw|translate-fs-signup-title}}
@@ -923,11 +924,12 @@ Wenn Sie keinen Newsletter erhalten möchten, können Sie sich im Tab „{{int:p
 
 /** Zazaki (Zazaki)
  * @author Erdemaslancan
+ * @author Mirzali
  */
 $messages['diq'] = array(
 	'firststeps' => 'Gamê sıfteyêni',
 	'translate-fs-pagetitle-done' => '- tamam!',
-	'translate-fs-signup-title' => 'Qeyd bı',
+	'translate-fs-signup-title' => 'Qeyd be',
 	'translate-fs-settings-title' => 'Tercihanê cı saz ke',
 	'translate-fs-userpage-title' => 'Pela karberiya cı vıraze',
 	'translate-fs-target-title' => 'Açarnayışi rê serokne!',
@@ -935,7 +937,7 @@ $messages['diq'] = array(
 	'translate-fs-settings-planguage' => 'Zıwanê dıyın:',
 	'translate-fs-settings-slanguage' => 'Asistan zıwan $1:',
 	'translate-fs-settings-submit' => 'Terciha qeyd ke',
-	'translate-fs-userpage-submit' => 'Pela karberi vırazê',
+	'translate-fs-userpage-submit' => 'Pela karberi vırazê', # Fuzzy
 	'translate-fs-permissions-planguage' => 'Zıwana sıfteyên:',
 );
 

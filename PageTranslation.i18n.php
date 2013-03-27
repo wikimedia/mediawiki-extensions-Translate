@@ -344,7 +344,7 @@ Used only if a reason was provided in the following messages:
 * {{msg-mw|tpt-discouraged-language}}
 {{Identical|Reason}}',
 	'tpt-priority-languages' => 'Message to be shown before the messagestats table. $1 is a comma-separated list of language codes.',
-	'aggregategroups' => 'Title of [[Special:AggregateGroups]] and its name in [[Special:AggregateGroups]].',
+	'aggregategroups' => '{{doc-special|AggregateGroups}}',
 	'tpt-aggregategroup-add' => 'Label for the button to add a new page to aggregate group in [[Special:AggregateGroups]].
 {{Identical|Add}}',
 	'tpt-aggregategroup-save' => 'Label for the button to save a new aggregate group in [[Special:AggregateGroups]]',

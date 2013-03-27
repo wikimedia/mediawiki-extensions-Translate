@@ -36,7 +36,7 @@ $messages['en'] = array(
  * @author Shirayuki
  */
 $messages['qqq'] = array(
-	'searchtranslations' => 'Name of the special page.
+	'searchtranslations' => '{{doc-special|SearchTranslations}}
 {{Identical|Search translation}}',
 	'tux-sst-edit' => 'A link text.
 {{Identical|Edit message}}',
@@ -146,6 +146,13 @@ $messages['de'] = array(
 	'tux-sst-nosolr-body' => 'Dieses Wiki hat keinen Übersetzungssuchservice.',
 	'tux-sst-solr-offline-title' => 'Die Suche ist nicht verfügbar',
 	'tux-sst-solr-offline-body' => 'Der Suchdienst ist derzeit nicht verfügbar.',
+);
+
+/** Zazaki (Zazaki)
+ * @author Mirzali
+ */
+$messages['diq'] = array(
+	'tux-sst-facet-language' => 'Zıwani',
 );
 
 /** Lower Sorbian (dolnoserbski)

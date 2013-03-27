@@ -541,8 +541,8 @@ Most useful for the proofreading tasks.',
  * @author 555
  */
 $messages['qqq'] = array(
-	'translate' => 'This message is the page title of the special page [[Special:Translate]]. It is the verb "to translate".
-
+	'translate' => '{{doc-special|Translate}}
+It is the verb "to translate".
 {{Identical|Translate}}',
 	'translate-desc' => '{{desc|name=Translate|url=http://www.mediawiki.org/wiki/Extension:Translate}}',
 	'translate-taskui-view' => 'Task in [[Special:Translate]] on action Translate.
@@ -559,7 +559,8 @@ Goes together with {{msg-mw|translate-taskui-reviewall}}',
 {{Identical|Translate}}',
 	'translate-taction-proofread' => 'A tab text used in Special pages [[Special:Translate]], [[Special:LanguageStats]] and [[Special:MessageGroupStats]].
 {{Identical|Proofread}}',
-	'translate-taction-lstats' => 'A tab text used in Special pages [[Special:Translate]], [[Special:LanguageStats]] and [[Special:MessageGroupStats]].',
+	'translate-taction-lstats' => 'A tab text used in Special pages [[Special:Translate]], [[Special:LanguageStats]] and [[Special:MessageGroupStats]].
+{{Identical|Language statistics}}',
 	'translate-taction-mstats' => 'A tab text used in Special pages [[Special:Translate]], [[Special:LanguageStats]] and [[Special:MessageGroupStats]].',
 	'translate-taction-export' => 'A tab text used in Special pages [[Special:Translate]], [[Special:LanguageStats]] and [[Special:MessageGroupStats]].
 {{Identical|Export}}',
@@ -713,6 +714,7 @@ Parameters:
 	'translate-rc-translation-filter-site' => 'Selects changes to MediaWiki-messages without a language code in the [[Special:RecentChanges|recentchanges]].
 For example MediaWiki:Common.css, but not MediaWiki:Common.css/fr or other messages for specific languages.
 These messages will only affect the interface on {{SITENAME}}.',
+	'translationstats' => '{{doc-special|TranslationStats}}',
 	'translate-stats-edits' => "This message is used in the automatically created graph. It's possible that the graph plotting software doesn't support non-Latin scripts correctly.
 
 {{Identical|Edit}}",
@@ -757,7 +759,8 @@ Parameters:
 * $2 - revision ID?
 * $3 - comment',
 	'translate-sidebar-alltrans' => '{{Identical|Otherlanguages}}',
-	'translations' => 'Title of [[Special:Translations]].',
+	'translations' => '{{doc-special|Translations}}
+{{Identical|All translations}}',
 	'translations-summary' => 'Used in [[Special:Translations]].',
 	'translate-translations-no-message' => 'Error message used in [[Special:Translations]].',
 	'translate-translations-none' => 'Used in [[Special:Translations]] if no translations exist.',
@@ -772,7 +775,8 @@ Parameters:
 {{Identical|Project}}',
 	'translate-translations-including-no-param' => 'Shown when using <code>&#x7b;{Special:Translations}}</code>, but a parameter is required, e.g. <code>&#x7b;{Special:Translations/MediaWiki:Mainpagetext}}</code>',
 	'translate-translations-history-short' => 'Shortest possible abbreviation of "history". Used on [[Special:Translations]].',
-	'languagestats' => 'Title of [[Special:LanguageStats]].',
+	'languagestats' => '{{doc-special|LanguageStats}}
+{{Identical|Language statistics}}',
 	'languagestats-summary' => 'Used in [[Special:LanguageStats]].',
 	'languagestats-stats-for' => 'Used in [[Special:LanguageStats]]. Parameters:
 * $1 is a localised language name
@@ -812,6 +816,7 @@ See also:
 {{Identical|Outdated}}',
 	'translate-ls-column-group' => 'Column header in [[Special:LanguageStats]].
 {{Identical|Message group}}',
+	'translate-mgs-pagename' => '{{doc-special|MessageGroupStats}}',
 	'translate-mgs-fieldset' => 'Fieldset label in [[Special:MessageGroupStats]]',
 	'translate-mgs-group' => 'Label of drop-down box in [[Special:MessageGroupStats]].
 {{Identical|Message group}}',
@@ -822,7 +827,7 @@ See also:
 	'translate-mgs-totals' => 'This is used in [[Special:MessageGroupStats]]',
 	'translate-mgs-invalid-group' => 'Used as error message. Parameters:
 * $1 - target message group name',
-	'supportedlanguages' => 'Title of [[Special:SupportedLanguages]]',
+	'supportedlanguages' => '{{doc-special|SupportedLanguages}}',
 	'supportedlanguages-summary' => 'Header for [[Special:SupportedLanguages]] page.',
 	'supportedlanguages-colorlegend' => 'Used on [[Special:SupportedLanguages]]. Parameters:
 * $1 is not a single number, but a series of numbers with different background colors, serving as a legend to match each color with a number of days passed since the last contributed translation. See [[Special:SupportedLanguages]] to see the final rendering.',
@@ -846,7 +851,7 @@ Parameters:
 * $3 - number of days",
 	'translate-save' => '{{Identical|Save}}',
 	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
-	'managemessagegroups' => 'Special page name and html title in [[Special:ManageMessageGroups]]',
+	'managemessagegroups' => '{{doc-special|ManageMessageGroups}}',
 	'translate-smg-notallowed' => 'Wikitext error message in [[Special:ManageMessageGroups]]',
 	'translate-smg-nochanges' => 'Wikitext information message in [[Special:ManageMessageGroups]]',
 	'translate-smg-submit' => 'Button label in [[Special:ManageMessageGroups]]',
@@ -879,7 +884,8 @@ fuzzy = mark translations for review',
 * $1 - a string (key name?) e.g. action-changed-XXXX',
 	'translate-manage-toolong' => 'Parameters:
 * $1 - number of seconds, can be used for PLURAL',
-	'importtranslations' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
+	'importtranslations' => '{{doc-special|ImportTranslations}}
+{{doc-screenshot|Import-1.png|twn}}',
 	'translate-import-from-url' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
 	'translate-import-from-wiki' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
 	'translate-import-from-local' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
@@ -1087,7 +1093,9 @@ See also:
 	'tux-proofread-action-tooltip' => 'Used as a tooltip for the proofreading button in proofreading mode.',
 	'tux-proofread-edit-label' => 'Used as a label that appears near the translation button in proofreading mode.
 Pressing the button enters translation mode.
-The message {{mw-msg|tux-proofread-action-tooltip}} is used as a tooltip for the button near it.',
+
+The message {{msg-mw|tux-proofread-action-tooltip}} is used as a tooltip for the button near it.
+{{Identical|Edit}}',
 	'tux-editor-page-mode' => 'Label for the button that appears at the footer of the translation editor.
 Pressing the button goes to the page mode.
 {{Identical|Page}}',
@@ -1143,7 +1151,7 @@ See also:
 	'translate-statsbar-tooltip' => 'Descriptive text to show for the stats bar for message groups on mouse over.
 * $1 percentage of messages translated
 * $2 percentage of messages proofread',
-	'translate-statsbar-tooltip-with-fuzzy'=> 'Descriptive text to show for the stats bar for message groups on mouse over.
+	'translate-statsbar-tooltip-with-fuzzy' => 'Descriptive text to show for the stats bar for message groups on mouse over.
 * $1 percentage of messages translated
 * $2 percentage of messages proofread
 * $3 percentage of messages outdated',
@@ -6944,6 +6952,7 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-editor-proofreading-hide-own-translations' => 'Deine Übersetzungen verstecken',
 	'tux-editor-proofreading-show-own-translations' => 'Deine Übersetzungen anzeigen',
 	'tux-proofread-action-tooltip' => 'Übersetzung akzeptieren',
+	'tux-proofread-edit-label' => 'Bearbeiten',
 	'tux-editor-page-mode' => 'Seite',
 	'tux-editor-outdated-warning' => 'Diese Übersetzung muss eventuell aktualisiert werden.',
 	'tux-editor-outdated-warning-diff-link' => 'Unterschiede zeigen',
@@ -6972,6 +6981,8 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'tux-editor-collapse-tooltip' => 'Einklappen',
 	'tux-editor-loading' => 'Lade …',
 	'translate-search-more-languages-info' => '{{PLURAL:$1|Eine weitere Sprache|$1 weitere Sprachen}}',
+	'translate-statsbar-tooltip' => '$1% übersetzt, $2% korrekturgelesen',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% übersetzt, $2% korrekturgelesen, $3% veraltet',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -7175,6 +7186,8 @@ $messages['diq'] = array(
 	'translate-stats-workflow' => 'Weziyet',
 	'translate-dynagroup-recent-label' => 'Çarnayışe bahdoni',
 	'translate-gethelp' => 'Peşti',
+	'translate-msggroupselector-search-all' => 'Pêro',
+	'tux-tab-all' => 'Pêro',
 	'tux-editor-proofreading-hide-own-translations' => 'Çarnayışanê xo nişan bınımne',
 	'tux-editor-proofreading-show-own-translations' => 'Çarnayışanê xo nişan bıde',
 	'tux-editor-page-mode' => 'Pele',
@@ -10408,11 +10421,11 @@ Détails : $1',
 	'translate-gs-code' => 'Code',
 	'translate-gs-continent' => 'Continent',
 	'translate-gs-speakers' => 'Locuteurs',
-	'translate-gs-score' => 'Score',
+	'translate-gs-score' => 'Pointage',
 	'translate-gs-multiple' => 'Multiple',
 	'translate-gs-count' => 'Compte',
 	'translate-gs-total' => 'Total',
-	'translate-gs-avgscore' => 'Score moyen',
+	'translate-gs-avgscore' => 'Pointage moyen',
 	'translate-documentation-language' => 'Documentation du message',
 	'translate-searchprofile' => 'Traductions',
 	'translate-searchprofile-tooltip' => 'Rechercher dans toutes les traductions',
@@ -10504,6 +10517,7 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-editor-proofreading-hide-own-translations' => 'Masquer vos traductions',
 	'tux-editor-proofreading-show-own-translations' => 'Afficher vos traductions',
 	'tux-proofread-action-tooltip' => 'Accepter la traduction',
+	'tux-proofread-edit-label' => 'Modifier',
 	'tux-editor-page-mode' => 'Page',
 	'tux-editor-outdated-warning' => 'Cette traduction peut nécessiter une mise à jour.',
 	'tux-editor-outdated-warning-diff-link' => 'Afficher les différences',
@@ -10532,6 +10546,8 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-editor-collapse-tooltip' => 'Replier',
 	'tux-editor-loading' => 'Chargement en cours…',
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|langue supplémentaire|langues supplémentaires}}',
+	'translate-statsbar-tooltip' => '$1% traduit, $2% relu',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% traduit, $2% relu, $3% obsolète',
 );
 
 /** Cajun French (français cadien)
@@ -12426,6 +12442,7 @@ $1',
 	'tux-editor-proofreading-hide-own-translations' => 'הסתרת התרגומים שלך',
 	'tux-editor-proofreading-show-own-translations' => 'הצגת התרגומים שלך',
 	'tux-proofread-action-tooltip' => 'קבלת התרגום',
+	'tux-proofread-edit-label' => 'עריכה',
 	'tux-editor-page-mode' => 'דף',
 	'tux-editor-outdated-warning' => 'ייתכן שצריך לעדכן את התרגום הזה.',
 	'tux-editor-outdated-warning-diff-link' => 'הצגת שינויים',
@@ -12453,6 +12470,9 @@ $1',
 	'tux-editor-expand-tooltip' => 'הרחבה',
 	'tux-editor-collapse-tooltip' => 'צמצום',
 	'tux-editor-loading' => 'טעינה...',
+	'translate-search-more-languages-info' => 'עוד {{PLURAL:$1|שפה אחת|$1 שפות}}',
+	'translate-statsbar-tooltip' => '$1% תורגם, $2% עבר הגהה',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% תורגם, $2% עבר הגהה, $3% דורש הגהה',
 );
 
 /** Hindi (हिन्दी)
@@ -15450,6 +15470,7 @@ $1',
 	'tux-editor-proofreading-hide-own-translations' => '自分の翻訳を非表示',
 	'tux-editor-proofreading-show-own-translations' => '自分の翻訳を表示',
 	'tux-proofread-action-tooltip' => '翻訳を採用する',
+	'tux-proofread-edit-label' => '編集',
 	'tux-editor-page-mode' => 'ページ',
 	'tux-editor-outdated-warning' => 'この翻訳は修正が必要かもしれません。',
 	'tux-editor-outdated-warning-diff-link' => '差分を表示',
@@ -15478,6 +15499,8 @@ $1',
 	'tux-editor-collapse-tooltip' => '折り畳む',
 	'tux-editor-loading' => '読み込み中...',
 	'translate-search-more-languages-info' => '他 $1 {{PLURAL:$1|言語}}',
+	'translate-statsbar-tooltip' => '$1% 翻訳済み、$2% 校正済み',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% 翻訳済み、$2% 校正済み、$3% 要修正',
 );
 
 /** Jamaican Creole English (Patois)
@@ -17129,6 +17152,7 @@ $1',
 	'tux-editor-proofreading-hide-own-translations' => '내 번역 숨기기',
 	'tux-editor-proofreading-show-own-translations' => '내 번역 보이기',
 	'tux-proofread-action-tooltip' => '번역 수락하기',
+	'tux-proofread-edit-label' => '편집',
 	'tux-editor-page-mode' => '문서',
 	'tux-editor-outdated-warning' => '이 번역은 업데이트해야 합니다.',
 	'tux-editor-outdated-warning-diff-link' => '차이 보기',
@@ -17157,6 +17181,8 @@ $1',
 	'tux-editor-collapse-tooltip' => '접기',
 	'tux-editor-loading' => '불러오는 중...',
 	'translate-search-more-languages-info' => '{{PLURAL:$1|언어}} $1개 더 보기',
+	'translate-statsbar-tooltip' => '$1% 번역됨, $2% 교정됨',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% 번역됨, $2% 교정됨, $3% 오래됨',
 );
 
 /** Krio (Krio)
@@ -19193,6 +19219,7 @@ $1',
 	'tux-editor-proofreading-hide-own-translations' => 'Скриј мои преводи',
 	'tux-editor-proofreading-show-own-translations' => 'Прикажи мои преводи',
 	'tux-proofread-action-tooltip' => 'Прифати превод',
+	'tux-proofread-edit-label' => 'Уреди',
 	'tux-editor-page-mode' => 'Страница',
 	'tux-editor-outdated-warning' => 'На преводов може да му треба поднова.',
 	'tux-editor-outdated-warning-diff-link' => 'Прик. разлики',
@@ -21268,6 +21295,7 @@ Dit is vooral nuttig voor de controletaken.',
 	'tux-editor-proofreading-hide-own-translations' => 'Uw vertalingen verbergen',
 	'tux-editor-proofreading-show-own-translations' => 'Uw vertalingen weergeven',
 	'tux-proofread-action-tooltip' => 'Vertaling accepteren',
+	'tux-proofread-edit-label' => 'Bewerken',
 	'tux-editor-page-mode' => 'Pagina',
 	'tux-editor-outdated-warning' => 'Deze vertaling moet mogelijk bijgewerkt worden.',
 	'tux-editor-outdated-warning-diff-link' => 'Verschillen weergeven',
@@ -31737,6 +31765,7 @@ Nó có ích đối với các tác vụ hiệu đính.',
 	'tux-editor-proofreading-hide-own-translations' => 'Ẩn các bản dịch của mình',
 	'tux-editor-proofreading-show-own-translations' => 'Hiện các bản dịch của mình',
 	'tux-proofread-action-tooltip' => 'Chấp nhận bản dịch',
+	'tux-proofread-edit-label' => 'Sửa đổi',
 	'tux-editor-page-mode' => 'Trang',
 	'tux-editor-outdated-warning' => 'Bản dịch này có thể cần được cập nhật.',
 	'tux-editor-outdated-warning-diff-link' => 'Trình bày khác biệt',
@@ -33323,6 +33352,7 @@ $1',
 	'tux-editor-proofreading-hide-own-translations' => '隱藏您的翻譯',
 	'tux-editor-proofreading-show-own-translations' => '顯示您的翻譯',
 	'tux-proofread-action-tooltip' => '接受翻譯',
+	'tux-proofread-edit-label' => '編輯',
 	'tux-editor-page-mode' => '頁面',
 	'tux-editor-outdated-warning' => '此翻譯可能要更新。',
 	'tux-editor-outdated-warning-diff-link' => '顯示差異',
