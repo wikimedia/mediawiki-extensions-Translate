@@ -14,6 +14,12 @@
  * @ingroup MessageGroup
  */
 class RecentMessageGroup extends WikiMessageGroup {
+	/*
+	 * Yes this is very ugly hack and should not be removed.
+	 * @see MessageCollection::getPages()
+	 */
+	protected $namespace = false;
+
 	protected $language;
 
 	/**
