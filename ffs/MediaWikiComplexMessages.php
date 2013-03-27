@@ -20,6 +20,7 @@ abstract class ComplexMessages {
 	const LANG_CURRENT = 2;
 
 	protected $language = null;
+	protected $targetDir = null;
 	protected $id = '__BUG__';
 	protected $variable = '__BUG__';
 	protected $data = array();
@@ -37,8 +38,11 @@ abstract class ComplexMessages {
 		'style' => 'background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse;',
 	);
 
-	public function __construct( $language ) {
-		$this->language = $language;
+	public function __construct( $langCode ) {
+		$this->language = $langCode;
+
+		$language = Language::factory( $langCode );
+		$this->targetDir = $language->getDir();
 	}
 
 	public function getTitle() {
@@ -273,14 +277,20 @@ abstract class ComplexMessages {
 				}
 
 				$value = array_map( 'htmlspecialchars', $value );
-				$rowContents .= '<td>' . $this->formatElement( $value ) . '</td>';
+				// Force ltr direction. The source is pretty much guaranteed to be English-based.
+				$rowContents .= '<td dir="ltr">' . $this->formatElement( $value ) . '</td>';
 
 				$value = $this->val( $group, self::LANG_CHAIN, $key );
 				if ( $this->firstMagic ) {
 					array_shift( $value );
 				}
 
-				$value = array_map( 'htmlspecialchars', $value );
+				// Apply bidi-isolation to each value.
+				// The values can both RTL and LTR and mixing them in a comma list
+				// can mix things up.
+				foreach ( $value as &$currentTranslation ) {
+					$currentTranslation = Xml::element( 'bdi', null, $currentTranslation );
+				}
 				$value = $this->highlight( $key, $value );
 				$rowContents .= '<td>' . $this->formatElement( $value ) . '</td>';
 
@@ -328,7 +338,10 @@ abstract class ComplexMessages {
 	}
 
 	public function editElement( $key, $contents ) {
-		return Xml::input( $this->getKeyForEdit( $key ), 40, $contents );
+		return Xml::input( $this->getKeyForEdit( $key ), 40, $contents, array(
+			'lang' => $this->language,
+			'dir' => $this->targetDir,
+		) );
 	}
 
 	#
