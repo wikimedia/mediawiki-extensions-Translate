@@ -74,8 +74,10 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 
 			$groupTags = $group->getTags();
 			foreach ( array( 'ignored', 'optional' ) as $tag ) {
-				foreach ( $groupTags[$tag] as $key ) {
-					$this->groupInfoCache[$groupId]['tags'][ucfirst( $key )] = true;
+				if ( isset( $groupTags[$tag] ) ) {
+					foreach ( $groupTags[$tag] as $key ) {
+						$this->groupInfoCache[$groupId]['tags'][ucfirst( $key )] = true;
+					}
 				}
 			}
 		}
