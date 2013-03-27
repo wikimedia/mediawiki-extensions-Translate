@@ -120,6 +120,11 @@
 
 			translateEditor.saving = true;
 
+				// beforeSave callback
+				if ( translateEditor.options.beforeSave ) {
+					translateEditor.options.beforeSave( translation );
+				}
+
 			// For responsiveness and efficiency,
 			// immediately move to the next message.
 			translateEditor.next();
