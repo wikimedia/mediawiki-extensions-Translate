@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "DqnsEnsI",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-27T10:15:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DqkSUa.A",
+      "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DqmSRb.8",
         "filename": "messagegroups/RecentAdditionsMessageGroup.php",
         "patchSetId": 3
@@ -48,6 +66,24 @@
       "writtenOn": "2013-03-25T08:07:06Z",
       "side": 1,
       "message": "This line is a big long, I\u0027d pull the second comparison into a variable too.",
+      "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dqls0OpE",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-27T10:15:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DqmSRb.8",
       "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "Dqvsorjc",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-27T10:15:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DqgS-U18",
+      "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DqiTE1-Y",
         "filename": "messagegroups/RecentAdditionsMessageGroup.php",
         "patchSetId": 3
@@ -82,6 +136,24 @@
       "writtenOn": "2013-03-25T08:07:06Z",
       "side": 1,
       "message": "strtolower is likely incorrect here. lcfirst I guess.\n\nYou could avoid the looping here by doing array_flip on line 69 and then using isset here.",
+      "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqrvkdhE",
+        "filename": "messagegroups/RecentAdditionsMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-27T10:15:11Z",
+      "side": 1,
+      "message": "Not that easy, because it\u0027s an array of arrays, but I did something else.",
+      "parentUuid": "DqiTE1-Y",
       "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -105,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "DqhtDIhg",
+        "filename": "messagegroups/RecentMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-27T10:15:11Z",
+      "side": 1,
+      "message": "Mmmm... It\u0027s initialized outside the rows loop, and matchingMessage is used inside that loop. Is there a better way? Initialize it in RecentAdditionsMessageGroup\u0027s constructor?",
+      "parentUuid": "DqsS4e3Y",
+      "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DquS9f2M",
         "filename": "messagegroups/RecentMessageGroup.php",
         "patchSetId": 3
@@ -116,6 +206,24 @@
       "writtenOn": "2013-03-25T08:07:06Z",
       "side": 1,
       "message": "more?\n\nI guess you refer to filtering done after sql query.",
+      "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqrtI9jA",
+        "filename": "messagegroups/RecentMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-03-27T10:15:11Z",
+      "side": 1,
+      "message": "I do. Should I clarify it here?",
+      "parentUuid": "DquS9f2M",
       "revId": "68ff661be9b2ed61404894df93c3b709be9e1826",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
