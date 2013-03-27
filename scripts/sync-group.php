@@ -67,7 +67,7 @@ STDOUT( "Conflict times: " . wfTimestamp( TS_ISO_8601, $start ) . " - " . wfTime
 
 $codes = array_filter( array_map( 'trim', explode( ',', $options['lang'] ) ) );
 
-$supportedCodes = array_keys( Language::getLanguageNames( false ) );
+$supportedCodes = array_keys( TranslateUtils::getLanguageNames( 'en' ) );
 ksort( $supportedCodes );
 
 if ( $codes[0] === '*' ) {
