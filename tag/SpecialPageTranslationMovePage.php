@@ -51,14 +51,14 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	protected $old;
 
 	/**
-	 * @var Title[]
+	 * @var Title[] Cached list of translation pages. Not yet loaded if null.
 	 */
-	protected $translationPages;
+	protected $translationPages = null;
 
 	/**
-	 * @var array
+	 * @var Title[] Cached list of section pages. Not yet loaded if null.
 	 */
-	protected $sectionPages = array();
+	protected $sectionPages = null;
 
 	public function __construct( $old ) {
 		parent::__construct( 'Movepage' );
