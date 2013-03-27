@@ -376,7 +376,7 @@ class GettextFFS extends SimpleFFS {
 
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
-		$native = TranslateUtils::getLanguageName( $code, true );
+		$native = TranslateUtils::getLanguageName( $code, $code );
 		$authors = $this->doAuthors( $collection );
 		if ( isset( $this->extra['header'] ) ) {
 			$extra = "# --\n" . $this->extra['header'];

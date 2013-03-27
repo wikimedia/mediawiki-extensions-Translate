@@ -138,17 +138,11 @@ class TranslateUtils {
 	/**
 	 * Returns a localised language name.
 	 * @param string $code Language code.
-	 * @param bool|string $native Use only native names.
 	 * @param string $language Language code of language the the name should be in.
 	 * @return string Best-effort localisation of wanted language name.
 	 */
-	public static function getLanguageName( $code, $native = false, $language = 'en' ) {
-		if ( $native ) {
-			// TODO: deprecate this code path
-			$languages = Language::getLanguageNames( false );
-		} else {
-			$languages = TranslateUtils::getLanguageNames( $language );
-		}
+	public static function getLanguageName( $code, $language = 'en' ) {
+		$languages = TranslateUtils::getLanguageNames( $language );
 
 		if ( isset( $languages[$code] ) ) {
 			return $languages[$code];

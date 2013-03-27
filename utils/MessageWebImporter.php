@@ -317,7 +317,7 @@ class MessageWebImporter {
 				if ( $code === 'en' ) {
 					$this->out->addWikiMsg( 'translate-manage-intro-en' );
 				} else {
-					$lang = TranslateUtils::getLanguageName( $code, false, $wgLang->getCode() );
+					$lang = TranslateUtils::getLanguageName( $code, $wgLang->getCode() );
 					$this->out->addWikiMsg( 'translate-manage-intro-other', $lang );
 				}
 				$this->out->addHTML( Html::hidden( 'language', $code ) );

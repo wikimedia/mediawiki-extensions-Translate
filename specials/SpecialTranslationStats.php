@@ -481,12 +481,12 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			}
 			list( $groupId, $code ) = explode( '@', $label, 2 );
 			if ( $code && $groupId ) {
-				$code = TranslateUtils::getLanguageName( $code, false, $lang->getCode() ) . " ($code)";
+				$code = TranslateUtils::getLanguageName( $code, $lang->getCode() ) . " ($code)";
 				$group = MessageGroups::getGroup( $groupId );
 				$group = $group ? $group->getLabel() : $groupId;
 				$label = "$group @ $code";
 			} elseif ( $code ) {
-				$label = TranslateUtils::getLanguageName( $code, false, $lang->getCode() ) . " ($code)";
+				$label = TranslateUtils::getLanguageName( $code, $lang->getCode() ) . " ($code)";
 			} elseif ( $groupId ) {
 				$group = MessageGroups::getGroup( $groupId );
 				$label = $group ? $group->getLabel() : $groupId;

@@ -48,7 +48,7 @@ class PageTranslationLogFormatter extends LogFormatter {
 
 					$languages = array_map( 'trim', preg_split( '/,/', $languages, -1, PREG_SPLIT_NO_EMPTY ) );
 					$languages = array_map( function ( $code ) use ( $lang ) {
-						return TranslateUtils::getLanguageName( $code, false, $lang->getCode() );
+						return TranslateUtils::getLanguageName( $code, $lang->getCode() );
 					}, $languages );
 
 					$params[4] = $lang->listToText( $languages );

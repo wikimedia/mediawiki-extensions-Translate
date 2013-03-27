@@ -200,7 +200,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 			$code = $tHandle->getCode();
 
-			$text = TranslateUtils::getLanguageName( $code, false, $this->getLanguage()->getCode() );
+			$text = TranslateUtils::getLanguageName( $code, $this->getLanguage()->getCode() );
 			$text .= $separator;
 			$text .= $this->msg( 'parentheses' )->params( $code )->plain();
 			$text = htmlspecialchars( $text );

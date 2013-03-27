@@ -300,7 +300,7 @@ class SimpleFormatWriter {
 
 	protected function getLanguageNames( $code ) {
 		$name = TranslateUtils::getLanguageName( $code );
-		$native = TranslateUtils::getLanguageName( $code, true );
+		$native = TranslateUtils::getLanguageName( $code, $code );
 
 		return array( $name, $native );
 	}

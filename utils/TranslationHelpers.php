@@ -879,7 +879,7 @@ class TranslationHelpers {
 			}
 
 			$label =
-				TranslateUtils::getLanguageName( $fbcode, false, $wgLang->getCode() ) .
+				TranslateUtils::getLanguageName( $fbcode, $wgLang->getCode() ) .
 					wfMessage( 'word-separator' )->text() .
 					wfMessage( 'parentheses', wfBCP47( $fbcode ) )->text();
 

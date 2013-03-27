@@ -235,7 +235,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * Output something helpful to guide the confused user.
 	 */
 	protected function outputIntroduction() {
-		$languageName = TranslateUtils::getLanguageName( $this->target, false, $this->getLanguage()->getCode() );
+		$languageName = TranslateUtils::getLanguageName( $this->target, $this->getLanguage()->getCode() );
 		$rcInLangLink = Linker::link(
 			SpecialPage::getTitleFor( 'Translate', '!recent' ),
 			$this->msg( 'languagestats-recenttranslations' )->escaped(),
