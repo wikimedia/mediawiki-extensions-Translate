@@ -268,42 +268,39 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 		$base = $this->oldTitle->getPrefixedText();
 		$target = $this->newTitle;
-		$count = 1; // Base page
+		$count = 0;
 
-		$out->wrapWikiMsg( '== $1 ==', 'pt-movepage-list-pages' );
-		$this->printChangeLine( $base, $this->oldTitle, $target );
+		$types = array(
+			'pt-movepage-list-pages' => array( $this->oldTitle ),
+			'pt-movepage-list-translation' => $this->getTranslationPages(),
+			'pt-movepage-list-section' => $this->getSectionPages(),
+			'pt-movepage-list-other' => $this->getSubpages(),
+		);
 
-		$translationPages = $this->getTranslationPages();
-		$countTranslationPages = count( $translationPages );
-		$out->wrapWikiMsg( '=== $1 ===', array( 'pt-movepage-list-translation', $countTranslationPages ) );
-		foreach ( $translationPages as $old ) {
-			$count++;
-			$this->printChangeLine( $base, $old, $target );
-		}
+		foreach ( $types as $type => $pages ) {
+			$out->wrapWikiMsg( '=== $1 ===', array( $type, count( $pages ) ) );
 
-		$sectionPages = $this->getSectionPages();
-		$countSectionPages = count( $sectionPages );
-		$out->wrapWikiMsg( '=== $1 ===', array( 'pt-movepage-list-section', $countSectionPages ) );
+			$lines = array();
+			foreach ( $pages as $old ) {
+				$toBeMoved = true;
 
-		foreach ( $sectionPages as $old ) {
-			$count++;
-			$this->printChangeLine( $base, $old, $target );
-		}
+				// These pages need specific checks
+				if ( $type === 'pt-movepage-list-other' ) {
+					$toBeMoved = $this->moveSubpages;
 
-		$subpages = $this->getSubpages();
-		$countSubPages = count( $subpages );
-		$out->wrapWikiMsg( '=== $1 ===', array( 'pt-movepage-list-other', $countSubPages ) );
+					if ( TranslatablePage::isTranslationPage( $old ) ) {
+						continue;
+					}
+				}
 
-		foreach ( $subpages as $old ) {
-			if ( TranslatablePage::isTranslationPage( $old ) ) {
-				continue;
+				if ( $toBeMoved ) {
+					$count++;
+				}
+
+				$lines[] = $this->getChangeLine( $base, $old, $target, $toBeMoved );
 			}
 
-			if ( $this->moveSubpages ) {
-				$count++;
-			}
-
-			$this->printChangeLine( $base, $old, $target, $this->moveSubpages );
+			$out->addWikiText( implode( "\n", $lines ) );
 		}
 
 		$out->addWikiText( "----\n" );
@@ -331,18 +328,19 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	}
 
 	/**
-	 * @param $base
-	 * @param $old Title
-	 * @param $target
+	 * @param string $base
+	 * @param Title $old
+	 * @param string $target
 	 * @param bool $enabled
+	 * @return string
 	 */
-	protected function printChangeLine( $base, $old, $target, $enabled = true ) {
+	protected function getChangeLine( $base, Title $old, $target, $enabled = true ) {
 		$to = $this->newPageTitle( $base, $old, $target );
 
 		if ( $enabled ) {
-			$this->getOutput()->addWikiText( '* ' . $old->getPrefixedText() . ' → ' . $to );
+			return '* ' . $old->getPrefixedText() . ' → ' . $to;
 		} else {
-			$this->getOutput()->addWikiText( '* ' . $old->getPrefixedText() );
+			return '* ' . $old->getPrefixedText();
 		}
 	}
 
@@ -532,9 +530,19 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 				if ( $new->exists() ) {
 					$blockers[] = array( "pt-movepage-block-$type-exists", $old->getPrefixedText(), $new->getPrefixedText() );
 				} else {
+					/* This method has terrible performance:
+					 * - 2 queries by core
+					 * - 3 queries by lqt
+					 * - and no obvious way to preload the data! */
 					$errors = $old->isValidMoveOperation( $target, false );
 					if ( is_array( $errors ) ) {
 						$blockers = array_merge( $blockers, $errors );
+					}
+
+					/* Because of the above, check only one of the possibly thousands
+					 * of section pages and assume rest are fine. */
+					if ( $type === 'section' ) {
+						break;
 					}
 				}
 			}
