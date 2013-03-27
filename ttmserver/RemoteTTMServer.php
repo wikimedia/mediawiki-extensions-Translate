@@ -18,7 +18,7 @@
  */
 class RemoteTTMServer extends TTMServer implements ReadableTTMServer {
 	public function query( $sourceLanguage, $targetLanguage, $text ) {
-		// TODO: implement some day perhaps?
+		// @todo Implement some day perhaps?
 		return array();
 	}
 

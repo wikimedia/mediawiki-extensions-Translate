@@ -49,7 +49,7 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 		$defs = TranslateUtils::getContents( array_keys( $keys ), $this->getNamespace() );
 		foreach ( $keys as $key => $state ) {
 			if ( !isset( $defs[$key] ) ) {
-				// TODO: use jobqueue
+				// @todo Use jobqueue
 				$title = Title::makeTitleSafe( $this->getNamespace(), $key );
 				$page = new WikiPage( $title );
 				$page->doEdit(

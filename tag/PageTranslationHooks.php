@@ -546,7 +546,7 @@ class PageTranslationHooks {
 		$languages = TranslateMetadata::get( $groupId, 'prioritylangs' );
 		$filter = array_flip( explode( ',', $languages ) );
 		if ( !isset( $filter[$handle->getCode()] ) ) {
-			// TODO: default reason if none provided
+			// @todo Default reason if none provided
 			$reason = TranslateMetadata::get( $groupId, 'priorityreason' );
 			$result = array( 'tpt-translation-restricted', $reason );
 			return false;
