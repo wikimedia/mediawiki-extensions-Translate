@@ -78,12 +78,10 @@ $wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
 $wgSpecialPageGroups['ImportTranslations'] = 'wiki';
 $wgSpecialPages['ManageMessageGroups'] = 'SpecialManageGroups';
 $wgSpecialPageGroups['ManageMessageGroups'] = 'wiki';
-// Unlisted special page; does not need $wgSpecialPageGroups.
-$wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps';
-// Unlisted special page; does not need $wgSpecialPageGroups.
+$wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps'; // Unlisted special page; does not need $wgSpecialPageGroups.
 $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
 $wgSpecialPageGroups['SupportedLanguages'] = 'wiki';
-$wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
+$wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage'; // Unlisted special page; does not need $wgSpecialPageGroups.
 $wgSpecialPages['AggregateGroups'] = 'SpecialAggregateGroups';
 $wgSpecialPageGroups['AggregateGroups'] = 'wiki';
 $wgSpecialPages['SearchTranslations'] = 'SpecialSearchTranslations';
