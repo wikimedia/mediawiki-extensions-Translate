@@ -39,7 +39,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 	),
 	'dependencies' => array(
 		'ext.translate.base',
-		'ext.translate.grid',
+		'jquery.uls.grid',
 		'mediawiki.util',
 		'mediawiki.Uri',
 		'mediawiki.api',
@@ -92,12 +92,6 @@ $wgResourceModules['ext.translate.editor'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
-// TODO: jquery.uls uses the same grid system. So don't duplicate
-$wgResourceModules['ext.translate.grid'] = array(
-	'styles' => 'resources/css/ext.translate.grid.css',
-	'position' => 'top',
-) + $resourcePaths;
-
 $wgResourceModules['ext.translate.loader'] = array(
 	'styles' => 'resources/css/ext.translate.loader.css',
 	'position' => 'top',
@@ -109,7 +103,7 @@ $wgResourceModules['ext.translate.groupselector'] = array(
 	'scripts' => 'resources/js/ext.translate.groupselector.js',
 	'position' => 'top',
 	'dependencies' => array(
-		'ext.translate.grid',
+		'jquery.uls.grid',
 		'ext.translate.statsbar',
 		'mediawiki.jqueryMsg',
 		'ext.translate.loader',
