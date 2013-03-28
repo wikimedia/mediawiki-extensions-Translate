@@ -192,7 +192,7 @@
 				.data( 'message', message );
 
 			$message = $( '<div>' )
-				.addClass( 'row tux-message-item ' + status )
+				.addClass( 'row message tux-message-item ' + status )
 				.append(
 					$( '<div>' )
 						.addClass( 'eight columns tux-list-message' )
