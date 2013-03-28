@@ -4102,6 +4102,7 @@ $1',
 	'tux-editor-proofreading-hide-own-translations' => 'Схаваць вашыя пераклады',
 	'tux-editor-proofreading-show-own-translations' => 'Паказаць вашыя пераклады',
 	'tux-proofread-action-tooltip' => 'Ухваліць пераклад',
+	'tux-proofread-edit-label' => 'Рэдагаваць',
 	'tux-editor-page-mode' => 'Старонка',
 	'tux-editor-outdated-warning' => 'Гэтаму перакладу, магчыма, патрабуецца абнаўленьне.',
 	'tux-editor-outdated-warning-diff-link' => 'Паказаць розьніцу',
@@ -4130,6 +4131,8 @@ $1',
 	'tux-editor-collapse-tooltip' => 'Згарнуць',
 	'tux-editor-loading' => 'Загрузка...',
 	'translate-search-more-languages-info' => 'Яшчэ на $1 {{PLURAL:$1|мове|мовах}}',
+	'translate-statsbar-tooltip' => '$1% перакладзена, $2% вычытана',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% перакладзена, $2% вычытана, $3% састарэла',
 );
 
 /** Bulgarian (български)
@@ -11481,6 +11484,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-editor-proofreading-hide-own-translations' => 'Agochar as súas traducións',
 	'tux-editor-proofreading-show-own-translations' => 'Mostrar as súas traducións',
 	'tux-proofread-action-tooltip' => 'Aceptar a tradución',
+	'tux-proofread-edit-label' => 'Editar',
 	'tux-editor-page-mode' => 'Páxina',
 	'tux-editor-outdated-warning' => 'Esta tradución pode necesitar unha actualización.',
 	'tux-editor-outdated-warning-diff-link' => 'Mostrar as diferenzas',
@@ -11509,6 +11513,8 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-editor-collapse-tooltip' => 'Contraer',
 	'tux-editor-loading' => 'Cargando...',
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|lingua|linguas}} máis',
+	'translate-statsbar-tooltip' => '$1% traducidas, $2% corrixidas',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% traducidas, $2% corrixidas, $3% desfasadas',
 );
 
 /** Goan Konkani (Latin script) (Konknni)
@@ -19248,6 +19254,8 @@ $1',
 	'tux-editor-collapse-tooltip' => 'Скриј',
 	'tux-editor-loading' => 'Вчитувам...',
 	'translate-search-more-languages-info' => 'уште {{PLURAL:$1|еден јазик|$1 јазици}}',
+	'translate-statsbar-tooltip' => '$1% преведени, $2% проверени',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% преведени, $2% проверени, $3% застарени',
 );
 
 /** Malayalam (മലയാളം)
@@ -20776,6 +20784,7 @@ Mest nyttig for korrekturlesningsoppgaver.',
 );
 
 /** Low German (Plattdüütsch)
+ * @author Joachim Mos
  * @author Slomox
  */
 $messages['nds'] = array(
@@ -20786,6 +20795,7 @@ $messages['nds'] = array(
 	'translate-magic-cm-comment' => 'Kommentar:',
 	'translate-magic-cm-save' => 'Spiekern',
 	'translate-magic-special' => 'Spezialsieden-Alternativnaams',
+	'tux-proofread-edit-label' => 'Ännern',
 );
 
 /** Nedersaksies (Nedersaksies)
