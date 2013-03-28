@@ -393,4 +393,36 @@ class TranslateUtils {
 		static $i = 0;
 		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . '-' . $i++;
 	}
+
+	/**
+	 * For the give message group get the icons in vector and raster formats
+	 * @return array
+	 */
+	public static function getIcon( MessageGroup $g, $size ) {
+		global $wgServer;
+		$icon = $g->getIcon();
+		if ( substr( $icon, 0, 7 ) !== 'wiki://' ) {
+			return null;
+		}
+
+		$formats = array();
+
+		$filename = substr( $icon, 7 );
+		$file = wfFindFile( $filename );
+		if ( !$file ) {
+			return null;
+		}
+
+		if ( $file->isVectorized() ) {
+			$formats['vector'] = $file->getUrl();
+		}
+
+		$formats['raster'] = $wgServer . $file->createThumb( $size, $size );
+
+		foreach ( $formats as $key => &$url ) {
+			$url = wfExpandUrl( $url, PROTO_RELATIVE );
+		}
+
+		return $formats;
+	}
 }

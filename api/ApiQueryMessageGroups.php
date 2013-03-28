@@ -129,7 +129,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		}
 
 		if ( isset( $props['icon'] ) ) {
-			$formats = $this->getIcon( $g, $params['iconsize'] );
+			$formats = TranslateUtils::getIcon( $g, $params['iconsize'] );
 			if ( $formats ) {
 				$a['icon'] = $formats;
 			}
@@ -172,35 +172,6 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		}
 
 		return $a;
-	}
-
-	protected function getIcon( MessageGroup $g, $size ) {
-		global $wgServer;
-		$icon = $g->getIcon();
-		if ( substr( $icon, 0, 7 ) !== 'wiki://' ) {
-			return null;
-		}
-
-		$formats = array();
-
-		$filename = substr( $icon, 7 );
-		$file = wfFindFile( $filename );
-		if ( !$file ) {
-			$this->setWarning( "Unknown file $icon" );
-			return null;
-		}
-
-		if ( $file->isVectorized() ) {
-			$formats['vector'] = $file->getUrl();
-		}
-
-		$formats['raster'] = $wgServer . $file->createThumb( $size, $size );
-
-		foreach ( $formats as $key => &$url ) {
-			$url = wfExpandUrl( $url, PROTO_RELATIVE );
-		}
-
-		return $formats;
 	}
 
 	/**
