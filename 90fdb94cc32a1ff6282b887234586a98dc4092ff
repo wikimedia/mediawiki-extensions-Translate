@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DqqMMSKc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-28T06:57:52Z",
+      "side": 1,
+      "message": "You can fix it directly in gerrit too.",
+      "parentUuid": "DqnaP03Y",
+      "revId": "90fdb94cc32a1ff6282b887234586a98dc4092ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DqlbvLx8",
         "filename": "api/ApiQueryMessageGroups.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-03-27T12:25:30Z",
       "side": 1,
       "message": "\"in case you didn\u0027t guess\" - a bit too informal. And it could be called $group.",
+      "revId": "90fdb94cc32a1ff6282b887234586a98dc4092ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DqkMBrG0",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-03-28T06:57:52Z",
+      "side": 1,
+      "message": "I thought I could write something useful there instead of repeating the same thing five times.",
+      "parentUuid": "DqlbvLx8",
       "revId": "90fdb94cc32a1ff6282b887234586a98dc4092ff",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
