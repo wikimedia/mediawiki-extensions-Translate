@@ -41,7 +41,7 @@ class SpecialManageGroups extends SpecialPage {
 
 		$changefile = TranslateUtils::cacheFile( self::CHANGEFILE );
 		if ( !file_exists( $changefile ) ) {
-			// TODO: Tell them when changes was last checked/process
+			// @todo Tell them when changes was last checked/process
 			// or how to initiate recheck.
 			$out->addWikiMsg( 'translate-smg-nochanges' );
 			return;

@@ -31,7 +31,7 @@ class AndroidXmlFFS extends SimpleFFS {
 		}
 
 		return array(
-			'AUTHORS' => array(), // TODO
+			'AUTHORS' => array(), // @todo
 			'MESSAGES' => $mangler->mangle( $messages ),
 		);
 	}

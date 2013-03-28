@@ -108,7 +108,7 @@ class PremadeMediawikiExtensionGroups {
 		$target = str_replace( '%GROUPROOT%/', '', $conf['FILES']['sourcePattern'] );
 		$conf['FILES']['targetPattern'] = $target;
 
-		// @TODO: find a better way
+		// @todo Find a better way
 		if ( isset( $info['aliasfile'] ) ) {
 			$conf['FILES']['aliasFile'] = $info['aliasfile'];
 		}

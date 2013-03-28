@@ -54,7 +54,6 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$this->outputHeader();
 		$dbr = wfGetDB( DB_SLAVE );
 		if ( $dbr->getType() === 'sqlite' ) {
-			// @TODO
 			$out->addWikiText( '<div class=errorbox>SQLite is not supported.</div>' );
 			return;
 		}
