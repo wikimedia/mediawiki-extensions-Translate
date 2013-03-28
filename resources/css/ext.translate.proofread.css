@@ -1,15 +1,25 @@
 .ext-translate-container .tux-messagelist .tux-message-proofread {
 	height: auto;
 	min-height: 50px;
-	padding: 40px 0;
 	margin: 0 auto;
+	vertical-align: middle;
+	background: #FFFFFF;
+}
+
+.ext-translate-container .tux-messagelist .tux-message-proofread .tux-message-item-compact {
+	padding: 40px 0;
+	line-height: 50px;
+	overflow: hidden;
+	margin-right: auto;
+	margin-left: auto;
 	vertical-align: middle;
 	border-bottom: 1px solid #f0f0f0;
 	border-left: 1px solid #DDDDDD;
 	border-right: 1px solid #DDDDDD;
-	max-width: 900px;
 	background: #FFFFFF;
+	max-width: 900px;
 }
+
 
 .ext-translate-container .tux-messagelist .tux-message-proofread:hover {
 	background: #FCFCFC;

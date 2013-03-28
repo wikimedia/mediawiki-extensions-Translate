@@ -183,38 +183,42 @@
 
 			this.$message.append(
 				$( '<div>' )
-					.addClass( 'one column tux-proofread-status ' + this.message.properties.status ),
-				$( '<div>' )
-					.addClass( 'five columns tux-proofread-source' )
-					.attr( {
-						lang: sourceLanguage,
-						dir: sourceLanguageDir
-					} )
-					.text( this.message.definition ),
-				$( '<div>' )
-					.addClass( 'five columns tux-proofread-translation' )
-					.attr( {
-						lang: targetLanguage,
-						dir: targetLanguageDir
-					} )
-					.text( this.message.translation || '' ),
-				$( '<div>' )
-					.addClass( 'tux-proofread-action-block one column' )
+					.addClass( 'row tux-message-item-compact message' )
 					.append(
-						translatedBySelf ?
-							$( '<div>' )
-								.addClass( 'translated-by-self' )
-								.attr( 'title', mw.msg( 'tux-proofread-translated-by-self' ) )
-								.tipsy( { gravity: 'e' } ):
-							$( [] ),
-						$proofreadAction,
-						otherReviewers.length ?
-							$( '<div>' )
-								.addClass( 'tux-proofread-count' )
-								.data( 'reviewCount', reviewers.length ) // To update when accepting
-								.text( mw.language.convertNumber( reviewers.length ) ) :
-							$( [] ),
-						$proofreadEdit
+						$( '<div>' )
+							.addClass( 'one column tux-proofread-status ' + this.message.properties.status ),
+						$( '<div>' )
+							.addClass( 'five columns tux-proofread-source' )
+							.attr( {
+								lang: sourceLanguage,
+								dir: sourceLanguageDir
+							} )
+							.text( this.message.definition ),
+						$( '<div>' )
+							.addClass( 'five columns tux-proofread-translation' )
+							.attr( {
+								lang: targetLanguage,
+								dir: targetLanguageDir
+							} )
+							.text( this.message.translation || '' ),
+						$( '<div>' )
+							.addClass( 'tux-proofread-action-block one column' )
+							.append(
+								translatedBySelf ?
+									$( '<div>' )
+										.addClass( 'translated-by-self' )
+										.attr( 'title', mw.msg( 'tux-proofread-translated-by-self' ) )
+										.tipsy( { gravity: 'e' } ):
+									$( [] ),
+								$proofreadAction,
+								otherReviewers.length ?
+									$( '<div>' )
+										.addClass( 'tux-proofread-count' )
+										.data( 'reviewCount', reviewers.length ) // To update when accepting
+										.text( mw.language.convertNumber( reviewers.length ) ) :
+									$( [] ),
+								$proofreadEdit
+							)
 					)
 			)
 			.addClass( this.message.properties.status );
