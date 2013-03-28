@@ -577,7 +577,7 @@ $wgTranslateTestTTMServer = null;
  * be used to switch between old and new. This variable will be removed after
  * transition time.
  */
-$wgTranslateUseTux = false;
+$wgTranslateUseTux = true;
 
 # </source>
 
