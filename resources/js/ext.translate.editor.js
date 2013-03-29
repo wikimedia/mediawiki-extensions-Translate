@@ -129,12 +129,11 @@
 			// immediately move to the next message.
 			translateEditor.next();
 
-			api.post( {
+			api.postWithEditToken( {
 				action: 'edit',
 				title: translateEditor.message.title,
 				text: translation,
-				token: mw.user.tokens.get( 'editToken' )
-			} ).done( function ( response ) {
+			}, function ( response ) {
 				if ( response.edit.result === 'Success' ) {
 					translateEditor.markTranslated();
 
@@ -162,7 +161,7 @@
 				}
 
 				mw.translate.dirty = false;
-			} ).fail( function ( errorCode, results ) {
+			}, function ( errorCode, results ) {
 				translateEditor.savingError( results.error.info );
 
 				translateEditor.saving = false;
