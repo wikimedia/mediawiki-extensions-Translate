@@ -135,6 +135,9 @@
 					proofread.$message.find( '.tux-proofread-translation' )
 						.text( translation );
 					proofread.message.translation = translation;
+					proofread.$message.addClass( 'own-translation' );
+					// Own translations cannot be reviewed, so hide the review button
+					proofread.hide();
 				}
 			} );
 
