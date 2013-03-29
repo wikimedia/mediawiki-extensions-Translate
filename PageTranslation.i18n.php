@@ -3331,7 +3331,9 @@ mutta mikään versio {{PLURAL:$1|tästä sivusta|näistä sivuista}} ei ole tä
 	'tpt-other-pages' => 'Vanha versio {{PLURAL:$1|tästä sivusta|näistä sivuista}} on merkitty käännettäväksi,
 mutta viimeisintä versiota ei voi merkitä käännettäväksi.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Tätä sivua|Näitä sivuja}} ei enää suositella käännettävän.',
+	'tpt-select-prioritylangs' => 'Pilkuin erotettu lista ensisijaisista kielikoodeista:',
 	'tpt-select-prioritylangs-reason' => 'Syy:',
+	'tpt-sections-prioritylangs' => 'Ensisijaiset kielet',
 	'tpt-rev-mark' => 'merkitse käännettäväksi',
 	'tpt-rev-unmark' => 'poista käännettävistä sivuista',
 	'tpt-rev-discourage' => 'vältä uusia käännöksiä',
@@ -3345,7 +3347,6 @@ mutta viimeisintä versiota ei voi merkitä käännettäväksi.',
 	'translate-tag-markthisagain' => 'Tähän sivuun on tehty <span class="plainlinks">[$1 muutoksia]</span> sen jälkeen kun se viimeksi <span class="plainlinks">[$2 merkittiin käännettäväksi]</span>.',
 	'translate-tag-hasnew' => 'Tämä sivu sisältää <span class="plainlinks">[$1 muutoksia],</span> joita ei ole merkitty käännettäväksi.',
 	'tpt-translation-intro' => 'Tämä sivu on <span class="plainlinks">[$1 käännetty versio]</span> sivusta [[$2]] ja käännös on $3% täydellinen ja ajan tasalla.',
-	'tpt-translation-intro-fuzzy' => 'Vanhentuneet käännökset merkitään näin.',
 	'tpt-languages-legend' => 'Muut kielet:',
 	'tpt-languages-zero' => 'Aloita käännös tälle kielelle',
 	'tpt-target-page' => 'Tätä sivua ei voi muokata tavalliseen tapaan.
@@ -3361,32 +3362,28 @@ Käännösylläpitäjä on päättänyt, että tämän sivun voi kääntää vai
 	'tpt-discouraged-language-reason' => 'Syy: $1',
 	'tpt-render-summary' => 'Päivittäminen vastaamaan uutta versiota lähdesivusta',
 	'tpt-download-page' => 'Sivun vienti käännösten kera',
+	'aggregategroups' => 'Kokoelmaryhmät',
 	'tpt-aggregategroup-add' => 'Lisää',
 	'tpt-aggregategroup-save' => 'Tallenna',
+	'tpt-aggregategroup-add-new' => 'Lisää uusi kokoelmaryhmä',
 	'tpt-aggregategroup-new-name' => 'Nimi',
 	'tpt-aggregategroup-new-description' => 'Kuvaus (vapaaehtoinen):',
+	'tpt-aggregategroup-remove-confirm' => 'Haluatko varmasti poistaa tämän kokoelmaryhmän?',
 	'tpt-aggregategroup-invalid-group' => 'Ryhmää ei ole',
 	'pt-parse-open' => 'Sulkematon &lt;translate>-tägi.
 Käännöspohja: <pre>$1</pre>',
 	'pt-parse-close' => 'Avaamaton &lt;/translate>-tägi.
 Käännöspohja: <pre>$1</pre>',
 	'pt-parse-nested' => 'Sisäkkäiset &lt;translate>-tägit eivät ole sallittuja.
-Käännettävä teksti: <pre>$1</pre>', # Fuzzy
+Käännettävä teksti: <pre>$1</pre>',
 	'pt-shake-multiple' => 'Enemmän kuin yksi käännösosiotunniste käännösosiolla.
-Käännösosion teksti: <pre>$1</pre>', # Fuzzy
+Käännösosion teksti: <pre>$1</pre>',
 	'pt-shake-position' => 'Käännösosiotunniste on odottamattomassa paikassa.
-Käännösosion teksti: <pre>$1</pre>', # Fuzzy
-	'pt-shake-empty' => 'Käännösosio $1 sisältää vain tunnisteen.', # Fuzzy
-	'pt-log-header' => 'Tämä loki sisältää sivunkäännösominaisuuteen liittyviä tapahtumia.',
-	'pt-log-name' => 'Sivunkääntöloki',
-	'pt-log-mark' => '{{GENDER:$2|merkitsi}} version $3 sivusta [[:$1]] käännettäväksi',
-	'pt-log-unmark' => '{{GENDER:$2|poisti}} sivun "[[:$1]]" käännösjärjestelmästä',
-	'pt-log-moveok' => '{{GENDER:$2|sai valmiiksi}} käännettävän sivun $1 siirtämisen nimelle $3',
-	'pt-log-movenok' => '{{GENDER:$2}}Käännettävän sivun siirtämisessä tapahtui virhe siirrettäessä sivua [[:$1]] nimelle [[:$3]]',
-	'pt-log-delete-full-ok' => '{{GENDER:$2|sai valmiiksi}} käännettävän sivun $1 poiston',
-	'pt-log-delete-full-nok' => '{{GENDER:$2|huomasi}} ongelman poistaessaan käännettävää sivua [[:$1]]',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|sai valmiiksi}} käännössivun $1 poiston',
-	'pt-log-delete-lang-nok' => '{{GENDER:$2|huomasi}} ongelman poistaessaan käännössivua [[:$1]]',
+Käännösosion teksti: <pre>$1</pre>',
+	'pt-shake-empty' => 'Käännösosio $1 sisältää vain tunnisteen.',
+	'log-description-pagetranslation' => 'Tämä loki sisältää sivunkäännösominaisuuteen liittyviä tapahtumia.',
+	'log-name-pagetranslation' => 'Sivunkääntöloki',
+	'logentry-pagetranslation-mark' => '$1 {{GENDER:$2|merkitsi}} sivun $3 käännettäväksi',
 	'pt-movepage-title' => 'Käännettävän sivun $1 siirtäminen',
 	'pt-movepage-blockers' => 'Käännettävää sivua ei voi siirtää uudelle nimelle {{PLURAL:$1|seuraavasta syystä|seuraavista syistä}}:',
 	'pt-movepage-block-base-exists' => 'Kohdesivu [[:$1]] on olemassa.', # Fuzzy
@@ -3399,7 +3396,7 @@ Käännösosion teksti: <pre>$1</pre>', # Fuzzy
 	'pt-movepage-block-subpage-invalid' => 'Alasivun [[:$1]] uusi nimi ei ole kelvollinen (liian pitkä?)',
 	'pt-movepage-list-pages' => 'Lista siirrettävistä sivuista',
 	'pt-movepage-list-translation' => '{{PLURAL:$1|Käännössivu|Käännössivut}}',
-	'pt-movepage-list-section' => 'Käännösosiosivut', # Fuzzy
+	'pt-movepage-list-section' => '{{PLURAL:$1|Käännösosiosivut}}',
 	'pt-movepage-list-other' => '{{PLURAL:$1|Muu alasivu|Muut alasivut}}',
 	'pt-movepage-list-count' => 'Yhteensä $1 {{PLURAL:$1|siirrettävä sivu|siirrettävää sivua}}.',
 	'pt-movepage-legend' => 'Siirrä käännettävä sivu',
@@ -3421,19 +3418,19 @@ Tarkista mahdolliset virheet ja valmistumisviestit [[Special:Log/pagetranslation
 	'pt-deletepage-lang-title' => 'Poistetaan käännössivu $1.',
 	'pt-deletepage-full-title' => 'Poistetaan käännettävissä oleva sivu $1.',
 	'pt-deletepage-invalid-title' => 'Määritetty sivu ei kelpaa.',
-	'pt-deletepage-invalid-text' => 'Sivu ei ole käännettävissä oleva sivu tai sellaisen käännös.', # Fuzzy
+	'pt-deletepage-invalid-text' => 'Sivu ei ole käännettävissä oleva sivu tai sellaisen käännös.',
 	'pt-deletepage-action-check' => 'Luetteloi poistettavat sivut',
 	'pt-deletepage-action-perform' => 'Suorita poisto',
 	'pt-deletepage-action-other' => 'Vaihda kohdetta',
 	'pt-deletepage-lang-legend' => 'Poista käännössivu',
 	'pt-deletepage-full-legend' => 'Poista käännettävissä oleva sivu',
-	'pt-deletepage-any-legend' => 'Poista käännettävissä oleva sivu tai käännettävissä olevan sivun käännös', # Fuzzy
+	'pt-deletepage-any-legend' => 'Poista käännettävissä oleva sivu tai sellaisen käännös',
 	'pt-deletepage-current' => 'Sivun nimi',
 	'pt-deletepage-reason' => 'Syy',
 	'pt-deletepage-subpages' => 'Poista kaikki alasivut',
 	'pt-deletepage-list-pages' => 'Poistettavien sivujen luettelo',
 	'pt-deletepage-list-translation' => 'Käännössivut',
-	'pt-deletepage-list-section' => 'Osiosivut', # Fuzzy
+	'pt-deletepage-list-section' => 'Käännösosiosivut',
 	'pt-deletepage-list-other' => 'Muut alasivut',
 	'pt-deletepage-list-count' => 'Yhteensä $1 {{PLURAL:$1|poistettava sivu|poistettavaa sivua}}.',
 	'pt-deletepage-full-logreason' => 'Osa käännettävää sivua $1.',
@@ -3441,7 +3438,7 @@ Tarkista mahdolliset virheet ja valmistumisviestit [[Special:Log/pagetranslation
 	'pt-deletepage-started' => 'Virheet ja valmistusviesti löytyvät [[Special:Log/pagetranslation|sivunkääntölokista]].',
 	'pt-deletepage-intro' => 'Tämän toimintosivun avulla voit poistaa koko käännettävän sivun tai tietynkieliset käännökset.
 Poisto ei tapahdu välittömästi, sillä useita sivuja täytyy poistaa.
-Virheet merkitään [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne täytyy korjata käsin.', # Fuzzy
+Virheet merkitään [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne täytyy korjata käsin.',
 );
 
 /** French (français)

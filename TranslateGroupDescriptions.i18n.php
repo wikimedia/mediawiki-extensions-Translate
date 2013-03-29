@@ -247,12 +247,12 @@ $messages['ast'] = array(
 	'bw-desc-wikiblame' => "[[Translating:WikiBlame|WikiBlame]] ye capaz d'alcontrar rápidamente los autores d'una parte d'una páxina nuna wiki de Wikimedia",
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ufre una versión de Wikipedia ensin conexón, en mou sólo testu, nun preséu móvil',
 	'translate-group-desc-wikimedia-mobile' => 'Grupu de mensaxes agrupaos que contién aplicaciones pa móviles de los proyeutos de Wikimedia',
-	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|WikipediaMobile|Commons Móvil]] ye una aplicación pa Android o iOS pa xubir ficheros y navegar per Wikimedia Commons', # Fuzzy
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Móvil]] ye una aplicación pa Android o iOS pa xubir ficheros y navegar per Wikimedia Commons',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Wikipedia',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Uiquiesbilla',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Wiktionary',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] ye una aplicación pa preseos móviles que val pa collaborar col [[:meta:Wiki Loves Monuments|proyeutu Wiki Loves Monuments]]',
-	'translate-group-desc-waymarked-trails-help' => "Les páxines d'ayuda de los sitios web de Waymarked Trails: http://waymarkedtrails.org/gl/help/about",
+	'translate-group-desc-waymarked-trails-help' => "Les páxines d'ayuda de los sitios web de Waymarked Trails: http://waymarkedtrails.org/help/about",
 	'translate-group-desc-etherpad-lite' => "[[Translating:Etherpad lite|Etherpad lite]] ye un editor collaborativu n'auténticu tiempu real",
 );
 

@@ -255,7 +255,7 @@ Equí pues escoyer qué llingües quies ver, si quies dalguna.',
 	'translate-fs-userpage-level-2' => 'Tengo un dominiu moderáu de',
 	'translate-fs-userpage-level-1' => 'Se un poco de',
 	'translate-fs-userpage-help' => 'Indica les tos capacidaes llingüístiques y cunta daqué tocante a ti. Si sabes más de cinco llingües pues amestales más alantre.',
-	'translate-fs-userpage-submit' => "Crear la mio páxina d'usuariu",
+	'translate-fs-userpage-submit' => "Cree la so páxina d'usuariu",
 	'translate-fs-userpage-done' => "¡Bien fecho! Agora tienes una páxina d'usuariu.",
 	'translate-fs-permissions-planguage' => 'Llingua principal:',
 	'translate-fs-permissions-help' => "Agora tienes de facer una solicitú pa que t'amiesten al grupu de traductores.
@@ -1170,7 +1170,7 @@ Siin saad valida, milliseid keeli soovid näha, kui soovid.',
 	'translate-fs-userpage-level-2' => 'Räägin seda keelt keskmisel tasemel',
 	'translate-fs-userpage-level-1' => 'Räägin natuke seda keelt',
 	'translate-fs-userpage-help' => 'Palun kirjelda oma keelteoskust ja räägi midagi endast. Kui oskad rohkem kui viit keelt, saad ülejäänud hiljem lisada.',
-	'translate-fs-userpage-submit' => 'Loo minu kasutajalehekülg',
+	'translate-fs-userpage-submit' => 'Loo oma kasutajalehekülg',
 	'translate-fs-userpage-done' => 'Hästi tehtud! Nüüd on sul kasutajalehekülg.',
 	'translate-fs-permissions-planguage' => 'Põhikeel:',
 	'translate-fs-permissions-help' => 'Nüüd pead esitama taotluse, et sind lisataks tõlkijate rühma.
@@ -1269,6 +1269,7 @@ $messages['fa'] = array(
  * @author Centerlink
  * @author Crt
  * @author Nike
+ * @author Olli
  * @author ZeiP
  */
 $messages['fi'] = array(
@@ -1299,7 +1300,7 @@ Suoritettuasi kaikki askeleet, voit kääntää kaikkien {{GRAMMAR:inessive|{{SI
 	'translate-fs-userpage-level-2' => 'Keskinkertainen taito',
 	'translate-fs-userpage-level-1' => 'Tiedän vähän',
 	'translate-fs-userpage-help' => 'Kerro kielitaidostasi ja jotain itsestäsi. Jos osaat yli viittä kieltä, voit lisätä lisää myöhemmin.',
-	'translate-fs-userpage-submit' => 'Luo käyttäjäsivuni',
+	'translate-fs-userpage-submit' => 'Luo oma käyttäjäsivu',
 	'translate-fs-userpage-done' => 'Hyvin tehty! Sinulla on nyt käyttäjäsivu.',
 	'translate-fs-permissions-planguage' => 'Ensisijainen kieli',
 	'translate-fs-permissions-help' => 'Nyt sinun pitää esittää pyyntö kääntäjäryhmään lisäämisestä.
