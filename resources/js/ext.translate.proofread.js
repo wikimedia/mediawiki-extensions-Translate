@@ -98,9 +98,9 @@
 		}
 	} );
 
-	function Proofread( element ) {
+	function Proofread( element, options ) {
 		this.$message = $( element );
-		this.$container = $( '.tux-messagelist' );
+		this.options = options;
 		this.message = this.$message.data( 'message' );
 		this.init();
 		this.listen();
@@ -156,9 +156,9 @@
 			translatedBySelf = ( this.message.properties['last-translator-text'] === mw.user.getName() );
 			proofreadBySelf = $.inArray( userId, reviewers ) > -1;
 
-			sourceLanguage = this.$container.data( 'sourcelangcode' );
+			sourceLanguage = this.options.sourcelangcode;
 			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
-			targetLanguage = this.$container.data( 'targetlangcode' );
+			targetLanguage = this.options.targetlangcode;
 			targetLanguageDir = $.uls.data.getDir( targetLanguage );
 
 			$proofreadAction = $( '<div>' )

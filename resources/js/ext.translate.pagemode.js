@@ -1,9 +1,9 @@
 ( function ( $, mw ) {
 	'use strict';
 
-	function PageMode( element ) {
+	function PageMode( element, options ) {
 		this.$message = $( element );
-		this.$messagetable = $( '.tux-messagelist' );
+		this.options = options;
 		this.message = this.$message.data( 'message' );
 		this.init();
 		this.listen();
@@ -38,9 +38,9 @@
 		render: function () {
 			var targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir;
 
-			sourceLanguage = this.$messagetable.data( 'sourcelangcode' );
+			sourceLanguage = this.options.sourcelangcode;
 			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
-			targetLanguage = this.$messagetable.data( 'targetlangcode' );
+			targetLanguage = this.options.targetlangcode;
 			targetLanguageDir = $.uls.data.getDir( targetLanguage );
 
 			this.$message.append(
