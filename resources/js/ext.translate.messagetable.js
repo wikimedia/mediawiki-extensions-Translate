@@ -254,7 +254,10 @@
 				.data( 'message', message );
 
 			this.$container.append( $message );
-			$message.proofread();
+			$message.proofread( {
+				sourcelangcode: this.$container.data( 'sourcelangcode' ),
+				targetlangcode: this.$container.data( 'targetlangcode' )
+			} );
 
 			return $message;
 		},
@@ -267,7 +270,10 @@
 				.data( 'message', message );
 
 			this.$container.append( $message );
-			$message.pagemode();
+			$message.pagemode( {
+				sourcelangcode: this.$container.data( 'sourcelangcode' ),
+				targetlangcode: this.$container.data( 'targetlangcode' )
+			} );
 		},
 
 		/**
