@@ -1,0 +1,51 @@
+== Translate 2013.03 ==
+Released at 2013-03-29.
+
+=== Highlights ===
+==== Translation UX ====
+The new Translation UX is getting out of the beta status and becoming
+release-ready.
+
+The variable $wgTranslateUseTux can be used to control which interface
+will the users see by default. The default value is true. Set it to false
+to make the old green-style translations editor show by default. The user
+can choose the editor version by adding tux=0 or tux=1 to the URL.
+
+The plan is to remove the old editor in the future.
+
+==== Other notes ====
+Several internal fixes were made in File Format Support (FFS) and in core
+Translate features, but no new features were introduced. See below for details.
+
+=== Noteworthy changes ===
+==== Translate UX ====
+* Proofreading view added to Translate UX.
+* Page view added to Translate UX. It is similar to the default "List" view,
+  but it gives every message more space and partially parses the messages rather
+  than show them as plain text.
+* Added a "Discard changes" button.
+* Various visual design adjustments.
+* (bug 45493) Do not consider empty string to mark a translation as "unsaved"
+* (bug 45481) Move focus to search for the project selector
+* (bug 45488) Remove delay in enablement of "save translation" button
+* Allow inserting a translation from the helper language with a click
+* Workflow state selector is now only shown for groups with states
+  and the correct state is shown
+
+==== File Format Support ====
+* (bug 45354) XML for Android export should have escaped ' and "
+* (bug 42635) Some GettextFFS messages were not unfuzzied on import:
+  Handling of external changes only affecting the fuzzy flag are now handled properly on import
+* Add fuzzy support to AndroidXmlFFS
+* Don't create empty files in AndroidXmlFFS
+* Empty msgctxt is now exported correctly in GettextFFS
+* (bug 42612) Have PythonSingleFFS observe the supplied mapping
+  of internal language codes to product language codes
+
+==== Other ====
+* The "Recent Additions" filter displays only relevant messages - without optional,
+  ignored and discouraged.
+* Converted the logging code to the new LogFormatter
+* (bug 44328) Do not display fuzzy translations on translation pages
+* Fix and speed up translatable pages moving
+* (bug 45345) Run mapped code through wfBCP47()
