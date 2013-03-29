@@ -242,8 +242,6 @@ All values have upper and lower limits.',
 	'translate-untranslated' => 'Untranslated',
 	'translate-percentage-complete' => 'Completion',
 	'translate-percentage-fuzzy' => 'Outdated',
-	'translate-nothing-to-do' => 'All possible translations appear to have been made.
-You are encouraged to review messages through [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'All message groups together',
 	'translate-ls-submit' => 'Show statistics',
 	'translate-ls-column-group' => 'Message group',
