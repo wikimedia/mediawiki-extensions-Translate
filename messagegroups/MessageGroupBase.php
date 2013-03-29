@@ -372,4 +372,14 @@ abstract class MessageGroupBase implements MessageGroup {
 
 		return $codes;
 	}
+
+	/**
+	 * List of available message types mapped to the classes
+	 * implementing them. Default implementation (all).
+	 *
+	 * @return array
+	 */
+	public function getTranslationAids() {
+		return TranslationAid::getTypes();
+	}
 }
