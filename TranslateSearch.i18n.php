@@ -486,6 +486,24 @@ $messages['pms'] = array(
 	'tux-sst-nosolr-body' => "La wiki a l'ha pa un sërvissi d'arserca ëd tradussion.",
 );
 
+/** Romanian (română)
+ * @author Minisarm
+ */
+$messages['ro'] = array(
+	'searchtranslations' => 'Căutare traduceri',
+	'tux-sst-edit' => 'Modifică traducerea',
+	'tux-sst-search' => 'Căutare',
+	'tux-sst-search-ph' => 'Căutare traduceri',
+	'tux-sst-count' => '{{PLURAL:$1|Un rezultat găsit|$1 rezultate găsite|$1 de rezultate găsite}}',
+	'tux-sst-facet-language' => 'Limbi',
+	'tux-sst-facet-group' => 'Grupuri de mesaje',
+	'tux-sst-facet-orphan' => '(orfan)',
+	'tux-sst-nosolr-title' => 'Căutarea nu este disponibilă',
+	'tux-sst-nosolr-body' => 'Acest wiki nu dispune de un serviciu de căutare a traducerilor.',
+	'tux-sst-solr-offline-title' => 'Căutarea nu este disponibilă',
+	'tux-sst-solr-offline-body' => 'Serviciul de căutare este temporar indisponibil.',
+);
+
 /** tarandíne (tarandíne)
  * @author Joetaras
  */
@@ -600,4 +618,6 @@ $messages['zh-hans'] = array(
 	'tux-sst-facet-orphan' => '（孤立）',
 	'tux-sst-nosolr-title' => '搜索不可用',
 	'tux-sst-nosolr-body' => '此wiki没有翻译搜索服务。',
+	'tux-sst-solr-offline-title' => '搜索不可用',
+	'tux-sst-solr-offline-body' => '搜索服务暂时不可用。',
 );
