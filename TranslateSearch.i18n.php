@@ -371,6 +371,8 @@ $messages['ksh'] = array(
 	'tux-sst-facet-orphan' => '(kein Jropp)',
 	'tux-sst-nosolr-title' => 'Söhke es nit müjjelesch.',
 	'tux-sst-nosolr-body' => 'En heh däm Wiki kammer nit noh Översäzonge söhke.',
+	'tux-sst-solr-offline-title' => 'Söhke es nit müjjelesch.',
+	'tux-sst-solr-offline-body' => 'Et Söhke es em Momang nit müjjelesch.',
 );
 
 /** Kurdish (Latin script) (Kurdî (latînî)‎)
@@ -468,6 +470,16 @@ $messages['oc'] = array(
 	'tux-sst-facet-group' => 'Gropes de messatge',
 	'tux-sst-facet-orphan' => '(orfanèl)',
 	'tux-sst-nosolr-title' => 'Recèrca indisponibla',
+);
+
+/** Polish (polski)
+ * @author Chrumps
+ */
+$messages['pl'] = array(
+	'tux-sst-facet-language' => 'Języki',
+	'tux-sst-nosolr-title' => 'Wyszukiwanie nie jest dostępne',
+	'tux-sst-solr-offline-title' => 'Wyszukiwanie nie jest dostępne',
+	'tux-sst-solr-offline-body' => 'Wyszukiwanie jest chwilowo niedostępne',
 );
 
 /** Piedmontese (Piemontèis)

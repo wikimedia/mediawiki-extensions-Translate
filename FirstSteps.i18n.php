@@ -3456,7 +3456,7 @@ Tukaj lahko izberete jezike, ki bi jih radi videli, če to želite.',
 	'translate-fs-userpage-level-2' => 'Srednje dobro govorim',
 	'translate-fs-userpage-level-1' => 'Poznam osnove',
 	'translate-fs-userpage-help' => 'Prosimo, navedite svoje znanje jezikov in nam povejte nekaj o sebi. Če znate več kot pet jezikov, jih lahko dodate pozneje.',
-	'translate-fs-userpage-submit' => 'Ustvari mojo uporabniško stran',
+	'translate-fs-userpage-submit' => 'Ustvarite svojo uporabniško stran',
 	'translate-fs-userpage-done' => 'Dobro opravljeno! Sedaj imate uporabniško stran.',
 	'translate-fs-permissions-planguage' => 'Prvotni jezik:',
 	'translate-fs-permissions-help' => 'Sedaj morate vložiti prošnjo za priključitev k skupini prevajalcev.

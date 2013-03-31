@@ -1632,7 +1632,7 @@ $messages['ksh'] = array(
 	'translate-group-desc-flaggedrevs' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Zohsatzprojramm-Pöngel <code lang="en">[http://www.mediawiki.org/wiki/Extension:FlaggedRevs Flagged Revsisions]</code>',
 	'translate-group-desc-readerfeedback' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Pöngel vun Zohsatzprojramme mem Naame [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'En Sammeljropp för all de Täxte un Nohreeschte vum [http://semantic-mediawiki.org/ Semantic MediaWiki] un sing Zohsazprojramme',
-	'translate-group-desc-translate' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Pöngel Zohsatzprojramme mem Name <code lang="en">[http://www.mediawiki.org/wiki/Extension:Translate Translate]</code>', # Fuzzy
+	'translate-group-desc-translate' => 'Hee di Sammeljropp hät de janze Täxte un Nohreschte vun alle Aandeile vum MediaWiki singem Pöngel Zohsatzprojramme mem Name <code lang="en">[http://www.mediawiki.org/wiki/Extension:Translate Translate]</code>. Sidd esu jood un doht Üsch aan [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary heh di Leß meet Wööter un Bejreffe] hallde.',
 	'translate-group-desc-wikiaextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di bei [http://www.wikia.com Wikia] jebruch wäde',
 	'translate-group-desc-wikimediaextensions' => 'Hee di Sammeljropp hät de Täxte un Nohreschte vun alle Zohsatzprojramme vum MediaWiki, di mer hee ongershtöze donn, un di en en Wikis vun de  <i lang="en">[http://wikimedia.org/ Wikimedia Foundation]</i> jebruch wäde',
 	'translate-group-desc-wikimediaextensions-main' => 'En heh dä Sammeljropp sin all de Täxte un Nohreeschte us dä Zohsazprojramme vum MediaWiki, di et [http://meta.wikimedia.org/wiki/Language_committee Kumitte för de Shprooche] vun de Wikimedia Shteftong övversaz han well.',
@@ -1676,6 +1676,7 @@ Jangk op di Sigge „<i lang="en">[[mw:Extension:PDF_Writer]]</i>“ un „<i la
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] es e Projramm för ongerscheidlijje Bedriefsyßteeme för et WikkiWööterbooch op draachbaare Jerääte un Tablät-PCs ze lässe un ze schrieve.',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] is a mobile application for contributing to the [[:meta:Wiki Loves Monuments|Wiki Loves Monuments project]]',
 	'translate-group-desc-waymarked-trails-help' => 'De Hölpsigge uß de „Waymarked Trails“-Websigge: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '<i lang="en">[[Translating:Etherpad lite|Etherpad lite]]</i> es e Projramm, woh en Aanzahl Minsche werklesch zosamme un em sällve Momang aan enem Täx schriive künne.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
