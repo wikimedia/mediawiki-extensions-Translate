@@ -390,8 +390,9 @@
 				}
 
 				$saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
-				// When there is content in the editor
-				if ( $.trim( $textArea.val() ) ) {
+				// When there is content in the editor enable the button.
+				// But do not enable when some saving is not finished yet.
+				if ( $.trim( $textArea.val() ) && !translateEditor.saving ) {
 					$pasteSourceButton.addClass( 'hide' );
 					$saveButton.prop( 'disabled', false );
 				} else {
