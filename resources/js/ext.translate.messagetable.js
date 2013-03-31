@@ -433,6 +433,8 @@
 					$( '.tux-messagetable-loader-more' ).text(
 						mw.msg( 'tux-messagetable-loading-messages', Math.min( remaining, pageSize ) )
 					);
+					// Make sure the floating toolbars are visible without the need for scroll
+					$( window ).trigger( 'scroll' );
 				} )
 				.fail( function ( errorCode, response ) {
 					if ( response.error.code === 'mctranslate-language-disabled' ) {
