@@ -6,7 +6,7 @@
 		this.$editor = null;
 		this.options = options;
 		this.message = this.options.message;
-		this.$messageItem = this.$editTrigger.find( '.tux-message-item' );
+		this.$messageItem = this.$editTrigger.find( '.message' );
 		this.shown = false;
 		this.dirty = false;
 		this.saving = false;
