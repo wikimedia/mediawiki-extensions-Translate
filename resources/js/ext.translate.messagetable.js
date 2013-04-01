@@ -136,8 +136,10 @@
 				$message = this.addProofread( message );
 
 				if ( !this.firstProofreadTipShown ) {
-					$message.find( '.tux-proofread-action' ).tipsy( 'show' );
-					this.firstProofreadTipShown = true;
+					if ( $message.find( '.tux-proofread-action' ).length ) {
+						$message.find( '.tux-proofread-action' ).tipsy( 'show' );
+						this.firstProofreadTipShown = true;
+					}
 				}
 
 				return;

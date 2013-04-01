@@ -117,16 +117,16 @@
 			this.render();
 			// No review before translating.
 			if ( !this.message.translation ) {
-				this.hide();
+				this.disableProofread();
 			}
 
 			// No review for fuzzy messages.
 			if ( this.message.properties.status === 'fuzzy' ) {
-				this.hide();
+				this.disableProofread();
 			}
 
 			if ( !mw.translate.canProofread() ) {
-				this.hide();
+				this.disableProofread();
 			}
 
 			proofread.$message.translateeditor( {
@@ -137,7 +137,7 @@
 					proofread.message.translation = translation;
 					proofread.$message.addClass( 'own-translation' );
 					// Own translations cannot be reviewed, so hide the review button
-					proofread.hide();
+					proofread.disableProofread();
 				}
 			} );
 
@@ -224,8 +224,8 @@
 
 			if ( translatedBySelf ) {
 				this.$message.addClass( 'own-translation' );
-				// Own translations cannot be reviewed, so hide the review button
-				this.hide();
+				// Own translations cannot be reviewed, so disable proofread
+				this.disableProofread();
 			}
 
 			/* Here we need to check that there are reviewers in the first place
@@ -235,9 +235,9 @@
 			}
 		},
 
-		hide: function () {
+		disableProofread: function () {
 			this.$message.find( '.tux-proofread-action' )
-				.addClass( 'hide' );
+				.remove();
 		},
 
 		/**
