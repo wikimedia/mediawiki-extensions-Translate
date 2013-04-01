@@ -52,7 +52,6 @@ class SpecialSearchTranslations extends SpecialPage {
 		}
 
 		$out = $this->getOutput();
-		$out->addModules( 'ext.translate.grid' );
 		$out->addModules( 'ext.translate.special.searchtranslations' );
 
 		$this->opts = $opts = new FormOptions();
