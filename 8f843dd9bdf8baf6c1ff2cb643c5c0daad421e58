@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DrNG4Q3Y",
+        "filename": "api/ApiQueryTranslationAids.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-02T07:30:56Z",
+      "side": 1,
+      "message": "Please follow coding conventions: space and braces",
+      "revId": "8f843dd9bdf8baf6c1ff2cb643c5c0daad421e58",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DrLGwJ4s",
+        "filename": "hooks.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-02T07:30:56Z",
+      "side": 1,
+      "message": "Hooks was re-purposed but description was not updated.",
+      "revId": "8f843dd9bdf8baf6c1ff2cb643c5c0daad421e58",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DrJGzq5c",
+        "filename": "hooks.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-02T07:30:56Z",
+      "side": 1,
+      "message": "typo",
+      "revId": "8f843dd9bdf8baf6c1ff2cb643c5c0daad421e58",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DrPG9P2M",
+        "filename": "hooks.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-02T07:30:56Z",
+      "side": 1,
+      "message": "use spaces",
+      "revId": "8f843dd9bdf8baf6c1ff2cb643c5c0daad421e58",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DrFGtEzA",
+        "filename": "translationaids/UnsupportedTranslationAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-02T07:30:56Z",
+      "side": 1,
+      "message": "I didn\u0027t write this file.",
+      "revId": "8f843dd9bdf8baf6c1ff2cb643c5c0daad421e58",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
