@@ -62,6 +62,10 @@
 				api = new mw.Api(),
 				$description = $( '.tux-editor-header .description' );
 
+			if ( !checkDirty() ) {
+				return;
+			}
+
 			changes = {
 				group: group.id
 			};
@@ -88,6 +92,10 @@
 				language: language
 			};
 
+			if ( !checkDirty() ) {
+				return;
+			}
+
 			$( '.ext-translate-language-selector > .uls' ).text( $.uls.data.getAutonym( language ) );
 			$( '.tux-messagelist' ).data( 'targetlangcode', language );
 
@@ -99,6 +107,10 @@
 
 		changeFilter: function ( filter ) {
 			var realFilters, uri;
+
+			if ( !checkDirty() ) {
+				return;
+			}
 
 			realFilters = [ '!ignored' ];
 			uri = new mw.Uri( window.location.href );
@@ -133,6 +145,12 @@
 		}
 	} );
 
+	function checkDirty() {
+		if ( mw.translate.isDirty() ) {
+			return window.confirm( mw.msg( 'translate-js-support-unsaved-warning' ) );
+		}
+		return true;
+	}
 	// Returns an array of jQuery objects of rows of translated
 	// and proofread messages in the TUX editors.
 	// Used several times.
