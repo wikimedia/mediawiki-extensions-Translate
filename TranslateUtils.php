@@ -395,8 +395,11 @@ class TranslateUtils {
 	}
 
 	/**
-	 * For the give message group get the icons in vector and raster formats
-	 * @return array
+	 * Get URLs for icons if available.
+	 * @param MessageGroup $g
+	 * @param int $size Length of the edge of a bounding box to fit the icon.
+	 * @return null|array
+	 * @since 2013-04-01
 	 */
 	public static function getIcon( MessageGroup $g, $size ) {
 		global $wgServer;
@@ -410,6 +413,7 @@ class TranslateUtils {
 		$filename = substr( $icon, 7 );
 		$file = wfFindFile( $filename );
 		if ( !$file ) {
+			wfWarn( "Unknown message group icon file $icon" );
 			return null;
 		}
 
