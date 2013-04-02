@@ -3,7 +3,7 @@
 	min-height: 50px;
 	margin: 0 auto;
 	vertical-align: middle;
-	background: #FFFFFF;
+	background: #F8F8F8;
 }
 
 .ext-translate-container .tux-messagelist .tux-message-pagemode .tux-message-item-compact {
@@ -24,12 +24,14 @@
 	background: #FCFCFC;
 }
 
-.ext-translate-container .tux-messagelist .tux-message-pagemode:first-child {
+.ext-translate-container .tux-messagelist .tux-message-pagemode:first-child .tux-message-item-compact {
+	margin-top: 10px;
 	padding-top: 60px;
 	border-top: 1px solid #DDDDDD;
 }
 
-.ext-translate-container .tux-messagelist .tux-message-pagemode:last-child {
+.ext-translate-container .tux-messagelist .tux-message-pagemode:last-child .tux-message-item-compact {
+	margin-bottom: 10px;
 	padding-bottom: 60px;
 	border-bottom: 1px solid #DDDDDD;
 }
