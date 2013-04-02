@@ -14,7 +14,6 @@
  * @todo Needs documentation.
  */
 abstract class ComplexMessages {
-
 	const LANG_MASTER = 0;
 	const LANG_CHAIN = 1;
 	const LANG_CURRENT = 2;
@@ -343,15 +342,27 @@ abstract class ComplexMessages {
 		return $this->databaseMsg . '/' . $this->language;
 	}
 
-	function formatForSave( $request ) {
+	/**
+	 * @param WebRequest $request
+	 * @return string
+	 */
+	function formatForSave( WebRequest $request ) {
 		$text = '';
+
+		// Do not replace spaces by underscores for magic words. See bug 46613
+		$replaceSpace = $request->getVal( 'module') !== 'magic';
+
 		foreach ( array_keys( $this->data ) as $group ) {
 			foreach ( $this->getIterator( $group ) as $key ) {
 				$data = $request->getText( $this->getKeyForEdit( $key ) );
 				// Make a nice array out of the submit with trimmed values.
 				$data = array_map( 'trim', explode( ',', $data ) );
-				// Normalise: Replace spaces with underscores.
-				$data = str_replace( ' ', '_', $data );
+
+				if ( $replaceSpace ) {
+					// Normalise: Replace spaces with underscores.
+					$data = str_replace( ' ', '_', $data );
+				}
+
 				// Create final format.
 				$data = implode( ', ', $data );
 				if ( $data !== '' ) {
