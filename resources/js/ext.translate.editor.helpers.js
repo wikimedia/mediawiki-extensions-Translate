@@ -110,7 +110,11 @@
 
 			// Display the documentation only if it's not empty and
 			// documentation language is configured
-			if ( documentation.value ) {
+			if ( documentation.error ) {
+				// TODO: better error handling, especially since the presence of documentation
+				// is heavily hinted at in the UI
+				return;
+			} else if ( documentation.value ) {
 				documentationDir = $.uls.data.getDir( documentation.language );
 
 				// Show the documentation and set appropriate
@@ -439,6 +443,8 @@
 				translateEditor.showMachineTranslations( result.helpers.mt );
 				translateEditor.showSupportOptions( result.helpers.support );
 				translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
+				mw.translateHooks.run( 'showTranslationHelpers', result.helpers, translateEditor.$editor );
+
 			} ).fail( function ( errorCode, results ) {
 				mw.log( 'Error loading translation aids ' + errorCode + results.error.info );
 			} );

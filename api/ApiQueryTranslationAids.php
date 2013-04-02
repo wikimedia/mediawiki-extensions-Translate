@@ -42,9 +42,14 @@ class ApiTranslationAids extends ApiBase {
 
 		$props = $params['prop'];
 
-		$types = TranslationAid::getTypes();
+		$types = $group->getTranslationAids();
 		$result = $this->getResult();
 		foreach ( $props as $type ) {
+			// Do not proceed if translation aid is not supported for this message group
+			if ( !isset( $types[$type] ) ) {
+				continue;
+			}
+
 			$start = microtime( true );
 			$class = $types[$type];
 			$obj = new $class( $group, $handle, $this );
@@ -70,6 +75,7 @@ class ApiTranslationAids extends ApiBase {
 
 	public function getAllowedParams() {
 		$props = array_keys( TranslationAid::getTypes() );
+		wfRunHooks( 'TranslateTranslationAids', array( &$props ) );
 
 		return array(
 			'title' => array(

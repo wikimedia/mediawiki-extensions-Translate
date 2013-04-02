@@ -161,4 +161,12 @@ interface MessageGroup {
 	 * @return array|null The language codes as array keys.
 	 */
 	public function getTranslatableLanguages();
+
+	/**
+	 * List of available message types mapped to the classes
+	 * implementing them.
+	 *
+	 * @return array
+	 */
+	public function getTranslationAids();
 }
