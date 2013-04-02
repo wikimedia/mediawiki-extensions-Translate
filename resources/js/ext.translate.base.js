@@ -105,6 +105,14 @@
 				regions: ['SP'],
 				autonym: mw.msg( 'translate-documentation-language' )
 			} );
+		},
+
+		isDirty: function () {
+			return  $( '.mw-ajax-dialog:visible' ).length // For old Translate
+				// For new Translate, something being typed in the current editor.
+				|| mw.translate.dirty
+				// For new translate, previous editors has some unsaved edits
+				|| $( '.tux-status-unsaved' ).length;
 		}
 	} );
 
@@ -119,17 +127,13 @@
 
 	function pageShowHandler() {
 		$( window ).on( 'beforeunload.translate', function () {
-			if ( $( '.mw-ajax-dialog:visible' ).length // For old Translate
-				// For new Translate, something being typed in the current editor.
-				|| mw.translate.dirty
-				// For new translate, previous editors has some unsaved edits
-				|| $( '.tux-status-unsaved' ).length
-			) {
+			if ( mw.translate.isDirty() ) {
 				// Return our message
 				return mw.msg( 'translate-js-support-unsaved-warning' );
 			}
 		} );
 	}
+
 
 	$( document ).ready( function () {
 		translateOnBeforeUnloadRegister();
