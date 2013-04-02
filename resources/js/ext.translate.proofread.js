@@ -135,9 +135,7 @@
 					proofread.$message.find( '.tux-proofread-translation' )
 						.text( translation );
 					proofread.message.translation = translation;
-					proofread.$message.addClass( 'own-translation' );
-					// Own translations cannot be reviewed, so hide the review button
-					proofread.disableProofread();
+					proofread.markSelfTranslation();
 				}
 			} );
 
@@ -207,12 +205,6 @@
 						$( '<div>' )
 							.addClass( 'tux-proofread-action-block one column' )
 							.append(
-								translatedBySelf ?
-									$( '<div>' )
-										.addClass( 'translated-by-self' )
-										.attr( 'title', mw.msg( 'tux-proofread-translated-by-self' ) )
-										.tipsy( { gravity: 'e' } ):
-									$( [] ),
 								$proofreadAction,
 								otherReviewers.length ?
 									$( '<div>' )
@@ -227,9 +219,7 @@
 			.addClass( this.message.properties.status );
 
 			if ( translatedBySelf ) {
-				this.$message.addClass( 'own-translation' );
-				// Own translations cannot be reviewed, so disable proofread
-				this.disableProofread();
+				this.markSelfTranslation();
 			}
 
 			/* Here we need to check that there are reviewers in the first place
@@ -244,6 +234,22 @@
 				.remove();
 		},
 
+		/**
+		 * Mark the message self translated.
+		 */
+		markSelfTranslation: function () {
+			// Own translations cannot be reviewed, so disable proofread
+			this.disableProofread();
+			if ( !this.$message.hasClass( 'own-translation' ) ) {
+				this.$message.addClass( 'own-translation' )
+					.find( '.tux-proofread-action-block' )
+					.append( $( '<div>' )
+						.addClass( 'translated-by-self' )
+						.attr( 'title', mw.msg( 'tux-proofread-translated-by-self' ) )
+						.tipsy( { gravity: 'e' } )
+					);
+			}
+		},
 		/**
 		 * Mark this message as proofread.
 		 */
