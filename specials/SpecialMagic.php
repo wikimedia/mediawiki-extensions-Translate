@@ -16,7 +16,6 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialMagic extends SpecialPage {
-
 	const MODULE_MAGIC = 'words';
 	const MODULE_SPECIAL = 'special';
 	const MODULE_NAMESPACE = 'namespace';
@@ -84,8 +83,8 @@ class SpecialMagic extends SpecialPage {
 	/**
 	 * Helper function get module selector.
 	 *
-	 * @param $selectedId \string Which value should be selected by default
-	 * @return \string HTML5-compatible select-element.
+	 * @param string $selectedId Which value should be selected by default
+	 * @return string HTML5-compatible select-element.
 	 */
 	protected function moduleSelector( $selectedId ) {
 		// Give grep a chance to find the usages:
