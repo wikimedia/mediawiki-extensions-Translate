@@ -228,6 +228,43 @@
 			}
 		},
 
+		createMessageTools: function () {
+			var wgScript = mw.config.get( 'wgScript' ),
+				historyUri = new mw.Uri(),
+				translationsUri = new mw.Uri();
+
+			historyUri.path = wgScript;
+			historyUri.query = {
+				title: this.message.title,
+				action: 'history'
+			};
+
+			translationsUri.path = wgScript;
+			translationsUri.query = {
+				title: 'Special:Translations',
+				message: this.message.title.replace( /\/[a-z\-]+$/, '' )
+			};
+
+			return $( '<ul>' )
+				.addClass( 'hide tux-message-tools-menu' )
+				.append(
+					$( '<li>' ).append( $( '<a>' )
+						.attr( {
+							href: historyUri.toString(),
+							target: '_blank'
+						} )
+						.text( mw.msg( 'tux-editor-message-tools-history' ) )
+					),
+					$( '<li>' ).append( $( '<a>' )
+						.attr( {
+							href: translationsUri.toString(),
+							target: '_blank'
+						} )
+						.text( mw.msg( 'tux-editor-message-tools-translations' ) )
+					)
+				);
+		},
+
 		prepareEditorColumn: function () {
 			var translateEditor = this,
 				sourceString,
@@ -251,6 +288,7 @@
 				$layoutActions,
 				$infoToggleIcon,
 				$messageList,
+				$messageTools = translateEditor.createMessageTools(),
 				canTranslate = mw.translate.canTranslate();
 
 			$editorColumn = $( '<div>' )
@@ -259,7 +297,18 @@
 			$messageKeyLabel = $( '<div>' )
 				.addClass( 'ten columns messagekey' )
 				.text( this.message.title )
-				.append( $( '<span>' ).addClass( 'caret' ) );
+				.append(
+					$( '<span>' ).addClass( 'caret' ),
+					$messageTools
+				)
+				.on( 'click', function () {
+					if ( $messageTools.hasClass( 'hide' ) ) {
+						$messageTools.removeClass( 'hide' );
+					} else {
+						$messageTools.addClass( 'hide' );
+					}
+				} );
+
 
 			$closeIcon = $( '<span>' )
 				.addClass( 'one column close' )
