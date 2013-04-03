@@ -534,18 +534,18 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function tuxLanguageSelector() {
-		return
-			Html::rawElement( 'div',
-				array( 'class' => 'four columns ext-translate-language-selector' ),
-				Html::element( 'span',
-					array( 'class' => 'ext-translate-language-selector-label' ),
-					$this->msg( 'tux-languageselector' )->text()
-				) .
-					Html::element( 'span',
-						array( 'class' => 'uls' ),
-						Language::fetchLanguageName( $this->options['language'] )
-					)
-			);
+		return Html::rawElement( 'div',
+			array( 'class' => 'four columns ext-translate-language-selector' ),
+			Html::element( 'span',
+				array( 'class' => 'ext-translate-language-selector-label' ),
+				$this->msg( 'tux-languageselector' )->text()
+			) .
+			'&nbsp;' .
+			Html::element( 'span',
+				array( 'class' => 'uls' ),
+				Language::fetchLanguageName( $this->options['language'] )
+			)
+		);
 	}
 
 	protected function tuxGroupDescription() {
