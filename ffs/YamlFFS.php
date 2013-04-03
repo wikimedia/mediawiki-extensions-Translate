@@ -90,7 +90,7 @@ class YamlFFS extends SimpleFFS {
 
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
-		$native = TranslateUtils::getLanguageName( $code, true );
+		$native = TranslateUtils::getLanguageName( $code, $code );
 		$output = "# Messages for $name ($native)\n";
 		$output .= "# Exported from $wgSitename\n";
 

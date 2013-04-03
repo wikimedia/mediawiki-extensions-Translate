@@ -44,7 +44,7 @@ class TranslateLogFormatter extends LogFormatter {
 			);
 
 			$params[2] = Message::rawParam( $targetPage );
-			$params[3] = TranslateUtils::getLanguageName( $language, false, $uiLanguage->getCode() );
+			$params[3] = TranslateUtils::getLanguageName( $language, $uiLanguage->getCode() );
 			$params[5] = $this->formatStateMessage( $params[5] );
 			$params[6] = $this->formatStateMessage( $params[6] );
 

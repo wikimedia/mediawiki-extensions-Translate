@@ -219,7 +219,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				$nondefaults['language'] = $key;
 			}
 
-			$text = TranslateUtils::getLanguageName( $key, false, $this->getLanguage()->getCode() );
+			$text = TranslateUtils::getLanguageName( $key, $this->getLanguage()->getCode() );
 			$url = $this->getTitle()->getLocalUrl( $nondefaults );
 			$link = Html::element( 'a', array( 'href' => $url ), $text );
 			$name = Html::rawElement( 'span', array( 'class' => 'facet-name' ), $link );

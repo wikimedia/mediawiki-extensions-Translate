@@ -203,7 +203,7 @@ class TranslateEditAddons {
 
 		if ( $handle->isDoc() ) {
 			$langCode = $context->getLanguage()->getCode();
-			$name = TranslateUtils::getLanguageName( $handle->getCode(), false, $langCode );
+			$name = TranslateUtils::getLanguageName( $handle->getCode(), $langCode );
 			$accessKey = $context->msg( 'accesskey-save' )->plain();
 			$temp = array(
 				'id' => 'wpSave',

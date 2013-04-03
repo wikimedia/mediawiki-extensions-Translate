@@ -150,7 +150,7 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 
 		// And putting all together
 		$name = TranslateUtils::getLanguageName( $code );
-		$native = TranslateUtils::getLanguageName( $code, true );
+		$native = TranslateUtils::getLanguageName( $code, $code );
 
 		$section = <<<PHP
 /** $name ($native)$authorList

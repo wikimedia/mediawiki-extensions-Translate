@@ -84,7 +84,7 @@ class FlatPhpFFS extends SimpleFFS {
 
 		$code = $collection->code;
 		$name = TranslateUtils::getLanguageName( $code );
-		$native = TranslateUtils::getLanguageName( $code, true );
+		$native = TranslateUtils::getLanguageName( $code, $code );
 
 		if ( $wgTranslateDocumentationLanguageCode ) {
 			$docu = "\n * See the $wgTranslateDocumentationLanguageCode 'language' for message documentation incl. usage of parameters";
