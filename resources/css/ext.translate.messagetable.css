@@ -203,13 +203,14 @@
 }
 
 .tux-action-bar .toggle.button {
-	height: 35px;
-	font-size: 15px;
+	height: 40px;
+	font-size: 14px;
 	vertical-align: middle;
 	border-radius: 0;
 	text-shadow: none;
 	margin: 0;
 	text-indent: 0;
+	padding: 0 6px;
 }
 
 .tux-action-bar .tux-view-switcher {
@@ -217,7 +218,7 @@
 }
 
 .tux-action-bar .tux-view-switcher .toggle.button {
-	width: 33%;
+	padding: 0 2px 0 0;
 }
 
 .tux-action-bar .tux-view-switcher .toggle.button:first-child {
@@ -238,6 +239,10 @@
 	vertical-align: bottom;
 }
 
+.tux-action-bar .translate-mode-button {
+	width: 30%;
+}
+
 .tux-action-bar .translate-mode-button:before {
 	background: transparent url(../images/view-list.png) center center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-list.svg);
@@ -252,6 +257,10 @@
 	background-image: linear-gradient(transparent, transparent), url(../images/view-list-hi.svg);
 }
 
+.tux-action-bar .page-mode-button {
+	width: 30%;
+}
+
 .tux-action-bar .page-mode-button:before {
 	background: transparent url(../images/view-page.png) center center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-page.svg);
@@ -264,6 +273,11 @@
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-page-hi.svg);
 	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-page-hi.svg);
 	background-image: linear-gradient(transparent, transparent), url(../images/view-page-hi.svg);
+}
+
+
+.tux-action-bar .tux-proofread-button {
+	width: 36%;
 }
 
 .tux-action-bar .tux-proofread-button:before {
