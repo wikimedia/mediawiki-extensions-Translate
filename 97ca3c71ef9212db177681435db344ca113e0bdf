@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "DrNjmH7M",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-03T15:04:46Z",
+      "side": 1,
+      "message": "I think it was suggested: History",
+      "revId": "97ca3c71ef9212db177681435db344ca113e0bdf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DrBj8lwg",
         "filename": "Translate.i18n.php",
         "patchSetId": 1
@@ -13,6 +30,57 @@
       "writtenOn": "2013-04-03T12:48:50Z",
       "side": 1,
       "message": "Could we shorten this to \"All translations\" or \"In all languages\"?",
+      "revId": "97ca3c71ef9212db177681435db344ca113e0bdf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DrBi-t18",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-03T15:04:46Z",
+      "side": 1,
+      "message": "cursor: pointer for the title too, or it feels inconsistent.",
+      "revId": "97ca3c71ef9212db177681435db344ca113e0bdf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DrFitLzA",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-03T15:04:46Z",
+      "side": 1,
+      "message": "there is now target \"new\", did you mean _blank?",
+      "revId": "97ca3c71ef9212db177681435db344ca113e0bdf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DrHiqaxs",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-03T15:04:46Z",
+      "side": 1,
+      "message": "Is this the same as toggleClass?",
       "revId": "97ca3c71ef9212db177681435db344ca113e0bdf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
