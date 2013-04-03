@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DrBj8lwg",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-04-03T12:48:50Z",
+      "side": 1,
+      "message": "Could we shorten this to \"All translations\" or \"In all languages\"?",
+      "revId": "97ca3c71ef9212db177681435db344ca113e0bdf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
