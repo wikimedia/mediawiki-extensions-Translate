@@ -341,7 +341,7 @@ $messages['azb'] = array(
 	'translate-fs-userpage-level-2' => 'من بو دیل‌ده اورتا بیلگیم وار',
 	'translate-fs-userpage-level-1' => 'من بو دیلی بیر آز باشاریرام',
 	'translate-fs-userpage-help' => 'لوطفاً اؤز دیل مهارت‌لرینیزی بیلدیرین و بیزه اؤزونوزه گؤره بیر آز دئیین. اگر بئش دیل‌دن چوخ بیلیرسینیز، سونرا چوخ آرتیرا بیلرسینیز.',
-	'translate-fs-userpage-submit' => 'منیم ایستیفاده‌چی صحیفه‌می یارات',
+	'translate-fs-userpage-submit' => 'ایستیفاده‌چی صحیفه‌نیزی یارادین',
 	'translate-fs-userpage-done' => 'لاپ یاخشی! ایندی سیزین ایستیفاده‌چی صحیفه‌نیز واردیر.',
 	'translate-fs-permissions-planguage' => 'اصلی دیل:',
 	'translate-fs-permissions-help' => 'سیز ترجومه‌چی گروپونو آرتیریلماق اوچون، گرک بیر ایستک یول‌لایاسینیز.
@@ -3978,7 +3978,12 @@ $messages['yi'] = array(
 	'translate-fs-permissions-title' => 'בעטן איבערזעצער אויטאריזאַציע',
 	'translate-fs-target-title' => 'אָנהייבן איבערזעצן!',
 	'translate-fs-email-title' => 'באַשטעטיקט אײַער בליצפּאָסט אַדרעס',
-	'translate-fs-userpage-submit' => 'שאַפֿן מיין באַניצער בלאַט',
+	'translate-fs-settings-planguage' => 'הויפטשפראך:',
+	'translate-fs-userpage-level-1' => 'איך קען א ביסל',
+	'translate-fs-userpage-submit' => 'שאַפֿן אײַער באַניצער בלאַט',
+	'translate-fs-userpage-done' => 'גוט געפועלט! איר האט אצינד א באניצער בלאט.',
+	'translate-fs-permissions-planguage' => 'הויפטשפראך:',
+	'translate-fs-permissions-submit' => 'שיקן בקשה',
 );
 
 /** Simplified Chinese (中文（简体）‎)

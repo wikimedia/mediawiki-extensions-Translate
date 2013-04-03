@@ -407,6 +407,20 @@ $messages['lb'] = array(
 	'tux-sst-solr-offline-body' => "D'Sichfonctioun ass temporär net disponibel.",
 );
 
+/** Latvian (latviešu)
+ * @author Papuass
+ */
+$messages['lv'] = array(
+	'searchtranslations' => 'Meklēt tulkojumus',
+	'tux-sst-edit' => 'Labot tulkojumu',
+	'tux-sst-search' => 'Meklēt',
+	'tux-sst-search-ph' => 'Meklēt tulkojumus',
+	'tux-sst-count' => '{{PLURAL:$1|Viens rezultāts atrasts|$1 rezultāti atrasti}}',
+	'tux-sst-facet-language' => 'Valodas',
+	'tux-sst-nosolr-title' => 'Meklēšana nav pieejama',
+	'tux-sst-solr-offline-title' => 'Meklēšana nav pieejama',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
