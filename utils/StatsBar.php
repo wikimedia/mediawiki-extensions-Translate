@@ -45,7 +45,7 @@ class StatsBar {
 		$translated = $this->stats[MessageGroupStats::TRANSLATED];
 		$fuzzy = $this->stats[MessageGroupStats::FUZZY];
 
-		if ( $total === null ) {
+		if ( !$total ) {
 			$untranslated = null;
 			$wproofread = $wtranslated = $wfuzzy = $wuntranslated = 0;
 		} else {
