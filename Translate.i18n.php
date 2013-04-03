@@ -390,6 +390,10 @@ Details: $1',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|accepted}} translation $3',
 	'logentry-translationreview-group' => '$1 {{GENDER:$2|changed}} the state of $4 translations of $3 from $6 to $7',
 
+	// The limit was increased at some point, but possible BC issue
+	'group-translate-sandboxed' => 'Unapproved translators',
+	'group-translate-sandboxed-member' => '{{GENDER:$1|unapproved translator}}',
+
 	// The actual states, when set, come after the hyphen.
 	// The dangling hyphen hints that it's unset.
 	'translate-workflow-state-' => '(unset)',
