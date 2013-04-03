@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DrBgG19E",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-03T13:43:57Z",
+      "side": 1,
+      "message": "Optionally also add typehint here",
+      "revId": "51e8b6fbf5eafa7ee8e7beeabddab8686ca99140",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DrFhr74Y",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-03T13:43:57Z",
+      "side": 1,
+      "message": "if ( please",
+      "revId": "51e8b6fbf5eafa7ee8e7beeabddab8686ca99140",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
