@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DrZVcBH0",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-04-03T23:22:57Z",
+      "side": 1,
+      "message": "We mostly use \u0026#160; in code.",
+      "revId": "26457221e88c8b14e8a0a625394dcb48b033250a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
