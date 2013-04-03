@@ -357,3 +357,39 @@
 	font-size: 14px;
 	color: #565656;
 }
+
+.tux-message-tools-menu {
+	padding-top: 2em;
+	border: 1px solid #c9c9c9;
+	/* @noflip */
+	-webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
+	/* @noflip */
+	box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
+	font-size: 14px;
+	margin: 0 5px;
+	list-style: none;
+	padding: 4px;
+	width: 200px;
+	z-index: 10;
+	background: #fff;
+	display: block;
+	position: absolute;
+}
+
+.tux-message-tools-menu li {
+	color: #555555;
+	font-size: 14px;
+	padding: 0 2px;
+}
+
+.tux-message-tools-menu li.changeable:hover {
+	cursor: pointer;
+	background-color: #f0f0f0;
+	color: #252525;
+}
+
+.tux-message-tools-menu li.selected {
+	/* @embed */
+	background: url(../images/label-tick.png) right no-repeat;
+	color: #252525;
+}

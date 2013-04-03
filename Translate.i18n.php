@@ -498,6 +498,8 @@ Most useful for the proofreading tasks.',
 	'tux-editor-close-tooltip' => 'Close',
 	'tux-editor-expand-tooltip' => 'Expand',
 	'tux-editor-collapse-tooltip' => 'Collapse',
+	'tux-editor-message-tools-history' => 'Message history',
+	'tux-editor-message-tools-translations' => 'Translations to all languages',
 	'tux-editor-loading' => 'Loading...',
 	'translate-search-more-languages-info' => '$1 more {{PLURAL:$1|language|languages}}',
 	'translate-statsbar-tooltip' => '$1% translated, $2% proofread',
@@ -1160,6 +1162,8 @@ See also:
 {{Identical|Expand}}',
 	'tux-editor-collapse-tooltip' => 'Tooltip for the collapse icon of translate editor.
 {{Identical|Collapse}}',
+	'tux-editor-message-tools-history' => 'A link to message history. An item in a menu that appears when clicking on message title.',
+	'tux-editor-message-tools-translations' => 'A link to translations of a message to all languages. An item in a menu that appears when clicking on message title.',
 	'tux-editor-loading' => 'Loading message while translation editor is being prepared with helper information.
 {{Identical|Loading}}',
 	'translate-search-more-languages-info' => 'Information shown as number of languages matching the query using
