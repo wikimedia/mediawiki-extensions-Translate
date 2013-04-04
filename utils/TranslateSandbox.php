@@ -44,17 +44,21 @@ class TranslateSandbox {
 	 * @throws MWException
 	 */
 	public static function deleteUser( User $user ) {
+		$uid = $user->getId();
+
 		if ( !in_array( 'translate-sandboxed', $user->getGroups(), true ) ) {
 			throw new MWException( "Not a sandboxed user" );
 		}
 
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->delete( 'user', array( 'user_id' => $user->getId() ), __METHOD__ );
-		$dbw->delete( 'user_groups', array( 'ug_user' => $user->getId() ), __METHOD__ );
+		$dbw->delete( 'user', array( 'user_id' => $uid ), __METHOD__ );
+		$dbw->delete( 'user_groups', array( 'ug_user' => $uid ), __METHOD__ );
 
 		$user->clearInstanceCache( 'defaults' );
 		// @todo why the bunny is this private?!
 		// $user->clearSharedCache();
+		global $wgMemc;
+		$wgMemc->delete( wfMemcKey( 'user', 'id', $uid ) );
 	}
 
 	/**
@@ -80,6 +84,10 @@ class TranslateSandbox {
 	 */
 	public static function promoteUser( User $user ) {
 		global $wgTranslateSandboxPromotedGroup;
+
+		if ( !in_array( 'translate-sandboxed', $user->getGroups(), true ) ) {
+			throw new MWException( "Not a sandboxed user" );
+		}
 
 		$user->removeGroup( 'translate-sandboxed' );
 		if ( $wgTranslateSandboxPromotedGroup ) {

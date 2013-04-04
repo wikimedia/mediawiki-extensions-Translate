@@ -102,17 +102,21 @@ $wgAPIModules['ttmserver'] = 'ApiTTMServer';
 $wgAPIModules['translateuser'] = 'ApiTranslateUser';
 $wgAPIModules['translationaids'] = 'ApiTranslationAids';
 $wgAPIModules['hardmessages'] = 'ApiHardMessages';
+$wgAPIModules['translatesandbox'] = 'ApiTranslateSandbox';
 $wgAPIGeneratorModules['messagecollection'] = 'ApiQueryMessageCollection';
 
 // Before MW 1.20
 $wgHooks['APIQueryInfoTokens'][] = 'ApiTranslationReview::injectTokenFunction';
 $wgHooks['APIQueryInfoTokens'][] = 'ApiGroupReview::injectTokenFunction';
 $wgHooks['APIQueryInfoTokens'][] = 'ApiAggregateGroups::injectTokenFunction';
+$wgHooks['APIQueryInfoTokens'][] = 'ApiHardMessages::injectTokenFunction';
+$wgHooks['APIQueryInfoTokens'][] = 'ApiTranslateSandbox::injectTokenFunction';
 // After MW 1.20
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiTranslationReview::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiGroupReview::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiAggregateGroups::injectTokenFunction';
-$wgHooks['ApiHardMessages'][] = 'ApiHardMessages::injectTokenFunction';
+$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiHardMessages::injectTokenFunction';
+$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiTranslateSandbox::injectTokenFunction';
 // Register hooks.
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::addNavigationTabs';
