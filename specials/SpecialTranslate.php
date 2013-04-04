@@ -241,13 +241,13 @@ class SpecialTranslate extends SpecialPage {
 		$isBeta = self::isBeta( $request );
 
 		$defaults = array(
-		/* str  */ 'taction'  => 'translate',
-		/* str  */ 'task'     => $isBeta ? 'custom' : 'untranslated',
-		/* str  */ 'language' => $this->getLanguage()->getCode(),
-		/* str  */ 'group'    => $isBeta ? '!additions': '',
-		/* str  */ 'offset'   => '', // Used to be int, now str
-		/* int  */ 'limit'    => $isBeta ? 0 : 100,
-		/* int  */ 'optional' => '0',
+		/* str  */'taction'  => 'translate',
+		/* str  */'task'     => $isBeta ? 'custom' : 'untranslated',
+		/* str  */'language' => $this->getLanguage()->getCode(),
+		/* str  */'group'    => $isBeta ? '!additions': '',
+		/* str  */'offset'   => '', // Used to be int, now str
+		/* int  */'limit'    => $isBeta ? 0 : 100,
+		/* int  */'optional' => '0',
 		);
 
 		// Dump everything here
@@ -542,11 +542,11 @@ class SpecialTranslate extends SpecialPage {
 				array( 'class' => 'ext-translate-language-selector-label' ),
 				$this->msg( 'tux-languageselector' )->text()
 			) .
-			'&#160;' . // nbsp
-			Html::element( 'span',
-				array( 'class' => 'uls' ),
-				Language::fetchLanguageName( $this->options['language'] )
-			)
+				'&#160;' . // nbsp
+				Html::element( 'span',
+					array( 'class' => 'uls' ),
+					Language::fetchLanguageName( $this->options['language'] )
+				)
 		);
 	}
 

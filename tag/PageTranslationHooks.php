@@ -57,7 +57,7 @@ class PageTranslationHooks {
 	 * Set the right page content language for translated pages ("Page/xx").
 	 * Hook: PageContentLanguage
 	 */
-	public static function onPageContentLanguage( Title $title, /*string*/ &$pageLang ) {
+	public static function onPageContentLanguage( Title $title, /*string*/&$pageLang ) {
 		// For translation pages, parse plural, grammar etc with correct language, and set the right direction
 		if ( TranslatablePage::isTranslationPage( $title ) ) {
 			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
@@ -68,7 +68,7 @@ class PageTranslationHooks {
 	}
 
 	/// Hook: OutputPageBeforeHTML
-	public static function injectCss( OutputPage $out, /*string*/ $text ) {
+	public static function injectCss( OutputPage $out, /*string*/$text ) {
 		global $wgTranslatePageTranslationULS;
 
 		$title = $out->getTitle();
@@ -134,8 +134,8 @@ class PageTranslationHooks {
 	}
 
 	public static function updateTranslationPage( TranslatablePage $page,
-		$code, $user, $flags, $summary ) {
-
+		$code, $user, $flags, $summary
+	) {
 		$source = $page->getTitle();
 		$target = Title::makeTitle( $source->getNamespace(), $source->getDBkey() . "/$code" );
 
@@ -387,8 +387,8 @@ class PageTranslationHooks {
 	 * Hook: ArticleSave, PageContentSave
 	 */
 	public static function tpSyntaxCheck( $wikiPage, $user, $content, $summary,
-			$minor, $_, $_, $flags, $status ) {
-
+			$minor, $_, $_, $flags, $status
+	) {
 		if ( $content instanceof TextContent ) {
 			$text = $content->getNativeData();
 		} elseif ( is_string( $content ) ) {
@@ -419,7 +419,8 @@ class PageTranslationHooks {
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
 	 */
 	public static function addTranstag( $wikiPage, $user, $content, $summary,
-			$minor, $_, $_, $flags, $revision ) {
+			$minor, $_, $_, $flags, $revision
+	) {
 		// We are not interested in null revisions
 		if ( $revision === null ) {
 			return true;
