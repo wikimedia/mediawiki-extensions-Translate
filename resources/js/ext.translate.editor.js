@@ -1,6 +1,25 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	/**
+	 * TranslateEditor Plugin
+	 * For a translation unit (message), prepare an translation editor UI.
+	 * This is mainly used with message table plugin.
+	 * But it is independent of message table.
+	 * Example usage:
+	 *
+	 * $( 'div.messageRow' ).translateeditor( {
+	 *	message: messageObject // Mandatory message object
+	 * } );
+	 *
+	 * Assumptions: The jquery element to which translateeditor is applied will
+	 * internally contain the editor (generated UI). So it is going to have same width
+	 * and inherited properies of container.
+	 * The container can mark the message item with class 'message'. This is not
+	 * mandatory, but if found, when editor is opened the message item will be hidden
+	 * and the editor will appear as if the message is replaced by the editor.
+	 * See the UI of translate message table for demo.
+	 */
 	function TranslateEditor( element, options ) {
 		this.$editTrigger = $( element );
 		this.$editor = null;
@@ -37,7 +56,7 @@
 			this.expanded = false;
 			this.$editTrigger.append( this.$editor );
 
-			if ( this.$editTrigger.data( 'message' ).properties.status === 'fuzzy' ) {
+			if ( this.message.properties.status === 'fuzzy' ) {
 				this.addWarning(
 					mw.message( 'tux-editor-outdated-warning' ).escaped(),
 					'diff'
