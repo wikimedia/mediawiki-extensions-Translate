@@ -1,10 +1,24 @@
 ( function ( $, mw ) {
 	'use strict';
-
+	/**
+	 * Page mode plugin
+	 *
+	 * Prepare the page mode UI with all the required actions
+	 * for a translation unit (message).
+	 * This is mainly used with the messagetable plugin in page mode,
+	 * but it is independent of messagetable.
+	 * Example usage:
+	 *
+	 * $( 'div.pagemode' ).pagemode( {
+	 *	message: messageObject, // Mandatory message object
+	 *	sourcelangcode: 'en', // Mandatory source language code
+	 *	targetlangcode: 'hi' // Mandatory target language code
+	 * } );
+	 */
 	function PageMode( element, options ) {
 		this.$message = $( element );
 		this.options = options;
-		this.message = this.$message.data( 'message' );
+		this.message = this.options.message;
 		this.init();
 		this.listen();
 	}
