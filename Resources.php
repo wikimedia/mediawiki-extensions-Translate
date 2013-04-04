@@ -271,6 +271,7 @@ $wgResourceModules['ext.translate.special.searchtranslations'] = array(
 	'dependencies' => array(
 		'ext.translate.editor',
 		'ext.uls.init',
+		'ext.uls.geoclient',
 	),
 	'messages' => array(
 		'translate-documentation-language',
