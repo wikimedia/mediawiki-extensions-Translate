@@ -290,7 +290,7 @@ class PageTranslationHooks {
 				$name = Linker::link( $specialTranslateTitle, $name, $attribs, $params );
 			}
 
-			$languages[] = "$name $percentImage";
+			$languages[] = "$name&#160;$percentImage";
 		}
 
 		// dirmark (rlm/lrm) is added, because languages with RTL names can
