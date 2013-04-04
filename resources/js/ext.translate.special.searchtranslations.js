@@ -70,7 +70,7 @@
 		docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
 		if ( languages[docLanguageCode] ) {
 			mw.translate.addDocumentationLanguage();
-			window.wgULSLanguages[docLanguageCode] = mw.msg( 'translate-documentation-language' );
+			mw.config.get( 'wgULSLanguages' )[docLanguageCode] = mw.msg( 'translate-documentation-language' );
 			regions = ['WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA'];
 		}
 
@@ -113,7 +113,7 @@
 					.addClass('facet-name')
 					.append( $('<a>')
 						.attr( 'href', result.url )
-						.text( window.wgULSLanguages[languageCode] || languageCode )
+						.text( mw.config.get( 'wgULSLanguages' )[languageCode] || languageCode )
 					),
 					$( '<span>')
 						.addClass('facet-count')
@@ -123,7 +123,7 @@
 		}
 
 		$.each( Object.keys( languages ), function( index, languageCode) {
-			ulslanguages[languageCode] = window.wgULSLanguages[languageCode];
+			ulslanguages[languageCode] = mw.config.get( 'wgULSLanguages' )[languageCode];
 		} );
 
 		if ( resultCount > 6 ) {
@@ -148,8 +148,8 @@
 	}
 
 	function sortLanguages ( languageA, languageB ) {
-		var languageNameA = window.wgULSLanguages[languageA] || languageA,
-			languageNameB = window.wgULSLanguages[languageB] || languageB;
+		var languageNameA = mw.config.get( 'wgULSLanguages' )[languageA] || languageA,
+			languageNameB = mw.config.get( 'wgULSLanguages' )[languageB] || languageB;
 
 		return languageNameA.localeCompare( languageNameB );
 	}
