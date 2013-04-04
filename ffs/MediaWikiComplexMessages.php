@@ -363,7 +363,7 @@ abstract class ComplexMessages {
 		$text = '';
 
 		// Do not replace spaces by underscores for magic words. See bug 46613
-		$replaceSpace = $request->getVal( 'module') !== 'magic';
+		$replaceSpace = $request->getVal( 'module' ) !== 'magic';
 
 		foreach ( array_keys( $this->data ) as $group ) {
 			foreach ( $this->getIterator( $group ) as $key ) {

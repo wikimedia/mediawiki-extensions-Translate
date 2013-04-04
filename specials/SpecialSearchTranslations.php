@@ -84,7 +84,7 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$facets .= Html::element( 'div',
 			array( 'class' => 'row facet languages',
-				'data-facets' => FormatJson::encode(  $this->getLanguages( $facet) ),
+				'data-facets' => FormatJson::encode( $this->getLanguages( $facet ) ),
 				'data-language' => $opts->getValue( 'language' ),
 			),
 			$this->msg( 'tux-sst-facet-language' )
@@ -231,7 +231,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			if ( $key === $selected ) {
 				$class .= ' selected';
 			}
-			$output[$key] =  array(
+			$output[$key] = array(
 				'count' => $value,
 				'url' => $url
 			);
