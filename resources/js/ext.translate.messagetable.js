@@ -190,8 +190,7 @@
 			}
 
 			$messageWrapper = $( '<div>' )
-				.addClass( 'row tux-message' )
-				.data( 'message', message );
+				.addClass( 'row tux-message' );
 
 			$message = $( '<div>' )
 				.addClass( 'row message tux-message-item ' + status )
@@ -252,11 +251,11 @@
 		 */
 		addProofread: function ( message ) {
 			var $message = $( '<div>' )
-				.addClass( 'row tux-message-proofread' )
-				.data( 'message', message );
+				.addClass( 'row tux-message-proofread' );
 
 			this.$container.append( $message );
 			$message.proofread( {
+				message: message,
 				sourcelangcode: this.$container.data( 'sourcelangcode' ),
 				targetlangcode: this.$container.data( 'targetlangcode' )
 			} );
@@ -268,11 +267,11 @@
 			var $message;
 
 			$message = $( '<div>' )
-				.addClass( 'row tux-message tux-message-pagemode' )
-				.data( 'message', message );
+				.addClass( 'row tux-message tux-message-pagemode' );
 
 			this.$container.append( $message );
 			$message.pagemode( {
+				message: message,
 				sourcelangcode: this.$container.data( 'sourcelangcode' ),
 				targetlangcode: this.$container.data( 'targetlangcode' )
 			} );
