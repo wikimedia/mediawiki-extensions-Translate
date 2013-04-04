@@ -397,6 +397,9 @@ Details: $1',
 	'right-translate-sandboxmanage' => 'Manage sandboxed users',
 	'action-translate-sandboxmanage' => 'manage sandboxed users',
 
+	'right-translate-sandboxaction' => 'Execute actions whitelisted for sandboxed users',
+	'action-translate-sandboxaction' => 'execute actions whitelisted for sandboxed users',
+
 	// The actual states, when set, come after the hyphen.
 	// The dangling hyphen hints that it's unset.
 	'translate-workflow-state-' => '(unset)',

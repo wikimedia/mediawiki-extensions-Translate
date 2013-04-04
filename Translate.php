@@ -178,6 +178,9 @@ $wgHooks['Translate:MessageGroupStats:isIncluded'][] = 'TranslateHooks::hideRest
 
 $wgHooks['MakeGlobalVariablesScript'][] = 'TranslateHooks::addConfig';
 
+// Sandbox
+$wgHooks['UserGetRights'][] = 'TranslateSandbox::enforcePermissions';
+
 // Internal event listeners
 $wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupStats::clear';
 $wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStats::clear';
