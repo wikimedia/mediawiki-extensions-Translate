@@ -504,7 +504,10 @@ Most useful for the proofreading tasks.',
 	'translate-statsbar-tooltip-with-fuzzy' => '$1% translated, $2% proofread, $3% outdated',
 );
 
-/** Message documentation (Message documentation)
+/** Message documentation (This is the name of the message documentation language code (qqq). Follow the rules of your languages and use small first letter if it doesn't capitalize language names always.
+
+It might be easier to translate it as "translation guidelines" or "translation help".
+{{Identical|Message documentation}})
  * @author Amire80
  * @author An13sa
  * @author Ans
@@ -8464,7 +8467,6 @@ $messages['es'] = array(
 	'translate-taskui-view' => 'Mostrar todos los mensajes',
 	'translate-taskui-untranslated' => 'Mostrar mensajes sin traducir',
 	'translate-taskui-optional' => 'Mostrar mensajes opcionales.',
-	'translate-taskui-suggestions' => 'Mostrar mensajes con sugerencias de la memoria de traducciones',
 	'translate-taskui-acceptqueue' => 'Sólo los mensajes que pueda aceptar',
 	'translate-taskui-reviewall' => 'Revisar todas las traducciones',
 	'translate-taskui-export-to-file' => 'Exportar en formato nativo',
@@ -8528,10 +8530,10 @@ Los espacios de nombre sólo pueden tener una traducción.
 
 Traducir el espacio de nombres de discusión de proyecto <code>$1 talk</code> puede ser complicado.
 <code>$1</code> se reemplaza por el nombre del sitio del proyecto (por ejemplo <code>{{ns:project_talk}}</code>).
-Si en tu idioma no es posible formar una expresión válida sin cambiar el nombre del sitio, contacta con un desarrollador, en la [[Support|página de axuda]].
+Si en tu idioma no es posible formar una expresión válida sin cambiar el nombre del sitio, contacta con un desarrollador, en la [[Support|página de ayuda]].
 
 Para guardar los cambios debes pertenecer al grupo de traductores
-Los cambios no se graban hasta que no pulses el boton Guardar que aparece abajo.',
+Los cambios no se graban hasta que no pulses el botón Guardar que aparece abajo.',
 	'translate-magic-module' => 'Módulo:',
 	'translate-magic-submit' => 'Obtener',
 	'translate-magic-cm-export' => 'Exportar',
@@ -8651,8 +8653,6 @@ Todos los valores tienen límites superiores e inferiores.',
 	'translate-untranslated' => 'Sin traducir',
 	'translate-percentage-complete' => 'Completados',
 	'translate-percentage-fuzzy' => 'Desactualizados',
-	'translate-nothing-to-do' => 'Todas las posibles traducciones parecen haber sido hechas.
-Se te anima a revisar los mensajes a través de [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Todos los grupos de mensajes juntos',
 	'translate-ls-submit' => 'Mostrar estadísticas',
 	'translate-ls-column-group' => 'Grupo de mensajes',
@@ -8766,7 +8766,6 @@ Detalle: $1',
 	'log-name-translationreview' => 'Registro de revisión de las traducciones',
 	'log-description-translationreview' => 'Registro de todas las revisiones de las traducciones y de los grupos de mensajes.',
 	'logentry-translationreview-message' => '$1 aceptó la traducción «$3»', # Fuzzy
-	'logentry-groupreview-message' => '$1 {{GENDER:$2|modificó}} el estado de las traducciones en $4 del grupo de mensajes $3, de «$5» a «$6»',
 	'translate-workflow-state-' => '(no definido)',
 	'translate-workflowstatus' => 'Estado: $1',
 	'translate-workflow-set-do' => 'Activar',
@@ -8792,7 +8791,6 @@ Utilizado sobre todo para tareas de corrección.',
 	'translate-msggroupselector-search-placeholder' => 'Buscar grupos',
 	'translate-msggroupselector-search-all' => 'Todos',
 	'translate-msggroupselector-search-recent' => 'Recientes',
-	'translate-msggroupselector-load-from-all' => 'Subir mensajes de todos los grupos',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgrupo|subgrupos}}',
 	'tux-languageselector' => 'Idioma', # Fuzzy
 	'tux-tab-all' => 'Todo',
@@ -17282,7 +17280,7 @@ $messages['ksh'] = array(
 	'translate-taskui-view' => 'Alle Täxte udder Nohreeschte aanzeije',
 	'translate-taskui-untranslated' => 'Onövversaz Täxte udder Nohreeschte aanzeije',
 	'translate-taskui-optional' => "'Nid esu nüüdeje' Täxte udder Nohreeschte aanzeije.",
-	'translate-taskui-acceptqueue' => 'Blöß Täxte udder Nohreschte aanzeije, di_sch beschtääteje kann',
+	'translate-taskui-acceptqueue' => 'Bloß die Täxte udder Nohreschte aanzeije, di_sch beschtääteje kann',
 	'translate-taskui-reviewall' => 'Alle Övversäzonge jääjelässe',
 	'translate-taskui-export-to-file' => 'Em eije Fomaat äxpoteere',
 	'translate-taskui-export-as-po' => 'För et Övversäze ußerhallf expotteere',
@@ -17302,7 +17300,7 @@ $messages['ksh'] = array(
 	'translate-page-group' => 'Jrupp:',
 	'translate-page-language' => 'Schprooch',
 	'translate-page-limit' => 'Ömfang:',
-	'translate-page-limit-option' => '{{PLURAL:$1|Eijne Täx udder Nohreesch|$1 Täxte udder Nohreeschte|Nix aan Täxte udder Nohreeschte}} pro Sigk',
+	'translate-page-limit-option' => '{{PLURAL:$1|0=Nix aan Täxte udder Nohreeschte|1=Äjne Täx udder Nohreesch|$1 Täxte udder Nohreeschte}} pro Sigk',
 	'translate-submit' => 'Lohß Jonn!',
 	'translate-page-navigation-legend' => 'Aanzahl',
 	'translate-page-showing' => 'De Nohreshte fon Nommer $1 aff, beß $2, fon ennßjesammp $3.',
@@ -17632,7 +17630,7 @@ Dat es et bäß för et Jääjelässe.',
 	'tux-warnings-hide' => 'verschteische',
 	'tux-editor-save-failed' => 'Di Övversäzong afzeschpeischere hät nit jeflup. Der Jrond es: $1',
 	'tux-editor-use-this-translation' => 'Donn dat en et Fäld för de Övversäzong koppeere',
-	'tux-editor-n-uses' => '{{PLURAL:$1|eimohl|$1 Mohl|nit}} jebruch',
+	'tux-editor-n-uses' => '{{PLURAL:$1|0=nit|1=eimohl|$1 Mohl}} jebruch',
 	'tux-editor-message-desc-more' => 'Mieh aanzeije',
 	'tux-editor-message-desc-less' => 'Winnijer aanzeije',
 	'tux-editor-clear-translated' => 'Övversaz ußblände',
@@ -17645,17 +17643,17 @@ Dat es et bäß för et Jääjelässe.',
 	'tux-editor-page-mode' => 'Sigg',
 	'tux-editor-outdated-warning' => 'Heh di Övversäzong künnt Verbäßeronge nüüdesch han.',
 	'tux-editor-outdated-warning-diff-link' => 'De Ongescheide aanzeije',
-	'tux-editor-doc-editor-placeholder' => 'Aanjaabe övve dä Täx udder di Nohreesch',
+	'tux-editor-doc-editor-placeholder' => 'Aanjaabe övver dä Täx udder di Nohreesch',
 	'tux-editor-doc-editor-save' => 'Faßhallde',
 	'tux-editor-doc-editor-cancel' => 'Ophüre',
-	'tux-messagetable-more-messages' => '{{PLURAL:§1|Noch ein Nohreesch|Noch $1 Nohreeschte|Kein Nohreeesch mieh}}',
-	'tux-messagetable-loading-messages' => 'Ben {{PLURAL:§1|noch ein Nohreesch|noch $1 Nohreeschte|kein Nohreeesch mieh}} aam laade',
+	'tux-messagetable-more-messages' => '{{PLURAL:$1|1=Noch ein Nohreesch|Noch $1 Nohreeschte|0=Kein Nohreeesch mieh}}',
+	'tux-messagetable-loading-messages' => 'Ben {{PLURAL:$1|0=kein Nohreeesch mieh|1=noch ein Nohreesch|2=noch zwei Nohreeschte|3=noch drei Nohreeschte|4=noch veer Nohreeschte|5=noch nonef Nohreeschte|6=noch säks Nohreeschte|7=noch sibbe Nohreeschte|8=noch aach Nohreeschte|9=noch nüng Nohreeschte|10=noch zehn Nohreeschte|11=noch ellef Nohreeschte|12=noch e dozend Nohreeschte|noch drückßehn Nohreeschte|noch $1 Nohreeschte}} aam laade', # Fuzzy
 	'tux-message-filter-placeholder' => 'Donn de Leß beschrängke',
-	'tux-message-filter-result' => '{{PLURAL:$1|keine|Eine|$1}} Träffer för „$2“',
+	'tux-message-filter-result' => '{{PLURAL:$1|0=Keine|1=Eine|$1}} Träffer för „$2“',
 	'tux-message-filter-advanced-button' => 'Lohß jonn!',
 	'tux-message-filter-optional-messages-label' => 'Nidd_esu nüüdeje Täxte un Nohreeschte',
 	'tux-proofread-translated-by-self' => 'Sällver övversaz',
-	'tux-empty-list-all' => 'En heh dä Jropp vun ohreeschte esnix dren.',
+	'tux-empty-list-all' => 'En heh dä Jropp vun Nohreeschte es nix dren.',
 	'tux-empty-list-all-guide' => 'Söhg en ander Nohreeschtejrop för zom Övversäze us',
 	'tux-translate-page-no-such-group' => "'''Di aanjejovve Jropp jidd_et nit.''' Söhg en ander Nohreeschtejrop för t Övversäze us.",
 	'tux-empty-list-translated' => 'Nix es Övversaz',
@@ -17669,7 +17667,7 @@ Dat es et bäß för et Jääjelässe.',
 	'tux-editor-expand-tooltip' => 'Donn et Ongerfinster för zem Övversäzonge enblände',
 	'tux-editor-collapse-tooltip' => 'Donn et Ongerfinster för zem Övversäzonge ußblände',
 	'tux-editor-loading' => 'Ben aam Laade{{int:ellipsis}}',
-	'translate-search-more-languages-info' => '$1 more {{PLURAL:$1|Ein Schprooch|$1 Schprooche|Kein Schprooch}} mieh',
+	'translate-search-more-languages-info' => '$1 more {{PLURAL:$1|0=Kein Schprooch|1=Ein Schprooch|$1 Schprooche}} mieh',
 	'translate-statsbar-tooltip' => '$1% övversaz, $2% jääjejelässe',
 	'translate-statsbar-tooltip-with-fuzzy' => '$1% fäädesch övversaz, $3% övverhollt, $2% jääjejelässe',
 );
@@ -23706,6 +23704,7 @@ $messages['ps'] = array(
 	'translate-workflowstatus' => 'دريځ: $1',
 	'translate-stats-workflow' => 'دريځ',
 	'translate-gethelp' => 'لارښود',
+	'tux-edit' => 'سمول',
 );
 
 /** Portuguese (português)
@@ -28591,12 +28590,12 @@ Mest användbar för korrekturläsningsuppgifter.',
 	'tux-tab-all' => 'Alla',
 	'tux-tab-untranslated' => 'Oöversatta',
 	'tux-tab-outdated' => 'Föråldrade',
-	'tux-tab-translated' => 'Översätta',
+	'tux-tab-translated' => 'Översatta',
 	'tux-edit' => 'Redigera',
 	'tux-status-optional' => 'Frivilligt',
-	'tux-status-fuzzy' => 'Föråldrade',
-	'tux-status-proofread' => 'Korrekturläs',
-	'tux-status-translated' => 'Översätta',
+	'tux-status-fuzzy' => 'Föråldrad',
+	'tux-status-proofread' => 'Korrekturläst',
+	'tux-status-translated' => 'Översatt',
 	'tux-status-saving' => 'Sparar...',
 	'tux-status-unsaved' => 'Inte sparade',
 	'tux-editor-placeholder' => 'Din översättning',
@@ -28621,7 +28620,7 @@ Mest användbar för korrekturläsningsuppgifter.',
 	'tux-editor-message-desc-more' => 'Visa mer',
 	'tux-editor-message-desc-less' => 'Visa mindre',
 	'tux-editor-clear-translated' => 'Dölj översatta',
-	'tux-editor-proofreading-mode' => 'Korrekturläs',
+	'tux-editor-proofreading-mode' => 'Korrekturläst',
 	'tux-editor-translate-mode' => 'Lista',
 	'tux-editor-proofreading-hide-own-translations' => 'Dölj dina översättningar',
 	'tux-editor-proofreading-show-own-translations' => 'Visa dina översättningar',

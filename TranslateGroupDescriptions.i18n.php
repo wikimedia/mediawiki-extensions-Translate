@@ -1798,7 +1798,7 @@ $messages['mk'] = array(
 	'bw-desc-statusnet' => '[[Translating:StatusNet|StatusNet]] е отворен опслужувач за микроблогирање',
 	'translate-group-desc-statusnet-plugin' => 'Овие пораки се дел од приклучокот за [[Translating:StatusNet|StatusNet]]',
 	'translate-group-desc-tsint' => 'Група пораки за [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition] - i18n-систем за алатки на [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|поддршка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технички податоци]</span>)',
-	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Патеки со ориентири]] е служба која ги покажува патеките за пешачење, планинарење, велосипедизам, ридски велосипедизам и ролерки ширум светот. Се нуди под ГНУ-овата општа јавна лиценца',
+	'translate-group-desc-waymarked-trails' => "[[Translating:Waymarked Trails|Означени патеки]] (''Waymarked Trails'') е служба која ги покажува патеките за пешачење, планинарење, велосипедизам, ридски велосипедизам и ролерки ширум светот. Се нуди под ГНУ-овата општа јавна лиценца",
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] за многу кусо време може да ги пронајде авторите на некоја страница на едно вики.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|ВикиЧитач]] (WikiReader) е проект за создавање на текстуална верзија на Википедија наменета за мобилен уред.',
 	'translate-group-desc-wikimedia-mobile' => 'Група на насобрани пораки што осодржи мобилни прилози за Викимедиини проекти',
