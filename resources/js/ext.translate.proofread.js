@@ -136,6 +136,9 @@
 						.text( translation );
 					proofread.message.translation = translation;
 					proofread.markSelfTranslation();
+					// Update stats - to translated state from current state.
+					$( '.tux-action-bar .tux-statsbar' )
+						.trigger( 'change', [ 'translated', proofread.message.properties.state ] );
 				}
 			} );
 

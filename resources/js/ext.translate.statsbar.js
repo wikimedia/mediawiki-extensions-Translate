@@ -49,7 +49,7 @@
 			statsbar.$statsBar.on( 'change', function ( event, to, from ) {
 				for ( i = 0; i < languageStats.length; i++ ) {
 					if ( languageStats[i].group === statsbar.group ) {
-						if ( to === 'translated' ) {
+						if ( to === 'translated' && from === 'untranslated' ) {
 							languageStats[i].translated++;
 						}
 						if ( to === 'proofread' ) {
