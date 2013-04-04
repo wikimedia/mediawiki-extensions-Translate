@@ -242,14 +242,12 @@
 							$( '<a>' )
 								.addClass( 'nine columns use-this-translation' )
 								.text( mw.msg( 'tux-editor-use-this-translation' ) )
-								.on( 'click', function () {
-									$translationTextarea
-										.val( translation.value )
-										.focus()
-										.trigger( 'input' );
-								} )
 						)
 					);
+
+				$otherLanguage.on( 'click',
+					translateEditor.suggestionAdder( translation.value, $translationTextarea )
+				);
 
 				translateEditor.$editor.find( '.in-other-languages-title' )
 					.removeClass( 'hide' )
@@ -262,7 +260,8 @@
 		 * @param {array} suggestions A ttmserver array as returned by API.
 		 */
 		showTranslationMemory: function ( suggestions ) {
-			var $tmSuggestions, $translationTextarea;
+			var $tmSuggestions, $translationTextarea,
+				translateEditor = this;
 
 			if ( !suggestions.length ) {
 				return;
@@ -321,18 +320,16 @@
 							.append(
 								$( '<a>' )
 									.addClass( 'nine columns use-this-translation' )
-									.text( mw.msg( 'tux-editor-use-this-translation' ) )
-									.on( 'click', function () {
-										$translationTextarea
-											.val( translation.target )
-											.focus()
-											.trigger( 'input' );
-									} ),
+									.text( mw.msg( 'tux-editor-use-this-translation' ) ),
 								$( '<a>' )
 									.addClass( 'three columns n-uses text-right' )
 									.data( 'n', 1 )
 							)
 					);
+
+				$translation.on( 'click',
+					translateEditor.suggestionAdder( translation.target, $translationTextarea )
+				);
 
 				$tmSuggestions.append( $translation );
 			} );
@@ -343,7 +340,8 @@
 		 * @param {array} suggestions
 		 */
 		showMachineTranslations: function ( suggestions ) {
-			var $mtSuggestions, $translationTextarea;
+			var $mtSuggestions, $translationTextarea,
+				translateEditor = this;
 
 			if ( !suggestions.length ) {
 				return;
@@ -378,23 +376,35 @@
 							.append(
 								$( '<a>' )
 									.addClass( 'nine columns use-this-translation' )
-									.text( mw.msg( 'tux-editor-use-this-translation' ) )
-									.on( 'click', function () {
-										$translationTextarea
-											.val( translation.target )
-											.focus()
-											.trigger( 'input' );
-									} ),
+									.text( mw.msg( 'tux-editor-use-this-translation' ) ),
 								$( '<span>' )
 									.addClass( 'three columns service text-right' )
 									.text( translation.service )
 							)
 					);
 
+				$translation.on( 'click',
+					translateEditor.suggestionAdder( translation.target, $translationTextarea )
+				);
+
 				$mtSuggestions.append( $translation );
 			} );
 		},
 
+		suggestionAdder: function ( suggestion, $target ) {
+			return function () {
+				var selection;
+				if ( window.getSelection ) {
+					selection = window.getSelection().toString();
+				} else if ( document.selection && document.selection.type !== 'Control' ) {
+					selection = document.selection.createRange().text;
+				}
+
+				if ( !selection ) {
+					$target.val( suggestion ).focus().trigger( 'input' );
+				}
+			};
+		},
 
 		/**
 		 * Shows the support options for the translator.
