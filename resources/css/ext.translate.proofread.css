@@ -36,6 +36,11 @@
 	border-bottom: 1px solid #DDDDDD;
 }
 
+.tux-proofread-source,
+.tux-proofread-translation {
+	word-wrap: break-word;
+}
+
 .tux-message-proofread.open .tux-proofread-status,
 .tux-message-proofread.open .tux-proofread-source,
 .tux-message-proofread.open .tux-proofread-translation,
