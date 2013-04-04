@@ -193,7 +193,7 @@ class SpecialPageTranslation extends SpecialPage {
 		return $res;
 	}
 
-	protected function buildPageArray( /*db result*/ $res ) {
+	protected function buildPageArray( /*db result*/$res ) {
 		$pages = array();
 		foreach ( $res as $r ) {
 			// We have multiple rows for same page, because of different tags

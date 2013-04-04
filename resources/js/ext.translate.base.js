@@ -95,9 +95,9 @@
 			return mw.config.get( 'TranslateMessageReviewRight' );
 		},
 
-		addDocumentationLanguage: function() {
+		addDocumentationLanguage: function () {
 			var docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
-			if( $.uls.data.languages[docLanguageCode] ) {
+			if ( $.uls.data.languages[docLanguageCode] ) {
 				return;
 			}
 			$.uls.data.addLanguage( docLanguageCode, {

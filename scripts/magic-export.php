@@ -284,7 +284,7 @@ PHP
 	 * @param $codes
 	 * @return array
 	 */
-	private static function parseLanguageCodes( /* string */ $codes ) {
+	private static function parseLanguageCodes( /* string */$codes ) {
 		$langs = array_map( 'trim', explode( ',', $codes ) );
 		if ( $langs[0] === '*' ) {
 			$languages = Language::getLanguageNames();
