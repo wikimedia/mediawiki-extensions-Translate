@@ -242,14 +242,15 @@
 							$( '<a>' )
 								.addClass( 'nine columns use-this-translation' )
 								.text( mw.msg( 'tux-editor-use-this-translation' ) )
-								.on( 'click', function () {
-									$translationTextarea
-										.val( translation.value )
-										.focus()
-										.trigger( 'input' );
-								} )
 						)
 					);
+
+				$otherLanguage.on( 'click', function () {
+					$translationTextarea
+						.val( translation.value )
+						.focus()
+						.trigger( 'input' );
+				} );
 
 				translateEditor.$editor.find( '.in-other-languages-title' )
 					.removeClass( 'hide' )
@@ -321,18 +322,19 @@
 							.append(
 								$( '<a>' )
 									.addClass( 'nine columns use-this-translation' )
-									.text( mw.msg( 'tux-editor-use-this-translation' ) )
-									.on( 'click', function () {
-										$translationTextarea
-											.val( translation.target )
-											.focus()
-											.trigger( 'input' );
-									} ),
+									.text( mw.msg( 'tux-editor-use-this-translation' ) ),
 								$( '<a>' )
 									.addClass( 'three columns n-uses text-right' )
 									.data( 'n', 1 )
 							)
 					);
+
+				$translation.on( 'click', function () {
+					$translationTextarea
+						.val( translation.target )
+						.focus()
+						.trigger( 'input' );
+				} );
 
 				$tmSuggestions.append( $translation );
 			} );
@@ -378,18 +380,19 @@
 							.append(
 								$( '<a>' )
 									.addClass( 'nine columns use-this-translation' )
-									.text( mw.msg( 'tux-editor-use-this-translation' ) )
-									.on( 'click', function () {
-										$translationTextarea
-											.val( translation.target )
-											.focus()
-											.trigger( 'input' );
-									} ),
+									.text( mw.msg( 'tux-editor-use-this-translation' ) ),
 								$( '<span>' )
 									.addClass( 'three columns service text-right' )
 									.text( translation.service )
 							)
 					);
+
+				$mtSuggestions.on( 'click', function () {
+					$translationTextarea
+						.val( translation.target )
+						.focus()
+						.trigger( 'input' );
+				} );
 
 				$mtSuggestions.append( $translation );
 			} );
