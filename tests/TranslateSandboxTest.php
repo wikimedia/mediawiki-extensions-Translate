@@ -72,4 +72,13 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 
 		$this->assertContains( 'translator', $user->getGroups() );
 	}
+
+	public function testPermissions() {
+		$user = TranslateSandbox::addUser( 'Test user7', 'test@example.com', 'test password' );
+		$title = Title::makeTitle( NS_USER_TALK, $user->getName() );
+
+		$this->assertFalse( $title->userCan( 'edit', $user ), 'Sandboxed users cannot edit their own talk page' );
+		TranslateSandbox::promoteUser( $user );
+		$this->assertTrue( $title->userCan( 'edit', $user ), 'Promoted users can edit their own talk page' );
+	}
 }

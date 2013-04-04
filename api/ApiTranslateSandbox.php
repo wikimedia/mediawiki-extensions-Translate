@@ -14,6 +14,11 @@
 class ApiTranslateSandbox extends ApiBase {
 
 	public function execute() {
+		global $wgTranslateUseSandbox;
+		if ( !$wgTranslateUseSandbox ) {
+			$this->dieUsage( 'Sandbox feature is not in use', 'sandboxdisabled' );
+		}
+
 		$params = $this->extractRequestParams();
 		switch ( $params['do'] ) {
 		case 'create':
