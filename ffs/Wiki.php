@@ -239,9 +239,8 @@ HEADER
 			# In case there are no variables that need to be escaped, just use "-quote
 			if ( strpos( $value, $double ) === false && !preg_match( '/\$[^0-9]/', $value ) ) {
 				$quote = $double;
-
-			# Something needs quoting, so pick the quote which causes less quoting
 			} else {
+				# Something needs quoting, so pick the quote which causes less quoting
 				$doubleEsc = substr_count( $value, $double ) + substr_count( $value, '$' );
 				$singleEsc = substr_count( $value, $single );
 

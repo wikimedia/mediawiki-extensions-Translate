@@ -63,7 +63,7 @@
 			return;
 		}
 
-		resultCount = Object.keys(languages).length;
+		resultCount = Object.keys( languages ).length;
 
 		// If a documentation pseudo-language is defined,
 		// add it to the language selector
@@ -122,7 +122,7 @@
 			);
 		}
 
-		$.each( Object.keys( languages ), function( index, languageCode) {
+		$.each( Object.keys( languages ), function ( index, languageCode ) {
 			ulslanguages[languageCode] = mw.config.get( 'wgULSLanguages' )[languageCode];
 		} );
 
@@ -147,7 +147,7 @@
 		}
 	}
 
-	function sortLanguages ( languageA, languageB ) {
+	function sortLanguages( languageA, languageB ) {
 		var languageNameA = mw.config.get( 'wgULSLanguages' )[languageA] || languageA,
 			languageNameB = mw.config.get( 'wgULSLanguages' )[languageB] || languageB;
 

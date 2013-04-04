@@ -65,9 +65,10 @@ class ApertiumWebService extends TranslationWebService {
 		if ( !$status->isOK() ) {
 			$error = $req->getContent();
 			// Most likely a timeout or other general error
-			throw new TranslationWebServiceException( "Http::get failed:\n" .
-				"* " . serialize( $error ) . "\n" .
-				"* " . serialize( $status )
+			throw new TranslationWebServiceException(
+				"Http::get failed:\n" .
+					"* " . serialize( $error ) . "\n" .
+					"* " . serialize( $status )
 			);
 		}
 

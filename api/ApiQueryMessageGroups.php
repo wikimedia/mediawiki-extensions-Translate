@@ -37,9 +37,8 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			wfSuppressWarnings();
 			usort( $groups, array( 'MessageGroups', 'groupLabelSort' ) );
 			wfRestoreWarnings();
-
-		// format=tree from now on, as it is the only other valid option
 		} elseif ( $params['root'] !== '' ) {
+			// format=tree from now on, as it is the only other valid option
 			$group = MessageGroups::getGroup( $params['root'] );
 			if ( $group instanceof AggregateMessageGroup ) {
 				$groups = MessageGroups::subGroups( $group );

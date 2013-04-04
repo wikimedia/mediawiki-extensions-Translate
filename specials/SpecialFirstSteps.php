@@ -165,16 +165,16 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		return $step_message;
 	}
 
-	protected static function wrap( /*string*/ $tag, /*string*/ $content ) {
+	protected static function wrap( /*string*/ $tag, /*string*/$content ) {
 		return Html::rawElement( $tag, array(), $content );
 	}
 
-	protected static function wrapRow( /*string*/ $content ) {
+	protected static function wrapRow( /*string*/$content ) {
 		return Html::rawElement( 'td', array( 'colspan' => 2 ), $content );
 	}
 
 
-	protected function getHelpers( User $user, /*string*/ $code ) {
+	protected function getHelpers( User $user, /*string*/$code ) {
 		global $wgTranslateLanguageFallbacks;
 		$helpers = $user->getOption( 'translate-editlangs' );
 		if ( $helpers === 'default' ) {

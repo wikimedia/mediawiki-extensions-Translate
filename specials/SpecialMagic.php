@@ -98,10 +98,10 @@ class SpecialMagic extends SpecialPage {
 
 	protected function setup( $parameters ) {
 		$defaults = array(
-			/* str  */ 'module'   => '',
-			/* str  */ 'language' => $this->getUser()->getOption( 'language' ),
-			/* bool */ 'export'   => false,
-			/* bool */ 'savetodb' => false,
+			/* str  */'module'   => '',
+			/* str  */'language' => $this->getUser()->getOption( 'language' ),
+			/* bool */'export'   => false,
+			/* bool */'savetodb' => false,
 		);
 
 		/**

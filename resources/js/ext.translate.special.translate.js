@@ -151,6 +151,7 @@
 		}
 		return true;
 	}
+
 	// Returns an array of jQuery objects of rows of translated
 	// and proofread messages in the TUX editors.
 	// Used several times.

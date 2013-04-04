@@ -98,5 +98,6 @@ class JsonFFS extends SimpleFFS {
 		}
 
 		return FormatJSON::encode( $messages, /*pretty*/true );
+			true );
 	}
 }

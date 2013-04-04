@@ -57,9 +57,10 @@ class RemoteTTMServerWebService extends TranslationWebService {
 
 		if ( !$status->isOK() ) {
 			// Most likely a timeout or other general error
-			throw new TranslationWebServiceException( "Http::get failed:\n" .
-				"* " . serialize( $response ) . "\n" .
-				"* " . serialize( $status )
+			throw new TranslationWebServiceException(
+				"Http::get failed:\n" .
+					"* " . serialize( $response ) . "\n" .
+					"* " . serialize( $status )
 			);
 		}
 
