@@ -29,6 +29,8 @@ $messages['en'] = array(
 	'tux-sst-solr-offline-title' => 'Search unavailable',
 	'tux-sst-solr-offline-body' => 'Search service is temporarily unavailable.',
 
+	'tux-sst-next' => 'Next results',
+	'tux-sst-prev' => 'Previous results',
 );
 
 /** Message documentation (Message documentation)
@@ -65,6 +67,9 @@ The body of error message is {{msg-mw|Tux-sst-solr-offline-body}}.
 	'tux-sst-solr-offline-body' => 'Used as error message.
 
 The page title for this message is {{msg-mw|tux-sst-solr-offline-title}}.',
+
+	'tux-sst-next' => 'Link to browser more search results',
+	'tux-sst-prev' => 'Link to browser more search results',
 );
 
 /** Asturian (asturianu)
