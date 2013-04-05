@@ -365,14 +365,7 @@
 
 					translateEditor.dirty = true;
 					mw.translate.dirty = true;
-					// Expand the text area height as content grows
-					while ( $this.outerHeight() <
-						this.scrollHeight +
-						parseFloat( $this.css( 'borderTopWidth' ) ) +
-						parseFloat( $this.css( 'borderBottomWidth' ) )
-					) {
-						$this.height( $this.height() + parseFloat( $this.css( 'fontSize' ) ) );
-					}
+					adjustSize( $this );
 				} );
 
 			$textArea.on( 'input propertychange', function () {
@@ -727,12 +720,13 @@
 		},
 
 		show: function () {
-			var $next;
+			var $next, $textarea;
 
 			if ( !this.$editor ) {
 				this.init();
 			}
 
+			$textarea = this.$editor.find( 'textarea' );
 			// Hide all other open editors in the page
 			$( '.tux-message.open' ).each( function () {
 				$( this ).data( 'translateeditor' ).hide();
@@ -744,11 +738,9 @@
 			this.$editor.find( '.tux-editor-skip-button' ).attr( 'accesskey', 'd' );
 
 			this.$messageItem.addClass( 'hide' );
-			this.$editor
-				.removeClass( 'hide' )
-				.find( 'textarea' )
-					.focus();
-
+			this.$editor.removeClass( 'hide' );
+			$textarea.focus();
+			adjustSize( $textarea );
 			this.shown = true;
 			this.$editTrigger.addClass( 'open' );
 
@@ -881,6 +873,19 @@
 	};
 
 	$.fn.translateeditor.Constructor = TranslateEditor;
+
+	/*
+	 * Expand the text area height as content grows
+	 */
+	function adjustSize( $textarea ) {
+		while ( $textarea.outerHeight() <
+			( $textarea.prop( 'scrollHeight' ) +
+			parseFloat( $textarea.css( 'borderTopWidth' ) ) +
+			parseFloat( $textarea.css( 'borderBottomWidth' ) ) )
+		) {
+			$textarea.height( $textarea.height() + parseFloat( $textarea.css( 'fontSize' ) ) );
+		}
+	}
 
 	var delay = ( function () {
 		var timer = 0;
