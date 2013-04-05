@@ -70,7 +70,11 @@ XML;
 
 		}
 
-		return $writer->asXml();
+		// Make the output pretty with DOMDocument
+		$dom = new DOMDocument( '1.0' );
+		$dom->formatOutput = true;
+		$dom->loadXML( $writer->asXML() );
+		return $dom->saveXML();
 	}
 
 	public function supportsFuzzy() {
