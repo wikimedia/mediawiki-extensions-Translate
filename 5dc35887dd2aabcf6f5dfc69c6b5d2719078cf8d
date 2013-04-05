@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DsVFxtHU",
+        "filename": "ffs/JsonFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2013-04-05T19:47:06Z",
+      "side": 1,
+      "message": ".",
+      "revId": "5dc35887dd2aabcf6f5dfc69c6b5d2719078cf8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
