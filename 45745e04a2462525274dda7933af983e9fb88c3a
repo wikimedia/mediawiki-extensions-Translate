@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dr3bP7lc",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-05T07:18:10Z",
+      "side": 1,
+      "message": "\"all required actions\" doesn\u0027t say much. Perhaps leave it out if it is not easy to expand.",
+      "revId": "45745e04a2462525274dda7933af983e9fb88c3a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dr1bS8gA",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-05T07:18:10Z",
+      "side": 1,
+      "message": "In normal mode you mean?",
+      "revId": "45745e04a2462525274dda7933af983e9fb88c3a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
