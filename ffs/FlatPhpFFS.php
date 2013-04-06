@@ -14,6 +14,10 @@
  * variable assignments.
  */
 class FlatPhpFFS extends SimpleFFS {
+	public function getFileExtensions() {
+		return array( '.php' );
+	}
+
 	//
 	// READ
 	//

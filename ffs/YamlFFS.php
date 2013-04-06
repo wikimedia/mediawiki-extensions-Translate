@@ -8,6 +8,10 @@
  * @ingroup FFS
  */
 class YamlFFS extends SimpleFFS {
+	public function getFileExtensions() {
+		return array( '.yaml', '.yml' );
+	}
+
 	/**
 	 * @param $data
 	 * @return array

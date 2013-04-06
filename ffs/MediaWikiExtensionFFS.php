@@ -15,6 +15,14 @@
  * @since 2012-10-20
  */
 class MediaWikiExtensionFFS extends SimpleFFS {
+	public function supportsFuzzy() {
+		return 'write';
+	}
+
+	public function getFileExtensions() {
+		return array( '.i18n.php' );
+	}
+
 	/**
 	 * To avoid parsing full files again and again when reading or exporting
 	 * multiple languages, keep cache of the sections of the latest active file.
@@ -262,9 +270,4 @@ PHP;
 
 		return $quote . $value . $quote;
 	}
-
-	public function supportsFuzzy() {
-		return 'write';
-	}
-
 }

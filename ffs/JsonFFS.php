@@ -25,6 +25,10 @@ class JsonFFS extends SimpleFFS {
 		return is_array( FormatJSON::decode( $data, /*as array*/true ) );
 	}
 
+	public function getFileExtensions() {
+		return array( '.json' );
+	}
+
 	/**
 	 * @param array $data
 	 * @return array

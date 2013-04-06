@@ -13,6 +13,14 @@
  * @ingroup FFS
  */
 class AndroidXmlFFS extends SimpleFFS {
+	public function supportsFuzzy() {
+		return 'yes';
+	}
+
+	public function getFileExtensions() {
+		return array( '.xml' );
+	}
+
 	public function readFromVariable( $data ) {
 		$reader = new SimpleXMLElement( $data );
 
@@ -75,9 +83,5 @@ XML;
 		$dom->formatOutput = true;
 		$dom->loadXML( $writer->asXML() );
 		return $dom->saveXML();
-	}
-
-	public function supportsFuzzy() {
-		return 'yes';
 	}
 }
