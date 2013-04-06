@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DslBxrHU",
+        "filename": "tests/ffs/XliffFFSTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-04-06T15:53:32Z",
+      "side": 1,
+      "message": "In https://gerrit.wikimedia.org/r/#/c/57842/1/tests/data/minimal.xlf I nowhere see for which language that file contains translations. Is that correct? (I.e. there should be a file name or directory that determines which language translations are in for xliff?)",
+      "revId": "d4a0320fd11e68b35b214427e8347dacd0377f86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
