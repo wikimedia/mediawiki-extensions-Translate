@@ -16,6 +16,10 @@
  * @ingroup FFS
  */
 class DtdFFS extends SimpleFFS {
+	public function getFileExtensions() {
+		return array( '.dtd' );
+	}
+
 	/**
 	 * @param $data string
 	 * @return array

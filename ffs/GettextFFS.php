@@ -19,6 +19,14 @@ class GettextPluralException extends MwException {}
  * @ingroup FFS
  */
 class GettextFFS extends SimpleFFS {
+	public function supportsFuzzy() {
+		return 'yes';
+	}
+
+	public function getFileExtensions() {
+		return array( '.pot', '.po' );
+	}
+
 	protected $offlineMode = false;
 
 	/**
@@ -630,9 +638,4 @@ PHP;
 
 		return $splitPlurals;
 	}
-
-	public function supportsFuzzy() {
-		return 'yes';
-	}
-
 }
