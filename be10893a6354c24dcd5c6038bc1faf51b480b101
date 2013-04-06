@@ -16,6 +16,24 @@
       "revId": "be10893a6354c24dcd5c6038bc1faf51b480b101",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DshBrJIg",
+        "filename": "ffs/MediaWikiExtensionFFS.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-06T15:59:05Z",
+      "side": 1,
+      "message": "Little practical difference but I will change it anyway.",
+      "parentUuid": "DshBSRN4",
+      "revId": "be10893a6354c24dcd5c6038bc1faf51b480b101",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
