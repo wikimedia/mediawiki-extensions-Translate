@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DshBSRN4",
+        "filename": "ffs/MediaWikiExtensionFFS.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-04-06T15:45:58Z",
+      "side": 1,
+      "message": "Would it be useful to make this more specific, .i18n.php?",
+      "revId": "be10893a6354c24dcd5c6038bc1faf51b480b101",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
