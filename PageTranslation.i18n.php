@@ -2034,7 +2034,7 @@ Navn: $1',
 Kun den seneste version kan markeres for oversættelse.',
 	'tpt-notsuitable' => 'Siden $1 er ikke parat til oversættelse.
 Sørg for at den har <nowiki><translate></nowiki>-tags og en gyldig syntaks.',
-	'tpt-saveok' => 'Siden [[$1]] har blevet markeret for oversættelse med $2 {{PLURAL:$2|oversættelsesenhed|oversættelsesenheder}}.
+	'tpt-saveok' => 'Siden [[$1]] er blevet markeret til oversættelse med $2 {{PLURAL:$2|oversættelsesenhed|oversættelsesenheder}}.
 Siden kan nu <span class="plainlinks">[$3 oversættes]</span>.',
 	'tpt-badsect' => '"$1" er ikke et gyldig navn for oversættelsesenhed $2.',
 	'tpt-showpage-intro' => 'Herunder listes der nye, eksisterende og slettede oversættelsesenheder.
@@ -2055,7 +2055,7 @@ Før denne version markeres til oversættelse, skal du kontrollere, at ændringe
 men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til oversættelse.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Denne side|Disse sider}} er blevet frarådet yderligere oversættelse.',
 	'tpt-select-prioritylangs' => 'Liste over sprogkoder for prioriterede sprog, adskilt med kommaer:',
-	'tpt-select-prioritylangs-force' => 'Forhindring af oversættelser til andre sprog end prioritetsprogene', # Fuzzy
+	'tpt-select-prioritylangs-force' => 'Forhindre oversættelse til andre sprog end de prioriterede sprog',
 	'tpt-select-prioritylangs-reason' => 'Begrundelse:',
 	'tpt-sections-prioritylangs' => 'Prioriterede sprog',
 	'tpt-rev-mark' => 'marker til oversættelse',
@@ -2071,7 +2071,6 @@ men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til 
 	'translate-tag-markthisagain' => 'Denne side er <span class="plainlinks">[$1 ændret]</span> siden den sidst blev <span class="plainlinks">[$2 markeret for oversættelse]</span>.',
 	'translate-tag-hasnew' => 'Denne side indeholder <span class="plainlinks">[$1 ændringer]</span> som ikke er markeret for oversættelse.',
 	'tpt-translation-intro' => 'Denne side er en <span class="plainlinks">[$1 oversat version]</span> af en side [[$2]] og oversættelsen er $3 % komplet og opdateret.',
-	'tpt-translation-intro-fuzzy' => 'Forældede oversættelser er markeret sådan her.',
 	'tpt-languages-legend' => 'Andre sprog:',
 	'tpt-languages-zero' => 'Begynd på oversættelsen til dette sprog',
 	'tpt-target-page' => 'Denne side kan ikke opdateres manuelt.
@@ -2110,27 +2109,27 @@ Oversættelsesenhedstekst: <pre>$1</pre>',
 	'pt-shake-position' => 'Oversættelsesenhedsmarkører på uventet position.
 Oversættelsesenhedstekst: <pre>$1</pre>',
 	'pt-shake-empty' => 'Tom oversættelsesenhed for markøren "$1".',
-	'pt-log-header' => 'Log for handlinger i forbindelse med side oversættelses systemet',
-	'pt-log-name' => 'Sideoversættelseslog',
-	'pt-log-mark' => '{{GENDER:$2|markerede}} version $3 af siden "[[:$1]]" til oversættelse',
-	'pt-log-unmark' => '{{GENDER:$2|fjernede}} side "[[:$1]]" fra oversættelse',
-	'pt-log-moveok' => '{{GENDER:$2|fuldførte}} omdøbning af den oversætbare side $1 til $3',
-	'pt-log-movenok' => '{{GENDER:$2|stødte på}} et problem under flytningen af [[:$1]] til [[:$3]]',
-	'pt-log-delete-full-ok' => '{{GENDER:$2|færdiggjorte}} sletning af oversætbar side $1',
-	'pt-log-delete-full-nok' => '{{GENDER:$2|stødte på}} et problem under sletning oversætbar side [[:$1]]',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|Fuldførte}} sletning af oversættelses side $1',
-	'pt-log-delete-lang-nok' => '{{GENDER:$2|stødte på}} et problem under sletning oversættelses side [[:$1]]',
-	'pt-log-encourage' => '{{GENDER:$2|opfordrede}} til oversættelse af siden "[[:$1]]"',
-	'pt-log-discourage' => '{{GENDER:$2|frarådede}} oversættelse af siden "[[:$1]]"',
-	'pt-log-priority-langs-unset' => '{{GENDER:$2|fjernede}} prioritetssprog fra den oversætbare side "[[:$1]]"',
-	'pt-log-priority-langs' => '{{GENDER:$2|satte}} prioritetssproget for den oversætbare side "[[:$1]]" til $3. Årsag: $4',
-	'pt-log-priority-langs-force' => '{{GENDER:$2|begrænsede}} sprog for den oversætbare side "[[:$1]]" til $3. Årsag: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|tilføjede}} oversætbare side "[[:$1]]" til samlegruppen $3',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|fjernede}} oversætbar side "[[:$1]]" fra samlegruppen $3',
+	'log-description-pagetranslation' => 'Log for handlinger i forbindelse med side oversættelses systemet',
+	'log-name-pagetranslation' => 'Sideoversættelseslog',
+	'logentry-pagetranslation-mark' => '$1 {{GENDER:$2|markerede}} $3 til oversættelse',
+	'logentry-pagetranslation-unmark' => '$1 {{GENDER:$2|fjernede}} $3 fra oversættelse',
+	'logentry-pagetranslation-moveok' => '$1 {{GENDER:$2|afsluttede}} omdøbning af den oversætbare side $3 til $4',
+	'logentry-pagetranslation-movenok' => '$1 {{GENDER:$2|stødte på}} et problem under flytning af siden $3 til $4',
+	'logentry-pagetranslation-deletefok' => '$1 {{GENDER:$2|afsluttede}} sletning af den oversætbare side $3',
+	'logentry-pagetranslation-deletefnok' => '$1 {{GENDER:$2|kunne ikke}} slette $3 der tilhører den oversætbare side $4',
+	'logentry-pagetranslation-deletelok' => '$1 {{GENDER:$2|afsluttede}} sletning af den oversætbare side $3',
+	'logentry-pagetranslation-deletelnok' => '$1 {{GENDER:$2|kunne ikke}} slette $3 der tilhører oversættelsesside $4',
+	'logentry-pagetranslation-encourage' => '$1 {{GENDER:$2|opmuntrede}} oversættelse af $3',
+	'logentry-pagetranslation-discourage' => '$1 {{GENDER:$2|frarådede}} oversættelse af $3',
+	'logentry-pagetranslation-prioritylanguages-unset' => '$1 {{GENDER:$2|fjernede}} prioritetssprog fra den oversætbare side $3',
+	'logentry-pagetranslation-prioritylanguages' => '$1 {{GENDER:$2|satte}} prioritetssprogene for den oversætbare side $3 til $5',
+	'logentry-pagetranslation-prioritylanguages-force' => '$1 {{GENDER:$2|begrænsede}} sprogene for den oversætbare side $3 til $5',
+	'logentry-pagetranslation-associate' => '$1 {{GENDER:$2|tilføjede}} den oversætbare side $3 til den samlede gruppe $4',
+	'logentry-pagetranslation-dissociate' => '$1 {{GENDER:$2|fjernede}} den oversætbare side $3 fra den samlede gruppe $4',
 	'pt-movepage-title' => 'Flyt oversætbare side $1',
 	'pt-movepage-blockers' => 'Den oversætbare side kan ikke flyttes til et nyt navn på grund af følgende {{PLURAL:$1|fejl|fejl}}:',
-	'pt-movepage-block-base-exists' => 'Målbase siden [[:$1]] findes.', # Fuzzy
-	'pt-movepage-block-base-invalid' => 'Målbase siden er ikke en gyldig titel.', # Fuzzy
+	'pt-movepage-block-base-exists' => 'Den oversætbare målside "[[:$1]]" findes.',
+	'pt-movepage-block-base-invalid' => 'Navnet på den oversætbare målside er ikke en gyldig titel.',
 	'pt-movepage-block-tp-exists' => 'Mål oversættelsessiden [[:$2]] findes.',
 	'pt-movepage-block-tp-invalid' => 'Mål oversættelses side titlen for [[:$1]] ville være ugyldig (for lang?).',
 	'pt-movepage-block-section-exists' => 'Målsiden "[[:$2]]" hørende til oversættelsesenheden findes.',
@@ -2161,13 +2160,13 @@ Husk at tjekke [[Special:Log/pagetranslation|siden oversættelsen log]] for fejl
 	'pt-deletepage-lang-title' => 'Sletter oversættelses side $1.',
 	'pt-deletepage-full-title' => 'Sletter oversætbar side $1.',
 	'pt-deletepage-invalid-title' => 'Den angivne side er ikke gyldig.',
-	'pt-deletepage-invalid-text' => 'Den angivne side er ikke en oversætbar side eller en oversættelse af én.', # Fuzzy
+	'pt-deletepage-invalid-text' => 'Den angivne side er ikke en oversætbar side eller en oversættelsesside.',
 	'pt-deletepage-action-check' => 'List sider der skal slettes',
 	'pt-deletepage-action-perform' => 'Udfør sletningen',
 	'pt-deletepage-action-other' => 'Skift mål',
 	'pt-deletepage-lang-legend' => 'Slet oversættelses side',
 	'pt-deletepage-full-legend' => 'Slet oversætbar side',
-	'pt-deletepage-any-legend' => 'Slet en oversætbar side eller oversættelse af en oversætbare side', # Fuzzy
+	'pt-deletepage-any-legend' => 'Slet en oversætbar side eller en oversættelsesside',
 	'pt-deletepage-current' => 'Sidenavn:',
 	'pt-deletepage-reason' => 'Årsag:',
 	'pt-deletepage-subpages' => 'Slet alle undersider',
@@ -2179,9 +2178,9 @@ Husk at tjekke [[Special:Log/pagetranslation|siden oversættelsen log]] for fejl
 	'pt-deletepage-full-logreason' => 'Del af oversætbar side $1.',
 	'pt-deletepage-lang-logreason' => 'En del af oversættelses side $1 .',
 	'pt-deletepage-started' => 'Tjek venligst [[Special:Log/pagetranslation|side oversættelses log]] for fejl og færdiggørelses besked.',
-	'pt-deletepage-intro' => 'Denne med specielle side kan du slette hele oversætbare sider eller oversættelser til et sprog.
-Sletningen vil ikke ske med det samme, fordi mange sider vil være nød til at blive slettet.
-Fejl vil blive registreret i [[Special:Log/pagetranslation|side oversættelses log]], og de skal repareres i manuelt.', # Fuzzy
+	'pt-deletepage-intro' => 'Med denne specielle side kan du slette en hel oversætbar side eller en individuel oversættelsesside.
+Sletningen vil ikke ske med det samme, fordi mange afhængige sider også vil blive slettet.
+Fejl vil blive registreret i [[Special:Log/pagetranslation|side oversættelses log]], og de skal repareres i manuelt.',
 );
 
 /** German (Deutsch)
