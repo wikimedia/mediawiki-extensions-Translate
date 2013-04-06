@@ -5,6 +5,10 @@
  * @ingroup FFS
  */
 abstract class JavaScriptFFS extends SimpleFFS {
+	public function getFileExtensions() {
+		return array( '.js' );
+	}
+
 	/**
 	 * Message keys format.
 	 *

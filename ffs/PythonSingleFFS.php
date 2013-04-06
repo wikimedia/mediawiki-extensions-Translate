@@ -5,6 +5,10 @@
  * @ingroup FFS
  */
 class PythonSingleFFS extends SimpleFFS {
+	public function getFileExtensions() {
+		return array( '.py' );
+	}
+
 	/**
 	 * To avoid parsing full files again and again when reading or exporting
 	 * multiple languages, keep cache of the sections of the latest active file.

@@ -33,7 +33,7 @@ class IniFFSTest extends MediaWikiTestCase {
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new IniFFS( $group );
 
-		$this->assertTrue( IniFFS::isValid( 'IniFFSTest1.ini', $file ) );
+		$this->assertTrue( IniFFS::isValid( $file ) );
 
 		$parsed = $ffs->readFromVariable( $file );
 		$expected = array(

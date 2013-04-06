@@ -74,6 +74,14 @@ interface FFS {
 	 * @since 2013-03-05
 	 */
 	public function supportsFuzzy();
+
+	/**
+	 * Return the commonly used file extensions for these formats.
+	 * Include the dot.
+	 * @return string[]
+	 * @since 2013-04
+	 */
+	public function getFileExtensions();
 }
 
 /**
@@ -83,6 +91,14 @@ interface FFS {
  * @ingroup FFS
  */
 class SimpleFFS implements FFS {
+	public function supportsFuzzy() {
+		return 'no';
+	}
+
+	public function getFileExtensions() {
+		return array();
+	}
+
 	/**
 	 * @var FileBasedMessageGroup
 	 */
@@ -401,9 +417,5 @@ class SimpleFFS implements FFS {
 		$data = str_replace( "\r", "\n", $data );
 
 		return $data;
-	}
-
-	public function supportsFuzzy() {
-		return 'no';
 	}
 }
