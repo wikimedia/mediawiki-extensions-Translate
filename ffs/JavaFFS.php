@@ -10,6 +10,14 @@
  * @ingroup FFS
  */
 class JavaFFS extends SimpleFFS {
+	public function supportsFuzzy() {
+		return 'write';
+	}
+
+	public function getFileExtensions() {
+		return array( '.properties' );
+	}
+
 	protected $keySeparator = '=';
 
 	/**
@@ -22,7 +30,6 @@ class JavaFFS extends SimpleFFS {
 			$this->keySeparator = $this->extra['keySeparator'];
 		}
 	}
-
 	// READ
 
 	/**
@@ -238,9 +245,5 @@ class JavaFFS extends SimpleFFS {
 		}
 
 		return $output;
-	}
-
-	public function supportsFuzzy() {
-		return 'write';
 	}
 }

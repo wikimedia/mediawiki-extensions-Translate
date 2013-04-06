@@ -16,12 +16,7 @@
  * @since 2012-11-19
  */
 class IniFFS extends SimpleFFS {
-
-	public static function isValid( $filename, $data ) {
-		if ( !preg_match( '/.+\.ini$/', $filename ) ) {
-			return false;
-		}
-
+	public static function isValid( $data ) {
 		$conf = array( 'BASIC' => array( 'class' => 'FileBasedMessageGroup', 'namespace' => 8 ) );
 		/**
 		 * @var FileBasedMessageGroup $group
@@ -33,6 +28,14 @@ class IniFFS extends SimpleFFS {
 		$parsed = $ffs->readFromVariable( $data );
 		wfRestoreWarnings();
 		return !!count( $parsed['MESSAGES'] );
+	}
+
+	public function supportsFuzzy() {
+		return 'write';
+	}
+
+	public function getFileExtensions() {
+		return array( '.ini' );
 	}
 
 	public function readFromVariable( $data ) {
@@ -101,9 +104,5 @@ class IniFFS extends SimpleFFS {
 
 		$header .= '[' . $collection->getLanguage() . "]\n";
 		return $header . $output;
-	}
-
-	public function supportsFuzzy() {
-		return 'write';
 	}
 }

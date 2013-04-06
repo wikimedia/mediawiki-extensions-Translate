@@ -16,6 +16,10 @@ class RubyYamlFFS extends YamlFFS {
 		'two' => 1
 	);
 
+	public function getFileExtensions() {
+		return array( '.yml', '.yaml' );
+	}
+
 	/**
 	 * Flattens ruby plural arrays into special plural syntax.
 	 *
