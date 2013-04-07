@@ -36,6 +36,11 @@
 	border-bottom: 1px solid #DDDDDD;
 }
 
+.tux-pagemode-source,
+.tux-pagemode-translation {
+	word-wrap: break-word;
+}
+
 .tux-message-pagemode.open .tux-pagemode-status,
 .tux-message-pagemode.open .tux-pagemode-source,
 .tux-message-pagemode.open .tux-pagemode-translation,
@@ -115,4 +120,3 @@
 .tux-message-pagemode:hover .tux-pagemode-edit {
 	visibility: visible;
 }
-
