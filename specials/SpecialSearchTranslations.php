@@ -23,6 +23,12 @@ class SpecialSearchTranslations extends SpecialPage {
 	 */
 	protected $hl = array();
 
+	/**
+	 * How many search results to display per page
+	 * @var int
+	 */
+	protected $limit = 25;
+
 	public function __construct() {
 		parent::__construct( 'SearchTranslations' );
 		$this->hl = array(
@@ -145,13 +151,37 @@ class SpecialSearchTranslations extends SpecialPage {
 				$uri = wfAppendQuery( $document->uri, array( 'action' => 'edit' ) );
 				$link = Html::element( 'a', array(
 					'href' => $uri,
-				), $this->msg( 'tux-sst-edit' ) );
+				), $this->msg( 'tux-sst-edit' )->text() );
 				$result .= Html::rawElement( 'div', array( 'class' => 'row tux-edit tux-message-item' ), $link );
 			}
 
 			$result .= Html::closeElement( 'div' );
 			$results .= $result;
 		}
+
+		$prev = $next = '';
+		$total = $resultset->getNumFound();
+		$offset = $this->getRequest()->getInt( 'offset' );
+		$params = $this->getRequest()->getValues();
+
+		if ( $total - $offset > $this->limit ) {
+			$newParams = array( 'offset' => $offset + $this->limit ) + $params;
+			$attribs = array(
+				'class' => 'pager-next',
+				'href' => $this->getTitle()->getLocalUrl( $newParams ),
+			);
+			$next = Html::element( 'a', $attribs, $this->msg( 'tux-sst-next' )->text() );
+		}
+		if ( $offset ) {
+			$newParams = array( 'offset' => max( 0, $offset - $this->limit ) ) + $params;
+			$attribs = array(
+				'class' => 'pager-prev',
+				'href' => $this->getTitle()->getLocalUrl( $newParams ),
+			);
+			$prev = Html::element( 'a', $attribs, $this->msg( 'tux-sst-prev' )->text() );
+		}
+
+		$results .= Html::rawElement( 'div', array(), "$prev $next" );
 
 		$search = $this->getSearchInput( $queryString );
 		$count = $this->msg( 'tux-sst-count' )->numParams( $resultset->getNumFound() );
@@ -164,7 +194,8 @@ class SpecialSearchTranslations extends SpecialPage {
 		$dismax = $query->getDisMax();
 		$dismax->setQueryParser( 'edismax' );
 		$query->setQuery( $queryString );
-		$query->setRows( 20 );
+		$query->setRows( $this->limit );
+		$query->setStart( $this->getRequest()->getInt( 'offset' ) );
 
 		list( $pre, $post ) = $this->hl;
 		$hl = $query->getHighlighting();
