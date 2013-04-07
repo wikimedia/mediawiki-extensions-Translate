@@ -156,9 +156,6 @@ Post processing step to format in wiki
 ;beforeSubmit: Provides an opportunity to modify a Translate translation form immediately before it is submitted
  jQuery          form: The form being submitted
 
-;formatMessageBeforeTable: Provides an opportunity to manipulate the display of translation strings (messages) in the main table
- object          message: The message object, with a range of useful (and manipulable) properties
-
 ;showTranslationHelpers: Provides an opportunity to handle custom translation helpers
  object          result.helpers: JSON subset focussing on the helpers returned e.g. result.helpers.definition
  jQuery          translateEditor.$editor: The current translation-editing form

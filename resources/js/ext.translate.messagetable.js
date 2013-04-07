@@ -126,9 +126,6 @@
 		add: function ( message ) {
 			var $message;
 
-			// Prepare the message for display
-			mw.translateHooks.run( 'formatMessageBeforeTable', message );
-
 			if ( this.mode === 'translate' ) {
 				this.addTranslate( message );
 
