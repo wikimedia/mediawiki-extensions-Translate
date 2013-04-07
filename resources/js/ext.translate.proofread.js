@@ -98,10 +98,24 @@
 		}
 	} );
 
+	/**
+	 * Proofread Plugin
+	 * Prepare a proofread UI with all the required actions
+	 * for a translation unit (message).
+	 * This is mainly used with the messagetable plugin in proofread mode,
+	 * but it is independent of messagetable.
+	 * Example usage:
+	 *
+	 * $( 'div.proofread' ).proofread( {
+	 *	message: messageObject, // Mandatory message object
+	 *	sourcelangcode: 'en', // Mandatory source language code
+	 *	targetlangcode: 'hi' // Mandatory target language code
+	 * } );
+	 */
 	function Proofread( element, options ) {
 		this.$message = $( element );
 		this.options = options;
-		this.message = this.$message.data( 'message' );
+		this.message = this.options.message;
 		this.init();
 		this.listen();
 	}
