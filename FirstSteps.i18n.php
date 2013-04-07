@@ -533,24 +533,24 @@ $messages['bo'] = array(
  */
 $messages['br'] = array(
 	'firststeps' => 'Pazenn gentañ',
-	'firststeps-desc' => '[[Special:FirstSteps|Pajenn dibar]] evit hentañ an implijerien war ur wiki hag a implij an astenn Translate',
+	'firststeps-desc' => '[[Special:FirstSteps|Pajenn dibar]] evit hentañ an implijerien war ur wiki a implij an astenn Translate',
 	'translate-fs-pagetitle-done' => ' - graet !',
 	'translate-fs-pagetitle-pending' => ' - war ober',
 	'translate-fs-pagetitle' => "Heñcher loc'hañ - $1",
 	'translate-fs-signup-title' => 'En em enskrivañ',
-	'translate-fs-settings-title' => 'Kefluniañ ho arventennoù',
-	'translate-fs-userpage-title' => 'Krouiñ ho fajenn implijer',
+	'translate-fs-settings-title' => "Kefluniañ hoc'h arventennoù",
+	'translate-fs-userpage-title' => 'Krouiñ ho pajenn implijer',
 	'translate-fs-permissions-title' => 'Goulennit an aotreoù troer',
 	'translate-fs-target-title' => 'Kregiñ da dreiñ !',
 	'translate-fs-email-title' => "Kadarnait ho chomlec'h postel",
-	'translate-fs-intro' => "Deuet mat oc'h er skoazeller evit pazioù kentañ {{SITENAME}}.
-Emaomp o vont da hentañ ac'hanoc'h paz ha paz evit dont da vezañ un troer.
-E fin an hentad e c'helloc'h treiñ \"kemennadennoù etrefas\" an holl raktresoù meret gant {{SITENAME}}.",
+	'translate-fs-intro' => 'Degemer mat deoc\'h er skoazeller a ambrougo ho pazennoù kentañ war {{SITENAME}}.
+Heñchet e viot kammed-ha-kammed evit dont da vezañ un troer.
+En dibennn e c\'hallot treiñ "kemennadennoù etrefas" an holl raktresoù meret gant {{SITENAME}}.',
 	'translate-fs-selectlanguage' => 'Dibab ur yezh',
 	'translate-fs-settings-planguage' => 'Yezh pennañ :',
 	'translate-fs-settings-planguage-desc' => 'Talvezout a ra ar yezh pennañ da yezh an etrefas evit ar wiki-mañ ha da yezh labour evit an troidigezhioù.',
 	'translate-fs-settings-slanguage' => 'Yezh skoazell $1 :',
-	'translate-fs-settings-slanguage-desc' => "Posupl eo diskwel troidigezhioù kemennadennoù e yezhoù all er skridaozerez treiñ.
+	'translate-fs-settings-slanguage-desc' => "Posupl eo d'ar skridaozer treiñ diskouez deoc'h troidigezhioù ar c'hemennadennoù e yezhoù all .
 Amañ e c'hallit dibab peseurt yezhoù a garfec'h gwelet, mar karit.",
 	'translate-fs-settings-submit' => 'Enrollañ ar penndibaboù',
 	'translate-fs-userpage-level-N' => 'A-vihanik e komzan',
@@ -558,9 +558,9 @@ Amañ e c'hallit dibab peseurt yezhoù a garfec'h gwelet, mar karit.",
 	'translate-fs-userpage-level-4' => 'Evel ur yezher a-vihanik e komzan',
 	'translate-fs-userpage-level-3' => 'Ampart on war ar',
 	'translate-fs-userpage-level-2' => "Barrek a-walc'h on war ar",
-	'translate-fs-userpage-level-1' => 'Un tammig e ouzon ar',
+	'translate-fs-userpage-level-1' => 'Un tammig e ouzon',
 	'translate-fs-userpage-help' => "Roit titouroù diwar-benn ho parregezhioù yezh ha kontit deomp un draig bennak diwar ho penn. Mard ouzit ouzhpenn 5 yezh e c'hallot ouzhpennañ anezho diwezhatoc'hik.",
-	'translate-fs-userpage-submit' => 'Krouiñ ma fajenn implijer',
+	'translate-fs-userpage-submit' => 'Krouiñ ho pajenn implijer',
 	'translate-fs-userpage-done' => "Dispar ! Ur bajenn implijer hoc'h eus bremañ.",
 	'translate-fs-permissions-planguage' => 'Yezh pennañ :',
 	'translate-fs-permissions-help' => "Bremañ eo ret deoc'h goulenn ma vo ouzhpennet hoc'h anv e strollad an droerien.

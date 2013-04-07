@@ -33,10 +33,7 @@ $messages['en'] = array(
 	'tux-sst-prev' => 'Previous results',
 );
 
-/** Message documentation (This is the name of the message documentation language code (qqq). Follow the rules of your languages and use small first letter if it doesn't capitalize language names always.
-
-It might be easier to translate it as "translation guidelines" or "translation help".
-{{Identical|Message documentation}})
+/** Message documentation (Message documentation)
  * @author Nike
  * @author Shirayuki
  */
@@ -70,7 +67,6 @@ The body of error message is {{msg-mw|Tux-sst-solr-offline-body}}.
 	'tux-sst-solr-offline-body' => 'Used as error message.
 
 The page title for this message is {{msg-mw|tux-sst-solr-offline-title}}.',
-
 	'tux-sst-next' => 'Link to browser more search results',
 	'tux-sst-prev' => 'Link to browser more search results',
 );
