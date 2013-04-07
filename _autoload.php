@@ -181,6 +181,7 @@ $wgAutoloadClasses['PythonSingleFFS'] = "$dir/ffs/PythonSingleFFS.php";
 $wgAutoloadClasses['RubyYamlFFS'] = "$dir/ffs/RubyYamlFFS.php";
 $wgAutoloadClasses['ShapadoJsFFS'] = "$dir/ffs/JavaScriptFFS.php";
 $wgAutoloadClasses['SimpleFFS'] = "$dir/ffs/FFS.php";
+$wgAutoloadClasses['XliffFFS'] = "$dir/ffs/XliffFFS.php";
 $wgAutoloadClasses['YamlFFS'] = "$dir/ffs/YamlFFS.php";
 /**@}*/
 
