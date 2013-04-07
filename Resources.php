@@ -41,6 +41,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 	),
 	'dependencies' => array(
 		'ext.translate.base',
+		'ext.translate.hooks',
 		'jquery.uls.grid',
 		'mediawiki.util',
 		'mediawiki.Uri',
@@ -135,6 +136,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 	'styles' => 'resources/css/ext.translate.messagetable.css',
 	'position' => 'top',
 	'dependencies' => array(
+		'ext.translate.hooks',
 		'mediawiki.util',
 		'jquery.appear',
 		'mediawiki.jqueryMsg',
