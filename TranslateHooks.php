@@ -241,6 +241,11 @@ class TranslateHooks {
 	public static function translateMessageDocumentationLanguage( &$names, $code ) {
 		global $wgTranslateDocumentationLanguageCode;
 		if ( $wgTranslateDocumentationLanguageCode ) {
+			// Special case the native name, assuming it is given as a string
+			if ( $wgTranslateDocumentationLanguageCode === $code ) {
+				$code = 'en';
+			}
+
 			$names[$wgTranslateDocumentationLanguageCode] =
 				wfMessage( 'translate-documentation-language' )->inLanguage( $code )->plain();
 		}
