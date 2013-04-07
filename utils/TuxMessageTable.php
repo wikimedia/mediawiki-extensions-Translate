@@ -21,6 +21,7 @@ class TuxMessageTable extends ContextSource {
 
 		$list = Html::element( 'div', array(
 			'class' => 'row tux-messagelist',
+			'data-grouptype' => get_class( $this->group ),
 			'data-sourcelangcode' => $sourceLang->getCode(),
 			'data-sourcelangdir' => $sourceLang->getDir(),
 			'data-targetlangcode' => $targetLang->getCode(),

@@ -132,7 +132,6 @@ abstract class TranslationAid {
 			'gettext' => 'GettextDocumentationAid',
 		);
 
-		wfRunHooks( 'TranslateTranslationAids', array( &$types ) );
 		return $types;
 	}
 

@@ -142,8 +142,8 @@ Post processing step to format in wiki
  array          &$list: List of languages indexed by language code
  string          $language: Language code of the language of which language names are in
 
-;TranslateTranslationAids: Allows adding (and removing) new translation aids
- array          &$types: List of translation aid classes indexed by type identifier
+;TranslateTranslationAids: Make new translation aids available to any message group (which must choose an implementation in its getTranslationAids() method).
+ array          &$types: List of translation aid identifiers, numerically indexed
 
 === JavaScript events ===
 
@@ -155,3 +155,10 @@ Post processing step to format in wiki
 
 ;beforeSubmit: Provides an opportunity to modify a Translate translation form immediately before it is submitted
  jQuery          form: The form being submitted
+
+;formatMessageBeforeTable: Provides an opportunity to manipulate the display of translation strings (messages) in the main table
+ object          message: The message object, with a range of useful (and manipulable) properties
+
+;showTranslationHelpers: Provides an opportunity to handle custom translation helpers
+ object          result.helpers: JSON subset focussing on the helpers returned e.g. result.helpers.definition
+ jQuery          translateEditor.$editor: The current translation-editing form
