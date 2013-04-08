@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "Dtu-UfR8",
+        "filename": "scripts/plural-comparison.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-04-08T17:20:33Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "DtmzV.7Q",
+      "revId": "8f647f452f62b5ec81efd068dd128daa05ecc206",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DtgziN6Q",
         "filename": "specials/SpecialManageGroups.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-08T15:12:08Z",
       "side": 1,
       "message": "$type seems really unused here.",
+      "revId": "8f647f452f62b5ec81efd068dd128daa05ecc206",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dto-ZOVY",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-04-08T17:20:33Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "DtgziN6Q",
       "revId": "8f647f452f62b5ec81efd068dd128daa05ecc206",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
