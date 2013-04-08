@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DtxFSTN4",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-08T22:03:02Z",
+      "side": 1,
+      "message": "Must probably be .find( \u0027.editcolumn textarea\u0027 ).",
+      "revId": "3a95c0a4d3b49f08bec02c952655258023386dd4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
