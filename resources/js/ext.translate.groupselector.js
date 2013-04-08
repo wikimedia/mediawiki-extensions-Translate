@@ -574,33 +574,35 @@
 	 * recurse it through sub groups.
 	 *
 	 * @param {string} messageGroupId
-	 * @param {Array} messageGroups Array of messageGroups
+	 * @param {Array|Object} messageGroups Array of messageGroups
 	 * @return {Object|boolean} Messagegroup object
 	 */
 	mw.translate.getGroup = function ( messageGroupId, messageGroups ) {
-		var i, messageGroup;
+		var i,
+			result = false,
+			messageGroup;
 
 		if ( !messageGroups ) {
 			messageGroups = mw.translate.messageGroups;
 		}
 
-		for ( i = 0; i < messageGroups.length; i++ ) {
-			messageGroup = messageGroups[i];
-
+		$.each( messageGroups, function ( id, messageGroup ) {
 			if ( messageGroup.id === messageGroupId ) {
-				return messageGroup;
+				result = messageGroup;
+				return;
 			}
 
 			if ( messageGroup.groups ) {
 				messageGroup = mw.translate.getGroup( messageGroupId, messageGroup.groups );
 
 				if ( messageGroup ) {
-					return messageGroup;
+					result = messageGroup;
+					return;
 				}
 			}
-		}
+		} )
 
-		return false;
+		return result;
 	};
 
 	var delay = ( function () {
