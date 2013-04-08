@@ -566,7 +566,7 @@
 		validateTranslation: function () {
 			var translateEditor = this,
 				url = new mw.Uri( mw.config.get( 'wgScript' ) ),
-				$textArea = translateEditor.$editor.find( 'textarea' );
+				$textArea = translateEditor.$editor.find( '.editcolumn textarea' );
 
 			// TODO: We need a better API for this
 			url.extend( {
@@ -767,7 +767,7 @@
 			this.$messageItem.addClass( 'hide' );
 			this.$editor
 				.removeClass( 'hide' )
-				.find( 'textarea' )
+				.find( '.editcolumn textarea' )
 					.focus();
 
 			this.shown = true;
