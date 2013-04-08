@@ -56,7 +56,7 @@
 			this.expanded = false;
 			this.$editTrigger.append( this.$editor );
 
-			if ( this.message.properties.status === 'fuzzy' ) {
+			if ( this.message.properties && this.message.properties.status === 'fuzzy' ) {
 				this.addWarning(
 					mw.message( 'tux-editor-outdated-warning' ).escaped(),
 					'diff'
@@ -125,8 +125,10 @@
 			this.$messageItem.addClass( 'translated' );
 			this.dirty = false;
 
-			$( '.tux-action-bar .tux-statsbar' ).trigger( 'change', [ 'translated', this.message.properties.state ] );
-			// TODO: Update any other statsbar for the same group in the page.
+			if ( this.message.properties ) {
+				$( '.tux-action-bar .tux-statsbar' ).trigger( 'change', [ 'translated', this.message.properties.state ] );
+				// TODO: Update any other statsbar for the same group in the page.
+			}
 		},
 
 		/**
