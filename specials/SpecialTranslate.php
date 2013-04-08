@@ -148,7 +148,6 @@ class SpecialTranslate extends SpecialPage {
 				$priorityForce = TranslateMetadata::get( $groupId, 'priorityforce' );
 				if ( $priorityForce === 'on' ) {
 					// Hide table
-					$this->paging['count'] = 0;
 					$priorityMessageClass = 'errorbox';
 					$priorityMessageKey = 'tpt-discouraged-language-force';
 				} else {

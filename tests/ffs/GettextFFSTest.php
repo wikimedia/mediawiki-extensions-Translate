@@ -12,6 +12,7 @@
  * @see GettextFFS
  */
 class GettextFFSTest extends MediaWikiTestCase {
+	protected $groupConfiguration;
 
 	public function setUp() {
 		parent::setUp();
