@@ -15,6 +15,7 @@ class TranslateSandbox {
 	 * Adds a new user without doing much validation.
 	 * @param string $name User name.
 	 * @param string $email Email address.
+	 * @param string $password User provided password.
 	 * @return User
 	 * @throws MWException
 	 */
