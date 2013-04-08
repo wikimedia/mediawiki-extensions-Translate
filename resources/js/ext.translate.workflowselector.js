@@ -18,7 +18,7 @@
 		 * Displays the current state and selector if relevant.
 		 * @param {String} groupId
 		 * @param {String} language
-		 * @param {String] state
+		 * @param {String} state
 		 */
 		receiveState: function ( groupId, language, state ) {
 			var instance = this;
@@ -66,7 +66,7 @@
 
 		/**
 		 * Get the text which says that the current state is X.
-		 * @param {String} state
+		 * @param {String} stateName
 		 * @return {String} Text which should be escaped.
 		 */
 		getStateDisplay: function ( stateName ) {
