@@ -198,7 +198,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 	/**
 	 * Pretty-print the list of errors.
-	 * @param $errors Array with message key and parameters
+	 * @param array $errors Array with message key and parameters
 	 */
 	protected function showErrors( array $errors ) {
 		if ( count( $errors ) ) {
@@ -243,7 +243,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 	/**
 	 * Shortcut for keeping the code at least a bit readable. Adds label and input into $form array.
-	 * @param \list{String} $form Array where input element and label is appended.
+	 * @param string[] $form Array where input element and label is appended.
 	 * @param string $label Label text.
 	 * @param string $name Name attribute.
 	 * @param bool|int $size Size attribute of the input element. Default false.
@@ -330,11 +330,11 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	/**
 	 * @param string $base
 	 * @param Title $old
-	 * @param string $target
+	 * @param Title $target
 	 * @param bool $enabled
 	 * @return string
 	 */
-	protected function getChangeLine( $base, Title $old, $target, $enabled = true ) {
+	protected function getChangeLine( $base, Title $old, Title $target, $enabled = true ) {
 		$to = $this->newPageTitle( $base, $old, $target );
 
 		if ( $enabled ) {
@@ -554,9 +554,9 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	/**
 	 * Makes old title into a new title by replacing $base part of old title
 	 * with $target.
-	 * @param $base String Title::getPrefixedText() of the base page.
-	 * @param $old Title The title to convert.
-	 * @param $target Title The target title for the base page.
+	 * @param string $base Title::getPrefixedText() of the base page.
+	 * @param Title $old The title to convert.
+	 * @param Title $target The target title for the base page.
 	 * @return Title
 	 */
 	protected function newPageTitle( $base, Title $old, Title $target ) {

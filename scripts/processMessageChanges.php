@@ -58,6 +58,7 @@ class ProcessMessageChanges extends Maintenance {
 		}
 
 		$this->counter = 0;
+		/** @var FileBasedMessageGroup $group */
 		foreach ( $groups as $id => $group ) {
 			$this->output( "Processing $id\n" );
 			$this->processMessageGroup( $group );
