@@ -426,7 +426,7 @@
 			} );
 
 			if ( this.message.translation ) {
-				$textArea.text( this.message.translation );
+				$textArea.val( this.message.translation );
 			}
 
 			$warningsBlock = $( '<div>' )
