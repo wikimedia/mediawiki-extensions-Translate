@@ -7589,6 +7589,7 @@ Fehla werren im [[Special:Log/pagetranslation|Iwasedzungs-Logbuch]] oigdraache u
 /** Polish (polski)
  * @author Amire80
  * @author BeginaFelicysym
+ * @author Chrumps
  * @author Deejay1
  * @author Equadus
  * @author Leinad
@@ -7656,7 +7657,6 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 	'translate-tag-markthisagain' => 'Ta strona została zmieniona <span class="plainlinks">[$1 razy]</span>, od kiedy ostatnio była <span class="plainlinks">[$2 oznaczona do tłumaczenia]</span>.',
 	'translate-tag-hasnew' => 'Ta strona została <span class="plainlinks">[zmieniona $1 razy]</span> i nie została oznaczona do tłumaczenia.',
 	'tpt-translation-intro' => 'Ta strona to <span class="plainlinks">[$1 przetłumaczona wersja]</span> strony [[$2]], a tłumaczenie jest ukończone lub aktualne w $3%.',
-	'tpt-translation-intro-fuzzy' => 'Tak są oznaczane nieaktualne tłumaczenia.',
 	'tpt-languages-legend' => 'Inne języki:',
 	'tpt-languages-zero' => 'Rozpocznij tłumaczenie na ten język',
 	'tpt-target-page' => 'Ta strona nie może zostać zaktualizowana ręcznie.
@@ -7695,23 +7695,8 @@ Tekst jednostki tłumaczenia: <pre>$1</pre>',
 	'pt-shake-position' => 'Wyróżniki jednostki tłumaczenia w nieoczekiwanym miejscu.
 Tekst jednostki tłumaczenia: <pre>$1</pre>',
 	'pt-shake-empty' => 'Pusta jednostka tłumaczenia dla wyróżnika $1.',
-	'pt-log-header' => 'Rejestr działań związanych z systemem tłumaczenia stron',
-	'pt-log-name' => 'Rejestr tłumaczenia stron',
-	'pt-log-mark' => '{{GENDER:$2|oznaczył|oznaczyła|oznaczył(‐a)}} wersję $3 strony „[[:$1]]“ jako przeznaczonej do tłumaczenia',
-	'pt-log-unmark' => '{{GENDER:$2|usunął|usunęła|usunął(‐eła)}} oznaczenie strony „[[:$1]]“ jako przeznaczonej do tłumaczenia',
-	'pt-log-moveok' => '{{GENDER:$2|zmienił|zmieniła|zmieniono}} nazwę tłumaczonej strony $1 na $3',
-	'pt-log-movenok' => '{{GENDER:$2|napotkał|napotkała|napotkano}} problem z przeniesieniem [[:$1]] do [[:$3]]',
-	'pt-log-delete-full-ok' => '{{GENDER:$2|usunął|usunęła}} tłumaczoną stronę $1',
-	'pt-log-delete-full-nok' => '{{GENDER:$2|napotkał|napotkała}} problem przy usuwaniu tłumaczonej strony [[:$1]]',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|usunął|usunęła}} tłumaczoną stronę $1',
-	'pt-log-delete-lang-nok' => '{{GENDER:$2|napotkał|napotkała}} problem podczas usuwania strony z tłumaczeniem [[:$1]]',
-	'pt-log-encourage' => '{{GENDER:$2|zachęcał|zachęcała}} do tłumaczenia strony [[:$1]]',
-	'pt-log-discourage' => '{{GENDER:$2|zniechęcał|zniechęcała}} do tłumaczenia strony [[:$1]]',
-	'pt-log-priority-langs-unset' => '{{GENDER:$2|usunął|usunęła}} języki priorytetowe strony do przetłumaczenia [[:$1]]',
-	'pt-log-priority-langs' => '{{GENDER:$2|ustawił|ustawiła}} języki priorytetowe strony do przetłumaczenia [[:$1]] na $3. Powód: $4',
-	'pt-log-priority-langs-force' => '{{GENDER:$2|ograniczył|ograniczyła}} języki na jakie można przetłumaczyć stronę [[:$1]] na $3. Powód: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|dodał|dodała}} stronę do tłumaczenia [[:$1]] do łączonej grupy $3',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|usunął|usunęła}} stronę do tłumaczenia [[:$1]] z łączonej grupy $3',
+	'log-description-pagetranslation' => 'Rejestr działań związanych z systemem tłumaczenia stron',
+	'log-name-pagetranslation' => 'Rejestr tłumaczenia stron',
 	'pt-movepage-title' => 'Przenieś przetłumaczalną stronę $1',
 	'pt-movepage-blockers' => 'Przetłumaczalna strona nie może zostać przeniesiona pod nową nazwę ponieważ {{PLURAL:$1|wystąpił następujący błąd|wystąpiły następujące błędy:}}',
 	'pt-movepage-block-base-exists' => 'Istnieje bazowa strona docelowa [[:$1]].', # Fuzzy
@@ -7723,9 +7708,9 @@ Tekst jednostki tłumaczenia: <pre>$1</pre>',
 	'pt-movepage-block-subpage-exists' => 'Docelowa podstrona [[:$2]] istnieje.',
 	'pt-movepage-block-subpage-invalid' => 'Nazwa docelowej podstrony [[:$1]] jest nieprawidłowa. Może jest zbyt długa?',
 	'pt-movepage-list-pages' => 'Lista stron do przeniesienia',
-	'pt-movepage-list-translation' => 'Strony do przetłumaczenia', # Fuzzy
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Strona|Strony}} do przetłumaczenia',
 	'pt-movepage-list-section' => 'Strony jednostki tłumaczenia', # Fuzzy
-	'pt-movepage-list-other' => 'Inne podstrony', # Fuzzy
+	'pt-movepage-list-other' => '{{PLURAL:$1|Inna podstrona|Inne podstrony}}',
 	'pt-movepage-list-count' => 'W sumie do przeniesienia {{PLURAL:$1|jest $1 strona|są $1 strony|jest $1 stron}}.',
 	'pt-movepage-legend' => 'Przenieś przetłumaczalną stronę',
 	'pt-movepage-current' => 'Obecna nazwa',
@@ -9764,6 +9749,7 @@ Ang mga kabiguan ay itatala sa loob ng [[Special:Log/pagetranslation|tala ng pag
 );
 
 /** Turkish (Türkçe)
+ * @author Emperyan
  * @author Incelemeelemani
  * @author Joseph
  * @author Karduelis
@@ -9803,12 +9789,13 @@ Bu sürümü çeviri için işaretlemeden önce, çevirmenlere gereksiz iş çı
 	'translate-tag-translate-link-desc' => 'Bu sayfayı çevir',
 	'translate-tag-markthis' => 'Bu sayfayı çeviri için işaretle',
 	'translate-tag-hasnew' => 'Bu sayfa, çeviri için işaretlenmemiş <span class="plainlinks">[$1 değişiklik]</span> içeriyor.',
-	'tpt-translation-intro-fuzzy' => 'Tarihi geçen çeviriler bu şekilde işaretlenmiştir.',
 	'tpt-languages-legend' => 'Diğer diller:',
 	'tpt-render-summary' => 'Kaynak sayfanın yeni sürümü ile eşleme için güncelleniyor',
 	'tpt-download-page' => 'Çevirileri olan sayfayı dışa aktar',
 	'tpt-aggregategroup-add' => 'Ekle',
 	'tpt-aggregategroup-save' => 'Kaydet',
+	'tpt-aggregategroup-new-name' => 'Ad:',
+	'tpt-aggregategroup-new-description' => 'Açıklama (isteğe bağlı):',
 	'pt-movepage-list-other' => 'Diğer alt sayfalar', # Fuzzy
 	'pt-movepage-current' => 'Geçerli adı:',
 	'pt-movepage-new' => 'Yeni adı:',

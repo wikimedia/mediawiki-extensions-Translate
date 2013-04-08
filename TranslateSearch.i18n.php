@@ -67,8 +67,14 @@ The body of error message is {{msg-mw|Tux-sst-solr-offline-body}}.
 	'tux-sst-solr-offline-body' => 'Used as error message.
 
 The page title for this message is {{msg-mw|tux-sst-solr-offline-title}}.',
-	'tux-sst-next' => 'Link to browser more search results',
-	'tux-sst-prev' => 'Link to browser more search results',
+	'tux-sst-next' => 'Link to browser more search results.
+
+See also:
+* {{msg-mw|Tux-sst-prev}}',
+	'tux-sst-prev' => 'Link to browser more search results.
+
+See also:
+* {{msg-mw|Tux-sst-next}}',
 );
 
 /** Asturian (asturianu)
@@ -150,6 +156,8 @@ $messages['de'] = array(
 	'tux-sst-nosolr-body' => 'Dieses Wiki hat keinen Übersetzungssuchservice.',
 	'tux-sst-solr-offline-title' => 'Die Suche ist nicht verfügbar',
 	'tux-sst-solr-offline-body' => 'Der Suchdienst ist derzeit nicht verfügbar.',
+	'tux-sst-next' => 'Nächste Ergebnisse',
+	'tux-sst-prev' => 'Vorherige Ergebnisse',
 );
 
 /** Zazaki (Zazaki)
@@ -240,6 +248,8 @@ $messages['fr'] = array(
 	'tux-sst-nosolr-body' => 'Ce wiki n’a pas de service de recherche de traduction.',
 	'tux-sst-solr-offline-title' => 'Recherche indisponible',
 	'tux-sst-solr-offline-body' => 'Le service de recherche est temporairement indisponible.',
+	'tux-sst-next' => 'Résultats suivants',
+	'tux-sst-prev' => 'Résultats précédents',
 );
 
 /** Galician (galego)
@@ -328,6 +338,8 @@ $messages['ja'] = array(
 	'tux-sst-nosolr-body' => 'このウィキには翻訳の検索サービスはありません。',
 	'tux-sst-solr-offline-title' => '検索は利用できません',
 	'tux-sst-solr-offline-body' => '検索サービスは一時的に利用できません。',
+	'tux-sst-next' => '次の検索結果',
+	'tux-sst-prev' => '前の検索結果',
 );
 
 /** Georgian (ქართული)
@@ -441,6 +453,8 @@ $messages['mk'] = array(
 	'tux-sst-nosolr-body' => 'Ова вики нема пребарувач.',
 	'tux-sst-solr-offline-title' => 'Пребарувањето е недостапно',
 	'tux-sst-solr-offline-body' => 'Пребарувањето е привремено недостапно.',
+	'tux-sst-next' => 'Следни резултати',
+	'tux-sst-prev' => 'Претходни резултати',
 );
 
 /** Malay (Bahasa Melayu)
@@ -475,6 +489,8 @@ $messages['nl'] = array(
 	'tux-sst-nosolr-body' => 'Deze wiki heeft geen dienst om vertalingen te zoeken.',
 	'tux-sst-solr-offline-title' => 'Zoeken is niet beschikbaar',
 	'tux-sst-solr-offline-body' => 'De zoekdienst is tijdelijk niet beschikbaar.',
+	'tux-sst-next' => 'Volgende resultaten',
+	'tux-sst-prev' => 'Vorige resultaten',
 );
 
 /** Occitan (occitan)
@@ -550,6 +566,8 @@ $messages['roa-tara'] = array(
 	'tux-sst-nosolr-body' => "Sta uicchi non g'ave 'nu servizie de ricerche pe le traduziune.",
 	'tux-sst-solr-offline-title' => 'Ricerche non disponibbile',
 	'tux-sst-solr-offline-body' => "'U servizie de ricerche jè temboraneamende indisponibbile.",
+	'tux-sst-next' => 'Prossime resultate',
+	'tux-sst-prev' => 'Resultate precedende',
 );
 
 /** Russian (русский)

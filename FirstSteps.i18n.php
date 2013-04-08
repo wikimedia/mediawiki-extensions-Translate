@@ -2939,6 +2939,7 @@ Wonnen awa ned hawe wilschd, konschdn inde Tab "{{int:Prefs-personal}}" vun doin
 
 /** Polish (polski)
  * @author BeginaFelicysym
+ * @author Chrumps
  * @author Sp5uhe
  */
 $messages['pl'] = array(
@@ -2971,7 +2972,7 @@ W tym miejscu można wybrać, tłumaczenia na jakie ewentualne języki chcesz wi
 	'translate-fs-userpage-level-2' => 'Mam umiarkowaną znajomość',
 	'translate-fs-userpage-level-1' => 'Znam trochę',
 	'translate-fs-userpage-help' => 'Proszę wskaż swoje umiejętności językowe i opowiedz nam coś o sobie. Jeśli znasz więcej niż pięć języków, możesz później dodać ich więcej.',
-	'translate-fs-userpage-submit' => 'Utwórz moją stronę użytkownika',
+	'translate-fs-userpage-submit' => 'Utwórz swoją stronę użytkownika',
 	'translate-fs-userpage-done' => 'Udało się! Masz już swoją stronę użytkownika.',
 	'translate-fs-permissions-planguage' => 'Język podstawowy:',
 	'translate-fs-permissions-help' => 'Teraz musisz umieścić wniosek o dodania siebie do grupy tłumaczy.
