@@ -617,7 +617,7 @@ class SpecialTranslate extends SpecialPage {
 			);
 		} else {
 			$output = '';
-			foreach ( $tasks as $index => $id ) {
+			foreach ( $tasks as $id ) {
 				// Give grep a chance to find the usages:
 				// translate-taskui-view, translate-taskui-untranslated, translate-taskui-optional,
 				// translate-taskui-acceptqueue, translate-taskui-reviewall,

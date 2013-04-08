@@ -250,18 +250,9 @@ class SpecialSearchTranslations extends SpecialPage {
 				$nondefaults['language'] = $key;
 			}
 
-			$text = TranslateUtils::getLanguageName( $key, $this->getLanguage()->getCode() );
 			$url = $this->getTitle()->getLocalUrl( $nondefaults );
-			$link = Html::element( 'a', array( 'href' => $url ), $text );
-			$name = Html::rawElement( 'span', array( 'class' => 'facet-name' ), $link );
-
 			$value = $this->getLanguage()->formatNum( $value );
-			$count = Html::element( 'span', array( 'class' => 'facet-count' ), $value );
 
-			$class = 'row facet-item';
-			if ( $key === $selected ) {
-				$class .= ' selected';
-			}
 			$output[$key] = array(
 				'count' => $value,
 				'url' => $url

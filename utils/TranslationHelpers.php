@@ -310,9 +310,9 @@ class TranslationHelpers {
 	protected function formatTTMServerSuggestions( $data ) {
 		$sugFields = array();
 
-		foreach ( $data as $service => $wrapper ) {
-			$config = $wrapper['config'];
-			$suggestions = $wrapper['suggestions'];
+		foreach ( $data as $serviceWrapper ) {
+			$config = $serviceWrapper['config'];
+			$suggestions = $serviceWrapper['suggestions'];
 
 			foreach ( $suggestions as $s ) {
 				$tooltip = wfMessage( 'translate-edit-tmmatch-source', $s['source'] )->plain();

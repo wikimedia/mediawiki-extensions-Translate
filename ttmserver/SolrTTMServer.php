@@ -271,7 +271,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 
 	public function batchInsertDefinitions( array $batch ) {
 		$lb = new LinkBatch();
-		foreach ( $batch as $key => $data ) {
+		foreach ( $batch as $data ) {
 			$lb->addObj( $data[0] );
 		}
 		$lb->execute();

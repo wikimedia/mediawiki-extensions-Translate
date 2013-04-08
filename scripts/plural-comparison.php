@@ -35,7 +35,7 @@ class PluralCompare extends Maintenance {
 		sort( $allkeys );
 
 		$this->output( sprintf( "%12s %3s %3s %4s\n", 'Code', 'MW', 'Get', 'CLDR' ) );
-		foreach ( $allkeys as $index => $code ) {
+		foreach ( $allkeys as $code ) {
 			$mw = isset( $mwLanguages[$code] ) ? '+' : '';
 			$gt = isset( $gtLanguages[$code] ) ? '+' : '';
 			$cl = isset( $clLanguages[$code] ) ? '+' : '';

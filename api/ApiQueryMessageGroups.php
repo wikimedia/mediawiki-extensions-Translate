@@ -273,7 +273,7 @@ TEXT;
 
 		$indent = "\n" . str_repeat( ' ', 24 );
 		$wrapWidth = 104 - 24;
-		foreach ( $paramDescs as $key => &$val ) {
+		foreach ( $paramDescs as &$val ) {
 			if ( is_string( $val ) ) {
 				$val = wordwrap( str_replace( "\n", ' ', $val ), $wrapWidth, $indent );
 			}
