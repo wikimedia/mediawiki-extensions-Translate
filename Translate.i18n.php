@@ -394,6 +394,9 @@ Details: $1',
 	'group-translate-sandboxed' => 'Unapproved translators',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|unapproved translator}}',
 
+	'right-translate-sandboxmanage' => 'Manage sandboxed users',
+	'action-translate-sandboxmanage' => 'manage sandboxed users',
+
 	// The actual states, when set, come after the hyphen.
 	// The dangling hyphen hints that it's unset.
 	'translate-workflow-state-' => '(unset)',
