@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DtqykQ1o",
+        "filename": "utils/TranslateSandbox.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-08T15:23:40Z",
+      "side": 1,
+      "message": "It\u0027s string also",
+      "revId": "62ad3bcc3fb31b2c672b1fb764b3a202d55ab22d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
