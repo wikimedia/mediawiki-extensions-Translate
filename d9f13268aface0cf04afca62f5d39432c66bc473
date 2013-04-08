@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dto8U2U0",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-08T18:42:40Z",
+      "side": 0,
+      "message": "The trunk still seems to use this function.",
+      "revId": "d9f13268aface0cf04afca62f5d39432c66bc473",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
