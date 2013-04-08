@@ -310,6 +310,7 @@ class TranslationHelpers {
 	protected function formatTTMServerSuggestions( $data ) {
 		$sugFields = array();
 
+		/** @noinspection PhpUnusedLocalVariableInspection */
 		foreach ( $data as $service => $wrapper ) {
 			$config = $wrapper['config'];
 			$suggestions = $wrapper['suggestions'];

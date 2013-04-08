@@ -617,6 +617,7 @@ class SpecialTranslate extends SpecialPage {
 			);
 		} else {
 			$output = '';
+			/** @noinspection PhpUnusedLocalVariableInspection */
 			foreach ( $tasks as $index => $id ) {
 				// Give grep a chance to find the usages:
 				// translate-taskui-view, translate-taskui-untranslated, translate-taskui-optional,

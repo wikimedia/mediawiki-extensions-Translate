@@ -417,6 +417,7 @@ class TranslateUtils {
 
 		$formats['raster'] = $wgServer . $file->createThumb( $size, $size );
 
+		/** @noinspection PhpUnusedLocalVariableInspection */
 		foreach ( $formats as $key => &$url ) {
 			$url = wfExpandUrl( $url, PROTO_RELATIVE );
 		}

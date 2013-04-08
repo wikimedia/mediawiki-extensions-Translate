@@ -107,6 +107,7 @@ class SpecialManageGroups extends SpecialPage {
 			$ns = $group->getNamespace();
 			$isCap = MWNamespace::isCapitalized( $ns );
 			foreach ( $changes as $code => $subchanges ) {
+				/** @noinspection PhpUnusedLocalVariableInspection */
 				foreach ( $subchanges as $type => $messages ) {
 					foreach ( $messages as $params ) {
 						// Constructing title objects is way slower

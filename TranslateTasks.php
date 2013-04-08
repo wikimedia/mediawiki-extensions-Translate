@@ -386,7 +386,7 @@ class TranslateTasks {
 	 * @return string[] Task identifiers.
 	 */
 	public static function getTasks( $pageTranslation = false ) {
-		global $wgTranslateTasks, $wgTranslateTranslationServices;
+		global $wgTranslateTasks;
 
 		// Tasks not to be available in page translation.
 		$filterTasks = array(
