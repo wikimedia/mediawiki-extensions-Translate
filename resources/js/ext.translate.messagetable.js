@@ -297,7 +297,7 @@
 
 			this.$container.find( itemsClass[ this.mode ] ).each( function () {
 				var $message = $( this ),
-					message = $message.data( 'message' );
+					message = $message.data( 'translateeditor' ).message;
 
 				if ( matcher.test( message.definition ) || matcher.test( message.translation ) ) {
 					$message.removeClass( 'hide' );
