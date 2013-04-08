@@ -17,6 +17,7 @@
 class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMServer {
 	protected $client;
 	protected $updates;
+	protected $revIds;
 
 	public function __construct( $config ) {
 		wfProfileIn( __METHOD__ );

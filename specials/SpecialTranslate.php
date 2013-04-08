@@ -29,6 +29,7 @@ class SpecialTranslate extends SpecialPage {
 	protected $defaults = null;
 	protected $nondefaults = array();
 	protected $options = null;
+	protected $paging;
 
 	function __construct() {
 		parent::__construct( 'Translate' );
