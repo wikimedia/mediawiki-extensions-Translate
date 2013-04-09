@@ -33,6 +33,57 @@
       "revId": "abfed9182e1e82d1bd901f14f951d61b74a1bb59",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dt9d1j5Q",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-04-09T21:38:50Z",
+      "side": 1,
+      "message": "If you\u0027re parsing html, might as well parse \u0027class\u003d\"..\"\u0027 as well. No need to split it up in two statements. Either create the element and set properties later. or parse the whole thing.",
+      "revId": "abfed9182e1e82d1bd901f14f951d61b74a1bb59",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dt5doZ7w",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-04-09T21:38:50Z",
+      "side": 1,
+      "message": "(same) prop",
+      "revId": "abfed9182e1e82d1bd901f14f951d61b74a1bb59",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dt1di-9s",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-04-09T21:38:50Z",
+      "side": 1,
+      "message": "(same) prop",
+      "revId": "abfed9182e1e82d1bd901f14f951d61b74a1bb59",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
