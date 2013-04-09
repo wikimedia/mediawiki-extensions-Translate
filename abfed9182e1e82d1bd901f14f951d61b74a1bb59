@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dt5c-B7E",
+        "filename": "resources/js/ext.translate.base.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-04-09T21:35:45Z",
+      "side": 1,
+      "message": "This seems rather odd. Just use\n\n\u0027placeholder\u0027 in element[0]",
+      "revId": "abfed9182e1e82d1bd901f14f951d61b74a1bb59",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dt1dJn18",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-04-09T21:35:45Z",
+      "side": 1,
+      "message": "While at it, change it to use .prop() instead of .attr(). The support check also tests the property, not the attribute.\n\nAttributes are not for live state, they are to preset the document when parsing html from the server. In javascript, (almost) always use properties.",
+      "revId": "abfed9182e1e82d1bd901f14f951d61b74a1bb59",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
