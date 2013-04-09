@@ -263,7 +263,7 @@
 				$controlButtonBlock,
 				$editingButtonBlock,
 				$pasteOriginalButton,
-				$discardChangesButton,
+				$discardChangesButton = $( [] ),
 				$saveButton,
 				$requestRight,
 				$skipButton,
@@ -455,9 +455,7 @@
 						$pasteOriginalButton.addClass( 'hide' );
 					} );
 
-				if ( originalTranslation === null ) {
-					$discardChangesButton = $( [] );
-				} else {
+				if ( originalTranslation !== null ) {
 					$discardChangesButton = $( '<button>' )
 						.addClass( 'tux-editor-discard-changes-button hide' ) // Initially hidden
 						.text( mw.msg( 'tux-editor-discard-changes-button-label' ) )
