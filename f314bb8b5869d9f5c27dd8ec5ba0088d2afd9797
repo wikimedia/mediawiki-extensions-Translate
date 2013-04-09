@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dt-rUNR8",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-09T09:56:44Z",
+      "side": 1,
+      "message": "\u003c $textArea.on( \u0027textchange\u0027 ...\u003e is done several times and associates several functions. Is there a reason for this?",
+      "revId": "f314bb8b5869d9f5c27dd8ec5ba0088d2afd9797",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dt9rP.Yo",
+        "filename": "resources/js/jquery.textchange.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-09T09:56:44Z",
+      "side": 1,
+      "message": "The comment is a bit unclear.",
+      "revId": "f314bb8b5869d9f5c27dd8ec5ba0088d2afd9797",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DtzoavRQ",
+        "filename": "resources/js/jquery.textchange.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-09T09:56:44Z",
+      "side": 1,
+      "message": "Repeated $( this ).",
+      "revId": "f314bb8b5869d9f5c27dd8ec5ba0088d2afd9797",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
