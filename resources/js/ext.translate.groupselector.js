@@ -394,7 +394,7 @@
 			if ( !groupId ) {
 				return true;
 			}
-			var childGroups = mw.translate.getGroup( groupId ).groups;
+			var childGroups = mw.translate.getGroup( groupId, null ).groups;
 			return childGroups && childGroups.length;
 		},
 		/**
