@@ -495,7 +495,10 @@ class SpecialTranslate extends SpecialPage {
 		$output .= Html::element( 'input', array(
 			'class' => 'ten columns tux-message-filter-box',
 			'type' => 'text',
-			'placeholder' => $this->msg( 'tux-message-filter-placeholder' )->escaped()
+			// @todo Commented out, because it needs to be added client-side
+			// according to browser's support of this feature.
+			// See Bug 47039.
+			// 'placeholder' => $this->msg( 'tux-message-filter-placeholder' )->escaped(),
 		) );
 		$output .= Html::element( 'span', array( 'class' => 'one columns tux-message-filter-box-clear hide' ) );
 		$output .= Html::closeElement( 'div' ); // close three columns

@@ -372,7 +372,6 @@
 
 			$textArea = $( '<textarea>' )
 				.attr( {
-					placeholder: mw.msg( 'tux-editor-placeholder' ),
 					lang: $messageList.data( 'targetlangcode' ),
 					dir: $messageList.data( 'targetlangdir' )
 				} )
@@ -395,6 +394,10 @@
 						$this.height( $this.height() + parseFloat( $this.css( 'fontSize' ) ) );
 					}
 				} );
+
+			if ( mw.translate.placeholderSupported( $textArea ) ) {
+				$textArea.prop( 'placeholder', mw.msg( 'tux-editor-placeholder' ) );
+			}
 
 			$textArea.on( 'input propertychange', function () {
 				var $textArea = $( this ),
@@ -634,7 +637,7 @@
 		},
 
 		prepareInfoColumn: function () {
-			var $messageDescEditor,
+			var $messageDescEditor, $messageDescTextarea,
 				$messageDescSaveButton, $messageDescCancelButton,
 				$messageDescViewer,
 				$infoColumn = $( '<div>' ).addClass( 'infocolumn' ),
@@ -661,16 +664,18 @@
 						translateEditor.hideDocumentationEditor();
 					} );
 
+				$messageDescTextarea = $( '<textarea>' )
+					.on( 'input propertychange', function () {
+						$messageDescSaveButton.prop( 'disabled', false );
+					} );
+
+				if ( mw.translate.placeholderSupported( $messageDescTextarea ) ) {
+					$messageDescTextarea.prop( 'placeholder', mw.msg( 'tux-editor-doc-editor-placeholder' ) );
+				}
 				$messageDescEditor = $( '<div>' )
 					.addClass( 'row message-desc-editor hide' )
 					.append(
-						$( '<textarea>' )
-							.attr( {
-								placeholder: mw.msg( 'tux-editor-doc-editor-placeholder' )
-							} )
-							.on( 'input propertychange', function () {
-								$messageDescSaveButton.prop( 'disabled', false );
-							} ),
+						$messageDescTextarea,
 						$( '<div>' )
 							.addClass( 'row' )
 							.append(

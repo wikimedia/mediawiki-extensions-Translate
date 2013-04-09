@@ -39,6 +39,7 @@
 				$listFilters,
 				$listFiltersGroup,
 				$search,
+				$searchInput,
 				$searchIcon,
 				$searchGroup,
 				$loader,
@@ -57,14 +58,16 @@
 			$searchIcon = $( '<div>' )
 				.addClass( 'two columns ext-translate-msggroup-search-icon' );
 
+			$searchInput = $( '<input>' )
+				.prop( 'type', 'text' )
+				.addClass( 'ext-translate-msggroup-search-input' );
+
+			if ( mw.translate.placeholderSupported( $searchInput ) ) {
+				$searchInput.prop( 'placeholder', mw.msg( 'translate-msggroupselector-search-placeholder' ) );
+			}
+
 			$search = $( '<div>' ).addClass( 'ten columns' )
-				.append(
-					$( '<input type="text">' )
-						.addClass( 'ext-translate-msggroup-search-input' )
-						.attr( {
-							placeholder: mw.msg( 'translate-msggroupselector-search-placeholder' )
-						} )
-				);
+				.append( $searchInput );
 
 			$listFilters = $( '<div>' ).addClass( 'filters six columns' )
 				.append(
