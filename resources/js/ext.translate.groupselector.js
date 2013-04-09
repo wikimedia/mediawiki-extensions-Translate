@@ -64,6 +64,7 @@
 						.attr( {
 							placeholder: mw.msg( 'translate-msggroupselector-search-placeholder' )
 						} )
+						.placeholder()
 				);
 
 			$listFilters = $( '<div>' ).addClass( 'filters six columns' )
