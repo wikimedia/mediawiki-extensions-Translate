@@ -596,7 +596,12 @@
 		 * @param type
 		 */
 		removeWarning: function ( type ) {
-			this.$editor.find( '.tux-warning' ).find( '.' + type ).remove();
+			var $tuxWarning = this.$editor.find( '.tux-warning' );
+
+			$tuxWarning.find( '.' + type ).remove();
+			if ( !$tuxWarning.children().length ) {
+				this.$editor.find( '.tux-more-warnings' ).addClass( 'hide' );
+			}
 		},
 
 		/**
