@@ -595,7 +595,6 @@
 
 				if ( messageGroup ) {
 					result = messageGroup;
-					return;
 				}
 			}
 		} );
