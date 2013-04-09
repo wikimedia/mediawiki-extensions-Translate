@@ -88,7 +88,7 @@
 				$filterInput.prop( 'placeholder', mw.msg( 'tux-message-filter-placeholder' ) );
 			}
 
-			$filterInput.on( 'input propertychange', function () {
+			$filterInput.on( 'textchange', function () {
 				delay( function () {
 					messageTable.search( $filterInput.val() );
 				}, 300 );

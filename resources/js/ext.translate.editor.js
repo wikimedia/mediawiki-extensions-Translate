@@ -375,47 +375,49 @@
 					lang: $messageList.data( 'targetlangcode' ),
 					dir: $messageList.data( 'targetlangdir' )
 				} )
-				.on( 'input propertychange', function () {
-					var $this = $( this );
-
-					if ( originalTranslation !== null ) {
-						$discardChangesButton
-							.removeClass( 'hide' );
-					}
-
-					translateEditor.dirty = true;
-					mw.translate.dirty = true;
-					// Expand the text area height as content grows
-					while ( $this.outerHeight() <
-						this.scrollHeight +
-						parseFloat( $this.css( 'borderTopWidth' ) ) +
-						parseFloat( $this.css( 'borderBottomWidth' ) )
-					) {
-						$this.height( $this.height() + parseFloat( $this.css( 'fontSize' ) ) );
-					}
-				} );
+				.val( this.message.translation || '' );
 
 			if ( mw.translate.isPlaceholderSupported( $textArea ) ) {
 				$textArea.prop( 'placeholder', mw.msg( 'tux-editor-placeholder' ) );
 			}
 
-			$textArea.on( 'input propertychange', function () {
+			$textArea.on( 'textchange', function () {
 				var $textArea = $( this ),
 					$saveButton = translateEditor.$editor.find( '.tux-editor-save-button' ),
 					$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' ),
-					translationMessage = translateEditor.message.translation || '';
+					original = translateEditor.message.translation || '',
+					current = $textArea.val() || '';
 
-				// Avoid Unsaved marking when translated message
-				// is not changed in content.
-				if ( translationMessage === $textArea.val() ) {
+				if ( original !== '' ) {
+					$discardChangesButton.removeClass( 'hide' );
+				}
+
+				// Expand the text area height as content grows
+				while ( $textArea.outerHeight() <
+					this.scrollHeight +
+					parseFloat( $textArea.css( 'borderTopWidth' ) ) +
+					parseFloat( $textArea.css( 'borderBottomWidth' ) )
+				) {
+					$textArea.height( $textArea.height() + parseFloat( $textArea.css( 'fontSize' ) ) );
+				}
+
+				/* Avoid Unsaved marking when translated message is not changed in content.
+				 * - translateEditor.dirty: internal book keeping
+				 * - mw.translate.dirty: "you have unchanged edits" warning
+				 */
+				if ( original === current ) {
 					translateEditor.dirty = false;
+					mw.translate.dirty = false;
+					translateEditor.markUnunsaved();
+				} else {
+					translateEditor.dirty = true;
 					mw.translate.dirty = true;
 				}
 
 				$saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
 				// When there is content in the editor enable the button.
 				// But do not enable when some saving is not finished yet.
-				if ( $.trim( $textArea.val() ) && !translateEditor.saving ) {
+				if ( $.trim( current ) && !translateEditor.saving ) {
 					$pasteSourceButton.addClass( 'hide' );
 					$saveButton.prop( 'disabled', false );
 				} else {
@@ -427,10 +429,6 @@
 					translateEditor.validateTranslation();
 				}, 500 );
 			} );
-
-			if ( this.message.translation ) {
-				$textArea.val( this.message.translation );
-			}
 
 			$warningsBlock = $( '<div>' )
 				.addClass( 'tux-warnings-block' )
@@ -670,7 +668,7 @@
 					} );
 
 				$messageDescTextarea = $( '<textarea>' )
-					.on( 'input propertychange', function () {
+					.on( 'textchange', function () {
 						$messageDescSaveButton.prop( 'disabled', false );
 					} );
 
