@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dt-8fR2c",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-04-09T07:52:04Z",
+      "side": 1,
+      "message": "Incorrect grammar",
+      "revId": "d58c348796345e85e31f9ef89635edcddd48260a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
