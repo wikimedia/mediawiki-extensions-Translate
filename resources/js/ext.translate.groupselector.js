@@ -9,7 +9,6 @@
 		this.flatGroupList = null;
 
 		this.init();
-
 	}
 
 	TranslateMessageGroupSelector.prototype = {
@@ -64,6 +63,7 @@
 						.attr( {
 							placeholder: mw.msg( 'translate-msggroupselector-search-placeholder' )
 						} )
+						.placeholder()
 				);
 
 			$listFilters = $( '<div>' ).addClass( 'filters six columns' )

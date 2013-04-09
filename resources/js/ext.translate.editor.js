@@ -394,7 +394,8 @@
 					) {
 						$this.height( $this.height() + parseFloat( $this.css( 'fontSize' ) ) );
 					}
-				} );
+				} )
+				.placeholder();
 
 			$textArea.on( 'input propertychange', function () {
 				var $textArea = $( this ),
@@ -670,7 +671,8 @@
 							} )
 							.on( 'input propertychange', function () {
 								$messageDescSaveButton.prop( 'disabled', false );
-							} ),
+							} )
+							.placeholder(),
 						$( '<div>' )
 							.addClass( 'row' )
 							.append(

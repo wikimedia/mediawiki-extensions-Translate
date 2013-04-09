@@ -74,7 +74,7 @@
 			var messageTable = this,
 				$filterInput = this.$container.parent().find( '.tux-message-filter-box' );
 
-			$( window ).scroll(function () {
+			$( window ).scroll( function () {
 				delay( function () {
 					messageTable.scroll();
 				}, 200 );
@@ -84,11 +84,13 @@
 				$( '.tux-action-bar' ).width( $( '.tux-messagelist' ).width() );
 			} );
 
-			$filterInput.on( 'input propertychange', function () {
-				delay( function () {
-					messageTable.search( $filterInput.val() );
-				}, 300 );
-			} );
+			$filterInput
+				.placeholder()
+				.on( 'input propertychange', function () {
+					delay( function () {
+						messageTable.search( $filterInput.val() );
+					}, 300 );
+				} );
 
 			$( '.tux-message-filter-box-clear' ).on( 'click', function () {
 				$filterInput.focus().val( '' ).trigger( 'input' );
