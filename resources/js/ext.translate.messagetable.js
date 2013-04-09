@@ -84,6 +84,10 @@
 				$( '.tux-action-bar' ).width( $( '.tux-messagelist' ).width() );
 			} );
 
+			if ( mw.translate.isPlaceholderSupported( $filterInput ) ) {
+				$filterInput.prop( 'placeholder', mw.msg( 'tux-message-filter-placeholder' ) );
+			}
+
 			$filterInput.on( 'input propertychange', function () {
 				delay( function () {
 					messageTable.search( $filterInput.val() );
