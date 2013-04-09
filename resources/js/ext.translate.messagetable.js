@@ -71,7 +71,8 @@
 		},
 
 		listen: function () {
-			var messageTable = this;
+			var messageTable = this,
+				$filterInput = this.$container.parent().find( '.tux-message-filter-box' );
 
 			$( window ).scroll(function () {
 				delay( function () {
@@ -83,12 +84,14 @@
 				$( '.tux-action-bar' ).width( $( '.tux-messagelist' ).width() );
 			} );
 
-			$( '.tux-message-filter-box' ).on( 'input propertychange', function () {
-				delay( messageTable.search( $( this ).val() ), 300 );
+			$filterInput.on( 'input propertychange', function () {
+				delay( function () {
+					messageTable.search( $filterInput.val() );
+				}, 300 );
 			} );
 
 			$( '.tux-message-filter-box-clear' ).on( 'click', function () {
-				$( '.tux-message-filter-box' ).focus().val( '' ).trigger( 'input' );
+				$filterInput.focus().val( '' ).trigger( 'input' );
 			} );
 
 			this.$container.on( 'clear', $.proxy( messageTable.clear, messageTable ) );
