@@ -82,6 +82,7 @@ class TranslateSandbox {
 	/**
 	 * Removes the user from the sandbox.
 	 * @param User $user
+	 * @throws MWException
 	 */
 	public static function promoteUser( User $user ) {
 		global $wgTranslateSandboxPromotedGroup;
