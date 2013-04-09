@@ -44,7 +44,7 @@
 			languages,
 			ulslanguages = [],
 			currentLanguage,
-			resultCount = 0,
+			resultCount,
 			$count,
 			result,
 			i,
