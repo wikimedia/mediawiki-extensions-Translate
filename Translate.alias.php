@@ -76,7 +76,7 @@ $specialPageAliases['arz'] = array(
 	'ImportTranslations' => array( 'استوراد_الترجمات' ),
 );
 
-/** Assamese (অসমীয়া) */
+/** Assamese (অসমীয়া) */
 $specialPageAliases['as'] = array(
 	'Translate' => array( 'অনুবাদ_কৰক' ),
 	'Magic' => array( 'উন্নত_অনুবাদ', 'যাদু' ),
@@ -727,7 +727,7 @@ $specialPageAliases['oc'] = array(
 	'Translations' => array( 'Traduccions', 'Reviradas' ),
 );
 
-/** Oriya (ଓଡ଼ିଆ) */
+/** Oriya (ଓଡ଼ିଆ) */
 $specialPageAliases['or'] = array(
 	'Translate' => array( 'ଅନୁବାଦ' ),
 	'Translations' => array( 'ଅନୁବାଦସମୂହ' ),
@@ -796,9 +796,19 @@ $specialPageAliases['ro'] = array(
 $specialPageAliases['ru'] = array(
 	'Translate' => array( 'Перевести' ),
 	'Magic' => array( 'Расширенный_перевод' ),
+	'TranslationStats' => array( 'Статистика_переводов' ),
 	'Translations' => array( 'Переводы' ),
+	'LanguageStats' => array( 'Статистика_языка' ),
+	'MessageGroupStats' => array( 'Статистика_группы_сообщений' ),
+	'PageTranslation' => array( 'Перевод_страниц' ),
+	'ImportTranslations' => array( 'Импорт_переводов' ),
+	'ManageMessageGroups' => array( 'Управление_группами_сообщений' ),
 	'FirstSteps' => array( 'Первые_шаги' ),
+	'SupportedLanguages' => array( 'Поддерживаемые_языки' ),
 	'MyLanguage' => array( 'Мой_язык' ),
+	'PageTranslationDeletePage' => array( 'Удаление_переводимой_страницы' ),
+	'AggregateGroups' => array( 'Агрегированные_группы' ),
+	'SearchTranslations' => array( 'Поиск_переводов' ),
 );
 
 /** Sanskrit (संस्कृतम्) */

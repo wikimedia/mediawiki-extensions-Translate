@@ -127,6 +127,8 @@ $messages['be-tarask'] = array(
 	'tux-sst-nosolr-body' => 'Гэтая вікі ня мае службы пошуку перакладаў.',
 	'tux-sst-solr-offline-title' => 'Пошук недаступны',
 	'tux-sst-solr-offline-body' => 'Служба пошуку часова недаступная.',
+	'tux-sst-next' => 'Наступныя вынікі',
+	'tux-sst-prev' => 'Папярэднія вынікі',
 );
 
 /** Breton (brezhoneg)
@@ -268,6 +270,8 @@ $messages['gl'] = array(
 	'tux-sst-nosolr-body' => 'Este wiki non dispón dun servizo de procura de traducións.',
 	'tux-sst-solr-offline-title' => 'A procura non está dispoñible',
 	'tux-sst-solr-offline-body' => 'O servizo de procura non está dispoñible temporalmente.',
+	'tux-sst-next' => 'Resultados seguintes',
+	'tux-sst-prev' => 'Resultados anteriores',
 );
 
 /** Hebrew (עברית)
