@@ -52,6 +52,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'mediawiki.jqueryMsg',
 		'jquery.makeCollapsible',
 		'jquery.tipsy',
+		'jquery.placeholder',
 	),
 	'messages' => array(
 		'tux-status-translated',
@@ -111,6 +112,7 @@ $wgResourceModules['ext.translate.groupselector'] = array(
 		'ext.translate.statsbar',
 		'mediawiki.jqueryMsg',
 		'ext.translate.loader',
+		'jquery.placeholder',
 	),
 	'messages' => array(
 		'translate-msggroupselector-projects',
