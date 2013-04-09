@@ -52,6 +52,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'mediawiki.jqueryMsg',
 		'jquery.makeCollapsible',
 		'jquery.tipsy',
+		'jquery.mths.placeholder',
 	),
 	'messages' => array(
 		'tux-status-translated',
@@ -111,6 +112,7 @@ $wgResourceModules['ext.translate.groupselector'] = array(
 		'ext.translate.statsbar',
 		'mediawiki.jqueryMsg',
 		'ext.translate.loader',
+		'jquery.mths.placeholder',
 	),
 	'messages' => array(
 		'translate-msggroupselector-projects',
@@ -139,6 +141,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'ext.translate.hooks',
 		'mediawiki.util',
 		'jquery.appear',
+		'jquery.mths.placeholder',
 		'mediawiki.jqueryMsg',
 		'ext.translate.parsers',
 		'ext.translate.loader',
@@ -348,4 +351,8 @@ $wgResourceModules['ext.translate.workflowselector'] = array(
 
 $wgResourceModules['jquery.autoresize'] = array(
 	'scripts' => 'resources/js/jquery.autoresize.js',
+) + $resourcePaths;
+
+$wgResourceModules['jquery.mths.placeholder'] = array(
+	'scripts' => 'resources/js/jquery.mths.placeholder.js',
 ) + $resourcePaths;
