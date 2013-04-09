@@ -215,7 +215,7 @@ abstract class MessageIndex {
 					$hugearray[$key][] = & $id;
 				} else {
 					// Store the actual reference, then remove it from array, to not
-					// replace the references value, but to store a array of new
+					// replace the references value, but to store an array of new
 					// references instead. References are hard!
 					$value = & $hugearray[$key];
 					unset( $hugearray[$key] );

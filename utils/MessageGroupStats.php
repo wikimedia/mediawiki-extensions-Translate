@@ -301,8 +301,8 @@ class MessageGroupStats {
 			$stats = self::extractResults( $res, $stats );
 
 			foreach ( $expanded as $sid => $subgroup ) {
-				# Discouraged groups may belong to a another group, usually if there
-				# is a aggregate group for all translatable pages. In that case
+				# Discouraged groups may belong to an another group, usually if there
+				# is an aggregate group for all translatable pages. In that case
 				# calculate and store the statistics, but don't count them as part of
 				# the aggregate group, so that the numbers in Special:LanguageStats
 				# add up. The statistics for discouraged groups can still be viewed

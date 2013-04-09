@@ -687,7 +687,7 @@
 * 2008-07-08:1 simple edit stats with phplot
 * 2008-07-05:1 fuzzy.php was ignoring the namespace
 * 2008-07-04:2
- - use a existing hook for quick links
+ - use an existing hook for quick links
  - possible fix for Windows
 * 2008-07-04:1 poimport uses correct namespace
 * 2008-07-01:1
