@@ -1,6 +1,6 @@
 <?php
 /**
- * This file contains a unmanaged message group implementation.
+ * This file contains an unmanaged message group implementation.
  *
  * @file
  * @author Niklas Laxström

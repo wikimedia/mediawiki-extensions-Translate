@@ -335,7 +335,7 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Adds help link with a icon to upper right corner.
+	 * Adds help link with an icon to upper right corner.
 	 * @param OutputPage $out
 	 * @param string $to
 	 * @param bool $overrideBaseUrl

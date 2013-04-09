@@ -293,7 +293,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 				}
 				$count++;
 			}
-			// Now offset is always a integer, suitable for array_slice
+			// Now offset is always an integer, suitable for array_slice
 			$offset = $count;
 		}
 

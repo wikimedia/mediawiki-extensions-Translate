@@ -619,7 +619,7 @@ function showUsage() {
 	--skiplanguages LIST: comma separated list of skipped languages
 	--skipzero : skip languages that do not have any localisation at all
 	--fuzzy : add column for fuzzy counts
-	--output TYPE: select an another output engine
+	--output TYPE: select another output engine
 		* 'csv'      : Comma Separated Values.
 		* 'wiki'     : MediaWiki syntax.
 		* 'text'     : Text with tabs.
