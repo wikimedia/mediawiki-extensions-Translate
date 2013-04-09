@@ -52,6 +52,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'mediawiki.jqueryMsg',
 		'jquery.makeCollapsible',
 		'jquery.tipsy',
+		'jquery.textchange',
 	),
 	'messages' => array(
 		'tux-status-translated',
@@ -142,6 +143,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'mediawiki.jqueryMsg',
 		'ext.translate.parsers',
 		'ext.translate.loader',
+		'jquery.textchange',
 	),
 	'messages' => array(
 		'translate-messagereview-submit',
@@ -348,4 +350,8 @@ $wgResourceModules['ext.translate.workflowselector'] = array(
 
 $wgResourceModules['jquery.autoresize'] = array(
 	'scripts' => 'resources/js/jquery.autoresize.js',
+) + $resourcePaths;
+
+$wgResourceModules['jquery.textchange'] = array(
+	'scripts' => 'resources/js/jquery.textchange.js',
 ) + $resourcePaths;

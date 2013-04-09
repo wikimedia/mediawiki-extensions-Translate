@@ -83,7 +83,7 @@
 				$( '.tux-action-bar' ).width( $( '.tux-messagelist' ).width() );
 			} );
 
-			$( '.tux-message-filter-box' ).on( 'input propertychange', function () {
+			$( '.tux-message-filter-box' ).on( 'textchange', function () {
 				delay( messageTable.search( $( this ).val() ), 300 );
 			} );
 
