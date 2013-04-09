@@ -394,7 +394,7 @@
 			if ( !groupId ) {
 				return true;
 			}
-			var childGroups = mw.translate.getGroup( groupId ).groups;
+			var childGroups = mw.translate.getGroup( groupId, null ).groups;
 			return childGroups && childGroups.length;
 		},
 		/**
@@ -574,7 +574,7 @@
 	 * recurse it through sub groups.
 	 *
 	 * @param {string} messageGroupId
-	 * @param {Array|Object} messageGroups Array of messageGroups
+	 * @param {Array|Object} [messageGroups] Array of messageGroups
 	 * @return {Object|boolean} Messagegroup object
 	 */
 	mw.translate.getGroup = function ( messageGroupId, messageGroups ) {
