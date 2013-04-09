@@ -14,6 +14,9 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialSearchTranslations extends SpecialPage {
+	/** @var FormOptions */
+	protected $opts;
+
 	/**
 	 * Placeholders used for highlighting. Solr can mark the beginning and
 	 * end but we need to run htmlspecialchars on the result first and then
