@@ -376,7 +376,7 @@
 					lang: $messageList.data( 'targetlangcode' ),
 					dir: $messageList.data( 'targetlangdir' )
 				} )
-				.on( 'input propertychange', function () {
+				.on( 'textchange', function () {
 					var $this = $( this );
 
 					if ( originalTranslation !== null ) {
@@ -396,7 +396,7 @@
 					}
 				} );
 
-			$textArea.on( 'input propertychange', function () {
+			$textArea.on( 'textchange', function () {
 				var $textArea = $( this ),
 					$saveButton = translateEditor.$editor.find( '.tux-editor-save-button' ),
 					$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' ),
@@ -670,7 +670,7 @@
 							.attr( {
 								placeholder: mw.msg( 'tux-editor-doc-editor-placeholder' )
 							} )
-							.on( 'input propertychange', function () {
+							.on( 'textchange', function () {
 								$messageDescSaveButton.prop( 'disabled', false );
 							} ),
 						$( '<div>' )
