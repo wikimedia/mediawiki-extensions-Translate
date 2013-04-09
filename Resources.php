@@ -107,6 +107,7 @@ $wgResourceModules['ext.translate.groupselector'] = array(
 	'scripts' => 'resources/js/ext.translate.groupselector.js',
 	'position' => 'top',
 	'dependencies' => array(
+		'ext.translate.base',
 		'jquery.uls.grid',
 		'ext.translate.statsbar',
 		'mediawiki.jqueryMsg',
@@ -136,6 +137,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 	'styles' => 'resources/css/ext.translate.messagetable.css',
 	'position' => 'top',
 	'dependencies' => array(
+		'ext.translate.base',
 		'ext.translate.hooks',
 		'mediawiki.util',
 		'jquery.appear',
@@ -175,6 +177,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'tux-empty-list-other-guide',
 		'tux-empty-list-other-action',
 		'tux-empty-list-other-link',
+		'tux-message-filter-placeholder',
 		'translate-language-disabled',
 	),
 ) + $resourcePaths;
