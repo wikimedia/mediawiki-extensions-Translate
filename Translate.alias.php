@@ -558,6 +558,7 @@ $specialPageAliases['lb'] = array(
 	'SupportedLanguages' => array( 'Ënnerstetzte_Sproochen' ),
 	'MyLanguage' => array( 'Meng_Sprooch' ),
 	'PageTranslationDeletePage' => array( 'Läschsäit_fir_Iwwersetzungen' ),
+	'SearchTranslations' => array( 'Iwwersetzunge_sichen' ),
 );
 
 /** lumbaart (lumbaart) */

@@ -878,6 +878,17 @@ Du erhältst außerdem bis zu einmal im Monat einen Newsletter.
 Wenn du keinen Newsletter erhalten möchtest, kannst du dich im Tab „{{int:prefs-personal}}“ in deinen [[Special:Preferences|Einstellungen]] austragen.',
 );
 
+/** Swiss High German (Schweizer Hochdeutsch)
+ * @author Geitost
+ */
+$messages['de-ch'] = array(
+	'translate-fs-email-text' => 'Bitte gib deine E-Mail-Adresse in [[Special:Preferences|deinen Einstellungen]] ein und bestätige das an dich versandte E-Mail.
+
+Dies gibt anderen die Möglichkeit, dich über E-Mail zu erreichen.
+Du erhältst ausserdem bis zu einmal im Monat einen Newsletter.
+Wenn du keinen Newsletter erhalten möchtest, kannst du dich im Tab «{{int:prefs-personal}}» in deinen [[Special:Preferences|Einstellungen]] austragen.',
+);
+
 /** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Kghbln
  * @author Purodha

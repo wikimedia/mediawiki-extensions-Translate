@@ -1177,7 +1177,9 @@ See also:
 {{Identical|Loading}}',
 	'translate-search-more-languages-info' => 'Information shown as number of languages matching the query using
 [[Special:SearchTranslations]]
-* $1 - number of languages',
+* $1 - number of languages
+See also:
+* {{msg-mw|Translate-search-more-groups-info}}',
 	'translate-statsbar-tooltip' => 'Descriptive text to show for the stats bar for message groups on mouse over.
 * $1 percentage of messages translated
 * $2 percentage of messages proofread',
@@ -1185,9 +1187,11 @@ See also:
 * $1 percentage of messages translated (does not include outdated)
 * $2 percentage of messages proofread
 * $3 percentage of messages outdated (not counted as translated)',
-	'translate-search-more-groups-info'=> 'Information shown as number of message groups matching the query using
+	'translate-search-more-groups-info' => 'Information shown as number of message groups matching the query using
 [[Special:SearchTranslations]]
-* $1 - number of groups',
+* $1 - number of groups
+See also:
+* {{msg-mw|Translate-search-more-languages-info}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -7096,6 +7100,7 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 	'translate-search-more-languages-info' => '{{PLURAL:$1|Eine weitere Sprache|$1 weitere Sprachen}}',
 	'translate-statsbar-tooltip' => '$1% übersetzt, $2% korrekturgelesen',
 	'translate-statsbar-tooltip-with-fuzzy' => '$1% übersetzt, $2% korrekturgelesen, $3% veraltet',
+	'translate-search-more-groups-info' => '{{PLURAL:$1|Eine weitere Gruppe|$1 weitere Gruppen}}',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -10687,6 +10692,7 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|langue supplémentaire|langues supplémentaires}}',
 	'translate-statsbar-tooltip' => '$1% traduit, $2% relu',
 	'translate-statsbar-tooltip-with-fuzzy' => '$1% traduit, $2% relu, $3% obsolète',
+	'translate-search-more-groups-info' => '$1 {{PLURAL:$1|group|groupes}} de plus',
 );
 
 /** Cajun French (français cadien)
@@ -11653,6 +11659,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|lingua|linguas}} máis',
 	'translate-statsbar-tooltip' => '$1% traducidas, $2% corrixidas',
 	'translate-statsbar-tooltip-with-fuzzy' => '$1% traducidas, $2% corrixidas, $3% desfasadas',
+	'translate-search-more-groups-info' => '$1 {{PLURAL:$1|grupo|grupos}} máis',
 );
 
 /** Goan Konkani (Latin script) (Konknni)
@@ -15242,7 +15249,7 @@ Utile per l'attività di correzione.",
 	'tux-proofread-action-tooltip' => 'Accetta traduzione',
 	'tux-proofread-edit-label' => 'Modifica',
 	'tux-editor-page-mode' => 'Pagina',
-	'tux-editor-outdated-warning' => 'Questa traduzione richiede di essere aggiornata.',
+	'tux-editor-outdated-warning' => 'Questa traduzione deve essere aggiornata.',
 	'tux-editor-outdated-warning-diff-link' => 'Mostra le differenze',
 	'tux-editor-doc-editor-placeholder' => 'Documentazione del messaggio',
 	'tux-editor-doc-editor-save' => 'Salva la documentazione',
@@ -15701,6 +15708,7 @@ $1',
 	'translate-search-more-languages-info' => '他 $1 {{PLURAL:$1|言語}}',
 	'translate-statsbar-tooltip' => '$1% 翻訳済み、$2% 校正済み',
 	'translate-statsbar-tooltip-with-fuzzy' => '$1% 翻訳済み、$2% 校正済み、$3% 要修正',
+	'translate-search-more-groups-info' => '他 $1 {{PLURAL:$1|メッセージ群}}',
 );
 
 /** Jamaican Creole English (Patois)
@@ -22975,6 +22983,7 @@ Oam Beschde ischse fa Uffgawe vum Gescheleese.',
  * @author Saper
  * @author Sp5uhe
  * @author ToSter
+ * @author Ty221
  * @author Woytecr
  * @author Wpedzich
  * @author Žekřil71pl
@@ -23278,6 +23287,7 @@ Szczegóły – $1',
 	'log-name-translationreview' => 'Rejestr zatwierdzania tłumaczeń',
 	'log-description-translationreview' => 'Zapisuje wszystkie zatwierdzenia tłumaczeń i grupy komunikatów.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|zatwierdził|zatwierdziła}} tłumaczenie $3',
+	'action-translate-sandboxmanage' => 'zarządzanie użytkownikami w trybie piaskownicy',
 	'translate-workflow-state-' => '(wyłączone)',
 	'translate-workflowstatus' => 'Status: $1',
 	'translate-workflow-set-do' => 'Wyślij',
@@ -33863,6 +33873,7 @@ $1',
 	'translate-search-more-languages-info' => '還有$1種{{PLURAL:$1|語言|語言}}',
 	'translate-statsbar-tooltip' => '$1%已翻譯，$2%已校對',
 	'translate-statsbar-tooltip-with-fuzzy' => '$1%已翻譯，$2%已校對，, $3%過時',
+	'translate-search-more-groups-info' => '還有$1個{{PLURAL:$1|群組|群組}}',
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)

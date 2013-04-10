@@ -613,6 +613,7 @@ $messages['de'] = array(
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] ist ein internetgestütztes Bug-Tracking-System',
 	'translate-group-desc-eol' => 'Nachrichten für die [[Translating:EOL|Enzyklopädie des Lebens]]',
 	'translate-group-desc-frontlinesms' => 'Eine Nachrichtengruppe für [[Translating:FrontlineSMS|FrontlineSMS]]',
+	'translate-group-desc-fuel' => '[[Translating:FUEL|FUEL]] bringt mehr Konsistenz in Softwareübersetzungen',
 	'translate-group-desc-ihris' => 'Nachrichten für [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Nachrichten für [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], einem Modul von [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Nachrichten für [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], einem Modul von [[Translating:iHRIS|iHRIS]]',
@@ -885,6 +886,7 @@ $messages['fi'] = array(
  * @author IAlex
  * @author Jean-Frédéric
  * @author Litlok
+ * @author Metroitendo
  * @author Od1n
  * @author Peter17
  * @author PieRRoMaN
@@ -915,6 +917,7 @@ $messages['fr'] = array(
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] est un système gratuit pour le suivi sur le web des anomalies. Rapportez tous les problèmes sur [[Support]].',
 	'translate-group-desc-eol' => "Un groupe de messages pour l’''[[Translating:EOL|Encyclopedia of Life]]''",
 	'translate-group-desc-frontlinesms' => 'Un groupe de message pour [[Translating:FrontlineSMS|FrontlineSMS]]',
+	'translate-group-desc-fuel' => '[[Translating:FUEL|FUEL]] apporte plus de cohérence à la traduction de logiciel',
 	'translate-group-desc-ihris' => 'Un groupe de messages pour [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Un groupe de messages pour [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un module de [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Un groupe de messages pour [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], un module de [[Translating:iHRIS|iHRIS]]',
@@ -1017,11 +1020,12 @@ $messages['gl'] = array(
 	'translate-group-desc-wikimediaextensions-main' => 'Grupo de mensaxes meta que contén todas as mensaxes soportadas polas extensións de MediaWiki que necesitan tradución para o [http://meta.wikimedia.org/wiki/Language_committee comité de linguas] da Wikimedia',
 	'translate-group-desc-ui' => 'Grupo de mensaxes meta que contén todas as mensaxes das extensións relacionadas coa [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Iniciativa de usabilidade da Wikipedia]',
 	'translate-group-desc-translatablepages' => 'Todas as páxinas que se poden traducir',
-	'bw-desc-freecol' => 'Antes de traducir o xogo FreeCol na súa lingua, por favor, bótelle un ollo a [[Translating:FreeCol]]. Freecol está baixo os termos da licenza GPL.',
+	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] é un xogo de estratexia por quendas',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], un foro web escrito en PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] é un sistema web de xestión de erros. Por favor, informe de calquera problema en [[Support]].',
 	'translate-group-desc-eol' => 'Grupo de mensaxes da [[Translating:EOL|Enciclopedia da vida]]',
 	'translate-group-desc-frontlinesms' => 'Grupo de mensaxes de [[Translating:FrontlineSMS|FrontlineSMS]]',
+	'translate-group-desc-fuel' => '[[Translating:FUEL|FUEL]] achega máis coherencia ás traducións de software',
 	'translate-group-desc-ihris' => 'Grupo de mensaxes de [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Grupo de mensaxes de [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un módulo de [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Grupo de mensaxes de [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], un módulo de [[Translating:iHRIS|iHRIS]]',
@@ -1039,7 +1043,7 @@ Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pe
 	'translate-group-desc-openimages-verifyemailtemplate' => 'Estas mensaxes forman parte do modelo de verificación por correo electrónico de [[Translating:Open Images|Open Images]]',
 	'translate-group-desc-openimages-all' => 'Estas mensaxes forman parte do proxecto [[Translating:Open Images|Open Images]]',
 	'bw-desc-openstreetmap' => 'Grupo de mensaxes para todas as mensaxes do [[Translating:OpenStreetMap|OpenStreetMap]]',
-	'bw-desc-osm-site' => 'Este grupo de mensaxes contén as mensaxes da interface de [[Translating:Open Street Map|Open Street Map]].',
+	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] é un mapa mundial que se pode editar',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] é un editor do OpenStreetMap baseado en Flash',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] é unha colección de ferramentas para editar a Wikipedia',
 	'bw-desc-shapado' => 'Grupo de mensaxes para o software de código aberto de preguntas e respostas [[Translating:Shapado|Shapado]]',
@@ -1483,6 +1487,7 @@ $messages['ja'] = array(
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]]はウェブ上でのバグ追跡ソフトウェアです',
 	'translate-group-desc-eol' => '[[Translating:EOL|Encyclopedia of Life]]のメッセージ群',
 	'translate-group-desc-frontlinesms' => '[[Translating:FrontlineSMS|FrontlineSMS]]のメッセージ群',
+	'translate-group-desc-fuel' => '[[Translating:FUEL|FUEL]]は、ソフトウェアの翻訳にさらなる一貫性をもたらします',
 	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS]]のメッセージ群',
 	'translate-group-desc-ihris-common' => '[[Translating:iHRIS|iHRIS]]のモジュールである[[Special:Translate/out-ihris-common-0-all|iHRIS Common]]のメッセージ群',
 	'translate-group-desc-ihris-i2ce' => '[[Translating:iHRIS|iHRIS]]のモジュールである[[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]]のメッセージ群',
@@ -1494,7 +1499,7 @@ $messages['ja'] = array(
 	'translate-group-desc-mifos' => '[[Translating:Mifos|Mifos]]は、マイクロファイナンスのための経営情報システムです',
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]]は、MediaWikiのページからPDF文書を作るためのライブラリです',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]]は、オフラインでのウィキペディア閲覧機器です',
-	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]]はオープンなメディアプラットフォームです。',
+	'bw-desc-openimages' => '[[Translating:Open Images|Open Images]]はオープンなメディアプラットフォームです',
 	'translate-group-desc-openimages-verifyemailtemplate' => 'これらのメッセージは、[[Translating:Open Images|Open Images]] のメール検証テンプレートの一部です',
 	'translate-group-desc-openimages-all' => 'これらのメッセージは、[[Translating:Open Images|Open Images]]プロジェクトの一部です',
 	'bw-desc-openstreetmap' => '[[Translating:OpenStreetMap|OpenStreetMap]]に関連する全メッセージ',
