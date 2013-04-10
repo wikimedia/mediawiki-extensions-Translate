@@ -113,6 +113,7 @@ $wgResourceModules['ext.translate.groupselector'] = array(
 		'ext.translate.statsbar',
 		'mediawiki.jqueryMsg',
 		'ext.translate.loader',
+		'jquery.ui.position.custom',
 	),
 	'messages' => array(
 		'translate-msggroupselector-projects',
@@ -359,4 +360,10 @@ $wgResourceModules['jquery.autoresize'] = array(
 
 $wgResourceModules['jquery.textchange'] = array(
 	'scripts' => 'resources/js/jquery.textchange.js',
+) + $resourcePaths;
+
+// Use different name to not conflict with core, which
+// has as of 1.21 old 1.8.x version.
+$wgResourceModules['jquery.ui.position.custom'] = array(
+	'scripts' => 'resources/js/jquery.ui.position.js',
 ) + $resourcePaths;
