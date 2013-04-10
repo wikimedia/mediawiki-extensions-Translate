@@ -236,7 +236,8 @@
 		// This is the selector for non-TUX mode
 		prepareWorkflowSelector();
 		$( '.ext-translate-msggroup-selector .grouplink' ).msggroupselector( {
-			onSelect: mw.translate.changeGroup
+			onSelect: mw.translate.changeGroup,
+			language: targetLanguage
 		} );
 
 		$.when(
