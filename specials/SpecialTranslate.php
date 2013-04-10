@@ -66,7 +66,7 @@ class SpecialTranslate extends SpecialPage {
 
 		$errors = $this->getFormErrors();
 
-		if ( $isBeta ) {
+		if ( $isBeta && $this->options['taction'] !== 'export' ) {
 			$out->addHTML( Html::openElement( 'div', array(
 				'class' => 'grid ext-translate-container',
 			) ) );
@@ -326,6 +326,13 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function rewriteLegacyUrls( $params ) {
+		if (
+			!isset( $params['task'] ) &&
+			isset( $params['taction'] ) && $params['taction'] === 'proofread'
+		) {
+			$params['task'] = 'acceptqueue';
+		}
+
 		if ( !isset( $params['task'] ) || $params['task'] === 'custom' ) {
 			return;
 		}
