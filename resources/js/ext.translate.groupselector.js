@@ -1,15 +1,20 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	/**
+	 * options
+	 *  - position: accepts same values as jquery.ui.position
+	 *  - onSelect: callback with message group id when selected
+	 *  - language: language for statistics.
+	 */
 	function TranslateMessageGroupSelector( element, options ) {
 		this.$group = $( element );
 		this.$menu = null;
 		this.parentGroupId = null;
-		this.options = options;
+		this.options = $.extend( true, {}, $.fn.msggroupselector.defaults, options );
 		this.flatGroupList = null;
 
 		this.init();
-
 	}
 
 	TranslateMessageGroupSelector.prototype = {
@@ -104,8 +109,8 @@
 			$( '.ext-translate-msggroup-selector-menu.opened' )
 				.removeClass( 'opened' )
 				.hide();
-			this.position();
 			this.$menu.addClass( 'opened' ).show();
+			this.position();
 			// Keep the focus in the message group search box.
 			this.$menu.find( 'input.ext-translate-msggroup-search-input' ).focus();
 		},
@@ -246,20 +251,10 @@
 		 * Position the menu
 		 */
 		position: function () {
-			var position = $.extend( {}, this.$group.offset(), {
-					height: this.$group[0].offsetHeight
-				} ),
-				menuLeft;
-
-			this.$menu.css( 'top', position.top + position.height );
-
-			if ( $( 'body' ).hasClass( 'rtl' ) ) {
-				menuLeft = position.left - this.$menu.outerWidth() + 90;
-			} else {
-				menuLeft = position.left - 90;
+			if ( this.options.position.of === undefined ) {
+				this.options.position.of = this.$group;
 			}
-
-			this.$menu.css( 'left', menuLeft );
+			this.$menu.position( this.options.position );
 		},
 
 		/**
@@ -282,7 +277,7 @@
 					var messagegroup = mw.translate.getGroup( messageGroupId, messageGroups );
 
 					if ( messagegroup ) {
-						msgGroupRows.push( prepareMessageGroupRow( messagegroup ) );
+						msgGroupRows.push( groupSelector.prepareMessageGroupRow( messagegroup ) );
 					}
 				} );
 
@@ -407,11 +402,12 @@
 		 * @param {Array} msgGroups - array of message group objects to add.
 		 */
 		addGroupRows: function ( parentGroupId, msgGroups ) {
-			var $msgGroupRows,
+			var groupSelector = this,
+				$msgGroupRows,
 				$parent,
 				messageGroups = this.$menu.data( 'msggroups' ),
 				$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' ),
-				targetLanguage = $( '.ext-translate-msggroup-selector' ).data( 'language' );
+				targetLanguage = this.options.language;
 
 			if ( msgGroups ) {
 				messageGroups = msgGroups;
@@ -440,7 +436,7 @@
 					return;
 				}
 
-				$msgGroupRows.push( prepareMessageGroupRow( messagegroup ) );
+				$msgGroupRows.push( groupSelector.prepareMessageGroupRow( messagegroup ) );
 			} );
 
 			if ( parentGroupId ) {
@@ -456,6 +452,64 @@
 				$msgGroupList.append( $msgGroupRows );
 			}
 			this.$menu.find( '.tux-loading-indicator' ).hide();
+		},
+
+		/**
+		 * Prepare a message group row in the selector.
+		 * @param {Object} messagegroup object.
+		 * @returns {Object} a jQuery object with the groups selector row (<div>).
+		 */
+		prepareMessageGroupRow: function( messagegroup ) {
+			var $row,
+				$icon,
+				$label,
+				$statsbar,
+				$subGroupsLabel,
+				style = '';
+
+			$row = $( '<div>' ).addClass( 'row ext-translate-msggroup-item' )
+				.attr( 'data-msggroupid', messagegroup.id )
+				.data( 'msggroup', messagegroup );
+
+			$icon = $( '<div>' ).addClass( 'one column icon' );
+
+			$statsbar = $( '<div>' ).languagestatsbar( {
+				language: this.options.language,
+				group: messagegroup.id
+			} );
+
+			$label = $( '<div>' ).addClass( 'seven columns label' )
+				.text( messagegroup.label )
+				.attr( 'title', messagegroup.description )
+				.append( $statsbar );
+
+			if ( messagegroup.icon && messagegroup.icon.raster ) {
+				style += 'background-image: url(--);';
+				style = style.replace( /--/g, messagegroup.icon.raster );
+			}
+
+			if ( messagegroup.icon && messagegroup.icon.vector ) {
+				style +=
+					'background-image: -webkit-linear-gradient(transparent, transparent), url(--);' +
+					'background-image: -moz-linear-gradient(transparent, transparent), url(--);' +
+					'background-image: linear-gradient(transparent, transparent), url(--);';
+				style = style.replace( /--/g, messagegroup.icon.vector );
+			}
+
+			if ( style !== '' ) {
+				$icon.attr( 'style', style );
+			}
+
+			$subGroupsLabel = $( [] );
+
+			if ( messagegroup.groups && messagegroup.groups.length > 0 ) {
+				$subGroupsLabel = $( '<div>' )
+					.addClass( 'four columns subgroup-info' )
+					.text( mw.msg( 'translate-msggroupselector-view-subprojects',
+						messagegroup.groups.length ) );
+			}
+
+			return $row.append( $icon, $label, $subGroupsLabel );
 		},
 
 		/**
@@ -500,6 +554,14 @@
 
 	$.fn.msggroupselector.Constructor = TranslateMessageGroupSelector;
 
+	$.fn.msggroupselector.defaults = {
+		language: 'en',
+		position: {
+			my: 'left top',
+			at: 'left-90 bottom+5'
+		}
+	};
+
 	/*
 	 * Private functions
 	 */
@@ -510,64 +572,6 @@
 	 */
 	function escapeRegex( value ) {
 		return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, '\\$&' );
-	}
-
-	/**
-	 * Prepare a message group row in the selector.
-	 * @param {Object} messagegroup object.
-	 * @returns {Object} a jQuery object with the groups selector row (<div>).
-	 */
-	function prepareMessageGroupRow( messagegroup ) {
-		var $row,
-			$icon,
-			$label,
-			$statsbar,
-			$subGroupsLabel,
-			style = '';
-
-		$row = $( '<div>' ).addClass( 'row ext-translate-msggroup-item' )
-			.attr( 'data-msggroupid', messagegroup.id )
-			.data( 'msggroup', messagegroup );
-
-		$icon = $( '<div>' ).addClass( 'one column icon' );
-
-		$statsbar = $( '<div>' ).languagestatsbar( {
-			language: $( '.ext-translate-msggroup-selector' ).data( 'language' ),
-			group: messagegroup.id
-		} );
-
-		$label = $( '<div>' ).addClass( 'seven columns label' )
-			.text( messagegroup.label )
-			.attr( 'title', messagegroup.description )
-			.append( $statsbar );
-
-		if ( messagegroup.icon && messagegroup.icon.raster ) {
-			style += 'background-image: url(--);';
-			style = style.replace( /--/g, messagegroup.icon.raster );
-		}
-
-		if ( messagegroup.icon && messagegroup.icon.vector ) {
-			style +=
-				'background-image: -webkit-linear-gradient(transparent, transparent), url(--);' +
-				'background-image: -moz-linear-gradient(transparent, transparent), url(--);' +
-				'background-image: linear-gradient(transparent, transparent), url(--);';
-			style = style.replace( /--/g, messagegroup.icon.vector );
-		}
-
-		if ( style !== '' ) {
-			$icon.attr( 'style', style );
-		}
-
-		$subGroupsLabel = $( [] );
-
-		if ( messagegroup.groups && messagegroup.groups.length > 0 ) {
-			$subGroupsLabel = $( '<div>' )
-				.addClass( 'four columns subgroup-info' )
-				.text( mw.msg( 'translate-msggroupselector-view-subprojects',
-					messagegroup.groups.length ) );
-		}
-
-		return $row.append( $icon, $label, $subGroupsLabel );
 	}
 
 	mw.translate = mw.translate || {};
