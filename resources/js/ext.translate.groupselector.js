@@ -9,7 +9,6 @@
 		this.flatGroupList = null;
 
 		this.init();
-
 	}
 
 	TranslateMessageGroupSelector.prototype = {

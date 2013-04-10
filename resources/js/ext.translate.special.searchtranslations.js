@@ -177,8 +177,9 @@
 
 		level = level || 0;
 		groupList = groupList.splice( 0, maxListSize );
-		if ( currentGroup && mw.translate.messageGroups[currentGroup]
-			&& $.inArray( currentGroup, groupList ) < 0 ) {
+		if ( currentGroup && mw.translate.messageGroups[currentGroup] &&
+			$.inArray( currentGroup, groupList ) < 0
+		) {
 			// Make sure current selected group is displayed always.
 			groupList = groupList.concat( currentGroup );
 			groupList.sort( sortGroups );
