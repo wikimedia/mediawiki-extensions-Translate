@@ -1,7 +1,7 @@
 ( function ( $, mw ) {
 	'use strict';
 
-	/* Workflow selector code */
+	/* Non-TUX Workflow selector code */
 	function prepareWorkflowSelector() {
 		var $submit, $select, submitFunction;
 
@@ -25,7 +25,7 @@
 
 			$submit.prop( 'disabled', true );
 			$submit.val( mw.msg( 'translate-workflow-set-doing' ) );
-			mw.translate.changeWorkflowStatus( $submit.data( 'group' ),
+			changeWorkflowStatus( $submit.data( 'group' ),
 				$submit.data( 'language' ),
 				event.data.newstate,
 				$submit.data( 'token' )
@@ -46,6 +46,20 @@
 				$submit.prop( 'disabled', true );
 			}
 		} );
+	}
+
+	function changeWorkflowStatus ( group, language, state, token ) {
+		var api = new mw.Api(),
+		params = {
+			action: 'groupreview',
+			group: group,
+			language: language,
+			state: state,
+			token: token,
+			format: 'json'
+		};
+
+		return api.post( params );
 	}
 
 	mw.translate = mw.translate || {};
@@ -297,45 +311,6 @@
 			} else {
 				ownTranslatedMessages.addClass( 'hide' );
 				$this.addClass( 'down' ).text( showMessage );
-			}
-		} );
-
-		// Workflow state selector
-
-		// Toggling menu visibility
-		$translateContainer.find( '.tux-workflow-status' )
-			.on( 'click', function ( e ) {
-				$( this ).next( 'ul' ).toggleClass( 'hide' );
-				e.preventDefault();
-			} );
-
-		// Handling state changes
-		$translateContainer.find( '.tux-workflow-status-selector li' )
-			.on( 'click', function () {
-				var state, stateText, $selector,
-					$this = $( this );
-
-				state = $this.data( 'state' );
-				stateText = $this.text();
-				$selector = $translateContainer.find( '.tux-workflow-status' );
-				$this.parent().find( '.selected' ).removeClass( 'selected' );
-				$this.addClass( 'selected' )
-					.parent().addClass( 'hide' );
-				$selector.text( mw.msg( 'translate-workflow-set-doing' ) );
-
-				mw.translate.changeWorkflowStatus( $selector.data( 'group' ),
-					$selector.data( 'language' ),
-					state,
-					$selector.data( 'token' )
-				).done( function() {
-					$selector.text( mw.msg( 'translate-workflowstatus', stateText ) );
-				} );
-			} );
-
-		// Hide the workflow selector when clicking outside of it
-		$( 'html' ).on( 'click', function ( e ) {
-			if ( !e.isDefaultPrevented() ) {
-				$( 'ul.tux-workflow-status-selector' ).addClass( 'hide' );
 			}
 		} );
 
