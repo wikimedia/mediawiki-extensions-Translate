@@ -35,6 +35,7 @@ class TranslateSandbox {
 
 		// Need to have an id first
 		$user->addGroup( 'translate-sandboxed' );
+		$user->clearInstanceCache( 'name' );
 
 		return $user;
 	}
@@ -95,6 +96,23 @@ class TranslateSandbox {
 		if ( $wgTranslateSandboxPromotedGroup ) {
 			$user->addGroup( $wgTranslateSandboxPromotedGroup );
 		}
+	}
 
+	/// Hook: UserGetRights
+	public static function enforcePermissions( User $user, array &$rights ) {
+		global $wgTranslateUseSandbox;
+
+		if ( !$wgTranslateUseSandbox ) {
+			return true;
+		}
+
+		if ( !in_array( 'translate-sandboxed', $user->getGroups(), true ) ) {
+			return true;
+		}
+
+		$rights = array( 'read', 'translate-sandboxaction' );
+
+		// Do not let other hooks add more actions
+		return false;
 	}
 }
