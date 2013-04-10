@@ -1,2 +1,3 @@
 # upstream lib
 resources/js/jquery.autoresize.js
+resources/js/jquery.ui.position.js
