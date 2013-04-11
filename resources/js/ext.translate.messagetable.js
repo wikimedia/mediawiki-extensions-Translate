@@ -614,7 +614,6 @@
 				$tuxTableHeader,
 				$tuxActionBar,
 				isActionBarFloating,
-				isTableHeaderFloating,
 				needsTableHeaderFloat, needsTableHeaderStick,
 				needsActionBarFloat, needsActionBarStick,
 				windowScrollBottom,
@@ -633,7 +632,6 @@
 
 			// Header:
 			$tuxTableHeader = $( '.tux-messagetable-header' );
-			isTableHeaderFloating = $tuxTableHeader.hasClass( 'floating' );
 			needsTableHeaderFloat = messageListTop - $tuxTableHeader.height() - $window.scrollTop() + 10 < 0;
 			needsTableHeaderStick = messageListTop - $tuxTableHeader.height() - $window.scrollTop() - 10 >= 0;
 			if ( needsTableHeaderFloat ) {
