@@ -16,6 +16,24 @@
       "revId": "659eeade613d70eef42fb9bdf7f09700ccaba128",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuNAFlMU",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-04-11T12:05:15Z",
+      "side": 1,
+      "message": "Can you use same version of jshint that jenkins and others use?",
+      "parentUuid": "Dt7rrDXk",
+      "revId": "659eeade613d70eef42fb9bdf7f09700ccaba128",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
