@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DuBDHrGg",
+        "filename": "Resources.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-11T12:16:31Z",
+      "side": 1,
+      "message": "I mean that mediawiki 1.21 has 1.8.x, while we need never one (I just took the latest which is what you said 1.10.2). Will clarify",
+      "parentUuid": "DuNDpFB0",
+      "revId": "58b20bddd28108bf7f355a542e41eb007065c656",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DuFDehGs",
         "filename": "resources/js/ext.translate.groupselector.js",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-11T11:42:41Z",
       "side": 1,
       "message": "Convention for this is to define $.fn.msggroupselector.defaults",
+      "revId": "58b20bddd28108bf7f355a542e41eb007065c656",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuDDEMGE",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-11T12:16:31Z",
+      "side": 1,
+      "message": "Will do.",
+      "parentUuid": "DuFDehGs",
       "revId": "58b20bddd28108bf7f355a542e41eb007065c656",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
