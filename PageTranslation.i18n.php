@@ -1462,13 +1462,18 @@ $messages['bn'] = array(
 	'tpt-diff-old' => 'পূর্বের লেখা',
 	'tpt-diff-new' => 'নতুন লেখা',
 	'tpt-select-prioritylangs-reason' => 'কারণ:',
+	'tpt-rev-encourage' => 'পুনরুদ্ধার',
 	'translate-tag-translate-link-desc' => 'এই পাতা অনুবাদ করুন',
 	'translate-tag-markthis' => 'অনুবাদের জন্য এই পাতা চিহ্নিত করুন',
 	'tpt-languages-legend' => 'অন্য ভাষা:',
+	'tpt-discouraged-language-reason' => 'কারণ: $1',
 	'tpt-aggregategroup-add' => 'যোগ',
 	'tpt-aggregategroup-save' => 'সংরক্ষণ',
 	'tpt-aggregategroup-new-name' => 'নাম:',
+	'pt-movepage-current' => 'বর্তমান নাম:',
+	'pt-movepage-new' => 'নতুন নাম:',
 	'pt-movepage-reason' => 'কারণ:',
+	'pt-deletepage-current' => 'পাতার নাম:',
 	'pt-deletepage-reason' => 'কারণ:',
 );
 
@@ -3267,6 +3272,7 @@ $messages['fa'] = array(
  * @author Beluga
  * @author Cimon Avaro
  * @author Crt
+ * @author Lliehu
  * @author Nedergard
  * @author Nike
  * @author Olli
@@ -3334,7 +3340,7 @@ mutta viimeisintä versiota ei voi merkitä käännettäväksi.',
 	'translate-tag-markthis' => 'Merkitse tämä sivu käännettäväksi',
 	'translate-tag-markthisagain' => 'Tähän sivuun on tehty <span class="plainlinks">[$1 muutoksia]</span> sen jälkeen kun se viimeksi <span class="plainlinks">[$2 merkittiin käännettäväksi]</span>.',
 	'translate-tag-hasnew' => 'Tämä sivu sisältää <span class="plainlinks">[$1 muutoksia],</span> joita ei ole merkitty käännettäväksi.',
-	'tpt-translation-intro' => 'Tämä sivu on <span class="plainlinks">[$1 käännetty versio]</span> sivusta [[$2]] ja käännös on $3% täydellinen ja ajan tasalla.',
+	'tpt-translation-intro' => 'Tämä on <span class="plainlinks">[$1 käännetty versio]</span> sivusta [[$2]], ja käännös on $3&nbsp;% valmis.',
 	'tpt-languages-legend' => 'Muut kielet:',
 	'tpt-languages-zero' => 'Aloita käännös tälle kielelle',
 	'tpt-target-page' => 'Tätä sivua ei voi muokata tavalliseen tapaan.

@@ -393,6 +393,8 @@ $messages['ksh'] = array(
 	'tux-sst-nosolr-body' => 'En heh däm Wiki kammer nit noh Översäzonge söhke.',
 	'tux-sst-solr-offline-title' => 'Söhke es nit müjjelesch.',
 	'tux-sst-solr-offline-body' => 'Et Söhke es em Momang nit müjjelesch.',
+	'tux-sst-next' => 'De nähkße Träffer',
+	'tux-sst-prev' => 'De förrėje Träffer',
 );
 
 /** Kurdish (Latin script) (Kurdî (latînî)‎)
@@ -552,6 +554,8 @@ $messages['ro'] = array(
 	'tux-sst-nosolr-body' => 'Acest wiki nu dispune de un serviciu de căutare a traducerilor.',
 	'tux-sst-solr-offline-title' => 'Căutarea nu este disponibilă',
 	'tux-sst-solr-offline-body' => 'Serviciul de căutare este temporar indisponibil.',
+	'tux-sst-next' => 'Rezultatele următoare',
+	'tux-sst-prev' => 'Rezultatele anterioare',
 );
 
 /** tarandíne (tarandíne)

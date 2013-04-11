@@ -811,6 +811,7 @@ Hvis du ikke ønsker at modtage nyhedsbreve, kan du framelde det i fanebladet "{
 
 /** German (Deutsch)
  * @author Als-Holder
+ * @author Geitost
  * @author Kghbln
  * @author Metalhead64
  * @author Purodha
@@ -853,8 +854,8 @@ Hier kannst du wählen, welche Sprachen du, wenn überhaupt, angezeigt bekommen 
 Wähle die Hauptsprache in die du übersetzen möchtest.
 
 Du kannst andere Sprachen sowie weitere Hinweise im Textfeld unten angeben.',
-	'translate-fs-permissions-pending' => 'Deine Anfrage wurde auf Seite [[$1]] gespeichert. Einer der Mitarbeiter von translatewiki.net wird sie sobald als möglich prüfen.
-Sofern du deine E-Mail-Adresse bestätigst, erhältst du eine E-Mail-Benachrichtigung, sobald dies erfolgt ist.',
+	'translate-fs-permissions-pending' => 'Deine Anfrage wurde auf Seite [[$1]] gespeichert. Einer der Mitarbeiter von translatewiki.net wird sie sobald wie möglich prüfen.
+Wenn du deine E-Mail-Adresse bestätigst, erhältst du eine E-Mail-Benachrichtigung, sobald dies erfolgt ist.',
 	'translate-fs-permissions-submit' => 'Anfrage absenden',
 	'translate-fs-target-text' => "Glückwunsch!
 Du kannst nun mit dem Übersetzen beginnen.
@@ -890,6 +891,7 @@ Wenn du keinen Newsletter erhalten möchtest, kannst du dich im Tab «{{int:pref
 );
 
 /** German (formal address) (Deutsch (Sie-Form)‎)
+ * @author Geitost
  * @author Kghbln
  * @author Purodha
  * @author The Evil IP address
@@ -912,8 +914,8 @@ Hier können Sie wählen, welche Sprachen Sie, wenn überhaupt, angezeigt bekomm
 Wählen Sie die Hauptsprache in die Sie übersetzen möchten.
 
 Sie können andere Sprachen sowie weitere Hinweise im Textfeld unten angeben.',
-	'translate-fs-permissions-pending' => 'Ihre Anfrage wurde auf Seite [[$1]] gespeichert. Einer der Mitarbeiter von translatewiki.net wird sie sobald als möglich prüfen.
-Sofern Sie Ihre E-Mail-Adresse bestätigen, erhalten Sie eine E-Mail-Benachrichtigung, sobald dies erfolgt ist.',
+	'translate-fs-permissions-pending' => 'Ihre Anfrage wurde auf Seite [[$1]] gespeichert. Einer der Mitarbeiter von translatewiki.net wird sie sobald wie möglich prüfen.
+Wenn Sie Ihre E-Mail-Adresse bestätigen, erhalten Sie eine E-Mail-Benachrichtigung, sobald dies erfolgt ist.',
 	'translate-fs-target-text' => "Glückwunsch!
 Sie können nun mit dem Übersetzen beginnen.
 
