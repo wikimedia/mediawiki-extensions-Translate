@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DuNDpFB0",
+        "filename": "Resources.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-04-11T11:42:41Z",
+      "side": 1,
+      "message": "That comment is not clear. You meant to say, core has 1.8, but we are using 1.21. right? But the included jquery.ui.position has version number 1.10.2",
+      "revId": "58b20bddd28108bf7f355a542e41eb007065c656",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuFDehGs",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-04-11T11:42:41Z",
+      "side": 1,
+      "message": "Convention for this is to define $.fn.msggroupselector.defaults",
+      "revId": "58b20bddd28108bf7f355a542e41eb007065c656",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuBDoDBE",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-04-11T11:42:41Z",
+      "side": 1,
+      "message": "See my previous comment about defaults",
+      "revId": "58b20bddd28108bf7f355a542e41eb007065c656",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
