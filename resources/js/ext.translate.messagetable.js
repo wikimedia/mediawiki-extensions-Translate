@@ -165,7 +165,7 @@
 		 */
 		addTranslate: function ( message ) {
 			var $message, targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
-				status = '',
+				status,
 				statusMsg = '',
 				statusClass = '',
 				$messageWrapper;
