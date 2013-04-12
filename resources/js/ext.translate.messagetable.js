@@ -74,7 +74,7 @@
 			var messageTable = this,
 				$filterInput = this.$container.parent().find( '.tux-message-filter-box' );
 
-			$( window ).scroll(function () {
+			$( window ).scroll( function () {
 				delay( function () {
 					messageTable.scroll();
 				}, 200 );
@@ -304,9 +304,9 @@
 
 			this.$container.find( itemsClass[ this.mode ] ).each( function () {
 				var $message = $( this ),
-					message = ( $message.data( 'translateeditor' )
-						|| $message.data( 'pagemode' )
-						|| $message.data( 'proofread' ) ).message;
+					message = ( $message.data( 'translateeditor' ) ||
+						$message.data( 'pagemode' ) ||
+						$message.data( 'proofread' ) ).message;
 
 				if ( matcher.test( message.definition ) || matcher.test( message.translation ) ) {
 					$message.removeClass( 'hide' );

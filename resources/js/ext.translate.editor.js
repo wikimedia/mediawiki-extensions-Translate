@@ -296,7 +296,7 @@
 				$warnings,
 				$warningsBlock,
 				$editAreaBlock,
-				$textArea,
+				$textarea,
 				$controlButtonBlock,
 				$editingButtonBlock,
 				$pasteOriginalButton,
@@ -416,35 +416,35 @@
 					}
 				} );
 
-			$textArea = $( '<textarea>' )
+			$textarea = $( '<textarea>' )
 				.attr( {
 					lang: $messageList.data( 'targetlangcode' ),
 					dir: $messageList.data( 'targetlangdir' )
 				} )
 				.val( this.message.translation || '' );
 
-			if ( mw.translate.isPlaceholderSupported( $textArea ) ) {
-				$textArea.prop( 'placeholder', mw.msg( 'tux-editor-placeholder' ) );
+			if ( mw.translate.isPlaceholderSupported( $textarea ) ) {
+				$textarea.prop( 'placeholder', mw.msg( 'tux-editor-placeholder' ) );
 			}
 
-			$textArea.on( 'textchange', function () {
-				var $textArea = $( this ),
+			$textarea.on( 'textchange', function () {
+				var $textarea = $( this ),
 					$saveButton = translateEditor.$editor.find( '.tux-editor-save-button' ),
 					$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' ),
 					original = translateEditor.message.translation || '',
-					current = $textArea.val() || '';
+					current = $textarea.val() || '';
 
 				if ( original !== '' ) {
 					$discardChangesButton.removeClass( 'hide' );
 				}
 
 				// Expand the text area height as content grows
-				while ( $textArea.outerHeight() <
+				while ( $textarea.outerHeight() <
 					this.scrollHeight +
-					parseFloat( $textArea.css( 'borderTopWidth' ) ) +
-					parseFloat( $textArea.css( 'borderBottomWidth' ) )
+					parseFloat( $textarea.css( 'borderTopWidth' ) ) +
+					parseFloat( $textarea.css( 'borderBottomWidth' ) )
 				) {
-					$textArea.height( $textArea.height() + parseFloat( $textArea.css( 'fontSize' ) ) );
+					$textarea.height( $textarea.height() + parseFloat( $textarea.css( 'fontSize' ) ) );
 				}
 
 				/* Avoid Unsaved marking when translated message is not changed in content.
@@ -484,7 +484,7 @@
 				.addClass( 'row tux-editor-editarea-block' )
 				.append( $( '<div>' )
 					.addClass( 'editarea eleven columns' )
-					.append( $warningsBlock, $textArea )
+					.append( $warningsBlock, $textarea )
 				);
 
 			$editorColumn.append( $editAreaBlock );
@@ -494,7 +494,7 @@
 					.addClass( 'tux-editor-paste-original-button' )
 					.text( mw.msg( 'tux-editor-paste-original-button-label' ) )
 					.on( 'click', function () {
-						$textArea
+						$textarea
 							.focus()
 							.val( sourceString )
 							.trigger( 'input' );
@@ -508,7 +508,7 @@
 						.text( mw.msg( 'tux-editor-discard-changes-button-label' ) )
 						.on( 'click', function () {
 							// Restore the translation
-							$textArea
+							$textarea
 								.focus()
 								.val( originalTranslation )
 								.trigger( 'input' );
@@ -568,7 +568,7 @@
 
 				// Disable the text area if user has no translation rights.
 				// Use readonly to allow copy-pasting (except for placeholders)
-				$textArea.prop( 'readonly', true );
+				$textarea.prop( 'readonly', true );
 
 				$saveButton = $( [] );
 			}
@@ -611,7 +611,7 @@
 		validateTranslation: function () {
 			var translateEditor = this,
 				url = new mw.Uri( mw.config.get( 'wgScript' ) ),
-				$textArea = translateEditor.$editor.find( '.editcolumn textarea' );
+				$textarea = translateEditor.$editor.find( '.editcolumn textarea' );
 
 			// TODO: We need a better API for this
 			url.extend( {
@@ -622,7 +622,7 @@
 			} );
 
 			$.post( url.toString(), {
-				translation: $textArea.val()
+				translation: $textarea.val()
 			}, function ( data ) {
 				var warningIndex,
 					warnings = jQuery.parseJSON( data );

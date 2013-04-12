@@ -118,11 +118,11 @@
 		},
 
 		isDirty: function () {
-			return  $( '.mw-ajax-dialog:visible' ).length // For old Translate
+			return  $( '.mw-ajax-dialog:visible' ).length || // For old Translate
 				// For new Translate, something being typed in the current editor.
-				|| mw.translate.dirty
+				mw.translate.dirty ||
 				// For new translate, previous editors has some unsaved edits
-				|| $( '.tux-status-unsaved' ).length;
+				$( '.tux-status-unsaved' ).length;
 		}
 	} );
 
