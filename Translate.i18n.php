@@ -2769,6 +2769,12 @@ Detalles: $1",
 	'log-description-translationreview' => 'Rexistru de toles revisiones de les traducciones y grupos de mensaxes.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|aceutó}} la traducción $3',
 	'logentry-translationreview-group' => "$1 {{GENDER:$2|camudó}} l'estáu de les traducciones al $4 del grupu de mensaxes $3 de $6 a $7",
+	'group-translate-sandboxed' => 'Traductores ensin aprobar',
+	'group-translate-sandboxed-member' => '{{GENDER:$1|traductor|traductora}} ensin aprobar',
+	'right-translate-sandboxmanage' => 'Alministrar los usuarios de la zona de pruebes',
+	'action-translate-sandboxmanage' => 'alministrar los usuarios de la zona de pruebes',
+	'right-translate-sandboxaction' => 'Executar aiciones de la llista blanca pa los usuarios de la zona de pruebes',
+	'action-translate-sandboxaction' => 'executar aiciones de la llista blanca pa los usuarios de la zona de pruebes',
 	'translate-workflow-state-' => '(desactiváu)',
 	'translate-workflowstatus' => 'Estáu: $1',
 	'translate-workflow-set-do' => 'Activar',
@@ -2866,6 +2872,7 @@ Ye enforma afayadizo pa les xeres de correición.',
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|llingua|llingües}} más',
 	'translate-statsbar-tooltip' => '$1% traducíos, $2% correxíos',
 	'translate-statsbar-tooltip-with-fuzzy' => '$1% traducíos, $2% correxíos, $3% anticuaos',
+	'translate-search-more-groups-info' => '$1 {{PLURAL:$1|grupu|grupos}} más',
 );
 
 /** Azerbaijani (azərbaycanca)
@@ -7133,6 +7140,7 @@ Am nützlichsten ist sie für die Aufgaben des Korrekturlesens.',
 
 /** Swiss High German (Schweizer Hochdeutsch)
  * @author Filzstift
+ * @author Geitost
  * @author MichaelFrey
  * @author The Evil IP address
  */
@@ -7141,6 +7149,7 @@ $messages['de-ch'] = array(
 Optionale Nachrichten sollten nur dann übersetzt werden, sofern es in deiner Sprache Bedarf für sie gibt,
 wie beispielsweise die Nichtverwendung von Leerschlägen oder die Transkription von Eigennamen. $1',
 	'translate-edit-no-information' => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weisst, wo und in welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentation hinzufügst.''",
+	'translate-messagereview-reviewswithyou' => 'Akzeptiert von {{PLURAL:$1|dir selbst|$1 Benutzern, einschliesslich dir selbst}}',
 );
 
 /** German (formal address) (Deutsch (Sie-Form)‎)
@@ -7185,7 +7194,7 @@ Bitte schicken Sie das Formular noch einmal ab, um die Verarbeitung fortzusetzen
 	'translate-import-err-warnings' => 'Die Datei entspricht nicht dem erwarteten Format.
 Stellen Sie sicher, dass der Editor keine <code>msgctxt</code>-Felder entfernt.
 Details: $1',
-	'translate-messagereview-reviewswithyou' => 'Akzeptiert von {{PLURAL:$1|dir selbst|$1 Benutzern, einschließlich von Ihnen selbst}}',
+	'translate-messagereview-reviewswithyou' => 'Akzeptiert von {{PLURAL:$1|Ihnen selbst|$1 Benutzern, einschließlich Ihnen selbst}}',
 	'api-error-owntranslation' => 'Sie können Ihre eigenen Übersetzungen nicht akzeptieren.',
 	'translate-messagereview-no-own' => 'Sie können Ihre eigenen Übersetzungen nicht akzeptieren.',
 );
@@ -27073,7 +27082,6 @@ $messages['sl'] = array(
 	'translate-taskui-view' => 'Pokaži vsa sporočila',
 	'translate-taskui-untranslated' => 'Pokaži neprevedena sporočila',
 	'translate-taskui-optional' => 'Pokaži izbirna sporočila',
-	'translate-taskui-suggestions' => 'Pokaži sporočila s predlogi iz pomnilnika prevodov',
 	'translate-taskui-acceptqueue' => 'Samo sporočila, ki jih lahko sprejmem',
 	'translate-taskui-reviewall' => 'Preglej vse prevode',
 	'translate-taskui-export-to-file' => 'Izvozi v izvirni obliki',
@@ -27262,8 +27270,6 @@ Vse vrednosti imajo zgornje in spodnje omejitve.',
 	'translate-untranslated' => 'Neprevedeno',
 	'translate-percentage-complete' => 'Končano',
 	'translate-percentage-fuzzy' => 'Zastarelo',
-	'translate-nothing-to-do' => 'Kaže, da so vsi mogoči prevodi dokončani.
-Predlagamo vam, da pregledate sporočila preko [[Special:Translate|{{int:translate}}]].',
 	'translate-languagestats-overall' => 'Vse skupine sporočil skupaj',
 	'translate-ls-submit' => 'Pokaži statistiko',
 	'translate-ls-column-group' => 'Skupina sporočil',
@@ -27377,7 +27383,6 @@ Podrobnosti: $1',
 	'log-name-translationreview' => 'Dnevnik pregledov prevodov',
 	'log-description-translationreview' => 'Dnevnik vseh pregledov prevodov in skupin sporočil.',
 	'logentry-translationreview-message' => '$1 je {{GENDER:$2|sprejel|sprejela|sprejel(-a)}} prevod $3',
-	'logentry-groupreview-message' => '$1 je {{GENDER:$2|spremenil|spremenila|spremenil(-a)}} stanje prevodov v jeziku $4 skupine sporočil $3 iz $5 v $6',
 	'translate-workflow-state-' => '(izključeno)',
 	'translate-workflowstatus' => 'Stanje: $1',
 	'translate-workflow-set-do' => 'Nastavi',
@@ -27403,9 +27408,8 @@ Najuporabnejše za opravila lektoriranja.',
 	'translate-msggroupselector-search-placeholder' => 'Iskanje skupin',
 	'translate-msggroupselector-search-all' => 'Vsi',
 	'translate-msggroupselector-search-recent' => 'Nedavni',
-	'translate-msggroupselector-load-from-all' => 'Naloži sporočila iz vseh skupin',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|podskupina|podskupini|podskupine|podskupin}}',
-	'tux-languageselector' => 'Prevedi v',
+	'tux-languageselector' => 'Prevedi v jezik',
 	'tux-tab-all' => 'Vse',
 	'tux-tab-untranslated' => 'Neprevedeno',
 	'tux-tab-outdated' => 'Zastarelo',
@@ -27423,7 +27427,6 @@ Najuporabnejše za opravila lektoriranja.',
 	'tux-editor-skip-button-label' => 'Preskoči na naslednje',
 	'tux-editor-confirm-button-label' => 'Potrdi prevod',
 	'tux-editor-shortcut-info' => 'Pritisnite »$1« za shranitev ali »$2« za skok na naslednje sporočilo',
-	'tux-editor-no-message-doc' => 'Ni sporočila dokumentacije',
 	'tux-editor-edit-desc' => 'Uredi opis',
 	'tux-editor-add-desc' => 'Dodaj opis',
 	'tux-editor-suggestions-title' => 'Predlogi',

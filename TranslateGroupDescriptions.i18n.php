@@ -222,6 +222,7 @@ $messages['ast'] = array(
 	'bw-desc-mantisbt' => "[[Translating:MantisBT|MantisBT]] ye software web pa xestión d'errores",
 	'translate-group-desc-eol' => 'Grupu de mensaxes de la [[Translating:EOL|Enciclopedia de la vida]]',
 	'translate-group-desc-frontlinesms' => 'Un grupu de mensaxes pa [[Translating:FrontlineSMS|FrontlineSMS]]',
+	'translate-group-desc-fuel' => '[[Translating:FUEL|FUEL]] da más consistencia a la traducción de software',
 	'translate-group-desc-ihris' => 'Grupu de mensaxes de [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-common' => 'Grupu de mensaxes de [[Special:Translate/out-ihris-common-0-all|iHRIS Common]], un módulu de [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-ihris-i2ce' => 'Grupu de mensaxes de [[Special:Translate/out-ihris-i2ce-0-all|iHRIS I2CE]], un módulu de [[Translating:iHRIS|iHRIS]]',

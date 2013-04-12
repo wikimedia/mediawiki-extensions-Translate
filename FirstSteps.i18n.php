@@ -861,17 +861,17 @@ Wenn du deine E-Mail-Adresse bestätigst, erhältst du eine E-Mail-Benachrichtig
 Du kannst nun mit dem Übersetzen beginnen.
 
 Sei nicht verwirrt, wenn es dir noch neu und unübersichtlich vorkommt.
-Auf der Seite [[Project list|Projekte]] gibt es eine Übersicht der Projekte, die du übersetzen kannst.
-Die meisten Projekte haben eine kurze Beschreibungsseite zusammen mit einem „''Übersetzen''“- Link, der dich auf eine Seite mit nicht-übersetzten Nachrichten bringt.
+In der [[Project list|Projektliste]] gibt es eine Übersicht über die Projekte, die du übersetzen kannst.
+Die meisten Projekte haben eine kurze Beschreibungsseite zusammen mit einem ''„Übersetzen“''-Link, der dich auf eine Seite mit nicht übersetzten Nachrichten bringt.
 Eine Liste aller Nachrichtengruppen und dem [[Special:LanguageStats|momentanen Status einer Sprache]] gibt es auch.
 
 Wenn du mehr hiervon verstehen möchtest, kannst du die [[FAQ|häufig gestellten Fragen]] lesen.
 Leider kann die Dokumentation zeitweise veraltet sein.
-Wenn du etwas tun möchtest, jedoch nicht weißt wie, zögere nicht auf der [[Support|Hilfeseite]] zu fragen.
+Wenn du etwas tun möchtest, jedoch nicht weißt wie, zögere nicht, auf der [[Support|Hilfeseite]] zu fragen.
 
-Du kannst auch Übersetzer deiner Sprache auf der [[Portal_talk:$1|Diskussionsseite]] [[Portal:$1|des entsprechenden Sprachportals]] kontaktieren.
+Du kannst auch Übersetzer deiner Sprache auf der [[Portal_talk:$1|Diskussionsseite]] des [[Portal:$1|entsprechenden Sprachportals]] kontaktieren.
 Das Portal verlinkt auf deine momentane [[Special:Preferences|Spracheinstellung]].
-Bitte ändere sie falls nötig.",
+Bitte ändere sie, falls nötig.",
 	'translate-fs-email-text' => 'Bitte gib deine E-Mail-Adresse in [[Special:Preferences|deinen Einstellungen]] ein und bestätige die an dich versandte E-Mail.
 
 Dies gibt anderen die Möglichkeit, dich über E-Mail zu erreichen.
@@ -883,6 +883,21 @@ Wenn du keinen Newsletter erhalten möchtest, kannst du dich im Tab „{{int:pre
  * @author Geitost
  */
 $messages['de-ch'] = array(
+	'translate-fs-target-text' => "Glückwunsch!
+Du kannst nun mit dem Übersetzen beginnen.
+
+Sei nicht verwirrt, wenn es dir noch neu und unübersichtlich vorkommt.
+In der [[Project list|Projektliste]] gibt es eine Übersicht über die Projekte, die du übersetzen kannst.
+Die meisten Projekte haben eine kurze Beschreibungsseite zusammen mit einem ''«Übersetzen»''-Link, der dich auf eine Seite mit nicht übersetzten Nachrichten bringt.
+Eine Liste aller Nachrichtengruppen und dem [[Special:LanguageStats|momentanen Status einer Sprache]] gibt es auch.
+
+Wenn du mehr hiervon verstehen möchtest, kannst du die [[FAQ|häufig gestellten Fragen]] lesen.
+Leider kann die Dokumentation zeitweise veraltet sein.
+Wenn du etwas tun möchtest, jedoch nicht weisst wie, zögere nicht, auf der [[Support|Hilfeseite]] zu fragen.
+
+Du kannst auch Übersetzer deiner Sprache auf der [[Portal_talk:$1|Diskussionsseite]] des [[Portal:$1|entsprechenden Sprachportals]] kontaktieren.
+Das Portal verlinkt auf deine momentane [[Special:Preferences|Spracheinstellung]].
+Bitte ändere sie, falls nötig.",
 	'translate-fs-email-text' => 'Bitte gib deine E-Mail-Adresse in [[Special:Preferences|deinen Einstellungen]] ein und bestätige das an dich versandte E-Mail.
 
 Dies gibt anderen die Möglichkeit, dich über E-Mail zu erreichen.
@@ -920,17 +935,17 @@ Wenn Sie Ihre E-Mail-Adresse bestätigen, erhalten Sie eine E-Mail-Benachrichtig
 Sie können nun mit dem Übersetzen beginnen.
 
 Seien Sie nicht verwirrt, wenn es Ihnen noch neu und unübersichtlich vorkommt.
-Auf der Seite [[Project list|Projekte]] gibt es eine Übersicht der Projekte, die Sie übersetzen können.
-Die meisten Projekte haben eine kurze Beschreibungsseite zusammen mit einem „''Übersetzen''“- Link, der Sie auf eine Seite mit nicht-übersetzten Nachrichten bringt.
+In der [[Project list|Projektliste]] gibt es eine Übersicht über die Projekte, die Sie übersetzen können.
+Die meisten Projekte haben eine kurze Beschreibungsseite zusammen mit einem ''„Übersetzen“''-Link, der Sie auf eine Seite mit nicht übersetzten Nachrichten bringt.
 Eine Liste aller Nachrichtengruppen und dem [[Special:LanguageStats|momentanen Status einer Sprache]] gibt es auch.
 
 Wenn Sie mehr hiervon verstehen möchten, können Sie die [[FAQ|häufig gestellten Fragen]] lesen.
 Leider kann die Dokumentation zeitweise veraltet sein.
-Wenn Sie etwas tun möchten, jedoch nicht wissen wie, zögern Sie nicht auf der [[Support|Hilfeseite]] zu fragen.
+Wenn Sie etwas tun möchten, jedoch nicht wissen wie, zögern Sie nicht, auf der [[Support|Hilfeseite]] zu fragen.
 
-Sie kannst auch Übersetzer Ihrer Sprache auf der [[Portal_talk:$1|Diskussionsseite]] [[Portal:$1|des entsprechenden Sprachportals]] kontaktieren.
-Das Portal verlinkt auf deine momentane [[Special:Preferences|Spracheinstellung]].
-Bitte ändern Sie sie falls nötig.",
+Sie können auch Übersetzer Ihrer Sprache auf der [[Portal_talk:$1|Diskussionsseite]] des [[Portal:$1|entsprechenden Sprachportals]] kontaktieren.
+Das Portal verlinkt auf Ihre momentane [[Special:Preferences|Spracheinstellung]].
+Bitte ändern Sie sie, falls nötig.",
 	'translate-fs-email-text' => 'Bitte geben Sie Ihre E-Mail-Adresse in [[Special:Preferences|Ihren Einstellungen]] ein und bestätigen Sie die an Sie versandte E-Mail.
 
 Dies gibt anderen die Möglichkeit, Sie über E-Mail zu erreichen.
@@ -2060,7 +2075,7 @@ $messages['it'] = array(
 	'translate-fs-userpage-title' => 'Crea la tua pagina utente',
 	'translate-fs-permissions-title' => 'Richiedi i permessi per tradurre',
 	'translate-fs-target-title' => 'Comincia a tradurre!',
-	'translate-fs-email-title' => 'Conferma il tuo indirizzo e-mail',
+	'translate-fs-email-title' => 'Conferma il tuo indirizzo email',
 	'translate-fs-intro' => "Benvenuto/a nel percorso guidato per i primi passi in {{SITENAME}}.
 Sarai guidato passo passo nel processo di diventare un traduttore.
 Alla fine sarai in grado di tradurre i ''messaggi di sistema'' di tutti i progetti supportati da {{SITENAME}}.",

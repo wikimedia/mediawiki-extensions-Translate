@@ -93,6 +93,8 @@ $messages['ast'] = array(
 	'tux-sst-nosolr-body' => 'Esta wiki nun tien un serviciu de gueta de traducciones.',
 	'tux-sst-solr-offline-title' => 'La gueta nun ta disponible',
 	'tux-sst-solr-offline-body' => 'El serviciu de gueta nun ta disponible temporalmente.',
+	'tux-sst-next' => 'Resultaos siguientes',
+	'tux-sst-prev' => 'Resultaos anteriores',
 );
 
 /** Azerbaijani (azərbaycanca)
