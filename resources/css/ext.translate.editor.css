@@ -64,6 +64,7 @@
 	font-size: 13px;
 	font-weight: bold;
 	padding: 5px 0 5px 10px;
+	cursor: pointer;
 }
 
 .tux-message-editor .messagekey .caret {
@@ -356,4 +357,24 @@
 	padding: 10px;
 	font-size: 14px;
 	color: #565656;
+}
+
+.tux-message-tools-menu li a {
+	color: #555555;
+	display: block;
+	font-size: 14px;
+	padding: 0 2px;
+	text-decoration: none;
+}
+
+.tux-message-tools-menu li a:hover {
+	cursor: pointer;
+	background-color: #f0f0f0;
+	color: #252525;
+}
+
+.tux-message-tools-menu li.selected {
+	/* @embed */
+	background: url(../images/label-tick.png) right no-repeat;
+	color: #252525;
 }

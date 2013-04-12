@@ -92,6 +92,8 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-editor-close-tooltip',
 		'tux-editor-expand-tooltip',
 		'tux-editor-collapse-tooltip',
+		'tux-editor-message-tools-history',
+		'tux-editor-message-tools-translations',
 		'tux-editor-loading',
 	),
 	'position' => 'top',
