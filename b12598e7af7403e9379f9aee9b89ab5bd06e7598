@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DuH8jU8E",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-12T13:20:24Z",
+      "side": 1,
+      "message": "Stripping of the language code is optional, the backend will do that also.",
+      "revId": "b12598e7af7403e9379f9aee9b89ab5bd06e7598",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
