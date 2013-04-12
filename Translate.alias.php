@@ -25,6 +25,7 @@ $specialPageAliases['en'] = array(
 	'PageTranslationDeletePage' => array( 'PageTranslationDeletePage' ),
 	'AggregateGroups' => array( 'AggregateGroups' ),
 	'SearchTranslations' => array( 'SearchTranslations' ),
+	'TranslateSandbox' => array( 'ManageTranslatorSandbox', 'TranslateSandbox' ),
 );
 
 /** Afrikaans (Afrikaans) */
