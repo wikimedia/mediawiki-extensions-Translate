@@ -395,6 +395,15 @@
 			} );
 		},
 
+		/**
+		 * Returns a function that can be bind to click event. The function
+		 * allows inserting suggestion to $target while also allowing text
+		 * selection without triggering insertion.
+		 *
+		 * @param {String} suggestion Text to add
+		 * @param {jQuery} $target Target element (textarea or input)
+		 * @return {Function}
+		 */
 		suggestionAdder: function ( suggestion, $target ) {
 			return function () {
 				var selection;
