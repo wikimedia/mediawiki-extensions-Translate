@@ -230,6 +230,11 @@
 			$parent.append( $grouSelectorTrigger );
 
 			$grouSelectorTrigger.msggroupselector( {
+				language: mw.config.get( 'wgUserLanguage' ),
+				position: {
+					my: 'left top',
+					at: 'left top'
+				},
 				onSelect: function ( group ) {
 					window.location = group.url;
 				}
