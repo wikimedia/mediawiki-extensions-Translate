@@ -211,6 +211,13 @@
 		var $translateContainer, $hideTranslatedButton, $controlOwnButton, $messageList,
 			targetLanguage, docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri;
 
+		// Hide the workflow selector when clicking outside of it
+		$( 'html' ).on( 'click', function ( e ) {
+			if ( !e.isDefaultPrevented() ) {
+				$( '.dropdown-menu' ).addClass( 'hide' );
+			}
+		} );
+
 		$messageList = $( '.tux-messagelist' );
 		if ( $messageList.length ) {
 			uri = new mw.Uri( window.location.href );
