@@ -222,7 +222,7 @@ All values have upper and lower limits.',
 	'translate-translations-messagename' => 'Name:',
 	'translate-translations-project' => 'Project:',
 	'translate-translations-including-no-param' => 'Please specify a valid message key in the subpage parameter',
-	'translate-translations-history-short' => 'h',
+	'translate-translations-history-short' => 'hist',
 
 	# Special:LanguageStats
 	'languagestats' => 'Language statistics',
