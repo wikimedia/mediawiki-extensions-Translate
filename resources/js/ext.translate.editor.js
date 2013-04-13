@@ -263,7 +263,7 @@
 			translationsUri.path = wgScript;
 			translationsUri.query = {
 				title: 'Special:Translations',
-				message: this.message.title.replace( /\/[a-z\-]+$/, '' )
+				message: this.message.title
 			};
 
 			return $( '<ul>' )
