@@ -500,6 +500,14 @@ Most useful for the proofreading tasks.',
 	'tux-empty-list-translated' => 'No translated messages',
 	'tux-empty-list-translated-guide' => 'You can help translating',
 	'tux-empty-list-translated-action' => 'Translate',
+	'tux-empty-no-messages-to-display' => 'No messages to display.',
+	'tux-empty-there-are-optional' => 'There are optional messages not shown in the list',
+	'tux-empty-show-optional-messages' => 'Show optional messages',
+	'tux-empty-no-outdated-messages' => 'No outdated messages',
+	'tux-empty-nothing-to-proofread' => 'Nothing to proofread',
+	'tux-empty-you-can-help-providing' => 'You can help providing new translations',
+	'tux-empty-nothing-new-to-proofread' => 'Nothing new to proofread',
+	'tux-empty-you-can-review-already-proofread' => 'You can review translations already proofread by others.',
 
 	'tux-empty-list-other' => 'Nothing to translate',
 	'tux-empty-list-other-guide' => 'You can help reviewing existing translations',
@@ -511,6 +519,7 @@ Most useful for the proofreading tasks.',
 	'tux-editor-message-tools-history' => 'History',
 	'tux-editor-message-tools-translations' => 'All translations',
 	'tux-editor-loading' => 'Loading...',
+
 	'translate-search-more-languages-info' => '$1 more {{PLURAL:$1|language|languages}}',
 	'translate-statsbar-tooltip' => '$1% translated, $2% proofread',
 	'translate-statsbar-tooltip-with-fuzzy' => '$1% translated, $2% proofread, $3% outdated',
@@ -1165,6 +1174,17 @@ See also:
 	'tux-empty-list-translated-guide' => '{{Tuxspec|7}} This is a secondary guide text.',
 	'tux-empty-list-translated-action' => '{{Tuxspec|7}} This is an action button.
 {{Identical|Translate}}',
+
+	'tux-empty-no-messages-to-display' => 'Appears when there are no messages to show in the messages list.',
+	'tux-empty-there-are-optional' => 'A subtitle for {{mw-msg|tux-empty-no-messages-to-display}}.',
+	'tux-empty-show-optional-messages' => 'A link shown below {{msg-mw|tux-empty-no-messages-to-display}}.
+Clicking the link enables the optional messages.',
+	'tux-empty-no-outdated-messages' => 'A heading displayed when there are no outdated messages.',
+	'tux-empty-nothing-to-proofread' => 'A heading displayed when there are no messages to proofread.',
+	'tux-empty-you-can-help-providing' => 'A subtitle for {{mw-msg|tux-empty-no-outdated-messages}}.',
+	'tux-empty-nothing-new-to-proofread' => 'A heading displayed when there no messages that were not proofread already.',
+	'tux-empty-you-can-review-already-proofread' => 'A subtitle for {{mw-msg|tux-empty-nothing-new-to-proofread}}.',
+
 	'tux-empty-list-other' => '{{Tuxspec|7}} This is a heading.
 {{Identical|Nothing to translate}}',
 	'tux-empty-list-other-guide' => '{{Tuxspec|7}} This is a secondary guide text.',
