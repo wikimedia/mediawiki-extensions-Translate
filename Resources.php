@@ -38,6 +38,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'resources/css/ext.translate.editor.css',
 		'resources/css/ext.translate.proofread.css',
 		'resources/css/ext.translate.pagemode.css',
+		'resources/css/ext.translate.special.translate.css',
 	),
 	'dependencies' => array(
 		'ext.translate.base',
