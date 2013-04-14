@@ -277,7 +277,10 @@ $wgResourceModules['ext.translate.special.pagetranslation'] = array(
 
 $wgResourceModules['ext.translate.special.searchtranslations'] = array(
 	'scripts' => 'resources/js/ext.translate.special.searchtranslations.js',
-	'styles' => 'resources/css/ext.translate.special.searchtranslations.css',
+	'styles' => array(
+		'resources/css/ext.translate.special.searchtranslations.css',
+		'resources/css/ext.translate.special.translate.css',
+	),
 	'dependencies' => array(
 		'ext.translate.editor',
 		'ext.uls.init',
