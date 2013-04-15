@@ -456,6 +456,7 @@ Most useful for the proofreading tasks.',
 	'tux-editor-discard-changes-button-label' => 'Discard changes',
 	'tux-editor-save-button-label' => 'Save translation',
 	'tux-editor-skip-button-label' => 'Skip to next',
+	'tux-editor-cancel-button-label' => 'Cancel',
 	'tux-editor-confirm-button-label' => 'Confirm translation',
 	'tux-editor-shortcut-info' => 'Press "$1" to save or "$2" to skip to next message',
 	'tux-editor-edit-desc' => 'Edit description',
@@ -1075,6 +1076,9 @@ Read as in "proofRED" (past participle).
 	'tux-editor-discard-changes-button-label' => 'Label for a button that discards the changes made to a translation and restores the saved version.',
 	'tux-editor-save-button-label' => 'Label for save translation button',
 	'tux-editor-skip-button-label' => 'Label for skip button',
+	'tux-editor-cancel-button-label' => 'Label for cancel button.
+Pressing the button hides the message editor without saving and marks the message internally as "hard".
+{{Identical|Cancel}}',
 	'tux-editor-confirm-button-label' => 'Label for confirm button',
 	'tux-editor-shortcut-info' => 'A help text for the keyboard shortcuts
 * $1 is shortcut key for save button
