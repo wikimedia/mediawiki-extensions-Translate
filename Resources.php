@@ -42,6 +42,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 	'dependencies' => array(
 		'ext.translate.base',
 		'ext.translate.hooks',
+		'ext.translate.dropdownmenu',
 		'jquery.uls.grid',
 		'mediawiki.util',
 		'mediawiki.Uri',
@@ -374,6 +375,14 @@ $wgResourceModules['ext.translate.workflowselector'] = array(
 		'translate-workflow-set-doing',
 		'translate-workflowstatus',
 	),
+	'dependencies' => array(
+		'ext.translate.dropdownmenu',
+	),
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.dropdownmenu'] = array(
+	'styles' => 'resources/css/ext.translate.dropdownmenu.css',
+	'scripts' => 'resources/js/ext.translate.dropdownmenu.js',
 ) + $resourcePaths;
 
 $wgResourceModules['jquery.autoresize'] = array(
