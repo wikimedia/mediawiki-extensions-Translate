@@ -3,6 +3,12 @@
 
 	mw.translate = mw.translate || {};
 
+	var itemsClass = {
+		proofread: '.tux-message-proofread',
+		page: '.tux-message-pagemode',
+		translate: '.tux-message'
+	};
+
 	mw.translate = $.extend( mw.translate, {
 		getMessages: function ( messageGroup, language, offset, limit, filter ) {
 			var api = new mw.Api();
@@ -295,12 +301,7 @@
 		search: function ( query ) {
 			var resultCount = 0,
 				$result,
-				matcher = new RegExp( '(^|\\s|\\b)' + escapeRegex( query ), 'gi' ),
-				itemsClass = {
-					proofread: '.tux-message-proofread',
-					page: '.tux-message-pagemode',
-					translate: '.tux-message'
-				};
+				matcher = new RegExp( '(^|\\s|\\b)' + escapeRegex( query ), 'gi' );
 
 			this.$container.find( itemsClass[ this.mode ] ).each( function () {
 				var $message = $( this ),
@@ -344,6 +345,7 @@
 			}
 
 			this.$loader.trigger( 'appear' );
+			this.updateLastMessage();
 
 			// Trigger a scroll event for the window to make sure all floating toolbars
 			// are in their position.
@@ -437,23 +439,26 @@
 
 					if ( result['query-continue'] === undefined ) {
 						// End of messages
-						messageTable.$loader.data( 'offset', -1 ).addClass( 'hide' );
-						return;
+						messageTable.$loader.data( 'offset', -1 )
+							.addClass( 'hide' );
+					} else {
+						messageTable.$loader.data( 'offset', result['query-continue'].messagecollection.mcoffset );
+
+						remaining = result.query.metadata.remaining;
+
+						$( '.tux-messagetable-loader-count' ).text(
+							mw.msg( 'tux-messagetable-more-messages', remaining )
+						);
+
+						$( '.tux-messagetable-loader-more' ).text(
+							mw.msg( 'tux-messagetable-loading-messages', Math.min( remaining, pageSize ) )
+						);
+
+						// Make sure the floating toolbars are visible without the need for scroll
+						$( window ).trigger( 'scroll' );
 					}
 
-					messageTable.$loader.data( 'offset', result['query-continue'].messagecollection.mcoffset );
-
-					remaining = result.query.metadata.remaining;
-
-					$( '.tux-messagetable-loader-count' ).text(
-						mw.msg( 'tux-messagetable-more-messages', remaining )
-					);
-
-					$( '.tux-messagetable-loader-more' ).text(
-						mw.msg( 'tux-messagetable-loading-messages', Math.min( remaining, pageSize ) )
-					);
-					// Make sure the floating toolbars are visible without the need for scroll
-					$( window ).trigger( 'scroll' );
+					messageTable.updateLastMessage();
 				} )
 				.fail( function ( errorCode, response ) {
 					if ( response.error.code === 'mctranslate-language-disabled' ) {
@@ -464,6 +469,22 @@
 					messageTable.$loader.data( 'offset', -1 ).addClass( 'hide' );
 					messageTable.loading = false;
 				} );
+		},
+
+		updateLastMessage: function () {
+			var $messages = this.$container.find( itemsClass[ this.mode ] ),
+				oldLastMessage = $messages.filter( '.last-message' ),
+				newLastMessage = $messages
+					.not( '.hide' )
+					.last();
+
+			if ( oldLastMessage.length ) {
+				oldLastMessage.removeClass( 'last-message' );
+			}
+
+			if ( newLastMessage.length ) {
+				newLastMessage.addClass( 'last-message' );
+			}
 		},
 
 		/**
