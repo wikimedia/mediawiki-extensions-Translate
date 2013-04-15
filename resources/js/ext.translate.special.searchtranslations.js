@@ -2,12 +2,15 @@
 	'use strict';
 
 	$( document ).ready( function () {
+		var $messages = $( '.tux-message' );
+
 		// Make the whole rows clickable
 		$( '.facet-item' ).click( function () {
 			window.location = $( this ).find( 'a' ).attr( 'href' );
 		} );
 
-		$( '.tux-message' ).each( function () {
+
+		$messages.each( function () {
 			var $this = $( this );
 
 			$this.translateeditor( {
@@ -19,6 +22,8 @@
 				}
 			} );
 		} );
+
+		$messages.last().addClass( 'last-message' );
 
 		showLanguages();
 		showMessageGroups();
