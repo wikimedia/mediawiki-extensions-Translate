@@ -144,6 +144,26 @@ $messages['br'] = array(
 	'tux-sst-facet-orphan' => '(emzivad)',
 );
 
+/** Danish (dansk)
+ * @author Byrial
+ */
+$messages['da'] = array(
+	'searchtranslations' => 'Søg oversættelser',
+	'tux-sst-edit' => 'Redigér oversættelse',
+	'tux-sst-search' => 'Søg',
+	'tux-sst-search-ph' => 'Søg oversættelser',
+	'tux-sst-count' => '{{PLURAL:$1|Ét resultat fundet|$1 resultater fundet}}',
+	'tux-sst-facet-language' => 'Sprog',
+	'tux-sst-facet-group' => 'Beskedgrupper',
+	'tux-sst-facet-orphan' => '(ingen)',
+	'tux-sst-nosolr-title' => 'Søgning er ikke tilgængelig',
+	'tux-sst-nosolr-body' => 'Denne wiki har ikke mulighed for oversættelsessøgning.',
+	'tux-sst-solr-offline-title' => 'Søgning er ikke tilgængelig',
+	'tux-sst-solr-offline-body' => 'Søgning er midlertidig utilgængelig.',
+	'tux-sst-next' => 'Næste resultater',
+	'tux-sst-prev' => 'Forrige resultater',
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  */
@@ -281,7 +301,7 @@ $messages['gl'] = array(
  */
 $messages['he'] = array(
 	'searchtranslations' => 'חיפוש בתרגומים',
-	'tux-sst-edit' => 'עריכת הודעה',
+	'tux-sst-edit' => 'עריכת התרגום',
 	'tux-sst-search' => 'חיפוש',
 	'tux-sst-search-ph' => 'חיפוש בתרגומים',
 	'tux-sst-count' => '{{PLURAL:$1|נמצאה תוצאה אחת|נמצאו $1 תוצאות}}',
@@ -290,6 +310,10 @@ $messages['he'] = array(
 	'tux-sst-facet-orphan' => '(יתומים)',
 	'tux-sst-nosolr-title' => 'החיפוש אינו זמין',
 	'tux-sst-nosolr-body' => 'בוויקי הזה אין שירות חיפוש בתרגומים.',
+	'tux-sst-solr-offline-title' => 'החיפוש אינו זמין',
+	'tux-sst-solr-offline-body' => 'זמנית שירות החיפוש אינו זמין.',
+	'tux-sst-next' => 'התוצאות הבאות',
+	'tux-sst-prev' => 'התוצאות הקודמות',
 );
 
 /** Upper Sorbian (hornjoserbsce)
@@ -522,6 +546,8 @@ $messages['pl'] = array(
 	'tux-sst-nosolr-title' => 'Wyszukiwanie nie jest dostępne',
 	'tux-sst-solr-offline-title' => 'Wyszukiwanie nie jest dostępne',
 	'tux-sst-solr-offline-body' => 'Wyszukiwanie jest chwilowo niedostępne',
+	'tux-sst-next' => 'Następne wyniki',
+	'tux-sst-prev' => 'Poprzednie wyniki',
 );
 
 /** Piedmontese (Piemontèis)
@@ -596,6 +622,26 @@ $messages['ru'] = array(
 	'tux-sst-nosolr-body' => 'В этой вики отсутствует сервис поиска переводов.',
 );
 
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
+ * @author Милан Јелисавчић
+ */
+$messages['sr-ec'] = array(
+	'searchtranslations' => 'Претрага превода',
+	'tux-sst-edit' => 'Уреди превод',
+	'tux-sst-search' => 'Претражи',
+	'tux-sst-search-ph' => 'Претрага превода',
+	'tux-sst-count' => '{{PLURAL:$1|Један резултат пронађен|$1 резултата пронађено}}',
+	'tux-sst-facet-language' => 'Језици',
+	'tux-sst-facet-group' => 'Групе порука',
+	'tux-sst-facet-orphan' => '(сироче)',
+	'tux-sst-nosolr-title' => 'Претрага недоступна',
+	'tux-sst-nosolr-body' => 'Овај вики нема сервис за претрагу превода.',
+	'tux-sst-solr-offline-title' => 'Претрага недоступна',
+	'tux-sst-solr-offline-body' => 'Сервис за претрагу је привремено недоступан.',
+	'tux-sst-next' => 'Следећи резултати',
+	'tux-sst-prev' => 'Претходни резултати',
+);
+
 /** Swedish (svenska)
  * @author WikiPhoenix
  */
@@ -659,6 +705,8 @@ $messages['vi'] = array(
 	'tux-sst-nosolr-body' => 'Wiki này không có công cụ tìm bản dịch.',
 	'tux-sst-solr-offline-title' => 'Công cụ tìm kiếm không có sẵn',
 	'tux-sst-solr-offline-body' => 'Công cụ tìm kiếm tạm thời không sẵn dùng.',
+	'tux-sst-next' => 'Kết quả sau',
+	'tux-sst-prev' => 'Kết quả trước',
 );
 
 /** Simplified Chinese (中文（简体）‎)
