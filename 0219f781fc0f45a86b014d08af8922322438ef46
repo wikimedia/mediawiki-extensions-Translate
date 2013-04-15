@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DuqtcNSM",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-15T18:16:49Z",
+      "side": 1,
+      "message": "The problem is that we have to set the label and the callback for that button, and to set it back to \"Skip\", and to do it every time the shown messages change. I tried several approaches and couldn\u0027t find anything better.",
+      "parentUuid": "DusjPL4s",
+      "revId": "0219f781fc0f45a86b014d08af8922322438ef46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DuugKM9M",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-15T15:01:01Z",
       "side": 1,
       "message": "That is not readable. Define the variables and then assign the values.\nvar delay, itemsClass\n\ndelay \u003d ...\n\nitemsClass \u003d ...",
+      "revId": "0219f781fc0f45a86b014d08af8922322438ef46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuktCWUM",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-15T18:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DuugKM9M",
       "revId": "0219f781fc0f45a86b014d08af8922322438ef46",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "Duut7DYg",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-15T18:16:49Z",
+      "side": 1,
+      "message": "I tried it with a table of 500 messages and it didn\u0027t have any impact. I\u0027m not an expert in JS performance management, but FWIW Chrome\u0027s profiler showed that this function has negligible impact.\n\nI tried saving the last found element. Filtering and loading more messages are working together and it\u0027s complicated to sync them. So I just tried to do it consistently after loading.",
+      "parentUuid": "DuugzE6k",
+      "revId": "0219f781fc0f45a86b014d08af8922322438ef46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DuqgUO-Q",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "DugtMYXA",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-15T18:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DuqgUO-Q",
+      "revId": "0219f781fc0f45a86b014d08af8922322438ef46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Dukj6X7w",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2013-04-15T15:01:01Z",
       "side": 1,
       "message": "This check is unnecessary",
+      "revId": "0219f781fc0f45a86b014d08af8922322438ef46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dums-HbI",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-15T18:16:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "Dukj6X7w",
       "revId": "0219f781fc0f45a86b014d08af8922322438ef46",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
