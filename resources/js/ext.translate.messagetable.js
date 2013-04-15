@@ -579,7 +579,7 @@
 		/**
 		 * Switch the message table mode
 		 *
-		 * @param {string} mode The message table mode - proofread or translate
+		 * @param {string} mode The message table mode to switch to: translate, page or proofread
 		 */
 		switchMode: function ( mode ) {
 			var messageTable = this,
