@@ -467,57 +467,112 @@
 		},
 
 		/**
-		 * If the user selection results nothing to show, give some pointers
-		 * what to do.
+		 * Creates a uniformly styled button for different actions,
+		 * shown when there are no messages to display.
+		 * @param {String} labelMsg A message key for the button label.
+		 * @param {Function} callback A callback for clicking the button.
+		 * @returns {jQuery} A button element.
+		 */
+		otherActionButton: function ( labelMsg, callback ) {
+			return $( '<button>' )
+				.addClass( 'green button' )
+				.text( mw.msg( labelMsg ) )
+				.on( 'click', callback );
+		},
+
+		/**
+		 * If the user selection doesn't show anything,
+		 * give some pointers to other things to do.
 		 */
 		displayEmptyListHelp: function () {
-			var tab, $actionButton, $filterLink,
-				messageTable = this,
+			var messageTable = this,
+				// @todo Ugly! This should be provided somehow
+				selectedTab = $( '.tux-message-selector .selected' ).data( 'title' ),
 				$wrap = $( '<div>' ).addClass( 'tux-empty-list' ),
-				$empty = $( '<div>' ).addClass( 'tux-empty-list-header' ),
+				$emptyListHeader = $( '<div>' ).addClass( 'tux-empty-list-header' ),
 				$guide = $( '<div>' ).addClass( 'tux-empty-list-guide' ),
 				$actions = $( '<div>' ).addClass( 'tux-empty-list-actions' );
 
-			// Ugly! This should be provided somehow
-			tab = $( '.tux-message-selector .selected' ).data( 'filter' );
-
-			if ( tab === '' ) {
-				$empty.text( mw.msg( 'tux-empty-list-all' ) );
-				$guide.text( mw.msg( 'tux-empty-list-all-guide' ) );
-
-			} else if ( tab === 'translated' ) {
-				$empty.text( mw.msg( 'tux-empty-list-translated' ) );
-				$guide.text( mw.msg( 'tux-empty-list-translated-guide' ) );
-				$actionButton = $( '<button>' )
-					.text( mw.msg( 'tux-empty-list-translated-action' ) )
-					.addClass( 'green button' )
-					.click( function () {
-						mw.translate.changeFilter( $( '.tux-tab-untranslated' ).click() );
-					} );
-				$actions.append( $actionButton );
-
-			} else {
-				$empty.text( mw.msg( 'tux-empty-list-other' ) );
-				if ( mw.translate.canProofread() ) {
+			if ( messageTable.mode === 'proofread' ) {
+				if ( selectedTab === 'all' ) {
+					$emptyListHeader.text( mw.msg( 'tux-empty-no-messages-to-display' ) );
+					$guide.append(
+						$( '<p>' )
+							.text( mw.msg( 'tux-empty-there-are-optional' ) ),
+						$( '<a>' )
+							.attr( 'href', '#' )
+							.text( mw.msg( 'tux-empty-show-optional-messages' ) )
+							.on( 'click', function ( e ) {
+								$( '#tux-option-optional' ).click();
+								e.preventDefault();
+							} )
+					);
+				} else if ( selectedTab === 'outdated' ) {
+					$emptyListHeader.text( mw.msg( 'tux-empty-no-outdated-messages' ) );
 					$guide.text( mw.msg( 'tux-empty-list-other-guide' ) );
-					$actionButton = $( '<button>' )
-						.text( mw.msg( 'tux-empty-list-other-action' ) )
-						.addClass( 'green button' )
-						.click( function () {
-							messageTable.switchMode( 'proofread' );
-						} );
-					$actions.append( $actionButton );
+					$actions.append( messageTable.otherActionButton(
+						'tux-empty-list-other-action',
+						function () {
+							$( '.tux-tab-unproofread' ).click();
+							// @todo untranslated
+						} )
+					);
+					// @todo View all
+				} else if ( selectedTab === 'translated' ) {
+					$emptyListHeader.text( mw.msg( 'tux-empty-nothing-to-proofread' ) );
+					$guide.text( mw.msg( 'tux-empty-you-can-help-providing' ) );
+					$actions.append( messageTable.otherActionButton(
+						'tux-empty-list-translated-action',
+						function () {
+							messageTable.switchMode( 'translate' );
+						} )
+					);
+				} else if ( selectedTab === 'unproofread' ) {
+					$emptyListHeader.text( mw.msg( 'tux-empty-nothing-new-to-proofread' ) );
+					$guide.text( mw.msg( 'tux-empty-you-can-help-providing' ) );
+					$actions.append( messageTable.otherActionButton(
+						'tux-empty-you-can-review-already-proofread',
+						function () {
+							$( '.tux-tab-translated' ).click();
+						} )
+					);
 				}
-				$filterLink = $( '<a>' )
-					.text( mw.msg( 'tux-empty-list-other-link' ) )
-					.click( function () {
-						$( '.tux-tab-all' ).click();
-					} );
-				$actions.append( $filterLink );
+			} else {
+				if ( selectedTab === 'all' ) {
+					$emptyListHeader.text( mw.msg( 'tux-empty-list-all' ) );
+					$guide.text( mw.msg( 'tux-empty-list-all-guide' ) );
+				} else if ( selectedTab === 'translated' ) {
+					$emptyListHeader.text( mw.msg( 'tux-empty-list-translated' ) );
+					$guide.text( mw.msg( 'tux-empty-list-translated-guide' ) );
+					$actions.append( messageTable.otherActionButton(
+						'tux-empty-list-translated-action',
+						function () {
+							mw.translate.changeFilter( $( '.tux-tab-untranslated' ).click() );
+						} )
+					);
+				} else {
+					$emptyListHeader.text( mw.msg( 'tux-empty-list-other' ) );
 
+					if ( mw.translate.canProofread() ) {
+						$guide.text( mw.msg( 'tux-empty-list-other-guide' ) );
+						$actions.append( messageTable.otherActionButton(
+							'tux-empty-list-other-action',
+							function () {
+								messageTable.switchMode( 'proofread' );
+							} )
+						);
+					}
+
+					$actions.append( $( '<a>' )
+						.text( mw.msg( 'tux-empty-list-other-link' ) )
+						.click( function () {
+							$( '.tux-tab-all' ).click();
+						} )
+					);
+				}
 			}
 
-			$wrap.append( $empty, $guide, $actions );
+			$wrap.append( $emptyListHeader, $guide, $actions );
 			this.$container.append( $wrap );
 		},
 

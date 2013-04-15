@@ -442,25 +442,33 @@ class SpecialTranslate extends SpecialPage {
 		$output .= Html::openElement( 'ul', array( 'class' => 'row tux-message-selector' ) );
 		$userId = $this->getUser()->getId();
 		$tabs = array(
-			'tux-tab-all' => '',
-			'tux-tab-untranslated' => '!translated',
+			'all' => '',
+			'untranslated' => '!translated',
 			//'Hardest',
-			'tux-tab-outdated' => 'fuzzy',
-			'tux-tab-translated' => 'translated',
-			'tux-tab-unproofread' => "translated|!reviewer:$userId|!last-translator:$userId",
+			'outdated' => 'fuzzy',
+			'translated' => 'translated',
+			'unproofread' => "translated|!reviewer:$userId|!last-translator:$userId",
 		);
 
 		$params = $this->nondefaults;
 		$params['task'] = 'custom';
 
 		foreach ( $tabs as $tab => $filter ) {
+			// Possible classes and messages, for grepping:
+			// tux-tab-all
+			// tux-tab-untranslated
+			// tux-tab-outdated
+			// tux-tab-translated
+			// tux-tab-unproofread
+			$tabClass = "tux-tab-$tab";
 			$taskParams = array( 'filter' => $filter ) + $params;
 			ksort( $taskParams );
 			$href = $this->getTitle()->getLocalUrl( $taskParams );
-			$link = Html::element( 'a', array( 'href' => $href ), $this->msg( $tab ) );
+			$link = Html::element( 'a', array( 'href' => $href ), $this->msg( $tabClass ) );
 			$output .= Html::rawElement( 'li', array(
-				'class' => 'column ' . $tab,
-				'data-filter' => $filter
+				'class' => 'column ' . $tabClass,
+				'data-filter' => $filter,
+				'data-title' => $tab,
 			), $link );
 		}
 

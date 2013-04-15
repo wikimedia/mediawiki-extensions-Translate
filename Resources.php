@@ -182,8 +182,16 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'tux-empty-list-other-guide',
 		'tux-empty-list-other-action',
 		'tux-empty-list-other-link',
+		'tux-empty-no-messages-to-display',
+		'tux-empty-show-optional-messages',
 		'tux-message-filter-placeholder',
 		'translate-language-disabled',
+		'tux-empty-no-outdated-messages',
+		'tux-empty-nothing-new-to-proofread',
+		'tux-empty-you-can-help-providing',
+		'tux-empty-you-can-review-already-proofread',
+		'tux-empty-nothing-to-proofread',
+		'tux-empty-there-are-optional',
 	),
 ) + $resourcePaths;
 
