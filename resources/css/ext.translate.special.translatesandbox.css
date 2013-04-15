@@ -1,0 +1,114 @@
+/**
+ * CSS for special page.
+ * @author Niklas Laxström
+ * @license GPL2+
+ */
+
+/* Panes */
+.filter.pane,
+.search.pane {
+	border-bottom: 1px solid #575656;
+	height: 50px;
+	line-height: 50px;
+	font-size: 24px;
+}
+
+.requests.pane,
+.details.pane {
+	border-top: 1px solid #d3d2d2;
+}
+
+/* Requests pane */
+.request {
+	height: 50px;
+	border-right: 1px solid #c9c8c8;
+	border-bottom: 1px solid #c9c8c8;
+	cursor: pointer;
+}
+
+.request:first-child {
+	height: 51px;
+	border-top: 1px solid #c9c8c8;
+}
+
+.request .amount {
+	height: 100%;
+	line-height: 48px;
+	font-size: 40px;
+	text-align: center;
+	color: #96989a;
+	background-color: #f7f8f8;
+}
+
+.request .username,
+.request .selector {
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	text-wrap: nowrap;
+}
+
+.request .email,
+.request .signup-age {
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	color: #6c6d70;
+	text-wrap: nowrap;
+}
+
+.request .username,
+.request .email {
+	padding-left: 10px;
+	overflow: ellipsis;
+}
+
+.request .signup-age {
+	text-align: center;
+	overflow: hidden;
+}
+
+.request .proofread-marker {
+	background-color: #3e8dc5;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	margin-top: -5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* Details pane */
+
+.details.pane > div {
+	padding: 20px 0 0 20px;
+}
+
+.details.pane .username {
+	font-size: 30px;
+}
+
+.details.pane .email {
+	font-size: 14px;
+	color: #6c6d70;
+}
+
+.details.pane .languages {
+	color: #6c6d70;
+	font-size: 14px;
+}
+
+.details.pane .languages span {
+	margin-right: 2em;
+}
+
+.details.pane .actions {
+	font-size: 26px;
+}
+
+.actions .button {
+	margin-right: 1.5em;
+}

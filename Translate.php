@@ -49,6 +49,7 @@ $wgExtensionMessagesFiles['FirstSteps'] = "$dir/FirstSteps.i18n.php";
 $wgExtensionMessagesFiles['PageTranslation'] = "$dir/PageTranslation.i18n.php";
 $wgExtensionMessagesFiles['TranslateGroupDescriptions'] = "$dir/TranslateGroupDescriptions.i18n.php";
 $wgExtensionMessagesFiles['TranslateSearch'] = "$dir/TranslateSearch.i18n.php";
+$wgExtensionMessagesFiles['TranslateSandbox'] = "$dir/TranslateSandbox.i18n.php";
 $wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
 $wgExtensionMessagesFiles['TranslateMagic'] = "$dir/Translate.magic.php";
 
@@ -88,6 +89,7 @@ $wgSpecialPages['AggregateGroups'] = 'SpecialAggregateGroups';
 $wgSpecialPageGroups['AggregateGroups'] = 'wiki';
 $wgSpecialPages['SearchTranslations'] = 'SpecialSearchTranslations';
 $wgSpecialPageGroups['SearchTranslations'] = 'wiki';
+$wgSpecialPages['TranslateSandbox'] = 'SpecialTranslateSandbox';
 
 // API
 $wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
@@ -193,6 +195,7 @@ $wgAvailableRights[] = 'translate-import';
 $wgAvailableRights[] = 'translate-manage';
 $wgAvailableRights[] = 'translate-messagereview';
 $wgAvailableRights[] = 'translate-groupreview';
+$wgAvailableRights[] = 'translate-sandboxmanage';
 
 // New rights group
 $wgGroupPermissions['translate-proofr']['translate-messagereview'] = true;

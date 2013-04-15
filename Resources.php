@@ -325,6 +325,18 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 	),
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.special.translatesandbox'] = array(
+	'scripts' => 'resources/js/ext.translate.special.translatesandbox.js',
+	'styles' => 'resources/css/ext.translate.special.translatesandbox.css',
+	'position' => 'top',
+	'dependencies' => array(
+		'mediawiki.api',
+		'jquery.uls.grid',
+	),
+	'messages' => array(
+	),
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.special.translationstats'] = array(
 	'scripts' => 'resources/js/ext.translate.special.translationstats.js',
 	'dependencies' => array(
