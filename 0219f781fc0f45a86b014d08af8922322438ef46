@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DusjPL4s",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-04-15T15:01:01Z",
+      "side": 1,
+      "message": "that is unefficient. we are adding cancel button to all editors, while we will be using it only for one. but can\u0027t think of any better way to handle this though",
+      "revId": "0219f781fc0f45a86b014d08af8922322438ef46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuugKM9M",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-04-15T15:01:01Z",
+      "side": 1,
+      "message": "That is not readable. Define the variables and then assign the values.\nvar delay, itemsClass\n\ndelay \u003d ...\n\nitemsClass \u003d ...",
+      "revId": "0219f781fc0f45a86b014d08af8922322438ef46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuugzE6k",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-04-15T15:01:01Z",
+      "side": 1,
+      "message": "This will have performance issue I suppose. when we loop through all the messages,  like line 314, we can assign the current message as last message. at the end of loop that last message can be used to set this cancel button. \n\nIn the current approach, there are duplication of selectors. atleast with large message table this will have performance issue.",
+      "revId": "0219f781fc0f45a86b014d08af8922322438ef46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuqgUO-Q",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-04-15T15:01:01Z",
+      "side": 1,
+      "message": "This check is unnecessary",
+      "revId": "0219f781fc0f45a86b014d08af8922322438ef46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dukj6X7w",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-04-15T15:01:01Z",
+      "side": 1,
+      "message": "This check is unnecessary",
+      "revId": "0219f781fc0f45a86b014d08af8922322438ef46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
