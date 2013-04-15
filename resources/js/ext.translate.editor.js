@@ -150,6 +150,11 @@
 			// immediately move to the next message.
 			translateEditor.next();
 
+			// Now the message definitely has a history,
+			// so make sure the history menu item is shown
+			translateEditor.$editor.find( '.message-tools-history' )
+				.removeClass( 'hide' );
+
 			api.postWithEditToken( {
 				action: 'edit',
 				title: translateEditor.message.title,
@@ -250,7 +255,8 @@
 		},
 
 		createMessageTools: function () {
-			var wgScript = mw.config.get( 'wgScript' ),
+			var $historyItem, $translationsItem,
+				wgScript = mw.config.get( 'wgScript' ),
 				historyUri = new mw.Uri(),
 				translationsUri = new mw.Uri();
 
@@ -259,31 +265,36 @@
 				title: this.message.title,
 				action: 'history'
 			};
+			$historyItem = $( '<li>' )
+				.addClass( 'message-tools-history' +
+					( ( this.message.translation === null ) ? ' hide' : '' )
+				)
+				.append( $( '<a>' )
+				.attr( {
+					href: historyUri.toString(),
+					target: '_blank'
+				} )
+				.text( mw.msg( 'tux-editor-message-tools-history' ) )
+			);
 
 			translationsUri.path = wgScript;
 			translationsUri.query = {
 				title: 'Special:Translations',
 				message: this.message.title
 			};
+			$translationsItem = $( '<li>' )
+				.addClass( 'message-tools-translations' )
+				.append( $( '<a>' )
+				.attr( {
+					href: translationsUri.toString(),
+					target: '_blank'
+				} )
+				.text( mw.msg( 'tux-editor-message-tools-translations' ) )
+			);
 
 			return $( '<ul>' )
 				.addClass( 'dropdown-menu tux-message-tools-menu hide' )
-				.append(
-					$( '<li>' ).append( $( '<a>' )
-						.attr( {
-							href: historyUri.toString(),
-							target: '_blank'
-						} )
-						.text( mw.msg( 'tux-editor-message-tools-history' ) )
-					),
-					$( '<li>' ).append( $( '<a>' )
-						.attr( {
-							href: translationsUri.toString(),
-							target: '_blank'
-						} )
-						.text( mw.msg( 'tux-editor-message-tools-translations' ) )
-					)
-				);
+				.append( $historyItem, $translationsItem );
 		},
 
 		prepareEditorColumn: function () {
