@@ -219,7 +219,7 @@ class SpecialTranslations extends SpecialAllpages {
 				$historyText,
 				array(
 					'action',
-					'title' => $this->msg( 'history-title', $tTitle->getPrefixedDBkey() )->escaped()
+					'title' => $this->msg( 'history-title', $tTitle->getPrefixedDBkey() )->text()
 				),
 				array( 'action' => 'history' )
 			);
