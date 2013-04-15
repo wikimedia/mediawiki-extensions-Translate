@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DuXjVrbQ",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1178,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-15T10:37:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DuVhuqTE",
+      "revId": "da83331c237b4b6cae4b5852f997d06a2e4d3c9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DuTh19fc",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-15T10:24:10Z",
       "side": 1,
       "message": "Why are you adding \u003cp\u003e here?",
+      "revId": "da83331c237b4b6cae4b5852f997d06a2e4d3c9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuXhUzVE",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-15T10:37:38Z",
+      "side": 1,
+      "message": "In the PDF there\u0027s a paragraph of text and a link after it.",
+      "parentUuid": "DuTh19fc",
       "revId": "da83331c237b4b6cae4b5852f997d06a2e4d3c9d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "DuRhREWE",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-15T10:37:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DufhnXU4",
+      "revId": "da83331c237b4b6cae4b5852f997d06a2e4d3c9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DuZhcIX0",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 1
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "DufjIvSQ",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-15T10:37:38Z",
+      "side": 1,
+      "message": "Copypaste error :)",
+      "parentUuid": "DuZhcIX0",
+      "revId": "da83331c237b4b6cae4b5852f997d06a2e4d3c9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Dubhh5Ts",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 1
@@ -81,6 +153,24 @@
       "writtenOn": "2013-04-15T10:24:10Z",
       "side": 1,
       "message": "long lines, perhaps you could pull the function into variable that has shorter name. Or have the function only local to this function.",
+      "revId": "da83331c237b4b6cae4b5852f997d06a2e4d3c9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuThOVcI",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-04-15T10:37:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "Dubhh5Ts",
       "revId": "da83331c237b4b6cae4b5852f997d06a2e4d3c9d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
