@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DuVhuqTE",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1178,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-15T10:24:10Z",
+      "side": 1,
+      "message": "No link to the spec like above?",
+      "revId": "da83331c237b4b6cae4b5852f997d06a2e4d3c9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuTh19fc",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-15T10:24:10Z",
+      "side": 1,
+      "message": "Why are you adding \u003cp\u003e here?",
+      "revId": "da83331c237b4b6cae4b5852f997d06a2e4d3c9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DufhnXU4",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-15T10:24:10Z",
+      "side": 1,
+      "message": "This will scroll the page to the top if you don\u0027t use e.preventDefault()",
+      "revId": "da83331c237b4b6cae4b5852f997d06a2e4d3c9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuZhcIX0",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-15T10:24:10Z",
+      "side": 1,
+      "message": "This line doesn\u0027t make sense. .click() doesn\u0027t return a filter name.",
+      "revId": "da83331c237b4b6cae4b5852f997d06a2e4d3c9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dubhh5Ts",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-15T10:24:10Z",
+      "side": 1,
+      "message": "long lines, perhaps you could pull the function into variable that has shorter name. Or have the function only local to this function.",
+      "revId": "da83331c237b4b6cae4b5852f997d06a2e4d3c9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
