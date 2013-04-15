@@ -304,6 +304,7 @@
 				$saveButton,
 				$requestRight,
 				$skipButton,
+				$cancelButton,
 				$sourceString,
 				$closeIcon,
 				$layoutActions,
@@ -326,7 +327,6 @@
 					$messageTools.toggleClass( 'hide' );
 					e.stopPropagation();
 				} );
-
 
 			$closeIcon = $( '<span>' )
 				.addClass( 'one column close' )
@@ -582,9 +582,18 @@
 					e.stopPropagation();
 				} );
 
+			$cancelButton = $( '<button>' )
+				.addClass( 'button tux-editor-cancel-button' )
+				.text( mw.msg( 'tux-editor-cancel-button-label' ) )
+				.on( 'click', function ( e ) {
+					translateEditor.skip();
+					translateEditor.hide();
+					e.stopPropagation();
+				} );
+
 			$controlButtonBlock = $( '<div>' )
 				.addClass( 'twelve columns tux-editor-control-buttons' )
-				.append( $requestRight, $saveButton, $skipButton );
+				.append( $requestRight, $saveButton, $skipButton, $cancelButton );
 
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row tux-editor-actions-block' )
@@ -816,6 +825,7 @@
 			$( '.tux-editor-save-button, .tux-editor-save-button' ).removeAttr( 'accesskey' );
 			this.$editor.find( '.tux-editor-save-button' ).attr( 'accesskey', 's' );
 			this.$editor.find( '.tux-editor-skip-button' ).attr( 'accesskey', 'd' );
+			// @todo access key for the cancel button
 
 			this.$messageItem.addClass( 'hide' );
 			this.$editor

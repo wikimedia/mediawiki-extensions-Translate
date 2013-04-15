@@ -63,6 +63,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-editor-discard-changes-button-label',
 		'tux-editor-save-button-label',
 		'tux-editor-skip-button-label',
+		'tux-editor-cancel-button-label',
 		'tux-editor-confirm-button-label',
 		'tux-editor-shortcut-info',
 		'tux-editor-edit-desc',

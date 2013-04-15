@@ -378,3 +378,19 @@
 	background: url(../images/label-tick.png) right no-repeat;
 	color: #252525;
 }
+
+/*
+ * Hide the cancel button by default, but show it in the last message.
+ * !important is used to override the button styling in ULS.
+*/
+.tux-editor-cancel-button {
+	display: none !important;
+}
+
+.last-message .tux-editor-cancel-button {
+	display: inline-block !important;
+}
+
+.last-message .tux-editor-skip-button {
+	display: none;
+}
