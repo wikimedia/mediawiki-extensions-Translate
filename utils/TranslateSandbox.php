@@ -98,6 +98,33 @@ class TranslateSandbox {
 		}
 	}
 
+	/**
+	 * Sends a reminder to the user.
+	 * @param User $sender
+	 * @param User $target
+	 * @param string $subject Subject of the email.
+	 * @param string $body Body of the email.
+	 * @throws MWException
+	 */
+	public static function sendReminder( User $sender, User $target, $subject, $body ) {
+		global $wgTranslateSandboxPromotedGroup, $wgNoReplyAddress;
+
+		if ( !in_array( 'translate-sandboxed', $target->getGroups(), true ) ) {
+			throw new MWException( "Not a sandboxed user" );
+		}
+
+		$params = array(
+			'user' => $target->getId(),
+			'to' => $target->getEmail(),
+			'from' => $sender->getEmail(),
+			'replyto' => $wgNoReplyAddress,
+			'subj' => $subject,
+			'body' => $body,
+		);
+
+		TranslateSandboxReminderJob::newJob( $params )->insert();
+	}
+
 	/// Hook: UserGetRights
 	public static function enforcePermissions( User $user, array &$rights ) {
 		global $wgTranslateUseSandbox;
@@ -114,5 +141,14 @@ class TranslateSandbox {
 
 		// Do not let other hooks add more actions
 		return false;
+	}
+
+	///Hook: onGetPreferences
+	public static function onGetPreferences( $user, &$preferences ) {
+		$preferences['translate-sandbox-reminders'] = array(
+			'type' => 'api',
+		);
+
+		return true;
 	}
 }

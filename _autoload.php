@@ -99,6 +99,7 @@ $wgAutoloadClasses['TranslatePreferences'] = "$dir/utils/UserToggles.php";
 $wgAutoloadClasses['TranslateRcFilter'] = "$dir/utils/RcFilter.php";
 $wgAutoloadClasses['TranslateRegistrationStats'] = "$dir/specials/SpecialTranslationStats.php";
 $wgAutoloadClasses['TranslateSandbox'] = "$dir/utils/TranslateSandbox.php";
+$wgAutoloadClasses['TranslateSandboxReminderJob'] = "$dir/utils/TranslateSandboxReminderJob.php";
 $wgAutoloadClasses['TranslateStatsOutput'] = "$dir/scripts/groupStatistics.php";
 $wgAutoloadClasses['TranslateToolbox'] = "$dir/utils/ToolBox.php";
 $wgAutoloadClasses['TranslateYaml'] = "$dir/utils/TranslateYaml.php";
