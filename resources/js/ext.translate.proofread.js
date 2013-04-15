@@ -305,7 +305,11 @@
 			} );
 
 			this.$message.find( '.tux-proofread-edit' ).on( 'click', function () {
+				// Make sure that the tipsy is hidden when going to the editor
+				$( this ).siblings().filter( '.tux-proofread-action' ).tipsy( 'hide' );
+
 				proofread.$message.data( 'translateeditor' ).show();
+
 				return false;
 			} );
 		}
