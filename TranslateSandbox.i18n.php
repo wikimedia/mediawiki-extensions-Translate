@@ -31,11 +31,15 @@ Please log in to $2 and make some more translations.',
 $messages['qqq'] = array(
 	'translatesandbox' => '{{doc-special|TranslateSandbox}}',
 	'tsb-filter-pending' => 'A filter option on Special:TranslateSandbox',
-
-	// Reminders
 	'tsb-reminder-title-generic' => 'Subject of an email',
 	'tsb-reminder-content-generic' => 'Body of an email.
 * $1: user name of the recipient
 * $2: url to the website',
 );
 
+/** German (Deutsch)
+ * @author Rillke
+ */
+$messages['de'] = array(
+	'translatesandbox' => 'Übersetzer-Spielwiese konfigurieren',
+);
