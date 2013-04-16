@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DuiIaom0",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-04-16T08:31:53Z",
+      "side": 1,
+      "message": "I think you can do .siblings( \u0027.tux-proofread-action\u0027 ) too.",
+      "revId": "736e06a319af852d259c789c4c2bbb8cdb245eac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
