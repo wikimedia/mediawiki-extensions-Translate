@@ -3683,8 +3683,9 @@ $messages['te'] = array(
 చివరికి, {{SITENAME}} లో మద్దతు ఉన్న అన్ని ప్రాజెక్టుల్లోను "ఇంటరుఫేసు సందేశాల"ను అనువదించే సామర్ధ్యం మీకు లభిస్తుంది.',
 	'translate-fs-selectlanguage' => 'ఒక భాషను ఎంచుకోండి',
 	'translate-fs-settings-planguage' => 'ప్రధాన  భాష:',
+	'translate-fs-settings-slanguage' => 'సహాయిక భాష $1:',
 	'translate-fs-settings-submit' => 'అభిరుచులను భద్రపరచు',
-	'translate-fs-userpage-submit' => 'నా వాడుకరి పుటని సృష్టించు',
+	'translate-fs-userpage-submit' => 'నా వాడుకరి పుటని సృష్టించు', # Fuzzy
 	'translate-fs-userpage-done' => 'భళా! మీకు ఇప్పుడు వాడుకరి పుట ఉంది.',
 	'translate-fs-permissions-planguage' => 'ప్రధాన  భాష:',
 );
