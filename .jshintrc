@@ -1,10 +1,5 @@
 {
-	"predef": [
-		"jQuery",
-		"QUnit",
-		"mediaWiki"
-	],
-
+	// Enforcing
 	"camelcase": true,
 	"curly": true,
 	"eqeqeq": true,
@@ -14,14 +9,23 @@
 	"noarg": true,
 	"noempty": true,
 	"nonew": true,
-	"plusplus": false,
 	"quotmark": "single",
+	"trailing": true,
 	"undef": true,
 	"unused": true,
-	"strict": true,
-	"trailing": true,
-	"laxbreak": true,
+	// Legacy
+	"onevar": true
+
+	// Project specific
 	"browser": true,
-	"onevar": true,
-	"white": false
+	"laxbreak": true,
+	"plusplus": false,
+	"strict": true,
+	"white": false,
+
+	"predef": [
+		"jQuery",
+		"QUnit",
+		"mediaWiki"
+	]
 }
