@@ -1,10 +1,7 @@
 {
-	"predef": [
-		"jQuery",
-		"QUnit",
-		"mediaWiki"
-	],
+	/* Common */
 
+	// Enforcing
 	"camelcase": true,
 	"curly": true,
 	"eqeqeq": true,
@@ -14,14 +11,32 @@
 	"noarg": true,
 	"noempty": true,
 	"nonew": true,
-	"plusplus": false,
 	"quotmark": "single",
+	"trailing": true,
 	"undef": true,
 	"unused": true,
-	"strict": true,
-	"trailing": true,
-	"laxbreak": true,
-	"browser": true,
+	// Legacy
 	"onevar": true,
-	"white": false
+
+	/* Local */
+
+	// Enforcing
+	"bitwise": true,
+	"forin": false,
+	"regexp": false,
+	"strict": false,
+	// Relaxing
+	"laxbreak": true,
+	"smarttabs": true,
+	"multistr": true,
+	// Environment
+	"browser": true,
+	// Legacy
+	"nomen": true,
+
+	"predef": [
+		"mediaWiki",
+		"jQuery",
+		"QUnit"
+	]
 }
