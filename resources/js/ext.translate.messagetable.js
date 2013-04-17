@@ -57,6 +57,7 @@
 		// mode can be proofread, page or translate
 		this.mode = this.options.mode;
 		this.firstProofreadTipShown = false;
+		this.initialized = false;
 		this.$loader = this.$container.siblings( '.tux-messagetable-loader' );
 		this.$actionBar = this.$container.siblings( '.tux-action-bar' );
 		this.messages = [];
@@ -68,6 +69,7 @@
 	MessageTable.prototype = {
 		init: function () {
 			this.switchMode( this.mode );
+			this.initialized = true;
 		},
 
 		listen: function () {
@@ -656,9 +658,13 @@
 				}
 			}
 
-			$.each( messageTable.messages, function ( index, message ) {
-				messageTable.add( message );
-			} );
+			if ( messageTable.messages.length ) {
+				$.each( messageTable.messages, function ( index, message ) {
+					messageTable.add( message );
+				} );
+			} else if ( messageTable.initialized ) {
+				messageTable.displayEmptyListHelp();
+			}
 		},
 
 		/**
