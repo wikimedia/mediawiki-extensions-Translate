@@ -27,19 +27,96 @@ Please log in to $2 and make some more translations.',
 
 /** Message documentation (Message documentation)
  * @author Nike
+ * @author Shirayuki
  */
 $messages['qqq'] = array(
 	'translatesandbox' => '{{doc-special|TranslateSandbox}}',
-	'tsb-filter-pending' => 'A filter option on Special:TranslateSandbox',
+	'tsb-filter-pending' => 'A filter option on [[Special:TranslateSandbox]].
+
+Followed by a list of the pending requests.',
 	'tsb-reminder-title-generic' => 'Subject of an email',
 	'tsb-reminder-content-generic' => 'Body of an email.
-* $1: user name of the recipient
-* $2: url to the website',
+* $1 - user name of the recipient
+* $2 - url to the website',
 );
 
 /** German (Deutsch)
+ * @author Metalhead64
  * @author Rillke
  */
 $messages['de'] = array(
 	'translatesandbox' => 'Übersetzer-Spielwiese konfigurieren',
+	'tsb-filter-pending' => 'Ausstehende Anfragen',
+	'tsb-reminder-title-generic' => 'Vervollständige deine Einführung, um ein verifizierter Übersetzer zu werden.',
+	'tsb-reminder-content-generic' => 'Hallo $1,
+
+du hast dich kürzlich auf {{SITENAME}} registriert. Du bist nur ein paar Schritte von
+freien Übersetzungen und zusätzlichen Übersetzungshelfern entfernt.
+
+Bitte melde dich unter $2 an und erstelle einige weitere Übersetzungen.',
+);
+
+/** French (français)
+ * @author Gomoko
+ */
+$messages['fr'] = array(
+	'translatesandbox' => 'Gérer le bac à sable de tradution',
+	'tsb-filter-pending' => 'Requêtes en attente',
+	'tsb-reminder-title-generic' => 'Complétez votre présentation pour devenir un traducteur vérifié',
+	'tsb-reminder-content-generic' => 'Bonjour $1,
+
+Vous venez de vous inscrire sur {{SITENAME}}. Vous n’êtes plus qu’à quelques pas de débloquer la traduction libre et les aides de traduction supplémentaires.
+
+Veuillez vous connecter sur $2 et faire quelques traductions de plus.',
+);
+
+/** Japanese (日本語)
+ * @author Shirayuki
+ */
+$messages['ja'] = array(
+	'translatesandbox' => '翻訳者サンドボックスの管理',
+	'tsb-filter-pending' => '保留中の申請',
+);
+
+/** Macedonian (македонски)
+ * @author Bjankuloski06
+ */
+$messages['mk'] = array(
+	'translatesandbox' => 'Раководење со преведувачки песочник',
+	'tsb-filter-pending' => 'Барања во исчекување',
+	'tsb-reminder-title-generic' => 'Пополнете го вашето претставување и станете овластен преведувач',
+	'tsb-reminder-content-generic' => 'Здраво $1,
+
+Неодамна се зачленивте на {{SITENAME}}. Сега сте на само неколку чекори до слободно преведување со дополнителна помош.
+
+Најавете се на $2 и направете уште некои преводи.',
+);
+
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'tsb-reminder-title-generic' => 'Voltooi uw introductie om vertaler te worden',
+);
+
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'translatesandbox' => "Gestisce 'a sandbox de traduzione",
+	'tsb-filter-pending' => 'Richieste appese',
+	'tsb-reminder-title-generic' => "Comblete 'a 'ndroduziona toje pe devendà 'nu traduttore verificate",
+	'tsb-reminder-content-generic' => "Cià $1,
+
+Tu t'è reggistrate da picche sus a {{SITENAME}}. A fà angore quacche otre passe pe sbloccà 'a traduziona libbere e le aiutande de traduziune extra.
+
+Pe piacere tràse jndr'à $2 e fà angore quacche otre traduzione.",
+);
+
+/** Telugu (తెలుగు)
+ * @author Veeven
+ */
+$messages['te'] = array(
+	'tsb-filter-pending' => 'వేచివున్న అభ్యర్థనలు',
+	'tsb-reminder-title-generic' => 'తనిఖీ అయిన అనువాదకుడిగా మారడానికి మీ పరిచయాన్ని పూర్తిచేయండి',
 );
