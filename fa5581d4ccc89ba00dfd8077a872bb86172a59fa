@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Du2fK8nE",
+        "filename": ".jshintrc",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-04-17T17:28:46Z",
+      "side": 1,
+      "message": "`\"bitwise\": true,` wasn\u0027t there before. Did you mean to add it or just reformat the file?",
+      "revId": "fa5581d4ccc89ba00dfd8077a872bb86172a59fa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuwfHdmg",
+        "filename": ".jshintrc",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-04-17T17:28:46Z",
+      "side": 1,
+      "message": "+`\"forin\": false,`",
+      "revId": "fa5581d4ccc89ba00dfd8077a872bb86172a59fa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DuyfE.mA",
+        "filename": ".jshintrc",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-04-17T17:28:46Z",
+      "side": 1,
+      "message": "+`\"regexp\": false,`",
+      "revId": "fa5581d4ccc89ba00dfd8077a872bb86172a59fa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Du0fNboY",
+        "filename": ".jshintrc",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-04-17T17:28:46Z",
+      "side": 1,
+      "message": "+ `\"multistr\": true,`",
+      "revId": "fa5581d4ccc89ba00dfd8077a872bb86172a59fa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
