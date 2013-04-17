@@ -80,6 +80,7 @@
 	font-size: 18px;
 	line-height: 1.6em;
 	padding: 5px 0 10px 10px;
+	word-wrap: break-word;
 }
 
 .tux-message-editor .sourcemessage.long {
