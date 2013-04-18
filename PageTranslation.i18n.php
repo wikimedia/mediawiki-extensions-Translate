@@ -5881,7 +5881,7 @@ $messages['ko'] = array(
 	'logentry-pagetranslation-associate' => '$1 사용자가 $3 번역 가능한 문서를 $4 집계 그룹에 {{GENDER:$2|추가했습니다}}',
 	'logentry-pagetranslation-dissociate' => '$1 사용자가 $3 번역 가능한 문서를 $4 집계 그룹에서 {{GENDER:$2|제거했습니다}}',
 	'pt-movepage-title' => '"$1" 번역 가능한 문서 이동',
-	'pt-movepage-blockers' => '번역 가능한 문서는 다음 {{PLURAL:$1|오류}} 때문에 새 이름으로 이동할 수 없습니다:',
+	'pt-movepage-blockers' => '번역 가능한 문서는 다음 {{PLURAL:$1|오류}} 때문에 새 이름으로 옮길 수 없습니다:',
 	'pt-movepage-block-base-exists' => '"[[:$1]]" 대상 번역 가능한 문서가 존재합니다.',
 	'pt-movepage-block-base-invalid' => '대상 번역 가능한 문서 이름은 올바른 제목이 아닙니다.',
 	'pt-movepage-block-tp-exists' => '"[[:$2]]" 대상 번역 문서가 존재합니다.',
@@ -5900,7 +5900,7 @@ $messages['ko'] = array(
 	'pt-movepage-new' => '새 이름:',
 	'pt-movepage-reason' => '이유:',
 	'pt-movepage-subpages' => '모든 하위 문서 이동',
-	'pt-movepage-action-check' => '이동할 수 있는지 확인',
+	'pt-movepage-action-check' => '옮길 수 있는지 확인',
 	'pt-movepage-action-perform' => '이동하기',
 	'pt-movepage-action-other' => '대상 바꾸기',
 	'pt-movepage-intro' => '이 특수 문서는 번역에 대해 표시한 문서를 이동할 수 있습니다.
@@ -5908,7 +5908,7 @@ $messages['ko'] = array(
 문서를 이동하는 동안 질문의 문서와 상호 작용하는 것은 불가능합니다.
 실패하면 [[Special:Log/pagetranslation|문서 번역 기록]]에 기록되고 직접 복구할 필요가 있습니다.',
 	'pt-movepage-logreason' => '"$1" 번역 가능한 문서의 부분입니다.',
-	'pt-movepage-started' => '기본 페이지가 지금 이동했습니다.
+	'pt-movepage-started' => '기본 페이지가 지금 옮겨졌습니다.
 오류에 대해 [[Special:Log/pagetranslation|문서 번역 기록]]을 확인하고 메시지를 완료하세요.',
 	'pt-locked-page' => '이 문서는 번역 가능한 문서가 현재 이동하고 있기 때문에 잠겨 있습니다.',
 	'pt-deletepage-lang-title' => '"$1" 번역 문서를 삭제하고 있습니다.',

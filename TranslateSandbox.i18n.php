@@ -70,6 +70,21 @@ Vous venez de vous inscrire sur {{SITENAME}}. Vous n’êtes plus qu’à quelqu
 Veuillez vous connecter sur $2 et faire quelques traductions de plus.',
 );
 
+/** Galician (galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'translatesandbox' => 'Administrar a zona de probas dos tradutores',
+	'tsb-filter-pending' => 'Solicitudes pendentes',
+	'tsb-reminder-title-generic' => 'Complete a súa introdución para se converter nun tradutor verificado',
+	'tsb-reminder-content-generic' => 'Boas, $1:
+
+Rexistrouse recentemente en {{SITENAME}}. Está a uns pasos de desbloquear a
+tradución libre e as axudas de tradución adicionais.
+
+Acceda ao sistema en $2 e faga algunha tradución máis.',
+);
+
 /** Japanese (日本語)
  * @author Shirayuki
  */
