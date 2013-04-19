@@ -2075,7 +2075,7 @@ men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til 
 	'translate-tag-markthis' => 'Markér denne side for oversættelse',
 	'translate-tag-markthisagain' => 'Denne side er <span class="plainlinks">[$1 ændret]</span> siden den sidst blev <span class="plainlinks">[$2 markeret for oversættelse]</span>.',
 	'translate-tag-hasnew' => 'Denne side indeholder <span class="plainlinks">[$1 ændringer]</span> som ikke er markeret for oversættelse.',
-	'tpt-translation-intro' => 'Denne side er en <span class="plainlinks">[$1 oversat version]</span> af en side [[$2]] og oversættelsen er $3 % komplet og opdateret.',
+	'tpt-translation-intro' => 'Denne side er en <span class="plainlinks">[$1 oversat version]</span> af siden [[$2]], og oversættelsen er $3 % komplet.',
 	'tpt-languages-legend' => 'Andre sprog:',
 	'tpt-languages-zero' => 'Begynd på oversættelsen til dette sprog',
 	'tpt-target-page' => 'Denne side kan ikke opdateres manuelt.
