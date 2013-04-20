@@ -40,6 +40,13 @@ Followed by a list of the pending requests.',
 * $2 - url to the website',
 );
 
+/** Breton (brezhoneg)
+ * @author Y-M D
+ */
+$messages['br'] = array(
+	'tsb-filter-pending' => 'Rekedoù war gortoz',
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  * @author Rillke
@@ -83,6 +90,20 @@ Rexistrouse recentemente en {{SITENAME}}. Está a uns pasos de desbloquear a
 tradución libre e as axudas de tradución adicionais.
 
 Acceda ao sistema en $2 e faga algunha tradución máis.',
+);
+
+/** Hebrew (עברית)
+ * @author Amire80
+ */
+$messages['he'] = array(
+	'translatesandbox' => 'ניהול ארגז חול של מתרגמים',
+	'tsb-filter-pending' => 'בקשות ממתינות',
+	'tsb-reminder-title-generic' => 'נא להשלים את ההיכרות שלך כדי לקבל אישור מלא לתרגם',
+	'tsb-reminder-content-generic' => 'שלום $1,
+
+לאחרונה נרשמת לאתר {{SITENAME}}. נשארו לך רק צעדים בודדים כדי לאפשר תרגום חופשי ועזרי תרגום נוספים.
+
+נא להיכנס אל $2 ולעשות עוד כמה תרגומים.',
 );
 
 /** Japanese (日本語)

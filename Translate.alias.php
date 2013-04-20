@@ -592,6 +592,7 @@ $specialPageAliases['mk'] = array(
 	'PageTranslationDeletePage' => array( 'ПреводНаСтраницаИзбришиСтраница' ),
 	'AggregateGroups' => array( 'ЗбирниГрупи' ),
 	'SearchTranslations' => array( 'ПребарајПреводи' ),
+	'TranslateSandbox' => array( 'РаководиПреведувачкиПесочник' ),
 );
 
 /** Malayalam (മലയാളം) */
