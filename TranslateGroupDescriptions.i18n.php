@@ -37,6 +37,7 @@ $messages['en'] = array(
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] is a turn-based strategy game',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] is web-based discussion forum software',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] is web-based issue tracking software',
+	'translate-group-desc-blockly' => 'A message group for [[Translating:Blockly|Blockly]]',
 	'translate-group-desc-eol' => 'A message group for [[Translating:EOL|Encyclopedia of Life]]',
 	'translate-group-desc-frontlinesms' => 'A message group for [[Translating:FrontlineSMS|FrontlineSMS]]',
 	'translate-group-desc-fuel' => '[[Translating:FUEL|FUEL]] brings more consistency to software translation',
