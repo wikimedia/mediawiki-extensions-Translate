@@ -132,6 +132,8 @@ $messages['mk'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
+	'translatesandbox' => 'Vertalersszandbak beheren',
+	'tsb-filter-pending' => 'Aanvragen in behandeling',
 	'tsb-reminder-title-generic' => 'Voltooi uw introductie om vertaler te worden',
 );
 
