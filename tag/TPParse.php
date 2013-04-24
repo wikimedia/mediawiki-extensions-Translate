@@ -191,8 +191,14 @@ class TPParse {
 				$sectiontext = $msg->translation();
 			}
 
-			// Use the original text if no translation is available
-			if ( $sectiontext === null ) {
+			// Use the original text if no translation is available.
+
+			// For the source language, this will actually be the source, which
+			// contains variable declarations (tvar) instead of variables ($1).
+			// The getTextForTrans will convert declarations to normal variables
+			// for us so that the variable substitutions below will also work
+			// for the source language.
+			if ( $sectiontext === null || $sectiontext === $s->getText() ) {
 				$sectiontext = $s->getTextForTrans();
 			}
 
@@ -204,7 +210,7 @@ class TPParse {
 		$nph = array();
 		$text = TranslatablePage::armourNowiki( $nph, $text );
 
-		// Remove translation markup
+		// Remove translation markup from the template to produce final text
 		$cb = array( __CLASS__, 'replaceTagCb' );
 		$text = preg_replace_callback( '~(<translate>)(.*)(</translate>)~sU', $cb, $text );
 		$text = TranslatablePage::unArmourNowiki( $nph, $text );
