@@ -14,20 +14,20 @@
  * @ingroup PageTranslation
  */
 class TPSection {
-	/// \string Section name
+	/// @var string Section name
 	public $id;
-	/// \string New name of the section, that will be saved to database.
+	/// @var string New name of the section, that will be saved to database.
 	public $name;
-	/// \string Section text.
+	/// @var string Section text.
 	public $text;
-	/// \string Is this new, existing, changed or deleted section.
+	/// @var string Is this new, existing, changed or deleted section.
 	public $type;
-	/// \string Text of previous version of this section.
+	/// @var string Text of previous version of this section.
 	public $oldText;
 
 	/**
 	 * Returns section text unmodified.
-	 * @return \string Wikitext.
+	 * @return string Wikitext.
 	 */
 	public function getText() {
 		return $this->text;
@@ -35,7 +35,7 @@ class TPSection {
 
 	/**
 	 * Returns section text with variables replaced.
-	 * @return \string Wikitext.
+	 * @return string Wikitext.
 	 */
 	public function getTextForTrans() {
 		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
@@ -43,8 +43,8 @@ class TPSection {
 	}
 
 	/**
-	 * Returns the section text section marker updated or added.
-	 * @return \string Wikitext.
+	 * Returns the section text with updated or added section marker.
+	 * @return string Wikitext.
 	 */
 	public function getMarkedText() {
 		$id = isset( $this->name ) ? $this->name : $this->id;
@@ -64,7 +64,7 @@ class TPSection {
 
 	/**
 	 * Returns oldtext, or current text if not available.
-	 * @return \string Wikitext.
+	 * @return string Wikitext.
 	 */
 	public function getOldText() {
 		return isset( $this->oldText ) ? $this->oldText : $this->text;
