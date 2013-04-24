@@ -349,6 +349,13 @@ $messages['bg'] = array(
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] може бързо да намери авторите на страница в уики на Уикимедия.',
 );
 
+/** Bengali (বাংলা)
+ * @author Aftab1995
+ */
+$messages['bn'] = array(
+	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] উইকিমিডিয়া কমন্স এবং অন্যান্য উইকিমিডিয়া প্রকল্পে ফাইল আপলোড করার জন্য একটি টুল',
+);
+
 /** Breton (brezhoneg)
  * @author Fohanno
  * @author Fulup

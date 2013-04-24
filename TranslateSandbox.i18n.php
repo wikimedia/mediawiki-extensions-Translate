@@ -40,6 +40,20 @@ Followed by a list of the pending requests.',
 * $2 - url to the website',
 );
 
+/** Bengali (বাংলা)
+ * @author Aftab1995
+ */
+$messages['bn'] = array(
+	'translatesandbox' => 'অনুবাদক খেলাঘর পরিচালনা',
+	'tsb-filter-pending' => 'অপেক্ষমান অনুরোধ',
+	'tsb-reminder-title-generic' => 'একজন যাচাইকৃত অনুবাদক হতে আপনার পরিচিতি সমাপ্ত করুন',
+	'tsb-reminder-content-generic' => 'প্রিয় $1,
+
+আপনি সম্প্রতি {{SITENAME}}-এ সাইন আপ করেছেন। বিনামূল্যে অনুবাদ এবং অতিরিক্ত অনুবাদ সাহায্যকারী খুলতে আপনি মাত্র কয়েক ধাপ দূরে।
+
+$2-এ লগ ইন করুন এবং আরো কিছু অনুবাদ করুন।',
+);
+
 /** Breton (brezhoneg)
  * @author Y-M D
  */
@@ -104,6 +118,15 @@ $messages['he'] = array(
 לאחרונה נרשמת לאתר {{SITENAME}}. נשארו לך רק צעדים בודדים כדי לאפשר תרגום חופשי ועזרי תרגום נוספים.
 
 נא להיכנס אל $2 ולעשות עוד כמה תרגומים.',
+);
+
+/** Italian (italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'translatesandbox' => 'Gestire la sandbox di traduzione',
+	'tsb-filter-pending' => 'Richieste in sospeso',
+	'tsb-reminder-title-generic' => "Completa l'introduzione per diventare un traduttore verificato",
 );
 
 /** Japanese (日本語)

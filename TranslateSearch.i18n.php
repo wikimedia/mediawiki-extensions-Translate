@@ -350,6 +350,8 @@ $messages['it'] = array(
 	'tux-sst-nosolr-body' => 'Questo wiki non ha un servizio di ricerca delle traduzioni.',
 	'tux-sst-solr-offline-title' => 'Ricerca non disponibile',
 	'tux-sst-solr-offline-body' => 'Il servizio di ricerca è temporaneamente non disponibile.',
+	'tux-sst-next' => 'Risultati succesivi',
+	'tux-sst-prev' => 'Risultati precedenti',
 );
 
 /** Japanese (日本語)
@@ -707,6 +709,16 @@ $messages['vi'] = array(
 	'tux-sst-solr-offline-body' => 'Công cụ tìm kiếm tạm thời không sẵn dùng.',
 	'tux-sst-next' => 'Kết quả sau',
 	'tux-sst-prev' => 'Kết quả trước',
+);
+
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'tux-sst-search' => 'זוכן',
+	'tux-sst-facet-language' => 'שפּראַכן',
+	'tux-sst-facet-group' => 'מעלדונג גרופעס',
+	'tux-sst-facet-orphan' => '(יתום)',
 );
 
 /** Simplified Chinese (中文（简体）‎)
