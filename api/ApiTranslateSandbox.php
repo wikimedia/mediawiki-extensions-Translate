@@ -30,6 +30,9 @@ class ApiTranslateSandbox extends ApiBase {
 		case 'promote':
 			$this->doPromote();
 			break;
+		case 'remind':
+			$this->doRemind();
+			break;
 		}
 	}
 
@@ -70,7 +73,6 @@ class ApiTranslateSandbox extends ApiBase {
 		) );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
-
 	}
 
 	protected function doDelete() {
@@ -101,6 +103,24 @@ class ApiTranslateSandbox extends ApiBase {
 		}
 	}
 
+	protected function doRemind() {
+		$params = $this->extractRequestParams();
+
+		// Do validations
+		foreach ( explode( '|', 'subject|body' ) as $field ) {
+			if ( !isset( $params[$field] ) ) {
+				$this->dieUsage( "Missing parameter $field", 'missingparam' );
+			}
+		}
+
+		$user = User::newFromId( $params['userid'] );
+		try {
+			TranslateSandbox::sendReminder( $this->getUser(), $user, $params['subject'], $params['body'] );
+		} catch ( MWException $e ) {
+			$this->dieUsage( $e->getMessage(), 'invalidparam' );
+		}
+	}
+
 	public function mustBePosted() {
 		return true;
 	}
@@ -126,7 +146,7 @@ class ApiTranslateSandbox extends ApiBase {
 	public function getAllowedParams() {
 		return array(
 			'do' => array(
-				ApiBase::PARAM_TYPE => array( 'create', 'delete', 'promote' ),
+				ApiBase::PARAM_TYPE => array( 'create', 'delete', 'promote', 'remind' ),
 				ApiBase::PARAM_REQUIRED => true,
 			),
 			'userid' => array(
@@ -137,15 +157,11 @@ class ApiTranslateSandbox extends ApiBase {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
 			),
-			'username' => array(
-				ApiBase::PARAM_TYPE => 'string',
-			),
-			'password' => array(
-				ApiBase::PARAM_TYPE => 'string',
-			),
-			'email' => array(
-				ApiBase::PARAM_TYPE => 'string',
-			),
+			'username' => array( ApiBase::PARAM_TYPE => 'string' ),
+			'password' => array( ApiBase::PARAM_TYPE => 'string' ),
+			'email' => array( ApiBase::PARAM_TYPE => 'string' ),
+			'subject' => array( ApiBase::PARAM_TYPE => 'string' ),
+			'body' => array( ApiBase::PARAM_TYPE => 'string' ),
 		);
 	}
 
@@ -158,6 +174,8 @@ class ApiTranslateSandbox extends ApiBase {
 			'username' => 'Username when creating user',
 			'password' => 'Password when creating user',
 			'email' => 'Email when creating user',
+			'subject' => 'Subject of the reminder email when reminding',
+			'body' => 'Body of the reminder email when reminding',
 		);
 	}
 

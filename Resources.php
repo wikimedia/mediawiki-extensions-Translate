@@ -342,6 +342,7 @@ $wgResourceModules['ext.translate.special.translatesandbox'] = array(
 	'dependencies' => array(
 		'mediawiki.api',
 		'jquery.uls.grid',
+		'jquery.ui.dialog',
 	),
 	'messages' => array(
 	),
