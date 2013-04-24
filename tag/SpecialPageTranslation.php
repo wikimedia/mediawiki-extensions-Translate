@@ -477,7 +477,7 @@ class SpecialPageTranslation extends SpecialPage {
 		 */
 		foreach ( $sections as $s ) {
 			if ( $s->type === 'new' ) {
-				$name = $this->msg( 'tpt-section-new' )->params( $s->name )->escaped();
+				$name = $this->msg( 'tpt-section-new', $s->name )->escaped();
 			} else {
 				$name = $this->msg( 'tpt-section', $s->name )->escaped();
 			}
