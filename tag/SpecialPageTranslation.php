@@ -427,12 +427,6 @@ class SpecialPageTranslation extends SpecialPage {
 			}
 			$usedNames[$s->id] = true;
 			$s->name = $s->id;
-
-			// Allow silent changes to avoid fuzzying unnecessary.
-			if ( $request->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {
-				$s->type === 'old';
-			}
-
 		}
 
 		return $sections;
@@ -658,12 +652,11 @@ class SpecialPageTranslation extends SpecialPage {
 		 */
 		foreach ( array_values( $sections ) as $index => $s ) {
 			$maxid = max( $maxid, intval( $s->name ) );
+			$changed[] = $s->name;
 
-			if ( $s->type === 'changed' ) {
-				// Allow silent changes to avoid fuzzying unnecessary.
-				if ( !$this->getRequest()->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {
-					$changed[] = $s->name;
-				}
+			if ( $this->getRequest()->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {
+				// This will be checked by getTranslationUnitJobs
+				$s->type = 'old';
 			}
 
 			$inserts[] = array(
@@ -683,10 +676,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
 		TranslateMetadata::set( $page->getMessageGroupId(), 'maxid', $maxid );
 
-		/* Stores the names of changed sections in the database. They are
-		 * used for calculating completion percentages for outdated translations.
-		 * For prettiness use null instead of empty array */
-		$page->addMarkedTag( $newrevision, $changed === array() ? null : $changed );
+		$page->addMarkedTag( $newrevision );
 		MessageGroups::clearCache();
 
 		$jobs = self::getRenderJobs( $page );
@@ -697,7 +687,6 @@ class SpecialPageTranslation extends SpecialPage {
 
 		// Logging
 		$this->handlePriorityLanguages( $this->getRequest(), $page, $this->getUser() );
-
 
 		$entry = new ManualLogEntry( 'pagetranslation', 'mark' );
 		$entry->setPerformer( $this->getUser() );
