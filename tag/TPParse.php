@@ -156,7 +156,6 @@ class TPParse {
 	public function getSourcePageText() {
 		$text = $this->template;
 
-		/// @todo Use str_replace outside of the loop.
 		foreach ( $this->sections as $ph => $s ) {
 			$text = str_replace( $ph, $s->getMarkedText(), $text );
 		}
@@ -198,7 +197,7 @@ class TPParse {
 			}
 
 			// Substitute variables into section text and substitute text into document
-			$sectiontext = self::replaceVariables( $s->getVariables(), $sectiontext );
+			$sectiontext = strtr( $sectiontext, $s->getVariables() );
 			$text = str_replace( $ph, $sectiontext, $text );
 		}
 
@@ -209,22 +208,6 @@ class TPParse {
 		$cb = array( __CLASS__, 'replaceTagCb' );
 		$text = preg_replace_callback( '~(<translate>)(.*)(</translate>)~sU', $cb, $text );
 		$text = TranslatablePage::unArmourNowiki( $nph, $text );
-
-		return $text;
-	}
-
-	/**
-	 * Replaces variables from given text.
-	 * @todo Is plain str_replace not enough (even the loop is not needed)?
-	 *
-	 * @param array $variables
-	 * @param string $text
-	 * @return string
-	 */
-	protected static function replaceVariables( $variables, $text ) {
-		foreach ( $variables as $key => $value ) {
-			$text = str_replace( $key, $value, $text );
-		}
 
 		return $text;
 	}
