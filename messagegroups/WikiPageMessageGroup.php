@@ -5,8 +5,7 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2008-2013, Niklas Laxström, Siebrand Mazeland
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @license GPL2+
  */
 
 /**
@@ -14,6 +13,7 @@
  * @ingroup PageTranslation MessageGroup
  */
 class WikiPageMessageGroup extends WikiMessageGroup {
+	/// @var string|Title
 	protected $title;
 
 	public function __construct( $id, $source ) {

@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -61,14 +60,8 @@ class TranslateRenderJob extends Job {
 
 		// @todo FuzzyBot hack
 		PageTranslationHooks::$allowTargetEdit = true;
-
-		// Do the edit
 		$article->doEdit( $text, $summary, $flags, false, $user );
-
 		PageTranslationHooks::$allowTargetEdit = false;
-
-		// purge cache
-		$page->getTranslationPercentages( true );
 
 		return true;
 	}

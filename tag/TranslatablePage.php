@@ -4,8 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2009-2013 Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @license GPL2+
  */
 
 /**
@@ -135,7 +134,7 @@ class TranslatablePage {
 					break;
 				case 'title':
 					$this->revision = $this->getMarkedTag();
-				// @todo FIXME: Needs break;?
+				// There is no break statement here on purpose
 				case 'revision':
 					$rev = Revision::newFromTitle( $this->getTitle(), $this->revision );
 					$this->text = $rev->getText();
@@ -588,10 +587,10 @@ class TranslatablePage {
 	}
 
 	/**
+	 * Fetch the available translation pages from database
 	 * @return Title[]
 	 */
 	public function getTranslationPages() {
-		// Fetch the available translation pages from database
 		// Avoid replication lag issues
 		$dbr = wfGetDB( DB_MASTER );
 		$prefix = $this->getTitle()->getDBkey() . '/';
@@ -612,9 +611,7 @@ class TranslatablePage {
 		// Make sure we only get translation subpages while ignoring others
 		$codes = Language::getLanguageNames( false );
 		$prefix = $this->getTitle()->getText();
-		/**
-		 * @var Title $title
-		 */
+		/** @var Title $title */
 		foreach ( $titles as $title ) {
 			list( $name, $code ) = TranslateUtils::figureMessage( $title->getText() );
 			if ( !isset( $codes[$code] ) || $name !== $prefix ) {

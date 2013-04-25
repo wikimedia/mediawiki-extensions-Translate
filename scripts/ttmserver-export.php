@@ -3,9 +3,7 @@
  * Script to bootstrap TTMServer translation memory
  *
  * @author Niklas Laxström
- *
- * @copyright Copyright © 2010-2013, Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @license GPL2+
  * @file
  */
 
@@ -19,7 +17,7 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 require_once( "$IP/maintenance/Maintenance.php" );
 
 /**
- * Script to bootstrap translatetoolkit translation memory.
+ * Script to bootstrap TTMServer translation memory.
  * @since 2012-01-26
  */
 class TTMServerBootstrap extends Maintenance {
