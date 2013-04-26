@@ -17,7 +17,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 /**
  * Version number used in extension credits and in other places where needed.
  */
-define( 'TRANSLATE_VERSION', '2013-04-16' );
+define( 'TRANSLATE_VERSION', '2013-04-26' );
 
 /**
  * Extension credits properties.
@@ -607,6 +607,13 @@ $wgTranslateTestTTMServer = null;
  * transition time.
  */
 $wgTranslateUseTux = true;
+
+/**
+ * Whether to allow uploading gettext files through URLs on
+ * Special:ImportTranslations. Default is false.
+ * @since 2013-04-26
+ */
+$wgTranslateAllowImportFromUrl = false;
 
 # </source>
 
