@@ -136,8 +136,8 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	}
 
 	public function getDescription( IContextSource $context = null ) {
-		$title = $this->title;
-		$target = SpecialPage::getTitleFor( 'MyLanguage', $title )->getPrefixedText();
+		$title = $this->getTitle()->getPrefixedText();
+		$target = ":$title";
 
 		// Allow for adding a custom group description by using
 		// "MediaWiki:Tp-custom-<group ID>".
