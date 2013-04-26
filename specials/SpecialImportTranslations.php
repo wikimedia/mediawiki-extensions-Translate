@@ -118,6 +118,8 @@ class SpecialImportTranslations extends SpecialPage {
 	 * Constructs and outputs file input form with supported methods.
 	 */
 	protected function outputForm() {
+		global $wgTranslateAllowImportFromUrl;
+
 		$this->getOutput()->addModules( 'ext.translate.special.importtranslations' );
 		TranslateUtils::addSpecialHelpLink( $this->getOutput(), 'Help:Extension:Translate/Off-line_translation' );
 		/**
@@ -139,17 +141,19 @@ class SpecialImportTranslations extends SpecialPage {
 
 		$class = array( 'class' => 'mw-translate-import-inputs' );
 
-		$this->getOutput()->addHTML(
-			Xml::radioLabel( $this->msg( 'translate-import-from-url' )->text(),
-				'upload-type', 'url', 'mw-translate-up-url',
-				$this->getRequest()->getText( 'upload-type' ) === 'url' ) .
-				"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
-				Xml::input( 'upload-url', 50,
-					$this->getRequest()->getText( 'upload-url' ),
-					array( 'id' => 'mw-translate-up-url-input' ) + $class ) .
-				"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
-				Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n"
-		);
+		if( $wgTranslateAllowImportFromUrl === true ) {
+			$this->getOutput()->addHTML(
+				Xml::radioLabel( $this->msg( 'translate-import-from-url' )->text(),
+					'upload-type', 'url', 'mw-translate-up-url',
+					$this->getRequest()->getText( 'upload-type' ) === 'url' ) .
+					"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
+					Xml::input( 'upload-url', 50,
+						$this->getRequest()->getText( 'upload-url' ),
+						array( 'id' => 'mw-translate-up-url-input' ) + $class ) .
+					"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
+					Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n"
+			);
+		}
 
 		$this->getOutput()->addHTML(
 			Xml::radioLabel( $this->msg( 'translate-import-from-wiki' )->text(),
@@ -181,9 +185,11 @@ class SpecialImportTranslations extends SpecialPage {
 	 * @return array
 	 */
 	protected function loadFile( &$filedata ) {
+		global $wgTranslateAllowImportFromUrl;
+
 		$source = $this->getRequest()->getText( 'upload-type' );
 
-		if ( $source === 'url' ) {
+		if ( $source === 'url' && $wgTranslateAllowImportFromUrl === true ) {
 			$url = $this->getRequest()->getText( 'upload-url' );
 			$filedata = Http::get( $url );
 			if ( $filedata ) {
