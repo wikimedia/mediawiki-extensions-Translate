@@ -3273,7 +3273,7 @@ Aici puteți alege limbile pe care doriți să le afișați.',
 	'translate-fs-userpage-level-2' => 'Am cunoștințe rezonabile de',
 	'translate-fs-userpage-level-1' => 'O cunosc destul de puțin',
 	'translate-fs-userpage-help' => 'Vă rugăm să vă indicați competențele lingvistice și să ne spuneți câte ceva despre dumneavoastră. Dacă cunoașteți mai mult de cinci limbi, le puteți adăuga mai târziu pe restul.',
-	'translate-fs-userpage-submit' => 'Creează-mi pagina mea de utilizator',
+	'translate-fs-userpage-submit' => 'Creați-vă pagina de utilizator',
 	'translate-fs-userpage-done' => 'Foarte bine! Acum aveți o pagină de utilizator.',
 	'translate-fs-permissions-planguage' => 'Limbă principală:',
 	'translate-fs-permissions-help' => 'Acum va trebuie să faceți o cerere pentru a fi adăugat grupului de traducători.

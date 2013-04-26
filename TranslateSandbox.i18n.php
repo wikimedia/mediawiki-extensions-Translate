@@ -160,6 +160,15 @@ $messages['nl'] = array(
 	'tsb-reminder-title-generic' => 'Voltooi uw introductie om vertaler te worden',
 );
 
+/** Romanian (română)
+ * @author Minisarm
+ */
+$messages['ro'] = array(
+	'translatesandbox' => 'Administrare cutie cu nisip traducător',
+	'tsb-filter-pending' => 'Cereri în așteptare',
+	'tsb-reminder-title-generic' => 'Finalizați-vă introducerea pentru a deveni un translator verificat',
+);
+
 /** tarandíne (tarandíne)
  * @author Joetaras
  */

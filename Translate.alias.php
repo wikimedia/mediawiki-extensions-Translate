@@ -974,11 +974,15 @@ $specialPageAliases['uk'] = array(
 	'TranslationStats' => array( 'Статистика_перекладів' ),
 	'Translations' => array( 'Переклади' ),
 	'LanguageStats' => array( 'Статистика_мови' ),
+	'MessageGroupStats' => array( 'Статистика_групи_повідомлень' ),
 	'PageTranslation' => array( 'Переклад' ),
 	'ImportTranslations' => array( 'Імпорт_перекладів' ),
+	'ManageMessageGroups' => array( 'Керування_групами_повідомлень' ),
 	'FirstSteps' => array( 'Перші_кроки' ),
 	'SupportedLanguages' => array( 'Підтримувані_мови' ),
 	'MyLanguage' => array( 'Моя_мова' ),
+	'PageTranslationDeletePage' => array( 'Вилучення_перекладабельної_сторінки' ),
+	'SearchTranslations' => array( 'Пошук_перекладів' ),
 );
 
 /** vèneto (vèneto) */

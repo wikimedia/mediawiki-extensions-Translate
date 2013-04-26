@@ -232,10 +232,7 @@ Failures will be logged in the [[Special:Log/pagetranslation|page translation lo
 
 );
 
-/** Message documentation (This is the name of the message documentation language code (qqq). Follow the rules of your languages and use small first letter if it doesn't capitalize language names always.
-
-It might be easier to translate it as "translation guidelines" or "translation help".
-{{Identical|Message documentation}})
+/** Message documentation (Message documentation)
  * @author Amire80
  * @author Darth Kule
  * @author EugeneZelenko
@@ -249,6 +246,7 @@ It might be easier to translate it as "translation guidelines" or "translation h
  * @author Raymond
  * @author Shirayuki
  * @author Siebrand
+ * @author Slboat
  * @author Umherirrender
  */
 $messages['qqq'] = array(
@@ -434,7 +432,9 @@ See also:
 	'pt-deletepage-full-title' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-invalid-text' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-action-check' => 'This is a button label. "List" is an imperative verb.',
-	'pt-deletepage-action-perform' => "Submit button on special page 'Deleting translatable page'. See [[mw:File:Translate_manual_-_Page_example_-_25._Delete_confirm.png|screenshot]].",
+	'pt-deletepage-action-perform' => "Submit button on special page 'Deleting translatable page'. See [[mw:File:Translate_manual_-_Page_example_-_25._Delete_confirm.png|screenshot]].
+
+i think it's mean delete right now.",
 	'pt-deletepage-action-other' => "Button label on the special page 'Deleting translatable page'. See [[mw:File:Translate_manual_-_Page_example_-_25._Delete_confirm.png|screenshot]].",
 	'pt-deletepage-lang-legend' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-full-legend' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
@@ -8370,7 +8370,6 @@ Asigurați-vă că are eticheta <nowiki><translate></nowiki> și are o sintaxă 
 	'translate-tag-translate-link-desc' => 'Tradu această pagină',
 	'translate-tag-markthis' => 'Marchează această pagină pentru traducere',
 	'tpt-translation-intro' => 'Această pagină reprezintă <span class="plainlinks">[$1 versiunea tradusă]</span> a paginii [[$2]], procesul de traducere fiind completat în proporție de $3%.',
-	'tpt-translation-intro-fuzzy' => 'Traducerile învechite sunt marcate în acest fel.',
 	'tpt-languages-legend' => 'Alte limbi:',
 	'tpt-discouraged-language-reason' => 'Motiv: $1',
 	'tpt-aggregategroup-add' => 'Adaugă',
@@ -8380,11 +8379,11 @@ Asigurați-vă că are eticheta <nowiki><translate></nowiki> și are o sintaxă 
 	'tpt-aggregategroup-new-description' => 'Descriere (opțională):',
 	'tpt-aggregategroup-remove-confirm' => 'Sigur doriți să ștergeți acest grup de agregare?',
 	'tpt-aggregategroup-invalid-group' => 'Grupul nu există',
-	'pt-log-name' => 'Jurnal traducere pagini',
+	'log-name-pagetranslation' => 'Jurnal traducere pagini',
 	'pt-movepage-title' => 'Mută pagina traductibilă „$1”',
 	'pt-movepage-list-pages' => 'Listă de pagini de mutat',
-	'pt-movepage-list-translation' => 'Pagini de traducere', # Fuzzy
-	'pt-movepage-list-other' => 'Alte subpagini', # Fuzzy
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Pagină|Pagini}} de traducere',
+	'pt-movepage-list-other' => '{{PLURAL:$1|Altă subpagină|Alte subpagini}}',
 	'pt-movepage-list-count' => 'În total, $1 {{PLURAL:$1|pagină|pagini|de pagini}} de redenumit.',
 	'pt-movepage-legend' => 'Mută pagina traductibilă',
 	'pt-movepage-current' => 'Nume actual:',
@@ -10458,6 +10457,7 @@ $messages['yi'] = array(
  * @author Mys 721tx
  * @author PhiLiP
  * @author Shirayuki
+ * @author Slboat
  * @author Supaiku
  * @author Xiaomingyan
  * @author Yfdyh000
@@ -10522,10 +10522,9 @@ $messages['zh-hans'] = array(
 	'tpt-rev-encourage-tooltip' => '将此页面恢复正常翻译模式。',
 	'translate-tag-translate-link-desc' => '翻译本页',
 	'translate-tag-markthis' => '标记此页面将进行翻译',
-	'translate-tag-markthisagain' => '此页面<span class="plainlinks">[$2 最近被标记进行翻译]</span>以来，已经过一些<span class="plainlinks">[$1 更改]</span>。',
+	'translate-tag-markthisagain' => '此页面最近被<span class="plainlinks">[$2 标记(点击可进行导入)]</span>进行翻译以来，已经过一些<span class="plainlinks">[$1 更改]</span>。',
 	'translate-tag-hasnew' => '此页面有未被标记进行翻译的<span class="plainlinks">[$1 更改]</span>。',
 	'tpt-translation-intro' => '本页是页面[[$2]]的<span class="plainlinks">[$1 翻译版本]</span>，翻译工作已完成$3%。',
-	'tpt-translation-intro-fuzzy' => '已过时的翻译就这样标记。',
 	'tpt-languages-legend' => '其他语言：',
 	'tpt-languages-zero' => '开始这种语言的翻译',
 	'tpt-target-page' => '本页面无法手动更新。
@@ -10564,23 +10563,8 @@ $messages['zh-hans'] = array(
 	'pt-shake-position' => '翻译单元标记在意外位置。
 翻译单元文本：<pre>$1</pre>',
 	'pt-shake-empty' => '为“$1”的翻译单位标记是空的。',
-	'pt-log-header' => '页面翻译系统的对应活动日志',
-	'pt-log-name' => '页面翻译日志',
-	'pt-log-mark' => '{{GENDER:$2|标记}}“[[:$1]]”页面$3版本进行翻译',
-	'pt-log-unmark' => '从翻译中{{GENDER:$2|删除}}“[[:$1]]”页面',
-	'pt-log-moveok' => '{{GENDER:$2|完成}}将$1改名成为$3',
-	'pt-log-movenok' => '移动[[:$1]]至[[:$3]]{{GENDER:$2|遇到}}问题',
-	'pt-log-delete-full-ok' => '{{GENDER:$2|已删除}}$1可翻译页面',
-	'pt-log-delete-full-nok' => '删除可翻译页面[[:$1]]时{{GENDER:$2|遇到}}问题',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|已删除}}$1翻译页面',
-	'pt-log-delete-lang-nok' => '删除翻译页面[[:$1]]时{{GENDER:$2|遇到}}问题',
-	'pt-log-encourage' => '{{GENDER:$2|鼓励}}翻译页面[[:$1]]',
-	'pt-log-discourage' => '{{GENDER:$2|不鼓励}}翻译页面[[:$1]]',
-	'pt-log-priority-langs-unset' => '{{GENDER:$2|已移出}}可翻译页面[[:$1]]中的优先语言',
-	'pt-log-priority-langs' => '{{GENDER:$2|设定}}可翻译页面[[:$1]]的优先语言为$3。原因：$4',
-	'pt-log-priority-langs-force' => '{{GENDER:$2|已限制}}可翻译页面的[[:$1]]的语言为$3。原因：$4',
-	'pt-log-aggregategroup-associate' => '已向聚合组$3{{GENDER:$2|添加了}}可翻译页面[[:$1]]',
-	'pt-log-aggregategroup-dissociate' => '已从聚合组$3{{GENDER:$2|删除了}}可翻译页面[[:$1]]',
+	'log-description-pagetranslation' => '页面翻译系统的对应活动日志',
+	'log-name-pagetranslation' => '页面翻译日志',
 	'pt-movepage-title' => '移动可翻译页面$1',
 	'pt-movepage-blockers' => '可翻译页面因下列$1错误无法移动至新名称：',
 	'pt-movepage-block-base-exists' => '可翻译的目标页面“[[:$1]]”已存在。',
@@ -10617,7 +10601,7 @@ $messages['zh-hans'] = array(
 	'pt-deletepage-invalid-title' => '指定的页不是有效的。',
 	'pt-deletepage-invalid-text' => '指定的页面不是一个可翻译页面或一个翻译信息页面。',
 	'pt-deletepage-action-check' => '要删除的列表页',
-	'pt-deletepage-action-perform' => '不要删除',
+	'pt-deletepage-action-perform' => '立即删除',
 	'pt-deletepage-action-other' => '更改目标',
 	'pt-deletepage-lang-legend' => '删除翻译页面',
 	'pt-deletepage-full-legend' => '删除可翻译页面',
