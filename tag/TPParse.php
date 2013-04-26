@@ -176,8 +176,8 @@ class TPParse {
 		$prefix = $this->title->getPrefixedDBKey() . '/';
 
 		if ( $collection instanceof MessageCollection ) {
-			$collection->filter( 'translated', false );
 			$collection->loadTranslations( DB_MASTER );
+			$collection->filter( 'translated', false );
 		}
 
 		foreach ( $this->sections as $ph => $s ) {
