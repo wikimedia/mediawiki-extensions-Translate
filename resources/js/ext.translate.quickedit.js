@@ -138,7 +138,7 @@
 
 		textarea = form.find( '.mw-translate-edit-area' );
 		textarea.css( 'display', 'block' );
-		textarea.autoResize( { maxHeight: 200 } );
+		textarea.autosize();
 		textarea[0].focus();
 
 		if ( form.find( '.mw-translate-messagechecks' ) ) {

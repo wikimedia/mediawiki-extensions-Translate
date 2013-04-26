@@ -54,6 +54,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'jquery.makeCollapsible',
 		'jquery.tipsy',
 		'jquery.textchange',
+		'jquery.autosize',
 	),
 	'messages' => array(
 		'tux-status-translated',
@@ -233,7 +234,7 @@ $wgResourceModules['ext.translate.quickedit'] = array(
 		'ext.translate.hooks',
 		'jquery.form',
 		'jquery.ui.dialog',
-		'jquery.autoresize',
+		'jquery.autosize',
 		'mediawiki.util',
 	),
 ) + $resourcePaths;
@@ -387,8 +388,9 @@ $wgResourceModules['ext.translate.dropdownmenu'] = array(
 	'scripts' => 'resources/js/ext.translate.dropdownmenu.js',
 ) + $resourcePaths;
 
-$wgResourceModules['jquery.autoresize'] = array(
-	'scripts' => 'resources/js/jquery.autoresize.js',
+// Third party module
+$wgResourceModules['jquery.autosize'] = array(
+	'scripts' => 'resources/js/jquery.autosize.js',
 ) + $resourcePaths;
 
 $wgResourceModules['jquery.textchange'] = array(
