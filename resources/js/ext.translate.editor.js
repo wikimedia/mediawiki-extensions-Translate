@@ -438,6 +438,11 @@
 				$textarea.prop( 'placeholder', mw.msg( 'tux-editor-placeholder' ) );
 			}
 
+			// The extra newlines is supposed to leave enough space for the
+			// insertion buttons. Seems to work as long as all the buttons
+			// are only in one line.
+			$textarea.autosize( {append: '\n\n' } );
+
 			$textarea.on( 'textchange', function () {
 				var $textarea = $( this ),
 					$saveButton = translateEditor.$editor.find( '.tux-editor-save-button' ),
@@ -447,15 +452,6 @@
 
 				if ( original !== '' ) {
 					$discardChangesButton.removeClass( 'hide' );
-				}
-
-				// Expand the text area height as content grows
-				while ( $textarea.outerHeight() <
-					this.scrollHeight +
-					parseFloat( $textarea.css( 'borderTopWidth' ) ) +
-					parseFloat( $textarea.css( 'borderBottomWidth' ) )
-				) {
-					$textarea.height( $textarea.height() + parseFloat( $textarea.css( 'fontSize' ) ) );
 				}
 
 				/* Avoid Unsaved marking when translated message is not changed in content.
@@ -470,7 +466,6 @@
 					translateEditor.dirty = true;
 					mw.translate.dirty = true;
 				}
-				adjustSize( $textarea );
 
 				$saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
 				// When there is content in the editor enable the button.
@@ -843,7 +838,14 @@
 			this.$messageItem.addClass( 'hide' );
 			this.$editor.removeClass( 'hide' );
 			$textarea.focus();
-			adjustSize( $textarea );
+
+			// Apparently there is still something going on that affects the
+			// layout of the text area after this function. Use very small
+			// delay to have it settle down and have correct results. Otherwise
+			// there will be a size change once the first letter is typed.
+			delay( function() {
+				$textarea.trigger( 'autosize' );
+			}, 1 );
 
 			this.shown = true;
 			this.$editTrigger.addClass( 'open' );
@@ -977,21 +979,6 @@
 	};
 
 	$.fn.translateeditor.Constructor = TranslateEditor;
-
-	/*
-	 * Expand the text area height as content grows
-	 */
-	function adjustSize( $textarea ) {
-		while ( $textarea.outerHeight() <
-			( $textarea.prop( 'scrollHeight' ) +
-			parseFloat( $textarea.css( 'borderTopWidth' ) ) +
-			parseFloat( $textarea.css( 'borderBottomWidth' ) ) )
-		) {
-			$textarea.height( $textarea.height() +
-				parseFloat( $textarea.css( 'fontSize' ) ) +
-				parseFloat( $textarea.css( 'paddingBottom' ) ) );
-		}
-	}
 
 	var delay = ( function () {
 		var timer = 0;
