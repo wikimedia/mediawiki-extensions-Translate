@@ -111,7 +111,10 @@
 			}
 
 			$( '.ext-translate-language-selector > .uls' ).text( $.uls.data.getAutonym( language ) );
-			$( '.tux-messagelist' ).data( 'targetlangcode', language );
+			$( '.tux-messagelist' ).data( {
+				targetlangcode: language,
+				targetlangdir: $.uls.data.getDir( language )
+			} );
 
 			mw.translate.changeUrl( changes );
 			$( '.tux-statsbar' ).trigger( 'refresh', language );
