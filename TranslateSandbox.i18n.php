@@ -190,3 +190,11 @@ $messages['te'] = array(
 	'tsb-filter-pending' => 'వేచివున్న అభ్యర్థనలు',
 	'tsb-reminder-title-generic' => 'తనిఖీ అయిన అనువాదకుడిగా మారడానికి మీ పరిచయాన్ని పూర్తిచేయండి',
 );
+
+/** Ukrainian (українська)
+ * @author Base
+ */
+$messages['uk'] = array(
+	'translatesandbox' => 'Керування грамайданчиком перекладачів',
+	'tsb-filter-pending' => 'Запити в очікуванні',
+);

@@ -676,11 +676,12 @@ $messages['tr'] = array(
 );
 
 /** Ukrainian (українська)
+ * @author Base
  * @author Ата
  */
 $messages['uk'] = array(
 	'searchtranslations' => 'Пошук перекладів',
-	'tux-sst-edit' => 'Редагувати повідомлення',
+	'tux-sst-edit' => 'Редагувати переклад',
 	'tux-sst-search' => 'Пошук',
 	'tux-sst-search-ph' => 'Пошук перекладів',
 	'tux-sst-count' => '{{PLURAL:$1|Знайдено один результат|Знайдено $1 результати|Знайдено $1 результатів}}',
@@ -689,6 +690,10 @@ $messages['uk'] = array(
 	'tux-sst-facet-orphan' => '(сирота)',
 	'tux-sst-nosolr-title' => 'Пошук недоступний',
 	'tux-sst-nosolr-body' => 'У цій вікі немає служби пошуку перекладів.',
+	'tux-sst-solr-offline-title' => 'Пошук не доступний',
+	'tux-sst-solr-offline-body' => 'Сервіс пошуку тимчасово недоступний.',
+	'tux-sst-next' => 'Наступні результати',
+	'tux-sst-prev' => 'Попередні результати',
 );
 
 /** Vietnamese (Tiếng Việt)
