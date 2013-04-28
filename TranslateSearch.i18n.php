@@ -455,6 +455,8 @@ $messages['lb'] = array(
 	'tux-sst-nosolr-body' => "Dës Wiki huet d'Sichfonctioun vun den Iwwersetzungen net.",
 	'tux-sst-solr-offline-title' => 'Sichen ass net disponibel',
 	'tux-sst-solr-offline-body' => "D'Sichfonctioun ass temporär net disponibel.",
+	'tux-sst-next' => 'nächst Resultater',
+	'tux-sst-prev' => 'Vireg Resultater',
 );
 
 /** Latvian (latviešu)
@@ -743,4 +745,24 @@ $messages['zh-hans'] = array(
 	'tux-sst-nosolr-body' => '此wiki没有翻译搜索服务。',
 	'tux-sst-solr-offline-title' => '搜索不可用',
 	'tux-sst-solr-offline-body' => '搜索服务暂时不可用。',
+);
+
+/** Traditional Chinese (中文（繁體）‎)
+ * @author Simon Shek
+ */
+$messages['zh-hant'] = array(
+	'searchtranslations' => '搜尋翻譯',
+	'tux-sst-edit' => '編輯翻譯',
+	'tux-sst-search' => '搜尋',
+	'tux-sst-search-ph' => '搜尋翻譯',
+	'tux-sst-count' => '{{PLURAL:$1|找到一個結果|找到$1個結果}}',
+	'tux-sst-facet-language' => '語言',
+	'tux-sst-facet-group' => '訊息組',
+	'tux-sst-facet-orphan' => '（孤立）',
+	'tux-sst-nosolr-title' => '無法使用搜尋',
+	'tux-sst-nosolr-body' => '此wiki沒有翻譯搜尋。',
+	'tux-sst-solr-offline-title' => '無法使用搜尋',
+	'tux-sst-solr-offline-body' => '暫時無法使用搜尋。',
+	'tux-sst-next' => '下一個結果',
+	'tux-sst-prev' => '上一個結果',
 );

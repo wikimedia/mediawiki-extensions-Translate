@@ -7608,6 +7608,7 @@ Fehla werren im [[Special:Log/pagetranslation|Iwasedzungs-Logbuch]] oigdraache u
 $messages['pl'] = array(
 	'pagetranslation' => 'Tłumaczenie strony',
 	'right-pagetranslation' => 'Oznaczanie wersji stron do przetłumaczenia',
+	'action-pagetranslation' => 'zarządzanie stronami do tłumaczenia',
 	'tpt-desc' => 'Rozszerzenie pozwalające tłumaczyć strony treści',
 	'tpt-section' => 'Jednostka tłumaczenia $1',
 	'tpt-section-new' => 'Nowa jednostka tłumaczenia.
@@ -7706,7 +7707,7 @@ Tekst jednostki tłumaczenia: <pre>$1</pre>',
 	'log-name-pagetranslation' => 'Rejestr tłumaczenia stron',
 	'pt-movepage-title' => 'Przenieś przetłumaczalną stronę $1',
 	'pt-movepage-blockers' => 'Przetłumaczalna strona nie może zostać przeniesiona pod nową nazwę ponieważ {{PLURAL:$1|wystąpił następujący błąd|wystąpiły następujące błędy:}}',
-	'pt-movepage-block-base-exists' => 'Istnieje bazowa strona docelowa [[:$1]].', # Fuzzy
+	'pt-movepage-block-base-exists' => 'Istnieje docelowa strona przeznaczona do tłumaczenia [[:$1]].',
 	'pt-movepage-block-base-invalid' => 'Nazwa docelowej strony nie jest poprawnym tytułem.', # Fuzzy
 	'pt-movepage-block-tp-exists' => 'Istnieje docelowa strona tłumaczenia [[:$2]].',
 	'pt-movepage-block-tp-invalid' => 'Nazwa docelowej strony tłumaczenia [[:$1]] może być nieprawidłowa. Może jest zbyt długa?',
@@ -7716,7 +7717,7 @@ Tekst jednostki tłumaczenia: <pre>$1</pre>',
 	'pt-movepage-block-subpage-invalid' => 'Nazwa docelowej podstrony [[:$1]] jest nieprawidłowa. Może jest zbyt długa?',
 	'pt-movepage-list-pages' => 'Lista stron do przeniesienia',
 	'pt-movepage-list-translation' => '{{PLURAL:$1|Strona|Strony}} do przetłumaczenia',
-	'pt-movepage-list-section' => 'Strony jednostki tłumaczenia', # Fuzzy
+	'pt-movepage-list-section' => '{{PLURAL:$1|Strona|Strony}} jednostki tłumaczenia',
 	'pt-movepage-list-other' => '{{PLURAL:$1|Inna podstrona|Inne podstrony}}',
 	'pt-movepage-list-count' => 'W sumie do przeniesienia {{PLURAL:$1|jest $1 strona|są $1 strony|jest $1 stron}}.',
 	'pt-movepage-legend' => 'Przenieś przetłumaczalną stronę',

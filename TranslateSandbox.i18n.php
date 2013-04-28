@@ -40,6 +40,21 @@ Followed by a list of the pending requests.',
 * $2 - url to the website',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'translatesandbox' => 'Alministrar la zona de pruebas de los traductores',
+	'tsb-filter-pending' => 'Solicitúes pendientes',
+	'tsb-reminder-title-generic' => 'Complete la so presentación pa convertise nun traductor comprobao',
+	'tsb-reminder-content-generic' => 'Bones, $1:
+
+Rexistróse de recién en {{SITENAME}}. Tá a sólo unos pasos de desbloquiar la
+traducción llibre y les ayudes a la traducción estra.
+
+Anicie sesión en $2 y faiga delles traducciones más.',
+);
+
 /** Bengali (বাংলা)
  * @author Aftab1995
  */
@@ -137,6 +152,19 @@ $messages['ja'] = array(
 	'tsb-filter-pending' => '保留中の申請',
 );
 
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'translatesandbox' => 'Demm en Schpellwiß för de Övversäzer ennreeschde un verwallde.',
+	'tsb-filter-pending' => 'Aanfroore en der Waadeschlang',
+	'tsb-reminder-title-generic' => 'Maach Ding Sällefsvörschtällong fäädesch, öm enen beschträäteschten Övversäzzer ze wääde.',
+	'tsb-reminder-content-generic' => 'Daach $1,
+Do has Desch köözlesch {{ucfirst:{{GRAMMAR:em|{{ucfirst:{{SITENAME}}}}}}}} aanjemälldt. Do bes jraad koot vör em Freischallde vun extra Hölp för et Övversäzze.
+
+Bes es u jood un donn Desch $2 enlogge un maach e paa Övversäzonge.', # Fuzzy
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
@@ -197,4 +225,13 @@ $messages['te'] = array(
 $messages['uk'] = array(
 	'translatesandbox' => 'Керування грамайданчиком перекладачів',
 	'tsb-filter-pending' => 'Запити в очікуванні',
+);
+
+/** Traditional Chinese (中文（繁體）‎)
+ * @author Simon Shek
+ */
+$messages['zh-hant'] = array(
+	'translatesandbox' => '管理翻譯沙盒',
+	'tsb-filter-pending' => '未解決的請求',
+	'tsb-reminder-title-generic' => '完成介紹後成為核實的翻譯者',
 );
