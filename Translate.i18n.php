@@ -2369,7 +2369,7 @@ $1',
 	'translate-gs-avgscore' => 'معدل الدرجات',
 );
 
-/** Assamese (অসমীয়া)
+/** Assamese (অসমীয়া)
  * @author Bishnu Saikia
  * @author Chaipau
  * @author Gahori
@@ -2384,7 +2384,6 @@ $messages['as'] = array(
 	'translate-taskui-view' => 'সকলো বাৰ্তা দেখুৱাওক',
 	'translate-taskui-untranslated' => 'ভাঙনি নোহোৱা বাৰ্তাসমূহ দেখুৱাওক',
 	'translate-taskui-optional' => 'বৈকল্পিক বাৰ্তাসমূহ দেখুৱাওক',
-	'translate-taskui-suggestions' => 'ভাঙনিৰ ইতিহাসৰ পৰা বাৰ্তা আৰু পৰামৰ্শসমূহ দেখুৱাওক',
 	'translate-taskui-acceptqueue' => 'কেৱল ম‍ই গ্ৰহণ কৰা বাৰ্তাসমূহ',
 	'translate-taskui-reviewall' => 'ভাঙনিসমূহ পুনৰীক্ষণ কৰক',
 	'translate-taction-translate' => 'অনুবাদ কৰক',
@@ -2440,7 +2439,7 @@ $messages['as'] = array(
 	'translate-magic-cm-updatedusing' => '[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]] ব্যৱহাৰৰ যোগে আপডেট কৰক',
 	'translate-magic-cm-savefailed' => "সংৰক্ষণ বিফল হ'ল",
 	'translate-magic-special' => 'বিশেষ পৃষ্ঠাৰ অন্য নামসমূহ',
-	'translate-magic-words' => 'যাদুকৰি শব্দবোৰ',
+	'translate-magic-words' => 'যাদুকৰী শব্দবোৰ',
 	'translate-magic-namespace' => 'নামস্থান নামবোৰ',
 	'translate-magic-notsaved' => "আপোনাৰ সম্পাদনা সংৰক্ষিত নহ'ল!",
 	'translate-magic-errors' => 'অনুগ্ৰহ কৰি এই ভাঙনিৰ {{PLURAL:$1|ত্ৰুটি|ত্ৰুটিসমূহ}} আতৰাওক:',
@@ -2486,9 +2485,9 @@ $messages['as'] = array(
 	'languagestats' => 'ভাষাৰ পৰিসংখ্যা',
 	'languagestats-stats-for' => '$1 ($2)’ৰ বাবে ভাঙনি পৰিসংখ্যা',
 	'languagestats-recenttranslations' => 'শেহতীয়া ভাঙনিসমূহ',
-	'translate-langstats-expand' => 'বহলাওঁক',
+	'translate-langstats-expand' => 'বহলাওক',
 	'translate-langstats-collapse' => 'সংকোচ কৰক',
-	'translate-langstats-expandall' => 'সকলো বহলাওঁক',
+	'translate-langstats-expandall' => 'সকলো বহলাওক',
 	'translate-langstats-collapseall' => 'সকলো সংকোচ কৰক',
 	'translate-language-code' => 'ভাষা কোড',
 	'translate-language-code-field-name' => 'ভাষা কোড:',

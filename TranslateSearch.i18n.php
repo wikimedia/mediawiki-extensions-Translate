@@ -334,6 +334,26 @@ $messages['hsb'] = array(
 	'tux-sst-solr-offline-body' => 'Pytanska słužba tuchwilu k dispoziciji njesteji.',
 );
 
+/** Interlingua (interlingua)
+ * @author McDutchie
+ */
+$messages['ia'] = array(
+	'searchtranslations' => 'Cercar traductiones',
+	'tux-sst-edit' => 'Modificar traduction',
+	'tux-sst-search' => 'Cercar',
+	'tux-sst-search-ph' => 'Cerca in traductiones',
+	'tux-sst-count' => '{{PLURAL:$1|Un resultato trovate|$1 resultatos trovate}}',
+	'tux-sst-facet-language' => 'Linguas',
+	'tux-sst-facet-group' => 'Gruppos de messages',
+	'tux-sst-facet-orphan' => '(orphano)',
+	'tux-sst-nosolr-title' => 'Recerca indisponibile',
+	'tux-sst-nosolr-body' => 'Iste wiki non ha un servicio de recerca de traductiones.',
+	'tux-sst-solr-offline-title' => 'Recerca indisponibile',
+	'tux-sst-solr-offline-body' => 'Le servicio de recerca es temporarimente indisponibile.',
+	'tux-sst-next' => 'Sequente resultatos',
+	'tux-sst-prev' => 'Precedente resultatos',
+);
+
 /** Italian (italiano)
  * @author Beta16
  */
