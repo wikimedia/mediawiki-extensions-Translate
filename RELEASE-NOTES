@@ -1,0 +1,26 @@
+== Translate 2013.04 ==
+Released at 2013-04-30.
+
+=== Highlights ===
+Work continued on stabilizing the new Translate UX (TUX) interface.
+
+Specifically, numerous fixes were made to make TUX work correctly in Microsoft Internet Explorer.
+
+The "message tools menu" was added to give easy access from the message translation interface to the history of the message and to translations in all languages (Special:Translations).
+
+Basic file format support was added for Xliff.
+
+Initial work was done to add support for sandboxing - allowing users to make several test translations before getting full translation permissions. This is an incomplete experimental feature and it is not active by default.
+
+=== Noteworthy changes ===
+* Removed the hide tab that appeared even though there were no more warnings.
+* Messages saying that there is nothing to proofread were clarified.
+* Show "Cancel" instead of "Skip" at the last message in the curent view.
+* Clicking a suggestion copies the suggestion to the translation field (previously, a user had to press a link, which was harder).
+* Simple paging for translation search results.
+* <tvar|> no longer visible on translation pages in source language (bug 46925)
+* The bottom toolbar is always shown, even without a scroll.
+* When a user modifies a translation, it is no longer proofreadable (bug 46687)
+* Numerous minor styling changes.
+* RTL fixes for Special:Magic, to ensure cleaner display of magic words
+  in right-to-left translations.
