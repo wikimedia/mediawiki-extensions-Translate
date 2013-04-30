@@ -188,4 +188,8 @@ class ApiTranslateSandbox extends ApiBase {
 		return true;
 	}
 
+	// BC for MW 1.20
+	public function getVersion() {
+		return __CLASS__ . ': ' . TRANSLATE_VERSION;
+	}
 }
