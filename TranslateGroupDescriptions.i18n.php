@@ -2761,6 +2761,7 @@ $messages['tt-cyrl'] = array(
 /** Ukrainian (українська)
  * @author A1
  * @author AS
+ * @author Andygol
  * @author Base
  * @author Olvin
  * @author Prima klasy4na
@@ -2801,8 +2802,8 @@ $messages['uk'] = array(
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] це автономна читалка Вікіпедії',
 	'translate-group-desc-openimages-all' => 'Ці повідомлення є частиною проекту [[Translating:Open Images|Open Images]]',
 	'bw-desc-openstreetmap' => 'Група повідомлень [[Translating:OpenStreetMap|OpenStreetMap]]',
-	'bw-desc-osm-site' => 'Ця група містить повідомлення інтерфейсу [[Translating:Open Street Map|Open Street Map]].
-Глядіть [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} сторінку Unicode CLDR для пояснень щодо творення форми множини].',
+	'bw-desc-osm-site' => 'Ця група містить повідомлення інтерфейсу [[Translating:OpenStreetMap|OpenStreetMap]].
+Ознайомтесь зі [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} сторінкою Unicode CLDR для отримання пояснень щодо творення форм множини].',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] — це базований на Flash редактор OpenStreetMap',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] — набір інструментів для редагування Вікіпедії',
 	'bw-desc-shapado' => 'Група повідомлень відкритого та вільного програмного забезпечення питань та відповідей [[Translating:Shapado|Shapado]]',

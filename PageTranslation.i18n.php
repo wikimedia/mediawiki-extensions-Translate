@@ -8436,7 +8436,7 @@ Nome: $1',
 	'tpt-aggregategroup-add' => 'Aggiunge',
 	'tpt-aggregategroup-save' => 'Reggìstre',
 	'tpt-aggregategroup-new-name' => 'Nome:',
-	'pt-log-name' => 'Archivije de le traduziune de le pàggene',
+	'log-name-pagetranslation' => 'Archivije de le traduziune de le pàggene',
 	'pt-movepage-list-pages' => 'Elenghe de le pàggene da spustà',
 	'pt-movepage-list-count' => 'In totale $1 {{PLURAL:$1|pàgene|pàggene}} da spustà.',
 	'pt-movepage-current' => 'Nome de mò:',
@@ -9970,7 +9970,6 @@ $messages['uk'] = array(
 	'translate-tag-markthisagain' => 'На цій сторінці було здійснено <span class="plainlinks">[$1 змін]</span> з моменту, коли ця сторінка була востаннє <span class="plainlinks">[$2 відмічена до перекладу]</span>.',
 	'translate-tag-hasnew' => 'На цій сторінці було здійснено <span class="plainlinks">[$1 зміни]</span>, які не відмічені для перекладу.',
 	'tpt-translation-intro' => 'Ця сторінка є <span class="plainlinks">[$1 перекладом]</span> сторінки [[$2]]. Переклад виконано на $3%.',
-	'tpt-translation-intro-fuzzy' => 'Застарілі переклади позначені так.',
 	'tpt-languages-legend' => 'Інші мови:',
 	'tpt-languages-zero' => 'Розпочати переклад цією мовою',
 	'tpt-target-page' => 'Ця сторінка не може бути оновлена вручну.
@@ -9980,9 +9979,9 @@ $messages['uk'] = array(
 	'tpt-translation-restricted' => 'Адміністратор перекладу заборонив переклад цієї сторінки такою мовою.
 
 Причина: $1',
-	'tpt-discouraged-language-force' => "'''Ця сторінка не може бути перекладена мовою ''$2'' '''
+	'tpt-discouraged-language-force' => "'''Ця сторінка не може бути перекладена мовою $2.'''
 
-Адміністратор вирішив, що ця сторінка може бути перекладена лише такими мовами: $3",
+Адміністратор перекладу вирішив, що ця сторінка може бути перекладена лише такими мовами: $3",
 	'tpt-discouraged-language' => "'''Переклад мовою $2 не є пріоритетним для цієї сторінки.'''
 
 Адміністратор вирішив зосередити зусилля на перекладі такими мовами: $3.",
@@ -10009,23 +10008,8 @@ $messages['uk'] = array(
 	'pt-shake-position' => 'Маркери одиниці перекладу в неочікуваному місці.
 Текст одиниці перекладу: <pre>$1</pre>',
 	'pt-shake-empty' => 'Порожня одиниця перекладу під маркером "$1".',
-	'pt-log-header' => "Журнал для дій, пов'язаних з системою перекладу сторінок.",
-	'pt-log-name' => 'Журнал перекладу сторінок',
-	'pt-log-mark' => '{{GENDER:$2|позначив|позначила}} для перекладу версію $3 сторінки «[[:$1]]»',
-	'pt-log-unmark' => '{{GENDER:$2|зняв|зняла}} сторінку «[[:$1]]» з перекладу',
-	'pt-log-moveok' => '{{GENDER:$2|виконав|виконала}} перейменування сторінки для перекладу $1 на $3',
-	'pt-log-movenok' => '{{GENDER:$2|викликав|викликала}} помилку при переміщенні [[:$1]] до [[:$3]]',
-	'pt-log-delete-full-ok' => '{{GENDER:$2|видалив|видалила}} сторінку перекладу $1',
-	'pt-log-delete-full-nok' => 'Виникла помилка під час вилучення $2 сторінки для перекладу [[:$1]]',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|вилучив|вилучила}} сторінку з перекладом $1',
-	'pt-log-delete-lang-nok' => '{{GENDER:$2|Сталася}} помилка під час вилучення сторінки перекладу [[:$1]]',
-	'pt-log-encourage' => '{{GENDER:$2|заохочує}} переклад сторінки [[:$1]]',
-	'pt-log-discourage' => '{{GENDER:$2|не радить}} перекладати сторінку [[:$1]]',
-	'pt-log-priority-langs-unset' => '{{GENDER:$2|вилучено}} пріоритетні мови для перекладу сторінки [[:$1]]',
-	'pt-log-priority-langs' => 'Для перекладу сторінки [[:$1]] {{GENDER:$2|встановлено}} такі пріоритетні мови: $3. Підстава: $4',
-	'pt-log-priority-langs-force' => 'Мови для перекладу сторінки [[:$1]] {{GENDER:$2|було обмежено}} таким переліком: $3. Підстава: $4',
-	'pt-log-aggregategroup-associate' => 'Сторінку для перекладу [[:$1]] {{GENDER:$2|додано}} до сукупної групи $3',
-	'pt-log-aggregategroup-dissociate' => 'Призначену для перекладу сторінку [[:$1]] {{GENDER:$2|вилучено}} з сукупної групи $3',
+	'log-description-pagetranslation' => "Журнал для дій, пов'язаних з системою перекладу сторінок.",
+	'log-name-pagetranslation' => 'Журнал перекладу сторінок',
 	'pt-movepage-title' => 'Перемістити сторінку $1, доступну для перекладу',
 	'pt-movepage-blockers' => 'Сторінка перекладу не може бути перейменована через {{PLURAL:$1|таку помилку|такі помилки}}:',
 	'pt-movepage-block-base-exists' => 'Перекладабельна цільова сторінка «[[:$1]]» вже існує.',

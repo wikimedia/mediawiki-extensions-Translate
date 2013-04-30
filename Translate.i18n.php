@@ -14883,8 +14883,6 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-untranslated' => 'Belum diterjemahkan',
 	'translate-percentage-complete' => 'Selesai',
 	'translate-percentage-fuzzy' => 'Usang',
-	'translate-nothing-to-do' => 'Semua terjemahan yang mungkin tampaknya telah dibuat.
-Silakan meninjau pesan-pesan melalui [[Special:Translate|{{int:translate}}]].',
 	'translate-mgs-column-language' => 'Bahasa',
 	'supportedlanguages' => 'Bahasa yang didukung',
 	'supportedlanguages-summary' => 'Halaman ini menampilkan daftar semua bahasa yang didukung oleh {{SITENAME}}, bersama dengan nama penerjemah yang bekerja dengan bahasa itu.
@@ -14967,6 +14965,7 @@ Detail: $1",
 	'api-error-invalidrevision' => 'Terjemahan tidak ditemukan',
 	'api-error-unknownmessage' => 'Pesan tidak ditemukan',
 	'api-error-owntranslation' => 'Anda tidak dapat menerima terjemahan sendiri',
+	'group-translate-proofr-member' => '{{GENDER:$1|peninjau terjemahan}}',
 	'translate-gethelp' => 'Bantuan',
 	'translate-msggroupselector-search-all' => 'Semua',
 	'tux-languageselector' => 'Bahasa', # Fuzzy
@@ -19607,6 +19606,7 @@ $messages['min'] = array(
 	'translate-sidebar-alltrans' => 'Dalam bahaso lain',
 	'translate-js-support' => 'Batanyo',
 	'translate-searchprofile-tooltip' => 'Cari dari sado tajamahan',
+	'group-translate-proofr-member' => '{{GENDER:$1|paninjau tajamahan}}',
 );
 
 /** Macedonian (македонски)
@@ -27985,7 +27985,7 @@ Podrobnosti: $1',
 	'translate-js-skip' => 'Preskoči na naslednje',
 	'translate-js-save-failed' => 'Shranjevanje je spodletelo. Prosimo, prijavite to napako.',
 	'translate-js-history' => 'Zgodovina prevoda',
-	'translate-js-support' => 'Zastavi vprašanje',
+	'translate-js-support' => 'Postavi vprašanje',
 	'translate-js-support-title' => 'Prosite za pomoč, če tukaj ni navedenih dovolj informacij, da bi lahko sporočilo pravilno prevedli.',
 	'translate-js-support-unsaved-warning' => 'Imate neshranjene prevode.',
 	'translate-gs-pos' => 'Št.',
@@ -30886,7 +30886,7 @@ $messages['tr'] = array(
 	'translate-taskui-view' => 'Bütün iletileri göster',
 	'translate-taskui-untranslated' => 'Çevrilmeyen iletileri göster',
 	'translate-taskui-optional' => 'İsteğe bağlı iletileri göster',
-	'translate-taskui-acceptqueue' => 'Ben yalnızca mesajları kabul edebilirim',
+	'translate-taskui-acceptqueue' => 'Yalnızca mesajları kabul edebilirim',
 	'translate-taskui-reviewall' => 'Bütün çevirileri gözden geçir',
 	'translate-taction-translate' => 'Çevir',
 	'translate-taction-proofread' => 'Düzelt',
