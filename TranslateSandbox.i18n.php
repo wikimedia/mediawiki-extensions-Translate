@@ -19,10 +19,11 @@ $messages['en'] = array(
 	'tsb-reminder-title-generic' => 'Complete your introduction to become a verified translator',
 	'tsb-reminder-content-generic' => 'Hi $1,
 
-You recently signed up to {{SITENAME}}. You are only few steps away from unlocking
-free translation and extra translation helpers.
+Thanks for registering with {{SITENAME}}. If you complete your test
+translations, the administrators can soon grant you full translation
+access.
 
-Please log in to $2 and make some more translations.',
+Please come to $2 and make some more translations.',
 );
 
 /** Message documentation (Message documentation)
