@@ -53,7 +53,7 @@ $messages['ast'] = array(
 Rexistróse de recién en {{SITENAME}}. Tá a sólo unos pasos de desbloquiar la
 traducción llibre y les ayudes a la traducción estra.
 
-Anicie sesión en $2 y faiga delles traducciones más.',
+Anicie sesión en $2 y faiga delles traducciones más.', # Fuzzy
 );
 
 /** Bengali (বাংলা)
@@ -67,7 +67,7 @@ $messages['bn'] = array(
 
 আপনি সম্প্রতি {{SITENAME}}-এ সাইন আপ করেছেন। বিনামূল্যে অনুবাদ এবং অতিরিক্ত অনুবাদ সাহায্যকারী খুলতে আপনি মাত্র কয়েক ধাপ দূরে।
 
-$2-এ লগ ইন করুন এবং আরো কিছু অনুবাদ করুন।',
+$2-এ লগ ইন করুন এবং আরো কিছু অনুবাদ করুন।', # Fuzzy
 );
 
 /** Breton (brezhoneg)
@@ -87,10 +87,10 @@ $messages['de'] = array(
 	'tsb-reminder-title-generic' => 'Vervollständige deine Einführung, um ein verifizierter Übersetzer zu werden.',
 	'tsb-reminder-content-generic' => 'Hallo $1,
 
-du hast dich kürzlich auf {{SITENAME}} registriert. Du bist nur ein paar Schritte von
-freien Übersetzungen und zusätzlichen Übersetzungshelfern entfernt.
+vielen Dank für deine Registrierung auf {{SITENAME}}. Wenn du deine Testübersetzungen
+vervollständigst, werden dir bald die Administratoren einen vollen Übersetzungszugriff gewähren.
 
-Bitte melde dich unter $2 an und erstelle einige weitere Übersetzungen.',
+Bitte besuche $2 und erstelle einige weitere Übersetzungen.',
 );
 
 /** French (français)

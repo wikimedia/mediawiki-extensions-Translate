@@ -7986,6 +7986,7 @@ $messages['ps'] = array(
 /** Portuguese (português)
  * @author Giro720
  * @author Hamilton Abreu
+ * @author Luckas
  * @author Malafaya
  * @author SandroHc
  * @author Vivaelcelta
@@ -8019,7 +8020,7 @@ A página pode agora ser <span class="plainlinks">[$3 traduzida]</span>.',
 	'tpt-showpage-intro' => 'Abaixo estão listadas secções novas, existentes e apagadas.
 Antes de marcar esta versão para tradução, verifique que as alterações às secções são minimizadas para evitar trabalho desnecessário para os tradutores.', # Fuzzy
 	'tpt-mark-summary' => 'Marcou esta versão para tradução',
-	'tpt-edit-failed' => 'Não foi possível actualizar a página: $1',
+	'tpt-edit-failed' => 'Não foi possível atualizar a página: $1',
 	'tpt-already-marked' => 'A versão mais recente desta página já foi marcada para tradução.',
 	'tpt-unmarked' => 'A página $1 já não está marcada para tradução.',
 	'tpt-list-nopages' => 'Não existem páginas marcadas para tradução, nem prontas a ser marcadas para tradução.',
@@ -8034,7 +8035,6 @@ Antes de marcar esta versão para tradução, verifique que as alterações às 
 	'translate-tag-markthisagain' => 'Esta página tem <span class="plainlinks">[$1 alterações]</span> desde a última vez que foi <span class="plainlinks">[$2 marcada para tradução]</span>.',
 	'translate-tag-hasnew' => 'Esta página contém <span class="plainlinks">[$1 alterações]</span> que não estão marcadas para tradução.',
 	'tpt-translation-intro' => 'Esta página é uma <span class="plainlinks">[$1 versão traduzida]</span> da página [[$2]] e a tradução está $3% completa e actualizada.',
-	'tpt-translation-intro-fuzzy' => 'Traduções desactualizadas estão marcadas desta forma.',
 	'tpt-languages-legend' => 'Outras línguas:',
 	'tpt-languages-zero' => 'Iniciar a tradução para este idioma',
 	'tpt-target-page' => 'Esta página não pode ser actualizada manualmente.
@@ -8063,17 +8063,8 @@ Texto da secção: <pre>$1</pre>', # Fuzzy
 	'pt-shake-position' => 'Marcadores de secção encontram-se numa posição inesperada.
 Texto da secção: <pre>$1</pre>', # Fuzzy
 	'pt-shake-empty' => 'Secção em branco para o marcador $1.', # Fuzzy
-	'pt-log-header' => 'Registo para operações relacionadas com o sistema de tradução de páginas',
-	'pt-log-name' => 'Registo de tradução de páginas',
-	'pt-log-mark' => '{{GENDER:$2|marcou}} a edição $3 da página "[[:$1]]" para tradução.',
-	'pt-log-unmark' => '{{GENDER:$2|removeu}} a página "[[:$1]]" de tradução.',
-	'pt-log-moveok' => '{{GENDER:$2|alterou o nome}} da página traduzível $1 para $3',
-	'pt-log-movenok' => '{{GENDER:$2|encontrou}} um problema ao mover [[:$1]] para [[:$3]]',
-	'pt-log-delete-full-ok' => '{{GENDER:$2|eliminou}} a página traduzível $1',
-	'pt-log-delete-full-nok' => '{{GENDER:$2|encontrou}} um problema ao eliminar a página traduzível [[:$1]]',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|eliminou}} a página traduzida $1',
-	'pt-log-delete-lang-nok' => '{{GENDER:$2|encontrou}} um problema ao eliminar a página traduzida [[:$1]]',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|removeu}} a página traduzível "[[:$1]]" do grupo agregador $3',
+	'log-description-pagetranslation' => 'Registo para operações relacionadas com o sistema de tradução de páginas',
+	'log-name-pagetranslation' => 'Registo de tradução de páginas',
 	'pt-movepage-title' => 'Mover a página traduzível $1',
 	'pt-movepage-blockers' => 'A página traduzível não pode ser movida para outro nome devido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:',
 	'pt-movepage-block-base-exists' => 'A página base de destino [[:$1]] existe.', # Fuzzy

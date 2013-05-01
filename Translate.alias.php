@@ -465,6 +465,7 @@ $specialPageAliases['ja'] = array(
 	'PageTranslationDeletePage' => array( 'ページ翻訳削除ページ' ),
 	'AggregateGroups' => array( '集約群' ),
 	'SearchTranslations' => array( '翻訳の検索' ),
+	'TranslateSandbox' => array( '翻訳者サンドボックスの管理' ),
 );
 
 /** Georgian (ქართული) */
