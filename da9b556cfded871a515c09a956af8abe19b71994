@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DwAWsVKA",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-05-01T10:47:19Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be changed, too, then?",
+      "revId": "da9b556cfded871a515c09a956af8abe19b71994",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
