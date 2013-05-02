@@ -102,9 +102,9 @@ $messages['fr'] = array(
 	'tsb-reminder-title-generic' => 'Complétez votre présentation pour devenir un traducteur vérifié',
 	'tsb-reminder-content-generic' => 'Bonjour $1,
 
-Vous venez de vous inscrire sur {{SITENAME}}. Vous n’êtes plus qu’à quelques pas de débloquer la traduction libre et les aides de traduction supplémentaires.
+Merci de vous être inscrit sur {{SITENAME}}. Si vous achevez vos traductions de test, les administrateurs pourront bientôt vous accorder un plein accès aux traductions.
 
-Veuillez vous connecter sur $2 et faire quelques traductions de plus.',
+Veuillez venir sur $2 et faire quelques traductions de plus.',
 );
 
 /** Galician (galego)
@@ -175,9 +175,9 @@ $messages['mk'] = array(
 	'tsb-reminder-title-generic' => 'Пополнете го вашето претставување и станете овластен преведувач',
 	'tsb-reminder-content-generic' => 'Здраво $1,
 
-Неодамна се зачленивте на {{SITENAME}}. Сега сте на само неколку чекори до слободно преведување со дополнителна помош.
+Ви благодариме што се регистриравте на {{SITENAME}}. Пополнете ги пробните преводи, и администраторите набргу ќе ви доделат статус на преведувач.
 
-Најавете се на $2 и направете уште некои преводи.',
+Појдете на $2 и направете уште некои преводи.',
 );
 
 /** Dutch (Nederlands)

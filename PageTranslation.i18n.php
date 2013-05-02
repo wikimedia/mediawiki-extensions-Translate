@@ -8081,7 +8081,7 @@ Texto da secção: <pre>$1</pre>', # Fuzzy
 	'pt-movepage-list-other' => 'Outras subpáginas', # Fuzzy
 	'pt-movepage-list-count' => 'No total, $1 {{PLURAL:$1|página para ser movida|páginas para serem movidas}}.',
 	'pt-movepage-legend' => 'Mover página traduzível',
-	'pt-movepage-current' => 'Nome actual:',
+	'pt-movepage-current' => 'Nome atual:',
 	'pt-movepage-new' => 'Nome novo:',
 	'pt-movepage-reason' => 'Motivo:',
 	'pt-movepage-subpages' => 'Mover todas as subpáginas',

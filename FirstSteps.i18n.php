@@ -1630,6 +1630,69 @@ Du chunnsch derno derzue eimol im Monet e Newsletter iber.
 Wänn Du kei Newsletter witt iberchuu, chasch di im Tab „{{int:prefs-personal}}“ in [[Special:Preferences|Dyyne Yystellige]] uustrage.',
 );
 
+/** Hakka (Hak-kâ-fa)
+ * @author Jetlag
+ */
+$messages['hak'] = array(
+	'firststeps' => '第一步',
+	'firststeps-desc' => '讓用戶開始維基翻譯嘅[[Special:FirstSteps|引導頁面]]',
+	'translate-fs-pagetitle-done' => '搞掂！',
+	'translate-fs-pagetitle-pending' => ' - 待定',
+	'translate-fs-pagetitle' => '入門指導 - $1',
+	'translate-fs-signup-title' => '註冊',
+	'translate-fs-settings-title' => '設定汝嘅偏好',
+	'translate-fs-userpage-title' => '建立汝嘅用戶頁',
+	'translate-fs-permissions-title' => '請求翻譯者權限',
+	'translate-fs-target-title' => '開始翻譯！',
+	'translate-fs-email-title' => '確認汝嘅電郵地址',
+	'translate-fs-intro' => "歡迎來到 {{SITENAME}} 入門指導。
+汝將會畀指導如何成為一名翻譯者。
+最後你將可以翻譯 {{SITENAME}} 裏肚所有計畫个''界面訊息''.",
+	'translate-fs-selectlanguage' => '選一種語言',
+	'translate-fs-settings-planguage' => '首選語言：',
+	'translate-fs-settings-planguage-desc' => '該首選語言作為邇隻維基項目嘅用戶界面，
+並成為默認嘅翻譯目標語言。',
+	'translate-fs-settings-slanguage' => '輔助語言$1：',
+	'translate-fs-settings-slanguage-desc' => '在翻譯編輯器之內可以顯示其他語言翻譯个消息。
+汝可以在邇位選擇您想顯示个語言。',
+	'translate-fs-settings-submit' => '儲存設定',
+	'translate-fs-userpage-level-N' => '我母語係',
+	'translate-fs-userpage-level-5' => '我可以專業嘅翻譯邇語言',
+	'translate-fs-userpage-level-4' => '我熟練到像母語者共樣流利',
+	'translate-fs-userpage-level-3' => '我掌握到還算可以',
+	'translate-fs-userpage-level-2' => '我掌握到一般般',
+	'translate-fs-userpage-level-1' => '我稍微知一滴',
+	'translate-fs-userpage-help' => '請標明汝个語言能力，並作自我介紹。係話您知得超過五種語言，您可以另擺添加又較多。',
+	'translate-fs-userpage-submit' => '建立汝嘅用戶頁',
+	'translate-fs-userpage-done' => '當好！今下汝擁有矣一隻使用者頁面。',
+	'translate-fs-permissions-planguage' => '首選語言：',
+	'translate-fs-permissions-help' => '今下，汝需要請求參加翻譯組。
+請選擇汝想愛加入翻譯嘅首選語言。
+
+您可以在以下嘅文本框裏肚提及其他語言與其他備註。',
+	'translate-fs-permissions-pending' => '汝嘅請求已提交至[[$1]]，站點管理員會儘快查閱汝嘅請求。
+係話汝已驗證汝嘅電子郵箱，遐時邇隻請求有答覆矣，就會發送郵件分汝。',
+	'translate-fs-permissions-submit' => '發送請求',
+	'translate-fs-target-text' => '恭喜 ！
+汝今下做得開始翻譯。
+
+如果汝仍覺得不知所措，不要害怕。
+在[[Project list|項目列表]] 有汝可以貢獻嘅翻譯項目嘅概述。
+大部分嘅項目有一個簡短嘅說明頁與“翻譯這個項目”鏈接，它將帶汝到一隻頁面，其中列出矣所有未翻譯嘅消息。
+ [[Special:LanguageStats|同一語言中所有未翻譯的訊息]]列表也是一個好起點。
+
+係話汝開始翻譯前想了解更多，汝可以去看一下[[FAQ|常見問題]]。
+毋好彩嘅是文檔可能係舊版，如果汝尋毋到答案，莫猶豫，請到[[Support|幫助頁]]發問。
+
+汝也可以在[[Portal:$1|語言門戶]] 嘅[[Portal_talk:$1|talk 頁]]聯繫相同語言嘅翻譯人員在。
+請到[[Special:Preferences|偏好設定]]設定汝嘅用戶界面與要翻譯嘅語言，以便wiki顯示和適合您的鏈接。',
+	'translate-fs-email-text' => '請到[[Special:Preferences|偏好設定]]留下並確認汝嘅電郵地址。
+
+邇樣做得使其他譯者聯絡汝，汝也可收取我等嘅每月電子報。
+
+係話汝不想收到月刊，可以到[[Special:Preferences|偏好設定]]頁面嘅{{int:prefs-personal}}標籤選擇停止接收。',
+);
+
 /** Hawaiian (Hawai`i)
  * @author Kolonahe
  */
@@ -3491,8 +3554,8 @@ Tukaj lahko izberete jezike, ki bi jih radi videli, če to želite.',
 	'translate-fs-userpage-submit' => 'Ustvarite svojo uporabniško stran',
 	'translate-fs-userpage-done' => 'Dobro opravljeno! Sedaj imate uporabniško stran.',
 	'translate-fs-permissions-planguage' => 'Prvotni jezik:',
-	'translate-fs-permissions-help' => 'Sedaj morate vložiti prošnjo za priključitev k skupini prevajalcev.
-Izberite prvotni jezik, v katerega boste prevajali.
+	'translate-fs-permissions-help' => 'Zdaj morate vložiti prošnjo za priključitev k skupini prevajalcev.
+Izberite primarni jezik, v katerega boste prevajali.
 
 V spodnjem polju lahko omenite tudi druge jezike in druge pripombe.',
 	'translate-fs-permissions-pending' => 'Vašo prošnjo smo posredovali na [[$1]] in nekdo od osebja strani jo bo čim prej preveril.
