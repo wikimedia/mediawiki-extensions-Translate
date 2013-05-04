@@ -557,7 +557,11 @@ class SpecialTranslate extends SpecialPage {
 			) .
 				'&#160;' . // nbsp
 				Html::element( 'span',
-					array( 'class' => 'uls' ),
+					array(
+						'class' => 'uls',
+						'lang' => $this->options['language'],
+						'dir' => Language::factory( $this->options['language'] )->getDir(),
+					),
 					Language::fetchLanguageName( $this->options['language'] )
 				)
 		);
