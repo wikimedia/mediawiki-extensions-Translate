@@ -102,18 +102,26 @@
 		},
 
 		changeLanguage: function ( language ) {
-			var changes = {
-				language: language
-			};
+			var changes, targetDir;
 
 			if ( !checkDirty() ) {
 				return;
 			}
 
-			$( '.ext-translate-language-selector > .uls' ).text( $.uls.data.getAutonym( language ) );
+			changes = {
+				language: language
+			};
+
+			targetDir = $.uls.data.getDir( language );
+			$( '.ext-translate-language-selector > .uls' )
+				.text( $.uls.data.getAutonym( language ) )
+				.attr( {
+					lang: language,
+					dir: targetDir
+				} );
 			$( '.tux-messagelist' ).data( {
 				targetlangcode: language,
-				targetlangdir: $.uls.data.getDir( language )
+				targetlangdir: targetDir
 			} );
 
 			mw.translate.changeUrl( changes );
