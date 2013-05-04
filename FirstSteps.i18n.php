@@ -1631,6 +1631,7 @@ Wänn Du kei Newsletter witt iberchuu, chasch di im Tab „{{int:prefs-personal}
 );
 
 /** Hakka (Hak-kâ-fa)
+ * @author Anson2812
  * @author Jetlag
  */
 $messages['hak'] = array(
@@ -1646,7 +1647,7 @@ $messages['hak'] = array(
 	'translate-fs-target-title' => '開始翻譯！',
 	'translate-fs-email-title' => '確認汝嘅電郵地址',
 	'translate-fs-intro' => "歡迎來到 {{SITENAME}} 入門指導。
-汝將會畀指導如何成為一名翻譯者。
+汝將會分指導如何成為一名翻譯者。
 最後你將可以翻譯 {{SITENAME}} 裏肚所有計畫个''界面訊息''.",
 	'translate-fs-selectlanguage' => '選一種語言',
 	'translate-fs-settings-planguage' => '首選語言：',
@@ -1656,7 +1657,7 @@ $messages['hak'] = array(
 	'translate-fs-settings-slanguage-desc' => '在翻譯編輯器之內可以顯示其他語言翻譯个消息。
 汝可以在邇位選擇您想顯示个語言。',
 	'translate-fs-settings-submit' => '儲存設定',
-	'translate-fs-userpage-level-N' => '我母語係',
+	'translate-fs-userpage-level-N' => '𠊎嘅母語係',
 	'translate-fs-userpage-level-5' => '我可以專業嘅翻譯邇語言',
 	'translate-fs-userpage-level-4' => '我熟練到像母語者共樣流利',
 	'translate-fs-userpage-level-3' => '我掌握到還算可以',
@@ -1676,16 +1677,16 @@ $messages['hak'] = array(
 	'translate-fs-target-text' => '恭喜 ！
 汝今下做得開始翻譯。
 
-如果汝仍覺得不知所措，不要害怕。
+係話汝還係試到毋知若何做，莫驚！
 在[[Project list|項目列表]] 有汝可以貢獻嘅翻譯項目嘅概述。
-大部分嘅項目有一個簡短嘅說明頁與“翻譯這個項目”鏈接，它將帶汝到一隻頁面，其中列出矣所有未翻譯嘅消息。
- [[Special:LanguageStats|同一語言中所有未翻譯的訊息]]列表也是一個好起點。
+大部分嘅項目有一隻簡短嘅說明頁與“翻譯邇隻項目”鏈接，其將帶汝到一隻頁面，其中列出矣所有還吂翻譯嘅消息。
+ [[Special:LanguageStats|同一語言中所有還吂翻譯嘅訊息]]列表也係一隻好起點。
 
 係話汝開始翻譯前想了解更多，汝可以去看一下[[FAQ|常見問題]]。
-毋好彩嘅是文檔可能係舊版，如果汝尋毋到答案，莫猶豫，請到[[Support|幫助頁]]發問。
+毋好彩嘅係文檔可能係舊版，如果汝尋毋到答案，莫愁，請到[[Support|幫助頁]]發問。
 
 汝也可以在[[Portal:$1|語言門戶]] 嘅[[Portal_talk:$1|talk 頁]]聯繫相同語言嘅翻譯人員在。
-請到[[Special:Preferences|偏好設定]]設定汝嘅用戶界面與要翻譯嘅語言，以便wiki顯示和適合您的鏈接。',
+請到[[Special:Preferences|偏好設定]]設定汝嘅用戶界面與愛翻譯嘅語言，以便wiki顯示最合適汝嘅鏈接。',
 	'translate-fs-email-text' => '請到[[Special:Preferences|偏好設定]]留下並確認汝嘅電郵地址。
 
 邇樣做得使其他譯者聯絡汝，汝也可收取我等嘅每月電子報。

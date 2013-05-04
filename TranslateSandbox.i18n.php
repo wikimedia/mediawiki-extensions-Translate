@@ -166,6 +166,15 @@ Do has Desch köözlesch {{ucfirst:{{GRAMMAR:em|{{ucfirst:{{SITENAME}}}}}}}} aan
 Bes es u jood un donn Desch $2 enlogge un maach e paa Övversäzonge.', # Fuzzy
 );
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'translatesandbox' => 'Iwwersetzer-Sandkëscht geréieren',
+	'tsb-filter-pending' => 'Ufroen am Suspens',
+	'tsb-reminder-title-generic' => 'Kompletéiert Är Virstellung fir e verifizéierten Iwwersetzer ze ginn',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
