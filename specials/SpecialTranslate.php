@@ -547,6 +547,22 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function tuxLanguageSelector() {
+		// Changes here must also be reflected when the language
+		// changes on the client side
+		global $wgLang, $wgTranslateDocumentationLanguageCode;
+		$targetLangCode = $this->options['language'];
+		if ( $this->options['language'] === $wgTranslateDocumentationLanguageCode ) {
+			// The name will be displayed in the UI language,
+			// so use for lang and dir
+			$targetLangCode = $wgLang->getCode();
+			$targetLangDir = $wgLang->getDir();
+			$targetLangName = $this->msg( 'translate-documentation-language' )->text();
+		} else {
+			$targetLangCode = $this->options['language'];
+			$targetLangDir = Language::factory( $this->options['language'] )->getDir();
+			$targetLangName = Language::fetchLanguageName( $this->options['language'] );
+		}
+
 		// No-break space is added for spacing after the label
 		// and to ensure separation of words (in Arabic, for example)
 		return Html::rawElement( 'div',
@@ -557,8 +573,12 @@ class SpecialTranslate extends SpecialPage {
 			) .
 				'&#160;' . // nbsp
 				Html::element( 'span',
-					array( 'class' => 'uls' ),
-					Language::fetchLanguageName( $this->options['language'] )
+					array(
+						'class' => 'uls',
+						'lang' => $targetLangCode,
+						'dir' => $targetLangDir,
+					),
+					$targetLangName
 				)
 		);
 	}

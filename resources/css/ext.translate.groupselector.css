@@ -48,7 +48,10 @@
 	padding-top: 1.25em;
 }
 
-.ext-translate-language-selector .uls:after {
+/* The triangle shaped down-pointing callout after the language name
+ * in the target language selector
+ */
+.ext-translate-language-selector:after {
 	margin-left: 4px;
 	border-left: 4px solid transparent;
 	border-right: 4px solid transparent;

@@ -102,18 +102,36 @@
 		},
 
 		changeLanguage: function ( language ) {
-			var changes = {
-				language: language
-			};
+			var changes, targetDir, targetLangAttrib,
+				userLanguageCode = mw.config.get( 'wgUserLanguage' );
 
 			if ( !checkDirty() ) {
 				return;
 			}
 
-			$( '.ext-translate-language-selector > .uls' ).text( $.uls.data.getAutonym( language ) );
+			changes = {
+				language: language
+			};
+
+			if ( language === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
+				targetLangAttrib = userLanguageCode;
+				targetDir = $.uls.data.getDir( userLanguageCode );
+			} else {
+				targetLangAttrib = language;
+				targetDir = $.uls.data.getDir( language );
+			}
+
+			// Changes to attributes must also be reflected
+			// when the element is created on the server side
+			$( '.ext-translate-language-selector > .uls' )
+				.text( $.uls.data.getAutonym( language ) )
+				.attr( {
+					lang: targetLangAttrib,
+					dir: targetDir
+				} );
 			$( '.tux-messagelist' ).data( {
 				targetlangcode: language,
-				targetlangdir: $.uls.data.getDir( language )
+				targetlangdir: targetDir
 			} );
 
 			mw.translate.changeUrl( changes );
