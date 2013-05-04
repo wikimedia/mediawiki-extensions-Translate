@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DwUSsoO8",
+        "filename": "resources/css/ext.translate.groupselector.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-05-04T18:40:00Z",
+      "side": 1,
+      "message": "Making sure that it is shown in the end of the selector element and not influenced by the directionality of the language name.",
+      "revId": "fd76107df6403b1d6e7111d2acbdece8003dbd80",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
