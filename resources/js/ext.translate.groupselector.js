@@ -8,7 +8,7 @@
 	 *  - language: language for statistics.
 	 */
 	function TranslateMessageGroupSelector( element, options ) {
-		this.$group = $( element );
+		this.$trigger = $( element );
 		this.$menu = null;
 		this.parentGroupId = null;
 		this.options = $.extend( true, {}, $.fn.msggroupselector.defaults, options );
@@ -25,13 +25,13 @@
 		 * Initialize the plugin
 		 */
 		init: function () {
-			this.parentGroupId = this.$group.data( 'msggroupid' );
+			this.parentGroupId = this.$trigger.data( 'msggroupid' );
 			if ( this.hasChildGroups( this.parentGroupId ) ) {
 				this.prepareSelectorMenu();
 				this.listen();
 				if ( mw.translate.messageGroups !== {} ) {
 					// If data is ready, render now.
-					this.$group.trigger( 'dataready.translate' );
+					this.$trigger.trigger( 'dataready.translate' );
 				}
 			}
 		},
@@ -146,13 +146,13 @@
 				groupSelector.hide();
 			} );
 
-			groupSelector.$group.on( 'dataready.translate', function () {
+			groupSelector.$trigger.on( 'dataready.translate', function () {
 				if ( groupSelector.hasChildGroups( groupSelector.parentGroupId ) ) {
 					groupSelector.loadGroups( groupSelector.parentGroupId );
 				}
 			} );
 
-			groupSelector.$group.on( 'click', function ( e ) {
+			groupSelector.$trigger.on( 'click', function ( e ) {
 				groupSelector.toggle();
 
 				e.preventDefault();
@@ -170,11 +170,11 @@
 
 				groupSelector.hide();
 
-				groupSelector.$group
+				groupSelector.$trigger
 					.removeClass( 'tail' )
 					.nextAll().remove();
 
-				groupSelector.$group.addClass( 'expanded' );
+				groupSelector.$trigger.addClass( 'expanded' );
 				// FIXME In future, if we are going to have multiple groupselectors per page
 				// this will fail.
 				$( '.ext-translate-msggroup-selector .tail' ).remove();
@@ -217,7 +217,7 @@
 					groupSelector.getRecentGroups();
 				} else {
 					groupSelector.$menu.find( '.ext-translate-msggroup-list' ).empty();
-					groupSelector.loadGroups( groupSelector.$group.data( 'msggroupid' ) );
+					groupSelector.loadGroups( groupSelector.$trigger.data( 'msggroupid' ) );
 				}
 			} );
 
@@ -252,7 +252,7 @@
 		 */
 		position: function () {
 			if ( this.options.position.of === undefined ) {
-				this.options.position.of = this.$group;
+				this.options.position.of = this.$trigger;
 			}
 			this.$menu.position( this.options.position );
 		},
@@ -350,7 +350,7 @@
 
 			if ( !this.flatGroupList ) {
 				this.flatGroupList = [];
-				parentGroupId = this.$group.data( 'msggroupid' );
+				parentGroupId = this.$trigger.data( 'msggroupid' );
 				messageGroups = this.$menu.data( 'msggroups' );
 
 				if ( parentGroupId ) {
