@@ -106,13 +106,13 @@
 		 */
 		show: function () {
 			// Hide all other open menus
-			$( '.ext-translate-msggroup-selector-menu.opened' )
-				.removeClass( 'opened' )
+			$( '.ext-translate-msggroup-selector-menu.open' )
+				.removeClass( 'open' )
 				.hide();
-			this.$menu.addClass( 'opened' ).show();
+			this.$menu.addClass( 'open' ).show();
 			this.position();
 			// Keep the focus in the message group search box.
-			this.$menu.find( 'input.ext-translate-msggroup-search-input' ).focus();
+			this.$menu.find( '.ext-translate-msggroup-search-input' ).focus();
 		},
 
 		/**
@@ -120,14 +120,14 @@
 		 */
 		hide: function () {
 			this.$menu.hide();
-			this.$menu.removeClass( 'opened' );
+			this.$menu.removeClass( 'open' );
 		},
 
 		/**
 		 * Toggle the menu open/close state
 		 */
 		toggle: function () {
-			if ( this.$menu.hasClass( 'opened' ) ) {
+			if ( this.$menu.hasClass( 'open' ) ) {
 				this.hide();
 			} else {
 				this.show();
