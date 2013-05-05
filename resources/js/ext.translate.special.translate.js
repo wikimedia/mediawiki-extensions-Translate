@@ -97,6 +97,7 @@
 			} );
 
 			mw.translate.changeUrl( changes );
+			mw.translate.updateTabLinks( changes );
 			mw.translate.loadMessages( changes );
 			updateGroupWarning();
 		},
@@ -117,6 +118,7 @@
 			} );
 
 			mw.translate.changeUrl( changes );
+			mw.translate.updateTabLinks( changes );
 			$( '.tux-statsbar' ).trigger( 'refresh', language );
 			mw.translate.loadMessages();
 			updateGroupWarning();
@@ -159,6 +161,22 @@
 				// For old browsers, just reload
 				window.location.href = uri.toString();
 			}
+		},
+
+		/**
+		 * Updates the navigation tabs.
+		 * @param {Object} params Url parameters to update.
+		 * @since 2013.05
+		 */
+		updateTabLinks: function ( params ) {
+			$( '.tux-tab a' ).each( function () {
+				var $a, uri;
+
+				$a = $( this );
+				uri = new mw.Uri( $a.prop( 'href' ) );
+				uri.extend( params );
+				$a.prop( 'href', uri.toString() );
+			} );
 		}
 	} );
 
