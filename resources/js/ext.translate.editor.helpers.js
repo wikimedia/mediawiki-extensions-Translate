@@ -462,6 +462,17 @@
 				translateEditor.showMachineTranslations( result.helpers.mt );
 				translateEditor.showSupportOptions( result.helpers.support );
 				translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
+
+				// Load the possible warnings as soon as possible, do not wait
+				// for the user to make changes. Otherwise users might try confirming
+				// translations which fail checks. Confirmation seems to work but
+				// the message will continue to appear outdated.
+				if ( translateEditor.message.properties &&
+					translateEditor.message.properties.status === 'fuzzy'
+				) {
+					translateEditor.validateTranslation();
+				}
+
 				mw.translateHooks.run( 'showTranslationHelpers', result.helpers, translateEditor.$editor );
 
 			} ).fail( function ( errorCode, results ) {
