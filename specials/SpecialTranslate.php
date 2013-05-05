@@ -872,28 +872,43 @@ class SpecialTranslate extends SpecialPage {
 
 		$tabs['namespaces']['translate'] = array(
 			'text' => wfMessage( 'translate-taction-translate' )->text(),
-			'href' => $translate->getLocalUrl( array( 'taction' => 'translate' ) + $params ),
-			'class' => $alias === 'Translate' && $taction === 'translate' ? 'selected' : '',
+			'href' => $translate->getLocalUrl( $params ),
+			'class' => 'tux-tab',
 		);
+		if ( $alias === 'Translate' && $taction === 'translate' ) {
+			$tabs['namespaces']['translate']['class'] .= ' selected';
+		}
+
 
 		if ( !self::isBeta( $request ) ) {
 			$tabs['namespaces']['proofread'] = array(
 				'text' => wfMessage( 'translate-taction-proofread' )->text(),
 				'href' => $translate->getLocalUrl( array( 'taction' => 'proofread' ) + $params ),
-				'class' => $alias === 'Translate' && $taction === 'proofread' ? 'selected' : '',
+				'class' => 'tux-tab',
 			);
+			if ( $alias === 'Translate' && $taction === 'proofread' ) {
+				$tabs['namespaces']['proofread']['class'] .= ' selected';
+			}
 		}
 
 		$tabs['views']['lstats'] = array(
 			'text' => wfMessage( 'translate-taction-lstats' )->text(),
 			'href' => $languagestats->getLocalUrl( $params ),
-			'class' => $alias === 'LanguageStats' ? 'selected' : '',
+			'class' => 'tux-tab',
 		);
+		if ( $alias === 'LanguageStats' ) {
+			$tabs['views']['lstats']['class'] .= ' selected';
+		}
+
+
 		$tabs['views']['mstats'] = array(
 			'text' => wfMessage( 'translate-taction-mstats' )->text(),
 			'href' => $messagegroupstats->getLocalUrl( $params ),
-			'class' => $alias === 'MessageGroupStats' ? 'selected' : '',
+			'class' => 'tux-tab',
 		);
+		if ( $alias === 'MessageGroupStats' ) {
+			$tabs['views']['mstats']['class'] .= ' selected';
+		}
 
 		// Kind of hackish, but works for now
 		global $wgTranslateTasks;
@@ -905,8 +920,11 @@ class SpecialTranslate extends SpecialPage {
 			$tabs['views']['export'] = array(
 				'text' => wfMessage( 'translate-taction-export' )->text(),
 				'href' => $translate->getLocalUrl( array( 'taction' => 'export' ) + $params ),
-				'class' => $alias === 'Translate' && $taction === 'export' ? 'selected' : '',
+				'class' => 'tux-tab',
 			);
+			if ( $alias === 'Translate' && $taction === 'export' ) {
+				$tabs['views']['export']['class'] .= ' selected';
+			}
 
 			// We only need the tab to apper once ;)
 			break;
