@@ -38,7 +38,11 @@
 		},
 
 		loadMessages: function ( changes ) {
-			var $loader = $( '.tux-messagetable-loader' );
+			// FIXME: this should be member method
+			var
+				$container = $( '.tux-messagelist' ),
+				$loader = $( '.tux-messagetable-loader' ),
+				$statsbar = $( '.tux-message-list-statsbar' );
 
 			changes = changes || {};
 
@@ -55,6 +59,15 @@
 
 			// Reset the number of messages remaining
 			$loader.find( '.tux-messagetable-loader-count' ).text( '' );
+
+			// Reset the statsbar
+			$statsbar
+				.empty()
+				.removeData()
+				.languagestatsbar( {
+					language: $container.data( 'targetlangcode' ),
+					group: $loader.data( 'messagegroup' ),
+				} );
 
 			// Reset other info and make visible
 			$loader

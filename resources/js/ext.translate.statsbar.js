@@ -76,14 +76,6 @@
 				statsbar.update();
 			} );
 
-			statsbar.$statsBar.on( 'refresh', function ( e, language ) {
-				statsbar.language = language;
-
-				mw.translate.loadLanguageStats( language ).done( function () {
-					statsbar.update();
-				} );
-			} );
-
 			statsbar.$container.hover( function () {
 				statsbar.$statsBar.find( '.tux-statsbar-info' ).removeClass( 'hide' );
 			}, function () {
@@ -104,7 +96,6 @@
 				$( '<div>' ).addClass( 'tux-statsbar-info hide' )
 			);
 
-			// TODO Add a tooltip for the statsbar that says the stats in words.
 			this.$container.append( this.$statsBar );
 			this.update();
 
@@ -185,10 +176,6 @@
 
 			if ( !data ) {
 				$this.data( 'languagestatsbar', ( data = new LanguageStatsBar( this, options ) ) );
-			}
-
-			if ( typeof options === 'string' ) {
-				data[options].call( $this );
 			}
 		} );
 	};

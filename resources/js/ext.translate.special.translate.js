@@ -117,7 +117,6 @@
 			} );
 
 			mw.translate.changeUrl( changes );
-			$( '.tux-statsbar' ).trigger( 'refresh', language );
 			mw.translate.loadMessages();
 			updateGroupWarning();
 		},
@@ -250,11 +249,6 @@
 			mw.translate.loadMessageGroups()
 		).then( function () {
 			$( '.ext-translate-msggroup-selector .grouplink' ).trigger( 'dataready.translate' );
-			$( '.tux-message-list-statsbar' ).languagestatsbar( {
-				language: targetLanguage,
-				group: $( '.tux-message-list-statsbar' ).data( 'messagegroup' )
-			} );
-
 			updateGroupWarning();
 		} );
 
