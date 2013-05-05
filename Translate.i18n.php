@@ -10656,8 +10656,8 @@ Soveltuu hyvin oikolukemiseen.',
 	'tux-editor-skip-button-label' => 'Hyppää seuraavaan',
 	'tux-editor-confirm-button-label' => 'Hyväksy käännös',
 	'tux-editor-shortcut-info' => 'Paina "$1" tallentaaksesi tai "$2" hypätäksesi seuraavaan viestiin',
-	'tux-editor-edit-desc' => 'Muokkaa kuvausta',
-	'tux-editor-add-desc' => 'Lisää kuvaus',
+	'tux-editor-edit-desc' => 'Muokkaa ohjeistusta',
+	'tux-editor-add-desc' => 'Lisää ohjeistus',
 	'tux-editor-suggestions-title' => 'Ehdotukset',
 	'tux-editor-in-other-languages' => 'Muilla kielillä',
 	'tux-editor-need-more-help' => 'Tarvitsetko lisäapua?',
@@ -34131,7 +34131,7 @@ $messages['zh-hans'] = array(
 	'translate-edit-tab-list' => '信息列表',
 	'translate-edit-nopermission' => '您必须获得权限才可以翻译信息。',
 	'translate-edit-askpermission' => '请求权限',
-	'translate-magic-pagename' => '扩展的MediaWiki翻译',
+	'translate-magic-pagename' => '延伸的MediaWiki翻译',
 	'translate-magic-help' => '您可以翻译特殊页面别名、魔术字以及名字空间名称。
 
 特殊页面别名和魔术字可以有多个翻译。
