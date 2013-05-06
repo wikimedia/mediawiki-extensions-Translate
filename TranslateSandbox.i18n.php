@@ -41,6 +41,20 @@ Followed by a list of the pending requests.',
 * $2 - url to the website',
 );
 
+/** Afrikaans (Afrikaans)
+ * @author Naudefj
+ */
+$messages['af'] = array(
+	'translatesandbox' => 'Bestuur vertaler-sandput',
+	'tsb-filter-pending' => 'Uitstaande versoeke',
+	'tsb-reminder-title-generic' => "Voltooi u bekendstelling om 'n geverifieerde vertaler te word",
+	'tsb-reminder-content-generic' => "Hallo $1,
+
+Dankie dat u op {{SITENAME}} geregistreer het. As u u toesvertalings voltooi, sal die administrateurs spoedig volle regte aan u toeken. 
+
+Gaan asseblief na $2 om 'n paar vertalings te maak.",
+);
+
 /** Asturian (asturianu)
  * @author Xuacu
  */

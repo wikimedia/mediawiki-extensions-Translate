@@ -225,6 +225,8 @@ $messages['et'] = array(
 	'tux-sst-nosolr-body' => 'Sellel vikil pole tõlkeotsimisteenust.',
 	'tux-sst-solr-offline-title' => 'Otsing pole saadaval',
 	'tux-sst-solr-offline-body' => 'Otsimisteenus pole ajutiselt saadaval.',
+	'tux-sst-next' => 'Järgmised tulemused',
+	'tux-sst-prev' => 'Eelmised tulemused',
 );
 
 /** Basque (euskara)

@@ -5511,6 +5511,7 @@ $messages['bxr'] = array(
  * @author Sanbec
  * @author Ssola
  * @author Toniher
+ * @author Vriullop
  * @author XVEC
  * @author පසිඳු කාවින්ද
  */
@@ -5561,7 +5562,7 @@ com ara no fer servir espais o transliterant noms propis. $1",
 	'translate-edit-title' => 'Edita «$1»',
 	'translate-edit-definition' => 'Definició del missatge',
 	'translate-edit-translation' => 'Traducció',
-	'translate-edit-contribute' => 'contribuiu-hi',
+	'translate-edit-contribute' => 'contribuïu-hi',
 	'translate-edit-no-information' => "''Aquest missatge no té documentació. Si sabeu on o com és usat aquest missatge podeu ajudar la resta de traductors afegint-hi la documentació.''",
 	'translate-edit-information' => 'Informació sobre el missatge ($1)',
 	'translate-edit-in-other-languages' => 'El missatge en altres idiomes',
@@ -5816,7 +5817,7 @@ El més útil per a les tasques de revisió.',
 	'tux-edit' => 'Edita',
 	'tux-status-optional' => 'Opcional',
 	'tux-status-fuzzy' => 'Desfasat',
-	'tux-status-proofread' => 'Revisa',
+	'tux-status-proofread' => 'Revisat',
 	'tux-status-translated' => 'Traduït',
 	'tux-status-saving' => 'Desant...',
 	'tux-status-unsaved' => 'No desat',
@@ -9652,6 +9653,7 @@ Sobib ennekõike tõlgete ülevaatuseks.',
 	'tux-editor-paste-original-button-label' => 'Kleebi lähtetekst',
 	'tux-editor-save-button-label' => 'Salvesta tõlge',
 	'tux-editor-skip-button-label' => 'Jäta vahele ja mine järgmise juurde',
+	'tux-editor-cancel-button-label' => 'Loobu',
 	'tux-editor-confirm-button-label' => 'Kinnita tõlge',
 	'tux-editor-shortcut-info' => 'Vajuta "$1", et salvestada, või "$2", et see sõnum vahele jätta ja minna järgmise juurde',
 	'tux-editor-edit-desc' => 'Redigeeri dokumentatsiooni',
@@ -9700,10 +9702,12 @@ Sobib ennekõike tõlgete ülevaatuseks.',
 	'tux-editor-close-tooltip' => 'Sule',
 	'tux-editor-expand-tooltip' => 'Laiem vaade',
 	'tux-editor-collapse-tooltip' => 'Kitsam vaade',
+	'tux-editor-message-tools-translations' => 'Kõik tõlked',
 	'tux-editor-loading' => 'Laadimine...',
 	'translate-search-more-languages-info' => 'Veel $1 {{PLURAL:$1|keel|keelt}}',
 	'translate-statsbar-tooltip' => '$1% tõlgitud, $2% ülevaadatud',
 	'translate-statsbar-tooltip-with-fuzzy' => '$1% tõlgitud, $2% ülevaadatud, $3% iganenud',
+	'translate-search-more-groups-info' => 'Veel $1 {{PLURAL:$1|rühm|rühma}}',
 );
 
 /** Basque (euskara)
@@ -18499,6 +18503,7 @@ $messages['ku-latn'] = array(
 	'translate-tag-category' => 'Rûpelên wergerbar',
 	'translate-sidebar-alltrans' => 'Bi zimanên din',
 	'translations' => 'Hemû werger',
+	'translate-translations-none' => 'Ji bo "$1" werger tune ne',
 	'translate-translations-count' => '{{PLURAL:$1|wergerek hat| $1 werger hatin}} dîtin.',
 	'translate-translations-fieldset-title' => 'Peyam',
 	'translate-translations-messagename' => 'Nav:',
@@ -18547,11 +18552,11 @@ $messages['ku-latn'] = array(
 	'tux-edit' => 'Biguherîne',
 	'tux-status-translated' => 'wergerand',
 	'tux-status-saving' => 'Tê tomarkirin...',
-	'tux-status-unsaved' => 'Nehta tomarkirin',
+	'tux-status-unsaved' => 'Nehate tomarkirin',
 	'tux-editor-placeholder' => 'Wergera te',
 	'tux-editor-save-button-label' => 'Wergerê tomar bike',
-	'tux-editor-edit-desc' => 'Danasînê biguherîne',
-	'tux-editor-add-desc' => 'Danasînê lê zêde bike',
+	'tux-editor-edit-desc' => 'Danasînê biguherîne', # Fuzzy
+	'tux-editor-add-desc' => 'Danasînê lê zêde bike', # Fuzzy
 	'tux-editor-in-other-languages' => 'Bi zimanên din',
 	'tux-editor-ask-help' => 'Ji bo agahiyên berfirehtir bipirse',
 	'tux-warnings-more' => '{{PLURAL:$1|zêdetir $1}}',
@@ -19004,8 +19009,8 @@ Dëst ass ganz nëtzlech fir d'Iwwerliesen.",
 	'tux-editor-cancel-button-label' => 'Ofbriechen',
 	'tux-editor-confirm-button-label' => 'Iwwersetzung confirméieren',
 	'tux-editor-shortcut-info' => 'Dréckt "$1" fir ze späicheren oder "$2" fir op den nächste Message ze goen',
-	'tux-editor-edit-desc' => 'Beschreiwung änneren', # Fuzzy
-	'tux-editor-add-desc' => 'Beschreiwung derbäisetzen', # Fuzzy
+	'tux-editor-edit-desc' => 'Dokumentatioun änneren',
+	'tux-editor-add-desc' => 'Dokumentatioun derbäisetzen',
 	'tux-editor-suggestions-title' => 'Virschléi',
 	'tux-editor-in-other-languages' => 'An anere Sproochen',
 	'tux-editor-need-more-help' => 'Braucht Dir méi Hëllef?',
@@ -19040,6 +19045,7 @@ Dëst ass ganz nëtzlech fir d'Iwwerliesen.",
 	'tux-proofread-translated-by-self' => 'Vun Iech iwwersat',
 	'tux-empty-list-all' => 'Dëse Grupp vu Messagen ass eidel',
 	'tux-empty-list-all-guide' => "Sicht en anere Gruppe vu Messagen eraus fir z'iwwersetzen",
+	'tux-translate-page-no-such-group' => "'''De Grupp deen ugi war gëtt et net.''' Sicht een anere Grupp vu Messagen eraus.",
 	'tux-empty-list-translated' => 'Keng iwwersate Messagen',
 	'tux-empty-list-translated-guide' => 'Dir kënnt beim Iwwersetzen hëllefen',
 	'tux-empty-list-translated-action' => 'Iwwersetzen',
