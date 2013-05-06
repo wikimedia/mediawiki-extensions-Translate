@@ -102,19 +102,19 @@
 
 .tux-proofread-status.untranslated {
 	/* @embed */
-	background: url(../images/translate.png) left center no-repeat;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/translate.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/translate.svg);
-	background-image: linear-gradient(transparent, transparent), url(../images/translate.svg);
+	background: url(../images/translate-ltr.png) left center no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/translate-ltr.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/translate-ltr.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/translate-ltr.svg);
 	height: 40px;
 }
 
 .tux-proofread-action {
 	/* @embed */
-	background: url(../images/check-sprite.png) right top no-repeat;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/check-sprite.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/check-sprite.svg);
-	background-image: linear-gradient(transparent, transparent), url(../images/check-sprite.svg);
+	background: url(../images/check-sprite-ltr.png) right top no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/check-sprite-ltr.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/check-sprite-ltr.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/check-sprite-ltr.svg);
 	height: 31px;
 	cursor: pointer;
 }
