@@ -761,7 +761,8 @@ These messages will only affect the interface on {{SITENAME}}.',
 	'translate-stats-edits' => "This message is used in the automatically created graph. It's possible that the graph plotting software doesn't support non-Latin scripts correctly.
 
 {{Identical|Edit}}",
-	'translate-stats-users' => "This message is used in the automatically created graph. It's possible that the graph plotting software doesn't support non-Latin scripts correctly.",
+	'translate-stats-users' => "This message is used in the automatically created graph. It's possible that the graph plotting software doesn't support non-Latin scripts correctly.
+{{Identical|Translator}}",
 	'translate-stats-registrations' => 'This refers to statistics on the number of new users on [[Special:TranslationStats]]. It is a label on the graph of the statistics.
 {{Identical|Registration}}',
 	'translate-statsf-intro' => 'Introduction to [[Special:TranslationStats|form]] for generating graph.',
@@ -870,7 +871,8 @@ See also:
 	'translate-mgs-totals' => 'This is used in [[Special:MessageGroupStats]]',
 	'translate-mgs-invalid-group' => 'Used as error message. Parameters:
 * $1 - target message group name',
-	'supportedlanguages' => '{{doc-special|SupportedLanguages}}',
+	'supportedlanguages' => '{{doc-special|SupportedLanguages}}
+{{Identical|Supported language}}',
 	'supportedlanguages-summary' => 'Header for [[Special:SupportedLanguages]] page.',
 	'supportedlanguages-colorlegend' => 'Used on [[Special:SupportedLanguages]]. Parameters:
 * $1 is not a single number, but a series of numbers with different background colors, serving as a legend to match each color with a number of days passed since the last contributed translation. See [[Special:SupportedLanguages]] to see the final rendering.',
@@ -879,8 +881,9 @@ Place any site specific message here.',
 	'supportedlanguages-portallink' => '{{optional}}',
 	'supportedlanguages-portallink-nocldr' => '{{optional}}',
 	'supportedlanguages-translators' => 'On [[Special:SupportedLanguages]].
-*$2 is the number of translators listed
-*$1 is the list of translators names',
+* $1 - the list of translators names
+* $2 - the number of translators listed
+{{Identical|Translator}}',
 	'supportedlanguages-recenttranslations' => 'Link on [[Special:SupportedLanguages]] to [[Special:RecentChanges]].',
 	'supportedlanguages-count' => 'On [[Special:SupportedLanguages]]
 *$1 is the total number of supported languages.',
@@ -17913,6 +17916,10 @@ $1',
 	'logentry-translationreview-group' => '$1 사용자가 $3의 $4 번역의 상태를 $6에서 $7로 {{GENDER:$2|바꾸었습니다}}',
 	'group-translate-sandboxed' => '승인하지 않은 번역자',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|승인하지 않은 번역자}}',
+	'right-translate-sandboxmanage' => '연습장 사용자 관리',
+	'action-translate-sandboxmanage' => '연습장 사용자 관리',
+	'right-translate-sandboxaction' => '연습장 사용자에게 허가된 작업을 실행',
+	'action-translate-sandboxaction' => '연습장 사용자에게 허가된 작업을 실행',
 	'translate-workflow-state-' => '(미설정)',
 	'translate-workflowstatus' => '상태: $1',
 	'translate-workflow-set-do' => '설정',
@@ -17957,10 +17964,11 @@ $1',
 	'tux-editor-discard-changes-button-label' => '바뀐 내용 지우기',
 	'tux-editor-save-button-label' => '번역 저장',
 	'tux-editor-skip-button-label' => '다음으로 넘어가기',
+	'tux-editor-cancel-button-label' => '취소',
 	'tux-editor-confirm-button-label' => '번역 확인',
 	'tux-editor-shortcut-info' => '저장하려면 "$1"을 누르거나 다음 메시지로 넘어가려면 "$2"를 누르세요',
-	'tux-editor-edit-desc' => '설명 편집', # Fuzzy
-	'tux-editor-add-desc' => '설명 추가', # Fuzzy
+	'tux-editor-edit-desc' => '설명문 편집',
+	'tux-editor-add-desc' => '설명문 추가',
 	'tux-editor-suggestions-title' => '제안',
 	'tux-editor-in-other-languages' => '다른 언어',
 	'tux-editor-need-more-help' => '도움이 더 필요하십니까?',
@@ -17999,6 +18007,14 @@ $1',
 	'tux-empty-list-translated' => '번역한 메시지가 없습니다',
 	'tux-empty-list-translated-guide' => '번역을 도울 수 있습니다',
 	'tux-empty-list-translated-action' => '번역',
+	'tux-empty-no-messages-to-display' => '보여줄 메시지가 없습니다.',
+	'tux-empty-there-are-optional' => '선택적 메시지가 목록에 보이지 않습니다',
+	'tux-empty-show-optional-messages' => '선택적 메시지 보기',
+	'tux-empty-no-outdated-messages' => '오래된 메시지가 없습니다',
+	'tux-empty-nothing-to-proofread' => '교정할 수 있는 것이 없습니다',
+	'tux-empty-you-can-help-providing' => '새 번역을 제공할 수 있습니다',
+	'tux-empty-nothing-new-to-proofread' => '새로 교정할 수 있는 것이 없습니다',
+	'tux-empty-you-can-review-already-proofread' => '다른 사용자가 이미 교정한 번역을 검토할 수 있습니다.',
 	'tux-empty-list-other' => '번역할 것이 없습니다',
 	'tux-empty-list-other-guide' => '기존 번역의 검토를 도울 수 있습니다',
 	'tux-empty-list-other-action' => '번역 교정',

@@ -511,6 +511,7 @@ $specialPageAliases['ko'] = array(
 	'PageTranslationDeletePage' => array( '문서번역삭제문서' ),
 	'AggregateGroups' => array( '집계그룹' ),
 	'SearchTranslations' => array( '번역찾기' ),
+	'TranslateSandbox' => array( '번역자연습장관리', '번역연습장' ),
 );
 
 /** Karachay-Balkar (къарачай-малкъар) */
@@ -1061,4 +1062,5 @@ $specialPageAliases['zh-hant'] = array(
 	'PageTranslationDeletePage' => array( '刪除譯文頁面' ),
 	'AggregateGroups' => array( '聚合組' ),
 	'SearchTranslations' => array( '搜尋翻譯' ),
+	'TranslateSandbox' => array( '管理翻譯者沙盒' ),
 );
