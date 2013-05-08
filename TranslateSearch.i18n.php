@@ -577,19 +577,20 @@ $messages['pl'] = array(
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
-	'searchtranslations' => 'Serca tradussion',
-	'tux-sst-edit' => 'Modìfica mëssagi',
+	'searchtranslations' => 'Arserca ëd tradussion',
+	'tux-sst-edit' => 'Modifiché la tradussion',
 	'tux-sst-search' => 'Sërca',
-	'tux-sst-search-ph' => 'Serca tradussion',
+	'tux-sst-search-ph' => 'Arserca ëd tradussion',
 	'tux-sst-count' => '{{PLURAL:$1|Un arzultà trovà|$1 arzultà trovà}}',
 	'tux-sst-facet-language' => 'Lenghe',
 	'tux-sst-facet-group' => 'Partìe ëd mëssagi',
-	'tux-sst-facet-orphan' => '(orfanel)',
-	'tux-sst-nosolr-title' => 'Serca pa disponìbil',
-	'tux-sst-nosolr-body' => "La wiki a l'ha pa un sërvissi d'arserca ëd tradussion.",
+	'tux-sst-facet-orphan' => '(orfanin)',
+	'tux-sst-nosolr-title' => 'Arserca nen disponìbil',
+	'tux-sst-nosolr-body' => "La wiki a l'ha pa un servissi d'arserca ëd tradussion.",
 );
 
 /** Romanian (română)

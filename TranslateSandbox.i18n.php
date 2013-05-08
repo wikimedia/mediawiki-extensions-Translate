@@ -130,10 +130,11 @@ $messages['gl'] = array(
 	'tsb-reminder-title-generic' => 'Complete a súa introdución para se converter nun tradutor verificado',
 	'tsb-reminder-content-generic' => 'Boas, $1:
 
-Rexistrouse recentemente en {{SITENAME}}. Está a uns pasos de desbloquear a
-tradución libre e as axudas de tradución adicionais.
+Grazas por rexistrarse en {{SITENAME}}. Se completa as traducións
+de proba, os adminitradores poderán concederlle axiña acceso completo á
+tradución.
 
-Acceda ao sistema en $2 e faga algunha tradución máis.',
+Acceda ao sistema en $2 e faga algunhas traducións máis.',
 );
 
 /** Hebrew (עברית)
@@ -157,6 +158,11 @@ $messages['it'] = array(
 	'translatesandbox' => 'Gestire la sandbox di traduzione',
 	'tsb-filter-pending' => 'Richieste in sospeso',
 	'tsb-reminder-title-generic' => "Completa l'introduzione per diventare un traduttore verificato",
+	'tsb-reminder-content-generic' => "Ciao $1,
+
+Grazie per esserti registrato su {{SITENAME}}. Una volta che avrai completato i test di traduzione, gli amministratori potranno concederti in breve tempo l'accesso completo da traduttore.
+
+Vieni su $2 e fai alcune altre traduzioni.",
 );
 
 /** Japanese (日本語)
