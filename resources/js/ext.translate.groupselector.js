@@ -480,7 +480,6 @@
 
 			$label = $( '<div>' ).addClass( 'seven columns label' )
 				.text( messagegroup.label )
-				.attr( 'title', messagegroup.description )
 				.append( $statsbar );
 
 			if ( messagegroup.icon && messagegroup.icon.raster ) {
