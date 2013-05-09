@@ -643,11 +643,25 @@
 				var warningIndex,
 					warnings = jQuery.parseJSON( data );
 
-				if ( !warnings ) {
+				translateEditor.removeWarning( 'validation' );
+				if ( !warnings || !warnings.length ) {
 					return;
 				}
 
-				translateEditor.removeWarning( 'validation' );
+				// Remove useless outdated warning without diff, since our checks
+				// have found issues to complain about.
+				if ( translateEditor.$editor.find( '.show-diff-link' ).hasClass( 'hide' ) ) {
+					translateEditor.removeWarning( 'diff' );
+				}
+
+				// Disable confirm translation button, since fuzzy translations
+				// cannot be confirmed. The check for dirty state can be removed
+				// to prevent translations with warnings.
+				if ( !translateEditor.dirty ) {
+					translateEditor.$editor.find( '.tux-editor-save-button' )
+						.prop( 'disabled', true );
+				}
+
 				for ( warningIndex = 0; warningIndex < warnings.length; warningIndex++ ) {
 					translateEditor.addWarning( warnings[warningIndex], 'validation' );
 				}
@@ -936,7 +950,7 @@
 			mw.loader.load( 'mediawiki.action.history.diff', undefined, true );
 
 			// TODO add an option to hide diff
-			this.$editor.find( '.tux-warning .show-diff-link' )
+			this.$editor.find( '.show-diff-link' )
 				.removeClass( 'hide' )
 				.on( 'click', function () {
 					$( this ).parent().html( definitiondiff.html );
