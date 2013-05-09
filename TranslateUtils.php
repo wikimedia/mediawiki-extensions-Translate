@@ -412,14 +412,10 @@ class TranslateUtils {
 		}
 
 		if ( $file->isVectorized() ) {
-			$formats['vector'] = $file->getUrl();
+			$formats['vector'] = $file->getFullUrl();
 		}
 
-		$formats['raster'] = $wgServer . $file->createThumb( $size, $size );
-
-		foreach ( $formats as &$url ) {
-			$url = wfExpandUrl( $url, PROTO_RELATIVE );
-		}
+		$formats['raster'] = $file->createThumb( $size, $size );
 
 		return $formats;
 	}
