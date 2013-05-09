@@ -551,6 +551,25 @@ $messages['nl'] = array(
 	'tux-sst-prev' => 'Vorige resultaten',
 );
 
+/** Norwegian Nynorsk (norsk nynorsk)
+ * @author Njardarlogar
+ */
+$messages['nn'] = array(
+	'searchtranslations' => 'Søk i omsetjingar',
+	'tux-sst-edit' => 'Endra omsetjing',
+	'tux-sst-search' => 'Søk',
+	'tux-sst-search-ph' => 'Søk i omsetjingar',
+	'tux-sst-count' => 'Fann {{PLURAL:$1|eitt|$1}} resultat',
+	'tux-sst-facet-language' => 'Språk',
+	'tux-sst-facet-group' => 'Meldingsgrupper',
+	'tux-sst-nosolr-title' => 'Søket er ikkje tilgjengeleg',
+	'tux-sst-nosolr-body' => 'Denne wikien har ikkje eit omsetjingssøk',
+	'tux-sst-solr-offline-title' => 'Søket er ikkje tilgjengeleg',
+	'tux-sst-solr-offline-body' => 'Søket er mellombels utilgjengeleg',
+	'tux-sst-next' => 'Dei neste resultata',
+	'tux-sst-prev' => 'Dei førre resultata',
+);
+
 /** Occitan (occitan)
  * @author Cedric31
  */
