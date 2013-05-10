@@ -858,8 +858,8 @@ class SpecialTranslate extends SpecialPage {
 
 		$request = $skin->getRequest();
 		// However, query string params take precedence
-		$params = $request->getQueryValues() + $params;
-		asort( $params );
+		$params['language'] = $request->getVal( 'language' );
+		$params['group'] = $request->getVal( 'group' );
 
 		$taction = $request->getVal( 'taction', 'translate' );
 
@@ -867,32 +867,22 @@ class SpecialTranslate extends SpecialPage {
 		$languagestats = SpecialPage::getTitleFor( 'LanguageStats' );
 		$messagegroupstats = SpecialPage::getTitleFor( 'MessageGroupStats' );
 
-		unset( $params['task'] ); // Depends on taction
-		unset( $params['taction'] ); // We're supplying this ourself
-		unset( $params['title'] ); // As above
-		unset( $params['x'] ); // Was posted -marker on stats pages
-		unset( $params['suppresscomplete'] ); // Stats things, should
-		unset( $params['suppressempty'] ); // not be passed
-
 		// Clear the special page tab that might be there already
 		$tabs['namespaces'] = array();
 
-		$tabs['namespaces']['translate'] = $data = array(
+		$tabs['namespaces']['translate'] = array(
 			'text' => wfMessage( 'translate-taction-translate' )->text(),
 			'href' => $translate->getLocalUrl( array( 'taction' => 'translate' ) + $params ),
 			'class' => $alias === 'Translate' && $taction === 'translate' ? 'selected' : '',
 		);
 
 		if ( !self::isBeta( $request ) ) {
-			$tabs['namespaces']['proofread'] = $data = array(
+			$tabs['namespaces']['proofread'] = array(
 				'text' => wfMessage( 'translate-taction-proofread' )->text(),
 				'href' => $translate->getLocalUrl( array( 'taction' => 'proofread' ) + $params ),
 				'class' => $alias === 'Translate' && $taction === 'proofread' ? 'selected' : '',
 			);
 		}
-
-		// Limit only applies to the above
-		unset( $params['limit'] );
 
 		$tabs['views']['lstats'] = array(
 			'text' => wfMessage( 'translate-taction-lstats' )->text(),
