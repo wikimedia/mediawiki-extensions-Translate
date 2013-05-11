@@ -70,11 +70,10 @@ class WikiFormatReader extends SimpleFormatReader {
 		}
 
 		${$this->variableName} = array();
-		require( $this->filename );
+		require $this->filename;
 
 		return $mangler->mangle( ${$this->variableName} );
 	}
-
 }
 
 /**
@@ -122,7 +121,7 @@ HEADER
 			return;
 		}
 
-		require( $dir . '/messages.inc' );
+		require $dir . '/messages.inc';
 
 		# Sort messages to blocks
 		$sortedMessages['unknown'] = $messages;

@@ -33,7 +33,9 @@ abstract class TranslationAid {
 	 */
 	protected $context;
 
-	public function __construct( MessageGroup $group, MessageHandle $handle, IContextSource $context ) {
+	public function __construct( MessageGroup $group, MessageHandle $handle,
+		IContextSource $context
+	) {
 		$this->group = $group;
 		$this->handle = $handle;
 		$this->context = $context;
@@ -71,7 +73,10 @@ abstract class TranslationAid {
 		if ( method_exists( $this->group, 'getMessageContent' ) ) {
 			$cache[$key] = $this->group->getMessageContent( $this->handle );
 		} else {
-			$cache[$key] = $this->group->getMessage( $this->handle->getKey(), $this->group->getSourceLanguage() );
+			$cache[$key] = $this->group->getMessage(
+				$this->handle->getKey(),
+				$this->group->getSourceLanguage()
+			);
 		}
 
 		return $cache[$key];
@@ -134,5 +139,4 @@ abstract class TranslationAid {
 
 		return $types;
 	}
-
 }

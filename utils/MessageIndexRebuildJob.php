@@ -20,6 +20,7 @@ class MessageIndexRebuildJob extends Job {
 	 */
 	public static function newJob() {
 		$job = new self( Title::newMainPage() );
+
 		return $job;
 	}
 
@@ -29,6 +30,7 @@ class MessageIndexRebuildJob extends Job {
 
 	function run() {
 		MessageIndex::singleton()->rebuild();
+
 		return true;
 	}
 
@@ -44,6 +46,7 @@ class MessageIndexRebuildJob extends Job {
 			return parent::insert();
 		} else {
 			$this->run();
+
 			return true;
 		}
 	}

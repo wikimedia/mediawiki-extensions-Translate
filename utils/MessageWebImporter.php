@@ -142,6 +142,7 @@ class MessageWebImporter {
 
 			return true;
 		}
+
 		return false;
 	}
 
@@ -329,6 +330,7 @@ class MessageWebImporter {
 		}
 
 		$this->out->addHTML( $this->doFooter() );
+
 		return $alldone;
 	}
 
@@ -397,7 +399,9 @@ class MessageWebImporter {
 				wfEscapeWikiText( $title->getPrefixedText() )
 			);
 		} else {
-			throw new MWException( "Failed to import new version of page {$title->getPrefixedText()}\n{$status->getWikiText()}" );
+			$text = "Failed to import new version of page {$title->getPrefixedText()}\n";
+			$text .= "{$status->getWikiText()}";
+			throw new MWException( $text );
 		}
 	}
 
@@ -450,7 +454,9 @@ class MessageWebImporter {
 			$ttitle = Title::makeTitle( $row->page_namespace, $row->page_title );
 
 			// No fuzzy for English original or documentation language code.
-			if ( $ttitle->getSubpageText() == 'en' || $ttitle->getSubpageText() == $wgTranslateDocumentationLanguageCode ) {
+			if ( $ttitle->getSubpageText() === 'en' ||
+				$ttitle->getSubpageText() === $wgTranslateDocumentationLanguageCode
+			) {
 				// Use imported text, not database text.
 				$text = $message;
 			} else {
@@ -552,6 +558,7 @@ class MessageWebImporter {
 
 		/* How nice of you PHP. No way to split array into keys and values in one
 		 * function or have str_replace which takes one array? */
+
 		return str_replace( array_keys( $replacements ), array_values( $replacements ), $name );
 	}
 }

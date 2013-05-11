@@ -130,6 +130,7 @@ class ApiHardMessages extends ApiBase {
 
 	public function getParamDescription() {
 		$action = TranslateUtils::getTokenAction( 'hardmessages' );
+
 		return array(
 			'title' => 'The title of the message to mark hard',
 			'token' => "A token previously acquired with $action",
@@ -142,6 +143,7 @@ class ApiHardMessages extends ApiBase {
 
 	public function getPossibleErrors() {
 		$right = self::$right;
+
 		return array_merge( parent::getPossibleErrors(), array(
 			array( 'code' => 'permissiondenied', 'info' => "You must have $right right" ),
 			array( 'code' => 'invalidtitle', 'info' => 'Title $1 is invalid' ),
@@ -170,11 +172,11 @@ class ApiHardMessages extends ApiBase {
 
 	public static function injectTokenFunction( &$list ) {
 		$list['hardmessage'] = array( __CLASS__, 'getToken' );
+
 		return true;
 	}
 
 	public static function getRight() {
 		return self::$right;
 	}
-
 }

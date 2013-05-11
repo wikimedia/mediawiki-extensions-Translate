@@ -50,8 +50,8 @@ class TTMServerAid extends TranslationAid {
 		}
 
 		$suggestions = TTMServer::sortSuggestions( $suggestions );
-
 		$suggestions['**'] = 'suggestion';
+
 		return $suggestions;
 	}
 }

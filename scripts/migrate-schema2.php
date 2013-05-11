@@ -12,10 +12,10 @@
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
-	$dir = dirname( __FILE__ );
+	$dir = __DIR__;
 	$IP = "$dir/../../..";
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 /**
  * Script to convert Translate extension database schema to v2.
@@ -33,16 +33,19 @@ class TSchema2 extends Maintenance {
 		$dbw = wfGetDB( DB_MASTER );
 		if ( !$dbw->tableExists( 'revtag' ) ) {
 			$this->error( "Table revtag doesn't exist. Translate extension is not installed?" );
+
 			return;
 		}
 
 		if ( !$dbw->tableExists( 'revtag_type' ) ) {
 			$this->error( "Table revtag_type doesn't exist. Migration is already done." );
+
 			return;
 		}
 
 		if ( $dbw->getType() !== 'mysql' ) {
 			$this->error( "This migration script only supports mysql. Please help us to write routine for {$dbw->getType()}." );
+
 			return;
 		}
 
@@ -60,15 +63,14 @@ class TSchema2 extends Maintenance {
 			$dbw->update(
 				'revtag',
 				array( 'rt_type' => $row->rtt_name ),
-				array( 'rt_type' => (string)$row->rtt_id ),
+				array( 'rt_type' => (string) $row->rtt_id ),
 				__METHOD__
 			);
 		}
 
 		$dbw->dropTable( 'revtag_type', __METHOD__ );
 	}
-
 }
 
 $maintClass = 'TSchema2';
-require_once( DO_MAINTENANCE );
+require_once DO_MAINTENANCE;

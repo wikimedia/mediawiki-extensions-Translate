@@ -91,6 +91,7 @@ class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 
 			$fixedGroups[$id] = $newgroup;
 		}
+
 		return $fixedGroups;
 	}
 }

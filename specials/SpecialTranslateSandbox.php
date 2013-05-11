@@ -81,7 +81,7 @@ HTML
 		$timestamp = new MWTimestamp( $data['registration'] );
 		$agoEnc = htmlspecialchars( $timestamp->getHumanTimestamp() );
 
-	return <<<HTML
+		return <<<HTML
 <div class="row request" data-data="$dataEnc">
 	<div class="three columns amount">
 		<div class="proofread-marker"></div>

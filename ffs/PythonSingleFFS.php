@@ -208,6 +208,7 @@ class PythonSingleFFS extends SimpleFFS {
 	 */
 	protected static function parseAuthorsFromString( $string ) {
 		preg_match_all( '/# Author: (.*)/', $string, $m );
+
 		return $m[1];
 	}
 }

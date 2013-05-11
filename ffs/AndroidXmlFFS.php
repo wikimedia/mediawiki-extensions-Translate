@@ -28,10 +28,10 @@ class AndroidXmlFFS extends SimpleFFS {
 		$mangler = $this->group->getMangler();
 
 		foreach ( $reader->string as $string ) {
-			$key = (string)$string['name'];
-			$value = stripcslashes( (string)$string );
+			$key = (string) $string['name'];
+			$value = stripcslashes( (string) $string );
 
-			if ( isset( $string['fuzzy'] ) && (string)$string['fuzzy'] === 'true' ) {
+			if ( isset( $string['fuzzy'] ) && (string) $string['fuzzy'] === 'true' ) {
 				$value = TRANSLATE_FUZZY . $value;
 			}
 
@@ -75,13 +75,13 @@ XML;
 			if ( $m->hasTag( 'fuzzy' ) ) {
 				$string->addAttribute( 'fuzzy', 'true' );
 			}
-
 		}
 
 		// Make the output pretty with DOMDocument
 		$dom = new DOMDocument( '1.0' );
 		$dom->formatOutput = true;
 		$dom->loadXML( $writer->asXML() );
+
 		return $dom->saveXML();
 	}
 }

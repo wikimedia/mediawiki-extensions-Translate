@@ -55,6 +55,7 @@ class RubyYamlFFS extends YamlFFS {
 		// Put the "other" alternative last, without other= prefix.
 		$other = isset( $messages['other'] ) ? '|' . $messages['other'] : '';
 		$pls .= "$other}}";
+
 		return $pls;
 	}
 
@@ -146,10 +147,10 @@ class RubyYamlFFS extends YamlFFS {
 
 		if ( !isset( $alts["$key.other"] ) ) {
 			wfWarn( "Other not set for key $key" );
+
 			return false;
 		}
 
 		return $alts;
 	}
-
 }

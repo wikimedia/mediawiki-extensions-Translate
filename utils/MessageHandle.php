@@ -34,6 +34,7 @@ class MessageHandle {
 	public function isMessageNamespace() {
 		global $wgTranslateMessageNamespaces;
 		$namespace = $this->getTitle()->getNamespace();
+
 		return in_array( $namespace, $wgTranslateMessageNamespaces );
 	}
 
@@ -57,6 +58,7 @@ class MessageHandle {
 				$this->key = substr( $this->key, 0, $pos );
 			}
 		}
+
 		return array( $this->key, $this->code );
 	}
 
@@ -66,6 +68,7 @@ class MessageHandle {
 	 */
 	public function getKey() {
 		$this->figureMessage();
+
 		return $this->key;
 	}
 
@@ -76,6 +79,7 @@ class MessageHandle {
 	 */
 	public function getCode() {
 		$this->figureMessage();
+
 		return $this->code;
 	}
 
@@ -101,6 +105,7 @@ class MessageHandle {
 	 */
 	public function isDoc() {
 		global $wgTranslateDocumentationLanguageCode;
+
 		return $this->getCode() === $wgTranslateDocumentationLanguageCode;
 	}
 
@@ -124,6 +129,7 @@ class MessageHandle {
 		if ( $this->groupIds === null ) {
 			$this->groupIds = MessageIndex::singleton()->getGroupIds( $this );
 		}
+
 		return $this->groupIds;
 	}
 
@@ -138,6 +144,7 @@ class MessageHandle {
 		if ( !isset( $ids[0] ) ) {
 			throw new MWException( 'called before isValid' );
 		}
+
 		return MessageGroups::getGroup( $ids[0] );
 	}
 
@@ -159,8 +166,11 @@ class MessageHandle {
 		// Do another check that the group actually exists
 		$group = $this->getGroup();
 		if ( !$group ) {
-			wfWarn( "MessageIndex is out of date – refers to unknown group {$groups[0]}. Doing a rebuild." );
+			$warning = "MessageIndex is out of date – refers to unknown group {$groups[0]}. ";
+			$warning .= "Doing a rebuild.";
+			wfWarn( $warning );
 			MessageIndexRebuildJob::newJob()->run();
+
 			return false;
 		}
 
@@ -203,7 +213,7 @@ class MessageHandle {
 		);
 
 		$res = $dbr->selectField( $tables, $field, $conds, __METHOD__ );
+
 		return $res !== false;
 	}
-
 }

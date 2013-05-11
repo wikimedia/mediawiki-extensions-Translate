@@ -185,6 +185,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		$reader = $this->getReader( $code );
 		if ( $reader ) {
 			$messages = $reader->parseMessages( $this->mangler );
+
 			return $messages ? $messages : array();
 		}
 
@@ -311,7 +312,8 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $collection;
 	}
 
-	public function __construct() {}
+	public function __construct() {
+	}
 
 	/**
 	 * Can be overwritten to retun false if something is wrong.
@@ -347,13 +349,15 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	// Unsupported stuff, just to satisfy the new interface
-	public function setConfiguration( $conf ) {}
-	public function getConfiguration() {}
+	public function setConfiguration( $conf ) {
+	}
+
+	public function getConfiguration() {
+	}
 
 	public function getFFS() {
 		return null;
 	}
-
 
 	/**
 	 * @deprecated Use getMessageGroupStates
@@ -376,6 +380,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 */
 	public function getMessageGroupStates() {
 		$conf = $this->getWorkflowConfiguration();
+
 		return new MessageGroupStates( $conf );
 	}
 
@@ -392,6 +397,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		if ( $context ) {
 			$message->inLanguage( $context->getLanguage() );
 		}
+
 		return $message;
 	}
 

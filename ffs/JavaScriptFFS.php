@@ -188,9 +188,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			$authorsList .= " *  - $author\n";
 		}
 
-		/**
-		 * Remove trailing newline, and return.
-		 */
+		// Remove trailing newline, and return.
 		return substr( " * Translators:\n$authorsList", 0, -1 );
 	}
 

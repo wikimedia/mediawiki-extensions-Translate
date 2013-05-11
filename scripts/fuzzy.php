@@ -10,7 +10,7 @@
 
 /// @cond
 
-require( dirname( __FILE__ ) . '/cli.inc' );
+require __DIR__ . '/cli.inc';
 
 # Override the memory limit for wfShellExec, 100 MB seems to be too little
 $wgMaxShellMemory = 1024 * 200;
@@ -57,7 +57,6 @@ if ( isset( $options['really'] ) ) {
 $bot->execute();
 
 /// @endcond
-
 
 /**
  * Class for marking translation fuzzy.
@@ -180,17 +179,20 @@ class FuzzyScript {
 		STDOUT( "Updating {$title->getPrefixedText()}... ", $title );
 		if ( !$title instanceof Title ) {
 			STDOUT( "INVALID TITLE!", $title );
+
 			return;
 		}
 
 		$items = explode( '/', $title->getText(), 2 );
 		if ( isset( $items[1] ) && $items[1] === $wgTranslateDocumentationLanguageCode ) {
 			STDOUT( "IGNORED!", $title );
+
 			return;
 		}
 
 		if ( $dryrun ) {
 			STDOUT( "DRY RUN!", $title );
+
 			return;
 		}
 

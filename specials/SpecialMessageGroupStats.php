@@ -52,7 +52,8 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 				$this->target = $group->getId();
 			}
 		}
-		return (bool)$group;
+
+		return (bool) $group;
 	}
 
 	/// Overwritten from SpecialLanguageStats
@@ -161,9 +162,11 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 			$out .= Html::closeElement( 'tfoot' );
 
 			$out .= Html::closeElement( 'table' );
+
 			return $out;
 		} else {
 			$this->nothing = true;
+
 			return '';
 		}
 	}
@@ -237,6 +240,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		$out .= $this->getWorkflowStateCell( $code, $state );
 
 		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
+
 		return $out;
 	}
 
@@ -258,6 +262,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 		$text = htmlspecialchars( "$code: {$this->names[$code]}" );
 		$link = Linker::link( $this->translate, $text, array(), $queryParameters );
+
 		return Html::rawElement( 'td', array(), $link );
 	}
 

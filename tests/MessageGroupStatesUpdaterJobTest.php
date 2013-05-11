@@ -5,7 +5,6 @@
  * @group medium
  */
 class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
-
 	protected function setUp() {
 		parent::setUp();
 
@@ -27,6 +26,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 		$messages = array( 'key1' => 'msg1', 'key2' => 'msg2' );
 		$list['group-trans'] = new MessageGroupWithTransitions( 'group-trans', $messages );
 		$list['group-notrans'] = new MessageGroupWithoutTransitions( 'group-notrans', array() );
+
 		return false;
 	}
 
@@ -145,12 +145,16 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 		$page->doEdit( 'trans1 updated', __METHOD__, 0, false, $user );
 		self::runJobs();
 		$currentState = ApiGroupReview::getState( $group, 'fi' );
-		$this->assertEquals( 'proofreading', $currentState, 'back to proofreading after translation changed' );
-
+		$this->assertEquals(
+			'proofreading',
+			$currentState,
+			'back to proofreading after translation changed'
+		);
 	}
 
 	protected static function getRevision( Status $s ) {
 		$value = $s->getValue();
+
 		return $value['revision'];
 	}
 
@@ -163,11 +167,11 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 			$job->run();
 		} while ( true );
 	}
-
 }
 
 class MockMessageHandle extends MessageHandle {
-	public function __construct() {}
+	public function __construct() {
+	}
 
 	public function getGroupIds() {
 		return array( 'group-trans', 'group-notrans' );
@@ -186,7 +190,14 @@ class MessageGroupWithTransitions extends MockWikiMessageGroup {
 			'state conditions' => array(
 				array( 'ready', array( 'PROOFREAD' => 'MAX' ) ),
 				array( 'proofreading', array( 'TRANSLATED' => 'MAX' ) ),
-				array( 'unset', array( 'UNTRANSLATED' => 'MAX', 'OUTDATED' => 'ZERO', 'TRANSLATED' => 'ZERO' ) ),
+				array(
+					'unset',
+					array(
+						'UNTRANSLATED' => 'MAX',
+						'OUTDATED' => 'ZERO',
+						'TRANSLATED' => 'ZERO'
+					)
+				),
 				array( 'inprogress', array( 'UNTRANSLATED' => 'NONZERO' ) ),
 			)
 		) );

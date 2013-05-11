@@ -14,7 +14,7 @@
 
 $options = array( 'git' );
 $optionsWithArgs = array( 'group', 'lang', 'start', 'end' );
-require( dirname( __FILE__ ) . '/cli.inc' );
+require __DIR__ . '/cli.inc';
 
 # Override the memory limit for wfShellExec, 100 MB seems to be too little for svn
 $wgMaxShellMemory = 1024 * 200;
@@ -303,7 +303,6 @@ class ChangeSyncer {
 					$this->import( $title, $translation, 'Updating translation from external source' );
 					continue;
 				}
-
 			}
 
 			if ( !$this->interactive ) {

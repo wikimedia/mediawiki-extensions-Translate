@@ -23,7 +23,6 @@ class AndroidXmlFFSTest extends MediaWikiTestCase {
 		),
 	);
 
-
 	public function testParsing() {
 		$file =
 <<<XML
@@ -66,7 +65,6 @@ XML;
 		$expected = array( 'MESSAGES' => $messages, 'AUTHORS' => array() );
 		$this->assertEquals( $expected, $parsed );
 	}
-
 }
 
 class MockMessageCollection extends MessageCollection {
@@ -82,5 +80,6 @@ class MockMessageCollection extends MessageCollection {
 		$this->messages['foobar']->addTag( 'fuzzy' );
 	}
 
-	public function filter( $type, $condition = true, $value = null ) {}
+	public function filter( $type, $condition = true, $value = null ) {
+	}
 }

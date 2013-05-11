@@ -20,7 +20,7 @@ $optionsWithArgs = array(
 	'threshold',
 );
 
-require( dirname( __FILE__ ) . '/cli.inc' );
+require __DIR__ . '/cli.inc';
 
 function showUsage() {
 	STDERR( <<<EOT

@@ -107,7 +107,6 @@ $wgResourceModules['ext.translate.loader'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
-
 $wgResourceModules['ext.translate.groupselector'] = array(
 	'styles' => 'resources/css/ext.translate.groupselector.css',
 	'scripts' => 'resources/js/ext.translate.groupselector.js',
@@ -344,9 +343,7 @@ $wgResourceModules['ext.translate.special.translatesandbox'] = array(
 		'mediawiki.api',
 		'jquery.uls.grid',
 		'jquery.ui.dialog',
-	),
-	'messages' => array(
-	),
+	)
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.translationstats'] = array(

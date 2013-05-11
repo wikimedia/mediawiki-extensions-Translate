@@ -181,6 +181,7 @@ class MessageGroups {
 			if ( is_callable( self::$groups[$id] ) ) {
 				return call_user_func( self::$groups[$id], $id );
 			}
+
 			return self::$groups[$id];
 		} elseif ( strval( $id ) !== '' && $id[0] === '!' ) {
 			$dynamic = self::getDynamicGroups();
@@ -197,7 +198,7 @@ class MessageGroups {
 	 * @return bool
 	 */
 	public static function exists( $id ) {
-		return (bool)self::getGroup( $id );
+		return (bool) self::getGroup( $id );
 	}
 
 	/**
@@ -236,6 +237,7 @@ class MessageGroups {
 		} else {
 			$id = $group;
 		}
+
 		return isset( self::$prioritycache[$id] ) ? self::$prioritycache[$id] : '';
 	}
 
@@ -276,6 +278,7 @@ class MessageGroups {
 	/// @since 2011-12-28
 	public static function isDynamic( MessageGroup $group ) {
 		$id = $group->getId();
+
 		return strval( $id ) !== '' && $id[0] === '!';
 	}
 
@@ -300,6 +303,7 @@ class MessageGroups {
 				unset( $ids[$index] );
 			}
 		}
+
 		return $ids;
 	}
 
@@ -384,7 +388,8 @@ class MessageGroups {
 		return $paths;
 	}
 
-	private function __construct() {}
+	private function __construct() {
+	}
 
 	/**
 	 * Constructor function.
@@ -395,6 +400,7 @@ class MessageGroups {
 		if ( !$instance instanceof self ) {
 			$instance = new self();
 		}
+
 		return $instance;
 	}
 
@@ -410,6 +416,7 @@ class MessageGroups {
 				self::$groups[$id] = call_user_func( $mixed, $id );
 			}
 		}
+
 		return self::$groups;
 	}
 
@@ -451,7 +458,7 @@ class MessageGroups {
 	public static function expandWildcards( $ids ) {
 		$all = array();
 
-		$matcher = new StringMatcher( '', (array)$ids );
+		$matcher = new StringMatcher( '', (array) $ids );
 		foreach ( self::getAllGroups() as $id => $_ ) {
 			if ( $matcher->match( $id ) ) {
 				$all[] = $id;
@@ -487,9 +494,9 @@ class MessageGroups {
 			}
 		}
 		wfProfileOut( __METHOD__ );
+
 		return $groups;
 	}
-
 
 	/**
 	 * Returns a tree of message groups. First group in each subgroup is
@@ -561,6 +568,7 @@ class MessageGroups {
 		}
 
 		wfProfileOut( __METHOD__ );
+
 		return $tree;
 	}
 
@@ -573,6 +581,7 @@ class MessageGroups {
 	public static function groupLabelSort( $a, $b ) {
 		$al = $a->getLabel();
 		$bl = $b->getLabel();
+
 		return strcasecmp( $al, $bl );
 	}
 
@@ -616,6 +625,7 @@ class MessageGroups {
 
 		// Parent group must be first item in the array
 		array_unshift( $tree, $parent );
+
 		return $tree;
 	}
 
@@ -649,6 +659,7 @@ class MessageGroups {
 
 			$groups[$id] = $group;
 		}
+
 		return $groups;
 	}
 }

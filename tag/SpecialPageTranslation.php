@@ -61,6 +61,7 @@ class SpecialPageTranslation extends SpecialPage {
 		// We are processing some specific page
 		if ( !$title->exists() ) {
 			$out->addWikiMsg( 'tpt-nosuchpage', $title->getPrefixedText() );
+
 			return;
 		}
 
@@ -125,6 +126,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$target = $title->getFullUrl( array( 'oldid' => $revision ) );
 			$link = "<span class='plainlinks'>[$target $revision]</span>";
 			$out->addWikiMsg( 'tpt-oldrevision', $title->getPrefixedText(), $link );
+
 			return;
 		}
 
@@ -207,6 +209,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$tag = RevTag::typeToTag( $r->rt_type );
 			$pages[$r->page_id][$tag] = intval( $r->rt_revision );
 		}
+
 		return $pages;
 	}
 
@@ -246,6 +249,7 @@ class SpecialPageTranslation extends SpecialPage {
 				unset( $out['active'][$index] );
 			}
 		}
+
 		return $out;
 	}
 
@@ -256,6 +260,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$allpages = $this->buildPageArray( $res );
 		if ( !count( $allpages ) ) {
 			$out->addWikiMsg( 'tpt-list-nopages' );
+
 			return;
 		}
 		$types = $this->classifyPages( $allpages );
@@ -396,6 +401,7 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		$flattened = $this->getLanguage()->semicolonList( $actions );
+
 		return Html::rawElement(
 			'span',
 			array( 'class' => 'mw-tpt-actions' ),
@@ -701,6 +707,7 @@ class SpecialPageTranslation extends SpecialPage {
 		// Clear more caches
 		$page->getTitle()->invalidateCache();
 		MessageIndexRebuildJob::newJob()->run();
+
 		return false;
 	}
 

@@ -37,6 +37,7 @@ class SimpleFormatReader {
 		if ( $this->authors === null ) {
 			$this->parseHeader();
 		}
+
 		return $this->authors;
 	}
 
@@ -49,6 +50,7 @@ class SimpleFormatReader {
 		if ( $this->staticHeader === '' ) {
 			$this->parseHeader();
 		}
+
 		return $this->staticHeader;
 	}
 

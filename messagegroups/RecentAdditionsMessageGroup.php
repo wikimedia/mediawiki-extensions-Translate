@@ -22,12 +22,14 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 	public function getLabel( IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-dynagroup-additions-label' );
 		$msg = self::addContext( $msg, $context );
+
 		return $msg->plain();
 	}
 
 	public function getDescription( IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-dynagroup-additions-desc' );
 		$msg = self::addContext( $msg, $context );
+
 		return $msg->plain();
 	}
 
@@ -41,6 +43,7 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 			'rc_id > ' . $this->getRCCutoff(),
 			'rc_user' => FuzzyBot::getUser()->getId(),
 		);
+
 		return $conds;
 	}
 

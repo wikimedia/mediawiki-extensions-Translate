@@ -111,7 +111,6 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		} else {
 			$this->showForm();
 		}
-
 	}
 
 	/**
@@ -305,7 +304,6 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$cache = wfGetCache( CACHE_DB );
 		$cache->set( wfMemcKey( 'pt-base', $target->getPrefixedText() ), array_keys( $jobs ), 60 * 60 * 6 );
 
-
 		if ( !$this->singleLanguage() ) {
 			$this->page->unmarkTranslatablePage();
 		}
@@ -347,6 +345,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	 */
 	protected function getSectionPages() {
 		$code = $this->singleLanguage() ? $this->code : false;
+
 		return $this->page->getTranslationUnitPages( 'all', $code );
 	}
 
@@ -362,6 +361,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		if ( !isset( $this->translationPages ) ) {
 			$this->translationPages = $this->page->getTranslationPages();
 		}
+
 		return $this->translationPages;
 	}
 

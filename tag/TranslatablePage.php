@@ -147,6 +147,7 @@ class TranslatablePage {
 		}
 
 		$this->init = true;
+
 		return $this->text;
 	}
 
@@ -214,6 +215,7 @@ class TranslatablePage {
 	public function getPageDisplayTitle( $code ) {
 		$section = str_replace( ' ', '_', $this->displayTitle );
 		$page = $this->getTitle()->getPrefixedDBKey();
+
 		return $this->getMessageGroup()->getMessage( "$page/$section", $code );
 	}
 
@@ -693,6 +695,7 @@ class TranslatablePage {
 			// We have a match :)
 			$units[] = $title;
 		}
+
 		return $units;
 	}
 

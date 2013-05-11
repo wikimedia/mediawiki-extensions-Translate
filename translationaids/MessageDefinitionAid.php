@@ -18,6 +18,7 @@
 class MessageDefinitionAid extends TranslationAid {
 	public function getData() {
 		$language = $this->group->getSourceLanguage();
+
 		return array(
 			'value' => $this->getDefinition(),
 			'language' => $language,

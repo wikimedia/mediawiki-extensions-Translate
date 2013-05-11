@@ -25,6 +25,7 @@ class TTMServer {
 	public static function factory( $config ) {
 		if ( isset( $config['class'] ) ) {
 			$class = $config['class'];
+
 			return new $class( $config );
 		} elseif ( isset( $config['type'] ) ) {
 			$type = $config['type'];
@@ -55,11 +56,13 @@ class TTMServer {
 				return $obj;
 			}
 		}
+
 		return new FakeTTMServer();
 	}
 
 	public static function sortSuggestions( array $suggestions ) {
 		usort( $suggestions, array( __CLASS__, 'qualitySort' ) );
+
 		return $suggestions;
 	}
 
@@ -68,6 +71,7 @@ class TTMServer {
 		if ( $c === $d ) {
 			return 0;
 		}
+
 		// Descending sort
 		return ( $c > $d ) ? -1 : 1;
 	}
@@ -116,6 +120,7 @@ class TTMServer {
 			}
 			$prevRow = $currentRow;
 		}
+
 		return $prevRow[$length2];
 	}
 
@@ -125,6 +130,7 @@ class TTMServer {
 	public static function onDelete( $wikipage ) {
 		$handle = new MessageHandle( $wikipage->getTitle() );
 		TTMServer::primary()->update( $handle, null );
+
 		return true;
 	}
 
@@ -144,6 +150,7 @@ class TTMServer {
 
 		$job = TTMServerMessageUpdateJob::newJob( $handle );
 		$job->insert();
+
 		return true;
 	}
 }

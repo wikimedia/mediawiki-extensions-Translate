@@ -30,6 +30,7 @@ class TranslateDeleteJob extends Job {
 		$msg = $job->getFull() ? 'pt-deletepage-full-logreason' : 'pt-deletepage-lang-logreason';
 		$job->setSummary( wfMessage( $msg, $base )->inContentLanguage()->text() );
 		$job->setPerformer( $performer );
+
 		return $job;
 	}
 
@@ -73,7 +74,7 @@ class TranslateDeleteJob extends Job {
 		PageTranslationHooks::$allowTargetEdit = false;
 
 		$cache = wfGetCache( CACHE_DB );
-		$pages = (array)$cache->get( wfMemcKey( 'pt-base', $base ) );
+		$pages = (array) $cache->get( wfMemcKey( 'pt-base', $base ) );
 		$lastitem = array_pop( $pages );
 		if ( $title->getPrefixedText() === $lastitem ) {
 			$cache->delete( wfMemcKey( 'pt-base', $base ) );
@@ -155,5 +156,4 @@ class TranslateDeleteJob extends Job {
 	public function getUser() {
 		return User::newFromName( $this->params['user'], false );
 	}
-
 }

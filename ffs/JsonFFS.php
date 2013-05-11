@@ -39,7 +39,7 @@ class JsonFFS extends SimpleFFS {
 		$metadata = array();
 
 		if ( isset( $messages['@metadata']['authors'] ) ) {
-			$authors = (array)$messages['@metadata']['authors'];
+			$authors = (array) $messages['@metadata']['authors'];
 			unset( $messages['@metadata']['authors'] );
 		}
 

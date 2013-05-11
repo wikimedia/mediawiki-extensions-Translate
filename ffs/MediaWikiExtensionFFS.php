@@ -100,6 +100,7 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 		}
 
 		$cache['parsed'][$code] = $value;
+
 		return $value;
 	}
 
@@ -188,6 +189,7 @@ PHP;
 		}
 
 		ksort( $sections );
+
 		return implode( "\n\n", $priority ) . "\n\n" . implode( "\n\n", $sections ) . "\n";
 	}
 
@@ -226,6 +228,7 @@ PHP;
 	 */
 	protected static function parseAuthorsFromString( $string ) {
 		preg_match_all( '/@author (.*)/', $string, $m );
+
 		return $m[1];
 	}
 

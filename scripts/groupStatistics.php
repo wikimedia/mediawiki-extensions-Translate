@@ -180,7 +180,7 @@ $wikimediaCodeMap = array(
 );
 
 $optionsWithArgs = array( 'groups', 'output', 'skiplanguages', 'legenddetail', 'legendsummary' );
-require( dirname( __FILE__ ) . '/cli.inc' );
+require __DIR__ . '/cli.inc';
 
 /**
  * Provides heading, summaryheading and free text addition for stats output in
