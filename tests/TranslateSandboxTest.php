@@ -49,7 +49,6 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 
 		$user = TranslateSandbox::addUser( 'Test user4', 'test@example.com', 'test password' );
 
-
 		$this->assertEquals( $atStart + 1, TranslateSandbox::getUsers()->count(), 'One sandboxed user created' );
 
 		TranslateSandbox::deleteUser( $user );

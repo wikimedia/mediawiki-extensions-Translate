@@ -23,7 +23,6 @@ class JavaFFSTest extends MediaWikiTestCase {
 		),
 	);
 
-
 	public function testParsing() {
 		$file =
 			<<<PROPERTIES

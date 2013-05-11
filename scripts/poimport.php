@@ -103,6 +103,7 @@ class PoImporter {
 			STDOUT( "Detected language as $code" );
 		} else {
 			STDERR( "Unable to determine language code" );
+
 			return false;
 		}
 
@@ -111,6 +112,7 @@ class PoImporter {
 			STDOUT( "Detected message group as $groupId" );
 		} else {
 			STDERR( "Unable to determine message group" );
+
 			return false;
 		}
 
@@ -151,7 +153,7 @@ class PoImporter {
 				$translation = TRANSLATE_FUZZY . $translation;
 			}
 
-			$oldtranslation = (string)$contents[$key]->translation();
+			$oldtranslation = (string) $contents[$key]->translation();
 
 			if ( $translation !== $oldtranslation ) {
 				if ( $translation === '' ) {
@@ -165,7 +167,6 @@ class PoImporter {
 					$changes["$key/$code"] = $translation;
 				}
 			}
-
 		}
 
 		return array( $changes, $groupId );
@@ -194,12 +195,14 @@ class WikiWriter {
 		$this->group = MessageGroups::getGroup( $groupId );
 		if ( !$this->group ) {
 			STDERR( "Group $groupId does not exist." );
+
 			return;
 		}
 
 		$this->user = User::newFromName( $user );
 		if ( !$this->user->idForName() ) {
 			STDERR( "User $user does not exist." );
+
 			return;
 		}
 
@@ -235,12 +238,14 @@ class WikiWriter {
 
 		if ( !$title instanceof Title ) {
 			STDOUT( "INVALID TITLE!", $page );
+
 			return;
 		}
 		STDOUT( "Updating {$title->getPrefixedText()}... ", $title );
 
 		if ( $this->dryrun ) {
 			STDOUT( "DRY RUN!", $title );
+
 			return;
 		}
 

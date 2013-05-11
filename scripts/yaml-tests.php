@@ -88,7 +88,6 @@ class YamlTests extends Maintenance {
 			}
 		}
 	}
-
 }
 
 $maintClass = 'YamlTests';

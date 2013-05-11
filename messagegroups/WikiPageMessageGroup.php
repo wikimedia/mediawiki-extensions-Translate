@@ -36,6 +36,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		if ( is_string( $this->title ) ) {
 			$this->title = Title::newFromText( $this->title );
 		}
+
 		return $this->title;
 	}
 
@@ -100,6 +101,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	public function getMessage( $key, $code ) {
 		if ( $this->isSourceLanguage( $code ) ) {
 			$stuff = $this->load( $code );
+
 			return isset( $stuff[$key] ) ? $stuff[$key] : null;
 		}
 
@@ -150,6 +152,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 
 		$msg = wfMessage( 'translate-tag-page-desc', $title, $target );
 		self::addContext( $msg, $context );
+
 		return $msg->plain() . $customText;
 	}
 }

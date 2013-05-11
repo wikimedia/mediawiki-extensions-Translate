@@ -291,9 +291,9 @@ PHP
 			ksort( $languages );
 			$langs = array_keys( $languages );
 		}
+
 		return $langs;
 	}
-
 }
 
 $maintClass = "MagicExport";

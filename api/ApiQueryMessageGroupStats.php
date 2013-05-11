@@ -25,6 +25,7 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 		if ( !$group ) {
 			$this->dieUsageMsg( array( 'missingparam', 'mcgroup' ) );
 		}
+
 		return MessageGroupStats::forGroup( $group->getId() );
 	}
 
@@ -32,6 +33,7 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 		$data = parent::makeItem( $item, $stats );
 		$data['code'] = $item; // For BC
 		$data['language'] = $item;
+
 		return $data;
 	}
 
@@ -41,12 +43,14 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 			ApiBase::PARAM_TYPE => 'string',
 			ApiBase::PARAM_REQUIRED => true,
 		);
+
 		return $params;
 	}
 
 	public function getParamDescription() {
 		$desc = parent::getParamDescription();
 		$desc['group'] = 'Message group id';
+
 		return $desc;
 	}
 

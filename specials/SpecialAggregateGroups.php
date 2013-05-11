@@ -44,6 +44,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		if ( !count( $pages ) ) {
 			// @todo Use different message
 			$out->addWikiMsg( 'tpt-list-nopages' );
+
 			return;
 		}
 
@@ -195,6 +196,7 @@ class SpecialAggregateGroups extends SpecialPage {
 	protected function htmlIdForGroup( MessageGroup $group, $prefix = '' ) {
 		$id = sha1( $group->getId() );
 		$id = substr( $id, 5, 8 );
+
 		return $prefix . $id;
 	}
 }

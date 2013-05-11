@@ -88,6 +88,7 @@ class CoreMessageGroup extends MessageGroupOld {
 
 	public function getMessageFile( $code ) {
 		$code = ucfirst( str_replace( '-', '_', $code ) );
+
 		return "Messages$code.php";
 	}
 
@@ -108,6 +109,7 @@ class CoreMessageGroup extends MessageGroupOld {
 		$mangler = $this->getMangler();
 		$this->optional = $mangler->mangle( $wgOptionalMessages );
 		$this->ignored = $mangler->mangle( $wgIgnoredMessages );
+
 		return parent::getTags( $type );
 	}
 
@@ -115,7 +117,7 @@ class CoreMessageGroup extends MessageGroupOld {
 		$file = $this->getMessageFileWithPath( $code );
 		// Can return null, convert to array.
 		$mangler = $this->getMangler();
-		$messages = (array)$mangler->mangle(
+		$messages = (array) $mangler->mangle(
 			PHPVariableLoader::loadVariableFromPHPFile( $file, 'messages' )
 		);
 

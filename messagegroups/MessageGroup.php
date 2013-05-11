@@ -52,7 +52,6 @@ interface MessageGroup {
 	 */
 	public function getDescription( IContextSource $context = null );
 
-
 	/**
 	 * Returns an icon for this message group if any.
 	 * @return string|null File reference in one of the supported protocols:

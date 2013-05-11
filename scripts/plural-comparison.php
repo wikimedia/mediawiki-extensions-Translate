@@ -124,11 +124,13 @@ class PluralCompare extends Maintenance {
 				$plurals[$code] = $rules;
 			}
 		}
+
 		return $plurals;
 	}
 
 	public function loadCLDR() {
 		global $IP;
+
 		return $this->loadPluralFile( "$IP/languages/data/plurals.xml" );
 	}
 
@@ -136,6 +138,7 @@ class PluralCompare extends Maintenance {
 		global $IP;
 		$rules = $this->loadPluralFile( "$IP/languages/data/plurals.xml" );
 		$rulesMW = $this->loadPluralFile( "$IP/languages/data/plurals-mediawiki.xml" );
+
 		return array_merge( $rules, $rulesMW );
 	}
 
@@ -147,9 +150,9 @@ class PluralCompare extends Maintenance {
 			$rule = preg_replace( '/^.*?plural=/', '', $rule );
 			$gtLanguages[$code] = $rule;
 		}
+
 		return $gtLanguages;
 	}
-
 }
 
 $maintClass = 'PluralCompare';

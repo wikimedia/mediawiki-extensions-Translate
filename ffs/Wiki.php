@@ -74,7 +74,6 @@ class WikiFormatReader extends SimpleFormatReader {
 
 		return $mangler->mangle( ${$this->variableName} );
 	}
-
 }
 
 /**

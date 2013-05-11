@@ -94,5 +94,4 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		$this->assertFalse( $translationPage->userCan( 'edit', $superUser ),
 			'Users can not edit non-existing translation pages' );
 	}
-
 }

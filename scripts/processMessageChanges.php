@@ -272,6 +272,7 @@ class ProcessMessageChanges extends Maintenance {
 				$filtered[$id] = $groups[$id];
 			}
 		}
+
 		return $filtered;
 	}
 }

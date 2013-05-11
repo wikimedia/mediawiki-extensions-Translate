@@ -39,6 +39,7 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 	public function addGroups( &$list ) {
 		$list['ttmserver-test'] = new MockWikiMessageGroup( 'ttmserver-test', array(
 			'one' => '1', 'two' => 'kaksi', 'three' => '3' ) );
+
 		return true;
 	}
 
@@ -64,7 +65,6 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		$result = $solarium->select( $select );
 		$this->assertEquals( 0, $result->getNumFound() );
 
-
 		// Add one definition
 		$title = Title::newFromText( 'MediaWiki:one/en' );
 		$page = WikiPage::factory( $title );
@@ -76,7 +76,8 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		$result = $solarium->select( $select );
 		$this->assertEquals( 1, $result->getNumFound() );
 		$doc = null;
-		foreach ( $result as $doc ) {}
+		foreach ( $result as $doc ) {
+		}
 		$this->assertEquals( wfWikiId(), $doc->wiki );
 		$this->assertEquals( 'en', $doc->language );
 		$this->assertEquals( '1', $doc->content );
@@ -93,7 +94,8 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		$result = $solarium->select( $select );
 		$this->assertEquals( 1, $result->getNumFound() );
 		$doc = null;
-		foreach ( $result as $doc ) {}
+		foreach ( $result as $doc ) {
+		}
 		$this->assertEquals( 'yksi', $doc->content );
 		$this->assertEquals( array( 'ttmserver-test' ), $doc->group );
 
@@ -127,7 +129,8 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		$result = $solarium->select( $select );
 		$this->assertEquals( 1, $result->getNumFound() );
 		$doc = null;
-		foreach ( $result as $doc ) {}
+		foreach ( $result as $doc ) {
+		}
 		$this->assertEquals( 'yksi-päiv', $doc->content );
 
 		// And now the messages should be orphaned
@@ -165,5 +168,4 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 			$job->run();
 		} while ( true );
 	}
-
 }

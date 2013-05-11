@@ -52,7 +52,6 @@ class RevTag {
 		}
 	}
 
-
 	/**
 	 * Converts rt_type field back to the tag name.
 	 * @param $tag int rt_type value
@@ -95,7 +94,7 @@ class RevTag {
 				$tags[$row->rtt_name] = $row->rtt_id;
 			}
 		}
+
 		return $tags;
 	}
-
 }

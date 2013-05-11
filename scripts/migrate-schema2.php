@@ -33,16 +33,19 @@ class TSchema2 extends Maintenance {
 		$dbw = wfGetDB( DB_MASTER );
 		if ( !$dbw->tableExists( 'revtag' ) ) {
 			$this->error( "Table revtag doesn't exist. Translate extension is not installed?" );
+
 			return;
 		}
 
 		if ( !$dbw->tableExists( 'revtag_type' ) ) {
 			$this->error( "Table revtag_type doesn't exist. Migration is already done." );
+
 			return;
 		}
 
 		if ( $dbw->getType() !== 'mysql' ) {
 			$this->error( "This migration script only supports mysql. Please help us to write routine for {$dbw->getType()}." );
+
 			return;
 		}
 
@@ -60,14 +63,13 @@ class TSchema2 extends Maintenance {
 			$dbw->update(
 				'revtag',
 				array( 'rt_type' => $row->rtt_name ),
-				array( 'rt_type' => (string)$row->rtt_id ),
+				array( 'rt_type' => (string) $row->rtt_id ),
 				__METHOD__
 			);
 		}
 
 		$dbw->dropTable( 'revtag_type', __METHOD__ );
 	}
-
 }
 
 $maintClass = 'TSchema2';

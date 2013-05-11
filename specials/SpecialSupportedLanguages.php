@@ -46,6 +46,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		if ( !$this->purge && is_string( $data ) ) {
 			TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators' );
 			$out->addHtml( $data );
+
 			return;
 		}
 
@@ -55,9 +56,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$dbr = wfGetDB( DB_SLAVE );
 		if ( $dbr->getType() === 'sqlite' ) {
 			$out->addWikiText( '<div class=errorbox>SQLite is not supported.</div>' );
+
 			return;
 		}
-
 
 		$out->addWikiMsg( 'supportedlanguages-colorlegend', $this->getColorLegend() );
 		$out->addWikiMsg( 'supportedlanguages-localsummary' );
@@ -77,7 +78,6 @@ class SpecialSupportedLanguages extends SpecialPage {
 		ksort( $natives );
 
 		$this->outputLanguageCloud( $natives );
-
 
 		// Requires NS_PORTAL. If not present, display error text.
 		if ( !defined( 'NS_PORTAL' ) ) {
@@ -147,8 +147,8 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 			$out->addHTML( "<p>" . $linkList . "</p>\n" );
 			$this->makeUserList( $users[$code], $editcounts, $lastedits );
-
 		}
+
 		$out->addHtml( Html::element( 'hr' ) );
 		$out->addWikiMsg( 'supportedlanguages-count', $lang->formatNum( count( $users ) ) );
 
@@ -183,6 +183,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		}
 
 		$cache->set( $cachekey, $data, 3600 );
+
 		return $data;
 	}
 
@@ -214,6 +215,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		}
 
 		$cache->set( $cachekey, $data, 3600 );
+
 		return $data;
 	}
 
@@ -256,6 +258,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		}
 
 		$lb->execute();
+
 		return $users;
 	}
 
@@ -351,6 +354,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		$data = array( $editcounts, $lastedits );
 		$cache->set( $cachekey, $data, 3600 );
+
 		return $data;
 	}
 
@@ -359,6 +363,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		foreach ( $styles as $key => $value ) {
 			$stylestr .= "$key:$value;";
 		}
+
 		return $stylestr;
 	}
 
@@ -414,6 +419,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 			$iFormatted = htmlspecialchars( $this->getLanguage()->formatNum( $i ) );
 			$legend .= '<span style="background-color:#' . $this->getActivityColor( $period - $i, $period ) . "\"> $iFormatted</span>";
 		}
+
 		return $legend;
 	}
 }

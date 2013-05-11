@@ -105,6 +105,7 @@ class HookDocTest extends MediaWikiTestCase {
 			}
 			closedir( $dh );
 		}
+
 		return $hooks;
 	}
 

@@ -25,7 +25,6 @@ class TranslateLogFormatter extends LogFormatter {
 			);
 
 			$params[2] = Message::rawParam( $targetPage );
-
 		} elseif ( $type === 'translationreview/group' ) {
 			/*
 			 * - 3: language code
@@ -47,7 +46,6 @@ class TranslateLogFormatter extends LogFormatter {
 			$params[3] = TranslateUtils::getLanguageName( $language, $uiLanguage->getCode() );
 			$params[5] = $this->formatStateMessage( $params[5] );
 			$params[6] = $this->formatStateMessage( $params[6] );
-
 		}
 
 		return $params;
@@ -55,6 +53,7 @@ class TranslateLogFormatter extends LogFormatter {
 
 	protected function formatStateMessage( $value ) {
 		$message = $this->msg( "translate-workflow-state-$value" );
+
 		return $message->isBlank() ? $value : $message->text();
 	}
 
@@ -68,7 +67,7 @@ class TranslateLogFormatter extends LogFormatter {
 			}
 			$link = "[[$target|$text]]";
 		}
+
 		return $link;
 	}
-
 }

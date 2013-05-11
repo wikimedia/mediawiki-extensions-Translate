@@ -79,6 +79,7 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		$deps[] = new FileDependency( $this->definitionFile );
+
 		return true;
 	}
 
@@ -275,6 +276,7 @@ class PremadeMediawikiExtensionGroups {
 
 			$fixedGroups[$id] = $newgroup;
 		}
+
 		return $fixedGroups;
 	}
 
@@ -297,6 +299,7 @@ class PremadeMediawikiExtensionGroups {
 		if ( $prefix ) {
 			$wgAutoloadClasses['TxtDef'] = "$prefix/$postfix";
 			$tmp = TxtDef::loadFromFile( "$prefix/Configure/settings/Settings-ext.txt" );
+
 			return array_combine( array_map( array( __CLASS__, 'foldId' ), array_keys( $tmp ) ), array_values( $tmp ) );
 		}
 

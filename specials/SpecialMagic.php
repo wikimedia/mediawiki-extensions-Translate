@@ -77,6 +77,7 @@ class SpecialMagic extends SpecialPage {
 				'</td></tr></table>' .
 				Html::hidden( 'title', $this->getTitle()->getPrefixedText() )
 		);
+
 		return $form;
 	}
 
@@ -93,6 +94,7 @@ class SpecialMagic extends SpecialPage {
 		foreach ( $this->aModules as $code ) {
 			$selector->addOption( $this->msg( 'translate-magic-' . $code )->text(), $code );
 		}
+
 		return $selector->getHTML();
 	}
 
@@ -179,11 +181,13 @@ class SpecialMagic extends SpecialPage {
 					'translate-magic-notsaved' );
 				$this->outputErrors( $errors );
 				$out->addHTML( $o->output() );
+
 				return;
 			} else {
 				$o->save( $request );
 				$out->wrapWikiMsg( '<strong>$1</strong>', 'translate-magic-saved' );
 				$out->addHTML( $o->output() );
+
 				return;
 			}
 		}
@@ -192,10 +196,12 @@ class SpecialMagic extends SpecialPage {
 			$output = $o->export();
 			if ( $output === '' ) {
 				$out->addWikiMsg( 'translate-magic-nothing-to-export' );
+
 				return;
 			}
 			$result = Xml::element( 'textarea', array( 'rows' => '30' ), $output );
 			$out->addHTML( $result );
+
 			return;
 		}
 

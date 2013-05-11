@@ -53,11 +53,13 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		if ( $step ) {
 			$out->addHtml( $this->getHeader( $step_message, 'inactive' ) );
+
 			return $step;
 		}
 
 		if ( $this->getUser()->isLoggedIn() ) {
 			$out->addHtml( $this->getHeader( $step_message, 'done' ) );
+
 			return $step;
 		}
 
@@ -76,6 +78,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		if ( $step ) {
 			$out->addHtml( $this->getHeader( $step_message, 'inactive' ) );
+
 			return $step;
 		}
 
@@ -108,11 +111,11 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		if ( $user->getOption( 'translate-firststeps' ) === '1' ) {
 			$out->addHtml( $this->getHeader( $step_message, 'done' ) );
+
 			return $step;
 		}
 
 		$out->addHtml( $this->getHeader( $step_message ) );
-
 
 		$output = Html::openElement( 'form', array( 'method' => 'post' ) );
 		$output .= Html::hidden( 'step', 'settings' );
@@ -173,7 +176,6 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		return Html::rawElement( 'td', array( 'colspan' => 2 ), $content );
 	}
 
-
 	protected function getHelpers( User $user, /*string*/$code ) {
 		global $wgTranslateLanguageFallbacks;
 		$helpers = $user->getOption( 'translate-editlangs' );
@@ -186,6 +188,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		} else {
 			$helpers = array_map( 'trim', explode( ',', $helpers ) );
 		}
+
 		return $helpers;
 	}
 
@@ -196,6 +199,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		if ( $step ) {
 			$out->addHtml( $this->getHeader( $step_message, 'inactive' ) );
+
 			return $step;
 		}
 
@@ -253,6 +257,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 			if ( preg_match( '/{{#babel:/i', $text ) ) {
 				$out->addHtml( $this->getHeader( $step_message, 'done' ) );
+
 				return false;
 			}
 		}
@@ -319,6 +324,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		if ( $step ) {
 			$out->addHtml( $this->getHeader( $step_message, 'inactive' ) );
+
 			return $step;
 		}
 
@@ -362,10 +368,12 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$page = $user->getOption( 'translate-firststeps-request' );
 		if ( $user->isAllowed( 'translate' ) ) {
 			$out->addHtml( $this->getHeader( $step_message, 'done' ) );
+
 			return $step;
 		} elseif ( $page ) {
 			$out->addHtml( $this->getHeader( $step_message, 'pending' ) );
 			$out->addWikiMsg( 'translate-fs-permissions-pending', $page );
+
 			return $step_message;
 		}
 
@@ -391,6 +399,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$output .= Html::closeElement( 'form' );
 
 		$out->addHtml( $output );
+
 		return $step_message;
 	}
 
@@ -400,6 +409,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		if ( $step ) {
 			$out->addHtml( $this->getHeader( $step_message, 'inactive' ) );
+
 			return $step;
 		}
 
@@ -416,11 +426,13 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		if ( $step && ( $step !== 'translate-fs-target-title' && $step !== 'translate-fs-permissions-title' ) ) {
 			$out->addHtml( $this->getHeader( $step_message, 'inactive' ) );
+
 			return $step;
 		}
 
 		if ( $this->getUser()->isEmailConfirmed() ) {
 			$out->addHtml( $this->getHeader( $step_message, 'done' ) );
+
 			return $step; // Start translating step
 		}
 

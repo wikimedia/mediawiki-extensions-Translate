@@ -20,6 +20,7 @@ class TTMServerMessageUpdateJob extends Job {
 	 */
 	public static function newJob( MessageHandle $handle ) {
 		$job = new self( $handle->getTitle() );
+
 		return $job;
 	}
 

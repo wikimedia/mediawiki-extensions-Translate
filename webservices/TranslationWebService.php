@@ -42,6 +42,7 @@ abstract class TranslationWebService {
 
 		if ( isset( $handlers[$config['type']] ) ) {
 			$class = $handlers[$config['type']];
+
 			return new $class( $name, $config );
 		}
 
@@ -108,6 +109,7 @@ abstract class TranslationWebService {
 			return $results;
 		} catch ( Exception $e ) {
 			$this->reportTranslationServiceFailure( $e );
+
 			return array();
 		}
 	}
@@ -170,6 +172,7 @@ abstract class TranslationWebService {
 			// Cache the result for a day
 			wfGetCache( CACHE_ANYTHING )->set( $key, $pairs, 60 * 60 * 24 );
 		}
+
 		return $pairs;
 	}
 
@@ -182,6 +185,7 @@ abstract class TranslationWebService {
 		$text = str_replace( "\n", "!N!", $text );
 		$wrap = '<span class="notranslate" translate="no">\0</span>';
 		$text = preg_replace( '~%[^% ]+%|\$\d|{VAR:[^}]+}|{?{(PLURAL|GRAMMAR|GENDER):[^|]+\||%(\d\$)?[sd]~', $wrap, $text );
+
 		return $text;
 	}
 
@@ -191,6 +195,7 @@ abstract class TranslationWebService {
 	protected function unwrapUntranslatable( $text ) {
 		$text = str_replace( '!N!', "\n", $text );
 		$text = preg_replace( '~<span class="notranslate" translate="no">(.*?)</span>~', '\1', $text );
+
 		return $text;
 	}
 
@@ -225,6 +230,7 @@ abstract class TranslationWebService {
 				wfDebugLog( 'translationservices', "Translation service $service (was) restored" );
 			}
 			wfGetCache( CACHE_ANYTHING )->delete( $key );
+
 			return false;
 		} elseif ( $failed + $this->serviceFailurePeriod < wfTimestamp() ) {
 			/* We are in suspicious mode and one failure is enough to update

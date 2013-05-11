@@ -158,14 +158,18 @@ abstract class TranslateTask {
 class CustomFilteredMessagesTask extends TranslateTask {
 	protected $id = 'custom';
 
-	protected function preinit() {}
+	protected function preinit() {
+	}
 
-	protected function postinit() {}
+	protected function postinit() {
+	}
 
-	protected function doPaging() {}
+	protected function doPaging() {
+	}
 
 	protected function output() {
 		$table = new TuxMessageTable( $this->context, $this->group, $this->options['language'] );
+
 		return $table->fullTable();
 	}
 }
@@ -211,6 +215,7 @@ class ReviewMessagesTask extends ViewMessagesTask {
 		$table = MessageTable::newFromContext( $this->context, $this->collection, $this->group );
 		$table->appendEditLinkParams( 'loadtask', $this->getId() );
 		$table->setReviewMode();
+
 		return $table->fullTable( $this->offsets, $this->nondefaults );
 	}
 }
@@ -299,7 +304,8 @@ class ExportMessagesTask extends ViewMessagesTask {
 	}
 
 	// No paging should be done.
-	protected function doPaging() {}
+	protected function doPaging() {
+	}
 
 	public function output() {
 		if ( $this->group instanceof MessageGroupBase ) {
@@ -334,6 +340,7 @@ class ExportToFileMessagesTask extends ExportMessagesTask {
 
 		$filename = basename( $this->group->getSourceFilePath( $this->collection->getLanguage() ) );
 		header( "Content-Disposition: attachment; filename=\"$filename\"" );
+
 		return $data;
 	}
 }
@@ -371,6 +378,7 @@ class ExportAsPoMessagesTask extends ExportMessagesTask {
 		$id = $this->group->getID();
 		$filename = "${id}_$code.po";
 		header( "Content-Disposition: attachment; filename=\"$filename\"" );
+
 		return $ffs->writeIntoVariable( $this->collection );
 	}
 }

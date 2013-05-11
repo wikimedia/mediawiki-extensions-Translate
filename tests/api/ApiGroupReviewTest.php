@@ -34,5 +34,4 @@ class ApiGroupReviewTest extends MediaWikiTestCase {
 		$ok = ApiGroupReview::changeState( $group, 'fi', 'newstate', FuzzyBot::getUser() );
 		$this->assertFalse( $ok, 'state was not changed again' );
 	}
-
 }

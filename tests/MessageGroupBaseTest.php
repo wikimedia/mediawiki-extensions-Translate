@@ -92,5 +92,4 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 		$conf['BASIC']['namespace'] = 'ergweofijwef';
 		MessageGroupBase::factory( $conf );
 	}
-
 }

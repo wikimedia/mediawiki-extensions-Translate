@@ -82,7 +82,7 @@ class ApertiumWebService extends TranslationWebService {
 
 		$sug = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
 		$sug = $this->unwrapUntranslatable( $sug );
+
 		return trim( $sug );
 	}
-
 }

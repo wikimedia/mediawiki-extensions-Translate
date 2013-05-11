@@ -104,6 +104,7 @@ class MicrosoftWebService extends TranslationWebService {
 		$ret = $req->getContent();
 		$text = preg_replace( '~<string.*>(.*)</string>~', '\\1', $ret );
 		$text = Sanitizer::decodeCharReferences( $text );
+
 		return $this->unwrapUntranslatable( $text );
 	}
 }

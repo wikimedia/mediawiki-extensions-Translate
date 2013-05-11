@@ -100,5 +100,4 @@ class TranslateMetadata {
 		$conds = array( 'tmd_group' => $groupId );
 		$dbw->delete( 'translate_metadata', $conds );
 	}
-
 }

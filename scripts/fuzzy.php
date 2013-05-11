@@ -58,7 +58,6 @@ $bot->execute();
 
 /// @endcond
 
-
 /**
  * Class for marking translation fuzzy.
  */
@@ -180,17 +179,20 @@ class FuzzyScript {
 		STDOUT( "Updating {$title->getPrefixedText()}... ", $title );
 		if ( !$title instanceof Title ) {
 			STDOUT( "INVALID TITLE!", $title );
+
 			return;
 		}
 
 		$items = explode( '/', $title->getText(), 2 );
 		if ( isset( $items[1] ) && $items[1] === $wgTranslateDocumentationLanguageCode ) {
 			STDOUT( "IGNORED!", $title );
+
 			return;
 		}
 
 		if ( $dryrun ) {
 			STDOUT( "DRY RUN!", $title );
+
 			return;
 		}
 

@@ -161,8 +161,10 @@ class TranslateEditAddons {
 				$editpage->getArticle()->getContext()->getOutput()->wrapWikiMsg(
 					"<div class='error'>$1</div>", 'translate-language-disabled'
 				);
+
 				return false;
 			}
+
 			return true;
 		}
 		$msg = wfMessage( 'translate-edit-tag-warning' )->inContentLanguage()->plain();
@@ -185,6 +187,7 @@ class TranslateEditAddons {
 		}
 
 		$object->editFormTextTop .= self::editBoxes( $object );
+
 		return true;
 	}
 
@@ -258,7 +261,7 @@ class TranslateEditAddons {
 		$groupId = $request->getText( 'loadgroup', '' );
 		$th = new TranslationHelpers( $editpage->getTitle(), $groupId );
 		if ( $editpage->firsttime && !$request->getCheck( 'oldid' ) && !$request->getCheck( 'undo' ) ) {
-			$editpage->textbox1 = (string)$th->getTranslation();
+			$editpage->textbox1 = (string) $th->getTranslation();
 		} else {
 			$th->setTranslation( $editpage->textbox1 );
 		}
@@ -287,6 +290,7 @@ class TranslateEditAddons {
 	public static function isFuzzy( Title $title ) {
 		# wfDeprecated( __METHOD__, '1.19' );
 		$handle = new MessageHandle( $title );
+
 		return $handle->isFuzzy();
 	}
 
@@ -309,10 +313,11 @@ class TranslateEditAddons {
 	public static function keepFields( EditPage $editpage, OutputPage $out ) {
 		$request = $editpage->getArticle()->getContext()->getRequest();
 
-		$out->addHTML( "\n" .
-			Html::hidden( 'loadgroup', $request->getText( 'loadgroup' ) ) .
-			Html::hidden( 'loadtask', $request->getText( 'loadtask' ) ) .
-			"\n"
+		$out->addHTML(
+			"\n" .
+				Html::hidden( 'loadgroup', $request->getText( 'loadgroup' ) ) .
+				Html::hidden( 'loadtask', $request->getText( 'loadtask' ) ) .
+				"\n"
 		);
 
 		return true;
@@ -462,6 +467,7 @@ class TranslateEditAddons {
 		);
 		$index = array( 'rt_type', 'rt_page', 'rt_revision' );
 		$dbw->replace( 'revtag', array( $index ), $conds, __METHOD__ );
+
 		return true;
 	}
 
@@ -480,6 +486,7 @@ class TranslateEditAddons {
 				$popts->setPreSaveTransform( false );
 			}
 		}
+
 		return true;
 	}
 

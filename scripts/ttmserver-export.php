@@ -134,7 +134,6 @@ class TTMServerBootstrap extends Maintenance {
 			$server->batchInsertDefinitions( $batch );
 		} while ( count( $inserts ) );
 
-
 		$inserts = array();
 		foreach ( $stats as $targetLanguage => $numbers ) {
 			if ( $targetLanguage === $sourceLanguage ) {
@@ -161,7 +160,6 @@ class TTMServerBootstrap extends Maintenance {
 
 		$server->endBatch();
 	}
-
 }
 
 $maintClass = 'TTMServerBootstrap';

@@ -303,7 +303,6 @@ class ChangeSyncer {
 					$this->import( $title, $translation, 'Updating translation from external source' );
 					continue;
 				}
-
 			}
 
 			if ( !$this->interactive ) {

@@ -22,7 +22,6 @@ class RubyYamlFFSTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 		$this->group = MessageGroupBase::factory( $this->groupConfiguration );
-
 	}
 
 	protected function tearDown() {

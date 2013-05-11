@@ -14,7 +14,8 @@
  */
 class WorkflowStatesMessageGroup extends WikiMessageGroup {
 	// id and source are not needed
-	public function __construct() {}
+	public function __construct() {
+	}
 
 	public function getId() {
 		return 'translate-workflow-states';
@@ -23,12 +24,14 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 	public function getLabel( IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-workflowgroup-label' );
 		$msg = self::addContext( $msg, $context );
+
 		return $msg->plain();
 	}
 
 	public function getDescription( IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-workflowgroup-desc' );
 		$msg = self::addContext( $msg, $context );
+
 		return $msg->plain();
 	}
 

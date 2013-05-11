@@ -20,6 +20,7 @@ class MessageUpdateJob extends Job {
 			'fuzzy' => $fuzzy,
 		);
 		$job = new self( $target, $params );
+
 		return $job;
 	}
 

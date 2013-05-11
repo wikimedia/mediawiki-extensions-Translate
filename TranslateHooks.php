@@ -25,6 +25,7 @@ class TranslateHooks {
 		}
 		$list[NS_TRANSLATIONS] = 'Translations';
 		$list[NS_TRANSLATIONS_TALK] = 'Translations_talk';
+
 		return true;
 	}
 
@@ -108,7 +109,6 @@ class TranslateHooks {
 				$wgHooks['EditFilterMerged'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';
 				$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::addTranstag';
 				$wgHooks['RevisionInsertComplete'][] = 'PageTranslationHooks::updateTranstagOnNullRevisions';
-
 			} else {
 				// Add transver tags and update translation target pages
 				$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
@@ -137,7 +137,6 @@ class TranslateHooks {
 			$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::preventRestrictedTranslations';
 			// Prevent editing of translation pages directly
 			$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::preventDirectEditing';
-
 
 			// Our custom header for translation pages
 			$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::translatablePageHeader';
@@ -169,6 +168,7 @@ class TranslateHooks {
 		// For nice language list in-page
 		$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
 		$parser->setFunctionHook( 'translationdialog', array( 'TranslateHooks', 'translationDialogMagicWord' ) );
+
 		return true;
 	}
 
@@ -180,6 +180,7 @@ class TranslateHooks {
 	public static function setupUnitTests( &$files ) {
 		$testDir = __DIR__ . '/tests/';
 		$files = array_merge( $files, glob( "$testDir/*Test.php" ) );
+
 		return true;
 	}
 
@@ -204,6 +205,7 @@ class TranslateHooks {
 		$updater->addExtensionUpdate( array( 'addTable', 'translate_messageindex', "$dir/translate_messageindex.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addIndex', 'translate_groupstats', 'tgs_lang', "$dir/translate_groupstats-indexchange.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addField', 'translate_groupstats', 'tgs_proofread', "$dir/translate_groupstats-proofread.sql", true ) );
+
 		return true;
 	}
 
@@ -216,6 +218,7 @@ class TranslateHooks {
 		$tables[] = 'revtag';
 		$tables[] = 'translate_groupstats';
 		$tables[] = 'translate_messageindex';
+
 		return true;
 	}
 
@@ -231,6 +234,7 @@ class TranslateHooks {
 		if ( $handle->isMessageNamespace() ) {
 			$pageLang = $handle->getEffectiveLanguageCode();
 		}
+
 		return true;
 	}
 
@@ -249,6 +253,7 @@ class TranslateHooks {
 			$names[$wgTranslateDocumentationLanguageCode] =
 				wfMessage( 'translate-documentation-language' )->inLanguage( $code )->plain();
 		}
+
 		return true;
 	}
 
@@ -265,6 +270,7 @@ class TranslateHooks {
 		);
 
 		$profiles = wfArrayInsertAfter( $profiles, $insert, 'help' );
+
 		return true;
 	}
 
@@ -317,6 +323,7 @@ class TranslateHooks {
 		$form = Xml::fieldset( false, false, $params ) .
 			$hidden . $label . $selector .
 			Html::closeElement( 'fieldset' );
+
 		return false;
 	}
 
@@ -334,6 +341,7 @@ class TranslateHooks {
 			$engine->setFeatureData( 'title-suffix-filter', "/$selected" );
 			$search->setExtraParam( 'languagefilter', $selected );
 		}
+
 		return true;
 	}
 
@@ -365,6 +373,7 @@ JAVASCRIPT;
 			$linktext = wfMessage( 'translate-edit-jsopen' )->text();
 		}
 		$output = Html::element( 'a', $a, $linktext );
+
 		return $parser->insertStripItem( $output, $parser->mStripState );
 	}
 
@@ -384,6 +393,7 @@ JAVASCRIPT;
 		}
 
 		$filter = array_flip( explode( ',', $filterLangs ) );
+
 		// If the language is in the list, return true to not hide it
 		return isset( $filter[$code] );
 	}
@@ -394,6 +404,7 @@ JAVASCRIPT;
 		if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
 			$updater->mCategories = array();
 		}
+
 		return true;
 	}
 

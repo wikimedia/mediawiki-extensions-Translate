@@ -23,4 +23,5 @@
  *
  * @ingroup MessageGroup
  */
-class SingleFileBasedMessageGroup extends FileBasedMessageGroup {}
+class SingleFileBasedMessageGroup extends FileBasedMessageGroup {
+}

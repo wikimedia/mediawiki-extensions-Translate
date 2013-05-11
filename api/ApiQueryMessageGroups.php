@@ -157,6 +157,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		// Depth only applies to tree format
 		if ( $depth >= $params['depth'] && $params['format'] === 'tree' ) {
 			$a['groupcount'] = count( $subgroups );
+
 			// Prevent going further down in the three
 			return $a;
 		}
@@ -239,6 +240,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			),
 		);
 		wfRunHooks( 'TranslateGetAPIMessageGroupsParameterList', array( &$allowedParams ) );
+
 		return $allowedParams;
 	}
 
@@ -278,6 +280,7 @@ TEXT;
 				$val = wordwrap( str_replace( "\n", ' ', $val ), $wrapWidth, $indent );
 			}
 		}
+
 		return $paramDescs;
 	}
 
@@ -300,7 +303,9 @@ TEXT;
 			'priorityforce'  => ' priorityforce  - Include priority status - is the priority languages setting forced',
 			'workflowstates' => ' workflowstates - Include the workflow states for the message group',
 		);
+
 		wfRunHooks( 'TranslateGetAPIMessageGroupsPropertyDescs', array( &$properties ) );
+
 		return $properties;
 	}
 

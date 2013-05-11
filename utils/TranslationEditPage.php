@@ -41,6 +41,7 @@ class TranslationEditPage {
 
 		$obj = new self( $title );
 		$obj->suggestions = $request->getText( 'suggestions' );
+
 		return $obj;
 	}
 
@@ -78,11 +79,13 @@ class TranslationEditPage {
 
 		if ( $this->suggestions === 'only' ) {
 			echo $helpers->getBoxes( $this->suggestions );
+
 			return;
 		}
 
 		if ( $this->suggestions === 'checks' ) {
 			echo $helpers->getBoxes( $this->suggestions );
+
 			return;
 		}
 
@@ -237,7 +240,6 @@ class TranslationEditPage {
 			);
 		}
 
-
 		return array(
 			'onclick' => $onclick,
 			'title' => wfMessage( 'translate-edit-title', $title->getPrefixedText() )->text()
@@ -270,6 +272,7 @@ class TranslationEditPage {
 				'data-load-url' => $supportTitle->getLocalUrl( $supportParams ),
 			)
 		);
+
 		return $support;
 	}
 
@@ -293,7 +296,7 @@ class TranslationEditPage {
 				'data-load-url' => $title->getLocalUrl(),
 			)
 		);
+
 		return $button;
 	}
-
 }

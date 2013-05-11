@@ -58,7 +58,8 @@ class PageTranslationHooks {
 	 * Hook: PageContentLanguage
 	 */
 	public static function onPageContentLanguage( Title $title, /*string*/&$pageLang ) {
-		// For translation pages, parse plural, grammar etc with correct language, and set the right direction
+		// For translation pages, parse plural, grammar etc with correct language,
+		// and set the right direction
 		if ( TranslatablePage::isTranslationPage( $title ) ) {
 			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 			$pageLang = $code;
@@ -261,9 +262,11 @@ class PageTranslationHooks {
 			if ( $code === $userLangCode ) {
 				$classes[] = 'mw-pt-languages-ui';
 			}
+
 			if ( $currentTitle->equals( $subpage ) ) {
 				$classes[] = 'mw-pt-languages-selected';
 			}
+
 			if ( count( $classes ) ) {
 				$attribs = array( 'class' => implode( ' ', $classes ) );
 				$name = Html::rawElement( 'span', $attribs, $name );
@@ -375,6 +378,7 @@ class PageTranslationHooks {
 		$page = TranslatablePage::newFromText( $title, $text );
 		try {
 			$page->getParse();
+
 			return null;
 		} catch ( TPException $e ) {
 			return $e;
@@ -387,7 +391,7 @@ class PageTranslationHooks {
 	 * Hook: ArticleSave, PageContentSave
 	 */
 	public static function tpSyntaxCheck( $wikiPage, $user, $content, $summary,
-			$minor, $_, $_, $flags, $status
+		$minor, $_, $_, $flags, $status
 	) {
 		if ( $content instanceof TextContent ) {
 			$text = $content->getNativeData();
@@ -409,6 +413,7 @@ class PageTranslationHooks {
 			$page->getParse();
 		} catch ( TPException $e ) {
 			call_user_func_array( array( $status, 'fatal' ), $e->getMsg() );
+
 			return false;
 		}
 
@@ -419,7 +424,7 @@ class PageTranslationHooks {
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
 	 */
 	public static function addTranstag( $wikiPage, $user, $content, $summary,
-			$minor, $_, $_, $flags, $revision
+		$minor, $_, $_, $flags, $revision
 	) {
 		// We are not interested in null revisions
 		if ( $revision === null ) {
@@ -499,6 +504,7 @@ class PageTranslationHooks {
 		if ( $page->getReadyTag() === $oldRevId ) {
 			$page->addReadyTag( $newRevId );
 		}
+
 		return true;
 	}
 
@@ -511,9 +517,11 @@ class PageTranslationHooks {
 		if ( $handle->isPageTranslation() && $action === 'edit' ) {
 			if ( !$handle->isValid() ) {
 				$result = array( 'tpt-unknown-page' );
+
 				return false;
 			}
 		}
+
 		return true;
 	}
 
@@ -522,7 +530,9 @@ class PageTranslationHooks {
 	 * Hook: getUserPermissionsErrorsExpensive
 	 * @since 2012-03-01
 	 */
-	public static function preventRestrictedTranslations( Title $title, User $user, $action, &$result ) {
+	public static function preventRestrictedTranslations( Title $title, User $user,
+		$action, &$result
+	) {
 		// Preventing editing (includes creation) should be enough
 		if ( $action !== 'edit' ) {
 			return true;
@@ -550,6 +560,7 @@ class PageTranslationHooks {
 			// @todo Default reason if none provided
 			$reason = TranslateMetadata::get( $groupId, 'priorityreason' );
 			$result = array( 'tpt-translation-restricted', $reason );
+
 			return false;
 		}
 
@@ -604,6 +615,7 @@ class PageTranslationHooks {
 			$new = SpecialPage::getTitleFor( 'PageTranslationDeletePage', $title->getPrefixedText() );
 			$out->redirect( $new->getFullUrl() );
 		}
+
 		return true;
 	}
 
@@ -728,6 +740,7 @@ class PageTranslationHooks {
 	public static function replaceMovePage( &$list ) {
 		$old = is_array( $list['Movepage'] );
 		$list['Movepage'] = array( 'SpecialPageTranslationMovePage', $old );
+
 		return true;
 	}
 
@@ -742,6 +755,7 @@ class PageTranslationHooks {
 		// At least memcached mangles true to "1"
 		if ( $cache->get( $key ) == true ) {
 			$result = array( 'pt-locked-page' );
+
 			return false;
 		}
 
@@ -804,6 +818,7 @@ class PageTranslationHooks {
 					$growinglink .= '/';
 				}
 			}
+
 			return false;
 		}
 
@@ -830,7 +845,7 @@ class PageTranslationHooks {
 		}
 		$output = Html::element( 'textarea', array( 'rows' => 25 ), $text );
 		$context->getOutput()->addHtml( $output );
+
 		return false;
 	}
-
 }

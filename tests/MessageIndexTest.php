@@ -26,6 +26,7 @@ class MessageIndexTest extends MediaWikiTestCase {
 		if ( $data === null ) {
 			$data = unserialize( file_get_contents( __DIR__ . '/messageindexdata.ser' ) );
 		}
+
 		return $data;
 	}
 

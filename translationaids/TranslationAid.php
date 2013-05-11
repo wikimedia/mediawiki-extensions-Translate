@@ -134,5 +134,4 @@ abstract class TranslationAid {
 
 		return $types;
 	}
-
 }

@@ -81,6 +81,7 @@ abstract class ComplexMessages {
 					unset( $current[$item][$index] );
 				}
 		}
+
 		return $current;
 	}
 
@@ -89,8 +90,8 @@ abstract class ComplexMessages {
 			$newchain = $defs[$item];
 			array_splice( $newchain, 1, 0, $values );
 			$values = $newchain;
-
 		}
+
 		return $current;
 	}
 
@@ -181,6 +182,7 @@ abstract class ComplexMessages {
 	 */
 	protected function getIterator( $group ) {
 		$groups = $this->getGroups();
+
 		return array_keys( $groups[$group]['data'][self::LANG_MASTER] );
 	}
 
@@ -221,7 +223,7 @@ abstract class ComplexMessages {
 		}
 
 		if ( $group['code'] ) {
-			$data = (array)@${$group['var']} [$code];
+			$data = (array) @${$group['var']} [$code];
 		} else {
 			$data = ${$group['var']};
 		}
@@ -237,6 +239,7 @@ abstract class ComplexMessages {
 				$data[$index] = call_user_func( $callback, $values );
 			}
 		}
+
 		return $data;
 	}
 
@@ -253,6 +256,7 @@ abstract class ComplexMessages {
 		$subheading[] = '<th>' . wfMessage( 'translate-magic-cm-original' )->escaped() . '</th>';
 		$subheading[] = '<th>' . wfMessage( 'translate-magic-cm-current' )->escaped() . '</th>';
 		$subheading[] = '<th>' . wfMessage( 'translate-magic-cm-to-be' )->escaped() . '</th>';
+
 		return '<tr>' . $header . '</tr>' .
 			'<tr>' . implode( "\n", $subheading ) . '</tr>';
 	}
@@ -329,6 +333,7 @@ abstract class ComplexMessages {
 			$element = array_map( 'trim', $element );
 			$element = implode( ', ', $element );
 		}
+
 		return trim( $element );
 	}
 
@@ -383,6 +388,7 @@ abstract class ComplexMessages {
 				}
 			}
 		}
+
 		return $text;
 	}
 
@@ -413,7 +419,7 @@ abstract class ComplexMessages {
 	public function validate( &$errors = array(), $filter = false ) {
 		$used = array();
 		foreach ( array_keys( $this->data ) as $group ) {
-			if ( $filter !== false && !in_array( $group, (array)$filter, true ) ) {
+			if ( $filter !== false && !in_array( $group, (array) $filter, true ) ) {
 				continue;
 			}
 
@@ -449,7 +455,7 @@ abstract class ComplexMessages {
 		foreach ( $errors as $_ ) $text .= "#!!# $_\n";
 
 		foreach ( $this->getGroups() as $group => $data ) {
-			if ( $filter !== false && !in_array( $group, (array)$filter, true ) ) {
+			if ( $filter !== false && !in_array( $group, (array) $filter, true ) ) {
 				continue;
 			}
 
@@ -524,6 +530,7 @@ abstract class ComplexMessages {
 		if ( $out !== '' ) {
 			$text = "# {$data['label']} \n";
 			$text .= "\$$var$extra = array(\n" . $out . ");\n\n";
+
 			return $text;
 		} else {
 			return '';
@@ -542,6 +549,7 @@ abstract class ComplexMessages {
 			throw new MWException();
 		}
 		$data = preg_replace( "/(?<!\\\\)'/", "\'", trim( $data ) );
+
 		return "'$data'";
 	}
 
@@ -561,7 +569,6 @@ class SpecialPageAliasesCM extends ComplexMessages {
 	protected $id = SpecialMagic::MODULE_SPECIAL;
 	protected $databaseMsg = 'sp-translate-data-SpecialPageAliases';
 	protected $chainable = true;
-
 
 	public function __construct( $code ) {
 		parent::__construct( $code );
@@ -604,6 +611,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 
 			$values[0] = "<strong>$values[0]</strong>";
 		}
+
 		return $values;
 	}
 

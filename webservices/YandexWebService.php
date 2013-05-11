@@ -76,6 +76,7 @@ class YandexWebService extends TranslationWebService {
 
 		$sug = Sanitizer::decodeCharReferences( $response->text[0] );
 		$sug = $this->unwrapUntranslatable( $sug );
+
 		return trim( $sug );
 	}
 }

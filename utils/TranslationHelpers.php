@@ -112,7 +112,10 @@ class TranslationHelpers {
 		if ( method_exists( $this->group, 'getMessageContent' ) ) {
 			$this->definition = $this->group->getMessageContent( $this->handle );
 		} else {
-			$this->definition = $this->group->getMessage( $this->handle->getKey(), $this->group->getSourceLanguage() );
+			$this->definition = $this->group->getMessage(
+				$this->handle->getKey(),
+				$this->group->getSourceLanguage()
+			);
 		}
 
 		return $this->definition;
@@ -128,10 +131,12 @@ class TranslationHelpers {
 			$obj = new CurrentTranslationAid( $this->group, $this->handle, RequestContext::getMain() );
 			$aid = $obj->getData();
 			$this->translation = $aid['value'];
+
 			if ( $aid['fuzzy'] ) {
 				$this->translation = TRANSLATE_FUZZY . $this->translation;
 			}
 		}
+
 		return $this->translation;
 	}
 
@@ -158,6 +163,7 @@ class TranslationHelpers {
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
 			return $wgLanguageCode;
 		}
+
 		return $code;
 	}
 
@@ -175,11 +181,16 @@ class TranslationHelpers {
 		if ( $suggestions === 'async' ) {
 			$all['translation-memory'] = array( $this, 'getLazySuggestionBox' );
 		} elseif ( $suggestions === 'only' ) {
-			return (string)$this->callBox( 'translation-memory', $all['translation-memory'], array( 'lazy' ) );
+			return (string) $this->callBox(
+				'translation-memory',
+				$all['translation-memory'],
+				array( 'lazy' )
+			);
 		} elseif ( $suggestions === 'checks' ) {
 			global $wgRequest;
 			$this->translation = $wgRequest->getText( 'translation' );
-			return (string)$this->callBox( 'check', $all['check'] );
+
+			return (string) $this->callBox( 'check', $all['check'] );
 		}
 
 		if ( $this->group instanceof RecentMessageGroup ) {
@@ -197,7 +208,11 @@ class TranslationHelpers {
 		wfRunHooks( 'TranslateGetBoxes', array( $this->group, $this->handle, &$boxes ) );
 
 		if ( count( $boxes ) ) {
-			return Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), implode( "\n\n", $boxes ) );
+			return Html::rawElement(
+				'div',
+				array( 'class' => 'mw-sp-translate-edit-fields' ),
+				implode( "\n\n", $boxes )
+			);
 		} else {
 			return '';
 		}
@@ -372,6 +387,7 @@ class TranslationHelpers {
 		// Limit to three best
 		$boxes = array_slice( $boxes, 0, 3 );
 		$result = implode( "\n", $boxes );
+
 		return $result;
 	}
 
@@ -442,6 +458,7 @@ class TranslationHelpers {
 		// Enclose if there is more than one box
 		if ( count( $boxes ) ) {
 			$sep = Html::element( 'hr', array( 'class' => 'mw-translate-sep' ) );
+
 			return $errors . TranslateUtils::fieldset( wfMessage( 'translate-edit-tmsugs' )->escaped(),
 				implode( "$sep\n", $boxes ), array( 'class' => 'mw-translate-edit-tmsugs' ) );
 		} else {
@@ -532,19 +549,23 @@ class TranslationHelpers {
 		$text = Sanitizer::decodeCharReferences( $text );
 		$text = self::unwrapUntranslatable( $text );
 		$text = $this->suggestionField( $text );
+
 		return Html::rawElement( 'div', array(), self::legend( $serviceName ) . $text . self::clear() );
 	}
 
 	protected static function wrapUntranslatable( $text ) {
 		$text = str_replace( "\n", "!N!", $text );
 		$wrap = '<span class="notranslate">\0</span>';
-		$text = preg_replace( '~%[^% ]+%|\$\d|{VAR:[^}]+}|{?{(PLURAL|GRAMMAR|GENDER):[^|]+\||%(\d\$)?[sd]~', $wrap, $text );
+		$pattern = '~%[^% ]+%|\$\d|{VAR:[^}]+}|{?{(PLURAL|GRAMMAR|GENDER):[^|]+\||%(\d\$)?[sd]~';
+		$text = preg_replace( $pattern, $wrap, $text );
+
 		return $text;
 	}
 
 	protected static function unwrapUntranslatable( $text ) {
 		$text = str_replace( '!N!', "\n", $text );
 		$text = preg_replace( '~<span class="notranslate">(.*?)</span>~', '\1', $text );
+
 		return $text;
 	}
 
@@ -624,7 +645,10 @@ class TranslationHelpers {
 			if ( $json === false || !is_object( $response ) ) {
 				self::reportTranslationServiceFailure( $serviceName );
 			} elseif ( $response->responseStatus !== 200 ) {
-				error_log( __METHOD__ . " (HTTP {$response->responseStatus}) with ($serviceName ($candidate|$code)): " . $response->responseDetails );
+				error_log( __METHOD__ .
+						" (HTTP {$response->responseStatus}) with ($serviceName ($candidate|$code)): " .
+						$response->responseDetails
+				);
 			} else {
 				$sug = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
 				$sug = trim( $sug );
@@ -641,6 +665,7 @@ class TranslationHelpers {
 		}
 
 		$divider = Html::element( 'div', array( 'style' => 'margin-bottom: 0.5ex' ) );
+
 		return implode( "$divider\n", $suggestions );
 	}
 
@@ -682,6 +707,7 @@ class TranslationHelpers {
 				if ( $weight1 === $weight2 ) {
 					return 0;
 				}
+
 				return ( $weight1 < $weight2 ) ? -1 : 1;
 			};
 
@@ -743,6 +769,7 @@ class TranslationHelpers {
 		}
 
 		$divider = Html::element( 'div', array( 'style' => 'margin-bottom: 0.5ex' ) );
+
 		return implode( "$divider\n", $suggestions );
 	}
 
@@ -969,7 +996,6 @@ class TranslationHelpers {
 			wfMessage( 'translate-edit-information' )->rawParams( $edit )->escaped(),
 			Html::rawElement( 'div', $divAttribs, $contents ), array( 'class' => $class )
 		);
-
 	}
 
 	protected function formatGettextComments() {
@@ -1012,6 +1038,7 @@ class TranslationHelpers {
 						}
 					}
 				}
+
 				return "$out";
 			}
 		}
@@ -1125,7 +1152,11 @@ class TranslationHelpers {
 			}
 		}
 
-		return TranslateUtils::fieldset( $text, $diffText, array( 'class' => 'mw-sp-translate-latestchange' ) );
+		return TranslateUtils::fieldset(
+			$text,
+			$diffText,
+			array( 'class' => 'mw-sp-translate-latestchange' )
+		);
 	}
 
 	/**
@@ -1167,7 +1198,7 @@ class TranslationHelpers {
 		// Global configuration settings
 		$fallbacks = array();
 		if ( isset( $wgTranslateLanguageFallbacks[$code] ) ) {
-			$fallbacks = (array)$wgTranslateLanguageFallbacks[$code];
+			$fallbacks = (array) $wgTranslateLanguageFallbacks[$code];
 		}
 
 		$list = Language::getFallbacksFor( $code );
@@ -1198,6 +1229,7 @@ class TranslationHelpers {
 
 		$script = Html::inlineScript( "jQuery($target).load($url)" );
 		$spinner = Html::element( 'div', array( 'class' => 'mw-ajax-loader' ) );
+
 		return Html::rawElement( 'div', array( 'id' => $id ), $script . $spinner );
 	}
 
@@ -1206,6 +1238,7 @@ class TranslationHelpers {
 	 */
 	public function dialogID() {
 		$hash = sha1( $this->handle->getTitle()->getPrefixedDbKey() );
+
 		return substr( $hash, 0, 4 );
 	}
 
@@ -1286,6 +1319,7 @@ class TranslationHelpers {
 	 */
 	public static function jQueryPathId( $id ) {
 		$id = preg_replace( '/[^A-Za-z0-9_-]/', '\\\\$0', $id );
+
 		return Xml::encodeJsVar( "#$id" );
 	}
 
@@ -1317,6 +1351,7 @@ class TranslationHelpers {
 				error_log( "Translation service $service (was) restored" );
 			}
 			wfGetCache( CACHE_ANYTHING )->delete( $key );
+
 			return;
 		} elseif ( $failed + self::$serviceFailurePeriod < wfTimestamp() ) {
 			/* We are in suspicious mode and one failure is enough to update
@@ -1389,7 +1424,6 @@ class TranslationHelpers {
 			throw new TranslationHelperException( 'message does not have definition' );
 		}
 	}
-
 }
 
 /**
@@ -1401,4 +1435,5 @@ class TranslationHelpers {
  * - mustHaveDefinition()
  * @since 2012-01-04 (Renamed in 2012-07-24 to fix typo in name)
  */
-class TranslationHelperException extends MWException {}
+class TranslationHelperException extends MWException {
+}
