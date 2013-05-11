@@ -102,7 +102,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$facet = $resultset->getFacetSet()->getFacet( 'group' );
 		$facets .= Html::element( 'div',
 			array( 'class' => 'row facet groups',
-				'data-facets' => FormatJson::encode(  $this->getGroups( $facet) ),
+				'data-facets' => FormatJson::encode( $this->getGroups( $facet ) ),
 				'data-group' => $opts->getValue( 'group' ), ),
 			$this->msg( 'tux-sst-facet-group' )
 		);

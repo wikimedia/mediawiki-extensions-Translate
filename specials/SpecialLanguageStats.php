@@ -120,11 +120,11 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		}
 
 		if ( isset( $params[1] ) ) {
-			$this->noComplete = (bool)$params[1];
+			$this->noComplete = (bool) $params[1];
 		}
 
 		if ( isset( $params[2] ) ) {
-			$this->noEmpty = (bool)$params[2];
+			$this->noEmpty = (bool) $params[2];
 		}
 
 		// Whether the form has been submitted, only relevant if not including

@@ -26,7 +26,7 @@ class XliffFFS extends SimpleFFS {
 				continue;
 			}
 
-			$key = (string)$item['id'];
+			$key = (string) $item['id'];
 
 			/* In case there are tags inside the element, preserve
 			 * them. */
@@ -38,7 +38,7 @@ class XliffFFS extends SimpleFFS {
 			 * for now if there is explicit approved=no, mark it
 			 * as fuzzy, but don't do that if the attribute is not
 			 * set */
-			if ( (string)$source['state'] === 'needs-l10n' ) {
+			if ( (string) $source['state'] === 'needs-l10n' ) {
 				$value = TRANSLATE_FUZZY . $value;
 			}
 
@@ -72,7 +72,7 @@ class XliffFFS extends SimpleFFS {
 	public static function getInnerXml( DomElement $node ) {
 		$text = '';
 		foreach ( $node->childNodes as $child ) {
-				$text .= $child->ownerDocument->saveXML( $child );
+			$text .= $child->ownerDocument->saveXML( $child );
 		}
 		return $text;
 	}

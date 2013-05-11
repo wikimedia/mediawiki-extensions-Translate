@@ -82,11 +82,12 @@ class SpecialManageGroups extends SpecialPage {
 		$this->diff = $diff;
 
 		$out = $this->getOutput();
-		$out->addHtml( '' .
-			Html::openElement( 'form', array( 'method' => 'post' ) ) .
-			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
-			$this->getLegend()
+		$out->addHtml(
+			'' .
+				Html::openElement( 'form', array( 'method' => 'post' ) ) .
+				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+				Html::hidden( 'token', $this->getUser()->getEditToken() ) .
+				$this->getLegend()
 		);
 
 		$counter = 0;

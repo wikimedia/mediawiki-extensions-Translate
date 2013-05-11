@@ -345,8 +345,7 @@ $wgResourceModules['ext.translate.special.translatesandbox'] = array(
 		'jquery.uls.grid',
 		'jquery.ui.dialog',
 	),
-	'messages' => array(
-	),
+	'messages' => array(),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.translationstats'] = array(

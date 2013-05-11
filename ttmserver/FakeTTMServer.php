@@ -29,11 +29,24 @@ class FakeTTMServer implements ReadableTTMServer, WritableTTMServer {
 		return '';
 	}
 
-	public function update( MessageHandle $handle, $targetText ) {}
-	public function beginBootstrap() {}
-	public function beginBatch() {}
-	public function batchInsertDefinitions( array $batch ) {}
-	public function batchInsertTranslations( array $batch ) {}
-	public function endBatch() {}
-	public function endBootstrap() {}
+	public function update( MessageHandle $handle, $targetText ) {
+	}
+
+	public function beginBootstrap() {
+	}
+
+	public function beginBatch() {
+	}
+
+	public function batchInsertDefinitions( array $batch ) {
+	}
+
+	public function batchInsertTranslations( array $batch ) {
+	}
+
+	public function endBatch() {
+	}
+
+	public function endBootstrap() {
+	}
 }

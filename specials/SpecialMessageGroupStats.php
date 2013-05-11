@@ -52,7 +52,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 				$this->target = $group->getId();
 			}
 		}
-		return (bool)$group;
+		return (bool) $group;
 	}
 
 	/// Overwritten from SpecialLanguageStats

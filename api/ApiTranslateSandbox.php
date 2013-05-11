@@ -21,18 +21,18 @@ class ApiTranslateSandbox extends ApiBase {
 
 		$params = $this->extractRequestParams();
 		switch ( $params['do'] ) {
-		case 'create':
-			$this->doCreate();
-			break;
-		case 'delete':
-			$this->doDelete();
-			break;
-		case 'promote':
-			$this->doPromote();
-			break;
-		case 'remind':
-			$this->doRemind();
-			break;
+			case 'create':
+				$this->doCreate();
+				break;
+			case 'delete':
+				$this->doDelete();
+				break;
+			case 'promote':
+				$this->doPromote();
+				break;
+			case 'remind':
+				$this->doRemind();
+				break;
 		}
 	}
 

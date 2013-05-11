@@ -272,13 +272,13 @@ class SpecialTranslate extends SpecialPage {
 
 		foreach ( $defaults as $v => $t ) {
 			if ( is_bool( $t ) ) {
-				$r = isset( $pars[$v] ) ? (bool)$pars[$v] : $defaults[$v];
+				$r = isset( $pars[$v] ) ? (bool) $pars[$v] : $defaults[$v];
 				$r = $request->getBool( $v, $r );
 			} elseif ( is_int( $t ) ) {
-				$r = isset( $pars[$v] ) ? (int)$pars[$v] : $defaults[$v];
+				$r = isset( $pars[$v] ) ? (int) $pars[$v] : $defaults[$v];
 				$r = $request->getInt( $v, $r );
 			} elseif ( is_string( $t ) ) {
-				$r = isset( $pars[$v] ) ? (string)$pars[$v] : $defaults[$v];
+				$r = isset( $pars[$v] ) ? (string) $pars[$v] : $defaults[$v];
 				$r = $request->getText( $v, $r );
 			}
 

@@ -46,7 +46,7 @@ abstract class MessageIndex {
 
 		$value = self::singleton()->get( $normkey );
 		if ( $value !== null ) {
-			return (array)$value;
+			return (array) $value;
 		} else {
 			return array();
 		}
@@ -140,15 +140,15 @@ abstract class MessageIndex {
 		foreach ( $new as $key => $groups ) {
 			// Using != here on purpose to ignore order of items
 			if ( !isset( $old[$key] ) ) {
-				$changes[$key] = array( array(), (array)$groups );
+				$changes[$key] = array( array(), (array) $groups );
 			} elseif ( $groups != $old[$key] ) {
-				$changes[$key] = array( (array)$old[$key], (array)$groups );
+				$changes[$key] = array( (array) $old[$key], (array) $groups );
 			}
 		}
 
 		foreach ( $old as $key => $groups ) {
 			if ( !isset( $new[$key] ) ) {
-				$changes[$key] = array( (array)$groups, array() );
+				$changes[$key] = array( (array) $groups, array() );
 			}
 			// We already checked for diffs above
 		}
@@ -206,7 +206,7 @@ abstract class MessageIndex {
 			$key = TranslateUtils::normaliseKey( $namespace, $key );
 			if ( isset( $hugearray[$key] ) ) {
 				if ( !$ignore ) {
-					$to = implode( ', ', (array)$hugearray[$key] );
+					$to = implode( ', ', (array) $hugearray[$key] );
 					STDERR( "Key $key already belongs to $to, conflict with $id" );
 				}
 
@@ -437,7 +437,7 @@ class CDBMessageIndex extends MessageIndex {
 		}
 
 		wfProfileIn( __METHOD__ );
-		$keys = (array)$this->unserialize( $reader->get( '#keys' ) );
+		$keys = (array) $this->unserialize( $reader->get( '#keys' ) );
 		$this->index = array();
 		foreach ( $keys as $key ) {
 			$this->index[$key] = $this->unserialize( $reader->get( $key ) );

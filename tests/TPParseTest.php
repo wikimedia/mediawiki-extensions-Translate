@@ -30,13 +30,13 @@ class TPParseTest extends MediaWikiTestCase {
 			$message->setTranslation( $section->getText() );
 			$collection[$key] = $message;
 		}
+
 		$actual = $parse->getTranslationPageText( $collection );
 		$this->assertEquals( $expected, $actual, 'Variable declarations are substituted in source language' );
 
-
 		foreach ( $parse->sections as $section ) {
 			$key = $prefix . $section->id;
-			$message =  new FatMessage( $key, $section->getText() );
+			$message = new FatMessage( $key, $section->getText() );
 			$message->setTranslation( $section->getTextForTrans() );
 			$collection[$key] = $message;
 		}

@@ -30,6 +30,7 @@ class JavaFFS extends SimpleFFS {
 			$this->keySeparator = $this->extra['keySeparator'];
 		}
 	}
+
 	// READ
 
 	/**

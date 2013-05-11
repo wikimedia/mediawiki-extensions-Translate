@@ -14,7 +14,8 @@
  */
 class WorkflowStatesMessageGroup extends WikiMessageGroup {
 	// id and source are not needed
-	public function __construct() {}
+	public function __construct() {
+	}
 
 	public function getId() {
 		return 'translate-workflow-states';

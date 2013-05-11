@@ -292,7 +292,7 @@ class MessageTable {
 			'name' => 'acceptbutton-' . $revision, // Otherwise Firefox disables buttons on page load
 		);
 
-		$reviewers = (array)$message->getProperty( 'reviewers' );
+		$reviewers = (array) $message->getProperty( 'reviewers' );
 		if ( in_array( $wgUser->getId(), $reviewers ) ) {
 			$attribs['value'] = wfMessage( 'translate-messagereview-done' )->text();
 			$attribs['disabled'] = 'disabled';
@@ -323,7 +323,7 @@ class MessageTable {
 			return '';
 		}
 
-		$reviewers = (array)$message->getProperty( 'reviewers' );
+		$reviewers = (array) $message->getProperty( 'reviewers' );
 		$count = count( $reviewers );
 		if ( $count === 0 ) {
 			return '';

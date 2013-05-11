@@ -158,11 +158,14 @@ abstract class TranslateTask {
 class CustomFilteredMessagesTask extends TranslateTask {
 	protected $id = 'custom';
 
-	protected function preinit() {}
+	protected function preinit() {
+	}
 
-	protected function postinit() {}
+	protected function postinit() {
+	}
 
-	protected function doPaging() {}
+	protected function doPaging() {
+	}
 
 	protected function output() {
 		$table = new TuxMessageTable( $this->context, $this->group, $this->options['language'] );
@@ -299,7 +302,8 @@ class ExportMessagesTask extends ViewMessagesTask {
 	}
 
 	// No paging should be done.
-	protected function doPaging() {}
+	protected function doPaging() {
+	}
 
 	public function output() {
 		if ( $this->group instanceof MessageGroupBase ) {

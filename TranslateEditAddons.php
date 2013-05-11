@@ -258,7 +258,7 @@ class TranslateEditAddons {
 		$groupId = $request->getText( 'loadgroup', '' );
 		$th = new TranslationHelpers( $editpage->getTitle(), $groupId );
 		if ( $editpage->firsttime && !$request->getCheck( 'oldid' ) && !$request->getCheck( 'undo' ) ) {
-			$editpage->textbox1 = (string)$th->getTranslation();
+			$editpage->textbox1 = (string) $th->getTranslation();
 		} else {
 			$th->setTranslation( $editpage->textbox1 );
 		}
@@ -309,10 +309,11 @@ class TranslateEditAddons {
 	public static function keepFields( EditPage $editpage, OutputPage $out ) {
 		$request = $editpage->getArticle()->getContext()->getRequest();
 
-		$out->addHTML( "\n" .
-			Html::hidden( 'loadgroup', $request->getText( 'loadgroup' ) ) .
-			Html::hidden( 'loadtask', $request->getText( 'loadtask' ) ) .
-			"\n"
+		$out->addHTML(
+			"\n" .
+				Html::hidden( 'loadgroup', $request->getText( 'loadgroup' ) ) .
+				Html::hidden( 'loadtask', $request->getText( 'loadtask' ) ) .
+				"\n"
 		);
 
 		return true;

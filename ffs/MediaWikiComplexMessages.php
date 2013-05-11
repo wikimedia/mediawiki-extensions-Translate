@@ -221,7 +221,7 @@ abstract class ComplexMessages {
 		}
 
 		if ( $group['code'] ) {
-			$data = (array)@${$group['var']} [$code];
+			$data = (array) @${$group['var']} [$code];
 		} else {
 			$data = ${$group['var']};
 		}
@@ -413,7 +413,7 @@ abstract class ComplexMessages {
 	public function validate( &$errors = array(), $filter = false ) {
 		$used = array();
 		foreach ( array_keys( $this->data ) as $group ) {
-			if ( $filter !== false && !in_array( $group, (array)$filter, true ) ) {
+			if ( $filter !== false && !in_array( $group, (array) $filter, true ) ) {
 				continue;
 			}
 
@@ -449,7 +449,7 @@ abstract class ComplexMessages {
 		foreach ( $errors as $_ ) $text .= "#!!# $_\n";
 
 		foreach ( $this->getGroups() as $group => $data ) {
-			if ( $filter !== false && !in_array( $group, (array)$filter, true ) ) {
+			if ( $filter !== false && !in_array( $group, (array) $filter, true ) ) {
 				continue;
 			}
 

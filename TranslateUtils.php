@@ -240,7 +240,7 @@ class TranslateUtils {
 		$normkey = self::normaliseKey( $namespace, $key );
 
 		if ( isset( $mi[$normkey] ) ) {
-			return (array)$mi[$normkey];
+			return (array) $mi[$normkey];
 		} else {
 			return array();
 		}

@@ -197,7 +197,7 @@ class MessageGroups {
 	 * @return bool
 	 */
 	public static function exists( $id ) {
-		return (bool)self::getGroup( $id );
+		return (bool) self::getGroup( $id );
 	}
 
 	/**
@@ -384,7 +384,8 @@ class MessageGroups {
 		return $paths;
 	}
 
-	private function __construct() {}
+	private function __construct() {
+	}
 
 	/**
 	 * Constructor function.
@@ -451,7 +452,7 @@ class MessageGroups {
 	public static function expandWildcards( $ids ) {
 		$all = array();
 
-		$matcher = new StringMatcher( '', (array)$ids );
+		$matcher = new StringMatcher( '', (array) $ids );
 		foreach ( self::getAllGroups() as $id => $_ ) {
 			if ( $matcher->match( $id ) ) {
 				$all[] = $id;

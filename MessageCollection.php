@@ -233,7 +233,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * @deprecated 2013-01-18 enabled by default
 	 */
-	public function setReviewMode( $value = true ) {}
+	public function setReviewMode( $value = true ) {
+	}
 
 	// Data modifiers
 

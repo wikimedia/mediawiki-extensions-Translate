@@ -76,7 +76,8 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		$result = $solarium->select( $select );
 		$this->assertEquals( 1, $result->getNumFound() );
 		$doc = null;
-		foreach ( $result as $doc ) {}
+		foreach ( $result as $doc ) {
+		}
 		$this->assertEquals( wfWikiId(), $doc->wiki );
 		$this->assertEquals( 'en', $doc->language );
 		$this->assertEquals( '1', $doc->content );
@@ -93,7 +94,8 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		$result = $solarium->select( $select );
 		$this->assertEquals( 1, $result->getNumFound() );
 		$doc = null;
-		foreach ( $result as $doc ) {}
+		foreach ( $result as $doc ) {
+		}
 		$this->assertEquals( 'yksi', $doc->content );
 		$this->assertEquals( array( 'ttmserver-test' ), $doc->group );
 
@@ -127,7 +129,8 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		$result = $solarium->select( $select );
 		$this->assertEquals( 1, $result->getNumFound() );
 		$doc = null;
-		foreach ( $result as $doc ) {}
+		foreach ( $result as $doc ) {
+		}
 		$this->assertEquals( 'yksi-päiv', $doc->content );
 
 		// And now the messages should be orphaned

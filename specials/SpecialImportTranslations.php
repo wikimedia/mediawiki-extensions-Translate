@@ -141,7 +141,7 @@ class SpecialImportTranslations extends SpecialPage {
 
 		$class = array( 'class' => 'mw-translate-import-inputs' );
 
-		if( $wgTranslateAllowImportFromUrl === true ) {
+		if ( $wgTranslateAllowImportFromUrl === true ) {
 			$this->getOutput()->addHTML(
 				Xml::radioLabel( $this->msg( 'translate-import-from-url' )->text(),
 					'upload-type', 'url', 'mw-translate-up-url',

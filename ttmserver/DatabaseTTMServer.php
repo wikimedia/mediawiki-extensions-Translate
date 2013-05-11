@@ -181,7 +181,8 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		wfWaitForSlaves( 10 );
 	}
 
-	public function endBatch() {}
+	public function endBatch() {
+	}
 
 	public function endBootstrap() {
 		$dbw = $this->getDB( DB_MASTER );

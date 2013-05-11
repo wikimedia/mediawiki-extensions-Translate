@@ -167,7 +167,8 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 }
 
 class MockMessageHandle extends MessageHandle {
-	public function __construct() {}
+	public function __construct() {
+	}
 
 	public function getGroupIds() {
 		return array( 'group-trans', 'group-notrans' );

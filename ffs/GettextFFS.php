@@ -12,7 +12,8 @@
 /**
  * Identifies Gettext plural exceptions.
  */
-class GettextPluralException extends MwException {}
+class GettextPluralException extends MwException {
+}
 
 /**
  * New-style FFS class that implements support for gettext file format.

@@ -28,7 +28,8 @@ abstract class MessageGroupBase implements MessageGroup {
 	 */
 	protected $mangler;
 
-	protected function __construct() {}
+	protected function __construct() {
+	}
 
 	/**
 	 * @param $conf

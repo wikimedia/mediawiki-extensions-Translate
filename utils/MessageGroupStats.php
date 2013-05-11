@@ -210,10 +210,10 @@ class MessageGroupStats {
 	 */
 	protected static function extractNumbers( $row ) {
 		return array(
-			self::TOTAL => (int)$row->tgs_total,
-			self::TRANSLATED => (int)$row->tgs_translated,
-			self::FUZZY => (int)$row->tgs_fuzzy,
-			self::PROOFREAD => (int)$row->tgs_proofread,
+			self::TOTAL => (int) $row->tgs_total,
+			self::TRANSLATED => (int) $row->tgs_translated,
+			self::FUZZY => (int) $row->tgs_fuzzy,
+			self::PROOFREAD => (int) $row->tgs_proofread,
 		);
 	}
 

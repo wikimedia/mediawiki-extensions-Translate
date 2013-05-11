@@ -311,7 +311,8 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $collection;
 	}
 
-	public function __construct() {}
+	public function __construct() {
+	}
 
 	/**
 	 * Can be overwritten to retun false if something is wrong.
@@ -347,8 +348,11 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	// Unsupported stuff, just to satisfy the new interface
-	public function setConfiguration( $conf ) {}
-	public function getConfiguration() {}
+	public function setConfiguration( $conf ) {
+	}
+
+	public function getConfiguration() {
+	}
 
 	public function getFFS() {
 		return null;

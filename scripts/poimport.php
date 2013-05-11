@@ -151,7 +151,7 @@ class PoImporter {
 				$translation = TRANSLATE_FUZZY . $translation;
 			}
 
-			$oldtranslation = (string)$contents[$key]->translation();
+			$oldtranslation = (string) $contents[$key]->translation();
 
 			if ( $translation !== $oldtranslation ) {
 				if ( $translation === '' ) {

@@ -455,7 +455,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 				continue;
 			}
 
-			foreach ( (array)$indexLabels as $i ) {
+			foreach ( (array) $indexLabels as $i ) {
 				if ( !isset( $labelToIndex[$i] ) ) {
 					continue;
 
@@ -650,7 +650,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 * @return int Rounded number.
 	 */
 	public static function roundToSignificant( $number, $significant = 1 ) {
-		$log = (int)log( $number, 10 );
+		$log = (int) log( $number, 10 );
 		$nonSignificant = max( 0, $log - $significant + 1 );
 		$factor = pow( 10, $nonSignificant );
 		return intval( ceil( $number / $factor ) * $factor );

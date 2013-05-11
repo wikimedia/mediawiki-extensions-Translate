@@ -63,7 +63,7 @@ class InOtherLanguagesAid extends TranslationAid {
 		// Global configuration settings
 		$fallbacks = array();
 		if ( isset( $wgTranslateLanguageFallbacks[$code] ) ) {
-			$fallbacks = (array)$wgTranslateLanguageFallbacks[$code];
+			$fallbacks = (array) $wgTranslateLanguageFallbacks[$code];
 		}
 
 		$list = Language::getFallbacksFor( $code );

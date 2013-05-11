@@ -82,5 +82,6 @@ class MockMessageCollection extends MessageCollection {
 		$this->messages['foobar']->addTag( 'fuzzy' );
 	}
 
-	public function filter( $type, $condition = true, $value = null ) {}
+	public function filter( $type, $condition = true, $value = null ) {
+	}
 }

@@ -387,7 +387,7 @@ class PageTranslationHooks {
 	 * Hook: ArticleSave, PageContentSave
 	 */
 	public static function tpSyntaxCheck( $wikiPage, $user, $content, $summary,
-			$minor, $_, $_, $flags, $status
+		$minor, $_, $_, $flags, $status
 	) {
 		if ( $content instanceof TextContent ) {
 			$text = $content->getNativeData();
@@ -419,7 +419,7 @@ class PageTranslationHooks {
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
 	 */
 	public static function addTranstag( $wikiPage, $user, $content, $summary,
-			$minor, $_, $_, $flags, $revision
+		$minor, $_, $_, $flags, $revision
 	) {
 		// We are not interested in null revisions
 		if ( $revision === null ) {

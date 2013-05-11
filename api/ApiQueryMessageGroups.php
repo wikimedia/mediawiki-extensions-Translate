@@ -300,7 +300,9 @@ TEXT;
 			'priorityforce'  => ' priorityforce  - Include priority status - is the priority languages setting forced',
 			'workflowstates' => ' workflowstates - Include the workflow states for the message group',
 		);
+
 		wfRunHooks( 'TranslateGetAPIMessageGroupsPropertyDescs', array( &$properties ) );
+
 		return $properties;
 	}
 

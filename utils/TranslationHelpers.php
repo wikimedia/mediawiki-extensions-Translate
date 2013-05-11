@@ -175,11 +175,11 @@ class TranslationHelpers {
 		if ( $suggestions === 'async' ) {
 			$all['translation-memory'] = array( $this, 'getLazySuggestionBox' );
 		} elseif ( $suggestions === 'only' ) {
-			return (string)$this->callBox( 'translation-memory', $all['translation-memory'], array( 'lazy' ) );
+			return (string) $this->callBox( 'translation-memory', $all['translation-memory'], array( 'lazy' ) );
 		} elseif ( $suggestions === 'checks' ) {
 			global $wgRequest;
 			$this->translation = $wgRequest->getText( 'translation' );
-			return (string)$this->callBox( 'check', $all['check'] );
+			return (string) $this->callBox( 'check', $all['check'] );
 		}
 
 		if ( $this->group instanceof RecentMessageGroup ) {
@@ -1167,7 +1167,7 @@ class TranslationHelpers {
 		// Global configuration settings
 		$fallbacks = array();
 		if ( isset( $wgTranslateLanguageFallbacks[$code] ) ) {
-			$fallbacks = (array)$wgTranslateLanguageFallbacks[$code];
+			$fallbacks = (array) $wgTranslateLanguageFallbacks[$code];
 		}
 
 		$list = Language::getFallbacksFor( $code );
@@ -1401,4 +1401,5 @@ class TranslationHelpers {
  * - mustHaveDefinition()
  * @since 2012-01-04 (Renamed in 2012-07-24 to fix typo in name)
  */
-class TranslationHelperException extends MWException {}
+class TranslationHelperException extends MWException {
+}

@@ -28,10 +28,10 @@ class AndroidXmlFFS extends SimpleFFS {
 		$mangler = $this->group->getMangler();
 
 		foreach ( $reader->string as $string ) {
-			$key = (string)$string['name'];
-			$value = stripcslashes( (string)$string );
+			$key = (string) $string['name'];
+			$value = stripcslashes( (string) $string );
 
-			if ( isset( $string['fuzzy'] ) && (string)$string['fuzzy'] === 'true' ) {
+			if ( isset( $string['fuzzy'] ) && (string) $string['fuzzy'] === 'true' ) {
 				$value = TRANSLATE_FUZZY . $value;
 			}
 

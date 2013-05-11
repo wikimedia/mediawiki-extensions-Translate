@@ -60,7 +60,7 @@ class TSchema2 extends Maintenance {
 			$dbw->update(
 				'revtag',
 				array( 'rt_type' => $row->rtt_name ),
-				array( 'rt_type' => (string)$row->rtt_id ),
+				array( 'rt_type' => (string) $row->rtt_id ),
 				__METHOD__
 			);
 		}
