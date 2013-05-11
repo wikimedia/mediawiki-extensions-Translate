@@ -25,7 +25,8 @@ class YandexWebService extends TranslationWebService {
 		$response = FormatJson::decode( $json );
 
 		if ( !is_object( $response ) ) {
-			throw new TranslationWebServiceException( 'Malformed reply from remote server: ' . strval( $json ) );
+			$exception = 'Malformed reply from remote server: ' . strval( $json );
+			throw new TranslationWebServiceException( $exception );
 		}
 
 		foreach ( $response->dirs as $pair ) {
@@ -70,12 +71,14 @@ class YandexWebService extends TranslationWebService {
 		if ( !is_object( $response ) ) {
 			throw new TranslationWebServiceException( serialize( $req->getContent() ) );
 		} elseif ( $response->code !== 200 ) {
-			throw new TranslationWebServiceException( "(HTTP {$response->code}) with ($service ($from|$to)): "
-				. $req->getContent() );
+			$exception = "(HTTP {$response->code}) with ($service ($from|$to)): " .
+				$req->getContent();
+			throw new TranslationWebServiceException( $exception );
 		}
 
 		$sug = Sanitizer::decodeCharReferences( $response->text[0] );
 		$sug = $this->unwrapUntranslatable( $sug );
+
 		return trim( $sug );
 	}
 }

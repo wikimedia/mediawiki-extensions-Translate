@@ -81,6 +81,7 @@ class YamlFFS extends SimpleFFS {
 		}
 
 		$output .= TranslateYaml::dump( $messages );
+
 		return $output;
 	}
 

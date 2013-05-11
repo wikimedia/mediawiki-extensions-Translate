@@ -35,8 +35,8 @@ $wgExtensionCredits['specialpage'][] = array(
  * @cond file_level_code
  * Setup class autoloading.
  */
-$dir = dirname( __FILE__ );
-require_once( "$dir/_autoload.php" );
+$dir = __DIR__;
+require_once "$dir/_autoload.php";
 /** @endcond */
 
 /**
@@ -213,7 +213,7 @@ $wgJobClasses['MessageGroupStatesUpdaterJob'] = 'MessageGroupStatesUpdaterJob';
 $wgJobClasses['TTMServerMessageUpdateJob'] = 'TTMServerMessageUpdateJob';
 $wgJobClasses['TranslateSandboxReminderJob'] = 'TranslateSandboxReminderJob';
 
-require( "$dir/Resources.php" );
+require "$dir/Resources.php";
 
 # == Configuration variables ==
 

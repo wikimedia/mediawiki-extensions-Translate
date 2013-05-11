@@ -71,11 +71,11 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$opts->fetchValuesFromRequest( $this->getRequest() );
 
-
 		$queryString = $opts->getValue( 'query' );
 
 		if ( $queryString === '' ) {
 			$this->showEmptySearch();
+
 			return;
 		}
 
@@ -102,7 +102,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$facet = $resultset->getFacetSet()->getFacet( 'group' );
 		$facets .= Html::element( 'div',
 			array( 'class' => 'row facet groups',
-				'data-facets' => FormatJson::encode(  $this->getGroups( $facet) ),
+				'data-facets' => FormatJson::encode( $this->getGroups( $facet ) ),
 				'data-group' => $opts->getValue( 'group' ), ),
 			$this->msg( 'tux-sst-facet-group' )
 		);
@@ -150,13 +150,22 @@ class SpecialSearchTranslations extends SpecialPage {
 
 			$result = Html::openElement( 'div', $resultAttribs );
 			$result .= Html::rawElement( 'div', array( 'class' => 'row tux-text' ), $text );
-			$result .= Html::element( 'div', array( 'class' => 'row tux-title' ), $document->messageid );
+			$result .= Html::element(
+				'div',
+				array( 'class' => 'row tux-title' ),
+				$document->messageid
+			);
+
 			if ( $handle->isValid() ) {
 				$uri = wfAppendQuery( $document->uri, array( 'action' => 'edit' ) );
 				$link = Html::element( 'a', array(
 					'href' => $uri,
 				), $this->msg( 'tux-sst-edit' )->text() );
-				$result .= Html::rawElement( 'div', array( 'class' => 'row tux-edit tux-message-item' ), $link );
+				$result .= Html::rawElement(
+					'div',
+					array( 'class' => 'row tux-edit tux-message-item' ),
+					$link
+				);
 			}
 
 			$result .= Html::closeElement( 'div' );
@@ -240,7 +249,6 @@ class SpecialSearchTranslations extends SpecialPage {
 		return $client->select( $query );
 	}
 
-
 	protected function getLanguages( Solarium_Result_Select_Facet_Field $facet ) {
 		$output = array();
 
@@ -262,13 +270,14 @@ class SpecialSearchTranslations extends SpecialPage {
 				'url' => $url
 			);
 		}
+
 		return $output;
 	}
-
 
 	protected function getGroups( Solarium_Result_Select_Facet_Field $facet ) {
 		$structure = MessageGroups::getGroupStructure();
 		$counts = iterator_to_array( $facet );
+
 		return $this->makeGroupFacetRows( $structure, $counts );
 	}
 
@@ -317,9 +326,15 @@ class SpecialSearchTranslations extends SpecialPage {
 			);
 
 			if ( isset( $path[$level] ) && $path[$level] === $id ) {
-				$output[$id]['groups'] = $this->makeGroupFacetRows( $subgroups, $counts, $level + 1, "$pathString$id|" );
+				$output[$id]['groups'] = $this->makeGroupFacetRows(
+					$subgroups,
+					$counts,
+					$level + 1,
+					"$pathString$id|"
+				);
 			}
 		}
+
 		return $output;
 	}
 

@@ -33,6 +33,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiTestCase {
 	public function getTestGroups( &$list ) {
 		$messages = array( 'ugakey' => '$1 of $2', );
 		$list['test-group'] = new MockWikiMessageGroup( 'test-group', $messages );
+
 		return false;
 	}
 

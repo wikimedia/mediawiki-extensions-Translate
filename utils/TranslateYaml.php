@@ -14,7 +14,6 @@
  * and generate YAML files with syck or spyc backend.
  */
 class TranslateYaml {
-
 	/**
 	 * @param $filename string
 	 * @return array
@@ -26,11 +25,14 @@ class TranslateYaml {
 		$template = false;
 		foreach ( $documents as $document ) {
 			$document = self::loadString( $document );
+
 			if ( isset( $document['TEMPLATE'] ) ) {
 				$template = $document['TEMPLATE'];
 			} else {
 				if ( !isset( $document['BASIC']['id'] ) ) {
-					trigger_error( "No path ./BASIC/id (group id not defined) in yaml document located in $filename" );
+					$error = "No path ./BASIC/id (group id not defined) ";
+					$error .= "in YAML document located in $filename";
+					trigger_error( $error );
 					continue;
 				}
 				$groups[$document['BASIC']['id']] = $document;
@@ -58,6 +60,7 @@ class TranslateYaml {
 				$base[$key] = $value;
 			}
 		}
+
 		return $base;
 	}
 
@@ -71,14 +74,17 @@ class TranslateYaml {
 
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'spyc':
-				require_once( __DIR__ . '/../libs/spyc/spyc.php' );
+				require_once __DIR__ . '/../libs/spyc/spyc.php';
 				$yaml = spyc_load( $text );
+
 				return self::fixSpycSpaces( $yaml );
 			case 'syck':
 				$yaml = self::syckLoad( $text );
+
 				return self::fixSyckBooleans( $yaml );
 			case 'syck-pecl':
 				$text = preg_replace( '~^(\s*)no(\s*:\s*[a-zA-Z-_]+\s*)$~m', '\1"no"\2', $text );
+
 				return syck_load( $text );
 			default:
 				throw new MWException( "Unknown Yaml library" );
@@ -97,6 +103,7 @@ class TranslateYaml {
 				$value = true;
 			}
 		}
+
 		return $yaml;
 	}
 
@@ -112,6 +119,7 @@ class TranslateYaml {
 				$value = preg_replace( '~^\*~m', ' *', $value ) . "\n";
 			}
 		}
+
 		return $yaml;
 	}
 
@@ -126,7 +134,8 @@ class TranslateYaml {
 
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'spyc':
-				require_once( __DIR__ . '/../libs/spyc/spyc.php' );
+				require_once __DIR__ . '/../libs/spyc/spyc.php';
+
 				return Spyc::YAMLDump( $text );
 			case 'syck-pecl':
 				// Just horrible output

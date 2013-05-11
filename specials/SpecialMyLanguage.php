@@ -102,6 +102,7 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 				}
 			}
 		}
+
 		return true;
 	}
 }

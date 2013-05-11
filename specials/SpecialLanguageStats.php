@@ -451,7 +451,6 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$extra = array( 'task' => 'reviewall' );
 		}
 
-
 		$rowParams = array();
 		$rowParams['data-groupid'] = $groupId;
 		$rowParams['class'] = get_class( $group );
@@ -467,6 +466,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
 
 		wfGetCache( CACHE_ANYTHING )->set( $cachekey, $out, 3600 * 24 );
+
 		return $out;
 	}
 
@@ -483,6 +483,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		foreach ( $res as $row ) {
 			$states[$row->$field] = $row->tgr_state;
 		}
+
 		return $states;
 	}
 }

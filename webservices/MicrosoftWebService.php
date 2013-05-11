@@ -48,7 +48,8 @@ class MicrosoftWebService extends TranslationWebService {
 		if ( !$status->isOK() ) {
 			$error = $req->getContent();
 			// Most likely a timeout or other general error
-			throw new TranslationWebServiceException( 'Http::get failed:' . serialize( $error ) . serialize( $status ) );
+			$exception = 'Http::get failed:' . serialize( $error ) . serialize( $status );
+			throw new TranslationWebServiceException( $exception );
 		}
 
 		$xml = simplexml_load_string( $req->getContent() );
@@ -58,7 +59,8 @@ class MicrosoftWebService extends TranslationWebService {
 			$languages[] = strval( $language );
 		}
 
-		// Let's make a cartesian product, assuming we can translate from any language to any language
+		// Let's make a cartesian product, assuming we can translate from any
+		// language to any language
 		$pairs = array();
 		foreach ( $languages as $from ) {
 			foreach ( $languages as $to ) {
@@ -98,12 +100,14 @@ class MicrosoftWebService extends TranslationWebService {
 		if ( !$status->isOK() ) {
 			$error = $req->getContent();
 			// Most likely a timeout or other general error
-			throw new TranslationWebServiceException( 'Http::get failed: ' . $url . serialize( $error ) . serialize( $status ) );
+			$exception = 'Http::get failed: ' . $url . serialize( $error ) . serialize( $status );
+			throw new TranslationWebServiceException( $exception );
 		}
 
 		$ret = $req->getContent();
 		$text = preg_replace( '~<string.*>(.*)</string>~', '\\1', $ret );
 		$text = Sanitizer::decodeCharReferences( $text );
+
 		return $this->unwrapUntranslatable( $text );
 	}
 }

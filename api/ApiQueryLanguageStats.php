@@ -20,12 +20,14 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 
 	protected function getData() {
 		$params = $this->extractRequestParams();
+
 		return MessageGroupStats::forLanguage( $params['language'] );
 	}
 
 	protected function makeItem( $item, $stats ) {
 		$data = parent::makeItem( $item, $stats );
 		$data['group'] = $item;
+
 		return $data;
 	}
 
@@ -35,12 +37,14 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 			ApiBase::PARAM_TYPE => 'string',
 			ApiBase::PARAM_REQUIRED => true,
 		);
+
 		return $params;
 	}
 
 	public function getParamDescription() {
 		$desc = parent::getParamDescription();
 		$desc['language'] = 'Language code';
+
 		return $desc;
 	}
 

@@ -68,6 +68,7 @@ class PageTranslationLogFormatter extends LogFormatter {
 		$legacy = $this->entry->getParameters();
 		if ( isset( $legacy['reason'] ) ) {
 			$comment = Linker::commentBlock( $legacy['reason'] );
+
 			// No hard coded spaces thanx
 			return ltrim( $comment );
 		}

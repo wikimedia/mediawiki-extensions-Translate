@@ -11,10 +11,10 @@
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
-	$dir = dirname( __FILE__ );
+	$dir = __DIR__;
 	$IP = "$dir/../../..";
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 /**
  * Script to bootstrap TTMServer translation memory.
@@ -134,7 +134,6 @@ class TTMServerBootstrap extends Maintenance {
 			$server->batchInsertDefinitions( $batch );
 		} while ( count( $inserts ) );
 
-
 		$inserts = array();
 		foreach ( $stats as $targetLanguage => $numbers ) {
 			if ( $targetLanguage === $sourceLanguage ) {
@@ -161,8 +160,7 @@ class TTMServerBootstrap extends Maintenance {
 
 		$server->endBatch();
 	}
-
 }
 
 $maintClass = 'TTMServerBootstrap';
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

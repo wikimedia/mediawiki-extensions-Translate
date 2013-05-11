@@ -59,7 +59,6 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 			return array();
 		}
 
-
 		$query = $this->client->createSelect();
 		$query->setFields( array( 'globalid', 'content', 'score' ) );
 
@@ -86,7 +85,6 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		 * cached, but I haven't done any benchmarks. */
 		$query->createFilterQuery( 'lang' )
 			->setQuery( 'language:%P1%', array( $sourceLanguage ) );
-
 
 		$resultset = $this->client->select( $query );
 
@@ -150,10 +148,12 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 			if ( $a['quality'] === $b['quality'] ) {
 				return 0;
 			}
+
 			return ( $a['quality'] < $b['quality'] ) ? 1 : -1;
 		} );
 
 		wfProfileOut( __METHOD__ );
+
 		return $suggestions;
 	}
 
@@ -227,10 +227,12 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		} catch ( Solarium_Exception $e ) {
 			error_log( "SolrTTMServer update-write failed" );
 			wfProfileOut( __METHOD__ );
+
 			return false;
 		}
 
 		wfProfileOut( __METHOD__ );
+
 		return true;
 	}
 
@@ -255,6 +257,7 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		$doc->language = $language;
 		$doc->content = $text;
 		$doc->setField( 'group', $handle->getGroupIds() );
+
 		return $doc;
 	}
 
@@ -307,7 +310,6 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		$update->addOptimize();
 		$this->client->update( $update );
 	}
-
 
 	public function getSolarium() {
 		return $this->client;

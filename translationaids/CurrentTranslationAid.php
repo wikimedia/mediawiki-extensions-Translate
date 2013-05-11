@@ -29,6 +29,7 @@ class CurrentTranslationAid extends TranslationAid {
 		$fuzzy = TranslateEditAddons::hasFuzzyString( $translation );
 		$fuzzy = $fuzzy || TranslateEditAddons::isFuzzy( $title );
 		$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
+
 		return array(
 			'language' => $this->handle->getCode(),
 			'fuzzy' => $fuzzy,

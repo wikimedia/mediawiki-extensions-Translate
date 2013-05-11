@@ -39,7 +39,6 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	 */
 	protected $moveSubpages;
 
-
 	/**
 	 * @var TranslatablePage instance.
 	 */
@@ -83,7 +82,6 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$this->reason = $request->getText( 'reason' );
 		// Checkboxes that default being checked are tricky
 		$this->moveSubpages = $request->getBool( 'subpages', !$request->wasPosted() );
-
 
 		if ( $this->doBasicChecks() !== true ) {
 			return;
@@ -129,7 +127,6 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 			} else {
 				$this->showForm();
 			}
-
 		} else {
 			// Delegate... don't want to reimplement this
 			if ( $this->old ) {
@@ -453,11 +450,13 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 
 		if ( !$target ) {
 			$blockers[] = array( 'pt-movepage-block-base-invalid' );
+
 			return $blockers;
 		}
 
 		if ( $target->getNamespace() == NS_MEDIAWIKI || $target->getNamespace() == NS_TRANSLATIONS ) {
 			$blockers[] = array( 'immobile-target-namespace', $target->getNsText() );
+
 			return $blockers;
 		}
 
@@ -565,10 +564,12 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		if ( $old->getNamespace() == NS_TRANSLATIONS ) {
 			$new = $old->getText();
 			$new = preg_replace( "~^$search~", $target->getPrefixedText(), $new, 1 );
+
 			return Title::makeTitleSafe( NS_TRANSLATIONS, $new );
 		} else {
 			$new = $old->getPrefixedText();
 			$new = preg_replace( "~^$search~", $target->getPrefixedText(), $new, 1 );
+
 			return Title::newFromText( $new );
 		}
 	}
@@ -581,6 +582,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		if ( !isset( $this->sectionPages ) ) {
 			$this->sectionPages = $this->page->getTranslationUnitPages( 'all' );
 		}
+
 		return $this->sectionPages;
 	}
 
@@ -592,6 +594,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		if ( !isset( $this->translationPages ) ) {
 			$this->translationPages = $this->page->getTranslationPages();
 		}
+
 		return $this->translationPages;
 	}
 

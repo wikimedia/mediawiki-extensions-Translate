@@ -41,6 +41,7 @@ class TranslationEditPage {
 
 		$obj = new self( $title );
 		$obj->suggestions = $request->getText( 'suggestions' );
+
 		return $obj;
 	}
 
@@ -78,11 +79,13 @@ class TranslationEditPage {
 
 		if ( $this->suggestions === 'only' ) {
 			echo $helpers->getBoxes( $this->suggestions );
+
 			return;
 		}
 
 		if ( $this->suggestions === 'checks' ) {
 			echo $helpers->getBoxes( $this->suggestions );
+
 			return;
 		}
 
@@ -128,7 +131,12 @@ class TranslationEditPage {
 		$hidden[] = Html::hidden( 'format', 'json' );
 		$hidden[] = Html::hidden( 'action', 'edit' );
 
-		$summary = Xml::inputLabel( wfMessage( 'translate-js-summary' )->text(), 'summary', 'summary', 40 );
+		$summary = Xml::inputLabel(
+			wfMessage( 'translate-js-summary' )->text(),
+			'summary',
+			'summary',
+			40
+		);
 		$save = Xml::submitButton(
 			wfMessage( 'translate-js-save' )->text(),
 			array( 'class' => 'mw-translate-save' )
@@ -175,7 +183,11 @@ class TranslationEditPage {
 		$form = Html::rawElement( 'form', $formParams,
 			implode( "\n", $hidden ) . "\n" .
 				$helpers->getBoxes( $this->suggestions ) . "\n" .
-				Html::rawElement( 'div', array( 'class' => 'mw-translate-inputs' ), "$textarea\n$extraInputs" ) . "\n" .
+				Html::rawElement(
+					'div',
+					array( 'class' => 'mw-translate-inputs' ),
+					"$textarea\n$extraInputs"
+				) . "\n" .
 				Html::rawElement( 'div', array( 'class' => 'mw-translate-bottom' ), $bottom )
 		);
 
@@ -237,7 +249,6 @@ class TranslationEditPage {
 			);
 		}
 
-
 		return array(
 			'onclick' => $onclick,
 			'title' => wfMessage( 'translate-edit-title', $title->getPrefixedText() )->text()
@@ -270,6 +281,7 @@ class TranslationEditPage {
 				'data-load-url' => $supportTitle->getLocalUrl( $supportParams ),
 			)
 		);
+
 		return $support;
 	}
 
@@ -293,7 +305,7 @@ class TranslationEditPage {
 				'data-load-url' => $title->getLocalUrl(),
 			)
 		);
+
 		return $button;
 	}
-
 }

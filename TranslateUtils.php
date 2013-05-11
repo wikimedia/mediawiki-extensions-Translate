@@ -130,6 +130,7 @@ class TranslateUtils {
 
 		$res = $dbr->query( $sql, __METHOD__ );
 		$rows = iterator_to_array( $res );
+
 		return $rows;
 	}
 
@@ -162,6 +163,7 @@ class TranslateUtils {
 		$selector->setDefault( $selectedId );
 		$selector->setAttribute( 'id', 'language' );
 		$selector->setAttribute( 'name', 'language' );
+
 		return $selector->getHtml();
 	}
 
@@ -226,6 +228,7 @@ class TranslateUtils {
 	 */
 	public static function messageKeyToGroup( $namespace, $key ) {
 		$groups = self::messageKeyToGroups( $namespace, $key );
+
 		return count( $groups ) ? $groups[0] : null;
 	}
 
@@ -254,6 +257,7 @@ class TranslateUtils {
 	 */
 	public static function normaliseKey( $namespace, $key ) {
 		$key = lcfirst( $key );
+
 		return strtr( "$namespace:$key", " ", "_" );
 	}
 
@@ -298,6 +302,7 @@ class TranslateUtils {
 	 */
 	public static function assetPath( $path ) {
 		global $wgExtensionAssetsPath;
+
 		return "$wgExtensionAssetsPath/Translate/$path";
 	}
 
@@ -375,6 +380,7 @@ class TranslateUtils {
 		if ( version_compare( $wgVersion, '1.20', '<' ) ) {
 			$method = "action=query&prop=info&intoken=$token&titles=Token";
 		}
+
 		return $method;
 	}
 
@@ -385,6 +391,7 @@ class TranslateUtils {
 	 */
 	public static function getPlaceholder() {
 		static $i = 0;
+
 		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . '-' . $i++;
 	}
 
@@ -408,6 +415,7 @@ class TranslateUtils {
 		$file = wfFindFile( $filename );
 		if ( !$file ) {
 			wfWarn( "Unknown message group icon file $icon" );
+
 			return null;
 		}
 

@@ -39,6 +39,7 @@ class TPSection {
 	 */
 	public function getTextForTrans() {
 		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
+
 		return preg_replace( $re, '\2', $this->text );
 	}
 

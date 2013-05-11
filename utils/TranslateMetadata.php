@@ -35,7 +35,8 @@ class TranslateMetadata {
 	}
 
 	/**
-	 * Set a metadata value for the given group and metadata key. Updates the value if already existing.
+	 * Set a metadata value for the given group and metadata key. Updates the
+	 * value if already existing.
 	 * @param $group string The group id
 	 * @param $key string Metadata key
 	 * @param $value string Metadata value
@@ -47,7 +48,12 @@ class TranslateMetadata {
 			unset( $data['tmd_value'] );
 			$dbw->delete( 'translate_metadata', $data );
 		} else {
-			$dbw->replace( 'translate_metadata', array( array( 'tmd_group', 'tmd_key' ) ), $data, __METHOD__ );
+			$dbw->replace(
+				'translate_metadata',
+				array( array( 'tmd_group', 'tmd_key' ) ),
+				$data,
+				__METHOD__
+			);
 		}
 
 		self::$cache = null;
@@ -100,5 +106,4 @@ class TranslateMetadata {
 		$conds = array( 'tmd_group' => $groupId );
 		$dbw->delete( 'translate_metadata', $conds );
 	}
-
 }

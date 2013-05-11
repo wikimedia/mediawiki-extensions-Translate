@@ -103,6 +103,7 @@ class MessageGroupCache {
 				// Delete stale cache files
 				unlink( $this->getCacheFileName() );
 			}
+
 			return; // Don't create empty caches
 		}
 		$hash = md5( file_get_contents( $this->group->getSourceFilePath( $this->code ) ) );
@@ -158,9 +159,11 @@ class MessageGroupCache {
 			return true;
 		} elseif ( !$cache && $source ) {
 			$reason = self::NO_CACHE;
+
 			return false;
 		} elseif ( $cache && !$source ) {
 			$reason = self::NO_SOURCE;
+
 			return false;
 		} elseif ( filemtime( $filename ) <= $this->get( '#updated' ) ) {
 			return true;
@@ -174,6 +177,7 @@ class MessageGroupCache {
 		if ( $this->get( '#filehash' ) === $newhash ) {
 			// Update cache so that we don't need to compare hashes next time
 			$this->create( $created );
+
 			return true;
 		}
 
@@ -184,6 +188,7 @@ class MessageGroupCache {
 		if ( $count !== count( $messages ) ) {
 			// Number of messsages has changed
 			$reason = self::CHANGED;
+
 			return false;
 		}
 
@@ -192,10 +197,12 @@ class MessageGroupCache {
 		if ( $this->get( '#msghash' ) === md5( serialize( $messages ) ) ) {
 			// Update cache so that we don't need to do slow checks next time
 			$this->create( $created );
+
 			return true;
 		}
 
 		$reason = self::CHANGED;
+
 		return false;
 	}
 
@@ -209,9 +216,11 @@ class MessageGroupCache {
 			if ( $this->cache->get( '#version' ) !== '3' ) {
 				$this->updateCacheFormat( $this->cache );
 				$this->close();
+
 				return $this->open();
 			}
 		}
+
 		return $this->cache;
 	}
 
@@ -230,7 +239,9 @@ class MessageGroupCache {
 	 * @return string
 	 */
 	protected function getCacheFileName() {
-		return TranslateUtils::cacheFile( "translate_groupcache-{$this->group->getId()}-{$this->code}.cdb" );
+		$cacheFileName = "translate_groupcache-{$this->group->getId()}-{$this->code}.cdb";
+
+		return TranslateUtils::cacheFile( $cacheFileName );
 	}
 
 	/**

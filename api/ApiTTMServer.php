@@ -48,11 +48,13 @@ class ApiTTMServer extends ApiBase {
 				$good[] = $id;
 			}
 		}
+
 		return $good;
 	}
 
 	public function getAllowedParams() {
 		$available = $this->getAvailableTranslationServices();
+
 		return array(
 			'service' => array(
 				ApiBase::PARAM_TYPE => $available,
@@ -95,5 +97,4 @@ class ApiTTMServer extends ApiBase {
 	public function getVersion() {
 		return __CLASS__ . ': ' . TRANSLATE_VERSION;
 	}
-
 }

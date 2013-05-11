@@ -44,6 +44,7 @@ class SpecialManageGroups extends SpecialPage {
 			// @todo Tell them when changes was last checked/process
 			// or how to initiate recheck.
 			$out->addWikiMsg( 'translate-smg-nochanges' );
+
 			return;
 		}
 
@@ -53,6 +54,7 @@ class SpecialManageGroups extends SpecialPage {
 		$req = $this->getRequest();
 		if ( !$req->wasPosted() ) {
 			$this->showChanges( $allowed );
+
 			return;
 		}
 
@@ -70,6 +72,7 @@ class SpecialManageGroups extends SpecialPage {
 			$this->msg( 'translate-smg-left' )->text(),
 			$this->msg( 'translate-smg-right' )->text()
 		);
+
 		return Html::rawElement( 'div', array( 'class' => "mw-translate-smg-header" ), $text );
 	}
 
@@ -82,11 +85,12 @@ class SpecialManageGroups extends SpecialPage {
 		$this->diff = $diff;
 
 		$out = $this->getOutput();
-		$out->addHtml( '' .
-			Html::openElement( 'form', array( 'method' => 'post' ) ) .
-			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
-			$this->getLegend()
+		$out->addHtml(
+			'' .
+				Html::openElement( 'form', array( 'method' => 'post' ) ) .
+				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+				Html::hidden( 'token', $this->getUser()->getEditToken() ) .
+				$this->getLegend()
 		);
 
 		$counter = 0;
@@ -200,6 +204,7 @@ class SpecialManageGroups extends SpecialPage {
 		$hidden = Html::hidden( $id, 1 );
 		$text .= $hidden;
 		$classes = "mw-translate-smg-change smg-change-$type";
+
 		return Html::rawElement( 'div', array( 'class' => $classes ), $text );
 	}
 
@@ -266,7 +271,6 @@ class SpecialManageGroups extends SpecialPage {
 
 			$out->wrapWikiMsg( "<div class=warning>\n$1\n</div>", 'translate-smg-postponed' );
 		}
-
 	}
 
 	protected static function changeId( $groupId, $code, $type, $key ) {

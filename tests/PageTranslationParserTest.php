@@ -20,6 +20,7 @@ class PageTranslationParserTest extends MediaWikiTestCase {
 		foreach ( $testFiles as $i => $file ) {
 			$testFiles[$i] = array( $file );
 		}
+
 		return $testFiles;
 	}
 
@@ -60,7 +61,7 @@ class PageTranslationParserTest extends MediaWikiTestCase {
 
 		// Custom tests written in php
 		if ( file_exists( "$pattern.pttest" ) ) {
-			require( "$pattern.pttest" );
+			require "$pattern.pttest";
 		}
 	}
 }

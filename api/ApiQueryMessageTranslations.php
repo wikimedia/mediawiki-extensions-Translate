@@ -58,6 +58,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 		}
 
 		$pageInfo = TranslateUtils::getContents( $titles, $namespace );
+
 		return $pageInfo;
 	}
 
@@ -108,7 +109,6 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 				$this->setContinueEnumParameter( 'offset', $count );
 				break;
 			}
-
 		}
 
 		$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'message' );

@@ -25,6 +25,7 @@ class MessageGroupStates {
 	public function getStates() {
 		$conf = $this->config;
 		unset( $conf[self::CONDKEY] );
+
 		return $conf;
 	}
 

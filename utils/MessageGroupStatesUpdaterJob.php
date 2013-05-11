@@ -22,6 +22,7 @@ class MessageGroupStatesUpdaterJob extends Job {
 	public static function onChange( MessageHandle $handle ) {
 		$job = self::newJob( $handle->getTitle() );
 		$job->insert();
+
 		return true;
 	}
 
@@ -31,6 +32,7 @@ class MessageGroupStatesUpdaterJob extends Job {
 	 */
 	public static function newJob( $title ) {
 		$job = new self( $title );
+
 		return $job;
 	}
 
@@ -134,5 +136,4 @@ class MessageGroupStatesUpdaterJob extends Job {
 
 		return false;
 	}
-
 }

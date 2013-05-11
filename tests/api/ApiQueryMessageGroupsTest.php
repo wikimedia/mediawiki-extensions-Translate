@@ -155,5 +155,4 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		$this->assertCount( 1, $data['warnings']['messagegroups'] );
 		$this->assertArrayHasKey( '*', $data['warnings']['messagegroups'] );
 	}
-
 }

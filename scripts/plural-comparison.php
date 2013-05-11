@@ -13,10 +13,10 @@
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
-	$dir = dirname( __FILE__ );
+	$dir = __DIR__;
 	$IP = "$dir/../../..";
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 /// Script for comparing different plural implementations.
 class PluralCompare extends Maintenance {
@@ -124,11 +124,13 @@ class PluralCompare extends Maintenance {
 				$plurals[$code] = $rules;
 			}
 		}
+
 		return $plurals;
 	}
 
 	public function loadCLDR() {
 		global $IP;
+
 		return $this->loadPluralFile( "$IP/languages/data/plurals.xml" );
 	}
 
@@ -136,21 +138,22 @@ class PluralCompare extends Maintenance {
 		global $IP;
 		$rules = $this->loadPluralFile( "$IP/languages/data/plurals.xml" );
 		$rulesMW = $this->loadPluralFile( "$IP/languages/data/plurals-mediawiki.xml" );
+
 		return array_merge( $rules, $rulesMW );
 	}
 
 	public function loadGettext() {
-		$gtData = file_get_contents( dirname( __FILE__ ) . '/../data/plural-gettext.txt' );
+		$gtData = file_get_contents( __DIR__ . '/../data/plural-gettext.txt' );
 		$gtLanguages = array();
 		foreach ( preg_split( '/\n|\r/', $gtData, -1, PREG_SPLIT_NO_EMPTY ) as $line ) {
 			list( $code, $rule ) = explode( "\t", $line );
 			$rule = preg_replace( '/^.*?plural=/', '', $rule );
 			$gtLanguages[$code] = $rule;
 		}
+
 		return $gtLanguages;
 	}
-
 }
 
 $maintClass = 'PluralCompare';
-require_once( DO_MAINTENANCE );
+require_once DO_MAINTENANCE;

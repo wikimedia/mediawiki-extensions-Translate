@@ -72,8 +72,9 @@ class XliffFFS extends SimpleFFS {
 	public static function getInnerXml( DomElement $node ) {
 		$text = '';
 		foreach ( $node->childNodes as $child ) {
-				$text .= $child->ownerDocument->saveXML( $child );
+			$text .= $child->ownerDocument->saveXML( $child );
 		}
+
 		return $text;
 	}
 
@@ -131,6 +132,7 @@ class XliffFFS extends SimpleFFS {
 		}
 
 		$template->encoding = 'UTF-8';
+
 		return $template->saveXML();
 	}
 

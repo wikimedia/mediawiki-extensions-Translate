@@ -13,10 +13,10 @@
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
-	$dir = dirname( __FILE__ );
+	$dir = __DIR__;
 	$IP = "$dir/../../..";
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 /**
  * Script for processing message changes in file based message groups.
@@ -272,9 +272,10 @@ class ProcessMessageChanges extends Maintenance {
 				$filtered[$id] = $groups[$id];
 			}
 		}
+
 		return $filtered;
 	}
 }
 
 $maintClass = 'ProcessMessageChanges';
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

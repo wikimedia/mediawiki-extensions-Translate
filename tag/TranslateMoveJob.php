@@ -32,6 +32,7 @@ class TranslateMoveJob extends Job {
 		$job->setParams( $params );
 		$job->setPerformer( $performer );
 		$job->lock();
+
 		return $job;
 	}
 

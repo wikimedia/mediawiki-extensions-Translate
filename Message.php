@@ -122,7 +122,6 @@ abstract class TMessage {
 	public function getPropertyNames() {
 		return array_keys( $this->props );
 	}
-
 }
 
 /**
@@ -154,6 +153,7 @@ class ThinMessage extends TMessage {
 		if ( !isset( $this->row ) ) {
 			return $this->infile();
 		}
+
 		return Revision::getRevisionText( $this->row );
 	}
 
@@ -175,7 +175,6 @@ class ThinMessage extends TMessage {
 	public function getPropertyNames() {
 		return array_merge( parent::getPropertyNames(), array_keys( self::$propertyMap ) );
 	}
-
 }
 
 /**
@@ -198,6 +197,7 @@ class FatMessage extends TMessage {
 		if ( $this->translation === null ) {
 			return $this->infile;
 		}
+
 		return $this->translation;
 	}
 }

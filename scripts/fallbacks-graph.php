@@ -13,10 +13,10 @@
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
-	$dir = dirname( __FILE__ );
+	$dir = __DIR__;
 	$IP = "$dir/../../..";
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 /// Creates graphml xml file of language fallbacks.
 class FallbacksCompare extends Maintenance {
@@ -80,4 +80,4 @@ XML;
 }
 
 $maintClass = 'FallbacksCompare';
-require_once( DO_MAINTENANCE );
+require_once DO_MAINTENANCE;

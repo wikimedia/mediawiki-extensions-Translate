@@ -23,7 +23,6 @@ class JavaFFSTest extends MediaWikiTestCase {
 		),
 	);
 
-
 	public function testParsing() {
 		$file =
 			<<<PROPERTIES
@@ -36,8 +35,8 @@ language = English
 message = Welcome to \
           Wikipedia!
 # Add spaces to the key
-key\ with\ spaces = This is the value that could be looked up with the key "key with spaces".
-key-with-{curlies} = This is the value that could be looked up with the key "key-with-{curlies}".
+key\ with\ spaces = Value that can be looked up with "key with spaces".
+key-with-{curlies} = Value that can be looked up with "key-with-{curlies}".
 PROPERTIES;
 
 		/**
@@ -50,9 +49,9 @@ PROPERTIES;
 			'website' => '<nowiki>http://en.wikipedia.org/</nowiki>',
 			'language' => 'English',
 			'message' => 'Welcome to Wikipedia!',
-			'key with spaces' => 'This is the value that could be looked up with the key "key with spaces".',
+			'key with spaces' => 'Value that can be looked up with "key with spaces".',
 			// We expect this one to be mangled for storage
-			'key-with-=7Bcurlies=7D' => 'This is the value that could be looked up with the key "key-with-{curlies}".',
+			'key-with-=7Bcurlies=7D' => 'Value that can be looked up with "key-with-{curlies}".',
 		);
 		$expected = array( 'MESSAGES' => $expected, 'AUTHORS' => array() );
 		$this->assertEquals( $expected, $parsed );

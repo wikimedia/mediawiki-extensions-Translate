@@ -22,9 +22,11 @@ class RemoteTTMServerWebService extends TranslationWebService {
 
 		try {
 			$text = $translations[$from];
+
 			return $this->doRequest( $text, $from, $to );
 		} catch ( Exception $e ) {
 			$this->reportTranslationServiceFailure( $e );
+
 			return array();
 		}
 	}

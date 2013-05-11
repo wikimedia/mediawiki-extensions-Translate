@@ -16,11 +16,11 @@
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
-	$dir = dirname( __FILE__ );
+	$dir = __DIR__;
 	$IP = "$dir/../../..";
 }
 define( 'TRANSLATE_CLI', 1 );
-require_once( "$IP/maintenance/commandLine.inc" );
+require_once "$IP/maintenance/commandLine.inc";
 ///@}
 
 /**

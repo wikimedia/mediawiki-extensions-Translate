@@ -22,7 +22,6 @@ class RubyYamlFFSTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 		$this->group = MessageGroupBase::factory( $this->groupConfiguration );
-
 	}
 
 	protected function tearDown() {
@@ -52,7 +51,10 @@ class RubyYamlFFSTest extends MediaWikiTestCase {
 				array( 'key.one' => 'cat', 'key.other' => 'cats' )
 			),
 			array( 'key', '{{PLURAL|one=шляху %{related_ways}|шляхоў %{related_ways}}}',
-				array( 'key.one' => 'шляху %{related_ways}', 'key.other' => 'шляхоў %{related_ways}' )
+				array(
+					'key.one' => 'шляху %{related_ways}',
+					'key.other' => 'шляхоў %{related_ways}'
+				)
 			),
 			array( 'key', '{{PLURAL|foo=cat}}',
 				array( 'key.other' => 'foo=cat' )

@@ -11,7 +11,7 @@
 /// @cond
 
 $optionsWithArgs = array( 'lang', 'target', 'type' );
-require( dirname( __FILE__ ) . '/cli.inc' );
+require __DIR__ . '/cli.inc';
 
 function showUsage() {
 	STDERR( <<<EOT

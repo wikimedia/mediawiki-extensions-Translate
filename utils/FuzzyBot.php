@@ -18,11 +18,13 @@ class FuzzyBot {
 		if ( $bot->isAnon() ) {
 			$bot->addToDatabase();
 		}
+
 		return $bot;
 	}
 
 	public static function getName() {
 		global $wgTranslateFuzzyBotName;
+
 		return $wgTranslateFuzzyBotName;
 	}
 }

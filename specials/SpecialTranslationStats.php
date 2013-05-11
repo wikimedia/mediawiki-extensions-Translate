@@ -128,8 +128,6 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 				header( 'Expires: ' . wfTimestamp( TS_RFC2822, time() + 3600 ) );
 			}
 			$this->draw( $opts );
-
-
 		} else {
 			$this->form( $opts );
 		}
@@ -208,7 +206,11 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 		$out->addHTML(
 			Html::element( 'hr' ) .
-				Html::rawElement( 'div', array( 'style' => 'margin: 1em auto; text-align: center;' ), $this->image( $opts ) )
+				Html::rawElement(
+					'div',
+					array( 'style' => 'margin: 1em auto; text-align: center;' ),
+					$this->image( $opts )
+				)
 		);
 	}
 
@@ -235,8 +237,9 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 */
 	protected function eLabel( $name ) {
 		// Give grep a chance to find the usages:
-		// translate-statsf-width, translate-statsf-height, translate-statsf-start, translate-statsf-days,
-		// translate-statsf-scale, translate-statsf-count, translate-statsf-language, translate-statsf-group
+		// translate-statsf-width, translate-statsf-height, translate-statsf-start,
+		// translate-statsf-days, translate-statsf-scale, translate-statsf-count,
+		// translate-statsf-language, translate-statsf-group
 		$label = 'translate-statsf-' . $name;
 		$label = $this->msg( $label )->escaped();
 
@@ -313,6 +316,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 
 		$jsSelect = new JsSelectToInput( $selector );
 		$jsSelect->setSourceId( 'mw-language-selector' );
+
 		return $jsSelect;
 	}
 
@@ -458,7 +462,6 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			foreach ( (array)$indexLabels as $i ) {
 				if ( !isset( $labelToIndex[$i] ) ) {
 					continue;
-
 				}
 				$date = $lang->sprintfDate( $dateFormat, $so->getTimestamp( $row ) );
 				// Ignore values outside range
@@ -535,6 +538,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			// Round to nearest day
 			$cutoff -= ( $cutoff % 86400 );
 		}
+
 		return $cutoff;
 	}
 
@@ -614,7 +618,6 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		$plot->SetXTickPos( 'none' );
 		$plot->SetXLabelAngle( 45 );
 
-
 		$max = max( array_map( 'max', $resData ) );
 		$max = self::roundToSignificant( $max, 1 );
 		$max = round( $max, intval( -log( $max, 10 ) ) );
@@ -653,6 +656,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		$log = (int)log( $number, 10 );
 		$nonSignificant = max( 0, $log - $significant + 1 );
 		$factor = pow( 10, $nonSignificant );
+
 		return intval( ceil( $number / $factor ) * $factor );
 	}
 
@@ -780,6 +784,7 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 		if ( $end !== null ) {
 			$conds[] = "$field <= '{$db->timestamp( $end )}'";
 		}
+
 		return $conds;
 	}
 
@@ -951,6 +956,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 				$items[] = $this->makeLabel( $group, $code );
 			}
 		}
+
 		return $items;
 	}
 
