@@ -3242,6 +3242,7 @@ Se não deseja receber as newsletters, pode optar por não recebê-las no separa
 
 /** Brazilian Portuguese (português do Brasil)
  * @author Giro720
+ * @author Luckas
  * @author 555
  */
 $messages['pt-br'] = array(
@@ -3274,7 +3275,7 @@ Aqui você os escolherá, se assim desejar.',
 	'translate-fs-userpage-level-2' => 'Tenho conhecimentos moderados de',
 	'translate-fs-userpage-level-1' => 'Sei um pouco de',
 	'translate-fs-userpage-help' => 'Indique suas habilidades em idiomas e nos fale algo sobre você. Caso tenha conhecimentos em mais de cinco idiomas, será possível especificá-los em outro momento.',
-	'translate-fs-userpage-submit' => 'Criar a minha página de usuário',
+	'translate-fs-userpage-submit' => 'Criar a sua página de usuário',
 	'translate-fs-userpage-done' => 'Bom trabalho! Agora você tem uma página de usuário.',
 	'translate-fs-permissions-planguage' => 'Idioma principal:',
 	'translate-fs-permissions-help' => 'Agora você precisa realizar o pedido de adição ao grupo com privilégios de tradução.

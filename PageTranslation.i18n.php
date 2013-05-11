@@ -8127,6 +8127,7 @@ Os problemas que ocorrerem serão registados no [[Special:Log/pagetranslation|re
  * @author Giro720
  * @author Helder.wiki
  * @author Heldergeovane
+ * @author Luckas
  * @author 555
  */
 $messages['pt-br'] = array(
@@ -8191,7 +8192,6 @@ mas {{PLURAL:$1|a última versão não pode ser marcada|as últimas versões nã
 	'translate-tag-markthisagain' => 'Esta página tem <span class="plainlinks">[$1 alterações]</span> desde a última vez em que ela foi <span class="plainlinks">[$2 marcada para tradução]</span>.',
 	'translate-tag-hasnew' => 'Esta página contém <span class="plainlinks">[$1 alterações]</span> que não estão marcadas para tradução.',
 	'tpt-translation-intro' => 'Esta página é uma <span class="plainlinks">[$1 versão traduzida]</span> da página [[$2]]. Sua tradução está $3% completa.',
-	'tpt-translation-intro-fuzzy' => 'Traduções desatualizadas estão marcadas desta forma.',
 	'tpt-languages-legend' => 'Outros idiomas:',
 	'tpt-languages-zero' => 'Iniciar a tradução para este idioma',
 	'tpt-target-page' => 'Esta página não pode ser atualizada manualmente.
@@ -8230,23 +8230,8 @@ Texto da seção: <pre>$1</pre>', # Fuzzy
 	'pt-shake-position' => 'Os marcadores de seção estão em uma posição inesperada.
 Texto da seção: <pre>$1</pre>', # Fuzzy
 	'pt-shake-empty' => 'Seção em branco para o marcador $1.', # Fuzzy
-	'pt-log-header' => 'Registro para operações relacionadas com o sistema de tradução de páginas',
-	'pt-log-name' => 'Registro de tradução de páginas',
-	'pt-log-mark' => '{{GENDER:$2|marcou}} a edição $3 da página "[[:$1]]" para tradução.',
-	'pt-log-unmark' => '{{GENDER:$2|desmarcou}} a página "[[:$1]]" para tradução.',
-	'pt-log-moveok' => '{{GENDER:$2|concluiu}} a renomeação da página traduzível $1 para $3',
-	'pt-log-movenok' => '{{GENDER:$2|encontrou}} um problema ao mover [[:$1]] para [[:$3]]',
-	'pt-log-delete-full-ok' => '{{GENDER:$2|concluiu}} a eliminação da página traduzível $1',
-	'pt-log-delete-full-nok' => '{{GENDER:$2|encontrou}} problemas ao eliminar a página traduzível [[:$1]]',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|concluiu}} a eliminação da página traduzida $1',
-	'pt-log-delete-lang-nok' => '{{GENDER:$2|encontrou}} problemas ao eliminar a página traduzida [[:$1]]',
-	'pt-log-encourage' => '{{GENDER:$2|disponibilizou}} para tradução a página [[:$1]]',
-	'pt-log-discourage' => '{{GENDER:$2|impediu}} novas traduções para a página [[:$1]]',
-	'pt-log-priority-langs-unset' => '{{GENDER:$2|removeu}} as definições de idiomas prioritários para a página [[:$1]]',
-	'pt-log-priority-langs' => '{{GENDER:$2|definiu}} os idiomas prioritários para a página [[:$1]] ($3). Motivo: $4',
-	'pt-log-priority-langs-force' => '{{GENDER:$2|limitou}} para $3 os idiomas prioritários para a página [[:$1]]. Motivo: $4',
-	'pt-log-aggregategroup-associate' => '{{GENDER:$2|adicionou}} a página traduzível [[:$1]] ao grupo agregador $3',
-	'pt-log-aggregategroup-dissociate' => '{{GENDER:$2|removeu}} a página traduzível [[:$1]] do grupo agregador $3',
+	'log-description-pagetranslation' => 'Registro para operações relacionadas com o sistema de tradução de páginas',
+	'log-name-pagetranslation' => 'Registro de tradução de páginas',
 	'pt-movepage-title' => 'Mover a página traduzível $1',
 	'pt-movepage-blockers' => 'A página traduzível não pode ser movida para outro nome devido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:',
 	'pt-movepage-block-base-exists' => 'A página-base de destino [[:$1]] já existe.', # Fuzzy
@@ -8260,7 +8245,7 @@ Texto da seção: <pre>$1</pre>', # Fuzzy
 	'pt-movepage-list-pages' => 'Lista de páginas para serem movidas',
 	'pt-movepage-list-translation' => 'Páginas de tradução', # Fuzzy
 	'pt-movepage-list-section' => 'Páginas de seção', # Fuzzy
-	'pt-movepage-list-other' => 'Outras subpáginas', # Fuzzy
+	'pt-movepage-list-other' => '{{PLURAL:$1|Outra subpágina|Outras subpáginas}}',
 	'pt-movepage-list-count' => 'Há, no total, $1 {{PLURAL:$1|página para ser movida|páginas para serem movidas}}.',
 	'pt-movepage-legend' => 'Mover página traduzível',
 	'pt-movepage-current' => 'Nome atual:',
