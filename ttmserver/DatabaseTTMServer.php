@@ -236,10 +236,10 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__ );
 		wfProfileOut( __METHOD__ );
 
-		return $this->processQueryResults( $res, $text, $sourceLanguage, $targetLanguage );
+		return $this->processQueryResults( $res, $text, $targetLanguage );
 	}
 
-	protected function processQueryResults( $res, $text, $sourceLanguage, $targetLanguage ) {
+	protected function processQueryResults( $res, $text, $targetLanguage ) {
 		wfProfileIn( __METHOD__ );
 		$timeLimit = microtime( true ) + 5;
 
