@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dw1n743Y",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-05-11T19:26:01Z",
+      "side": 1,
+      "message": "Please stop changing these back and forth: I3d974f35ceeb85b0ab9c96fe6c0f24233219c7c9",
+      "revId": "5259088cb10d41ed6201c84d476c97d80f444bf5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dwzn4n3g",
+        "filename": "Resources.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-05-11T19:26:01Z",
+      "side": 1,
+      "message": "remove it",
+      "revId": "5259088cb10d41ed6201c84d476c97d80f444bf5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dw5n1a4M",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-05-11T19:26:01Z",
+      "side": 1,
+      "message": ":(",
+      "revId": "5259088cb10d41ed6201c84d476c97d80f444bf5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dw3nyJ5o",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-05-11T19:26:01Z",
+      "side": 1,
+      "message": "This looks incorrect indentation",
+      "revId": "5259088cb10d41ed6201c84d476c97d80f444bf5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
