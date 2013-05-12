@@ -73,7 +73,9 @@ class PageTranslationHooks {
 		global $wgTranslatePageTranslationULS;
 
 		$title = $out->getTitle();
-		if ( TranslatablePage::isSourcePage( $title ) || TranslatablePage::isTranslationPage( $title ) ) {
+		if ( TranslatablePage::isSourcePage( $title ) ||
+			TranslatablePage::isTranslationPage( $title )
+		) {
 			$out->addModules( 'ext.translate' );
 			if ( $wgTranslatePageTranslationULS ) {
 				$out->addModules( 'ext.translate.pagetranslation.uls' );
@@ -512,7 +514,9 @@ class PageTranslationHooks {
 	 * Prevent editing of unknown pages in Translations namespace.
 	 * Hook: getUserPermissionsErrorsExpensive
 	 */
-	public static function preventUnknownTranslations( Title $title, User $user, $action, &$result ) {
+	public static function preventUnknownTranslations( Title $title, User $user,
+		$action, &$result
+	) {
 		$handle = new MessageHandle( $title );
 		if ( $handle->isPageTranslation() && $action === 'edit' ) {
 			if ( !$handle->isValid() ) {
@@ -611,8 +615,13 @@ class PageTranslationHooks {
 	 */
 	public static function disableDelete( $article, $out, &$reason ) {
 		$title = $article->getTitle();
-		if ( TranslatablePage::isSourcePage( $title ) || TranslatablePage::isTranslationPage( $title ) ) {
-			$new = SpecialPage::getTitleFor( 'PageTranslationDeletePage', $title->getPrefixedText() );
+		if ( TranslatablePage::isSourcePage( $title ) ||
+			TranslatablePage::isTranslationPage( $title )
+		) {
+			$new = SpecialPage::getTitleFor(
+				'PageTranslationDeletePage',
+				$title->getPrefixedText()
+			);
 			$out->redirect( $new->getFullUrl() );
 		}
 
@@ -683,7 +692,8 @@ class PageTranslationHooks {
 					$actions[] = Linker::link( $translate, $linkDesc, array(), $par );
 				} else {
 					$markUrl = $translate->getFullUrl( $par );
-					$actions[] = wfMessage( 'translate-tag-markthisagain', $diffUrl, $markUrl )->parse();
+					$actions[] = wfMessage( 'translate-tag-markthisagain', $diffUrl, $markUrl )
+						->parse();
 				}
 			} else {
 				$actions[] = wfMessage( 'translate-tag-hasnew', $diffUrl )->parse();
@@ -815,6 +825,7 @@ class PageTranslationHooks {
 					} else {
 						$display .= '/';
 					}
+
 					$growinglink .= '/';
 				}
 			}
