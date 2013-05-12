@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "Dw0hFzhY",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-05-12T18:49:45Z",
+      "side": 1,
+      "message": "Then the sniffer is wrong. This is going against the changes done recently:\n\n1) I0eba7fc\n2) https://www.mediawiki.org/w/index.php?title\u003dManual:Coding_conventions/PHP\u0026diff\u003d674672",
+      "parentUuid": "Dw7SQNkM",
+      "revId": "5259088cb10d41ed6201c84d476c97d80f444bf5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Dwzn4n3g",
         "filename": "Resources.php",
         "patchSetId": 1
@@ -118,6 +136,24 @@
       "side": 1,
       "message": "Nope. Concatination is an extra indent.",
       "parentUuid": "Dw3nyJ5o",
+      "revId": "5259088cb10d41ed6201c84d476c97d80f444bf5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dw6hSmts",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-05-12T18:49:45Z",
+      "side": 1,
+      "message": "Makes no sense.",
+      "parentUuid": "Dw-Savl4",
       "revId": "5259088cb10d41ed6201c84d476c97d80f444bf5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
