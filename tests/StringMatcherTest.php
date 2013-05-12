@@ -7,11 +7,6 @@
  */
 
 class StringMatcherTest extends MediaWikiTestCase {
-
-	public function setUp() {
-		parent::setUp();
-	}
-
 	/**
 	 * @dataProvider messageKeyProvider
 	 */
@@ -39,8 +34,14 @@ class StringMatcherTest extends MediaWikiTestCase {
 			array( 'key', 'p-key', 'p-', array( 'key', '*ey', 'ke*' ), 'Multiple rules match' ),
 			array( 'key', 'key', 'p-', array( '*a*', '*ar', 'ba*' ), 'Multiple rules not match' ),
 			array( 'key', 'p-key', 'p-', array( '*' ), 'All match' ),
-			array( '[k.ssa]', 'p-=5Bk.ssa=5D', 'p-', array( '[k.s*' ), 'Message key with special chars' ),
-			array( '[kissa]', '=5Bkissa=5D', 'p-', array( '[k.s*' ), 'Message key with special chars' ),
+			array(
+				'[k.ssa]', 'p-=5Bk.ssa=5D', 'p-', array( '[k.s*' ),
+				'Message key with special chars'
+			),
+			array(
+				'[kissa]', '=5Bkissa=5D', 'p-', array( '[k.s*' ),
+				'Message key with special chars'
+			),
 		);
 
 		return $keys;

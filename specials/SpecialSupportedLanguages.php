@@ -44,13 +44,19 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$cachekey = wfMemcKey( 'translate-supportedlanguages', $lang->getCode() );
 		$data = $cache->get( $cachekey );
 		if ( !$this->purge && is_string( $data ) ) {
-			TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators' );
+			TranslateUtils::addSpecialHelpLink(
+				$out,
+				'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators'
+			);
 			$out->addHtml( $data );
 
 			return;
 		}
 
-		TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators' );
+		TranslateUtils::addSpecialHelpLink(
+			$out,
+			'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators'
+		);
 
 		$this->outputHeader();
 		$dbr = wfGetDB( DB_SLAVE );
@@ -103,10 +109,12 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 			// If CLDR is installed, add localised header and link title.
 			if ( $cldrInstalled ) {
-				$headerText = $this->msg( 'supportedlanguages-portallink' )->params( $code, $locals[$code], $natives[$code] )->escaped();
+				$headerText = $this->msg( 'supportedlanguages-portallink' )
+					->params( $code, $locals[$code], $natives[$code] )->escaped();
 			} else {
 				// No CLDR, so a less localised header and link title.
-				$headerText = $this->msg( 'supportedlanguages-portallink-nocldr' )->params( $code, $natives[$code] )->escaped();
+				$headerText = $this->msg( 'supportedlanguages-portallink-nocldr' )
+					->params( $code, $natives[$code] )->escaped();
 			}
 
 			$headerText = htmlspecialchars( $headerText );
@@ -168,10 +176,11 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = array( 'recentchanges' );
 		$fields = array( 'substring_index(rc_title, \'/\', -1) as lang', 'count(*) as count' );
+		$timestamp = $dbr->timestamp( TS_DB, wfTimeStamp( TS_UNIX ) - 60 * 60 * 24 * $this->period );
 		$conds = array(
 			'rc_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
 			'rc_namespace' => $wgTranslateMessageNamespaces,
-			'rc_timestamp > ' . $dbr->timestamp( TS_DB, wfTimeStamp( TS_UNIX ) - 60 * 60 * 24 * $this->period ),
+			'rc_timestamp > ' . $timestamp,
 		);
 		$options = array( 'GROUP BY' => 'lang', 'HAVING' => 'count > 20' );
 
@@ -199,7 +208,11 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = array( 'page', 'revision' );
-		$fields = array( 'rev_user_text', 'substring_index(page_title, \'/\', -1) as lang', 'count(page_id) as count' );
+		$fields = array(
+			'rev_user_text',
+			'substring_index(page_title, \'/\', -1) as lang',
+			'count(page_id) as count'
+		);
 		$conds = array(
 			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
 			'page_namespace' => $wgTranslateMessageNamespaces,
@@ -227,7 +240,11 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = array( 'page', 'revision', 'text' );
-		$vars = array_merge( Revision::selectTextFields(), array( 'page_title', 'page_namespace' ), Revision::selectFields() );
+		$vars = array_merge(
+			Revision::selectTextFields(),
+			array( 'page_title', 'page_namespace' ),
+			Revision::selectFields()
+		);
 		$conds = array(
 			'page_latest = rev_id',
 			'rev_text_id = old_id',
@@ -309,9 +326,11 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 				$last = wfTimestamp( TS_UNIX ) - $lastedits[$username];
 				$last = round( $last / $day );
-				$attribs['title'] = $this->msg( 'supportedlanguages-activity', $username )->numParams( $count, $last )->text();
+				$attribs['title'] = $this->msg( 'supportedlanguages-activity', $username )
+					->numParams( $count, $last )->text();
 				$last = max( 1, min( $period, $last ) );
-				$styles['border-bottom'] = '3px solid #' . $this->getActivityColor( $period - $last, $period );
+				$styles['border-bottom'] = '3px solid #' .
+					$this->getActivityColor( $period - $last, $period );
 			} else {
 				$enc = "<del>$enc</del>";
 			}
@@ -326,7 +345,11 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		$linkList = $this->getLanguage()->listToText( $links );
 		$html = "<p class='mw-translate-spsl-translators'>";
-		$html .= $this->msg( 'supportedlanguages-translators', $linkList, count( $links ) )->text();
+		$html .= $this->msg(
+			'supportedlanguages-translators',
+			$linkList,
+			count( $links )
+		)->text();
 		$html .= "</p>\n";
 		$this->getOutput()->addHTML( $html );
 	}
@@ -417,7 +440,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		for ( $i = 0; $i <= $period; $i += 30 ) {
 			$iFormatted = htmlspecialchars( $this->getLanguage()->formatNum( $i ) );
-			$legend .= '<span style="background-color:#' . $this->getActivityColor( $period - $i, $period ) . "\"> $iFormatted</span>";
+			$legend .= '<span style="background-color:#' .
+				$this->getActivityColor( $period - $i, $period ) .
+				"\"> $iFormatted</span>";
 		}
 
 		return $legend;

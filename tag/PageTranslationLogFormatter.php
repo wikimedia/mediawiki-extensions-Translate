@@ -12,7 +12,6 @@
  * Class for formatting Translate page translation logs.
  */
 class PageTranslationLogFormatter extends LogFormatter {
-
 	public function getMessageParameters() {
 		$params = parent::getMessageParameters();
 		$legacy = $this->entry->getParameters();
@@ -46,7 +45,10 @@ class PageTranslationLogFormatter extends LogFormatter {
 				if ( $languages !== false ) {
 					$lang = $this->context->getLanguage();
 
-					$languages = array_map( 'trim', preg_split( '/,/', $languages, -1, PREG_SPLIT_NO_EMPTY ) );
+					$languages = array_map(
+						'trim',
+						preg_split( '/,/', $languages, -1, PREG_SPLIT_NO_EMPTY )
+					);
 					$languages = array_map( function ( $code ) use ( $lang ) {
 						return TranslateUtils::getLanguageName( $code, $lang->getCode() );
 					}, $languages );
