@@ -30,7 +30,7 @@ class TranslateYaml {
 				$template = $document['TEMPLATE'];
 			} else {
 				if ( !isset( $document['BASIC']['id'] ) ) {
-					$error =  "No path ./BASIC/id (group id not defined) ";
+					$error = "No path ./BASIC/id (group id not defined) ";
 					$error .= "in YAML document located in $filename";
 					trigger_error( $error );
 					continue;

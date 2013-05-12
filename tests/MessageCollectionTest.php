@@ -62,7 +62,11 @@ class MessageCollectionTest extends MediaWikiTestCase {
 		$this->assertEquals( 'pupuliini', $translated->translation() );
 		$this->assertEquals( 'SuperUser', $translated->getProperty( 'last-translator-text' ) );
 		$this->assertEquals( 123, $translated->getProperty( 'last-translator-id' ) );
-		$this->assertEquals( 'translated', $translated->getProperty( 'status' ), 'message status is translated' );
+		$this->assertEquals(
+			'translated',
+			$translated->getProperty( 'status' ),
+			'message status is translated'
+		);
 		$this->assertEquals( $revision, $translated->getProperty( 'revision' ) );
 
 		/** @var TMessage $untranslated */
@@ -71,7 +75,11 @@ class MessageCollectionTest extends MediaWikiTestCase {
 		$this->assertEquals( null, $untranslated->translation(), 'no translation is null' );
 		$this->assertEquals( false, $untranslated->getProperty( 'last-translator-text' ) );
 		$this->assertEquals( false, $untranslated->getProperty( 'last-translator-id' ) );
-		$this->assertEquals( 'untranslated', $untranslated->getProperty( 'status' ), 'message status is untranslated' );
+		$this->assertEquals(
+			'untranslated',
+			$untranslated->getProperty( 'status' ),
+			'message status is untranslated'
+		);
 		$this->assertEquals( false, $untranslated->getProperty( 'revision' ) );
 	}
 }

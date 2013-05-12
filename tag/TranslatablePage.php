@@ -718,12 +718,14 @@ class TranslatablePage {
 			$handle = new MessageHandle( $t );
 			$code = $handle->getCode();
 
-			// Sometimes we want to display 0.00 for pages which translation
+			// Sometimes we want to display 0.00 for pages for which translation
 			// hasn't started yet.
 			$stats[$code] = 0.00;
 			if ( isset( $temp[$code] ) && $temp[$code][MessageGroupStats::TOTAL] > 0 ) {
-				$per = $temp[$code][MessageGroupStats::TRANSLATED] / $temp[$code][MessageGroupStats::TOTAL];
-				$stats[$code] = sprintf( '%.2f', $per );
+				$total = $temp[$code][MessageGroupStats::TOTAL];
+				$translated = $temp[$code][MessageGroupStats::TRANSLATED];
+				$percentage = $translated / $total;
+				$stats[$code] = sprintf( '%.2f', $percentage );
 			}
 		}
 

@@ -67,15 +67,29 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		$page->updateRestrictions( array( 'edit' => 'sysop' ), 'Test case' );
 
 		$newLatest = $latest + 1;
-		$this->assertSame( $newLatest, $translatablePage->getReadyTag(), 'Ready tag was updated after protection' );
-		$this->assertSame( $latest, $translatablePage->getMarkedTag(), 'Marked tag was not updated after protection' );
+		$this->assertSame(
+			$newLatest,
+			$translatablePage->getReadyTag(),
+			'Ready tag was updated after protection'
+		);
+		$this->assertSame(
+			$latest,
+			$translatablePage->getMarkedTag(),
+			'Marked tag was not updated after protection'
+		);
 	}
 
 	public function testTranslationPageRestrictions() {
 		$superUser = new MockSuperUser();
 		$title = Title::newFromText( 'Translatable page' );
 		$page = WikiPage::factory( $title );
-		$status = $page->doEdit( '<translate>Hello</translate>', 'New page', 0, false, $superUser );
+		$status = $page->doEdit(
+			'<translate>Hello</translate>',
+			'New page',
+			0,
+			false,
+			$superUser
+		);
 		$revision = $status->value['revision']->getId();
 		$translatablePage = TranslatablePage::newFromRevision( $title, $revision );
 		$translatablePage->addMarkedTag( $revision );

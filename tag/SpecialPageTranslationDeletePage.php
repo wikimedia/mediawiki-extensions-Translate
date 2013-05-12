@@ -68,19 +68,24 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 
 		// Real stuff starts here
 		if ( TranslatablePage::isSourcePage( $this->title ) ) {
-			$out->setPagetitle( $this->msg( 'pt-deletepage-full-title', $this->title->getPrefixedText() )->text() );
+			$title = $this->msg( 'pt-deletepage-full-title', $this->title->getPrefixedText() );
+			$out->setPagetitle( $title );
 
 			$this->code = '';
 			$this->page = TranslatablePage::newFromTitle( $this->title );
 		} else {
 			$page = TranslatablePage::isTranslationPage( $this->title );
 			if ( $page ) {
-				$out->setPagetitle( $this->msg( 'pt-deletepage-lang-title', $this->title->getPrefixedText() )->text() );
+				$title = $this->msg( 'pt-deletepage-lang-title', $this->title->getPrefixedText() );
+				$out->setPagetitle( $title );
 
 				list( , $this->code ) = TranslateUtils::figureMessage( $this->title->getText() );
 				$this->page = $page;
 			} else {
-				throw new ErrorPageError( 'pt-deletepage-invalid-title', 'pt-deletepage-invalid-text' );
+				throw new ErrorPageError(
+					'pt-deletepage-invalid-title',
+					'pt-deletepage-invalid-text'
+				);
 			}
 		}
 
@@ -159,22 +164,42 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$this->getOutput()->addWikiMsg( 'pt-deletepage-intro' );
 
 		$subaction = array( 'name' => 'subaction' );
-		$formParams = array( 'method' => 'post', 'action' => $this->getTitle( $this->text )->getLocalURL() );
+		$formParams = array(
+			'method' => 'post',
+			'action' => $this->getTitle( $this->text )->getLocalURL()
+		);
 
 		$form = array();
 		$form[] = Xml::fieldset( $this->msg( 'pt-deletepage-any-legend' )->text() );
 		$form[] = Html::openElement( 'form', $formParams );
 		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-		$this->addInputLabel( $form, $this->msg( 'pt-deletepage-current' )->text(), 'wpTitle', 30, $this->text );
-		$this->addInputLabel( $form, $this->msg( 'pt-deletepage-reason' )->text(), 'reason', 60, $this->reason );
-		$form[] = Xml::submitButton( $this->msg( 'pt-deletepage-action-check' )->text(), $subaction );
+		$this->addInputLabel(
+			$form,
+			$this->msg( 'pt-deletepage-current' )->text(),
+			'wpTitle',
+			30,
+			$this->text
+		);
+		$this->addInputLabel(
+			$form,
+			$this->msg( 'pt-deletepage-reason' )->text(),
+			'reason',
+			60,
+			$this->reason
+		);
+		$form[] = Xml::submitButton(
+			$this->msg( 'pt-deletepage-action-check' )->text(),
+			$subaction
+		);
 		$form[] = Xml::closeElement( 'form' );
 		$form[] = Xml::closeElement( 'fieldset' );
 		$this->getOutput()->addHTML( implode( "\n", $form ) );
 	}
 
 	/**
-	 * Shortcut for keeping the code at least a bit readable. Adds label and input into $form array.
+	 * Shortcut for keeping the code at least a bit readable. Adds label and
+	 * input into $form array.
+	 *
 	 * @param array $form \list{String} Array where input element and label is appended.
 	 * @param string $label Label text.
 	 * @param string $name Name attribute.
@@ -182,7 +207,9 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 	 * @param string|bool $text Text of the value attribute. Default false.
 	 * @param array $attribs Extra attributes. Default empty array.
 	 */
-	protected function addInputLabel( &$form, $label, $name, $size = false, $text = false, $attribs = array() ) {
+	protected function addInputLabel( &$form, $label, $name, $size = false, $text = false,
+		$attribs = array()
+	) {
 		$br = Html::element( 'br' );
 		list( $label, $input ) = Xml::inputLabelSep( $label, $name, $name, $size, $text, $attribs );
 		$form[] = $label . $br;
@@ -240,7 +267,10 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$readonly = array( 'readonly' => 'readonly' );
 
 		$subaction = array( 'name' => 'subaction' );
-		$formParams = array( 'method' => 'post', 'action' => $this->getTitle( $this->text )->getLocalURL() );
+		$formParams = array(
+			'method' => 'post',
+			'action' => $this->getTitle( $this->text )->getLocalURL()
+		);
 
 		$form = array();
 		if ( $this->singleLanguage() ) {
@@ -250,11 +280,33 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		}
 		$form[] = Html::openElement( 'form', $formParams );
 		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-		$this->addInputLabel( $form, $this->msg( 'pt-deletepage-current' )->text(), 'wpTitle', 30, $this->text, $readonly );
-		$this->addInputLabel( $form, $this->msg( 'pt-deletepage-reason' )->text(), 'reason', 60, $this->reason );
-		$form[] = Xml::checkLabel( $this->msg( 'pt-deletepage-subpages' )->text(), 'subpages', 'mw-subpages', $this->doSubpages, $readonly ) . $br;
-		$form[] = Xml::submitButton( $this->msg( 'pt-deletepage-action-perform' )->text(), $subaction );
-		$form[] = Xml::submitButton( $this->msg( 'pt-deletepage-action-other' )->text(), $subaction );
+		$this->addInputLabel(
+			$form,
+			$this->msg( 'pt-deletepage-current' )->text(),
+			'wpTitle',
+			30,
+			$this->text, $readonly );
+		$this->addInputLabel(
+			$form,
+			$this->msg( 'pt-deletepage-reason' )->text(),
+			'reason',
+			60,
+			$this->reason );
+		$form[] = Xml::checkLabel(
+			$this->msg( 'pt-deletepage-subpages' )->text(),
+			'subpages',
+			'mw-subpages',
+			$this->doSubpages,
+			$readonly
+		) . $br;
+		$form[] = Xml::submitButton(
+			$this->msg( 'pt-deletepage-action-perform' )->text(),
+			$subaction
+		);
+		$form[] = Xml::submitButton(
+			$this->msg( 'pt-deletepage-action-other' )->text(),
+			$subaction
+		);
 		$form[] = Xml::closeElement( 'form' );
 		$form[] = Xml::closeElement( 'fieldset' );
 		$out->addHTML( implode( "\n", $form ) );
@@ -280,12 +332,22 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$translationPages = $this->getTranslationPages();
 		$user = $this->getUser();
 		foreach ( $translationPages as $old ) {
-			$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob( $old, $base, !$this->singleLanguage(), $user );
+			$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob(
+				$old,
+				$base,
+				!$this->singleLanguage(),
+				$user
+			);
 		}
 
 		$sectionPages = $this->getSectionPages();
 		foreach ( $sectionPages as $old ) {
-			$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob( $old, $base, !$this->singleLanguage(), $user );
+			$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob(
+				$old,
+				$base,
+				!$this->singleLanguage(),
+				$user
+			);
 		}
 
 		if ( !$this->doSubpages ) {
@@ -295,14 +357,23 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 					continue;
 				}
 
-				$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob( $old, $base, !$this->singleLanguage(), $user );
+				$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob(
+					$old,
+					$base,
+					!$this->singleLanguage(),
+					$user
+				);
 			}
 		}
 
 		Job::batchInsert( $jobs );
 
 		$cache = wfGetCache( CACHE_DB );
-		$cache->set( wfMemcKey( 'pt-base', $target->getPrefixedText() ), array_keys( $jobs ), 60 * 60 * 6 );
+		$cache->set(
+			wfMemcKey( 'pt-base', $target->getPrefixedText() ),
+			array_keys( $jobs ),
+			60 * 60 * 6
+		);
 
 		if ( !$this->singleLanguage() ) {
 			$this->page->unmarkTranslatablePage();
@@ -332,7 +403,11 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 					if ( isset( $subgroups[$groupId] ) ) {
 						unset( $subgroups[$groupId] );
 						$subgroups = array_flip( $subgroups );
-						TranslateMetadata::set( $group->getId(), 'subgroups', implode( ',', $subgroups ) );
+						TranslateMetadata::set(
+							$group->getId(),
+							'subgroups',
+							implode( ',', $subgroups )
+						);
 					}
 				}
 			}
