@@ -80,7 +80,7 @@ class MessageWebImporter {
 
 	/**
 	 * Group is either MessageGroup object or group id.
-	 * @param $group MessageGroup|string
+	 * @param MessageGroup|string $group
 	 */
 	public function setGroup( $group ) {
 		if ( $group instanceof MessageGroup ) {
@@ -99,7 +99,7 @@ class MessageWebImporter {
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	protected function getAction() {
 		return $this->getTitle()->getFullURL();
@@ -158,8 +158,8 @@ class MessageWebImporter {
 	}
 
 	/**
-	 * @param $fuzzy bool
-	 * @param $action
+	 * @param bool $fuzzy
+	 * @param string $action
 	 * @return string
 	 */
 	protected function getDefaultAction( $fuzzy, $action ) {
@@ -337,18 +337,21 @@ class MessageWebImporter {
 	/**
 	 * Perform an action on a given group/key/code
 	 *
-	 * @param $action \string Options: 'import', 'conflict' or 'ignore'
-	 * @param $group MessageGroup Group object
-	 * @param $key \string Message key
-	 * @param $code \string Language code
-	 * @param $message \string contents for the $key/code combination
-	 * @param $comment \string edit summary (default: empty) - see Article::doEdit
-	 * @param $user User User that will make the edit (default: null - $wgUser) - see Article::doEdit
-	 * @param $editFlags Integer bitfield: see Article::doEdit
+	 * @param string $action Options: 'import', 'conflict' or 'ignore'
+	 * @param MessageGroup $group Group object
+	 * @param string $key Message key
+	 * @param string $code Language code
+	 * @param string $message Contents for the $key/code combination
+	 * @param string $comment Edit summary (default: empty) - see Article::doEdit
+	 * @param User $user User that will make the edit (default: null - $wgUser).
+	 *        See Article::doEdit.
+	 * @param int $editFlags Integer bitfield: see Article::doEdit
 	 * @throws MWException
-	 * @return \string Action result
+	 * @return string Action result
 	 */
-	public static function doAction( $action, $group, $key, $code, $message, $comment = '', $user = null, $editFlags = 0 ) {
+	public static function doAction( $action, $group, $key, $code, $message, $comment = '',
+		$user = null, $editFlags = 0
+	) {
 		global $wgTranslateDocumentationLanguageCode;
 
 		$title = self::makeTranslationTitle( $group, $key, $code );
@@ -364,7 +367,9 @@ class MessageWebImporter {
 			return self::doImport( $title, $message, $comment, $user, $editFlags );
 		} elseif ( $action === 'ignore' ) {
 			return array( 'translate-manage-import-ignore', $key );
-		} elseif ( $action === 'fuzzy' && $code !== 'en' && $code !== $wgTranslateDocumentationLanguageCode ) {
+		} elseif ( $action === 'fuzzy' && $code !== 'en' &&
+			$code !== $wgTranslateDocumentationLanguageCode
+		) {
 			$message = self::makeTextFuzzy( $message );
 
 			return self::doImport( $title, $message, $comment, $user, $editFlags );
@@ -385,7 +390,7 @@ class MessageWebImporter {
 	 * @param Title $title
 	 * @param $message
 	 * @param $comment
-	 * @param $user User
+	 * @param User $user
 	 * @param $editFlags
 	 * @return array
 	 */
@@ -408,9 +413,9 @@ class MessageWebImporter {
 	/**
 	 * @static
 	 * @param Title $title
-	 * @param  $message
-	 * @param  $comment
-	 * @param  $user
+	 * @param $message
+	 * @param $comment
+	 * @param $user
 	 * @param int $editFlags
 	 * @return array|String
 	 */
@@ -488,9 +493,9 @@ class MessageWebImporter {
 	 * Given a group, message key and language code, creates a title for the
 	 * translation page.
 	 *
-	 * @param $group MessageGroup
-	 * @param $key \string Message key
-	 * @param $code \string Language code
+	 * @param MessageGroup $group
+	 * @param string $key Message key
+	 * @param string $code Language code
 	 * @return Title
 	 */
 	public static function makeTranslationTitle( $group, $key, $code ) {
@@ -502,11 +507,11 @@ class MessageWebImporter {
 	/**
 	 * Make section elements.
 	 *
-	 * @param $legend \string Legend as raw html.
-	 * @param $type \string Contents of type class.
-	 * @param $content \string Contents as raw html.
-	 * @param $lang Language The language in which the text is written.
-	 * @return \string Section element as html.
+	 * @param string $legend Legend as raw html.
+	 * @param string $type Contents of type class.
+	 * @param string $content Contents as raw html.
+	 * @param Language $lang The language in which the text is written.
+	 * @return string Section element as html.
 	 */
 	public static function makeSectionElement( $legend, $type, $content, $lang = null ) {
 		$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
@@ -528,7 +533,7 @@ class MessageWebImporter {
 	/**
 	 * Prepends translation with fuzzy tag and ensures there is only one of them.
 	 *
-	 * @param $message String: message content
+	 * @param string $message Message content
 	 * @return string Message prefixed with TRANSLATE_FUZZY tag
 	 */
 	public static function makeTextFuzzy( $message ) {
@@ -541,8 +546,8 @@ class MessageWebImporter {
 	 * Escape name such that it validates as name and id parameter in html, and
 	 * so that we can get it back with WebRequest::getVal(). Especially dot and
 	 * spaces are difficult for the latter.
-	 * @param $name \string
-	 * @return \string
+	 * @param string $name
+	 * @return string
 	 */
 	public static function escapeNameForPHP( $name ) {
 		$replacements = array(

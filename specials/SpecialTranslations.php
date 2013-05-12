@@ -49,12 +49,18 @@ class SpecialTranslations extends SpecialAllpages {
 		$request = $this->getRequest();
 		$message = $request->getText( 'message' );
 		$namespace = $request->getInt( 'namespace', NS_MAIN );
+
 		if ( $message !== '' ) {
 			$title = Title::newFromText( $message, $namespace );
 		} else {
 			$title = Title::newFromText( $par, $namespace );
 		}
-		TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Statistics_and_reporting#Translations_in_all_languages' );
+
+		TranslateUtils::addSpecialHelpLink(
+			$out,
+			'Help:Extension:Translate/Statistics_and_reporting#Translations_in_all_languages'
+		);
+
 		if ( !$title ) {
 			$title = Title::makeTitle( NS_MEDIAWIKI, '' );
 			$out->addHTML( $this->namespaceMessageForm( $title ) );
@@ -84,7 +90,11 @@ class SpecialTranslations extends SpecialAllpages {
 		$out .= Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
 		$out .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
 		$out .= Xml::openElement( 'fieldset' );
-		$out .= Xml::element( 'legend', null, $this->msg( 'translate-translations-fieldset-title' )->text() );
+		$out .= Xml::element(
+			'legend',
+			null,
+			$this->msg( 'translate-translations-fieldset-title' )->text()
+		);
 		$out .= Xml::openElement( 'table', array( 'id' => 'nsselect', 'class' => 'allpages' ) );
 		$out .= "<tr>
 				<td class='mw-label'>" .
@@ -160,11 +170,17 @@ class SpecialTranslations extends SpecialAllpages {
 		);
 
 		if ( !$res->numRows() ) {
-			$this->getOutput()->addWikiMsg( 'translate-translations-no-message', $title->getPrefixedText() );
+			$this->getOutput()->addWikiMsg(
+				'translate-translations-no-message',
+				$title->getPrefixedText()
+			);
 
 			return;
 		} else {
-			$this->getOutput()->addWikiMsg( 'translate-translations-count', $this->getLanguage()->formatNum( $res->numRows() ) );
+			$this->getOutput()->addWikiMsg(
+				'translate-translations-count',
+				$this->getLanguage()->formatNum( $res->numRows() )
+			);
 		}
 
 		// Normal output.
@@ -191,7 +207,9 @@ class SpecialTranslations extends SpecialAllpages {
 		$canTranslate = $this->getUser()->isAllowed( 'translate' );
 
 		$ajaxPageList = array();
-		$historyText = "&#160;<sup>" . $this->msg( 'translate-translations-history-short' )->escaped() . "</sup>&#160;";
+		$historyText = "&#160;<sup>" .
+			$this->msg( 'translate-translations-history-short' )->escaped() .
+			"</sup>&#160;";
 		$separator = $this->msg( 'word-separator' )->plain();
 
 		foreach ( $res as $s ) {

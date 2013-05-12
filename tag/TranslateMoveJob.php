@@ -9,12 +9,12 @@
  */
 
 /**
- * Contains class with job for moving translation pages. Used together with PageTranslationMovePage class.
+ * Contains class with job for moving translation pages. Used together with
+ * PageTranslationMovePage class.
  *
  * @ingroup PageTranslation JobQueue
  */
 class TranslateMoveJob extends Job {
-
 	/**
 	 * @param $source Title
 	 * @param $target Title
@@ -22,7 +22,9 @@ class TranslateMoveJob extends Job {
 	 * @param $performer
 	 * @return TranslateMoveJob
 	 */
-	public static function newJob( Title $source, Title $target, array $params, /*User*/$performer ) {
+	public static function newJob( Title $source, Title $target, array $params,
+		/*User*/$performer
+	) {
 		$job = new self( $source );
 		$job->setUser( FuzzyBot::getUser() );
 		$job->setTarget( $target->getPrefixedText() );
@@ -82,7 +84,7 @@ class TranslateMoveJob extends Job {
 		$key = wfMemcKey( 'translate-pt-move', $base );
 
 		$count = $cache->decr( $key );
-		$last = strval( $count ) === "0";
+		$last = strval( $count ) === '0';
 
 		if ( $last ) {
 			$cache->delete( $key );
@@ -194,7 +196,9 @@ class TranslateMoveJob extends Job {
 			}
 		} else {
 			if ( !$suppressCount ) {
-				$originalLevel = isset( $wgGroupPermissions['*']['suppressredirect'] ) ? $wgGroupPermissions['*']['suppressredirect'] : null;
+				$originalLevel = isset( $wgGroupPermissions['*']['suppressredirect'] ) ?
+					$wgGroupPermissions['*']['suppressredirect'] :
+					null;
 				$wgGroupPermissions['*']['suppressredirect'] = true;
 			}
 			++$suppressCount;

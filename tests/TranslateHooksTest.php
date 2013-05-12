@@ -48,12 +48,20 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'ugakey1/fi' );
 		$wikipage = WikiPage::factory( $title );
 		$wikipage->doEdit( '[[Category:Shouldnotbe]]', __METHOD__, 0, false, $user );
-		$this->assertEquals( array(), $title->getParentCategories(), 'translation of known message' );
+		$this->assertEquals(
+			array(),
+			$title->getParentCategories(),
+			'translation of known message'
+		);
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'ugakey2/qqq' );
 		$wikipage = WikiPage::factory( $title );
 		$wikipage->doEdit( '[[Category:Shouldbe]]', __METHOD__, 0, false, $user );
-		$this->assertEquals( array( 'Category:Shouldbe' => 'MediaWiki:ugakey2/qqq' ), $title->getParentCategories(), 'message docs' );
+		$this->assertEquals(
+			array( 'Category:Shouldbe' => 'MediaWiki:ugakey2/qqq' ),
+			$title->getParentCategories(),
+			'message docs'
+		);
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'ugakey3/no' );
 		$wikipage = WikiPage::factory( $title );
@@ -61,5 +69,3 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$this->assertEquals( array(), $title->getParentCategories(), 'unknown message' );
 	}
 }
-
-

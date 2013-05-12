@@ -34,7 +34,10 @@ class SpecialPageTranslation extends SpecialPage {
 		$action = $request->getVal( 'do' );
 		$out = $this->getOutput();
 
-		TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Page_translation_example' );
+		TranslateUtils::addSpecialHelpLink(
+			$out,
+			'Help:Extension:Translate/Page_translation_example'
+		);
 
 		// No specific page or invalid input
 		$title = Title::newFromText( $target );
@@ -504,7 +507,11 @@ class SpecialPageTranslation extends SpecialPage {
 
 			# For changed text, the language is set by $diff->setTextLanguage()
 			$lang = $s->type === 'changed' ? null : $wgContLang;
-			$out->addHTML( MessageWebImporter::makeSectionElement( $name, $s->type, $text, $lang ) );
+			$out->addHTML( MessageWebImporter::makeSectionElement(
+				$name,
+				$s->type,
+				$text, $lang
+			) );
 		}
 
 		$deletedSections = $page->getParse()->getDeletedSections();
@@ -529,7 +536,10 @@ class SpecialPageTranslation extends SpecialPage {
 		// Display template changes if applicable
 		if ( $page->getMarkedTag() !== false ) {
 			$newTemplate = $page->getParse()->getTemplatePretty();
-			$oldPage = TranslatablePage::newFromRevision( $page->getTitle(), $page->getMarkedTag() );
+			$oldPage = TranslatablePage::newFromRevision(
+				$page->getTitle(),
+				$page->getMarkedTag()
+			);
 			$oldTemplate = $oldPage->getParse()->getTemplatePretty();
 
 			if ( $oldTemplate !== $newTemplate ) {
@@ -600,9 +610,15 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$this->getOutput()->addHTML(
 			"<table>" .
-				"<tr><td class='mw-label'>$hLangs[0]</td><td class='mw-input'>$hLangs[1]$langSelector[1]</td></tr>" .
+				"<tr>" .
+				"<td class='mw-label'>$hLangs[0]</td>" .
+				"<td class='mw-input'>$hLangs[1]$langSelector[1]</td>" .
+				"</tr>" .
 				"<tr><td></td><td class='mw-inout'>$hForce</td></tr>" .
-				"<tr><td class='mw-label'>$hReason[0]</td><td class='mw-input'>$hReason[1]</td></tr>" .
+				"<tr>" .
+				"<td class='mw-label'>$hReason[0]</td>" .
+				"<td class='mw-input'>$hReason[1]</td>" .
+				"</tr>" .
 				"</table>"
 		);
 	}
@@ -713,7 +729,9 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param TranslatablePage $page
 	 * @param User $user
 	 */
-	protected function handlePriorityLanguages( WebRequest $request, TranslatablePage $page, User $user ) {
+	protected function handlePriorityLanguages( WebRequest $request, TranslatablePage $page,
+		User $user
+	) {
 		// new priority languages
 		$npLangs = rtrim( trim( $request->getVal( 'prioritylangs' ) ), ',' );
 		$npForce = $request->getCheck( 'forcelimit' ) ? 'on' : 'off';

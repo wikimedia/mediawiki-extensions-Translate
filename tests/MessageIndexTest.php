@@ -40,17 +40,29 @@ class MessageIndexTest extends MediaWikiTestCase {
 
 		$tests = array_rand( $data, 10 );
 		foreach ( $tests as $key ) {
-			$this->assertSame( $data[$key], $mi->get( $key ), "Values are preserved for random key $key" );
+			$this->assertSame(
+				$data[$key],
+				$mi->get( $key ),
+				"Values are preserved for random key $key"
+			);
 		}
 
 		$cached = $mi->retrieve();
 
 		$tests = array_rand( $data, 10 );
 		foreach ( $tests as $key ) {
-			$this->assertSame( $data[$key], $mi->get( $key ), "Values are preserved after retrieve for random key $key" );
+			$this->assertSame(
+				$data[$key],
+				$mi->get( $key ),
+				"Values are preserved after retrieve for random key $key"
+			);
 		}
 
-		$this->assertEquals( count( $data ), count( $cached ), 'Cache has same number of elements' );
+		$this->assertEquals(
+			count( $data ),
+			count( $cached ),
+			'Cache has same number of elements'
+		);
 		$this->assertEquals( $data, $cached, 'Cache is preserved' );
 	}
 
