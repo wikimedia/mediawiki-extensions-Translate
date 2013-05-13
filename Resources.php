@@ -154,7 +154,6 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'jquery.textchange',
 	),
 	'messages' => array(
-		'translate-messagereview-submit',
 		'translate-messagereview-progress',
 		'translate-messagereview-failure',
 		'translate-messagereview-done',
