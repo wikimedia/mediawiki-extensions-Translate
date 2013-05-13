@@ -93,7 +93,7 @@
 
 .tux-proofread-status.fuzzy {
 	/* @embed */
-	background: url(../images/outdated-lrt.png) left center no-repeat;
+	background: url(../images/outdated-ltr.png) left center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/outdated-ltr.svg);
 	background-image: -moz-linear-gradient(transparent, transparent), url(../images/outdated-ltr.svg);
 	background-image: linear-gradient(transparent, transparent), url(../images/outdated-ltr.svg);
