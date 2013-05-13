@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "Dw5ItPas",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-05-13T21:53:06Z",
+      "side": 1,
+      "message": "\"Translation proofreaders\" would be better as a group name, it\u0027s too generic out of context. Same for the two following.",
+      "revId": "a0b659fa27c605b9107fdd62fdea0486bd91c742",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dw-IayXk",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-05-13T21:53:06Z",
+      "side": 1,
+      "message": "idem",
+      "revId": "a0b659fa27c605b9107fdd62fdea0486bd91c742",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DwzIVUUk",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-05-13T21:53:06Z",
+      "side": 1,
+      "message": "Why still review?",
+      "revId": "a0b659fa27c605b9107fdd62fdea0486bd91c742",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
