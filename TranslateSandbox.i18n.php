@@ -264,4 +264,9 @@ $messages['zh-hant'] = array(
 	'translatesandbox' => '管理翻譯沙盒',
 	'tsb-filter-pending' => '未解決的請求',
 	'tsb-reminder-title-generic' => '完成介紹後成為核實的翻譯者',
+	'tsb-reminder-content-generic' => '$1：
+
+感謝您註冊 {{SITENAME}}。完成翻譯測試後，管理員會授予您完整翻譯權限。
+
+請來 $2 做更多的翻譯。',
 );

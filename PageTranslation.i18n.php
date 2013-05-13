@@ -6629,13 +6629,14 @@ $messages['mn'] = array(
 
 /** Marathi (मराठी)
  * @author Vb2055
+ * @author संतोष दहिवळ
  */
 $messages['mr'] = array(
-	'pagetranslation' => 'माझे नाव विभावरी आहे. मी बीसीए त दुसरया वर्गात  शिकत आहे. मी फोरसाईट महाविद्यालयात शिकत आहे.मला फस्ट इयर  बीसीएत डिस्टिक्श्न मिलाले आहे.',
-	'right-pagetranslation' => 'मला स्वताला टेनिस खेलायला आवडते.',
-	'action-pagetranslation' => 'I am vibhavari, I  am goal oriented person,I became software enginner.;;;',
-	'tpt-desc' => 'A barcode is an optical machine readable representation of data  relating to the object to which it is attached originally barcodes systematically represented data by varying the width...........',
-	'tpt-section' => 'Barcodes originally were scanned by special optical scanners called barcode reader.Later scanners & interpractive.Software', # Fuzzy
+	'pagetranslation' => 'भाषांतराची पाने.',
+	'right-pagetranslation' => 'Mark versions of pages for translation',
+	'action-pagetranslation' => 'manage translatable pages',
+	'tpt-desc' => 'Extension for translating content pages',
+	'tpt-section' => '$1 चे भाषांतर',
 );
 
 /** Malay (Bahasa Melayu)
