@@ -107,7 +107,7 @@ class TranslateSandbox {
 	 * @throws MWException
 	 */
 	public static function sendReminder( User $sender, User $target, $subject, $body ) {
-		global $wgTranslateSandboxPromotedGroup, $wgNoReplyAddress;
+		global $wgNoReplyAddress;
 
 		if ( !in_array( 'translate-sandboxed', $target->getGroups(), true ) ) {
 			throw new MWException( "Not a sandboxed user" );

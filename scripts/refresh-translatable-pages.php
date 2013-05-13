@@ -30,7 +30,7 @@ class RefreshTranslatablePages extends Maintenance {
 		$groups = MessageGroups::singleton()->getGroups();
 
 		/** @var MessageGroup $group */
-		foreach ( $groups as $id => $group ) {
+		foreach ( $groups as $group ) {
 			if ( !$group instanceof WikiPageMessageGroup ) {
 				continue;
 			}
