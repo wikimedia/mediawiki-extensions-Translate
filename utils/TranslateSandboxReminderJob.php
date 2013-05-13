@@ -2,7 +2,7 @@
 
 
 class TranslateSandboxReminderJob extends Job {
-	public function newJob( array $params ) {
+	public static function newJob( array $params ) {
 		return new self( Title::newMainPage(), $params );
 	}
 
