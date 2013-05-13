@@ -27,7 +27,7 @@ $messages['en'] = array(
 	'tux-sst-nosolr-title' => 'Search unavailable',
 	'tux-sst-nosolr-body' => 'This wiki does not have a translation search service.',
 	'tux-sst-solr-offline-title' => 'Search unavailable',
-	'tux-sst-solr-offline-body' => 'Search service is temporarily unavailable.',
+	'tux-sst-solr-offline-body' => 'The search service is temporarily unavailable.',
 
 	'tux-sst-next' => 'Next results',
 	'tux-sst-prev' => 'Previous results',
