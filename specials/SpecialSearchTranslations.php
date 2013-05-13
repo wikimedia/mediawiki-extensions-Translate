@@ -309,7 +309,7 @@ class SpecialSearchTranslations extends SpecialPage {
 
 			$output[$id] = array(
 				'id' => $id,
-				'count' => $value,
+				'count' => $count,
 				'url' => $url,
 				'label' => $group->getLabel(),
 				'description' => $group->getDescription(),
