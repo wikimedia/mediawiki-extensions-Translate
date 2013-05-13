@@ -21,8 +21,8 @@ $messages['en'] = array(
 	'translate-taskui-view' => 'Show all messages',
 	'translate-taskui-untranslated' => 'Show untranslated messages',
 	'translate-taskui-optional' => 'Show optional messages',
-	'translate-taskui-acceptqueue' => 'Only messages I can accept',
-	'translate-taskui-reviewall' => 'Review all translations',
+	'translate-taskui-acceptqueue' => 'Only messages I can mark as proofread',
+	'translate-taskui-reviewall' => 'Proofread all translations',
 	'translate-taskui-export-to-file' => 'Export in native format',
 	'translate-taskui-export-as-po' => 'Export for off-line translation',
 
@@ -165,7 +165,7 @@ The default list of languages depends on your language.',
 	'action-translate-manage' => 'manage message groups', // Checked for ManageMessageGroups
 	'right-translate-import' => 'Import offline translations',
 	'action-translate-import' => 'import offline translations', // Checked for ImportTranslations
-	'right-translate-messagereview' => 'Review translations',
+	'right-translate-messagereview' => 'Proofread translations',
 	'right-translate-groupreview' => 'Change workflow state of message groups',
 
 	'translate-rc-translation-filter' => 'Filter translations:',
@@ -179,8 +179,8 @@ The default list of languages depends on your language.',
 	'translate-stats-edits' => 'Edits',
 	'translate-stats-users' => 'Translators',
 	'translate-stats-registrations' => 'Registrations',
-	'translate-stats-reviews' => 'Reviews',
-	'translate-stats-reviewers' => 'Reviewers',
+	'translate-stats-reviews' => 'Proofreads',
+	'translate-stats-reviewers' => 'Proofreaders',
 
 	'translate-statsf-intro' => 'You can generate simple statistics with this form.
 All values have upper and lower limits.',
@@ -198,8 +198,8 @@ All values have upper and lower limits.',
 	'translate-statsf-count-edits' => 'Number of edits',
 	'translate-statsf-count-users' => 'Active translators',
 	'translate-statsf-count-registrations' => 'New users',
-	'translate-statsf-count-reviews' => 'Translation reviews',
-	'translate-statsf-count-reviewers' => 'Reviewers',
+	'translate-statsf-count-reviews' => 'Translation proofreads',
+	'translate-statsf-count-reviewers' => 'Proofreaders',
 	'translate-statsf-language' => 'Comma-separated list of language codes:',
 	'translate-statsf-group' => 'Comma-separated list of group codes:',
 	'translate-statsf-submit' => 'Preview',
@@ -359,35 +359,35 @@ Details: $1',
 	'translate-search-languagefilter' => 'Filter by language:',
 	'translate-search-nofilter' => 'No filtering',
 
-	'translate-messagereview-submit' => 'Accept',
-	'translate-messagereview-progress' => 'Accepting...',
-	'translate-messagereview-failure' => 'Accepting... failed: $1',
-	'translate-messagereview-done' => 'Accepted',
-	'translate-messagereview-reviews' => 'Accepted by {{PLURAL:$1|one user|$1 users}}',
-	'translate-messagereview-reviewswithyou' => 'Accepted by {{PLURAL:$1|you|$1 users including you}}',
+	'translate-messagereview-submit' => 'Mark proofread',
+	'translate-messagereview-progress' => 'Marking as proofread...',
+	'translate-messagereview-failure' => 'Marking as proofread failed: $1',
+	'translate-messagereview-done' => 'Proofread',
+	'translate-messagereview-reviews' => 'Proofread by {{PLURAL:$1|one user|$1 users}}',
+	'translate-messagereview-reviewswithyou' => 'Proofread by {{PLURAL:$1|you|$1 users including you}}',
 
 	// Localisation for extension specific API errors
 	'api-error-invalidrevision' => 'Translation was not found',
 	'api-error-unknownmessage' => 'Message was not found',
 	'api-error-fuzzymessage' => 'Translation is marked as fuzzy',
-	'api-error-owntranslation' => 'You cannot accept your own translations',
+	'api-error-owntranslation' => 'You cannot mark your own translations as proofread',
 
-	'translate-messagereview-no-fuzzy' => 'Fuzzy translations cannot be accepted.',
-	'translate-messagereview-no-own' => 'You cannot accept your own translations.',
-	'translate-messagereview-doit' => 'Accept this translation as a correct translation.',
+	'translate-messagereview-no-fuzzy' => 'Fuzzy translations cannot be marked as proofread.',
+	'translate-messagereview-no-own' => 'You cannot mark your own translations as proofread.',
+	'translate-messagereview-doit' => 'Mark this translation as proofread.',
 
 	// Damn the 16 character limit for user group names!
-	'group-translate-proofr' => 'Translation reviewers',
-	'group-translate-proofr-member' => '{{GENDER:$1|translation reviewer}}',
-	'grouppage-translate-proofr' => '{{ns:project}}:Translation reviewers',
+	'group-translate-proofr' => 'Proofreaders',
+	'group-translate-proofr-member' => '{{GENDER:$1|proofreader}}',
+	'grouppage-translate-proofr' => '{{ns:project}}:Proofreaders',
 
-	'group-translate-proofr.css' => '/* CSS placed here will affect translation reviewers only */', # only translate this message to other languages if you have to change it
-	'group-translate-proofr.js' => '/* JS placed here will affect translation reviewer only */', # only translate this message to other languages if you have to change it
+	'group-translate-proofr.css' => '/* CSS placed here will affect proofreaders only */', # only translate this message to other languages if you have to change it
+	'group-translate-proofr.js' => '/* JS placed here will affect proofreaders only */', # only translate this message to other languages if you have to change it
 
 	// Less damn for the 32 character limit for log names
-	'log-name-translationreview' => 'Translation review log',
-	'log-description-translationreview' => 'Log of all reviews to translations and message groups.',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|accepted}} translation $3',
+	'log-name-translationreview' => 'Proofread log',
+	'log-description-translationreview' => 'Log of all review state changes to translations and message groups.',
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|proofread}} translation $3',
 	'logentry-translationreview-group' => '$1 {{GENDER:$2|changed}} the state of $4 translations of $3 from $6 to $7',
 
 	// The limit was increased at some point, but possible BC issue
@@ -478,7 +478,7 @@ Most useful for the proofreading tasks.',
 	'tux-editor-translate-mode' => 'List',
 	'tux-editor-proofreading-hide-own-translations' => 'Hide your translations',
 	'tux-editor-proofreading-show-own-translations' => 'Show your translations',
-	'tux-proofread-action-tooltip' => 'Accept translation',
+	'tux-proofread-action-tooltip' => 'Mark as proofread',
 	'tux-proofread-edit-label' => 'Edit',
 	'tux-editor-page-mode' => 'Page',
 	'tux-editor-outdated-warning' => 'This translation may need to be updated.',
@@ -508,10 +508,10 @@ Most useful for the proofreading tasks.',
 	'tux-empty-nothing-to-proofread' => 'Nothing to proofread',
 	'tux-empty-you-can-help-providing' => 'You can help providing new translations',
 	'tux-empty-nothing-new-to-proofread' => 'Nothing new to proofread',
-	'tux-empty-you-can-review-already-proofread' => 'You can review translations already proofread by others.',
+	'tux-empty-you-can-review-already-proofread' => 'You can proofread translations already proofread by others.',
 
 	'tux-empty-list-other' => 'Nothing to translate',
-	'tux-empty-list-other-guide' => 'You can help reviewing existing translations',
+	'tux-empty-list-other-guide' => 'You can help proofreading existing translations',
 	'tux-empty-list-other-action' => 'Proofread translations',
 	'tux-empty-list-other-link' => 'Show all messages',
 	'tux-editor-close-tooltip' => 'Close',
@@ -974,7 +974,7 @@ fuzzy = mark translations for review',
 	'translate-searchprofile' => 'Tab in [[Special:Search]]
 {{Identical|Translation}}',
 	'translate-searchprofile-tooltip' => 'Tooltip for a tab in [[Special:Search]]',
-	'translate-messagereview-submit' => 'Button label in [[Special:Translate]] review mode.
+	'translate-messagereview-submit' => 'Button label in [[Special:Translate]] review mode to mark a message as proofread.
 {{Identical|Accept}}',
 	'translate-messagereview-progress' => 'Button label in [[Special:Translate]] review mode. Button is disabled. This is shown very briefly while the acceptance is in progress.',
 	'translate-messagereview-failure' => 'Button label in [[Special:Translate]] review mode. Button is disabled.
