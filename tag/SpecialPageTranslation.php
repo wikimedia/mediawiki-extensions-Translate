@@ -409,14 +409,11 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @return array
 	 */
 	public function checkInput( TranslatablePage $page, &$error = false ) {
-		$request = $this->getRequest();
-
 		$usedNames = array();
-
 		$highest = intval( TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' ) );
-
 		$parse = $page->getParse();
 		$sections = $parse->getSectionsForSave( $highest );
+
 		foreach ( $sections as $s ) {
 			// We need to do checks for both new and existing sections.
 			// Someone might have tampered with the page source adding

@@ -396,7 +396,6 @@ class TranslateUtils {
 	 * @since 2013-04-01
 	 */
 	public static function getIcon( MessageGroup $g, $size ) {
-		global $wgServer;
 		$icon = $g->getIcon();
 		if ( substr( $icon, 0, 7 ) !== 'wiki://' ) {
 			return null;
