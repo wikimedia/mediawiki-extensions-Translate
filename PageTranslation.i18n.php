@@ -1820,10 +1820,12 @@ Comproveu el [[Special:Log/pagetranslation|registre de traducció de pàgines]] 
 
 /** Chechen (нохчийн)
  * @author Sasan700
+ * @author Умар
  */
 $messages['ce'] = array(
 	'tpt-diff-new' => 'Керла йоза',
 	'tpt-languages-legend' => 'Кхин меттанаш:',
+	'pt-movepage-reason' => 'Бахьан:',
 );
 
 /** Sorani Kurdish (کوردی)

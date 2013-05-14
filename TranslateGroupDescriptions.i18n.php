@@ -1393,7 +1393,6 @@ $messages['it'] = array(
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] è un sistema gratuito di tracciamento bug web-based.',
 	'translate-group-desc-blockly' => 'Un gruppo messaggi per [[Translating:Blockly|Blockly]]',
 	'translate-group-desc-eol' => 'Un gruppo di messaggi per [[Translating:EOL|Encyclopedia of Life]]',
-	'translate-group-desc-frontlinesms' => 'Un gruppo di messaggi per [[Translating:FrontlineSMS|FrontlineSMS]]',
 	'translate-group-desc-fuel' => '[[Translating:FUEL|FUEL]] rende più consistente la traduzione di software',
 	'translate-group-desc-ihris' => 'Un gruppo di messaggi per [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-kiwix' => 'Un gruppo di messaggi per [[Translating:Kiwix|Kiwix]]',
