@@ -30,6 +30,7 @@ abstract class MessageIndex {
 			$class = array_shift( $params );
 			self::$instance = new $class( $params );
 		}
+
 		return self::$instance;
 	}
 
@@ -59,6 +60,7 @@ abstract class MessageIndex {
 	 */
 	public static function getPrimaryGroupId( MessageHandle $handle ) {
 		$groups = self::getGroupIds( $handle );
+
 		return count( $groups ) ? array_shift( $groups ) : null;
 	}
 
@@ -90,6 +92,7 @@ abstract class MessageIndex {
 			$msg = __METHOD__ . ': trying to recurse - building the index first time?';
 			STDERR( $msg );
 			wfDebug( "$msg\n" );
+
 			return array();
 		}
 		$recursion++;
@@ -126,6 +129,7 @@ abstract class MessageIndex {
 		$this->store( $new );
 		$this->clearMessageGroupStats( $old, $new );
 		$recursion--;
+
 		return $new;
 	}
 
@@ -243,6 +247,7 @@ abstract class MessageIndex {
 		if ( strpos( $data, '|' ) !== false ) {
 			return explode( '|', $data );
 		}
+
 		return $data;
 	}
 }
@@ -281,6 +286,7 @@ class SerializedMessageIndex extends MessageIndex {
 			$this->index = $this->rebuild();
 		}
 		wfProfileOut( __METHOD__ );
+
 		return $this->index;
 	}
 
@@ -326,19 +332,28 @@ class DatabaseMessageIndex extends MessageIndex {
 			$this->index[$row->tmi_key] = $this->unserialize( $row->tmi_value );
 		}
 		wfProfileOut( __METHOD__ );
+
 		return $this->index;
 	}
 
 	protected function get( $key ) {
 		wfProfileIn( __METHOD__ );
 		$dbr = wfGetDB( DB_SLAVE );
-		$value = $dbr->selectField( 'translate_messageindex', 'tmi_value', array( 'tmi_key' => $key ), __METHOD__ );
+		$value = $dbr->selectField(
+			'translate_messageindex',
+			'tmi_value',
+			array( 'tmi_key' => $key ),
+			__METHOD__
+		);
+
 		if ( is_string( $value ) ) {
 			$value = $this->unserialize( $value );
 		} else {
 			$value = null;
 		}
+
 		wfProfileOut( __METHOD__ );
+
 		return $value;
 	}
 
@@ -346,10 +361,12 @@ class DatabaseMessageIndex extends MessageIndex {
 		wfProfileIn( __METHOD__ );
 		$dbw = wfGetDB( DB_MASTER );
 		$rows = array();
+
 		foreach ( $array as $key => $value ) {
 			$value = $this->serialize( $value );
 			$rows[] = array( 'tmi_key' => $key, 'tmi_value' => $value );
 		}
+
 		$dbw->delete( 'translate_messageindex', '*', __METHOD__ );
 		$dbw->replace( 'translate_messageindex', array( array( 'tmi_key' ) ), $rows, __METHOD__ );
 
@@ -392,6 +409,7 @@ class CachedMessageIndex extends MessageIndex {
 			$this->index = $this->rebuild();
 		}
 		wfProfileOut( __METHOD__ );
+
 		return $this->index;
 	}
 
@@ -443,6 +461,7 @@ class CDBMessageIndex extends MessageIndex {
 			$this->index[$key] = $this->unserialize( $reader->get( $key ) );
 		}
 		wfProfileOut( __METHOD__ );
+
 		return $this->index;
 	}
 
@@ -465,6 +484,7 @@ class CDBMessageIndex extends MessageIndex {
 			$value = $this->unserialize( $value );
 		}
 		wfProfileOut( __METHOD__ );
+
 		return $value;
 	}
 
@@ -481,6 +501,7 @@ class CDBMessageIndex extends MessageIndex {
 			$value = $this->serialize( $value );
 			$cache->set( $key, $value );
 		}
+
 		$cache->close();
 
 		$this->index = $array;

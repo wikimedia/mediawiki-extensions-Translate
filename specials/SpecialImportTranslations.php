@@ -32,17 +32,20 @@ class SpecialImportTranslations extends SpecialPage {
 		// Security and validity checks
 		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
+
 			return;
 		}
 
 		if ( !$this->getRequest()->wasPosted() ) {
 			$this->outputForm();
+
 			return;
 		}
 
 		if ( !$this->getUser()->matchEditToken( $this->getRequest()->getVal( 'token' ) ) ) {
 			$this->getOutput()->addWikiMsg( 'session_fail_preview' );
 			$this->outputForm();
+
 			return;
 		}
 
@@ -51,6 +54,7 @@ class SpecialImportTranslations extends SpecialPage {
 			if ( !$data ) {
 				$this->getOutput()->addWikiMsg( 'session_fail_preview' );
 				$this->outputForm();
+
 				return;
 			}
 		} else {
@@ -80,6 +84,7 @@ class SpecialImportTranslations extends SpecialPage {
 		if ( !MessageGroups::exists( $group ) ) {
 			$errorWrap = "<div class='error'>\n$1\n</div>";
 			$this->getOutput()->wrapWikiMsg( $errorWrap, 'translate-import-err-stale-group' );
+
 			return;
 		}
 
@@ -109,8 +114,10 @@ class SpecialImportTranslations extends SpecialPage {
 			$msg[0] = 'translate-import-err-' . $msg[0];
 			$this->getOutput()->wrapWikiMsg( $errorWrap, $msg );
 			$this->outputForm();
+
 			return true;
 		}
+
 		return false;
 	}
 
@@ -141,7 +148,7 @@ class SpecialImportTranslations extends SpecialPage {
 
 		$class = array( 'class' => 'mw-translate-import-inputs' );
 
-		if( $wgTranslateAllowImportFromUrl === true ) {
+		if ( $wgTranslateAllowImportFromUrl === true ) {
 			$this->getOutput()->addHTML(
 				Xml::radioLabel( $this->msg( 'translate-import-from-url' )->text(),
 					'upload-type', 'url', 'mw-translate-up-url',
@@ -284,11 +291,13 @@ class SpecialImportTranslations extends SpecialPage {
 
 	protected function getCachedData() {
 		$key = wfMemcKey( 'translate', 'webimport', $this->getUser()->getId() );
+
 		return wfGetCache( CACHE_DB )->get( $key );
 	}
 
 	protected function deleteCachedData() {
 		$key = wfMemcKey( 'translate', 'webimport', $this->getUser()->getId() );
+
 		return wfGetCache( CACHE_DB )->delete( $key );
 	}
 }

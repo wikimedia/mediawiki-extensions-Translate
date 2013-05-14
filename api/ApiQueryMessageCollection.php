@@ -163,6 +163,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	 */
 	protected static function getWorkflowState( $groupId, $language ) {
 		$dbr = wfGetDB( DB_SLAVE );
+
 		return $dbr->selectField(
 			'translate_groupreviews',
 			'tgr_state',
@@ -178,6 +179,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$groups = MessageGroups::getAllGroups();
 		$dynamic = MessageGroups::getDynamicGroups();
 		$groups = array_keys( array_merge( $groups, $dynamic ) );
+
 		return array(
 			'group' => array(
 				ApiBase::PARAM_TYPE => $groups,

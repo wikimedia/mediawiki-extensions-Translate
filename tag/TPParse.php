@@ -101,7 +101,6 @@ class TPParse {
 					}
 				}
 			}
-
 		}
 
 		return $sections;

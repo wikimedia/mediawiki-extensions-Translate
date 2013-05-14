@@ -15,7 +15,7 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$dir = __DIR__;
 	$IP = "$dir/../../..";
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 /// A script to populate fuzzy tags to revtag table.
 class PopulateFuzzy extends Maintenance {
@@ -78,4 +78,4 @@ class PopulateFuzzy extends Maintenance {
 }
 
 $maintClass = 'PopulateFuzzy';
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

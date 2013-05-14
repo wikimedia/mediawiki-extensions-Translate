@@ -77,6 +77,7 @@ class TranslateSandbox {
 		);
 
 		$res = $dbw->select( $tables, $fields, $conds, __METHOD__ );
+
 		return UserArray::newFromResult( $res );
 	}
 

@@ -94,6 +94,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$collection = new self( $code );
 		$collection->definitions = $definitions;
 		$collection->resetForNewLanguage( $code );
+
 		return $collection;
 	}
 
@@ -103,7 +104,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @return MessageCollection
 	 */
 	public static function newEmpty( $code ) {
-
 	}
 
 	/**
@@ -233,7 +233,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * @deprecated 2013-01-18 enabled by default
 	 */
-	public function setReviewMode( $value = true ) {}
+	public function setReviewMode( $value = true ) {
+	}
 
 	// Data modifiers
 
@@ -620,6 +621,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			}
 			$newkeys[$key] = $title;
 		}
+
 		return $newkeys;
 	}
 
@@ -738,6 +740,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 			$conds[] = $db->makeList( $cond, LIST_AND );
 		}
+
 		return $db->makeList( $conds, LIST_OR );
 	}
 
@@ -753,6 +756,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			return $map[$row->page_namespace][$row->page_title];
 		} else {
 			wfWarn( "Got unknown title from the database: {$row->page_namespace}:{$row->page_title}" );
+
 			return null;
 		}
 	}
@@ -773,6 +777,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		foreach ( $this->keys as $mkey => $title ) {
 			$map[$title->getNamespace()][$title->getDBKey()] = $mkey;
 		}
+
 		return $this->reverseMap = $map;
 	}
 
@@ -977,6 +982,7 @@ class MessageDefinitions {
 				$pages[$key] = array( $namespace, $key );
 			}
 		}
+
 		return $pages;
 	}
 }

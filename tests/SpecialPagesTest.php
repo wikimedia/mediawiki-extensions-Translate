@@ -26,7 +26,7 @@ class SpecialPagesTest extends MediaWikiTestCase {
 	}
 
 	public static function provideSpecialPages() {
-		require( __DIR__ . '/../_autoload.php' );
+		require __DIR__ . '/../_autoload.php';
 		global $wgSpecialPages;
 
 		$pages = array();
@@ -35,6 +35,7 @@ class SpecialPagesTest extends MediaWikiTestCase {
 				$pages[] = array( $name );
 			}
 		}
+
 		return $pages;
 	}
 
@@ -68,8 +69,8 @@ class SpecialPagesTest extends MediaWikiTestCase {
 		} catch ( ErrorPageError $e ) {
 			// This is okay here
 		}
-		$this->assertTrue( true, "Special page $name was executed succesfully with super user" );
 
+		$this->assertTrue( true, "Special page $name was executed succesfully with super user" );
 	}
 }
 

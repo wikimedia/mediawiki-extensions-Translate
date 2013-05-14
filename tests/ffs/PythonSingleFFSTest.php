@@ -44,6 +44,7 @@ class PythonSingleFFSTest extends MediaWikiTestCase {
 		$ret = wfShellExec( "python -c $command" );
 		if ( trim( $ret ) !== 'mui' ) {
 			$this->markTestSkipped( 'Dependency python simplejson not installed' );
+
 			return;
 		}
 

@@ -19,6 +19,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 	public function exists() {
 		// Group exists if there are any subgroups.
 		$exists = (bool)$this->conf['GROUPS'];
+
 		return $exists;
 	}
 
@@ -94,9 +95,9 @@ class AggregateMessageGroup extends MessageGroupBase {
 				}
 			}
 		}
+
 		return $messages;
 	}
-
 
 	public function initCollection( $code ) {
 		$messages = $this->loadMessagesFromCache( $this->getGroups() );
@@ -124,6 +125,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 			// Message key owned by aggregate group.
 			// Should not ever happen, but it does.
 			error_log( "AggregateMessageGroup $groupId cannot be primary owner of key $key" );
+
 			return null;
 		}
 

@@ -27,6 +27,7 @@ class FCFontFinder {
 		if ( is_array( $data ) ) {
 			return $data['file'];
 		}
+
 		return false;
 	}
 
@@ -40,13 +41,14 @@ class FCFontFinder {
 		if ( is_array( $data ) ) {
 			return $data['family'];
 		}
+
 		return false;
 	}
-
 
 	protected static function callFontConfig( $code ) {
 		if ( ini_get( 'open_basedir' ) ) {
 			wfDebugLog( 'fcfont', 'Disabled because of open_basedir is active' );
+
 			// Most likely we can't access any fonts we might find
 			return false;
 		}
@@ -72,6 +74,7 @@ class FCFontFinder {
 		if ( $ok !== 0 ) {
 			wfDebugLog( 'fcfont', "fc-match error output: $suggestion" );
 			$cache->set( $cachekey, 'NEGATIVE', $timeout );
+
 			return false;
 		}
 
@@ -81,6 +84,7 @@ class FCFontFinder {
 		if ( !preg_match( $pattern, $suggestion, $matches ) ) {
 			wfDebugLog( 'fcfont', "fc-match: return format not understood: $suggestion" );
 			$cache->set( $cachekey, 'NEGATIVE', $timeout );
+
 			return false;
 		}
 
@@ -99,6 +103,7 @@ class FCFontFinder {
 		if ( $ok !== 0 ) {
 			wfDebugLog( 'fcfont', "fc-list error output: $candidates" );
 			$cache->set( $cachekey, 'NEGATIVE', $timeout );
+
 			return false;
 		}
 
@@ -121,6 +126,7 @@ class FCFontFinder {
 		);
 
 		$cache->set( $cachekey, $data, $timeout );
+
 		return $data;
 	}
 

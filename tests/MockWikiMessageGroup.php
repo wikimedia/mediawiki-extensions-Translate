@@ -20,5 +20,4 @@ class MockWikiMessageGroup extends WikiMessageGroup {
 	public function getDefinitions() {
 		return $this->messages;
 	}
-
 }

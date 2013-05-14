@@ -36,6 +36,7 @@ class MessageCollectionTest extends MediaWikiTestCase {
 			'untranslated' => 'fanny',
 		);
 		$list['test-group'] = new MockWikiMessageGroup( 'test-group', $messages );
+
 		return false;
 	}
 

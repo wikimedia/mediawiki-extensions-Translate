@@ -27,6 +27,7 @@ class IniFFS extends SimpleFFS {
 		$ffs = new IniFFS( $group );
 		$parsed = $ffs->readFromVariable( $data );
 		wfRestoreWarnings();
+
 		return !!count( $parsed['MESSAGES'] );
 	}
 
@@ -103,6 +104,7 @@ class IniFFS extends SimpleFFS {
 		}
 
 		$header .= '[' . $collection->getLanguage() . "]\n";
+
 		return $header . $output;
 	}
 }

@@ -44,7 +44,6 @@ interface ReadableTTMServer {
 	 * @return String URL
 	 */
 	public function expandLocation( array $suggestion );
-
 }
 
 /**

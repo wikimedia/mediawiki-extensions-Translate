@@ -97,6 +97,7 @@ class MessageGroupStats {
 		foreach ( $stats as $group => $languages ) {
 			$flattened[$group] = $languages[$code];
 		}
+
 		return $flattened;
 	}
 
@@ -111,6 +112,7 @@ class MessageGroupStats {
 			return array();
 		}
 		$stats = self::forGroupInternal( $group );
+
 		return $stats[$id];
 	}
 
@@ -126,6 +128,7 @@ class MessageGroupStats {
 		foreach ( $groups as $g ) {
 			$stats = self::forGroupInternal( $g, $stats );
 		}
+
 		return $stats;
 	}
 
@@ -182,6 +185,7 @@ class MessageGroupStats {
 		foreach ( $res as $row ) {
 			$stats[$row->tgs_group][$row->tgs_lang] = self::extractNumbers( $row );
 		}
+
 		return $stats;
 	}
 
@@ -228,6 +232,7 @@ class MessageGroupStats {
 			}
 			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code );
 		}
+
 		return $stats;
 	}
 
@@ -280,6 +285,7 @@ class MessageGroupStats {
 
 		$dbr = wfGetDB( DB_MASTER );
 		$res = $dbr->select( self::TABLE, '*', $conds, __METHOD__ );
+
 		return $res;
 	}
 
@@ -353,6 +359,7 @@ class MessageGroupStats {
 		foreach ( $a as $i => &$v ) {
 			$v += $b[$i];
 		}
+
 		return $a;
 	}
 
@@ -414,6 +421,7 @@ class MessageGroupStats {
 	 */
 	protected static function stringifyNumber( $number ) {
 		$number = intval( $number );
+
 		return $number < 0 ? "$number" : "+$number";
 	}
 }

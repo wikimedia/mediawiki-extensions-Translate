@@ -26,7 +26,8 @@ class RecentMessageGroup extends WikiMessageGroup {
 	 * These groups are always generated for one language. Method setLanguage
 	 * must be called before calling getDefinitions.
 	 */
-	public function __construct() {}
+	public function __construct() {
+	}
 
 	public function setLanguage( $code ) {
 		$this->language = $code;
@@ -39,12 +40,14 @@ class RecentMessageGroup extends WikiMessageGroup {
 	public function getLabel( IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-dynagroup-recent-label' );
 		$msg = self::addContext( $msg, $context );
+
 		return $msg->plain();
 	}
 
 	public function getDescription( IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-dynagroup-recent-desc' );
 		$msg = self::addContext( $msg, $context );
+
 		return $msg->plain();
 	}
 
@@ -52,6 +55,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 		$db = wfGetDB( DB_SLAVE );
 		$tables = 'recentchanges';
 		$max = $db->selectField( $tables, 'MAX(rc_id)', array(), __METHOD__ );
+
 		return max( 0, $max - 50000 );
 	}
 
@@ -67,6 +71,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 			'rc_type != ' . RC_LOG,
 			'rc_id > ' . $this->getRCCutoff(),
 		);
+
 		return $conds;
 	}
 

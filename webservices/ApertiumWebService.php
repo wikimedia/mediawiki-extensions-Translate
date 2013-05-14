@@ -25,7 +25,8 @@ class ApertiumWebService extends TranslationWebService {
 		$response = FormatJson::decode( $json );
 
 		if ( !is_object( $response ) ) {
-			throw new TranslationWebServiceException( 'Malformed reply from remote server: ' . strval( $json ) );
+			$error = 'Malformed reply from remote server: ' . strval( $json );
+			throw new TranslationWebServiceException( $error );
 		}
 
 		foreach ( $response->responseData as $pair ) {
@@ -76,13 +77,14 @@ class ApertiumWebService extends TranslationWebService {
 		if ( !is_object( $response ) ) {
 			throw new TranslationWebServiceException( serialize( $req->getContent() ) );
 		} elseif ( $response->responseStatus !== 200 ) {
-			throw new TranslationWebServiceException( "(HTTP {$response->responseStatus}) with ($service ($from|$to)): " .
-				$response->responseDetails );
+			$error = "(HTTP {$response->responseStatus}) with ($service ($from|$to)): " .
+				$response->responseDetails;
+			throw new TranslationWebServiceException( $error );
 		}
 
 		$sug = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
 		$sug = $this->unwrapUntranslatable( $sug );
+
 		return trim( $sug );
 	}
-
 }

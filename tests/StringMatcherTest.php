@@ -42,6 +42,7 @@ class StringMatcherTest extends MediaWikiTestCase {
 			array( '[k.ssa]', 'p-=5Bk.ssa=5D', 'p-', array( '[k.s*' ), 'Message key with special chars' ),
 			array( '[kissa]', '=5Bkissa=5D', 'p-', array( '[k.s*' ), 'Message key with special chars' ),
 		);
+
 		return $keys;
 	}
 

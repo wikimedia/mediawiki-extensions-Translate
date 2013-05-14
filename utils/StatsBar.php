@@ -29,11 +29,13 @@ class StatsBar {
 		$self = new self();
 		$self->group = $group;
 		$self->language = $language;
+
 		if ( is_array( $stats ) ) {
 			$self->stats = $stats;
 		} else {
 			$self->stats = MessageGroupStats::forItem( $group, $language );
 		}
+
 		return $self;
 	}
 

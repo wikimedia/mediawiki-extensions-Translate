@@ -20,6 +20,7 @@ class MessageUpdateJob extends Job {
 			'fuzzy' => $fuzzy,
 		);
 		$job = new self( $target, $params );
+
 		return $job;
 	}
 
@@ -75,7 +76,12 @@ class MessageUpdateJob extends Job {
 				);
 			}
 
-			$dbw->replace( 'revtag', array( array( 'rt_type', 'rt_page', 'rt_revision' ) ), $inserts, __METHOD__ );
+			$dbw->replace(
+				'revtag',
+				array( array( 'rt_type', 'rt_page', 'rt_revision' ) ),
+				$inserts,
+				__METHOD__
+			);
 		}
 
 		return true;

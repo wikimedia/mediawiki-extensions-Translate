@@ -217,6 +217,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 */
 	public static function getPluralFormCount( $code ) {
 		$forms = Language::factory( $code )->getPluralRules();
+
 		// +1 for the 'other' form
 		return count( $forms ) + 1;
 	}
@@ -265,6 +266,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 				break;
 			}
 		}
+
 		return $plurals;
 	}
 
@@ -282,6 +284,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 				unset( $forms[$index] );
 			}
 		}
+
 		return array_values( $forms );
 	}
 

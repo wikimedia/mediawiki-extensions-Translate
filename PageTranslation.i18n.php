@@ -82,7 +82,6 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 	'tpt-rev-discourage-tooltip' => 'Discourage further translations on this page.',
 	'tpt-rev-encourage-tooltip' => 'Restore this page to normal translation.',
 
-
 	# Source and translation page headers
 	'translate-tag-translate-link-desc' => 'Translate this page',
 	'translate-tag-markthis' => 'Mark this page for translation',
@@ -197,7 +196,6 @@ Failures will be logged in the [[Special:Log/pagetranslation|page translation lo
 Please check the [[Special:Log/pagetranslation|page translation log]] for errors and completion message.',
 
 	'pt-locked-page' => 'This page is locked because the translatable page is currently being moved.',
-
 
 	'pt-deletepage-lang-title' => 'Deleting translation page "$1".',
 	'pt-deletepage-full-title' => 'Deleting translatable page "$1".',

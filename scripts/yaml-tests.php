@@ -13,10 +13,10 @@
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
-	$dir = dirname( __FILE__ );
+	$dir = __DIR__;
 	$IP = "$dir/../../..";
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 class YamlTests extends Maintenance {
 	public function __construct() {
@@ -88,8 +88,7 @@ class YamlTests extends Maintenance {
 			}
 		}
 	}
-
 }
 
 $maintClass = 'YamlTests';
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

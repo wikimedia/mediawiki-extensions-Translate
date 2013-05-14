@@ -42,6 +42,7 @@ abstract class TranslationWebService {
 
 		if ( isset( $handlers[$config['type']] ) ) {
 			$class = $handlers[$config['type']];
+
 			return new $class( $name, $config );
 		}
 
@@ -108,6 +109,7 @@ abstract class TranslationWebService {
 			return $results;
 		} catch ( Exception $e ) {
 			$this->reportTranslationServiceFailure( $e );
+
 			return array();
 		}
 	}
@@ -170,6 +172,7 @@ abstract class TranslationWebService {
 			// Cache the result for a day
 			wfGetCache( CACHE_ANYTHING )->set( $key, $pairs, 60 * 60 * 24 );
 		}
+
 		return $pairs;
 	}
 
@@ -179,9 +182,11 @@ abstract class TranslationWebService {
 	 * or translate=no.
 	 */
 	protected function wrapUntranslatable( $text ) {
+		$pattern = '~%[^% ]+%|\$\d|{VAR:[^}]+}|{?{(PLURAL|GRAMMAR|GENDER):[^|]+\||%(\d\$)?[sd]~';
 		$text = str_replace( "\n", "!N!", $text );
 		$wrap = '<span class="notranslate" translate="no">\0</span>';
-		$text = preg_replace( '~%[^% ]+%|\$\d|{VAR:[^}]+}|{?{(PLURAL|GRAMMAR|GENDER):[^|]+\||%(\d\$)?[sd]~', $wrap, $text );
+		$text = preg_replace( $pattern, $wrap, $text );
+
 		return $text;
 	}
 
@@ -189,8 +194,10 @@ abstract class TranslationWebService {
 	 * Undo the hopyfully untouched mangling done by wrapUntranslatable.
 	 */
 	protected function unwrapUntranslatable( $text ) {
+		$pattern = '~<span class="notranslate" translate="no">(.*?)</span>~';
 		$text = str_replace( '!N!', "\n", $text );
-		$text = preg_replace( '~<span class="notranslate" translate="no">(.*?)</span>~', '\1', $text );
+		$text = preg_replace( $pattern, '\1', $text );
+
 		return $text;
 	}
 
@@ -225,6 +232,7 @@ abstract class TranslationWebService {
 				wfDebugLog( 'translationservices', "Translation service $service (was) restored" );
 			}
 			wfGetCache( CACHE_ANYTHING )->delete( $key );
+
 			return false;
 		} elseif ( $failed + $this->serviceFailurePeriod < wfTimestamp() ) {
 			/* We are in suspicious mode and one failure is enough to update
@@ -243,7 +251,10 @@ abstract class TranslationWebService {
 	 */
 	protected function reportTranslationServiceFailure( Exception $e ) {
 		$service = $this->service;
-		wfDebugLog( 'translationservices', "Translation service $service problem: " . $e->getMessage() );
+		wfDebugLog(
+			'translationservices',
+			"Translation service $service problem: " . $e->getMessage()
+		);
 
 		$key = wfMemckey( "translate-service-$service" );
 		$value = wfGetCache( CACHE_ANYTHING )->get( $key );
@@ -255,7 +266,11 @@ abstract class TranslationWebService {
 
 		$count += 1;
 		$failed = wfTimestamp();
-		wfGetCache( CACHE_ANYTHING )->set( $key, "$count|$failed", $this->serviceFailurePeriod * 5 );
+		wfGetCache( CACHE_ANYTHING )->set(
+			$key,
+			"$count|$failed",
+			$this->serviceFailurePeriod * 5
+		);
 
 		if ( $count == $this->serviceFailureCount ) {
 			wfDebugLog( 'translationservices', "Translation service $service suspended" );

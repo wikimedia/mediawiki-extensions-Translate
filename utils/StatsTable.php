@@ -192,6 +192,7 @@ class StatsTable {
 		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzyRatio, 'ceil' ),
 			$this->getBackgroundColor( $fuzzy, $total, true ),
 			sprintf( '%1.5f', $fuzzyRatio ) );
+
 		return $out;
 	}
 
@@ -308,7 +309,6 @@ class StatsTable {
 				break;
 			}
 		}
-
 
 		$group = MessageGroups::getGroup( $groupId );
 		$languages = $group->getTranslatableLanguages();

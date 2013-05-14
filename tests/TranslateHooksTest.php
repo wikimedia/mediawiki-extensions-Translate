@@ -39,6 +39,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		);
 
 		$list['testgroup'] = new MockWikiMessageGroup( 'testgroup', $messages );
+
 		return false;
 	}
 

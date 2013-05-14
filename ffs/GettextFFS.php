@@ -12,7 +12,8 @@
 /**
  * Identifies Gettext plural exceptions.
  */
-class GettextPluralException extends MwException {}
+class GettextPluralException extends MwException {
+}
 
 /**
  * New-style FFS class that implements support for gettext file format.
@@ -62,6 +63,7 @@ class GettextFFS extends SimpleFFS {
 		if ( isset( $this->extra['keyAlgorithm'] ) ) {
 			$keyAlgorithm = $this->extra['keyAlgorithm'];
 		}
+
 		return self::parseGettextData( $data, $useCtxtAsKey, $mangler, $keyAlgorithm );
 	}
 
@@ -505,7 +507,6 @@ PHP;
 					$content .= "msgstr[$i] \"\"\n";
 				}
 			}
-
 		} else {
 			$content .= 'msgid ' . self::escape( $msgid ) . "\n";
 			$content .= 'msgstr ' . self::escape( $msgstr ) . "\n";
@@ -518,6 +519,7 @@ PHP;
 
 		$output = $header ? $header : "#\n";
 		$output .= $content . "\n";
+
 		return $output;
 	}
 
@@ -533,11 +535,13 @@ PHP;
 
 	protected static function formatTime( $time ) {
 		$lang = Language::factory( 'en' );
+
 		return $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns+0000', $time );
 	}
 
 	protected function getPotTime() {
 		$defs = new MessageGroupCache( $this->group );
+
 		return $defs->exists() ? $defs->getTimestamp() : wfTimestampNow();
 	}
 
@@ -568,6 +572,7 @@ PHP;
 		foreach ( $lines as $line ) {
 			$out .= "#. [Wiki] $line\n";
 		}
+
 		return $out;
 	}
 
@@ -587,7 +592,7 @@ PHP;
 	 * @return \string
 	 */
 	public static function getPluralRule( $code ) {
-		$rulefile = dirname( __FILE__ ) . '/../data/plural-gettext.txt';
+		$rulefile = __DIR__ . '/../data/plural-gettext.txt';
 		$rules = file_get_contents( $rulefile );
 		foreach ( explode( "\n", $rules ) as $line ) {
 			if ( trim( $line ) === '' ) {
@@ -598,6 +603,7 @@ PHP;
 				return $rule;
 			}
 		}
+
 		return '';
 	}
 

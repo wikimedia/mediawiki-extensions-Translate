@@ -110,6 +110,7 @@ $authors */
 
 
 PHP;
+
 		return $output;
 	}
 

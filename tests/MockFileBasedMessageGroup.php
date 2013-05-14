@@ -20,5 +20,4 @@ class MockFileBasedMessageGroup extends FileBasedMessageGroup {
 	public function getKeys() {
 		return array_keys( $this->load( 'en' ) );
 	}
-
 }

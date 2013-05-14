@@ -8,7 +8,6 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-
 /**
  * This class implements some basic functions that wrap around the YAML
  * message group configurations. These message groups use the FFS classes
@@ -28,7 +27,8 @@ abstract class MessageGroupBase implements MessageGroup {
 	 */
 	protected $mangler;
 
-	protected function __construct() {}
+	protected function __construct() {
+	}
 
 	/**
 	 * @param $conf
@@ -79,6 +79,7 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	public function getDefinitions() {
 		$defs = $this->load( $this->getSourceLanguage() );
+
 		return $defs;
 	}
 
@@ -131,6 +132,7 @@ abstract class MessageGroupBase implements MessageGroup {
 
 			if ( $class === null ) {
 				$this->mangler = StringMatcher::emptyMatcher();
+
 				return $this->mangler;
 			}
 
@@ -202,6 +204,7 @@ abstract class MessageGroupBase implements MessageGroup {
 					return $cache->get( $k );
 				}
 			}
+
 			return null;
 		} else {
 			return null;
@@ -326,6 +329,7 @@ abstract class MessageGroupBase implements MessageGroup {
 	 */
 	public function getMessageGroupStates() {
 		$conf = $this->getWorkflowConfiguration();
+
 		return new MessageGroupStates( $conf );
 	}
 

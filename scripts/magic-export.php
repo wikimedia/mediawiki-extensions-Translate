@@ -9,7 +9,7 @@
  * @file
  */
 
-require( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) . '/maintenance/Maintenance.php' );
+require dirname( dirname( dirname( __DIR__ ) ) ) . '/maintenance/Maintenance.php';
 
 /**
  * Maintenance class for the fast export of special page aliases and magic words.
@@ -291,10 +291,10 @@ PHP
 			ksort( $languages );
 			$langs = array_keys( $languages );
 		}
+
 		return $langs;
 	}
-
 }
 
 $maintClass = "MagicExport";
-require_once( DO_MAINTENANCE );
+require_once DO_MAINTENANCE;

@@ -79,6 +79,7 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 	 */
 	function filter( $value, $alldata ) {
 		$value = parent::filter( $value, $alldata );
+
 		return implode( ', ', $this->tidy( $value ) );
 	}
 }

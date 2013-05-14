@@ -88,6 +88,7 @@ class CoreMessageGroup extends MessageGroupOld {
 
 	public function getMessageFile( $code ) {
 		$code = ucfirst( str_replace( '-', '_', $code ) );
+
 		return "Messages$code.php";
 	}
 
@@ -104,10 +105,11 @@ class CoreMessageGroup extends MessageGroupOld {
 	}
 
 	public function getTags( $type = null ) {
-		require( $this->getMetaDataPrefix() . '/messageTypes.inc' );
+		require $this->getMetaDataPrefix() . '/messageTypes.inc';
 		$mangler = $this->getMangler();
 		$this->optional = $mangler->mangle( $wgOptionalMessages );
 		$this->ignored = $mangler->mangle( $wgIgnoredMessages );
+
 		return parent::getTags( $type );
 	}
 

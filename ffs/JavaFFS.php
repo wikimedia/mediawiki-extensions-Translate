@@ -30,6 +30,7 @@ class JavaFFS extends SimpleFFS {
 			$this->keySeparator = $this->extra['keySeparator'];
 		}
 	}
+
 	// READ
 
 	/**
@@ -131,6 +132,7 @@ class JavaFFS extends SimpleFFS {
 		if ( $output ) {
 			return $header . $output;
 		}
+
 		return '';
 	}
 
@@ -149,6 +151,7 @@ class JavaFFS extends SimpleFFS {
 		$key = addcslashes( $key, "#!$sep\\" );
 		// Make sure we do not slip newlines trough... it would be fatal.
 		$value = str_replace( "\n", '\\n', $value );
+
 		return "$key$sep$value\n";
 	}
 
@@ -208,6 +211,7 @@ class JavaFFS extends SimpleFFS {
 		$key = stripcslashes( $key );
 		$value = ltrim( $value );
 		$value = str_replace( '\n', "\n", $value );
+
 		return array( $key, $value );
 	}
 

@@ -9,7 +9,7 @@
  */
 
 $optionsWithArgs = array( 'groups' );
-require( dirname( __FILE__ ) . '/cli.inc' );
+require __DIR__ . '/cli.inc';
 
 $codes = Language::getLanguageNames( false );
 

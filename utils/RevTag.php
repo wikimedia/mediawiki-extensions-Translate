@@ -48,10 +48,10 @@ class RevTag {
 		if ( isset( $tags[$tag] ) ) {
 			return $tags[$tag];
 		} else {
-			throw new MWException( "Unknown revtag $tag. Known are " . implode( ', ', array_keys( $tags ) ) );
+			$text = "Unknown revtag $tag. Known are " . implode( ', ', array_keys( $tags ) );
+			throw new MWException( $text );
 		}
 	}
-
 
 	/**
 	 * Converts rt_type field back to the tag name.
@@ -70,7 +70,8 @@ class RevTag {
 		if ( isset( $tags[$tag] ) ) {
 			return $tags[$tag];
 		} else {
-			throw new MWException( "Unknown revtag type $tag. Known are " . implode( ', ', array_keys( $tags ) ) );
+			$text = "Unknown revtag type $tag. Known are " . implode( ', ', array_keys( $tags ) );
+			throw new MWException( $text );
 		}
 	}
 
@@ -95,7 +96,7 @@ class RevTag {
 				$tags[$row->rtt_name] = $row->rtt_id;
 			}
 		}
+
 		return $tags;
 	}
-
 }

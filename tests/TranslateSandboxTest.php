@@ -49,21 +49,34 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 
 		$user = TranslateSandbox::addUser( 'Test user4', 'test@example.com', 'test password' );
 
-
-		$this->assertEquals( $atStart + 1, TranslateSandbox::getUsers()->count(), 'One sandboxed user created' );
+		$this->assertEquals(
+			$atStart + 1, TranslateSandbox::getUsers()->count(),
+			'One sandboxed user created'
+		);
 
 		TranslateSandbox::deleteUser( $user );
-		$this->assertEquals( $atStart, TranslateSandbox::getUsers()->count(), 'No sandboxed users after deleted' );
+		$this->assertEquals(
+			$atStart, TranslateSandbox::getUsers()->count(),
+			'No sandboxed users after deleted'
+		);
 	}
 
 	public function testGetUsersPromotion() {
 		$atStart = TranslateSandbox::getUsers()->count();
 
 		$user = TranslateSandbox::addUser( 'Test user5', 'test@example.com', 'test password' );
-		$this->assertEquals( $atStart + 1, TranslateSandbox::getUsers()->count(), 'One sandboxed user created' );
+		$this->assertEquals(
+			$atStart + 1,
+			TranslateSandbox::getUsers()->count(),
+			'One sandboxed user created'
+		);
 
 		TranslateSandbox::promoteUser( $user );
-		$this->assertEquals( $atStart, TranslateSandbox::getUsers()->count(), 'No sandboxed users after promotion' );
+		$this->assertEquals(
+			$atStart,
+			TranslateSandbox::getUsers()->count(),
+			'No sandboxed users after promotion'
+		);
 	}
 
 	public function testPromoteUser() {
@@ -77,8 +90,14 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 		$user = TranslateSandbox::addUser( 'Test user7', 'test@example.com', 'test password' );
 		$title = Title::makeTitle( NS_USER_TALK, $user->getName() );
 
-		$this->assertFalse( $title->userCan( 'edit', $user ), 'Sandboxed users cannot edit their own talk page' );
+		$this->assertFalse(
+			$title->userCan( 'edit', $user ),
+			'Sandboxed users cannot edit their own talk page'
+		);
 		TranslateSandbox::promoteUser( $user );
-		$this->assertTrue( $title->userCan( 'edit', $user ), 'Promoted users can edit their own talk page' );
+		$this->assertTrue(
+			$title->userCan( 'edit', $user ),
+			'Promoted users can edit their own talk page'
+		);
 	}
 }

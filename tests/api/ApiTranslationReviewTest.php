@@ -37,6 +37,7 @@ class ApiTranslationReviewTest extends MediaWikiTestCase {
 		);
 
 		$list['testgroup'] = new MockWikiMessageGroup( 'testgroup', $messages );
+
 		return false;
 	}
 

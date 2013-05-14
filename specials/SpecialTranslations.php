@@ -140,6 +140,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 		if ( !$handle->isValid() ) {
 			$this->getOutput()->addWikiMsg( 'translate-translations-no-message', $title->getPrefixedText() );
+
 			return;
 		}
 
@@ -160,6 +161,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 		if ( !$res->numRows() ) {
 			$this->getOutput()->addWikiMsg( 'translate-translations-no-message', $title->getPrefixedText() );
+
 			return;
 		} else {
 			$this->getOutput()->addWikiMsg( 'translate-translations-count', $this->getLanguage()->formatNum( $res->numRows() ) );
@@ -253,6 +255,7 @@ class SpecialTranslations extends SpecialAllpages {
 	 */
 	private function getCode( $name ) {
 		$from = strrpos( $name, '/' );
+
 		return substr( $name, $from + 1 );
 	}
 

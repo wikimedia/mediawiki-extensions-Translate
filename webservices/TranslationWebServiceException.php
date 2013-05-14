@@ -14,4 +14,5 @@
  * @since 2013-01-01
  * @ingroup TranslationWebService
  */
-class TranslationWebServiceException extends MWException {}
+class TranslationWebServiceException extends MWException {
+}
