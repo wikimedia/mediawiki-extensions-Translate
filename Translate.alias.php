@@ -730,6 +730,7 @@ $specialPageAliases['nl'] = array(
 	'PageTranslationDeletePage' => array( 'PaginavertalingpaginaVerwijderen' ),
 	'AggregateGroups' => array( 'SamengevoegdeGroepen' ),
 	'SearchTranslations' => array( 'VertalingenZoeken' ),
+	'TranslateSandbox' => array( 'VertalerszandbakBeheren' ),
 );
 
 /** Norwegian Nynorsk (norsk nynorsk) */

@@ -1863,6 +1863,7 @@ $messages['ckb'] = array(
 /** Czech (česky)
  * @author Chmee2
  * @author Janet11
+ * @author Littledogboy
  * @author Matěj Grabovský
  * @author Mormegil
  * @author Vks
@@ -1936,7 +1937,7 @@ Správce překladů se rozhodl, že tuto stránku lze překládat pouze do $3.",
 Správce překladů se rozhodl zaměřit překladatelské úsilí na $3.",
 	'tpt-discouraged-language-reason' => 'Zdůvodnění: $1',
 	'tpt-priority-languages' => 'Správce překladů nastavil prioritní jazyky pro tuto skupinu na $1.',
-	'tpt-render-summary' => 'Aktualizace na novou verzi zdrojové stránky',
+	'tpt-render-summary' => 'Stránka aktualizována, aby odpovídala nové verzi zdrojové stránky',
 	'tpt-download-page' => 'Exportovat stránky s překlady',
 	'tpt-aggregategroup-add' => 'Přidat',
 	'tpt-aggregategroup-save' => 'Uložit',
@@ -9051,13 +9052,16 @@ Maamulka waxa uu muhiimad uu siiyey turjumidda $3.",
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Rancher
+ * @author Милан Јелисавчић
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
+	'pagetranslation' => 'Превод странице',
 	'right-pagetranslation' => 'означавање издања страница за превод',
 	'tpt-diff-old' => 'Претходни текст',
 	'tpt-diff-new' => 'Следећи текст',
 	'tpt-submit' => 'Означи ову верзију за превод',
+	'tpt-select-prioritylangs-reason' => 'Разлог:',
 	'tpt-rev-mark' => 'означи за превођење',
 	'tpt-rev-unmark' => 'уклони из превода',
 	'tpt-rev-discourage' => 'непрепоручено',
@@ -9069,16 +9073,14 @@ $messages['sr-ec'] = array(
 	'translate-tag-translate-link-desc' => 'Преведите ову страницу',
 	'translate-tag-markthis' => 'Означи страницу као „за превођење“',
 	'tpt-translation-intro' => 'Ово је <span class="plainlinks">[$1 преведена верзија]</span> странице [[$2]]. Превод је $3% завршен.',
+	'tpt-languages-legend' => 'Остали језици:',
 	'tpt-languages-separator' => '&#160;•&#160;',
-	'pt-log-name' => 'Историја превода страница',
-	'pt-log-mark' => '{{GENDER:$2|је означио|је означила|је означио}} измену $3 странице „[[:$1]]“ за превод',
-	'pt-log-unmark' => '{{GENDER:$2|је уклонио|је уклонила|је уклонио}} страницу „[[:$1]]“ из превода',
-	'pt-log-moveok' => '{{GENDER:$2|је преименовао|је преименовала|је преименовао}} преводиву страницу $1 у $3',
-	'pt-log-movenok' => '{{GENDER:$2|је наишао|је наишла|је наишао}} на проблем при премештању [[:$1]] у [[:$3]]',
-	'pt-log-delete-full-ok' => '{{GENDER:$2|је обрисао|је обрисала|је обрисао}} преводиву страницу „$1“',
-	'pt-log-delete-full-nok' => '{{GENDER:$2|је наишао|је наишла|је наишао}} на проблем при брисању преводиве странице „[[:$1]]“',
-	'pt-log-delete-lang-ok' => '{{GENDER:$2|је обрисао|је обрисала|је обрисао}} страницу за превод $1',
-	'pt-log-delete-lang-nok' => '{{GENDER:$2|је наишао|је наишла|је наишао}} на проблем при брисању странице за превод „[[:$1]]“',
+	'tpt-discouraged-language-reason' => 'Разлог: $1',
+	'tpt-aggregategroup-add' => 'Додај',
+	'tpt-aggregategroup-save' => 'Сачувај',
+	'tpt-aggregategroup-new-name' => 'Назив:',
+	'tpt-aggregategroup-new-description' => 'Опис (необавезно):',
+	'log-name-pagetranslation' => 'Историја превода страница',
 	'pt-movepage-title' => 'Премештање преводиве странице $1',
 	'pt-movepage-block-base-exists' => 'Циљна основна страница [[:$1]] постоји.', # Fuzzy
 	'pt-movepage-block-base-invalid' => 'Циљ основне странице не представља исправан наслов.', # Fuzzy
@@ -9101,6 +9103,16 @@ $messages['sr-ec'] = array(
 	'pt-movepage-action-check' => 'Провери да ли је премештање изводљиво',
 	'pt-movepage-action-perform' => 'Премести',
 	'pt-movepage-action-other' => 'Промени циљ',
+	'pt-deletepage-action-check' => 'Наведи странице за брисање',
+	'pt-deletepage-action-perform' => 'Изврши брисање',
+	'pt-deletepage-action-other' => 'Промени циљ',
+	'pt-deletepage-lang-legend' => 'Обриши страницу превода',
+	'pt-deletepage-full-legend' => 'Обриши преводиву страницу',
+	'pt-deletepage-current' => 'Назив странице:',
+	'pt-deletepage-reason' => 'Разлог:',
+	'pt-deletepage-list-pages' => 'Списак страница за брисање',
+	'pt-deletepage-list-other' => 'Остале подстранице',
+	'pt-deletepage-list-count' => 'Укупно $1 {{PLURAL:$1|страница|странице|страница}} за брисање.', # Fuzzy
 );
 
 /** Serbian (Latin script) (srpski (latinica)‎)

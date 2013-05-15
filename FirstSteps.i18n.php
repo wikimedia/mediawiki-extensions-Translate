@@ -2648,7 +2648,7 @@ $messages['mk'] = array(
 	'translate-fs-userpage-level-3' => 'Добро владеам',
 	'translate-fs-userpage-level-2' => 'Умерено го владеам',
 	'translate-fs-userpage-level-1' => 'Знам по малку',
-	'translate-fs-userpage-help' => 'Тука наведете кои јазици ги познавате и колку добро го владеете секој од нив. Воедно напишете и нешто за себе. Доколку знаете повеќе од пет јазика, останатите додајте ги подоцна.', # Fuzzy
+	'translate-fs-userpage-help' => 'Тука наведете кои јазици ги познавате и колку добро го владеете секој од нив. Воедно напишете и нешто за себе. Доколку знаете повеќе од пет јазика, останатите додајте ги подоцна.',
 	'translate-fs-userpage-submit' => 'Создајте своја корисничка страница',
 	'translate-fs-userpage-done' => 'Одлично! Сега имате корисничка страница.',
 	'translate-fs-permissions-planguage' => 'Главен јазик:',
@@ -3596,6 +3596,67 @@ $messages['so'] = array(
 	'translate-fs-settings-slanguage' => 'Luqada kaalmo $1:',
 	'translate-fs-settings-slanguage-desc' => 'Waxaa suutoowda in la arko fasiaada fariimaha luqadaha kale habaytna turjimidda, halkaan waxaad ka dooran kartaa luqada aad rabto inaad wax ku aragtid, hadiiba meesha laga helo.',
 	'translate-fs-settings-submit' => 'Kaydi dooqyeda',
+);
+
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
+ * @author Милан Јелисавчић
+ */
+$messages['sr-ec'] = array(
+	'firststeps' => 'Први кораци',
+	'firststeps-desc' => "[[Special:FirstSteps|Посебна страница]] за почетнике на викију који користе ''Translate'' додатак",
+	'translate-fs-pagetitle-done' => ' - урађено!',
+	'translate-fs-pagetitle-pending' => ' - на чекању',
+	'translate-fs-pagetitle' => 'Помоћник за почетнике - $1',
+	'translate-fs-signup-title' => 'Отворите налог',
+	'translate-fs-settings-title' => 'Подесите своје поставке',
+	'translate-fs-userpage-title' => 'Направите корисничку страницу',
+	'translate-fs-permissions-title' => 'Тражење преводилачке дозволе',
+	'translate-fs-target-title' => 'Почните превођење!',
+	'translate-fs-email-title' => 'Потврдите е-адресу',
+	'translate-fs-intro' => "Добродошли на {{SITENAME}} помоћник за почетнике.
+Бићете спроведени кроз поступак упознавања преводиоца корак по корак.
+На крају ћете бити у могућности да преводите ''поруке интерфејса'' свих подржаних пројеката на {{SITENAME}}.",
+	'translate-fs-selectlanguage' => 'Изаберите језик',
+	'translate-fs-settings-planguage' => 'Примарни језик:',
+	'translate-fs-settings-planguage-desc' => 'Примарни језик се удвостручује као језику интерфејса на овом викију и као подразумевани језик за циљне преводе.',
+	'translate-fs-settings-slanguage' => 'Помоћни језик $1:',
+	'translate-fs-settings-slanguage-desc' => 'Могуће је приказати преводе порука на другим језицима у уређивачу превода.
+Овде можете да изаберете које језике, ако је потребно, бисте желели да видите.',
+	'translate-fs-settings-submit' => 'Сачувај поставке',
+	'translate-fs-userpage-level-N' => 'Мој матерњи језик је',
+	'translate-fs-userpage-level-5' => 'Професионално преводим са',
+	'translate-fs-userpage-level-4' => 'Познајем као матерњи',
+	'translate-fs-userpage-level-3' => 'Добро се сналазим са',
+	'translate-fs-userpage-level-2' => 'Осредње се сналазим са',
+	'translate-fs-userpage-level-1' => 'Познајем мало',
+	'translate-fs-userpage-help' => 'Наведите своје језичке вештине и реците нешто о себи. Ако знате више од пет језика, можете их додати још касније.',
+	'translate-fs-userpage-submit' => 'Направите корисничку страницу',
+	'translate-fs-userpage-done' => 'Одлично! Сада имате корисничку страницу.',
+	'translate-fs-permissions-planguage' => 'Примарни језик:',
+	'translate-fs-permissions-help' => 'Сада треба да поставите захтев да будете додати у групу преводиоца.
+Изаберите примарни језик на који ћете преводити.
+
+Можете поменути и друге језике и друге напомене у поље за унос текста испод.',
+	'translate-fs-permissions-pending' => 'Захтев је послат на [[$1]] и неко од особља сајта ће га проверити у најкраћем могућем року. Ако сте потврдили своју е-адресу, добићете мејл са обавештењем чим се то деси.',
+	'translate-fs-permissions-submit' => 'Пошаљи захтев',
+	'translate-fs-target-text' => "Честитамо!
+Сада можете да почнете са превођењем.
+
+Не бојте се ако вам све и даље изгледа ново и збуњујуће.
+На страници [[Project list]] је дат преглед пројеката на које можете допринети преводе.
+Већина пројеката имају кратак опис странице са везом „''Преведи овај пројекат''“, која ће вас одвести на страницу на којој су наведене све непреведене поруке.
+Списак свих група порука са [[Special:LanguageStats|тренутним стањем превода за дати језик]] је такође доступна.
+
+Ако сматрате да вам је потребно више да разумете пре него што почнете са превођењем, можете прочитати [[FAQ|често постављана питања]].
+Нажалост, документација може бити понекад застарела.
+Ако постоји нешто за шта мислите да би требало да можете да урадите, али не знате како, не устручавајте се да питате на [[Support|страници подршке]].
+
+Такође можете контактирати колеге преводиоце истог језика на [[Portal_talk:$1|страници за разговор]] [[Portal:$1|портала на вашем језику]]. Ако то већ нисте урадили, [[Special:Preferences|промените језик корисничког интерфејса на језик на који желите да преводите]], тако да вики буде у стању да прикажи најбитније везе.",
+	'translate-fs-email-text' => 'Наведите адресу е-поште у [[Special:Preferences|вашим подешавањима]] и потврдите је са мејла који ће вам бити послат.
+
+Ово омогућава другим корисницима да вас контактирају путем е-поште.
+Такође ћете добијати билтене највише једном месечно.
+Ако не желите да примате новости, можете то да онемогућите на картици „{{int:prefs-personal}}“ у вашим [[Special:Preferences|подешавањима]].',
 );
 
 /** Sundanese (Basa Sunda)
