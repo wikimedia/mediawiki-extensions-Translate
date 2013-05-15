@@ -125,10 +125,6 @@
 				}, 300 );
 			} );
 
-			$( '.tux-message-filter-box-clear' ).on( 'click', function () {
-				$filterInput.focus().val( '' ).trigger( 'input' );
-			} );
-
 			this.$container.on( 'clear', $.proxy( messageTable.clear, messageTable ) );
 
 			this.$loader.appear( function () {
@@ -357,7 +353,6 @@
 
 			if ( !query ) {
 				$result.addClass( 'hide' );
-				$( '.tux-message-filter-box-clear' ).addClass( 'hide' );
 			} else {
 				$result.removeClass( 'hide' )
 					.find( 'div' )
@@ -366,7 +361,6 @@
 					window.location.href = new mw.Uri( mw.util.wikiGetlink( 'Special:SearchTranslations' ) )
 						.extend( { query: query } );
 				} );
-				$( '.tux-message-filter-box-clear' ).removeClass( 'hide' );
 			}
 
 			this.$loader.trigger( 'appear' );

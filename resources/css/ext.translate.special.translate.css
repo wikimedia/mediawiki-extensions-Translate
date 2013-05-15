@@ -171,16 +171,3 @@
 	position: relative;
 	left: -5px;
 }
-
-.tux-messagetable-header span.tux-message-filter-box-clear {
-	/* @embed */
-	background: url('../images/close.png') no-repeat scroll center center transparent;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/close.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/close.svg);
-	background-image: linear-gradient(transparent, transparent), url(../images/close.svg);
-	cursor: pointer;
-	height: 32px;
-	position: absolute;
-	width: 32px;
-	margin-left: -24px;
-}
