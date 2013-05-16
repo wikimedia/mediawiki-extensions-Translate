@@ -518,12 +518,9 @@ class SpecialTranslate extends SpecialPage {
 		$output .= Html::element( 'span', array( 'class' => 'two columns tux-message-filter-box-icon' ) );
 		$output .= Html::element( 'input', array(
 			'class' => 'ten columns tux-message-filter-box',
-			'type' => 'text',
+			'type' => 'search',
 		) );
-		$output .= Html::element(
-			'span',
-			array( 'class' => 'one columns tux-message-filter-box-clear hide' )
-		);
+
 		$output .= Html::closeElement( 'div' ); // close three columns
 
 		$output .= Html::closeElement( 'div' ); // close the row
