@@ -27,7 +27,7 @@ $messages['en'] = array(
 	'translate-taskui-export-as-po' => 'Export for off-line translation',
 
 	'translate-taction-translate' => 'Translate',
-	'translate-taction-proofread' => 'Proofread',
+	'translate-taction-proofread' => 'Review',
 	'translate-taction-lstats' => 'Language statistics',
 	'translate-taction-mstats' => 'Message group statistics',
 	'translate-taction-export' => 'Export',
@@ -418,7 +418,7 @@ The states are defined in the configuration variable $wgTranslateWorkflowStates.
 	// Dynamic message groups
 	'translate-dynagroup-recent-label' => 'Recent translations',
 	'translate-dynagroup-recent-desc' => 'This message group shows all recent translations into this language.
-Most useful for the proofreading tasks.',
+Most useful for the review tasks.',
 	'translate-dynagroup-additions-label' => 'Recent additions',
 	'translate-dynagroup-additions-desc' => 'This message group shows new and changed messages.',
 
@@ -441,12 +441,12 @@ Most useful for the proofreading tasks.',
 	'tux-tab-untranslated' => 'Untranslated',
 	'tux-tab-outdated' => 'Outdated',
 	'tux-tab-translated' => 'Translated',
-	'tux-tab-unproofread' => 'Unproofread',
+	'tux-tab-unproofread' => 'Unreviewed',
 
 	'tux-edit' => 'Edit',
 	'tux-status-optional' => 'Optional',
 	'tux-status-fuzzy' => 'Outdated',
-	'tux-status-proofread' => 'Proofread',
+	'tux-status-proofread' => 'Reviewed',
 	'tux-status-translated' => 'Translated',
 	'tux-status-saving' => 'Saving...',
 	'tux-status-unsaved' => 'Unsaved',
@@ -474,7 +474,7 @@ Most useful for the proofreading tasks.',
 	'tux-editor-message-desc-more' => 'View more',
 	'tux-editor-message-desc-less' => 'View less',
 	'tux-editor-clear-translated' => 'Hide translated',
-	'tux-editor-proofreading-mode' => 'Proofread',
+	'tux-editor-proofreading-mode' => 'Review',
 	'tux-editor-translate-mode' => 'List',
 	'tux-editor-proofreading-hide-own-translations' => 'Hide your translations',
 	'tux-editor-proofreading-show-own-translations' => 'Show your translations',
@@ -505,14 +505,14 @@ Most useful for the proofreading tasks.',
 	'tux-empty-there-are-optional' => 'There are optional messages not shown in the list',
 	'tux-empty-show-optional-messages' => 'Show optional messages',
 	'tux-empty-no-outdated-messages' => 'No outdated messages',
-	'tux-empty-nothing-to-proofread' => 'Nothing to proofread',
+	'tux-empty-nothing-to-proofread' => 'Nothing to review',
 	'tux-empty-you-can-help-providing' => 'You can help providing new translations',
-	'tux-empty-nothing-new-to-proofread' => 'Nothing new to proofread',
-	'tux-empty-you-can-review-already-proofread' => 'You can review translations already proofread by others.',
+	'tux-empty-nothing-new-to-proofread' => 'Nothing new to review',
+	'tux-empty-you-can-review-already-proofread' => 'You can review translations already reviewed by others.',
 
 	'tux-empty-list-other' => 'Nothing to translate',
 	'tux-empty-list-other-guide' => 'You can help review existing translations',
-	'tux-empty-list-other-action' => 'Proofread translations',
+	'tux-empty-list-other-action' => 'Review translations',
 	'tux-empty-list-other-link' => 'Show all messages',
 	'tux-editor-close-tooltip' => 'Close',
 	'tux-editor-expand-tooltip' => 'Expand',
@@ -522,8 +522,8 @@ Most useful for the proofreading tasks.',
 	'tux-editor-loading' => 'Loading...',
 
 	'translate-search-more-languages-info' => '$1 more {{PLURAL:$1|language|languages}}',
-	'translate-statsbar-tooltip' => '$1% translated, $2% proofread',
-	'translate-statsbar-tooltip-with-fuzzy' => '$1% translated, $2% proofread, $3% outdated',
+	'translate-statsbar-tooltip' => '$1% translated, $2% reviewed',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% translated, $2% reviewed, $3% outdated',
 	'translate-search-more-groups-info' => '$1 more {{PLURAL:$1|group|groups}}',
 );
 
@@ -572,10 +572,10 @@ It is the verb "to translate".
 	'translate-taskui-untranslated' => 'Task in [[Special:Translate]] on action Translate',
 	'translate-taskui-optional' => 'Task in [[Special:Translate]] on action Translate.
 {{Identical|Show optional message}}',
-	'translate-taskui-acceptqueue' => 'Task in [[Special:Translate]] on action Proofread - only shown to users who are allowed to accept translations
+	'translate-taskui-acceptqueue' => 'Task in [[Special:Translate]] on action Review - only shown to users who are allowed to accept translations
 
 Goes together with {{msg-mw|translate-taskui-reviewall}}',
-	'translate-taskui-reviewall' => 'Task in [[Special:Translate]] on action Proofread',
+	'translate-taskui-reviewall' => 'Task in [[Special:Translate]] on action Review',
 	'translate-taskui-export-to-file' => 'Task in [[Special:Translate]] on action Export',
 	'translate-taskui-export-as-po' => 'Task in [[Special:Translate]] on action Export',
 	'translate-taction-translate' => 'A tab text used in Special pages [[Special:Translate]], [[Special:LanguageStats]] and [[Special:MessageGroupStats]].
@@ -603,7 +603,7 @@ Goes together with {{msg-mw|translate-taskui-reviewall}}',
 
 Parameters:
 * $1 - number of messages, can be used for GENDER',
-	'translate-submit' => 'Button text in [[Special:Translate]] on action Translate, action Proofread and action Export.
+	'translate-submit' => 'Button text in [[Special:Translate]] on action Translate, action Review and action Export.
 
 {{Identical|Fetch}}',
 	'translate-page-navigation-legend' => '{{Identical|Navigation}}',
@@ -1079,16 +1079,14 @@ See also:
 {{Identical|Translated}}',
 	'tux-tab-unproofread' => 'Tab in [[Special:Translate]] new ui to select which messages to show.
 
-Read as in "unproofRED" (past participle).
-
-This "Unproofread" stands for "(messages which) have not been proofread".
+"Unreviewed" stands for "(messages which) have not been reviewed".
 {{Identical|Proofread}}',
 	'tux-edit' => 'Link in [[Special:Translate]] to open message editor',
 	'tux-status-optional' => 'Status label in [[Special:Translate]] indicating that message should only be translated in special cases.
 {{Identical|Optional}}',
 	'tux-status-fuzzy' => 'Status label in [[Special:Translate]] indicating translation needs updating.
 {{Identical|Outdated}}',
-	'tux-status-proofread' => 'Status label in [[Special:Translate]] indicating that you have proofread the translation.
+	'tux-status-proofread' => 'Status label in [[Special:Translate]] indicating that you have reviewed the translation.
 Read as in "proofRED" (past participle).
 {{Identical|Proofread}}',
 	'tux-status-translated' => 'Status label in [[Special:Translate]] indicating that a message is translated. An adjective that refers to a message.
@@ -1138,24 +1136,24 @@ See also:
 	'tux-editor-clear-translated' => 'Label for the button that appears at the footer of the translation editor.
 Pressing the button clears all the messages that were translated from the page.',
 	'tux-editor-proofreading-mode' => 'Label for the button that appears at the footer of the translation editor.
-Pressing the button goes to the proofreading mode.
+Pressing the button goes to the review mode.
 {{Identical|Proofread}}',
 	'tux-editor-translate-mode' => 'Label for the button that appears at the footer of the translation editor.
 Pressing the button goes to the translation mode.
 {{Identical|List}}',
-	'tux-editor-proofreading-hide-own-translations' => "A label for a button that appears at the bottom of the translation editor in proofreading mode.
+	'tux-editor-proofreading-hide-own-translations' => "A label for a button that appears at the bottom of the translation editor in review mode.
 Pressing the button hides the user's own translations from the list.
 
 See also:
 * {{msg-mw|Tux-editor-proofreading-show-own-translations}}",
-	'tux-editor-proofreading-show-own-translations' => "A label for a button that appears at the bottom of the translation editor in proofreading mode.
+	'tux-editor-proofreading-show-own-translations' => "A label for a button that appears at the bottom of the translation editor in review mode.
 Pressing the button shows the user's own translations in the list.
 
 See also:
 * {{msg-mw|Tux-editor-proofreading-hide-own-translations}}",
-	'tux-proofread-action-tooltip' => 'Used as a tooltip for the proofreading button in proofreading mode.
+	'tux-proofread-action-tooltip' => 'Used as a tooltip for the review button in review mode.
 {{Identical|Mark as reviewed}}',
-	'tux-proofread-edit-label' => 'Used as a label that appears near the translation button in proofreading mode.
+	'tux-proofread-edit-label' => 'Used as a label that appears near the translation button in review mode.
 Pressing the button enters translation mode.
 
 The message {{msg-mw|tux-proofread-action-tooltip}} is used as a tooltip for the button near it.
@@ -1184,7 +1182,7 @@ This message follows the warning message {{msg-mw|Tux-editor-outdated-warning}}.
 	'tux-message-filter-advanced-button' => 'Button label for searching the messages using [[Special:SearchTranslations]].
 {{Identical|Advanced search}}',
 	'tux-message-filter-optional-messages-label' => 'A label for a checkbox. Checking the box causes message editor to show optional messages.',
-	'tux-proofread-translated-by-self' => 'A small notification that appears in a proofreading box, saying that that message was translated by the current user.
+	'tux-proofread-translated-by-self' => 'A small notification that appears in a review box, saying that the message was translated by the current user.
 
 See also:
 * {{msg-mw|Translate-messagereview-reviewswithyou}}',
@@ -1204,12 +1202,12 @@ Clicking the link enables the optional messages.
 
 See also:
 * {{msg-mw|Tux-tab-outdated}}',
-	'tux-empty-nothing-to-proofread' => '{{Tuxspec|7}} A heading displayed when there are no messages to proofread.
+	'tux-empty-nothing-to-proofread' => '{{Tuxspec|7}} A heading displayed when there are no messages to review.
 
 See also:
 * {{msg-mw|Tux-empty-nothing-new-to-proofread}}',
 	'tux-empty-you-can-help-providing' => '{{Tuxspec|7}} A subtitle for {{msg-mw|tux-empty-no-outdated-messages}}.',
-	'tux-empty-nothing-new-to-proofread' => '{{Tuxspec|7}} A heading displayed when there no messages that were not proofread already.
+	'tux-empty-nothing-new-to-proofread' => '{{Tuxspec|7}} A heading displayed when there no messages that were not reviewed already.
 
 See also:
 * {{msg-mw|Tux-empty-nothing-to-proofread}}',
@@ -1240,10 +1238,10 @@ See also:
 * {{msg-mw|Translate-search-more-groups-info}}',
 	'translate-statsbar-tooltip' => 'Descriptive text to show for the stats bar for message groups on mouse over.
 * $1 percentage of messages translated
-* $2 percentage of messages proofread',
+* $2 percentage of messages reviewed',
 	'translate-statsbar-tooltip-with-fuzzy' => 'Descriptive text to show for the stats bar for message groups on mouse over.
 * $1 percentage of messages translated (does not include outdated)
-* $2 percentage of messages proofread
+* $2 percentage of messages reviewed
 * $3 percentage of messages outdated (not counted as translated)',
 	'translate-search-more-groups-info' => 'Information shown as number of message groups matching the query using
 [[Special:SearchTranslations]]
