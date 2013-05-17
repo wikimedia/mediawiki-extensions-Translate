@@ -10442,6 +10442,7 @@ $messages['yi'] = array(
  * @author Gzdavidwong
  * @author Hydra
  * @author Hzy980512
+ * @author Li3939108
  * @author Liangent
  * @author Linforest
  * @author Mys 721tx
@@ -10555,6 +10556,16 @@ $messages['zh-hans'] = array(
 	'pt-shake-empty' => '为“$1”的翻译单位标记是空的。',
 	'log-description-pagetranslation' => '页面翻译系统的对应活动日志',
 	'log-name-pagetranslation' => '页面翻译日志',
+	'logentry-pagetranslation-mark' => '$1将$3{{GENDER:$2|标记为}}需要翻译',
+	'logentry-pagetranslation-unmark' => '$1将$3从翻译中{{GENDER:$2|除去}}',
+	'logentry-pagetranslation-moveok' => '$1{{GENDER:$2|完成了}}翻译页面$3到$4的重命名',
+	'logentry-pagetranslation-movenok' => '$1{{GENDER:$2|遇到了}}在移动页面$3到$4时遇到了一个问题',
+	'logentry-pagetranslation-deletefok' => '$1{{GENDER:$2|完成了}}翻译页面$3的删除',
+	'logentry-pagetranslation-deletefnok' => '$1删除属于翻译页面$4的$3{{GENDER:$2|失败}}',
+	'logentry-pagetranslation-deletelok' => '$1{{GENDER:$2|完成了}}翻译页面$3的删除',
+	'logentry-pagetranslation-deletelnok' => '$1删除属于翻译页面$4的$3{{GENDER:$2|失败}}',
+	'logentry-pagetranslation-encourage' => '$1{{GENDER:$2|支持}}$3的翻译',
+	'logentry-pagetranslation-discourage' => '$1{{GENDER:$2|不支持}}$3的翻译',
 	'pt-movepage-title' => '移动可翻译页面$1',
 	'pt-movepage-blockers' => '可翻译页面因下列$1错误无法移动至新名称：',
 	'pt-movepage-block-base-exists' => '可翻译的目标页面“[[:$1]]”已存在。',

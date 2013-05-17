@@ -633,8 +633,10 @@ $specialPageAliases['mr'] = array(
 	'TranslationStats' => array( 'भाषांतरसांख्यिकी' ),
 	'Translations' => array( 'भाषांतरणे' ),
 	'LanguageStats' => array( 'भाषासांख्यिकी' ),
-	'PageTranslation' => array( 'पृष्ठभाषांतर' ),
+	'PageTranslation' => array( 'पृष्ठभाषांतर', 'पृष्ठअनुवाद' ),
 	'ImportTranslations' => array( 'भाषांतराआयात' ),
+	'MyLanguage' => array( 'माझीभाषा' ),
+	'SearchTranslations' => array( 'अनुवाद_शोधा' ),
 );
 
 /** Malay (Bahasa Melayu) */

@@ -5980,7 +5980,7 @@ $messages['ce'] = array(
 	'translate-language' => 'Мотт',
 	'translate-save' => 'lалашдан ($1)',
 	'translate-jssti-add' => 'Тlетоха могlам чу',
-	'translate-import-load' => 'Чуйаккха файл',
+	'translate-import-load' => 'Файл чуяккхар',
 	'translate-gs-code' => 'Ишар',
 	'translate-gs-multiple' => 'Маситта',
 	'translate-gs-total' => 'Йеригге',
@@ -10811,7 +10811,7 @@ $messages['fr'] = array(
 	'translate-taskui-export-to-file' => 'Exporter au format natif',
 	'translate-taskui-export-as-po' => 'Exporter pour une traduction hors-ligne',
 	'translate-taction-translate' => 'Traduire',
-	'translate-taction-proofread' => 'Relecture', # Fuzzy
+	'translate-taction-proofread' => 'Relecture',
 	'translate-taction-lstats' => 'Statistiques de langue',
 	'translate-taction-mstats' => 'Statistiques de groupe de messages',
 	'translate-taction-export' => 'Exporter',
@@ -11122,8 +11122,8 @@ Détails : $1',
 	'translate-workflowgroup-desc' => 'Ce groupe de messages montre les états du processus de travail de traduction.
 Les états sont définis dans la variable de configuration $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Traductions récentes',
-	'translate-dynagroup-recent-desc' => 'Ce groupe de message montre toutes les traductions récentes faites dans cette langue.
-Il est surtout utilisé pour les tâches de relecture.', # Fuzzy
+	'translate-dynagroup-recent-desc' => 'Ce groupe de messages montre toutes les traductions récentes faites dans cette langue.
+Il est surtout utilisé pour les tâches de relecture.',
 	'translate-dynagroup-additions-label' => 'Ajouts récents',
 	'translate-dynagroup-additions-desc' => 'Ce groupe de messages affiche les messages nouveaux et modifiés.',
 	'translate-dynagroup-by' => 'Traduction faite par  {{GENDER:$1|$1}}',
@@ -11141,11 +11141,11 @@ Il est surtout utilisé pour les tâches de relecture.', # Fuzzy
 	'tux-tab-untranslated' => 'Non traduit',
 	'tux-tab-outdated' => 'Obsolète',
 	'tux-tab-translated' => 'Traduit',
-	'tux-tab-unproofread' => 'Non relu', # Fuzzy
+	'tux-tab-unproofread' => 'Non relu',
 	'tux-edit' => 'Modifier',
 	'tux-status-optional' => 'Facultatif',
 	'tux-status-fuzzy' => 'Obsolète',
-	'tux-status-proofread' => 'Corrigée', # Fuzzy
+	'tux-status-proofread' => 'Corrigé',
 	'tux-status-translated' => 'Traduit',
 	'tux-status-saving' => 'Enregistrement en cours…',
 	'tux-status-unsaved' => 'Non enregistrée',
@@ -11172,7 +11172,7 @@ Il est surtout utilisé pour les tâches de relecture.', # Fuzzy
 	'tux-editor-message-desc-more' => 'Voir davantage',
 	'tux-editor-message-desc-less' => 'Afficher moins',
 	'tux-editor-clear-translated' => 'Masquer la traduction',
-	'tux-editor-proofreading-mode' => 'Relecture', # Fuzzy
+	'tux-editor-proofreading-mode' => 'Relecture',
 	'tux-editor-translate-mode' => 'Liste',
 	'tux-editor-proofreading-hide-own-translations' => 'Masquer vos traductions',
 	'tux-editor-proofreading-show-own-translations' => 'Afficher vos traductions',
@@ -11201,13 +11201,13 @@ Il est surtout utilisé pour les tâches de relecture.', # Fuzzy
 	'tux-empty-there-are-optional' => "Il y a des messages facultatifs n'apparaissant pas dans la liste",
 	'tux-empty-show-optional-messages' => 'Afficher les messages facultatifs',
 	'tux-empty-no-outdated-messages' => 'Pas de messages obsolètes',
-	'tux-empty-nothing-to-proofread' => 'Rien à relire', # Fuzzy
+	'tux-empty-nothing-to-proofread' => 'Rien à relire',
 	'tux-empty-you-can-help-providing' => 'Vous pouvez aider en apportant de nouvelles traductions',
-	'tux-empty-nothing-new-to-proofread' => 'Rien de nouveau à relire', # Fuzzy
-	'tux-empty-you-can-review-already-proofread' => "Vous pouvez consulter les traductions déjà corrigées par d'autres.", # Fuzzy
+	'tux-empty-nothing-new-to-proofread' => 'Rien de nouveau à relire',
+	'tux-empty-you-can-review-already-proofread' => "Vous pouvez relire les traductions déjà relues par d'autres.",
 	'tux-empty-list-other' => 'Rien à traduire',
 	'tux-empty-list-other-guide' => 'Vous pouvez aider à relire les traductions existantes',
-	'tux-empty-list-other-action' => 'Traductions corrigées', # Fuzzy
+	'tux-empty-list-other-action' => 'Relire les traductions',
 	'tux-empty-list-other-link' => 'Afficher tous les messages',
 	'tux-editor-close-tooltip' => 'Fermer',
 	'tux-editor-expand-tooltip' => 'Développer',
@@ -11216,8 +11216,8 @@ Il est surtout utilisé pour les tâches de relecture.', # Fuzzy
 	'tux-editor-message-tools-translations' => 'Toutes les traductions',
 	'tux-editor-loading' => 'Chargement en cours…',
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|langue supplémentaire|langues supplémentaires}}',
-	'translate-statsbar-tooltip' => '$1% traduit, $2% relu', # Fuzzy
-	'translate-statsbar-tooltip-with-fuzzy' => '$1% traduit, $2% relu, $3% obsolète', # Fuzzy
+	'translate-statsbar-tooltip' => '$1% traduit, $2% relu',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% traduit, $2% relu, $3% obsolète',
 	'translate-search-more-groups-info' => '$1 groupe{{PLURAL:$1||s}} de plus',
 );
 
@@ -19871,7 +19871,7 @@ $messages['mk'] = array(
 	'translate-taskui-export-to-file' => 'Извези во матичен формат',
 	'translate-taskui-export-as-po' => 'Извези за вонмрежно преведување',
 	'translate-taction-translate' => 'Преведи',
-	'translate-taction-proofread' => 'Проверка', # Fuzzy
+	'translate-taction-proofread' => 'Провери',
 	'translate-taction-lstats' => 'Јазични статистики',
 	'translate-taction-mstats' => 'Статистики за групата',
 	'translate-taction-export' => 'Извези',
@@ -20191,7 +20191,7 @@ $1',
 Состојбите се определуваат со променливата $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Скорешни преводи',
 	'translate-dynagroup-recent-desc' => 'Оваа група на пораки ги прикажува сите скорешни преводи на овој јазик.
-Ова е најкорисно при вршење на задачите за коректура.', # Fuzzy
+Ова е најкорисно при вршењето на прегледи.',
 	'translate-dynagroup-additions-label' => 'Неодамна додадени',
 	'translate-dynagroup-additions-desc' => 'Оваа група на пораки прикажува нови и изменети пораки',
 	'translate-dynagroup-by' => 'Преводот го изврши {{GENDER:$1|$1}}',
@@ -20209,11 +20209,11 @@ $1',
 	'tux-tab-untranslated' => 'Непреведени',
 	'tux-tab-outdated' => 'Застарени',
 	'tux-tab-translated' => 'Преведени',
-	'tux-tab-unproofread' => 'Непроверени', # Fuzzy
+	'tux-tab-unproofread' => 'Непроверени',
 	'tux-edit' => 'Уреди',
 	'tux-status-optional' => 'Незадолжително',
 	'tux-status-fuzzy' => 'Застарено',
-	'tux-status-proofread' => 'Проверка', # Fuzzy
+	'tux-status-proofread' => 'Проверени',
 	'tux-status-translated' => 'Преведено',
 	'tux-status-saving' => 'Зачувувам...',
 	'tux-status-unsaved' => 'Незачувано',
@@ -20240,7 +20240,7 @@ $1',
 	'tux-editor-message-desc-more' => 'Погл. уште',
 	'tux-editor-message-desc-less' => 'Погл. помалку',
 	'tux-editor-clear-translated' => 'Скриј преведени',
-	'tux-editor-proofreading-mode' => 'Коректура', # Fuzzy
+	'tux-editor-proofreading-mode' => 'Провери',
 	'tux-editor-translate-mode' => 'Список',
 	'tux-editor-proofreading-hide-own-translations' => 'Скриј мои преводи',
 	'tux-editor-proofreading-show-own-translations' => 'Прикажи мои преводи',
@@ -20269,13 +20269,13 @@ $1',
 	'tux-empty-there-are-optional' => 'Има незадолжителни пораки што не се прикажани на списокот',
 	'tux-empty-show-optional-messages' => 'Прикажи незадолжителни пораки',
 	'tux-empty-no-outdated-messages' => 'Нема застарени пораки',
-	'tux-empty-nothing-to-proofread' => 'Нема ништо за проверка', # Fuzzy
+	'tux-empty-nothing-to-proofread' => 'Нема ништо за проверка',
 	'tux-empty-you-can-help-providing' => 'Можете да помогнете со нови преводи',
-	'tux-empty-nothing-new-to-proofread' => 'Нема ништо ново за проверка', # Fuzzy
-	'tux-empty-you-can-review-already-proofread' => 'Можете да ги прегледате преводите веќе проверени од други.', # Fuzzy
+	'tux-empty-nothing-new-to-proofread' => 'Нема ништо ново за проверка',
+	'tux-empty-you-can-review-already-proofread' => 'Можете да ги прегледате преводите веќе проверени од други.',
 	'tux-empty-list-other' => 'Нема ништо за преведување',
 	'tux-empty-list-other-guide' => 'Можете да помогнете со проверката на постоечките преводи',
-	'tux-empty-list-other-action' => 'Провери преводи', # Fuzzy
+	'tux-empty-list-other-action' => 'Провери преводи',
 	'tux-empty-list-other-link' => 'Прикажи ги сите пораки',
 	'tux-editor-close-tooltip' => 'Затвори',
 	'tux-editor-expand-tooltip' => 'Прикажи',
@@ -20284,8 +20284,8 @@ $1',
 	'tux-editor-message-tools-translations' => 'Сите преводи',
 	'tux-editor-loading' => 'Вчитувам...',
 	'translate-search-more-languages-info' => 'уште {{PLURAL:$1|еден јазик|$1 јазици}}',
-	'translate-statsbar-tooltip' => '$1% преведени, $2% проверени', # Fuzzy
-	'translate-statsbar-tooltip-with-fuzzy' => '$1% преведени, $2% проверени, $3% застарени', # Fuzzy
+	'translate-statsbar-tooltip' => '$1% преведени, $2% проверени',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% преведени, $2% проверени, $3% застарени',
 	'translate-search-more-groups-info' => 'Уште {{PLURAL:$1|една група|$1 групи}}',
 );
 
@@ -26248,7 +26248,7 @@ $messages['roa-tara'] = array(
 	'translate-taskui-view' => 'Fà vedè tutte le messàgge',
 	'translate-taskui-untranslated' => 'Fà vedè le messàgge da traducere',
 	'translate-taskui-optional' => 'Fà vedè le messaggè opzionale',
-	'translate-taskui-acceptqueue' => 'Sulamende le messàgge ca pozze accettà',
+	'translate-taskui-acceptqueue' => 'Sulamende le messàgge ca pozze signà cumme reviste',
 	'translate-taskui-reviewall' => 'Revide tutte le traduziune',
 	'translate-taskui-export-to-file' => 'Esporte in formate native',
 	'translate-taskui-export-as-po' => 'Esporte pe le traduziune fore linèe',
@@ -26323,6 +26323,7 @@ Mutive:
 	'translate-checks-parameters-unknown' => "{{PLURAL:$2|'U seguende parametre jè|'U seguende parametre sò}} scanusciute:
 <strong><nowiki>$1</nowiki></strong>",
 	'translate-checks-malformed' => '<nowiki>$1</nowiki> jè malformate.',
+	'translate-pref-editassistlang' => 'Assistende de le lènghe:',
 	'prefs-translate' => 'Opziune de traduzione',
 	'translate-pref-editassistlang-bad' => "Codece d'a lènghe invalide jndr'à l'elenghe:
 <nowiki>$1</nowiki>.",
@@ -26381,11 +26382,13 @@ Mutive:
 	'translate-untranslated' => 'Senza traduzione',
 	'translate-percentage-complete' => '% de Combletamende',
 	'translate-percentage-fuzzy' => 'Non aggiornete',
+	'translate-languagestats-overall' => "Tutte le gruppe de messàgge 'nzieme",
 	'translate-ls-submit' => 'Fà vedè le statisteche',
 	'translate-ls-column-group' => 'Gruppe de messàgge',
 	'translate-mgs-pagename' => 'Statisteche de le gruppe de messàgge',
 	'translate-mgs-fieldset' => 'Fà vedè le preferenze',
 	'translate-mgs-group' => "Messàgge d'u gruppe:",
+	'translate-mgs-nocomplete' => 'No fà vedè le lènghe ca onne le traduziune combletate',
 	'translate-mgs-submit' => 'Fà vedè le statisteche',
 	'translate-mgs-column-language' => 'Lènghe',
 	'translate-mgs-totals' => "Tutte le lènghe 'nzieme",
@@ -26412,6 +26415,10 @@ Mutive:
 	'translate-import-load' => "Careche 'u file",
 	'translate-js-summary' => 'Riepileghe:',
 	'translate-js-save' => 'Reggìstre',
+	'translate-js-skip' => "Zumbe a 'u prossime",
+	'translate-js-save-failed' => "Reggistrazione fallite. Pe piacere segnale st'errore.",
+	'translate-js-history' => "Cunde d'a traduzione",
+	'translate-js-support' => "Fà 'na domande",
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Codece',
 	'translate-gs-continent' => 'Continende',
@@ -26425,17 +26432,18 @@ Mutive:
 	'translate-searchprofile' => 'Tradutture',
 	'translate-search-languagefilter' => 'Filtre pe lènghe:',
 	'translate-search-nofilter' => 'Nisciune filtre',
-	'translate-messagereview-submit' => 'Accette',
-	'translate-messagereview-progress' => 'Stoche accette...',
-	'translate-messagereview-failure' => 'Stoche accette... fallite: $1',
-	'translate-messagereview-done' => 'Accettate',
-	'translate-messagereview-reviews' => "Accettate da {{PLURAL:$1|'n'utende|$1 utinde}}",
+	'translate-messagereview-submit' => 'Signe reviste',
+	'translate-messagereview-progress' => 'Stoche a segne cumme reviste...',
+	'translate-messagereview-failure' => 'Stoche a segne cumme reviste fallite: $1',
+	'translate-messagereview-done' => 'Reviste',
+	'translate-messagereview-reviews' => "Reviste da {{PLURAL:$1|'n'utende|$1 utinde}}",
+	'translate-messagereview-reviewswithyou' => 'Reviste da {{PLURAL:$1|te|$1 utinde cu te}}',
 	'api-error-invalidrevision' => 'Traduzione none acchiate',
 	'api-error-unknownmessage' => 'Messàgge none acchiate',
 	'group-translate-proofr' => 'Revisitature de le traduziune',
 	'group-translate-proofr-member' => '{{GENDER:$1|revisitature de le traduziune}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Revisitature de le traduziune',
-	'logentry-translationreview-message' => '$1 traduzione {{GENDER:$2|accettate}} $3',
+	'logentry-translationreview-message' => '$1 traduzione {{GENDER:$2|reviste}} $3',
 	'translate-workflow-state-' => "(none 'mbostate)",
 	'translate-workflowstatus' => 'State: $1',
 	'translate-workflow-set-do' => "'Mboste",
@@ -26448,14 +26456,56 @@ Mutive:
 	'translate-dynagroup-last' => 'Urteme cangiamende de {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Urteme cangiamende de {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Ajute',
+	'translate-msggroupselector-search-placeholder' => 'Gruppe de ricerche',
 	'translate-msggroupselector-search-all' => 'Tutte',
 	'translate-msggroupselector-search-recent' => 'Recende',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|sottogruppe}}',
+	'tux-languageselector' => "Traduce jndr'à",
 	'tux-tab-all' => 'Tutte',
+	'tux-tab-untranslated' => 'Non tradotte',
+	'tux-tab-outdated' => 'Non aggiornate',
+	'tux-tab-translated' => 'Tradotte',
+	'tux-tab-unproofread' => 'Non reviste',
 	'tux-edit' => 'Cange',
+	'tux-status-optional' => 'Opzionale',
+	'tux-status-fuzzy' => 'Non aggiornate',
+	'tux-status-proofread' => 'Reviste',
+	'tux-status-translated' => 'Tradotte',
 	'tux-status-saving' => 'Stoche a reggistre...',
+	'tux-status-unsaved' => 'Non reggistrate',
+	'tux-editor-placeholder' => "'A traduziona toje",
+	'tux-editor-paste-original-button-label' => "Copie 'u teste iniziale",
+	'tux-editor-discard-changes-button-label' => 'Scitte le cangiaminde',
+	'tux-editor-save-button-label' => "Reggistre 'a traduzione",
+	'tux-editor-skip-button-label' => "Zumbe a 'u prossime",
+	'tux-editor-cancel-button-label' => 'Annulle',
+	'tux-editor-confirm-button-label' => "Conferme 'a traduzione",
+	'tux-editor-shortcut-info' => 'Cazze "$1" pe reggistrà o "$2" pe zumbà a \'u prossime messàgge',
+	'tux-editor-suggestions-title' => 'Suggereminde',
+	'tux-editor-in-other-languages' => "Jndr'à l'otre lènghe",
+	'tux-editor-need-more-help' => "E' abbesògne de 'na màne?",
+	'tux-editor-ask-help' => "Cirche cchiù 'mbormaziune",
+	'tux-editor-tm-match' => '$1% de combronde',
+	'tux-warnings-more' => '{{PLURAL:$1|$1 de cchiù}}',
 	'tux-warnings-hide' => 'scunne',
+	'tux-editor-translate-mode' => 'Elenghe',
+	'tux-editor-proofreading-hide-own-translations' => 'Scunne le traduziune tune',
+	'tux-editor-proofreading-show-own-translations' => 'Fà vedè le traduziune tune',
+	'tux-proofread-action-tooltip' => 'Signe cumme reviste',
+	'tux-proofread-edit-label' => 'Cange',
+	'tux-editor-page-mode' => 'Pàgene',
 	'tux-editor-doc-editor-cancel' => 'Annulle',
+	'tux-empty-list-translated-action' => 'Traduce',
+	'tux-empty-no-messages-to-display' => 'Nisciune messàgge da vedè.',
+	'tux-editor-close-tooltip' => 'Achiude',
+	'tux-editor-expand-tooltip' => 'Spanne',
+	'tux-editor-collapse-tooltip' => 'Scunne',
+	'tux-editor-message-tools-history' => 'Cunde',
+	'tux-editor-message-tools-translations' => 'Tutte le traduziune',
+	'tux-editor-loading' => 'Stoche a scareche…',
+	'translate-statsbar-tooltip' => '$1% tradotte, $2% reviste',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% tradotte, $2% reviste, $3% da aggiornà',
+	'translate-search-more-groups-info' => '$1 cchiù {{PLURAL:$1|gruppe}}',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
@@ -34209,6 +34259,7 @@ $messages['yue'] = array(
  * @author Hydra
  * @author Hzy980512
  * @author Jimmy xu wrk
+ * @author Li3939108
  * @author Liangent
  * @author Mark85296341
  * @author Mys 721tx
@@ -34228,12 +34279,12 @@ $messages['zh-hans'] = array(
 	'translate-taskui-view' => '显示所有信息',
 	'translate-taskui-untranslated' => '显示所有未翻译的信息',
 	'translate-taskui-optional' => '显示可选信息',
-	'translate-taskui-acceptqueue' => '只有我可以接受的消息', # Fuzzy
+	'translate-taskui-acceptqueue' => '我可以标记为已校对的消息',
 	'translate-taskui-reviewall' => '复查所有翻译',
 	'translate-taskui-export-to-file' => '以原始格式导出',
 	'translate-taskui-export-as-po' => '导出离线翻译',
 	'translate-taction-translate' => '翻译',
-	'translate-taction-proofread' => '校对', # Fuzzy
+	'translate-taction-proofread' => '校对',
 	'translate-taction-lstats' => '语言统计',
 	'translate-taction-mstats' => '信息组统计',
 	'translate-taction-export' => '导出',
@@ -34504,25 +34555,25 @@ $1',
 	'translate-searchprofile-tooltip' => '从所有翻译搜索',
 	'translate-search-languagefilter' => '按语言筛选：',
 	'translate-search-nofilter' => '没有过滤',
-	'translate-messagereview-submit' => '接受', # Fuzzy
-	'translate-messagereview-progress' => '正在接受...', # Fuzzy
-	'translate-messagereview-failure' => '正在接受...失败：$1', # Fuzzy
-	'translate-messagereview-done' => '已接受', # Fuzzy
-	'translate-messagereview-reviews' => '已被{{PLURAL:$1|一个用户|$1个用户}}接受', # Fuzzy
-	'translate-messagereview-reviewswithyou' => '已被{{PLURAL:$1|您|包括您的$1个用户}}接受', # Fuzzy
+	'translate-messagereview-submit' => '标记为已校对',
+	'translate-messagereview-progress' => '正在标记为已校对...',
+	'translate-messagereview-failure' => '正在标记为已校对...失败：$1',
+	'translate-messagereview-done' => '已校对',
+	'translate-messagereview-reviews' => '已被{{PLURAL:$1|$1个用户}}校对',
+	'translate-messagereview-reviewswithyou' => '已被{{PLURAL:$1|您|包括您的$1个用户}}校对',
 	'api-error-invalidrevision' => '找不到翻译',
 	'api-error-unknownmessage' => '找不到信息',
 	'api-error-fuzzymessage' => '翻译被编辑为不准确',
-	'api-error-owntranslation' => '您不能接受自己的翻译', # Fuzzy
-	'translate-messagereview-no-fuzzy' => '不确切的翻译不能被接受。', # Fuzzy
-	'translate-messagereview-no-own' => '您不能接受自己的翻译。', # Fuzzy
-	'translate-messagereview-doit' => '将这个翻译接受为正确翻译。', # Fuzzy
+	'api-error-owntranslation' => '您不能将自己的翻译标记为已校对',
+	'translate-messagereview-no-fuzzy' => '不确切的翻译不能被标记为已校对。',
+	'translate-messagereview-no-own' => '您不能将自己的翻译标记为已校对。',
+	'translate-messagereview-doit' => '将这个翻译标记为已校对。',
 	'group-translate-proofr' => '翻译审查者',
 	'group-translate-proofr-member' => '{{GENDER:$1|翻译审查者}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:翻译审查者',
 	'log-name-translationreview' => '翻译检查日志',
 	'log-description-translationreview' => '所有对翻译和信息组的复查的日志。',
-	'logentry-translationreview-message' => '$1{{GENDER:$2|已接受}}翻译$3', # Fuzzy
+	'logentry-translationreview-message' => '$1{{GENDER:$2|校对了}}翻译$3',
 	'logentry-translationreview-group' => '$1将$3的翻译状态$4由$6{{GENDER:$2|修改为}}$7',
 	'group-translate-sandboxed' => '未被批准的翻译员',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|未被批准的翻译员}}',
@@ -34543,7 +34594,7 @@ $1',
 该状态是由$wgTranslateWorkflowStates配置变量定义。',
 	'translate-dynagroup-recent-label' => '最近的翻译',
 	'translate-dynagroup-recent-desc' => '此消息组显示了最近该语言的所有翻译。
-在校对时很有帮助。', # Fuzzy
+在校对时很有帮助。',
 	'translate-dynagroup-additions-label' => '最近添加',
 	'translate-dynagroup-additions-desc' => '此消息组显示新的和有变化的消息。',
 	'translate-dynagroup-by' => '{{GENDER:$1|$1}}作出翻译',
@@ -34561,11 +34612,11 @@ $1',
 	'tux-tab-untranslated' => '未翻译',
 	'tux-tab-outdated' => '已过时',
 	'tux-tab-translated' => '已翻译',
-	'tux-tab-unproofread' => '未校对', # Fuzzy
+	'tux-tab-unproofread' => '未校对',
 	'tux-edit' => '编辑',
 	'tux-status-optional' => '可选',
 	'tux-status-fuzzy' => '已过时',
-	'tux-status-proofread' => '已校对', # Fuzzy
+	'tux-status-proofread' => '已校对',
 	'tux-status-translated' => '已翻译',
 	'tux-status-saving' => '保存中...',
 	'tux-status-unsaved' => '未保存',
@@ -34592,11 +34643,11 @@ $1',
 	'tux-editor-message-desc-more' => '查看更多',
 	'tux-editor-message-desc-less' => '查看更少',
 	'tux-editor-clear-translated' => '隐藏已翻译',
-	'tux-editor-proofreading-mode' => '校对', # Fuzzy
+	'tux-editor-proofreading-mode' => '校对',
 	'tux-editor-translate-mode' => '列表',
 	'tux-editor-proofreading-hide-own-translations' => '隐藏您的翻译',
 	'tux-editor-proofreading-show-own-translations' => '显示您的翻译',
-	'tux-proofread-action-tooltip' => '接受翻译', # Fuzzy
+	'tux-proofread-action-tooltip' => '标记为已校对',
 	'tux-proofread-edit-label' => '编辑',
 	'tux-editor-page-mode' => '页面',
 	'tux-editor-outdated-warning' => '此翻译可能需要更新。',
@@ -34621,13 +34672,13 @@ $1',
 	'tux-empty-there-are-optional' => '列表中含有未显示的可选信息',
 	'tux-empty-show-optional-messages' => '显示可选信息',
 	'tux-empty-no-outdated-messages' => '无过时信息',
-	'tux-empty-nothing-to-proofread' => '无需要校对的信息', # Fuzzy
+	'tux-empty-nothing-to-proofread' => '没什么需要校对',
 	'tux-empty-you-can-help-providing' => '您可以帮助提供新翻译',
-	'tux-empty-nothing-new-to-proofread' => '无需要校对的新信息', # Fuzzy
-	'tux-empty-you-can-review-already-proofread' => '您可以复查已校对的翻译', # Fuzzy
+	'tux-empty-nothing-new-to-proofread' => '没什么新的需要校对',
+	'tux-empty-you-can-review-already-proofread' => '您可以校对已被他人校对过的翻译。',
 	'tux-empty-list-other' => '不用翻译',
-	'tux-empty-list-other-guide' => '您可以帮忙审阅现有的翻译', # Fuzzy
-	'tux-empty-list-other-action' => '去校对翻译', # Fuzzy
+	'tux-empty-list-other-guide' => '您可以帮忙校对现有的翻译',
+	'tux-empty-list-other-action' => '校对翻译',
 	'tux-empty-list-other-link' => '显示所有消息',
 	'tux-editor-close-tooltip' => '关闭',
 	'tux-editor-expand-tooltip' => '展开',
@@ -34636,8 +34687,8 @@ $1',
 	'tux-editor-message-tools-translations' => '所有翻译',
 	'tux-editor-loading' => '加载中...',
 	'translate-search-more-languages-info' => '还有$1种语言',
-	'translate-statsbar-tooltip' => '$1% 已翻译，$2% 已校对', # Fuzzy
-	'translate-statsbar-tooltip-with-fuzzy' => '$1% 已翻译，$2% 已校对，$3% 已过时', # Fuzzy
+	'translate-statsbar-tooltip' => '$1%已翻译，$2%已校对',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1%已翻译，$2%已校对，$3%已过时',
 	'translate-search-more-groups-info' => '还有$1个{{PLURAL:$1|群组}}',
 );
 
@@ -34666,7 +34717,7 @@ $messages['zh-hant'] = array(
 	'translate-taskui-export-to-file' => '以原始格式匯出',
 	'translate-taskui-export-as-po' => '匯出作離線翻譯',
 	'translate-taction-translate' => '翻譯',
-	'translate-taction-proofread' => '校對', # Fuzzy
+	'translate-taction-proofread' => '複查',
 	'translate-taction-lstats' => '語言統計',
 	'translate-taction-mstats' => '訊息組統計',
 	'translate-taction-export' => '匯出',
@@ -34979,8 +35030,8 @@ $1',
 	'translate-workflowgroup-desc' => '此消息組顯示翻譯工作流程狀態。
 該狀態是由$wgTranslateWorkflowStates配置變量定義。',
 	'translate-dynagroup-recent-label' => '最近的翻譯',
-	'translate-dynagroup-recent-desc' => '此消息組顯示了最近該語言的所有翻譯。
-在校對時很有幫助。', # Fuzzy
+	'translate-dynagroup-recent-desc' => '此訊息組顯示了最近該語言的所有翻譯。
+在複查時很有幫助。',
 	'translate-dynagroup-additions-label' => '最近增添',
 	'translate-dynagroup-additions-desc' => '此訊息組顯示新的以及被更改的訊息。',
 	'translate-dynagroup-by' => '{{GENDER:$1|$1}}作出翻譯',
@@ -34998,11 +35049,11 @@ $1',
 	'tux-tab-untranslated' => '未翻譯',
 	'tux-tab-outdated' => '已過時',
 	'tux-tab-translated' => '已翻譯',
-	'tux-tab-unproofread' => '未校對', # Fuzzy
+	'tux-tab-unproofread' => '未複查',
 	'tux-edit' => '編輯',
 	'tux-status-optional' => '可選',
 	'tux-status-fuzzy' => '已過時',
-	'tux-status-proofread' => '已校對', # Fuzzy
+	'tux-status-proofread' => '已複查',
 	'tux-status-translated' => '已翻譯',
 	'tux-status-saving' => '儲存中...',
 	'tux-status-unsaved' => '未儲存',
@@ -35029,7 +35080,7 @@ $1',
 	'tux-editor-message-desc-more' => '顯示更多',
 	'tux-editor-message-desc-less' => '顯示更少',
 	'tux-editor-clear-translated' => '隱藏已翻譯',
-	'tux-editor-proofreading-mode' => '校對', # Fuzzy
+	'tux-editor-proofreading-mode' => '複查',
 	'tux-editor-translate-mode' => '列表',
 	'tux-editor-proofreading-hide-own-translations' => '隱藏您的翻譯',
 	'tux-editor-proofreading-show-own-translations' => '顯示您的翻譯',
@@ -35058,13 +35109,13 @@ $1',
 	'tux-empty-there-are-optional' => '列表中還有未顯示的可選訊息',
 	'tux-empty-show-optional-messages' => '顯示可選訊息',
 	'tux-empty-no-outdated-messages' => '無過時的訊息',
-	'tux-empty-nothing-to-proofread' => '無需要校對的訊息', # Fuzzy
+	'tux-empty-nothing-to-proofread' => '無需要複查的訊息',
 	'tux-empty-you-can-help-providing' => '您可以幫助提供新翻譯',
-	'tux-empty-nothing-new-to-proofread' => '沒有新訊息要校對', # Fuzzy
-	'tux-empty-you-can-review-already-proofread' => '您可以複查已校對的翻譯。', # Fuzzy
+	'tux-empty-nothing-new-to-proofread' => '沒有新訊息要複查',
+	'tux-empty-you-can-review-already-proofread' => '您可以複查已複查的翻譯。',
 	'tux-empty-list-other' => '沒有要翻譯的內容',
 	'tux-empty-list-other-guide' => '幫助校對現有的翻譯',
-	'tux-empty-list-other-action' => '校對翻譯', # Fuzzy
+	'tux-empty-list-other-action' => '複查翻譯',
 	'tux-empty-list-other-link' => '顯示所有訊息',
 	'tux-editor-close-tooltip' => '關閉',
 	'tux-editor-expand-tooltip' => '展開',
@@ -35073,8 +35124,8 @@ $1',
 	'tux-editor-message-tools-translations' => '所有翻譯',
 	'tux-editor-loading' => '正在載入...',
 	'translate-search-more-languages-info' => '還有$1種{{PLURAL:$1|語言|語言}}',
-	'translate-statsbar-tooltip' => '$1%已翻譯，$2%已校對', # Fuzzy
-	'translate-statsbar-tooltip-with-fuzzy' => '$1%已翻譯，$2%已校對，, $3%過時', # Fuzzy
+	'translate-statsbar-tooltip' => '$1%已翻譯，$2%已複查',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1%已翻譯，$2%已複查，, $3%過時',
 	'translate-search-more-groups-info' => '還有$1個{{PLURAL:$1|群組|群組}}',
 );
 
