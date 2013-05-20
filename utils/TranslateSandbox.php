@@ -19,7 +19,7 @@ class TranslateSandbox {
 	 * @return User
 	 * @throws MWException
 	 */
-	public static function addUser( $name, $email, $password ) {
+	public static function addUser( $name, $email, $password, $comment = '' ) {
 		$user = User::newFromName( $name, 'creatable' );
 		if ( !$user instanceof User ) {
 			throw new MWException( "Invalid user name" );
@@ -36,6 +36,11 @@ class TranslateSandbox {
 		// Need to have an id first
 		$user->addGroup( 'translate-sandboxed' );
 		$user->clearInstanceCache( 'name' );
+
+		if ( $comment !== '' ) {
+			$user->setOption( 'sandbox-comment', $comment );
+		}
+		$user->saveSettings();
 
 		return $user;
 	}

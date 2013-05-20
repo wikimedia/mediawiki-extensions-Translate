@@ -28,6 +28,11 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 		$this->assertSame( array( 'translate-sandboxed' ), $groups, 'User is in the sandboxed group' );
 	}
 
+	public function testAddUserComment() {
+		$user = TranslateSandbox::addUser( 'Test user1', 'test@example.com', 'test password', 'test comment' );
+		$this->assertEquals( 'test comment', $user->getOption( 'sandbox-comment' ) );
+	}
+
 	public function testDeleteUser() {
 		$user = TranslateSandbox::addUser( 'Test user2', 'test@example.com', 'test password' );
 		TranslateSandbox::deleteUser( $user );

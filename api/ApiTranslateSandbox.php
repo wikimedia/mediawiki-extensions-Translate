@@ -66,7 +66,9 @@ class ApiTranslateSandbox extends ApiBase {
 			$this->dieUsage( "Email is not acceptable", 'invalidemail' );
 		}
 
-		$user = TranslateSandbox::addUser( $username, $email, $password );
+		$comment = $params['comment'];
+
+		$user = TranslateSandbox::addUser( $username, $email, $password, $comment );
 		$output = array( 'user' => array(
 			'name' => $user->getName(),
 			'id' => $user->getId(),
@@ -157,6 +159,10 @@ class ApiTranslateSandbox extends ApiBase {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
 			),
+			'comment' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_DFLT => '',
+			),
 			'username' => array( ApiBase::PARAM_TYPE => 'string' ),
 			'password' => array( ApiBase::PARAM_TYPE => 'string' ),
 			'email' => array( ApiBase::PARAM_TYPE => 'string' ),
@@ -174,6 +180,7 @@ class ApiTranslateSandbox extends ApiBase {
 			'username' => 'Username when creating user',
 			'password' => 'Password when creating user',
 			'email' => 'Email when creating user',
+			'comment' => 'Comment when creating user',
 			'subject' => 'Subject of the reminder email when reminding',
 			'body' => 'Body of the reminder email when reminding',
 		);
