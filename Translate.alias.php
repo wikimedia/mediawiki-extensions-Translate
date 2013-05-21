@@ -249,7 +249,9 @@ $specialPageAliases['el'] = array(
 	'LanguageStats' => array( 'ΣτατιστικάΓλώσσας' ),
 	'PageTranslation' => array( 'ΜετάφρασηΣελίδας' ),
 	'ImportTranslations' => array( 'ΕισαγωγήΜεταφράσεων' ),
+	'ManageMessageGroups' => array( 'ΔιαχείρισηΟμάδωνΜηνυμάτων' ),
 	'FirstSteps' => array( 'ΠρώταΒήματα' ),
+	'MyLanguage' => array( 'ΗΓλώσσαΜου' ),
 	'SearchTranslations' => array( 'ΑναζήτησηΜεταφράσεων' ),
 );
 
@@ -575,6 +577,7 @@ $specialPageAliases['lb'] = array(
 	'MyLanguage' => array( 'Meng_Sprooch' ),
 	'PageTranslationDeletePage' => array( 'Läschsäit_fir_Iwwersetzungen' ),
 	'SearchTranslations' => array( 'Iwwersetzunge_sichen' ),
+	'TranslateSandbox' => array( 'Iwwersetzungssandkëscht_geréieren' ),
 );
 
 /** lumbaart (lumbaart) */

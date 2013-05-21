@@ -133,6 +133,13 @@ $messages['be-tarask'] = array(
 	'tux-sst-prev' => 'Папярэднія вынікі',
 );
 
+/** Bengali (বাংলা)
+ * @author Aftab1995
+ */
+$messages['bn'] = array(
+	'tux-sst-solr-offline-body' => 'অনুসন্ধান পরিষেবাটি সাময়িকভাবে অনুপলব্ধ।',
+);
+
 /** Breton (brezhoneg)
  * @author Fohanno
  */
@@ -437,7 +444,7 @@ $messages['ksh'] = array(
 	'tux-sst-search-ph' => 'Övversäzonge söhke',
 	'tux-sst-count' => '{{PLURAL:$1|Eine|$1|Nix}} jefonge',
 	'tux-sst-facet-language' => 'Schprooche',
-	'tux-sst-facet-group' => 'Nohrechtejroppe',
+	'tux-sst-facet-group' => 'Nohreeschtejroppe',
 	'tux-sst-facet-orphan' => '(kein Jropp)',
 	'tux-sst-nosolr-title' => 'Söhke es nit müjjelesch.',
 	'tux-sst-nosolr-body' => 'En heh däm Wiki kammer nit noh Översäzonge söhke.',
@@ -772,6 +779,7 @@ $messages['yi'] = array(
 
 /** Simplified Chinese (中文（简体）‎)
  * @author Hydra
+ * @author Li3939108
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
@@ -787,6 +795,8 @@ $messages['zh-hans'] = array(
 	'tux-sst-nosolr-body' => '此wiki没有翻译搜索服务。',
 	'tux-sst-solr-offline-title' => '搜索不可用',
 	'tux-sst-solr-offline-body' => '搜索服务暂时不可用。',
+	'tux-sst-next' => '下一个结果',
+	'tux-sst-prev' => '上一个结果',
 );
 
 /** Traditional Chinese (中文（繁體）‎)

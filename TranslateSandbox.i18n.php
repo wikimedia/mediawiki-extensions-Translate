@@ -146,9 +146,12 @@ $messages['he'] = array(
 	'tsb-reminder-title-generic' => 'נא להשלים את ההיכרות שלך כדי לקבל אישור מלא לתרגם',
 	'tsb-reminder-content-generic' => 'שלום $1,
 
-לאחרונה נרשמת לאתר {{SITENAME}}. נשארו לך רק צעדים בודדים כדי לאפשר תרגום חופשי ועזרי תרגום נוספים.
+תודה שנרשמת לאתר {{SITENAME}}. עם השלמת תרגומי הבדיקה שלך
+המנהלים ייתנו לך גישה מלאה
+לתרגום.
 
-נא להיכנס אל $2 ולעשות עוד כמה תרגומים.',
+נשאר רק לבוא אל $2 ולעשות עוד כמה
+תרגומים.',
 );
 
 /** Italian (italiano)
@@ -183,7 +186,7 @@ $messages['ksh'] = array(
 	'tsb-reminder-content-generic' => 'Daach $1,
 Do has Desch köözlesch {{ucfirst:{{GRAMMAR:em|{{ucfirst:{{SITENAME}}}}}}}} aanjemälldt. Do bes jraad koot vör em Freischallde vun extra Hölp för et Övversäzze.
 
-Bes es u jood un donn Desch $2 enlogge un maach e paa Övversäzonge.', # Fuzzy
+Bes esu jood un donn Desch op $2 enlogge un maach e paa Övversäzonge.', # Fuzzy
 );
 
 /** Luxembourgish (Lëtzebuergesch)
