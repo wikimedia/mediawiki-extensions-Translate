@@ -2305,10 +2305,11 @@ $messages['ro'] = array(
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'translategroupdescriptions-desc' => "Descriziune de le gruppe de messàgge pe le prodotte supportate l'estenzione de da[http://mediawiki.org/wiki/Extension:Translate Traduzione]",
 	'translate-group-desc-nodesc' => 'Nisciune descrizione jè disponibbile pe stu gruppe de messàgge',
+	'translate-group-desc-mediawikicore' => "Stu gruppe de messàgge tène le messàgge ausate jndr'à versione alfa de mò de [[Translating:MediaWiki|MediaUicchi]] ({{CURRENTVERSION}})",
 	'translate-group-desc-translatablepages' => 'Tutte le pàggene traducibbele',
 	'translate-group-desc-eol' => "'Nu gruppe de messàgge pa [[Translating:EOL|'Ngrclopedije d'a Vite]]",
-	'translate-group-desc-frontlinesms' => "'Nu gruppe de messàgge pe [[Translating:FrontlineSMS|FrontlineSMS]]",
 	'translate-group-desc-ihris' => "'Nu gruppe de messàgge pe [[Translating:iHRIS|iHRIS]]",
 	'translate-group-desc-kiwix' => "'Nu gruppe de messàgge pe [[Translating:Kiwix|Kiwix]]",
 );
