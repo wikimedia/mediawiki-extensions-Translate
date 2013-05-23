@@ -75,8 +75,9 @@ class TranslateSandbox {
 			'ug_group' => 'translate-sandboxed',
 			'ug_user = user_id',
 		);
+		$options = array( 'ORDER BY' => 'user_id desc' );
 
-		$res = $dbw->select( $tables, $fields, $conds, __METHOD__ );
+		$res = $dbw->select( $tables, $fields, $conds, __METHOD__, $options );
 
 		return UserArray::newFromResult( $res );
 	}
