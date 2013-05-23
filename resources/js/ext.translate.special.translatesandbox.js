@@ -7,6 +7,74 @@
 (function ( $, mw ) {
 	'use strict';
 
+	function addSelectorStatusBar () {
+		var $selected, oldest, $older,
+			$container = $( '.pane.requests' );
+
+		$selected = $( '.selector input:checked' );
+
+		$( '.statusbar' ).remove();
+
+		if ( $selected.length === 0 ) {
+			return;
+		}
+
+		oldest = Number.MAX_VALUE;
+		$selected.each( function () {
+			oldest = Math.min( oldest, $( this ).parents( '.request' ).data( 'data' ).registration );
+		} );
+
+		$older = $( '.selector input' ).not( ':checked' ).filter( function() {
+			return $( this ).parents( '.request' ).data( 'data' ).registration < oldest;
+		} );
+
+		$container.append(
+			$( '<div>' )
+				.text( $selected.length + ' selected' )
+				.addClass( 'statusbar row' )
+				.append(
+					$( '<button>' )
+						.text( 'Accept all' )
+						.addClass( 'accept green button' )
+						.click( function () {
+							$selected.each( function () {
+								var $parent = $( this ).parents( '.request' );
+								doApiAction( {
+									userid: $parent.data( 'data' ).id,
+									'do': 'promote'
+								} );
+								$parent.remove();
+								$( '.details.pane' ).empty();
+								addSelectorStatusBar();
+							} );
+						} ),
+					$( '<button>' )
+						.text( 'Reject all' )
+						.addClass( 'delete red button' )
+						.click( function () {
+							$selected.each( function () {
+								var $parent = $( this ).parents( '.request' );
+								doApiAction( {
+									userid: $parent.data( 'data' ).id,
+									'do': 'delete'
+								} );
+								$parent.remove();
+								$( '.details.pane' ).empty();
+								addSelectorStatusBar();
+							} );
+						} ),
+					$( '<a>' )
+						.text( $older.length + ' older requests' )
+						.prop( 'href', '#' )
+						.click( function ( event ) {
+							event.preventDefault();
+							$older.prop( 'checked', true );
+							addSelectorStatusBar();
+						} )
+				)
+		);
+	}
+
 	function doApiAction( options ) {
 		var api = new mw.Api();
 
@@ -15,10 +83,11 @@
 			token: $( '#token' ).val()
 		}, options );
 
-		api.post( options )
-			.done( function () { window.alert( 'Success' ); } )
-			.fail( function () { window.alert( 'Failure' ); } )
-		;
+		api
+			.post( options )
+			.fail( function () {
+				mw.notify( 'Action ' + options['do'] + ' failed' );
+			} );
 	}
 
 	/**
@@ -112,6 +181,8 @@
 	$( document ).ready( function () {
 		var $requests, $detailsPane;
 
+		$( '.selector input' ).click( addSelectorStatusBar );
+
 		$detailsPane = $( '.details.pane' );
 		$requests = $( '.requests .request' );
 		$requests.on( 'click', function () {
@@ -141,6 +212,9 @@
 									userid: $this.data( 'data' ).id,
 									'do': 'promote'
 								} );
+								$this.remove();
+								$detailsPane.empty();
+								addSelectorStatusBar();
 							} ),
 						$( '<button>' )
 							.addClass( 'remind button' )
@@ -150,12 +224,15 @@
 							} ),
 						$( '<button>' )
 							.addClass( 'delete destructive button' )
-							.text( 'Delete' )
+							.text( 'Reject' )
 							.on( 'click', function () {
 								doApiAction( {
 									userid: $this.data( 'data' ).id,
 									'do': 'delete'
 								} );
+								$this.remove();
+								$detailsPane.empty();
+								addSelectorStatusBar();
 							} )
 					)
 			);

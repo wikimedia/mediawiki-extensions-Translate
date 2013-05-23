@@ -92,7 +92,7 @@ HTML
 		<div class="row email">$emailEnc</div>
 	</div>
 	<div class="three columns approval">
-		<div class="row selector"></div>
+		<div class="row selector"><input type="checkbox"></div>
 		<div class="row signup-age">$agoEnc</div>
 	</div>
 </div>
