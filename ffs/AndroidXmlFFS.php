@@ -27,12 +27,17 @@ class AndroidXmlFFS extends SimpleFFS {
 		$messages = array();
 		$mangler = $this->group->getMangler();
 
-		foreach ( $reader->string as $string ) {
-			$key = (string)$string['name'];
-			$value = stripcslashes( (string)$string );
+		foreach ( $reader as $element ) {
+			$key = (string)$element['name'];
 
-			if ( isset( $string['fuzzy'] ) && (string)$string['fuzzy'] === 'true' ) {
-				$value = TRANSLATE_FUZZY . $value;
+			if ( $element->getName() === 'string' ) {
+				$value = stripcslashes( (string)$element );
+				if ( isset( $element['fuzzy'] ) && (string)$element['fuzzy'] === 'true' ) {
+					$value = TRANSLATE_FUZZY . $value;
+				}
+			} else {
+				// TODO: process the subelements
+				$value = $this->flattenPlural( array() );
 			}
 
 			$messages[$key] = $value;
@@ -67,13 +72,18 @@ XML;
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 
-			// Kudos to the brilliant person who invented this braindead file format
-			$string = $writer->addChild( 'string', addcslashes( $value, '"\'' ) );
-			$string->addAttribute( 'name', $key );
+			// Handle plurals
+			if ( strpos( $message, '{{PLURAL' ) !== false ) {
+				// TODO Create plurals element with sub elements
+			} else {
+				// Kudos to the brilliant person who invented this braindead file format
+				$string = $writer->addChild( 'string', addcslashes( $value, '"\'' ) );
+				$string->addAttribute( 'name', $key );
 
-			// This is non-standard
-			if ( $m->hasTag( 'fuzzy' ) ) {
-				$string->addAttribute( 'fuzzy', 'true' );
+				// This is non-standard
+				if ( $m->hasTag( 'fuzzy' ) ) {
+					$string->addAttribute( 'fuzzy', 'true' );
+				}
 			}
 		}
 
@@ -83,5 +93,32 @@ XML;
 		$dom->loadXML( $writer->asXML() );
 
 		return $dom->saveXML();
+	}
+
+	/**
+	 * Flattens array of plurals into string.
+	 *
+	 * @param array $forms array
+	 * @return string
+	 */
+	protected function flattenPlural( array $forms ) {
+		$pls = '{{PLURAL';
+		foreach ( $messages as $key => $value ) {
+			$pls .= "|$key=$value";
+		}
+
+		$pls .= "}}";
+		return $pls;
+	}
+
+	/**
+	 * Converts the flattened plural into messages
+	 *
+	 * @param string $key
+	 * @param string $message
+	 * @return bool|array
+	 */
+	protected function unflattenPlural( $key, $message ) {
+		// See RubyYamlFFS implementation
 	}
 }
