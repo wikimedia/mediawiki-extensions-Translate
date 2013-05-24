@@ -92,6 +92,11 @@ $specialPageAliases['as'] = array(
 	'MyLanguage' => array( 'মোৰ_ভাষা' ),
 );
 
+/** Asturian (asturianu) */
+$specialPageAliases['ast'] = array(
+	'Translate' => array( 'Traducir' ),
+);
+
 /** Azerbaijani (azərbaycanca) */
 $specialPageAliases['az'] = array(
 	'Translations' => array( 'Tərcümələr' ),

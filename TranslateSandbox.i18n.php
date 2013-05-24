@@ -219,6 +219,11 @@ $messages['nl'] = array(
 	'translatesandbox' => 'Vertalersszandbak beheren',
 	'tsb-filter-pending' => 'Aanvragen in behandeling',
 	'tsb-reminder-title-generic' => 'Voltooi uw introductie om vertaler te worden',
+	'tsb-reminder-content-generic' => 'Hallo $1,
+
+Bedankt voor het registreren bij {{SITENAME}}. Als u uw testvertalingen afrondt, kunnen de beheerders u snel volledige vertaaltoegang geven.
+
+Kon alstublieft naar $2 en maak nog wat meer vertalingen.',
 );
 
 /** Romanian (română)

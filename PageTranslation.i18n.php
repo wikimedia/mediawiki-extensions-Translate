@@ -6386,6 +6386,16 @@ $messages['mg'] = array(
 	'right-pagetranslation' => 'Mamamarika ny santiônam-pejy hodikaina',
 );
 
+/** Minangkabau (Baso Minangkabau)
+ * @author Iwan Novirion
+ */
+$messages['min'] = array(
+	'pt-movepage-intro' => 'Laman istimewa ko mamungkinan Sanak untuak mamindahan laman nan ditandoi untuak ditajamahan.
+Tindakan pamindahan indak akan balangsuang sakatika dek banyak laman nan paralu dipindahan.
+Sangkek laman dipindahan, indak dimungkinan untuak barinteraksi jo laman nan basangkutan.
+Kagagalan akan dicatat di [[Special:Log/pagetranslation|log tajamahan laman]] dan paralu dipelokan sacaro manual.',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  * @author Brest
@@ -9064,9 +9074,20 @@ Maamulka waxa uu muhiimad uu siiyey turjumidda $3.",
 $messages['sr-ec'] = array(
 	'pagetranslation' => 'Превод странице',
 	'right-pagetranslation' => 'означавање издања страница за превод',
+	'tpt-section' => 'Преводилачка јединица $1',
+	'tpt-section-new' => 'Нова преводилачка јединица.
+Назив: $1',
+	'tpt-section-deleted' => 'Преводилачка јединица $1',
+	'tpt-template' => 'Шаблон странице',
+	'tpt-templatediff' => 'Шаблон странице је измењен.',
 	'tpt-diff-old' => 'Претходни текст',
 	'tpt-diff-new' => 'Следећи текст',
 	'tpt-submit' => 'Означи ову верзију за превод',
+	'tpt-sections-oldnew' => 'Нове и постојеће преводилачке јединице',
+	'tpt-sections-deleted' => 'Обрисане преводилачке јединице',
+	'tpt-sections-template' => 'Шаблон странице за превођење',
+	'tpt-action-nofuzzy' => 'Не поништавајте преводе',
+	'tpt-new-pages-title' => 'Предложене странице за превођење',
 	'tpt-select-prioritylangs-reason' => 'Разлог:',
 	'tpt-rev-mark' => 'означи за превођење',
 	'tpt-rev-unmark' => 'уклони из превода',
@@ -10410,6 +10431,7 @@ $messages['yi'] = array(
 	'tpt-aggregategroup-save' => 'אויפֿהיטן',
 	'tpt-aggregategroup-new-name' => 'נאָמען:',
 	'pt-movepage-title' => 'באוועגן איבערזעצבארן בלאט "$1"',
+	'pt-movepage-block-subpage-exists' => 'דער ציל אונטערבלאט "[[:$2]]" עקזיסטירט.',
 	'pt-movepage-list-pages' => 'רשימה פון בלעטער צו באַוועגן',
 	'pt-movepage-list-translation' => 'טײַטש  {{PLURAL:$1|בלאַט|בלעטער}}',
 	'pt-movepage-list-section' => 'איבערזעצונג איינהייט {{PLURAL:$1|בלאַט|בלעטער}}',

@@ -1665,7 +1665,6 @@ $messages['lb'] = array(
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] ass eng webbaséierte Bug-Tracking-Software.',
 	'translate-group-desc-blockly' => 'E Grupp vu Message fir [[Translating:Blockly|Blockly]]',
 	'translate-group-desc-eol' => 'Message fir [[Translating:EOL|Encyclopedia of Life]]',
-	'translate-group-desc-frontlinesms' => 'Eng Grupp vu Message fir [[Translating:FrontlineSMS|FrontlineSMS]]',
 	'translate-group-desc-fuel' => "[[Translating:FUEL|FUEL]] bréngt méi Koherenz an d'Softwareiwwersetzung",
 	'translate-group-desc-ihris' => 'Message fir [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-kiwix' => 'Message fir [[Translating:Kiwix|Kiwix]]',
@@ -1683,6 +1682,7 @@ $messages['lb'] = array(
 	'bw-desc-wikiblame' => "[[Translating:WikiBlame|WikiBlame]] erlaabt et fir d'Auteure vun enger Säit op enger Wikimedia-Wiki séier ze fannen.",
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ass e Projet fir eng reng Textversioun vu Wikipedia offline op engem mobilen Apparat zur Verfügung ze stellen.',
 	'translate-group-desc-wikimedia-mobile' => 'Zesummegesate Grupp vu Message fir déi mobil Applikatioune fir Wikimedia Projeten',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]] ass eng App fir Android an iOS fir op Wikimedia Commons ze navigéieren a Fichieren eropzelueden',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] ass eng Mobil Applikatioun fir beim [[:meta:Wiki Loves Monuments|Projet "Wiki Loves Monuments"]] matzemaachen',
 );
 
