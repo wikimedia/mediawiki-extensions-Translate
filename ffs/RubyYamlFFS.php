@@ -110,7 +110,7 @@ class RubyYamlFFS extends YamlFFS {
 		while ( preg_match( $regex, $message, $match ) ) {
 			$uniqkey = TranslateUtils::getPlaceholder();
 			$matches[$uniqkey] = $match;
-			$message = preg_replace( $regex, $uniqkey, $message );
+			$message = preg_replace( $regex, $uniqkey, $message, 1 );
 		}
 
 		// No plurals, should not happen.
