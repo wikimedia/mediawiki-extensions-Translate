@@ -13,6 +13,15 @@
  * @ingroup FFS
  */
 class AndroidXmlFFS extends SimpleFFS {
+	protected static $pluralWords = array(
+		'zero' => 1,
+		'one' => 1,
+		'two' => 1,
+		'few' => 1,
+		'many' => 1,
+		'other' => 1,
+	);
+
 	public function supportsFuzzy() {
 		return 'yes';
 	}
@@ -31,11 +40,20 @@ class AndroidXmlFFS extends SimpleFFS {
 		$messages = array();
 		$mangler = $this->group->getMangler();
 
-		foreach ( $reader->string as $string ) {
-			$key = (string)$string['name'];
-			$value = stripcslashes( (string)$string );
+		foreach ( $reader as $element ) {
+			$key = (string)$element['name'];
 
-			if ( isset( $string['fuzzy'] ) && (string)$string['fuzzy'] === 'true' ) {
+			if ( $element->getName() === 'string' ) {
+				$value = $this->readElementContents( $element );
+			} elseif ( $element->getName() === 'plurals' ) {
+				$forms = array();
+				foreach ( $element as $item ) {
+					$forms[(string)$item['quantity']] = $this->readElementContents( $item );
+				}
+				$value = $this->flattenPlural( $forms );
+			}
+
+			if ( isset( $element['fuzzy'] ) && (string)$element['fuzzy'] === 'true' ) {
 				$value = TRANSLATE_FUZZY . $value;
 			}
 
@@ -46,6 +64,15 @@ class AndroidXmlFFS extends SimpleFFS {
 			'AUTHORS' => array(), // @todo
 			'MESSAGES' => $mangler->mangle( $messages ),
 		);
+	}
+
+	protected function readElementContents( $element ) {
+		return stripcslashes( (string)$element );
+	}
+
+	protected function formatElementContents( $contents ) {
+		// Kudos to the brilliant person who invented this braindead file format
+		return addcslashes( $contents, '"\'' );
 	}
 
 	protected function writeReal( MessageCollection $collection ) {
@@ -71,13 +98,23 @@ XML;
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 
-			// Kudos to the brilliant person who invented this braindead file format
-			$string = $writer->addChild( 'string', addcslashes( $value, '"\'' ) );
-			$string->addAttribute( 'name', $key );
+			// Handle plurals
+			if ( strpos( $value, '{{PLURAL' ) === false ) {
+				// Kudos to the brilliant person who invented this braindead file format
+				$element = $writer->addChild( 'string', $this->formatElementContents( $value ) );
+			} else {
+				$element = $writer->addChild( 'plurals' );
+				$forms = $this->unflattenPlural( $value );
+				foreach ( $forms as $quantity => $content ) {
+					$item = $element->addChild( 'item', $this->formatElementContents( $content ) );
+					$item->addAttribute( 'quantity', $quantity );
+				}
+			}
 
+			$element->addAttribute( 'name', $key );
 			// This is non-standard
 			if ( $m->hasTag( 'fuzzy' ) ) {
-				$string->addAttribute( 'fuzzy', 'true' );
+				$element->addAttribute( 'fuzzy', 'true' );
 			}
 		}
 
@@ -87,5 +124,82 @@ XML;
 		$dom->loadXML( $writer->asXML() );
 
 		return $dom->saveXML();
+	}
+
+	/**
+	 * Flattens array of plurals into string.
+	 *
+	 * @param array $forms array
+	 * @return string
+	 */
+	protected function flattenPlural( array $forms ) {
+		$pls = '{{PLURAL';
+		foreach ( $forms as $key => $value ) {
+			$pls .= "|$key=$value";
+		}
+
+		$pls .= "}}";
+		return $pls;
+	}
+
+	/**
+	 * Converts the flattened plural into messages
+	 *
+	 * @param string $message
+	 * @return array
+	 */
+	protected function unflattenPlural( $message ) {
+		$regex = '~\{\{PLURAL\|(.*?)}}~s';
+		$matches = array();
+		$match = array();
+
+		while ( preg_match( $regex, $message, $match ) ) {
+			$uniqkey = TranslateUtils::getPlaceholder();
+			$matches[$uniqkey] = $match;
+			$message = preg_replace( $regex, $uniqkey, $message, 1 );
+		}
+
+		// No plurals, should not happen.
+		if ( !count( $matches ) ) {
+			return array();
+		}
+
+		// The final array of alternative plurals forms.
+		$alts = array();
+
+		/*
+		 * Then loop trough each plural block and replacing the placeholders
+		 * to construct the alternatives. Produces invalid output if there is
+		 * multiple plural bocks which don't have the same set of keys.
+		 */
+		$pluralChoice = implode( '|', array_keys( self::$pluralWords ) );
+		$regex = "~($pluralChoice)\s*=\s*(.+)~s";
+		foreach ( $matches as $ph => $plu ) {
+			$forms = explode( '|', $plu[1] );
+
+			foreach ( $forms as $form ) {
+				if ( $form === '' ) {
+					continue;
+				}
+
+				$match = array();
+				if ( !preg_match( $regex, $form, $match ) ) {
+					// No quantity key was provided
+					continue;
+				}
+
+				$formWord = $match[1];
+				$value = $match[2];
+				if ( !isset( $alts[$formWord] ) ) {
+					$alts[$formWord] = $message;
+				}
+
+				$string = $alts[$formWord];
+
+				$alts[$formWord] = str_replace( $ph, $value, $string );
+			}
+		}
+
+		return $alts;
 	}
 }

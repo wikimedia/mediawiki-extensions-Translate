@@ -30,6 +30,10 @@ class AndroidXmlFFSTest extends MediaWikiTestCase {
 <resources>
 	<string name="wpt_voicerec">Voice recording</string>
 	<string name="wpt_stillimage" fuzzy="true">Picture</string>
+	<plurals name="alot">
+		<item quantity="one">bunny</item>
+		<item quantity="other">bunnies</item>
+	</plurals>
 </resources>
 XML;
 
@@ -42,6 +46,7 @@ XML;
 		$expected = array(
 			'wpt_voicerec' => 'Voice recording',
 			'wpt_stillimage' => '!!FUZZY!!Picture',
+			'alot' => '{{PLURAL|one=bunny|other=bunnies}}',
 		);
 		$expected = array( 'MESSAGES' => $expected, 'AUTHORS' => array() );
 		$this->assertEquals( $expected, $parsed );
@@ -57,6 +62,7 @@ XML;
 		$messages = array(
 			'ko=26ra' => 'wawe',
 			'foobar' => '!!FUZZY!!Kissa kala <koira> "a\'b',
+			'amuch' => '{{PLURAL|one=bunny|other=bunnies}}',
 		);
 		$collection = new MockMessageCollection( $messages );
 
