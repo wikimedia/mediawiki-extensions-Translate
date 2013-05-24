@@ -115,9 +115,10 @@
 		 */
 		save: function () {
 			var translateEditor = this,
-				api = new mw.Api(),
-				translation = translateEditor.$editor.find( '.editcolumn textarea' ).val();
+				api = new mw.Api();
 
+			mw.translateHooks.run( 'beforeSubmit', translateEditor.$editor );
+			var translation = translateEditor.$editor.find( '.editcolumn textarea' ).val();
 			translateEditor.saving = true;
 
 			// beforeSave callback
@@ -162,6 +163,7 @@
 				}
 
 				mw.translate.dirty = false;
+				mw.translateHooks.run( 'afterSubmit', translateEditor.$editor );
 			} ).fail( function ( errorCode, results ) {
 				translateEditor.savingError( results.error.info );
 

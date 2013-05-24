@@ -444,6 +444,7 @@
 				translateEditor.showSupportOptions( result.helpers.support );
 				translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
 				mw.translateHooks.run( 'showTranslationHelpers', result.helpers, translateEditor.$editor );
+				mw.translateHooks.run( 'afterRegisterFeatures', translateEditor.$editor );
 
 			} ).fail( function ( errorCode, results ) {
 				mw.log( 'Error loading translation aids ' + errorCode + results.error.info );
