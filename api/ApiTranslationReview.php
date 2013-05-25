@@ -194,12 +194,12 @@ class ApiTranslationReview extends ApiBase {
 	}
 
 	public static function getToken() {
-		global $wgUser;
-		if ( !$wgUser->isAllowed( self::$right ) ) {
+		$user = RequestContext::getMain()->getUser();
+		if ( !$user->isAllowed( self::$right ) ) {
 			return false;
 		}
 
-		return $wgUser->getEditToken( self::$salt );
+		return $user->getEditToken( self::$salt );
 	}
 
 	public static function injectTokenFunction( &$list ) {

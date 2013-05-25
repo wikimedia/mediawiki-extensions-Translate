@@ -20,9 +20,7 @@ class ApiAggregateGroups extends ApiBase {
 	protected static $salt = 'translate-manage';
 
 	public function execute() {
-		global $wgUser;
-
-		if ( !$wgUser->isallowed( self::$right ) ) {
+		if ( !$this->getUser()->isallowed( self::$right ) ) {
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
@@ -68,7 +66,7 @@ class ApiAggregateGroups extends ApiBase {
 
 			TranslateMetadata::setSubgroups( $aggregateGroup, $subgroups );
 
-			$logparams = array(
+			$logParams = array(
 				'aggregategroup' => TranslateMetadata::get( $aggregateGroup, 'name' ),
 				'aggregategroup-id' => $aggregateGroup,
 			);
@@ -80,11 +78,11 @@ class ApiAggregateGroups extends ApiBase {
 			$title = $group ? $group->getTitle() : Title::newFromText( "Special:Translate/$subgroupId" );
 
 			$entry = new ManualLogEntry( 'pagetranslation', $action );
-			$entry->setPerformer( $wgUser );
+			$entry->setPerformer( $this->getUser() );
 			$entry->setTarget( $title );
 			// @todo
 			// $entry->setComment( $comment );
-			$entry->setParameters( $logparams );
+			$entry->setParameters( $logParams );
 
 			$logid = $entry->insert();
 			$entry->publish( $logid );
@@ -230,12 +228,12 @@ class ApiAggregateGroups extends ApiBase {
 	}
 
 	public static function getToken() {
-		global $wgUser;
-		if ( !$wgUser->isAllowed( self::$right ) ) {
+		$user = RequestContext::getMain()->getUser();
+		if ( !$user->isAllowed( self::$right ) ) {
 			return false;
 		}
 
-		return $wgUser->getEditToken( self::$salt );
+		return $user->getEditToken( self::$salt );
 	}
 
 	public static function injectTokenFunction( &$list ) {

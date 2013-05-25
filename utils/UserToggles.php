@@ -103,10 +103,9 @@ class TranslatePreferences {
 	 * @return JsSelectToInput
 	 */
 	protected static function languageSelector() {
-		global $wgLang;
-
 		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
-			$languages = LanguageNames::getNames( $wgLang->getCode(),
+			$lang = RequestContext::getMain()->getLanguage();
+			$languages = LanguageNames::getNames( $lang->getCode(),
 				LanguageNames::FALLBACK_NORMAL
 			);
 		} else {

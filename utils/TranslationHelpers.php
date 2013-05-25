@@ -187,8 +187,8 @@ class TranslationHelpers {
 				array( 'lazy' )
 			);
 		} elseif ( $suggestions === 'checks' ) {
-			global $wgRequest;
-			$this->translation = $wgRequest->getText( 'translation' );
+			$request = RequestContext::getMain()->getRequest();
+			$this->translation = $request->getText( 'translation' );
 
 			return (string)$this->callBox( 'check', $all['check'] );
 		}
@@ -477,9 +477,10 @@ class TranslationHelpers {
 	}
 
 	protected static function makeGoogleQueryParams( $definition, $pair, $config ) {
-		global $wgSitename, $wgVersion, $wgProxyKey, $wgUser;
+		global $wgSitename, $wgVersion, $wgProxyKey;
 
 		$app = "$wgSitename (MediaWiki $wgVersion; Translate " . TRANSLATE_VERSION . ")";
+		$context = RequestContext::getMain();
 		$options = array();
 		$options['timeout'] = $config['timeout'];
 
@@ -488,7 +489,7 @@ class TranslationHelpers {
 			'v' => '1.0',
 			'langpair' => $pair,
 			// Unique but not identifiable
-			'userip' => sha1( $wgProxyKey . $wgUser->getName() ),
+			'userip' => sha1( $wgProxyKey . $context->getUser()->getName() ),
 			'x-application' => $app,
 		);
 
@@ -843,12 +844,13 @@ class TranslationHelpers {
 	public function getCheckBox() {
 		$this->mustBeKnownMessage();
 
-		global $wgTranslateDocumentationLanguageCode, $wgRequest, $wgOut;
+		global $wgTranslateDocumentationLanguageCode;
 
-		$title = $wgOut->getTitle();
+		$context = RequestContext::getMain();
+		$title = $context->getOutput()->getTitle();
 		list( $alias, ) = SpecialPageFactory::resolveAlias( $title->getText() );
 
-		$tux = SpecialTranslate::isBeta( $wgRequest )
+		$tux = SpecialTranslate::isBeta( $context->getRequest() )
 			&& $title->isSpecialPage()
 			&& ( $alias === 'Translate' );
 
@@ -887,25 +889,27 @@ class TranslationHelpers {
 
 		foreach ( $checks as $checkParams ) {
 			$key = array_shift( $checkParams );
-			$checkMessages[] = wfMessage( $key, $checkParams )->parse();
+			$checkMessages[] = $context->msg( $key, $checkParams )->parse();
 		}
 
 		if ( $tux ) {
 			$formattedChecks = FormatJson::encode( $checkMessages );
 		} else {
-			$formattedChecks = Html::rawElement( 'div', array( 'class' => 'mw-translate-messagechecks' ),
+			$formattedChecks = Html::rawElement(
+				'div',
+				array( 'class' => 'mw-translate-messagechecks' ),
 				TranslateUtils::fieldset(
-					wfMessage( 'translate-edit-warnings' )->escaped(), implode( '<hr />', $checkMessages ),
+					$context->msg( 'translate-edit-warnings' )->escaped(),
+					implode( '<hr />', $checkMessages ),
 					array( 'class' => 'mw-sp-translate-edit-warnings' )
-				) );
+				)
+			);
 		}
 
 		return $formattedChecks;
 	}
 
 	public function getOtherLanguagesBox() {
-		global $wgLang;
-
 		$code = $this->handle->getCode();
 		$page = $this->handle->getKey();
 		$ns = $this->handle->getTitle()->getNamespace();
@@ -917,10 +921,10 @@ class TranslationHelpers {
 				continue;
 			}
 
-			$label =
-				TranslateUtils::getLanguageName( $fbcode, $wgLang->getCode() ) .
-					wfMessage( 'word-separator' )->text() .
-					wfMessage( 'parentheses', wfBCP47( $fbcode ) )->text();
+			$context = RequestContext::getMain();
+			$label = TranslateUtils::getLanguageName( $fbcode, $context->getLanguage()->getCode() ) .
+				$context->msg( 'word-separator' )->text() .
+				$context->msg( 'parentheses', wfBCP47( $fbcode ) )->text();
 
 			$target = Title::makeTitleSafe( $ns, "$page/$fbcode" );
 			if ( $target ) {
@@ -967,17 +971,21 @@ class TranslationHelpers {
 	}
 
 	public function getDocumentationBox() {
-		global $wgTranslateDocumentationLanguageCode, $wgOut;
+		global $wgTranslateDocumentationLanguageCode;
 
 		if ( !$wgTranslateDocumentationLanguageCode ) {
 			throw new TranslationHelperException( 'Message documentation language code is not defined' );
 		}
 
+		$context = RequestContext::getMain();
 		$page = $this->handle->getKey();
 		$ns = $this->handle->getTitle()->getNamespace();
 
 		$title = Title::makeTitle( $ns, $page . '/' . $wgTranslateDocumentationLanguageCode );
-		$edit = self::ajaxEditLink( $title, wfMessage( 'translate-edit-contribute' )->escaped() );
+		$edit = self::ajaxEditLink(
+			$title,
+			$context->msg( 'translate-edit-contribute' )->escaped()
+		);
 		$info = TranslateUtils::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns );
 
 		$class = 'mw-sp-translate-edit-info';
@@ -992,20 +1000,20 @@ class TranslationHelpers {
 		$divAttribs = array( 'dir' => 'ltr', 'lang' => 'en', 'class' => 'mw-content-ltr' );
 
 		if ( strval( $info ) === '' ) {
-			global $wgLang;
-			$info = wfMessage( 'translate-edit-no-information' )->text();
+			$info = $context->msg( 'translate-edit-no-information' )->text();
 			$class = 'mw-sp-translate-edit-noinfo';
+			$lang = $context->getLanguage();
 			// The message saying that there's no info, should be translated
-			$divAttribs = array( 'dir' => $wgLang->getDir(), 'lang' => $wgLang->getCode() );
+			$divAttribs = array( 'dir' => $lang->getDir(), 'lang' => $lang->getCode() );
 		}
 		$class .= ' mw-sp-translate-message-documentation';
 
-		$contents = $wgOut->parse( $info );
+		$contents = $context->getOutput()->parse( $info );
 		// Remove whatever block element wrapup the parser likes to add
 		$contents = preg_replace( '~^<([a-z]+)>(.*)</\1>$~us', '\2', $contents );
 
 		return TranslateUtils::fieldset(
-			wfMessage( 'translate-edit-information' )->rawParams( $edit )->escaped(),
+			$context->msg( 'translate-edit-information' )->rawParams( $edit )->escaped(),
 			Html::rawElement( 'div', $divAttribs, $contents ), array( 'class' => $class )
 		);
 	}
@@ -1146,21 +1154,21 @@ class TranslationHelpers {
 			return null;
 		}
 
-		global $wgUser;
-		$user = $latestRev->getUserText( Revision::FOR_THIS_USER, $wgUser );
+		$context = RequestContext::getMain();
+		$user = $latestRev->getUserText( Revision::FOR_THIS_USER, $context->getUser() );
 		$comment = $latestRev->getComment();
 
 		if ( $diffText === '' ) {
 			if ( strval( $comment ) !== '' ) {
-				$text = wfMessage( 'translate-dynagroup-byc', $user, $comment )->escaped();
+				$text = $context->msg( 'translate-dynagroup-byc', $user, $comment )->escaped();
 			} else {
-				$text = wfMessage( 'translate-dynagroup-by', $user )->escaped();
+				$text = $context->msg( 'translate-dynagroup-by', $user )->escaped();
 			}
 		} else {
 			if ( strval( $comment ) !== '' ) {
-				$text = wfMessage( 'translate-dynagroup-lastc', $user, $comment )->escaped();
+				$text = $context->msg( 'translate-dynagroup-lastc', $user, $comment )->escaped();
 			} else {
-				$text = wfMessage( 'translate-dynagroup-last', $user )->escaped();
+				$text = $context->msg( 'translate-dynagroup-last', $user )->escaped();
 			}
 		}
 
@@ -1192,10 +1200,11 @@ class TranslationHelpers {
 	 * @return array
 	 */
 	protected static function getFallbacks( $code ) {
-		global $wgUser, $wgTranslateLanguageFallbacks;
+		global $wgTranslateLanguageFallbacks;
 
 		// User preference has the final say
-		$preference = $wgUser->getOption( 'translate-editlangs' );
+		$user = RequestContext::getMain()->getUser();
+		$preference = $user->getOption( 'translate-editlangs' );
 		if ( $preference !== 'default' ) {
 			$fallbacks = array_map( 'trim', explode( ',', $preference ) );
 			foreach ( $fallbacks as $k => $v ) {

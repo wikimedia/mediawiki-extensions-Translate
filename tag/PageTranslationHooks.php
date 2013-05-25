@@ -660,7 +660,7 @@ class PageTranslationHooks {
 	}
 
 	protected static function sourcePageHeader( Title $title ) {
-		global $wgUser, $wgLang;
+		$context = RequestContext::getMain();
 
 		$page = TranslatablePage::newFromTitle( $title );
 
@@ -674,15 +674,15 @@ class PageTranslationHooks {
 
 		$actions = array();
 
-		if ( $marked && $wgUser->isAllowed( 'translate' ) ) {
+		if ( $marked && $context->getUser()->isAllowed( 'translate' ) ) {
 			$par = array(
 				'group' => $page->getMessageGroupId(),
-				'language' => $wgLang->getCode(),
+				'language' => $context->getLanguage()->getCode(),
 				'task' => 'view'
 			);
 
 			$translate = SpecialPage::getTitleFor( 'Translate' );
-			$linkDesc = wfMessage( 'translate-tag-translate-link-desc' )->escaped();
+			$linkDesc = $context->msg( 'translate-tag-translate-link-desc' )->escaped();
 			$actions[] = Linker::link( $translate, $linkDesc, array(), $par );
 		}
 
@@ -691,18 +691,18 @@ class PageTranslationHooks {
 			$par = array( 'target' => $title->getPrefixedText() );
 			$translate = SpecialPage::getTitleFor( 'PageTranslation' );
 
-			if ( $wgUser->isAllowed( 'pagetranslation' ) ) {
+			if ( $context->getUser()->isAllowed( 'pagetranslation' ) ) {
 				// This page has never been marked
 				if ( $marked === false ) {
-					$linkDesc = wfMessage( 'translate-tag-markthis' )->escaped();
+					$linkDesc = $context->msg( 'translate-tag-markthis' )->escaped();
 					$actions[] = Linker::link( $translate, $linkDesc, array(), $par );
 				} else {
 					$markUrl = $translate->getFullUrl( $par );
-					$actions[] = wfMessage( 'translate-tag-markthisagain', $diffUrl, $markUrl )
+					$actions[] = $context->msg( 'translate-tag-markthisagain', $diffUrl, $markUrl )
 						->parse();
 				}
 			} else {
-				$actions[] = wfMessage( 'translate-tag-hasnew', $diffUrl )->parse();
+				$actions[] = $context->msg( 'translate-tag-hasnew', $diffUrl )->parse();
 			}
 		}
 
@@ -713,17 +713,13 @@ class PageTranslationHooks {
 		$legend = Html::rawElement(
 			'div',
 			array( 'class' => 'mw-pt-translate-header noprint nomobile' ),
-			$wgLang->semicolonList( $actions )
+			$context->getLanguage()->semicolonList( $actions )
 		) . Html::element( 'hr' );
 
-		global $wgOut;
-
-		$wgOut->addHTML( $legend );
+		$context->getOutput()->addHTML( $legend );
 	}
 
 	protected static function translationPageHeader( Title $title ) {
-		global $wgOut;
-
 		if ( !$title->exists() ) {
 			return;
 		}
@@ -747,9 +743,10 @@ class PageTranslationHooks {
 
 		// Output
 		$wrap = '<div class="mw-translate-page-info">$1</div>';
-		$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per ) );
+		$out = RequestContext::getMain()->getOutput();
 
-		$wgOut->addHTML( '<hr />' );
+		$out->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per ) );
+		$out->addHTML( '<hr />' );
 	}
 
 	/// Hook: SpecialPage_initList
@@ -779,13 +776,7 @@ class PageTranslationHooks {
 	}
 
 	/// Hook: SkinSubPageSubtitle
-	public static function replaceSubtitle( &$subpages, $skin = null, $out = null ) {
-		global $wgOut;
-		// $out was only added in some MW version
-		if ( $out === null ) {
-			$out = $wgOut;
-		}
-
+	public static function replaceSubtitle( &$subpages, $skin = null, OutputPage $out ) {
 		if ( !TranslatablePage::isTranslationPage( $out->getTitle() )
 			&& !TranslatablePage::isSourcePage( $out->getTitle() )
 		) {

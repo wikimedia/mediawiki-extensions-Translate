@@ -43,9 +43,8 @@ class TranslateMoveJob extends Job {
 	}
 
 	function run() {
-		global $wgUser;
-
 		// Initialization
+		$context = RequestContext::getMain();
 		$title = $this->title;
 		// Other stuff
 		$user = $this->getUser();
@@ -55,8 +54,8 @@ class TranslateMoveJob extends Job {
 		$doer = User::newFromName( $this->getPerformer() );
 
 		PageTranslationHooks::$allowTargetEdit = true;
-		$oldUser = $wgUser;
-		$wgUser = $user;
+		$oldUser = $context->getUser();
+		$context->setUser( $user );
 		self::forceRedirects( false );
 
 		// Don't check perms, don't leave a redirect
@@ -101,7 +100,7 @@ class TranslateMoveJob extends Job {
 			$entry->publish( $logid );
 		}
 
-		$wgUser = $oldUser;
+		$context->setUser( $oldUser );
 
 		return true;
 	}
@@ -181,7 +180,6 @@ class TranslateMoveJob extends Job {
 		static $originalLevel = null;
 
 		global $wgGroupPermissions;
-		global $wgUser;
 
 		if ( $end ) {
 			if ( $suppressCount ) {
@@ -203,6 +201,7 @@ class TranslateMoveJob extends Job {
 			}
 			++$suppressCount;
 		}
-		$wgUser->clearInstanceCache();
+
+		RequestContext::getMain()->getUser()->clearInstanceCache();
 	}
 }

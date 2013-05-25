@@ -123,7 +123,6 @@ class JsSelectToInput {
 			return;
 		}
 
-		global $wgOut;
-		$wgOut->addModules( 'ext.translate.selecttoinput' );
+		RequestContext::getMain()->getOutput()->addModules( 'ext.translate.selecttoinput' );
 	}
 }

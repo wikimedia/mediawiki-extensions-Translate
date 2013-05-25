@@ -26,9 +26,10 @@ class TranslateRcFilter {
 	 * @return bool true
 	 */
 	public static function translationFilter( &$conds, &$tables, &$join_conds, $opts ) {
-		global $wgRequest, $wgTranslateMessageNamespaces, $wgTranslateRcFilterDefault;
+		global $wgTranslateMessageNamespaces, $wgTranslateRcFilterDefault;
 
-		$translations = $wgRequest->getVal( 'translations', $wgTranslateRcFilterDefault );
+		$request = RequestContext::getMain()->getRequest();
+		$translations = $request->getVal( 'translations', $wgTranslateRcFilterDefault );
 		$opts->add( 'translations', $wgTranslateRcFilterDefault );
 		$opts->setValue( 'translations', $translations );
 

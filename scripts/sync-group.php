@@ -267,15 +267,15 @@ class ChangeSyncer {
 
 			STDOUT( "Conflict in " . $this->color( 'bold', $page ) . "!", $page );
 
-			global $wgLang;
 			$iso = 'xnY-xnm-xnd"T"xnH:xni:xns';
+			$lang = RequestContext::getMain()->getLanguage();
 
 			// Finally all is ok, now lets start comparing timestamps
 			// Make sure we are comparing timestamps in same format
 			$wikiTs = $this->getLastGoodChange( $title, $startTs );
 			if ( $wikiTs ) {
 				$wikiTs = wfTimestamp( TS_UNIX, $wikiTs );
-				$wikiDate = $wgLang->sprintfDate( $iso, wfTimestamp( TS_MW, $wikiTs ) );
+				$wikiDate = $lang->sprintfDate( $iso, wfTimestamp( TS_MW, $wikiTs ) );
 			} else {
 				$wikiDate = 'Unknown';
 			}
@@ -289,7 +289,7 @@ class ChangeSyncer {
 			}
 			if ( $changeTs ) {
 				$changeTs = wfTimestamp( TS_UNIX, $changeTs );
-				$changeDate = $wgLang->sprintfDate( $iso, wfTimestamp( TS_MW, $changeTs ) );
+				$changeDate = $lang->sprintfDate( $iso, wfTimestamp( TS_MW, $changeTs ) );
 			} else {
 				$changeDate = 'Unknown';
 			}
@@ -392,10 +392,9 @@ class ChangeSyncer {
 	 * @param $comment \string Edit summary.
 	 */
 	public function import( $title, $translation, $comment ) {
-		global $wgUser;
-
-		$old = $wgUser;
-		$wgUser = FuzzyBot::getUser();
+		$context = RequestContext::getMain();
+		$oldUser = $context->getUser();
+		$context->setUser( FuzzyBot::getUser() );
 
 		$flags = EDIT_FORCE_BOT;
 		if ( $this->norc ) {
@@ -408,7 +407,7 @@ class ChangeSyncer {
 		$success = $status === true || ( is_object( $status ) && $status->isOK() );
 		STDOUT( $success ? 'OK' : 'FAILED', $title );
 
-		$wgUser = $old;
+		$context->setUser( $oldUser );
 	}
 }
 

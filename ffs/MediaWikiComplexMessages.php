@@ -262,8 +262,6 @@ abstract class ComplexMessages {
 	}
 
 	public function output() {
-		global $wgRequest;
-
 		$colspan = array( 'colspan' => 3 );
 
 		$s = Xml::openElement( 'table', $this->tableAttributes );
@@ -304,8 +302,9 @@ abstract class ComplexMessages {
 			}
 		}
 
-		global $wgUser;
-		if ( $wgUser->isAllowed( 'translate' ) ) {
+		$context = RequestContext::getMain();
+
+		if ( $context->getUser()->isAllowed( 'translate' ) ) {
 			$s .= '<tr>' . Xml::tags( 'td', $colspan, $this->getButtons() ) . '<tr>';
 		}
 
@@ -313,7 +312,10 @@ abstract class ComplexMessages {
 
 		return Xml::tags(
 			'form',
-			array( 'method' => 'post', 'action' => $wgRequest->getRequestURL() ),
+			array(
+				'method' => 'post',
+				'action' => $context->getRequest()->getRequestURL()
+			),
 			$s
 		);
 	}

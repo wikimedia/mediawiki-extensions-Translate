@@ -559,13 +559,13 @@ class SpecialTranslate extends SpecialPage {
 	protected function tuxLanguageSelector() {
 		// Changes here must also be reflected when the language
 		// changes on the client side
-		global $wgLang, $wgTranslateDocumentationLanguageCode;
+		global $wgTranslateDocumentationLanguageCode;
 
 		if ( $this->options['language'] === $wgTranslateDocumentationLanguageCode ) {
 			// The name will be displayed in the UI language,
 			// so use for lang and dir
-			$targetLangCode = $wgLang->getCode();
-			$targetLangDir = $wgLang->getDir();
+			$targetLangCode = $this->getLanguage()->getCode();
+			$targetLangDir = $this->getLanguage()->getDir();
 			$targetLangName = $this->msg( 'translate-documentation-language' )->text();
 		} else {
 			$targetLangCode = $this->options['language'];
