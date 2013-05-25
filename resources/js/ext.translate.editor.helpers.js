@@ -282,6 +282,11 @@
 				var $translation,
 					alreadyOnTheList = false;
 
+				if ( translation.local && translation.location === translateEditor.message.title ) {
+					// Do not add self-suggestions
+					return true;
+				}
+
 				// See if it is already listed, and increment use count
 				$tmSuggestions.find( '.tm-suggestion' ).each( function () {
 					var $uses, count,
