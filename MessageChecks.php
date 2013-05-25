@@ -297,7 +297,8 @@ class MessageChecker {
 	 * @param array $warnings Array where warnings are appended to.
 	 */
 	protected function pythonInterpolationCheck( $messages, $code, array &$warnings ) {
-		$this->parameterCheck( $messages, $code, $warnings, '/\%\([a-zA-Z0-9]*?\)[diouxXeEfFgGcrs]/U' );
+		$pattern = '/\%\([a-zA-Z0-9]*?\)[diouxXeEfFgGcrs]/U';
+		$this->parameterCheck( $messages, $code, $warnings, $pattern );
 	}
 
 	/**

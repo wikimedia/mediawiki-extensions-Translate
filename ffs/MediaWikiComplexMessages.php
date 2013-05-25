@@ -296,7 +296,9 @@ abstract class ComplexMessages {
 				$rowContents .= '<td>' . $this->formatElement( $value ) . '</td>';
 
 				$value = $this->val( $group, self::LANG_CURRENT, $key );
-				$rowContents .= '<td>' . $this->editElement( $key, $this->formatElement( $value ) ) . '</td>';
+				$rowContents .= '<td>';
+				$rowContents .= $this->editElement( $key, $this->formatElement( $value ) );
+				$rowContents .= '</td>';
 
 				$s .= Xml::tags( 'tr', array( 'id' => "mw-sp-magic-$key" ), $rowContents );
 			}
@@ -321,9 +323,15 @@ abstract class ComplexMessages {
 	}
 
 	public function getButtons() {
-		return
-			Xml::inputLabel( wfMessage( 'translate-magic-cm-comment' )->text(), 'comment', 'sp-translate-magic-comment' ) .
-			Xml::submitButton( wfMessage( 'translate-magic-cm-save' )->text(), array( 'name' => 'savetodb' ) );
+		return Xml::inputLabel(
+			wfMessage( 'translate-magic-cm-comment' )->text(),
+			'comment',
+			'sp-translate-magic-comment'
+		) .
+		Xml::submitButton(
+			wfMessage( 'translate-magic-cm-save' )->text(),
+			array( 'name' => 'savetodb' )
+		);
 	}
 
 	public function formatElement( $element ) {
@@ -398,9 +406,13 @@ abstract class ComplexMessages {
 		$title = Title::newFromText( 'MediaWiki:' . $this->getKeyForSave() );
 		$article = new Article( $title );
 
-		$data = "# DO NOT EDIT THIS PAGE DIRECTLY! Use [[Special:AdvancedTranslate]].\n<pre>\n" . $this->formatForSave( $request ) . "\n</pre>";
+		$data = "# DO NOT EDIT THIS PAGE DIRECTLY! Use [[Special:AdvancedTranslate]].\n<pre>\n" .
+			$this->formatForSave( $request ) . "\n</pre>";
 
-		$comment = $request->getText( 'comment', wfMessage( 'translate-magic-cm-updatedusing' )->inContentLanguage()->text() );
+		$comment = $request->getText(
+			'comment',
+			wfMessage( 'translate-magic-cm-updatedusing' )->inContentLanguage()->text()
+		);
 		$status = $article->doEdit( $data, $comment, 0 );
 
 		if ( $status === false || ( is_object( $status ) && !$status->isOK() ) ) {
@@ -441,8 +453,13 @@ abstract class ComplexMessages {
 			foreach ( $values as $v ) {
 				if ( isset( $used[$v] ) ) {
 					$otherkey = $used[$v];
-					$first = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$otherkey" ), $otherkey );
-					$errors[] = "Translation <strong>$v</strong> is used more than once for $first and $link.";
+					$first = Xml::element(
+						'a',
+						array( 'href' => "#mw-sp-magic-$otherkey" ),
+						$otherkey
+					);
+					$errors[] = "Translation <strong>$v</strong> is used more than once " .
+						"for $first and $link.";
 				} else {
 					$used[$v] = $key;
 				}
@@ -477,7 +494,9 @@ abstract class ComplexMessages {
 
 		$indexKeys = array();
 		foreach ( array_keys( $items[self::LANG_MASTER] ) as $key ) {
-			$indexKeys[$key] = isset( $this->constants[$key] ) ? $this->constants[$key] : "'$key'";
+			$indexKeys[$key] = isset( $this->constants[$key] ) ?
+				$this->constants[$key] :
+				"'$key'";
 		}
 
 		$padTo = max( array_map( 'strlen', $indexKeys ) ) + 3;
@@ -608,7 +627,8 @@ class SpecialPageAliasesCM extends ComplexMessages {
 	public function highlight( $key, $values ) {
 		if ( count( $values ) ) {
 			if ( !isset( $values[0] ) ) {
-				throw new MWException( "Something missing from values: " . print_r( $values, true ) );
+				throw new MWException( "Something missing from values: " .
+					print_r( $values, true ) );
 			}
 
 			$values[0] = "<strong>$values[0]</strong>";
@@ -636,7 +656,8 @@ class SpecialPageAliasesCM extends ComplexMessages {
 					$text = $title->getText();
 					$dbkey = $title->getDBkey();
 					if ( $text !== $_ && $dbkey !== $_ ) {
-						$errors[] = "Translation <strong>$_</strong> for $link is not in normalised form, which is <strong>$text</strong>";
+						$errors[] = "Translation <strong>$_</strong> for $link is not in " .
+							"normalised form, which is <strong>$text</strong>";
 					}
 				}
 			}
@@ -743,7 +764,8 @@ class NamespaceCM extends ComplexMessages {
 
 			if ( count( $values ) > 1 ) {
 				$link = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$key" ), $key );
-				$errors[] = "Namespace $link can have only one translation. Replace the translation with a new one, and notify staff about the change.";
+				$errors[] = "Namespace $link can have only one translation. Replace the " .
+					"translation with a new one, and notify staff about the change.";
 			}
 		}
 	}
