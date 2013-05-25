@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DxpctM6s",
+        "filename": "api/ApiAggregateGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-05-25T13:39:38Z",
+      "side": 1,
+      "message": "unrelated",
+      "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dxvcat3k",
+        "filename": "scripts/createCheckIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-05-25T13:39:38Z",
+      "side": 1,
+      "message": ";)",
+      "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxjcVP0k",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-05-25T13:39:38Z",
+      "side": 1,
+      "message": "This is a special page, $this-\u003egetLanguage()",
+      "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxlcMS0I",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-05-25T13:39:38Z",
+      "side": 1,
+      "message": "the \u003d null can be removed and type hints added",
+      "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "Dxhcaw3c",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 780,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-05-25T13:39:38Z",
+      "side": 1,
+      "message": "Seems to be there at least since 1.19, so can be removed",
+      "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxpcG0yA",
+        "filename": "utils/MessageTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-05-25T13:39:38Z",
+      "side": 1,
+      "message": "This class should have $this-\u003econtext nowdays",
+      "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
