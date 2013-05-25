@@ -61,7 +61,9 @@ class StatsTable {
 	}
 
 	public function getBackgroundColor( $subset, $total, $fuzzy = false ) {
-		$v = @round( 255 * $subset / $total );
+		wfSuppressWarnings();
+		$v = round( 255 * $subset / $total );
+		wfRestoreWarnings();
 
 		if ( $fuzzy ) {
 			// Weigh fuzzy with factor 20.

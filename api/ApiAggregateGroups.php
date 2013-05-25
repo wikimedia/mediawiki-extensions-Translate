@@ -75,7 +75,9 @@ class ApiAggregateGroups extends ApiBase {
 			 * aggregate message groups, the message group object $group
 			 * might not always be available. In this case we need to fake
 			 * some title. */
-			$title = $group ? $group->getTitle() : Title::newFromText( "Special:Translate/$subgroupId" );
+			$title = $group ?
+				$group->getTitle() :
+				Title::newFromText( "Special:Translate/$subgroupId" );
 
 			$entry = new ManualLogEntry( 'pagetranslation', $action );
 			$entry->setPerformer( $this->getUser() );
@@ -121,7 +123,6 @@ class ApiAggregateGroups extends ApiBase {
 			$output['groups'] = self::getAllPages();
 			$output['aggregategroupId'] = $aggregateGroupId;
 			// @todo Logging
-
 		}
 
 		// If we got this far, nothing has failed
@@ -137,7 +138,8 @@ class ApiAggregateGroups extends ApiBase {
 		if ( strlen( $aggregateGroupName ) + strlen( $prefix ) >= 200 ) {
 			return $prefix . substr( sha1( $aggregateGroupName ), 0, 5 );
 		} else {
-			return $prefix . preg_replace( '/[\x00-\x1f\x23\x27\x2c\x2e\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/i', '_', $aggregateGroupName );
+			$pattern = '/[\x00-\x1f\x23\x27\x2c\x2e\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/i';
+			return $prefix . preg_replace( $pattern, '_', $aggregateGroupName );
 		}
 	}
 

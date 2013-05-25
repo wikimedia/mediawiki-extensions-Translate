@@ -1,6 +1,7 @@
 <?php
 /**
- * Command line script to import/update source messages and translations into the wiki database.
+ * Command line script to import/update source messages and translations into
+ * the wiki database.
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
@@ -63,7 +64,8 @@ if ( !isset( $options['lang'] ) || strval( $options['lang'] ) === '' ) {
 $start = isset( $options['start'] ) ? strtotime( $options['start'] ) : false;
 $end = isset( $options['end'] ) ? strtotime( $options['end'] ) : false;
 
-STDOUT( "Conflict times: " . wfTimestamp( TS_ISO_8601, $start ) . " - " . wfTimestamp( TS_ISO_8601, $end ) );
+STDOUT( "Conflict times: " . wfTimestamp( TS_ISO_8601, $start ) . " - " .
+	wfTimestamp( TS_ISO_8601, $end ) );
 
 $codes = array_filter( array_map( 'trim', explode( ',', $options['lang'] ) ) );
 
@@ -223,8 +225,10 @@ class ChangeSyncer {
 	/**
 	 * Do some conflict resolution for translations.
 	 * @param string $code Language code.
-	 * @param bool|int $startTs Time of the last export (changes in wiki after this will conflict)
-	 * @param bool|int $endTs Time of the last export (changes in source before this wont conflict)
+	 * @param bool|int $startTs Time of the last export (changes in wiki after
+	 * this will conflict)
+	 * @param bool|int $endTs Time of the last export (changes in source before
+	 * this won't conflict)
 	 * @param bool|int $changeTs When change happened in the source.
 	 */
 	public function checkConflicts( $code, $startTs = false, $endTs = false, $changeTs = false ) {
@@ -300,7 +304,11 @@ class ChangeSyncer {
 					continue;
 				} elseif ( !$wikiTs || ( $changeTs > $endTs && $wikiTs < $startTs ) ) {
 					STDOUT( " →Changed in source after export: IMPORT", $page );
-					$this->import( $title, $translation, 'Updating translation from external source' );
+					$this->import(
+						$title,
+						$translation,
+						'Updating translation from external source'
+					);
 					continue;
 				}
 			}
@@ -325,12 +333,20 @@ class ChangeSyncer {
 				}
 
 				if ( $action === 'I' ) {
-					$this->import( $title, $translation, 'Updating translation from external source' );
+					$this->import(
+						$title,
+						$translation,
+						'Updating translation from external source'
+					);
 					break;
 				}
 
 				if ( $action === 'C' ) {
-					$this->import( $title, TRANSLATE_FUZZY . $translation, 'Edit conflict between wiki and source' );
+					$this->import(
+						$title,
+						TRANSLATE_FUZZY . $translation,
+						'Edit conflict between wiki and source'
+					);
 					break;
 				}
 			} while ( true );

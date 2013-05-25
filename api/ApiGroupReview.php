@@ -169,9 +169,12 @@ class ApiGroupReview extends ApiBase {
 
 		return array_merge( parent::getPossibleErrors(), array(
 			array( 'code' => 'permissiondenied', 'info' => "You must have $right right" ),
-			array( 'code' => 'disabled', 'info' => "Message group workflows are not in use" ),
-			array( 'code' => 'sameworkflowstate', 'info' => "The requested state is identical to the current state" ),
-			array( 'code' => 'invalidstate', 'info' => "The requested state is invalid" ),
+			array( 'code' => 'disabled', 'info' => 'Message group workflows are not in use' ),
+			array(
+				'code' => 'sameworkflowstate',
+				'info' => 'The requested state is identical to the current state'
+			),
+			array( 'code' => 'invalidstate', 'info' => 'The requested state is invalid' ),
 		) );
 	}
 
