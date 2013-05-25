@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "DxlI2Gec",
+        "filename": "api/ApiAggregateGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-05-25T13:51:44Z",
+      "side": 1,
+      "message": "Yep. Just saw it. I can revert, and it\u0027ll never be fixed. What do you prefer?",
+      "parentUuid": "DxpctM6s",
+      "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "Dxvcat3k",
         "filename": "scripts/createCheckIndex.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-25T13:39:38Z",
       "side": 1,
       "message": ";)",
+      "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxrIzHfU",
+        "filename": "scripts/createCheckIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-05-25T13:51:44Z",
+      "side": 1,
+      "message": "That popped up when I did a static code analysis so see if *I* hadn\u0027t broken anything :D.",
+      "parentUuid": "Dxvcat3k",
       "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "DxnJCNUM",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-05-25T13:51:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DxjcVP0k",
+      "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DxlcMS0I",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2013-05-25T13:39:38Z",
       "side": 1,
       "message": "the \u003d null can be removed and type hints added",
+      "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxrJMvXI",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-05-25T13:51:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "DxlcMS0I",
       "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "DxpJJwWM",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 780,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-05-25T13:51:44Z",
+      "side": 1,
+      "message": "Technically unrelated, but I\u0027ll humor you...",
+      "parentUuid": "Dxhcaw3c",
+      "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "DxpcG0yA",
         "filename": "utils/MessageTable.php",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2013-05-25T13:39:38Z",
       "side": 1,
       "message": "This class should have $this-\u003econtext nowdays",
+      "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "DxlJo2bo",
+        "filename": "utils/MessageTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-05-25T13:51:44Z",
+      "side": 1,
+      "message": "Fixed in several places.",
+      "parentUuid": "DxpcG0yA",
       "revId": "9a0dc2a359e5dbd067bb40a26ae74c9e1149e434",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
