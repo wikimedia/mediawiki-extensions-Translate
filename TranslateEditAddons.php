@@ -18,7 +18,7 @@
 class TranslateEditAddons {
 	/**
 	 * Add some tabs for navigation for users who do not use Ajax interface.
-	 * Hooks: SkinTemplateNavigation, SkinTemplateTabs
+	 * Hooks: SkinTemplateNavigation
 	 */
 	static function addNavigationTabs( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
@@ -288,19 +288,6 @@ class TranslateEditAddons {
 		# wfDeprecated( __METHOD__, '1.19' );
 		$handle = new MessageHandle( $title );
 		return $handle->isFuzzy();
-	}
-
-	/**
-	 * Removes protection tab for message namespaces - not useful.
-	 * Hook: SkinTemplateTabs
-	 */
-	public static function tabs( Skin $skin, &$tabs ) {
-		$handle = new MessageHandle( $skin->getTitle() );
-		if ( $handle->isMessageNamespace() ) {
-			unset( $tabs['protect'] );
-		}
-
-		return true;
 	}
 
 	/**
