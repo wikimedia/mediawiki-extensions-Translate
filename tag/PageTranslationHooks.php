@@ -537,6 +537,7 @@ class PageTranslationHooks {
 	public static function preventRestrictedTranslations( Title $title, User $user,
 		$action, &$result
 	) {
+		global $wgTranslateDocumentationLanguageCode;
 		// Preventing editing (includes creation) should be enough
 		if ( $action !== 'edit' ) {
 			return true;
@@ -554,6 +555,11 @@ class PageTranslationHooks {
 		// Check if anything is prevented for the group in the first place
 		$force = TranslateMetadata::get( $groupId, 'priorityforce' );
 		if ( $force !== 'on' ) {
+			return true;
+		}
+
+		// Allow adding message documentation even when translation is restricted
+		if ( $handle->getCode() === $wgTranslateDocumentationLanguageCode ) {
 			return true;
 		}
 
