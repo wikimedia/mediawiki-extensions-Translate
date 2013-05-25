@@ -66,12 +66,14 @@ class TranslationEditPage {
 	 * disabled all other output.
 	 */
 	public function execute() {
-		global $wgOut, $wgServer, $wgScriptPath, $wgUser, $wgRequest;
+		global $wgServer, $wgScriptPath;
 
-		$wgOut->disable();
+		$context = RequestContext::getMain();
+
+		$context->getOutput()->disable();
 
 		$data = $this->getEditInfo();
-		$groupId = $wgRequest->getText( 'loadgroup', '' );
+		$groupId = $context->getRequest()->getText( 'loadgroup', '' );
 		$helpers = new TranslationHelpers( $this->getTitle(), $groupId );
 
 		$id = "tm-target-{$helpers->dialogID()}";
@@ -108,7 +110,7 @@ class TranslationEditPage {
 			'dir' => $targetLang->getDir(),
 		);
 
-		if ( !$groupId || !$wgUser->isAllowed( 'translate' ) ) {
+		if ( !$groupId || !$context->getUser()->isAllowed( 'translate' ) ) {
 			$textareaParams['readonly'] = 'readonly';
 		}
 
@@ -132,23 +134,23 @@ class TranslationEditPage {
 		$hidden[] = Html::hidden( 'action', 'edit' );
 
 		$summary = Xml::inputLabel(
-			wfMessage( 'translate-js-summary' )->text(),
+			$context->msg( 'translate-js-summary' )->text(),
 			'summary',
 			'summary',
 			40
 		);
 		$save = Xml::submitButton(
-			wfMessage( 'translate-js-save' )->text(),
+			$context->msg( 'translate-js-save' )->text(),
 			array( 'class' => 'mw-translate-save' )
 		);
 		$saveAndNext = Xml::submitButton(
-			wfMessage( 'translate-js-next' )->text(),
+			$context->msg( 'translate-js-next' )->text(),
 			array( 'class' => 'mw-translate-next' )
 		);
 		$skip = Html::element( 'input', array(
 			'class' => 'mw-translate-skip',
 			'type' => 'button',
-			'value' => wfMessage( 'translate-js-skip' )->text()
+			'value' => $context->msg( 'translate-js-skip' )->text()
 		) );
 
 		if ( $this->getTitle()->exists() ) {
@@ -157,7 +159,7 @@ class TranslationEditPage {
 				array(
 					'class' => 'mw-translate-history',
 					'type' => 'button',
-					'value' => wfMessage( 'translate-js-history' )->text()
+					'value' => $context->msg( 'translate-js-history' )->text()
 				)
 			);
 		} else {
@@ -166,10 +168,10 @@ class TranslationEditPage {
 
 		$support = $this->getSupportButton( $this->getTitle() );
 
-		if ( $wgUser->isAllowed( 'translate' ) ) {
+		if ( $context->getUser()->isAllowed( 'translate' ) ) {
 			$bottom = "$summary$save$saveAndNext$skip$history$support";
 		} else {
-			$text = wfMessage( 'translate-edit-nopermission' )->escaped();
+			$text = $context->msg( 'translate-edit-nopermission' )->escaped();
 			$button = $this->getPermissionPageButton();
 			$bottom = "$text $button$skip$history$support";
 		}
@@ -234,9 +236,9 @@ class TranslationEditPage {
 	 * @return \array
 	 */
 	public static function jsEdit( Title $title, $group = "", $type = 'default' ) {
-		global $wgUser;
+		$context = RequestContext::getMain();
 
-		if ( !$wgUser->getOption( 'translate-jsedit' ) ) {
+		if ( !$context->getUser()->getOption( 'translate-jsedit' ) ) {
 			return array();
 		}
 
@@ -251,7 +253,7 @@ class TranslationEditPage {
 
 		return array(
 			'onclick' => $onclick,
-			'title' => wfMessage( 'translate-edit-title', $title->getPrefixedText() )->text()
+			'title' => $context->msg( 'translate-edit-title', $title->getPrefixedText() )->text()
 		);
 	}
 

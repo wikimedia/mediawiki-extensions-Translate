@@ -223,7 +223,7 @@ class MessageChecker {
 	 * @return array List of warning messages with parameters.
 	 */
 	protected function fixMessageParams( $warnings ) {
-		global $wgLang;
+		$lang = RequestContext::getMain()->getLanguage();
 
 		foreach ( $warnings as $wkey => $warning ) {
 			array_shift( $warning );
@@ -235,9 +235,9 @@ class MessageChecker {
 				} else {
 					list( $type, $value ) = $param;
 					if ( $type === 'COUNT' ) {
-						$message[] = $wgLang->formatNum( $value );
+						$message[] = $lang->formatNum( $value );
 					} elseif ( $type === 'PARAMS' ) {
-						$message[] = $wgLang->commaList( $value );
+						$message[] = $lang->commaList( $value );
 					} else {
 						throw new MWException( "Unknown type $type" );
 					}

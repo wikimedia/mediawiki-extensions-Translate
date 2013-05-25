@@ -138,10 +138,9 @@ class ApiTranslateSandbox extends ApiBase {
 	}
 
 	public static function getToken() {
-		global $wgUser;
-
 		// Who designed this?!?!?!
-		return $wgUser->getEditToken( 'sandbox' );
+		$user = RequestContext::getMain()->getUser();
+		return $user->getEditToken( 'sandbox' );
 	}
 
 	public function getAllowedParams() {

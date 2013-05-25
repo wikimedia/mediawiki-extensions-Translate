@@ -171,10 +171,11 @@ class FuzzyScript {
 	 * @param string $comment Edit summary.
 	 */
 	private function updateMessage( $title, $text, $dryrun, $comment = null ) {
-		global $wgTranslateDocumentationLanguageCode, $wgUser;
+		global $wgTranslateDocumentationLanguageCode;
 
-		$oldUser = $wgUser;
-		$wgUser = FuzzyBot::getUser();
+		$context = RequestContext::getMain();
+		$oldUser = $context->getUser();
+		$context->setUser( FuzzyBot::getUser() );
 
 		STDOUT( "Updating {$title->getPrefixedText()}... ", $title );
 		if ( !$title instanceof Title ) {
@@ -203,6 +204,6 @@ class FuzzyScript {
 		$success = $status === true || ( is_object( $status ) && $status->isOK() );
 		STDOUT( $success ? 'OK' : 'FAILED', $title );
 
-		$wgUser = $oldUser;
+		$context->setUser( $oldUser );
 	}
 }

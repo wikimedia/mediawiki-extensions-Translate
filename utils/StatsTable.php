@@ -31,9 +31,7 @@ class StatsTable {
 	protected $extraColumns = array();
 
 	public function __construct() {
-		global $wgLang;
-
-		$this->lang = $wgLang;
+		$this->lang = RequestContext::getMain()->getLanguage();
 		$this->translate = SpecialPage::getTitleFor( 'Translate' );
 	}
 

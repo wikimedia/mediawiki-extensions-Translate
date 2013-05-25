@@ -338,17 +338,13 @@ class MediaWikiMessageChecker extends MessageChecker {
 				$defCount = count( $defArray );
 				$traCount = count( $traArray );
 				if ( $defCount !== $traCount ) {
-					global $wgLang;
-
 					$warnings[$key][] = array(
 						array( 'miscmw', $subcheck, $key, $code ),
 						'translate-checks-format',
-						wfMessage(
-							'translate-checks-parametersnotequal',
-							$wgLang->formatNum( $traCount ),
-							$wgLang->formatNum( $defCount )
-						)->text()
+						wfMessage( 'translate-checks-parametersnotequal' )
+							->numParams( $traCount, $defCount )->text()
 					);
+
 					continue;
 				}
 

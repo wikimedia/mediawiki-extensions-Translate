@@ -108,9 +108,9 @@ class MessageTable {
 	}
 
 	public function includeAssets() {
-		global $wgOut;
+		$out = RequestContext::getMain()->getOutput();
 
-		TranslationHelpers::addModules( $wgOut );
+		TranslationHelpers::addModules( $out );
 		$pages = array();
 
 		foreach ( $this->collection->getTitles() as $title ) {
@@ -118,7 +118,7 @@ class MessageTable {
 		}
 
 		$vars = array( 'trlKeys' => $pages );
-		$wgOut->addScript( Skin::makeVariablesScript( $vars ) );
+		$out->addScript( Skin::makeVariablesScript( $vars ) );
 	}
 
 	public function header() {
@@ -149,7 +149,8 @@ class MessageTable {
 	}
 
 	public function contents() {
-		$optional = wfMessage( 'translate-optional' )->escaped();
+		$context = RequestContext::getMain();
+		$optional = $context->msg( 'translate-optional' )->escaped();
 
 		$this->doLinkBatch();
 
@@ -192,8 +193,10 @@ class MessageTable {
 			// Using Html::element( a ) because Linker::link is memory hog.
 			// It takes about 20 KiB per call, and that times 5000 is quite
 			// a lot of memory.
-			global $wgLang;
-			$niceTitle = htmlspecialchars( $wgLang->truncate( $title->getPrefixedText(), -35 ) );
+			$niceTitle = htmlspecialchars( $context->getLanguage()->truncate(
+				$title->getPrefixedText(),
+				-35
+			) );
 			$linkAttribs = array(
 				'href' => $title->getLocalUrl( array( 'action' => 'edit' ) + $this->editLinkParams ),
 			);
@@ -289,11 +292,10 @@ class MessageTable {
 	}
 
 	protected function getReviewButton( TMessage $message ) {
-		global $wgUser;
-
 		$revision = $message->getProperty( 'revision' );
+		$user = RequestContext::getMain()->getUser();
 
-		if ( !$this->reviewMode || !$wgUser->isAllowed( 'translate-messagereview' ) || !$revision ) {
+		if ( !$this->reviewMode || !$user->isAllowed( 'translate-messagereview' ) || !$revision ) {
 			return '';
 		}
 
@@ -306,7 +308,7 @@ class MessageTable {
 		);
 
 		$reviewers = (array)$message->getProperty( 'reviewers' );
-		if ( in_array( $wgUser->getId(), $reviewers ) ) {
+		if ( in_array( $user->getId(), $reviewers ) ) {
 			$attribs['value'] = wfMessage( 'translate-messagereview-done' )->text();
 			$attribs['disabled'] = 'disabled';
 			$attribs['title'] = wfMessage( 'translate-messagereview-doit' )->text();
@@ -314,7 +316,7 @@ class MessageTable {
 			$attribs['value'] = wfMessage( 'translate-messagereview-submit' )->text();
 			$attribs['disabled'] = 'disabled';
 			$attribs['title'] = wfMessage( 'translate-messagereview-no-fuzzy' )->text();
-		} elseif ( $wgUser->getName() === $message->getProperty( 'last-translator-text' ) ) {
+		} elseif ( $user->getName() === $message->getProperty( 'last-translator-text' ) ) {
 			$attribs['value'] = wfMessage( 'translate-messagereview-submit' )->text();
 			$attribs['disabled'] = 'disabled';
 			$attribs['title'] = wfMessage( 'translate-messagereview-no-own' )->text();
@@ -331,8 +333,6 @@ class MessageTable {
 	protected $reviewStatusCache = array();
 
 	protected function getReviewStatus( TMessage $message ) {
-		global $wgUser;
-
 		if ( !$this->reviewMode ) {
 			return '';
 		}
@@ -344,7 +344,8 @@ class MessageTable {
 			return '';
 		}
 
-		$you = in_array( $wgUser->getId(), $reviewers );
+		$userId = RequestContext::getMain()->getUser()->getId();
+		$you = in_array( $userId, $reviewers );
 		$key = $you ? "y$count" : "n$count";
 
 		// ->text() (and ->parse()) invokes the parser. Each call takes

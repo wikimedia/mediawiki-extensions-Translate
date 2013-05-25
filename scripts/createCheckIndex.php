@@ -68,6 +68,8 @@ foreach ( $groups as $g ) {
 		$collection->resetForNewLanguage( $code );
 		$collection->loadTranslations();
 
+		global $wgContLang;
+
 		foreach ( $collection as $key => $message ) {
 			$prob = $checker->checkMessageFast( $message, $code );
 			if ( $prob ) {
