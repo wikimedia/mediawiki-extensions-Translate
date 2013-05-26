@@ -5,8 +5,7 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2009-2013, Niklas Laxström, Siebrand Mazeland
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @license GPL2+
  */
 
 /**
@@ -141,46 +140,14 @@ class SpecialImportTranslations extends SpecialPage {
 			) ) .
 				Html::hidden( 'token', $this->getUser()->getEditToken() ) .
 				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-				Xml::openElement( 'table' ) .
-				Xml::openElement( 'tr' ) .
-				Xml::openElement( 'td' )
-		);
-
-		$class = array( 'class' => 'mw-translate-import-inputs' );
-
-		if ( $wgTranslateAllowImportFromUrl === true ) {
-			$this->getOutput()->addHTML(
-				Xml::radioLabel( $this->msg( 'translate-import-from-url' )->text(),
-					'upload-type', 'url', 'mw-translate-up-url',
-					$this->getRequest()->getText( 'upload-type' ) === 'url' ) .
-					"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
-					Xml::input( 'upload-url', 50,
-						$this->getRequest()->getText( 'upload-url' ),
-						array( 'id' => 'mw-translate-up-url-input' ) + $class ) .
-					"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
-					Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n"
-			);
-		}
-
-		$this->getOutput()->addHTML(
-			Xml::radioLabel( $this->msg( 'translate-import-from-wiki' )->text(),
-				'upload-type', 'wiki', 'mw-translate-up-wiki',
-				$this->getRequest()->getText( 'upload-type' ) === 'wiki' ) .
-				"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
-				Xml::input( 'upload-wiki', 50,
-					$this->getRequest()->getText( 'upload-wiki', 'File:' ),
-					array( 'id' => 'mw-translate-up-wiki-input' ) + $class ) .
-				"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
-				Xml::openElement( 'tr' ) . Xml::openElement( 'td' ) . "\n" .
-				Xml::radioLabel( $this->msg( 'translate-import-from-local' )->text(),
-					'upload-type', 'local', 'mw-translate-up-local',
-					$this->getRequest()->getText( 'upload-type' ) === 'local' ) .
-				"\n" . Xml::closeElement( 'td' ) . Xml::openElement( 'td' ) . "\n" .
-				Xml::input( 'upload-local', 50,
+				Xml::inputLabel(
+					$this->msg( 'translate-import-from-local' )->text(),
+					'upload-local', // name
+					'mw-translate-up-local-input', // id
+					50, // size
 					$this->getRequest()->getText( 'upload-local' ),
-					array( 'type' => 'file', 'id' => 'mw-translate-up-local-input' ) + $class ) .
-				"\n" . Xml::closeElement( 'td' ) . Xml::closeElement( 'tr' ) .
-				Xml::closeElement( 'table' ) .
+					array( 'type' => 'file' )
+				) .
 				Xml::submitButton( $this->msg( 'translate-import-load' )->text() ) .
 				Xml::closeElement( 'form' )
 		);
@@ -192,49 +159,15 @@ class SpecialImportTranslations extends SpecialPage {
 	 * @return array
 	 */
 	protected function loadFile( &$filedata ) {
-		global $wgTranslateAllowImportFromUrl;
+		$filename = $this->getRequest()->getFileTempname( 'upload-local' );
 
-		$source = $this->getRequest()->getText( 'upload-type' );
-
-		if ( $source === 'url' && $wgTranslateAllowImportFromUrl === true ) {
-			$url = $this->getRequest()->getText( 'upload-url' );
-			$filedata = Http::get( $url );
-			if ( $filedata ) {
-				return array( 'ok' );
-			} else {
-				return array( 'dl-failed', 'Unknown reason' );
-			}
-		} elseif ( $source === 'local' ) {
-			$filename = $this->getRequest()->getFileTempname( 'upload-local' );
-
-			if ( !is_uploaded_file( $filename ) ) {
-				return array( 'ul-failed' );
-			}
-
-			$filedata = file_get_contents( $filename );
-
-			return array( 'ok' );
-		} elseif ( $source === 'wiki' ) {
-			$filetitle = $this->getRequest()->getText( 'upload-wiki' );
-			$title = Title::newFromText( $filetitle, NS_FILE );
-
-			if ( !$title ) {
-				return array( 'invalid-title', $filetitle );
-			}
-
-			$file = wfLocalFile( $title );
-
-			if ( !$file || !$file->exists() ) {
-				return array( 'no-such-file', $title->getPrefixedText() );
-			}
-
-			$filename = $file->getPath();
-			$filedata = file_get_contents( $filename );
-
-			return array( 'ok' );
-		} else {
-			return array( 'type-not-supported', $source );
+		if ( !is_uploaded_file( $filename ) ) {
+			return array( 'ul-failed' );
 		}
+
+		$filedata = file_get_contents( $filename );
+
+		return array( 'ok' );
 	}
 
 	/**
