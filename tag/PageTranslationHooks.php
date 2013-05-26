@@ -50,6 +50,9 @@ class PageTranslationHooks {
 			$parser->getOutput()->setDisplayTitle( $name );
 		}
 
+		// Disable edit section links
+		$parser->getOptions()->setEditSection( false );
+
 		return true;
 	}
 
