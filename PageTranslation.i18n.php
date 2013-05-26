@@ -1767,11 +1767,14 @@ $messages['bug'] = array(
  * @author Jordi Roqué
  * @author SMP
  * @author Solde
+ * @author Toniher
  * @author පසිඳු කාවින්ද
  */
 $messages['ca'] = array(
 	'pagetranslation' => "Traducció d'una pàgina",
 	'right-pagetranslation' => 'Marcar versions de pàgines per a traduir',
+	'action-pagetranslation' => 'gestiona les pàgines traduïbles',
+	'tpt-desc' => 'Extensió per a traduir les pàgines de contingut',
 	'tpt-section' => 'Unitat de traducció $1',
 	'tpt-section-new' => 'Nova unitat de traducció. Nom: $1',
 	'tpt-diff-old' => 'Text anterior',
@@ -1779,9 +1782,10 @@ $messages['ca'] = array(
 	'tpt-badtitle' => 'El nom de pàgina donat ($1) no és un títol vàlid',
 	'tpt-notsuitable' => 'La pàgina $1 no està preparada per a la seva traducció.
 Assegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi vàlida.',
+	'tpt-rev-encourage' => 'restaura',
 	'translate-tag-translate-link-desc' => 'Traduir aquesta pàgina',
 	'tpt-languages-legend' => 'Altres idiomes:',
-	'tpt-aggregategroup-add' => 'Afegir',
+	'tpt-aggregategroup-add' => 'Afegeix',
 	'tpt-aggregategroup-save' => 'Desa',
 	'tpt-aggregategroup-new-name' => 'Nom:',
 	'pt-movepage-title' => 'Mou la pàgina traduïble $1',
