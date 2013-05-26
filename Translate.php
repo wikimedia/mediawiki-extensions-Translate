@@ -121,13 +121,10 @@ $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiHardMessages::injectTokenFunction';
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiTranslateSandbox::injectTokenFunction';
 // Register hooks.
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
-$wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::addNavigationTabs';
-// Same for Vector skin
 $wgHooks['SkinTemplateNavigation'][] = 'TranslateEditAddons::addNavigationTabs';
 $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
 $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
-$wgHooks['SkinTemplateTabs'][] = 'TranslateEditAddons::tabs';
 $wgHooks['LanguageGetTranslatedLanguageNames'][] = 'TranslateHooks::translateMessageDocumentationLanguage';
 $wgHooks['TranslateSupportedLanguages'][] = 'TranslateHooks::translateMessageDocumentationLanguage';
 $wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
