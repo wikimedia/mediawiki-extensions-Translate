@@ -608,13 +608,6 @@ $wgTranslateTestTTMServer = null;
  */
 $wgTranslateUseTux = true;
 
-/**
- * Whether to allow uploading gettext files through URLs on
- * Special:ImportTranslations. Default is false.
- * @since 2013-04-26
- */
-$wgTranslateAllowImportFromUrl = false;
-
 # </source>
 
 /** @cond cli_support */

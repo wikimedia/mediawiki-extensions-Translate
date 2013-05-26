@@ -309,13 +309,9 @@ Please check.',
 	'translate-manage-fuzzy-summary' => 'The message definition has changed',
 
 	'importtranslations' => 'Import translations',
-	'translate-import-from-url' => 'URL to the file:',
-	'translate-import-from-wiki' => 'File in this wiki:',
 	'translate-import-from-local' => 'Local file upload:',
 	'translate-import-load' => 'Load file',
 
-	'translate-import-err-type-not-supported' => 'Unable to load the file:
-Method <code>$1</code> is not supported.',
 	'translate-import-err-dl-failed' => 'Unable to fetch the file:
 $1',
 	'translate-import-err-ul-failed' => 'File upload was not successful',
