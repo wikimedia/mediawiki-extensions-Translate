@@ -54,7 +54,10 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$languages = $group->getTranslatableLanguages();
 
 		if ( $languages !== null && !isset( $languages[$params['language']] ) ) {
-			$this->dieUsage( 'Translation to this language is disabled', 'translate-language-disabled' );
+			$this->dieUsage(
+				'Translation to this language is disabled',
+				'translate-language-disabled'
+			);
 		}
 
 		$messages = $group->initCollection( $params['language'] );
@@ -86,7 +89,11 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		);
 
 		$result->addValue( array( 'query', 'metadata' ), 'resultsize', $resultSize );
-		$result->addValue( array( 'query', 'metadata' ), 'remaining', $resultSize - $startOffset - $batchSize );
+		$result->addValue(
+			array( 'query', 'metadata' ),
+			'remaining',
+			$resultSize - $startOffset - $batchSize
+		);
 
 		$messages->loadTranslations();
 
@@ -110,7 +117,10 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		}
 
 		if ( is_null( $resultPageSet ) ) {
-			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'message' );
+			$result->setIndexedTagName_internal(
+				array( 'query', $this->getModuleName() ),
+				'message'
+			);
 		} else {
 			$resultPageSet->populateFromTitles( $pages );
 		}
@@ -202,7 +212,13 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				ApiBase::PARAM_ISMULTI => true,
 			),
 			'prop' => array(
-				ApiBase::PARAM_TYPE => array( 'definition', 'translation', 'tags', 'revision', 'properties' ),
+				ApiBase::PARAM_TYPE => array(
+					'definition',
+					'translation',
+					'tags',
+					'revision',
+					'properties'
+				),
 				ApiBase::PARAM_DFLT => 'definition|translation',
 				ApiBase::PARAM_ISMULTI => true,
 			),
@@ -218,19 +234,26 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			'prop' => array(
 				'Which properties to get',
 				'definition  - message definition',
-				'translation - current translation (without !!FUZZY!! string if any, use the tags to check for outdated or broken translations)',
+				'translation - current translation (without !!FUZZY!! string if any, ' .
+					'use the tags to check for outdated or broken translations)',
 				'tags        - message tags, like optional, ignored and fuzzy',
-				'properties  - message properties, like status, revision, last-translator. Can vary between messages.',
+				'properties  - message properties, like status, revision, ' .
+					'last-translator. Can vary between messages.',
 				'revision    - deprecated! use properties!',
 			),
 			'filter' => array(
-				'Message collection filters. Use ! to negate condition. For example !fuzzy means list only all non-fuzzy messages. Filters are applied in the order given.',
+				'Message collection filters. Use ! to negate condition. For example ' .
+					'!fuzzy means list only all non-fuzzy messages. Filters are ' .
+					'applied in the order given.',
 				'fuzzy             - messages with fuzzy tag',
-				'optional          - messages which should be translated only if changes are necessary',
+				'optional          - messages which should be translated only if ' .
+					'changes are necessary',
 				'ignored           - messages which are never translated',
-				'hastranslation    - messages which have a translation regardless if it is fuzzy or not',
+				'hastranslation    - messages which have a translation regardless if it ' .
+					'is fuzzy or not',
 				'translated        - messages which have a translation which is not fuzzy',
-				'changed           - messages which has been translated or changed since last export',
+				'changed           - messages which has been translated or changed since ' .
+					'last export',
 				'reviewer:#        - messages where given userid # is among reviewers',
 				'last-translator:# - messages where given userid # is the last translator',
 			),
@@ -246,9 +269,14 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 
 		return array(
 			'api.php?action=query&meta=siteinfo&siprop=languages List of supported languages',
-			"api.php?action=query&list=messagecollection&mcgroup=$group List of non-optional message definitions for group $group",
-			"api.php?action=query&list=messagecollection&mcgroup=$group&mclanguage=fi&mcprop=definition|translation|tags&mcfilter=optional List of optional messages in Finnish with tags for group $group",
-			"api.php?action=query&generator=messagecollection&gmcgroup=$group&gmclanguage=nl&prop=revisions More information about latest translation revisions for group $group",
+			"api.php?action=query&list=messagecollection&mcgroup=$group " .
+				"List of non-optional message definitions for group $group",
+			"api.php?action=query&list=messagecollection&mcgroup=$group&mclanguage=fi&" .
+				"mcprop=definition|translation|tags&mcfilter=optional " .
+				"List of optional messages in Finnish with tags for group $group",
+			"api.php?action=query&generator=messagecollection&gmcgroup=$group" .
+				"&gmclanguage=nl&prop=revisions " .
+				"More information about latest translation revisions for group $group",
 		);
 	}
 
