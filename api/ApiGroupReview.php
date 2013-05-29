@@ -23,7 +23,7 @@ class ApiGroupReview extends ApiBase {
 		$group = MessageGroups::getGroup( $requestParams['group'] );
 		$code = $requestParams['language'];
 
-		if ( !$group ) {
+		if ( !$group || MessageGroups::isDynamic( $group ) ) {
 			$this->dieUsageMsg( array( 'missingparam', 'group' ) );
 		}
 		$stateConfig = $group->getMessageGroupStates()->getStates();
@@ -131,7 +131,7 @@ class ApiGroupReview extends ApiBase {
 	public function getAllowedParams() {
 		return array(
 			'group' => array(
-				ApiBase::PARAM_TYPE => array_keys( MessageGroups::getAllGroups() ),
+				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
 			),
 			'language' => array(
@@ -179,9 +179,7 @@ class ApiGroupReview extends ApiBase {
 	}
 
 	public function getExamples() {
-		$groups = MessageGroups::getAllGroups();
-		$group = key( $groups );
-		$group = rawurlencode( $group );
+		$group = 'page-Example';
 
 		return array(
 			"api.php?action=groupreview&group=$group&language=de&state=ready&token=foo",
