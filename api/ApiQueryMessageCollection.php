@@ -176,13 +176,9 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	}
 
 	public function getAllowedParams() {
-		$groups = MessageGroups::getAllGroups();
-		$dynamic = MessageGroups::getDynamicGroups();
-		$groups = array_keys( array_merge( $groups, $dynamic ) );
-
 		return array(
 			'group' => array(
-				ApiBase::PARAM_TYPE => $groups,
+				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
 			),
 			'language' => array(
@@ -246,8 +242,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	}
 
 	protected function getExamples() {
-		$groups = MessageGroups::getAllGroups();
-		$group = key( $groups );
+		$group = 'page-Example';
 
 		return array(
 			'api.php?action=query&meta=siteinfo&siprop=languages List of supported languages',
