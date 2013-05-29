@@ -1,0 +1,14 @@
+== Translate 2013.05 ==
+Released at 2013-05-29.
+
+The new translation editor in Translate is now considered stable. The last month saw mostly polishing and bug fixes, changes in internals of the extension and terminology was made more consistent.
+
+Other notable bug fixes:
+* Warnings are loaded for outdated messages before user starts typing, because being outdated is an issue in itself.
+* Statsbar at the bottom floating bar of Special:Translate is updated when changing group.
+* Links of tabs at the top of Special:Translate are now kept in sync when changing message group or language
+* Custom icon (x) for clearing the searchboxsearch box clear icon was removed. Some browsers add this icon automatically, while others do not.
+* The tooltips for message groups in the group selector were removed. They contained unparsed wiki markup, which could be confusing.
+* Message documentation can be added even if the translations are restricted to only certain languages.
+* Icons for status markers and review actions for right-to-left languages were added.
+* In some rare cases the language name could be incorrectly displayed when selected from the language selector at Special:Translate, because the text direction attribute was not updated properly.
