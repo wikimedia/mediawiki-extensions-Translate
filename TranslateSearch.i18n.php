@@ -536,6 +536,10 @@ $messages['ms'] = array(
 	'tux-sst-facet-orphan' => '(yatim)',
 	'tux-sst-nosolr-title' => 'Tidak boleh mencari',
 	'tux-sst-nosolr-body' => 'Wiki ini tiada ciri mencari terjemahan.',
+	'tux-sst-solr-offline-title' => 'Tidak boleh mencari',
+	'tux-sst-solr-offline-body' => 'Perkhidmatan pencarian tidak disediakan buat sementara waktu.',
+	'tux-sst-next' => 'Hasil berikutnya',
+	'tux-sst-prev' => 'Hasil terdahulu',
 );
 
 /** Dutch (Nederlands)
@@ -617,6 +621,13 @@ $messages['pms'] = array(
 	'tux-sst-facet-orphan' => '(orfanin)',
 	'tux-sst-nosolr-title' => 'Arserca nen disponìbil',
 	'tux-sst-nosolr-body' => "La wiki a l'ha pa un servissi d'arserca ëd tradussion.",
+);
+
+/** Brazilian Portuguese (português do Brasil)
+ * @author Luckas
+ */
+$messages['pt-br'] = array(
+	'tux-sst-edit' => 'Editar tradução',
 );
 
 /** Romanian (română)
