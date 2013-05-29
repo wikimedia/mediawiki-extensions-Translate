@@ -1,0 +1,18 @@
+== Translate 2013.05-rc ==
+Released at 2013-05-29.
+
+The new Translate UX is becoming stable. The last month saw mostly polishing and bug fixes in TUX and also in some of the internals of the extension.
+
+Terminology was made more consistent:
+* Message documentation is now consistently called "documentation" rather than "description".
+* "Review" is now used consistently instead of "proofread" or "approve".
+
+Other notable bug fixes:
+* Warnings are loaded for fuzzy messages before user starts typing, because being fuzzy is an issue in itself.
+* Statsbar is updated when changing group.
+* Tab links are updated when updating page location dynamically.
+* Custom search box clear icon (x) was removed. The software now relies on its automatic addition, which is available in some browsers.
+* The tooltips were removed from the group selector rows. It was too complicated, but added little information.
+* Message documentation can be added when translation is restricted.
+* Icons for review actions for right-to-left languages were added.
+* Direction and code for the language name in the target langugage selector is now properly defined.
