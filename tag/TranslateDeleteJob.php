@@ -40,7 +40,6 @@ class TranslateDeleteJob extends Job {
 
 	function run() {
 		// Initialization
-		$context = RequestContext::getMain();
 		$title = $this->title;
 		// Other stuff
 		$user = $this->getUser();
@@ -49,12 +48,10 @@ class TranslateDeleteJob extends Job {
 		$doer = User::newFromName( $this->getPerformer() );
 
 		PageTranslationHooks::$allowTargetEdit = true;
-		$oldUser = $context->getUser();
-		$context->setUser( $user );
 
 		$error = '';
-		$article = new Article( $title, 0 );
-		$ok = $article->doDeleteArticle( $summary, false, 0, true, $error );
+		$wikipage = new WikiPage( $title );
+		$ok = $wikipage->doDeleteArticle( $summary, false, 0, true, $error, $user );
 		if ( !$ok ) {
 			$params = array(
 				'target' => $base,
@@ -92,8 +89,6 @@ class TranslateDeleteJob extends Job {
 			}
 			$title->invalidateCache();
 		}
-
-		$context->setUser( $oldUser );
 
 		return true;
 	}
