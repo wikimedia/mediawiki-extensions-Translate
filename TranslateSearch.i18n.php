@@ -135,9 +135,23 @@ $messages['be-tarask'] = array(
 
 /** Bengali (বাংলা)
  * @author Aftab1995
+ * @author Nasir8891
  */
 $messages['bn'] = array(
+	'searchtranslations' => 'অনুবাদ অনুসন্ধান',
+	'tux-sst-edit' => 'অনুবাদ সম্পাদনা',
+	'tux-sst-search' => 'অনুসন্ধান',
+	'tux-sst-search-ph' => 'অনুবাদ অনুসন্ধান',
+	'tux-sst-count' => '{{PLURAL:$1|একটি ফলাফল পাওয়া গিয়েছে|$1টি ফলাফল পাওয়া গিয়েছে}}',
+	'tux-sst-facet-language' => 'ভাষাসমূহ',
+	'tux-sst-facet-group' => 'বার্তা সংকলন',
+	'tux-sst-facet-orphan' => '(পিতৃহীন)',
+	'tux-sst-nosolr-title' => 'অনুসন্ধান সম্ভব নয়',
+	'tux-sst-nosolr-body' => 'এই উইকিতে অনুবাদ অনুসন্ধান সক্রিয় নেই।',
+	'tux-sst-solr-offline-title' => 'অনুসন্ধান সক্রিয় নেই',
 	'tux-sst-solr-offline-body' => 'অনুসন্ধান পরিষেবাটি সাময়িকভাবে অনুপলব্ধ।',
+	'tux-sst-next' => 'পরবর্তী ফলাফল',
+	'tux-sst-prev' => 'পূর্বের ফলাফল',
 );
 
 /** Breton (brezhoneg)

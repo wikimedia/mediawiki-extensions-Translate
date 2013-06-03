@@ -596,7 +596,7 @@ Translate as a verb.
 	'translate-page-no-such-group' => "Shown when someone requests a group that doesn't exists. [{{FULLURL:Special:Translate|group=invalidgroup}} Example].",
 	'translate-page-disabled' => 'Parameters:
 * $1 - reason that the language has been blacklisted',
-	'translate-language-disabled' => 'Shown when someone requests a blacklisted language. [{{FULLURL:Special:Translate|language=}} Example].',
+	'translate-language-disabled' => 'Shown when someone requests a blacklisted language. [{{FULLURL:Special:Translate|group=mediawiki&language=}} Example].',
 	'translate-page-settings-legend' => '{{Identical|Settings}}',
 	'translate-page-group' => '{{Identical|Group}}',
 	'translate-page-language' => '{{Identical|Language}}',
@@ -6065,12 +6065,15 @@ $messages['ce'] = array(
 	'translate-language-code' => 'Метта ишар',
 	'translate-language-code-field-name' => 'Метта ишар:',
 	'translate-language' => 'Мотт',
+	'translate-mgs-column-language' => 'Мотт',
+	'supportedlanguages-count' => 'Бериг $1 {{plural:$1|мотт|меттанаш|меттанаш}}', # Fuzzy
 	'translate-save' => 'lалашдан ($1)',
 	'translate-jssti-add' => 'Тlетоха могlам чу',
 	'translate-import-load' => 'Файл чуяккхар',
 	'translate-gs-code' => 'Ишар',
 	'translate-gs-multiple' => 'Маситта',
 	'translate-gs-total' => 'Йеригге',
+	'translate-search-more-languages-info' => 'кхин $1 {{PLURAL:$1|мотт|меттанаш|меттанаш}}', # Fuzzy
 );
 
 /** Chamorro (Chamoru)
@@ -6872,12 +6875,12 @@ $messages['da'] = array(
 	'translate-taskui-view' => 'Vis alle beskeder',
 	'translate-taskui-untranslated' => 'Vis uoversatte beskeder',
 	'translate-taskui-optional' => 'Vis valgfrie beskeder',
-	'translate-taskui-acceptqueue' => 'Kun beskeder, jeg kan godkende',
+	'translate-taskui-acceptqueue' => 'Kun beskeder, jeg kan godkende', # Fuzzy
 	'translate-taskui-reviewall' => 'Gennemgå alle oversættelser',
 	'translate-taskui-export-to-file' => 'Eksporter i oprindeligt format',
 	'translate-taskui-export-as-po' => 'Eksporter til offline oversættelse',
 	'translate-taction-translate' => 'Oversæt',
-	'translate-taction-proofread' => 'Læs korrektur',
+	'translate-taction-proofread' => 'Læs korrektur', # Fuzzy
 	'translate-taction-lstats' => 'Sprogstatistik',
 	'translate-taction-mstats' => 'Statistik for beskedgruppe',
 	'translate-taction-export' => 'Eksportér',
@@ -7154,25 +7157,25 @@ Detaljer: $1',
 	'translate-searchprofile-tooltip' => 'Søg i alle oversættelser',
 	'translate-search-languagefilter' => 'Filtrer efter sprog:',
 	'translate-search-nofilter' => 'Ingen filtrering',
-	'translate-messagereview-submit' => 'Godkend',
-	'translate-messagereview-progress' => 'Godkender...',
-	'translate-messagereview-failure' => 'Godkender... mislykket: $1',
-	'translate-messagereview-done' => 'Godkendt',
-	'translate-messagereview-reviews' => 'Godkendt af {{PLURAL:$1|én bruger|$1 brugere}}',
-	'translate-messagereview-reviewswithyou' => 'Godkendt af {{PLURAL:$1|dig|$1 brugere inklusive dig}}',
+	'translate-messagereview-submit' => 'Godkend', # Fuzzy
+	'translate-messagereview-progress' => 'Godkender...', # Fuzzy
+	'translate-messagereview-failure' => 'Godkender... mislykket: $1', # Fuzzy
+	'translate-messagereview-done' => 'Godkendt', # Fuzzy
+	'translate-messagereview-reviews' => 'Godkendt af {{PLURAL:$1|én bruger|$1 brugere}}', # Fuzzy
+	'translate-messagereview-reviewswithyou' => 'Godkendt af {{PLURAL:$1|dig|$1 brugere inklusive dig}}', # Fuzzy
 	'api-error-invalidrevision' => 'Oversættelsen blev ikke fundet',
 	'api-error-unknownmessage' => 'Beskeden blev ikke fundet',
 	'api-error-fuzzymessage' => 'Oversættelse er markeret som forældet',
-	'api-error-owntranslation' => 'Du kan ikke godkende dine egne oversættelser.',
-	'translate-messagereview-no-fuzzy' => 'Forældede meddelelser kan ikke godkendes.',
-	'translate-messagereview-no-own' => 'Du kan ikke godkende dine egne oversættelser.',
-	'translate-messagereview-doit' => 'Godkend denne oversættelse som en korrekt oversættelse.',
+	'api-error-owntranslation' => 'Du kan ikke godkende dine egne oversættelser.', # Fuzzy
+	'translate-messagereview-no-fuzzy' => 'Forældede meddelelser kan ikke godkendes.', # Fuzzy
+	'translate-messagereview-no-own' => 'Du kan ikke godkende dine egne oversættelser.', # Fuzzy
+	'translate-messagereview-doit' => 'Godkend denne oversættelse som en korrekt oversættelse.', # Fuzzy
 	'group-translate-proofr' => 'Oversættelseskorrekturlæsere',
 	'group-translate-proofr-member' => '{{GENDER:$1|oversættelseskorrekturlæser}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Oversættelseskorrekturlæsere',
 	'log-name-translationreview' => 'Log for oversættelseskorrektur',
 	'log-description-translationreview' => 'Log over alle korrekturlæsninger til oversættelser og meddelelsesgrupper.',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|godkendte}} oversættelsen $3',
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|godkendte}} oversættelsen $3', # Fuzzy
 	'logentry-translationreview-group' => '$1 {{GENDER:$2|ændrede}} status for $4 oversættelser af $3 fra $6 til $7',
 	'group-translate-sandboxed' => 'Ikke-godkendte oversættere',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|ikke-godkendt oversætter}}',
@@ -7189,7 +7192,7 @@ Detaljer: $1',
 Statusserne er defineret i opsætningsvariablen $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Seneste oversættelser',
 	'translate-dynagroup-recent-desc' => 'Denne meddelelsesgruppe viser alle nylige oversættelser til dette sprog.
-Primært nyttig til korrekturlæsningsopgaver.',
+Primært nyttig til korrekturlæsningsopgaver.', # Fuzzy
 	'translate-dynagroup-additions-label' => 'De seneste tilføjelser',
 	'translate-dynagroup-additions-desc' => 'Denne meddelelsesgruppe viser nye og ændrede meddelelser.',
 	'translate-dynagroup-by' => 'Oversat af {{GENDER:$1|$1}}',
@@ -7207,11 +7210,11 @@ Primært nyttig til korrekturlæsningsopgaver.',
 	'tux-tab-untranslated' => 'Uoversatte',
 	'tux-tab-outdated' => 'Forældede',
 	'tux-tab-translated' => 'Oversatte',
-	'tux-tab-unproofread' => 'Ikke korrekturlæste',
+	'tux-tab-unproofread' => 'Ikke korrekturlæste', # Fuzzy
 	'tux-edit' => 'Redigér',
 	'tux-status-optional' => 'Valgfri',
 	'tux-status-fuzzy' => 'Forældet',
-	'tux-status-proofread' => 'Korrekturlæst',
+	'tux-status-proofread' => 'Korrekturlæst', # Fuzzy
 	'tux-status-translated' => 'Oversat',
 	'tux-status-saving' => 'Gemmer...',
 	'tux-status-unsaved' => 'Ikke gemt',
@@ -7220,10 +7223,11 @@ Primært nyttig til korrekturlæsningsopgaver.',
 	'tux-editor-discard-changes-button-label' => 'Fjern alle ændringer',
 	'tux-editor-save-button-label' => 'Gem oversættelse',
 	'tux-editor-skip-button-label' => 'Spring til næste',
+	'tux-editor-cancel-button-label' => 'Afbryd',
 	'tux-editor-confirm-button-label' => 'Bekræft oversættelse',
 	'tux-editor-shortcut-info' => 'Tryk på "$1" for at gemme, eller "$2" for at springe til næste meddelelse',
-	'tux-editor-edit-desc' => 'Rediger beskrivelsen',
-	'tux-editor-add-desc' => 'Tilføj en beskrivelse',
+	'tux-editor-edit-desc' => 'Rediger beskrivelsen', # Fuzzy
+	'tux-editor-add-desc' => 'Tilføj en beskrivelse', # Fuzzy
 	'tux-editor-suggestions-title' => 'Forslag',
 	'tux-editor-in-other-languages' => 'På andre sprog',
 	'tux-editor-need-more-help' => 'Brug for mere hjælp?',
@@ -7236,7 +7240,17 @@ Primært nyttig til korrekturlæsningsopgaver.',
 	'tux-editor-n-uses' => 'brugt $1 {{PLURAL:$1|gang|gange}}',
 	'tux-editor-message-desc-more' => 'Se mere',
 	'tux-editor-message-desc-less' => 'Vis færre',
-	'tux-editor-proofreading-mode' => 'Læs korrektur',
+	'tux-editor-proofreading-mode' => 'Læs korrektur', # Fuzzy
+	'tux-editor-proofreading-hide-own-translations' => 'Skjul dine oversættelser',
+	'tux-editor-proofreading-show-own-translations' => 'Vis dine oversættelser',
+	'tux-message-filter-placeholder' => 'Filtrer liste',
+	'tux-message-filter-advanced-button' => 'Avanceret søgning',
+	'tux-empty-list-other' => 'Intet at oversætte',
+	'tux-editor-close-tooltip' => 'Luk',
+	'tux-editor-expand-tooltip' => 'Fold ud',
+	'tux-editor-message-tools-history' => 'Historik',
+	'tux-editor-message-tools-translations' => 'Alle oversættelser',
+	'tux-editor-loading' => 'Indlæser...',
 );
 
 /** German (Deutsch)
@@ -11694,6 +11708,13 @@ Il est surtot empleyê por los travâlys de relèctura.',
 	'tux-editor-use-this-translation' => 'Empleyér coment traduccion',
 );
 
+/** Northern Frisian (Nordfriisk)
+ * @author Murma174
+ */
+$messages['frr'] = array(
+	'translate-js-support' => 'Fraag stel',
+);
+
 /** Friulian (furlan)
  * @author Klenje
  */
@@ -12814,6 +12835,7 @@ Am nitzligschte isch si fir s Korrekturläse.',
 $messages['gu'] = array(
 	'translate' => 'ભાષાંતર',
 	'translate-desc' => 'મીડિયાવિકિ અને આગળ ભાષાંતરણ માટે [[Special:Translate|ખાસ પાનું]]',
+	'translate-taction-proofread' => 'પરીક્ષણ',
 	'translate-page-no-such-language' => 'નિર્દેશિત ભાષા અમાન્ય છે.',
 	'translate-page-no-such-group' => 'નિર્દેશિત સમુહ અમાન્ય છે.',
 	'translate-page-disabled' => "આ સમુહમાં આ ભાષાનો અનુવાદ નિષ્ક્રિય કરી દેવાયો છે.
@@ -12928,6 +12950,11 @@ $messages['gu'] = array(
 	'translate-percentage-fuzzy' => 'કાલગ્રસ્ત',
 	'translate-save' => 'સાચવો ($1)',
 	'translate-jssti-add' => 'સૂચિમાં ઉમેરો',
+	'translate-messagereview-done' => 'પરીક્ષણ થયેલું',
+	'tux-tab-unproofread' => 'પરીક્ષણરહિત',
+	'tux-status-proofread' => 'પરીક્ષણ થયેલું',
+	'tux-editor-proofreading-mode' => 'પરીક્ષણ',
+	'tux-empty-nothing-new-to-proofread' => 'પરીક્ષણ માટે નવું કંઈ નથી',
 );
 
 /** Manx (Gaelg)
@@ -18335,11 +18362,11 @@ $messages['ksh'] = array(
 	'translate-taskui-acceptqueue' => 'Bloß die Täxte udder Nohreschte aanzeije, di_sch och jääjelässe kann',
 	'translate-taskui-reviewall' => 'Alle Övversäzonge jääjelässe',
 	'translate-taskui-export-to-file' => 'Em eije Fomaat äxpoteere',
-	'translate-taskui-export-as-po' => 'För et Övversäze ußerhallf expotteere',
+	'translate-taskui-export-as-po' => 'För et Övversäze ußerhallf äxpotteere',
 	'translate-taction-translate' => 'Övversäze',
 	'translate-taction-proofread' => 'Jääjelässe',
-	'translate-taction-lstats' => 'Schtatistike för de Schprooche',
-	'translate-taction-mstats' => 'Schtatistike för de Nohreeschtejroppe',
+	'translate-taction-lstats' => 'Schtatistik för heh di Schprooch',
+	'translate-taction-mstats' => 'Schtatistik för heh di Nohreeschtejropp',
 	'translate-taction-export' => 'Expotteere',
 	'translate-taction-disabled' => 'Di Axjuhn es op heh dämm Wiki affjeschalldt.',
 	'translate-page-no-such-language' => 'De aanjejovve {{int:translate-page-language}} känne mer nit.',
@@ -18482,7 +18509,7 @@ Wat De jezeich kreß, wann De nix enndrähß, deiht vun dä Shprooch afhange, en
 	'translate-statsf-group' => 'En Leß fun Köözelle för Jroppe, met Kommas dozwesche:',
 	'translate-statsf-submit' => 'Vör-Ansich',
 	'translate-tag-category' => 'Sigge, di mer övversäze kann',
-	'translate-tag-page-desc' => 'Övversäzung fun de Sigg „[[$2|$1]]“ em Wikki.',
+	'translate-tag-page-desc' => 'De Övversäzong fun dä Sigg „[[$2|$1]]“ em Wikki.',
 	'translate-tag-fuzzy-comment' => 'Dä ojinaal-Tex wood fum „[[User:$1|$1]]“ verändert met de Version $2.',
 	'translate-tag-fuzzy-reason' => 'Dä ojinaal-Tex wood fum „$1“ verändert met de Version $2 fum MediaWiki, met dämm Kommentaa: „$3“',
 	'translate-sidebar-alltrans' => 'En ander Schprooche',
@@ -18531,8 +18558,8 @@ Wat De jezeich kreß, wann De nix enndrähß, deiht vun dä Shprooch afhange, en
 	'supportedlanguages-summary' => 'He sin alle Shprooche opjeleß, di mer {{GRAMMAR:em|{{SITENAME}}}} ongershtöze.
 Dobei shtonn de Name vun dä Övversäzer, di aan dä Shprooch aam ärbeide sin.
 Jrüüßer jeschrewwe Övversäzer han mieh övversaz, wi kleiner jeschreve.
-Jröhne jeschrevve han köözlesch noch jet jedonn, je rüüder ene Name, desto länger hät dä nix mih jedonn.',
-	'supportedlanguages-colorlegend' => 'Lejände för de Färv: De läzde Övversäzong es $1 Dääsch her.',
+Jröhn jeschrevve Medmaacher han köözlesch noch jet jedonn, ruud jeschrevve han länger nix mih jedonn.',
+	'supportedlanguages-colorlegend' => 'De Lejände för de Färve: De läzde Övversäzong es $1 Dääsch her.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Eine Övversäzer:|$2 Övversäzer:|Keine Övversäzer}} $1',
 	'supportedlanguages-recenttranslations' => 'neuste Övversäzunge',
 	'supportedlanguages-count' => '{{plural:$1|Ein Schprooch|$1 Schprooche|Kein Schprooche}} ensjesamp.',
@@ -18581,9 +18608,9 @@ $1',
 	'translate-import-err-warnings' => 'Di Dattei es nit em reschteje Fommaat. Beß sescher, dat kein vun Dinge Projramme de <code lang="en">msgctxt</code> Felder fott määt. De Einzelheite: $1',
 	'translate-js-summary' => 'Koot Zosammejefaß:',
 	'translate-js-save' => 'Faßhalde',
-	'translate-js-next' => 'Afshpeishere un de nähkßte op maache',
+	'translate-js-next' => 'Faßhalde un op de nähkßte jonn',
 	'translate-js-nonext' => 'Dat wor de läzde op heh dä Sigg.',
-	'translate-js-skip' => 'Op de nähkßte jonn',
+	'translate-js-skip' => 'Jank op de nähkßte',
 	'translate-js-save-failed' => 'Dat Afshpeishere es donävve jejange. Bes esu joot, un donn heh dä Fähler wigger jävve.',
 	'translate-js-history' => 'Dä Övversäzong ier Verjangeheit',
 	'translate-js-support' => 'Stell en Frooch',
@@ -18603,11 +18630,11 @@ $1',
 	'translate-searchprofile-tooltip' => 'Söhk en alle Övversäzonge',
 	'translate-search-languagefilter' => 'Donn en Shprooch ußwähle:',
 	'translate-search-nofilter' => 'Nä — all de Shprooche',
-	'translate-messagereview-submit' => 'Aannemme', # Fuzzy
+	'translate-messagereview-submit' => 'Jääjelässe!',
 	'translate-messagereview-progress' => 'Als jääjejelässe makeere&nbsp;&hellip;',
 	'translate-messagereview-failure' => 'Et Makeere als jääjejelässe es donävve jejange: $1',
 	'translate-messagereview-done' => 'Jääjejelässe',
-	'translate-messagereview-reviews' => 'Aanjenumme vun {{PLURAL:$1|einem|$1|keinem}} Metmaacher', # Fuzzy
+	'translate-messagereview-reviews' => 'Jääjelässe vun {{PLURAL:$1|einem|$1|keinem}} Metmaacher',
 	'translate-messagereview-reviewswithyou' => 'Jääjejelässe {{PLURAL:$1|vun Dir alleins|vun $1 Metmaacher, och vun Der sellver|bes jäz vun keinem}}.',
 	'api-error-invalidrevision' => 'En Övversäzong hät sesch nit fenge lohße',
 	'api-error-unknownmessage' => 'Dä Täx udder di Nohreesch wohr nit ze fenge',
@@ -18674,7 +18701,7 @@ Dat es et bäß för et Jääjelässe.',
 	'tux-editor-paste-original-button-label' => 'Der Quälltäx enfööje',
 	'tux-editor-discard-changes-button-label' => 'Donn de Änderonge verjäße',
 	'tux-editor-save-button-label' => 'Di Övversäzong seschere',
-	'tux-editor-skip-button-label' => 'Op de nähkßte jonn',
+	'tux-editor-skip-button-label' => 'Jangk op de nähkßte',
 	'tux-editor-cancel-button-label' => 'Ophüre',
 	'tux-editor-confirm-button-label' => 'De Övversäzong beschtääteje',
 	'tux-editor-shortcut-info' => 'Kleck op „$1“ zom Seschere udder op „$2“, öm bloß op de Nähkßte ze jonn.',
@@ -19255,6 +19282,7 @@ Detailler: $1',
 	'logentry-translationreview-group' => '$1 {{GENDER:$2|huet}} de Status vun der Iwwersetzung vu(n) $4 vun $3 vu(n) $6 op $7 geännert',
 	'group-translate-sandboxed' => 'Net-confirméiert Iwwersetzer',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|net-confirméierten Iwwersetzer}}',
+	'right-translate-sandboxmanage' => 'Benotzer vun der Sandkëscht geréieren',
 	'translate-workflow-state-' => '(net agestallt)',
 	'translate-workflowstatus' => 'Statut: $1',
 	'translate-workflow-set-do' => 'Astellen',
@@ -23706,8 +23734,7 @@ $messages['pfl'] = array(
 	'translate-taskui-view' => 'Alli Nochrischde zaische',
 	'translate-taskui-untranslated' => 'Ned iwasedzde Nochrischde zaische',
 	'translate-taskui-optional' => 'Alli obzionali Nochrischde zaische',
-	'translate-taskui-suggestions' => 'Alli Nochrischde mide Voaschlesch ausm Iwasedzungsfundus oazaische',
-	'translate-taskui-acceptqueue' => 'Bloß Nochrischde zaische, wu isch oivaschdone soi kend',
+	'translate-taskui-acceptqueue' => 'Bloß des zaische, wu isch a oivaschdone soi kend',
 	'translate-taskui-reviewall' => 'Alli Iwasedzunge iwabriefe',
 	'translate-taskui-export-to-file' => 'Gebs im aischene Foamad aus',
 	'translate-taskui-export-as-po' => 'Fa ä Offline-Iwasedzung ausgewe',
@@ -23888,8 +23915,6 @@ Alli Wead hawenen unare un ower Rohmewead.',
 	'translate-untranslated' => 'Ned iwasedzd',
 	'translate-percentage-complete' => 'Kombledd',
 	'translate-percentage-fuzzy' => 'Abgloffe',
-	'translate-nothing-to-do' => 'Alli meschlische Iwasedzunge sin schun gmachd worre.
-Konschdse awa uff [[Special:Translate|{{int:translate}}]] iwabriefe.',
 	'translate-languagestats-overall' => 'Alli Nochrischdegrubbe zsomme',
 	'translate-ls-submit' => 'Schdadischdige zaische',
 	'translate-ls-column-group' => 'Nochrischdegrubb',
@@ -23980,26 +24005,25 @@ Hiwais: $1',
 	'translate-searchprofile-tooltip' => 'In alle Iwasedzunge suche',
 	'translate-search-languagefilter' => 'Noch Schbrooche fildare:',
 	'translate-search-nofilter' => 'Alli Schbrooche',
-	'translate-messagereview-submit' => 'Zuschdimme',
-	'translate-messagereview-progress' => 'Schdimm zu …',
-	'translate-messagereview-failure' => 'Zuschdimmung … gschaidad: $1',
-	'translate-messagereview-done' => 'Zugschdimmd',
-	'translate-messagereview-reviews' => 'Zuschdimmung vun {{PLURAL:$1|äm Benudza|$1 Benudza}}',
+	'translate-messagereview-submit' => 'Zuschdimme', # Fuzzy
+	'translate-messagereview-progress' => 'Schdimm zu …', # Fuzzy
+	'translate-messagereview-failure' => 'Zuschdimmung … gschaidad: $1', # Fuzzy
+	'translate-messagereview-done' => 'Zugschdimmd', # Fuzzy
+	'translate-messagereview-reviews' => 'Zuschdimmung vun {{PLURAL:$1|äm Benudza|$1 Benudza}}', # Fuzzy
 	'translate-messagereview-reviewswithyou' => 'Zuschdimmung vun {{PLURAL:$1|äm Benudza|$1 Benudza}}, oinschließlisch vun dir', # Fuzzy
 	'api-error-invalidrevision' => 'Kä Iwasedzung gfunne worre',
 	'api-error-unknownmessage' => 'Kä Nochrischd gfunne worre.',
 	'api-error-fuzzymessage' => 'Die Iwasedzung isch nemme agduell',
-	'api-error-owntranslation' => 'Doi aischini Iwasedzunge konschd ned agzebdiere.',
-	'translate-messagereview-no-fuzzy' => "Va'aldede Iwasedsedzunge kennen ned agzebdiad werre.",
-	'translate-messagereview-no-own' => 'Doi aischini Iwasedzunge konschd ned agzebdiere.',
-	'translate-messagereview-doit' => 'Die Iwasedzung als rischdisch agzebdiere.',
+	'api-error-owntranslation' => 'Doi aischini Iwasedzunge konschd ned agzebdiere.', # Fuzzy
+	'translate-messagereview-no-fuzzy' => "Va'aldede Iwasedsedzunge kennen ned agzebdiad werre.", # Fuzzy
+	'translate-messagereview-no-own' => 'Doi aischini Iwasedzunge konschd ned agzebdiere.', # Fuzzy
+	'translate-messagereview-doit' => 'Die Iwasedzung als rischdisch agzebdiere.', # Fuzzy
 	'group-translate-proofr' => 'Iwasedzungs-Guudachda',
 	'group-translate-proofr-member' => '{{GENDER:$1|Guudachda}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Iwasedzungsguudachda',
 	'log-name-translationreview' => 'Iwasedzungs-Iwabligg-Logbuch',
 	'log-description-translationreview' => 'Logbuch fa alli Iwabriefunge vun Iwasedzunge und Nochrischdegrubbe.',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|hod}} die Iwasedzung $3 iwabrifd',
-	'logentry-groupreview-message' => "$1 hodde Zuschdoand von $4 Iwasedzunge vunde Nochrischdegrubb $3 vun $5 in $6 {{GENDER:$2|g'änad}}",
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|hod}} die Iwasedzung $3 iwabrifd', # Fuzzy
 	'translate-workflow-state-' => '(ned gsedzd)',
 	'translate-workflowstatus' => 'Zuschdond: $1',
 	'translate-workflow-set-do' => 'Oischdelle',
@@ -24013,7 +24037,7 @@ Hiwais: $1',
 De Zuschdoand wead iwa die Oischdellunge <code lang="en">$wgTranslateWorkflowStates</code> oagbassd.',
 	'translate-dynagroup-recent-label' => 'Jingschdi Iwasedzunge',
 	'translate-dynagroup-recent-desc' => 'Die Nochrischdegrubb zaischd alli geschewerdische Iwasedzunge inde Sbrooch oa.
-Oam Beschde ischse fa Uffgawe vum Gescheleese.',
+Oam Beschde ischse fa Uffgawe vum Gescheleese.', # Fuzzy
 	'translate-dynagroup-by' => 'Iwasedzung vun {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Iwasedzung vun {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Ledschdi Änarung vun {{GENDER:$1|$1}}',
@@ -25344,7 +25368,7 @@ $messages['pt-br'] = array(
 	'translate-taskui-export-to-file' => 'Exportar no formato nativo',
 	'translate-taskui-export-as-po' => 'Exportar para tradução off-line',
 	'translate-taction-translate' => 'Traduções',
-	'translate-taction-proofread' => 'Revisões', # Fuzzy
+	'translate-taction-proofread' => 'Revisar',
 	'translate-taction-lstats' => 'Estatísticas de idiomas',
 	'translate-taction-mstats' => 'Estatísticas por grupo de mensagens',
 	'translate-taction-export' => 'Exportar',
@@ -25617,10 +25641,10 @@ Detalhes: $1',
 	'translate-searchprofile-tooltip' => 'Pesquisar todas as traduções',
 	'translate-search-languagefilter' => 'Filtrar por idioma:',
 	'translate-search-nofilter' => 'Não filtrar',
-	'translate-messagereview-submit' => 'Aprovar', # Fuzzy
-	'translate-messagereview-progress' => 'Aprovando...', # Fuzzy
+	'translate-messagereview-submit' => 'Marcar como revisada',
+	'translate-messagereview-progress' => 'Marcando como revisada...',
 	'translate-messagereview-failure' => 'Falha ao aprovar: $1', # Fuzzy
-	'translate-messagereview-done' => 'Aprovada', # Fuzzy
+	'translate-messagereview-done' => 'Revisada',
 	'translate-messagereview-reviews' => 'Aprovada por {{PLURAL:$1|um usuário|$1 usuários}}', # Fuzzy
 	'translate-messagereview-reviewswithyou' => 'Aceita por {{PLURAL:$1|você|$1 usuários, incluindo você}}', # Fuzzy
 	'api-error-invalidrevision' => 'A tradução não foi encontrada',
@@ -25657,6 +25681,7 @@ Usado principalmente em tarefas de revisão.', # Fuzzy
 	'translate-dynagroup-last' => 'Última modificação feita {{GENDER:$1|pelo|pela|por}} $1',
 	'translate-dynagroup-lastc' => 'Última modificação feita {{GENDER:$1|pelo|pela|por}} $1 ($2)',
 	'translate-gethelp' => 'Ajuda',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgrupo|subgrupos}}',
 	'tux-edit' => 'Editar',
 	'tux-status-optional' => 'Opcional',
 	'tux-status-saving' => 'Salvando...',
@@ -25674,6 +25699,7 @@ Usado principalmente em tarefas de revisão.', # Fuzzy
 	'tux-proofread-edit-label' => 'Editar',
 	'tux-editor-page-mode' => 'Página',
 	'tux-editor-doc-editor-cancel' => 'Cancelar',
+	'tux-messagetable-loading-messages' => 'Carregando {{PLURAL:$1|mensagem|mensagens}}.',
 	'tux-empty-list-translated-action' => 'Traduzir',
 	'tux-editor-close-tooltip' => 'Fechar',
 	'tux-editor-expand-tooltip' => 'Expandir',

@@ -184,9 +184,9 @@ $messages['ksh'] = array(
 	'tsb-filter-pending' => 'Aanfroore en der Waadeschlang',
 	'tsb-reminder-title-generic' => 'Maach Ding Sällefsvörschtällong fäädesch, öm enen beschträäteschten Övversäzzer ze wääde.',
 	'tsb-reminder-content-generic' => 'Daach $1,
-Do has Desch köözlesch {{ucfirst:{{GRAMMAR:em|{{ucfirst:{{SITENAME}}}}}}}} aanjemälldt. Do bes jraad koot vör em Freischallde vun extra Hölp för et Övversäzze.
+mer bedangke ons dat De Desch köözlesch {{ucfirst:{{GRAMMAR:em|{{ucfirst:{{SITENAME}}}}}}}} aanjemälldt häs. Wann Do jraad noch e paa Övversäzonge för et Prööve fäädesch määß, künne de Wikki_Kööbeße desch freischallde för et Övversäzze.
 
-Bes esu jood un donn Desch op $2 enlogge un maach e paa Övversäzonge.', # Fuzzy
+Bes esu jood un donn Desch op {{GRAMMAR:Dativ|$2}} enlogge un maach e paa Övversäzonge.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
