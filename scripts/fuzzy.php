@@ -173,10 +173,6 @@ class FuzzyScript {
 	private function updateMessage( $title, $text, $dryrun, $comment = null ) {
 		global $wgTranslateDocumentationLanguageCode;
 
-		$context = RequestContext::getMain();
-		$oldUser = $context->getUser();
-		$context->setUser( FuzzyBot::getUser() );
-
 		STDOUT( "Updating {$title->getPrefixedText()}... ", $title );
 		if ( !$title instanceof Title ) {
 			STDOUT( "INVALID TITLE!", $title );
@@ -197,13 +193,17 @@ class FuzzyScript {
 			return;
 		}
 
-		$article = new Article( $title, 0 );
+		$wikipage = new WikiPage( $title );
 
-		$status = $article->doEdit( $text, $comment ? $comment : 'Marking as fuzzy', EDIT_FORCE_BOT | EDIT_UPDATE );
+		$status = $wikipage->doEdit(
+			$text,
+			$comment ? $comment : 'Marking as fuzzy',
+			EDIT_FORCE_BOT | EDIT_UPDATE,
+			false, /*base revision id*/
+			FuzzyBot::getUser()
+		);
 
 		$success = $status === true || ( is_object( $status ) && $status->isOK() );
 		STDOUT( $success ? 'OK' : 'FAILED', $title );
-
-		$context->setUser( $oldUser );
 	}
 }
