@@ -97,15 +97,15 @@ $wgAPIMetaModules['languagestats'] = 'ApiQueryLanguageStats';
 $wgAPIMetaModules['messagegroups'] = 'ApiQueryMessageGroups';
 $wgAPIMetaModules['messagegroupstats'] = 'ApiQueryMessageGroupStats';
 $wgAPIMetaModules['messagetranslations'] = 'ApiQueryMessageTranslations';
-$wgAPIModules['translationreview'] = 'ApiTranslationReview';
-$wgAPIModules['groupreview'] = 'ApiGroupReview';
 $wgAPIModules['aggregategroups'] = 'ApiAggregateGroups';
-$wgAPIModules['ttmserver'] = 'ApiTTMServer';
-$wgAPIModules['translateuser'] = 'ApiTranslateUser';
-$wgAPIModules['translationaids'] = 'ApiTranslationAids';
+$wgAPIModules['groupreview'] = 'ApiGroupReview';
 $wgAPIModules['hardmessages'] = 'ApiHardMessages';
 $wgAPIModules['translatesandbox'] = 'ApiTranslateSandbox';
-$wgAPIGeneratorModules['messagecollection'] = 'ApiQueryMessageCollection';
+$wgAPIModules['translateuser'] = 'ApiTranslateUser';
+$wgAPIModules['translationaids'] = 'ApiTranslationAids';
+$wgAPIModules['translationreview'] = 'ApiTranslationReview';
+$wgAPIModules['translationstash'] = 'ApiTranslationStash';
+$wgAPIModules['ttmserver'] = 'ApiTTMServer';
 
 // Before MW 1.20
 $wgHooks['APIQueryInfoTokens'][] = 'ApiTranslationReview::injectTokenFunction';
@@ -179,6 +179,7 @@ $wgHooks['MakeGlobalVariablesScript'][] = 'TranslateHooks::addConfig';
 
 // Sandbox
 $wgHooks['UserGetRights'][] = 'TranslateSandbox::enforcePermissions';
+$wgHooks['ApiCheckCanExecute'][] = 'TranslateSandbox::onApiCheckCanExecute';
 
 // Internal event listeners
 $wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupStats::clear';
