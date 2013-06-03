@@ -200,10 +200,10 @@ class TranslateHooks {
 
 	/**
 	 * Hook: LoadExtensionSchemaUpdates
-	 * @param $updater DatabaseUpdater
-	 * @return bool
+     * @param $updater DatabaseUpdater
+     * @return bool
 	 */
-	public static function schemaUpdates( $updater ) {
+	public static function schemaUpdates( DatabaseUpdater $updater ) {
 		$dir = __DIR__ . '/sql';
 
 		$updater->addExtensionUpdate( array(
@@ -287,18 +287,24 @@ class TranslateHooks {
 			true
 		) );
 
+		$updater->addExtensionUpdate( array(
+			'addTable',
+			'translate_stash',
+			"$dir/translate_stash.sql",
+			true
+		) );
+
 		return true;
 	}
 
 	/**
 	 * Hook: ParserTestTables
-	 * @param $tables array
-	 * @return bool
 	 */
-	public static function parserTestTables( &$tables ) {
+	public static function parserTestTables( array &$tables ) {
 		$tables[] = 'revtag';
 		$tables[] = 'translate_groupstats';
 		$tables[] = 'translate_messageindex';
+		$tables[] = 'translate_stash';
 
 		return true;
 	}
