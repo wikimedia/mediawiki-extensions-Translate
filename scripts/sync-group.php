@@ -408,22 +408,18 @@ class ChangeSyncer {
 	 * @param $comment \string Edit summary.
 	 */
 	public function import( $title, $translation, $comment ) {
-		$context = RequestContext::getMain();
-		$oldUser = $context->getUser();
-		$context->setUser( FuzzyBot::getUser() );
-
 		$flags = EDIT_FORCE_BOT;
 		if ( $this->norc ) {
 			$flags |= EDIT_SUPPRESS_RC;
 		}
 
-		$article = new Article( $title, 0 );
+		$wikipage = new WikiPage( $title );
 		STDOUT( "Importing {$title->getPrefixedText()}: ", $title );
-		$status = $article->doEdit( $translation, $comment, $flags );
+		$status = $wikipage->doEdit(
+			$translation, $comment, $flags, false, FuzzyBot::getUser()
+		);
 		$success = $status === true || ( is_object( $status ) && $status->isOK() );
 		STDOUT( $success ? 'OK' : 'FAILED', $title );
-
-		$context->setUser( $oldUser );
 	}
 }
 
