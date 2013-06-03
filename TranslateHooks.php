@@ -186,38 +186,37 @@ class TranslateHooks {
 
 	/**
 	 * Hook: LoadExtensionSchemaUpdates
-	 * @param $updater DatabaseUpdater
-	 * @return bool
 	 */
-	public static function schemaUpdates( $updater ) {
+	public static function schemaUpdates( DatabaseUpdater $updater ) {
 		$dir = __DIR__ . '/sql';
 
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_sections', "$dir/translate_sections.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addField', 'translate_sections', 'trs_order', "$dir/translate_sections-trs_order.patch.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'revtag', "$dir/revtag.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_groupstats', "$dir/translate_groupstats.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addIndex', 'translate_sections', 'trs_page_order', "$dir/translate_sections-indexchange.sql", true ) );
+		$updater->addExtensionTable( 'translate_sections', "$dir/translate_sections.sql" );
+		$updater->addExtensionField( 'translate_sections', 'trs_order', "$dir/translate_sections-trs_order.patch.sql" );
+		$updater->addExtensionTable( 'revtag', "$dir/revtag.sql" );
+		$updater->addExtensionTable( 'translate_groupstats', "$dir/translate_groupstats.sql" );
+		$updater->addExtensionIndex( 'translate_sections', 'trs_page_order', "$dir/translate_sections-indexchange.sql" );
+		// dropExtensionIndex becomes available in MW 1.21
 		$updater->addExtensionUpdate( array( 'dropIndex', 'translate_sections', 'trs_page', "$dir/translate_sections-indexchange2.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_reviews', "$dir/translate_reviews.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_groupreviews', "$dir/translate_groupreviews.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_tms', "$dir/translate_tm.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_metadata', "$dir/translate_metadata.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_messageindex', "$dir/translate_messageindex.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addIndex', 'translate_groupstats', 'tgs_lang', "$dir/translate_groupstats-indexchange.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addField', 'translate_groupstats', 'tgs_proofread', "$dir/translate_groupstats-proofread.sql", true ) );
+		$updater->addExtensionTable( 'translate_reviews', "$dir/translate_reviews.sql" );
+		$updater->addExtensionTable( 'translate_groupreviews', "$dir/translate_groupreviews.sql" );
+		$updater->addExtensionTable( 'translate_tms', "$dir/translate_tm.sql" );
+		$updater->addExtensionTable( 'translate_metadata', "$dir/translate_metadata.sql" );
+		$updater->addExtensionTable( 'translate_messageindex', "$dir/translate_messageindex.sql" );
+		$updater->addExtensionIndex( 'translate_groupstats', 'tgs_lang', "$dir/translate_groupstats-indexchange.sql" );
+		$updater->addExtensionField( 'translate_groupstats', 'tgs_proofread', "$dir/translate_groupstats-proofread.sql" );
+		$updater->addExtensionTable( 'translate_stash', "$dir/translate_stash.sql" );
 
 		return true;
 	}
 
 	/**
 	 * Hook: ParserTestTables
-	 * @param $tables array
-	 * @return bool
 	 */
-	public static function parserTestTables( &$tables ) {
+	public static function parserTestTables( array &$tables ) {
 		$tables[] = 'revtag';
 		$tables[] = 'translate_groupstats';
 		$tables[] = 'translate_messageindex';
+		$tables[] = 'translate_stash';
 
 		return true;
 	}

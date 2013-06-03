@@ -194,18 +194,19 @@ $wgAutoloadClasses['YamlFFS'] = "$dir/ffs/YamlFFS.php";
  */
 $wgAutoloadClasses['ApiAggregateGroups'] = "$dir/api/ApiAggregateGroups.php";
 $wgAutoloadClasses['ApiGroupReview'] = "$dir/api/ApiGroupReview.php";
+$wgAutoloadClasses['ApiHardMessages'] = "$dir/api/ApiHardMessages.php";
 $wgAutoloadClasses['ApiQueryLanguageStats'] = "$dir/api/ApiQueryLanguageStats.php";
 $wgAutoloadClasses['ApiQueryMessageCollection'] = "$dir/api/ApiQueryMessageCollection.php";
 $wgAutoloadClasses['ApiQueryMessageGroupStats'] = "$dir/api/ApiQueryMessageGroupStats.php";
 $wgAutoloadClasses['ApiQueryMessageGroups'] = "$dir/api/ApiQueryMessageGroups.php";
 $wgAutoloadClasses['ApiQueryMessageTranslations'] = "$dir/api/ApiQueryMessageTranslations.php";
+$wgAutoloadClasses['ApiStatsQuery'] = "$dir/api/ApiStatsQuery.php";
 $wgAutoloadClasses['ApiTTMServer'] = "$dir/api/ApiTTMServer.php";
 $wgAutoloadClasses['ApiTranslateSandbox'] = "$dir/api/ApiTranslateSandbox.php";
 $wgAutoloadClasses['ApiTranslateUser'] = "$dir/api/ApiTranslateUser.php";
-$wgAutoloadClasses['ApiTranslationReview'] = "$dir/api/ApiTranslationReview.php";
 $wgAutoloadClasses['ApiTranslationAids'] = "$dir/api/ApiQueryTranslationAids.php";
-$wgAutoloadClasses['ApiStatsQuery'] = "$dir/api/ApiStatsQuery.php";
-$wgAutoloadClasses['ApiHardMessages'] = "$dir/api/ApiHardMessages.php";
+$wgAutoloadClasses['ApiTranslationReview'] = "$dir/api/ApiTranslationReview.php";
+$wgAutoloadClasses['ApiTranslationStash'] = "$dir/api/ApiTranslationStash.php";
 /**@}*/
 
 /**
@@ -245,6 +246,14 @@ $wgAutoloadClasses['VoctrainMessageGroup'] = "$dir/ffs/Voctrain.php";
 $wgAutoloadClasses['WikiMessageGroup'] = "$dir/messagegroups/WikiMessageGroup.php";
 $wgAutoloadClasses['WikiPageMessageGroup'] = "$dir/messagegroups/WikiPageMessageGroup.php";
 $wgAutoloadClasses['WorkflowStatesMessageGroup'] = "$dir/messagegroups/WorkflowStatesMessageGroup.php";
+/**@}*/
+
+/**
+ * @name   "Stash"
+ * @{
+ */
+$wgAutoloadClasses['StashedTranslation'] = "$dir/stash/StashedTranslation.php";
+$wgAutoloadClasses['TranslationStashStorage'] = "$dir/stash/TranslationStashStorage.php";
 /**@}*/
 
 /**
