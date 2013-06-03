@@ -246,7 +246,7 @@ $messages['roa-tara'] = array(
 
 Tu t'è reggistrate da picche sus a {{SITENAME}}. A fà angore quacche otre passe pe sbloccà 'a traduziona libbere e le aiutande de traduziune extra.
 
-Pe piacere tràse jndr'à $2 e fà angore quacche otre traduzione.",
+Pe piacere tràse jndr'à $2 e fà angore quacche otre traduzione.", # Fuzzy
 );
 
 /** Telugu (తెలుగు)
