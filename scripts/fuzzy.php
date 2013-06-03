@@ -142,7 +142,8 @@ class FuzzyScript {
 		);
 
 		if ( count( $this->skipLanguages ) ) {
-			$conds[] = 'substring_index(page_title, \'/\', -1) NOT IN (' . $dbr->makeList( $this->skipLanguages ) . ')';
+			$skiplist = $dbr->makeList( $this->skipLanguages );
+			$conds[] = "substring_index(page_title, '/', -1) NOT IN ($skiplist)";
 		}
 
 		$rows = $dbr->select(
