@@ -43,8 +43,11 @@ class TranslateMoveJob extends Job {
 	}
 
 	function run() {
+		// Unfortunately the global is needed until bug is fixed:
+		// https://bugzilla.wikimedia.org/show_bug.cgi?id=49086
+		global $wgUser;
+
 		// Initialization
-		$context = RequestContext::getMain();
 		$title = $this->title;
 		// Other stuff
 		$user = $this->getUser();
@@ -54,8 +57,8 @@ class TranslateMoveJob extends Job {
 		$doer = User::newFromName( $this->getPerformer() );
 
 		PageTranslationHooks::$allowTargetEdit = true;
-		$oldUser = $context->getUser();
-		$context->setUser( $user );
+		$oldUser = $wgUser;
+		$wgUser = $user;
 		self::forceRedirects( false );
 
 		// Don't check perms, don't leave a redirect
@@ -100,7 +103,7 @@ class TranslateMoveJob extends Job {
 			$entry->publish( $logid );
 		}
 
-		$context->setUser( $oldUser );
+		$wgUser = $oldUser;
 
 		return true;
 	}
@@ -180,6 +183,7 @@ class TranslateMoveJob extends Job {
 		static $originalLevel = null;
 
 		global $wgGroupPermissions;
+		global $wgUser;
 
 		if ( $end ) {
 			if ( $suppressCount ) {
@@ -201,7 +205,6 @@ class TranslateMoveJob extends Job {
 			}
 			++$suppressCount;
 		}
-
-		RequestContext::getMain()->getUser()->clearInstanceCache();
+		$wgUser->clearInstanceCache();
 	}
 }
