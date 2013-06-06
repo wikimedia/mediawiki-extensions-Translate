@@ -15,6 +15,12 @@
  * @ingroup TTMServer
  */
 class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMServer {
+	/**
+	 * In case auto-commit is not enabled, or even if it is, tell solr to
+	 * commit before this time has passed, in milliseconds.
+	 */
+	const COMMIT_WITHIN = 5000;
+
 	protected $client;
 	protected $updates;
 	protected $revIds;
@@ -217,10 +223,9 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 			}
 
 			$doc = $this->createDocument( $handle, $targetText, $revId );
-			$update->addDocument( $doc );
+			// Add document and commit within X seconds.
+			$update->addDocument( $doc, null, self::COMMIT_WITHIN );
 		}
-
-		$update->addCommit();
 
 		try {
 			$this->client->update( $update );
@@ -293,14 +298,14 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 			list( $title, , $text ) = $data;
 			$handle = new MessageHandle( $title );
 			$doc = $this->createDocument( $handle, $text, $this->revIds[$key] );
-			$update->addDocument( $doc );
+			// Add document and commit within X seconds.
+			$update->addDocument( $doc, null, self::COMMIT_WITHIN );
 		}
 		$this->client->update( $update );
 	}
 
 	public function endBatch() {
 		$update = $this->client->createUpdate();
-		$update->addCommit();
 		$this->client->update( $update );
 	}
 
