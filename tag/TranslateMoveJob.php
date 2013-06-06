@@ -161,14 +161,14 @@ class TranslateMoveJob extends Job {
 
 	public function lock() {
 		$cache = wfGetCache( CACHE_ANYTHING );
-		$cache->set( wfMemcKey( 'pt-lock', $this->title->getPrefixedText() ), true );
-		$cache->set( wfMemcKey( 'pt-lock', $this->getTarget()->getPrefixedText() ), true );
+		$cache->set( wfMemcKey( 'pt-lock', sha1( $this->title->getPrefixedText() ) ), true );
+		$cache->set( wfMemcKey( 'pt-lock', sha1( $this->getTarget()->getPrefixedText() ) ), true );
 	}
 
 	public function unlock() {
 		$cache = wfGetCache( CACHE_ANYTHING );
-		$cache->delete( wfMemcKey( 'pt-lock', $this->title->getPrefixedText() ) );
-		$cache->delete( wfMemcKey( 'pt-lock', $this->getTarget()->getPrefixedText() ) );
+		$cache->delete( wfMemcKey( 'pt-lock', sha1( $this->title->getPrefixedText() ) ) );
+		$cache->delete( wfMemcKey( 'pt-lock', sha1( $this->getTarget()->getPrefixedText() ) ) );
 	}
 
 	/**
