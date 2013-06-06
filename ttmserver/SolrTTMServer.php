@@ -217,10 +217,9 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 			}
 
 			$doc = $this->createDocument( $handle, $targetText, $revId );
-			$update->addDocument( $doc );
+			// Add document and commit within 5 seconds.
+			$update->addDocument( $doc, null, 5000 );
 		}
-
-		$update->addCommit();
 
 		try {
 			$this->client->update( $update );
@@ -293,14 +292,14 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 			list( $title, , $text ) = $data;
 			$handle = new MessageHandle( $title );
 			$doc = $this->createDocument( $handle, $text, $this->revIds[$key] );
-			$update->addDocument( $doc );
+			// Add document and commit within 5 seconds.
+			$update->addDocument( $doc, null, 5000 );
 		}
 		$this->client->update( $update );
 	}
 
 	public function endBatch() {
 		$update = $this->client->createUpdate();
-		$update->addCommit();
 		$this->client->update( $update );
 	}
 
