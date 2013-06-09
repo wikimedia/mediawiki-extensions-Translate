@@ -1,0 +1,62 @@
+/**
+ * Introduces a toggle icon than can be used to hide navigation menu in vector
+ * @author Niklas Laxström
+ * @license GPL2+
+ */
+
+.tux-navitoggle {
+	height: 40px;
+	width: 20px;
+	position: absolute;
+	top: 0px;
+}
+
+.tux-navitoggle {
+	/* @embed */
+	background: url('../images/expand-rtl.png') no-repeat scroll right center transparent;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/expand-rtl.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/expand-rtl.svg);
+}
+
+.tux-navi-collapsed .tux-navitoggle {
+	/* @embed */
+	background: url('../images/expand-ltr.png') no-repeat scroll right center transparent;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/expand-ltr.svg);
+	background-image: linear-gradient(transparent, transparent), url(../images/expand-ltr.svg);
+}
+
+.tux-navi-collapsed #mw-panel {
+	display: none;
+}
+
+.tux-navi-collapsed #content {
+	margin-left: 0;
+}
+
+.tux-navi-collapsed #left-navigation {
+	left: 0;
+}
+
+.tux-navi-collapsed .tux-navitoggle {
+	left: 40px !important;
+}
+
+.tux-navi-minilogo {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.tux-navi-collapsed .tux-navi-minilogo {
+	display: block;
+}
+
+.tux-navi-minilogo a {
+	width: 40px;
+	height: 40px;
+	background-size: 30px;
+	display: block;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
