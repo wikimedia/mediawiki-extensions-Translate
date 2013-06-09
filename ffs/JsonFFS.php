@@ -70,6 +70,13 @@ class JsonFFS extends SimpleFFS {
 			$messages['@metadata'] = $template['METADATA'];
 		}
 
+		$authors = $collection->getAuthors();
+		$authors = $this->filterAuthors( $authors, $collection->code );
+
+		if ( $authors !== array() ) {
+			$messages['@metadata']['authors'] = $authors;
+		}
+
 		$mangler = $this->group->getMangler();
 
 		/**
@@ -87,13 +94,6 @@ class JsonFFS extends SimpleFFS {
 
 			$key = $mangler->unmangle( $key );
 			$messages[$key] = $value;
-		}
-
-		$authors = $collection->getAuthors();
-		$authors = $this->filterAuthors( $authors, $collection->code );
-
-		if ( $authors !== array() ) {
-			$messages['@metadata']['authors'] = $authors;
 		}
 
 		// Do not create empty files
