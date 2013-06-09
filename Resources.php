@@ -225,6 +225,15 @@ $wgResourceModules['ext.translate.multiselectautocomplete'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.navitoggle'] = array(
+	'skinScripts' => array(
+		'vector' => 'resources/js/ext.translate.navitoggle.js',
+	),
+	'skinStyles' => array(
+		'vector' => 'resources/css/ext.translate.navitoggle.css',
+	),
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.quickedit'] = array(
 	'scripts' => 'resources/js/ext.translate.quickedit.js',
 	'styles' => 'resources/css/ext.translate.quickedit.css',
@@ -317,6 +326,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'ext.translate.base',
 		'ext.translate.groupselector',
 		'ext.translate.messagetable',
+		'ext.translate.navitoggle',
 		'ext.translate.workflowselector',
 		'ext.uls.init',
 	),
