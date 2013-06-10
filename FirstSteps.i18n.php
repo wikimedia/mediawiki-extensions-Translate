@@ -736,8 +736,8 @@ $messages['cy'] = array(
 	'translate-fs-userpage-level-3' => "Rwyn medru'r iaith hon yn dda:",
 	'translate-fs-userpage-level-2' => "Rwyn medru'r iaith hon yn weddol dda:",
 	'translate-fs-userpage-level-1' => 'Rwyn medru ychydig ar yr iaith hon:',
-	'translate-fs-userpage-help' => 'Nodwch eich sgiliau ieithyddol a dywedwch ychydig amdanoch eich hunain wrthym. Os ydych yn siarad mwy na phum iaith gallwch ychwanegu ieithoedd wedyn.', # Fuzzy
-	'translate-fs-userpage-submit' => 'Cadwer fy nhudalen defnyddiwr', # Fuzzy
+	'translate-fs-userpage-help' => 'Nodwch eich sgiliau ieithyddol a dywedwch ychydig amdanoch eich hunain. Os ydych yn siarad mwy na phum iaith gallwch ychwanegu ieithoedd yn hwyrach.',
+	'translate-fs-userpage-submit' => 'Dechrau fy nhudalen defnyddiwr',
 	'translate-fs-userpage-done' => 'Da iawn! Erbyn hyn mae gennych dudalen defnyddiwr.',
 	'translate-fs-permissions-planguage' => 'Prif iaith:',
 );
@@ -2538,6 +2538,43 @@ Dir kënnt och aner Iwwersetzer vun der selwechter Sprooch op der [[Portal_talk:
 Dat erlaabt et anere Benotzer fir Iech per Mail ze kontaktéieren.
 Dir kritt och Newsletteren awer héchstens eng pro Mount.
 Wann Dir keng Newslettere kréie wëllt, da kënnt Dir dat am Tab "{{int:prefs-personal}}"  vun Ären [[Special:Preferences|Astellungen]] ausschalten.',
+);
+
+/** Lithuanian (lietuvių)
+ * @author Mantak111
+ */
+$messages['lt'] = array(
+	'firststeps' => 'Pirmieji žingsniai',
+	'translate-fs-pagetitle-done' => '- baigta!',
+	'translate-fs-pagetitle-pending' => '- laukiama',
+	'translate-fs-signup-title' => 'Užsiregistruoti',
+	'translate-fs-userpage-title' => 'Susikurkite savo naudotojo puslapį',
+	'translate-fs-permissions-title' => 'Prašykite vertėjo leidimus',
+	'translate-fs-target-title' => 'Pradėkite versti!',
+	'translate-fs-email-title' => 'Patvirtinkite savo elektroninio pašto adresą',
+	'translate-fs-intro' => 'Sveiki atvykę į {{SITENAME}} pirmų žingsnių vedlį.
+Jums bus vadovaujamasi taikant tapti vertėju žingsnį po žingsnio.
+Galų gale jūs galėsite versti sąsajos pranešimus visų remiamų projektų {{SITENAME}} svetainėje.',
+	'translate-fs-selectlanguage' => 'Pasirinkite kalbą',
+	'translate-fs-settings-planguage' => 'Pagrindinė kalba:',
+	'translate-fs-settings-submit' => 'Išsaugoti nustatymus',
+	'translate-fs-userpage-level-N' => 'Mano gimtoji kalba yra',
+	'translate-fs-userpage-level-5' => 'Aš esu profesionalus vertėjas',
+	'translate-fs-userpage-level-4' => 'Aš žinau kaip gimtąją kalbą',
+	'translate-fs-userpage-level-3' => 'Turiu gerą komandą',
+	'translate-fs-userpage-level-2' => 'Turiu vidutinį komandą',
+	'translate-fs-userpage-level-1' => 'Aš žinau šiek tiek',
+	'translate-fs-userpage-help' => 'Nurodykite savo kalbos įgūdžius ir papasakokite ką nors apie save. Jei žinote daugiau nei penkias kalbas, jūs galite pridėti daugiau vėliau.',
+	'translate-fs-userpage-submit' => 'Sukurkite savo naudotojo puslapį',
+	'translate-fs-userpage-done' => 'Gerai atlikai! Dabar jūs turite naudotojo puslapį.',
+	'translate-fs-permissions-planguage' => 'Pagrindinė kalba:',
+	'translate-fs-permissions-help' => 'Dabar jums reikia pateikti prašymą, kad būtumėte priskirtas Vertėjų grupei.
+Pasirinkite pagrindinę kalbą kurią norėtumėte išversti į.
+
+Galima paminėti kitas kalbas ir kitas pastabas laukelyje žemiau.',
+	'translate-fs-permissions-pending' => 'Jūsų prašymas buvo pateiktas [[$1]] ir kažkas iš svetainės darbuotojų patikrins tai kuo skubiau.
+Jei patvirtinsite savo elektroninio pašto adresą, jūs gausite pranešimą elektroniniu paštu, kai tik tai atsitiks.',
+	'translate-fs-permissions-submit' => 'Siųsti prašymą',
 );
 
 /** Latvian (latviešu)

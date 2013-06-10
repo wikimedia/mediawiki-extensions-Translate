@@ -1967,9 +1967,9 @@ $messages['cy'] = array(
 	'tpt-aggregategroup-new-description' => 'Disgrifiad (dewisol):',
 	'log-name-pagetranslation' => 'Lòg cyfieithu tudalennau',
 	'pt-movepage-list-pages' => "Rhestr y tudalennau i'w symud",
-	'pt-movepage-list-translation' => 'Tudalennau cyfieithu', # Fuzzy
-	'pt-movepage-list-section' => 'Tudalennau adran gyfieithu', # Fuzzy
-	'pt-movepage-list-other' => 'Isdudalennau eraill', # Fuzzy
+	'pt-movepage-list-translation' => '{{PLURAL:$1||Tudalen gyfieithu|Tudalennau cyfieithu}}',
+	'pt-movepage-list-section' => '{{PLURAL:$1||Tudalen|Tudalennau}} uned gyfieithu',
+	'pt-movepage-list-other' => '{{PLURAL:$1|Isdudalen arall|Isdudalen arall|Isdudalennau eraill}}',
 	'pt-movepage-list-count' => "Cyfanswm y tudalennau i'w symud yw {{PLURAL:$1|$1}}.",
 	'pt-movepage-legend' => 'Symud tudalen y gellir ei chyfieithu',
 	'pt-movepage-current' => 'Enw cyfredol:',
@@ -1986,7 +1986,7 @@ $messages['cy'] = array(
 	'pt-deletepage-subpages' => "Dileu'r holl isdudalennau",
 	'pt-deletepage-list-pages' => "Rhestr y tudalennau i'w dileu",
 	'pt-deletepage-list-translation' => 'Tudalennau cyfieithu',
-	'pt-deletepage-list-section' => 'Tudalennau adran gyfieithu', # Fuzzy
+	'pt-deletepage-list-section' => 'Tudalennau uned gyfieithu',
 	'pt-deletepage-list-other' => 'Isdudalennau eraill',
 	'pt-deletepage-list-count' => "Cyfanswm y tudalennau i'w dileu yw {{PLURAL:$1|$1}}.",
 );
@@ -4114,6 +4114,7 @@ $messages['ha'] = array(
 /** Hebrew (עברית)
  * @author Amire80
  * @author Deror avi
+ * @author Inkbug
  * @author Rotemliss
  * @author YaronSh
  */
@@ -4224,7 +4225,9 @@ $messages['he'] = array(
 	'logentry-pagetranslation-moveok' => '$1 {{GENDER:$2|השלים|השלימה}} את שינוי השם של הדף ההניתן לתרגום $3 אל $4',
 	'logentry-pagetranslation-movenok' => '$1 {{GENDER:$2|נתקל|נתקלה}} בבעיה בעת העברת הדף $3 לשם $4',
 	'logentry-pagetranslation-deletefok' => '$1 {{GENDER:$2|השלים|השלימה}} את המחיקה של הדף הניתן לתרגום $3',
+	'logentry-pagetranslation-deletefnok' => '$1 {{GENDER:$2|נכשל|נכשלה|נכשל}} במחיקת $3 אשר שייך לדף המתורגם $4',
 	'logentry-pagetranslation-deletelok' => '$1 {{GENDER:$2|השלים|השלימה}} את המחיקה של הדף הניתן לתרגום $3',
+	'logentry-pagetranslation-deletelnok' => '$1 {{GENDER:$2|נכשל|נכשלה|נכשל}} במחיקת $3 אשר שייך לדף התרגום $4',
 	'logentry-pagetranslation-encourage' => '$1 {{GENDER:$2|עודד|עודדה}} את התרגום של $3',
 	'logentry-pagetranslation-discourage' => '$1 {{GENDER:$2|המליץ|המליצה}} לא לתרגם את $3',
 	'logentry-pagetranslation-prioritylanguages-unset' => '$1 {{GENDER:$2|הסיר|הסירה}} שפות מועדפות מהדף הניתן לתרגום $3',
@@ -6193,12 +6196,16 @@ $messages['lg'] = array(
 
 /** Lithuanian (lietuvių)
  * @author Eitvys200
+ * @author Mantak111
  */
 $messages['lt'] = array(
 	'pagetranslation' => 'Puslapio vertimas',
+	'action-pagetranslation' => 'valdyti išverstus puslapius',
+	'tpt-template' => 'Puslapio šablonas',
 	'tpt-templatediff' => 'Pasikeitė puslapio šablonas.',
 	'tpt-diff-old' => 'Ankstesnis tekstas',
 	'tpt-diff-new' => 'Naujas tekstas',
+	'tpt-sections-deleted' => 'Ištrinti vertimo vienetai',
 	'tpt-sections-template' => 'Vertimo puslapio šablonas',
 	'tpt-badtitle' => 'duotas puslapio pavadinimas ($1) nėra gera antraštė',
 	'tpt-nosuchpage' => 'Puslapio $1 neegzistuoja',
@@ -6206,12 +6213,33 @@ $messages['lt'] = array(
 	'tpt-edit-failed' => 'Nepavyko atnaujinti puslapio: $1',
 	'tpt-already-marked' => 'Šio puslapio naujausia versija jau yra pažymėta vertimui.',
 	'tpt-unmarked' => 'Puslapis $1 nebėra pažymėtas vertimams.',
+	'tpt-old-pages-title' => 'Puslapių vertimas',
 	'tpt-other-pages-title' => 'Sugadinti puslapiai',
+	'tpt-select-prioritylangs-reason' => 'Priežastis:',
 	'tpt-rev-mark' => 'Pažymėti vertimui',
 	'tpt-rev-unmark' => 'pašalinti iš vertimo',
 	'tpt-rev-encourage' => 'atkurti',
 	'translate-tag-translate-link-desc' => 'Versti šį puslapį',
+	'translate-tag-markthis' => 'Pažymėti šį puslapį vertimui',
 	'tpt-languages-legend' => 'Kitos kalbos:',
+	'tpt-languages-zero' => 'Pradėti šios kalbos vertimą',
+	'tpt-discouraged-language-reason' => 'Priežastis: $1',
+	'tpt-download-page' => 'Puslapyje eksportuojamas su vertimais',
+	'aggregategroups' => 'Bendros grupės',
+	'tpt-aggregategroup-add' => 'Pridėti',
+	'tpt-aggregategroup-save' => 'Išsaugoti',
+	'tpt-aggregategroup-add-new' => 'Pridėti naują bendrą grupę',
+	'tpt-aggregategroup-new-name' => 'Vardas:',
+	'tpt-aggregategroup-new-description' => 'Aprašymas (neprivaloma):',
+	'tpt-aggregategroup-remove-confirm' => 'Ar tikrai norite naikinti šią bendrą grupę?',
+	'tpt-aggregategroup-invalid-group' => 'Grupės nėra',
+	'log-name-pagetranslation' => 'Puslapio vertimo žurnalas',
+	'pt-movepage-current' => 'Dabartinis pavadinimas:',
+	'pt-movepage-new' => 'Naujas pavadinimas:',
+	'pt-movepage-reason' => 'Priežastis:',
+	'pt-movepage-subpages' => 'Perkelti visus subpuslapius',
+	'pt-movepage-action-check' => 'Patikrinkite, ar perkelti yra įmanoma',
+	'pt-movepage-action-perform' => 'Perkelti',
 	'pt-movepage-action-other' => 'Pakeisti taikinį',
 	'pt-deletepage-action-check' => 'Sąrašą puslapių kurie turi būti ištrinti.',
 	'pt-deletepage-action-perform' => 'Padaryti trynimą',
@@ -6220,8 +6248,11 @@ $messages['lt'] = array(
 	'pt-deletepage-full-legend' => 'Ištrinti išverčiama puslapį',
 	'pt-deletepage-current' => 'Puslapio pavadinimas:',
 	'pt-deletepage-reason' => 'Priežastis:',
+	'pt-deletepage-subpages' => 'Ištrinti visus subpuslapius',
 	'pt-deletepage-list-pages' => 'Sąrašas ištrinti puslapius',
 	'pt-deletepage-list-translation' => 'Vertimo puslapiai',
+	'pt-deletepage-list-section' => 'Vertimo vieneto puslapiai',
+	'pt-deletepage-list-other' => 'Kiti subpuslapiai',
 	'pt-deletepage-full-logreason' => 'Dalis išverčiamo puslapio $1.',
 	'pt-deletepage-lang-logreason' => 'Dalis vertimo puslapio $1.',
 );
@@ -6274,6 +6305,7 @@ $messages['mg'] = array(
  * @author Iwan Novirion
  */
 $messages['min'] = array(
+	'tpt-languages-legend' => 'Baso lain:',
 	'pt-movepage-intro' => 'Laman istimewa ko mamungkinan Sanak untuak mamindahan laman nan ditandoi untuak ditajamahan.
 Tindakan pamindahan indak akan balangsuang sakatika dek banyak laman nan paralu dipindahan.
 Sangkek laman dipindahan, indak dimungkinan untuak barinteraksi jo laman nan basangkutan.
@@ -8894,6 +8926,7 @@ $messages['sr-ec'] = array(
 	'tpt-action-nofuzzy' => 'Не поништавајте преводе',
 	'tpt-new-pages-title' => 'Предложене странице за превођење',
 	'tpt-select-prioritylangs-reason' => 'Разлог:',
+	'tpt-sections-prioritylangs' => 'Приоритетни језици',
 	'tpt-rev-mark' => 'означи за превођење',
 	'tpt-rev-unmark' => 'уклони из превода',
 	'tpt-rev-discourage' => 'непрепоручено',
@@ -8907,6 +8940,7 @@ $messages['sr-ec'] = array(
 	'tpt-translation-intro' => 'Ово је <span class="plainlinks">[$1 преведена верзија]</span> странице [[$2]]. Превод је $3% завршен.',
 	'tpt-languages-legend' => 'Остали језици:',
 	'tpt-languages-separator' => '&#160;•&#160;',
+	'tpt-languages-zero' => 'Почните превођења на овом језику',
 	'tpt-discouraged-language-reason' => 'Разлог: $1',
 	'tpt-aggregategroup-add' => 'Додај',
 	'tpt-aggregategroup-save' => 'Сачувај',
@@ -8942,7 +8976,9 @@ $messages['sr-ec'] = array(
 	'pt-deletepage-full-legend' => 'Обриши преводиву страницу',
 	'pt-deletepage-current' => 'Назив странице:',
 	'pt-deletepage-reason' => 'Разлог:',
+	'pt-deletepage-subpages' => 'Обриши све подстранице',
 	'pt-deletepage-list-pages' => 'Списак страница за брисање',
+	'pt-deletepage-list-translation' => 'Странице за превођење',
 	'pt-deletepage-list-other' => 'Остале подстранице',
 	'pt-deletepage-list-count' => 'Укупно $1 {{PLURAL:$1|страница|странице|страница}} за брисање.', # Fuzzy
 );

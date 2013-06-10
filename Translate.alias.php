@@ -561,8 +561,8 @@ $specialPageAliases['kw'] = array(
 	'Translations' => array( 'Treylyansow' ),
 	'LanguageStats' => array( 'StatystygyonYeth' ),
 	'PageTranslation' => array( 'TreylyansFolennow' ),
-	'ImportTranslations' => array( 'YmperthyTreylyansow' ),
-	'SupportedLanguages' => array( 'YethowScoodhys' ),
+	'ImportTranslations' => array( 'YmperthiTreylyansow' ),
+	'SupportedLanguages' => array( 'YethowSkoodhys' ),
 	'MyLanguage' => array( 'OwYeth' ),
 );
 
