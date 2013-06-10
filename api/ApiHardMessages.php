@@ -31,6 +31,10 @@ class ApiHardMessages extends ApiBase {
 		}
 
 		$handle = new MessageHandle( $title );
+		if ( !$handle->isValid() ) {
+			$this->dieUsage( 'Invalid title', 'invalidtitle' );
+		}
+
 		$baseTitle = Title::makeTitle( $title->getNamespace(),
 			$handle->getKey() . '/' . $handle->getGroup()->getSourceLanguage() );
 		$revision = Revision::newFromTitle( $baseTitle );
