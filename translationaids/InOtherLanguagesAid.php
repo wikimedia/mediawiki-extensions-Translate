@@ -24,8 +24,14 @@ class InOtherLanguagesAid extends TranslationAid {
 		$translations = $this->getTranslations();
 		$code = $this->handle->getCode();
 
+		$sourceLanguage = $this->handle->getGroup()->getSourceLanguage();
+
 		foreach ( $this->getFallbacks( $code ) as $fbcode ) {
 			if ( !isset( $translations[$fbcode] ) ) {
+				continue;
+			}
+
+			if ( $fbcode === $sourceLanguage ) {
 				continue;
 			}
 
