@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "D08MaVno",
+        "filename": "resources/css/ext.translate.navitoggle.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-06-11T07:14:43Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "D0yMiQgU",
+      "revId": "81e558f2152e06f399b1c115280901b98e7017c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "D04MfrrM",
         "filename": "resources/css/ext.translate.navitoggle.css",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-11T04:35:00Z",
       "side": 1,
       "message": ".tux-navi-collapsed is not required here",
+      "revId": "81e558f2152e06f399b1c115280901b98e7017c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "D06MfUmg",
+        "filename": "resources/css/ext.translate.navitoggle.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-06-11T07:14:43Z",
+      "side": 1,
+      "message": "It is or otherwise it would always be hidden. There is no point in toggle if you can\u0027t toggle it.",
+      "parentUuid": "D04MfrrM",
       "revId": "81e558f2152e06f399b1c115280901b98e7017c0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
