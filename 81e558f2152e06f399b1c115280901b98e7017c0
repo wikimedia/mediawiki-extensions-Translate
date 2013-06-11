@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "D0yMiQgU",
+        "filename": "resources/css/ext.translate.navitoggle.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-06-11T04:35:00Z",
+      "side": 1,
+      "message": "you wanted to put svg here, right?\n\nSame in the below style rule too.",
+      "revId": "81e558f2152e06f399b1c115280901b98e7017c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "D04MfrrM",
+        "filename": "resources/css/ext.translate.navitoggle.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-06-11T04:35:00Z",
+      "side": 1,
+      "message": ".tux-navi-collapsed is not required here",
+      "revId": "81e558f2152e06f399b1c115280901b98e7017c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "D02McSr8",
+        "filename": "resources/css/ext.translate.navitoggle.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-06-11T04:35:00Z",
+      "side": 1,
+      "message": "elements with a given id are unique in a page, so extra class is redundant.",
+      "revId": "81e558f2152e06f399b1c115280901b98e7017c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "D08N5tvs",
+        "filename": "resources/css/ext.translate.navitoggle.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-06-11T04:35:00Z",
+      "side": 1,
+      "message": "Same as above comment",
+      "revId": "81e558f2152e06f399b1c115280901b98e7017c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "D0wMLvn8",
+        "filename": "resources/js/ext.translate.navitoggle.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-06-11T04:35:00Z",
+      "side": 1,
+      "message": "Space before function needed",
+      "revId": "81e558f2152e06f399b1c115280901b98e7017c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "D0.MPmoc",
+        "filename": "resources/js/ext.translate.navitoggle.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-06-11T04:35:00Z",
+      "side": 1,
+      "message": "A space required before last )",
+      "revId": "81e558f2152e06f399b1c115280901b98e7017c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
