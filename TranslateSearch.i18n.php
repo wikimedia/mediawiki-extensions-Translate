@@ -422,7 +422,7 @@ $messages['ja'] = array(
  */
 $messages['ka'] = array(
 	'searchtranslations' => 'თარგმანების ძიება',
-	'tux-sst-edit' => 'შეტყობინების რედაქტირება', # Fuzzy
+	'tux-sst-edit' => 'თარგმანის რედაქტირება',
 	'tux-sst-search' => 'ძიება',
 	'tux-sst-search-ph' => 'თარგმანების ძიება',
 	'tux-sst-count' => '{{PLURAL:$1|ნაპოვნია ერთი შედეგი|ნაპოვნია $1 შედეგი}}',

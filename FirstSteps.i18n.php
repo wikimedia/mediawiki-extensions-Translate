@@ -2324,7 +2324,7 @@ $messages['ka'] = array(
 	'translate-fs-userpage-level-3' => 'მე კარგად ვიცი',
 	'translate-fs-userpage-level-2' => 'მე საშუალოდ ვფლობ',
 	'translate-fs-userpage-level-1' => 'საწყისი ცოდნა',
-	'translate-fs-userpage-submit' => 'ჩემი მომხმარებლის გვერდის შექმნა', # Fuzzy
+	'translate-fs-userpage-submit' => 'შექმენით თქვენი მომხმარებლის გვერდი',
 	'translate-fs-userpage-done' => 'ყოჩაღ! ახლა თქვენ უკვე გაქვთ მომხმარებლის გვერდი.',
 	'translate-fs-permissions-planguage' => 'ძირითადი ენა:',
 	'translate-fs-permissions-submit' => 'მოთხოვნის გაგზავნა',
@@ -2548,6 +2548,7 @@ $messages['lt'] = array(
 	'translate-fs-pagetitle-done' => '- baigta!',
 	'translate-fs-pagetitle-pending' => '- laukiama',
 	'translate-fs-signup-title' => 'Užsiregistruoti',
+	'translate-fs-settings-title' => 'Konfigūruokite savo parinktys',
 	'translate-fs-userpage-title' => 'Susikurkite savo naudotojo puslapį',
 	'translate-fs-permissions-title' => 'Prašykite vertėjo leidimus',
 	'translate-fs-target-title' => 'Pradėkite versti!',
@@ -3418,6 +3419,7 @@ $messages['roa-tara'] = array(
 	'translate-fs-settings-planguage' => 'Lènga prengepàle:',
 	'translate-fs-settings-submit' => 'Reggistre le preferenze',
 	'translate-fs-permissions-planguage' => 'Lènga prengepàle:',
+	'translate-fs-permissions-submit' => "Manne 'na richieste",
 );
 
 /** Russian (русский)

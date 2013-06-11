@@ -5724,7 +5724,7 @@ $messages['ko'] = array(
 이유: $1',
 	'tpt-discouraged-language-force' => "'''이 문서는 $2(으)로 번역할 수 없습니다.'''
 
-번역 관리자는 이 문서가 $3(으)로 번역할 수 있도록 결정합니다.",
+번역 관리자는 이 문서가 $3(으)로 번역할 수 있도록 결정했습니다.",
 	'tpt-discouraged-language' => "'''$2로 번역하는 것은 이 문서에 대해 우선 순위가 아닙니다.'''
 
 번역 관리자는 $3에 번역 노력을 집중하기로 결정합니다.",
@@ -8258,6 +8258,7 @@ Asigurați-vă că are eticheta <nowiki><translate></nowiki> și are o sintaxă 
  */
 $messages['roa-tara'] = array(
 	'pagetranslation' => 'Pàgene de traduzione',
+	'right-pagetranslation' => 'Signe le revisiune de le pàggene pe traduzione',
 	'action-pagetranslation' => 'gestisce le pàggene traducibbele',
 	'tpt-desc' => 'Estenzione pa traduzione de le pàggene de condenute',
 	'tpt-section' => 'Aunità de traduzione $1',
@@ -8268,6 +8269,8 @@ Nome: $1',
 	'tpt-templatediff' => "'U template d'a pàgene ha cangiate.",
 	'tpt-diff-old' => 'Teste precedende',
 	'tpt-diff-new' => 'Teste nuève',
+	'tpt-submit' => 'Signe sta versione pa traduzione',
+	'tpt-sections-oldnew' => 'Aunità de traduzione nuève e esistende',
 	'tpt-sections-deleted' => 'Aunità de traduziune scangellate',
 	'tpt-sections-template' => "Tempalte d'a pàgene de traduzione",
 	'tpt-action-nofuzzy' => 'Nò invalidà le traduziune',
@@ -8282,6 +8285,7 @@ Nome: $1',
 	'translate-tag-translate-link-desc' => 'Traduce sta vosce',
 	'tpt-languages-legend' => 'Otre lènghe:',
 	'tpt-languages-separator' => '&#160;•&#160;',
+	'tpt-discouraged-language-reason' => 'Mutive: $1',
 	'tpt-aggregategroup-add' => 'Aggiunge',
 	'tpt-aggregategroup-save' => 'Reggìstre',
 	'tpt-aggregategroup-new-name' => 'Nome:',
