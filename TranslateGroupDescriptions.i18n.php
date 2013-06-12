@@ -2090,6 +2090,13 @@ Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] é um projeto para apresentar offline uma versão de texto da Wikipédia num dispositivo móvel.',
 );
 
+/** Quechua (Runa Simi)
+ * @author AlimanRuna
+ */
+$messages['qu'] = array(
+	'translate-group-desc-mediawiki-core-branch' => '[[Translating:MediaWiki|MediaWiki]]manta takyaq musuqchasqapaq willaykuna',
+);
+
 /** Romanian (română)
  * @author Minisarm
  */

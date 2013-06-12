@@ -6053,6 +6053,7 @@ $messages['ce'] = array(
 	'translate-save' => 'lалашдан ($1)',
 	'translate-jssti-add' => 'Тlетоха могlам чу',
 	'translate-import-load' => 'Файл чуяккхар',
+	'translate-js-summary' => 'Цунах лаьцна:',
 	'translate-gs-code' => 'Ишар',
 	'translate-gs-multiple' => 'Маситта',
 	'translate-gs-total' => 'Йеригге',
@@ -16335,7 +16336,7 @@ $messages['ja'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => '以下の{{PLURAL:$2|リンク}}に問題点があります:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => '以下の{{PLURAL:$2|リンク|&#32;$2 個のリンク}}が欠けています:
+	'translate-checks-links-missing' => '以下の{{PLURAL:$2|リンク|&nbsp;$2 個のリンク}}がありません:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => '以下の{{PLURAL:$2|タグ}}を正しいものに書き換えてください:
 <strong><nowiki>$1</nowiki></strong>',
@@ -16482,12 +16483,8 @@ $messages['ja'] = array(
 確認してください。',
 	'translate-manage-fuzzy-summary' => 'メッセージの定義が変更されました',
 	'importtranslations' => '翻訳の取り込み',
-	'translate-import-from-url' => 'ファイルの URL:',
-	'translate-import-from-wiki' => 'このウィキ内のファイル:',
 	'translate-import-from-local' => 'ローカルファイルをアップロード:',
 	'translate-import-load' => 'ファイル読み込み',
-	'translate-import-err-type-not-supported' => 'ファイルを読み込めません:
-<code>$1</code> 方式には対応していません。',
 	'translate-import-err-dl-failed' => 'ファイルを取得できません:
 $1',
 	'translate-import-err-ul-failed' => 'ファイルのアップロードに失敗しました',
@@ -18794,6 +18791,7 @@ Dat es et bäß för et Jääjelässe.',
 
 /** Kurdish (Latin script) (Kurdî (latînî)‎)
  * @author George Animal
+ * @author Ghybu
  * @author Gomada
  */
 $messages['ku-latn'] = array(
@@ -18826,7 +18824,7 @@ $messages['ku-latn'] = array(
 	'translate-magic-cm-original' => 'Orjînal',
 	'translate-magic-cm-comment' => 'Şîrove:',
 	'translate-magic-cm-save' => 'Tomar bike',
-	'translate-magic-notsaved' => 'Guherandina te nehate qeydkirin!',
+	'translate-magic-notsaved' => 'Guherandina te nehate tomarkirin!',
 	'translate-pref-editassistlang' => 'Zimanên alîkar:',
 	'prefs-translate' => 'Vebijarkên wergerê',
 	'translate-rc-translation-filter' => 'Wergeran parzûn bike:',
@@ -25921,10 +25919,10 @@ $messages['qu'] = array(
 	'translate-taskui-view' => 'Tukuy willaykunata rikuchiy',
 	'translate-taskui-untranslated' => "Mana t'ikrasqa willaykunata rikuchiy",
 	'translate-taskui-optional' => 'Akllana willaykunata rikuchiy',
-	'translate-taskui-acceptqueue' => 'Uyakunallay willaykunata rikuchiy', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Allinchaspa ñawirina unanchanallay willaykunata rikuchiy',
 	'translate-taskui-reviewall' => "Tukuy t'ikrasqakunata allinchanapaq ñawiriy",
 	'translate-taction-translate' => "T'ikray",
-	'translate-taction-proofread' => 'Allinchaspa ñawiriy', # Fuzzy
+	'translate-taction-proofread' => 'Allinchaspa ñawiriy',
 	'translate-taction-lstats' => 'Rimaymanta ranuy (kanchachani)',
 	'translate-taction-mstats' => 'Willay huñu ranuy (kanchachani)',
 	'translate-taction-export' => 'Hawaman quy',
@@ -26087,12 +26085,8 @@ Kayrayku:
 	'translate-manage-action-fuzzy' => "T'ikrasqakunata hawamanta chaskispa allinchanapaq ñawirina nispa unanchay",
 	'translate-manage-fuzzy-summary' => "Willañiqip sut'ichayninqa hukchasqam.",
 	'importtranslations' => "T'ikrasqakunata hawamanta chaskiy",
-	'translate-import-from-url' => 'Willañiqiman URL:',
-	'translate-import-from-wiki' => 'Kay wikipi willañiqi:',
 	'translate-import-from-local' => 'Tiyanalla willañiqita chaqnay:',
 	'translate-import-load' => 'Willañiqita chaqnay',
-	'translate-import-err-type-not-supported' => "Manam atinichu williñiqita chaqnayta:
-<code>$1</code> nisqa pawaqa manam q'imisqachu.",
 	'translate-import-err-dl-failed' => 'Manam atinichu williñiqita apamuyta:
 $1',
 	'translate-import-err-ul-failed' => 'Willañiqi churkuyqa manam aypasqachu.',
@@ -26107,6 +26101,7 @@ $1',
 	'translate-js-save-failed' => 'Manam waqaychasqachu. Ama hina kaspa, kay pantasqamanta willariy.',
 	'translate-js-history' => "T'ikraypa wiñay kaswaynin",
 	'translate-js-support' => 'Tapuy',
+	'translate-js-support-title' => 'Yanapayta mañarikuy, kay willamanta mana aypalla yachaspaykiqa.',
 	'translate-js-support-unsaved-warning' => "Manaraq waqaychasqayki t'ikrasqaykikunam kachkan.",
 	'translate-gs-pos' => 'Ñiqi',
 	'translate-gs-code' => 'Tuyru',
@@ -26122,25 +26117,25 @@ $1',
 	'translate-searchprofile-tooltip' => "Tukuy t'ikrasqakunapi maskay",
 	'translate-search-languagefilter' => "Ch'illchina rimaykama:",
 	'translate-search-nofilter' => "Ama ch'illchina kachunchu",
-	'translate-messagereview-submit' => 'Uyakuy', # Fuzzy
-	'translate-messagereview-progress' => 'Uyakuspa...', # Fuzzy
-	'translate-messagereview-failure' => 'Uyakuspa... manam aypasqachu: $1', # Fuzzy
-	'translate-messagereview-done' => 'Uyakusqañam', # Fuzzy
-	'translate-messagereview-reviews' => '{{PLURAL:$1|Huk ruraqpa|$1 ruraqkunap}} uyakusqanñam', # Fuzzy
-	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|Qampa uyakusqaykiñam|$1 ruraqkunap (qampapas) uyakusqaykichikñam}}', # Fuzzy
+	'translate-messagereview-submit' => 'Allinchaspa ñawirisqa unanchay',
+	'translate-messagereview-progress' => 'Allinchaspa ñawirisqa unanchaspa...',
+	'translate-messagereview-failure' => 'Allinchaspa ñawirisqa unanchayqa manam aypasqachu: $1',
+	'translate-messagereview-done' => 'Allinchaspa ñawirisqa unanchasqañam',
+	'translate-messagereview-reviews' => '{{PLURAL:$1|Huk ruraqpa|$1 ruraqkunap}} allinchaspa ñawirisqa unanchasqanñam',
+	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|Qampa uyakusqaykiñam|$1 ruraqkunap (qampapas) allinchaspa ñawirisqa unanchasqaykichikñam}}',
 	'api-error-invalidrevision' => "T'ikrasqaqa manam tarisqachu",
 	'api-error-unknownmessage' => 'Willayqa manam tarisqachu',
 	'api-error-fuzzymessage' => 'Willayqa allinchanapaq ñawirina unanchasqam',
-	'api-error-owntranslation' => "Kikiykip t'ikrasqaykikunataqa manam uyakuyta atinkichu", # Fuzzy
-	'translate-messagereview-no-fuzzy' => "Allinchanapaq ñawirina t'ikrasqakunataqa manam uyakuyta atinkichu.", # Fuzzy
-	'translate-messagereview-no-own' => "Kikiykip t'ikrasqaykikunataqa manam uyakuyta atinkichu.", # Fuzzy
-	'translate-messagereview-doit' => "Kay t'ikrasqata allin t'ikrasqam nispa uyakuy.", # Fuzzy
+	'api-error-owntranslation' => "Kikiykip t'ikrasqaykikunataqa manam allinchaspa ñawirisqa unanchayta atinkichu",
+	'translate-messagereview-no-fuzzy' => "Allinchanapaq ñawirina t'ikrasqakunataqa manam allinchaspa ñawirisqa unanchayta atinkichu.",
+	'translate-messagereview-no-own' => "Kikiykip t'ikrasqaykikunataqa manam allinchaspa ñawirisqa unanchayta atinkichu.",
+	'translate-messagereview-doit' => "Kay t'ikrasqata allin t'ikrasqam nispa allinchaspa ñawirisqa unanchay.",
 	'group-translate-proofr' => "T'ikrasqata qhawakipaqkuna",
 	'group-translate-proofr-member' => "{{GENDER:$1|t'ikrasqata qhawakipaq}}",
 	'grouppage-translate-proofr' => "{{ns:project}}:T'ikrasqata qhawakipaqkuna",
 	'log-name-translationreview' => "T'ikrasqata qhawakipay hallch'a",
 	'log-description-translationreview' => "T'ikrasqakunamanta willay huñukunamantapas tukuy qhawakipasqakunamanta hallch'a.",
-	'logentry-translationreview-message' => "$1 {{GENDER:$2|uyakun}} t'ikrasqata $3", # Fuzzy
+	'logentry-translationreview-message' => "$1 {{GENDER:$2|allinchaspa ñawirisqa unanchan}} t'ikrasqata $3",
 	'logentry-translationreview-group' => "$1 {{GENDER:$2|hukchan}} $4-man t'ikrasqata $3 $6-manta $7-man",
 	'translate-workflow-state-' => '(mana churasqa)',
 	'translate-workflowstatus' => 'Kachkaynin: $1',
@@ -26167,11 +26162,11 @@ $1',
 	'tux-tab-untranslated' => "Mana t'ikrasqa",
 	'tux-tab-outdated' => "Mawk'ayasqa",
 	'tux-tab-translated' => "T'ikrasqa",
-	'tux-tab-unproofread' => 'Manaraq allinchaspa ñawirisqa', # Fuzzy
+	'tux-tab-unproofread' => 'Manaraq allinchaspa ñawirisqa',
 	'tux-edit' => "Llamk'apuy",
 	'tux-status-optional' => 'Akllana',
 	'tux-status-fuzzy' => "Mawk'ayasqa",
-	'tux-status-proofread' => 'Allinchaspa ñawirisqa', # Fuzzy
+	'tux-status-proofread' => 'Allinchaspa ñawirisqa',
 	'tux-status-translated' => "T'ikrasqa",
 	'tux-status-saving' => 'Waqaychaspa...',
 	'tux-status-unsaved' => 'Mana waqaychasqa',
@@ -26180,10 +26175,11 @@ $1',
 	'tux-editor-discard-changes-button-label' => 'Hukchasqakunata tatiy',
 	'tux-editor-save-button-label' => "T'ikrasqata waqaychay",
 	'tux-editor-skip-button-label' => "Qatiqman t'iskuy",
+	'tux-editor-cancel-button-label' => 'Ama niy',
 	'tux-editor-confirm-button-label' => "T'ikrasqata takyachiy",
 	'tux-editor-shortcut-info' => '"$1"-ta ñit\'iy waqaychanapaq, icha "$2"-ta ñit\'iy qatiq willayman t\'iskunaykipaq',
-	'tux-editor-edit-desc' => "T'iktunata llamk'apuy", # Fuzzy
-	'tux-editor-add-desc' => "T'iktunata yapay", # Fuzzy
+	'tux-editor-edit-desc' => "T'iktunata llamk'apuy",
+	'tux-editor-add-desc' => "T'iktunata yapay",
 	'tux-editor-suggestions-title' => 'Munachiykuna',
 	'tux-editor-in-other-languages' => 'Huk simikunapi',
 	'tux-editor-need-more-help' => 'Aswan yanapayta muchunkichu?',
@@ -26197,11 +26193,12 @@ $1',
 	'tux-editor-message-desc-more' => 'Astawan qhaway',
 	'tux-editor-message-desc-less' => 'Aswan pisita qhaway',
 	'tux-editor-clear-translated' => "T'ikrasqakunata pakay",
-	'tux-editor-proofreading-mode' => 'Allinchaspa ñawiriy', # Fuzzy
+	'tux-editor-proofreading-mode' => 'Allinchaspa ñawiriy',
 	'tux-editor-translate-mode' => 'Sutisuyu',
 	'tux-editor-proofreading-hide-own-translations' => "Qampa t'ikrasqaykikunata pakay",
 	'tux-editor-proofreading-show-own-translations' => "Qampa t'ikrasqaykikunata rikuchiy",
-	'tux-proofread-action-tooltip' => "T'ikrasqata uyakuy", # Fuzzy
+	'tux-proofread-action-tooltip' => 'Allinchaspa ñawirisqa unanchay',
+	'tux-proofread-edit-label' => "Llamk'apuy",
 	'tux-editor-page-mode' => "P'anqa",
 	'tux-editor-outdated-warning' => "Kay t'ikrasqaqa allinchanapaqchá.",
 	'tux-editor-outdated-warning-diff-link' => 'Wakin kaykunata rikuchiy',
@@ -26221,15 +26218,25 @@ $1',
 	'tux-empty-list-translated' => "Manam mayqin t'ikrasqa willaykunapas kanchu",
 	'tux-empty-list-translated-guide' => "T'ikraysiytam atinki",
 	'tux-empty-list-translated-action' => "T'ikray",
+	'tux-empty-no-messages-to-display' => 'Manam ima rikuchina willaykunapas kanchu',
+	'tux-empty-nothing-to-proofread' => 'Manam ima allinchaspa ñawirinapas kanchu',
+	'tux-empty-you-can-help-providing' => "Musuq t'ikrasqakunata ruraysiytam atinki",
+	'tux-empty-nothing-new-to-proofread' => 'Manam ima musuq allinchaspa ñawirinapas kanchu',
+	'tux-empty-you-can-review-already-proofread' => "Hukkunap allinchaspa ñawirisqanña t'ikrasqakunatapas allinchaspa ñawiriytam atinki.",
 	'tux-empty-list-other' => "Manam imapas t'ikrana kanchu",
-	'tux-empty-list-other-guide' => "Kachkaqña t'ikrasqakunata ñawirispa allinchaysiytam atinki", # Fuzzy
-	'tux-empty-list-other-action' => "T'ikrasqakuna allinchaspa ñawiriy", # Fuzzy
+	'tux-empty-list-other-guide' => "Kachkaqña t'ikrasqakunata ñawirispa allinchaysiytam atinki",
+	'tux-empty-list-other-action' => "T'ikrasqakuna allinchaspa ñawiriy",
 	'tux-empty-list-other-link' => 'Tukuy willaykunata rikuchiy',
 	'tux-editor-close-tooltip' => "Wichq'ay",
 	'tux-editor-expand-tooltip' => "Mast'ariy",
 	'tux-editor-collapse-tooltip' => 'Thuñichiy',
+	'tux-editor-message-tools-history' => 'Wiñay kawsay',
+	'tux-editor-message-tools-translations' => "Tukuy t'ikrasqakuna",
 	'tux-editor-loading' => 'Chaqnamuspa…',
 	'translate-search-more-languages-info' => '$1 aswan {{PLURAL:$1|rimay|rimaykuna}}',
+	'translate-statsbar-tooltip' => "$1% t'ikrasqa, $2% allinchaspa ñawirisqa",
+	'translate-statsbar-tooltip-with-fuzzy' => "$1% t'ikrasqa, $2% allinchaspa ñawirisqa, $3% mawk'ayasqa",
+	'translate-search-more-groups-info' => '$1 aswan {{PLURAL:$1|huñum|huñukunam}}',
 );
 
 /** Tarifit (Tarifit)
@@ -26287,12 +26294,12 @@ $messages['ro'] = array(
 	'translate-taskui-view' => 'Arată toate mesajele',
 	'translate-taskui-untranslated' => 'Arată mesajele netraduse',
 	'translate-taskui-optional' => 'Arată mesajele opționale',
-	'translate-taskui-acceptqueue' => 'Doar mesajele pe care le pot accepta', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Doar mesajele pe care le pot marca ca revizuite',
 	'translate-taskui-reviewall' => 'Revizuiește toate traducerile',
 	'translate-taskui-export-to-file' => 'Exportare în format nativ',
 	'translate-taskui-export-as-po' => 'Exportare pentru traducere off-line',
 	'translate-taction-translate' => 'Traducere',
-	'translate-taction-proofread' => 'Verificare', # Fuzzy
+	'translate-taction-proofread' => 'Revizuire',
 	'translate-taction-lstats' => 'Statistici de limbă',
 	'translate-taction-mstats' => 'Statistici pentru grupul de mesaje',
 	'translate-taction-export' => 'Exportare',
@@ -26548,25 +26555,25 @@ Detalii: $1',
 	'translate-searchprofile-tooltip' => 'Caută în toate traducerile',
 	'translate-search-languagefilter' => 'Filtrare după limbă:',
 	'translate-search-nofilter' => 'Fără filtrare',
-	'translate-messagereview-submit' => 'Acceptare', # Fuzzy
-	'translate-messagereview-progress' => 'Se acceptă...', # Fuzzy
-	'translate-messagereview-failure' => 'Se acceptă... eșuat: $1', # Fuzzy
-	'translate-messagereview-done' => 'Acceptat', # Fuzzy
-	'translate-messagereview-reviews' => 'Acceptat de {{PLURAL:$1|un utilizator|$1 utilizatori|$1 de utilizatori}}', # Fuzzy
-	'translate-messagereview-reviewswithyou' => 'Acceptat de {{PLURAL:$1|dumneavoastră|$1 utilizatori, inclusiv dumneavoastră|$1 de utilizatori, inclusiv dumneavoastră}}', # Fuzzy
+	'translate-messagereview-submit' => 'Marchează ca revizuită',
+	'translate-messagereview-progress' => 'Se marchează ca revizuită...',
+	'translate-messagereview-failure' => 'Marcarea ca revizuită a eșuat: $1',
+	'translate-messagereview-done' => 'Revizuită',
+	'translate-messagereview-reviews' => 'Revizuit de {{PLURAL:$1|un utilizator|$1 utilizatori|$1 de utilizatori}}',
+	'translate-messagereview-reviewswithyou' => 'Revizuit de {{PLURAL:$1|dumneavoastră|$1 utilizatori, inclusiv dumneavoastră|$1 de utilizatori, inclusiv dumneavoastră}}',
 	'api-error-invalidrevision' => 'Traducerea nu a fost găsită',
 	'api-error-unknownmessage' => 'Mesajul nu a fost găsit',
 	'api-error-fuzzymessage' => 'Traducerea este marcată ca fuzzy',
-	'api-error-owntranslation' => 'Nu puteți accepta propriile traduceri', # Fuzzy
-	'translate-messagereview-no-fuzzy' => 'Traducerile fuzzy nu pot fi acceptate.', # Fuzzy
-	'translate-messagereview-no-own' => 'Nu puteți accepta propriile traduceri.', # Fuzzy
-	'translate-messagereview-doit' => 'Acceptați această traducere ca traducere corectă.', # Fuzzy
+	'api-error-owntranslation' => 'Nu vă puteți marca propriile traduceri ca revizuite',
+	'translate-messagereview-no-fuzzy' => 'Traducerile fuzzy nu pot fi marcate ca revizuite.',
+	'translate-messagereview-no-own' => 'Nu vă puteți marca propriile traduceri ca revizuite.',
+	'translate-messagereview-doit' => 'Marcați această traducere ca revizuită.',
 	'group-translate-proofr' => 'Recenzori de traduceri',
 	'group-translate-proofr-member' => '{{GENDER:$1|recenzor de traduceri}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Recenzori de traduceri',
 	'log-name-translationreview' => 'Jurnal recenzii traduceri',
 	'log-description-translationreview' => 'Jurnalul tuturor revizuirilor pentru traduceri și grupuri de mesaje.',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|a acceptat}} traducerea $3', # Fuzzy
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|a revizuit}} traducerea $3',
 	'logentry-translationreview-group' => '$1 {{GENDER:$2|a schimbat}} starea traducerilor în $4 pentru $3 de la $6 la $7',
 	'group-translate-sandboxed' => 'Traducători neaprobați',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|traducător neaprobat}}',
@@ -26578,7 +26585,7 @@ Detalii: $1',
 	'translate-workflow-set-error-alreadyset' => 'Starea solicitată este identică cu starea actuală.',
 	'translate-stats-workflow' => 'Statut',
 	'translate-dynagroup-recent-label' => 'Traduceri recente',
-	'translate-dynagroup-recent-desc' => 'Acest grup de mesaje afișează toate traducerile recente pentru această limbă. Este util în special în cazul revizuirilor.', # Fuzzy
+	'translate-dynagroup-recent-desc' => 'Acest grup de mesaje afișează toate traducerile recente pentru această limbă. Este util în special în cazul revizuirilor.',
 	'translate-dynagroup-additions-label' => 'Adăugiri recente',
 	'translate-dynagroup-additions-desc' => 'Acest grup de mesaje afișează mesajele noi și modificate.',
 	'translate-dynagroup-by' => 'Traducere efectuată de către {{GENDER:$1|$1}}',
@@ -26596,11 +26603,11 @@ Detalii: $1',
 	'tux-tab-untranslated' => 'Netraduse',
 	'tux-tab-outdated' => 'Învechite',
 	'tux-tab-translated' => 'Traduse',
-	'tux-tab-unproofread' => 'Neverificate', # Fuzzy
+	'tux-tab-unproofread' => 'Nerevizuite',
 	'tux-edit' => 'Modifică',
 	'tux-status-optional' => 'Opțional',
 	'tux-status-fuzzy' => 'Învechită',
-	'tux-status-proofread' => 'Verificată', # Fuzzy
+	'tux-status-proofread' => 'Revizuită',
 	'tux-status-translated' => 'Tradus',
 	'tux-status-saving' => 'Se salvează...',
 	'tux-status-unsaved' => 'Nesalvată',
@@ -26612,8 +26619,8 @@ Detalii: $1',
 	'tux-editor-cancel-button-label' => 'Revocare',
 	'tux-editor-confirm-button-label' => 'Confirmare traducere',
 	'tux-editor-shortcut-info' => 'Apăsați „$1” pentru a salva sau „$2” pentru a sări la următorul mesaj',
-	'tux-editor-edit-desc' => 'Modifică descrierea', # Fuzzy
-	'tux-editor-add-desc' => 'Adăugare descriere', # Fuzzy
+	'tux-editor-edit-desc' => 'Modifică documentația',
+	'tux-editor-add-desc' => 'Adăugare documentație',
 	'tux-editor-suggestions-title' => 'Sugestii',
 	'tux-editor-in-other-languages' => 'În alte limbi',
 	'tux-editor-need-more-help' => 'Aveți nevoie de mai mult ajutor?',
@@ -26627,11 +26634,11 @@ Detalii: $1',
 	'tux-editor-message-desc-more' => 'Mai mult',
 	'tux-editor-message-desc-less' => 'Mai puțin',
 	'tux-editor-clear-translated' => 'Ascunde-le pe cele traduse',
-	'tux-editor-proofreading-mode' => 'Verificare', # Fuzzy
+	'tux-editor-proofreading-mode' => 'Revizuire',
 	'tux-editor-translate-mode' => 'Listă',
 	'tux-editor-proofreading-hide-own-translations' => 'Ascundeți traducerile dv.',
 	'tux-editor-proofreading-show-own-translations' => 'Afișați traducerile dv.',
-	'tux-proofread-action-tooltip' => 'Acceptare traducere', # Fuzzy
+	'tux-proofread-action-tooltip' => 'Marchează ca revizuită',
 	'tux-proofread-edit-label' => 'Modifică',
 	'tux-editor-page-mode' => 'Pagină',
 	'tux-editor-outdated-warning' => 'Această traducere ar putea avea nevoie de actualizare.',
@@ -26656,13 +26663,13 @@ Detalii: $1',
 	'tux-empty-there-are-optional' => 'Există mesaje opționale care nu apar în listă',
 	'tux-empty-show-optional-messages' => 'Arată mesajele opționale',
 	'tux-empty-no-outdated-messages' => 'Nu există mesaje învechite',
-	'tux-empty-nothing-to-proofread' => 'Nimic de verificat', # Fuzzy
+	'tux-empty-nothing-to-proofread' => 'Nimic de revizuit',
 	'tux-empty-you-can-help-providing' => 'Puteți ajuta furnizând traduceri noi',
-	'tux-empty-nothing-new-to-proofread' => 'Nimic nou de verificat', # Fuzzy
-	'tux-empty-you-can-review-already-proofread' => 'Puteți revizui traduceri deja verificate de către alții.', # Fuzzy
+	'tux-empty-nothing-new-to-proofread' => 'Nimic nou de revizuit',
+	'tux-empty-you-can-review-already-proofread' => 'Puteți revizui traduceri deja revizuite de către alții.',
 	'tux-empty-list-other' => 'Nimic de tradus',
-	'tux-empty-list-other-guide' => 'Puteți ajuta la revizuirea traducerilor existente', # Fuzzy
-	'tux-empty-list-other-action' => 'Verificare traduceri', # Fuzzy
+	'tux-empty-list-other-guide' => 'Puteți ajuta la revizuirea traducerilor existente',
+	'tux-empty-list-other-action' => 'Revizuire traduceri',
 	'tux-empty-list-other-link' => 'Arată toate mesajele',
 	'tux-editor-close-tooltip' => 'Închidere',
 	'tux-editor-expand-tooltip' => 'Extindere',
@@ -26671,8 +26678,8 @@ Detalii: $1',
 	'tux-editor-message-tools-translations' => 'Toate traducerile',
 	'tux-editor-loading' => 'Încărcare...',
 	'translate-search-more-languages-info' => 'Încă {{PLURAL:$1|o limbă|$1 limbi|$1 de limbi}}',
-	'translate-statsbar-tooltip' => '$1% traduse, $2% verificate', # Fuzzy
-	'translate-statsbar-tooltip-with-fuzzy' => '$1% traduse, $2% verificate, $3% învechite', # Fuzzy
+	'translate-statsbar-tooltip' => '$1% traduse, $2% revizuite',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% traduse, $2% revizuite, $3% învechite',
 	'translate-search-more-groups-info' => 'Încă {{PLURAL:$1|un grup|$1 grupuri|$1 de grupuri}}',
 );
 
@@ -26730,6 +26737,7 @@ Mutive:
 	'translate-edit-in-other-languages' => "Messàgge jndr'à otre lènghe",
 	'translate-edit-committed' => "Traduzione de mò jndr'à 'u softuer",
 	'translate-edit-warnings' => "Avverteminde sus a le traduziune 'ngomblete",
+	'translate-edit-tmsugs' => 'Suggereminde da le memorie de le traduziune e da le traduziune de le maghene',
 	'translate-edit-tmmatch-source' => "Teste origgenale d'a traduzione: $1",
 	'translate-edit-tmmatch' => '$1% de combronde',
 	'translate-use-suggestion' => "Sostituisce 'a traduzione de mò cu le suggereminde.",
@@ -26760,7 +26768,9 @@ Mutive:
 <strong><nowiki>$1</nowiki></strong>",
 	'translate-checks-parameters-unknown' => "{{PLURAL:$2|'U seguende parametre jè|'U seguende parametre sò}} scanusciute:
 <strong><nowiki>$1</nowiki></strong>",
+	'translate-checks-pagename' => "'U namespace ha cangiate da 'a definizione",
 	'translate-checks-malformed' => '<nowiki>$1</nowiki> jè malformate.',
+	'translate-pref-nonewsletter' => 'No me mannà email da le newsletter',
 	'translate-pref-editassistlang' => 'Assistende de le lènghe:',
 	'prefs-translate' => 'Opziune de traduzione',
 	'translate-pref-editassistlang-bad' => "Codece d'a lènghe invalide jndr'à l'elenghe:
@@ -26833,18 +26843,22 @@ Mutive:
 	'translate-mgs-column-language' => 'Lènghe',
 	'translate-mgs-totals' => "Tutte le lènghe 'nzieme",
 	'translate-mgs-invalid-group' => "'U gruppe specifiche $1 non g'esiste.",
+	'translate-mgs-nothing' => 'Ninde da fà vedè pe le statisteche cercate.',
 	'supportedlanguages' => 'Lènghe supportate',
 	'supportedlanguages-portallink' => '[$1] $2 - $3',
 	'supportedlanguages-portallink-nocldr' => '[$1] $2',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Traduttore|Tradutture}}: $1',
 	'supportedlanguages-recenttranslations' => 'traduziune recende',
 	'supportedlanguages-count' => '$1 {{PLURAL:$1|lènghe}} in totale.',
+	'supportedlanguages-activity' => "$1: $2 {{PLURAL:$2|cangiamende|cangiaminde}} - l'urteme cangiamende $3 {{PLURAL:$3|sciurne}} fà",
 	'translate-save' => 'Reggistre ($1)',
 	'translate-jssti-add' => "Aggiunge a l'elenghe",
 	'managemessagegroups' => 'Gestione de le gruppe de messàgge',
 	'translate-smg-notallowed' => "Non ge t'è permesse de eseguì st'azione.",
 	'translate-smg-nochanges' => 'Non ge stonne cangiaminde da processà.',
 	'translate-smg-submit' => 'Conferme le cangiaminde pu processe',
+	'translate-smg-submitted' => "'A definizione de le messàgge ha state aggiornate. Le cangiaminde stonne avènene processate da sotta sotte.",
+	'translate-smg-postponed' => 'Quacche cangiamende non ge pò essere processate. [[{{FULLPAGENAME}}|Pruève arrete]].',
 	'translate-smg-right' => 'Cangiaminde ca arrivane',
 	'translate-manage-import-diff' => 'Messàgge $1 | Aziune: $2',
 	'translate-manage-import-new' => 'Messàgge nuève $1',
@@ -32998,11 +33012,11 @@ $messages['uz'] = array(
 	'translate-page-group' => 'Guruh',
 	'translate-page-language' => 'Til',
 	'translate-page-limit' => 'Chegara',
-	'translate-page-limit-option' => 'Sahifaga $1 {{PLURAL:$1| ta xabar}}',
+	'translate-page-limit-option' => 'Bir sahifaga $1 tadan xabar', # Fuzzy
 	'translate-submit' => 'Tasvirlash',
 	'translate-page-navigation-legend' => 'Saytda harakatlanish',
-	'translate-page-showing' => "$3 ta ichidan $1 dan $2 gacha bo'lgan xabarlar tasvirlandi.",
-	'translate-page-showing-all' => '$1 {{PLURAL:$1| ta xabar}} tasvirlandi.',
+	'translate-page-showing' => '$3 ta xabardan $1-dan $2-gacha boʻlganlari koʻrsatildi.',
+	'translate-page-showing-all' => '$1 ta xabar koʻrsatildi.', # Fuzzy
 	'translate-page-showing-none' => 'Mos xabarlar mavjud emas.',
 	'translate-next' => 'Keyingi sahifa',
 	'translate-prev' => 'Oldingi sahifa',
@@ -33111,7 +33125,7 @@ Barcha qiymatlar yuqori va past chegaralarga ega.',
 	'translations-summary' => 'Barcha ruxsat etilgan tarjimalarni tasvirlash uchun xabar nomini kiriting.',
 	'translate-translations-no-message' => '"$1" tarjima qilinmaydigan xabar',
 	'translate-translations-none' => '"$1" uchun tarjimalar mavjud emas',
-	'translate-translations-count' => '{{PLURAL:$1|bitta tarjima|$1 ta tarjima}} topildi.',
+	'translate-translations-count' => '{{PLURAL:$1|Bitta tarjima|$1 ta tarjima}} topildi.',
 	'translate-translations-fieldset-title' => 'Xabar',
 	'translate-translations-messagename' => 'Nomi:',
 	'translate-translations-project' => 'Loyiha:',
@@ -33149,14 +33163,14 @@ Tagchiziqning rangiga qarab, tarjimon bu yerda qancha vaqt oldin oxirgi marta bi
 	'supportedlanguages-colorlegend' => "Rang sharhi: oxirgi tarjima $1 kun oldin bo'lgan.",
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tarjimon|Tarjimonlar}}: $1',
 	'supportedlanguages-recenttranslations' => 'yaqin oradagi tarjimalar',
-	'supportedlanguages-count' => 'Jami $1 ta {{plural:$1|til}}',
+	'supportedlanguages-count' => 'Jami $1 ta til.', # Fuzzy
 	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|ta tahrir}} - oxirgi tahrir $3 {{PLURAL:$3|kun}} oldin',
 	'translate-save' => 'Saqlash ($1)',
 	'translate-jssti-add' => "Ro'yxatga qo'shish",
 	'managemessagegroups' => 'Xabar guruhlarini boshqarish',
 	'translate-smg-nochanges' => 'Ishlov berish uchun mos oʻzgarishlar yoʻq.',
 	'translate-smg-left' => 'Vikiga xabaring tarkibi',
-	'translate-smg-right' => "Kiruvchi o'zgarishlar",
+	'translate-smg-right' => 'Kiruvchi oʻzgarishlar',
 	'translate-manage-import-diff' => 'Xabar $1 | Amallar: $2',
 	'translate-manage-import-new' => 'Yangi xabar $1',
 	'translate-manage-import-deleted' => "O'chirilgan xabar $1",
@@ -33219,8 +33233,8 @@ Tagchiziqning rangiga qarab, tarjimon bu yerda qancha vaqt oldin oxirgi marta bi
 Tarjimalarni koʻzdan kechirib chiqish uchun qulay.',
 	'translate-dynagroup-by' => 'Tarjima {{GENDER:$1|$1}} tomonidan bajarildi',
 	'translate-dynagroup-byc' => 'Tarjima {{GENDER:$1|$1}} ($2) tomonidan bajarildi',
-	'translate-dynagroup-last' => "Oxirgi o'zgarishlar {{GENDER:$1|$1}} tomonidan",
-	'translate-dynagroup-lastc' => "Oxirgi o'zgarishlar {{GENDER:$1|$1}} ($2) tomonidan",
+	'translate-dynagroup-last' => 'Oxirgi oʻzgarish {{GENDER:$1|$1}} tomonidan kiritilgan',
+	'translate-dynagroup-lastc' => 'Oxirgi oʻzgarish {{GENDER:$1|$1}} ($2) tomonidan kiritilgan',
 	'translate-gethelp' => 'Yordam',
 );
 
@@ -34761,6 +34775,7 @@ $messages['yue'] = array(
  * @author Sahran
  * @author Shirayuki
  * @author Shizhao
+ * @author Slboat
  * @author Supaiku
  * @author Wmr89502270
  * @author Xiaomingyan
@@ -34923,7 +34938,7 @@ $messages['zh-hans'] = array(
 	'translate-statsf-group' => '由逗号分隔的列表组代码',
 	'translate-statsf-submit' => '预览',
 	'translate-tag-category' => '可翻译的页面',
-	'translate-tag-page-desc' => '这个wiki页的翻译[[$2|$1]]。',
+	'translate-tag-page-desc' => '当前翻译页面：[[$2|$1]]。',
 	'translate-tag-fuzzy-comment' => '由[[User:$1|$1]]在版本$2对定义作出的改变。',
 	'translate-tag-fuzzy-reason' => '由"$1"的评论"$3"在$2作出的定义改变。',
 	'translate-sidebar-alltrans' => '其他语言',
@@ -35008,12 +35023,8 @@ $messages['zh-hans'] = array(
 请检查。',
 	'translate-manage-fuzzy-summary' => '消息定义已更改',
 	'importtranslations' => '导入翻译',
-	'translate-import-from-url' => '文件的 URL：',
-	'translate-import-from-wiki' => '在这个维基中的文件：',
 	'translate-import-from-local' => '本地文件上传：',
 	'translate-import-load' => '载入文件',
-	'translate-import-err-type-not-supported' => '无法加载该文件：
-方法 <code>$1</code> 不受支持。',
 	'translate-import-err-dl-failed' => '无法读取该文件：
 $1',
 	'translate-import-err-ul-failed' => '文件上传不成功',
