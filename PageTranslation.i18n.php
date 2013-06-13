@@ -5304,9 +5304,9 @@ $messages['ja'] = array(
 	'logentry-pagetranslation-moveok' => '$1 が翻訳対象ページ $3 の名前を $4 に変更{{GENDER:$2|完了}}',
 	'logentry-pagetranslation-movenok' => '$1 がページ $3 を $4 に移動させる際に問題が{{GENDER:$2|発生}}',
 	'logentry-pagetranslation-deletefok' => '$1 が翻訳対象ページ $3 の削除を{{GENDER:$2|完了}}',
-	'logentry-pagetranslation-deletefnok' => '$1 が、翻訳対象ページ $4 に属する $3 の削除に{{GENDER:$2|失敗}}',
+	'logentry-pagetranslation-deletefnok' => '$1 が翻訳対象ページ $4 に属する $3 の削除に{{GENDER:$2|失敗}}',
 	'logentry-pagetranslation-deletelok' => '$1 が翻訳ページ $3 の削除を{{GENDER:$2|完了}}',
-	'logentry-pagetranslation-deletelnok' => '$1 が、翻訳ページ $4 に属する $3 の削除に{{GENDER:$2|失敗}}',
+	'logentry-pagetranslation-deletelnok' => '$1 が翻訳ページ $4 に属する $3 の削除に{{GENDER:$2|失敗}}',
 	'logentry-pagetranslation-encourage' => '$1 が $3 の翻訳を{{GENDER:$2|復元}}',
 	'logentry-pagetranslation-discourage' => '$1 が $3 の翻訳を{{GENDER:$2|中止}}',
 	'logentry-pagetranslation-prioritylanguages-unset' => '$1 が翻訳対象ページ $3 から優先言語を{{GENDER:$2|除去}}',
@@ -9605,8 +9605,8 @@ Sadece en son sürümler çeviri için işaretlenebilir.',
 	'tpt-saveok' => '[[$1]] adlı sayfa $2 {{PLURAL:$2|çeviri birimi|çeviri birimi}} ile çeviri için işaretlenmiş.
 Sayfa artık <span class="plainlinks">[$3 çevrilebilir]</span>.',
 	'tpt-badsect' => '"$1", $2 çeviri birimi için geçerli bir ad değil.',
-	'tpt-showpage-intro' => 'Aşağıda yeni, mevcut ve silinmiş bölümler listelenmiştir.
-Bu sürümü çeviri için işaretlemeden önce, çevirmenlere gereksiz iş çıkarmamak için bölümlerde yapılan değişikliklerin asgari seviyede olduğundan emin olun.', # Fuzzy
+	'tpt-showpage-intro' => 'Aşağıda yeni, mevcut ve silinmiş çeviri birimleri listelenmiştir.
+Bu sürümü çeviri için işaretlemeden önce, çevirmenlere gereksiz iş çıkarmamak için çeviri birimlerinde yapılan değişikliklerin asgari seviyede olduğundan emin olun.',
 	'tpt-mark-summary' => 'Bu sürüm çeviri için işaretlendi',
 	'tpt-edit-failed' => 'Sayfa güncellenemedi: $1',
 	'tpt-already-marked' => 'Bu sayfanın en son sürümü çeviri için işaretlenmiş.',
@@ -9623,7 +9623,7 @@ Bu sürümü çeviri için işaretlemeden önce, çevirmenlere gereksiz iş çı
 	'tpt-aggregategroup-save' => 'Kaydet',
 	'tpt-aggregategroup-new-name' => 'Ad:',
 	'tpt-aggregategroup-new-description' => 'Açıklama (isteğe bağlı):',
-	'pt-movepage-list-other' => 'Diğer alt sayfalar', # Fuzzy
+	'pt-movepage-list-other' => 'Diğer alt {{PLURAL:$1|sayfalar|sayfalar}}',
 	'pt-movepage-current' => 'Geçerli adı:',
 	'pt-movepage-new' => 'Yeni adı:',
 	'pt-movepage-subpages' => 'Tüm alt sayfaları taşı',
@@ -10258,6 +10258,8 @@ $messages['yi'] = array(
 	'tpt-translation-intro' => 'דער דאזיקער בלאט איז א <span class="plainlinks">[$1 איבערגעזעצטע ווערסיע]</span> פון דעם בלאט [[$2]] און די איבערזעצונג איז $3% פארענדיקט.',
 	'tpt-languages-legend' => 'אנדערע שפראַכן:',
 	'tpt-languages-zero' => 'אנהייבן איבערזעצן די דאזיקע שפראך',
+	'tpt-target-page' => 'מען קען נישט דערהיינטיקן דעם בלאט מאנועל.
+דער בלאט איז אן איבערזעצונג פונעם בלאט [[$1]] און מען קען דערהיינטיקן די איבערזעצונג מיט די [$2 איבערזעצונג געצייג].',
 	'tpt-discouraged-language-reason' => 'אורזאך: $1',
 	'tpt-aggregategroup-add' => 'צולייגן',
 	'tpt-aggregategroup-save' => 'אויפֿהיטן',

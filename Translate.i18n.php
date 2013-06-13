@@ -935,6 +935,9 @@ fuzzy = mark translations for review',
 * $1 - a string (key name?) e.g. action-changed-XXXX',
 	'translate-manage-toolong' => 'Parameters:
 * $1 - number of seconds, can be used for PLURAL',
+	'translate-manage-submit' => 'Used in the group management interface. {{doc-screenshot|Manage-3.png|twn}}',
+	'translate-manage-intro-other' => 'Introduction to special page. See screenshot. [[File:Manage-2.png|150px|right|Group management interface]]
+$1 is a language name.',
 	'importtranslations' => '{{doc-special|ImportTranslations}}
 {{doc-screenshot|Import-1.png|twn}}',
 	'translate-import-from-local' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
@@ -1481,6 +1484,7 @@ Dien die opdrag asseblief weer in.',
 	'translate-manage-conflict-summary' => "Besig met die importering van 'n nuwe weergawe vanuit 'n eksterne bron.
 Kontroleer die wysiging.",
 	'translate-manage-fuzzy-summary' => 'Die boodskap se definisie is gewysig',
+	'translate-manage-submit' => 'Voer uit',
 	'importtranslations' => 'Importeer vertalings',
 	'translate-import-from-local' => 'Lokale lêer oplaai:',
 	'translate-import-load' => 'Laai lêer',
@@ -2584,12 +2588,12 @@ $messages['ast'] = array(
 	'translate-taskui-view' => 'Ver tolos mensaxes',
 	'translate-taskui-untranslated' => 'Ver los mensaxes ensin traducir',
 	'translate-taskui-optional' => 'Ver los mensaxes opcionales',
-	'translate-taskui-acceptqueue' => 'Sólo mensaxes que yo pueda aceutar', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Sólo los mensaxes que yo pueda marcar como revisaos',
 	'translate-taskui-reviewall' => 'Revisar toles traducciones',
 	'translate-taskui-export-to-file' => 'Esportar en formatu nativu',
 	'translate-taskui-export-as-po' => 'Esportar pa traducir ensin conexón',
 	'translate-taction-translate' => 'Traducir',
-	'translate-taction-proofread' => 'Correxir', # Fuzzy
+	'translate-taction-proofread' => 'Revisar',
 	'translate-taction-lstats' => 'Estadístiques de llingua',
 	'translate-taction-mstats' => 'Estadístiques del grupu de mensaxes',
 	'translate-taction-export' => 'Esportar',
@@ -2819,13 +2823,13 @@ Vuelvi a unviar el formulariu pa continuar procesandolu.",
 	'translate-manage-conflict-summary' => "Importando una versión nueva d'una fonte esterna.
 Por favor, compruebala.",
 	'translate-manage-fuzzy-summary' => 'La definición del mensaxe camudó',
+	'translate-manage-submit' => 'Executar',
+	'translate-manage-intro-other' => "Debaxo ta la llista de cambios nes traducciones de la llingua $1.
+Por favor, revisa los cambios y escueyi l'aición que quieras facer para cauna d'elles.
+Si escueyes ignorar los cambios, se sobrescribirán na siguiente esportación.", # Fuzzy
 	'importtranslations' => 'Importar traducciones',
-	'translate-import-from-url' => 'URL del ficheru:',
-	'translate-import-from-wiki' => 'Ficheru nesti wiki:',
 	'translate-import-from-local' => 'Xubir un ficheru llocal:',
 	'translate-import-load' => 'Xubir ficheru',
-	'translate-import-err-type-not-supported' => 'Nun se pudo xubir el ficheru:
-El métodu <code>$1</code> nun tien sofitu.',
 	'translate-import-err-dl-failed' => 'Nun se pudo obtener el ficheru:
 $1',
 	'translate-import-err-ul-failed' => 'La xuba del ficheru nun tuvo éxitu',
@@ -2861,25 +2865,25 @@ Detalles: $1",
 	'translate-searchprofile-tooltip' => 'Guetar en toles traducciones',
 	'translate-search-languagefilter' => 'Peñerar por llingua:',
 	'translate-search-nofilter' => 'Ensin peñera',
-	'translate-messagereview-submit' => 'Aceutar', # Fuzzy
-	'translate-messagereview-progress' => 'Aceutando...', # Fuzzy
-	'translate-messagereview-failure' => 'Aceutando... fallu: $1', # Fuzzy
-	'translate-messagereview-done' => 'Aceutada', # Fuzzy
-	'translate-messagereview-reviews' => 'Aceutada por {{PLURAL:$1|un usuariu|$1 usuarios}}', # Fuzzy
-	'translate-messagereview-reviewswithyou' => 'Aceutada por {{PLURAL:$1|ti|$1 usuarios incluyíu tu}}', # Fuzzy
+	'translate-messagereview-submit' => 'Marcar como revisao',
+	'translate-messagereview-progress' => 'Marcando como revisao...',
+	'translate-messagereview-failure' => 'Error al marcar como revisao: $1',
+	'translate-messagereview-done' => 'Revisao',
+	'translate-messagereview-reviews' => 'Revisao por {{PLURAL:$1|un usuariu|$1 usuarios}}',
+	'translate-messagereview-reviewswithyou' => 'Revisao por {{PLURAL:$1|vusté|$1 usuarios, incluíu vusté}}',
 	'api-error-invalidrevision' => "Nun s'alcontró la traducción",
 	'api-error-unknownmessage' => "Nun s'alcontró'l mensaxe",
 	'api-error-fuzzymessage' => 'La traducción ta marcada como aproximada',
-	'api-error-owntranslation' => 'Nun pues aceutar les traducciones propies.', # Fuzzy
-	'translate-messagereview-no-fuzzy' => 'Les traducciones aproximaes nun se puen aceutar.', # Fuzzy
-	'translate-messagereview-no-own' => 'Nun pues aceutar les traducciones propies.', # Fuzzy
-	'translate-messagereview-doit' => 'Aceutar esta traducción como correuta.', # Fuzzy
+	'api-error-owntranslation' => 'Nun pue marcar les traducciones propies como revisaes.',
+	'translate-messagereview-no-fuzzy' => 'Les traducciones aproximaes nun puen marcase como revisaes.',
+	'translate-messagereview-no-own' => 'Nun pue marcar les traducciones propies como revisaes.',
+	'translate-messagereview-doit' => 'Marcar esta traducción como revisada.',
 	'group-translate-proofr' => 'Revisores de les traducciones',
 	'group-translate-proofr-member' => '{{GENDER:$1|revisor|revisora}} de la traducción',
 	'grouppage-translate-proofr' => '{{ns:project}}:Revisores de les traducciones',
 	'log-name-translationreview' => 'Rexistru de revisión de la traducción',
 	'log-description-translationreview' => 'Rexistru de toles revisiones de les traducciones y grupos de mensaxes.',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|aceutó}} la traducción $3', # Fuzzy
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|revisó}} la traducción $3',
 	'logentry-translationreview-group' => "$1 {{GENDER:$2|camudó}} l'estáu de les traducciones al $4 del grupu de mensaxes $3 de $6 a $7",
 	'group-translate-sandboxed' => 'Traductores ensin aprobar',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|traductor|traductora}} ensin aprobar',
@@ -2900,7 +2904,7 @@ Detalles: $1",
 Los estaos se definen na variable de configuración $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Traducciones recientes',
 	'translate-dynagroup-recent-desc' => 'Esti grupu de mensaxes amuesa toles traducciones más nueves nesta llingua.
-Ye enforma afayadizo pa les xeres de correición.', # Fuzzy
+Ye enforma afayadizo pa les xeres de revisión.',
 	'translate-dynagroup-additions-label' => 'Novedaes',
 	'translate-dynagroup-additions-desc' => 'Esti grupu de mensaxes amuesa los mensaxes nuevos y camudaos.',
 	'translate-dynagroup-by' => 'Traducción fecha por {{GENDER:$1|$1}}',
@@ -2918,11 +2922,11 @@ Ye enforma afayadizo pa les xeres de correición.', # Fuzzy
 	'tux-tab-untranslated' => 'Ensin traducir',
 	'tux-tab-outdated' => 'Anticuaos',
 	'tux-tab-translated' => 'Traducíos',
-	'tux-tab-unproofread' => 'Ensin correxir', # Fuzzy
+	'tux-tab-unproofread' => 'Ensin revisar',
 	'tux-edit' => 'Editar',
 	'tux-status-optional' => 'Opcional',
 	'tux-status-fuzzy' => 'Anticuada',
-	'tux-status-proofread' => 'Correxida', # Fuzzy
+	'tux-status-proofread' => 'Revisao',
 	'tux-status-translated' => 'Traducíu',
 	'tux-status-saving' => 'Guardando...',
 	'tux-status-unsaved' => 'Ensin guardar',
@@ -2934,8 +2938,8 @@ Ye enforma afayadizo pa les xeres de correición.', # Fuzzy
 	'tux-editor-cancel-button-label' => 'Encaboxar',
 	'tux-editor-confirm-button-label' => 'Confirmar la traducción',
 	'tux-editor-shortcut-info' => 'Calque "$1" pa guardar o "$2" pa saltar al siguiente mensaxe',
-	'tux-editor-edit-desc' => 'Editar la descripción', # Fuzzy
-	'tux-editor-add-desc' => 'Amestar descripción', # Fuzzy
+	'tux-editor-edit-desc' => 'Editar la documentación',
+	'tux-editor-add-desc' => 'Amestar la documentación',
 	'tux-editor-suggestions-title' => 'Suxerencies',
 	'tux-editor-in-other-languages' => "N'otres llingües",
 	'tux-editor-need-more-help' => '¿Necesites más ayuda?',
@@ -2949,11 +2953,11 @@ Ye enforma afayadizo pa les xeres de correición.', # Fuzzy
 	'tux-editor-message-desc-more' => 'Ver más',
 	'tux-editor-message-desc-less' => 'Ver menos',
 	'tux-editor-clear-translated' => 'Anubrir traducíos',
-	'tux-editor-proofreading-mode' => 'Correxir', # Fuzzy
+	'tux-editor-proofreading-mode' => 'Revisar',
 	'tux-editor-translate-mode' => 'Llista',
 	'tux-editor-proofreading-hide-own-translations' => 'Anubrir les tos traducciones',
 	'tux-editor-proofreading-show-own-translations' => 'Amosar les tos traducciones',
-	'tux-proofread-action-tooltip' => 'Aceutar la traducción', # Fuzzy
+	'tux-proofread-action-tooltip' => 'Marcar como revisao',
 	'tux-proofread-edit-label' => 'Editar',
 	'tux-editor-page-mode' => 'Páxina',
 	'tux-editor-outdated-warning' => 'Esta traducción pue necesitar un anovamientu.',
@@ -2978,13 +2982,13 @@ Ye enforma afayadizo pa les xeres de correición.', # Fuzzy
 	'tux-empty-there-are-optional' => "Hai mensaxes opcionales que nun s'amuesen na llista",
 	'tux-empty-show-optional-messages' => 'Ver los mensaxes opcionales',
 	'tux-empty-no-outdated-messages' => 'Nun hai mensaxes anticuaos',
-	'tux-empty-nothing-to-proofread' => 'Nun hai ren pa correxir', # Fuzzy
+	'tux-empty-nothing-to-proofread' => 'Nun hai nada pa revisar',
 	'tux-empty-you-can-help-providing' => 'Pue ayudar amestando traducciones nueves',
-	'tux-empty-nothing-new-to-proofread' => 'Nun hai ren nuevo pa correxir', # Fuzzy
-	'tux-empty-you-can-review-already-proofread' => 'Pue revisar les traducciones que yá corrixeren otres persones.', # Fuzzy
+	'tux-empty-nothing-new-to-proofread' => 'Nun hai nada nuevo pa revisar',
+	'tux-empty-you-can-review-already-proofread' => 'Pue revisar les traducciones que yá revisaron otres persones.',
 	'tux-empty-list-other' => 'Nun hai ren que traducir',
-	'tux-empty-list-other-guide' => 'Pue ayudar revisando les traducciones esistentes', # Fuzzy
-	'tux-empty-list-other-action' => 'Correxir les traducciones', # Fuzzy
+	'tux-empty-list-other-guide' => 'Pue ayudar a revisar les traducciones esistentes',
+	'tux-empty-list-other-action' => 'Revisar les traducciones',
 	'tux-empty-list-other-link' => 'Ver tolos mensaxes',
 	'tux-editor-close-tooltip' => 'Zarrar',
 	'tux-editor-expand-tooltip' => 'Espander',
@@ -2993,8 +2997,8 @@ Ye enforma afayadizo pa les xeres de correición.', # Fuzzy
 	'tux-editor-message-tools-translations' => 'Toles traducciones',
 	'tux-editor-loading' => 'Cargando...',
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|llingua|llingües}} más',
-	'translate-statsbar-tooltip' => '$1% traducíos, $2% correxíos', # Fuzzy
-	'translate-statsbar-tooltip-with-fuzzy' => '$1% traducíos, $2% correxíos, $3% anticuaos', # Fuzzy
+	'translate-statsbar-tooltip' => '$1% traducíos, $2% revisaos',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% traducíos, $2% revisaos, $3% anticuaos',
 	'translate-search-more-groups-info' => '$1 {{PLURAL:$1|grupu|grupos}} más',
 );
 
@@ -7103,6 +7107,10 @@ Send venligst formularen igen for at fortsætte behandlingen.',
 	'translate-manage-conflict-summary' => 'Importerer en ny version fra en ekstern kilde.
 Tjek venligst.',
 	'translate-manage-fuzzy-summary' => 'Definitionen af beskeden er blevet ændret',
+	'translate-manage-submit' => 'Udfør',
+	'translate-manage-intro-other' => 'Nedenfor er listen over oversættelse ændringer i $1 sprog.
+Gennemgå veligst ændringerne og vælg en handling du ønsker at gøre for hver oversættelse.
+Hvis du vælger at ignorere ændringer, vil de blive overskrevet ved næste eksport.', # Fuzzy
 	'importtranslations' => 'Importér oversættelser',
 	'translate-import-from-local' => 'Upload af lokal fil:',
 	'translate-import-load' => 'Indlæs fil',
@@ -7539,13 +7547,13 @@ Bitte schicke das Formular noch einmal ab, um die Verarbeitung fortzusetzen.',
 	'translate-manage-conflict-summary' => 'Neue Version von externer Quelle importiert.
 Bitte überprüfen.',
 	'translate-manage-fuzzy-summary' => 'Die Nachrichtendefinition hat sich geändert',
+	'translate-manage-submit' => 'Ausführen',
+	'translate-manage-intro-other' => 'Hier ist eine Liste von Übersetzungsänderungen der Sprache $1.
+Bitte kontrolliere die Änderungen und wähle je eine Aktion, die du auf die Aktualisierungen anwenden möchtest.
+Wenn du dich entscheidest, Änderungen zu ignorieren, ist diese Aktion nur vorübergehend.',
 	'importtranslations' => 'Übersetzungen importieren',
-	'translate-import-from-url' => 'URL zur Datei:',
-	'translate-import-from-wiki' => 'Datei in diesem Wiki:',
 	'translate-import-from-local' => 'Lokale Datei hochladen:',
 	'translate-import-load' => 'Datei laden',
-	'translate-import-err-type-not-supported' => 'Datei kann nicht geladen werden:
-Methode <code>$1</code> wird nicht unterstützt.',
 	'translate-import-err-dl-failed' => 'Datei kann nicht abgerufen werden:
 $1',
 	'translate-import-err-ul-failed' => 'Das Hochladen der Datei war nicht erfolgreich',
@@ -9728,6 +9736,10 @@ Palun esita vorm uuesti, et töötlemist jätkata.',
 	'translate-manage-conflict-summary' => 'Uue versiooni importimine välisallikast.
 Palun kontrolli.',
 	'translate-manage-fuzzy-summary' => 'Sõnumi määratlus on muutunud.',
+	'translate-manage-submit' => 'Täida',
+	'translate-manage-intro-other' => 'Allpool on $1 keele tõlkemuudatuste loetelu.
+Palun vaata muudatused üle ja vali iga sõnumi jaoks sobiv toiming.
+Muudatused, mida eirad, kirjutatakse järgmise eksportimisega üle.', # Fuzzy
 	'importtranslations' => 'Tõlgete importimine',
 	'translate-import-from-local' => 'Kohaliku faili üleslaadimine:',
 	'translate-import-load' => 'Laadi fail',
@@ -10329,6 +10341,7 @@ $messages['fa'] = array(
 	'translate-manage-conflict-summary' => 'درون‌ریزی یک نسخهٔ جدید از منبع خارجی.
 لطفاً بررسی کنید.',
 	'translate-manage-fuzzy-summary' => 'تعریف پیغام تغییر کرده‌است',
+	'translate-manage-submit' => 'اجرا',
 	'importtranslations' => 'درون‌ریزی ترجمه‌ها',
 	'translate-import-from-local' => 'بارگذاری پرونده محلی:',
 	'translate-import-load' => 'بارگیری پرونده',
@@ -13290,6 +13303,10 @@ $messages['he'] = array(
 	'translate-manage-conflict-summary' => 'מייבא גרסה חדשה ממקור חיצוני.
 נא לבדוק.',
 	'translate-manage-fuzzy-summary' => 'הגדרת ההודעה שונתה',
+	'translate-manage-submit' => 'הפעלה',
+	'translate-manage-intro-other' => 'להלן רשימה של שינויי תרגום ב$1.
+נא לסקור את השינויים ולבחור את הפעולה שברצונכם לעשות עבור כל תרגום.
+אם תבחרו להתעלם מהשינויים, הם יידרסו בייצוא הבא.', # Fuzzy
 	'importtranslations' => 'יבוא תרגומים',
 	'translate-import-from-local' => 'העלאת קובץ מקומי:',
 	'translate-import-load' => 'טעינת קובץ',
@@ -14393,6 +14410,10 @@ Tanpri, soumèt fòmilè ankò pou kontinye tretman.',
 	'translate-manage-conflict-summary' => 'Enpòtasyon yon nouvo vèsyon depi yon sous andeyò.
 Tanpri verifye.',
 	'translate-manage-fuzzy-summary' => 'Definisyon an te chanje', # Fuzzy
+	'translate-manage-submit' => 'Ekzekite',
+	'translate-manage-intro-other' => 'Anba w ap jwenn yon lis chanjman nan tradiksyon pou lang $1.
+Tanpri, revize chanjman yo epi chwazi kisa ou vle fè pou chak tradiksyon.
+Si ou deside pou inyore chanjman yo, y ap kraze nan pwochen ekspòtasyon.', # Fuzzy
 	'importtranslations' => 'Enpòte tradiksyon yo',
 	'translate-import-from-local' => 'Chaje yon fichye local:',
 	'translate-import-load' => 'Chaje fichye a',
@@ -14672,6 +14693,10 @@ Küldd el újra az űrlapot a feldolgozás folytatásához.',
 	'translate-manage-conflict-summary' => 'Új változat importálása külső forrásból.
 Ellenőrizd.',
 	'translate-manage-fuzzy-summary' => 'Az üzenet definíciója megváltozott',
+	'translate-manage-submit' => 'Végrehajtás',
+	'translate-manage-intro-other' => 'Alább látható a(z) $1 nyelv fordításaiban történt változtatások listája.
+Ellenőrizd a változtatásokat, és válaszd ki azt a műveletet, amit alkalmazni szeretnél minden egyes fordításra.
+Ha figyelmen kívül hagyod a változtatásokat, felül lesznek bírálva a következő exportáláskor.', # Fuzzy
 	'importtranslations' => 'Fordítások importálása',
 	'translate-import-from-local' => 'Helyi fájlfeltöltés:',
 	'translate-import-load' => 'Fájl betöltése',
@@ -15391,6 +15416,10 @@ Mohon kirimkan kembali formulir untuk melanjutkan proses.',
 	'translate-manage-conflict-summary' => 'Mengimpor versi baru dari sumber luar.
 Silakan diperiksa.',
 	'translate-manage-fuzzy-summary' => 'Definisi telah berubah', # Fuzzy
+	'translate-manage-submit' => 'Jalankan',
+	'translate-manage-intro-other' => 'Di bawah ini adalah daftar perubahan terjemahan dalam bahasa $1.
+Silakan tinjau perubahan-perubahan ini dan pilihlah aksi yang ingin Anda lakukan untuk setiap terjemahan.
+Jika Anda memilih untuk tidak menghiraukan perubahan, mereka akan ditimpa pada ekspor berikutnya.', # Fuzzy
 	'importtranslations' => 'Impor terjemahan',
 	'translate-import-from-local' => 'Berkas lokal di Unggah:',
 	'translate-import-load' => 'Muatkan berkas',
@@ -16486,6 +16515,10 @@ $messages['ja'] = array(
 	'translate-manage-conflict-summary' => '外部ソースから新しい版を取り込み中。
 確認してください。',
 	'translate-manage-fuzzy-summary' => 'メッセージの定義が変更されました',
+	'translate-manage-submit' => '実行',
+	'translate-manage-intro-other' => '以下は$1での翻訳の変更の一覧です。
+それぞれの翻訳について、変更を精査して、行いたい操作を選択してください。
+変更の無視を選択した場合、それは次回の書き出しで上書きされます。', # Fuzzy
 	'importtranslations' => '翻訳の取り込み',
 	'translate-import-from-local' => 'ローカルファイルをアップロード:',
 	'translate-import-load' => 'ファイル読み込み',
@@ -18171,13 +18204,13 @@ $1',
 	'translate-manage-conflict-summary' => '바깥 소스로부터 새 버전을 가져옵니다.
 확인하세요.',
 	'translate-manage-fuzzy-summary' => '메시지 정의가 바뀌었습니다',
+	'translate-manage-submit' => '실행',
+	'translate-manage-intro-other' => '다음은 $1로 된 번역 수정 목록입니다.
+이 수정 내역을 검토하고 각 번역문에 대해 취할 동작을 선택해주세요.
+메시지 수정을 무시하기로 했다면 다음 내보내기 때 해당 사항이 무시될 것입니다.', # Fuzzy
 	'importtranslations' => '번역 가져오기',
-	'translate-import-from-url' => '파일의 URL:',
-	'translate-import-from-wiki' => '이 위키에 있는 파일:',
 	'translate-import-from-local' => '컴퓨터에 있는 파일 올리기:',
 	'translate-import-load' => '파일 불러오기',
-	'translate-import-err-type-not-supported' => '파일을 불러올 수 없습니다.
-<code>$1</code> 메서드를 지원하지 않습니다.',
 	'translate-import-err-dl-failed' => '파일을 읽을 수 없습니다:
 $1',
 	'translate-import-err-ul-failed' => '파일 올리기에 실패했습니다.',
@@ -18315,7 +18348,7 @@ $1',
 	'tux-editor-doc-editor-placeholder' => '메시지 설명문',
 	'tux-editor-doc-editor-save' => '설명문 저장',
 	'tux-editor-doc-editor-cancel' => '취소',
-	'tux-messagetable-more-messages' => '{{PLRUAL:$1|메시지}} $1개 더 보기',
+	'tux-messagetable-more-messages' => '다른 {{PLURAL:$1|메시지}} $1개',
 	'tux-messagetable-loading-messages' => '{{PLURAL:$1|메시지}}를 불러오는 중...',
 	'tux-message-filter-placeholder' => '필터 목록',
 	'tux-message-filter-result' => '"$2"에 대한 {{PLURAL:$1|결과}} $1개를 찾았습니다',
@@ -20923,6 +20956,7 @@ $messages['ml'] = array(
 	'translate-manage-action-import' => 'ഇറക്കുമതി ചെയ്യുക',
 	'translate-manage-action-ignore' => 'അവഗണിക്കുക',
 	'translate-manage-fuzzy-summary' => 'സന്ദേശ നിർവചനം മാറിയിരിക്കുന്നു',
+	'translate-manage-submit' => 'നടപ്പിലാക്കുക',
 	'importtranslations' => 'പരിഭാഷകളുടെ ഇറക്കുമതി',
 	'translate-import-from-local' => 'അപ്‌ലോഡ് ചെയ്യേണ്ട പ്രാദേശിക പ്രമാണം:',
 	'translate-import-load' => 'പ്രമാണം എടുക്കുക',
@@ -26523,6 +26557,7 @@ Vă rugăm să retrimiteți formularul pentru a continua prelucrarea.',
 	'translate-manage-conflict-summary' => 'Se importă o nouă versiune dintr-o sursă externă.
 Vă rugăm să verificați.',
 	'translate-manage-fuzzy-summary' => 'Definiția mesajului s-a schimbat',
+	'translate-manage-submit' => 'Execută',
 	'importtranslations' => 'Importă traduceri',
 	'translate-import-from-local' => 'Încărcare fișier local:',
 	'translate-import-load' => 'Încarcă fișier',
@@ -29201,6 +29236,10 @@ $messages['sr-ec'] = array(
 	'translate-manage-conflict-summary' => 'Увожење новог издања из спољашњег извора.
 Молимо, проверите.',
 	'translate-manage-fuzzy-summary' => 'Значење поруке је промењено',
+	'translate-manage-submit' => 'Изврши',
+	'translate-manage-intro-other' => 'Испод је списак измена превода за $1 језик.
+Прегледајте измене и изаберите радњу за сваки превод.
+Ако изаберете да занемарите измене, оне ће бити поништене при следећем извозу.', # Fuzzy
 	'importtranslations' => 'Увоз превода',
 	'translate-import-from-local' => 'Локална датотека:',
 	'translate-import-load' => 'Додај',
@@ -29605,6 +29644,10 @@ Ponovo pošaljite obrazac za nastavak.',
 	'translate-manage-conflict-summary' => 'Uvoženje novog izdanja iz spoljašnjeg izvora.
 Molimo, proverite.',
 	'translate-manage-fuzzy-summary' => 'Značenje je promenjeno.', # Fuzzy
+	'translate-manage-submit' => 'Izvrši',
+	'translate-manage-intro-other' => 'Ispod je spisak izmena prevoda za $1 jezik.
+Pregledajte izmene i izaberite radnju za svaki prevod.
+Ako izaberete da zanemarite izmene, one će biti poništene pri sledećem izvozu.', # Fuzzy
 	'importtranslations' => 'Uvoz prevoda',
 	'translate-import-from-local' => 'Lokalna datoteka:',
 	'translate-import-load' => 'Dodaj',
@@ -31847,6 +31890,7 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-manage-action-ignore' => 'Göz ardı et',
 	'translate-manage-nochanges-other' => 'Bu dil için değişiklik yapılmadı.
 Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanın.',
+	'translate-manage-submit' => 'Yürüt',
 	'importtranslations' => 'Çevirileri içe aktar',
 	'translate-import-from-local' => 'Yerel dosya yükleme:',
 	'translate-import-load' => 'Dosya yükle',
@@ -31963,6 +32007,9 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 	'tux-empty-list-translated-action' => 'Çevir',
 	'tux-empty-show-optional-messages' => 'İsteğe bağlı iletileri göster',
 	'tux-empty-no-outdated-messages' => 'Eski tarihli ileti yok',
+	'tux-empty-you-can-help-providing' => 'Yeni çeviriler sağlayarak yardımcı olabilirsiniz',
+	'tux-empty-nothing-new-to-proofread' => 'İncelemek için yeni bir şey yok',
+	'tux-empty-you-can-review-already-proofread' => 'Başkaları tarafından incelenen çevirileri inceleyebilirsiniz.',
 	'tux-empty-list-other' => 'Çevirecek bir şey yok',
 	'tux-empty-list-other-guide' => 'Mevcut çevirileri incelemede yardımcı olabilirsin',
 	'tux-empty-list-other-action' => 'Çevirileri incele',
@@ -33445,6 +33492,7 @@ $messages['vep'] = array(
 	'translate-manage-import-deleted' => 'Čutud poiš tedotuz $1',
 	'translate-manage-action-import' => 'Import',
 	'translate-manage-action-ignore' => 'Ignoriruida',
+	'translate-manage-submit' => 'Tehta',
 	'translate-import-from-local' => 'Jügutoitta lokaline fail:',
 	'translate-import-load' => 'Jügutoitta fail',
 	'translate-js-history' => 'Kändmižen istorii',
@@ -34545,6 +34593,7 @@ $messages['yi'] = array(
 	'translate-manage-action-fuzzy' => 'אימפארטירן און מארקירן איבערזעצונגען "אומקלאר"',
 	'translate-manage-nochanges' => 'נישטא קיין ענדערונגען אין דעפֿיניציעס פֿאַר דער דאָזיגער גרופע.',
 	'translate-manage-fuzzy-summary' => 'די מעלדונג דעפיניציע איז געענדערט געווארן',
+	'translate-manage-submit' => 'אויספֿירן',
 	'importtranslations' => 'אימפארטירן איבערזעצונגען',
 	'translate-import-from-local' => 'לאקאלע טעקע ארויפֿלאדן:',
 	'translate-import-load' => 'לאָדן טעקע',
@@ -35026,6 +35075,10 @@ $messages['zh-hans'] = array(
 	'translate-manage-conflict-summary' => '从外部源导入一个新的版本。
 请检查。',
 	'translate-manage-fuzzy-summary' => '消息定义已更改',
+	'translate-manage-submit' => '执行',
+	'translate-manage-intro-other' => '下面是在翻译更改列表$1语言。
+请检查所做的更改，并选择您想要为每个翻译的操作。
+如果您选择忽略更改，他们将被覆盖对下一步的出口。', # Fuzzy
 	'importtranslations' => '导入翻译',
 	'translate-import-from-local' => '本地文件上传：',
 	'translate-import-load' => '载入文件',
@@ -35460,6 +35513,10 @@ $messages['zh-hant'] = array(
 	'translate-manage-conflict-summary' => '從外部源匯入一個新的版本。
 請檢查。',
 	'translate-manage-fuzzy-summary' => '訊息已更改',
+	'translate-manage-submit' => '執行',
+	'translate-manage-intro-other' => '下面是在翻譯更改列表$1語言。
+請檢查所做的更改，並選擇您想要為每個翻譯的操作。
+如果您選擇忽略更改，他們將被覆蓋對下一步的出口。', # Fuzzy
 	'importtranslations' => '匯入翻譯',
 	'translate-import-from-local' => '上載本地檔案：',
 	'translate-import-load' => '載入檔案',
