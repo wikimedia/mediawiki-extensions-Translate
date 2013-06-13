@@ -307,6 +307,10 @@ Please resubmit the form to continue processing.',
 	'translate-manage-conflict-summary' => 'Importing a new version from external source.
 Please check.',
 	'translate-manage-fuzzy-summary' => 'The message definition has changed',
+	'translate-manage-submit' => 'Execute',
+	'translate-manage-intro-other' => 'Below is list of translation changes in the language $1.
+Please review the changes and choose an action you want take do for each update.
+If you choose to ignore changes, this action is only temporary.',
 
 	'importtranslations' => 'Import translations',
 	'translate-import-from-local' => 'Local file upload:',
