@@ -11215,12 +11215,13 @@ Renvoyez le formulaire pour continuer le traitement.',
 	'translate-manage-import-summary' => 'Importation d’une nouvelle version depuis une source externe.',
 	'translate-manage-conflict-summary' => 'Importation d’une nouvelle version depuis une source externe. Vérifiez s’il vous plaît.',
 	'translate-manage-fuzzy-summary' => 'La définition du message a été modifiée',
+	'translate-manage-submit' => 'Exécuter',
+	'translate-manage-intro-other' => 'Ci-dessous figure une liste des modifications dans la langue $1.
+Relisez les modifications et choisissez une action à effectuer pour chacune.
+Si vous décidez d’ignorer les modifications, cette action ne sera que temporaire.',
 	'importtranslations' => 'Importer les traductions',
-	'translate-import-from-url' => 'URL vers le fichier :',
-	'translate-import-from-wiki' => 'Fichier sur ce wiki :',
 	'translate-import-from-local' => 'Importer un fichier local :',
 	'translate-import-load' => 'Charger le fichier',
-	'translate-import-err-type-not-supported' => 'Impossible de charger le fichier: la méthode <code>$1</code> n’est pas supportée.',
 	'translate-import-err-dl-failed' => 'Impossible d’accéder au fichier :
 $1',
 	'translate-import-err-ul-failed' => 'Le téléversement du fichier n’a pas été réussi',
@@ -12317,13 +12318,13 @@ Por favor, reenvíe o formulario para continuar procesando.',
 	'translate-manage-import-summary' => 'Importando unha nova versión desde unha fonte externa',
 	'translate-manage-conflict-summary' => 'Importando unha nova versión desde unha fonte externa. Por favor, compróbea.',
 	'translate-manage-fuzzy-summary' => 'A definición da mensaxe cambiou',
+	'translate-manage-submit' => 'Executar',
+	'translate-manage-intro-other' => 'A continuación está a lista de cambios nas traducións en $1.
+Por favor, revise os cambios e escolla a acción que quere facer para cada actualización.
+Se opta por ignorar as modificacións, esta acción é unicamente temporal.',
 	'importtranslations' => 'Importar as traducións',
-	'translate-import-from-url' => 'URL cara ao ficheiro:',
-	'translate-import-from-wiki' => 'Ficheiro neste wiki:',
 	'translate-import-from-local' => 'Carga dun ficheiro local:',
 	'translate-import-load' => 'Cargar o ficheiro',
-	'translate-import-err-type-not-supported' => 'Non se pode cargar o ficheiro:
-O método <code>$1</code> non está soportado.',
 	'translate-import-err-dl-failed' => 'Non se pode acceder ao ficheiro:
 $1',
 	'translate-import-err-ul-failed' => 'Fallou a carga do ficheiro',
@@ -13305,8 +13306,8 @@ $messages['he'] = array(
 	'translate-manage-fuzzy-summary' => 'הגדרת ההודעה שונתה',
 	'translate-manage-submit' => 'הפעלה',
 	'translate-manage-intro-other' => 'להלן רשימה של שינויי תרגום ב$1.
-נא לסקור את השינויים ולבחור את הפעולה שברצונכם לעשות עבור כל תרגום.
-אם תבחרו להתעלם מהשינויים, הם יידרסו בייצוא הבא.', # Fuzzy
+נא לסקור את השינויים ולבחור את הפעולה שברצונך לעשות עבור כל תרגום.
+התעלמות מהשינויים תגרום לכך שהם יידרסו בייצוא הבא.',
 	'importtranslations' => 'יבוא תרגומים',
 	'translate-import-from-local' => 'העלאת קובץ מקומי:',
 	'translate-import-load' => 'טעינת קובץ',
@@ -16516,9 +16517,9 @@ $messages['ja'] = array(
 確認してください。',
 	'translate-manage-fuzzy-summary' => 'メッセージの定義が変更されました',
 	'translate-manage-submit' => '実行',
-	'translate-manage-intro-other' => '以下は$1での翻訳の変更の一覧です。
-それぞれの翻訳について、変更を精査して、行いたい操作を選択してください。
-変更の無視を選択した場合、それは次回の書き出しで上書きされます。', # Fuzzy
+	'translate-manage-intro-other' => '以下は言語 $1 での翻訳の変更の一覧です。
+それぞれの更新について、変更を精査して、行いたい操作を選択してください。
+変更を無視することを選択した場合、この操作は一時的なものに留まります。',
 	'importtranslations' => '翻訳の取り込み',
 	'translate-import-from-local' => 'ローカルファイルをアップロード:',
 	'translate-import-load' => 'ファイル読み込み',
@@ -19286,13 +19287,13 @@ Schéckt de Formulaire w.e.g. nach emol fir mat der Beaarbechtung weiderzefueren
 	'translate-manage-import-summary' => 'Eng nei Versioun vun enger externer Quell gëtt importéiert',
 	'translate-manage-conflict-summary' => 'En nei Versioun gëtt vun enger externer Quell imortéiert. W.e.g. nokucken.',
 	'translate-manage-fuzzy-summary' => "D'Definitioun vum Message huet geännert",
+	'translate-manage-submit' => 'Maachen',
+	'translate-manage-intro-other' => "Ënnendrënner ass eng Lëscht vun den Ännerungen vun den Iwwersetzungen an der Sprooch $1.
+Kuckt d'Ännerunge w.e.g. no a wielt déi Aktioun déi Dir fir déi jeeweileg Iwwersetzung wëllt.
+Wann Dir decidéiert fir Ännerungen z'ignoréieren, ass dës Aktioun just temporär.",
 	'importtranslations' => 'Iwwersetzungen importéieren',
-	'translate-import-from-url' => 'URL op de Fichier:',
-	'translate-import-from-wiki' => 'Fichier an dëser Wiki:',
 	'translate-import-from-local' => 'Fichier lokal eropgelueden:',
 	'translate-import-load' => 'Fichier lueden',
-	'translate-import-err-type-not-supported' => "De Fichier kann net geluede ginn:
-D'Method <code>$1</code> gëtt net ënnerstëtzt.",
 	'translate-import-err-dl-failed' => 'De Fichier kann net erreescht ginn:
 $1',
 	'translate-import-err-ul-failed' => "D'Eropluede vum Fichier huet net geklappt",
@@ -25504,13 +25505,13 @@ Por favor, reenvie o formulário para continuar o processamento.',
 	'translate-manage-conflict-summary' => 'Importando uma nova versão de fonte externa.
 Verifique-a, por favor.',
 	'translate-manage-fuzzy-summary' => 'A definição da mensagem sofreu alterações',
+	'translate-manage-submit' => 'Executar',
+	'translate-manage-intro-other' => 'Encontra abaixo uma lista de alterações de traduções na língua $1.
+Por favor, reveja as alterações e escolha a acção que pretende para cada tradução.
+Se escolher ignorar as alterações, elas serão sobrepostas na próxima exportação.', # Fuzzy
 	'importtranslations' => 'Importar traduções',
-	'translate-import-from-url' => 'URL para o ficheiro:',
-	'translate-import-from-wiki' => 'Ficheiro nesta wiki:',
 	'translate-import-from-local' => 'Carregamento de ficheiro local:',
 	'translate-import-load' => 'Carregar ficheiro',
-	'translate-import-err-type-not-supported' => 'Não foi possível carregar o ficheiro:
-O método <code>$1</code> não é suportado.',
 	'translate-import-err-dl-failed' => 'Não foi possível obter o ficheiro:
 $1',
 	'translate-import-err-ul-failed' => 'Carregamento do ficheiro falhou',
@@ -25584,6 +25585,7 @@ Os estados são definidos na variável de configuração $wgTranslateWorkflowSta
 	'translate-dynagroup-last' => 'Última modificação feita por {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Última modificação feita por {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Ajuda',
+	'tux-editor-save-button-label' => 'Gravar tradução',
 );
 
 /** Brazilian Portuguese (português do Brasil)
@@ -35514,9 +35516,9 @@ $messages['zh-hant'] = array(
 請檢查。',
 	'translate-manage-fuzzy-summary' => '訊息已更改',
 	'translate-manage-submit' => '執行',
-	'translate-manage-intro-other' => '下面是在翻譯更改列表$1語言。
-請檢查所做的更改，並選擇您想要為每個翻譯的操作。
-如果您選擇忽略更改，他們將被覆蓋對下一步的出口。', # Fuzzy
+	'translate-manage-intro-other' => '下列是在$1語言的翻譯更改列表。
+請檢查更改，並為每個翻譯更新選擇您想要的操作。
+您可以選擇暫時忽略這些更改。',
 	'importtranslations' => '匯入翻譯',
 	'translate-import-from-local' => '上載本地檔案：',
 	'translate-import-load' => '載入檔案',

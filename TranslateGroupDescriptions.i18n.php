@@ -2744,6 +2744,7 @@ $messages['zh-hans'] = array(
 );
 
 /** Traditional Chinese (中文（繁體）‎)
+ * @author Justincheng12345
  * @author Liangent
  * @author Mark85296341
  * @author Simon Shek
@@ -2787,5 +2788,6 @@ $messages['zh-hant'] = array(
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]]是一個使用GNU GPL許可證的顯示世界範圍內遠足、騎行、山地騎行、 輪滑路線的服務。',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] 可以快速找到 Wikimedia 的維基某一個頁面的作者。',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] 是一個將離線、僅文字版本的維基百科傳送到手機上的計畫。',
+	'translate-group-desc-wikimedia-mobile' => '包含維基媒體項目流動應用程式的聚合訊息組',
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]]是一個真正實時協作編輯器',
 );
