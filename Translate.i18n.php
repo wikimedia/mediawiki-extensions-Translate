@@ -2825,8 +2825,8 @@ Por favor, compruebala.",
 	'translate-manage-fuzzy-summary' => 'La definición del mensaxe camudó',
 	'translate-manage-submit' => 'Executar',
 	'translate-manage-intro-other' => "Debaxo ta la llista de cambios nes traducciones de la llingua $1.
-Por favor, revisa los cambios y escueyi l'aición que quieras facer para cauna d'elles.
-Si escueyes ignorar los cambios, se sobrescribirán na siguiente esportación.", # Fuzzy
+Por favor, revise los cambios y escueya l'aición que quier facer pa cada anovamientu.
+Si escueye inorar los cambios, esta aición ye sólo temporal.",
 	'importtranslations' => 'Importar traducciones',
 	'translate-import-from-local' => 'Xubir un ficheru llocal:',
 	'translate-import-load' => 'Xubir ficheru',
@@ -20574,13 +20574,13 @@ $messages['mk'] = array(
 	'translate-manage-conflict-summary' => 'Увезување на нова верзија од надворешен извор.
 Проверете.',
 	'translate-manage-fuzzy-summary' => 'Формулацијата на пораката е променета',
+	'translate-manage-submit' => 'Изврши',
+	'translate-manage-intro-other' => 'Еве список на промени во преводите на јазикот $1.
+Прегледајте ги пораките и изберете го дејството што сакате да го направите за секоја поднова.
+Ако изберете да ги занемарите промените, ова дејство ќе биде само привремено.',
 	'importtranslations' => 'Увези преводи',
-	'translate-import-from-url' => 'URL кон податотеката:',
-	'translate-import-from-wiki' => 'Податотека на ова вики:',
 	'translate-import-from-local' => 'Локално подигање на податотека:',
 	'translate-import-load' => 'Вчитај податотека',
-	'translate-import-err-type-not-supported' => 'Не можам да ја вчитам податотеката:
-Методот <code>$1</code> не е поддржан.',
 	'translate-import-err-dl-failed' => 'Не можам да ја преземам податотеката:
 $1',
 	'translate-import-err-ul-failed' => 'Подигањето на податотеката не успеа',
@@ -28550,12 +28550,12 @@ $messages['sl'] = array(
 	'translate-taskui-view' => 'Pokaži vsa sporočila',
 	'translate-taskui-untranslated' => 'Pokaži neprevedena sporočila',
 	'translate-taskui-optional' => 'Pokaži izbirna sporočila',
-	'translate-taskui-acceptqueue' => 'Samo sporočila, ki jih lahko sprejmem', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Samo sporočila, ki jih lako označim kot pregledana',
 	'translate-taskui-reviewall' => 'Preglej vse prevode',
 	'translate-taskui-export-to-file' => 'Izvozi v izvirni obliki',
 	'translate-taskui-export-as-po' => 'Izvozi za nepovezano prevajanje',
 	'translate-taction-translate' => 'Prevedi',
-	'translate-taction-proofread' => 'Preglej', # Fuzzy
+	'translate-taction-proofread' => 'Preglej',
 	'translate-taction-lstats' => 'Statistika jezika',
 	'translate-taction-mstats' => 'Statistika skupine sporočil',
 	'translate-taction-export' => 'Izvozi',
@@ -28790,13 +28790,13 @@ Prosimo, ponovno potrdite obrazec, da nadaljujete z obdelavo.',
 	'translate-manage-conflict-summary' => 'Uvažanje nove različice iz zunanjega vira.
 Prosimo, preverite.',
 	'translate-manage-fuzzy-summary' => 'Opredelitev sporočila se je spremenila',
+	'translate-manage-submit' => 'Izvedi',
+	'translate-manage-intro-other' => 'Spodaj se nahaja seznam sprememb prevodov v jeziku $1.
+Prosimo, preglejte spremembe in izberite dejanje, ki ga želite storiti za vsako posodobitev.
+Če se odločite prezreti spremembe, bo to dejanje samo začasno.',
 	'importtranslations' => 'Uvažanje prevodov',
-	'translate-import-from-url' => 'URL datoteke:',
-	'translate-import-from-wiki' => 'Datoteka v tem wikiju:',
 	'translate-import-from-local' => 'Nalaganje lokalne datoteke:',
 	'translate-import-load' => 'Naloži datoteko',
-	'translate-import-err-type-not-supported' => 'Ne morem naložiti datoteke:
-Način <code>$1</code> ni podprt.',
 	'translate-import-err-dl-failed' => 'Ne morem pridobiti datoteke:
 $1',
 	'translate-import-err-ul-failed' => 'Nalaganje datoteke ni bilo uspešno',
@@ -28832,25 +28832,26 @@ Podrobnosti: $1',
 	'translate-searchprofile-tooltip' => 'Iskanje med vsemi prevodi',
 	'translate-search-languagefilter' => 'Filtriraj po jeziku:',
 	'translate-search-nofilter' => 'Brez filtriranja',
-	'translate-messagereview-submit' => 'Sprejmi', # Fuzzy
-	'translate-messagereview-progress' => 'Sprejemanje ...', # Fuzzy
-	'translate-messagereview-failure' => 'Sprejemanje ... spodletelo: $1', # Fuzzy
-	'translate-messagereview-done' => 'Sprejeto', # Fuzzy
-	'translate-messagereview-reviews' => '{{PLURAL:$1|Sprejel $1 uporabnik|Sprejela $1 uporabnika|Sprejeli $1 uporabniki|Sprejelo $1 uporabnikov}}', # Fuzzy
-	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|Sprejeli ste vi|Sprejela $1 uporabnika, vključno z vami|Sprejeli $1 uporabniki, vključno z vami|Sprejelo $1 uporabnikov, vključno z vami}}', # Fuzzy
+	'translate-messagereview-submit' => 'Označi kot pregledano',
+	'translate-messagereview-progress' => 'Označevanje kot pregledano ...',
+	'translate-messagereview-failure' => 'Označevanje kot pregledano je spodletelo: $1',
+	'translate-messagereview-done' => 'Pregledano',
+	'translate-messagereview-reviews' => '{{PLURAL:$1|Pregledal $1 uporabnik|Pregledala $1 uporabnika|Pregledali $1 uporabniki|Pregledalo $1 uporabnikov}}',
+	'translate-messagereview-reviewswithyou' => '{{PLURAL:$1|Pregledali ste vi|Pregledala $1 uporabnika, vključno z vami|Pregledali $1 uporabniki, vključno z vami|Pregledalo $1 uporabnikov, vključno z vami}}',
 	'api-error-invalidrevision' => 'Prevoda ni bilo mogoče najti',
 	'api-error-unknownmessage' => 'Sporočila ni bilo mogoče najti',
 	'api-error-fuzzymessage' => 'Prevod je označen kot zastarel',
-	'api-error-owntranslation' => 'Ne morete sprejemati svojih prevodov.', # Fuzzy
-	'translate-messagereview-no-fuzzy' => 'Zastarelih prevodov ni mogoče sprejeti.', # Fuzzy
-	'translate-messagereview-no-own' => 'Svojih prevodov ne morete sprejeti.', # Fuzzy
-	'translate-messagereview-doit' => 'Sprejmi prevod kot pravilni prevod.', # Fuzzy
+	'api-error-owntranslation' => 'Svojih prevodov ne me morete označiti kot pregledane',
+	'translate-messagereview-no-fuzzy' => 'Zastarelih prevodov ni mogoče označiti kot pregledane.',
+	'translate-messagereview-no-own' => 'Svojih prevodov ne me morete označiti kot pregledane.',
+	'translate-messagereview-doit' => 'Označi prevod kot pregledan.',
 	'group-translate-proofr' => 'Pregledovalci prevodov',
 	'group-translate-proofr-member' => '{{GENDER:$1|pregledovalec|pregledovalka}} prevodov',
 	'grouppage-translate-proofr' => '{{ns:project}}:Pregledovalci prevodov',
 	'log-name-translationreview' => 'Dnevnik pregledov prevodov',
 	'log-description-translationreview' => 'Dnevnik vseh pregledov prevodov in skupin sporočil.',
-	'logentry-translationreview-message' => '$1 je {{GENDER:$2|sprejel|sprejela|sprejel(-a)}} prevod $3', # Fuzzy
+	'logentry-translationreview-message' => '$1 je {{GENDER:$2|pregledal|pregledala|pregledal(-a)}} prevod $3',
+	'logentry-translationreview-group' => '$1 je {{GENDER:$2|spremenil|spremenila|spremenil(-a)}} stanje prevodov jezika $4 za $3 iz $6 v $7',
 	'translate-workflow-state-' => '(izključeno)',
 	'translate-workflowstatus' => 'Stanje: $1',
 	'translate-workflow-set-do' => 'Nastavi',
@@ -28864,7 +28865,7 @@ Podrobnosti: $1',
 Stanja so opredeljena v konfiguracijski spremenljivki $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Nedavni prevodi',
 	'translate-dynagroup-recent-desc' => 'Skupina sporočil prikazuje vse nedavne prevode v ta jezik.
-Najuporabnejše za opravila lektoriranja.', # Fuzzy
+Najuporabnejše za opravila pregleda.',
 	'translate-dynagroup-additions-label' => 'Nedavna dodajanja',
 	'translate-dynagroup-additions-desc' => 'Ta skupina sporočil kaže nova in spremenjena sporočila.',
 	'translate-dynagroup-by' => '{{GENDER:$1|Prevedel|Prevedla|Prevedla oseba}} $1',
@@ -28882,21 +28883,24 @@ Najuporabnejše za opravila lektoriranja.', # Fuzzy
 	'tux-tab-untranslated' => 'Neprevedeno',
 	'tux-tab-outdated' => 'Zastarelo',
 	'tux-tab-translated' => 'Prevedeno',
+	'tux-tab-unproofread' => 'Nepregledano',
 	'tux-edit' => 'Uredi',
 	'tux-status-optional' => 'Izbirno',
 	'tux-status-fuzzy' => 'Zastarelo',
-	'tux-status-proofread' => 'Pregledano', # Fuzzy
+	'tux-status-proofread' => 'Pregledano',
 	'tux-status-translated' => 'Prevedeno',
 	'tux-status-saving' => 'Shranjevanje ...',
 	'tux-status-unsaved' => 'Neshranjeno',
 	'tux-editor-placeholder' => 'Vaš prevod',
 	'tux-editor-paste-original-button-label' => 'Prilepi izvorno besedilo',
+	'tux-editor-discard-changes-button-label' => 'Zavrzi spremembe',
 	'tux-editor-save-button-label' => 'Shrani prevod',
 	'tux-editor-skip-button-label' => 'Preskoči na naslednje',
+	'tux-editor-cancel-button-label' => 'Prekliči',
 	'tux-editor-confirm-button-label' => 'Potrdi prevod',
 	'tux-editor-shortcut-info' => 'Pritisnite »$1« za shranitev ali »$2« za skok na naslednje sporočilo',
-	'tux-editor-edit-desc' => 'Uredi opis', # Fuzzy
-	'tux-editor-add-desc' => 'Dodaj opis', # Fuzzy
+	'tux-editor-edit-desc' => 'Uredi dokumentacijo',
+	'tux-editor-add-desc' => 'Dodaj dokumentacijo',
 	'tux-editor-suggestions-title' => 'Predlogi',
 	'tux-editor-in-other-languages' => 'V drugih jezikih',
 	'tux-editor-need-more-help' => 'Potrebujete dodatno pomoč?',
@@ -28906,9 +28910,16 @@ Najuporabnejše za opravila lektoriranja.', # Fuzzy
 	'tux-warnings-hide' => 'skrij',
 	'tux-editor-save-failed' => 'Shranjevanje prevoda ni uspelo: $1',
 	'tux-editor-use-this-translation' => 'Uporabi kot prevod',
+	'tux-editor-n-uses' => 'uporabljeno {{PLURAL:$1|$1-krat}}',
 	'tux-editor-message-desc-more' => 'Pokaži več',
 	'tux-editor-message-desc-less' => 'Pokaži manj',
 	'tux-editor-clear-translated' => 'Skrij prevedeno',
+	'tux-editor-proofreading-mode' => 'Preglej',
+	'tux-editor-proofreading-hide-own-translations' => 'Shrani moje prevode',
+	'tux-editor-proofreading-show-own-translations' => 'Prikaži moje prevode',
+	'tux-proofread-action-tooltip' => 'Označi kot pregledano',
+	'tux-proofread-edit-label' => 'Uredi',
+	'tux-editor-page-mode' => 'Stran',
 	'tux-editor-outdated-warning' => 'Prevod je morda treba posodobiti.',
 	'tux-editor-outdated-warning-diff-link' => 'Prikaži razlike',
 	'tux-editor-doc-editor-placeholder' => 'Dokumentacija sporočila',
@@ -30201,13 +30212,13 @@ Vänligen aktivera formuläret igen för att fortsätta behandla det.',
 	'translate-manage-conflict-summary' => 'Importerar ny version från extern källa.
 Vänligen kontrollera.',
 	'translate-manage-fuzzy-summary' => 'Meddelandedefinitionen har ändrats',
+	'translate-manage-submit' => 'Genomför',
+	'translate-manage-intro-other' => 'Nedan följer en lista över översättningar på $1 språk.
+Var vänlig och se över ändringarna och välj den åtgärd du vill utföra för varje översättning.
+Om du väljer att ignorera dessa förändringar så kommer de att åsidosättas vid nästa export.', # Fuzzy
 	'importtranslations' => 'Importera översättningar',
-	'translate-import-from-url' => 'URL till filen:',
-	'translate-import-from-wiki' => 'Fil på denna wiki:',
 	'translate-import-from-local' => 'Lokal filuppladdning:',
 	'translate-import-load' => 'Ladda fil',
-	'translate-import-err-type-not-supported' => 'Kan inte ladda filen:
-Metoden <code>$1</code> stöds inte.',
 	'translate-import-err-dl-failed' => 'Kan inte hämta denna filen:
 $1',
 	'translate-import-err-ul-failed' => 'Filuppladdningen misslyckades',
