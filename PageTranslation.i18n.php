@@ -6216,6 +6216,7 @@ $messages['lt'] = array(
 	'tpt-old-pages-title' => 'Puslapių vertimas',
 	'tpt-other-pages-title' => 'Sugadinti puslapiai',
 	'tpt-select-prioritylangs-reason' => 'Priežastis:',
+	'tpt-sections-prioritylangs' => 'Pirmaujančios kalbos',
 	'tpt-rev-mark' => 'Pažymėti vertimui',
 	'tpt-rev-unmark' => 'pašalinti iš vertimo',
 	'tpt-rev-encourage' => 'atkurti',

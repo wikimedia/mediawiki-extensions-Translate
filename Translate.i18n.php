@@ -9871,6 +9871,13 @@ Sobib ennekõike tõlgete ülevaatuseks.',
 	'tux-empty-list-translated' => 'Tõlgitud sõnumid puuduvad',
 	'tux-empty-list-translated-guide' => 'Saad tõlkimisel aidata',
 	'tux-empty-list-translated-action' => 'Tõlgi',
+	'tux-empty-no-messages-to-display' => 'Ühtegi sõnumit pole kuvada.',
+	'tux-empty-show-optional-messages' => 'Näita valikulisi sõnumeid',
+	'tux-empty-no-outdated-messages' => 'Iganenud sõnumid puuduvad',
+	'tux-empty-nothing-to-proofread' => 'Midagi pole üle vaadata',
+	'tux-empty-you-can-help-providing' => 'Saad aidata uusi tõlkeid koostada.',
+	'tux-empty-nothing-new-to-proofread' => 'Midagi uut pole üle vaadata',
+	'tux-empty-you-can-review-already-proofread' => 'Saad üle vaadata tõlkeid, mida teised on juba üle vaadanud.',
 	'tux-empty-list-other' => 'Midagi pole tõlkida',
 	'tux-empty-list-other-guide' => 'Saad aidata olemasolevaid tõlkeid üle vaadata.',
 	'tux-empty-list-other-action' => 'Vaata tõlked üle',
@@ -9878,6 +9885,7 @@ Sobib ennekõike tõlgete ülevaatuseks.',
 	'tux-editor-close-tooltip' => 'Sule',
 	'tux-editor-expand-tooltip' => 'Laiem vaade',
 	'tux-editor-collapse-tooltip' => 'Kitsam vaade',
+	'tux-editor-message-tools-history' => 'Ajalugu',
 	'tux-editor-message-tools-translations' => 'Kõik tõlked',
 	'tux-editor-loading' => 'Laadimine...',
 	'translate-search-more-languages-info' => 'Veel $1 {{PLURAL:$1|keel|keelt}}',
@@ -19606,7 +19614,7 @@ $1',
 	'translate-page-description-legend' => 'Informacija apie grupę',
 	'translate-page-description-hasoptional-open' => 'Rodyti pasirinktinius pranešimus.',
 	'translate-page-edit' => 'redaguoti',
-	'translate-ext-url' => '<hr>Interneto svetainė: $1', # Fuzzy
+	'translate-ext-url' => '<hr />Interneto svetainė: $1',
 	'translate-optional' => '(nebūtinas)',
 	'translate-ignored' => '(ignoruojamas)',
 	'translate-edit-jsopen' => 'redaguoti',
@@ -19658,6 +19666,7 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
 	'translate-pref-nonewsletter' => 'Nesiųskite man el. pašto naujienlaiškus',
 	'translate-pref-editassistlang' => 'Asistentinės kalbos:',
 	'prefs-translate' => 'Vertimo nustatymai',
+	'right-translate' => 'Redaguoti naudojant vertėjo sąsają',
 	'right-translate-manage' => 'Tvarkyti pranešimų grupes',
 	'action-translate-manage' => 'tvarkyti pranešimų grupes',
 	'right-translate-import' => 'Importuoti neprisijungusius vertimus',
@@ -19739,6 +19748,7 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
 	'translate-manage-action-ignore' => 'Ignoruoti',
 	'translate-manage-action-fuzzy' => 'Importuoti ir naujinti vertimus',
 	'translate-manage-fuzzy-summary' => 'Pranešimo apibrėžimas pasikeitė',
+	'translate-manage-submit' => 'Vykdyti',
 	'importtranslations' => 'Importuoti vertimus',
 	'translate-import-from-local' => 'Vietinio failo įkėlimas:',
 	'translate-import-load' => 'Įkrauti failą',
@@ -33543,12 +33553,12 @@ $messages['vi'] = array(
 	'translate-taskui-view' => 'Hiện tất cả các thông điệp',
 	'translate-taskui-untranslated' => 'Các thông điệp chưa dịch',
 	'translate-taskui-optional' => 'Các thông điệp tùy dịch',
-	'translate-taskui-acceptqueue' => 'Chỉ duyệt các thông điệp tôi có quyền chấp nhận', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Chỉ hiện các thông điệp tôi có quyền đánh dấu duyệt',
 	'translate-taskui-reviewall' => 'Duyệt tất cả các bản dịch',
 	'translate-taskui-export-to-file' => 'Xuất ra định dạng bản địa',
 	'translate-taskui-export-as-po' => 'Xuất để dịch ngoại tuyến',
 	'translate-taction-translate' => 'Biên dịch',
-	'translate-taction-proofread' => 'Hiệu đính', # Fuzzy
+	'translate-taction-proofread' => 'Duyệt',
 	'translate-taction-lstats' => 'Thống kê ngôn ngữ',
 	'translate-taction-mstats' => 'Thống kê nhóm thông điệp',
 	'translate-taction-export' => 'Xuất',
@@ -33781,13 +33791,13 @@ Xin hãy gửi lại mẫu này để tiếp tục xử lý.',
 	'translate-manage-conflict-summary' => 'Đang nhập một phiên bản mới từ nguồn bên ngoài.
 Xin kiểm lại.',
 	'translate-manage-fuzzy-summary' => 'Định nghĩa của thông điệp đã thay đổi',
+	'translate-manage-submit' => 'Thực hiện',
+	'translate-manage-intro-other' => 'Dưới đây là danh sách các thay đổi bản dịch trong ngôn ngữ $1.
+Xin hãy xem lại các thay đổi và chọn tác vụ bạn muốn làm đối với từng bản cập nhật.
+Việc bỏ qua thay đổi chỉ tạm thời.',
 	'importtranslations' => 'Nhập bản dịch',
-	'translate-import-from-url' => 'URL đến tập tin:',
-	'translate-import-from-wiki' => 'Tập tin trong wiki này:',
 	'translate-import-from-local' => 'Tải tập tin từ máy tính:',
 	'translate-import-load' => 'Tải tập tin',
-	'translate-import-err-type-not-supported' => 'Không thể tải tập tin:
-Phương thức <code>$1</code> không được hỗ trợ.',
 	'translate-import-err-dl-failed' => 'Không thể truy xuất tập tin:
 $1',
 	'translate-import-err-ul-failed' => 'Tải tập tin thất bại',
@@ -33823,19 +33833,19 @@ Chi tiết:$1',
 	'translate-searchprofile-tooltip' => 'Tìm kiếm tất cả các bản dịch',
 	'translate-search-languagefilter' => 'Lọc theo ngôn ngữ:',
 	'translate-search-nofilter' => 'Không lọc',
-	'translate-messagereview-submit' => 'Chấp nhận', # Fuzzy
-	'translate-messagereview-progress' => 'Đang chấp nhận…', # Fuzzy
-	'translate-messagereview-failure' => 'Đang chấp nhận… thất bại: $1', # Fuzzy
-	'translate-messagereview-done' => 'Đã chấp nhận', # Fuzzy
-	'translate-messagereview-reviews' => 'Đã được $1 thành viên chấp nhận', # Fuzzy
-	'translate-messagereview-reviewswithyou' => 'Đã được {{PLURAL:$1|bạn chấp nhận|$1 người dùng chấp nhận, bao gồm bạn}}', # Fuzzy
+	'translate-messagereview-submit' => 'Đánh dấu duyệt',
+	'translate-messagereview-progress' => 'Đang đánh dấu duyệt…',
+	'translate-messagereview-failure' => 'Thất bại khi đánh dấu duyệt: $1',
+	'translate-messagereview-done' => 'Đã duyệt',
+	'translate-messagereview-reviews' => 'Đã được $1 người dùng duyệt',
+	'translate-messagereview-reviewswithyou' => 'Đã được {{PLURAL:$1|bạn duyệt|$1 người dùng duyệt, bao gồm bạn}}',
 	'api-error-invalidrevision' => 'Không tìm thấy bản dịch',
 	'api-error-unknownmessage' => 'Không tìm thấy thông điệp',
 	'api-error-fuzzymessage' => 'Bản dịch được đánh dấu là lỗi thời',
-	'api-error-owntranslation' => 'Bạn không thể chấp nhận các bản dịch của chính bạn.', # Fuzzy
-	'translate-messagereview-no-fuzzy' => 'Không thể chấp nhận các bản dịch lỗi thời.', # Fuzzy
-	'translate-messagereview-no-own' => 'Bạn không thể chấp nhận các bản dịch của chính bạn.', # Fuzzy
-	'translate-messagereview-doit' => 'Chấp nhận bản dịch này là chính xác.', # Fuzzy
+	'api-error-owntranslation' => 'Bạn không thể đánh dấu các bản dịch của chính bạn là đã duyệt.',
+	'translate-messagereview-no-fuzzy' => 'Không thể đánh dấu các bản dịch lỗi thời là đã duyệt.',
+	'translate-messagereview-no-own' => 'Bạn không thể đánh dấu các bản dịch của chính bạn là đã duyệt.',
+	'translate-messagereview-doit' => 'Đánh dấu bản dịch này là đã duyệt.',
 	'group-translate-proofr' => 'Người duyệt bản dịch',
 	'group-translate-proofr-member' => '{{GENDER:$1}}người duyệt bản dịch',
 	'grouppage-translate-proofr' => '{{ns:project}}:Người duyệt bản dịch',
@@ -33843,7 +33853,7 @@ Chi tiết:$1',
 	'group-translate-proofr.js' => '/* Mã JS tại đây sẽ chỉ ảnh hưởng đến những người duyệt bản dịch */',
 	'log-name-translationreview' => 'Nhật trình duyệt bản dịch',
 	'log-description-translationreview' => 'Nhật trình các tác vụ duyệt bản dịch và nhóm thông điệp.',
-	'logentry-translationreview-message' => '$1 đã {{GENDER:$2|chấp nhận}} bản dịch $3', # Fuzzy
+	'logentry-translationreview-message' => '$1 {{GENDER:$2}}đã duyệt bản dịch $3',
 	'logentry-translationreview-group' => '$1 {{GENDER:$2}}đã đổi trạng thái bản dịch $4 của $3 từ $6 thành $7',
 	'group-translate-sandboxed' => 'Biên dịch viên chưa chấp nhận',
 	'group-translate-sandboxed-member' => '{{GENDER:$1}}biên dịch viên chưa chấp nhận',
@@ -33864,7 +33874,7 @@ Chi tiết:$1',
 Các trạng thái được định rõ trong biến cấu hình $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Bản dịch gần đây',
 	'translate-dynagroup-recent-desc' => 'Nhóm thông điệp này bao gồm các bản dịch gần đây trong ngôn ngữ này.
-Nó có ích đối với các tác vụ hiệu đính.', # Fuzzy
+Nó có ích đối với các tác vụ duyệt.',
 	'translate-dynagroup-additions-label' => 'Thông điệp bổ sung gần đây',
 	'translate-dynagroup-additions-desc' => 'Nhóm thông điệp này chứa các thông điệp mới được bổ sung hoặc thay đổi gần đây.',
 	'translate-dynagroup-by' => 'Bản dịch của $1',
@@ -33882,11 +33892,11 @@ Nó có ích đối với các tác vụ hiệu đính.', # Fuzzy
 	'tux-tab-untranslated' => 'Chưa dịch',
 	'tux-tab-outdated' => 'Lỗi thời',
 	'tux-tab-translated' => 'Dịch rồi',
-	'tux-tab-unproofread' => 'Chưa hiệu đính', # Fuzzy
+	'tux-tab-unproofread' => 'Chưa duyệt',
 	'tux-edit' => 'Sửa đổi',
 	'tux-status-optional' => 'Tùy chọn',
 	'tux-status-fuzzy' => 'Lỗi thời',
-	'tux-status-proofread' => 'Hiệu đính rồi', # Fuzzy
+	'tux-status-proofread' => 'Đã duyệt',
 	'tux-status-translated' => 'Dịch rồi',
 	'tux-status-saving' => 'Đang lưu…',
 	'tux-status-unsaved' => 'Chưa lưu',
@@ -33898,8 +33908,8 @@ Nó có ích đối với các tác vụ hiệu đính.', # Fuzzy
 	'tux-editor-cancel-button-label' => 'Hủy bỏ',
 	'tux-editor-confirm-button-label' => 'Xác nhận bản dịch',
 	'tux-editor-shortcut-info' => 'Bấm “$1” để lưu hoặc “$2” để chuyển đến thông điệp kế',
-	'tux-editor-edit-desc' => 'Sửa đổi miêu tả', # Fuzzy
-	'tux-editor-add-desc' => 'Thêm miêu tả', # Fuzzy
+	'tux-editor-edit-desc' => 'Sửa đổi tài liệu',
+	'tux-editor-add-desc' => 'Thêm tài liệu',
 	'tux-editor-suggestions-title' => 'Gợi ý',
 	'tux-editor-in-other-languages' => 'Theo ngôn ngữ khác',
 	'tux-editor-need-more-help' => 'Còn thắc mắc?',
@@ -33913,11 +33923,11 @@ Nó có ích đối với các tác vụ hiệu đính.', # Fuzzy
 	'tux-editor-message-desc-more' => 'Xem thêm',
 	'tux-editor-message-desc-less' => 'Thu gọn',
 	'tux-editor-clear-translated' => 'Ẩn thông điệp đã dịch',
-	'tux-editor-proofreading-mode' => 'Hiệu đính', # Fuzzy
+	'tux-editor-proofreading-mode' => 'Duyệt',
 	'tux-editor-translate-mode' => 'Danh sách',
 	'tux-editor-proofreading-hide-own-translations' => 'Ẩn các bản dịch của mình',
 	'tux-editor-proofreading-show-own-translations' => 'Hiện các bản dịch của mình',
-	'tux-proofread-action-tooltip' => 'Chấp nhận bản dịch', # Fuzzy
+	'tux-proofread-action-tooltip' => 'Đánh dấu duyệt',
 	'tux-proofread-edit-label' => 'Sửa đổi',
 	'tux-editor-page-mode' => 'Trang',
 	'tux-editor-outdated-warning' => 'Bản dịch này có thể cần được cập nhật.',
@@ -33942,13 +33952,13 @@ Nó có ích đối với các tác vụ hiệu đính.', # Fuzzy
 	'tux-empty-there-are-optional' => 'Những thông điệp tùy dịch không được liệt kê',
 	'tux-empty-show-optional-messages' => 'Hiển thị các thông điệp tùy dịch',
 	'tux-empty-no-outdated-messages' => 'Không có thông điệp lỗi thời',
-	'tux-empty-nothing-to-proofread' => 'Không có gì để hiệu đính', # Fuzzy
+	'tux-empty-nothing-to-proofread' => 'Không có gì để duyệt',
 	'tux-empty-you-can-help-providing' => 'Mời bạn giúp dịch các thông điệp mới',
-	'tux-empty-nothing-new-to-proofread' => 'Không có gì mới để hiệu đính', # Fuzzy
-	'tux-empty-you-can-review-already-proofread' => 'Mời bạn xem lại những bản dịch đã được người khác hiệu đính.', # Fuzzy
+	'tux-empty-nothing-new-to-proofread' => 'Không có gì mới để duyệt',
+	'tux-empty-you-can-review-already-proofread' => 'Mời bạn xem lại những bản dịch đã được người khác duyệt.',
 	'tux-empty-list-other' => 'Không có gì để dịch',
-	'tux-empty-list-other-guide' => 'Bạn có thể giúp xem lại các bản dịch hiện có', # Fuzzy
-	'tux-empty-list-other-action' => 'Hiệu đính các bản dịch', # Fuzzy
+	'tux-empty-list-other-guide' => 'Bạn có thể giúp duyệt các bản dịch hiện có',
+	'tux-empty-list-other-action' => 'Duyệt các bản dịch',
 	'tux-empty-list-other-link' => 'Hiện tất cả các thông điệp',
 	'tux-editor-close-tooltip' => 'Đóng',
 	'tux-editor-expand-tooltip' => 'Mở rộng',
@@ -33957,8 +33967,8 @@ Nó có ích đối với các tác vụ hiệu đính.', # Fuzzy
 	'tux-editor-message-tools-translations' => 'Tất cả các bản dịch',
 	'tux-editor-loading' => 'Đang tải…',
 	'translate-search-more-languages-info' => '$1 ngôn ngữ khác',
-	'translate-statsbar-tooltip' => 'Đã biên dịch $1%, đã hiệu đính $2%', # Fuzzy
-	'translate-statsbar-tooltip-with-fuzzy' => 'Đã biên dịch $1%, đã hiệu đính $2%, $3% lỗi thời', # Fuzzy
+	'translate-statsbar-tooltip' => 'Đã biên dịch $1%, đã duyệt $2%',
+	'translate-statsbar-tooltip-with-fuzzy' => 'Đã biên dịch $1%, đã duyệt $2%, $3% lỗi thời',
 	'translate-search-more-groups-info' => '$1 nhóm nữa',
 );
 
