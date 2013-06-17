@@ -92,6 +92,7 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 	'tpt-languages-legend' => 'Other languages:',
 	'tpt-languages-separator' => '&#160;•&#160;',
 	'tpt-languages-zero' => 'Start translation for this language',
+	'tpt-tab-translate' => 'Translate',
 
 	'tpt-target-page' => 'This page cannot be updated manually.
 This page is a translation of the page [[$1]] and the translation can be updated using [$2 the translation tool].',
@@ -227,7 +228,6 @@ Please check the [[Special:Log/pagetranslation|page translation log]] for errors
 	'pt-deletepage-intro' => 'This special page allows you delete a whole translatable page, or an individual translation page in a language.
 The delete action will not be instant, because all the pages depending on them will also be deleted.
 Failures will be logged in the [[Special:Log/pagetranslation|page translation log]] and they need to be repaired by hand.',
-
 );
 
 /** Message documentation (Message documentation)
@@ -450,6 +450,7 @@ See also:
 * {{msg-mw|Pt-movepage-list-count}}',
 	'pt-deletepage-full-logreason' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-lang-logreason' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
+	'tpt-tab-translate' => 'Replaces the edit tab with translation tab for translation pages.',
 );
 
 /** Afrikaans (Afrikaans)

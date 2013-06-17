@@ -602,7 +602,8 @@ class PageTranslationHooks {
 				$result = array(
 					'tpt-target-page',
 					$page->getTitle()->getPrefixedText(),
-					$page->getTranslationUrl( $code )
+					// This url shouldn't get cached
+					wfExpandUrl( $page->getTranslationUrl( $code ) )
 				);
 
 				return false;
@@ -742,7 +743,9 @@ class PageTranslationHooks {
 			$per = $pers[$code] * 100;
 		}
 		$titleText = $page->getTitle()->getPrefixedText();
-		$url = $page->getTranslationUrl( $code );
+
+		// This url might get cached
+		$url = wfExpandUrl( $page->getTranslationUrl( $code ), PROTO_RELATIVE );
 
 		// Output
 		$wrap = '<div class="mw-translate-page-info">$1</div>';
@@ -858,5 +861,36 @@ class PageTranslationHooks {
 		$context->getOutput()->addHtml( $output );
 
 		return false;
+	}
+
+	/**
+	 * Converts the edit tab (if exists) for translation pages to translate tab.
+	 * Hook: SkinTemplateNavigation
+	 * @since 2013.06
+	 */
+	static function translateTab( Skin $skin, array &$tabs ) {
+		$title = $skin->getTitle();
+		// Set display title
+		$page = TranslatablePage::isTranslationPage( $title );
+		if ( !$page ) {
+			return true;
+		}
+
+		// First try - no working
+		// $code = new MessageHandle( $title )->getCode();
+		// Second try - working but ugly
+		// $code = call_user_func( function () use ( $title ) {
+		// 	return new MessageHandle( $title );
+		// })->getCode();
+		// Third try - giving up
+		$handle = new MessageHandle( $title );
+		$code = $handle->getCode();
+
+		if ( isset( $tabs['views']['edit'] ) ) {
+			$tabs['views']['edit']['text'] = $skin->msg( 'translate-tag-tab-translate' )->text();
+			$tabs['views']['edit']['href'] = $page->getTranslationUrl( $code );
+		}
+
+		return true;
 	}
 }
