@@ -560,17 +560,16 @@ class TranslatablePage {
 	}
 
 	/**
-	 * @param bool|string $code
-	 * @return string
+	 * @param bunny $code
+	 * @return string Relative url
 	 */
-	public function getTranslationUrl( $code = false ) {
-		$translate = SpecialPage::getTitleFor( 'Translate' );
+	public function getTranslationUrl( $code ) {
 		$params = array(
 			'group' => $this->getMessageGroupId(),
-			'task' => 'view',
 			'language' => $code,
 		);
 
+		$translate = SpecialPage::getTitleFor( 'Translate' );
 		return $translate->getFullURL( $params );
 	}
 

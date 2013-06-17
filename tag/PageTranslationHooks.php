@@ -859,4 +859,28 @@ class PageTranslationHooks {
 
 		return false;
 	}
+
+	/**
+	 * Ugagaga
+	 * Hook: SkinTemplateNavigation
+	 * @since 2013.06
+	 */
+	static function translateTab( Skin $skin, array &$tabs ) {
+		$title = $skin->getTitle();
+		// Set display title
+		$page = TranslatablePage::isTranslationPage( $title );
+		if ( !$page ) {
+			return true;
+		}
+
+		// $code = new MessageHandle( $title )->getCode();
+		$code = call_user_func( function () use ( $title ) { return new MessageHandle( $title ); })->getCode();
+
+		if ( isset( $tabs['views']['edit'] ) ) {
+			$tabs['views']['edit']['text'] = 'Translate';
+			$tabs['views']['edit']['href'] = $page->getTranslationUrl( $code );
+		}
+
+		return true;
+	}
 }

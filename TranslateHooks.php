@@ -153,6 +153,9 @@ class TranslateHooks {
 
 			// Show page source code when export tab is opened
 			$wgHooks['SpecialTranslate::executeTask'][] = 'PageTranslationHooks::sourceExport';
+
+			// Bunnies
+			$wgHooks['SkinTemplateNavigation'][] = 'PageTranslationHooks::translateTab';
 		}
 	}
 
