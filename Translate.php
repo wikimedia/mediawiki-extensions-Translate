@@ -92,6 +92,8 @@ $wgSpecialPageGroups['AggregateGroups'] = 'wiki';
 $wgSpecialPages['SearchTranslations'] = 'SpecialSearchTranslations';
 $wgSpecialPageGroups['SearchTranslations'] = 'wiki';
 $wgSpecialPages['TranslateSandbox'] = 'SpecialTranslateSandbox';
+$wgSpecialPages['TranslationStash'] = 'SpecialTranslationStash';
+$wgSpecialPageGroups['TranslationStash'] = 'wiki';
 
 // API
 $wgAPIGeneratorModules['messagecollection'] = 'ApiQueryMessageCollection';
