@@ -27980,7 +27980,7 @@ $messages['si'] = array(
 	'translate-taskui-export-to-file' => 'දේශ්‍රීය ආකෘතියයෙන් නිර්යාත කරන්න',
 	'translate-taskui-export-as-po' => 'මාර්ග-අපගත පරිවර්තනය සඳහා නිර්යාත කරන්න',
 	'translate-taction-translate' => 'පරිවර්තනය කරන්න',
-	'translate-taction-proofread' => 'විමර්ශනය',
+	'translate-taction-proofread' => 'සමාලෝචනය',
 	'translate-taction-lstats' => 'භාෂා සංඛ්‍යානයන්',
 	'translate-taction-mstats' => 'පණිවුඩ සමූහ සංඛ්‍යානය',
 	'translate-taction-export' => 'නිර්යාත කරන්න',
@@ -28182,13 +28182,10 @@ $messages['si'] = array(
 	'translate-manage-conflict-summary' => 'බාහිර මූලාශ්‍රයක් වෙතින් නව අනුවාදය ආයාත කරමින්.
 කරුණාකර පිරික්සන්න.',
 	'translate-manage-fuzzy-summary' => 'නිර්වචනය වෙනස් වී ඇත', # Fuzzy
+	'translate-manage-submit' => 'සම්පාදනය කරන්න',
 	'importtranslations' => 'පරිවර්තන ආයාත කරන්න',
-	'translate-import-from-url' => 'URL ගොනුව වෙත:',
-	'translate-import-from-wiki' => 'මෙම විකියෙහි ඇති ගොනු:',
 	'translate-import-from-local' => 'ප්‍රාදේශීය ගොනු උඩුගත කෙරුම:',
 	'translate-import-load' => 'ගොනුව පූරණය කරන්න',
-	'translate-import-err-type-not-supported' => 'ගොනුව පූරණය කල නොහැක:
-<code>$1</code> ක්‍රමය සහය නොදක්වයි.',
 	'translate-import-err-dl-failed' => 'ගොනුව පමුණුවීමට නොහැක:
 $1',
 	'translate-import-err-ul-failed' => 'ගොනු උඩුගත කෙරුම සාර්ථකව සිදු නොවුණි',
@@ -31975,6 +31972,8 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 	'translate-stats-workflow' => 'Durum',
 	'translate-workflowgroup-label' => 'İş akışı durumları',
 	'translate-dynagroup-recent-label' => 'Son çeviriler',
+	'translate-dynagroup-recent-desc' => 'Bu ileti grubu, bu dildeki bütün son çevirileri gösterir.
+Görevleri incelemek için çok kullanışlıdır.',
 	'translate-dynagroup-additions-label' => 'Son eklenenler',
 	'translate-dynagroup-by' => '{{GENDER:$1|$1}} tarafından yapılan çeviri',
 	'translate-dynagroup-byc' => '{{GENDER:$1|$1}} ($2) tarafından yapılan çeviri',
