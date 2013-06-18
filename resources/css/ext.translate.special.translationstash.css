@@ -1,0 +1,54 @@
+/**
+ * @author Santhosh Thottingal
+ * @license GPL-2.0+
+ * @since 2013.10
+ */
+
+h1.firstHeading {
+	display: none;
+}
+
+.translate-welcome-header > h1 {
+	text-decoration: none;
+	border-bottom: none;
+}
+
+.translate-welcome-header > p {
+	color: #555555;
+	font-size: 1.2em;
+}
+
+.translate-welcome-header {
+	background-color: #F6F6F6;
+	padding: 10px;
+}
+
+.translate-stash-control {
+	padding: 10px;
+	font-size: 1.5em;
+}
+
+.ext-translate-language-selector-label {
+	color: #555555;
+}
+
+.ext-translate-language-selector {
+	text-align: right;
+}
+
+.ext-translate-language-selector .uls {
+	cursor: pointer;
+}
+
+/* The triangle shaped down-pointing callout after the language name
+ * in the target language selector
+ */
+.ext-translate-language-selector:after {
+	margin-left: 4px;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid #0645AD;
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+}
