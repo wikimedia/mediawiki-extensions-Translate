@@ -24,6 +24,10 @@ translations, the administrators can soon grant you full translation
 access.
 
 Please come to $2 and make some more translations.',
+	'translationstash' => 'Welcome',
+	'translate-translationstash-welcome' => 'Thank you $1, you are a new translator',
+	'translate-translationstash-welcome-note' => 'Become familiar with the translation tools by translating some randomly selected messages.',
+	'translate-translationstash-initialtranslation' => 'Your initial translation',
 );
 
 /** Message documentation (Message documentation)
@@ -39,6 +43,10 @@ Followed by a list of the pending requests.',
 	'tsb-reminder-content-generic' => 'Body of an email.
 * $1 - user name of the recipient
 * $2 - url to the website',
+	'translationstash' => 'Page title for [[Special:TranslationStash|Special page]].',
+	'translate-translationstash-welcome' => 'Title text shown for the [[Special:TranslationStash|Special page]]',
+	'translate-translationstash-welcome-note' => 'Title note for the [[Special:TranslationStash|Special page]]',
+	'translate-translationstash-initialtranslation' => 'Header for messages showing the progress of translations in [[Special:TranslationStash|Special page]]',
 );
 
 /** Afrikaans (Afrikaans)
@@ -50,7 +58,7 @@ $messages['af'] = array(
 	'tsb-reminder-title-generic' => "Voltooi u bekendstelling om 'n geverifieerde vertaler te word",
 	'tsb-reminder-content-generic' => "Hallo $1,
 
-Dankie dat u op {{SITENAME}} geregistreer het. As u u toesvertalings voltooi, sal die administrateurs spoedig volle regte aan u toeken. 
+Dankie dat u op {{SITENAME}} geregistreer het. As u u toesvertalings voltooi, sal die administrateurs spoedig volle regte aan u toeken.
 
 Gaan asseblief na $2 om 'n paar vertalings te maak.",
 );
