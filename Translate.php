@@ -50,6 +50,7 @@ $wgExtensionMessagesFiles['PageTranslation'] = "$dir/PageTranslation.i18n.php";
 $wgExtensionMessagesFiles['TranslateGroupDescriptions'] = "$dir/TranslateGroupDescriptions.i18n.php";
 $wgExtensionMessagesFiles['TranslateSearch'] = "$dir/TranslateSearch.i18n.php";
 $wgExtensionMessagesFiles['TranslateSandbox'] = "$dir/TranslateSandbox.i18n.php";
+$wgExtensionMessagesFiles['TranslationStash'] = "$dir/TranslationStash.i18n.php";
 $wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
 $wgExtensionMessagesFiles['TranslateMagic'] = "$dir/Translate.magic.php";
 
@@ -90,7 +91,8 @@ $wgSpecialPageGroups['AggregateGroups'] = 'wiki';
 $wgSpecialPages['SearchTranslations'] = 'SpecialSearchTranslations';
 $wgSpecialPageGroups['SearchTranslations'] = 'wiki';
 $wgSpecialPages['TranslateSandbox'] = 'SpecialTranslateSandbox';
-
+$wgSpecialPages['TranslationStash'] = 'SpecialTranslationStash';
+$wgSpecialPageGroups['TranslationStash'] = 'wiki';
 // API
 $wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
 $wgAPIMetaModules['languagestats'] = 'ApiQueryLanguageStats';
