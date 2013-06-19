@@ -26931,6 +26931,7 @@ Mutive:
 	'translate-manage-action-import' => "'Mborte",
 	'translate-manage-action-ignore' => 'Ignore',
 	'translate-manage-nochanges' => "Non ge stonne cangiaminde jndr'à le definiziune de le messàgge jndr'à stu gruppe.",
+	'translate-manage-submit' => 'Esegue',
 	'importtranslations' => "'Mborte le traduziune",
 	'translate-import-from-local' => "Carecamende d'u file locale:",
 	'translate-import-load' => "Careche 'u file",

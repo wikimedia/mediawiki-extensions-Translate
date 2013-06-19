@@ -1810,6 +1810,7 @@ $messages['ce'] = array(
 	'tpt-diff-new' => 'Керла йоза',
 	'tpt-languages-legend' => 'Кхин меттанаш:',
 	'pt-movepage-reason' => 'Бахьан:',
+	'pt-deletepage-current' => 'АгӀона цӀе:',
 );
 
 /** Sorani Kurdish (کوردی)
@@ -10253,8 +10254,15 @@ $messages['yi'] = array(
 	'tpt-nosuchpage' => 'בלאט $1 עקזיסטירט נישט',
 	'tpt-oldrevision' => '$2 איז נישט די לעצטע ווערסיע פונעם בלאט [[$1]].
 נאר לעצטע ווערסיעס קען מען מארקירן פאר איבערזעצונג.',
+	'tpt-notsuitable' => 'בלאט $1 פאסט נישט איבערצוזעצן.
+פארזיכערט אז ער האט <nowiki><translate></nowiki> טאַגן און האט א גילטיקן סינטאקס.',
+	'tpt-saveok' => 'דער בלאט [[$1]] איז געווארן מארקירט פאר איבערזעצן מיט $2 {{PLURAL:$2|איבערזעצונג אפשניט|איבערזעצונג אפשניטן}}.
+דער בלאט קען מען אצינד <span class="plainlinks">[$3 איבערזעצן]</span>.',
 	'tpt-badsect' => '"$1" איז נישט קיין גילטיקער נאמען פאר איבערזעצונג איינהייט $2.',
+	'tpt-mark-summary' => 'מארקירט די ווערסיע פאר איבערזעצונג',
 	'tpt-edit-failed' => 'האט נישט געקענט דערהיינטיקן דעם בלאט: $1',
+	'tpt-duplicate' => 'איבערזעצונג אפשניט נאמען $1 געניצט מער ווי איין מאל.',
+	'tpt-already-marked' => 'די לעצטע ווערסיע פון דעם בלאט איז שוין געווארן מארקירט איבערצוזעצן.',
 	'tpt-unmarked' => 'בלאט $1 מער נישט מארקירט איבערצוזעצן.',
 	'tpt-list-nopages' => 'קיין בלעטער נישט מארקירט צום איבערזעצן אדער גרייט צו ווערן מארקירט צום איבערזעצן.',
 	'tpt-new-pages-title' => 'בלעטער פארגעשטעלט איבערצוזעצן',
@@ -10269,6 +10277,7 @@ $messages['yi'] = array(
 	'tpt-rev-encourage' => 'אויפֿריכטן',
 	'tpt-rev-mark-tooltip' => 'מארקירן די לעצטע ווערזיע פון דעם בלאט פאר איבערזעצן.',
 	'tpt-rev-unmark-tooltip' => 'אוועקנעמען דעם בלאט פון איבערזעצן.',
+	'tpt-rev-encourage-tooltip' => 'שטעלט צוריק דעם בלאט פאר נארמאלער איבערזעצונג.',
 	'translate-tag-translate-link-desc' => 'פֿאַרטײַטשט דעם בלאַט',
 	'translate-tag-markthis' => 'מארקירן דעם בלאט פאר איבערזעצונג',
 	'translate-tag-markthisagain' => 'דער בלאַט האט <span class="plainlinks">[ $1 ענדערונגען]</span> זינט ער איז לעצט געווארן <span class="plainlinks">[ $2 אנגעצייכנט פֿאַר איבערזעצונג].</span>',
@@ -10283,8 +10292,16 @@ $messages['yi'] = array(
 	'tpt-aggregategroup-add' => 'צולייגן',
 	'tpt-aggregategroup-save' => 'אויפֿהיטן',
 	'tpt-aggregategroup-new-name' => 'נאָמען:',
+	'tpt-aggregategroup-new-description' => 'באשרייבונג (אפציאנאל):',
+	'tpt-aggregategroup-remove-confirm' => 'איר זענט זיכער אז איר ווילט אויסמעקן די גרופע?',
 	'tpt-aggregategroup-invalid-group' => 'גרופע עקזיסטירט נישט',
+	'log-name-pagetranslation' => 'בלאט איבערזעצונג לאגבוך',
+	'logentry-pagetranslation-mark' => '$1 {{GENDER:$2|מארקירט}} $3 איבערצוזעצן',
+	'logentry-pagetranslation-unmark' => '$1 {{GENDER:$2|אראפגענומען}} $3 פון איבערזעצן',
 	'pt-movepage-title' => 'באוועגן איבערזעצבארן בלאט "$1"',
+	'pt-movepage-block-base-exists' => 'דער איבערזעצבאר צילבלאט "[[:$1]]" עקזיסטירט.',
+	'pt-movepage-block-base-invalid' => 'דער נאמען פונעם איבערזעצבארן צילבלאט איז נישט קיין גילטיקער טיטל.',
+	'pt-movepage-block-tp-exists' => 'דער ציל אונטערבלאט "[[:$2]]" עקזיסטירט.',
 	'pt-movepage-block-subpage-exists' => 'דער ציל אונטערבלאט "[[:$2]]" עקזיסטירט.',
 	'pt-movepage-list-pages' => 'רשימה פון בלעטער צו באַוועגן',
 	'pt-movepage-list-translation' => 'טײַטש  {{PLURAL:$1|בלאַט|בלעטער}}',
@@ -10301,6 +10318,9 @@ $messages['yi'] = array(
 	'pt-movepage-action-other' => 'ענדערט ציל',
 	'pt-movepage-logreason' => 'טייל פון איבערזעצבארן בלאט "$1".',
 	'pt-deletepage-lang-title' => 'אויסמעקן איבערזעצונג בלאט "$1".',
+	'pt-deletepage-invalid-title' => 'דער ספעציפירטער בלאט איז נישט גילטיק.',
+	'pt-deletepage-action-check' => 'מאכט א רשימה פון בלעטער צו ווערן אויסגעמעקט',
+	'pt-deletepage-action-perform' => 'אויספירן אויסמעקונג',
 	'pt-deletepage-action-other' => 'ענדערן ציל',
 	'pt-deletepage-lang-legend' => 'אויסמעקן איבערזעצונג בלאט',
 	'pt-deletepage-full-legend' => 'אויסמעקן איבערזעצבארן בלאט',
