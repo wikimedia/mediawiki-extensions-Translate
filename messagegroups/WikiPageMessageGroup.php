@@ -26,7 +26,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	public function getSourceLanguage() {
 		global $wgLanguageCode;
 
-		return $wgLanguageCode;
+		return $this->getTitle()->getPageLanguage()->getCode();
 	}
 
 	/**
