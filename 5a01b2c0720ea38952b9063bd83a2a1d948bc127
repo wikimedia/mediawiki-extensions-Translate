@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "D1PHNojI",
+        "filename": "Translate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-06-20T10:56:18Z",
+      "side": 1,
+      "message": "It would be okay to use the TranslateSandbox i18n file for this, as it is is essential part of it.",
+      "revId": "5a01b2c0720ea38952b9063bd83a2a1d948bc127",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "D1DHYyu0",
+        "filename": "resources/css/ext.translate.special.translationstash.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-06-20T10:56:18Z",
+      "side": 1,
+      "message": "You have two semicolons here.",
+      "revId": "5a01b2c0720ea38952b9063bd83a2a1d948bc127",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "D1HHiUqU",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-06-20T10:56:18Z",
+      "side": 1,
+      "message": "msg() should always be used with explicit output function, like -\u003eparse() here.",
+      "revId": "5a01b2c0720ea38952b9063bd83a2a1d948bc127",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
