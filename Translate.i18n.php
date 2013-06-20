@@ -4367,7 +4367,7 @@ $1',
 	'translate-messagereview-progress' => 'Ухваляем...',
 	'translate-messagereview-failure' => 'Немагчыма ўхваліць: $1',
 	'translate-messagereview-done' => 'Ухваленае',
-	'translate-messagereview-reviews' => 'Ухваленае $1 {{PLURAL:$1|удзельнікам|удзельнікамі|удзельнікамі}}', # Fuzzy
+	'translate-messagereview-reviews' => 'Ухваленае $1 {{PLURAL:$1|удзельнікам|удзельнікамі}}',
 	'translate-messagereview-reviewswithyou' => 'Ухваленае {{PLURAL:$1|вамі|$1 удзельнікамі, разам з вамі}}',
 	'api-error-invalidrevision' => 'Пераклад ня знойдзены',
 	'api-error-unknownmessage' => 'Паведамленьне ня знойдзена',
@@ -6236,7 +6236,7 @@ $messages['cs'] = array(
 	'translate-taskui-view' => 'Zobrazit všechny zprávy',
 	'translate-taskui-untranslated' => 'Zobrazit nepřeložené zprávy',
 	'translate-taskui-optional' => 'Zobrazit volitelné zprávy',
-	'translate-taskui-acceptqueue' => 'Jen zprávy, které mohu přijmout', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Jen zprávy, které mohu označit za zkontrolované',
 	'translate-taskui-reviewall' => 'Hodnotit všechny překlady',
 	'translate-taskui-export-to-file' => 'Exportovat v nativním formátu',
 	'translate-taskui-export-as-po' => 'Exportovat pro off-line překlad',
@@ -6246,7 +6246,7 @@ $messages['cs'] = array(
 	'translate-taction-mstats' => 'Statistika skupin zpráv',
 	'translate-taction-export' => 'Export',
 	'translate-taction-disabled' => 'Tato akce je na této wiki zakázána.',
-	'translate-page-no-such-language' => 'Zadaný kód jazyka není platný',
+	'translate-page-no-such-language' => 'Zadaný jazyk není platný.',
 	'translate-page-no-such-group' => 'Zadaná skupina byla neplatná.',
 	'translate-page-disabled' => "Překlady do tohoto jazyka byly v této skupině zakázány. Zdůvodnění:
 
@@ -6459,6 +6459,7 @@ Barva podtržení znázorňuje, jak nedávno zde byl překladatel aktivní.',
 	'translate-manage-import-new' => 'Nová zpráva $1',
 	'translate-manage-import-deleted' => 'Odstraněná zpráva $1',
 	'translate-manage-action-import' => 'Importovat',
+	'translate-manage-action-conflict' => 'Naimportovat a označit jako „fuzzy“',
 	'translate-manage-action-ignore' => 'Ignorovat',
 	'translate-manage-action-fuzzy' => 'Importovat a označit překlady jako neúplné',
 	'translate-manage-nochanges' => 'V definici zpráv této skupiny nenastaly žádné změny.',
@@ -6467,20 +6468,30 @@ Pomocí dole uvedeného odkazu se vrátíte na zobrazení Podrobnosti o skupině
 	'translate-manage-inconsistent' => 'Zjištěné nekonzistence v požadavku.
 Prosím, zkontrolujte změny a zkuste to znovu.
 Podrobnosti: $1',
+	'translate-manage-toolong' => 'Překročen maximální čas zpracování $1 {{PLURAL:$1|sekunda|sekundy|sekund}}.
+Pro pokračování odešlete formulář ještě jednou.',
 	'translate-manage-import-summary' => 'Importuje se nová verze z vnějšího zdroje',
 	'translate-manage-conflict-summary' => 'Importuje se nová verze z vnějšího zdroje.
 Prosím, zkontrolujte ji.',
 	'translate-manage-fuzzy-summary' => 'Definice zprávy se změnila',
+	'translate-manage-submit' => 'Provést',
+	'translate-manage-intro-other' => 'Níže je zobrazen seznam změn v překladech do jazyka $1.
+Zkontrolujte změny a vyberte si, co se má pro každou aktualizaci provést.
+Pokud se rozhodnete změny ignorovat, je tato akce pouze dočasná.',
 	'importtranslations' => 'Import překladů',
-	'translate-import-from-url' => 'URL souboru:',
-	'translate-import-from-wiki' => 'Soubor na této wiki:',
 	'translate-import-from-local' => 'Načtení lokálního souboru:',
 	'translate-import-load' => 'Načíst soubor',
-	'translate-import-err-type-not-supported' => 'Nepodařilo se načíst soubor:
-Metoda <code>$1</code> není podporována.',
+	'translate-import-err-dl-failed' => 'Nepodařilo se načíst soubor:
+$1',
 	'translate-import-err-ul-failed' => 'Načtení souboru se nezdařilo.',
 	'translate-import-err-invalid-title' => 'Zadané jméno souboru <nowiki>$1</nowiki> není platné.',
 	'translate-import-err-no-such-file' => 'Soubor <nowiki>$1</nowiki> neexistuje nebo nebyl načten lokálně.',
+	'translate-import-err-stale-group' => 'Skupina zpráv, do které tento soubor patří, neexistuje.',
+	'translate-import-err-no-headers' => 'Soubor není platným souborem ve formátu Gettext pro rozšíření Translate:
+Z hlaviček souboru se nepodařilo skupinu zpráv a jazyk.',
+	'translate-import-err-warnings' => 'Soubor nemá platný formát.
+Ujistěte se, že váš editor neodstraňuje pole msgctxt.
+Podrobnosti: $1',
 	'translate-js-summary' => 'Shrnutí:',
 	'translate-js-save' => 'Uložit',
 	'translate-js-next' => 'Uložit a otevřít další',
@@ -6505,25 +6516,28 @@ Metoda <code>$1</code> není podporována.',
 	'translate-searchprofile-tooltip' => 'Hledat ve všech překladech',
 	'translate-search-languagefilter' => 'Filtr podle jazyka:',
 	'translate-search-nofilter' => 'Nefiltrovat',
-	'translate-messagereview-submit' => 'Přijmout', # Fuzzy
-	'translate-messagereview-progress' => 'Přijímám…', # Fuzzy
-	'translate-messagereview-failure' => 'Přijímám… chyba: $1', # Fuzzy
-	'translate-messagereview-done' => 'Přijato', # Fuzzy
-	'translate-messagereview-reviews' => 'Přijato {{PLURAL:$1|1 uživatelem|$1 uživateli}}', # Fuzzy
-	'translate-messagereview-reviewswithyou' => 'Přijato {{PLURAL:$1|vámi|$1 uživateli včetně vás}}', # Fuzzy
+	'translate-messagereview-submit' => 'Označit za zkontrolované',
+	'translate-messagereview-progress' => 'Označuje se za zkontrolované…',
+	'translate-messagereview-failure' => 'Nepodařilo se označit za zkontrolované: $1',
+	'translate-messagereview-done' => 'Zkontrolováno',
+	'translate-messagereview-reviews' => 'Zkontrolováno {{PLURAL:$1|1 uživatelem|$1 uživateli}}',
+	'translate-messagereview-reviewswithyou' => 'Zkontrolováno {{PLURAL:$1|vámi|$1 uživateli včetně vás}}',
 	'api-error-invalidrevision' => 'Překlad nebyl nalezen',
 	'api-error-unknownmessage' => 'Hlášení nebylo nalezeno',
 	'api-error-fuzzymessage' => 'Překlad je označen jako „fuzzy“',
-	'api-error-owntranslation' => 'Nemůžete přijímat vlastní překlady.', # Fuzzy
-	'translate-messagereview-no-fuzzy' => 'Nelze přijmout „fuzzy“ překlady.', # Fuzzy
-	'translate-messagereview-no-own' => 'Nemůžete přijímat vlastní překlady.', # Fuzzy
-	'translate-messagereview-doit' => 'Přijmout tento překlad jako správný.', # Fuzzy
+	'api-error-owntranslation' => 'Vlastní překlady nemůžete označovat za zkontrolované.',
+	'translate-messagereview-no-fuzzy' => '„Fuzzy“ překlady nelze označit za zkontrolované.',
+	'translate-messagereview-no-own' => 'Vlastní překlady nemůžete označovat za zkontrolované.',
+	'translate-messagereview-doit' => 'Označit tento překlad za zkontrolovaný.',
 	'group-translate-proofr' => 'Hodnotitelé překladů',
 	'group-translate-proofr-member' => '{{GENDER:$1|hodnotitel|hodnotitelka|hodnotitel}} překladů',
 	'grouppage-translate-proofr' => '{{ns:project}}:Hodnotitelé překladů',
 	'log-name-translationreview' => 'Kniha hodnocení překladů',
 	'log-description-translationreview' => 'Protokol všech hodnocení překladů a skupin zpráv.',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|přijal|přijala|přijal}} překlad $3', # Fuzzy
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|zkontroloval|zkontrolovala}} překlad $3',
+	'logentry-translationreview-group' => '$1 {{GENDER:$2|změnil|změnila}} stav překladů stránky $3 do jazyka $4 z $6 na $7',
+	'group-translate-sandboxed' => 'Neschválení překladatelé',
+	'group-translate-sandboxed-member' => '{{GENDER:$1|neschválený překladatel|neschválená překladatelka}}',
 	'translate-workflow-state-' => '(nenastaven)',
 	'translate-workflowstatus' => 'Stav: $1',
 	'translate-workflow-set-do' => 'Nastavit',
@@ -6554,11 +6568,11 @@ Užitečné hlavně pro korektury.', # Fuzzy
 	'tux-tab-untranslated' => 'Nepřeložené',
 	'tux-tab-outdated' => 'Zastaralé',
 	'tux-tab-translated' => 'Přeložené',
-	'tux-tab-unproofread' => 'Nezredigované', # Fuzzy
+	'tux-tab-unproofread' => 'Nezkontrolované',
 	'tux-edit' => 'Editovat',
 	'tux-status-optional' => 'Volitelná',
 	'tux-status-fuzzy' => 'Zastaralý',
-	'tux-status-proofread' => 'Zredigovaný', # Fuzzy
+	'tux-status-proofread' => 'Zkontrolovaný',
 	'tux-status-translated' => 'Přeložená',
 	'tux-status-saving' => 'Ukládá se…',
 	'tux-status-unsaved' => 'Neuloženo',
@@ -6567,10 +6581,11 @@ Užitečné hlavně pro korektury.', # Fuzzy
 	'tux-editor-discard-changes-button-label' => 'Zahodit změny',
 	'tux-editor-save-button-label' => 'Uložit překlad',
 	'tux-editor-skip-button-label' => 'Přeskočit na další',
+	'tux-editor-cancel-button-label' => 'Storno',
 	'tux-editor-confirm-button-label' => 'Potvrdit překlad',
 	'tux-editor-shortcut-info' => 'Stiskněte „$1“ pro uložení nebo „$2“ pro přeskočení na další zprávu',
-	'tux-editor-edit-desc' => 'Upravit popis', # Fuzzy
-	'tux-editor-add-desc' => 'Přidat popis', # Fuzzy
+	'tux-editor-edit-desc' => 'Upravit dokumentaci',
+	'tux-editor-add-desc' => 'Přidat dokumentaci',
 	'tux-editor-suggestions-title' => 'Návrhy',
 	'tux-editor-in-other-languages' => 'V jiných jazycích',
 	'tux-editor-need-more-help' => 'Potřebujete další pomoc?',
@@ -6588,7 +6603,7 @@ Užitečné hlavně pro korektury.', # Fuzzy
 	'tux-editor-translate-mode' => 'Seznam',
 	'tux-editor-proofreading-hide-own-translations' => 'Skrýt moje překlady',
 	'tux-editor-proofreading-show-own-translations' => 'Zobrazit moje překlady',
-	'tux-proofread-action-tooltip' => 'Přijmout překlad', # Fuzzy
+	'tux-proofread-action-tooltip' => 'Označit za zkontrolovaný',
 	'tux-proofread-edit-label' => 'Editovat',
 	'tux-editor-page-mode' => 'Stránka',
 	'tux-editor-outdated-warning' => 'Tento překlad může potřebovat aktualizaci.',
@@ -6613,13 +6628,13 @@ Užitečné hlavně pro korektury.', # Fuzzy
 	'tux-empty-there-are-optional' => 'V seznamu se nezobrazují volitelné zprávy',
 	'tux-empty-show-optional-messages' => 'Zobrazit volitelné zprávy',
 	'tux-empty-no-outdated-messages' => 'Žádné zastaralé překlady',
-	'tux-empty-nothing-to-proofread' => 'Není co redigovat', # Fuzzy
+	'tux-empty-nothing-to-proofread' => 'Není co kontrolovat',
 	'tux-empty-you-can-help-providing' => 'Můžete pomoci novými překlady.',
-	'tux-empty-nothing-new-to-proofread' => 'Nic nového ke korekturám', # Fuzzy
-	'tux-empty-you-can-review-already-proofread' => 'Můžete zkontrolovat překlady, které již zredigovali jiní.', # Fuzzy
+	'tux-empty-nothing-new-to-proofread' => 'Nic nového ke kontrole',
+	'tux-empty-you-can-review-already-proofread' => 'Můžete zkontrolovat překlady, které již zkontrolovali jiní.',
 	'tux-empty-list-other' => 'Není co překládat',
-	'tux-empty-list-other-guide' => 'Můžete pomoci s korekturou existujících překladů', # Fuzzy
-	'tux-empty-list-other-action' => 'Korektury překladů', # Fuzzy
+	'tux-empty-list-other-guide' => 'Můžete pomoci zkontrolovat existující překlady',
+	'tux-empty-list-other-action' => 'Zkontrolovat překlady',
 	'tux-empty-list-other-link' => 'Zobrazit všechny zprávy',
 	'tux-editor-close-tooltip' => 'Zavřít',
 	'tux-editor-expand-tooltip' => 'Roztáhnout',
@@ -6628,8 +6643,8 @@ Užitečné hlavně pro korektury.', # Fuzzy
 	'tux-editor-message-tools-translations' => 'Všechny překlady',
 	'tux-editor-loading' => 'Načítá se…',
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|další jazyk|další jazyky|dalších jazyků}}',
-	'translate-statsbar-tooltip' => '$1 % přeloženo, $2 % zredigováno', # Fuzzy
-	'translate-statsbar-tooltip-with-fuzzy' => '$1 % přeloženo, $2 % zredigováno, $3 % zastaralých', # Fuzzy
+	'translate-statsbar-tooltip' => '$1 % přeloženo, $2 % zkontrolováno',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1 % přeloženo, $2 % zkontrolováno, $3 % zastaralých',
 	'translate-search-more-groups-info' => '$1 {{PLURAL:$1|další skupina|další skupiny|dalších skupin}}',
 );
 
@@ -32561,12 +32576,12 @@ $messages['uk'] = array(
 	'translate-taskui-view' => 'Показати всі повідомлення',
 	'translate-taskui-untranslated' => 'Показати неперекладені повідомлення',
 	'translate-taskui-optional' => 'Показати додаткові повідомлення.',
-	'translate-taskui-acceptqueue' => 'Лише повідомлення, які я можу прийняти', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Лише повідомлення, які я можу помітити як перевірені',
 	'translate-taskui-reviewall' => 'Перевірити всі переклади',
 	'translate-taskui-export-to-file' => 'Експорт у  «рідному» форматі',
 	'translate-taskui-export-as-po' => 'Експорт для офлайн-перекладу',
 	'translate-taction-translate' => 'Переклад',
-	'translate-taction-proofread' => 'Вичитка', # Fuzzy
+	'translate-taction-proofread' => 'Перевірка',
 	'translate-taction-lstats' => 'Статистика для цієї мови',
 	'translate-taction-mstats' => 'Статистика груп повідомлень',
 	'translate-taction-export' => 'Експорт',
@@ -32792,13 +32807,13 @@ $messages['uk'] = array(
 	'translate-manage-conflict-summary' => 'Імпорт нової версії із зовнішнього джерела.
 Будь ласка, перевірте її.',
 	'translate-manage-fuzzy-summary' => 'Формулювання повідомлення було змінено.',
+	'translate-manage-submit' => 'Виконати',
+	'translate-manage-intro-other' => 'Далі наведено список перекладів мовою: $1.
+Будь ласка, перевірте зміни і виберіть дію, яку застосувати щодо кожного перекладу.
+Якщо ви проігноруєте повідомлення, вони будуть перевизначені при наступному експорті.', # Fuzzy
 	'importtranslations' => 'Імпортувати переклади',
-	'translate-import-from-url' => 'URL-адреса файлу:',
-	'translate-import-from-wiki' => 'Файл у цій вікі:',
 	'translate-import-from-local' => 'Завантажити локальний файл:',
 	'translate-import-load' => 'Завантажити файл',
-	'translate-import-err-type-not-supported' => 'Не вдалося завантажити файл:
-Метод <code>$1</code> не підтримується.',
 	'translate-import-err-dl-failed' => 'Не вдалося переслати файл:
 $1',
 	'translate-import-err-ul-failed' => 'Не вдалося переслати файл',
@@ -32833,16 +32848,16 @@ $1',
 	'translate-searchprofile-tooltip' => 'Пошук серед усіх перекладів',
 	'translate-search-languagefilter' => 'Фільтр мов:',
 	'translate-search-nofilter' => 'Без фільтрації',
-	'translate-messagereview-submit' => 'Ухвалити', # Fuzzy
-	'translate-messagereview-progress' => 'Ухвалюю...', # Fuzzy
-	'translate-messagereview-failure' => 'Ухвалення... не вдалося: $1', # Fuzzy
-	'translate-messagereview-done' => 'Ухвалено', # Fuzzy
-	'translate-messagereview-reviews' => 'Ухвалено $1 {{PLURAL:$1|користувачем|користувачами}}', # Fuzzy
+	'translate-messagereview-submit' => 'Помітити як перевірене',
+	'translate-messagereview-progress' => 'Помітка як перевірене…',
+	'translate-messagereview-failure' => 'Помилка помітки як перевірене: $1',
+	'translate-messagereview-done' => 'Перевірено',
+	'translate-messagereview-reviews' => 'Перевірено $1 {{PLURAL:$1|користувачем|користувачами}}',
 	'translate-messagereview-reviewswithyou' => 'Ухвалено {{PLURAL:$1|Вами|$1 користувачами разом з Вами}}', # Fuzzy
 	'api-error-invalidrevision' => 'Переклад не знайдено',
 	'api-error-unknownmessage' => 'Повідомлення не знайдено',
 	'api-error-fuzzymessage' => 'Переклад позначено як неточний',
-	'api-error-owntranslation' => 'Ви не можете ухвалювати ваші власні переклади', # Fuzzy
+	'api-error-owntranslation' => 'Ви не можете помічати Ваші власні переклади як перевірені',
 	'translate-messagereview-no-fuzzy' => 'Переклади, що позначено як нечіткі (Fuzzy), не може бути прийнято.', # Fuzzy
 	'translate-messagereview-no-own' => 'Ви не можете ухвалювати ваші власні переклади.', # Fuzzy
 	'translate-messagereview-doit' => 'Ухвалити цей переклад як коректний.', # Fuzzy
@@ -32903,6 +32918,7 @@ $1',
 	'tux-editor-discard-changes-button-label' => 'Скасувати зміни',
 	'tux-editor-save-button-label' => 'Зберегти переклад',
 	'tux-editor-skip-button-label' => 'Перейти до наступного',
+	'tux-editor-cancel-button-label' => 'Скасувати',
 	'tux-editor-confirm-button-label' => 'Підтвердити переклад',
 	'tux-editor-shortcut-info' => 'Натисніть «$1» щоб зберегти або «$2» для переходу до наступного повідомлення',
 	'tux-editor-edit-desc' => 'Редагувати опис', # Fuzzy

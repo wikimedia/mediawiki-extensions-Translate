@@ -451,9 +451,19 @@ $messages['be-tarask'] = array(
 	'translate-fs-userpage-level-N' => 'Мая родная мова',
 	'translate-fs-userpage-level-5' => 'Я — прафэсійны перакладчык на',
 	'translate-fs-userpage-level-4' => 'Ведаю яе як родную',
-	'translate-fs-userpage-submit' => 'Стварыць маю старонку ўдзельніка', # Fuzzy
+	'translate-fs-userpage-level-3' => 'Добра валодаю',
+	'translate-fs-userpage-level-2' => 'На сярэднім узроўні валодаю',
+	'translate-fs-userpage-level-1' => 'Крыху знаю',
+	'translate-fs-userpage-help' => 'Калі ласка, пазначце вашыя моўныя здатнасьці і раскажыце пра сябе. Калі вы ведаеце больш як пяць моваў, вы зможаце дадаць астатнія пазьней.',
+	'translate-fs-userpage-submit' => 'Стварыць вашую старонку ўдзельніка',
 	'translate-fs-userpage-done' => 'Выдатна! Цяпер Вы маеце старонку ўдзельніка.',
 	'translate-fs-permissions-planguage' => 'Асноўная мова:',
+	'translate-fs-permissions-help' => 'Цяпер вам трэба даслаць запыт на далучэньне да групы перакладчыкаў.
+Выберыце асноўную мову, на якую вы зьбіраецеся перакладаць.
+
+Вы можаце прыгадаць і іншыя мовы разам з заўвагамі ў полі ніжэй.',
+	'translate-fs-permissions-pending' => 'Ваш запыт быў дасланы ў [[$1]] і нехта з адміністрацыі сайту зоймецца ім як мага хутчэй.
+Калі вы пацьвердзіце ваш e-mail адрас, вы атрымаеце апавяшчэньне па пошце, як толькі нешта будзе вядома.',
 	'translate-fs-permissions-submit' => 'Даслаць запыт',
 	'translate-fs-target-text' => "Віншуем!
 Цяпер Вы можаце пачаць перакладаць.
@@ -3418,12 +3428,21 @@ $messages['roa-tara'] = array(
 	'translate-fs-signup-title' => 'Reggistrate',
 	'translate-fs-settings-title' => "'Mboste le preferenze tune",
 	'translate-fs-userpage-title' => "Ccreje 'a pàgena utende toje",
+	'translate-fs-permissions-title' => 'Cirche le permesse de traduttore',
 	'translate-fs-target-title' => 'Accuminze a traducere!',
 	'translate-fs-email-title' => "Conferme l'indirizze e-mail tune",
 	'translate-fs-selectlanguage' => "Pigghie 'na lènghe",
 	'translate-fs-settings-planguage' => 'Lènga prengepàle:',
+	'translate-fs-settings-slanguage' => "Assistende d'a lènghe $1:",
 	'translate-fs-settings-submit' => 'Reggistre le preferenze',
+	'translate-fs-userpage-level-N' => "Ije sò 'nu lènga madre",
+	'translate-fs-userpage-level-5' => "Ije sò 'nu professore",
+	'translate-fs-userpage-level-4' => 'Ije parle probbie accellènde',
+	'translate-fs-userpage-level-3' => "Ije parle cumme 'ndermèdie.",
+	'translate-fs-userpage-level-2' => "'U canosche 'nu picche",
+	'translate-fs-userpage-level-1' => "'U sacce tèrra-tèrre",
 	'translate-fs-userpage-submit' => "Ccreje 'a pàgena utende toje",
+	'translate-fs-userpage-done' => "Fatte bbuène! Tu è 'na pàgena utende nove.",
 	'translate-fs-permissions-planguage' => 'Lènga prengepàle:',
 	'translate-fs-permissions-submit' => "Manne 'na richieste",
 );
