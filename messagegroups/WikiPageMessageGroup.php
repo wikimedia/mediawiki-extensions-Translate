@@ -22,11 +22,8 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$this->namespace = NS_TRANSLATIONS;
 	}
 
-	/// Defaults to wiki content language.
 	public function getSourceLanguage() {
-		global $wgLanguageCode;
-
-		return $wgLanguageCode;
+		return $this->getTitle()->getPageLanguage()->getCode();
 	}
 
 	/**
