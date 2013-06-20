@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "D1ERoJ7s",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-06-20T11:40:47Z",
+      "side": 1,
+      "message": "This will cause discouraged pages which have translations to show up in stats.",
+      "revId": "2f8364963eda3c4cdb0dabf54eecf3d3f1b5d437",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
