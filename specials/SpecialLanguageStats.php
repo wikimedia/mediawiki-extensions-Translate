@@ -406,14 +406,17 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	protected function makeGroupRow( MessageGroup $group, array $cache, MessageGroup $parent = null ) {
 		$groupId = $group->getId();
 
-		if ( $this->table->isBlacklisted( $groupId, $this->target ) !== null ) {
-			return '';
-		}
-
 		$stats = $cache[$groupId];
 		$total = $stats[MessageGroupStats::TOTAL];
 		$translated = $stats[MessageGroupStats::TRANSLATED];
 		$fuzzy = $stats[MessageGroupStats::FUZZY];
+
+		if ( $this->table->isBlacklisted( $groupId, $this->target ) !== null
+			// Even if the group is blacklisted, if there are translations,
+			// display it. (Bug 47875)
+			&& !$translated ) {
+			return '';
+		}
 
 		// Quick checks to see whether filters apply
 		if ( $this->noComplete && $fuzzy === 0 && $translated === $total ) {
