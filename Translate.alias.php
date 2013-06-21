@@ -1007,6 +1007,7 @@ $specialPageAliases['uk'] = array(
 	'SupportedLanguages' => array( 'Підтримувані_мови' ),
 	'MyLanguage' => array( 'Моя_мова' ),
 	'PageTranslationDeletePage' => array( 'Вилучення_перекладабельної_сторінки' ),
+	'AggregateGroups' => array( 'Агреговані_групи' ),
 	'SearchTranslations' => array( 'Пошук_перекладів' ),
 );
 

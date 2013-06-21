@@ -346,7 +346,8 @@ Used only if a reason was provided in the following messages:
 	'aggregategroups' => '{{doc-special|AggregateGroups}}',
 	'tpt-aggregategroup-add' => 'Label for the button to add a new page to aggregate group in [[Special:AggregateGroups]].
 {{Identical|Add}}',
-	'tpt-aggregategroup-save' => 'Label for the button to save a new aggregate group in [[Special:AggregateGroups]]',
+	'tpt-aggregategroup-save' => 'Label for the button to save a new aggregate group in [[Special:AggregateGroups]].
+{{Identical|Save}}',
 	'tpt-aggregategroup-add-new' => 'Label for the link that gives a form to enter new group details in [[Special:AggregateGroups]]',
 	'tpt-aggregategroup-new-name' => 'Label for the name field in [[Special:AggregateGroups]].
 {{Identical|Name}}',

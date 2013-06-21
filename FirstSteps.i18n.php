@@ -3422,6 +3422,7 @@ Dacă nu doriți să recepționați acest newsletter, vă puteți dezabona în f
  */
 $messages['roa-tara'] = array(
 	'firststeps' => 'Prime passe',
+	'firststeps-desc' => "[[Special:FirstSteps|Pàgena speciale]] pe fà accumenzà le utinde sus a 'na uicchi a ausà l'estenzione de Traduzione",
 	'translate-fs-pagetitle-done' => '- apposte!',
 	'translate-fs-pagetitle-pending' => '- appese',
 	'translate-fs-pagetitle' => 'Procedure guidate pe accumenzà - $1',
@@ -3433,6 +3434,7 @@ $messages['roa-tara'] = array(
 	'translate-fs-email-title' => "Conferme l'indirizze e-mail tune",
 	'translate-fs-selectlanguage' => "Pigghie 'na lènghe",
 	'translate-fs-settings-planguage' => 'Lènga prengepàle:',
+	'translate-fs-settings-planguage-desc' => "'A lènghe prengepàle raddoppie cumme 'a lènghe de inderfacce sus a sta uicchi e cumme lènghe de destinazione de base pe le tradutture.",
 	'translate-fs-settings-slanguage' => "Assistende d'a lènghe $1:",
 	'translate-fs-settings-submit' => 'Reggistre le preferenze',
 	'translate-fs-userpage-level-N' => "Ije sò 'nu lènga madre",
