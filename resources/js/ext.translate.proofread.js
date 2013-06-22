@@ -184,7 +184,7 @@
 				.addClass(
 					'tux-proofread-action ' + this.message.properties.status + ' ' + ( proofreadBySelf ? 'accepted' : '' )
 				)
-				.tipsy( { gravity: 's', delayIn: 2000 } );
+				.tipsy( { gravity: 's', delayIn: 1000, className: 'translate-tipsy' } );
 
 			$proofreadEdit = $( '<div>' )
 				.addClass( 'tux-proofread-edit' )
@@ -263,7 +263,7 @@
 					.append( $( '<div>' )
 						.addClass( 'translated-by-self' )
 						.attr( 'title', mw.msg( 'tux-proofread-translated-by-self' ) )
-						.tipsy( { gravity: 'e' } )
+						.tipsy( { gravity: 'e', className: 'translate-tipsy' } )
 					);
 			}
 		},
@@ -306,11 +306,7 @@
 
 			this.$message.find( '.tux-proofread-edit' ).on( 'click', function () {
 				// Make sure that the tipsy is hidden when going to the editor
-				var $tuxProofreadAction = $( this ).siblings( '.tux-proofread-action' );
-				if ( $tuxProofreadAction.length ) {
-					$tuxProofreadAction.tipsy( 'hide' );
-				}
-
+				$( '.translate-tipsy' ).remove();
 				proofread.$message.data( 'translateeditor' ).show();
 
 				return false;
