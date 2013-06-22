@@ -480,7 +480,7 @@
 					messageTable.updateLastMessage();
 				} )
 				.fail( function ( errorCode, response ) {
-					if ( response.error.code === 'mctranslate-language-disabled' ) {
+					if ( response.error && response.error.code === 'mctranslate-language-disabled' ) {
 						$( '.tux-editor-header .group-warning' )
 							.text( mw.msg( 'translate-language-disabled' ) )
 							.show();

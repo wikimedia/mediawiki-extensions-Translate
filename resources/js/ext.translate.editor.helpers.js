@@ -80,10 +80,12 @@
 
 					translateEditor.hideDocumentationEditor();
 				} else {
-					mw.log( 'Problem saving documentation' );
+					mw.notify( 'Error saving message documentation' );
+					mw.log( 'Error saving documentation', results );
 				}
 			} ).fail( function ( errorCode, results ) {
-				mw.log( 'Error saving documentation ' + errorCode + ' ' + results.error.info );
+				mw.notify( 'Error saving message documentation' );
+				mw.log( 'Error saving documentation', errorCode, results );
 			} );
 		},
 
@@ -481,7 +483,7 @@
 				mw.translateHooks.run( 'showTranslationHelpers', result.helpers, translateEditor.$editor );
 
 			} ).fail( function ( errorCode, results ) {
-				mw.log( 'Error loading translation aids ' + errorCode + results.error.info );
+				mw.log( 'Error loading translation aids', errorCode, results );
 			} );
 		}
 	};
