@@ -32808,9 +32808,9 @@ $messages['uk'] = array(
 Будь ласка, перевірте її.',
 	'translate-manage-fuzzy-summary' => 'Формулювання повідомлення було змінено.',
 	'translate-manage-submit' => 'Виконати',
-	'translate-manage-intro-other' => 'Далі наведено список перекладів мовою: $1.
-Будь ласка, перевірте зміни і виберіть дію, яку застосувати щодо кожного перекладу.
-Якщо ви проігноруєте повідомлення, вони будуть перевизначені при наступному експорті.', # Fuzzy
+	'translate-manage-intro-other' => 'Далі наведено список змін перекладів мовою: $1.
+Будь ласка, перевірте ці зміни і виберіть дію, яку застосувати щодо кожного оновлення.
+Якщо Ви оберете проігнорувати зміни, то ця дія лише тимчасова.',
 	'importtranslations' => 'Імпортувати переклади',
 	'translate-import-from-local' => 'Завантажити локальний файл:',
 	'translate-import-load' => 'Завантажити файл',
@@ -32858,15 +32858,15 @@ $1',
 	'api-error-unknownmessage' => 'Повідомлення не знайдено',
 	'api-error-fuzzymessage' => 'Переклад позначено як неточний',
 	'api-error-owntranslation' => 'Ви не можете помічати Ваші власні переклади як перевірені',
-	'translate-messagereview-no-fuzzy' => 'Переклади, що позначено як нечіткі (Fuzzy), не може бути прийнято.', # Fuzzy
-	'translate-messagereview-no-own' => 'Ви не можете ухвалювати ваші власні переклади.', # Fuzzy
-	'translate-messagereview-doit' => 'Ухвалити цей переклад як коректний.', # Fuzzy
+	'translate-messagereview-no-fuzzy' => 'Переклади, що позначено як нечіткі (Fuzzy), не може бути перевірено.',
+	'translate-messagereview-no-own' => 'Ви не можете позначати власні переклади як перевірені.',
+	'translate-messagereview-doit' => 'Позначити цей переклад як перевірений.',
 	'group-translate-proofr' => 'Рецензенти перекладів',
 	'group-translate-proofr-member' => '{{GENDER:$1|рецензент перекладів|рецензентка перекладів}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Рецензенти перекладів',
 	'log-name-translationreview' => 'Журнал рецензування перекладів',
 	'log-description-translationreview' => 'Журнал усіх рецензій та груп повідомлень',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|ухвалив|ухвалила}} переклад $3', # Fuzzy
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|перевірив|перевірила}} переклад $3',
 	'logentry-translationreview-group' => '$1 {{GENDER:$2|змінив|змінила}} стан $4 {{PLURAL:$4|перекладу|перекладів}} сторінки $3 з $6 на $7',
 	'group-translate-sandboxed' => 'Незатверджені переклади',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|незатверджений перекладач|незатверджена перекладачка}}',
@@ -32886,8 +32886,8 @@ $1',
 	'translate-workflowgroup-desc' => 'Ця група показує стан процесу перекладу.
 Можливі значення стану визначено у конфігураційній змінній $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Останні переклади',
-	'translate-dynagroup-recent-desc' => 'Ця група повідомлень містить усі невичитані <!-- якщо перекладати слово в слово - то останні, але ж насправді - невичитані --> переклади цією мовою.
-Найзручніший режим для вичитки.', # Fuzzy
+	'translate-dynagroup-recent-desc' => 'Ця група повідомлень містить усі останні переклади цією мовою.
+Найзручніший режим для завдань перевірки.',
 	'translate-dynagroup-additions-label' => 'Останні доповнення',
 	'translate-dynagroup-additions-desc' => 'Ця група повідомлень містить нові та змінені повідомлення.',
 	'translate-dynagroup-by' => '{{GENDER:$1|Переклав|Переклала}} $1',
@@ -32905,11 +32905,11 @@ $1',
 	'tux-tab-untranslated' => 'Неперекладені',
 	'tux-tab-outdated' => 'Застарілі',
 	'tux-tab-translated' => 'Перекладені',
-	'tux-tab-unproofread' => 'Невичитані', # Fuzzy
+	'tux-tab-unproofread' => 'Неперевірені',
 	'tux-edit' => 'Редагувати',
 	'tux-status-optional' => "Необов'язково",
 	'tux-status-fuzzy' => 'Застарілі',
-	'tux-status-proofread' => 'Вичитка', # Fuzzy
+	'tux-status-proofread' => 'Перевірка',
 	'tux-status-translated' => 'Перекладено',
 	'tux-status-saving' => 'Зберігається...',
 	'tux-status-unsaved' => 'Незбережено',
@@ -32921,8 +32921,8 @@ $1',
 	'tux-editor-cancel-button-label' => 'Скасувати',
 	'tux-editor-confirm-button-label' => 'Підтвердити переклад',
 	'tux-editor-shortcut-info' => 'Натисніть «$1» щоб зберегти або «$2» для переходу до наступного повідомлення',
-	'tux-editor-edit-desc' => 'Редагувати опис', # Fuzzy
-	'tux-editor-add-desc' => 'Додати опис', # Fuzzy
+	'tux-editor-edit-desc' => 'Редагувати документацію',
+	'tux-editor-add-desc' => 'Додати документацію',
 	'tux-editor-suggestions-title' => 'Пропозиції',
 	'tux-editor-in-other-languages' => 'Іншими мовами',
 	'tux-editor-need-more-help' => 'Потрібно більше допомоги?',
@@ -32936,11 +32936,11 @@ $1',
 	'tux-editor-message-desc-more' => 'Показати докладно',
 	'tux-editor-message-desc-less' => 'Показати компактно',
 	'tux-editor-clear-translated' => 'Приховати перекладене',
-	'tux-editor-proofreading-mode' => 'Вичитка', # Fuzzy
+	'tux-editor-proofreading-mode' => 'Перевірка',
 	'tux-editor-translate-mode' => 'Список',
 	'tux-editor-proofreading-hide-own-translations' => 'Приховати свої переклади',
 	'tux-editor-proofreading-show-own-translations' => 'Показати свої переклади',
-	'tux-proofread-action-tooltip' => 'Прийняти переклад', # Fuzzy
+	'tux-proofread-action-tooltip' => 'Позначити як перевірене',
 	'tux-proofread-edit-label' => 'Редагувати',
 	'tux-editor-page-mode' => 'Сторінка',
 	'tux-editor-outdated-warning' => 'Цей переклад, можливо, необхідно оновити.',
@@ -32965,13 +32965,13 @@ $1',
 	'tux-empty-there-are-optional' => 'Є додаткові повідомлення, не показані у списку',
 	'tux-empty-show-optional-messages' => 'Показати додаткові повідомлення',
 	'tux-empty-no-outdated-messages' => 'Немає застарілих повідомлень',
-	'tux-empty-nothing-to-proofread' => 'Немає повідомлень до вичитки', # Fuzzy
+	'tux-empty-nothing-to-proofread' => 'Немає що перевіряти',
 	'tux-empty-you-can-help-providing' => 'Ви можете допомогти новими перекладами',
-	'tux-empty-nothing-new-to-proofread' => 'Немає нових повідомлень до вичитки', # Fuzzy
-	'tux-empty-you-can-review-already-proofread' => 'Ви можете перевіряти переклади, уже вичитані іншими.', # Fuzzy
+	'tux-empty-nothing-new-to-proofread' => 'Немає нових повідомлень до перевірки',
+	'tux-empty-you-can-review-already-proofread' => 'Ви можете перевіряти переклади, уже перевірені іншими.',
 	'tux-empty-list-other' => 'Немає що перекладати',
-	'tux-empty-list-other-guide' => 'Ви можете допомогти у вичитці існуючих перекладів', # Fuzzy
-	'tux-empty-list-other-action' => 'Вичитка перекладів', # Fuzzy
+	'tux-empty-list-other-guide' => 'Ви можете допомогти у перевірці існуючих перекладів',
+	'tux-empty-list-other-action' => 'Перевірка перекладів',
 	'tux-empty-list-other-link' => 'Показати усі повідомлення',
 	'tux-editor-close-tooltip' => 'Закрити',
 	'tux-editor-expand-tooltip' => 'Розгорнути',
@@ -32980,8 +32980,8 @@ $1',
 	'tux-editor-message-tools-translations' => 'Усі переклади',
 	'tux-editor-loading' => 'Завантаження…',
 	'translate-search-more-languages-info' => 'Ще $1 {{PLURAL:$1|мова|мови|мов}}',
-	'translate-statsbar-tooltip' => '$1% перекладено, $2% вичитано', # Fuzzy
-	'translate-statsbar-tooltip-with-fuzzy' => '$1% перекладено, $2% вичитано, $3% застаріло', # Fuzzy
+	'translate-statsbar-tooltip' => '$1% перекладено, $2% перевірено',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% перекладено, $2% перевірено, $3% застаріло',
 	'translate-search-more-groups-info' => 'Ще $1 {{PLURAL:$1|група|групи|груп}}',
 );
 
