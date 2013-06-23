@@ -4067,6 +4067,7 @@ Fääler werde im [[Special:Log/pagetranslation|Übersetzigs-Logbuech]] uffzeich
 
 /** Gujarati (ગુજરાતી)
  * @author Ashok modhvadia
+ * @author Dsvyas
  */
 $messages['gu'] = array(
 	'pagetranslation' => 'પાનું ભાષાંતરણ',
@@ -4093,9 +4094,9 @@ $messages['gu'] = array(
 	'tpt-mark-summary' => 'આ સંસ્કરણને ભાષાંતર માટે ચિહ્નિત કરાયું',
 	'tpt-edit-failed' => 'પાનાં: $1 ને અદ્યતન બનાવી શકાયું નહીં.',
 	'tpt-already-marked' => 'આ પાનાનું આધુનિક સંસ્કરણ અગાઉથીજ ભાષાંતર માટે ચિહ્નિત થઇ ચુક્યું છે.',
-	'tpt-list-nopages' => 'ન પાનાંઓ ભાષાંતર માટે ચિહ્નિત કરેલા છે કે ન ભાષાંતર માટે ચિહ્નિત થવા તૈયાર છે.',
+	'tpt-list-nopages' => 'કોઈ પાનાં ભાષાંતર માટે ચિહ્નિત કરેલા નથી કે ન તો કોઈ પાનું ભાષાંતર માટે ચિહ્નિત થવા માટે તૈયાર છે.',
 	'tpt-new-pages' => '{{PLURAL:$1|આ પાના|આ પાનાઓ}} ભાષાંતર ટેગ શાથેનું લખાણ ધરાવે છે, પરંતુ {{PLURAL:$1|આ પાના|આ પાનાઓ}}નું હાલનું સંસ્કરણ ભાષાંતર માટે ચિહ્નિત કરાયેલ નથી.',
-	'tpt-old-pages' => '{{PLURAL:$1|આ પાનાં|આ પાનાંઓ}}નાં કેટલાક સંસ્કરણ ભાષાંતર માટે ચિહ્નિત કરાયેલા છે.',
+	'tpt-old-pages' => '{{PLURAL:$1|આ પાના|આ પાનાં}}નાં કેટલાક સંસ્કરણ ભાષાંતર માટે ચિહ્નિત કરાયેલા છે.',
 	'translate-tag-translate-link-desc' => 'આ પાનાનું ભાષાંતર કરો',
 	'translate-tag-markthis' => 'આ પાનાંને ભાષાંતર માટે ચિહ્નિત કરો',
 	'tpt-languages-legend' => 'અન્ય ભાષાઓ:',

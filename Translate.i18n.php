@@ -6063,6 +6063,7 @@ $messages['ce'] = array(
 	'translate-magic-cm-save' => 'lалашдан',
 	'translate-magic-notsaved' => 'Хьан нисдар дӏайазъдина дац!',
 	'translate-rc-translation-filter' => 'Литта гочдарш:',
+	'translate-statsf-width' => 'Пикселшках шоралла:',
 	'translate-statsf-submit' => 'Хьалха муха ю хьажа',
 	'translate-sidebar-alltrans' => 'Кхечу меттанашкахь',
 	'translations' => 'Массо а гочдарш',
@@ -21497,13 +21498,13 @@ Sila serahkan semula borang itu untuk terus memproses.',
 	'translate-manage-conflict-summary' => 'Mengimport versi baru dari sumber luaran.
 Sila semak.',
 	'translate-manage-fuzzy-summary' => 'Takrifan mesej telah diubah',
+	'translate-manage-submit' => 'Laksanakan',
+	'translate-manage-intro-other' => 'Berikut ialah senarai perubahan dalam bahasa $1.
+Sila semak perubahan dan pilih tindakan yang anda hendak lakukan untuk setiap kemaskini.
+Jika anda memilih untuk mengabaikan perubahan, maka tindakan ini hanya sementara.',
 	'importtranslations' => 'Import terjemahan',
-	'translate-import-from-url' => 'URL ke fail:',
-	'translate-import-from-wiki' => 'Fail di wiki ini:',
 	'translate-import-from-local' => 'Muat naik fail setempat:',
 	'translate-import-load' => 'Muatkan fail',
-	'translate-import-err-type-not-supported' => 'Fail tidak dapat dimuatkan:
-Kaedah <code>$1</code> tidak disokong.',
 	'translate-import-err-dl-failed' => 'Fail tidak dapat diambil:
 $1',
 	'translate-import-err-ul-failed' => 'Muat naik fail tidak berjaya',
