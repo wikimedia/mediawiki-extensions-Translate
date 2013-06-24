@@ -498,7 +498,7 @@ class SpecialPageTranslation extends SpecialPage {
 					$this->msg( 'tpt-action-nofuzzy' )->text(),
 					$id,
 					$id,
-					false
+					true
 				);
 				$text = $checkLabel . $text;
 			} else {
