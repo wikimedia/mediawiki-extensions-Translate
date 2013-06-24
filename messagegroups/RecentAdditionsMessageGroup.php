@@ -52,40 +52,10 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 	 * as they are not displayed in other places.
 	 *
 	 * @see https://bugzilla.wikimedia.org/43030
-	 * @param MessageHandle $msg
+	 * @param MessageHandle $handle
 	 * @return boolean
 	 */
-	protected function matchingMessage( MessageHandle $msg ) {
-		$group = $msg->getGroup();
-		$groupId = $group->getId();
-
-		if ( !array_key_exists( $groupId, $this->groupInfoCache ) ) {
-			$translatableLanguages = $group->getTranslatableLanguages();
-			$languageTranslatable = true;
-
-			if ( is_array( $translatableLanguages ) &&
-				!array_key_exists( $this->language, $translatableLanguages )
-			) {
-				$languageTranslatable = false;
-			}
-
-			$groupDiscouraged = MessageGroups::getPriority( $group ) !== 'discouraged';
-			$this->groupInfoCache[$groupId] = array(
-				'relevant' => ( $languageTranslatable && $groupDiscouraged ),
-				'tags' => array(),
-			);
-
-			$groupTags = $group->getTags();
-			foreach ( array( 'ignored', 'optional' ) as $tag ) {
-				if ( isset( $groupTags[$tag] ) ) {
-					foreach ( $groupTags[$tag] as $key ) {
-						$this->groupInfoCache[$groupId]['tags'][ucfirst( $key )] = true;
-					}
-				}
-			}
-		}
-
-		return !isset( $this->groupInfoCache[$groupId]['tags'][$msg->getKey()] ) &&
-			$this->groupInfoCache[$groupId]['relevant'];
+	protected function matchingMessage( MessageHandle $handle ) {
+		return MessageGroups::isTranslatableMessage( $handle );
 	}
 }

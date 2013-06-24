@@ -241,6 +241,7 @@ $wgAutoloadClasses['MessageGroupBase'] = "$dir/messagegroups/MessageGroupBase.ph
 $wgAutoloadClasses['MessageGroupOld'] = "$dir/messagegroups/MessageGroupOld.php";
 $wgAutoloadClasses['RecentMessageGroup'] = "$dir/messagegroups/RecentMessageGroup.php";
 $wgAutoloadClasses['RecentAdditionsMessageGroup'] = "$dir/messagegroups/RecentAdditionsMessageGroup.php";
+$wgAutoloadClasses['SandboxMessageGroup'] = "$dir/messagegroups/SandboxMessageGroup.php";
 $wgAutoloadClasses['SingleFileBasedMessageGroup'] = "$dir/messagegroups/SingleFileBasedMessageGroup.php";
 $wgAutoloadClasses['WikiMessageGroup'] = "$dir/messagegroups/WikiMessageGroup.php";
 $wgAutoloadClasses['WikiPageMessageGroup'] = "$dir/messagegroups/WikiPageMessageGroup.php";

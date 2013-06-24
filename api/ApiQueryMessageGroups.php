@@ -29,6 +29,11 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		if ( $params['format'] === 'flat' ) {
 			$groups = MessageGroups::getAllGroups();
 			foreach ( MessageGroups::getDynamicGroups() as $id => $unused ) {
+				// Do not list the sandbox group. The code that knows it
+				// exists can access it directly.
+				if ( $id === '!sandbox' ) {
+					continue;
+				}
 				$groups[$id] = MessageGroups::getGroup( $id );
 			}
 

@@ -476,6 +476,7 @@ class MessageGroups {
 		return array(
 			'!recent' => 'RecentMessageGroup',
 			'!additions' => 'RecentAdditionsMessageGroup',
+			'!sandbox' => 'SandboxMessageGroup',
 		);
 	}
 
@@ -661,5 +662,63 @@ class MessageGroups {
 		}
 
 		return $groups;
+	}
+
+	/**
+	 * Filters out messages that should not be translated under normal
+	 * conditions.
+	 *
+	 * @param MessageHandle $handle Handle for the translation target.
+	 * @return boolean
+	 * @since 2013.06
+	 */
+	public static function isTranslatableMessage( MessageHandle $handle ) {
+		static $cache = array();
+
+		$group = $handle->getGroup();
+		$groupId = $group->getId();
+		$language = $handle->getCode();
+		$cacheKey = "$groupId:$language";
+
+		if ( !isset( $cache[$cacheKey] ) ) {
+			$allowed = true;
+			$discouraged = false;
+
+			$whitelist = $group->getTranslatableLanguages();
+			if ( is_array( $whitelist ) && !isset( $whitelist[$language] ) ) {
+				$allowed = false;
+			}
+
+			$discouraged = false;
+			if ( self::getPriority( $group ) === 'discouraged' ) {
+				$discouraged = true;
+			} else {
+				$priorityLanguages = TranslateMetadata::get( $groupId, 'prioritylangs' );
+				if ( $priorityLanguages ) {
+					$map = array_flip( explode( ',', $priorityLanguages ) );
+					if ( !isset( $map[$language] ) ) {
+						$discouraged = true;
+					}
+				}
+			}
+
+			$cache[$cacheKey] = array(
+				'relevant' => $allowed && !$discouraged,
+				'tags' => array(),
+			);
+
+			$groupTags = $group->getTags();
+			foreach ( array( 'ignored', 'optional' ) as $tag ) {
+				if ( isset( $groupTags[$tag] ) ) {
+					foreach ( $groupTags[$tag] as $key ) {
+						// TODO: ucfirst should not be here
+						$cache[$cacheKey]['tags'][ucfirst( $key )] = true;
+					}
+				}
+			}
+		}
+
+		return $cache[$cacheKey]['relevant'] &&
+			!isset( $cache[$cacheKey]['tags'][ucfirst( $handle->getKey() )] );
 	}
 }

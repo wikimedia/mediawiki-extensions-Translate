@@ -564,16 +564,22 @@ $wgTranslateYamlLibrary = 'spyc';
 /**
  * Whether to allow users to sign up via a sandbox. Sandboxed users cannot do
  * much until approved and thus they can be get rid of easily.
- * @since 2013-04
+ * @since 2013.04
  */
 $wgTranslateUseSandbox = false;
 
 /**
  * To which group the translators are promoted. If left at false, they will just
  * be removed from sandbox and become normal users.
- * @since 2013-04
+ * @since 2013.04
  */
 $wgTranslateSandboxPromotedGroup = false;
+
+/**
+ * List of page names to always suggest for sandboxed users.
+ * @since 2013.06
+ */
+$wgTranslateSandboxSuggestions = array();
 
 # </source>
 # === Unsorted ===
