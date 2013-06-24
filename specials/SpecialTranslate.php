@@ -686,6 +686,7 @@ class SpecialTranslate extends SpecialPage {
 		$groups = MessageGroups::getAllGroups();
 		$dynamic = MessageGroups::getDynamicGroups();
 		$groups = array_keys( array_merge( $groups, $dynamic ) );
+		uasort( $groups, array( 'MessageGroups', 'groupLabelSort' ) );
 
 		$selected = $this->options['group'];
 
