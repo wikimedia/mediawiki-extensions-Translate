@@ -1357,6 +1357,14 @@ $messages['be-tarask'] = array(
 	'logentry-pagetranslation-deletefok' => '$1 {{GENDER:$2|выдаліў|выдаліла}} перакладальную старонку $3',
 	'logentry-pagetranslation-deletefnok' => '$1 {{GENDER:$2|ня змог|не змагла}} выдаліць $3, якая належыць да перакладальнай старонкі $4',
 	'logentry-pagetranslation-deletelok' => '$1 {{GENDER:$2|выдаліў|выдаліла}} перакладальную старонку $3',
+	'logentry-pagetranslation-deletelnok' => '$1 {{GENDER:$2|ня змог|не змагла}} выдаліць старонку «$3», якая належыць да перакладальнай старонкі «$4»',
+	'logentry-pagetranslation-encourage' => '$1 {{GENDER:$2|дазволіў|дазволіла}} пераклад $3',
+	'logentry-pagetranslation-discourage' => '$1 {{GENDER:$2|не дазволіў|не дазволіла}} пераклад $3',
+	'logentry-pagetranslation-prioritylanguages-unset' => '$1 {{GENDER:$2|выдаліў|выдаліла}} прыярытэтныя мовы зь перакладальнай старонкі $3',
+	'logentry-pagetranslation-prioritylanguages' => '$1 {{GENDER:$2|вызначыў|вызначыла}} прыярытэтныя мовы для перакладальнай старонкі $3: $5',
+	'logentry-pagetranslation-prioritylanguages-force' => '$1 {{GENDER:$2|абмежаваў|абмежавала}} мовы для перакладальнай старонкі $3 да $5',
+	'logentry-pagetranslation-associate' => '$1 {{GENDER:$2|дадаў|дадала}} перакладальную старонку $3 да агрэгаванай групы $3', # Fuzzy
+	'logentry-pagetranslation-dissociate' => '$1 {{GENDER:$2|выдаліў|выдаліла}} перакладальную старонку $3 з агрэгаванай групы $4',
 	'pt-movepage-title' => 'Перанесьці старонку $1, якую магчыма перакласьці',
 	'pt-movepage-blockers' => 'Немагчыма перанесьці старонкі, якія магчыма перакладаць, з-за {{PLURAL:$1|наступнай памылкі|наступных памылак}}:',
 	'pt-movepage-block-base-exists' => 'Існуе мэтавая перакладальная старонка «[[:$1]]».',
@@ -1409,9 +1417,9 @@ $messages['be-tarask'] = array(
 	'pt-deletepage-full-logreason' => 'Частка старонкі $1, якую магчыма перакласьці.',
 	'pt-deletepage-lang-logreason' => 'Частка перакладзенай старонкі $1.',
 	'pt-deletepage-started' => 'Калі ласка, праверце [[Special:Log/pagetranslation|старонку журнала перакладаў]] адносна памылак і паведамленьняў пра выкананьне.',
-	'pt-deletepage-intro' => 'Гэтая спэцыяльная старонка дазваляе Вам выдаляць цэлыя старонкі, якія магчыма перакладаць, альбо перакладзеныя на іншыя мовы.
-Выдаленьне не здарыцца хутка, таму што патрэбна выдаліць шмат старонак.
-Памылкі будуць запратакаляваныя на [[Special:Log/pagetranslation|старонцы журналу перакладаў]] і патрабуюць выпраўленьня ўручную.', # Fuzzy
+	'pt-deletepage-intro' => 'Гэтая спэцыяльная старонка дазваляе Вам выдаляць цэлыя перакладальныя старонкі, альбо перакладзеныя на іншыя мовы.
+Выдаленьне ня здарыцца хутка, таму што залежныя старонкі таксама будуць выдаленыя.
+Памылкі будуць запратакаляваныя на [[Special:Log/pagetranslation|старонцы журналу перакладаў]] і патрабуюць выпраўленьня ўручную.',
 );
 
 /** Bulgarian (български)
@@ -7951,8 +7959,8 @@ Texto da secção: <pre>$1</pre>', # Fuzzy
 	'pt-movepage-block-subpage-exists' => 'A subpágina de destino [[:$2]] existe.',
 	'pt-movepage-block-subpage-invalid' => 'O título da subpágina de destino para [[:$1]] seria inválido (talvez demasiado longo).',
 	'pt-movepage-list-pages' => 'Lista de páginas para serem movidas',
-	'pt-movepage-list-translation' => 'Páginas de tradução', # Fuzzy
-	'pt-movepage-list-section' => 'Páginas de secção', # Fuzzy
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Página|Páginas}} de tradução',
+	'pt-movepage-list-section' => '{{PLURAL:$1|Página|Páginas}} de secção',
 	'pt-movepage-list-other' => '{{PLURAL:$1|Outra subpágina|Outras subpáginas}}',
 	'pt-movepage-list-count' => 'No total, $1 {{PLURAL:$1|página para ser movida|páginas para serem movidas}}.',
 	'pt-movepage-legend' => 'Mover página traduzível',
@@ -7974,13 +7982,13 @@ Verifique no [[Special:Log/pagetranslation|registo de tradução de páginas]] s
 	'pt-deletepage-lang-title' => 'A eliminar a página traduzida $1.',
 	'pt-deletepage-full-title' => 'A eliminar a página traduzível $1.',
 	'pt-deletepage-invalid-title' => 'A página especificada é inválida.',
-	'pt-deletepage-invalid-text' => 'A página especificada não é uma página traduzível nem uma página traduzida.', # Fuzzy
+	'pt-deletepage-invalid-text' => 'A página especificada não é uma página traduzível nem uma página traduzida.',
 	'pt-deletepage-action-check' => 'Listar as páginas para eliminar',
 	'pt-deletepage-action-perform' => 'Eliminar',
 	'pt-deletepage-action-other' => 'Alterar o destino',
 	'pt-deletepage-lang-legend' => 'Eliminar a página traduzida',
 	'pt-deletepage-full-legend' => 'Eliminar a página traduzível',
-	'pt-deletepage-any-legend' => 'Eliminar a página traduzível ou a tradução de uma página traduzível', # Fuzzy
+	'pt-deletepage-any-legend' => 'Eliminar a página traduzível ou página de tradução',
 	'pt-deletepage-current' => 'Nome da página:',
 	'pt-deletepage-reason' => 'Motivo:',
 	'pt-deletepage-subpages' => 'Eliminar todas as subpáginas',

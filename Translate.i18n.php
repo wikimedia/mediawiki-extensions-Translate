@@ -17313,6 +17313,8 @@ $messages['ka'] = array(
 	'tux-message-filter-result' => 'ნაპოვნია $1 {{PLURAL:$1|შედეგი|შედეგი}} „$2“-თვის',
 	'tux-message-filter-advanced-button' => 'გაფართოებული ძიება',
 	'tux-message-filter-optional-messages-label' => 'არასავალდებულო შეტყობინებები',
+	'tux-empty-list-other' => 'სათარგმნი არაფერია',
+	'tux-empty-list-other-link' => 'ყველა შეტყობინების ჩვენება',
 );
 
 /** Kara-Kalpak (Qaraqalpaqsha)
@@ -25319,7 +25321,7 @@ $messages['pt'] = array(
 	'translate-taskui-export-to-file' => 'Exportar no formato original',
 	'translate-taskui-export-as-po' => "Exportar para tradução ''off-line''",
 	'translate-taction-translate' => 'Traduzir',
-	'translate-taction-proofread' => 'Rever', # Fuzzy
+	'translate-taction-proofread' => 'Rever',
 	'translate-taction-lstats' => 'Estatísticas por língua',
 	'translate-taction-mstats' => 'Estatísticas por grupo de mensagens',
 	'translate-taction-export' => 'Exportar',
@@ -25590,22 +25592,22 @@ Detalhes: $1',
 	'translate-messagereview-submit' => 'Aceitar', # Fuzzy
 	'translate-messagereview-progress' => 'Em aceitação...', # Fuzzy
 	'translate-messagereview-failure' => 'Em aceitação... Erro: $1', # Fuzzy
-	'translate-messagereview-done' => 'Aceite', # Fuzzy
-	'translate-messagereview-reviews' => 'Aceite por {{PLURAL:$1|um utilizador|$1 utilizadores}}', # Fuzzy
-	'translate-messagereview-reviewswithyou' => 'Aceite por {{PLURAL:$1|si|$1 utilizadores, incluindo você}}', # Fuzzy
+	'translate-messagereview-done' => 'Revista',
+	'translate-messagereview-reviews' => 'Revista por {{PLURAL:$1|um utilizador|$1 utilizadores}}',
+	'translate-messagereview-reviewswithyou' => 'Revista por {{PLURAL:$1|si|$1 utilizadores, incluindo você}}',
 	'api-error-invalidrevision' => 'A tradução não foi encontrada',
 	'api-error-unknownmessage' => 'A mensagem não foi encontrada',
 	'api-error-fuzzymessage' => 'A tradução ainda está sinalizada com FUZZY',
-	'api-error-owntranslation' => 'Não pode aceitar as suas próprias traduções', # Fuzzy
-	'translate-messagereview-no-fuzzy' => 'Não se podem aceitar traduções sinalizadas com FUZZY', # Fuzzy
-	'translate-messagereview-no-own' => 'Não pode aceitar as suas próprias traduções.', # Fuzzy
-	'translate-messagereview-doit' => 'Aceitar esta tradução, por considerá-la correta.', # Fuzzy
+	'api-error-owntranslation' => 'Não pode marcar as suas próprias traduções como revistas',
+	'translate-messagereview-no-fuzzy' => 'Não se podem marcar como revistas traduções sinalizadas com FUZZY',
+	'translate-messagereview-no-own' => 'Não pode marcar as suas próprias traduções como revistas.',
+	'translate-messagereview-doit' => 'Marcar esta tradução como revista.',
 	'group-translate-proofr' => 'Revisores de traduções',
 	'group-translate-proofr-member' => '{{GENDER:$1|revisor|revisora}} de traduções',
 	'grouppage-translate-proofr' => '{{ns:project}}:Revisores de traduções',
 	'log-name-translationreview' => 'Registo de revisão de traduções',
 	'log-description-translationreview' => 'Registo de todas as revisões de traduções e de grupos de traduções.',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|aceitou}} a tradução $3', # Fuzzy
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|reviu}} a tradução $3',
 	'translate-workflow-state-' => '(indefinido)',
 	'translate-workflowstatus' => 'Estado: $1',
 	'translate-workflow-set-do' => 'Ativar',
@@ -26955,6 +26957,8 @@ Mutive:
 $1",
 	'translate-js-summary' => 'Riepileghe:',
 	'translate-js-save' => 'Reggìstre',
+	'translate-js-next' => "Reggìstre e iapre 'u prossime",
+	'translate-js-nonext' => "Quiste ere l'urteme messàgge sus a sta pàgene.",
 	'translate-js-skip' => "Zumbe a 'u prossime",
 	'translate-js-save-failed' => "Reggistrazione fallite. Pe piacere segnale st'errore.",
 	'translate-js-history' => "Cunde d'a traduzione",

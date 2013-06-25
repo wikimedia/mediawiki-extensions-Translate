@@ -177,6 +177,12 @@ $specialPageAliases['bxr'] = array(
 	'MyLanguage' => array( 'Минии_хэлэн' ),
 );
 
+/** Chechen (нохчийн) */
+$specialPageAliases['ce'] = array(
+	'Translate' => array( 'Гоч_де' ),
+	'Translations' => array( 'Гоч_дарш' ),
+);
+
 /** Cebuano (Cebuano) */
 $specialPageAliases['ceb'] = array(
 	'Translate' => array( 'Hubara' ),

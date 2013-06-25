@@ -3233,6 +3233,7 @@ $messages['ps'] = array(
 /** Portuguese (português)
  * @author Giro720
  * @author Hamilton Abreu
+ * @author Malafaya
  * @author SandroHc
  */
 $messages['pt'] = array(
@@ -3261,7 +3262,7 @@ No fim, será capaz de traduzir as ''mensagens da interface'' de todos os projec
 	'translate-fs-userpage-level-2' => 'Tenho conhecimentos moderados de',
 	'translate-fs-userpage-level-1' => 'Sei um pouco de',
 	'translate-fs-userpage-help' => 'Por favor, Indique-nos as suas habilidades em idiomas e nos fale algo sobre você. Caso tenha conhecimentos em mais de cinco idiomas, será possível especificá-los noutra altura.', # Fuzzy
-	'translate-fs-userpage-submit' => 'Criar a minha página de utilizador', # Fuzzy
+	'translate-fs-userpage-submit' => 'Criar a sua página de utilizador',
 	'translate-fs-userpage-done' => 'Bom trabalho! Agora tem uma página de utilizador.',
 	'translate-fs-permissions-planguage' => 'Idioma principal:',
 	'translate-fs-permissions-pending' => 'O seu pedido foi enviado para [[$1]]. Alguém da equipa do site o verificará assim que possível.
@@ -3432,10 +3433,15 @@ $messages['roa-tara'] = array(
 	'translate-fs-permissions-title' => 'Cirche le permesse de traduttore',
 	'translate-fs-target-title' => 'Accuminze a traducere!',
 	'translate-fs-email-title' => "Conferme l'indirizze e-mail tune",
+	'translate-fs-intro' => "Bovègne jndr'à 'a guide de le prime passe de {{SITENAME}}.
+Tu avìne guidate 'mbrà le processe pe devendò traduttore passe pe passe.
+Quanne amme spicciate, tu sì capace de traducete le \"messàgge de inderfacce\" de tutte le pruggette supportate sus a {{SITENAME}}.",
 	'translate-fs-selectlanguage' => "Pigghie 'na lènghe",
 	'translate-fs-settings-planguage' => 'Lènga prengepàle:',
 	'translate-fs-settings-planguage-desc' => "'A lènghe prengepàle raddoppie cumme 'a lènghe de inderfacce sus a sta uicchi e cumme lènghe de destinazione de base pe le tradutture.",
 	'translate-fs-settings-slanguage' => "Assistende d'a lènghe $1:",
+	'translate-fs-settings-slanguage-desc' => "Jè possibbile fa vedè le traduziune de le messàgge jndr'à otre lènghe jndr'à 'u cangiatore de traduzione.
+Aqquà tu puè scacchià ce lènghe, vuè ccu vide.",
 	'translate-fs-settings-submit' => 'Reggistre le preferenze',
 	'translate-fs-userpage-level-N' => "Ije sò 'nu lènga madre",
 	'translate-fs-userpage-level-5' => "Ije sò 'nu professore",
