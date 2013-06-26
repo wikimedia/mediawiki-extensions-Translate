@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "D1kGWYEw",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-06-26T11:39:06Z",
+      "side": 1,
+      "message": "I see some code duplication here compared to the scripts for Special:Translate. Do you see any opportunities for refactoring?",
+      "revId": "92f34a26bdd80df9d24e2496b1c9706b6b4c3121",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "D1mGdXGI",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-06-26T11:39:06Z",
+      "side": 1,
+      "message": "Yes we do not need filter at all, as far as I know.",
+      "revId": "92f34a26bdd80df9d24e2496b1c9706b6b4c3121",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "D1sGKUBw",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-06-26T11:39:06Z",
+      "side": 1,
+      "message": "It is currently !sandbox on my open patch.",
+      "revId": "92f34a26bdd80df9d24e2496b1c9706b6b4c3121",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "D1qGPRCo",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-06-26T11:39:06Z",
+      "side": 1,
+      "message": "I think I mentioned about using -\u003eparse() here in previous patchsets.",
+      "revId": "92f34a26bdd80df9d24e2496b1c9706b6b4c3121",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
