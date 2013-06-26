@@ -40,6 +40,7 @@ require_once "$dir/_autoload.php";
 /** @endcond */
 
 /**
+ * Registering varios resources
  * @cond file_level_code
  */
 
@@ -211,6 +212,8 @@ $wgJobClasses['TTMServerMessageUpdateJob'] = 'TTMServerMessageUpdateJob';
 $wgJobClasses['TranslateSandboxReminderJob'] = 'TranslateSandboxReminderJob';
 
 require "$dir/Resources.php";
+/** @endcond */
+
 
 # == Configuration variables ==
 
@@ -426,7 +429,7 @@ $wgTranslateAuthorBlacklist[] = array( 'black', '/^.*;.*;.*Bot$/Ui' );
 
 /**
  * List of namespace that contain messages. No talk namespaces.
- * @see http://translatewiki.net/wiki/Translating:Group_configuration
+ * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration
  */
 $wgTranslateMessageNamespaces = array( NS_MEDIAWIKI );
 
@@ -465,7 +468,7 @@ $wgTranslateGroupFiles = array();
  * If the value is false, the workflow states feature is disabled.
  * State name can be up to 32 characters maximum.
  * Example:
- * $wgTranslateWorkflowStates["groupid"] = array(
+ * $wgTranslateWorkflowStates = array(
  *      'new' => array( 'color' => 'FF0000' ), // red
  *      'needs_proofreading' => array( 'color' => '0000FF' ), // blue
  *      'ready' => array( 'color' => 'FFFF00' ), // yellow
@@ -474,9 +477,6 @@ $wgTranslateGroupFiles = array();
  *          'right' => 'centralnotice-admin',
  *      ),
  * );
- * If there is a default workflowstate for all groups, define it like this:
- *  $wgTranslateWorkflowStates["default"] = array( // configuration )
- *
  */
 $wgTranslateWorkflowStates = false;
 
@@ -562,14 +562,14 @@ $wgTranslateYamlLibrary = 'spyc';
 /**
  * Whether to allow users to sign up via a sandbox. Sandboxed users cannot do
  * much until approved and thus they can be get rid of easily.
- * @since 2013-04
+ * @since 2013.04
  */
 $wgTranslateUseSandbox = false;
 
 /**
  * To which group the translators are promoted. If left at false, they will just
  * be removed from sandbox and become normal users.
- * @since 2013-04
+ * @since 2013.04
  */
 $wgTranslateSandboxPromotedGroup = false;
 
