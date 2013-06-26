@@ -1026,7 +1026,7 @@ Additional parameters:
 {{Identical|Status}}',
 	'translate-workflow-set-do' => 'Submit button text when active',
 	'translate-workflow-set-doing' => 'Submit button text when waiting for reply from server',
-	'translate-workflow-set-done' => 'Submit button text when submission completed succesfully',
+	'translate-workflow-set-done' => 'Submit button text when submission completed successfully',
 	'translate-workflow-set-error-alreadyset' => 'An error message shown in a popup box after pressing the {{msg-mw|translate-workflow-set-do}} button.',
 	'translate-workflow-autocreated-summary' => 'This is an edit summary for the automatic creation of a workflow state page.',
 	'translate-stats-workflow' => 'Column header on [[Special:LanguageStats]] and [[Special:MessageGroupStats]]',
@@ -6080,6 +6080,7 @@ $messages['ce'] = array(
 	'translate-gs-code' => 'Ишар',
 	'translate-gs-multiple' => 'Маситта',
 	'translate-gs-total' => 'Йеригге',
+	'tux-editor-doc-editor-cancel' => 'Цаоьшу',
 	'translate-search-more-languages-info' => 'кхин $1 {{PLURAL:$1|мотт|меттанаш|меттанаш}}', # Fuzzy
 );
 

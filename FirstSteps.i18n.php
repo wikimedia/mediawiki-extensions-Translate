@@ -3449,9 +3449,16 @@ Aqquà tu puè scacchià ce lènghe, vuè ccu vide.",
 	'translate-fs-userpage-level-3' => "Ije parle cumme 'ndermèdie.",
 	'translate-fs-userpage-level-2' => "'U canosche 'nu picche",
 	'translate-fs-userpage-level-1' => "'U sacce tèrra-tèrre",
+	'translate-fs-userpage-help' => "Pe piacere indiche le canoscenze tue d'a lènga e dinne quaccheccose sus a te. Ce tu canusce cchiù de cinghe lènghe, tu le puè aggiungere apprisse.",
 	'translate-fs-userpage-submit' => "Ccreje 'a pàgena utende toje",
 	'translate-fs-userpage-done' => "Fatte bbuène! Tu è 'na pàgena utende nove.",
 	'translate-fs-permissions-planguage' => 'Lènga prengepàle:',
+	'translate-fs-permissions-help' => "Mò tu è abbesògne de mettere 'na richieste pe esseer aggiunde jndr'à 'u gruppe de tradutture.
+Scacchie 'a lènghe prengepàle ca tu vuè ccu traduce.
+
+Tu puè scrivere otre lènghe e otre segnalaziune jndr'à buatte de teste aqquà sotte.",
+	'translate-fs-permissions-pending' => "'A richiesta toje ha state confermate sus a [[$1]] e quaccheotre da 'a squadre d'u site adda verificà quanne pò.
+Cer tu conferme l'indirizze email tune, tu è 'na notifiche cu 'a mail aprrime possibbile.",
 	'translate-fs-permissions-submit' => "Manne 'na richieste",
 );
 

@@ -1363,7 +1363,7 @@ $messages['be-tarask'] = array(
 	'logentry-pagetranslation-prioritylanguages-unset' => '$1 {{GENDER:$2|выдаліў|выдаліла}} прыярытэтныя мовы зь перакладальнай старонкі $3',
 	'logentry-pagetranslation-prioritylanguages' => '$1 {{GENDER:$2|вызначыў|вызначыла}} прыярытэтныя мовы для перакладальнай старонкі $3: $5',
 	'logentry-pagetranslation-prioritylanguages-force' => '$1 {{GENDER:$2|абмежаваў|абмежавала}} мовы для перакладальнай старонкі $3 да $5',
-	'logentry-pagetranslation-associate' => '$1 {{GENDER:$2|дадаў|дадала}} перакладальную старонку $3 да агрэгаванай групы $3', # Fuzzy
+	'logentry-pagetranslation-associate' => '$1 {{GENDER:$2|дадаў|дадала}} перакладальную старонку $3 да агрэгаванай групы $4',
 	'logentry-pagetranslation-dissociate' => '$1 {{GENDER:$2|выдаліў|выдаліла}} перакладальную старонку $3 з агрэгаванай групы $4',
 	'pt-movepage-title' => 'Перанесьці старонку $1, якую магчыма перакласьці',
 	'pt-movepage-blockers' => 'Немагчыма перанесьці старонкі, якія магчыма перакладаць, з-за {{PLURAL:$1|наступнай памылкі|наступных памылак}}:',
@@ -1819,6 +1819,8 @@ $messages['ce'] = array(
 	'tpt-diff-new' => 'Керла йоза',
 	'tpt-languages-legend' => 'Кхин меттанаш:',
 	'pt-movepage-reason' => 'Бахьан:',
+	'pt-movepage-action-other' => 'Хийца Ӏалашо',
+	'pt-deletepage-action-other' => 'Хийца Ӏалашо',
 	'pt-deletepage-current' => 'АгӀона цӀе:',
 );
 
