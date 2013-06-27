@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "D1sIVK5s",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-06-27T05:09:40Z",
+      "side": 1,
+      "message": "Yes, there are some code duplication. This is scaled down version of translation editor, message table features. If we want to avoid duplication, those plugins need lot of rework or lot of options exposed. I choose to not to touch the plugins for now to meet this purpose",
+      "parentUuid": "D1kGWYEw",
+      "revId": "92f34a26bdd80df9d24e2496b1c9706b6b4c3121",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "D1mGdXGI",
         "filename": "resources/js/ext.translate.special.translationstash.js",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-26T11:39:06Z",
       "side": 1,
       "message": "Yes we do not need filter at all, as far as I know.",
+      "revId": "92f34a26bdd80df9d24e2496b1c9706b6b4c3121",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "D1kJr.x8",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-06-27T05:09:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "D1mGdXGI",
       "revId": "92f34a26bdd80df9d24e2496b1c9706b6b4c3121",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "D1qJ43-A",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-06-27T05:09:40Z",
+      "side": 1,
+      "message": "Which patch is that?",
+      "parentUuid": "D1sGKUBw",
+      "revId": "92f34a26bdd80df9d24e2496b1c9706b6b4c3121",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "D1qGPRCo",
         "filename": "specials/SpecialTranslationStash.php",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2013-06-26T11:39:06Z",
       "side": 1,
       "message": "I think I mentioned about using -\u003eparse() here in previous patchsets.",
+      "revId": "92f34a26bdd80df9d24e2496b1c9706b6b4c3121",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "D1mJu9zE",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-06-27T05:09:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "D1qGPRCo",
       "revId": "92f34a26bdd80df9d24e2496b1c9706b6b4c3121",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
