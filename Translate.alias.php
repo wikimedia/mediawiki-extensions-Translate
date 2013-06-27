@@ -180,7 +180,10 @@ $specialPageAliases['bxr'] = array(
 /** Chechen (нохчийн) */
 $specialPageAliases['ce'] = array(
 	'Translate' => array( 'Гоч_де' ),
+	'Magic' => array( 'Шордина_гочдар' ),
+	'TranslationStats' => array( 'Гочдаран_статистика' ),
 	'Translations' => array( 'Гоч_дарш' ),
+	'LanguageStats' => array( 'Меттан_статистика' ),
 );
 
 /** Cebuano (Cebuano) */

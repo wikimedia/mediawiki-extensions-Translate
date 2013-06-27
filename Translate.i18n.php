@@ -6045,6 +6045,7 @@ El més útil per a les tasques de revisió.',
  */
 $messages['ce'] = array(
 	'translate' => 'Гоч',
+	'translate-taskui-view' => 'Гайта берриге хаамаш',
 	'translate-page-settings-legend' => 'Барамаш',
 	'translate-page-group' => 'Тоба',
 	'translate-page-language' => 'Мотт',
@@ -6081,6 +6082,7 @@ $messages['ce'] = array(
 	'translate-gs-multiple' => 'Маситта',
 	'translate-gs-total' => 'Йеригге',
 	'tux-editor-doc-editor-cancel' => 'Цаоьшу',
+	'tux-empty-list-other-link' => 'Гайта берриге хаамаш',
 	'translate-search-more-languages-info' => 'кхин $1 {{PLURAL:$1|мотт|меттанаш|меттанаш}}', # Fuzzy
 );
 
