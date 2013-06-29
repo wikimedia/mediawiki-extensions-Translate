@@ -1,0 +1,9 @@
+== Translate 2013.06 ==
+Released at 2013-06-29.
+
+* The option to hide the MediaWiki sidebar while translating was added
+* Translations identical to the current translation are not suggested any more from translation memory
+* Suggestion in the source language is no more shown in the "in other languages" section
+* Edit section links are not shown anymore for translation pages
+* Only local files can now be upload using Special:ImportTranslations
+* Groups that are not marked as a priority for the current language are not shown in Special:LanguageStats
