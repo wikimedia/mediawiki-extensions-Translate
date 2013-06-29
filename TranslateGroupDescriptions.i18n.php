@@ -2291,7 +2291,9 @@ $messages['sl'] = array(
 	'bw-desc-freecol' => 'Pred prevajanjem FreeCol v svoj jezik si, prosimo, preberite [[Translating:FreeCol]]. Freecol uporablja licenco GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], spletni forum napisan v PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] je prost spletni sistem za sledenje hroščem. Prosimo, sporočite morebitne težave na [[Support|Podpora]].',
+	'translate-group-desc-blockly' => 'Skupina sporočil za [[Translating:Blockly|Blockly]]',
 	'translate-group-desc-eol' => 'Skupina sporočil za [[Translating:EOL|Encyclopedia of Life]]',
+	'translate-group-desc-fuel' => '[[Translating:FUEL|FUEL]] prinaša več doslednosti pri prevodih programja',
 	'translate-group-desc-ihris' => 'Skupina sporočil za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-kiwix' => 'Skupina sporočil za [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Jedrni vtičnik za [[Translating:MantisBT|MantisBT]]',
@@ -2307,9 +2309,12 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] je zbirka orodij za urejanje Wikipedije',
 	'bw-desc-shapado' => 'Skupina sporočil prostega in odprtokodnega programja za vprašanja in odgovore [[Translating:Shapado|Shapado]]',
 	'translate-group-desc-tsint' => 'Skupina sporočil za [http://toolserver.org/~krinkle/TsIntuition Toolserverjevo Intuicijo], sistem i18n za orodja [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|podpora]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tehnične podrobnosti]</span>)',
+	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] je orodje za nalaganje datotek na Wikimediino Zbirko in druge projekte Wikimedie',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] je storitev, ki prikazuje poti za pohodništvo, kolesarjenje, gorsko kolesarjenje in rolkanje po celem svetu. Uporablja licenco GNU GPL.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je zmožen hitro najti avtorje strani na wikiju Wikimedije.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt za dostavljanje nepovezane, samo tekstovne različice Wikipedije na mobilne naprave.',
+	'translate-group-desc-waymarked-trails-help' => 'Strani s pomočjo spletnih strani Waymarked Trails: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] je resnično realnočasovni sodelovalni urejevalnik',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)

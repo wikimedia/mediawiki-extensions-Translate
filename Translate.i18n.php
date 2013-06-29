@@ -632,6 +632,7 @@ See also:
 	'translate-ext-url' => 'Unused at this time. Parameters:
 * $1 - URL',
 	'translate-optional' => '{{Identical|Optional}}',
+	'translate-ignored' => '{{Identical|Ignore}}',
 	'translate-edit-jsopen' => 'Default linktext of <nowiki>{{#translationdialog:pagename}}</nowiki>.
 {{Identical|Edit}}',
 	'translate-edit-title' => 'Used as a tooltip for edit links in lists with translatable messages. Parameters:
@@ -927,7 +928,8 @@ Variables:
 	'translate-manage-action-conflict' => 'Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}
 
 fuzzy = mark translations for review/update.',
-	'translate-manage-action-ignore' => 'Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}',
+	'translate-manage-action-ignore' => 'Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}
+{{Identical|Ignore}}',
 	'translate-manage-action-fuzzy' => 'Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}
 
 fuzzy = mark translations for review',
@@ -9426,13 +9428,13 @@ Por favor reenvíe el formulario para continuar procesando.',
 	'translate-manage-conflict-summary' => 'Importando nueva versión desde fuente externa.
 Por favor verifique.',
 	'translate-manage-fuzzy-summary' => 'La definición de mensaje ha cambiado',
+	'translate-manage-submit' => 'Ejecutar',
+	'translate-manage-intro-other' => 'A continuación esta la lista de modificaciones de traducción en idioma $1.
+Por favor revíselos y elija la acción apropiada para cada uno.
+Si prefiere ignorar los cambios, se sobrescribirán en la próxima exportación.', # Fuzzy
 	'importtranslations' => 'Importar traducciones',
-	'translate-import-from-url' => 'URL al archivo:',
-	'translate-import-from-wiki' => 'Archivo en esta wiki:',
 	'translate-import-from-local' => 'Importación de archivo local:',
 	'translate-import-load' => 'Subir archivo',
-	'translate-import-err-type-not-supported' => 'Incapaz de cargar el archivo:
-Método <code>$1</code> no está soportado.',
 	'translate-import-err-dl-failed' => 'Imposible buscar el archivo:
 $1',
 	'translate-import-err-ul-failed' => 'La carga del archivo no fue exitosa.',
@@ -9468,10 +9470,10 @@ Detalle: $1',
 	'translate-searchprofile-tooltip' => 'Buscar en todas las traducciones',
 	'translate-search-languagefilter' => 'Filtrar por idioma:',
 	'translate-search-nofilter' => 'Sin filtro',
-	'translate-messagereview-submit' => 'Aceptar', # Fuzzy
-	'translate-messagereview-progress' => 'Aceptando...', # Fuzzy
-	'translate-messagereview-failure' => 'Aceptando... error: $1', # Fuzzy
-	'translate-messagereview-done' => 'Aceptado', # Fuzzy
+	'translate-messagereview-submit' => 'Marcar como revisada',
+	'translate-messagereview-progress' => 'Marcando como revisada...',
+	'translate-messagereview-failure' => 'Error al marcar como revisada: $1',
+	'translate-messagereview-done' => 'Revisada',
 	'translate-messagereview-reviews' => 'Aceptada por {{PLURAL:$1|un usuario|$1 usuarios}}', # Fuzzy
 	'translate-messagereview-reviewswithyou' => 'Aceptada por {{PLURAL:$1|ti|$1 usuarios incluyéndote a ti}}', # Fuzzy
 	'api-error-invalidrevision' => 'No se encontró la traducción',
@@ -9524,15 +9526,30 @@ Utilizado sobre todo para tareas de corrección.', # Fuzzy
 	'tux-tab-untranslated' => 'Sin traducir',
 	'tux-tab-outdated' => 'Desactualizado',
 	'tux-tab-translated' => 'Traducido',
+	'tux-tab-unproofread' => 'Sin revisar',
 	'tux-edit' => 'Editar',
 	'tux-status-optional' => 'Opcional',
 	'tux-status-fuzzy' => 'Obsoleto',
-	'tux-status-proofread' => 'Corregido', # Fuzzy
+	'tux-status-proofread' => 'Revisada',
 	'tux-status-translated' => 'Traducido',
 	'tux-status-saving' => 'Guardando...',
 	'tux-status-unsaved' => 'Sin guardar',
 	'tux-editor-placeholder' => 'Tu traducción',
-	'tux-empty-list-other-guide' => 'Puedes ayudar en la revisión de la traducciones existentes', # Fuzzy
+	'tux-editor-discard-changes-button-label' => 'Descartar los cambios',
+	'tux-editor-save-button-label' => 'Guardar la traducción',
+	'tux-editor-skip-button-label' => 'Pasar a la siguiente',
+	'tux-editor-cancel-button-label' => 'Cancelar',
+	'tux-editor-confirm-button-label' => 'Confirmar la traducción',
+	'tux-editor-edit-desc' => 'Editar la documentación',
+	'tux-editor-add-desc' => 'Añadir la documentación',
+	'tux-editor-suggestions-title' => 'Sugerencias',
+	'tux-editor-in-other-languages' => 'En otros idiomas',
+	'tux-editor-need-more-help' => '¿Necesitas más ayuda?',
+	'tux-editor-ask-help' => 'Pide más información',
+	'tux-editor-tm-match' => '$1% de coincidencia',
+	'tux-warnings-more' => '{{PLURAL:$1|$1 más}}',
+	'tux-warnings-hide' => 'ocultar',
+	'tux-empty-list-other-guide' => 'Puedes ayudar en la revisión de la traducciones existentes',
 );
 
 /** Estonian (eesti)
