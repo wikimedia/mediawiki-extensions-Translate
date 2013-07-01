@@ -226,18 +226,19 @@ $specialPageAliases['de'] = array(
 $specialPageAliases['diq'] = array(
 	'Translate' => array( 'Açarnayış' ),
 	'Magic' => array( 'AçarnayışoHerayen' ),
-	'TranslationStats' => array( 'İstatistikêAçarnayışi' ),
+	'TranslationStats' => array( 'İstatistikéAçarnayışi' ),
 	'Translations' => array( 'Açarneri' ),
 	'LanguageStats' => array( 'Zıwanİst' ),
-	'MessageGroupStats' => array( 'İstatistikêGrubandêMesacan' ),
-	'PageTranslation' => array( 'PelaAçarnayış' ),
+	'MessageGroupStats' => array( 'İstatistikéGrubandéMesacan' ),
+	'PageTranslation' => array( 'PeraAçarnayış' ),
 	'ImportTranslations' => array( 'AçarnayışaZerrefi' ),
-	'ManageMessageGroups' => array( 'GrubanêMesacanİdareke' ),
-	'FirstSteps' => array( 'GameSıfteyêni' ),
+	'ManageMessageGroups' => array( 'GrubanéMesacanİdareke' ),
+	'FirstSteps' => array( 'GameSıfteyéni' ),
 	'SupportedLanguages' => array( 'ZıwanêkeDestegnênê' ),
 	'MyLanguage' => array( 'ZıwaneMe' ),
-	'PageTranslationDeletePage' => array( 'PelaAçarnayışêPelaBesternayışi' ),
-	'AggregateGroups' => array( 'GrubêAggregate' ),
+	'PageTranslationDeletePage' => array( 'PelaAçarnayışéPelaBesternayışi' ),
+	'AggregateGroups' => array( 'GrubéAggregate' ),
+	'SearchTranslations' => array( 'AçarnayışaCıgeyre' ),
 );
 
 /** Lower Sorbian (dolnoserbski) */
@@ -560,6 +561,7 @@ $specialPageAliases['ksh'] = array(
 $specialPageAliases['ku-latn'] = array(
 	'Translate' => array( 'Wergerîne' ),
 	'Translations' => array( 'Werger' ),
+	'MyLanguage' => array( 'Zimanê_Min' ),
 );
 
 /** Cornish (kernowek) */
