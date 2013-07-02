@@ -16197,12 +16197,13 @@ Inviare nuovamente il modulo per proseguire nell'elaborazione.",
 	'translate-manage-conflict-summary' => 'Importazione di una nuova versione da una fonte esterna.
 Da controllare.',
 	'translate-manage-fuzzy-summary' => 'La definizione del messaggio è cambiata',
+	'translate-manage-submit' => 'Esegui',
+	'translate-manage-intro-other' => "Di seguito sono elencati i cambiamenti alle traduzioni nella lingua $1.
+Controlla le modifiche e scegli l'azione da eseguire per ciascun messaggio.
+Se scegli di ignorare i cambiamenti, questa azione sarà solo temporanea.",
 	'importtranslations' => 'Importa traduzioni',
-	'translate-import-from-url' => 'URL del file:',
-	'translate-import-from-wiki' => 'File di questo wiki:',
 	'translate-import-from-local' => 'Carica file locale:',
 	'translate-import-load' => 'Carica file',
-	'translate-import-err-type-not-supported' => 'Impossibile caricare il file: la modalità <code>$1</code> non è supportata.',
 	'translate-import-err-dl-failed' => 'Impossibile recuperare il file:
 $1',
 	'translate-import-err-ul-failed' => 'Il caricamento del file non è riuscito',
