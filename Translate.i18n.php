@@ -19724,6 +19724,9 @@ $1',
 	'translate-next' => 'Kitas puslapis',
 	'translate-prev' => 'Ankstesnis puslapis',
 	'translate-page-description-legend' => 'Informacija apie grupę',
+	'translate-page-description-hasoptional' => 'Šios pranešimų grupės yra pasirenkami pranešimai.
+Pasirenkami pranešimai turėtų būti tik išversti, kai jūsų kalba turi specialių reikalavimų.
+kaip nenaudojant vietas arba tranliteruodami tikrinius vardus. $1',
 	'translate-page-description-hasoptional-open' => 'Rodyti pasirinktinius pranešimus.',
 	'translate-page-edit' => 'redaguoti',
 	'translate-ext-url' => '<hr />Interneto svetainė: $1',
@@ -19747,16 +19750,17 @@ $1',
 	'translate-edit-nopermission' => 'Jums reikia leidimo išversti pranešimus',
 	'translate-edit-askpermission' => 'Prašyti leidimo',
 	'translate-magic-pagename' => 'MediaWiki išplėtimų vertimas',
-	'translate-magic-help' => 'Jūs galite išversti specialių puslapių pavadinimus, magiškus žodžius ir vardų sričių pavadinimus.
+	'translate-magic-help' => 'Jūs galite versti specialių puslapių pseudonimus, magiškus žodžius ir vardų sričių pavadinimus.
 
 Specialiojo puslapio pavadinimo ir magiško žodžio vertimai gali būti keli.
 Vertimai yra atskiriami kableliu (,).
 Vardų srities pavadinimas gali turėti tik vieną vertimą.
 
-Vardų sričių vertimuose <code>$1 aptarimas</code> yra specialus. <code>$1</code> yra pakeičiamas svetainės pavadinimu (pavyzdžiui <code>{{SITENAME}} aptarimas</code>). Jei nėra galimybės Jūsų kalboje suformuoti teisingos išraiškos su svetainės pavadinimo pakeitimu, prašome kreiptis į kūrėjus.
+Vardų sričių vertimuose <code>$1 aptarimas</code> yra specialus. <code>$1</code> yra pakeičiamas svetainės pavadinimu (pavyzdžiui <code>{{ns:project_talk}}</code>).
+Jei nėra įmanoma jūsų kalboje formuoti teisingą raiškumą be keisdami svetainės vardą, praneškite mums [[Support|palaikyme]].
 
 Jūs turite priklausyti vertėjų grupei, kad galėtumėte įrašyti pakeitimus.
-Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.', # Fuzzy
+Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.',
 	'translate-magic-module' => 'Modulis:',
 	'translate-magic-submit' => 'Išrinkti',
 	'translate-magic-cm-export' => 'Eksportuoti',
@@ -19772,6 +19776,7 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
 	'translate-magic-words' => 'Magiški žodžiai',
 	'translate-magic-namespace' => 'Vardų srities pavadinimai',
 	'translate-magic-notsaved' => 'Jūsų redagavimas yra neišsaugotas!',
+	'translate-magic-errors' => 'Praįome ištaisyti {{PLURAL:$1|klaidą|klaidas}} vertimuose:',
 	'translate-magic-saved' => 'Jūsų keitimai buvo sėkmingai išsaugoti.',
 	'translate-checks-parameters' => '{{PLURAL:$2|Šis $2 parametras nepanaudotas|Šie $2 parametrai nepanaudoti|Šie $2 parametrų nepanaudoti}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -19829,6 +19834,7 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
 	'translate-translations-project' => 'Projektas:',
 	'translate-translations-history-short' => 'val.',
 	'languagestats' => 'Kalbos statistikos',
+	'languagestats-summary' => 'Šis puslapis rodo vertimo statistikas visiems pranešimo grupėms vertimui.',
 	'languagestats-stats-for' => 'Vertimo statistikos $1 ($2).',
 	'languagestats-recenttranslations' => 'nauji vertimai',
 	'translate-langstats-expand' => 'išskleisti',
@@ -19917,7 +19923,7 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
 	'api-error-unknownmessage' => 'Pranešimas nerastas',
 	'api-error-fuzzymessage' => 'Vertimas yra pažymėta kaip apytikslė',
 	'api-error-owntranslation' => 'Jūs negalite savo vertimus pažymėti kaip apžvelgtą.',
-	'translate-messagereview-no-own' => 'Jūs negalite priimti savo vertimų.', # Fuzzy
+	'translate-messagereview-no-own' => 'Jūs negalite savo vertimus pažymėti kaip apžvelgtą.',
 	'translate-messagereview-doit' => 'Pažymėkite šį vertimą kaip apžvelgtą.',
 	'group-translate-proofr' => 'Vertimo peržiūros',
 	'group-translate-proofr-member' => '{{GENDER:$1|vertimo peržiūrėtojas}}',
@@ -23906,7 +23912,7 @@ $messages['or'] = array(
 	'translate-magic-cm-current' => 'ଏବେକାର',
 	'translate-magic-cm-original' => 'ମୂଳ',
 	'translate-magic-cm-comment' => 'ମତାମତ',
-	'translate-magic-cm-save' => 'ସାଇତିବେ',
+	'translate-magic-cm-save' => 'ସାଇତିବେ [Save]',
 	'translate-magic-cm-updatedusing' => '[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]] ବ୍ୟବ‌ହାର କରି ଅପଡ଼େଟ କରୁଛୁ ।',
 	'translate-magic-cm-savefailed' => 'ସାଇତିବା ବିଫଳ ହେଲା',
 	'translate-magic-special' => 'ବିଶେଷ ପୃଷ୍ଠା ଆଲିଆସ',
@@ -23956,7 +23962,7 @@ $messages['or'] = array(
 	'supportedlanguages-recenttranslations' => 'ବର୍ତ୍ତମାନର ଅନୁବାଦସବୁ',
 	'supportedlanguages-count' => '$1 {{PLURAL:$1|ଭାଷା|ଭାଷା}} ସବୁ ମିଶି ।',
 	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|ବଦଳ|ବଦଳସବୁ}} - ଶେଷ ବଦଳ $3 {{PLURAL:$3|ଦିନ|ଦିନସବୁ}} ଆଗରୁ',
-	'translate-save' => 'ସାଇତିବେ ($1)',
+	'translate-save' => '($1)କୁ ସାଇତିବେ',
 	'translate-jssti-add' => 'ତାଲିକାରେ ଯୋଡ଼ନ୍ତୁ',
 	'translate-manage-import-new' => 'ନୂଆ ସନ୍ଦେଶ $1',
 	'translate-manage-action-import' => 'ଆମଦାନୀ',
@@ -27372,7 +27378,7 @@ $messages['ru'] = array(
 	'translations-summary' => 'Введите имя сообщения для показа всех доступных переводов.',
 	'translate-translations-no-message' => '«$1» не является сообщением, доступным для перевода',
 	'translate-translations-none' => 'Нет переводов для «$1»',
-	'translate-translations-count' => '{{PLURAL:$1|Найден один перевод|Найдено $1 перевода|Найдены $1 переводов}}.',
+	'translate-translations-count' => '{{PLURAL:$1|Найден $1 перевод|Найдено $1 перевода|Найдены $1 переводов}}.',
 	'translate-translations-fieldset-title' => 'Сообщение',
 	'translate-translations-messagename' => 'Имя:',
 	'translate-translations-project' => 'Проект:',
@@ -27447,6 +27453,10 @@ $messages['ru'] = array(
 	'translate-manage-import-summary' => 'Импортирована новая версия из внешнего источника',
 	'translate-manage-conflict-summary' => 'Импортирована новая версия из внешнего источника. Пожалуйста, проверьте её.',
 	'translate-manage-fuzzy-summary' => 'Изменилось описание сообщения',
+	'translate-manage-submit' => 'Выполнить',
+	'translate-manage-intro-other' => 'Ниже приведён список изменений переводе на язык: $1.
+Пожалуйста, просмотрите изменения и выберите желаемое действие для каждого перевода.
+Если вы проигнорируете изменения, то они будут переопределены в следующей экспорт.', # Fuzzy
 	'importtranslations' => 'Импорт переводов',
 	'translate-import-from-local' => 'Загрузить локальный файл:',
 	'translate-import-load' => 'Загрузить файл',

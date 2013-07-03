@@ -686,18 +686,23 @@ $messages['roa-tara'] = array(
 
 /** Russian (русский)
  * @author Kaganer
+ * @author Lockal
  */
 $messages['ru'] = array(
 	'searchtranslations' => 'Поиск переводов',
 	'tux-sst-edit' => 'Редактировать перевод',
 	'tux-sst-search' => 'Найти',
 	'tux-sst-search-ph' => 'Поиск переводов',
-	'tux-sst-count' => '{{PLURAL:$1|Найден один результат|Найден $1 результат|Найдены $1 результата|Найдено $1 результатов}}',
+	'tux-sst-count' => '{{PLURAL:$1|Найден $1 результат|Найдены $1 результата|Найдено $1 результатов}}',
 	'tux-sst-facet-language' => 'Языки',
 	'tux-sst-facet-group' => 'Группы сообщений',
 	'tux-sst-facet-orphan' => '(сирота)',
 	'tux-sst-nosolr-title' => 'Поиск недоступен',
 	'tux-sst-nosolr-body' => 'В этой вики отсутствует сервис поиска переводов.',
+	'tux-sst-solr-offline-title' => 'Поиск недоступен',
+	'tux-sst-solr-offline-body' => 'Служба поиска временно недоступна.',
+	'tux-sst-next' => 'Следующие результаты',
+	'tux-sst-prev' => 'Предыдущие результаты',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
