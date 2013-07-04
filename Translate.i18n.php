@@ -16260,6 +16260,10 @@ Dettagli: $1',
 	'logentry-translationreview-group' => '$1 {{GENDER:$2|ha cambiato}} lo stato delle traduzioni in $4 di $3 da $6 a $7',
 	'group-translate-sandboxed' => 'Traduttori non approvati',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|traduttore non approvato|traduttrice non approvata|traduttore/trice non approvato/a}}',
+	'right-translate-sandboxmanage' => 'Gestisci gli utenti in modalità sandbox',
+	'action-translate-sandboxmanage' => 'gestisci gli utenti in modalità sandbox',
+	'right-translate-sandboxaction' => 'Esegui azioni autorizzate per gli utenti in modalità sandbox',
+	'action-translate-sandboxaction' => 'esegui azioni autorizzate per gli utenti in modalità sandbox',
 	'translate-workflow-state-' => '(disattivato)',
 	'translate-workflowstatus' => 'Stato: $1',
 	'translate-workflow-set-do' => 'Modifica',
@@ -24700,12 +24704,13 @@ Aby kontynuować przetwarzanie proszę ponownie przesłać formularz.',
 	'translate-manage-conflict-summary' => 'Importowanie nowej wersji z zewnętrznego źródła.
 Proszę sprawdzić.',
 	'translate-manage-fuzzy-summary' => 'Tekst źródłowy komunikatu został zmieniony',
+	'translate-manage-submit' => 'Wykonaj',
+	'translate-manage-intro-other' => 'Poniżej znajduje się lista zmian komunikatów w języku $1.
+Proszę sprawdzić zmiany i wybrać dla każdego komunikatu operację, którą chcesz dla niego wykonać.
+Jeśli polecisz zignorować zmiany, zostaną one nadpisane przy następnym eksporcie.', # Fuzzy
 	'importtranslations' => 'Importuj tłumaczenia',
-	'translate-import-from-url' => 'Adres URL pliku',
-	'translate-import-from-wiki' => 'Plik w tej wiki',
 	'translate-import-from-local' => 'Załadowanie lokalnego pliku',
 	'translate-import-load' => 'Ładowanie pliku',
-	'translate-import-err-type-not-supported' => 'Nie udało się załadować pliku – metoda <code>$1</code> nie jest obsługiwana.',
 	'translate-import-err-dl-failed' => 'Nie udało się przesłać pliku $1',
 	'translate-import-err-ul-failed' => 'Nie udało się przesłać pliku',
 	'translate-import-err-invalid-title' => 'Podana nazwa pliku <nowiki>$1</nowiki> jest nieprawidłowa.',
@@ -24813,7 +24818,7 @@ Jest najbardziej użyteczna dla zadań korekty.', # Fuzzy
 	'tux-editor-confirm-button-label' => 'Potwierdź tłumaczenie',
 	'tux-editor-shortcut-info' => 'Naciśnij "$1", aby zapisać, lub "$2", aby przejść do następnego komunikatu',
 	'tux-editor-edit-desc' => 'Edytuj dokumentację',
-	'tux-editor-add-desc' => 'Dodaj dokumentacje',
+	'tux-editor-add-desc' => 'Dodaj dokumentację',
 	'tux-editor-suggestions-title' => 'Sugestie',
 	'tux-editor-in-other-languages' => 'W innych językach',
 	'tux-editor-need-more-help' => 'Potrzebujesz pomocy?',
@@ -30123,7 +30128,7 @@ $messages['sv'] = array(
 	'translate-taskui-view' => 'Visa alla meddelanden',
 	'translate-taskui-untranslated' => 'Visa oöversatta meddelanden',
 	'translate-taskui-optional' => 'Visa valfria meddelanden',
-	'translate-taskui-acceptqueue' => 'Endast meddelanden jag kan acceptera', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Endast meddelanden jag kan markera som granskade',
 	'translate-taskui-reviewall' => 'Granska alla översättningar',
 	'translate-taskui-export-to-file' => 'Exportera i ursprungligt format',
 	'translate-taskui-export-as-po' => 'Exportera för översättning offline',
@@ -30363,9 +30368,9 @@ Vänligen aktivera formuläret igen för att fortsätta behandla det.',
 Vänligen kontrollera.',
 	'translate-manage-fuzzy-summary' => 'Meddelandedefinitionen har ändrats',
 	'translate-manage-submit' => 'Genomför',
-	'translate-manage-intro-other' => 'Nedan följer en lista över översättningar på $1 språk.
-Var vänlig och se över ändringarna och välj den åtgärd du vill utföra för varje översättning.
-Om du väljer att ignorera dessa förändringar så kommer de att åsidosättas vid nästa export.', # Fuzzy
+	'translate-manage-intro-other' => 'Nedan följer en lista över översättningar på språket $1.
+Var god granska ändringarna och välj en åtgärd du vill utföra för varje uppdatering.
+Om du väljer att ignorera ändringar är denna handling endast tillfällig.',
 	'importtranslations' => 'Importera översättningar',
 	'translate-import-from-local' => 'Lokal filuppladdning:',
 	'translate-import-load' => 'Ladda fil',
@@ -30404,9 +30409,9 @@ Detaljer: $1',
 	'translate-searchprofile-tooltip' => 'Sök från alla översättningar',
 	'translate-search-languagefilter' => 'Filtrera efter språk:',
 	'translate-search-nofilter' => 'Ingen filtrering',
-	'translate-messagereview-submit' => 'Acceptera', # Fuzzy
-	'translate-messagereview-progress' => 'Accepterar...', # Fuzzy
-	'translate-messagereview-failure' => 'Accepterar... misslyckades: $1', # Fuzzy
+	'translate-messagereview-submit' => 'Markera som granskad',
+	'translate-messagereview-progress' => 'Markerar som granskad...',
+	'translate-messagereview-failure' => 'Misslyckades att markera som granskad: $1',
 	'translate-messagereview-done' => 'Granskade',
 	'translate-messagereview-reviews' => 'Granskad av {{PLURAL:$1|en användare|$1 användare}}',
 	'translate-messagereview-reviewswithyou' => 'Granskad av {{PLURAL:$1|dig|$1 användare inklusive dig}}',
@@ -30443,7 +30448,7 @@ Detaljer: $1',
 All status är definierad i konfigurationsvariabeln $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Senaste översättningar',
 	'translate-dynagroup-recent-desc' => 'Denna meddelandegrupp visar alla senaste översättningar på detta språk.
-Mest användbar för korrekturläsningsuppgifter.', # Fuzzy
+Mest användbar för granskningsuppgifter.',
 	'translate-dynagroup-additions-label' => 'Senaste tillägg',
 	'translate-dynagroup-additions-desc' => 'Denna meddelandegrupp visar nya och ändrade meddelanden.',
 	'translate-dynagroup-by' => 'Översatt av {{GENDER:$1|$1}}',
