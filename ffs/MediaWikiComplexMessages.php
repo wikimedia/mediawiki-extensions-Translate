@@ -99,7 +99,7 @@ abstract class ComplexMessages {
 		$defs = $this->readVariable( $group, 'en' );
 		$code = $this->language;
 
-		$current = wfArrayMerge( $this->readVariable( $group, $code ), $savedData );
+		$current = $savedData + $this->readVariable( $group, $code );
 
 		// Clean up duplicates to definitions from saved data
 		$current = $this->cleanData( $defs, $current );
