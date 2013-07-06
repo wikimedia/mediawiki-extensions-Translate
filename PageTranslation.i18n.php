@@ -353,7 +353,8 @@ Used only if a reason was provided in the following messages:
 	'tpt-aggregategroup-add-new' => 'Label for the link that gives a form to enter new group details in [[Special:AggregateGroups]]',
 	'tpt-aggregategroup-new-name' => 'Label for the name field in [[Special:AggregateGroups]].
 {{Identical|Name}}',
-	'tpt-aggregategroup-new-description' => 'Label for the description field in [[Special:AggregateGroups]]',
+	'tpt-aggregategroup-new-description' => 'Label for the description field in [[Special:AggregateGroups]].
+{{Identical|Description}}',
 	'tpt-aggregategroup-remove-confirm' => 'Confirmation message shown while user tried to delete an aggregate group in [[Special:AggregateGroups]]',
 	'tpt-aggregategroup-invalid-group' => 'Show on [[Special:AggregateGroups]] after remove button of a group, if the stored group id does not match any currently known groups.',
 	'pt-parse-open' => '"Translation template" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.',

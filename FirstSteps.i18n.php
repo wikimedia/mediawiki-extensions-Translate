@@ -3005,6 +3005,34 @@ $messages['oc'] = array(
 	'translate-fs-pagetitle-pending' => '- en cors',
 );
 
+/** Punjabi (ਪੰਜਾਬੀ)
+ * @author Babanwalia
+ */
+$messages['pa'] = array(
+	'firststeps' => 'ਪਹਿਲੇ ਕਦਮ',
+	'translate-fs-pagetitle-done' => ' - ਹੋ ਗਿਆ!',
+	'translate-fs-pagetitle-pending' => ' - ਲਟਕਿਆ ਹੋਇਆ',
+	'translate-fs-signup-title' => 'ਸਾਈਨ ਅੱਪ',
+	'translate-fs-settings-title' => 'ਆਪਣੀਆਂ ਪਸੰਦਾਂ ਚੁਣੋ',
+	'translate-fs-userpage-title' => 'ਆਪਣਾ ਵਰਤੋਂਕਾਰ ਸਫ਼ਾ ਬਣਾਓ',
+	'translate-fs-permissions-title' => 'ਅਨੁਵਾਦਕ ਇਜਾਜ਼ਤਾਂ ਲਈ ਬੇਨਤੀ ਕਰੋ',
+	'translate-fs-target-title' => 'ਅਨੁਵਾਦ ਸ਼ੁਰੂ ਕਰੋ!',
+	'translate-fs-email-title' => 'ਆਪਣਾ ਈਮੇਲ ਪਤਾ ਤਸਦੀਕ ਕਰਾਓ',
+	'translate-fs-selectlanguage' => 'ਇੱਕ ਭਾਸ਼ਾ ਚੁਣੋ',
+	'translate-fs-settings-planguage' => 'ਮੁਢਲੀ ਭਾਸ਼ਾ:',
+	'translate-fs-settings-slanguage' => 'ਸਹਾਇਕ ਭਾਸ਼ਾ $1:',
+	'translate-fs-settings-submit' => 'ਪਸੰਦਾਂ ਸਾਂਭੋ',
+	'translate-fs-userpage-level-N' => 'ਮੇਰੀ ਮਾਂ ਬੋਲੀ ਹੈ',
+	'translate-fs-userpage-level-4' => 'ਮੈਂ ਇਹਨੂੰ ਮਾਂ ਬੋਲੀ ਵਾਂਗ ਜਾਣਦਾ ਹਾਂ',
+	'translate-fs-userpage-level-3' => 'ਮੈਂ ਚੰਗੀ ਤਰ੍ਹਾਂ ਜਾਣਦਾ ਹਾਂ',
+	'translate-fs-userpage-level-2' => 'ਮੈਂ ਠੀਕ-ਠਾਕ ਜਾਣਦਾ ਹਾਂ',
+	'translate-fs-userpage-level-1' => 'ਮੈਂ ਥੋੜ੍ਹੀ ਥੋੜ੍ਹੀ ਜਾਣਦਾ ਹਾਂ',
+	'translate-fs-userpage-submit' => 'ਆਪਣਾ ਵਰਤੋਂਕਾਰ ਸਫ਼ਾ ਬਣਾਓ',
+	'translate-fs-userpage-done' => 'ਸ਼ਾਬਾਸ਼! ਹੁਣ ਤੁਹਾਡੇ ਕੋਲ ਇੱਕ ਵਰਤੋਂਕਾਰ ਸਫ਼ਾ ਹੈ।',
+	'translate-fs-permissions-planguage' => 'ਮੁਢਲੀ ਭਾਸ਼ਾ:',
+	'translate-fs-permissions-submit' => 'ਬੇਨਤੀ ਭੇਜੋ',
+);
+
 /** Deitsch (Deitsch)
  * @author Xqt
  */
