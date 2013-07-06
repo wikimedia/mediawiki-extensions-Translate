@@ -3,7 +3,7 @@
  * Script to bootstrap TTMServer translation memory
  *
  * @author Niklas Laxström
- * @license GPL2+
+ * @license GPL-2.0+
  * @file
  */
 

@@ -3,7 +3,7 @@
  * Translations for the sandbox feature.
  *
  * @file
- * @license GPL2+
+ * @license GPL-2.0+
  */
 
 $messages = array();

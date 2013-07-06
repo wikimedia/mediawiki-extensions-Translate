@@ -3,7 +3,7 @@
  * JavaScript and CSS resource definitions.
  *
  * @file
- * @license GPL2+
+ * @license GPL-2.0+
  */
 
 $resourcePaths = array(
