@@ -6150,6 +6150,7 @@ Text fir Iwwersetzungseenheet: <pre>$1</pre>',
 	'logentry-pagetranslation-unmark' => "$1 {{GENDER:$2|huet}} d'Säit $3 aus der Lëscht vun den Iwwersetzungen erausgeholl",
 	'logentry-pagetranslation-movenok' => '$1 {{GENDER:$2|hat}} e Problem beim Réckele vun der Säit $3 op $4',
 	'logentry-pagetranslation-deletefok' => "$1 {{GENDER:$2|huet}} d'iwwersetzbar Säit $3 geläscht",
+	'logentry-pagetranslation-encourage' => "$1 {{GENDER:$2|huet}} d'Iwwersetzung vun $3 recommandéiert",
 	'pt-movepage-title' => 'Déi iwwersetzbar Säit $1 réckelen',
 	'pt-movepage-blockers' => 'déi iwwersetzbar Säit kann net op den neien Numm geréckelt gi wéinst {{PLURAL:$1|dësem|dëse}} Feeler:',
 	'pt-movepage-block-base-exists' => 'D\'Ziliwwersetzungssäit "[[:$1]]" gëtt et schonn.',
@@ -6203,6 +6204,9 @@ Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir
 	'pt-deletepage-full-logreason' => 'Deel vun der iwwersetzbarer Säit $1.',
 	'pt-deletepage-lang-logreason' => 'Deel vun der iwwersater Säit $1.',
 	'pt-deletepage-started' => "Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir Feelermeldungen respektiv d'Meldung datt alles ok ass, no.",
+	'pt-deletepage-intro' => "Dës Spezialsäit erméiglecht et eng ganz iwwersetzbar Säit oder eng individuell Iwwersetzungssäit an enger Sprooch ze läschen.
+D'Läschaktioun gesäit een net direkt well all d'Säiten déi dovun ofhänken och geläscht ginn.
+Feeler ginn am [[Special:Log/pagetranslation|Iwwersetzungs-Logbuch]] agedro a mussen duerno manuell gefléckt ginn.",
 );
 
 /** Ganda (Luganda)

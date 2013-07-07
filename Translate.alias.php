@@ -725,13 +725,16 @@ $specialPageAliases['nds-nl'] = array(
 	'TranslationStats' => array( 'Vertaalstaotistieken' ),
 	'Translations' => array( 'Vertalingen' ),
 	'LanguageStats' => array( 'Taalstaotistieken' ),
-	'PageTranslation' => array( 'Paginavertaling' ),
+	'PageTranslation' => array( 'Ziedvertaling' ),
 	'ImportTranslations' => array( 'Vertalingen_invoeren' ),
 	'ManageMessageGroups' => array( 'Berichtengroepen_beheren' ),
 	'FirstSteps' => array( 'Eerste_stappen' ),
 	'SupportedLanguages' => array( 'Ondersteunde_talen' ),
 	'MyLanguage' => array( 'Mien_taal' ),
-	'PageTranslationDeletePage' => array( 'Paginavertaling_pagina_vortdoon' ),
+	'PageTranslationDeletePage' => array( 'Ziedvertaling_pagina_vortdoon' ),
+	'AggregateGroups' => array( 'Samen-evoegden_groepen' ),
+	'SearchTranslations' => array( 'Vertalingen_zeuken' ),
+	'TranslateSandbox' => array( 'Vertalers_zaandkule_beheren' ),
 );
 
 /** Dutch (Nederlands) */
