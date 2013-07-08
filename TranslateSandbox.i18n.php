@@ -212,6 +212,20 @@ $messages['mk'] = array(
 Појдете на $2 и направете уште некои преводи.',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'translatesandbox' => 'Uruskan kotak pasir penterjemah',
+	'tsb-filter-pending' => 'Permohonan yang menunggu',
+	'tsb-reminder-title-generic' => 'Lengkapkan pengenalan anda untuk menjadi seorang penterjemah yang sah',
+	'tsb-reminder-content-generic' => '$1,
+
+Terima kasih kerana mendaftar untuk {{SITENAME}}. Sekiranya anda melengkapkan ujian penterjemahan ini, anda akan menerima akses penterjemah sepenuhnya dari pihak penyelia.
+
+Sila ke $2 untuk membuat lebih banyak kerja terjemahan.',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

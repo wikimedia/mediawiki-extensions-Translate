@@ -3488,6 +3488,25 @@ Tu puè scrivere otre lènghe e otre segnalaziune jndr'à buatte de teste aqquà
 	'translate-fs-permissions-pending' => "'A richiesta toje ha state confermate sus a [[$1]] e quaccheotre da 'a squadre d'u site adda verificà quanne pò.
 Cer tu conferme l'indirizze email tune, tu è 'na notifiche cu 'a mail aprrime possibbile.",
 	'translate-fs-permissions-submit' => "Manne 'na richieste",
+	'translate-fs-target-text' => "Comblimende!
+Tu puè accumenzà a traducere.
+
+No te pigghià 'u sckande ce angore te sinde nuève e confuse.
+Jndr'à l'[[Project list|elenghe de le pruggette]] stè 'na panorameche de le pruggette ca puè traducere.
+Assaije de le pruggette onne 'na pàgene de descrizione corte cu 'nu collegamende \"''Traduce stu proggette''\", ca te porte sus a 'na pàgene ca elenghe tutte le messàgge none tradotte.
+'N'elenghe de tutte le gruppe de messàgge cu 'u [[Special:LanguageStats|state de mò de le traduziune pe lènghe]] jè ppure disponibbile.
+
+Ce tu sinde ca è abbesògne de capì megghie apprime de accumenzà a traducere, tu puè leggere le [[FAQ|domande cchiù frequende]].
+Sfortunatamende 'a documendazione certe vote pò essere vecchie.
+Ce stè quacchecose ca tu pinze ca avissa riuscì a fà, ma non ge iacche accumme fà, nò te fà probbleme a cercà a 'a [[Support|pàgene d'aijute]].
+
+Tu puè pure condattà le tradutture d'a stessa lènga toje sus a [[Portal_talk:\$1|pàgene de le 'ngazzaminde]] d'u [[Portal:\$1|portale d'a lènga toje]].
+Ce non g'è fatte accussì, [[Special:Preferences|cange l'inderfacce d'a lènghe, jndr'à lènghe ca vuè ccu traducere]], accussì 'a uicchi te face 'ndrucà le collegaminde cchiù 'mbortande pe te.",
+	'translate-fs-email-text' => "Pe piacere mitte l'indirizze email tune jndr'à [[Special:Preferences|le preferenze tune]] e confermale da l'email ca t'arrive.
+
+Quiste permette a le otre utinde de condattarte cu l'email.
+Tu puè pure ricevere le newsletter 'na vote a 'u mese.
+Ce tu non ge vuè ricevere le newsletter, tu puè luà 'a scelte jndr'à schede \"{{int:prefs-personal}}\" de le [[Special:Preferences|preferenze tune]].",
 );
 
 /** Russian (русский)
