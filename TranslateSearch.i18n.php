@@ -448,6 +448,13 @@ $messages['ko'] = array(
 	'tux-sst-solr-offline-body' => '찾기 서비스를 일시적으로 사용할 수 없습니다.',
 );
 
+/** Karachay-Balkar (къарачай-малкъар)
+ * @author Iltever
+ */
+$messages['krc'] = array(
+	'tux-sst-facet-language' => 'Тилле',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */

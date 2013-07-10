@@ -647,6 +647,16 @@ $messages['ca'] = array(
 	'translate-fs-pagetitle-done' => ' - fet!',
 );
 
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'translate-fs-settings-planguage' => 'Коьрта мотт:',
+	'translate-fs-settings-slanguage' => 'ГӀоьнан мотт $1:',
+	'translate-fs-userpage-level-N' => 'Сан дай мотт',
+	'translate-fs-permissions-planguage' => 'Коьрта мотт:',
+);
+
 /** Sorani Kurdish (کوردی)
  * @author Muhammed taha
  */

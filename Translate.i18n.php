@@ -6729,7 +6729,7 @@ $messages['csb'] = array(
  * @author ОйЛ
  */
 $messages['cu'] = array(
-	'translate-page-language' => 'ѩꙁꙑ́къ',
+	'translate-page-language' => 'ѩꙁꙑкъ',
 );
 
 /** Welsh (Cymraeg)
@@ -9981,6 +9981,7 @@ Sobib ennekõike tõlgete ülevaatuseks.',
 	'tux-editor-in-other-languages' => 'Teistes keeltes',
 	'tux-editor-need-more-help' => 'Kas vajad veel abi?',
 	'tux-editor-ask-help' => 'Küsi lisateavet',
+	'tux-editor-tm-match' => 'Vastavus $1%',
 	'tux-warnings-more' => '{{PLURAL:$1|$1 veel}}',
 	'tux-warnings-hide' => 'peida',
 	'tux-editor-save-failed' => 'Tõlke salvestamine ebaõnnestus: $1',
