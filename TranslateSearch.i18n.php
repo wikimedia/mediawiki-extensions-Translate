@@ -165,6 +165,13 @@ $messages['br'] = array(
 	'tux-sst-facet-orphan' => '(emzivad)',
 );
 
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'tux-sst-facet-language' => 'Меттанаш',
+);
+
 /** Danish (dansk)
  * @author Byrial
  */
