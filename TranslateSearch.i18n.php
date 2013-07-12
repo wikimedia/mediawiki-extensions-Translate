@@ -750,10 +750,13 @@ $messages['sv'] = array(
 	'tux-sst-count' => '{{PLURAL:$1|Ett|$1}} resultat hittades',
 	'tux-sst-facet-language' => 'Språk',
 	'tux-sst-facet-group' => 'Meddelandegrupper',
+	'tux-sst-facet-orphan' => '(föräldralös)',
 	'tux-sst-nosolr-title' => 'Sökning är inte tillgänglig',
 	'tux-sst-nosolr-body' => 'Denna wiki har inte en tjänst för att söka efter översättningar.',
 	'tux-sst-solr-offline-title' => 'Sökning är inte tillgänglig',
 	'tux-sst-solr-offline-body' => 'Söktjänsten är inte tillgänglig för tillfället.',
+	'tux-sst-next' => 'Nästa resultat',
+	'tux-sst-prev' => 'Föregående resultat',
 );
 
 /** Turkish (Türkçe)

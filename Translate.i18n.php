@@ -27242,6 +27242,13 @@ Le messàgge opzione avessera sulamende essere tradotte quanne 'a lènga toje t�
 <strong><nowiki>$1</nowiki></strong>",
 	'translate-checks-parameters-unknown' => "{{PLURAL:$2|'U seguende parametre jè|'U seguende parametre sò}} scanusciute:
 <strong><nowiki>$1</nowiki></strong>",
+	'translate-checks-links' => "{{PLURAL:$2|'U collegamende suguende jè probblematiche|Le $2 collegaminde seguende sò probblematece}}:
+<strong><nowiki>$1</nowiki></strong>",
+	'translate-checks-links-missing' => "{{PLURAL:$2|'U collegamende suguende jè |Le $2 collegaminde seguende sò }} mangande:
+<strong><nowiki>$1</nowiki></strong>",
+	'translate-checks-xhtml' => "Pe piacere sostituisce {{PLURAL:$2|'u tag|le tag}} cu une corrette:
+<strong><nowiki>$1</nowiki></strong>",
+	'translate-checks-plural' => "'A definizioen ause <nowiki>{{PLURAL:}}</nowiki> ma 'a traduzione none.",
 	'translate-checks-pagename' => "'U namespace ha cangiate da 'a definizione",
 	'translate-checks-malformed' => '<nowiki>$1</nowiki> jè malformate.',
 	'translate-pref-nonewsletter' => 'No me mannà email da le newsletter',

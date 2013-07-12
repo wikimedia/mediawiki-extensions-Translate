@@ -263,6 +263,20 @@ Tu t'è reggistrate da picche sus a {{SITENAME}}. A fà angore quacche otre pass
 Pe piacere tràse jndr'à $2 e fà angore quacche otre traduzione.", # Fuzzy
 );
 
+/** Swedish (svenska)
+ * @author WikiPhoenix
+ */
+$messages['sv'] = array(
+	'translatesandbox' => 'Hantera översättarsandlåda',
+	'tsb-filter-pending' => 'Väntande förfrågningar',
+	'tsb-reminder-title-generic' => 'Slutför din introduktion för att bli en verifierad översättare',
+	'tsb-reminder-content-generic' => 'Hej $1,
+
+Tack för din registrering på {{SITENAME}}. Om du slutför dina testöversättningar kan administratörerna snart ge dig full behörighet till att översätta.
+
+Var god kom till $2 och gör några fler översättningar.',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */
