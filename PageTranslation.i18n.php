@@ -6050,6 +6050,30 @@ $messages['ku-latn'] = array(
 	'pt-deletepage-list-other' => 'Binrûpelên din',
 );
 
+/** Kirghiz (Кыргызча)
+ * @author Викиней
+ */
+$messages['ky'] = array(
+	'pagetranslation' => 'Которуу барагы',
+	'tpt-template' => 'Калып барагы',
+	'tpt-diff-new' => 'Жаңы текст',
+	'tpt-select-prioritylangs-reason' => 'Себеп:',
+	'tpt-sections-prioritylangs' => 'Артыкчылыктуу тилдер',
+	'translate-tag-translate-link-desc' => 'Бул баракты которуу',
+	'translate-tag-markthis' => 'Бул баракты которуу үчүн белгилөө',
+	'tpt-languages-legend' => 'Башка тилдер:',
+	'tpt-languages-zero' => 'Ушул тилге которууну баштоо',
+	'tpt-discouraged-language-reason' => 'Себеп: $1',
+	'tpt-aggregategroup-save' => 'Сактоо',
+	'tpt-aggregategroup-new-name' => 'Аталышы:',
+	'tpt-aggregategroup-new-description' => 'Баяндамасы (милдеттүү эмес):',
+	'pt-movepage-current' => 'Азыркы аты:',
+	'pt-movepage-new' => 'Жаңы аты:',
+	'pt-movepage-reason' => 'Себеби:',
+	'pt-deletepage-current' => 'Барактын аты:',
+	'pt-deletepage-reason' => 'Себеп:',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Purodha
  * @author Robby
@@ -7568,11 +7592,11 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 	'tpt-select-prioritylangs-force' => 'Zapobieganie tłumaczeniom na języki inne niż priorytetowe',
 	'tpt-select-prioritylangs-reason' => 'Powód:',
 	'tpt-sections-prioritylangs' => 'Języki priorytetowe',
-	'tpt-rev-mark' => 'zaznacz do tłumaczenia',
+	'tpt-rev-mark' => 'oznacz do tłumaczenia',
 	'tpt-rev-unmark' => 'usuń z tłumaczenia',
 	'tpt-rev-discourage' => 'zniechęcić',
 	'tpt-rev-encourage' => 'Przywracanie',
-	'tpt-rev-mark-tooltip' => 'Zaznacz najnowszą wersję tej strony do tłumaczenia.',
+	'tpt-rev-mark-tooltip' => 'Oznacz najnowszą wersję tej strony do tłumaczenia.',
 	'tpt-rev-unmark-tooltip' => 'Usuń tę stronę z tłumaczenia.',
 	'tpt-rev-discourage-tooltip' => 'Zniechęć do dalszych tłumaczeń na tej stronie.',
 	'tpt-rev-encourage-tooltip' => 'Przywrócić tę stronę do zwykłego tłumaczenia.',
@@ -7621,10 +7645,16 @@ Tekst jednostki tłumaczenia: <pre>$1</pre>',
 	'pt-shake-empty' => 'Pusta jednostka tłumaczenia dla wyróżnika $1.',
 	'log-description-pagetranslation' => 'Rejestr działań związanych z systemem tłumaczenia stron',
 	'log-name-pagetranslation' => 'Rejestr tłumaczenia stron',
+	'logentry-pagetranslation-mark' => '$1 {{GENDER:$2|oznaczył|oznaczył}} $3 do tłumaczenia',
+	'logentry-pagetranslation-unmark' => '$1 {{GENDER:$2|usunął|usunęła}} $3 z tłumaczenia',
+	'logentry-pagetranslation-prioritylanguages-unset' => '$1 {{GENDER:$2|usunął|usunęła}} języki priorytetowe ze strony przeznaczonej do tłumaczenia $3',
+	'logentry-pagetranslation-prioritylanguages' => '$1 {{GENDER:$2|ustawił|ustawiła}} języki priorytetowe dla strony przeznaczonej do tłumaczenia $3 do $5',
+	'logentry-pagetranslation-prioritylanguages-force' => '$1 {{GENDER:$2|ograniczył|ograniczyła}} języki dla strony przeznaczonej do tłumaczenia $3 do $5',
+	'logentry-pagetranslation-associate' => '$1 {{GENDER:$2|dodał|dodała}} stronę przeznaczoną do tłumaczenia $3 do połączonej grupy $4',
 	'pt-movepage-title' => 'Przenieś przetłumaczalną stronę $1',
 	'pt-movepage-blockers' => 'Przetłumaczalna strona nie może zostać przeniesiona pod nową nazwę ponieważ {{PLURAL:$1|wystąpił następujący błąd|wystąpiły następujące błędy:}}',
 	'pt-movepage-block-base-exists' => 'Istnieje docelowa strona przeznaczona do tłumaczenia [[:$1]].',
-	'pt-movepage-block-base-invalid' => 'Nazwa docelowej strony nie jest poprawnym tytułem.', # Fuzzy
+	'pt-movepage-block-base-invalid' => 'Nazwa docelowej strony do tłumaczenia nie jest poprawnym tytułem.',
 	'pt-movepage-block-tp-exists' => 'Istnieje docelowa strona tłumaczenia [[:$2]].',
 	'pt-movepage-block-tp-invalid' => 'Nazwa docelowej strony tłumaczenia [[:$1]] może być nieprawidłowa. Może jest zbyt długa?',
 	'pt-movepage-block-section-exists' => 'Istnieje docelowa strona [[:$2]] dla jednostki tłumaczenia.',
@@ -7655,13 +7685,13 @@ Proszę sprawdzić na [[Special:Log/pagetranslation|stronie rejestru tłumaczeń
 	'pt-deletepage-lang-title' => 'Usuwanie strony tłumaczenia  $1.',
 	'pt-deletepage-full-title' => 'Usuwanie strony do tłumaczenia  $1.',
 	'pt-deletepage-invalid-title' => 'Wybrana strona nie jest poprawna.',
-	'pt-deletepage-invalid-text' => 'Wybrana strona nie jest przeznaczona do tłumaczenia ani jej tłumaczeniem.', # Fuzzy
+	'pt-deletepage-invalid-text' => 'Wybrana strona nie jest przeznaczona do tłumaczenia ani nie jest stroną przetłumaczoną.',
 	'pt-deletepage-action-check' => 'Pokaż spis stron, które mają zostać usunięte',
 	'pt-deletepage-action-perform' => 'Usuń',
 	'pt-deletepage-action-other' => 'Zmiana celu',
 	'pt-deletepage-lang-legend' => 'Usuwanie strony tłumaczenia',
 	'pt-deletepage-full-legend' => 'Usunąć stronę przeznaczoną do tłumaczenia',
-	'pt-deletepage-any-legend' => 'Usuń stronę przeznaczoną do tłumaczenia lub tłumaczenie strony', # Fuzzy
+	'pt-deletepage-any-legend' => 'Usuń stronę przeznaczoną do tłumaczenia lub tłumaczenie takiej strony',
 	'pt-deletepage-current' => 'Tytuł strony',
 	'pt-deletepage-reason' => 'Powód',
 	'pt-deletepage-subpages' => 'Usuń wszystkie podstrony',

@@ -3237,6 +3237,7 @@ Səbəb:
  * @author E THP
  * @author Ebrahimi-amir
  * @author Mousa
+ * @author Reza1615
  */
 $messages['azb'] = array(
 	'translate' => 'ترجومه ائت',
@@ -3311,7 +3312,7 @@ $messages['azb'] = array(
 
 دَییشیکلیکلری قئید ائتماغا، ترجومه‌چی اولماغینیز لازیم‌دیر.
 آشاغیدا قئید ائتمک دویمه‌سینی وورمایانا کیمی، دَییشیکلیکلر قئید اولمایاجاقلار.',
-	'translate-magic-module' => 'ماژول:',
+	'translate-magic-module' => 'پودمان:',
 	'translate-magic-submit' => 'گتیر',
 	'translate-magic-cm-export' => 'ائشیگه آپارماق',
 	'translate-magic-nothing-to-export' => 'ائشیگه آپارماق اوچون بیر شئی یوخدور.',
@@ -3483,12 +3484,8 @@ $messages['azb'] = array(
 لوطفاً یوخلایین.',
 	'translate-manage-fuzzy-summary' => 'قایناق مئساژ دَییشدیریلیب‌دیر',
 	'importtranslations' => 'چئویرمه‌لری ایچری گتیر',
-	'translate-import-from-url' => 'فایلین اینترنت آدرسی:',
-	'translate-import-from-wiki' => 'فایل بو ویکی‌ده:',
 	'translate-import-from-local' => 'یئرلی فایل یوکله:',
 	'translate-import-load' => 'یئرلی فایل',
-	'translate-import-err-type-not-supported' => 'فایل یوکله‌نیلنمه‌دی:
-<code>$1</code> یولو دستکلنمیر.',
 	'translate-import-err-dl-failed' => 'فایل گتیریلنمه‌دی:
 $1',
 	'translate-import-err-ul-failed' => 'فایل اوغورلا یوکله‌نیلدی',
@@ -10342,7 +10339,7 @@ $messages['fa'] = array(
 
 برای ذخیره کردن تغییرها باید عضو گروه ترجمه‌کنندگان باشید.
 تغییرات زمانی ذخیره می‌شوند که دکمهٔ ذخیره را در پایین صفحه فشار دهید.',
-	'translate-magic-module' => 'ماژول:',
+	'translate-magic-module' => 'پودمان:',
 	'translate-magic-submit' => 'بیاور',
 	'translate-magic-cm-export' => 'برون‌بری',
 	'translate-magic-nothing-to-export' => 'چیزی برای برون‌بری وجود ندارد.',
@@ -18220,7 +18217,7 @@ $1',
 	'translate-magic-cm-to-be' => '번역 후',
 	'translate-magic-cm-current' => '현재',
 	'translate-magic-cm-original' => '원래 내용',
-	'translate-magic-cm-comment' => '편집 내용:',
+	'translate-magic-cm-comment' => '의견:',
 	'translate-magic-cm-save' => '저장',
 	'translate-magic-cm-updatedusing' => '[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]을 통해 업데이트함',
 	'translate-magic-cm-savefailed' => '저장 실패',
@@ -23915,6 +23912,7 @@ Detalhs : $1',
  * @author Ansumang
  * @author Jnanaranjan Sahu
  * @author Jose77
+ * @author MKar
  * @author Psubhashish
  */
 $messages['or'] = array(
@@ -23929,8 +23927,8 @@ $messages['or'] = array(
 	'translate-taskui-export-as-po' => 'ଅଫ-ଲାଇନ ଅନୁବାଦ ବ୍ୟବ‌ହାର କରିବେ',
 	'translate-taction-translate' => 'ଅନୁବାଦ କରନ୍ତୁ',
 	'translate-taction-proofread' => 'ବନାନ‌ଗ‌ତ ଭୁଲ ସୁଧାରନ୍ତୁ', # Fuzzy
-	'translate-taction-lstats' => 'ଭାଷା ପରିସଙ୍ଖ୍ୟାନ',
-	'translate-taction-mstats' => 'ମେସେଜମାନଙ୍କ ସମୂହ ପରିସଙ୍ଖ୍ୟାନ',
+	'translate-taction-lstats' => 'ଭାଷା ପରିସଂଖ୍ୟାନ',
+	'translate-taction-mstats' => 'ମେସେଜମାନଙ୍କ ମୋଟ ପରିସଂଖ୍ୟାନ',
 	'translate-taction-export' => 'ପଠାନ୍ତୁ',
 	'translate-taction-disabled' => 'ଉଇକିରେ ଅପଲୋଡ଼ କରିବା ଅଚଳ କରାଯାଇଛି ।',
 	'translate-page-no-such-language' => 'ଦିଆଯାଇଥିବା ଭାଷାଟି ଭୁଲ ।',
@@ -25156,8 +25154,8 @@ Jest najbardziej użyteczna dla zadań korekty.', # Fuzzy
 	'tux-editor-message-tools-translations' => 'Wszystkie tłumaczenia',
 	'tux-editor-loading' => 'Ładowanie...',
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|język|języków}} więcej',
-	'translate-statsbar-tooltip' => '$1% przetłumaczone $2% sprawdzono', # Fuzzy
-	'translate-statsbar-tooltip-with-fuzzy' => '$1% przetłumaczonych, $2% sprawdzono, $3% nieaktualnych', # Fuzzy
+	'translate-statsbar-tooltip' => '$1% przetłumaczono, $2% przejrzano',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% przetłumaczonych, $2% przejrzanych, $3% nieaktualnych',
 	'translate-search-more-groups-info' => '$1 więcej  {{PLURAL:$1|grupa|grup}}',
 );
 
@@ -32184,6 +32182,7 @@ $messages['tly'] = array(
  * @author Incelemeelemani
  * @author Joseph
  * @author Karduelis
+ * @author Rapsar
  * @author Srhat
  * @author Suelnur
  * @author Vito Genovese
@@ -32201,7 +32200,7 @@ $messages['tr'] = array(
 	'translate-taction-translate' => 'Çevir',
 	'translate-taction-proofread' => 'İncele',
 	'translate-taction-lstats' => 'Dil istatistikleri',
-	'translate-taction-mstats' => 'İleti grubu istatistikleri',
+	'translate-taction-mstats' => 'ileti grubu istatistikleri',
 	'translate-taction-export' => 'Aktar',
 	'translate-taction-disabled' => 'Bu eylem, bu viki üzerinde devre dışı bırakıldı.',
 	'translate-page-no-such-language' => 'Belirtilen dil geçersiz.',
@@ -32340,7 +32339,7 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-languagestats-overall' => 'Tüm ileti gruplarıyla beraber',
 	'translate-ls-submit' => 'İstatistikleri göster',
 	'translate-ls-column-group' => 'İleti grubu',
-	'translate-mgs-pagename' => 'İleti grubu istatistikleri',
+	'translate-mgs-pagename' => 'ileti grubu istatistikleri',
 	'translate-mgs-group' => 'İleti grubu:',
 	'translate-mgs-submit' => 'İstatistikleri göster',
 	'translate-mgs-column-language' => 'Dil',
