@@ -1,3 +1,7 @@
+For newer recent changes, please refer the MediaWiki Language Extension Bundle
+release announcements or the git log.
+ https://www.mediawiki.org/wiki/MediaWiki_Language_Extension_Bundle
+
 == Change log ==
 * 2012-11-11
 - Dynamic message groups are now shown in list=messagecollection WebAPI.
