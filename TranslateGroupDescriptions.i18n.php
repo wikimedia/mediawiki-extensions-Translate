@@ -1325,7 +1325,7 @@ Vedi [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_
 $messages['ja'] = array(
 	'translategroupdescriptions-desc' => '[http://mediawiki.org/wiki/Extension:Translate Translate] 拡張機能で利用できる製品のメッセージ群の説明',
 	'translate-group-desc-nodesc' => 'このメッセージ群には説明がありません',
-	'translate-group-desc-mediawikicore' => 'このメッセージ群は、[[Translating:MediaWiki|MediaWiki]]の現在のアルファ版({{CURRENTVERSION}})で使用しているメッセージを含んでいます',
+	'translate-group-desc-mediawikicore' => 'このメッセージ群は、[[Translating:MediaWiki|MediaWiki]] の現在のアルファ版 ({{CURRENTVERSION}}) で使用しているメッセージを含んでいます',
 	'translate-group-desc-mediawikimostused' => 'このメッセージ群は、[[Translating:MediaWiki|MediaWiki]]で[http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki もっともよく使われている500のメッセージ]を含んでいます',
 	'translate-group-desc-mediawikiextensions' => 'サポート対象の[[Translating:MediaWiki|MediaWiki]]拡張機能のすべてのメッセージを含む上位メッセージ群',
 	'translate-group-desc-collection' => 'MediaWiki拡張機能[http://www.mediawiki.org/wiki/Extension:Collection Collection]のすべてのメッセージを含む上位メッセージ群',
@@ -2684,6 +2684,7 @@ $messages['yi'] = array(
 	'translate-group-desc-mediawikiextensions' => 'מעטא מעלדונג גרופע וואס אנטהאלט אלע מעלדונגען פאר געשטיצטע פארברייטערונגען פאר [[Translating:MediaWiki|מעדיעוויקי]]',
 	'translate-group-desc-translatablepages' => 'אלע איבערזעצבאַרע בלעטער',
 	'translate-group-desc-kiwix' => 'א מעלדונג גרופע פאר [[Translating:Kiwix|קיוויקס]]',
+	'translate-group-desc-mediawiki-core-branch' => 'מעלדונגען פאר א סטאבילער ווערסיע פון [[Translating:MediaWiki|מעדיעוויקי]]',
 );
 
 /** Simplified Chinese (中文（简体）‎)

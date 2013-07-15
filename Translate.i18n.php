@@ -651,7 +651,11 @@ This box list the problems found in the translation.',
 
 Parameters:
 * $1 - translation source text',
-	'translate-edit-tmmatch' => '$1 is number between 1 and 100. This message is displayed in the translation interface when there is suggestions from translation memory.',
+	'translate-edit-tmmatch' => 'This message is displayed in the translation interface when there is suggestions from translation memory.
+
+Parameters:
+* $1 - number between 1 and 100
+{{Identical|Match}}',
 	'translate-use-suggestion' => 'Used as a tooltip for the "down arrow" to insert translation suggestions in the translation edit page.',
 	'translate-edit-tab-prev' => '{{optional}}',
 	'translate-edit-tab-next' => '{{optional}}',
@@ -940,7 +944,9 @@ fuzzy = mark translations for review',
 * $1 - a string (key name?) e.g. action-changed-XXXX',
 	'translate-manage-toolong' => 'Parameters:
 * $1 - number of seconds, can be used for PLURAL',
-	'translate-manage-submit' => 'Used in the group management interface. {{doc-screenshot|Manage-3.png|twn}}',
+	'translate-manage-submit' => 'Used in the group management interface.
+{{doc-screenshot|Manage-3.png|twn}}
+{{Identical|Execute}}',
 	'translate-manage-intro-other' => 'Introduction to special page. See screenshot. [[File:Manage-2.png|150px|right|Group management interface]]
 $1 is a language name.',
 	'importtranslations' => '{{doc-special|ImportTranslations}}
@@ -1121,8 +1127,9 @@ Pressing the button hides the message editor without saving and marks the messag
 {{Identical|Otherlanguages}}',
 	'tux-editor-need-more-help' => 'Help text label',
 	'tux-editor-ask-help' => 'Link text for more information',
-	'tux-editor-tm-match' => 'Text showing the quality of suggestion in percentage
-* $1 is a value less than 100',
+	'tux-editor-tm-match' => 'Text showing the quality of suggestion in percentage. Parameters:
+* $1 - a value less than 100
+{{Identical|Match}}',
 	'tux-warnings-more' => 'A label for a small tab above the edit area, clicking on which shows more warnings.
 * $1 - the number of additional warnings that will be shown',
 	'tux-warnings-hide' => 'A label for a small tab above the warnings about the edit area, clicking on which hides the warnings.
