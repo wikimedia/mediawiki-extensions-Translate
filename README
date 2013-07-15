@@ -1,15 +1,19 @@
+The Translate extension makes MediaWiki a powerful tool to translate every
+kind of text. It's used especially to translate software user interfaces and
+to manage multilingual wikis in a sensible way.
+
 == Copying ==
 See http://www.gnu.org/licenses/gpl2.html
 
 == Installation ==
 For very very quick start add the following to LocalSettings.php:
 
- require( "$IP/extensions/Translate/Translate.php" );
+ require "$IP/extensions/Translate/Translate.php";
  $wgGroupPermissions['user']['translate'] = true;
  $wgGroupPermissions['user']['translate-messagereview'] = true;
  $wgGroupPermissions['sysop']['pagetranslation'] = true;
 
-More documenation is at
+More documentation is at
  https://www.mediawiki.org/wiki/Help:Extension:Translate/Installation
  https://www.mediawiki.org/wiki/Help:Extension:Translate/Configuration
 
