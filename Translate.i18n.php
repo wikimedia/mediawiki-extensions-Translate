@@ -11238,7 +11238,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 	'translate-magic-namespace' => 'Noms des espaces de noms',
 	'translate-magic-notsaved' => 'Votre modification n’a pas été sauvegardée !',
 	'translate-magic-errors' => 'Corrigez {{PLURAL:$1|l’erreur suivante|les erreurs suivantes}} dans les traductions :',
-	'translate-magic-saved' => 'Votre modification a été sauvegardée avec succès.',
+	'translate-magic-saved' => 'Votre modification a été enregistrée avec succès.',
 	'translate-checks-parameters' => '{{PLURAL:$2|Le paramètre suivant n’est pas utilisé|Les paramètres suivants ne sont pas utilisés}} :
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Le paramètre suivant est inconnu|Les paramètres suivants sont inconnus}} :
