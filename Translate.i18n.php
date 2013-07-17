@@ -30422,6 +30422,7 @@ Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan mo
  * @author Dafer45
  * @author Diupwijk
  * @author Fluff
+ * @author Jopparn
  * @author Lejonel
  * @author M.M.S.
  * @author Najami
@@ -30729,7 +30730,7 @@ Detaljer: $1',
 	'api-error-unknownmessage' => 'Meddelande hittades inte',
 	'api-error-fuzzymessage' => 'Översättning är märkt som föråldrad',
 	'api-error-owntranslation' => 'Du kan inte markera dina egna översättningar som granskade',
-	'translate-messagereview-no-fuzzy' => 'Föråldrade översättningar kan inte markeras som granskade.',
+	'translate-messagereview-no-fuzzy' => 'Oklara översättningar kan inte markeras som granskade.',
 	'translate-messagereview-no-own' => 'Du kan inte markera dina egna översättningar som granskade.',
 	'translate-messagereview-doit' => 'Markera denna översättning som granskad.',
 	'group-translate-proofr' => 'Översättningsgranskare',
@@ -30776,7 +30777,7 @@ Mest användbar för granskningsuppgifter.',
 	'tux-tab-untranslated' => 'Oöversatta',
 	'tux-tab-outdated' => 'Föråldrade',
 	'tux-tab-translated' => 'Översatta',
-	'tux-tab-unproofread' => 'Inte granskade',
+	'tux-tab-unproofread' => 'Ogranskad',
 	'tux-edit' => 'Redigera',
 	'tux-status-optional' => 'Frivilligt',
 	'tux-status-fuzzy' => 'Föråldrad',
