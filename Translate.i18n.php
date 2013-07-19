@@ -1466,11 +1466,11 @@ Alle waardes het hoër en laer limiete.',
 	'translate-mgs-invalid-group' => 'De opgegewe groep "$1" bestaan nie.',
 	'translate-mgs-nothing' => 'Niks om te wys vir die versoek statistieke nie.',
 	'supportedlanguages' => 'Ondersteunde tale',
-	'supportedlanguages-colorlegend' => 'Sleutel vir die kleure: laatste vertaling $1 dae gelede.',
+	'supportedlanguages-colorlegend' => 'Sleutel vir die kleure: laaste vertaling $1 dae gelede.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Vertaler|Vertalers}}: $1',
 	'supportedlanguages-recenttranslations' => 'onlangse vertalings',
 	'supportedlanguages-count' => '$1 {{plural:$1|taal|tale}} in totaal.',
-	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|wysiging|wysigings}} - laatste wysiging {{PLURAL:$3|gister|$1 dae}} gelede',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|wysiging|wysigings}} - laaste wysiging {{PLURAL:$3|gister|$1 dae}} gelede',
 	'translate-save' => 'Stoor ($1)',
 	'translate-jssti-add' => 'Voeg by lys',
 	'managemessagegroups' => 'Beheer boodskapgroepe',
@@ -6780,6 +6780,7 @@ $messages['csb'] = array(
  */
 $messages['cu'] = array(
 	'translate-page-language' => 'ѩꙁꙑкъ',
+	'tux-editor-message-tools-history' => 'їсторїꙗ',
 );
 
 /** Welsh (Cymraeg)

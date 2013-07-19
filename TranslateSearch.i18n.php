@@ -624,9 +624,16 @@ $messages['oc'] = array(
 
 /** Polish (polski)
  * @author Chrumps
+ * @author Woytecr
  */
 $messages['pl'] = array(
+	'searchtranslations' => 'Szukaj tłumaczenia',
+	'tux-sst-edit' => 'Edytuj tłumaczenie',
+	'tux-sst-search' => 'Szukaj',
+	'tux-sst-search-ph' => 'Szukaj tłumaczenia',
+	'tux-sst-count' => 'Znaleziono {{PLURAL:$1|jeden wynik|$1 wyników}}',
 	'tux-sst-facet-language' => 'Języki',
+	'tux-sst-facet-group' => 'Grupa komunikatów',
 	'tux-sst-nosolr-title' => 'Wyszukiwanie nie jest dostępne',
 	'tux-sst-solr-offline-title' => 'Wyszukiwanie nie jest dostępne',
 	'tux-sst-solr-offline-body' => 'Wyszukiwanie jest chwilowo niedostępne',

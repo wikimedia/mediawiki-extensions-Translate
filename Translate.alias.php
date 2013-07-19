@@ -780,7 +780,7 @@ $specialPageAliases['or'] = array(
 $specialPageAliases['pa'] = array(
 	'Translate' => array( 'ਉਲਥਾ' ),
 	'Magic' => array( 'ਉੱਚੇ_ਦਰਜੇ_ਦਾ_ਉਲਥਾ', 'ਜਾਦੂ' ),
-	'PageTranslation' => array( 'ਪੰਨਾ_ਉਲਥਾ' ),
+	'PageTranslation' => array( 'ਸਫ਼ਾ_ਉਲਥਾ' ),
 	'MyLanguage' => array( 'ਮੇਰੀ_ਭਾਸ਼ਾ' ),
 );
 
