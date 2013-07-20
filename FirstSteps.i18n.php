@@ -2365,7 +2365,7 @@ $messages['km'] = array(
  */
 $messages['ko'] = array(
 	'firststeps' => '첫걸음',
-	'firststeps-desc' => '[[Special:FirstSteps|특수 문서]]로 Translate 확장기능을 사용해 기여를 시작할 수 있도록 합니다.',
+	'firststeps-desc' => '번역 확장 기능을 사용해 기여를 시작하기 위한 [[Special:FirstSteps|특수 문서]]',
 	'translate-fs-pagetitle-done' => '- 완료!',
 	'translate-fs-pagetitle-pending' => '- 처리 대기 중',
 	'translate-fs-pagetitle' => '시작 마법사 - $1',
@@ -2383,7 +2383,8 @@ $messages['ko'] = array(
 	'translate-fs-settings-planguage-desc' => '모어는 여기 웹사이트에서 인터페이스 언어이자
 번역할 때 기본 도착어가 됩니다.',
 	'translate-fs-settings-slanguage' => '보조 언어 $1:',
-	'translate-fs-settings-slanguage-desc' => '번역 편집기에서 다른 언어로 된 메시지의 번역을 나타낼 수도 있습니다. 여기서 보고 싶은 언어를 선택할 수 있습니다.',
+	'translate-fs-settings-slanguage-desc' => '번역 편집기에서 다른 언어로 된 메시지의 번역을 나타낼 수도 있습니다.
+여기서 보고 싶은 언어를 선택할 수 있습니다.',
 	'translate-fs-settings-submit' => '환경 설정 저장하기',
 	'translate-fs-userpage-level-N' => '이 언어는 내 모어입니다.',
 	'translate-fs-userpage-level-5' => '나는 전문 번역가입니다.',
@@ -2391,11 +2392,12 @@ $messages['ko'] = array(
 	'translate-fs-userpage-level-3' => '나는 이 언어를 잘 구사합니다.',
 	'translate-fs-userpage-level-2' => '저는 이 언어를 보통 수준으로 구사합니다.',
 	'translate-fs-userpage-level-1' => '나는 이 언어를 거의 모릅니다.',
-	'translate-fs-userpage-help' => '자신의 언어 능력을 밝히고 우리에게 자신을 소개하십시오. 언어를 여섯 가지 이상 안다면 나중에 첨가할 수 있습니다.', # Fuzzy
+	'translate-fs-userpage-help' => '자신의 언어 능력을 밝히고 자신을 소개하세요. 언어를 여섯 가지 이상 안다면 나중에 첨가할 수 있습니다.',
 	'translate-fs-userpage-submit' => '내 사용자 문서 만들기',
 	'translate-fs-userpage-done' => '잘 했습니다! 이제 내 사용자 문서가 생겼습니다.',
 	'translate-fs-permissions-planguage' => '모어:',
-	'translate-fs-permissions-help' => '지금 번역자 그룹에 추가되도록 요청할 필요가 있습니다. 번역 모어를 선택하십시오.
+	'translate-fs-permissions-help' => '지금 번역자 그룹에 추가되도록 요청할 필요가 있습니다.
+번역 모어를 선택하세요.
 
 아래 상자에서 다른 언어 및 의견을 말할 수 있습니다.',
 	'translate-fs-permissions-pending' => '요청이 [[$1]]로 제출되었으며 여기 웹사이트 직원이 되도록 빨리 그 요청을 검토할 것입니다.

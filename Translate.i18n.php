@@ -6780,6 +6780,8 @@ $messages['csb'] = array(
  */
 $messages['cu'] = array(
 	'translate-page-language' => 'ѩꙁꙑкъ',
+	'translate-language' => 'ѩꙁꙑкъ',
+	'translate-mgs-column-language' => 'ѩꙁꙑкъ',
 	'tux-editor-message-tools-history' => 'їсторїꙗ',
 );
 

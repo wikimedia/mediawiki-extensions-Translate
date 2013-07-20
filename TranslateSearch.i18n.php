@@ -172,6 +172,14 @@ $messages['ce'] = array(
 	'tux-sst-facet-language' => 'Меттанаш',
 );
 
+/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+ * @author ОйЛ
+ */
+$messages['cu'] = array(
+	'tux-sst-search' => 'ищи',
+	'tux-sst-facet-language' => 'ѩꙁꙑци',
+);
+
 /** Danish (dansk)
  * @author Byrial
  */
@@ -453,6 +461,8 @@ $messages['ko'] = array(
 	'tux-sst-nosolr-body' => '이 위키는 번역 찾기 서비스가 없습니다.',
 	'tux-sst-solr-offline-title' => '찾기를 사용할 수 없음',
 	'tux-sst-solr-offline-body' => '찾기 서비스를 일시적으로 사용할 수 없습니다.',
+	'tux-sst-next' => '다음 결과',
+	'tux-sst-prev' => '이전 결과',
 );
 
 /** Karachay-Balkar (къарачай-малкъар)
