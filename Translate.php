@@ -291,8 +291,9 @@ $wgTranslateTranslationServices['Apertium'] = array(
 	'type' => 'apertium',
 );
 $wgTranslateTranslationServices['Yandex'] = array(
-	'url' => 'http://translate.yandex.net/api/v1/tr.json/translate',
-	'pairs' => 'http://translate.yandex.net/api/v1/tr.json/getLangs',
+	'url' => 'https://translate.yandex.net/api/v1.5/tr.json/translate',
+	'key' => null,
+	'pairs' => 'https://translate.yandex.net/api/v1.5/tr.json/getLangs',
 	'timeout' => 3,
 	'langorder' => array( 'en', 'ru', 'uk', 'de', 'fr', 'pl', 'it', 'es', 'tr' ),
 	'langlimit' => 1,

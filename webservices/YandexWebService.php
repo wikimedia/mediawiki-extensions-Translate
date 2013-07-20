@@ -20,8 +20,19 @@ class YandexWebService extends TranslationWebService {
 	}
 
 	protected function doPairs() {
+		if ( !isset( $this->config['key'] ) ) {
+			throw new TranslationWebServiceException( 'API key is not set' );
+		}
+
+		$service = $this->service;
 		$pairs = array();
-		$json = Http::get( $this->config['pairs'], $this->config['timeout'] );
+
+		$params = array(
+			'key' => $this->config['key'],
+		);
+
+		$url = $this->config['pairs'] . '?' . wfArrayToCgi( $params );
+		$json = Http::get( $url, $this->config['timeout'] );
 		$response = FormatJson::decode( $json );
 
 		if ( !is_object( $response ) ) {
@@ -38,6 +49,10 @@ class YandexWebService extends TranslationWebService {
 	}
 
 	protected function doRequest( $text, $from, $to ) {
+		if ( !isset( $this->config['key'] ) ) {
+			throw new TranslationWebServiceException( 'API key is not set' );
+		}
+
 		$service = $this->service;
 
 		$text = trim( $text );
@@ -47,16 +62,16 @@ class YandexWebService extends TranslationWebService {
 		$options['timeout'] = $this->config['timeout'];
 		$options['method'] = 'POST';
 		$options['postData'] = array(
+			'key' => $this->config['key'],
 			'text' => $text,
 			'lang' => "$from-$to",
-			'x-application' => "Translate " . TRANSLATE_VERSION . ")",
 		);
 
 		$url = $this->config['url'];
 		$req = MWHttpRequest::factory( $url, $options );
-		wfProfileIn( 'TranslateWebServiceRequest-' . $this->service );
+		wfProfileIn( 'TranslateWebServiceRequest-' . $service );
 		$status = $req->execute();
-		wfProfileOut( 'TranslateWebServiceRequest-' . $this->service );
+		wfProfileOut( 'TranslateWebServiceRequest-' . $service );
 
 		if ( !$status->isOK() ) {
 			$error = $req->getContent();
@@ -72,7 +87,7 @@ class YandexWebService extends TranslationWebService {
 			throw new TranslationWebServiceException( serialize( $req->getContent() ) );
 		} elseif ( $response->code !== 200 ) {
 			$exception = "(HTTP {$response->code}) with ($service ($from|$to)): " .
-				$req->getContent();
+				$response->message;
 			throw new TranslationWebServiceException( $exception );
 		}
 
