@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9845590_eca690c3",
+        "filename": "api/ApiQueryMessageGroupStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-07-21T12:38:12Z",
+      "side": 1,
+      "message": "Why hardcode text here, and use a message key in the above if clause?",
+      "revId": "1c7cc48b1ce772732bb064bdf505f8d23c8a160e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
