@@ -1971,6 +1971,13 @@ Správce překladů se rozhodl zaměřit překladatelské úsilí na $3.",
 	'pt-deletepage-list-pages' => 'Seznam stránek ke smazání',
 );
 
+/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+ * @author ОйЛ
+ */
+$messages['cu'] = array(
+	'tpt-aggregategroup-new-name' => 'имѧ :',
+);
+
 /** Welsh (Cymraeg)
  * @author Lloffiwr
  */
