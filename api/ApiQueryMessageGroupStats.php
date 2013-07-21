@@ -24,6 +24,8 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 		$group = MessageGroups::getGroup( $params['group'] );
 		if ( !$group ) {
 			$this->dieUsageMsg( array( 'missingparam', 'mcgroup' ) );
+		} elseif ( MessageGroups::isDynamic( $group ) ) {
+			$this->dieUsage( 'Dynamic message groups are not supported here', 'invalidparam' );
 		}
 
 		return MessageGroupStats::forGroup( $group->getId() );
