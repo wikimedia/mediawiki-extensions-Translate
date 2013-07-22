@@ -184,6 +184,15 @@ $specialPageAliases['ce'] = array(
 	'TranslationStats' => array( 'Гочдаран_статистика' ),
 	'Translations' => array( 'Гоч_дарш' ),
 	'LanguageStats' => array( 'Меттан_статистика' ),
+	'MessageGroupStats' => array( 'Хаамийн_тобашан_статистика' ),
+	'PageTranslation' => array( 'АгӀонаш_гоч_яр' ),
+	'ImportTranslations' => array( 'Гоч_йинарш_импорт_яр' ),
+	'ManageMessageGroups' => array( 'Хаамийн_тобашан_урхалла_дар' ),
+	'FirstSteps' => array( 'Дуьххьарлера_гӀулчаш' ),
+	'SupportedLanguages' => array( 'Ловш_долу_меттанаш' ),
+	'MyLanguage' => array( 'Сан_мотт' ),
+	'PageTranslationDeletePage' => array( 'Гоч_еш_йолу_агӀо_дӀаяккхар' ),
+	'SearchTranslations' => array( 'Гоч_йинарш_лахар' ),
 );
 
 /** Cebuano (Cebuano) */

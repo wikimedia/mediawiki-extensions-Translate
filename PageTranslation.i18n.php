@@ -1821,8 +1821,11 @@ Comproveu el [[Special:Log/pagetranslation|registre de traducció de pàgines]] 
 $messages['ce'] = array(
 	'tpt-diff-new' => 'Керла йоза',
 	'tpt-languages-legend' => 'Кхин меттанаш:',
+	'pt-movepage-current' => 'Карара цӀе:',
+	'pt-movepage-new' => 'Керла цӀе:',
 	'pt-movepage-reason' => 'Бахьан:',
 	'pt-movepage-action-other' => 'Хийца Ӏалашо',
+	'pt-deletepage-action-perform' => 'Кхочушдé дӀаяккхар',
 	'pt-deletepage-action-other' => 'Хийца Ӏалашо',
 	'pt-deletepage-current' => 'АгӀона цӀе:',
 );
@@ -1847,7 +1850,7 @@ $messages['ckb'] = array(
 	'tpt-already-marked' => 'دوایین وەشانی ئەم لاپەڕەیە لە پێش‌دا بۆ وەرگێڕان نیشان کراوە.',
 	'tpt-select-prioritylangs-reason' => 'هۆکار:',
 	'tpt-rev-encourage' => 'گەڕاندنەوە',
-	'translate-tag-translate-link-desc' => 'وەرگێڕانی ئەم پەڕە',
+	'translate-tag-translate-link-desc' => 'ئەم پەڕەیە وەربگێڕە',
 	'translate-tag-markthis' => 'نیشان‌کردنی ئەم لاپەڕەیە بۆ وەرگێڕان',
 	'tpt-languages-legend' => 'زمانەکانی دیکە:',
 	'tpt-aggregategroup-add' => 'زێدەبکە',
@@ -7974,15 +7977,15 @@ Antes de marcar esta versão para tradução, verifique que as alterações às 
 	'translate-tag-markthis' => 'Marcar esta página para tradução',
 	'translate-tag-markthisagain' => 'Esta página tem <span class="plainlinks">[$1 alterações]</span> desde a última vez que foi <span class="plainlinks">[$2 marcada para tradução]</span>.',
 	'translate-tag-hasnew' => 'Esta página contém <span class="plainlinks">[$1 alterações]</span> que não estão marcadas para tradução.',
-	'tpt-translation-intro' => 'Esta página é uma <span class="plainlinks">[$1 versão traduzida]</span> da página [[$2]] e a tradução está $3% completa e actualizada.',
+	'tpt-translation-intro' => 'Esta página é uma <span class="plainlinks">[$1 versão traduzida]</span> da página [[$2]] e a tradução está $3% completa e atualizada.',
 	'tpt-languages-legend' => 'Outras línguas:',
 	'tpt-languages-zero' => 'Iniciar a tradução para este idioma',
-	'tpt-target-page' => 'Esta página não pode ser actualizada manualmente.
-Ela é uma tradução da página [[$1]] e a tradução pode ser actualizada usando [$2 a ferramenta de tradução].',
+	'tpt-target-page' => 'Esta página não pode ser atualizada manualmente.
+Ela é uma tradução da página [[$1]] e a tradução pode ser atualizada usando [$2 a ferramenta de tradução].',
 	'tpt-unknown-page' => 'Este espaço nominal está reservado para traduções de páginas de conteúdo.
 A página que está a tentar editar não parece corresponder a nenhuma página marcada para tradução.',
 	'tpt-discouraged-language-reason' => 'Motivo: $1',
-	'tpt-render-summary' => 'A actualizar para corresponder à nova versão da página fonte',
+	'tpt-render-summary' => 'Atualizando para corresponder à nova versão da página fonte',
 	'tpt-download-page' => 'Exportar a página com traduções',
 	'aggregategroups' => 'Grupos agregadores',
 	'tpt-aggregategroup-add' => 'Adicionar',

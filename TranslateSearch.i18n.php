@@ -169,6 +169,7 @@ $messages['br'] = array(
  * @author Умар
  */
 $messages['ce'] = array(
+	'tux-sst-search' => 'Лаха',
 	'tux-sst-facet-language' => 'Меттанаш',
 );
 
