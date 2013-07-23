@@ -176,6 +176,22 @@ $messages['ja'] = array(
 	'tsb-filter-pending' => '保留中の申請',
 );
 
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'translatesandbox' => '번역자 연습장 관리',
+	'tsb-filter-pending' => '보류 중인 요청',
+	'tsb-reminder-title-generic' => '검증된 번역자가 되려면 소개를 완료하세요',
+	'tsb-reminder-content-generic' => '$1님 안녕하세요,
+
+{{SITENAME}}에 등록해주셔서 감사합니다. 테스트 번역을
+완료하면, 관리자는 곧 전체 번역 접근 권한을 부여할 수
+있습니다.
+
+$2에 와서 조금 더 번역을 해주세요.',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */

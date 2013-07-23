@@ -1431,7 +1431,9 @@ $messages['ko'] = array(
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]]은 턴제 전략 게임입니다',
 	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]]는 웹 기반 토론 포럼 소프트웨어입니다',
 	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]]는 웹 기반 이슈 추적 소프트웨어입니다',
+	'translate-group-desc-blockly' => '[[Translating:Blockly|Blockly]]에 대한 메시지 그룹',
 	'translate-group-desc-eol' => '[[Translating:EOL|생명의 백과사전]]에 대한 메시지 그룹입니다',
+	'translate-group-desc-fuel' => '[[Translating:FUEL|FUEL]]은 소프트웨어 번역에 더 많은 일관성을 제공합니다',
 	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS]]에 대한 메시지 그룹입니다',
 	'translate-group-desc-kiwix' => '[[Translating:Kiwix|Kiwix]]에 대한 메시지 그룹입니다',
 	'translate-group-desc-mantisbt-plugin-core' => '[[Translating:MantisBT|MantisBT]]에 대한 핵심 플러그인입니다',
@@ -1446,11 +1448,12 @@ $messages['ko'] = array(
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]]는 위키백과에서 편집할 수 있는 도구 모음입니다',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]]는 웹 기반 질문 및 답변 소프트웨어입니다',
 	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver] 도구에 대한 i18n 시스템인 [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]에 대한 메시지 그룹입니다 (<span class="plainlinks">[[Translating talk:Toolserver|지원 요청]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition 기술 사항]</span>)',
+	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]]은 위키미디어 공용과 다른 위키미디어 프로젝트에 파일을 올리기 위한 도구입니다',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]]는 전세계 하이킹, 자전거 타기, 산악 자전거, 인라인 스케이팅 경로를 보여주는 서비스입니다. GNU GPL 라이선스를 사용합니다.',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]은 신속하게 위키미디어 위키에서 문서 일부의 저자를 찾을 수 있습니다',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]]는 모바일 장치에서 위키백과의 오프라인, 텍스트 전용 버전을 제공합니다',
 	'translate-group-desc-wikimedia-mobile' => '위키미디어 프로젝트에 대한 모바일 어플리케이션을 포함하는 집계한 메시지 그룹입니다',
-	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|위키백과모바일|공용 모바일]]은 위키미디어 공용에 올리고 찾아보기 위한 안드로이드 또는 iOS 앱입니다', # Fuzzy
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|공용 모바일]]은 위키미디어 공용에 올리고 찾아보기 위한 안드로이드 또는 iOS 앱입니다',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|위키백과모바일]]은 위키백과 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
 	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|위키문헌모바일]]은 위키문헌 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
 	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|위키낱말사전모바일]]은 위키낱말사전 문서를 읽고 기여하는 용도로 쓰이는 크로스 플랫폼 모바일 및 태블릿 어플리케이션입니다.',
@@ -2006,6 +2009,7 @@ $messages['ps'] = array(
 /** Portuguese (português)
  * @author Giro720
  * @author Hamilton Abreu
+ * @author Luckas
  * @author McDutchie
  * @author Waldir
  */
@@ -2038,7 +2042,7 @@ $messages['pt'] = array(
 
 Por favor veja [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl para mais informações.",
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] é um leitor da Wikipédia em offline',
-	'translate-group-desc-openimages-all' => 'Estas mensagens fazem parte do projecto [[Translating:Open Images|Open Images]]',
+	'translate-group-desc-openimages-all' => 'Estas mensagens fazem parte do projeto [[Translating:Open Images|Open Images]]',
 	'bw-desc-openstreetmap' => 'Grupo para todas as mensagens do [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => 'Este grupo contém as mensagens de interface do [[Translating:Open Street Map|Open Street Map]].
 Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} a página Unicode CLDR para uma explicação das chaves plurais].',

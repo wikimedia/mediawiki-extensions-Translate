@@ -192,6 +192,7 @@ $specialPageAliases['ce'] = array(
 	'SupportedLanguages' => array( 'Ловш_долу_меттанаш' ),
 	'MyLanguage' => array( 'Сан_мотт' ),
 	'PageTranslationDeletePage' => array( 'Гоч_еш_йолу_агӀо_дӀаяккхар' ),
+	'AggregateGroups' => array( 'Агрегированни_тобанаш' ),
 	'SearchTranslations' => array( 'Гоч_йинарш_лахар' ),
 );
 
