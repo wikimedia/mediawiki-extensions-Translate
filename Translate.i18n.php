@@ -4869,6 +4869,7 @@ $messages['bn'] = array(
 	'translate-gs-avgscore' => 'গড় স্কোর',
 	'translate-searchprofile' => 'অনুবাদসমূহ',
 	'translate-searchprofile-tooltip' => 'সকল অনুবাদে অনুসন্ধান',
+	'translate-search-languagefilter' => 'ভাষা অনুযায়ী ফিল্টার:',
 	'translate-messagereview-submit' => 'পর্যালোচিত হিসেবে চিহ্নিত করুন',
 	'translate-messagereview-progress' => 'পর্যালোচিত হিসেবে চিহ্নিত করা হচ্ছে...',
 	'translate-messagereview-failure' => 'পর্যালোচিত হিসেবে চিহ্নিত করা ব্যর্থ হয়েছে: $1',
@@ -27337,6 +27338,8 @@ Le messàgge opzione avessera sulamende essere tradotte quanne 'a lènga toje t�
 	'translate-edit-definition' => "Definizione d'u messàgge",
 	'translate-edit-translation' => 'Traduzione',
 	'translate-edit-contribute' => 'condrebbute',
+	'translate-edit-no-information' => "''Stu messàgge non ge tène 'na documendazione.''
+''Ce tu canusce addò o cumme stu messàgge avène ausate, tu puè dà 'na màne a otre tradutture pe aggiungere 'a documendazione a stu messàgge.''",
 	'translate-edit-information' => "'Mbormaziune sus a 'u messàgge ($1)",
 	'translate-edit-in-other-languages' => "Messàgge jndr'à otre lènghe",
 	'translate-edit-committed' => "Traduzione de mò jndr'à 'u softuer",
@@ -27379,18 +27382,23 @@ Le messàgge opzione avessera sulamende essere tradotte quanne 'a lènga toje t�
 	'translate-checks-xhtml' => "Pe piacere sostituisce {{PLURAL:$2|'u tag|le tag}} cu une corrette:
 <strong><nowiki>$1</nowiki></strong>",
 	'translate-checks-plural' => "'A definizioen ause <nowiki>{{PLURAL:}}</nowiki> ma 'a traduzione none.",
+	'translate-checks-plural-forms' => "<nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|ha state date 'nu module form|onne state date $1 module}} ma {{PLURAL:$2|sulamende 'nu module jè|$2 module sò}} supportate (escludenne 0= e 1= module).",
+	'translate-checks-plural-dupe' => "<nowiki>{{PLURAL:}}</nowiki> ave module duplicate a 'a fine. <nowiki>{{PLURAL:$1|pecore|pecore}}</nowiki> avessera essere scritte cumme a <nowiki>{{PLURAL:$1|pecore}}</nowiki>.",
 	'translate-checks-pagename' => "'U namespace ha cangiate da 'a definizione",
+	'translate-checks-format' => "Sta traduzione non ge segue 'a definizione o tène 'na sindassi invalide: $1",
 	'translate-checks-malformed' => '<nowiki>$1</nowiki> jè malformate.',
 	'translate-pref-nonewsletter' => 'No me mannà email da le newsletter',
 	'translate-pref-editassistlang' => 'Assistende de le lènghe:',
 	'prefs-translate' => 'Opziune de traduzione',
 	'translate-pref-editassistlang-bad' => "Codece d'a lènghe invalide jndr'à l'elenghe:
 <nowiki>$1</nowiki>.",
+	'right-translate' => "Cange ausanne l'inderfacce de traduzione",
 	'right-translate-manage' => 'Gestisce le gruppe de messàgge',
 	'action-translate-manage' => 'gestisce le gruppe de messàgge',
 	'right-translate-import' => "'Mborte le traduziune fore linèe",
 	'action-translate-import' => "'mborte le traduziune fore linèe",
 	'right-translate-messagereview' => 'Revide le traduziune',
+	'right-translate-groupreview' => "Cange 'u state d'u flusse de fatìe de le gruppe de messàgge",
 	'translate-rc-translation-filter' => 'Filtre de traduziune:',
 	'translate-rc-translation-filter-no' => 'No fà ninde',
 	'translate-rc-translation-filter-only' => 'Fà vedè sulamende le traduziune',
@@ -30804,7 +30812,7 @@ Vänligen aktivera formuläret igen för att fortsätta behandla det.',
 Vänligen kontrollera.',
 	'translate-manage-fuzzy-summary' => 'Meddelandedefinitionen har ändrats',
 	'translate-manage-submit' => 'Genomför',
-	'translate-manage-intro-other' => 'Nedan följer en lista över översättningar på språket $1.
+	'translate-manage-intro-other' => 'Nedan följer en lista över översättningsändringar på $1 språket.
 Var god granska ändringarna och välj en åtgärd du vill utföra för varje uppdatering.
 Om du väljer att ignorera ändringar är denna handling endast tillfällig.',
 	'importtranslations' => 'Importera översättningar',
@@ -30883,8 +30891,8 @@ Detaljer: $1',
 	'translate-workflowgroup-desc' => 'Denna meddelandegrupp visar all arbetsflödesstatus för översättningar.
 All status är definierad i konfigurationsvariabeln $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Senaste översättningar',
-	'translate-dynagroup-recent-desc' => 'Denna meddelandegrupp visar alla senaste översättningar på detta språk.
-Mest användbar för granskningsuppgifter.',
+	'translate-dynagroup-recent-desc' => 'Denna meddelandegrupp visar alla de senaste översättningar på detta språk.
+Främst användbar för granskningsuppgifter.',
 	'translate-dynagroup-additions-label' => 'Senaste tillägg',
 	'translate-dynagroup-additions-desc' => 'Denna meddelandegrupp visar nya och ändrade meddelanden.',
 	'translate-dynagroup-by' => 'Översatt av {{GENDER:$1|$1}}',

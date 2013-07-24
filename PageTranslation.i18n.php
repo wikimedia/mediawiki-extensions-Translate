@@ -7957,8 +7957,8 @@ Certifique-se de que a mesma contém os elementos <nowiki><translate></nowiki> e
 	'tpt-saveok' => 'A página [[$1]] foi marcada para tradução com $2 {{PLURAL:$2|unidade|unidades}} de tradução.
 A página pode agora ser <span class="plainlinks">[$3 traduzida]</span>.',
 	'tpt-badsect' => '"$1" não é um nome válido para a unidade de tradução $2.',
-	'tpt-showpage-intro' => 'Abaixo estão listadas secções novas, existentes e apagadas.
-Antes de marcar esta versão para tradução, verifique que as alterações às secções são minimizadas para evitar trabalho desnecessário para os tradutores.', # Fuzzy
+	'tpt-showpage-intro' => 'Abaixo estão listadas seções novas, existentes e apagadas.
+Antes de marcar esta versão para tradução, verifique que as alterações às unidades de tradução são minimizadas para evitar trabalho desnecessário para os tradutores.',
 	'tpt-mark-summary' => 'Marcou esta versão para tradução',
 	'tpt-edit-failed' => 'Não foi possível atualizar a página: $1',
 	'tpt-already-marked' => 'A versão mais recente desta página já foi marcada para tradução.',
@@ -8005,7 +8005,7 @@ Texto do elemento: <pre>$1</pre>', # Fuzzy
 Texto da secção: <pre>$1</pre>', # Fuzzy
 	'pt-shake-position' => 'Marcadores de secção encontram-se numa posição inesperada.
 Texto da secção: <pre>$1</pre>', # Fuzzy
-	'pt-shake-empty' => 'Secção em branco para o marcador $1.', # Fuzzy
+	'pt-shake-empty' => 'Unidade de tradução vazia para o marcador "$1".',
 	'log-description-pagetranslation' => 'Registo para operações relacionadas com o sistema de tradução de páginas',
 	'log-name-pagetranslation' => 'Registo de tradução de páginas',
 	'pt-movepage-title' => 'Mover a página traduzível $1',
@@ -8020,7 +8020,7 @@ Texto da secção: <pre>$1</pre>', # Fuzzy
 	'pt-movepage-block-subpage-invalid' => 'O título da subpágina de destino para [[:$1]] seria inválido (talvez demasiado longo).',
 	'pt-movepage-list-pages' => 'Lista de páginas para serem movidas',
 	'pt-movepage-list-translation' => '{{PLURAL:$1|Página|Páginas}} de tradução',
-	'pt-movepage-list-section' => '{{PLURAL:$1|Página|Páginas}} de secção',
+	'pt-movepage-list-section' => '{{PLURAL:$1|Página|Páginas}} de seção',
 	'pt-movepage-list-other' => '{{PLURAL:$1|Outra subpágina|Outras subpáginas}}',
 	'pt-movepage-list-count' => 'No total, $1 {{PLURAL:$1|página para ser movida|páginas para serem movidas}}.',
 	'pt-movepage-legend' => 'Mover página traduzível',
@@ -8054,7 +8054,7 @@ Verifique no [[Special:Log/pagetranslation|registo de tradução de páginas]] s
 	'pt-deletepage-subpages' => 'Eliminar todas as subpáginas',
 	'pt-deletepage-list-pages' => 'Lista das páginas para eliminar',
 	'pt-deletepage-list-translation' => 'Páginas traduzidas',
-	'pt-deletepage-list-section' => 'Páginas de secção', # Fuzzy
+	'pt-deletepage-list-section' => 'Páginas de unidades de tradução',
 	'pt-deletepage-list-other' => 'Outras subpáginas',
 	'pt-deletepage-list-count' => '$1 {{PLURAL:$1|página|páginas}} para eliminar, no total.',
 	'pt-deletepage-full-logreason' => 'Parte da página traduzível $1.',
