@@ -3273,6 +3273,7 @@ $messages['ps'] = array(
 /** Portuguese (português)
  * @author Giro720
  * @author Hamilton Abreu
+ * @author Luckas
  * @author Malafaya
  * @author SandroHc
  */
@@ -3312,12 +3313,12 @@ Você receberá uma notificação por e-mail quando isso acontecer se confirmar/
 Agora pode começar a traduzir.
 
 Não se amedronte se tudo lhe parece ainda novo e confuso.
-Na [[Project list|lista de projectos]] há um resumo dos projectos de tradução em que pode colaborar.
-A maioria dos projectos tem uma página de descrição breve com um link «Traduza este projecto», que o leva a uma página com todas as mensagens ainda por traduzir.
+Na [[Project list|lista de projetos]] há um resumo dos projetos de tradução em que pode colaborar.
+A maioria dos projetos tem uma página de descrição breve com um link «Traduza este projeto», que o leva a uma página com todas as mensagens ainda por traduzir.
 Também está disponível uma lista de todos os grupos de mensagens com o [[Special:LanguageStats|estado presente de tradução para uma língua]].
 
 Se acredita que precisa de compreender o processo melhor antes de começar a traduzir, pode ler as [[FAQ|perguntas frequentes]].
-Infelizmente a documentação pode, por vezes, estar desactualizada.
+Infelizmente a documentação pode, por vezes, estar desatualizada.
 Se há alguma coisa que acha que devia poder fazer, mas não consegue descobrir como, não hesite em perguntar na [[Support|página de suporte]].
 
 Pode também contactar os outros tradutores da mesma língua na [[Portal_talk:$1|página de discussão]] do [[Portal:$1|portal da sua língua]].

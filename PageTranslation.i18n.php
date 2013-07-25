@@ -8204,7 +8204,7 @@ Enquanto estiverem sendo movidas, não será possível interagir com as páginas
 As falhas serão registradas no [[Special:Log/pagetranslation|registro de tradução de páginas]] e precisarão ser reparadas manualmente.',
 	'pt-movepage-logreason' => 'Parte da página traduzível $1.',
 	'pt-movepage-started' => 'A página base foi movida.
-Verifique no [[Special:Log/pagetranslation|registo de tradução de páginas]] eventuais mensagens de erro e/ou de atividade concluída.',
+Verifique no [[Special:Log/pagetranslation|registro de tradução de páginas]] eventuais mensagens de erro e/ou de atividade concluída.',
 	'pt-locked-page' => 'Está página está bloqueada porque a página traduzível está sendo movida.',
 	'pt-deletepage-lang-title' => 'Eliminar a página traduzível $1.',
 	'pt-deletepage-full-title' => 'Eliminando a página traduzível $1.',
@@ -8226,7 +8226,7 @@ Verifique no [[Special:Log/pagetranslation|registo de tradução de páginas]] e
 	'pt-deletepage-list-count' => 'No total, $1 {{PLURAL:$1|página|páginas}} para serem eliminadas.',
 	'pt-deletepage-full-logreason' => 'Parte da página traduzível $1.',
 	'pt-deletepage-lang-logreason' => 'Parte da página traduzida $1.',
-	'pt-deletepage-started' => 'Verifique no [[Special:Log/pagetranslation|registo de tradução de páginas]] eventuais mensagens de erro e/ou de atividade concluída.',
+	'pt-deletepage-started' => 'Verifique no [[Special:Log/pagetranslation|registro de tradução de páginas]] eventuais mensagens de erro e/ou de atividade concluída.',
 	'pt-deletepage-intro' => 'Esta página especial permite eliminar todas as páginas de uma página traduzível ou apenas as traduções de um idioma.
 A eliminação não será instantânea por serem muitas as páginas integrantes de cada conjunto.
 Os erros serão reportados no [[Special:Log/pagetranslation|registro de tradução de páginas]] e precisarão ser corrigidos manualmente.', # Fuzzy

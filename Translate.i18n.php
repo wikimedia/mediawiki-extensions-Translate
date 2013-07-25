@@ -6804,9 +6804,14 @@ $messages['csb'] = array(
  */
 $messages['cu'] = array(
 	'translate-page-language' => 'ѩꙁꙑкъ',
+	'translate-page-edit' => 'исправи',
+	'translate-edit-jsopen' => 'исправи',
+	'translate-edit-title' => 'исправлѥниѥ ⁖ $1 ⁖',
+	'translate-stats-edits' => 'мѣнꙑ',
 	'translate-translations-messagename' => 'имѧ :',
 	'translate-language' => 'ѩꙁꙑкъ',
 	'translate-mgs-column-language' => 'ѩꙁꙑкъ',
+	'tux-proofread-edit-label' => 'исправлѥниѥ',
 	'tux-editor-close-tooltip' => 'ꙁакрꙑи',
 	'tux-editor-message-tools-history' => 'їсторїꙗ',
 );
@@ -21492,12 +21497,31 @@ $messages['mo'] = array(
  * @author Kaustubh
  * @author Mahitgar
  * @author Saleelk
+ * @author V.narsikar
  */
 $messages['mr'] = array(
 	'translate' => 'भाषांतर करा',
 	'translate-desc' => 'मिडीयाविकि आणि इतर भाषांतरे करण्याकरिता [[Special:Translate|विशेष पान]]',
+	'translate-taskui-view' => 'सर्व संदेश दाखवा',
+	'translate-taskui-untranslated' => 'अभाषांतरीत संदेश दाखवा',
+	'translate-taskui-optional' => 'एच्छिक संदेश दाखवा',
+	'translate-taskui-acceptqueue' => "फक्त संदेश ज्यास मी 'परिक्षण केले'(रिव्यूड्)अशी खूण करू शकतो",
+	'translate-taskui-reviewall' => 'सर्व भाषांतरांचे परिक्षण करा',
+	'translate-taskui-export-to-file' => 'मुळ प्रारूपात निर्यात करा',
+	'translate-taskui-export-as-po' => 'विना-जाल भाषांतरासाठी निर्यात करा',
+	'translate-taction-translate' => 'भाषांतर करा',
+	'translate-taction-proofread' => 'परिक्षण करा',
+	'translate-taction-lstats' => 'भाषेची सांख्यिकी',
+	'translate-taction-mstats' => 'संदेश गटांची सांख्यिकी',
+	'translate-taction-export' => 'निर्यात करा',
+	'translate-taction-disabled' => 'या विकिवर या क्रियेस अनुपलब्ध केले आहे.',
 	'translate-page-no-such-language' => 'दिलेली भाषा अयोग्य आहे.',
 	'translate-page-no-such-group' => 'दिलेला गट अयोग्य आहे.',
+	'translate-page-disabled' => "या गटातील या भाषेत भाषांतर अनुपलब्ध आहे.
+कारण:
+
+
+''$1''",
 	'translate-page-settings-legend' => 'रुपरेषा',
 	'translate-page-group' => 'गट',
 	'translate-page-language' => 'भाषा',
@@ -25975,7 +25999,7 @@ Todos os valores têm limites máximos e mínimos.',
 	'translate-statsf-scale-hours' => 'Horas',
 	'translate-statsf-count' => 'Medida:',
 	'translate-statsf-count-edits' => 'Número de edições',
-	'translate-statsf-count-users' => 'Tradutores activos',
+	'translate-statsf-count-users' => 'Tradutores ativos',
 	'translate-statsf-count-registrations' => 'Utilizadores novos',
 	'translate-statsf-count-reviews' => 'Revisões de traduções',
 	'translate-statsf-count-reviewers' => 'Revisores',
@@ -26032,7 +26056,7 @@ Todos os valores têm limites máximos e mínimos.',
 	'supportedlanguages-summary' => 'Esta página lista todas as línguas suportadas pela {{SITENAME}},
 com os nomes dos tradutores de cada língua.
 Quanto mais traduções feitas por um tradutor, maior será o seu nome.
-A cor do sublinhado indica quão recentemente o tradutor esteve activo aqui.',
+A cor do sublinhado indica quão recentemente o tradutor esteve ativo aqui.',
 	'supportedlanguages-colorlegend' => 'Legenda das cores: última tradução há $1 dias.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Tradutor|Tradutores}}: $1',
 	'supportedlanguages-recenttranslations' => 'traduções recentes',
@@ -27386,7 +27410,9 @@ Le messàgge opzione avessera sulamende essere tradotte quanne 'a lènga toje t�
 	'translate-checks-plural-dupe' => "<nowiki>{{PLURAL:}}</nowiki> ave module duplicate a 'a fine. <nowiki>{{PLURAL:$1|pecore|pecore}}</nowiki> avessera essere scritte cumme a <nowiki>{{PLURAL:$1|pecore}}</nowiki>.",
 	'translate-checks-pagename' => "'U namespace ha cangiate da 'a definizione",
 	'translate-checks-format' => "Sta traduzione non ge segue 'a definizione o tène 'na sindassi invalide: $1",
+	'translate-checks-parametersnotequal' => "'U cunde de le parametre jè {{PLURAL:$1|$1}}; invece avessa essere {{PLURAL:$2|$2}}.",
 	'translate-checks-malformed' => '<nowiki>$1</nowiki> jè malformate.',
+	'translate-checks-fudforum-syntax' => "Ause <nowiki>$1</nowiki> invece de <nowiki>$2</nowiki> jndr'à stu proggette.",
 	'translate-pref-nonewsletter' => 'No me mannà email da le newsletter',
 	'translate-pref-editassistlang' => 'Assistende de le lènghe:',
 	'prefs-translate' => 'Opziune de traduzione',
@@ -32618,6 +32644,7 @@ Görevleri incelemek için çok kullanışlıdır.',
 	'tux-proofread-translated-by-self' => 'Sizin tarafınızdan çevrildi',
 	'tux-empty-list-all' => 'Bu ileti grubu boştur.',
 	'tux-empty-list-all-guide' => 'Çevirmek için farklı bir ileti grubu seçin',
+	'tux-empty-list-translated' => 'Hiçbir çevrilmiş ileti yok',
 	'tux-empty-list-translated-guide' => 'Çeviriye yardımcı olabilirsiniz',
 	'tux-empty-list-translated-action' => 'Çevir',
 	'tux-empty-show-optional-messages' => 'İsteğe bağlı iletileri göster',
