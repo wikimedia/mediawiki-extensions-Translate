@@ -17,7 +17,7 @@ class ApiTranslationReview extends ApiBase {
 	protected static $salt = 'translate-messagereview';
 
 	public function execute() {
-		if ( !$this->getUser()->isallowed( self::$right ) ) {
+		if ( !$this->getUser()->isAllowed( self::$right ) ) {
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
@@ -112,7 +112,7 @@ class ApiTranslationReview extends ApiBase {
 	 * @since 2012-09-24
 	 */
 	public static function getReviewBlockers( User $user, Revision $revision ) {
-		if ( !$user->isallowed( self::$right ) ) {
+		if ( !$user->isAllowed( self::$right ) ) {
 			return 'permissiondenied';
 		}
 

@@ -31,7 +31,7 @@ class ApiGroupReview extends ApiBase {
 			$this->dieUsage( 'Message group review not in use', 'disabled' );
 		}
 
-		if ( !$user->isallowed( self::$right ) ) {
+		if ( !$user->isAllowed( self::$right ) ) {
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
