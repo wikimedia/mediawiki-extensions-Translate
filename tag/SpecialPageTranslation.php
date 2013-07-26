@@ -168,10 +168,20 @@ class SpecialPageTranslation extends SpecialPage {
 	public function showSuccess( TranslatablePage $page ) {
 		$titleText = $page->getTitle()->getPrefixedText();
 		$num = $this->getLanguage()->formatNum( $page->getParse()->countSections() );
+		$messageGroupId = $page->getMessageGroupId();
 		$link = SpecialPage::getTitleFor( 'Translate' )->getFullUrl(
-			array( 'group' => $page->getMessageGroupId() ) );
+			array( 'group' => $messageGroupId ) );
 
 		$this->getOutput()->addWikiMsg( 'tpt-saveok', $titleText, $num, $link );
+		// If TranslationNotifications is installed, and the user can notify
+		// translators, add a convenience link.
+		if ( method_exists( 'SpecialNotifyTranslators', 'execute' ) &&
+			$this->getUser()->isAllowed( SpecialNotifyTranslators::$right )
+		) {
+			$link = SpecialPage::getTitleFor( 'NotifyTranslators' )->getFullUrl(
+				array( 'group' => $messageGroupId ) );
+			$this->getOutput()->addWikiMsg( 'tpt-offer-notify', $link );
+		}
 	}
 
 	public function loadPagesFromDB() {
