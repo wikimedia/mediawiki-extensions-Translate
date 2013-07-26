@@ -172,6 +172,15 @@ class SpecialPageTranslation extends SpecialPage {
 			array( 'group' => $page->getMessageGroupId() ) );
 
 		$this->getOutput()->addWikiMsg( 'tpt-saveok', $titleText, $num, $link );
+		// If TranslationNotifications is installed, and the user can notify
+		// translators, add a convenience link.
+		if ( method_exists( 'SpecialNotifyTranslators', 'execute' ) &&
+			$this->getUser()->isAllowed( SpecialNotifyTranslators::$right )
+		) {
+			$link = SpecialPage::getTitleFor( 'NotifyTranslators' )->getFullUrl(
+				array( 'tpage' => $page->getTitle()->getArticleID() ) );
+			$this->getOutput()->addWikiMsg( 'tpt-offer-notify', $link );
+		}
 	}
 
 	public function loadPagesFromDB() {
