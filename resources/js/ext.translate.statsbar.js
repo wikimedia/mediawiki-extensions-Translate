@@ -2,7 +2,7 @@
  * Translate language statistics bar - jQuery plugin.
  * @author Niklas Laxström
  * @author Santhosh Thottingal
- * @license GPL2+
+ * @license GPL-2.0+
  * @since 2012-11-30
  */
 

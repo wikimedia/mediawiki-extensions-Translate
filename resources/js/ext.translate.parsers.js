@@ -3,7 +3,7 @@
  * messages.
  *
  * @author Niklas Laxström, 2013
- * @license GPL2+
+ * @license GPL-2.0+
  */
 
 ( function ( $, mw ) {

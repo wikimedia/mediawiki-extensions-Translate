@@ -1,7 +1,7 @@
 /**
  * Introduces a toggle icon than can be used to hide navigation menu in vector
  * @author Niklas Laxström
- * @license GPL2+
+ * @license GPL-2.0+
  */
 (function ( mw, $ ) {
 	'use strict';
