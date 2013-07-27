@@ -52,6 +52,24 @@
       "revId": "1c7cc48b1ce772732bb064bdf505f8d23c8a160e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a989e1a9_f41ad479",
+        "filename": "api/ApiQueryMessageGroupStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-07-27T16:39:19Z",
+      "side": 1,
+      "message": "These messages are not localised.",
+      "parentUuid": "a989e1a9_14f2d86e",
+      "revId": "1c7cc48b1ce772732bb064bdf505f8d23c8a160e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
