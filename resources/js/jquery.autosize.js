@@ -189,4 +189,10 @@
 			adjust();
 		});
 	};
-}(window.jQuery || window.Zepto));
+	// Call this function if you made changes to the textareas
+	// or to the DOM-tree affecting the textareas after calling
+	// .autosize() on them
+	$.resetAutosizeMirror = function(){
+		mirrored = null;
+	};
+}(window.jQuery));
