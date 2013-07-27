@@ -59,8 +59,7 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 	}
 
 	protected function getExamples() {
-		$groups = MessageGroups::getAllGroups();
-		$group = key( $groups );
+		$group = 'page-Example';
 
 		return array(
 			"api.php?action=query&meta=messagegroupstats&mgsgroup=$group List of translation completion statistics for group $group",
