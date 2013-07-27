@@ -20,7 +20,7 @@ class ApiAggregateGroups extends ApiBase {
 	protected static $salt = 'translate-manage';
 
 	public function execute() {
-		if ( !$this->getUser()->isallowed( self::$right ) ) {
+		if ( !$this->getUser()->isAllowed( self::$right ) ) {
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
