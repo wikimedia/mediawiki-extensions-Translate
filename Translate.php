@@ -40,7 +40,7 @@ require_once "$dir/_autoload.php";
 /** @endcond */
 
 /**
- * Registering varios resources
+ * Registering various resources
  * @cond file_level_code
  */
 
