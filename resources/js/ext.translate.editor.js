@@ -857,7 +857,10 @@
 			// layout of the text area after this function. Use very small
 			// delay to have it settle down and have correct results. Otherwise
 			// there will be a size change once the first letter is typed.
+			// Calling resetAutosizeMirror makes sure that all style changes 
+			// of the textarea are respected by the plugin
 			delay( function() {
+				$.resetAutosizeMirror();
 				$textarea.trigger( 'autosize' );
 			}, 1 );
 
