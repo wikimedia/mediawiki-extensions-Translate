@@ -13,6 +13,10 @@
  * @ingroup FFS
  */
 class XliffFFS extends SimpleFFS {
+	public function getFileExtensions() {
+		return array( '.xlf', '.xliff', '.xml' );
+	}
+
 	public function readFromVariable( $data, $element = 'target' ) {
 
 		$messages = array();
