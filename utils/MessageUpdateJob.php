@@ -38,7 +38,8 @@ class MessageUpdateJob extends Job {
 		$flags = EDIT_DEFER_UPDATES | EDIT_FORCE_BOT;
 
 		$wikiPage = WikiPage::factory( $title );
-		$summary = wfMessage( 'translate-manage-import-summary' )->plain();
+		$summary = wfMessage( 'translate-manage-import-summary' )
+			->inContentLanguage()->plain();
 		$wikiPage->doEdit( $params['content'], $summary, $flags, false, $user );
 
 		// NOTE: message documentation is excluded from fuzzying!
