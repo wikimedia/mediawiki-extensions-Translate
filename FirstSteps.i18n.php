@@ -2611,6 +2611,14 @@ $messages['lv'] = array(
 	'translate-fs-settings-planguage' => 'Galvenā valoda:',
 );
 
+/** Literary Chinese (文言)
+ * @author Yanteng3
+ */
+$messages['lzh'] = array(
+	'translate-fs-email-title' => '惠考郵驛',
+	'translate-fs-settings-submit' => '存註',
+);
+
 /** Malagasy (Malagasy)
  * @author Jagwar
  */

@@ -1084,12 +1084,12 @@ $specialPageAliases['zh-hans'] = array(
 	'MessageGroupStats' => array( '信息组状态' ),
 	'PageTranslation' => array( '页面翻译' ),
 	'ImportTranslations' => array( '导入翻译' ),
-	'ManageMessageGroups' => array( '消息组管理' ),
-	'FirstSteps' => array( '首几步' ),
-	'SupportedLanguages' => array( '支持语言' ),
+	'ManageMessageGroups' => array( '信息组管理' ),
+	'FirstSteps' => array( '入门教程' ),
+	'SupportedLanguages' => array( '支持的语言' ),
 	'MyLanguage' => array( '我的语言' ),
-	'PageTranslationDeletePage' => array( '页面译文删除页面' ),
-	'AggregateGroups' => array( '合计组' ),
+	'PageTranslationDeletePage' => array( '页面翻译删除页面' ),
+	'AggregateGroups' => array( '信息组总计' ),
 	'SearchTranslations' => array( '搜索翻译' ),
 );
 

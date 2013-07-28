@@ -6363,6 +6363,13 @@ $messages['lv'] = array(
 	'pt-movepage-logreason' => 'Daļa no tulkojamas lapas $1.',
 );
 
+/** Literary Chinese (文言)
+ * @author Yanteng3
+ */
+$messages['lzh'] = array(
+	'tpt-aggregategroup-save' => '存',
+);
+
 /** Malagasy (Malagasy)
  * @author Jagwar
  */
