@@ -858,7 +858,7 @@
 			// delay to have it settle down and have correct results. Otherwise
 			// there will be a size change once the first letter is typed.
 			delay( function() {
-				$textarea.trigger( 'autosize' );
+				$textarea.trigger( 'autosize.resizeIncludeStyle' );
 			}, 1 );
 
 			this.shown = true;
