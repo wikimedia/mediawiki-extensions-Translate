@@ -48,6 +48,13 @@
 	}
 	mirror.style.lineHeight = '';
 
+	// Call this function if you made changes to the textareas
+	// or to the DOM-tree affecting the textareas after calling
+	// .autosize() on them
+	$.autosizeResetMirror = function() {
+		mirrored = null;
+	};
+
 	$.fn.autosize = function (options) {
 		options = $.extend({}, defaults, options || {});
 
@@ -181,6 +188,7 @@
 
 			// Allow for manual triggering if needed.
 			$ta.on('autosize', function(){
+				$.autosizeResetMirror();
 				active = false;
 				adjust();
 			});
