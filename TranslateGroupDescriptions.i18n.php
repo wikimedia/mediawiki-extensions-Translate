@@ -2050,7 +2050,7 @@ Consulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plu
 	'bw-desc-shapado' => 'Grupo de mensagens do software de perguntas e respostas, livre e de código aberto, [[Translating:Shapado|Shapado]]',
 	'translate-group-desc-tsint' => 'Um grupo de mensagens para o [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], o sistema de internacionalização das ferramentas [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|apoio]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalhes técnicos]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] consegue encontrar rapidamente os autores de uma página numa wiki da Wikimedia.',
-	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] é um projecto para apresentar ''offline'' uma versão de texto da Wikipédia num dispositivo móvel.",
+	'bw-desc-wikireader' => "[[Translating:WikiReader|WikiReader]] é um projeto para apresentar ''offline'' uma versão de texto da Wikipédia num dispositivo móvel.",
 );
 
 /** Brazilian Portuguese (português do Brasil)

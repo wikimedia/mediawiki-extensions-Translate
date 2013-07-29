@@ -3299,7 +3299,7 @@ $messages['pt'] = array(
 	'translate-fs-email-title' => 'Confirme o seu endereço de correio electrónico',
 	'translate-fs-intro' => "Bem-vindo ao assistente de iniciação da {{SITENAME}}.
 Será conduzido passo a passo através do processo necessário para se tornar um tradutor.
-No fim, será capaz de traduzir as ''mensagens da interface'' de todos os projectos suportados na {{SITENAME}}.",
+No fim, será capaz de traduzir as ''mensagens da interface'' de todos os projetos suportados na {{SITENAME}}.",
 	'translate-fs-selectlanguage' => 'Escolha uma língua',
 	'translate-fs-settings-planguage' => 'Idioma principal:',
 	'translate-fs-settings-slanguage' => 'Idioma de ajuda $1:',
