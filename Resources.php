@@ -254,7 +254,11 @@ $wgResourceModules['ext.translate.special.aggregategroups'] = array(
 	'scripts' => 'resources/js/ext.translate.special.aggregategroups.js',
 	'styles' => 'resources/css/ext.translate.special.aggregategroups.css',
 	'position' => 'top',
-	'dependencies' => array( 'mediawiki.util' ),
+	'dependencies' => array(
+		'mediawiki.util',
+		'jquery.async',
+		'jquery.chosen'
+	),
 	'messages' => array(
 		'tpt-aggregategroup-remove-confirm',
 	),

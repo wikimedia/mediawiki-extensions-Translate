@@ -24,6 +24,7 @@
 					.text( $target.siblings( 'a' ).text() )
 					.appendTo( $select );
 				$target.parent( 'li' ).remove();
+				$select.trigger( 'liszt:updated' );
 			}
 		}
 
@@ -38,7 +39,8 @@
 		var successFunction, params,
 			$target = $( event.target ),
 			parentId = $target.parents( '.mw-tpa-group' ).data( 'id' ),
-			$selected = $( '#mw-tpa-groupselect-' + parentId + ' option:selected' ),
+			$select = $( '#mw-tpa-groupselect-' + parentId ),
+			$selected = $select.find( 'option:selected' ),
 			subgroupId = $selected.val(),
 			subgroupName = $selected.text();
 
@@ -67,6 +69,7 @@
 
 				// remove this group from the select.
 				$selected.remove();
+				$select.trigger( 'liszt:updated' );
 				$span.click( dissociate );
 			}
 		};
@@ -110,6 +113,17 @@
 			event.preventDefault();
 		} );
 
+		// FIXME: These selects should be populated with AJAX.
+		// At least there is no point in outputting them in HTML
+		// for each group. One would be enough that could be cloned.
+		$( '.mw-tpa-groupselect' ).eachAsync( {
+			loop: function () {
+				$(this).chosen( {
+					'search_contains': true
+				} );
+			}
+		} );
+
 		$( '#tpt-aggregategroups-save' ).on( 'click', function () {
 			var $select, successFunction, params,
 				aggGroupNameInputName = $( 'input.tp-aggregategroup-add-name' ),
@@ -141,7 +155,10 @@
 					$div.data( 'id', aggregateGroupId );
 
 					if ( $select.length > 0 ) {
-						$groupSelector = $( '<select>' ).attr( 'id', 'mw-tpa-groupselect-' + aggregateGroupId );
+						$groupSelector = $( '<select>' ).attr( {
+							'id': 'mw-tpa-groupselect-' + aggregateGroupId,
+							'class': 'mw-tpa-groupselect'
+						} );
 
 						$.each( data.aggregategroups.groups, function ( key, value ) {
 							$groupSelector.append( $( '<option>', { value: key } ).text( value ) );
@@ -149,10 +166,16 @@
 
 						$addButton = $( $( 'input.tp-aggregate-add-button' )[0] ).clone();
 						$addButton.attr( 'id', aggregateGroupId );
-						$div.append( $groupSelector ).append( $addButton );
+						$div.append( $groupSelector, $addButton );
 						$addButton.click( associate );
 						$removeSpan.click( removeGroup );
 						$( 'div.tpt-add-new-group' ).addClass( 'hidden' );
+
+						setTimeout( function () {
+							$groupSelector.chosen( {
+								'search_contains': true
+							} );
+						}, 1 );
 					} else {
 						// First group in the wiki. Cannot clone the group selector, just reload this time.
 						location.reload();
