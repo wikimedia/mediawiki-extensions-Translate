@@ -144,7 +144,6 @@
 				onSelect: function ( language ) {
 					window.location = languages[language].url;
 				},
-				lazyload: false,
 				compact: true,
 				languages: ulslanguages,
 				top: $languages.offset().top,
