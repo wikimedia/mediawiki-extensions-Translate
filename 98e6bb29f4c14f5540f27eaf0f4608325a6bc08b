@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a989e1a9_3f32485e",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-07-30T13:48:14Z",
+      "side": 1,
+      "message": "Have you tried quoting the value instead?",
+      "revId": "98e6bb29f4c14f5540f27eaf0f4608325a6bc08b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a989e1a9_5f370c4c",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-07-30T13:48:14Z",
+      "side": 1,
+      "message": "attr( {",
+      "revId": "98e6bb29f4c14f5540f27eaf0f4608325a6bc08b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a989e1a9_7f3cd02d",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-07-30T13:48:14Z",
+      "side": 1,
+      "message": "} );",
+      "revId": "98e6bb29f4c14f5540f27eaf0f4608325a6bc08b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
