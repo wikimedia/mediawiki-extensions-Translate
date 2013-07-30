@@ -10,12 +10,12 @@
 	float: right;
 }
 
-.expanded,
-.expanded a {
+.statstable .expanded,
+.statstable .expanded a {
 	cursor: n-resize;
 }
 
-.collapsed,
-.collapsed a {
+.statstable .collapsed,
+.statstable .collapsed a {
 	cursor: s-resize;
 }
