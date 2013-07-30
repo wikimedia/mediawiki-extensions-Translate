@@ -947,8 +947,9 @@ fuzzy = mark translations for review',
 	'translate-manage-submit' => 'Used in the group management interface.
 {{doc-screenshot|Manage-3.png|twn}}
 {{Identical|Execute}}',
-	'translate-manage-intro-other' => 'Introduction to special page. See screenshot. [[File:Manage-2.png|150px|right|Group management interface]]
-$1 is a language name.',
+	'translate-manage-intro-other' => '[[File:Manage-2.png|150px|right|Group management interface]]
+Introduction to special page. See screenshot. Parameters:
+* $1 is a language name.',
 	'importtranslations' => '{{doc-special|ImportTranslations}}
 {{doc-screenshot|Import-1.png|twn}}',
 	'translate-import-from-local' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
@@ -1842,11 +1843,11 @@ $messages['ar'] = array(
 
 مثل عدم استخدام مسافات أو ترجمة اسماء فريدة. $1',
 	'translate-page-description-hasoptional-open' => 'إظهار الرسائل الاختيارية.',
-	'translate-page-edit' => 'تعديل',
+	'translate-page-edit' => 'عدل',
 	'translate-ext-url' => '<hr />موقع الوب: $1',
 	'translate-optional' => '(اختياري)',
 	'translate-ignored' => '(متجاهل)',
-	'translate-edit-jsopen' => 'تعديل',
+	'translate-edit-jsopen' => 'عدل',
 	'translate-edit-title' => 'عدل "$1"',
 	'translate-edit-definition' => 'تعريف الرسالة',
 	'translate-edit-translation' => 'الترجمة',
@@ -2015,13 +2016,13 @@ $messages['ar'] = array(
 	'translate-manage-conflict-summary' => 'استيراد نسخة جديدة من مصدر خارجي.
 من فضلك تحقق.',
 	'translate-manage-fuzzy-summary' => 'التعريف تغير', # Fuzzy
+	'translate-manage-submit' => 'نفّذ',
+	'translate-manage-intro-other' => 'بالأسفل قائمة بتغييرات الترجمة في لغة $1.
+من فضلك راجع التغييرات واختر فعلا تريد فعله لكل ترجمة.
+لو اخترت تجاهل التغييرات، ستتم الكتابة عليها عند التصدير التالي.', # Fuzzy
 	'importtranslations' => 'استورد ترجمات',
-	'translate-import-from-url' => 'مسار الملف:',
-	'translate-import-from-wiki' => 'ملف على هذه الويكي:',
 	'translate-import-from-local' => 'رفع ملف محلي:',
 	'translate-import-load' => 'حمّل الملف',
-	'translate-import-err-type-not-supported' => 'غير قادر على تحميل الملف:
-الطريقة <code>$1</code> غير مدعومة.',
 	'translate-import-err-dl-failed' => 'تعذّر جلب الملف:
 $1',
 	'translate-import-err-ul-failed' => 'لم ينجح رفع الملف',
