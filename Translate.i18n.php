@@ -15270,13 +15270,13 @@ Resubmitte per favor le formulario pro continuar le processamento.',
 	'translate-manage-conflict-summary' => 'Un nove version es importate ex un fonte externe.
 Per favor verifica.',
 	'translate-manage-fuzzy-summary' => 'Le definition del message ha cambiate',
+	'translate-manage-submit' => 'Executar',
+	'translate-manage-intro-other' => 'Ci infra es un lista de modificationes de traductiones in lingua $1.
+Per favor, revide le modificationes e selige un action a prender pro cata actualisation.
+Si tu opta pro ignorar le modificationes, iste action es solmente temporari.',
 	'importtranslations' => 'Importar traductiones',
-	'translate-import-from-url' => 'URL verso le file:',
-	'translate-import-from-wiki' => 'File in iste wiki:',
 	'translate-import-from-local' => 'Incargar un file local:',
 	'translate-import-load' => 'Cargar file',
-	'translate-import-err-type-not-supported' => 'Impossibile incargar le file:
-Le methodo <code>$1</code> non es supportate.',
 	'translate-import-err-dl-failed' => 'Impossibile obtener le file:
 $1',
 	'translate-import-err-ul-failed' => 'Le cargamento del file non ha succedite',

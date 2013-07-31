@@ -2017,8 +2017,8 @@ Hic tu pote seliger le linguas que tu vole vider (si desirate).',
 	'translate-fs-userpage-level-3' => 'Io ha un bon maestria de',
 	'translate-fs-userpage-level-2' => 'Io ha un maestria moderate de',
 	'translate-fs-userpage-level-1' => 'Io cognosce un poco de',
-	'translate-fs-userpage-help' => 'Per favor indica tu habilitates linguistic e dice nos qualcosa super te. Si tu cognosce plus de cinque linguas, tu pote adder alteres plus tarde.', # Fuzzy
-	'translate-fs-userpage-submit' => 'Crear mi pagina de usator', # Fuzzy
+	'translate-fs-userpage-help' => 'Per favor indica tu habilitates linguistic e parla un poco de te. Si tu cognosce plus de cinque linguas, tu pote adder alteres plus tarde.',
+	'translate-fs-userpage-submit' => 'Crear tu pagina de usator',
 	'translate-fs-userpage-done' => 'Ben facite! Tu ha ora un pagina de usator.',
 	'translate-fs-permissions-planguage' => 'Lingua primari:',
 	'translate-fs-permissions-help' => 'Ora tu debe poner un requesta de esser addite al gruppo de traductores.

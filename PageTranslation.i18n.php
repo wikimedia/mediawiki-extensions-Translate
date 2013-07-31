@@ -4759,6 +4759,7 @@ Elem szövege: <pre>$1</pre>',
 $messages['ia'] = array(
 	'pagetranslation' => 'Traduction de paginas',
 	'right-pagetranslation' => 'Marcar versiones de paginas pro traduction',
+	'action-pagetranslation' => 'gerer paginas traducibile',
 	'tpt-desc' => 'Extension pro traducer paginas de contento',
 	'tpt-section' => 'Unitate de traduction $1',
 	'tpt-section-new' => 'Nove unitate de traduction. Nomine: $1',
@@ -4781,8 +4782,8 @@ Assecura que illo contine etiquettas <nowiki><translate></nowiki> e ha un syntax
 	'tpt-saveok' => 'Le pagina [[$1]] ha essite marcate pro traduction con $2 {{PLURAL:$2|unitate|unitates}} de traduction.
 Le pagina pote ora esser <span class="plainlinks">[$3 traducite]</span>.',
 	'tpt-badsect' => '"$1" non es un nomine valide pro le unitate de traduction $2.',
-	'tpt-showpage-intro' => 'In basso es listate sectiones nove, existente e delite.
-Ante de marcar iste version pro traduction, assecura que le modificationes al sectiones sia minimisate pro evitar labor innecessari pro traductores.', # Fuzzy
+	'tpt-showpage-intro' => 'In basso es listate le unitates de traduction nove, existente e delite.
+Ante de marcar iste version pro traduction, verifica que le modificationes al unitates de traduction sia minimisate pro evitar labor innecessari pro traductores.',
 	'tpt-mark-summary' => 'Marcava iste version pro traduction',
 	'tpt-edit-failed' => 'Non poteva actualisar le pagina: $1',
 	'tpt-duplicate' => 'Le nomine de unitate de traduction "$1" es usate plus de un vice.',
@@ -4799,7 +4800,7 @@ Ante de marcar iste version pro traduction, assecura que le modificationes al se
 ma le ultime {{PLURAL:$1|version|versiones}} non pote esser marcate pro traduction.',
 	'tpt-discouraged-pages' => 'Le ulterior traduction de iste {{PLURAL:$1|pagina|paginas}} es discoragiate.',
 	'tpt-select-prioritylangs' => 'Lista de linguas prioritari separate per commas:',
-	'tpt-select-prioritylangs-force' => 'Impedir le traduction in linguas non prioritari', # Fuzzy
+	'tpt-select-prioritylangs-force' => 'Impedir le traduction in linguas non prioritari',
 	'tpt-select-prioritylangs-reason' => 'Motivo:',
 	'tpt-sections-prioritylangs' => 'Linguas prioritari',
 	'tpt-rev-mark' => 'marcar pro traduction',
@@ -4846,19 +4847,34 @@ Motivo: $1',
 Patrono de traduction: <pre>$1</pre>',
 	'pt-parse-close' => 'Etiquetta &lt;/translate> asymmetric.
 Patrono de traduction: <pre>$1</pre>',
-	'pt-parse-nested' => 'Le sectiones &lt;translate> annidate non es permittite.
-Texto del etiquetta: <pre>$1</pre>', # Fuzzy
-	'pt-shake-multiple' => 'Marcatores de section multiple pro un sol section.
-Texto del section: <pre>$1</pre>', # Fuzzy
-	'pt-shake-position' => 'Marcatores de section a un position inexpectate.
-Texto del section: <pre>$1</pre>', # Fuzzy
-	'pt-shake-empty' => 'Section vacue pro le marcator $1.', # Fuzzy
+	'pt-parse-nested' => 'Le unitates de traduction &lt;translate> annidate non es permittite.
+Texto del etiquetta: <pre>$1</pre>',
+	'pt-shake-multiple' => 'Il ha multiple marcatores de unitate de traduction pro un sol unitate de traduction.
+Texto del unitate de traduction: <pre>$1</pre>',
+	'pt-shake-position' => 'Il ha marcatores de unitate de traduction in un position inexpectate.
+Texto del unitate de traduction: <pre>$1</pre>',
+	'pt-shake-empty' => 'Unitate de traduction vacue pro le marcator "$1".',
 	'log-description-pagetranslation' => 'Registro de actiones ligate al systema de traduction de paginas',
 	'log-name-pagetranslation' => 'Registro de traduction de paginas',
+	'logentry-pagetranslation-mark' => '$1 {{GENDER:$2|marcava}} $3 pro traduction',
+	'logentry-pagetranslation-unmark' => '$1 {{GENDER:$2|removeva}} $3 del paginas a traducer',
+	'logentry-pagetranslation-moveok' => '$1 {{GENDER:$2|completava}} le renomination del pagina traducibile $3 a $4',
+	'logentry-pagetranslation-movenok' => '$1 {{GENDER:$2|incontrava}} un problema durante le renomination del pagina $3 a $4',
+	'logentry-pagetranslation-deletefok' => '$1 {{GENDER:$2|completava}} le deletion del pagina traducibile $3',
+	'logentry-pagetranslation-deletefnok' => '$1 {{GENDER:$2|non succedeva}} a deler $3 le qual pertine al pagina traducibile $4',
+	'logentry-pagetranslation-deletelok' => '$1 {{GENDER:$2|completava}} le deletion del pagina traducibile $3',
+	'logentry-pagetranslation-deletelnok' => '$1 {{GENDER:$2|non succedeva}} a deler $3 le qual pertine al pagina traducibile $4',
+	'logentry-pagetranslation-encourage' => '$1 {{GENDER:$2|incoragiava}} le traduction de $3',
+	'logentry-pagetranslation-discourage' => '$1 {{GENDER:$2|discoragiava}} le traduction de $3',
+	'logentry-pagetranslation-prioritylanguages-unset' => '$1 {{GENDER:$2|removeva}} linguas prioritari del pagina traducibile $3',
+	'logentry-pagetranslation-prioritylanguages' => '$1 {{GENDER:$2|definiva}} le linguas prioritari del pagina traducibile $3 como $5',
+	'logentry-pagetranslation-prioritylanguages-force' => '$1 {{GENDER:$2|limitava}} le linguas prioritari del pagina traducibile $3 a $5',
+	'logentry-pagetranslation-associate' => '$1 {{GENDER:$2|addeva}} le pagina traducibile $3 al gruppo aggregate $4',
+	'logentry-pagetranslation-dissociate' => '$1 {{GENDER:$2|removeva}} le pagina traducibile $3 del gruppo aggregate $4',
 	'pt-movepage-title' => 'Renominar le pagina traducibile $1',
 	'pt-movepage-blockers' => 'Le pagina traducibile non pote esser renominate a causa del sequente {{PLURAL:$1|error|errores}}:',
-	'pt-movepage-block-base-exists' => 'Le pagina de base de destination [[:$1]] existe.', # Fuzzy
-	'pt-movepage-block-base-invalid' => 'Le pagina de base de destination non es un titulo valide.', # Fuzzy
+	'pt-movepage-block-base-exists' => 'Le pagina traducibile de destination "[[:$1]]" jam existe.',
+	'pt-movepage-block-base-invalid' => 'Le nomine del pagina traducibile de destination non es un titulo valide.',
 	'pt-movepage-block-tp-exists' => 'Le pagina de traduction de destination [[:$2]] existe.',
 	'pt-movepage-block-tp-invalid' => 'Le titulo del pagina de traduction de destination pro [[:$1]] esserea invalide (troppo longe?).',
 	'pt-movepage-block-section-exists' => 'Le pagina de section de destination [[:$2]] existe.', # Fuzzy
