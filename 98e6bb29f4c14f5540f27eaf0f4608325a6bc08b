@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a989e1a9_353184ec",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2013-07-31T11:19:52Z",
+      "side": 1,
+      "message": "Done (quoted the key)\nHowever, if it works, this will only trick jshint and with the next release it may fail again.",
+      "parentUuid": "a989e1a9_3f32485e",
+      "revId": "98e6bb29f4c14f5540f27eaf0f4608325a6bc08b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a989e1a9_5f370c4c",
         "filename": "resources/js/ext.translate.special.aggregategroups.js",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "a989e1a9_554e0871",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2013-07-31T11:19:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a989e1a9_5f370c4c",
+      "revId": "98e6bb29f4c14f5540f27eaf0f4608325a6bc08b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a989e1a9_7f3cd02d",
         "filename": "resources/js/ext.translate.special.aggregategroups.js",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2013-07-30T13:48:14Z",
       "side": 1,
       "message": "} );",
+      "revId": "98e6bb29f4c14f5540f27eaf0f4608325a6bc08b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a989e1a9_95589031",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2013-07-31T11:19:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a989e1a9_7f3cd02d",
       "revId": "98e6bb29f4c14f5540f27eaf0f4608325a6bc08b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
