@@ -1,0 +1,7 @@
+== Translate 2013.07 ==
+Released at 2013-07-31.
+
+===Noteworthy changes===
+* Groups are sorted alphabetically in the Special:Translate export tab.
+* Support for Yandex Translate API v1.5.
+* Edit summaries for automated edits are written in the content language (bug 52142).
