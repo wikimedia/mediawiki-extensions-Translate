@@ -3,7 +3,7 @@
  * @author Krinkle <krinklemail (at) gmail (dot) com>
  * @author Niklas Laxström, 2012
  * @created January 3, 2011
- * @license GPL v2, CC-BY-SA-3.0
+ * @license GPL-2.0+, CC-BY-SA-3.0
  */
 /*global mw:false*/
 jQuery( document ).ready( function ( $ ) {

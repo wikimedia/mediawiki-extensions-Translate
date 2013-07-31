@@ -4,7 +4,7 @@
  * files, which are sometimes used for translations.
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013, Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @license GPL-2.0+
  * @file
  */
 

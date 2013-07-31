@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @license GPL-2.0+
  */
 
 class AndroidXmlFFSTest extends MediaWikiTestCase {
