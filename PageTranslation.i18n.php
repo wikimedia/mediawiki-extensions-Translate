@@ -4877,14 +4877,14 @@ Texto del unitate de traduction: <pre>$1</pre>',
 	'pt-movepage-block-base-invalid' => 'Le nomine del pagina traducibile de destination non es un titulo valide.',
 	'pt-movepage-block-tp-exists' => 'Le pagina de traduction de destination [[:$2]] existe.',
 	'pt-movepage-block-tp-invalid' => 'Le titulo del pagina de traduction de destination pro [[:$1]] esserea invalide (troppo longe?).',
-	'pt-movepage-block-section-exists' => 'Le pagina de section de destination [[:$2]] existe.', # Fuzzy
-	'pt-movepage-block-section-invalid' => 'Le titulo del pagina de section de destination pro [[:$1]] esserea invalide (troppo longe?).', # Fuzzy
+	'pt-movepage-block-section-exists' => 'Le pagina de destination "[[:$2]]" pro le unitate de traduction jam existe.',
+	'pt-movepage-block-section-invalid' => 'Le titulo del pagina de destination pro "[[:$1]]" pro le unitate de traduction esserea invalide (troppo longe?).',
 	'pt-movepage-block-subpage-exists' => 'Le subpagina de destination [[:$2]] existe.',
 	'pt-movepage-block-subpage-invalid' => 'Le titulo del subpagina de destination pro [[:$1]] esserea invalide (troppo longe?).',
 	'pt-movepage-list-pages' => 'Lista de paginas a renominar',
-	'pt-movepage-list-translation' => 'Paginas de traduction', # Fuzzy
-	'pt-movepage-list-section' => 'Paginas de section', # Fuzzy
-	'pt-movepage-list-other' => 'Altere subpaginas', # Fuzzy
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Pagina|Paginas}} de traduction',
+	'pt-movepage-list-section' => '{{PLURAL:$1|Pagina|Paginas}} de unitate de traduction',
+	'pt-movepage-list-other' => 'Altere sub{{PLURAL:$1|pagina|paginas}}',
 	'pt-movepage-list-count' => 'In total $1 {{PLURAL:$1|pagina|paginas}} a renominar.',
 	'pt-movepage-legend' => 'Renominar pagina traducibile',
 	'pt-movepage-current' => 'Nomine actual:',
@@ -4905,27 +4905,27 @@ Per favor verifica le [[Special:Log/pagetranslation|registro de traductiones de 
 	'pt-deletepage-lang-title' => 'Le pagina traducite $1 es delite.',
 	'pt-deletepage-full-title' => 'Le pagina traducibile $1 es delite.',
 	'pt-deletepage-invalid-title' => 'Le pagina specificate non es valide.',
-	'pt-deletepage-invalid-text' => 'Le pagina specificate es ni traducibile ni traducite.', # Fuzzy
+	'pt-deletepage-invalid-text' => 'Le pagina specificate es ni traducibile ni un traduction.',
 	'pt-deletepage-action-check' => 'Listar paginas a deler',
 	'pt-deletepage-action-perform' => 'Exequer le deletion',
 	'pt-deletepage-action-other' => 'Cambiar destination',
 	'pt-deletepage-lang-legend' => 'Deler pagina traducite',
 	'pt-deletepage-full-legend' => 'Deler pagina traducibile',
-	'pt-deletepage-any-legend' => 'Deler pagina traducibile o traducite', # Fuzzy
+	'pt-deletepage-any-legend' => 'Deler pagina traducibile o de traduction',
 	'pt-deletepage-current' => 'Nomine del pagina:',
 	'pt-deletepage-reason' => 'Motivo:',
 	'pt-deletepage-subpages' => 'Deler tote le subpaginas',
 	'pt-deletepage-list-pages' => 'Lista de paginas a deler',
 	'pt-deletepage-list-translation' => 'Paginas traducite',
-	'pt-deletepage-list-section' => 'Paginas de section', # Fuzzy
+	'pt-deletepage-list-section' => 'Paginas de unitate de traduction',
 	'pt-deletepage-list-other' => 'Altere subpaginas',
 	'pt-deletepage-list-count' => 'In total $1 {{PLURAL:$1|pagina|paginas}} a deler.',
 	'pt-deletepage-full-logreason' => 'Parte del pagina traducibile $1.',
 	'pt-deletepage-lang-logreason' => 'Parte del pagina traducite $1.',
 	'pt-deletepage-started' => 'Per favor verifica in le [[Special:Log/pagetranslation|registro de traduction de paginas]] le existentia de errores e del message de completion.',
-	'pt-deletepage-intro' => 'Iste pagina special permitte deler tote paginas traducibile o lor traductiones in un certe lingua.
-Le deletion non essera instantanee perque il essera necessari deler multe paginas.
-Fallimentos essera registrate in le [[Special:Log/pagetranslation|registro de traduction de paginas]] e requirera reparation manual.', # Fuzzy
+	'pt-deletepage-intro' => 'Iste pagina special permitte deler un tote pagina traducibile o un pagina de traduction individual in un certe lingua.
+Le deletion non essera instantanee perque tote le paginas que depende de illos essera delite tamben.
+Fallimentos essera registrate in le [[Special:Log/pagetranslation|registro de traduction de paginas]] e requirera reparation manual.',
 );
 
 /** Indonesian (Bahasa Indonesia)
