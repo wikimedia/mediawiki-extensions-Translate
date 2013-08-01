@@ -43,6 +43,7 @@ Only latest versions can be marked for translation.',
 Make sure it has <nowiki><translate></nowiki> tags and has a valid syntax.',
 	'tpt-saveok' => 'The page [[$1]] has been marked up for translation with $2 {{PLURAL:$2|translation unit|translation units}}.
 The page can now be <span class="plainlinks">[$3 translated]</span>.',
+	'tpt-offer-notify' => 'You can <span class="plainlinks">[$1 notify translators]</span> about this page.',
 	'tpt-badsect' => '"$1" is not a valid name for translation unit $2.',
 	'tpt-showpage-intro' => 'Below new, existing and deleted translation units are listed.
 Before marking this version for translation, check that the changes to translation units are minimized to avoid unnecessary work for translators.',
@@ -280,6 +281,9 @@ The template used by translations of the translatable page, extracted from the s
 	'tpt-saveok' => '* $1 - page title
 * $2 - count of sections which can be used with PLURAL
 * $3 - URL',
+	'tpt-offer-notify' => 'Message displayed on Special:PageTranslation after marking a page for translation when
+the marking user also has right to notify translators. Parameters:
+* $1 is a URL to Special:NotifyTranslators with the marked page preselected.',
 	'tpt-badsect' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].
 Parameters:
 * $1 - the identifier of the unit
