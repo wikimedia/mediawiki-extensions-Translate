@@ -17,16 +17,15 @@ class TranslateUtils {
 	 * database.
 	 * @param string $message Name of the message
 	 * @param string $code Language code in lower case and with dash as delimieter
+	 * @param int $ns Namespace constant
 	 * @return string The normalised title as a string.
 	 */
-	public static function title( $message, $code ) {
-		global $wgContLang;
-
+	public static function title( $message, $code, $ns = NS_MEDIAWIKI ) {
 		// Cache some amount of titles for speed.
 		static $cache = array();
 
 		if ( !isset( $cache[$message] ) ) {
-			$cache[$message] = $wgContLang->ucfirst( $message );
+			$cache[$message] = Title::capitalize( $message );
 		}
 
 		if ( $code ) {
@@ -58,7 +57,7 @@ class TranslateUtils {
 	 * @return string|null The contents or null.
 	 */
 	public static function getMessageContent( $key, $language, $namespace = NS_MEDIAWIKI ) {
-		$title = self::title( $key, $language );
+		$title = self::title( $key, $language, $namespace );
 		$data = self::getContents( array( $title ), $namespace );
 
 		return isset( $data[$title][0] ) ? $data[$title][0] : null;
