@@ -167,6 +167,7 @@ class SpecialAggregateGroups extends SpecialPage {
 	protected function getGroupSelector( $availableGroups, $parent ) {
 		$id = $this->htmlIdForGroup( $parent, 'mw-tpa-groupselect-' );
 		$select = new XmlSelect( 'group', $id );
+		$select->setAttribute( 'class', 'mw-tpa-groupselect' );
 
 		// Not calling $parent->getGroups() because it has done filtering already
 		$subgroups = TranslateMetadata::getSubgroups( $parent->getId() );
