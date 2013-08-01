@@ -92,9 +92,9 @@
 		listen: function () {
 			var pagemode = this;
 
-			this.$message.on( 'click', function () {
+			this.$message.children( '.message' ).on( 'click', function ( e ) {
 				pagemode.$message.data( 'translateeditor' ).show();
-				return false;
+				e.preventDefault();
 			} );
 		}
 	};
