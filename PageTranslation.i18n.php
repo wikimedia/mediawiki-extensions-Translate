@@ -2247,6 +2247,7 @@ Nur die letzte Version kann zur Übersetzung freigegeben werden.',
 Stelle sicher, dass ein <nowiki><translate></nowiki>-Tag und gültige Syntax verwendet wird.',
 	'tpt-saveok' => 'Die Seite [[$1]] wurde mit {{PLURAL:$2|einem übersetzbaren Abschnitt|$2 übersetzbaren Abschnitten}} zur Übersetzung freigegeben.
 Diese Seite kann nun <span class="plainlinks">[$3 übersetzt]</span> werden.',
+	'tpt-offer-notify' => 'Du kannst über diese Seite <span class="plainlinks">[$1 Übersetzer benachrichtigen]</span>.',
 	'tpt-badsect' => '„$1“ ist kein gültiger Name für Übersetzungseinheit $2.',
 	'tpt-showpage-intro' => 'Untenstehend sind neue, vorhandene und gelöschte Übersetzungseinheiten aufgelistet.
 Bevor du diese Version zur Übersetzung freigibst, stelle bitte sicher, dass die Änderungen an den Übersetzungseinheiten minimal sind. Damit verhinderst du unnötige Arbeit für die Übersetzer.',
