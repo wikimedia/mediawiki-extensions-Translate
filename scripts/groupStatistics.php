@@ -190,11 +190,15 @@ require __DIR__ . '/cli.inc';
  */
 class TranslateStatsOutput extends wikiStatsOutput {
 	function heading() {
-		echo '{| class="mw-ext-translate-groupstatistics sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;" width="100%"' . "\n";
+		echo '{| class="mw-ext-translate-groupstatistics sortable wikitable" border="2" ' .
+			'cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: ' .
+			'1px #AAAAAA solid; border-collapse: collapse; clear:both;" width="100%"' . "\n";
 	}
 
 	function summaryheading() {
-		echo "\n" . '{| class="mw-ext-translate-groupstatistics sortable wikitable" border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;"' . "\n";
+		echo "\n" . '{| class="mw-ext-translate-groupstatistics sortable wikitable" ' .
+			'border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; ' .
+			'border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;"' . "\n";
 	}
 
 	function addFreeText( $freeText ) {
@@ -207,7 +211,10 @@ if ( isset( $options['help'] ) ) {
 }
 
 // Show help and exit if '--most' does not have a valid value and no groups set
-if ( isset( $options['most'] ) && !isset( $localisedWeights[$options['most']] ) && !isset( $options['groups'] ) ) {
+if ( isset( $options['most'] ) &&
+	!isset( $localisedWeights[$options['most']] ) &&
+	!isset( $options['groups'] )
+) {
 	showUsage();
 }
 
@@ -345,7 +352,10 @@ if ( !$wmfscore ) {
 	}
 
 	if ( $reportScore ) {
-		$out->element( ( $l10n ? "{{int:translate-gs-score}}" : 'Score' ) . ' (' . $totalWeight . ')', true );
+		$out->element(
+			( $l10n ? "{{int:translate-gs-score}}" : 'Score' ) . ' (' . $totalWeight . ')',
+			true
+		);
 	}
 
 	/**
@@ -531,7 +541,9 @@ foreach ( $languages as $code => $name ) {
 
 			if ( isset( $wmfscores[$wmfcode] ) ) {
 				$count = $wmfscores[$wmfcode]['count'] + 1;
-				$score = ( ( $wmfscores[$wmfcode]['count'] * $wmfscores[$wmfcode]['score'] ) + $score ) / $count;
+				$tmpWmfScore = (int) $wmfscores[$wmfcode]['score'];
+				$tmpWmfCount = (int) $wmfscores[$wmfcode]['count'];
+				$score = ( ( $tmpWmfCount * $tmpWmfScore ) + $score ) / $count;
 				$wmfscores[$wmfcode] = array( 'score' => $score, 'count' => $count );
 			} else {
 				$wmfscores[$wmfcode] = array( 'score' => $score, 'count' => 1 );

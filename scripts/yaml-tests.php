@@ -66,7 +66,8 @@ class YamlTests extends Maintenance {
 				$template = $document['TEMPLATE'];
 			} else {
 				if ( !isset( $document['BASIC']['id'] ) ) {
-					trigger_error( "No path ./BASIC/id (group id not defined) in yaml document located in $filename" );
+					trigger_error( "No path ./BASIC/id (group id not defined) " .
+						"in yaml document located in $filename" );
 					continue;
 				}
 				$groups[$document['BASIC']['id']] = $document;

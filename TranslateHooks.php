@@ -67,7 +67,8 @@ class TranslateHooks {
 			$wgLogActionsHandlers['pagetranslation/deletefnok'] = 'PageTranslationLogFormatter';
 			$wgLogActionsHandlers['pagetranslation/encourage'] = 'PageTranslationLogFormatter';
 			$wgLogActionsHandlers['pagetranslation/discourage'] = 'PageTranslationLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/prioritylanguages'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/prioritylanguages'] =
+				'PageTranslationLogFormatter';
 			$wgLogActionsHandlers['pagetranslation/associate'] = 'PageTranslationLogFormatter';
 			$wgLogActionsHandlers['pagetranslation/dissociate'] = 'PageTranslationLogFormatter';
 
@@ -108,18 +109,21 @@ class TranslateHooks {
 				$wgHooks['ArticleSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
 				$wgHooks['EditFilterMerged'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';
 				$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::addTranstag';
-				$wgHooks['RevisionInsertComplete'][] = 'PageTranslationHooks::updateTranstagOnNullRevisions';
+				$wgHooks['RevisionInsertComplete'][] =
+					'PageTranslationHooks::updateTranstagOnNullRevisions';
 			} else {
 				// Add transver tags and update translation target pages
 				$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
 
 				// Check syntax for \<translate>
 				$wgHooks['PageContentSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
-				$wgHooks['EditFilterMergedContent'][] = 'PageTranslationHooks::tpSyntaxCheckForEditContent';
+				$wgHooks['EditFilterMergedContent'][] =
+					'PageTranslationHooks::tpSyntaxCheckForEditContent';
 
 				// Add transtag to page props for discovery
 				$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::addTranstag';
-				$wgHooks['RevisionInsertComplete'][] = 'PageTranslationHooks::updateTranstagOnNullRevisions';
+				$wgHooks['RevisionInsertComplete'][] =
+					'PageTranslationHooks::updateTranstagOnNullRevisions';
 			}
 
 			// Register \<languages/>
@@ -132,11 +136,14 @@ class TranslateHooks {
 			$wgHooks['PageContentLanguage'][] = 'PageTranslationHooks::onPageContentLanguage';
 
 			// Prevent editing of unknown pages in Translations namespace
-			$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::preventUnknownTranslations';
+			$wgHooks['getUserPermissionsErrorsExpensive'][] =
+				'PageTranslationHooks::preventUnknownTranslations';
 			// Prevent editing of translation in restricted languages
-			$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::preventRestrictedTranslations';
+			$wgHooks['getUserPermissionsErrorsExpensive'][] =
+				'PageTranslationHooks::preventRestrictedTranslations';
 			// Prevent editing of translation pages directly
-			$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::preventDirectEditing';
+			$wgHooks['getUserPermissionsErrorsExpensive'][] =
+				'PageTranslationHooks::preventDirectEditing';
 
 			// Our custom header for translation pages
 			$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::translatablePageHeader';
@@ -144,7 +151,8 @@ class TranslateHooks {
 			// Custom move page that can move all the associated pages too
 			$wgHooks['SpecialPage_initList'][] = 'PageTranslationHooks::replaceMovePage';
 			// Locking during page moves
-			$wgHooks['getUserPermissionsErrorsExpensive'][] = 'PageTranslationHooks::lockedPagesCheck';
+			$wgHooks['getUserPermissionsErrorsExpensive'][] =
+				'PageTranslationHooks::lockedPagesCheck';
 			// Disable action=delete
 			$wgHooks['ArticleConfirmDelete'][] = 'PageTranslationHooks::disableDelete';
 
@@ -167,7 +175,10 @@ class TranslateHooks {
 	public static function setupParserHooks( $parser ) {
 		// For nice language list in-page
 		$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
-		$parser->setFunctionHook( 'translationdialog', array( 'TranslateHooks', 'translationDialogMagicWord' ) );
+		$parser->setFunctionHook(
+			'translationdialog',
+			array( 'TranslateHooks', 'translationDialogMagicWord' )
+		);
 
 		return true;
 	}
@@ -192,19 +203,86 @@ class TranslateHooks {
 	public static function schemaUpdates( $updater ) {
 		$dir = __DIR__ . '/sql';
 
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_sections', "$dir/translate_sections.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addField', 'translate_sections', 'trs_order', "$dir/translate_sections-trs_order.patch.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'revtag', "$dir/revtag.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_groupstats', "$dir/translate_groupstats.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addIndex', 'translate_sections', 'trs_page_order', "$dir/translate_sections-indexchange.sql", true ) );
-		$updater->addExtensionUpdate( array( 'dropIndex', 'translate_sections', 'trs_page', "$dir/translate_sections-indexchange2.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_reviews', "$dir/translate_reviews.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_groupreviews', "$dir/translate_groupreviews.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_tms', "$dir/translate_tm.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_metadata', "$dir/translate_metadata.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'translate_messageindex', "$dir/translate_messageindex.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addIndex', 'translate_groupstats', 'tgs_lang', "$dir/translate_groupstats-indexchange.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addField', 'translate_groupstats', 'tgs_proofread', "$dir/translate_groupstats-proofread.sql", true ) );
+		$updater->addExtensionUpdate( array(
+			'addTable',
+			'translate_sections',
+			"$dir/translate_sections.sql",
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addField',
+			'translate_sections',
+			'trs_order',
+			"$dir/translate_sections-trs_order.patch.sql",
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addTable',
+			'revtag', "$dir/revtag.sql",
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addTable',
+			'translate_groupstats',
+			"$dir/translate_groupstats.sql",
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addIndex',
+			'translate_sections',
+			'trs_page_order',
+			"$dir/translate_sections-indexchange.sql",
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'dropIndex',
+			'translate_sections',
+			'trs_page',
+			"$dir/translate_sections-indexchange2.sql",
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addTable',
+			'translate_reviews',
+			"$dir/translate_reviews.sql",
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addTable',
+			'translate_groupreviews',
+			"$dir/translate_groupreviews.sql",
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addTable',
+			'translate_tms',
+			"$dir/translate_tm.sql",
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addTable',
+			'translate_metadata',
+			"$dir/translate_metadata.sql",
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addTable', 'translate_messageindex',
+			"$dir/translate_messageindex.sql",
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addIndex',
+			'translate_groupstats',
+			'tgs_lang',
+			"$dir/translate_groupstats-indexchange.sql",
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addField', 'translate_groupstats',
+			'tgs_proofread',
+			"$dir/translate_groupstats-proofread.sql",
+			true
+		) );
 
 		return true;
 	}
@@ -317,7 +395,10 @@ class TranslateHooks {
 
 		$selector = $selector->getHTML();
 
-		$label = Xml::label( wfMessage( 'translate-search-languagefilter' )->text(), 'languagefilter' ) . '&#160;';
+		$label = Xml::label(
+			wfMessage( 'translate-search-languagefilter' )->text(),
+			'languagefilter'
+		) . '&#160;';
 		$params = array( 'id' => 'mw-searchoptions' );
 
 		$form = Xml::fieldset( false, false, $params ) .
@@ -348,7 +429,9 @@ class TranslateHooks {
 	/**
 	 * Parser function hook
 	 */
-	public static function translationDialogMagicWord( Parser $parser, $title = '', $linktext = '' ) {
+	public static function translationDialogMagicWord( Parser $parser,
+		$title = '', $linktext = ''
+	) {
 		$title = Title::newFromText( $title );
 		if ( !$title ) {
 			return '';
@@ -424,7 +507,8 @@ JAVASCRIPT;
 		) {
 			global $wgTranslateDocumentationLanguageCode, $wgTranslatePermissionUrl;
 			$vars['TranslateRight'] = $out->getUser()->isAllowed( 'translate' );
-			$vars['TranslateMessageReviewRight'] = $out->getUser()->isAllowed( 'translate-messagereview' );
+			$vars['TranslateMessageReviewRight'] =
+				$out->getUser()->isAllowed( 'translate-messagereview' );
 			$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
 			$vars['wgTranslatePermissionUrl'] = $wgTranslatePermissionUrl;
 		}

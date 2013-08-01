@@ -77,6 +77,7 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		$this->assertEquals( 1, $result->getNumFound() );
 		$doc = null;
 		foreach ( $result as $doc ) {
+			// @todo FIXME Empty foreach statement.
 		}
 		$this->assertEquals( wfWikiId(), $doc->wiki );
 		$this->assertEquals( 'en', $doc->language );
@@ -95,6 +96,7 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		$this->assertEquals( 1, $result->getNumFound() );
 		$doc = null;
 		foreach ( $result as $doc ) {
+			// @todo FIXME Empty foreach statement.
 		}
 		$this->assertEquals( 'yksi', $doc->content );
 		$this->assertEquals( array( 'ttmserver-test' ), $doc->group );
@@ -130,6 +132,7 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		$this->assertEquals( 1, $result->getNumFound() );
 		$doc = null;
 		foreach ( $result as $doc ) {
+			// @todo FIXME Empty foreach statement.
 		}
 		$this->assertEquals( 'yksi-päiv', $doc->content );
 

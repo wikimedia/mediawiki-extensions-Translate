@@ -89,7 +89,7 @@ class MagicExport extends Maintenance {
 				continue;
 			}
 
-			include( $inFile );
+			include $inFile;
 			switch ( $this->type ) {
 				case 'special':
 					if ( isset( $aliases ) ) {

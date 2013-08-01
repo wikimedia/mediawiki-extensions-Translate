@@ -74,7 +74,11 @@ class SpecialAggregateGroups extends SpecialPage {
 
 			$remove = Html::element( 'span', array( 'class' => 'tp-aggregate-remove-ag-button' ) );
 
-			$header = Html::rawElement( 'h2', array(), htmlspecialchars( $group->getLabel() ) . $remove );
+			$header = Html::rawElement(
+				'h2',
+				array(),
+				htmlspecialchars( $group->getLabel() ) . $remove
+			);
 			$out->addHtml( $header );
 			$out->addWikiText( $group->getDescription( $this->getContext() ) );
 			$this->listSubgroups( $group );
@@ -98,7 +102,10 @@ class SpecialAggregateGroups extends SpecialPage {
 			$this->msg( 'tpt-aggregategroup-add-new' )->escaped() .
 			"</a>" );
 		$newGroupNameLabel = $this->msg( 'tpt-aggregategroup-new-name' )->escaped();
-		$newGroupName = Html::element( 'input', array( 'class' => 'tp-aggregategroup-add-name', 'maxlength' => '200' ) );
+		$newGroupName = Html::element(
+			'input',
+			array( 'class' => 'tp-aggregategroup-add-name', 'maxlength' => '200' )
+		);
 		$newGroupDescriptionLabel = $this->msg( 'tpt-aggregategroup-new-description' )->escaped();
 		$newGroupDescription = Html::element( 'input',
 			array( 'class' => 'tp-aggregategroup-add-description' )
@@ -109,9 +116,12 @@ class SpecialAggregateGroups extends SpecialPage {
 			'id' => 'tpt-aggregategroups-save',
 			'class' => 'tp-aggregate-save-button'
 		) );
-		$newGroupDiv = Html::rawElement( 'div',
+		$newGroupDiv = Html::rawElement(
+			'div',
 			array( 'class' => 'tpt-add-new-group hidden' ),
-			"$newGroupNameLabel $newGroupName <br /> $newGroupDescriptionLabel $newGroupDescription <br /> $saveButton" );
+			"$newGroupNameLabel $newGroupName<br />" .
+				"$newGroupDescriptionLabel $newGroupDescription<br />$saveButton"
+		);
 		$out->addHtml( $newGroupDiv );
 	}
 
