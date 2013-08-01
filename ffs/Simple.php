@@ -230,7 +230,7 @@ class SimpleFormatWriter {
 	}
 
 	/*
-	 * @todo looks the same as FFS::filterAuthors, except the $groupId param. Can probably be discarded.
+	 * @todo Same as FFS::filterAuthors, except the $groupId param. Can probably be discarded.
 	 */
 	public function filterAuthors( array $authors, $code, $groupId ) {
 		global $wgTranslateAuthorBlacklist;

@@ -83,7 +83,9 @@ abstract class TranslateTask {
 	 * @param array $nondefaults List of non-default options for links.
 	 * @param IContextSource $context
 	 */
-	public final function init( MessageGroup $group, array $options, array $nondefaults, IContextSource $context ) {
+	final public function init( MessageGroup $group, array $options, array $nondefaults,
+		IContextSource $context
+	) {
 		$this->group = $group;
 		$this->options = $options;
 		$this->nondefaults = $nondefaults;
@@ -107,7 +109,7 @@ abstract class TranslateTask {
 	 * @return string Partial or full html.
 	 * @see plainOutput()
 	 */
-	public final function execute() {
+	final public function execute() {
 		$this->preinit();
 		$this->doPaging();
 		$this->postinit();

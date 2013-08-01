@@ -62,7 +62,8 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 		$group = 'page-Example';
 
 		return array(
-			"api.php?action=query&meta=messagegroupstats&mgsgroup=$group List of translation completion statistics for group $group",
+			"api.php?action=query&meta=messagegroupstats&mgsgroup=$group List of " .
+				"translation completion statistics for group $group",
 		);
 	}
 }

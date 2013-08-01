@@ -110,7 +110,9 @@ class TranslateEditAddons {
 	 * @param Title|null &$prev Title of the previous message or null
 	 * @since 2012-08-21
 	 */
-	protected static function figureNextPrevMessages( MessageHandle $handle, &$key, &$index, &$next, &$prev ) {
+	protected static function figureNextPrevMessages( MessageHandle $handle, &$key,
+		&$index, &$next, &$prev
+	) {
 		wfProfileIn( __METHOD__ );
 		$group = $handle->getGroup();
 
@@ -167,10 +169,13 @@ class TranslateEditAddons {
 
 			return true;
 		}
-		$msg = wfMessage( 'translate-edit-tag-warning' )->inContentLanguage()->plain();
+		$msg = wfMessage( 'translate-edit-tag-warning' )->inContentLanguage();
 
-		if ( $msg !== '' && $msg !== '-' && TranslatablePage::isSourcePage( $editpage->getTitle() ) ) {
-			$editpage->editFormTextTop .= $editpage->getArticle()->getContext()->getOutput()->parse( $msg );
+		if ( !$msg->isDisabled() &&
+			TranslatablePage::isSourcePage( $editpage->getTitle() )
+		) {
+			$editpage->editFormTextTop .= $editpage->getArticle()->getContext()
+				->getOutput()->parse( $msg->plain() );
 		}
 
 		return true;
@@ -260,7 +265,11 @@ class TranslateEditAddons {
 
 		$groupId = $request->getText( 'loadgroup', '' );
 		$th = new TranslationHelpers( $editpage->getTitle(), $groupId );
-		if ( $editpage->firsttime && !$request->getCheck( 'oldid' ) && !$request->getCheck( 'undo' ) ) {
+
+		if ( $editpage->firsttime &&
+			!$request->getCheck( 'oldid' ) &&
+			!$request->getCheck( 'undo' )
+		) {
 			$editpage->textbox1 = (string)$th->getTranslation();
 		} else {
 			$th->setTranslation( $editpage->textbox1 );
@@ -428,7 +437,9 @@ class TranslateEditAddons {
 	 * @param User $user
 	 * @return bool
 	 */
-	public static function updateTransverTag( MessageHandle $handle, $revision, $text, User $user ) {
+	public static function updateTransverTag( MessageHandle $handle, $revision,
+		$text, User $user
+	) {
 		if ( $user->isAllowed( 'bot' ) ) {
 			return false;
 		}
@@ -511,7 +522,11 @@ class TranslateEditAddons {
 		$boxes[] = $th->callBox( 'translation', array( $th, 'getTranslationDisplayBox' ) );
 
 		$output = implode( "\n", $boxes );
-		$output = Html::rawElement( 'div', array( 'class' => 'mw-sp-translate-edit-fields' ), $output );
+		$output = Html::rawElement(
+			'div',
+			array( 'class' => 'mw-sp-translate-edit-fields' ),
+			$output
+		);
 		$out->addHtml( $output );
 
 		return true;

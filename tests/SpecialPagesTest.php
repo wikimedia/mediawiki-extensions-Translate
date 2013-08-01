@@ -53,8 +53,10 @@ class SpecialPagesTest extends MediaWikiTestCase {
 			$page->run( null );
 		} catch ( PermissionsError $e ) {
 			// This is okay
+			wfDebug( 'Permissions error caught; expected.' );
 		} catch ( ErrorPageError $e ) {
 			// This is okay as well
+			wfDebug( 'Page error caught; expected.' );
 		}
 
 		$this->assertTrue( true, "Special page $name was executed succesfully with anon user" );
@@ -68,9 +70,9 @@ class SpecialPagesTest extends MediaWikiTestCase {
 			$page->run( null );
 		} catch ( ErrorPageError $e ) {
 			// This is okay here
+			wfDebug( 'Page error caught; expected.' );
 		}
 
 		$this->assertTrue( true, "Special page $name was executed succesfully with super user" );
 	}
 }
-
