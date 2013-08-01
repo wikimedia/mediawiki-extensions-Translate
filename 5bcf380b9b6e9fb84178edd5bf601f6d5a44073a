@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a989e1a9_98dfe036",
+        "filename": "MessageChecks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-08-01T11:59:13Z",
+      "side": 1,
+      "message": "Could also make it count ( $params )",
+      "revId": "5bcf380b9b6e9fb84178edd5bf601f6d5a44073a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a989e1a9_181bd018",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-08-01T11:59:13Z",
+      "side": 1,
+      "message": "Looks so.",
+      "revId": "5bcf380b9b6e9fb84178edd5bf601f6d5a44073a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a989e1a9_38b974ea",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-08-01T11:59:13Z",
+      "side": 1,
+      "message": "Hopefully this wont trip the HookTest unit test.",
+      "revId": "5bcf380b9b6e9fb84178edd5bf601f6d5a44073a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a989e1a9_58a718c0",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-08-01T11:59:13Z",
+      "side": 1,
+      "message": "Aren\u0027t these usually used as wfSupressWarnings() and wfRestoreWarnings()? I don\u0027t remember seeing true and false being used directly.",
+      "revId": "5bcf380b9b6e9fb84178edd5bf601f6d5a44073a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a989e1a9_7885bc09",
+        "filename": "scripts/groupStatistics.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-08-01T11:59:13Z",
+      "side": 1,
+      "message": "Technically the inner () are redundant but no harm leaving them here.",
+      "revId": "5bcf380b9b6e9fb84178edd5bf601f6d5a44073a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a989e1a9_98b440d1",
+        "filename": "tests/SpecialPagesTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-08-01T11:59:13Z",
+      "side": 1,
+      "message": "I wonder if we should just disable this sniffer. Doesn\u0027t seem too useful given how we use exceptions.",
+      "revId": "5bcf380b9b6e9fb84178edd5bf601f6d5a44073a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a989e1a9_b8c9045e",
+        "filename": "utils/ToolBox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-08-01T11:59:13Z",
+      "side": 1,
+      "message": "Double space after \u003d",
+      "revId": "5bcf380b9b6e9fb84178edd5bf601f6d5a44073a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
