@@ -194,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "a989e1a9_8eb4fad0",
+        "filename": "tests/SpecialPagesTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-08-01T18:56:33Z",
+      "side": 1,
+      "message": "Filed https://bugzilla.wikimedia.org/show_bug.cgi?id\u003d52413\n\nI\u0027ll merge this as is before we get into rebase issues.",
+      "parentUuid": "a989e1a9_b83ca42e",
+      "revId": "5bcf380b9b6e9fb84178edd5bf601f6d5a44073a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a989e1a9_b8c9045e",
         "filename": "utils/ToolBox.php",
         "patchSetId": 1
