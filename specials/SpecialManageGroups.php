@@ -67,10 +67,10 @@ class SpecialManageGroups extends SpecialPage {
 	}
 
 	protected function getLegend() {
-		$this->diff->setText( '', '' );
-		$text = $this->diff->getDiff(
-			$this->msg( 'translate-smg-left' )->text(),
-			$this->msg( 'translate-smg-right' )->text()
+		$text = $this->diff->addHeader(
+			'',
+			$this->msg( 'translate-smg-left' )->escaped(),
+			$this->msg( 'translate-smg-right' )->escaped()
 		);
 
 		return Html::rawElement( 'div', array( 'class' => "mw-translate-smg-header" ), $text );
