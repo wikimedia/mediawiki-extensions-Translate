@@ -54,7 +54,8 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 
 	protected function getExamples() {
 		return array(
-			"api.php?action=query&meta=languagestats&lslanguage=fi List of translation completion statistics for language fi",
+			"api.php?action=query&meta=languagestats&lslanguage=fi List of translation " .
+				"completion statistics for language fi",
 		);
 	}
 }

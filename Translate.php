@@ -48,7 +48,8 @@ require_once "$dir/_autoload.php";
 $wgExtensionMessagesFiles['Translate'] = "$dir/Translate.i18n.php";
 $wgExtensionMessagesFiles['FirstSteps'] = "$dir/FirstSteps.i18n.php";
 $wgExtensionMessagesFiles['PageTranslation'] = "$dir/PageTranslation.i18n.php";
-$wgExtensionMessagesFiles['TranslateGroupDescriptions'] = "$dir/TranslateGroupDescriptions.i18n.php";
+$wgExtensionMessagesFiles['TranslateGroupDescriptions'] =
+	"$dir/TranslateGroupDescriptions.i18n.php";
 $wgExtensionMessagesFiles['TranslateSearch'] = "$dir/TranslateSearch.i18n.php";
 $wgExtensionMessagesFiles['TranslateSandbox'] = "$dir/TranslateSandbox.i18n.php";
 $wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
@@ -126,8 +127,10 @@ $wgHooks['SkinTemplateNavigation'][] = 'TranslateEditAddons::addNavigationTabs';
 $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
 $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
-$wgHooks['LanguageGetTranslatedLanguageNames'][] = 'TranslateHooks::translateMessageDocumentationLanguage';
-$wgHooks['TranslateSupportedLanguages'][] = 'TranslateHooks::translateMessageDocumentationLanguage';
+$wgHooks['LanguageGetTranslatedLanguageNames'][] =
+	'TranslateHooks::translateMessageDocumentationLanguage';
+$wgHooks['TranslateSupportedLanguages'][] =
+	'TranslateHooks::translateMessageDocumentationLanguage';
 $wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
 // Prevent translations creating bogus categories
 $wgHooks['LinksUpdate'][] = 'TranslateHooks::preventCategorization';
@@ -610,8 +613,11 @@ $wgTranslateUseTux = true;
 
 /** @cond cli_support */
 if ( !defined( 'TRANSLATE_CLI' ) ) {
-	function STDOUT() {}
-	function STDERR() {}
+	function STDOUT() {
+	}
+
+	function STDERR() {
+	}
 }
 /** @endcond */
 

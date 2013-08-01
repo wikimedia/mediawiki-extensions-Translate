@@ -66,14 +66,20 @@ class SpecialMagic extends SpecialPage {
 			'<table><tr><td>' .
 				$this->msg( 'translate-page-language' )->escaped() .
 				'</td><td>' .
-				TranslateUtils::languageSelector( $this->getLanguage()->getCode(), $this->options['language'] ) .
+				TranslateUtils::languageSelector(
+					$this->getLanguage()->getCode(),
+					$this->options['language']
+				) .
 				'</td></tr><tr><td>' .
 				$this->msg( 'translate-magic-module' )->escaped() .
 				'</td><td>' .
 				$this->moduleSelector( $this->options['module'] ) .
 				'</td></tr><tr><td colspan="2">' .
 				Xml::submitButton( $this->msg( 'translate-magic-submit' )->text() ) . ' ' .
-				Xml::submitButton( $this->msg( 'translate-magic-cm-export' )->text(), array( 'name' => 'export' ) ) .
+				Xml::submitButton(
+					$this->msg( 'translate-magic-cm-export' )->text(),
+					array( 'name' => 'export' )
+				) .
 				'</td></tr></table>' .
 				Html::hidden( 'title', $this->getTitle()->getPrefixedText() )
 		);
@@ -145,7 +151,10 @@ class SpecialMagic extends SpecialPage {
 		$this->setHeaders();
 
 		$out = $this->getOutput();
-		TranslateUtils::addSpecialHelpLink( $out, '//translatewiki.net/wiki/FAQ#Special:AdvancedTranslate', true );
+		TranslateUtils::addSpecialHelpLink(
+			$out,
+			'//translatewiki.net/wiki/FAQ#Special:AdvancedTranslate', true
+		);
 
 		$out->addHTML( $this->getForm() );
 

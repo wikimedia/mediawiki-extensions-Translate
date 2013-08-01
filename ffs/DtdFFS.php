@@ -28,7 +28,8 @@ class DtdFFS extends SimpleFFS {
 		preg_match_all( ',# Author: ([^\n]+)\n,', $data, $matches );
 		$authors = array();
 
-		for ( $i = 0; $i < count( $matches[1] ); $i++ ) {
+		$count = count( $matches[1] );
+		for ( $i = 0; $i < $count; $i++ ) {
 			$authors[] = $matches[1][$i];
 		}
 
@@ -39,7 +40,8 @@ class DtdFFS extends SimpleFFS {
 
 		$messages = array();
 
-		for ( $i = 0; $i < count( $matches[1] ); $i++ ) {
+		$count = count( $matches[1] );
+		for ( $i = 0; $i < $count; $i++ ) {
 			$messages[$keys[$i]] = str_replace(
 				array( '&quot;', '&#34;', '&#39;' ),
 				array( '"', '"', "'" ),

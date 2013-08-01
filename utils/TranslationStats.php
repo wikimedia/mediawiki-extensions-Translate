@@ -28,7 +28,9 @@ class TranslationStats {
 	 * @return \array Array of key value pairs code (string)/percentage
 	 * (float) or array of codes, depending on $simple
 	 */
-	public static function getPercentageTranslated( $group, $languages, $threshold = false, $simple = false ) {
+	public static function getPercentageTranslated( $group, $languages, $threshold = false,
+		$simple = false
+	) {
 		$stats = array();
 
 		$g = MessageGroups::singleton()->getGroup( $group );

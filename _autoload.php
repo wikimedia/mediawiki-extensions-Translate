@@ -141,8 +141,10 @@ $wgAutoloadClasses['PageTranslationHooks'] = "$dir/tag/PageTranslationHooks.php"
 $wgAutoloadClasses['PageTranslationLogFormatter'] = "$dir/tag/PageTranslationLogFormatter.php";
 $wgAutoloadClasses['TranslateRenderJob'] = "$dir/tag/TranslateRenderJob.php";
 $wgAutoloadClasses['SpecialPageTranslation'] = "$dir/tag/SpecialPageTranslation.php";
-$wgAutoloadClasses['SpecialPageTranslationDeletePage'] = "$dir/tag/SpecialPageTranslationDeletePage.php";
-$wgAutoloadClasses['SpecialPageTranslationMovePage'] = "$dir/tag/SpecialPageTranslationMovePage.php";
+$wgAutoloadClasses['SpecialPageTranslationDeletePage'] =
+	"$dir/tag/SpecialPageTranslationDeletePage.php";
+$wgAutoloadClasses['SpecialPageTranslationMovePage'] =
+	"$dir/tag/SpecialPageTranslationMovePage.php";
 $wgAutoloadClasses['TPException'] = "$dir/tag/TPException.php";
 $wgAutoloadClasses['TPParse'] = "$dir/tag/TPParse.php";
 $wgAutoloadClasses['TPSection'] = "$dir/tag/TPSection.php";
@@ -234,16 +236,20 @@ $wgAutoloadClasses['CoreMessageGroup'] = "$dir/messagegroups/CoreMessageGroup.ph
 $wgAutoloadClasses['CoreMostUsedMessageGroup'] = "$dir/messagegroups/CoreMostUsedMessageGroup.php";
 $wgAutoloadClasses['FileBasedMessageGroup'] = "$dir/messagegroups/FileBasedMessageGroup.php";
 $wgAutoloadClasses['MediaWikiMessageGroup'] = "$dir/messagegroups/MediaWikiMessageGroup.php";
-$wgAutoloadClasses['MediaWikiExtensionMessageGroup'] = "$dir/messagegroups/MediaWikiExtensionMessageGroup.php";
+$wgAutoloadClasses['MediaWikiExtensionMessageGroup'] =
+	"$dir/messagegroups/MediaWikiExtensionMessageGroup.php";
 $wgAutoloadClasses['MessageGroup'] = "$dir/messagegroups/MessageGroup.php";
 $wgAutoloadClasses['MessageGroupBase'] = "$dir/messagegroups/MessageGroupBase.php";
 $wgAutoloadClasses['MessageGroupOld'] = "$dir/messagegroups/MessageGroupOld.php";
 $wgAutoloadClasses['RecentMessageGroup'] = "$dir/messagegroups/RecentMessageGroup.php";
-$wgAutoloadClasses['RecentAdditionsMessageGroup'] = "$dir/messagegroups/RecentAdditionsMessageGroup.php";
-$wgAutoloadClasses['SingleFileBasedMessageGroup'] = "$dir/messagegroups/SingleFileBasedMessageGroup.php";
+$wgAutoloadClasses['RecentAdditionsMessageGroup'] =
+	"$dir/messagegroups/RecentAdditionsMessageGroup.php";
+$wgAutoloadClasses['SingleFileBasedMessageGroup'] =
+	"$dir/messagegroups/SingleFileBasedMessageGroup.php";
 $wgAutoloadClasses['WikiMessageGroup'] = "$dir/messagegroups/WikiMessageGroup.php";
 $wgAutoloadClasses['WikiPageMessageGroup'] = "$dir/messagegroups/WikiPageMessageGroup.php";
-$wgAutoloadClasses['WorkflowStatesMessageGroup'] = "$dir/messagegroups/WorkflowStatesMessageGroup.php";
+$wgAutoloadClasses['WorkflowStatesMessageGroup'] =
+	"$dir/messagegroups/WorkflowStatesMessageGroup.php";
 /**@}*/
 
 /**
@@ -251,7 +257,8 @@ $wgAutoloadClasses['WorkflowStatesMessageGroup'] = "$dir/messagegroups/WorkflowS
  * @{
  */
 $wgAutoloadClasses['MockFileBasedMessageGroup'] = "$dir/tests/MockFileBasedMessageGroup.php";
-$wgAutoloadClasses['MockMessageCollectionForExport'] = "$dir/tests/MockMessageCollectionForExport.php";
+$wgAutoloadClasses['MockMessageCollectionForExport'] =
+	"$dir/tests/MockMessageCollectionForExport.php";
 $wgAutoloadClasses['MockSuperUser'] = "$dir/tests/MockSuperUser.php";
 $wgAutoloadClasses['MockWikiMessageGroup'] = "$dir/tests/MockWikiMessageGroup.php";
 /**@}*/
@@ -269,7 +276,8 @@ $wgAutoloadClasses['MessageDefinitionAid'] = "$dir/translationaids/MessageDefini
 $wgAutoloadClasses['SupportAid'] = "$dir/translationaids/SupportAid.php";
 $wgAutoloadClasses['TTMServerAid'] = "$dir/translationaids/TTMServerAid.php";
 $wgAutoloadClasses['TranslationAid'] = "$dir/translationaids/TranslationAid.php";
-$wgAutoloadClasses['UnsupportedTranslationAid'] = "$dir/translationaids/UnsupportedTranslationAid.php";
+$wgAutoloadClasses['UnsupportedTranslationAid'] =
+	"$dir/translationaids/UnsupportedTranslationAid.php";
 $wgAutoloadClasses['UpdatedDefinitionAid'] = "$dir/translationaids/UpdatedDefinitionAid.php";
 /**@}*/
 
@@ -281,6 +289,7 @@ $wgAutoloadClasses['ApertiumWebService'] = "$dir/webservices/ApertiumWebService.
 $wgAutoloadClasses['MicrosoftWebService'] = "$dir/webservices/MicrosoftWebService.php";
 $wgAutoloadClasses['RemoteTTMServerWebService'] = "$dir/webservices/RemoteTTMServerWebService.php";
 $wgAutoloadClasses['TranslationWebService'] = "$dir/webservices/TranslationWebService.php";
-$wgAutoloadClasses['TranslationWebServiceException'] = "$dir/webservices/TranslationWebServiceException.php";
+$wgAutoloadClasses['TranslationWebServiceException'] =
+	"$dir/webservices/TranslationWebServiceException.php";
 $wgAutoloadClasses['YandexWebService'] = "$dir/webservices/YandexWebService.php";
 /**@}*/

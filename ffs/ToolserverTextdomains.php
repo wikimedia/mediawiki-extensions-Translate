@@ -82,7 +82,17 @@ class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 				$g['optional'] = array();
 			}
 
-			$copyvars = array( 'ignored', 'optional', 'var', 'desc', 'prefix', 'mangle', 'magicfile', 'aliasfile' );
+			$copyvars = array(
+				'ignored',
+				'optional',
+				'var',
+				'desc',
+				'prefix',
+				'mangle',
+				'magicfile',
+				'aliasfile'
+			);
+
 			foreach ( $copyvars as $var ) {
 				if ( isset( $g[$var] ) ) {
 					$newgroup[$var] = $g[$var];

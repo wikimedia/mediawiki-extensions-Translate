@@ -31,7 +31,11 @@ class MessageIndexRebuildJobTest extends MediaWikiTestCase {
 
 	public function testNewJob() {
 		$job = MessageIndexRebuildJob::newJob();
-		$this->assertInstanceOf( 'MessageIndexRebuildJob', $job, 'Job of correct type is created' );
+		$this->assertInstanceOf(
+			'MessageIndexRebuildJob',
+			$job,
+			'Job of correct type is created'
+		);
 	}
 
 	public function testInsertImmediate() {
@@ -39,7 +43,10 @@ class MessageIndexRebuildJobTest extends MediaWikiTestCase {
 		$wgTranslateDelayedMessageIndexRebuild = false;
 		$job = MessageIndexRebuildJob::newJob();
 		$this->assertTrue( $job->insert(), 'Job is executed succesfully' );
-		$this->assertFalse( Job::pop_type( 'MessageIndexRebuildJob' ), 'There is no job in the JobQueue' );
+		$this->assertFalse(
+			Job::pop_type( 'MessageIndexRebuildJob' ),
+			'There is no job in the JobQueue'
+		);
 	}
 
 	public function testInsertDelayed() {
@@ -48,7 +55,11 @@ class MessageIndexRebuildJobTest extends MediaWikiTestCase {
 		$job = MessageIndexRebuildJob::newJob();
 		$this->assertTrue( $job->insert(), 'Job is inserted succesfully' );
 		$popJob = Job::pop_type( 'MessageIndexRebuildJob' );
-		$this->assertInstanceOf( 'MessageIndexRebuildJob', $popJob, 'There is a job in the JobQueue' );
+		$this->assertInstanceOf(
+			'MessageIndexRebuildJob',
+			$popJob,
+			'There is a job in the JobQueue'
+		);
 		$this->assertTrue( $popJob->run(), 'Job is executed succesfully' );
 	}
 }
