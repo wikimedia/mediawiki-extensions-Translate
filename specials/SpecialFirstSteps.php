@@ -237,7 +237,10 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			$babeltext .= "}}\n";
 
 			$article = new Article( $userpage, 0 );
-			$status = $article->doEdit( $babeltext . $request->getText( $textareaId ), $this->getTitle() );
+			$status = $article->doEdit(
+				$babeltext . $request->getText( $textareaId ),
+				$this->getTitle()
+			);
 
 			if ( $status->isOK() ) {
 				$out->addHtml( $this->getHeader( $step_message, 'done' ) );
@@ -279,9 +282,13 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$skill = new XmlSelect();
 		foreach ( explode( ',', 'N,5,4,3,2,1' ) as $level ) {
 			// Give grep a chance to find the usages:
-			// translate-fs-userpage-level-N, translate-fs-userpage-level-5, translate-fs-userpage-level-4,
-			// translate-fs-userpage-level-3, translate-fs-userpage-level-2, translate-fs-userpage-level-1
-			$skill->addOption( $this->msg( "translate-fs-userpage-level-$level" )->text(), $level );
+			// translate-fs-userpage-level-N, translate-fs-userpage-level-5,
+			// translate-fs-userpage-level-4, translate-fs-userpage-level-3,
+			// translate-fs-userpage-level-2, translate-fs-userpage-level-1
+			$skill->addOption(
+				$this->msg( "translate-fs-userpage-level-$level" )->text(),
+				$level
+			);
 		}
 
 		$lang = $this->getLanguage();
@@ -424,7 +431,9 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$step_message = 'translate-fs-email-title';
 		$out = $this->getOutput();
 
-		if ( $step && ( $step !== 'translate-fs-target-title' && $step !== 'translate-fs-permissions-title' ) ) {
+		if ( $step &&
+			( $step !== 'translate-fs-target-title' && $step !== 'translate-fs-permissions-title' )
+		) {
 			$out->addHtml( $this->getHeader( $step_message, 'inactive' ) );
 
 			return $step;

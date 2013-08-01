@@ -33,6 +33,7 @@ class PageTranslationHooks {
 				$text = $parse->getTranslationPageText( null );
 			} catch ( TPException $e ) {
 				// Show ugly preview without processed <translate> tags
+				wfDebug( 'TPException caught; expected' );
 			}
 		}
 

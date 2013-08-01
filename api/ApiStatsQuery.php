@@ -68,8 +68,10 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 
 	public function getParamDescription() {
 		return array(
-			'offset' => 'If not all stats are calculated, you will get a query-continue parameter for offset you can use to get more.',
-			'timelimit' => 'Maximum time to spend calculating missing statistics. If zero, only the cached results from the beginning are returned.',
+			'offset' => 'If not all stats are calculated, you will get a query-continue ' .
+				'parameter for offset you can use to get more.',
+			'timelimit' => 'Maximum time to spend calculating missing statistics. If ' .
+				'zero, only the cached results from the beginning are returned.',
 		);
 	}
 

@@ -68,11 +68,20 @@ class TranslateRcFilter {
 		$opts->consumeValue( 'translations' );
 		$default = $opts->getValue( 'translations' );
 
-		$label = Xml::label( wfMessage( 'translate-rc-translation-filter' )->text(), 'mw-translation-filter' );
+		$label = Xml::label(
+			wfMessage( 'translate-rc-translation-filter' )->text(),
+			'mw-translation-filter'
+		);
 		$select = new XmlSelect( 'translations', 'mw-translation-filter', $default );
-		$select->addOption( wfMessage( 'translate-rc-translation-filter-no' )->text(), 'noaction' );
+		$select->addOption(
+			wfMessage( 'translate-rc-translation-filter-no' )->text(),
+			'noaction'
+		);
 		$select->addOption( wfMessage( 'translate-rc-translation-filter-only' )->text(), 'only' );
-		$select->addOption( wfMessage( 'translate-rc-translation-filter-filter' )->text(), 'filter' );
+		$select->addOption(
+			wfMessage( 'translate-rc-translation-filter-filter' )->text(),
+			'filter'
+		);
 		$select->addOption( wfMessage( 'translate-rc-translation-filter-site' )->text(), 'site' );
 
 		$items['translations'] = array( $label, $select->getHTML() );

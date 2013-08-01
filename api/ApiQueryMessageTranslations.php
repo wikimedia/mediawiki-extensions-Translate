@@ -72,7 +72,10 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
-			$this->dieUsage( 'Title does not correspond to a translatable message', 'nomessagefortitle' );
+			$this->dieUsage(
+				'Title does not correspond to a translatable message',
+				'nomessagefortitle'
+			);
 		}
 
 		$namespace = $title->getNamespace();
@@ -140,13 +143,17 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 	public function getPossibleErrors() {
 		return array_merge( parent::getPossibleErrors(), array(
 			array( 'code' => 'invalidtitle', 'info' => 'The given title is invalid' ),
-			array( 'code' => 'nomessagefortitle', 'info' => 'Title does not correspond to a translatable message' ),
+			array(
+				'code' => 'nomessagefortitle',
+				'info' => 'Title does not correspond to a translatable message'
+			),
 		) );
 	}
 
 	protected function getExamples() {
 		return array(
-			"api.php?action=query&meta=messagetranslations&mttitle=MediaWiki:January List of translations in the wiki for MediaWiki:January",
+			"api.php?action=query&meta=messagetranslations&mttitle=MediaWiki:January " .
+				"List of translations in the wiki for MediaWiki:January",
 		);
 	}
 

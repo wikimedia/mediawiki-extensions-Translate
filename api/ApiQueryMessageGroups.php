@@ -72,7 +72,8 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			$fit = $result->addValue( array( 'query', $this->getModuleName() ), null, $a );
 			if ( !$fit ) {
 				$this->setWarning( 'Could not fit all groups in the resultset.' );
-				// Even if we're not going to give a continue, no point carrying on if the result is full
+				// Even if we're not going to give a continue, no point carrying on
+				// if the result is full
 				break;
 			}
 		}
@@ -152,7 +153,10 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			$a['workflowstates'] = $this->getWorkflowStates( $g );
 		}
 
-		wfRunHooks( 'TranslateProcessAPIMessageGroupsProperties', array( &$a, $props, $params, $g ) );
+		wfRunHooks(
+			'TranslateProcessAPIMessageGroupsProperties',
+			array( &$a, $props, $params, $g )
+		);
 
 		// Depth only applies to tree format
 		if ( $depth >= $params['depth'] && $params['format'] === 'tree' ) {
@@ -178,7 +182,8 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 	 * Get the workflow states applicable to the given message group
 	 *
 	 * @param MessageGroup $group
-	 * @return boolean|array Associative array with states as key and localized state labels as values
+	 * @return boolean|array Associative array with states as key and localized state
+	 * labels as values
 	 */
 	protected function getWorkflowStates( MessageGroup $group ) {
 		if ( MessageGroups::isDynamic( $group ) ) {
@@ -203,7 +208,8 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				}
 
 				$stateConfig[$state]['_canchange'] = $allowed;
-				$stateConfig[$state]['_name'] = $this->msg( "translate-workflow-state-$state" )->text();
+				$stateConfig[$state]['_name'] =
+					$this->msg( "translate-workflow-state-$state" )->text();
 			}
 		}
 
@@ -295,13 +301,20 @@ TEXT;
 			'label'          => ' label          - Include label of the group',
 			'description'    => ' description    - Include description of the group',
 			'class'          => ' class          - Include class name of the group',
-			'namespace'      => ' namespace      - Include namespace of the group. Not all groups belong to a single namespace.',
-			'exists'         => ' exists         - Include self-calculated existence property of the group',
+			'namespace'      =>
+				' namespace      - Include namespace of the group. Not all groups belong ' .
+					'to a single namespace.',
+			'exists'         =>
+				' exists         - Include self-calculated existence property of the group',
 			'icon'           => ' icon           - Include urls to icon of the group',
 			'priority'       => ' priority       - Include priority status like discouraged',
-			'prioritylangs'  => ' prioritylangs  - Include prefered languages. If not set, this returns false',
-			'priorityforce'  => ' priorityforce  - Include priority status - is the priority languages setting forced',
-			'workflowstates' => ' workflowstates - Include the workflow states for the message group',
+			'prioritylangs'  =>
+				' prioritylangs  - Include prefered languages. If not set, this returns false',
+			'priorityforce'  =>
+				' priorityforce  - Include priority status - is the priority languages ' .
+					'setting forced',
+			'workflowstates' =>
+				' workflowstates - Include the workflow states for the message group',
 		);
 
 		wfRunHooks( 'TranslateGetAPIMessageGroupsPropertyDescs', array( &$properties ) );
@@ -310,7 +323,8 @@ TEXT;
 	}
 
 	public function getDescription() {
-		return 'Return information about message groups. Note that uselang parameter affects the output of language dependent parts.';
+		return 'Return information about message groups. Note that uselang parameter ' .
+			'affects the output of language dependent parts.';
 	}
 
 	protected function getExamples() {
