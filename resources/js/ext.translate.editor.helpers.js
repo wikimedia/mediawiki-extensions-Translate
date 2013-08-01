@@ -61,7 +61,7 @@
 					.replace( /\/[a-z\-]+$/, '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ),
 				text: newDocumentation,
 				token: mw.user.tokens.get( 'editToken' )
-			} ).done(function ( response ) {
+			} ).done( function ( response ) {
 				var $messageDesc = translateEditor.$editor.find( '.infocolumn-block .message-desc' );
 
 				if ( response.edit.result === 'Success' ) {
@@ -80,10 +80,12 @@
 
 					translateEditor.hideDocumentationEditor();
 				} else {
-					mw.log( 'Problem saving documentation' );
+					mw.notify( 'Error saving message documentation' );
+					mw.log( 'Error saving documentation', response );
 				}
 			} ).fail( function ( errorCode, results ) {
-				mw.log( 'Error saving documentation ' + errorCode + ' ' + results.error.info );
+				mw.notify( 'Error saving message documentation' );
+				mw.log( 'Error saving documentation', errorCode, results );
 			} );
 		},
 
@@ -481,7 +483,7 @@
 				mw.translateHooks.run( 'showTranslationHelpers', result.helpers, translateEditor.$editor );
 
 			} ).fail( function ( errorCode, results ) {
-				mw.log( 'Error loading translation aids ' + errorCode + results.error.info );
+				mw.log( 'Error loading translation aids', errorCode, results );
 			} );
 		}
 	};
