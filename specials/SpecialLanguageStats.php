@@ -134,11 +134,17 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		foreach ( $this->targetValueName as $key ) {
 			$this->target = $request->getVal( $key, $this->target );
 		}
-		$this->noComplete = $request->getBool( 'suppresscomplete', $this->noComplete && !$submitted );
+		$this->noComplete = $request->getBool(
+			'suppresscomplete',
+			$this->noComplete && !$submitted
+		);
 		$this->noEmpty = $request->getBool( 'suppressempty', $this->noEmpty && !$submitted );
 
 		if ( !$this->including() ) {
-			TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Statistics_and_reporting' );
+			TranslateUtils::addSpecialHelpLink(
+				$out,
+				'Help:Extension:Translate/Statistics_and_reporting'
+			);
 			$out->addHTML( $this->getForm() );
 		}
 
@@ -146,7 +152,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$this->outputIntroduction();
 			$output = $this->getTable();
 			if ( $this->incomplete ) {
-				$out->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-langstats-incomplete' );
+				$out->wrapWikiMsg(
+					"<div class='error'>$1</div>",
+					'translate-langstats-incomplete'
+				);
 			}
 			if ( $this->nothing ) {
 				$out->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-mgs-nothing' );
@@ -170,7 +179,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 	/// Called when the target is unknown.
 	protected function invalidTarget() {
-		$this->getOutput()->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-page-no-such-language' );
+		$this->getOutput()->wrapWikiMsg(
+			"<div class='error'>$1</div>",
+			'translate-page-no-such-language'
+		);
 	}
 
 	/**
@@ -186,12 +198,19 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 		$out .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
 		$out .= Html::hidden( 'x', 'D' ); // To detect submission
 		$out .= Html::openElement( 'fieldset' );
-		$out .= Html::element( 'legend', array(), $this->msg( 'translate-language-code' )->text() );
+		$out .= Html::element(
+			'legend',
+			array(),
+			$this->msg( 'translate-language-code' )->text()
+		);
 		$out .= Html::openElement( 'table' );
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-label' ) );
-		$out .= Xml::label( $this->msg( 'translate-language-code-field-name' )->text(), 'language' );
+		$out .= Xml::label(
+			$this->msg( 'translate-language-code-field-name' )->text(),
+			'language'
+		);
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-input' ) );
 		$out .= Xml::input( 'language', 10, $this->target, array( 'id' => 'language' ) );
@@ -200,13 +219,23 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'colspan' => 2 ) );
-		$out .= Xml::checkLabel( $this->msg( 'translate-suppress-complete' )->text(), 'suppresscomplete', 'suppresscomplete', $this->noComplete );
+		$out .= Xml::checkLabel(
+			$this->msg( 'translate-suppress-complete' )->text(),
+			'suppresscomplete',
+			'suppresscomplete',
+			$this->noComplete
+		);
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::closeElement( 'tr' );
 
 		$out .= Html::openElement( 'tr' );
 		$out .= Html::openElement( 'td', array( 'colspan' => 2 ) );
-		$out .= Xml::checkLabel( $this->msg( 'translate-ls-noempty' )->text(), 'suppressempty', 'suppressempty', $this->noEmpty );
+		$out .= Xml::checkLabel(
+			$this->msg( 'translate-ls-noempty' )->text(),
+			'suppressempty',
+			'suppressempty',
+			$this->noEmpty
+		);
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::closeElement( 'tr' );
 
@@ -235,18 +264,25 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * Output something helpful to guide the confused user.
 	 */
 	protected function outputIntroduction() {
-		$languageName = TranslateUtils::getLanguageName( $this->target, $this->getLanguage()->getCode() );
+		$languageName = TranslateUtils::getLanguageName(
+			$this->target,
+			$this->getLanguage()->getCode()
+		);
+		$task = $this->getUser()->isAllowed( 'translate-messagereview' ) ?
+			'acceptqueue' :
+			'reviewall';
 		$rcInLangLink = Linker::link(
 			SpecialPage::getTitleFor( 'Translate', '!recent' ),
 			$this->msg( 'languagestats-recenttranslations' )->escaped(),
 			array(),
 			array(
-				'task' => $this->getUser()->isAllowed( 'translate-messagereview' ) ? 'acceptqueue' : 'reviewall',
+				'task' => $task,
 				'language' => $this->target
 			)
 		);
 
-		$out = $this->msg( 'languagestats-stats-for', $languageName )->rawParams( $rcInLangLink )->parseAsBlock();
+		$out = $this->msg( 'languagestats-stats-for', $languageName )->rawParams( $rcInLangLink )
+			->parseAsBlock();
 		$this->getOutput()->addHTML( $out );
 	}
 
@@ -348,7 +384,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 			$out .= Html::closeElement( 'tbody' );
 
 			$out .= Html::openElement( 'tfoot' );
-			$out .= $table->makeTotalRow( $this->msg( 'translate-languagestats-overall' ), $this->totals );
+			$out .= $table->makeTotalRow(
+				$this->msg( 'translate-languagestats-overall' ),
+				$this->totals
+			);
 			$out .= Html::closeElement( 'tfoot' );
 
 			$out .= Html::closeElement( 'table' );
@@ -403,7 +442,9 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * @param MessageGroup $parent
 	 * @return string
 	 */
-	protected function makeGroupRow( MessageGroup $group, array $cache, MessageGroup $parent = null ) {
+	protected function makeGroupRow( MessageGroup $group, array $cache,
+		MessageGroup $parent = null
+	) {
 		$groupId = $group->getId();
 
 		if ( $this->table->isBlacklisted( $groupId, $this->target ) !== null ) {

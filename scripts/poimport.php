@@ -251,7 +251,13 @@ class WikiWriter {
 
 		$article = new Article( $title, 0 );
 
-		$status = $article->doEdit( $text, 'Updating translation from gettext import', 0, false, $this->user );
+		$status = $article->doEdit(
+			$text,
+			'Updating translation from gettext import',
+			0,
+			false,
+			$this->user
+		);
 
 		if ( $status === true || ( is_object( $status ) && $status->isOK() ) ) {
 			STDOUT( "OK!", $title );

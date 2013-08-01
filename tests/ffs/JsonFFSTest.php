@@ -120,13 +120,25 @@ JSON;
 		$data = $ffs->writeIntoVariable( $collection );
 		$parsed = $ffs->readFromVariable( $data );
 
-		$this->assertEquals( array( 'Nike the bunny' ), $parsed['AUTHORS'], 'Authors are exported' );
+		$this->assertEquals(
+			array( 'Nike the bunny' ),
+			$parsed['AUTHORS'],
+			'Authors are exported'
+		);
 		$this->assertArrayHasKey( 'fuzzymsg', $parsed['MESSAGES'], 'fuzzy message is exported' );
-		$this->assertArrayHasKey( 'translatedmsg', $parsed['MESSAGES'], 'translated message is exported' );
+		$this->assertArrayHasKey(
+			'translatedmsg',
+			$parsed['MESSAGES'],
+			'translated message is exported'
+		);
 		if ( array_key_exists( 'untranslatedmsg', $parsed['MESSAGES'] ) ) {
 			$this->fail( 'Untranslated messages should not be exported' );
 		}
 
-		$this->assertEquals( 'metavalue', $parsed['METADATA']['metakey'], 'metadata is preserved' );
+		$this->assertEquals(
+			'metavalue',
+			$parsed['METADATA']['metakey'],
+			'metadata is preserved'
+		);
 	}
 }

@@ -24,7 +24,10 @@ class ApiTranslationAids extends ApiBase {
 
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
-			$this->dieUsage( 'Title does not correspond to a translatable message', 'nomessagefortitle' );
+			$this->dieUsage(
+				'Title does not correspond to a translatable message',
+				'nomessagefortitle'
+			);
 		}
 
 		if ( strval( $params['group'] ) !== '' ) {
@@ -96,7 +99,8 @@ class ApiTranslationAids extends ApiBase {
 	public function getParamDescription() {
 		return array(
 			'title' => 'Full title of a known message',
-			'group' => 'Message group the message belongs to. If empty then primary group is used.',
+			'group' => 'Message group the message belongs to. If empty then ' .
+				'primary group is used.',
 			'prop' => 'Which translation helpers to include.',
 		);
 	}
@@ -109,7 +113,10 @@ class ApiTranslationAids extends ApiBase {
 		return array_merge( parent::getPossibleErrors(), array(
 			array( 'code' => 'invalidtitle', 'info' => 'The given title is invalid' ),
 			array( 'code' => 'invalidgroup', 'info' => 'The given or guessed group is invalid' ),
-			array( 'code' => 'nomessagefortitle', 'info' => 'Title does not correspond to a translatable message' ),
+			array(
+				'code' => 'nomessagefortitle',
+				'info' => 'Title does not correspond to a translatable message'
+			),
 		) );
 	}
 

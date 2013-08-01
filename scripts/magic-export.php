@@ -89,7 +89,7 @@ class MagicExport extends Maintenance {
 				continue;
 			}
 
-			include( $inFile );
+			include $inFile;
 			switch ( $this->type ) {
 				case 'special':
 					if ( isset( $aliases ) ) {
@@ -228,10 +228,12 @@ PHP
 					$out = '';
 					switch ( $this->type ) {
 						case 'special':
-							$out .= "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$specialPageAliases['{$l}'] = array(\n";
+							$out .= "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) " .
+								"*/\n\$specialPageAliases['{$l}'] = array(\n";
 							break;
 						case 'magic':
-							$out .= "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) */\n\$magicWords['{$l}'] = array(\n";
+							$out .= "\n\n/** {$namesEn[$l]} ({$namesNative[$l]}) *" .
+								"/\n\$magicWords['{$l}'] = array(\n";
 							break;
 					}
 					foreach ( $messagesOut as $key => $translations ) {

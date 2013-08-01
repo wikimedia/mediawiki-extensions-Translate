@@ -391,7 +391,8 @@ class TranslateUtils {
 	public static function getPlaceholder() {
 		static $i = 0;
 
-		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) . dechex( mt_rand( 0, 0x7fffffff ) ) . '-' . $i++;
+		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) .
+			dechex( mt_rand( 0, 0x7fffffff ) ) . '-' . $i++;
 	}
 
 	/**

@@ -31,10 +31,14 @@
  *
  * Warnings are of format: <pre>
  * $warnings[$key][] = array(
- *    array( 'printf', $subcheck, $key, $code ), # check idenfitication
- *    'translate-checks-parameters-unknown', # check warning message
- *    array( 'PARAMS', $params ), # optional special param list, formatted later with Language::commaList()
- *    array( 'COUNT', count($params) ), # optional number of params, formatted later with Language::formatNum()
+ *    # check idenfitication
+ *    array( 'printf', $subcheck, $key, $code ),
+ *    # check warning message
+ *    'translate-checks-parameters-unknown',
+ *    # optional special param list, formatted later with Language::commaList()
+ *    array( 'PARAMS', $params ),
+ *    # optional number of params, formatted later with Language::formatNum()
+ *    array( 'COUNT', count($params) ),
  *    'Any other parameters to the message',
  * </pre>
  *

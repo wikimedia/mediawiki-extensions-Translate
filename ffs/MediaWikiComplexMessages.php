@@ -188,7 +188,9 @@ abstract class ComplexMessages {
 
 	protected function val( $group, $type, $key ) {
 		$array = $this->getGroups();
-		$subarray = @$array[$group]['data'][$type][$key];
+		wfSuppressWarnings( true );
+		$subarray = $array[$group]['data'][$type][$key];
+		wfSuppressWarnings( false );
 		if ( $this->elementsInArray ) {
 			if ( !$subarray || !count( $subarray ) ) {
 				return array();
@@ -223,7 +225,9 @@ abstract class ComplexMessages {
 		}
 
 		if ( $group['code'] ) {
-			$data = (array)@${$group['var']} [$code];
+			wfSuppressWarnings( true );
+			$data = (array) ${$group['var']} [$code];
+			wfSuppressWarnings( false );
 		} else {
 			$data = ${$group['var']};
 		}

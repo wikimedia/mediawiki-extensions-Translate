@@ -142,7 +142,9 @@ class ProcessMessageChanges extends Maintenance {
 	 * decide what actions to take on those events to bring
 	 * the state more or less in sync.
 	 */
-	protected function addMessageUpdateChanges( FileBasedMessageGroup $group, $code, $reason, $cache ) {
+	protected function addMessageUpdateChanges( FileBasedMessageGroup $group, $code,
+		$reason, $cache
+	) {
 		wfProfileIn( __METHOD__ );
 		/* This throws a warning if message definitions are not yet
 		 * cached and will read the file for definitions. */
