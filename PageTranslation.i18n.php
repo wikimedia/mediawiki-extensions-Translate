@@ -281,9 +281,10 @@ The template used by translations of the translatable page, extracted from the s
 	'tpt-saveok' => '* $1 - page title
 * $2 - count of sections which can be used with PLURAL
 * $3 - URL',
-	'tpt-offer-notify' => 'Message displayed on Special:PageTranslation after marking a page for translation when
-the marking user also has right to notify translators. Parameters:
-* $1 is a URL to Special:NotifyTranslators with the marked page preselected.',
+	'tpt-offer-notify' => 'Message displayed on [[Special:PageTranslation]] after marking a page for translation when the marking user also has right to notify translators.
+
+Parameters:
+* $1 - a URL to [[Special:NotifyTranslators]] with the marked page preselected',
 	'tpt-badsect' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].
 Parameters:
 * $1 - the identifier of the unit
@@ -730,6 +731,7 @@ Sólo les caberes versiones se puen marcar pa traducir.',
 Comprueba que tenga les etiquetes <nowiki><translate></nowiki> y una sintaxis válida.',
 	'tpt-saveok' => 'A páxina [[$1]] marcose pa traducir con {{PLURAL:$2|una unidá de traducción|$2 unidaes de traducción}}.
 La páxina agora se pue <span class="plainlinks">[$3 traducir]</span>.',
+	'tpt-offer-notify' => 'Pue <span class="plainlinks">[$1 avisar a los traductores]</span> sobre esta páxina.',
 	'tpt-badsect' => '"$1" nun ye un nome válidu pa la unidá de traducción $2.',
 	'tpt-showpage-intro' => 'Abaxo ta la llista de les unidaes de traducción nueves, esistentes y desaniciaes.
 Enantes de marcar esta versión pa traducir, comprueba que los cambios fechos nes unidaes de traducción seyan mínimos pa evitar trabayu innecesariu de los traductores.',
@@ -3468,6 +3470,7 @@ Seule la dernière version de la page peut être marquée pour être traduite.',
 Assurez-vous qu’elle contienne la balise <nowiki><translate></nowiki> et qu’elle ait une syntaxe correcte.',
 	'tpt-saveok' => 'La page [[$1]] a été marquée pour être traduite avec $2 {{PLURAL:$2|unité|unités}} de traduction.
 La page peut être <span class="plainlinks">[$3 traduite]</span> dès maintenant.',
+	'tpt-offer-notify' => 'Vous pouvez <span class="plainlinks">[$1 notifier les traducteurs]</span> au sujet de cette page.',
 	'tpt-badsect' => '« $1 » n’est pas un nom valide pour une unité de traduction $2.',
 	'tpt-showpage-intro' => 'Ci-dessous, les nouvelles traductions, celles existantes et supprimées.
 Avant de marquer ces versions pour être traduites, vérifier que les modifications aux sections sont minimisées pour éviter du travail inutile aux traducteurs.',
@@ -3793,6 +3796,7 @@ Só as últimas versións poden ser marcadas para seren traducidas.',
 Comprobe que teña as etiquetas <nowiki><translate></nowiki> e mais unha sintaxe válida.',
 	'tpt-saveok' => 'A páxina "[[$1]]" foi marcada para ser traducida, {{PLURAL:$2|cunha unidade de tradución|con $2 unidades de tradución}}.
 A páxina agora pode ser <span class="plainlinks">[$3 traducida]</span>.',
+	'tpt-offer-notify' => 'Pode <span class="plainlinks">[$1 notificar aos tradutores]</span> sobre esta páxina.',
 	'tpt-badsect' => '"$1" non é un nome válido para a unidade de tradución $2.',
 	'tpt-showpage-intro' => 'A continuación están listadas as unidades de tradución novas, existentes e borradas.
 Antes de marcar esta versión para ser traducida, comprobe que as modificacións feitas ás unidades de tradución foron minimizadas para evitarlles traballo innecesario aos tradutores.',
@@ -5100,6 +5104,7 @@ Solo le ultime versioni possono essere segnate per la traduzione.",
 Assicurarsi che abbia i tag <nowiki><translate></nowiki> e una sintassi valida.',
 	'tpt-saveok' => 'La pagina [[$1]] è stata segnalata per la traduzione con $2 {{PLURAL:$2|elemento di traduzione|elementi di traduzione}}.
 La pagina può ora essere <span class="plainlinks">[$3 tradotta]</span>.',
+	'tpt-offer-notify' => 'Puoi <span class="plainlinks">[$1 notificare ai traduttori]</span> questa pagina.',
 	'tpt-badsect' => '"$1" non è un nome valido per l\'elemento $2 della traduzione.',
 	'tpt-showpage-intro' => 'Di seguito sono elencate gli elementi di traduzione nuovi, esistenti e cancellati.
 Prima di segnare questa versione per la traduzione, controllare che i cambiamenti per gli elementi di traduzione siano ridotti al minimo per evitare lavoro superfluo ai traduttori.',
@@ -5280,6 +5285,7 @@ $messages['ja'] = array(
 <nowiki><translate></nowiki> タグが含まれていて、かつ文法的に正しいことをを確認してください。',
 	'tpt-saveok' => 'ページ [[$1]] は翻訳対象に指定されており、$2 {{PLURAL:$2|個の翻訳単位}}を含んでいます。
 このページを<span class="plainlinks">[$3 翻訳]</span>できます。',
+	'tpt-offer-notify' => 'このページについて<span class="plainlinks">[$1 翻訳者に通知]</span>できます。',
 	'tpt-badsect' => '「$1」は翻訳単位$2の名前として有効ではありません。',
 	'tpt-showpage-intro' => '以下は、新規・既存の、または削除された翻訳単位の一覧です。
 この版を翻訳対象に指定する前に、翻訳単位の変更を最小限にすることで不要な翻訳作業を回避できないか確認してください。',
@@ -5733,6 +5739,7 @@ $messages['ko'] = array(
 <nowiki><translate></nowiki> 태그가 있고 올바른 문법인지 확인하세요.',
 	'tpt-saveok' => '[[$1]] 문서는 $2 번역 단위로 번역에 대해 표시했습니다.
 문서는 지금 <span class="plainlinks">[$3 번역]</span>할 수 있습니다.',
+	'tpt-offer-notify' => '이 문서에 대해 <span class="plainlinks">[$1 번역자 알림]</span>을 받을 수 있습니다.',
 	'tpt-badsect' => '"$1"(은)는 $2 번역 유닉에 대해 올바른 이름이 아닙니다.',
 	'tpt-showpage-intro' => '다음은 새로와 기존, 삭제된 번역 단위가 나열되어 있습니다.
 번역에 대한 이 버전을 표시하기 전에 번역 단위에 대한 바뀜이 번역에 대한 불필요한 작업을 피하기 위해 최소화되어 있는지 확인하세요.',
@@ -6439,6 +6446,7 @@ $messages['mk'] = array(
 Проверете дали има ознаки <nowiki><translate></nowiki> и дали има правилна синтакса.',
 	'tpt-saveok' => 'Оваа страница [[$1]] е обележана за преведување со $2 {{PLURAL:$2|преводна единица|преводни единици}}.
 Страницата сега може да се <span class="plainlinks">[$3 преведува]</span>.',
+	'tpt-offer-notify' => 'Можете да ги <span class="plainlinks">[$1 известите преведувачите]</span> за оваа страница.',
 	'tpt-badsect' => '„$1“ е погрешно име за преводната единица $2.',
 	'tpt-showpage-intro' => 'Подолу се наведени нови, постоечки и избришани преводни единици.
 Пред да ја обележите оваа верзија за преведување, проверете дали промените во деловите се сведени на минимум со што би се избегнала непотреба работа за преведувачите.',
