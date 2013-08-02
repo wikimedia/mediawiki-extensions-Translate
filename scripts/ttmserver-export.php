@@ -28,7 +28,12 @@ class TTMServerBootstrap extends Maintenance {
 		parent::__construct();
 		$this->mDescription = 'Script to bootstrap TTMServer';
 		$this->addOption( 'threads', 'Number of threads', /*required*/false, /*has arg*/true );
-		$this->addOption( 'ttmserver', 'Server configuration identifier', /*required*/false, /*has arg*/true );
+		$this->addOption(
+			'ttmserver',
+			'Server configuration identifier',
+			/*required*/false,
+			/*has arg*/true
+		);
 		$this->setBatchSize( 500 );
 		$this->start = microtime( true );
 	}

@@ -9,7 +9,6 @@
 			window.location = $( this ).find( 'a' ).attr( 'href' );
 		} );
 
-
 		$messages.each( function () {
 			var $this = $( this );
 

@@ -42,7 +42,8 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			$authors = array();
 		} else {
 			$authors = explode( "\n", $authors );
-			for ( $i = 0; $i < count( $authors ); $i++ ) {
+			$count = count( $authors );
+			for ( $i = 0; $i < $count; $i++ ) {
 				// Each line should look like " *  - Translatorname"
 				$authors[$i] = substr( $authors[$i], 6 );
 			}
@@ -97,7 +98,8 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			 */
 			$segment = str_replace( '"+', '" +', $segment );
 			$segment = explode( '" +', $segment );
-			for ( $i = 0; $i < count( $segment ); $i++ ) {
+			$count = count( $segment );
+			for ( $i = 0; $i < $count; $i++ ) {
 				$segment[$i] = ltrim( ltrim( $segment[$i] ), '"' );
 			}
 			$segment = implode( $segment );

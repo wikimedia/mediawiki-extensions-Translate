@@ -7,7 +7,7 @@
  * @ingroup FFS
  */
 class RubyYamlFFS extends YamlFFS {
-	static $pluralWords = array(
+	protected static $pluralWords = array(
 		'zero' => 1,
 		'one' => 1,
 		'many' => 1,

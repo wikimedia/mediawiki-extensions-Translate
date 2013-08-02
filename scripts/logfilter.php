@@ -9,7 +9,12 @@
  * @file
  */
 
-$file = @$_SERVER['argv'][1];
+if( isset( $_SERVER['argv'][1] ) ) {
+	$file = $_SERVER['argv'][1];
+} else {
+	exit( "OMG\n" );
+}
+
 if ( !is_readable( $file ) ) {
 	exit( "OMG\n" );
 }
