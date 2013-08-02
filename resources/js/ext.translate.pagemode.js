@@ -117,6 +117,4 @@
 	};
 
 	$.fn.pagemode.Constructor = PageMode;
-
 }( jQuery, mediaWiki ) );
-

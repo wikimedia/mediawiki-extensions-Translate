@@ -17,8 +17,7 @@
 
 		api.post( options )
 			.done( function () { window.alert( 'Success' ); } )
-			.fail( function () { window.alert( 'Failure' ); } )
-		;
+			.fail( function () { window.alert( 'Failure' ); } );
 	}
 
 	/**
