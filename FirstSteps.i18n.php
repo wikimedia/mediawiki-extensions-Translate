@@ -3613,6 +3613,38 @@ $messages['rue'] = array(
 	'translate-fs-userpage-done' => 'Добрі зроблено! Теперь маєте сторінку хоснователя.',
 );
 
+/** Sakha (саха тыла)
+ * @author HalanTul
+ */
+$messages['sah'] = array(
+	'firststeps' => 'Бастакы хардыылар',
+	'firststeps-desc' => 'Саҥа кыттааччыларга аналлаах тылбаас сэбиргэллээх [[Special:FirstSteps|сирэй]]',
+	'translate-fs-pagetitle-done' => '- оҥоһулунна!',
+	'translate-fs-pagetitle-pending' => '- кэтэһии',
+	'translate-fs-pagetitle' => 'Саҕалыырга үөрэтэр маастар - $1',
+	'translate-fs-signup-title' => 'Бэлиэтэн',
+	'translate-fs-settings-title' => 'Туруорууларгын уларыт',
+	'translate-fs-userpage-title' => 'Бэйэҥ тус сирэйгэр бэйэҥ тускунан суруй',
+	'translate-fs-permissions-title' => 'Тылбаасчыт аатын көрдөө',
+	'translate-fs-target-title' => 'Тылбаастаан бар!',
+	'translate-fs-email-title' => 'Эл. аадырыскын бигэргэт',
+	'translate-fs-selectlanguage' => 'Тылгын тал',
+	'translate-fs-settings-planguage' => 'Сүрүн тылыҥ:',
+	'translate-fs-settings-planguage-desc' => 'Бу биикигэ сүрүн тыл диэн интерфейсиҥ тыла, бу тылга тылбаастыыгын.',
+	'translate-fs-settings-slanguage' => 'Көмө тыл $1:',
+	'translate-fs-settings-slanguage-desc' => 'Атын тылларга хайдах тылбаастаабыттарын көрөргө аналлаах.
+Ханнык тыллары билэргинэн талыаххын сөп.',
+	'translate-fs-settings-submit' => 'Туруоруулары бигэргэт',
+	'translate-fs-userpage-level-N' => 'Төрөөбүт тылым',
+	'translate-fs-userpage-level-5' => 'Бу тылтан тылбаастыыр мин идэм -',
+	'translate-fs-userpage-level-4' => 'Бу тылы олус үчүгэйдик билэбин -',
+	'translate-fs-userpage-level-3' => 'Үчүгэйдик билэбин -',
+	'translate-fs-userpage-level-2' => 'Ортотук билэбин -',
+	'translate-fs-userpage-level-1' => 'Кыратык билэбин -',
+	'translate-fs-userpage-submit' => 'Бэйэҥ тус сирэйгэр бэйэҥ тускунан суруй',
+	'translate-fs-userpage-done' => 'Бэрт! Манна тус сирэйдэнниҥ.',
+);
+
 /** Sinhala (සිංහල)
  * @author පසිඳු කාවින්ද
  * @author බිඟුවා
