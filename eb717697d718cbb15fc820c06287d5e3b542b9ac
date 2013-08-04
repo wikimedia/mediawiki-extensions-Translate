@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "898eddaf_e8367c01",
+        "filename": "scripts/logfilter.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-08-04T00:50:08Z",
+      "side": 1,
+      "message": "As an unrelated note: perhaps this script ought to be moved to the translatewiki repository as it has nothing to do with Translate extension.",
+      "revId": "eb717697d718cbb15fc820c06287d5e3b542b9ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_083c88de",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-08-04T00:50:08Z",
+      "side": 1,
+      "message": "Be careful when changing html. Whitespace can cause change in rendering. You can see it few lines below for the group of buttons.\n\nThis instance is fine though, but I would change it to\n\u003cbutton ...\u003e\n    $hideOwn\n\u003c/button\u003e",
+      "revId": "eb717697d718cbb15fc820c06287d5e3b542b9ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
