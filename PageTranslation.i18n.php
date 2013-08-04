@@ -1285,6 +1285,7 @@ $messages['be-tarask'] = array(
 Упэўніцеся, што яна ўтрымлівае тэгі <nowiki><translate></nowiki> і мае слушны сынтаксіс.',
 	'tpt-saveok' => 'Старонка «$1» была пазначаная для перакладу з $2 {{PLURAL:$2|адзінкай перакладу|адзінкамі перакладу|адзінкамі перакладу}}.
 Зараз старонка можа быць <span class="plainlinks">[$3 перакладзеная]</span>.',
+	'tpt-offer-notify' => 'Вы можаце <span class="plainlinks">[$1 паведаміць перакладчыкам]</span> пра гэтую старонку.',
 	'tpt-badsect' => '«$1» не зьяўляецца слушнай назвай для адзінкі перакладу $2.',
 	'tpt-showpage-intro' => 'Ніжэй знаходзяцца новыя, існуючыя і выдаленыя сэкцыі.
 Перад пазначэньнем гэтай вэрсіі для перакладу, праверце зьмены ў сэкцыях для таго, каб пазьбегнуць непатрэбнай працы для перакладчыкаў.',
@@ -4790,6 +4791,7 @@ Solmente le versiones le plus recente pote esser marcate pro traduction.',
 Assecura que illo contine etiquettas <nowiki><translate></nowiki> e ha un syntaxe valide.',
 	'tpt-saveok' => 'Le pagina [[$1]] ha essite marcate pro traduction con $2 {{PLURAL:$2|unitate|unitates}} de traduction.
 Le pagina pote ora esser <span class="plainlinks">[$3 traducite]</span>.',
+	'tpt-offer-notify' => 'Tu pote <span class="plainlinks">[$1 notificar le traductores]</span> sur iste pagina.',
 	'tpt-badsect' => '"$1" non es un nomine valide pro le unitate de traduction $2.',
 	'tpt-showpage-intro' => 'In basso es listate le unitates de traduction nove, existente e delite.
 Ante de marcar iste version pro traduction, verifica que le modificationes al unitates de traduction sia minimisate pro evitar labor innecessari pro traductores.',
@@ -5737,7 +5739,7 @@ $messages['ko'] = array(
 최신 버전만 번역에서 표시할 수 있습니다.',
 	'tpt-notsuitable' => '$1 문서는 번역에 적합하지 않습니다.
 <nowiki><translate></nowiki> 태그가 있고 올바른 문법인지 확인하세요.',
-	'tpt-saveok' => '[[$1]] 문서는 $2 번역 단위로 번역에 대해 표시했습니다.
+	'tpt-saveok' => '[[$1]] 문서는 $2 {{PLURAL:$2|번역 단위}}로 번역에 대해 표시했습니다.
 문서는 지금 <span class="plainlinks">[$3 번역]</span>할 수 있습니다.',
 	'tpt-offer-notify' => '이 문서에 대해 <span class="plainlinks">[$1 번역자 알림]</span>을 받을 수 있습니다.',
 	'tpt-badsect' => '"$1"(은)는 $2 번역 유닉에 대해 올바른 이름이 아닙니다.',
@@ -5755,7 +5757,7 @@ $messages['ko'] = array(
 	'tpt-discouraged-pages-title' => '없어진 문서',
 	'tpt-new-pages' => '{{PLURAL:$1|이 문서는}} 번역 태그로 글자를 포함합니다,
 하지만 현재 번역에서 표시한 {{PLURAL:$1|이 문서}}의 버전이 없습니다.',
-	'tpt-old-pages' => '번역으로 표시한 {{PLURAL:$1|이 페이지}}의 일부 버전입니다.',
+	'tpt-old-pages' => '번역으로 표시한 {{PLURAL:$1|이 문서}}의 일부 버전입니다.',
 	'tpt-other-pages' => '{{PLURAL:$1|이 문서의 오래된 버전}}은 번역에서 표시했습니다,
 하지만 최신 {{PLURAL:$1|버전}}은 번역에서 표시할 수 없었습니다.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|이 문서는}} 추가 번역에서 없어졌습니다.',
@@ -6700,6 +6702,7 @@ Hanya versi terkini boleh ditandai untuk penterjemahan.',
 Pastikan ia ada tag <nowiki><translate></nowiki> dan sintaks yang sah.',
 	'tpt-saveok' => 'Laman [[$1]] telah ditandai untuk penterjemahan dengan $2 unit penterjemahan.
 Laman ini kini boleh <span class="plainlinks">[$3 diterjemah]</span>.',
+	'tpt-offer-notify' => 'Anda boleh <span class="plainlinks">[$1 memaklumkan para penterjemah]</span> tentang halaman ini.',
 	'tpt-badsect' => '"$1" bukan nama yang sah untuk unit penterjemahan $2.',
 	'tpt-showpage-intro' => 'Di bawah tersenarainya unit-unit terjemahan yang baru, sedia ada dan terhapus.
 Sebelum menandai versi ini untuk diterjemah, pastikan supaya perubahan kepada unit terjemahan diminimumkan untuk mengelakkan beban yang tidak perlu untuk penterjemah.',
@@ -8213,8 +8216,8 @@ Texto da seção: <pre>$1</pre>', # Fuzzy
 	'log-name-pagetranslation' => 'Registro de tradução de páginas',
 	'pt-movepage-title' => 'Mover a página traduzível $1',
 	'pt-movepage-blockers' => 'A página traduzível não pode ser movida para outro nome devido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:',
-	'pt-movepage-block-base-exists' => 'A página-base de destino [[:$1]] já existe.', # Fuzzy
-	'pt-movepage-block-base-invalid' => 'A página-base de destino não tem um título válido.', # Fuzzy
+	'pt-movepage-block-base-exists' => 'Existe a página traduzível de destino "[[:$1]]".',
+	'pt-movepage-block-base-invalid' => 'O nome da página traduzível de destino não é um título válido.',
 	'pt-movepage-block-tp-exists' => 'A página de tradução de destino [[:$2]] já existe.',
 	'pt-movepage-block-tp-invalid' => 'O título da página de tradução de destino para [[:$1]] seria inválido (talvez muito longo).',
 	'pt-movepage-block-section-exists' => 'A página da seção de destino [[:$2]] já existe.', # Fuzzy
@@ -8222,8 +8225,8 @@ Texto da seção: <pre>$1</pre>', # Fuzzy
 	'pt-movepage-block-subpage-exists' => 'A subpágina de destino [[:$2]] já existe.',
 	'pt-movepage-block-subpage-invalid' => 'O título da subpágina de destino para [[:$1]] seria inválido (talvez muito longo).',
 	'pt-movepage-list-pages' => 'Lista de páginas para serem movidas',
-	'pt-movepage-list-translation' => 'Páginas de tradução', # Fuzzy
-	'pt-movepage-list-section' => 'Páginas de seção', # Fuzzy
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Página|Páginas}} de tradução',
+	'pt-movepage-list-section' => '{{PLURAL:$1|Página de unidade|Páginas de unidades}} de tradução',
 	'pt-movepage-list-other' => '{{PLURAL:$1|Outra subpágina|Outras subpáginas}}',
 	'pt-movepage-list-count' => 'Há, no total, $1 {{PLURAL:$1|página para ser movida|páginas para serem movidas}}.',
 	'pt-movepage-legend' => 'Mover página traduzível',
@@ -8245,19 +8248,19 @@ Verifique no [[Special:Log/pagetranslation|registro de tradução de páginas]] 
 	'pt-deletepage-lang-title' => 'Eliminar a página traduzível $1.',
 	'pt-deletepage-full-title' => 'Eliminando a página traduzível $1.',
 	'pt-deletepage-invalid-title' => 'A página especificada é inválida.',
-	'pt-deletepage-invalid-text' => 'A página especificada não é uma página traduzível, nem uma página traduzida.', # Fuzzy
+	'pt-deletepage-invalid-text' => 'A página especificada não é uma página traduzível nem uma página traduzida.',
 	'pt-deletepage-action-check' => 'Listar páginas para eliminar',
 	'pt-deletepage-action-perform' => 'Eliminar',
 	'pt-deletepage-action-other' => 'Alterar o destino',
 	'pt-deletepage-lang-legend' => 'Elimina a página traduzida',
 	'pt-deletepage-full-legend' => 'Elimina a página traduzível',
-	'pt-deletepage-any-legend' => 'Elimina a página traduzível ou a tradução de uma página traduzível', # Fuzzy
+	'pt-deletepage-any-legend' => 'Eliminar a página traduzível ou a página de tradução',
 	'pt-deletepage-current' => 'Nome da página:',
 	'pt-deletepage-reason' => 'Motivo:',
 	'pt-deletepage-subpages' => 'Eliminar todas as subpáginas',
 	'pt-deletepage-list-pages' => 'Lista de páginas para eliminar',
 	'pt-deletepage-list-translation' => 'Páginas de tradução',
-	'pt-deletepage-list-section' => 'Páginas de seção', # Fuzzy
+	'pt-deletepage-list-section' => 'Páginas de unidades de tradução',
 	'pt-deletepage-list-other' => 'Outras subpáginas',
 	'pt-deletepage-list-count' => 'No total, $1 {{PLURAL:$1|página|páginas}} para serem eliminadas.',
 	'pt-deletepage-full-logreason' => 'Parte da página traduzível $1.',

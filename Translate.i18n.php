@@ -9826,7 +9826,7 @@ nagu tühikute mittekasutamine või pärisnimede translitereerimine. $1',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => '{{PLURAL:$2|Sulge}} on paaritu arv:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '{{PLURAL:$2|Järgmine link on problemaatiline|Järgmised $2 linki on problemaatilised}}:
+	'translate-checks-links' => '{{PLURAL:$2|Järgmine link on probleemne|Järgmised $2 linki on probleemsed}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links-missing' => '{{PLURAL:$2|Järgmine link puudub|Järgmised $2 linki puuduvad}}:
 <strong><nowiki>$1</nowiki></strong>',
@@ -16515,6 +16515,7 @@ Utile per l'attività di revisione.",
  * @author Shirayuki
  * @author Whym
  * @author 青子守歌
+ * @author 아라
  */
 $messages['ja'] = array(
 	'translate' => '翻訳',
@@ -16616,7 +16617,7 @@ $messages['ja'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => '{{PLURAL:$2|括弧}}の個数が一致していません:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '以下の{{PLURAL:$2|リンク}}に問題点があります:
+	'translate-checks-links' => '以下の{{PLURAL:$2|リンク|&nbsp;$2 個のリンク}}に問題点があります:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links-missing' => '以下の{{PLURAL:$2|リンク|&nbsp;$2 個のリンク}}がありません:
 <strong><nowiki>$1</nowiki></strong>',
@@ -18237,11 +18238,11 @@ $1',
 	'translate-page-group' => '그룹',
 	'translate-page-language' => '언어',
 	'translate-page-limit' => '제한',
-	'translate-page-limit-option' => '페이지당 메시지 $1개 보기',
+	'translate-page-limit-option' => '페이지당 {{PLURAL:$1|메시지}} $1개',
 	'translate-submit' => '불러오기',
 	'translate-page-navigation-legend' => '둘러보기',
 	'translate-page-showing' => '메시지 $3개 중 $1 - $2을(를) 보고 있습니다.',
-	'translate-page-showing-all' => '메시지 $1개를 보고 있습니다.',
+	'translate-page-showing-all' => '{{PLURAL:$1|메시지}} $1개를 보고 있습니다.',
 	'translate-page-showing-none' => '보여 줄 메시지가 없습니다.',
 	'translate-next' => '다음 페이지',
 	'translate-prev' => '이전 페이지',
@@ -18292,7 +18293,7 @@ $1',
 	'translate-magic-cm-to-be' => '번역 후',
 	'translate-magic-cm-current' => '현재',
 	'translate-magic-cm-original' => '원래 내용',
-	'translate-magic-cm-comment' => '의견:',
+	'translate-magic-cm-comment' => '요약:',
 	'translate-magic-cm-save' => '저장',
 	'translate-magic-cm-updatedusing' => '[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]을 통해 업데이트함',
 	'translate-magic-cm-savefailed' => '저장 실패',
@@ -18308,9 +18309,9 @@ $1',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => '{{PLURAL:$2|괄호}}의 고르지 않은 개수가 있습니다:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '다음 {{PLURAL:$2|링크에}} 문제가 있습니다:
+	'translate-checks-links' => '다음 {{PLURAL:$2|링크|링크 $2개}}에 문제가 있습니다:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => '다음 {{PLURAL:$2|링크가}} 없습니다:
+	'translate-checks-links-missing' => '다음 {{PLURAL:$2|링크|링크 $2개}}가 없습니다:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => '올바른 것과 함께 다음과 같은 {{PLURAL:$2|태그}}를 바꾸세요:
 <strong><nowiki>$1</nowiki></strong>',
@@ -18320,7 +18321,7 @@ $1',
 	'translate-checks-pagename' => '이름공간이 정의로부터 바뀌었습니다',
 	'translate-checks-format' => '이 번역은 정의를 따르지 않거나 잘못된 구문입니다: $1',
 	'translate-checks-escape' => '다음의 탈출은 실수였을 수 있습니다: <strong>$1</strong>',
-	'translate-checks-parametersnotequal' => '매개 번수 개수는 {{PLURAL:$1|$1}}개이며 {{PLURAL:$2|$2}}개여야 합니다.',
+	'translate-checks-parametersnotequal' => '변수 개수는 {{PLURAL:$1|$1}}개이며 {{PLURAL:$2|$2}}개여야 합니다.',
 	'translate-checks-malformed' => '<nowiki>$1</nowiki>(은)는 잘못된 형식입니다.',
 	'translate-checks-fudforum-syntax' => '이 프로젝트에는 <nowiki>$2</nowiki> 대신에 <nowiki>$1</nowiki>(을)를 사용하십시오.',
 	'translate-pref-nonewsletter' => '이메일 뉴스레터를 보내지 않음',
@@ -18380,7 +18381,7 @@ $1',
 	'translations-summary' => '모든 번역을 보려면 메시지 이름을 아래에 입력하세요.',
 	'translate-translations-no-message' => '"$1"은 번역 가능한 메시지가 아닙니다.',
 	'translate-translations-none' => '$1로 번역된 메시지가 없습니다.',
-	'translate-translations-count' => '번역 {{PLURAL:$1|$1개}}를 찾았습니다.',
+	'translate-translations-count' => '번역 {{PLURAL:$1|한 개|$1개}}를 찾았습니다.',
 	'translate-translations-fieldset-title' => '메시지',
 	'translate-translations-messagename' => '이름:',
 	'translate-translations-project' => '프로젝트:',
@@ -18424,8 +18425,8 @@ $1',
 	'supportedlanguages-colorlegend' => '색깔 범례: 마지막 번역을 한 날짜가 $1일 전.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|번역자}}: $1',
 	'supportedlanguages-recenttranslations' => '최근 번역',
-	'supportedlanguages-count' => '언어 개수는 총 $1개입니다.',
-	'supportedlanguages-activity' => '$1: 편집 횟수 $2회 - 마지막 편집 $3일 전',
+	'supportedlanguages-count' => '총 {{PLURAL:$1|언어 수}}는 $1개입니다.',
+	'supportedlanguages-activity' => '$1: {{PLURAL:$2|편집}} $2회 - 마지막 편집 $3{{PLURAL:$3|일}} 전',
 	'translate-save' => '저장 ($1)',
 	'translate-jssti-add' => '목록에 추가',
 	'managemessagegroups' => '메시지 그룹 관리',
@@ -18449,7 +18450,7 @@ $1',
 	'translate-manage-inconsistent' => '요청에서 일치하지 않음을 발견했습니다.
 바뀜을 확인하고 다시 시도하세요.
 자세한 정보: $1.',
-	'translate-manage-toolong' => '최대 처리 시간이 $1초 초과했습니다.
+	'translate-manage-toolong' => '최대 처리 시간이 $1{{PLURAL:$1|초}} 초과했습니다.
 처리를 계속하려면 양식을 다시 전송하세요.',
 	'translate-manage-import-summary' => '바깥에서 새 버전을 가져옴',
 	'translate-manage-conflict-summary' => '바깥 소스로부터 새 버전을 가져옵니다.
@@ -18586,7 +18587,7 @@ $1',
 	'tux-editor-n-uses' => '$1{{PLURAL:$1|번}} 쓰임',
 	'tux-editor-message-desc-more' => '더 보기',
 	'tux-editor-message-desc-less' => '덜 보기',
-	'tux-editor-clear-translated' => '번역됨 숨기기',
+	'tux-editor-clear-translated' => '번역된 메시지 숨기기',
 	'tux-editor-proofreading-mode' => '검토하기',
 	'tux-editor-translate-mode' => '목록',
 	'tux-editor-proofreading-hide-own-translations' => '내 번역 숨기기',
@@ -26291,7 +26292,7 @@ $messages['pt-br'] = array(
 	'translate-taskui-view' => 'Exibir todas as mensagens',
 	'translate-taskui-untranslated' => 'Exibir mensagens ainda não traduzidas',
 	'translate-taskui-optional' => 'Exibir mensagens opcionais',
-	'translate-taskui-acceptqueue' => 'Apenas as mensagens que eu possa aceitar', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Apenas as mensagens que eu posso marcar como revisadas',
 	'translate-taskui-reviewall' => 'Revisar todas as traduções',
 	'translate-taskui-export-to-file' => 'Exportar no formato nativo',
 	'translate-taskui-export-as-po' => 'Exportar para tradução off-line',
@@ -26624,11 +26625,24 @@ Usado principalmente em tarefas de revisão.', # Fuzzy
 	'tux-editor-use-this-translation' => 'Usar como tradução',
 	'tux-editor-message-desc-more' => 'Ver mais',
 	'tux-editor-message-desc-less' => 'Ver menos',
+	'tux-editor-translate-mode' => 'Lista',
 	'tux-proofread-edit-label' => 'Editar',
 	'tux-editor-page-mode' => 'Página',
+	'tux-editor-outdated-warning-diff-link' => 'Mostrar diferenças',
+	'tux-editor-doc-editor-placeholder' => 'Documentação da mensagem',
+	'tux-editor-doc-editor-save' => 'Salvar documentação',
 	'tux-editor-doc-editor-cancel' => 'Cancelar',
 	'tux-messagetable-loading-messages' => 'Carregando {{PLURAL:$1|mensagem|mensagens}}.',
+	'tux-message-filter-result' => '{{PLURAL:$1|Encontrado $1 resultado|Encontrados $1 resultados}} para "$2"',
+	'tux-message-filter-advanced-button' => 'Pesquisa avançada',
+	'tux-message-filter-optional-messages-label' => 'Mensagens opcionais',
+	'tux-empty-list-all' => 'Este grupo de mensagens está vazio',
+	'tux-empty-list-all-guide' => 'Selecione um grupo de mensagens diferente para traduzir',
+	'tux-translate-page-no-such-group' => "'''O grupo indicado não existe.''' Selecione um grupo de mensagens diferente.",
+	'tux-empty-list-translated-guide' => 'Você pode ajudar traduzindo',
 	'tux-empty-list-translated-action' => 'Traduzir',
+	'tux-empty-show-optional-messages' => 'Exibir mensagens opcionais',
+	'tux-empty-list-other-link' => 'Exibir todas as mensagens',
 	'tux-editor-close-tooltip' => 'Fechar',
 	'tux-editor-expand-tooltip' => 'Expandir',
 	'tux-editor-message-tools-history' => 'Histórico',
