@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "898eddaf_b4e5ad3b",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-08-05T15:46:42Z",
+      "side": 1,
+      "message": "btw noticed a typo in the last word",
+      "revId": "fd0c893285f1f40ce0b867485f8e9740aaf52632",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
