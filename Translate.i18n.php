@@ -4930,7 +4930,7 @@ $messages['bn'] = array(
 	'tux-editor-page-mode' => 'পাতা',
 	'tux-editor-outdated-warning-diff-link' => 'পার্থক্য দেখাও',
 	'tux-editor-doc-editor-cancel' => 'বাতিল',
-	'tux-messagetable-more-messages' => 'আরও $1টি {{PLURAL:$1|বার্তা}}',
+	'tux-messagetable-more-messages' => 'আরও {{formatnum:$1}}টি {{PLURAL:$1|বার্তা}}',
 	'tux-messagetable-loading-messages' => '{{PLURAL:$1|বার্তা}} লোড হচ্ছে...',
 	'tux-message-filter-placeholder' => 'ফিল্টার তালিকা:',
 	'tux-message-filter-result' => '"$2" এর জন্য $1টি {{PLURAL:$1|ফলাফল}} পাওয়া গেছে',
@@ -4955,8 +4955,8 @@ $messages['bn'] = array(
 	'tux-editor-message-tools-translations' => 'সমস্ত অনুবাদসমূহ',
 	'tux-editor-loading' => 'লোডিং...',
 	'translate-search-more-languages-info' => 'আরও $1টি {{PLURAL:$1|ভাষা}}',
-	'translate-statsbar-tooltip' => '$1% অনূদিত, $2% পর্যালোচিত',
-	'translate-statsbar-tooltip-with-fuzzy' => '$1% অনূদিত, $2% পর্যালোচিত, $3% মেয়াদোত্তীর্ণ',
+	'translate-statsbar-tooltip' => '{{formatnum:$1}}% অনূদিত, {{formatnum:$2}}% পর্যালোচিত',
+	'translate-statsbar-tooltip-with-fuzzy' => '{{formatnum:$1}}% অনূদিত, {{formatnum:$2}}% পর্যালোচিত, {{formatnum:$3}}% মেয়াদোত্তীর্ণ',
 	'translate-search-more-groups-info' => 'আরও $1টি {{PLURAL:$1|দল}}',
 );
 
@@ -16617,9 +16617,9 @@ $messages['ja'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => '{{PLURAL:$2|括弧}}の個数が一致していません:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '以下の{{PLURAL:$2|リンク|&nbsp;$2 個のリンク}}に問題点があります:
+	'translate-checks-links' => '以下の{{PLURAL:$2|リンク|​&#32;$2 個のリンク}}に問題点があります:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => '以下の{{PLURAL:$2|リンク|&nbsp;$2 個のリンク}}がありません:
+	'translate-checks-links-missing' => '以下の{{PLURAL:$2|リンク|​&#32;$2 個のリンク}}がありません:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => '以下の{{PLURAL:$2|タグ}}を正しいものに書き換えてください:
 <strong><nowiki>$1</nowiki></strong>',
