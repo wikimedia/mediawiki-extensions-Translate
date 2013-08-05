@@ -221,6 +221,11 @@ class MessageGroupStats {
 		);
 	}
 
+	/**
+	 * @param $code
+	 * @param array $stats
+	 * @return array
+	 */
 	protected static function forLanguageInternal( $code, $stats = array() ) {
 		$res = self::selectRowsIdLang( null, $code );
 		$stats = self::extractResults( $res, $stats );
@@ -236,8 +241,14 @@ class MessageGroupStats {
 		return $stats;
 	}
 
+	/**
+	 * @param AggregateMessageGroup $agg
+	 * @return mixed
+	 */
 	protected static function expandAggregates( AggregateMessageGroup $agg ) {
 		$flattened = array();
+
+		/** @var MessageGroup|AggregateMessageGroup $group */
 		foreach ( $agg->getGroups() as $group ) {
 			if ( $group instanceof AggregateMessageGroup ) {
 				$flattened += self::expandAggregates( $group );
@@ -249,6 +260,11 @@ class MessageGroupStats {
 		return $flattened;
 	}
 
+	/**
+	 * @param MessageGroup $group
+	 * @param array $stats
+	 * @return array
+	 */
 	protected static function forGroupInternal( $group, $stats = array() ) {
 		$id = $group->getId();
 		$res = self::selectRowsIdLang( $id, null );
