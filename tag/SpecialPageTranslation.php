@@ -714,7 +714,7 @@ class SpecialPageTranslation extends SpecialPage {
 		Job::batchInsert( $jobs );
 
 		// Logging
-		$this->handlePriorityLanguages( $this->getRequest(), $page, $this->getUser() );
+		$this->handlePriorityLanguages( $this->getRequest(), $page );
 
 		$entry = new ManualLogEntry( 'pagetranslation', 'mark' );
 		$entry->setPerformer( $this->getUser() );
@@ -736,11 +736,8 @@ class SpecialPageTranslation extends SpecialPage {
 	/**
 	 * @param WebRequest $request
 	 * @param TranslatablePage $page
-	 * @param User $user
 	 */
-	protected function handlePriorityLanguages( WebRequest $request, TranslatablePage $page,
-		User $user
-	) {
+	protected function handlePriorityLanguages( WebRequest $request, TranslatablePage $page ) {
 		// new priority languages
 		$npLangs = rtrim( trim( $request->getVal( 'prioritylangs' ) ), ',' );
 		$npForce = $request->getCheck( 'forcelimit' ) ? 'on' : 'off';
