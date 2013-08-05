@@ -399,11 +399,10 @@ class TranslationHelpers {
 	}
 
 	/**
-	 * @param $async bool
 	 * @return string
 	 * @throws MWException
 	 */
-	public function getSuggestionBox( $async = false ) {
+	public function getSuggestionBox() {
 		global $wgTranslateTranslationServices;
 
 		$handlers = array(
