@@ -23,15 +23,16 @@ class TranslateUtils {
 	public static function title( $message, $code, $ns = NS_MEDIAWIKI ) {
 		// Cache some amount of titles for speed.
 		static $cache = array();
+		$key = $ns . ':' . $message;
 
-		if ( !isset( $cache[$message] ) ) {
-			$cache[$message] = Title::capitalize( $message );
+		if ( !isset( $key ) ) {
+			$cache[$key] = Title::capitalize( $message );
 		}
 
 		if ( $code ) {
-			return $cache[$message] . '/' . $code;
+			return $cache[$key] . '/' . $code;
 		} else {
-			return $cache[$message];
+			return $cache[$key];
 		}
 	}
 
