@@ -24,7 +24,6 @@ class YandexWebService extends TranslationWebService {
 			throw new TranslationWebServiceException( 'API key is not set' );
 		}
 
-		$service = $this->service;
 		$pairs = array();
 
 		$params = array(
