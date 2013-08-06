@@ -6253,6 +6253,7 @@ $messages['ckb'] = array(
 	'translate-taskui-untranslated' => 'پەیامە وەرنەگێردراوەکان نیشانبدە',
 	'translate-taskui-optional' => 'پەیامە دڵخوازانەکان نیشان بدە',
 	'translate-taction-translate' => 'وەرگێڕە',
+	'translate-taction-proofread' => 'پێداچوونەوە',
 	'translate-taction-lstats' => 'ئامارەکانی زمان',
 	'translate-taction-mstats' => 'ئامارەکانی گرووپی پەیام',
 	'translate-taction-export' => 'ھەناردەی بکە',
@@ -6271,6 +6272,7 @@ $messages['ckb'] = array(
 	'translate-page-description-legend' => 'زانیاری سەبارەت بە گرووپەکە',
 	'translate-page-description-hasoptional-open' => 'پەیامە دڵخوازانەکان نیشان بدە.',
 	'translate-page-edit' => 'دەستکاریی بکە',
+	'translate-ext-url' => '<hr />ماڵپەڕ: $1',
 	'translate-optional' => '(دڵخوازانه‌)',
 	'translate-edit-jsopen' => 'دەستکاریی بکە',
 	'translate-edit-title' => '«$1» دەستکاری بکە',
@@ -6342,20 +6344,30 @@ $messages['ckb'] = array(
 	'translate-untranslated' => 'وەرنەگێڕاو',
 	'translate-percentage-complete' => 'تەواوکراو',
 	'translate-ls-submit' => 'ئامارەکان پیشانبدە',
+	'translate-ls-column-group' => 'پەیامی گرووپ',
 	'translate-mgs-pagename' => 'ئامارەکانی گرووپی پەیام',
+	'translate-mgs-group' => 'پەیامی گرووپ:',
+	'translate-mgs-submit' => 'ئامارەکان پیشانبدە',
 	'translate-mgs-column-language' => 'زمان',
 	'translate-mgs-totals' => 'گشت زمانەکان بەیەکەوە',
+	'supportedlanguages' => 'زمانە پشتگیریکراوەکان',
+	'supportedlanguages-translators' => '{{PLURAL:$2|وەرگێڕ|وەرگێڕەکان}}: $1',
 	'supportedlanguages-recenttranslations' => 'دوایین وەرگێڕانەکان',
+	'supportedlanguages-count' => '$1 {{PLURAL:$1|زمان|زمانەکان}} بەگشتی.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|دەستکاری|دەستکارییەکان}} - دوایین دەستکاری $3 {{PLURAL:$3|ڕۆژ|ڕۆژ}} پێش ئێستا', # Fuzzy
 	'translate-save' => 'پاشەکەوتی بکە ($1)',
 	'translate-jssti-add' => 'زیادکردن بۆ سەر لیست',
 	'translate-manage-import-diff' => 'پەیام $1 | کردارەکان: $2',
 	'translate-manage-import-new' => 'پەیامی نوێ $1',
+	'translate-manage-action-import' => 'هاوردن',
 	'translate-js-summary' => 'پوختە:',
 	'translate-js-save' => 'پاشەکەوتی بکە',
 	'translate-js-next' => 'پاشەکەتی بکە و دواتر بکەوە',
 	'translate-js-skip' => 'باز ببە بۆ دواتر',
+	'translate-js-history' => 'مێژووی وەرگێڕان',
 	'translate-js-support' => 'پرسیار بکە',
 	'translate-gs-code' => 'کۆد',
+	'translate-gs-speakers' => 'قسەکەرەکان',
 	'translate-gs-total' => 'سەرجەم',
 	'translate-searchprofile' => 'وەرگێڕانەکان',
 	'translate-workflowstatus' => 'ڕەوش: $1',
@@ -6364,11 +6376,43 @@ $messages['ckb'] = array(
 	'translate-workflow-set-done' => 'ڕێکخرا!',
 	'translate-stats-workflow' => 'ڕەوش',
 	'translate-gethelp' => 'یارمەتی',
+	'translate-msggroupselector-projects' => 'پەیامی گرووپ',
 	'translate-msggroupselector-search-all' => 'ھەموو',
+	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|ژێرگرووپ|ژێرگرووپەکان}}',
 	'tux-tab-all' => 'ھەموو',
+	'tux-tab-untranslated' => 'وەرنەگێڕاو',
+	'tux-tab-translated' => 'وەرگێڕدرا',
+	'tux-edit' => 'دەستکاری',
+	'tux-status-translated' => 'وەرگێڕدرا',
+	'tux-status-saving' => 'دەپارێزرێت...',
+	'tux-editor-paste-original-button-label' => 'دەقی بنەڕەتی دابنێ',
+	'tux-editor-save-button-label' => 'وەرگێڕان بپارێزە',
+	'tux-editor-skip-button-label' => 'باز ببە بۆ دواتر',
+	'tux-editor-cancel-button-label' => 'ھەڵیوەشێنەوە',
 	'tux-editor-suggestions-title' => 'پێشنیارەکان',
 	'tux-editor-in-other-languages' => 'بە زمانەکانی تر',
+	'tux-warnings-more' => '{{PLURAL:$1|$1 زیاتر}}',
+	'tux-warnings-hide' => 'بیشارەوە',
+	'tux-editor-use-this-translation' => 'وەکو وەرگێڕان بەکاریبهێنە',
+	'tux-editor-message-desc-more' => 'زیاتر ببینە',
+	'tux-editor-message-desc-less' => 'کەمتر ببینە',
+	'tux-editor-proofreading-mode' => 'پێداچوونەوە',
 	'tux-editor-translate-mode' => 'پێرست',
+	'tux-proofread-edit-label' => 'دەستکاری',
+	'tux-editor-page-mode' => 'پەڕە',
+	'tux-editor-doc-editor-cancel' => 'ھەڵیوەشێنەوە',
+	'tux-messagetable-loading-messages' => 'نیشاندانی $1 {{PLURAL:$1|پەیام|پەیام}}...', # Fuzzy
+	'tux-message-filter-result' => '$1 {{PLURAL:$1|ئەنجام|ئەنجام}} دۆزرایەوە بۆ "$2"', # Fuzzy
+	'tux-message-filter-advanced-button' => 'گەڕانی پێشکەوتوو',
+	'tux-empty-list-translated' => 'پەیامە وەرنەگێڕدراوەکان',
+	'tux-empty-list-other-link' => 'گشت پەیامەکان نیشان بدە',
+	'tux-editor-close-tooltip' => 'دایخە',
+	'tux-editor-expand-tooltip' => 'بڵاویبکەوە',
+	'tux-editor-collapse-tooltip' => 'کۆیبکەوە',
+	'tux-editor-message-tools-history' => 'مێژوو',
+	'tux-editor-message-tools-translations' => 'هەموو وەرگێرانەکان',
+	'tux-editor-loading' => 'باركردن‌ ...',
+	'translate-statsbar-tooltip' => '$1% وەرگێڕدراوە, $2% پێداجوونەوەی بۆ کراوە',
 );
 
 /** Czech (česky)
@@ -26276,6 +26320,7 @@ Os estados são definidos na variável de configuração $wgTranslateWorkflowSta
 );
 
 /** Brazilian Portuguese (português do Brasil)
+ * @author Dianakc
  * @author Eduardo.mps
  * @author Giro720
  * @author Hamilton Abreu
@@ -26529,9 +26574,9 @@ Reenvie o formulário para continuar processando.',
 Verifique-a, por favor.',
 	'translate-manage-fuzzy-summary' => 'A definição da mensagem sofreu alterações',
 	'translate-manage-submit' => 'Executar',
-	'translate-manage-intro-other' => 'Encontra-se abaixo uma lista de alterações de traduções na língua $1.
-Por favor, reveja as alterações e escolha a ação que pretende para cada tradução.
-Se escolher ignorar as alterações, elas serão sobrepostas na próxima exportação.', # Fuzzy
+	'translate-manage-intro-other' => 'Abaixo está a lista de mudanças de tradução no idioma $1.
+Por favor, revise essas mudanças e escolha uma ação para cada atualização.
+Se optar por ignorar as alterações, esta ação é apenas temporária.',
 	'importtranslations' => 'Importar traduções',
 	'translate-import-from-local' => 'Enviar arquivo local:',
 	'translate-import-load' => 'Enviar arquivo',
@@ -26572,16 +26617,16 @@ Detalhes: $1',
 	'translate-search-nofilter' => 'Não filtrar',
 	'translate-messagereview-submit' => 'Marcar como revisada',
 	'translate-messagereview-progress' => 'Marcando como revisada...',
-	'translate-messagereview-failure' => 'Falha ao aprovar: $1', # Fuzzy
+	'translate-messagereview-failure' => 'Falha ao marcar como revisado: $1',
 	'translate-messagereview-done' => 'Revisada',
-	'translate-messagereview-reviews' => 'Aprovada por {{PLURAL:$1|um usuário|$1 usuários}}', # Fuzzy
-	'translate-messagereview-reviewswithyou' => 'Aceita por {{PLURAL:$1|você|$1 usuários, incluindo você}}', # Fuzzy
+	'translate-messagereview-reviews' => 'Revisada por {{PLURAL:$1|um usuário|$1 usuários}}',
+	'translate-messagereview-reviewswithyou' => 'Revisada por {{PLURAL:$1|você|$1 usuários, incluindo você}}',
 	'api-error-invalidrevision' => 'A tradução não foi encontrada',
 	'api-error-unknownmessage' => 'A mensagem não foi encontrada',
 	'api-error-fuzzymessage' => 'A tradução está sinalizada como obsoleta',
-	'api-error-owntranslation' => 'Você não pode aprovar suas próprias traduções', # Fuzzy
-	'translate-messagereview-no-fuzzy' => 'Traduções obsoletas não podem ser aceitas.', # Fuzzy
-	'translate-messagereview-no-own' => 'Você não pode aprovar suas próprias traduções.', # Fuzzy
+	'api-error-owntranslation' => 'Você não pode revisar suas próprias traduções',
+	'translate-messagereview-no-fuzzy' => 'Traduções obsoletas não podem ser revisadas.',
+	'translate-messagereview-no-own' => 'Você não pode marcar suas próprias traduções como revisadas.',
 	'translate-messagereview-doit' => 'Marcar esta tradução como revisada.',
 	'group-translate-proofr' => 'Revisores de traduções',
 	'group-translate-proofr-member' => '{{GENDER:$1|Revisor|Revisora}} de traduções',
@@ -26590,7 +26635,7 @@ Detalhes: $1',
 	'group-translate-proofr.js' => '/* O JavaScript colocado aqui afetará apenas os revisores de traduções */',
 	'log-name-translationreview' => 'Registro de revisão de traduções',
 	'log-description-translationreview' => 'Registro de todas as revisões feitas em traduções e grupos de traduções.',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|aceitou}} a tradução em $3', # Fuzzy
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|revisou}} a tradução $3',
 	'translate-workflow-state-' => '(indefinido)',
 	'translate-workflowstatus' => 'Status: $1',
 	'translate-workflow-set-do' => 'Definir',
@@ -26604,7 +26649,7 @@ Detalhes: $1',
 Os status são definidos na variável de configuração $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Traduções recentes',
 	'translate-dynagroup-recent-desc' => 'Este grupo de mensagens mostra todas as traduções recentes para este idioma.
-Usado principalmente em tarefas de revisão.', # Fuzzy
+Usado principalmente em tarefas de revisão.',
 	'translate-dynagroup-by' => 'Tradução feita {{GENDER:$1|pelo|pela|por}} $1',
 	'translate-dynagroup-byc' => 'Tradução feita {{GENDER:$1|pelo|pela|por}} $1 ($2)',
 	'translate-dynagroup-last' => 'Última modificação feita {{GENDER:$1|pelo|pela|por}} $1',
@@ -26613,19 +26658,39 @@ Usado principalmente em tarefas de revisão.', # Fuzzy
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgrupo|subgrupos}}',
 	'tux-edit' => 'Editar',
 	'tux-status-optional' => 'Opcional',
+	'tux-status-fuzzy' => 'Desatualizado',
+	'tux-status-proofread' => 'Revisado',
+	'tux-status-translated' => 'Traduzido',
 	'tux-status-saving' => 'Salvando...',
+	'tux-status-unsaved' => 'Não salvo',
 	'tux-editor-placeholder' => 'Sua tradução',
+	'tux-editor-paste-original-button-label' => 'Colar texto da fonte',
+	'tux-editor-discard-changes-button-label' => 'Descartar mudanças',
 	'tux-editor-save-button-label' => 'Salvar tradução',
+	'tux-editor-skip-button-label' => 'Pular para seguinte',
 	'tux-editor-cancel-button-label' => 'Cancelar',
 	'tux-editor-confirm-button-label' => 'Confirmar tradução',
+	'tux-editor-shortcut-info' => 'Pressione "$1" para salvar ou "$2" para pular para a seguinte',
 	'tux-editor-edit-desc' => 'Editar documentação',
 	'tux-editor-add-desc' => 'Adicionar documentação',
 	'tux-editor-suggestions-title' => 'Sugestões',
 	'tux-editor-in-other-languages' => 'Em outras línguas',
+	'tux-editor-need-more-help' => 'Precisa de mais ajuda?',
+	'tux-editor-ask-help' => 'Peça mais informações',
+	'tux-editor-tm-match' => '$1% coincidente',
+	'tux-warnings-more' => '{{PLURAL:$1|$1 mais}}',
+	'tux-warnings-hide' => 'esconder',
+	'tux-editor-save-failed' => 'O salvamento da tradução falhou: $1',
 	'tux-editor-use-this-translation' => 'Usar como tradução',
+	'tux-editor-n-uses' => 'usado $1 {{PLURAL:$1|vez|vezes}}',
 	'tux-editor-message-desc-more' => 'Ver mais',
 	'tux-editor-message-desc-less' => 'Ver menos',
+	'tux-editor-clear-translated' => 'Esconder traduzido',
+	'tux-editor-proofreading-mode' => 'Revisar',
 	'tux-editor-translate-mode' => 'Lista',
+	'tux-editor-proofreading-hide-own-translations' => 'Esconder suas traduções',
+	'tux-editor-proofreading-show-own-translations' => 'Mostrar suas traduções',
+	'tux-proofread-action-tooltip' => 'Marcar como revisado',
 	'tux-proofread-edit-label' => 'Editar',
 	'tux-editor-page-mode' => 'Página',
 	'tux-editor-outdated-warning-diff-link' => 'Mostrar diferenças',
@@ -33313,6 +33378,7 @@ $messages['ug-latn'] = array(
  * @author Ahonc
  * @author Aleksandrit
  * @author Amire80
+ * @author Andriykopanytsia
  * @author Apromix
  * @author Base
  * @author Dim Grits
@@ -33610,7 +33676,7 @@ $1',
 	'translate-messagereview-failure' => 'Помилка помітки як перевірене: $1',
 	'translate-messagereview-done' => 'Перевірено',
 	'translate-messagereview-reviews' => 'Перевірено $1 {{PLURAL:$1|користувачем|користувачами}}',
-	'translate-messagereview-reviewswithyou' => 'Ухвалено {{PLURAL:$1|Вами|$1 користувачами разом з Вами}}', # Fuzzy
+	'translate-messagereview-reviewswithyou' => 'Перевірено {{PLURAL:$1|Вами|$1 користувачами разом з Вами}}',
 	'api-error-invalidrevision' => 'Переклад не знайдено',
 	'api-error-unknownmessage' => 'Повідомлення не знайдено',
 	'api-error-fuzzymessage' => 'Переклад позначено як неточний',

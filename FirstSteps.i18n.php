@@ -4118,6 +4118,7 @@ $messages['ug-arab'] = array(
 
 /** Ukrainian (українська)
  * @author A1
+ * @author Andriykopanytsia
  * @author Base
  * @author Hypers
  * @author Olvin
@@ -4152,7 +4153,7 @@ $messages['uk'] = array(
 	'translate-fs-userpage-level-3' => 'Добре володію',
 	'translate-fs-userpage-level-2' => 'Володію на середньому рівні',
 	'translate-fs-userpage-level-1' => 'Трішки знаю',
-	'translate-fs-userpage-help' => "Будь ласка, вкажіть свої знання мов і розкажіть нам трохи про себе. Якщо ви знаєте більше, ніж п'ять мов, ви зможете додати їх пізніше.", # Fuzzy
+	'translate-fs-userpage-help' => "Будь ласка, вкажіть свої знання мов і розкажіть трохи про себе. Якщо ви знаєте більше, ніж п'ять мов, ви зможете додати їх пізніше.",
 	'translate-fs-userpage-submit' => 'Створіть Вашу сторінку користувача',
 	'translate-fs-userpage-done' => 'Чудово! Тепер у вас є сторінка користувача.',
 	'translate-fs-permissions-planguage' => 'Основна мова:',

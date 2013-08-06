@@ -331,6 +331,10 @@ Parameters:
 {{Identical|Otherlanguages}}',
 	'tpt-languages-separator' => '{{optional}}',
 	'tpt-languages-zero' => 'Tooltip for a link in &lt;language /> when language is included because it is a priority language, but translation does not yet exists. It links directly to the translation view.',
+	'tpt-tab-translate' => 'Used as label for the tab.
+
+Replaces the edit tab with translation tab for translation pages.
+{{Identical|Translate}}',
 	'tpt-target-page' => 'Message displayed when trying to edit a translatable page directly. Parameters:
 * $1 is the translatable page
 * $2 is a link to the translation tool for the translatable page.',
@@ -459,7 +463,6 @@ See also:
 * {{msg-mw|Pt-movepage-list-count}}',
 	'pt-deletepage-full-logreason' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-lang-logreason' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'tpt-tab-translate' => 'Replaces the edit tab with translation tab for translation pages.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -2289,6 +2292,7 @@ Die neueste Version kann hingegen nicht zur Übersetzung freigegeben werden.',
 	'tpt-translation-intro' => 'Diese Seite ist eine <span class="plainlinks">[$1 übersetzte Version]</span> der Seite [[$2]] und die Übersetzung ist zu $3 % abgeschlossen und aktuell.',
 	'tpt-languages-legend' => 'Andere Sprachen:',
 	'tpt-languages-zero' => 'Mit dem Übersetzen in diese Sprache anfangen',
+	'tpt-tab-translate' => 'Übersetzen',
 	'tpt-target-page' => 'Diese Seite kann nicht manuell aktualisiert werden.
 Diese Seite ist eine Übersetzung der Seite [[$1]] und die Übersetzung kann mithilfe des [$2 Übersetzungswerkzeuges] aktualisiert werden.',
 	'tpt-unknown-page' => 'Dieser Namensraum ist für das Übersetzen von Wikiseiten reserviert.
@@ -3510,6 +3514,7 @@ mais {{PLURAL:$1|sa dernière version|leur dernière version respective}} ne peu
 	'tpt-translation-intro' => 'Cette page est une <span class="plainlinks">[$1 traduction]</span> de la page [[$2]] et la traduction est complétée à $3 % et à jour.',
 	'tpt-languages-legend' => 'Autres langues :',
 	'tpt-languages-zero' => 'Commencer la traduction pour cette langue',
+	'tpt-tab-translate' => 'Traduire',
 	'tpt-target-page' => 'Cette page ne peut pas être mise à jour manuellement.
 Elle est une version traduite de [[$1]] et la traduction peut être mise à jour en utilisant [$2 l’outil de traduction].',
 	'tpt-unknown-page' => 'Cet espace de noms est réservé pour la traduction de pages.
@@ -3835,6 +3840,7 @@ Antes de marcar esta versión para ser traducida, comprobe que as modificacións
 	'tpt-translation-intro' => 'Esta páxina é unha <span class="plainlinks">[$1 versión traducida]</span> da páxina "[[$2]]" e a tradución está completada e actualizada ao $3%.',
 	'tpt-languages-legend' => 'Outras linguas:',
 	'tpt-languages-zero' => 'Comezar a tradución nesta lingua',
+	'tpt-tab-translate' => 'Traducir',
 	'tpt-target-page' => 'Esta páxina non se pode actualizar manualmente.
 Esta páxina é unha tradución da páxina "[[$1]]" e a tradución pódese actualizar usando [$2 a ferramenta de tradución].',
 	'tpt-unknown-page' => 'Este espazo de nomes está reservado para traducións de páxinas de contido.
@@ -5327,6 +5333,7 @@ $messages['ja'] = array(
 	'tpt-translation-intro' => 'このページはページ [[$2]] を「<span class="plainlinks">[$1 翻訳]</span>」したものです。翻訳は $3% 完了しています。',
 	'tpt-languages-legend' => '他言語での翻訳:',
 	'tpt-languages-zero' => 'この言語について翻訳を開始',
+	'tpt-tab-translate' => '翻訳',
 	'tpt-target-page' => 'このページは手動では更新できません。
 このページはページ [[$1]] の翻訳版であり、[$2 翻訳ツール]を使用して更新できます。',
 	'tpt-unknown-page' => 'この名前空間はコンテンツ ページの翻訳のために予約されています。
@@ -5781,6 +5788,7 @@ $messages['ko'] = array(
 	'tpt-translation-intro' => '이 문서는 [[$2]] 문서를 <span class="plainlinks">[$1 번역한 것]</span>이며 번역은 $3% 완료했습니다.',
 	'tpt-languages-legend' => '다른 언어:',
 	'tpt-languages-zero' => '이 언어에 대한 번역 시작',
+	'tpt-tab-translate' => '번역하기',
 	'tpt-target-page' => '이 문서를 수동으로 업데이트할 수 없습니다.
 이 문서는 [[$1]]의 번역이며 번역은 [$2 번역 도구]를 사용하여 업데이트할 수 있습니다.',
 	'tpt-unknown-page' => '이 이름공간은 콘텐츠 페이지 번역에 대해 예약되어 있습니다.
@@ -5801,7 +5809,7 @@ $messages['ko'] = array(
 	'aggregategroups' => '집계 그룹',
 	'tpt-aggregategroup-add' => '추가',
 	'tpt-aggregategroup-save' => '저장',
-	'tpt-aggregategroup-add-new' => '새 집계 그룹 더하기',
+	'tpt-aggregategroup-add-new' => '새 집계 그룹 추가',
 	'tpt-aggregategroup-new-name' => '이름:',
 	'tpt-aggregategroup-new-description' => '설명 (선택):',
 	'tpt-aggregategroup-remove-confirm' => '이 총 그룹을 삭제하겠습니까?',
@@ -6663,6 +6671,7 @@ $messages['mn'] = array(
 );
 
 /** Marathi (मराठी)
+ * @author V.narsikar
  * @author Vb2055
  * @author संतोष दहिवळ
  */
@@ -6672,6 +6681,7 @@ $messages['mr'] = array(
 	'action-pagetranslation' => 'manage translatable pages',
 	'tpt-desc' => 'Extension for translating content pages',
 	'tpt-section' => '$1 चे भाषांतर',
+	'tpt-tab-translate' => 'भाषांतर करा',
 );
 
 /** Malay (Bahasa Melayu)
@@ -9878,6 +9888,7 @@ $messages['ug-arab'] = array(
  * @author A1
  * @author AS
  * @author Ahonc
+ * @author Andriykopanytsia
  * @author Base
  * @author Hypers
  * @author NickK
@@ -9913,6 +9924,7 @@ $messages['uk'] = array(
 Переконайтеся, що вона містить теги <nowiki><translate></nowiki> і має вірний синтаксис.',
 	'tpt-saveok' => 'Сторінка [[$1]] була відмічена для перекладу і містить $2 {{PLURAL:$2|блок перекладу|блоки перекладу|блоків перекладу}}.
 Тепер сторінку можна <span class="plainlinks">[$3 перекладати]</span>.',
+	'tpt-offer-notify' => 'Ви можете <span class="plainlinks">[$1 повідомити перекладачів]</span> про цю сторінку.',
 	'tpt-badsect' => '«$1» не є припустимою назвою для частини перекладів $2.',
 	'tpt-showpage-intro' => "Нижче наведені нові, існуючі та видалені одиниці перекладу.
 Перед тим, які відмітити цю версію для перекладу, переконайтесь, що зміни в одиницях перекладу будуть мінімальними, щоб уникнути необов'язкової роботи для перекладачів.",
@@ -9950,6 +9962,7 @@ $messages['uk'] = array(
 	'tpt-translation-intro' => 'Ця сторінка є <span class="plainlinks">[$1 перекладом]</span> сторінки [[$2]]. Переклад виконано на $3%.',
 	'tpt-languages-legend' => 'Інші мови:',
 	'tpt-languages-zero' => 'Розпочати переклад цією мовою',
+	'tpt-tab-translate' => 'Перекласти',
 	'tpt-target-page' => 'Ця сторінка не може бути оновлена вручну.
 Це – переклад сторінки [[$1]] і його можна оновити за допомогою [$2 засобу перекладу].',
 	'tpt-unknown-page' => 'Цей простір імен зарезервовано для перекладів текстів сторінок.
@@ -10197,6 +10210,7 @@ Chỉ có các phiên bản mới nhất mới có thể đánh dấu cần dị
 Hãy đảm bảo là nó có thẻ <nowiki><translate></nowiki> và có cú pháp đúng.',
 	'tpt-saveok' => 'Trang [[$1]] đã được đánh dấu chờ dịch với $2 đơn vị dịch thuật.
 Bạn có thể <span class="plainlinks">[$3 dịch]</span> trang ngay bây giờ.',
+	'tpt-offer-notify' => 'Bạn có thể <span class="plainlinks">[$1 báo các biên dịch viên]</span> về trang này.',
 	'tpt-badsect' => '“$1” không phải là tên hợp lệ cho đơn vị dịch thuật $2.',
 	'tpt-showpage-intro' => 'Dưới đây là các đơn vị dịch thuật mới, đang tồn tại, hoặc đã bị xóa.
 Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra những thay đổi tại các đơn vị dịch thuật đã được thu gọn lại để tránh công việc không cần thiết cho biên dịch viên chưa.',
@@ -10233,6 +10247,7 @@ Trước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra nhữn
 	'tpt-translation-intro' => 'Trang này là một <span class="plainlinks">[$1 bản dịch]</span> của trang [[$2]] và bản dịch đã hoàn thành $3%.',
 	'tpt-languages-legend' => 'Ngôn ngữ khác:',
 	'tpt-languages-zero' => 'Bắt đầu bản dịch trong ngôn ngữ này',
+	'tpt-tab-translate' => 'Biên dịch',
 	'tpt-target-page' => 'Trang này không thể cập nhật bằng tay.
 Nó là một bản dịch của trang [[$1]] và có thể cập nhật bản dịch bằng cách sử dụng [$2 công cụ dịch thuật].',
 	'tpt-unknown-page' => 'Không gian tên này được dành cho các bản dịch trang nội dung.
