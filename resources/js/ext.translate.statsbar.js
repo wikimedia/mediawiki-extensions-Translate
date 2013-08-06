@@ -184,4 +184,3 @@
 
 	mw.translate = mw.translate || {};
 } ( mediaWiki, jQuery ) );
-

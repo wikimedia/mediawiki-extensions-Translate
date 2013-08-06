@@ -247,7 +247,7 @@ class SpecialTranslate extends SpecialPage {
 			/* str  */'taction'  => 'translate',
 			/* str  */'task'     => $isBeta ? 'custom' : 'untranslated',
 			/* str  */'language' => $this->getLanguage()->getCode(),
-			/* str  */'group'    => $isBeta ? '!additions': '',
+			/* str  */'group'    => $isBeta ? '!additions' : '',
 			/* str  */'offset'   => '', // Used to be int, now str
 			/* int  */'limit'    => $isBeta ? 0 : 100,
 			/* int  */'optional' => '0',

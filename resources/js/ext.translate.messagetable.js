@@ -826,4 +826,3 @@
 		return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, '\\$&' );
 	}
 }( jQuery, mediaWiki ) );
-

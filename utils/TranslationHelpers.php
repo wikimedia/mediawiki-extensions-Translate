@@ -853,9 +853,9 @@ class TranslationHelpers {
 			&& $title->isSpecialPage()
 			&& ( $alias === 'Translate' );
 
-		$formattedChecks = $tux
-			? FormatJson::encode( array() )
-			: Html::element( 'div', array( 'class' => 'mw-translate-messagechecks' ) );
+		$formattedChecks = $tux ?
+			FormatJson::encode( array() ) :
+			Html::element( 'div', array( 'class' => 'mw-translate-messagechecks' ) );
 
 		$page = $this->handle->getKey();
 		$translation = $this->getTranslation();
