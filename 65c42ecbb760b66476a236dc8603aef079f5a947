@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "898eddaf_8cca656e",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-08-06T02:49:19Z",
+      "side": 1,
+      "message": "Not sure how this automatically inferred documentation helps.",
+      "revId": "65c42ecbb760b66476a236dc8603aef079f5a947",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
