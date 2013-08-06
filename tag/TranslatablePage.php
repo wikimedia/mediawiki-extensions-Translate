@@ -560,18 +560,20 @@ class TranslatablePage {
 	}
 
 	/**
-	 * @param bool|string $code
-	 * @return string
+	 * Produces a link to translation view of a translation page.
+	 * @param string $code MediaWiki language code
+	 * @return string Relative url
 	 */
 	public function getTranslationUrl( $code = false ) {
-		$translate = SpecialPage::getTitleFor( 'Translate' );
 		$params = array(
 			'group' => $this->getMessageGroupId(),
-			'task' => 'view',
+			'action' => 'page',
+			'filter' => '',
 			'language' => $code,
 		);
 
-		return $translate->getFullURL( $params );
+		$translate = SpecialPage::getTitleFor( 'Translate' );
+		return $translate->getLocalURL( $params );
 	}
 
 	public function getMarkedRevs() {
