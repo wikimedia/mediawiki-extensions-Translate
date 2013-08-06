@@ -412,3 +412,14 @@ $wgResourceModules['jquery.textchange'] = array(
 $wgResourceModules['jquery.ui.position.custom'] = array(
 	'scripts' => 'resources/js/jquery.ui.position.js',
 ) + $resourcePaths;
+
+$wgHooks['ResourceLoaderTestModules'][] =
+	// Dependencies must be arrays here
+	function ( array &$modules ) use ( $resourcePaths ) {
+		$modules['qunit']['ext.translate.parsers.test'] = array(
+			'scripts' => array( 'tests/qunit/ext.translate.parsers.test.js' ),
+			'dependencies' => array( 'ext.translate.parsers' ),
+		) + $resourcePaths;
+
+		return true;
+	};

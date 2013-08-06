@@ -19,6 +19,9 @@
 		 * @return {String} Formatted text in html
 		 */
 		formatMessageGently: function ( text, key ) {
+			var externals,
+				protocols = mw.config.get( 'wgUrlProtocols' );
+
 			// Try to keep simple.
 			text = $( '<div>' ).text( text ).html();
 
@@ -56,8 +59,9 @@
 				return $( '<div>' ).append( link ).html();
 			} );
 
-			text = text.replace( /\[([^ ]+) (.+?)\]/g, function ( match, p1, p2 ) {
-				var link = $( '<a>' ).html( p2 ).prop( 'href', p1 );
+			externals = new RegExp( '\\[((' + protocols  + ')[^ ]+) (.+?)\\]', 'g');
+			text = text.replace( externals, function ( match, p1, p2, p3 ) {
+				var link = $( '<a>' ).html( p3 ).prop( 'href', p1 );
 				return $( '<div>' ).append( link ).html();
 			} );
 
