@@ -18367,14 +18367,14 @@ $1',
 	'translate-checks-escape' => '다음의 탈출은 실수였을 수 있습니다: <strong>$1</strong>',
 	'translate-checks-parametersnotequal' => '변수 개수는 {{PLURAL:$1|$1}}개이며 {{PLURAL:$2|$2}}개여야 합니다.',
 	'translate-checks-malformed' => '<nowiki>$1</nowiki>(은)는 잘못된 형식입니다.',
-	'translate-checks-fudforum-syntax' => '이 프로젝트에는 <nowiki>$2</nowiki> 대신에 <nowiki>$1</nowiki>(을)를 사용하십시오.',
+	'translate-checks-fudforum-syntax' => '이 프로젝트에는 <nowiki>$2</nowiki> 대신에 <nowiki>$1</nowiki>(을)를 사용하세요.',
 	'translate-pref-nonewsletter' => '이메일 뉴스레터를 보내지 않음',
 	'translate-pref-editassistlang' => '보조 언어:',
 	'prefs-translate' => '번역 옵션',
 	'translate-pref-editassistlang-help' => '쉼표로 언어 코드 목록을 구분하세요.
 번역할 때는 해당 언어로 메시지 번역이 보입니다.
 언어의 기본 목록은 내 언어에 따라 달라집니다.',
-	'translate-pref-editassistlang-bad' => '목록에서 잘못된 언어 코드:
+	'translate-pref-editassistlang-bad' => '목록에서 잘못된 언어 코드가 있습니다:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => '향상된 번역용 편집기 (자바스크립트)',
 	'right-translate' => '시스템 메시지를 번역',
@@ -18510,7 +18510,7 @@ $1',
 	'translate-import-err-dl-failed' => '파일을 읽을 수 없습니다:
 $1',
 	'translate-import-err-ul-failed' => '파일 올리기에 실패했습니다.',
-	'translate-import-err-invalid-title' => '파일 이름 <nowiki>$1</nowiki>이 올바르지 않습니다.',
+	'translate-import-err-invalid-title' => '<nowiki>$1</nowiki> 파일 이름이 올바르지 않습니다.',
 	'translate-import-err-no-such-file' => '<nowiki>$1</nowiki> 파일이 없거나 이 위키에 올려지지 않았습니다.',
 	'translate-import-err-stale-group' => '이 파일에 들어있는 메시지 그룹이 존재하지 않습니다.',
 	'translate-import-err-no-headers' => '파일이 번역 확장 기능에 쓰이는 올바른 형식의 Gettext 파일이 아닙니다:
@@ -27815,6 +27815,7 @@ Le state sò definite jndr\'à variabbile de configurazione $wgTranslateWorkflow
 	'tux-proofread-translated-by-self' => 'Tradotte da te',
 	'tux-empty-list-all' => 'Stu gruppe de messàgge jè vacande',
 	'tux-empty-list-all-guide' => "Scacchie 'n'otre gruppe de messàgge da traducere",
+	'tux-empty-list-translated' => 'Nisciune messàgge tradotte',
 	'tux-empty-list-translated-guide' => "Ne puè dà 'na màne a traducere",
 	'tux-empty-list-translated-action' => 'Traduce',
 	'tux-empty-no-messages-to-display' => 'Nisciune messàgge da vedè.',

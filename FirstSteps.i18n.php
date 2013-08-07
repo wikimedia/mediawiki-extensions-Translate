@@ -2502,6 +2502,7 @@ $messages['ku-latn'] = array(
 /** Luxembourgish (Lëtzebuergesch)
  * @author Les Meloures
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'firststeps' => 'Éischt Schrëtt',
@@ -2514,7 +2515,7 @@ $messages['lb'] = array(
 	'translate-fs-userpage-title' => 'Maacht Är Benotzersäit',
 	'translate-fs-permissions-title' => 'Iwwersetzerrechter ufroen',
 	'translate-fs-target-title' => 'Ufänke mat iwwersetzen!',
-	'translate-fs-email-title' => 'Confirméiert är E-Mailadress',
+	'translate-fs-email-title' => 'Confirméiert är E-Mail-Adress',
 	'translate-fs-intro' => "Wëllkomm beim {{SITENAME}}-Startassistent.
 Iech gëtt gewisen, Déi Dir Schrëtt fir Schrëtt zum Iwwersetzer gitt.
 Um Schluss kënnt Dir all ''Interface-Messagen'' vun de vun {{SITENAME}} ënnerstetzte Projeten iwwersetzen.",
@@ -2555,7 +2556,7 @@ Onglécklecherweis kann et virkommen datt d'Dokumentatioun heiansdo net à jour 
 Wann et eppes gëtt vun deem Dir mengt datt Dir e maache kënnt, awer Dir fannt net eraus wéi, dann zéckt net fir eis op der [[Support|Support-Säit]] ze froen.
 
 Dir kënnt och aner Iwwersetzer vun der selwechter Sprooch op der [[Portal_talk:\$1|Diskussiounssäit]] vun [[Portal:\$1|Ärem Sproocheportal]] kontaktéieren. Wann dir et net scho gemaach hutt, [[Special:Preferences|ännert d'Sprooch vum Interface an déi Sprooch an déi Dir iwwersetze wëllt]], esou datt d'Wiki Iech déi wichtegst Linke weise kann.",
-	'translate-fs-email-text' => 'Gitt w.e.g. Är E-Mailadress an [[Special:Preferences|Ären Astellungen]] un a confirméiert se vun der E-Mail aus déi Dir geschéckt kritt.
+	'translate-fs-email-text' => 'Gitt w.e.g. Är E-Mail-Adress an [[Special:Preferences|Ären Astellungen]] un a confirméiert se vun der E-Mail aus déi Dir geschéckt kritt.
 
 Dat erlaabt et anere Benotzer fir Iech per Mail ze kontaktéieren.
 Dir kritt och Newsletteren awer héchstens eng pro Mount.

@@ -772,6 +772,7 @@ Enantes de marcar esta versión pa traducir, comprueba que los cambios fechos ne
 	'tpt-translation-intro' => 'Esta páxina ye una <span class="plainlinks">[$1 versión traducida]</span> de la páxina «[[$2]]» y la traducción ta completada nún $3%.',
 	'tpt-languages-legend' => 'Otres llingües:',
 	'tpt-languages-zero' => 'Principiar la traducción nesta llingua',
+	'tpt-tab-translate' => 'Traducir',
 	'tpt-target-page' => 'Esta páxina nun se pue anovar manualmente.
 Esta páxina ye una traducción de la páxina [[$1]] y la traducción pue anovase usando [$2 la ferramienta de traducción].',
 	'tpt-unknown-page' => 'Esti espaciu de nomes ta acutáu pa les traducciones de les páxines de conteníu.
@@ -6496,6 +6497,7 @@ $messages['mk'] = array(
 	'tpt-languages-legend' => 'Други јазици:',
 	'tpt-languages-separator' => '&#160;•&#160;',
 	'tpt-languages-zero' => 'Почнете превод на овој јазик',
+	'tpt-tab-translate' => 'Преведи',
 	'tpt-target-page' => 'Оваа страница не може да се обнови рачно.
 Страницава е превод на страницата [[$1]], а преводот може да се обнови само со помош на [$2 алатката за преведување].',
 	'tpt-unknown-page' => 'Овој именски простор е резервиран за преводи на содржински страници.
@@ -6681,6 +6683,7 @@ $messages['mr'] = array(
 	'action-pagetranslation' => 'manage translatable pages',
 	'tpt-desc' => 'Extension for translating content pages',
 	'tpt-section' => '$1 चे भाषांतर',
+	'tpt-offer-notify' => 'आपण या पानाबाबत <span class="plainlinks">[$1 भाषांतरकारांना सूचना देउ शकता]</span>',
 	'tpt-tab-translate' => 'भाषांतर करा',
 );
 
