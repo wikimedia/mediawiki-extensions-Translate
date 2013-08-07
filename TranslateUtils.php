@@ -16,7 +16,7 @@ class TranslateUtils {
 	 * Does quick normalisation of message name so that in can be looked from the
 	 * database.
 	 * @param string $message Name of the message
-	 * @param string $code Language code in lower case and with dash as delimieter
+	 * @param string $code Language code in lower case and with dash as delimiter
 	 * @param int $ns Namespace constant
 	 * @return string The normalised title as a string.
 	 */
@@ -25,7 +25,7 @@ class TranslateUtils {
 		static $cache = array();
 		$key = $ns . ':' . $message;
 
-		if ( !isset( $key ) ) {
+		if ( !isset( $cache[$key] ) ) {
 			$cache[$key] = Title::capitalize( $message );
 		}
 
