@@ -16,6 +16,23 @@
       "revId": "fd0c893285f1f40ce0b867485f8e9740aaf52632",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898eddaf_e005a8c5",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-08-07T06:18:36Z",
+      "side": 1,
+      "message": "Should have been $cache[$key]. Fixed in https://gerrit.wikimedia.org/r/78008",
+      "revId": "fd0c893285f1f40ce0b867485f8e9740aaf52632",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
