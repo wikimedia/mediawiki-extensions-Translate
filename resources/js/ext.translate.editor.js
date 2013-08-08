@@ -92,6 +92,8 @@
 			.remove()
 			.end()
 			.children().removeClass( 'hide' );
+			this.dirty = false;
+			mw.translate.dirty = false;
 		},
 
 		/**
@@ -461,8 +463,6 @@
 				 * - mw.translate.dirty: "you have unchanged edits" warning
 				 */
 				if ( original === current ) {
-					translateEditor.dirty = false;
-					mw.translate.dirty = false;
 					translateEditor.markUnunsaved();
 				} else {
 					translateEditor.dirty = true;
@@ -519,8 +519,7 @@
 							// Restore the translation
 							$textarea
 								.focus()
-								.val( originalTranslation )
-								.trigger( 'input' );
+								.val( originalTranslation );
 
 							// and go back to hiding.
 							$discardChangesButton.addClass( 'hide' );
