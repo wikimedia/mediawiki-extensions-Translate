@@ -50,7 +50,7 @@
 	font-size: 16px;
 	padding: 5px 5px 30px 5px;
 	height: 100px;
-	min-height: 100px;
+	min-height: 150px;
 	overflow-y: auto;
 	position: relative;
 	z-index: 100;
