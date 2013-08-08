@@ -2071,6 +2071,7 @@ Kun den seneste version kan markeres for oversættelse.',
 Sørg for at den har <nowiki><translate></nowiki>-tags og en gyldig syntaks.',
 	'tpt-saveok' => 'Siden [[$1]] er blevet markeret til oversættelse med $2 {{PLURAL:$2|oversættelsesenhed|oversættelsesenheder}}.
 Siden kan nu <span class="plainlinks">[$3 oversættes]</span>.',
+	'tpt-offer-notify' => 'Du kan <span class="plainlinks">[$1 underrette oversættere]</span> om denne side.',
 	'tpt-badsect' => '"$1" er ikke et gyldig navn for oversættelsesenhed $2.',
 	'tpt-showpage-intro' => 'Herunder listes der nye, eksisterende og slettede oversættelsesenheder.
 Før denne version markeres til oversættelse, skal du kontrollere, at ændringerne i oversættelsesenhederne er minimeret for at undgå at give oversætterne unødigt arbejde.',
@@ -2108,6 +2109,7 @@ men {{PLURAL:$1|den seneste version|de seneste versioner}} kan ikke mærkes til 
 	'tpt-translation-intro' => 'Denne side er en <span class="plainlinks">[$1 oversat version]</span> af siden [[$2]], og oversættelsen er $3 % komplet.',
 	'tpt-languages-legend' => 'Andre sprog:',
 	'tpt-languages-zero' => 'Begynd på oversættelsen til dette sprog',
+	'tpt-tab-translate' => 'Oversæt',
 	'tpt-target-page' => 'Denne side kan ikke opdateres manuelt.
 Siden er en oversættelse af siden [[$1]] og oversættelsen kan opdateres ved at bruge [$2 oversættelsesværktøjet].',
 	'tpt-unknown-page' => 'Dette navnerum er reserveret til oversættelser af indholdssider.
@@ -6610,6 +6612,7 @@ $messages['mk'] = array(
 );
 
 /** Malayalam (മലയാളം)
+ * @author Kavya Manohar
  * @author Praveenp
  * @author Santhosh.thottingal
  */
@@ -6630,6 +6633,7 @@ $messages['ml'] = array(
 	'tpt-translation-intro' => 'ഈ താൾ [[$2]] എന്ന താളിന്റെ <span class="plainlinks">[$1 പരിഭാഷ]</span> ആണ്, പരിഭാഷ $3% പൂർണ്ണമാണ്.',
 	'tpt-languages-legend' => 'മറ്റു ഭാഷകൾ:',
 	'tpt-languages-zero' => 'ഈ ഭാഷയിൽ പരിഭാഷ തുടങ്ങുക',
+	'tpt-tab-translate' => 'പരിഭാഷപ്പെടുത്തുക',
 	'tpt-target-page' => 'ഈ താൾ താങ്കൾക്ക് പുതുക്കാൻ കഴിയില്ല.
 ഈ താൾ [[$1]] എന്ന താളിന്റെ പരിഭാഷയാണ്, പരിഭാഷ പുതുക്കാൻ [$2 പരിഭാഷാ ഉപകരണം] ഉപയോഗിക്കുക.',
 	'tpt-discouraged-language-reason' => 'കാരണം: $1',
