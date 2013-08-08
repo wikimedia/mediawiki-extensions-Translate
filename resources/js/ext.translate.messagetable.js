@@ -252,7 +252,9 @@
 						.append(
 							$( '<a>' )
 								.attr( {
-									'title': mw.msg( 'translate-edit-title', message.key )
+									title: mw.msg( 'translate-edit-title', message.key ),
+									href: ( new mw.Uri( mw.util.wikiGetlink( message.title ) ) )
+										.extend( { action: 'edit' } )
 								} )
 								.text( mw.msg( 'tux-edit' ) )
 						)
