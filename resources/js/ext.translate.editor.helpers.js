@@ -225,30 +225,19 @@
 					.addClass( 'row in-other-language' )
 					.append(
 						$( '<div>' )
-						.addClass( 'row in-other-language-top' )
-						.append(
-							$( '<div>' )
-								.addClass( 'nine columns' )
-								.attr( {
-									lang: translation.language,
-									dir: translationDir
-								} )
-								.text( translation.value ),
-							$( '<div>' )
-								.addClass( 'three columns language text-right' )
-								.attr( {
-									lang: translation.language,
-									dir: translationDir
-								} )
-								.text( $.uls.data.getAutonym( translation.language ) )
-						),
+							.addClass( 'nine columns' )
+							.attr( {
+								lang: translation.language,
+								dir: translationDir
+							} )
+							.text( translation.value ),
 						$( '<div>' )
-						.addClass( 'row in-other-language-bottom' )
-						.append(
-							$( '<a>' )
-								.addClass( 'nine columns use-this-translation' )
-								.text( mw.msg( 'tux-editor-use-this-translation' ) )
-						)
+							.addClass( 'three columns language text-right' )
+							.attr( {
+								lang: translation.language,
+								dir: translationDir
+							} )
+							.text( $.uls.data.getAutonym( translation.language ) )
 					);
 
 				$otherLanguage.on( 'click',
@@ -316,24 +305,17 @@
 					.addClass( 'row tm-suggestion' )
 					.append(
 						$( '<div>' )
-							.addClass( 'row tm-suggestion-top' )
-							.append(
-								$( '<div>' )
-									.addClass( 'nine columns suggestiontext' )
-									.text( translation.target ),
-								$( '<div>' )
-									.addClass( 'three columns quality text-right' )
-									.text( mw.msg( 'tux-editor-tm-match',
-										Math.round( translation.quality * 100 ) ) )
-							),
+							.addClass( 'nine columns suggestiontext' )
+							.text( translation.target ),
 						$( '<div>' )
-							.addClass( 'row tm-suggestion-bottom' )
+							.addClass( 'three columns quality text-right' )
+							.text( mw.msg( 'tux-editor-tm-match',
+								Math.round( translation.quality * 100 ) ) ),
+						$( '<div>' )
+							.addClass( 'row text-right' )
 							.append(
 								$( '<a>' )
-									.addClass( 'nine columns use-this-translation' )
-									.text( mw.msg( 'tux-editor-use-this-translation' ) ),
-								$( '<a>' )
-									.addClass( 'three columns n-uses text-right' )
+									.addClass( 'n-uses' )
 									.data( 'n', 1 )
 							)
 					);
@@ -376,22 +358,11 @@
 					.addClass( 'row tm-suggestion' )
 					.append(
 						$( '<div>' )
-							.addClass( 'row tm-suggestion-top' )
-							.append(
-								$( '<div>' )
-									.addClass( 'nine columns suggestiontext end' )
-									.text( translation.target )
-							),
+							.addClass( 'nine columns suggestiontext' )
+							.text( translation.target ),
 						$( '<div>' )
-							.addClass( 'row tm-suggestion-bottom' )
-							.append(
-								$( '<a>' )
-									.addClass( 'nine columns use-this-translation' )
-									.text( mw.msg( 'tux-editor-use-this-translation' ) ),
-								$( '<span>' )
-									.addClass( 'three columns service text-right' )
-									.text( translation.service )
-							)
+							.addClass( 'three columns text-right service' )
+							.text( translation.service )
 					);
 
 				$translation.on( 'click',
