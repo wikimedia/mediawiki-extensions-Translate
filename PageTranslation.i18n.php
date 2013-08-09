@@ -6192,6 +6192,7 @@ awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
 	'tpt-translation-intro' => 'Dës Säit ass eng <span class="plainlinks">[$1 iwwersate Versioun]</span> vun der Säit [[$2]] an d\'Iwweersetzung ass zu $3 % ofgeschloss an aktuell.',
 	'tpt-languages-legend' => 'aner Sproochen:',
 	'tpt-languages-zero' => 'Iwwersetzung fir dës Sprooch ufänken',
+	'tpt-tab-translate' => 'Iwwersetzen',
 	'tpt-target-page' => "Dës Säit kann net manuell aktualiséiert ginn.
 Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungs-Fonctioun] aktulaiséiert ginn.",
 	'tpt-unknown-page' => "Dëse Nummraum ass fir d'Iwwersetze vu Säitemat Inhalt reservéiert.
@@ -10498,6 +10499,7 @@ $messages['yi'] = array(
  * @author Li3939108
  * @author Liangent
  * @author Linforest
+ * @author Liuxinyu970226
  * @author Mys 721tx
  * @author PhiLiP
  * @author Shirayuki
@@ -10533,6 +10535,7 @@ $messages['zh-hans'] = array(
 请确保它具有 <nowiki><translate></nowiki> 标记，并具有有效的语法。',
 	'tpt-saveok' => '[[$1]]页面已被标记将进行翻译，一共$2个翻译单位。
 本页面现已可以<span class="plainlinks">[$3 翻译]</span>。',
+	'tpt-offer-notify' => '您可以<span class="plainlinks">[$1 通告关于此页面的翻译]</span>。',
 	'tpt-badsect' => '“$1”对于$2翻译单位不是有效的名称。',
 	'tpt-showpage-intro' => '以下列出新创、现存及已删除的翻译单元。
 将此版本标记进行翻译之前，请检查来确定该部分极少受修改，以便翻译员避免得到多余的工作。',
@@ -10571,6 +10574,7 @@ $messages['zh-hans'] = array(
 	'tpt-translation-intro' => '本页是页面[[$2]]的<span class="plainlinks">[$1 翻译版本]</span>，翻译工作已完成$3%。',
 	'tpt-languages-legend' => '其他语言：',
 	'tpt-languages-zero' => '开始这种语言的翻译',
+	'tpt-tab-translate' => '翻译',
 	'tpt-target-page' => '本页面无法手动更新。
 本页面是[[$1]]页面的翻译版，可以使用[$2 翻译工具]来更新该翻译。',
 	'tpt-unknown-page' => '此命名空间是保留给内容页面翻译。
@@ -10619,6 +10623,11 @@ $messages['zh-hans'] = array(
 	'logentry-pagetranslation-deletelnok' => '$1删除属于翻译页面$4的$3{{GENDER:$2|失败}}',
 	'logentry-pagetranslation-encourage' => '$1{{GENDER:$2|支持}}$3的翻译',
 	'logentry-pagetranslation-discourage' => '$1{{GENDER:$2|不支持}}$3的翻译',
+	'logentry-pagetranslation-prioritylanguages-unset' => '$1已从翻译的页面$3的优先语言中被{{GENDER:$2|移除}}',
+	'logentry-pagetranslation-prioritylanguages' => '$1{{GENDER:$2|设置}}了此翻译页面的优先语言从$3到$5',
+	'logentry-pagetranslation-prioritylanguages-force' => '$1认为$3到$5对此翻译页面的贡献{{GENDER:$2|很有限}}',
+	'logentry-pagetranslation-associate' => '$1{{GENDER:$2|添加}}了翻译页面$3至信息组$4',
+	'logentry-pagetranslation-dissociate' => '$1已在信息组$4的翻译页面$3中{{GENDER:$2|移除}}',
 	'pt-movepage-title' => '移动可翻译页面$1',
 	'pt-movepage-blockers' => '可翻译页面因下列$1错误无法移动至新名称：',
 	'pt-movepage-block-base-exists' => '可翻译的目标页面“[[:$1]]”已存在。',

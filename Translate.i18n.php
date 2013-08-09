@@ -6283,7 +6283,7 @@ $messages['ckb'] = array(
 	'translate-edit-warnings' => 'ئاگادارییەکان سەبارەت بە وەرگێڕانی ناتەواو',
 	'translate-edit-tmmatch' => '$1% یەکسانی',
 	'translate-edit-tab-list' => 'لیستی پەیام',
-	'translate-magic-module' => 'جۆر:',
+	'translate-magic-module' => 'مۆدیوول:',
 	'translate-magic-submit' => 'بەدەستی بهێنە',
 	'translate-magic-cm-export' => 'هەناردن',
 	'translate-magic-nothing-to-export' => 'هیچ شتێک نیە بۆ هەناردن.',
@@ -15494,6 +15494,7 @@ Es utile principalmente pro le revision de traductiones.',
  * @author Anakmalaysia
  * @author Bennylin
  * @author Farras
+ * @author Ilham151096
  * @author Irwangatot
  * @author IvanLanin
  * @author Iwan Novirion
@@ -15506,14 +15507,22 @@ Es utile principalmente pro le revision de traductiones.',
 $messages['id'] = array(
 	'translate' => 'Terjemahan',
 	'translate-desc' => '[[Special:Translate|Halaman istimewa]] untuk menerjemahkan MediaWiki',
+	'translate-taskui-view' => 'Tampilkan semua pesan',
+	'translate-taskui-untranslated' => 'Tampilkan pesan yang belum diterjemahkan',
+	'translate-taskui-reviewall' => 'Tinjau semua terjemahan',
+	'translate-taskui-export-to-file' => 'Ekspor dalam format asli',
+	'translate-taskui-export-as-po' => 'Ekspor untuk terjemahan luring',
 	'translate-taction-translate' => 'Terjemahkan',
-	'translate-taction-proofread' => 'Pengujian baca', # Fuzzy
+	'translate-taction-proofread' => 'Tinjau',
+	'translate-taction-lstats' => 'Statistik bahasa',
+	'translate-taction-mstats' => 'Statistik kelompok pesan',
 	'translate-taction-export' => 'Ekspor',
 	'translate-page-no-such-language' => 'Bahasa yang dipilih tak valid.',
 	'translate-page-no-such-group' => 'Grup yang dipilih tak valid.',
 	'translate-page-disabled' => "Penerjemahan dalam bahasa ini telah dinon-aktifkan. Alasan:
 
 ''$1''",
+	'translate-language-disabled' => 'Terjemahan ke bahasa ini dinonaktifkan.',
 	'translate-page-settings-legend' => 'Pengaturan',
 	'translate-page-group' => 'Kelompok',
 	'translate-page-language' => 'Bahasa',
@@ -15543,11 +15552,14 @@ $messages['id'] = array(
 	'translate-edit-committed' => 'Terjemahan terkini yang ada di perangkat lunak',
 	'translate-edit-warnings' => 'Peringatan mengenai terjemahan yang tak lengkap',
 	'translate-edit-tmsugs' => 'Saran dari memori terjemahan',
+	'translate-edit-tmmatch-source' => 'Teks sumber terjemahan: $1',
 	'translate-edit-tmmatch' => '$1% sesuai',
 	'translate-use-suggestion' => 'Ganti terjemahan saat ini dengan saran ini.',
 	'translate-edit-tab-prev' => '<<<',
 	'translate-edit-tab-next' => '>>>',
 	'translate-edit-tab-list' => 'Daftar pesan',
+	'translate-edit-nopermission' => 'Anda memerlukan izin untuk menerjemahkan pesan.',
+	'translate-edit-askpermission' => 'Meminta izin',
 	'translate-magic-pagename' => 'Perluasan terjemahan MediaWiki',
 	'translate-magic-help' => 'Anda dapat menerjemahkan alias untuk halaman istimewa, kata-kata magis, dan ruang-ruang nama.
 
@@ -15604,7 +15616,7 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Tingkatkan penyunting terjemahan (JavaScript)',
 	'right-translate' => 'Menyunting menggunakan antarmuka penerjemahan',
-	'right-translate-manage' => 'Mengelola kelompok terjemahan', # Fuzzy
+	'right-translate-manage' => 'Kelola pesan kelompok',
 	'right-translate-import' => 'Mengimpor terjemahan luring',
 	'translate-rc-translation-filter' => 'Filter terjemahan:',
 	'translate-rc-translation-filter-no' => 'Tidak difilter',
@@ -15659,6 +15671,7 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-language-code' => 'Kode bahasa',
 	'translate-language-code-field-name' => 'Kode bahasa:',
 	'translate-suppress-complete' => 'Sembunyikan grup yang telah diterjemahkan sepenuhnya',
+	'translate-ls-noempty' => 'Sembunyikan grup yang belum diterjemahkan sepenuhnya',
 	'translate-language' => 'Bahasa',
 	'translate-total' => 'Pesan',
 	'translate-untranslated' => 'Belum diterjemahkan',
@@ -15699,7 +15712,7 @@ Mohon kirimkan kembali formulir untuk melanjutkan proses.',
 	'translate-manage-import-summary' => 'Impor versi baru dari sumber luar',
 	'translate-manage-conflict-summary' => 'Mengimpor versi baru dari sumber luar.
 Silakan diperiksa.',
-	'translate-manage-fuzzy-summary' => 'Definisi telah berubah', # Fuzzy
+	'translate-manage-fuzzy-summary' => 'Definisi pesan telah berubah',
 	'translate-manage-submit' => 'Jalankan',
 	'translate-manage-intro-other' => 'Di bawah ini adalah daftar perubahan terjemahan dalam bahasa $1.
 Silakan tinjau perubahan-perubahan ini dan pilihlah aksi yang ingin Anda lakukan untuk setiap terjemahan.
@@ -15741,19 +15754,19 @@ Detail: $1",
 	'translate-searchprofile-tooltip' => 'Cari dari semua terjemahan',
 	'translate-search-languagefilter' => 'Saring menurut bahasa:',
 	'translate-search-nofilter' => 'Tanpa penyaringan',
-	'translate-messagereview-submit' => 'Terima', # Fuzzy
-	'translate-messagereview-progress' => 'Sedang menerima...', # Fuzzy
-	'translate-messagereview-failure' => 'Sedang menerima... gagal: $1', # Fuzzy
-	'translate-messagereview-done' => 'Diterima', # Fuzzy
+	'translate-messagereview-submit' => 'Tandai sudah ditinjau',
+	'translate-messagereview-progress' => 'Menandai sudah ditinjau...',
+	'translate-messagereview-failure' => 'Gagal menandai sudah tertinjau: $1',
+	'translate-messagereview-done' => 'Tertinjau',
 	'api-error-invalidrevision' => 'Terjemahan tidak ditemukan',
 	'api-error-unknownmessage' => 'Pesan tidak ditemukan',
-	'api-error-owntranslation' => 'Anda tidak dapat menerima terjemahan sendiri', # Fuzzy
+	'api-error-owntranslation' => 'Anda tidak dapat menandai terjemahan Anda sendiri tertinjau',
 	'group-translate-proofr-member' => '{{GENDER:$1|peninjau terjemahan}}',
 	'group-translate-proofr.css' => '/* CSS placed here will affect translation reviewers only */',
 	'group-translate-proofr.js' => '/* JS placed here will affect translation reviewer only */',
 	'translate-gethelp' => 'Bantuan',
 	'translate-msggroupselector-search-all' => 'Semua',
-	'tux-languageselector' => 'Bahasa', # Fuzzy
+	'tux-languageselector' => 'Terjemahkan ke',
 	'tux-tab-all' => 'Semua',
 	'tux-edit' => 'Sunting',
 	'tux-status-optional' => 'Opsional',
@@ -35689,6 +35702,7 @@ $messages['yue'] = array(
  * @author Jimmy xu wrk
  * @author Li3939108
  * @author Liangent
+ * @author Liuxinyu970226
  * @author Mark85296341
  * @author Mys 721tx
  * @author PhiLiP
@@ -35717,7 +35731,7 @@ $messages['zh-hans'] = array(
 	'translate-taction-lstats' => '语言统计',
 	'translate-taction-mstats' => '信息组统计',
 	'translate-taction-export' => '导出',
-	'translate-taction-disabled' => '该操作在本wiki停用。',
+	'translate-taction-disabled' => '该操作在本维基停用。',
 	'translate-page-no-such-language' => '指定语言无效。',
 	'translate-page-no-such-group' => '指定信息组无效。',
 	'translate-page-disabled' => "本信息组该语言的翻译已经停用。原因：
@@ -35732,12 +35746,12 @@ $messages['zh-hans'] = array(
 	'translate-submit' => '获取',
 	'translate-page-navigation-legend' => '导航',
 	'translate-page-showing' => '显示第$1条至第$2条信息，共$3个信息。',
-	'translate-page-showing-all' => '共显示$1条信息。',
+	'translate-page-showing-all' => '显示$1条信息。',
 	'translate-page-showing-none' => '没有可以显示的信息。',
 	'translate-next' => '下一页',
 	'translate-prev' => '上一页',
 	'translate-page-description-legend' => '关于本信息组的信息',
-	'translate-page-description-hasoptional' => '本信息组包含可选信息。可选信息应该只在你的语言有特殊需要，如不使用空格或音译合适名称时才被翻译。$1',
+	'translate-page-description-hasoptional' => '本信息组包含可选信息。可选信息应该只在您的语言有特殊需要，如不使用空格或音译合适名称时才被翻译。$1',
 	'translate-page-description-hasoptional-open' => '显示可选信息。',
 	'translate-page-edit' => '编辑',
 	'translate-ext-url' => '<hr />网站：$1',
@@ -35761,13 +35775,13 @@ $messages['zh-hans'] = array(
 	'translate-edit-nopermission' => '你需要权限以翻译信息。',
 	'translate-edit-askpermission' => '请求权限',
 	'translate-magic-pagename' => '扩展的MediaWiki翻译',
-	'translate-magic-help' => '你可以翻译特殊页面别名、魔术字和名字空间名称。
+	'translate-magic-help' => '您可以翻译特殊页面别名、魔术字和名字空间名称。
 
 特殊页面别名和魔术字可以有多个翻译。多个翻译请用半角逗号（,）分隔。名字空间只能有一个翻译。
 
 翻译项目讨论名字空间<code>$1 talk</code>可能有些复杂。<code>$1</code>会被替换为项目名称（例如<code>{{ns:project_talk}}</code>）。如果不更改网站名称时不能用你的语言形成有效的表达，请在[[Support]]联系我们。
 
-你需要成为译者以保存更改。在点击下面的保存按钮之前，更改不会被保存。',
+您需要成为译者以保存更改。在点击下面的保存按钮之前，更改不会被保存。',
 	'translate-magic-module' => '模块：',
 	'translate-magic-submit' => '获取',
 	'translate-magic-cm-export' => '导出',
