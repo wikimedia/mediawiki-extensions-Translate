@@ -16,6 +16,9 @@
  */
 class YandexWebService extends TranslationWebService {
 	protected function mapCode( $code ) {
+		if ( $code === 'be-tarask' ) {
+			$code = 'be';
+		}
 		return $code;
 	}
 
