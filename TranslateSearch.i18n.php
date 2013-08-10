@@ -737,6 +737,16 @@ $messages['ru'] = array(
 	'tux-sst-prev' => 'Предыдущие результаты',
 );
 
+/** Slovak (slovenčina)
+ * @author Sudo77(new)
+ */
+$messages['sk'] = array(
+	'tux-sst-search' => 'Hľadať',
+	'tux-sst-facet-language' => 'Jazyky',
+	'tux-sst-next' => 'Ďalšie výsledky',
+	'tux-sst-prev' => 'Predchádzajúce výsledky',
+);
+
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Милан Јелисавчић
  */

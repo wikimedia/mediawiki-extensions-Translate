@@ -20774,6 +20774,7 @@ $messages['lzz'] = array(
  * @author Jagwar
  */
 $messages['mg'] = array(
+	'translate-edit-tab-list' => 'Lisitry ny hafatra',
 	'right-translate' => 'Manova ny interface fandikana',
 	'right-translate-manage' => 'Mitantana ny gropy fandikana', # Fuzzy
 	'right-translate-import' => 'Mampiditra ny fandikana na offline aza',
@@ -27695,7 +27696,9 @@ Le messàgge opzione avessera sulamende essere tradotte quanne 'a lènga toje t�
 	'translate-manage-import-new' => 'Messàgge nuève $1',
 	'translate-manage-import-deleted' => 'Messàgge scangellate $1',
 	'translate-manage-action-import' => "'Mborte",
+	'translate-manage-action-conflict' => "'Mborte e mitte da revedè",
 	'translate-manage-action-ignore' => 'Ignore',
+	'translate-manage-action-fuzzy' => "'Mborte e mitte le traduziune da revedè",
 	'translate-manage-nochanges' => "Non ge stonne cangiaminde jndr'à le definiziune de le messàgge jndr'à stu gruppe.",
 	'translate-manage-submit' => 'Esegue',
 	'importtranslations' => "'Mborte le traduziune",
@@ -27736,6 +27739,8 @@ $1",
 	'translate-messagereview-reviewswithyou' => 'Reviste da {{PLURAL:$1|te|$1 utinde cu te}}',
 	'api-error-invalidrevision' => 'Traduzione none acchiate',
 	'api-error-unknownmessage' => 'Messàgge none acchiate',
+	'api-error-fuzzymessage' => 'Traduzione signate cumme da revedè',
+	'api-error-owntranslation' => "Tu non ge puè signà 'a traduziona toje cumme reviste",
 	'group-translate-proofr' => 'Revisitature de le traduziune',
 	'group-translate-proofr-member' => '{{GENDER:$1|revisitature de le traduziune}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Revisitature de le traduziune',

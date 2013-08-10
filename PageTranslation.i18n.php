@@ -1327,6 +1327,7 @@ $messages['be-tarask'] = array(
 	'tpt-translation-intro' => 'Гэтая старонка — <span class="plainlinks">[$1 перакладзеная вэрсія]</span> старонкі [[$2]]. Пераклад завершаны на $3%.',
 	'tpt-languages-legend' => 'Іншыя мовы:',
 	'tpt-languages-zero' => 'Пачаць пераклад на гэтую мову',
+	'tpt-tab-translate' => 'Перакладаць',
 	'tpt-target-page' => 'Гэта старонка ня можа быць абноўлена ўручную.
 Гэта старонка зьяўляецца перакладам старонкі [[$1]], пераклад можа быць абноўлены з выкарыстаньнем [$2 інструмэнта перакладу].',
 	'tpt-unknown-page' => 'Гэта прастора назваў зарэзэрваваная для перакладаў старонак зьместу.
@@ -6761,6 +6762,7 @@ tetapi {{PLURAL:$1|versi|versi-versi}} terkini tidak boleh ditandai untuk diterj
 	'tpt-languages-legend' => 'Bahasa lain:',
 	'tpt-languages-separator' => '&#160;•&#160;',
 	'tpt-languages-zero' => 'Mulakan terjemahan dalam bahasa ini',
+	'tpt-tab-translate' => 'Terjemah',
 	'tpt-target-page' => 'Laman ini tidak boleh dikemaskini secara manual.
 Laman ini merupakan terjemahan laman [[$1]], dan terjemahannya boleh dikemas kini dengan menggunakan [$2 alatan penterjemahan].',
 	'tpt-unknown-page' => 'Ruang nama ini ditempah untuk penterjemahan laman kandungan.
