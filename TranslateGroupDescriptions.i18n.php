@@ -1564,6 +1564,7 @@ $messages['lb'] = array(
 	'translate-group-desc-wikimedia-mobile' => 'Zesummegesate Grupp vu Message fir déi mobil Applikatioune fir Wikimedia Projeten',
 	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]] ass eng App fir Android an iOS fir op Wikimedia Commons ze navigéieren a Fichieren eropzelueden',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] ass eng Mobil Applikatioun fir beim [[:meta:Wiki Loves Monuments|Projet "Wiki Loves Monuments"]] matzemaachen',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] ass e richtege kollaborativen Editeur an Echtzäit',
 );
 
 /** Lithuanian (lietuvių)

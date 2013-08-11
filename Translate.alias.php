@@ -177,6 +177,21 @@ $specialPageAliases['bxr'] = array(
 	'MyLanguage' => array( 'Минии_хэлэн' ),
 );
 
+/** Min Dong Chinese (Mìng-dĕ̤ng-ngṳ̄) */
+$specialPageAliases['cdo'] = array(
+	'Translate' => array( '翻譯' ),
+	'Magic' => array( '高級翻譯' ),
+	'TranslationStats' => array( '翻譯統計' ),
+	'LanguageStats' => array( '語言統計' ),
+	'MessageGroupStats' => array( '信息組統計' ),
+	'PageTranslation' => array( '頁面翻譯' ),
+	'ImportTranslations' => array( '導底翻譯' ),
+	'ManageMessageGroups' => array( '管理信息組' ),
+	'FirstSteps' => array( '頭蜀步' ),
+	'SupportedLanguages' => array( '支持其語言' ),
+	'MyLanguage' => array( '我其語言' ),
+);
+
 /** Chechen (нохчийн) */
 $specialPageAliases['ce'] = array(
 	'Translate' => array( 'Гоч_де' ),
