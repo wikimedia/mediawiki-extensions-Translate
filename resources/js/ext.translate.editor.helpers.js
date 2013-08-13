@@ -225,7 +225,7 @@
 					.addClass( 'row in-other-language' )
 					.append(
 						$( '<div>' )
-							.addClass( 'nine columns' )
+							.addClass( 'nine columns suggestiontext' )
 							.attr( {
 								lang: translation.language,
 								dir: translationDir
