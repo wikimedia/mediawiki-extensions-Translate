@@ -1467,6 +1467,7 @@ $messages['bg'] = array(
 );
 
 /** Bengali (বাংলা)
+ * @author Aftab1995
  * @author Bellayet
  */
 $messages['bn'] = array(
@@ -1482,6 +1483,7 @@ $messages['bn'] = array(
 	'tpt-aggregategroup-add' => 'যোগ',
 	'tpt-aggregategroup-save' => 'সংরক্ষণ',
 	'tpt-aggregategroup-new-name' => 'নাম:',
+	'tpt-aggregategroup-new-description' => 'বিবরণ (ঐচ্ছিক):',
 	'pt-movepage-current' => 'বর্তমান নাম:',
 	'pt-movepage-new' => 'নতুন নাম:',
 	'pt-movepage-reason' => 'কারণ:',
@@ -6388,9 +6390,12 @@ $messages['ltg'] = array(
 $messages['lv'] = array(
 	'tpt-template' => 'Lapas veidne',
 	'tpt-templatediff' => 'Lapas veidne tika izmainīta.',
+	'tpt-nosuchpage' => 'Lapa $1 nepastāv',
 	'tpt-select-prioritylangs-reason' => 'Iemesls:',
+	'tpt-sections-prioritylangs' => 'Prioritārās valodas',
 	'translate-tag-translate-link-desc' => 'Tulkot šo lapu',
 	'tpt-languages-legend' => 'Citas valodas:',
+	'tpt-tab-translate' => 'Tulkot',
 	'tpt-aggregategroup-add' => 'Pievienot',
 	'tpt-aggregategroup-save' => 'Saglabāt',
 	'tpt-aggregategroup-new-name' => 'Nosaukums:',
@@ -6407,6 +6412,12 @@ $messages['lv'] = array(
 	'pt-movepage-action-perform' => 'Nepārvietot',
 	'pt-movepage-action-other' => 'Mainīt mērķi',
 	'pt-movepage-logreason' => 'Daļa no tulkojamas lapas $1.',
+	'pt-deletepage-current' => 'Lapas nosaukums:',
+	'pt-deletepage-reason' => 'Iemesls:',
+	'pt-deletepage-subpages' => 'Dzēst visas apakšlapas',
+	'pt-deletepage-list-pages' => 'Dzēšamo lapu saraksts',
+	'pt-deletepage-list-translation' => 'Tulkojuma lapas',
+	'pt-deletepage-list-other' => 'Citas apakšlapas',
 );
 
 /** Literary Chinese (文言)

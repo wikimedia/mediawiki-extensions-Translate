@@ -2610,6 +2610,7 @@ $messages['lv'] = array(
 	'firststeps' => 'Pirmie soļi',
 	'translate-fs-selectlanguage' => 'Izvēlēties valodu',
 	'translate-fs-settings-planguage' => 'Galvenā valoda:',
+	'translate-fs-userpage-submit' => 'Izveidojiet savu lietotāja lapu',
 );
 
 /** Literary Chinese (文言)

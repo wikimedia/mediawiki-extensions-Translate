@@ -317,6 +317,20 @@ $messages['uk'] = array(
 Будь ласка, перейдіть на $2 і зробіть ще декілька перекладів.',
 );
 
+/** Vietnamese (Tiếng Việt)
+ * @author Minh Nguyen
+ */
+$messages['vi'] = array(
+	'translatesandbox' => 'Quản lý chỗ thử biên dịch',
+	'tsb-filter-pending' => 'Yêu cầu đang chờ',
+	'tsb-reminder-title-generic' => 'Hoàn thành lời giới thiệu của bạn để trở thành một biên dịch viên xác minh',
+	'tsb-reminder-content-generic' => 'Xin chào $1,
+
+Cám ơn bạn đã tham gia {{SITENAME}}. Sau khi bạn dịch các bản dịch kiểm tra, các bảo quản viên sẽ sớm cấp quyền biên dịch đầy đủ cho bạn.
+
+Xin vui lòng trở lại $2 để dịch tiếp.',
+);
+
 /** Traditional Chinese (中文（繁體）‎)
  * @author Simon Shek
  */
