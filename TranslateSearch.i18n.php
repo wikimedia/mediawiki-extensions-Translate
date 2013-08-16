@@ -625,7 +625,7 @@ $messages['nn'] = array(
  */
 $messages['oc'] = array(
 	'searchtranslations' => 'Recèrca de traduccions',
-	'tux-sst-edit' => 'Modificar lo messatge', # Fuzzy
+	'tux-sst-edit' => 'Modificar la traduccion',
 	'tux-sst-search' => 'Recercar',
 	'tux-sst-facet-language' => 'Lengas',
 	'tux-sst-facet-group' => 'Gropes de messatge',

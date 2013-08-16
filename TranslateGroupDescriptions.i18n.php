@@ -800,6 +800,29 @@ $messages['fi'] = array(
 	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS-viestiryhmä]]',
 );
 
+/** Faroese (føroyskt)
+ * @author EileenSanda
+ */
+$messages['fo'] = array(
+	'translategroupdescriptions-desc' => 'Bólkaboð frágreiðing viðvíkjandi vørum sum virka við [http://mediawiki.org/wiki/Extension:Translate Translate] víðkanini',
+	'translate-group-desc-nodesc' => 'Ongin frágreiðing er tøk fyri henda bólkin av boðum',
+	'translate-group-desc-mediawikicore' => 'Hesin boðbólkur inniheldur boðini ið verða nýtt í verandi alfa versjón av [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Hesin boðbólkur inniheldur [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 oftast brúktu boð] í [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawikiextensions' => 'Meta boðbólkur sum inniheldur øll boð til stuðlaðar víðkanir til [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-collection' => 'Meta boðbólkur sum inniheldur øll boð viðvíkjandi MediaWiki víðkanini [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-translatablepages' => 'Allar síður ið kunnu týðast',
+	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] er ein net-baseraður ritbúnaður til kjakforum',
+	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] er eitt tól at leggja út fílur til Wikimedia Commons og onnur Wikimedia verkætlanir',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] er ein tænasta sum vísir rutur til gongutúrar, súkkling, fjallasúkkling og rulluskoyting kring heimin. Hon nýtur GNU GPL lisensin',
+	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] er ført fyri skjótt at finna høvundarnar av einum parti av einari síðu í einari Wikimedia wiki',
+	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] gevur eina offline versjón, sum bert er við teksti, av Wikipediu á einari mobilari eind',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]] er ein app til Android ella iOS fyti at leggja út og brovsa Wikimedia Commons',
+	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] er ein mobil og teldil app uppá tvørs, sum ger tað lættari at lesa og luttaka aktivt á Wikipediu',
+	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] er ein mobil og teldil app uppá tvørs, sum ger tað lættari at lesa og luttaka aktivt á Wikisource',
+	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] er ein mobil og teldil app uppá tvørs, sum ger tað lættari at lesa og luttaka aktivt á Wiktionary',
+	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] er ein mobil app, sum ger tað lættari at geva sítt íkast til [[:meta:Wiki Loves Monuments|Wiki Loves Monuments verkætlanina]]',
+);
+
 /** French (français)
  * @author Crochet.david
  * @author DavidL

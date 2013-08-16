@@ -7404,7 +7404,7 @@ La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marca
 	'tpt-aggregategroup-add' => 'Apondre',
 	'tpt-aggregategroup-save' => 'Enregistrar',
 	'tpt-aggregategroup-new-name' => 'Nom :',
-	'pt-movepage-list-translation' => 'Paginas de traduccion', # Fuzzy
+	'pt-movepage-list-translation' => '{{PLURAL:$1|pagina|paginas}} de traduccion',
 	'pt-movepage-new' => 'Nom novèl :',
 	'pt-movepage-reason' => 'Motiu :',
 	'pt-movepage-action-perform' => 'Tornar nomenar',
