@@ -274,9 +274,9 @@ $messages['roa-tara'] = array(
 	'tsb-reminder-title-generic' => "Comblete 'a 'ndroduziona toje pe devendà 'nu traduttore verificate",
 	'tsb-reminder-content-generic' => "Cià $1,
 
-Tu t'è reggistrate da picche sus a {{SITENAME}}. A fà angore quacche otre passe pe sbloccà 'a traduziona libbere e le aiutande de traduziune extra.
+Grazie ca tè reggistrate sus a {{SITENAME}}. Ce tu comblete 'u test de traduziune, l'amministrsature ponne darte le privilegge pe l'accesse 'a traduzione comblete.
 
-Pe piacere tràse jndr'à $2 e fà angore quacche otre traduzione.", # Fuzzy
+Pe piacere avìne jndr'à $2 e fà angore quacche otre traduzione.",
 );
 
 /** Swedish (svenska)
