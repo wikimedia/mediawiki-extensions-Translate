@@ -4240,6 +4240,7 @@ $messages['he'] = array(
 	'tpt-translation-intro' => 'הדף הזה הוא <span class="plainlinks">[$1 גרסה מתורגמת]</span> של הדף [[$2]] והתרגום שלם ב־$3%.',
 	'tpt-languages-legend' => 'שפות אחרות:',
 	'tpt-languages-zero' => 'להתחיל לתרגום לשפה הזאת',
+	'tpt-tab-translate' => 'תרגום',
 	'tpt-target-page' => 'לא ניתן לעדכן דף זה ידנית.
 דף זה הוא תרגום של הדף [[$1]] וניתן לעדכן את התרגום באמצעות [$2 כלי התרגום].',
 	'tpt-unknown-page' => 'מרחב שם זה שמור לצורך תרגומי דפי התוכן.
@@ -5733,7 +5734,7 @@ $messages['ko'] = array(
 	'pagetranslation' => '문서 번역',
 	'right-pagetranslation' => '번역에 대한 문서의 버전 표시',
 	'action-pagetranslation' => '번역 가능한 문서 관리',
-	'tpt-desc' => '번역 콘텐츠 문서를 위한 확장 기능',
+	'tpt-desc' => '내용 문서를 번역하기 위한 확장 기능',
 	'tpt-section' => '번역 단위 $1',
 	'tpt-section-new' => '새 번역 단위입니다.
 이름: $1',
@@ -6130,6 +6131,7 @@ $messages['ky'] = array(
 );
 
 /** Luxembourgish (Lëtzebuergesch)
+ * @author Les Meloures
  * @author Purodha
  * @author Robby
  */
@@ -6199,8 +6201,8 @@ awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
 	'tpt-tab-translate' => 'Iwwersetzen',
 	'tpt-target-page' => "Dës Säit kann net manuell aktualiséiert ginn.
 Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungs-Fonctioun] aktulaiséiert ginn.",
-	'tpt-unknown-page' => "Dëse Nummraum ass fir d'Iwwersetze vu Säitemat Inhalt reservéiert.
-D'Säit, déi Dir versicht z'änneren schéngt net mat enger Säit déi fir d'iwwersetzung markéiert ass ze korrespondéieren.",
+	'tpt-unknown-page' => "Dësen Nummraum ass fir d'Iwwersetze vu Säite mat Inhalt reservéiert.
+D'Säit, déi Dir versicht z'änneren, schéngt net mat enger Säit déi fir d'Iwwersetzung markéiert ass ze korrespondéieren.",
 	'tpt-translation-restricted' => "D'Iwwersetze vun dëser Säit an dës Sprooch gouf vun engem Iwwersetzungs-Administrateur gespaart.
 
 Grond: $1",

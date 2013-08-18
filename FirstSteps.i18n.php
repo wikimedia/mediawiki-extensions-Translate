@@ -1381,6 +1381,37 @@ Saat myös uutiskirjeen korkeintaan kerran kuukaudessa.
 Jos et halua vastaanottaa uutiskirjeitä, voit muuttaa asetusta välilehdellä »{{int:prefs-personal}}» omat [[Special:Preferences|asetukset]].',
 );
 
+/** Faroese (føroyskt)
+ * @author EileenSanda
+ */
+$messages['fo'] = array(
+	'firststeps' => 'Fyrstu stigini',
+	'firststeps-desc' => '[[Special:FirstSteps|Serstøk síða]] fyri at fáa brúkarar í gongd á einari wiki við hjálp frá Translate víðkanini',
+	'translate-fs-pagetitle-done' => ' - liðugt!',
+	'translate-fs-pagetitle-pending' => ' - bíðar',
+	'translate-fs-pagetitle' => 'Leiðbeining fyri at koma í gongd - $1',
+	'translate-fs-signup-title' => 'Upprætta eina konto',
+	'translate-fs-settings-title' => 'Samanset tínar innstillingar',
+	'translate-fs-userpage-title' => 'Upprætta tína brúkarasíðu',
+	'translate-fs-permissions-title' => 'Bið um loyvi til at týða',
+	'translate-fs-target-title' => 'Byrja at týða!',
+	'translate-fs-email-title' => 'Vátta tína t-post adressu',
+	'translate-fs-intro' => "Vælkomin til leiðbeiningina Fyrstu stigini hjá {{SITENAME}}.
+Tú fært eina stig fyri stig vegleiðing gjøgnum alla mannagongdina at gerast ein týðari.
+At enda verður tú før/ur fyri at týða ''markamót boð'' frá øllum stuðlaðum verkætlanum á {{SITENAME}}.",
+	'translate-fs-selectlanguage' => 'Vel eitt mál',
+	'translate-fs-settings-planguage' => 'Høvuðmál:',
+	'translate-fs-settings-submit' => 'Goym innstillingar',
+	'translate-fs-userpage-level-N' => 'Mítt móðurmál er',
+	'translate-fs-userpage-level-4' => 'Eg dugi tað eins væl og móðurmálstalarar',
+	'translate-fs-userpage-level-3' => 'Eg havi góðan kunnleika til',
+	'translate-fs-userpage-level-2' => 'Eg dugi hampuliga væl',
+	'translate-fs-userpage-level-1' => 'Eg dugi eitt sindur',
+	'translate-fs-userpage-submit' => 'Upprætta tína brúkarasíðu',
+	'translate-fs-userpage-done' => 'Gott klárað! Tú hevur nú eina brúkarasíðu.',
+	'translate-fs-permissions-planguage' => 'Høvuðmál:',
+);
+
 /** French (français)
  * @author Gomoko
  * @author Hashar
