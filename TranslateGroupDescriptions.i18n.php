@@ -2347,6 +2347,7 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
+ * @author Milicevic01
  * @author Rancher
  */
 $messages['sr-ec'] = array(
@@ -2375,8 +2376,8 @@ $messages['sr-ec'] = array(
 	'bw-desc-mwlibrl' => '[[Translating:Mwlib.rl|Mwlib.rl]] је библиотека за прављење PDF докумената са страница Медијавикија',
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Окавикс]] је програм за читање Википедије ван мреже',
 	'translate-group-desc-openimages-all' => 'Ове поруке су део пројекта [[Translating:Open Images|Отворене слике]]',
-	'bw-desc-openstreetmap' => '[[Translating:OpenStreetMap|Опенстритмап]] је бесплатна мапа целог света',
-	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|Опенстритмап]] је бесплатна мапа целог света',
+	'bw-desc-openstreetmap' => '[[Translating:OpenStreetMap|OpenStreetMap]] је бесплатна мапа целог света',
+	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] је бесплатна мапа целог света',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Пајвикипедија]] је збирка алатки за уређивање Википедије',
 	'bw-desc-shapado' => '[[Translating:Shapado|Шападо]] је интернет окружење за питања и одговоре',
 	'translate-group-desc-tsint' => 'Група порука за [http://toolserver.org/~krinkle/TsIntuition Тулсервер интуишон], преводилачки систем за алатке [http://toolserver.org Тулсервера] (<span class="plainlinks">[[Translating talk:Toolserver|подршка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технички детаљи]</span>)',

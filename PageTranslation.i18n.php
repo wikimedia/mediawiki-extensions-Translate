@@ -1882,6 +1882,7 @@ $messages['ckb'] = array(
  * @author Janet11
  * @author Littledogboy
  * @author Matěj Grabovský
+ * @author Michaelbrabec
  * @author Mormegil
  * @author Vks
  */
@@ -1947,6 +1948,7 @@ ale nejnovější verze {{PLURAL:$1|nemůže být k překladu označena|nemohou 
 	'tpt-translation-intro' => 'Toto je <span class="plainlinks">[$1 přeložená verze]</span> stránky [[$2]], překlad je úplný a aktuální na $3 %.',
 	'tpt-languages-legend' => 'Jiné jazyky:',
 	'tpt-languages-zero' => 'Začít překlad do tohoto jazyka',
+	'tpt-tab-translate' => 'Přeložit',
 	'tpt-target-page' => 'Tuto stránku nelze ručně aktualizovat.
 Tato stránka je překladem stránky [[$1]] a překlad lze aktualizovat pomocí [$2 nástroje pro překlad].',
 	'tpt-unknown-page' => 'Tento jmenný prostor je vyhrazen pro překlady stránek s obsahem.

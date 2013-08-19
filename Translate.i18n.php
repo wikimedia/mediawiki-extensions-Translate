@@ -30582,7 +30582,7 @@ $1',
 	'api-error-unknownmessage' => 'Порука није пронађена',
 	'api-error-fuzzymessage' => 'Превод је означен као застарео',
 	'api-error-owntranslation' => 'Не можете да означите сопствене преводе као потврђене',
-	'translate-messagereview-no-fuzzy' => 'Нејасни преводи се не могу означити као потврђени.',
+	'translate-messagereview-no-fuzzy' => 'Fuzzy преводи се не могу означити прегледаним',
 	'translate-messagereview-no-own' => 'Не можете да означити сопствене преводе као потврђене.',
 	'translate-messagereview-doit' => 'Означи овај превод као потврђен.',
 	'group-translate-proofr' => 'Прегледачи превода',
@@ -30651,7 +30651,6 @@ $1',
 	'tux-warnings-more' => '{{PLURAL:$1|још $1}}',
 	'tux-warnings-hide' => 'сакриј',
 	'tux-editor-save-failed' => 'Чување превода није успело: $1',
-	'tux-editor-use-this-translation' => 'Користи као превод',
 	'tux-editor-n-uses' => 'коришћено $1 {{PLURAL:$1|пут|пута}}',
 	'tux-editor-message-desc-more' => 'Прикажи још',
 	'tux-editor-message-desc-less' => 'Прикажи мање',
@@ -30707,6 +30706,7 @@ $1',
 
 /** Serbian (Latin script) (srpski (latinica)‎)
  * @author Michaello
+ * @author Milicevic01
  * @author Rancher
  * @author Sociologist
  * @author Жељко Тодоровић
@@ -30937,7 +30937,7 @@ Ponovo pošaljite obrazac za nastavak.',
 	'translate-manage-import-summary' => 'Uvoženje novog izdanja iz spoljašnjeg izvora',
 	'translate-manage-conflict-summary' => 'Uvoženje novog izdanja iz spoljašnjeg izvora.
 Molimo, proverite.',
-	'translate-manage-fuzzy-summary' => 'Značenje je promenjeno.', # Fuzzy
+	'translate-manage-fuzzy-summary' => 'Značenje poruke je promenjeno.',
 	'translate-manage-submit' => 'Izvrši',
 	'translate-manage-intro-other' => 'Ispod je spisak izmena prevoda za $1 jezik.
 Pregledajte izmene i izaberite radnju za svaki prevod.
@@ -30989,7 +30989,7 @@ Detalji: $1',
 	'api-error-unknownmessage' => 'Poruka nije pronađena',
 	'api-error-fuzzymessage' => 'Prevod je označen kao zastareo',
 	'api-error-owntranslation' => 'Ne možete da prihvatate sopstvene prevode', # Fuzzy
-	'translate-messagereview-no-fuzzy' => 'Zastareli prevodi se ne mogu prihvatiti.', # Fuzzy
+	'translate-messagereview-no-fuzzy' => 'Fuzzy prevodi se ne mogu označiti pregledanim',
 	'translate-messagereview-no-own' => 'Ne možete da prihvatate sopstvene prevode.', # Fuzzy
 	'translate-messagereview-doit' => 'Prihvati ovaj prevod kao tačan i ispravan.', # Fuzzy
 	'group-translate-proofr' => 'Pregledači prevoda',
