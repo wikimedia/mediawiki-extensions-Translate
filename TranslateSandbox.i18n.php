@@ -279,6 +279,20 @@ Grazie ca tè reggistrate sus a {{SITENAME}}. Ce tu comblete 'u test de traduziu
 Pe piacere avìne jndr'à $2 e fà angore quacche otre traduzione.",
 );
 
+/** Russian (русский)
+ * @author Kaganer
+ */
+$messages['ru'] = array(
+	'translatesandbox' => 'Управление песочницей переводчика',
+	'tsb-filter-pending' => 'Запросы, ожидающие обработки',
+	'tsb-reminder-title-generic' => 'Завершите свой вводный курс, чтобы стать проверенным переводчиком.',
+	'tsb-reminder-content-generic' => 'Привет, $1!
+
+Спасибо за регистрацию на сайте «{{SITENAME}}». Если вы завершили свои пробные переводы, администраторы могут предоставить вам полный доступ к инструменту перевода.
+
+Пожалуйста, перейдите по ссылке $2 и сделайте ещё несколько переводов.',
+);
+
 /** Swedish (svenska)
  * @author WikiPhoenix
  */

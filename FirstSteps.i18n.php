@@ -2639,8 +2639,11 @@ Jei patvirtinsite savo elektroninio pašto adresą, jūs gausite pranešimą ele
  */
 $messages['lv'] = array(
 	'firststeps' => 'Pirmie soļi',
+	'translate-fs-target-title' => 'Sāciet tulkot!',
+	'translate-fs-email-title' => 'Apstipriniet savu e-pasta adresi',
 	'translate-fs-selectlanguage' => 'Izvēlēties valodu',
 	'translate-fs-settings-planguage' => 'Galvenā valoda:',
+	'translate-fs-settings-submit' => 'Saglabāt izvēles',
 	'translate-fs-userpage-submit' => 'Izveidojiet savu lietotāja lapu',
 );
 
@@ -3599,8 +3602,8 @@ $messages['ru'] = array(
 	'translate-fs-userpage-level-3' => 'Я хорошо знаю',
 	'translate-fs-userpage-level-2' => 'Я средне владею',
 	'translate-fs-userpage-level-1' => 'Начальные знания',
-	'translate-fs-userpage-help' => 'Пожалуйста, укажите свои знания языков и расскажите нам немного о себе. Если вы знаете больше, чем пять языков, вы сможете добавить их позже.', # Fuzzy
-	'translate-fs-userpage-submit' => 'Создать мою страницу участника', # Fuzzy
+	'translate-fs-userpage-help' => 'Пожалуйста, укажите свои знания языков и расскажите немного о себе. Если вы знаете больше пяти языков, вы сможете добавить их позже.',
+	'translate-fs-userpage-submit' => 'Создайте свою страницу участника',
 	'translate-fs-userpage-done' => 'Отлично! Теперь у вас есть страница участника.',
 	'translate-fs-permissions-planguage' => 'Основной язык:',
 	'translate-fs-permissions-help' => 'Теперь вам нужно разместить запрос, для вступления в группу переводчиков.
