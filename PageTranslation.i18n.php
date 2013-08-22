@@ -4674,6 +4674,7 @@ Teks baliz la: <pre>$1</pre>', # Fuzzy
  * @author Dani
  * @author Dj
  * @author Glanthor Reviol
+ * @author Misibacsi
  * @author Xbspiro
  */
 $messages['hu'] = array(
@@ -4722,6 +4723,7 @@ Mielőtt fordításra jelölöd ezt a változatot, ellenőrizd hogy a szakaszok 
 	'tpt-rev-mark' => 'megjelölés fordításra',
 	'tpt-rev-unmark' => 'lap eltávolítása a fordításból',
 	'tpt-rev-discourage' => 'nem javasolt',
+	'tpt-rev-encourage' => 'visszaállít',
 	'translate-tag-translate-link-desc' => 'A lap fordítása',
 	'translate-tag-markthis' => 'Lap megjelölése fordításra',
 	'translate-tag-markthisagain' => 'Ezen a lapon történtek <span class="plainlinks">[$1 változtatások]</span>, mióta utoljára <span class="plainlinks">[$2 megjelölték fordításra]</span>.',
@@ -5163,6 +5165,7 @@ ma {{PLURAL:$1|l'ultima versione non può essere segnata|le ultime versioni non 
 	'tpt-translation-intro' => 'Questa pagina è una <span class="plainlinks">[$1 versione tradotta]</span> della pagina [[$2]]; la traduzione è completa e aggiornata al $3&nbsp;%.',
 	'tpt-languages-legend' => 'Altre lingue:',
 	'tpt-languages-zero' => 'Inizia a tradurre in questa lingua',
+	'tpt-tab-translate' => 'Traduci',
 	'tpt-target-page' => 'Questa pagina non può essere aggiornata manualmente. Questa pagina è una traduzione della pagina [[$1]] e la traduzione può essere aggiornata tramite [$2 lo strumento di traduzione].',
 	'tpt-unknown-page' => 'Questo namespace è riservato alle traduzioni del contenuto delle pagine.
 La pagina che stai cercando di modificare non sembra corrispondere ad alcuna pagina segnata per la traduzione.',
