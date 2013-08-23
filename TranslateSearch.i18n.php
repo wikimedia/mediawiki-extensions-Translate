@@ -173,6 +173,13 @@ $messages['ce'] = array(
 	'tux-sst-facet-language' => 'Меттанаш',
 );
 
+/** Czech (česky)
+ * @author Littledogboy
+ */
+$messages['cs'] = array(
+	'searchtranslations' => 'Hledání v překladech',
+);
+
 /** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
  * @author ОйЛ
  */

@@ -254,7 +254,7 @@ Equí pues escoyer qué llingües quies ver, si quies dalguna.',
 	'translate-fs-userpage-level-3' => 'Tengo un bon dominiu de',
 	'translate-fs-userpage-level-2' => 'Tengo un dominiu moderáu de',
 	'translate-fs-userpage-level-1' => 'Se un poco de',
-	'translate-fs-userpage-help' => 'Indica les tos capacidaes llingüístiques y cunta daqué tocante a ti. Si sabes más de cinco llingües pues amestales más alantre.', # Fuzzy
+	'translate-fs-userpage-help' => 'Indica les tos capacidaes llingüístiques y cunta daqué tocante a ti. Si sabes más de cinco llingües, podrás amestales más alantre.',
 	'translate-fs-userpage-submit' => "Cree la so páxina d'usuariu",
 	'translate-fs-userpage-done' => "¡Bien fecho! Agora tienes una páxina d'usuariu.",
 	'translate-fs-permissions-planguage' => 'Llingua principal:',

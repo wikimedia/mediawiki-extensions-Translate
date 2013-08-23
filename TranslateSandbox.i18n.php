@@ -64,10 +64,11 @@ $messages['ast'] = array(
 	'tsb-reminder-title-generic' => 'Complete la so presentación pa convertise nun traductor comprobao',
 	'tsb-reminder-content-generic' => 'Bones, $1:
 
-Rexistróse de recién en {{SITENAME}}. Tá a sólo unos pasos de desbloquiar la
-traducción llibre y les ayudes a la traducción estra.
+Gracies por rexistrase en {{SITENAME}}. Si completa les traducciones
+de prueba, Los alministradores pronto darán-y permisu de traducción
+completu.
 
-Anicie sesión en $2 y faiga delles traducciones más.', # Fuzzy
+Por favor, vuelva a $2 y faiga delles traducciones más.',
 );
 
 /** Bengali (বাংলা)
