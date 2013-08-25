@@ -175,9 +175,23 @@ $messages['ce'] = array(
 
 /** Czech (česky)
  * @author Littledogboy
+ * @author Mormegil
  */
 $messages['cs'] = array(
 	'searchtranslations' => 'Hledání v překladech',
+	'tux-sst-edit' => 'Editovat překlad',
+	'tux-sst-search' => 'Hledat',
+	'tux-sst-search-ph' => 'Hledat v překladech',
+	'tux-sst-count' => '{{PLURAL:$1|Nalezen jeden výsledek|Nalezeny $1 výsledky|Nalezeno $1 výsledků}}',
+	'tux-sst-facet-language' => 'Jazyky',
+	'tux-sst-facet-group' => 'Skupiny zpráv',
+	'tux-sst-facet-orphan' => '(sirotek)',
+	'tux-sst-nosolr-title' => 'Hledání není dostupné',
+	'tux-sst-nosolr-body' => 'Tato wiki nedisponuje službou pro vyhledávání překladů.',
+	'tux-sst-solr-offline-title' => 'Hledání není dostupné',
+	'tux-sst-solr-offline-body' => 'Služba pro hledání je dočasně nedostupná.',
+	'tux-sst-next' => 'Další výsledky',
+	'tux-sst-prev' => 'Předchozí výsledky',
 );
 
 /** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)

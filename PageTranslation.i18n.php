@@ -4206,6 +4206,7 @@ $messages['he'] = array(
 אנא ודאו שהוא מכיל תגיות <nowiki><translate></nowiki> ושהתחביר שלו תקין.',
 	'tpt-saveok' => 'הדף [[$1]] סומן לתרגום עם {{PLURAL:$2|יחידת תרגום אחת|$2 יחידות תרגום}}.
 עכשיו אפשר <span class="plainlinks">[$3 לתרגם]</span> את הדף.',
+	'tpt-offer-notify' => 'באפשרותך <span class="plainlinks">[$1 להודיע למתרגמים]</span> על הדף הזה.',
 	'tpt-badsect' => 'השם "$1" אינו שם תקין ליחידת התרגום $2.',
 	'tpt-showpage-intro' => 'להלן רשימת יחידות תרגום חדשות, קיימות ומחוקות.
 לפני סימון גרסה זו לתרגום, בדקו שהשינויים ליחידות התרגום קטנים ככל שאפשר, כדי למנוע עבודה מיותרת של מתרגמים.',
@@ -7636,6 +7637,7 @@ Fehla werren im [[Special:Log/pagetranslation|Iwasedzungs-Logbuch]] oigdraache u
  * @author Olgak85
  * @author Sp5uhe
  * @author ToSter
+ * @author WTM
  * @author Woytecr
  */
 $messages['pl'] = array(
@@ -7696,7 +7698,7 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 	'translate-tag-translate-link-desc' => 'Przetłumacz tę stronę',
 	'translate-tag-markthis' => 'Oznacz tę stronę do tłumaczenia',
 	'translate-tag-markthisagain' => 'Ta strona została zmieniona <span class="plainlinks">[$1 razy]</span>, od kiedy ostatnio była <span class="plainlinks">[$2 oznaczona do tłumaczenia]</span>.',
-	'translate-tag-hasnew' => 'Ta strona została <span class="plainlinks">[zmieniona $1 razy]</span> i nie została oznaczona do tłumaczenia.',
+	'translate-tag-hasnew' => 'Ta strona zawiera <span class="plainlinks">[$1 zmiany]</span>, które nie zostały oznaczone do tłumaczenia.',
 	'tpt-translation-intro' => 'Ta strona to <span class="plainlinks">[$1 przetłumaczona wersja]</span> strony [[$2]], a tłumaczenie jest ukończone lub aktualne w $3%.',
 	'tpt-languages-legend' => 'Inne języki:',
 	'tpt-languages-zero' => 'Rozpocznij tłumaczenie na ten język',

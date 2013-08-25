@@ -497,6 +497,7 @@ $messages['bg'] = array(
 );
 
 /** Bengali (বাংলা)
+ * @author Aftab1995
  * @author Bellayet
  */
 $messages['bn'] = array(
@@ -512,9 +513,9 @@ $messages['bn'] = array(
 	'translate-fs-email-title' => 'আপনার ই-মেইলের ঠিকানা নিশ্চিত করুন',
 	'translate-fs-selectlanguage' => 'যেকোন ভাষা নির্বাচন করুন',
 	'translate-fs-settings-planguage' => 'প্রধান ভাষা:',
-	'translate-fs-settings-slanguage' => 'সহযোগী ভাষা:', # Fuzzy
+	'translate-fs-settings-slanguage' => 'সহযোগী ভাষা $1:',
 	'translate-fs-settings-submit' => 'পছন্দ সংরক্ষণ',
-	'translate-fs-userpage-submit' => 'আমার ব্যবহারকারী পাতা তৈরি করো', # Fuzzy
+	'translate-fs-userpage-submit' => 'আপনার ব্যবহারকারী পাতা তৈরি করুন',
 	'translate-fs-permissions-planguage' => 'প্রধান ভাষা:',
 	'translate-fs-permissions-submit' => 'অনুরোধ পাঠাও',
 );

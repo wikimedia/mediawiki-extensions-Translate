@@ -620,7 +620,10 @@ See also:
 * {{msg-mw|Translate-page-showing-all}}
 * {{msg-mw|Translate-page-showing}}
 * {{msg-mw|Translate-page-paging-links}}, {{msg-mw|Translate-prev}} and {{msg-mw|Translate-next}}',
-	'translate-page-paging-links' => '{{optional}}',
+	'translate-page-paging-links' => '{{optional}}
+Parameters:
+* $1 - a link which points to the previous page
+* $2 - a link which points to the next page',
 	'translate-next' => '{{Identical|Next page}}',
 	'translate-prev' => '{{Identical|Previous page}}',
 	'translate-page-description-hasoptional' => 'Parameters:
@@ -661,7 +664,9 @@ Parameters:
 	'translate-edit-tag-warning' => '{{notranslate}}
 Shown when editing translatable pages. Default is empty.',
 	'translate-magic-pagename' => '"Extended" can as well be understood as "Extra" or "Special" or "Advanced". It refers to the translations of pieces of text such as names of namespaces or special pages, which are not part of normal message or wiki page translation.',
-	'translate-magic-help' => 'Description of [[Special:AdvancedTranslate]].',
+	'translate-magic-help' => 'Description of [[Special:AdvancedTranslate]].
+
+<code>$1</code> is not a parameter; appears as is.',
 	'translate-magic-module' => 'Label on drop-down box on [[Special:AdvancedTranslate]].
 {{Identical|Module}}',
 	'translate-magic-submit' => 'Button text in [[Special:AdvancedTranslate]].
@@ -720,12 +725,18 @@ Warning message from automated syntax check for translators. Parameters:
 * $2 - number of forms MediaWiki supports for the language in question
 {{Related|Translate-checks}}',
 	'translate-checks-plural-dupe' => 'Warning message from automated syntax check for translators.
+
+<code>$1</code> is not a parameter; appears as is.
 {{Related|Translate-checks}}',
 	'translate-checks-pagename' => 'A warning when editing a message.
 
 This warning indicates that the namespace in the translation does not match the namespace appearing in the message definition (original English message).
 {{Related|Translate-checks}}',
-	'translate-checks-format' => 'Warning message from automated syntax check for translators.
+	'translate-checks-format' => 'Warning message from automated syntax check for translators. Parameters:
+* $1 - any one of the following messages:
+**{{msg-mw|Translate-checks-parametersnotequal}}
+** {{msg-mw|Translate-checks-malformed}}
+** "<samp><nowiki>$traItems[1] !== $defItems[1]</nowiki></samp>" (hard-coded)
 {{Related|Translate-checks}}',
 	'translate-checks-escape' => 'Unused at this time.
 
@@ -739,7 +750,11 @@ Warning message from automated syntax check for translators.
 	'translate-checks-malformed' => 'Warning message from automated syntax check for translators. Parameters:
 * $1 - malformed time. (Valid time is in "12:35" format.)
 {{Related|Translate-checks}}',
-	'translate-checks-fudforum-syntax' => 'Warning message from automated syntax check for translators.
+	'translate-checks-fudforum-syntax' => 'Unused at this time.
+
+Warning message from automated syntax check for translators.
+
+<code>$1</code> and <code>$2</code> are not parameters.
 {{Related|Translate-checks}}',
 	'translate-pref-nonewsletter' => "Option in [[Special:Preferences]], 'Misc' tab.",
 	'translate-pref-editassistlang' => 'Used in [[Special:Preferences]] under the {{msg-mw|prefs-editing}} tab.
@@ -818,9 +833,24 @@ Parameters:
 	'translations' => '{{doc-special|Translations}}
 {{Identical|All translations}}',
 	'translations-summary' => 'Used in [[Special:Translations]].',
-	'translate-translations-no-message' => 'Error message used in [[Special:Translations]].',
-	'translate-translations-none' => 'Used in [[Special:Translations]] if no translations exist.',
-	'translate-translations-count' => 'Show in [[Special:Translations]] before the listing.',
+	'translate-translations-no-message' => 'Error message used in [[Special:Translations]]. Parameters:
+* $1 - page title for the translatable message
+See also:
+* {{msg-mw|Translate-translations-count}} - if there are one or more translations',
+	'translate-translations-none' => 'Unused at this time.
+
+Used in [[Special:Translations]] if no translations exist.
+
+Parameters:
+* $1 - ...',
+	'translate-translations-count' => 'Shown in [[Special:Translations]].
+
+Followed by the list of translations.
+
+Parameters:
+* $1 - number of translations
+See also:
+* {{msg-mw|Translate-translations-no-message}} - if there are no translations',
 	'translate-translations-fieldset-title' => 'Name of fieldset in [[Special:Translations]].
 
 {{Identical|Message}}',
@@ -890,8 +920,19 @@ See also:
 * $1 is not a single number, but a series of numbers with different background colors, serving as a legend to match each color with a number of days passed since the last contributed translation. See [[Special:SupportedLanguages]] to see the final rendering.',
 	'supportedlanguages-localsummary' => '{{notranslate}}
 Place any site specific message here.',
-	'supportedlanguages-portallink' => '{{optional}}',
-	'supportedlanguages-portallink-nocldr' => '{{optional}}',
+	'supportedlanguages-portallink' => '{{optional}}
+Parameters:
+* $1 - language code
+* $2 - localized language name
+* $3 - native language name
+See also:
+* {{msg-mw|Supportedlanguages-portallink-nocldr}}',
+	'supportedlanguages-portallink-nocldr' => '{{optional}}
+Used if the localized language name is available. Parameters:
+* $1 - language code
+* $2 - native language name
+See also:
+* {{msg-mw|Supportedlanguages-portallink}}',
 	'supportedlanguages-translators' => 'On [[Special:SupportedLanguages]].
 * $1 - the list of translators names
 * $2 - the number of translators listed
@@ -907,7 +948,9 @@ Parameters:
 * $1 - username
 * $2 - number of edits the user made
 * $3 - number of days",
-	'translate-save' => '{{Identical|Save}}',
+	'translate-save' => 'Used as label for the Submit button. Parameters:
+* $1 - language name, or {{msg-mw|Translate-documentation-language}}
+{{Identical|Save}}',
 	'translate-jssti-add' => 'Name of button in [[Special:Preferences]], tab Editing.',
 	'managemessagegroups' => '{{doc-special|ManageMessageGroups}}',
 	'translate-smg-notallowed' => 'Wikitext error message in [[Special:ManageMessageGroups]]',
@@ -955,12 +998,23 @@ Introduction to special page. See screenshot. Parameters:
 	'translate-import-load' => 'Used in [[Special:ImportTranslations]].
 {{doc-screenshot|Import-1.png|twn}}
 {{Identical|Load file}}',
-	'translate-import-err-dl-failed' => 'Used in [[Special:ImportTranslations]].',
-	'translate-import-err-ul-failed' => 'Used in [[Special:ImportTranslations]].',
-	'translate-import-err-invalid-title' => 'Used in [[Special:ImportTranslations]].',
-	'translate-import-err-no-such-file' => 'Used in [[Special:ImportTranslations]].',
-	'translate-import-err-no-headers' => 'Used in [[Special:ImportTranslations]].',
-	'translate-import-err-warnings' => 'Used in [[Special:ImportTranslations]].',
+	'translate-import-err-dl-failed' => 'Used as error message in [[Special:ImportTranslations]].
+{{Related|Translate-import-err}}',
+	'translate-import-err-ul-failed' => 'Used as error message in [[Special:ImportTranslations]].
+{{Related|Translate-import-err}}',
+	'translate-import-err-invalid-title' => 'Used as error message in [[Special:ImportTranslations]]. Parameters:
+* $1 - filename
+{{Related|Translate-import-err}}',
+	'translate-import-err-no-such-file' => 'Used as error message in [[Special:ImportTranslations]]. Parameters:
+* $1 - filename
+{{Related|Translate-import-err}}',
+	'translate-import-err-stale-group' => 'Used as error message in [[Special:ImportTranslations]].
+{{Related|Translate-import-err}}',
+	'translate-import-err-no-headers' => 'Used as error message in [[Special:ImportTranslations]].
+{{Related|Translate-import-err}}',
+	'translate-import-err-warnings' => 'Used as error message in [[Special:ImportTranslations]]. Parameters:
+* $1 - details
+{{Related|Translate-import-err}}',
 	'translate-js-summary' => 'Label for summary field in translation editor.
 {{Identical|Summary}}',
 	'translate-js-save' => 'Button in translation editor which saves the content and closes the dialog.
@@ -1003,9 +1057,14 @@ This should be consistent with the following messages:
 ** {{msg-mw|api-error-fuzzymessage}}
 ** {{msg-mw|api-error-owntranslation}}',
 	'translate-messagereview-done' => 'Button label in [[Special:Translate]] review mode. Button is disabled.',
-	'translate-messagereview-reviews' => 'Status message in [[Special:Translate]] in review mode',
+	'translate-messagereview-reviews' => 'Status message in [[Special:Translate]] in review mode. Parameters:
+* $1 - the total number of users who reviewed the relevant message
+See also:
+* {{msg-mw|Translate-messagereview-reviewswithyou}}',
 	'translate-messagereview-reviewswithyou' => 'Status message in [[Special:Translate]] in review mode. Parameters:
-* $1 - the total number of users who reviewed the relevant message',
+* $1 - the total number of users who reviewed the relevant message
+See also:
+* {{msg-mw|Translate-messagereview-reviews}}',
 	'api-error-invalidrevision' => 'Error message for {{msg-mw|translate-messagereview-failure}}',
 	'api-error-unknownmessage' => 'Error message for {{msg-mw|translate-messagereview-failure}}',
 	'api-error-fuzzymessage' => 'Error message for {{msg-mw|translate-messagereview-failure}}',
@@ -1039,7 +1098,10 @@ Additional parameters:
 	'translate-workflow-set-doing' => 'Submit button text when waiting for reply from server',
 	'translate-workflow-set-done' => 'Submit button text when submission completed successfully',
 	'translate-workflow-set-error-alreadyset' => 'An error message shown in a popup box after pressing the {{msg-mw|translate-workflow-set-do}} button.',
-	'translate-workflow-autocreated-summary' => 'This is an edit summary for the automatic creation of a workflow state page.',
+	'translate-workflow-autocreated-summary' => 'This is an edit summary for the automatic creation of a workflow state page.
+
+Parameters:
+* $1 - state',
 	'translate-stats-workflow' => 'Column header on [[Special:LanguageStats]] and [[Special:MessageGroupStats]]',
 	'translate-workflowgroup-desc' => '{{doc-important|Do not translate the variable name <code>$wgTranslateWorkflowStates</code>.}}',
 	'translate-dynagroup-recent-label' => 'Label of a message group',
@@ -7086,7 +7148,7 @@ Mae gan pob gwerth derfyn uchaf ac isaf.",
 	'translate-messagereview-submit' => 'Nodi iddi gael ei hadolygu',
 	'translate-messagereview-progress' => "Wrthi'n nodi...",
 	'translate-messagereview-done' => 'Adolygwyd',
-	'translate-messagereview-reviews' => 'Adolygwyd gan {{PLURAL:$1|neb|$1 defnyddiwr|$1 ddefnyddiwr|$1 defnyddiwr}}', # Fuzzy
+	'translate-messagereview-reviews' => 'Adolygwyd gan {{PLURAL:$1|neb|$1 defnyddiwr|$1 ddefnyddiwr|$1 defnyddiwr}}',
 	'api-error-invalidrevision' => "Ni chafwyd hyd i'r cyfieithiad",
 	'api-error-unknownmessage' => "Ni chafwyd hyd i'r neges",
 	'api-error-fuzzymessage' => 'Dynodwyd y cyfieithiad gyda fuzzy',
@@ -17042,15 +17104,15 @@ $messages['ja'] = array(
 	'translate-magic-help' => '特別ページへのエイリアス、マジックワード、名前空間名を翻訳できます。
 
 特別ページへのエイリアスとマジックワードには複数の翻訳を当てられます。
-複数の翻訳がある場合はカンマ(,)で区切ってください。
+複数の翻訳がある場合はカンマ (,) で区切ってください。
 名前空間名には 1 つの翻訳のみを当てられます。
 
-プロジェクトのトーク名前空間 <code>$1 talk</code> は複雑かもしれません。
-<code>$1</code>はプロジェクトのサイト名 (例: <code>{{ns:project_talk}}</code>) に置換されます。
-あなたの言語において、サイト名の変更なしでは正しく表現できない場合は、[[Support]]にお問い合わせください。
+プロジェクトのトーク名前空間 <code>$1 talk</code> の翻訳は複雑かもしれません。
+<code>$1</code> はプロジェクトのサイト名に置換されます (例: <code>{{ns:project_talk}}</code>)。
+あなたの言語において、サイト名の変更なしでは正しく表現できない場合は、[[Support]] にお問い合わせください。
 
 あなたが翻訳者であれば、変更を保存できます。
-下の保存ボタンをクリックするまで、変更は保存されません。',
+下の保存ボタンをクリックするまで、変更内容は保存されません。',
 	'translate-magic-module' => 'モジュール:',
 	'translate-magic-submit' => '取得',
 	'translate-magic-cm-export' => '書き出し',
@@ -17087,7 +17149,7 @@ $messages['ja'] = array(
 	'translate-checks-format' => 'この翻訳は定義に沿っていない、または無効な構文を使用しています: $1',
 	'translate-checks-escape' => '以下のエスケープは偶発的なものかもしれません: <strong>$1</strong>',
 	'translate-checks-parametersnotequal' => '引数の数が{{PLURAL:$1|$1}}個ですが、{{PLURAL:$2|$2}}個である必要があります。',
-	'translate-checks-malformed' => '<nowiki>$1</nowiki>が不正な形式です。',
+	'translate-checks-malformed' => '<nowiki>$1</nowiki> の形式に誤りがあります。',
 	'translate-checks-fudforum-syntax' => 'このプロジェクトでは<nowiki>$2</nowiki>の代わりに<nowiki>$1</nowiki>を使用します。',
 	'translate-pref-nonewsletter' => 'メールのニュースレターを受け取らない',
 	'translate-pref-editassistlang' => '補助言語:',
@@ -28098,12 +28160,16 @@ Le messàgge opzione avessera sulamende essere tradotte quanne 'a lènga toje t�
 	'translate-rc-translation-filter' => 'Filtre de traduziune:',
 	'translate-rc-translation-filter-no' => 'No fà ninde',
 	'translate-rc-translation-filter-only' => 'Fà vedè sulamende le traduziune',
+	'translate-rc-translation-filter-filter' => 'Filtre le traduziune',
+	'translate-rc-translation-filter-site' => "cnage sulamende le messàgge d'u site",
 	'translationstats' => 'Statisteche de le traduziune',
 	'translate-stats-edits' => 'Cangiaminde',
 	'translate-stats-users' => 'Tradutture',
 	'translate-stats-registrations' => 'Reggistraziune',
 	'translate-stats-reviews' => 'Reviste',
 	'translate-stats-reviewers' => 'Rivisitature',
+	'translate-statsf-intro' => 'Puè generà le statisteche semblice cu stu module.
+Tutte le valore onne limite minime e massime.',
 	'translate-statsf-options' => "Opziune d'u grafeche",
 	'translate-statsf-width' => 'Larghezze in pixel:',
 	'translate-statsf-height' => 'Altezze in pixel:',
@@ -28121,13 +28187,18 @@ Le messàgge opzione avessera sulamende essere tradotte quanne 'a lènga toje t�
 	'translate-statsf-count-reviews' => 'Revisitature de le traduziune',
 	'translate-statsf-count-reviewers' => 'Rivisitature',
 	'translate-statsf-language' => 'Elenghe separate da virgole de le codece de le lènghe:',
+	'translate-statsf-group' => 'Elenghe separate da virgole de le codece de le gruppe:',
 	'translate-statsf-submit' => 'Andeprime',
 	'translate-tag-category' => 'Pàggene traducibbele',
+	'translate-tag-page-desc' => "Traduzione d'a pàgene uicchi [[$2|$1]].",
+	'translate-tag-fuzzy-comment' => "Definizione cangiate da [[User:$1|$1]] jndr'à revisione $2.",
+	'translate-tag-fuzzy-reason' => 'Definizione cangiate da "$1" cu commende "$3" jndr\'à $2.',
 	'translate-sidebar-alltrans' => "Jndr'à l'otre lènghe",
 	'translations' => 'Tutte le traduziune',
 	'translations-summary' => "Mitte 'nu messagge sotte pe fa vedè tutte le traduziune disponibbele.",
 	'translate-translations-no-message' => '"$1" non g\'è \'nu messagge traducibbele',
 	'translate-translations-none' => 'Non ge stonne traduziune pe "$1"',
+	'translate-translations-count' => "Acchiate {{PLURAL:$1|'na traduzione|$1 traduziune}}.",
 	'translate-translations-fieldset-title' => 'Mèssagge',
 	'translate-translations-messagename' => 'Nome:',
 	'translate-translations-project' => 'Pruggette:',
@@ -28322,6 +28393,8 @@ Le state sò definite jndr\'à variabbile de configurazione $wgTranslateWorkflow
 	'tux-empty-show-optional-messages' => 'Fà vedè le messàgge opzionale',
 	'tux-empty-no-outdated-messages' => 'Nisciune messàgge da aggiornà',
 	'tux-empty-nothing-to-proofread' => 'Ninde da rivedè',
+	'tux-empty-list-other' => 'Ninde da traducere',
+	'tux-empty-list-other-guide' => "Tu puè dà 'na màne revedenne le traduziune esistende",
 	'tux-empty-list-other-action' => 'Traduziune reviste',
 	'tux-empty-list-other-link' => 'Fà vedè tutte le messàgge',
 	'tux-editor-close-tooltip' => 'Achiude',
