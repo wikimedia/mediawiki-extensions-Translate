@@ -104,10 +104,10 @@ class SpecialImportTranslations extends SpecialPage {
 	 */
 	protected function checkError( $msg ) {
 		// Give grep a chance to find the usages:
-		// translate-import-err-type-not-supported, translate-import-err-dl-failed,
-		// translate-import-err-ul-failed, translate-import-err-invalid-title,
-		// translate-import-err-no-such-file, translate-import-err-stale-group,
-		// translate-import-err-no-headers, translate-import-err-warnings
+		// translate-import-err-dl-failed, translate-import-err-ul-failed,
+		// translate-import-err-invalid-title, translate-import-err-no-such-file,
+		// translate-import-err-stale-group, translate-import-err-no-headers,
+		// translate-import-err-warnings
 		if ( $msg[0] !== 'ok' ) {
 			$errorWrap = "<div class='error'>\n$1\n</div>";
 			$msg[0] = 'translate-import-err-' . $msg[0];

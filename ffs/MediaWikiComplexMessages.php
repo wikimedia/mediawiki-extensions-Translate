@@ -45,6 +45,8 @@ abstract class ComplexMessages {
 	}
 
 	public function getTitle() {
+		// Give grep a chance to find the usages:
+		// translate-magic-special, translate-magic-words, translate-magic-namespace
 		return wfMessage( 'translate-magic-' . $this->id )->text();
 	}
 
