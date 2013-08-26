@@ -2156,7 +2156,7 @@ $messages['arc'] = array(
 	'translate-taskui-untranslated' => 'ܚܘܝ ܐܓܪ̈ܬܐ ܠܐ ܬܘܪ̈ܓܡܐ',
 	'translate-taskui-optional' => 'ܚܘܝ ܐܓܪ̈ܬܐ ܓܒܝܬ̈ܐ',
 	'translate-taction-translate' => 'ܬܪܓܡ',
-	'translate-taction-proofread' => 'ܢܩܕ ܟܬܒܬܐ', # Fuzzy
+	'translate-taction-proofread' => 'ܬܢܝ',
 	'translate-taction-lstats' => 'ܚܒܝܫܘܬ ܡܢܝܢܐ ܕܠܫܢܐ',
 	'translate-taction-mstats' => 'ܚܒܝܫܘܬ ܡܢܝܢܐ ܕܟܢܘܫܬܐ ܕܐܓܪ̈ܬܐ',
 	'translate-taction-export' => 'ܐܦܩ',
@@ -2215,6 +2215,15 @@ $messages['arc'] = array(
 	'translate-translations-project' => 'ܬܪܡܝܬܐ:',
 	'translate-translations-history-short' => 'ܬ',
 	'languagestats' => 'ܚܒܝܫܘܬ ܡܢܝܢܐ ܕܠܫܢܐ',
+	'languagestats-summary' => 'ܦܐܬܐ ܗܕܐ ܬܓܠܚ ܚܒܝܫܘܬ ܡܢܝܢܐ ܕܬܘܪܓܡܐ ܠܟܢܘܫܬܐ ܕܟܠ ܐܓܪ̈ܬܐ ܕܠܫܢܐ.',
+	'languagestats-stats-for' => 'ܚܒܝܫܘܬ ܡܢܝܢܐ ܕܠܫܢܐ $1 ($2).',
+	'languagestats-recenttranslations' => 'ܬܘܪ̈ܓܡܐ ܚܕ̈ܬܐ',
+	'translate-langstats-expand' => 'ܐܪܘܚ',
+	'translate-langstats-collapse' => 'ܩܡܘܛ',
+	'translate-langstats-expandall' => 'ܐܪܘܚ ܟܠ',
+	'translate-langstats-collapseall' => 'ܩܡܘܛ ܟܠ',
+	'translate-language-code' => 'ܪܡܙܐ ܕܠܫܢܐ',
+	'translate-language-code-field-name' => 'ܪܡܙܐ ܕܠܫܢܐ:',
 	'translate-language' => 'ܠܫܢܐ',
 	'translate-total' => 'ܐܓܪ̈ܬܐ',
 	'translate-untranslated' => 'ܠܐ ܬܘܪ̈ܓܡܐ',
@@ -21316,6 +21325,87 @@ $messages['lzz'] = array(
 	'translate-statsf-scale-hours' => "Saat'epe",
 );
 
+/** Basa Banyumasan (Basa Banyumasan)
+ * @author StefanusRA
+ */
+$messages['map-bms'] = array(
+	'translate' => 'Terjemahna',
+	'translate-desc' => '[[Special:Translate|Kaca astamiwa]] kanggo mertalna MediaWiki lan liyane',
+	'translate-taskui-view' => 'Tidokna kabeh layang',
+	'translate-taskui-untranslated' => 'Tidokna kabeh layang sing durung diterjemahna',
+	'translate-taskui-optional' => 'Tidokna layang opsional',
+	'translate-taskui-acceptqueue' => 'Mung pesen sing teyeng ditandhani inyong direview',
+	'translate-taskui-reviewall' => 'Ulas kabeh terjemahan',
+	'translate-taskui-export-to-file' => 'Ekspor nang format asli',
+	'translate-taskui-export-as-po' => 'Ekspor kanggo terjemahan offline',
+	'translate-taction-translate' => 'Terjemahna',
+	'translate-taction-proofread' => 'Ulas',
+	'translate-taction-mstats' => 'Statistik klompok pesen',
+	'translate-taction-export' => 'Ekspor',
+	'translate-taction-disabled' => 'Laku kiye dipateni nang wiki kiye.',
+	'translate-page-no-such-language' => 'Basa sing dipilih ora sah.',
+	'translate-page-no-such-group' => 'Grup sing dipilih ora sah.',
+	'translate-page-disabled' => 'Terjemahan ming basa kiye nang grup kiye wis dinonaktifna.
+Alesan:
+
+
+"$1"',
+	'translate-language-disabled' => 'Terjemahan ming basa kiye wis dinonaktifna.',
+	'translate-page-group' => 'Klompok',
+	'translate-page-limit' => 'Bates',
+	'translate-submit' => 'Jikot',
+	'translate-page-showing' => 'Nidokna pesen sekang $1 nganti $2 sekang total $3.',
+	'translate-page-showing-all' => 'Nidokna $1 {{PLURAL:$1|pesen|pesen}}.', # Fuzzy
+	'translate-page-showing-none' => 'Ora ana pesen nggo ditidokna.',
+	'translate-next' => 'Kaca terusane',
+	'translate-prev' => 'Kaca sedurunge',
+	'translate-page-description-legend' => 'Informasi ngenani grup',
+	'translate-page-description-hasoptional-open' => 'Tidokna layang opsional.',
+	'translate-page-edit' => 'nyunting',
+	'translate-optional' => '(pilihan/ora kudu)',
+	'translate-ignored' => '(dilirwakna)',
+	'translate-edit-jsopen' => 'nyunting',
+	'translate-edit-title' => 'Nyunting "$1"',
+	'translate-edit-definition' => 'Definisi pesen',
+	'translate-edit-translation' => 'Terjemahan',
+	'translate-edit-contribute' => 'aweh kontribusi',
+	'translate-edit-no-information' => '"Pesen kiye ora duwe dokumentasi."
+"Angger Rika weruh nang endi utawa kepriwe pesen kiye digunakna, Rika teyeng nulungi penerjemah liyane mawa nambahna dokumentasi ming pesen kiye."',
+	'translate-edit-information' => 'Informasi bab pesen ($1)',
+	'translate-edit-in-other-languages' => 'Pesen nang basa-basa liyane',
+	'translate-edit-committed' => 'Pertalan sekiya nang piranti alus',
+	'translate-edit-tmsugs' => 'Saran sekang mèmori terjemahan lan terjemahan mesin',
+	'translate-edit-tmmatch-source' => 'Tèks sumber pertalan: $1',
+	'translate-edit-tmmatch' => '$1% cocog',
+	'translate-use-suggestion' => 'Ganti terjemahan sekiye nganggo saran kiye.',
+	'translate-edit-tab-list' => 'Daftar pesen',
+	'translate-edit-nopermission' => 'Rika perlu idin kanggo nerjemahna pesen.',
+	'translate-magic-submit' => 'Jikot',
+	'translate-magic-cm-export' => 'Ekspor',
+	'translate-magic-cm-current' => 'Sekiye',
+	'translate-magic-cm-comment' => 'Tanggepan:',
+	'translate-magic-cm-updatedusing' => 'Dianyari nganggo [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
+	'translate-magic-cm-savefailed' => 'Gole nyimpen gagal',
+	'translate-magic-special' => 'Sesinglon kaca astamiwa',
+	'translate-magic-namespace' => 'Jeneng bilikjeneng',
+	'translate-magic-notsaved' => 'Suntingane Rika ora disimpen!',
+	'translate-magic-errors' => 'Monggo didandani {{PLURAL:$1|kasalahan|}} nang terjemahan kiye:',
+	'translate-magic-saved' => 'Owah-owahane Rika wis sukses disimpen.',
+	'translate-checks-parameters' => '{{PLURAL:$2|parameter|}} kiye ora dienggo:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Parameter|Parameter-parameter}} kiye ora dikenal:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-balance' => "Ana jumlah sing ora rata sekang {{PLURAL:$2|''parenthesis''|}}:
+<strong><nowiki>$1</nowiki></strong>",
+	'translate-checks-links' => '{{PLURAL:$2|pranala|$2 pranala-pranala}} kiye nduwe masalah:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-links-missing' => '{{PLURAL:$2|Pranala|Pranala-pranala}} kiye ilang:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-xhtml' => 'Monggo ganti {{PLURAL:$2|tag|tag-tag}} kiye nganggo tag sing cocog:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> wis aweh {{PLURAL:$1|siji formulir|$1 formulir-formulir}} ningen mung {{PLURAL:$2|siji formulir|$2 formulir-formulir}} sing didukung (excluding 0= lan 1= formulir).',
+);
+
 /** Malagasy (Malagasy)
  * @author Jagwar
  */
@@ -22221,6 +22311,7 @@ $messages['mr'] = array(
 
 
 ''$1''",
+	'translate-language-disabled' => 'या भाषेत भाषांतर करणे अक्षम करण्यात आले आहे.',
 	'translate-page-settings-legend' => 'रुपरेषा',
 	'translate-page-group' => 'गट',
 	'translate-page-language' => 'भाषा',
@@ -22234,18 +22325,35 @@ $messages['mr'] = array(
 	'translate-next' => 'पुढील पान',
 	'translate-prev' => 'मागील पान',
 	'translate-page-description-legend' => 'गटाबद्दल माहिती',
+	'translate-page-description-hasoptional' => 'या संदेश गटात एच्छिक संदेश आहेत.
+जेंव्हा आपल्या भाषेची विशेष गरज असेल तेंव्हाच एच्छिक संदेशांचे भाषांतर करावे
+जसे(शब्दात) रिकामी जागा न वापरणे किंवा विशेषनाम. $1',
+	'translate-page-description-hasoptional-open' => 'एच्छिक संदेश दाखवा',
+	'translate-page-edit' => 'संपादन करा',
+	'translate-ext-url' => '<hr />वेबसाइट: $1',
 	'translate-optional' => '(वैकल्पिक)',
 	'translate-ignored' => '(दुर्लक्षित)',
+	'translate-edit-jsopen' => 'संपादन करा',
+	'translate-edit-title' => '"$1"चे संपादन',
 	'translate-edit-definition' => 'संदेश व्याख्या',
+	'translate-edit-translation' => 'भाषांतर',
 	'translate-edit-contribute' => 'योगदान करा',
 	'translate-edit-no-information' => "''या संदेशाकरिता कोणतेही नोंदीकरण(डॉक्यूमेंटेशन) नाही. हा संदेश कुठे आणि कसा वापरला आहे हे तुम्हाला ठावूक असेल तर, या पानाचे नोंदीकरण(डॉक्यूमेंटेशन) करून तुम्ही इतर भाषांतरकारांना मदत करू शकता.''",
 	'translate-edit-information' => '($1) या संदेशाबद्दल माहिती',
 	'translate-edit-in-other-languages' => 'इतर भाषांमधील संदेश',
 	'translate-edit-committed' => 'संकेतन प्रणालीमधील सध्याचे भाषांतरण',
 	'translate-edit-warnings' => 'अर्धवट भाषांतरांसाठीचे इशारे',
+	'translate-edit-tmsugs' => 'भाषांतर स्मृती मधून व यांत्रिक भाषांतरामधून सुचवण्या',
+	'translate-edit-tmmatch-source' => 'स्रोत मजकूराचे भाषांतर: $1',
+	'translate-edit-tmmatch' => '$1% जुळते',
+	'translate-use-suggestion' => 'सध्याचे भाषांतराएवजी ही सुचवणी टाका.',
+	'translate-edit-tab-list' => 'संदेश यादी',
+	'translate-edit-nopermission' => 'आपणास संदेश भाषांतराची परवानगी हवी.',
+	'translate-edit-askpermission' => 'परवानगीसाठी विनंती करा',
 	'translate-magic-pagename' => 'वाढीव मीडियाविकि भाषांतर',
 	'translate-magic-submit' => 'ओढा',
 	'translate-magic-cm-export' => 'निर्यात',
+	'translate-magic-nothing-to-export' => 'निर्यात करण्याजोगे येथे काहीही नाही.',
 	'translate-magic-cm-to-be' => 'अपेक्षित',
 	'translate-magic-cm-current' => 'सद्य',
 	'translate-magic-cm-original' => 'मूळ',
@@ -22256,7 +22364,12 @@ $messages['mr'] = array(
 	'translate-magic-special' => 'विशेष पान - टोपणनावे',
 	'translate-magic-words' => 'जादूई शब्द',
 	'translate-magic-namespace' => 'नामविश्व नावे',
+	'translate-magic-notsaved' => 'आपले संपादन जतन करण्यात आले नाही!',
+	'translate-magic-errors' => 'कृपया भाषांतरात खालील {{PLURAL:$1|चूक|चूका}} ठिकठाक करा:',
+	'translate-magic-saved' => 'आपण केकेले बदल यशस्वीरित्या जतन केल्या गेले.',
 	'translate-checks-parameters' => 'खालील मापदंड {{PLURAL:$2|वापरला नाही|वापरलेले नाहीत}}:
+<strong><nowiki>$1</nowiki></strong>',
+	'translate-checks-parameters-unknown' => 'खालील मापदंड {{PLURAL:$2|अनोळखी आहे|अनोळखी आहेत}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'चुकीची कंस संख्या:
 <strong><nowiki>$1</nowiki></strong>', # Fuzzy

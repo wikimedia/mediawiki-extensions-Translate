@@ -4850,6 +4850,7 @@ ma le ultime {{PLURAL:$1|version|versiones}} non pote esser marcate pro traducti
 	'tpt-translation-intro' => 'Iste pagina es un <span class="plainlinks">[$1 version traducite]</span> de un pagina [[$2]] e le traduction es complete e actual a $3%.',
 	'tpt-languages-legend' => 'Altere linguas:',
 	'tpt-languages-zero' => 'Comenciar le traduction in iste lingua',
+	'tpt-tab-translate' => 'Traducer',
 	'tpt-target-page' => 'Iste pagina non pote esser actualisate manualmente.
 Iste pagina es un traduction del pagina [[$1]] e le traduction pote esser actualisate con le [$2 instrumento de traduction].',
 	'tpt-unknown-page' => 'Iste spatio de nomines es reservate pro traductiones de paginas de contento.
@@ -10551,6 +10552,7 @@ $messages['yi'] = array(
  * @author Shirayuki
  * @author Slboat
  * @author Supaiku
+ * @author TianyinLee
  * @author Xiaomingyan
  * @author Yfdyh000
  * @author 阿pp
@@ -10600,7 +10602,7 @@ $messages['zh-hans'] = array(
 	'tpt-old-pages' => '以下{{PLURAL:$1|此|这些}}页面有被标记进行翻译的版本。',
 	'tpt-other-pages' => '以下{{PLURAL:$1|此|这些}}页面有旧版本被标记进行翻译，
 但最新版本不得标记进行翻译。',
-	'tpt-discouraged-pages' => '以下{{PLURAL:$1|此|这些}}页面挫折更多翻译。',
+	'tpt-discouraged-pages' => '以下{{PLURAL:$1||这些}}页面不不要继续翻译。',
 	'tpt-select-prioritylangs' => '优先语言代码的逗号分隔型列表',
 	'tpt-select-prioritylangs-force' => '不允许向优先语言以外的语言的翻译',
 	'tpt-select-prioritylangs-reason' => '原因：',
@@ -10611,7 +10613,7 @@ $messages['zh-hans'] = array(
 	'tpt-rev-encourage' => '恢复',
 	'tpt-rev-mark-tooltip' => '标记本页的最新版本进行翻译。',
 	'tpt-rev-unmark-tooltip' => '从翻译中删除此页。',
-	'tpt-rev-discourage-tooltip' => '在此页上挫折更多的翻译。',
+	'tpt-rev-discourage-tooltip' => '不要再进一步翻译此页。',
 	'tpt-rev-encourage-tooltip' => '将此页面恢复正常翻译模式。',
 	'translate-tag-translate-link-desc' => '翻译本页',
 	'translate-tag-markthis' => '标记此页面将进行翻译',
@@ -10736,6 +10738,7 @@ $messages['zh-hans'] = array(
  * @author Liangent
  * @author Mark85296341
  * @author Simon Shek
+ * @author TianyinLee
  * @author Waihorace
  * @author Wrightbus
  */
@@ -10765,6 +10768,7 @@ $messages['zh-hant'] = array(
 請確保它具有 <nowiki><translate></nowiki> 標記，並具有有效的語法。',
 	'tpt-saveok' => '[[$1]]頁面已被標記將進行翻譯，一共$2個翻譯單元。
 本頁面現已可以<span class="plainlinks">[$3 翻譯]</span>。',
+	'tpt-offer-notify' => '你可以<span class="plainlinks">[ $1 通知譯者]</span>翻譯此頁。',
 	'tpt-badsect' => '「$1」對於$2翻譯單元不是有效的名稱。',
 	'tpt-showpage-intro' => '以下列出新創、現存及已刪除的部分。
 將此版本標記進行翻譯之前，請檢查來確定該部分極少受修改，以便翻譯員避免得到多餘的工作。',
@@ -10783,7 +10787,7 @@ $messages['zh-hant'] = array(
 	'tpt-old-pages' => '以下{{PLURAL:$1|此|這些}}頁面有被標記進行翻譯的版本。',
 	'tpt-other-pages' => '以下{{PLURAL:$1|此|這些}}頁面有舊版本被標記進行翻譯，
 但最新版本不得標記進行翻譯。',
-	'tpt-discouraged-pages' => '以下{{PLURAL:$1|此|這些}}頁面挫折更多翻譯。',
+	'tpt-discouraged-pages' => '以下{{PLURAL:$1| |這些}}頁面不需要更多翻譯。',
 	'tpt-select-prioritylangs' => '優先語言代碼的逗號分隔型列表',
 	'tpt-select-prioritylangs-force' => '防止翻譯成優先語言以外的語言',
 	'tpt-select-prioritylangs-reason' => '原因：',
@@ -10794,7 +10798,7 @@ $messages['zh-hant'] = array(
 	'tpt-rev-encourage' => '恢復',
 	'tpt-rev-mark-tooltip' => '標記本頁的最新版本進行翻譯。',
 	'tpt-rev-unmark-tooltip' => '從翻譯中刪除此頁。',
-	'tpt-rev-discourage-tooltip' => '在此頁上挫折更多翻譯。',
+	'tpt-rev-discourage-tooltip' => '不要在此頁上進行更多翻譯。',
 	'tpt-rev-encourage-tooltip' => '將此頁面恢復正常翻譯模式。',
 	'translate-tag-translate-link-desc' => '翻譯本頁',
 	'translate-tag-markthis' => '標記此頁面的翻譯',
@@ -10803,6 +10807,7 @@ $messages['zh-hant'] = array(
 	'tpt-translation-intro' => '此頁面是[[$2]]頁面的<span class="plainlinks">[$1 翻譯版本]</span>，而該翻譯工作已經$3%完成。',
 	'tpt-languages-legend' => '其他語言：',
 	'tpt-languages-zero' => '開始這種語言的翻譯',
+	'tpt-tab-translate' => '翻譯',
 	'tpt-target-page' => '本頁面無法手動更新。
 本頁面是[[$1]]頁面的翻譯版，可以使用[$2 翻譯工具]來更新該翻譯。',
 	'tpt-unknown-page' => '此命名空間是保留給內容頁面翻譯。
