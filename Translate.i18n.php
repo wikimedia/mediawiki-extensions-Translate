@@ -865,9 +865,11 @@ See also:
 {{Identical|Language statistics}}',
 	'languagestats-summary' => 'Used in [[Special:LanguageStats]].',
 	'languagestats-stats-for' => 'Used in [[Special:LanguageStats]]. Parameters:
-* $1 is a localised language name
-* $2 is {{msg-mw|languagestats-recenttranslations}} of the language $1',
-	'languagestats-recenttranslations' => 'Substituted in {{msg-mw|languagestats-stats-for}} as $2.',
+* $1 - a localised language name
+* $2 - link text {{msg-mw|Languagestats-recenttranslations}}. The link points to [[Special:Translate]] which shows recent translations of the language <code>$1</code>.',
+	'languagestats-recenttranslations' => 'Used as link text. The link points to [[Special:Translate]] which shows recent translations.
+
+Used as <code>$2</code> in {{msg-mw|Languagestats-stats-for}}.',
 	'translate-langstats-expand' => '{{Doc-actionlink}}
 Used in [[Special:LanguageStats]] to expand subgroups.
 {{Identical|Expand}}',
@@ -7645,6 +7647,7 @@ Det er mest nyttigt til korrekturlæsningsopgaver.',
  * @author Raimond Spekking
  * @author SVG
  * @author Sebastian Wallroth
+ * @author Shirayuki
  * @author Tbleher
  * @author The Evil IP address
  * @author Umherirrender
@@ -7861,7 +7864,7 @@ Alle Werte haben obere und untere Begrenzungen.',
 Je intensiver ein Übersetzer mitgearbeitet hat, desto größer wird sein Benutzername angezeigt.
 Die zur Unterstreichung des Benutzernamens genutzte Farbe zeigt an, wann der Übersetzer zuletzt aktiv mitgearbeitet hat.',
 	'supportedlanguages-colorlegend' => 'Legende zu den Farben: Letzte Übersetzung vor $1 Tagen.',
-	'supportedlanguages-translators' => '{{PLURAL:$2|Übersetzer|Übersetzer}}: $1',
+	'supportedlanguages-translators' => '{{PLURAL:$2|Übersetzer}}: $1',
 	'supportedlanguages-recenttranslations' => 'Aktuelle Übersetzungen',
 	'supportedlanguages-count' => 'Insgesamt $1 {{plural:$1|Sprache|Sprachen}}.',
 	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|Bearbeitung|Bearbeitungen}} - letzte Bearbeitung vor $3 {{PLURAL:$3|Tag|Tagen}}',
@@ -8019,7 +8022,6 @@ Am nützlichsten ist sie für die Aufgaben des Überprüfens.',
 	'tux-warnings-more' => '{{PLURAL:$1|Eine weitere|$1 weitere}}',
 	'tux-warnings-hide' => 'verstecken',
 	'tux-editor-save-failed' => 'Das Speichern der Übersetzung ist fehlgeschlagen: $1',
-	'tux-editor-use-this-translation' => 'Als Übersetzung verwenden',
 	'tux-editor-n-uses' => '{{PLURAL:$1|Einmal|$1-mal}} verwendet',
 	'tux-editor-message-desc-more' => 'Mehr ansehen',
 	'tux-editor-message-desc-less' => 'Weniger ansehen',

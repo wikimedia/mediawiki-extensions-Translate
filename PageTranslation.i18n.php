@@ -326,7 +326,12 @@ Parameters:
 	'translate-tag-markthis' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'translate-tag-markthisagain' => '"has changes" is to be understood as "has been altered/edited"',
 	'translate-tag-hasnew' => '"has changes" is to be understood as "has been altered/edited". $1 is a URL to view changes.',
-	'tpt-translation-intro' => 'Header of a translation page (see definition on [[mw:Help:Extension:Translate/Glossary]]).',
+	'tpt-translation-intro' => 'Header of a translation page (see definition on [[mw:Help:Extension:Translate/Glossary]]).
+
+Parameters:
+* $1 - URL
+* $2 - page title
+* $3 - translation percentage',
 	'tpt-languages-legend' => 'The caption of a language selector displayed using <code>&lt;languages /&gt;</code>, e.g. on [[Project list]].
 {{Identical|Otherlanguages}}',
 	'tpt-languages-separator' => '{{optional}}',
@@ -412,18 +417,48 @@ This message is followed by one of the following error messages:
 	'pt-movepage-block-base-exists' => 'Error message to indicate a base page exists and a translatable page cannot be renamed. Parameters:
 * $1 is a pre-existing page name.',
 	'pt-movepage-block-base-invalid' => 'The "target page" is the new title of the translatable page, see definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-movepage-block-tp-exists' => 'translation page is a translated version of a translatable page',
-	'pt-movepage-block-tp-invalid' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-movepage-block-section-exists' => 'Section page is a translation of one section. Translation page consists of many translation sections.',
+	'pt-movepage-block-tp-exists' => 'translation page is a translated version of a translatable page.
+
+Parameters:
+* $1 - (Unused) old page title
+* $2 - new page title
+{{Related|Pt-movepage-block-exists}}',
+	'pt-movepage-block-tp-invalid' => 'This message may mean:
+* The user tried to move the page "[[:$1]]" to a new page title.
+* If successful, the page, along with the translation units will be moved to the target pages.
+* But the destination page title for the translation page would be invalid (too long?).
+
+See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - old page title (translatable page title)
+{{Related|Pt-movepage-block-invalid}}',
+	'pt-movepage-block-section-exists' => 'Section page is a translation of one section. Translation page consists of many translation sections.
+
+Parameters:
+* $1 - (Unused) old page title
+* $2 - new page title
+{{Related|Pt-movepage-block-exists}}',
 	'pt-movepage-block-section-invalid' => 'This message may mean:
 * The user tried to move the page "[[:$1]]" to a new page title.
 * If successful, the page, along with the translation units will be moved to the target pages.
 * But the destination page title for the translation unit would be invalid (too long?).
 Parameters:
-* $1 - old page title',
-	'pt-movepage-block-subpage-exists' => 'Subpage is here any subpage of translation page, which is not a translated version of the translatable page.',
-	'pt-movepage-block-subpage-invalid' => 'Parameters:
-* $1 - old page title',
+* $1 - old page title (translatable page title)
+{{Related|Pt-movepage-block-invalid}}',
+	'pt-movepage-block-subpage-exists' => 'Subpage is here any subpage of translation page, which is not a translated version of the translatable page.
+
+Parameters:
+* $1 - (Unused) old page title
+* $2 - new page title
+{{Related|Pt-movepage-block-exists}}',
+	'pt-movepage-block-subpage-invalid' => 'This message may mean:
+* The user tried to move the page "[[:$1]]" to a new page title.
+* If successful, the page, along with the translation units will be moved to the target pages.
+* But the destination subpage title for the translation unit would be invalid (too long?).
+Parameters:
+* $1 - old page title (translatable page title)
+{{Related|Pt-movepage-block-invalid}}',
 	'pt-movepage-list-translation' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-movepage-list-section' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-movepage-list-other' => 'Header of a list of additional subpages (other than translation pages) of the translatable page being moved, when the user selected the option to move subpages as well.',
@@ -5407,7 +5442,7 @@ $messages['ja'] = array(
 	'pt-movepage-block-base-exists' => '移動先の翻訳対象ページ「[[:$1]]」は既に存在します。',
 	'pt-movepage-block-base-invalid' => '移動先の翻訳対象ページの名前が無効です。',
 	'pt-movepage-block-tp-exists' => '移動先の翻訳ページ「[[:$2]]」は既に存在します。',
-	'pt-movepage-block-tp-invalid' => '移動先の翻訳ページの名前「[[:$1]]」が無効です (長すぎる?)。',
+	'pt-movepage-block-tp-invalid' => '「[[:$1]]」の移動先の翻訳ページの名前が無効です (長すぎる?)。',
 	'pt-movepage-block-section-exists' => '移動先の翻訳単位ページ「[[:$2]]」は既に存在します。',
 	'pt-movepage-block-section-invalid' => '「[[:$1]]」の移動先の翻訳単位ページ名が無効です (長すぎる?)。',
 	'pt-movepage-block-subpage-exists' => '移動先の下位ページ「[[:$2]]」は既に存在します。',
