@@ -1,0 +1,21 @@
+== Translate 2013.08 ==
+Released at 2013-08-27.
+
+=== Noteworthy changes ===
+* Initial translation area height is increased. With a higher translation area it provides more space for suggestions.
+* Bug 47861: Allow text selection in page mode of Special:Translate so that parts of original message can be copied and pasted.
+* Bug 46875: The tooltip highlighting the proofread action now appears less often in incorrect places.
+* Bug 36692: On language stats and message group stats, rows can no longer get stuck in highlighted state.
+* On translation pages, a "Translate" tab is shown instead of "Edit" tab to improve usability and discoverability of the translation functionality.
+* Bug 49850: The page mode of Special:Translate parsed incorrectly some square brackets as external links. Now it checks for supported protocol before turning it into a link.
+* Bug 52623: Discard changes button now works as expected in Google Chrome.
+* Map 'be-tarask' language to 'be' language in Yandex machine translation suggestion.
+* Bug 52272: Assistant languages suggestions ('In other languages') are no longer stripped of newlines.
+* A step forwards for arbitrary source language for translatable pages was taken. Translate now extension now respects the page soure language returned by MediaWiki. There is still no user interface to set the page source language.
+* Bug 49326: Add "notify translators" link after marking page for translation when TranslationNotifications is installed.
+* Loading of message content now works correctly. It was broken with namespaces which did not force capitalization of the first letter.
+* Bug 52216: Special:AggregateGroups has now better group selector which supports search.
+
+=== Changes relevant to API users and developers ===
+* Check for and disallow dynamic groups in ApiQueryMessageGroupStats.
+* Reimplement beforeSubmit, afterSubmit and afterRegisterFeatures hooks to support them in the new TUX editor.
