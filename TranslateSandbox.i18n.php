@@ -257,6 +257,20 @@ Bedankt voor het registreren bij {{SITENAME}}. Als u uw testvertalingen afrondt,
 Kon alstublieft naar $2 en maak nog wat meer vertalingen.',
 );
 
+/** Occitan (occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'translatesandbox' => 'Gerir lo nauc de sabla de traduccion',
+	'tsb-filter-pending' => 'Requèstas en espèra',
+	'tsb-reminder-title-generic' => 'Completatz vòstra presentacion per venir un traductor verificat',
+	'tsb-reminder-content-generic' => 'Bonjorn $1,
+
+Mercé de vos èsser inscrich sus {{SITENAME}}. Se acabatz vòstras traduccions de tèst, los administrators poiràn lèu vos acordar un plen accès a las traduccions.
+
+Venètz sus $2 e fasètz qualques traduccions mai.',
+);
+
 /** Romanian (română)
  * @author Minisarm
  */

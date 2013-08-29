@@ -724,7 +724,8 @@ Warning message from automated syntax check for translators. Parameters:
 * $1 - number of forms provided
 * $2 - number of forms MediaWiki supports for the language in question
 {{Related|Translate-checks}}',
-	'translate-checks-plural-dupe' => 'Warning message from automated syntax check for translators.
+	'translate-checks-plural-dupe' => '{{doc-important|In <code><nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki></code>, the singular and plural forms should be identical.}}
+Warning message from automated syntax check for translators.
 
 <code>$1</code> is not a parameter; appears as is.
 {{Related|Translate-checks}}',
@@ -11688,6 +11689,7 @@ $1',
  * @author PieRRoMaN
  * @author Seb35
  * @author Sherbrooke
+ * @author Shirayuki
  * @author Sumone10154
  * @author Tititou36
  * @author Urhixidur
@@ -11803,7 +11805,7 @@ Les modifications ne sont pas enregistrées tant que vous n’avez pas cliqué s
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La définition utilise <nowiki>{{PLURAL:}}</nowiki> mais pas sa traduction.',
 	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> a reçu {{PLURAL:$1|une forme|$1 formes}} mais {{PLURAL:$2|une seule est supportée|seules $2 sont supportées}} (hors les formes 0= et 1=).',
-	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> a des formes dupliquées au final. <nowiki>{{PLURAL:$1|mouton|moutons}}</nowiki> devrait être écrit ainsi: <nowiki>{{PLURAL:$1|moutons}}</nowiki>.',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> a des formes dupliquées au final. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> devrait être écrit ainsi: <nowiki>{{PLURAL:$1|sheep}}</nowiki>.',
 	'translate-checks-pagename' => 'Espace de noms modifié depuis la définition',
 	'translate-checks-format' => 'Cette traduction ne suit pas la définition ou a une syntaxe incorrecte : $1',
 	'translate-checks-escape' => 'Les échappements suivants peuvent être accidentels : <strong>$1</strong>',
@@ -12065,7 +12067,6 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-warnings-more' => '{{PLURAL:$1|$1 de plus}}',
 	'tux-warnings-hide' => 'masquer',
 	'tux-editor-save-failed' => "Échec de l'enregistrement de la traduction : $1",
-	'tux-editor-use-this-translation' => 'Utiliser comme traduction',
 	'tux-editor-n-uses' => 'utilisé $1 {{PLURAL:$1|fois}}',
 	'tux-editor-message-desc-more' => 'Voir davantage',
 	'tux-editor-message-desc-less' => 'Afficher moins',
@@ -12120,10 +12121,11 @@ Il est surtout utilisé pour les tâches de relecture.',
 );
 
 /** Cajun French (français cadien)
+ * @author Cedric31
  * @author RoyAlcatraz
  */
 $messages['frc'] = array(
-	'translate' => 'Traduire',
+	'translate' => 'Tradusir',
 	'translate-submit' => 'Charcher',
 	'translate-next' => 'Page suivante',
 	'translate-prev' => 'Page avant',
@@ -13759,7 +13761,7 @@ $messages['gu'] = array(
 	'tux-tab-unproofread' => 'પરીક્ષણરહિત',
 	'tux-status-proofread' => 'પરીક્ષણ થયેલું',
 	'tux-editor-proofreading-mode' => 'પરીક્ષણ',
-	'tux-editor-page-mode' => 'પૃષ્ઠ',
+	'tux-editor-page-mode' => 'પાનું',
 	'tux-empty-nothing-new-to-proofread' => 'પરીક્ષણ માટે નવું કંઈ નથી',
 );
 
@@ -21123,7 +21125,7 @@ Noklusētā saraksta vērtība ir atkarīga no tavas valodas.',
 	'tux-editor-suggestions-title' => 'Ieteikumi',
 	'tux-editor-in-other-languages' => 'Citās valodās',
 	'tux-editor-need-more-help' => 'Nepieciešama papildu palīdzība?',
-	'tux-editor-ask-help' => 'Jautājiet vairāk informācijas',
+	'tux-editor-ask-help' => 'Pieprasiet vairāk informācijas',
 	'tux-editor-tm-match' => '$1% atbilstība',
 	'tux-warnings-more' => '{{PLURAL:$1|vēl $1}}',
 	'tux-warnings-hide' => 'paslēpt',
@@ -24576,8 +24578,8 @@ $messages['nso'] = array(
  * @author ChrisPtDe
  */
 $messages['oc'] = array(
-	'translate' => 'Traduire',
-	'translate-desc' => '[[Special:Translate|Pagina especiala]] per traduire MediaWiki e quitament mai encara.',
+	'translate' => 'Tradusir',
+	'translate-desc' => '[[Special:Translate|Pagina especiala]] per tradusir MediaWiki e quitament mai encara.',
 	'translate-taskui-view' => 'Afichar totes los messatges',
 	'translate-taskui-untranslated' => 'Afichar los messatges pas traduches',
 	'translate-taskui-optional' => 'Afichar los messatges facultatius',
@@ -24585,7 +24587,7 @@ $messages['oc'] = array(
 	'translate-taskui-reviewall' => 'Repassar totas las traduccions',
 	'translate-taskui-export-to-file' => 'Exportar al format natiu',
 	'translate-taskui-export-as-po' => 'Exportar per una traduccion fòra linha',
-	'translate-taction-translate' => 'Traduire',
+	'translate-taction-translate' => 'Tradusir',
 	'translate-taction-proofread' => 'Relectura',
 	'translate-taction-lstats' => 'Estatisticas de lenga',
 	'translate-taction-mstats' => 'Estatisticas de grop de messatges',
@@ -24633,16 +24635,16 @@ coma d'utilizar pas d'espacis o de transformar de noms pròpris. $1",
 	'translate-edit-tmmatch' => '$1 % de correspondéncia',
 	'translate-use-suggestion' => 'Remplaçar la traduccion actuala per aquesta suggestion.',
 	'translate-edit-tab-list' => 'Lista de messatges',
-	'translate-edit-nopermission' => 'Vos cal obténer la permission de traduire los messatges.',
+	'translate-edit-nopermission' => 'Vos cal obténer la permission de tradusir los messatges.',
 	'translate-edit-askpermission' => 'Demandar la permission',
 	'translate-magic-pagename' => 'Traduccion de MediaWiki espandida',
-	'translate-magic-help' => "Podètz traduire los aliases de paginas especialas, los mots magics, e los noms d'espacis de noms.
+	'translate-magic-help' => "Podètz tradusir los aliasses de paginas especialas, los mots magics, e los noms d'espacis de noms.
 
 Los aliasses de paginas especialas e los mots magics pòdon aver mantuna traduccion.
 Las traduccions son separadas per una virgula (,).
 Los espacis de noms pòdon pas aver qu'una traduccion.
 
-Traduire l'espaci de noms de dicussion del projècte, <code>$1 talk</code> pòt èsser complicat.
+Tradusir l'espaci de noms de dicussion del projècte, <code>$1 talk</code> pòt èsser complicat.
 <code>$1</code> es remplaçat pel nom del site (per exemple <code>{{ns:project_talk}}</code>).
 S'es pas possible d'obténer una expression valida dins vòstra lenga sens cambiar lo nom del site, contactatz un desvolopaire sur [[Support]]..
 
@@ -24685,7 +24687,7 @@ Los cambiaments seràn pas enregistrats tant qu'auretz pas clicat sul boton « e
 	'translate-pref-editassistlang' => 'Assistent de lengas :',
 	'prefs-translate' => 'Opcions de traduccion',
 	'translate-pref-editassistlang-help' => 'Una virgulas a separat una lista de còde lenga.
-La traduccion d’un messatge dins aquelas lengas son visualizadas quand sètz a traduire.
+La traduccion d’un messatge dins aquelas lengas es afichada quand sètz a tradusir.
 La lista per defaut de las lengas varia en foncion de vòstra lenga.',
 	'translate-pref-editassistlang-bad' => 'Còde lenga invalid dins la lista :
 <nowiki>$1</nowiki>.',
@@ -24842,16 +24844,16 @@ Detalhs : $1',
 	'translate-msggroupselector-search-placeholder' => 'Recercar de gropes',
 	'translate-msggroupselector-search-all' => 'Totes',
 	'translate-msggroupselector-search-recent' => 'Recent',
-	'tux-languageselector' => 'Traduire en',
+	'tux-languageselector' => 'Tradusir en',
 	'tux-tab-all' => 'Totes',
-	'tux-tab-untranslated' => 'Pas traduch',
+	'tux-tab-untranslated' => 'Pas tradusit',
 	'tux-tab-outdated' => 'Obsolèt',
-	'tux-tab-translated' => 'Traduch',
+	'tux-tab-translated' => 'Tradusit',
 	'tux-edit' => 'Modificar',
 	'tux-status-optional' => 'Facultatiu',
 	'tux-status-fuzzy' => 'Obsolèt',
 	'tux-status-proofread' => 'Corregit',
-	'tux-status-translated' => 'Traduch',
+	'tux-status-translated' => 'Tradusit',
 	'tux-status-saving' => 'Enregistrament en cors…',
 	'tux-status-unsaved' => 'Pas enregistrada',
 	'tux-editor-placeholder' => 'Vòstra traduccion',

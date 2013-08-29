@@ -277,7 +277,10 @@ The template used by translations of the translatable page, extracted from the s
 	'tpt-oldrevision' => 'Error message displayed when trying to mark an older page revision for translation. Parameters:
 * $1 is a page title.
 * $2 is a page link.',
-	'tpt-notsuitable' => '{{doc-important|Do not translate "&lt;nowiki>&lt;translate>&lt;/nowiki>"}}',
+	'tpt-notsuitable' => '{{doc-important|Do not translate "<code>&lt;nowiki>&lt;translate>&lt;/nowiki></code>".}}
+Parameters:
+* $1 - page title
+* $2 - (Unused) revision ID',
 	'tpt-saveok' => '* $1 - page title
 * $2 - count of sections which can be used with PLURAL
 * $3 - URL',
@@ -291,11 +294,23 @@ Parameters:
 * $2 - the number of the unit',
 	'tpt-showpage-intro' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-mark-summary' => 'This message is used as an edit summary.',
-	'tpt-edit-failed' => 'Parameters:
+	'tpt-edit-failed' => 'Used as error message. Parameters:
 * $1 - page title',
-	'tpt-duplicate' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
+	'tpt-duplicate' => 'Used as error message.
+
+See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - translation unit ID (name)',
 	'tpt-already-marked' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'tpt-unmarked' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
+	'tpt-unmarked' => 'Used as success message.
+
+Translate this as "Page $1 has been unmarked for translation".
+
+See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - page title',
 	'tpt-list-nopages' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-new-pages-title' => 'Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-old-pages-title' => 'Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
@@ -324,7 +339,11 @@ Parameters:
 	'tpt-rev-encourage-tooltip' => 'Tooltip for page action link text in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'translate-tag-translate-link-desc' => 'Link at the top of translatable pages, see [[mw:Help:Extension:Translate/Translation example]] for context.',
 	'translate-tag-markthis' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'translate-tag-markthisagain' => '"has changes" is to be understood as "has been altered/edited"',
+	'translate-tag-markthisagain' => '"has changes" is to be understood as "has been altered/edited".
+
+Parameters:
+* $1 - a link which points to the diff
+* $2 - a link which points to ...',
 	'translate-tag-hasnew' => '"has changes" is to be understood as "has been altered/edited". $1 is a URL to view changes.',
 	'tpt-translation-intro' => 'Header of a translation page (see definition on [[mw:Help:Extension:Translate/Glossary]]).
 
@@ -344,7 +363,10 @@ Replaces the edit tab with translation tab for translation pages.
 * $1 is the translatable page
 * $2 is a link to the translation tool for the translatable page.',
 	'tpt-unknown-page' => 'See [[mw:Help:Extension:Translate/Translation example]] for context on page translation feature.',
-	'tpt-translation-restricted' => 'Error message shown to user when translation to a language which is restricted by translation admin.',
+	'tpt-translation-restricted' => 'Error message shown to user when translation to a language which is restricted by translation admin.
+
+Parameters:
+* $1 - reason',
 	'tpt-discouraged-language-force' => 'Error shown along with group description if the language is prevented from translation for the selected language.
 
 * $2 is the language that to which the user asked to translate the page.
@@ -371,16 +393,42 @@ Used only if a reason was provided in the following messages:
 {{Identical|Description}}',
 	'tpt-aggregategroup-remove-confirm' => 'Confirmation message shown while user tried to delete an aggregate group in [[Special:AggregateGroups]]',
 	'tpt-aggregategroup-invalid-group' => 'Show on [[Special:AggregateGroups]] after remove button of a group, if the stored group id does not match any currently known groups.',
-	'pt-parse-open' => '"Translation template" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.',
-	'pt-parse-close' => 'Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.',
+	'pt-parse-open' => 'Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.
+
+"Translation template" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.
+
+Parameters:
+* $1 - translation template
+See also:
+* {{msg-mw|Pt-parse-close}}',
+	'pt-parse-close' => 'Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.
+
+"Translation template" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.
+
+Parameters:
+* $1 - translation template
+See also:
+* {{msg-mw|Pt-parse-open}}',
 	'pt-parse-nested' => 'Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.
 
-See definitions on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-shake-multiple' => 'Each translation (=section) unit can only contain one marker.',
+See definitions on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - translation unit (=section) text',
+	'pt-shake-multiple' => 'Each translation unit (=section) can only contain one marker.
+
+Parameters:
+* $1 - translation unit (=section) text',
 	'pt-shake-position' => 'Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.
 
-See definitions on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-shake-empty' => 'Translation unit (=section) is empty except for the translation marker (=<nowiki><!--T:1--></nowiki>)',
+See definitions on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - translation unit (=section) text',
+	'pt-shake-empty' => 'Translation unit (=section) is empty except for the translation marker (=<nowiki><!--T:1--></nowiki>).
+
+Parameters:
+* $1 - translation unit ID',
 	'log-description-pagetranslation' => 'Description of a log type',
 	'log-name-pagetranslation' => '{{doc-logpage}}',
 	'logentry-pagetranslation-mark' => '{{logentry|[[Special:Log/pagetranslation]]}}',
@@ -402,10 +450,15 @@ See definitions on [[mw:Help:Extension:Translate/Glossary]].',
 * $4 is the name of the aggregate group',
 	'logentry-pagetranslation-dissociate' => '{{logentry|[[Special:Log/pagetranslation]]}}
 * $4 is the name of the aggregate group',
-	'pt-movepage-title' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
+	'pt-movepage-title' => 'Used as page title.
+
+See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - old page title',
 	'pt-movepage-blockers' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].
 
-This message is followed by one of the following error messages:
+Followed by any of the following error messages:
 * {{msg-mw|Pt-movepage-block-base-exists}}
 * {{msg-mw|Pt-movepage-block-base-invalid}}
 * {{msg-mw|Pt-movepage-block-tp-exists}}
@@ -413,7 +466,10 @@ This message is followed by one of the following error messages:
 * {{msg-mw|Pt-movepage-block-section-exists}}
 * {{msg-mw|Pt-movepage-block-section-invalid}}
 * {{msg-mw|Pt-movepage-block-subpage-exists}}
-* {{msg-mw|Pt-movepage-block-subpage-invalid}}',
+* {{msg-mw|Pt-movepage-block-subpage-invalid}}
+
+Parameters:
+* $1 - number of error messages',
 	'pt-movepage-block-base-exists' => 'Error message to indicate a base page exists and a translatable page cannot be renamed. Parameters:
 * $1 is a pre-existing page name.',
 	'pt-movepage-block-base-invalid' => 'The "target page" is the new title of the translatable page, see definition on [[mw:Help:Extension:Translate/Glossary]].',
@@ -459,9 +515,34 @@ Parameters:
 Parameters:
 * $1 - old page title (translatable page title)
 {{Related|Pt-movepage-block-invalid}}',
-	'pt-movepage-list-translation' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-movepage-list-section' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-movepage-list-other' => 'Header of a list of additional subpages (other than translation pages) of the translatable page being moved, when the user selected the option to move subpages as well.',
+	'pt-movepage-list-pages' => 'Used as section header.
+
+See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - number of old pages to move
+{{Related|Pt-movepage-list}}',
+	'pt-movepage-list-translation' => 'Used as section header.
+
+See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - number of translation pages
+{{Related|Pt-movepage-list}}',
+	'pt-movepage-list-section' => 'Used as section header.
+
+See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - number of translation unit pages (section pages)
+{{Related|Pt-movepage-list}}',
+	'pt-movepage-list-other' => 'Header of a list of additional subpages (other than translation pages) of the translatable page being moved, when the user selected the option to move subpages as well.
+
+See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - number of subpages
+{{Related|Pt-movepage-list}}',
 	'pt-movepage-list-count' => 'Used to indicate how many pages will be moved.
 
 Parameters:
@@ -472,10 +553,25 @@ See also:
 	'pt-movepage-reason' => '{{Identical|Reason}}',
 	'pt-movepage-action-other' => "Button label on the special page 'Move translateable page'. See [[mw:File:Translate_manual_-_Page_example_-_21._Move_confirm.png|screenshot]].",
 	'pt-movepage-intro' => 'See definitions on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-movepage-logreason' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
+	'pt-movepage-logreason' => 'Used as summary.
+
+See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - translatable-page title',
 	'pt-locked-page' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-deletepage-lang-title' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-deletepage-full-title' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
+	'pt-deletepage-lang-title' => 'Used as page title.
+
+See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+See also:
+* {{msg-mw|Pt-deletepage-full-title}}',
+	'pt-deletepage-full-title' => 'Used as page title.
+
+See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+See also:
+* {{msg-mw|Pt-deletepage-lang-title}}',
 	'pt-deletepage-invalid-text' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'pt-deletepage-action-check' => 'This is a button label. "List" is an imperative verb.',
 	'pt-deletepage-action-perform' => "Submit button on special page 'Deleting translatable page'. See [[mw:File:Translate_manual_-_Page_example_-_25._Delete_confirm.png|screenshot]].
@@ -496,8 +592,22 @@ Parameters:
 * $1 - number of pages
 See also:
 * {{msg-mw|Pt-movepage-list-count}}',
-	'pt-deletepage-full-logreason' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-deletepage-lang-logreason' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
+	'pt-deletepage-full-logreason' => 'Used as summary.
+
+See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - translatable-page title
+See also:
+* {{msg-mw|Pt-deletepage-lang-logreason}}',
+	'pt-deletepage-lang-logreason' => 'Used as summary.
+
+See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - translatable-page title
+See also:
+* {{msg-mw|Pt-deletepage-full-logreason}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -2270,6 +2380,7 @@ Fejl vil blive registreret i [[Special:Log/pagetranslation|side oversættelses l
  * @author McDutchie
  * @author Metalhead64
  * @author Purodha
+ * @author Shirayuki
  * @author The Evil IP address
  * @author Umherirrender
  * @author Vogone
@@ -2365,9 +2476,9 @@ Grund: $1',
 	'tpt-aggregategroup-invalid-group' => 'Die Gruppe ist nicht vorhanden',
 	'pt-parse-open' => 'Eine &lt;translate&gt;-Markierung hat kein Gegenstück.
 Übersetzungsvorlage: <pre>$1</pre>',
-	'pt-parse-close' => 'Eine &lt;&#47;translate&gt;-Markierung hat kein Gegenstück.
+	'pt-parse-close' => 'Eine &lt;/translate>-Markierung hat kein Gegenstück.
 Übersetzungsvorlage: <pre>$1</pre>',
-	'pt-parse-nested' => 'Verschachtelte &lt;translate&gt;-Übersetzungseinheiten sind nicht möglich.
+	'pt-parse-nested' => 'Verschachtelte &lt;translate>-Übersetzungseinheiten sind nicht möglich.
 Text des Tags: <pre>$1</pre>',
 	'pt-shake-multiple' => 'Mehrere Übersetzungseinheitenmarker für eine Übersetzungseinheit.
 Text der Übersetzungseinheit: <pre>$1</pre>',
@@ -5353,7 +5464,7 @@ $messages['ja'] = array(
 	'tpt-edit-failed' => 'ページを更新できませんでした: $1',
 	'tpt-duplicate' => '翻訳単位名 $1 は、複数回使用されています。',
 	'tpt-already-marked' => 'このページの最新版は既に翻訳対象に指定されています。',
-	'tpt-unmarked' => 'ページ $1 は既に翻訳対象ではありません。',
+	'tpt-unmarked' => 'ページ $1 を翻訳対象から除去しました。',
 	'tpt-list-nopages' => '翻訳対象に指定されているページがないか、翻訳対象に指定する準備ができているページがありません。',
 	'tpt-new-pages-title' => '翻訳が提案されているページ',
 	'tpt-old-pages-title' => '翻訳対象ページ',
@@ -7402,7 +7513,7 @@ Ein omsetjingsadministrator har avgjort at sida berre kan setjast om til $3.",
 $messages['oc'] = array(
 	'pagetranslation' => 'Traduccion de paginas',
 	'right-pagetranslation' => 'Marcar de versions de paginas per èsser traduchas',
-	'tpt-desc' => 'Extension per traduire de paginas de contengut',
+	'tpt-desc' => 'Extension per tradusir de paginas de contengut',
 	'tpt-section' => 'Unitat de traduccion $1',
 	'tpt-section-new' => 'Unitat de traduccion novèla. Nom : $1',
 	'tpt-section-deleted' => 'Unitat de traduccion $1',
@@ -7410,25 +7521,25 @@ $messages['oc'] = array(
 	'tpt-templatediff' => 'Lo modèl de pagina a cambiat.',
 	'tpt-diff-old' => 'Tèxte precedent',
 	'tpt-diff-new' => 'Tèxte novèl',
-	'tpt-submit' => 'Marcar aquesta version per èsser traducha',
+	'tpt-submit' => 'Marcar aquesta version per èsser tradusida',
 	'tpt-sections-oldnew' => 'Unitats de traduccion novèlas e existentas',
 	'tpt-sections-deleted' => 'Unitats de traduccion suprimidas',
 	'tpt-sections-template' => 'Modèl de pagina de traduccion',
 	'tpt-badtitle' => 'Lo nom de pagina donada ($1) es pas un títol valid',
 	'tpt-oldrevision' => '$2 es pas la darrièra version de la pagina [[$1]].
-Sola la darrièra version de la pagina pòt èsser marcada per èsser traducha.',
-	'tpt-notsuitable' => "La pagina $1 conven pas per èsser traducha.
+Sola la darrièra version de la pagina pòt èsser marcada per èsser tradusida.',
+	'tpt-notsuitable' => "La pagina $1 conven pas per èsser tradusida.
 Siatz segur(a) que conten la balisa <nowiki><translate></nowiki> e qu'a una sintaxi corrècta.",
-	'tpt-saveok' => 'La pagina « $1 » es estada marcada per èsser traducha amb $2 {{PLURAL:$2|unitat de traduccion|unitats de traduccion}}.
-La pagina pòt èsser <span class="plainlinks">[$3 traducha]</span> tre ara.',
+	'tpt-saveok' => 'La pagina [[$1]] es estada marcada per èsser tradusida amb $2 {{PLURAL:$2|unitat de traduccion|unitats de traduccion}}.
+La pagina pòt èsser <span class="plainlinks">[$3 tradusida]</span> tre ara.',
 	'tpt-badsect' => '« $1 » es pas un nom valid per una unitat de traduccion $2.',
 	'tpt-showpage-intro' => "Çaijós, las traduccions novèlas, las qu'existisson e las suprimidas.
 Abans de marcar aquestas versions per èsser traduchas, verificatz que las modificacions a las seccions son minimizadas per evitar de trabalh inutil als traductors.", # Fuzzy
-	'tpt-mark-summary' => 'Aquesta version es estada marcada per èsser traducha',
+	'tpt-mark-summary' => 'Aquesta version es estada marcada per èsser tradusida',
 	'tpt-edit-failed' => 'Impossible de metre a jorn la pagina $1',
-	'tpt-already-marked' => "La darrièra version d'aquesta pagina ja es estada marcada per èsser traducha.",
-	'tpt-list-nopages' => "Cap de pagina es pas estada marcada per èsser traducha o prèsta per l'èsser.",
-	'tpt-new-pages' => "{{PLURAL:$1|Aquesta pagina conten|Aquestas paginas contenon}} de tèxte amb de balisas de traduccion, mas cap de version d'{{PLURAL:$1|aquesta pagina es pas marcada per èsser traducha|aquestas paginas son pas marcadas per èsser traduchas}}.",
+	'tpt-already-marked' => "La darrièra version d'aquesta pagina ja es estada marcada per èsser tradusida.",
+	'tpt-list-nopages' => "Cap de pagina es pas estada marcada per èsser tradusida o prèsta per l'èsser.",
+	'tpt-new-pages' => "{{PLURAL:$1|Aquesta pagina conten|Aquestas paginas contenon}} de tèxte amb de balisas de traduccion, mas cap de version d'{{PLURAL:$1|aquesta pagina es pas marcada per èsser tradusida|aquestas paginas son pas marcadas per èsser tradusidas}}.",
 	'tpt-old-pages' => "De versions d'{{PLURAL:$1|aquesta pagina|aquestas paginas}} son estadas marcadas per èsser traduchas.",
 	'tpt-select-prioritylangs-reason' => 'Motiu :',
 	'tpt-sections-prioritylangs' => 'Lengas prioritàrias',
@@ -7436,16 +7547,16 @@ Abans de marcar aquestas versions per èsser traduchas, verificatz que las modif
 	'tpt-rev-unmark' => 'suprimir de la traduccion',
 	'tpt-rev-discourage' => 'descoratjar',
 	'tpt-rev-encourage' => 'restablir',
-	'translate-tag-translate-link-desc' => 'Traduire aquesta pagina',
-	'translate-tag-markthis' => 'Marcar aquesta pagina per èsser traducha',
-	'translate-tag-markthisagain' => 'Aquesta pagina a agut <span class="plainlinks">[$1 de modificacions]</span> dempuèi qu’es estada darrièrament <span class="plainlinks">[$2 marcada per èsser traducha]</span>.',
+	'translate-tag-translate-link-desc' => 'Tradusir aquesta pagina',
+	'translate-tag-markthis' => 'Marcar aquesta pagina per èsser tradusida',
+	'translate-tag-markthisagain' => 'Aquesta pagina a agut <span class="plainlinks">[$1 de modificacions]</span> dempuèi qu’es estada darrièrament <span class="plainlinks">[$2 marcada per èsser tradusida]</span>.',
 	'translate-tag-hasnew' => 'Aquesta pagina conten <span class="plainlinks">[$1 de modificacions]</span> que son pas marcadas per la traduccion.',
 	'tpt-translation-intro' => 'Aquesta pagina es una <span class="plainlinks">[$1 traduccion]</span> de la pagina [[$2]] e la traduccion es completada a $3 % e a jorn.',
 	'tpt-languages-legend' => 'Autras lengas :',
 	'tpt-target-page' => "Aquesta pagina pòt pas èsser mesa a jorn manualament.
-Es una version traducha de [[$1]] e la traduccion pòt èsser mesa a jorn en utilizant [$2 l'aisina de traduccion].",
+Es una version tradusida de [[$1]] e la traduccion pòt èsser mesa a jorn en utilizant [$2 l'aisina de traduccion].",
 	'tpt-unknown-page' => "Aqueste espaci de noms es reservat per la traduccion de paginas.
-La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marcada per èsser traducha.",
+La pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marcada per èsser tradusida.",
 	'tpt-render-summary' => 'Mesa a jorn per èsser en acòrd amb la version novèla de la font de la pagina',
 	'tpt-download-page' => 'Exportar la pagina amb sas traduccions',
 	'tpt-aggregategroup-add' => 'Apondre',
