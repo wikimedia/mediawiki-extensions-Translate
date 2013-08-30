@@ -30801,7 +30801,7 @@ $messages['sr-ec'] = array(
 	'translate-manage-import-summary' => 'Увожење новог издања из спољашњег извора',
 	'translate-manage-conflict-summary' => 'Увожење новог издања из спољашњег извора.
 Молимо, проверите.',
-	'translate-manage-fuzzy-summary' => 'Значење поруке је промењено',
+	'translate-manage-fuzzy-summary' => 'Дефиниција поруке се променила',
 	'translate-manage-submit' => 'Изврши',
 	'translate-manage-intro-other' => 'Испод је списак измена превода за $1 језик.
 Прегледајте измене и изаберите радњу за сваки превод.
@@ -31209,7 +31209,7 @@ Ponovo pošaljite obrazac za nastavak.',
 	'translate-manage-import-summary' => 'Uvoženje novog izdanja iz spoljašnjeg izvora',
 	'translate-manage-conflict-summary' => 'Uvoženje novog izdanja iz spoljašnjeg izvora.
 Molimo, proverite.',
-	'translate-manage-fuzzy-summary' => 'Značenje poruke je promenjeno.',
+	'translate-manage-fuzzy-summary' => 'Definicija poruke se promenila',
 	'translate-manage-submit' => 'Izvrši',
 	'translate-manage-intro-other' => 'Ispod je spisak izmena prevoda za $1 jezik.
 Pregledajte izmene i izaberite radnju za svaki prevod.

@@ -520,7 +520,7 @@ Parameters:
 See definition on [[mw:Help:Extension:Translate/Glossary]].
 
 Parameters:
-* $1 - number of old pages to move
+* $1 - (Unused) number of old pages to move
 {{Related|Pt-movepage-list}}',
 	'pt-movepage-list-translation' => 'Used as section header.
 
