@@ -21,25 +21,81 @@ class RubyYamlFFSTest extends MediaWikiTestCase {
 
 	protected function setUp() {
 		parent::setUp();
-		$this->group = MessageGroupBase::factory( $this->groupConfiguration );
+		$group = MessageGroupBase::factory( $this->groupConfiguration );
+		/** @var YamlFFS $ffs */
+		$this->ffs = $group->getFFS();
 	}
 
-	protected function tearDown() {
-		unset( $this->group );
-		parent::tearDown();
+	public function testFlattenPluralWithNoPlurals() {
+		$input = array(
+			'much' => 'a lot',
+			'less' => 'not so much',
+		);
+		$output = false;
+		$this->assertEquals( $output, $this->ffs->flattenPlural( $input ) );
+	}
+
+	public function testFlattenPluralWithPlurals() {
+		$input = array(
+			'one' => 'just a tiny bit',
+			'two' => 'not so much',
+			'other' => 'maybe a lot',
+		);
+		$output = '{{PLURAL|one=just a tiny bit|two=not so much|maybe a lot}}';
+		$this->assertEquals( $output, $this->ffs->flattenPlural( $input ) );
+	}
+
+	public function testFlattenPluralWithArrays() {
+		$input = array(
+			'one' => array(
+				'multi' => 'he lives in a multistorey house',
+				'row' => 'he lives in a row house',
+			),
+			'other' => array(
+				'multi' => 'he lives in mountain cave',
+				'row' => 'he lives in a cave near the river',
+			),
+		);
+		$output = false;
+		$this->assertEquals( $output, $this->ffs->flattenPlural( $input ) );
+	}
+
+	/**
+	 * @expectedException MWException
+	 * @expectedExceptionMessage Reserved plural keywords mixed with other keys
+	 * @dataProvider flattenPluralsWithMixedKeywordsProvider
+	 */
+
+	public function testFlattenPluralsWithMixedKeywords( $input, $comment ) {
+		$this->ffs->flattenPlural( $input );
+	}
+
+	public function flattenPluralsWithMixedKeywordsProvider() {
+		return array(
+			array(
+				array(
+					'carrot' => 'I like carrots',
+					'other' =>  'I like milk',
+				),
+				'reserved keyword at the end',
+			),
+			array(
+				array(
+					'one' => 'I am the one leader',
+					'club' =>  'I am the club leader',
+				),
+				'reserved keyword at the beginning',
+			)
+		);
 	}
 
 	/**
 	 * @dataProvider unflattenDataProvider
 	 */
 	public function testUnflattenPural( $key, $value, $result ) {
-		/**
-		 * @var YamlFFS $ffs
-		 */
-		$ffs = $this->group->getFFS();
 		$this->assertEquals(
 			$result,
-			$ffs->unflattenPlural( $key, $value )
+			$this->ffs->unflattenPlural( $key, $value )
 		);
 	}
 
