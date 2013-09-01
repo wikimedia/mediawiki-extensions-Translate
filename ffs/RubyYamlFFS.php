@@ -23,24 +23,38 @@ class RubyYamlFFS extends YamlFFS {
 	/**
 	 * Flattens ruby plural arrays into special plural syntax.
 	 *
-	 * @param $messages array
+	 * @param array $messages Array of keys and values
 	 *
 	 * @throws MWException
 	 * @return bool|string
 	 */
 	public function flattenPlural( $messages ) {
 
-		$plurals = false;
-		foreach ( array_keys( $messages ) as $key ) {
+		$pluralKeys = false;
+		$nonPluralKeys = false;
+		foreach ( $messages as $key => $value ) {
+			if ( is_array( $value ) ) {
+				# Plurals can only happen in the lowest level of the structure
+				return false;
+			}
+
+			# Check if we find any reserved plural keyword
 			if ( isset( self::$pluralWords[$key] ) ) {
-				$plurals = true;
-			} elseif ( $plurals ) {
-				throw new MWException( "Reserved plural keywords mixed with other keys: $key." );
+				$pluralKeys = true;
+			} else {
+				$nonPluralKeys = true;
 			}
 		}
 
-		if ( !$plurals ) {
+		# No plural keys at all, we can skip
+		if ( !$pluralKeys ) {
 			return false;
+		}
+
+		# Mixed plural keys with other keys, should not happen
+		if ( $nonPluralKeys ) {
+			$keys = implode( ', ', array_keys( $messages ) );
+			throw new MWException( "Reserved plural keywords mixed with other keys: $keys." );
 		}
 
 		$pls = '{{PLURAL';
@@ -62,8 +76,8 @@ class RubyYamlFFS extends YamlFFS {
 	/**
 	 * Converts the special plural syntax to array or ruby style plurals
 	 *
-	 * @param $key string
-	 * @param $message string
+	 * @param string $key Message key prefix
+	 * @param string $message The plural string
 	 *
 	 * @return bool|array
 	 */
