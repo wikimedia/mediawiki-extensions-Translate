@@ -284,15 +284,21 @@ $specialPageAliases['dv'] = array(
 /** Greek (Ελληνικά) */
 $specialPageAliases['el'] = array(
 	'Translate' => array( 'Μετάφραση' ),
+	'Magic' => array( 'ΠροχωρημένηΜετάφραση', 'ΜαγικέςΛέξεις' ),
 	'TranslationStats' => array( 'ΣτατιστικάΜετάφρασης' ),
 	'Translations' => array( 'Μεταφράσεις' ),
 	'LanguageStats' => array( 'ΣτατιστικάΓλώσσας' ),
+	'MessageGroupStats' => array( 'ΣτατιστικάΟμάδαςΜηνυμάτων' ),
 	'PageTranslation' => array( 'ΜετάφρασηΣελίδας' ),
 	'ImportTranslations' => array( 'ΕισαγωγήΜεταφράσεων' ),
 	'ManageMessageGroups' => array( 'ΔιαχείρισηΟμάδωνΜηνυμάτων' ),
 	'FirstSteps' => array( 'ΠρώταΒήματα' ),
+	'SupportedLanguages' => array( 'ΥποστηριζόμενεςΓλώσσες' ),
 	'MyLanguage' => array( 'ΗΓλώσσαΜου' ),
+	'PageTranslationDeletePage' => array( 'ΔιαγραφήΣελίδαςΜετάφρασηςΣελίδων' ),
+	'AggregateGroups' => array( 'ΣυγκεντρωτικέςΟμάδες' ),
 	'SearchTranslations' => array( 'ΑναζήτησηΜεταφράσεων' ),
+	'TranslateSandbox' => array( 'ΔιαχείρισηΑμμοδοχείουΜεταφραστή', 'ΑμμοδοχείοΜετάφρασης' ),
 );
 
 /** Esperanto (Esperanto) */

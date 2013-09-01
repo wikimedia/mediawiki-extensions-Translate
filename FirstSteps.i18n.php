@@ -1051,6 +1051,29 @@ Buźoš teke powěsćowe listy jaden raz na mjasec dostaś.
 Jolic njocoš  powěsćowe listy dostaś, móžoš to na rejtarku "{{int:prefs-personal}}" swójich [[Special:Preferences|nastajenjow]] wótwóliś.',
 );
 
+/** Greek (Ελληνικά)
+ * @author Protnet
+ */
+$messages['el'] = array(
+	'firststeps' => 'Πρώτα βήματα',
+	'translate-fs-signup-title' => 'Εγγραφή',
+	'translate-fs-settings-title' => 'Ρύθμιση των προτιμήσεών σας',
+	'translate-fs-userpage-title' => 'Δημιουργία της σελίδας χρήστη σας',
+	'translate-fs-permissions-title' => 'Αίτηση δικαιωμάτων μεταφραστή',
+	'translate-fs-target-title' => 'Ξεκινήσετε τη μετάφραση!',
+	'translate-fs-email-title' => 'Επαληθεύστε τη διεύθυνση του ηλεκτρονικού σας ταχυδρομείου',
+	'translate-fs-selectlanguage' => 'Επιλέξτε γλώσσα',
+	'translate-fs-settings-planguage' => 'Κύρια γλώσσα:',
+	'translate-fs-settings-submit' => 'Αποθήκευση προτιμήσεων',
+	'translate-fs-userpage-level-N' => 'Έχω σαν μητρική γλώσσα τα',
+	'translate-fs-userpage-level-5' => 'Είμαι επαγγελματίας μεταφραστής στα',
+	'translate-fs-userpage-level-4' => 'Γνωρίζω σαν μητρική γλώσσα τα',
+	'translate-fs-userpage-level-3' => 'Έχω μεγάλη ευχέρεια στα',
+	'translate-fs-userpage-level-2' => 'Έχω μια μέτρια ευχέρεια στα',
+	'translate-fs-userpage-level-1' => 'Γνωρίζω λίγα',
+	'translate-fs-permissions-submit' => 'Αποστολή αίτησης',
+);
+
 /** Esperanto (Esperanto)
  * @author ArnoLagrange
  * @author Blahma

@@ -1054,6 +1054,8 @@ This should be consistent with the following messages:
 {{Identical|Accept}}',
 	'translate-messagereview-progress' => 'Button label in [[Special:Translate]] review mode. Button is disabled. This is shown very briefly while the acceptance is in progress.',
 	'translate-messagereview-failure' => 'Button label in [[Special:Translate]] review mode. Button is disabled.
+
+Parameters:
 * $1 - one of the following messages:
 ** {{msg-mw|api-error-invalidrevision}}
 ** {{msg-mw|api-error-unknownmessage}}
@@ -8759,7 +8761,7 @@ $messages['ee'] = array(
  */
 $messages['el'] = array(
 	'translate' => 'Μεταφράστε',
-	'translate-desc' => '[[Special:Translate|Ειδική σελίδα]] για την μετάφραση του MediaWiki και ακόμη παραπέρα',
+	'translate-desc' => '[[Special:Translate|Ειδική σελίδα]] για τη μετάφραση του MediaWiki και ακόμη παραπέρα',
 	'translate-taskui-view' => 'Εμφάνιση όλων των μηνυμάτων',
 	'translate-taskui-untranslated' => 'Εμφάνιση αμετάφραστων μηνυμάτων',
 	'translate-taskui-optional' => 'Εμφάνιση προαιρετικών μηνυμάτων',
@@ -8866,6 +8868,7 @@ $messages['el'] = array(
 	'translate-checks-format' => 'Αυτή η μετάφραση δεν ακολουθεί τον ορισμό ή έχει άκυρη σύνταξη: $1',
 	'translate-checks-escape' => 'Οι ακόλουθοι χαρακτήρες διαφυγής μπορεί να συμπτωματικοί: <strong>$1</strong>',
 	'translate-checks-parametersnotequal' => 'Το πλήθος των παραμέτρων είναι {{PLURAL:$1|$1}} ενώ θα έπρεπε να είναι {{PLURAL:$2|$2}}.',
+	'translate-checks-malformed' => 'Το <nowiki>$1</nowiki> έχει λανθασμένη μορφή.',
 	'translate-checks-fudforum-syntax' => 'Χρήση του <nowiki>$1</nowiki> αντί του <nowiki>$2</nowiki> σε αυτό το εγχείρημα.',
 	'translate-pref-nonewsletter' => 'Μην μου στέλνετε e-mail newsletters',
 	'translate-pref-editassistlang' => 'Βοηθητικές γλώσσες:',
@@ -8961,15 +8964,23 @@ $messages['el'] = array(
 	'translate-mgs-invalid-group' => 'Η καθορισμένη ομάδα $1 δεν υπάρχει.',
 	'translate-mgs-nothing' => 'Τίποτε προς εμφάνιση για τις στατιστικές που ζητήθηκαν.',
 	'supportedlanguages' => 'Υποστηριζόμενες γλώσσες',
+	'supportedlanguages-summary' => 'Αυτή η σελίδα εμφανίζει μια λίστα με όλες τις γλώσσες που υποστηρίζονται από τον ιστοχώρο {{SITENAME}},
+μαζί με τα ονόματα των μεταφραστών που δουλεύουν πάνω σε κάθε γλώσσα.
+Όσο πιο πολλές επεξεργασίες έχει συνεισφέρει ένας μεταφραστής, τόσο πιο μεγάλο εμφανίζεται το όνομά του.
+Το χρώμα υπογράμμισης υποδεικνύει το πόσο πρόσφατα δραστηριοποιήθηκε ο κάθε μεταφραστής.',
+	'supportedlanguages-colorlegend' => 'Υπόμνημα για το χρώμα: Τελευταία μετάφραση $1 {{PLURAL:$1|ημέρα|ημέρες}} πριν.',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Μεταφραστής|Μεταφραστές}}: $1',
 	'supportedlanguages-recenttranslations' => 'πρόσφατες μεταφράσεις',
 	'supportedlanguages-count' => '$1 {{PLURAL:$1|γλώσσα|γλώσσες}} συνολικά.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|επεξεργασία|επεξεργασίες}} - τελευταία επεξεργασία $3 {{PLURAL:$3|day|days}} πριν',
 	'translate-save' => 'Αποθήκευση ($1)',
 	'translate-jssti-add' => 'Προσθήκη στην λίστα',
 	'managemessagegroups' => 'Διαχείριση ομάδας μηνυμάτων',
 	'translate-smg-notallowed' => 'Δεν σας επιτρέπεται να εκτελέσετε αυτήν την ενέργεια.',
 	'translate-smg-nochanges' => 'Δεν υπάρχουν αλλαγές προς επεξεργασία.',
 	'translate-smg-submit' => 'Υποβολή αλλαγών για επεξεργασία',
+	'translate-smg-submitted' => 'Οι ορισμοί μηνυμάτων έχουν ενημερωθεί. Οι αλλαγές είναι υπό διεργασία στο παρασκήνιο.',
+	'translate-smg-postponed' => 'Δεν ήταν δυνατή η διεργασία ορισμένων αλλαγών. [[{{FULLPAGENAME}}|Προσπαθήστε ξανά]].',
 	'translate-smg-left' => 'Περιεχόμενο μηνύματος στο wiki',
 	'translate-smg-right' => 'Εισερχόμενες αλλαγές',
 	'translate-manage-import-diff' => 'Μήνυμα $1 | Ενέργειες: $2',
@@ -8982,20 +8993,28 @@ $messages['el'] = array(
 	'translate-manage-nochanges' => 'Δεν υπάρχουν αλλαγές στους ορισμούς μηνυμάτων για αυτή την ομάδα.',
 	'translate-manage-nochanges-other' => 'Δεν υπήρξαν μεταβολές για αυτήν τη γλώσσα.
 Χρησιμοποιήστε τον παρακάτω σύνδεσμο για να επιστρέψετε σε προβολή λεπτομερειών ομάδας.',
+	'translate-manage-inconsistent' => 'Εντοπίστηκε ασυνέπεια στο αίτημα.
+Παρακαλώ ελέγξτε για αλλαγές και προσπαθήστε ξανά.
+Λεπτομέρειες: $1.',
+	'translate-manage-toolong' => 'Έγινε υπέρβαση του μέγιστου χρόνου διεργασίας που είναι $1 {{PLURAL:$1|δευτερόλεπτο|δευτερόλεπτα}}.
+Παρακαλώ υποβάλετε ξανά την φόρμα για να συνεχιστεί η διεργασία.',
 	'translate-manage-import-summary' => 'Εισάγοντας μια νέα έκδοση από μια εξωτερική πηγή.',
 	'translate-manage-conflict-summary' => 'Εισαγωγή νέας έκδοσης από εξωτερική πηγή. Παρακαλούμε ελέγξτε.',
 	'translate-manage-fuzzy-summary' => 'Ο ορισμός του μηνύματος έχει αλλάξει',
+	'translate-manage-submit' => 'Εκτέλεση',
 	'importtranslations' => 'Εισαγωγή μεταφράσεων',
-	'translate-import-from-url' => 'URL στο αρχείο:',
-	'translate-import-from-wiki' => 'Αρχείο σε αυτό το wiki:',
 	'translate-import-from-local' => 'Επιφόρτωση τοπικού αρχείου:',
 	'translate-import-load' => 'Επιφόρτωση αρχείου',
-	'translate-import-err-type-not-supported' => 'Μη ικανό να φορτώσει το αρχείο:
-Η μέθοδος <code>$1</code> δεν υποστηρίζεται.',
+	'translate-import-err-dl-failed' => 'Αδυναμία λήψης του αρχείου: $1',
 	'translate-import-err-ul-failed' => 'Η επιφόρτωση του αρχείου δεν ήταν επιτυχής',
 	'translate-import-err-invalid-title' => 'Το όνομα του αρχείου <nowiki>$1</nowiki> δεν ήταν έγκυρο.',
 	'translate-import-err-no-such-file' => 'Το αρχείο <nowiki>$1</nowiki> δεν υπάρχει ή δεν έχει φορτωθεί τοπικά.',
 	'translate-import-err-stale-group' => 'Η ομάδα μηνυμάτων στην οποία ανήκει αυτό το αρχείο δεν υπάρχει.',
+	'translate-import-err-no-headers' => 'Το αρχείο δεν είναι ένα σωστά σχηματισμένο αρχείο τύπου Gettext στη μορφή που αναγνωρίζει η επέκταση Translate:
+Αδύνατος ο προσδιορισμός ομάδας μηνυμάτων και γλώσσας από την κεφαλίδα του αρχείου.',
+	'translate-import-err-warnings' => 'Το αρχείο δεν είναι σωστά σχηματισμένο.
+Βεβαιωθείτε ότι το πρόγραμμα επεξεργασίας σας δεν αφαιρεί τα πεδία msgctxt.
+Λεπτομέρειες: $1',
 	'translate-js-summary' => 'Σύνοψη:',
 	'translate-js-save' => 'Αποθήκευση',
 	'translate-js-next' => 'Αποθήκευση και άνοιγμα του επόμενου',
@@ -9022,8 +9041,8 @@ $messages['el'] = array(
 	'translate-search-nofilter' => 'Χωρίς φιλτράρισμα',
 	'translate-messagereview-submit' => 'Αποδοχή', # Fuzzy
 	'translate-messagereview-progress' => 'Αποδοχή...', # Fuzzy
-	'translate-messagereview-failure' => 'Αποδοχή... απέτυχε: $1', # Fuzzy
-	'translate-messagereview-done' => 'Αποδέχθηκε', # Fuzzy
+	'translate-messagereview-failure' => 'Η σήμανση ως επιμελημένο απέτυχε: $1',
+	'translate-messagereview-done' => 'Επιμελημένο',
 	'translate-messagereview-reviews' => 'Αποδέχθηκε από {{PLURAL:$1|ένα χρήστη|$1 χρήστες}}', # Fuzzy
 	'translate-messagereview-reviewswithyou' => 'Έγινε αποδεκτό από {{PLURAL:$1|σας|$1 χρήστες μαζί με σας}}', # Fuzzy
 	'api-error-invalidrevision' => 'Δεν βρέθηκε η μετάφραση',
@@ -9037,14 +9056,32 @@ $messages['el'] = array(
 	'group-translate-proofr-member' => '{{GENDER:$1|αναθεωρητής μετάφρασης}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Αναθεωρητές μετάφρασης',
 	'log-description-translationreview' => 'Αρχείο καταγραφής όλων των αναθεωρήσεων σε μεταφράσεις και ομάδες μηνυμάτων.',
-	'logentry-translationreview-message' => '{{GENDER:$2|Ο|Η}} $1 αποδέχτηκε τη μετάφραση $3', # Fuzzy
+	'logentry-translationreview-message' => '{{GENDER:$2|Ο|Η}} $1 επιμελήθηκε τη μετάφραση $3',
+	'logentry-translationreview-group' => '{{GENDER:$2|Ο|Η}} $1 άλλαξε την κατάσταση των μεταφράσεων στα $4 του $3 από $6 σε $7',
+	'group-translate-sandboxed' => 'Μη εγκεκριμένοι μεταφραστές',
+	'group-translate-sandboxed-member' => 'μη {{GENDER:$1|εγκεκριμένος μεταφραστής|εγκεκριμένη μεταφράστρια}}',
+	'right-translate-sandboxmanage' => 'Διαχείριση χρηστών αμμοδοχείου',
+	'action-translate-sandboxmanage' => 'διαχειριστείτε χρήστες αμμοδοχείου',
+	'right-translate-sandboxaction' => 'Εκτέλεση ενεργειών λευκής λίστας για χρήστες αμμοδοχείου',
+	'action-translate-sandboxaction' => 'εκτελέσετε ενέργειες λευκής λίστας για χρήστες αμμοδοχείου',
+	'translate-workflow-state-' => '(δεν έχει οριστεί)',
+	'translate-workflowstatus' => 'Κατάσταση: $1',
+	'translate-workflow-set-do' => 'Ορισμός',
+	'translate-workflow-set-doing' => 'Γίνεται ορισμός...',
+	'translate-workflow-set-done' => 'Ορίστηκε!',
+	'translate-workflow-set-error-alreadyset' => 'Η αιτηθήσα κατάσταση είναι ταυτόσημη με την τρέχουσα κατάσταση.',
+	'translate-workflow-autocreated-summary' => 'Αυτόματη δημιουργία σελίδας για την κατάσταση ροής εργασίας $1',
 	'translate-stats-workflow' => 'Κατάσταση',
+	'translate-workflowgroup-label' => 'Καταστάσεις ροής εργασίας',
+	'translate-workflowgroup-desc' => 'Αυτή η ομάδα μηνυμάτων δείχνει τις καταστάσεις ροής εργασίας της μετάφρασης.
+Οι καταστάσεις ορίζονται στη μεταβλητή ρύθμισης $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Πρόσφατες μεταφράσεις',
 	'translate-dynagroup-additions-label' => 'Πρόσφατες προσθήκες',
 	'translate-dynagroup-additions-desc' => 'Αυτή η ομάδα μηνυμάτων εμφανίζει νέα και αλλαγμένα μηνύματα.',
 	'translate-dynagroup-by' => 'Η μετάφραση έγινε από {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Η μετάφραση έγινε από {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Τελευταία αλλαγή από  {{GENDER:$1|$1}}',
+	'translate-dynagroup-lastc' => 'Τελευταία αλλαγή από {{GENDER:$1|τον|την}} $1 ($2)',
 	'translate-gethelp' => 'Βοήθεια',
 	'translate-msggroupselector-projects' => 'Ομάδα μηνυμάτων',
 	'translate-msggroupselector-search-placeholder' => 'Αναζήτηση ομάδων',
@@ -9065,12 +9102,14 @@ $messages['el'] = array(
 	'tux-status-unsaved' => 'Μη αποθηκευμένα',
 	'tux-editor-placeholder' => 'Η μετάφρασή σας',
 	'tux-editor-paste-original-button-label' => 'Επικόλληση πηγαίου κειμένου',
+	'tux-editor-discard-changes-button-label' => 'Απόρριψη των αλλαγών',
 	'tux-editor-save-button-label' => 'Αποθήκευση μετάφρασης',
 	'tux-editor-skip-button-label' => 'Προχωρήστε στο επόμενο',
+	'tux-editor-cancel-button-label' => 'Ακύρωση',
 	'tux-editor-confirm-button-label' => 'Επιβεβαίωση μετάφρασης',
 	'tux-editor-shortcut-info' => 'Πατήστε «$1» για αποθήκευση ή «$2» για μετάβαση στο επόμενο μήνυμα',
-	'tux-editor-edit-desc' => 'Επεξεργασία περιγραφής', # Fuzzy
-	'tux-editor-add-desc' => 'Προσθήκη περιγραφής', # Fuzzy
+	'tux-editor-edit-desc' => 'Επεξεργασία τεκμηρίωσης',
+	'tux-editor-add-desc' => 'Προσθήκη τεκμηρίωσης',
 	'tux-editor-suggestions-title' => 'Προτάσεις',
 	'tux-editor-in-other-languages' => 'Σε άλλες γλώσσες',
 	'tux-editor-need-more-help' => 'Χρειάζεστε περισσότερη βοήθεια;',
@@ -9079,11 +9118,17 @@ $messages['el'] = array(
 	'tux-warnings-more' => '{{PLURAL:$1|περισσότερες $1}}',
 	'tux-warnings-hide' => 'απόκρυψη',
 	'tux-editor-save-failed' => 'Η αποθήκευση της μετάφρασης απέτυχε: $1',
-	'tux-editor-use-this-translation' => 'Χρησιμοποιήστε ως μετάφραση',
 	'tux-editor-n-uses' => 'χρησιμοποιήθηκε $1 {{PLURAL:$1|φορά|φορές}}',
 	'tux-editor-message-desc-more' => 'Δείτε περισσότερα',
 	'tux-editor-message-desc-less' => 'Δείτε λιγότερα',
 	'tux-editor-clear-translated' => 'Απόκρυψη μεταφρασμένων',
+	'tux-editor-proofreading-mode' => 'Επιμέλεια',
+	'tux-editor-translate-mode' => 'Λίστα',
+	'tux-editor-proofreading-hide-own-translations' => 'Απόκρυψη των μεταφράσεών σας',
+	'tux-editor-proofreading-show-own-translations' => 'Εμφάνιση των μεταφράσεών σας',
+	'tux-proofread-action-tooltip' => 'Σήμανση ως επιμελημένο',
+	'tux-proofread-edit-label' => 'Επεξεργασία',
+	'tux-editor-page-mode' => 'Σελίδα',
 	'tux-editor-outdated-warning' => 'Αυτή η μετάφραση μπορεί να χρειάζεται ενημέρωση.',
 	'tux-editor-outdated-warning-diff-link' => 'Εμφάνιση διαφορών',
 	'tux-editor-doc-editor-placeholder' => 'Τεκμηρίωση μηνύματος',
@@ -9091,9 +9136,35 @@ $messages['el'] = array(
 	'tux-editor-doc-editor-cancel' => 'Ακύρωση',
 	'tux-messagetable-more-messages' => '$1 ακόμη {{PLURAL:$1|μήνυμα|μηνύματα}}',
 	'tux-messagetable-loading-messages' => 'Φόρτωση {{PLURAL:$1|μηνύματος|μηνυμάτων}}...',
-	'tux-message-filter-placeholder' => 'Κατάλογος φίλτρου', # Fuzzy
+	'tux-message-filter-placeholder' => 'Φιλτράρισμα καταλόγου',
 	'tux-message-filter-result' => '$1   {{PLURAL:$1|αποτέλεσμα βρέθηκε|αποτελέσματα βρέθηκαν}} για " $2 "',
 	'tux-message-filter-advanced-button' => 'Σύνθετη αναζήτηση',
+	'tux-message-filter-optional-messages-label' => 'Προαιρετική μηνύματα',
+	'tux-proofread-translated-by-self' => 'Μεταφρασμένα από εσάς',
+	'tux-empty-list-all' => 'Αυτή η ομάδα μηνυμάτων είναι κενή',
+	'tux-empty-list-all-guide' => 'Επιλέξτε μια διαφορετική ομάδα μηνυμάτων για μετάφραση',
+	'tux-translate-page-no-such-group' => "'''Η αναφερόμενη ομάδα δεν υπάρχει.''' Επιλέξτε μια διαφορετική ομάδα μηνυμάτων.",
+	'tux-empty-list-translated' => 'Δεν υπάρχουν μεταφρασμένα μηνύματα',
+	'tux-empty-list-translated-guide' => 'Μπορείτε να βοηθήσετε στη μετάφραση',
+	'tux-empty-list-translated-action' => 'Μετάφραση',
+	'tux-empty-no-messages-to-display' => 'Δεν υπάρχουν μηνύματα προς εμφάνιση.',
+	'tux-empty-there-are-optional' => 'Υπάρχουν προαιρετικά μηνύματα που δεν εμφανίζονται στη λίστα',
+	'tux-empty-show-optional-messages' => 'Εμφάνιση προαιρετικών μηνυμάτων',
+	'tux-empty-no-outdated-messages' => 'Δεν υπάρχουν παρωχημένα μηνύματα',
+	'tux-empty-you-can-help-providing' => 'Μπορείτε να βοηθήσετε παρέχοντας νέες μεταφράσεις',
+	'tux-empty-list-other' => 'Δεν υπάρχει τίποτα για μετάφραση.',
+	'tux-empty-list-other-action' => 'Επιμέλεια μεταφράσεων',
+	'tux-empty-list-other-link' => 'Εμφάνιση όλων των μηνυμάτων',
+	'tux-editor-close-tooltip' => 'Κλείσιμο',
+	'tux-editor-expand-tooltip' => 'Ανάπτυξη',
+	'tux-editor-collapse-tooltip' => 'Σύμπτυξη',
+	'tux-editor-message-tools-history' => 'Ιστορικό',
+	'tux-editor-message-tools-translations' => 'Όλες οι μεταφράσεις',
+	'tux-editor-loading' => 'Γίνεται φόρτωση...',
+	'translate-search-more-languages-info' => '$1 ακόμη {{PLURAL:$1|γλώσσα|γλώσσες}}',
+	'translate-statsbar-tooltip' => '$1% μεταφρασμένα, $2% επιμελημένα',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% μεταφρασμένα, $2% επιμελημένα, $3 παρωχημένα',
+	'translate-search-more-groups-info' => '$1 ακόμα {{PLURAL:$1|ομάδα|ομάδες}}',
 );
 
 /** British English (British English)

@@ -36,9 +36,9 @@ $messages['qqq'] = array(
 
 Followed by a list of the pending requests.',
 	'tsb-reminder-title-generic' => 'Subject of an email',
-	'tsb-reminder-content-generic' => 'Body of an email.
+	'tsb-reminder-content-generic' => 'Body of an email. Parameters:
 * $1 - user name of the recipient
-* $2 - url to the website',
+* $2 - URL to the website',
 );
 
 /** Afrikaans (Afrikaans)
@@ -106,6 +106,15 @@ vielen Dank für deine Registrierung auf {{SITENAME}}. Wenn du deine Testüberse
 vervollständigst, werden dir bald die Administratoren einen vollen Übersetzungszugriff gewähren.
 
 Bitte besuche $2 und erstelle einige weitere Übersetzungen.',
+);
+
+/** Spanish (español)
+ * @author Fitoschido
+ */
+$messages['es'] = array(
+	'translatesandbox' => 'Gestionar la zona de pruebas del traductor',
+	'tsb-filter-pending' => 'Solicitudes pendientes',
+	'tsb-reminder-title-generic' => 'Completa tu introducción para volverte un traductor verificado',
 );
 
 /** French (français)
