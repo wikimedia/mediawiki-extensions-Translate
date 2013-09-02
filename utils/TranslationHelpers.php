@@ -870,7 +870,9 @@ class TranslationHelpers {
 			return null;
 		}
 
-		$checker = $this->group->getChecker();
+		// We need to get the primary group of the message. It may differ from
+		// the supplied group (aggregate groups, dynamic groups).
+		$checker = $this->handle->getGroup()->getChecker();
 		if ( !$checker ) {
 			return null;
 		}
