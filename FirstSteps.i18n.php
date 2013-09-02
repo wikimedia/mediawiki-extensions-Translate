@@ -3941,7 +3941,7 @@ Här kan du välja vilka språk, om några, du skulle vilja se.',
 	'translate-fs-userpage-level-3' => 'Jag har god kunskap om',
 	'translate-fs-userpage-level-2' => 'Jag har måttlig kunskap om',
 	'translate-fs-userpage-level-1' => 'Jag kan lite',
-	'translate-fs-userpage-help' => 'Var god ange dina språkkunskaper och berätta för oss om dig själv. Om du kan fler än språk kan du lägga till fler senare.', # Fuzzy
+	'translate-fs-userpage-help' => 'Var god ange dina språkkunskaper och berätta någonting om dig själv. Om du kan fler än fem språk kan du lägga till fler senare.',
 	'translate-fs-userpage-submit' => 'Skapa din användarsida',
 	'translate-fs-userpage-done' => 'Mycket bra! Du har nu en användarsida.',
 	'translate-fs-permissions-planguage' => 'Huvudspråk:',

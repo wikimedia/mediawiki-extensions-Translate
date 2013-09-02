@@ -655,10 +655,11 @@ Pšosym glědaj [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wi
 /** Greek (Ελληνικά)
  * @author Dead3y3
  * @author Omnipaedista
+ * @author Protnet
  * @author ZaDiak
  */
 $messages['el'] = array(
-	'translate-group-desc-mediawikicore' => 'Αυτή η ομάδα μηνυμάτων περιέχει μηνύματα που χρησιμοποιούνται στην τωρινή alpha έκδοση του MediaWiki({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikicore' => 'Αυτή η ομάδα μηνυμάτων περιέχει μηνύματα που χρησιμοποιούνται στην τρέχουσα alpha έκδοση του [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})',
 	'bw-desc-freecol' => 'Πριν μεταφράσετε το FreeCol στη γλώσσα σας, παρακαλώ διαβάστε το [[Translating:FreeCol]]. Το Freecol χρησιμοποιεί την GPL άδεια χρήσης.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], ένα διαδικτυακό φόρουμ γραμμένο σε PHP.',
 	'bw-desc-mantisbt' => 'Το [http://www.mantisbt.org MantisBT] είναι ένα δωρεάν web-based σύστημα εντοπισμού σφαλμάτων. Παρακαλώ αναφέρετε όποια προβλήματα στην [[Support|Υποστήριξη]].',
@@ -2448,7 +2449,7 @@ $messages['sv'] = array(
 	'translate-group-desc-flaggedrevs' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
 	'translate-group-desc-readerfeedback' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
 	'translate-group-desc-semantic' => 'Metameddelandegrupp som innehåller alla meddelanden för alla tillägg till [http://semantic-mediawiki.org/ Semantic MediaWiki]',
-	'translate-group-desc-translate' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:Translate Translate]', # Fuzzy
+	'translate-group-desc-translate' => 'Metameddelandegrupp som innehåller alla meddelanden för MediaWiki-tillägget [http://www.mediawiki.org/wiki/Extension:Translate Translate]; var god bekanta dig med [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary ordlistan]',
 	'translate-group-desc-wikiaextensions' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägg som används av [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Metagrupp som innehåller alla meddelanden för MediaWiki-tillägg som används av [http://wikimedia.org/ Wikimedia Foundation]',
 	'translate-group-desc-wikimediaextensions-main' => 'Metameddelandegrupp som innehåller alla meddelanden för stödjande MediaWiki-tillägg som krävs för att översättas för Wikimedias [http://meta.wikimedia.org/wiki/Language_committee språkkommitté]',

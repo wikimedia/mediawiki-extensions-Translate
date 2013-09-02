@@ -690,6 +690,13 @@ $messages['pms'] = array(
 	'tux-sst-nosolr-body' => "La wiki a l'ha pa un servissi d'arserca ëd tradussion.",
 );
 
+/** Portuguese (português)
+ * @author Luckas
+ */
+$messages['pt'] = array(
+	'tux-sst-search' => 'Pesquisar',
+);
+
 /** Brazilian Portuguese (português do Brasil)
  * @author Luckas
  */
