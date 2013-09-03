@@ -207,9 +207,6 @@ All values have upper and lower limits.',
 	'translate-tag-category' => 'Translatable pages',
 	'translate-tag-page-desc' => 'Translation of the wiki page [[$2|$1]].',
 
-	'translate-tag-fuzzy-comment' => 'Definition changed by [[User:$1|$1]] in revision $2.',
-	'translate-tag-fuzzy-reason' => 'Definition changed by "$1" with comment "$3" in $2.',
-
 	'translate-sidebar-alltrans' => 'In other languages',
 
 	# Special:Translations
