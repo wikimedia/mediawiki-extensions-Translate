@@ -1064,6 +1064,7 @@ $messages['el'] = array(
 	'translate-fs-email-title' => 'Επαληθεύστε τη διεύθυνση του ηλεκτρονικού σας ταχυδρομείου',
 	'translate-fs-selectlanguage' => 'Επιλέξτε γλώσσα',
 	'translate-fs-settings-planguage' => 'Κύρια γλώσσα:',
+	'translate-fs-settings-slanguage' => 'Βοηθητική γλώσσα $1:',
 	'translate-fs-settings-submit' => 'Αποθήκευση προτιμήσεων',
 	'translate-fs-userpage-level-N' => 'Έχω σαν μητρική γλώσσα τα',
 	'translate-fs-userpage-level-5' => 'Είμαι επαγγελματίας μεταφραστής στα',
@@ -1071,6 +1072,9 @@ $messages['el'] = array(
 	'translate-fs-userpage-level-3' => 'Έχω μεγάλη ευχέρεια στα',
 	'translate-fs-userpage-level-2' => 'Έχω μια μέτρια ευχέρεια στα',
 	'translate-fs-userpage-level-1' => 'Γνωρίζω λίγα',
+	'translate-fs-userpage-submit' => 'Δημιουργία της σελίδας χρήστη σας',
+	'translate-fs-userpage-done' => 'Πολύ καλά! Τώρα έχετε μια σελίδα χρήστη.',
+	'translate-fs-permissions-planguage' => 'Κύρια γλώσσα:',
 	'translate-fs-permissions-submit' => 'Αποστολή αίτησης',
 );
 
