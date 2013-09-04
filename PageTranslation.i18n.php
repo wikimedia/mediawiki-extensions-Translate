@@ -255,14 +255,19 @@ $messages['qqq'] = array(
 	'action-pagetranslation' => '{{doc-action|pagetranslation}})',
 	'tpt-desc' => '{{desc|name=Translate - Page Translation|url=http://www.mediawiki.org/wiki/Extension:Translate/PageTranslation}}',
 	'tpt-section' => '[[File:Page_translation_mark_view.png|thumb|Page translation]]
-* $1 - the identifier of the unit, or the string "Page display title"
-A screenshot of the translation administration page is available.',
-	'tpt-section-new' => '[[File:Page_translation_mark_view.png|thumb|Page translation]]
-* $1 - the identifier of the unit, or the string "Page display title"
-A screenshot of the translation administration page is available.',
-	'tpt-section-deleted' => '* $1 - the identifier of the unit, or the string "Page display title"
+A screenshot of the translation administration page is available.
 
-See definition on [[mw:Help:Extension:Translate/Glossary]].',
+Parameters:
+* $1 - the identifier of the unit, or the string "Page display title" (special unit identifier for page title; hard-coded)',
+	'tpt-section-new' => '[[File:Page_translation_mark_view.png|thumb|Page translation]]
+A screenshot of the translation administration page is available.
+
+Parameters:
+* $1 - the identifier of the unit, or the string "Page display title" (special unit identifier for page title; hard-coded)',
+	'tpt-section-deleted' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].
+
+Parameters:
+* $1 - the identifier of the unit, or the string "Page display title" (special unit identifier for page title; hard-coded)',
 	'tpt-template' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-templatediff' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
 	'tpt-sections-oldnew' => '"New and existing" refers to the sum of: (a) new translation units in a translatable page, plus (b) the already existing ones from previous version of a translatable page.',
@@ -7973,6 +7978,7 @@ Przed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy 
 	'tpt-translation-intro' => 'Ta strona to <span class="plainlinks">[$1 przetłumaczona wersja]</span> strony [[$2]], a tłumaczenie jest ukończone lub aktualne w $3%.',
 	'tpt-languages-legend' => 'Inne języki:',
 	'tpt-languages-zero' => 'Rozpocznij tłumaczenie na ten język',
+	'tpt-tab-translate' => 'Przetłumacz',
 	'tpt-target-page' => 'Ta strona nie może zostać zaktualizowana ręcznie.
 Jest ona tłumaczeniem strony [[$1]], a tłumaczenie może zostać zmienione za pomocą [$2 narzędzia tłumacza].',
 	'tpt-unknown-page' => 'Ta przestrzeń nazw jest zarezerwowana dla tłumaczeń stron z zawartością.

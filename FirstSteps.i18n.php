@@ -3223,7 +3223,7 @@ W tym miejscu można wybrać, tłumaczenia na jakie ewentualne języki chcesz wi
 	'translate-fs-userpage-level-3' => 'Mam dobrą znajomość',
 	'translate-fs-userpage-level-2' => 'Mam umiarkowaną znajomość',
 	'translate-fs-userpage-level-1' => 'Znam trochę',
-	'translate-fs-userpage-help' => 'Proszę wskaż swoje umiejętności językowe i opowiedz nam coś o sobie. Jeśli znasz więcej niż pięć języków, możesz później dodać ich więcej.', # Fuzzy
+	'translate-fs-userpage-help' => 'Proszę wskaż swoje umiejętności językowe i opowiedz coś o sobie. Jeśli znasz więcej niż pięć języków, możesz później dodać ich więcej.',
 	'translate-fs-userpage-submit' => 'Utwórz swoją stronę użytkownika',
 	'translate-fs-userpage-done' => 'Udało się! Masz już swoją stronę użytkownika.',
 	'translate-fs-permissions-planguage' => 'Język podstawowy:',
