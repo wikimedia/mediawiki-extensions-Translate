@@ -91,7 +91,7 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 	'tpt-translation-intro' => 'This page is a <span class="plainlinks">[$1 translated version]</span> of a page [[$2]] and the translation is $3% complete.',
 
 	'tpt-languages-legend' => 'Other languages:',
-	'tpt-languages-separator' => '&#160;•&#160;',
+	'tpt-languages-separator' => '&#160;• ',
 	'tpt-languages-zero' => 'Start translation for this language',
 	'tpt-tab-translate' => 'Translate',
 
