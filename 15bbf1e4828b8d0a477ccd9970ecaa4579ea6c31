@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "893c1da4_94050cc7",
+        "filename": "sql/translate_stash.sql",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-09-05T13:14:54Z",
+      "side": 1,
+      "message": "I am getting this error here:\n\nQuery: CREATE TABLE `testwikitranslate_stash` (\n ts_user int NOT NULL,\n ts_key varchar(300) binary NOT NULL,\n ts_value mediumblob NOT NULL,\n ts_metadata mediumblob NOT NULL,\n PRIMARY KEY (ts_user, ts_key)\n ) ENGINE\u003dInnoDB, DEFAULT CHARSET\u003dutf8\n\nFunction: DatabaseBase::sourceFile( /media/C0DE/wiki/Translate/sql/translate_stash.sql )\nError: 1071 Specified key was too long; max key length is 767 bytes (localhost)\n\npossibly related: http://stackoverflow.com/questions/1814532/1071-specified-key-was-too-long-max-key-length-is-767-bytes",
+      "revId": "15bbf1e4828b8d0a477ccd9970ecaa4579ea6c31",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
