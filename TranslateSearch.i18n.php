@@ -46,7 +46,8 @@ $messages['qqq'] = array(
 {{Identical|Search}}',
 	'tux-sst-search-ph' => 'Placeholder text in input field.
 {{Identical|Search translation}}',
-	'tux-sst-count' => '$1 is the number of search results',
+	'tux-sst-count' => 'Parameters:
+* $1 - the number of search results',
 	'tux-sst-facet-language' => 'Label for a facet in [[Special:TranslationSearch]].
 {{Identical|Language}}',
 	'tux-sst-facet-group' => 'Label for a facet in [[Special:TranslationSearch]].

@@ -910,7 +910,8 @@ See also:
 {{Identical|Supported language}}',
 	'supportedlanguages-summary' => 'Header for [[Special:SupportedLanguages]] page.',
 	'supportedlanguages-colorlegend' => 'Used on [[Special:SupportedLanguages]]. Parameters:
-* $1 is not a single number, but a series of numbers with different background colors, serving as a legend to match each color with a number of days passed since the last contributed translation. See [[Special:SupportedLanguages]] to see the final rendering.',
+* $1 is not a single number, but a series of numbers with different background colors, serving as a legend to match each color with a number of days passed since the last contributed translation. $1 is usually "0 30 60 90 120 150 180".
+See [[Special:SupportedLanguages]] to see the final rendering.',
 	'supportedlanguages-localsummary' => '{{notranslate}}
 Place any site specific message here.',
 	'supportedlanguages-portallink' => '{{optional}}

@@ -321,12 +321,30 @@ Parameters:
 	'tpt-old-pages-title' => 'Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-other-pages-title' => 'Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
 	'tpt-discouraged-pages-title' => 'Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]',
-	'tpt-new-pages' => '$1 is the number of pages in the following list. [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-new-pages' => '[[Image:Page translation admin view.png|thumb|Admin view]]
+Preceded by the section header {{msg-mw|Tpt-new-pages-title}}.
+
+Followed by the ordered list of pages.
+
+Parameters:
+* $1 - the number of pages in the following list',
 	'tpt-old-pages' => 'The words "some version" refer to "one version of the page", or "a single version of each of the pages", respectively. Each page can have either one or none of its versions marked for translaton.
 * $1 - the number of pages
 [[Image:Page translation admin view.png|thumb|Admin view]]',
-	'tpt-other-pages' => '$1 is the number of pages in the following list. [[Image:Page translation admin view.png|thumb|Admin view]]',
-	'tpt-discouraged-pages' => '$1 is the number of pages in the following list. [[Image:Page translation admin view.png|thumb|Admin view]]',
+	'tpt-other-pages' => '[[Image:Page translation admin view.png|thumb|Admin view]]
+Preceded by the section header {{msg-mw|Tpt-other-pages-title}}.
+
+Followed by the ordered list of pages.
+
+Parameters:
+* $1 - the number of pages in the following list',
+	'tpt-discouraged-pages' => '[[Image:Page translation admin view.png|thumb|Admin view]]
+Preceded by the section header {{msg-mw|Tpt-discouraged-pages-title}}.
+
+Followed by the ordered list of pages.
+
+Parameters:
+* $1 - the number of pages in the following list',
 	'tpt-select-prioritylangs' => 'Label for the input box to enter preferred languages',
 	'tpt-select-prioritylangs-force' => 'Label for the checkbox to make the translation restriction',
 	'tpt-select-prioritylangs-reason' => 'Label for the textbox to enter reason for restriction.
@@ -374,16 +392,26 @@ Parameters:
 * $1 - reason',
 	'tpt-discouraged-language-force' => 'Error shown along with group description if the language is prevented from translation for the selected language.
 
-* $2 is the language that to which the user asked to translate the page.
-* $3 is the names of the translation languages.',
+Parameters:
+* $1 - (Unused) empty string
+* $2 - the language that to which the user asked to translate the page
+* $3 - the names of the translation languages
+See also:
+* {{msg-mw|Tpt-discouraged-language}}',
 	'tpt-discouraged-language' => 'Warning shown along with group description if the language is discouraged from translation for the selected language.
 
-* $2 is the language that to which the user asked to translate the page.
-* $3 is the names of the translation languages.',
-	'tpt-discouraged-language-reason' => '$1 is the reason for the priority language definition.
+Parameters:
+* $1 - (Unused) empty string
+* $2 - the language that to which the user asked to translate the page
+* $3 - the name list of the translation languages, separated by ","
+See also:
+* {{msg-mw|Tpt-discouraged-language-force}}',
+	'tpt-discouraged-language-reason' => 'Parameters:
+* $1 - the reason for the priority language definition. Probably written in the content language.
+
 Used only if a reason was provided in the following messages:
-* {{msg-mw|tpt-discouraged-language-force}}
-* {{msg-mw|tpt-discouraged-language}}
+* {{msg-mw|Tpt-discouraged-language-force}}
+* {{msg-mw|Tpt-discouraged-language}}
 {{Identical|Reason}}',
 	'tpt-priority-languages' => 'Message to be shown before the messagestats table. $1 is a comma-separated list of language codes.',
 	'aggregategroups' => '{{doc-special|AggregateGroups}}',
@@ -6799,7 +6827,7 @@ $messages['mk'] = array(
 	'translate-tag-hasnew' => 'Оваа страница содржи <span class="plainlinks">[$1 промени]</span> кои не се обележани за преведување.',
 	'tpt-translation-intro' => 'Оваа страница е <span class="plainlinks">[$1 преведена верзија]</span> на страницата [[$2]], а преводот е $3% потполн и тековен.',
 	'tpt-languages-legend' => 'Други јазици:',
-	'tpt-languages-separator' => '&#160;•&#160;',
+	'tpt-languages-separator' => '&#160;•&#32;', # Fuzzy
 	'tpt-languages-zero' => 'Почнете превод на овој јазик',
 	'tpt-tab-translate' => 'Преведи',
 	'tpt-target-page' => 'Оваа страница не може да се обнови рачно.
@@ -7060,7 +7088,7 @@ tetapi {{PLURAL:$1|versi|versi-versi}} terkini tidak boleh ditandai untuk diterj
 	'translate-tag-hasnew' => 'Laman ini mengalami <span class="plainlinks">[$1 perubahan]</span> yang belum ditandai untuk diterjemah.',
 	'tpt-translation-intro' => 'Laman ini merupakan <span class="plainlinks">[$1 versi terjemahan]</span> laman [[$2]] dan penterjemahannya $3% siap.',
 	'tpt-languages-legend' => 'Bahasa lain:',
-	'tpt-languages-separator' => '&#160;•&#160;',
+	'tpt-languages-separator' => '&#160;•&#32;', # Fuzzy
 	'tpt-languages-zero' => 'Mulakan terjemahan dalam bahasa ini',
 	'tpt-tab-translate' => 'Terjemah',
 	'tpt-target-page' => 'Laman ini tidak boleh dikemaskini secara manual.
@@ -8739,7 +8767,7 @@ Sulamende le urteme versiune ponne essere signate pa traduzione.",
 	'translate-tag-translate-link-desc' => 'Traduce sta vosce',
 	'translate-tag-markthis' => 'Signe sta pàgene pa traduzione',
 	'tpt-languages-legend' => 'Otre lènghe:',
-	'tpt-languages-separator' => '&#160;•&#160;',
+	'tpt-languages-separator' => '&#160;•&#32;', # Fuzzy
 	'tpt-languages-zero' => "Accuminze 'a traduzione pe sta lènghe",
 	'tpt-discouraged-language-reason' => 'Mutive: $1',
 	'aggregategroups' => 'Gruppe aggregate',
@@ -9424,7 +9452,7 @@ $messages['sr-ec'] = array(
 	'translate-tag-markthis' => 'Означи страницу као „за превођење“',
 	'tpt-translation-intro' => 'Ово је <span class="plainlinks">[$1 преведена верзија]</span> странице [[$2]]. Превод је $3% завршен.',
 	'tpt-languages-legend' => 'Остали језици:',
-	'tpt-languages-separator' => '&#160;•&#160;',
+	'tpt-languages-separator' => '&#160;•&#32;', # Fuzzy
 	'tpt-languages-zero' => 'Почните превођења на овом језику',
 	'tpt-discouraged-language-reason' => 'Разлог: $1',
 	'tpt-aggregategroup-add' => 'Додај',
@@ -9489,7 +9517,7 @@ $messages['sr-el'] = array(
 	'translate-tag-translate-link-desc' => 'Prevedite ovu stranu',
 	'translate-tag-markthis' => 'Označi stranicu kao „za prevođenje“',
 	'tpt-translation-intro' => 'Ova stranica je <span class="plainlinks">[$1 prevedeno izdanje]</span> stranice [[$2]]. Prevod je $3% završen.',
-	'tpt-languages-separator' => '&#160;•&#160;',
+	'tpt-languages-separator' => '&#160;•&#32;', # Fuzzy
 	'log-name-pagetranslation' => 'Istorija prevoda stranice',
 	'pt-movepage-title' => 'Premeštanje prevodive stranice $1',
 	'pt-movepage-block-base-exists' => 'Ciljna osnovna stranica [[:$1]] postoji.', # Fuzzy
@@ -9960,7 +9988,7 @@ subalit ang pinakabagong {{PLURAL:$1|bersyon|mga bersyon}} ay hindi matatatakan 
 	'translate-tag-hasnew' => 'Naglalaman ang pahinang ito ng <span class="plainlinks">[$1 mga pagbabagong]</span> hindi tinatakan para isalinwika.',
 	'tpt-translation-intro' => 'Ang pahinang ito ay isang <span class="plainlinks">[$1 naisalinwikang bersyon]</span> ng isang pahina [[$2]] at ang salinwika ay $3% kumpleto na.',
 	'tpt-languages-legend' => 'Iba pang mga wika:',
-	'tpt-languages-separator' => '&#160;•&#160;',
+	'tpt-languages-separator' => '&#160;•&#32;', # Fuzzy
 	'tpt-languages-zero' => 'Simulan ang pagsasalinwika para sa wikang ito',
 	'tpt-target-page' => 'Hindi maaaring kinakamay na maisapanahon ang pahinang ito.
 Ang pahinang ito ay isang salinwika ng pahinang [[$1]] at maisasapanahon ang salinwika sa pamamagitan ng [$2 kasangkapang pansalinwika].',
