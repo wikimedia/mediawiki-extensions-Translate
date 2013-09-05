@@ -34,6 +34,24 @@
       "revId": "b29a086353929b9d0255fb11c6065fc396e7d058",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "893c1da4_7730a2e8",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-09-05T16:21:13Z",
+      "side": 1,
+      "message": "Assuming you mean \u0027\u0026#160;•\u0026#32;\u0027 yes that is how it can be done. The issue with trailing whitespace is that it gets lost when the message is edited or translated in the wiki, as it is normal behavior to trip all trailing spaces there.",
+      "parentUuid": "893c1da4_b415a89b",
+      "revId": "b29a086353929b9d0255fb11c6065fc396e7d058",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
