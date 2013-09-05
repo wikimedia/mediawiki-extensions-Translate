@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "893c1da4_74a7c0aa",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-09-05T14:22:01Z",
+      "side": 1,
+      "message": "Messages cannot have trailing white space. The space must be escaped with an entity or CSS must be used.",
+      "revId": "b29a086353929b9d0255fb11c6065fc396e7d058",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
