@@ -286,9 +286,12 @@ The template used by translations of the translatable page, extracted from the s
 Parameters:
 * $1 - page title
 * $2 - (Unused) revision ID',
-	'tpt-saveok' => '* $1 - page title
-* $2 - count of sections which can be used with PLURAL
-* $3 - URL',
+	'tpt-saveok' => 'Followed by {{msg-mw|Tpt-offer-notify}}, if the user is allowed to notify translators.
+
+Parameters:
+* $1 - page title
+* $2 - number of sections, can be used with PLURAL
+* $3 - URL which points to [[Special:Translate]]',
 	'tpt-offer-notify' => 'Message displayed on [[Special:PageTranslation]] after marking a page for translation when the marking user also has right to notify translators.
 
 Parameters:
@@ -6827,7 +6830,7 @@ $messages['mk'] = array(
 	'translate-tag-hasnew' => 'Оваа страница содржи <span class="plainlinks">[$1 промени]</span> кои не се обележани за преведување.',
 	'tpt-translation-intro' => 'Оваа страница е <span class="plainlinks">[$1 преведена верзија]</span> на страницата [[$2]], а преводот е $3% потполн и тековен.',
 	'tpt-languages-legend' => 'Други јазици:',
-	'tpt-languages-separator' => '&#160;•&#32;', # Fuzzy
+	'tpt-languages-separator' => '&#160;•&#32;',
 	'tpt-languages-zero' => 'Почнете превод на овој јазик',
 	'tpt-tab-translate' => 'Преведи',
 	'tpt-target-page' => 'Оваа страница не може да се обнови рачно.
@@ -7088,7 +7091,7 @@ tetapi {{PLURAL:$1|versi|versi-versi}} terkini tidak boleh ditandai untuk diterj
 	'translate-tag-hasnew' => 'Laman ini mengalami <span class="plainlinks">[$1 perubahan]</span> yang belum ditandai untuk diterjemah.',
 	'tpt-translation-intro' => 'Laman ini merupakan <span class="plainlinks">[$1 versi terjemahan]</span> laman [[$2]] dan penterjemahannya $3% siap.',
 	'tpt-languages-legend' => 'Bahasa lain:',
-	'tpt-languages-separator' => '&#160;•&#32;', # Fuzzy
+	'tpt-languages-separator' => '&#160;•&#32;',
 	'tpt-languages-zero' => 'Mulakan terjemahan dalam bahasa ini',
 	'tpt-tab-translate' => 'Terjemah',
 	'tpt-target-page' => 'Laman ini tidak boleh dikemaskini secara manual.
@@ -8458,6 +8461,7 @@ Os problemas que ocorrerem serão registados no [[Special:Log/pagetranslation|re
 );
 
 /** Brazilian Portuguese (português do Brasil)
+ * @author Cainamarques
  * @author Eduardo.mps
  * @author Giro720
  * @author Helder.wiki
@@ -8529,6 +8533,7 @@ mas {{PLURAL:$1|a última versão não pode ser marcada|as últimas versões nã
 	'tpt-translation-intro' => 'Esta página é uma <span class="plainlinks">[$1 versão traduzida]</span> da página [[$2]]. Sua tradução está $3% completa.',
 	'tpt-languages-legend' => 'Outros idiomas:',
 	'tpt-languages-zero' => 'Iniciar a tradução para este idioma',
+	'tpt-tab-translate' => 'Traduzir',
 	'tpt-target-page' => 'Esta página não pode ser atualizada manualmente.
 Esta página é uma tradução da página [[$1]]. Sua tradução pode ser atualizada usando [$2 a ferramenta de tradução].',
 	'tpt-unknown-page' => 'Este espaço nominal é reservado para traduções de páginas de conteúdo.
@@ -8567,14 +8572,16 @@ Texto da seção: <pre>$1</pre>', # Fuzzy
 	'pt-shake-empty' => 'Seção em branco para o marcador $1.', # Fuzzy
 	'log-description-pagetranslation' => 'Registro para operações relacionadas com o sistema de tradução de páginas',
 	'log-name-pagetranslation' => 'Registro de tradução de páginas',
+	'logentry-pagetranslation-mark' => '$1 {{GENDER:$2|marcou}} $3 para tradução',
+	'logentry-pagetranslation-unmark' => '$1 {{GENDER:$2|removeu}} $3 das páginas para tradução',
 	'pt-movepage-title' => 'Mover a página traduzível $1',
 	'pt-movepage-blockers' => 'A página traduzível não pode ser movida para outro nome devido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:',
 	'pt-movepage-block-base-exists' => 'Existe a página traduzível de destino "[[:$1]]".',
 	'pt-movepage-block-base-invalid' => 'O nome da página traduzível de destino não é um título válido.',
 	'pt-movepage-block-tp-exists' => 'A página de tradução de destino [[:$2]] já existe.',
 	'pt-movepage-block-tp-invalid' => 'O título da página de tradução de destino para [[:$1]] seria inválido (talvez muito longo).',
-	'pt-movepage-block-section-exists' => 'A página da seção de destino [[:$2]] já existe.', # Fuzzy
-	'pt-movepage-block-section-invalid' => 'O título da página da seção de destino para [[:$1]] seria inválido (talvez muito longo).', # Fuzzy
+	'pt-movepage-block-section-exists' => 'A página de destino "[[:$2]]" para a unidade de tradução existe.',
+	'pt-movepage-block-section-invalid' => 'O título da página de destino para "[[:$1]]" para a unidade de tradução seria inválido (talvez muito longo).',
 	'pt-movepage-block-subpage-exists' => 'A subpágina de destino [[:$2]] já existe.',
 	'pt-movepage-block-subpage-invalid' => 'O título da subpágina de destino para [[:$1]] seria inválido (talvez muito longo).',
 	'pt-movepage-list-pages' => 'Lista de páginas para serem movidas',
@@ -8767,7 +8774,7 @@ Sulamende le urteme versiune ponne essere signate pa traduzione.",
 	'translate-tag-translate-link-desc' => 'Traduce sta vosce',
 	'translate-tag-markthis' => 'Signe sta pàgene pa traduzione',
 	'tpt-languages-legend' => 'Otre lènghe:',
-	'tpt-languages-separator' => '&#160;•&#32;', # Fuzzy
+	'tpt-languages-separator' => '&#160;•&#32;',
 	'tpt-languages-zero' => "Accuminze 'a traduzione pe sta lènghe",
 	'tpt-discouraged-language-reason' => 'Mutive: $1',
 	'aggregategroups' => 'Gruppe aggregate',
@@ -9452,7 +9459,7 @@ $messages['sr-ec'] = array(
 	'translate-tag-markthis' => 'Означи страницу као „за превођење“',
 	'tpt-translation-intro' => 'Ово је <span class="plainlinks">[$1 преведена верзија]</span> странице [[$2]]. Превод је $3% завршен.',
 	'tpt-languages-legend' => 'Остали језици:',
-	'tpt-languages-separator' => '&#160;•&#32;', # Fuzzy
+	'tpt-languages-separator' => '&#160;•&#32;',
 	'tpt-languages-zero' => 'Почните превођења на овом језику',
 	'tpt-discouraged-language-reason' => 'Разлог: $1',
 	'tpt-aggregategroup-add' => 'Додај',
@@ -9517,7 +9524,7 @@ $messages['sr-el'] = array(
 	'translate-tag-translate-link-desc' => 'Prevedite ovu stranu',
 	'translate-tag-markthis' => 'Označi stranicu kao „za prevođenje“',
 	'tpt-translation-intro' => 'Ova stranica je <span class="plainlinks">[$1 prevedeno izdanje]</span> stranice [[$2]]. Prevod je $3% završen.',
-	'tpt-languages-separator' => '&#160;•&#32;', # Fuzzy
+	'tpt-languages-separator' => '&#160;•&#32;',
 	'log-name-pagetranslation' => 'Istorija prevoda stranice',
 	'pt-movepage-title' => 'Premeštanje prevodive stranice $1',
 	'pt-movepage-block-base-exists' => 'Ciljna osnovna stranica [[:$1]] postoji.', # Fuzzy
@@ -9988,7 +9995,7 @@ subalit ang pinakabagong {{PLURAL:$1|bersyon|mga bersyon}} ay hindi matatatakan 
 	'translate-tag-hasnew' => 'Naglalaman ang pahinang ito ng <span class="plainlinks">[$1 mga pagbabagong]</span> hindi tinatakan para isalinwika.',
 	'tpt-translation-intro' => 'Ang pahinang ito ay isang <span class="plainlinks">[$1 naisalinwikang bersyon]</span> ng isang pahina [[$2]] at ang salinwika ay $3% kumpleto na.',
 	'tpt-languages-legend' => 'Iba pang mga wika:',
-	'tpt-languages-separator' => '&#160;•&#32;', # Fuzzy
+	'tpt-languages-separator' => '&#160;•&#32;',
 	'tpt-languages-zero' => 'Simulan ang pagsasalinwika para sa wikang ito',
 	'tpt-target-page' => 'Hindi maaaring kinakamay na maisapanahon ang pahinang ito.
 Ang pahinang ito ay isang salinwika ng pahinang [[$1]] at maisasapanahon ang salinwika sa pamamagitan ng [$2 kasangkapang pansalinwika].',

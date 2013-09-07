@@ -3085,8 +3085,16 @@ $messages['nn'] = array(
  * @author Cedric31
  */
 $messages['oc'] = array(
+	'firststeps' => 'Primièrs passes',
 	'translate-fs-pagetitle-done' => ' - fach !',
 	'translate-fs-pagetitle-pending' => '- en cors',
+	'translate-fs-pagetitle' => "Guida d'aviada - $1",
+	'translate-fs-signup-title' => 'Inscrivètz-vos',
+	'translate-fs-settings-title' => 'Configuratz vòstras preferéncias',
+	'translate-fs-userpage-title' => "Creatz vòstra pagina d'utilizaire",
+	'translate-fs-target-title' => 'Començatz de tradusir !',
+	'translate-fs-email-title' => 'Confirmatz vòstra adreça de corrièr electronic',
+	'translate-fs-selectlanguage' => 'Causissètz una lenga',
 );
 
 /** Punjabi (ਪੰਜਾਬੀ)
