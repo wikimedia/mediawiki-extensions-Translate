@@ -7397,6 +7397,7 @@ Feil vil logges i [[Special:Log/pagetranslation|sideoversettelsesloggen]], og m√
 );
 
 /** Dutch (Nederlands)
+ * @author HanV
  * @author Kippenvlees1
  * @author SPQRobin
  * @author Siebrand
@@ -7496,7 +7497,7 @@ Vertaalsjabloon: <pre>$1</pre>',
 Vertaalsjabloon: <pre>$1</pre>',
 	'pt-parse-nested' => 'Geneste vertaaleenheden met &lt;translate> zijn niet toegestaan.
 Labeltekst: <pre>$1</pre>',
-	'pt-shake-multiple' => 'Meerdere markeringen vertaaleenheden voor een enkele vertaaleeneheid aangetroffen.
+	'pt-shake-multiple' => 'Meerdere markeringen vertaaleenheden voor een enkele vertaaleenheid aangetroffen.
 Tekst vertaaleenheid: <pre>$1</pre>',
 	'pt-shake-position' => 'Markeringen voor vertaaleenheden op een onverwachte plaats.
 Tekst vertaaleenheid: <pre>$1</pre>',

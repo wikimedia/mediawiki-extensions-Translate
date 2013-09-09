@@ -1787,6 +1787,7 @@ $messages['ne'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author HanV
  * @author McDutchie
  * @author SPQRobin
  * @author Siebrand
@@ -1828,7 +1829,7 @@ $messages['nl'] = array(
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] is webgebaseerde Vraag en Antwoordsoftware',
 	'translate-group-desc-tsint' => 'Een berichtengroep voor [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], het i18n-systeem voor [http://toolserver.org Toolserverprogramma\'s] (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technische gegevens]</span>)',
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] is een hulpprogramma voor het uploaden van bestanden naar Wikimedia Commons en andere projecten van Wikimedia',
-	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] is a dienst voor wandel-, fiets- en mountain bike- en inline skateroutes in de hele wereld. Het project gebruikt de GNU GPL-licentie',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] is een dienst voor wandel-, fiets- en mountain bike- en inline skateroutes in de hele wereld. Het project gebruikt de GNU GPL-licentie',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] is in staat om snel de auteurs van een pagina in een Wikimedia-wiki te vinden',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] levert een offlineversie van Wikipedia met alleen tekst op een mobiel apparaat',
 	'translate-group-desc-wikimedia-mobile' => 'Samengevoegde groep die mobiele applicaties voor Wikimediaprojecten bevat',
