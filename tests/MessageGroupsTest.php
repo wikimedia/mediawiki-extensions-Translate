@@ -15,7 +15,9 @@ class MessageGroupsTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 
-		$conf = __DIR__ . '/data/ParentGroups.yaml';
+		$conf = array(
+			__DIR__ . '/data/ParentGroups.yaml',
+		);
 
 		global $wgHooks;
 		$this->setMwGlobals( array(
@@ -24,7 +26,7 @@ class MessageGroupsTest extends MediaWikiTestCase {
 			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
 			'wgTranslateWorkflowStates' => false,
 			'wgEnablePageTranslation' => false,
-			'wgTranslateGroupFiles' => array( $conf ),
+			'wgTranslateGroupFiles' => $conf,
 			'wgTranslateTranslationServices' => array(),
 		) );
 		$wgHooks['TranslatePostInitGroups'] = array();
@@ -64,5 +66,23 @@ class MessageGroupsTest extends MediaWikiTestCase {
 		);
 
 		return $cases;
+	}
+
+	public function testHaveSingleSourceLanguage() {
+		$this->setMwGlobals( array(
+			'wgTranslateGroupFiles' => array( __DIR__ . '/data/MixedSourceLanguageGroups.yaml' ),
+		) );
+		MessageGroups::clearCache();
+
+		$enGroup1 = MessageGroups::getGroup( 'EnglishGroup1' );
+		$enGroup2 = MessageGroups::getGroup( 'EnglishGroup2' );
+		$teGroup1 = MessageGroups::getGroup( 'TeluguGroup1' );
+
+		$this->assertTrue( MessageGroups::haveSingleSourceLanguage(
+			array( $enGroup1, $enGroup2 ) )
+		);
+		$this->assertFalse( MessageGroups::haveSingleSourceLanguage(
+			array( $enGroup1, $enGroup2, $teGroup1 ) )
+		);
 	}
 }
