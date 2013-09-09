@@ -630,6 +630,29 @@ class MessageGroups {
 	}
 
 	/**
+	 * Checks whether all the message groups have the same source language.
+	 * @param array $groups A list of message groups objects.
+	 * @return bool
+	 * @since 2013.09
+	 */
+	public function haveSingleSourceLanguage( array $groups ) {
+		$lastGroupLanguage = '';
+
+		foreach ( $groups as $group ) {
+			$language = $group->getSourceLanguage();
+			if ( $lastGroupLanguage !== '' &&
+				$language !== $lastGroupLanguage
+			) {
+				return false;
+			}
+
+			$lastGroupLanguage = $language;
+		}
+
+		return true;
+	}
+
+	/**
 	 * Get all the aggregate messages groups defined in translate_metadata table.
 	 * @return array
 	 * @since 2012-05-09 return value changed
