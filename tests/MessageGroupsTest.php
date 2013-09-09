@@ -78,10 +78,10 @@ class MessageGroupsTest extends MediaWikiTestCase {
 		$enGroup2 = MessageGroups::getGroup( 'EnglishGroup2' );
 		$teGroup1 = MessageGroups::getGroup( 'TeluguGroup1' );
 
-		$this->assertTrue( MessageGroups::haveSingleSourceLanguage(
+		$this->assertEquals( 'en', MessageGroups::haveSingleSourceLanguage(
 			array( $enGroup1, $enGroup2 ) )
 		);
-		$this->assertFalse( MessageGroups::haveSingleSourceLanguage(
+		$this->assertEquals( '', MessageGroups::haveSingleSourceLanguage(
 			array( $enGroup1, $enGroup2, $teGroup1 ) )
 		);
 	}
