@@ -632,24 +632,30 @@ class MessageGroups {
 	/**
 	 * Checks whether all the message groups have the same source language.
 	 * @param array $groups A list of message groups objects.
-	 * @return bool
+	 * @return string Language code if the languages are the same, empty string otherwise.
 	 * @since 2013.09
 	 */
 	public function haveSingleSourceLanguage( array $groups ) {
-		$lastGroupLanguage = '';
+		$sourceLanguages = MessageGroups::sourceLanguages( $groups );
+
+		if ( count( $sourceLanguages ) === 1 ) {
+			return $sourceLanguages[0];
+		}
+
+		return '';
+	}
+
+	public function sourceLanguages( array $groups ) {
+		$languages = array();
 
 		foreach ( $groups as $group ) {
 			$language = $group->getSourceLanguage();
-			if ( $lastGroupLanguage !== '' &&
-				$language !== $lastGroupLanguage
-			) {
-				return false;
+			if ( !in_array( $language, $languages ) ) {
+				$languages[] = $language;
 			}
-
-			$lastGroupLanguage = $language;
 		}
 
-		return true;
+		return $languages;
 	}
 
 	/**
