@@ -1879,6 +1879,7 @@ $messages['oc'] = array(
 
 Vejatz [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl per mai d'entresenhas.",
 	'bw-desc-osm-site' => "Aqueste grop de messatges conten los messatges de l'interfàcia d'[[Translating:Open Street Map|Open Street Map]].",
+	'translate-group-desc-tsint' => 'Un grop de messatges per [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], lo sistèma d\'internacionalizacion de las aisinas del [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|supòrt]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalhs tecnics]</span>)',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] es en mesura de trobar rapidament los autors d’una pagina dins un wiki Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] es un projècte que visa a ofrir una version tèxte de Wikipèdia en mòde desconnectat sus un periferic mobil.',
 );
