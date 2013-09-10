@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4946a543_a16b9a85",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-09-10T00:06:28Z",
+      "side": 1,
+      "message": "I\u0027m not sure if it makes sense to keep this as a separate function (which means it would need to be documented and tested as well..\n\nOther way to write this is:\n$languages \u003d array_map( $groups, function ( $group ) {\n  return $group-\u003egetSourceLanguage();\n} );\n$languages \u003d array_unique( $languages );",
+      "revId": "e3a99ad6b7a0c03e6c9d6ce96ebaf87a36ee23d5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
