@@ -185,7 +185,7 @@ abstract class MessageIndex {
 	 * @param bool $ignore
 	 */
 	protected function checkAndAdd( &$hugearray, MessageGroup $g, $ignore = false ) {
-		if ( $g instanceof MessageGroupBase ) {
+		if ( method_exists( $g, 'getKeys' ) ) {
 			$keys = $g->getKeys();
 		} else {
 			$messages = $g->getDefinitions();
