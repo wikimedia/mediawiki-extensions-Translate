@@ -135,6 +135,7 @@ abstract class TranslationAid {
 			'ttmserver' => 'TTMServerAid',
 			'support' => 'SupportAid',
 			'gettext' => 'GettextDocumentationAid',
+			'insertables' => 'InsertablesAid',
 		);
 
 		return $types;

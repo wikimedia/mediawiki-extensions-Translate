@@ -1,4 +1,4 @@
-DIRS = api ffs
+DIRS = api ffs insertables
 
 default:
 	php ../../../tests/phpunit/phpunit.php .

@@ -413,6 +413,34 @@
 		},
 
 		/**
+		 * Adds buttons for quickly inserting insertables.
+		 * @param {object} insertables A insertables object as returned by API.
+		 */
+		addInsertables: function ( insertables ) {
+			var i,
+				count = insertables.length,
+				$buttonArea = this.$editor.find( '.tux-editor-insert-buttons' ),
+				$textarea = this.$editor.find( 'textarea' );
+
+			for ( i = 0; i < count; i++ ) {
+				$( '<button>' )
+					.addClass( 'insertable' )
+					.text( insertables[i].display )
+					.data( 'iid', i )
+					.appendTo( $buttonArea );
+			}
+
+			$buttonArea.on( 'click', '.insertable', function () {
+				var data = insertables[$( this ).data( 'iid' )];
+				$textarea.textSelection( 'encapsulateSelection', {
+					pre: data.pre,
+					post: data.post
+				} );
+				$textarea.focus().trigger( 'input' );
+			} );
+		},
+
+		/**
 		 * Loads and shows the translation helpers.
 		 */
 		showTranslationHelpers: function () {
@@ -440,6 +468,7 @@
 				translateEditor.showMachineTranslations( result.helpers.mt );
 				translateEditor.showSupportOptions( result.helpers.support );
 				translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
+				translateEditor.addInsertables( result.helpers.insertables );
 
 				// Load the possible warnings as soon as possible, do not wait
 				// for the user to make changes. Otherwise users might try confirming
