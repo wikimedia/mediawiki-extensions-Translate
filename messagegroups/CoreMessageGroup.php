@@ -147,4 +147,8 @@ class CoreMessageGroup extends MessageGroupOld {
 
 		return $checker;
 	}
+
+	public function getInsertablesSuggester() {
+		return new MediaWikiInsertablesSuggester();
+	}
 }

@@ -143,12 +143,25 @@ abstract class MessageGroupBase implements MessageGroup {
 			/**
 			 * @todo Branch handling, merge with upper branch keys
 			 */
-			$class = $this->getFromConf( 'MANGLER', 'class' );
 			$this->mangler = new $class();
 			$this->mangler->setConf( $this->conf['MANGLER'] );
 		}
 
 		return $this->mangler;
+	}
+
+	/**
+	 * Returns the configued InsertablesSuggester if any.
+	 * @since 2013.09
+	 */
+	public function getInsertablesSuggester() {
+		$class = $this->getFromConf( 'INSERTABLES', 'class' );
+
+		if ( !class_exists( $class ) ) {
+			throw new MWException( "InsertablesSuggester class $class does not exist." );
+		}
+
+		return new $class();
 	}
 
 	/**
