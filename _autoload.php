@@ -271,6 +271,7 @@ $wgAutoloadClasses['CurrentTranslationAid'] = "$dir/translationaids/CurrentTrans
 $wgAutoloadClasses['DocumentationAid'] = "$dir/translationaids/DocumentationAid.php";
 $wgAutoloadClasses['GettextDocumentationAid'] = "$dir/translationaids/GettextDocumentationAid.php";
 $wgAutoloadClasses['InOtherLanguagesAid'] = "$dir/translationaids/InOtherLanguagesAid.php";
+$wgAutoloadClasses['InsertablesAid'] = "$dir/translationaids/InsertablesAid.php";
 $wgAutoloadClasses['MachineTranslationAid'] = "$dir/translationaids/MachineTranslationAid.php";
 $wgAutoloadClasses['MessageDefinitionAid'] = "$dir/translationaids/MessageDefinitionAid.php";
 $wgAutoloadClasses['SupportAid'] = "$dir/translationaids/SupportAid.php";
@@ -292,4 +293,13 @@ $wgAutoloadClasses['TranslationWebService'] = "$dir/webservices/TranslationWebSe
 $wgAutoloadClasses['TranslationWebServiceException'] =
 	"$dir/webservices/TranslationWebServiceException.php";
 $wgAutoloadClasses['YandexWebService'] = "$dir/webservices/YandexWebService.php";
+/**@}*/
+
+/**
+ * @name   "Insertables"
+ * @{
+ */
+$wgAutoloadClasses['Insertable'] = "$dir/insertables/Insertable.php";
+$wgAutoloadClasses['InsertablesSuggester'] = "$dir/insertables/InsertablesSuggester.php";
+$wgAutoloadClasses['MediaWikiInsertablesSuggester'] = "$dir/insertables/MediaWikiInsertablesSuggester.php";
 /**@}*/

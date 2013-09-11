@@ -56,6 +56,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'jquery.tipsy',
 		'jquery.textchange',
 		'jquery.autosize',
+		'jquery.textSelection',
 	),
 	'messages' => array(
 		'tux-status-translated',
