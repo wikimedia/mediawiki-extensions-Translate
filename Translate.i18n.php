@@ -26819,6 +26819,7 @@ $messages['ps'] = array(
 );
 
 /** Portuguese (português)
+ * @author Cainamarques
  * @author Crazymadlover
  * @author Giro720
  * @author Hamilton Abreu
@@ -27144,6 +27145,7 @@ Os estados são definidos na variável de configuração $wgTranslateWorkflowSta
 	'translate-dynagroup-last' => 'Última modificação feita por {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Última modificação feita por {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Ajuda',
+	'tux-tab-all' => 'Tudo',
 	'tux-editor-save-button-label' => 'Gravar tradução',
 );
 

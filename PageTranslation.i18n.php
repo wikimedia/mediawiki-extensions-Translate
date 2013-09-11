@@ -9573,6 +9573,7 @@ $messages['su'] = array(
 );
 
 /** Swedish (svenska)
+ * @author Ainali
  * @author Dafer45
  * @author Fluff
  * @author Jopparn
@@ -9642,6 +9643,7 @@ men {{PLURAL:$1|den senaste versionen|de senaste versionerna}} kan inte markeras
 	'tpt-translation-intro' => 'Det här är en <span class="plainlinks">[$1 översatt version]</span> av sidan [[$2]]. Översättningen är till $3% färdig och uppdaterad.',
 	'tpt-languages-legend' => 'Andra språk:',
 	'tpt-languages-zero' => 'Starta översättning för detta språk',
+	'tpt-tab-translate' => 'Översätt',
 	'tpt-target-page' => 'Den här sidan kan inte uppdateras manuellt. Den här sidan är en översättning av [[$1]] och översättningen kan uppdateras genom att använda [$2 översättningsverktyget].',
 	'tpt-unknown-page' => 'Den här namnrymden är reserverad för översättningar av sidor. Sidan du försöker redigera verkar inte stämma överens med någon sida som är märkt för översättning.',
 	'tpt-translation-restricted' => 'Översättningar av denna sida har förhindrats av en översättningsadministratör.
