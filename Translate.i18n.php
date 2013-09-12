@@ -16071,11 +16071,11 @@ $messages['id'] = array(
 	'translate-taction-disabled' => 'Tindakan ini dinonaktifkan di wiki ini.',
 	'translate-page-no-such-language' => 'Bahasa yang dipilih tidak sah.',
 	'translate-page-no-such-group' => 'Kelompok yang dipilih tidak sah.',
-	'translate-page-disabled' => "Penerjemahan ke bahasa ini telah dinonaktifkan.
+	'translate-page-disabled' => "Penerjemahan kelompok pesan ini ke bahasa ini telah dinonaktifkan.
 Alasan:
 
 ''$1''",
-	'translate-language-disabled' => 'Terjemahan ke bahasa ini dinonaktifkan.',
+	'translate-language-disabled' => 'Penerjemahan ke bahasa ini telah dinonaktifkan.',
 	'translate-page-settings-legend' => 'Pengaturan',
 	'translate-page-group' => 'Kelompok',
 	'translate-page-language' => 'Bahasa',
@@ -16090,9 +16090,12 @@ Alasan:
 	'translate-next' => 'Halaman selanjutnya',
 	'translate-prev' => 'Halaman sebelumnya',
 	'translate-page-description-legend' => 'Informasi mengenai kelompok',
-	'translate-page-description-hasoptional-open' => 'Tampilkan pesan opsional',
+	'translate-page-description-hasoptional' => 'Kelompok pesan ini memuat pesan opsional.
+Pesan opsional seharusnya hanya boleh diterjemahkan jika bahasa Anda memiliki keperluan khusus
+seperti tidak memakai spasi atau mengalihaksarakan nama umum. $1',
+	'translate-page-description-hasoptional-open' => 'Tampilkan pesan opsional.',
 	'translate-page-edit' => 'sunting',
-	'translate-ext-url' => '<hr />SitusWeb: $1',
+	'translate-ext-url' => '<hr />Situs web: $1',
 	'translate-optional' => '(opsional)',
 	'translate-ignored' => '(diabaikan)',
 	'translate-edit-jsopen' => 'sunting',
@@ -16100,12 +16103,13 @@ Alasan:
 	'translate-edit-definition' => 'Definisi pesan',
 	'translate-edit-translation' => 'Terjemahan',
 	'translate-edit-contribute' => 'berkontribusi',
-	'translate-edit-no-information' => "''Pesan ini tak memiliki dokumentasi. Jika Anda tahu di mana dan bagaimana pesan ini digunakan, Anda dapat menolong penerjemah lain dengan menambahkan dokumentasi bagi pesan ini.''",
+	'translate-edit-no-information' => "''Pesan ini tidak memiliki dokumentasi.''
+''Jika Anda tahu di mana dan bagaimana pesan ini digunakan, Anda dapat menolong penerjemah lain dengan menambahkan dokumentasi untuk pesan ini.''",
 	'translate-edit-information' => 'Informasi pesan ($1)',
 	'translate-edit-in-other-languages' => 'Pesan dalam bahasa lain',
-	'translate-edit-committed' => 'Terjemahan terkini yang ada di perangkat lunak',
+	'translate-edit-committed' => 'Terjemahan dalam perangkat lunak saat ini',
 	'translate-edit-warnings' => 'Peringatan mengenai terjemahan yang tak lengkap',
-	'translate-edit-tmsugs' => 'Saran dari memori terjemahan',
+	'translate-edit-tmsugs' => 'Saran dari memori terjemahan dan terjemahan mesin',
 	'translate-edit-tmmatch-source' => 'Teks sumber terjemahan: $1',
 	'translate-edit-tmmatch' => '$1% sesuai',
 	'translate-use-suggestion' => 'Ganti terjemahan saat ini dengan saran ini.',
@@ -16113,26 +16117,27 @@ Alasan:
 	'translate-edit-tab-next' => '>>>',
 	'translate-edit-tab-list' => 'Daftar pesan',
 	'translate-edit-nopermission' => 'Anda memerlukan izin untuk menerjemahkan pesan.',
-	'translate-edit-askpermission' => 'Meminta izin',
-	'translate-magic-pagename' => 'Perluasan terjemahan MediaWiki',
-	'translate-magic-help' => 'Anda dapat menerjemahkan alias untuk halaman istimewa, kata-kata magis, dan ruang-ruang nama.
+	'translate-edit-askpermission' => 'Minta izin',
+	'translate-magic-pagename' => 'Terjemahan MediaWiki yang Diperluas',
+	'translate-magic-help' => 'Anda dapat menerjemahkan alias untuk halaman istimewa, kata magis, dan ruang nama.
 
-Alias untuk halaman istimewa dan kata-kata magis dapat memiliki lebih dari satu terjemahan.
-Setiap terjemahan harus dipisahkan dengan sebuah tanda koma (,).
-Ruang nama hanya dapat memiliki satu terjemahan.
+Alias untuk halaman istimewa dan kata magis dapat memiliki beberapa terjemahan.
+Setiap terjemahan dipisahkan dengan tanda koma (,).
+Ruang nama hanya boleh memiliki satu terjemahan.
 
-Dalam menerjemahkan, ruang nama <code>$1 talk</code> harus diperlakukan khusus. <code>$1</code> digantikan dengan nama situs (contohnya <code>{{ns:project_talk}}</code>).
-Jika bahasa Anda tidak memungkinkan untuk membentuk suatu ekspresi yang valid tanpa mengganti nama situs, silakan kontak salah seorang pengembang.
+Menerjemahkan ruang nama pembicaraan proyek <code>pembicaraan $1</code> mungkin cukup rumit.
+<code>$1</code> akan digantikan dengan nama situs proyek (misalnya <code>{{ns:project_talk}}</code>).
+Jika bahasa Anda tidak memungkinkan untuk membentuk suatu frase yang sah tanpa mengganti nama situs, silakan beri tahu kami di [[Support|halaman Dukungan]].
 
-Anda perlu menjadi anggota kelompok penerjemah untuk dapat menyimpan terjemahan.
-Perubahan tidak akan disimpan hingga Anda mengklik tombol simpan di bawah.', # Fuzzy
+Anda harus menjadi penerjemah untuk menyimpan perubahan.
+Perubahan tidak akan disimpan hingga Anda mengeklik tombol simpan di bawah.',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Ambil',
 	'translate-magic-cm-export' => 'Ekspor',
 	'translate-magic-nothing-to-export' => 'Tidak ada yang dapat diekspor.',
-	'translate-magic-cm-to-be' => 'Menjadi',
-	'translate-magic-cm-current' => 'Terkini',
-	'translate-magic-cm-original' => 'Asal',
+	'translate-magic-cm-to-be' => 'Ubah menjadi',
+	'translate-magic-cm-current' => 'Saat ini',
+	'translate-magic-cm-original' => 'Asli',
 	'translate-magic-cm-comment' => 'Komentar:',
 	'translate-magic-cm-save' => 'Simpan',
 	'translate-magic-cm-updatedusing' => 'Diperbaharui menggunakan [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
@@ -16141,15 +16146,15 @@ Perubahan tidak akan disimpan hingga Anda mengklik tombol simpan di bawah.', # F
 	'translate-magic-words' => 'Kata magis',
 	'translate-magic-namespace' => 'Nama ruang nama',
 	'translate-magic-notsaved' => 'Suntingan Anda tidak tersimpan!',
-	'translate-magic-errors' => 'Mohon perbaiki {{PLURAL:$1|kesalahan|kesalahan}} ini pada penterjemah:',
+	'translate-magic-errors' => 'Mohon perbaiki {{PLURAL:$1|kesalahan|kesalahan}} berikut pada terjemahan:',
 	'translate-magic-saved' => 'Perubahan Anda berhasil tersimpan',
-	'translate-checks-parameters' => '{{PLURAL:$2|Parameter|Parameter-parameter}} berikut tidak digunakan:
+	'translate-checks-parameters' => '{{PLURAL:$2|parameter|parameter}} berikut ini tidak digunakan:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Parameter|Parameter-parameter}} berikut tidak dikenal:
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|parameter|parameter}} berikut ini tidak dikenali:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-balance' => 'Jumlah {{PLURAL:$2|pengapit|pengapit-pengapit}} tak seimbang:
+	'translate-checks-balance' => 'Terdapat {{PLURAL:$2|tanda kurung|tanda kurung}} dengan jumlah yang tidak sama:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '{{PLURAL:$2|Pranala|Pranala-pranala}} berikut bermasalah:
+	'translate-checks-links' => '{{PLURAL:$2|pranala|pranala}} berikut ini bermasalah:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links-missing' => '{{PLURAL:$2|Pranala|Pranala-pranala}} berikut hilang:
 <strong><nowiki>$1</nowiki></strong>',
@@ -25002,11 +25007,11 @@ Es utilizat mai que mai pels prètzfaches de relectura.',
 	'tux-languageselector' => 'Tradusir en',
 	'tux-tab-all' => 'Totes',
 	'tux-tab-untranslated' => 'Pas tradusit',
-	'tux-tab-outdated' => 'Obsolèt',
+	'tux-tab-outdated' => 'Obsolet',
 	'tux-tab-translated' => 'Tradusit',
 	'tux-edit' => 'Modificar',
 	'tux-status-optional' => 'Facultatiu',
-	'tux-status-fuzzy' => 'Obsolèt',
+	'tux-status-fuzzy' => 'Obsolet',
 	'tux-status-proofread' => 'Corregit',
 	'tux-status-translated' => 'Tradusit',
 	'tux-status-saving' => 'Enregistrament en cors…',
