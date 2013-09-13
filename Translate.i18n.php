@@ -660,7 +660,9 @@ Parameters:
 	'translate-edit-tab-next' => '{{optional}}',
 	'translate-edit-tag-warning' => '{{notranslate}}
 Shown when editing translatable pages. Default is empty.',
-	'translate-magic-pagename' => '"Extended" can as well be understood as "Extra" or "Special" or "Advanced". It refers to the translations of pieces of text such as names of namespaces or special pages, which are not part of normal message or wiki page translation.',
+	'translate-magic-pagename' => '"Extended" can as well be understood as "Extra" or "Special" or "Advanced". It refers to the translations of pieces of text such as names of namespaces or special pages, which are not part of normal message or wiki page translation.
+
+Used in {{msg-mw|Translate-magic-cm-updatedusing}}.',
 	'translate-magic-help' => 'Description of [[Special:AdvancedTranslate]].
 
 <code>$1</code> is not a parameter; appears as is.',
@@ -684,6 +686,9 @@ Shown when editing translatable pages. Default is empty.',
 	'translate-magic-cm-save' => 'Button text on [[Special:AdvancedTranslate]].
 
 {{Identical|Save}}',
+	'translate-magic-cm-updatedusing' => 'Used as comment(?).
+
+Refers to {{msg-mw|Translate-magic-pagename}}.',
 	'translate-magic-errors' => 'This message is followed by the error messages.
 
 Parameters:
@@ -16104,7 +16109,7 @@ seperti tidak memakai spasi atau mengalihaksarakan nama umum. $1',
 	'translate-edit-translation' => 'Terjemahan',
 	'translate-edit-contribute' => 'berkontribusi',
 	'translate-edit-no-information' => "''Pesan ini tidak memiliki dokumentasi.''
-''Jika Anda tahu di mana dan bagaimana pesan ini digunakan, Anda dapat menolong penerjemah lain dengan menambahkan dokumentasi untuk pesan ini.''",
+''Jika Anda tahu di mana dan bagaimana pesan ini digunakan, Anda dapat membantu penerjemah lain dengan menambahkan dokumentasi untuk pesan ini.''",
 	'translate-edit-information' => 'Informasi pesan ($1)',
 	'translate-edit-in-other-languages' => 'Pesan dalam bahasa lain',
 	'translate-edit-committed' => 'Terjemahan dalam perangkat lunak saat ini',
@@ -16148,24 +16153,28 @@ Perubahan tidak akan disimpan hingga Anda mengeklik tombol simpan di bawah.',
 	'translate-magic-notsaved' => 'Suntingan Anda tidak tersimpan!',
 	'translate-magic-errors' => 'Mohon perbaiki {{PLURAL:$1|kesalahan|kesalahan}} berikut pada terjemahan:',
 	'translate-magic-saved' => 'Perubahan Anda berhasil tersimpan',
-	'translate-checks-parameters' => '{{PLURAL:$2|parameter|parameter}} berikut ini tidak digunakan:
+	'translate-checks-parameters' => '{{PLURAL:$2|Parameter|Parameter}} berikut ini tidak digunakan:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-parameters-unknown' => '{{PLURAL:$2|parameter|parameter}} berikut ini tidak dikenali:
+	'translate-checks-parameters-unknown' => '{{PLURAL:$2|Parameter|Parameter}} berikut ini tidak dikenali:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'Terdapat {{PLURAL:$2|tanda kurung|tanda kurung}} dengan jumlah yang tidak sama:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links' => '{{PLURAL:$2|pranala|pranala}} berikut ini bermasalah:
+	'translate-checks-links' => '{{PLURAL:$2|Pranala|Pranala}} berikut ini bermasalah:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => '{{PLURAL:$2|Pranala|Pranala-pranala}} berikut hilang:
+	'translate-checks-links-missing' => '{{PLURAL:$2|Pranala|Pranala}} berikut ini hilang:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-xhtml' => 'Harap ganti {{PLURAL:$2|tag|tag-tag}} berikut dengan tag yang tepat:
+	'translate-checks-xhtml' => 'Harap ganti {{PLURAL:$2|tag|tag}} berikut ini dengan tag yang tepat:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-plural' => 'Definisi menggunakan <nowiki>{{PLURAL:}}</nowiki> tapi terjemahannya tidak.',
+	'translate-checks-plural' => 'Definisi menggunakan <nowiki>{{PLURAL:}}</nowiki> namun terjemahannya tidak menggunakannya.',
+	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> menghasilkan {{PLURAL:$1|sebuah wujud|$1 buah wujud}} namun {{PLURAL:$2|hanya ada sebuah wujud yang|$2 buah wujud lainnya juga}} didukung (kecuali wujud 0= dan 1=).',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> memiliki wujud yang sama di akhir. <nowiki>{{PLURAL:$1|orang|orang}}</nowiki> seharusnya ditulis menjadi <nowiki>{{PLURAL:$1|orang}}</nowiki>.',
 	'translate-checks-pagename' => 'Ruang nama berubah dari definisinya',
-	'translate-checks-format' => 'Terjemahan ini tidak mengikuti definisi atau memiliki sintaksis yang tidak valid: $1',
-	'translate-checks-escape' => "Rangkaian kontrol (''escape sequence'') berikut mungkin tidak disengaja: <strong>$1</strong>",
+	'translate-checks-format' => 'Terjemahan ini tidak mengikuti definisi atau memiliki sintaks yang tidak sah: $1',
+	'translate-checks-escape' => "''Escape'' berikut mungkin tidak disengaja: <strong>$1</strong>",
+	'translate-checks-parametersnotequal' => 'Terdapat {{PLURAL:$1|$1}} parameter; seharusnya ada {{PLURAL:$2|$2}}.',
+	'translate-checks-malformed' => '<nowiki>$1</nowiki> cacat.',
 	'translate-checks-fudforum-syntax' => 'Gunakan <nowiki>$1</nowiki> bukan <nowiki>$2</nowiki> pada proyek ini.',
-	'translate-pref-nonewsletter' => 'Jangan kirimkan saya surel nawala',
+	'translate-pref-nonewsletter' => 'Jangan kirimi saya surel berita',
 	'translate-pref-editassistlang' => 'Bahasa penunjang:',
 	'prefs-translate' => 'Opsi terjemahan',
 	'translate-pref-editassistlang-help' => 'Daftar kode bahasa dipisahkan koma.
@@ -16173,7 +16182,7 @@ Terjemahan pesan dalam bahasa ini ditampilkan saat Anda menerjemahkan.
 Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-pref-editassistlang-bad' => 'Kode bahasa tidak sah pada daftar:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Tingkatkan penyunting terjemahan (JavaScript)',
+	'translate-pref-jsedit' => 'Penyunting terjemahan yang Ditingkatkan (JavaScript)',
 	'right-translate' => 'Menyunting menggunakan antarmuka penerjemahan',
 	'right-translate-manage' => 'Mengelola kelompok pesan',
 	'action-translate-manage' => 'mengelola kelompok pesan',
@@ -16190,6 +16199,8 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-stats-edits' => 'Sunting',
 	'translate-stats-users' => 'Penerjemah',
 	'translate-stats-registrations' => 'Pendaftaran',
+	'translate-stats-reviews' => 'Tinjauan',
+	'translate-stats-reviewers' => 'Peninjau',
 	'translate-statsf-intro' => 'Anda dapat menciptakan statistik sederhana menggunakan formulir ini. Semua nilai memiliki batas atas dan bawah.',
 	'translate-statsf-options' => 'Opsi grafik',
 	'translate-statsf-width' => 'Lebar dalam piksel:',
@@ -16198,15 +16209,17 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-statsf-start' => 'Tanggal mulai:',
 	'translate-statsf-scale' => 'Granularitas:',
 	'translate-statsf-scale-months' => 'Bulan',
-	'translate-statsf-scale-weeks' => 'Minggu',
+	'translate-statsf-scale-weeks' => 'Pekan',
 	'translate-statsf-scale-days' => 'Hari',
 	'translate-statsf-scale-hours' => 'Jam',
 	'translate-statsf-count' => 'Ukuran:',
 	'translate-statsf-count-edits' => 'Jumlah suntingan',
 	'translate-statsf-count-users' => 'Penerjemah aktif',
 	'translate-statsf-count-registrations' => 'Pengguna baru',
-	'translate-statsf-language' => 'Daftar kode bahasa dibatasi dengan koma:',
-	'translate-statsf-group' => 'Daftar kode kelompok yang dibatasi dengan koma:',
+	'translate-statsf-count-reviews' => 'Tinjauan terjemahan',
+	'translate-statsf-count-reviewers' => 'Peninjau',
+	'translate-statsf-language' => 'Daftar kode bahasa dipisahkan koma:',
+	'translate-statsf-group' => 'Daftar kode kelompok dipisahkan koma.',
 	'translate-statsf-submit' => 'Pratayang',
 	'translate-tag-category' => 'Halaman yang dapat diterjemahkan',
 	'translate-tag-page-desc' => 'Terjemahan atas halaman wiki [[$2|$1]].',
@@ -16219,12 +16232,13 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-translations-fieldset-title' => 'Pesan',
 	'translate-translations-messagename' => 'Nama:',
 	'translate-translations-project' => 'Proyek:',
-	'translate-translations-including-no-param' => 'Harap gunakan sebuah kunci pesan yang valid dalam parameter subhalaman',
-	'translate-translations-history-short' => 's',
+	'translate-translations-including-no-param' => 'Harap gunakan kunci pesan yang sah dalam parameter subhalaman',
+	'translate-translations-history-short' => 'r',
 	'languagestats' => 'Statistik bahasa',
-	'languagestats-summary' => 'Halaman ini menampilkan statistik penerjemahan untuk semua kelompok pesan dalam suatu bahasa tertentu.',
+	'languagestats-summary' => 'Halaman ini menampilkan statistik terjemahan untuk semua kelompok pesan dalam suatu bahasa tertentu.',
 	'languagestats-stats-for' => 'Statistik terjemahan untuk $1 ($2).',
-	'languagestats-recenttranslations' => 'terjemahan terbaru',
+	'languagestats-recenttranslations' => 'terjemahan terkini',
+	'translate-langstats-incomplete' => 'Beberapa statistik pada halaman ini belum lengkap. Silakan muat ulang untuk mendapatkan lebih banyak statistik.',
 	'translate-langstats-expand' => 'luaskan',
 	'translate-langstats-collapse' => 'ciutkan',
 	'translate-langstats-expandall' => 'luaskan semua',
@@ -16238,34 +16252,45 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-untranslated' => 'Belum diterjemahkan',
 	'translate-percentage-complete' => 'Selesai',
 	'translate-percentage-fuzzy' => 'Usang',
+	'translate-languagestats-overall' => 'Semua kelompok pesan sekaligus',
 	'translate-ls-submit' => 'Tampilkan statistik',
 	'translate-ls-column-group' => 'Kelompok pesan',
+	'translate-mgs-pagename' => 'Statistik kelompok pesan',
+	'translate-mgs-fieldset' => 'Tampilkan preferensi',
 	'translate-mgs-group' => 'Kelompok pesan:',
+	'translate-mgs-nocomplete' => 'Jangan tampilkan bahasa yang memiliki terjemahan lengkap',
+	'translate-mgs-noempty' => 'Jangan tampilkan bahasa yang tidak memiliki terjemahan',
 	'translate-mgs-submit' => 'Tampilkan statistik',
 	'translate-mgs-column-language' => 'Bahasa',
+	'translate-mgs-totals' => 'Semua bahasa sekaligus',
+	'translate-mgs-invalid-group' => 'Kelompok $1 yang dimaksud tidak ditemukan.',
+	'translate-mgs-nothing' => 'Tidak ada statistik yang dapat ditampilkan.',
 	'supportedlanguages' => 'Bahasa yang didukung',
-	'supportedlanguages-summary' => 'Halaman ini menampilkan daftar semua bahasa yang didukung oleh {{SITENAME}}, bersama dengan nama penerjemah yang bekerja dengan bahasa itu.
-Jika Anda menginginkan informasi lebih lanjut mengenai suatu bahasa, Anda dapat mengklik pranala menuju portal bahasa tersebut.
-Mengklik nama penerjemah akan membawa Anda ke halaman pengguna mereka.
-
-Jika sebuah bahasa belum terdaftar, Anda dapat mencari tahu cara memulai proyek pelokalan untuk sebuah bahasa di "[[Translating:Process|Bahasa Baru]]".
-
-Jika Anda menerjemahkan ke sebuah bahasa dan nama Anda tidak dimasukkan, silakan tambahkan nama Anda ke daftar penerjemah di [[:Category:Languages|portal]] bahasa tersebut.
-Lihat kotak menu untuk pranala ke portal bahasa preferensi Anda.', # Fuzzy
+	'supportedlanguages-summary' => 'Halaman ini menampilkan daftar semua bahasa yang didukung oleh {{SITENAME}}, beserta nama penerjemah yang bekerja pada bahasa tersebut. Nama penerjemah nampak lebih besar jika telah mereka telah menyumbangkan banyak suntingan. Warna garis bawah menandakan seberapa sering penerjemah tersebut aktif di sini.',
+	'supportedlanguages-colorlegend' => 'Legenda warna: Terjemahan terakhir $1 hari yang lalu.',
 	'supportedlanguages-portallink' => '[$1] $2 - $3',
 	'supportedlanguages-portallink-nocldr' => '[$1] $2',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Penerjemah|Penerjemah}}: $1',
-	'supportedlanguages-recenttranslations' => 'terjemahan terbaru',
+	'supportedlanguages-recenttranslations' => 'terjemahan terkini',
+	'supportedlanguages-count' => 'Total: $1 {{PLURAL:$1|bahasa|bahasa}}.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|suntingan|suntingan}} - suntingan terakhir $3 {{PLURAL:$3|hari|hari}} yang lalu',
 	'translate-save' => 'Simpan ($1)',
-	'translate-jssti-add' => 'Tambahkan pada daftar',
-	'managemessagegroups' => 'Manajemen kelompok pesan',
+	'translate-jssti-add' => 'Tambah ke daftar',
+	'managemessagegroups' => 'Pengelolaan kelompok pesan',
+	'translate-smg-notallowed' => 'Anda tidak diperbolehkan untuk melakukan tindakan ini.',
+	'translate-smg-nochanges' => 'Tidak ada perubahan yang dapat diproses.',
+	'translate-smg-submit' => 'Kirim perubahan untuk diproses',
+	'translate-smg-submitted' => 'Definisi pesan telah diperbarui. Perubahan sedang diproses di latar.',
+	'translate-smg-postponed' => 'Beberapa perubahan tidak dapat diproses.  [[{{FULLPAGENAME}}|Coba lagi]]',
+	'translate-smg-left' => 'Konten pesan di wiki',
+	'translate-smg-right' => 'Peubahan baru',
 	'translate-manage-import-diff' => 'Pesan $1 | Tindakan: $2',
 	'translate-manage-import-new' => 'Pesan baru $1',
 	'translate-manage-import-deleted' => 'Pesan terhapus $1',
 	'translate-manage-action-import' => 'Impor',
 	'translate-manage-action-conflict' => 'Impor dan takjelas',
 	'translate-manage-action-ignore' => 'Abaikan',
-	'translate-manage-action-fuzzy' => 'Impor dan terjemahan takjelas',
+	'translate-manage-action-fuzzy' => 'Terjemahan impor dan takjelas',
 	'translate-manage-nochanges' => 'Tidak ada perubahan pada definisi pesan untuk kelompok ini.',
 	'translate-manage-nochanges-other' => 'Tidak ada perubahan pada bahasa ini.
 Gunakan pranala berikut untuk kembali ke tampilan rincian kelompok.',
@@ -16283,7 +16308,7 @@ Silakan diperiksa.',
 Silakan tinjau perubahan-perubahan ini dan pilihlah aksi yang ingin Anda lakukan untuk setiap terjemahan.
 Jika Anda memilih untuk tidak menghiraukan perubahan, mereka akan ditimpa pada ekspor berikutnya.', # Fuzzy
 	'importtranslations' => 'Impor terjemahan',
-	'translate-import-from-local' => 'Berkas lokal di Unggah:',
+	'translate-import-from-local' => 'Unggah berkas lokal:',
 	'translate-import-load' => 'Muatkan berkas',
 	'translate-import-err-dl-failed' => 'Tidak dapat mengambil berkas:
 $1',
@@ -16329,6 +16354,7 @@ Detail: $1",
 	'group-translate-proofr-member' => '{{GENDER:$1|peninjau terjemahan}}',
 	'group-translate-proofr.css' => '/* CSS placed here will affect translation reviewers only */',
 	'group-translate-proofr.js' => '/* JS placed here will affect translation reviewer only */',
+	'translate-dynagroup-recent-label' => 'Terjemahan terkini',
 	'translate-gethelp' => 'Bantuan',
 	'translate-msggroupselector-projects' => 'Kelompok pesan',
 	'translate-msggroupselector-search-placeholder' => 'Cari kelompok',

@@ -170,6 +170,9 @@ The title for this message is: "{{int:Translate-fs-pagetitle|{{int:Translate-fs-
 See also:
 * {{msg-mw|Translate-fs-pagetitle}}
 * {{msg-mw|Translate-fs-target-title}}',
+	'translate-fs-email-text' => 'Preceded by {{msg-mw|Translate-fs-email-title}}.
+
+Refers to {{msg-mw|Prefs-personal}}.',
 );
 
 /** Arabic (العربية)
