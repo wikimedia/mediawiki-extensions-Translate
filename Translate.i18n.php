@@ -711,7 +711,7 @@ Parameters:
 * $1 - links
 * $2 - number of links
 {{Related|Translate-checks}}',
-	'translate-checks-links-missing' => '{{doc-important|Do not translate &lt;strong>&lt;nowiki>$1&lt;/nowiki>&lt;/strong>.}}
+	'translate-checks-links-missing' => '{{doc-important|Do not translate <code><nowiki><strong><nowiki>$1</nowiki>&lt;nowiki><nowiki></strong></nowiki></code>.}}
 Warning message from automated syntax check for translators. Parameters:
 * $1 - links
 * $2 - number of links

@@ -282,7 +282,7 @@ The template used by translations of the translatable page, extracted from the s
 	'tpt-oldrevision' => 'Error message displayed when trying to mark an older page revision for translation. Parameters:
 * $1 is a page title.
 * $2 is a page link.',
-	'tpt-notsuitable' => '{{doc-important|Do not translate "<code>&lt;nowiki>&lt;translate>&lt;/nowiki></code>".}}
+	'tpt-notsuitable' => '{{doc-important|Do not translate <code><nowiki><nowiki><translate></nowiki>&lt;/nowiki></code>.}}
 Parameters:
 * $1 - page title
 * $2 - (Unused) revision ID',
@@ -377,10 +377,14 @@ Parameters:
 * $1 - URL
 * $2 - page title
 * $3 - translation percentage',
-	'tpt-languages-legend' => 'The caption of a language selector displayed using <code>&lt;languages /&gt;</code>, e.g. on [[Project list]].
+	'tpt-languages-legend' => 'The caption of a language selector displayed using <code><nowiki><languages /></nowiki></code>. e.g. on [[Project list]].
 {{Identical|Otherlanguages}}',
 	'tpt-languages-separator' => '{{optional}}',
-	'tpt-languages-zero' => 'Tooltip for a link in &lt;language /> when language is included because it is a priority language, but translation does not yet exists. It links directly to the translation view.',
+	'tpt-languages-zero' => 'Tooltip for a link in <code><nowiki><language /></nowiki></code> when language is included because it is a priority language, but translation does not yet exist.
+
+The link directly points to the translation view ([[Special:Translate]]).
+
+Translate this as "Start translating (the page) into this language".',
 	'tpt-tab-translate' => 'Used as label for the tab.
 
 Replaces the edit tab with translation tab for translation pages.
@@ -5654,7 +5658,7 @@ $messages['ja'] = array(
 	'translate-tag-hasnew' => 'このページには翻訳対象に指定されていない<span class="plainlinks">[$1 変更]</span>があります。',
 	'tpt-translation-intro' => 'このページはページ [[$2]] を「<span class="plainlinks">[$1 翻訳]</span>」したものです。翻訳は $3% 完了しています。',
 	'tpt-languages-legend' => '他言語での翻訳:',
-	'tpt-languages-zero' => 'この言語について翻訳を開始',
+	'tpt-languages-zero' => 'この言語への翻訳を開始',
 	'tpt-tab-translate' => '翻訳',
 	'tpt-target-page' => 'このページは手動では更新できません。
 このページはページ [[$1]] の翻訳版であり、[$2 翻訳ツール]を使用して更新できます。',
@@ -7401,6 +7405,7 @@ Feil vil logges i [[Special:Log/pagetranslation|sideoversettelsesloggen]], og m�
  * @author Kippenvlees1
  * @author SPQRobin
  * @author Siebrand
+ * @author Southparkfan
  */
 $messages['nl'] = array(
 	'pagetranslation' => 'Paginavertaling',
@@ -7428,6 +7433,7 @@ Alleen de meest recente versie kan voor vertaling gemarkeerd worden.',
 Zorg ervoor dat de labels <nowiki><translate></nowiki> geplaatst zijn en dat deze juist zijn toegevoegd.',
 	'tpt-saveok' => 'De pagina [[$1]] is gemarkeerd voor vertaling met $2 te vertalen {{PLURAL:$2|vertaaleenheid|vertaaleenheden}}.
 De pagina kan nu  <span class="plainlinks">[$3 vertaald]</span> worden.',
+	'tpt-offer-notify' => 'U kunt <span class="plainlinks">[$1 vertalers op de hoogte stellen]</span> over deze pagina.',
 	'tpt-badsect' => '"$1" is geen geldige naam voor vertaaleenheid $2.',
 	'tpt-showpage-intro' => 'Hieronder zijn nieuwe, bestaande en verwijderde vertaaleenheden opgenomen.
 Controleer voordat u deze versie voor vertaling markeert of de wijzigingen aan de vertaaleenheden zo klein mogelijk zijn om onnodig werk voor vertalers te voorkomen.',
@@ -7465,6 +7471,7 @@ maar de laatste {{PLURAL:$1|versie kan|versies kunnen}} niet gemarkeerd worden v
 	'tpt-translation-intro' => 'Deze pagina is een <span class="plainlinks">[$1 vertaalde versie]</span> van de pagina [[$2]] en de vertaling is $3% compleet en bijgewerkt.',
 	'tpt-languages-legend' => 'Andere talen:',
 	'tpt-languages-zero' => 'Vertaling voor deze taal starten',
+	'tpt-tab-translate' => 'Vertalen',
 	'tpt-target-page' => 'Deze pagina kan niet handmatig worden bijgewerkt.
 Deze pagina is een vertaling van de pagina [[$1]].
 De vertaling kan bijgewerkt worden via de [$2 vertaalhulpmiddelen].',
