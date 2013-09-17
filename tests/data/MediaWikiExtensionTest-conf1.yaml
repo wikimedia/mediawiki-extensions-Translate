@@ -22,3 +22,6 @@ CHECKER:
    - braceBalanceCheck
    - pagenameMessagesCheck
    - miscMWChecks
+
+INSERTABLES:
+  class: MediaWikiInsertablesSuggester

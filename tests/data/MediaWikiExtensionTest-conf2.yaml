@@ -24,6 +24,9 @@ CHECKER:
    - pagenameMessagesCheck
    - miscMWChecks
 
+INSERTABLES:
+  class: MediaWikiInsertablesSuggester
+
 MANGLER:
   class: StringMatcher
   prefix: wmf-
