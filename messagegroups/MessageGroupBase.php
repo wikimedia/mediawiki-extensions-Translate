@@ -151,11 +151,15 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	/**
-	 * Returns the configued InsertablesSuggester if any.
+	 * Returns the configured InsertablesSuggester if any.
 	 * @since 2013.09
 	 */
 	public function getInsertablesSuggester() {
 		$class = $this->getFromConf( 'INSERTABLES', 'class' );
+
+		if ( !$class ) {
+			return null;
+		}
 
 		if ( !class_exists( $class ) ) {
 			throw new MWException( "InsertablesSuggester class $class does not exist." );
