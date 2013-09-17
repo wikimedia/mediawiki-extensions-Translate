@@ -1142,7 +1142,7 @@ See also:
 	'translate-msggroupselector-search-placeholder' => "Place holder text for the search box in message group selector. It's supposed to tell the user that the box is for a search for a name of a group.",
 	'translate-msggroupselector-search-all' => 'Label to display all projects.
 {{Identical|All}}',
-	'translate-msggroupselector-search-recent' => 'Label to display recent projects',
+	'translate-msggroupselector-search-recent' => 'A tab label in the message group selector that shows groups that were recently translated by the user.',
 	'translate-msggroupselector-view-subprojects' => 'Label indicating that the current message group contains other groups. Parameters:
 * $1 is number of sub groups',
 	'tux-languageselector' => 'Label for language selector in [[Special:Translate]].
@@ -14048,8 +14048,6 @@ $messages['he'] = array(
 	'translate-statsf-submit' => 'תצוגה מקדימה',
 	'translate-tag-category' => 'דפים שאפשר לתרגם',
 	'translate-tag-page-desc' => 'תרגום של דף הוויקי [[$2|$1]].',
-	'translate-tag-fuzzy-comment' => 'ההגדרה שונתה על ידי [[User:$1|$1]] בגרסה $2.',
-	'translate-tag-fuzzy-reason' => 'ההגדרה שונתה על ידי "$1" עם ההערה "$3" ב־$2.',
 	'translate-sidebar-alltrans' => 'בשפות אחרות',
 	'translations' => 'כל התרגומים',
 	'translations-summary' => 'הקלידו את שם ההודעה להלן כדי להציג את כל התרגומים הזמינים.',
@@ -14223,7 +14221,7 @@ $1',
 	'translate-msggroupselector-projects' => 'קבוצות הודעות',
 	'translate-msggroupselector-search-placeholder' => 'חיפוש קבוצה',
 	'translate-msggroupselector-search-all' => 'הכול',
-	'translate-msggroupselector-search-recent' => 'חדשים',
+	'translate-msggroupselector-search-recent' => 'אחרונות',
 	'translate-msggroupselector-view-subprojects' => 'הצגת {{PLURAL:$1|תת־מיזם אחד|$1 תת־מיזמים}}',
 	'tux-languageselector' => 'שפה היעד לתרגום',
 	'tux-tab-all' => 'הכול',
@@ -14256,7 +14254,6 @@ $1',
 	'tux-warnings-more' => '{{PLURAL:$1|עוד $1}}',
 	'tux-warnings-hide' => 'להסתיר',
 	'tux-editor-save-failed' => 'שמירת התרגום נכשלה: $1',
-	'tux-editor-use-this-translation' => 'להשתמש בזה בתור תרגום',
 	'tux-editor-n-uses' => 'שימש {{PLURAL:$1|פעם אחת|פעמיים|$1 פעמים}}',
 	'tux-editor-message-desc-more' => 'להציג עוד',
 	'tux-editor-message-desc-less' => 'להציג פחות',
@@ -31206,7 +31203,7 @@ $messages['sr-el'] = array(
 	'translate-taskui-export-to-file' => 'Izvezi u matičnom formatu',
 	'translate-taskui-export-as-po' => 'Izvezi za vanmrežno prevođenje',
 	'translate-taction-translate' => 'Prevod',
-	'translate-taction-proofread' => 'Provera', # Fuzzy
+	'translate-taction-proofread' => 'Provera',
 	'translate-taction-lstats' => 'Statistika jezika',
 	'translate-taction-mstats' => 'Statistika grupe',
 	'translate-taction-export' => 'Izvoz',
@@ -31216,6 +31213,7 @@ $messages['sr-el'] = array(
 	'translate-page-disabled' => "Prevodi na ovom jeziku u ovoj grupi su onemogućeni. Razlog:
 
 ''$1''",
+	'translate-language-disabled' => 'Prevođenje na ovaj jezik je onemogućeno.',
 	'translate-page-settings-legend' => 'Postavke',
 	'translate-page-group' => 'Grupa:',
 	'translate-page-language' => 'Jezik:',
@@ -31461,10 +31459,10 @@ Detalji: $1',
 	'translate-searchprofile-tooltip' => 'Traženje po svim prevodima',
 	'translate-search-languagefilter' => 'Filtriraj po jeziku:',
 	'translate-search-nofilter' => 'Bez filtriranja',
-	'translate-messagereview-submit' => 'Prihvati', # Fuzzy
-	'translate-messagereview-progress' => 'Prihvatam…', # Fuzzy
-	'translate-messagereview-failure' => 'Prihvatam… neuspešno: $1', # Fuzzy
-	'translate-messagereview-done' => 'Prihvaćeno', # Fuzzy
+	'translate-messagereview-submit' => 'Označi provereno',
+	'translate-messagereview-progress' => 'Označavanje potvrđenog…',
+	'translate-messagereview-failure' => 'Neuspešno označavanje potvrđenog: $1',
+	'translate-messagereview-done' => 'Potvrđeno',
 	'translate-messagereview-reviews' => 'Prihvaćeno od {{PLURAL:$1|jednog korisnika|$1 korisnika|$1 korisnika}}', # Fuzzy
 	'translate-messagereview-reviewswithyou' => 'Prihvaćeno od {{PLURAL:$1|jednog korisnika|$1 korisnika|$1 korisnika}} zaključno s vama', # Fuzzy
 	'api-error-invalidrevision' => 'Prevod nije pronađen',
@@ -31493,12 +31491,33 @@ Detalji: $1',
 Stanja su određena s promenljivom $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Skorašnji prevodi',
 	'translate-dynagroup-recent-desc' => 'Ova grupa poruka prikazuje sve skorašnje prevode na ovom jeziku.
-Ovo je najkorisnije pri vršenju korekture.', # Fuzzy
+Ovo je najkorisnije pri proveri prevoda.',
 	'translate-dynagroup-by' => 'Prevod {{GENDER:$1|je napravio|je napravila|je napravio}} $1',
 	'translate-dynagroup-byc' => 'Prevod {{GENDER:$1|je napravio|je napravila|je napravio}} $1 ($2)',
 	'translate-dynagroup-last' => 'Poslednju izmenu {{GENDER:$1|je napravio|je napravila|je napravio}} $1',
 	'translate-dynagroup-lastc' => 'Poslednju izmenu {{GENDER:$1|je napravio|je napravila|je napravio}} $1 ($2)',
 	'translate-gethelp' => 'Pomoć',
+	'translate-msggroupselector-search-all' => 'Sve',
+	'translate-msggroupselector-search-recent' => 'Skorašnji',
+	'tux-languageselector' => 'Prevod na',
+	'tux-tab-all' => 'Sve',
+	'tux-tab-untranslated' => 'Neprevedeno',
+	'tux-tab-outdated' => 'Zastarelo',
+	'tux-tab-translated' => 'Prevedeno',
+	'tux-tab-unproofread' => 'Nepotvrđeno',
+	'tux-edit' => 'Uredi',
+	'tux-status-optional' => 'Neobavezno',
+	'tux-status-fuzzy' => 'Zastarelo',
+	'tux-status-proofread' => 'Potvrđeno',
+	'tux-status-translated' => 'Prevedeno',
+	'tux-editor-cancel-button-label' => 'Otkaži',
+	'tux-editor-confirm-button-label' => 'Potvrdi prevod',
+	'tux-editor-doc-editor-cancel' => 'Otkaži',
+	'tux-empty-list-other-link' => 'Prikaži sve poruke',
+	'tux-editor-close-tooltip' => 'Zatvori',
+	'tux-editor-message-tools-history' => 'Istorija',
+	'tux-editor-message-tools-translations' => 'Svi prevodi',
+	'tux-editor-loading' => 'Učitavanje...',
 );
 
 /** Swati (SiSwati)
