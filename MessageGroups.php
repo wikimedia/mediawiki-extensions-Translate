@@ -635,7 +635,7 @@ class MessageGroups {
 	 * @return string Language code if the languages are the same, empty string otherwise.
 	 * @since 2013.09
 	 */
-	public function haveSingleSourceLanguage( array $groups ) {
+	public static function haveSingleSourceLanguage( array $groups ) {
 		$languages = array();
 
 		foreach ( $groups as $group ) {
