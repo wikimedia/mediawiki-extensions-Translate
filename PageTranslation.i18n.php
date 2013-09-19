@@ -1663,6 +1663,7 @@ $messages['bn'] = array(
 	'tpt-rev-encourage' => 'পুনরুদ্ধার',
 	'translate-tag-translate-link-desc' => 'এই পাতা অনুবাদ করুন',
 	'translate-tag-markthis' => 'অনুবাদের জন্য এই পাতা চিহ্নিত করুন',
+	'tpt-translation-intro' => 'এই পাতাটি [[$2]] পাতার একটি <span class="plainlinks">[$1 অনূদিত সংস্করণ]</span> এবং অনুবাদ $3% সম্পূর্ণ হয়েছে।',
 	'tpt-languages-legend' => 'অন্য ভাষা:',
 	'tpt-tab-translate' => 'অনুবাদ',
 	'tpt-discouraged-language-reason' => 'কারণ: $1',

@@ -2460,7 +2460,9 @@ $messages['sv'] = array(
 	'bw-desc-freecol' => 'Innan du översätter FreeCol till ditt språk, var god läs [[Translating:FreeCol]]. FreeCol använder GPL-licensen.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], ett webbforum skrivet i PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] är ett gratis webbaserat bugspårningssystem. Vänligen rapportera alla problem på [[Support]].',
+	'translate-group-desc-blockly' => 'En meddelandegrupp för [[Translating:Blockly|Blockly]]',
 	'translate-group-desc-eol' => 'En meddelandegrupp för [[Translating:EOL|Encyclopedia of Life]]',
+	'translate-group-desc-fuel' => '[[Translating:FUEL|FUEL]] ger mer konsekvens till programvaruöversättning',
 	'translate-group-desc-ihris' => 'En meddelandegrupp för [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-kiwix' => 'En meddelandegrupp för [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Ett kärntillägg för [[Translating:MantisBT|MantisBT]]',
@@ -2478,8 +2480,11 @@ Se [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_ru
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikipedia|Pywikipedia]] är en samling verktyg för att redigera Wikipedia',
 	'bw-desc-shapado' => 'Meddelandegrupp för Q&A-programvaran [[Translating:Shapado|Shapado]] som är fri och har öppen källkod',
 	'translate-group-desc-tsint' => 'En meddelandegrupp för [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-systemet för verktyg till [http://toolserver.org Toolserver](<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tekniska detaljer]</span>)',
+	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] är ett verktyg för att ladda upp filer till Wikimedia Commons och andra Wikimediaprojekt',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan snabbt hitta författarna till en sida på en Wikimedia wiki.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] är ett projekt  för att tillhandahålla en offline textversion av Wikipedia på en mobil enhet.',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]] är en app för Android eller iOS för att ladda upp till och surfar på Wikimedia Commons',
+	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] är en plattformsoberoende applikation för att läsa och bidra till Wikipedia på mobiler och surfplattor',
 );
 
 /** Tamil (தமிழ்)
