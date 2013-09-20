@@ -150,6 +150,7 @@
 				if ( groupSelector.hasChildGroups( groupSelector.parentGroupId ) ) {
 					groupSelector.loadGroups( groupSelector.parentGroupId );
 				}
+				groupSelector.$menu.find( '.tux-loading-indicator' ).hide();
 			} );
 
 			groupSelector.$trigger.on( 'click', function ( e ) {
@@ -451,7 +452,6 @@
 			} else {
 				$msgGroupList.append( $msgGroupRows );
 			}
-			this.$menu.find( '.tux-loading-indicator' ).hide();
 		},
 
 		/**
