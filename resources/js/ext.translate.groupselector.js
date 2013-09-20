@@ -451,7 +451,9 @@
 			} else {
 				$msgGroupList.append( $msgGroupRows );
 			}
-			this.$menu.find( '.tux-loading-indicator' ).hide();
+			if ( $msgGroupRows.length ) {
+				this.$menu.find( '.tux-loading-indicator' ).hide();
+			}
 		},
 
 		/**
