@@ -1046,8 +1046,7 @@ Introduction to special page. See screenshot. Parameters:
 This should be consistent with the following messages:
 * {{msg-mw|Translate-messagereview-progress}}
 * {{msg-mw|Translate-messagereview-failure}}
-* {{msg-mw|Translate-messagereview-done}}
-{{Identical|Accept}}',
+* {{msg-mw|Translate-messagereview-done}}',
 	'translate-messagereview-progress' => 'Button label in [[Special:Translate]] review mode. Button is disabled. This is shown very briefly while the acceptance is in progress.',
 	'translate-messagereview-failure' => 'Button label in [[Special:Translate]] review mode. Button is disabled.
 
@@ -10709,8 +10708,6 @@ $messages['fa'] = array(
 	'translate-statsf-submit' => 'پیش‌نمایش',
 	'translate-tag-category' => 'صفحه‌های قابل ترجمه',
 	'translate-tag-page-desc' => 'ترجمهٔ صفحهٔ [[$2|$1]] ویکی.',
-	'translate-tag-fuzzy-comment' => 'تعریف توسط [[User:$1|$1]]  در نسخهٔ $2 تغییر یافت.',
-	'translate-tag-fuzzy-reason' => 'تعریف توسط «$1» با توضیح «$3» در $2 تغییر یافت.',
 	'translate-sidebar-alltrans' => 'در زبان‌های دیگر',
 	'translations' => 'همهٔ ترجمه‌ها',
 	'translations-summary' => 'نام یک پیغام را در زیر وارد کنید تا تمام ترجمه‌های موجود را ببینید.',
@@ -10884,13 +10881,13 @@ $1',
 	'tux-tab-all' => 'همه',
 	'tux-tab-untranslated' => 'ترجمه نشده',
 	'tux-tab-outdated' => 'تاریخ گذشته',
-	'tux-tab-translated' => 'ترجمه شده',
+	'tux-tab-translated' => 'ترجمه‌شده',
 	'tux-tab-unproofread' => 'بازبینی‌نشده',
 	'tux-edit' => 'ویرایش',
 	'tux-status-optional' => 'اختیاری',
 	'tux-status-fuzzy' => 'تاریخ گذشته',
 	'tux-status-proofread' => 'بازبینی‌شده',
-	'tux-status-translated' => 'ترجمه شده',
+	'tux-status-translated' => 'ترجمه‌شده',
 	'tux-status-saving' => 'در حال ذخیره‌سازی...',
 	'tux-status-unsaved' => 'ذخیره نشده',
 	'tux-editor-placeholder' => 'ترجمهٔ شما',
@@ -10911,7 +10908,6 @@ $1',
 	'tux-warnings-more' => '{{PLURAL:$1|$1 مورد دیگر}}',
 	'tux-warnings-hide' => 'نهفتن',
 	'tux-editor-save-failed' => 'ذخیره‌سازی ترجمه نافرجام ماند:$1',
-	'tux-editor-use-this-translation' => 'استفاده به عنوان ترجمه',
 	'tux-editor-n-uses' => '$1 بار استفاده شده',
 	'tux-editor-message-desc-more' => 'مشاهدهٔ بیشتر',
 	'tux-editor-message-desc-less' => 'مشاهدهٔ کمتر',

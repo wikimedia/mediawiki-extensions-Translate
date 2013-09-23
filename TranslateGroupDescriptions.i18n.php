@@ -592,6 +592,7 @@ Weitere Information finden sich unter [[mw:Extension:PDF Writer]] und http://cod
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] ist eine mobile Anwendung zur Teilnahme am [[:meta:Wiki Loves Monuments|„Wiki Loves Monuments“-Projekt]]',
 	'translate-group-desc-waymarked-trails-help' => 'Die Hilfeseiten der „Waymarked Trails“-Websites: http://waymarkedtrails.org/help/about',
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] ist ein kollaborativer Echtzeiteditor',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]] ist eine browserübergreifende JavaScript-Bibliothek zum Anzeigen von mathematischen Notationen in Webbrowsern',
 );
 
 /** Zazaki (Zazaki)
@@ -893,6 +894,7 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] est une application mobile pour contribuer au [[:meta:Wiki Loves Monuments|projet Monuments Appréciés de Wiki]]',
 	'translate-group-desc-waymarked-trails-help' => "Les pages d'aide des sites web des Chemins balises: http://waymarkedtrails.org/help/about",
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] est un éditeur collaboratif réellement en temps réel',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]] est une bibliothèque JavaScript multi-navigateurs qui affiche des notations mathématiques dans les navigateurs web',
 );
 
 /** Franco-Provençal (arpetan)
@@ -1337,6 +1339,7 @@ Vedi [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_
 	'translate-group-desc-wikimedia-mobile-wlm' => "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] è un'applicazione per dispositivi mobili per contribuire al [[:meta:Wiki Loves Monuments|progetto Wiki Loves Monuments]]",
 	'translate-group-desc-waymarked-trails-help' => 'Le pagine di aiuto del sito web Waymarked Trails: http://waymarkedtrails.org/help/about',
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] è un editor collaborativo in tempo reale',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]] è una libreria JavaScript cross-browser per visualizzare la notazione matematica nei browser web',
 );
 
 /** Japanese (日本語)
@@ -1395,6 +1398,7 @@ $messages['ja'] = array(
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] は[[:meta:Wiki Loves Monuments|ウィキラブモニュメント プロジェクト]]を閲覧・編集するための携帯機器向けアプリケーションです',
 	'translate-group-desc-waymarked-trails-help' => 'Waymarked Trails ウェブサイトのヘルプページ: http://waymarkedtrails.org/help/about',
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] は真のリアルタイム共同編集を実現したエディターです',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]] は、ウェブ ブラウザー内で数式を表示する、クロス ブラウザー対応の JavaScript ライブラリです',
 );
 
 /** Georgian (ქართული)
@@ -1485,6 +1489,7 @@ $messages['ko'] = array(
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]]은 [[:meta:Wiki Loves Monuments|Wiki Loves Monuments project]]에 기여하기 위한 모바일 어플리케이션입니다',
 	'translate-group-desc-waymarked-trails-help' => 'Waymarked Trails 웹 사이트의 도움말 페이지입니다: http://waymarkedtrails.org/help/about',
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]]은 실시간 공동 작업 편집기입니다',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]]는 웹 브라우저에서 수식 표기를 위한 크로스-브라우저 자바스크립트 라이브러리입니다',
 );
 
 /** Colognian (Ripoarisch)
@@ -1664,6 +1669,7 @@ $messages['mk'] = array(
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|ВикиГиСакаСпомениците - Мобилен]] е мобилен прилог за учествување во проектот „[[:meta:Wiki Loves Monuments|Вики ги сака спомениците]]“',
 	'translate-group-desc-waymarked-trails-help' => "Страниците за помош на порталите на „Означени патеки“ (''Waymarked Trails''): http://waymarkedtrails.org/help/about",
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] е соработен уредувач во живо (сосема)',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]] е JavaScript-библиотека што прикажува математичка нотација во повеќе прелистувачи',
 );
 
 /** Malayalam (മലയാളം)
@@ -2578,6 +2584,7 @@ $messages['tt-cyrl'] = array(
 /** Ukrainian (українська)
  * @author A1
  * @author AS
+ * @author Andriykopanytsia
  * @author Andygol
  * @author Base
  * @author Olvin
@@ -2636,6 +2643,7 @@ $messages['uk'] = array(
 	'translate-group-desc-wikimedia-mobile-wlm' => "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] — мобільний застосунок для внеску до [[:meta:Wiki Loves Monuments|проекту Вікі Любить Пам'ятки]]",
 	'translate-group-desc-waymarked-trails-help' => 'Сторінки допомоги сайтів Waymarked Trails: http://waymarkedtrails.org/help/about',
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] — це насправді сумісний з реальним часом редактор',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]] це міжбраузерна бібліотека на JavaScript, що відображає математичні формули у веб-переглядачах',
 );
 
 /** Uzbek (oʻzbekcha)
@@ -2735,6 +2743,7 @@ $messages['yi'] = array(
  * @author Bencmq
  * @author Hydra
  * @author Hzy980512
+ * @author Liuxinyu970226
  * @author Mys 721tx
  * @author PhiLiP
  * @author Tommyang
@@ -2791,6 +2800,7 @@ $messages['zh-hans'] = array(
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]]是一个手机应用，用于编辑[[:meta:Wiki Loves Monuments|维基爱古迹项目]]',
 	'translate-group-desc-waymarked-trails-help' => 'Waymarked Trails网站的帮助页面: http://waymarkedtrails.org/help/about',
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]]是一个真正的实时协同编辑器',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]]是一个跨浏览器的用于浏览器中显示数学符号的JavaScript库',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
