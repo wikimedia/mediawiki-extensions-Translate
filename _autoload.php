@@ -28,6 +28,9 @@ $wgAutoloadClasses['TranslateEditAddons'] = "$dir/TranslateEditAddons.php";
 $wgAutoloadClasses['TranslateHooks'] = "$dir/TranslateHooks.php";
 $wgAutoloadClasses['TranslateTasks'] = "$dir/TranslateTasks.php";
 $wgAutoloadClasses['TranslateUtils'] = "$dir/TranslateUtils.php";
+
+$wgAutoloadClasses['RadixTree'] = "$dir/RadixTree.php";
+$wgAutoloadClasses['RadixTreeLookup'] = "$dir/RadixTree.php";
 /**@}*/
 
 /**
