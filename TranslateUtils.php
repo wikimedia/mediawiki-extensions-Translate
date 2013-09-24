@@ -26,7 +26,7 @@ class TranslateUtils {
 		$key = $ns . ':' . $message;
 
 		if ( !isset( $cache[$key] ) ) {
-			$cache[$key] = Title::capitalize( $message );
+			$cache[$key] = Title::capitalize( $message, $ns );
 		}
 
 		if ( $code ) {
