@@ -247,6 +247,9 @@ class MediaWikiMessageChecker extends MessageChecker {
 					$stack++;
 				} elseif ( $translation[$i] === '}' ) {
 					$stack--;
+				} elseif ( $stack > 2 && $translation[$i] === '|' ) {
+					# These pipes belong to another thing, ignore them
+					$translation[$i] = '_';
 				}
 
 				if ( $stack === 0 ) {
