@@ -1,0 +1,7 @@
+== Translate 2013.09 ==
+Released at 2013-09-25.
+
+=== Noteworthy changes ===
+* Added initial support for insertables. This will be helpful in typing and copy-paste of syntax like $1 and plural specially on tablets (bug 38350). More about this feature: http://laxstrom.name/blag/2013/09/18/insertables-in-translate-extension-make-translating-easier/
+* Removed non-breaking spaces in the language list shown on the top of translatable pages. Non-breaking spaces makes the only places where the browser can break the line is the languages containing a (breaking) space, which are not the right places (bug 49900).
+* Display the loading indicator in message group selector while loading (bug 46829).
