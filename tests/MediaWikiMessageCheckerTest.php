@@ -67,6 +67,11 @@ class MediaWikiMessageCheckerTest extends MediaWikiTestCase {
 				'a{{PLURAL:#|0=0|1=one|1|2}',
 				'unclosed plural tag is ignored'
 			),
+			array(
+				array( array( '1=foo', '{{GENDER:#|he}}' ) ),
+				'a{{PLURAL:#|1=foo|{{GENDER:#_he}}}}',
+				'pipes in subtemplates are ignored by replacing them with other char'
+			),
 		);
 	}
 
