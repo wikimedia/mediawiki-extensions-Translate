@@ -59,7 +59,7 @@ HTML;
 	<div class="six columns tux-view-switcher text-center">
 		<button class="toggle button down translate-mode-button">$modeTranslate
 		</button><button class="toggle button down page-mode-button">$modePage
-		</button><button class="toggle button hide tux-proofread-button">$modeProofread
+		</button><button class="toggle button hide proofread-mode-button">$modeProofread
 		</button>
 	</div>
 </div>

@@ -321,7 +321,7 @@
 		$translateContainer = $( '.ext-translate-container' );
 
 		if ( mw.translate.canProofread() ) {
-			$translateContainer.find( '.tux-proofread-button' ).removeClass( 'hide' );
+			$translateContainer.find( '.proofread-mode-button' ).removeClass( 'hide' );
 		}
 
 		$hideTranslatedButton = $translateContainer.find( '.tux-editor-clear-translated' );

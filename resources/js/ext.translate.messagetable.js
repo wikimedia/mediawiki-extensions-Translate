@@ -134,7 +134,7 @@
 				one: false
 			} );
 
-			this.$actionBar.find( 'button.tux-proofread-button' ).on( 'click', function () {
+			this.$actionBar.find( 'button.proofread-mode-button' ).on( 'click', function () {
 				messageTable.switchMode( 'proofread' );
 			} );
 

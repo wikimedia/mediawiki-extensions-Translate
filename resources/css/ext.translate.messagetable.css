@@ -275,18 +275,18 @@
 	background-image: linear-gradient(transparent, transparent), url(../images/view-page-hi.svg);
 }
 
-.tux-action-bar .tux-proofread-button {
+.tux-action-bar .proofread-mode-button {
 	width: 36%;
 }
 
-.tux-action-bar .tux-proofread-button:before {
+.tux-action-bar .proofread-mode-button:before {
 	background: transparent url(../images/view-proofread.png) center center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-proofread.svg);
 	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-proofread.svg);
 	background-image: linear-gradient(transparent, transparent), url(../images/view-proofread.svg);
 }
 
-.tux-action-bar .tux-proofread-button.down:before {
+.tux-action-bar .proofread-mode-button.down:before {
 	background: transparent url(../images/view-proofread-hi.png) center center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-proofread-hi.svg);
 	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-proofread-hi.svg);
