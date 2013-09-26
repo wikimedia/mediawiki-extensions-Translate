@@ -640,7 +640,7 @@
 				messageTable.$actionBar.find( '.translate-mode-button' ).addClass( 'down' );
 			}
 			if ( mode === 'proofread' ) {
-				messageTable.$actionBar.find( '.tux-proofread-button' ).addClass( 'down' );
+				messageTable.$actionBar.find( '.proofread-mode-button' ).addClass( 'down' );
 			}
 			if ( mode === 'page' ) {
 				messageTable.$actionBar.find( '.page-mode-button' ).addClass( 'down' );
