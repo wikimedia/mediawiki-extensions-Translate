@@ -330,6 +330,7 @@ $specialPageAliases['fa'] = array(
 	'TranslationStats' => array( 'آمار_ترجمه‌ها' ),
 	'Translations' => array( 'ترجمه‌ها' ),
 	'LanguageStats' => array( 'آمار_زبان‌ها' ),
+	'MessageGroupStats' => array( 'آمار_گروه_پیغام' ),
 	'PageTranslation' => array( 'ترجمه_صفحه' ),
 	'ImportTranslations' => array( 'درون‌بری_ترجمه‌ها' ),
 	'ManageMessageGroups' => array( 'مدیریت_گروه‌های_پیغام' ),
@@ -337,6 +338,9 @@ $specialPageAliases['fa'] = array(
 	'SupportedLanguages' => array( 'زبان‌های_پشتیبانی‌شده' ),
 	'MyLanguage' => array( 'زبان‌های_من' ),
 	'PageTranslationDeletePage' => array( 'صفحه_حذف_ترجمه_صفحه' ),
+	'AggregateGroups' => array( 'جمع_گروه‌ها' ),
+	'SearchTranslations' => array( 'جستجوی_ترجمه‌ها' ),
+	'TranslateSandbox' => array( 'مدیریت_صفحهٔ_تمرین_ترجمه', 'صفحهٔ_تمرین_ترجمه' ),
 );
 
 /** Finnish (suomi) */

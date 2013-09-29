@@ -1141,7 +1141,8 @@ See also:
 	'translate-msggroupselector-search-placeholder' => "Place holder text for the search box in message group selector. It's supposed to tell the user that the box is for a search for a name of a group.",
 	'translate-msggroupselector-search-all' => 'Label to display all projects.
 {{Identical|All}}',
-	'translate-msggroupselector-search-recent' => 'A tab label in the message group selector that shows groups that were recently translated by the user.',
+	'translate-msggroupselector-search-recent' => 'A tab label in the message group selector that shows groups that were recently translated by the user.
+{{Identical|Recent}}',
 	'translate-msggroupselector-view-subprojects' => 'Label indicating that the current message group contains other groups. Parameters:
 * $1 is number of sub groups',
 	'tux-languageselector' => 'Label for language selector in [[Special:Translate]].
@@ -6294,12 +6295,14 @@ $messages['ce'] = array(
 	'translate-gs-code' => 'Код',
 	'translate-gs-multiple' => 'Маситта',
 	'translate-gs-total' => 'Йеригге',
+	'api-error-invalidrevision' => 'Гочйинарг карлаяьккхина  яц',
 	'group-translate-sandboxed' => 'ЧӀагӀбина гочдархой',
 	'translate-dynagroup-recent-label' => 'Дукха хан йоццуш гоч динарш',
 	'translate-gethelp' => 'ГӀо',
 	'translate-msggroupselector-projects' => 'Хаамашан группа',
 	'tux-status-fuzzy' => 'Ширелла',
 	'tux-editor-discard-changes-button-label' => 'Цаоьшу хийцамаш',
+	'tux-editor-confirm-button-label' => 'Бакъде гочдар',
 	'tux-editor-doc-editor-cancel' => 'Цаоьшу',
 	'tux-empty-list-other-link' => 'Гайта берриге хаамаш',
 	'tux-editor-close-tooltip' => 'ДӀачӀагӀа',
@@ -10609,7 +10612,7 @@ $messages['fa'] = array(
 	'translate-edit-tab-list' => 'فهرست پیغام‌ها',
 	'translate-edit-nopermission' => 'برای ترجمه پیغام‌ها نیازمند دسترسی هستید.',
 	'translate-edit-askpermission' => 'درخواست دسترسی',
-	'translate-magic-pagename' => 'ترجمهٔ گسترش یافتهٔ مدیاویکی',
+	'translate-magic-pagename' => 'ترجمهٔ گسترش‌یافتهٔ مدیاویکی',
 	'translate-magic-help' => 'شما می‌توانید نام مستعار صفحه‌های ویژه، واژه‌های جادویی، و نام فضاهای نام را ترجمه کنید.
 
 نام مستعار صفحه‌های ویژه می‌تواند بیش از یک ترجمه داشته باشد.
@@ -10893,7 +10896,7 @@ $1',
 	'tux-editor-placeholder' => 'ترجمهٔ شما',
 	'tux-editor-paste-original-button-label' => 'چسباندن متن مبدأ',
 	'tux-editor-discard-changes-button-label' => 'دور ریختن تغییرات',
-	'tux-editor-save-button-label' => 'ذخیره سازی ترجمه',
+	'tux-editor-save-button-label' => 'ذخیره‌سازی ترجمه',
 	'tux-editor-skip-button-label' => 'پرش به بعدی',
 	'tux-editor-cancel-button-label' => 'لغو',
 	'tux-editor-confirm-button-label' => 'تأیید ترجمه',
@@ -13876,6 +13879,7 @@ $messages['haw'] = array(
 /** Hebrew (עברית)
  * @author Agbad
  * @author Amire80
+ * @author Guycn1
  * @author Ofrahod
  * @author Rotemliss
  * @author YaronSh
@@ -14183,6 +14187,8 @@ $1',
 	'group-translate-proofr' => 'סוקרי תרגומים',
 	'group-translate-proofr-member' => '{{GENDER:$1|סוקר|סוקרת}} תרגומים',
 	'grouppage-translate-proofr' => '{{ns:project}}:סוקרי תרגומים',
+	'group-translate-proofr.css' => '/* הסגנונות הנכתבים כאן ישפיעו על סוקרי תרגומים בלבד */',
+	'group-translate-proofr.js' => '/* כל סקריפט JavaScript שנכתב כאן ירוץ עבור סוקרי תרגומים בלבד */',
 	'log-name-translationreview' => 'יומן סקירת תרגומים',
 	'log-description-translationreview' => 'יומן של כל הסקירות של תרגומים ושל קבוצות תרגומים.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|סקר|סקרה}} את התרגום $3',
@@ -25943,7 +25949,7 @@ $messages['pl'] = array(
 	'translate-taskui-view' => 'Pokaż wszystkie komunikaty',
 	'translate-taskui-untranslated' => 'Pokaż nieprzetłumaczone komunikaty',
 	'translate-taskui-optional' => 'Pokaż opcjonalne wiadomości',
-	'translate-taskui-acceptqueue' => 'Tylko te komunikaty, które mogę zaakceptować', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Tylko te komunikaty, które mogę oznaczyć jako przejrzane',
 	'translate-taskui-reviewall' => 'Sprawdź wszystkie tłumaczenia',
 	'translate-taskui-export-to-file' => 'Eksportuj w formacie macierzystym',
 	'translate-taskui-export-as-po' => 'Eksportuj do tłumaczenia off-line',
@@ -26096,8 +26102,6 @@ Domyślna lista języków zależy od Twojego języka.',
 	'translate-statsf-submit' => 'Podgląd',
 	'translate-tag-category' => 'Strony do przetłumaczenia',
 	'translate-tag-page-desc' => 'Tłumaczenie wiki strony [[$2|$1]].',
-	'translate-tag-fuzzy-comment' => 'Definicja zmieniona przez [[User:$1|$1]] w wersji $2.',
-	'translate-tag-fuzzy-reason' => 'Definicja zmieniona przez „$1” z komentarzem „$3” w $2.',
 	'translate-sidebar-alltrans' => 'W innych językach',
 	'translations' => 'Wszystkie tłumaczenia',
 	'translations-summary' => 'Wprowadź poniżej nazwę komunikatu, aby zobaczyć wszystkie dostępne tłumaczenia.',
@@ -26301,7 +26305,6 @@ Jest najbardziej użyteczna dla zadań korekty.', # Fuzzy
 	'tux-warnings-more' => '{{PLURAL:$1|$1 więcej}}',
 	'tux-warnings-hide' => 'ukryj',
 	'tux-editor-save-failed' => 'Zapisywanie tłumaczenia nie powiodło się: $1',
-	'tux-editor-use-this-translation' => 'Użyj jako tłumaczenia',
 	'tux-editor-n-uses' => 'użyte $1 {{PLURAL:$1|raz|razy}}',
 	'tux-editor-message-desc-more' => 'Zobacz więcej',
 	'tux-editor-message-desc-less' => 'Pokaż mniej',
@@ -26783,17 +26786,17 @@ $messages['ps'] = array(
 	'translate-edit-information' => 'د پيغام په اړه مالومات ($1)',
 	'translate-edit-in-other-languages' => 'پيغام په نورو ژبو کې',
 	'translate-edit-tab-list' => 'پيغام لړليک',
-	'translate-magic-help' => 'دلته تاسې د ځانګړو مخونو مستعار نومونه، کوډګريز وييونه او د نوم-تشيالونو نومونه ژباړلی شی.
+	'translate-magic-help' => 'تاسې د ځانگړو مخونو مستعار نومونه، کوډگر وييونه او د نوم-تشيال نومونه ژباړلی شی.
 
-د ځانګړو مخونو مستعار نومونه او کوډګريز وييونه ګڼ شمېر ژباړې لري.
+د ځانگړو مخونو مستعار نومونه او کوډگر وييونه گڼ شمېر ژباړې لري.
 ژباړې د کامې (,) په کارېدلو سره يو له بل نه بېلې شوي.
 نوم-تشيالونه يواځې يوه ژباړه لرلی شي.
 
-د نوم-تشيال په ژباړو کې <code>$1 talk</code> ځانګړی دی. <code>$1</code> د وېبځي په نوم ځايناستل کېږي (د بېلګې په توګه <code>{{ns:project_talk}}</code>).
-که چېرته دا ستاسې په ژبه کې شونی نه وي چې د وېبځي د نوم بدلون نه پرته يوه سمه اصطلاح رامېنځ ته شي، نو لطفاً د يوه پروګرامر سره په تماس کې شۍ.
+د پروژې د خبرو اترو نوم-تشيال په ژباړو کې <code>$1 talk</code> کېدای شي پېچلی شي. <code>$1</code> د پروژې وېبځي په نوم ځايناستل کېږي (د بېلگې په توگه <code>{{ns:project_talk}}</code>).
+که چېرته دا ستاسې په ژبه کې شونی نه وي چې د وېبځي د نوم بدلون نه پرته يوه سمه اصطلاح رامېنځ ته شي، نو لطفاً د يوه پروگرامر سره په [[ملاتړ]] کې اړيکه ونيسۍ.
 
-د بدلونونو د خوندي کولو لپاره پکار ده چې تاسې د ژباړنو په ډله کې اوسۍ.
-بدلونونه به تر هغه پورې نه خوندي کېږي څو چې تاسې لاندې د خوندي کولو تڼۍ نه وي کېښکاږلې.', # Fuzzy
+د بدلونونو د خوندي کولو لپاره پکار ده چې تاسې د ژباړنانو په ډله کې اوسۍ.
+بدلونونه به تر هغه وخت پورې نه خوندي کېږي څو چې تاسې لاندې د خوندي کولو تڼۍ نه وي کېښکاږلې.', # Fuzzy
 	'translate-magic-submit' => 'راغونډول',
 	'translate-magic-cm-current' => 'اوسنی',
 	'translate-magic-cm-original' => 'آرنی',
@@ -26854,7 +26857,7 @@ $messages['ps'] = array(
 	'supportedlanguages-recenttranslations' => 'تازه ژباړې',
 	'supportedlanguages-count' => 'ټولټال $1 {{PLURAL:$1|ژبه|ژبې}}.',
 	'translate-save' => 'خوندي کول ($1)',
-	'translate-jssti-add' => 'لړليک کې ګډول',
+	'translate-jssti-add' => 'لړليک کې گډول',
 	'translate-manage-import-new' => 'نوی پيغام $1',
 	'translate-manage-import-deleted' => 'ړنګ شوی پيغام $1',
 	'translate-manage-action-ignore' => 'بابېزل',

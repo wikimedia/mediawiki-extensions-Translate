@@ -2022,6 +2022,7 @@ Comproveu el [[Special:Log/pagetranslation|registre de traducció de pàgines]] 
  * @author Умар
  */
 $messages['ce'] = array(
+	'pagetranslation' => 'АгӀонаш гочяр',
 	'tpt-diff-new' => 'Керла йоза',
 	'tpt-languages-legend' => 'Кхин меттанаш:',
 	'pt-movepage-current' => 'Карара цӀе:',
@@ -8321,7 +8322,7 @@ $messages['ps'] = array(
 	'pt-deletepage-action-other' => 'موخه بدلول',
 	'pt-deletepage-current' => 'د مخ نوم:',
 	'pt-deletepage-reason' => 'سبب:',
-	'pt-deletepage-subpages' => 'ټول واړه مخونه ړنګول',
+	'pt-deletepage-subpages' => 'ټول واړه مخونه ړنگول',
 	'pt-deletepage-list-translation' => 'د ژباړې مخونه',
 	'pt-deletepage-list-section' => 'د څپرکي د مخونو ژباړه',
 	'pt-deletepage-list-other' => 'نور واړه مخونه',

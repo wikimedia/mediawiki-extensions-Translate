@@ -170,6 +170,7 @@ $messages['br'] = array(
  * @author Умар
  */
 $messages['ce'] = array(
+	'tux-sst-edit' => 'Таде гочдар',
 	'tux-sst-search' => 'Лаха',
 	'tux-sst-facet-language' => 'Меттанаш',
 );
@@ -355,6 +356,26 @@ $messages['gl'] = array(
 	'tux-sst-solr-offline-body' => 'O servizo de procura non está dispoñible temporalmente.',
 	'tux-sst-next' => 'Resultados seguintes',
 	'tux-sst-prev' => 'Resultados anteriores',
+);
+
+/** Gujarati (ગુજરાતી)
+ * @author Ashok modhvadia
+ */
+$messages['gu'] = array(
+	'searchtranslations' => 'ભાષાંતરો શોધો',
+	'tux-sst-edit' => 'ભાષાંતરો સંપાદિત કરો',
+	'tux-sst-search' => 'શોધો',
+	'tux-sst-search-ph' => 'ભાષાંતરો શોધો',
+	'tux-sst-count' => '{{PLURAL:$1|એક પરિણામ મળ્યુ|$1 પરિણામો મળ્યા}}',
+	'tux-sst-facet-language' => 'ભાષાઓ',
+	'tux-sst-facet-group' => 'સંદેશ જૂથો',
+	'tux-sst-facet-orphan' => '(અનાથ)',
+	'tux-sst-nosolr-title' => 'શોધ ઉપલબ્ધ નથી',
+	'tux-sst-nosolr-body' => 'આ વિકિ પર ભાષાંતર શોધ સેવા ઉપલબ્ધ નથી.',
+	'tux-sst-solr-offline-title' => 'શોધ ઉપલબ્ધ નથી',
+	'tux-sst-solr-offline-body' => 'આ શોધ સેવા હાલ ઉપલબ્ધ નથી.',
+	'tux-sst-next' => 'પછીનાં પરિણામો',
+	'tux-sst-prev' => 'આગલાં પરિણામો',
 );
 
 /** Hebrew (עברית)
