@@ -149,9 +149,9 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		$dbw->delete( 'translate_tmt', '*', __METHOD__ );
 		$dbw->delete( 'translate_tmf', '*', __METHOD__ );
 		$table = $dbw->tableName( 'translate_tmf' );
-		$dbw->ignoreErrors( true );
-		$dbw->query( "DROP INDEX tmf_text ON $table" );
-		$dbw->ignoreErrors( false );
+		try {
+			$dbw->query( "DROP INDEX tmf_text ON $table" );
+		} catch ( DBQueryError $e ) {}
 	}
 
 	public function beginBatch() {
