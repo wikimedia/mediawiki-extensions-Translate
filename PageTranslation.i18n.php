@@ -6455,6 +6455,7 @@ $messages['ky'] = array(
  * @author Les Meloures
  * @author Purodha
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'pagetranslation' => 'Iwwersetzung vun der Säit',
@@ -6521,7 +6522,7 @@ awer déi lescht Versioun kann fir d'Iwwersetzung markéiert ginn.",
 	'tpt-languages-zero' => 'Iwwersetzung fir dës Sprooch ufänken',
 	'tpt-tab-translate' => 'Iwwersetzen',
 	'tpt-target-page' => "Dës Säit kann net manuell aktualiséiert ginn.
-Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungs-Fonctioun] aktulaiséiert ginn.",
+Dës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungsfunktioun] aktualiséiert ginn.",
 	'tpt-unknown-page' => "Dësen Nummraum ass fir d'Iwwersetze vu Säite mat Inhalt reservéiert.
 D'Säit, déi Dir versicht z'änneren, schéngt net mat enger Säit déi fir d'Iwwersetzung markéiert ass ze korrespondéieren.",
 	'tpt-translation-restricted' => "D'Iwwersetze vun dëser Säit an dës Sprooch gouf vun engem Iwwersetzungs-Administrateur gespaart.
@@ -6591,7 +6592,7 @@ Text fir Iwwersetzungseenheet: <pre>$1</pre>',
 D'Réckelaktioun gëtt net direkt gemaach wëll vill Säite geréckelt musse ginn.
 D'Job-Queue gëtt fir d'Réckele vun de Säite benotzt.
 Da wann d'Säite geréckelt ginn ass et net méiglech mat deene Säiten déi grad geréckelt ginn ze schaffen.
-Wann et net fonctionnéiert gëtt dat am [[Special:Log/pagetranslation|Iwwersetzungs-Logbuch]] festgehal an et muss vun Hand reparéiert ginn.",
+Wann et net funktionéiert gëtt dat am [[Special:Log/pagetranslation|Iwwersetzungs-Logbuch]] festgehalen an et muss vun Hand reparéiert ginn.",
 	'pt-movepage-logreason' => 'Deel vun der iwwersetzbarer Säit $1.',
 	'pt-movepage-started' => "D'Basissäit ass elo geréckelt.
 Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir Feelermeldungen respektiv d'Meldung datt alles ok ass.",

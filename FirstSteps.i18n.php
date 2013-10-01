@@ -3928,6 +3928,7 @@ $messages['su'] = array(
 
 /** Swedish (svenska)
  * @author Fredrik
+ * @author Jopparn
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
@@ -3936,7 +3937,7 @@ $messages['sv'] = array(
 	'translate-fs-pagetitle-done' => ' – klart!',
 	'translate-fs-pagetitle-pending' => ' - pågående',
 	'translate-fs-pagetitle' => 'Guide för att komma igång - $1',
-	'translate-fs-signup-title' => 'Skapa ett användarkonto',
+	'translate-fs-signup-title' => 'Skapa ett konto',
 	'translate-fs-settings-title' => 'Konfigurera inställningar',
 	'translate-fs-userpage-title' => 'Skapa din användarsida',
 	'translate-fs-permissions-title' => 'Ansök om översättarbehörigheter',

@@ -236,6 +236,7 @@ $messages['ast'] = array(
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] ye una aplicación pa preseos móviles que val pa collaborar col [[:meta:Wiki Loves Monuments|proyeutu Wiki Loves Monuments]]',
 	'translate-group-desc-waymarked-trails-help' => "Les páxines d'ayuda de los sitios web de Waymarked Trails: http://waymarkedtrails.org/help/about",
 	'translate-group-desc-etherpad-lite' => "[[Translating:Etherpad lite|Etherpad lite]] ye un editor collaborativu n'auténticu tiempu real",
+	'translate-group-desc-mathjax' => "[[Translating:MathJax|MathJax]] ye una biblioteca de JavaScript compatible ente navegadores p'amosar escritura matemática nos navegadores web",
 );
 
 /** Azerbaijani (azərbaycanca)
@@ -877,7 +878,7 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 	'translate-group-desc-okawix' => '[[Translating:Okawix|Okawix]] est un lecteur Wikipédia hors-ligne',
 	'translate-group-desc-openimages-all' => 'Ces messages font partie du [[Translating:Open Images|Projet Open Images]]',
 	'bw-desc-openstreetmap' => 'Groupe de messages pour tous les messages de [[Translating:OpenStreetMap|OpenStreetMap]]',
-	'bw-desc-osm-site' => 'Ce groupe de messages contient les messages de l’interface d’[[Translating:Open Street Map]].', # Fuzzy
+	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] est une carte modifiable du monde entier',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] est un éditeur OpenStreetMap basé sur du flash',
 	'translate-group-desc-pywikipedia' => "[[Translating:Pywikibot|Pywikibot]] est une collection d'outils pour modifier Wikipédia",
 	'bw-desc-shapado' => 'Groupe de messages pour le logiciel libre et open-source de questions/réponses [[Translating:Shapado|Shapado]]',
@@ -1553,6 +1554,7 @@ Jangk op di Sigge „<i lang="en">[[mw:Extension:PDF_Writer]]</i>“ un „<i la
  * @author Kghbln
  * @author Les Meloures
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'translategroupdescriptions-desc' => 'Beschreiwung vun de Gruppe vu Message vu Projeten, déi vun der Programmerweiderung [http://mediawiki.org/wiki/Extension:Translate Translate] ënnerstëtzt ginn',
@@ -1587,7 +1589,7 @@ $messages['lb'] = array(
 	'bw-desc-openstreetmap' => 'All Messagen a Relatioun mat [[Translating:OpenStreetMap|OpenStreetMap]]',
 	'bw-desc-osm-site' => '[[Translating:OpenStreetMap|OpenStreetMap]] ass eng ännerbar Kaart vun der ganzer Welt',
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] ass en OpenStreetMap-Editeur deen op Flash baséiert',
-	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] ass eng Sammlung vu Fonctioune fir op Wikipedia Ännerungen ze maachen',
+	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] ass eng Sammlung vu Funktioune fir op Wikipedia Ännerungen ze maachen',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] ass eng web-baséiert Fro an Äntwert Software',
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] ass en Tool fir Fichieren op Wikimedia Commons an aner Wikimedia Projeten eropzelueden',
 	'bw-desc-wikiblame' => "[[Translating:WikiBlame|WikiBlame]] erlaabt et fir d'Auteure vun enger Säit op enger Wikimedia-Wiki séier ze fannen.",
