@@ -53,7 +53,7 @@ $messages['en'] = array(
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] is a Flash-based OpenStreetMap editor',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] is a collection of tools to edit Wikipedia',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] is web-based Question and Answer software',
-	'translate-group-desc-tsint' => 'A message group for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], the i18n system for [http://toolserver.org Toolserver] tools (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)',
+	'translate-group-desc-tsint' => 'A message group for [[Translating:Toolserver|Toolserver Intuition]], the i18n system for [//toolserver.org Toolserver] tools (<span class="plainlinks">[[Translating talk:Toolserver|support]]</span>)',
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] is a tool to upload files to Wikimedia Commons and other Wikimedia projects',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] is a service showing routes for hiking, cycling, mountain biking and inline skating around the world. It uses the GNU GPL license',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] is able to quickly find the authors of a part of a page in a Wikimedia wiki',
@@ -2363,7 +2363,6 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt za dostavljanje nepovezane, samo tekstovne različice Wikipedije na mobilne naprave.',
 	'translate-group-desc-waymarked-trails-help' => 'Strani s pomočjo spletnih strani Waymarked Trails: http://waymarkedtrails.org/help/about',
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] je resnično realnočasovni sodelovalni urejevalnik',
-	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]] je večbrskalniška javaskriptna knjižnica za prikaz matematičnega zapisa',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
@@ -2809,7 +2808,6 @@ $messages['zh-hans'] = array(
 );
 
 /** Traditional Chinese (中文（繁體）‎)
- * @author Cwlin0416
  * @author Justincheng12345
  * @author Liangent
  * @author Mark85296341
@@ -2833,7 +2831,7 @@ $messages['zh-hant'] = array(
 	'translate-group-desc-translatablepages' => '所有翻譯網頁',
 	'bw-desc-freecol' => '在翻譯 FreeCol 到您的語言之前，請閱讀 [[Translating:FreeCol]]。Freecol 使用 GPL 協議。',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum]，一個用 PHP 編寫的論壇。',
-	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] 是一個以 Web 為基礎的問題追蹤系統。', # Fuzzy
+	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] 是一個基於 Web 的 Bug 追蹤系統。請在[[Support|技術支援頁面]]報告任何問題。',
 	'translate-group-desc-eol' => '[[Translating:EOL|Encyclopedia of Life]]的消息組',
 	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS]]的消息組',
 	'translate-group-desc-kiwix' => '[[Translating:Kiwix|Kiwix]]的消息組',

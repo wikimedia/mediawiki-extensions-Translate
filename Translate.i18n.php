@@ -26752,7 +26752,7 @@ $messages['ps'] = array(
 	'translate-taction-translate' => 'ژباړل',
 	'translate-taction-lstats' => 'د ژبې شمار',
 	'translate-taction-mstats' => 'د پيغام ډلې شمار',
-	'translate-page-no-such-language' => 'ځانگړې شوې ژبه سمه نه وه.',
+	'translate-page-no-such-language' => 'ځانګړې شوې ژبه سمه نه وه.',
 	'translate-page-disabled' => "په دې ډله کې د همدې ژبې ژباړې ناچارنده شوي.
 سبب:
 
