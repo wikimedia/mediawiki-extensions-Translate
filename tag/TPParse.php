@@ -166,16 +166,17 @@ class TPParse {
 	 * Returns translation page with all possible translations replaced in
 	 * and ugly translation tags removed.
 	 * @param MessageCollection $collection Collection that holds translated messages.
+	 * @param int $dbtype One of DB_* constants.
 	 * @return string Whole page as wikitext.
 	 */
-	public function getTranslationPageText( $collection ) {
+	public function getTranslationPageText( $collection, $dbtype = DB_MASTER ) {
 		$text = $this->template; // The source
 
 		// For finding the messages
 		$prefix = $this->title->getPrefixedDBKey() . '/';
 
 		if ( $collection instanceof MessageCollection ) {
-			$collection->loadTranslations( DB_MASTER );
+			$collection->loadTranslations( $dbtype );
 			$collection->filter( 'translated', false );
 		}
 
