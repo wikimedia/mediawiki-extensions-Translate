@@ -53,7 +53,7 @@ $messages['en'] = array(
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] is a Flash-based OpenStreetMap editor',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] is a collection of tools to edit Wikipedia',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] is web-based Question and Answer software',
-	'translate-group-desc-tsint' => 'A message group for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], the i18n system for [http://toolserver.org Toolserver] tools (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)',
+	'translate-group-desc-tsint' => 'A message group for [[Translating:Toolserver|Toolserver Intuition]], the i18n system for [//toolserver.org Toolserver] tools (<span class="plainlinks">[[Translating talk:Toolserver|support]]</span>)',
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] is a tool to upload files to Wikimedia Commons and other Wikimedia projects',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] is a service showing routes for hiking, cycling, mountain biking and inline skating around the world. It uses the GNU GPL license',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] is able to quickly find the authors of a part of a page in a Wikimedia wiki',
