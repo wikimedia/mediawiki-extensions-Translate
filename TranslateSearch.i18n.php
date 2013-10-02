@@ -166,6 +166,26 @@ $messages['br'] = array(
 	'tux-sst-facet-orphan' => '(emzivad)',
 );
 
+/** Catalan (català)
+ * @author Toniher
+ */
+$messages['ca'] = array(
+	'searchtranslations' => 'Cerca a les traduccions',
+	'tux-sst-edit' => 'Edita la traducció',
+	'tux-sst-search' => 'Cerca',
+	'tux-sst-search-ph' => 'Cerca a les traduccions',
+	'tux-sst-count' => "{{PLURAL:$1|S'ha trobat $1 resultat|S'han trobat $1 resultats}}",
+	'tux-sst-facet-language' => 'Llengües',
+	'tux-sst-facet-group' => 'Grups de missatges',
+	'tux-sst-facet-orphan' => '(orfe)',
+	'tux-sst-nosolr-title' => 'Cerca no disponible',
+	'tux-sst-nosolr-body' => 'Aquest wiki no té un servei de cerca de les traduccions.',
+	'tux-sst-solr-offline-title' => 'Cerca no disponible',
+	'tux-sst-solr-offline-body' => 'El servei de cerca no està disponible temporalment.',
+	'tux-sst-next' => 'Resultats següents',
+	'tux-sst-prev' => 'Resultats anteriors',
+);
+
 /** Chechen (нохчийн)
  * @author Умар
  */
@@ -925,6 +945,7 @@ $messages['zh-hans'] = array(
 );
 
 /** Traditional Chinese (中文（繁體）‎)
+ * @author Cwlin0416
  * @author Simon Shek
  */
 $messages['zh-hant'] = array(
@@ -934,7 +955,7 @@ $messages['zh-hant'] = array(
 	'tux-sst-search-ph' => '搜尋翻譯',
 	'tux-sst-count' => '{{PLURAL:$1|找到一個結果|找到$1個結果}}',
 	'tux-sst-facet-language' => '語言',
-	'tux-sst-facet-group' => '訊息組',
+	'tux-sst-facet-group' => '訊息群組',
 	'tux-sst-facet-orphan' => '（孤立）',
 	'tux-sst-nosolr-title' => '無法使用搜尋',
 	'tux-sst-nosolr-body' => '此wiki沒有翻譯搜尋。',
