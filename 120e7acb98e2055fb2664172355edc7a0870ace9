@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "29433135_487f7e12",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-02T06:48:04Z",
+      "side": 1,
+      "message": "Best leave existing trailing whitespace in tact.",
+      "revId": "120e7acb98e2055fb2664172355edc7a0870ace9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
