@@ -649,6 +649,16 @@ Ako ne želite primati novosti, možete se odjaviti na jezičku "{{int:prefs-per
 $messages['ca'] = array(
 	'firststeps' => 'Primers passos',
 	'translate-fs-pagetitle-done' => ' - fet!',
+	'translate-fs-settings-title' => 'Configureu les vostres preferències',
+	'translate-fs-userpage-title' => "Creeu la vostra pàgina d'usuari",
+	'translate-fs-target-title' => 'Comenceu a traduir!',
+	'translate-fs-email-title' => "Confirmeu l'adreça electrònica",
+	'translate-fs-selectlanguage' => 'Trieu una llengua',
+	'translate-fs-settings-planguage' => 'Llengua primària:',
+	'translate-fs-settings-slanguage' => "Llengua d'ajuda $1:",
+	'translate-fs-settings-slanguage-desc' => "És possible mostrar traduccions de missatges en altres llengües en l'editor de traducció. A continuació podeu triar quines llengües voldríeu veure-hi.",
+	'translate-fs-settings-submit' => 'Desa les preferències',
+	'translate-fs-permissions-submit' => 'Envia la sol·licitud',
 );
 
 /** Chechen (нохчийн)

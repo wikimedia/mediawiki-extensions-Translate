@@ -1116,6 +1116,7 @@ $specialPageAliases['zh-hans'] = array(
 	'PageTranslationDeletePage' => array( '页面翻译删除页面' ),
 	'AggregateGroups' => array( '信息组总计' ),
 	'SearchTranslations' => array( '搜索翻译' ),
+	'TranslateSandbox' => array( '管理译者沙盒' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
