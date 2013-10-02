@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "29433135_03ef1420",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-02T21:00:30Z",
+      "side": 1,
+      "message": "Should this have gender, or is there no registered user who has access to this?",
+      "revId": "7833aeae8ee777b9440b499fd1ba67fe087e3138",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
