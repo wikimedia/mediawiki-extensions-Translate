@@ -16,6 +16,24 @@
       "revId": "572c4c56f39474588bb1c9e37c2eaf5c9f8ff171",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "29433135_590cae42",
+        "filename": "TranslateGroupDescriptions.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2013-10-02T18:16:45Z",
+      "side": 1,
+      "message": "No.",
+      "parentUuid": "29433135_f9147a4e",
+      "revId": "572c4c56f39474588bb1c9e37c2eaf5c9f8ff171",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
