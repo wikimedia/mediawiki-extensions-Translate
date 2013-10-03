@@ -1,6 +1,6 @@
 <?php
 /**
- * Class for Toolserver Intuition for Translatewiki.net
+ * Class for Intuition for Translatewiki.net
  *
  * @file
  * @author Niklas Laxström
@@ -11,13 +11,13 @@
  */
 
 /**
- * Support for tools using Toolserver Intuition at the Toolserver.
+ * Support for tools using Intuition at the Toolserver and Wikimedia Labs.
  */
-class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
+class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 	protected $useConfigure = false;
 	protected $groups;
 	protected $idPrefix = 'tsint-';
-	protected $namespace = NS_TOOLSERVER;
+	protected $namespace = NS_INTUITION;
 
 	protected function processGroups( $groups ) {
 		$fixedGroups = array();
@@ -38,7 +38,7 @@ class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 			if ( isset( $g['file'] ) ) {
 				$file = $g['file'];
 			} else {
-				// Toolserver Intuition text-domains are case-insensitive and internally
+				// Intuition text-domains are case-insensitive and internally
 				// converts to lowercase names starting with a capital letter.
 				// eg. "MyTool" -> "Mytool.i18n.php"
 				// No subdirectories!
@@ -58,7 +58,7 @@ class PremadeToolserverTextdomains extends PremadeMediawikiExtensionGroups {
 			}
 
 			$newgroup = array(
-				'name' => 'Toolserver - ' . $name,
+				'name' => 'Intuition - ' . $name,
 				'file' => $file,
 				'descmsg' => $descmsg,
 				'url' => $url,

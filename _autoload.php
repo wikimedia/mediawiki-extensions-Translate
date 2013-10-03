@@ -117,7 +117,7 @@ $wgAutoloadClasses['TuxMessageTable'] = "$dir/utils/TuxMessageTable.php";
  * @{
  */
 $wgAutoloadClasses['PremadeMediawikiExtensionGroups'] = "$dir/ffs/MediaWikiExtensions.php";
-$wgAutoloadClasses['PremadeToolserverTextdomains'] = "$dir/ffs/ToolserverTextdomains.php";
+$wgAutoloadClasses['PremadeIntuitionTextdomains'] = "$dir/ffs/IntuitionTextdomains.php";
 /**@}*/
 
 /**
