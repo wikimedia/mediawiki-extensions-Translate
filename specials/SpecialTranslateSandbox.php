@@ -61,8 +61,21 @@ HTML
 		foreach ( $users as $user ) {
 			$items[] = $this->makeRequestItem( $user );
 		}
-
-		return "\n\n" . implode( "\n", $items ) . "\n\n";
+		$count = count( $items );
+		$out = <<<HTML
+<div class="row request-header">
+	<div class="four columns">
+		<button class="language-selector">All languages</button>
+	</div>
+	<div class="four columns request-count">
+		<div>{$this->msg( "tsb-request-count", $count ) }</div>
+	</div>
+	<div class="four columns">
+		<input class="request-selector-all right" name="request" type="checkbox"/>
+	</div>
+</div>
+HTML;
+		return $out. "\n\n" . implode( "\n", $items ) . "\n\n";
 	}
 
 	protected function makeRequestItem( User $user ) {
@@ -93,7 +106,7 @@ HTML
 		<div class="row email">$emailEnc</div>
 	</div>
 	<div class="three columns approval">
-		<div class="row selector"></div>
+		<input class="row request-selector right" name="request" type="checkbox"/>
 		<div class="row signup-age">$agoEnc</div>
 	</div>
 </div>

@@ -24,6 +24,7 @@ translations, the administrators can soon grant you full translation
 access.
 
 Please come to $2 and make some more translations.',
+	'tsb-request-count' => '{{PLURAL:$1|One request|$1 requests}}',
 );
 
 /** Message documentation (Message documentation)
@@ -50,7 +51,7 @@ $messages['af'] = array(
 	'tsb-reminder-title-generic' => "Voltooi u bekendstelling om 'n geverifieerde vertaler te word",
 	'tsb-reminder-content-generic' => "Hallo $1,
 
-Dankie dat u op {{SITENAME}} geregistreer het. As u u toesvertalings voltooi, sal die administrateurs spoedig volle regte aan u toeken. 
+Dankie dat u op {{SITENAME}} geregistreer het. As u u toesvertalings voltooi, sal die administrateurs spoedig volle regte aan u toeken.
 
 Gaan asseblief na $2 om 'n paar vertalings te maak.",
 );
@@ -349,7 +350,7 @@ $messages['uk'] = array(
 	'tsb-reminder-title-generic' => 'Завершіть своє представлення, щоб стати перевіреним перекладачем',
 	'tsb-reminder-content-generic' => 'Привіт, $1!
 
-Дякуємо за реєстрацію у проекті {{SITENAME}}. Якщо Ви завершите свої тестові 
+Дякуємо за реєстрацію у проекті {{SITENAME}}. Якщо Ви завершите свої тестові
 переклади, адміністратори зможуть скоро надати Вам повні права на переклад.
 
 Будь ласка, перейдіть на $2 і зробіть ще декілька перекладів.',
