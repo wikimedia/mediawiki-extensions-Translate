@@ -37,12 +37,12 @@ class SpecialTranslateSandbox extends SpecialPage {
 		$out->addHtml( <<<HTML
 <div class="grid">
 	<div class="row">
-		<div class="four columns pane filter">{$this->makeFilter()}</div>
-		<div class="eight columns pane search"></div>
+		<div class="nine columns pane filter">{$this->makeFilter()}</div>
+		<div class="three columns pane search">{$this->makeSearchBox()}</div>
 	</div>
 	<div class="row">
 		<div class="four columns pane requests">{$this->makeList()}</div>
-		<div class="eight columns pane details"></div>
+		<div class="four columns pane details"></div>
 	</div>
 	$token
 </div>
@@ -54,6 +54,12 @@ HTML
 		return $this->msg( 'tsb-filter-pending' )->escaped();
 	}
 
+	protected function makeSearchBox() {
+		return <<<HTML
+<input class="request-filter-box right" placeholder="Search requests" type="search"></input>
+HTML;
+	}
+
 	protected function makeList() {
 		$items = array();
 
@@ -61,8 +67,21 @@ HTML
 		foreach ( $users as $user ) {
 			$items[] = $this->makeRequestItem( $user );
 		}
-
-		return "\n\n" . implode( "\n", $items ) . "\n\n";
+		$count = count( $items );
+		$out = <<<HTML
+<div class="row request-header">
+	<div class="four columns">
+		<button class="language-selector">All languages</button>
+	</div>
+	<div class="five columns request-count">
+		<div>{$this->msg( "tsb-request-count", $count ) }</div>
+	</div>
+	<div class="three columns center">
+		<input class="request-selector-all" name="request" type="checkbox"/>
+	</div>
+</div>
+HTML;
+		return $out. "\n\n" . implode( "\n", $items ) . "\n\n";
 	}
 
 	protected function makeRequestItem( User $user ) {
@@ -84,16 +103,16 @@ HTML
 
 		return <<<HTML
 <div class="row request" data-data="$requestdataEnc">
-	<div class="three columns amount">
+	<div class="two columns amount">
 		<div class="proofread-marker"></div>
 		<div class="translation-count">$countEnc</div>
 	</div>
-	<div class="six columns details">
+	<div class="seven columns details">
 		<div class="row username">$nameEnc</div>
 		<div class="row email">$emailEnc</div>
 	</div>
-	<div class="three columns approval">
-		<div class="row selector"></div>
+	<div class="three columns approval center">
+		<input class="row request-selector" name="request" type="checkbox"/>
 		<div class="row signup-age">$agoEnc</div>
 	</div>
 </div>

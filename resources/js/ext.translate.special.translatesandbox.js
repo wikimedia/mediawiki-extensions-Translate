@@ -137,12 +137,12 @@
 								'do': 'promote'
 							} );
 						} ),
-					$( '<button>' )
+					/*$( '<button>' )
 						.addClass( 'remind button' )
 						.text( 'Send email reminder' )
 						.on( 'click', function () {
 							reminderDialog( request );
-						} ),
+						} ),*/
 					$( '<button>' )
 						.addClass( 'delete destructive button' )
 						.text( 'Reject' )
@@ -158,8 +158,23 @@
 
 
 	$( document ).ready( function () {
+		$( '.request-selector-all' ).click(function () {
+			$( '.request-selector' ).attr( 'checked', this.checked );
+		} );
+
+		// if all checkbox are selected, check the selectall checkbox
+		// and viceversa
+		$( '.request-selector' ).on( 'click', function () {
+			if ( $( '.request-selector' ).length === $( '.request-selector:checked' ).length ) {
+				$( '.request-selector-all' ).attr( 'checked', 'checked' );
+			} else {
+				$( '.request-selector-all' ).removeAttr( 'checked' );
+			}
+		} );
 		$( '.requests .request' ).on( 'click',  function () {
 			loadRequestDetails( $( this ).data( 'data' ) );
 		} );
+
+		$( '.language-selector' ).uls();
 	} );
 }( jQuery, mediaWiki ) );
