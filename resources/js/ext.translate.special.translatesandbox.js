@@ -57,9 +57,9 @@
 
 	/**
 	 * Dialog where the user can tweak reminder email if wanted.
-	 * @param {jQuery} $request
+	 * @param {Object} request
 	 */
-	function reminderDialog( $request ) {
+	function reminderDialog( request ) {
 		var $dialog, keys;
 
 		keys = ['tsb-reminder-title-generic', 'tsb-reminder-content-generic' ];
@@ -73,7 +73,7 @@
 					),
 					$( '<div class="row">' ).append(
 						$( '<div class="three columns">' ).text( 'To:' ),
-						$( '<div class="nine columns">' ).text( $request.find( '.email' ).text() )
+						$( '<div class="nine columns">' ).text( request.email )
 					),
 					$( '<div class="row">' ).append(
 						$( '<div class="three columns">' ).text( 'Subject:' ),
@@ -93,7 +93,7 @@
 				buttons: {
 					'Send': function () {
 						doApiAction( {
-							userid: $request.data( 'data' ).id,
+							userid: request.userid,
 							'do': 'remind',
 							subject: $dialog.find( '.subject' ).val(),
 							body: $dialog.find( '.body' ).val()
@@ -134,7 +134,7 @@
 				.append(
 					$( '<button>' )
 						.addClass( 'accept primary green button' )
-						.text( 'Accept' )
+						.text( mw.msg( 'tsb-accept-button-label' ) )
 						.on( 'click', function () {
 							doApiAction( {
 								userid: request.userid,
@@ -142,19 +142,24 @@
 							} );
 						} ),
 					$( '<button>' )
-						.addClass( 'remind button' )
-						.text( 'Send email reminder' )
-						.on( 'click', function () {
-							reminderDialog( request );
-						} ),
-					$( '<button>' )
 						.addClass( 'delete destructive button' )
-						.text( 'Reject' )
+						.text( mw.msg( 'tsb-reject-button-label' ) )
 						.on( 'click', function () {
 							doApiAction( {
 								userid: request.userid,
 								'do': 'delete'
 							} );
+						} )
+				),
+			$( '<div>' )
+				.addClass( 'reminder row' )
+				.append(
+					$( '<a href="#"></a>' )
+						.addClass( 'remind link' )
+						.text( mw.msg( 'tsb-reminder-link-text' ) )
+						.on( 'click', function ( e ) {
+							e.preventDefault();
+							reminderDialog( request );
 						} )
 				)
 		);
@@ -162,8 +167,37 @@
 
 
 	$( document ).ready( function () {
+		var $selectAll = $( '.request-selector-all' );
+
+		// Handle clicks for the select all checkbox
+		$selectAll.click( function () {
+			$( '.request-selector' ).prop( 'checked', this.checked );
+		} );
+
+		// And update the state of select-all checkbox
+		$( '.request-selector' ).on( 'click', function ( e ) {
+			var total, checked, $selects = $( '.request-selector' );
+
+			total = $selects.length;
+			checked = $selects.filter( ':checked' ).length;
+
+			if ( checked === total ) {
+				$selectAll.prop( 'checked', true ).prop( 'indeterminate', false );
+			} else if ( checked === 0 ) {
+				$selectAll.prop( 'checked', false ).prop( 'indeterminate', false );
+			} else {
+				$selectAll.prop( 'indeterminate', true );
+			}
+
+			e.stopPropagation();
+		} );
+
+		// Handle clicks on requests
 		$( '.requests .request' ).on( 'click',  function () {
 			displayRequestDetails( $( this ).data( 'data' ) );
 		} );
+
+		// Activate language selector
+		$( '.language-selector' ).uls();
 	} );
 }( jQuery, mediaWiki ) );

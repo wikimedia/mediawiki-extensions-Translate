@@ -8,9 +8,27 @@
 .filter.pane,
 .search.pane {
 	border-bottom: 1px solid #575656;
-	height: 50px;
+	height: 2em;
 	line-height: 50px;
 	font-size: 24px;
+}
+
+.search.pane {
+	background: url('../images/search.png') no-repeat scroll left top transparent;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/search.svg);
+	background-image: -moz-linear-gradient(transparent, transparent), url(../images/search.svg);
+	/* @embed */
+	background-image: linear-gradient(transparent, transparent), url(../images/search.svg);
+	background-size: 25px;
+	padding-left: 25px;
+}
+
+.request-filter-box {
+	font-size: 14px;
+	height: 28px;
+	width: 100%;
+	border: 1px solid #C9C9C9;
+	padding: 0 5px;
 }
 
 .requests.pane,
@@ -20,7 +38,6 @@
 
 /* Requests pane */
 .request {
-	height: 50px;
 	border-right: 1px solid #c9c8c8;
 	border-bottom: 1px solid #c9c8c8;
 	cursor: pointer;
@@ -33,15 +50,14 @@
 
 .request .amount {
 	height: 100%;
-	line-height: 48px;
-	font-size: 40px;
-	text-align: center;
-	color: #96989a;
+	font-size: 3em;
+	color: #96989A;
 	background-color: #f7f8f8;
+	padding: 20px;
 }
 
 .request .username,
-.request .selector {
+.request .request-selector {
 	height: 30px;
 	line-height: 30px;
 	font-size: 16px;
@@ -111,4 +127,39 @@
 
 .actions .button {
 	margin-right: 1.5em;
+}
+
+.request-header {
+	border-right: 1px solid #c9c8c8;
+	border-bottom: 1px solid #c9c8c8;
+	line-height: 40px;
+	color: #96989A;
+	background-color: #F7F8F8;
+}
+
+.language-selector {
+	margin-left: 10px;
+	border-radius: 3px;
+	background: #f8f8f8;
+	border: 1px solid #CCCCCC;
+	cursor: pointer;
+	font-size: 1em;
+}
+
+.language-selector:hover {
+	border-color: #AAAAAA;
+}
+
+.language-selector:after {
+	content: "";
+	border-top: 4px solid #AAAAAA;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 0.5em;
+}
+
+textarea.body {
+	height: 300px;
 }
