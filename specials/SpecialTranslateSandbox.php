@@ -19,6 +19,7 @@ class SpecialTranslateSandbox extends SpecialPage {
 	}
 
 	public function execute( $params ) {
+		$this->setHeaders();
 		$this->checkPermissions();
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.translatesandbox' );
@@ -65,24 +66,24 @@ HTML
 	}
 
 	protected function makeRequestItem( User $user ) {
-		$data = array(
-			'name' => $user->getName(),
+		$request = array(
+			'username' => $user->getName(),
 			'email' => $user->getEmail(),
-			'registration' => $user->getRegistration(),
+			'registrationdate' => $user->getRegistration(),
 			'translations' => 0,
-			'id' => $user->getId(),
+			'userid' => $user->getId(),
 		);
 
-		$dataEnc = htmlspecialchars( FormatJson::encode( $data ) );
+		$requestdataEnc = htmlspecialchars( FormatJson::encode( $request ) );
 
-		$nameEnc = htmlspecialchars( $data['name'] );
-		$emailEnc = htmlspecialchars( $data['email'] );
-		$countEnc = htmlspecialchars( $data['translations'] );
-		$timestamp = new MWTimestamp( $data['registration'] );
+		$nameEnc = htmlspecialchars( $request['username'] );
+		$emailEnc = htmlspecialchars( $request['email'] );
+		$countEnc = htmlspecialchars( $request['translations'] );
+		$timestamp = new MWTimestamp( $request['registrationdate'] );
 		$agoEnc = htmlspecialchars( $timestamp->getHumanTimestamp() );
 
 		return <<<HTML
-<div class="row request" data-data="$dataEnc">
+<div class="row request" data-data="$requestdataEnc">
 	<div class="three columns amount">
 		<div class="proofread-marker"></div>
 		<div class="translation-count">$countEnc</div>
