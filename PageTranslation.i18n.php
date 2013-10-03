@@ -1972,9 +1972,18 @@ $messages['ca'] = array(
 	'tpt-desc' => 'Extensió per a traduir les pàgines de contingut',
 	'tpt-section' => 'Unitat de traducció $1',
 	'tpt-section-new' => 'Nova unitat de traducció. Nom: $1',
+	'tpt-section-deleted' => 'Unitat de traducció $1',
+	'tpt-template' => 'Plantilla de la pàgina',
+	'tpt-templatediff' => 'La plantilla de la pàgina ha canviat',
 	'tpt-diff-old' => 'Text anterior',
 	'tpt-diff-new' => 'Text nou',
+	'tpt-submit' => 'Marca aquesta versió per traduir',
+	'tpt-sections-oldnew' => 'Unitats de traduccions noves i existents',
+	'tpt-sections-deleted' => 'Unitats de traducció suprimides',
+	'tpt-sections-template' => 'Plantilla de la pàgina de traducció',
+	'tpt-action-nofuzzy' => 'No invalida les traduccions',
 	'tpt-badtitle' => 'El nom de pàgina donat ($1) no és un títol vàlid',
+	'tpt-nosuchpage' => 'La pàgina $1 no existeix',
 	'tpt-notsuitable' => 'La pàgina $1 no està preparada per a la seva traducció.
 Assegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi vàlida.',
 	'tpt-rev-encourage' => 'restaura',
@@ -8306,7 +8315,7 @@ $messages['ps'] = array(
 	'tpt-languages-legend' => 'نورې ژبې:',
 	'tpt-discouraged-language-reason' => 'سبب: $1',
 	'aggregategroups' => 'ډلې غونډول',
-	'tpt-aggregategroup-add' => 'ورګډول',
+	'tpt-aggregategroup-add' => 'ورگډول',
 	'tpt-aggregategroup-save' => 'خوندي کول',
 	'tpt-aggregategroup-new-name' => 'نوم:',
 	'pt-movepage-list-pages' => 'د لېږدون د مخونو لړليک',
@@ -11068,6 +11077,7 @@ $messages['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎)
  * @author Anakmalaysia
+ * @author Cwlin0416
  * @author Liangent
  * @author Mark85296341
  * @author Simon Shek
@@ -11139,7 +11149,7 @@ $messages['zh-hant'] = array(
 	'translate-tag-hasnew' => '此頁面有未被標記進行翻譯的<span class="plainlinks">[$1 更改]</span>。',
 	'tpt-translation-intro' => '此頁面是[[$2]]頁面的<span class="plainlinks">[$1 翻譯版本]</span>，而該翻譯工作已經$3%完成。',
 	'tpt-languages-legend' => '其他語言：',
-	'tpt-languages-zero' => '開始這種語言的翻譯',
+	'tpt-languages-zero' => '開始翻譯此語言',
 	'tpt-tab-translate' => '翻譯',
 	'tpt-target-page' => '本頁面無法手動更新。
 本頁面是[[$1]]頁面的翻譯版，可以使用[$2 翻譯工具]來更新該翻譯。',

@@ -369,6 +369,14 @@ Cám ơn bạn đã tham gia {{SITENAME}}. Sau khi bạn dịch các bản dịc
 Xin vui lòng trở lại $2 để dịch tiếp.',
 );
 
+/** Simplified Chinese (中文（简体）‎)
+ * @author Hzy980512
+ */
+$messages['zh-hans'] = array(
+	'translatesandbox' => '管理译者沙盒',
+	'tsb-filter-pending' => '待解决请求',
+);
+
 /** Traditional Chinese (中文（繁體）‎)
  * @author Simon Shek
  */

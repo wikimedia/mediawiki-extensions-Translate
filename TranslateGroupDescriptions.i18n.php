@@ -223,7 +223,7 @@ $messages['ast'] = array(
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] ye un editor pa OpenStreetMap basáu en Flash',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] ye una coleición de ferramientes pa editar Wikipedia',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] ye software pa Entrugues y Rempuestes basáu en web',
-	'translate-group-desc-tsint' => 'Un grupu de mensaxes pa [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], el sistema i18n de les ferramientes de [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|sofitu]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalles téunicos]</span>)',
+	'translate-group-desc-tsint' => 'Un grupu de mensaxes pa [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], el sistema i18n de les ferramientes de [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|sofitu]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalles téunicos]</span>)', # Fuzzy
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] ye una ferramienta pa xubir ficheros a Wikimedia Commons ya otros proyeutos de Wikimedia',
 	'translate-group-desc-waymarked-trails' => "[[Translating:Waymarked Trails|Waymarked Trails]] ye un serviciu qu'amuesa rutes andariegues, ciclistes, pa bicis de monte y pa patinos en llinia per tou el mundu. Usa la llicencia GPL de GNU",
 	'bw-desc-wikiblame' => "[[Translating:WikiBlame|WikiBlame]] ye capaz d'alcontrar rápidamente los autores d'una parte d'una páxina nuna wiki de Wikimedia",
@@ -580,7 +580,7 @@ Weitere Information finden sich unter [[mw:Extension:PDF Writer]] und http://cod
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] ein Flash-gestützter OpenStreetMap-Editor',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] ist eine Sammlung von Werkzeugen zum Bearbeiten der Wikipedia',
 	'bw-desc-shapado' => 'Systemnachrichten von [[Translating:Shapado|Shapado]], einer freien Open-Source-Software für Fragen und Antworten',
-	'translate-group-desc-tsint' => 'Nachrichtengruppe für [http://toolserver.org/~krinkle/TsIntuition „Toolserver Intuition“], das I18N-System für die auf dem [http://toolserver.org Toolserver] gehosteten Hilfsprogramme. (<span class="plainlinks">[[Translating talk:Toolserver|Hilfe]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technische Hinweise]</span>)',
+	'translate-group-desc-tsint' => 'Nachrichtengruppe für [http://toolserver.org/~krinkle/TsIntuition „Toolserver Intuition“], das I18N-System für die auf dem [http://toolserver.org Toolserver] gehosteten Hilfsprogramme. (<span class="plainlinks">[[Translating talk:Toolserver|Hilfe]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technische Hinweise]</span>)', # Fuzzy
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] ist ein Werkzeug zum Hochladen von Dateien auf Wikimedia Commons und anderen Wikimedia-Projekten',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] ist ein Dienst, der Routen zum Wandern, Radeln, Mountainbiking und Skating auf der gesamten Welt darstellt. Er verwendet die Lizenz GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] ermöglicht das schnelle Finden eines Autoren einer Seite auf Wikis der Wikimedia Foundation.',
@@ -882,7 +882,7 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] est un éditeur OpenStreetMap basé sur du flash',
 	'translate-group-desc-pywikipedia' => "[[Translating:Pywikibot|Pywikibot]] est une collection d'outils pour modifier Wikipédia",
 	'bw-desc-shapado' => 'Groupe de messages pour le logiciel libre et open-source de questions/réponses [[Translating:Shapado|Shapado]]',
-	'translate-group-desc-tsint' => 'Un groupe de messages pour [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], le système d\'internationalisation des outils du [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition détails techniques]</span>)',
+	'translate-group-desc-tsint' => 'Un groupe de messages pour [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], le système d\'internationalisation des outils du [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition détails techniques]</span>)', # Fuzzy
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] est un outil pour télécharger des fichiers de Communs de Wikimédia et d’autres projets de Wikimédia',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] est un service affichant les chemins pour la randonnée, le cyclisme, le vélo-tourisme et le patinage à roulettes tout autour du monde. Il utilise la licence GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] permet de trouver rapidement les auteurs d’une page dans un wiki de Wikimedia.',
@@ -979,7 +979,7 @@ Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pe
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] é un editor do OpenStreetMap baseado en Flash',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] é unha colección de ferramentas para editar a Wikipedia',
 	'bw-desc-shapado' => 'Grupo de mensaxes para o software de código aberto de preguntas e respostas [[Translating:Shapado|Shapado]]',
-	'translate-group-desc-tsint' => 'Un grupo de mensaxes para o [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], o sistema i18n das ferramentas do [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|axuda]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalles técnicos]</span>)',
+	'translate-group-desc-tsint' => 'Un grupo de mensaxes para o [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], o sistema i18n das ferramentas do [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|axuda]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalles técnicos]</span>)', # Fuzzy
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] é unha ferramenta para cargar ficheiros á Wikimedia Commons e aos outros proxectos da Wikimedia',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] é un servizo que mostra rutas de sendeirismo, ciclismo, ciclismo de montaña e patinaxe de todo o mundo. Usa a licenza GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php?user_lang=gl Wikiblame] é capaz de atopar rapidamente os autores dunha páxina nun wiki da Wikimedia.',
@@ -1387,7 +1387,7 @@ $messages['ja'] = array(
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] は Flash を使用した OpenStreetMap エディターです',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] はウィキペディア編集ツールの集合体です',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] は、ウェブ上で動作する質問回答ソフトウェアです',
-	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver] にあるツールの国際化システム (<span class="plainlinks">[[Translating talk:Toolserver|サポート]]、[https://wiki.toolserver.org/view/Toolserver_Intuition 技術的詳細]</span>) である [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition] のメッセージ群',
+	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver] にあるツールの国際化システム (<span class="plainlinks">[[Translating talk:Toolserver|サポート]]、[https://wiki.toolserver.org/view/Toolserver_Intuition 技術的詳細]</span>) である [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition] のメッセージ群', # Fuzzy
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] はウィキメディア・コモンズやその他のプロジェクト群にファイルをアップロードするためのツールです',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] は、全世界のハイキング、サイクリング、マウンテンバイク、インラインスケートの経路を表示するサービスです。GNU GPL ライセンスを使用します',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] は、ウィキメディアウィキ内のページの一部の著者を素早く検索できます',
@@ -1478,7 +1478,7 @@ $messages['ko'] = array(
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]]는 플래시 기반 OpenStreetMap 편집기입니다',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]]은 위키백과에서 편집할 수 있는 도구 모음입니다',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]]는 웹 기반 질문 및 답변 소프트웨어입니다',
-	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver] 도구에 대한 i18n 시스템인 [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]에 대한 메시지 그룹입니다 (<span class="plainlinks">[[Translating talk:Toolserver|지원 요청]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition 기술 사항]</span>)',
+	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver] 도구에 대한 i18n 시스템인 [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]에 대한 메시지 그룹입니다 (<span class="plainlinks">[[Translating talk:Toolserver|지원 요청]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition 기술 사항]</span>)', # Fuzzy
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]]은 위키미디어 공용과 다른 위키미디어 프로젝트에 파일을 올리기 위한 도구입니다',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]]는 전세계 하이킹, 자전거 타기, 산악 자전거, 인라인 스케이팅 경로를 보여주는 서비스입니다. GNU GPL 라이선스를 사용합니다.',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]]은 신속하게 위키미디어 위키에서 문서 일부의 저자를 찾을 수 있습니다',
@@ -1837,7 +1837,7 @@ $messages['nl'] = array(
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch 2]] is een Flash-gebaseerde OpenStreetMap-bewerker',
 	'translate-group-desc-pywikipedia' => "[[Translating:Pywikibot|Pywikibot]] is een verzameling hulpprogramma's om Wikipedia mee te bewerken",
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] is webgebaseerde Vraag en Antwoordsoftware',
-	'translate-group-desc-tsint' => 'Een berichtengroep voor [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], het i18n-systeem voor [http://toolserver.org Toolserverprogramma\'s] (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technische gegevens]</span>)',
+	'translate-group-desc-tsint' => 'Een berichtengroep voor [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], het i18n-systeem voor [http://toolserver.org Toolserverprogramma\'s] (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technische gegevens]</span>)', # Fuzzy
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] is een hulpprogramma voor het uploaden van bestanden naar Wikimedia Commons en andere projecten van Wikimedia',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] is een dienst voor wandel-, fiets- en mountain bike- en inline skateroutes in de hele wereld. Het project gebruikt de GNU GPL-licentie',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] is in staat om snel de auteurs van een pagina in een Wikimedia-wiki te vinden',
@@ -2356,13 +2356,14 @@ Oglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_p
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] je na flashu temelječ urejevalnik OpenStreetMap',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] je zbirka orodij za urejanje Wikipedije',
 	'bw-desc-shapado' => 'Skupina sporočil prostega in odprtokodnega programja za vprašanja in odgovore [[Translating:Shapado|Shapado]]',
-	'translate-group-desc-tsint' => 'Skupina sporočil za [http://toolserver.org/~krinkle/TsIntuition Toolserverjevo Intuicijo], sistem i18n za orodja [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|podpora]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tehnične podrobnosti]</span>)',
+	'translate-group-desc-tsint' => 'Skupina sporočil za [http://toolserver.org/~krinkle/TsIntuition Toolserverjevo Intuicijo], sistem i18n za orodja [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|podpora]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tehnične podrobnosti]</span>)', # Fuzzy
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] je orodje za nalaganje datotek na Wikimediino Zbirko in druge projekte Wikimedie',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] je storitev, ki prikazuje poti za pohodništvo, kolesarjenje, gorsko kolesarjenje in rolkanje po celem svetu. Uporablja licenco GNU GPL.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je zmožen hitro najti avtorje strani na wikiju Wikimedije.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt za dostavljanje nepovezane, samo tekstovne različice Wikipedije na mobilne naprave.',
 	'translate-group-desc-waymarked-trails-help' => 'Strani s pomočjo spletnih strani Waymarked Trails: http://waymarkedtrails.org/help/about',
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] je resnično realnočasovni sodelovalni urejevalnik',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]] je večbrskalniška javaskriptna knjižnica za prikaz matematičnega zapisa',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
@@ -2490,7 +2491,7 @@ Se [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_ru
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] är en Flash-baserad redigerare för OpenStreetMap',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] är en samling verktyg för att redigera Wikipedia',
 	'bw-desc-shapado' => 'Meddelandegrupp för Q&A-programvaran [[Translating:Shapado|Shapado]] som är fri och har öppen källkod',
-	'translate-group-desc-tsint' => 'En meddelandegrupp för [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-systemet för verktyg till [http://toolserver.org Toolserver](<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tekniska detaljer]</span>)',
+	'translate-group-desc-tsint' => 'En meddelandegrupp för [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-systemet för verktyg till [http://toolserver.org Toolserver](<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tekniska detaljer]</span>)', # Fuzzy
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] är ett verktyg för att ladda upp filer till Wikimedia Commons och andra Wikimediaprojekt',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan snabbt hitta författarna till en sida på en Wikimedia wiki.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] är ett projekt  för att tillhandahålla en offline textversion av Wikipedia på en mobil enhet.',
@@ -2634,7 +2635,7 @@ $messages['uk'] = array(
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] — це базований на Flash редактор OpenStreetMap',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] — набір інструментів для редагування Вікіпедії',
 	'bw-desc-shapado' => 'Група повідомлень відкритого та вільного програмного забезпечення питань та відповідей [[Translating:Shapado|Shapado]]',
-	'translate-group-desc-tsint' => 'Група повідомлень для [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], системи i18n для засобів [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|підтримка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технічні деталі]</span>)',
+	'translate-group-desc-tsint' => 'Група повідомлень для [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], системи i18n для засобів [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|підтримка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технічні деталі]</span>)', # Fuzzy
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] — інструмент для завантажання файлів на Вікісховище та інші проекти Вікімедіа',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] — сервіс, що показує маршрути для прогулянок, велоспорту, поїздок на гірському велосипеді та катання на роликах по всьому світу. Використовує ліцензію GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дозволяє швидко знайти авторів сторінки в проектах Вікімедіа.',
@@ -2808,6 +2809,7 @@ $messages['zh-hans'] = array(
 );
 
 /** Traditional Chinese (中文（繁體）‎)
+ * @author Cwlin0416
  * @author Justincheng12345
  * @author Liangent
  * @author Mark85296341
@@ -2831,7 +2833,7 @@ $messages['zh-hant'] = array(
 	'translate-group-desc-translatablepages' => '所有翻譯網頁',
 	'bw-desc-freecol' => '在翻譯 FreeCol 到您的語言之前，請閱讀 [[Translating:FreeCol]]。Freecol 使用 GPL 協議。',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum]，一個用 PHP 編寫的論壇。',
-	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] 是一個基於 Web 的 Bug 追蹤系統。請在[[Support|技術支援頁面]]報告任何問題。',
+	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] 是一個以 Web 為基礎的問題追蹤系統。', # Fuzzy
 	'translate-group-desc-eol' => '[[Translating:EOL|Encyclopedia of Life]]的消息組',
 	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS]]的消息組',
 	'translate-group-desc-kiwix' => '[[Translating:Kiwix|Kiwix]]的消息組',
@@ -2848,7 +2850,7 @@ $messages['zh-hant'] = array(
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]]是基於Flash的OpenStreetMap編輯軟件',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]]是一個維基百科編輯工具集合。',
 	'bw-desc-shapado' => '本組包含免費開源問答軟件[[Translating:Shapado|Shapado]]的信息',
-	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver]工具的國際化系統，[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]的消息組（<span class="plainlinks">[[Translating talk:Toolserver|幫助]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition 技術細節]</span>）',
+	'translate-group-desc-tsint' => '[http://toolserver.org Toolserver]工具的國際化系統，[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]的消息組（<span class="plainlinks">[[Translating talk:Toolserver|幫助]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition 技術細節]</span>）', # Fuzzy
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]]是一個使用GNU GPL許可證的顯示世界範圍內遠足、騎行、山地騎行、 輪滑路線的服務。',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] 可以快速找到 Wikimedia 的維基某一個頁面的作者。',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] 是一個將離線、僅文字版本的維基百科傳送到手機上的計畫。',
