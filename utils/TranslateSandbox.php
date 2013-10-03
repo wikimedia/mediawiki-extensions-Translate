@@ -48,7 +48,7 @@ class TranslateSandbox {
 	public static function deleteUser( User $user ) {
 		$uid = $user->getId();
 
-		if ( !in_array( 'translate-sandboxed', $user->getGroups(), true ) ) {
+		if ( !self::isSandboxed( $user ) ) {
 			throw new MWException( "Not a sandboxed user" );
 		}
 
@@ -89,7 +89,7 @@ class TranslateSandbox {
 	public static function promoteUser( User $user ) {
 		global $wgTranslateSandboxPromotedGroup;
 
-		if ( !in_array( 'translate-sandboxed', $user->getGroups(), true ) ) {
+		if ( !self::isSandboxed( $user ) ) {
 			throw new MWException( "Not a sandboxed user" );
 		}
 
@@ -110,7 +110,7 @@ class TranslateSandbox {
 	public static function sendReminder( User $sender, User $target, $subject, $body ) {
 		global $wgNoReplyAddress;
 
-		if ( !in_array( 'translate-sandboxed', $target->getGroups(), true ) ) {
+		if ( !self::isSandboxed( $user ) ) {
 			throw new MWException( "Not a sandboxed user" );
 		}
 
@@ -126,6 +126,20 @@ class TranslateSandbox {
 		TranslateSandboxReminderJob::newJob( $params )->insert();
 	}
 
+	/**
+	 * Shortcut for checking if given user is in the sandbox.
+	 * @param User $user_groups
+	 * @return bool
+	 * @since 2013.06
+	 */
+	public static function isSandboxed( User $user ) {
+		if ( in_array( 'translate-sandboxed', $user->getGroups(), true ) ) {
+			return true;
+		}
+
+		return false;
+	}
+
 	/// Hook: UserGetRights
 	public static function enforcePermissions( User $user, array &$rights ) {
 		global $wgTranslateUseSandbox;
@@ -134,21 +148,44 @@ class TranslateSandbox {
 			return true;
 		}
 
-		if ( !in_array( 'translate-sandboxed', $user->getGroups(), true ) ) {
+		if ( !self::isSandboxed( $user ) ) {
 			return true;
 		}
 
-		$rights = array( 'read', 'translate-sandboxaction' );
+		$rights = array( 'read', 'translate-sandboxaction', 'readapi', 'writeapi' );
 
 		// Do not let other hooks add more actions
 		return false;
 	}
 
-	///Hook: onGetPreferences
+	/// Hook: onGetPreferences
 	public static function onGetPreferences( $user, &$preferences ) {
 		$preferences['translate-sandbox-reminders'] = array(
 			'type' => 'api',
 		);
+
+		return true;
+	}
+
+	/**
+	 * Whitelisting for certain API modules. See also enforcePermissions.
+	 * Hook: ApiCheckCanExecute
+	 */
+	public static function onApiCheckCanExecute( ApiBase $module, User $user, &$message ) {
+		$whitelist = array(
+			// Obviously this is needed to get out of the sandbox
+			'ApiTranslationStash',
+			// Used by UniversalLanguageSelector for example
+			'ApiOptions'
+		);
+
+		if ( TranslateSandbox::isSandboxed( $user ) ) {
+			$class = get_class( $module );
+			if ( $module->isWriteMode() && !in_array( $class, $whitelist, true ) ) {
+				$message = 'writerequired';
+				return false;
+			}
+		}
 
 		return true;
 	}
