@@ -24,6 +24,14 @@ translations, the administrators can soon grant you full translation
 access.
 
 Please come to $2 and make some more translations.',
+
+	'tsb-request-count' => '{{PLURAL:$1|One request|$1 requests}}',
+	'tsb-all-languages-button-label' => 'All languages',
+	'tsb-search-requests' => 'Search requests',
+	'tsb-accept-button-label' => 'Accept',
+	'tsb-reject-button-label' => 'Reject',
+	'tsb-reminder-link-text' => 'Send email reminder',
+
 	'translationstash' => 'Welcome',
 	'translate-translationstash-welcome' => 'Thank you {{GENDER:$1|$1}}, you are a new translator',
 	'translate-translationstash-welcome-note' => 'Become familiar with the translation tools by translating some randomly selected messages.',
@@ -43,11 +51,19 @@ Followed by a list of the pending requests.',
 	'tsb-reminder-content-generic' => 'Body of an email.
 * $1 - user name of the recipient
 * $2 - URL to the website',
+	'tsb-request-count' => 'Label showing number of requests
+*$1 - Number of requests ',
+	'tsb-all-languages-button-label' => 'Button label for filtering the requests by language.',
+	'tsb-search-requests' => 'Placeholder text for request search box on top of [[Special:TranslateSandbox]].',
+	'tsb-accept-button-label' => 'Button label for accept button in [[Special:TranslateSandbox]]',
+	'tsb-reject-button-label' => 'Button label for reject button in [[Special:TranslateSandbox]]',
+	'tsb-reminder-link-text' => 'Link text for sending reminder emails about translator signup requests.',
 	'translationstash' => 'Page title for [[Special:TranslationStash|Special page]].',
 	'translate-translationstash-welcome' => 'Title text shown for the [[Special:TranslationStash|Special page]]
 	* $1 - user name of the new translator',
 	'translate-translationstash-welcome-note' => 'Title note for the [[Special:TranslationStash|Special page]]',
 	'translate-translationstash-initialtranslation' => 'Header for messages showing the progress of translations in [[Special:TranslationStash|Special page]]',
+
 );
 
 /** Afrikaans (Afrikaans)
