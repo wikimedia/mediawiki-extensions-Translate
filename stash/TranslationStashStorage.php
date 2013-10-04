@@ -27,13 +27,14 @@ class TranslationStashStorage {
 	public function addTranslation( StashedTranslation $item ) {
 		$row = array(
 			'ts_user' => $item->getUser()->getId(),
-			'ts_key' => $item->getTitle()->getDBKey(),
+			'ts_title' => $item->getTitle()->getDBKey(),
+			'ts_namespace' => $item->getTitle()->getNamespace(),
 			'ts_value' => $item->getValue(),
 			'ts_metadata' => serialize( $item->getMetadata() ),
 		);
 
 		$indexes = array(
-			array( 'ts_user', 'ts_key' )
+			array( 'ts_user', 'ts_namespace', 'ts_title'  )
 		);
 
 		$this->db->replace( $this->dbTable, $indexes, $row, __METHOD__ );
@@ -47,7 +48,7 @@ class TranslationStashStorage {
 	 */
 	public function getTranslations( User $user ) {
 		$conds = array( 'ts_user' => $user->getId() );
-		$fields = array( 'ts_key', 'ts_value', 'ts_metadata' );
+		$fields = array( 'ts_namespace', 'ts_title', 'ts_value', 'ts_metadata' );
 
 		$res = $this->db->select( $this->dbTable, $fields, $conds, __METHOD__ );
 
@@ -55,7 +56,7 @@ class TranslationStashStorage {
 		foreach ( $res as $row ) {
 			$objects[] = new StashedTranslation(
 				$user,
-				Title::newFromText( $row->ts_key ),
+				Title::makeTitle( $row->ts_namespace, $row->ts_title ),
 				$row->ts_value,
 				unserialize( $row->ts_metadata )
 			);
