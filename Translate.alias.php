@@ -5,6 +5,7 @@
  * @file
  * @license GPL-2.0+
  */
+// @codingStandardsIgnoreFile
 
 $specialPageAliases = array();
 
