@@ -35,18 +35,21 @@ class InsertablesAid extends TranslationAid {
 			throw new TranslationHelperException( "Group does not have a suggester" );
 		}
 
-		$blob = array(
-			'**' => 'insertable',
-		);
-
 		$insertables = $suggester->getInsertables( $this->getDefinition() );
+		$blob = array();
 		foreach ( $insertables as $insertable ) {
-			$blob[] = array(
-				'display' => $insertable->getDisplayText(),
+			$displayText = $insertable->getDisplayText();
+
+			// The keys are used for de-duplication
+			$blob[$displayText] = array(
+				'display' => $displayText,
 				'pre' => $insertable->getPreText(),
 				'post' => $insertable->getPostText(),
 			);
 		}
+
+		$blob = array_values( $blob );
+		$blob['**'] = 'insertable';
 
 		return $blob;
 	}
