@@ -143,6 +143,7 @@ class MagicExport extends Maintenance {
 				case 'special':
 					fwrite( $handle, <<<PHP
 
+// @codingStandardsIgnoreFile
 
 \$specialPageAliases = array();
 PHP
