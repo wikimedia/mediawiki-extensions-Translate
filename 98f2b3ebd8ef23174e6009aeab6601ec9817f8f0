@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_9980e74e",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T07:45:59Z",
+      "side": 1,
+      "message": "Could you add short doc for this method as well? Probably would make sense to cross reference with the PHP code creating the data.",
+      "revId": "98f2b3ebd8ef23174e6009aeab6601ec9817f8f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_79b3334d",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T07:45:59Z",
+      "side": 1,
+      "message": "extra space",
+      "revId": "98f2b3ebd8ef23174e6009aeab6601ec9817f8f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_b985ab5d",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T07:45:59Z",
+      "side": 1,
+      "message": "Good catch",
+      "revId": "98f2b3ebd8ef23174e6009aeab6601ec9817f8f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
