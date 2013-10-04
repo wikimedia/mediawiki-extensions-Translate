@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_84f23a97",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T13:59:36Z",
+      "side": 1,
+      "message": "response is an object",
+      "revId": "8ae80eb0ca6566a6d791b778e0776d39951d43e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_84431ab2",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T13:59:36Z",
+      "side": 1,
+      "message": "But the FOUC is getting on my nerves.",
+      "revId": "8ae80eb0ca6566a6d791b778e0776d39951d43e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_c42c3205",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T13:59:36Z",
+      "side": 1,
+      "message": "This does not have the blue styling etc. The styles are currently defined in groupselector.css! Would you mind refactoring this.",
+      "revId": "8ae80eb0ca6566a6d791b778e0776d39951d43e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
