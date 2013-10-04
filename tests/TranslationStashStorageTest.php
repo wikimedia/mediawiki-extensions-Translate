@@ -15,14 +15,14 @@ class TranslationStashStorageTest extends MediaWikiTestCase {
 
 		$translation1 = new StashedTranslation(
 			User::newFromId( 1 ),
-			Title::newFromText( __METHOD__ ),
+			Title::makeTitle( NS_MAIN, __METHOD__ ),
 			'test value',
 			array( 'kissa', 'kala' )
 		);
 
 		$translation2 = new StashedTranslation(
 			User::newFromId( 2 ),
-			Title::newFromText( __METHOD__ ),
+			Title::makeTitle( NS_MAIN, __METHOD__ ),
 			'test value 2',
 			array( 'kissa', 'kala' )
 		);
