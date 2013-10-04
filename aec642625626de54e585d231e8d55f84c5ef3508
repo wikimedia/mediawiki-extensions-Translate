@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_1995d786",
+        "filename": "resources/css/ext.translate.special.translatesandbox.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T08:02:03Z",
+      "side": 1,
+      "message": "Should embed the svgs as well",
+      "revId": "aec642625626de54e585d231e8d55f84c5ef3508",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_1948772f",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T08:02:03Z",
+      "side": 1,
+      "message": "Please do not comment out code without explanation. Given the other non-functional elements this should either stay until implemented or removed alltogether in another commit.",
+      "revId": "aec642625626de54e585d231e8d55f84c5ef3508",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_5952efde",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T08:02:03Z",
+      "side": 1,
+      "message": "missing space",
+      "revId": "aec642625626de54e585d231e8d55f84c5ef3508",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_794fb335",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T08:02:03Z",
+      "side": 1,
+      "message": "Start with capital letter and and in with a period.",
+      "revId": "aec642625626de54e585d231e8d55f84c5ef3508",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_b9612bae",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T08:02:03Z",
+      "side": 1,
+      "message": "this word usually has space in the middle, no?",
+      "revId": "aec642625626de54e585d231e8d55f84c5ef3508",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_39453b18",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T08:02:03Z",
+      "side": 1,
+      "message": "Why attr and not prop?",
+      "revId": "aec642625626de54e585d231e8d55f84c5ef3508",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_f95ba3f1",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T08:02:03Z",
+      "side": 1,
+      "message": "Missing -\u003eparse() and -\u003enumParams",
+      "revId": "aec642625626de54e585d231e8d55f84c5ef3508",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
