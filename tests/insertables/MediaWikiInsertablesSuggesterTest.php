@@ -7,7 +7,7 @@
  * @license GPL-2.0+
  */
 
-class MediaWikiMessageCheckerTest extends MediaWikiTestCase {
+class MediaWikiInsertablesSuggesterTest extends MediaWikiTestCase {
 
 	/**
 	 * @dataProvider getInsertablesProvider
