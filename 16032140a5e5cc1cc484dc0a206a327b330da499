@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_04b1eaf7",
+        "filename": "resources/css/ext.translate.special.translationstash.css",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T13:32:42Z",
+      "side": 1,
+      "message": "empty line",
+      "revId": "16032140a5e5cc1cc484dc0a206a327b330da499",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_4493e25a",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T13:32:42Z",
+      "side": 1,
+      "message": "GPL-2.0+",
+      "revId": "16032140a5e5cc1cc484dc0a206a327b330da499",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_2496ee4b",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T13:32:42Z",
+      "side": 1,
+      "message": "I\u0027ts been a while ;)",
+      "revId": "16032140a5e5cc1cc484dc0a206a327b330da499",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_64a0e6a3",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T13:32:42Z",
+      "side": 1,
+      "message": "GPL-2.0+",
+      "revId": "16032140a5e5cc1cc484dc0a206a327b330da499",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_e484d610",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T13:32:42Z",
+      "side": 1,
+      "message": "Weird indentation",
+      "revId": "16032140a5e5cc1cc484dc0a206a327b330da499",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

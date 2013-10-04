@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_e4abf688",
+        "filename": "Translate.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-04T13:32:42Z",
+      "side": 0,
+      "message": "Keep the empty line as separator",
+      "revId": "174ae237a6e90a37f2b8f7aa5876ada31482b4ca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
