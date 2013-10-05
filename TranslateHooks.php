@@ -183,6 +183,13 @@ class TranslateHooks {
 			array( 'TranslateHooks', 'translationDialogMagicWord' )
 		);
 
+		$parser->setHook( 'translate', function () {
+			throw new MWException( 'A <translate> reached the parser. This should not happen' );
+		} );
+		$parser->setHook( 'tvar', function () {
+			throw new MWException( 'A <tvar> reached the parser. This should not happen' );
+		} );
+
 		return true;
 	}
 
