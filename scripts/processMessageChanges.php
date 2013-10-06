@@ -44,6 +44,12 @@ class ProcessMessageChanges extends Maintenance {
 			false, /*required*/
 			true /*has arg*/
 		);
+		$this->addOption(
+			'skipgroup',
+			'Comma separated list of to be skipped group IDs (can use * as wildcard)',
+			false, /*required*/
+			true /*has arg*/
+		);
 	}
 
 	public function execute() {
@@ -52,9 +58,14 @@ class ProcessMessageChanges extends Maintenance {
 		 */
 		$groups = MessageGroups::getGroupsByType( 'FileBasedMessageGroup' );
 		$whitelist = $this->getOption( 'group' );
+		$blacklist = $this->getOption( 'skipgroup' );
 
 		if ( $whitelist ) {
-			$groups = $this->filterGroups( $groups, $whitelist );
+			$groups = $this->filterGroups( $groups, $whitelist, 'whitelist'  );
+		}
+
+		if ( $blacklist ) {
+			$groups = $this->filterGroups( $groups, $blacklist, 'blacklist'  );
 		}
 
 		$this->counter = 0;
@@ -260,18 +271,26 @@ class ProcessMessageChanges extends Maintenance {
 	 *
 	 * @since 2012-10-15
 	 * @param MessageGroupBase[] $groups
-	 * @param string $whitelist Comma separated list of group IDs that should be processed (can
+	 * @param string $list Comma separated list of group IDs that should be processed (can
 	 * use * as wildcard)
+	 * @param string $filterType 'whitelist' to only return groups matching, 'blacklist' to
+	 * only return groups not matching. Default: whitelist.
 	 * @return array of filtered groups
 	 */
-	protected function filterGroups( $groups, $whitelist ) {
-		$whitelist = explode( ',', trim( $whitelist ) );
-		$whitelist = MessageGroups::expandWildcards( $whitelist );
+	protected function filterGroups( $groups, $list, $filterType = 'whitelist' ) {
+		$list = explode( ',', trim( $list ) );
+		$list = MessageGroups::expandWildcards( $list );
 
 		$filtered = array();
-		foreach ( $whitelist as $id ) {
-			if ( isset( $groups[$id] ) ) {
-				$filtered[$id] = $groups[$id];
+		foreach ( $list as $id ) {
+			if ( $filterType === 'blacklist' ) {
+				if ( !isset( $groups[$id] ) ) {
+					$filtered[$id] = $groups[$id];
+				}
+			} else {
+				if ( isset( $groups[$id] ) ) {
+					$filtered[$id] = $groups[$id];
+				}
 			}
 		}
 
