@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_a5aad517",
+        "filename": "scripts/processMessageChanges.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-06T15:37:38Z",
+      "side": 1,
+      "message": "Perhaps the if blocks could be simplified to reduce nesting, but that is stylistic.",
+      "revId": "54857b3ab1a1310369ef4cb7e9acef1581281b6c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
