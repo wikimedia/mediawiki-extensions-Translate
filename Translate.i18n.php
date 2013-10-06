@@ -8,17 +8,16 @@
 
 $messages = array();
 
-/** English (English)
+/** English
+ * @author Nike
+ * @author Siebrand
  * @author Amire80
- * @author Basharh
- * @author Cedric31
  * @author Santhosh.thottingal
- * @author Shirayuki
- * @author The Discoverer
  */
 $messages['en'] = array(
 	'translate' => 'Translate',
 	'translate-desc' => '[[Special:Translate|Special page]] for translating MediaWiki and beyond',
+
 	'translate-taskui-view' => 'Show all messages',
 	'translate-taskui-untranslated' => 'Show untranslated messages',
 	'translate-taskui-optional' => 'Show optional messages',
@@ -26,14 +25,17 @@ $messages['en'] = array(
 	'translate-taskui-reviewall' => 'Review all translations',
 	'translate-taskui-export-to-file' => 'Export in native format',
 	'translate-taskui-export-as-po' => 'Export for off-line translation',
+
 	'translate-taction-translate' => 'Translate',
 	'translate-taction-proofread' => 'Review',
 	'translate-taction-lstats' => 'Language statistics',
 	'translate-taction-mstats' => 'Message group statistics',
 	'translate-taction-export' => 'Export',
 	'translate-taction-disabled' => 'This action is disabled on this wiki.',
+
 	'translate-page-no-such-language' => 'Specified language was invalid.',
 	'translate-page-no-such-group' => 'Specified group was invalid.',
+
 	'translate-page-disabled' => "Translations to this language in this group have been disabled.
 Reason:
 
@@ -45,6 +47,7 @@ Reason:
 	'translate-page-limit' => 'Limit',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|message|messages}} per page',
 	'translate-submit' => 'Fetch',
+
 	'translate-page-navigation-legend' => 'Navigation',
 	'translate-page-showing' => 'Showing messages from $1 to $2 of $3.',
 	'translate-page-showing-all' => 'Showing $1 {{PLURAL:$1|message|messages}}.',
@@ -52,6 +55,7 @@ Reason:
 	'translate-page-paging-links' => '[ $1 ] [ $2 ]',
 	'translate-next' => 'Next page',
 	'translate-prev' => 'Previous page',
+
 	'translate-page-description-legend' => 'Information about the group',
 	'translate-page-description-hasoptional' => 'This message group contains optional messages.
 Optional messages should only be translated when your language has special requirements
@@ -59,8 +63,10 @@ like not using spaces or transliterating proper names. $1',
 	'translate-page-description-hasoptional-open' => 'Show optional messages.',
 	'translate-page-edit' => 'edit',
 	'translate-ext-url' => '<hr />Website: $1',
+
 	'translate-optional' => '(optional)',
 	'translate-ignored' => '(ignored)',
+
 	'translate-edit-jsopen' => 'edit',
 	'translate-edit-title' => 'Edit "$1"',
 	'translate-edit-definition' => 'Message definition',
@@ -76,11 +82,15 @@ like not using spaces or transliterating proper names. $1',
 	'translate-edit-tmmatch-source' => 'Translation source text: $1',
 	'translate-edit-tmmatch' => '$1% match',
 	'translate-use-suggestion' => 'Replace current translation with this suggestion.',
+
 	'translate-edit-tab-prev' => '<<<',
 	'translate-edit-tab-next' => '>>>',
 	'translate-edit-tab-list' => 'Message list',
 	'translate-edit-nopermission' => 'You need permission to translate messages.',
 	'translate-edit-askpermission' => 'Request permission',
+
+	'translate-edit-tag-warning' => '',
+
 	'translate-magic-pagename' => 'Extended MediaWiki translation',
 	'translate-magic-help' => 'You can translate special pages aliases, magic words and namespace names.
 
@@ -96,21 +106,28 @@ You need to be a translator to save changes.
 Changes are not saved until you click the save button below.',
 	'translate-magic-module' => 'Module:',
 	'translate-magic-submit' => 'Fetch',
-	'translate-magic-cm-export' => 'Export',
+	'translate-magic-cm-export' => 'Export', // cm- should be removed
+
 	'translate-magic-nothing-to-export' => 'There is nothing to export.',
+
 	'translate-magic-cm-to-be' => 'To-be',
 	'translate-magic-cm-current' => 'Current',
 	'translate-magic-cm-original' => 'Original',
+
 	'translate-magic-cm-comment' => 'Comment:',
 	'translate-magic-cm-save' => 'Save',
+
 	'translate-magic-cm-updatedusing' => 'Updated using [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
 	'translate-magic-cm-savefailed' => 'Save failed',
+
 	'translate-magic-special' => 'Special page aliases',
 	'translate-magic-words' => 'Magic words',
 	'translate-magic-namespace' => 'Namespace names',
+
 	'translate-magic-notsaved' => 'Your edit was not saved!',
 	'translate-magic-errors' => 'Please fix following {{PLURAL:$1|error|errors}} in translations:',
 	'translate-magic-saved' => 'Your changes were saved successfully.',
+
 	'translate-checks-parameters' => 'Following {{PLURAL:$2|parameter is|parameters are}} not used:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-parameters-unknown' => 'Following {{PLURAL:$2|parameter is|parameters are}} unknown:
@@ -132,6 +149,7 @@ Changes are not saved until you click the save button below.',
 	'translate-checks-parametersnotequal' => 'Parameter count is {{PLURAL:$1|$1}}; should be {{PLURAL:$2|$2}}.',
 	'translate-checks-malformed' => '<nowiki>$1</nowiki> is malformed.',
 	'translate-checks-fudforum-syntax' => 'Use <nowiki>$1</nowiki> instead of <nowiki>$2</nowiki> in this project.',
+
 	'translate-pref-nonewsletter' => 'Do not send me email newsletters',
 	'translate-pref-editassistlang' => 'Assistant languages:',
 	'prefs-translate' => 'Translation options',
@@ -141,24 +159,29 @@ The default list of languages depends on your language.',
 	'translate-pref-editassistlang-bad' => 'Invalid language code in the list:
 <nowiki>$1</nowiki>.',
 	'translate-pref-jsedit' => 'Enhanced translation editor (JavaScript)',
+
 	'right-translate' => 'Edit using the translate interface',
 	'right-translate-manage' => 'Manage message groups',
-	'action-translate-manage' => 'manage message groups',
+	'action-translate-manage' => 'manage message groups', // Checked for ManageMessageGroups
 	'right-translate-import' => 'Import offline translations',
-	'action-translate-import' => 'import offline translations',
+	'action-translate-import' => 'import offline translations', // Checked for ImportTranslations
 	'right-translate-messagereview' => 'Review translations',
 	'right-translate-groupreview' => 'Change workflow state of message groups',
+
 	'translate-rc-translation-filter' => 'Filter translations:',
 	'translate-rc-translation-filter-no' => 'Do nothing',
 	'translate-rc-translation-filter-only' => 'Show translations only',
 	'translate-rc-translation-filter-filter' => 'Filter out translations',
 	'translate-rc-translation-filter-site' => 'Changes to site messages only',
+
 	'translationstats' => 'Translation statistics',
+
 	'translate-stats-edits' => 'Edits',
 	'translate-stats-users' => 'Translators',
 	'translate-stats-registrations' => 'Registrations',
 	'translate-stats-reviews' => 'Reviews',
 	'translate-stats-reviewers' => 'Reviewers',
+
 	'translate-statsf-intro' => 'You can generate simple statistics with this form.
 All values have upper and lower limits.',
 	'translate-statsf-options' => 'Graph options',
@@ -180,9 +203,13 @@ All values have upper and lower limits.',
 	'translate-statsf-language' => 'Comma-separated list of language codes:',
 	'translate-statsf-group' => 'Comma-separated list of group codes:',
 	'translate-statsf-submit' => 'Preview',
+
 	'translate-tag-category' => 'Translatable pages',
 	'translate-tag-page-desc' => 'Translation of the wiki page [[$2|$1]].',
+
 	'translate-sidebar-alltrans' => 'In other languages',
+
+	# Special:Translations
 	'translations' => 'All translations',
 	'translations-summary' => 'Enter a message name below to show all available translations.',
 	'translate-translations-no-message' => '"$1" is not a translatable message',
@@ -193,6 +220,8 @@ All values have upper and lower limits.',
 	'translate-translations-project' => 'Project:',
 	'translate-translations-including-no-param' => 'Please specify a valid message key in the subpage parameter',
 	'translate-translations-history-short' => 'h',
+
+	# Special:LanguageStats
 	'languagestats' => 'Language statistics',
 	'languagestats-summary' => 'This page shows translation statistics for all message groups for a language.',
 	'languagestats-stats-for' => 'Translation statistics for $1 ($2).',
@@ -214,6 +243,8 @@ All values have upper and lower limits.',
 	'translate-languagestats-overall' => 'All message groups together',
 	'translate-ls-submit' => 'Show statistics',
 	'translate-ls-column-group' => 'Message group',
+
+	# Special:GroupStats
 	'translate-mgs-pagename' => 'Message group statistics',
 	'translate-mgs-fieldset' => 'Display preferences',
 	'translate-mgs-group' => 'Message group:',
@@ -224,20 +255,26 @@ All values have upper and lower limits.',
 	'translate-mgs-totals' => 'All languages together',
 	'translate-mgs-invalid-group' => 'The specified group $1 does not exist.',
 	'translate-mgs-nothing' => 'Nothing to show for requested statistics.',
+
+	# Special:SupportedLanguages
 	'supportedlanguages' => 'Supported languages',
-	'supportedlanguages-summary' => "This page shows a list of all languages supported by {{SITENAME}},
+	'supportedlanguages-summary' => 'This page shows a list of all languages supported by {{SITENAME}},
 together with the names of the translators working on that language.
-A translator's name appears larger, the more edits the translator has contributed.
-The color of an underline indicates how recently a translator has been active here.",
+A translator\'s name appears larger, the more edits the translator has contributed.
+The color of an underline indicates how recently a translator has been active here.',
 	'supportedlanguages-colorlegend' => 'Legend for the color: Last translation $1 days ago.',
+	'supportedlanguages-localsummary' => '',
 	'supportedlanguages-portallink' => '[$1] $2 - $3',
 	'supportedlanguages-portallink-nocldr' => '[$1] $2',
 	'supportedlanguages-translators' => '{{PLURAL:$2|Translator|Translators}}: $1',
 	'supportedlanguages-recenttranslations' => 'recent translations',
 	'supportedlanguages-count' => '$1 {{PLURAL:$1|language|languages}} in total.',
 	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|edit|edits}} - last edit $3 {{PLURAL:$3|day|days}} ago',
+
 	'translate-save' => 'Save ($1)',
+
 	'translate-jssti-add' => 'Add to list',
+
 	'managemessagegroups' => 'Message group management',
 	'translate-smg-notallowed' => 'You are not allowed to execute this action.',
 	'translate-smg-nochanges' => 'There are no changes to process.',
@@ -246,6 +283,8 @@ The color of an underline indicates how recently a translator has been active he
 	'translate-smg-postponed' => 'Some changes could not be processed. [[{{FULLPAGENAME}}|Try again]].',
 	'translate-smg-left' => 'Message content in wiki',
 	'translate-smg-right' => 'Incoming changes',
+
+	// MessageWebImporter
 	'translate-manage-import-diff' => 'Message $1 | Actions: $2',
 	'translate-manage-import-new' => 'New message $1',
 	'translate-manage-import-deleted' => 'Deleted message $1',
@@ -269,20 +308,24 @@ Please check.',
 	'translate-manage-intro-other' => 'Below is list of translation changes in the language $1.
 Please review the changes and choose an action you want to take for each update.
 If you choose to ignore changes, this action is only temporary.',
+
 	'importtranslations' => 'Import translations',
 	'translate-import-from-local' => 'Local file upload:',
 	'translate-import-load' => 'Load file',
+
 	'translate-import-err-dl-failed' => 'Unable to fetch the file:
 $1',
 	'translate-import-err-ul-failed' => 'File upload was not successful',
 	'translate-import-err-invalid-title' => 'Provided file name <nowiki>$1</nowiki> was invalid.',
 	'translate-import-err-no-such-file' => 'File <nowiki>$1</nowiki> does not exist or has not been uploaded locally.',
 	'translate-import-err-stale-group' => 'The message group this file belongs to does not exist.',
+
 	'translate-import-err-no-headers' => 'File is not a well formed Gettext file in Translate extension format:
 Unable to determine message group and language from file headers.',
 	'translate-import-err-warnings' => 'The file is not well formed.
 Make sure your editor does not remove msgctxt fields.
 Details: $1',
+
 	'translate-js-summary' => 'Summary:',
 	'translate-js-save' => 'Save',
 	'translate-js-next' => 'Save and open next',
@@ -293,6 +336,8 @@ Details: $1',
 	'translate-js-support' => 'Ask question',
 	'translate-js-support-title' => 'Ask for help if there is not enough information to translate this message correctly.',
 	'translate-js-support-unsaved-warning' => 'You have unsaved translations.',
+
+	// scripts/groupStatistics.php related messages
 	'translate-gs-pos' => 'Pos.',
 	'translate-gs-code' => 'Code',
 	'translate-gs-continent' => 'Continent',
@@ -302,39 +347,58 @@ Details: $1',
 	'translate-gs-count' => 'Count',
 	'translate-gs-total' => 'Total',
 	'translate-gs-avgscore' => 'Avg. score',
+
 	'translate-documentation-language' => 'Message documentation',
+
+	// Search profile hook
 	'translate-searchprofile' => 'Translations',
 	'translate-searchprofile-tooltip' => 'Search from all translations',
 	'translate-search-languagefilter' => 'Filter by language:',
 	'translate-search-nofilter' => 'No filtering',
+
 	'translate-messagereview-submit' => 'Mark reviewed',
 	'translate-messagereview-progress' => 'Marking as reviewed...',
 	'translate-messagereview-failure' => 'Marking as reviewed failed: $1',
 	'translate-messagereview-done' => 'Reviewed',
 	'translate-messagereview-reviews' => 'Reviewed by {{PLURAL:$1|one user|$1 users}}',
 	'translate-messagereview-reviewswithyou' => 'Reviewed by {{PLURAL:$1|you|$1 users including you}}',
+
+	// Localisation for extension specific API errors
 	'api-error-invalidrevision' => 'Translation was not found',
 	'api-error-unknownmessage' => 'Message was not found',
 	'api-error-fuzzymessage' => 'Translation is marked as fuzzy',
 	'api-error-owntranslation' => 'You cannot mark your own translations as reviewed',
+
 	'translate-messagereview-no-fuzzy' => 'Fuzzy translations cannot be marked as reviewed.',
 	'translate-messagereview-no-own' => 'You cannot mark your own translations as reviewed.',
 	'translate-messagereview-doit' => 'Mark this translation as reviewed.',
+
+	// Damn the 16 character limit for user group names!
 	'group-translate-proofr' => 'Translation reviewers',
 	'group-translate-proofr-member' => '{{GENDER:$1|translation reviewer}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Translation reviewers',
-	'group-translate-proofr.css' => '/* CSS placed here will affect translation reviewers only */',
-	'group-translate-proofr.js' => '/* JS placed here will affect translation reviewer only */',
+
+	'group-translate-proofr.css' => '/* CSS placed here will affect translation reviewers only */', # only translate this message to other languages if you have to change it
+	'group-translate-proofr.js' => '/* JS placed here will affect translation reviewer only */', # only translate this message to other languages if you have to change it
+
+	// Less damn for the 32 character limit for log names
 	'log-name-translationreview' => 'Translation review log',
 	'log-description-translationreview' => 'Log of all reviews to translations and message groups.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|reviewed}} translation $3',
 	'logentry-translationreview-group' => '$1 {{GENDER:$2|changed}} the state of $4 translations of $3 from $6 to $7',
+
+	// The limit was increased at some point, but possible BC issue
 	'group-translate-sandboxed' => 'Unapproved translators',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|unapproved translator}}',
+
 	'right-translate-sandboxmanage' => 'Manage sandboxed users',
 	'action-translate-sandboxmanage' => 'manage sandboxed users',
+
 	'right-translate-sandboxaction' => 'Execute actions whitelisted for sandboxed users',
 	'action-translate-sandboxaction' => 'execute actions whitelisted for sandboxed users',
+
+	// The actual states, when set, come after the hyphen.
+	// The dangling hyphen hints that it's unset.
 	'translate-workflow-state-' => '(unset)',
 	'translate-workflowstatus' => 'State: $1',
 	'translate-workflow-set-do' => 'Set',
@@ -343,30 +407,39 @@ Details: $1',
 	'translate-workflow-set-error-alreadyset' => 'The requested state is identical to the current state.',
 	'translate-workflow-autocreated-summary' => 'Automatic creation of page for workflow state $1',
 	'translate-stats-workflow' => 'State',
+
 	'translate-workflowgroup-label' => 'Workflow states',
 	'translate-workflowgroup-desc' => 'This message group shows the translation workflow states.
 The states are defined in the configuration variable $wgTranslateWorkflowStates.',
+
+	// Dynamic message groups
 	'translate-dynagroup-recent-label' => 'Recent translations',
 	'translate-dynagroup-recent-desc' => 'This message group shows all recent translations into this language.
 Most useful for the review tasks.',
 	'translate-dynagroup-additions-label' => 'Recent additions',
 	'translate-dynagroup-additions-desc' => 'This message group shows new and changed messages.',
+
 	'translate-dynagroup-by' => 'Translation made by {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Translation made by {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Latest change by {{GENDER:$1|$1}}',
 	'translate-dynagroup-lastc' => 'Latest change by {{GENDER:$1|$1}} ($2)',
+
 	'translate-gethelp' => 'Help',
+
 	'translate-msggroupselector-projects' => 'Message group',
 	'translate-msggroupselector-search-placeholder' => 'Search groups',
 	'translate-msggroupselector-search-all' => 'All',
 	'translate-msggroupselector-search-recent' => 'Recent',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgroup|subgroups}}',
+
 	'tux-languageselector' => 'Translate to',
+
 	'tux-tab-all' => 'All',
 	'tux-tab-untranslated' => 'Untranslated',
 	'tux-tab-outdated' => 'Outdated',
 	'tux-tab-translated' => 'Translated',
 	'tux-tab-unproofread' => 'Unreviewed',
+
 	'tux-edit' => 'Edit',
 	'tux-status-optional' => 'Optional',
 	'tux-status-fuzzy' => 'Outdated',
@@ -374,6 +447,7 @@ Most useful for the review tasks.',
 	'tux-status-translated' => 'Translated',
 	'tux-status-saving' => 'Saving...',
 	'tux-status-unsaved' => 'Unsaved',
+
 	'tux-editor-placeholder' => 'Your translation',
 	'tux-editor-paste-original-button-label' => 'Paste source text',
 	'tux-editor-discard-changes-button-label' => 'Discard changes',
@@ -415,9 +489,11 @@ Most useful for the review tasks.',
 	'tux-message-filter-advanced-button' => 'Advanced search',
 	'tux-message-filter-optional-messages-label' => 'Optional messages',
 	'tux-proofread-translated-by-self' => 'Translated by you',
+
 	'tux-empty-list-all' => 'This message group is empty',
 	'tux-empty-list-all-guide' => 'Select a different message group to translate',
 	'tux-translate-page-no-such-group' => "'''The indicated group does not exist.''' Select a different message group.",
+
 	'tux-empty-list-translated' => 'No translated messages',
 	'tux-empty-list-translated-guide' => 'You can help translating',
 	'tux-empty-list-translated-action' => 'Translate',
@@ -429,6 +505,7 @@ Most useful for the review tasks.',
 	'tux-empty-you-can-help-providing' => 'You can help providing new translations',
 	'tux-empty-nothing-new-to-proofread' => 'Nothing new to review',
 	'tux-empty-you-can-review-already-proofread' => 'You can review translations already reviewed by others.',
+
 	'tux-empty-list-other' => 'Nothing to translate',
 	'tux-empty-list-other-guide' => 'You can help review existing translations',
 	'tux-empty-list-other-action' => 'Review translations',
@@ -439,6 +516,7 @@ Most useful for the review tasks.',
 	'tux-editor-message-tools-history' => 'History',
 	'tux-editor-message-tools-translations' => 'All translations',
 	'tux-editor-loading' => 'Loading...',
+
 	'translate-search-more-languages-info' => '$1 more {{PLURAL:$1|language|languages}}',
 	'translate-statsbar-tooltip' => '$1% translated, $2% reviewed',
 	'translate-statsbar-tooltip-with-fuzzy' => '$1% translated, $2% reviewed, $3% outdated',
@@ -948,8 +1026,7 @@ Introduction to special page. See screenshot. Parameters:
 	'translate-gs-pos' => "Used in wiki tables for localisation statistics as a column header for 'Position' abbreviated. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]",
 	'translate-gs-code' => 'Used in wiki tables for localisation statistics as a column header for language code. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]
 {{Identical|Code}}',
-	'translate-gs-continent' => 'Used in wiki tables for localisation statistics as a column header for the continent where a language is spoken. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]].
-{{Identical|Continent}}',
+	'translate-gs-continent' => 'Used in wiki tables for localisation statistics as a column header for the continent where a language is spoken. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
 	'translate-gs-speakers' => 'Used in wiki tables for localisation statistics as a column header for the number of speakers of a language. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
 	'translate-gs-score' => 'Used in wiki tables for localisation statistics as a column header for the weighted score of the localisation of a language. See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
 	'translate-gs-multiple' => 'Used in wiki tables for localisation statistics as a value in the Continent column when a language is spoken on more than one continent . See [[Project:MediaWiki localisation in the 50 most spoken languages|example]]',
@@ -6431,7 +6508,7 @@ $messages['cs'] = array(
 	'translate-taskui-export-as-po' => 'Exportovat pro off-line překlad',
 	'translate-taction-translate' => 'Překlad',
 	'translate-taction-proofread' => 'Zkontrolovat',
-	'translate-taction-lstats' => 'Jazykové statistiky',
+	'translate-taction-lstats' => 'jazykové statistiky',
 	'translate-taction-mstats' => 'Statistika skupin zpráv',
 	'translate-taction-export' => 'Export',
 	'translate-taction-disabled' => 'Tato akce je na této wiki zakázána.',
@@ -7555,7 +7632,6 @@ Det er mest nyttigt til korrekturlæsningsopgaver.',
  * @author Geitost
  * @author Giftpflanze
  * @author Imre
- * @author Inkowik
  * @author Kghbln
  * @author Lukas9950
  * @author Lyzzy
@@ -7909,7 +7985,7 @@ Am nützlichsten ist sie für die Aufgaben des Überprüfens.',
 	'translate-msggroupselector-search-all' => 'Alle',
 	'translate-msggroupselector-search-recent' => 'Aktuell',
 	'translate-msggroupselector-view-subprojects' => '{{PLURAL:$1|Eine Untergruppe|$1 Untergruppen}}',
-	'tux-languageselector' => 'Übersetzen auf',
+	'tux-languageselector' => 'Übersetzen in',
 	'tux-tab-all' => 'Alle',
 	'tux-tab-untranslated' => 'Nicht übersetzt',
 	'tux-tab-outdated' => 'Veraltet',
@@ -10503,7 +10579,7 @@ $messages['fa'] = array(
 	'translate' => 'ترجمه',
 	'translate-desc' => '[[Special:Translate|صفحهٔ ویژه‌ای]] برای ترجمهٔ مدیاویکی و فراتر از آن',
 	'translate-taskui-view' => 'نمایش تمام پیغام‌ها',
-	'translate-taskui-untranslated' => 'نمایش پیغام‌های ترجمه‌نشده',
+	'translate-taskui-untranslated' => 'نمایش پیغام‌های ترجمه نشده',
 	'translate-taskui-optional' => 'نمایش پیغام‌های اختیاری',
 	'translate-taskui-acceptqueue' => 'تنها پیغام‌هایی که می‌توانم به عنوان بازبینی‌شده نشانه‌گذاری کنم',
 	'translate-taskui-reviewall' => 'بررسی تمام ترجمه‌ها',
@@ -10685,7 +10761,7 @@ $messages['fa'] = array(
 	'translate-ls-noempty' => 'فرونشانی گروه‌های پیغامی که هیچ ترجمه نشده‌اند',
 	'translate-language' => 'زبان',
 	'translate-total' => 'پیغام‌ها',
-	'translate-untranslated' => 'ترجمه‌نشده',
+	'translate-untranslated' => 'ترجمه نشده',
 	'translate-percentage-complete' => 'پیشرفت',
 	'translate-percentage-fuzzy' => 'تاریخ گذشته',
 	'translate-languagestats-overall' => 'همه گروه‌های پیغام با هم',
@@ -10830,7 +10906,7 @@ $1',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|زیرگروه|زیرگروه}}',
 	'tux-languageselector' => 'ترجمه به',
 	'tux-tab-all' => 'همه',
-	'tux-tab-untranslated' => 'ترجمه‌نشده',
+	'tux-tab-untranslated' => 'ترجمه نشده',
 	'tux-tab-outdated' => 'تاریخ گذشته',
 	'tux-tab-translated' => 'ترجمه‌شده',
 	'tux-tab-unproofread' => 'بازبینی‌نشده',
@@ -10896,7 +10972,7 @@ $1',
 	'tux-empty-you-can-help-providing' => 'شما می‌توانید با ارائهٔ ترجمه‌های تازه کمک کنید',
 	'tux-empty-nothing-new-to-proofread' => 'چیز تازه‌ای برای بازبینی وجود ندارد',
 	'tux-empty-you-can-review-already-proofread' => 'می‌توانید ترجمه‌های از پیش بازبینی‌شده توسط دیگران را بازبینی کنید',
-	'tux-empty-list-other' => 'چیزی برای ترجمه وجود ندارد.',
+	'tux-empty-list-other' => 'چیزی برای ترجمه نیست.',
 	'tux-empty-list-other-guide' => 'می‎توانید در بازبینی ترجمه‎های موجود کمک کنید',
 	'tux-empty-list-other-action' => 'بازبینی ترجمه‌ها',
 	'tux-empty-list-other-link' => 'نمایش تمام پیغام‌ها',
@@ -19080,6 +19156,8 @@ $1',
 	'translate-statsf-submit' => '미리 보기',
 	'translate-tag-category' => '번역 가능한 문서',
 	'translate-tag-page-desc' => '[[$2|$1]] 위키 문서의 번역입니다.',
+	'translate-tag-fuzzy-comment' => '정의가 [[User:$1|$1]]에 의해 $2 판에서 바뀌었습니다.',
+	'translate-tag-fuzzy-reason' => '정의가 "$1"에 의해 $2에서 "$3" 덧글과 함께 바뀌었습니다.',
 	'translate-sidebar-alltrans' => '다른 언어',
 	'translations' => '모든 번역',
 	'translations-summary' => '모든 번역을 보려면 메시지 이름을 아래에 입력하세요.',
@@ -19184,7 +19262,7 @@ $1',
 	'translate-js-nonext' => '이 페이지의 마지막 메시지입니다.',
 	'translate-js-skip' => '다음으로 넘어가기',
 	'translate-js-save-failed' => '저장에 실패했습니다. 이 오류를 신고해주시기 바랍니다.',
-	'translate-js-history' => '번역 역사',
+	'translate-js-history' => '번역 내역',
 	'translate-js-support' => '질문하기',
 	'translate-js-support-title' => '이 메시지를 정확히 번역할 만한 정보가 부족하다면 도움을 요청하세요.',
 	'translate-js-support-unsaved-warning' => '번역을 저장하지 않았습니다.',
@@ -22209,6 +22287,8 @@ $messages['ml'] = array(
 	'translate-statsf-submit' => 'എങ്ങനെയുണ്ടെന്ന് കാണുക',
 	'translate-tag-category' => 'പരിഭാഷപ്പെടുത്താവുന്ന താളുകൾ',
 	'translate-tag-page-desc' => '[[$2|$1]] എന്ന വിക്കി താളിന്റെ തർജ്ജമ.',
+	'translate-tag-fuzzy-comment' => '$2 നാൾപ്പതിപ്പിൽ [[User:$1|$1]] നിർവ്വചനം മാറ്റിയിരിക്കുന്നു.',
+	'translate-tag-fuzzy-reason' => '$2-ൽ "$3" എന്ന കുറിപ്പോടെ "$1" നിർവ്വചനം മാറ്റിയിരിക്കുന്നു.',
 	'translate-sidebar-alltrans' => 'ഇതര ഭാഷകളിൽ',
 	'translations' => 'എല്ലാ തർജ്ജമകളും',
 	'translations-summary' => 'ലഭ്യമായ എല്ലാ പരിഭാഷകളും പ്രദർശിക്കപ്പെടാൻ താഴെ സന്ദേശത്തിന്റെ പേര് നൽകുക.',
@@ -22324,11 +22404,11 @@ $messages['ml'] = array(
 	'tux-tab-untranslated' => 'പരിഭാഷപ്പെടുത്താത്തവ',
 	'tux-tab-outdated' => 'കാലഹരണപ്പെട്ടവ',
 	'tux-tab-translated' => 'പരിഭാഷപ്പെടുത്തിയവ',
-	'tux-tab-unproofread' => 'സംശോധനം ചെയ്യാത്തവ',
+	'tux-tab-unproofread' => 'സംശോധനം ചെയ്യാത്തവ', # Fuzzy
 	'tux-edit' => 'പരിഭാഷപ്പെടുത്തുക',
 	'tux-status-optional' => 'ഐച്ഛികം',
 	'tux-status-fuzzy' => 'കാലഹരണപ്പെട്ടവ',
-	'tux-status-proofread' => 'സംശോധനം ചെയ്തവ',
+	'tux-status-proofread' => 'സംശോധനം ചെയ്തു', # Fuzzy
 	'tux-status-translated' => 'പരിഭാഷപ്പെടുത്തി',
 	'tux-status-saving' => 'സേവ് ചെയ്യുന്നു...',
 	'tux-status-unsaved' => 'സേവ് ചെയ്തിട്ടില്ല',
@@ -22337,11 +22417,10 @@ $messages['ml'] = array(
 	'tux-editor-discard-changes-button-label' => 'മാറ്റങ്ങൾ വേണ്ടെന്നുവെയ്ക്കുക',
 	'tux-editor-save-button-label' => 'പരിഭാഷ സേവ് ചെയ്യുക',
 	'tux-editor-skip-button-label' => 'അടുത്തതിലേയ്ക്ക് പോവുക',
-	'tux-editor-cancel-button-label' => 'റദ്ദാക്കുക',
 	'tux-editor-confirm-button-label' => 'പരിഭാഷ സ്ഥിരീകരിക്കുക',
 	'tux-editor-shortcut-info' => 'സേവ് ചെയ്യാൻ  "$1" അമർത്തുക, അടുത്തതിലേയ്ക്ക് പോകാൻ "$2" അമർത്തുക.',
-	'tux-editor-edit-desc' => 'വിവരണം തിരുത്തുക',
-	'tux-editor-add-desc' => 'വിവരണം ചേർക്കുക',
+	'tux-editor-edit-desc' => 'വിവരണം തിരുത്തുക', # Fuzzy
+	'tux-editor-add-desc' => 'വിവരണം ചേർക്കുക', # Fuzzy
 	'tux-editor-suggestions-title' => 'നിർദ്ദേശങ്ങൾ',
 	'tux-editor-in-other-languages' => 'മറ്റു ഭാഷകളില്‍',
 	'tux-editor-need-more-help' => 'സഹായം ആവശ്യമാണോ?',
@@ -22350,15 +22429,16 @@ $messages['ml'] = array(
 	'tux-warnings-more' => '{{PLURAL:$1|$1 എണ്ണം കൂടി}}',
 	'tux-warnings-hide' => 'മറയ്ക്കുക',
 	'tux-editor-save-failed' => 'പരിഭാഷ സേവ് ചെയ്യുന്നത് പരാജയപ്പെട്ടു: $1',
+	'tux-editor-use-this-translation' => 'പരിഭാഷയ്ക്കുപയോഗിക്കുക',
 	'tux-editor-n-uses' => '{{PLURAL:$1|ഒരു തവണ|$1 തവണ}} ഉപയോഗിച്ചു',
 	'tux-editor-message-desc-more' => 'കൂടുതൽ കാണുക',
 	'tux-editor-message-desc-less' => 'കുറച്ച് കാണുക',
 	'tux-editor-clear-translated' => 'പരിഭാഷപ്പെടുത്തിയവ മറയ്ക്കുക',
-	'tux-editor-proofreading-mode' => 'സംശോധനം',
+	'tux-editor-proofreading-mode' => 'സംശോധനം', # Fuzzy
 	'tux-editor-translate-mode' => 'പട്ടിക',
 	'tux-editor-proofreading-hide-own-translations' => 'താങ്കളുടെ തർജ്ജമകൾ മറയ്ക്കുക',
 	'tux-editor-proofreading-show-own-translations' => 'താങ്കളുടെ തർജ്ജമകൾ കാണിക്കുക',
-	'tux-proofread-action-tooltip' => 'സംശോധനം ചെയ്തതായി അടയാളപ്പെടുത്തുക',
+	'tux-proofread-action-tooltip' => 'തർജ്ജമ സ്വീകരിക്കുക', # Fuzzy
 	'tux-proofread-edit-label' => 'തിരുത്തുക',
 	'tux-editor-page-mode' => 'താൾ',
 	'tux-editor-outdated-warning' => 'ഈ പരിഭാഷ പുതുക്കേണ്ടതാവാം',
@@ -27277,7 +27357,7 @@ As alterações não serão salvas até que você clique no botão de salvar ao 
 	'translate-checks-xhtml' => 'Corrija {{PLURAL:$2|a seguinte tag pela correta|as seguintes tags}}:
 <strong>$1</strong>',
 	'translate-checks-plural' => 'A definição usa <nowiki>{{PLURAL:}}</nowiki>, mas a tradução não.',
-	'translate-checks-plural-forms' => 'A <nowiki>{{PLURAL:}}</nowiki> foi fornecida em {{PLURAL:$1|uma forma|$1 formas}} mas {{PLURAL:$2|apenas uma forma é suportada|$2 formas são suportadas}} (excluindo formas 0= e 1=).',
+	'translate-checks-plural-forms' => 'A <nowiki>{{PLURAL:}}</nowiki> foi fornecido {{PLURAL:$1|uma forma|$1 formas}} mas {{PLURAL:$2|apenas uma forma é suportada|$2 formas são suportadas}} (excluindo formas 0= e 1=).',
 	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> tem formas duplicadas. <nowiki>{{PLURAL:$1|pastel|pastel}}</nowiki> deve ser escrito como <nowiki>{{PLURAL:$1|pastel}}</nowiki>.',
 	'translate-checks-pagename' => 'Espaço nominal diferente do da definição',
 	'translate-checks-format' => 'Esta tradução não segue a definição ou tem uma sintaxe inválida: $1',
