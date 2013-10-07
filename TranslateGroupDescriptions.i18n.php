@@ -2721,7 +2721,7 @@ Xem thêm chi tiết tại [[MW:Extension:PDF Writer]] và http://code.pediapres
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] là một trình vẽ bản đồ OpenStreetMap dùng Flash.',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] là một thư viện để lập chương trình tự động sửa đổi Wikipedia.',
 	'bw-desc-shapado' => 'Nhóm thông điệp cho phần mềm hỏi đáp nguồn mở miễn phí [[Translating:Shapado|Shapado]]',
-	'translate-group-desc-tsint' => 'Nhóm thông điệp của [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], hệ thống biên dịch các công cụ [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|trợ giúp]] · [https://wiki.toolserver.org/view/Toolserver_Intuition chi tiết kỹ thuật]</span>)',
+	'translate-group-desc-tsint' => 'Nhóm thông điệp của [[Translating:Intuition|Intuition]], hệ thống biên dịch các công cụ [//toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Intuition|trợ giúp]] · [https://wiki.toolserver.org/view/Toolserver_Intuition?uselang=vi chi tiết kỹ thuật]</span>)',
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] là một công cụ tải tập tin lên Wikimedia Commons và các dự án khác của Wikimedia',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] là một dịch vụ bản đồ cho biết các tuyến đường đi bộ đường dài, xe đạp, xe đạp leo núi, và trượt băng nội tuyến ở khắp thế giới. Dịch vụ được phát hành theo giấy phép GNU GPL.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] có thể nhanh chóng tìm ra tác giả của trang trong wiki của Wikimedia.',
@@ -2734,6 +2734,7 @@ Xem thêm chi tiết tại [[MW:Extension:PDF Writer]] và http://code.pediapres
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Di động]] là một ứng dụng di động cho phép đóng góp vào dự án [[:meta:Wiki Loves Monuments|Wiki Yêu mến Đài tưởng niệm]]',
 	'translate-group-desc-waymarked-trails-help' => 'Các trang trợ giúp của các trang Waymarked Trails: http://waymarkedtrails.org/vi/help/about',
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] là một trình soạn hợp tác rất tức thời',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]] là một thư viện JavaScript đa trình duyệt hiển thị các biểu thức toán học trong trình duyệt',
 );
 
 /** Yiddish (ייִדיש)

@@ -16330,8 +16330,8 @@ Silakan diperiksa.',
 	'translate-manage-fuzzy-summary' => 'Definisi pesan telah berubah',
 	'translate-manage-submit' => 'Jalankan',
 	'translate-manage-intro-other' => 'Di bawah ini adalah daftar perubahan terjemahan dalam bahasa $1.
-Silakan tinjau perubahan-perubahan ini dan pilihlah aksi yang ingin Anda lakukan untuk setiap terjemahan.
-Jika Anda memilih untuk tidak menghiraukan perubahan, mereka akan ditimpa pada ekspor berikutnya.', # Fuzzy
+Silakan tinjau perubahan-perubahan ini dan pilihlah tindakan yang ingin Anda lakukan untuk setiap perubahan.
+Jika Anda memilih untuk tidak menghiraukan perubahan, tindakan ini hanya bersifat sementara.',
 	'importtranslations' => 'Impor terjemahan',
 	'translate-import-from-local' => 'Unggah berkas lokal:',
 	'translate-import-load' => 'Muatkan berkas',
