@@ -2,7 +2,7 @@
  * Tests for ext.translate.parsers.js.
  *
  * @file
- * @licence GPL-2.0+
+ * @license GPL-2.0+
  */
 
 ( function ( $, mw ) {
