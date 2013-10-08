@@ -29,6 +29,7 @@ class SpecialTranslationStash extends SpecialPage {
 	 */
 	protected function showPage() {
 		// Easier to do this way than in JS
+		$token = Html::hidden( 'token', ApiTranslationStash::getToken(), array( 'id' => 'token' ) );
 		$out = $this->getOutput();
 
 		$name = $this->getUser()->getName();
@@ -52,6 +53,7 @@ class SpecialTranslationStash extends SpecialPage {
 		</div>
 	</div>
 	{$this->getMessageTable()}
+	$token
 </div>
 HTML
 		);

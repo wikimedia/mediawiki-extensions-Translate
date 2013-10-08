@@ -32,6 +32,10 @@ $wgResourceModules['ext.translate.storage'] = array(
 	'scripts' => 'resources/js/ext.translate.storage.js',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.translationstashstorage'] = array(
+	'scripts' => 'resources/js/ext.translate.translationstashstorage.js',
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.editor'] = array(
 	'scripts' => array(
 		'resources/js/ext.translate.editor.js',
@@ -376,6 +380,7 @@ $wgResourceModules['ext.translate.special.translationstash'] = array(
 	'dependencies' => array(
 		'ext.translate.editor',
 		'ext.translate.messagetable',
+		'ext.translate.translationstashstorage',
 	),
 ) + $resourcePaths;
 
