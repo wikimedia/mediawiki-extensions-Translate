@@ -28,6 +28,10 @@ $wgResourceModules['ext.translate.base'] = array(
 	),
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.storage'] = array(
+	'scripts' => 'resources/js/ext.translate.storage.js',
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.editor'] = array(
 	'scripts' => array(
 		'resources/js/ext.translate.editor.js',
@@ -42,6 +46,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 	),
 	'dependencies' => array(
 		'ext.translate.base',
+		'ext.translate.storage',
 		'ext.translate.hooks',
 		'ext.translate.dropdownmenu',
 		'jquery.uls.grid',
