@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_896ebc95",
+        "filename": "MessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-10-08T09:56:56Z",
+      "side": 1,
+      "message": "repeat of line 708?",
+      "revId": "7af7cde6b235747a7b3b7dbfd2c4b812f711f625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_e92e5843",
+        "filename": "messagegroups/SandboxMessageGroup.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-10-08T09:56:56Z",
+      "side": 1,
+      "message": "User translations will not be retained in the list in the above logic. Out of 5 translation suggestions , if user translate 4 and comeback later, the old 4 translations wont be shown.",
+      "revId": "7af7cde6b235747a7b3b7dbfd2c4b812f711f625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
