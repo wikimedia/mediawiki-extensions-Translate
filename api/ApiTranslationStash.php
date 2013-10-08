@@ -87,7 +87,8 @@ class ApiTranslationStash extends ApiBase {
 
 	public function getExamples() {
 		return array(
-			"api.php?action=translationstash&subaction=add&title=MediaWiki:Jan/fi&value=tammikuu&metadata={}",
+			"api.php?action=translationstash&subaction=add&title=MediaWiki:Jan/fi&" .
+				"value=tammikuu&metadata={}",
 		);
 	}
 

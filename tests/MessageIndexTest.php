@@ -77,31 +77,37 @@ class MessageIndexTest extends MediaWikiTestCase {
 }
 
 class TestableDatabaseMessageIndex extends DatabaseMessageIndex {
+	// @codingStandardsIgnoreStart PHP CodeSniffer warns "Useless method overriding
+	// detected", but store() and get() are protected in parent.
 	public function store( array $a ) {
 		parent::store( $a );
 	}
 
 	public function get( $a ) {
 		return parent::get( $a );
-	}
+	} // @codingStandardsIgnoreEnd
 }
 
 class TestableCDBMessageIndex extends CDBMessageIndex {
+	// @codingStandardsIgnoreStart PHP CodeSniffer warns "Useless method overriding
+	// detected", but store() and get() are protected in parent.
 	public function store( array $a ) {
 		parent::store( $a );
 	}
 
 	public function get( $a ) {
 		return parent::get( $a );
-	}
+	} // @codingStandardsIgnoreEnd
 }
 
 class TestableSerializedMessageIndex extends SerializedMessageIndex {
+	// @codingStandardsIgnoreStart PHP CodeSniffer warns "Useless method overriding
+	// detected", but store() and get() are protected in parent.
 	public function store( array $a ) {
 		parent::store( $a );
 	}
 
 	public function get( $a ) {
 		return parent::get( $a );
-	}
+	} // @codingStandardsIgnoreEnd
 }
