@@ -247,6 +247,7 @@ $specialPageAliases['de'] = array(
 	'AggregateGroups' => array( 'Zusammenfassende_Nachrichtengruppen' ),
 	'SearchTranslations' => array( 'Übersetzungen_suchen' ),
 	'TranslateSandbox' => array( 'Übersetzerspielwiese_verwalten' ),
+	'TranslationStash' => array( 'Übersetzungsversteck' ),
 );
 
 /** Zazaki (Zazaki) */

@@ -48,22 +48,26 @@ $messages['qqq'] = array(
 
 Followed by a list of the pending requests.',
 	'tsb-reminder-title-generic' => 'Subject of an email',
-	'tsb-reminder-content-generic' => 'Body of an email.
+	'tsb-reminder-content-generic' => 'Body of an email. Parameters:
 * $1 - user name of the recipient
 * $2 - URL to the website',
-	'tsb-request-count' => 'Label showing number of requests
-*$1 - Number of requests ',
-	'tsb-all-languages-button-label' => 'Button label for filtering the requests by language.',
+	'tsb-request-count' => 'Label showing number of requests. Parameters:
+* $1 - number of requests
+{{Identical|Request}}',
+	'tsb-all-languages-button-label' => 'Button label for filtering the requests by language.
+{{Identical|All languages}}',
 	'tsb-search-requests' => 'Placeholder text for request search box on top of [[Special:TranslateSandbox]].',
-	'tsb-accept-button-label' => 'Button label for accept button in [[Special:TranslateSandbox]]',
-	'tsb-reject-button-label' => 'Button label for reject button in [[Special:TranslateSandbox]]',
+	'tsb-accept-button-label' => 'Button label for accept button in [[Special:TranslateSandbox]].
+{{Identical|Accept}}',
+	'tsb-reject-button-label' => 'Button label for reject button in [[Special:TranslateSandbox]].
+{{Identical|Reject}}',
 	'tsb-reminder-link-text' => 'Link text for sending reminder emails about translator signup requests.',
-	'translationstash' => 'Page title for [[Special:TranslationStash|Special page]].',
-	'translate-translationstash-welcome' => 'Title text shown for the [[Special:TranslationStash|Special page]]
-	* $1 - user name of the new translator',
-	'translate-translationstash-welcome-note' => 'Title note for the [[Special:TranslationStash|Special page]]',
-	'translate-translationstash-initialtranslation' => 'Header for messages showing the progress of translations in [[Special:TranslationStash|Special page]]',
-
+	'translationstash' => 'Page title for [[Special:TranslationStash]].
+{{Identical|Welcome}}',
+	'translate-translationstash-welcome' => 'Title text shown for the [[Special:TranslationStash]]. Parameters:
+* $1 - user name of the new translator',
+	'translate-translationstash-welcome-note' => 'Title note for the [[Special:TranslationStash]].',
+	'translate-translationstash-initialtranslation' => 'Header for messages showing the progress of translations in [[Special:TranslationStash]].',
 );
 
 /** Afrikaans (Afrikaans)
@@ -131,6 +135,16 @@ vielen Dank für deine Registrierung auf {{SITENAME}}. Wenn du deine Testüberse
 vervollständigst, werden dir bald die Administratoren einen vollen Übersetzungszugriff gewähren.
 
 Bitte besuche $2 und erstelle einige weitere Übersetzungen.',
+	'tsb-request-count' => '{{PLURAL:$1|Eine Anfrage|$1 Anfragen}}',
+	'tsb-all-languages-button-label' => 'Alle Sprachen',
+	'tsb-search-requests' => 'Anfragen durchsuchen',
+	'tsb-accept-button-label' => 'Akzeptieren',
+	'tsb-reject-button-label' => 'Ablehnen',
+	'tsb-reminder-link-text' => 'E-Mail-Erinnerung senden',
+	'translationstash' => 'Willkommen',
+	'translate-translationstash-welcome' => 'Danke $1, du bist {{GENDER:$1|ein neuer Übersetzer|eine neue Übersetzerin}}.',
+	'translate-translationstash-welcome-note' => 'Werde mit den Übersetzungswerkzeugen vertraut, indem du einige zufällig ausgewählte Nachrichten übersetzt.',
+	'translate-translationstash-initialtranslation' => 'Deine erste Übersetzung',
 );
 
 /** Spanish (español)
@@ -154,6 +168,16 @@ $messages['fr'] = array(
 Merci de vous être inscrit sur {{SITENAME}}. Si vous achevez vos traductions de test, les administrateurs pourront bientôt vous accorder un plein accès aux traductions.
 
 Veuillez venir sur $2 et faire quelques traductions de plus.',
+	'tsb-request-count' => '{{PLURAL:$1|Une demande|$1 demandes}}',
+	'tsb-all-languages-button-label' => 'Toutes les langues',
+	'tsb-search-requests' => 'Demandes de recherche',
+	'tsb-accept-button-label' => 'Accepter',
+	'tsb-reject-button-label' => 'Rejeter',
+	'tsb-reminder-link-text' => 'Envoyer un courriel de rappel',
+	'translationstash' => 'Bienvenue',
+	'translate-translationstash-welcome' => 'Merci {{GENDER:$1|$1}}, vous êtes un nouveau traducteur',
+	'translate-translationstash-welcome-note' => 'Familiarisez-vous avec les outils de traduction en traduisant quelques messages sélectionnés aléatoirement.',
+	'translate-translationstash-initialtranslation' => 'Votre traduction initiale',
 );
 
 /** Galician (galego)
@@ -209,9 +233,17 @@ Vieni su $2 e fai alcune altre traduzioni.",
 $messages['ja'] = array(
 	'translatesandbox' => '翻訳者サンドボックスの管理',
 	'tsb-filter-pending' => '保留中の申請',
+	'tsb-request-count' => '{{PLURAL:$1|$1 件の申請}}',
+	'tsb-all-languages-button-label' => 'すべての言語',
+	'tsb-search-requests' => '申請の検索',
+	'tsb-accept-button-label' => '承認',
+	'tsb-reject-button-label' => '却下',
+	'translationstash' => 'ようこそ',
+	'translate-translationstash-welcome' => '$1 さん、ありがとうございます。あなたは翻訳者になりました',
 );
 
 /** Korean (한국어)
+ * @author Hym411
  * @author 아라
  */
 $messages['ko'] = array(
@@ -225,6 +257,7 @@ $messages['ko'] = array(
 있습니다.
 
 $2에 와서 조금 더 번역을 해주세요.',
+	'tsb-all-languages-button-label' => '모든 언어',
 );
 
 /** Colognian (Ripoarisch)
@@ -279,6 +312,7 @@ Sila ke $2 untuk membuat lebih banyak kerja terjemahan.',
 
 /** Dutch (Nederlands)
  * @author Siebrand
+ * @author Sjoerddebruin
  */
 $messages['nl'] = array(
 	'translatesandbox' => 'Vertalersszandbak beheren',
@@ -289,6 +323,11 @@ $messages['nl'] = array(
 Bedankt voor het registreren bij {{SITENAME}}. Als u uw testvertalingen afrondt, kunnen de beheerders u snel volledige vertaaltoegang geven.
 
 Kon alstublieft naar $2 en maak nog wat meer vertalingen.',
+	'tsb-all-languages-button-label' => 'Alle talen',
+	'tsb-accept-button-label' => 'Accepteren',
+	'tsb-reject-button-label' => 'Afwijzen',
+	'tsb-reminder-link-text' => 'Herinnering per e-mail verzenden',
+	'translationstash' => 'Welkom',
 );
 
 /** Occitan (occitan)
@@ -365,6 +404,7 @@ $messages['te'] = array(
 );
 
 /** Ukrainian (українська)
+ * @author Andriykopanytsia
  * @author Base
  * @author Ата
  */
@@ -374,10 +414,14 @@ $messages['uk'] = array(
 	'tsb-reminder-title-generic' => 'Завершіть своє представлення, щоб стати перевіреним перекладачем',
 	'tsb-reminder-content-generic' => 'Привіт, $1!
 
-Дякуємо за реєстрацію у проекті {{SITENAME}}. Якщо Ви завершите свої тестові
+Дякуємо за реєстрацію у проекті {{SITENAME}}. Якщо Ви завершите свої тестові 
 переклади, адміністратори зможуть скоро надати Вам повні права на переклад.
 
 Будь ласка, перейдіть на $2 і зробіть ще декілька перекладів.',
+	'translationstash' => 'Ласкаво просимо',
+	'translate-translationstash-welcome' => 'Дякуємо {{GENDER:$1|$1}}, ви є новий перекладач',
+	'translate-translationstash-welcome-note' => 'Ознайомитися з інструментами перекладу шляхом перекладу деяких випадково вибраних повідомлень.',
+	'translate-translationstash-initialtranslation' => 'Ваш початковий переклад',
 );
 
 /** Vietnamese (Tiếng Việt)
