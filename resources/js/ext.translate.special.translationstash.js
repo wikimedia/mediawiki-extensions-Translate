@@ -86,7 +86,8 @@
 		$messageTable.append( $messageWrapper );
 		// Attach translate editor to the message
 		$messageWrapper.translateeditor( {
-			message: message
+			message: message,
+			storage: new mw.translate.TranslationStashStorage()
 		} );
 	}
 
