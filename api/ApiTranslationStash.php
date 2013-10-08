@@ -23,9 +23,9 @@ class ApiTranslationStash extends ApiBase {
 
 			$translation = new StashedTranslation(
 				$this->getUser(),
-				Title::newFromText( $params['key'] ),
-				FormatJson::decode( $params['value'], true ),
-				$params['metadata']
+				Title::newFromText( $params['title'] ),
+				$params['value'],
+				FormatJson::decode( $params['metadata'], true )
 			);
 			$stash->addTranslation( $translation );
 		}
@@ -40,8 +40,24 @@ class ApiTranslationStash extends ApiBase {
 		return true;
 	}
 
+	public function needsToken() {
+		return true;
+	}
+
 	public function getTokenSalt() {
-		return 'sandbox';
+		return 'translationstash';
+	}
+
+	public static function getToken() {
+		$user = RequestContext::getMain()->getUser();
+
+		return $user->getEditToken( 'translationstash' );
+	}
+
+	public static function injectTokenFunction( &$list ) {
+		$list['translationstash'] = array( __CLASS__, 'getToken' );
+
+		return true;
 	}
 
 	public function getAllowedParams() {
