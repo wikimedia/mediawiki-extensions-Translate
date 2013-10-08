@@ -1259,7 +1259,7 @@ Siin saad valida, milliseid keeli soovid näha, kui soovid.',
 	'translate-fs-userpage-level-3' => 'Räägin seda keelt heal tasemel',
 	'translate-fs-userpage-level-2' => 'Räägin seda keelt keskmisel tasemel',
 	'translate-fs-userpage-level-1' => 'Räägin natuke seda keelt',
-	'translate-fs-userpage-help' => 'Palun kirjelda oma keelteoskust ja räägi midagi endast. Kui oskad rohkem kui viit keelt, saad ülejäänud hiljem lisada.', # Fuzzy
+	'translate-fs-userpage-help' => 'Palun kirjelda oma keelteoskust ja räägi midagi endast. Kui oskad rohkem kui viit keelt, saad ülejäänud hiljem lisada.',
 	'translate-fs-userpage-submit' => 'Loo oma kasutajalehekülg',
 	'translate-fs-userpage-done' => 'Hästi tehtud! Nüüd on sul kasutajalehekülg.',
 	'translate-fs-permissions-planguage' => 'Põhikeel:',
@@ -1720,7 +1720,7 @@ Du chunnsch derno derzue eimol im Monet e Newsletter iber.
 Wänn Du kei Newsletter witt iberchuu, chasch di im Tab „{{int:prefs-personal}}“ in [[Special:Preferences|Dyyne Yystellige]] uustrage.',
 );
 
-/** Hakka (Hak-kâ-fa)
+/** Hakka (客家語/Hak-kâ-ngî)
  * @author Anson2812
  * @author Jetlag
  */
@@ -2037,7 +2037,7 @@ A végén hozzákezdhetsz bármelyik, {{SITENAME}} által támogatott projekt ''
 	'translate-fs-userpage-level-2' => 'Megértetem magam:',
 	'translate-fs-userpage-level-1' => 'Ismerem valamennyire:',
 	'translate-fs-userpage-help' => 'Kérjük jelezd, hogy mennyire beszélsz idegen nyelveken és mondj valamit magadról. Ha több mint öt nyelvet ismersz, ezt később megadhatod.',
-	'translate-fs-userpage-submit' => 'Felhasználói lap létrehozása', # Fuzzy
+	'translate-fs-userpage-submit' => 'Felhasználói lap létrehozása',
 	'translate-fs-userpage-done' => 'Felhasználói lap létrehozva.',
 	'translate-fs-permissions-planguage' => 'Elsődleges nyelv:',
 	'translate-fs-permissions-submit' => 'Kérelem elküldése',
@@ -3458,7 +3458,7 @@ Aqui você os escolherá, se assim desejar.',
 	'translate-fs-userpage-level-3' => 'Tenho um bom domínio de',
 	'translate-fs-userpage-level-2' => 'Tenho conhecimentos moderados de',
 	'translate-fs-userpage-level-1' => 'Sei um pouco de',
-	'translate-fs-userpage-help' => 'Indique suas habilidades em idiomas e nos fale algo sobre você. Caso tenha conhecimentos em mais de cinco idiomas, será possível especificá-los em outro momento.', # Fuzzy
+	'translate-fs-userpage-help' => 'Indique suas habilidades em idiomas e nos fale algo sobre você. Caso tenha conhecimentos em mais de cinco idiomas, será possível especificá-los em outro momento.',
 	'translate-fs-userpage-submit' => 'Criar a sua página de usuário',
 	'translate-fs-userpage-done' => 'Bom trabalho! Agora você tem uma página de usuário.',
 	'translate-fs-permissions-planguage' => 'Idioma principal:',
@@ -3521,7 +3521,7 @@ Aici puteți alege limbile pe care doriți să le afișați.',
 	'translate-fs-userpage-level-3' => 'Am cunoștințe bune de',
 	'translate-fs-userpage-level-2' => 'Am cunoștințe rezonabile de',
 	'translate-fs-userpage-level-1' => 'O cunosc destul de puțin',
-	'translate-fs-userpage-help' => 'Vă rugăm să vă indicați competențele lingvistice și să ne spuneți câte ceva despre dumneavoastră. Dacă cunoașteți mai mult de cinci limbi, le puteți adăuga mai târziu pe restul.', # Fuzzy
+	'translate-fs-userpage-help' => 'Vă rugăm să vă indicați competențele lingvistice și să ne spuneți câte ceva despre dumneavoastră. Dacă cunoașteți mai mult de cinci limbi, le puteți adăuga mai târziu pe restul.',
 	'translate-fs-userpage-submit' => 'Creați-vă pagina de utilizator',
 	'translate-fs-userpage-done' => 'Foarte bine! Acum aveți o pagină de utilizator.',
 	'translate-fs-permissions-planguage' => 'Limbă principală:',
@@ -3815,7 +3815,7 @@ Tukaj lahko izberete jezike, ki bi jih radi videli, če to želite.',
 	'translate-fs-userpage-level-3' => 'Zelo dobro govorim',
 	'translate-fs-userpage-level-2' => 'Srednje dobro govorim',
 	'translate-fs-userpage-level-1' => 'Poznam osnove',
-	'translate-fs-userpage-help' => 'Prosimo, navedite svoje znanje jezikov in nam povejte nekaj o sebi. Če znate več kot pet jezikov, jih lahko dodate pozneje.', # Fuzzy
+	'translate-fs-userpage-help' => 'Prosimo, navedite svoje znanje jezikov in nam povejte nekaj o sebi. Če znate več kot pet jezikov, jih lahko dodate pozneje.',
 	'translate-fs-userpage-submit' => 'Ustvarite svojo uporabniško stran',
 	'translate-fs-userpage-done' => 'Dobro opravljeno! Sedaj imate uporabniško stran.',
 	'translate-fs-permissions-planguage' => 'Prvotni jezik:',
@@ -4361,7 +4361,7 @@ và là ngôn ngữ mặc định để biên dịch sang.',
 	'translate-fs-userpage-level-3' => 'Tôi biên dịch lưu loát sang',
 	'translate-fs-userpage-level-2' => 'Tôi biên dịch với trình độ trung bình sang',
 	'translate-fs-userpage-level-1' => 'Tôi biên dịch với trình độ cơ bản sang',
-	'translate-fs-userpage-help' => 'Xin vui lòng tự giới thiệu và cho biết khả năng sử dụng các ngôn ngữ. Nếu bạn sử dụng hơn năm thứ tiếng, bạn có thể bổ sung thêm sau này.', # Fuzzy
+	'translate-fs-userpage-help' => 'Xin vui lòng tự giới thiệu và cho biết khả năng sử dụng các ngôn ngữ. Nếu bạn sử dụng hơn năm thứ tiếng, bạn có thể bổ sung thêm sau này.',
 	'translate-fs-userpage-submit' => 'Tạo trang cá nhân',
 	'translate-fs-userpage-done' => 'Tốt lắm! Bây giờ bạn đã có trang người dùng.',
 	'translate-fs-permissions-planguage' => 'Ngôn ngữ chính:',

@@ -2203,8 +2203,14 @@ $messages['cy'] = array(
 	'pagetranslation' => 'Cyfieithu tudalen',
 	'tpt-section' => 'Adran gyfieithu rhif $1',
 	'tpt-section-deleted' => 'Adran gyfieithu rhif $1',
+	'tpt-template' => 'Nodyn y dudalen',
+	'tpt-templatediff' => 'Newidiwyd nodyn y dudalen.',
 	'tpt-diff-old' => 'Y testun cynt',
 	'tpt-diff-new' => 'Y testun newydd',
+	'tpt-submit' => "Marcio'r diwygiad hwn i'w gyfieithu",
+	'tpt-sections-oldnew' => "Unedau cyfieithu, yn newydd ac yno'n barod",
+	'tpt-sections-deleted' => 'Unedau cyfieithu dileedig',
+	'tpt-sections-template' => 'Nodyn cyfieithu tudalen',
 	'tpt-other-pages-title' => 'Tudalennau toredig',
 	'tpt-select-prioritylangs-reason' => 'Rheswm:',
 	'tpt-sections-prioritylangs' => 'Blaenoriaethau ymhlith yr ieithoedd',
@@ -6436,7 +6442,7 @@ $messages['ku-latn'] = array(
 	'pt-deletepage-list-other' => 'Binrûpelên din',
 );
 
-/** Kirghiz (Кыргызча)
+/** Kyrgyz (Кыргызча)
  * @author Викиней
  */
 $messages['ky'] = array(
@@ -8535,7 +8541,7 @@ mas nenhuma versão {{PLURAL:$1|desta página|destas páginas}} está marcada pa
 mas {{PLURAL:$1|a última versão não pode ser marcada|as últimas versões não podem ser marcadas}} para tradução.',
 	'tpt-discouraged-pages' => '{{PLURAL:$1|Esta página deixou|Estas páginas deixaram}} de ser relevantes para novas traduções.',
 	'tpt-select-prioritylangs' => 'Códigos de idiomas prioritários, separados por vírgulas:',
-	'tpt-select-prioritylangs-force' => 'Impedir traduções para idiomas que não sejam os prioritários', # Fuzzy
+	'tpt-select-prioritylangs-force' => 'Impedir traduções para idiomas que não sejam os prioritários',
 	'tpt-select-prioritylangs-reason' => 'Motivo:',
 	'tpt-sections-prioritylangs' => 'Idiomas prioritários',
 	'tpt-rev-mark' => 'marcar para traduzir',
