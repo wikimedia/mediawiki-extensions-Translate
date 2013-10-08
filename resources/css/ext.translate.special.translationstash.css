@@ -36,9 +36,6 @@ h1.firstHeading {
 	text-align: right;
 }
 
-.ext-translate-language-selector .uls {
-	cursor: pointer;
-}
 
 /* The triangle shaped down-pointing callout after the language name
  * in the target language selector
