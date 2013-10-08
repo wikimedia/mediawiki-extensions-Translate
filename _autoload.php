@@ -49,6 +49,7 @@ $wgAutoloadClasses['SpecialTranslate'] = "$dir/specials/SpecialTranslate.php";
 $wgAutoloadClasses['SpecialTranslateSandbox'] = "$dir/specials/SpecialTranslateSandbox.php";
 $wgAutoloadClasses['SpecialTranslationStats'] = "$dir/specials/SpecialTranslationStats.php";
 $wgAutoloadClasses['SpecialTranslations'] = "$dir/specials/SpecialTranslations.php";
+$wgAutoloadClasses['SpecialTranslationStash'] = "$dir/specials/SpecialTranslationStash.php";
 /**@}*/
 
 /**
