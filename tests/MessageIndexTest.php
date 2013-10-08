@@ -76,6 +76,11 @@ class MessageIndexTest extends MediaWikiTestCase {
 	}
 }
 
+/**
+ * Class TestableDatabaseMessageIndex
+ * @codingStandardsIgnoreStart for all below code. PHP CodeSniffer warns "Useless
+ *   method overriding detected", but store() and get() are protected in parent.
+ */
 class TestableDatabaseMessageIndex extends DatabaseMessageIndex {
 	public function store( array $a ) {
 		parent::store( $a );
@@ -104,4 +109,4 @@ class TestableSerializedMessageIndex extends SerializedMessageIndex {
 	public function get( $a ) {
 		return parent::get( $a );
 	}
-}
+} // @codingStandardsIgnoreEnd
