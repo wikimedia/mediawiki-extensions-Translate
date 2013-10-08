@@ -8,6 +8,19 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	function saveToStash( source, translation ) {
+		return new mw.Api().postWithEditToken( {
+			action: 'translationstash',
+			subaction: 'add',
+			title: source,
+			value: translation
+		} );
+	}
+
+	// Customize the save api of translat editor plugin so that
+	// translations go to the translation stash
+	$.fn.translateeditor.Constructor.prototype.saveAPI = saveToStash;
+
 	function getMessages( messageGroup, language, offset, limit ) {
 		var api = new mw.Api();
 
