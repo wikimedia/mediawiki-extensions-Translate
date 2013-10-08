@@ -165,7 +165,6 @@
 		);
 	}
 
-
 	$( document ).ready( function () {
 		var $selectAll = $( '.request-selector-all' );
 

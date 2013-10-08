@@ -23,6 +23,4 @@
 			'Brackets with https:// protocol creates a link'
 		);
 	} );
-
-
 }( jQuery, mediaWiki ) );

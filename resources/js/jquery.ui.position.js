@@ -7,6 +7,7 @@
  * http://jquery.org/license
  *
  * http://api.jqueryui.com/position/
+ * @codingStandardsIgnoreFile External lib.
  */
 (function( $, undefined ) {
 

@@ -59,7 +59,7 @@
 				return $( '<div>' ).append( link ).html();
 			} );
 
-			externals = new RegExp( '\\[((' + protocols  + ')[^ ]+) (.+?)\\]', 'g');
+			externals = new RegExp( '\\[((' + protocols + ')[^ ]+) (.+?)\\]', 'g');
 			text = text.replace( externals, function ( match, p1, p2, p3 ) {
 				var link = $( '<a>' ).html( p3 ).prop( 'href', p1 );
 				return $( '<div>' ).append( link ).html();

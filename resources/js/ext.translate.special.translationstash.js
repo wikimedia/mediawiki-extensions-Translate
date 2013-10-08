@@ -105,7 +105,7 @@
 				} );
 			} ).fail( function ( errorCode, response ) {
 				$messageTable.empty().addClass( 'error' )
-					.text( 'Error: '+ errorCode + ' - ' + response.error.info );
+					.text( 'Error: ' + errorCode + ' - ' + response.error.info );
 			} );
 	}
 
