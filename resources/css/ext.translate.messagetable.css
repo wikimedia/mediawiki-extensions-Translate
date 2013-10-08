@@ -344,3 +344,40 @@
 	cursor: pointer;
 	margin: 0 10px;
 }
+
+
+.ext-translate-language-selector-label {
+	color: #555555;
+}
+
+.ext-translate-language-selector {
+	float: right;
+	text-align: right;
+	border: medium none;
+	font-size: 14pt;
+	font-weight: normal;
+	line-height: 1.25em;
+	padding-bottom: 3px;
+	padding-left: 15px;
+	padding-top: 1.25em;
+}
+
+/* The triangle shaped down-pointing callout after the language name
+ * in the target language selector
+ */
+.ext-translate-language-selector:after {
+	margin-left: 4px;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid #0645AD;
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.ext-translate-language-selector .uls {
+	color: #0645AD;
+	cursor: pointer;
+	min-height: 1px;
+	position: relative;
+}

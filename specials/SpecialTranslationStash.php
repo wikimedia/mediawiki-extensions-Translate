@@ -47,7 +47,7 @@ class SpecialTranslationStash extends SpecialPage {
 		<div class="six columns stash-stats">
 			{$this->msg( 'translate-translationstash-initialtranslation' )->parse()}
 		</div>
-		<div class="six columns ext-translate-language-selector right"
+		<div class="six columns ext-translate-language-selector right">
 			{$this->tuxLanguageSelector()}
 		</div>
 	</div>
