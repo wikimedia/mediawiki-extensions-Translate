@@ -27,7 +27,7 @@ class ApiTranslationStash extends ApiBase {
 				FormatJson::decode( $params['value'], true ),
 				$params['metadata']
 			);
-			$stash->add( $translation );
+			$stash->addTranslation( $translation );
 		}
 
 		// If we got this far, nothing has failed
