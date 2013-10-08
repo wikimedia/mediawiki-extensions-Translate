@@ -90,7 +90,7 @@
 
 	function loadMessages() {
 		var $messageTable = $( '.tux-messagelist' ),
-			messagegroup = '!recent'; // FIXME
+			messagegroup = '!sandbox';
 
 		getMessages( messagegroup, $messageTable.data( 'targetLang' ), 0, 5 )
 			.done( function ( result ) {

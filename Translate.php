@@ -581,6 +581,12 @@ $wgTranslateUseSandbox = false;
  */
 $wgTranslateSandboxPromotedGroup = false;
 
+/**
+ * List of page names to always suggest for sandboxed users.
+ * @since 2013.10
+ */
+$wgTranslateSandboxSuggestions = array();
+
 # </source>
 # === Unsorted ===
 # <source lang=php>
