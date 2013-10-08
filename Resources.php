@@ -362,6 +362,7 @@ $wgResourceModules['ext.translate.special.translatesandbox'] = array(
 $wgResourceModules['ext.translate.special.translationstash'] = array(
 	'scripts' => 'resources/js/ext.translate.special.translationstash.js',
 	'styles' => 'resources/css/ext.translate.special.translationstash.css',
+	'position' => 'top',
 	'dependencies' => array(
 		'ext.translate.editor',
 		'ext.translate.messagetable',
