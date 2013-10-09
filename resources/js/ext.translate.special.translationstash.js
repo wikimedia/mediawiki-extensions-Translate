@@ -8,10 +8,11 @@
 ( function ( $, mw ) {
 	'use strict';
 
-	function getMessages( messageGroup, language, offset, limit ) {
-		var api = new mw.Api();
+	var userTranslations = {},
+		translationStashStorage = new mw.translate.TranslationStashStorage();
 
-		return api.get( {
+	function getMessages( messageGroup, language, offset, limit ) {
+		var deferred = new mw.Api().get( {
 			action: 'query',
 			list: 'messagecollection',
 			mcgroup: messageGroup,
@@ -22,7 +23,7 @@
 			mcprop: 'definition|properties'
 		} );
 
-		// @todo: We need to get translations from the stash api
+		return deferred.promise();
 	}
 
 	function addMessage( message ) {
@@ -87,7 +88,7 @@
 		// Attach translate editor to the message
 		$messageWrapper.translateeditor( {
 			message: message,
-			storage: new mw.translate.TranslationStashStorage()
+			storage: translationStashStorage
 		} );
 	}
 
@@ -100,6 +101,10 @@
 				var messages = result.query.messagecollection;
 				$.each( messages, function ( index, message ) {
 					message.group = messagegroup;
+					if ( userTranslations[message.title] ) {
+						message.translation = userTranslations[message.title].value;
+					}
+
 					addMessage( message );
 					if ( index === 0 ) {
 						// Show the editor for the first message.
@@ -138,6 +143,17 @@
 				loadMessages();
 			}
 		} );
-		loadMessages();
+		// Get the user translations if any(possibly from an early attempt)
+		// and new messages to try.
+		translationStashStorage.getUserTranslations()
+			.done( function( translations ) {
+				if ( translations.translationstash.translations ) {
+					$.each( translations.translationstash.translations,
+						function ( index, translation ) {
+							userTranslations[translation.title] = translation;
+					} );
+				}
+				loadMessages();
+			} );
 	} );
 }( jQuery, mediaWiki ) );
