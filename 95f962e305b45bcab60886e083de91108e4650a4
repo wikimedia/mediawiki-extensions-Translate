@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_60e352dd",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-09T08:50:43Z",
+      "side": 1,
+      "message": "Constructors usually start with a capital letter. Compare with new mw.Api().post( ... )",
+      "revId": "95f962e305b45bcab60886e083de91108e4650a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_a0ed4ac6",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-09T08:50:43Z",
+      "side": 1,
+      "message": "minor: response.error might be undefined",
+      "revId": "95f962e305b45bcab60886e083de91108e4650a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_80e846b7",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-09T08:50:43Z",
+      "side": 1,
+      "message": "double tab sneaked in here",
+      "revId": "95f962e305b45bcab60886e083de91108e4650a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_c0d23eff",
+        "filename": "resources/js/ext.translate.storage.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-09T08:50:43Z",
+      "side": 1,
+      "message": "Just wondering whether we will run into confusion later on if we introduce stores for other things besides translations.",
+      "revId": "95f962e305b45bcab60886e083de91108e4650a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
