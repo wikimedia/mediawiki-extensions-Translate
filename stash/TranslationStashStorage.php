@@ -54,6 +54,7 @@ class TranslationStashStorage {
 
 		$objects = array();
 		foreach ( $res as $row ) {
+
 			$objects[] = new StashedTranslation(
 				$user,
 				Title::makeTitle( $row->ts_namespace, $row->ts_title ),
