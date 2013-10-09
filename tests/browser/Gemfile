@@ -1,0 +1,12 @@
+#ruby=ruby-2.0.0-p247
+#ruby-gemset=Translate
+
+source 'https://rubygems.org'
+
+gem 'cucumber'
+gem 'json'
+gem 'mediawiki-selenium'
+gem 'net-http-persistent'
+gem 'page-object'
+gem 'rspec-expectations'
+gem 'syntax'
