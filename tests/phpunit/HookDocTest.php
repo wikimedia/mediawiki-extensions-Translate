@@ -31,7 +31,7 @@ class HookDocTest extends MediaWikiTestCase {
 
 	protected function setUp() {
 		parent::setUp();
-		$contents = file_get_contents( __DIR__ . "/../hooks.txt" );
+		$contents = file_get_contents( __DIR__ . '/../../hooks.txt' );
 		$blocks = preg_split( '/\n\n/', $contents );
 		$type = false;
 
@@ -52,7 +52,7 @@ class HookDocTest extends MediaWikiTestCase {
 			}
 		}
 
-		$prefix = __DIR__ . '/..';
+		$prefix = __DIR__ . '/../..';
 		foreach ( $this->paths['php'] as $path ) {
 			$path = "$prefix/$path/";
 			$hooks = self::getHooksFromPath( $path, 'self::getPHPHooksFromFile' );
