@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_a05c6aeb",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-09T05:45:36Z",
+      "side": 1,
+      "message": "This doesn\u0027t actually return an API. This is just a low level function that performs the actual save and returns a promise.",
+      "revId": "318d1341c1a72442ba58d8113a30184fccc31a33",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_c0715e78",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-09T05:45:36Z",
+      "side": 1,
+      "message": "Is there a reason we need to access the methods of an deferred (like reject and resolve)? If not, we should return a promise instead.",
+      "revId": "318d1341c1a72442ba58d8113a30184fccc31a33",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_805766c8",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-09T05:45:36Z",
+      "side": 1,
+      "message": "\"source\" can be confused with source text. I\u0027d call it \"title\" or \"page\".\n\nUsually these methods are named (at least in PHP side) as doSave().\n\nThere is also an other way to do this. I do not know how it will work in JavaScript. In PHP you can implement something like TranslationStorage class (see the new TranslationStashStorage class). Then you inject this class to the editor object when constructing it.\n\nThe primary reason for this is that you can easily replace the implementation, for different backend API or with a mock class for tests.",
+      "revId": "318d1341c1a72442ba58d8113a30184fccc31a33",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
