@@ -8,10 +8,20 @@
 ( function ( $, mw ) {
 	'use strict';
 
-	function getMessages( messageGroup, language, offset, limit ) {
+	function getUserTranslations() {
 		var api = new mw.Api();
 
 		return api.get( {
+			action: 'translationstash',
+			subaction: 'query',
+			token: $( '#token' ).val()
+		} );
+	}
+
+	function getMessages( messageGroup, language, offset, limit ) {
+		var api = new mw.Api();
+
+		return api.post( {
 			action: 'query',
 			list: 'messagecollection',
 			mcgroup: messageGroup,
@@ -21,8 +31,6 @@
 			mclimit: limit,
 			mcprop: 'definition|properties'
 		} );
-
-		// @todo: We need to get translations from the stash api
 	}
 
 	function addMessage( message ) {
@@ -139,5 +147,6 @@
 			}
 		} );
 		loadMessages();
+		getUserTranslations();
 	} );
 }( jQuery, mediaWiki ) );
