@@ -26,7 +26,7 @@ class SpecialPagesTest extends MediaWikiTestCase {
 	}
 
 	public static function provideSpecialPages() {
-		require __DIR__ . '/../_autoload.php';
+		require __DIR__ . '/../../_autoload.php';
 		global $wgSpecialPages;
 
 		$pages = array();

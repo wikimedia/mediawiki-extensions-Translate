@@ -198,17 +198,25 @@ class TranslateHooks {
 	 * @param $files array
 	 * @return bool
 	 */
-	public static function setupUnitTests( &$files ) {
-		$testDir = __DIR__ . '/tests/';
-		$files = array_merge( $files, glob( "$testDir/*Test.php" ) );
+	public static function setupUnitTests( array &$files ) {
+		$dir = __DIR__ . '/tests/phpunit';
+		$directoryIterator = new RecursiveDirectoryIterator( $dir );
+		$fileIterator = new RecursiveIteratorIterator( $directoryIterator );
+
+		/// @var SplFileInfo $fileInfo
+		foreach ( $fileIterator as $fileInfo ) {
+			if ( substr( $fileInfo->getFilename(), -8 ) === 'Test.php' ) {
+				$files[] = $fileInfo->getPathname();
+			}
+		}
 
 		return true;
 	}
 
 	/**
 	 * Hook: LoadExtensionSchemaUpdates
-     * @param $updater DatabaseUpdater
-     * @return bool
+	 * @param $updater DatabaseUpdater
+	 * @return bool
 	 */
 	public static function schemaUpdates( DatabaseUpdater $updater ) {
 		$dir = __DIR__ . '/sql';
