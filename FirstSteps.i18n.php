@@ -3389,7 +3389,7 @@ No fim, será capaz de traduzir as ''mensagens da interface'' de todos os projet
 	'translate-fs-selectlanguage' => 'Escolha uma língua',
 	'translate-fs-settings-planguage' => 'Idioma principal:',
 	'translate-fs-settings-slanguage' => 'Idioma de ajuda $1:',
-	'translate-fs-settings-submit' => 'Salvar preferências',
+	'translate-fs-settings-submit' => 'Gravar preferências',
 	'translate-fs-userpage-level-N' => 'Sou um falante nativo de',
 	'translate-fs-userpage-level-5' => 'Sou um tradutor profissional de',
 	'translate-fs-userpage-level-4' => 'Conheço como se fosse um falante nativo',

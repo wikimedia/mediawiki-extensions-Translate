@@ -906,6 +906,13 @@ $messages['uk'] = array(
 	'tux-sst-prev' => 'Попередні результати',
 );
 
+/** Uzbek (oʻzbekcha)
+ * @author CoderSI
+ */
+$messages['uz'] = array(
+	'tux-sst-facet-language' => 'Tillar',
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  */

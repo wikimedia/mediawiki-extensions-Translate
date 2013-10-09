@@ -8410,7 +8410,7 @@ A página que está a tentar editar não parece corresponder a nenhuma página m
 	'tpt-download-page' => 'Exportar a página com traduções',
 	'aggregategroups' => 'Grupos agregadores',
 	'tpt-aggregategroup-add' => 'Adicionar',
-	'tpt-aggregategroup-save' => 'Salvar',
+	'tpt-aggregategroup-save' => 'Gravar',
 	'tpt-aggregategroup-add-new' => 'Adiciona um novo grupo agregador',
 	'tpt-aggregategroup-new-name' => 'Nome:',
 	'tpt-aggregategroup-new-description' => 'Descrição (opcional):',

@@ -294,6 +294,16 @@ $messages['mk'] = array(
 Ви благодариме што се регистриравте на {{SITENAME}}. Пополнете ги пробните преводи, и администраторите набргу ќе ви доделат статус на преведувач.
 
 Појдете на $2 и направете уште некои преводи.',
+	'tsb-request-count' => '{{PLURAL:$1|Едно барање|$1 барања}}',
+	'tsb-all-languages-button-label' => 'Сите јазици',
+	'tsb-search-requests' => 'Пребарајте барања',
+	'tsb-accept-button-label' => 'Прифати',
+	'tsb-reject-button-label' => 'Одбиј',
+	'tsb-reminder-link-text' => 'Испрати потсетник по е-пошта',
+	'translationstash' => 'Добре дојдовте',
+	'translate-translationstash-welcome' => 'Благодарам {{GENDER:$1|$1}}, вие сте нов преведувач',
+	'translate-translationstash-welcome-note' => 'Запознајте се со преводните алатки преведувајќи некои произволно избрани пораки.',
+	'translate-translationstash-initialtranslation' => 'Вашиот првичен превод',
 );
 
 /** Malay (Bahasa Melayu)
@@ -418,6 +428,12 @@ $messages['uk'] = array(
 переклади, адміністратори зможуть скоро надати Вам повні права на переклад.
 
 Будь ласка, перейдіть на $2 і зробіть ще декілька перекладів.',
+	'tsb-request-count' => '{{PLURAL:$1|Один запит|$1 запити|$1 запитів}}',
+	'tsb-all-languages-button-label' => 'Усі мови',
+	'tsb-search-requests' => 'Пошукові запити',
+	'tsb-accept-button-label' => 'Прийняти',
+	'tsb-reject-button-label' => 'Відмовитися',
+	'tsb-reminder-link-text' => 'Надсилати нагадування по електронній пошті',
 	'translationstash' => 'Ласкаво просимо',
 	'translate-translationstash-welcome' => 'Дякуємо {{GENDER:$1|$1}}, ви є новий перекладач',
 	'translate-translationstash-welcome-note' => 'Ознайомитися з інструментами перекладу шляхом перекладу деяких випадково вибраних повідомлень.',
@@ -440,10 +456,13 @@ Xin vui lòng trở lại $2 để dịch tiếp.',
 
 /** Simplified Chinese (中文（简体）‎)
  * @author Hzy980512
+ * @author Liuxinyu970226
  */
 $messages['zh-hans'] = array(
 	'translatesandbox' => '管理译者沙盒',
 	'tsb-filter-pending' => '待解决请求',
+	'tsb-all-languages-button-label' => '所有语言',
+	'translationstash' => '欢迎',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
