@@ -267,11 +267,12 @@ $wgAutoloadClasses['TranslationStashStorage'] = "$dir/stash/TranslationStashStor
  * @name   "Test classes"
  * @{
  */
-$wgAutoloadClasses['MockFileBasedMessageGroup'] = "$dir/tests/MockFileBasedMessageGroup.php";
+$wgAutoloadClasses['MockFileBasedMessageGroup'] =
+	"$dir/tests/phpunit/MockFileBasedMessageGroup.php";
 $wgAutoloadClasses['MockMessageCollectionForExport'] =
-	"$dir/tests/MockMessageCollectionForExport.php";
-$wgAutoloadClasses['MockSuperUser'] = "$dir/tests/MockSuperUser.php";
-$wgAutoloadClasses['MockWikiMessageGroup'] = "$dir/tests/MockWikiMessageGroup.php";
+	"$dir/tests/phpunit/MockMessageCollectionForExport.php";
+$wgAutoloadClasses['MockSuperUser'] = "$dir/tests/phpunit/MockSuperUser.php";
+$wgAutoloadClasses['MockWikiMessageGroup'] = "$dir/tests/phpunit/MockWikiMessageGroup.php";
 /**@}*/
 
 /**

@@ -1,5 +1,5 @@
 ifndef MW_INSTALL_PATH
-	MW_INSTALL_PATH=../../..
+	MW_INSTALL_PATH=../../../..
 endif
 
 DIRS = api ffs insertables
