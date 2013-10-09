@@ -698,6 +698,10 @@ class MessageGroups {
 	public static function isTranslatableMessage( MessageHandle $handle ) {
 		static $cache = array();
 
+		if ( !$handle->isValid() ) {
+			return false;
+		}
+
 		$group = $handle->getGroup();
 		$groupId = $group->getId();
 		$language = $handle->getCode();
