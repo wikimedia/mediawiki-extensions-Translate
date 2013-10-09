@@ -19,8 +19,10 @@
 			mclanguage: language,
 			mcoffset: offset,
 			mclimit: limit,
-			mcprop: 'definition|translation|tags|properties'
+			mcprop: 'definition|properties'
 		} );
+
+		// @todo: We need to get translations from the stash api
 	}
 
 	function addMessage( message ) {
@@ -92,7 +94,7 @@
 		var $messageTable = $( '.tux-messagelist' ),
 			messagegroup = '!sandbox';
 
-		getMessages( messagegroup, $messageTable.data( 'targetLang' ), 0, 5 )
+		getMessages( messagegroup, $messageTable.data( 'targetlangcode' ), 0, 20 )
 			.done( function ( result ) {
 				var messages = result.query.messagecollection;
 				$.each( messages, function ( index, message ) {
@@ -110,18 +112,28 @@
 	}
 
 	$( 'document' ).ready( function () {
-		var $messageTable = $( '.tux-messagelist' );
+		var $messageTable = $( '.tux-messagelist' ),
+			$ulsTrigger = $( '.ext-translate-language-selector > .uls' );
 
-		$( '.ext-translate-language-selector .uls' ).uls( {
+		$ulsTrigger.uls( {
 			onSelect: function ( language ) {
-				$( '.ext-translate-language-selector > .uls' )
-					.text( $.uls.data.getAutonym( language ) )
+				var direction = $.uls.data.getDir( language ),
+					autonym = $.uls.data.getAutonym( language );
+
+				$ulsTrigger
+					.text( autonym )
 					.attr( {
 						lang: language,
-						dir: $.uls.data.getDir( language )
+						dir: direction
 					} );
-				$messageTable.empty();
-				$messageTable.data( 'targetLang', language );
+
+				$messageTable
+					.empty()
+					.data( {
+						targetlangcode: language,
+						targetlangdir: direction
+					} );
+
 				loadMessages();
 			}
 		} );
