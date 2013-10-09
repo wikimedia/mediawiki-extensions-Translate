@@ -77,8 +77,6 @@ class SandboxMessageGroup extends WikiMessageGroup {
 			$list[$index] = '';
 		}
 
-
-
 		// Message index of all known messages
 		$mi = MessageIndex::singleton();
 		// Get some random keys

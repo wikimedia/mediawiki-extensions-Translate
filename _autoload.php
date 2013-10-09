@@ -312,5 +312,6 @@ $wgAutoloadClasses['YandexWebService'] = "$dir/webservices/YandexWebService.php"
  */
 $wgAutoloadClasses['Insertable'] = "$dir/insertables/Insertable.php";
 $wgAutoloadClasses['InsertablesSuggester'] = "$dir/insertables/InsertablesSuggester.php";
-$wgAutoloadClasses['MediaWikiInsertablesSuggester'] = "$dir/insertables/MediaWikiInsertablesSuggester.php";
+$wgAutoloadClasses['MediaWikiInsertablesSuggester'] =
+	"$dir/insertables/MediaWikiInsertablesSuggester.php";
 /**@}*/

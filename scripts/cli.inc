@@ -32,7 +32,9 @@ require_once "$IP/maintenance/commandLine.inc";
  * with --quiet
  */
 function STDOUT( $str, $channel = null, $force = false ) {
+	// @codingStandardsIgnoreStart Globals should have prefix "wg".
 	global $options;
+	// @codingStandardsIgnoreEnd
 
 	if ( isset( $options['quiet'] ) && !$force ) {
 		return;
