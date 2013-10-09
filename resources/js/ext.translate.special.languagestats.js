@@ -112,7 +112,9 @@ mw.loader.using( 'jquery.colorUtil', function () {
 			$( '> td.hover-color', this )
 				// 30% more brightness
 				.css( 'background-color', function ( i, val ) {
+					// @codingStandardsIgnoreStart Bug in CodeSniffer?
 					return $.colorUtil.getColorBrightness( val, +0.3 );
+					// codingStandardsIgnoreEnd
 				} );
 		}, function () {
 			if ( !seenHoverIn ) {
