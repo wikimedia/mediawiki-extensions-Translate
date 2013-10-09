@@ -29,7 +29,22 @@
 			} );
 
 			return deferred.promise();
+		},
+
+		/**
+		 * Get the current users translations
+		 * @return {jQuery.Promise}
+		 */
+		getUserTranslations: function () {
+			var deferred = new mw.Api().get( {
+				action: 'translationstash',
+				subaction: 'query',
+				token: $( '#token' ).val()
+			} );
+
+			return deferred.promise();
 		}
+
 	};
 
 	mw.translate.TranslationStashStorage = TranslationStashStorage;

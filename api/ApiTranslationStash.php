@@ -18,6 +18,12 @@ class ApiTranslationStash extends ApiBase {
 		$action = $params['subaction'];
 
 		if ( $action === 'add' ) {
+			if ( !isset( $params['title'] ) ) {
+				$this->dieUsageMsg( array( 'missingparam', 'title' ) );
+			}
+			if ( !isset( $params['value'] ) ) {
+				$this->dieUsageMsg( array( 'missingparam', 'value' ) );
+			}
 			// Ugly, but API modules don't have proper dependency injection
 			$stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 
@@ -27,9 +33,23 @@ class ApiTranslationStash extends ApiBase {
 				$params['value'],
 				FormatJson::decode( $params['metadata'], true )
 			);
-			$stash->addTranslation( $translation );
+			$stash->addTranslation( serialize( $translation ) );
 		}
 
+		if ( $action === 'query' ) {
+			$stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
+			$translations = $stash->getTranslations( $this->getUser() );
+			$count = count( $translations );
+			for ( $i = 0; $i < $count; $i++ ) {
+				$translation = array(
+					'title' => $translations[$i]->getTitle()->getPrefixedDBKey(),
+					'value' => $translations[$i]->getValue(),
+					'metadata' => $translations[$i]->getMetadata(),
+				);
+				$output['translations'][] = $translation;
+			}
+
+		}
 		// If we got this far, nothing has failed
 		$output['result'] = 'ok';
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
@@ -63,16 +83,16 @@ class ApiTranslationStash extends ApiBase {
 	public function getAllowedParams() {
 		return array(
 			'subaction' => array(
-				ApiBase::PARAM_TYPE => array( 'add' ),
+				ApiBase::PARAM_TYPE => array( 'add', 'query' ),
 				ApiBase::PARAM_REQUIRED => true,
 			),
 			'title' => array(
 				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ApiBase::PARAM_REQUIRED => false,
 			),
 			'value' => array(
 				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ApiBase::PARAM_REQUIRED => false,
 			),
 			'metadata' => array(
 				ApiBase::PARAM_TYPE => 'string',

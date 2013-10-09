@@ -8,10 +8,13 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	var userTranslations = {},
+		translationStashStorage = new mw.translate.TranslationStashStorage();
+
 	function getMessages( messageGroup, language, offset, limit ) {
 		var api = new mw.Api();
 
-		return api.get( {
+		return api.post( {
 			action: 'query',
 			list: 'messagecollection',
 			mcgroup: messageGroup,
@@ -21,8 +24,6 @@
 			mclimit: limit,
 			mcprop: 'definition|properties'
 		} );
-
-		// @todo: We need to get translations from the stash api
 	}
 
 	function addMessage( message ) {
@@ -87,7 +88,7 @@
 		// Attach translate editor to the message
 		$messageWrapper.translateeditor( {
 			message: message,
-			storage: new mw.translate.TranslationStashStorage()
+			storage: translationStashStorage
 		} );
 	}
 
@@ -100,6 +101,7 @@
 				var messages = result.query.messagecollection;
 				$.each( messages, function ( index, message ) {
 					message.group = messagegroup;
+					// TODO mix the translations from userTranslations to this message
 					addMessage( message );
 					if ( index === 0 ) {
 						// Show the editor for the first message.
@@ -138,6 +140,12 @@
 				loadMessages();
 			}
 		} );
-		loadMessages();
+		// Get the user translations if any(possibly from an early attempt)
+		// and new messages to try.
+		translationStashStorage.getUserTranslations()
+			.done( function( translations ) {
+				userTranslations = translations;
+				loadMessages();
+			} );
 	} );
 }( jQuery, mediaWiki ) );
