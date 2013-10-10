@@ -57,8 +57,8 @@ class SandboxMessageGroup extends WikiMessageGroup {
 
 		// Add messages the user has already translated first, so he
 		// can go back and correct them.
-		foreach ( array_keys( $translations ) as $titleText ) {
-			$title = Title::newFromText( $titleText );
+		foreach ( $translations as $translation ) {
+			$title = $translation->getTitle();
 			$handle = new MessageHandle( $title );
 			$index = $title->getNamespace() . ':' . $handle->getKey();
 			$list[$index] = '';
