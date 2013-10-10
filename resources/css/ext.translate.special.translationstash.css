@@ -19,13 +19,15 @@ h1.firstHeading {
 }
 
 .translate-welcome-header {
-	background-color: #F6F6F6;
+	background-color: #F8F8F8;
+	background-image: linear-gradient(#fAFAFA, #f8f8f8);
+	border-bottom: 1px solid #eee;
 	padding: 10px;
 }
 
 .translate-stash-control {
-	padding: 10px;
 	font-size: 1.5em;
+	padding: 30px 10px 15px 5px;
 }
 
 .ext-translate-language-selector-label {
