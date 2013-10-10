@@ -4,59 +4,80 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2009, Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2007-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
  */
 
-/// @cond
+// Standard boilerplate to define $IP
+if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
+	$IP = getenv( 'MW_INSTALL_PATH' );
+} else {
+	$dir = __DIR__;
+	$IP = "$dir/../../..";
+}
+require_once "$IP/maintenance/Maintenance.php";
 
-require __DIR__ . '/cli.inc';
-
-# Override the memory limit for wfShellExec, 100 MB seems to be too little
+# Override the memory limit for wfShellExec, 100 MB appears to be too little
 $wgMaxShellMemory = 1024 * 200;
 
-function showUsage() {
-	STDERR( <<<EOT
-Fuzzy bot command line script
+class Fuzzy extends Maintenance {
+	public function __construct() {
+		parent::__construct();
+		$this->mDescription = 'Fuzzy bot command line script';
+		$this->addArg(
+			'messages',
+			'Messages to fuzzy' // How can this be an array of string?
+		);
+		$this->addOption(
+			'really',
+			'Really fuzzy, no dry-run'
+		);
+		$this->addOption(
+			'skiplanguages',
+			'Skip some languages (comma separated)',
+			false, /*required*/
+			true /*has arg*/
+		);
+		$this->addOption(
+			'comment',
+			'Comment for updating',
+			false, /*required*/
+			true /*has arg*/
+		);
+	}
 
-Usage: php fuzzy.php [options...] <messages>
+	public function execute() {
+		$bot = new FuzzyScript( $this->getArg( 'messages' ), $this );
 
-Options:
-  --really        Really fuzzy, no dry-run
-  --skiplanguages Skip some languages (comma separated)
-  --comment       Comment for updating
+		if ( $this->hasOption( 'skiplanguages' ) ) {
+			$bot->skipLanguages = array_map(
+				'trim',
+				explode( ',', $this->getOption( 'skiplanguages' ) )
+			);
+		}
 
-EOT
-	);
-	exit( 1 );
+		$bot->comment = $this->getOption( 'comment' );
+		$bot->dryrun = !$this->hasOption( 'really' );
+		$bot->setProgressCallback( array( $this, 'myOutput' ) );
+		$bot->execute();
+	}
+
+	/**
+	 * Public alternative for protected Maintenance::output() as we need to get
+	 * messages from the ChangeSyncer class to the commandline.
+	 * @param string $text The text to show to the user
+	 * @param string $channel Unique identifier for the channel.
+	 * @param bool $error Whether this is an error message
+	 */
+	public function myOutput( $text, $channel = null, $error = false ) {
+		if ( $error ) {
+			$this->error( $text, $channel );
+		} else {
+			$this->output( $text, $channel );
+		}
+	}
 }
-
-if ( isset( $options['help'] ) ) {
-	showUsage();
-}
-
-$bot = new FuzzyScript( $args );
-
-if ( isset( $options['skiplanguages'] ) ) {
-	$_skipLanguages = array();
-	$_skipLanguages = array_map( 'trim', explode( ',', $options['skiplanguages'] ) );
-	$bot->skipLanguages = $_skipLanguages;
-}
-if ( isset( $options['norc'] ) ) {
-	$cs->norc = true;
-}
-
-if ( isset( $options['comment'] ) ) {
-	$bot->comment = $options['comment'];
-}
-
-if ( isset( $options['really'] ) ) {
-	$bot->dryrun = false;
-}
-
-$bot->execute();
-
-/// @endcond
 
 /**
  * Class for marking translation fuzzy.
@@ -71,6 +92,9 @@ class FuzzyScript {
 	 * @var bool Check for configuration problems.
 	 */
 	private $allclear = false;
+
+	/** @var callable Function to report progress updates */
+	protected $progressCallback;
 
 	/**
 	 * @var bool Dont do anything unless confirmation is given
@@ -95,6 +119,18 @@ class FuzzyScript {
 		$this->allclear = true;
 	}
 
+	public function setProgressCallback( $callback ) {
+		$this->progressCallback = $callback;
+	}
+
+	/// @see Maintenance::output for param docs
+	protected function reportProgress( $text, $channel, $severity = 'status' ) {
+		if ( is_callable( $this->progressCallback ) ) {
+			$useErrorOutput = $severity === 'error';
+			call_user_func( $this->progressCallback, $text, $channel, $useErrorOutput );
+		}
+	}
+
 	public function execute() {
 		if ( !$this->allclear ) {
 			return;
@@ -102,7 +138,7 @@ class FuzzyScript {
 
 		$msgs = $this->getPages();
 		$count = count( $msgs );
-		STDOUT( "Found $count pages to update." );
+		$this->reportProgress( "Found $count pages to update.", 'pagecount' );
 
 		foreach ( $msgs as $phpIsStupid ) {
 			list( $title, $text ) = $phpIsStupid;
@@ -174,22 +210,22 @@ class FuzzyScript {
 	private function updateMessage( $title, $text, $dryrun, $comment = null ) {
 		global $wgTranslateDocumentationLanguageCode;
 
-		STDOUT( "Updating {$title->getPrefixedText()}... ", $title );
+		$this->reportProgress( "Updating {$title->getPrefixedText()}... ", $title );
 		if ( !$title instanceof Title ) {
-			STDOUT( "INVALID TITLE!", $title );
+			$this->reportProgress( "INVALID TITLE!", $title );
 
 			return;
 		}
 
 		$items = explode( '/', $title->getText(), 2 );
 		if ( isset( $items[1] ) && $items[1] === $wgTranslateDocumentationLanguageCode ) {
-			STDOUT( "IGNORED!", $title );
+			$this->reportProgress( "IGNORED!", $title );
 
 			return;
 		}
 
 		if ( $dryrun ) {
-			STDOUT( "DRY RUN!", $title );
+			$this->reportProgress( "DRY RUN!", $title );
 
 			return;
 		}
@@ -205,6 +241,9 @@ class FuzzyScript {
 		);
 
 		$success = $status === true || ( is_object( $status ) && $status->isOK() );
-		STDOUT( $success ? 'OK' : 'FAILED', $title );
+		$this->reportProgress( $success ? 'OK' : 'FAILED', $title );
 	}
 }
+
+$maintClass = 'Fuzzy';
+require_once RUN_MAINTENANCE_IF_MAIN;
