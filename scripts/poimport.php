@@ -3,73 +3,101 @@
  * Imports gettext files exported from Special:Translate back.
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2008 Niklas Laxström
+ * @author Siebrand Mazeland
+ * @copyright Copyright © 2007-2013 Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
  * @file
  */
 
-$optionsWithArgs = array( 'file', 'user' );
-require __DIR__ . '/cli.inc';
-
-function showUsage() {
-	STDERR( <<<EOT
-Po file importer
-
-Usage: php poimport.php [options...]
-
-Options:
-  --file      Po file to import
-  --user      User who makes edits to wiki
-  --really    Does not do anything unless this is specified.
-
-EOT
-	);
-	exit( 1 );
+// Standard boilerplate to define $IP
+if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
+	$IP = getenv( 'MW_INSTALL_PATH' );
+} else {
+	$dir = __DIR__;
+	$IP = "$dir/../../..";
 }
+require_once "$IP/maintenance/Maintenance.php";
 
-if ( isset( $options['help'] ) ) {
-	showUsage();
+class PoImport extends Maintenance {
+	public function __construct() {
+		parent::__construct();
+		$this->mDescription = 'Po file importer (does not make changes unless specified)';
+		$this->addOption(
+			'file',
+			'Gettext file to import (Translate specific formatting)',
+			true, /*required*/
+			true /*has arg*/
+		);
+		$this->addOption(
+			'user',
+			'User who makes edits to wiki',
+			true, /*required*/
+			true /*has arg*/
+		);
+		$this->addOption(
+			'really',
+			'Actually make changes',
+			false, /*required*/
+			false /*has arg*/
+		);
+	}
+
+	public function execute() {
+		/**
+		 * Parse the po file.
+		 */
+		$p = new PoImporter( $this->getOption( 'file' ), $this );
+		list( $changes, $group ) = $p->parse();
+
+		if ( !count( $changes ) ) {
+			$this->output( "No changes to import\n" );
+			exit( 0 );
+		}
+
+		/**
+		 * Import changes to wiki.
+		 */
+		$w = new WikiWriter(
+			$changes,
+			$group,
+			$this->getOption( 'user' ),
+			!$this->hasOption( 'really' ),
+			$this
+		);
+		$w->execute();
+	}
+
+	/**
+	 * Public alternative for protected Maintenance::output() as we need to get
+	 * messages from the ChangeSyncer class to the commandline.
+	 * @param string $out The text to show to the user
+	 * @param string $channel Unique identifier for the channel.
+	 */
+	public function myOutput( $out, $channel = null ) {
+		$this->output( $out, $channel );
+	}
 }
-
-if ( !isset( $options['file'] ) ) {
-	STDERR( "You need to specify input file" );
-	exit( 1 );
-}
-
-/**
- * Parse the po file.
- */
-$p = new PoImporter( $options['file'] );
-list( $changes, $group ) = $p->parse();
-
-if ( !isset( $options['user'] ) ) {
-	STDERR( "You need to specify user name for wiki import" );
-	exit( 1 );
-}
-
-if ( !count( $changes ) ) {
-	STDOUT( "No changes to import" );
-	exit( 0 );
-}
-
-/**
- * Import changes to wiki.
- */
-$w = new WikiWriter( $changes, $group, $options['user'], !isset( $options['really'] ) );
-$w->execute();
 
 /**
  * Parses a po file that has been exported from Mediawiki. Other files are not
  * supported.
  */
 class PoImporter {
+	/** @var PoImport Calling object */
+	private $caller;
+
 	/**
 	 * Path to file to parse.
 	 * @var bool|string
 	 */
 	private $file = false;
 
-	public function __construct( $file ) {
+	/**
+	 * @param $file File to import
+	 * @param PoImport $caller Calling object
+	 */
+	public function __construct( $file, $caller = null ) {
+		$this->poImport = $caller;
 		$this->file = $file;
 	}
 
@@ -100,18 +128,18 @@ class PoImporter {
 		$matches = array();
 		if ( preg_match( '/X-Language-Code:\s+(.*)\\\n/', $data, $matches ) ) {
 			$code = $matches[1];
-			STDOUT( "Detected language as $code" );
+			$this->caller->myOutput( "Detected language as $code", 'code' );
 		} else {
-			STDERR( "Unable to determine language code" );
+			$this->caller->myOutput( 'Unable to determine language code', 'code' );
 
 			return false;
 		}
 
 		if ( preg_match( '/X-Message-Group:\s+(.*)\\\n/', $data, $matches ) ) {
 			$groupId = $matches[1];
-			STDOUT( "Detected message group as $groupId" );
+			$this->caller->myOutput( "Detected message group as $groupId", 'group' );
 		} else {
-			STDERR( "Unable to determine message group" );
+			$this->caller->myOutput( 'Unable to determine message group', 'group' );
 
 			return false;
 		}
@@ -157,12 +185,12 @@ class PoImporter {
 
 			if ( $translation !== $oldtranslation ) {
 				if ( $translation === '' ) {
-					STDOUT( "Skipping empty translation in the po file for $key!" );
+					$this->caller->myOutput( "Skipping empty translation in the po file for $key!", 'empty' );
 				} else {
 					if ( $oldtranslation === '' ) {
-						STDOUT( "New translation for $key" );
+						$this->caller->myOutput( "New translation for $key", 'new' );
 					} else {
-						STDOUT( "Translation of $key differs:\n$translation\n" );
+						$this->caller->myOutput( "Translation of $key differs:\n$translation", 'differs' );
 					}
 					$changes["$key/$code"] = $translation;
 				}
@@ -177,6 +205,9 @@ class PoImporter {
  * Import changes to wiki as given user
  */
 class WikiWriter {
+	/** @var PoImport Calling object */
+	public $caller;
+
 	private $changes = array();
 	private $dryrun = true;
 	private $allclear = false;
@@ -188,20 +219,22 @@ class WikiWriter {
 	 * @param string $groupId Group ID.
 	 * @param string $user User who makes the edits in wiki.
 	 * @param bool $dryrun Do not do anything that affects the database.
+	 * @param PoImport $caller Calling object.
 	 */
-	public function __construct( $changes, $groupId, $user, $dryrun = true ) {
+	public function __construct( $changes, $groupId, $user, $dryrun = true, $caller = null ) {
 		$this->changes = $changes;
 		$this->dryrun = $dryrun;
+		$this->caller = $caller;
 		$this->group = MessageGroups::getGroup( $groupId );
 		if ( !$this->group ) {
-			STDERR( "Group $groupId does not exist." );
+			$this->caller->myOutput( "Group $groupId does not exist.", 'groupId' );
 
 			return;
 		}
 
 		$this->user = User::newFromName( $user );
 		if ( !$this->user->idForName() ) {
-			STDERR( "User $user does not exist." );
+			$this->caller->myOutput( "User $user does not exist.", 'user' );
 
 			return;
 		}
@@ -218,7 +251,7 @@ class WikiWriter {
 		}
 
 		$count = count( $this->changes );
-		STDOUT( "Going to update $count pages." );
+		$this->caller->myOutput( "Going to update $count pages.", 'pagecount' );
 
 		$ns = $this->group->getNamespace();
 
@@ -237,14 +270,14 @@ class WikiWriter {
 		$title = Title::makeTitleSafe( $namespace, $page );
 
 		if ( !$title instanceof Title ) {
-			STDOUT( "INVALID TITLE!", $page );
+			$this->caller->myOutput( 'INVALID TITLE!', $page );
 
 			return;
 		}
-		STDOUT( "Updating {$title->getPrefixedText()}... ", $title );
+		$this->caller->myOutput( "Updating {$title->getPrefixedText()}... ", $title );
 
 		if ( $this->dryrun ) {
-			STDOUT( "DRY RUN!", $title );
+			$this->caller->myOutput( 'DRY RUN!', $title );
 
 			return;
 		}
@@ -260,9 +293,12 @@ class WikiWriter {
 		);
 
 		if ( $status === true || ( is_object( $status ) && $status->isOK() ) ) {
-			STDOUT( "OK!", $title );
+			$this->caller->myOutput( 'OK!', $title );
 		} else {
-			STDOUT( "Failed!", $title );
+			$this->caller->myOutput( 'Failed!', $title );
 		}
 	}
 }
+
+$maintClass = 'PoImport';
+require_once RUN_MAINTENANCE_IF_MAIN;
