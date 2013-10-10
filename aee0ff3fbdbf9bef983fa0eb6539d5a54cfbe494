@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_77d313d5",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-10T12:05:17Z",
+      "side": 1,
+      "message": "Why are we not using ajax?",
+      "revId": "aee0ff3fbdbf9bef983fa0eb6539d5a54cfbe494",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
