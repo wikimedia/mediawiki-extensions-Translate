@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_5258dd2f",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-10T12:56:54Z",
+      "side": 1,
+      "message": "Whitespace",
+      "revId": "4dda201de46a554fd3ba101fb0394b7497c6818e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_32536918",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-10T12:56:54Z",
+      "side": 1,
+      "message": "Something fishy with the indentation here.",
+      "revId": "4dda201de46a554fd3ba101fb0394b7497c6818e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
