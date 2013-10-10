@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_d7783ff2",
+        "filename": "scripts/createMessageIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-10T11:58:18Z",
+      "side": 1,
+      "message": "Or you could have output like \"Clearing cache... done\" with code like this:\n$this-\u003eoutput( \u0027Clearing cache... \u0027, \u0027cache\u0027 );\nMessageGroups::clearCache();\n$this-\u003eoutput( \u0027done\u0027, \u0027cache\u0027 );",
+      "revId": "92676790cf61957ac2139f1bb95915cbe5c35f5a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_b76bcb1e",
+        "filename": "scripts/createMessageIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-10T11:58:18Z",
+      "side": 1,
+      "message": "...?",
+      "revId": "92676790cf61957ac2139f1bb95915cbe5c35f5a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
