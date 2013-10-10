@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_77d2335a",
+        "filename": "api/ApiTranslationStash.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-10T08:38:36Z",
+      "side": 1,
+      "message": "Perhaps we could move $stasth to before the switch blocks or move the actual actions to separate methods",
+      "revId": "29ce0d5b741a1280490dc13a20e3bbeaf75d64e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_97c7a798",
+        "filename": "api/ApiTranslationStash.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-10T08:38:36Z",
+      "side": 1,
+      "message": "Why are you not using normal foreach loop?",
+      "revId": "29ce0d5b741a1280490dc13a20e3bbeaf75d64e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_b7c4ab94",
+        "filename": "api/ApiTranslationStash.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-10T08:38:36Z",
+      "side": 1,
+      "message": "Just remove these lines",
+      "revId": "29ce0d5b741a1280490dc13a20e3bbeaf75d64e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_57cd2fb8",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-10T08:38:36Z",
+      "side": 1,
+      "message": "Why was this changed to post?",
+      "revId": "29ce0d5b741a1280490dc13a20e3bbeaf75d64e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_d7c11f84",
+        "filename": "resources/js/ext.translate.translationstashstorage.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-10T08:38:36Z",
+      "side": 1,
+      "message": "We should refactor this to use postWithToken once it has been merged into core.",
+      "revId": "29ce0d5b741a1280490dc13a20e3bbeaf75d64e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_173497a9",
+        "filename": "stash/TranslationStashStorage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-10T08:38:36Z",
+      "side": 1,
+      "message": "Hmm?",
+      "revId": "29ce0d5b741a1280490dc13a20e3bbeaf75d64e3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
