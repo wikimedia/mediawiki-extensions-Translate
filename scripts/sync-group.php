@@ -11,142 +11,167 @@
  * @file
  */
 
-/// @cond
-
-$options = array( 'git' );
-$optionsWithArgs = array( 'group', 'lang', 'start', 'end' );
-require __DIR__ . '/cli.inc';
+// Standard boilerplate to define $IP
+if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
+	$IP = getenv( 'MW_INSTALL_PATH' );
+} else {
+	$dir = __DIR__;
+	$IP = "$dir/../../..";
+}
+require_once "$IP/maintenance/Maintenance.php";
 
 # Override the memory limit for wfShellExec, 100 MB seems to be too little for svn
 $wgMaxShellMemory = 1024 * 200;
 
-function showUsage() {
-	STDERR( <<<EOT
-Options:
-  --group       Comma separated list of group IDs (can use * as wildcard)
-  --git         Use git to retrieve last modified date of i18n files. Will use
-                subversion by default and fallback on filesystem timestamp
-  --lang        Comma separated list of language codes or *
-  --norc        Do not add entries to recent changes table
-  --help        This help message
-  --noask       Skip all conflicts
-  --start       Start of the last export (changes in wiki after will conflict)
-  --end         End of the last export (changes in source after will conflict)
-  --nocolor     Without colors
-EOT
-	);
-	exit( 1 );
-}
-
-if ( isset( $options['help'] ) ) {
-	showUsage();
-}
-
-if ( !isset( $options['group'] ) ) {
-	STDERR( "ESG1: Message group id must be supplied with group parameter." );
-	exit( 1 );
-}
-
-$groupIds = explode( ',', trim( $options['group'] ) );
-$groupIds = MessageGroups::expandWildcards( $groupIds );
-$groups = MessageGroups::getGroupsById( $groupIds );
-
-if ( !count( $groups ) ) {
-	STDERR( "ESG2: No valid message groups identified." );
-	exit( 1 );
-}
-
-if ( !isset( $options['lang'] ) || strval( $options['lang'] ) === '' ) {
-	STDERR( "ESG3: List of language codes must be supplied with lang parameter." );
-	exit( 1 );
-}
-
-$start = isset( $options['start'] ) ? strtotime( $options['start'] ) : false;
-$end = isset( $options['end'] ) ? strtotime( $options['end'] ) : false;
-
-STDOUT( "Conflict times: " . wfTimestamp( TS_ISO_8601, $start ) . " - " .
-	wfTimestamp( TS_ISO_8601, $end ) );
-
-$codes = array_filter( array_map( 'trim', explode( ',', $options['lang'] ) ) );
-
-$supportedCodes = array_keys( TranslateUtils::getLanguageNames( 'en' ) );
-ksort( $supportedCodes );
-
-if ( $codes[0] === '*' ) {
-	$codes = $supportedCodes;
-}
-
-/**
- * @var MessageGroup $group
- */
-foreach ( $groups as &$group ) {
-	// No sync possible for meta groups
-	if ( $group->isMeta() ) {
-		continue;
+class SyncGroup extends Maintenance {
+	public function __construct() {
+		parent::__construct();
+		$this->mDescription = 'Import or update source messages and translations into ' .
+			'the wiki database.';
+		$this->addOption(
+			'git',
+			'Use git to retrieve last modified date of i18n files. Will use subversion ' .
+				'by default and fallback on filesystem timestamp',
+			false, /*required*/
+			false /*has arg*/
+		);
+		$this->addOption(
+			'group',
+			'Comma separated list of group IDs (can use * as wildcard).',
+			true, /*required*/
+			true /*has arg*/
+		);
+		$this->addOption(
+			'lang',
+			'Comma separated list of language codes or *',
+			false, /*required*/
+			true /*has arg*/
+		);
+		$this->addOption(
+			'norc',
+			'Do not add entries to recent changes table',
+			false, /*required*/
+			false /*has arg*/
+		);
+		$this->addOption(
+			'noask',
+			'Skip all conflicts',
+			false, /*required*/
+			false /*has arg*/
+		);
+		$this->addOption(
+			'start',
+			'Start of the last export (changes in wiki after will conflict)',
+			false, /*required*/
+			true /*has arg*/
+		);
+		$this->addOption(
+			'end',
+			'End of the last export (changes in source after will conflict)',
+			false, /*required*/
+			true /*has arg*/
+		);
+		$this->addOption(
+			'nocolor',
+			'Without colors',
+			false, /*required*/
+			false /*has arg*/
+		);
 	}
 
-	STDOUT( "{$group->getLabel()} ", $group );
+	public function execute() {
+		$groupIds = explode( ',', trim( $this->getOption( 'group' ) ) );
+		$groupIds = MessageGroups::expandWildcards( $groupIds );
+		$groups = MessageGroups::getGroupsById( $groupIds );
 
-	foreach ( $codes as $code ) {
-		// No sync possible for unsupported language codes.
-		if ( !in_array( $code, $supportedCodes ) ) {
-			STDOUT( "Unsupported code " . $code . ": skipping." );
-			continue;
+		if ( !count( $groups ) ) {
+			$this->output( "ESG2: No valid message groups identified.\n" );
+			exit( 1 );
 		}
 
-		if ( $group instanceof FileBasedMessageGroup ) {
-			/**
-			 * @var FileBasedMessageGroup $group
-			 */
-			$file = $group->getSourceFilePath( $code );
-		} else {
-			/**
-			 * @var MessageGroupOld $group
-			 */
-			$file = $group->getMessageFileWithPath( $code );
+		$start = $this->getOption( 'start', false ) ?
+			strtotime( $this->getOption( 'start' ) ) :
+			false;
+		$end = $this->getOption( 'end', false ) ?
+			strtotime( $this->getOption( 'end' ) ) :
+			false;
+
+		$this->output( "Conflict times: " . wfTimestamp( TS_ISO_8601, $start ) . " - " .
+		wfTimestamp( TS_ISO_8601, $end ) . "\n" );
+
+		$codes = array_filter( array_map( 'trim', explode( ',', $this->getOption( 'lang' ) ) ) );
+
+		$supportedCodes = array_keys( TranslateUtils::getLanguageNames( 'en' ) );
+		ksort( $supportedCodes );
+
+		if ( $codes[0] === '*' ) {
+			$codes = $supportedCodes;
 		}
 
-		if ( !$file ) {
-			continue;
-		}
+		/**
+		 * @var MessageGroup $group
+		 */
+		foreach ( $groups as &$group ) {
+			// No sync possible for meta groups
+			if ( $group->isMeta() ) {
+				continue;
+			}
 
-		if ( !file_exists( $file ) ) {
-			continue;
-		}
+			$this->output( "{$group->getLabel()} ", $group );
 
-		$cs = new ChangeSyncer( $group );
-		if ( isset( $options['norc'] ) ) {
-			$cs->norc = true;
-		}
+			foreach ( $codes as $code ) {
+				// No sync possible for unsupported language codes.
+				if ( !in_array( $code, $supportedCodes ) ) {
+					$this->output( "Unsupported code " . $code . ": skipping.\n" );
+					continue;
+				}
 
-		if ( isset( $options['noask'] ) ) {
-			$cs->interactive = false;
-		}
+				if ( $group instanceof FileBasedMessageGroup ) {
+					/**
+					 * @var FileBasedMessageGroup $group
+					 */
+					$file = $group->getSourceFilePath( $code );
+				} else {
+					/**
+					 * @var MessageGroupOld $group
+					 */
+					$file = $group->getMessageFileWithPath( $code );
+				}
 
-		if ( isset( $options['nocolor'] ) ) {
-			$cs->nocolor = true;
-		}
+				if ( !$file ) {
+					continue;
+				}
 
-		# Guess last modified date of the file from either git, svn or filesystem
-		$ts = false;
-		if ( isset( $options['git'] ) ) {
-			$ts = $cs->getTimestampsFromGit( $file );
-		} else {
-			$ts = $cs->getTimestampsFromSvn( $file );
-		}
-		if ( !$ts ) {
-			$ts = $cs->getTimestampsFromFs( $file );
-		}
+				if ( !file_exists( $file ) ) {
+					continue;
+				}
 
-		STDOUT( "Modify time for $code: " . wfTimestamp( TS_ISO_8601, $ts ) );
+				$cs = new ChangeSyncer( $group );
+				$cs->interactive = $this->hasOption( 'noask' ) ? false : true;
+				$cs->nocolor = $this->hasOption( 'nocolor' ) ? true : false;
+				$cs->norc = $this->hasOption( 'norc' ) ? true : false;
 
-		$cs->checkConflicts( $code, $start, $end, $ts );
+				# Guess last modified date of the file from either git, svn or filesystem
+				if ( $this->hasOption( 'git' ) ) {
+					$ts = $cs->getTimestampsFromGit( $file );
+				} else {
+					$ts = $cs->getTimestampsFromSvn( $file );
+				}
+				if ( !$ts ) {
+					$ts = $cs->getTimestampsFromFs( $file );
+				}
+
+				$this->output( "Modify time for $code: " . wfTimestamp( TS_ISO_8601, $ts ) . "\n" );
+
+				$cs->checkConflicts( $code, $start, $end, $ts );
+			}
+
+			unset( $group );
+		}
+		// Print timestamp if the user wants to store it
+		$this->output( wfTimestamp( TS_RFC2822 ) . "\n" );
 	}
-
-	unset( $group );
 }
-
-/// @endcond
 
 /**
  * Simple external changes syncer and conflict resolution.
@@ -244,7 +269,6 @@ class ChangeSyncer {
 
 		foreach ( $messages as $key => $translation ) {
 			if ( !isset( $collection[$key] ) ) {
-				// STDOUT( "Unknown key $key" );
 				continue;
 			}
 
@@ -258,6 +282,7 @@ class ChangeSyncer {
 			$page = $title->getPrefixedText();
 
 			if ( $collection[$key]->translation() === null ) {
+				// @todo How to get this text to Maintenance::output()?
 				STDOUT( "Importing $page as a new translation" );
 				$this->import( $title, $translation, 'Importing a new translation' );
 				continue;
@@ -423,5 +448,5 @@ class ChangeSyncer {
 	}
 }
 
-// Print timestamp if the user wants to store it
-STDOUT( wfTimestamp( TS_RFC2822 ) );
+$maintClass = 'SyncGroup';
+require_once RUN_MAINTENANCE_IF_MAIN;
