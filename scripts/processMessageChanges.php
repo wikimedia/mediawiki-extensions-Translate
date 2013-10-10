@@ -102,14 +102,13 @@ class ProcessMessageChanges extends Maintenance {
 		$groups = array_filter( $groups,
 			function ( MessageGroup $group ) use ( $include, $exclude ) {
 				$id = $group->getId();
+
 				return isset( $include[$id] ) && !isset( $exclude[$id] );
 			}
 		);
 
 		return $groups;
 	}
-
-
 
 	protected function writeChanges() {
 		// This method is almost identical with MessageIndex::store
