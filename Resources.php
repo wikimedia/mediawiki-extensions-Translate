@@ -28,12 +28,9 @@ $wgResourceModules['ext.translate.base'] = array(
 	),
 ) + $resourcePaths;
 
-$wgResourceModules['ext.translate.storage'] = array(
-	'scripts' => 'resources/js/ext.translate.storage.js',
-) + $resourcePaths;
-
-$wgResourceModules['ext.translate.translationstashstorage'] = array(
-	'scripts' => 'resources/js/ext.translate.translationstashstorage.js',
+$wgResourceModules['ext.translate.dropdownmenu'] = array(
+	'styles' => 'resources/css/ext.translate.dropdownmenu.css',
+	'scripts' => 'resources/js/ext.translate.dropdownmenu.js',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.editor'] = array(
@@ -112,11 +109,6 @@ $wgResourceModules['ext.translate.editor'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
-$wgResourceModules['ext.translate.loader'] = array(
-	'styles' => 'resources/css/ext.translate.loader.css',
-	'position' => 'top',
-) + $resourcePaths;
-
 $wgResourceModules['ext.translate.groupselector'] = array(
 	'styles' => 'resources/css/ext.translate.groupselector.css',
 	'scripts' => 'resources/js/ext.translate.groupselector.js',
@@ -145,6 +137,11 @@ $wgResourceModules['ext.translate.helplink'] = array(
 
 $wgResourceModules['ext.translate.hooks'] = array(
 	'scripts' => 'resources/js/ext.translate.hooks.js',
+	'position' => 'top',
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.loader'] = array(
+	'styles' => 'resources/css/ext.translate.loader.css',
 	'position' => 'top',
 ) + $resourcePaths;
 
@@ -206,21 +203,6 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 	),
 ) + $resourcePaths;
 
-$wgResourceModules['ext.translate.pagetranslation.uls'] = array(
-	'scripts' => 'resources/js/ext.translate.pagetranslation.uls.js',
-	'dependencies' => array(
-		'ext.uls.init',
-		'mediawiki.util',
-	),
-) + $resourcePaths;
-
-$wgResourceModules['ext.translate.parsers'] = array(
-	'scripts' => 'resources/js/ext.translate.parsers.js',
-	'dependencies' => array(
-		'mediawiki.util',
-	),
-) + $resourcePaths;
-
 $wgResourceModules['ext.translate.messagewebimporter'] = array(
 	'styles' => 'resources/css/ext.translate.messagewebimporter.css',
 	'position' => 'top',
@@ -240,6 +222,21 @@ $wgResourceModules['ext.translate.navitoggle'] = array(
 	),
 	'skinStyles' => array(
 		'vector' => 'resources/css/ext.translate.navitoggle.css',
+	),
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.pagetranslation.uls'] = array(
+	'scripts' => 'resources/js/ext.translate.pagetranslation.uls.js',
+	'dependencies' => array(
+		'ext.uls.init',
+		'mediawiki.util',
+	),
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.parsers'] = array(
+	'scripts' => 'resources/js/ext.translate.parsers.js',
+	'dependencies' => array(
+		'mediawiki.util',
 	),
 ) + $resourcePaths;
 
@@ -401,9 +398,18 @@ $wgResourceModules['ext.translate.statsbar'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.storage'] = array(
+	'scripts' => 'resources/js/ext.translate.storage.js',
+) + $resourcePaths;
+
+
 $wgResourceModules['ext.translate.tabgroup'] = array(
 	'styles' => 'resources/css/ext.translate.tabgroup.css',
 	'position' => 'top',
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.translationstashstorage'] = array(
+	'scripts' => 'resources/js/ext.translate.translationstashstorage.js',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.workflowselector'] = array(
@@ -416,11 +422,6 @@ $wgResourceModules['ext.translate.workflowselector'] = array(
 	'dependencies' => array(
 		'ext.translate.dropdownmenu',
 	),
-) + $resourcePaths;
-
-$wgResourceModules['ext.translate.dropdownmenu'] = array(
-	'styles' => 'resources/css/ext.translate.dropdownmenu.css',
-	'scripts' => 'resources/js/ext.translate.dropdownmenu.js',
 ) + $resourcePaths;
 
 // Third party module
