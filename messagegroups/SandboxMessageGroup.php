@@ -130,7 +130,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 	/**
 	 * Subpage language code, if any in the title, is ignored.
 	 */
-	public function getMessageContent( MessageHandle $handle ) {
+	public static function getMessageContent( MessageHandle $handle ) {
 		$groupId = MessageIndex::getPrimaryGroupId( $handle );
 		$group = MessageGroups::getGroup( $groupId );
 		if ( $group ) {

@@ -42,7 +42,7 @@ class SpecialTranslateSandbox extends SpecialPage {
 	</div>
 	<div class="row">
 		<div class="four columns pane requests">{$this->makeList()}</div>
-		<div class="four columns pane details"></div>
+		<div class="eight columns pane details"></div>
 	</div>
 	$token
 </div>
@@ -91,11 +91,28 @@ HTML;
 	}
 
 	protected function makeRequestItem( User $user ) {
+		$stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
+		$translations = $stash->getTranslations( $user );
+		$usertranslations = array();
+
+		foreach( $translations as $translation ) {
+			$title = $translation->getTitle();
+			$handle = new MessageHandle( $title );
+			$usertranslations[] = array(
+				'title' => $translation->getTitle()->getPrefixedDBKey(),
+				'targetlanguage' => $handle->getCode(),
+				'source' => SandboxMessageGroup::getMessageContent( $handle ),
+				'value' => $translation->getValue(),
+				'metadata' => $translation->getMetadata(),
+			);
+		}
+
 		$request = array(
 			'username' => $user->getName(),
 			'email' => $user->getEmail(),
 			'registrationdate' => $user->getRegistration(),
-			'translations' => 0,
+			'translationcount' => count( $translations ),
+			'translations' => $usertranslations,
 			'userid' => $user->getId(),
 		);
 
@@ -103,7 +120,7 @@ HTML;
 
 		$nameEnc = htmlspecialchars( $request['username'] );
 		$emailEnc = htmlspecialchars( $request['email'] );
-		$countEnc = htmlspecialchars( $request['translations'] );
+		$countEnc = htmlspecialchars( $request['translationcount'] );
 		$timestamp = new MWTimestamp( $request['registrationdate'] );
 		$agoEnc = htmlspecialchars( $timestamp->getHumanTimestamp() );
 
@@ -124,4 +141,5 @@ HTML;
 </div>
 HTML;
 	}
+
 }
