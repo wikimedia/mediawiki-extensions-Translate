@@ -91,11 +91,28 @@ HTML;
 	}
 
 	protected function makeRequestItem( User $user ) {
+		$stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
+		$translations = $stash->getTranslations( $user );
+		$usertranslations = array();
+
+		foreach( $translations as $translation ) {
+			$title = $translation->getTitle();
+			$handle = new MessageHandle( $title );
+			$usertranslations[] = array(
+				'title' => $translation->getTitle()->getPrefixedDBKey(),
+				'targetlanguage' => $handle->getCode(),
+				'source' => SandboxMessageGroup::getMessageContent( $handle ),
+				'value' => $translation->getValue(),
+				'metadata' => $translation->getMetadata(),
+			);
+		}
+
 		$request = array(
 			'username' => $user->getName(),
 			'email' => $user->getEmail(),
 			'registrationdate' => $user->getRegistration(),
-			'translations' => 0,
+			'translationcount' => count( $translations ),
+			'translations' => $usertranslations,
 			'userid' => $user->getId(),
 		);
 
@@ -103,7 +120,7 @@ HTML;
 
 		$nameEnc = htmlspecialchars( $request['username'] );
 		$emailEnc = htmlspecialchars( $request['email'] );
-		$countEnc = htmlspecialchars( $request['translations'] );
+		$countEnc = htmlspecialchars( $request['translationcount'] );
 		$timestamp = new MWTimestamp( $request['registrationdate'] );
 		$agoEnc = htmlspecialchars( $timestamp->getHumanTimestamp() );
 
@@ -123,5 +140,19 @@ HTML;
 	</div>
 </div>
 HTML;
+	}
+
+
+	/**
+	 * Subpage language code, if any in the title, is ignored.
+	 */
+	public function getMessageContent( MessageHandle $handle ) {
+		$groupId = MessageIndex::getPrimaryGroupId( $handle );
+		$group = MessageGroups::getGroup( $groupId );
+		if ( $group ) {
+			return $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
+		}
+
+		throw new MWException( 'Could not find group for ' . $handle->getKey() );
 	}
 }

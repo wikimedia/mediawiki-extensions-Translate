@@ -114,7 +114,8 @@
 	 * @param {Object} request The request data set from backend on request items
 	 */
 	function displayRequestDetails( request ) {
-		var $detailsPane = $( '.details.pane' );
+		var $detailsPane = $( '.details.pane' ),
+			$translations;
 
 		$detailsPane.empty().append(
 			$( '<div>' )
@@ -161,8 +162,27 @@
 							e.preventDefault();
 							reminderDialog( request );
 						} )
-				)
+				),
+			$( '<div>' )
+				.addClass( 'translations row' )
 		);
+
+		$translations = $detailsPane.find( '.translations' );
+		$.each( request.translations, function( index, translation ) {
+			$translations.append(
+				$( '<div>' )
+					.addClass( 'row' )
+					.append(
+						$( '<div>' )
+							.addClass( 'six columns source' )
+							.text( translation.source ),
+						$( '<div>' )
+							.addClass( 'six columns translation' )
+							.text( translation.value  + '(' + translation.targetlanguage + ')' )
+					)
+				);
+		} );
+
 	}
 
 	$( document ).ready( function () {
