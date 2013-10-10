@@ -225,6 +225,14 @@ $messages['it'] = array(
 Grazie per esserti registrato su {{SITENAME}}. Una volta che avrai completato i test di traduzione, gli amministratori potranno concederti in breve tempo l'accesso completo da traduttore.
 
 Vieni su $2 e fai alcune altre traduzioni.",
+	'tsb-request-count' => '{{PLURAL:$1|Una richiesta|$1 richieste}}',
+	'tsb-all-languages-button-label' => 'Tutte le lingue',
+	'tsb-search-requests' => 'Cerca richiesta',
+	'tsb-accept-button-label' => 'Accetta',
+	'tsb-reject-button-label' => 'Rifiuta',
+	'tsb-reminder-link-text' => 'Invia email di promemoria',
+	'translationstash' => 'Benvenuto(a)',
+	'translate-translationstash-welcome' => 'Grazie {{GENDER:$1|$1}}, ora sei un nuovo traduttore',
 );
 
 /** Japanese (日本語)
@@ -258,6 +266,10 @@ $messages['ko'] = array(
 
 $2에 와서 조금 더 번역을 해주세요.',
 	'tsb-all-languages-button-label' => '모든 언어',
+	'tsb-search-requests' => '검색 요청',
+	'tsb-accept-button-label' => '승인',
+	'tsb-reject-button-label' => '거부',
+	'tsb-reminder-link-text' => '이메일 알림 보내기',
 );
 
 /** Colognian (Ripoarisch)
@@ -280,6 +292,12 @@ $messages['lb'] = array(
 	'translatesandbox' => 'Iwwersetzer-Sandkëscht geréieren',
 	'tsb-filter-pending' => 'Ufroen am Suspens',
 	'tsb-reminder-title-generic' => 'Kompletéiert Är Virstellung fir e verifizéierten Iwwersetzer ze ginn',
+	'tsb-all-languages-button-label' => 'All Sproochen',
+	'tsb-accept-button-label' => 'Akzeptéieren',
+	'tsb-reject-button-label' => 'Refuséieren',
+	'translationstash' => 'Wëllkomm',
+	'translate-translationstash-welcome' => 'Merci {{GENDER:$1|$1}}, dir sidd en neien Iwwersetzer',
+	'translate-translationstash-initialtranslation' => 'Är éischt Iwwersetzung',
 );
 
 /** Macedonian (македонски)
@@ -379,6 +397,7 @@ Pe piacere avìne jndr'à $2 e fà angore quacche otre traduzione.",
 
 /** Russian (русский)
  * @author Kaganer
+ * @author Okras
  */
 $messages['ru'] = array(
 	'translatesandbox' => 'Управление песочницей переводчика',
@@ -389,6 +408,16 @@ $messages['ru'] = array(
 Спасибо за регистрацию на сайте «{{SITENAME}}». Если вы завершили свои пробные переводы, администраторы могут предоставить вам полный доступ к инструменту перевода.
 
 Пожалуйста, перейдите по ссылке $2 и сделайте ещё несколько переводов.',
+	'tsb-request-count' => '{{PLURAL:$1|Один запрос|$1 запроса|$1 запросов}}',
+	'tsb-all-languages-button-label' => 'Все языки',
+	'tsb-search-requests' => 'Искать запросы',
+	'tsb-accept-button-label' => 'Принять',
+	'tsb-reject-button-label' => 'Отклонить',
+	'tsb-reminder-link-text' => 'Отправить напоминание по электронной почте',
+	'translationstash' => 'Добро пожаловать',
+	'translate-translationstash-welcome' => 'Спасибо, {{GENDER:$1|$1}}, теперь вы новый переводчик',
+	'translate-translationstash-welcome-note' => 'Ознакомиться с инструментами перевода путём перевода нескольких случайно выбранных сообщений.',
+	'translate-translationstash-initialtranslation' => 'Ваш первоначальный перевод',
 );
 
 /** Swedish (svenska)
