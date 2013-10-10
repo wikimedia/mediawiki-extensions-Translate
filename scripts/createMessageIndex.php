@@ -11,26 +11,32 @@
  * @file
  */
 
-require __DIR__ . '/cli.inc';
+// Standard boilerplate to define $IP
+if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
+	$IP = getenv( 'MW_INSTALL_PATH' );
+} else {
+	$dir = __DIR__;
+	$IP = "$dir/../../..";
+}
+require_once "$IP/maintenance/Maintenance.php";
 
-function showUsage() {
-	STDERR( <<<EOT
-Message index creation command line script
+class CreateMessageIndex extends Maintenance {
+	public function __construct() {
+		parent::__construct();
+		$this->mDescription = 'Creates or updates a message index.';
+	}
 
-Usage: php createMessageIndex.php [options...]
+	public function execute() {
+		$this->output( 'Clear cache... ', 'cache' );
+		MessageGroups::clearCache();
+		$this->output( 'done.', 'cache' );
 
-Options:
-  --help            Show this help text
-  --quiet           Only output errors
-
-EOT
-	);
-	exit( 1 );
+		$this->output( 'Rebuild message index... ', 'rebuild' );
+		MessageIndex::singleton()->rebuild();
+		$this->output( 'done.', 'rebuild' );
+		$this->output( 'Message index has been built.', 'main' );
+	}
 }
 
-if ( isset( $options['help'] ) ) {
-	showUsage();
-}
-
-MessageGroups::clearCache();
-MessageIndex::singleton()->rebuild();
+$maintClass = 'CreateMessageIndex';
+require_once DO_MAINTENANCE;

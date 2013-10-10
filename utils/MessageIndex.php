@@ -103,8 +103,6 @@ abstract class MessageIndex {
 		$old = $this->retrieve();
 		$postponed = array();
 
-		STDOUT( "Working with ", 'main' );
-
 		/**
 		 * @var MessageGroup $g
 		 */
@@ -198,8 +196,6 @@ abstract class MessageIndex {
 		}
 
 		$id = $g->getId();
-
-		STDOUT( "$id ", 'main' );
 
 		$namespace = $g->getNamespace();
 
