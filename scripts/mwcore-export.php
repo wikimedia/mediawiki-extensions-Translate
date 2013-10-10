@@ -52,7 +52,7 @@ if ( !is_writable( $options['target'] ) ) {
 	exit( 1 );
 }
 
-$langs = Cli::parseLanguageCodes( $options['lang'] );
+$langs = TranslateUtils::parseLanguageCodes( $options['lang'] );
 
 $group = MessageGroups::getGroup( 'core' );
 
