@@ -82,25 +82,3 @@ function STDERR( $message, $channel = null ) {
 ///@{
 register_shutdown_function( 'STDOUT', false );
 ///@}
-
-/**
- * A general CLI utility class.
- * @todo Move elsewhere?
- */
-class Cli {
-	/**
-	 * Parses list of language codes to an array.
-	 * @param string $codes Command line input.
-	 * @return string[] Language codes.
-	 */
-	public static function parseLanguageCodes( $codes ) {
-		$langs = array_map( 'trim', explode( ',', $codes ) );
-		if ( $langs[0] === '*' ) {
-			$languages = Language::getLanguageNames();
-			ksort( $languages );
-			$langs = array_keys( $languages );
-		}
-
-		return $langs;
-	}
-}
