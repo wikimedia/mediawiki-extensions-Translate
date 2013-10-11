@@ -98,8 +98,6 @@ class ApiTranslationStash extends ApiBase {
 	}
 
 	public function getParamDescription() {
-		$action = TranslateUtils::getTokenAction( 'edit' );
-
 		return array(
 			'subaction' => 'Action',
 			'title' => 'Title of the translation unit page',
