@@ -12,7 +12,7 @@
 
 		options = $.extend( {}, {
 			action: 'translatesandbox',
-			token: $( '#token' ).val()
+			token: $( '#translatesandbox-token' ).val()
 		}, options );
 
 		api.post( options )
@@ -114,7 +114,8 @@
 	 * @param {Object} request The request data set from backend on request items
 	 */
 	function displayRequestDetails( request ) {
-		var $detailsPane = $( '.details.pane' );
+		var storage,
+			$detailsPane = $( '.details.pane' );
 
 		$detailsPane.empty().append(
 			$( '<div>' )
@@ -161,8 +162,62 @@
 							e.preventDefault();
 							reminderDialog( request );
 						} )
-				)
+				),
+			$( '<div>' )
+				.addClass( 'translations row' )
 		);
+
+		// @todo: move higher in the tree
+		storage = new mw.translate.TranslationStashStorage();
+		storage.getUserTranslations( request.username ).done( function ( translations ) {
+			var $target = $( '.translations' );
+
+			// TODO: Header for the translations. not i18ned, need UX review
+			$target.append(
+				$( '<div>' )
+					.addClass( 'row title' )
+					.append(
+						$( '<div>' )
+							.text( 'Source' )
+							.addClass( 'four columns' ),
+						$( '<div>' )
+							.text( 'User translation' )
+							.addClass( 'four columns' ),
+						$( '<div>' )
+							.text( 'Current translation' )
+							.addClass( 'four columns' )
+					)
+				);
+			$.each( translations.translationstash.translations, function( index, translation ) {
+				$target.append(
+					$( '<div>' )
+						.addClass( 'row' )
+						.append(
+							$( '<div>' )
+								.addClass( 'four columns source' )
+								.text( translation.definition ),
+							$( '<div>' )
+								.addClass( 'four columns translation' )
+								.append(
+									$( '<div>' ).text( translation.translation ),
+									$( '<div>' )
+										.addClass( 'info' )
+										.text(
+											$.uls.data.getAutonym( translation.title.split(/[\\/ ]+/).pop() )
+										)
+								),
+							$( '<div>' )
+								.addClass( 'four columns comparison' )
+								.append(
+									$( '<div>' ).text( translation.comparison ),
+									$( '<div>' )
+										.addClass( 'info' )
+										.text( translation.title )
+								)
+						)
+					);
+			} );
+		} );
 	}
 
 	$( document ).ready( function () {
