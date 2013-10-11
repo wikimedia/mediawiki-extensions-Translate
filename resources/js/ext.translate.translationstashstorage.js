@@ -24,7 +24,7 @@
 				action: 'translationstash',
 				subaction: 'add',
 				title: title,
-				value: translation,
+				translation: translation,
 				token: $( '#token' ).val()
 			} );
 
@@ -35,12 +35,13 @@
 		 * Get the current users translations
 		 * @return {jQuery.Promise}
 		 */
-		getUserTranslations: function () {
+		getUserTranslations: function ( user ) {
 			var deferred = new mw.Api().get( {
 				action: 'translationstash',
 				subaction: 'query',
 				// TODO: use postWithToken once it is ready in core.
-				token: $( '#token' ).val()
+				token: $( '#token' ).val(),
+				username: user
 			} );
 
 			return deferred.promise();

@@ -15,46 +15,84 @@
 class ApiTranslationStash extends ApiBase {
 	public function execute() {
 		$params = $this->extractRequestParams();
-		$action = $params['subaction'];
+
+		// The user we are operating on, not necessarly the user making the request
+		$user = $this->getUser();
+
+		if ( isset( $params['username'] ) ){
+			if ( $this->getUser()->isAllowed( 'translate-sandboxmanage' ) ) {
+				$user = User::newFromName( $params['username'] );
+				if ( !$user ) {
+					$this->dieUsageMsg( array( 'invalidparam', 'username' ) );
+				}
+			} else {
+				$this->dieUsageMsg( array( 'invalidparam', 'username' ) );
+			}
+		}
+
 		$stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
+		$action = $params['subaction'];
+
 		if ( $action === 'add' ) {
 			if ( !isset( $params['title'] ) ) {
 				$this->dieUsageMsg( array( 'missingparam', 'title' ) );
 			}
-			if ( !isset( $params['value'] ) ) {
-				$this->dieUsageMsg( array( 'missingparam', 'value' ) );
+			if ( !isset( $params['translation'] ) ) {
+				$this->dieUsageMsg( array( 'missingparam', 'translation' ) );
 			}
+
+			// @todo: Return value of Title::newFromText not checked
 			$translation = new StashedTranslation(
-				$this->getUser(),
+				$user,
 				Title::newFromText( $params['title'] ),
-				$params['value'],
+				$params['translation'],
 				FormatJson::decode( $params['metadata'], true )
 			);
 			$stash->addTranslation( $translation );
 		}
 
 		if ( $action === 'query' ) {
-			$translations = $stash->getTranslations( $this->getUser() );
+			$output['translations'] = array();
+
+			$translations = $stash->getTranslations( $user );
 			foreach( $translations as $translation ) {
-				$translation = array(
-					'title' => $translation->getTitle()->getPrefixedDBKey(),
-					'value' => $translation->getValue(),
-					'metadata' => $translation->getMetadata(),
-				);
-				$output['translations'][] = $translation;
+				$output['translations'][] = $this->formatTranslation( $translation );
 			}
 		}
+
 		// If we got this far, nothing has failed
 		$output['result'] = 'ok';
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 	}
 
+	protected function formatTranslation( StashedTranslation $translation ) {
+		$title = $translation->getTitle();
+		$handle = new MessageHandle( $title );
 
-	public function isWriteMode() {
-		return true;
+		// Prepare for the worst
+		$definition = '';
+		$comparison = '';
+		if ( $handle->isValid() ) {
+			$groupId = MessageIndex::getPrimaryGroupId( $handle );
+			$group = MessageGroups::getGroup( $groupId );
+
+			$key = $handle->getKey();
+
+			$definition = $group->getMessage( $key, $group->getSourceLanguage() );
+			$comparison = $group->getMessage( $key, $handle->getCode() );
+		}
+
+		return array(
+			'title' => $title->getPrefixedDBKey(),
+			'definition' => $definition,
+			'translation' => $translation->getValue(),
+			'comparison' => $comparison,
+			'metadata' => $translation->getMetadata(),
+		);
 	}
 
-	public function needsToken() {
+
+	public function isWriteMode() {
 		return true;
 	}
 
@@ -94,6 +132,9 @@ class ApiTranslationStash extends ApiBase {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
 			),
+			'username' => array(
+				ApiBase::PARAM_TYPE => 'string',
+			),
 		);
 	}
 
@@ -103,9 +144,11 @@ class ApiTranslationStash extends ApiBase {
 		return array(
 			'subaction' => 'Action',
 			'title' => 'Title of the translation unit page',
-			'value' => 'Translation',
+			'translation' => 'Translation made by the user',
 			'metadata' => 'Json object',
 			'token' => 'Sandbox token',
+			'username' => 'Optionally the user whose stash to get. '
+				. 'Only priviledged users can do this',
 		);
 	}
 
@@ -116,7 +159,7 @@ class ApiTranslationStash extends ApiBase {
 	public function getExamples() {
 		return array(
 			"api.php?action=translationstash&subaction=add&title=MediaWiki:Jan/fi&" .
-				"value=tammikuu&metadata={}",
+				"translation=tammikuu&metadata={}",
 			"api.php?action=translationstash&subaction=query",
 		);
 	}

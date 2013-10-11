@@ -102,7 +102,7 @@
 				$.each( messages, function ( index, message ) {
 					message.group = messagegroup;
 					if ( userTranslations[message.title] ) {
-						message.translation = userTranslations[message.title].value;
+						message.translation = userTranslations[message.title].translation;
 					}
 
 					addMessage( message );

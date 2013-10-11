@@ -163,3 +163,9 @@
 textarea.body {
 	height: 300px;
 }
+
+.translations .row {
+	border-bottom: 1px solid #c9c8c8;
+	padding: 10px;
+	font-size: 1em;
+}
