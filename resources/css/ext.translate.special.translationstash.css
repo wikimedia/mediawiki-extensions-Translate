@@ -51,3 +51,7 @@ h1.firstHeading {
 	display: inline-block;
 	vertical-align: middle;
 }
+
+.messagekey {
+	visibility: hidden;
+}
