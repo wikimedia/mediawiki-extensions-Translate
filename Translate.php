@@ -620,6 +620,13 @@ $wgTranslateTestTTMServer = null;
  */
 $wgTranslateUseTux = true;
 
+/**
+ * List of user names that are allowed alter their priviledges and do other
+ * things. Used for supporting integration testing.
+ * @since 2013.10
+ */
+$wgTranslateTestUsers = array();
+
 # </source>
 
 /** @cond cli_support */

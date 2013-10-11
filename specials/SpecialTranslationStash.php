@@ -21,8 +21,7 @@ class SpecialTranslationStash extends SpecialPage {
 		$this->setHeaders();
 		$out = $this->getOutput();
 
-		if ( !TranslateSandbox::isSandboxed( $this->getUser() ) ) {
-			// Not a sandboxed user, redirect to Special:Translate
+		if ( !$this->hasPermissionToUse() ) {
 			$out->redirect( Title::newMainPage()->getLocalUrl() );
 
 			return;
@@ -30,6 +29,39 @@ class SpecialTranslationStash extends SpecialPage {
 
 		$out->addModules( 'ext.translate.special.translationstash' );
 		$this->showPage();
+	}
+
+	/**
+	 * Checks that the user is in the sandbox. Also handles special overrides
+	 * mainly used for integration testing.
+	 *
+	 * @return bool
+	 */
+	protected function hasPermissionToUse() {
+		global $wgTranslateTestUsers;
+
+		$request = $this->getRequest();
+		$user = $this->getUser();
+
+		if ( in_array( $user->getName(), $wgTranslateTestUsers, true ) ) {
+			if ( $request->getVal( 'integrationtesting' ) === 'activatestash' ) {
+				$user->addGroup( 'translate-sandboxed' );
+
+				return true;
+			} elseif ( $request->getVal( 'integrationtesting' ) === 'deactivatestash' ) {
+				$user->removeGroup( 'translate-sandboxed' );
+				$stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
+				$stash->deleteTranslations( $user );
+
+				return false;
+			}
+		}
+
+		if ( !TranslateSandbox::isSandboxed( $user ) ) {
+			return false;
+		}
+
+		return true;
 	}
 
 	/**
