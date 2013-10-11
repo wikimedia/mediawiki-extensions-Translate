@@ -8,6 +8,11 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	mw.translate.canTranslate = function () {
+		// At this page, the new translator can translate
+		return true;
+	};
+
 	var userTranslations = {},
 		translationStashStorage = new mw.translate.TranslationStashStorage();
 
