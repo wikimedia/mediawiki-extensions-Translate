@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_4e69118c",
+        "filename": "scripts/poimport.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-11T14:32:51Z",
+      "side": 1,
+      "message": "I didn\u0027t write the original, and mostly focused on converting the script.",
+      "parentUuid": "0932edd2_032452c6",
+      "revId": "456c9e121077fd79cf824fc68d740acf7c12817c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_23315605",
         "filename": "scripts/poimport.php",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2013-10-11T14:07:22Z",
       "side": 1,
       "message": "Left a note about this in other pathc.",
+      "revId": "456c9e121077fd79cf824fc68d740acf7c12817c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_2e6cdd9c",
+        "filename": "scripts/poimport.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-11T14:32:51Z",
+      "side": 1,
+      "message": "If you did, you do not appear to have made it public, which is a shame...",
+      "parentUuid": "0932edd2_631b4e7f",
       "revId": "456c9e121077fd79cf824fc68d740acf7c12817c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
