@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_08dc716f",
+        "filename": "scripts/createCheckIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:50:53Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it be better to make separate lines? On the other hand git keeps history now so I don\u0027t usually even bother adding years to new files.",
+      "revId": "b0e6e380ccb27b1398da879f7f11c8bbf2412e88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_c880994c",
+        "filename": "scripts/createCheckIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:50:53Z",
+      "side": 1,
+      "message": "Is this longer than line 24 which is not wrapped?",
+      "revId": "b0e6e380ccb27b1398da879f7f11c8bbf2412e88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_089391a3",
+        "filename": "scripts/createCheckIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:50:53Z",
+      "side": 1,
+      "message": "Mm this should really use group source language.\n\nhttps://bugzilla.wikimedia.org/show_bug.cgi?id\u003d55607",
+      "revId": "b0e6e380ccb27b1398da879f7f11c8bbf2412e88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_68ea4d12",
+        "filename": "scripts/createCheckIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:50:53Z",
+      "side": 1,
+      "message": "false is not necessary",
+      "revId": "b0e6e380ccb27b1398da879f7f11c8bbf2412e88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_488d897b",
+        "filename": "scripts/createCheckIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:50:53Z",
+      "side": 1,
+      "message": "if (",
+      "revId": "b0e6e380ccb27b1398da879f7f11c8bbf2412e88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_88ef811e",
+        "filename": "scripts/createCheckIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:50:53Z",
+      "side": 1,
+      "message": "There is a comma here, it is using the channeled output so you shouldn\u0027t add \"\\n\" there.",
+      "revId": "b0e6e380ccb27b1398da879f7f11c8bbf2412e88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_a8f445f1",
+        "filename": "scripts/createCheckIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:50:53Z",
+      "side": 1,
+      "message": "or here",
+      "revId": "b0e6e380ccb27b1398da879f7f11c8bbf2412e88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
