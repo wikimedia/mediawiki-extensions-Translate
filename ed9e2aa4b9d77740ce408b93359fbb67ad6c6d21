@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_88d8617a",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T14:42:27Z",
+      "side": 1,
+      "message": "Don\u0027t you usualy indent lines like this",
+      "revId": "ed9e2aa4b9d77740ce408b93359fbb67ad6c6d21",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_a8cd25bb",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T14:42:27Z",
+      "side": 1,
+      "message": "This already returns boolean",
+      "revId": "ed9e2aa4b9d77740ce408b93359fbb67ad6c6d21",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_c8d25958",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T14:42:27Z",
+      "side": 1,
+      "message": "booleans...",
+      "revId": "ed9e2aa4b9d77740ce408b93359fbb67ad6c6d21",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_e8c71d97",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T14:42:27Z",
+      "side": 1,
+      "message": "We could make this detect this automatically in another commit",
+      "revId": "ed9e2aa4b9d77740ce408b93359fbb67ad6c6d21",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
