@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_7d49318f",
+        "filename": "scripts/createMessageIndex.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T05:01:39Z",
+      "side": 1,
+      "message": "I suggest \"Clearing cache...\"",
+      "revId": "e7ed81fa4442362988505f6c210f8165f806a65a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_9d4ee595",
+        "filename": "scripts/createMessageIndex.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T05:01:39Z",
+      "side": 1,
+      "message": "I suggest Rebuilding message index...",
+      "revId": "e7ed81fa4442362988505f6c210f8165f806a65a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_bd43a96e",
+        "filename": "scripts/createMessageIndex.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T05:01:39Z",
+      "side": 1,
+      "message": "This line seems redundant with the above",
+      "revId": "e7ed81fa4442362988505f6c210f8165f806a65a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
