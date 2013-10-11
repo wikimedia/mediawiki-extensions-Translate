@@ -36,6 +36,7 @@ Please come to $2 and make some more translations.',
 	'translate-translationstash-welcome' => 'Welcome {{GENDER:$1|$1}}, you are a new translator',
 	'translate-translationstash-welcome-note' => 'Become familiar with the translation tools by translating some randomly selected messages.',
 	'translate-translationstash-initialtranslation' => 'Your initial translation',
+	'translate-translationstash-skip-button-label' => 'Try another',
 );
 
 /** Message documentation (Message documentation)
@@ -68,6 +69,7 @@ Followed by a list of the pending requests.',
 * $1 - user name of the new translator',
 	'translate-translationstash-welcome-note' => 'Title note for the [[Special:TranslationStash]].',
 	'translate-translationstash-initialtranslation' => 'Header for messages showing the progress of translations in [[Special:TranslationStash]].',
+	'translate-translationstash-skip-button-label' => 'Label for the skip button in translation editor',
 );
 
 /** Afrikaans (Afrikaans)
@@ -453,7 +455,7 @@ $messages['uk'] = array(
 	'tsb-reminder-title-generic' => 'Завершіть своє представлення, щоб стати перевіреним перекладачем',
 	'tsb-reminder-content-generic' => 'Привіт, $1!
 
-Дякуємо за реєстрацію у проекті {{SITENAME}}. Якщо Ви завершите свої тестові 
+Дякуємо за реєстрацію у проекті {{SITENAME}}. Якщо Ви завершите свої тестові
 переклади, адміністратори зможуть скоро надати Вам повні права на переклад.
 
 Будь ласка, перейдіть на $2 і зробіть ще декілька перекладів.',

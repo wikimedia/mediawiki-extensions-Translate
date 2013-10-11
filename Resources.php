@@ -379,6 +379,9 @@ $wgResourceModules['ext.translate.special.translationstash'] = array(
 		'ext.translate.messagetable',
 		'ext.translate.translationstashstorage',
 	),
+	'messages' => array(
+		'translate-translationstash-skip-button-label',
+	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.translationstats'] = array(

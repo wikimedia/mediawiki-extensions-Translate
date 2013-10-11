@@ -88,7 +88,11 @@
 		// Attach translate editor to the message
 		$messageWrapper.translateeditor( {
 			message: message,
-			storage: translationStashStorage
+			storage: translationStashStorage,
+			onReady: function () {
+				this.$editor.find( '.tux-editor-skip-button' )
+					.text( mw.msg( 'translate-translationstash-skip-button-label' ) );
+			}
 		} );
 	}
 
