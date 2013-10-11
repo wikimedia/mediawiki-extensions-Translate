@@ -20,6 +20,14 @@ class SpecialTranslationStash extends SpecialPage {
 	public function execute( $params ) {
 		$this->setHeaders();
 		$out = $this->getOutput();
+
+		if ( !TranslateSandbox::isSandboxed( $this->getUser() ) ) {
+			// Not a sandboxed user, redirect to Special:Translate
+			$out->redirect( Title::newMainPage()->getLocalUrl() );
+
+			return;
+		}
+
 		$out->addModules( 'ext.translate.special.translationstash' );
 		$this->showPage();
 	}
