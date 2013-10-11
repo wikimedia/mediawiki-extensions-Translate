@@ -15,9 +15,7 @@
 			token: $( '#token' ).val()
 		}, options );
 
-		api.post( options )
-			.done( function () { window.alert( 'Success' ); } )
-			.fail( function () { window.alert( 'Failure' ); } );
+		return api.post( options ).promise();
 	}
 
 	/**
@@ -108,6 +106,12 @@
 		} );
 	}
 
+	function removeSelectedRequests() {
+		$( '.request-selector:checked' )
+			.closest( '.request' ).remove();
+		$( '.request-count div' )
+			.text( mw.msg( 'tsb-request-count', $( '.request').length ) );
+	}
 	/**
 	 * Display the request details when user clicks on a request item
 	 *
@@ -139,7 +143,7 @@
 							doApiAction( {
 								userid: request.userid,
 								'do': 'promote'
-							} );
+							} ).done( removeSelectedRequests );
 						} ),
 					$( '<button>' )
 						.addClass( 'delete destructive button' )
@@ -148,7 +152,7 @@
 							doApiAction( {
 								userid: request.userid,
 								'do': 'delete'
-							} );
+							} ).done( removeSelectedRequests );
 						} )
 				),
 			$( '<div>' )
@@ -194,6 +198,7 @@
 		// Handle clicks on requests
 		$( '.requests .request' ).on( 'click',  function () {
 			displayRequestDetails( $( this ).data( 'data' ) );
+			 $( this ).find( '.request-selector' ).click();
 		} );
 
 		// Activate language selector
