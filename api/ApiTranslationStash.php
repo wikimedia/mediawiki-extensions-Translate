@@ -16,11 +16,14 @@ class ApiTranslationStash extends ApiBase {
 	public function execute() {
 		$params = $this->extractRequestParams();
 		$action = $params['subaction'];
-
+		$stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 		if ( $action === 'add' ) {
-			// Ugly, but API modules don't have proper dependency injection
-			$stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
-
+			if ( !isset( $params['title'] ) ) {
+				$this->dieUsageMsg( array( 'missingparam', 'title' ) );
+			}
+			if ( !isset( $params['value'] ) ) {
+				$this->dieUsageMsg( array( 'missingparam', 'value' ) );
+			}
 			$translation = new StashedTranslation(
 				$this->getUser(),
 				Title::newFromText( $params['title'] ),
@@ -30,6 +33,17 @@ class ApiTranslationStash extends ApiBase {
 			$stash->addTranslation( $translation );
 		}
 
+		if ( $action === 'query' ) {
+			$translations = $stash->getTranslations( $this->getUser() );
+			foreach( $translations as $translation ) {
+				$translation = array(
+					'title' => $translation->getTitle()->getPrefixedDBKey(),
+					'value' => $translation->getValue(),
+					'metadata' => $translation->getMetadata(),
+				);
+				$output['translations'][] = $translation;
+			}
+		}
 		// If we got this far, nothing has failed
 		$output['result'] = 'ok';
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
@@ -63,16 +77,14 @@ class ApiTranslationStash extends ApiBase {
 	public function getAllowedParams() {
 		return array(
 			'subaction' => array(
-				ApiBase::PARAM_TYPE => array( 'add' ),
+				ApiBase::PARAM_TYPE => array( 'add', 'query' ),
 				ApiBase::PARAM_REQUIRED => true,
 			),
 			'title' => array(
 				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
 			),
 			'value' => array(
 				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
 			),
 			'metadata' => array(
 				ApiBase::PARAM_TYPE => 'string',
@@ -105,6 +117,7 @@ class ApiTranslationStash extends ApiBase {
 		return array(
 			"api.php?action=translationstash&subaction=add&title=MediaWiki:Jan/fi&" .
 				"value=tammikuu&metadata={}",
+			"api.php?action=translationstash&subaction=query",
 		);
 	}
 
