@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_887ce181",
+        "filename": "scripts/export.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:40:16Z",
+      "side": 1,
+      "message": "I filed https://bugzilla.wikimedia.org/show_bug.cgi?id\u003d55606 for this.",
+      "revId": "ede27df1277960678ee7e5a8ae8e0ea7c78109eb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_286695ef",
+        "filename": "scripts/export.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:40:16Z",
+      "side": 1,
+      "message": "Suggest to use string interpolation here:\n\"Target directory is not writable ($target)\\n\"",
+      "revId": "ede27df1277960678ee7e5a8ae8e0ea7c78109eb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_68988dca",
+        "filename": "scripts/export.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:40:16Z",
+      "side": 1,
+      "message": "I don\u0027t think false is needed here. Null is false enough too.",
+      "revId": "ede27df1277960678ee7e5a8ae8e0ea7c78109eb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_a8a285fd",
+        "filename": "scripts/export.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:40:16Z",
+      "side": 1,
+      "message": "Did you change the behavior of this switch? It looks like it needs to be used as --no-location\u003d--no-location now",
+      "revId": "ede27df1277960678ee7e5a8ae8e0ea7c78109eb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_a871a5aa",
+        "filename": "scripts/export.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:40:16Z",
+      "side": 1,
+      "message": "boolean ? true : false; is redundant, you can drop the ternary.",
+      "revId": "ede27df1277960678ee7e5a8ae8e0ea7c78109eb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_e86b9db6",
+        "filename": "scripts/export.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:40:16Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "ede27df1277960678ee7e5a8ae8e0ea7c78109eb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_c876d99f",
+        "filename": "scripts/export.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:40:16Z",
+      "side": 1,
+      "message": "if (",
+      "revId": "ede27df1277960678ee7e5a8ae8e0ea7c78109eb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_0869d1be",
+        "filename": "scripts/export.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:40:16Z",
+      "side": 1,
+      "message": "null is the default, no need to specify it here",
+      "revId": "ede27df1277960678ee7e5a8ae8e0ea7c78109eb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
