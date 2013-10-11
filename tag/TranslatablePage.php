@@ -614,7 +614,7 @@ class TranslatablePage {
 		$filtered = array();
 
 		// Make sure we only get translation subpages while ignoring others
-		$codes = Language::getLanguageNames( false );
+		$codes = Language::fetchLanguageNames();
 		$prefix = $this->getTitle()->getText();
 		/** @var Title $title */
 		foreach ( $titles as $title ) {
@@ -766,7 +766,7 @@ class TranslatablePage {
 			return false;
 		}
 
-		$codes = Language::getLanguageNames( false );
+		$codes = Language::fetchLanguageNames();
 		global $wgTranslateDocumentationLanguageCode;
 		unset( $codes[$wgTranslateDocumentationLanguageCode] );
 
