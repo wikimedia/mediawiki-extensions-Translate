@@ -33,7 +33,7 @@ Please come to $2 and make some more translations.',
 	'tsb-reminder-link-text' => 'Send email reminder',
 
 	'translationstash' => 'Welcome',
-	'translate-translationstash-welcome' => 'Thank you {{GENDER:$1|$1}}, you are a new translator',
+	'translate-translationstash-welcome' => 'Welcome {{GENDER:$1|$1}}, you are a new translator',
 	'translate-translationstash-welcome-note' => 'Become familiar with the translation tools by translating some randomly selected messages.',
 	'translate-translationstash-initialtranslation' => 'Your initial translation',
 );
