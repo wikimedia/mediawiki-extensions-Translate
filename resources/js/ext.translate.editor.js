@@ -47,6 +47,13 @@
 				return;
 			}
 
+			this.render();
+		},
+
+		/**
+		 * Render the editor UI
+		 */
+		render: function () {
 			this.$editor = $( '<div>' )
 				.addClass( 'row tux-message-editor hide' )
 				.append(
