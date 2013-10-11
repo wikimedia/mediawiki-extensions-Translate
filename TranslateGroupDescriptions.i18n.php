@@ -980,7 +980,7 @@ Por favor, bótelle unha ollada a [[mw:Extension:PDF_Writer]] e a http://code.pe
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] é un editor do OpenStreetMap baseado en Flash',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] é unha colección de ferramentas para editar a Wikipedia',
 	'bw-desc-shapado' => 'Grupo de mensaxes para o software de código aberto de preguntas e respostas [[Translating:Shapado|Shapado]]',
-	'translate-group-desc-tsint' => 'Un grupo de mensaxes para o [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], o sistema i18n das ferramentas do [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|axuda]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalles técnicos]</span>)', # Fuzzy
+	'translate-group-desc-tsint' => 'Un grupo de mensaxes para [[Translating:Intuition|Intuition]], o sistema i18n das ferramentas do [//toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Intuition|soporte]]</span>)',
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] é unha ferramenta para cargar ficheiros á Wikimedia Commons e aos outros proxectos da Wikimedia',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] é un servizo que mostra rutas de sendeirismo, ciclismo, ciclismo de montaña e patinaxe de todo o mundo. Usa a licenza GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php?user_lang=gl Wikiblame] é capaz de atopar rapidamente os autores dunha páxina nun wiki da Wikimedia.',

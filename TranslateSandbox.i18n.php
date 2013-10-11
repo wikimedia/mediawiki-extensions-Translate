@@ -142,7 +142,7 @@ Bitte besuche $2 und erstelle einige weitere Übersetzungen.',
 	'tsb-reject-button-label' => 'Ablehnen',
 	'tsb-reminder-link-text' => 'E-Mail-Erinnerung senden',
 	'translationstash' => 'Willkommen',
-	'translate-translationstash-welcome' => 'Danke $1, du bist {{GENDER:$1|ein neuer Übersetzer|eine neue Übersetzerin}}.',
+	'translate-translationstash-welcome' => 'Willkommen $1, du bist {{GENDER:$1|ein neuer Übersetzer|eine neue Übersetzerin}}.',
 	'translate-translationstash-welcome-note' => 'Werde mit den Übersetzungswerkzeugen vertraut, indem du einige zufällig ausgewählte Nachrichten übersetzt.',
 	'translate-translationstash-initialtranslation' => 'Deine erste Übersetzung',
 );
@@ -175,7 +175,7 @@ Veuillez venir sur $2 et faire quelques traductions de plus.',
 	'tsb-reject-button-label' => 'Rejeter',
 	'tsb-reminder-link-text' => 'Envoyer un courriel de rappel',
 	'translationstash' => 'Bienvenue',
-	'translate-translationstash-welcome' => 'Merci {{GENDER:$1|$1}}, vous êtes un nouveau traducteur',
+	'translate-translationstash-welcome' => 'Merci {{GENDER:$1|$1}}, vous êtes un nouveau traducteur', # Fuzzy
 	'translate-translationstash-welcome-note' => 'Familiarisez-vous avec les outils de traduction en traduisant quelques messages sélectionnés aléatoirement.',
 	'translate-translationstash-initialtranslation' => 'Votre traduction initiale',
 );
@@ -194,6 +194,16 @@ de proba, os adminitradores poderán concederlle axiña acceso completo á
 tradución.
 
 Acceda ao sistema en $2 e faga algunhas traducións máis.',
+	'tsb-request-count' => '{{PLURAL:$1|Unha solicitude|$1 solicitudes}}',
+	'tsb-all-languages-button-label' => 'Todas as linguas',
+	'tsb-search-requests' => 'Procurar nas solicitudes',
+	'tsb-accept-button-label' => 'Aceptar',
+	'tsb-reject-button-label' => 'Rexeitar',
+	'tsb-reminder-link-text' => 'Enviar un recordatorio por correo electrónico',
+	'translationstash' => 'Benvido',
+	'translate-translationstash-welcome' => '{{GENDER:$1|Benvido|Benvida}}, $1; xa es {{GENDER:$1|un novo tradutor|unha nova tradutora}}',
+	'translate-translationstash-welcome-note' => 'Familiarícese coas ferramentas de tradución traducindo algunhas mensaxes seleccionadas ao chou.',
+	'translate-translationstash-initialtranslation' => 'A súa tradución inicial',
 );
 
 /** Hebrew (עברית)
@@ -232,7 +242,7 @@ Vieni su $2 e fai alcune altre traduzioni.",
 	'tsb-reject-button-label' => 'Rifiuta',
 	'tsb-reminder-link-text' => 'Invia email di promemoria',
 	'translationstash' => 'Benvenuto(a)',
-	'translate-translationstash-welcome' => 'Grazie {{GENDER:$1|$1}}, ora sei un nuovo traduttore',
+	'translate-translationstash-welcome' => 'Grazie {{GENDER:$1|$1}}, ora sei un nuovo traduttore', # Fuzzy
 );
 
 /** Japanese (日本語)
@@ -247,7 +257,7 @@ $messages['ja'] = array(
 	'tsb-accept-button-label' => '承認',
 	'tsb-reject-button-label' => '却下',
 	'translationstash' => 'ようこそ',
-	'translate-translationstash-welcome' => '$1 さん、ありがとうございます。あなたは翻訳者になりました',
+	'translate-translationstash-welcome' => '$1 さん、ありがとうございます。あなたは翻訳者になりました', # Fuzzy
 );
 
 /** Korean (한국어)
@@ -292,12 +302,24 @@ $messages['lb'] = array(
 	'translatesandbox' => 'Iwwersetzer-Sandkëscht geréieren',
 	'tsb-filter-pending' => 'Ufroen am Suspens',
 	'tsb-reminder-title-generic' => 'Kompletéiert Är Virstellung fir e verifizéierten Iwwersetzer ze ginn',
+	'tsb-request-count' => '{{PLURAL:$1|Eng Ufro|$1 Ufroen}}',
 	'tsb-all-languages-button-label' => 'All Sproochen',
 	'tsb-accept-button-label' => 'Akzeptéieren',
 	'tsb-reject-button-label' => 'Refuséieren',
 	'translationstash' => 'Wëllkomm',
-	'translate-translationstash-welcome' => 'Merci {{GENDER:$1|$1}}, dir sidd en neien Iwwersetzer',
+	'translate-translationstash-welcome' => 'Wëllkomm {{GENDER:$1|$1}}, Dir sidd en neien Iwwersetzer',
 	'translate-translationstash-initialtranslation' => 'Är éischt Iwwersetzung',
+);
+
+/** Latvian (latviešu)
+ * @author Papuass
+ */
+$messages['lv'] = array(
+	'tsb-all-languages-button-label' => 'Visas valodas',
+	'tsb-search-requests' => 'Meklēt pieprasījumus',
+	'tsb-accept-button-label' => 'Pieņemt',
+	'tsb-reject-button-label' => 'Noraidīt',
+	'tsb-reminder-link-text' => 'Sūtīt e-pasta atgādinājumu',
 );
 
 /** Macedonian (македонски)
@@ -319,7 +341,7 @@ $messages['mk'] = array(
 	'tsb-reject-button-label' => 'Одбиј',
 	'tsb-reminder-link-text' => 'Испрати потсетник по е-пошта',
 	'translationstash' => 'Добре дојдовте',
-	'translate-translationstash-welcome' => 'Благодарам {{GENDER:$1|$1}}, вие сте нов преведувач',
+	'translate-translationstash-welcome' => 'Благодарам {{GENDER:$1|$1}}, вие сте нов преведувач', # Fuzzy
 	'translate-translationstash-welcome-note' => 'Запознајте се со преводните алатки преведувајќи некои произволно избрани пораки.',
 	'translate-translationstash-initialtranslation' => 'Вашиот првичен превод',
 );
@@ -415,7 +437,7 @@ $messages['ru'] = array(
 	'tsb-reject-button-label' => 'Отклонить',
 	'tsb-reminder-link-text' => 'Отправить напоминание по электронной почте',
 	'translationstash' => 'Добро пожаловать',
-	'translate-translationstash-welcome' => 'Спасибо, {{GENDER:$1|$1}}, теперь вы новый переводчик',
+	'translate-translationstash-welcome' => 'Спасибо, {{GENDER:$1|$1}}, теперь вы новый переводчик', # Fuzzy
 	'translate-translationstash-welcome-note' => 'Ознакомиться с инструментами перевода путём перевода нескольких случайно выбранных сообщений.',
 	'translate-translationstash-initialtranslation' => 'Ваш первоначальный перевод',
 );
@@ -464,7 +486,7 @@ $messages['uk'] = array(
 	'tsb-reject-button-label' => 'Відмовитися',
 	'tsb-reminder-link-text' => 'Надсилати нагадування по електронній пошті',
 	'translationstash' => 'Ласкаво просимо',
-	'translate-translationstash-welcome' => 'Дякуємо {{GENDER:$1|$1}}, ви є новий перекладач',
+	'translate-translationstash-welcome' => 'Дякуємо {{GENDER:$1|$1}}, ви є новий перекладач', # Fuzzy
 	'translate-translationstash-welcome-note' => 'Ознайомитися з інструментами перекладу шляхом перекладу деяких випадково вибраних повідомлень.',
 	'translate-translationstash-initialtranslation' => 'Ваш початковий переклад',
 );
