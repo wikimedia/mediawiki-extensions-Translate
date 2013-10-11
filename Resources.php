@@ -363,14 +363,18 @@ $wgResourceModules['ext.translate.special.translatesandbox'] = array(
 		'mediawiki.api',
 		'jquery.uls.grid',
 		'jquery.ui.dialog',
+		'mediawiki.jqueryMsg',
 	),
 	'messages' => array(
 		'tsb-accept-button-label',
 		'tsb-reject-button-label',
+		'tsb-accept-all-button-label',
+		'tsb-reject-all-button-label',
 		'tsb-reminder-link-text',
 		'tsb-translations-source',
 		'tsb-translations-user',
 		'tsb-translations-current',
+		'tsb-request-count',
 	),
 ) + $resourcePaths;
 
