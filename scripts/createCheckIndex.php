@@ -41,12 +41,6 @@ class CreateCheckIndex extends Maintenance {
 			unset( $codes[$wgTranslateDocumentationLanguageCode] );
 		}
 
-		// Skip source language code
-		unset( $codes['en'] );
-
-		$codes = array_keys( $codes );
-		sort( $codes );
-
 		$reqGroups = $this->getOption( 'group' );
 		if ( $reqGroups ) {
 			$reqGroups = explode( ',', $reqGroups );
@@ -61,6 +55,7 @@ class CreateCheckIndex extends Maintenance {
 		/** @var $g MessageGroup */
 		foreach ( $groups as $g ) {
 			$id = $g->getId();
+			$sourceLanguage = $g->getSourceLanguage();
 
 			// Skip groups that are not requested
 			if ( $reqGroups && !in_array( $id, $reqGroups ) ) {
@@ -75,14 +70,21 @@ class CreateCheckIndex extends Maintenance {
 			}
 
 			// Initialise messages, using unique definitions if appropriate
-			$collection = $g->initCollection( 'en', true );
+			$collection = $g->initCollection( $sourceLanguage, true );
 			if ( !count( $collection ) ) {
 				continue;
 			}
 
 			$this->output( "Working with $id: ", $id );
 
-			foreach ( $codes as $code ) {
+			// Skip source language code
+			$langCodes = $codes;
+			unset( $langCodes[$sourceLanguage] );
+
+			$langCodes = array_keys( $langCodes );
+			sort( $langCodes );
+
+			foreach ( $langCodes as $code ) {
 				$this->output( "$code ", $id );
 
 				$problematic = array();
