@@ -65,7 +65,7 @@ class TranslatePreferences {
 		// Set target ID.
 		$select->setTargetId( 'mw-input-translate-editlangs' );
 		// Get available languages.
-		$languages = Language::getLanguageNames( false );
+		$languages = Language::fetchLanguageNames();
 
 		$preferences['translate-editlangs'] = array(
 			'class' => 'HTMLJsSelectToInputField',
@@ -109,7 +109,7 @@ class TranslatePreferences {
 				LanguageNames::FALLBACK_NORMAL
 			);
 		} else {
-			$languages = Language::getLanguageNames( false );
+			$languages = Language::fetchLanguageNames();
 		}
 
 		ksort( $languages );

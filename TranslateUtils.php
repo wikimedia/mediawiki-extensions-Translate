@@ -205,7 +205,7 @@ class TranslateUtils {
 				LanguageNames::LIST_MW
 			);
 		} else {
-			$languageNames = Language::getLanguageNames( false );
+			$languageNames = Language::fetchLanguageNames();
 		}
 
 		// Remove languages with deprecated codes (bug 35475)

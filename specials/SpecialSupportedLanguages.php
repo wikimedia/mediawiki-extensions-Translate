@@ -80,7 +80,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 			);
 		}
 
-		$natives = Language::getLanguageNames( false );
+		$natives = Language::fetchLanguageNames();
 		ksort( $natives );
 
 		$this->outputLanguageCloud( $natives );

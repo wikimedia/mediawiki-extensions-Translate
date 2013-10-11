@@ -271,7 +271,7 @@ class MessageGroupStats {
 		$stats = self::extractResults( $res, $stats );
 
 		# Go over each language filling missing entries
-		$languages = array_keys( Language::getLanguageNames( false ) );
+		$languages = array_keys( Language::fetchLanguageNames() );
 		// This is for calculating things in correct order
 		sort( $languages );
 		foreach ( $languages as $code ) {
@@ -388,7 +388,6 @@ class MessageGroupStats {
 		global $wgTranslateDocumentationLanguageCode;
 		# Calculate if missing and store in the db
 		$collection = $group->initCollection( $code );
-		$collection->setReviewMode( true );
 
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
 			$ffs = $group->getFFS();

@@ -304,7 +304,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 				LanguageNames::LIST_MW_AND_CLDR
 			);
 		} else {
-			$languages = Language::getLanguageNames( false );
+			$languages = Language::fetchLanguageNames();
 		}
 
 		ksort( $languages );
