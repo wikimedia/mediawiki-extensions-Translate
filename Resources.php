@@ -359,6 +359,7 @@ $wgResourceModules['ext.translate.special.translatesandbox'] = array(
 	'styles' => 'resources/css/ext.translate.special.translatesandbox.css',
 	'position' => 'top',
 	'dependencies' => array(
+		'ext.translate.translationstashstorage',
 		'mediawiki.api',
 		'jquery.uls.grid',
 		'jquery.ui.dialog',

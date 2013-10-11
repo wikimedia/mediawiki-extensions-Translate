@@ -74,7 +74,8 @@ class SpecialTranslationStash extends SpecialPage {
 	protected function showPage() {
 		// Easier to do this way than in JS
 		// @todo, but move to JS once it is easier there
-		$token = Html::hidden( 'token', ApiTranslationStash::getToken(), array( 'id' => 'token' ) );
+		$token = Html::hidden( 'token', ApiTranslationStash::getToken(),
+			array( 'id' => 'translationstash-token' ) );
 		$out = $this->getOutput();
 		$user = $this->getUser();
 
