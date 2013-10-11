@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_ee572555",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-11T15:43:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0932edd2_88d8617a",
+      "revId": "ed9e2aa4b9d77740ce408b93359fbb67ad6c6d21",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_a8cd25bb",
         "filename": "scripts/sync-group.php",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-11T14:42:27Z",
       "side": 1,
       "message": "This already returns boolean",
+      "revId": "ed9e2aa4b9d77740ce408b93359fbb67ad6c6d21",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_0e55594d",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-11T15:43:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0932edd2_a8cd25bb",
       "revId": "ed9e2aa4b9d77740ce408b93359fbb67ad6c6d21",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_2e521d66",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-11T15:43:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0932edd2_c8d25958",
+      "revId": "ed9e2aa4b9d77740ce408b93359fbb67ad6c6d21",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_e8c71d97",
         "filename": "scripts/sync-group.php",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2013-10-11T14:42:27Z",
       "side": 1,
       "message": "We could make this detect this automatically in another commit",
+      "revId": "ed9e2aa4b9d77740ce408b93359fbb67ad6c6d21",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_4e4f51bd",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-11T15:43:23Z",
+      "side": 1,
+      "message": "Added comment in code.",
+      "parentUuid": "0932edd2_e8c71d97",
       "revId": "ed9e2aa4b9d77740ce408b93359fbb67ad6c6d21",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
