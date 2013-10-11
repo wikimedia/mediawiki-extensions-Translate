@@ -31,7 +31,9 @@ Please come to $2 and make some more translations.',
 	'tsb-accept-button-label' => 'Accept',
 	'tsb-reject-button-label' => 'Reject',
 	'tsb-reminder-link-text' => 'Send email reminder',
-
+	'tsb-translations-source' => 'Source',
+	'tsb-translations-user' => 'User translations',
+	'tsb-translations-current' => 'Existing translations',
 	'translationstash' => 'Welcome',
 	'translate-translationstash-welcome' => 'Welcome {{GENDER:$1|$1}}, you are a new translator',
 	'translate-translationstash-welcome-note' => 'Become familiar with the translation tools by translating some randomly selected messages.',
@@ -74,6 +76,9 @@ Followed by a list of the pending requests.',
 * $1 - the number of translations user has completed in the stash',
 	'translate-translationstash-skip-button-label' => 'Label for the skip button in translation editor.
 {{Identical|Try another}}',
+	'tsb-translations-source' => 'Table header label for source messages of user translations in [[Special:TranslateSandbox]].',
+	'tsb-translations-user' => 'Table header label for user translations in [[Special:TranslateSandbox]].',
+	'tsb-translations-current' =>  'Table header label for existing translations in [[Special:TranslateSandbox]].',
 );
 
 /** Afrikaans (Afrikaans)
@@ -519,7 +524,7 @@ $messages['uk'] = array(
 	'tsb-reminder-title-generic' => 'Завершіть своє представлення, щоб стати перевіреним перекладачем',
 	'tsb-reminder-content-generic' => 'Привіт, $1!
 
-Дякуємо за реєстрацію у проекті {{SITENAME}}. Якщо Ви завершите свої тестові 
+Дякуємо за реєстрацію у проекті {{SITENAME}}. Якщо Ви завершите свої тестові
 переклади, адміністратори зможуть скоро надати Вам повні права на переклад.
 
 Будь ласка, перейдіть на $2 і зробіть ще декілька перекладів.',

@@ -359,6 +359,7 @@ $wgResourceModules['ext.translate.special.translatesandbox'] = array(
 	'styles' => 'resources/css/ext.translate.special.translatesandbox.css',
 	'position' => 'top',
 	'dependencies' => array(
+		'ext.translate.translationstashstorage',
 		'mediawiki.api',
 		'jquery.uls.grid',
 		'jquery.ui.dialog',
@@ -367,6 +368,9 @@ $wgResourceModules['ext.translate.special.translatesandbox'] = array(
 		'tsb-accept-button-label',
 		'tsb-reject-button-label',
 		'tsb-reminder-link-text',
+		'tsb-translations-source',
+		'tsb-translations-user',
+		'tsb-translations-current',
 	),
 ) + $resourcePaths;
 
