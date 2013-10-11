@@ -12,7 +12,7 @@
 
 		options = $.extend( {}, {
 			action: 'translatesandbox',
-			token: $( '#token' ).val()
+			token: $( '#translatesandbox-token' ).val()
 		}, options );
 
 		api.post( options )
@@ -114,7 +114,8 @@
 	 * @param {Object} request The request data set from backend on request items
 	 */
 	function displayRequestDetails( request ) {
-		var $detailsPane = $( '.details.pane' );
+		var storage,
+			$detailsPane = $( '.details.pane' );
 
 		$detailsPane.empty().append(
 			$( '<div>' )
@@ -161,8 +162,30 @@
 							e.preventDefault();
 							reminderDialog( request );
 						} )
-				)
+				),
+			$( '<div>' )
+				.addClass( 'translations row' )
 		);
+
+		// @todo: move higher in the tree
+		storage = new mw.translate.TranslationStashStorage();
+		storage.getUserTranslations( request.username ).done( function ( translations ) {
+			var $target = $( '.translations' );
+			$.each( translations.translationstash.translations, function( index, translation ) {
+				$target.append(
+					$( '<div>' )
+						.addClass( 'row' )
+						.append(
+							$( '<div>' )
+								.addClass( 'six columns source' )
+								.text( translation.definition ),
+							$( '<div>' )
+								.addClass( 'six columns translation' )
+								.text( translation.translation  + '(' + translation.title + ')' )
+						)
+					);
+			} );
+		} );
 	}
 
 	$( document ).ready( function () {

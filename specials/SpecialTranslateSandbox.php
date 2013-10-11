@@ -31,8 +31,10 @@ class SpecialTranslateSandbox extends SpecialPage {
 	 */
 	protected function showPage() {
 		// Easier to do this way than in JS
-		$token = Html::hidden( 'token', ApiTranslateSandbox::getToken(), array( 'id' => 'token' ) );
-
+		$sandboxToken = Html::hidden( 'token', ApiTranslateSandbox::getToken(),
+			array( 'id' => 'translatesandbox-token' ) );
+		$stashToken = Html::hidden( 'token', ApiTranslationStash::getToken(),
+			array( 'id' => 'translationstash-token' ) );
 		$out = $this->getOutput();
 		$out->addHtml( <<<HTML
 <div class="grid">
@@ -44,7 +46,7 @@ class SpecialTranslateSandbox extends SpecialPage {
 		<div class="four columns pane requests">{$this->makeList()}</div>
 		<div class="four columns pane details"></div>
 	</div>
-	$token
+	$sandboxToken $stashToken
 </div>
 HTML
 		);
