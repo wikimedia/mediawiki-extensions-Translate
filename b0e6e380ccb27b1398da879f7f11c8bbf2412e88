@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_089e3151",
+        "filename": "scripts/createCheckIndex.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-11T08:35:35Z",
+      "side": 1,
+      "message": "Proposed fix in a follow-up: https://gerrit.wikimedia.org/r/#/c/89155/",
+      "parentUuid": "0932edd2_2805b5be",
+      "revId": "b0e6e380ccb27b1398da879f7f11c8bbf2412e88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_68ea4d12",
         "filename": "scripts/createCheckIndex.php",
         "patchSetId": 1
