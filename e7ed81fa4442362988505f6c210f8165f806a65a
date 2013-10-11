@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_1d0d953e",
+        "filename": "scripts/createMessageIndex.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-11T05:52:26Z",
+      "side": 1,
+      "message": "I don\u0027t like that.",
+      "parentUuid": "0932edd2_7d49318f",
+      "revId": "e7ed81fa4442362988505f6c210f8165f806a65a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_9d4ee595",
         "filename": "scripts/createMessageIndex.php",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_3d0a5927",
+        "filename": "scripts/createMessageIndex.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-11T05:52:26Z",
+      "side": 1,
+      "message": "I don\u0027t like that.",
+      "parentUuid": "0932edd2_9d4ee595",
+      "revId": "e7ed81fa4442362988505f6c210f8165f806a65a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_bd43a96e",
         "filename": "scripts/createMessageIndex.php",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2013-10-11T05:01:39Z",
       "side": 1,
       "message": "This line seems redundant with the above",
+      "revId": "e7ed81fa4442362988505f6c210f8165f806a65a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_5d070d1e",
+        "filename": "scripts/createMessageIndex.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-11T05:52:26Z",
+      "side": 1,
+      "message": "I\u0027ll remove it, then. This does mean that there is no longer an explicit \"Complete\" statement.",
+      "parentUuid": "0932edd2_bd43a96e",
       "revId": "e7ed81fa4442362988505f6c210f8165f806a65a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
