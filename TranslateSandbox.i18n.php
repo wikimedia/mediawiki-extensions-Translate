@@ -30,6 +30,8 @@ Please come to $2 and make some more translations.',
 	'tsb-search-requests' => 'Search requests',
 	'tsb-accept-button-label' => 'Accept',
 	'tsb-reject-button-label' => 'Reject',
+	'tsb-accept-all-button-label' => 'Accept all',
+	'tsb-reject-all-button-label' => 'Reject all',
 	'tsb-reminder-link-text' => 'Send email reminder',
 	'tsb-translations-source' => 'Source',
 	'tsb-translations-user' => 'User translations',
@@ -70,6 +72,10 @@ Followed by a list of the pending requests.',
 {{Identical|Accept}}',
 	'tsb-reject-button-label' => 'Button label for reject button in [[Special:TranslateSandbox]].
 {{Identical|Reject}}',
+	'tsb-accept-all-button-label' => 'Button label for accept-all button in [[Special:TranslateSandbox]].
+{{Identical|Accept all}}',
+	'tsb-reject-all-button-label' => 'Button label for reject-all button in [[Special:TranslateSandbox]]
+{{Identical|Reject all}}',
 	'tsb-reminder-link-text' => 'Link text for sending reminder emails about translator signup requests.',
 	'tsb-translations-source' => 'Table header label for source messages of user translations in [[Special:TranslateSandbox]].
 {{Identical|Source}}',

@@ -12,9 +12,8 @@
 
 		options = $.extend( {}, { action: 'translatesandbox' }, options );
 
-		api.postWithToken( 'translatesandbox', options )
-			.done( function () { window.alert( 'Success' ); } )
-			.fail( function () { window.alert( 'Failure' ); } );
+		return api.postWithToken( 'translatesandbox', options )
+			.promise();
 	}
 
 	/**
@@ -105,6 +104,12 @@
 		} );
 	}
 
+	function removeSelectedRequests() {
+		$( '.request-selector:checked' )
+			.closest( '.request' ).remove();
+		$( '.request-count div' )
+			.text( mw.msg( 'tsb-request-count', $( '.request').length ) );
+	}
 	/**
 	 * Display the request details when user clicks on a request item
 	 *
@@ -137,7 +142,7 @@
 							doApiAction( {
 								userid: request.userid,
 								'do': 'promote'
-							} );
+							} ).done( removeSelectedRequests );
 						} ),
 					$( '<button>' )
 						.addClass( 'delete destructive button' )
@@ -146,7 +151,7 @@
 							doApiAction( {
 								userid: request.userid,
 								'do': 'delete'
-							} );
+							} ).done( removeSelectedRequests );
 						} )
 				),
 			$( '<div>' )
@@ -216,6 +221,40 @@
 			} );
 		} );
 	}
+	
+	/**
+	 * Display when multiple requests are checked 
+	 *@param {Object} request
+	 */
+	function displayOnMultipleSelection( request ) {
+		var $detailsPane = $( '.details.pane' );
+		
+		$detailsPane.empty().append(
+			$( '<div>' )
+				.addClass( 'actions row' )
+				.append(
+					$( '<button>' )
+						.addClass( 'accept primary green button' )
+						.text( mw.msg( 'tsb-accept-all-button-label' ) )
+						.on( 'click', function () {
+							doApiAction( {
+								userid: request.userid,
+								'do': 'promote'
+							} ).done( removeSelectedRequests );
+						} ),
+					$( '<button>' )
+						.addClass( 'delete destructive button' )
+						.text( mw.msg( 'tsb-reject-all-button-label' ) )
+						.on( 'click', function () {
+							doApiAction( {
+								userid: request.userid,
+								'do': 'delete'
+							} ).done( removeSelectedRequests );
+						} 
+					)
+				)
+		);		
+	}
 
 	$( document ).ready( function () {
 		var $selectAll = $( '.request-selector-all' );
@@ -223,6 +262,7 @@
 		// Handle clicks for the select all checkbox
 		$selectAll.click( function () {
 			$( '.request-selector' ).prop( 'checked', this.checked );
+				displayOnMultipleSelection( $( this ).data( 'data' ) );
 		} );
 
 		// And update the state of select-all checkbox
@@ -231,6 +271,13 @@
 
 			total = $selects.length;
 			checked = $selects.filter( ':checked' ).length;
+
+			if ( checked > 1 ) {
+				displayOnMultipleSelection( $( this ).data( 'data' ) );
+			}
+			else {
+				displayRequestDetails( $( this ).data( 'data' ) );
+			}
 
 			if ( checked === total ) {
 				$selectAll.prop( 'checked', true ).prop( 'indeterminate', false );
@@ -246,6 +293,7 @@
 		// Handle clicks on requests
 		$( '.requests .request' ).on( 'click',  function () {
 			displayRequestDetails( $( this ).data( 'data' ) );
+				$( this ).find( '.request-selector' ).click();
 		} );
 
 		// Activate language selector
