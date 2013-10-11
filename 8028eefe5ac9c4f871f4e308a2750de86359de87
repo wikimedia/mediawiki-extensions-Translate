@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_08aab1d3",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-11T06:42:08Z",
+      "side": 1,
+      "message": "This doesn\u0027t take language code as subpage, but let\u0027s use MainPage instead.",
+      "revId": "8028eefe5ac9c4f871f4e308a2750de86359de87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
