@@ -105,7 +105,7 @@ class ApiTranslationStash extends ApiBase {
 			'title' => 'Title of the translation unit page',
 			'value' => 'Translation',
 			'metadata' => 'Json object',
-			'token' => 'Sandbox token',
+			'token' => "A token previously acquired with $action",
 		);
 	}
 
