@@ -12,9 +12,8 @@
 
 		options = $.extend( {}, { action: 'translatesandbox' }, options );
 
-		api.postWithToken( 'translatesandbox', options )
-			.done( function () { window.alert( 'Success' ); } )
-			.fail( function () { window.alert( 'Failure' ); } );
+		return api.postWithToken( 'translatesandbox', options )
+			.promise();
 	}
 
 	/**
@@ -105,6 +104,13 @@
 		} );
 	}
 
+	function removeSelectedRequests() {
+		$( '.request-selector:checked' )
+			.closest( '.request' ).remove();
+		$( '.request-count div' )
+			.text( mw.msg( 'tsb-request-count', $( '.request').length ) );
+	}
+
 	/**
 	 * Display the request details when user clicks on a request item
 	 *
@@ -137,7 +143,7 @@
 							doApiAction( {
 								userid: request.userid,
 								'do': 'promote'
-							} );
+							} ).done( removeSelectedRequests );
 						} ),
 					$( '<button>' )
 						.addClass( 'delete destructive button' )
@@ -146,7 +152,7 @@
 							doApiAction( {
 								userid: request.userid,
 								'do': 'delete'
-							} );
+							} ).done( removeSelectedRequests );
 						} )
 				),
 			$( '<div>' )
@@ -217,12 +223,41 @@
 		} );
 	}
 
+	/**
+	 * Display when multiple requests are checked
+	 */
+	function displayOnMultipleSelection() {
+		var $detailsPane = $( '.details.pane' );
+
+		$detailsPane.empty().append(
+			$( '<div>' )
+				.addClass( 'actions row' )
+				.append(
+					$( '<button>' )
+						.addClass( 'accept primary green button' )
+						.text( mw.msg( 'tsb-accept-all-button-label' ) ),
+						// FIXME add api action
+					$( '<button>' )
+						.addClass( 'delete destructive button' )
+						.text( mw.msg( 'tsb-reject-all-button-label' ) )
+						// FIXME add api action
+				)
+		);
+	}
+
 	$( document ).ready( function () {
-		var $selectAll = $( '.request-selector-all' );
+		var $selectAll = $( '.request-selector-all' ),
+			$detailsPane = $( '.details.pane' );
 
 		// Handle clicks for the select all checkbox
-		$selectAll.click( function () {
+		$selectAll.on( 'click', function () {
 			$( '.request-selector' ).prop( 'checked', this.checked );
+
+			if ( this.checked ) {
+				displayOnMultipleSelection();
+			} else {
+				$detailsPane.empty();
+			}
 		} );
 
 		// And update the state of select-all checkbox
@@ -234,17 +269,20 @@
 
 			if ( checked === total ) {
 				$selectAll.prop( 'checked', true ).prop( 'indeterminate', false );
+				displayOnMultipleSelection();
 			} else if ( checked === 0 ) {
+				$detailsPane.empty();
 				$selectAll.prop( 'checked', false ).prop( 'indeterminate', false );
 			} else {
 				$selectAll.prop( 'indeterminate', true );
+				displayOnMultipleSelection();
 			}
 
 			e.stopPropagation();
 		} );
 
 		// Handle clicks on requests
-		$( '.requests .request' ).on( 'click',  function () {
+		$( '.requests .request' ).on( 'click', function () {
 			displayRequestDetails( $( this ).data( 'data' ) );
 		} );
 
