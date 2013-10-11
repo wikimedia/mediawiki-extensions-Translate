@@ -747,7 +747,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$npLangs = array_map( 'trim', explode( ',', $npLangs ) );
 		$npLangs = array_unique( $npLangs );
 		// Remove invalid language codes.
-		$languages = Language::getLanguageNames();
+		$languages = Language::fetchLanguageNames();
 		foreach ( $npLangs as $index => $language ) {
 			if ( !array_key_exists( $language, $languages ) ) {
 				unset( $npLangs[$index] );

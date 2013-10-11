@@ -51,7 +51,7 @@ class SpecialMyLanguage extends UnlistedSpecialPage {
 			$pos = strrpos( $par, '/' );
 			$basepage = substr( $par, 0, $pos );
 			$code = substr( $par, $pos + 1 );
-			$codes = Language::getLanguageNames( false );
+			$codes = Language::fetchLanguageNames();
 			if ( isset( $codes[$code] ) ) {
 				$base = Title::newFromText( $basepage );
 			}
