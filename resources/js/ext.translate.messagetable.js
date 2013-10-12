@@ -178,7 +178,7 @@
 			var $message, targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
 				status,
 				statusMsg = '',
-				statusClass = '',
+				statusClass,
 				$messageWrapper;
 
 			sourceLanguage = this.$container.data( 'sourcelangcode' );
