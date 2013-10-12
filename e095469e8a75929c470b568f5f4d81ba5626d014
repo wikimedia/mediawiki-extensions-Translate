@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_0f6630ef",
+        "filename": "api/ApiTranslationStash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-12T13:59:36Z",
+      "side": 1,
+      "message": "This line ought to use the variable to say:\n\u0027token\u0027 \u003d\u003e \"A token previously acquired with $action\",",
+      "revId": "e095469e8a75929c470b568f5f4d81ba5626d014",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
