@@ -50,6 +50,24 @@
       "revId": "67bdc7e15b39847c0185068b05bdaff6b2b840e0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_0fb7103a",
+        "filename": "scripts/mwcore-export.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-12T14:27:05Z",
+      "side": 1,
+      "message": "Fixed throughout the file. Will check other files and patches, too. Didn\u0027t know about error().",
+      "parentUuid": "0932edd2_ef3f1caf",
+      "revId": "67bdc7e15b39847c0185068b05bdaff6b2b840e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
