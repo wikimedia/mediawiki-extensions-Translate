@@ -128,7 +128,7 @@ class TranslateSandbox {
 
 	/**
 	 * Shortcut for checking if given user is in the sandbox.
-	 * @param User $user_groups
+	 * @param User $user
 	 * @return bool
 	 * @since 2013.06
 	 */

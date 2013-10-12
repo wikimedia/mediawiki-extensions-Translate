@@ -561,7 +561,7 @@ class TranslatablePage {
 
 	/**
 	 * Produces a link to translation view of a translation page.
-	 * @param string $code MediaWiki language code
+	 * @param string|bool $code MediaWiki language code. Default: false.
 	 * @return string Relative url
 	 */
 	public function getTranslationUrl( $code = false ) {
