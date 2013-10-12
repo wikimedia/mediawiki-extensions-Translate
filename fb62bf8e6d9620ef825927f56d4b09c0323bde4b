@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_afb8c4e3",
+        "filename": "scripts/fuzzy.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-12T16:52:55Z",
+      "side": 1,
+      "message": "Who are you asking?\n\nTechnically there is no way in Maintenance class to indicate that script takes variable unlimited number of arguments.\n\nI believe you can access the arguments anyway with a workaround something like this (untested):\n\n$messages \u003d array();\n$index \u003d 0;\nwhile ( $this-\u003ehasArg( $index ) ) {\n  $messages[] \u003d $this-\u003egetArg( $index );\n  $index++;\n}\n\nHaving said that, I wonder if we really use this feature or is it okay to not support it?",
+      "revId": "fb62bf8e6d9620ef825927f56d4b09c0323bde4b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_8fb30009",
+        "filename": "scripts/fuzzy.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-12T16:52:55Z",
+      "side": 1,
+      "message": "$this left in?",
+      "revId": "fb62bf8e6d9620ef825927f56d4b09c0323bde4b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
