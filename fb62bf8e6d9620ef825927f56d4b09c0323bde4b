@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_4a8c962f",
+        "filename": "scripts/fuzzy.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-12T19:01:35Z",
+      "side": 1,
+      "message": "It was there, so I\u0027m not fixing that.",
+      "parentUuid": "0932edd2_4fa2e8b2",
+      "revId": "fb62bf8e6d9620ef825927f56d4b09c0323bde4b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_afb8c4e3",
         "filename": "scripts/fuzzy.php",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_6a915a45",
+        "filename": "scripts/fuzzy.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-12T19:01:35Z",
+      "side": 1,
+      "message": "I\u0027m asking those who actually understand code. It\u0027s what the documentation says, but I don\u0027t see it working on more than one string [prefix].",
+      "parentUuid": "0932edd2_afb8c4e3",
+      "revId": "fb62bf8e6d9620ef825927f56d4b09c0323bde4b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_8fb30009",
         "filename": "scripts/fuzzy.php",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2013-10-12T16:52:55Z",
       "side": 1,
       "message": "$this left in?",
+      "revId": "fb62bf8e6d9620ef825927f56d4b09c0323bde4b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_8a968e3b",
+        "filename": "scripts/fuzzy.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-12T19:01:35Z",
+      "side": 1,
+      "message": "Shouldn\u0027t have remained in. Will fix.",
+      "parentUuid": "0932edd2_8fb30009",
       "revId": "fb62bf8e6d9620ef825927f56d4b09c0323bde4b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
