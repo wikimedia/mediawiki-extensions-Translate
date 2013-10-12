@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_af5d2420",
+        "filename": "scripts/mwcore-export.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-12T13:23:19Z",
+      "side": 1,
+      "message": "Missing \\n?",
+      "revId": "67bdc7e15b39847c0185068b05bdaff6b2b840e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_cf425841",
+        "filename": "scripts/mwcore-export.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-12T13:23:19Z",
+      "side": 1,
+      "message": "and here?",
+      "revId": "67bdc7e15b39847c0185068b05bdaff6b2b840e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_ef3f1caf",
+        "filename": "scripts/mwcore-export.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-12T13:23:19Z",
+      "side": 1,
+      "message": "Only realized it now, but replacement for STDERR should be $this-\u003eerror(), since it uses the STDERR output channel (you probably know the difference between STDOUT and STDERR) and also prints even if you pass --quiet, which is what we want for errors.",
+      "revId": "67bdc7e15b39847c0185068b05bdaff6b2b840e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
