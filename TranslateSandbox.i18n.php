@@ -341,7 +341,7 @@ $messages['mk'] = array(
 	'tsb-reject-button-label' => 'Одбиј',
 	'tsb-reminder-link-text' => 'Испрати потсетник по е-пошта',
 	'translationstash' => 'Добре дојдовте',
-	'translate-translationstash-welcome' => 'Благодарам {{GENDER:$1|$1}}, вие сте нов преведувач', # Fuzzy
+	'translate-translationstash-welcome' => 'Добре дојдовте {{GENDER:$1|$1}}, вие сте нов преведувач',
 	'translate-translationstash-welcome-note' => 'Запознајте се со преводните алатки преведувајќи некои произволно избрани пораки.',
 	'translate-translationstash-initialtranslation' => 'Вашиот првичен превод',
 );
@@ -486,7 +486,7 @@ $messages['uk'] = array(
 	'tsb-reject-button-label' => 'Відмовитися',
 	'tsb-reminder-link-text' => 'Надсилати нагадування по електронній пошті',
 	'translationstash' => 'Ласкаво просимо',
-	'translate-translationstash-welcome' => 'Дякуємо {{GENDER:$1|$1}}, ви є новий перекладач', # Fuzzy
+	'translate-translationstash-welcome' => 'Вітаємо {{GENDER:$1|$1}}, ви - {{GENDER:$1|новий перекладач|нова перекладачка}}',
 	'translate-translationstash-welcome-note' => 'Ознайомитися з інструментами перекладу шляхом перекладу деяких випадково вибраних повідомлень.',
 	'translate-translationstash-initialtranslation' => 'Ваш початковий переклад',
 );
