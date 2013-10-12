@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_af80c44a",
+        "filename": "scripts/languageeditstats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-12T14:37:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0932edd2_2f3134ec",
+      "revId": "dde1ca7fb0502c3b8e589821588e27d7768809b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_6f532c17",
         "filename": "scripts/languageeditstats.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-12T13:17:42Z",
       "side": 1,
       "message": "Suggestion for followup:\nUse TranslateUtils::figureMessage() or even better:\n$title \u003d Title::makeTitle( $_-\u003erc_namespace, $_-\u003erc_title );\n$handle \u003d new MessageHandle( $title );\n$code \u003d $handle-\u003egetCode()",
+      "revId": "dde1ca7fb0502c3b8e589821588e27d7768809b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_cf95f887",
+        "filename": "scripts/languageeditstats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-12T14:37:06Z",
+      "side": 1,
+      "message": "I used TranslateUtils::figureMessage() in the next PS.",
+      "parentUuid": "0932edd2_6f532c17",
       "revId": "dde1ca7fb0502c3b8e589821588e27d7768809b5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
