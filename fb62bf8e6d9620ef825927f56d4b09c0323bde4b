@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "0932edd2_4fa2e8b2",
+        "filename": "scripts/fuzzy.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-10-12T17:08:04Z",
+      "side": 1,
+      "message": "Copyright or © - one is fine, afaik.",
+      "revId": "fb62bf8e6d9620ef825927f56d4b09c0323bde4b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_afb8c4e3",
         "filename": "scripts/fuzzy.php",
         "patchSetId": 2
