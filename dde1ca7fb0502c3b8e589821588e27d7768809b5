@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_2f3134ec",
+        "filename": "scripts/languageeditstats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-12T13:17:42Z",
+      "side": 1,
+      "message": "This will not convert $top to int as expected:\n$top \u003d \u0027123\u0027;\n\n\u003e var_dump( (int)$top ? $top : 10 );\nstring(3) \"123\"\n\nThis one would work:\n\n\u003e var_dump( (int)$top ?: 10 );\nint(123)\n\nI don\u0027t remember currently in which PHP version this kind of ternary was added. For clarity you might want to do this instead:\n$top \u003d (int)$this-\u003egetOption( \u0027top\u0027 );",
+      "revId": "dde1ca7fb0502c3b8e589821588e27d7768809b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_6f532c17",
+        "filename": "scripts/languageeditstats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-12T13:17:42Z",
+      "side": 1,
+      "message": "Suggestion for followup:\nUse TranslateUtils::figureMessage() or even better:\n$title \u003d Title::makeTitle( $_-\u003erc_namespace, $_-\u003erc_title );\n$handle \u003d new MessageHandle( $title );\n$code \u003d $handle-\u003egetCode()",
+      "revId": "dde1ca7fb0502c3b8e589821588e27d7768809b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
