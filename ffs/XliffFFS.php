@@ -69,6 +69,9 @@ class XliffFFS extends SimpleFFS {
 				$value = TRANSLATE_FUZZY . $value;
 			}
 
+			// Strip CDATA if present
+			$value = preg_replace( '/<!\[CDATA\[(.*?)\]\]>/s', '\1', $value );
+
 			$messages[$key] = $value;
 		}
 
