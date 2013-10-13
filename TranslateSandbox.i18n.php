@@ -158,6 +158,7 @@ $messages['es'] = array(
 
 /** French (français)
  * @author Gomoko
+ * @author Wyz
  */
 $messages['fr'] = array(
 	'translatesandbox' => 'Gérer le bac à sable de tradution',
@@ -175,7 +176,7 @@ Veuillez venir sur $2 et faire quelques traductions de plus.',
 	'tsb-reject-button-label' => 'Rejeter',
 	'tsb-reminder-link-text' => 'Envoyer un courriel de rappel',
 	'translationstash' => 'Bienvenue',
-	'translate-translationstash-welcome' => 'Merci {{GENDER:$1|$1}}, vous êtes un nouveau traducteur', # Fuzzy
+	'translate-translationstash-welcome' => 'Bienvenue {{GENDER:$1|$1}}, vous êtes un nouveau traducteur',
 	'translate-translationstash-welcome-note' => 'Familiarisez-vous avec les outils de traduction en traduisant quelques messages sélectionnés aléatoirement.',
 	'translate-translationstash-initialtranslation' => 'Votre traduction initiale',
 );
@@ -280,6 +281,7 @@ $2에 와서 조금 더 번역을 해주세요.',
 	'tsb-accept-button-label' => '승인',
 	'tsb-reject-button-label' => '거부',
 	'tsb-reminder-link-text' => '이메일 알림 보내기',
+	'translate-translationstash-welcome' => '$1님 환영합니다, 당신은 이제 번역자입니다.',
 );
 
 /** Colognian (Ripoarisch)
@@ -454,6 +456,16 @@ $messages['sv'] = array(
 Tack för din registrering på {{SITENAME}}. Om du slutför dina testöversättningar kan administratörerna snart ge dig full behörighet till att översätta.
 
 Var god kom till $2 och gör några fler översättningar.',
+	'tsb-request-count' => '{{PLURAL:$1|En begäran|$1 begäran}}',
+	'tsb-all-languages-button-label' => 'Alla språk',
+	'tsb-search-requests' => 'Sökbegäran',
+	'tsb-accept-button-label' => 'Acceptera',
+	'tsb-reject-button-label' => 'Acceptera inte',
+	'tsb-reminder-link-text' => 'Skicka e-postpåminnelse',
+	'translationstash' => 'Välkommen',
+	'translate-translationstash-welcome' => 'Välkommen {{GENDER:$1|$1}}, du är en ny översättare',
+	'translate-translationstash-welcome-note' => 'Bekanta dig med översättningsverktygen genom att översätta några slumpmässigt utvalda meddelanden.',
+	'translate-translationstash-initialtranslation' => 'Din ursprungliga översättning',
 );
 
 /** Telugu (తెలుగు)
@@ -513,7 +525,9 @@ $messages['zh-hans'] = array(
 	'translatesandbox' => '管理译者沙盒',
 	'tsb-filter-pending' => '待解决请求',
 	'tsb-all-languages-button-label' => '所有语言',
+	'tsb-reject-button-label' => '拒绝',
 	'translationstash' => '欢迎',
+	'translate-translationstash-welcome' => '欢迎您{{GENDER:$1|$1}}，您已成为新的译者',
 );
 
 /** Traditional Chinese (中文（繁體）‎)

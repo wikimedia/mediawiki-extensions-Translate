@@ -432,6 +432,13 @@ $messages['ca'] = array(
 	'bw-desc-mantisbt' => "[http://www.mantisbt.org MantisBT] és un sistema de gestió d'errors via web. Si us plau, informeu de qualsevol problema a [[Support]].",
 );
 
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'translate-group-desc-translatablepages' => 'Гочян массо агӀонаш',
+);
+
 /** Czech (česky)
  * @author Mormegil
  * @author Reaperman

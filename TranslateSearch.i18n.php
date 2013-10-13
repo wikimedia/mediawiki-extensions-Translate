@@ -190,9 +190,15 @@ $messages['ca'] = array(
  * @author Умар
  */
 $messages['ce'] = array(
+	'searchtranslations' => 'Гоч лахар',
 	'tux-sst-edit' => 'Таде гочдар',
 	'tux-sst-search' => 'Лаха',
+	'tux-sst-search-ph' => 'Гоч лахар',
+	'tux-sst-count' => '{{PLURAL:$1|Карина $1}}',
 	'tux-sst-facet-language' => 'Меттанаш',
+	'tux-sst-facet-group' => 'Хаамийн тоба',
+	'tux-sst-next' => 'ТӀехьа догӀург',
+	'tux-sst-prev' => 'Хьалхо хиларг',
 );
 
 /** Czech (česky)
