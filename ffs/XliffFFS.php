@@ -13,6 +13,23 @@
  * @ingroup FFS
  */
 class XliffFFS extends SimpleFFS {
+	public static function isValid( $data ) {
+		$doc = new DomDocument( '1.0' );
+		$doc->loadXML( $data );
+
+		$errors = libxml_get_errors();
+		if ( $errors ) {
+			return false;
+		}
+
+		$schema = __DIR__ . '/../data/xliff-core-1.2-transitional.xsd';
+		if ( !$doc->schemaValidate( $schema ) ) {
+			return false;
+		}
+
+		return true;
+	}
+
 	public function getFileExtensions() {
 		return array( '.xlf', '.xliff', '.xml' );
 	}
@@ -23,7 +40,13 @@ class XliffFFS extends SimpleFFS {
 		$mangler = $this->group->getMangler();
 
 		$reader = new SimpleXMLElement( $data );
-		foreach ( $reader->xpath( '//trans-unit' ) as $item ) {
+		$reader->registerXPathNamespace(
+			'xliff',
+			'urn:oasis:names:tc:xliff:document:1.2'
+		);
+
+		foreach ( $reader->xpath( '//xliff:trans-unit' ) as $item ) {
+
 			$source = $item->$element;
 
 			if ( !$source ) {
@@ -45,6 +68,9 @@ class XliffFFS extends SimpleFFS {
 			if ( (string)$source['state'] === 'needs-l10n' ) {
 				$value = TRANSLATE_FUZZY . $value;
 			}
+
+			// Strip CDATA if present
+			$value = preg_replace( '/<!\[CDATA\[(.*?)\]\]>/s', '\1', $value );
 
 			$messages[$key] = $value;
 		}
