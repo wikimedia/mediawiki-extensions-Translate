@@ -278,12 +278,16 @@ $messages['ko'] = array(
 있습니다.
 
 $2에 와서 조금 더 번역을 해주세요.',
+	'tsb-request-count' => '{{PLURAL:$1|요청 한 개|요청 $1개}}',
 	'tsb-all-languages-button-label' => '모든 언어',
 	'tsb-search-requests' => '검색 요청',
 	'tsb-accept-button-label' => '승인',
 	'tsb-reject-button-label' => '거부',
 	'tsb-reminder-link-text' => '이메일 알림 보내기',
+	'translationstash' => '환영합니다',
 	'translate-translationstash-welcome' => '$1님 환영합니다, 당신은 이제 번역자입니다.',
+	'translate-translationstash-welcome-note' => '무작위로 선택된 어떤 메시지를 번역하여 번역 도구에 익숙해지세요.',
+	'translate-translationstash-initialtranslation' => '내 초기 번역',
 );
 
 /** Colognian (Ripoarisch)
@@ -441,7 +445,7 @@ $messages['ru'] = array(
 	'tsb-reject-button-label' => 'Отклонить',
 	'tsb-reminder-link-text' => 'Отправить напоминание по электронной почте',
 	'translationstash' => 'Добро пожаловать',
-	'translate-translationstash-welcome' => 'Спасибо, {{GENDER:$1|$1}}, теперь вы новый переводчик', # Fuzzy
+	'translate-translationstash-welcome' => 'Добро пожаловать, {{GENDER:$1|$1}}, теперь вы новый переводчик',
 	'translate-translationstash-welcome-note' => 'Ознакомиться с инструментами перевода путём перевода нескольких случайно выбранных сообщений.',
 	'translate-translationstash-initialtranslation' => 'Ваш первоначальный перевод',
 );
