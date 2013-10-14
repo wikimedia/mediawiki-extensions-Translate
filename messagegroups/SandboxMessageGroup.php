@@ -101,15 +101,26 @@ class SandboxMessageGroup extends WikiMessageGroup {
 			$handle = new MessageHandle( $title );
 
 			if ( MessageGroups::isTranslatableMessage( $handle ) ) {
-				$count++;
+				// Modified by reference
 				$translation = $this->getMessageContent( $handle );
+				if ( $translation === null ) {
+					// Something is not in sync or badly broken. Handle gracefully.
+					unset( $list[$index] );
+					wfWarn( "No message definition for $index while preparing the sandbox" );
+
+					continue;
+				}
 			} else {
 				// This might include messages that the user has already translated
 				// or messages given in $wgTranslateSandboxSuggestions or just dated
 				// message index.
 				unset( $list[$index] );
-				wfWarn( "Unsuitable or unknown message $index while preparing sanbox" );
+				wfWarn( "Unsuitable or unknown message $index while preparing sandbox" );
+
+				continue;
 			}
+
+			$count++;
 
 			// Always show 20 messages (or less in rare cases)
 			if ( $count === 20 ) {
@@ -133,10 +144,28 @@ class SandboxMessageGroup extends WikiMessageGroup {
 	public function getMessageContent( MessageHandle $handle ) {
 		$groupId = MessageIndex::getPrimaryGroupId( $handle );
 		$group = MessageGroups::getGroup( $groupId );
-		if ( $group ) {
-			return $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
+		$key = $handle->getKey();
+
+		$source = $group->getMessage( $key, $group->getSourceLanguage() );
+		if ( $source !== null ) {
+			return $source;
 		}
 
-		throw new MWException( 'Could not find group for ' . $handle->getKey() );
+		// Try harder
+		$keys = array();
+		if ( method_exists( $group, 'getKeys' ) ) {
+			$keys = $group->getKeys();
+		} else {
+			$keys = array_keys( $group->getDefinitions() );
+		}
+		// Try to find the original key with correct case
+		foreach ( $keys as $realkey ) {
+			if ( $key === strtolower( $realkey ) ) {
+				$key = $realkey;
+				break;
+			}
+		}
+
+		return $group->getMessage( $key, $group->getSourceLanguage() );
 	}
 }
