@@ -23,7 +23,7 @@
 
 			$messageDescEditor
 				.removeClass( 'hide' )
-				.find( 'textarea' )
+				.find( '.tux-textarea-documentation' )
 					.focus();
 
 			// So that the link won't be followed
@@ -53,7 +53,7 @@
 		saveDocumentation: function () {
 			var translateEditor = this,
 				api = new mw.Api(),
-				newDocumentation = translateEditor.$editor.find( '.infocolumn-block textarea' ).val();
+				newDocumentation = translateEditor.$editor.find( '.tux-textarea-documentation' ).val();
 
 			api.post( {
 				action: 'edit',
@@ -136,7 +136,7 @@
 					.addClass( 'mw-content-' + documentationDir )
 					.html( documentation.html );
 
-				this.$editor.find( '.message-desc-editor textarea' )
+				this.$editor.find( '.tux-textarea-documentation' )
 					.attr( {
 						lang: documentation.language,
 						dir: documentationDir
@@ -212,7 +212,7 @@
 			var translateEditor = this,
 				$translationTextarea;
 
-			$translationTextarea = this.$editor.find( 'textarea' );
+			$translationTextarea = this.$editor.find( '.tux-textarea-translation' );
 
 			$.each( translations, function ( index ) {
 				var $otherLanguage,
@@ -267,7 +267,7 @@
 			this.$editor.find( '.tm-suggestions-title' )
 				.removeClass( 'hide' )
 				.after( $tmSuggestions );
-			$translationTextarea = this.$editor.find( 'textarea' );
+			$translationTextarea = this.$editor.find( '.tux-textarea-translation' );
 
 			$.each( suggestions, function ( index, translation ) {
 				var $translation,
@@ -349,7 +349,7 @@
 			this.$editor.find( '.tm-suggestions-title' )
 				.removeClass( 'hide' )
 				.after( $mtSuggestions );
-			$translationTextarea = this.$editor.find( 'textarea' );
+			$translationTextarea = this.$editor.find( '.tux-textarea-translation' );
 
 			$.each( suggestions, function ( index, translation ) {
 				var $translation;
@@ -420,7 +420,7 @@
 			var i,
 				count = insertables.length,
 				$buttonArea = this.$editor.find( '.tux-editor-insert-buttons' ),
-				$textarea = this.$editor.find( 'textarea' );
+				$textarea = this.$editor.find( '.tux-textarea-translation' );
 
 			for ( i = 0; i < count; i++ ) {
 				$( '<button>' )

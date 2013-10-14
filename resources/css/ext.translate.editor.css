@@ -154,7 +154,7 @@
 	margin-right: 5px;
 }
 
-.infocolumn-block .infocolumn .message-desc-editor textarea {
+.tux-textarea-documentation {
 	height: 100px;
 	overflow: auto;
 }

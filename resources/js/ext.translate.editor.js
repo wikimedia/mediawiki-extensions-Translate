@@ -442,6 +442,7 @@
 				} );
 
 			$textarea = $( '<textarea>' )
+				.addClass( 'tux-textarea-translation' )
 				.attr( {
 					lang: $messageList.data( 'targetlangcode' ),
 					dir: $messageList.data( 'targetlangdir' )
@@ -638,7 +639,7 @@
 		validateTranslation: function () {
 			var translateEditor = this,
 				url = new mw.Uri( mw.config.get( 'wgScript' ) ),
-				$textarea = translateEditor.$editor.find( '.editcolumn textarea' );
+				$textarea = translateEditor.$editor.find( '.tux-textarea-translation' );
 
 			// TODO: We need a better API for this
 			url.extend( {
@@ -755,6 +756,7 @@
 					} );
 
 				$messageDescTextarea = $( '<textarea>' )
+					.addClass( 'tux-textarea-documentation' )
 					.on( 'textchange', function () {
 						$messageDescSaveButton.prop( 'disabled', false );
 					} );
