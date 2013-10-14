@@ -48,6 +48,10 @@
 			}
 
 			this.render();
+			// onReady callback
+			if ( this.options.onReady ) {
+				this.options.onReady.call( this );
+			}
 		},
 
 		/**
