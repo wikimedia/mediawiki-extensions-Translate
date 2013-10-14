@@ -4,7 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
- * @license GPL2+
+ * @license GPL-2.0+
  */
 
 /**
@@ -63,5 +63,15 @@ class TranslationStashStorage {
 		}
 
 		return $objects;
+	}
+
+	/**
+	 * Delete all stashed translations for the given user.
+	 * @param User $user
+	 * @since 2013.10
+	 */
+	public function deleteTranslations( User $user ) {
+		$conds = array( 'ts_user' => $user->getId() );
+		$this->db->delete( $this->dbTable, $conds, __METHOD__ );
 	}
 }
