@@ -100,16 +100,26 @@ class SandboxMessageGroup extends WikiMessageGroup {
 			$title = Title::makeTitle( $ns, "$page/{$this->language}" );
 			$handle = new MessageHandle( $title );
 
+
 			if ( MessageGroups::isTranslatableMessage( $handle ) ) {
-				$count++;
+				// Modified by reference
 				$translation = $this->getMessageContent( $handle );
+				if ( $translation === null ) {
+					// Something is not in sync or badly broken. Handle gracefully.
+					unset( $list[$index] );
+					wfWarn( "No message definition for $index while preparing sanbox" );
+					continue;
+				}
 			} else {
 				// This might include messages that the user has already translated
 				// or messages given in $wgTranslateSandboxSuggestions or just dated
 				// message index.
 				unset( $list[$index] );
 				wfWarn( "Unsuitable or unknown message $index while preparing sanbox" );
+				continue;
 			}
+
+			$count++;
 
 			// Always show 20 messages (or less in rare cases)
 			if ( $count === 20 ) {
