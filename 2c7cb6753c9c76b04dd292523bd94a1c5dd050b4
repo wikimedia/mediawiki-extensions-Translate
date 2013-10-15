@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_4161d438",
+        "filename": "scripts/export.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-15T07:05:59Z",
+      "side": 0,
+      "message": "Compare to here where bool is converted to --no-location or empty string.",
+      "revId": "2c7cb6753c9c76b04dd292523bd94a1c5dd050b4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
