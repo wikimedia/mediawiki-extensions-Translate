@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_0c00f302",
+        "filename": "api/ApiTranslationStash.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-15T07:53:04Z",
+      "side": 1,
+      "message": "Actually \u0027edit\u0027 is wrong here, will fix.",
+      "revId": "a6187431e306dc1b837fca22690b5b4f634e7101",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
