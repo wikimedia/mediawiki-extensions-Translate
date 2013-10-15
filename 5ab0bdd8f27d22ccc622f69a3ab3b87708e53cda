@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_c14dc4c5",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-15T07:07:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0932edd2_01151c99",
+      "revId": "5ab0bdd8f27d22ccc622f69a3ab3b87708e53cda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_210ce094",
         "filename": "scripts/sync-group.php",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-15T06:52:37Z",
       "side": 1,
       "message": "and here",
+      "revId": "5ab0bdd8f27d22ccc622f69a3ab3b87708e53cda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_a1529063",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-15T07:07:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0932edd2_210ce094",
       "revId": "5ab0bdd8f27d22ccc622f69a3ab3b87708e53cda",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_01c8bc21",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-15T07:07:02Z",
+      "side": 1,
+      "message": "Will test and report.",
+      "parentUuid": "0932edd2_c14224ae",
+      "revId": "5ab0bdd8f27d22ccc622f69a3ab3b87708e53cda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_a147f0bd",
         "filename": "scripts/sync-group.php",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2013-10-15T06:52:37Z",
       "side": 1,
       "message": "This line looks accidentally duplicated",
+      "revId": "5ab0bdd8f27d22ccc622f69a3ab3b87708e53cda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_e1c48812",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-15T07:07:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0932edd2_a147f0bd",
       "revId": "5ab0bdd8f27d22ccc622f69a3ab3b87708e53cda",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
