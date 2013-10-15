@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_4c23cbaa",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-15T07:57:44Z",
+      "side": 1,
+      "message": "This todo can now be removed, right?",
+      "revId": "0c008aafb82270a5d5deb4b7e88d999235ffdb13",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
