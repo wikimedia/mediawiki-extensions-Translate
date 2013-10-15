@@ -69,7 +69,8 @@ Followed by a list of the pending requests.',
 * $1 - user name of the new translator',
 	'translate-translationstash-welcome-note' => 'Title note for the [[Special:TranslationStash]].',
 	'translate-translationstash-initialtranslation' => 'Header for messages showing the progress of translations in [[Special:TranslationStash]].',
-	'translate-translationstash-skip-button-label' => 'Label for the skip button in translation editor',
+	'translate-translationstash-skip-button-label' => 'Label for the skip button in translation editor.
+{{Identical|Try another}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -147,6 +148,7 @@ Bitte besuche $2 und erstelle einige weitere Übersetzungen.',
 	'translate-translationstash-welcome' => 'Willkommen $1, du bist {{GENDER:$1|ein neuer Übersetzer|eine neue Übersetzerin}}.',
 	'translate-translationstash-welcome-note' => 'Werde mit den Übersetzungswerkzeugen vertraut, indem du einige zufällig ausgewählte Nachrichten übersetzt.',
 	'translate-translationstash-initialtranslation' => 'Deine erste Übersetzung',
+	'translate-translationstash-skip-button-label' => 'Eine andere versuchen',
 );
 
 /** Spanish (español)
@@ -181,6 +183,7 @@ Veuillez venir sur $2 et faire quelques traductions de plus.',
 	'translate-translationstash-welcome' => 'Bienvenue {{GENDER:$1|$1}}, vous êtes un nouveau traducteur',
 	'translate-translationstash-welcome-note' => 'Familiarisez-vous avec les outils de traduction en traduisant quelques messages sélectionnés aléatoirement.',
 	'translate-translationstash-initialtranslation' => 'Votre traduction initiale',
+	'translate-translationstash-skip-button-label' => 'Essayer une autre',
 );
 
 /** Galician (galego)
@@ -207,6 +210,7 @@ Acceda ao sistema en $2 e faga algunhas traducións máis.',
 	'translate-translationstash-welcome' => '{{GENDER:$1|Benvido|Benvida}}, $1; xa es {{GENDER:$1|un novo tradutor|unha nova tradutora}}',
 	'translate-translationstash-welcome-note' => 'Familiarícese coas ferramentas de tradución traducindo algunhas mensaxes seleccionadas ao chou.',
 	'translate-translationstash-initialtranslation' => 'A súa tradución inicial',
+	'translate-translationstash-skip-button-label' => 'Probar outra',
 );
 
 /** Hebrew (עברית)
@@ -245,7 +249,10 @@ Vieni su $2 e fai alcune altre traduzioni.",
 	'tsb-reject-button-label' => 'Rifiuta',
 	'tsb-reminder-link-text' => 'Invia email di promemoria',
 	'translationstash' => 'Benvenuto(a)',
-	'translate-translationstash-welcome' => 'Grazie {{GENDER:$1|$1}}, ora sei un nuovo traduttore', # Fuzzy
+	'translate-translationstash-welcome' => '{{GENDER:$1|Benvenuto|Benvenuta|Benvenuto/a}} $1, ora sei {{GENDER:$1|un nuovo traduttore|una nuova traduttrice}}',
+	'translate-translationstash-welcome-note' => 'Acquisisci familiarità con gli strumenti di traduzione, traducendo alcuni messaggi selezionati in modo casuale.',
+	'translate-translationstash-initialtranslation' => 'La tua traduzione iniziale',
+	'translate-translationstash-skip-button-label' => 'Prova con un altro',
 );
 
 /** Japanese (日本語)
@@ -261,6 +268,7 @@ $messages['ja'] = array(
 	'tsb-reject-button-label' => '却下',
 	'translationstash' => 'ようこそ',
 	'translate-translationstash-welcome' => '$1 さん、ありがとうございます。あなたは翻訳者になりました', # Fuzzy
+	'translate-translationstash-skip-button-label' => 'スキップ',
 );
 
 /** Korean (한국어)
@@ -352,6 +360,7 @@ $messages['mk'] = array(
 	'translate-translationstash-welcome' => 'Добре дојдовте {{GENDER:$1|$1}}, вие сте нов преведувач',
 	'translate-translationstash-welcome-note' => 'Запознајте се со преводните алатки преведувајќи некои произволно избрани пораки.',
 	'translate-translationstash-initialtranslation' => 'Вашиот првичен превод',
+	'translate-translationstash-skip-button-label' => 'Дај друга',
 );
 
 /** Malay (Bahasa Melayu)
@@ -381,11 +390,17 @@ $messages['nl'] = array(
 Bedankt voor het registreren bij {{SITENAME}}. Als u uw testvertalingen afrondt, kunnen de beheerders u snel volledige vertaaltoegang geven.
 
 Kon alstublieft naar $2 en maak nog wat meer vertalingen.',
+	'tsb-request-count' => '{{PLURAL:$1|Eén verzoek|$1 verzoeken}}',
 	'tsb-all-languages-button-label' => 'Alle talen',
+	'tsb-search-requests' => 'Verzoeken zoeken',
 	'tsb-accept-button-label' => 'Accepteren',
 	'tsb-reject-button-label' => 'Afwijzen',
 	'tsb-reminder-link-text' => 'Herinnering per e-mail verzenden',
 	'translationstash' => 'Welkom',
+	'translate-translationstash-welcome' => 'Welkom {{GENDER:$1|$1}}, u bent nu vertaler',
+	'translate-translationstash-welcome-note' => 'Raak vertrouwd met de vertaalhulpmiddelen door een aantal willekeurig geselecteerde berichten te vertalen.',
+	'translate-translationstash-initialtranslation' => 'Uw vertaling',
+	'translate-translationstash-skip-button-label' => 'Nog één proberen',
 );
 
 /** Occitan (occitan)
@@ -400,6 +415,13 @@ $messages['oc'] = array(
 Mercé de vos èsser inscrich sus {{SITENAME}}. Se acabatz vòstras traduccions de tèst, los administrators poiràn lèu vos acordar un plen accès a las traduccions.
 
 Venètz sus $2 e fasètz qualques traduccions mai.',
+);
+
+/** Polish (polski)
+ * @author Chrumps
+ */
+$messages['pl'] = array(
+	'tsb-all-languages-button-label' => 'Wszystkie języki',
 );
 
 /** Romanian (română)
@@ -448,6 +470,7 @@ $messages['ru'] = array(
 	'translate-translationstash-welcome' => 'Добро пожаловать, {{GENDER:$1|$1}}, теперь вы новый переводчик',
 	'translate-translationstash-welcome-note' => 'Ознакомиться с инструментами перевода путём перевода нескольких случайно выбранных сообщений.',
 	'translate-translationstash-initialtranslation' => 'Ваш первоначальный перевод',
+	'translate-translationstash-skip-button-label' => 'Попробуйте другой',
 );
 
 /** Swedish (svenska)
@@ -493,7 +516,7 @@ $messages['uk'] = array(
 	'tsb-reminder-title-generic' => 'Завершіть своє представлення, щоб стати перевіреним перекладачем',
 	'tsb-reminder-content-generic' => 'Привіт, $1!
 
-Дякуємо за реєстрацію у проекті {{SITENAME}}. Якщо Ви завершите свої тестові
+Дякуємо за реєстрацію у проекті {{SITENAME}}. Якщо Ви завершите свої тестові 
 переклади, адміністратори зможуть скоро надати Вам повні права на переклад.
 
 Будь ласка, перейдіть на $2 і зробіть ще декілька перекладів.',
@@ -507,6 +530,7 @@ $messages['uk'] = array(
 	'translate-translationstash-welcome' => 'Вітаємо {{GENDER:$1|$1}}, ви - {{GENDER:$1|новий перекладач|нова перекладачка}}',
 	'translate-translationstash-welcome-note' => 'Ознайомитися з інструментами перекладу шляхом перекладу деяких випадково вибраних повідомлень.',
 	'translate-translationstash-initialtranslation' => 'Ваш початковий переклад',
+	'translate-translationstash-skip-button-label' => 'Спробуйте інший',
 );
 
 /** Vietnamese (Tiếng Việt)

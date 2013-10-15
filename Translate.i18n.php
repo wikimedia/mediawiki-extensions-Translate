@@ -20555,6 +20555,37 @@ $messages['lo'] = array(
 	'translate-desc' => '[[Special:Translate|ໜ້າພິເສດ]]ສຳຫຼັບແປມີເດຍວິກິແລະອື່ນ າ',
 );
 
+/** لوری (لوری)
+ * @author Mogoeilor
+ */
+$messages['lrc'] = array(
+	'translate' => 'والرن',
+	'translate-taction-translate' => 'والرن',
+	'translate-page-settings-legend' => 'تنظيمات',
+	'translate-page-group' => 'گرو',
+	'translate-page-language' => 'زون',
+	'translate-page-limit' => 'كران دار بيئن',
+	'translate-next' => 'بلگه نيايی',
+	'translate-prev' => 'بلگه دمايی',
+	'translate-page-edit' => 'ويرايشت',
+	'translate-edit-jsopen' => 'ويرايشت',
+	'translate-magic-cm-save' => 'ذخيره كردن',
+	'translate-pref-editassistlang' => 'زونيا ياريگر',
+	'translate-rc-translation-filter-no' => 'هيچی نكيد',
+	'translate-statsf-scale-months' => 'مايا',
+	'translate-statsf-scale-weeks' => 'هفته يا',
+	'translate-statsf-scale-days' => 'روزيا',
+	'translate-statsf-scale-hours' => 'ساعتيا',
+	'translate-statsf-count' => 'انازه',
+	'translate-statsf-count-registrations' => 'كارور تازه',
+	'translate-translations-fieldset-title' => 'پيغوم',
+	'translate-translations-messagename' => 'نوم:',
+	'translate-translations-project' => 'پروجه:',
+	'translate-translations-history-short' => 'اچ',
+	'translate-langstats-expand' => 'وا كردن',
+	'translate-langstats-collapse' => 'جم كردن',
+);
+
 /** Lithuanian (lietuvių)
  * @author Eitvys200
  * @author Garas

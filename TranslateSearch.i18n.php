@@ -610,6 +610,23 @@ $messages['lb'] = array(
 	'tux-sst-prev' => 'Vireg Resultater',
 );
 
+/** لوری (لوری)
+ * @author Mogoeilor
+ */
+$messages['lrc'] = array(
+	'searchtranslations' => 'پی جوری لرسنيا',
+	'tux-sst-edit' => 'ويرايشت لرسن',
+	'tux-sst-search' => 'پی جوری',
+	'tux-sst-search-ph' => 'پی جوری لرسنيا',
+	'tux-sst-facet-language' => 'زونيا',
+	'tux-sst-facet-group' => 'پيغوم گرويا',
+	'tux-sst-facet-orphan' => '(يتيم)',
+	'tux-sst-nosolr-title' => 'پی جوری د دسرس نئ',
+	'tux-sst-solr-offline-title' => 'پی جوری د دسرس نئ',
+	'tux-sst-next' => 'نتيجيا نيايی',
+	'tux-sst-prev' => 'نتيجيا دمايی',
+);
+
 /** Latvian (latviešu)
  * @author Papuass
  */

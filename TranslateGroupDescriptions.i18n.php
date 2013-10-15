@@ -1858,6 +1858,7 @@ $messages['nl'] = array(
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] is een mobiele toepassing voor het bijdragen aan het[[:meta:Wiki Loves Monuments|Wiki Loves Monuments-project]]',
 	'translate-group-desc-waymarked-trails-help' => "De hulppagina's van de websites van Waymarked Trails: http://waymarkedtrails.org/help/about",
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] is een echte tekstverwerker om real-time mee samen te werken',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]] is een cross-browser JavaScriptbibliotheek die een wiskundige notatie kan weergeven in webbrowsers',
 );
 
 /** Norwegian Nynorsk (norsk nynorsk)

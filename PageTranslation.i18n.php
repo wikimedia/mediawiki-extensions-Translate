@@ -5408,6 +5408,13 @@ $messages['ig'] = array(
 	'pt-movepage-reason' => 'Mgbághapụtà:',
 );
 
+/** Ido (Ido)
+ * @author Malafaya
+ */
+$messages['io'] = array(
+	'tpt-languages-legend' => 'Altra lingui:',
+);
+
 /** Icelandic (íslenska)
  * @author Snævar
  */
@@ -10762,10 +10769,12 @@ Các thất bại được ghi vào [[Special:Log/pagetranslation|nhật trình 
 );
 
 /** Volapük (Volapük)
+ * @author Malafaya
  * @author Smeira
  */
 $messages['vo'] = array(
 	'translate-tag-translate-link-desc' => 'Tradutön padi at',
+	'tpt-languages-legend' => 'Püks votik:',
 );
 
 /** Wu (吴语)
