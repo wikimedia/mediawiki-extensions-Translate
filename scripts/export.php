@@ -197,7 +197,7 @@ class CommandlineExport extends Maintenance {
 
 			// No changes to this group at all
 			if ( is_array( $changeFilter ) && !isset( $changeFilter[$groupId] ) ) {
-				$this->output( "No recent changes to $groupId.", $groupId );
+				$this->output( "No recent changes to $groupId.", 'nrc' . $groupId );
 				continue;
 			}
 
