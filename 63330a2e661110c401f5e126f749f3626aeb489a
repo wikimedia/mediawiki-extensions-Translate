@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_2185c0d2",
+        "filename": "scripts/languageeditstats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-15T06:56:20Z",
+      "side": 1,
+      "message": "Needs \\n at the end",
+      "revId": "63330a2e661110c401f5e126f749f3626aeb489a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
