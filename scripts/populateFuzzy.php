@@ -22,7 +22,12 @@ class PopulateFuzzy extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = 'A script to populate fuzzy tags to revtag table.';
-		$this->addOption( 'namespace', 'Namepace name or id', /*required*/false, /*has arg*/true );
+		$this->addOption(
+			'namespace',
+			'(optional) Namepace name or id',
+			/*required*/false,
+			/*has arg*/true
+		);
 	}
 
 	public function execute() {

@@ -23,7 +23,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class RefreshTranslatablePages extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Ensure all translation pages are up to date';
+		$this->mDescription = 'Ensure all translation pages are up to date.';
 	}
 
 	public function execute() {

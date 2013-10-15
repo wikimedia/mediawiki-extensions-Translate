@@ -21,7 +21,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class MwCoreExport extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Core special features exporter';
+		$this->mDescription = 'Core special features exporter.';
 		$this->addOption(
 			'target',
 			'Target directory for exported files',
@@ -30,7 +30,7 @@ class MwCoreExport extends Maintenance {
 		);
 		$this->addOption(
 			'lang',
-			'Comma separated list of language codes. Default: *',
+			'(optional) Comma separated list of language codes. Default: *',
 			false, /*required*/
 			true /*has arg*/
 		);

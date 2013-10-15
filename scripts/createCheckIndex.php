@@ -25,7 +25,7 @@ class CreateCheckIndex extends Maintenance {
 			'checking for problems.';
 		$this->addOption(
 			'group',
-			'Comma separated list of group IDs to process (can use * as wildcard). ' .
+			'(optional) Comma separated list of group IDs to process (can use * as wildcard). ' .
 			'Default: "*"',
 			false, /*required*/
 			true /*has arg*/

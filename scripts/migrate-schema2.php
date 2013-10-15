@@ -26,28 +26,22 @@ class TSchema2 extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Migrates db schema to version 2.';
+		$this->mDescription = 'Migrates database schema to version 2.';
 	}
 
 	public function execute() {
 		$dbw = wfGetDB( DB_MASTER );
 		if ( !$dbw->tableExists( 'revtag' ) ) {
-			$this->error( "Table revtag doesn't exist. Translate extension is not installed?" );
-
-			return;
+			$this->error( "Table revtag doesn't exist. Translate extension is not installed?", 1 );
 		}
 
 		if ( !$dbw->tableExists( 'revtag_type' ) ) {
-			$this->error( "Table revtag_type doesn't exist. Migration is already done." );
-
-			return;
+			$this->error( "Table revtag_type doesn't exist. Migration is already done.", 1 );
 		}
 
 		if ( $dbw->getType() !== 'mysql' ) {
 			$this->error( "This migration script only supports mysql. Please help " .
-				"us to write routine for {$dbw->getType()}." );
-
-			return;
+				"us to write routine for {$dbw->getType()}.", 1 );
 		}
 
 		$table = $dbw->tableName( 'revtag' );
