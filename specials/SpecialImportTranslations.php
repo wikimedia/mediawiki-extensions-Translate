@@ -124,8 +124,6 @@ class SpecialImportTranslations extends SpecialPage {
 	 * Constructs and outputs file input form with supported methods.
 	 */
 	protected function outputForm() {
-		global $wgTranslateAllowImportFromUrl;
-
 		$this->getOutput()->addModules( 'ext.translate.special.importtranslations' );
 		TranslateUtils::addSpecialHelpLink(
 			$this->getOutput(),
