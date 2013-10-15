@@ -140,12 +140,12 @@ class CommandlineExport extends Maintenance {
 
 			if ( $group->isMeta() ) {
 				if ( !$coreMeta ) {
-					$this->output( "Skipping meta message group $groupId.", $groupId );
+					$this->output( "Skipping meta message group $groupId.\n" );
 					unset( $groups[$groupId] );
 					continue;
 				} elseif ( strstr( $group->getId(), 'core-1', true ) !== '' ) {
 					// Special case for MediaWiki core branches.
-					$this->output( "Skipping meta message group $groupId.", $groupId );
+					$this->output( "Skipping meta message group $groupId.\n" );
 					unset( $groups[$groupId] );
 					continue;
 				}
@@ -191,13 +191,13 @@ class CommandlineExport extends Maintenance {
 
 		foreach ( $groups as $groupId => $group ) {
 			if ( in_array( $groupId, $skipGroups ) ) {
-				$this->output( "Group $groupId is in skipgroup.", $groupId );
+				$this->output( "Group $groupId is in skipgroup.\n" );
 				continue;
 			}
 
 			// No changes to this group at all
 			if ( is_array( $changeFilter ) && !isset( $changeFilter[$groupId] ) ) {
-				$this->output( "No recent changes to $groupId.", $groupId );
+				$this->output( "No recent changes to $groupId.\n" );
 				continue;
 			}
 
@@ -235,7 +235,7 @@ class CommandlineExport extends Maintenance {
 				continue;
 			}
 
-			$this->output( "Exporting $groupId...", $groupId );
+			$this->output( "Exporting $groupId...\n" );
 
 			if ( $group instanceof FileBasedMessageGroup ) {
 				$ffs = $group->getFFS();
