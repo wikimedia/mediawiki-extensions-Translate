@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_01151c99",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-15T06:52:37Z",
+      "side": 1,
+      "message": "false not necessary here",
+      "revId": "5ab0bdd8f27d22ccc622f69a3ab3b87708e53cda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_210ce094",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-15T06:52:37Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "5ab0bdd8f27d22ccc622f69a3ab3b87708e53cda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_c14224ae",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-15T06:52:37Z",
+      "side": 1,
+      "message": "It should still work. Testing should confirm.",
+      "revId": "5ab0bdd8f27d22ccc622f69a3ab3b87708e53cda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_a147f0bd",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-15T06:52:37Z",
+      "side": 1,
+      "message": "This line looks accidentally duplicated",
+      "revId": "5ab0bdd8f27d22ccc622f69a3ab3b87708e53cda",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
