@@ -17,7 +17,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 /**
  * Version number used in extension credits and in other places where needed.
  */
-define( 'TRANSLATE_VERSION', '2013-10-07' );
+define( 'TRANSLATE_VERSION', '2013-10-15' );
 
 /**
  * Extension credits properties.
@@ -628,16 +628,6 @@ $wgTranslateUseTux = true;
 $wgTranslateTestUsers = array();
 
 # </source>
-
-/** @cond cli_support */
-if ( !defined( 'TRANSLATE_CLI' ) ) {
-	function STDOUT() {
-	}
-
-	function STDERR() {
-	}
-}
-/** @endcond */
 
 /**
  * Helper function for adding namespace for message groups.
