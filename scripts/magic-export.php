@@ -167,7 +167,7 @@ PHP
 	 * file handle.
 	 */
 	protected function writeFiles() {
-		$langs = self::parseLanguageCodes( '*' );
+		$langs = TranslateUtils::parseLanguageCodes( '*' );
 		unset( $langs[array_search( 'en', $langs )] );
 		$langs = array_merge( array( 'en' ), $langs );
 		foreach ( $langs as $l ) {
@@ -280,22 +280,6 @@ PHP
 		foreach ( $this->handles as $handle ) {
 			fclose( $handle );
 		}
-	}
-
-	/**
-	 * Copied from cli.inc.
-	 * @param $codes
-	 * @return array
-	 */
-	private static function parseLanguageCodes( /* string */$codes ) {
-		$langs = array_map( 'trim', explode( ',', $codes ) );
-		if ( $langs[0] === '*' ) {
-			$languages = Language::getLanguageNames();
-			ksort( $languages );
-			$langs = array_keys( $languages );
-		}
-
-		return $langs;
 	}
 }
 
