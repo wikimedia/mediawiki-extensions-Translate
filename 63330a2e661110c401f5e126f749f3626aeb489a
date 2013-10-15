@@ -16,6 +16,24 @@
       "revId": "63330a2e661110c401f5e126f749f3626aeb489a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_e19648ee",
+        "filename": "scripts/languageeditstats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-15T07:14:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0932edd2_2185c0d2",
+      "revId": "63330a2e661110c401f5e126f749f3626aeb489a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
