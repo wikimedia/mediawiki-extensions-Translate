@@ -629,16 +629,6 @@ $wgTranslateTestUsers = array();
 
 # </source>
 
-/** @cond cli_support */
-if ( !defined( 'TRANSLATE_CLI' ) ) {
-	function STDOUT() {
-	}
-
-	function STDERR() {
-	}
-}
-/** @endcond */
-
 /**
  * Helper function for adding namespace for message groups.
  *
