@@ -23,9 +23,19 @@ class MagicExport extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-
-		$this->addOption( 'target', 'Target directory for exported files', true, true );
-		$this->addOption( 'type', 'magic or special', true, true );
+		$this->mDescription = 'Export of aliases and magic words for MediaWiki extensions.';
+		$this->addOption(
+			'target',
+			'Target directory for exported files',
+			true, /*required*/
+			true /*has arg*/
+		);
+		$this->addOption(
+			'type',
+			'magic or special',
+			true, /*required*/
+			true /*has arg*/
+		);
 	}
 
 	public function execute() {
@@ -37,7 +47,7 @@ class MagicExport extends Maintenance {
 			case 'magic':
 				break;
 			default:
-				die( 'Invalid type.' );
+				$this->error( 'Invalid type.', 1 );
 		}
 
 		$this->openHandles();
@@ -99,12 +109,12 @@ class MagicExport extends Maintenance {
 						$this->messagesOld[$group->getId()] = $specialPageAliases;
 						unset( $specialPageAliases );
 					} else {
-						die( "File '$inFile' does not contain an aliases array.\n" );
+						$this->error( "File '$inFile' does not contain an aliases array.", 1 );
 					}
 					break;
 				case 'magic':
 					if ( !isset( $magicWords ) ) {
-						die( "File '$inFile' does not contain a magic words array.\n" );
+						$this->error( "File '$inFile' does not contain a magic words array.", 1 );
 					}
 					$this->messagesOld[$group->getId()] = $magicWords;
 					unset( $magicWords );

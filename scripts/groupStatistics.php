@@ -191,7 +191,7 @@ class GroupStatictics extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = 'Script to generate statistics about the localisation ' .
-			'level of one or more message groups';
+			'level of one or more message groups.';
 		$this->addOption(
 			'groups',
 			'(optional) Comma separated list of groups',

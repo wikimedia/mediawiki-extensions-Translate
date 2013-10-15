@@ -40,15 +40,15 @@ class ProcessMessageChanges extends Maintenance {
 		$this->mDescription = 'Script for processing message changes in file based message groups';
 		$this->addOption(
 			'group',
-			'Comma separated list of group IDs to process (can use * as wildcard). ' .
+			'(optional) Comma separated list of group IDs to process (can use * as wildcard). ' .
 				'Default: "*"',
 			false, /*required*/
 			true /*has arg*/
 		);
 		$this->addOption(
 			'skipgroup',
-			'Comma separated list of group IDs to not process (can use * as wildcard). ' .
-				'Overrides --group parameter. Default: "*"',
+			'(optional) Comma separated list of group IDs to not process (can use * ' .
+				'as wildcard). Overrides --group parameter.',
 			false, /*required*/
 			true /*has arg*/
 		);
