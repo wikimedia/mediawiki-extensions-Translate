@@ -16,6 +16,24 @@
       "revId": "053da6948440f8b4531cb325e1898585b3eff8d4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_c174e4fd",
+        "filename": "api/ApiTranslationStash.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-15T07:01:25Z",
+      "side": 1,
+      "message": "This was what Niklas made me change this to after commenting on PS1.",
+      "parentUuid": "0932edd2_616fb82c",
+      "revId": "053da6948440f8b4531cb325e1898585b3eff8d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
