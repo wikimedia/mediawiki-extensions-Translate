@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_e1bf285c",
+        "filename": "scripts/export.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-15T07:29:19Z",
+      "side": 1,
+      "message": "This feature was incorrectly converted. Updated in next PS.",
+      "parentUuid": "0932edd2_215ea074",
+      "revId": "6618d5af2c3b49ed8227c85bc59ab59ac4d66d9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_a179b0f5",
         "filename": "scripts/export.php",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-15T07:05:59Z",
       "side": 1,
       "message": "output and error are inconsistent on whether they take a newline or not. error appends one \\n automatically.",
+      "revId": "6618d5af2c3b49ed8227c85bc59ab59ac4d66d9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_01c35cf1",
+        "filename": "scripts/export.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-15T07:29:19Z",
+      "side": 1,
+      "message": "Done, checked whole file.",
+      "parentUuid": "0932edd2_a179b0f5",
       "revId": "6618d5af2c3b49ed8227c85bc59ab59ac4d66d9b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_61b4187f",
+        "filename": "scripts/export.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-15T07:29:19Z",
+      "side": 1,
+      "message": "Yes. I kept everything in place as it was before Maintenance was used. See old line 215.\n\nI\u0027ll change it to regular output now and will review other uses.",
+      "parentUuid": "0932edd2_0167dc50",
+      "revId": "6618d5af2c3b49ed8227c85bc59ab59ac4d66d9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_61589886",
         "filename": "scripts/mwcore-export.php",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2013-10-15T07:05:59Z",
       "side": 1,
       "message": "$l is a channel parameter, but error function doesn\u0027t take channel but instead exit code instead. The channel parameter should be removed, I think.",
+      "revId": "6618d5af2c3b49ed8227c85bc59ab59ac4d66d9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_216b00f4",
+        "filename": "scripts/mwcore-export.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-15T07:29:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0932edd2_61589886",
       "revId": "6618d5af2c3b49ed8227c85bc59ab59ac4d66d9b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
