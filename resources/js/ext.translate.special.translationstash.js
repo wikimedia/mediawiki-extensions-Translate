@@ -94,11 +94,28 @@
 		$messageWrapper.translateeditor( {
 			message: message,
 			storage: translationStashStorage,
+			onSave: updateStats,
 			onReady: function () {
 				this.$editor.find( '.tux-editor-skip-button' )
 					.text( mw.msg( 'translate-translationstash-skip-button-label' ) );
 			}
 		} );
+	}
+
+	/**
+	 * Updates the translation count at the top of the message list
+	 * Relies on classes stash-stats and tux-status-translated.
+	 */
+	function updateStats() {
+		var count,
+			$target = $( '.stash-stats' );
+
+		count = $( '.tux-status-translated' ).length;
+
+		$target.text( mw.msg(
+			'translate-translationstash-translations',
+			mw.language.convertNumber( count )
+		) );
 	}
 
 	function loadMessages() {
