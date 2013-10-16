@@ -13,6 +13,9 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslationStash extends SpecialPage {
+	///< @param TranslationStashStorage
+	protected $stash;
+
 	function __construct() {
 		parent::__construct( 'TranslationStash' );
 	}
@@ -20,6 +23,8 @@ class SpecialTranslationStash extends SpecialPage {
 	public function execute( $params ) {
 		$this->setHeaders();
 		$out = $this->getOutput();
+
+		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 
 		if ( !$this->hasPermissionToUse() ) {
 			$out->redirect( Title::newMainPage()->getLocalUrl() );
@@ -50,8 +55,7 @@ class SpecialTranslationStash extends SpecialPage {
 				return true;
 			} elseif ( $request->getVal( 'integrationtesting' ) === 'deactivatestash' ) {
 				$user->removeGroup( 'translate-sandboxed' );
-				$stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
-				$stash->deleteTranslations( $user );
+				$this->stash->deleteTranslations( $user );
 
 				return false;
 			}
@@ -69,16 +73,24 @@ class SpecialTranslationStash extends SpecialPage {
 	 */
 	protected function showPage() {
 		// Easier to do this way than in JS
+		// @todo, but move to JS once it is easier there
 		$token = Html::hidden( 'token', ApiTranslationStash::getToken(), array( 'id' => 'token' ) );
 		$out = $this->getOutput();
+		$user = $this->getUser();
 
-		$name = $this->getUser()->getName();
+		$count = count( $this->stash->getTranslations( $user ) );
+		if ( $count === 0 ) {
+			$progress = $this->msg( 'translate-translationstash-initialtranslation' )->parse();
+		} else {
+			$progress = $this->msg( 'translate-translationstash-translations' )
+				->numParams( $count )->parse();
+		}
 
 		$out->addHtml( <<<HTML
 <div class="grid">
 	<div class="row translate-welcome-header">
 		<h1>
-			{$this->msg( 'translate-translationstash-welcome', $name )->parse()}
+			{$this->msg( 'translate-translationstash-welcome', $user->getName() )->parse()}
 		</h1>
 		<p>
 			{$this->msg( 'translate-translationstash-welcome-note' )->parse()}
@@ -86,7 +98,7 @@ class SpecialTranslationStash extends SpecialPage {
 	</div>
 	<div class="row translate-stash-control">
 		<div class="six columns stash-stats">
-			{$this->msg( 'translate-translationstash-initialtranslation' )->parse()}
+			{$progress}
 		</div>
 		<div class="six columns ext-translate-language-selector right">
 			{$this->tuxLanguageSelector()}
