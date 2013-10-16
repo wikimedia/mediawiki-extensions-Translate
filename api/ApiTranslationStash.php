@@ -37,7 +37,7 @@ class ApiTranslationStash extends ApiBase {
 			$translations = $stash->getTranslations( $this->getUser() );
 			foreach( $translations as $translation ) {
 				$translation = array(
-					'title' => $translation->getTitle()->getPrefixedDBKey(),
+					'title' => $translation->getTitle()->getPrefixedText(),
 					'value' => $translation->getValue(),
 					'metadata' => $translation->getMetadata(),
 				);
