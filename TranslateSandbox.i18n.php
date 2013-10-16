@@ -36,6 +36,7 @@ Please come to $2 and make some more translations.',
 	'translate-translationstash-welcome' => 'Welcome {{GENDER:$1|$1}}, you are a new translator',
 	'translate-translationstash-welcome-note' => 'Become familiar with the translation tools by translating some randomly selected messages.',
 	'translate-translationstash-initialtranslation' => 'Your initial translation',
+	'translate-translationstash-translations' => '$1 completed {{PLURAL:$1|translation|translations}}',
 	'translate-translationstash-skip-button-label' => 'Try another',
 );
 
@@ -69,6 +70,7 @@ Followed by a list of the pending requests.',
 * $1 - user name of the new translator',
 	'translate-translationstash-welcome-note' => 'Title note for the [[Special:TranslationStash]].',
 	'translate-translationstash-initialtranslation' => 'Header for messages showing the progress of translations in [[Special:TranslationStash]].',
+	'translate-translationstash-translations' => 'Header for messages showing the progress of translations in [[Special:TranslationStash]].',
 	'translate-translationstash-skip-button-label' => 'Label for the skip button in translation editor.
 {{Identical|Try another}}',
 );

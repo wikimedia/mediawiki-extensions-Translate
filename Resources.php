@@ -378,8 +378,10 @@ $wgResourceModules['ext.translate.special.translationstash'] = array(
 		'ext.translate.editor',
 		'ext.translate.messagetable',
 		'ext.translate.translationstashstorage',
+		'mediawiki.language',
 	),
 	'messages' => array(
+		'translate-translationstash-translations',
 		'translate-translationstash-skip-button-label',
 	),
 ) + $resourcePaths;
