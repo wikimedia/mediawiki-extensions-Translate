@@ -383,6 +383,8 @@ $wgResourceModules['ext.translate.special.translationstash'] = array(
 	'messages' => array(
 		'translate-translationstash-translations',
 		'translate-translationstash-skip-button-label',
+		'tsb-limit-reached-title',
+		'tsb-limit-reached-body',
 	),
 ) + $resourcePaths;
 
