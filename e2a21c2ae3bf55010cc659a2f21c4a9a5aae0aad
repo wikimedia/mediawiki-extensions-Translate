@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_3e85d6d2",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-10-16T09:05:29Z",
+      "side": 1,
+      "message": "documentation about placeholder $1 will be nice",
+      "revId": "e2a21c2ae3bf55010cc659a2f21c4a9a5aae0aad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
