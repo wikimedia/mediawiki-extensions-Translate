@@ -45,7 +45,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 	}
 
 	public function getDefinitions() {
-		global $wgTranslateSandboxSuggestions;
+		global $wgTranslateSandboxSuggestions, $wgTranslateSandboxLimit;
 
 		// This will contain the list of messages shown to the user
 		$list = array();
@@ -123,13 +123,13 @@ class SandboxMessageGroup extends WikiMessageGroup {
 			$count++;
 
 			// Always show 20 messages (or less in rare cases)
-			if ( $count === 20 ) {
+			if ( $count === $wgTranslateSandboxLimit ) {
 				break;
 			}
 		}
 
 		// Remove the extra entries
-		$list = array_slice( $list, 0, 20 );
+		$list = array_slice( $list, 0, $wgTranslateSandboxLimit );
 
 		return $list;
 	}

@@ -40,6 +40,11 @@ Please come to $2 and make some more translations.',
 	'translate-translationstash-initialtranslation' => 'Your initial translation',
 	'translate-translationstash-translations' => '$1 completed {{PLURAL:$1|translation|translations}}',
 	'translate-translationstash-skip-button-label' => 'Try another',
+
+	'tsb-limit-reached-title' => 'Thanks for your translations',
+	'tsb-limit-reached-body' => 'You reached the translation limit for new translators.
+Our team will verify and upgrade your account soon.
+Then you will be able to translate without limits.',
 );
 
 /** Message documentation (Message documentation)
@@ -72,13 +77,14 @@ Followed by a list of the pending requests.',
 * $1 - user name of the new translator',
 	'translate-translationstash-welcome-note' => 'Title note for the [[Special:TranslationStash]].',
 	'translate-translationstash-initialtranslation' => 'Header for messages showing the progress of translations in [[Special:TranslationStash]].',
-	'translate-translationstash-translations' => 'Header for messages showing the progress of translations in [[Special:TranslationStash]]. Params:
-* $1 - the number of translations user has completed in the stash',
+	'translate-translationstash-translations' => 'Header for messages showing the progress of translations in [[Special:TranslationStash]].',
 	'translate-translationstash-skip-button-label' => 'Label for the skip button in translation editor.
 {{Identical|Try another}}',
 	'tsb-translations-source' => 'Table header label for source messages of user translations in [[Special:TranslateSandbox]].',
 	'tsb-translations-user' => 'Table header label for user translations in [[Special:TranslateSandbox]].',
 	'tsb-translations-current' =>  'Table header label for existing translations in [[Special:TranslateSandbox]].',
+	'tsb-limit-reached-title' => 'Heading shown below translations when the user has reached the limit for number of translations.',
+	'tsb-limit-reached-body' => 'Text shown below translations when the user has reached the limit for number of translations.',
 );
 
 /** Afrikaans (Afrikaans)

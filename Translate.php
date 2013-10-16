@@ -588,6 +588,12 @@ $wgTranslateSandboxPromotedGroup = false;
  */
 $wgTranslateSandboxSuggestions = array();
 
+/**
+ * Maximum number of translations a user can make in the sandbox.
+ * @since 2013.10
+ */
+$wgTranslateSandboxLimit = 20;
+
 # </source>
 # === Unsorted ===
 # <source lang=php>

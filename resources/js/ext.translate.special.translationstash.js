@@ -110,7 +110,8 @@
 	}
 
 	/**
-	 * Updates the translation count at the top of the message list
+	 * Updates the translation count at the top of the message list and
+	 * displays warning when translation limit has been reached.
 	 * Relies on classes stash-stats and tux-status-translated.
 	 */
 	function updateStats() {
@@ -118,11 +119,22 @@
 			$target = $( '.stash-stats' );
 
 		count = $( '.tux-status-translated' ).length;
+		if ( count === 0 ) {
+			return;
+		}
 
 		$target.text( mw.msg(
 			'translate-translationstash-translations',
 			mw.language.convertNumber( count )
 		) );
+
+		if ( count >= mw.config.get( 'wgTranslateSandboxLimit' ) ) {
+			$( '.limit-reached' )
+				.removeClass( 'hide' )
+				.empty()
+				.append( $( '<h1>' ).text( mw.message( 'tsb-limit-reached-title' ) ) )
+				.append( $( '<p>' ).text( mw.message( 'tsb-limit-reached-body' ) ) );
+		}
 	}
 
 	function loadMessages() {
@@ -148,6 +160,8 @@
 						$( '.tux-message:first' ).data( 'translateeditor' ).show();
 					}
 				} );
+
+				updateStats();
 			} ).fail( function ( errorCode, response ) {
 				$messageTable.empty().addClass( 'error' )
 					.text( 'Error: ' + errorCode + ' - ' + response.error.info );

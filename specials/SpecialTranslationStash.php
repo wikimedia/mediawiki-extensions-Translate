@@ -21,6 +21,8 @@ class SpecialTranslationStash extends SpecialPage {
 	}
 
 	public function execute( $params ) {
+		global $wgTranslateSandboxLimit;
+
 		$this->setHeaders();
 		$out = $this->getOutput();
 
@@ -32,6 +34,7 @@ class SpecialTranslationStash extends SpecialPage {
 			return;
 		}
 
+		$out->addJsConfigVars( 'wgTranslateSandboxLimit', $wgTranslateSandboxLimit );
 		$out->addModules( 'ext.translate.special.translationstash' );
 		$this->showPage();
 	}
@@ -106,6 +109,7 @@ class SpecialTranslationStash extends SpecialPage {
 		</div>
 	</div>
 	{$this->getMessageTable()}
+	<div class="row limit-reached hide"></div>
 	$token
 </div>
 HTML

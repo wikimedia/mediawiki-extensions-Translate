@@ -8,7 +8,7 @@ h1.firstHeading {
 	display: none;
 }
 
-.translate-welcome-header > h1 {
+h1 {
 	text-decoration: none;
 	border-bottom: none;
 }
@@ -22,6 +22,17 @@ h1.firstHeading {
 	background-color: #F8F8F8;
 	background-image: linear-gradient(#fAFAFA, #f8f8f8);
 	border-bottom: 1px solid #eee;
+	padding: 10px;
+}
+
+.limit-reached > p {
+	color: #57585a;
+	font-size: 1.2em;
+}
+
+.limit-reached {
+	margin-top: 10px;
+	background-color: #fbf9ce;
 	padding: 10px;
 }
 
