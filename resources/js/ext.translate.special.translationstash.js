@@ -25,7 +25,7 @@
 			mclanguage: language,
 			mcoffset: offset,
 			mclimit: limit,
-			mcprop: 'definition|properties'
+			mcprop: 'definition'
 		} );
 
 		return deferred.promise();
@@ -39,7 +39,13 @@
 			targetLanguage = $messageTable.data( 'targetlangcode' ),
 			targetLanguageDir = $.uls.data.getDir( targetLanguage ),
 			status = message.properties.status,
-			statusClass = 'tux-status-' + status;
+			statusClass = 'tux-status-' + status,
+			statusMsg;
+
+			if ( status === 'translated' ) {
+				// tux-status-translated
+				statusMsg = 'tux-status-' + status;
+			}
 
 		$messageWrapper = $( '<div>' )
 			.addClass( 'row tux-message' );
@@ -76,6 +82,7 @@
 					.append(
 						$( '<span>' )
 							.addClass( statusClass )
+							.text( statusMsg ? mw.msg( statusMsg ) : '' )
 					),
 				$( '<div>' )
 					.addClass( 'two column tux-list-edit text-right' )
@@ -109,9 +116,13 @@
 			.done( function ( result ) {
 				var messages = result.query.messagecollection;
 				$.each( messages, function ( index, message ) {
+					message.properties = {};
+					message.properties.status = 'untranslated';
+
 					message.group = messagegroup;
 					if ( userTranslations[message.title] ) {
 						message.translation = userTranslations[message.title].value;
+						message.properties.status = 'translated';
 					}
 
 					addMessage( message );
