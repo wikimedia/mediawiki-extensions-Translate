@@ -137,12 +137,14 @@
 			if ( fuzzy ) {
 				this.$statsBar.find( '.tux-statsbar-info' )
 					.text( mw.msg( 'translate-statsbar-tooltip-with-fuzzy',
-						translated.toFixed(), proofread.toFixed(),
-						fuzzy.toFixed() ) );
+						mw.language.convertNumber( translated.toFixed() ),
+						mw.language.convertNumber( proofread.toFixed() ),
+						mw.language.convertNumber( fuzzy.toFixed() ) ) );
 			} else {
 				this.$statsBar.find( '.tux-statsbar-info' )
 					.text( mw.msg( 'translate-statsbar-tooltip',
-						translated.toFixed(), proofread.toFixed() ) );
+						mw.language.convertNumber( translated.toFixed() ),
+						mw.language.convertNumber( proofread.toFixed() ) ) );
 			}
 		},
 

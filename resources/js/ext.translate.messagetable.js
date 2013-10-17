@@ -474,11 +474,12 @@
 						remaining = result.query.metadata.remaining;
 
 						$( '.tux-messagetable-loader-count' ).text(
-							mw.msg( 'tux-messagetable-more-messages', remaining )
+							mw.msg( 'tux-messagetable-more-messages', mw.language.convertNumber( remaining ) )
 						);
 
 						$( '.tux-messagetable-loader-more' ).text(
-							mw.msg( 'tux-messagetable-loading-messages', Math.min( remaining, pageSize ) )
+							mw.msg( 'tux-messagetable-loading-messages', mw.language.convertNumber(
+								Math.min( remaining, pageSize ) ) )
 						);
 
 						// Make sure the floating toolbars are visible without the need for scroll

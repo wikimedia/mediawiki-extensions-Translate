@@ -158,6 +158,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'ext.translate.parsers',
 		'ext.translate.loader',
 		'jquery.textchange',
+		'mediawiki.language',
 	),
 	'messages' => array(
 		'translate-messagereview-progress',
@@ -405,6 +406,9 @@ $wgResourceModules['ext.translate.statsbar'] = array(
 		'translate-statsbar-tooltip-with-fuzzy',
 	),
 	'position' => 'top',
+	'dependencies' => array(
+		'mediawiki.language',
+	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.storage'] = array(
