@@ -10,12 +10,9 @@
 	function doApiAction( options ) {
 		var api = new mw.Api();
 
-		options = $.extend( {}, {
-			action: 'translatesandbox',
-			token: $( '#translatesandbox-token' ).val()
-		}, options );
+		options = $.extend( {}, { action: 'translatesandbox' }, options );
 
-		api.post( options )
+		api.postWithToken( 'translatesandbox', options )
 			.done( function () { window.alert( 'Success' ); } )
 			.fail( function () { window.alert( 'Failure' ); } );
 	}
