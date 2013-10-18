@@ -90,8 +90,7 @@ abstract class MessageIndex {
 
 		if ( $recursion > 0 ) {
 			$msg = __METHOD__ . ': trying to recurse - building the index first time?';
-			STDERR( $msg );
-			wfDebug( "$msg\n" );
+			wfWarn( $msg );
 
 			return array();
 		}
@@ -207,7 +206,7 @@ abstract class MessageIndex {
 			if ( isset( $hugearray[$key] ) ) {
 				if ( !$ignore ) {
 					$to = implode( ', ', (array)$hugearray[$key] );
-					STDERR( "Key $key already belongs to $to, conflict with $id" );
+					wfWarn( "Key $key already belongs to $to, conflict with $id" );
 				}
 
 				if ( is_array( $hugearray[$key] ) ) {
