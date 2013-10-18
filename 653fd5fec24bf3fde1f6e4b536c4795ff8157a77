@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_b149e991",
+        "filename": "tests/browser/features/step_definitions/translation_stash_steps.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2013-10-18T12:34:11Z",
+      "side": 1,
+      "message": "If you have tested it and it fails, it is fine with me.",
+      "parentUuid": "0932edd2_b1c48911",
+      "revId": "653fd5fec24bf3fde1f6e4b536c4795ff8157a77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_51534d6a",
         "filename": "tests/browser/features/step_definitions/translation_stash_steps.rb",
         "patchSetId": 8
@@ -118,6 +136,24 @@
       "side": 1,
       "message": "This seems to actually be unused.",
       "parentUuid": "0932edd2_b17ac9ec",
+      "revId": "653fd5fec24bf3fde1f6e4b536c4795ff8157a77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_d14c9da0",
+        "filename": "tests/browser/features/support/pages/stash_page.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2013-10-18T12:34:11Z",
+      "side": 1,
+      "message": "I would suggest to remove it then.",
+      "parentUuid": "0932edd2_f1ce012d",
       "revId": "653fd5fec24bf3fde1f6e4b536c4795ff8157a77",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
