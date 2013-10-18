@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_b1c48911",
+        "filename": "tests/browser/features/step_definitions/translation_stash_steps.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-18T11:28:13Z",
+      "side": 1,
+      "message": "Doesn\u0027t this fail already if (one of the) element is not present?",
+      "parentUuid": "0932edd2_d1665d53",
+      "revId": "653fd5fec24bf3fde1f6e4b536c4795ff8157a77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_51534d6a",
         "filename": "tests/browser/features/step_definitions/translation_stash_steps.rb",
         "patchSetId": 8
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_d1c73d12",
+        "filename": "tests/browser/features/support/hooks.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-18T11:28:13Z",
+      "side": 1,
+      "message": "The translations done and sandbox mode is per user, not per session",
+      "parentUuid": "0932edd2_b163a944",
+      "revId": "653fd5fec24bf3fde1f6e4b536c4795ff8157a77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_b17ac9ec",
         "filename": "tests/browser/features/support/pages/stash_page.rb",
         "patchSetId": 8
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "0932edd2_f1ce012d",
+        "filename": "tests/browser/features/support/pages/stash_page.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-18T11:28:13Z",
+      "side": 1,
+      "message": "This seems to actually be unused.",
+      "parentUuid": "0932edd2_b17ac9ec",
+      "revId": "653fd5fec24bf3fde1f6e4b536c4795ff8157a77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0932edd2_316fb92d",
         "filename": "tests/browser/features/support/pages/stash_page.rb",
         "patchSetId": 8
@@ -81,6 +135,24 @@
       "writtenOn": "2013-10-18T11:07:40Z",
       "side": 1,
       "message": "You should probably use translation_element(index \u003d 1) here",
+      "revId": "653fd5fec24bf3fde1f6e4b536c4795ff8157a77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_11d2b5d0",
+        "filename": "tests/browser/features/support/pages/stash_page.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-18T11:28:13Z",
+      "side": 1,
+      "message": "Yes",
+      "parentUuid": "0932edd2_316fb92d",
       "revId": "653fd5fec24bf3fde1f6e4b536c4795ff8157a77",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
