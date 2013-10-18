@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_b1b569d0",
+        "filename": "tests/browser/features/translation_stash.feature",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2013-10-18T09:52:09Z",
+      "side": 1,
+      "message": "This already opens stash page, is the next line needed?",
+      "revId": "826f7f72a5dfd5631168975594997cc1fbec3b1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
