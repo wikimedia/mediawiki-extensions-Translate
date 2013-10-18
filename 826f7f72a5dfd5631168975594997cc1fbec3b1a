@@ -16,6 +16,24 @@
       "revId": "826f7f72a5dfd5631168975594997cc1fbec3b1a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_d1e1fdd4",
+        "filename": "tests/browser/features/translation_stash.feature",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-18T10:05:46Z",
+      "side": 1,
+      "message": "Good point. Not really. I was again thinking of someone reading this and making it explicit that we are on the stash page.",
+      "parentUuid": "0932edd2_b1b569d0",
+      "revId": "826f7f72a5dfd5631168975594997cc1fbec3b1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
