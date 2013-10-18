@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0932edd2_d1665d53",
+        "filename": "tests/browser/features/step_definitions/translation_stash_steps.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2013-10-18T11:07:40Z",
+      "side": 1,
+      "message": "It is a code smell when a \"then\" step does not have a \"should\". I would add a step here that checks if the element is on the page.",
+      "revId": "653fd5fec24bf3fde1f6e4b536c4795ff8157a77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_51534d6a",
+        "filename": "tests/browser/features/step_definitions/translation_stash_steps.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2013-10-18T11:07:40Z",
+      "side": 1,
+      "message": "This step could be a bit more readable with a block:\n\non(StashPage) do |page|\n  page.second_translation_element.when_present.should be_visible\n  page.second_translation.should \u003d\u003d \u0027\u0027\nend",
+      "revId": "653fd5fec24bf3fde1f6e4b536c4795ff8157a77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_b163a944",
+        "filename": "tests/browser/features/support/hooks.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2013-10-18T11:07:40Z",
+      "side": 1,
+      "message": "Why are you doing this, since the browser is closed after every scenario The setting is not set per session, but it is sticky?",
+      "revId": "653fd5fec24bf3fde1f6e4b536c4795ff8157a77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_b17ac9ec",
+        "filename": "tests/browser/features/support/pages/stash_page.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2013-10-18T11:07:40Z",
+      "side": 1,
+      "message": "the second link with text \"edit\" is always used?",
+      "revId": "653fd5fec24bf3fde1f6e4b536c4795ff8157a77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_316fb92d",
+        "filename": "tests/browser/features/support/pages/stash_page.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2013-10-18T11:07:40Z",
+      "side": 1,
+      "message": "You should probably use translation_element(index \u003d 1) here",
+      "revId": "653fd5fec24bf3fde1f6e4b536c4795ff8157a77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
