@@ -121,7 +121,7 @@ class ApiTranslationStash extends ApiBase {
 			'title' => array(
 				ApiBase::PARAM_TYPE => 'string',
 			),
-			'value' => array(
+			'translation' => array(
 				ApiBase::PARAM_TYPE => 'string',
 			),
 			'metadata' => array(
