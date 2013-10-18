@@ -34,6 +34,24 @@
       "revId": "826f7f72a5dfd5631168975594997cc1fbec3b1a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0932edd2_3126d919",
+        "filename": "tests/browser/features/translation_stash.feature",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2013-10-18T10:55:02Z",
+      "side": 1,
+      "message": "You can then combine the steps. Something like this:\n\nGiven I am logged in as a sandboxed user\nAnd I am on the stash page\n\nor this:\n\nGiven I am logged in\nAnd I am a sandboxed user on the stash page\n\nor what ever else makes sense.",
+      "parentUuid": "0932edd2_d1e1fdd4",
+      "revId": "826f7f72a5dfd5631168975594997cc1fbec3b1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
