@@ -6653,6 +6653,17 @@ $messages['lg'] = array(
 	'tpt-languages-legend' => 'Nnimi ndala:',
 );
 
+/** لوری (لوری)
+ * @author Mogoeilor
+ */
+$messages['lrc'] = array(
+	'pagetranslation' => 'بلگه لرسن',
+	'tpt-tab-translate' => 'لرسن',
+	'tpt-aggregategroup-add' => 'اضاف كو',
+	'tpt-aggregategroup-save' => 'ذخيره كردن',
+	'tpt-aggregategroup-new-name' => 'نوم:',
+);
+
 /** Lithuanian (lietuvių)
  * @author Eitvys200
  * @author Mantak111
@@ -6734,12 +6745,21 @@ $messages['ltg'] = array(
  * @author Papuass
  */
 $messages['lv'] = array(
+	'pagetranslation' => 'Lapas tulkošana',
+	'right-pagetranslation' => 'Atzīmēt lapu versijas tulkošanai',
+	'action-pagetranslation' => 'pārvaldīt tulkojamās lapas',
+	'tpt-desc' => 'Paplašinājums satura lapu tulkošanai',
 	'tpt-template' => 'Lapas veidne',
 	'tpt-templatediff' => 'Lapas veidne tika izmainīta.',
+	'tpt-diff-old' => 'Iepriekšējais teksts',
+	'tpt-diff-new' => 'Jaunais teksts',
+	'tpt-submit' => 'Atzīmēt šo versiju tulkošanai',
+	'tpt-sections-oldnew' => 'Jaunas un jau esošas tulkošanas vienības',
 	'tpt-nosuchpage' => 'Lapa $1 nepastāv',
 	'tpt-select-prioritylangs-reason' => 'Iemesls:',
 	'tpt-sections-prioritylangs' => 'Prioritārās valodas',
 	'translate-tag-translate-link-desc' => 'Tulkot šo lapu',
+	'tpt-translation-intro' => 'Šī lapa ir <span class="plainlinks">[$1 tulkota versija]</span> no lapas [[$2]] un tulkojums ir pabeigts par $3%.',
 	'tpt-languages-legend' => 'Citas valodas:',
 	'tpt-tab-translate' => 'Tulkot',
 	'tpt-discouraged-language-reason' => 'Iemesls: $1',
@@ -8341,7 +8361,7 @@ $messages['ps'] = array(
 	'pt-movepage-subpages' => 'ټول واړه مخونه لېږدول',
 	'pt-movepage-action-perform' => 'لېږد ترسره کول',
 	'pt-movepage-action-other' => 'موخه بدلول',
-	'pt-deletepage-action-perform' => 'ړنګېدنه ترسره کول',
+	'pt-deletepage-action-perform' => 'ړنگېدنه ترسره کول',
 	'pt-deletepage-action-other' => 'موخه بدلول',
 	'pt-deletepage-current' => 'د مخ نوم:',
 	'pt-deletepage-reason' => 'سبب:',
@@ -10141,6 +10161,7 @@ Ang mga kabiguan ay itatala sa loob ng [[Special:Log/pagetranslation|tala ng pag
  * @author Incelemeelemani
  * @author Joseph
  * @author Karduelis
+ * @author Meelo
  * @author Suelnur
  * @author Vito Genovese
  */
@@ -10180,6 +10201,7 @@ Bu sürümü çeviri için işaretlemeden önce, çevirmenlere gereksiz iş çı
 	'tpt-languages-legend' => 'Diğer diller:',
 	'tpt-render-summary' => 'Kaynak sayfanın yeni sürümü ile eşleme için güncelleniyor',
 	'tpt-download-page' => 'Çevirileri olan sayfayı dışa aktar',
+	'aggregategroups' => 'Grupları birleştir',
 	'tpt-aggregategroup-add' => 'Ekle',
 	'tpt-aggregategroup-save' => 'Kaydet',
 	'tpt-aggregategroup-new-name' => 'Ad:',

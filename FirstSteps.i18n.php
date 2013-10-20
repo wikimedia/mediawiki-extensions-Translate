@@ -2635,6 +2635,35 @@ Dir kritt och Newsletteren awer héchstens eng pro Mount.
 Wann Dir keng Newslettere kréie wëllt, da kënnt Dir dat am Tab "{{int:prefs-personal}}"  vun Ären [[Special:Preferences|Astellungen]] ausschalten.',
 );
 
+/** لوری (لوری)
+ * @author Mogoeilor
+ */
+$messages['lrc'] = array(
+	'firststeps' => 'قدميا اول',
+	'translate-fs-pagetitle-done' => ' - انجوم بی!',
+	'translate-fs-pagetitle-pending' => '-د حالت وابسه بين',
+	'translate-fs-signup-title' => 'ثوت نام كردن',
+	'translate-fs-settings-title' => 'پيش زمنياتو نه تنظيم بكيد',
+	'translate-fs-userpage-title' => 'بلگه كاروريتو نه راس بكيد',
+	'translate-fs-permissions-title' => 'درحاست حمايت والريار',
+	'translate-fs-target-title' => 'شرو د لرسن',
+	'translate-fs-email-title' => 'نشونی ايملتو نه محكم بكيد',
+	'translate-fs-selectlanguage' => 'يه گل زون ؤرداريت',
+	'translate-fs-settings-planguage' => 'زون اصلی:',
+	'translate-fs-settings-slanguage' => 'زونيا ياريگر$1:',
+	'translate-fs-settings-submit' => 'اولويتيا نه ذخيره بكيد',
+	'translate-fs-userpage-level-N' => 'مه گويشت ور داون',
+	'translate-fs-userpage-level-5' => 'مه والريار حرفه ای',
+	'translate-fs-userpage-level-4' => 'مه وه نه چی يه گويشت ور داون دونم',
+	'translate-fs-userpage-level-3' => 'مه يه گل دستور خو دارم',
+	'translate-fs-userpage-level-2' => 'مه يه گل دستور ميونه دارم',
+	'translate-fs-userpage-level-1' => 'مه كم دونم',
+	'translate-fs-userpage-submit' => 'بلگه كاروريتو نه راس بكيد',
+	'translate-fs-userpage-done' => 'بركلا!ايسه شما يه بلگه كاروری داريت',
+	'translate-fs-permissions-planguage' => 'زون اصلی:',
+	'translate-fs-permissions-submit' => 'درحاست كل بكيد',
+);
+
 /** Lithuanian (lietuvių)
  * @author Mantak111
  */

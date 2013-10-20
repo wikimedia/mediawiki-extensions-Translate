@@ -71,19 +71,23 @@ Followed by a list of the pending requests.',
 	'tsb-reject-button-label' => 'Button label for reject button in [[Special:TranslateSandbox]].
 {{Identical|Reject}}',
 	'tsb-reminder-link-text' => 'Link text for sending reminder emails about translator signup requests.',
+	'tsb-translations-source' => 'Table header label for source messages of user translations in [[Special:TranslateSandbox]].
+{{Identical|Source}}',
+	'tsb-translations-user' => 'Table header label for user translations in [[Special:TranslateSandbox]].',
+	'tsb-translations-current' => 'Table header label for existing translations in [[Special:TranslateSandbox]].',
 	'translationstash' => 'Page title for [[Special:TranslationStash]].
 {{Identical|Welcome}}',
 	'translate-translationstash-welcome' => 'Title text shown for the [[Special:TranslationStash]]. Parameters:
 * $1 - user name of the new translator',
 	'translate-translationstash-welcome-note' => 'Title note for the [[Special:TranslationStash]].',
-	'translate-translationstash-initialtranslation' => 'Header for messages showing the progress of translations in [[Special:TranslationStash]].',
+	'translate-translationstash-initialtranslation' => 'Header for messages showing the progress of translations in [[Special:TranslationStash]].
+
+See also:
+* {{msg-mw|Translate-translationstash-translations}}',
 	'translate-translationstash-translations' => 'Header for messages showing the progress of translations in [[Special:TranslationStash]]. Params:
 	* $1 - the number of translations user has completed in the stash',
 	'translate-translationstash-skip-button-label' => 'Label for the skip button in translation editor.
 {{Identical|Try another}}',
-	'tsb-translations-source' => 'Table header label for source messages of user translations in [[Special:TranslateSandbox]].',
-	'tsb-translations-user' => 'Table header label for user translations in [[Special:TranslateSandbox]].',
-	'tsb-translations-current' =>  'Table header label for existing translations in [[Special:TranslateSandbox]].',
 	'tsb-limit-reached-title' => 'Heading shown below translations when the user has reached the limit for number of translations.',
 	'tsb-limit-reached-body' => 'Text shown below translations when the user has reached the limit for number of translations.',
 );
@@ -118,6 +122,17 @@ completu.
 Por favor, vuelva a $2 y faiga delles traducciones más.',
 );
 
+/** Bulgarian (български)
+ * @author DCLXVI
+ */
+$messages['bg'] = array(
+	'tsb-all-languages-button-label' => 'Всички езици',
+	'tsb-accept-button-label' => 'Приемане',
+	'tsb-translations-source' => 'Източник',
+	'tsb-translations-current' => 'Съществуващи преводи',
+	'tsb-limit-reached-title' => 'Благодарности за направените преводи',
+);
+
 /** Bengali (বাংলা)
  * @author Aftab1995
  */
@@ -137,6 +152,9 @@ $2-এ লগ ইন করুন এবং আরো কিছু অনুব�
  */
 $messages['br'] = array(
 	'tsb-filter-pending' => 'Rekedoù war gortoz',
+	'tsb-translations-source' => 'Mammenn',
+	'tsb-translations-current' => 'Troidigezhioù zo diouto',
+	'tsb-limit-reached-title' => 'Trugarez evit ho troidigezhioù',
 );
 
 /** German (Deutsch)
@@ -159,11 +177,19 @@ Bitte besuche $2 und erstelle einige weitere Übersetzungen.',
 	'tsb-accept-button-label' => 'Akzeptieren',
 	'tsb-reject-button-label' => 'Ablehnen',
 	'tsb-reminder-link-text' => 'E-Mail-Erinnerung senden',
+	'tsb-translations-source' => 'Quelle',
+	'tsb-translations-user' => 'Benutzerübersetzungen',
+	'tsb-translations-current' => 'Vorhandene Übersetzungen',
 	'translationstash' => 'Willkommen',
 	'translate-translationstash-welcome' => 'Willkommen $1, du bist {{GENDER:$1|ein neuer Übersetzer|eine neue Übersetzerin}}.',
 	'translate-translationstash-welcome-note' => 'Werde mit den Übersetzungswerkzeugen vertraut, indem du einige zufällig ausgewählte Nachrichten übersetzt.',
 	'translate-translationstash-initialtranslation' => 'Deine erste Übersetzung',
+	'translate-translationstash-translations' => '{{PLURAL:$1|Eine vervollständigte Übersetzung|$1 vervollständigte Übersetzungen}}',
 	'translate-translationstash-skip-button-label' => 'Eine andere versuchen',
+	'tsb-limit-reached-title' => 'Danke für deine Übersetzungen',
+	'tsb-limit-reached-body' => 'Du hast das Übersetzungslimit für neue Übersetzer erreicht.
+Unser Team wird dein Benutzerkonto bald verifizieren und hochstufen.
+Du wirst dann in der Lage sein, ohne Limits zu übersetzen.',
 );
 
 /** Spanish (español)
@@ -173,6 +199,13 @@ $messages['es'] = array(
 	'translatesandbox' => 'Gestionar la zona de pruebas del traductor',
 	'tsb-filter-pending' => 'Solicitudes pendientes',
 	'tsb-reminder-title-generic' => 'Completa tu introducción para volverte un traductor verificado',
+);
+
+/** Finnish (suomi)
+ * @author Crt
+ */
+$messages['fi'] = array(
+	'translationstash' => 'Tervetuloa',
 );
 
 /** French (français)
@@ -194,10 +227,13 @@ Veuillez venir sur $2 et faire quelques traductions de plus.',
 	'tsb-accept-button-label' => 'Accepter',
 	'tsb-reject-button-label' => 'Rejeter',
 	'tsb-reminder-link-text' => 'Envoyer un courriel de rappel',
+	'tsb-translations-user' => 'Traductions utilisateur',
+	'tsb-translations-current' => 'Traductions existantes',
 	'translationstash' => 'Bienvenue',
 	'translate-translationstash-welcome' => 'Bienvenue {{GENDER:$1|$1}}, vous êtes un nouveau traducteur',
 	'translate-translationstash-welcome-note' => 'Familiarisez-vous avec les outils de traduction en traduisant quelques messages sélectionnés aléatoirement.',
 	'translate-translationstash-initialtranslation' => 'Votre traduction initiale',
+	'translate-translationstash-translations' => '$1 a achevé {{PLURAL:$1|une traduction|des traductions}}',
 	'translate-translationstash-skip-button-label' => 'Essayer une autre',
 );
 
@@ -225,6 +261,7 @@ Acceda ao sistema en $2 e faga algunhas traducións máis.',
 	'translate-translationstash-welcome' => '{{GENDER:$1|Benvido|Benvida}}, $1; xa es {{GENDER:$1|un novo tradutor|unha nova tradutora}}',
 	'translate-translationstash-welcome-note' => 'Familiarícese coas ferramentas de tradución traducindo algunhas mensaxes seleccionadas ao chou.',
 	'translate-translationstash-initialtranslation' => 'A súa tradución inicial',
+	'translate-translationstash-translations' => '$1 {{PLURAL:$1|tradución completada|traducións completadas}}',
 	'translate-translationstash-skip-button-label' => 'Probar outra',
 );
 
@@ -281,12 +318,22 @@ $messages['ja'] = array(
 	'tsb-search-requests' => '申請の検索',
 	'tsb-accept-button-label' => '承認',
 	'tsb-reject-button-label' => '却下',
+	'tsb-translations-source' => '原文',
+	'tsb-translations-user' => '利用者による翻訳',
+	'tsb-translations-current' => '既存の翻訳',
 	'translationstash' => 'ようこそ',
 	'translate-translationstash-welcome' => '$1 さん、ありがとうございます。あなたは翻訳者になりました', # Fuzzy
+	'translate-translationstash-initialtranslation' => 'あなたの最初の翻訳',
+	'translate-translationstash-translations' => '{{PLURAL:$1|翻訳}}済 $1 件',
 	'translate-translationstash-skip-button-label' => 'スキップ',
+	'tsb-limit-reached-title' => '翻訳していただいてありがとうございます',
+	'tsb-limit-reached-body' => '新規翻訳者の翻訳数の上限に達しました。
+私たちのチームがまもなく、アカウントを検証してアップグレードします。
+その後、上限なしで翻訳できるようになります。',
 );
 
 /** Korean (한국어)
+ * @author Daisy2002
  * @author Hym411
  * @author 아라
  */
@@ -307,10 +354,15 @@ $2에 와서 조금 더 번역을 해주세요.',
 	'tsb-accept-button-label' => '승인',
 	'tsb-reject-button-label' => '거부',
 	'tsb-reminder-link-text' => '이메일 알림 보내기',
+	'tsb-translations-source' => '출처',
+	'tsb-translations-user' => '사용자 번역',
+	'tsb-translations-current' => '기존 번역',
 	'translationstash' => '환영합니다',
 	'translate-translationstash-welcome' => '$1님 환영합니다, 당신은 이제 번역자입니다.',
 	'translate-translationstash-welcome-note' => '무작위로 선택된 어떤 메시지를 번역하여 번역 도구에 익숙해지세요.',
 	'translate-translationstash-initialtranslation' => '내 초기 번역',
+	'translate-translationstash-skip-button-label' => '다른 문서',
+	'tsb-limit-reached-title' => '당신의 번역에 감사드립니다.',
 );
 
 /** Colognian (Ripoarisch)
@@ -337,9 +389,29 @@ $messages['lb'] = array(
 	'tsb-all-languages-button-label' => 'All Sproochen',
 	'tsb-accept-button-label' => 'Akzeptéieren',
 	'tsb-reject-button-label' => 'Refuséieren',
+	'tsb-translations-source' => 'Quell',
+	'tsb-translations-user' => 'Benotzer Iwwersetzungen',
+	'tsb-translations-current' => 'Iwwersetzungen déi et gëtt',
 	'translationstash' => 'Wëllkomm',
 	'translate-translationstash-welcome' => 'Wëllkomm {{GENDER:$1|$1}}, Dir sidd en neien Iwwersetzer',
 	'translate-translationstash-initialtranslation' => 'Är éischt Iwwersetzung',
+	'tsb-limit-reached-title' => 'Merci fir Är Iwwersetzungen',
+	'tsb-limit-reached-body' => "Dir hutt d'Iwwersetzungslimit fir nei Iwwersetzer erreecht.
+Eis Equipe kuckt Äre Benotzerkont geschwënn no a setzt en erop.
+Da kënnt Dir ouni Limitatiounen iwwersetzen.",
+);
+
+/** لوری (لوری)
+ * @author Mogoeilor
+ */
+$messages['lrc'] = array(
+	'tsb-all-languages-button-label' => 'همه زونيا',
+	'tsb-accept-button-label' => 'پذيرشت',
+	'tsb-reject-button-label' => 'رد كردن',
+	'tsb-translations-source' => 'سرچشمه',
+	'translationstash' => 'خوش اومايت',
+	'translate-translationstash-skip-button-label' => 'يكی هنی نه امتحان بكيد',
+	'tsb-limit-reached-title' => 'سی والرستن تو منمونيم',
 );
 
 /** Latvian (latviešu)
@@ -371,11 +443,19 @@ $messages['mk'] = array(
 	'tsb-accept-button-label' => 'Прифати',
 	'tsb-reject-button-label' => 'Одбиј',
 	'tsb-reminder-link-text' => 'Испрати потсетник по е-пошта',
+	'tsb-translations-source' => 'Извор',
+	'tsb-translations-user' => 'Кориснички преводи',
+	'tsb-translations-current' => 'Постоечки преводи',
 	'translationstash' => 'Добре дојдовте',
 	'translate-translationstash-welcome' => 'Добре дојдовте {{GENDER:$1|$1}}, вие сте нов преведувач',
 	'translate-translationstash-welcome-note' => 'Запознајте се со преводните алатки преведувајќи некои произволно избрани пораки.',
 	'translate-translationstash-initialtranslation' => 'Вашиот првичен превод',
+	'translate-translationstash-translations' => '$1 {{PLURAL:$1|завршен превод|завршени преводи}}',
 	'translate-translationstash-skip-button-label' => 'Дај друга',
+	'tsb-limit-reached-title' => 'Ви благодариме за преводите',
+	'tsb-limit-reached-body' => 'Ја достигнавте границата на преводи од нови преведувачи.
+Наскоро нашата екипа ќе ви ја провери и надгради сметката.
+Потоа ќе можете да преведувате неограничено.',
 );
 
 /** Malay (Bahasa Melayu)
@@ -481,11 +561,19 @@ $messages['ru'] = array(
 	'tsb-accept-button-label' => 'Принять',
 	'tsb-reject-button-label' => 'Отклонить',
 	'tsb-reminder-link-text' => 'Отправить напоминание по электронной почте',
+	'tsb-translations-source' => 'Источник',
+	'tsb-translations-user' => 'Переводы пользователя',
+	'tsb-translations-current' => 'Существующие переводы',
 	'translationstash' => 'Добро пожаловать',
 	'translate-translationstash-welcome' => 'Добро пожаловать, {{GENDER:$1|$1}}, теперь вы новый переводчик',
 	'translate-translationstash-welcome-note' => 'Ознакомиться с инструментами перевода путём перевода нескольких случайно выбранных сообщений.',
 	'translate-translationstash-initialtranslation' => 'Ваш первоначальный перевод',
+	'translate-translationstash-translations' => '$1 {{PLURAL:$1|завершённый перевод|завершённый перевода|завершённых переводов}}',
 	'translate-translationstash-skip-button-label' => 'Попробуйте другой',
+	'tsb-limit-reached-title' => 'Спасибо за ваши переводы',
+	'tsb-limit-reached-body' => 'Вы достигли предела переводов для новых переводчиков.
+Наша команда проверит и обновит вашу учётную запись в ближайшее время.
+После этого вы сможете переводить без ограничений.',
 );
 
 /** Swedish (svenska)
@@ -541,11 +629,19 @@ $messages['uk'] = array(
 	'tsb-accept-button-label' => 'Прийняти',
 	'tsb-reject-button-label' => 'Відмовитися',
 	'tsb-reminder-link-text' => 'Надсилати нагадування по електронній пошті',
+	'tsb-translations-source' => 'Джерело',
+	'tsb-translations-user' => 'Користувацькі переклади',
+	'tsb-translations-current' => 'Існуючі переклади',
 	'translationstash' => 'Ласкаво просимо',
 	'translate-translationstash-welcome' => 'Вітаємо {{GENDER:$1|$1}}, ви - {{GENDER:$1|новий перекладач|нова перекладачка}}',
 	'translate-translationstash-welcome-note' => 'Ознайомитися з інструментами перекладу шляхом перекладу деяких випадково вибраних повідомлень.',
 	'translate-translationstash-initialtranslation' => 'Ваш початковий переклад',
+	'translate-translationstash-translations' => 'Завершено $1 {{PLURAL:$1| переклад|переклади|перекладів|перекладу}}',
 	'translate-translationstash-skip-button-label' => 'Спробуйте інший',
+	'tsb-limit-reached-title' => 'Спасибі за ваші переклади',
+	'tsb-limit-reached-body' => 'Вами досягнута межа перекладу для нових перекладачів.
+Наша команда невдовзі перевірить і оновить ваш обліковий запис.
+Потім зможете перекладати без обмежень.',
 );
 
 /** Vietnamese (Tiếng Việt)
@@ -571,8 +667,12 @@ $messages['zh-hans'] = array(
 	'tsb-filter-pending' => '待解决请求',
 	'tsb-all-languages-button-label' => '所有语言',
 	'tsb-reject-button-label' => '拒绝',
+	'tsb-translations-source' => '来源',
 	'translationstash' => '欢迎',
 	'translate-translationstash-welcome' => '欢迎您{{GENDER:$1|$1}}，您已成为新的译者',
+	'translate-translationstash-translations' => '$1完成了翻译',
+	'translate-translationstash-skip-button-label' => '尝试其他',
+	'tsb-limit-reached-title' => '感谢您的翻译',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
