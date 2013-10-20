@@ -280,7 +280,7 @@ The color of an underline indicates how recently a translator has been active he
 	'translate-smg-nochanges' => 'There are no changes to process.',
 	'translate-smg-submit' => 'Submit changes for processing',
 	'translate-smg-submitted' => 'Message definitions have been updated. Changes are being processed in the background.',
-	'translate-smg-postponed' => 'Some changes could not be processed. [[{{FULLPAGENAME}}|Try again]].',
+	'translate-smg-more' => 'There will be more changes to process after submitting these changes.',
 	'translate-smg-left' => 'Message content in wiki',
 	'translate-smg-right' => 'Incoming changes',
 

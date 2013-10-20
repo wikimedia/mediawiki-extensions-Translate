@@ -53,7 +53,7 @@ class SpecialManageGroups extends SpecialPage {
 
 		$req = $this->getRequest();
 		if ( !$req->wasPosted() ) {
-			$this->showChanges( $allowed );
+			$this->showChanges( $allowed, $this->getLimit() );
 
 			return;
 		}
@@ -66,6 +66,22 @@ class SpecialManageGroups extends SpecialPage {
 		$this->processSubmit();
 	}
 
+	/**
+	 * How many changes can be shown per page.
+	 * @return int
+	 */
+	protected function getLimit() {
+		$limits = array(
+			1000, // Default max
+			ini_get( 'max_input_vars' ),
+			ini_get( 'suhosin.post.max_vars' ),
+			ini_get( 'suhosin.request.max_vars' )
+		);
+		// Ignore things not set
+		$limits = array_filter( $limits );
+		return min( $limits );
+	}
+
 	protected function getLegend() {
 		$text = $this->diff->addHeader(
 			'',
@@ -76,7 +92,7 @@ class SpecialManageGroups extends SpecialPage {
 		return Html::rawElement( 'div', array( 'class' => "mw-translate-smg-header" ), $text );
 	}
 
-	protected function showChanges( $allowed ) {
+	protected function showChanges( $allowed, $limit ) {
 		global $wgContLang;
 
 		$diff = new DifferenceEngine( $this->getContext() );
@@ -93,7 +109,9 @@ class SpecialManageGroups extends SpecialPage {
 				$this->getLegend()
 		);
 
-		$counter = 0;
+		// The above count as two
+		$limit = $limit - 2;
+
 		$changefile = TranslateUtils::cacheFile( self::CHANGEFILE );
 		$reader = CdbReader::open( $changefile );
 		$groups = unserialize( $reader->get( '#keys' ) );
@@ -127,14 +145,16 @@ class SpecialManageGroups extends SpecialPage {
 			foreach ( $changes as $code => $subchanges ) {
 				foreach ( $subchanges as $type => $messages ) {
 					foreach ( $messages as $params ) {
-						$counter++;
-						$change = $this->formatChange( $group, $code, $type, $params );
+						$change = $this->formatChange( $group, $code, $type, $params, $limit );
 						$out->addHtml( $change );
+
+						if ( $limit <= 0 ) {
+							// We need to restrict the changes per page per form submission
+							// limitations as well as performance.
+							$out->wrapWikiMsg( "<div class=warning>\n$1\n</div>", 'translate-smg-more' );
+							break 4;
+						}
 					}
-				}
-				if ( $counter > 500 ) {
-					// Avoid creating too heavy pages
-					break 2;
 				}
 			}
 		}
@@ -156,12 +176,12 @@ class SpecialManageGroups extends SpecialPage {
 	 * @param array $params
 	 * @return string HTML
 	 */
-	protected function formatChange( MessageGroup $group, $code, $type, $params ) {
+	protected function formatChange( MessageGroup $group, $code, $type, $params, &$limit ) {
 		$key = $params['key'];
 		$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$code" );
 		$id = self::changeId( $group->getId(), $code, $type, $key );
 
-		if ( $title->exists() && $type === 'addition' ) {
+		if ( $title && $title->exists() && $type === 'addition' ) {
 			// The message has for some reason dropped out from cache
 			// or perhaps it is being reused. In any case treat it
 			// as a change for display, so the admin can see if
@@ -170,7 +190,7 @@ class SpecialManageGroups extends SpecialPage {
 			// forever and will prevent rebuilding the cache, which
 			// leads to many other annoying problems.
 			$type = 'change';
-		} elseif ( !$title->exists() && ( $type === 'deletion' || $type === 'change' ) ) {
+		} elseif ( $title && !$title->exists() && ( $type === 'deletion' || $type === 'change' ) ) {
 			return '';
 		}
 
@@ -191,10 +211,12 @@ class SpecialManageGroups extends SpecialPage {
 
 			$label = $this->msg( 'translate-manage-action-ignore' )->text();
 			$actions = Xml::checkLabel( $label, "i/$id", "i/$id" );
+			$limit--;
 
 			if ( $group->getSourceLanguage() === $code ) {
 				$label = $this->msg( 'translate-manage-action-fuzzy' )->text();
 				$actions .= ' ' . Xml::checkLabel( $label, "f/$id", "f/$id" );
+				$limit--;
 			}
 
 			$this->diff->setText( $wiki, $params['content'] );
@@ -202,8 +224,14 @@ class SpecialManageGroups extends SpecialPage {
 		}
 
 		$hidden = Html::hidden( $id, 1 );
+		$limit--;
 		$text .= $hidden;
 		$classes = "mw-translate-smg-change smg-change-$type";
+
+		if ( $limit < 0 ) {
+			// Don't add if one of the fields might get dropped of at submission
+			return '';
+		}
 
 		return Html::rawElement( 'div', array( 'class' => $classes ), $text );
 	}
@@ -232,7 +260,7 @@ class SpecialManageGroups extends SpecialPage {
 						if ( $req->getVal( $id ) === null ) {
 							// We probably hit the limit with number of post parameters.
 							$postponed[$groupId][$code][$type][$index] = $params;
-							break 1;
+							continue;
 						}
 
 						if ( $type === 'deletion' || $req->getCheck( "i/$id" ) ) {
@@ -257,7 +285,6 @@ class SpecialManageGroups extends SpecialPage {
 
 		$reader->close();
 		rename( $changefile, $changefile . '-' . wfTimestamp() );
-		$out->addWikiMsg( 'translate-smg-submitted' );
 
 		if ( count( $postponed ) ) {
 			$changefile = TranslateUtils::cacheFile( self::CHANGEFILE );
@@ -268,8 +295,9 @@ class SpecialManageGroups extends SpecialPage {
 				$writer->set( $groupId, serialize( $changes ) );
 			}
 			$writer->close();
-
-			$out->wrapWikiMsg( "<div class=warning>\n$1\n</div>", 'translate-smg-postponed' );
+			$this->showChanges( true, $this->getLimit() );
+		} else {
+			$out->addWikiMsg( 'translate-smg-submitted' );
 		}
 	}
 
