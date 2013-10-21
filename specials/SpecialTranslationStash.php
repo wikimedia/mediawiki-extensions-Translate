@@ -75,10 +75,6 @@ class SpecialTranslationStash extends SpecialPage {
 	 * Generates the whole page html and appends it to output
 	 */
 	protected function showPage() {
-		// Easier to do this way than in JS
-		// @todo, but move to JS once it is easier there
-		$token = Html::hidden( 'token', ApiTranslationStash::getToken(),
-			array( 'id' => 'translationstash-token' ) );
 		$out = $this->getOutput();
 		$user = $this->getUser();
 
@@ -110,7 +106,6 @@ class SpecialTranslationStash extends SpecialPage {
 	</div>
 	{$this->getMessageTable()}
 	<div class="row limit-reached hide"></div>
-	$token
 </div>
 HTML
 		);
