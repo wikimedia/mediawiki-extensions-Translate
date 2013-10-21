@@ -777,6 +777,7 @@ $messages['cy'] = array(
 );
 
 /** Danish (dansk)
+ * @author Christian List
  * @author Emilkris33
  * @author Peter Alberti
  */
@@ -791,7 +792,7 @@ $messages['da'] = array(
 	'translate-fs-userpage-title' => 'Opret din brugerside',
 	'translate-fs-permissions-title' => 'Anmodning om oversættertilladelse',
 	'translate-fs-target-title' => 'Start med at oversætte!',
-	'translate-fs-email-title' => 'Bekræft din e-mail-adresse',
+	'translate-fs-email-title' => 'Bekræft din e-mailadresse',
 	'translate-fs-intro' => "Velkommen til {{SITENAME}} kom godt i gang guide.
 Du vil blive guidet igennem processen med til at blive en oversætter trin for trin.
 I sidste ende vil du være i stand til at oversætte ''brugerflade beskeder'' hos alle støttede projekter på {{SITENAME}}.",
@@ -817,7 +818,7 @@ Vælg det primære sprog, du ønsker at oversætte til.
 
 Du kan nævne andre sprog eller tilføje andre bemærkninger i tekstfeltet nedenfor.',
 	'translate-fs-permissions-pending' => 'Din anmodning er blevet sendt til [[$1]], og en af hjemmesidens ansatte vil tjekke den snarest muligt.
-Hvis du bekræfter din email-adresse, vil du modtage en notits per email, så snart det sker.',
+Hvis du bekræfter din e-mailadresse, vil du modtage en notits per e-mail, så snart det sker.',
 	'translate-fs-permissions-submit' => 'Send anmodning',
 	'translate-fs-target-text' => 'Tillykke!
 Du kan nu begynde at oversætte.
