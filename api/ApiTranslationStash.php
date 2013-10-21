@@ -83,7 +83,7 @@ class ApiTranslationStash extends ApiBase {
 		}
 
 		return array(
-			'title' => $title->getPrefixedDBKey(),
+			'title' => $title->getPrefixedText(),
 			'definition' => $definition,
 			'translation' => $translation->getValue(),
 			'comparison' => $comparison,
