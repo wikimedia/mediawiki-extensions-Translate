@@ -470,10 +470,10 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$out->addHTML(
 			Xml::openElement( 'form', $formParams ) .
-				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-				Html::hidden( 'revision', $page->getRevision() ) .
-				Html::hidden( 'target', $page->getTitle()->getPrefixedtext() ) .
-				Html::hidden( 'token', $this->getUser()->getEditToken() )
+			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'revision', $page->getRevision() ) .
+			Html::hidden( 'target', $page->getTitle()->getPrefixedtext() ) .
+			Html::hidden( 'token', $this->getUser()->getEditToken() )
 		);
 
 		$out->wrapWikiMsg( '==$1==', 'tpt-sections-oldnew' );
@@ -575,7 +575,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$out->addHTML(
 			Xml::submitButton( $this->msg( 'tpt-submit' )->text() ) .
-				Xml::closeElement( 'form' )
+			Xml::closeElement( 'form' )
 		);
 	}
 
@@ -619,16 +619,16 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$this->getOutput()->addHTML(
 			"<table>" .
-				"<tr>" .
-				"<td class='mw-label'>$hLangs[0]</td>" .
-				"<td class='mw-input'>$hLangs[1]$langSelector[1]</td>" .
-				"</tr>" .
-				"<tr><td></td><td class='mw-inout'>$hForce</td></tr>" .
-				"<tr>" .
-				"<td class='mw-label'>$hReason[0]</td>" .
-				"<td class='mw-input'>$hReason[1]</td>" .
-				"</tr>" .
-				"</table>"
+			"<tr>" .
+			"<td class='mw-label'>$hLangs[0]</td>" .
+			"<td class='mw-input'>$hLangs[1]$langSelector[1]</td>" .
+			"</tr>" .
+			"<tr><td></td><td class='mw-inout'>$hForce</td></tr>" .
+			"<tr>" .
+			"<td class='mw-label'>$hReason[0]</td>" .
+			"<td class='mw-input'>$hReason[1]</td>" .
+			"</tr>" .
+			"</table>"
 		);
 	}
 

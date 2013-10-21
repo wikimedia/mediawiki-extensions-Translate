@@ -253,8 +253,8 @@ class PageTranslationHooks {
 
 			$percentImage = Xml::element( 'img', array(
 				'src' => TranslateUtils::assetPath( "resources/images/prog-$image.png" ),
-				'alt' => wfMessage('percent', $percent )->text(),
-				'title' => wfMessage('percent', $percent )->text(),
+				'alt' => wfMessage( 'percent', $percent )->text(),
+				'title' => wfMessage( 'percent', $percent )->text(),
 				'width' => '9',
 				'height' => '9',
 			) );

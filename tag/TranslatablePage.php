@@ -573,6 +573,7 @@ class TranslatablePage {
 		);
 
 		$translate = SpecialPage::getTitleFor( 'Translate' );
+
 		return $translate->getLocalURL( $params );
 	}
 
