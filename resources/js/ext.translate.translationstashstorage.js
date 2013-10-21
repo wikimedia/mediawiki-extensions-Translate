@@ -20,12 +20,11 @@
 		 * @return {jQuery.Promise}
 		 */
 		save: function ( title, translation ) {
-			var deferred = new mw.Api().post( {
+			var deferred = new mw.Api().postWithToken( 'translationstash', {
 				action: 'translationstash',
 				subaction: 'add',
 				title: title,
 				translation: translation,
-				token: $( '#translationstash-token' ).val()
 			} );
 
 			return deferred.promise();
