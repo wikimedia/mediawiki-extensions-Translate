@@ -38,7 +38,8 @@ h1 {
 
 .translate-stash-control {
 	font-size: 1.5em;
-	padding: 30px 10px 15px 5px;
+	color: #555555;
+	padding: 35px 10px 20px 5px;
 }
 
 .ext-translate-language-selector-label {
@@ -63,6 +64,29 @@ h1 {
 	vertical-align: middle;
 }
 
+.tux-messagelist {
+	padding: 0 20px;
+	background: none;
+}
+
 .messagekey {
 	visibility: hidden;
+}
+
+.message-desc-control,
+.layout-actions .close,
+.tux-message-item {
+	display: none;
+}
+
+.tux-message:first-child .tux-message-item {
+	border-top:	1px solid #C9C9C9;
+}
+
+.tux-message-item.translated {
+	display: block;
+}
+
+.sourcemessage {
+	top: -10px;
 }
