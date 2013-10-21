@@ -48,7 +48,7 @@ class Fuzzy extends Maintenance {
 	}
 
 	public function execute() {
-		$bot = new FuzzyScript( $this->getArg( 'messages' ) );
+		$bot = new FuzzyScript( $this->getArg( 0 ) );
 
 		if ( $this->hasOption( 'skiplanguages' ) ) {
 			$bot->skipLanguages = array_map(
@@ -115,7 +115,7 @@ class FuzzyScript {
 	 * @param string[] $titles
 	 */
 	public function __construct( $titles ) {
-		$this->titles = $titles;
+		$this->titles = (array)$titles;
 		$this->allclear = true;
 	}
 
