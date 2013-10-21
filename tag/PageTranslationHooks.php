@@ -323,7 +323,7 @@ class PageTranslationHooks {
 			wfMessage( 'tpt-languages-legend' )->escaped()
 		);
 		$out .= Html::rawElement( 'td',
-			array( 'class' => 'mw-pt-languages-list' ),
+			array( 'class' => 'mw-pt-languages-list autonym' ),
 			$languages
 		);
 		$out .= Html::closeElement( 'tr' );
