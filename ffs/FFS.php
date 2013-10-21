@@ -325,6 +325,10 @@ class SimpleFFS implements FFS {
 			return;
 		}
 
+		if ( get_class( $this->group->getFFS() ) !== get_class( $this ) ) {
+			return;
+		}
+
 		$sourceText = $this->tryReadFile( $filename );
 
 		// No need to do anything in SimpleFFS if it's false,
