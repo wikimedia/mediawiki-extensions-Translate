@@ -143,7 +143,7 @@
 
 		getMessages( messagegroup, $messageTable.data( 'targetlangcode' ), 0, 20 )
 			.done( function ( result ) {
-				var messages = result.query.messagecollection;
+				var untranslated, messages = result.query.messagecollection;
 				$.each( messages, function ( index, message ) {
 					message.properties = {};
 					message.properties.status = 'untranslated';
@@ -155,11 +155,15 @@
 					}
 
 					addMessage( message );
-					if ( index === 0 ) {
-						// Show the editor for the first message.
-						$( '.tux-message:first' ).data( 'translateeditor' ).show();
-					}
 				} );
+
+				// Show the editor for the first untranslated message.
+				untranslated = $( '.tux-message' )
+					.has( '.tux-message-item.untranslated' )
+					.first();
+				if ( untranslated.length ) {
+					untranslated.data( 'translateeditor' ).show();
+				}
 
 				updateStats();
 			} ).fail( function ( errorCode, response ) {
