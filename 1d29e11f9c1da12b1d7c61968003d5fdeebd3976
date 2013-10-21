@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8925fd91_09cd8d87",
+        "filename": "resources/css/ext.translate.special.translationstash.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-10-21T11:38:52Z",
+      "side": 1,
+      "message": "Don\u0027t use tabs.",
+      "revId": "1d29e11f9c1da12b1d7c61968003d5fdeebd3976",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
