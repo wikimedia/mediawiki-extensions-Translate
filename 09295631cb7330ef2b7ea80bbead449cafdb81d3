@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8925fd91_a9bd59d6",
+        "filename": "resources/css/ext.translate.special.translationstash.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-21T11:37:25Z",
+      "side": 1,
+      "message": "tab in middle of the line",
+      "revId": "09295631cb7330ef2b7ea80bbead449cafdb81d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
