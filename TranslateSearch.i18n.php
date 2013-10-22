@@ -134,6 +134,14 @@ $messages['be-tarask'] = array(
 	'tux-sst-prev' => 'Папярэднія вынікі',
 );
 
+/** Bulgarian (български)
+ * @author DCLXVI
+ */
+$messages['bg'] = array(
+	'tux-sst-search' => 'Търсене',
+	'tux-sst-facet-language' => 'Езици',
+);
+
 /** Bengali (বাংলা)
  * @author Aftab1995
  * @author Nasir8891
@@ -781,6 +789,13 @@ $messages['pt'] = array(
  */
 $messages['pt-br'] = array(
 	'tux-sst-edit' => 'Editar tradução',
+);
+
+/** Quechua (Runa Simi)
+ * @author AlimanRuna
+ */
+$messages['qu'] = array(
+	'tux-sst-facet-language' => 'Rimaykuna',
 );
 
 /** Romanian (română)

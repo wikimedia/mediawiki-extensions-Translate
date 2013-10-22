@@ -120,6 +120,25 @@ de prueba, Los alministradores pronto darán-y permisu de traducción
 completu.
 
 Por favor, vuelva a $2 y faiga delles traducciones más.',
+	'tsb-request-count' => '{{PLURAL:$1|Una solicitú|$1 solicitúes}}',
+	'tsb-all-languages-button-label' => 'Toles llingües',
+	'tsb-search-requests' => 'Resultaos de la gueta',
+	'tsb-accept-button-label' => 'Aceutar',
+	'tsb-reject-button-label' => 'Refugar',
+	'tsb-reminder-link-text' => 'Unviar un recordatoriu per corréu electrónicu',
+	'tsb-translations-source' => 'Fonte',
+	'tsb-translations-user' => 'Traducciones del usuariu',
+	'tsb-translations-current' => 'Traducciones esistentes',
+	'translationstash' => 'Bienveníos',
+	'translate-translationstash-welcome' => '{{GENDER:$1|Bienveníu|Bienvenida}}, $1; yá yes {{GENDER:$1|un nuevu traductor|una nueva traductora}}',
+	'translate-translationstash-welcome-note' => 'Avézate a les ferramientes de traducción. Traduz dellos mensaxes y consigui permisu de traducción completu pa participar nos tos proyeutos favoritos.',
+	'translate-translationstash-initialtranslation' => 'La so traducción inicial',
+	'translate-translationstash-translations' => '$1 {{PLURAL:$1|traducción completada|traducciones completaes}}',
+	'translate-translationstash-skip-button-label' => 'Probar con otra',
+	'tsb-limit-reached-title' => 'Gracies poles sos traducciones',
+	'tsb-limit-reached-body' => 'Llegó a la llende de traducciones pa traductores nuevos.
+El nuesu equipu pronto comprobará y promocionará la so cuenta.
+Darréu podrá traducir ensin llendes.',
 );
 
 /** Bulgarian (български)
@@ -448,7 +467,7 @@ $messages['mk'] = array(
 	'tsb-translations-current' => 'Постоечки преводи',
 	'translationstash' => 'Добре дојдовте',
 	'translate-translationstash-welcome' => 'Добре дојдовте {{GENDER:$1|$1}}, вие сте нов преведувач',
-	'translate-translationstash-welcome-note' => 'Запознајте се со преводните алатки преведувајќи некои произволно избрани пораки.', # Fuzzy
+	'translate-translationstash-welcome-note' => 'Запознајте се со преводните алатки. Преведете некои пораки и стекнете полни преведувачки права за да учествувате во вашите омилени проекти.',
 	'translate-translationstash-initialtranslation' => 'Вашиот првичен превод',
 	'translate-translationstash-translations' => '$1 {{PLURAL:$1|завршен превод|завршени преводи}}',
 	'translate-translationstash-skip-button-label' => 'Дај друга',

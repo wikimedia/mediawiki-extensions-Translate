@@ -2878,7 +2878,7 @@ El color del solliniáu indica'l tiempu que fai dende qu'un traductor tuvo activ
 	'translate-smg-nochanges' => 'Nun hai cambios que procesar.',
 	'translate-smg-submit' => 'Unviar cambios pa procesamientu',
 	'translate-smg-submitted' => "S'anovaron les definiciones de los mensaxes. Los cambios tan procesandose'n segundu planu.",
-	'translate-smg-postponed' => 'Nun se pudieron procesar dellos cambios. [[{{FULLPAGENAME}}|Vuelvi a probar]].',
+	'translate-smg-more' => "Habrá más cambios a procesar dempués d'unviar estos.",
 	'translate-smg-left' => 'Conteníu del mensaxe nel wiki',
 	'translate-smg-right' => 'Cambios entrantes',
 	'translate-manage-import-diff' => 'Mensaxe $1 | Aiciones: $2',
@@ -10611,8 +10611,8 @@ $messages['fa'] = array(
 	'translate-taction-mstats' => 'آمار گروه‌های پیغام',
 	'translate-taction-export' => 'برون‌بری',
 	'translate-taction-disabled' => 'این عمل در این ویکی غیرفعال شده‌است.',
-	'translate-page-no-such-language' => 'زبان مورد نظر غیر مجاز است.',
-	'translate-page-no-such-group' => 'گروه مورد نظر غیر مجاز است.',
+	'translate-page-no-such-language' => 'زبان مورد نظر نامجاز است.',
+	'translate-page-no-such-group' => 'گروه مورد نظر نامجاز است.',
 	'translate-page-disabled' => "ترجمه این زبان در این گروه غیر فعال است.
 دلیل:
 
@@ -18962,6 +18962,7 @@ $messages['kn'] = array(
 /** Korean (한국어)
  * @author Ficell
  * @author Freebiekr
+ * @author Hym411
  * @author Klutzy
  * @author Kwj2772
  * @author ToePeu
@@ -19189,6 +19190,7 @@ $1',
 	'translate-smg-nochanges' => '과정에 대한 바뀜이 없습니다.',
 	'translate-smg-submit' => '과정에 대한 바뀜 전송',
 	'translate-smg-submitted' => '메시지 정의가 업데이트되었습니다. 바뀜은 백그라운드로 처리하고 있습니다.',
+	'translate-smg-more' => '이 편집을 처리하기 위해 더 많은 변화가 있을 수 있습니다.',
 	'translate-smg-left' => '위키에서 메시지 내용',
 	'translate-smg-right' => '들어오는 바뀜',
 	'translate-manage-import-diff' => '메시지 $1 | 동작: $2',
@@ -21931,7 +21933,7 @@ $messages['mk'] = array(
 	'translate-smg-nochanges' => 'Нема измени за обработка.',
 	'translate-smg-submit' => 'Поднеси измени за обработка',
 	'translate-smg-submitted' => 'Формулациите на пораките се подновени. Измените се обработуваат во позадина.',
-	'translate-smg-postponed' => 'Не можев да обработам некои од промените. [[{{FULLPAGENAME}}|Обидете се пак]].',
+	'translate-smg-more' => 'Ќе има уште промени за обработка откако ќе ги поднесете овие.',
 	'translate-smg-left' => 'Содржина на пораката во викито',
 	'translate-smg-right' => 'Престојни промени',
 	'translate-manage-import-diff' => 'Порака $1 | Дејства: $2',
@@ -27099,7 +27101,6 @@ A cor do sublinhado indica quão recentemente o tradutor esteve ativo aqui.',
 	'translate-smg-nochanges' => 'Não há alterações para processar.',
 	'translate-smg-submit' => 'Enviar alterações para processamento',
 	'translate-smg-submitted' => 'Foram atualizadas definições de mensagens. As alterações estão a ser processadas em segundo plano.',
-	'translate-smg-postponed' => 'Algumas alterações não puderam ser processadas. [[{{FULLPAGENAME}}|Tente novamente]].',
 	'translate-smg-left' => 'Conteúdo da mensagem na wiki',
 	'translate-smg-right' => 'Alterações recebidas',
 	'translate-manage-import-diff' => 'Mensagem $1 | Ações: $2',
@@ -27203,6 +27204,7 @@ Os estados são definidos na variável de configuração $wgTranslateWorkflowSta
 	'translate-gethelp' => 'Ajuda',
 	'tux-tab-all' => 'Tudo',
 	'tux-editor-save-button-label' => 'Gravar tradução',
+	'tux-editor-skip-button-label' => 'Saltar para a seguinte',
 );
 
 /** Brazilian Portuguese (português do Brasil)
