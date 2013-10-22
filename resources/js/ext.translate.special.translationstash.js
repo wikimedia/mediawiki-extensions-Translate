@@ -139,9 +139,10 @@
 
 	function loadMessages() {
 		var $messageTable = $( '.tux-messagelist' ),
+			limit = mw.config.get( 'wgTranslateSandboxLimit' ),
 			messagegroup = '!sandbox';
 
-		getMessages( messagegroup, $messageTable.data( 'targetlangcode' ), 0, 20 )
+		getMessages( messagegroup, $messageTable.data( 'targetlangcode' ), 0, limit )
 			.done( function ( result ) {
 				var messages = result.query.messagecollection;
 				$.each( messages, function ( index, message ) {
