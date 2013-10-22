@@ -233,7 +233,8 @@ class PageTranslationHooks {
 
 		$languages = array();
 		foreach ( $status as $code => $percent ) {
-			$name = TranslateUtils::getLanguageName( $code, $userLangCode );
+			// Get autonyms
+			$name = TranslateUtils::getLanguageName( $code, $code );
 			$name = htmlspecialchars( $name ); // Unlikely, but better safe
 
 			/* Percentages are too accurate and take more
