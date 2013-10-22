@@ -112,8 +112,8 @@ HTML
 	}
 
 	protected function getMessageTable() {
-		$sourceLang = Language::factory('en');
-		$targetLang = $this->getLanguage();
+		$sourceLang = $this->getSourceLanguage();
+		$targetLang = $this->getTargetLanguage();
 
 		$list = Html::element( 'div', array(
 			'class' => 'row tux-messagelist',
@@ -129,7 +129,7 @@ HTML
 	protected function tuxLanguageSelector() {
 		// The name will be displayed in the UI language,
 		// so use for lang and dir
-		$language = $this->getLanguage();
+		$language = $this->getTargetLanguage();
 		$targetLangName = Language::fetchLanguageName( $language->getCode() );
 
 		$label = Html::element(
@@ -153,4 +153,43 @@ HTML
 		return "$label&#160;$trigger";
 	}
 
+	/**
+	 * Returns the source language for messages.
+	 * @return Language
+	 */
+	protected function getSourceLanguage() {
+		// Bad
+		return Language::factory( 'en' );
+	}
+
+	/**
+	 * Returns the default target language for messages.
+	 * @return Language
+	 */
+	protected function getTargetLanguage() {
+		$ui = $this->getLanguage();
+		$source = $this->getSourceLanguage();
+		if ( $ui->getCode() !== $source->getCode() ) {
+			return $ui;
+		}
+
+		$options = FormatJson::decode( $this->getUser()->getOption( 'translate-sandbox' ), true );
+		$supported = TranslateUtils::getLanguageNames( 'en' );
+
+		if ( isset( $options['languages' ] ) ) {
+			foreach ( $options['languages'] as $code ) {
+				if ( !isset( $supported[$code] ) ) {
+					continue;
+				}
+
+				if ( $code !== $source->getCode() ) {
+					return Language::factory( $code );
+				}
+			}
+		}
+
+		// User has not chosen any valid language. Pick one at random.
+		$codes = array_keys( $supported );
+		return Language::factory( $codes[rand( 0, count( $codes ) -1 )] );
+	}
 }
