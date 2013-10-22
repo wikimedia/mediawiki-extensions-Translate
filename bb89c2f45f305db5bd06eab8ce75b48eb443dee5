@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291c1151_c5bd11d6",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-10-22T20:10:21Z",
+      "side": 1,
+      "message": "This always seems random, whether I use English, select one other language, or select several languages. The random language should at least one of those that I selected. Simply using the first one that the user selected makes sense to me.",
+      "revId": "bb89c2f45f305db5bd06eab8ce75b48eb443dee5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
