@@ -152,7 +152,7 @@ class TranslateSandbox {
 			return true;
 		}
 
-		$rights = array( 'read', 'translate-sandboxaction', 'readapi', 'writeapi' );
+		$rights = array( 'read', 'translate-sandboxaction', 'readapi', 'writeapi', 'editmyoptions' );
 
 		// Do not let other hooks add more actions
 		return false;
@@ -160,9 +160,8 @@ class TranslateSandbox {
 
 	/// Hook: onGetPreferences
 	public static function onGetPreferences( $user, &$preferences ) {
-		$preferences['translate-sandbox-reminders'] = array(
-			'type' => 'api',
-		);
+		$preferences['translate-sandbox'] = $preferences['translate-sandbox-reminders'] =
+			array( 'type' => 'api' );
 
 		return true;
 	}

@@ -186,6 +186,8 @@ $wgHooks['Translate:MessageGroupStats:isIncluded'][] = 'TranslateHooks::hideRest
 $wgHooks['MakeGlobalVariablesScript'][] = 'TranslateHooks::addConfig';
 
 // Sandbox
+$wgDefaultUserOptions['translate-sandbox'] = '';
+$wgHooks['GetPreferences'][] = 'TranslateSandbox::onGetPreferences';
 $wgHooks['UserGetRights'][] = 'TranslateSandbox::enforcePermissions';
 $wgHooks['ApiCheckCanExecute'][] = 'TranslateSandbox::onApiCheckCanExecute';
 
