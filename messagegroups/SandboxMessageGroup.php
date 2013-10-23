@@ -95,6 +95,11 @@ class SandboxMessageGroup extends WikiMessageGroup {
 
 		// Fetch definitions, slowly, one by one
 		$count = 0;
+
+		// Provide twice the number of messages than the limit
+		// to have a buffer in case the user skips some messages
+		$messagesToProvide = $wgTranslateSandboxLimit * 2;
+
 		foreach ( $list as $index => &$translation ) {
 			list( $ns, $page ) = explode( ':', $index, 2 );
 			$title = Title::makeTitle( $ns, "$page/{$this->language}" );
@@ -122,14 +127,13 @@ class SandboxMessageGroup extends WikiMessageGroup {
 
 			$count++;
 
-			// Always show 20 messages (or less in rare cases)
-			if ( $count === $wgTranslateSandboxLimit ) {
+			if ( $count === $messagesToProvide ) {
 				break;
 			}
 		}
 
 		// Remove the extra entries
-		$list = array_slice( $list, 0, $wgTranslateSandboxLimit );
+		$list = array_slice( $list, 0, $messagesToProvide );
 
 		return $list;
 	}
