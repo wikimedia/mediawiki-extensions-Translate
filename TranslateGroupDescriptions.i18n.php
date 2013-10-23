@@ -1086,7 +1086,7 @@ $messages['he'] = array(
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] הוא עורך OpenStreemMap מבוסס פלאש',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] הוא אוסף כלים לעריכה אוטומטית של ויקיפדיה',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] היא תוכנת שאלות ותשובות מבוססת רשת',
-	'translate-group-desc-tsint' => 'קבוצת הודעות ל־[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], מערכת התרגום עבור כלי [http://toolserver.org Toolserver‏ (<span class="plainlinks">[[Translating talk:Toolserver|תמיכה]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition פרטים טכניים]</span>)', # Fuzzy
+	'translate-group-desc-tsint' => 'קבוצת הודעות ל[[Translating:Intuition|Intuition]], מערכת התרגום עבור כלֵי [//toolserver.org Toolserver‏] (<span class="plainlinks">[[Translating talk:Intuition|support]]</span>)',
 	'translate-group-desc-vicuna' => 'תכנת [[Translating:VicuñaUploader|VicuñaUploader]] היא כלי להעלאת קבצים לוויקישיתוף ולמיזמי ויקימדיה אחרים',
 	'translate-group-desc-waymarked-trails' => 'אתר [[Translating:Waymarked Trails|Waymarked Trails]] הוא שירות להצגת שבילים לטיולי הליכה, טיולי אופניים, אופני הרי וגלגליות מסביב לעולם. הרישיון שלו הוא GPL.',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] מסוגל לזהות את הכותבים של חלק מדף האתר ויקי של ויקימדיה',
@@ -1099,6 +1099,7 @@ $messages['he'] = array(
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|ויקי אוהבת אתרי מורשת לניידים]] הוא יישום למכשירים ניידים שמיועד לתרומה ל[[:meta:Wiki Loves Monuments|מיזם ויקי אוהבת אתרי מורשת]]',
 	'translate-group-desc-waymarked-trails-help' => 'דפי עזרה של אתרי Waymarked Trails: http://waymarkedtrails.org/help/about',
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] הוא עורך מסמכים בזמן אמת באמת',
+	'translate-group-desc-mathjax' => "[[Translating:MathJax|MathJax]] היא ספריית ג'אווה סקריפט תואמת לדפדפנים שונים שמציגה נוסחאות מתמטיות",
 );
 
 /** Croatian (hrvatski)

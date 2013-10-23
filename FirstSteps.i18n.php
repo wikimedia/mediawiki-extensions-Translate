@@ -834,10 +834,10 @@ Hvis der er noget, du tror, du bør være i stand til at gøre, men kan ikke fin
 
 Du kan også kontakte andre oversættere af samme sprog på [[Portal:$1|din sprog portal]]s [[Portal_talk:$1|diskussionsside]].
 Hvis du ikke allerede har gjort det, [[Special:Preferences|ændrer dit brugergrænseflade sprog til det sprog, du ønsker at oversætte til]], således at wiki er i stand til at vise de mest relevante links til dig.',
-	'translate-fs-email-text' => 'Angiv venligst din e-mail-adresse i [[Special:Preferences|dine indstillinger]] og bekræft den via den e-mail der sendes til dig.
+	'translate-fs-email-text' => 'Angiv venligst din e-mailadresse i [[Special:Preferences|dine indstillinger]] og bekræft den via den e-mail der sendes til dig.
 
 Dette gør det muligt for andre brugere at kontakte dig via e-mail.
-Du vil også modtage nyhedsbreve for det meste en gang om måneden.
+Du vil også modtage nyhedsbreve højst en gang om måneden.
 Hvis du ikke ønsker at modtage nyhedsbreve, kan du framelde det i fanebladet "{{int:prefs-personal}}" i dine [[Special:Preferences|indstillinger]].',
 );
 

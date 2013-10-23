@@ -229,6 +229,7 @@ $messages['fi'] = array(
 
 /** French (français)
  * @author Gomoko
+ * @author NemesisIII
  * @author Wyz
  */
 $messages['fr'] = array(
@@ -254,6 +255,8 @@ Veuillez venir sur $2 et faire quelques traductions de plus.',
 	'translate-translationstash-initialtranslation' => 'Votre traduction initiale',
 	'translate-translationstash-translations' => '$1 a achevé {{PLURAL:$1|une traduction|des traductions}}',
 	'translate-translationstash-skip-button-label' => 'Essayer une autre',
+	'tsb-limit-reached-title' => 'Merci pour vos traductions',
+	'tsb-limit-reached-body' => 'Vous atteint le nombre limite de traductions pour les nouveaux traducteurs. !N !Notre équipe va vérifier et mettre à niveau votre compte bientôt. !N !Ensuite, vous serez en mesure de traduire sans limites.',
 );
 
 /** Galician (galego)
@@ -319,11 +322,19 @@ Vieni su $2 e fai alcune altre traduzioni.",
 	'tsb-accept-button-label' => 'Accetta',
 	'tsb-reject-button-label' => 'Rifiuta',
 	'tsb-reminder-link-text' => 'Invia email di promemoria',
+	'tsb-translations-source' => 'Sorgente',
+	'tsb-translations-user' => 'Traduzione utente',
+	'tsb-translations-current' => 'Traduzioni esistenti',
 	'translationstash' => 'Benvenuto(a)',
 	'translate-translationstash-welcome' => '{{GENDER:$1|Benvenuto|Benvenuta|Benvenuto/a}} $1, ora sei {{GENDER:$1|un nuovo traduttore|una nuova traduttrice}}',
-	'translate-translationstash-welcome-note' => 'Acquisisci familiarità con gli strumenti di traduzione, traducendo alcuni messaggi selezionati in modo casuale.', # Fuzzy
+	'translate-translationstash-welcome-note' => 'Acquisisci familiarità con gli strumenti di traduzione. Traduci alcuni messaggi ed ottieni i diritti completi per partecipare ai tuoi progetti preferiti.',
 	'translate-translationstash-initialtranslation' => 'La tua traduzione iniziale',
+	'translate-translationstash-translations' => '$1 {{PLURAL:$1|traduzione completa|traduzioni complete}}',
 	'translate-translationstash-skip-button-label' => 'Prova con un altro',
+	'tsb-limit-reached-title' => 'Grazie per le tue traduzioni',
+	'tsb-limit-reached-body' => 'Hai raggiunto il limite di traduzioni per i nuovi traduttori.
+Il nostro team verificherà ed aggiornerà presto la tua utenza.
+Successivamente sarai in grado di tradurre senza limiti.',
 );
 
 /** Japanese (日本語)

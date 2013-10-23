@@ -3526,6 +3526,7 @@ Izena: $1',
 
 /** Persian (فارسی)
  * @author Dalba
+ * @author Ebraminio
  * @author Huji
  * @author Mjbmr
  * @author ZxxZxxZ
@@ -3568,6 +3569,7 @@ $messages['fa'] = array(
 	'tpt-target-page' => 'این صفحه به صورت دستی به روز نمی‌شود.
 این صفحه یک ترجمه‌ای از صفحهٔ [[$1]] است و ترجمه را می‌توان از طریق [$2 ابزار ترجمه] به روز کرد.',
 	'tpt-discouraged-language-reason' => 'دلیل: $1',
+	'aggregategroups' => 'گروه‌های انبوه',
 	'tpt-aggregategroup-add' => 'افزودن',
 	'tpt-aggregategroup-save' => 'ذخیره',
 	'tpt-aggregategroup-new-name' => 'نام:',
