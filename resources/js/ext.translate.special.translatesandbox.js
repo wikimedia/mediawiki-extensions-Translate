@@ -258,6 +258,7 @@
 			} else {
 				$detailsPane.empty();
 			}
+
 		} );
 
 		// And update the state of select-all checkbox
@@ -273,9 +274,19 @@
 			} else if ( checked === 0 ) {
 				$detailsPane.empty();
 				$selectAll.prop( 'checked', false ).prop( 'indeterminate', false );
+			} else if ( checked === 1 ) {
+				$selectAll.prop( 'checked', false ).prop( 'indeterminate', false );
+				$detailsPane.empty();
+				displayRequestDetails();
 			} else {
 				$selectAll.prop( 'indeterminate', true );
 				displayOnMultipleSelection();
+			}
+
+			if( $('#selected_requests').length === 0 ){
+				$( 'div.request' ).parent().append( '<div class="request-footer" id="selected_requests">' + checked + ' Selected</div>' );
+			} else {
+				$( '#selected_requests' ).text( checked + ' Selected' );
 			}
 
 			e.stopPropagation();
