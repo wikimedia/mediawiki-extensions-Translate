@@ -1,9 +1,10 @@
 <?php
 /**
- * Contains logic for special page ...
+ * Contains logic for Special:ManageTranslatorSandbox
  *
  * @file
  * @author Niklas Laxström
+ * @author Amir E. Aharoni
  * @license GPL-2.0+
  */
 
@@ -41,8 +42,13 @@ class SpecialTranslateSandbox extends SpecialPage {
 		<div class="nine columns pane filter">{$this->makeFilter()}</div>
 		<div class="three columns pane search">{$this->makeSearchBox()}</div>
 	</div>
-	<div class="row">
-		<div class="four columns pane requests">{$this->makeList()}</div>
+	<div class="row request-details-panes">
+		<div class="four columns pane requests">
+				{$this->makeList()}
+			<div class="request-footer" id="selected-requests-indicator">
+				{$this->msg( 'tsb-selected-count' )->numParams( 0 )->escaped()}
+			</div>
+		</div>
 		<div class="eight columns pane details"></div>
 	</div>
 </div>
@@ -66,11 +72,15 @@ HTML;
 		$items = array();
 
 		$users = TranslateSandbox::getUsers();
+
 		foreach ( $users as $user ) {
 			$items[] = $this->makeRequestItem( $user );
 		}
+
 		$count = count( $items );
-		$out = <<<HTML
+		$requestsList = implode( "\n", $items );
+
+		return <<<HTML
 <div class="row request-header">
 	<div class="four columns">
 		<button class="language-selector">
@@ -79,15 +89,17 @@ HTML;
 	</div>
 	<div class="five columns request-count">
 		<div>
-			{$this->msg( "tsb-request-count" )->numparams( $count )->parse()}
+			{$this->msg( "tsb-request-count" )->numParams( $count )->parse()}
 		</div>
 	</div>
 	<div class="three columns center">
 		<input class="request-selector-all" name="request" type="checkbox" />
 	</div>
 </div>
+<div id="requests-list">
+	{$requestsList}
+</div>
 HTML;
-		return $out. "\n\n" . implode( "\n", $items ) . "\n\n";
 	}
 
 	protected function makeRequestItem( User $user ) {
