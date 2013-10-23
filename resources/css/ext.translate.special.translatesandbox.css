@@ -34,6 +34,13 @@
 .requests.pane,
 .details.pane {
 	border-top: 1px solid #d3d2d2;
+	overflow: auto;
+}
+
+.details.pane {
+	border-left: 1px solid #DDDDDD;
+	left: -1px;
+	padding: 5px 20px 10px 20px;
 }
 
 /* Requests pane */
@@ -41,6 +48,10 @@
 	border-right: 1px solid #c9c8c8;
 	border-bottom: 1px solid #c9c8c8;
 	cursor: pointer;
+}
+
+.request:hover {
+	background-color: #fafafa;
 }
 
 .request:first-child {
@@ -99,22 +110,26 @@
 
 /* Details pane */
 
-.details.pane > div {
-	padding: 20px 0 0 20px;
+.details.pane > .row {
+	padding-top: 15px;
 }
 
 .details.pane .username {
 	font-size: 30px;
+	font-weight: lighter;
 }
 
 .details.pane .email {
-	font-size: 14px;
 	color: #6c6d70;
+	font-size: 14px;
+	padding-top: 15px;
 }
 
 .details.pane .languages {
 	color: #6c6d70;
-	font-size: 14px;
+	font-size: 16px;
+	font-weight: lighter;
+	padding-top: 10px;
 }
 
 .details.pane .languages span {
@@ -122,7 +137,7 @@
 }
 
 .details.pane .actions {
-	font-size: 26px;
+	font-size: 22px;
 }
 
 .actions .button {
