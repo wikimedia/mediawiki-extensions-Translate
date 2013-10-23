@@ -16,6 +16,24 @@
       "revId": "bb89c2f45f305db5bd06eab8ce75b48eb443dee5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_761a516e",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-23T05:59:37Z",
+      "side": 1,
+      "message": "With what version of TwnMainPage are you testing? Without https://gerrit.wikimedia.org/r/91170 the languages are not actually stored.",
+      "parentUuid": "291c1151_c5bd11d6",
+      "revId": "bb89c2f45f305db5bd06eab8ce75b48eb443dee5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
