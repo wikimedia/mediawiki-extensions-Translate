@@ -249,6 +249,7 @@
 				this.$editTrigger = $next;
 				return this.next();
 			}
+
 			// If this is the last message, just hide it
 			if ( !$next.length ) {
 				this.hide();
@@ -598,15 +599,22 @@
 				.on( 'click', function ( e ) {
 					translateEditor.skip();
 					translateEditor.next();
+
+					if ( translateEditor.options.onSkip ) {
+						translateEditor.options.onSkip.call( translateEditor );
+					}
+
 					e.stopPropagation();
 				} );
 
+			// This appears instead of "Skip" on the last message on the page
 			$cancelButton = $( '<button>' )
 				.addClass( 'button tux-editor-cancel-button' )
 				.text( mw.msg( 'tux-editor-cancel-button-label' ) )
 				.on( 'click', function ( e ) {
 					translateEditor.skip();
 					translateEditor.hide();
+
 					e.stopPropagation();
 				} );
 

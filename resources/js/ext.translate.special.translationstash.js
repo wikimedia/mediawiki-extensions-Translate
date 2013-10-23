@@ -102,6 +102,17 @@
 			message: message,
 			storage: translationStashStorage,
 			onSave: updateStats,
+			onSkip: function () {
+				var $next = this.$editTrigger.next( '.tux-message' );
+
+				// This can happen when it's
+				// the last message in the translation stash
+				if ( !$next.length ) {
+					// Reload the page to get more messages
+					// when we get to the last one
+					window.location.reload();
+				}
+			},
 			onReady: function () {
 				this.$editor.find( '.tux-editor-skip-button' )
 					.text( mw.msg( 'translate-translationstash-skip-button-label' ) );
