@@ -4,7 +4,7 @@
  * @license GPL-2.0+
  */
 
-(function ( $, mw ) {
+( function ( $, mw ) {
 	'use strict';
 
 	function doApiAction( options ) {
@@ -180,7 +180,7 @@
 		storage.getUserTranslations( request.username ).done( function ( translations ) {
 			var $target = $( '.translations' );
 
-			// TODO: Header for the translations. not i18ned, need UX review
+			// @TODO: Header for the translations
 			$target.append(
 				$( '<div>' )
 					.addClass( 'row title' )
@@ -264,46 +264,140 @@
 		);
 	}
 
-	$( document ).ready( function () {
-		var $selectAll = $( '.request-selector-all' ),
-			$detailsPane = $( '.details.pane' );
+	function updateSelectedIndicator( count ) {
+		$( '#selected-requests-indicator' ).text(
+			mw.msg( 'tsb-selected-count', mw.language.convertNumber( count ) )
+		);
+	}
 
-		// Handle clicks for the select all checkbox
+	function setPanesHeight() {
+		var $detailsPane = $( '.pane.details' ),
+			detailsHeight = $( window ).height() - $detailsPane.offset().top;
+
+		$detailsPane.css( 'max-height', detailsHeight );
+		$( '#requests-list' ).css(
+			'max-height',
+			detailsHeight -
+				$( '#selected-requests-indicator' ).height() -
+				$( '.request-header' ).height()
+		);
+	}
+
+	$( document ).ready( function () {
+		var $requestSelectors = $( '.request-selector' ),
+			$selectAll = $( '.request-selector-all' ),
+			$requestRows = $( '.requests .request' ),
+			$detailsPane = $( '.pane.details' );
+
+		setPanesHeight();
+		$( window ).on( 'resize', setPanesHeight );
+
+		// Handle clicks for the 'Select all' checkbox
 		$selectAll.on( 'click', function () {
-			$( '.request-selector' ).prop( 'checked', this.checked );
+			$requestSelectors.prop( {
+				checked: this.checked,
+				disabled: false
+			} );
 
 			if ( this.checked ) {
 				displayOnMultipleSelection();
+				$requestRows.addClass( 'selected-row' );
 			} else {
 				$detailsPane.empty();
+				$requestRows.removeClass( 'selected-row' );
 			}
 		} );
 
-		// And update the state of select-all checkbox
-		$( '.request-selector' ).on( 'click', function ( e ) {
-			var total, checked, $selects = $( '.request-selector' );
+		$requestSelectors.on( 'click', function ( e ) {
+			var checkedCount, $checkedBoxes,
+				$thisRequestRow = $( this ).parents( 'div.request' );
 
-			total = $selects.length;
-			checked = $selects.filter( ':checked' ).length;
+			// Uncheck the rows that were selected by clicking the row
+			$requestSelectors.filter( ':disabled' ).prop( 'disabled', false );
 
-			if ( checked === total ) {
-				$selectAll.prop( 'checked', true ).prop( 'indeterminate', false );
-				displayOnMultipleSelection();
-			} else if ( checked === 0 ) {
-				$detailsPane.empty();
-				$selectAll.prop( 'checked', false ).prop( 'indeterminate', false );
+			if ( this.checked ) {
+				$thisRequestRow.addClass( 'selected-row' );
 			} else {
-				$selectAll.prop( 'indeterminate', true );
+				$thisRequestRow.removeClass( 'selected-row' );
+			}
+
+			$checkedBoxes = $requestSelectors.filter( ':checked' );
+			checkedCount = $checkedBoxes.length;
+
+			if ( checkedCount === $requestSelectors.length ) {
+				// All boxes are selected
+				$selectAll.prop( {
+					checked: true,
+					indeterminate: false
+				} );
+
+				displayOnMultipleSelection();
+			} else if ( checkedCount === 0 ) {
+				// No boxes are selected
+				$selectAll.prop( {
+					checked: false,
+					indeterminate: false
+				} );
+
+				$detailsPane.empty();
+			} else if ( checkedCount === 1 ) {
+				$selectAll.prop( {
+					checked: false,
+					indeterminate: true
+				} );
+
+				// Here we know that only one checkbox is selected,
+				// so it's OK to query the data from it
+				displayRequestDetails( $checkedBoxes.parents( 'div.request' ).data( 'data' ) );
+			} else {
+				$selectAll.prop( {
+					checked: false,
+					indeterminate: true
+				} );
+
 				displayOnMultipleSelection();
 			}
+
+			updateSelectedIndicator( checkedCount );
 
 			e.stopPropagation();
 		} );
 
-		// Handle clicks on requests
-		$( '.requests .request' ).on( 'click', function () {
-			displayRequestDetails( $( this ).data( 'data' ) );
+		// Handle clicks on request rows.
+		$requestRows.on( 'click', function () {
+			var requestRow = this;
+
+			displayRequestDetails( $( requestRow ).data( 'data' ) );
+
+			// Clicking a row makes only that row selected and unselects all other rows
+			$requestRows.each( function ( i, row ) {
+				var $row = $( row );
+
+				if ( row === requestRow ) {
+					$row.addClass( 'selected-row' )
+						.find( '.request-selector' ).prop( {
+							checked: true,
+							disabled: true
+						} );
+				} else {
+					$row.removeClass( 'selected-row' )
+						.find( '.request-selector' ).prop( {
+							checked: false,
+							disabled: false
+						} );
+				}
+			} );
+
+			$selectAll.prop( 'indeterminate', true );
+
+			updateSelectedIndicator( 1 );
 		} );
+
+		if ( $requestRows.length ) {
+			$requestRows.first().click();
+		} else {
+			$detailsPane.text( mw.msg( 'tsb-no-requests-from-new-users' ) );
+		}
 
 		// Activate language selector
 		$( '.language-selector' ).uls();
