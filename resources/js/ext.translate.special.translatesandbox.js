@@ -4,7 +4,7 @@
  * @license GPL-2.0+
  */
 
-(function ( $, mw ) {
+( function ( $, mw ) {
 	'use strict';
 
 	function doApiAction( options ) {
@@ -180,7 +180,7 @@
 		storage.getUserTranslations( request.username ).done( function ( translations ) {
 			var $target = $( '.translations' );
 
-			// TODO: Header for the translations. not i18ned, need UX review
+			// @TODO: Header for the translations
 			$target.append(
 				$( '<div>' )
 					.addClass( 'row title' )
@@ -264,9 +264,19 @@
 		);
 	}
 
+	function setPanesHeight() {
+		var $panes = $( '.pane.requests, .pane.details' );
+
+		$panes.css( 'max-height', $( window ).height() - $panes.offset().top );
+	}
+
 	$( document ).ready( function () {
 		var $selectAll = $( '.request-selector-all' ),
-			$detailsPane = $( '.details.pane' );
+			$allRequests = $( '.requests .request' ),
+			$detailsPane = $( '.pane.details' );
+
+		setPanesHeight();
+		$( window ).on( 'resize', setPanesHeight );
 
 		// Handle clicks for the select all checkbox
 		$selectAll.on( 'click', function () {
@@ -281,29 +291,66 @@
 
 		// And update the state of select-all checkbox
 		$( '.request-selector' ).on( 'click', function ( e ) {
-			var total, checked, $selects = $( '.request-selector' );
+			var $requestRows = $( '.request-selector' ),
+				$checkedBoxes = $requestRows.filter( ':checked' ),
+				checkedCount = $checkedBoxes.length;
 
-			total = $selects.length;
-			checked = $selects.filter( ':checked' ).length;
-
-			if ( checked === total ) {
-				$selectAll.prop( 'checked', true ).prop( 'indeterminate', false );
+			if ( checkedCount === $requestRows.length ) {
+				$selectAll.prop( {
+					checked: true,
+					indeterminate: false
+				} );
 				displayOnMultipleSelection();
-			} else if ( checked === 0 ) {
+			} else if ( checkedCount === 0 ) {
 				$detailsPane.empty();
-				$selectAll.prop( 'checked', false ).prop( 'indeterminate', false );
+				$selectAll.prop( {
+					checked: false,
+					indeterminate: false
+				} );
+			} else if ( checkedCount === 1 ) {
+				$selectAll.prop( {
+					checked: false,
+					indeterminate: false
+				} );
+				$detailsPane.empty();
+
+				// Here we know that only one checkbox is selected,
+				// so it's OK to query the data from it
+				displayRequestDetails( $checkedBoxes.parents( 'div.request' ).data( 'data' ) );
 			} else {
 				$selectAll.prop( 'indeterminate', true );
 				displayOnMultipleSelection();
 			}
 
+			$( '#selected-requests-indicator' ).text(
+				mw.msg( 'tsb-selected-count', mw.language.convertNumber( checkedCount ) )
+			);
+
 			e.stopPropagation();
 		} );
 
 		// Handle clicks on requests
-		$( '.requests .request' ).on( 'click', function () {
-			displayRequestDetails( $( this ).data( 'data' ) );
+		$allRequests.on( 'click', function () {
+			var $requestRow = $( this );
+
+			displayRequestDetails( $requestRow.data( 'data' ) );
+
+			// If no other users are selected, set the counter to one user
+			if ( !$( '.request-selector:checked' ).length ) {
+				$( '#selected-requests-indicator' ).text(
+					mw.msg( 'tsb-selected-count', mw.language.convertNumber( 1 ) )
+				);
+			}
+
+			$requestRow.find( '.request-selector' )
+				.prop( 'checked', true );
 		} );
+
+		if ( $allRequests.length ) {
+			$allRequests.first().click();
+		} else {
+			$detailsPane.text( mw.msg( 'tsb-no-requests-from-new-users' ) );
+		}
 
 		// Activate language selector
 		$( '.language-selector' ).uls();
