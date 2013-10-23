@@ -144,7 +144,8 @@
 	margin-right: 1.5em;
 }
 
-.request-header {
+.request-header,
+.request-footer {
 	border-right: 1px solid #c9c8c8;
 	border-bottom: 1px solid #c9c8c8;
 	line-height: 40px;

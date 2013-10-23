@@ -368,6 +368,7 @@ $wgResourceModules['ext.translate.special.translatesandbox'] = array(
 	'messages' => array(
 		'tsb-accept-button-label',
 		'tsb-reject-button-label',
+		'tsb-selected-count',
 		'tsb-accept-all-button-label',
 		'tsb-reject-all-button-label',
 		'tsb-reminder-link-text',
