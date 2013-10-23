@@ -4,7 +4,7 @@
  * @license GPL-2.0+
  */
 
-(function ( $, mw ) {
+( function ( $, mw ) {
 	'use strict';
 
 	function doApiAction( options ) {
@@ -267,21 +267,49 @@
 
 		// And update the state of select-all checkbox
 		$( '.request-selector' ).on( 'click', function ( e ) {
-			var total, checked, $selects = $( '.request-selector' );
+			var $selectedRequestsIndicator,
+				selectedRequestsIndicatorId = 'selected-requests-indicator',
+				$requestRows = $( '.request-selector' ),
+				$checkedBoxes = $requestRows.filter( ':checked' ),
+				checkedCount = $checkedBoxes.length;
 
-			total = $selects.length;
-			checked = $selects.filter( ':checked' ).length;
-
-			if ( checked === total ) {
-				$selectAll.prop( 'checked', true ).prop( 'indeterminate', false );
+			if ( checkedCount === $requestRows.length ) {
+				$selectAll.prop( {
+					checked: true,
+					indeterminate: false
+				} );
 				displayOnMultipleSelection();
-			} else if ( checked === 0 ) {
+			} else if ( checkedCount === 0 ) {
 				$detailsPane.empty();
-				$selectAll.prop( 'checked', false ).prop( 'indeterminate', false );
+				$selectAll.prop( {
+					checked: false,
+					indeterminate: false
+				} );
+			} else if ( checkedCount === 1 ) {
+				$selectAll.prop( {
+					checked: false,
+					indeterminate: false
+				} );
+				$detailsPane.empty();
+
+				// Here we know that only one checkbox is selected,
+				// so it's OK to query the data from it
+				displayRequestDetails( $checkedBoxes.parents( 'div.request' ).data( 'data' ) );
 			} else {
 				$selectAll.prop( 'indeterminate', true );
 				displayOnMultipleSelection();
 			}
+
+			$selectedRequestsIndicator = $( '#' + selectedRequestsIndicatorId );
+			if ( !$selectedRequestsIndicator.length ) {
+				$selectedRequestsIndicator = $( '<div>' )
+					.addClass( 'request-footer' )
+					.prop( 'id', selectedRequestsIndicatorId );
+
+				$( 'div.request' ).parent().append( $selectedRequestsIndicator );
+			}
+
+			$selectedRequestsIndicator.text( checkedCount + ' selected' ); // TODO i18n
 
 			e.stopPropagation();
 		} );
