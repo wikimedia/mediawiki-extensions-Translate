@@ -137,6 +137,14 @@
 	background-color: #F7F8F8;
 }
 
+.request-footer {
+	border-right: 1px solid #c9c8c8;
+	border-bottom: 1px solid #c9c8c8;
+	line-height: 40px;
+	color: #96989A;
+	background-color: #F7F8F8;
+}
+
 .language-selector {
 	margin-left: 10px;
 	border-radius: 3px;
