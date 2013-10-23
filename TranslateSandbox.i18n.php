@@ -10,6 +10,9 @@ $messages = array();
 
 /** English
  * @author Nike
+ * @author Siebrand Mazeland
+ * @author Santhosh Thottingal
+ * @author Amire80
  */
 $messages['en'] = array(
 	'translatesandbox' => 'Manage translator sandbox',
@@ -30,6 +33,7 @@ Please come to $2 and make some more translations.',
 	'tsb-search-requests' => 'Search requests',
 	'tsb-accept-button-label' => 'Accept',
 	'tsb-reject-button-label' => 'Reject',
+	'tsb-selected-count' => '{{PLURAL:$1|$1 user selected|$1 users selected|0=No users selected}}',
 	'tsb-accept-all-button-label' => 'Accept all',
 	'tsb-reject-all-button-label' => 'Reject all',
 	'tsb-reminder-link-text' => 'Send email reminder',
@@ -72,6 +76,7 @@ Followed by a list of the pending requests.',
 {{Identical|Accept}}',
 	'tsb-reject-button-label' => 'Button label for reject button in [[Special:TranslateSandbox]].
 {{Identical|Reject}}',
+	'tsb-selected-count' => 'Shows how many users are selected for accepting or rejecting. $1 is the number of users.',
 	'tsb-accept-all-button-label' => 'Button label for accept-all button in [[Special:TranslateSandbox]].
 
 See also:
