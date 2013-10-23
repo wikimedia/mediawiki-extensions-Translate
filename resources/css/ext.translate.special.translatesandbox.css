@@ -44,6 +44,10 @@
 }
 
 /* Requests pane */
+.requests.pane .request, .requests.pane .request-header {
+	margin: 0;
+}
+
 .request {
 	border-right: 1px solid #c9c8c8;
 	border-bottom: 1px solid #c9c8c8;
@@ -54,8 +58,15 @@
 	background-color: #fafafa;
 }
 
-.request:first-child {
-	height: 51px;
+.request.selected-row {
+	background-color: #f0f0f0;
+}
+
+.request-header {
+	border-bottom: 1px solid #c9c8c8;
+}
+
+.request-footer {
 	border-top: 1px solid #c9c8c8;
 }
 
@@ -144,7 +155,8 @@
 	margin-right: 1.5em;
 }
 
-.request-header {
+.request-header,
+.request-footer {
 	border-right: 1px solid #c9c8c8;
 	border-bottom: 1px solid #c9c8c8;
 	line-height: 40px;
