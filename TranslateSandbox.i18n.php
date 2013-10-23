@@ -10,6 +10,9 @@ $messages = array();
 
 /** English
  * @author Nike
+ * @author Siebrand Mazeland
+ * @author Santhosh Thottingal
+ * @author Amire80
  */
 $messages['en'] = array(
 	'translatesandbox' => 'Manage translator sandbox',
@@ -30,6 +33,7 @@ Please come to $2 and make some more translations.',
 	'tsb-search-requests' => 'Search requests',
 	'tsb-accept-button-label' => 'Accept',
 	'tsb-reject-button-label' => 'Reject',
+	'tsb-selected-count' => '{{PLURAL:$1|$1 user selected|$1 users selected}}',
 	'tsb-accept-all-button-label' => 'Accept all',
 	'tsb-reject-all-button-label' => 'Reject all',
 	'tsb-reminder-link-text' => 'Send email reminder',
@@ -47,11 +51,13 @@ Please come to $2 and make some more translations.',
 	'tsb-limit-reached-body' => 'You reached the translation limit for new translators.
 Our team will verify and upgrade your account soon.
 Then you will be able to translate without limits.',
+	'tsb-no-requests-from-new-users' => 'No requests from new users',
 );
 
 /** Message documentation (Message documentation)
  * @author Nike
  * @author Shirayuki
+ * @author Amire80
  */
 $messages['qqq'] = array(
 	'translatesandbox' => '{{doc-special|TranslateSandbox}}',
@@ -72,6 +78,7 @@ Followed by a list of the pending requests.',
 {{Identical|Accept}}',
 	'tsb-reject-button-label' => 'Button label for reject button in [[Special:TranslateSandbox]].
 {{Identical|Reject}}',
+	'tsb-selected-count' => 'Shows how many users are selected for accepting or rejecting. $1 is the number of users.',
 	'tsb-accept-all-button-label' => 'Button label for accept-all button in [[Special:TranslateSandbox]].
 
 See also:
@@ -100,6 +107,7 @@ See also:
 {{Identical|Try another}}',
 	'tsb-limit-reached-title' => 'Heading shown below translations when the user has reached the limit for number of translations.',
 	'tsb-limit-reached-body' => 'Text shown below translations when the user has reached the limit for number of translations.',
+	'tsb-no-requests-from-new-users' => 'Shown on Special:TranslateSandbox when there are no requests for approval from new users.',
 );
 
 /** Afrikaans (Afrikaans)
