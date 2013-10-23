@@ -62,9 +62,11 @@ HTML;
 		$items = array();
 
 		$users = TranslateSandbox::getUsers();
+
 		foreach ( $users as $user ) {
 			$items[] = $this->makeRequestItem( $user );
 		}
+
 		$count = count( $items );
 		$out = <<<HTML
 <div class="row request-header">
@@ -83,7 +85,14 @@ HTML;
 	</div>
 </div>
 HTML;
-		return $out. "\n\n" . implode( "\n", $items ) . "\n\n";
+
+		$countIndicator = <<<HTML
+<div class="request-footer" id="selected-requests-indicator">
+	{$this->msg( 'tsb-selected-count' )->numparams( 0 )->text()}
+</div>
+HTML;
+
+		return $out . "\n\n" . implode( "\n", $items ) . $countIndicator . "\n\n";
 	}
 
 	protected function makeRequestItem( User $user ) {
