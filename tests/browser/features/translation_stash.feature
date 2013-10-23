@@ -37,7 +37,7 @@ Feature: Translation stash
     When I make a translation
     Then I should see my translation saved
       And I reload the page
-      And I can see and edit my earlier translation
+      And I can open and see my earlier translation
 
   Scenario: User is displayed a message when all messages have been translated
     When I translate all the messages in the sandbox

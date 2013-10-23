@@ -33,8 +33,11 @@ When(/^I reload the page$/) do
 	visit(StashPage)
 end
 
-Then(/^I can see and edit my earlier translation$/) do
-	on(StashPage).translation_element.when_present.value.should == 'Pupu'
+Then(/^I can open and see my earlier translation$/) do
+	on(StashPage) do |page|
+		page.edit_element.when_present(10).click
+		page.translation_element.when_present.value.should == 'Pupu'
+	end
 end
 
 Then(/^I should see a message indicating I have one completed translation$/) do
@@ -42,6 +45,8 @@ Then(/^I should see a message indicating I have one completed translation$/) do
 end
 
 When(/^I translate all the messages in the sandbox$/) do
+	# Sandbox needs to get enough messages
+	pending
 	(0..19).each do |i|
 		on(StashPage).make_a_translation(i)
 		step 'I should see my translation saved'

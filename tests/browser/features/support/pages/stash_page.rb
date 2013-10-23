@@ -4,6 +4,8 @@ class StashPage
 	include URL
 	page_url URL.url('Special:TranslationStash?<%=params[:extra]%>')
 
+	a(:edit, text: 'Edit')
+
 	span(:language_selector, :class => 'uls')
 	text_field(:language_filter, :id => 'languagefilter')
 
