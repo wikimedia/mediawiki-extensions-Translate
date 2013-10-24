@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291c1151_923fcbb0",
+        "filename": "resources/css/ext.translate.special.translatesandbox.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-24T21:36:06Z",
+      "side": 1,
+      "message": "This seems to be identical to the above section.\n\nA,\nB {\n...\n}",
+      "revId": "b211212669e34be84fb3daeda3d2283a44320c70",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_52a7130e",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-24T21:36:06Z",
+      "side": 1,
+      "message": "The usual thingie is to have the element always present in the html, but hidden with a class \u0027hide\u0027. Avoid the need to check whether it exists.",
+      "revId": "b211212669e34be84fb3daeda3d2283a44320c70",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
