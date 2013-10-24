@@ -346,6 +346,26 @@ $messages['eu'] = array(
 	'tux-sst-facet-language' => 'Hizkuntzak',
 );
 
+/** Persian (فارسی)
+ * @author Ebraminio
+ */
+$messages['fa'] = array(
+	'searchtranslations' => 'جستجوی ترجمه‌ها',
+	'tux-sst-edit' => 'ویرایش ترجمه',
+	'tux-sst-search' => 'جستجو',
+	'tux-sst-search-ph' => 'جستجوی ترجمه‌ها',
+	'tux-sst-count' => '{{PLURAL:$1|یک نتیجه یافت شد|$1 نتیجه یافت شد}}',
+	'tux-sst-facet-language' => 'زبان‌ها',
+	'tux-sst-facet-group' => 'گروه‌های پیام',
+	'tux-sst-facet-orphan' => '(یتیم)',
+	'tux-sst-nosolr-title' => 'جستجوی ناموجود است',
+	'tux-sst-nosolr-body' => 'این ویکی خدمات جستجوی ترجمه ندارد.',
+	'tux-sst-solr-offline-title' => 'جستجوی ناموجود است',
+	'tux-sst-solr-offline-body' => 'خدمت جستجو به‌صورت موقت ناموجود است.',
+	'tux-sst-next' => 'نتایج بعدی',
+	'tux-sst-prev' => 'نتایج قبلی',
+);
+
 /** Finnish (suomi)
  * @author Crt
  * @author Nike

@@ -613,6 +613,7 @@ $messages['ru'] = array(
 );
 
 /** Swedish (svenska)
+ * @author Jopparn
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
@@ -630,10 +631,16 @@ Var god kom till $2 och gör några fler översättningar.',
 	'tsb-accept-button-label' => 'Acceptera',
 	'tsb-reject-button-label' => 'Acceptera inte',
 	'tsb-reminder-link-text' => 'Skicka e-postpåminnelse',
+	'tsb-translations-source' => 'Källa',
+	'tsb-translations-user' => 'Användaröversättningar',
+	'tsb-translations-current' => 'Befintliga översättningar',
 	'translationstash' => 'Välkommen',
 	'translate-translationstash-welcome' => 'Välkommen {{GENDER:$1|$1}}, du är en ny översättare',
 	'translate-translationstash-welcome-note' => 'Bekanta dig med översättningsverktygen genom att översätta några slumpmässigt utvalda meddelanden.', # Fuzzy
 	'translate-translationstash-initialtranslation' => 'Din ursprungliga översättning',
+	'translate-translationstash-translations' => '$1 {{PLURAL:$1|fullbordad översättning|fullbordade översättningar}}',
+	'translate-translationstash-skip-button-label' => 'Prova en annan',
+	'tsb-limit-reached-title' => 'Tack för dina översättningar',
 );
 
 /** Telugu (తెలుగు)
@@ -692,6 +699,25 @@ $messages['vi'] = array(
 Cảm ơn bạn đã tham gia {{SITENAME}}. Sau khi bạn dịch các bản dịch kiểm tra, các bảo quản viên sẽ sớm cấp quyền biên dịch đầy đủ cho bạn.
 
 Xin vui lòng trở lại $2 để dịch tiếp.',
+	'tsb-request-count' => '{{PLURAL:$1|Một yêu cầu|$1 yêu cầu}}',
+	'tsb-all-languages-button-label' => 'Tất cả các ngôn ngữ',
+	'tsb-search-requests' => 'Yêu cầu tìm kiếm',
+	'tsb-accept-button-label' => 'Chấp nhận',
+	'tsb-reject-button-label' => 'Từ chối',
+	'tsb-reminder-link-text' => 'Nhắc nhở qua thư điện tử',
+	'tsb-translations-source' => 'Nguồn',
+	'tsb-translations-user' => 'Bản dịch của người dùng',
+	'tsb-translations-current' => 'Bản dịch hiện có',
+	'translationstash' => 'Hoan nghênh',
+	'translate-translationstash-welcome' => 'Chào mừng {{GENDER:$1|$1}} đã trở thành biên dịch viên mới',
+	'translate-translationstash-welcome-note' => 'Hãy quen thuộc với các công cụ biên dịch. Hãy dịch một số thông điệp và giành được quyền biên dịch viên đầy đủ để tham gia các dự án ưa thích của bạn.',
+	'translate-translationstash-initialtranslation' => 'Bản dịch đầu tiên của bạn',
+	'translate-translationstash-translations' => '$1 bản dịch hoàn thành',
+	'translate-translationstash-skip-button-label' => 'Thử cái khác',
+	'tsb-limit-reached-title' => 'Cảm ơn bạn đã đóng góp các bản dịch',
+	'tsb-limit-reached-body' => 'Bạn đã đạt đến giới hạn bản dịch cho biên dịch viên mới.
+Chúng tôi sẽ kiểm tra và nâng cấp tài khoản của bạn không lâu.
+Sau đó bạn sẽ có thể biên dịch thoải mái không có giới hạn.',
 );
 
 /** Simplified Chinese (中文（简体）‎)
