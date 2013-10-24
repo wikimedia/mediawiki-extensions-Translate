@@ -410,12 +410,7 @@ class TranslatablePage {
 				list( /*full*/, $id ) = $match;
 				$section->id = $id;
 
-				// Currently handle only these two standard places.
-				// Is this too strict?
-				$rer1 = '~^<!--T:(.*?)-->\n~'; // Normal sections
-				$rer2 = '~\s*<!--T:(.*?)-->$~m'; // Sections with title
-				$content = preg_replace( $rer1, '', $content );
-				$content = preg_replace( $rer2, '', $content );
+				$content = TPSection::removeMarkers( $content );
 
 				if ( preg_match( $re, $content ) === 1 ) {
 					throw new TPException( array( 'pt-shake-position', $content ) );
@@ -795,18 +790,19 @@ class TranslatablePage {
 
 	/**
 	 * @param Title $title
+	 * @param bool $clear Whether to clear cache
 	 * @return bool
 	 */
-	public static function isSourcePage( Title $title ) {
+	public static function isSourcePage( Title $title, $clear = false ) {
 		static $cache = null;
 
 		$cacheObj = wfGetCache( CACHE_ANYTHING );
 		$cacheKey = wfMemcKey( 'pagetranslation', 'sourcepages' );
 
-		if ( $cache === null ) {
+		if ( !$clear && $cache === null ) {
 			$cache = $cacheObj->get( $cacheKey );
 		}
-		if ( !is_array( $cache ) ) {
+		if ( $clear || !is_array( $cache ) ) {
 			$cache = self::getTranslatablePages();
 			$cacheObj->set( $cacheKey, $cache, 60 * 5 );
 		}

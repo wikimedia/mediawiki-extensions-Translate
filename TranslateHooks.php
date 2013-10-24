@@ -183,6 +183,23 @@ class TranslateHooks {
 			array( 'TranslateHooks', 'translationDialogMagicWord' )
 		);
 
+		global $wgTranslatePageTranslationUseParserHook;
+		if ( !$wgTranslatePageTranslationUseParserHook ) {
+			return true;
+		}
+
+		$parser->setHook( 'translate', function ( $input, $params, $parser, $frame ) {
+			// Replace variable syntax with actual value
+			$re = '~<tvar\|([^>]+)>(.*?)</>~u';
+			$output = preg_replace( $re, '\2', $input );
+
+			// Remove markers to avoid whitespace buildup.
+			$output = TPSection::removeMarkers( $output );
+
+			$output = $parser->recursiveTagParse( $output, $frame );
+			return $output;
+		} );
+
 		return true;
 	}
 

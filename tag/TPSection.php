@@ -88,4 +88,19 @@ class TPSection {
 
 		return $vars;
 	}
+
+	/**
+	 * Removes section markers and whitespace surrounding them from the text.
+	 * @param string $content
+	 * @return string
+	 */
+	public static function removeMarkers( $content ) {
+		// Currently handle only these two standard places.
+		// Is this too strict?
+		$rer1 = '~^<!--T:(.*?)-->\n~m'; // Normal sections
+		$rer2 = '~\s*<!--T:(.*?)-->$~m'; // Sections with title
+		$content = preg_replace( $rer1, '', $content );
+		$content = preg_replace( $rer2, '', $content );
+		return $content;
+	}
 }
