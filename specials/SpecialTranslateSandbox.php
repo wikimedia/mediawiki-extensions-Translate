@@ -92,6 +92,7 @@ HTML;
 			'email' => $user->getEmail(),
 			'registrationdate' => $user->getRegistration(),
 			'translations' => 0,
+			'languagepreferences' => FormatJson::decode( $user->getOption( 'translate-sandbox' ) ),
 			'userid' => $user->getId(),
 		);
 

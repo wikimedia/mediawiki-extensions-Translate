@@ -111,7 +111,7 @@
 	 * @param {Object} request The request data set from backend on request items
 	 */
 	function displayRequestDetails( request ) {
-		var storage,
+		var storage, languages,
 			$detailsPane = $( '.details.pane' );
 
 		$detailsPane.empty().append(
@@ -122,11 +122,7 @@
 				.addClass( 'email row' )
 				.text( request.email ),
 			$( '<div>' )
-				.addClass( 'languages row' )
-				.append(
-					$( '<span>' ).text( 'Afrikaans' ),
-					$( '<span>' ).text( 'español' )
-				),
+				.addClass( 'languages row' ),
 			$( '<div>' )
 				.addClass( 'actions row' )
 				.append(
@@ -163,6 +159,18 @@
 			$( '<div>' )
 				.addClass( 'translations row' )
 		);
+
+		if ( request.languagepreferences && request.languagepreferences.languages ) {
+			languages = request.languagepreferences.languages;
+
+			$.each( languages, function ( index, language ) {
+				$detailsPane.find( '.languages ').append(
+					$( '<span>' )
+						.addClass( 'autonym' )
+						.text( $.uls.data.getAutonym( language  ) )
+				);
+			} );
+		}
 
 		// @todo: move higher in the tree
 		storage = new mw.translate.TranslationStashStorage();
