@@ -128,11 +128,7 @@
 				.addClass( 'email row' )
 				.text( request.email ),
 			$( '<div>' )
-				.addClass( 'languages row' )
-				.append(
-					$( '<span>' ).text( 'Afrikaans' ),
-					$( '<span>' ).text( 'español' )
-				),
+				.addClass( 'languages row autonym' ),
 			$( '<div>' )
 				.addClass( 'actions row' )
 				.append(
@@ -169,6 +165,15 @@
 			$( '<div>' )
 				.addClass( 'translations row' )
 		);
+
+		if ( request.languagepreferences && request.languagepreferences.languages ) {
+			$.each( request.languagepreferences.languages, function ( index, language ) {
+				$detailsPane.find( '.languages' ).append(
+					$( '<span>' )
+						.text( $.uls.data.getAutonym( language ) )
+				);
+			} );
+		}
 
 		// @todo: move higher in the tree
 		storage = new mw.translate.TranslationStashStorage();
