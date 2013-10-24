@@ -388,6 +388,13 @@ $wgPageTranslationNamespace = 1198;
  */
 $wgTranslatePageTranslationULS = false;
 
+/**
+ * Temporary configuration variable to switch between new and old way of
+ * processing translatable pages internally.
+ * @see https://bugzilla.wikimedia.org/48891
+ */
+$wgTranslatePageTranslationUseParserHook = false;
+
 # </source>
 # === Message group configuration ===
 # <source lang=php>

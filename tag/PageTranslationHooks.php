@@ -25,9 +25,13 @@ class PageTranslationHooks {
 	 * @return bool
 	 */
 	public static function renderTagPage( $parser, &$text, $state ) {
+		global $wgTranslatePageTranslationUseParserHook;
+
 		$title = $parser->getTitle();
 
-		if ( strpos( $text, '<translate>' ) !== false ) {
+		if ( !$wgTranslatePageTranslationUseParserHook
+			&& strpos( $text, '<translate>' ) !== false
+		) {
 			try {
 				$parse = TranslatablePage::newFromText( $parser->getTitle(), $text )->getParse();
 				$text = $parse->getTranslationPageText( null );
@@ -51,7 +55,8 @@ class PageTranslationHooks {
 			$parser->getOutput()->setDisplayTitle( $name );
 		}
 
-		// Disable edit section links
+		// Disable edit section links.
+		// This doesn't work with parser hooks!
 		$parser->getOptions()->setEditSection( false );
 
 		return true;
@@ -456,6 +461,7 @@ class PageTranslationHooks {
 		// Add the ready tag
 		$page = TranslatablePage::newFromTitle( $wikiPage->getTitle() );
 		$page->addReadyTag( $revision->getId() );
+		TranslatablePage::isSourcePage( $wikiPage->getTitle(), 'clear' );
 
 		return true;
 	}
