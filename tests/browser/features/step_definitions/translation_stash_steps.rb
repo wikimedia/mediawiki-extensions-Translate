@@ -34,9 +34,11 @@ When(/^I reload the page$/) do
 end
 
 Then(/^I can open and see my earlier translation$/) do
-	on(StashPage) do |page|
-		page.edit_element.when_present(10).click
-		page.translation_element.when_present.value.should == 'Pupu'
+	pending('Does not work because of random language selection on reload.') do
+		on(StashPage) do |page|
+			page.edit_element.when_present(10).click
+			page.translation_element.when_present.value.should == 'Pupu'
+		end
 	end
 end
 
