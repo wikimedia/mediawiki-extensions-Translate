@@ -134,6 +134,10 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		return $checker;
 	}
 
+	public function getInsertablesSuggester() {
+		return new TranslatablePageInsertablesSuggester();
+	}
+
 	public function getDescription( IContextSource $context = null ) {
 		$title = $this->getTitle()->getPrefixedText();
 		$target = ":$title";
