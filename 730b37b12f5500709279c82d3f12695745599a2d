@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "291c1151_5062a6b1",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-10-25T21:23:53Z",
+      "side": 1,
+      "message": "For a moment I thought that you are sarcastic, but it does actually work.",
+      "parentUuid": "291c1151_4d68511f",
+      "revId": "730b37b12f5500709279c82d3f12695745599a2d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "291c1151_2dc4f50f",
         "filename": "resources/js/ext.translate.special.translatesandbox.js",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "291c1151_305d2aea",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-10-25T21:23:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "291c1151_2dc4f50f",
+      "revId": "730b37b12f5500709279c82d3f12695745599a2d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "291c1151_4dc93126",
         "filename": "specials/SpecialTranslateSandbox.php",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2013-10-25T20:08:49Z",
       "side": 1,
       "message": "numParams, escaped()",
+      "revId": "730b37b12f5500709279c82d3f12695745599a2d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_10502ed3",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-10-25T21:23:53Z",
+      "side": 1,
+      "message": "Done. Kate is doing funny things with autocompletion (see line 80).",
+      "parentUuid": "291c1151_4dc93126",
       "revId": "730b37b12f5500709279c82d3f12695745599a2d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
