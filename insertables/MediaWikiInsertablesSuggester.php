@@ -1,7 +1,5 @@
 <?php
 /**
- * Interface for InsertableSuggesters.
- *
  * @file
  * @author Niklas Laxström
  * @license GPL-2.0+
