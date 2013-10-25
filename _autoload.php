@@ -315,4 +315,6 @@ $wgAutoloadClasses['Insertable'] = "$dir/insertables/Insertable.php";
 $wgAutoloadClasses['InsertablesSuggester'] = "$dir/insertables/InsertablesSuggester.php";
 $wgAutoloadClasses['MediaWikiInsertablesSuggester'] =
 	"$dir/insertables/MediaWikiInsertablesSuggester.php";
+$wgAutoloadClasses['TranslatablePageInsertablesSuggester'] =
+	"$dir/insertables/TranslatablePageInsertablesSuggester.php";
 /**@}*/
