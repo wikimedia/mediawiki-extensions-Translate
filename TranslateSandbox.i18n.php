@@ -73,9 +73,13 @@ Followed by a list of the pending requests.',
 	'tsb-reject-button-label' => 'Button label for reject button in [[Special:TranslateSandbox]].
 {{Identical|Reject}}',
 	'tsb-accept-all-button-label' => 'Button label for accept-all button in [[Special:TranslateSandbox]].
-{{Identical|Accept all}}',
-	'tsb-reject-all-button-label' => 'Button label for reject-all button in [[Special:TranslateSandbox]]
-{{Identical|Reject all}}',
+
+See also:
+* {{msg-mw|Tsb-reject-all-button-label}}',
+	'tsb-reject-all-button-label' => 'Button label for reject-all button in [[Special:TranslateSandbox]].
+
+See also:
+* {{msg-mw|Tsb-accept-all-button-label}}',
 	'tsb-reminder-link-text' => 'Link text for sending reminder emails about translator signup requests.',
 	'tsb-translations-source' => 'Table header label for source messages of user translations in [[Special:TranslateSandbox]].
 {{Identical|Source}}',
@@ -201,6 +205,8 @@ Bitte besuche $2 und erstelle einige weitere Übersetzungen.',
 	'tsb-search-requests' => 'Anfragen durchsuchen',
 	'tsb-accept-button-label' => 'Akzeptieren',
 	'tsb-reject-button-label' => 'Ablehnen',
+	'tsb-accept-all-button-label' => 'Alle akzeptieren',
+	'tsb-reject-all-button-label' => 'Alle ablehnen',
 	'tsb-reminder-link-text' => 'E-Mail-Erinnerung senden',
 	'tsb-translations-source' => 'Quelle',
 	'tsb-translations-user' => 'Benutzerübersetzungen',
@@ -478,6 +484,8 @@ $messages['mk'] = array(
 	'tsb-search-requests' => 'Пребарајте барања',
 	'tsb-accept-button-label' => 'Прифати',
 	'tsb-reject-button-label' => 'Одбиј',
+	'tsb-accept-all-button-label' => 'Прифати ги сите',
+	'tsb-reject-all-button-label' => 'Одбиј ги сите',
 	'tsb-reminder-link-text' => 'Испрати потсетник по е-пошта',
 	'tsb-translations-source' => 'Извор',
 	'tsb-translations-user' => 'Кориснички преводи',
@@ -596,6 +604,8 @@ $messages['ru'] = array(
 	'tsb-search-requests' => 'Искать запросы',
 	'tsb-accept-button-label' => 'Принять',
 	'tsb-reject-button-label' => 'Отклонить',
+	'tsb-accept-all-button-label' => 'Принять все',
+	'tsb-reject-all-button-label' => 'Отклонить все',
 	'tsb-reminder-link-text' => 'Отправить напоминание по электронной почте',
 	'tsb-translations-source' => 'Источник',
 	'tsb-translations-user' => 'Переводы пользователя',
@@ -671,6 +681,8 @@ $messages['uk'] = array(
 	'tsb-search-requests' => 'Пошукові запити',
 	'tsb-accept-button-label' => 'Прийняти',
 	'tsb-reject-button-label' => 'Відмовитися',
+	'tsb-accept-all-button-label' => 'Прийняти всі',
+	'tsb-reject-all-button-label' => 'Відхилити всі',
 	'tsb-reminder-link-text' => 'Надсилати нагадування по електронній пошті',
 	'tsb-translations-source' => 'Джерело',
 	'tsb-translations-user' => 'Користувацькі переклади',
@@ -723,6 +735,7 @@ Sau đó bạn sẽ có thể biên dịch thoải mái không có giới hạn.
 /** Simplified Chinese (中文（简体）‎)
  * @author Hzy980512
  * @author Liuxinyu970226
+ * @author Qiyue2001
  */
 $messages['zh-hans'] = array(
 	'translatesandbox' => '管理译者沙盒',
@@ -730,6 +743,8 @@ $messages['zh-hans'] = array(
 	'tsb-request-count' => '$1个申请',
 	'tsb-all-languages-button-label' => '所有语言',
 	'tsb-reject-button-label' => '拒绝',
+	'tsb-accept-all-button-label' => '接受所有',
+	'tsb-reject-all-button-label' => '拒绝所有',
 	'tsb-reminder-link-text' => '发送电子邮件提醒',
 	'tsb-translations-source' => '来源',
 	'tsb-translations-user' => '用户翻译',
