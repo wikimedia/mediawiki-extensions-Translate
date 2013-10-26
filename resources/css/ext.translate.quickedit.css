@@ -76,8 +76,9 @@ table .tqe-inlineeditable .mw-ajax-dialog {
 	/*
 	 * Some browsers will render the monospace text too small, namely Firefox, Chrome and Safari.
 	 * Specifying any valid, second value will trigger correct behavior without forcing a different font.
+	 * See http://www.undermyhat.org/blog/2009/09/css-font-family-monospace-renders-inconsistently-in-firefox-and-chrome/
 	 */
-	font-family: monospace, "Courier New", Courier;
+	font-family: monospace, monospace;
 }
 
 .mw-translate-edit-area {
