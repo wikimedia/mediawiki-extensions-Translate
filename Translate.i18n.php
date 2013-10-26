@@ -67,7 +67,6 @@ like not using spaces or transliterating proper names. $1',
 	'translate-optional' => '(optional)',
 	'translate-ignored' => '(ignored)',
 
-	'translate-edit-jsopen' => 'edit',
 	'translate-edit-title' => 'Edit "$1"',
 	'translate-edit-definition' => 'Message definition',
 	'translate-edit-translation' => 'Translation',

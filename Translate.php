@@ -53,7 +53,6 @@ $wgExtensionMessagesFiles['TranslateGroupDescriptions'] =
 $wgExtensionMessagesFiles['TranslateSearch'] = "$dir/TranslateSearch.i18n.php";
 $wgExtensionMessagesFiles['TranslateSandbox'] = "$dir/TranslateSandbox.i18n.php";
 $wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
-$wgExtensionMessagesFiles['TranslateMagic'] = "$dir/Translate.magic.php";
 
 // Register initialization code
 $wgExtensionFunctions[] = 'TranslateHooks::setupTranslate';

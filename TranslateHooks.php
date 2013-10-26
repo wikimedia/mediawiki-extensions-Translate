@@ -178,10 +178,6 @@ class TranslateHooks {
 	public static function setupParserHooks( $parser ) {
 		// For nice language list in-page
 		$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
-		$parser->setFunctionHook(
-			'translationdialog',
-			array( 'TranslateHooks', 'translationDialogMagicWord' )
-		);
 
 		return true;
 	}
@@ -441,40 +437,6 @@ class TranslateHooks {
 		}
 
 		return true;
-	}
-
-	/**
-	 * Parser function hook
-	 */
-	public static function translationDialogMagicWord( Parser $parser,
-		$title = '', $linktext = ''
-	) {
-		$title = Title::newFromText( $title );
-		if ( !$title ) {
-			return '';
-		}
-		$handle = new MessageHandle( $title );
-		if ( !$handle->isValid() ) {
-			return '';
-		}
-		$group = $handle->getGroup();
-		$callParams = array( $title->getPrefixedText(), $group->getId() );
-		$call = Xml::encodeJsCall( 'mw.translate.openDialog', $callParams );
-		$js = <<<JAVASCRIPT
-mw.loader.using( 'ext.translate.quickedit', function() { $call; } ); return false;
-JAVASCRIPT;
-
-		$a = array(
-			'href' => $title->getFullUrl( array( 'action' => 'edit' ) ),
-			'onclick' => $js,
-		);
-
-		if ( $linktext === '' ) {
-			$linktext = wfMessage( 'translate-edit-jsopen' )->text();
-		}
-		$output = Html::element( 'a', $a, $linktext );
-
-		return $parser->insertStripItem( $output, $parser->mStripState );
 	}
 
 	/// Hook: Translate:MessageGroupStats:isIncluded
