@@ -354,7 +354,7 @@ $messages['fa'] = array(
 	'tux-sst-edit' => 'ویرایش ترجمه',
 	'tux-sst-search' => 'جستجو',
 	'tux-sst-search-ph' => 'جستجوی ترجمه‌ها',
-	'tux-sst-count' => '{{PLURAL:$1|یک نتیجه یافت شد|$1 نتیجه یافت شد}}',
+	'tux-sst-count' => '{{PLURAL:$1|0=هیچ نتیجه‌ای یافت نشد|یک نتیجه یافت شد|$1 نتیجه یافت شد}}',
 	'tux-sst-facet-language' => 'زبان‌ها',
 	'tux-sst-facet-group' => 'گروه‌های پیام',
 	'tux-sst-facet-orphan' => '(یتیم)',
@@ -1004,23 +1004,24 @@ $messages['yi'] = array(
 /** Simplified Chinese (中文（简体）‎)
  * @author Hydra
  * @author Li3939108
+ * @author Xiaomingyan
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
-	'searchtranslations' => '搜索翻译',
-	'tux-sst-edit' => '编辑翻译',
+	'searchtranslations' => '搜索译文',
+	'tux-sst-edit' => '编辑译文',
 	'tux-sst-search' => '搜索',
-	'tux-sst-search-ph' => '搜索翻译',
-	'tux-sst-count' => '找到$1个结果',
+	'tux-sst-search-ph' => '搜索译文',
+	'tux-sst-count' => '{{PLURAL:$1|找到$1个结果}}',
 	'tux-sst-facet-language' => '语言',
 	'tux-sst-facet-group' => '信息组',
 	'tux-sst-facet-orphan' => '（孤立）',
 	'tux-sst-nosolr-title' => '搜索不可用',
-	'tux-sst-nosolr-body' => '此wiki没有翻译搜索服务。',
+	'tux-sst-nosolr-body' => '本wiki没有译文搜索服务。',
 	'tux-sst-solr-offline-title' => '搜索不可用',
 	'tux-sst-solr-offline-body' => '搜索服务暂时不可用。',
-	'tux-sst-next' => '下一个结果',
-	'tux-sst-prev' => '上一个结果',
+	'tux-sst-next' => '下一页结果',
+	'tux-sst-prev' => '上一页结果',
 );
 
 /** Traditional Chinese (中文（繁體）‎)

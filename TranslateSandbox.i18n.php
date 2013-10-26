@@ -234,8 +234,10 @@ $messages['es'] = array(
 
 /** Finnish (suomi)
  * @author Crt
+ * @author Nike
  */
 $messages['fi'] = array(
+	'tsb-accept-all-button-label' => 'Hyväksy kaikki',
 	'translationstash' => 'Tervetuloa',
 );
 
@@ -431,6 +433,7 @@ $messages['lb'] = array(
 	'tsb-all-languages-button-label' => 'All Sproochen',
 	'tsb-accept-button-label' => 'Akzeptéieren',
 	'tsb-reject-button-label' => 'Refuséieren',
+	'tsb-accept-all-button-label' => 'All akzeptéieren',
 	'tsb-translations-source' => 'Quell',
 	'tsb-translations-user' => 'Benotzer Iwwersetzungen',
 	'tsb-translations-current' => 'Iwwersetzungen déi et gëtt',
