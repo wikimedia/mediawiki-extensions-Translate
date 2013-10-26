@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291c1151_81acd2a2",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-26T20:23:44Z",
+      "side": 1,
+      "message": "Reporting the whole request as failure when one fails is less than ideal though.",
+      "revId": "e8fb0afe528cd4129b74afc88e67cbac34c7885e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_a1b1cef9",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-26T20:23:44Z",
+      "side": 1,
+      "message": "Api adds \"Separate values with \u0027|\u0027\" automatically.",
+      "revId": "e8fb0afe528cd4129b74afc88e67cbac34c7885e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
