@@ -56,11 +56,11 @@
 	 * @param {Object} request
 	 */
 	function reminderDialog( request ) {
-		var $dialog, keys;
+		var $dialog,
+			keys = [ 'tsb-reminder-title-generic', 'tsb-reminder-content-generic' ];
 
-		keys = ['tsb-reminder-title-generic', 'tsb-reminder-content-generic' ];
 		getMessages( keys ).done( function ( data ) {
-
+			// FIXME i18n
 			$dialog = $( '<div class="grid">' ).append(
 				$( '<form>' ).append(
 					$( '<div class="row">' ).append(
@@ -108,7 +108,7 @@
 		$( '.request-selector:checked' )
 			.closest( '.request' ).remove();
 		$( '.request-count div' )
-			.text( mw.msg( 'tsb-request-count', $( '.request').length ) );
+			.text( mw.msg( 'tsb-request-count', $( '.request' ).length ) );
 	}
 
 	/**
@@ -223,7 +223,7 @@
 										.text( translation.title )
 								)
 						)
-					);
+				);
 			} );
 		} );
 	}
@@ -232,20 +232,34 @@
 	 * Display when multiple requests are checked
 	 */
 	function displayOnMultipleSelection() {
-		var $detailsPane = $( '.details.pane' );
+		var selectedUserIDs = $( '.request-selector:checked' ).map( function ( i, checkedBox ) {
+			return $( checkedBox ).parents( 'div.request' ).data( 'data' ).userid;
+		} );
 
-		$detailsPane.empty().append(
+		selectedUserIDs = selectedUserIDs.toArray().join( '|' );
+
+		$( '.details.pane' ).empty().append(
 			$( '<div>' )
 				.addClass( 'actions row' )
 				.append(
 					$( '<button>' )
 						.addClass( 'accept primary green button' )
-						.text( mw.msg( 'tsb-accept-all-button-label' ) ),
-						// FIXME add api action
+						.text( mw.msg( 'tsb-accept-all-button-label' ) )
+						.on( 'click', function () {
+							doApiAction( {
+								userid: selectedUserIDs,
+								'do': 'promote'
+							} ).done( removeSelectedRequests );
+						} ),
 					$( '<button>' )
 						.addClass( 'delete destructive button' )
 						.text( mw.msg( 'tsb-reject-all-button-label' ) )
-						// FIXME add api action
+						.on( 'click', function () {
+							doApiAction( {
+								userid: selectedUserIDs,
+								'do': 'delete'
+							} ).done( removeSelectedRequests );
+						} )
 				)
 		);
 	}
