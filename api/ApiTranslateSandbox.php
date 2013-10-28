@@ -81,11 +81,15 @@ class ApiTranslateSandbox extends ApiBase {
 		}
 
 		$params = $this->extractRequestParams();
-		$user = User::newFromId( $params['userid'] );
-		try {
-			TranslateSandbox::deleteUser( $user );
-		} catch ( MWException $e ) {
-			$this->dieUsage( $e->getMessage(), 'invalidparam' );
+
+		foreach ( $params['userid'] as $user ) {
+			$user = User::newFromId( $user );
+
+			try {
+				TranslateSandbox::deleteUser( $user );
+			} catch ( MWException $e ) {
+				$this->dieUsage( $e->getMessage(), 'invalidparam' );
+			}
 		}
 	}
 
@@ -95,11 +99,15 @@ class ApiTranslateSandbox extends ApiBase {
 		}
 
 		$params = $this->extractRequestParams();
-		$user = User::newFromId( $params['userid'] );
-		try {
-			TranslateSandbox::promoteUser( $user );
-		} catch ( MWException $e ) {
-			$this->dieUsage( $e->getMessage(), 'invalidparam' );
+
+		foreach ( $params['userid'] as $user ) {
+			$user = User::newFromId( $user );
+
+			try {
+				TranslateSandbox::promoteUser( $user );
+			} catch ( MWException $e ) {
+				$this->dieUsage( $e->getMessage(), 'invalidparam' );
+			}
 		}
 	}
 
@@ -113,11 +121,14 @@ class ApiTranslateSandbox extends ApiBase {
 			}
 		}
 
-		$user = User::newFromId( $params['userid'] );
-		try {
-			TranslateSandbox::sendReminder( $this->getUser(), $user, $params['subject'], $params['body'] );
-		} catch ( MWException $e ) {
-			$this->dieUsage( $e->getMessage(), 'invalidparam' );
+		foreach ( $params['userid'] as $user ) {
+			$user = User::newFromId( $user );
+
+			try {
+				TranslateSandbox::sendReminder( $this->getUser(), $user, $params['subject'], $params['body'] );
+			} catch ( MWException $e ) {
+				$this->dieUsage( $e->getMessage(), 'invalidparam' );
+			}
 		}
 	}
 
@@ -152,6 +163,7 @@ class ApiTranslateSandbox extends ApiBase {
 			'userid' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_DFLT => 0,
+				ApiBase::PARAM_ISMULTI => true,
 			),
 			'token' => array(
 				ApiBase::PARAM_TYPE => 'string',
@@ -170,7 +182,7 @@ class ApiTranslateSandbox extends ApiBase {
 
 		return array(
 			'do' => 'What to do',
-			'userid' => 'User id of the user being managed. Use 0 for creations.',
+			'userid' => 'User ids of the users being managed. Use 0 for creations.',
 			'token' => "A token previously acquired with $action",
 			'username' => 'Username when creating user',
 			'password' => 'Password when creating user',
