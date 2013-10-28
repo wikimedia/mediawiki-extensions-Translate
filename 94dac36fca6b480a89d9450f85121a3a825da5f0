@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "291c1151_f32d57a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-10-28T08:58:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "291c1151_53ce2b2f",
+      "revId": "94dac36fca6b480a89d9450f85121a3a825da5f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "291c1151_d3513b62",
         "filename": "resources/js/ext.translate.special.translatesandbox.js",
         "patchSetId": 12
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "291c1151_3320cfaf",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-10-28T08:58:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "291c1151_d3513b62",
+      "revId": "94dac36fca6b480a89d9450f85121a3a825da5f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "291c1151_b354bf52",
         "filename": "resources/js/ext.translate.special.translatesandbox.js",
         "patchSetId": 12
@@ -47,6 +83,24 @@
       "writtenOn": "2013-10-28T07:33:15Z",
       "side": 1,
       "message": ".text",
+      "revId": "94dac36fca6b480a89d9450f85121a3a825da5f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_53154b47",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-10-28T08:58:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "291c1151_b354bf52",
       "revId": "94dac36fca6b480a89d9450f85121a3a825da5f0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
