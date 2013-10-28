@@ -1,0 +1,11 @@
+== Translate 2013.10 ==
+Released at 2013-10-28.
+
+=== Noteworthy changes ===
+* Introducing of the TranslationStash feature.
+  It's the place where sandboxed users can store their translations before they are given full translator rights.
+** Added special page for TranslationStash.
+** Show the translations of the user for review in Special:TranslateSandbox.
+* The Autonym font is now used in the language list and the tagcloud in Special:SupportedLanguages.
+* Bug 55607: Use group source language instead of hardcoded 'en' language.
+  For most cases (e.g., at translatewiki.net) the source language of translations is English, this is not always the case. Source language is set to group's source language now.
