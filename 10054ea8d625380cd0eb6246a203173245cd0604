@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291c1151_ce5c25ed",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 19
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-30T14:37:16Z",
+      "side": 1,
+      "message": "header seems quite generic class for this purpose",
+      "revId": "10054ea8d625380cd0eb6246a203173245cd0604",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_ee71e177",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 19
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-30T14:37:16Z",
+      "side": 1,
+      "message": "It\u0027s done.",
+      "revId": "10054ea8d625380cd0eb6246a203173245cd0604",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_ae10c901",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 19
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-30T14:37:16Z",
+      "side": 1,
+      "message": "Documentation for the function would be nice.",
+      "revId": "10054ea8d625380cd0eb6246a203173245cd0604",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_2e6cd99c",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 19
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-30T14:37:16Z",
+      "side": 1,
+      "message": "Documentation for the function would be nice.\n\nPlease use $detailsPane.find() where possible (or some other parent element).",
+      "revId": "10054ea8d625380cd0eb6246a203173245cd0604",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_4e69158c",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 19
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-30T14:37:16Z",
+      "side": 1,
+      "message": "Why selected-row and not select or selected-request?",
+      "revId": "10054ea8d625380cd0eb6246a203173245cd0604",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_6e06d1d2",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 19
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-30T14:37:16Z",
+      "side": 1,
+      "message": "Too much code in document.ready, suggesting to split into functions, classes or even separate files where it makes sense.",
+      "revId": "10054ea8d625380cd0eb6246a203173245cd0604",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_4e02f5b7",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-30T14:37:16Z",
+      "side": 1,
+      "message": "mmm details... usually the thing in the middle is called body.",
+      "revId": "10054ea8d625380cd0eb6246a203173245cd0604",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_6e2fb140",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-30T14:37:16Z",
+      "side": 1,
+      "message": "I would use class.",
+      "revId": "10054ea8d625380cd0eb6246a203173245cd0604",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_8e34ed92",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-30T14:37:16Z",
+      "side": 1,
+      "message": "I would use class",
+      "revId": "10054ea8d625380cd0eb6246a203173245cd0604",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
