@@ -255,18 +255,19 @@
 		 * @param {array} suggestions A ttmserver array as returned by API.
 		 */
 		showTranslationMemory: function ( suggestions ) {
-			var $tmSuggestions, $translationTextarea,
+			var $heading, $tmSuggestions, $translationTextarea,
 				translateEditor = this;
 
 			if ( !suggestions.length ) {
 				return;
 			}
 
-			$tmSuggestions = $( '<div>' )
-				.addClass( 'tm-suggestions' );
-			this.$editor.find( '.tm-suggestions-title' )
-				.removeClass( 'hide' )
-				.after( $tmSuggestions );
+			// Container for the suggestions
+			$tmSuggestions = $( '<div>' ).addClass( 'tm-suggestions' );
+
+			$heading = this.$editor.find( '.tm-suggestions-title' );
+			$heading.after( $tmSuggestions );
+
 			$translationTextarea = this.$editor.find( '.tux-textarea-translation' );
 
 			$.each( suggestions, function ( index, translation ) {
@@ -326,6 +327,11 @@
 
 				$tmSuggestions.append( $translation );
 			} );
+
+			// Show the heading only if we actually have suggestions
+			if ( $tmSuggestions.length ) {
+				$heading.removeClass( 'hide' );
+			}
 		},
 
 		/**
