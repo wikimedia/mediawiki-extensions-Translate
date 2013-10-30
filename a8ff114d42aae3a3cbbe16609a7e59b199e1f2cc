@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291c1151_53553e1a",
+        "filename": "tests/generateRandomSandboxData.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-10-30T13:12:09Z",
+      "side": 1,
+      "message": "Mm why did I left these in middle of the file? Should be at the bottom I guess.",
+      "revId": "a8ff114d42aae3a3cbbe16609a7e59b199e1f2cc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
