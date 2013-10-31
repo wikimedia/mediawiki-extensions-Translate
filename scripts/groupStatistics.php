@@ -20,7 +20,7 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-class GroupStatictics extends Maintenance {
+class GroupStatistics extends Maintenance {
 	/**
 	 * Array of the most spoken languages in the world.
 	 * Source: http://stats.wikimedia.org/EN/Sitemap.htm.
@@ -697,5 +697,5 @@ class TranslateStatsOutput extends wikiStatsOutput {
 	}
 }
 
-$maintClass = 'GroupStatictics';
+$maintClass = 'GroupStatistics';
 require_once RUN_MAINTENANCE_IF_MAIN;
