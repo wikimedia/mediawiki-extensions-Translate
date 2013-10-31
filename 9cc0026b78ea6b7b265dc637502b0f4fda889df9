@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291c1151_d174c1d0",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-10-31T09:07:28Z",
+      "side": 1,
+      "message": "The whole condition block can be rewritten if we are dropping pre 1.20 compatibility. Language::fetchLanguageNames()  takes care of using CLDR if exists through LanguageGetTranslatedLanguageNames hook",
+      "revId": "9cc0026b78ea6b7b265dc637502b0f4fda889df9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
