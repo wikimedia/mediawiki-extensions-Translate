@@ -13,6 +13,9 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslateSandbox extends SpecialPage {
+	///< @param TranslationStashStorage
+	protected $stash;
+
 	function __construct() {
 		global $wgTranslateUseSandbox;
 		parent::__construct( 'TranslateSandbox', 'translate-sandboxmanage', $wgTranslateUseSandbox );
@@ -23,6 +26,7 @@ class SpecialTranslateSandbox extends SpecialPage {
 		$this->checkPermissions();
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.translatesandbox' );
+		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 		$this->showPage();
 	}
 
@@ -91,7 +95,7 @@ HTML;
 			'username' => $user->getName(),
 			'email' => $user->getEmail(),
 			'registrationdate' => $user->getRegistration(),
-			'translations' => 0,
+			'translations' => count( $this->stash->getTranslations( $user ) ),
 			'languagepreferences' => FormatJson::decode( $user->getOption( 'translate-sandbox' ) ),
 			'userid' => $user->getId(),
 		);
