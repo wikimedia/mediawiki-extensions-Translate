@@ -262,12 +262,15 @@ Veuillez venir sur $2 et faire quelques traductions de plus.',
 	'tsb-search-requests' => 'Demandes de recherche',
 	'tsb-accept-button-label' => 'Accepter',
 	'tsb-reject-button-label' => 'Rejeter',
+	'tsb-accept-all-button-label' => 'Tout accepter',
+	'tsb-reject-all-button-label' => 'Tout rejeter',
 	'tsb-reminder-link-text' => 'Envoyer un courriel de rappel',
+	'tsb-translations-source' => 'Source',
 	'tsb-translations-user' => 'Traductions utilisateur',
 	'tsb-translations-current' => 'Traductions existantes',
 	'translationstash' => 'Bienvenue',
 	'translate-translationstash-welcome' => 'Bienvenue {{GENDER:$1|$1}}, vous êtes un nouveau traducteur',
-	'translate-translationstash-welcome-note' => 'Familiarisez-vous avec les outils de traduction en traduisant quelques messages sélectionnés aléatoirement.', # Fuzzy
+	'translate-translationstash-welcome-note' => 'Familiarisez-vous avec les outils de traduction. Traduisez quelques messages et obtenez les droits complets de traducteur pour participer à vos projets favoris.',
 	'translate-translationstash-initialtranslation' => 'Votre traduction initiale',
 	'translate-translationstash-translations' => '$1 a achevé {{PLURAL:$1|une traduction|des traductions}}',
 	'translate-translationstash-skip-button-label' => 'Essayer une autre',
@@ -294,13 +297,22 @@ Acceda ao sistema en $2 e faga algunhas traducións máis.',
 	'tsb-search-requests' => 'Procurar nas solicitudes',
 	'tsb-accept-button-label' => 'Aceptar',
 	'tsb-reject-button-label' => 'Rexeitar',
+	'tsb-accept-all-button-label' => 'Aceptar todos',
+	'tsb-reject-all-button-label' => 'Rexeitar todos',
 	'tsb-reminder-link-text' => 'Enviar un recordatorio por correo electrónico',
+	'tsb-translations-source' => 'Fonte',
+	'tsb-translations-user' => 'Traducións do usuario',
+	'tsb-translations-current' => 'Traducións existentes',
 	'translationstash' => 'Benvido',
 	'translate-translationstash-welcome' => '{{GENDER:$1|Benvido|Benvida}}, $1; xa es {{GENDER:$1|un novo tradutor|unha nova tradutora}}',
-	'translate-translationstash-welcome-note' => 'Familiarícese coas ferramentas de tradución traducindo algunhas mensaxes seleccionadas ao chou.', # Fuzzy
+	'translate-translationstash-welcome-note' => 'Familiarícese coas ferramentas de tradución. Traduza algunhas mensaxes e obteña todos os dereitos de tradutor para participar nos seus proxectos favoritos.',
 	'translate-translationstash-initialtranslation' => 'A súa tradución inicial',
 	'translate-translationstash-translations' => '$1 {{PLURAL:$1|tradución completada|traducións completadas}}',
 	'translate-translationstash-skip-button-label' => 'Probar outra',
+	'tsb-limit-reached-title' => 'Grazas polas súas traducións',
+	'tsb-limit-reached-body' => 'Alcanzou o límite de traducións dos tradutores novos.
+O noso equipo ha comprobar e actualizar a súa conta axiña. 
+Logo diso, poderá traducir sen límites.',
 );
 
 /** Hebrew (עברית)
@@ -627,6 +639,14 @@ $messages['ru'] = array(
 	'tsb-limit-reached-body' => 'Вы достигли предела переводов для новых переводчиков.
 Наша команда проверит и обновит вашу учётную запись в ближайшее время.
 После этого вы сможете переводить без ограничений.',
+);
+
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
+ * @author Milicevic01
+ */
+$messages['sr-ec'] = array(
+	'tsb-accept-all-button-label' => 'Прихвати све',
+	'tsb-reject-all-button-label' => 'Одбији све',
 );
 
 /** Swedish (svenska)

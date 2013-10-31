@@ -11851,7 +11851,6 @@ comme ne pas utiliser d'espaces ou transformer des noms propres. $1",
 	'translate-ext-url' => '<hr />Site web : $1',
 	'translate-optional' => '(facultatif)',
 	'translate-ignored' => '(ignoré)',
-	'translate-edit-jsopen' => 'modifier',
 	'translate-edit-title' => 'Modifier « $1 »',
 	'translate-edit-definition' => 'Définition du message',
 	'translate-edit-translation' => 'Traduction',
@@ -12028,7 +12027,7 @@ La couleur du soulignement indique si le traducteur a été actif ici récemment
 	'translate-smg-nochanges' => 'Il n’y a aucune modification à traiter.',
 	'translate-smg-submit' => 'Soumettre les modifications pour traitement',
 	'translate-smg-submitted' => 'Les définitions de message ont été mises à jour. Les modifications sont traitées en arrière-plan.',
-	'translate-smg-postponed' => "Certains changements n'ont pu être traités. [[{{FULLPAGENAME}}|Essayez à nouveau]].",
+	'translate-smg-more' => 'Il y aura d’autres modifications à effectuer après avoir envoyé ces modifications.',
 	'translate-smg-left' => 'Contenu du message dans le wiki',
 	'translate-smg-right' => 'Modifications en cours de transfert',
 	'translate-manage-import-diff' => 'Message $1 | Actions : $2',
@@ -14499,6 +14498,7 @@ $messages['hil'] = array(
  * @author Dalibor Bosits
  * @author Dnik
  * @author Ex13
+ * @author MaGa
  * @author Roberta F.
  * @author SpeedyGonsales
  * @author Tivek
@@ -14648,6 +14648,9 @@ Molimo provjerite.',
 	'translate-js-skip' => 'Prijeđi na sljedeću poruku',
 	'translate-js-save-failed' => 'Spremanje nije uspjelo. Molimo prijavite ovu pogrešku.',
 	'translate-js-history' => 'Povijest prijevoda',
+	'translate-js-support' => 'Postavi pitanje',
+	'translate-js-support-title' => 'Zatražite pomoć ako nemate dovoljno informacija za ispravan prijevod ove poruke.',
+	'translate-js-support-unsaved-warning' => 'Imate nesačuvanih izmjena.',
 	'translate-gs-code' => 'Kod',
 	'translate-gs-continent' => 'Kontinent',
 	'translate-gs-speakers' => 'Govornici',
@@ -20553,18 +20556,33 @@ $messages['lo'] = array(
  */
 $messages['lrc'] = array(
 	'translate' => 'والرن',
+	'translate-taskui-view' => 'همه پيغومل نشون بيه',
+	'translate-taskui-untranslated' => 'پيغوما نلرسه نه نشون بيه',
 	'translate-taction-translate' => 'والرن',
+	'translate-taction-lstats' => 'آماريا زون',
 	'translate-taction-export' => 'وه در ديئن',
 	'translate-page-settings-legend' => 'تنظيمات',
 	'translate-page-group' => 'گرو',
 	'translate-page-language' => 'زون',
 	'translate-page-limit' => 'كران دار بيئن',
+	'translate-page-navigation-legend' => 'ناوگشتن',
+	'translate-page-showing-none' => 'هيش پيغومی سی ديئن نی',
 	'translate-next' => 'بلگه نيايی',
 	'translate-prev' => 'بلگه دمايی',
 	'translate-page-edit' => 'ويرايشت',
+	'translate-edit-title' => 'ويرايشت $1',
+	'translate-edit-translation' => 'لرسن',
+	'translate-edit-contribute' => 'هومياری كردن',
+	'translate-magic-cm-current' => 'تازه باو',
+	'translate-magic-cm-original' => 'اصل',
+	'translate-magic-cm-comment' => 'نظر',
 	'translate-magic-cm-save' => 'ذخيره كردن',
+	'translate-magic-words' => 'كلميا جادويی',
 	'translate-pref-editassistlang' => 'زونيا ياريگر',
 	'translate-rc-translation-filter-no' => 'هيچی نكيد',
+	'translate-stats-edits' => 'ويرايشتيا',
+	'translate-stats-users' => 'والرياريا',
+	'translate-stats-registrations' => 'ثوت نام',
 	'translate-statsf-scale-months' => 'مايا',
 	'translate-statsf-scale-weeks' => 'هفته يا',
 	'translate-statsf-scale-days' => 'روزيا',
@@ -20575,8 +20593,27 @@ $messages['lrc'] = array(
 	'translate-translations-messagename' => 'نوم:',
 	'translate-translations-project' => 'پروجه:',
 	'translate-translations-history-short' => 'اچ',
+	'languagestats' => 'آماريا زون',
+	'languagestats-recenttranslations' => 'لرسنيا تازه',
 	'translate-langstats-expand' => 'وا كردن',
 	'translate-langstats-collapse' => 'جم كردن',
+	'translate-langstats-expandall' => 'همه نه وا كو',
+	'translate-langstats-collapseall' => 'همه نه كؤچك كو',
+	'translate-language-code' => 'كد زون',
+	'translate-language-code-field-name' => 'كد زون:',
+	'translate-language' => 'زون',
+	'translate-total' => 'پيغوم',
+	'translate-untranslated' => 'والرسه نبيه',
+	'translate-percentage-complete' => 'كامل كردن',
+	'translate-percentage-fuzzy' => 'د تاريخ در',
+	'translate-ls-column-group' => 'پيغوم گرويی',
+	'translate-js-summary' => 'چكسته',
+	'translate-js-save' => 'ذخيره كردن',
+	'translate-js-support' => 'د سوال جؤاو دئين',
+	'translate-gs-code' => 'كد',
+	'translate-gs-speakers' => 'گپ زننه',
+	'translate-gs-score' => 'امتياز',
+	'translate-gs-total' => 'همه',
 );
 
 /** Lithuanian (lietuvių)
@@ -25251,6 +25288,7 @@ $messages['os'] = array(
 /** Punjabi (ਪੰਜਾਬੀ)
  * @author Aalam
  * @author Babanwalia
+ * @author TariButtar
  */
 $messages['pa'] = array(
 	'translate' => 'ਅਨੁਵਾਦ',
@@ -25293,7 +25331,6 @@ $messages['pa'] = array(
 	'translate-ext-url' => '<hr />ਵੈੱਬਸਾਈਟ: $1',
 	'translate-optional' => '(ਚੋਣਵਾਂ)',
 	'translate-ignored' => '(ਅਣਡਿੱਠਾ)',
-	'translate-edit-jsopen' => 'ਸੋਧ',
 	'translate-edit-title' => '"$1" ਸੋਧੋ',
 	'translate-edit-definition' => 'ਸਨੇਹੇ ਦੀ ਪਰਿਭਾਸ਼ਾ',
 	'translate-edit-translation' => 'ਅਨੁਵਾਦ',
@@ -25347,7 +25384,7 @@ $messages['pa'] = array(
 	'translate-statsf-count-reviews' => 'ਅਨੁਵਾਦ ਦੀਆਂ ਪਰਖਾਂ',
 	'translate-statsf-count-reviewers' => 'ਪਾਰਖੂ',
 	'translate-statsf-submit' => 'ਝਲਕ',
-	'translate-tag-category' => 'ਅਨੁਵਾਦਯੋਗ ਸਫ਼ੇ',
+	'translate-tag-category' => 'ਉਲਥਾਯੋਗ ਸਫ਼ੇ',
 	'translate-sidebar-alltrans' => 'ਹੋਰ ਭਾਸ਼ਾਵਾਂ ਵਿਚ',
 	'translations' => 'ਸਾਰੇ ਅਨੁਵਾਦ',
 	'translate-translations-fieldset-title' => 'ਸੁਨੇਹਾ',

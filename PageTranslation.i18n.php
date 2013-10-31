@@ -3556,16 +3556,20 @@ $messages['fa'] = array(
 فقط آخرین نسخه‌ها می‌توانند برای ترجمه علامت‌گذاری شوند.',
 	'tpt-notsuitable' => 'صفحهٔ $1 برای ترجمه مناسب نیست.
 مطمئن شوید برچسب <nowiki><translate></nowiki> و نحو مناسبی دارد.',
+	'tpt-badsect' => '«$1» نام معتبری برای واحد ترجمهٔ $2 نیست.',
 	'tpt-select-prioritylangs-reason' => 'دلیل:',
+	'tpt-sections-prioritylangs' => 'زبان‌های با اولویت بالا',
 	'tpt-rev-mark' => 'علامت‌گذاری برای ترجمه',
 	'tpt-rev-unmark' => 'حذف از ترجمه',
 	'tpt-rev-discourage' => 'دلسرد',
 	'tpt-rev-encourage' => 'احیا',
+	'tpt-rev-mark-tooltip' => 'علامت‌گذاری آخرین نسخهٔ این صفحه برای ترجمه.',
 	'tpt-rev-unmark-tooltip' => 'حذف این صفحه از ترجمه.',
 	'translate-tag-translate-link-desc' => 'ترجمه این پروژه',
 	'translate-tag-markthis' => 'علامت‌گذاری این صفحه برای ترجمه',
 	'tpt-languages-legend' => 'زبان‌های دیگر:',
 	'tpt-languages-zero' => 'شروع ترجمه برای این زبان',
+	'tpt-tab-translate' => 'ترجمه',
 	'tpt-target-page' => 'این صفحه به صورت دستی به روز نمی‌شود.
 این صفحه یک ترجمه‌ای از صفحهٔ [[$1]] است و ترجمه را می‌توان از طریق [$2 ابزار ترجمه] به روز کرد.',
 	'tpt-discouraged-language-reason' => 'دلیل: $1',
@@ -6660,6 +6664,9 @@ $messages['lg'] = array(
  */
 $messages['lrc'] = array(
 	'pagetranslation' => 'بلگه لرسن',
+	'tpt-diff-old' => 'متن دمایی',
+	'tpt-diff-new' => 'متن تازه',
+	'tpt-select-prioritylangs-reason' => 'دليل:',
 	'tpt-tab-translate' => 'لرسن',
 	'tpt-aggregategroup-add' => 'اضاف كو',
 	'tpt-aggregategroup-save' => 'ذخيره كردن',
