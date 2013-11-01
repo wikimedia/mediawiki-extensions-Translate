@@ -158,7 +158,6 @@ Translation of a message in these languages are shown when you are translating.
 The default list of languages depends on your language.',
 	'translate-pref-editassistlang-bad' => 'Invalid language code in the list:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Enhanced translation editor (JavaScript)',
 
 	'right-translate' => 'Edit using the translate interface',
 	'right-translate-manage' => 'Manage message groups',

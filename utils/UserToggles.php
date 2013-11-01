@@ -81,24 +81,6 @@ class TranslatePreferences {
 	}
 
 	/**
-	 * Add 'translate-jsedit' preference.
-	 * An option to disable the javascript edit interface.
-	 *
-	 * @param User $user
-	 * @param array $preferences
-	 * @return bool true
-	 */
-	public static function translationJsedit( User $user, &$preferences ) {
-		$preferences['translate-jsedit'] = array(
-			'class' => 'HTMLCheckField',
-			'section' => 'editing/translate',
-			'label-message' => 'translate-pref-jsedit',
-		);
-
-		return true;
-	}
-
-	/**
 	 * JavsScript selector for language codes.
 	 * @return JsSelectToInput
 	 */
