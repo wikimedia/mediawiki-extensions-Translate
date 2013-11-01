@@ -238,10 +238,6 @@ class TranslationEditPage {
 	public static function jsEdit( Title $title, $group = "", $type = 'default' ) {
 		$context = RequestContext::getMain();
 
-		if ( !$context->getUser()->getOption( 'translate-jsedit' ) ) {
-			return array();
-		}
-
 		if ( $type === 'default' ) {
 			$text = 'tqe-anchor-' . substr( sha1( $title->getPrefixedText() ), 0, 12 );
 			$onclick = "jQuery( '#$text' ).dblclick(); return false;";
