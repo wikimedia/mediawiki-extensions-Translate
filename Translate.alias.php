@@ -218,7 +218,7 @@ $specialPageAliases['ceb'] = array(
 	'Translate' => array( 'Hubara' ),
 );
 
-/** Czech (česky) */
+/** Czech (čeština) */
 $specialPageAliases['cs'] = array(
 	'Translate' => array( 'Přeložit' ),
 );

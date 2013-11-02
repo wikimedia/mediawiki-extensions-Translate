@@ -450,6 +450,7 @@ $messages['lb'] = array(
 	'tsb-accept-button-label' => 'Akzeptéieren',
 	'tsb-reject-button-label' => 'Refuséieren',
 	'tsb-accept-all-button-label' => 'All akzeptéieren',
+	'tsb-reject-all-button-label' => 'Alles refuséieren',
 	'tsb-translations-source' => 'Quell',
 	'tsb-translations-user' => 'Benotzer Iwwersetzungen',
 	'tsb-translations-current' => 'Iwwersetzungen déi et gëtt',
