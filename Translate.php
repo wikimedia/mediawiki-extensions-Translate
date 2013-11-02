@@ -126,7 +126,6 @@ $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiTranslateSandbox::injectTokenFunction
 $wgHooks['ApiTokensGetTokenTypes'][] = 'ApiTranslationStash::injectTokenFunction';
 // Register hooks.
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
-$wgHooks['SkinTemplateNavigation'][] = 'TranslateEditAddons::addNavigationTabs';
 $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
 $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 $wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
