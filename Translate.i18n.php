@@ -82,9 +82,6 @@ like not using spaces or transliterating proper names. $1',
 	'translate-edit-tmmatch' => '$1% match',
 	'translate-use-suggestion' => 'Replace current translation with this suggestion.',
 
-	'translate-edit-tab-prev' => '<<<',
-	'translate-edit-tab-next' => '>>>',
-	'translate-edit-tab-list' => 'Message list',
 	'translate-edit-nopermission' => 'You need permission to translate messages.',
 	'translate-edit-askpermission' => 'Request permission',
 
