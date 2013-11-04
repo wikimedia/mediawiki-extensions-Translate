@@ -674,7 +674,7 @@ Var god kom till $2 och gör några fler översättningar.',
 	'tsb-translations-current' => 'Befintliga översättningar',
 	'translationstash' => 'Välkommen',
 	'translate-translationstash-welcome' => 'Välkommen {{GENDER:$1|$1}}, du är en ny översättare',
-	'translate-translationstash-welcome-note' => 'Bekanta dig med översättningsverktygen genom att översätta några slumpmässigt utvalda meddelanden.', # Fuzzy
+	'translate-translationstash-welcome-note' => 'Bekanta dig med översättningsverktygen. Översätt några meddelanden och få fullständiga översättningsrättigheter för att delta i dina favoritprojekt.',
 	'translate-translationstash-initialtranslation' => 'Din ursprungliga översättning',
 	'translate-translationstash-translations' => '$1 {{PLURAL:$1|fullbordad översättning|fullbordade översättningar}}',
 	'translate-translationstash-skip-button-label' => 'Prova en annan',
