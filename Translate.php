@@ -152,11 +152,9 @@ $wgHooks['SkinTemplateNavigation::SpecialPage'][] = 'SpecialManageGroups::tabify
 // Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
 $wgDefaultUserOptions['translate-editlangs'] = 'default';
-$wgDefaultUserOptions['translate-jsedit'] = 1;
 $wgDefaultUserOptions['translate-recent-groups'] = '';
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::translationAssistLanguages';
-$wgHooks['GetPreferences'][] = 'TranslatePreferences::translationJsedit';
 
 // Recent changes filters
 $wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
