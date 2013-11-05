@@ -6622,7 +6622,6 @@ Překlady zvolené zprávy do těchto jazyků jsou zobrazeny při překládání
 Implicitní seznam (''default'') závisí na vašem jazyce.",
 	'translate-pref-editassistlang-bad' => 'Seznam obsahuje neplatný kód jazyka:
 <nowiki>$1</nowiki>',
-	'translate-pref-jsedit' => 'Vylepšený editor překladů (JavaScript)',
 	'right-translate' => "Editace překladu pomocí rozhraní ''Přeložit''",
 	'right-translate-manage' => 'Správa skupin zpráv',
 	'action-translate-manage' => 'spravovat skupiny zpráv',
@@ -7055,7 +7054,6 @@ Ni fydd y newidiadau yn cael eu rhoi ar gadw nes i chi bwyso'r botwm 'Cadwer' is
 	'translate-pref-editassistlang-help' => "Rhestr coma-wahanedig o godau iaith.
 Wrth gyfieithu neges, bydd cyfieithiadau ohono yn yr ieithoedd hyn i'w gweld.
 Bydd y rhestr diofyn o ieithoedd yn dibynnu ar eich iaith chi.",
-	'translate-pref-jsedit' => 'Golygydd cyfieithu estynedig (JavaScript)',
 	'right-translate' => "Golygu gan ddefnyddio'r rhyngwyneb cyfieithu",
 	'right-translate-manage' => 'Rheoli grwpiau negeseuon',
 	'action-translate-manage' => 'rheoli grwpiau negeseuon',
@@ -10629,7 +10627,7 @@ $messages['fa'] = array(
 دلیل:
 
 ''$1''",
-	'translate-language-disabled' => 'ترجمه به این زبان غیرفعال شده است.',
+	'translate-language-disabled' => 'ترجمه به این زبان غیرفعال شده‌است.',
 	'translate-page-settings-legend' => 'تنظیمات',
 	'translate-page-group' => 'گروه',
 	'translate-page-language' => 'زبان',
@@ -10723,7 +10721,6 @@ $messages['fa'] = array(
 فهرست پیش‌فرض زبان‌ها بستگی به این دارد که زبان شما چیست.',
 	'translate-pref-editassistlang-bad' => 'کد زبان نامعتبر در فهرست:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'ویرایشگر پیشرفتهٔ ترجمه (جاوااسکریپت)',
 	'right-translate' => 'ویرایش با استفاده از رابط ترجمه',
 	'right-translate-manage' => 'مدیریت گروه‌های پیغام',
 	'action-translate-manage' => 'مدیریت گروه‌های پیغام',
@@ -10823,6 +10820,7 @@ $messages['fa'] = array(
 	'translate-smg-nochanges' => 'هیچ تغییری برای پردازش وجود ندارد.',
 	'translate-smg-submit' => 'ارسال تغییرات برای پردازش',
 	'translate-smg-submitted' => 'تعریف پیغام به روز شده است. تغییرات در پشت صحنه در حال پردازش هستند.',
+	'translate-smg-more' => 'تغییراتی یبشتر در فرآیند پس از ارسال این تغییرات خواهد بود.',
 	'translate-smg-left' => 'محتوای پیغام در ویکی',
 	'translate-smg-right' => 'تغییرات ورودی',
 	'translate-manage-import-diff' => 'پیغام $1 | اقدام: $2',
@@ -10845,6 +10843,9 @@ $messages['fa'] = array(
 لطفاً بررسی کنید.',
 	'translate-manage-fuzzy-summary' => 'تعریف پیغام تغییر کرده‌است',
 	'translate-manage-submit' => 'اجرا',
+	'translate-manage-intro-other' => 'پایین فهرستی تغییرات ترجمه در زبان $1 است.
+لطفاً این تغییرات را بازبینی کرده و عملی که می‌خواهد برای هر به‌روزرسانی انجام دهید را انتخاب کنید.
+اگر شما می‌خواهید تغییرات را نادیده بگیرید، این عمل موقت خواهد بود.',
 	'importtranslations' => 'درون‌ریزی ترجمه‌ها',
 	'translate-import-from-local' => 'بارگذاری پرونده محلی:',
 	'translate-import-load' => 'دریافت پرونده',
@@ -10907,6 +10908,8 @@ $1',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|مترجم تأییدنشده}}',
 	'right-translate-sandboxmanage' => 'مدیریت صفحهٔ تمرین کاربران',
 	'action-translate-sandboxmanage' => 'مدیریت صفحهٔ تمرین کاربران',
+	'right-translate-sandboxaction' => 'اجرای اعمال فهرست سفید شده برای کاربران آزمایشی',
+	'action-translate-sandboxaction' => 'اجرای اعمال فهرست سفید شده برای کاربران آزمایشی',
 	'translate-workflow-state-' => '(تنظیم‌نشده)',
 	'translate-workflowstatus' => 'وضعیت: $1',
 	'translate-workflow-set-do' => 'تنظیم کن',
@@ -11943,7 +11946,6 @@ La traduction d’un message dans ces langues est affiché quand vous êtes en t
 La liste par défaut des langues varie en fonction de votre langue.',
 	'translate-pref-editassistlang-bad' => 'Code langue invalide dans la liste :
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Éditeur de traduction amélioré (JavaScript)',
 	'right-translate' => 'Modifier avec l’interface de traduction',
 	'right-translate-manage' => 'Gérer les groupes de message',
 	'action-translate-manage' => 'gérer les groupes de messages',
@@ -13035,7 +13037,6 @@ Móstranse as traducións dunha mensaxe nestas linguas cando a traduce.
 A lista de linguas por defecto depende da súa.',
 	'translate-pref-editassistlang-bad' => 'Código de lingua inválido:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Editor de tradución mellorado (JavaScript)',
 	'right-translate' => 'Editar usando a interface de tradución',
 	'right-translate-manage' => 'Xestionar os grupos de mensaxes',
 	'action-translate-manage' => 'xestionar os grupos de mensaxes',
@@ -14584,7 +14585,6 @@ $messages['hr'] = array(
 	'translate-pref-editassistlang-help' => 'Popis jezičnih kodova odjeljen zarezima.
 Prijevod poruke na tim jezicima bit će prikazani dok prevodite.
 Zadani popis jezika ovisi o vašem jeziku.',
-	'translate-pref-jsedit' => 'Poboljšani uređivač prijevoda (JavaScript)',
 	'right-translate' => 'Uređivanje koristeći sučelje za prevođenje',
 	'right-translate-manage' => 'Upravljanje grupama prijevoda', # Fuzzy
 	'right-translate-import' => 'Uvoz izvanmrežnih prijevoda',
@@ -16983,7 +16983,6 @@ Le traduzioni di un messaggio in queste lingue sono mostrate durante la traduzio
 L'elenco predefinito (default) delle lingue dipende dalla propria lingua.",
 	'translate-pref-editassistlang-bad' => "Codice lingua non valido nell'elenco:
 <nowiki>$1</nowiki>.",
-	'translate-pref-jsedit' => 'Strumento di traduzione migliorato (JavaScript)',
 	'right-translate' => "Modifica usando l'interfaccia di traduzione",
 	'right-translate-manage' => 'Gestisce gruppi di messaggi',
 	'action-translate-manage' => 'gestire i gruppi di messaggi',
@@ -17414,7 +17413,6 @@ $messages['ja'] = array(
 既定の言語一覧は、自身の言語により変化します。',
 	'translate-pref-editassistlang-bad' => '無効な言語コードを含んでいます:
 <nowiki>$1</nowiki>',
-	'translate-pref-jsedit' => '拡張版翻訳エディター (JavaScript が必要)',
 	'right-translate' => '翻訳用インターフェイスを使用して編集',
 	'right-translate-manage' => 'メッセージ群を管理',
 	'action-translate-manage' => 'メッセージ群の管理',
@@ -19529,7 +19527,6 @@ Do moß en de Jrop „Övversäzer“ sen, för hee Änderonge maache ze könne.
 De Övversäzunge en di Shprooche wääde Der jezeich, wann De aam Övversäze bes.
 Wat De jezeich kreß, wann De nix enndrähß, deiht vun dä Shprooch afhange, en di De övversaz.',
 	'translate-pref-editassistlang-bad' => 'En dä Leß es en onjöltesch Kööözel för en Shprooch: <code><nowiki>$1</nowiki></code>.',
-	'translate-pref-jsedit' => 'Dun e extra Finstershe för et Övversäze enblände (bruch Java_Skrep)',
 	'right-translate' => 'Met dä Schnettshtäll zom Övverseze ärrbeide',
 	'right-translate-manage' => 'Jroppe vun Täxte un Nohreeschte för et Övversäze verwallde',
 	'action-translate-manage' => 'Jroppe vun Täxte un Nohreeschte för et Övversäze verwallde',
@@ -20162,7 +20159,6 @@ Iwwersetzung vun engem Message an dës Sprooche gëtt gewisen wann Dir iwwersetz
 D'Standard-Lëscht vu Sproochen hànkt vun Ärer Sprooch of.",
 	'translate-pref-editassistlang-bad' => 'Net valabele Sproochcode an der Lëscht:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Verbesserten Iwwersetzungs-Editeur (JavaScript)',
 	'right-translate' => 'Mat dem Iwwersetzungs Tool änneren',
 	'right-translate-manage' => 'Message-Gruppe geréieren',
 	'action-translate-manage' => 'Message-Gruppe geréieren',
@@ -30951,7 +30947,6 @@ $messages['sr-ec'] = array(
 Подразумевани списак језика зависи од вашег језика.',
 	'translate-pref-editassistlang-bad' => 'Неисправан језички код на списку:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Проширени уређивач превода',
 	'right-translate' => 'уређивање путем преводилачког сучеља',
 	'right-translate-manage' => 'управљање групама порука',
 	'action-translate-manage' => 'управљате групом порука',
@@ -31367,7 +31362,6 @@ Prevod poruke u ovim jezicima prikazan je u toku prevođenja.
 Podrazumevani spisak jezika zavisi od vašeg jezika.',
 	'translate-pref-editassistlang-bad' => 'Neispravan jezički kod na spisku:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Prošireni uređivač prevoda',
 	'right-translate' => 'uređivanje putem prevodilačkog sučelja',
 	'right-translate-manage' => 'upravljanje grupama poruka',
 	'right-translate-import' => 'uvoženje vanmrežnih prevoda',
@@ -32670,12 +32664,12 @@ $messages['te'] = array(
 	'translate-taskui-view' => 'అన్ని సందేశాలను చూపించు',
 	'translate-taskui-untranslated' => 'అనువాదంకాని సందేశాలను చూపించు',
 	'translate-taskui-optional' => 'ఐచ్చిక సందేశాలను చూపించు',
-	'translate-taskui-acceptqueue' => 'నేను అంగీకరించగలిగిన సందేశాలు మాత్రమే', # Fuzzy
+	'translate-taskui-acceptqueue' => 'నేను సమీక్షించగల సందేశాలు మాత్రమే',
 	'translate-taskui-reviewall' => 'అన్ని అనువాదాలు సమీక్షించండి',
 	'translate-taskui-export-to-file' => 'స్థానిక ఫార్మాట్లోకి ఎగుమతి చేయండి',
 	'translate-taskui-export-as-po' => 'ఆఫ్ లైన్ అనువాదానికై ఎగుమతి',
 	'translate-taction-translate' => 'అనువాదం',
-	'translate-taction-proofread' => 'సమీక్ష', # Fuzzy
+	'translate-taction-proofread' => 'సమీక్ష',
 	'translate-taction-lstats' => 'భాష గణాంకాలు',
 	'translate-taction-mstats' => 'సందేశ సమూహ గణాంకాలు',
 	'translate-taction-export' => 'ఎగుమతి',
@@ -32705,7 +32699,6 @@ $messages['te'] = array(
 	'translate-ext-url' => '<hr />జాలగూడు: $1',
 	'translate-optional' => '(ఐచ్ఛికం)',
 	'translate-ignored' => '(ఉపేక్షించినది)',
-	'translate-edit-jsopen' => 'సవరించు',
 	'translate-edit-title' => '"$1"ని మార్చండి',
 	'translate-edit-definition' => 'సందేశ నిర్వచనం',
 	'translate-edit-translation' => 'అనువాదం',
@@ -32719,7 +32712,6 @@ $messages['te'] = array(
 	'translate-edit-tmmatch-source' => 'మూలకోశ అనువాదం: $1',
 	'translate-edit-tmmatch' => '$1% పోలిక',
 	'translate-use-suggestion' => 'ఈ అనువాదాన్ని మార్చుటకు సూచననివ్వండి.',
-	'translate-edit-tab-list' => 'సందేశాల జాబితా',
 	'translate-edit-nopermission' => 'మీరు సందేశాలను అనువదించడానికి అనుమతి అవసరం.',
 	'translate-edit-askpermission' => 'అనుమతి కోరండి',
 	'translate-magic-pagename' => 'విస్తరిత మీడియావికీ అనువాదం',
@@ -32770,6 +32762,7 @@ $messages['te'] = array(
 	'translate-stats-edits' => 'మార్పులు',
 	'translate-stats-users' => 'అనువాదకులు',
 	'translate-stats-registrations' => 'నమోదులు',
+	'translate-stats-reviews' => 'సమీక్షలు',
 	'translate-stats-reviewers' => 'సమీక్షకులు',
 	'translate-statsf-intro' => 'ఈ ఫారాన్ని ఉపయోగించి సరళమైన గణాంకాలను పొందవచ్చు. అన్ని విలువలకీ ఎగువ మరియు దిగువ పరిమితులు ఉంటాయి.',
 	'translate-statsf-options' => 'గ్రాఫు ఎంపికలు',
@@ -32878,7 +32871,8 @@ $messages['te'] = array(
 	'tux-edit' => 'మార్చు',
 	'tux-status-optional' => 'ఐచ్చికం',
 	'tux-status-fuzzy' => 'పాతబడింది',
-	'tux-status-proofread' => 'సమీక్షించబడింది', # Fuzzy
+	'tux-status-proofread' => 'సమీక్షించబడింది',
+	'tux-status-translated' => 'అనువదించబడింది',
 	'tux-status-saving' => 'భద్రపరుస్తున్నాం...',
 	'tux-editor-placeholder' => 'మీ అనువాదం',
 	'tux-editor-save-button-label' => 'అనువాదాన్ని భద్రపరచు',
