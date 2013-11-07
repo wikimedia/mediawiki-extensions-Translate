@@ -22,7 +22,8 @@ class TPException extends MWException {
 	 */
 	public function __construct( array $msg ) {
 		$this->msg = $msg;
-		$wikitext = call_user_func_array( 'wfMessage', $msg )->text();
+		// Using ->plain() instead of ->text() due to bug 56226
+		$wikitext = call_user_func_array( 'wfMessage', $msg )->plain();
 		parent::__construct( $wikitext );
 	}
 
