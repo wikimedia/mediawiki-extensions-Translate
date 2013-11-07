@@ -26899,6 +26899,7 @@ $messages['ps'] = array(
 /** Portuguese (português)
  * @author Cainamarques
  * @author Crazymadlover
+ * @author Fúlvio
  * @author Giro720
  * @author Hamilton Abreu
  * @author Lijealso
@@ -26914,7 +26915,7 @@ $messages['pt'] = array(
 	'translate-taskui-view' => 'Mostrar todas as mensagens',
 	'translate-taskui-untranslated' => 'Mostrar as mensagens não traduzidas',
 	'translate-taskui-optional' => 'Mostrar as mensagens opcionais',
-	'translate-taskui-acceptqueue' => 'Só as mensagens que posso aceitar', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Somente as mensagens que posso marcar como revisada',
 	'translate-taskui-reviewall' => 'Rever todas as traduções',
 	'translate-taskui-export-to-file' => 'Exportar no formato original',
 	'translate-taskui-export-as-po' => "Exportar para tradução ''off-line''",
@@ -26963,7 +26964,6 @@ As mensagens opcionais só devem ser traduzidas quando a sua língua tem requisi
 	'translate-edit-tmmatch-source' => 'Texto de origem da tradução: $1',
 	'translate-edit-tmmatch' => '$1% coincidente',
 	'translate-use-suggestion' => 'Substituir a tradução atual por esta sugestão.',
-	'translate-edit-tab-list' => 'Lista de mensagens',
 	'translate-edit-nopermission' => 'Precisa de permissão para traduzir mensagens.',
 	'translate-edit-askpermission' => 'Pedir permissão',
 	'translate-magic-pagename' => 'Tradução extra do MediaWiki',
@@ -27019,7 +27019,6 @@ Quando estiver a traduzir, ser-lhe-ão também apresentadas as traduções para 
 A lista por omissão depende da sua língua.',
 	'translate-pref-editassistlang-bad' => 'Código de língua inválido na lista:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Usar o editor de traduções optimizado (JavaScript)',
 	'right-translate' => 'Editar usando a interface de tradução',
 	'right-translate-manage' => 'Gerir grupos de mensagens',
 	'action-translate-manage' => 'gerir grupos de mensagens',
@@ -27183,9 +27182,9 @@ Detalhes: $1',
 	'translate-searchprofile-tooltip' => 'Pesquisar todas as traduções',
 	'translate-search-languagefilter' => 'Filtrar por língua:',
 	'translate-search-nofilter' => 'Não filtrar',
-	'translate-messagereview-submit' => 'Aceitar', # Fuzzy
-	'translate-messagereview-progress' => 'Em aceitação...', # Fuzzy
-	'translate-messagereview-failure' => 'Em aceitação... Erro: $1', # Fuzzy
+	'translate-messagereview-submit' => 'Marcar como revisada',
+	'translate-messagereview-progress' => 'Marcando como revisada',
+	'translate-messagereview-failure' => 'Erro ao marcar como revisada: $1',
 	'translate-messagereview-done' => 'Revista',
 	'translate-messagereview-reviews' => 'Revista por {{PLURAL:$1|um utilizador|$1 utilizadores}}',
 	'translate-messagereview-reviewswithyou' => 'Revista por {{PLURAL:$1|si|$1 utilizadores, incluindo você}}',
@@ -27214,8 +27213,8 @@ Detalhes: $1',
 	'translate-workflowgroup-desc' => 'Este grupo de mensagens mostra os estados do fluxo de trabalho das traduções.
 Os estados são definidos na variável de configuração $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Traduções recentes',
-	'translate-dynagroup-recent-desc' => 'Este grupo de mensagens mostra todas as traduções recentes para esta língua.
-É útil sobretudo para as tarefas de revisão.', # Fuzzy
+	'translate-dynagroup-recent-desc' => 'Este grupo de mensagens mostra todas as traduções recentes para este idioma.
+É útil sobretudo para as tarefas de revisão.',
 	'translate-dynagroup-by' => 'Tradução feita por {{GENDER:$1|$1}}',
 	'translate-dynagroup-byc' => 'Tradução feita por {{GENDER:$1|$1}} ($2)',
 	'translate-dynagroup-last' => 'Última modificação feita por {{GENDER:$1|$1}}',
@@ -33901,6 +33900,7 @@ Görevleri incelemek için çok kullanışlıdır.',
 	'tux-proofread-translated-by-self' => 'Sizin tarafınızdan çevrildi',
 	'tux-empty-list-all' => 'Bu ileti grubu boştur.',
 	'tux-empty-list-all-guide' => 'Çevirmek için farklı bir ileti grubu seçin',
+	'tux-translate-page-no-such-group' => "'''Belirtilen grup mevcut değil.''' Farklı bir ileti grubu seçiniz.",
 	'tux-empty-list-translated' => 'Hiçbir çevrilmiş ileti yok',
 	'tux-empty-list-translated-guide' => 'Çeviriye yardımcı olabilirsiniz',
 	'tux-empty-list-translated-action' => 'Çevir',
