@@ -228,7 +228,7 @@ $wgResourceModules['ext.translate.navitoggle'] = array(
 $wgResourceModules['ext.translate.pagetranslation.uls'] = array(
 	'scripts' => 'resources/js/ext.translate.pagetranslation.uls.js',
 	'dependencies' => array(
-		'ext.uls.init',
+		'ext.uls.mediawiki',
 		'mediawiki.util',
 	),
 ) + $resourcePaths;
@@ -308,7 +308,7 @@ $wgResourceModules['ext.translate.special.searchtranslations'] = array(
 	'styles' => 'resources/css/ext.translate.special.searchtranslations.css',
 	'dependencies' => array(
 		'ext.translate.editor',
-		'ext.uls.init',
+		'ext.uls.mediawiki',
 		'ext.uls.geoclient',
 		'ext.translate.groupselector',
 	),
@@ -338,7 +338,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'ext.translate.messagetable',
 		'ext.translate.navitoggle',
 		'ext.translate.workflowselector',
-		'ext.uls.init',
+		'ext.uls.mediawiki',
 	),
 	'messages' => array(
 		'translate-workflow-set-do',
@@ -361,7 +361,7 @@ $wgResourceModules['ext.translate.special.translatesandbox'] = array(
 	'dependencies' => array(
 		'ext.translate.translationstashstorage',
 		'mediawiki.api',
-		'jquery.uls.grid',
+		'ext.uls.mediawiki',
 		'jquery.ui.dialog',
 		'mediawiki.jqueryMsg',
 	),
