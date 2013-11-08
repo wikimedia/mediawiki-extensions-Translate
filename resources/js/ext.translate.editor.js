@@ -1,6 +1,9 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	// BC for MW <= 1.21
+	var getUrl = mw.util.getUrl || mw.util.wikiGetlink;
+
 	/**
 	 * TranslateEditor Plugin
 	 * Prepare the translation editor UI for a translation unit (message).
@@ -584,7 +587,7 @@
 						.text( mw.msg( 'translate-edit-askpermission' ) )
 						.addClass( 'tux-editor-ask-permission' )
 						.attr( {
-							href: mw.util.wikiGetlink( mw.config.get( 'wgTranslatePermissionUrl' ) )
+							href: getUrl( mw.config.get( 'wgTranslatePermissionUrl' ) )
 						} )
 					);
 

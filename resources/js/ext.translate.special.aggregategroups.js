@@ -1,6 +1,9 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	// BC for MW <= 1.21
+	getUrl = mw.util.getUrl || mw.util.wikiGetlink;
+
 	function getApiParams( $target ) {
 		return {
 			action: 'aggregategroups',
@@ -51,7 +54,7 @@
 				var aAttr, $a, spanAttr, $span, $ol;
 
 				aAttr = {
-					href: mw.util.wikiGetlink( subgroupName ),
+					href: getUrl( subgroupName ),
 					title: subgroupName
 				};
 
