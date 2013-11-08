@@ -1021,9 +1021,9 @@
 	$.fn.translateeditor.Constructor = TranslateEditor;
 
 	var delay = ( function () {
-		var timer = 0;
 
 		return function ( callback, milliseconds ) {
+			var timer = 0;
 			clearTimeout( timer );
 			timer = setTimeout( callback, milliseconds );
 		};

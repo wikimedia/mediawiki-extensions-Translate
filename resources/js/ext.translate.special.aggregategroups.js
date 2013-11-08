@@ -2,7 +2,7 @@
 	'use strict';
 
 	// BC for MW <= 1.21
-	getUrl = mw.util.getUrl || mw.util.wikiGetlink;
+	var getUrl = mw.util.getUrl || mw.util.wikiGetlink;
 
 	function getApiParams( $target ) {
 		return {
