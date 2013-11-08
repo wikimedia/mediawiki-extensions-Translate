@@ -152,6 +152,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 	'dependencies' => array(
 		'ext.translate.base',
 		'ext.translate.hooks',
+		'mediawiki.Uri',
 		'mediawiki.util',
 		'jquery.appear',
 		'mediawiki.jqueryMsg',
@@ -229,6 +230,7 @@ $wgResourceModules['ext.translate.pagetranslation.uls'] = array(
 	'scripts' => 'resources/js/ext.translate.pagetranslation.uls.js',
 	'dependencies' => array(
 		'ext.uls.init',
+		'mediawiki.Uri',
 		'mediawiki.util',
 	),
 ) + $resourcePaths;
