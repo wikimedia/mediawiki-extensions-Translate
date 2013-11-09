@@ -6197,7 +6197,6 @@ $messages['ce'] = array(
 	'translate-edit-translation' => 'Гоч',
 	'translate-edit-contribute' => 'нисйé',
 	'translate-edit-in-other-languages' => 'Хаам кхечу меттанашкахь',
-	'translate-edit-tab-list' => 'Хаамийн могlам',
 	'translate-magic-pagename' => 'Къоргера MediaWiki гочяр',
 	'translate-magic-submit' => 'Арайаккха',
 	'translate-magic-cm-export' => 'Вахьайахка',
@@ -6251,6 +6250,7 @@ $messages['ce'] = array(
 	'supportedlanguages-translators' => '{{PLURAL:$2|Гочдархо|Гочдархой}}: $1',
 	'supportedlanguages-recenttranslations' => 'дукха хан йоццуш гоч динарш',
 	'supportedlanguages-count' => 'Бериг $1 {{plural:$1|мотт|меттанаш|меттанаш}}', # Fuzzy
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|нисдар|нисдарш}} — тӀаьхьарлера нисдар $3 {{PLURAL:$3|де}} хьалха',
 	'translate-save' => 'lалашдан ($1)',
 	'translate-jssti-add' => 'Тlетоха могlам чу',
 	'translate-manage-import-new' => 'Керла хаам $1',
@@ -10394,6 +10394,7 @@ Sobib ennekõike tõlgete ülevaatuseks.',
  * @author An13sa
  * @author Kobazulo
  * @author Theklan
+ * @author Xabier Armendaritz
  */
 $messages['eu'] = array(
 	'translate' => 'Itzuli',
@@ -10434,7 +10435,6 @@ Hautazko mezuak zure hizkuntzaren berezitasunak direla-eta, espazioak ez daudene
 	'translate-ext-url' => '<hr />Webgunea: $1',
 	'translate-optional' => '(hautazkoa)',
 	'translate-ignored' => '(ignoratua)',
-	'translate-edit-jsopen' => 'aldatu',
 	'translate-edit-title' => '"$1" aldatu',
 	'translate-edit-definition' => 'Mezuaren definizioa',
 	'translate-edit-translation' => 'Itzulpena',
@@ -10445,7 +10445,6 @@ Hautazko mezuak zure hizkuntzaren berezitasunak direla-eta, espazioak ez daudene
 	'translate-edit-in-other-languages' => 'Mezua beste hizkuntzetan',
 	'translate-edit-warnings' => 'Bukatu gabeko itzulpenei buruzko oharrak',
 	'translate-edit-tmmatch' => '$1% bilaketa',
-	'translate-edit-tab-list' => 'Mezuen zerrenda',
 	'translate-edit-askpermission' => 'Baimena eskatu',
 	'translate-magic-pagename' => 'MediaWiki itzulpen zabaldua',
 	'translate-magic-module' => 'Modulu:',
@@ -10498,7 +10497,7 @@ Hautazko mezuak zure hizkuntzaren berezitasunak direla-eta, espazioak ez daudene
 	'translate-statsf-count-reviewers' => 'Berrikusleak',
 	'translate-statsf-submit' => 'Aurreikuspena',
 	'translate-tag-category' => 'Orri itzulgarriak',
-	'translate-sidebar-alltrans' => 'Beste hizkuntzetan',
+	'translate-sidebar-alltrans' => 'Erdaretan',
 	'translations' => 'Itzulpen guztiak',
 	'translate-translations-no-message' => '"$1" itzulezina den mezua da. (ezin da euskaratu)',
 	'translate-translations-none' => '"$1"-ek ez du itzulpenik',
@@ -18082,7 +18081,7 @@ $messages['ka'] = array(
 	'translate-taskui-optional' => 'არასავალდებულო შეტყობინებების ჩვენება',
 	'translate-taskui-acceptqueue' => 'მხოლოდ ის შეტყობინებები რომლებიც შემიძლია დავამოწმო', # Fuzzy
 	'translate-taction-translate' => 'თარგმნა',
-	'translate-taction-proofread' => 'შესწორება', # Fuzzy
+	'translate-taction-proofread' => 'შემოწმება',
 	'translate-taction-lstats' => 'ენის სტატისტიკა',
 	'translate-taction-mstats' => 'შეტყობინებების ჯგუფების სტატისტიკა',
 	'translate-taction-export' => 'ექსპორტი',
@@ -18103,7 +18102,6 @@ $messages['ka'] = array(
 	'translate-ext-url' => '<hr />ვებ-გვერდი: $1',
 	'translate-optional' => '(არასავალდებულო)',
 	'translate-ignored' => '(იგნორირებული)',
-	'translate-edit-jsopen' => 'რედაქტირება',
 	'translate-edit-title' => '„$1“ რედაქტირება',
 	'translate-edit-definition' => 'შეტყობინების განმარტება',
 	'translate-edit-translation' => 'თარგმანი',
@@ -18111,7 +18109,6 @@ $messages['ka'] = array(
 ''თუ იცით სად და როგორ გამოიყენება ეს შეტყობინება, გთხოვთ დაეხმაროთ სხვა მთარგმნელებს და დაურთოთ დოკუმენტაცია ამ შეტყობინებას.''",
 	'translate-edit-in-other-languages' => 'ეს შეტყობინება სხვა ენებზე',
 	'translate-edit-tmmatch' => '$1% შესაბამისობა',
-	'translate-edit-tab-list' => 'შეტყობინებების სია',
 	'translate-magic-module' => 'მოდული:',
 	'translate-magic-submit' => 'აჩვენე',
 	'translate-magic-cm-export' => 'ექსპორტი',
@@ -18228,10 +18225,10 @@ $messages['ka'] = array(
 	'translate-documentation-language' => 'შეტყობინების დოკუმენტაცია',
 	'translate-searchprofile' => 'თარგმანები',
 	'translate-search-languagefilter' => 'გაფილტვრა ენის მიხედვით:',
-	'translate-messagereview-submit' => 'მიღება', # Fuzzy
-	'translate-messagereview-progress' => 'მიღება...', # Fuzzy
+	'translate-messagereview-submit' => 'შემოწმებულად მონიშვნა',
+	'translate-messagereview-progress' => 'მონიშნულია როგორც შემოწმებული...',
 	'translate-messagereview-failure' => 'მიღება... ვერ მოხერხდა: $1', # Fuzzy
-	'translate-messagereview-done' => 'მიღებულია', # Fuzzy
+	'translate-messagereview-done' => 'შემოწმებულია',
 	'api-error-invalidrevision' => 'თარგმანი ვერ მოიძებნა',
 	'api-error-unknownmessage' => 'შეტყობინება ვერ მოიძებნა',
 	'api-error-fuzzymessage' => 'თარგმანი მონიშნულია როგორც უზუსტო',
@@ -18260,7 +18257,7 @@ $messages['ka'] = array(
 	'tux-edit' => 'რედაქტირება',
 	'tux-status-optional' => 'არასავალდებულო',
 	'tux-status-fuzzy' => 'მოძველებული',
-	'tux-status-proofread' => 'შესწორდა', # Fuzzy
+	'tux-status-proofread' => 'შემოწმებულია',
 	'tux-status-translated' => 'ნათარგმნი',
 	'tux-status-saving' => 'ინახება...',
 	'tux-status-unsaved' => 'არ შეინახა',
@@ -24428,12 +24425,12 @@ $messages['nn'] = array(
 	'translate-taskui-view' => 'Vis alle meldingar',
 	'translate-taskui-untranslated' => 'Vis uomsette meldingar',
 	'translate-taskui-optional' => 'Vis valfrie meldingar',
-	'translate-taskui-acceptqueue' => 'Berre meldingar eg kan godtaka', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Berre meldingar eg kan merkja som vurderte',
 	'translate-taskui-reviewall' => 'Sjå igjennom alle omsetjingane',
 	'translate-taskui-export-to-file' => 'Eksporter i opphavleg format',
 	'translate-taskui-export-as-po' => 'Eksporter for fråkopla omsetjing',
 	'translate-taction-translate' => 'Set om',
-	'translate-taction-proofread' => 'Korrekturles',
+	'translate-taction-proofread' => 'Vurder',
 	'translate-taction-lstats' => 'Språkstatistikk',
 	'translate-taction-mstats' => 'Statistikk for meldingsgruppa',
 	'translate-taction-export' => 'Eksporter',
@@ -24465,7 +24462,6 @@ Valfrie meldingar skal ein berre setja om når språket ditt har særskilde krav
 	'translate-ext-url' => '<hr />Nettstad: $1',
 	'translate-optional' => '(valfri)',
 	'translate-ignored' => '(ignorert)',
-	'translate-edit-jsopen' => 'endra',
 	'translate-edit-title' => 'Endra «$1»',
 	'translate-edit-definition' => 'Melding som skal setjast om',
 	'translate-edit-translation' => 'Omsetjing',
@@ -24479,7 +24475,6 @@ Valfrie meldingar skal ein berre setja om når språket ditt har særskilde krav
 	'translate-edit-tmmatch-source' => 'Kjeldetekst for omsetjing: $1',
 	'translate-edit-tmmatch' => '$1% samsvar',
 	'translate-use-suggestion' => 'Byt ut den gjeldande omsetjinga med dette framlegget.',
-	'translate-edit-tab-list' => 'Meldingsliste',
 	'translate-edit-nopermission' => 'Du treng løyve for å setja om meldingar',
 	'translate-edit-askpermission' => 'Bed om løyve',
 	'translate-magic-pagename' => 'Utvida MediaWiki-omsetjing',
@@ -24540,7 +24535,6 @@ Omsetjinga av meldinga på desse språka vert viste medan du set om.
 Standardlista over språk fylgjer med språket ditt.',
 	'translate-pref-editassistlang-bad' => 'Ugyldig språkkode i lista:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Udvida redigeringsvindu for omsetjingar (JavaScript)',
 	'right-translate' => 'Redigere med omsetjingsgrensesnittet',
 	'right-translate-manage' => 'Handsama meldingsgrupper',
 	'action-translate-manage' => 'handsama meldingsgrupper',
@@ -24639,7 +24633,6 @@ Fargen på understrekinga indikerer kor nyleg ein omsetjar har vore aktiv her.',
 	'translate-smg-nochanges' => 'Det er ingen endringar å handsama.',
 	'translate-smg-submit' => 'Send endringar til handsaming',
 	'translate-smg-submitted' => 'Meldingsdefinisjonar har vorte oppdaterte. Endringane vert handsama i bakgrunnen.',
-	'translate-smg-postponed' => 'Nokre endringar kunne ikkje handsamast. [[{{FULLPAGENAME}}|Freist om  att]].',
 	'translate-smg-left' => 'Meldingsinnhald i wikien',
 	'translate-smg-right' => 'Omsetjingar på veg',
 	'translate-manage-import-diff' => 'Melding $1 | Handlingar: $2',
@@ -24683,25 +24676,25 @@ $1',
 	'translate-searchprofile-tooltip' => 'Søk i alle omsetjingar',
 	'translate-search-languagefilter' => 'Filtrer etter språk:',
 	'translate-search-nofilter' => 'Inga filtrering',
-	'translate-messagereview-submit' => 'Godtak', # Fuzzy
-	'translate-messagereview-progress' => 'Godtek...', # Fuzzy
-	'translate-messagereview-failure' => 'Godtek … mislukkast: $1', # Fuzzy
-	'translate-messagereview-done' => 'Godteke', # Fuzzy
-	'translate-messagereview-reviews' => 'Godteken av {{PLURAL:$1|éin brukar|$1 brukarar}}', # Fuzzy
-	'translate-messagereview-reviewswithyou' => 'Godteken av {{PLURAL:$1|deg|$1 brukarar inkludert deg}}', # Fuzzy
+	'translate-messagereview-submit' => 'Merk som vurdert',
+	'translate-messagereview-progress' => 'Merkjer som vurdert...',
+	'translate-messagereview-failure' => 'Mislukkast i å merkja som vurdert: $1',
+	'translate-messagereview-done' => 'Vurdert',
+	'translate-messagereview-reviews' => 'Vurdert av {{PLURAL:$1|éin brukar|$1 brukarar}}',
+	'translate-messagereview-reviewswithyou' => 'Vurdert av {{PLURAL:$1|deg|$1 brukarar inkludert deg}}',
 	'api-error-invalidrevision' => 'Omsetjinga vart ikkje funnen',
 	'api-error-unknownmessage' => 'Meldinga vart ikkje funnen',
 	'api-error-fuzzymessage' => 'Omsetjinga er merkt som utdatert',
-	'api-error-owntranslation' => 'Du kan ikkje godta eigne omsetjingar', # Fuzzy
-	'translate-messagereview-no-fuzzy' => 'Utdaterte omsetjingar kan ikkje godtakast', # Fuzzy
-	'translate-messagereview-no-own' => 'Du kan ikkje godta eigne omsetjingar.', # Fuzzy
-	'translate-messagereview-doit' => 'Godtak omsetjinga som ei rett omsetjing.', # Fuzzy
+	'api-error-owntranslation' => 'Du kan ikkje merkja eigne omsetjingar som vurderte',
+	'translate-messagereview-no-fuzzy' => 'Utdaterte omsetjingar kan ikkje merkjast som vurderte.',
+	'translate-messagereview-no-own' => 'Du kan ikkje merkja eigne omsetjingar som vurderte.',
+	'translate-messagereview-doit' => 'Merk omsetjinga som vurdert.',
 	'group-translate-proofr' => 'Omsetjingsgjennomgåarar',
 	'group-translate-proofr-member' => '{{GENDER:$1|omsetjingsgjennomgåar}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Omsetjingsgjennomgåarar',
 	'log-name-translationreview' => 'Logg over omsetjingsgjennomgåing',
 	'log-description-translationreview' => 'Logg over alle gjennomgåingar av omsetjingar og meldingsgrupper.',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|godtok}} omsetjinga $3', # Fuzzy
+	'logentry-translationreview-message' => '$1 {{GENDER:$2|vurderte}} omsetjinga $3',
 	'translate-workflow-state-' => '(ikkje sett)',
 	'translate-workflowstatus' => 'Stode: $1',
 	'translate-workflow-set-do' => 'Set',
@@ -24712,6 +24705,10 @@ $1',
 	'translate-stats-workflow' => 'Stode',
 	'translate-workflowgroup-label' => 'Arbeidsflytsstoder',
 	'translate-dynagroup-recent-label' => 'Nylege omsetjingar',
+	'translate-dynagroup-by' => 'Sett om av {{GENDER:$1|$1}}',
+	'translate-dynagroup-byc' => 'Sett om av {{GENDER:$1|$1}} ($2)',
+	'translate-dynagroup-last' => 'Siste endringa av {{GENDER:$1|$1}}',
+	'translate-dynagroup-lastc' => 'Siste endringa av {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Hjelp',
 	'translate-msggroupselector-projects' => 'Meldingsgruppe',
 	'translate-msggroupselector-search-placeholder' => 'Søk etter grupper',
@@ -24753,11 +24750,11 @@ $1',
 	'tux-editor-message-desc-more' => 'Sjå meir',
 	'tux-editor-message-desc-less' => 'Sjå mindre',
 	'tux-editor-clear-translated' => 'Gøym omsette',
-	'tux-editor-proofreading-mode' => 'Korrekturles', # Fuzzy
+	'tux-editor-proofreading-mode' => 'Vurder',
 	'tux-editor-translate-mode' => 'Liste',
 	'tux-editor-proofreading-hide-own-translations' => 'Gøym omsetjingane dine',
 	'tux-editor-proofreading-show-own-translations' => 'Vis omsetjingane dine',
-	'tux-proofread-action-tooltip' => 'Godta omsetjing', # Fuzzy
+	'tux-proofread-action-tooltip' => 'Merk som vurdert',
 	'tux-proofread-edit-label' => 'Endra',
 	'tux-editor-page-mode' => 'Side',
 	'tux-editor-outdated-warning' => 'Omsetjinga treng kan henda ei oppdatering.',
@@ -24781,13 +24778,13 @@ $1',
 	'tux-empty-there-are-optional' => 'Det finst valfrie meldingar som ikkje er viste i lista',
 	'tux-empty-show-optional-messages' => 'Vis valfrie meldingar',
 	'tux-empty-no-outdated-messages' => 'Ingen utdaterte meldingar',
-	'tux-empty-nothing-to-proofread' => 'Ingenting å korrekturlesa', # Fuzzy
+	'tux-empty-nothing-to-proofread' => 'Ingenting å vurdera',
 	'tux-empty-you-can-help-providing' => 'Du kan hjelpa til med å gje oss nye omsetjingar',
-	'tux-empty-nothing-new-to-proofread' => 'Ingenting nytt å korrekturlesa', # Fuzzy
-	'tux-empty-you-can-review-already-proofread' => 'Du kan vurdera omsetjingar som alt er korrekturlesne av andre', # Fuzzy
+	'tux-empty-nothing-new-to-proofread' => 'Ingenting nytt å vurdera',
+	'tux-empty-you-can-review-already-proofread' => 'Du kan vurdera omsetjingar som alt er vurderte av andre.',
 	'tux-empty-list-other' => 'Inkje å setja om',
-	'tux-empty-list-other-guide' => 'Du kan hjelpa til med å korrekturlesa gjeldande omsetjingar', # Fuzzy
-	'tux-empty-list-other-action' => 'Korrekturles omsetjingar', # Fuzzy
+	'tux-empty-list-other-guide' => 'Du kan hjelpa til med å vurdera gjeldande omsetjingar',
+	'tux-empty-list-other-action' => 'Vurder omsetjingar',
 	'tux-empty-list-other-link' => 'Vis alle meldingar',
 	'tux-editor-close-tooltip' => 'Lat att',
 	'tux-editor-expand-tooltip' => 'Vid ut',
@@ -24796,8 +24793,8 @@ $1',
 	'tux-editor-message-tools-translations' => 'Alle omsetjingar',
 	'tux-editor-loading' => 'Lastar …',
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|språk}} til',
-	'translate-statsbar-tooltip' => '$1% omsett, $2% korrekturlese', # Fuzzy
-	'translate-statsbar-tooltip-with-fuzzy' => '$1% omsett, $2% korrekturlese, $3% utdatert', # Fuzzy
+	'translate-statsbar-tooltip' => '$1% omsett, $2% vurdert',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1% omsett, $2% vurdert, $3% utdatert',
 	'translate-search-more-groups-info' => '{{PLURAL:$1|éi gruppe|$1 grupper}} til',
 );
 
@@ -30396,7 +30393,6 @@ kot sta neuporaba presledkov ali prečrkovanje izvirnih imen. $1',
 	'translate-edit-tmmatch-source' => 'Izvirno besedilo prevoda: $1',
 	'translate-edit-tmmatch' => '$1-% ujemanje',
 	'translate-use-suggestion' => 'Zamenjaj trenutni prevod s tem predlogom.',
-	'translate-edit-tab-list' => 'Seznam sporočil',
 	'translate-edit-nopermission' => 'Za prevajanje sporočil potrebujete dovoljenje.',
 	'translate-edit-askpermission' => 'Zaprosite za dovoljenje',
 	'translate-magic-pagename' => 'Razširjeno prevajanje MediaWiki',
@@ -30458,7 +30454,6 @@ Ko prevajate, so prikazani prevodi sporočila v teh jezikih.
 Privzeti seznam jezikov je odvisen od vašega jezika.',
 	'translate-pref-editassistlang-bad' => 'Neveljavna koda jezika na seznamu:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Izboljšan urejevalnik prevodov (JavaScript)',
 	'right-translate' => 'Urejanje z uporabo prevajalnega vmesnika',
 	'right-translate-manage' => 'Upravljanje skupin sporočil',
 	'action-translate-manage' => 'urejanje skupin prevodov',
@@ -30743,9 +30738,9 @@ Najuporabnejše za opravila pregleda.',
 	'tux-empty-you-can-help-providing' => 'Pomagate lahko z novimi prevodi',
 	'tux-empty-nothing-new-to-proofread' => 'Za pregled ni nič novega',
 	'tux-empty-you-can-review-already-proofread' => 'Pregledate lahko prevode, ki so jih pregledali že drugi.',
-	'tux-empty-list-other' => 'Ničesar ni treba prevesti',
+	'tux-empty-list-other' => 'Ničesar ni treba prevesti.',
 	'tux-empty-list-other-guide' => 'Pomagate lahko s pregledom že obstoječih prevodov',
-	'tux-empty-list-other-action' => 'Preglejte prevode',
+	'tux-empty-list-other-action' => 'Pregled prevodov',
 	'tux-empty-list-other-link' => 'Prikaz vseh sporočil',
 	'tux-editor-close-tooltip' => 'Zapri',
 	'tux-editor-expand-tooltip' => 'Razširi',
