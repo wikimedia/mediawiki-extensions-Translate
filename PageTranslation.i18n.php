@@ -590,6 +590,7 @@ Parameters:
 See also:
 * {{msg-mw|Pt-deletepage-list-count}}',
 	'pt-movepage-legend' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
+	'pt-movepage-new' => '{{Identical|New name}}',
 	'pt-movepage-reason' => '{{Identical|Reason}}',
 	'pt-movepage-action-other' => "Button label on the special page 'Move translateable page'. See [[mw:File:Translate_manual_-_Page_example_-_21._Move_confirm.png|screenshot]].",
 	'pt-movepage-intro' => 'See definitions on [[mw:Help:Extension:Translate/Glossary]].',

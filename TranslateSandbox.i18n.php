@@ -668,6 +668,8 @@ Var god kom till $2 och gör några fler översättningar.',
 	'tsb-search-requests' => 'Sökbegäran',
 	'tsb-accept-button-label' => 'Acceptera',
 	'tsb-reject-button-label' => 'Acceptera inte',
+	'tsb-accept-all-button-label' => 'Acceptera alla',
+	'tsb-reject-all-button-label' => 'Avvisa alla',
 	'tsb-reminder-link-text' => 'Skicka e-postpåminnelse',
 	'tsb-translations-source' => 'Källa',
 	'tsb-translations-user' => 'Användaröversättningar',
@@ -679,6 +681,9 @@ Var god kom till $2 och gör några fler översättningar.',
 	'translate-translationstash-translations' => '$1 {{PLURAL:$1|fullbordad översättning|fullbordade översättningar}}',
 	'translate-translationstash-skip-button-label' => 'Prova en annan',
 	'tsb-limit-reached-title' => 'Tack för dina översättningar',
+	'tsb-limit-reached-body' => 'Du har nått översättningsgränsen för nya översättare.
+Vårt team kommer snart verifiera och uppgradera ditt konto.
+Sedan kommer du kunna översätta utan begränsningar.',
 );
 
 /** Telugu (తెలుగు)
