@@ -366,12 +366,10 @@ class TranslateEditAddons {
 			return true;
 		}
 
-		$de->loadNewText();
-		$out->setRevisionId( $de->mNewRev->getId() );
-
 		$th = new TranslationHelpers( $title, /*group*/false );
 		$th->setEditMode( false );
 
+		$de->loadNewText();
 		if ( isset( $de->mNewContent ) && $de->mNewContent instanceof TextContent ) {
 			$th->setTranslation( $de->mNewContent->getNativeData() );
 		} elseif ( isset( $de->mNewtext ) ) {
