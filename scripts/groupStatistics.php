@@ -276,13 +276,13 @@ class GroupStatictics extends Maintenance {
 		// Select an output engine
 		switch ( $output ) {
 			case 'wiki':
-				$out = new wikiStatsOutput();
+				$out = new WikiStatsOutput();
 				break;
 			case 'text':
-				$out = new textStatsOutput();
+				$out = new TextStatsOutput();
 				break;
 			case 'csv':
-				$out = new csvStatsOutput();
+				$out = new CsvStatsOutput();
 				break;
 			default:
 				$out = new TranslateStatsOutput();
@@ -344,7 +344,7 @@ class GroupStatictics extends Maintenance {
 
 		if ( $wmfscore ) {
 			// Override/set parameters
-			$out = new csvStatsOutput();
+			$out = new CsvStatsOutput();
 			$reportScore = true;
 
 			$weights = array();
@@ -679,7 +679,7 @@ class GroupStatictics extends Maintenance {
  *
  * @ingroup Stats
  */
-class TranslateStatsOutput extends wikiStatsOutput {
+class TranslateStatsOutput extends WikiStatsOutput {
 	function heading() {
 		echo '{| class="mw-ext-translate-groupstatistics sortable wikitable" border="2" ' .
 			'cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: ' .
