@@ -344,7 +344,7 @@ class GroupStatistics extends Maintenance {
 
 		if ( $wmfscore ) {
 			// Override/set parameters
-			$out = new csvStatsOutput();
+			$out = new CsvStatsOutput();
 			$reportScore = true;
 
 			$weights = array();
