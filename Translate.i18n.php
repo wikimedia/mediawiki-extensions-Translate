@@ -649,8 +649,6 @@ Parameters:
 * $1 - number between 1 and 100
 {{Identical|Match}}',
 	'translate-use-suggestion' => 'Used as a tooltip for the "down arrow" to insert translation suggestions in the translation edit page.',
-	'translate-edit-tab-prev' => '{{optional}}',
-	'translate-edit-tab-next' => '{{optional}}',
 	'translate-edit-tag-warning' => '{{notranslate}}
 Shown when editing translatable pages. Default is empty.',
 	'translate-magic-pagename' => '"Extended" can as well be understood as "Extra" or "Special" or "Advanced". It refers to the translations of pieces of text such as names of namespaces or special pages, which are not part of normal message or wiki page translation.
@@ -761,7 +759,6 @@ Warning message from automated syntax check for translators.
 
 Parameters:
 * $1 - a language code, not list of codes',
-	'translate-pref-jsedit' => "Setting in the preferences which enables the Translate extension own editing tools, like pop-ups and inline editor, which are based on JavaScript/AJAX features and replace the normal editing screen in some, most or all cases depending on the wiki's configuration and release.",
 	'right-translate' => '{{doc-right|translate}}',
 	'right-translate-manage' => '{{doc-right|translate-manage}}',
 	'action-translate-manage' => '{{doc-action|translate-manage}}',
@@ -1152,7 +1149,8 @@ See also:
 
 "Unreviewed" stands for "(messages which) have not been reviewed".
 {{Identical|Proofread}}',
-	'tux-edit' => 'Link in [[Special:Translate]] to open message editor',
+	'tux-edit' => 'Link in [[Special:Translate]] to open message editor.
+{{Identical|Edit}}',
 	'tux-status-optional' => 'Status label in [[Special:Translate]] indicating that message should only be translated in special cases.
 {{Identical|Optional}}',
 	'tux-status-fuzzy' => 'Status label in [[Special:Translate]] indicating translation needs updating.
@@ -8160,6 +8158,7 @@ Details: $1',
 
 /** Zazaki (Zazaki)
  * @author Erdemaslancan
+ * @author Gorizon
  * @author Mirzali
  */
 $messages['diq'] = array(
@@ -8175,7 +8174,7 @@ $messages['diq'] = array(
 	'translate-taction-lstats' => 'İstatistikê zıwani',
 	'translate-taction-mstats' => 'İstatıstıkê mesacan dê gruban',
 	'translate-taction-export' => 'Teber de',
-	'translate-page-settings-legend' => 'Eyari',
+	'translate-page-settings-legend' => 'Sazi',
 	'translate-page-group' => 'Grube',
 	'translate-page-language' => 'Zıwan',
 	'translate-page-limit' => 'Limit',
@@ -8194,7 +8193,6 @@ $messages['diq'] = array(
 	'translate-ext-url' => '<hr />Web sitay cı: $1',
 	'translate-optional' => '(opsiyonel)',
 	'translate-ignored' => '(Nê hesıbneyine)',
-	'translate-edit-jsopen' => 'bıvurne',
 	'translate-edit-title' => '"$1"i timar ke',
 	'translate-edit-definition' => 'Şınasiya mesaci',
 	'translate-edit-translation' => 'Çarnayışi',
@@ -8205,9 +8203,6 @@ $messages['diq'] = array(
 	'translate-edit-in-other-languages' => 'Zıwanan dê binan de mesaci',
 	'translate-edit-tmsugs' => 'Virê çarnayışi u çarnayışê makina ra weşenayışi',
 	'translate-edit-tmmatch' => 'Zey $1%',
-	'translate-edit-tab-prev' => '<<<',
-	'translate-edit-tab-next' => '>>>',
-	'translate-edit-tab-list' => 'Lista mesacan',
 	'translate-magic-pagename' => 'Açarnayışê MedyaVikiyo herayen',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Biya',
@@ -32201,7 +32196,7 @@ Främst användbar för granskningsuppgifter.',
 	'tux-editor-in-other-languages' => 'På andra språk',
 	'tux-editor-need-more-help' => 'Behöver du mer hjälp?',
 	'tux-editor-ask-help' => 'Fråga efter mer information',
-	'tux-editor-tm-match' => '$1% överensstämmelse',
+	'tux-editor-tm-match' => '$1 % likhet',
 	'tux-warnings-more' => '{{PLURAL:$1|$1 till|$1 fler}}',
 	'tux-warnings-hide' => 'dölj',
 	'tux-editor-save-failed' => 'Misslyckades att spara översättningen: $1',
