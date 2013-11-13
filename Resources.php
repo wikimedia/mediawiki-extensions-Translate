@@ -50,6 +50,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'ext.translate.storage',
 		'ext.translate.hooks',
 		'ext.translate.dropdownmenu',
+		'ext.uls.buttons',
 		'jquery.uls.grid',
 		'mediawiki.util',
 		'mediawiki.Uri',
@@ -158,6 +159,7 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'mediawiki.jqueryMsg',
 		'ext.translate.parsers',
 		'ext.translate.loader',
+		'ext.uls.buttons',
 		'jquery.textchange',
 	),
 	'messages' => array(
