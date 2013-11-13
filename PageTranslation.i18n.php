@@ -10272,6 +10272,7 @@ $messages['tzm'] = array(
 
 /** Uyghur (Arabic script) (ئۇيغۇرچە)
  * @author Sahran
+ * @author Tel'et
  */
 $messages['ug-arab'] = array(
 	'pagetranslation' => 'بەت تەرجىمە',
@@ -10283,6 +10284,8 @@ $messages['ug-arab'] = array(
 	'tpt-templatediff' => 'بەت قېلىپى ئۆزگەردى.',
 	'tpt-diff-old' => 'ئالدىنقى تېكست',
 	'tpt-diff-new' => 'يېڭى تېكست',
+	'tpt-sections-template' => 'تەرجىمە بېتى قېلىپى',
+	'tpt-nosuchpage' => '$1 بەت مەۋجۇت ئەمەس',
 	'tpt-old-pages-title' => 'تەرجىمە قىلىۋاتقان بەتلەر',
 	'tpt-other-pages-title' => 'بۇزۇلغان بەتلەر',
 	'tpt-discouraged-pages-title' => 'تەۋسىيە قىلىنمايدىغان بەتلەر',
@@ -10300,6 +10303,7 @@ $messages['ug-arab'] = array(
 	'translate-tag-translate-link-desc' => 'بۇ بەتنى تەرجىمە قىل',
 	'translate-tag-markthis' => 'تەرجىمە ئۈچۈن بۇ بەتكە بەلگە سال',
 	'tpt-languages-legend' => 'باشقا تىل',
+	'tpt-tab-translate' => 'تەرجىمە',
 	'tpt-discouraged-language-reason' => 'سەۋەپ: $1',
 	'tpt-priority-languages' => 'تەرجىمە باشقۇرغۇچى بۇ گۇرۇپپا ئالدىن تەرجىمە قىلىدىغان تىلنى $1 غا تەڭشىدى.',
 	'tpt-render-summary' => 'ئەسلى بەت بىلەن ماسلىشىدىغان يېڭى نەشرىگە يېڭىلاۋاتىدۇ',
@@ -10313,9 +10317,9 @@ $messages['ug-arab'] = array(
 	'tpt-aggregategroup-remove-confirm' => 'راستلا بۇ توپلانما گۇرۇپپىنى ئۆچۈرەمسىز؟',
 	'tpt-aggregategroup-invalid-group' => 'گۇرۇپپا مەۋجۇت ئەمەس',
 	'pt-movepage-list-pages' => 'يۆتكەيدىغان بەتلەرنىڭ تىزىمى',
-	'pt-movepage-list-translation' => 'تەرجىمە قىلىدىغان بەتلەر', # Fuzzy
+	'pt-movepage-list-translation' => 'تەرجىمە قىلىدىغان {{PLURAL:$1|بەتلەر}}',
 	'pt-movepage-list-section' => 'بۆلەك بەتلەر', # Fuzzy
-	'pt-movepage-list-other' => 'باشقا تارماق بەتلەر', # Fuzzy
+	'pt-movepage-list-other' => 'باشقا تارماق {{PLURAL:$1|بەتلەر}}',
 	'pt-movepage-list-count' => 'جەمئى {{PLURAL:$1|بەت|بەت}} يۆتكىدى.',
 	'pt-movepage-legend' => 'تەرجىمە قىلغىلى بولىدىغان بەتنى يۆتكە',
 	'pt-movepage-current' => 'نۆۋەتتىكى ئاتى:',
