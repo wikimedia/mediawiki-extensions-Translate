@@ -6202,6 +6202,7 @@ $messages['ce'] = array(
 	'translate-magic-cm-original' => 'ДӀайолалун',
 	'translate-magic-cm-comment' => 'Билгалдаккхар:',
 	'translate-magic-cm-save' => 'lалашдан',
+	'translate-magic-cm-savefailed' => 'Ӏалаш ян цаелира',
 	'translate-magic-special' => 'Белхан агӀонашан псевдонимаш',
 	'translate-magic-words' => 'Бозбуунчаллин дешнаш',
 	'translate-magic-namespace' => 'ЦӀерашан ана',

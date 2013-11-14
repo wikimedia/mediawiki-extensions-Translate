@@ -669,6 +669,7 @@ $messages['ce'] = array(
 	'translate-fs-settings-slanguage' => 'ГӀоьнан мотт $1:',
 	'translate-fs-userpage-level-N' => 'Сан дай мотт',
 	'translate-fs-permissions-planguage' => 'Коьрта мотт:',
+	'translate-fs-permissions-submit' => 'ДӀадахьийта дехар',
 );
 
 /** Sorani Kurdish (کوردی)
