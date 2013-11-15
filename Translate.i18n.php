@@ -17753,6 +17753,16 @@ Ef yu nuo we ar ou dis mechiz yuuz, yu kiahn elp ada chranslieta bai ad dakiumen
 	'translate-magic-pagename' => 'Extendid MediaWiki chranslieshan',
 );
 
+/** Lojban (Lojban)
+ * @author Gleki
+ */
+$messages['jbo'] = array(
+	'translate-edit-in-other-languages' => 'lo notci poi se bangu lo drata',
+	'translate-rc-translation-filter' => 'pagrygau lo xe fanva',
+	'translate-sidebar-alltrans' => 'lo se bangu be lo drata',
+	'translate-language' => 'lo bangu',
+);
+
 /** Javanese (Basa Jawa)
  * @author Kaganer
  * @author Meursault2004
