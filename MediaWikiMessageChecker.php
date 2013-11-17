@@ -277,7 +277,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 
 	/**
 	 * Imitiates the core plural form handling by removing
-	 * plural forms that start with 0= or 1=
+	 * plural forms that start with explicit number.
 	 * @since 2012-09-19
 	 * @param array $forms
 	 * @return array
@@ -285,7 +285,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	public static function removeExplicitPluralForms( array $forms ) {
 		// Handle explicit 0= and 1= forms
 		foreach ( $forms as $index => $form ) {
-			if ( isset( $form[1] ) && $form[1] === '=' ) {
+			if ( preg_match( '/^[0-9]+=/', $form ) ) {
 				unset( $forms[$index] );
 			}
 		}
