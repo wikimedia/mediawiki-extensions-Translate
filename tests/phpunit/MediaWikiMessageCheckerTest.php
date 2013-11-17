@@ -96,6 +96,12 @@ class MediaWikiMessageCheckerTest extends MediaWikiTestCase {
 				array( '0=0', '1', '0=0', '2', '1=one' ),
 				'explicit forms are removed regardless of position',
 			),
+
+			array(
+				array( '1', '2' ),
+				array( '1', '2', '500=lots' ),
+				'works for any number',
+			),
 		);
 	}
 }
