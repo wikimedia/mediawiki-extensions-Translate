@@ -20,7 +20,7 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-class GroupStatictics extends Maintenance {
+class GroupStatistics extends Maintenance {
 	/**
 	 * Array of the most spoken languages in the world.
 	 * Source: http://stats.wikimedia.org/EN/Sitemap.htm.
@@ -276,13 +276,13 @@ class GroupStatictics extends Maintenance {
 		// Select an output engine
 		switch ( $output ) {
 			case 'wiki':
-				$out = new wikiStatsOutput();
+				$out = new WikiStatsOutput();
 				break;
 			case 'text':
-				$out = new textStatsOutput();
+				$out = new TextStatsOutput();
 				break;
 			case 'csv':
-				$out = new csvStatsOutput();
+				$out = new CsvStatsOutput();
 				break;
 			default:
 				$out = new TranslateStatsOutput();
@@ -355,7 +355,7 @@ class GroupStatictics extends Maintenance {
 		}
 
 		if ( !count( $groups ) ) {
-			showUsage();
+			$this->error( 'No groups given', true );
 		}
 
 		// List of all languages.
@@ -673,29 +673,5 @@ class GroupStatictics extends Maintenance {
 	}
 }
 
-/**
- * Provides heading, summaryheading and free text addition for stats output in
- * wiki format.
- *
- * @ingroup Stats
- */
-class TranslateStatsOutput extends wikiStatsOutput {
-	function heading() {
-		echo '{| class="mw-ext-translate-groupstatistics sortable wikitable" border="2" ' .
-			'cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; border: ' .
-			'1px #AAAAAA solid; border-collapse: collapse; clear:both;" width="100%"' . "\n";
-	}
-
-	function summaryheading() {
-		echo "\n" . '{| class="mw-ext-translate-groupstatistics sortable wikitable" ' .
-			'border="2" cellpadding="4" cellspacing="0" style="background-color: #F9F9F9; ' .
-			'border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;"' . "\n";
-	}
-
-	function addFreeText( $freeText ) {
-		echo $freeText;
-	}
-}
-
-$maintClass = 'GroupStatictics';
+$maintClass = 'GroupStatistics';
 require_once RUN_MAINTENANCE_IF_MAIN;
