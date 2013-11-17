@@ -8,7 +8,7 @@
  * @license GPL-2.0+
  */
 
-class ResourcesTest extends MediaWikiTestCase {
+class ResourcesOrderTest extends MediaWikiTestCase {
 	public function testAlphabeticalOrder() {
 		require __DIR__ . '/../../Resources.php';
 
