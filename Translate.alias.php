@@ -577,7 +577,7 @@ $specialPageAliases['ko'] = array(
 	'MyLanguage' => array( '내언어' ),
 	'PageTranslationDeletePage' => array( '문서번역삭제문서' ),
 	'AggregateGroups' => array( '집계그룹' ),
-	'SearchTranslations' => array( '번역찾기' ),
+	'SearchTranslations' => array( '번역검색', '번역찾기' ),
 	'TranslateSandbox' => array( '번역자연습장관리', '번역연습장' ),
 	'TranslationStash' => array( '비공개번역' ),
 );

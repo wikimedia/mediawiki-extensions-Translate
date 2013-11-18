@@ -5469,7 +5469,7 @@ Solo le ultime versioni possono essere segnate per la traduzione.",
 Assicurarsi che abbia i tag <nowiki><translate></nowiki> e una sintassi valida.',
 	'tpt-saveok' => 'La pagina [[$1]] è stata segnalata per la traduzione con $2 {{PLURAL:$2|elemento di traduzione|elementi di traduzione}}.
 La pagina può ora essere <span class="plainlinks">[$3 tradotta]</span>.',
-	'tpt-offer-notify' => 'Puoi <span class="plainlinks">[$1 notificare ai traduttori]</span> questa pagina.',
+	'tpt-offer-notify' => 'Puoi <span class="plainlinks">[$1 notificare questa pagina]</span> ai traduttori.',
 	'tpt-badsect' => '"$1" non è un nome valido per l\'elemento $2 della traduzione.',
 	'tpt-showpage-intro' => 'Di seguito sono elencate gli elementi di traduzione nuovi, esistenti e cancellati.
 Prima di segnare questa versione per la traduzione, controllare che i cambiamenti per gli elementi di traduzione siano ridotti al minimo per evitare lavoro superfluo ai traduttori.',

@@ -1054,7 +1054,7 @@ Bitte lueg uf [[mw:Extension:PDF_Writer]] un uf http://code.pediapress.com/wiki/
 $messages['he'] = array(
 	'translategroupdescriptions-desc' => 'תיאורים של קבוצות הודעות למוצרים הנתמכים ב[http://mediawiki.org/wiki/Extension:Translate הרחבת התרגום].',
 	'translate-group-desc-nodesc' => 'אין תיאור זמין לקבוצת ההודעות הזאת.',
-	'translate-group-desc-mediawikicore' => 'קבוצת הודעות זו כוללת את ההודעות בהן נעשה שימוש בגרסת האלפא הנוכחית של מדיה־ויקי ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikicore' => 'קבוצת הודעות זו כוללת את ההודעות שמשמשות בגרסת האלפא הנוכחית של [[Translating:MediaWiki|מדיה־ויקי]] ({{CURRENTVERSION}})',
 	'translate-group-desc-mediawikimostused' => 'קבוצת הודעות זו כוללת את [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 ההודעות הנפוצות ביותר] במדיה־ויקי',
 	'translate-group-desc-mediawikiextensions' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות הנתמכות ל־[[Translating:MediaWiki|MediaWiki]]',
 	'translate-group-desc-collection' => 'מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות ל־[http://www.mediawiki.org/wiki/Extension:Collection Collection]',
