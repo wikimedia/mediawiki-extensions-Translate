@@ -159,7 +159,8 @@
 		},
 
 		render: function () {
-			var targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
+			var targetLanguage, targetLanguageDir, targetLangAttrib,
+				sourceLanguage, sourceLanguageDir,
 				$proofreadAction, $proofreadEdit, userId, reviewers, otherReviewers,
 				translatedBySelf, proofreadBySelf;
 
@@ -199,6 +200,13 @@
 					$( this ).find( '.tux-proofread-edit-label' ).addClass( 'hide' );
 				} );
 
+			if ( targetLanguage === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
+				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
+			} else {
+				targetLangAttrib = targetLanguage;
+			}
+			targetLanguageDir = $.uls.data.getDir( targetLangAttrib );
+
 			this.$message.append(
 				$( '<div>' )
 					.addClass( 'row tux-message-item-compact message' )
@@ -215,7 +223,7 @@
 						$( '<div>' )
 							.addClass( 'five columns tux-proofread-translation' )
 							.attr( {
-								lang: targetLanguage,
+								lang: targetLangAttrib,
 								dir: targetLanguageDir
 							} )
 							.text( this.message.translation || '' ),

@@ -177,19 +177,15 @@
 		 * Add a message to the message table for translation.
 		 */
 		addTranslate: function ( message ) {
-			var $message, targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
-				status,
-				statusMsg = '',
-				statusClass,
-				$messageWrapper;
-
-			sourceLanguage = this.$container.data( 'sourcelangcode' );
-			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
-			targetLanguage = this.$container.data( 'targetlangcode' );
-			targetLanguageDir = $.uls.data.getDir( targetLanguage );
-
-			status = message.properties.status;
-			statusClass = 'tux-status-' + status;
+			var $message,
+				targetLangDir, targetLangAttrib,
+				targetLanguage = this.$container.data( 'targetlangcode' ),
+				sourceLanguage = this.$container.data( 'sourcelangcode' ),
+				sourceLanguageDir = $.uls.data.getDir( sourceLanguage ),
+				status = message.properties.status,
+				statusClass = 'tux-status-' + status,
+				$messageWrapper = $( '<div>' ).addClass( 'row tux-message' ),
+				statusMsg = '';
 
 			if ( message.tags.length &&
 				$.inArray( 'optional', message.tags ) >= 0 &&
@@ -212,8 +208,13 @@
 				statusMsg = 'tux-status-' + status;
 			}
 
-			$messageWrapper = $( '<div>' )
-				.addClass( 'row tux-message' );
+			if ( targetLanguage === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
+				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
+				targetLangDir = $.uls.data.getDir( targetLangAttrib );
+			} else {
+				targetLangAttrib = targetLanguage;
+				targetLangDir = this.$container.data( 'targetlangdir' );
+			}
 
 			$message = $( '<div>' )
 				.addClass( 'row message tux-message-item ' + status )
@@ -237,8 +238,8 @@
 							$( '<span>' )
 								.addClass( 'tux-list-translation' )
 								.attr( {
-									lang: targetLanguage,
-									dir: targetLanguageDir
+									lang: targetLangAttrib,
+									dir: targetLangDir
 								} )
 								.text( message.translation || '' )
 							),
@@ -401,19 +402,15 @@
 		},
 
 		load: function () {
-			var messagegroup,
-				pageSize,
-				remaining,
-				targetLanguage,
+			var remaining,
 				query,
 				messageTable = this,
 				$messageList = $( '.tux-messagelist' ),
 				offset = this.$loader.data( 'offset' ),
-				filter = messageTable.$loader.data( 'filter' );
-
-			messagegroup = messageTable.$loader.data( 'messagegroup' );
-			pageSize = messageTable.$loader.data( 'pagesize' );
-			targetLanguage = $messageList.data( 'targetlangcode' );
+				filter = messageTable.$loader.data( 'filter' ),
+				targetLanguage = $messageList.data( 'targetlangcode' ),
+				messagegroup = messageTable.$loader.data( 'messagegroup' ),
+				pageSize = messageTable.$loader.data( 'pagesize' );
 
 			if ( offset === -1 ) {
 				return;

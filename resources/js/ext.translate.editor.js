@@ -341,6 +341,7 @@
 				$layoutActions,
 				$infoToggleIcon,
 				$messageList,
+				targetLangAttrib, targetLangDir, targetLangCode,
 				$messageTools = translateEditor.createMessageTools(),
 				canTranslate = mw.translate.canTranslate();
 
@@ -447,11 +448,20 @@
 					}
 				} );
 
+			targetLangCode = $messageList.data( 'targetlangcode' );
+			if ( targetLangCode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
+				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
+				targetLangDir = $.uls.data.getDir( targetLangAttrib );
+			} else {
+				targetLangAttrib = targetLangCode;
+				targetLangDir = $messageList.data( 'targetlangdir' );
+			}
+
 			$textarea = $( '<textarea>' )
 				.addClass( 'tux-textarea-translation' )
 				.attr( {
-					lang: $messageList.data( 'targetlangcode' ),
-					dir: $messageList.data( 'targetlangdir' )
+					lang: targetLangAttrib,
+					dir: targetLangDir
 				} )
 				.val( this.message.translation || '' );
 

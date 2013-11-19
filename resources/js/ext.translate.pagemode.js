@@ -50,12 +50,18 @@
 		},
 
 		render: function () {
-			var targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir;
+			var targetLangAttrib, targetLanguageDir,
+				sourceLanguageDir = $.uls.data.getDir( this.options.sourcelangcode );
 
-			sourceLanguage = this.options.sourcelangcode;
-			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
-			targetLanguage = this.options.targetlangcode;
-			targetLanguageDir = $.uls.data.getDir( targetLanguage );
+			if ( this.options.targetlangcode ===
+				mw.config.get( 'wgTranslateDocumentationLanguageCode' )
+			) {
+				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
+			} else {
+				targetLangAttrib = this.options.targetlangcode;
+			}
+
+			targetLanguageDir = $.uls.data.getDir( targetLangAttrib );
 
 			this.$message.append(
 				$( '<div>' )
@@ -66,14 +72,14 @@
 						$( '<div>' )
 							.addClass( 'five columns tux-pagemode-source' )
 							.attr( {
-								lang: sourceLanguage,
+								lang: this.options.sourcelangcode,
 								dir: sourceLanguageDir
 							} )
 							.html( mw.translate.formatMessageGently( this.message.definition, this.message.key ) ),
 						$( '<div>' )
 							.addClass( 'five columns tux-pagemode-translation' )
 							.attr( {
-								lang: targetLanguage,
+								lang: targetLangAttrib,
 								dir: targetLanguageDir
 							} )
 							.html( mw.translate.formatMessageGently( this.message.translation || '', this.message.key ) ),
