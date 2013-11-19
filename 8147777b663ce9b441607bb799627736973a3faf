@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291c1151_cbb669da",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-19T07:23:24Z",
+      "side": 1,
+      "message": "The variable naming gets inconsistent here.",
+      "revId": "8147777b663ce9b441607bb799627736973a3faf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_ebbb25bf",
+        "filename": "resources/js/ext.translate.pagemode.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-19T07:23:24Z",
+      "side": 1,
+      "message": "And here",
+      "revId": "8147777b663ce9b441607bb799627736973a3faf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "291c1151_0bade184",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-19T07:23:24Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "8147777b663ce9b441607bb799627736973a3faf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
