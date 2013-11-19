@@ -177,19 +177,15 @@
 		 * Add a message to the message table for translation.
 		 */
 		addTranslate: function ( message ) {
-			var $message, targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
-				status,
-				statusMsg = '',
-				statusClass,
-				$messageWrapper;
-
-			sourceLanguage = this.$container.data( 'sourcelangcode' );
-			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
-			targetLanguage = this.$container.data( 'targetlangcode' );
-			targetLanguageDir = $.uls.data.getDir( targetLanguage );
-
-			status = message.properties.status;
-			statusClass = 'tux-status-' + status;
+			var $message,
+				targetLangDir, targetLangAttrib,
+				targetLangCode = this.$container.data( 'targetlangcode' ),
+				sourceLangCode = this.$container.data( 'sourcelangcode' ),
+				sourceLangDir = $.uls.data.getDir( sourceLangCode ),
+				status = message.properties.status,
+				statusClass = 'tux-status-' + status,
+				$messageWrapper = $( '<div>' ).addClass( 'row tux-message' ),
+				statusMsg = '';
 
 			if ( message.tags.length &&
 				$.inArray( 'optional', message.tags ) >= 0 &&
@@ -212,8 +208,13 @@
 				statusMsg = 'tux-status-' + status;
 			}
 
-			$messageWrapper = $( '<div>' )
-				.addClass( 'row tux-message' );
+			if ( targetLangCode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
+				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
+				targetLangDir = $.uls.data.getDir( targetLangAttrib );
+			} else {
+				targetLangAttrib = targetLangCode;
+				targetLangDir = this.$container.data( 'targetlangdir' );
+			}
 
 			$message = $( '<div>' )
 				.addClass( 'row message tux-message-item ' + status )
@@ -224,8 +225,8 @@
 							$( '<span>' )
 								.addClass( 'tux-list-source' )
 								.attr( {
-									lang: sourceLanguage,
-									dir: sourceLanguageDir
+									lang: sourceLangCode,
+									dir: sourceLangDir
 								} )
 								.text( message.definition ),
 							// Bidirectional isolation.
@@ -237,8 +238,8 @@
 							$( '<span>' )
 								.addClass( 'tux-list-translation' )
 								.attr( {
-									lang: targetLanguage,
-									dir: targetLanguageDir
+									lang: targetLangAttrib,
+									dir: targetLangDir
 								} )
 								.text( message.translation || '' )
 							),
@@ -401,19 +402,15 @@
 		},
 
 		load: function () {
-			var messagegroup,
-				pageSize,
-				remaining,
-				targetLanguage,
+			var remaining,
 				query,
 				messageTable = this,
 				$messageList = $( '.tux-messagelist' ),
 				offset = this.$loader.data( 'offset' ),
-				filter = messageTable.$loader.data( 'filter' );
-
-			messagegroup = messageTable.$loader.data( 'messagegroup' );
-			pageSize = messageTable.$loader.data( 'pagesize' );
-			targetLanguage = $messageList.data( 'targetlangcode' );
+				filter = messageTable.$loader.data( 'filter' ),
+				targetLangCode = $messageList.data( 'targetlangcode' ),
+				messagegroup = messageTable.$loader.data( 'messagegroup' ),
+				pageSize = messageTable.$loader.data( 'pagesize' );
 
 			if ( offset === -1 ) {
 				return;
@@ -427,7 +424,7 @@
 
 			messageTable.loading = true;
 
-			mw.translate.getMessages( messagegroup, targetLanguage, offset, pageSize, filter )
+			mw.translate.getMessages( messagegroup, targetLangCode, offset, pageSize, filter )
 				.done( function ( result ) {
 					var messages = result.query.messagecollection,
 						state;
@@ -457,7 +454,7 @@
 					} );
 
 					state = result.query.metadata && result.query.metadata.state;
-					$( '.tux-workflow' ).workflowselector( messagegroup, targetLanguage, state );
+					$( '.tux-workflow' ).workflowselector( messagegroup, targetLangCode, state );
 
 					// Dynamically loaded messages should pass the search filter if present.
 					query = $( '.tux-message-filter-box' ).val();

@@ -159,7 +159,8 @@
 		},
 
 		render: function () {
-			var targetLanguage, targetLanguageDir, sourceLanguage, sourceLanguageDir,
+			var targetLangCode, targetLangDir, targetLangAttrib,
+				sourceLangCode, sourceLangDir,
 				$proofreadAction, $proofreadEdit, userId, reviewers, otherReviewers,
 				translatedBySelf, proofreadBySelf;
 
@@ -174,10 +175,10 @@
 			translatedBySelf = ( this.message.properties['last-translator-text'] === mw.user.getName() );
 			proofreadBySelf = $.inArray( userId, reviewers ) > -1;
 
-			sourceLanguage = this.options.sourcelangcode;
-			sourceLanguageDir = $.uls.data.getDir( sourceLanguage );
-			targetLanguage = this.options.targetlangcode;
-			targetLanguageDir = $.uls.data.getDir( targetLanguage );
+			sourceLangCode = this.options.sourcelangcode;
+			sourceLangDir = $.uls.data.getDir( sourceLangCode );
+			targetLangCode = this.options.targetlangcode;
+			targetLangDir = $.uls.data.getDir( targetLangCode );
 
 			$proofreadAction = $( '<div>' )
 				.attr( 'title', mw.msg( 'tux-proofread-action-tooltip' ) )
@@ -199,6 +200,13 @@
 					$( this ).find( '.tux-proofread-edit-label' ).addClass( 'hide' );
 				} );
 
+			if ( targetLangCode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
+				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
+			} else {
+				targetLangAttrib = targetLangCode;
+			}
+			targetLangDir = $.uls.data.getDir( targetLangAttrib );
+
 			this.$message.append(
 				$( '<div>' )
 					.addClass( 'row tux-message-item-compact message' )
@@ -208,15 +216,15 @@
 						$( '<div>' )
 							.addClass( 'five columns tux-proofread-source' )
 							.attr( {
-								lang: sourceLanguage,
-								dir: sourceLanguageDir
+								lang: sourceLangCode,
+								dir: sourceLangDir
 							} )
 							.text( this.message.definition ),
 						$( '<div>' )
 							.addClass( 'five columns tux-proofread-translation' )
 							.attr( {
-								lang: targetLanguage,
-								dir: targetLanguageDir
+								lang: targetLangAttrib,
+								dir: targetLangDir
 							} )
 							.text( this.message.translation || '' ),
 						$( '<div>' )
