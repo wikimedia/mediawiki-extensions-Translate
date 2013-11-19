@@ -601,13 +601,15 @@ See definition on [[mw:Help:Extension:Translate/Glossary]].
 Parameters:
 * $1 - translatable-page title',
 	'pt-locked-page' => 'See definition on [[mw:Help:Extension:Translate/Glossary]].',
-	'pt-deletepage-lang-title' => 'Used as page title.
+	'pt-deletepage-lang-title' => 'Used as page title. Parameters:
+* $1 - page title
 
 See definition on [[mw:Help:Extension:Translate/Glossary]].
 
 See also:
 * {{msg-mw|Pt-deletepage-full-title}}',
-	'pt-deletepage-full-title' => 'Used as page title.
+	'pt-deletepage-full-title' => 'Used as page title. Parameters:
+* $1 - page title
 
 See definition on [[mw:Help:Extension:Translate/Glossary]].
 

@@ -791,7 +791,8 @@ These messages will only affect the interface on {{SITENAME}}.',
 	'translate-statsf-days' => 'Label in [[Special:TranslationStats]]',
 	'translate-statsf-start' => 'Label in [[Special:TranslationStats]]',
 	'translate-statsf-scale' => 'Used on [[Special:TranslationStats]].',
-	'translate-statsf-scale-months' => 'Option at [[Special:TranslationStats]]',
+	'translate-statsf-scale-months' => 'Option at [[Special:TranslationStats]].
+{{Identical|Month}}',
 	'translate-statsf-scale-weeks' => 'Option at [[Special:TranslationStats]].
 {{Identical|Week}}',
 	'translate-statsf-scale-days' => 'Radio button label on [[Special:TranslationStats|form]] for generating graph.
@@ -801,7 +802,8 @@ These messages will only affect the interface on {{SITENAME}}.',
 	'translate-statsf-count' => 'Used on [[Special:TranslationStats]].',
 	'translate-statsf-count-edits' => 'Radio button label on [[Special:TranslationStats|form]] for generating graph.',
 	'translate-statsf-count-users' => 'Radio button label on [[Special:TranslationStats|form]] for generating graph.',
-	'translate-statsf-count-registrations' => 'Option at [[Special:TranslationStats]]',
+	'translate-statsf-count-registrations' => 'Option at [[Special:TranslationStats]].
+{{Identical|New user}}',
 	'translate-statsf-count-reviews' => 'Radio button label on [[Special:TranslationStats|form]] for generating graph.',
 	'translate-statsf-count-reviewers' => 'Radio button label on [[Special:TranslationStats|form]] for generating graph.
 {{Identical|Reviewer}}',
@@ -987,7 +989,8 @@ Introduction to special page. See screenshot. Parameters:
 	'translate-import-load' => 'Used in [[Special:ImportTranslations]].
 {{doc-screenshot|Import-1.png|twn}}
 {{Identical|Load file}}',
-	'translate-import-err-dl-failed' => 'Used as error message in [[Special:ImportTranslations]].
+	'translate-import-err-dl-failed' => 'Used as error message in [[Special:ImportTranslations]]. Parameters:
+* $1 - error message
 {{Related|Translate-import-err}}',
 	'translate-import-err-ul-failed' => 'Used as error message in [[Special:ImportTranslations]].
 {{Related|Translate-import-err}}',
