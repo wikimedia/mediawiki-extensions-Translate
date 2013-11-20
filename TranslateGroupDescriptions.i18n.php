@@ -1337,7 +1337,7 @@ Vedi [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] è un editor di OpenStreetMap basato su Flash',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] è una collezione di strumenti per modificare siti MediaWiki',
 	'bw-desc-shapado' => 'Gruppo di messaggi per la piattaforma di domande e risposte [[Translating:Shapado|Shapado]]',
-	'translate-group-desc-tsint' => 'Un gruppo di messaggi per [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], il sistema di localizzazione degli strumenti del [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|aiuto]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition dettagli tecnici]</span>)', # Fuzzy
+	'translate-group-desc-tsint' => 'Un gruppo di messaggi per [[Translating:Intuition|Intuition]], il sistema di localizzazione degli strumenti del [//toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Intuition|supporto]]</span>)',
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] è uno strumento per caricare file su Wikimedia Commons e sugli altri progetti Wikimedia',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] è un servizio che mostra percorsi per escursionismo, ciclismo, mountain bike e pattinaggio in tutto il mondo. Usa la licenza GNU GPL.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] è in grado di trovare velocemente gli autori di una pagina in un sito di Wikimedia.',

@@ -11076,7 +11076,6 @@ Valinnaiset viestit on käännettävä vain kielille, joilla on erikoisvaatimuks
 	'translate-ext-url' => '<hr />Verkkosivu: $1',
 	'translate-optional' => '(valinnainen)',
 	'translate-ignored' => '(ei-käännettävä)',
-	'translate-edit-jsopen' => 'muokkaa',
 	'translate-edit-title' => 'Muokkaa sivua $1',
 	'translate-edit-definition' => 'Viestin määritelmä',
 	'translate-edit-translation' => 'Käännös',
@@ -11090,7 +11089,6 @@ Valinnaiset viestit on käännettävä vain kielille, joilla on erikoisvaatimuks
 	'translate-edit-tmmatch-source' => 'Käännöksen lähdeteksti: $1',
 	'translate-edit-tmmatch' => 'Vastaavuus $1%',
 	'translate-use-suggestion' => 'Korvaa nykyinen käännös tällä ehdotuksella.',
-	'translate-edit-tab-list' => 'Viestiluettelo',
 	'translate-edit-nopermission' => 'Viestien kääntämiseen vaaditaan lupa.',
 	'translate-edit-askpermission' => 'Pyydä lupaa',
 	'translate-magic-pagename' => 'Laajennettu MediaWikin kääntäminen',
@@ -11151,7 +11149,6 @@ Viestin käännökset näillä kielillä näkyvät kääntäessäsi.
 Asetuksen oletusarvoiset kielet riippuvat kielestä, jolle olet kääntämässä.',
 	'translate-pref-editassistlang-bad' => 'Listassa on kelpaamaton kielikoodi:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Parannettu käännöstyökalu (JavaScript)',
 	'right-translate' => 'Kääntää käännöstyökalulla',
 	'right-translate-manage' => 'Hallinnoida viestiryhmiä',
 	'action-translate-manage' => 'hallita viestiryhmiä',
@@ -11250,7 +11247,6 @@ Alleviivauksen väri kertoo, milloin kääntäjä on viimeksi kääntänyt tää
 	'translate-smg-nochanges' => 'Ei muutoksia käsiteltäväksi.',
 	'translate-smg-submit' => 'Lähetä muutokset käsiteltäviksi',
 	'translate-smg-submitted' => 'Viestien määritelmät on päivitetty. Muutoksia käsitellään taustalla.',
-	'translate-smg-postponed' => 'Joitakin muutoksia ei voitu käsitellä. [[{{FULLPAGENAME}}|Yritä uudelleen]].',
 	'translate-smg-left' => 'Viestin nykyinen sisältö',
 	'translate-smg-right' => 'Tulevat muutokset',
 	'translate-manage-import-diff' => 'Viesti $1 | Toiminnot: $2',
@@ -11279,7 +11275,7 @@ Jos valitset muutosten ohittamisen, ne ylikirjoitetaan seuraavalla vientikerrall
 	'importtranslations' => 'Käännösten tuonti',
 	'translate-import-from-local' => 'Paikallinen tiedosto',
 	'translate-import-load' => 'Tallenna tiedosto',
-	'translate-import-err-dl-failed' => 'Tiedostoa ei voitu noutaa:
+	'translate-import-err-dl-failed' => 'Tiedoston noutaminen epäonnistui:
 $1',
 	'translate-import-err-ul-failed' => 'Tiedoston lähettäminen epäonnistui',
 	'translate-import-err-invalid-title' => 'Annettu tiedostonnimi <nowiki>$1</nowiki> on virheellinen.',
@@ -11422,7 +11418,7 @@ Soveltuu hyvin oikolukemiseen.', # Fuzzy
 	'tux-empty-list-translated-action' => 'Käännä',
 	'tux-empty-no-messages-to-display' => 'Ei näytettäviä viestejä.',
 	'tux-empty-show-optional-messages' => 'Näytä valinnaiset viestit',
-	'tux-empty-no-outdated-messages' => 'Ei kääntämättömiä viestejä',
+	'tux-empty-no-outdated-messages' => 'Ei päivittämistä vaativia viestejä',
 	'tux-empty-list-other' => 'Ei käännettävää',
 	'tux-empty-list-other-guide' => 'Voit auttaa arvioimalla käännöksiä', # Fuzzy
 	'tux-empty-list-other-action' => 'Oikolue käännöksiä', # Fuzzy
