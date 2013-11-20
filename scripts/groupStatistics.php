@@ -300,10 +300,10 @@ class GroupStatistics extends Maintenance {
 		// Check if score should be reported and prepare weights
 		$most = $this->getOption( 'most' );
 		$weights = array();
-		if ( $most && isset( $localisedWeights[$most] ) ) {
+		if ( $most && isset( $this->localisedWeights[$most] ) ) {
 			$reportScore = true;
 
-			foreach ( $localisedWeights[$most] as $weight ) {
+			foreach ( $this->localisedWeights[$most] as $weight ) {
 				$weights[] = $weight;
 			}
 		}
@@ -316,16 +316,16 @@ class GroupStatistics extends Maintenance {
 			$l10n = true;
 		}
 
-		$wmfscore = $this->hasOption( 'wmfscore ' );
+		$wmfscore = $this->hasOption( 'wmfscore' );
 
 		// Get groups from input
 		$groups = array();
 		if ( $reportScore ) {
 			$reqGroups = array_keys( $this->localisedWeights[$most] );
-		} elseif ( !$wmfscore ) {
-			$reqGroups = array_map( 'trim', explode( ',', $this->getOption( 'groups' ) ) );
-		} else {
+		} elseif ( $wmfscore ) {
 			$reqGroups = array_keys( $this->localisedWeights['wikimedia'] );
+		} else {
+			$reqGroups = array_map( 'trim', explode( ',', $this->getOption( 'groups' ) ) );
 		}
 
 		// List of all groups
@@ -448,12 +448,12 @@ class GroupStatistics extends Maintenance {
 				}
 
 				// Do not calculate if we do not need it for anything.
-				if ( $wmfscore && isset( $wikimediaCodeMap[$code] ) && $wikimediaCodeMap[$code] == '' ) {
+				if ( $wmfscore && isset( $this->wikimediaCodeMap[$code] ) && $this->wikimediaCodeMap[$code] == '' ) {
 					continue;
 				}
 
 				// If --most is set, skip all other
-				if ( $most && !isset( $mostSpokenLanguages[$code] ) ) {
+				if ( $most && !isset( $this->mostSpokenLanguages[$code] ) ) {
 					continue;
 				}
 
@@ -485,12 +485,12 @@ class GroupStatistics extends Maintenance {
 			}
 
 			// Skip unneeded
-			if ( $wmfscore && isset( $wikimediaCodeMap[$code] ) && $wikimediaCodeMap[$code] == '' ) {
+			if ( $wmfscore && isset( $this->wikimediaCodeMap[$code] ) && $this->wikimediaCodeMap[$code] == '' ) {
 				continue;
 			}
 
 			// If --most is set, skip all other
-			if ( $most && !isset( $mostSpokenLanguages[$code] ) ) {
+			if ( $most && !isset( $this->mostSpokenLanguages[$code] ) ) {
 				continue;
 			}
 
@@ -582,8 +582,8 @@ class GroupStatistics extends Maintenance {
 					// Multiple variants can be used for the same wiki.
 					// Store the scores in an array and output them later
 					// when they can be averaged.
-					if ( isset( $wikimediaCodeMap[$code] ) ) {
-						$wmfcode = $wikimediaCodeMap[$code];
+					if ( isset( $this->wikimediaCodeMap[$code] ) ) {
+						$wmfcode = $this->wikimediaCodeMap[$code];
 					} else {
 						$codeparts = explode( '-', $code );
 						$wmfcode = $codeparts[0];
