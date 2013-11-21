@@ -142,8 +142,12 @@ class StringMatcher implements StringMangler {
 	}
 
 	/**
-	 * @param string $data
-	 * @return string|string[]
+	 * Mangles the input. Input can either be a plain string, a list of strings
+	 * or an associative array. In the last case the keys of the array are
+	 * mangled.
+	 *
+	 * @param string|string[]|array $data
+	 * @return string|string[]|array
 	 * @throws MWException
 	 */
 	public function mangle( $data ) {
@@ -220,15 +224,17 @@ class StringMatcher implements StringMangler {
 	}
 
 	/**
-	 * Mangles or unmangles list of message keys.
-	 * @param string[] $array Message keys.
+	 * Mangles or unmangles list of strings. If an associative array is given,
+	 * the keys of the array will be mangled. For lists the values are mangled.
+	 *
+	 * @param string[]|array $array Strings.
 	 * @param bool $reverse Direction of mangling or unmangling.
-	 * @return string[] (Un)mangled message keys.
+	 * @return string[]|array (Un)mangled strings.
 	 */
 	protected function mangleArray( array $array, $reverse = false ) {
 		$temp = array();
 
-		if ( isset( $array[0] ) ) {
+		if ( !$this->isAssoc( $array ) ) {
 			foreach ( $array as $key => &$value ) {
 				$value = $this->mangleString( $value, $reverse );
 				$temp[$key] = $value; // Assign a reference
@@ -241,5 +247,15 @@ class StringMatcher implements StringMangler {
 		}
 
 		return $temp;
+	}
+
+	protected function isAssoc( array $array ) {
+		$assoc = (bool)count( array_filter( array_keys( $array ), 'is_string' ) );
+		if ( $assoc ) {
+			return true;
+		}
+
+		// Also check that the indexing starts from zero
+		return array_key_exists( 0, $array );
 	}
 }
