@@ -413,16 +413,19 @@ $2에 와서 조금 더 번역을 해주세요.',
 	'tsb-search-requests' => '검색 요청',
 	'tsb-accept-button-label' => '승인',
 	'tsb-reject-button-label' => '거부',
+	'tsb-accept-all-button-label' => '모두 승인',
+	'tsb-reject-all-button-label' => '모두 거절',
 	'tsb-reminder-link-text' => '이메일 알림 보내기',
 	'tsb-translations-source' => '출처',
 	'tsb-translations-user' => '사용자 번역',
 	'tsb-translations-current' => '기존 번역',
 	'translationstash' => '환영합니다',
 	'translate-translationstash-welcome' => '$1님 환영합니다, 당신은 이제 번역자입니다.',
-	'translate-translationstash-welcome-note' => '무작위로 선택된 어떤 메시지를 번역하여 번역 도구에 익숙해지세요.', # Fuzzy
+	'translate-translationstash-welcome-note' => '번역 도구에 익숙해지세요. 몇개의 메시지를 번역하고, 당신이 좋아하는 위키에서 번역자 권한을 얻어 위키에 기여하세요.',
 	'translate-translationstash-initialtranslation' => '내 초기 번역',
 	'translate-translationstash-skip-button-label' => '다른 문서',
 	'tsb-limit-reached-title' => '당신의 번역에 감사드립니다.',
+	'tsb-limit-reached-body' => '새 번역자를 위한 번역 제한에 도달했습니다. 저희가 당신의 계정을 확인하고 업그레이드한 후에, 제한 없이 번역하실 수 있습니다.',
 );
 
 /** Colognian (Ripoarisch)

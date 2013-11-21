@@ -4787,6 +4787,7 @@ Jenož aktualne wersije hodźa so za přełožowanje markěrować.',
 Zaswěsć, zo ma taflički <nowiki><translate></nowiki> a płaćiwu syntaksu.',
 	'tpt-saveok' => 'Strona [[$1]] je so za přełožowanje z $2 {{PLURAL:$2|přełožujomnej jednotku|přełožujomnej jednotkomaj|přełožujomnymi jednotkami|přełožujomnymi jednotkami}} markěrowała.
 Strona hodźi so nětko <span class="plainlinks">[$3 přełožować]</span>.',
+	'tpt-offer-notify' => 'Móžeš wo tutej stronje <span class="plainlinks">[$1 přełožowarjow informować]</span>.',
 	'tpt-badsect' => '"$1" płaćiwe mjeno za přełožowansku jednotku $2 njeje.',
 	'tpt-showpage-intro' => 'Deleka su nowe, eksistowace a zhašane přełožowanske jednotki nalistowane.
 Prjedy hač tutu wersiju za přełožowanje markěruješ, kontroluj, hač změny přełožowanskich jednotkow su miniměrowane, zo by njetrěbne dźěło za přełožowarjow wobešoł.',
@@ -4824,6 +4825,7 @@ ale aktualna wersija njehodźi so za přełožowanje markěrować.',
 	'tpt-translation-intro' => 'Tuta strona je <span class="plainlinks">[$1 přełožena wersija]</span> strony [[$2]] a $3 % přełožka je dokónčene a přełožk je aktualny.',
 	'tpt-languages-legend' => 'Druhe rěče:',
 	'tpt-languages-zero' => 'Přełožowanje za tutu rěč započeć',
+	'tpt-tab-translate' => 'Přełožić',
 	'tpt-target-page' => 'Tuta strona njeda so manulenje aktualizować.
 Tuta strona je přełožk strony [[$1]] a přełožk hodźi so z pomocu [$2 Přełožić] aktualizować.',
 	'tpt-unknown-page' => 'Tutón mjenowy rum je za přełožki wobsahowych stronow wuměnjeny.

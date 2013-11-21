@@ -14677,12 +14677,12 @@ $messages['hsb'] = array(
 	'translate-taskui-view' => 'Wšě zdźělenki pokazać',
 	'translate-taskui-untranslated' => 'Njepřełožene zdźělenki pokazać',
 	'translate-taskui-optional' => 'Opcionalne zdźělenki pokazać',
-	'translate-taskui-acceptqueue' => 'Jenož zdźělenki, kotrež akceptuju', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Jenož zdźělenki, kotrež móžu jako přepruwowane markěrować',
 	'translate-taskui-reviewall' => 'Wšě přełožki přepruwować',
 	'translate-taskui-export-to-file' => 'Do systemoweho formata eksportować',
 	'translate-taskui-export-as-po' => 'Za přełožowanje offline eksportować',
 	'translate-taction-translate' => 'Přełožić',
-	'translate-taction-proofread' => 'Tekst kontrolować', # Fuzzy
+	'translate-taction-proofread' => 'Přepruwować',
 	'translate-taction-lstats' => 'Rěčna statistika',
 	'translate-taction-mstats' => 'Statistika zdźělenskeje skupiny',
 	'translate-taction-export' => 'Eksportować',
@@ -14714,7 +14714,6 @@ kaž na přikład njewužiwanje mjezerow abo transliteraciju swójskich mjenow. 
 	'translate-ext-url' => '<hr />Websydło: $1',
 	'translate-optional' => '(opcionalny)',
 	'translate-ignored' => '(ignorowany)',
-	'translate-edit-jsopen' => 'wobdźěłać',
 	'translate-edit-title' => '"$1" wobdźěłać',
 	'translate-edit-definition' => 'Definicija zdźělenki',
 	'translate-edit-translation' => 'Přełožk',
@@ -14728,7 +14727,6 @@ kaž na přikład njewužiwanje mjezerow abo transliteraciju swójskich mjenow. 
 	'translate-edit-tmmatch-source' => 'Žórłowy tekst přełožka: $1',
 	'translate-edit-tmmatch' => '$1 % wotpowědowanja',
 	'translate-use-suggestion' => 'Aktualny přełožk přez tutón namjet wuměnić',
-	'translate-edit-tab-list' => 'Lisćina zdźělenkow',
 	'translate-edit-nopermission' => 'Trjebaš prawo, zo by móhł zdźělenki přełožować.',
 	'translate-edit-askpermission' => 'Prawo požadać',
 	'translate-magic-pagename' => 'Rozšěrjeny přełožk MediaWiki',
@@ -14782,7 +14780,6 @@ Přełožk powěsće w tutych rěčach pokazuja so, hdyž přełožuješ.
 Standardna lisćina rěčow wotwisuje wot twojeje rěče.',
 	'translate-pref-editassistlang-bad' => 'Njepłaćiwy rěčny kod w lisćinje:
 <nowiki>$1</nowiki>',
-	'translate-pref-jsedit' => 'Polěpšeny přełožowanski editor (JavaScript)',
 	'right-translate' => 'Z pomocu powjercha přełožowanja wobdźěłać',
 	'right-translate-manage' => 'Zdźělenske skupiny zrjadować',
 	'action-translate-manage' => 'zdźělenske skupiny zrjadować',
@@ -14881,7 +14878,6 @@ Barba podšmórnjenja přełožowarskeho mjena pokazuje, kak aktiwny přełožow
 	'translate-smg-nochanges' => 'Njejsu žane změny za předźěłanje.',
 	'translate-smg-submit' => 'Změny na předźěłowanje pósłać',
 	'translate-smg-submitted' => 'Definicije zdźělenkow su so zaktualizowali. Změny so w pozadku předźěłuja.',
-	'translate-smg-postponed' => 'Někotre změny njedachu so předźěłać. [[{{FULLPAGENAME}}|Spytaj hišće raz]].',
 	'translate-smg-left' => 'Powěsćowy wobsah we wikiju',
 	'translate-smg-right' => 'Dochadźace změny',
 	'translate-manage-import-diff' => 'Zdźělenka $1 | akcije: $2',
@@ -14906,7 +14902,7 @@ Prošu přepruwować.',
 	'translate-manage-submit' => 'Wuwjesć',
 	'translate-manage-intro-other' => 'Slěduje lisćina přełožowanskich změnow w rěči $1.
 Prošu přepruwuj změny a wubjer akciju, kotruž chceš za kóždy přełožk wuwjesć.
-Jeli změny ignoruješ, přepisaja so při přichodnym eksportowanju.', # Fuzzy
+Jeli změny ignoruješ, je tuta akcija jenož nachwilna.',
 	'importtranslations' => 'Přełožki importować',
 	'translate-import-from-local' => 'Lokalne nahraće dataje:',
 	'translate-import-load' => 'Dataju začitać',
@@ -14945,26 +14941,30 @@ Podrobnosće: $1',
 	'translate-searchprofile-tooltip' => 'We wšěch přełožkach pytać',
 	'translate-search-languagefilter' => 'Po rěči filtrować:',
 	'translate-search-nofilter' => 'Žane filtrowanje',
-	'translate-messagereview-submit' => 'Akceptować', # Fuzzy
-	'translate-messagereview-progress' => 'Akceptuje so...', # Fuzzy
-	'translate-messagereview-failure' => 'Akceptowanje... je so njeporadźiło: $1', # Fuzzy
-	'translate-messagereview-done' => 'Akceptowany', # Fuzzy
-	'translate-messagereview-reviews' => 'Wot {{PLURAL:$1|jednoho wužiwarja|$1 wužiwarjow|$1 wužiwarjow|$1 wužiwarjow}} akceptowany', # Fuzzy
-	'translate-messagereview-reviewswithyou' => 'Wot {{PLURAL:$1|tebje|$1 wužiwarjow inkluziwnje tebje|$1 wužiwarjow inkluziwnje tebje|$1 wužiwarjow inkluziwnje tebje}} akceptowany', # Fuzzy
+	'translate-messagereview-submit' => 'Jako přepruwowany markěrować',
+	'translate-messagereview-progress' => 'Markěruje so jako přepruwowany...',
+	'translate-messagereview-failure' => 'Markěrowanje jako přepruwowany je so njeporadźiło: $1',
+	'translate-messagereview-done' => 'Přepruwowany',
+	'translate-messagereview-reviews' => 'Wot {{PLURAL:$1|jednoho wužiwarja|$1 wužiwarjow}} přepruwowany',
+	'translate-messagereview-reviewswithyou' => 'Wot {{PLURAL:$1|tebje|$1 wužiwarjow inkluziwnje tebje}} přepruwowany',
 	'api-error-invalidrevision' => 'Přełožk njeje so namakał',
 	'api-error-unknownmessage' => 'Zdźělenka njeje so namakała',
 	'api-error-fuzzymessage' => 'Přełožk je jako zestarjeny markěrowany',
-	'api-error-owntranslation' => 'Njemóžeš swójske přełožki akceptować.', # Fuzzy
-	'translate-messagereview-no-fuzzy' => 'Zestarjene přełožki njehodźa so akceptować.', # Fuzzy
-	'translate-messagereview-no-own' => 'Njemóžeš swójski přełožk akceptować.', # Fuzzy
-	'translate-messagereview-doit' => 'Tutón přełožk jako korektny akceptować.', # Fuzzy
+	'api-error-owntranslation' => 'Njemóžeš swójske přełožki jako přepruwowane markěrować.',
+	'translate-messagereview-no-fuzzy' => 'Zestarjene přełožki njehodźa so jako přepruwowane markěrować.',
+	'translate-messagereview-no-own' => 'Njemóžeš swójske přełožki jako přepruwowane markěrować.',
+	'translate-messagereview-doit' => 'Tutón přełožk jako přepruwowany markěrować.',
 	'group-translate-proofr' => 'Kontrolerojo přełožkow',
 	'group-translate-proofr-member' => '{{GENDER:$1|kontroler přełožkow|kontrolerka přełožkow}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Kontrolerojo přełožkow',
 	'log-name-translationreview' => 'Protokol přepruwowanjow přełožkow',
 	'log-description-translationreview' => 'Protokol wšěch přepruwowanjow k přełožkam a zdźělenskim skupinam.',
-	'logentry-translationreview-message' => '$1 je přełožk $3 {{GENDER:$2|akceptował|akceptowała}}', # Fuzzy
+	'logentry-translationreview-message' => '$1 je přełožk $3 {{GENDER:$2|přepruwował|přepruwowała}}',
 	'logentry-translationreview-group' => '$1 je  status přełožkow w rěči $4 strony $3 wot $6 do $7 {{GENDER:$2|změnił|změniła}}',
+	'group-translate-sandboxed' => 'Njewobkrućeni přełožowarjo',
+	'group-translate-sandboxed-member' => '{{GENDER:$1|njewobkrućeny přełožowar|njewobkrućena přełožowarka}}',
+	'right-translate-sandboxmanage' => 'Wužiwarjow hrajkanišća zrjadować',
+	'action-translate-sandboxmanage' => 'wužiwarjow hrajkanišća zrjadować',
 	'translate-workflow-state-' => '(njenastajeny)',
 	'translate-workflowstatus' => 'Status: $1',
 	'translate-workflow-set-do' => 'Nastajić',
@@ -14978,7 +14978,7 @@ Podrobnosće: $1',
 Statusy definuja so w konfiguraciskej wariabli $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Najnowše přełožki',
 	'translate-dynagroup-recent-desc' => 'Tuta zdźělenska skupina pokazuje wšě aktualne přełožki do tuteje rěče.
-Je najwužitnišo za korigowanske nadawki.', # Fuzzy
+Je najwužitniša za přepruwowanske nadawki.',
 	'translate-dynagroup-additions-label' => 'Aktualne přidawki',
 	'translate-dynagroup-additions-desc' => 'Tuta zdźělenska skupina pokazuje nowe a změnjene zdźělenki.',
 	'translate-dynagroup-by' => 'Přełožk wot {{GENDER:$1|$1}}',
@@ -14996,11 +14996,11 @@ Je najwužitnišo za korigowanske nadawki.', # Fuzzy
 	'tux-tab-untranslated' => 'Njepřełoženy',
 	'tux-tab-outdated' => 'Zestarjeny',
 	'tux-tab-translated' => 'Přełoženy',
-	'tux-tab-unproofread' => 'Njekorigowany', # Fuzzy
+	'tux-tab-unproofread' => 'Njepřepruwowany',
 	'tux-edit' => 'Wobdźěłać',
 	'tux-status-optional' => 'Opcionalny',
 	'tux-status-fuzzy' => 'Zestarjeny',
-	'tux-status-proofread' => 'Tekst kontrolować', # Fuzzy
+	'tux-status-proofread' => 'Přepruwowany',
 	'tux-status-translated' => 'Přełoženy',
 	'tux-status-saving' => 'Składuje so...',
 	'tux-status-unsaved' => 'Njeskładowany',
@@ -15009,10 +15009,11 @@ Je najwužitnišo za korigowanske nadawki.', # Fuzzy
 	'tux-editor-discard-changes-button-label' => 'Změny zaćisnyć',
 	'tux-editor-save-button-label' => 'Přełožk składować',
 	'tux-editor-skip-button-label' => 'K přichodnemu',
+	'tux-editor-cancel-button-label' => 'Přetorhnyć',
 	'tux-editor-confirm-button-label' => 'Přełožk wobkrućić',
 	'tux-editor-shortcut-info' => 'Tłóč "$1", zo by składował abo "$2", zo by k přichodnej zdźělence dóšoł',
-	'tux-editor-edit-desc' => 'Wopisanje wobdźěłać', # Fuzzy
-	'tux-editor-add-desc' => 'Wopisanje přidać', # Fuzzy
+	'tux-editor-edit-desc' => 'Dokumentaciju wobdźěłać',
+	'tux-editor-add-desc' => 'Dokumentaciju přidać',
 	'tux-editor-suggestions-title' => 'Namjety',
 	'tux-editor-in-other-languages' => 'W druhich rěčach',
 	'tux-editor-need-more-help' => 'Trjebaš wjace pomocy?',
@@ -15025,11 +15026,11 @@ Je najwužitnišo za korigowanske nadawki.', # Fuzzy
 	'tux-editor-message-desc-more' => 'Wjace sej wobhladać',
 	'tux-editor-message-desc-less' => 'Mjenje sej wobhladać',
 	'tux-editor-clear-translated' => 'Přełožki schować',
-	'tux-editor-proofreading-mode' => 'Korigować', # Fuzzy
+	'tux-editor-proofreading-mode' => 'Přepruwować',
 	'tux-editor-translate-mode' => 'Lisćina',
 	'tux-editor-proofreading-hide-own-translations' => 'Twoje přełožki schować',
 	'tux-editor-proofreading-show-own-translations' => 'Twoje přełožki pokazać',
-	'tux-proofread-action-tooltip' => 'Přełožk akceptować', # Fuzzy
+	'tux-proofread-action-tooltip' => 'Jako přepruwowany markěrować',
 	'tux-proofread-edit-label' => 'Wobdźěłać',
 	'tux-editor-page-mode' => 'Strona',
 	'tux-editor-outdated-warning' => 'Tutón přełožk dyrbi so snano aktualizować.',
@@ -15050,17 +15051,28 @@ Je najwužitnišo za korigowanske nadawki.', # Fuzzy
 	'tux-empty-list-translated' => 'Žane přełožene zdźělenki',
 	'tux-empty-list-translated-guide' => 'Móžeš pomhać přełožować',
 	'tux-empty-list-translated-action' => 'Přełožić',
+	'tux-empty-no-messages-to-display' => 'Žane powěsće za zwobraznjenje',
+	'tux-empty-there-are-optional' => 'Su opcionalne zdźělenki, kotrež so w lisćinje njepokazuja',
+	'tux-empty-show-optional-messages' => 'Opcionalne zdźělenki pokazać',
+	'tux-empty-no-outdated-messages' => 'Žane zestarjene powěsće',
+	'tux-empty-nothing-to-proofread' => 'Za přepruwowanje powěsće njejsu',
+	'tux-empty-you-can-help-providing' => 'Móžeš pomhać, nowe přełožki přinošować',
+	'tux-empty-nothing-new-to-proofread' => 'Njeje ničo nowe za přepruwowanje',
+	'tux-empty-you-can-review-already-proofread' => 'Móžeč přełožki přepruwować, kotrež su hižo druzy přepruwowali.',
 	'tux-empty-list-other' => 'Njeje ničo za přełožowanje',
-	'tux-empty-list-other-guide' => 'Móžeš pomhać, eksistowace přełožki přepruwować', # Fuzzy
-	'tux-empty-list-other-action' => 'Přełožki kontrolować', # Fuzzy
+	'tux-empty-list-other-guide' => 'Móžeš pomhać, eksistowace přełožki přepruwować',
+	'tux-empty-list-other-action' => 'Přełožki přepruwować',
 	'tux-empty-list-other-link' => 'Wšě zdźělenki pokazać',
 	'tux-editor-close-tooltip' => 'Začinić',
 	'tux-editor-expand-tooltip' => 'Pokazać',
 	'tux-editor-collapse-tooltip' => 'Schować',
+	'tux-editor-message-tools-history' => 'Historija',
+	'tux-editor-message-tools-translations' => 'Wšě přełožki',
 	'tux-editor-loading' => 'Začituje so ...',
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|dalša rěč|dalšej rěči|dalše rěče|dalšich rěčow}}',
-	'translate-statsbar-tooltip' => '$1 % přełoženy, $2 % skorigowany', # Fuzzy
-	'translate-statsbar-tooltip-with-fuzzy' => '$1 % přełoženy, $2 % skorigowany, $ 3 % zestarjeny', # Fuzzy
+	'translate-statsbar-tooltip' => '$1 % přełoženy, $2 % přepruwowany',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1 % přełoženy, $2 % přepruwowany, $3 % zestarjeny',
+	'translate-search-more-groups-info' => '$1 {{PLURAL:$1|dalša skupina|dalšej skupinje|dalše skupiny|dalšich skupinow}}',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -31126,7 +31138,7 @@ $1',
 	'grouppage-translate-proofr' => '{{ns:project}}:Прегледачи превода',
 	'log-name-translationreview' => 'Историја провере превода',
 	'log-description-translationreview' => 'Историја свих провера превода и група порука.',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|је потврдио|је потврдила}} превод $3',
+	'logentry-translationreview-message' => '$1 је {{GENDER:$2|потврдио|потврдила}} превод $3',
 	'logentry-translationreview-group' => '$1 {{GENDER:$2|је променио|је променила}} стање $4 превода $3 са $6 на $7',
 	'group-translate-sandboxed' => 'Неодобрени преводиоци',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|неодобрени преводилац}}',
@@ -31529,7 +31541,7 @@ Detalji: $1',
 	'grouppage-translate-proofr' => '{{ns:project}}:Pregledači prevoda',
 	'log-name-translationreview' => 'Istorija provere prevoda',
 	'log-description-translationreview' => 'Istorija svih provera prevoda i grupa poruka.',
-	'logentry-translationreview-message' => '$1 {{GENDER:$2|je prihvatio|je prihvatila|je prihvatio}} prevod $3',
+	'logentry-translationreview-message' => '$1 je {{GENDER:$2|potvrdio|potvrdila}} prevod $3',
 	'translate-workflow-state-' => '(vrati)',
 	'translate-workflowstatus' => 'Status: $1',
 	'translate-workflow-set-do' => 'Postavi',
