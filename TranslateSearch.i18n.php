@@ -40,8 +40,7 @@ $messages['en'] = array(
 $messages['qqq'] = array(
 	'searchtranslations' => '{{doc-special|SearchTranslations}}
 {{Identical|Search translation}}',
-	'tux-sst-edit' => 'A link text.
-{{Identical|Edit message}}',
+	'tux-sst-edit' => 'A link text.',
 	'tux-sst-search' => 'A button text.
 {{Identical|Search}}',
 	'tux-sst-search-ph' => 'Placeholder text in input field.
@@ -561,18 +560,18 @@ $messages['ka'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'searchtranslations' => '번역 찾기',
+	'searchtranslations' => '번역 검색',
 	'tux-sst-edit' => '번역 편집',
-	'tux-sst-search' => '찾기',
-	'tux-sst-search-ph' => '번역 찾기',
+	'tux-sst-search' => '검색',
+	'tux-sst-search-ph' => '번역 검색',
 	'tux-sst-count' => '{{PLURAL:$1|결과 한 개를 찾았습니다|결과 $1개를 찾았습니다}}',
 	'tux-sst-facet-language' => '언어',
 	'tux-sst-facet-group' => '메시지 그룹',
 	'tux-sst-facet-orphan' => '(외톨이)',
-	'tux-sst-nosolr-title' => '찾기를 사용할 수 없음',
-	'tux-sst-nosolr-body' => '이 위키는 번역 찾기 서비스가 없습니다.',
-	'tux-sst-solr-offline-title' => '찾기를 사용할 수 없음',
-	'tux-sst-solr-offline-body' => '찾기 서비스를 일시적으로 사용할 수 없습니다.',
+	'tux-sst-nosolr-title' => '검색을 사용할 수 없음',
+	'tux-sst-nosolr-body' => '이 위키는 번역 검색 서비스가 없습니다.',
+	'tux-sst-solr-offline-title' => '검색을 사용할 수 없음',
+	'tux-sst-solr-offline-body' => '검색 서비스를 일시적으로 사용할 수 없습니다.',
 	'tux-sst-next' => '다음 결과',
 	'tux-sst-prev' => '이전 결과',
 );
