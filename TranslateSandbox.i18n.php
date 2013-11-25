@@ -541,6 +541,7 @@ Sila ke $2 untuk membuat lebih banyak kerja terjemahan.',
 );
 
 /** Dutch (Nederlands)
+ * @author SPQRobin
  * @author Siebrand
  * @author Sjoerddebruin
  */
@@ -559,6 +560,7 @@ Kon alstublieft naar $2 en maak nog wat meer vertalingen.',
 	'tsb-accept-button-label' => 'Accepteren',
 	'tsb-reject-button-label' => 'Afwijzen',
 	'tsb-reminder-link-text' => 'Herinnering per e-mail verzenden',
+	'tsb-translations-source' => 'Bron',
 	'translationstash' => 'Welkom',
 	'translate-translationstash-welcome' => 'Welkom {{GENDER:$1|$1}}, u bent nu vertaler',
 	'translate-translationstash-welcome-note' => 'Raak vertrouwd met de vertaalhulpmiddelen door een aantal willekeurig geselecteerde berichten te vertalen.', # Fuzzy

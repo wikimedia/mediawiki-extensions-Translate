@@ -800,7 +800,9 @@ $specialPageAliases['nl'] = array(
 /** Norwegian Nynorsk (norsk nynorsk) */
 $specialPageAliases['nn'] = array(
 	'Translate' => array( 'Set_om' ),
+	'Magic' => array( 'Avansert_omsetjing' ),
 	'Translations' => array( 'Omsetjingar' ),
+	'MyLanguage' => array( 'Språket_mitt' ),
 );
 
 /** Occitan (occitan) */

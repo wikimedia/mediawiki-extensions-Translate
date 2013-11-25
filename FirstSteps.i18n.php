@@ -1938,7 +1938,7 @@ Tu móžeš wubrać, kotre rěče chceš rady widźeć.',
 	'translate-fs-userpage-level-3' => 'Mam dobre znajomosće',
 	'translate-fs-userpage-level-2' => 'Mam přerězne znajomosće',
 	'translate-fs-userpage-level-1' => 'Mam snadne znajomosće',
-	'translate-fs-userpage-help' => 'Prošu podaj swoje rěčne znajomosće a zdźěl nam něšto wo sebje. Jeli maš znajomosće we wjace hač pjeć rěčach, móžeš je pozdźišo podać.', # Fuzzy
+	'translate-fs-userpage-help' => 'Prošu podaj swoje rěčne znajomosće a zdźěl něšto wo sebje. Jeli maš znajomosće we wjace hač pjeć rěčach, móžeš je pozdźišo podać.',
 	'translate-fs-userpage-submit' => 'Twoju wužiwarsku stronu wutworić',
 	'translate-fs-userpage-done' => 'Gratulacija! Maš nětko wužiwarsku stronu.',
 	'translate-fs-permissions-planguage' => 'Hłowna rěč:',
