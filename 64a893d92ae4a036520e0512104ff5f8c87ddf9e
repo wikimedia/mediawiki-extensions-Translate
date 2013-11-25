@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_064a41c8",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-11-25T16:12:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_46f16991",
+      "revId": "64a893d92ae4a036520e0512104ff5f8c87ddf9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_26a9c578",
         "filename": "composer.json",
         "patchSetId": 1
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_e6163dac",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-11-25T16:12:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_26a9c578",
+      "revId": "64a893d92ae4a036520e0512104ff5f8c87ddf9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_869ad164",
         "filename": "composer.json",
         "patchSetId": 1
@@ -64,6 +100,24 @@
       "writtenOn": "2013-11-25T16:00:36Z",
       "side": 1,
       "message": "This makes no sense. You probably misunderstand what the repositories thing is for. Someone that depends on Translate might want to add such a thing, if they do not want, or cannot, use Packagist. Just omit it here",
+      "revId": "64a893d92ae4a036520e0512104ff5f8c87ddf9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_c61b39d3",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-11-25T16:12:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_869ad164",
       "revId": "64a893d92ae4a036520e0512104ff5f8c87ddf9e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -98,6 +152,24 @@
       "writtenOn": "2013-11-25T16:04:16Z",
       "side": 1,
       "message": "We will depend on ULS once it has entry on packagist. Not that it required dev either.\n\nBut we will have to think how composer affects MLEB releases.",
+      "parentUuid": "0ee75395_669fcd56",
+      "revId": "64a893d92ae4a036520e0512104ff5f8c87ddf9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_a61035ae",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-11-25T16:12:55Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "0ee75395_669fcd56",
       "revId": "64a893d92ae4a036520e0512104ff5f8c87ddf9e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
