@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_26a9c578",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 44
+      },
+      "writtenOn": "2013-11-25T16:00:36Z",
+      "side": 1,
+      "message": "\"composer/installers\": \"\u003e\u003d1.0.1\"\n\nNeed at least 1.0.1",
+      "revId": "64a893d92ae4a036520e0512104ff5f8c87ddf9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_869ad164",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 44
+      },
+      "writtenOn": "2013-11-25T16:00:36Z",
+      "side": 1,
+      "message": "This makes no sense. You probably misunderstand what the repositories thing is for. Someone that depends on Translate might want to add such a thing, if they do not want, or cannot, use Packagist. Just omit it here",
+      "revId": "64a893d92ae4a036520e0512104ff5f8c87ddf9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_669fcd56",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 44
+      },
+      "writtenOn": "2013-11-25T16:00:36Z",
+      "side": 1,
+      "message": "This also does not make sense. The only dependency you have is composer/installers, and you can require a stable version of this without any problems.",
+      "revId": "64a893d92ae4a036520e0512104ff5f8c87ddf9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
