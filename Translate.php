@@ -438,7 +438,7 @@ $wgTranslateAuthorBlacklist[] = array( 'black', '/^.*;.*;.*Bot$/Ui' );
  * List of namespace that contain messages. No talk namespaces.
  * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration
  */
-$wgTranslateMessageNamespaces = array( NS_MEDIAWIKI );
+$wgTranslateMessageNamespaces = array();
 
 /**
  * CC = Custom classes.
