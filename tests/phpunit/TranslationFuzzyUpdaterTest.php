@@ -24,6 +24,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiTestCase {
 			'wgTranslateWorkflowStates' => false,
 			'wgTranslateGroupFiles' => array(),
 			'wgTranslateTranslationServices' => array(),
+			'wgTranslateMessageNamespaces' => array( NS_MEDIAWIKI ),
 		) );
 		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
 		MessageGroups::clearCache();

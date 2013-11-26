@@ -26,6 +26,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 			'wgTranslateGroupFiles' => array(),
 			'wgTranslateDocumentationLanguageCode' => 'qqq',
 			'wgTranslateTranslationServices' => array(),
+			'wgTranslateMessageNamespaces' => array( NS_MEDIAWIKI ),
 		) );
 		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
 		MessageGroups::clearCache();
