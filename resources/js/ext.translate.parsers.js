@@ -51,7 +51,7 @@
 				return $( '<div>' ).append( $( '<ol>' ).html( match ) ).html();
 			} );
 
-			text = text.replace( /\[\[(.+?)\|(.+?)\]\]/g, function ( match, p1, p2 ) {
+			text = text.replace( /\[\[([^\]|]+?)\|(.+?)\]\]/g, function ( match, p1, p2 ) {
 				var link = $( '<a>' ).html( p2 ).prop( 'href', getUrl( p1 ) );
 				return $( '<div>' ).append( link ).html();
 			} );
