@@ -208,93 +208,98 @@ class TranslateHooks {
 	 * @return bool
 	 */
 	public static function schemaUpdates( DatabaseUpdater $updater ) {
+		$dbtype = $updater->getDB()->getType();
+		if ( !in_array( $dbtype, array("mysql", "postgres") ) ) {
+			// Fall back to MySQL
+			$dbtype = "mysql";
+		}
 		$dir = __DIR__ . '/sql';
 
 		$updater->addExtensionUpdate( array(
 			'addTable',
 			'translate_sections',
-			"$dir/translate_sections.sql",
+			"$dir/translate_sections.$dbtype.sql",
 			true
 		) );
 		$updater->addExtensionUpdate( array(
 			'addField',
 			'translate_sections',
 			'trs_order',
-			"$dir/translate_sections-trs_order.patch.sql",
+			"$dir/translate_sections-trs_order.patch.$dbtype.sql",
 			true
 		) );
 		$updater->addExtensionUpdate( array(
 			'addTable',
-			'revtag', "$dir/revtag.sql",
+			'revtag', "$dir/revtag.$dbtype.sql",
 			true
 		) );
 		$updater->addExtensionUpdate( array(
 			'addTable',
 			'translate_groupstats',
-			"$dir/translate_groupstats.sql",
+			"$dir/translate_groupstats.$dbtype.sql",
 			true
 		) );
 		$updater->addExtensionUpdate( array(
 			'addIndex',
 			'translate_sections',
 			'trs_page_order',
-			"$dir/translate_sections-indexchange.sql",
+			"$dir/translate_sections-indexchange.$dbtype.sql",
 			true
 		) );
 		$updater->addExtensionUpdate( array(
 			'dropIndex',
 			'translate_sections',
 			'trs_page',
-			"$dir/translate_sections-indexchange2.sql",
+			"$dir/translate_sections-indexchange2.$dbtype.sql",
 			true
 		) );
 		$updater->addExtensionUpdate( array(
 			'addTable',
 			'translate_reviews',
-			"$dir/translate_reviews.sql",
+			"$dir/translate_reviews.$dbtype.sql",
 			true
 		) );
 		$updater->addExtensionUpdate( array(
 			'addTable',
 			'translate_groupreviews',
-			"$dir/translate_groupreviews.sql",
+			"$dir/translate_groupreviews.$dbtype.sql",
 			true
 		) );
 		$updater->addExtensionUpdate( array(
 			'addTable',
 			'translate_tms',
-			"$dir/translate_tm.sql",
+			"$dir/translate_tm.$dbtype.sql",
 			true
 		) );
 		$updater->addExtensionUpdate( array(
 			'addTable',
 			'translate_metadata',
-			"$dir/translate_metadata.sql",
+			"$dir/translate_metadata.$dbtype.sql",
 			true
 		) );
 		$updater->addExtensionUpdate( array(
 			'addTable', 'translate_messageindex',
-			"$dir/translate_messageindex.sql",
+			"$dir/translate_messageindex.$dbtype.sql",
 			true
 		) );
 		$updater->addExtensionUpdate( array(
 			'addIndex',
 			'translate_groupstats',
 			'tgs_lang',
-			"$dir/translate_groupstats-indexchange.sql",
+			"$dir/translate_groupstats-indexchange.$dbtype.sql",
 			true
 		) );
 		$updater->addExtensionUpdate( array(
 			'addField', 'translate_groupstats',
 			'tgs_proofread',
-			"$dir/translate_groupstats-proofread.sql",
+			"$dir/translate_groupstats-proofread.$dbtype.sql",
 			true
 		) );
 
 		$updater->addExtensionUpdate( array(
 			'addTable',
 			'translate_stash',
-			"$dir/translate_stash.sql",
+			"$dir/translate_stash.$dbtype.sql",
 			true
 		) );
 

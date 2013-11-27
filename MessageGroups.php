@@ -98,7 +98,7 @@ class MessageGroups {
 			$tables = array( 'page', 'revtag' );
 			$vars = array( 'page_id', 'page_namespace', 'page_title' );
 			$conds = array( 'page_id=rt_page', 'rt_type' => RevTag::getType( 'tp:mark' ) );
-			$options = array( 'GROUP BY' => 'rt_page' );
+			$options = array( 'GROUP BY' => 'rt_page, page_id' );
 			$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
 			foreach ( $res as $r ) {
