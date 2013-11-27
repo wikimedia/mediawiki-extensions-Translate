@@ -315,6 +315,7 @@ $wgResourceModules['ext.translate.special.searchtranslations'] = array(
 		'ext.uls.mediawiki',
 		'ext.uls.geoclient',
 		'ext.translate.groupselector',
+		'mediawiki.Uri',
 	),
 	'messages' => array(
 		'translate-documentation-language',

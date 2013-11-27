@@ -27,9 +27,16 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 		$groups = array();
 		if ( $params['format'] === 'flat' ) {
-			$groups = MessageGroups::getAllGroups();
-			foreach ( MessageGroups::getDynamicGroups() as $id => $unused ) {
-				$groups[$id] = MessageGroups::getGroup( $id );
+			if ( $params['root'] !== '' ) {
+				$group = MessageGroups::getGroup( $params['root'] );
+				if ( $group ) {
+					$groups[$params['root']] = $group;
+				}
+			} else {
+				$groups = MessageGroups::getAllGroups();
+				foreach ( MessageGroups::getDynamicGroups() as $id => $unused ) {
+					$groups[$id] = MessageGroups::getGroup( $id );
+				}
 			}
 
 			// Not sorted by default, so do it now
@@ -276,7 +283,8 @@ added and it states the number of direct children.
 TEXT;
 		$root = <<<TEXT
 When using the tree format, instead of starting from top level start from the
-given message group, which must be an aggregate message group.
+given message group, which must be an aggregate message group. When using flat
+format only the specified group is returned.
 TEXT;
 		$filter = <<<TEXT
 Only return messages with IDs that match one or more of the input(s) given
