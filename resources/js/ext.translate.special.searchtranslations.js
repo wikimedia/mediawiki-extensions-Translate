@@ -1,8 +1,12 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	var resultGroups;
+
 	$( document ).ready( function () {
 		var $messages = $( '.tux-message' );
+
+		resultGroups = $( '.facet.groups' ).data( 'facets' );
 
 		// Make the whole rows clickable
 		$( '.facet-item' ).click( function () {
@@ -158,12 +162,13 @@
 
 		$groups = $( '.facet.groups' );
 		currentGroup = $groups.data( 'group' );
-		mw.translate.messageGroups = $groups.data( 'facets' );
-		if ( !mw.translate.messageGroups ) {
-			// at empty search screen
+
+		if ( !resultGroups ) {
+			// No search results
 			return;
 		}
-		groupList = Object.keys( mw.translate.messageGroups );
+
+		groupList = Object.keys( resultGroups );
 		listGroups( groupList, currentGroup, $groups );
 	}
 
@@ -174,13 +179,14 @@
 			group,
 			groupId,
 			$groupRow,
+			uri,
 			maxListSize = 10,
 			currentGroup = $( '.facet.groups' ).data( 'group' ),
 			resultCount = groupList.length;
 
 		level = level || 0;
 		groupList = groupList.splice( 0, maxListSize );
-		if ( currentGroup && mw.translate.messageGroups[currentGroup] &&
+		if ( currentGroup && resultGroups[currentGroup] &&
 			$.inArray( currentGroup, groupList ) < 0
 		) {
 			// Make sure current selected group is displayed always.
@@ -190,7 +196,7 @@
 		groupList.sort( sortGroups );
 		for ( i = 0; i <= groupList.length; i++ ) {
 			groupId = groupList[i];
-			group = mw.translate.getGroup( groupId );
+			group = mw.translate.findGroup( groupId, resultGroups );
 			if ( !group ) {
 				continue;
 			}
@@ -199,15 +205,16 @@
 			} else {
 				selectedClass = '';
 			}
+
+			uri = new mw.Uri( window.location.href );
+			uri.extend( { 'group': groupId } );
+
 			$groupRow = $( '<div>' )
 				.addClass( 'row facet-item ' + ' facet-level-' + level )
 				.append( $( '<span>' )
 					.addClass( 'facet-name ' + selectedClass)
 					.append( $( '<a>' )
-						.attr( {
-							href: group.url,
-							title: group.description
-						} )
+						.attr( 'href', uri.toString() )
 						.text( group.label )
 					),
 					$( '<span>' )
@@ -240,15 +247,17 @@
 					at: 'left top'
 				},
 				onSelect: function ( group ) {
-					window.location = group.url;
+					var uri = new mw.Uri( window.location.href );
+					uri.extend( { 'group': group.id } );
+					window.location.href = uri.toString();
 				}
 			} );
 		}
 	}
 
-	function sortGroups ( groupIdA, groupIdB ) {
-		var groupAName = mw.translate.getGroup( groupIdA ).label,
-			groupBName = mw.translate.getGroup( groupIdB ).label;
+	function sortGroups( groupIdA, groupIdB ) {
+		var groupAName = mw.translate.findGroup( groupIdA, resultGroups ).label,
+			groupBName = mw.translate.findGroup( groupIdB, resultGroups ).label;
 
 		return groupAName.localeCompare( groupBName );
 	}

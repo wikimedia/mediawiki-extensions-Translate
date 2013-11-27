@@ -22,9 +22,7 @@
 		// Storage for language stats loader functions from API,
 		// indexed by language code
 		languageStatsLoader: {},
-		messageGroupsLoader: null,
 
-		messageGroups: {},
 		/**
 		 * Get language stats for a language from the API.
 		 * @param {string} language Language code.
@@ -48,45 +46,73 @@
 		},
 
 		/**
-		 * Loads information about all message groups. Use getMessageGroup
-		 * instead.
+		 * Load message group information asynchronously.
 		 *
-		 * @return {jQuery.Deferred}
+		 * @param {string} id Message group id
+		 * @param {string|array} [props] List of properties to load
+		 * @return {jQuery.Promise} Object containing the requested properties on success.
 		 */
-		loadMessageGroups: function () {
-			if ( mw.translate.messageGroupsLoader ) {
-				return mw.translate.messageGroupsLoader;
+		getMessageGroup: function ( id, props ) {
+			var params,
+				deferred = new $.Deferred();
+
+			if ( $.isArray( props ) ) {
+				props = props.join( '|' );
+			} else if ( props === undefined ) {
+				props = 'id|label|description|icon|priority|prioritylangs|priorityforce|workflowstates';
 			}
 
-			var loader,
-				queryParams = {
-					action: 'query',
-					format: 'json',
-					meta: 'messagegroups',
-					mgformat: 'tree',
-					mgprop: 'id|label|description|icon|priority|prioritylangs|priorityforce|workflowstates',
-					mgiconsize: '32'
-				};
-			loader = new mw.Api().get( queryParams );
-			loader.done( function ( result ) {
-				mw.translate.messageGroups = result.query.messagegroups;
-			} );
+			params = {
+				action: 'query',
+				format: 'json',
+				meta: 'messagegroups',
+				mgformat: 'flat',
+				mgprop: props,
+				mgroot: id,
+			};
 
-			mw.translate.messageGroupsLoader = loader;
-			return loader;
+			new mw.Api()
+				.get( params )
+				.done( function ( result ) {
+					deferred.resolve( result.query.messagegroups[0] );
+				} )
+				.fail( deferred.reject );
+
+			return deferred.promise();
 		},
 
 		/**
-		 * Load message group information asynchronously.
-		 * @param {string} id Message group id
-		 * @return {jQuery.Deferred}
+		 * Find a group from an array of message groups as returned by web api
+		 * and recurse it through sub groups.
+		 *
+		 * @param {string} id Group id to search for.
+		 * @param {Array} groups Array of message grous
+		 * @return {Object} Message group object
 		 */
-		getMessageGroup: function ( id ) {
-			var deferred = new $.Deferred();
-			mw.translate.loadMessageGroups().done( function () {
-				deferred.resolve( mw.translate.getGroup( id, mw.translate.messageGroups ) );
+		findGroup: function ( id, groups ) {
+			var result = null;
+
+			if ( !id ) {
+				return groups;
+			}
+
+			$.each( groups, function ( index, group ) {
+				if ( group.id === id ) {
+					result = group;
+					return;
+				}
+
+				if ( group.groups ) {
+					group = mw.translate.findGroup( id, group.groups );
+
+					if ( group ) {
+						result = group;
+						return;
+					}
+				}
 			} );
-			return deferred;
+
+			return result;
 		},
 
 		/**
