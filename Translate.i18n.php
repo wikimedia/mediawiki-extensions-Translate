@@ -27234,6 +27234,8 @@ Os estados são definidos na variável de configuração $wgTranslateWorkflowSta
 	'tux-tab-all' => 'Tudo',
 	'tux-editor-save-button-label' => 'Gravar tradução',
 	'tux-editor-skip-button-label' => 'Saltar para a seguinte',
+	'tux-empty-list-other' => 'Nada a traduzir',
+	'tux-empty-list-other-guide' => 'Você pode ajudar a revisar traduções existentes',
 );
 
 /** Brazilian Portuguese (português do Brasil)

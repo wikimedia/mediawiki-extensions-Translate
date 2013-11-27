@@ -3779,6 +3779,16 @@ Poisto ei tapahdu välittömästi, sillä useita sivuja täytyy poistaa.
 Virheet merkitään [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne täytyy korjata käsin.',
 );
 
+/** Faroese (føroyskt)
+ * @author EileenSanda
+ */
+$messages['fo'] = array(
+	'tpt-diff-new' => 'Nýggjur tekstur',
+	'tpt-submit' => 'Merk hesa versjónina til týðing',
+	'tpt-nosuchpage' => 'Síðan $1 er ikki til',
+	'tpt-edit-failed' => 'Tað bar ikki til at dagføra síðuna: $1',
+);
+
 /** French (français)
  * @author Cquoi
  * @author Crochet.david
