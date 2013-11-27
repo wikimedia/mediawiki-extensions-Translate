@@ -218,19 +218,28 @@
 		var preferredLanguages,
 			$groupWarning = $( '.tux-editor-header .group-warning' ),
 			targetLanguage = $( '.tux-messagelist' ).data( 'targetlangcode' ),
-			msgGroupData = mw.translate.getGroup(
-				$( '.tux-messagetable-loader' ).data( 'messagegroup' )
-			);
+			id = $( '.tux-messagetable-loader' ).data( 'messagegroup' ),
+			props = 'priority|prioritylangs|priorityforce';
 
-		if ( msgGroupData.prioritylangs &&
-			$.inArray( targetLanguage, msgGroupData.prioritylangs ) === -1
-		) {
-			preferredLanguages = $.map( msgGroupData.prioritylangs, function ( code ) {
-				return $.uls.data.getAutonym( code );
-			} );
+		$groupWarning.empty();
+
+		mw.translate.getMessageGroup( id, props ).done( function ( group ) {
+
+			// Check whether group has priority languages
+			if ( !group.prioritylangs ) {
+				return;
+			}
+
+			// And if current language is among them, we can return early
+			if ( $.inArray( targetLanguage, group.prioritylangs ) !== -1 ) {
+				return;
+			}
+
+			// Format a nice warning for the user
+			preferredLanguages = $.map( group.prioritylangs, $.uls.data.getAutonym );
 
 			new mw.Api().parse(
-				mw.message( msgGroupData.priorityforce ?
+				mw.message( group.priorityforce ?
 					'tpt-discouraged-language-force' :
 					'tpt-discouraged-language',
 					'',
@@ -240,9 +249,7 @@
 			).done( function ( parsedWarning ) {
 				$groupWarning.html( parsedWarning );
 			} );
-		} else {
-			$groupWarning.empty();
-		}
+		} );
 	}
 
 	$( document ).ready( function () {
@@ -278,15 +285,7 @@
 			language: targetLanguage
 		} );
 
-		$.when(
-			// Get ready with language stats
-			mw.translate.loadLanguageStats( targetLanguage ),
-			// Get ready with message groups
-			mw.translate.loadMessageGroups()
-		).then( function () {
-			$( '.ext-translate-msggroup-selector .grouplink' ).trigger( 'dataready.translate' );
-			updateGroupWarning();
-		} );
+		updateGroupWarning();
 
 		$( '.tux-messagelist' ).messagetable();
 		// Use ULS for language selection if it's available
