@@ -35,12 +35,11 @@
 			instance.groupId = groupId;
 			instance.language = language;
 
-			mw.translate.getMessageGroup( groupId ).done(
-				function ( group ) {
+			mw.translate.getMessageGroup( groupId, 'workflowstates' )
+				.done( function ( group ) {
 					instance.states = group.workflowstates;
 					instance.display();
-				}
-			);
+				} );
 		},
 
 		/**
