@@ -319,10 +319,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			$output[$id] = array(
 				'id' => $id,
 				'count' => $count,
-				'url' => $url,
 				'label' => $group->getLabel(),
-				'description' => $group->getDescription(),
-				'icon' => TranslateUtils::getIcon( $group, 100 ),
 			);
 
 			if ( isset( $path[$level] ) && $path[$level] === $id ) {
