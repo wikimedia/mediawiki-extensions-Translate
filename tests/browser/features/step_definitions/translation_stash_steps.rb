@@ -30,7 +30,7 @@ Then(/^I should see the next message open for translation$/) do
 end
 
 When(/^I reload the page$/) do
-	visit(StashPage)
+	visit StashPage
 end
 
 Then(/^I can open and see my earlier translation$/) do
