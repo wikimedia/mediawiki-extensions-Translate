@@ -27,9 +27,16 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 		$groups = array();
 		if ( $params['format'] === 'flat' ) {
-			$groups = MessageGroups::getAllGroups();
-			foreach ( MessageGroups::getDynamicGroups() as $id => $unused ) {
-				$groups[$id] = MessageGroups::getGroup( $id );
+			if ( $params['root'] !== '' ) {
+				$group = MessageGroups::getGroup( $params['root'] );
+				if ( $group ) {
+					$groups[$params['root']] = $group;
+				}
+			} else {
+				$groups = MessageGroups::getAllGroups();
+				foreach ( MessageGroups::getDynamicGroups() as $id => $unused ) {
+					$groups[$id] = MessageGroups::getGroup( $id );
+				}
 			}
 
 			// Not sorted by default, so do it now
@@ -104,10 +111,13 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			$subgroups = $mixed;
 		}
 
+		wfProfileIn( __METHOD__ . '-' . get_class( $g ) );
+
 		$a = array();
 
 		$groupId = $g->getId();
 
+		wfProfileIn( __METHOD__ . '-basic' );
 		if ( isset( $props['id'] ) ) {
 			$a['id'] = $groupId;
 		}
@@ -127,18 +137,24 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		if ( isset( $props['namespace'] ) ) {
 			$a['namespace'] = $g->getNamespace();
 		}
+		wfProfileOut( __METHOD__ . '-basic' );
 
+		wfProfileIn( __METHOD__ . '-exists' );
 		if ( isset( $props['exists'] ) ) {
 			$a['exists'] = $g->exists();
 		}
+		wfProfileOut( __METHOD__ . '-exists' );
 
+		wfProfileIn( __METHOD__ . '-icon' );
 		if ( isset( $props['icon'] ) ) {
 			$formats = TranslateUtils::getIcon( $g, $params['iconsize'] );
 			if ( $formats ) {
 				$a['icon'] = $formats;
 			}
 		}
+		wfProfileOut( __METHOD__ . '-icon' );
 
+		wfProfileIn( __METHOD__ . '-priority' );
 		if ( isset( $props['priority'] ) ) {
 			$priority = MessageGroups::getPriority( $g );
 			$a['priority'] = $priority ? : 'default';
@@ -152,15 +168,20 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		if ( isset( $props['priorityforce'] ) ) {
 			$a['priorityforce'] = ( TranslateMetadata::get( $groupId, 'priorityforce' ) === 'on' );
 		}
+		wfProfileOut( __METHOD__ . '-priority' );
 
+		wfProfileIn( __METHOD__ . '-workflowstates' );
 		if ( isset( $props['workflowstates'] ) ) {
 			$a['workflowstates'] = $this->getWorkflowStates( $g );
 		}
+		wfProfileOut( __METHOD__ . '-workflowstates' );
 
 		wfRunHooks(
 			'TranslateProcessAPIMessageGroupsProperties',
 			array( &$a, $props, $params, $g )
 		);
+
+		wfProfileOut( __METHOD__ . '-' . get_class( $g ) );
 
 		// Depth only applies to tree format
 		if ( $depth >= $params['depth'] && $params['format'] === 'tree' ) {
@@ -262,7 +283,8 @@ added and it states the number of direct children.
 TEXT;
 		$root = <<<TEXT
 When using the tree format, instead of starting from top level start from the
-given message group, which must be an aggregate message group.
+given message group, which must be an aggregate message group. When using flat
+format only the specified group is returned.
 TEXT;
 		$filter = <<<TEXT
 Only return messages with IDs that match one or more of the input(s) given
