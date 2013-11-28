@@ -22,13 +22,14 @@ class TranslateMetadata {
 	public static function get( $group, $key ) {
 		if ( self::$cache === null ) {
 			$dbr = wfGetDB( DB_SLAVE );
-			self::$cache = $dbr->select( 'translate_metadata', '*', array(), __METHOD__ );
+			$res = $dbr->select( 'translate_metadata', '*', array(), __METHOD__ );
+			foreach ( $res as $row ) {
+				self::$cache[$row->tmd_group][$row->tmd_key] = $row->tmd_value;
+			}
 		}
 
-		foreach ( self::$cache as $row ) {
-			if ( $row->tmd_group === $group && $row->tmd_key === $key ) {
-				return $row->tmd_value;
-			}
+		if ( isset( self::$cache[$group][$key] ) ) {
+			return self::$cache[$group][$key];
 		}
 
 		return false;
