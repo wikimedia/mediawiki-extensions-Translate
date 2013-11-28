@@ -172,7 +172,7 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 	 * @return array
 	 */
 	protected function isValidValue( $value ) {
-		$langs = Language::getLanguageNames( false );
+		$langs = Language::fetchLanguageNames();
 
 		return isset( $langs[$value] );
 	}

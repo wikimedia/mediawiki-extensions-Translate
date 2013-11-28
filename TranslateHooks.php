@@ -394,7 +394,7 @@ class TranslateHooks {
 				LanguageNames::LIST_MW
 			);
 		} else {
-			$languages = Language::getLanguageNames( false );
+			$languages = Language::fetchLanguageName();
 		}
 
 		ksort( $languages );

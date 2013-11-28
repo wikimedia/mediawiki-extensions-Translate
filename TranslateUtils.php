@@ -197,16 +197,7 @@ class TranslateUtils {
 	 * @return array ( language code => language name )
 	 */
 	public static function getLanguageNames( /*string */$code ) {
-		if ( is_callable( array( 'Language', 'fetchLanguageNames' ) ) ) {
-			$languageNames = Language::fetchLanguageNames( $code, 'mw' ); // since 1.20
-		} elseif ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
-			$languageNames = LanguageNames::getNames( $code,
-				LanguageNames::FALLBACK_NORMAL,
-				LanguageNames::LIST_MW
-			);
-		} else {
-			$languageNames = Language::getLanguageNames( false );
-		}
+		$languageNames = Language::fetchLanguageNames( $code );
 
 		// Remove languages with deprecated codes (bug 35475)
 		global $wgDummyLanguageCodes;

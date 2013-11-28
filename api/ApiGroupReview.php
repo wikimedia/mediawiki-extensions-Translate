@@ -37,7 +37,7 @@ class ApiGroupReview extends ApiBase {
 
 		$requestParams = $this->extractRequestParams();
 
-		$languages = Language::getLanguageNames( false );
+		$languages = Language::fetchLanguageNames();
 		if ( !isset( $languages[$code] ) ) {
 			$this->dieUsageMsg( array( 'missingparam', 'language' ) );
 		}
