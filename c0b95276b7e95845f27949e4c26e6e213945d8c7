@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_92bf9af6",
+        "filename": "resources/css/ext.translate.special.translatesandbox.css",
+        "patchSetId": 22
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T10:37:19Z",
+      "side": 1,
+      "message": "Missing empty line",
+      "revId": "c0b95276b7e95845f27949e4c26e6e213945d8c7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_723416a8",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 22
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T10:37:19Z",
+      "side": 1,
+      "message": "@param {number} count Number of...",
+      "revId": "c0b95276b7e95845f27949e4c26e6e213945d8c7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_5239129e",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 22
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T10:37:19Z",
+      "side": 1,
+      "message": "I\u0027d pull this calculation into separate variable. You decide.",
+      "revId": "c0b95276b7e95845f27949e4c26e6e213945d8c7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_323e8e88",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 22
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T10:37:19Z",
+      "side": 1,
+      "message": "How about zoom?",
+      "revId": "c0b95276b7e95845f27949e4c26e6e213945d8c7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_f2470621",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T10:37:19Z",
+      "side": 1,
+      "message": "Extra tab on this line",
+      "revId": "c0b95276b7e95845f27949e4c26e6e213945d8c7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
