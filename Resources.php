@@ -458,6 +458,22 @@ $wgResourceModules['jquery.ui.position.custom'] = array(
 	'scripts' => 'resources/js/jquery.ui.position.js',
 ) + $resourcePaths;
 
+// BC for MediaWiki <= 1.21
+$wgHooks['ResourceLoaderRegisterModules'][] =
+	function ( ResourceLoader $rl ) use ( $resourcePaths ) {
+		if ( !in_array( 'jquery.chosen', $rl->getModuleNames() ) ) {
+			$rl->register(
+				'jquery.chosen',
+				array(
+					'scripts' => 'resources/jquery.chosen/chosen.jquery.js',
+					'styles' => 'resources/jquery.chosen/chosen.css',
+				) + $resourcePaths
+			);
+		}
+
+		return true;
+	};
+
 $wgHooks['ResourceLoaderTestModules'][] =
 	// Dependencies must be arrays here
 	function ( array &$modules ) use ( $resourcePaths ) {
