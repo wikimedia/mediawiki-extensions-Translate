@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_d26be280",
+        "filename": "resources/css/ext.translate.special.translatesandbox.css",
+        "patchSetId": 22
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T10:52:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_92bf9af6",
+      "revId": "c0b95276b7e95845f27949e4c26e6e213945d8c7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_723416a8",
         "filename": "resources/js/ext.translate.special.translatesandbox.js",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-28T10:37:19Z",
       "side": 1,
       "message": "@param {number} count Number of...",
+      "revId": "c0b95276b7e95845f27949e4c26e6e213945d8c7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_7202d6bf",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 22
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T10:52:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_723416a8",
       "revId": "c0b95276b7e95845f27949e4c26e6e213945d8c7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_b2685e85",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 22
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T10:52:58Z",
+      "side": 1,
+      "message": "It is handled by this.",
+      "parentUuid": "0ee75395_323e8e88",
+      "revId": "c0b95276b7e95845f27949e4c26e6e213945d8c7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_f2470621",
         "filename": "specials/SpecialTranslateSandbox.php",
         "patchSetId": 22
@@ -81,6 +135,24 @@
       "writtenOn": "2013-11-28T10:37:19Z",
       "side": 1,
       "message": "Extra tab on this line",
+      "revId": "c0b95276b7e95845f27949e4c26e6e213945d8c7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_5207d2cd",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T10:52:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_f2470621",
       "revId": "c0b95276b7e95845f27949e4c26e6e213945d8c7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
