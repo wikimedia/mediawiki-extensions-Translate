@@ -2,13 +2,35 @@
 	"name": "mediawiki/translate",
 	"type": "mediawiki-extension",
 	"description": "Let your user translate any kind of text",
-	"homepage": "http://www.mediawiki.org/wiki/Extension:Translate",
+	"keywords": [
+		"MediaWiki",
+		"Translation",
+		"translatewiki.net"
+	],
+	"homepage": "https://www.mediawiki.org/wiki/Extension:Translate",
 	"license": "GPL-2.0+",
-
-	"require": {
-		"composer/installers": "*"
+	"authors": [
+		{
+			"name": "Niklas Laxström",
+			"email": "niklas.laxstrom@gmail.com",
+			"role": "Lead nitpicker"
+		},
+		{
+			"name": "Siebrand Mazeland",
+			"email": "s.mazeland@xs4all.nl",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"issues": "https://bugzilla.wikimedia.org/",
+		"irc": "irc://irc.freenode.net/mediawiki-i18n",
+		"forum": "https://www.mediawiki.org/wiki/Extension_talk:Translate",
+		"wiki": "https://www.mediawiki.org/wiki/Extension:Translate"
 	},
-
+	"require": {
+		"php": ">=5.3.0",
+		"composer/installers": ">=1.0.1"
+	},
 	"suggest": {
 		"mediawiki/translation-notifications": "Manage communication with translators"
 	}
