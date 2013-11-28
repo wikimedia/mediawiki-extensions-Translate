@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_12ea6a70",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T14:17:29Z",
+      "side": 0,
+      "message": "Not related to compatibility but this can stay removed.",
+      "revId": "f413be78672dda297d182e08047f44bb921a83bd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

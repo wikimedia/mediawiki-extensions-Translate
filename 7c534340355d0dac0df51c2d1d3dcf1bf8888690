@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_72c41612",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T14:17:29Z",
+      "side": 1,
+      "message": "[OK] This is getting all autonyms. False means \u0027mw\u0027 which is the default. for the new function.",
+      "revId": "7c534340355d0dac0df51c2d1d3dcf1bf8888690",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_52c91228",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T14:17:29Z",
+      "side": 1,
+      "message": "[OK] fetchLanguageNames has a hook that cldr extension subscribes to, so we do not need the elseif and else paths anymore.",
+      "revId": "7c534340355d0dac0df51c2d1d3dcf1bf8888690",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_32ce8e32",
+        "filename": "api/ApiGroupReview.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T14:17:29Z",
+      "side": 1,
+      "message": "[OK]",
+      "revId": "7c534340355d0dac0df51c2d1d3dcf1bf8888690",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_12d38ada",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T14:17:29Z",
+      "side": 1,
+      "message": "[OK]",
+      "revId": "7c534340355d0dac0df51c2d1d3dcf1bf8888690",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_f2d706c3",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T14:17:29Z",
+      "side": 1,
+      "message": "[OK]",
+      "revId": "7c534340355d0dac0df51c2d1d3dcf1bf8888690",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_d2d402c1",
+        "filename": "specials/SpecialMyLanguage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T14:17:29Z",
+      "side": 1,
+      "message": "[OK]",
+      "revId": "7c534340355d0dac0df51c2d1d3dcf1bf8888690",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_b2e17e99",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T14:17:29Z",
+      "side": 1,
+      "message": "[OK]",
+      "revId": "7c534340355d0dac0df51c2d1d3dcf1bf8888690",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_72ebf677",
+        "filename": "specials/SpecialTranslationStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T14:17:29Z",
+      "side": 1,
+      "message": "[OK]",
+      "revId": "7c534340355d0dac0df51c2d1d3dcf1bf8888690",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_92de7add",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 750,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T14:17:29Z",
+      "side": 1,
+      "message": "[OK] False is the default for getLanguageNames, even though it is not passed here explicitly.",
+      "revId": "7c534340355d0dac0df51c2d1d3dcf1bf8888690",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_52f0f261",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 617,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T14:17:29Z",
+      "side": 1,
+      "message": "[OK]",
+      "revId": "7c534340355d0dac0df51c2d1d3dcf1bf8888690",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_32e56ea0",
+        "filename": "tests/phpunit/PageTranslationTaggingTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-11-28T14:17:29Z",
+      "side": 1,
+      "message": "I\u0027d rather not have this change in this commit. Would you like to make this a separate patch or file a bug?",
+      "revId": "7c534340355d0dac0df51c2d1d3dcf1bf8888690",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
