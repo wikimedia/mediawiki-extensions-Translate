@@ -5754,6 +5754,7 @@ $messages['bxr'] = array(
  * @author Jordi Roqué
  * @author Paucabot
  * @author Pginer
+ * @author QuimGil
  * @author SMP
  * @author Sanbec
  * @author Ssola
@@ -5805,7 +5806,6 @@ com ara no fer servir espais o transliterant noms propis. $1",
 	'translate-ext-url' => '<hr />Lloc web: $1',
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorat)',
-	'translate-edit-jsopen' => 'editar',
 	'translate-edit-title' => 'Edita «$1»',
 	'translate-edit-definition' => 'Definició del missatge',
 	'translate-edit-translation' => 'Traducció',
@@ -5819,7 +5819,6 @@ com ara no fer servir espais o transliterant noms propis. $1",
 	'translate-edit-tmmatch-source' => 'Text original de la traducció: $1',
 	'translate-edit-tmmatch' => 'coincidència del $1%',
 	'translate-use-suggestion' => 'Substitueixi la traducció actual amb aquest suggeriment.',
-	'translate-edit-tab-list' => 'Llista de missatges',
 	'translate-edit-nopermission' => 'Necessiteu permís per traduir missatges.',
 	'translate-edit-askpermission' => 'Demana permís',
 	'translate-magic-pagename' => 'Traducció ampliada del MediaWiki',
@@ -5844,7 +5843,7 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-magic-special' => 'Noms de les pàgines especials',
 	'translate-magic-words' => 'Paraules màgiques',
 	'translate-magic-namespace' => 'Noms dels espais de noms',
-	'translate-magic-notsaved' => 'La vostra edició no ha estat desada!',
+	'translate-magic-notsaved' => "No s'ha desat la modificació!",
 	'translate-magic-errors' => 'Al que arregleu {{PLURAL:$1|el següent error|els següents errors}} a les traduccions:',
 	'translate-magic-saved' => "Els vostres canvis s'han desat amb èxit.",
 	'translate-checks-parameters' => "{{PLURAL:$2|El paràmetre següent no s'està|Els paràmetres següents no s'estan}} usant:
@@ -5873,7 +5872,6 @@ Heu de tenir permisos de traductor per a desar els canvis, que no es guardaran f
 	'translate-pref-editassistlang-help' => "Llista separada per comes dels codis dels idiomes que vulgueu utilitzar. Quan traduïu un missatge podreu veure les seves traduccions a aquests idiomes. La llista d'idiomes per defecte depèn del vostre idioma.",
 	'translate-pref-editassistlang-bad' => "Codi d'idioma incorrecte a la llista:
 <nowiki>$1</nowiki>.",
-	'translate-pref-jsedit' => 'Editor de traduccions millorat (JavaScript)',
 	'right-translate' => 'Editar fent servir la interfície de traducció',
 	'right-translate-manage' => 'Gestiona els grups de missatge',
 	'action-translate-manage' => 'Gestiona els grups de missatges',
@@ -5972,8 +5970,6 @@ El color del subratllat indica si el traductor ha estat actiu recentment.",
 	'translate-smg-nochanges' => 'No hi han canvis a processar.',
 	'translate-smg-submit' => 'Penja els canvis per al seu processament',
 	'translate-smg-submitted' => "Les definicions dels missatges  s'han actualitzat. Els canvis estàn sent processats al rerefons.",
-	'translate-smg-postponed' => 'Algus canvis no han pogut ser processats
-[[{{FULLPAGENAME}}|Torna-ho a provar]]',
 	'translate-smg-left' => 'Contingut del missatge al wiki',
 	'translate-smg-right' => 'Canvis entrants',
 	'translate-manage-import-diff' => 'Missatge $1 | Accions: $2',
@@ -8163,6 +8159,7 @@ Details: $1',
 /** Zazaki (Zazaki)
  * @author Erdemaslancan
  * @author Gorizon
+ * @author Marmase
  * @author Mirzali
  */
 $messages['diq'] = array(
@@ -8224,7 +8221,7 @@ $messages['diq'] = array(
 	'translate-rc-translation-filter' => 'Açarnayışê parzûni:',
 	'translationstats' => 'Açarnayışe İstatıstıkan',
 	'translate-stats-edits' => 'Vurnayışi',
-	'translate-stats-users' => 'Açarnayoği',
+	'translate-stats-users' => 'Tercumani',
 	'translate-statsf-start' => 'Demê destpêkerdışi:',
 	'translate-statsf-scale-months' => 'Aşmi',
 	'translate-statsf-scale-weeks' => 'Heftey',
