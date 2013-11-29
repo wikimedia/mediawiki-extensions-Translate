@@ -1,0 +1,10 @@
+== Translate 2013.11 ==
+Released at 2013-11-29.
+
+=== Noteworthy changes ===
+* Cleanup, refactoring and performance improvments.
+* Bug 56409: Fix fatal error in non-Vector skins by removing navigation tabs.
+* Bug 57287: "Sandbox messages" should not appear in the TUX group selector.
+* Bug 57391: Remove default NS_MEDIAWIKI from $wgTranslateMessageNamespaces.
+* Fix button styles in Special:Translate.
+* Accept any number as explicit plural form.
