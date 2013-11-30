@@ -1036,7 +1036,7 @@ How móžoš wubraś, kótare rěcy coš rady wiźeś.',
 	'translate-fs-userpage-level-3' => 'Mam dobre znajobnosći',
 	'translate-fs-userpage-level-2' => 'Mam pśerězne znajobnosći',
 	'translate-fs-userpage-level-1' => 'Mam jano mało znajobnosćow',
-	'translate-fs-userpage-help' => 'Pšosym pódaj swóje rěcne znajobnosći a daj nam něco wó sebje k wěsći. Jolic maš znajobnosći we wěcej ako pěś rěcach, móžoš je pózdźej pódaś.', # Fuzzy
+	'translate-fs-userpage-help' => 'Pšosym pódaj swóje rěcne znajobnosći a daj něco wó sebje k wěsći. Jolic maš znajobnosći we wěcej ako pěś rěcach, móžoš je pózdźej pódaś.',
 	'translate-fs-userpage-submit' => 'Twój wužywarski bok napóraś',
 	'translate-fs-userpage-done' => 'Derje cynił! Maš něnto wužywarski bok.',
 	'translate-fs-permissions-planguage' => 'Głowna rěc:',
@@ -2889,42 +2889,42 @@ $messages['ml'] = array(
  * @author Htt
  * @author Shantanoo
  * @author Shubhamlanke
+ * @author V.narsikar
  */
 $messages['mr'] = array(
 	'firststeps' => 'पहिल्या पायर्‍या',
 	'firststeps-desc' => '[[महत्त्वाचे; पहिली पायरी महत्त्वाचे पान]] भाषांतर विस्तार वापरून सुरु केलेल्या युजर्सना मिळण्यासाठी .', # Fuzzy
 	'translate-fs-pagetitle-done' => ' - झाले!',
-	'translate-fs-pagetitle-pending' => 'अनिर्णीत,राहिलेले,',
+	'translate-fs-pagetitle-pending' => '- प्रलंबित',
 	'translate-fs-pagetitle' => 'सुरु झालेले विझार्ड मिळण्यासाठी ‌-$१', # Fuzzy
-	'translate-fs-signup-title' => 'करार करणे.',
-	'translate-fs-userpage-title' => 'माझे सदस्यपान तयार करा.',
-	'translate-fs-permissions-title' => 'भाषांतर करण्याची परवानगी मिळण्यासाठी विनंती करा. (भाषांतर करणाऱ्या व्यक्तीस)',
+	'translate-fs-signup-title' => 'नोंदणी करा',
+	'translate-fs-userpage-title' => 'आपले सदस्यपान तयार करा',
+	'translate-fs-permissions-title' => "'भाषांतरकार' म्हणून परवानगी मिळण्यासाठी विनंती करा.",
 	'translate-fs-target-title' => 'भाषांतरास सुरुवात करा!',
 	'translate-fs-email-title' => 'आपला ई-मेल पत्ता पडताळून पहा.',
-	'translate-fs-intro' => '{{साइटचे नाव}} साइटवर तुमचे स्वागत आहे पहिली पायरी
-योग्य भाषांतकार होण्याच्या प्रक्रियेद्वारे तुम्हाला क्रमा-क्रमाने मार्गदर्शन केले जाईल.
-शेवटी तुम्ही ह्या साईटवर  {{साइटचे नाव}} उपलब्ध  असलेल्या सर्व प्रकल्प ईंटरफेस संदेशांचे भाषांतर करण्यास लायकवान बनाल.',
-	'translate-fs-selectlanguage' => '(योग्य) भाषा निवडा.',
-	'translate-fs-settings-planguage' => 'मुख्य(महत्त्वाची) भाषा निवडा.',
-	'translate-fs-settings-planguage-desc' => 'तुमची मुख्य भाषा ही विकीवर तुमची दुवा साधणारी भाषा आणि भाषांतरासाठी दिफॉल्ट भाषा म्हणुन वापरली जाते.',
+	'translate-fs-intro' => '{{SITENAME}}वर तुमचे स्वागत आहे पहिली पायरी:
+योग्य भाषांतकार होण्याच्या प्रक्रियेद्वारे तुम्हाला क्रमाक्रमाने मार्गदर्शन केले जाईल.
+शेवटी तुम्हास या {{SITENAME}}वर  उपलब्ध  असलेल्या सर्व प्रकल्प ईंटरफेस संदेशांचे भाषांतर करणे शक्य होईल.',
+	'translate-fs-selectlanguage' => 'भाषा निवडा',
+	'translate-fs-settings-planguage' => 'प्राथमिक भाषा:',
+	'translate-fs-settings-planguage-desc' => 'तुमची प्राथमिक भाषा ही या विकीवर तुमची आंतरपृष्ठ(इंटरफेस) भाषा आणि भाषांतरासाठी अविचल(डिफॉल्ट) भाषा म्हणुन वापरल्या जाते.',
 	'translate-fs-settings-slanguage' => 'उप‌-भाषा $१:', # Fuzzy
-	'translate-fs-settings-slanguage-desc' => 'भाषांतर एडिटर मध्ये संदेशाचे  दुसऱ्या भाषेमध्ये भाषांतर सहज शक्य आहे.
-जर तुम्हाला एखादी भाषा पाहण्यासाठी आवडेल; तर इथे तुम्ही ती भाषा निवडू शकता.',
-	'translate-fs-settings-submit' => 'माझ्या पसंती जतन करा.',
-	'translate-fs-userpage-level-N' => 'मी जन्मतः (..........)(एखादी भाषा)  बोलतो.',
-	'translate-fs-userpage-level-5' => 'मी( ..........)(एखाद्या भाषेचे दुसऱ्या भाषेत रुपांतर)व्यवसायिक भाषांतरकार आहे',
-	'translate-fs-userpage-level-4' => 'मी त्या (भाषेला)माझ्या मूळ बोलीभाषे एवढा जाणतो.
-उदा. एखादी भाषा,गोष्ट',
-	'translate-fs-userpage-level-3' => 'माझी त्या ...... चांगली पकड(कौशल्य) आहे.',
-	'translate-fs-userpage-level-2' => 'माझी त्या.....(भाषेवर) मध्यम कौशल्य आहे.',
-	'translate-fs-userpage-level-1' => 'मला थोडेसे माहिती आहे.',
+	'translate-fs-settings-slanguage-desc' => 'भाषांतर संपादकात,एखाद्या संदेशाचे  दुसऱ्या भाषेमधील भाषांतर दर्शविणे सहज शक्य आहे.
+तुम्हाला अशी कोणती भाषा पाहण्यासाठी आवडेल,ती असल्यास, इथे तुम्ही ती नेमकी भाषा निवडू शकता.',
+	'translate-fs-settings-submit' => 'पसंतीक्रम जतन करा.',
+	'translate-fs-userpage-level-N' => 'मी उपजतच ही भाषा बोलतो',
+	'translate-fs-userpage-level-5' => 'मी या भाषेचा व्यावसायिक भाषांतरकार आहे',
+	'translate-fs-userpage-level-4' => 'मी त्यास (भाषेला)माझ्या उपजत भाषेएवढाच जाणतो',
+	'translate-fs-userpage-level-3' => 'मला या भाषेवर प्रभुत्व आहे',
+	'translate-fs-userpage-level-2' => 'मला या भाषेवर मध्यम स्वरुपाचे प्रभुत्व आहे',
+	'translate-fs-userpage-level-1' => 'मला या भाषेबद्दल थोडकेच माहिती आहे',
 	'translate-fs-userpage-help' => 'क्रुपया तुमचे भाषेचे कौशल्य दाखवा आणि स्वतःबद्दल काहीतरी सांगा. जर तुम्हाला पाच पेक्षा जास्त भाषा माहित असतील; तर त्यांचा तुम्ही नंतर समावेश करू शकता.', # Fuzzy
 	'translate-fs-userpage-submit' => 'माझे सदस्यपान तयार करा.', # Fuzzy
-	'translate-fs-userpage-done' => 'छान! तुम्हाला आता सदस्यपान आहे.',
-	'translate-fs-permissions-planguage' => 'मुख्य(महत्त्वाची) भाषा निवडा',
-	'translate-fs-permissions-help' => 'तुम्ही भाषांतर करणाऱ्या समूहामध्ये समाविष्ट होण्यासाठी विनंती पाठवावी.
-तुम्ही भाषांतर करण्यासाठी वापरणारी मुख्य भाषा निवडा.
-तुम्ही खाली टेक्सबॉक्स मध्ये इतर भाषा आणि सूचना देऊ शकता.',
+	'translate-fs-userpage-done' => "छान! तुमचे आता 'सदस्यपान' आहे.",
+	'translate-fs-permissions-planguage' => 'प्राथमिक भाषा:',
+	'translate-fs-permissions-help' => 'तुम्ही भाषांतर करणाऱ्या समूहामध्ये समाविष्ट होण्यासाठी विनंती पाठविणे आवश्यक आहे.
+तुम्ही कोणत्या भाषेत भाषांतर करावयाचे ते निवडा.
+तुम्ही खालील मजकूरपेटीत इतर भाषा आणि दुसऱ्या सूचना देऊ शकता.',
 );
 
 /** Malay (Bahasa Melayu)

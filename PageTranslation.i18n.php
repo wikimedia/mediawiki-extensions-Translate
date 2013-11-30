@@ -2698,6 +2698,7 @@ Jano aktualne wersije daju se za pśełožowanje markěrowaś.',
 	'tpt-notsuitable' => 'Bok $1 njejo gódny za pśełožowanje.
 Zawěsć, až ma toflicki <nowiki><translate></nowiki> a płaśiwu syntaksu.',
 	'tpt-saveok' => 'Bok [[$1]] jo se markěrował za pśełožowanje z $2 {{PLURAL:$2|pśełožujobneju jadnotku|pśełožujobnyma jadnotkoma|pśełožujobnymi jadnotkami|pśełožujobnymi jadnotkami}}. Bok móže se něnto <span class="plainlinks">[$3 pśełožowaś]</span>.',
+	'tpt-offer-notify' => 'Móžoš wó toś tom boku <span class="plainlinks">[$1 pśełožowarjow informěrowaś]</span>.',
 	'tpt-badsect' => '"$1" njejo płaśiwe mě za pśełožowańsku jadnotku $2.',
 	'tpt-showpage-intro' => 'Dołojce su nowe, eksistěrujuce a wulašowane pśełožowańske jadnotki nalicone.
 Nježli až markěrujoš toś tu wersiju za pśełožowanje, pśekontrolěruj, lěc změny na pśełožowańskich jadnotkach su zminiměrowane, aby se wobinuł njetrěbne źěło za pśełožowarjow.',
@@ -2735,6 +2736,7 @@ ale nejnowša {{PLURAL:$1|wersija njedajo|wersiji njedajotej|wersije njedaju}} s
 	'tpt-translation-intro' => 'Toś ten bok jo <span class="plainlinks">[$1 pśełožona wersija]</span> boka [[$2]] a $3 % pśełožka jo dogótowane a pśełožk jo aktualny.',
 	'tpt-languages-legend' => 'Druge rěcy:',
 	'tpt-languages-zero' => 'Pśełožowanje za toś tu rěc zachopiś',
+	'tpt-tab-translate' => 'Pśełožyś',
 	'tpt-target-page' => 'Toś ten bok njedajo se manuelnje aktualizěrowaś.
 Toś ten bok jo pśełožk boka [[$1]] a pśełožk dajo se z pomocu [$2 Pśełožyś] aktualizěrowaś.',
 	'tpt-unknown-page' => 'Toś ten mjenjowy rum jo za pśełožki wopśimjeśowych bokow wuměnjony.
@@ -7089,11 +7091,11 @@ $messages['mn'] = array(
  */
 $messages['mr'] = array(
 	'pagetranslation' => 'भाषांतराची पाने.',
-	'right-pagetranslation' => 'Mark versions of pages for translation',
-	'action-pagetranslation' => 'manage translatable pages',
-	'tpt-desc' => 'Extension for translating content pages',
-	'tpt-section' => '$1 चे भाषांतर',
-	'tpt-offer-notify' => 'आपण या पानाबाबत <span class="plainlinks">[$1 भाषांतरकारांना सूचना देउ शकता]</span>',
+	'right-pagetranslation' => 'पानांच्या भाषांतरासाठी असलेल्या आवृत्त्यांवर खूण करा',
+	'action-pagetranslation' => 'भाषांतरासाठी असलेल्या पानांचे व्यवस्थापन करा',
+	'tpt-desc' => 'आशय-पानांच्या भाषांतरासाठी असलेले विस्तारक',
+	'tpt-section' => 'भाषांतर एकक $1',
+	'tpt-offer-notify' => 'आपण या पानाबाबत <span class="plainlinks">[$1 भाषांतरकारांना माहिती देउ शकता]</span>',
 	'tpt-tab-translate' => 'भाषांतर करा',
 );
 
@@ -9511,6 +9513,7 @@ Maamulka waxa uu muhiimad uu siiyey turjumidda $3.",
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
+ * @author Milicevic01
  * @author Rancher
  * @author Милан Јелисавчић
  * @author Михајло Анђелковић
@@ -9555,7 +9558,7 @@ $messages['sr-ec'] = array(
 	'tpt-aggregategroup-new-name' => 'Назив:',
 	'tpt-aggregategroup-new-description' => 'Опис (необавезно):',
 	'tpt-aggregategroup-invalid-group' => 'Група не постоји',
-	'log-name-pagetranslation' => 'Историја превода страница',
+	'log-name-pagetranslation' => 'Дневник превода страница',
 	'pt-movepage-title' => 'Премештање преводиве странице $1',
 	'pt-movepage-block-base-exists' => 'Циљна основна страница [[:$1]] постоји.', # Fuzzy
 	'pt-movepage-block-base-invalid' => 'Циљ основне странице не представља исправан наслов.', # Fuzzy
@@ -9594,6 +9597,7 @@ $messages['sr-ec'] = array(
 
 /** Serbian (Latin script) (srpski (latinica)‎)
  * @author Michaello
+ * @author Milicevic01
  * @author Rancher
  */
 $messages['sr-el'] = array(
@@ -9613,7 +9617,7 @@ $messages['sr-el'] = array(
 	'translate-tag-markthis' => 'Označi stranicu kao „za prevođenje“',
 	'tpt-translation-intro' => 'Ova stranica je <span class="plainlinks">[$1 prevedeno izdanje]</span> stranice [[$2]]. Prevod je $3% završen.',
 	'tpt-languages-separator' => '&#160;•&#32;',
-	'log-name-pagetranslation' => 'Istorija prevoda stranice',
+	'log-name-pagetranslation' => 'Dnevnik prevoda stranica',
 	'pt-movepage-title' => 'Premeštanje prevodive stranice $1',
 	'pt-movepage-block-base-exists' => 'Ciljna osnovna stranica [[:$1]] postoji.', # Fuzzy
 	'pt-movepage-block-base-invalid' => 'Cilj osnovne stranice ne predstavlja ispravan naslov.', # Fuzzy

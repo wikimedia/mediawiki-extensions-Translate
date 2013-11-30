@@ -300,6 +300,8 @@ $messages['dsb'] = array(
 	'tux-sst-nosolr-body' => 'Toś ten wiki njama słužbu za pytanje pśełožkow.',
 	'tux-sst-solr-offline-title' => 'Pytanje njestoj k dispoziciji',
 	'tux-sst-solr-offline-body' => 'Pytańska słužba njestoj tuchylu k dispoziciji.',
+	'tux-sst-next' => 'Pśiduce wuslědki',
+	'tux-sst-prev' => 'Pjerwjejšne wuslědki',
 );
 
 /** Spanish (español)
@@ -481,6 +483,8 @@ $messages['hsb'] = array(
 	'tux-sst-nosolr-body' => 'Tutón wiki nima słužbu za pytanje přełožkow.',
 	'tux-sst-solr-offline-title' => 'Pytanje k dispoziciji njesteji',
 	'tux-sst-solr-offline-body' => 'Pytanska słužba tuchwilu k dispoziciji njesteji.',
+	'tux-sst-next' => 'Přichodne wuslědki',
+	'tux-sst-prev' => 'Předchadne wuslědki',
 );
 
 /** Interlingua (interlingua)
