@@ -64,7 +64,17 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		$translatablePage->addMarkedTag( $latest, array( 'foo' ) );
 		$this->assertSame( $latest, $translatablePage->getReadyTag(), 'Ready tag was added' );
 		$this->assertSame( $latest, $translatablePage->getMarkedTag(), 'Marked tag was added' );
+		// @todo FIXME: Deprecated! Needs a user to replace.
 		$page->updateRestrictions( array( 'edit' => 'sysop' ), 'Test case' );
+		/*
+		$page->doUpdateRestrictions(
+			array( 'edit' => 'sysop' ),
+			array(), // expiry
+			false, // cascade allowed
+			'Test case', // reason
+			$user // user
+		);
+		*/
 
 		$newLatest = $latest + 1;
 		$this->assertSame(
