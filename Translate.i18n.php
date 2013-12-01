@@ -5751,6 +5751,7 @@ $messages['bxr'] = array(
 
 /** Catalan (català)
  * @author Aleator
+ * @author Fitoschido
  * @author Jordi Roqué
  * @author Paucabot
  * @author Pginer
@@ -6014,7 +6015,7 @@ Detalls: $1',
 	'translate-js-next' => 'Desa i passa al següent',
 	'translate-js-nonext' => "Aquest era el darrer missatge d'aquesta pàgina.",
 	'translate-js-skip' => 'Salta al següent',
-	'translate-js-save-failed' => 'Error en desar. Si us plau, comuniqueu aquest error.',
+	'translate-js-save-failed' => 'S’ha produït un error en desar. Informeu d’aquest error.',
 	'translate-js-history' => 'Historial de traducció',
 	'translate-js-support' => 'Feu una pregunta',
 	'translate-js-support-title' => 'Demaneu ajuda si trobeu que no hi ha prou informació per a traduir correctament aquest missatge.',
@@ -31626,6 +31627,7 @@ Ovo je najkorisnije pri proveri prevoda.',
 	'tux-editor-message-tools-history' => 'Istorija',
 	'tux-editor-message-tools-translations' => 'Svi prevodi',
 	'tux-editor-loading' => 'Učitavanje...',
+	'translate-search-more-languages-info' => 'još $1 {{PLURAL:$1|jezik|jezika}}',
 );
 
 /** Swati (SiSwati)

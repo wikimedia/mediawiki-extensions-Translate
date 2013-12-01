@@ -1962,6 +1962,7 @@ $messages['bug'] = array(
 );
 
 /** Catalan (català)
+ * @author Alvaro Vidal-Abarca
  * @author Jordi Roqué
  * @author SMP
  * @author Solde
@@ -1997,7 +1998,7 @@ Assegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi v
 	'tpt-aggregategroup-new-name' => 'Nom:',
 	'pt-movepage-title' => 'Mou la pàgina traduïble $1',
 	'pt-movepage-blockers' => "La pàgina traduïble no pot ser reanomenada a causa {{PLURAL:$1|de l'error següent|dels errors següents}}:",
-	'pt-movepage-block-base-exists' => 'La pàgina base de destinació [[:$1]] ja existeix.', # Fuzzy
+	'pt-movepage-block-base-exists' => 'La pàgina base de traaducció [[:$1]] ja existeix.',
 	'pt-movepage-block-base-invalid' => 'La pàgina base de destinació no té un títol vàlid.', # Fuzzy
 	'pt-movepage-block-tp-exists' => 'La pàgina de traducció de destinació [[:$2]] ja existeix.',
 	'pt-movepage-block-tp-invalid' => 'El títol de la pàgina de traducció de destinació [[:$1]] no seria vàlid (potser seria massa llarg).',
@@ -2006,9 +2007,9 @@ Assegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi v
 	'pt-movepage-block-subpage-exists' => 'La subpàgina de destinació [[:$2]] ja existeix.',
 	'pt-movepage-block-subpage-invalid' => 'El títol de la subpàgina de destinació [[:$1]] no seria vàlid (potser seria massa llarg).',
 	'pt-movepage-list-pages' => 'Llista de pàgines per moure',
-	'pt-movepage-list-translation' => 'Pàgines de traducció', # Fuzzy
+	'pt-movepage-list-translation' => '{{PLURAL:$1|Pàgina|Pàgines}} de traducció',
 	'pt-movepage-list-section' => 'Pàgines de secció', # Fuzzy
-	'pt-movepage-list-other' => 'Altres subpàgines', # Fuzzy
+	'pt-movepage-list-other' => 'Altres sub{{PLURAL:$1|pàgina|pàgines}}',
 	'pt-movepage-list-count' => 'En total, $1 {{PLURAL:$1|pàgina|pàgines}} a moure.',
 	'pt-movepage-legend' => 'Mou la pàgina traduïble',
 	'pt-movepage-current' => 'Nom actual:',

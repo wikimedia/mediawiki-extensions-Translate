@@ -305,13 +305,14 @@ $messages['dsb'] = array(
 );
 
 /** Spanish (español)
+ * @author Fitoschido
  * @author Ovruni
  */
 $messages['es'] = array(
 	'tux-sst-edit' => 'Editar traducción',
 	'tux-sst-search' => 'Buscar',
 	'tux-sst-search-ph' => 'Buscar traducciones',
-	'tux-sst-count' => '{{PLURAL:$1|Un resultado encontrado|$1 resultados encontrados}}',
+	'tux-sst-count' => 'Se {{PLURAL:$1|encontró un resultado|encontraron $1 resultados}}',
 	'tux-sst-facet-language' => 'Idiomas',
 	'tux-sst-facet-group' => 'Grupos de mensajes',
 	'tux-sst-next' => 'Resultados siguientes',
