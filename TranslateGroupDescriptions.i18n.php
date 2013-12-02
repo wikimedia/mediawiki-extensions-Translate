@@ -688,6 +688,7 @@ $messages['el'] = array(
  */
 $messages['en-gb'] = array(
 	'translate-group-desc-translate' => 'Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:Translate Translate]; please familiarise yourself with its [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossary]',
+	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] is a service showing routes for hiking, cycling, mountain biking and inline skating around the world. It uses the GNU GPL licence',
 );
 
 /** Esperanto (Esperanto)
@@ -1611,6 +1612,13 @@ $messages['lb'] = array(
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] ass e richtege kollaborativen Editeur an Echtzäit',
 );
 
+/** لوری (لوری)
+ * @author Mogoeilor
+ */
+$messages['lrc'] = array(
+	'translate-group-desc-translatablepages' => 'همه بلگیا لرسنی',
+);
+
 /** Lithuanian (lietuvių)
  * @author Perkunas
  * @author Tomasdd
@@ -2509,7 +2517,7 @@ Se [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_ru
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] är en Flash-baserad redigerare för OpenStreetMap',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] är en samling verktyg för att redigera Wikipedia',
 	'bw-desc-shapado' => 'Meddelandegrupp för Q&A-programvaran [[Translating:Shapado|Shapado]] som är fri och har öppen källkod',
-	'translate-group-desc-tsint' => 'En meddelandegrupp för [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-systemet för verktyg till [http://toolserver.org Toolserver](<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tekniska detaljer]</span>)', # Fuzzy
+	'translate-group-desc-tsint' => 'En meddelandegrupp för [[Translating:Intuition|Intuition]], i18n-systemet för verktyg till [http://toolserver.org Toolserver](<span class="plainlinks">[[Translating talk:Intuition|support]]</span>)',
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] är ett verktyg för att ladda upp filer till Wikimedia Commons och andra Wikimediaprojekt',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan snabbt hitta författarna till en sida på en Wikimedia wiki.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] är ett projekt  för att tillhandahålla en offline textversion av Wikipedia på en mobil enhet.',

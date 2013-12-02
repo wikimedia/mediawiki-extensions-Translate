@@ -11023,7 +11023,7 @@ $messages['zh-hans'] = array(
 	'tpt-list-nopages' => '没有被标记进行翻译或者准备被标记进行翻译的页面。',
 	'tpt-new-pages-title' => '提议翻译的页面',
 	'tpt-old-pages-title' => '正在翻译的页面',
-	'tpt-other-pages-title' => '损坏的页面',
+	'tpt-other-pages-title' => '受损页面',
 	'tpt-discouraged-pages-title' => '不建议的页面',
 	'tpt-new-pages' => '以下{{PLURAL:$1|此|这些}}页面包含具有翻译标记的文本，
 但没有被标记进行翻译的版本。',
