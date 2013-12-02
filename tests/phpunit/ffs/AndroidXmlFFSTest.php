@@ -4,6 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
+ * @author Ciaran Gultnieks
  * @license GPL-2.0+
  */
 
@@ -29,7 +30,12 @@ class AndroidXmlFFSTest extends MediaWikiTestCase {
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="wpt_voicerec">Voice recording</string>
-	<string name="wpt_stillimage" fuzzy="true">Picture</string>
+        <string name="wpt_stillimage" fuzzy="true">Picture</string>
+        <string-array name="numbers">
+		<item>One</item>
+		<item>Two</item>
+		<item>Three</item>
+        </string-array>
 </resources>
 XML;
 
@@ -42,6 +48,9 @@ XML;
 		$expected = array(
 			'wpt_voicerec' => 'Voice recording',
 			'wpt_stillimage' => '!!FUZZY!!Picture',
+			'ASA_numbers_0' => 'One',
+			'ASA_numbers_1' => 'Two',
+			'ASA_numbers_2' => 'Three',
 		);
 		$expected = array( 'MESSAGES' => $expected, 'AUTHORS' => array() );
 		$this->assertEquals( $expected, $parsed );
@@ -57,6 +66,9 @@ XML;
 		$messages = array(
 			'ko=26ra' => 'wawe',
 			'foobar' => '!!FUZZY!!Kissa kala <koira> "a\'b',
+			'ASA_numbers_0' => 'One',
+			'ASA_numbers_1' => 'Two',
+			'ASA_numbers_2' => 'Three',
 		);
 		$collection = new MockMessageCollection( $messages );
 
