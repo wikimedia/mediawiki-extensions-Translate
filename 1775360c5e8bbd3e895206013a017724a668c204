@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_a94d8177",
+        "filename": "ffs/AndroidXmlFFS.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-02T22:23:39Z",
+      "side": 1,
+      "message": "I wonder what happens here when there\u0027s a partial translation. Should the whole string array be omitted in that case?",
+      "revId": "1775360c5e8bbd3e895206013a017724a668c204",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
