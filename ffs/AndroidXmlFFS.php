@@ -4,6 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
+ * @author Ciaran Gultnieks
  * @license GPL-2.0+
  */
 
@@ -27,6 +28,7 @@ class AndroidXmlFFS extends SimpleFFS {
 		$messages = array();
 		$mangler = $this->group->getMangler();
 
+		// Read normal strings...
 		foreach ( $reader->string as $string ) {
 			$key = (string)$string['name'];
 			$value = stripcslashes( (string)$string );
@@ -36,6 +38,20 @@ class AndroidXmlFFS extends SimpleFFS {
 			}
 
 			$messages[$key] = $value;
+		}
+
+		// Read string arrays. Each item is given a message ID prefixed
+		// with ASA_ and postfixed with _n where n is the index of the
+		// item. This is to allow the array to be reconstructed at when
+		// writing. (ASA = Android String Array)
+		foreach ( $reader->{"string-array"} as $stringarray ) {
+			$arrayname = (string)$stringarray['name'];
+			$index = 0;
+			foreach ( $stringarray->item as $item ) {
+				$key = "ASA_${arrayname}_$index";
+				$messages[$key] = (string)$item;
+				$index++;
+			}
 		}
 
 		return array(
@@ -58,22 +74,40 @@ XML;
 			return '';
 		}
 
-		/**
-		 * @var $m TMessage
-		 */
+		/** @var $m TMessage */
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 
-			// Kudos to the brilliant person who invented this braindead file format
-			$string = $writer->addChild( 'string', addcslashes( $value, '"\'' ) );
-			$string->addAttribute( 'name', $key );
+			if ( strpos( $key, 'ASA_' ) === false ) {
+				// Kudos to the brilliant person who invented this braindead file format
+				$string = $writer->addChild( 'string', addcslashes( $value, '"\'' ) );
+				$string->addAttribute( 'name', $key );
 
-			// This is non-standard
-			if ( $m->hasTag( 'fuzzy' ) ) {
-				$string->addAttribute( 'fuzzy', 'true' );
+				// This is non-standard
+				if ( $m->hasTag( 'fuzzy' ) ) {
+					$string->addAttribute( 'fuzzy', 'true' );
+				}
+			} else {
+				// I'm assuming the strings are coming back out in same order
+				// they went in. If that turns out not to be the case, we'll
+				// have to do something more here to ensure they go in the XML
+				// in the right order. (we have the order, tagged on to the end
+				// of the message IDs!)
+				$arrayname = substr( $key, 4 );
+				$arrayname = substr( $arrayname, 0, strrpos( $arrayname, '_' ) );
+				$arrayel = $writer->xpath( "//string-array[@name='$arrayname']" );
+
+				if ( count( $arrayel ) === 1 ) {
+					$arrayel = $arrayel[0];
+				} else {
+					$arrayel = $writer->addChild( 'string-array' );
+					$arrayel->addAttribute( 'name', $arrayname );
+				}
+
+				$arrayel->addChild( 'item', $value );
 			}
 		}
 
