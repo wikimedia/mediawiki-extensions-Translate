@@ -16,6 +16,24 @@
       "revId": "601ca11a868324f72a9782b0aad2e4e2fa78b87e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_c43787aa",
+        "filename": "resources/js/ext.translate.base.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-03T13:08:55Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "0ee75395_a4f803e3",
+      "revId": "601ca11a868324f72a9782b0aad2e4e2fa78b87e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
