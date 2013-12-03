@@ -99,7 +99,7 @@
 			$.each( groups, function ( index, group ) {
 				if ( group.id === id ) {
 					result = group;
-					return;
+					return false;
 				}
 
 				if ( group.groups ) {
@@ -107,7 +107,7 @@
 
 					if ( group ) {
 						result = group;
-						return;
+						return false;
 					}
 				}
 			} );
