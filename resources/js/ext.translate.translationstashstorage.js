@@ -24,7 +24,7 @@
 				action: 'translationstash',
 				subaction: 'add',
 				title: title,
-				translation: translation,
+				translation: translation
 			} );
 
 			return deferred.promise();

@@ -68,7 +68,7 @@
 				meta: 'messagegroups',
 				mgformat: 'flat',
 				mgprop: props,
-				mgroot: id,
+				mgroot: id
 			};
 
 			new mw.Api()
