@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_41e7e90d",
+        "filename": "tests/browser/features/special_translate.feature",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-03T09:55:10Z",
+      "side": 1,
+      "message": "@custom-setup-needed not yet in use, just preparing for the moment when we get these to run for patchsets on Gerrit.",
+      "revId": "f2425c3369d27e3c33d9f49f9373041ff4dda1b4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_01f1e1c7",
+        "filename": "tests/browser/features/step_definitions/special_translate_steps.rb",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-03T09:55:10Z",
+      "side": 1,
+      "message": "The default group is recent changes group, which can\u0027t have workflow states.",
+      "revId": "f2425c3369d27e3c33d9f49f9373041ff4dda1b4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_e1bf1dcc",
+        "filename": "tests/browser/features/step_definitions/special_translate_steps.rb",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-03T09:55:10Z",
+      "side": 1,
+      "message": "Have to use _element.click here because it is a div",
+      "revId": "f2425c3369d27e3c33d9f49f9373041ff4dda1b4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
