@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_e1b95d79",
+        "filename": "tests/browser/features/special_translate.feature",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-12-03T11:31:59Z",
+      "side": 1,
+      "message": "Better: \"workflow state selector\"? (E.g. \"unset\" is not properly a state? and states are not clicked, selector is.)",
+      "revId": "f2425c3369d27e3c33d9f49f9373041ff4dda1b4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_018b21c5",
+        "filename": "tests/browser/features/special_translate.feature",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-12-03T11:31:59Z",
+      "side": 1,
+      "message": "Here and elsewhere: typo \"p\"",
+      "revId": "f2425c3369d27e3c33d9f49f9373041ff4dda1b4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_01f1e1c7",
         "filename": "tests/browser/features/step_definitions/special_translate_steps.rb",
         "patchSetId": 1
