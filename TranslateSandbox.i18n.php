@@ -561,13 +561,23 @@ Kon alstublieft naar $2 en maak nog wat meer vertalingen.',
 	'tsb-search-requests' => 'Verzoeken zoeken',
 	'tsb-accept-button-label' => 'Accepteren',
 	'tsb-reject-button-label' => 'Afwijzen',
+	'tsb-accept-all-button-label' => 'Alles accepteren',
+	'tsb-reject-all-button-label' => 'Alles afwijzen',
 	'tsb-reminder-link-text' => 'Herinnering per e-mail verzenden',
 	'tsb-translations-source' => 'Bron',
+	'tsb-translations-user' => 'Gebruikersvertalingen',
+	'tsb-translations-current' => 'Bestaande vertalingen',
 	'translationstash' => 'Welkom',
 	'translate-translationstash-welcome' => 'Welkom {{GENDER:$1|$1}}, u bent nu vertaler',
-	'translate-translationstash-welcome-note' => 'Raak vertrouwd met de vertaalhulpmiddelen door een aantal willekeurig geselecteerde berichten te vertalen.', # Fuzzy
+	'translate-translationstash-welcome-note' => 'Raak vertrouwd met de vertaalhulpmiddelen. Vertaal een aantal willekeurig geselecteerde berichten en krijg volledige vertaalrechten voor uw favoriete projecten.',
 	'translate-translationstash-initialtranslation' => 'Uw vertaling',
+	'translate-translationstash-translations' => '$1 voltooide {{PLURAL:$1|vertaling|vertalingen}}',
 	'translate-translationstash-skip-button-label' => 'Nog één proberen',
+	'tsb-limit-reached-title' => 'Bedankt voor uw vertalingen',
+	'tsb-limit-reached-body' => 'U het de limiet voor het aantal vertalingen voor nieuwe
+vertalers bereikt. Ons team gaat ze snel controleren en
+promoveert uw gebruiker snel, zodat u zonder beperkingen
+kunt gaan vertalen.',
 );
 
 /** Occitan (occitan)
