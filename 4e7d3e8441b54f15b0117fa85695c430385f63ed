@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_24ecf31f",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-03T12:53:58Z",
+      "side": 1,
+      "message": "Did this sneak in from some other patch?",
+      "revId": "4e7d3e8441b54f15b0117fa85695c430385f63ed",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
