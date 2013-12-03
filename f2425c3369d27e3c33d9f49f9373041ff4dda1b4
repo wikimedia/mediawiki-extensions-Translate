@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_215d054b",
+        "filename": "tests/browser/features/special_translate.feature",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-03T11:41:42Z",
+      "side": 1,
+      "message": "It\u0027s not really a selector until you click it. The important thing here is that the terms are consistent.",
+      "parentUuid": "0ee75395_e1b95d79",
+      "revId": "f2425c3369d27e3c33d9f49f9373041ff4dda1b4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_018b21c5",
         "filename": "tests/browser/features/special_translate.feature",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2013-12-03T11:31:59Z",
       "side": 1,
       "message": "Here and elsewhere: typo \"p\"",
+      "revId": "f2425c3369d27e3c33d9f49f9373041ff4dda1b4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_0158c157",
+        "filename": "tests/browser/features/special_translate.feature",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-03T11:41:42Z",
+      "side": 1,
+      "message": "Will fix this by tomorrow.",
+      "parentUuid": "0ee75395_018b21c5",
       "revId": "f2425c3369d27e3c33d9f49f9373041ff4dda1b4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
