@@ -311,8 +311,6 @@ class SpecialSearchTranslations extends SpecialPage {
 				$nondefaults['grouppath'] = $pathString . $id;
 			}
 
-			$url = $this->getTitle()->getLocalUrl( $nondefaults );
-
 			$value = isset( $counts[$id] ) ? $counts[$id] : 0;
 			$count = $this->getLanguage()->formatNum( $value );
 

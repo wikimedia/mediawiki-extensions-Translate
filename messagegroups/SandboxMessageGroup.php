@@ -156,7 +156,6 @@ class SandboxMessageGroup extends WikiMessageGroup {
 		}
 
 		// Try harder
-		$keys = array();
 		if ( method_exists( $group, 'getKeys' ) ) {
 			$keys = $group->getKeys();
 		} else {
