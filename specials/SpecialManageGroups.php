@@ -174,6 +174,7 @@ class SpecialManageGroups extends SpecialPage {
 	 * @param string $code
 	 * @param string $type
 	 * @param array $params
+	 * @param int $limit
 	 * @return string HTML
 	 */
 	protected function formatChange( MessageGroup $group, $code, $type, $params, &$limit ) {

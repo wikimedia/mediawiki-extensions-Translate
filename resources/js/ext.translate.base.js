@@ -107,7 +107,6 @@
 
 					if ( group ) {
 						result = group;
-						return;
 					}
 				}
 			} );
