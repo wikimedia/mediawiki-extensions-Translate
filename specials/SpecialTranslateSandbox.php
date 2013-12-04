@@ -123,9 +123,7 @@ HTML;
 		</button>
 	</div>
 	<div class="five columns request-count">
-		<div>
-			{$this->msg( "tsb-request-count" )->numParams( $count )->parse()}
-		</div>
+		{$this->msg( "tsb-request-count" )->numParams( $count )->parse()}
 	</div>
 	<div class="three columns center">
 		<input class="request-selector-all" name="request" type="checkbox" />

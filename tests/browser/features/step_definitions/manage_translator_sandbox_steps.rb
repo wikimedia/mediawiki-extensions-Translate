@@ -10,16 +10,16 @@ When(/^I search for '(.*)' in the sandboxed users search field$/) do |string|
 	on(ManageTranslatorSandboxPage).search = string
 end
 
-Then(/^users whose name begins with '(.*)' are displayed in the first column$/) do |prefix|
+Then(/^only users whose name begins with '(.*)' are displayed in the first column$/) do |prefix|
 	on(ManageTranslatorSandboxPage).username_element.each do |name|
 		name.text.should match(/^#{prefix}/i)
 	end
 end
 
-Then(/^users whose name begins with 'orava' are not displayed in the first column$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^no users are displayed in the first column$/) do
+	on(ManageTranslatorSandboxPage).username_element.length.should == 0
 end
 
-Then(/^'(\d+) requests' is displayed at the top of the first column$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then(/^'(.+)' is displayed at the top of the first column$/) do |requests_number|
+	on(ManageTranslatorSandboxPage).request_count.should match(/^#{requests_number}/i)
 end
