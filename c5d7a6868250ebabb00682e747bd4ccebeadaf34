@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_d152a069",
+        "filename": "Translate.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 988,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-04T13:54:11Z",
+      "side": 1,
+      "message": "Param*e*ters",
+      "revId": "c5d7a6868250ebabb00682e747bd4ccebeadaf34",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
