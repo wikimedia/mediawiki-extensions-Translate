@@ -8,7 +8,7 @@ Feature: Special:Translate
   describes how it is meant to look and behave.
 
   @meta.wikimedia.org @sandbox.translatewiki.net
-  Scenario: Workflow selector being visible
+  Scenario: Workflow selector not being visible
     Given I am translating a message group which doesn't have workflow states
     Then I should not see a workflow state
 
