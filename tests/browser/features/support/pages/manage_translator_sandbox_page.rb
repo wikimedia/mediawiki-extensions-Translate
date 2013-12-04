@@ -8,6 +8,7 @@ class ManageTranslatorSandboxPage
 	div(:requests_list, class: "requests-list")
 	div(:request_count, class: "request-count")
 
+	div(:details, class: "details")
 	div(:username) do |page|
 		page.requests_list_element.element.divs(class: "username")
 	end
