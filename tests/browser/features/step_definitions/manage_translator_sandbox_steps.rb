@@ -1,3 +1,5 @@
+require "json"
+
 Given(/^I am logged in as a translation administrator$/) do
 	step "I am logged in"
 end
@@ -36,4 +38,35 @@ end
 
 Then(/^I should see '(.*)' in the second column$/) do |text|
 	on(ManageTranslatorSandboxPage).details.should == text
+end
+
+Then(/^I should see a list of users in the first column$/) do
+	on(ManageTranslatorSandboxPage).username_element.length.should == 10
+end
+
+Then(/^the list of users should be sorted by the number of translations and the most recent within them$/) do
+	on(ManageTranslatorSandboxPage).request_element.each do |request|
+		request_data = JSON.parse(request.element.attribute("data-data"))
+		p request_data
+	end
+end
+
+Then(/^I should see the checkbox next to the name of the first user (\w+) and (\w+)/) do |checked, enabled|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should see the name of the first user in the header of the second column$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should see the 'Accept' button displayed in the second column$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should see the 'Reject' button displayed in the second column$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should see '(\d+) user selected' in the selected users counter at the bottom of the first column$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
 end

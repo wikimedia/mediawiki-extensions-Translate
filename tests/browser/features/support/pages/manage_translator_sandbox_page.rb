@@ -6,8 +6,11 @@ class ManageTranslatorSandboxPage
 
 	div(:details, class: "details")
 
-	div(:requests_list, class: "requests-list")
+	div(:request) do |page|
+		page.requests_list_element.element.divs(class: "request")
+	end
 	div(:request_count, class: "request-count")
+	div(:requests_list, class: "requests-list")
 
 	text_field(:search, class: "request-filter-box")
 
