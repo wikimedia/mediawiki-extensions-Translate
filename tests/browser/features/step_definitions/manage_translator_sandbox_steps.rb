@@ -2,8 +2,16 @@ Given(/^I am logged in as a translation administrator$/) do
 	step "I am logged in"
 end
 
-Given(/^I am on the Special:ManageTranslatorSandbox page$/) do
-	visit ManageTranslatorSandboxPage
+Given(/^I am on the Special:ManageTranslatorSandbox page with no users in the sandbox$/) do
+	visit(ManageTranslatorSandboxPage, :using_params => {:extra => "integrationtesting=empty"})
+end
+
+Given(/^I am on the Special:ManageTranslatorSandbox page with users in the sandbox$/) do
+	visit(ManageTranslatorSandboxPage, :using_params => {:extra => "integrationtesting=populate"})
+end
+
+Given(/^I am a sandboxed user on the stash page$/) do
+	visit(StashPage, :using_params => {:extra => "integrationtesting=activatestash"})
 end
 
 When(/^I search for '(.*)' in the sandboxed users search field$/) do |string|

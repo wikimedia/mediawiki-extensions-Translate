@@ -12,25 +12,32 @@ Feature: Manage translator sandbox
 
   Background:
     Given I am logged in as a translation administrator
-      And I am on the Special:ManageTranslatorSandbox page
+
+  Scenario: There are no users in the sandbox
+    Given I am on the Special:ManageTranslatorSandbox page with no users in the sandbox
+    Then no users are displayed in the first column
 
   Scenario: Existing users can be searched on the list
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I search for 'pupu' in the sandboxed users search field
     Then only users whose name begins with 'pupu' are displayed in the first column
       And '5 requests' is displayed at the top of the first column
 
   Scenario: Searching for non-existing users displays no results
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I search for 'nosuchuser' in the sandboxed users search field
     Then no users are displayed in the first column
       And '0 requests' is displayed at the top of the first column
 
   Scenario: Emptying the search field shows all the users
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I search for 'pupu' in the sandboxed users search field
       And I search for '' in the sandboxed users search field
     Then a user whose name begins with 'pupu' is displayed in the first column
       And a user whose name begins with 'orava' is displayed in the first column
 
   Scenario: Translation Administrator should be able to see a list of pending requests with usernames in the first column, sorted by the number of translations and the most recent within them, and the first user should be selected
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     Then I should see the userlist in the first column sorted by the number of translations and the most recent within them
       And I should see the checkbox next to the name of the first user in the first column checked
       And I should see the checkbox next to the name of the first user in the first column disabled
@@ -40,6 +47,7 @@ Feature: Manage translator sandbox
       And I should see '1 user selected' at the bottom of the first column
 
   Scenario: Clicking on a name of a user who didn't make any translations shows the user information and the action buttons and doesn't show translations
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I click on the username of a user who didn't make any translations in the first column
     Then I should see the checkbox next to the name of the user who didn't make any translations checked
       And I should see the checkbox next to the name of the user who didn't make any translations disabled
@@ -51,6 +59,7 @@ Feature: Manage translator sandbox
       And I should see '1 user selected' at the bottom of the first column
 
   Scenario: Clicking a username when another user is selected selects only the new user; Clicking on a name of a user who made some translations shows the user information and the action buttons and some translations
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I click on the username of a user who didn't make any translations in the first column
       And I click on the username of a user who made some translations in the first column
     Then I should see the checkbox next to the name of the user who made some translations checked
@@ -63,6 +72,7 @@ Feature: Manage translator sandbox
       And I should see '1 user selected' at the bottom of the first column
 
   Scenario: Selecting multiple users
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I click on the username of the first user who made some translations in the first column
       And I click on the checkbox next to the name of the second user who made some translations in the first column
     Then I should see the checkbox next to the name of two users who made some translations checked
@@ -74,6 +84,7 @@ Feature: Manage translator sandbox
       And I should see the 'Reject all' button displayed in the second column
 
   Scenario: Selecting multiple users and then one user again
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I click on the username of the first user who made some translations in the first column
       And I click on the checkbox next to the name of the second user who made some translations in the first column
       And I click on the checkbox next to the name of the first user who made some translations in the first column
@@ -87,22 +98,26 @@ Feature: Manage translator sandbox
       And I should see the 'Reject' button displayed in the second column
 
   Scenario: Accepting one user
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I click on the username of a user who made some translations in the first column
       And I click the 'Accept' button
     Then the user should be accepted XXX
 
   Scenario: Rejecting one user
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I click on the username of a user who made some translations in the first column
       And I click the 'reject' button
     Then the user should be rejected XXX
 
   Scenario: Accepting multiple users
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I click on the username of a user who made some translations in the first column
       And I click on the username of a user who made some translations in the first column
       And I click the 'Accept all' button
     Then both users should be accepted XXX
 
   Scenario: Rejecting multiple users
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I click on the username of a user who made some translations in the first column
       And I click on the username of a user who made some translations in the first column
       And I click the 'Reject all' button
