@@ -37,15 +37,15 @@ Feature: Manage translator sandbox
     Then a user whose name begins with 'pupu' is displayed in the first column
       And a user whose name begins with 'orava' is displayed in the first column
 
-  Scenario: Translation Administrator should be able to see a list of pending requests with usernames in the first column, sorted by the number of translations and the most recent within them, and the first user should be selected
+  Scenario: Viewing the translator sandbox with some users
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
-    Then I should see the userlist in the first column sorted by the number of translations and the most recent within them
-      And I should see the checkbox next to the name of the first user in the first column checked
-      And I should see the checkbox next to the name of the first user in the first column disabled
-      And I should see the name of the first user in the first column in the header of the second column
+    Then I should see a list of users in the first column
+      And the list of users should be sorted by the number of translations and the most recent within them
+      And I should see the checkbox next to the name of the first user checked and disabled
+      And I should see the name of the first user in the header of the second column
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
-      And I should see '1 user selected' at the bottom of the first column
+      And I should see '1 user selected' in the selected users counter at the bottom of the first column
 
   Scenario: Clicking on a name of a user who didn't make any translations shows the user information and the action buttons and doesn't show translations
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
@@ -57,7 +57,7 @@ Feature: Manage translator sandbox
       And I should not see the details of sandboxed translations done by the user in the second column
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
-      And I should see '1 user selected' at the bottom of the first column
+      And I should see '1 user selected' in the selected users counter at the bottom of the first column
 
   Scenario: Clicking a username when another user is selected selects only the new user; Clicking on a name of a user who made some translations shows the user information and the action buttons and some translations
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
@@ -70,7 +70,7 @@ Feature: Manage translator sandbox
       And I should see the details of sandboxed translations done by the user in the second column
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
-      And I should see '1 user selected' at the bottom of the first column
+      And I should see '1 user selected' in the selected users counter at the bottom of the first column
 
   Scenario: Selecting multiple users
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
@@ -79,7 +79,7 @@ Feature: Manage translator sandbox
     Then I should see the checkbox next to the name of two users who made some translations checked
       And I should see the checkbox next to the name of two users who made some translations enabled
       And I should see '2 users selected' in the header of the second column
-      And I should see '2 users selected' at the bottom of the first column
+      And I should see '2 users selected' in the selected users counter at the bottom of the first column
       And I should not see the details of sandboxed translations done by the user in the second column
       And I should see the 'Accept all' button displayed in the second column
       And I should see the 'Reject all' button displayed in the second column
@@ -93,7 +93,7 @@ Feature: Manage translator sandbox
       And I should see the checkbox next to the name of the second user who made some translations checked
       And I should see the checkbox next to the name of two users who made some translations disabled
       And I should see '1 user selected' in the header of the second column
-      And I should see '1 user selected' at the bottom of the first column
+      And I should see '1 user selected' in the selected users counter at the bottom of the first column
       And I should see the details of sandboxed translations done by the user in the second column
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
