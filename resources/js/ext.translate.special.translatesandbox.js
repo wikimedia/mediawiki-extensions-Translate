@@ -1,10 +1,13 @@
 /**
  * JS for special page.
  * @author Niklas Laxström
+ * @author Sucheta Ghoshal
+ * @author Amir E. Aharoni
+ * @author Pau Giner
  * @license GPL-2.0+
  */
 
-(function ( $, mw ) {
+( function ( $, mw ) {
 	'use strict';
 
 	function doApiAction( options ) {
@@ -23,10 +26,9 @@
 	 * @return {jQuery.Deferred}
 	 */
 	function getMessages( names, language ) {
-		var api, req, deferred;
-
-		api = new mw.Api();
-		deferred = new $.Deferred();
+		var req,
+			api = new mw.Api(),
+			deferred = new $.Deferred();
 
 		req = api.post( {
 			action: 'query',
@@ -105,10 +107,28 @@
 	}
 
 	function removeSelectedRequests() {
-		$( '.request-selector:checked' )
-			.closest( '.request' ).remove();
+		var $nextRequest,
+			$selectedRequests = $( '.request-selector:checked' );
+
+		$nextRequest = $selectedRequests.first().closest( '.request' ).prev();
+		$selectedRequests.closest( '.request' ).remove();
+
 		$( '.request-count div' )
 			.text( mw.msg( 'tsb-request-count', $( '.request' ).length ) );
+
+		if ( !$nextRequest.length ) {
+			// If there's no request above the first checked request,
+			// try to get the first request in the column
+			$nextRequest = $( '.requests .request' ).first();
+		}
+
+		if ( $nextRequest.length ) {
+			$nextRequest.click();
+			updateSelectedIndicator( 1 );
+		} else {
+			$( '.details.pane' ).empty();
+			updateSelectedIndicator( 0 );
+		}
 	}
 
 	/**
@@ -122,7 +142,7 @@
 
 		$detailsPane.empty().append(
 			$( '<div>' )
-				.addClass( 'username row' )
+				.addClass( 'tsb-header row' )
 				.text( request.username ),
 			$( '<div>' )
 				.addClass( 'email row' )
@@ -180,7 +200,6 @@
 		storage.getUserTranslations( request.username ).done( function ( translations ) {
 			var $target = $( '.translations' );
 
-			// TODO: Header for the translations. not i18ned, need UX review
 			$target.append(
 				$( '<div>' )
 					.addClass( 'row title' )
@@ -240,6 +259,8 @@
 
 		$( '.details.pane' ).empty().append(
 			$( '<div>' )
+				.addClass( 'tsb-header row' ),
+			$( '<div>' )
 				.addClass( 'actions row' )
 				.append(
 					$( '<button>' )
@@ -264,48 +285,161 @@
 		);
 	}
 
-	$( document ).ready( function () {
-		var $selectAll = $( '.request-selector-all' ),
-			$detailsPane = $( '.details.pane' );
+	/**
+	 * Updates the counter of the selected users.
+	 * @param {number} count The number of selected users
+	 */
+	function updateSelectedIndicator( count ) {
+		var text = mw.msg( 'tsb-selected-count', mw.language.convertNumber( count ) );
 
-		// Handle clicks for the select all checkbox
+		$( '.pane.requests .request-footer' ).text( text );
+		if ( count > 1 ) {
+			$( '.pane.details .tsb-header' ).text( text );
+		}
+	}
+
+	/**
+	 * Sets the height of the panes to the window height.
+	 */
+	function setPanesHeight() {
+		var $detailsPane = $( '.pane.details' ),
+			$requestsPane = $( '.pane.requests' ),
+			detailsHeight = $( window ).height() - $detailsPane.offset().top,
+			requestsHeight = detailsHeight -
+				$requestsPane.find( '.request-footer' ).height() -
+				$requestsPane.find( '.request-header' ).height();
+
+		$detailsPane.css( 'max-height', detailsHeight );
+		$requestsPane.find( '.requests-list' ).css( 'max-height', requestsHeight );
+	}
+
+	$( document ).ready( function () {
+		var $requestCheckboxes = $( '.request-selector' ),
+			$selectAll = $( '.request-selector-all' ),
+			$requestRows = $( '.requests .request' ),
+			$detailsPane = $( '.pane.details' );
+
+		// Delay so we get the correct height on page load
+		window.setTimeout( setPanesHeight, 0 );
+		$( window ).on( 'resize', setPanesHeight );
+
+		// Handle clicks for the 'Select all' checkbox
 		$selectAll.on( 'click', function () {
-			$( '.request-selector' ).prop( 'checked', this.checked );
+			var selectedCount;
+
+			$requestCheckboxes.prop( {
+				checked: this.checked,
+				disabled: false
+			} );
 
 			if ( this.checked ) {
 				displayOnMultipleSelection();
+				$requestRows.addClass( 'selected' );
+				selectedCount = $requestCheckboxes.length;
 			} else {
 				$detailsPane.empty();
+				$requestRows.removeClass( 'selected' );
+				selectedCount = 0;
 			}
+
+			updateSelectedIndicator( selectedCount );
 		} );
 
-		// And update the state of select-all checkbox
-		$( '.request-selector' ).on( 'click', function ( e ) {
-			var total, checked, $selects = $( '.request-selector' );
+		$requestCheckboxes.on( 'click', function ( e ) {
+			var checkedCount, $checkedBoxes,
+				$thisRequestRow = $( this ).parents( 'div.request' );
 
-			total = $selects.length;
-			checked = $selects.filter( ':checked' ).length;
+			// Uncheck the rows that were selected by clicking the row
+			$requestCheckboxes.filter( ':disabled' ).prop( 'disabled', false );
 
-			if ( checked === total ) {
-				$selectAll.prop( 'checked', true ).prop( 'indeterminate', false );
-				displayOnMultipleSelection();
-			} else if ( checked === 0 ) {
-				$detailsPane.empty();
-				$selectAll.prop( 'checked', false ).prop( 'indeterminate', false );
+			if ( this.checked ) {
+				$thisRequestRow.addClass( 'selected' );
 			} else {
-				$selectAll.prop( 'indeterminate', true );
+				$thisRequestRow.removeClass( 'selected' );
+			}
+
+			$checkedBoxes = $requestCheckboxes.filter( ':checked' );
+			checkedCount = $checkedBoxes.length;
+
+			if ( checkedCount === $requestCheckboxes.length ) {
+				// All boxes are selected
+				$selectAll.prop( {
+					checked: true,
+					indeterminate: false
+				} );
+
+				displayOnMultipleSelection();
+			} else if ( checkedCount === 0 ) {
+				// No boxes are selected
+				$selectAll.prop( {
+					checked: false,
+					indeterminate: false
+				} );
+
+				$detailsPane.empty();
+			} else if ( checkedCount === 1 ) {
+				$selectAll.prop( {
+					checked: false,
+					indeterminate: true
+				} );
+
+				$checkedBoxes.prop( 'disabled', true );
+
+				// Here we know that only one checkbox is selected,
+				// so it's OK to query the data from it
+				displayRequestDetails( $checkedBoxes.parents( 'div.request' ).data( 'data' ) );
+			} else {
+				$selectAll.prop( {
+					checked: false,
+					indeterminate: true
+				} );
+
 				displayOnMultipleSelection();
 			}
+
+			updateSelectedIndicator( checkedCount );
 
 			e.stopPropagation();
 		} );
 
-		// Handle clicks on requests
-		$( '.requests .request' ).on( 'click', function () {
-			displayRequestDetails( $( this ).data( 'data' ) );
+		// Handle clicks on request rows.
+		$requestRows.on( 'click', function () {
+			var requestRow = this;
+
+			displayRequestDetails( $( requestRow ).data( 'data' ) );
+
+			// Clicking a row makes only that row selected and unselects all other rows
+			$requestRows.each( function ( i, row ) {
+				var $row = $( row );
+
+				if ( row === requestRow ) {
+					$row.addClass( 'selected' )
+						.find( '.request-selector' ).prop( {
+							checked: true,
+							disabled: true
+						} );
+				} else {
+					$row.removeClass( 'selected' )
+						.find( '.request-selector' ).prop( {
+							checked: false,
+							disabled: false
+						} );
+				}
+			} );
+
+			$selectAll.prop( 'indeterminate', true );
+
+			updateSelectedIndicator( 1 );
 		} );
 
+		if ( $requestRows.length ) {
+			$requestRows.first().click();
+		} else {
+			$detailsPane.text( mw.msg( 'tsb-no-requests-from-new-users' ) );
+		}
+
 		// Activate language selector
+		// TODO: Make it functional
 		$( '.language-selector' ).uls();
 	} );
 }( jQuery, mediaWiki ) );
