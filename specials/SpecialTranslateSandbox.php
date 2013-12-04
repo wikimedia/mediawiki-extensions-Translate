@@ -28,7 +28,42 @@ class SpecialTranslateSandbox extends SpecialPage {
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.translatesandbox' );
 		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
+
+		$this->prepareForTests();
 		$this->showPage();
+	}
+
+	/**
+	 * To facilitate browsers tests.
+	 */
+	public function prepareForTests() {
+		global $wgTranslateTestUsers;
+
+		$user = $this->getUser();
+		$request = $this->getRequest();
+
+		if ( !in_array( $user->getName(), $wgTranslateTestUsers, true ) ) {
+			return;
+		}
+
+		if ( $request->getVal( 'integrationtesting' ) === 'populate' ) {
+			foreach ( array( 'Pupu', 'Orava' ) as $prefix ) {
+				for ( $i = 0; $i < 5; $i++ ) {
+					$user = TranslateSandbox::addUser( "$prefix$i", "$prefix$i@pupun.kolo",  'porkkana' );
+					for( $j = 0; $j < $i; $j++ ) {
+						$title = Title::makeTitle( NS_MEDIAWIKI, wfRandomString( 24 ) . '/fi' );
+						$translation = 'plop';
+						$stashedTranslation = new StashedTranslation( $user, $title, $translation );
+						$this->stash->addTranslation( $stashedTranslation );
+					}
+				}
+			}
+		} elseif ( $request->getVal( 'integrationtesting' ) === 'empty' ) {
+			$users = TranslateSandbox::getUsers();
+			foreach ( $users as $user ) {
+				TranslateSandbox::deleteUser( $user );
+			}
+		}
 	}
 
 	/**
