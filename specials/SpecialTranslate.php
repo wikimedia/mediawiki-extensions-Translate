@@ -322,6 +322,9 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->options = $nondefaults + $defaults;
 		$this->group = MessageGroups::getGroup( $this->options['group'] );
+		if ( $this->group ) {
+			$this->options['group'] = $this->group->getId();
+		}
 		$this->task = TranslateTasks::getTask( $this->options['task'] );
 
 		if ( $this->group && MessageGroups::isDynamic( $this->group ) ) {
