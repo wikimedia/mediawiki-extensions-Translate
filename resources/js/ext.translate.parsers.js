@@ -68,11 +68,11 @@
 			} );
 
 			text = text.replace( /'''(.+?)'''/g, function ( match, p1 ) {
-				return $( '<div>' ).append( $( '<b>' ).html( p1 ) ).html();
+				return $( '<div>' ).append( $( '<strong>' ).html( p1 ) ).html();
 			} );
 
 			text = text.replace( /''(.+?)''/g, function ( match, p1 ) {
-				return $( '<div>' ).append( $( '<i>' ).html( p1 ) ).html();
+				return $( '<div>' ).append( $( '<em>' ).html( p1 ) ).html();
 			} );
 
 			text = text.replace( /\n\n/gm, '<br />' );
