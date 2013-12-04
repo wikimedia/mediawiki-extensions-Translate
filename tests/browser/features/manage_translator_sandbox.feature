@@ -27,8 +27,8 @@ Feature: Manage translator sandbox
   Scenario: Emptying the search field shows all the users
     When I search for 'pupu' in the sandboxed users search field
       And I search for '' in the sandboxed users search field
-    Then users whose name begins with 'pupu' are displayed in the first column
-      And users whose name begins with 'orava' are displayed in the first column
+    Then a user whose name begins with 'pupu' is displayed in the first column
+      And a user whose name begins with 'orava' is displayed in the first column
 
   Scenario: Translation Administrator should be able to see a list of pending requests with usernames in the first column, sorted by the number of translations and the most recent within them, and the first user should be selected
     Then I should see the userlist in the first column sorted by the number of translations and the most recent within them

@@ -16,6 +16,12 @@ Then(/^only users whose name begins with '(.*)' are displayed in the first colum
 	end
 end
 
+Then(/^a user whose name begins with '(.*)' is displayed in the first column$/) do |prefix|
+	on(ManageTranslatorSandboxPage).username_element.any? do |name|
+		name.text.match(/^#{prefix}/i)
+	end.should be_true
+end
+
 Then(/^no users are displayed in the first column$/) do
 	on(ManageTranslatorSandboxPage).username_element.length.should == 0
 end
