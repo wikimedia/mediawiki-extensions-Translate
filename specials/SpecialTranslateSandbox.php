@@ -34,7 +34,8 @@ class SpecialTranslateSandbox extends SpecialPage {
 	}
 
 	/**
-	 * To facilitate browsers tests.
+	 * Add users to the sandbox or delete them to facilitate browsers tests.
+	 * Use with caution!
 	 */
 	public function prepareForTests() {
 		global $wgTranslateTestUsers;
@@ -47,6 +48,8 @@ class SpecialTranslateSandbox extends SpecialPage {
 		}
 
 		if ( $request->getVal( 'integrationtesting' ) === 'populate' ) {
+			$this->emptySandbox();
+
 			foreach ( array( 'Pupu', 'Orava' ) as $prefix ) {
 				for ( $i = 0; $i < 5; $i++ ) {
 					$user = TranslateSandbox::addUser( "$prefix$i", "$prefix$i@pupun.kolo",  'porkkana' );
@@ -59,10 +62,19 @@ class SpecialTranslateSandbox extends SpecialPage {
 				}
 			}
 		} elseif ( $request->getVal( 'integrationtesting' ) === 'empty' ) {
-			$users = TranslateSandbox::getUsers();
-			foreach ( $users as $user ) {
-				TranslateSandbox::deleteUser( $user );
-			}
+			$this->emptySandbox();
+		}
+	}
+
+	/**
+	 * Delete all the users in the sandbox.
+	 * Use with caution!
+	 * To facilitate browsers tests.
+	 */
+	public function emptySandbox() {
+		$users = TranslateSandbox::getUsers();
+		foreach ( $users as $user ) {
+			TranslateSandbox::deleteUser( $user );
 		}
 	}
 
