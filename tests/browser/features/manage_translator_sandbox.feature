@@ -1,5 +1,5 @@
-@login @sandbox.translatewiki.net @stash
-Feature: Translation stash
+@login @sandbox.translatewiki.net
+Feature: Manage translator sandbox
 
   As a translation administrator,
   I can review translations submitted by sandboxed users and pass or fail them,
@@ -12,7 +12,7 @@ Feature: Translation stash
 
   Background:
     Given I am logged in as a translation administrator
-      And I am on the Special:TranslatorSandbox page
+      And I am on the Special:ManageTranslatorSandbox page
 
   Scenario: Existing users can be searched on the list
     When I search for 'pupu' in the sandboxed users search field
