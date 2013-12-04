@@ -16,15 +16,13 @@ Feature: Manage translator sandbox
 
   Scenario: Existing users can be searched on the list
     When I search for 'pupu' in the sandboxed users search field
-    Then users whose name begins with 'pupu' are displayed in the first column
-      And users whose name begins with 'orava' are not displayed in the first column
+    Then only users whose name begins with 'pupu' are displayed in the first column
       And '5 requests' is displayed at the top of the first column
 
   Scenario: Searching for non-existing users displays no results
     When I search for 'nosuchuser' in the sandboxed users search field
     Then no users are displayed in the first column
       And '0 requests' is displayed at the top of the first column
-      And '10 requests' is displayed at the top of the first column
 
   Scenario: Emptying the search field shows all the users
     When I search for 'pupu' in the sandboxed users search field
