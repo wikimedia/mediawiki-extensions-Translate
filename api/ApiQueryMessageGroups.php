@@ -157,7 +157,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		wfProfileIn( __METHOD__ . '-priority' );
 		if ( isset( $props['priority'] ) ) {
 			$priority = MessageGroups::getPriority( $g );
-			$a['priority'] = $priority ? : 'default';
+			$a['priority'] = $priority ?: 'default';
 		}
 
 		if ( isset( $props['prioritylangs'] ) ) {
