@@ -6000,6 +6000,7 @@ Siusplau reintroduiu el formulari per continuar el processament.",
 Siusplau, comproveu-ho.",
 	'translate-manage-fuzzy-summary' => 'La definició del missatge ha canviat',
 	'translate-manage-submit' => 'Executa',
+	'translate-manage-import-done' => 'Fet!', # Fuzzy
 	'importtranslations' => 'Importa traduccions',
 	'translate-import-from-local' => 'Càrrega de fitxer local:',
 	'translate-import-load' => 'Carrega fitxer',
@@ -6137,7 +6138,7 @@ El més útil per a les tasques de revisió.',
 	'tux-editor-doc-editor-save' => 'Guarda la documentació',
 	'tux-editor-doc-editor-cancel' => 'Cancel·la',
 	'tux-messagetable-more-messages' => '$1 {{PLURAL:$1|missatge|missatges}} més',
-	'tux-messagetable-loading-messages' => 'Carregant {{PLURAL:$1|missatge|missatges}}.',
+	'tux-messagetable-loading-messages' => '{{PLURAL:$1|S’està carregant el missatge|S’estan carregant els missatges}}…',
 	'tux-message-filter-placeholder' => 'Filtra la llista',
 	'tux-message-filter-result' => 'Hem trobat $1 {{PLURAL:$1|resultat|resultats}} per "$2"',
 	'tux-message-filter-advanced-button' => 'Cerca avançada',
@@ -7736,7 +7737,6 @@ Sofern du weißt, wo und in welchem Zusammenhang sie genutzt wird, kannst du and
 	'translate-edit-tmmatch-source' => 'Übersetzungsquelltext: $1',
 	'translate-edit-tmmatch' => '$1 % Übereinstimmung',
 	'translate-use-suggestion' => 'Ersetze die aktuelle Übersetzung mit diesem Vorschlag.',
-	'translate-edit-tab-list' => 'Nachrichtenliste',
 	'translate-edit-nopermission' => 'Du benötigst die Berechtigung, Nachrichten übersetzen zu können.',
 	'translate-edit-askpermission' => 'Berechtigung beantragen',
 	'translate-magic-pagename' => 'Übersetzen (extra)',
@@ -7798,7 +7798,6 @@ Die Übersetzungen der Nachrichten in den gewählten Sprachen werden beim Übers
 Die Standardliste ist abhängig von der Sprache der Benutzeroberfläche.',
 	'translate-pref-editassistlang-bad' => 'In der Liste ist ein ungültiger Sprachcode enthalten:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Erweiterter Übersetzungseditor (benötigt JavaScript)',
 	'right-translate' => 'Bearbeitungen mithilfe der Übersetzungsoberfläche tätigen',
 	'right-translate-manage' => 'Nachrichtengruppen verwalten',
 	'action-translate-manage' => 'Nachrichtengruppen zu verwalten',
@@ -7924,6 +7923,8 @@ Bitte überprüfen.',
 	'translate-manage-intro-other' => 'Hier ist eine Liste von Übersetzungsänderungen der Sprache $1.
 Bitte kontrolliere die Änderungen und wähle je eine Aktion, die du auf die Aktualisierungen anwenden möchtest.
 Wenn du dich entscheidest, Änderungen zu ignorieren, ist diese Aktion nur vorübergehend.',
+	'translate-manage-import-ok' => 'Importiert: $1',
+	'translate-manage-import-done' => 'Import abgeschlossen!',
 	'importtranslations' => 'Übersetzungen importieren',
 	'translate-import-from-local' => 'Lokale Datei hochladen:',
 	'translate-import-load' => 'Datei laden',
@@ -9638,7 +9639,6 @@ Los mensajes opcionales deberían traducirse solo si tu idioma tiene caracterís
 	'translate-ext-url' => '<hr />Sitio web: $1',
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorado)',
-	'translate-edit-jsopen' => 'editar',
 	'translate-edit-title' => 'Editar «$1»',
 	'translate-edit-definition' => 'Mensaje original',
 	'translate-edit-translation' => 'Traducción',
@@ -9653,7 +9653,6 @@ Los mensajes opcionales deberían traducirse solo si tu idioma tiene caracterís
 	'translate-edit-tmmatch-source' => 'Texto fuente para la traducción: $1',
 	'translate-edit-tmmatch' => '$1% coincidente',
 	'translate-use-suggestion' => 'Reemplazar la traducción actual con esta sugerencia.',
-	'translate-edit-tab-list' => 'Lista de mensajes',
 	'translate-edit-nopermission' => 'Se necesita permiso para traducir mensajes.',
 	'translate-edit-askpermission' => 'Solicitar permiso',
 	'translate-magic-pagename' => 'Traducción extendida de MediaWiki',
@@ -9715,7 +9714,6 @@ La traducción de un mensaje en estos idiomas se muestra cuando Ud. traduce.
 La lista de idiomas por defecto depende de su idioma.',
 	'translate-pref-editassistlang-bad' => 'Código de lenguaje invalido en la lista:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Editor de traducción mejorado (JavaScript)',
 	'right-translate' => 'Editar usando el interfaz de traducción',
 	'right-translate-manage' => 'Administrar grupos de mensajes',
 	'action-translate-manage' => 'administrar grupos de mensaje',
@@ -9816,7 +9814,6 @@ El color del subrayado indica cuán activo es un traductor aquí.',
 	'translate-smg-nochanges' => 'No hay cambios que procesar.',
 	'translate-smg-submit' => 'Enviar cambios para procesamiento',
 	'translate-smg-submitted' => 'Las definiciones de mensaje han sido actualizadas. Los cambios están siendo procesados en segundo plano.',
-	'translate-smg-postponed' => 'No se pudieron procesar algunos cambios. [[{{FULLPAGENAME}}|Vuelve a intentarlo]].',
 	'translate-smg-left' => 'Contenido del mensaje en el wiki',
 	'translate-smg-right' => 'Cambios entrantes',
 	'translate-manage-import-diff' => 'Mensaje $1 | Acciónes: $2',
@@ -9842,6 +9839,8 @@ Por favor verifique.',
 	'translate-manage-intro-other' => 'A continuación esta la lista de modificaciones de traducción en idioma $1.
 Por favor revíselos y elija la acción apropiada para cada uno.
 Si prefiere ignorar los cambios, se sobrescribirán en la próxima exportación.', # Fuzzy
+	'translate-manage-import-ok' => 'Se importó nueva versión de página $1.', # Fuzzy
+	'translate-manage-import-done' => '¡Ya está!', # Fuzzy
 	'importtranslations' => 'Importar traducciones',
 	'translate-import-from-local' => 'Importación de archivo local:',
 	'translate-import-load' => 'Subir archivo',
@@ -9860,7 +9859,7 @@ Detalle: $1',
 	'translate-js-save' => 'Guardar',
 	'translate-js-next' => 'Guardar y abrir el siguiente',
 	'translate-js-nonext' => 'Este fue el último mensaje en esta página.',
-	'translate-js-skip' => 'Saltar al siguiente',
+	'translate-js-skip' => 'Ir al siguiente',
 	'translate-js-save-failed' => 'No se pudo guardar. Informa de este error.',
 	'translate-js-history' => 'Historial de traducción',
 	'translate-js-support' => 'Pregunta',
@@ -9948,10 +9947,10 @@ Utilizado sobre todo para tareas de corrección.', # Fuzzy
 	'tux-editor-paste-original-button-label' => 'Pegar texto de origen',
 	'tux-editor-discard-changes-button-label' => 'Descartar los cambios',
 	'tux-editor-save-button-label' => 'Guardar la traducción',
-	'tux-editor-skip-button-label' => 'Pasar a la siguiente',
+	'tux-editor-skip-button-label' => 'Ir al siguiente',
 	'tux-editor-cancel-button-label' => 'Cancelar',
 	'tux-editor-confirm-button-label' => 'Confirmar la traducción',
-	'tux-editor-shortcut-info' => 'Presione "$1" para guardar o "$2" para pasar al siguiente mensaje',
+	'tux-editor-shortcut-info' => 'Pulsa «$1» para guardarlo o «$2» para ir al siguiente mensaje',
 	'tux-editor-edit-desc' => 'Editar la documentación',
 	'tux-editor-add-desc' => 'Añadir la documentación',
 	'tux-editor-suggestions-title' => 'Sugerencias',
@@ -12064,6 +12063,8 @@ Renvoyez le formulaire pour continuer le traitement.',
 	'translate-manage-intro-other' => 'Ci-dessous figure une liste des modifications dans la langue $1.
 Relisez les modifications et choisissez une action à effectuer pour chacune.
 Si vous décidez d’ignorer les modifications, cette action ne sera que temporaire.',
+	'translate-manage-import-ok' => 'Une nouvelle version de la page $1 a été importée.', # Fuzzy
+	'translate-manage-import-done' => 'Tout a été fait !', # Fuzzy
 	'importtranslations' => 'Importer les traductions',
 	'translate-import-from-local' => 'Importer un fichier local :',
 	'translate-import-load' => 'Charger le fichier',
@@ -13909,6 +13910,7 @@ $messages['haw'] = array(
  * @author Agbad
  * @author Amire80
  * @author Guycn1
+ * @author Guycn2
  * @author Ofrahod
  * @author Rotemliss
  * @author YaronSh
@@ -13973,7 +13975,6 @@ $messages['he'] = array(
 	'translate-edit-tmmatch-source' => 'טקסט המקור של התרגום: $1',
 	'translate-edit-tmmatch' => 'רמת התאמה: $1%',
 	'translate-use-suggestion' => 'החלפת התרגום הנוכחי בהצעה הזאת.',
-	'translate-edit-tab-list' => 'רשימת הודעות',
 	'translate-edit-nopermission' => 'נדרשות הרשאות כדי לתרגם הודעות.',
 	'translate-edit-askpermission' => 'בקשת הרשאה',
 	'translate-magic-pagename' => 'תרגום מורחב של מדיה־ויקי',
@@ -14035,7 +14036,6 @@ $messages['he'] = array(
 רשימת שפות התחלתית תלויה בשפה שאתם דוברים.',
 	'translate-pref-editassistlang-bad' => 'קוד שפה שגוי ברשימה:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'עורך תרגומים מורחב (JavaScript)',
 	'right-translate' => 'עריכה באמצעות ממשק התרגום',
 	'right-translate-manage' => 'ניהול קבוצות הודעה',
 	'action-translate-manage' => 'לנהל קבוצות הודעות',
@@ -14161,6 +14161,8 @@ $messages['he'] = array(
 	'translate-manage-intro-other' => 'להלן רשימה של שינויי תרגום ב$1.
 נא לסקור את השינויים ולבחור את הפעולה שברצונך לעשות עבור כל תרגום.
 התעלמות מהשינויים תגרום לכך שהם יידרסו בייצוא הבא.',
+	'translate-manage-import-ok' => 'יובא: $1',
+	'translate-manage-import-done' => 'היבוא בוצע!',
 	'importtranslations' => 'יבוא תרגומים',
 	'translate-import-from-local' => 'העלאת קובץ מקומי:',
 	'translate-import-load' => 'טעינת קובץ',
@@ -24259,6 +24261,8 @@ Controleer de wijziging.',
 	'translate-manage-intro-other' => 'Hieronder wordt een lijst weergegeven van wijzigingen in de vertalingen voor de taal $1.
 Controleer de wijzigingen en kies een uit te voeren handeling voor iedere vertaling.
 Als u wijzigingen negeert, worden deze bij de volgende export overschreven.',
+	'translate-manage-import-ok' => 'Nieuwe versie van de pagina $1 geïmporteerd.', # Fuzzy
+	'translate-manage-import-done' => 'Klaar!', # Fuzzy
 	'importtranslations' => 'Vertalingen importeren',
 	'translate-import-from-local' => 'Lokaal bestand uploaden:',
 	'translate-import-load' => 'Bestand laden',
@@ -27164,6 +27168,8 @@ Verifique-a, por favor.',
 	'translate-manage-intro-other' => 'Abaixo está uma lista de alterações de traduções na língua $1.
 Por favor, reveja as alterações e escolha a ação que quer tomar para cada atualização.
 Se escolher ignorar as alterações, esta ação será somente temporária.',
+	'translate-manage-import-ok' => 'Foi importada uma nova versão da página $1.', # Fuzzy
+	'translate-manage-import-done' => 'Tudo terminado!', # Fuzzy
 	'importtranslations' => 'Importar traduções',
 	'translate-import-from-local' => 'Carregamento de ficheiro local:',
 	'translate-import-load' => 'Carregar ficheiro',
@@ -28887,7 +28893,6 @@ $messages['ru'] = array(
 	'translate-edit-tmmatch-source' => 'Текст исходного сообщения для перевода: $1',
 	'translate-edit-tmmatch' => '$1% соответствие',
 	'translate-use-suggestion' => 'Заменить текущий текст перевода на эту подсказку.',
-	'translate-edit-tab-list' => 'Список сообщений',
 	'translate-edit-nopermission' => 'Для перевода сообщений вам требуется получить разрешение.',
 	'translate-edit-askpermission' => 'Запросить разрешение',
 	'translate-magic-pagename' => 'Углублённый перевод MediaWiki',
@@ -28948,7 +28953,6 @@ $messages['ru'] = array(
 Список по умолчанию зависит от вашего языка.',
 	'translate-pref-editassistlang-bad' => 'Неверный языковой код в списке:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Улучшенный редактор переводов (JavaScript)',
 	'right-translate' => 'правка с использованием интерфейса перевода',
 	'right-translate-manage' => 'управление группами сообщений',
 	'action-translate-manage' => 'управление группами сообщений',
@@ -29073,6 +29077,8 @@ $messages['ru'] = array(
 	'translate-manage-intro-other' => 'Ниже приведён список изменений в переводах на язык: $1.
 Пожалуйста, просмотрите изменения и выберите желаемое действие для каждого изменения.
 Если вы проигнорируете изменения, то это будет временным действием.',
+	'translate-manage-import-ok' => 'Импортирована: $1',
+	'translate-manage-import-done' => 'Импорт завершён!',
 	'importtranslations' => 'Импорт переводов',
 	'translate-import-from-local' => 'Загрузить локальный файл:',
 	'translate-import-load' => 'Загрузить файл',
@@ -31093,6 +31099,8 @@ $messages['sr-ec'] = array(
 	'translate-manage-intro-other' => 'Испод је списак измена превода за $1 језик.
 Прегледајте измене и изаберите радњу за сваки превод.
 Ако изаберете да занемарите измене, оне ће бити поништене при следећем извозу.', # Fuzzy
+	'translate-manage-import-ok' => 'Увезена је нова верзија странице $1.', # Fuzzy
+	'translate-manage-import-done' => 'Завршено!', # Fuzzy
 	'importtranslations' => 'Увоз превода',
 	'translate-import-from-local' => 'Локална датотека:',
 	'translate-import-load' => 'Додај',
@@ -31496,6 +31504,8 @@ Molimo, proverite.',
 	'translate-manage-intro-other' => 'Ispod je spisak izmena prevoda za $1 jezik.
 Pregledajte izmene i izaberite radnju za svaki prevod.
 Ako izaberete da zanemarite izmene, one će biti poništene pri sledećem izvozu.',
+	'translate-manage-import-ok' => 'Uvezena je nova verzija stranice $1.', # Fuzzy
+	'translate-manage-import-done' => 'Završeno!', # Fuzzy
 	'importtranslations' => 'Uvoz prevoda',
 	'translate-import-from-local' => 'Lokalna datoteka:',
 	'translate-import-load' => 'Dodaj',
@@ -35494,7 +35504,6 @@ thí dụ như không sử dụng khoảng cách hoặc có hệ thống phiên 
 	'translate-edit-tmmatch-source' => 'Văn bản gốc để dịch: $1',
 	'translate-edit-tmmatch' => 'trùng $1%',
 	'translate-use-suggestion' => 'Thay thế bản dịch hiện hành với đề nghị này.',
-	'translate-edit-tab-list' => 'Danh sách thông điệp',
 	'translate-edit-nopermission' => 'Bạn cần xin phép biên dịch thông điệp.',
 	'translate-edit-askpermission' => 'Xin phép',
 	'translate-magic-pagename' => 'Bản dịch MediaWiki mở rộng',
@@ -35556,7 +35565,6 @@ Bản dịch thông điệp sang các ngôn ngữ này được hiển thị khi
 Danh sách các ngôn ngữ mặc định sẽ tùy thuộc vào ngôn ngữ mà bạn chọn.',
 	'translate-pref-editassistlang-bad' => 'Mã ngôn ngữ không hợp lệ trong danh sách:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Bộ biên soạn biên dịch nâng cao (JavaScript)',
 	'right-translate' => 'Sửa đổi sử dụng giao diện biên dịch',
 	'right-translate-manage' => 'Quản lý các nhóm thông điệp',
 	'action-translate-manage' => 'quản lý các nhóm thông điệp',
@@ -35619,7 +35627,7 @@ Danh sách các ngôn ngữ mặc định sẽ tùy thuộc vào ngôn ngữ mà
 	'translate-langstats-collapseall' => 'đóng tất cả',
 	'translate-language-code' => 'Mã ngôn ngữ',
 	'translate-language-code-field-name' => 'Mã ngôn ngữ:',
-	'translate-suppress-complete' => 'Bỏ qua các nhóm thông điệp đã được dịch hoàn toàn',
+	'translate-suppress-complete' => 'Ẩn các nhóm thông điệp đã được dịch hoàn toàn',
 	'translate-ls-noempty' => 'Ẩn các nhóm thông điệp hoàn toàn chưa được dịch',
 	'translate-language' => 'Ngôn ngữ',
 	'translate-total' => 'Thông điệp',
@@ -35682,6 +35690,8 @@ Xin kiểm lại.',
 	'translate-manage-intro-other' => 'Dưới đây là danh sách các thay đổi bản dịch trong ngôn ngữ $1.
 Xin hãy xem lại các thay đổi và chọn tác vụ bạn muốn làm đối với từng bản cập nhật.
 Việc bỏ qua thay đổi chỉ tạm thời.',
+	'translate-manage-import-ok' => 'Đã nhập phiên bản mới của trang $1.', # Fuzzy
+	'translate-manage-import-done' => 'Đã xong!', # Fuzzy
 	'importtranslations' => 'Nhập bản dịch',
 	'translate-import-from-local' => 'Tải tập tin từ máy tính:',
 	'translate-import-load' => 'Tải tập tin',

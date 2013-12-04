@@ -55,9 +55,9 @@ Then you will be able to translate without limits.',
 );
 
 /** Message documentation (Message documentation)
+ * @author Amire80
  * @author Nike
  * @author Shirayuki
- * @author Amire80
  */
 $messages['qqq'] = array(
 	'translatesandbox' => '{{doc-special|TranslateSandbox}}',
@@ -78,7 +78,8 @@ Followed by a list of the pending requests.',
 {{Identical|Accept}}',
 	'tsb-reject-button-label' => 'Button label for reject button in [[Special:TranslateSandbox]].
 {{Identical|Reject}}',
-	'tsb-selected-count' => 'Shows how many users are selected for accepting or rejecting. $1 is the number of users.',
+	'tsb-selected-count' => 'Shows how many users are selected for accepting or rejecting. Parameters:
+* $1 - the number of users',
 	'tsb-accept-all-button-label' => 'Button label for accept-all button in [[Special:TranslateSandbox]].
 
 See also:
@@ -107,7 +108,7 @@ See also:
 {{Identical|Try another}}',
 	'tsb-limit-reached-title' => 'Heading shown below translations when the user has reached the limit for number of translations.',
 	'tsb-limit-reached-body' => 'Text shown below translations when the user has reached the limit for number of translations.',
-	'tsb-no-requests-from-new-users' => 'Shown on Special:TranslateSandbox when there are no requests for approval from new users.',
+	'tsb-no-requests-from-new-users' => 'Shown on [[Special:TranslateSandbox]] when there are no requests for approval from new users.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -215,6 +216,7 @@ Bitte besuche $2 und erstelle einige weitere Übersetzungen.',
 	'tsb-search-requests' => 'Anfragen durchsuchen',
 	'tsb-accept-button-label' => 'Akzeptieren',
 	'tsb-reject-button-label' => 'Ablehnen',
+	'tsb-selected-count' => '{{PLURAL:$1|Ein|$1}} Benutzer ausgewählt',
 	'tsb-accept-all-button-label' => 'Alle akzeptieren',
 	'tsb-reject-all-button-label' => 'Alle ablehnen',
 	'tsb-reminder-link-text' => 'E-Mail-Erinnerung senden',
@@ -231,6 +233,7 @@ Bitte besuche $2 und erstelle einige weitere Übersetzungen.',
 	'tsb-limit-reached-body' => 'Du hast das Übersetzungslimit für neue Übersetzer erreicht.
 Unser Team wird dein Benutzerkonto bald verifizieren und hochstufen.
 Du wirst dann in der Lage sein, ohne Limits zu übersetzen.',
+	'tsb-no-requests-from-new-users' => 'Keine Anträge von neuen Benutzern',
 );
 
 /** Spanish (español)
@@ -386,6 +389,7 @@ $messages['ja'] = array(
 	'tsb-search-requests' => '申請の検索',
 	'tsb-accept-button-label' => '承認',
 	'tsb-reject-button-label' => '却下',
+	'tsb-selected-count' => '{{PLURAL:$1|$1 人の利用者を選択しています}}',
 	'tsb-translations-source' => '原文',
 	'tsb-translations-user' => '利用者による翻訳',
 	'tsb-translations-current' => '既存の翻訳',
@@ -398,6 +402,7 @@ $messages['ja'] = array(
 	'tsb-limit-reached-body' => '新規翻訳者の翻訳数の上限に達しました。
 私たちのチームがまもなく、アカウントを検証してアップグレードします。
 その後、上限なしで翻訳できるようになります。',
+	'tsb-no-requests-from-new-users' => '新規利用者からの申請はありません',
 );
 
 /** Korean (한국어)
@@ -650,6 +655,7 @@ $messages['ru'] = array(
 	'tsb-search-requests' => 'Искать запросы',
 	'tsb-accept-button-label' => 'Принять',
 	'tsb-reject-button-label' => 'Отклонить',
+	'tsb-selected-count' => '{{PLURAL:$1|$1 участник выбран|$1 участника выбрано|$1 участников выбрано}}',
 	'tsb-accept-all-button-label' => 'Принять все',
 	'tsb-reject-all-button-label' => 'Отклонить все',
 	'tsb-reminder-link-text' => 'Отправить напоминание по электронной почте',
@@ -666,6 +672,7 @@ $messages['ru'] = array(
 	'tsb-limit-reached-body' => 'Вы достигли предела переводов для новых переводчиков.
 Наша команда проверит и обновит вашу учётную запись в ближайшее время.
 После этого вы сможете переводить без ограничений.',
+	'tsb-no-requests-from-new-users' => 'Нет запросов от новых участников',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
