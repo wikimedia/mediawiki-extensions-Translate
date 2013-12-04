@@ -1,3 +1,7 @@
+Given(/^I am a sandboxed user on the stash page$/) do
+	visit(StashPage, :using_params => {:extra => "integrationtesting=activatestash"})
+end
+
 Then(/^I should see a language selector$/) do
 	on(StashPage).language_selector_element.should be_visible
 end
