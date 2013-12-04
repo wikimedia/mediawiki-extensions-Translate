@@ -303,6 +303,7 @@ Please check.',
 	'translate-manage-intro-other' => 'Below is list of translation changes in the language $1.
 Please review the changes and choose an action you want to take for each update.
 If you choose to ignore changes, this action is only temporary.',
+	'translate-manage-import-ok' => 'Imported: $1',
 
 	'importtranslations' => 'Import translations',
 	'translate-import-from-local' => 'Local file upload:',
@@ -983,6 +984,8 @@ fuzzy = mark translations for review',
 	'translate-manage-intro-other' => '[[File:Manage-2.png|150px|right|Group management interface]]
 Introduction to special page. See screenshot. Parameters:
 * $1 is a language name.',
+	'translate-manage-import-ok' => 'Message given when a translation has been imported on SpeciaL:ImportTranslations. Paramters:
+* $1 is the target page name for the translation.',
 	'importtranslations' => '{{doc-special|ImportTranslations}}
 {{doc-screenshot|Import-1.png|twn}}',
 	'translate-import-from-local' => 'Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}',
