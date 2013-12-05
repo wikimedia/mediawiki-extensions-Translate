@@ -15,9 +15,7 @@ When(/^I search for '(.*)' in the sandboxed users search field$/) do |string|
 end
 
 Then(/^only users whose name begins with '(.*)' are displayed in the first column$/) do |prefix|
-	on(ManageTranslatorSandboxPage).username_element.each do |name|
-		name.text.should match(/^#{prefix}/i)
-	end
+	on(ManageTranslatorSandboxPage).visible_users_start_with?(prefix).should be_true
 end
 
 Then(/^a user whose name begins with '(.*)' is displayed in the first column$/) do |prefix|
