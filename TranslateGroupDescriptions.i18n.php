@@ -777,10 +777,12 @@ $messages['et'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Ebraminio
  * @author Huji
  */
 $messages['fa'] = array(
 	'translate-group-desc-mediawikicore' => 'این گروه پیغام حاوی پیغام‌های مورد استفاده در نسخهٔ آلفای فعلی [[Translating:MediaWiki|مدیاویکی]] ({{CURRENTVERSION}}) است',
+	'translate-group-desc-kiwix' => 'یک گروه پیام برای [[Translating:Kiwix|Kiwix]]',
 );
 
 /** Finnish (suomi)

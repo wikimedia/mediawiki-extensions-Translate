@@ -1357,9 +1357,9 @@ $messages['af'] = array(
 	'translate-taction-disabled' => 'Die aksie is afgeskakel op hierdie wiki.',
 	'translate-page-no-such-language' => 'Gespesifiseerde taal is ongeldig.',
 	'translate-page-no-such-group' => 'Die gespesifiseerde groep bestaan nie.',
-	'translate-page-disabled' => "Vertalings in die taal vir hierdie groep is gedeaktiveer. Rede:
+	'translate-page-disabled' => 'Vertalings in die taal vir hierdie groep is gedeaktiveer. Rede:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Vertaling van die taal is gedeaktiveer.',
 	'translate-page-settings-legend' => 'Instellings',
 	'translate-page-group' => 'Groep',
@@ -1379,13 +1379,12 @@ $messages['af'] = array(
 	'translate-ext-url' => '<hr />Webwerf: $1',
 	'translate-optional' => '(opsioneel)',
 	'translate-ignored' => '(geïgnoreer)',
-	'translate-edit-jsopen' => 'wysig',
 	'translate-edit-title' => 'Wysig "$1"',
 	'translate-edit-definition' => 'Boodskap se definisie',
 	'translate-edit-translation' => 'Vertaling',
 	'translate-edit-contribute' => 'wysig',
 	'translate-edit-no-information' => "''Die boodskap het geen dokumentasie nie.''
-''As u weet waar die boodskap gebruik word, kan u ander gebruikers help deur dokumentasie by te voeg.''",
+''As u weet waar die boodskap gebruik word, kan u ander gebruikers help deur dokumentasie by te voeg.''", # Fuzzy
 	'translate-edit-information' => 'Inligting oor boodskap ($1)',
 	'translate-edit-in-other-languages' => 'Boodskap in ander tale',
 	'translate-edit-committed' => 'Huidige vertaling in sagteware',
@@ -1394,7 +1393,6 @@ $messages['af'] = array(
 	'translate-edit-tmmatch-source' => 'Bronteks vir vertaling: $1',
 	'translate-edit-tmmatch' => '$1% ooreenkoms',
 	'translate-use-suggestion' => 'Vervang die huidige vertaling met hierdie voorstel.',
-	'translate-edit-tab-list' => 'Boodskaplys',
 	'translate-edit-nopermission' => 'U moet toestemming verkry alvorens u boodskappe kan vertaal.',
 	'translate-edit-askpermission' => 'Vra vir toestemming',
 	'translate-magic-pagename' => 'Uitgebreide MediaWiki-vertaling',
@@ -1441,7 +1439,6 @@ Vertaling van 'n boodskap in hierdie tale word vertoon wanneer u vertaal.
 Die versteklys van tale hang van u taal af.",
 	'translate-pref-editassistlang-bad' => 'Ongeldige taalkode in die lys:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Gebruik verbeterde teksverwerker vir vertalings (benodig JavaScript)',
 	'right-translate' => 'Wysig via die vertaalkoppelvlak',
 	'right-translate-manage' => 'Bestuur boodskapgroepe',
 	'action-translate-manage' => 'bestuur boodskapgroepe',
@@ -1537,7 +1534,6 @@ Alle waardes het hoër en laer limiete.',
 	'translate-smg-notallowed' => 'U mag nie hierdie handeling uitvoer nie.',
 	'translate-smg-nochanges' => 'Daar is geen wysigings om te verwerk nie.',
 	'translate-smg-submit' => 'Dien wysigings vir verwerking in',
-	'translate-smg-postponed' => 'Sommige wysigings kon die verwerk word nie. [[{{FULLPAGENAME}}|Probeer weer]].',
 	'translate-smg-left' => 'Inhoud in wiki',
 	'translate-smg-right' => 'Inkomende wysigings',
 	'translate-manage-import-diff' => 'Boodskap $1 | Handeling: $2',
@@ -1559,6 +1555,8 @@ Dien die opdrag asseblief weer in.',
 Kontroleer die wysiging.",
 	'translate-manage-fuzzy-summary' => 'Die boodskap se definisie is gewysig',
 	'translate-manage-submit' => 'Voer uit',
+	'translate-manage-import-ok' => 'Nuwe weergawe van die bladsy $1 is gelaai.', # Fuzzy
+	'translate-manage-import-done' => 'Klaar!', # Fuzzy
 	'importtranslations' => 'Importeer vertalings',
 	'translate-import-from-local' => 'Lokale lêer oplaai:',
 	'translate-import-load' => 'Laai lêer',
@@ -1692,7 +1690,7 @@ Besonderhede: $1',
 	'tux-proofread-translated-by-self' => 'Deur u vertaal',
 	'tux-empty-list-all' => 'Die boodskapgroep is leeg',
 	'tux-empty-list-all-guide' => "Kies 'n ander boodskapgroep om te vertaal",
-	'tux-translate-page-no-such-group' => "'''Die opgegewe groep bestaan nie.''' Kies 'n ander boodskapgroep.",
+	'tux-translate-page-no-such-group' => "'''Die opgegewe groep bestaan nie.''' Kies 'n ander boodskapgroep.", # Fuzzy
 	'tux-empty-list-translated' => 'Geen vertaalde boodskappe nie',
 	'tux-empty-list-translated-guide' => 'U kan help vertaal',
 	'tux-empty-list-translated-action' => 'Vertaal',
@@ -1725,7 +1723,7 @@ Besonderhede: $1',
 $messages['aln'] = array(
 	'translate-page-no-such-language' => 'Gjuha e specifikuara ishte i pavlefshëm.',
 	'translate-page-no-such-group' => 'Grupi specifikuara ishte i pavlefshëm.',
-	'translate-page-disabled' => "Përkthime të kësaj gjuhe në këtë grup kanë qenë të paaftë. Reason:''$1''",
+	'translate-page-disabled' => 'Përkthime të kësaj gjuhe në këtë grup kanë qenë të paaftë. Reason:<em>$1</em>',
 	'translate-page-settings-legend' => 'Paneli i punëve',
 	'translate-page-group' => 'Grup',
 	'translate-page-language' => 'Gjuhë',
@@ -1745,7 +1743,7 @@ $messages['aln'] = array(
 	'translate-ignored' => '(Injorohen)',
 	'translate-edit-definition' => 'përkufizim Mesazh',
 	'translate-edit-contribute' => 'kontribuoj',
-	'translate-edit-no-information' => "''Ky mesazh nuk ka asnjë dokumentacion. Nëse ju e dini se ku apo se si ky mesazh është përdorur, ju mund të ndihmoni përkthyes të tjerë duke dokumentacionin në këtë mesazh.''",
+	'translate-edit-no-information' => "''Ky mesazh nuk ka asnjë dokumentacion. Nëse ju e dini se ku apo se si ky mesazh është përdorur, ju mund të ndihmoni përkthyes të tjerë duke dokumentacionin në këtë mesazh.''", # Fuzzy
 	'translate-edit-information' => 'Informacion rreth mesazh "$2" ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'Mesazhi "$1" në gjuhë të tjera', # Fuzzy
 	'translate-edit-committed' => 'përkthimin e tanishme në softuer',
@@ -1768,6 +1766,8 @@ $messages['aln'] = array(
 	'translate-manage-fuzzy-summary' => 'Përkufizimi ka ndryshuar', # Fuzzy
 	'translate-manage-submit' => 'Kryej',
 	'translate-manage-intro-other' => 'Më poshtë është lista e ndryshimeve të përkthimit në gjuhën e $1. Ju lutemi të shqyrtuar ndryshimet dhe të zgjidhni një veprim që ju doni të bëni për çdo përkthim. Nëse ju vendosni të injorojë ndryshime, ata do të kapërcehet në eksportin e ardhshme.', # Fuzzy
+	'translate-manage-import-ok' => 'version i importuar i ri i faqes $1.', # Fuzzy
+	'translate-manage-import-done' => 'Të gjitha të bërë!', # Fuzzy
 	'importtranslations' => 'Përkthime Import',
 	'translate-import-from-local' => 'upload lokale file:',
 	'translate-import-load' => 'Ngarko foto',
@@ -1879,9 +1879,9 @@ $messages['ar'] = array(
 	'translate-taction-export' => 'صدّر',
 	'translate-page-no-such-language' => 'لم تكن اللغة المحددة صحيحة.',
 	'translate-page-no-such-group' => 'المجموعة المحددة غير صحيحة.',
-	'translate-page-disabled' => "الترجمات إلى هذه اللغة في هذه المجموعة تم تعطيلها. السبب:
+	'translate-page-disabled' => 'الترجمات إلى هذه اللغة في هذه المجموعة تم تعطيلها. السبب:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'الإعدادات',
 	'translate-page-group' => 'المجموعة',
 	'translate-page-language' => 'اللغة',
@@ -1905,13 +1905,12 @@ $messages['ar'] = array(
 	'translate-ext-url' => '<hr />موقع الوب: $1',
 	'translate-optional' => '(اختياري)',
 	'translate-ignored' => '(متجاهل)',
-	'translate-edit-jsopen' => 'عدل',
 	'translate-edit-title' => 'عدل "$1"',
 	'translate-edit-definition' => 'تعريف الرسالة',
 	'translate-edit-translation' => 'الترجمة',
 	'translate-edit-contribute' => 'ساهم',
 	'translate-edit-no-information' => "''ليس لهذه الرسالة توثيق.
-إذا كنت تعرف أين أو كيف يتم استخدام هذه الرسالة، فيمكنك مساعدة المترجمين الآخرين بإضافة توثيق إلى هذه الرسالة.''",
+إذا كنت تعرف أين أو كيف يتم استخدام هذه الرسالة، فيمكنك مساعدة المترجمين الآخرين بإضافة توثيق إلى هذه الرسالة.''", # Fuzzy
 	'translate-edit-information' => 'معلومات عن الرسالة ($1)',
 	'translate-edit-in-other-languages' => 'الرسالة بلغات أخرى',
 	'translate-edit-committed' => 'الترجمة الحالية في البرنامج',
@@ -1919,7 +1918,6 @@ $messages['ar'] = array(
 	'translate-edit-tmsugs' => 'مقترحات من ذاكرة الترجمة',
 	'translate-edit-tmmatch' => '$1% مطابقة',
 	'translate-use-suggestion' => 'استبدال الترجمة الحالية بهذا الاقتراح.',
-	'translate-edit-tab-list' => 'قائمة الرسائل',
 	'translate-magic-pagename' => 'ترجمة ميدياويكي الممتدة',
 	'translate-magic-help' => 'يمكنك ترجمة أسماء الصفحات الخاصة، والكلمات السحرية، وأسماء النطاقات.
 
@@ -1974,7 +1972,6 @@ $messages['ar'] = array(
 قائمة اللغات المبدئية تعتمد على لغتك.',
 	'translate-pref-editassistlang-bad' => 'رمز لغة غير صالح في القائمة:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'محرر ترجمة مُحسّن (جافاسكربت)',
 	'right-translate' => 'التعديل باستخدام واجهة الترجمة',
 	'right-translate-manage' => 'إدارة مجموعات الترجمة', # Fuzzy
 	'right-translate-import' => 'استيراد الترجمات من الخارج',
@@ -2076,6 +2073,8 @@ $messages['ar'] = array(
 	'translate-manage-intro-other' => 'بالأسفل قائمة بتغييرات الترجمة في لغة $1.
 من فضلك راجع التغييرات واختر فعلا تريد فعله لكل ترجمة.
 لو اخترت تجاهل التغييرات، ستتم الكتابة عليها عند التصدير التالي.', # Fuzzy
+	'translate-manage-import-ok' => 'استوردت نسخة جديدة من الصفحة $1.', # Fuzzy
+	'translate-manage-import-done' => 'انتهى الكل!', # Fuzzy
 	'importtranslations' => 'استورد ترجمات',
 	'translate-import-from-local' => 'رفع ملف محلي:',
 	'translate-import-load' => 'حمّل الملف',
@@ -2277,9 +2276,9 @@ $messages['arz'] = array(
 	'translate-desc' => '[[Special:Translate|صفحه خاصة]] لترجمه الميدياويكى وما بعده',
 	'translate-page-no-such-language' => 'لم تكن اللغه المحدده صحيحه.',
 	'translate-page-no-such-group' => 'المجموعه المحدده غير صحيحه.',
-	'translate-page-disabled' => "الترجمات إلى هذه اللغه فى هذه المجموعه تم تعطيلها. السبب:
+	'translate-page-disabled' => 'الترجمات إلى هذه اللغه فى هذه المجموعه تم تعطيلها. السبب:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'الإعدادات',
 	'translate-page-group' => 'المجموعة',
 	'translate-page-language' => 'اللغة',
@@ -2300,7 +2299,7 @@ $messages['arz'] = array(
 	'translate-edit-definition' => 'تعريف الرسالة',
 	'translate-edit-contribute' => 'ساهم',
 	'translate-edit-no-information' => "''ليس لهذه الرساله توثيق.
-إذا كنت تعرف أين أو كيف يتم استخدام هذه الرساله، فيمكنك مساعده المترجمين الآخرين بإضافه توثيق إلى هذه الرساله.''",
+إذا كنت تعرف أين أو كيف يتم استخدام هذه الرساله، فيمكنك مساعده المترجمين الآخرين بإضافه توثيق إلى هذه الرساله.''", # Fuzzy
 	'translate-edit-information' => 'معلومات حول الرساله "$2" ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'الرساله "$1" بلغات أخرى', # Fuzzy
 	'translate-edit-committed' => 'الترجمه الحاليه فى البرنامج',
@@ -2361,7 +2360,6 @@ $messages['arz'] = array(
 قائمه اللغات المبدئيه تعتمد على لغتك.',
 	'translate-pref-editassistlang-bad' => 'رمز لغه غير صالح فى القائمة:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'محرر ترجمه مُحسّن (جافاسكربت)',
 	'right-translate' => 'التعديل باستخدام واجهه الترجمة',
 	'right-translate-manage' => 'إداره مجموعات الترجمة', # Fuzzy
 	'right-translate-import' => 'استيراد الترجمات من الخارج',
@@ -2434,6 +2432,8 @@ $messages['arz'] = array(
 	'translate-manage-intro-other' => 'بالأسفل قائمه بتغييرات الترجمه فى لغه $1.
 من فضلك راجع التغييرات واختر فعلا تريد فعله لكل ترجمه.
 لو اخترت تجاهل التغييرات، ستتم الكتابه عليها عند التصدير التالى.', # Fuzzy
+	'translate-manage-import-ok' => 'استوردت نسخه جديده من الصفحه $1.', # Fuzzy
+	'translate-manage-import-done' => 'انتهى الكل!', # Fuzzy
 	'importtranslations' => 'استورد ترجمات',
 	'translate-import-from-local' => 'رفع ملف محلي:',
 	'translate-import-load' => 'حمّل الملف',
@@ -2678,9 +2678,9 @@ $messages['ast'] = array(
 	'translate-taction-disabled' => 'Esta aición ta desactivada nesta wiki.',
 	'translate-page-no-such-language' => 'La llingua especificada nun foi válida.',
 	'translate-page-no-such-group' => 'El grupu especificáu nun foi válidu.',
-	'translate-page-disabled' => "Desactivaronse les traducciones a esta llingua nesti grupu. Motivu:
+	'translate-page-disabled' => 'Desactivaronse les traducciones a esta llingua nesti grupu. Motivu:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'La traducción a esta llingua ta desactivada.',
 	'translate-page-settings-legend' => 'Configuración',
 	'translate-page-group' => 'Grupu',
@@ -2707,7 +2707,7 @@ como nun usar espacios o pa treslliterar nomes propios. $1',
 	'translate-edit-definition' => 'Definición del mensaxe',
 	'translate-edit-translation' => 'Traducción',
 	'translate-edit-contribute' => 'contribuyir',
-	'translate-edit-no-information' => "''Esti mensaxe nun tien documentación. Si sabe ú o cómo s'usa esti mensaxe, pue ayudar a otros traductores amestando documentación a esti mensaxe.''",
+	'translate-edit-no-information' => "''Esti mensaxe nun tien documentación. Si sabe ú o cómo s'usa esti mensaxe, pue ayudar a otros traductores amestando documentación a esti mensaxe.''", # Fuzzy
 	'translate-edit-information' => 'Información tocante a esti mensaxe ($1)',
 	'translate-edit-in-other-languages' => "Mensaxe n'otres llingües",
 	'translate-edit-committed' => 'Traducción actual nel software',
@@ -2716,7 +2716,6 @@ como nun usar espacios o pa treslliterar nomes propios. $1',
 	'translate-edit-tmmatch-source' => 'Testu orixinal de la traducción: $1',
 	'translate-edit-tmmatch' => '$1% de coincidencia',
 	'translate-use-suggestion' => 'Sustituir la traducción actual por esta suxerencia.',
-	'translate-edit-tab-list' => 'Llista de mensaxes',
 	'translate-edit-nopermission' => 'Necesita permisu pa traducir mensaxes.',
 	'translate-edit-askpermission' => 'Solicitar permisu',
 	'translate-magic-pagename' => 'Traducción estendida de MediaWiki',
@@ -2777,7 +2776,6 @@ Cuando traduces s'amuesen les traducciones d'un mensaxe nestes llingües.
 La llista predeterminada de llingües depende de la to llingua.",
 	'translate-pref-editassistlang-bad' => 'Códigu de llingua inválidu na llista:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Editor de traducción ameyoráu (JavaScript)',
 	'right-translate' => 'Editar usando la interfaz de traducción',
 	'right-translate-manage' => 'Xestionar los grupos de mensaxes',
 	'action-translate-manage' => 'xestionar los grupos de mensaxes',
@@ -2902,6 +2900,8 @@ Por favor, compruebala.",
 	'translate-manage-intro-other' => "Debaxo ta la llista de cambios nes traducciones de la llingua $1.
 Por favor, revise los cambios y escueya l'aición que quier facer pa cada anovamientu.
 Si escueye inorar los cambios, esta aición ye sólo temporal.",
+	'translate-manage-import-ok' => 'Importada la versión nueva de la páxina $1.', # Fuzzy
+	'translate-manage-import-done' => '¡Too fecho!', # Fuzzy
 	'importtranslations' => 'Importar traducciones',
 	'translate-import-from-local' => 'Xubir un ficheru llocal:',
 	'translate-import-load' => 'Xubir ficheru',
@@ -3048,7 +3048,7 @@ Ye enforma afayadizo pa les xeres de revisión.',
 	'tux-proofread-translated-by-self' => 'Traducío por ti',
 	'tux-empty-list-all' => 'Esti grupu de mensaxes ta baleru',
 	'tux-empty-list-all-guide' => 'Seleicione un grupu de mensaxes diferente pa traducir',
-	'tux-translate-page-no-such-group' => "'''El grupu indicáu nun esiste.''' Seleicione un grupu de mensaxes distintu.",
+	'tux-translate-page-no-such-group' => "'''El grupu indicáu nun esiste.''' Seleicione un grupu de mensaxes distintu.", # Fuzzy
 	'tux-empty-list-translated' => 'Nun hai mensaxes traducíos',
 	'tux-empty-list-translated-guide' => 'Pue ayudar cola traducción',
 	'tux-empty-list-translated-action' => 'Traducir',
@@ -3099,10 +3099,10 @@ $messages['az'] = array(
 	'translate-taction-disabled' => 'Bu hərəkət bu vikidə istifadə oluna bilməz.',
 	'translate-page-no-such-language' => 'Göstərilən dil etibarsızdır.',
 	'translate-page-no-such-group' => 'Göstərilən qrup etibarsızdır.',
-	'translate-page-disabled' => "Qrupdakı bu dilə tərcümələr etibarsızdır.
+	'translate-page-disabled' => 'Qrupdakı bu dilə tərcümələr etibarsızdır.
 Səbəb:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Bu dilə tərcümə etibarsızdır.',
 	'translate-page-settings-legend' => 'Tənzimləmələr',
 	'translate-page-group' => 'Qrup',
@@ -3122,13 +3122,12 @@ Səbəb:
 	'translate-ext-url' => '<hr />Veb səhifəsi: $1',
 	'translate-optional' => '(istəyə bağlı)',
 	'translate-ignored' => '(sayılmayan)',
-	'translate-edit-jsopen' => 'redaktə et',
 	'translate-edit-title' => 'Redaktə et "$1"',
 	'translate-edit-definition' => 'Mesaj təsviri',
 	'translate-edit-translation' => 'Tərcümə',
 	'translate-edit-contribute' => 'töhvə ver',
 	'translate-edit-no-information' => "''Bu mesajın təsviri yoxdur.''
-''Əgər bu mesajı harada və necə istifadə etməyi bilirsinizsə, onda bu mesaj üçün bir anlayış əlavə edərək digər tərcüməçilərə kömək ola bilərsiniz.''",
+''Əgər bu mesajı harada və necə istifadə etməyi bilirsinizsə, onda bu mesaj üçün bir anlayış əlavə edərək digər tərcüməçilərə kömək ola bilərsiniz.''", # Fuzzy
 	'translate-edit-information' => 'Mesaj haqqında məlumat(lar) ($1)',
 	'translate-edit-in-other-languages' => 'Digər dillərdəki mesajı',
 	'translate-edit-warnings' => 'Yarımçıq tərcümələr haqqında xəbərdarlıqlar',
@@ -3136,7 +3135,6 @@ Səbəb:
 	'translate-edit-tmmatch-source' => 'Tərcümə mənbəsi mətni: $1',
 	'translate-edit-tmmatch' => '$1% oxşar',
 	'translate-use-suggestion' => 'Cari tərcüməni bu təkliflə dəyişdir.',
-	'translate-edit-tab-list' => 'Mesaj siyahısı',
 	'translate-edit-nopermission' => 'Sizə mesajları tərcümə etmək üçün icazə lazımdır.',
 	'translate-edit-askpermission' => 'İcazə istə',
 	'translate-magic-pagename' => 'Genişlənmiş MediaViki tərcüməsi',
@@ -3160,7 +3158,6 @@ Səbəb:
 	'prefs-translate' => 'Tərcümə seçimləri',
 	'translate-pref-editassistlang-bad' => 'Siyahıdakı etibarsız dil kodu:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Ətraflı tərcümə redaktoru (JavaScript)',
 	'right-translate' => 'Tərcümə interfeysindən istifadə edərək redaktə et',
 	'right-translate-manage' => 'Mesaj qruplarını idarə et',
 	'action-translate-manage' => 'mesaj qruplarını idarə et',
@@ -3247,7 +3244,6 @@ Səbəb:
 	'translate-smg-nochanges' => 'Emal etmək üçün dəyişiklik yoxdur.',
 	'translate-smg-submit' => 'Emal etmək üçün dəyişiklikləri göndərin',
 	'translate-smg-submitted' => 'Mesaj anlayışları yeniləndi. Dəyişikliklər arxa planda emal olunur.',
-	'translate-smg-postponed' => 'Bəzi dəyişikliklər emal edilə bilməz. [[{{FULLPAGENAME}}|Yenidən cəhd edin]].',
 	'translate-smg-left' => 'Vikidə mesaj məzmunu',
 	'translate-smg-right' => 'Gələn dəyişikliklər',
 	'translate-manage-import-diff' => 'Mesaj $1 | Hərəkət: $2',
@@ -3324,10 +3320,10 @@ $messages['azb'] = array(
 	'translate-taction-disabled' => 'بو ویکی‌ده بو ایش باغلانیب‌دیر.',
 	'translate-page-no-such-language' => 'بللندیریلمیش دیل گئچرسیزدیر.',
 	'translate-page-no-such-group' => 'بللندیریلمیش قروپ گئچرسیزدیر.',
-	'translate-page-disabled' => "بو دیل‌ده بو گروپون چئویرمه‌سی باغلانیب‌دیر.
+	'translate-page-disabled' => 'بو دیل‌ده بو گروپون چئویرمه‌سی باغلانیب‌دیر.
 دلیل:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'بو دیله چئویرمک باغلانیب‌دیر.',
 	'translate-page-settings-legend' => 'تنظیملر',
 	'translate-page-group' => 'قروپ',
@@ -3349,13 +3345,12 @@ $messages['azb'] = array(
 	'translate-ext-url' => '<hr />سایت: $1',
 	'translate-optional' => '(ایستگه باغلی)',
 	'translate-ignored' => '(یوخ ساییلمیش)',
-	'translate-edit-jsopen' => 'دَییشدیر',
 	'translate-edit-title' => '«$1»-ی دَییشدیر',
 	'translate-edit-definition' => 'مئساژ تانیتیمی',
 	'translate-edit-translation' => 'چئویرمک',
 	'translate-edit-contribute' => 'چالیشماق',
 	'translate-edit-no-information' => "''بو مئساژ اوچون سندلندیرمه یوخدور.''
-''اگر سیز بیلیرسیز بو مئساژ نئجه ایشلنیب‌دیر، بو مئساژی سندلندیرمک‌له، آیری ترجومه‌چیلره یاردیم ائده بیلرسیز.''",
+''اگر سیز بیلیرسیز بو مئساژ نئجه ایشلنیب‌دیر، بو مئساژی سندلندیرمک‌له، آیری ترجومه‌چیلره یاردیم ائده بیلرسیز.''", # Fuzzy
 	'translate-edit-information' => 'مئساژ اوچون بیلگیلر ($1)',
 	'translate-edit-in-other-languages' => 'مئساژ آیری دیل‌لرده',
 	'translate-edit-committed' => 'یازیلیم‌دا ایندیکی ترجومه',
@@ -3364,7 +3359,6 @@ $messages['azb'] = array(
 	'translate-edit-tmmatch-source' => 'چئویرمک قایناق یازی‌سی: $1',
 	'translate-edit-tmmatch' => '$1٪ تطبیق',
 	'translate-use-suggestion' => 'ایندیکی چئویرمه‌نی بو اؤنره دَییشدیر.',
-	'translate-edit-tab-list' => 'مئساژلار لیستی',
 	'translate-edit-nopermission' => 'سیز مئساژلاری چئویرمک اوچون ایجازه‌یه احتیاجیز واردیر.',
 	'translate-edit-askpermission' => 'ایجازه ایسته‌یین',
 	'translate-magic-pagename' => 'اوزادیلمیش مئدیاویکی چئویرمه‌سی',
@@ -3425,7 +3419,6 @@ $messages['azb'] = array(
 دیل‌لری ایلک لیستی، سیزین دیل‌لرینیزه باغلی‌دیر.',
 	'translate-pref-editassistlang-bad' => 'لیست‌ده گئچرسیز دیل کودو واردیر:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'گلیشمیش چئویرمه دَییشدیرنی (جاوااسکریپت)',
 	'right-translate' => 'چئویرمک آرا-اوزو ایله دَییشدیر',
 	'right-translate-manage' => 'مئساژ گروپلارینی ایداره ائت',
 	'action-translate-manage' => 'مئساژ گروپلارینی ایداره ائت',
@@ -3526,7 +3519,6 @@ $messages['azb'] = array(
 	'translate-smg-nochanges' => 'ایشله‌مک اوچون بیر دَییشیکلیک یوخدور.',
 	'translate-smg-submit' => 'دَییشیکلیکلری ایشله‌مگه گؤندر',
 	'translate-smg-submitted' => 'مئساژ قایناقلاری گؤونجل‌لنیب‌دیلر. دَییشیکلیکلر آرخادا بررسی اولونورلار.',
-	'translate-smg-postponed' => 'بعضی دَییشیکلیکلر بررسی اولونانمادیلار. [[{{FULLPAGENAME}}|یئنی‌دن چالیش]].',
 	'translate-smg-left' => 'ویکی‌ده مئساژ محتویاتی',
 	'translate-smg-right' => 'قاباغا گلن دَییشیکلیکلر',
 	'translate-manage-import-diff' => 'مئساژ $1 | ایش: $2',
@@ -3687,7 +3679,7 @@ $1',
 	'tux-proofread-translated-by-self' => 'سیز ایله چئویریلمیش',
 	'tux-empty-list-all' => 'بو مئساژ قروپو بوش‌دور',
 	'tux-empty-list-all-guide' => 'بیر آیری مئساژ قروپو چئویرمک اوچون سئچین',
-	'tux-translate-page-no-such-group' => "'''بلیرتلنمیش مئساژ قروپو یوخدور.''' لوطفاً آیریسین سئچین.",
+	'tux-translate-page-no-such-group' => "'''بلیرتلنمیش مئساژ قروپو یوخدور.''' لوطفاً آیریسین سئچین.", # Fuzzy
 	'tux-empty-list-translated' => 'هئچ چئویریلمیش مئساژ یوخدور',
 	'tux-empty-list-translated-guide' => 'سیز چئویرمگه یاردیم ائده بیلرسینیز',
 	'tux-empty-list-translated-action' => 'چئویر',
@@ -3715,8 +3707,8 @@ $messages['ba'] = array(
 	'translate-desc' => 'MediaWiki һәм башка программалар тәржемә итеү өсөн [[Special:Translate|Махсус бит]]',
 	'translate-page-no-such-language' => 'Тел коды дөрөҫ түгел.',
 	'translate-page-no-such-group' => 'Төркөм дөрөҫ күрһәтелмәгән.',
-	'translate-page-disabled' => "Һайланған төркөмдә был телгә тәржемә итеү мөмкин түгел. Сәбәбе:
-''$1''",
+	'translate-page-disabled' => 'Һайланған төркөмдә был телгә тәржемә итеү мөмкин түгел. Сәбәбе:
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Шарттар',
 	'translate-page-group' => 'Төркөм',
 	'translate-page-language' => 'Тел',
@@ -3738,7 +3730,7 @@ $messages['ba'] = array(
 	'translate-edit-definition' => 'Яҙманың билдәләмәһе',
 	'translate-edit-translation' => 'Тәржемә',
 	'translate-edit-contribute' => 'үҙгәртергә',
-	'translate-edit-no-information' => "''Был яҙманың тасуирламаһы юҡ. Әгәр һеҙ был яҙманың ҡайҙа һәм нисек ҡулланылғанын белһәгеҙ, был яҙмаға тасуирлама өҫтәп, бүтән тәржемәселәргә ярҙам итә  алаһығыҙ.''",
+	'translate-edit-no-information' => "''Был яҙманың тасуирламаһы юҡ. Әгәр һеҙ был яҙманың ҡайҙа һәм нисек ҡулланылғанын белһәгеҙ, был яҙмаға тасуирлама өҫтәп, бүтән тәржемәселәргә ярҙам итә  алаһығыҙ.''", # Fuzzy
 	'translate-edit-information' => 'Яҙма тураһында мәғлүмәт ($1)',
 	'translate-edit-in-other-languages' => 'Ошо яҙма башҡа телдәрҙә',
 	'translate-edit-committed' => 'Программала хәҙерге тәржемәһе',
@@ -3746,7 +3738,6 @@ $messages['ba'] = array(
 	'translate-edit-tmsugs' => 'Тәржемәләр хәтеренән тәҡдимдәр',
 	'translate-edit-tmmatch' => '$1% тап килеү',
 	'translate-use-suggestion' => 'Был тәҡдимде тәржемә өлкәһенә ҡуйырға. Был бөтә хәҙерге эстәлекте алыштырасаҡ.', # Fuzzy
-	'translate-edit-tab-list' => 'Хәбәрҙәр исемлеге',
 	'translate-magic-pagename' => 'MediaWiki тәрәнәйтелгән тәржемәһе',
 	'translate-magic-module' => 'Модуль:',
 	'translate-magic-submit' => 'Сығарырға',
@@ -3787,7 +3778,6 @@ $messages['ba'] = array(
 Ғәҙәттәге исемлек һеҙ һайлаған телгә бәйле.',
 	'translate-pref-editassistlang-bad' => 'Исемлектәге тел коды дөрөҫ түгел:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Яҡшыртылған тәржемә ҡоралы (JavaScript)',
 	'right-translate' => 'Тәржемә интерфейсы ярҙамында үҙгәртеү',
 	'right-translate-manage' => 'Тәржемә төркөмдәрен мөхәррирләү', # Fuzzy
 	'right-translate-import' => 'Offline тәржемәләрҙе индереү',
@@ -3885,6 +3875,8 @@ $messages['ba'] = array(
 	'translate-manage-intro-other' => 'Түбәндә — $1 теленә тәржемә үҙгәрештәре исемлеге.
 Һәр тәржемә өсөн үҙгәрештәрҙе тикшерегеҙ һәм был тәржемә менән ни эшләргә теләгәнегеҙҙе һайлағыҙ, зинһар.
 Әгәр һеҙ үҙгәрештәрҙе иғтибарһыҙ ҡалдырһағыҙ, улар икенсе сығарыуға күсереләсәк.', # Fuzzy
+	'translate-manage-import-ok' => '$1 битенең яңы өлгөһө индерелгән.', # Fuzzy
+	'translate-manage-import-done' => 'Барыһы ла үтәлде!', # Fuzzy
 	'importtranslations' => 'Тәржемәләрҙе индереү',
 	'translate-import-from-local' => 'Урындағы файлды индерергә:',
 	'translate-import-load' => 'Файлды индерергә:',
@@ -4005,9 +3997,9 @@ $messages['be'] = array(
 	'translate-taction-disabled' => 'Гэта дзеянне адключана ў гэтай вікі.',
 	'translate-page-no-such-language' => 'Перададзены няслушны код мовы',
 	'translate-page-no-such-group' => 'Няслушна ўказана група.',
-	'translate-page-disabled' => "У гэтым раздзеле пераклады на даную мову адключаны. Прычына:
+	'translate-page-disabled' => 'У гэтым раздзеле пераклады на даную мову адключаны. Прычына:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Магчымасць перакладу на гэту мову адключана.',
 	'translate-page-settings-legend' => 'Параметры',
 	'translate-page-group' => 'Група',
@@ -4029,12 +4021,11 @@ $messages['be'] = array(
 	'translate-ext-url' => '<hr />Сайт: $1',
 	'translate-optional' => '(неабавязковае)',
 	'translate-ignored' => '(ігнаруемае)',
-	'translate-edit-jsopen' => 'правіць',
 	'translate-edit-title' => 'Правіць «$1»',
 	'translate-edit-definition' => 'Фармулёўка паведамлення',
 	'translate-edit-translation' => 'Пераклад',
 	'translate-edit-contribute' => 'правіць',
-	'translate-edit-no-information' => "''Гэта паведамленне не мае апісанні. Калі вы ведаеце, дзе ці як гэта паведамленне выкарыстоўваецца, то можаце дапамагчы іншым перакладчыкам, дадаўшы да яго апісанне.''",
+	'translate-edit-no-information' => "''Гэта паведамленне не мае апісанні. Калі вы ведаеце, дзе ці як гэта паведамленне выкарыстоўваецца, то можаце дапамагчы іншым перакладчыкам, дадаўшы да яго апісанне.''", # Fuzzy
 	'translate-edit-information' => 'Інфармацыя пра паведамленне ($1)',
 	'translate-edit-in-other-languages' => 'Паведамленне на іншых мовах',
 	'translate-edit-committed' => 'Бягучы пераклад у праграме',
@@ -4043,7 +4034,6 @@ $messages['be'] = array(
 	'translate-edit-tmmatch-source' => 'Тэкст зыходнага паведамлення для перакладу: $1',
 	'translate-edit-tmmatch' => '$1% адпаведнасць',
 	'translate-use-suggestion' => 'Замяніць бягучы тэкст перакладу на гэту падказку.',
-	'translate-edit-tab-list' => 'Спіс паведамленняў',
 	'translate-edit-nopermission' => 'Для перакладу паведамленняў вам трэба атрымаць дазвол.',
 	'translate-edit-askpermission' => 'Запытаць дазвол',
 	'translate-magic-pagename' => 'Паглыблены пераклад MediaWiki',
@@ -4102,7 +4092,6 @@ $messages['be'] = array(
 Спіс па змоўчанні залежыць ад вашай мовы.',
 	'translate-pref-editassistlang-bad' => 'Няслушны моўны код у спісе:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Палепшаны рэдактар перакладаў (JavaScript)',
 	'right-translate' => 'праўка з выкарыстаннем інтэрфейсу перакладу',
 	'right-translate-manage' => 'кіраванне групамі паведамленняў',
 	'action-translate-manage' => 'кіраванне групамі паведамленняў',
@@ -4166,9 +4155,9 @@ $messages['be-tarask'] = array(
 	'translate-taction-disabled' => 'Гэтае дзеяньне выключанае ў гэтай вікі.',
 	'translate-page-no-such-language' => 'Пададзеная няслушная мова.',
 	'translate-page-no-such-group' => 'Пададзеная няслушная група.',
-	'translate-page-disabled' => "Пераклады на гэту мову ў гэтай групе былі адключаны. Прычына:
+	'translate-page-disabled' => 'Пераклады на гэту мову ў гэтай групе былі адключаны. Прычына:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Пераклад на гэтую мову адключаны.',
 	'translate-page-settings-legend' => 'Парамэтры',
 	'translate-page-group' => 'Група',
@@ -4190,13 +4179,12 @@ $messages['be-tarask'] = array(
 	'translate-ext-url' => '<hr />Сайт: $1',
 	'translate-optional' => '(неабавязковае)',
 	'translate-ignored' => '(ігнараванае)',
-	'translate-edit-jsopen' => 'рэдагаваць',
 	'translate-edit-title' => 'Рэдагаваньне «$1»',
 	'translate-edit-definition' => 'Тэкст паведамленьня',
 	'translate-edit-translation' => 'Пераклад',
 	'translate-edit-contribute' => 'рэдагаваць',
 	'translate-edit-no-information' => "''Гэтае паведамленьне ня мае дакумэнтацыі.
-Калі Вы ведаеце, дзе ці як выкарыстоўваецца гэтае паведамленьне, то Вы можаце дапамагчы іншым перакладчыкам, дадаўшы дакумэнтацыю да гэтага паведамленьня.''",
+Калі Вы ведаеце, дзе ці як выкарыстоўваецца гэтае паведамленьне, то Вы можаце дапамагчы іншым перакладчыкам, дадаўшы дакумэнтацыю да гэтага паведамленьня.''", # Fuzzy
 	'translate-edit-information' => 'Інфармацыя пра паведамленьне ($1)',
 	'translate-edit-in-other-languages' => 'Паведамленьне на іншых мовах',
 	'translate-edit-committed' => 'Цяперашні пераклад у праграме',
@@ -4205,7 +4193,6 @@ $messages['be-tarask'] = array(
 	'translate-edit-tmmatch-source' => 'Тэкст крыніцы перакладу: $1',
 	'translate-edit-tmmatch' => '$1% супадзеньне',
 	'translate-use-suggestion' => 'Замяніць цяперашні пераклад на гэтую прапанову.',
-	'translate-edit-tab-list' => 'Сьпіс паведамленьняў',
 	'translate-edit-nopermission' => 'Для перакладу паведамленьняў неабходны дазвол.',
 	'translate-edit-askpermission' => 'Запытаць дазвол',
 	'translate-magic-pagename' => 'Пашыраны пераклад MediaWiki',
@@ -4265,7 +4252,6 @@ $messages['be-tarask'] = array(
 Сьпіс перадвызначаных моў залежыць ад Вашай мовы.',
 	'translate-pref-editassistlang-bad' => 'Няслушны код мовы ў сьпісе:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Пашыраны рэдактар перакладаў (JavaScript)',
 	'right-translate' => 'Рэдагаваньне з выкарыстаньнем інтэрфэйсу перакладу',
 	'right-translate-manage' => 'кіраваньне групамі перакладаў',
 	'action-translate-manage' => 'кіраваньне групамі перакладаў',
@@ -4365,7 +4351,6 @@ $messages['be-tarask'] = array(
 	'translate-smg-nochanges' => 'Няма зьменаў для апрацоўкі.',
 	'translate-smg-submit' => 'Даслаць зьмены для апрацоўкі',
 	'translate-smg-submitted' => 'Апісаньні паведамленьняў былі абноўленыя. Зьмены зараз апрацоўваюцца ў тле.',
-	'translate-smg-postponed' => 'Некаторыя зьмены ня могуць быць апрацованыя. [[{{FULLPAGENAME}}|Паспрабуйце зноў]].',
 	'translate-smg-left' => 'Зьмест паведамленьня ў вікі',
 	'translate-smg-right' => 'Уваходныя зьмены',
 	'translate-manage-import-diff' => 'Паведамленьне $1 | Дзеяньні: $2',
@@ -4389,6 +4374,8 @@ $messages['be-tarask'] = array(
 	'translate-manage-intro-other' => 'Ніжэй пададзены сьпіс зьменаў у перакладах для мовы $1.
 Калі ласка, праглядзіце зьмены і выберыце пажаданае дзеяньне для кожнага абнаўленьня.
 Калі вы праігнаруеце зьмены, гэта будзе мець толькі часовы эфэкт.',
+	'translate-manage-import-ok' => 'Імпартаваная новая вэрсія старонкі $1.', # Fuzzy
+	'translate-manage-import-done' => 'Усё выканана!', # Fuzzy
 	'importtranslations' => 'Імпарт перакладаў',
 	'translate-import-from-local' => 'Загрузіць лякальны файл:',
 	'translate-import-load' => 'Загрузіць файл',
@@ -4535,7 +4522,7 @@ $1',
 	'tux-proofread-translated-by-self' => 'Перакладзена вамі',
 	'tux-empty-list-all' => 'Гэтая група паведамленьняў пустая',
 	'tux-empty-list-all-guide' => 'Выберыце для перакладу іншую групу паведамленьняў',
-	'tux-translate-page-no-such-group' => "'''Запытаная група не існуе.''' Выберыце іншую групу паведамленьняў.",
+	'tux-translate-page-no-such-group' => "'''Запытаная група не існуе.''' Выберыце іншую групу паведамленьняў.", # Fuzzy
 	'tux-empty-list-translated' => 'Няма перакладзеных паведамленьняў',
 	'tux-empty-list-translated-guide' => 'Вы можаце дапамагчы зь перакладам',
 	'tux-empty-list-translated-action' => 'Перакласьці',
@@ -4578,9 +4565,9 @@ $messages['bg'] = array(
 	'translate-taction-export' => 'Изнасяне',
 	'translate-page-no-such-language' => 'Избраният език е невалиден.',
 	'translate-page-no-such-group' => 'Избраната група е невалидна',
-	'translate-page-disabled' => "Преводите на този език в тази група са изключени. Причина:
+	'translate-page-disabled' => 'Преводите на този език в тази група са изключени. Причина:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Настройки',
 	'translate-page-group' => 'Група:',
 	'translate-page-language' => 'Език:',
@@ -4599,11 +4586,10 @@ $messages['bg'] = array(
 	'translate-ext-url' => '<hr />Уебсайт: $1',
 	'translate-optional' => '(незадължително)',
 	'translate-ignored' => '(пренебрегнато)',
-	'translate-edit-jsopen' => 'редактиране',
 	'translate-edit-title' => 'Редактиране на „$1“',
 	'translate-edit-definition' => 'Оригинално съобщение',
 	'translate-edit-contribute' => 'добавяне на документация',
-	'translate-edit-no-information' => 'За това съобщение няма документация. Ако знаете къде и как се използва, можете да помогнете на останалите преводачи като добавите документация за това съобщение.',
+	'translate-edit-no-information' => 'За това съобщение няма документация. Ако знаете къде и как се използва, можете да помогнете на останалите преводачи като добавите документация за това съобщение.', # Fuzzy
 	'translate-edit-information' => 'Информация за съобщението ($1)',
 	'translate-edit-in-other-languages' => 'Съобщението на други езици',
 	'translate-edit-committed' => 'Текущ превод в софтуера',
@@ -4691,6 +4677,7 @@ $messages['bg'] = array(
 	'translate-manage-action-import' => 'Внасяне',
 	'translate-manage-action-ignore' => 'Пренебрегване',
 	'translate-manage-submit' => 'Изпълняване',
+	'translate-manage-import-done' => 'Всичко е готово!', # Fuzzy
 	'importtranslations' => 'Внасяне на преводи',
 	'translate-import-load' => 'Зареждане на файла',
 	'translate-import-err-ul-failed' => 'Качването на файла не беше успешно',
@@ -5077,10 +5064,10 @@ $messages['br'] = array(
 	'translate-taction-disabled' => 'Diweredekaat eo an oberiadenn-mañ war ar wiki-mañ.',
 	'translate-page-no-such-language' => "Merket ez eus bet ur c'hod yezh direizh",
 	'translate-page-no-such-group' => 'Merket ez eus bet ur strollad direizh.',
-	'translate-page-disabled' => "Harpet eo bet an troidigezhioù er yezh-mañ evit ar strollad-mañ.
+	'translate-page-disabled' => 'Harpet eo bet an troidigezhioù er yezh-mañ evit ar strollad-mañ.
 Abeg :
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Diweredekaet eo an treiñ evit ar yezh-mañ.',
 	'translate-page-settings-legend' => 'Arventennoù',
 	'translate-page-group' => 'Strollad',
@@ -5102,12 +5089,11 @@ Ne zle ar c'hemennadennoù diret bezañ troet nemet pa vez ezhommoù dibar gant 
 	'translate-ext-url' => "<hr />Lec'hienn Web : $1",
 	'translate-optional' => '(diret)',
 	'translate-ignored' => '(laosket a-gostez)',
-	'translate-edit-jsopen' => 'kemmañ',
 	'translate-edit-title' => 'Kemmañ "$1"',
 	'translate-edit-definition' => 'Termenadur ar gemennadenn',
 	'translate-edit-translation' => 'Troidigezh',
 	'translate-edit-contribute' => 'kemer perzh',
-	'translate-edit-no-information' => "''N'eus tamm titour ebet diwar-benn ar gemennadenn-mañ. Ma ouzit pelec'h pe benaos emañ da vezañ implijet e c'hallit harpañ troourien all en ur ouzhpennañ titouroù diwar he fenn.''",
+	'translate-edit-no-information' => "''N'eus tamm titour ebet diwar-benn ar gemennadenn-mañ. Ma ouzit pelec'h pe benaos emañ da vezañ implijet e c'hallit harpañ troourien all en ur ouzhpennañ titouroù diwar he fenn.''", # Fuzzy
 	'translate-edit-information' => 'Titouroù diwar-benn ar gemennadenn ($1)',
 	'translate-edit-in-other-languages' => 'An hevelep kemennadenn e yezhoù all',
 	'translate-edit-committed' => 'Troidigezh er meziant evit poent',
@@ -5116,7 +5102,6 @@ Ne zle ar c'hemennadennoù diret bezañ troet nemet pa vez ezhommoù dibar gant 
 	'translate-edit-tmmatch-source' => 'Testenn orin da dreiñ : $1',
 	'translate-edit-tmmatch' => '$1% kenglotañ',
 	'translate-use-suggestion' => "Erlec'hiañ an droidigezh a-vremañ gant ar c'hinnig-mañ.",
-	'translate-edit-tab-list' => 'Roll kemennadennoù',
 	'translate-edit-nopermission' => "Ret eo deoc'h bezañ aotreet a-raok gallout treiñ kemennadennoù.",
 	'translate-edit-askpermission' => 'Goulenn an aotre',
 	'translate-magic-pagename' => 'Troidigezh MediaWiki astennet',
@@ -5172,7 +5157,6 @@ Diskwelet eo an droidigezh er yezhoù-se pa vezit o treiñ ur gemennadenn.
 Cheñch a ra roll dre ziouer ar yezhoù-se diouzh ar yezh a rit ganti.',
 	'translate-pref-editassistlang-bad' => 'Kod yezh direizh el listenn :
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Aozer troidigezhioù gwellaet (JavaScript)',
 	'right-translate' => 'Kemmañ en ur ober gant an etrefas treiñ',
 	'right-translate-manage' => 'Merañ ar strolladoù kemennadennoù',
 	'action-translate-manage' => 'Merañ ar strolladoù kemennadennoù',
@@ -5295,6 +5279,8 @@ Gwiriit mar plij.',
 	'translate-manage-intro-other' => "A-is emañ roll ar c'hemmoù treiñ e $1.
 Gwiriit anezho ha dibabit ar pezh a fell deoc'h ober evit pep troidigezh.
 Ma tibabit chom hep kemer ar c'hemmoù e kont e vint riñset-lip kentañ tro ma vo un ezporzhiadenn nevez.", # Fuzzy
+	'translate-manage-import-ok' => 'Enporzhiet ez eus bet ur stumm nevez eus ar bajenn $1', # Fuzzy
+	'translate-manage-import-done' => 'Tout eo bet graet !', # Fuzzy
 	'importtranslations' => 'Enporzhiañ an troidigezhioù',
 	'translate-import-from-local' => "Enporzhiañ ur restr lec'hel :",
 	'translate-import-load' => 'Kargañ ar restr',
@@ -5433,7 +5419,7 @@ Talvoudus evit adlenn ha reizhañ.', # Fuzzy
 	'tux-proofread-translated-by-self' => "Troet ganeoc'h",
 	'tux-empty-list-all' => 'Goullo eo ar strollad kemennadennoù-mañ',
 	'tux-empty-list-all-guide' => 'Dibab ur strollad kemennadennoù all da dreiñ',
-	'tux-translate-page-no-such-group' => "'''N'eus ket eus ar strollad merket.''' Dibab ur  strollad kemennadennoù all.",
+	'tux-translate-page-no-such-group' => "'''N'eus ket eus ar strollad merket.''' Dibab ur  strollad kemennadennoù all.", # Fuzzy
 	'tux-empty-list-translated' => 'Kemennadenn ebet bet troet',
 	'tux-empty-list-translated-guide' => "Hor skoazellañ gant an treiñ a c'hallit ober",
 	'tux-empty-list-translated-action' => 'Treiñ',
@@ -5462,9 +5448,9 @@ $messages['bs'] = array(
 	'translate-taction-lstats' => 'Statistike jezika',
 	'translate-page-no-such-language' => 'Navedeni jezik ne postoji.',
 	'translate-page-no-such-group' => 'Navedena grupa ne postoji.',
-	'translate-page-disabled' => "Prijevodi na ovaj jezik u ovoj grupi su onemogućeni. Razlog:
+	'translate-page-disabled' => 'Prijevodi na ovaj jezik u ovoj grupi su onemogućeni. Razlog:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Postavke',
 	'translate-page-group' => 'Grupa',
 	'translate-page-language' => 'Jezik',
@@ -5482,12 +5468,11 @@ $messages['bs'] = array(
 	'translate-ext-url' => '<hr />Web stranica: $1',
 	'translate-optional' => '(opcionalno)',
 	'translate-ignored' => '(zanemareno)',
-	'translate-edit-jsopen' => 'uredi',
 	'translate-edit-title' => 'Uređivanje "$1"',
 	'translate-edit-definition' => 'Definicija poruke',
 	'translate-edit-translation' => 'Prijevod',
 	'translate-edit-contribute' => 'doprinesi',
-	'translate-edit-no-information' => "''Ova poruka nema pripadajuće dokumentacije. Ako znate gdje ili kako se ova poruka koristi, možete pomoći drugim prevodiocima tako što ćete dodati dokumentaciju za ovu poruku.''",
+	'translate-edit-no-information' => "''Ova poruka nema pripadajuće dokumentacije. Ako znate gdje ili kako se ova poruka koristi, možete pomoći drugim prevodiocima tako što ćete dodati dokumentaciju za ovu poruku.''", # Fuzzy
 	'translate-edit-information' => 'Informacije o poruci ($1)',
 	'translate-edit-in-other-languages' => 'Poruka na ostalim jezicima',
 	'translate-edit-committed' => 'Trenutni prijevodi softvera',
@@ -5495,7 +5480,6 @@ $messages['bs'] = array(
 	'translate-edit-tmsugs' => 'Prijedlozi iz prevodilačke memorije',
 	'translate-edit-tmmatch' => '$1% slaganja',
 	'translate-use-suggestion' => 'Zamijenite trenutni prijevod s ovim prijedlogom.',
-	'translate-edit-tab-list' => 'Spisak poruka',
 	'translate-edit-nopermission' => 'Treba vam dozvola da prevodite poruke.',
 	'translate-edit-askpermission' => 'Zatraži dozvolu',
 	'translate-magic-pagename' => 'Prošireni MediaWiki prijevod',
@@ -5552,7 +5536,6 @@ Prevod poruka u ovim jezicima će biti prikazan dok prevodite.
 Pretpostavljeni spisak jezika zavisi od postavki Vašeg jezika.',
 	'translate-pref-editassistlang-bad' => 'Nevaljan kod jezika u spisku:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Napredni uređivač za prevođenje (JavaScript)',
 	'right-translate' => 'Uređivanje korištenjem prevodilačkog interfejsa',
 	'right-translate-manage' => 'Upravljanje grupama poruka',
 	'right-translate-import' => 'Uvoz vanmrežnih prijevoda',
@@ -5652,6 +5635,8 @@ Molimo ponovo pošaljite obrazac za nastavak obrade.',
 	'translate-manage-intro-other' => 'Ispod je spisak izmjena na prevodima na $1 jeziku.
 Molimo provjerite izmjene i izaberite akciju koju želite da uradite za svaki prevod.
 Ako odaberete da zanemarite izmjene, one će biti prepisane pri slijedećem izvozu.', # Fuzzy
+	'translate-manage-import-ok' => 'Uvezena nova verzija stranice $1.', # Fuzzy
+	'translate-manage-import-done' => 'Sve završeno!', # Fuzzy
 	'importtranslations' => 'Uvoz prijevoda',
 	'translate-import-from-local' => 'Postavljanje lokalne datoteke:',
 	'translate-import-load' => 'Učitaj datoteku',
@@ -5787,9 +5772,9 @@ $messages['ca'] = array(
 	'translate-taction-disabled' => 'Aquesta acció està desactivada a aquest wiki.',
 	'translate-page-no-such-language' => "L'idioma especificat no és vàlid.",
 	'translate-page-no-such-group' => 'El grup especificat no és vàlid.',
-	'translate-page-disabled' => "Les traduccions a aquest idioma en aquest grup han estat suspeses. Motiu:
+	'translate-page-disabled' => 'Les traduccions a aquest idioma en aquest grup han estat suspeses. Motiu:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'La traducció a aquest idioma està desactivada.',
 	'translate-page-settings-legend' => 'Preferències',
 	'translate-page-group' => 'Grup',
@@ -5816,7 +5801,7 @@ com ara no fer servir espais o transliterant noms propis. $1",
 	'translate-edit-definition' => 'Definició del missatge',
 	'translate-edit-translation' => 'Traducció',
 	'translate-edit-contribute' => 'contribuïu-hi',
-	'translate-edit-no-information' => "''Aquest missatge no té documentació. Si sabeu on o com és usat aquest missatge podeu ajudar la resta de traductors afegint-hi la documentació.''",
+	'translate-edit-no-information' => "''Aquest missatge no té documentació. Si sabeu on o com és usat aquest missatge podeu ajudar la resta de traductors afegint-hi la documentació.''", # Fuzzy
 	'translate-edit-information' => 'Informació sobre el missatge ($1)',
 	'translate-edit-in-other-languages' => 'El missatge en altres idiomes',
 	'translate-edit-committed' => 'Traducció utilitzada actualment pel programa',
@@ -6146,7 +6131,7 @@ El més útil per a les tasques de revisió.',
 	'tux-proofread-translated-by-self' => 'Traduït per tu',
 	'tux-empty-list-all' => 'Aquest grup de missatges és buit',
 	'tux-empty-list-all-guide' => 'Seleccioneu un grup de missatges diferent per traduir',
-	'tux-translate-page-no-such-group' => '"El grup indicat no existeix". Seleccioneu un grup de missatges diferent.',
+	'tux-translate-page-no-such-group' => '"El grup indicat no existeix". Seleccioneu un grup de missatges diferent.', # Fuzzy
 	'tux-empty-list-translated' => 'Missatges no traduïts',
 	'tux-empty-list-translated-guide' => 'Podeu ajudar a traduir',
 	'tux-empty-list-translated-action' => 'Tradueix',
@@ -6526,9 +6511,9 @@ $messages['cs'] = array(
 	'translate-taction-disabled' => 'Tato akce je na této wiki zakázána.',
 	'translate-page-no-such-language' => 'Zadaný jazyk není platný.',
 	'translate-page-no-such-group' => 'Zadaná skupina byla neplatná.',
-	'translate-page-disabled' => "Překlady do tohoto jazyka byly v této skupině zakázány. Zdůvodnění:
+	'translate-page-disabled' => 'Překlady do tohoto jazyka byly v této skupině zakázány. Zdůvodnění:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Překlad do tohoto jazyka je zakázán.',
 	'translate-page-settings-legend' => 'Nastavení',
 	'translate-page-group' => 'skupina',
@@ -6555,7 +6540,7 @@ jako nepoužívání mezer nebo transkripce vlastních jmen. $1',
 	'translate-edit-definition' => 'Zdroj zprávy',
 	'translate-edit-translation' => 'Překlad',
 	'translate-edit-contribute' => 'přispět',
-	'translate-edit-no-information' => "''K této zprávě není dokumentace. Pokud víte, kde nebo jak se zpráva používá, můžete pomoci dalším překladatelům tím, že přidáte dokumentaci k této zprávě.''",
+	'translate-edit-no-information' => "''K této zprávě není dokumentace. Pokud víte, kde nebo jak se zpráva používá, můžete pomoci dalším překladatelům tím, že přidáte dokumentaci k této zprávě.''", # Fuzzy
 	'translate-edit-information' => 'Informace o zprávě ($1)',
 	'translate-edit-in-other-languages' => 'Zpráva v jiných jazycích',
 	'translate-edit-committed' => 'Současný překlad v úložišti',
@@ -6891,7 +6876,7 @@ Užitečné hlavně pro korektury.',
 	'tux-proofread-translated-by-self' => 'Váš překlad',
 	'tux-empty-list-all' => 'Tato skupina zpráv je prázdná',
 	'tux-empty-list-all-guide' => 'Vyberte si k překladu jinou skupinu zpráv',
-	'tux-translate-page-no-such-group' => "'''Uvedená skupina zpráv neexistuje.''' Zvolte jinou skupinu zpráv.",
+	'tux-translate-page-no-such-group' => "'''Uvedená skupina zpráv neexistuje.''' Zvolte jinou skupinu zpráv.", # Fuzzy
 	'tux-empty-list-translated' => 'Žádné přeložené zprávy',
 	'tux-empty-list-translated-guide' => 'Můžete pomoci s překládáním',
 	'tux-empty-list-translated-action' => 'Překládat',
@@ -6969,7 +6954,7 @@ $messages['cy'] = array(
 	'translate-page-disabled' => "Analluogwyd cyfieithu i'r iaith honno yn y grŵp hwn.
 Rheswm:
 
-''$1''",
+<em>$1</em>",
 	'translate-language-disabled' => "Analluogwyd cyfieithu i'r iaith hon.",
 	'translate-page-settings-legend' => 'Gosodiadau',
 	'translate-page-group' => 'Grŵp',
@@ -6996,7 +6981,7 @@ Does dim ond angen eu cyfieithu pan fod orgraff eich iaith yn gofyn am eu cyfiei
 	'translate-edit-translation' => 'Cyfieithiad',
 	'translate-edit-contribute' => 'cofnodi eglurhad',
 	'translate-edit-no-information' => "''Nid oes unrhyw wybodaeth wedi ei chofnodi am y neges hon eto.''
-''Os ydych yn gwybod ymhle neu ym mha fodd y defnyddir y neges hon, gallwch hwyluso gwaith y cyfieithwyr drwy gofnodi eglurhad arni.''",
+''Os ydych yn gwybod ymhle neu ym mha fodd y defnyddir y neges hon, gallwch hwyluso gwaith y cyfieithwyr drwy gofnodi eglurhad arni.''", # Fuzzy
 	'translate-edit-information' => 'Gwybodaeth am y neges ($1)',
 	'translate-edit-in-other-languages' => 'Y neges mewn ieithoedd eraill',
 	'translate-edit-committed' => 'Y cyfieithiad cyfredol yn y meddalwedd',
@@ -7253,10 +7238,10 @@ $messages['da'] = array(
 	'translate-taction-disabled' => 'Denne handling er deaktiveret på denne wiki.',
 	'translate-page-no-such-language' => 'Det angivne sprog er ugyldigt.',
 	'translate-page-no-such-group' => 'Den angivne gruppe er ugyldig.',
-	'translate-page-disabled' => "Oversættelser til dette sprog i denne gruppe er slået fra.
+	'translate-page-disabled' => 'Oversættelser til dette sprog i denne gruppe er slået fra.
 Årsag:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Oversættelse til dette sprog er slået fra.',
 	'translate-page-settings-legend' => 'Indstillinger',
 	'translate-page-group' => 'Gruppe',
@@ -7278,13 +7263,12 @@ Valgfrie beskeder bør kun oversættes, hvis dit sprog har særlige krav som for
 	'translate-ext-url' => '<hr />Webside: $1',
 	'translate-optional' => '(valgfri)',
 	'translate-ignored' => '(ignoreres)',
-	'translate-edit-jsopen' => 'redigér',
 	'translate-edit-title' => 'Rediger "$1"',
 	'translate-edit-definition' => 'Beskeden som skal oversættes',
 	'translate-edit-translation' => 'Oversættelse',
 	'translate-edit-contribute' => 'bidrag',
 	'translate-edit-no-information' => "''Denne besked har ingen dokumentation.
-Hvis du ved hvor eller hvordan denne besked bruges, kan du hjælpe andre oversættere ved at tilføje dokumentation til beskeden.''",
+Hvis du ved hvor eller hvordan denne besked bruges, kan du hjælpe andre oversættere ved at tilføje dokumentation til beskeden.''", # Fuzzy
 	'translate-edit-information' => 'Information om beskeden ($1)',
 	'translate-edit-in-other-languages' => 'Beskeden på andre sprog',
 	'translate-edit-committed' => 'Nuværende oversættelse i programmet',
@@ -7293,7 +7277,6 @@ Hvis du ved hvor eller hvordan denne besked bruges, kan du hjælpe andre oversæ
 	'translate-edit-tmmatch-source' => 'Kildetekst til oversættelse: $1',
 	'translate-edit-tmmatch' => '$1 % overensstemmelse',
 	'translate-use-suggestion' => 'Erstat den nuværende oversættelse med dette forslag.',
-	'translate-edit-tab-list' => 'Beskedliste',
 	'translate-edit-nopermission' => 'Du skal have tilladelse til at oversætte meddelelser.',
 	'translate-edit-askpermission' => 'Anmod om tilladelse',
 	'translate-magic-pagename' => 'Udvidet MediaWiki-oversættelse',
@@ -7355,7 +7338,6 @@ Oversættelsen af en besked til disse sprog vises når du oversætter.
 Standardlisten afhænger af dit sprog.',
 	'translate-pref-editassistlang-bad' => 'Ugyldig sprogkode i listen:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Udvidet redigeringsvindue for oversættelser (JavaScript)',
 	'right-translate' => 'Redigere med oversættelsesgrænsefladen',
 	'right-translate-manage' => 'Administrere beskedgrupper',
 	'action-translate-manage' => 'administrere beskedgrupper',
@@ -7457,7 +7439,6 @@ Understregningsfarven angiver, hvor nyligt en oversætter har været aktiv.',
 	'translate-smg-nochanges' => 'Der er ingen ændringer at behandle.',
 	'translate-smg-submit' => 'Indsend ændringer til behandling',
 	'translate-smg-submitted' => 'Meddelelsesdefinitioner er opdateret. Ændringer bliver behandlet i baggrunden.',
-	'translate-smg-postponed' => 'Nogle ændringer kunne ikke behandles. [[{{FULLPAGENAME}}|Prøv igen]].',
 	'translate-smg-left' => 'Meddelelsesindhold i wiki',
 	'translate-smg-right' => 'Indkommende ændringer',
 	'translate-manage-import-diff' => 'Besked $1 | Handlinger: $2',
@@ -7483,6 +7464,8 @@ Tjek venligst.',
 	'translate-manage-intro-other' => 'Nedenfor er listen over ændringer af oversættelser for sproget $1.
 Gennemgå venligst ændringerne og vælg en handling du ønsker at foretage for hver ændring.
 Hvis du vælger at ignorere ændringer, er denne handling kun midlertidig.',
+	'translate-manage-import-ok' => 'Importerede ny version af siden $1.', # Fuzzy
+	'translate-manage-import-done' => 'Alt færdigt!', # Fuzzy
 	'importtranslations' => 'Importér oversættelser',
 	'translate-import-from-local' => 'Upload af lokal fil:',
 	'translate-import-load' => 'Indlæs fil',
@@ -7629,7 +7612,7 @@ Det er mest nyttigt til korrekturlæsningsopgaver.',
 	'tux-proofread-translated-by-self' => 'Oversat af dig',
 	'tux-empty-list-all' => 'Denne beskedgruppe er tom',
 	'tux-empty-list-all-guide' => 'Vælg en anden beskedgruppe at oversætte',
-	'tux-translate-page-no-such-group' => "'''Den angivne gruppe findes ikke.''' Vælg en anden beskedgruppe.",
+	'tux-translate-page-no-such-group' => "'''Den angivne gruppe findes ikke.''' Vælg en anden beskedgruppe.", # Fuzzy
 	'tux-empty-list-translated' => 'Ingen oversatte beskeder',
 	'tux-empty-list-translated-guide' => 'Du kan hjælpe med at oversætte',
 	'tux-empty-list-translated-action' => 'Oversæt',
@@ -7697,10 +7680,10 @@ $messages['de'] = array(
 	'translate-taction-disabled' => 'Diese Aktion ist in diesem Wiki deaktiviert.',
 	'translate-page-no-such-language' => 'Die angegebene Sprache ist ungültig.',
 	'translate-page-no-such-group' => 'Die angegebene Gruppe ist ungültig.',
-	'translate-page-disabled' => "Übersetzungen in diese Sprache wurden für diese Gruppe deaktiviert.
+	'translate-page-disabled' => 'Übersetzungen in diese Sprache wurden für diese Gruppe deaktiviert.
 Grund:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Übersetzungen in diese Sprachen sind nicht möglich.',
 	'translate-page-settings-legend' => 'Einstellungen',
 	'translate-page-group' => 'Gruppe',
@@ -7727,8 +7710,8 @@ wie beispielsweise die Nichtverwendung von Leerzeichen oder die Transkription vo
 	'translate-edit-definition' => 'Nachricht im Original',
 	'translate-edit-translation' => 'Übersetzung',
 	'translate-edit-contribute' => 'bearbeiten',
-	'translate-edit-no-information' => "''Zu dieser Nachricht ist keine Dokumentation vorhanden.''
-Sofern du weißt, wo und in welchem Zusammenhang sie genutzt wird, kannst du anderen Übersetzern bei ihrer Arbeit helfen, indem du eine Dokumentation hinzufügst.",
+	'translate-edit-no-information' => '<em>Zu dieser Nachricht ist keine Dokumentation vorhanden.
+Sofern du weißt, wo und in welchem Zusammenhang sie genutzt wird, kannst du anderen Übersetzern bei ihrer Arbeit helfen, indem du eine Dokumentation hinzufügst.</em>',
 	'translate-edit-information' => 'Information zur Nachricht ($1)',
 	'translate-edit-in-other-languages' => 'Nachricht in anderen Sprachen',
 	'translate-edit-committed' => 'Aktuelle Übersetzung',
@@ -8071,7 +8054,7 @@ Am nützlichsten ist sie für die Aufgaben des Überprüfens.',
 	'tux-proofread-translated-by-self' => 'Übersetzt von dir',
 	'tux-empty-list-all' => 'Diese Nachrichtengruppe ist leer',
 	'tux-empty-list-all-guide' => 'Wähle eine andere Nachrichtengruppe zum Übersetzen aus',
-	'tux-translate-page-no-such-group' => "'''Die angegebene Gruppe ist nicht vorhanden.''' Bitte wähle eine andere Nachrichtengruppe aus.",
+	'tux-translate-page-no-such-group' => '<strong>Die angegebene Gruppe ist nicht vorhanden.</strong> Bitte wähle eine andere Nachrichtengruppe aus.',
 	'tux-empty-list-translated' => 'Keine übersetzten Nachrichten',
 	'tux-empty-list-translated-guide' => 'Du kannst beim Übersetzen helfen',
 	'tux-empty-list-translated-action' => 'Übersetzen',
@@ -8206,7 +8189,7 @@ $messages['diq'] = array(
 	'translate-edit-translation' => 'Çarnayışi',
 	'translate-edit-contribute' => 'iştıraq kewê',
 	'translate-edit-no-information' => "''Wesiqaya nê mesaci çışniya.''
-''Şıma ke zanê koti ya zi no mesac gureniyeno, şıma şenê açarnoğanê binan rê qandê wesiqa ilawekerdış be nê mesaci ra peşti cı dê.''",
+''Şıma ke zanê koti ya zi no mesac gureniyeno, şıma şenê açarnoğanê binan rê qandê wesiqa ilawekerdış be nê mesaci ra peşti cı dê.''", # Fuzzy
 	'translate-edit-information' => 'Heqa mesacê ($1) de melumat',
 	'translate-edit-in-other-languages' => 'Zıwanan dê binan de mesaci',
 	'translate-edit-tmsugs' => 'Virê çarnayışi u çarnayışê makina ra weşenayışi',
@@ -8332,9 +8315,9 @@ $messages['dsb'] = array(
 	'translate-taction-disabled' => 'Toś ta akcija jo se na toś tom wikiju znjemóžniła.',
 	'translate-page-no-such-language' => 'Pódana rěc jo njepłaśiwa była.',
 	'translate-page-no-such-group' => 'Pódana kupka jo njepłaśiwa była.',
-	'translate-page-disabled' => "Pśełožki w toś tej rěcy w toś tej kupce su se znjemóžnili. Pśicyna:
+	'translate-page-disabled' => 'Pśełožki w toś tej rěcy w toś tej kupce su se znjemóžnili. Pśicyna:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Pśełožowanje do toś teje rěcy jo znjemóžnjone.',
 	'translate-page-settings-legend' => 'Nastajenja',
 	'translate-page-group' => 'Kupka',
@@ -8357,12 +8340,11 @@ kaž na pśikład njewužywanje proznych znamuškow abo transliteraciju swójski
 	'translate-ext-url' => '<hr />Websedło: $1',
 	'translate-optional' => '(opcionalny)',
 	'translate-ignored' => '(ignorěrowany)',
-	'translate-edit-jsopen' => 'wobźěłaś',
 	'translate-edit-title' => '„$1“ wobźěłaś',
 	'translate-edit-definition' => 'Definicija powěsći',
 	'translate-edit-translation' => 'Pśełožk',
 	'translate-edit-contribute' => 'pśinosowaś',
-	'translate-edit-no-information' => "''Toś ta powěsć njama dokumentaciju. Jolic wěš, źož abo kak toś ta powěsć se wužywa, móžoš drugim pśełožowarjam pomagaś, z tym až dokumentaciju k toś tej powěsći pśidawaš.''",
+	'translate-edit-no-information' => "''Toś ta powěsć njama dokumentaciju. Jolic wěš, źož abo kak toś ta powěsć se wužywa, móžoš drugim pśełožowarjam pomagaś, z tym až dokumentaciju k toś tej powěsći pśidawaš.''", # Fuzzy
 	'translate-edit-information' => 'Informacije wó powěsći ($1)',
 	'translate-edit-in-other-languages' => 'Powěsć w drugich rěcach',
 	'translate-edit-committed' => 'Aktualny pśełožk w software',
@@ -8371,7 +8353,6 @@ kaž na pśikład njewužywanje proznych znamuškow abo transliteraciju swójski
 	'translate-edit-tmmatch-source' => 'Žrědłowy tekst pśełožka: $1',
 	'translate-edit-tmmatch' => '$1 % makanja',
 	'translate-use-suggestion' => 'Aktualny pśełožk pśez toś to naraźenje wuměniś',
-	'translate-edit-tab-list' => 'Lisćina powěźeńkow',
 	'translate-edit-nopermission' => 'Trjebaš pšawo, aby mógał powěźeńki pśełožowaś.',
 	'translate-edit-askpermission' => 'Pšawo pominaś',
 	'translate-magic-pagename' => 'Rozšyrjony pśełožk MediaWiki',
@@ -8423,7 +8404,6 @@ Pśełožowanje powěźeńki w toś tych rěcach se pokazuju, gaž pśełožujo�
 Standardna lisćina rěcow wótwisujo wót swójeje rěcy.',
 	'translate-pref-editassistlang-bad' => 'Njepłaśiwy rěcny kod w lisćinje:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Pólěpšony pśełožowański editor (JavaScript)',
 	'right-translate' => 'Z pomocu pśełožowańskego pówjercha wobźěłaś',
 	'right-translate-manage' => 'Zdźěleńske kupki zastojaś',
 	'action-translate-manage' => 'zdźěleńske kupki zastojaś',
@@ -8522,7 +8502,6 @@ Barwa pódsmužkowanja pśełožowarskego mjenja pokazujo, kak aktiwny pśełož
 	'translate-smg-nochanges' => 'Njejsu žedne změny za pśeźěłanje.',
 	'translate-smg-submit' => 'Změny na pśeźěłowanje pósłaś',
 	'translate-smg-submitted' => 'Definicije powěźeńkow su se zaktualizěrowali. Změny pśeźěłuju se w slězynje.',
-	'translate-smg-postponed' => 'Někotare změny njedaju se pśeźěłaś. [[{{FULLPAGENAME}}|Wopytaj hyšći raz]].',
 	'translate-smg-left' => 'Powěsćowe wopśimjeśe we wikiju',
 	'translate-smg-right' => 'Dochadajuce změny',
 	'translate-manage-import-diff' => 'Powěźeńka $1 | akcije: $2',
@@ -8548,6 +8527,8 @@ Pšosym pśeglědaś.',
 	'translate-manage-intro-other' => 'Dołojce jo lisćina pśełožkowych změnow w rěcy $1.
 Pšosym pśeglědaj změny a wubjeŕ akciju, kótaruž coš za kuždy pśełožk cyniś.
 Jolic ignorěrujoš změny, pśepišu se pśi pśiducem eksporśe.', # Fuzzy
+	'translate-manage-import-ok' => 'Nowa wersija boka $1 importěrowany.', # Fuzzy
+	'translate-manage-import-done' => 'Wšykno cynjone!', # Fuzzy
 	'importtranslations' => 'Pśełožki importěrowaś',
 	'translate-import-from-local' => 'Nagraśe lokalneje dataje:',
 	'translate-import-load' => 'Dataju zacytaś',
@@ -8687,7 +8668,7 @@ Jo nejwužytnjej za korigěrowańske nadawki.', # Fuzzy
 	'tux-proofread-translated-by-self' => 'Wót tebje pśełožony',
 	'tux-empty-list-all' => 'Toś ta zdźěleńska kupka jo prozna',
 	'tux-empty-list-all-guide' => 'Wubjeŕ drugu zdźěleńsku kupku za pśełožowanje',
-	'tux-translate-page-no-such-group' => "'''Pódana skupina njeeksistěrujo.''' Wubjeŕ drugu zdźěleńsku kupku.",
+	'tux-translate-page-no-such-group' => "'''Pódana skupina njeeksistěrujo.''' Wubjeŕ drugu zdźěleńsku kupku.", # Fuzzy
 	'tux-empty-list-translated' => 'Žedne pśełožone powěźeńki',
 	'tux-empty-list-translated-guide' => 'Móžoš pomagaś pśełožowaś',
 	'tux-empty-list-translated-action' => 'Pśełožyś',
@@ -8797,10 +8778,10 @@ $messages['el'] = array(
 	'translate-taction-disabled' => 'Αυτή η ενέργεια είναι απενεργοποιημένη σε αυτό wiki.',
 	'translate-page-no-such-language' => 'Η καθορισμένη γλώσσα δεν ήταν έγκυρη.',
 	'translate-page-no-such-group' => 'Η καθορισμένη ομάδα δεν ήταν έγκυρη.',
-	'translate-page-disabled' => "Οι μεταφράσεις προς αυτήν τη γλώσσα έχουν απενεργοποιηθεί σε αυτήν την ομάδα. 
+	'translate-page-disabled' => 'Οι μεταφράσεις προς αυτήν τη γλώσσα έχουν απενεργοποιηθεί σε αυτήν την ομάδα. 
 Αιτία: 
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Η μετάφραση στη γλώσσα αυτή είναι απενεργοποιημένη.',
 	'translate-page-settings-legend' => 'Ρυθμίσεις',
 	'translate-page-group' => 'Ομάδα',
@@ -8823,12 +8804,11 @@ $messages['el'] = array(
 	'translate-ext-url' => '<hr />Ιστοχώρος: $1',
 	'translate-optional' => '(προαιρετικά)',
 	'translate-ignored' => '(αγνοημένα)',
-	'translate-edit-jsopen' => 'επεξεργασία',
 	'translate-edit-title' => 'Επεξεργασία «$1»',
 	'translate-edit-definition' => 'Ορισμός μηνύματος',
 	'translate-edit-translation' => 'Μετάφραση',
 	'translate-edit-contribute' => 'συμβάλλετε',
-	'translate-edit-no-information' => "''Αυτό το μήνυμα δεν έχει τεκμηρίωση. Αν γνωρίζετε πού ή πώς χρησιμοποιείται αυτό το μήνυμα, μπορείτε να βοηθήσετε άλλους μεταφραστές προσθέτοντας τεκμηρίωση σε αυτό.''",
+	'translate-edit-no-information' => "''Αυτό το μήνυμα δεν έχει τεκμηρίωση. Αν γνωρίζετε πού ή πώς χρησιμοποιείται αυτό το μήνυμα, μπορείτε να βοηθήσετε άλλους μεταφραστές προσθέτοντας τεκμηρίωση σε αυτό.''", # Fuzzy
 	'translate-edit-information' => 'Πληροφορίες σχετικά με το μήνυμα ($1)',
 	'translate-edit-in-other-languages' => 'Μήνυμα σε άλλες γλώσσες',
 	'translate-edit-committed' => 'Τρέχουσα μετάφραση στο λογισμικό',
@@ -8837,7 +8817,6 @@ $messages['el'] = array(
 	'translate-edit-tmmatch-source' => 'Πηγαίο κείμενο μετάφρασης: $1',
 	'translate-edit-tmmatch' => '$1% αντιστοίχιση',
 	'translate-use-suggestion' => 'Αντικατάσταση τρέχουσας μετάφρασης με την πρόταση αυτή.',
-	'translate-edit-tab-list' => 'Λίστα μηνυμάτων',
 	'translate-edit-nopermission' => 'Χρειάζεστε άδεια για να μεταφράσετε τα μηνύματα.',
 	'translate-edit-askpermission' => 'Αίτημα για άδεια',
 	'translate-magic-pagename' => 'Μετάφραση εκτεταμένου MediaWiki',
@@ -8898,7 +8877,6 @@ $messages['el'] = array(
 Η προεπιλεγμένη λίστα των γλωσσών εξαρτάται από τη γλώσσα σου.',
 	'translate-pref-editassistlang-bad' => 'Μη έγκυρος κωδικός γλώσσας στον κατάλογο:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Βελτιωμένος επεξεργαστής μεταφράσεων (JavaScript)',
 	'right-translate' => 'Επεξεργασία χρησιμοποιώντας την διεπαφή μετάφρασης',
 	'right-translate-manage' => 'Διαχείριση ομάδων μηνυμάτων',
 	'action-translate-manage' => 'διαχειριστείτε ομάδες μηνυμάτων',
@@ -8998,7 +8976,6 @@ $messages['el'] = array(
 	'translate-smg-nochanges' => 'Δεν υπάρχουν αλλαγές προς επεξεργασία.',
 	'translate-smg-submit' => 'Υποβολή αλλαγών για επεξεργασία',
 	'translate-smg-submitted' => 'Οι ορισμοί μηνυμάτων έχουν ενημερωθεί. Οι αλλαγές είναι υπό διεργασία στο παρασκήνιο.',
-	'translate-smg-postponed' => 'Δεν ήταν δυνατή η διεργασία ορισμένων αλλαγών. [[{{FULLPAGENAME}}|Προσπαθήστε ξανά]].',
 	'translate-smg-left' => 'Περιεχόμενο μηνύματος στο wiki',
 	'translate-smg-right' => 'Εισερχόμενες αλλαγές',
 	'translate-manage-import-diff' => 'Μήνυμα $1 | Ενέργειες: $2',
@@ -9023,6 +9000,8 @@ $messages['el'] = array(
 	'translate-manage-intro-other' => 'Παρακάτω βρίσκεται η λίστα με τις αλλαγές στη μετάφραση στη γλώσσα $1.
 Παρακαλούμε θεωρήστε τις αλλαγές και επιλέξτε ποια ενέργεια θέλετε να γίνει για κάθε ενημέρωση.
 Εάν επιλέξετε αγνόηση των αλλαγών, η συγκεκριμένη ενέργεια είναι απλώς προσωρινή.',
+	'translate-manage-import-ok' => 'Εισήχθηκε νέα έκδοση της σελίδας $1.', # Fuzzy
+	'translate-manage-import-done' => 'Όλα έχουν γίνει!', # Fuzzy
 	'importtranslations' => 'Εισαγωγή μεταφράσεων',
 	'translate-import-from-local' => 'Ανέβασμα τοπικού αρχείου:',
 	'translate-import-load' => 'Ανέβασμα αρχείου',
@@ -9168,7 +9147,7 @@ $messages['el'] = array(
 	'tux-proofread-translated-by-self' => 'Μεταφρασμένο από εσάς',
 	'tux-empty-list-all' => 'Αυτή η ομάδα μηνυμάτων είναι κενή',
 	'tux-empty-list-all-guide' => 'Επιλέξτε μια διαφορετική ομάδα μηνυμάτων για μετάφραση',
-	'tux-translate-page-no-such-group' => "'''Η αναφερόμενη ομάδα δεν υπάρχει.''' Επιλέξτε μια διαφορετική ομάδα μηνυμάτων.",
+	'tux-translate-page-no-such-group' => "'''Η αναφερόμενη ομάδα δεν υπάρχει.''' Επιλέξτε μια διαφορετική ομάδα μηνυμάτων.", # Fuzzy
 	'tux-empty-list-translated' => 'Δεν υπάρχουν μεταφρασμένα μηνύματα',
 	'tux-empty-list-translated-guide' => 'Μπορείτε να βοηθήσετε στη μετάφραση',
 	'tux-empty-list-translated-action' => 'Μετάφραση',
@@ -9241,9 +9220,9 @@ $messages['eo'] = array(
 	'translate-taction-disabled' => 'Ĉi tiu ago estas malaktivigita sur ĉi tiu vikio.',
 	'translate-page-no-such-language' => 'Specifita lingvo estas malvalida.',
 	'translate-page-no-such-group' => 'Specifita grupo estas malvalida.',
-	'translate-page-disabled' => "Tradukoj al ĉi tiu lingvo en ĉi tiu grupo estis malebligita. Kialo:
+	'translate-page-disabled' => 'Tradukoj al ĉi tiu lingvo en ĉi tiu grupo estis malebligita. Kialo:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Tradukado en tiun ĉi lingvon estas malŝaltita.',
 	'translate-page-settings-legend' => 'Preferoj',
 	'translate-page-group' => 'Grupo',
@@ -9266,12 +9245,11 @@ kiel ne uzi spacojn aŭ transliterado de personaj nomoj. $1',
 	'translate-ext-url' => '<hr />Retejo: $1',
 	'translate-optional' => '(nedeviga)',
 	'translate-ignored' => '(ignorata)',
-	'translate-edit-jsopen' => 'redakti',
 	'translate-edit-title' => 'Redakti "$1"',
 	'translate-edit-definition' => 'Mesaĝa difino',
 	'translate-edit-translation' => 'Tradukado',
 	'translate-edit-contribute' => 'kontribui',
-	'translate-edit-no-information' => "''Ĉi tiu mesago ne havas dokumentaron. Se vi scias, kie aŭ kiel ĉi tiu mesaĝo estas uzata, vi povas helpi al aliaj tradukantoj aldonante la dokumentaron al ĉi tiu mesaĝo.''",
+	'translate-edit-no-information' => "''Ĉi tiu mesago ne havas dokumentaron. Se vi scias, kie aŭ kiel ĉi tiu mesaĝo estas uzata, vi povas helpi al aliaj tradukantoj aldonante la dokumentaron al ĉi tiu mesaĝo.''", # Fuzzy
 	'translate-edit-information' => 'Informo pri la mesaĝo ($1)',
 	'translate-edit-in-other-languages' => 'Mesaĝo en aliaj lingvoj',
 	'translate-edit-committed' => 'Aktuala traduko en programaro',
@@ -9280,7 +9258,6 @@ kiel ne uzi spacojn aŭ transliterado de personaj nomoj. $1',
 	'translate-edit-tmmatch-source' => 'Tradukfontateksto: $1',
 	'translate-edit-tmmatch' => '$1% kongrueco',
 	'translate-use-suggestion' => 'Anstataŭigi nunan tradukon per ĉi tiu sugesto.',
-	'translate-edit-tab-list' => 'Listo de mesaĝoj',
 	'translate-edit-nopermission' => 'Vi devas havi permeson por traduki mesaĝojn.',
 	'translate-edit-askpermission' => 'Peti permeson',
 	'translate-magic-pagename' => 'Etendita traduko de MediaWiki',
@@ -9339,7 +9316,6 @@ Traduko de mesaĝo en ĉi tiuj lingvoj estas montritaj kiam vi estas tradukanta.
 La defaŭlta lingvolisto dependas de via lingvo.',
 	'translate-pref-editassistlang-bad' => 'Malvalida lingva kodo en la listo:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Plibonigita redaktilo de tradukoj (ĴavaSkripto)',
 	'right-translate' => 'Redakti per la traduka interfaco',
 	'right-translate-manage' => 'Administri grupojn de mesaĝoj',
 	'action-translate-manage' => 'Administri grupojn de mesaĝoj',
@@ -9439,7 +9415,6 @@ La koloro de substreko indikas kiom da tempo pasis de kiam tradukisto esti laste
 	'translate-smg-nochanges' => 'Ne estas farendaj ŝanĝoj.',
 	'translate-smg-submit' => 'Proponi farendajn ŝanĝojn',
 	'translate-smg-submitted' => 'La difino de la mesaĝoj estis ĝisdatigitaj. Ŝanĝoj estas traktataj fontaske.',
-	'translate-smg-postponed' => 'Prilaboro de kelkaj ŝanĝoj ne sukcesis. [[{{FULLPAGENAME}}|Provu denove]].',
 	'translate-smg-left' => 'Enhavo de la mesaĝo en la vikio',
 	'translate-smg-right' => 'Alvenantaj ŝanĝoj',
 	'translate-manage-import-diff' => 'Mesaĝo $1 | Agoj: $2',
@@ -9465,6 +9440,8 @@ Bonvolu kontroli.',
 	'translate-manage-intro-other' => 'Sube estas listo de mesaĝŝanĝoj en la lingvo $1.
 Bonvolu revizii la ŝanĝojn kaj elektu kion vi volas fari kun ĉiu traduko.
 Se vi decidas ignori ŝanĝojn, ili estos anstataŭigitaj je venonta eksporto.', # Fuzzy
+	'translate-manage-import-ok' => 'Importita nova versio de paĝo $1.', # Fuzzy
+	'translate-manage-import-done' => 'Finite!', # Fuzzy
 	'importtranslations' => 'Importi tradukojn',
 	'translate-import-from-local' => 'Loka dosiero alŝuti:',
 	'translate-import-load' => 'Ŝarĝi dosieron',
@@ -9614,10 +9591,10 @@ $messages['es'] = array(
 	'translate-taction-disabled' => 'Esta acción está deshabilitada en este wiki.',
 	'translate-page-no-such-language' => 'No se especificó un idioma válido.',
 	'translate-page-no-such-group' => 'El grupo especificado no es válido.',
-	'translate-page-disabled' => "Se han deshabilitado las traducciones a este idioma en este grupo de mensajes.
+	'translate-page-disabled' => 'Se han deshabilitado las traducciones a este idioma en este grupo de mensajes.
 Razón:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'La traducción a este idioma está deshabilitada.',
 	'translate-page-settings-legend' => 'Preferencias',
 	'translate-page-group' => 'Grupo',
@@ -9644,7 +9621,7 @@ Los mensajes opcionales deberían traducirse solo si tu idioma tiene caracterís
 	'translate-edit-translation' => 'Traducción',
 	'translate-edit-contribute' => 'contribuir',
 	'translate-edit-no-information' => "''Este mensaje no tiene documentación.''
-''Si sabes dónde o cómo se usa, puedes ayudar a los otros traductores añadiéndole datos.''",
+''Si sabes dónde o cómo se usa, puedes ayudar a los otros traductores añadiéndole datos.''", # Fuzzy
 	'translate-edit-information' => 'Información acerca del mensaje ($1)',
 	'translate-edit-in-other-languages' => 'Mensaje en otros idiomas',
 	'translate-edit-committed' => 'Traducción actual en el software',
@@ -10021,10 +9998,10 @@ $messages['et'] = array(
 	'translate-taction-disabled' => 'See toiming on selles vikis keelatud.',
 	'translate-page-no-such-language' => 'Keelevalik oli kõlbmatu.',
 	'translate-page-no-such-group' => 'Rühm ei sobi.',
-	'translate-page-disabled' => "Selle rühma sõnumite tõlkimine selles keeles on keelatud.
+	'translate-page-disabled' => 'Selle rühma sõnumite tõlkimine selles keeles on keelatud.
 Põhjus:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Sellesse keelde tõlkimine on keelatud.',
 	'translate-page-settings-legend' => 'Seadistused',
 	'translate-page-group' => 'Rühm',
@@ -10047,13 +10024,12 @@ nagu tühikute mittekasutamine või pärisnimede translitereerimine. $1',
 	'translate-ext-url' => '<hr />Võrgukoht: $1',
 	'translate-optional' => '(valikuline)',
 	'translate-ignored' => '(eiratud)',
-	'translate-edit-jsopen' => 'redigeeri',
 	'translate-edit-title' => 'Redigeeri sõnumit "$1"',
 	'translate-edit-definition' => 'Sõnumi kuju',
 	'translate-edit-translation' => 'Tõlge',
 	'translate-edit-contribute' => 'täienda',
 	'translate-edit-no-information' => "''Sellel sõnumil pole dokumentatsiooni.''
-''Kui tead, kus seda sõnumit kasutatakse, saad dokumentatsiooni lisamisega teisi tõlkijaid aidata.''",
+''Kui tead, kus seda sõnumit kasutatakse, saad dokumentatsiooni lisamisega teisi tõlkijaid aidata.''", # Fuzzy
 	'translate-edit-information' => 'Selle sõnumi teave ($1)',
 	'translate-edit-in-other-languages' => 'Sõnum teistes keeltes',
 	'translate-edit-committed' => 'Kehtiv tõlge tarkvaras',
@@ -10062,7 +10038,6 @@ nagu tühikute mittekasutamine või pärisnimede translitereerimine. $1',
 	'translate-edit-tmmatch-source' => 'Tõlke alliktekst: $1',
 	'translate-edit-tmmatch' => 'Vastavus: $1%',
 	'translate-use-suggestion' => 'Asenda praegune tõlge selle pakkumusega.',
-	'translate-edit-tab-list' => 'Sõnumiloend',
 	'translate-edit-nopermission' => 'Sõnumite tõlkimiseks on luba vaja.',
 	'translate-edit-askpermission' => 'Palu luba',
 	'translate-magic-pagename' => 'Laiendatud MediaWiki tõlkimine',
@@ -10108,7 +10083,6 @@ Tõlkimisel kuvatakse sõnumi tõlge nendes keeltes.
 Vaikeloetelu sõltub kasutaja keelest.',
 	'translate-pref-editassistlang-bad' => 'Vigane keelekood nimekirjas:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Täiustatud tõlkimisredaktor (JavaScript)',
 	'right-translate' => 'Kasutada tõlkeliidest',
 	'right-translate-manage' => 'Hallata sõnumirühmi',
 	'action-translate-manage' => 'sõnumirühmi hallata',
@@ -10210,7 +10184,6 @@ Allkriipsu värvus näitab, kui hiljuti on tõlkija siin kaastööd teinud.',
 	'translate-smg-nochanges' => 'Puuduvad muudatused, mida käidelda.',
 	'translate-smg-submit' => 'Esita muudatused käitlemiseks',
 	'translate-smg-submitted' => 'Sõnumimääratlused on uuendatud. Taustprotsess käitleb parasjagu muudatusi.',
-	'translate-smg-postponed' => 'Mõnd muudatust ei saanud käidelda. [[{{FULLPAGENAME}}|Proovi uuesti]].',
 	'translate-smg-left' => 'Sõnumi sisu vikis',
 	'translate-manage-import-diff' => 'Sõnum $1 | Toimingud: $2',
 	'translate-manage-import-new' => 'Uus sõnum $1',
@@ -10235,6 +10208,8 @@ Palun kontrolli.',
 	'translate-manage-intro-other' => 'Allpool on $1 keele tõlkemuudatuste loetelu.
 Palun vaata muudatused üle ja vali iga sõnumi jaoks sobiv toiming.
 Kui eirad muudatusi, on see toiming vaid ajutine.',
+	'translate-manage-import-ok' => 'Imporditud on lehekülje $1 uus versioon.', # Fuzzy
+	'translate-manage-import-done' => 'Kõik valmis!', # Fuzzy
 	'importtranslations' => 'Tõlgete importimine',
 	'translate-import-from-local' => 'Kohaliku faili üleslaadimine:',
 	'translate-import-load' => 'Laadi fail',
@@ -10362,7 +10337,7 @@ Sobib ennekõike tõlgete ülevaatuseks.',
 	'tux-proofread-translated-by-self' => 'Sinu tõlgitud',
 	'tux-empty-list-all' => 'See sõnumirühm on tühi',
 	'tux-empty-list-all-guide' => 'Vali tõlkimiseks muu sõnumirühm.',
-	'tux-translate-page-no-such-group' => "'''Sellist sõnumirühma pole.''' Vali erinev sõnumirühm.",
+	'tux-translate-page-no-such-group' => "'''Sellist sõnumirühma pole.''' Vali erinev sõnumirühm.", # Fuzzy
 	'tux-empty-list-translated' => 'Tõlgitud sõnumid puuduvad',
 	'tux-empty-list-translated-guide' => 'Saad tõlkimisel aidata',
 	'tux-empty-list-translated-action' => 'Tõlgi',
@@ -10410,10 +10385,10 @@ $messages['eu'] = array(
 	'translate-taction-export' => 'Esportatu',
 	'translate-page-no-such-language' => 'Zehaztutako hizkuntza baliogabea da.',
 	'translate-page-no-such-group' => 'Zehaztutako taldea baligabea da.',
-	'translate-page-disabled' => "Ezin da talde honetako hizkuntzako honetarako itzulpenik egin.
+	'translate-page-disabled' => 'Ezin da talde honetako hizkuntzako honetarako itzulpenik egin.
 Arrazoia:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Hobespenak',
 	'translate-page-group' => 'Taldea',
 	'translate-page-language' => 'Hizkuntza',
@@ -10439,7 +10414,7 @@ Hautazko mezuak zure hizkuntzaren berezitasunak direla-eta, espazioak ez daudene
 	'translate-edit-translation' => 'Itzulpena',
 	'translate-edit-contribute' => 'lagundu',
 	'translate-edit-no-information' => "''Mezu honek ez du dokumentaziorik.''
-''Mezu hau non erabiltzen den badakizu, beste itzultzaileei lagundu dezakezu mezu honen dokumentazioa gehituz.''",
+''Mezu hau non erabiltzen den badakizu, beste itzultzaileei lagundu dezakezu mezu honen dokumentazioa gehituz.''", # Fuzzy
 	'translate-edit-information' => 'Mezuari buruzko informazioa ($1)',
 	'translate-edit-in-other-languages' => 'Mezua beste hizkuntzetan',
 	'translate-edit-warnings' => 'Bukatu gabeko itzulpenei buruzko oharrak',
@@ -10541,6 +10516,7 @@ Hautazko mezuak zure hizkuntzaren berezitasunak direla-eta, espazioak ez daudene
 	'translate-manage-action-ignore' => 'Ezikusi',
 	'translate-manage-action-fuzzy' => 'Inportatu eta fuzzy itzulpenak',
 	'translate-manage-submit' => 'Exekutatu',
+	'translate-manage-import-done' => 'Dena eginda!', # Fuzzy
 	'importtranslations' => 'Itzulpenak inportatu',
 	'translate-import-load' => 'Fitxategia kargatu',
 	'translate-js-summary' => 'Laburpena:',
@@ -10621,10 +10597,10 @@ $messages['fa'] = array(
 	'translate-taction-disabled' => 'این عمل در این ویکی غیرفعال شده‌است.',
 	'translate-page-no-such-language' => 'زبان مورد نظر نامجاز است.',
 	'translate-page-no-such-group' => 'گروه مورد نظر نامجاز است.',
-	'translate-page-disabled' => "ترجمه این زبان در این گروه غیر فعال است.
+	'translate-page-disabled' => 'ترجمه این زبان در این گروه غیر فعال است.
 دلیل:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'ترجمه به این زبان غیرفعال شده‌است.',
 	'translate-page-settings-legend' => 'تنظیمات',
 	'translate-page-group' => 'گروه',
@@ -10651,7 +10627,7 @@ $messages['fa'] = array(
 	'translate-edit-translation' => 'ترجمه',
 	'translate-edit-contribute' => 'مشارکت',
 	'translate-edit-no-information' => "''این پیغام دارای توضیحات نیست.''
-''اگر می‌دانید که این پیغام چگونه یا در کجا استفاده می‌شود، می‌توانید با اضافه کردن توضیحات به دیگر ترجمه‌کنندگان کمک کنید.''",
+''اگر می‌دانید که این پیغام چگونه یا در کجا استفاده می‌شود، می‌توانید با اضافه کردن توضیحات به دیگر ترجمه‌کنندگان کمک کنید.''", # Fuzzy
 	'translate-edit-information' => 'اطلاعات در مورد این پیغام ($1)',
 	'translate-edit-in-other-languages' => 'همین پیغام در دیگر زبان‌ها',
 	'translate-edit-committed' => 'ترجمهٔ فعلی در نرم‌افزار',
@@ -10844,6 +10820,7 @@ $messages['fa'] = array(
 	'translate-manage-intro-other' => 'پایین فهرستی تغییرات ترجمه در زبان $1 است.
 لطفاً این تغییرات را بازبینی کرده و عملی که می‌خواهد برای هر به‌روزرسانی انجام دهید را انتخاب کنید.
 اگر شما می‌خواهید تغییرات را نادیده بگیرید، این عمل موقت خواهد بود.',
+	'translate-manage-import-done' => 'همه‌اش انجام شد!', # Fuzzy
 	'importtranslations' => 'درون‌ریزی ترجمه‌ها',
 	'translate-import-from-local' => 'بارگذاری پرونده محلی:',
 	'translate-import-load' => 'دریافت پرونده',
@@ -10990,7 +10967,7 @@ $1',
 	'tux-proofread-translated-by-self' => 'ترجمه‌شده توسط شما',
 	'tux-empty-list-all' => 'این گروه پیام خالی است',
 	'tux-empty-list-all-guide' => 'یک گروه پیام متفاوت برای ترجمه انتخاب کنید',
-	'tux-translate-page-no-such-group' => "''' گروه نشان داده‌شده وجود ندارد.''' گروه پیامی دیگری را انتخاب کنید.",
+	'tux-translate-page-no-such-group' => "''' گروه نشان داده‌شده وجود ندارد.''' گروه پیامی دیگری را انتخاب کنید.", # Fuzzy
 	'tux-empty-list-translated' => 'بدون پیام ترجمه‌شده',
 	'tux-empty-list-translated-guide' => 'شما می‌توانید در ترجمه کمک کنید',
 	'tux-empty-list-translated-action' => 'ترجمه',
@@ -11053,10 +11030,10 @@ $messages['fi'] = array(
 	'translate-taction-disabled' => 'Tämä toiminto ei ole käytössä tässä wikissä.',
 	'translate-page-no-such-language' => 'Tuntematon kieli.',
 	'translate-page-no-such-group' => 'Tuntematon ryhmä.',
-	'translate-page-disabled' => "Käännökset tälle kielelle tässä ryhmässä on estetty.
+	'translate-page-disabled' => 'Käännökset tälle kielelle tässä ryhmässä on estetty.
 Syy:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Kääntäminen tälle kielelle ei ole mahdollista.',
 	'translate-page-settings-legend' => 'Asetukset',
 	'translate-page-group' => 'Ryhmä',
@@ -11082,7 +11059,7 @@ Valinnaiset viestit on käännettävä vain kielille, joilla on erikoisvaatimuks
 	'translate-edit-definition' => 'Viestin määritelmä',
 	'translate-edit-translation' => 'Käännös',
 	'translate-edit-contribute' => 'auta dokumentoinnissa',
-	'translate-edit-no-information' => "''Tätä viestiä ei ole dokumentoitu. Jos tiedät missä tai miten tätä viestiä käytetään, voit auttaa muita kääntäjiä lisäämällä kommentteja tähän viestiin.''",
+	'translate-edit-no-information' => "''Tätä viestiä ei ole dokumentoitu. Jos tiedät missä tai miten tätä viestiä käytetään, voit auttaa muita kääntäjiä lisäämällä kommentteja tähän viestiin.''", # Fuzzy
 	'translate-edit-information' => 'Tietoja viestistä ($1)',
 	'translate-edit-in-other-languages' => 'Viesti muilla kielillä',
 	'translate-edit-committed' => 'Nykyinen ohjelmiston käyttämä käännös',
@@ -11274,6 +11251,8 @@ Tarkistathan.',
 	'translate-manage-intro-other' => 'Alla on luettelo kielen $1 käännösmuutoksista.
 Tarkista muutokset ja valitse toiminto, jonka haluat tehdä jokaiselle käännökselle.
 Jos valitset muutosten ohittamisen, ne ylikirjoitetaan seuraavalla vientikerralla.', # Fuzzy
+	'translate-manage-import-ok' => 'Tuotiin uusi versio sivusta $1.', # Fuzzy
+	'translate-manage-import-done' => 'Kaikki tehty.', # Fuzzy
 	'importtranslations' => 'Käännösten tuonti',
 	'translate-import-from-local' => 'Paikallinen tiedosto',
 	'translate-import-load' => 'Tallenna tiedosto',
@@ -11414,7 +11393,7 @@ Soveltuu hyvin oikolukemiseen.', # Fuzzy
 	'tux-proofread-translated-by-self' => 'Sinun kääntämäsi',
 	'tux-empty-list-all' => 'Tämä viestiryhmä on tyhjä',
 	'tux-empty-list-all-guide' => 'Valitse toinen viestiryhmä käännettäväksi',
-	'tux-translate-page-no-such-group' => "'''Ryhmää ei löydy.''' Valitse toinen viestiryhmä.",
+	'tux-translate-page-no-such-group' => "'''Ryhmää ei löydy.''' Valitse toinen viestiryhmä.", # Fuzzy
 	'tux-empty-list-translated' => 'Ei käännettyjä viestejä',
 	'tux-empty-list-translated-guide' => 'Voit auttaa kääntämällä',
 	'tux-empty-list-translated-action' => 'Käännä',
@@ -11456,10 +11435,10 @@ $messages['fo'] = array(
 	'translate-taction-disabled' => 'Henda handling er ikki virkin á hesi wiki.',
 	'translate-page-no-such-language' => 'Nevnda málið er ógyldugt.',
 	'translate-page-no-such-group' => 'Nevndi bólkur var ikki í gildi.',
-	'translate-page-disabled' => "Tað ber ikki til at gera týðingar til hetta málið í hesum bólki.
+	'translate-page-disabled' => 'Tað ber ikki til at gera týðingar til hetta málið í hesum bólki.
 Orsøk:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Týðing til hetta málið er sligið frá.',
 	'translate-page-settings-legend' => 'Innstillingar',
 	'translate-page-group' => 'Bólkur',
@@ -11481,12 +11460,11 @@ Valfrí boð eiga bert at verða týdd, um títt mál setur serlig krøv sum til
 	'translate-ext-url' => '<hr />Heimasíða: $1',
 	'translate-optional' => '(valfrítt)',
 	'translate-ignored' => '(síggj burtur frá)',
-	'translate-edit-jsopen' => 'rætta',
 	'translate-edit-title' => 'Rætta "$1"',
 	'translate-edit-translation' => 'Týðing',
 	'translate-edit-contribute' => 'verð við',
 	'translate-edit-no-information' => "''Hesi boðini hava onga dokumentasjón.''
-''Um tú veitst hvar ella hvussu hesi boðini verða nýtt, so kanst tú hjálpa øðrum týðarum við at viðleggja dokumentasjón til hesi boðini.''",
+''Um tú veitst hvar ella hvussu hesi boðini verða nýtt, so kanst tú hjálpa øðrum týðarum við at viðleggja dokumentasjón til hesi boðini.''", # Fuzzy
 	'translate-edit-information' => 'Kunning um boð ($1)',
 	'translate-edit-in-other-languages' => 'Boðini á øðrum málum',
 	'translate-edit-committed' => 'Verandi týðing í ritbúnaðinum',
@@ -11495,7 +11473,6 @@ Valfrí boð eiga bert at verða týdd, um títt mál setur serlig krøv sum til
 	'translate-edit-tmmatch-source' => 'Keldutekstur til týðingar: $1',
 	'translate-edit-tmmatch' => '$1% samsvar',
 	'translate-use-suggestion' => 'Skift út verandi týðing við hetta uppskotið.',
-	'translate-edit-tab-list' => 'Boðlisti',
 	'translate-edit-nopermission' => 'Tú skalt hava loyvi til at týða boð.',
 	'translate-edit-askpermission' => 'Bið um loyvi',
 	'translate-magic-pagename' => 'Víðkað MediaWiki týðing',
@@ -11543,7 +11520,6 @@ Týðing av einum boði í hesum málum vera víst, meðan tú týðir.
 Standardlistin yvir mál avhengur av tínum máli.',
 	'translate-pref-editassistlang-bad' => 'Ógyldug málkota í listanum:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Víðkaður týðingar redaktørur (JavaScript)',
 	'right-translate' => 'Rætta við at nýta týðingarmarkamótið',
 	'right-translate-manage' => 'Stýr boðbólkum',
 	'action-translate-manage' => 'stýr boðbólkum',
@@ -11760,7 +11736,7 @@ $1',
 	'tux-proofread-translated-by-self' => 'Týtt av tær',
 	'tux-empty-list-all' => 'Hesin boðbólkur er tómur',
 	'tux-empty-list-all-guide' => 'Vel ein annan boðbólk at týða',
-	'tux-translate-page-no-such-group' => "'''Nevndi bólkur er ikki til.''' Vel ein annan boðbólk.",
+	'tux-translate-page-no-such-group' => "'''Nevndi bólkur er ikki til.''' Vel ein annan boðbólk.", # Fuzzy
 	'tux-empty-list-translated' => 'Ongi týdd boð',
 	'tux-empty-list-translated-guide' => 'Tú kanst hjálpa við at týða',
 	'tux-empty-list-translated-action' => 'Týð',
@@ -11839,10 +11815,10 @@ $messages['fr'] = array(
 	'translate-taction-disabled' => 'Cette action est désactivée sur ce wiki.',
 	'translate-page-no-such-language' => 'Le code langue indiqué est incorrect.',
 	'translate-page-no-such-group' => 'Le groupe spécifié est incorrect.',
-	'translate-page-disabled' => "Les traductions dans cette langue ont été désactivées pour ce groupe.
+	'translate-page-disabled' => 'Les traductions dans cette langue ont été désactivées pour ce groupe.
 Motif :
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'La traduction dans cette langue est désactivée.',
 	'translate-page-settings-legend' => 'Configuration',
 	'translate-page-group' => 'Groupe',
@@ -11869,8 +11845,8 @@ comme ne pas utiliser d'espaces ou transformer des noms propres. $1",
 	'translate-edit-definition' => 'Définition du message',
 	'translate-edit-translation' => 'Traduction',
 	'translate-edit-contribute' => 'contribuer',
-	'translate-edit-no-information' => "''Ce message n’est pas documenté.
-Si vous savez où ou comment il est utilisé, vous pouvez aider les autres traducteurs en créant la documentation de ce message.''",
+	'translate-edit-no-information' => '<em>Ce message n’est pas documenté.
+Si vous savez où ou comment il est utilisé, vous pouvez aider les autres traducteurs en créant la documentation de ce message.</em>',
 	'translate-edit-information' => 'Informations concernant le message ($1)',
 	'translate-edit-in-other-languages' => 'Message dans d’autres langues',
 	'translate-edit-committed' => 'Traduction actuelle dans le logiciel',
@@ -12063,8 +12039,8 @@ Renvoyez le formulaire pour continuer le traitement.',
 	'translate-manage-intro-other' => 'Ci-dessous figure une liste des modifications dans la langue $1.
 Relisez les modifications et choisissez une action à effectuer pour chacune.
 Si vous décidez d’ignorer les modifications, cette action ne sera que temporaire.',
-	'translate-manage-import-ok' => 'Une nouvelle version de la page $1 a été importée.', # Fuzzy
-	'translate-manage-import-done' => 'Tout a été fait !', # Fuzzy
+	'translate-manage-import-ok' => 'Importé : $1',
+	'translate-manage-import-done' => 'Import terminé !',
 	'importtranslations' => 'Importer les traductions',
 	'translate-import-from-local' => 'Importer un fichier local :',
 	'translate-import-load' => 'Charger le fichier',
@@ -12211,7 +12187,7 @@ Il est surtout utilisé pour les tâches de relecture.',
 	'tux-proofread-translated-by-self' => 'Traduit par vous',
 	'tux-empty-list-all' => 'Ce groupe de messages est vide',
 	'tux-empty-list-all-guide' => 'Sélectionner un groupe de message différent à traduire',
-	'tux-translate-page-no-such-group' => "'''Le groupe indiqué n’existe pas.''' Sélectionnez un autre groupe de messages.",
+	'tux-translate-page-no-such-group' => '<strong>Le groupe indiqué n’existe pas.</strong> Sélectionnez un autre groupe de messages.',
 	'tux-empty-list-translated' => 'Aucun message traduit',
 	'tux-empty-list-translated-guide' => 'Vous pouvez aider à traduire',
 	'tux-empty-list-translated-action' => 'Traduire',
@@ -12275,10 +12251,10 @@ $messages['frp'] = array(
 	'translate-taction-disabled' => 'Cel’accion est dèsactivâye sur ceti vouiqui.',
 	'translate-page-no-such-language' => 'Lo code lengoua spècifiâ est fôx.',
 	'translate-page-no-such-group' => 'Lo groupo spècifiâ est fôx.',
-	'translate-page-disabled' => "Les traduccions dens cela lengoua sont étâyes dèsactivâyes por ceti groupo.
+	'translate-page-disabled' => 'Les traduccions dens cela lengoua sont étâyes dèsactivâyes por ceti groupo.
 Rêson :
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'La traduccion dens cela lengoua est dèsactivâye.',
 	'translate-page-settings-legend' => 'Configuracion',
 	'translate-page-group' => 'Groupo',
@@ -12301,13 +12277,12 @@ coment pas empleyér d’èspâços ou ben la translitèracion des noms prôpros
 	'translate-ext-url' => '<hr />Seto vouèbe : $1',
 	'translate-optional' => '(u chouèx)',
 	'translate-ignored' => '(ignorâ)',
-	'translate-edit-jsopen' => 'changiér',
 	'translate-edit-title' => 'Changiér « $1 »',
 	'translate-edit-definition' => 'Dèfinicion du mèssâjo',
 	'translate-edit-translation' => 'Traduccion',
 	'translate-edit-contribute' => 'édiér',
 	'translate-edit-no-information' => "''Ceti mèssâjo est pas documentâ.''
-''Se vos sâde yô ou ben coment il est empleyê, vos pouede édiér los ôtros traductors en fassent la documentacion de ceti mèssâjo.''",
+''Se vos sâde yô ou ben coment il est empleyê, vos pouede édiér los ôtros traductors en fassent la documentacion de ceti mèssâjo.''", # Fuzzy
 	'translate-edit-information' => 'Enformacions sur lo mèssâjo ($1)',
 	'translate-edit-in-other-languages' => 'Mèssâjo dens d’ôtres lengoues',
 	'translate-edit-committed' => 'Traduccion d’ora dedens la programeria',
@@ -12316,7 +12291,6 @@ coment pas empleyér d’èspâços ou ben la translitèracion des noms prôpros
 	'translate-edit-tmmatch-source' => 'Tèxto sôrsa de la traduccion : $1',
 	'translate-edit-tmmatch' => '$1 % de corrèspondance',
 	'translate-use-suggestion' => 'Remplaciér la traduccion d’ora per cet’idê.',
-	'translate-edit-tab-list' => 'Lista de mèssâjos',
 	'translate-edit-nopermission' => 'Vos dête avêr la pèrmission de traduire los mèssâjos.',
 	'translate-edit-askpermission' => 'Demandar la pèrmission',
 	'translate-magic-pagename' => 'Traduccion ètendua de MediaWiki',
@@ -12376,7 +12350,6 @@ La traduccion d’un mèssâjo dens cetes lengoues est montrâye quand vos éte 
 La lista de les lengoues per dèfôt dèpend de voutra lengoua.',
 	'translate-pref-editassistlang-bad' => 'Code lengoua envalido dedens la lista :
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Changior de traduccion bônâ (at fôta de JavaScript)',
 	'right-translate' => 'Changiér avouéc l’entèrface de traduccion',
 	'right-translate-manage' => 'Administrar los groupos de mèssâjos',
 	'action-translate-manage' => 'administrar los groupos de mèssâjos',
@@ -12477,7 +12450,6 @@ La color du solegnement endique se lo traductor est étâ actif ique dês pou.',
 	'translate-smg-nochanges' => 'Y at gins de changement a trètar.',
 	'translate-smg-submit' => 'Sometre los changements por trètament',
 	'translate-smg-submitted' => 'Les dèfinicions des mèssâjos sont étâyes betâyes a jorn. Los changements sont trètâs en fond.',
-	'translate-smg-postponed' => 'Y at des changements qu’ont pas possu étre trètâs. [[{{FULLPAGENAME}}|Tornâd èprovar]].',
 	'translate-smg-left' => 'Contegnu du mèssâjo dedens lo vouiqui',
 	'translate-smg-right' => 'Changements en cors de transfèrt',
 	'translate-manage-import-diff' => 'Mèssâjo $1 | Accions : $2',
@@ -12500,6 +12472,8 @@ Volyéd remandar lo formulèro por continuar lo trètament.',
 Controlâd se vos plét.',
 	'translate-manage-fuzzy-summary' => 'La dèfinicion du mèssâjo at changiêye',
 	'translate-manage-submit' => 'Ègzécutar',
+	'translate-manage-import-ok' => 'Una novèla vèrsion de la pâge $1 at étâ importâ.', # Fuzzy
+	'translate-manage-import-done' => 'Tot at étâ fêt !', # Fuzzy
 	'importtranslations' => 'Importar les traduccions',
 	'translate-import-from-local' => 'Importar un fichiér local :',
 	'translate-import-load' => 'Chargiér lo fichiér',
@@ -12932,10 +12906,10 @@ $messages['gl'] = array(
 	'translate-taction-disabled' => 'A acción está desactivada neste wiki.',
 	'translate-page-no-such-language' => 'O código de lingua especificado non é válido.',
 	'translate-page-no-such-group' => 'O grupo especificado non é válido.',
-	'translate-page-disabled' => "As traducións desta lingua neste grupo están desactivadas.
+	'translate-page-disabled' => 'As traducións desta lingua neste grupo están desactivadas.
 Motivo:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'As traducións nesta lingua están desactivadas.',
 	'translate-page-settings-legend' => 'Configuracións',
 	'translate-page-group' => 'Grupo',
@@ -12963,7 +12937,7 @@ como non empregar espazos ou para a transliteración de nomes propios. $1',
 	'translate-edit-translation' => 'Tradución',
 	'translate-edit-contribute' => 'contribuír',
 	'translate-edit-no-information' => "''Esta mensaxe non ten documentación.''
-''Se sabe onde ou como se usa esta mensaxe, pode axudar aos outros tradutores engadíndolle datos.''",
+''Se sabe onde ou como se usa esta mensaxe, pode axudar aos outros tradutores engadíndolle datos.''", # Fuzzy
 	'translate-edit-information' => 'Información acerca da mensaxe ($1)',
 	'translate-edit-in-other-languages' => 'Mensaxe noutras linguas',
 	'translate-edit-committed' => 'Tradución actual no software',
@@ -13156,6 +13130,8 @@ Por favor, reenvíe o formulario para continuar procesando.',
 	'translate-manage-intro-other' => 'A continuación está a lista de cambios nas traducións en $1.
 Por favor, revise os cambios e escolla a acción que quere facer para cada actualización.
 Se opta por ignorar as modificacións, esta acción é unicamente temporal.',
+	'translate-manage-import-ok' => 'Importou unha nova versión da páxina $1.', # Fuzzy
+	'translate-manage-import-done' => 'Todo listo!', # Fuzzy
 	'importtranslations' => 'Importar as traducións',
 	'translate-import-from-local' => 'Carga dun ficheiro local:',
 	'translate-import-load' => 'Cargar o ficheiro',
@@ -13304,7 +13280,7 @@ Os estados están definidos na variable de configuración $wgTranslateWorkflowSt
 	'tux-proofread-translated-by-self' => 'Traducida por vostede',
 	'tux-empty-list-all' => 'Este grupo de mensaxes está baleiro',
 	'tux-empty-list-all-guide' => 'Seleccione un grupo de mensaxes diferente',
-	'tux-translate-page-no-such-group' => "'''O grupo indicado non existe.''' Seleccione un grupo de mensaxes diferente.",
+	'tux-translate-page-no-such-group' => "'''O grupo indicado non existe.''' Seleccione un grupo de mensaxes diferente.", # Fuzzy
 	'tux-empty-list-translated' => 'Non hai mensaxes traducidas',
 	'tux-empty-list-translated-guide' => 'Pode axudar na tradución',
 	'tux-empty-list-translated-action' => 'Traducir',
@@ -13419,9 +13395,9 @@ $messages['gsw'] = array(
 	'translate-taction-disabled' => 'Die Aktion isch in däm Wiki deaktiviert.',
 	'translate-page-no-such-language' => 'D Syte, wu Du aagee hesch, isch nit giltig.',
 	'translate-page-no-such-group' => 'D Gruppe, wu Du aagee hesch, isch nit giltig.',
-	'translate-page-disabled' => "Ibersetzige in däre Sproch in däre Gruppe sin deaktiviert wore. Grund:
+	'translate-page-disabled' => 'Ibersetzige in däre Sproch in däre Gruppe sin deaktiviert wore. Grund:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Ibersetzige in die Sproche sin nit megli.',
 	'translate-page-settings-legend' => 'Yystellige',
 	'translate-page-group' => 'Gruppe',
@@ -13443,12 +13419,11 @@ Optionali Mäldige sötte numme übersetzt werde, wänn's in dynrer Sprooch en B
 	'translate-ext-url' => '<hr />Website: $1',
 	'translate-optional' => '(optional)',
 	'translate-ignored' => '(ignoriert)',
-	'translate-edit-jsopen' => 'bearbeite',
 	'translate-edit-title' => '„$1“ bearbeite',
 	'translate-edit-definition' => 'Syschtemnochricht im Original',
 	'translate-edit-translation' => 'Ibersetzig',
 	'translate-edit-contribute' => 'bearbeite',
-	'translate-edit-no-information' => "''Die Syschtemnochricht het no kei Dokumentation. Wänn Du weisch, wu un in welem Zämmehang si bruucht wird, no chasch andere Ibersetzer hälfe, wänn Du ne Dokumentation zuefiegsch.''",
+	'translate-edit-no-information' => "''Die Syschtemnochricht het no kei Dokumentation. Wänn Du weisch, wu un in welem Zämmehang si bruucht wird, no chasch andere Ibersetzer hälfe, wänn Du ne Dokumentation zuefiegsch.''", # Fuzzy
 	'translate-edit-information' => 'Information iber d Syschtemnochricht ($1)',
 	'translate-edit-in-other-languages' => 'Syschtemnochricht in andere Sproche',
 	'translate-edit-committed' => 'Aktuälli Ibersetzig',
@@ -13457,7 +13432,6 @@ Optionali Mäldige sötte numme übersetzt werde, wänn's in dynrer Sprooch en B
 	'translate-edit-tmmatch-source' => 'Ibersetzigsquälltext: $1',
 	'translate-edit-tmmatch' => '$1% Ibereinstimmig',
 	'translate-use-suggestion' => 'Di aktuäll Ibersetzig mit däm Vorschlag ersetze:',
-	'translate-edit-tab-list' => 'Nochrichtelischte',
 	'translate-edit-nopermission' => 'Du bruchsch d Rächt zum Nochrichte ibersetze z chenne.',
 	'translate-edit-askpermission' => 'E Aatrag uf d Rächt stelle',
 	'translate-magic-pagename' => 'Erwytereti MediaWiki-Ibersetzig',
@@ -13511,7 +13485,6 @@ Ibersetzige vun ere Nochricht in däne Sproche wäre aazeigt, wänn du am Iberse
 D Standardlischt vu Sproche hangt vu Dyyre Sproch ab.',
 	'translate-pref-editassistlang-bad' => 'Nit giltige Sprochcode in dr Lischt:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Verbessert Bearbeitgsfänschter fir Ibersetzige (brucht JavaScript)',
 	'right-translate' => 'S Ibersetze-Interfaces bruuche',
 	'right-translate-manage' => 'Nochrichtegruppe verwalte',
 	'action-translate-manage' => 'Nochrichtegruppe z verwalte',
@@ -13611,7 +13584,6 @@ D Farb, wo de Name mit unterstriche isch, zeigt aa, wänn de Ibersetzer zum lets
 	'translate-smg-nochanges' => 'Es git kei Änderige, wu sotte verschafft wäre.',
 	'translate-smg-submit' => 'Änderige zum Verschaffe ibertrage',
 	'translate-smg-submitted' => 'Nochrichtedefinitione sin aktualisiert wore. Änderige wären im Hintergrund verschafft.',
-	'translate-smg-postponed' => 'E Teil Änderige hän nit chenne verschafft wäre. [[{{FULLPAGENAME}}|Versuech s bitte nomol]].',
 	'translate-smg-left' => 'Nochrichteninhalt im Wiki',
 	'translate-smg-right' => 'Änderige, wu yygehn',
 	'translate-manage-import-diff' => 'Nochricht $1 | Aktione: $2',
@@ -13635,6 +13607,8 @@ Bitte schick s Format nonemol ab go mit em Arbetsablauf wytermache.',
 	'translate-manage-intro-other' => 'Unte het s Lischt vu Ibersetzigsänderige in dr Sproch $1.
 Bitte prief d Änderige un wehl e Aktion uus, wu Du witt uusfiere fir jedi Ibersetzig.
 Wänn Du Änderige witt ignoriere, wäre si bim negschte Export ußer Chraft gsetzt.', # Fuzzy
+	'translate-manage-import-ok' => 'Het e neji Version vu dr Syte $1 importiert.', # Fuzzy
+	'translate-manage-import-done' => 'Alles gmacht!', # Fuzzy
 	'importtranslations' => 'Ibersetzige importiere',
 	'translate-import-from-local' => 'Datei lokal uffelade:',
 	'translate-import-load' => 'Datei lade',
@@ -13732,11 +13706,11 @@ $messages['gu'] = array(
 	'translate-taction-export' => 'નિકાસ',
 	'translate-page-no-such-language' => 'નિર્દેશિત ભાષા અમાન્ય છે.',
 	'translate-page-no-such-group' => 'નિર્દેશિત સમુહ અમાન્ય છે.',
-	'translate-page-disabled' => "આ સમુહમાં આ ભાષાનો અનુવાદ નિષ્ક્રિય કરી દેવાયો છે.
+	'translate-page-disabled' => 'આ સમુહમાં આ ભાષાનો અનુવાદ નિષ્ક્રિય કરી દેવાયો છે.
 
 કારણ:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'ગોઠવણીઓ',
 	'translate-page-group' => 'જૂથ',
 	'translate-page-language' => 'ભાષા',
@@ -13754,20 +13728,18 @@ $messages['gu'] = array(
 	'translate-ext-url' => '<hr />વેબસાઇટ: $1',
 	'translate-optional' => 'વૈકલ્પિક',
 	'translate-ignored' => 'ઉપેક્ષીત',
-	'translate-edit-jsopen' => 'સંપાદન',
 	'translate-edit-title' => '"$1" સંપાદન કરો',
 	'translate-edit-definition' => 'સંદેશ વ્યાખ્યા',
 	'translate-edit-translation' => 'ભાષાંતર',
 	'translate-edit-contribute' => 'યોગદાન',
 	'translate-edit-no-information' => "''આ સંદેશામાં ઉપયોગીતાપ્રમાણ નથી.
 
-જો તમે જાણતા હો કે ક્યાં અને કેવી રીતે આ સંદેશો વપરાયો છે, તો તમે  આ સંદેશામાં ઉપયોગીતાપ્રમાણ ઉમેરી અને અન્ય ભાષાંતરકારોને મદદ કરી શકો છો.''",
+જો તમે જાણતા હો કે ક્યાં અને કેવી રીતે આ સંદેશો વપરાયો છે, તો તમે  આ સંદેશામાં ઉપયોગીતાપ્રમાણ ઉમેરી અને અન્ય ભાષાંતરકારોને મદદ કરી શકો છો.''", # Fuzzy
 	'translate-edit-information' => 'સંદેશા વિશે માહિતી ($1)',
 	'translate-edit-in-other-languages' => 'અન્ય ભાષાઓમાં સંદેશો',
 	'translate-edit-committed' => 'સોફ્ટવેરમાં વર્તમાન ભાષાંતર',
 	'translate-edit-warnings' => 'અધુરા ભાષાંતરો વિશે ચેતવણી',
 	'translate-edit-tmsugs' => 'ભાષાંતર સ્મૃતિમાંથી સુચનો',
-	'translate-edit-tab-list' => 'સંદેશા યાદી',
 	'translate-magic-pagename' => 'વિસ્તારિત મિડિયાવિકિ ભાષાંતર',
 	'translate-magic-module' => 'નમૂનો:',
 	'translate-magic-submit' => 'મેળવો',
@@ -13938,7 +13910,7 @@ $messages['he'] = array(
 	'translate-page-no-such-group' => 'הקבוצה שצוינה שגויה.',
 	'translate-page-disabled' => "התרגומים לשפה זו בקבוצה זו בוטלו מהסיבה הבאה:
 
-'''$1'''",
+'<em>$1</em>'",
 	'translate-language-disabled' => 'תרגום לשפה הזאת כבוי.',
 	'translate-page-settings-legend' => 'הגדרות',
 	'translate-page-group' => 'קבוצה',
@@ -13966,7 +13938,7 @@ $messages['he'] = array(
 	'translate-edit-translation' => 'תרגום',
 	'translate-edit-contribute' => 'לתרום תיעוד',
 	'translate-edit-no-information' => "'''להודעה זו אין תיעוד.
-אם אתם יודעים היכן או כיצד משתמשים בהודעה זו, באפשרותכם לעזור למתרגמים אחרים באמצעות הוספת תיעוד להודעה זו.'''",
+אם אתם יודעים היכן או כיצד משתמשים בהודעה זו, באפשרותכם לעזור למתרגמים אחרים באמצעות הוספת תיעוד להודעה זו.'''", # Fuzzy
 	'translate-edit-information' => 'מידע על ההודעה ($1)',
 	'translate-edit-in-other-languages' => 'ההודעה בשפות אחרות',
 	'translate-edit-committed' => 'התרגום הנוכחי בתוכנה',
@@ -14311,7 +14283,7 @@ $1',
 	'tux-proofread-translated-by-self' => 'זה תרגום שלך',
 	'tux-empty-list-all' => 'קבוצת ההודעות הזאת ריקה',
 	'tux-empty-list-all-guide' => 'נא לבחור קבוצת הודעות אחרת לתרגום',
-	'tux-translate-page-no-such-group' => "'''הקבוצה המבוקשת אינה קיימת.''' נא לבחור קבוצת הודעות אחרת.",
+	'tux-translate-page-no-such-group' => "'''הקבוצה המבוקשת אינה קיימת.''' נא לבחור קבוצת הודעות אחרת.", # Fuzzy
 	'tux-empty-list-translated' => 'אין הודעות מתורגמות',
 	'tux-empty-list-translated-guide' => 'ביכולתך לעזור לתרגם',
 	'tux-empty-list-translated-action' => 'תרגום',
@@ -14352,8 +14324,8 @@ $messages['hi'] = array(
 	'translate' => 'अनुवाद',
 	'translate-taskui-view' => 'सभी सन्देश दिखाए',
 	'translate-taskui-untranslated' => 'सारे अनअनुवादित सन्देश दिखाए',
-	'translate-page-disabled' => "इस भा्षा के इस समूह में अनुवाद बंद हैं. कारण:
-''$1''",
+	'translate-page-disabled' => 'इस भा्षा के इस समूह में अनुवाद बंद हैं. कारण:
+<em>$1</em>',
 	'translate-page-settings-legend' => 'सेटिंग्स',
 	'translate-page-group' => 'समूह',
 	'translate-page-language' => 'भाषा',
@@ -14369,7 +14341,6 @@ $messages['hi'] = array(
 	'translate-page-edit' => 'सम्पादन',
 	'translate-ext-url' => '<hr />वेबसाइट: $1',
 	'translate-optional' => '(वैकल्पिक)',
-	'translate-edit-jsopen' => 'सम्पादन',
 	'translate-edit-title' => 'सम्पादन "$1"',
 	'translate-edit-definition' => 'संदेश व्याख्या',
 	'translate-edit-translation' => 'अनुवाद',
@@ -14377,7 +14348,6 @@ $messages['hi'] = array(
 	'translate-edit-information' => 'संदेश ($1) के बारे में जानकारी',
 	'translate-edit-in-other-languages' => 'संदेश अन्य भाषा में',
 	'translate-edit-tmmatch' => '$1% मैच',
-	'translate-edit-tab-list' => 'संदेश सूची',
 	'translate-edit-askpermission' => 'अनुमति के लिए अनुरोध',
 	'translate-magic-pagename' => 'एक्स्टेंडेड मीडियाविकि अनुवाद',
 	'translate-magic-module' => 'मोड्यूल:',
@@ -14520,9 +14490,9 @@ $messages['hr'] = array(
 	'translate-desc' => '[[Special:Translate|Posebna stranica]] za prevođenje MediaWiki i izvan',
 	'translate-page-no-such-language' => 'Unešen jezik je neispravan',
 	'translate-page-no-such-group' => 'Navedena grupa je neispravna.',
-	'translate-page-disabled' => "Prijevodi na ovaj jezik u ovoj grupi su onemogućeni. Razlog:
+	'translate-page-disabled' => 'Prijevodi na ovaj jezik u ovoj grupi su onemogućeni. Razlog:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Postavke',
 	'translate-page-group' => 'Skupina',
 	'translate-page-language' => 'Jezik',
@@ -14544,7 +14514,7 @@ $messages['hr'] = array(
 	'translate-edit-definition' => 'Definicija poruke',
 	'translate-edit-translation' => 'Prijevod',
 	'translate-edit-contribute' => 'dodaj',
-	'translate-edit-no-information' => "''Ova poruka nema dokumentacije. Ako znate gdje ili kako se koristi poruka, možete pomoći drugim prevoditeljima dodavajući dokumentaciju ovoj poruci.''",
+	'translate-edit-no-information' => "''Ova poruka nema dokumentacije. Ako znate gdje ili kako se koristi poruka, možete pomoći drugim prevoditeljima dodavajući dokumentaciju ovoj poruci.''", # Fuzzy
 	'translate-edit-information' => 'Informacije o poruci ($1)',
 	'translate-edit-in-other-languages' => 'Poruka na ostalim jezicima',
 	'translate-edit-committed' => 'Trenutačni prijevod u softveru',
@@ -14650,6 +14620,7 @@ Sve vrijednosti imaju gornju i donju granicu.',
 Molimo provjerite.',
 	'translate-manage-fuzzy-summary' => 'Definicija se promijenila', # Fuzzy
 	'translate-manage-submit' => 'Izvrši',
+	'translate-manage-import-done' => 'Obavljeno je sve!', # Fuzzy
 	'importtranslations' => 'Uvezi prijevode',
 	'translate-import-from-local' => 'Snimanje lokalne datoteke:',
 	'translate-import-load' => 'Učitaj datoteku',
@@ -14694,9 +14665,9 @@ $messages['hsb'] = array(
 	'translate-taction-disabled' => 'Tuta akcija je so na tutym wikiju znjemóžniła.',
 	'translate-page-no-such-language' => 'Njepłaćiwy rěčny kod podaty',
 	'translate-page-no-such-group' => 'Podata skupina bě njepłaćiwa.',
-	'translate-page-disabled' => "Přełožki do tuteje rěče w tutej skupinje buchu znjemóžnjene. Přičina:
+	'translate-page-disabled' => 'Přełožki do tuteje rěče w tutej skupinje buchu znjemóžnjene. Přičina:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Přełožowanje do tuteje rěče je znjemóžnjene.',
 	'translate-page-settings-legend' => 'Nastajenja',
 	'translate-page-group' => 'Skupina',
@@ -14723,7 +14694,7 @@ kaž na přikład njewužiwanje mjezerow abo transliteraciju swójskich mjenow. 
 	'translate-edit-definition' => 'Definicija zdźělenki',
 	'translate-edit-translation' => 'Přełožk',
 	'translate-edit-contribute' => 'přinošować',
-	'translate-edit-no-information' => "''Tuta zdźělenka dokumentaciju nima, Jeli wěš, hdźež tuta zdźělenka so wužiwa, móžeš druhim přełožowarjam pomhać přidawajo dokumentaciju k tutej zdźělence.''",
+	'translate-edit-no-information' => "''Tuta zdźělenka dokumentaciju nima, Jeli wěš, hdźež tuta zdźělenka so wužiwa, móžeš druhim přełožowarjam pomhać přidawajo dokumentaciju k tutej zdźělence.''", # Fuzzy
 	'translate-edit-information' => 'Informacije wo zdźělence ($1)',
 	'translate-edit-in-other-languages' => 'Zdźělenka w druhich rěčach',
 	'translate-edit-committed' => 'Aktualny přełožk w softwarje',
@@ -14908,6 +14879,8 @@ Prošu přepruwować.',
 	'translate-manage-intro-other' => 'Slěduje lisćina přełožowanskich změnow w rěči $1.
 Prošu přepruwuj změny a wubjer akciju, kotruž chceš za kóždy přełožk wuwjesć.
 Jeli změny ignoruješ, je tuta akcija jenož nachwilna.',
+	'translate-manage-import-ok' => 'Importowana nowa wersija strony $1.', # Fuzzy
+	'translate-manage-import-done' => 'Wšo sčinjene!', # Fuzzy
 	'importtranslations' => 'Přełožki importować',
 	'translate-import-from-local' => 'Lokalne nahraće dataje:',
 	'translate-import-load' => 'Dataju začitać',
@@ -15052,7 +15025,7 @@ Je najwužitniša za přepruwowanske nadawki.',
 	'tux-proofread-translated-by-self' => 'Wot tebje přełoženy',
 	'tux-empty-list-all' => 'Tuta zdźělenska skupina je prózdna',
 	'tux-empty-list-all-guide' => 'Wubjer druhu zdźělenku za přełožowanje',
-	'tux-translate-page-no-such-group' => "'''Podata skupina njeeksistuje.''' Wubjer druhu zdźělensku skupinu.",
+	'tux-translate-page-no-such-group' => "'''Podata skupina njeeksistuje.''' Wubjer druhu zdźělensku skupinu.", # Fuzzy
 	'tux-empty-list-translated' => 'Žane přełožene zdźělenki',
 	'tux-empty-list-translated-guide' => 'Móžeš pomhać přełožować',
 	'tux-empty-list-translated-action' => 'Přełožić',
@@ -15092,10 +15065,10 @@ $messages['ht'] = array(
 	'translate-desc' => '[[Special:Translate|Paj espesyal]] pou tradui MediaWiki e plis ankò.',
 	'translate-page-no-such-language' => 'Lang ki endike a pa bon.',
 	'translate-page-no-such-group' => 'Gwoup ki endike a pa bon',
-	'translate-page-disabled' => "Tradiksyon nan lang sa a te deaktive pou gwoup sa.
+	'translate-page-disabled' => 'Tradiksyon nan lang sa a te deaktive pou gwoup sa.
 Rezon:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Konfigirasyon, preferans',
 	'translate-page-group' => 'Gwoup',
 	'translate-page-language' => 'Lang',
@@ -15117,7 +15090,7 @@ Rezon:
 	'translate-edit-definition' => 'Definisyon pou mesaj sa',
 	'translate-edit-contribute' => 'kontribiye',
 	'translate-edit-no-information' => "''Mesaj sa pa dokimante.
-Si w konnen ki kote mesaj sa itilize, ou kapab ede lòt tradiktè lè ou ajoute dokimantasyon pou mesaj sa.''",
+Si w konnen ki kote mesaj sa itilize, ou kapab ede lòt tradiktè lè ou ajoute dokimantasyon pou mesaj sa.''", # Fuzzy
 	'translate-edit-information' => 'Enfòmasyon sou mesaj "$2" ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'Mesaj nan lòt lang yo',
 	'translate-edit-committed' => 'Tradiksyon kouran nan logisyèl',
@@ -15125,7 +15098,6 @@ Si w konnen ki kote mesaj sa itilize, ou kapab ede lòt tradiktè lè ou ajoute 
 	'translate-edit-tmsugs' => 'Sijesyon ki soti nan memwa tradiksyon',
 	'translate-edit-tmmatch' => '$1% korespondans',
 	'translate-use-suggestion' => 'Mete sijesyon sa a nan zòn tradiksyon a. L ap ranplase tout kontni aktyèl.', # Fuzzy
-	'translate-edit-tab-list' => 'Lis mesaj',
 	'translate-magic-pagename' => 'Tradiksyon MediaWiki pwolonje',
 	'translate-magic-help' => 'Ou kapab tradui alias paj espesyal yo, mo majik ak non espas non yo.
 
@@ -15180,7 +15152,6 @@ Tradiksyon pou yon mesaj nan lang sa yo parèt lè w ap tradui.
 Lis lang pa defo depann de lang ou an.',
 	'translate-pref-editassistlang-bad' => 'Kòd pou lang ki pa bon nan lis:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Fenèt modifikasyon pou tradiksyon amelyore (JavaScript)',
 	'right-translate' => 'Itilize fenèt tradiksyon pou fè modifikasyon yo',
 	'right-translate-manage' => 'Jere gwoup tradiksyon yo', # Fuzzy
 	'right-translate-import' => 'Chaje tradiksyon ki te fèt andeyò.',
@@ -15278,6 +15249,8 @@ Tanpri verifye.',
 	'translate-manage-intro-other' => 'Anba w ap jwenn yon lis chanjman nan tradiksyon pou lang $1.
 Tanpri, revize chanjman yo epi chwazi kisa ou vle fè pou chak tradiksyon.
 Si ou deside pou inyore chanjman yo, y ap kraze nan pwochen ekspòtasyon.', # Fuzzy
+	'translate-manage-import-ok' => 'Yon nouvo vèsyon pou paj $1 te enpòte.', # Fuzzy
+	'translate-manage-import-done' => 'Fini!', # Fuzzy
 	'importtranslations' => 'Enpòte tradiksyon yo',
 	'translate-import-from-local' => 'Chaje yon fichye local:',
 	'translate-import-load' => 'Chaje fichye a',
@@ -15337,9 +15310,9 @@ $messages['hu'] = array(
 	'translate-taction-disabled' => 'Ez a művelet le van tiltva ebben a wikiben.',
 	'translate-page-no-such-language' => 'A megadott nyelv érvénytelen',
 	'translate-page-no-such-group' => 'A megadott csoport érvénytelen',
-	'translate-page-disabled' => "Ez a csoport nem fordítható erre a nyelvre. A tiltás oka:
+	'translate-page-disabled' => 'Ez a csoport nem fordítható erre a nyelvre. A tiltás oka:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Erre a nyelvre a fordítás le van tiltva.',
 	'translate-page-settings-legend' => 'Beállítások',
 	'translate-page-group' => 'Csoport',
@@ -15361,12 +15334,11 @@ Az opcionális üzeneteket csak akkor kell lefordítani, ha a nyelvnek speciáli
 	'translate-ext-url' => '<hr />Weboldal: $1',
 	'translate-optional' => '(nem kötelező)',
 	'translate-ignored' => '(figyelmen kívül hagyva)',
-	'translate-edit-jsopen' => 'szerkesztés',
 	'translate-edit-title' => '„$1” szerkesztése',
 	'translate-edit-definition' => 'Alapértelmezett érték',
 	'translate-edit-translation' => 'Fordítás',
 	'translate-edit-contribute' => 'szerkesztés',
-	'translate-edit-no-information' => "''Ehhez az üzenethez még nincs leírás. Ha tudod, hogy hogyan kell használni, akkor segítheted a többi fordítót a dokumentálásával.''",
+	'translate-edit-no-information' => "''Ehhez az üzenethez még nincs leírás. Ha tudod, hogy hogyan kell használni, akkor segítheted a többi fordítót a dokumentálásával.''", # Fuzzy
 	'translate-edit-information' => 'Információk az üzenetről ($1)',
 	'translate-edit-in-other-languages' => 'Az üzenet más nyelveken',
 	'translate-edit-committed' => 'Jelenlegi fordítás',
@@ -15375,7 +15347,6 @@ Az opcionális üzeneteket csak akkor kell lefordítani, ha a nyelvnek speciáli
 	'translate-edit-tmmatch-source' => 'Fordítási forrás szöveg: $1',
 	'translate-edit-tmmatch' => '$1%-os egyezés',
 	'translate-use-suggestion' => 'A javasolt szöveg átmásolása a fordítási mezőbe, lecserélve annak aktuális tartalmát!',
-	'translate-edit-tab-list' => 'Üzenetlista',
 	'translate-edit-nopermission' => 'Az üzenetek fordításához engedélyt kell kérni.',
 	'translate-edit-askpermission' => 'Engedélykérés',
 	'translate-magic-pagename' => 'Kibővített MediaWiki-fordítás',
@@ -15434,7 +15405,6 @@ Az üzenetek fordításai ezeken a nyelveken jelennek meg, amikor fordítasz.
 A nyelvek alapértelmezett listája a nyelvedtől függ.',
 	'translate-pref-editassistlang-bad' => 'Érvénytelen nyelvkód a listában:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Fejlett fordítás szerkesztő (JavaScript)',
 	'right-translate' => 'szerkesztés a fordítói felületen keresztül',
 	'right-translate-manage' => 'Üzenetcsoportok kezelése',
 	'action-translate-manage' => 'üzenetcsoportok kezelése',
@@ -15533,7 +15503,6 @@ Egy fordító minél többet fordított, a neve annál nagyobb betűkkel jelenik
 	'translate-smg-nochanges' => 'Nincsenek feldolgozandó változtatások.',
 	'translate-smg-submit' => 'Változtatások elküldése feldolgozásra',
 	'translate-smg-submitted' => 'Az üzenet definíciók frissítése megtörtént. A változások a háttérben kerülnek feldolgozásra.',
-	'translate-smg-postponed' => 'Néhány változtatást nem lehetett feldolgozni. [[{{FULLPAGENAME}} |Próbáld újra]]!', # Fuzzy
 	'translate-smg-left' => 'Üzenet tartalom wikiben',
 	'translate-smg-right' => 'Bejövő változtatások',
 	'translate-manage-import-diff' => 'Üzenet: $1 | Műveletek: $2',
@@ -15559,6 +15528,8 @@ Ellenőrizd.',
 	'translate-manage-intro-other' => 'Alább látható a(z) $1 nyelv fordításaiban történt változtatások listája.
 Ellenőrizd a változtatásokat, és válaszd ki azt a műveletet, amit alkalmazni szeretnél minden egyes fordításra.
 Ha figyelmen kívül hagyod a változtatásokat, felül lesznek bírálva a következő exportáláskor.', # Fuzzy
+	'translate-manage-import-ok' => '$1 lap új változata sikeresen importálva.', # Fuzzy
+	'translate-manage-import-done' => 'Az összes kész!', # Fuzzy
 	'importtranslations' => 'Fordítások importálása',
 	'translate-import-from-local' => 'Helyi fájlfeltöltés:',
 	'translate-import-load' => 'Fájl betöltése',
@@ -15675,9 +15646,9 @@ $messages['ia'] = array(
 	'translate-taction-disabled' => 'Iste action es disactivate in iste wiki.',
 	'translate-page-no-such-language' => 'Le lingua specificate es invalide.',
 	'translate-page-no-such-group' => 'Le gruppo specificate es invalide.',
-	'translate-page-disabled' => "Le traductiones in iste lingua in iste gruppo ha essite disactivate. Motivo:
+	'translate-page-disabled' => 'Le traductiones in iste lingua in iste gruppo ha essite disactivate. Motivo:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Le traduction in iste lingua es disactivate.',
 	'translate-page-settings-legend' => 'Optiones',
 	'translate-page-group' => 'Gruppo',
@@ -15700,13 +15671,12 @@ como non usar spatios o le translitteration de nomines proprie. $1',
 	'translate-ext-url' => '<hr />Sito web: $1',
 	'translate-optional' => '(optional)',
 	'translate-ignored' => '(ignorate)',
-	'translate-edit-jsopen' => 'modificar',
 	'translate-edit-title' => 'Modificar "$1"',
 	'translate-edit-definition' => 'Definition del message',
 	'translate-edit-translation' => 'Traduction',
 	'translate-edit-contribute' => 'contribuer',
 	'translate-edit-no-information' => "''Iste message non ha documentation.
-Si tu sape ubi o como iste message es usate, tu pote adjutar le altere traductores per adder documentation a iste message.''",
+Si tu sape ubi o como iste message es usate, tu pote adjutar le altere traductores per adder documentation a iste message.''", # Fuzzy
 	'translate-edit-information' => 'Information super le message ($1)',
 	'translate-edit-in-other-languages' => 'Iste message in altere linguas',
 	'translate-edit-committed' => 'Traduction actual in software',
@@ -15715,7 +15685,6 @@ Si tu sape ubi o como iste message es usate, tu pote adjutar le altere traductor
 	'translate-edit-tmmatch-source' => 'Texto fonte pro traduction: $1',
 	'translate-edit-tmmatch' => '$1% de correspondentia',
 	'translate-use-suggestion' => 'Reimplaciar le traduction actual per iste suggestion.',
-	'translate-edit-tab-list' => 'Lista de messages',
 	'translate-edit-nopermission' => 'Tu require permission pro poter traducer messages.',
 	'translate-edit-askpermission' => 'Requestar permission',
 	'translate-magic-pagename' => 'Traduction extendite de MediaWiki',
@@ -15776,7 +15745,6 @@ Le traductiones de un message in iste linguas es monstrate quando tu traduce.
 Le lista predefinite de linguas depende de tu lingua.',
 	'translate-pref-editassistlang-bad' => 'Codice de lingua invalide in le lista:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Editor de traduction meliorate (JavaScript)',
 	'right-translate' => 'Modificar con le interfacie de traduction',
 	'right-translate-manage' => 'Gerer gruppos de messages',
 	'action-translate-manage' => 'gerer gruppos de messages',
@@ -15875,7 +15843,6 @@ Le color de un tracto de sublineamento indica quante tempore ha passate post le 
 	'translate-smg-nochanges' => 'Il non ha cambiamentos a processar.',
 	'translate-smg-submit' => 'Submitter cambiamentos pro processamento',
 	'translate-smg-submitted' => 'Le definitiones de messages ha essite actualisate. Le cambiamentos es processate in secunde plano.',
-	'translate-smg-postponed' => 'Alcun cambiamentos non poteva esser processate. [[{{FULLPAGENAME}}|Essaya de novo]].',
 	'translate-smg-left' => 'Contento del message in le wiki',
 	'translate-smg-right' => 'Cambiamentos entrante',
 	'translate-manage-import-diff' => 'Message $1 | Actiones: $2',
@@ -15901,6 +15868,8 @@ Per favor verifica.',
 	'translate-manage-intro-other' => 'Ci infra es un lista de modificationes de traductiones in lingua $1.
 Per favor, revide le modificationes e selige un action a prender pro cata actualisation.
 Si tu opta pro ignorar le modificationes, iste action es solmente temporari.',
+	'translate-manage-import-ok' => 'Importava nove version del pagina $1.', # Fuzzy
+	'translate-manage-import-done' => 'Toto finite!', # Fuzzy
 	'importtranslations' => 'Importar traductiones',
 	'translate-import-from-local' => 'Incargar un file local:',
 	'translate-import-load' => 'Cargar file',
@@ -16047,7 +16016,7 @@ Es utile principalmente pro le revision de traductiones.',
 	'tux-proofread-translated-by-self' => 'Traducite per te',
 	'tux-empty-list-all' => 'Iste gruppo de messages es vacue',
 	'tux-empty-list-all-guide' => 'Selige un altere gruppo de messages a traducer',
-	'tux-translate-page-no-such-group' => "'''Le gruppo indicate non existe.''' Selige un altere gruppo de messages.",
+	'tux-translate-page-no-such-group' => "'''Le gruppo indicate non existe.''' Selige un altere gruppo de messages.", # Fuzzy
 	'tux-empty-list-translated' => 'Nulle message traducite',
 	'tux-empty-list-translated-guide' => 'Tu pote adjutar a traducer',
 	'tux-empty-list-translated-action' => 'Traducer',
@@ -16108,10 +16077,10 @@ $messages['id'] = array(
 	'translate-taction-disabled' => 'Tindakan ini dinonaktifkan di wiki ini.',
 	'translate-page-no-such-language' => 'Bahasa yang dipilih tidak sah.',
 	'translate-page-no-such-group' => 'Kelompok yang dipilih tidak sah.',
-	'translate-page-disabled' => "Penerjemahan kelompok pesan ini ke bahasa ini telah dinonaktifkan.
+	'translate-page-disabled' => 'Penerjemahan kelompok pesan ini ke bahasa ini telah dinonaktifkan.
 Alasan:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Penerjemahan ke bahasa ini telah dinonaktifkan.',
 	'translate-page-settings-legend' => 'Pengaturan',
 	'translate-page-group' => 'Kelompok',
@@ -16135,13 +16104,12 @@ seperti tidak memakai spasi atau mengalihaksarakan nama umum. $1',
 	'translate-ext-url' => '<hr />Situs web: $1',
 	'translate-optional' => '(opsional)',
 	'translate-ignored' => '(diabaikan)',
-	'translate-edit-jsopen' => 'sunting',
 	'translate-edit-title' => 'Sunting "$1"',
 	'translate-edit-definition' => 'Definisi pesan',
 	'translate-edit-translation' => 'Terjemahan',
 	'translate-edit-contribute' => 'berkontribusi',
 	'translate-edit-no-information' => "''Pesan ini tidak memiliki dokumentasi.''
-''Jika Anda tahu di mana dan bagaimana pesan ini digunakan, Anda dapat membantu penerjemah lain dengan menambahkan dokumentasi untuk pesan ini.''",
+''Jika Anda tahu di mana dan bagaimana pesan ini digunakan, Anda dapat membantu penerjemah lain dengan menambahkan dokumentasi untuk pesan ini.''", # Fuzzy
 	'translate-edit-information' => 'Informasi pesan ($1)',
 	'translate-edit-in-other-languages' => 'Pesan dalam bahasa lain',
 	'translate-edit-committed' => 'Terjemahan dalam perangkat lunak saat ini',
@@ -16150,9 +16118,6 @@ seperti tidak memakai spasi atau mengalihaksarakan nama umum. $1',
 	'translate-edit-tmmatch-source' => 'Teks sumber terjemahan: $1',
 	'translate-edit-tmmatch' => '$1% sesuai',
 	'translate-use-suggestion' => 'Ganti terjemahan saat ini dengan saran ini.',
-	'translate-edit-tab-prev' => '<<<',
-	'translate-edit-tab-next' => '>>>',
-	'translate-edit-tab-list' => 'Daftar pesan',
 	'translate-edit-nopermission' => 'Anda memerlukan izin untuk menerjemahkan pesan.',
 	'translate-edit-askpermission' => 'Minta izin',
 	'translate-magic-pagename' => 'Terjemahan MediaWiki yang Diperluas',
@@ -16214,7 +16179,6 @@ Terjemahan pesan dalam bahasa ini ditampilkan saat Anda menerjemahkan.
 Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-pref-editassistlang-bad' => 'Kode bahasa tidak sah pada daftar:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Penyunting terjemahan yang Ditingkatkan (JavaScript)',
 	'right-translate' => 'Menyunting menggunakan antarmuka penerjemahan',
 	'right-translate-manage' => 'Mengelola kelompok pesan',
 	'action-translate-manage' => 'mengelola kelompok pesan',
@@ -16313,7 +16277,6 @@ Daftar bahasa baku tergantung pada bahasa Anda.',
 	'translate-smg-nochanges' => 'Tidak ada perubahan yang dapat diproses.',
 	'translate-smg-submit' => 'Kirim perubahan untuk diproses',
 	'translate-smg-submitted' => 'Definisi pesan telah diperbarui. Perubahan sedang diproses di latar.',
-	'translate-smg-postponed' => 'Beberapa perubahan tidak dapat diproses.  [[{{FULLPAGENAME}}|Coba lagi]]',
 	'translate-smg-left' => 'Konten pesan di wiki',
 	'translate-smg-right' => 'Peubahan baru',
 	'translate-manage-import-diff' => 'Pesan $1 | Tindakan: $2',
@@ -16339,6 +16302,8 @@ Silakan diperiksa.',
 	'translate-manage-intro-other' => 'Di bawah ini adalah daftar perubahan terjemahan dalam bahasa $1.
 Silakan tinjau perubahan-perubahan ini dan pilihlah tindakan yang ingin Anda lakukan untuk setiap perubahan.
 Jika Anda memilih untuk tidak menghiraukan perubahan, tindakan ini hanya bersifat sementara.',
+	'translate-manage-import-ok' => 'Impor versi baru dari halaman $1.', # Fuzzy
+	'translate-manage-import-done' => 'Semua selesai!', # Fuzzy
 	'importtranslations' => 'Impor terjemahan',
 	'translate-import-from-local' => 'Unggah berkas lokal:',
 	'translate-import-load' => 'Muatkan berkas',
@@ -16483,7 +16448,7 @@ Detail: $1",
 	'tux-proofread-translated-by-self' => 'Diterjemahkan oleh Anda',
 	'tux-empty-list-all' => 'Kelompok pesan ini kosong',
 	'tux-empty-list-all-guide' => 'Pilih kelompok pesan lainnya untuk diterjemahkan',
-	'tux-translate-page-no-such-group' => "'''Kelompok yang diminta tidak tersedia.''' Pilihlah kelompok pesan yang lain.",
+	'tux-translate-page-no-such-group' => "'''Kelompok yang diminta tidak tersedia.''' Pilihlah kelompok pesan yang lain.", # Fuzzy
 	'tux-empty-list-translated' => 'Tidak ada pesan yang telah diterjemahkan',
 	'tux-empty-list-translated-guide' => 'Anda dapat membantu menerjemahkan',
 	'tux-empty-list-translated-action' => 'Terjemahkan',
@@ -16667,10 +16632,10 @@ $messages['is'] = array(
 	'translate-taction-proofread' => 'Prófarkalesa', # Fuzzy
 	'translate-page-no-such-language' => 'Tungumálið sem þú tilgreindir var ógilt',
 	'translate-page-no-such-group' => 'Hópurinn sem þú tilgreindir var ógildur.',
-	'translate-page-disabled' => "Þýðingar á þessu tungumáli hafa verið óvirkjaðar.
+	'translate-page-disabled' => 'Þýðingar á þessu tungumáli hafa verið óvirkjaðar.
 Ástæða:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Stillingar',
 	'translate-page-group' => 'Hópur',
 	'translate-page-language' => 'Tungumál',
@@ -16689,13 +16654,12 @@ $messages['is'] = array(
 	'translate-ext-url' => '<hr />Vefsíða: $1',
 	'translate-optional' => '(valfrjálst)',
 	'translate-ignored' => '(hunsað)',
-	'translate-edit-jsopen' => 'breyta',
 	'translate-edit-title' => 'Breyta "$1"',
 	'translate-edit-definition' => 'Útskýring á meldingu',
 	'translate-edit-translation' => 'Þýðing',
 	'translate-edit-contribute' => 'breyta',
 	'translate-edit-no-information' => "''Þessi melding hefur enga skjölun.
-Ef þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum þýðendum með því að bæta skjölun við hana.''",
+Ef þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum þýðendum með því að bæta skjölun við hana.''", # Fuzzy
 	'translate-edit-information' => 'Upplýsingar um þessa meldingu ($1)',
 	'translate-edit-in-other-languages' => 'Meldingin á öðrum tungumálum',
 	'translate-edit-committed' => 'Núverandi þýðing í hugbúnaðinum',
@@ -16898,9 +16862,9 @@ $messages['it'] = array(
 	'translate-taction-disabled' => 'Questa azione è disabilitata su questo wiki.',
 	'translate-page-no-such-language' => 'La lingua specificata non è valida.',
 	'translate-page-no-such-group' => 'Il gruppo specificato non è valido.',
-	'translate-page-disabled' => "Le traduzioni in questa lingua per questo gruppo sono state disabilitate. Motivo:
+	'translate-page-disabled' => 'Le traduzioni in questa lingua per questo gruppo sono state disabilitate. Motivo:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Le traduzioni verso questa lingua sono disabilitate.',
 	'translate-page-settings-legend' => 'Impostazioni',
 	'translate-page-group' => 'Gruppo',
@@ -16926,8 +16890,8 @@ I messaggi opzionali dovrebbero essere tradotti solo quando la lingua ha dei req
 	'translate-edit-definition' => 'Definizione del messaggio',
 	'translate-edit-translation' => 'Traduzione',
 	'translate-edit-contribute' => 'contribuisci',
-	'translate-edit-no-information' => "''Questo messaggio non ha documentazione.
-Se sai dove o come è usato questo messaggio, puoi aiutare gli altri traduttori aggiungendo la documentazione a questo messaggio.''",
+	'translate-edit-no-information' => '<em>Questo messaggio non ha documentazione.
+Se sai dove o come è usato questo messaggio, puoi aiutare gli altri traduttori aggiungendo la documentazione a questo messaggio.</em>',
 	'translate-edit-information' => 'Informazioni sul messaggio ($1)',
 	'translate-edit-in-other-languages' => 'Messaggio in altre lingue',
 	'translate-edit-committed' => 'Traduzione attuale nel software',
@@ -17114,6 +17078,8 @@ Da controllare.',
 	'translate-manage-intro-other' => "Di seguito sono elencati i cambiamenti alle traduzioni nella lingua $1.
 Controlla le modifiche e scegli l'azione da eseguire per ciascun messaggio.
 Se scegli di ignorare i cambiamenti, questa azione sarà solo temporanea.",
+	'translate-manage-import-ok' => 'Importato: $1',
+	'translate-manage-import-done' => 'Importazione completa!',
 	'importtranslations' => 'Importa traduzioni',
 	'translate-import-from-local' => 'Carica file locale:',
 	'translate-import-load' => 'Carica file',
@@ -17259,7 +17225,7 @@ Utile per l'attività di revisione.",
 	'tux-proofread-translated-by-self' => 'Tradotto da te',
 	'tux-empty-list-all' => 'Questo gruppo di messaggio è vuoto',
 	'tux-empty-list-all-guide' => 'Selezionare un gruppo di messaggi diverso da tradurre',
-	'tux-translate-page-no-such-group' => "'''Il gruppo indicato non esiste.''' Seleziona un gruppo messaggi differente.",
+	'tux-translate-page-no-such-group' => '<strong>Il gruppo indicato non esiste.</strong> Seleziona un gruppo messaggi differente.',
 	'tux-empty-list-translated' => 'Nessun messaggio tradotto',
 	'tux-empty-list-translated-guide' => 'Puoi aiutare a tradurre',
 	'tux-empty-list-translated-action' => 'Traduci',
@@ -17321,10 +17287,10 @@ $messages['ja'] = array(
 	'translate-taction-disabled' => 'このウィキではこの操作は無効になっています。',
 	'translate-page-no-such-language' => '言語の指定が正しくありません。',
 	'translate-page-no-such-group' => '群の指定が正しくありません。',
-	'translate-page-disabled' => "この群では、この言語への翻訳は停止されています。
+	'translate-page-disabled' => 'この群では、この言語への翻訳は停止されています。
 理由:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'この言語への翻訳は無効になっています。',
 	'translate-page-settings-legend' => '設定',
 	'translate-page-group' => '群',
@@ -17351,8 +17317,8 @@ $messages['ja'] = array(
 	'translate-edit-definition' => 'メッセージ定義',
 	'translate-edit-translation' => '翻訳',
 	'translate-edit-contribute' => '編集',
-	'translate-edit-no-information' => "''このメッセージについての説明文はありません。''
-''このメッセージがどこでどのように使用されているか知っている場合は、説明文を投稿して他の翻訳者を助けてください。''",
+	'translate-edit-no-information' => '<em>このメッセージについての説明文はありません。
+このメッセージがどこでどのように使用されているか知っている場合は、説明文を投稿して他の翻訳者を助けてください。</em>',
 	'translate-edit-information' => 'メッセージについての情報 ($1)',
 	'translate-edit-in-other-languages' => '他言語でのメッセージ',
 	'translate-edit-committed' => '現在ソフトウェア上で採用されている翻訳メッセージ',
@@ -17548,6 +17514,8 @@ $messages['ja'] = array(
 	'translate-manage-intro-other' => '以下は言語 $1 での翻訳の変更の一覧です。
 それぞれの更新について、変更を精査して、行いたい操作を選択してください。
 変更を無視することを選択した場合、この操作は一時的なものに留まります。',
+	'translate-manage-import-ok' => '取り込みました: $1',
+	'translate-manage-import-done' => '取り込みました。',
 	'importtranslations' => '翻訳の取り込み',
 	'translate-import-from-local' => 'ローカルファイルをアップロード:',
 	'translate-import-load' => 'ファイル読み込み',
@@ -17696,7 +17664,7 @@ $1',
 	'tux-proofread-translated-by-self' => 'あなたが翻訳',
 	'tux-empty-list-all' => 'このメッセージ群は空です',
 	'tux-empty-list-all-guide' => '翻訳する別のメッセージ群を選択してください',
-	'tux-translate-page-no-such-group' => "'''指定したメッセージ群は存在しません。'''別のメッセージ群を選択してください。",
+	'tux-translate-page-no-such-group' => '<strong>指定したメッセージ群は存在しません。</strong>別のメッセージ群を選択してください。',
 	'tux-empty-list-translated' => '翻訳済みメッセージはありません',
 	'tux-empty-list-translated-guide' => '翻訳で貢献することもできます',
 	'tux-empty-list-translated-action' => '翻訳',
@@ -17732,10 +17700,10 @@ $messages['jam'] = array(
 	'translate-desc' => '[[Special:Translate|Special page]] fi chransliet MediaWiki ahn biyan',
 	'translate-page-no-such-language' => 'Spesifai langwij ehn invalid.',
 	'translate-page-no-such-group' => 'Spesifai gruup ehn invalid.',
-	'translate-page-disabled' => "Chranslieshan tu dis langwij ina dis gruup disiebl.
+	'translate-page-disabled' => 'Chranslieshan tu dis langwij ina dis gruup disiebl.
 Riizn:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Setndem',
 	'translate-page-group' => 'Gruup',
 	'translate-page-language' => 'Langwij',
@@ -17757,7 +17725,7 @@ Riizn:
 	'translate-edit-definition' => 'Mechiz definishan',
 	'translate-edit-contribute' => 'kanchribiut',
 	'translate-edit-no-information' => "''Dis mechiz naa no dakiumentieshan.
-Ef yu nuo we ar ou dis mechiz yuuz, yu kiahn elp ada chranslieta bai ad dakiumentieshan tu dis mechiz.''",
+Ef yu nuo we ar ou dis mechiz yuuz, yu kiahn elp ada chranslieta bai ad dakiumentieshan tu dis mechiz.''", # Fuzzy
 	'translate-edit-information' => 'Infamieshan bout mechiz "$2" ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'Mechiz "$1" in ada langwij', # Fuzzy
 	'translate-edit-committed' => 'Korant chranslieshan ina saafwier',
@@ -17765,7 +17733,6 @@ Ef yu nuo we ar ou dis mechiz yuuz, yu kiahn elp ada chranslieta bai ad dakiumen
 	'translate-edit-tmsugs' => 'Sojeshan frahn chranslieshan memari',
 	'translate-edit-tmmatch' => '$1% mach',
 	'translate-use-suggestion' => 'Insoert dis sojeshan ina di chranslieshan ieria. Dis riplies aal korant kantent.', # Fuzzy
-	'translate-edit-tab-list' => 'Mechiz lis',
 	'translate-magic-pagename' => 'Extendid MediaWiki chranslieshan',
 );
 
@@ -17803,9 +17770,9 @@ $messages['jv'] = array(
 	'translate-taction-disabled' => 'Laku iki dipatèni nèng wiki iki.',
 	'translate-page-no-such-language' => 'Basa sing dipilih ora absah.',
 	'translate-page-no-such-group' => 'Grup sing dipilih ora absah.',
-	'translate-page-disabled' => "Penerjemahan jroning basa iki wis dinon-aktifaké. Alesan:
+	'translate-page-disabled' => 'Penerjemahan jroning basa iki wis dinon-aktifaké. Alesan:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Terjemahan kanggo basa iki dipatèni.',
 	'translate-page-settings-legend' => 'Pangaturan',
 	'translate-page-group' => 'Kelompok',
@@ -17828,12 +17795,11 @@ kaya ora nganggo spasi utawa ngalihaksarakaké jeneng dhiri. $1',
 	'translate-ext-url' => '<hr />Situs wèb: $1',
 	'translate-optional' => '(opsional)',
 	'translate-ignored' => '(dilirwakaké)',
-	'translate-edit-jsopen' => 'sunting',
 	'translate-edit-title' => 'Sunting "$1"',
 	'translate-edit-definition' => 'Définisi pesen',
 	'translate-edit-translation' => 'Terjamahan',
 	'translate-edit-contribute' => 'awèh kontribusi',
-	'translate-edit-no-information' => "''Pesen iki ora nduwé dokumèntasi. Menawa panjenengan ngerti kepriyé pesen iki dienggo, mangga panjenengan bisa nulungi para panerjemah liyané mawa nambahaké dokumentasi ing pesen iki.''",
+	'translate-edit-no-information' => "''Pesen iki ora nduwé dokumèntasi. Menawa panjenengan ngerti kepriyé pesen iki dienggo, mangga panjenengan bisa nulungi para panerjemah liyané mawa nambahaké dokumentasi ing pesen iki.''", # Fuzzy
 	'translate-edit-information' => 'Informasi bab layang ($1)',
 	'translate-edit-in-other-languages' => 'Pesen ing basa liya',
 	'translate-edit-committed' => 'Pertalan saiki ing perangkat lunak',
@@ -17842,7 +17808,6 @@ kaya ora nganggo spasi utawa ngalihaksarakaké jeneng dhiri. $1',
 	'translate-edit-tmmatch-source' => 'Tèks sumber terjemahan: $1',
 	'translate-edit-tmmatch' => '$1% cocok',
 	'translate-use-suggestion' => 'Ganti terjemahan saiki nganggo sing disaranaké iki.',
-	'translate-edit-tab-list' => 'Daptar layang',
 	'translate-edit-nopermission' => 'Sampéyan butuh idin kanggo nerjemahaké layang.',
 	'translate-edit-askpermission' => 'Njaluk idin',
 	'translate-magic-pagename' => 'Pangambanan pertalan MediaWiki',
@@ -17899,7 +17864,6 @@ Terjemahan layang nèng basa iki dituduhaké nalika Sampéyan nerjemehaké.
 Daptar basa gawan gumantung saka basa Sampéyan.',
 	'translate-pref-editassistlang-bad' => 'Kodhé basa ora sah nèng daptar:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Panyunting terjemahan sing disampurnakaké (JavaScript)',
 	'right-translate' => 'Nyunting nganggo antarmuka pertalan',
 	'right-translate-manage' => 'Tata klompok layang',
 	'action-translate-manage' => 'tata klompok layang',
@@ -17994,7 +17958,6 @@ Daptar basa gawan gumantung saka basa Sampéyan.',
 	'translate-smg-nochanges' => 'Ora ana sing owah saka prosès iki.',
 	'translate-smg-submit' => 'Kirim owahan kanggo diprosès',
 	'translate-smg-submitted' => 'Definisi layang wis dianyari. Owah-owahan lagi diprosès nèng latar mburi.',
-	'translate-smg-postponed' => 'Sebagéyan owahan ora bisa diprosès. [[{{FULLPAGENAME}}|Jajal manèh]].',
 	'translate-smg-left' => 'Kontèn layang nèng wiki',
 	'translate-smg-right' => 'Owahan sing bakal teka',
 	'translate-manage-import-diff' => 'Layang $1 | Laku: $2',
@@ -18317,7 +18280,7 @@ $messages['kaa'] = array(
 	'translate-page-no-such-group' => 'Keltirilgen topar jaramsız',
 	'translate-page-disabled' => "Bul toparda usı tilge awdarıwlar toqtatılg'an. Sebep:
 
-''$1''",
+<em>$1</em>",
 	'translate-page-settings-legend' => 'Sazlawlar',
 	'translate-page-group' => 'Xabar toparı',
 	'translate-page-language' => 'Til',
@@ -18335,7 +18298,7 @@ $messages['kaa'] = array(
 	'translate-ignored' => "(itibar berilmeytug'ın)",
 	'translate-edit-definition' => "Xabardın' anıqlaması",
 	'translate-edit-contribute' => "u'les qosıw",
-	'translate-edit-no-information' => "''Bul xabardın' hu'jjet mag'lıwmatı joq. Eger siz bul xabar qayerde yamasa qalay paydalang'anın bilsen'iz, basqa awdarıwshılıwg'a usı xabardın' hu'jjet mag'lıwmatın ko'rsetip ja'rdem beriwin'iz mu'mkin.''",
+	'translate-edit-no-information' => "''Bul xabardın' hu'jjet mag'lıwmatı joq. Eger siz bul xabar qayerde yamasa qalay paydalang'anın bilsen'iz, basqa awdarıwshılıwg'a usı xabardın' hu'jjet mag'lıwmatın ko'rsetip ja'rdem beriwin'iz mu'mkin.''", # Fuzzy
 	'translate-edit-information' => "Bul xabar haqqında mag'lıwmat ($1)", # Fuzzy
 	'translate-edit-in-other-languages' => 'Bul xabar basqa tillerde', # Fuzzy
 	'translate-edit-committed' => "Bag'darlamadag'ı ha'zirgi awdarması",
@@ -18463,9 +18426,9 @@ $messages['kk-cyrl'] = array(
 	'translate-desc' => 'MediaWiki дегенді және бұнан тыстарды аудару үшін арналған [[Special:Translate|арнайы бет]]',
 	'translate-page-no-such-language' => 'Келтірілген тіл жарамсыз',
 	'translate-page-no-such-group' => 'Келтірілген топ жарамсыз.',
-	'translate-page-disabled' => "Осы топтағы бұл тілге аударуы өшірілген. Себебі:
+	'translate-page-disabled' => 'Осы топтағы бұл тілге аударуы өшірілген. Себебі:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Бапталымдар',
 	'translate-page-group' => 'Хабар тобы',
 	'translate-page-language' => 'Тілі',
@@ -18484,7 +18447,7 @@ $messages['kk-cyrl'] = array(
 	'translate-edit-definition' => 'Хабар анықтауы',
 	'translate-edit-contribute' => 'үлес бер',
 	'translate-edit-no-information' => "''Бұл хабар құжаттамасыз.
-Егер бұл хабардың қайда немесе қалай қолданғанын білсеңіз, бұл хабарға құжаттама келтіріп, басқа аударушыларға көмектесе аласыз.''",
+Егер бұл хабардың қайда немесе қалай қолданғанын білсеңіз, бұл хабарға құжаттама келтіріп, басқа аударушыларға көмектесе аласыз.''", # Fuzzy
 	'translate-edit-information' => 'Бұл хабар туралы мәлімет ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'Хабар басқа тілдерде', # Fuzzy
 	'translate-edit-committed' => 'Бағдарлама жасақтамадағы ағымдақ аударма',
@@ -18658,9 +18621,9 @@ $messages['km'] = array(
 	'translate-taction-disabled' => 'សកម្មភាពនេះត្រូវបិទមិនអោយប្រើនៅលើវិគីនេះ។',
 	'translate-page-no-such-language' => 'ភាសាដែលអ្នកផ្ដល់មកមិនត្រឹមត្រូវទេ។',
 	'translate-page-no-such-group' => 'ក្រុមដែលអ្នកផ្ដល់មកមិនត្រឹមត្រូវទេ។',
-	'translate-page-disabled' => "ការបកប្រែសម្រាប់ភាសានេះក្នុងក្រុមនេះមិនត្រូវបានអនុញ្ញាតទេ។ មូលហេតុ:
+	'translate-page-disabled' => 'ការបកប្រែសម្រាប់ភាសានេះក្នុងក្រុមនេះមិនត្រូវបានអនុញ្ញាតទេ។ មូលហេតុ:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'ការកំណត់​ផ្សេងៗ',
 	'translate-page-group' => 'ក្រុម',
 	'translate-page-language' => 'ភាសា',
@@ -18681,12 +18644,11 @@ $messages['km'] = array(
 	'translate-ext-url' => '<hr />វិបសាយ៖ $1',
 	'translate-optional' => '(ជម្រើស)',
 	'translate-ignored' => '(បានបោះបង់)',
-	'translate-edit-jsopen' => 'កែប្រែ​',
 	'translate-edit-title' => 'កែប្រែ "$1"',
 	'translate-edit-definition' => 'និយមន័យ​របស់​សារ',
 	'translate-edit-translation' => 'ការបកប្រែ',
 	'translate-edit-contribute' => 'រួមចំណែក',
-	'translate-edit-no-information' => "''សារ​នេះ​មិន​មាន​ព័ត៌មាន​បន្ថែម​ទេ​។ ប្រសិនបើ​អ្នក​ដឹង​ពី​ទីកន្លែង និង​របៀប​ប្រើប្រាស់​សារ​នេះ អ្នក​អាច​ជួយ​អ្នក​បកប្រែ​ផ្សេងទៀត​តាមរយៈ​ការ​ដាក់​បន្ថែម​ព័ត៌មាន​ទាំងនោះ​មក​ឱ្យ​សារ​នេះ​។",
+	'translate-edit-no-information' => "''សារ​នេះ​មិន​មាន​ព័ត៌មាន​បន្ថែម​ទេ​។ ប្រសិនបើ​អ្នក​ដឹង​ពី​ទីកន្លែង និង​របៀប​ប្រើប្រាស់​សារ​នេះ អ្នក​អាច​ជួយ​អ្នក​បកប្រែ​ផ្សេងទៀត​តាមរយៈ​ការ​ដាក់​បន្ថែម​ព័ត៌មាន​ទាំងនោះ​មក​ឱ្យ​សារ​នេះ​។", # Fuzzy
 	'translate-edit-information' => 'ព័ត៌មាន​អំពី​សារ ($1)',
 	'translate-edit-in-other-languages' => 'សារជាភាសា​ដទៃទៀត',
 	'translate-edit-committed' => 'បទប្រែសម្រួល​បច្ចុប្បន្ន​ក្នុងផ្នែកទន់',
@@ -18694,7 +18656,6 @@ $messages['km'] = array(
 	'translate-edit-tmsugs' => 'សំនើពីឃ្លាំងផ្ទុកការបកប្រែ',
 	'translate-edit-tmmatch' => 'ត្រូវគ្នា $1%',
 	'translate-use-suggestion' => 'ជំនួសការបកប្រែបច្ចុប្បន្នដោយសំណើបកប្រែនេះ។',
-	'translate-edit-tab-list' => 'បញ្ជីសារ',
 	'translate-edit-nopermission' => 'អ្នកត្រូវការការអនុញ្ញាតដើម្បីបក្បឬសារនានា។',
 	'translate-edit-askpermission' => 'សំណើសុំការអនុញ្ញាត',
 	'translate-magic-pagename' => 'ការបកប្រែ​មេឌាវិគី​បន្ថែម',
@@ -18755,7 +18716,6 @@ $messages['km'] = array(
 បញ្ចីភាសាតាមលំនាំដើម អាស្រ័យលើភាសារបស់អ្នក។',
 	'translate-pref-editassistlang-bad' => 'កូដភាសាមិនត្រឹមត្រូវនៅក្នុងបញ្ជីនេះ៖
 <nowiki>$1</nowiki>។',
-	'translate-pref-jsedit' => 'កម្មវិធីកែប្រែការបកប្រែទំនើប (JavaScript)',
 	'right-translate' => 'កែប្រែដោយប្រើអន្តរមុខបកប្រែ',
 	'right-translate-manage' => 'គ្រប់គ្រងក្រុមសារ',
 	'right-translate-import' => 'នាំចូលការបកប្រែក្រៅបណ្ដាញ',
@@ -18836,6 +18796,7 @@ $messages['km'] = array(
 	'translate-manage-import-deleted' => 'សារលុបចោល $1',
 	'translate-manage-action-import' => 'នាំចូល',
 	'translate-manage-submit' => 'ប្រតិបត្តិ​',
+	'translate-manage-import-done' => 'ធ្វើចប់អស់ហើយ!', # Fuzzy
 	'importtranslations' => 'នាំចូល​ការបកប្រែ​',
 	'translate-import-load' => 'ផ្ទុក​ឯកសារ​',
 	'translate-import-err-ul-failed' => 'ការផ្ទុក​ឡើង​នៃឯកសារ​ មិនបានជោគជ័យ​',
@@ -18871,7 +18832,7 @@ $messages['kn'] = array(
 	'translate-taction-lstats' => 'ಭಾಷಾ ಅಂಕಿಅಂಶಗಳು',
 	'translate-page-no-such-language' => 'ಉಲ್ಲೇಖಿಸಿದ ಭಾಷೆ ಅಸ್ತಿತ್ವದಲ್ಲಿ ಇಲ್ಲ',
 	'translate-page-no-such-group' => 'ಉಲ್ಲೇಖಿಸಿದ ಗುಂಪು ಅಸಿಂಧುವಾಗಿತ್ತು',
-	'translate-page-disabled' => "ಈ ಗುಂಪಿಗೆ ಈ ಭಾಷೆಯ ಭಾಷಾಂತರಗಳನ್ನು ಅಸಮರ್ಥಗೊಳಿಸಿದೆ. ಕಾರಣ ''$1''",
+	'translate-page-disabled' => 'ಈ ಗುಂಪಿಗೆ ಈ ಭಾಷೆಯ ಭಾಷಾಂತರಗಳನ್ನು ಅಸಮರ್ಥಗೊಳಿಸಿದೆ. ಕಾರಣ <em>$1</em>',
 	'translate-page-settings-legend' => 'ವ್ಯವಸ್ಥೆಗಳು',
 	'translate-page-group' => 'ಗುಂಪು',
 	'translate-page-language' => 'ಭಾಷೆ',
@@ -18890,13 +18851,12 @@ $messages['kn'] = array(
 	'translate-page-edit' => 'ಸಂಪಾದಿಸಿ',
 	'translate-optional' => '(ಐಚ್ಛಿಕ)',
 	'translate-ignored' => 'ಕಡೆಗಣಿಸಲ್ಪಟ್ಟ',
-	'translate-edit-jsopen' => 'ಸಂಪಾದಿಸು',
 	'translate-edit-title' => '"$1"ನ್ನು ಸಂಪಾದಿಸು',
 	'translate-edit-definition' => 'ಸಂದೇಶ ವ್ಯಾಖ್ಯೆ',
 	'translate-edit-translation' => 'ಅನುವಾದ',
 	'translate-edit-contribute' => 'ನೆರವಾಗು',
 	'translate-edit-no-information' => '"ಈ ಸಂದೇಶಕ್ಕೆ ಯಾವುದೇ ದಾಖಲೆಗಳಿಲ್ಲ."
-"ನಿಮಗೆ ಈ ಸಂದೇಶ ಎಲ್ಲಿಯಾದರೂ ಅಥವಾ ಹೇಗಾದರೂ ಉಪಯೋಗದಲ್ಲಿರುವುದು ತಿಳಿದಿದ್ದರೆ,ನೀವು ಇದಕ್ಕೆ ತಕ್ಕ ದಾಖಲೆಗಳನ್ನು ಸೇರಿಸಿ ಬೇರಿ ಭಾಷಾಂತರಕಾರರಿಗೆ ಸಹಾಯ ಮಾಡಬಹುದು."',
+"ನಿಮಗೆ ಈ ಸಂದೇಶ ಎಲ್ಲಿಯಾದರೂ ಅಥವಾ ಹೇಗಾದರೂ ಉಪಯೋಗದಲ್ಲಿರುವುದು ತಿಳಿದಿದ್ದರೆ,ನೀವು ಇದಕ್ಕೆ ತಕ್ಕ ದಾಖಲೆಗಳನ್ನು ಸೇರಿಸಿ ಬೇರಿ ಭಾಷಾಂತರಕಾರರಿಗೆ ಸಹಾಯ ಮಾಡಬಹುದು."', # Fuzzy
 	'translate-edit-information' => 'ಸಂದೇಶದ ಬಗ್ಗೆ ಮಾಹಿತಿ ($1)',
 	'translate-edit-in-other-languages' => 'ಬೇರೆ ಭಾಷೆಗಳಲ್ಲಿ ಸಂದೇಶ',
 	'translate-edit-committed' => 'ತಂತ್ರಾಂಶದಲ್ಲಿ ಪ್ರಸ್ತುತ ಭಾಷಾಂತರ',
@@ -18904,7 +18864,6 @@ $messages['kn'] = array(
 	'translate-edit-tmsugs' => 'ಭಾಷಾಂತರ ನೆನಪು ಹಾಗೂ ಭಾಷಾಂತರ ಯಂತ್ರಗಳ ಸಲಹೆ',
 	'translate-edit-tmmatch' => '$1% ಹೊ೦ದಿಸಿ',
 	'translate-use-suggestion' => 'ಈಗಿನ ಭಾಷಾಂತರವನ್ನು ಈ ಸಲಹೆಯೊಂದಿಗೆ ಬದಲಾಯಿಸಿ',
-	'translate-edit-tab-list' => 'ಸಂದೇಶ ಪಟ್ಟಿ',
 	'translate-edit-nopermission' => 'ಭಾಷಾಂತರಿಸಲು ನಿಮಗೆ ಅನುಮತಿ ಬೇಕು',
 	'translate-edit-askpermission' => 'ಅನುಮತಿಗಾಗಿ ಕೋರಿಕೆ',
 	'translate-magic-pagename' => 'ವಿಸ್ತರಿಸಲ್ಪಟ್ಟ ಮಿಡಿಯಾವಿಕಿ ಭಾಷಾಂತರ',
@@ -18971,6 +18930,7 @@ $messages['kn'] = array(
 	'translate-total' => 'ಸಂದೇಶಗಳು',
 	'translate-mgs-column-language' => 'ಭಾಷೆ',
 	'translate-manage-import-new' => 'ಹೊಸ ಸಂದೇಶ $1',
+	'translate-manage-import-done' => 'ಎಲ್ಲಾ ಮಾಡಲ್ಪಟ್ಟಿದೆ!', # Fuzzy
 	'importtranslations' => 'ಭಾಷಾಂತರಗಳನ್ನು ಆಮದು ಮಾಡಿ',
 	'translate-gs-total' => 'ಒಟ್ಟು',
 	'translate-dynagroup-recent-label' => 'ಇತ್ತೀಚಿನ ಅನುವಾದಗಳು',
@@ -19449,9 +19409,9 @@ $messages['ksh'] = array(
 	'translate-taction-disabled' => 'Di Axjuhn es op heh dämm Wiki affjeschalldt.',
 	'translate-page-no-such-language' => 'De aanjejovve {{int:translate-page-language}} känne mer nit.',
 	'translate-page-no-such-group' => 'De aanjejovve {{int:translate-page-group}} känne mer nit.',
-	'translate-page-disabled' => "Övversezonge sen affjeschalldt för di {{int:translate-page-group}} un {{int:translate-page-language}}, weil:
+	'translate-page-disabled' => 'Övversezonge sen affjeschalldt för di {{int:translate-page-group}} un {{int:translate-page-language}}, weil:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Övversäzonge in heh di Schprooch sin afjeschalldt.',
 	'translate-page-settings-legend' => 'Enschtällonge',
 	'translate-page-group' => 'Jropp:',
@@ -19479,7 +19439,7 @@ Di sullte bloß övversaz wääde, wann Ding Shprooch jät besönders bruch, esu
 	'translate-edit-translation' => 'Övversäzong',
 	'translate-edit-contribute' => 'beijdraare',
 	'translate-edit-no-information' => "''Mer han kein Dokementazjohn för dat Täxshtöck.''
-''Wann De weijß, wann un woh dat Shtöck jenou jebruch weed, dann kanns De dä Anndere hellefe, un jet för_et ennjävve.''",
+''Wann De weijß, wann un woh dat Shtöck jenou jebruch weed, dann kanns De dä Anndere hellefe, un jet för_et ennjävve.''", # Fuzzy
 	'translate-edit-information' => 'Ennfommazjohne övver dä Täx udder di Nohreesch ($1)',
 	'translate-edit-in-other-languages' => 'Dä Täx udder di Nohreesch in annder Shprooche',
 	'translate-edit-committed' => 'Es aktowäll övversaz met',
@@ -19666,6 +19626,8 @@ Bes esu joot, un donn dat Fomulaa noch ens affschecke, för hee wigger ze maache
 	'translate-manage-intro-other' => 'He noh kütt en Leß met Änderunge aan Övversäzunge en dä Shprooch $1.
 Donn se dorschjonn, un söhk Der för jeede en Akßjuhn uß, wat De domet jemaat han wells.
 Wann De entscheids, Änderunge ze övverjonn, dann wääde di Änderunge beim nähxte Expoot och övverjange.', # Fuzzy
+	'translate-manage-import-ok' => 'Mer han en neu Version fun dä Sigg „$1“ empotteet.', # Fuzzy
+	'translate-manage-import-done' => 'Alle jedonn!', # Fuzzy
 	'importtranslations' => 'Övversäzonge Empotteere',
 	'translate-import-from-local' => 'vun Dingem Rääschner:',
 	'translate-import-load' => 'Datei laade',
@@ -19811,7 +19773,7 @@ Dat es et bäß för et Jääjelässe.',
 	'tux-proofread-translated-by-self' => 'Sällver övversaz',
 	'tux-empty-list-all' => 'En heh dä Jropp vun Nohreeschte es nix dren.',
 	'tux-empty-list-all-guide' => 'Söhg en ander Nohreeschtejrop för zom Övversäze us',
-	'tux-translate-page-no-such-group' => "'''Di aanjejovve Jropp jidd_et nit.''' Söhg en ander Nohreeschtejrop för t Övversäze us.",
+	'tux-translate-page-no-such-group' => "'''Di aanjejovve Jropp jidd_et nit.''' Söhg en ander Nohreeschtejrop för t Övversäze us.", # Fuzzy
 	'tux-empty-list-translated' => 'Nix es Övversaz',
 	'tux-empty-list-translated-guide' => 'Do kanns beim Övversäze metmaache.',
 	'tux-empty-list-translated-action' => 'Övversäze',
@@ -20077,9 +20039,9 @@ $messages['lb'] = array(
 	'translate-taction-disabled' => 'Dës Aktioun ass op dëser Wiki ausgeschalt.',
 	'translate-page-no-such-language' => 'Ongëltege Sproochcode benotzt',
 	'translate-page-no-such-group' => 'Déi Gefrote Grupp gëtt et net.',
-	'translate-page-disabled' => "Iwwersetzungen an dës Sprooch goufen an dëser Grupp ausgeschalt. Grond:
+	'translate-page-disabled' => 'Iwwersetzungen an dës Sprooch goufen an dëser Grupp ausgeschalt. Grond:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => "D'Iwwersetzung an dës Sprooch ass ausgeschalt.",
 	'translate-page-settings-legend' => 'Astellungen',
 	'translate-page-group' => 'Grupp',
@@ -20105,7 +20067,7 @@ Optional Message sollen nëmmen iwwersat gi wann Är Sprooch speziell Ufuerderun
 	'translate-edit-definition' => 'Definitioun vum Message',
 	'translate-edit-translation' => 'Iwwersetzung',
 	'translate-edit-contribute' => 'matschaffen',
-	'translate-edit-no-information' => 'Dëse Message huet keng Dokumentatioun. Wann Dir wësst wou oder wéi dëse Message gebraucht gëtt, da kënnt Dir aner Iwwersetzer hëllefen an deem Dir Informatiounen iwwer dëse Message gitt.',
+	'translate-edit-no-information' => 'Dëse Message huet keng Dokumentatioun. Wann Dir wësst wou oder wéi dëse Message gebraucht gëtt, da kënnt Dir aner Iwwersetzer hëllefen an deem Dir Informatiounen iwwer dëse Message gitt.', # Fuzzy
 	'translate-edit-information' => 'Informatioun iwwer de Message ($1)',
 	'translate-edit-in-other-languages' => 'Message an anere Sproochen',
 	'translate-edit-committed' => 'Aktuell Iwwersetzung an der Software',
@@ -20298,6 +20260,8 @@ Schéckt de Formulaire w.e.g. nach emol fir mat der Beaarbechtung weiderzefueren
 	'translate-manage-intro-other' => "Ënnendrënner ass eng Lëscht vun den Ännerungen vun den Iwwersetzungen an der Sprooch $1.
 Kuckt d'Ännerunge w.e.g. no a wielt déi Aktioun déi Dir fir déi jeeweileg Iwwersetzung wëllt.
 Wann Dir decidéiert fir Ännerungen z'ignoréieren, ass dës Aktioun just temporär.",
+	'translate-manage-import-ok' => 'Importéiert: $1',
+	'translate-manage-import-done' => 'Import fäerdeg!',
 	'importtranslations' => 'Iwwersetzungen importéieren',
 	'translate-import-from-local' => 'Fichier lokal eropgelueden:',
 	'translate-import-load' => 'Fichier lueden',
@@ -20441,7 +20405,7 @@ Dëst ass ganz nëtzlech fir d'Aufgabe vum Nokucken.",
 	'tux-proofread-translated-by-self' => 'Vun Iech iwwersat',
 	'tux-empty-list-all' => 'Dëse Grupp vu Messagen ass eidel',
 	'tux-empty-list-all-guide' => "Sicht en anere Gruppe vu Messagen eraus fir z'iwwersetzen",
-	'tux-translate-page-no-such-group' => "'''De Grupp deen ugi war gëtt et net.''' Sicht een anere Grupp vu Messagen eraus.",
+	'tux-translate-page-no-such-group' => "'''De Grupp deen ugi war gëtt et net.''' Sicht een anere Grupp vu Messagen eraus.", # Fuzzy
 	'tux-empty-list-translated' => 'Keng iwwersate Messagen',
 	'tux-empty-list-translated-guide' => 'Dir kënnt beim Iwwersetzen hëllefen',
 	'tux-empty-list-translated-action' => 'Iwwersetzen',
@@ -21033,9 +20997,9 @@ $messages['lus'] = array(
 	'translate-taction-lstats' => 'Ţawng lepsena',
 	'translate-taction-mstats' => 'Thuthawn hläwm lepsena',
 	'translate-taction-export' => 'Thawnchhuahna',
-	'translate-page-disabled' => "He hläwm hi hemi ţawnga lehlin khap a ni tawh.
+	'translate-page-disabled' => 'He hläwm hi hemi ţawnga lehlin khap a ni tawh.
 A chhan:
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Inremdàn',
 	'translate-page-group' => 'Pawl',
 	'translate-page-language' => 'Ţawng',
@@ -21056,13 +21020,12 @@ Heng thuthawn duh-thlante hi i ţawngin mamawh bîk, entirnan hming roman hawraw
 	'translate-ext-url' => '<hr />Hmunpui: $1',
 	'translate-optional' => '(duh-thlan)',
 	'translate-ignored' => '(ngaihthah)',
-	'translate-edit-jsopen' => 'siamţhatna',
 	'translate-edit-title' => '$1 siamţha rawh',
 	'translate-edit-definition' => 'Thuthawn hrilhfiahna',
 	'translate-edit-translation' => 'Lehlinna',
 	'translate-edit-contribute' => 'kutthawhna',
 	'translate-edit-no-information' => "''He thuthawn hian sawifiahna mumal a la nei lo.''
-''He thuthawn hmanna hmun leh hmanphung hi i hriat chuan sawifiah la, letlingtute nasa takin i pui ang.''",
+''He thuthawn hmanna hmun leh hmanphung hi i hriat chuan sawifiah la, letlingtute nasa takin i pui ang.''", # Fuzzy
 	'translate-edit-information' => 'Thuthawn chungchang ($1)',
 	'translate-edit-in-other-languages' => 'Thuthawn ţawng dangin',
 	'translate-edit-committed' => 'Khawlthluaka lehlin mék',
@@ -21071,7 +21034,6 @@ Heng thuthawn duh-thlante hi i ţawngin mamawh bîk, entirnan hming roman hawraw
 	'translate-edit-tmmatch-source' => 'Lehlinna thu hnar: $1',
 	'translate-edit-tmmatch' => '$1% inmil',
 	'translate-use-suggestion' => 'Tuna lehlinna awm hi he rawtna hian thlâk rawh',
-	'translate-edit-tab-list' => 'Thuthawn tlar',
 	'translate-edit-nopermission' => 'Thuthawn letling tùrin phalna i neih a ngai.',
 	'translate-edit-askpermission' => 'Phalna dilna',
 	'translate-magic-pagename' => 'MediaWiki lehlinna zauh',
@@ -21199,6 +21161,7 @@ Heng thuthawn duh-thlante hi i ţawngin mamawh bîk, entirnan hming roman hawraw
 Hläwm chanchin inziahna phêka lêt tùrin a hnuaia zawmnaah khuan kal rawh.',
 	'translate-manage-fuzzy-summary' => 'A hrilhfiahna thlâk a ni tawh', # Fuzzy
 	'translate-manage-submit' => 'Déng raw pip!',
+	'translate-manage-import-done' => 'A zo ta vek mai!', # Fuzzy
 	'translate-import-err-warnings' => 'Taksa dik lo.
 I khawih danglamin ththn ziahna i nuaibo lo tih tichiang ang che.
 Chanchim kim: $1',
@@ -21470,10 +21433,10 @@ $messages['lzh'] = array(
 	'translate-taction-lstats' => '語之彙統',
 	'translate-taction-mstats' => '訊息組之彙統',
 	'translate-taction-export' => '出匯',
-	'translate-page-disabled' => "已禁本群組譯至該語。
+	'translate-page-disabled' => '已禁本群組譯至該語。
 註：
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => '禁譯至該語。',
 	'translate-page-settings-legend' => '簿註',
 	'translate-page-group' => '組',
@@ -21489,7 +21452,6 @@ $messages['lzh'] = array(
 	'translate-page-edit' => '纂',
 	'translate-optional' => '（選）',
 	'translate-ignored' => '（略）',
-	'translate-edit-jsopen' => '纂',
 	'translate-edit-title' => '始譯「$1」',
 	'translate-edit-definition' => '訊之原',
 	'translate-edit-translation' => '譯',
@@ -21499,7 +21461,6 @@ $messages['lzh'] = array(
 	'translate-edit-committed' => '今譯',
 	'translate-edit-warnings' => '未譯之警',
 	'translate-edit-tmmatch' => '$1%符',
-	'translate-edit-tab-list' => '訊之表',
 	'translate-edit-nopermission' => '汝須獲權方可譯訊。',
 	'translate-magic-cm-export' => '出匯',
 	'translate-magic-nothing-to-export' => '無出匯之內容。',
@@ -21775,9 +21736,9 @@ $messages['mk'] = array(
 	'translate-taction-disabled' => 'Дејството е оневозможено на ова вики.',
 	'translate-page-no-such-language' => 'Наведениот јазик е погрешен',
 	'translate-page-no-such-group' => 'Погрешно наведена група',
-	'translate-page-disabled' => "Преведувањето на овој јазик во оваа група е оневозможено. Причина:
+	'translate-page-disabled' => 'Преведувањето на овој јазик во оваа група е оневозможено. Причина:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Преведувањето на овој јазик е оневозможено.',
 	'translate-page-settings-legend' => 'Нагодувања',
 	'translate-page-group' => 'Група',
@@ -21804,8 +21765,8 @@ $messages['mk'] = array(
 	'translate-edit-definition' => 'Изворна порака',
 	'translate-edit-translation' => 'Превод',
 	'translate-edit-contribute' => 'придонес',
-	'translate-edit-no-information' => "''Оваа порака нема документација.
-Ако знаете каде или како се користи поракава, тогаш помогнете им на другите преведувачи додавајќи ѝ документација.''",
+	'translate-edit-no-information' => '<em>Оваа порака нема документација.
+Ако знаете каде или како се користи поракава, тогаш помогнете им на другите преведувачи додавајќи ѝ документација.</em>',
 	'translate-edit-information' => 'Информации за пораката ($1)',
 	'translate-edit-in-other-languages' => 'Пораката на други јазици',
 	'translate-edit-committed' => 'Тековен превод во програмската опрема',
@@ -21814,9 +21775,6 @@ $messages['mk'] = array(
 	'translate-edit-tmmatch-source' => 'Изворен текст за преводот: $1',
 	'translate-edit-tmmatch' => '$1% совпаѓање',
 	'translate-use-suggestion' => 'Заменете го тековниот превод со овој предлог во полето за превод.',
-	'translate-edit-tab-prev' => '<<<',
-	'translate-edit-tab-next' => '>>>',
-	'translate-edit-tab-list' => 'Список на пораки',
 	'translate-edit-nopermission' => 'Ви треба дозвола за да преведувате пораки.',
 	'translate-edit-askpermission' => 'Побарај дозвола',
 	'translate-magic-pagename' => 'Превод на додатоци за МедијаВики',
@@ -21878,7 +21836,6 @@ $messages['mk'] = array(
 Списокот на јазици зададен по основно зависи од вашиот јазик.',
 	'translate-pref-editassistlang-bad' => 'Погрешен јазичен код на списокот:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Подобрен уредник на преводи (JavaScript)',
 	'right-translate' => 'Уредување со користење на посредникот за преведување',
 	'right-translate-manage' => 'Раководење со групи пораки',
 	'action-translate-manage' => 'рСаководење со групи пораки',
@@ -22006,6 +21963,8 @@ $messages['mk'] = array(
 	'translate-manage-intro-other' => 'Еве список на промени во преводите на јазикот $1.
 Прегледајте ги пораките и изберете го дејството што сакате да го направите за секоја поднова.
 Ако изберете да ги занемарите промените, ова дејство ќе биде само привремено.',
+	'translate-manage-import-ok' => 'Увезена: $1',
+	'translate-manage-import-done' => 'Увозот е готов!',
 	'importtranslations' => 'Увези преводи',
 	'translate-import-from-local' => 'Локално подигање на податотека:',
 	'translate-import-load' => 'Вчитај податотека',
@@ -22154,7 +22113,7 @@ $1',
 	'tux-proofread-translated-by-self' => 'Преведено од Вас',
 	'tux-empty-list-all' => 'Оваа група на пораки е празна',
 	'tux-empty-list-all-guide' => 'Изберете друга група на пораки за преведување',
-	'tux-translate-page-no-such-group' => "'''Укажаната група на постои.''' Изберете друга.",
+	'tux-translate-page-no-such-group' => '<strong>Укажаната група пораки на постои.</strong> Изберете друга.',
 	'tux-empty-list-translated' => 'Нема преведени пораки',
 	'tux-empty-list-translated-guide' => 'Можете да помогнете со преводите',
 	'tux-empty-list-translated-action' => 'Преведи',
@@ -22208,9 +22167,9 @@ $messages['ml'] = array(
 	'translate-taction-disabled' => 'ഈ വിക്കിയിൽ ഈ പ്രവൃത്തി പ്രവർത്തനരഹിതമാക്കിയിരിക്കുകയാണ്.',
 	'translate-page-no-such-language' => 'തിരഞ്ഞെടുത്ത ഭാഷ അസാധുവാണ്‌.',
 	'translate-page-no-such-group' => 'തിരഞ്ഞെടുത്ത ഗണം അസാധുവാണ്‌.',
-	'translate-page-disabled' => "ഈ ഗണത്തിലുള്ള സന്ദേശങ്ങൾക്ക് ഈ ഭാഷയിലുള്ള പരിഭാഷ നിരോധിച്ചിരിക്കുന്നു. കാരണം:
+	'translate-page-disabled' => 'ഈ ഗണത്തിലുള്ള സന്ദേശങ്ങൾക്ക് ഈ ഭാഷയിലുള്ള പരിഭാഷ നിരോധിച്ചിരിക്കുന്നു. കാരണം:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'ഈ ഭാഷയിലേയ്ക്കുള്ള പരിഭാഷ പ്രവർത്തനരഹിതമാക്കിയിരിക്കുകയാണ്.',
 	'translate-page-settings-legend' => 'സജ്ജീകരണങ്ങൾ',
 	'translate-page-group' => 'ഗണം',
@@ -22232,13 +22191,12 @@ $messages['ml'] = array(
 	'translate-ext-url' => '<hr />വെബ്സൈറ്റ്: $1',
 	'translate-optional' => '(നിർബന്ധമില്ല)',
 	'translate-ignored' => '(അവഗണിച്ചിരിക്കുന്നു)',
-	'translate-edit-jsopen' => 'തിരുത്തുക',
 	'translate-edit-title' => '"$1" തിരുത്തുക',
 	'translate-edit-definition' => 'സന്ദേശത്തിന്റെ നിർ‌വചനം',
 	'translate-edit-translation' => 'പരിഭാഷ',
 	'translate-edit-contribute' => 'തിരുത്തുക',
 	'translate-edit-no-information' => "''ഈ സന്ദേശത്തിനു ഡോക്കുമെന്റേഷൻ ഇല്ല.
-ഈ സന്ദേശം എങ്ങനെയാണു ഉപയോഗിക്കപ്പെടുന്നത് എന്ന് താങ്കൾക്ക് അറിയാമെങ്കിൽ, അതിനെകുറിച്ചുള്ള ഡോക്കുമെന്റേഷൻ ചേർത്ത് താങ്കൾക്ക് മറ്റുള്ള പരിഭാഷകർക്കു സഹായമേകാം.''",
+ഈ സന്ദേശം എങ്ങനെയാണു ഉപയോഗിക്കപ്പെടുന്നത് എന്ന് താങ്കൾക്ക് അറിയാമെങ്കിൽ, അതിനെകുറിച്ചുള്ള ഡോക്കുമെന്റേഷൻ ചേർത്ത് താങ്കൾക്ക് മറ്റുള്ള പരിഭാഷകർക്കു സഹായമേകാം.''", # Fuzzy
 	'translate-edit-information' => 'സന്ദേശത്തെക്കുറിച്ചുള്ള വിശദീകരണം ($1)',
 	'translate-edit-in-other-languages' => 'സന്ദേശം മറ്റു ഭാഷകളിൽ',
 	'translate-edit-committed' => 'സന്ദേശത്തിന്റെ നിലവിലുള്ള പരിഭാഷ',
@@ -22247,7 +22205,6 @@ $messages['ml'] = array(
 	'translate-edit-tmmatch-source' => 'പരിഭാഷയുടെ മൂലരൂപം: $1',
 	'translate-edit-tmmatch' => '$1% പൊരുത്തപ്പെടുന്നു',
 	'translate-use-suggestion' => 'ഇപ്പോഴുള്ള പരിഭാഷയ്ക്ക് പകരം ഈ നിർദ്ദേശം ഉപയോഗിയ്ക്കുക.',
-	'translate-edit-tab-list' => 'സന്ദേശങ്ങളുടെ പട്ടിക',
 	'translate-edit-nopermission' => 'ഈ സന്ദേശങ്ങൾ പരിഭാഷപ്പെടുത്താൻ താങ്കൾ അനുമതി നേടേണ്ടതുണ്ട്.',
 	'translate-edit-askpermission' => 'അനുമതി അഭ്യർത്ഥിക്കുക',
 	'translate-magic-pagename' => 'മീഡിയവിക്കി വിപുലീകൃത തർജ്ജമ',
@@ -22288,7 +22245,6 @@ $messages['ml'] = array(
 	'prefs-translate' => 'പരിഭാഷാ ഐച്ഛികങ്ങൾ',
 	'translate-pref-editassistlang-bad' => 'പട്ടികയിലെ അസാധുവായ ഭാഷ കോഡ്:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'വിപുലമായ പരിഭാഷാ തിരുത്തലുപാധി (ജാവാസ്ക്രിപ്റ്റ്)',
 	'right-translate' => 'പരിഭാഷയ്ക്കുള്ള സമ്പർക്കമുഖമുപയോഗിച്ച് തിരുത്തുക',
 	'right-translate-manage' => 'സന്ദേശ സഞ്ചയങ്ങളുടെ കൈകാര്യം',
 	'action-translate-manage' => 'സന്ദേശഗണങ്ങൾ കൈകാര്യം ചെയ്യുക',
@@ -22383,6 +22339,8 @@ $messages['ml'] = array(
 	'translate-manage-action-ignore' => 'അവഗണിക്കുക',
 	'translate-manage-fuzzy-summary' => 'സന്ദേശ നിർവചനം മാറിയിരിക്കുന്നു',
 	'translate-manage-submit' => 'നടപ്പിലാക്കുക',
+	'translate-manage-import-ok' => '$1 എന്ന താളിന്റെ പുതിയ പതിപ്പ് ഇറക്കുമതി ചെയ്തിരിക്കുന്നു.', # Fuzzy
+	'translate-manage-import-done' => 'എല്ലാം ചെയ്തു!', # Fuzzy
 	'importtranslations' => 'പരിഭാഷകളുടെ ഇറക്കുമതി',
 	'translate-import-from-local' => 'അപ്‌ലോഡ് ചെയ്യേണ്ട പ്രാദേശിക പ്രമാണം:',
 	'translate-import-load' => 'പ്രമാണം എടുക്കുക',
@@ -22537,10 +22495,10 @@ $messages['mo'] = array(
 	'translate-desc' => '[[Special:Translate|Паӂинэ спечиалэ]] пентру традучеря програмулуй МедияВики, дар ну нумай',
 	'translate-page-no-such-language' => 'Лимба спечификатэ есте инкоректэ.',
 	'translate-page-no-such-group' => 'Групул спечификат есте инвалид.',
-	'translate-page-disabled' => "Посибилитатя де а традуче ачест груп ын ачастэ лимбэ а фост дезактиватэ.
+	'translate-page-disabled' => 'Посибилитатя де а традуче ачест груп ын ачастэ лимбэ а фост дезактиватэ.
 Мотив:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Сетэрь:',
 	'translate-page-group' => 'Груп',
 	'translate-page-language' => 'Лимбэ',
@@ -22560,7 +22518,7 @@ $messages['mo'] = array(
 	'translate-edit-definition' => 'Дефиниция месажулуй',
 	'translate-edit-contribute' => 'контрибуе',
 	'translate-edit-no-information' => "''Ачест месаж ну аре документацие.
-Дакэ штий унде сау кум есте фолосит, ый поць ажута пе чеилалць традукэторь прин адэугаря документацией сале.''",
+Дакэ штий унде сау кум есте фолосит, ый поць ажута пе чеилалць традукэторь прин адэугаря документацией сале.''", # Fuzzy
 	'translate-edit-information' => 'Информаций деспре месажул «$2» ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'Месажул «$1» ын алте лимбь', # Fuzzy
 	'translate-magic-submit' => 'Адуче',
@@ -22600,11 +22558,11 @@ $messages['mr'] = array(
 	'translate-taction-disabled' => 'या विकिवर या क्रियेस अनुपलब्ध केले आहे.',
 	'translate-page-no-such-language' => 'दिलेली भाषा अयोग्य आहे.',
 	'translate-page-no-such-group' => 'दिलेला गट अयोग्य आहे.',
-	'translate-page-disabled' => "या गटातील या भाषेत भाषांतर अनुपलब्ध आहे.
+	'translate-page-disabled' => 'या गटातील या भाषेत भाषांतर अनुपलब्ध आहे.
 कारण:
 
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'या भाषेत भाषांतर करणे अक्षम करण्यात आले आहे.',
 	'translate-page-settings-legend' => 'रुपरेषा',
 	'translate-page-group' => 'गट',
@@ -22627,12 +22585,11 @@ $messages['mr'] = array(
 	'translate-ext-url' => '<hr />वेबसाइट: $1',
 	'translate-optional' => '(वैकल्पिक)',
 	'translate-ignored' => '(दुर्लक्षित)',
-	'translate-edit-jsopen' => 'संपादन करा',
 	'translate-edit-title' => '"$1"चे संपादन',
 	'translate-edit-definition' => 'संदेश व्याख्या',
 	'translate-edit-translation' => 'भाषांतर',
 	'translate-edit-contribute' => 'योगदान करा',
-	'translate-edit-no-information' => "''या संदेशाकरिता कोणतेही नोंदीकरण(डॉक्यूमेंटेशन) नाही. हा संदेश कुठे आणि कसा वापरला आहे हे तुम्हाला ठावूक असेल तर, या पानाचे नोंदीकरण(डॉक्यूमेंटेशन) करून तुम्ही इतर भाषांतरकारांना मदत करू शकता.''",
+	'translate-edit-no-information' => '<em>या संदेशाकरिता कोणतेही नोंदीकरण(डॉक्यूमेंटेशन) नाही. हा संदेश कुठे आणि कसा वापरला आहे हे तुम्हाला ठावूक असेल तर, या पानाचे नोंदीकरण(डॉक्यूमेंटेशन) करून तुम्ही इतर भाषांतरकारांना मदत करू शकता.</em>',
 	'translate-edit-information' => '($1) या संदेशाबद्दल माहिती',
 	'translate-edit-in-other-languages' => 'इतर भाषांमधील संदेश',
 	'translate-edit-committed' => 'संकेतन प्रणालीमधील सध्याचे भाषांतरण',
@@ -22641,7 +22598,6 @@ $messages['mr'] = array(
 	'translate-edit-tmmatch-source' => 'स्रोत मजकूराचे भाषांतर: $1',
 	'translate-edit-tmmatch' => '$1% जुळते',
 	'translate-use-suggestion' => 'सध्याचे भाषांतराएवजी ही सुचवणी टाका.',
-	'translate-edit-tab-list' => 'संदेश यादी',
 	'translate-edit-nopermission' => 'आपणास संदेश भाषांतराची परवानगी हवी.',
 	'translate-edit-askpermission' => 'परवानगीसाठी विनंती करा',
 	'translate-magic-pagename' => 'वाढीव मीडियाविकि भाषांतर',
@@ -22667,6 +22623,9 @@ $messages['mr'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-balance' => 'चुकीची कंस संख्या:
 <strong><nowiki>$1</nowiki></strong>', # Fuzzy
+	'translate-manage-import-ok' => 'आयात केले:$1',
+	'translate-manage-import-done' => 'आयात पूर्ण!',
+	'tux-translate-page-no-such-group' => '<strong>नमूद केलेला गट अस्तित्वात नाही.</strong> वेगळा संदेशगट निवडा.',
 );
 
 /** Malay (Bahasa Melayu)
@@ -22693,10 +22652,10 @@ $messages['ms'] = array(
 	'translate-taction-disabled' => 'Tindakan ini tidak dibenarkan di wiki ini.',
 	'translate-page-no-such-language' => 'Bahasa yang dinyatakan tidak sah.',
 	'translate-page-no-such-group' => 'Kumpulan yang dinyatakan tidak sah.',
-	'translate-page-disabled' => "Penterjemahan kepada bahasa ini dalam kumpulan ini telah dimatikan.
+	'translate-page-disabled' => 'Penterjemahan kepada bahasa ini dalam kumpulan ini telah dimatikan.
 Sebab:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Terjemahan kepada bahasa ini tidak dibenarkan.',
 	'translate-page-settings-legend' => 'Tetapan',
 	'translate-page-group' => 'Kumpulan',
@@ -22720,12 +22679,11 @@ seperti tidak menggunakan jarak atau mengalih huruf kata nama khas. $1',
 	'translate-ext-url' => '<hr />Tapak web: $1',
 	'translate-optional' => '(tidak wajib)',
 	'translate-ignored' => '(tidak diendahkan)',
-	'translate-edit-jsopen' => 'sunting',
 	'translate-edit-title' => 'Sunting "$1"',
 	'translate-edit-definition' => 'Takrifan mesej',
 	'translate-edit-translation' => 'Terjemahan',
 	'translate-edit-contribute' => 'sumbangkan',
-	'translate-edit-no-information' => "''Mesej ini tidak mempunyai dokumentasi. Jika anda tahu di mana atau bagaimana mesej ini digunakan, anda boleh membantu para penterjemah dengan menambahkannya kepada mesej ini.''",
+	'translate-edit-no-information' => "''Mesej ini tidak mempunyai dokumentasi. Jika anda tahu di mana atau bagaimana mesej ini digunakan, anda boleh membantu para penterjemah dengan menambahkannya kepada mesej ini.''", # Fuzzy
 	'translate-edit-information' => 'Maklumat mesej ($1)',
 	'translate-edit-in-other-languages' => 'Mesej dalam bahasa lain',
 	'translate-edit-committed' => 'Penterjemahan terkini di dalam perisian',
@@ -22734,9 +22692,6 @@ seperti tidak menggunakan jarak atau mengalih huruf kata nama khas. $1',
 	'translate-edit-tmmatch-source' => 'Teks sumber terjemahan: $1',
 	'translate-edit-tmmatch' => '$1% berpadan',
 	'translate-use-suggestion' => 'Ganti terjemahan semasa dengan cadangan ini.',
-	'translate-edit-tab-prev' => '<<<',
-	'translate-edit-tab-next' => '>>>',
-	'translate-edit-tab-list' => 'Senarai mesej',
 	'translate-edit-nopermission' => 'Anda memerlukan kebenaran untuk menterjemahkan mesej.',
 	'translate-edit-askpermission' => 'Pohon kebenaran',
 	'translate-magic-pagename' => 'Terjemahan tambahan MediaWiki',
@@ -22798,7 +22753,6 @@ Terjemahan mesej dalam bahasa-bahasa ini ditunjukkan apabila anda menterjemah.
 Senarai bahasa asali bergantung pada bahasa anda.',
 	'translate-pref-editassistlang-bad' => 'Kod bahasa tidak sah dalam senarai:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Editor penterjemahan termaju (JavaScript)',
 	'right-translate' => 'Menyunting dengan menggunakan antara muka penterjemahan',
 	'right-translate-manage' => 'Menguruskan kumpulan mesej',
 	'action-translate-manage' => 'menguruskan kumpulan mesej',
@@ -22901,7 +22855,6 @@ Warna garis bawah menunjukkan betapa barunya seseorang penterjemah giat di sini.
 	'translate-smg-nochanges' => 'Tiada perubahan pada proses.',
 	'translate-smg-submit' => 'Serahkan perubahan untuk diproses',
 	'translate-smg-submitted' => 'Takrifan mesej telah dikemaskinikan. Perubahan sedang diproses di latar belakang.',
-	'translate-smg-postponed' => 'Sesetengah perubahan tidak dapat diproses. [[{{FULLPAGENAME}}|Cuba lagi]].',
 	'translate-smg-left' => 'Kandungan pesanan dalam wiki',
 	'translate-smg-right' => 'Perubahan baru',
 	'translate-manage-import-diff' => 'Mesej $1 | Tindakan: $2',
@@ -22927,6 +22880,8 @@ Sila semak.',
 	'translate-manage-intro-other' => 'Berikut ialah senarai perubahan dalam bahasa $1.
 Sila semak perubahan dan pilih tindakan yang anda hendak lakukan untuk setiap kemaskini.
 Jika anda memilih untuk mengabaikan perubahan, maka tindakan ini hanya sementara.',
+	'translate-manage-import-ok' => 'Versi baru diimport bagi laman $1.', # Fuzzy
+	'translate-manage-import-done' => 'Beres!', # Fuzzy
 	'importtranslations' => 'Import terjemahan',
 	'translate-import-from-local' => 'Muat naik fail setempat:',
 	'translate-import-load' => 'Muatkan fail',
@@ -23073,7 +23028,7 @@ Paling berguna dengan tugas menyemak.',
 	'tux-proofread-translated-by-self' => 'Terjemahan anda',
 	'tux-empty-list-all' => 'Kumpulan mesej ini kosong',
 	'tux-empty-list-all-guide' => 'Pilih kumpulan mesej yang lain untuk terjemah',
-	'tux-translate-page-no-such-group' => "'''Kumpulan yang dinyatakan tidak wujud.''' Pilih kumpulan mesej yang berbeza.",
+	'tux-translate-page-no-such-group' => "'''Kumpulan yang dinyatakan tidak wujud.''' Pilih kumpulan mesej yang berbeza.", # Fuzzy
 	'tux-empty-list-translated' => 'Tiada mesej yang diterjemahkan',
 	'tux-empty-list-translated-guide' => 'Anda boleh membantu menterjemah',
 	'tux-empty-list-translated-action' => 'Terjemah',
@@ -23113,7 +23068,7 @@ $messages['mt'] = array(
 	'translate-page-disabled' => "Traduzzjonijiet f'din il-lingwa għal dan il-grupp ġew diżabilitati.
 Raġuni:
 
-''$1''",
+<em>$1</em>",
 	'translate-page-settings-legend' => 'Impostazzjonijiet',
 	'translate-page-group' => 'Grupp',
 	'translate-page-language' => 'Lingwa',
@@ -23136,14 +23091,13 @@ Raġuni:
 	'translate-edit-translation' => 'Traduzzjoni',
 	'translate-edit-contribute' => 'ikkontribwixxi',
 	'translate-edit-no-information' => "''Dan il-messaġġ m'għandu l-ebda dokumentazzjoni.''
-''Jekk taf fejn jew kif jiġi wżat dan il-messaġġ, tista' tgħin lit-tradutturi l-oħra billi żżid id-dokumentazzjoni ma' dan il-messaġġ.''",
+''Jekk taf fejn jew kif jiġi wżat dan il-messaġġ, tista' tgħin lit-tradutturi l-oħra billi żżid id-dokumentazzjoni ma' dan il-messaġġ.''", # Fuzzy
 	'translate-edit-information' => 'Informazzjoni dwar il-messaġġ ($1)',
 	'translate-edit-in-other-languages' => "Il-messaġġ f'lingwi oħra",
 	'translate-edit-committed' => 'Traduzzjoni attwali fis-software',
 	'translate-edit-warnings' => 'Twissijiet dwar traduzzjonijiet mhux kompluti',
 	'translate-edit-tmsugs' => 'Suġġerimenti mill-memorja tat-traduzzjonijiet',
 	'translate-use-suggestion' => "Biddel it-traduzzjoni attwali ma' din is-suġġeriment.",
-	'translate-edit-tab-list' => "Lista ta' messaġġi",
 	'translate-edit-nopermission' => 'Għandek bżonn l-awtorizzazzjoni sabiex tittraduċi messaġġi.',
 	'translate-edit-askpermission' => 'Itlob l-awtorizzazzjoni',
 	'translate-magic-pagename' => "Traduzzjoni estiża ta' MediaWiki",
@@ -23198,7 +23152,6 @@ It-traduzzjonijiet ta' messaġġ f'dawn il-lingwi huma murija meta tkun qed titt
 Il-lista predefinita tal-lingwi tiddependi fuq il-lingwa tiegħek.",
 	'translate-pref-editassistlang-bad' => 'Kodiċi tal-lingwa invalidu fil-lista:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => "Editur imtejjeb ta' traduzzjoni (JavaScript)",
 	'right-translate' => 'Immodifika bl-użu tal-interfaċċa tat-traduzzjoni',
 	'translate-rc-translation-filter' => 'Iffilitra t-traduzzjonijiet:',
 	'translate-rc-translation-filter-no' => 'Tagħmel xejn',
@@ -23461,10 +23414,10 @@ $messages['nb'] = array(
 	'translate-taction-disabled' => 'Denne handlingen er deaktivert på denne wikien.',
 	'translate-page-no-such-language' => 'Oppgitt språk var ugyldig.',
 	'translate-page-no-such-group' => 'Oppgitt gruppe var ugyldig.',
-	'translate-page-disabled' => "Oversettelser til dette språket i denne gruppen har blitt deaktivert.
+	'translate-page-disabled' => 'Oversettelser til dette språket i denne gruppen har blitt deaktivert.
 Årsak:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Oversetting til dette språket er slått av.',
 	'translate-page-settings-legend' => 'Innstillinger',
 	'translate-page-group' => 'Gruppe',
@@ -23486,13 +23439,12 @@ Valgfrie meldinger bør kun oversettes om språket ditt har spesielle behov, som
 	'translate-ext-url' => '<hr />Nettsted: $1',
 	'translate-optional' => '(valgfri)',
 	'translate-ignored' => '(ignorert)',
-	'translate-edit-jsopen' => 'rediger',
 	'translate-edit-title' => 'Rediger «$1»',
 	'translate-edit-definition' => 'Meldingsdefinisjon',
 	'translate-edit-translation' => 'Oversettelse',
 	'translate-edit-contribute' => 'bidra',
 	'translate-edit-no-information' => "''Denne meldingen har ingen dokumentasjon.''
-''Om du vet hvor eller hvordan denne meldingen brukes kan du hjelpe andre oversettere ved å legge inn dokumentasjon på denne meldingen.''",
+''Om du vet hvor eller hvordan denne meldingen brukes kan du hjelpe andre oversettere ved å legge inn dokumentasjon på denne meldingen.''", # Fuzzy
 	'translate-edit-information' => 'Informasjon om meldingen ($1)',
 	'translate-edit-in-other-languages' => 'Meldingen på andre språk',
 	'translate-edit-committed' => 'Nåværende oversettelse i programvaren',
@@ -23501,7 +23453,6 @@ Valgfrie meldinger bør kun oversettes om språket ditt har spesielle behov, som
 	'translate-edit-tmmatch-source' => 'Kildetekst for oversettelse: $1',
 	'translate-edit-tmmatch' => 'samsvarer $1 %',
 	'translate-use-suggestion' => 'Erstatt nåværende oversettelse med dette forslaget.',
-	'translate-edit-tab-list' => 'Meldingsliste',
 	'translate-edit-nopermission' => 'Du må ha tillatelse til å oversette meldinger.',
 	'translate-edit-askpermission' => 'Be om tillatelse',
 	'translate-magic-pagename' => 'Utvidet MediaWiki-oversettelse',
@@ -23562,7 +23513,6 @@ Oversettelsen av en melding i disse språkene blir vist mens du oversetter.
 Standardlisten over språk avhenger av språket ditt.',
 	'translate-pref-editassistlang-bad' => 'Ugyldig språkkode i listen:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Utvidet redigeringsvindu for oversettelser (JavaScript)',
 	'right-translate' => 'Rediger med oversettingsgrensesnittet',
 	'right-translate-manage' => 'Administrer meldingsgrupper',
 	'action-translate-manage' => 'håndtere meldingsgrupper',
@@ -23660,7 +23610,6 @@ Alle verdiene har øvre og nedre grenser.',
 	'translate-smg-nochanges' => 'Det er ingen endringer å bearbeide.',
 	'translate-smg-submit' => 'Lagre endringer for prosessering',
 	'translate-smg-submitted' => 'Meldingdefinisjoner har blitt oppdatert. Endringene prosesseres i bakgrunnen.',
-	'translate-smg-postponed' => 'Noen endringer kunne ikke bearbeides. [[{{FULLPAGENAME}}|Prøv igjen]].',
 	'translate-smg-left' => 'Meldingsinnhold i wikien',
 	'translate-smg-right' => 'Kommende endringer',
 	'translate-manage-import-diff' => 'Melding $1 | Handlinger: $2',
@@ -23686,6 +23635,8 @@ Vennligst sjekk.',
 	'translate-manage-intro-other' => 'Nedenfor er en liste over endringer i oversettelser for språket $1.
 Vennligst revider endringene og velg hvilken handling du vil utføre for hver oversettelse.
 Dersom du velger å ignorere endringene vil de bli overkjørt ved neste eksportering.', # Fuzzy
+	'translate-manage-import-ok' => 'Importerte ny versjon av siden $1.', # Fuzzy
+	'translate-manage-import-done' => 'Alt gjort!', # Fuzzy
 	'importtranslations' => 'Importer oversettelser',
 	'translate-import-from-local' => 'Lokal filopplasting:',
 	'translate-import-load' => 'Last fil',
@@ -23825,7 +23776,7 @@ Mest nyttig for korrekturlesningsoppgaver.', # Fuzzy
 	'tux-proofread-translated-by-self' => 'Oversatt av deg',
 	'tux-empty-list-all' => 'Denne meldingsgruppen er tom',
 	'tux-empty-list-all-guide' => 'Velg en annen meldingsgruppe å oversette',
-	'tux-translate-page-no-such-group' => "'''Den valgte gruppen eksisterer ikke.''' Velg en annen meldingsgruppe.",
+	'tux-translate-page-no-such-group' => "'''Den valgte gruppen eksisterer ikke.''' Velg en annen meldingsgruppe.", # Fuzzy
 	'tux-empty-list-translated' => 'Ingen uoversatte meldinger',
 	'tux-empty-list-translated-guide' => 'Du kan hjelpe til å oversette',
 	'tux-empty-list-translated-action' => 'Oversett',
@@ -23902,10 +23853,10 @@ $messages['ne'] = array(
 	'translate-desc' => 'मीडियाविकि तथा अन्यको अनुवादको निम्ति [[Special:Translate|विशेष पृष्ठ]]',
 	'translate-page-no-such-language' => 'निर्दिष्ट भाषा अमान्य थियो',
 	'translate-page-no-such-group' => 'निर्दिष्ट समूह अमान्य थियो',
-	'translate-page-disabled' => "यस भाषामा यो समूहको अनुवाद कार्य निस्क्रिय गरिएको छ।
+	'translate-page-disabled' => 'यस भाषामा यो समूहको अनुवाद कार्य निस्क्रिय गरिएको छ।
 कारण:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'सेटिंग्स',
 	'translate-page-group' => 'समूह',
 	'translate-page-language' => 'भाषा',
@@ -23928,7 +23879,7 @@ $messages['ne'] = array(
 	'translate-edit-translation' => 'अनुवाद',
 	'translate-edit-contribute' => 'योगदान गर्ने',
 	'translate-edit-no-information' => "''यो सन्देशको दस्तावेजीकरण (documentation) छैन''
-''यदि तपाईं यो सन्देश कहाँ अथवा कसरी प्रयोग गरिन्छ भन्ने कुरा जान्नु हुन्छ भनें तपाईंले  यसको दस्तावेजीकरण थप गरी अरु अनुवादकहरुलाई सहयोग दिन सक्नुहुन्छ।''",
+''यदि तपाईं यो सन्देश कहाँ अथवा कसरी प्रयोग गरिन्छ भन्ने कुरा जान्नु हुन्छ भनें तपाईंले  यसको दस्तावेजीकरण थप गरी अरु अनुवादकहरुलाई सहयोग दिन सक्नुहुन्छ।''", # Fuzzy
 	'translate-edit-information' => '($1) सन्देशको बारेमा जानकारी',
 	'translate-edit-in-other-languages' => 'सन्देश अरु भाषाहरुमा',
 	'translate-edit-committed' => 'सफ्टवेयरमा वर्तमान अनुवाद',
@@ -23936,7 +23887,6 @@ $messages['ne'] = array(
 	'translate-edit-tmsugs' => 'अनुवाद स्मृतिबाट सुझावहरु',
 	'translate-edit-tmmatch' => '$1% मेल',
 	'translate-use-suggestion' => 'यस सुझाउलाई अनुवादको कोठामा हाल्नुहोस्। यसले वर्तमान सामग्री(शव्दहरु)को स्थान लिनेछ।', # Fuzzy
-	'translate-edit-tab-list' => 'सन्देश सूची',
 	'translate-magic-pagename' => 'विस्तारित मीडियाविकि अनुवाद',
 	'translate-magic-submit' => 'हेर्ने',
 	'translate-magic-cm-export' => 'निर्यात गर्ने',
@@ -24037,9 +23987,9 @@ $messages['nl'] = array(
 	'translate-taction-disabled' => 'Deze handeling is uitgeschakeld op deze wiki.',
 	'translate-page-no-such-language' => 'Er is een ongeldige taalcode opgegeven',
 	'translate-page-no-such-group' => 'De opgegeven groep bestaat niet.',
-	'translate-page-disabled' => "Vertalingen in deze taal voor deze groep zijn uitgeschakeld. Reden:
+	'translate-page-disabled' => 'Vertalingen in deze taal voor deze groep zijn uitgeschakeld. Reden:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Vertalen in deze taal is uitgeschakeld.',
 	'translate-page-settings-legend' => 'Instellingen',
 	'translate-page-group' => 'Groep',
@@ -24066,7 +24016,7 @@ Optionele berichten hoeven alleen vertaald te worden als uw taal bijzondere eige
 	'translate-edit-translation' => 'Vertaling',
 	'translate-edit-contribute' => 'bijdragen',
 	'translate-edit-no-information' => "''Dit bericht heeft geen documentatie.''
-''Als u weet waar dit bericht wordt gebruikt, dan kunt u andere gebruikers helpen door documentatie voor dit bericht toe te voegen.''",
+''Als u weet waar dit bericht wordt gebruikt, dan kunt u andere gebruikers helpen door documentatie voor dit bericht toe te voegen.''", # Fuzzy
 	'translate-edit-information' => 'Informatie over bericht ($1)',
 	'translate-edit-in-other-languages' => 'Bericht in andere talen',
 	'translate-edit-committed' => 'Huidig bericht in software',
@@ -24408,7 +24358,7 @@ Dit is vooral nuttig voor de controletaken.',
 	'tux-proofread-translated-by-self' => 'Vertaald door u',
 	'tux-empty-list-all' => 'Deze berichtengroep is leeg',
 	'tux-empty-list-all-guide' => 'Selecteer een andere berichtengroep om te vertalen',
-	'tux-translate-page-no-such-group' => "'''De opgegeven groep bestaat niet.''' Selecteer een andere berichtengroep.",
+	'tux-translate-page-no-such-group' => "'''De opgegeven groep bestaat niet.''' Selecteer een andere berichtengroep.", # Fuzzy
 	'tux-empty-list-translated' => 'Geen vertaalde berichten',
 	'tux-empty-list-translated-guide' => 'U kunt helpen met vertalen',
 	'tux-empty-list-translated-action' => 'Vertalen',
@@ -24464,9 +24414,9 @@ $messages['nn'] = array(
 	'translate-taction-disabled' => 'Denne handlinga er slegen av på denne wikien.',
 	'translate-page-no-such-language' => 'Ugyldig språkkode.',
 	'translate-page-no-such-group' => 'Ikkje gyldig gruppe.',
-	'translate-page-disabled' => "Omsetjingar til dette språket i denne gruppa er slått av. Årsak:
+	'translate-page-disabled' => 'Omsetjingar til dette språket i denne gruppa er slått av. Årsak:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Omsetjing til dette språket er slege av.',
 	'translate-page-settings-legend' => 'Innstillingar',
 	'translate-page-group' => 'Gruppe',
@@ -24493,7 +24443,7 @@ Valfrie meldingar skal ein berre setja om når språket ditt har særskilde krav
 	'translate-edit-definition' => 'Melding som skal setjast om',
 	'translate-edit-translation' => 'Omsetjing',
 	'translate-edit-contribute' => 'bidra',
-	'translate-edit-no-information' => "''Denne meldinga har ikkje dokumentasjon. Om du veit kvar eller korleis denne meldinga vert nytta, kan du hjelpe andre omsetjarar ved å legge inn dokumentasjon til denne meldinga.''",
+	'translate-edit-no-information' => "''Denne meldinga har ikkje dokumentasjon. Om du veit kvar eller korleis denne meldinga vert nytta, kan du hjelpe andre omsetjarar ved å legge inn dokumentasjon til denne meldinga.''", # Fuzzy
 	'translate-edit-information' => 'Informasjon om meldinga ($1)',
 	'translate-edit-in-other-languages' => 'Meldinga på andre språk',
 	'translate-edit-committed' => 'Noverande omsetjing i programvaren',
@@ -24671,6 +24621,8 @@ Fargen på understrekinga indikerer kor nyleg ein omsetjar har vore aktiv her.',
 	'translate-manage-import-summary' => 'Importerer ein ny versjon frå ei ekstern kjelde',
 	'translate-manage-fuzzy-summary' => 'Meldingsdefinisjonen har vorte endra',
 	'translate-manage-submit' => 'Utfør',
+	'translate-manage-import-ok' => 'Importert ny versjon av sida $1', # Fuzzy
+	'translate-manage-import-done' => 'Alt klart!', # Fuzzy
 	'importtranslations' => 'Importér omsetjingar',
 	'translate-import-from-local' => 'Lokal filopplasting:',
 	'translate-import-load' => 'Last fil',
@@ -24866,9 +24818,9 @@ $messages['oc'] = array(
 	'translate-taction-disabled' => 'Aquesta accion es desactivada sus aqueste wiki.',
 	'translate-page-no-such-language' => 'Un còde de lengatge invalid es estat indicat',
 	'translate-page-no-such-group' => 'Lo grop especificat es invalid.',
-	'translate-page-disabled' => "Las traduccions dins aquesta lenga dins aqueste grop son estadas desactivadas. Motiu :
+	'translate-page-disabled' => 'Las traduccions dins aquesta lenga dins aqueste grop son estadas desactivadas. Motiu :
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'La traduccion dins aquesta lenga es desactivada.',
 	'translate-page-settings-legend' => 'Configuracion',
 	'translate-page-group' => 'Grop',
@@ -24891,12 +24843,11 @@ coma d'utilizar pas d'espacis o de transformar de noms pròpris. $1",
 	'translate-ext-url' => '<hr />Site web : $1',
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorat)',
-	'translate-edit-jsopen' => 'modificar',
 	'translate-edit-title' => 'Modificar « $1 »',
 	'translate-edit-definition' => 'Definicion del messatge',
 	'translate-edit-translation' => 'Traduccion',
 	'translate-edit-contribute' => 'contribuir',
-	'translate-edit-no-information' => 'Actualament, aqueste messatge es pas documentat. Se sabètz ont o cossí aqueste messatge es utilizat, podètz ajudar los autres traductors en documentant aqueste messatge.',
+	'translate-edit-no-information' => 'Actualament, aqueste messatge es pas documentat. Se sabètz ont o cossí aqueste messatge es utilizat, podètz ajudar los autres traductors en documentant aqueste messatge.', # Fuzzy
 	'translate-edit-information' => 'Entresenhas a prepaus del messatge ($1)',
 	'translate-edit-in-other-languages' => "Messatge dins d'autras lengas",
 	'translate-edit-committed' => 'Traduccions actualas ja dins lo logicial',
@@ -24905,7 +24856,6 @@ coma d'utilizar pas d'espacis o de transformar de noms pròpris. $1",
 	'translate-edit-tmmatch-source' => 'Tèxte font de la traduccion : $1',
 	'translate-edit-tmmatch' => '$1 % de correspondéncia',
 	'translate-use-suggestion' => 'Remplaçar la traduccion actuala per aquesta suggestion.',
-	'translate-edit-tab-list' => 'Lista de messatges',
 	'translate-edit-nopermission' => 'Vos cal obténer la permission de tradusir los messatges.',
 	'translate-edit-askpermission' => 'Demandar la permission',
 	'translate-magic-pagename' => 'Traduccion de MediaWiki espandida',
@@ -24962,7 +24912,6 @@ La traduccion d’un messatge dins aquelas lengas es afichada quand sètz a trad
 La lista per defaut de las lengas varia en foncion de vòstra lenga.',
 	'translate-pref-editassistlang-bad' => 'Còde lenga invalid dins la lista :
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Editor de traduccion melhorat (JavaScript)',
 	'right-translate' => "Modificar en utilizant l'interfàcia de traduccion",
 	'right-translate-manage' => 'Gerir los gropes de messatge',
 	'action-translate-manage' => 'gerir los gropes de messatges',
@@ -25064,6 +25013,8 @@ Renviatz lo formulari per contuhar lo tractament.',
 	'translate-manage-intro-other' => "Çaijós figura una lista de las modificacions en $1.
 Tornatz veire las modificacions e causissètz una accion d'efectuar per cada traduccion.
 Se decidètz d'ignorar las modificacions, seràn espotits al moment de l'expòrt venent.", # Fuzzy
+	'translate-manage-import-ok' => 'Una version novèla de la pagina $1 es estada importada.', # Fuzzy
+	'translate-manage-import-done' => 'Tot es estat fach !', # Fuzzy
 	'importtranslations' => 'Importar las traduccions',
 	'translate-import-from-local' => 'Importar un fichièr local :',
 	'translate-import-load' => 'Cargar lo fichièr',
@@ -25152,7 +25103,7 @@ Es utilizat mai que mai pels prètzfaches de relectura.',
 	'tux-editor-doc-editor-cancel' => 'Anullar',
 	'tux-messagetable-more-messages' => '$1 {{PLURAL:$1|messatge|messatges}} mai',
 	'tux-messagetable-loading-messages' => 'Cargament {{PLURAL:$1|del messatge|dels messatges}}…',
-	'tux-translate-page-no-such-group' => "'''Lo grop indicat existís pas.''' Seleccionatz un autre grop de messatges.",
+	'tux-translate-page-no-such-group' => "'''Lo grop indicat existís pas.''' Seleccionatz un autre grop de messatges.", # Fuzzy
 	'tux-empty-list-other-guide' => 'Podètz ajudar a repassar las traduccions existentas',
 	'tux-empty-list-other-action' => 'Repassar las traduccions',
 	'tux-empty-list-other-link' => 'Afichar totes los messatges',
@@ -25183,7 +25134,7 @@ $messages['or'] = array(
 	'translate-taction-disabled' => 'ଉଇକିରେ ଅପଲୋଡ଼ କରିବା ଅଚଳ କରାଯାଇଛି ।',
 	'translate-page-no-such-language' => 'ଦିଆଯାଇଥିବା ଭାଷାଟି ଭୁଲ ।',
 	'translate-page-no-such-group' => 'ଦିଆଯାଇଥିବା ସମୂହଟି ଭୁଲ ।',
-	'translate-page-disabled' => "ଏହି ସମୂହରେ ଦିଆଯାଇଥିବା ଏହି ଭାଷାର ଅନୁବାଦଟି ଅଚଳ କରାଯାଇଛି । କାରଣ: ''$1''",
+	'translate-page-disabled' => 'ଏହି ସମୂହରେ ଦିଆଯାଇଥିବା ଏହି ଭାଷାର ଅନୁବାଦଟି ଅଚଳ କରାଯାଇଛି । କାରଣ: <em>$1</em>',
 	'translate-language-disabled' => 'ଏହି ଭାଷାରେ ଅନୁବାଦ କରିବା ଅଚଳ କରାଯାଇଛି ।',
 	'translate-page-settings-legend' => 'ସଜାଣିଗୁଡ଼ିକ',
 	'translate-page-group' => 'ଗୋଠ',
@@ -25203,7 +25154,6 @@ $messages['or'] = array(
 	'translate-ext-url' => '<hr />ୱେବସାଇଟ: $1',
 	'translate-optional' => '(ଇଚ୍ଛାଧୀନ)',
 	'translate-ignored' => '(ଏଡ଼ାଇଯାନ୍ତୁ)',
-	'translate-edit-jsopen' => 'ଏହାକୁ ବଦଳାନ୍ତୁ',
 	'translate-edit-title' => 'ବଦଳ "$1"',
 	'translate-edit-definition' => 'ମେସେଜ ସଜ୍ଞା',
 	'translate-edit-translation' => 'ଅନୁବାଦ',
@@ -25216,7 +25166,6 @@ $messages['or'] = array(
 	'translate-edit-tmmatch-source' => 'ସୋର୍ସ ଟେକ୍ସଟରୁ ଅନୁବାଦ: $1',
 	'translate-edit-tmmatch' => '$1% ମେଳ',
 	'translate-use-suggestion' => 'ଏହି ପରାମର୍ଶରୁ ଏବେକାର ଅନୁବାଦକୁ ବଦଳାଇଦିଅନ୍ତୁ ।',
-	'translate-edit-tab-list' => 'ସନ୍ଦେଶ ତାଲିକା',
 	'translate-edit-nopermission' => 'ଅନୁବାଦ କରିବାପାଇଁ ଆପଣଙ୍କୁ ଅନୁମତି ଲୋଡ଼ା ।',
 	'translate-edit-askpermission' => 'ଅନୁମତି ପାଇଁ ଅନୁରୋଧ କରନ୍ତୁ ।',
 	'translate-magic-pagename' => 'ପରିବର୍ଦ୍ଧିତ ମିଡ଼ିଆଉଇକି ଅନୁବାଦସମୂହ',
@@ -25329,10 +25278,10 @@ $messages['pa'] = array(
 	'translate-taction-disabled' => 'ਇਹ ਕਾਰਜ ਵਿਕੀ ਉੱਤੇ ਬੰਦ ਕੀਤਾ ਹੋਇਆ ਹੈ।',
 	'translate-page-no-such-language' => 'ਦੱਸੀ ਗਈ ਭਾਸ਼ਾ ਗ਼ਲਤ ਹੈ।',
 	'translate-page-no-such-group' => 'ਦੱਸਿਆ ਗਿਆ ਸਮੂਹ ਗ਼ਲਤ ਹੈ।',
-	'translate-page-disabled' => "ਇਸ ਸਮੂਹ ਵਿਚ ਇਸ ਭਾਸ਼ਾ ਦੇ ਅਨੁਵਾਦ ਬੰਦ ਕਰ ਦਿੱਤੇ ਗਏ ਹਨ।
+	'translate-page-disabled' => 'ਇਸ ਸਮੂਹ ਵਿਚ ਇਸ ਭਾਸ਼ਾ ਦੇ ਅਨੁਵਾਦ ਬੰਦ ਕਰ ਦਿੱਤੇ ਗਏ ਹਨ।
 ਕਾਰਨ:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'ਇਸ ਭਾਸ਼ਾ ਵਿਚ ਅਨੁਵਾਦ ਬੰਦ ਹੈ।',
 	'translate-page-settings-legend' => 'ਸੈਟਿੰਗ',
 	'translate-page-group' => 'ਗਰੁੱਪ',
@@ -25446,6 +25395,7 @@ $messages['pa'] = array(
 	'translate-manage-import-deleted' => '$1 ਮਿਟਾਇਆ ਗਿਆ ਸੁਨੇਹਾ',
 	'translate-manage-action-import' => 'ਮੰਗਾਓ',
 	'translate-manage-action-ignore' => 'ਅਣਡਿੱਠਾ ਕਰੋ',
+	'translate-manage-import-done' => 'ਸਭ ਮੁਕੰਮਲ!', # Fuzzy
 	'importtranslations' => 'ਅਨੁਵਾਦ ਮੰਗਾਓ',
 	'translate-import-from-local' => 'ਸਥਾਨਕ ਫ਼ਾਈਲ ਅੱਪਲੋਡ:',
 	'translate-import-load' => 'ਫ਼ਾਈਲ ਲੋਡ ਕਰੋ',
@@ -25662,10 +25612,10 @@ $messages['pfl'] = array(
 	'translate-taction-disabled' => 'Des do hods ned uffm Wiki.',
 	'translate-page-no-such-language' => 'Die oagewene Schbrooch isch ugildisch.',
 	'translate-page-no-such-group' => 'Die oagewene Grubb isch ugildisch.',
-	'translate-page-disabled' => "Iwasedzunge in die Schbrooch ged ned fa die Grubb.
+	'translate-page-disabled' => 'Iwasedzunge in die Schbrooch ged ned fa die Grubb.
 Wesche:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Oischdellunge',
 	'translate-page-group' => 'Grubb',
 	'translate-page-language' => 'Schbrooch',
@@ -25687,13 +25637,12 @@ wie kä Leazaische zu bnudze oda Aischenoame zu umschraiwe. $1',
 	'translate-ext-url' => '<hr />Websaid: $1',
 	'translate-optional' => '(uff Wunsch)',
 	'translate-ignored' => '(ignoriead)',
-	'translate-edit-jsopen' => 'ännare',
 	'translate-edit-title' => '„$1“ bearwaide',
 	'translate-edit-definition' => 'Uaschbringlischi Nochrischd',
 	'translate-edit-translation' => 'Iwasedzung',
 	'translate-edit-contribute' => 'midschaffe',
 	'translate-edit-no-information' => "''Fa die Nochrischd hods kä Unalaache.''
-''Wonn driwwa was wisse duschd, konschd de onare baide Erwed helfe, wonnen saache duschd, worums do gehd.''",
+''Wonn driwwa was wisse duschd, konschd de onare baide Erwed helfe, wonnen saache duschd, worums do gehd.''", # Fuzzy
 	'translate-edit-information' => 'Auskinfd iwa die Nochrischd ($1)',
 	'translate-edit-in-other-languages' => 'Nochrischd in onare Schbrooche',
 	'translate-edit-committed' => 'Deazaidischi Iwasedzung',
@@ -25702,7 +25651,6 @@ wie kä Leazaische zu bnudze oda Aischenoame zu umschraiwe. $1',
 	'translate-edit-tmmatch-source' => 'Qwelltegsch vunde Iwasedzung: $1',
 	'translate-edit-tmmatch' => '$1 % Iwaoischdimmung',
 	'translate-use-suggestion' => 'Iwasedzung duaschn Voaschlach easedze.',
-	'translate-edit-tab-list' => 'Nochrischdelischd',
 	'translate-edit-nopermission' => "Fas Iwasedze vun Nochrischde braugschd s'Räschd.",
 	'translate-edit-askpermission' => 'Nochde Bwillischung frooche',
 	'translate-magic-pagename' => 'Eawaidadi MediaWiki-Iwasedzung',
@@ -25758,7 +25706,6 @@ Iwasedzunge vun Nochrischde in die Schbrooche werren baim Iwasedze gzaischd.
 Die Schdandadlischd vunde Schbrooche b'ruhd uff doina Schbrooch.",
 	'translate-pref-editassistlang-bad' => "S'hodn ugildischi Schbroochcode inde Lisch:
 <nowiki>$1</nowiki>.",
-	'translate-pref-jsedit' => 'Vagreeßades Iwasedzungsbrogramm (braugschd JavaScript)',
 	'right-translate' => 'Schaffe mitde Hilf vunde Iwasedzungsowaflesch',
 	'right-translate-manage' => 'Nochrischdegrubbe vawalde',
 	'action-translate-manage' => 'Nochrischdegrubbe zu vawalde',
@@ -25877,6 +25824,7 @@ Schiggs Foamula nomol ab, ums foadsedze zu kenne.",
 	'translate-manage-conflict-summary' => 'Naiji Ausgab isch vunea Qwell nuffglaade worr.
 Iwabriefs bidde.',
 	'translate-manage-fuzzy-summary' => "Die Feschdleschung vunde Nochrischde hodsisch g'änad",
+	'translate-manage-import-done' => 'Alles erledischd!', # Fuzzy
 	'importtranslations' => 'Iwasedzunge roihole',
 	'translate-import-from-local' => 'Dadai do nufflaade:',
 	'translate-import-load' => 'Dadai lade',
@@ -26000,9 +25948,9 @@ $messages['pl'] = array(
 	'translate-taction-disabled' => 'Ta akcja jest zablokowana w tej wiki.',
 	'translate-page-no-such-language' => 'Podano nieprawidłowy język.',
 	'translate-page-no-such-group' => 'Podano nieprawidłową grupę.',
-	'translate-page-disabled' => "Tłumaczenia na ten język, w tej grupie, zostały wstrzymane z następującego powodu:
+	'translate-page-disabled' => 'Tłumaczenia na ten język, w tej grupie, zostały wstrzymane z następującego powodu:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Tłumaczenie na ten język jest zablokowane.',
 	'translate-page-settings-legend' => 'Ustawienia',
 	'translate-page-group' => 'Grupa',
@@ -26028,7 +25976,7 @@ Powinny one być tłumaczone tylko wtedy, gdy język docelowy wymaga pisania bez
 	'translate-edit-definition' => 'Tekst źródłowy komunikatu',
 	'translate-edit-translation' => 'Tłumaczenie',
 	'translate-edit-contribute' => 'prześlij',
-	'translate-edit-no-information' => "''Ten komunikat nie posiada dokumentacji. Jeśli wiesz gdzie lub jak ten komunikat jest używany, możesz pomóc innym tłumaczom przez dodanie dokumentacji do tego komunikatu.''",
+	'translate-edit-no-information' => "''Ten komunikat nie posiada dokumentacji. Jeśli wiesz gdzie lub jak ten komunikat jest używany, możesz pomóc innym tłumaczom przez dodanie dokumentacji do tego komunikatu.''", # Fuzzy
 	'translate-edit-information' => 'Objaśnienie komunikatu ($1)',
 	'translate-edit-in-other-languages' => 'Komunikat w innych językach',
 	'translate-edit-committed' => 'Aktualne tłumaczenie oprogramowania',
@@ -26037,7 +25985,6 @@ Powinny one być tłumaczone tylko wtedy, gdy język docelowy wymaga pisania bez
 	'translate-edit-tmmatch-source' => 'Tekst źródłowy tłumaczenia: $1',
 	'translate-edit-tmmatch' => 'pasuje $1%',
 	'translate-use-suggestion' => 'Zastąp obecne tłumaczenie tą propozycją.',
-	'translate-edit-tab-list' => 'Spis komunikatów',
 	'translate-edit-nopermission' => 'Nie masz uprawnień do tłumaczenia komunikatów.',
 	'translate-edit-askpermission' => 'Poproś o uprawnienia',
 	'translate-magic-pagename' => 'Rozszerzone tłumaczenie MediaWiki',
@@ -26099,7 +26046,6 @@ Komunikat w tych językach będzie widoczny podczas wykonywania tłumaczenia.
 Domyślna lista języków zależy od Twojego języka.',
 	'translate-pref-editassistlang-bad' => 'Na liście jest błędny kod języka –
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Rozszerzony edytor tłumaczeń (JavaScript)',
 	'right-translate' => 'Edycja z użyciem interfejsu tłumaczeń',
 	'right-translate-manage' => 'Zarządzanie grupami komunikatów',
 	'action-translate-manage' => 'zarządzania grupami komunikatów',
@@ -26224,6 +26170,8 @@ Proszę sprawdzić.',
 	'translate-manage-intro-other' => 'Poniżej znajduje się lista zmian komunikatów w języku $1.
 Proszę sprawdzić zmiany i wybrać dla każdego komunikatu operację, którą chcesz dla niego wykonać.
 Jeśli polecisz zignorować zmiany, zostaną one nadpisane przy następnym eksporcie.', # Fuzzy
+	'translate-manage-import-ok' => 'Zaimportowano nową wersję strony $1.', # Fuzzy
+	'translate-manage-import-done' => 'Wszystko zrobione!', # Fuzzy
 	'importtranslations' => 'Importuj tłumaczenia',
 	'translate-import-from-local' => 'Załadowanie lokalnego pliku',
 	'translate-import-load' => 'Ładowanie pliku',
@@ -26368,7 +26316,7 @@ Jest najbardziej użyteczna dla zadań korekty.', # Fuzzy
 	'tux-proofread-translated-by-self' => 'Przetłumaczone przez ciebie',
 	'tux-empty-list-all' => 'Ta grupa komunikatów jest pusta',
 	'tux-empty-list-all-guide' => 'Wybierz inną grupę komunikatów do przetłumaczenia',
-	'tux-translate-page-no-such-group' => "'''Ta grupa nie istnieje.''' Wybierz inną grupę komunikatów.",
+	'tux-translate-page-no-such-group' => "'''Ta grupa nie istnieje.''' Wybierz inną grupę komunikatów.", # Fuzzy
 	'tux-empty-list-translated' => 'Brak przetłumaczonych wiadomości',
 	'tux-empty-list-translated-guide' => 'Możesz pomóc tłumaczyć',
 	'tux-empty-list-translated-action' => 'Przetłumacz',
@@ -26419,10 +26367,10 @@ $messages['pms'] = array(
 	'translate-taction-disabled' => "Costa assion a l'é disabilità ansima a costa wiki.",
 	'translate-page-no-such-language' => "La lenga spessificà a l'é nen vàlida.",
 	'translate-page-no-such-group' => "La partìa spessificà a l'é nen bon-a.",
-	'translate-page-disabled' => "Le tradussion an costa lenga an costa partìa a son ëstàite disativà.
+	'translate-page-disabled' => 'Le tradussion an costa lenga an costa partìa a son ëstàite disativà.
 Rason:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => "La tradussion an sta lenga a l'é disabilità.",
 	'translate-page-settings-legend' => 'Configurassion',
 	'translate-page-group' => 'Partìa',
@@ -26444,13 +26392,12 @@ Ij Mëssagi opsionaj a dovrìo mach esse voltà quand che soa lenga a l'ha dj'es
 	'translate-ext-url' => "<hr />Sit an sl'aragnà: $1",
 	'translate-optional' => '(opsional)',
 	'translate-ignored' => '(ignorà)',
-	'translate-edit-jsopen' => 'modìfica',
 	'translate-edit-title' => 'Modìfica "$1"',
 	'translate-edit-definition' => 'Definission dël mëssagi',
 	'translate-edit-translation' => 'Tradussion',
 	'translate-edit-contribute' => 'colaboré',
 	'translate-edit-no-information' => "''Ës mëssagi a l'ha gnun-a documentassion.
-S'a sa andoa o coma 's mëssagi a l'é dovrà, a peul giuté d'àutri tradutor an giontant dla documentassion a cost mëssagi.''",
+S'a sa andoa o coma 's mëssagi a l'é dovrà, a peul giuté d'àutri tradutor an giontant dla documentassion a cost mëssagi.''", # Fuzzy
 	'translate-edit-information' => 'Anformassion an sël mëssagi ($1)',
 	'translate-edit-in-other-languages' => "Mëssagi an d'àutre lenghe",
 	'translate-edit-committed' => 'Tradussion corenta ant ël programa',
@@ -26459,7 +26406,6 @@ S'a sa andoa o coma 's mëssagi a l'é dovrà, a peul giuté d'àutri tradutor a
 	'translate-edit-tmmatch-source' => 'Test sorgiss dla tradussion: $1',
 	'translate-edit-tmmatch' => 'corëspondensa ëd $1%',
 	'translate-use-suggestion' => 'Rampiassé la tradussion corenta con cost sugeriment.',
-	'translate-edit-tab-list' => 'Lista ëd mëssagi',
 	'translate-edit-nopermission' => "It l'has dabzògn dij përmess për volté ij mëssagi.",
 	'translate-edit-askpermission' => 'Ciamé ël përmess',
 	'translate-magic-pagename' => 'Viragi estèis ëd MediaWiki',
@@ -26521,7 +26467,6 @@ La tradussion d'un mëssagi an ste lenghe-sì a l'é mostrà quand ch'a l'é an 
 La lista dle lenghe dë stàndard a dipend da soa lenga.",
 	'translate-pref-editassistlang-bad' => 'Còdes ëd lenga pa bon ant la lista:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Editor ëd tradussion ameliorà (JavaScript)',
 	'right-translate' => "Modifiché an dovrand l'antërfacia ëd tradussion",
 	'right-translate-manage' => 'Aministré le partìe ëd mëssagi',
 	'action-translate-manage' => 'gestì le partìe ëd mëssagi',
@@ -26621,7 +26566,6 @@ Un nòm d'un tradutor as vëdd pi gròss, tante pi modìfiche e tradussion a l'h
 	'translate-smg-nochanges' => 'A-i é gnun-a modìfica da traté.',
 	'translate-smg-submit' => 'Spedì le modìfiche da traté',
 	'translate-smg-submitted' => 'Le definission dij mëssagi a son stàite modificà. Le modìfiche a son tratà an slë sfond.',
-	'translate-smg-postponed' => "Chèiche modìfiche a l'han pa podù esse tratà. [[{{FULLPAGENAME}}|Ch'a preuva torna]].",
 	'translate-smg-left' => 'Contnù dël mëssagi ant la wiki',
 	'translate-smg-right' => 'Modìfiche an cors ëd traferiment',
 	'translate-manage-import-diff' => 'Mëssagi $1 | Assion: $2',
@@ -26647,6 +26591,8 @@ Për piasì, ch'a controla.",
 	'translate-manage-intro-other' => "Sota a-i é na lista ëd cangiament ëd le tradussion ant la lenga $1.
 Për piasì, ch'a revision-a ij cangiament e ch'a serna n'assion ch'a veul fé për minca tradussion.
 S'a sern d'ignoré ij cangiament, a saran coatà durant l'esportassion ch'a-i ven.", # Fuzzy
+	'translate-manage-import-ok' => 'Amportà na neuva version ëd la pàgina $1.', # Fuzzy
+	'translate-manage-import-done' => 'Tut fàit!', # Fuzzy
 	'importtranslations' => 'Amporté dle tradussion',
 	'translate-import-from-local' => "Carié n'archivi local:",
 	'translate-import-load' => "Carié l'archivi",
@@ -26794,10 +26740,10 @@ $messages['ps'] = array(
 	'translate-taction-lstats' => 'د ژبې شمار',
 	'translate-taction-mstats' => 'د پيغام ډلې شمار',
 	'translate-page-no-such-language' => 'ځانگړې شوې ژبه سمه نه وه.',
-	'translate-page-disabled' => "په دې ډله کې د همدې ژبې ژباړې ناچارنده شوي.
+	'translate-page-disabled' => 'په دې ډله کې د همدې ژبې ژباړې ناچارنده شوي.
 سبب:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'امستنې',
 	'translate-page-group' => 'ډله',
 	'translate-page-language' => 'ژبه',
@@ -26813,14 +26759,12 @@ $messages['ps'] = array(
 	'translate-ext-url' => '<hr />وېبځی: $1',
 	'translate-optional' => '(اختياري)',
 	'translate-ignored' => '(بابېزه گڼل شوی)',
-	'translate-edit-jsopen' => 'سمول',
 	'translate-edit-title' => '"$1" سمول',
 	'translate-edit-definition' => 'د پيغام پېژند',
 	'translate-edit-translation' => 'ژباړه',
 	'translate-edit-contribute' => 'ونډه اخيستل',
 	'translate-edit-information' => 'د پيغام په اړه مالومات ($1)',
 	'translate-edit-in-other-languages' => 'پيغام په نورو ژبو کې',
-	'translate-edit-tab-list' => 'پيغام لړليک',
 	'translate-magic-help' => 'تاسې د ځانگړو مخونو مستعار نومونه، کوډگر وييونه او د نوم-تشيال نومونه ژباړلی شی.
 
 د ځانگړو مخونو مستعار نومونه او کوډگر وييونه گڼ شمېر ژباړې لري.
@@ -26896,6 +26840,7 @@ $messages['ps'] = array(
 	'translate-manage-import-new' => 'نوی پيغام $1',
 	'translate-manage-import-deleted' => 'ړنگ شوی پيغام $1',
 	'translate-manage-action-ignore' => 'بابېزل',
+	'translate-manage-import-done' => 'ټول ترسره شوي!', # Fuzzy
 	'translate-import-load' => 'دوتنه برسېرول',
 	'translate-js-summary' => 'لنډيز:',
 	'translate-js-save' => 'خوندي کول',
@@ -26951,9 +26896,9 @@ $messages['pt'] = array(
 	'translate-taction-disabled' => 'Esta operação foi impossibilitada nesta wiki.',
 	'translate-page-no-such-language' => 'A língua especificada é inválida.',
 	'translate-page-no-such-group' => 'O grupo especificado é inválido.',
-	'translate-page-disabled' => "As traduções para esta língua, neste grupo, foram impossibilitadas. Motivo:
+	'translate-page-disabled' => 'As traduções para esta língua, neste grupo, foram impossibilitadas. Motivo:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'A tradução para esta língua foi impossibilitada.',
 	'translate-page-settings-legend' => 'Configurações',
 	'translate-page-group' => 'Grupo',
@@ -26979,7 +26924,7 @@ As mensagens opcionais só devem ser traduzidas quando a sua língua tem requisi
 	'translate-edit-definition' => 'Definição da mensagem',
 	'translate-edit-translation' => 'Tradução',
 	'translate-edit-contribute' => 'contribua',
-	'translate-edit-no-information' => "''Esta mensagem ainda não foi documentada. Caso saiba onde, ou como, ela é usada, pode ajudar os outros tradutores se adicionar essa informação.''",
+	'translate-edit-no-information' => "''Esta mensagem ainda não foi documentada. Caso saiba onde, ou como, ela é usada, pode ajudar os outros tradutores se adicionar essa informação.''", # Fuzzy
 	'translate-edit-information' => 'Informações sobre a mensagem ($1)',
 	'translate-edit-in-other-languages' => 'Esta mensagem noutras línguas',
 	'translate-edit-committed' => 'Tradução atualmente disponível no software',
@@ -27285,10 +27230,10 @@ $messages['pt-br'] = array(
 	'translate-taction-disabled' => 'Esta ação está desativada neste wiki.',
 	'translate-page-no-such-language' => 'O idioma especificado é inválido',
 	'translate-page-no-such-group' => 'O grupo especificado é inválido.',
-	'translate-page-disabled' => "As traduções para este idioma, neste grupo, foram desabilitadas.
+	'translate-page-disabled' => 'As traduções para este idioma, neste grupo, foram desabilitadas.
 Motivo:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'As traduções para este idioma estão desativadas.',
 	'translate-page-settings-legend' => 'Configurações',
 	'translate-page-group' => 'Grupo',
@@ -27311,13 +27256,12 @@ tais como não usar espaços ou transliterar nomes próprios. $1',
 	'translate-ext-url' => '<hr />Website: $1',
 	'translate-optional' => '(opcional)',
 	'translate-ignored' => '(ignorada)',
-	'translate-edit-jsopen' => 'editar',
 	'translate-edit-title' => 'Editar "$1"',
 	'translate-edit-definition' => 'Definição da mensagem',
 	'translate-edit-translation' => 'Tradução',
 	'translate-edit-contribute' => 'contribua',
 	'translate-edit-no-information' => "''Esta mensagem ainda não foi documentada.
-Caso você saiba onde ou como ela é utilizada, poderá ajudar outros tradutores adicionando informações sobre esta mensagem.''",
+Caso você saiba onde ou como ela é utilizada, poderá ajudar outros tradutores adicionando informações sobre esta mensagem.''", # Fuzzy
 	'translate-edit-information' => 'Informações sobre a mensagem ($1)',
 	'translate-edit-in-other-languages' => 'Esta mensagem em outros idiomas',
 	'translate-edit-committed' => 'Tradução disponível no software',
@@ -27326,7 +27270,6 @@ Caso você saiba onde ou como ela é utilizada, poderá ajudar outros tradutores
 	'translate-edit-tmmatch-source' => 'Texto de origem da tradução: $1',
 	'translate-edit-tmmatch' => '$1% coincidente',
 	'translate-use-suggestion' => 'Substituir a tradução atual por esta sugestão.',
-	'translate-edit-tab-list' => 'Lista de mensagens',
 	'translate-edit-nopermission' => 'Você não possui os privilégios necessários para traduzir mensagens.',
 	'translate-edit-askpermission' => 'Solicitar permissão',
 	'translate-magic-pagename' => 'Tradução avançada do MediaWiki',
@@ -27387,7 +27330,6 @@ Quando você estiver traduzindo, as traduções nos idiomas aqui definidos tamb�
 Os idiomas padrão deste recurso variam de acordo com a língua de sua interface.',
 	'translate-pref-editassistlang-bad' => 'A listagem possui códigos de idioma inválidos:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Usar editor avançado de tradução (JavaScript)',
 	'right-translate' => 'Editar usando a interface de tradução',
 	'right-translate-manage' => 'Gerenciar grupos de mensagens',
 	'action-translate-manage' => 'gerenciar grupos de mensagens',
@@ -27488,7 +27430,6 @@ A cor do sublinhado é um indicativo de atividades recentes do usuário.',
 	'translate-smg-nochanges' => 'Não há alterações a processar.',
 	'translate-smg-submit' => 'Enviar alterações para processamento',
 	'translate-smg-submitted' => 'As definições de mensagens foram atualizadas. As alterações estão sendo processadas em segundo plano.',
-	'translate-smg-postponed' => 'Algumas alterações não puderam ser processadas. [[{{FULLPAGENAME}}|Tente novamente]].',
 	'translate-smg-left' => 'Mensagem no wiki',
 	'translate-manage-import-diff' => 'Mensagem $1 | Ações: $2',
 	'translate-manage-import-new' => 'Nova mensagem $1',
@@ -27513,6 +27454,8 @@ Verifique-a, por favor.',
 	'translate-manage-intro-other' => 'Abaixo está a lista de mudanças de tradução no idioma $1.
 Por favor, revise essas mudanças e escolha uma ação para cada atualização.
 Se optar por ignorar as alterações, esta ação é apenas temporária.',
+	'translate-manage-import-ok' => 'Importada nova versão da página $1.', # Fuzzy
+	'translate-manage-import-done' => 'Tudo feito!', # Fuzzy
 	'importtranslations' => 'Importar traduções',
 	'translate-import-from-local' => 'Enviar arquivo local:',
 	'translate-import-load' => 'Enviar arquivo',
@@ -27653,7 +27596,7 @@ Usado principalmente em tarefas de revisão.',
 	'tux-proofread-translated-by-self' => 'Traduzido por você',
 	'tux-empty-list-all' => 'Este grupo de mensagens está vazio',
 	'tux-empty-list-all-guide' => 'Selecione um grupo de mensagens diferente para traduzir',
-	'tux-translate-page-no-such-group' => "'''O grupo indicado não existe.''' Selecione um grupo de mensagens diferente.",
+	'tux-translate-page-no-such-group' => "'''O grupo indicado não existe.''' Selecione um grupo de mensagens diferente.", # Fuzzy
 	'tux-empty-list-translated' => 'Nenhuma mensagem traduzida',
 	'tux-empty-list-translated-guide' => 'Você pode ajudar traduzindo',
 	'tux-empty-list-translated-action' => 'Traduzir',
@@ -27694,7 +27637,7 @@ $messages['qu'] = array(
 	'translate-page-disabled' => "Kay huñupi kay rimayman t'ikraykunaqa manam saqillasqachu.
 Kayrayku:
 
-''$1''",
+<em>$1</em>",
 	'translate-language-disabled' => "Kay rimayman t'ikrayqa manam saqillasqachu.",
 	'translate-page-settings-legend' => 'Churasqakuna',
 	'translate-page-group' => 'Huñu',
@@ -27714,7 +27657,6 @@ Kayrayku:
 	'translate-ext-url' => '<hr />Llika tiyay: $1',
 	'translate-optional' => '(chikllana)',
 	'translate-ignored' => '(qhawarparisqa)',
-	'translate-edit-jsopen' => "llamk'apuy",
 	'translate-edit-title' => '"$1" nisqata llamk\'apuy',
 	'translate-edit-definition' => 'Qallariy willay qillqa',
 	'translate-edit-translation' => "T'ikray",
@@ -27726,7 +27668,6 @@ Kayrayku:
 	'translate-edit-tmmatch-source' => "T'ikranapaq pukyu qillqa: $1",
 	'translate-edit-tmmatch' => '$1%-nin kaqlla kaq',
 	'translate-use-suggestion' => "Kunan kachkaqraq t'ikrasqata kay munachiywan huknachay.",
-	'translate-edit-tab-list' => 'Willaykuna sutisuyu',
 	'translate-edit-nopermission' => "Willaykunata t'ikranaykipaqqa saqillaytam muchunki.",
 	'translate-edit-askpermission' => 'Saqillayta mañakuy',
 	'translate-magic-pagename' => "Mast'arisqa MediaWiki t'ikray",
@@ -27975,7 +27916,7 @@ $1',
 	'tux-proofread-translated-by-self' => "Qampa t'ikrasqayki",
 	'tux-empty-list-all' => "Kay willay huñuqa ch'usaqmi",
 	'tux-empty-list-all-guide' => "Wakin willay huñuta akllay t'ikranapaq",
-	'tux-translate-page-no-such-group' => '"Nisqa huñuqa manam kanchu." Wakin willay huñuta akllay.',
+	'tux-translate-page-no-such-group' => '"Nisqa huñuqa manam kanchu." Wakin willay huñuta akllay.', # Fuzzy
 	'tux-empty-list-translated' => "Manam mayqin t'ikrasqa willaykunapas kanchu",
 	'tux-empty-list-translated-guide' => "T'ikraysiytam atinki",
 	'tux-empty-list-translated-action' => "T'ikray",
@@ -28067,10 +28008,10 @@ $messages['ro'] = array(
 	'translate-taction-disabled' => 'Această acțiune este dezactivată pe acest wiki.',
 	'translate-page-no-such-language' => 'Limba specificată este incorectă.',
 	'translate-page-no-such-group' => 'Grupul specificat este incorect.',
-	'translate-page-disabled' => "Posibilitatea de a traduce acest grup în această limbă a fost dezactivată.
+	'translate-page-disabled' => 'Posibilitatea de a traduce acest grup în această limbă a fost dezactivată.
 Motiv:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Traducerile în această limbă sunt dezactivate.',
 	'translate-page-settings-legend' => 'Setări',
 	'translate-page-group' => 'Grup',
@@ -28093,13 +28034,12 @@ precum neutilizarea spațiilor sau transliterarea numelor proprii. $1',
 	'translate-ext-url' => '<hr /> Site web: $1',
 	'translate-optional' => '(opțional)',
 	'translate-ignored' => '(ignorat)',
-	'translate-edit-jsopen' => 'modificare',
 	'translate-edit-title' => 'Modificați „$1”',
 	'translate-edit-definition' => 'Definiția mesajului',
 	'translate-edit-translation' => 'Traducerea',
 	'translate-edit-contribute' => 'contribuiți',
 	'translate-edit-no-information' => "''Acest mesaj nu are documentație.
-Dacă știți unde sau cum este folosit, îi puteți ajuta pe ceilalți traducători prin adăugarea documentației sale.''",
+Dacă știți unde sau cum este folosit, îi puteți ajuta pe ceilalți traducători prin adăugarea documentației sale.''", # Fuzzy
 	'translate-edit-information' => 'Informații despre mesaj ($1)',
 	'translate-edit-in-other-languages' => 'Mesajul în alte limbi',
 	'translate-edit-committed' => 'Traducerea curentă din software',
@@ -28108,7 +28048,6 @@ Dacă știți unde sau cum este folosit, îi puteți ajuta pe ceilalți traducă
 	'translate-edit-tmmatch-source' => 'Textul sursă al traducerii: $1',
 	'translate-edit-tmmatch' => 'Potrivire în proporție de $1%',
 	'translate-use-suggestion' => 'Înlocuiește traducerea curentă cu această sugestie.',
-	'translate-edit-tab-list' => 'Listă mesaje',
 	'translate-edit-nopermission' => 'Aveți nevoie de permisiunea de a traduce mesaje.',
 	'translate-edit-askpermission' => 'Solicitați permisiune',
 	'translate-magic-pagename' => 'Traduceri suplimentare pentru MediaWiki',
@@ -28158,7 +28097,6 @@ Traducerea unui mesaj în aceste limbi vă este afișată în timp ce traduceți
 Lista implicită de limbi depinde de propria dumneavoastră limbă.',
 	'translate-pref-editassistlang-bad' => 'Cod de limbă incorect în lista:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Editor avansat de traducere (JavaScript)',
 	'right-translate' => 'Modifică utilizând interfața de traducere',
 	'right-translate-manage' => 'Gestionează grupurile de mesaje',
 	'action-translate-manage' => 'gestionați grupurile de mesaje',
@@ -28258,7 +28196,6 @@ Culoarea sublinierii de sub nume indică momentul la care un traducător a fost 
 	'translate-smg-nochanges' => 'Nu există modificări pentru procesare.',
 	'translate-smg-submit' => 'Trimite modificările pentru procesare',
 	'translate-smg-submitted' => 'Definițiile mesajelor au fost actualizate. Modificările sunt procesate în fundal.',
-	'translate-smg-postponed' => 'Anumite modificări nu au putut fi procesate. [[{{FULLPAGENAME}}|Încercați din nou]].',
 	'translate-smg-left' => 'Conținutul mesajului în wiki',
 	'translate-smg-right' => 'Modificări în curs de transfer',
 	'translate-manage-import-diff' => 'Mesajul $1 | Acțiuni: $2',
@@ -28279,6 +28216,8 @@ Vă rugăm să retrimiteți formularul pentru a continua prelucrarea.',
 Vă rugăm să verificați.',
 	'translate-manage-fuzzy-summary' => 'Definiția mesajului s-a schimbat',
 	'translate-manage-submit' => 'Execută',
+	'translate-manage-import-ok' => 'S-a importat o nouă versiune a paginii $1.', # Fuzzy
+	'translate-manage-import-done' => 'Totul a fost realizat!', # Fuzzy
 	'importtranslations' => 'Importă traduceri',
 	'translate-import-from-local' => 'Încărcare fișier local:',
 	'translate-import-load' => 'Încarcă fișier',
@@ -28414,7 +28353,7 @@ Detalii: $1',
 	'tux-proofread-translated-by-self' => 'Tradus de dumneavoastră',
 	'tux-empty-list-all' => 'Acest grup de mesaje este gol',
 	'tux-empty-list-all-guide' => 'Alegeți un alt grup de mesaje pentru a traduce',
-	'tux-translate-page-no-such-group' => "'''Grupul indicat nu există.''' Alegeți un alt grup de mesaje.",
+	'tux-translate-page-no-such-group' => "'''Grupul indicat nu există.''' Alegeți un alt grup de mesaje.", # Fuzzy
 	'tux-empty-list-translated' => 'Nu există mesaje traduse',
 	'tux-empty-list-translated-guide' => 'Puteți ajuta la traducere',
 	'tux-empty-list-translated-action' => 'Traducere',
@@ -28466,7 +28405,7 @@ $messages['roa-tara'] = array(
 	'translate-page-disabled' => "Le traduziune de sta lènghe jndr'à stu gruppe onne state disabbilitate.
 Mutive:
 
-''$1''",
+<em>$1</em>",
 	'translate-language-disabled' => "'A traduzione jndr'à sta lènghe jè disabbilitate.",
 	'translate-page-settings-legend' => "'Mbostaziune",
 	'translate-page-group' => 'Gruppe',
@@ -28489,13 +28428,12 @@ Le messàgge opzione avessera sulamende essere tradotte quanne 'a lènga toje t�
 	'translate-ext-url' => '<hr />Site web: $1',
 	'translate-optional' => '(opzionale)',
 	'translate-ignored' => '(ignorate)',
-	'translate-edit-jsopen' => 'cange',
 	'translate-edit-title' => 'Cange "$1"',
 	'translate-edit-definition' => "Definizione d'u messàgge",
 	'translate-edit-translation' => 'Traduzione',
 	'translate-edit-contribute' => 'condrebbute',
 	'translate-edit-no-information' => "''Stu messàgge non ge tène 'na documendazione.''
-''Ce tu canusce addò o cumme stu messàgge avène ausate, tu puè dà 'na màne a otre tradutture pe aggiungere 'a documendazione a stu messàgge.''",
+''Ce tu canusce addò o cumme stu messàgge avène ausate, tu puè dà 'na màne a otre tradutture pe aggiungere 'a documendazione a stu messàgge.''", # Fuzzy
 	'translate-edit-information' => "'Mbormaziune sus a 'u messàgge ($1)",
 	'translate-edit-in-other-languages' => "Messàgge jndr'à otre lènghe",
 	'translate-edit-committed' => "Traduzione de mò jndr'à 'u softuer",
@@ -28504,9 +28442,6 @@ Le messàgge opzione avessera sulamende essere tradotte quanne 'a lènga toje t�
 	'translate-edit-tmmatch-source' => "Teste origgenale d'a traduzione: $1",
 	'translate-edit-tmmatch' => '$1% de combronde',
 	'translate-use-suggestion' => "Sostituisce 'a traduzione de mò cu le suggereminde.",
-	'translate-edit-tab-prev' => '<<<',
-	'translate-edit-tab-next' => '>>>',
-	'translate-edit-tab-list' => 'Elenghe de le messagge',
 	'translate-edit-nopermission' => 'Tu è abbesogne de le permesse pe traducere le messàgge.',
 	'translate-edit-askpermission' => 'Richieste de le permesse',
 	'translate-magic-pagename' => 'Traduzione Estese de MediaUicchi',
@@ -28642,7 +28577,6 @@ Tutte le valore onne limite minime e massime.',
 	'translate-smg-nochanges' => 'Non ge stonne cangiaminde da processà.',
 	'translate-smg-submit' => 'Conferme le cangiaminde pu processe',
 	'translate-smg-submitted' => "'A definizione de le messàgge ha state aggiornate. Le cangiaminde stonne avènene processate da sotta sotte.",
-	'translate-smg-postponed' => 'Quacche cangiamende non ge pò essere processate. [[{{FULLPAGENAME}}|Pruève arrete]].',
 	'translate-smg-left' => "Condenute d'u messàgge jndr'à uicchi",
 	'translate-smg-right' => 'Cangiaminde ca arrivane',
 	'translate-manage-import-diff' => 'Messàgge $1 | Aziune: $2',
@@ -28654,6 +28588,7 @@ Tutte le valore onne limite minime e massime.',
 	'translate-manage-action-fuzzy' => "'Mborte e mitte le traduziune da revedè",
 	'translate-manage-nochanges' => "Non ge stonne cangiaminde jndr'à le definiziune de le messàgge jndr'à stu gruppe.",
 	'translate-manage-submit' => 'Esegue',
+	'translate-manage-import-done' => 'Tutte fatte!', # Fuzzy
 	'importtranslations' => "'Mborte le traduziune",
 	'translate-import-from-local' => "Carecamende d'u file locale:",
 	'translate-import-load' => "Careche 'u file",
@@ -28856,9 +28791,9 @@ $messages['ru'] = array(
 	'translate-taction-disabled' => 'Это действие отключено в этой вики.',
 	'translate-page-no-such-language' => 'Передан неверный код языка',
 	'translate-page-no-such-group' => 'Неверно указана группа.',
-	'translate-page-disabled' => "В этом разделе переводы на данный язык отключены. Причина:
+	'translate-page-disabled' => 'В этом разделе переводы на данный язык отключены. Причина:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Возможность перевода на этот язык отключена.',
 	'translate-page-settings-legend' => 'Параметры',
 	'translate-page-group' => 'Группа',
@@ -28884,7 +28819,7 @@ $messages['ru'] = array(
 	'translate-edit-definition' => 'Формулировка сообщения',
 	'translate-edit-translation' => 'Перевод',
 	'translate-edit-contribute' => 'править',
-	'translate-edit-no-information' => "''Это сообщение не имеет описания. Если вы знаете, где или как это сообщение используется, то можете помочь другим переводчикам, добавив к нему описание.''",
+	'translate-edit-no-information' => '<em>Это сообщение не имеет описания. Если вы знаете, где или как это сообщение используется, то можете помочь другим переводчикам, добавив к нему описание.</em>',
 	'translate-edit-information' => 'Информация о сообщении ($1)',
 	'translate-edit-in-other-languages' => 'Сообщение на других языках',
 	'translate-edit-committed' => 'Текущий перевод в программе',
@@ -29225,7 +29160,7 @@ $1',
 	'tux-proofread-translated-by-self' => 'Переведено вами',
 	'tux-empty-list-all' => 'Эта группа сообщений пуста',
 	'tux-empty-list-all-guide' => 'Выберите для перевода другую группу сообщений',
-	'tux-translate-page-no-such-group' => "'''Указанная группа не существует.''' Выберите другую группу сообщений.",
+	'tux-translate-page-no-such-group' => "'''Указанная группа не существует.''' Выберите другую группу сообщений.", # Fuzzy
 	'tux-empty-list-translated' => 'Нет переведённых сообщений',
 	'tux-empty-list-translated-guide' => 'Вы можете помочь перевести',
 	'tux-empty-list-translated-action' => 'Перевести',
@@ -29274,9 +29209,9 @@ $messages['rue'] = array(
 	'translate-taction-disabled' => 'Тота дїя на тій вікі заказана.',
 	'translate-page-no-such-language' => 'Заданый код языка не є правилный.',
 	'translate-page-no-such-group' => 'Задана ґрупа была неправилна.',
-	'translate-page-disabled' => "Переклады до того языка были у тій ґрупі заказаны. Причіна:
+	'translate-page-disabled' => 'Переклады до того языка были у тій ґрупі заказаны. Причіна:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Переклад до того языка є заказаный.',
 	'translate-page-settings-legend' => 'Параметры',
 	'translate-page-group' => 'Ґрупа',
@@ -29299,12 +29234,11 @@ $messages['rue'] = array(
 	'translate-ext-url' => '<hr />Сайт: $1',
 	'translate-optional' => '(волительне)',
 	'translate-ignored' => '(іґнороване)',
-	'translate-edit-jsopen' => 'едітовати',
 	'translate-edit-title' => 'Едітовати «$1»',
 	'translate-edit-definition' => 'Текст повідомлїня',
 	'translate-edit-translation' => 'Переклад',
 	'translate-edit-contribute' => 'приспіти',
-	'translate-edit-no-information' => "''Тото повідомлїня не має документацію. Кідь знаєте, де або як ся повідомлїня хоснує, можете помочі далшым перекладателям так, же придате документацію ку тому повідомлїню.''",
+	'translate-edit-no-information' => "''Тото повідомлїня не має документацію. Кідь знаєте, де або як ся повідомлїня хоснує, можете помочі далшым перекладателям так, же придате документацію ку тому повідомлїню.''", # Fuzzy
 	'translate-edit-information' => 'Інформація о повідомлїню ($1)',
 	'translate-edit-in-other-languages' => 'Повідомлїня іншыма языками',
 	'translate-edit-committed' => 'Сучасный переклад в софтвері',
@@ -29313,7 +29247,6 @@ $messages['rue'] = array(
 	'translate-edit-tmmatch-source' => 'Жрідловый текст перекладу: $1',
 	'translate-edit-tmmatch' => '$1% згода',
 	'translate-use-suggestion' => 'Замінити  актуалный переклад гевсёв пропозіціов.',
-	'translate-edit-tab-list' => 'Список повідомлїнь',
 	'translate-edit-nopermission' => 'На перекладаня повідомлїнь вам треба права.',
 	'translate-edit-askpermission' => 'Попросити права',
 	'translate-magic-pagename' => 'Росшырена можность перекладу MediaWiki',
@@ -29372,7 +29305,6 @@ $messages['rue'] = array(
 Імпліцітный список (''default'') залежыть од вашого языка.",
 	'translate-pref-editassistlang-bad' => 'Список обсягує неправилный код языка:
 <nowiki>$1</nowiki>',
-	'translate-pref-jsedit' => 'Росшыреный едітор перекладів (JavaScript)',
 	'right-translate' => 'Едітованя перекладів за помочі інтерфейсу перекладу',
 	'right-translate-manage' => 'Адміністрація ґруп повідомлїнь',
 	'action-translate-manage' => 'Справовати ґрупы повідомлїнь',
@@ -29472,6 +29404,7 @@ $messages['rue'] = array(
 	'translate-manage-action-conflict' => 'Імпортовати і позначіти як неперевірене',
 	'translate-manage-action-ignore' => 'Іґноровати',
 	'translate-manage-submit' => 'Выконати',
+	'translate-manage-import-done' => 'Вшытко зроблено!', # Fuzzy
 	'importtranslations' => 'Імпортовати переклады',
 	'translate-import-load' => 'Награти файл',
 	'translate-js-save' => 'Уложыти',
@@ -29535,9 +29468,9 @@ $messages['sah'] = array(
 	'translate-taction-disabled' => 'Бу биикигэ маннык дьайыы араарыллыбыт эбит.',
 	'translate-page-no-such-language' => 'Тыл куода сыыһа суруллубут',
 	'translate-page-no-such-group' => 'Бөлөх сыыһа ыйыллыбыт.',
-	'translate-page-disabled' => "Бу салааҕа бэйэтин тылыгар тылбаастар араарыллыбыттар. Төрүөтэ:
+	'translate-page-disabled' => 'Бу салааҕа бэйэтин тылыгар тылбаастар араарыллыбыттар. Төрүөтэ:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Бу тылга тылбаастааһын арахса сылдьар.',
 	'translate-page-settings-legend' => 'Туруоруулар',
 	'translate-page-group' => 'Бөлөх',
@@ -29559,12 +29492,11 @@ $messages['sah'] = array(
 	'translate-ext-url' => '<hr />Саайт: $1',
 	'translate-optional' => '(булгуччута суох)',
 	'translate-ignored' => '(ааххайыллыбат)',
-	'translate-edit-jsopen' => 'уларытыы',
 	'translate-edit-title' => '"$1" уларытыы',
 	'translate-edit-definition' => 'Этии ис хоһооно, суолтата',
 	'translate-edit-translation' => 'Тылбаас',
 	'translate-edit-contribute' => 'уларытыыны киллэр',
-	'translate-edit-no-information' => "''Бу этии туһунан туох да суох. Ханна, хаһан бу этии туттулларын билэр буоллаххына, атын тылбаасчыттарга көмөлөһөн, ол туһунан суруйуоххун сөп.''",
+	'translate-edit-no-information' => "''Бу этии туһунан туох да суох. Ханна, хаһан бу этии туттулларын билэр буоллаххына, атын тылбаасчыттарга көмөлөһөн, ол туһунан суруйуоххун сөп.''", # Fuzzy
 	'translate-edit-information' => 'Бу туһунан ($1)',
 	'translate-edit-in-other-languages' => 'Атын тылынан',
 	'translate-edit-committed' => 'Билигин баар тылбаас',
@@ -29573,7 +29505,6 @@ $messages['sah'] = array(
 	'translate-edit-tmmatch-source' => 'Тылбаастаныахтаах этии: $1',
 	'translate-edit-tmmatch' => '$1% сөп түбэһэр',
 	'translate-use-suggestion' => 'Баар тиэкиһи бу этэн биэриинэн солбуй.',
-	'translate-edit-tab-list' => 'Этиилэр тиһиктэрэ',
 	'translate-edit-nopermission' => 'Тылбаастыыргар көҥүл ылыахтааххын.',
 	'translate-edit-askpermission' => 'Көҥүллэ көрдөө',
 	'translate-magic-pagename' => 'MediaWiki дириҥэтиллибит тылбааһа',
@@ -29632,7 +29563,6 @@ $messages['sah'] = array(
 Туспа этиллибэтэҕинэ тахсар тыллар тиһиктэрэ тылтан тутулуктаах.',
 	'translate-pref-editassistlang-bad' => 'Тиһиккэ сыыһа куодтаах тыл:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Тылбаас тупсарыллыбыт эрдээктэрэ(JavaScript)',
 	'right-translate' => 'Тылбаас интерфейсын туһанар уларытыы',
 	'right-translate-manage' => 'этиилэри бөлөҕүнэн уларытыы',
 	'action-translate-manage' => 'этиилэри бөлөҕүнэн салайыы',
@@ -29794,10 +29724,10 @@ $messages['si'] = array(
 	'translate-taction-disabled' => 'මෙම ක්‍රියාව මෙම විකියෙහි අක්‍රිය කර ඇත.',
 	'translate-page-no-such-language' => 'නම් කෙරුනු භාෂාව අනීතිකයි.',
 	'translate-page-no-such-group' => 'නම් කෙරුණු කාණ්ඩය අනීතිකයි.',
-	'translate-page-disabled' => "මෙම කාණ්ඩයේ මෙම භාෂාව සඳහා පරිවර්තන අක්‍රීය කොට ඇත.
+	'translate-page-disabled' => 'මෙම කාණ්ඩයේ මෙම භාෂාව සඳහා පරිවර්තන අක්‍රීය කොට ඇත.
 හේතුව:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'මෙම භාෂාව වෙත පරිවර්තනය අක්‍රිය කර ඇත.',
 	'translate-page-settings-legend' => 'සැකසුම්',
 	'translate-page-group' => 'කාණ්ඩය',
@@ -29817,13 +29747,12 @@ $messages['si'] = array(
 	'translate-ext-url' => '<hr />වෙබ් අඩවිය: $1',
 	'translate-optional' => '(වෛකල්පික)',
 	'translate-ignored' => '(නොසලකන ලදි)',
-	'translate-edit-jsopen' => 'සංස්කරණය',
 	'translate-edit-title' => '"$1" සංස්කරණය කරන්න',
 	'translate-edit-definition' => 'පණිවුඩ විග්‍රහය',
 	'translate-edit-translation' => 'පරිවර්තනය',
 	'translate-edit-contribute' => 'දායකවන්න',
 	'translate-edit-no-information' => "''මෙම පණිවුඩය සතුව ප්‍රලේඛනයක් නොමැත.''
-''මෙම පණිවුඩය තිබෙන්නේ කොහේදැයි හෝ භාවිතා කරන්නේ කුමටද කියා දන්නවානම්, මෙම පණිවුඩය සඳහා ප්‍රලේඛනයක් තැනීම මඟින් ඔබට අනෙකුත් පරිවර්තකයන් හට සහය විය හැක.''",
+''මෙම පණිවුඩය තිබෙන්නේ කොහේදැයි හෝ භාවිතා කරන්නේ කුමටද කියා දන්නවානම්, මෙම පණිවුඩය සඳහා ප්‍රලේඛනයක් තැනීම මඟින් ඔබට අනෙකුත් පරිවර්තකයන් හට සහය විය හැක.''", # Fuzzy
 	'translate-edit-information' => '($1) පණිවුඩය පිලිබඳ තොරතුරු',
 	'translate-edit-in-other-languages' => 'පණිවුඩය වෙනත් භාෂාවලින්',
 	'translate-edit-committed' => 'මෘදුකාංගයෙහි වත්මන් පරිවර්තනය',
@@ -29832,7 +29761,6 @@ $messages['si'] = array(
 	'translate-edit-tmmatch-source' => 'පරිවර්තන මූලාශ්‍ර පාඨය: $1',
 	'translate-edit-tmmatch' => '$1% ගැලපේ',
 	'translate-use-suggestion' => 'මෙම යෝජනාව සමඟ වත්මන් පරිවර්තනය ප්‍රතිස්ථාපනය කරන්න.',
-	'translate-edit-tab-list' => 'පණිවුඩ ලැයිස්තුව',
 	'translate-edit-nopermission' => 'පණිවුඩ පරිවර්තනයකිරීම සඳහා ඔබ අවසර ගත යුතුය.',
 	'translate-edit-askpermission' => 'අවසර ඉල්ලන්න',
 	'translate-magic-pagename' => 'දීර්ඝ කල මාධ්‍යවිකි පරිවර්තනය',
@@ -29877,7 +29805,6 @@ $messages['si'] = array(
 	'prefs-translate' => 'පරිවර්තන විකල්පයන්',
 	'translate-pref-editassistlang-bad' => 'ලයිස්තුවේ වලංගු නොවන භාෂා කේතයක්:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'ඉවැඩි කළ පරිවර්තන සංස්කාරකය (ජාවාස්ක්‍රිප්ට්)',
 	'right-translate' => 'පරිවර්තන අතුරුමුහුණත භාවිතාකරමින් සංස්කරණය කරන්න',
 	'right-translate-manage' => 'පණිවුඩ සමූහයන් කළමනාකරණය කරන්න',
 	'action-translate-manage' => 'පණිවුඩ කාණ්ඩ කළමනාකරණය කරන්න',
@@ -29970,7 +29897,6 @@ $messages['si'] = array(
 	'translate-smg-notallowed' => 'ඔබට මෙම ක්‍රියාව සිදු කිරීමට ඉඩ ලබා නොදේ.',
 	'translate-smg-nochanges' => 'ක්‍රියානනය කිරීමට වෙනස්කම් නොමැත.',
 	'translate-smg-submit' => 'ක්‍රියානනය සඳහා වෙනස්කම් යොමන්න',
-	'translate-smg-postponed' => 'සමහර වෙනස්කම් ක්‍රියායනය කල නොහැක. [[{{FULLPAGENAME}}|නැවත උත්සහ කරන්න]].',
 	'translate-smg-left' => 'විකියෙහි පණිවුඩ අන්තර්ගතය',
 	'translate-smg-right' => 'එන වෙනස්කම්',
 	'translate-manage-import-diff' => 'පණිවුඩය $1 | ක්‍රියාකාරකම්: $2',
@@ -29988,6 +29914,8 @@ $messages['si'] = array(
 කරුණාකර පිරික්සන්න.',
 	'translate-manage-fuzzy-summary' => 'නිර්වචනය වෙනස් වී ඇත', # Fuzzy
 	'translate-manage-submit' => 'සම්පාදනය කරන්න',
+	'translate-manage-import-ok' => '$1 පිටුවෙහි නව අනුවාදයක් ආයාත කරන ලදී.', # Fuzzy
+	'translate-manage-import-done' => 'සියල්ල කරන ලදී', # Fuzzy
 	'importtranslations' => 'පරිවර්තන ආයාත කරන්න',
 	'translate-import-from-local' => 'ප්‍රාදේශීය ගොනු උඩුගත කෙරුම:',
 	'translate-import-load' => 'ගොනුව පූරණය කරන්න',
@@ -30108,9 +30036,9 @@ $messages['sk'] = array(
 	'translate-taction-disabled' => 'Táto akcia je na tejto wiki vypnutá.',
 	'translate-page-no-such-language' => 'Zadaný jazyk bol neplatný.',
 	'translate-page-no-such-group' => 'Zadaná skupina bola neplatná.',
-	'translate-page-disabled' => "Preklady v tejto skupine do tohto jazyka boli zakázané. Dôvod:
+	'translate-page-disabled' => 'Preklady v tejto skupine do tohto jazyka boli zakázané. Dôvod:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Možnosti',
 	'translate-page-group' => 'Skupina',
 	'translate-page-language' => 'Jazyk',
@@ -30132,12 +30060,11 @@ ako napr. nepoužívanie medzier, alebo transkripcie vlastných mien. $1',
 	'translate-ext-url' => '<hr />Webstránka: $1',
 	'translate-optional' => '(voliteľné)',
 	'translate-ignored' => '(ignorované)',
-	'translate-edit-jsopen' => 'upraviť',
 	'translate-edit-title' => 'Upraviť "$1"',
 	'translate-edit-definition' => 'Definícia správy',
 	'translate-edit-translation' => 'Preklad',
 	'translate-edit-contribute' => 'prispejte',
-	'translate-edit-no-information' => "''Táto správa nie je zdokumentovaná. Ak viete kde alebo ako je táto správa použitá, môžete pomôcť ostatným prekladateľom tým, že jej pridáte dokumentáciu.''",
+	'translate-edit-no-information' => "''Táto správa nie je zdokumentovaná. Ak viete kde alebo ako je táto správa použitá, môžete pomôcť ostatným prekladateľom tým, že jej pridáte dokumentáciu.''", # Fuzzy
 	'translate-edit-information' => 'Informácia o správe ($1)',
 	'translate-edit-in-other-languages' => 'Správa v iných jazykoch',
 	'translate-edit-committed' => 'Aktuálny preklad v úložisku',
@@ -30146,7 +30073,6 @@ ako napr. nepoužívanie medzier, alebo transkripcie vlastných mien. $1',
 	'translate-edit-tmmatch-source' => 'Zdroj prekladu: $1',
 	'translate-edit-tmmatch' => '$1% zhoda',
 	'translate-use-suggestion' => 'Nahradiť aktuálny preklad týmto návrhom.',
-	'translate-edit-tab-list' => 'Zoznam správ',
 	'translate-edit-nopermission' => 'Na preklad správ potrebujete povolenie.',
 	'translate-edit-askpermission' => 'Požiadať o povolenie',
 	'translate-magic-pagename' => 'Rozšírený preklad MediaWiki',
@@ -30201,7 +30127,6 @@ Preklady správ v týchto jazykoch sa zobrazujú, keď prekladáte.
 Predvoleny zoznam jazykov závisí na vašom jazyku.',
 	'translate-pref-editassistlang-bad' => 'Neplatný kód jazyka v zozname:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Rozšírený editor prekladov (JavaScript)',
 	'right-translate' => 'Vykonávať úpravy pomocou rozhrania Preložiť',
 	'right-translate-manage' => 'Spravovať skupiny správ',
 	'action-translate-manage' => 'spravovať skupiny správ',
@@ -30317,6 +30242,8 @@ V spracovaní môžete pokračovať opätovným odoslaním formulára.',
 	'translate-manage-intro-other' => 'Nižšie je zoznam zmien v prekladoch v jazyku $1.
 Prosím, skontrolujte zmeny a vyberte operáciu pre každý z prekladov.
 Ak sa rozhodnete ignorovať zmeny, prepíšu sa pri ďalšom exporte.', # Fuzzy
+	'translate-manage-import-ok' => 'Importovaná nová verzia stránky $1.', # Fuzzy
+	'translate-manage-import-done' => 'Hotovo!', # Fuzzy
 	'importtranslations' => 'Importovať preklady',
 	'translate-import-from-local' => 'Nahranie lokálneho súboru:',
 	'translate-import-load' => 'Nahrať súbor',
@@ -30385,10 +30312,10 @@ $messages['sl'] = array(
 	'translate-taction-disabled' => 'Dejanje je na tem wikiju onemogočeno.',
 	'translate-page-no-such-language' => 'Izbran jezik je neveljaven.',
 	'translate-page-no-such-group' => 'Izbrana skupina je neveljavna.',
-	'translate-page-disabled' => "Prevodi v ta jezik v tej skupini so bili onemogočeni.
+	'translate-page-disabled' => 'Prevodi v ta jezik v tej skupini so bili onemogočeni.
 Razlog:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Prevodi v ta jezik so onemogočeni.',
 	'translate-page-settings-legend' => 'Nastavitve',
 	'translate-page-group' => 'Skupina',
@@ -30416,7 +30343,7 @@ kot sta neuporaba presledkov ali prečrkovanje izvirnih imen. $1',
 	'translate-edit-translation' => 'Prevod',
 	'translate-edit-contribute' => 'prispevaj',
 	'translate-edit-no-information' => "''To sporočilo nima dokumentacije.''
-''Če veste, kje in kako je uporabljeno, lahko pomagate drugim prevajalcem z dodajanjem dokumentacije.''",
+''Če veste, kje in kako je uporabljeno, lahko pomagate drugim prevajalcem z dodajanjem dokumentacije.''", # Fuzzy
 	'translate-edit-information' => 'Podatki o sporočilu ($1)',
 	'translate-edit-in-other-languages' => 'Sporočilo v drugih jezikih',
 	'translate-edit-committed' => 'Trenutni prevod v programski opremi',
@@ -30612,6 +30539,8 @@ Prosimo, preverite.',
 	'translate-manage-intro-other' => 'Spodaj se nahaja seznam sprememb prevodov v jeziku $1.
 Prosimo, preglejte spremembe in izberite dejanje, ki ga želite storiti za vsako posodobitev.
 Če se odločite prezreti spremembe, bo to dejanje samo začasno.',
+	'translate-manage-import-ok' => 'Uvožena nova različica strani $1.', # Fuzzy
+	'translate-manage-import-done' => 'Vse opravljeno!', # Fuzzy
 	'importtranslations' => 'Uvažanje prevodov',
 	'translate-import-from-local' => 'Nalaganje lokalne datoteke:',
 	'translate-import-load' => 'Naloži datoteko',
@@ -30758,7 +30687,7 @@ Najuporabnejše za opravila pregleda.',
 	'tux-proofread-translated-by-self' => 'Prevedli ste sami',
 	'tux-empty-list-all' => 'Ta skupina sporočil je prazna',
 	'tux-empty-list-all-guide' => 'Izberite drugo skupino sporočil za prevajanje',
-	'tux-translate-page-no-such-group' => "'''Navedena skupina ne obstaja.''' Izberite drugo skupino sporočil.",
+	'tux-translate-page-no-such-group' => "'''Navedena skupina ne obstaja.''' Izberite drugo skupino sporočil.", # Fuzzy
 	'tux-empty-list-translated' => 'Ni prevedenih sporočil',
 	'tux-empty-list-translated-guide' => 'Pomagate lahko pri prevajanju',
 	'tux-empty-list-translated-action' => 'Prevedi',
@@ -30874,9 +30803,9 @@ $messages['sr-ec'] = array(
 	'translate-taction-disabled' => 'Радња је онемогућена на овом викију.',
 	'translate-page-no-such-language' => 'Наведени језик није исправан.',
 	'translate-page-no-such-group' => 'Наведена група није исправна.',
-	'translate-page-disabled' => "Преводи на овом језику у овој групи су онемогућени. Разлог:
+	'translate-page-disabled' => 'Преводи на овом језику у овој групи су онемогућени. Разлог:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Превођење на овај језик је онемогућено.',
 	'translate-page-settings-legend' => 'Поставке',
 	'translate-page-group' => 'Група:',
@@ -30903,7 +30832,7 @@ $messages['sr-ec'] = array(
 	'translate-edit-translation' => 'Превод',
 	'translate-edit-contribute' => 'допринеси',
 	'translate-edit-no-information' => "''Ова порука нема пратећу документацију.''
-''Ако знате где се и како користи, помозите другим преводиоцима додавањем њеног описа.''",
+''Ако знате где се и како користи, помозите другим преводиоцима додавањем њеног описа.''", # Fuzzy
 	'translate-edit-information' => 'Подаци о поруци ($1)',
 	'translate-edit-in-other-languages' => 'Порука на другим језицима',
 	'translate-edit-committed' => 'Текући превод у софтверу',
@@ -31243,7 +31172,7 @@ $1',
 	'tux-proofread-translated-by-self' => 'Ваши преводи',
 	'tux-empty-list-all' => 'Ова група порука је празна',
 	'tux-empty-list-all-guide' => 'Изаберите другу групу порука за превођење',
-	'tux-translate-page-no-such-group' => "'''Назначена група не постоји.''' Изаберите другу групу порука.",
+	'tux-translate-page-no-such-group' => "'''Назначена група не постоји.''' Изаберите другу групу порука.", # Fuzzy
 	'tux-empty-list-translated' => 'Нема преведених порука',
 	'tux-empty-list-translated-guide' => 'Можете помоћи у превођењу',
 	'tux-empty-list-translated-action' => 'Преведи',
@@ -31296,9 +31225,9 @@ $messages['sr-el'] = array(
 	'translate-taction-disabled' => 'Radnja je onemogućena na ovom vikiju.',
 	'translate-page-no-such-language' => 'Izabrani jezik nije ispravan.',
 	'translate-page-no-such-group' => 'Izabrana grupa nije ispravna.',
-	'translate-page-disabled' => "Prevodi na ovom jeziku u ovoj grupi su onemogućeni. Razlog:
+	'translate-page-disabled' => 'Prevodi na ovom jeziku u ovoj grupi su onemogućeni. Razlog:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Prevođenje na ovaj jezik je onemogućeno.',
 	'translate-page-settings-legend' => 'Postavke',
 	'translate-page-group' => 'Grupa:',
@@ -31325,7 +31254,7 @@ $messages['sr-el'] = array(
 	'translate-edit-translation' => 'Prevod',
 	'translate-edit-contribute' => 'doprinesi',
 	'translate-edit-no-information' => "''Ova poruka nema prateću dokumentaciju.''
-''Ako znate gde se i kako koristi, pomozite drugim prevodiocima dodavanjem njenog opisa.''",
+''Ako znate gde se i kako koristi, pomozite drugim prevodiocima dodavanjem njenog opisa.''", # Fuzzy
 	'translate-edit-information' => 'Podaci o poruci ($1)',
 	'translate-edit-in-other-languages' => 'Poruka na drugim jezicima',
 	'translate-edit-committed' => 'Tekući prevod u softveru',
@@ -31669,9 +31598,9 @@ $messages['stq'] = array(
 	'translate-desc' => '[[Special:Translate|Spezioalsiede]] foar ju Uursättenge fon MediaWiki-Systemättergjuchte',
 	'translate-page-no-such-language' => 'Ju anroate Sproake is uungultich.',
 	'translate-page-no-such-group' => 'Ju anroate Gruppe is uungultich.',
-	'translate-page-disabled' => "Uursättengen in disse Sproake in disse Gruppe wuuden deaktivierd. Gruund:
+	'translate-page-disabled' => 'Uursättengen in disse Sproake in disse Gruppe wuuden deaktivierd. Gruund:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Ienstaalengen',
 	'translate-page-group' => 'Gruppe',
 	'translate-page-language' => 'Sproake',
@@ -31690,7 +31619,7 @@ $messages['stq'] = array(
 	'translate-ignored' => '(ignorierd)',
 	'translate-edit-definition' => 'Systemättergjucht in dät Originoal',
 	'translate-edit-contribute' => 'beoarbaidje',
-	'translate-edit-no-information' => "''Disse Systemättergjucht häd noch neen Dokumentation. Wan du waast, wier un in wäkken Touhoopehong ju benutsed wäd, koast du uur Uursättere hälpe, deertruch dät du ne Dokumentation bietouföigest.''",
+	'translate-edit-no-information' => "''Disse Systemättergjucht häd noch neen Dokumentation. Wan du waast, wier un in wäkken Touhoopehong ju benutsed wäd, koast du uur Uursättere hälpe, deertruch dät du ne Dokumentation bietouföigest.''", # Fuzzy
 	'translate-edit-information' => 'Information uur Systemättergjucht ($1)',
 	'translate-edit-in-other-languages' => 'Systemättergjucht in uur Sproaken',
 	'translate-edit-committed' => 'Aktuelle Uursättenge',
@@ -31783,9 +31712,9 @@ $messages['su'] = array(
 	'translate-desc' => '[[Special:Translate|Kaca husus]] keur narjamahkeun MediaWiki',
 	'translate-page-no-such-language' => 'Basa anu dipilih teu kaci.',
 	'translate-page-no-such-group' => 'Jumplukan nu dipilih teu kaci.',
-	'translate-page-disabled' => "Narjamahkeun dina basa ieu geus dinon-aktifkeun. Alesana:
+	'translate-page-disabled' => 'Narjamahkeun dina basa ieu geus dinon-aktifkeun. Alesana:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Pangatur',
 	'translate-page-group' => 'Jumplukan',
 	'translate-page-language' => 'Basa',
@@ -31804,7 +31733,7 @@ $messages['su'] = array(
 	'translate-optional' => '(piliheun)',
 	'translate-edit-definition' => 'Definisi talatah',
 	'translate-edit-contribute' => 'milu ngédit',
-	'translate-edit-no-information' => "''Talatah ieu teu ngabogaan dokuméntasi. Lamun Anjeun nyaho di mana sarta kumaha talatah ieu dipaké, Anjeun bisa nulungan panarjamah séjén kalawan nambahan dokuméntasi pikeun talatah ieu.''",
+	'translate-edit-no-information' => "''Talatah ieu teu ngabogaan dokuméntasi. Lamun Anjeun nyaho di mana sarta kumaha talatah ieu dipaké, Anjeun bisa nulungan panarjamah séjén kalawan nambahan dokuméntasi pikeun talatah ieu.''", # Fuzzy
 	'translate-edit-information' => 'Informasi ngeunaan talatah ieu "$2" ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'Talatah "$1" dina basa séjén', # Fuzzy
 	'translate-edit-committed' => 'Parobahan anu aya di pakakas',
@@ -31897,10 +31826,10 @@ $messages['sv'] = array(
 	'translate-taction-disabled' => 'Denna åtgärd är inaktiverad på denna wiki.',
 	'translate-page-no-such-language' => 'Det angivna språket är inte giltigt.',
 	'translate-page-no-such-group' => 'Den angivna gruppen är inte giltig.',
-	'translate-page-disabled' => "Översättningar till det här språket i den här gruppen har stängts av.
+	'translate-page-disabled' => 'Översättningar till det här språket i den här gruppen har stängts av.
 Anledning:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Översättning till detta språk är inaktiverad.',
 	'translate-page-settings-legend' => 'Inställningar',
 	'translate-page-group' => 'Grupp',
@@ -31928,7 +31857,7 @@ exempelvis att inte använda blanksteg eller transkribera egennamn. $1',
 	'translate-edit-translation' => 'Översättning',
 	'translate-edit-contribute' => 'bidra',
 	'translate-edit-no-information' => "''Det här meddelandet har ingen dokumentation.''
-''Om du vet var eller hur detta meddelande används, så kan du hjälpa andra översättare genom att skriva dokumentation för meddelandet.''",
+''Om du vet var eller hur detta meddelande används, så kan du hjälpa andra översättare genom att skriva dokumentation för meddelandet.''", # Fuzzy
 	'translate-edit-information' => 'Information om meddelandet ($1)',
 	'translate-edit-in-other-languages' => 'Meddelandet på andra språk',
 	'translate-edit-committed' => 'Nuvarande översättning i mjukvaran',
@@ -32123,6 +32052,8 @@ Vänligen kontrollera.',
 	'translate-manage-intro-other' => 'Nedan följer en lista över översättningsändringar på $1 språket.
 Var god granska ändringarna och välj en åtgärd du vill utföra för varje uppdatering.
 Om du väljer att ignorera ändringar är denna handling endast tillfällig.',
+	'translate-manage-import-ok' => 'Importerat ny version av sidan $1', # Fuzzy
+	'translate-manage-import-done' => 'Allt klart!', # Fuzzy
 	'importtranslations' => 'Importera översättningar',
 	'translate-import-from-local' => 'Lokal filuppladdning:',
 	'translate-import-load' => 'Ladda fil',
@@ -32269,7 +32200,7 @@ Främst användbar för granskningsuppgifter.',
 	'tux-proofread-translated-by-self' => 'Översatt av dig',
 	'tux-empty-list-all' => 'Denna meddelandegrupp är tom',
 	'tux-empty-list-all-guide' => 'Välj en annan meddelandegrupp att översätta',
-	'tux-translate-page-no-such-group' => "'''Den angivna gruppen finns inte.''' Välj en annan meddelandegrupp.",
+	'tux-translate-page-no-such-group' => "'''Den angivna gruppen finns inte.''' Välj en annan meddelandegrupp.", # Fuzzy
 	'tux-empty-list-translated' => 'Inga översatta meddelanden',
 	'tux-empty-list-translated-guide' => 'Du kan hjälpa till att översätta',
 	'tux-empty-list-translated-action' => 'Översätt',
@@ -32439,10 +32370,10 @@ $messages['ta'] = array(
 	'translate-taction-disabled' => 'இந்த செயல் இந்த விக்கியில் செயலிழக்கம் செய்யப்பட்டுள்ளது.',
 	'translate-page-no-such-language' => 'குறித்த மொழி செல்லுபடியற்றதாகும்.',
 	'translate-page-no-such-group' => 'குறித்த குழு செல்லுபடியற்றதாகும்.',
-	'translate-page-disabled' => "இந்த குழுவில் இந்த மொழிக்கான மொழிபெயப்பு  செயலிழக்கம் செய்யப்பட்டுள்ளது.
+	'translate-page-disabled' => 'இந்த குழுவில் இந்த மொழிக்கான மொழிபெயப்பு  செயலிழக்கம் செய்யப்பட்டுள்ளது.
 காரணம்:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'அமைப்புகள்',
 	'translate-page-group' => 'குழு',
 	'translate-page-language' => 'மொழி',
@@ -32462,20 +32393,18 @@ $messages['ta'] = array(
 	'translate-ext-url' => '<hr />வலைத்தளம்: $1',
 	'translate-optional' => '(விருப்பதேர்வு)',
 	'translate-ignored' => '(புறக்கணிக்கப்பட்டது)',
-	'translate-edit-jsopen' => 'தொகு',
 	'translate-edit-title' => '"$1" -ஐ தொகுக்கவும்',
 	'translate-edit-definition' => 'தகவல் வரையறை',
 	'translate-edit-translation' => 'மொழிபெயர்ப்பு',
 	'translate-edit-contribute' => 'பங்களி',
 	'translate-edit-no-information' => 'இச் செய்திக்கு ஆவணமாக்கல் ஏதும் இல்லை.
-இச் செய்தி எங்கே எப்படிப் பயன்படுத்தப்படும் என்பது உங்களுக்குத் தெரியுமாயின்  இதற்கு ஆவணமாக்கல் சேர்ப்பதன் மூலம் மற்ற மொழிபெயர்ப்பாளர்களுக்கு நீங்கள் உதவ முடியும்.',
+இச் செய்தி எங்கே எப்படிப் பயன்படுத்தப்படும் என்பது உங்களுக்குத் தெரியுமாயின்  இதற்கு ஆவணமாக்கல் சேர்ப்பதன் மூலம் மற்ற மொழிபெயர்ப்பாளர்களுக்கு நீங்கள் உதவ முடியும்.', # Fuzzy
 	'translate-edit-information' => 'தகவல் ($1) ஐப் பற்றிய குறிப்பு',
 	'translate-edit-in-other-languages' => 'மற்ற மொழிகளில் தகவல்',
 	'translate-edit-committed' => 'மென்பொருளில் நடப்பு மொழிபெயர்ப்பு',
 	'translate-edit-warnings' => 'நிறைவுபெறாத மொழிபெயர்ப்புகளைப் பற்றிய எச்சரிக்கைகள்',
 	'translate-edit-tmsugs' => 'மொழிபெயர்ப்பு நினைவகத்தில் இருந்து பரிந்துரைகள்',
 	'translate-edit-tmmatch' => '$1% பொருத்தம்',
-	'translate-edit-tab-list' => 'தகவல் பட்டியல்',
 	'translate-edit-nopermission' => 'தகவல்களை மொழிபெயர்க்க உங்களுக்கு அனுமதி இருக்கவேண்டும்.',
 	'translate-edit-askpermission' => 'அனுமதி வேண்டுக',
 	'translate-magic-pagename' => 'நீட்சிபெற்ற மீடியாவிக்கி மொழிபெயர்ப்பு',
@@ -32494,7 +32423,6 @@ $messages['ta'] = array(
 	'translate-pref-nonewsletter' => 'எனக்கு மின்னஞ்சல் செய்திமடற்கள் அனுப்ப வேண்டாம்',
 	'translate-pref-editassistlang' => 'உதவும் மொழிகள்:',
 	'prefs-translate' => 'மொழிபெயர்ப்பு விருப்பத் தேர்வுகள்',
-	'translate-pref-jsedit' => 'மேம்படுத்தப்பட்ட மொழிபெயர்ப்பு தொகுப்பான் (ஜாவாஸ்கிரிப்டு தேவை)',
 	'right-translate-import' => 'தொடரறுமொழிபெயர்ப்புக்களை உள்ளிடு',
 	'right-translate-messagereview' => 'மொழிபெயர்ப்புகளை மதிப்பீடுக',
 	'translate-rc-translation-filter' => 'மொழிபெயர்ப்புகளை வடிகட்டு',
@@ -32705,10 +32633,10 @@ $messages['te'] = array(
 	'translate-taction-disabled' => 'ఈవికీలో ఈ చర్యను అచేతనం చేసారు.',
 	'translate-page-no-such-language' => 'ఎంచుకున్న భాష సరైనది కాదు.',
 	'translate-page-no-such-group' => 'ఇచ్చిన సమూహం సరైనది కాదు.',
-	'translate-page-disabled' => "ఈ భాషకి ఈ సమూహంలో అనువాదాలని అచేతనం చేసారు.
+	'translate-page-disabled' => 'ఈ భాషకి ఈ సమూహంలో అనువాదాలని అచేతనం చేసారు.
 కారణం:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'ఈ భాషలోకి అనువాదం నిలిపివేయబడింది',
 	'translate-page-settings-legend' => 'అమరికలు',
 	'translate-page-group' => 'సమూహం',
@@ -32732,7 +32660,7 @@ $messages['te'] = array(
 	'translate-edit-definition' => 'సందేశ నిర్వచనం',
 	'translate-edit-translation' => 'అనువాదం',
 	'translate-edit-contribute' => 'తోడ్పడండి',
-	'translate-edit-no-information' => "''ఈ సందేశానికి సహాయ సమాచారం లేదు. ఈ సందేశాన్ని ఎక్కడ లేదా ఎలా ఉపయోగిస్తారో మీకు తెలిస్తే, దీనికి తగిన సమాచారం చేర్చి ఇతర అనువాదకులకు తొడ్పడవచ్చు.''",
+	'translate-edit-no-information' => "''ఈ సందేశానికి సహాయ సమాచారం లేదు. ఈ సందేశాన్ని ఎక్కడ లేదా ఎలా ఉపయోగిస్తారో మీకు తెలిస్తే, దీనికి తగిన సమాచారం చేర్చి ఇతర అనువాదకులకు తొడ్పడవచ్చు.''", # Fuzzy
 	'translate-edit-information' => 'సందేశం గురించి సమాచారం ($1)',
 	'translate-edit-in-other-languages' => 'ఇతర భాషలలో సందేశం',
 	'translate-edit-committed' => 'సాఫ్ట్&zwnj;వేర్&zwnj;లో ప్రస్తుతమున్న అనువాదం',
@@ -32855,6 +32783,7 @@ $messages['te'] = array(
 	'translate-manage-action-import' => 'దిగుమతి చెయ్యి',
 	'translate-manage-action-ignore' => 'పట్టించుకోవద్దు',
 	'translate-manage-fuzzy-summary' => 'ఈ సందేశపు నిర్వచనం మారింది',
+	'translate-manage-import-done' => 'అంతా పూర్తయ్యింది!', # Fuzzy
 	'importtranslations' => 'అనువాదాల దిగుమతి',
 	'translate-import-from-local' => 'స్థానిక దస్త్రపు ఎక్కింపు:',
 	'translate-import-err-ul-failed' => 'దస్త్రపు ఎక్కింపు విజయవంతం కాలేదు',
@@ -33062,10 +32991,10 @@ $messages['th'] = array(
 	'translate-desc' => '[[Special:Translate|หน้าพิเศษ]]สำหรับแปลมีเดียวิกิและอื่น ๆ',
 	'translate-page-no-such-language' => 'ใส่รหัสภาษาไม่ถูกต้อง',
 	'translate-page-no-such-group' => 'ใส่ชื่อกลุ่มไม่ถูกต้อง',
-	'translate-page-disabled' => "งานแปลภาษานี้ในกลุ่มนี้ได้ปิดใช้งาน
+	'translate-page-disabled' => 'งานแปลภาษานี้ในกลุ่มนี้ได้ปิดใช้งาน
 เหตุผล:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'การตั้งค่าต่างๆ',
 	'translate-page-group' => 'กลุ่ม',
 	'translate-page-language' => 'ภาษา',
@@ -33086,7 +33015,7 @@ $messages['th'] = array(
 	'translate-edit-title' => 'แก้ไข "$1"',
 	'translate-edit-definition' => 'นิยามข้อความต้นฉบับ',
 	'translate-edit-contribute' => 'ช่วยเขียน',
-	'translate-edit-no-information' => "''ข้อความนี้ไม่มีคำอธิบายการใช้งาน ถ้าคุณทราบว่าข้อความนี้ใช้ตรงส่วนไหนหรือใช้อย่างไร คุณสามารถช่วยเพิ่มคำอธิบายการใช้งานของข้อความนี้ เพื่อเป็นประโยชน์แก่ผู้แปลคนอื่นได้''",
+	'translate-edit-no-information' => "''ข้อความนี้ไม่มีคำอธิบายการใช้งาน ถ้าคุณทราบว่าข้อความนี้ใช้ตรงส่วนไหนหรือใช้อย่างไร คุณสามารถช่วยเพิ่มคำอธิบายการใช้งานของข้อความนี้ เพื่อเป็นประโยชน์แก่ผู้แปลคนอื่นได้''", # Fuzzy
 	'translate-edit-information' => 'ข้อมูลเกี่ยวกับข้อความ "$2" ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'ข้อความ "$1" ในภาษาอื่นๆ', # Fuzzy
 	'translate-edit-committed' => 'คำแปลปัจจุบันที่ฝังอยู่ในตัวโปรแกรม',
@@ -33284,9 +33213,9 @@ $messages['tl'] = array(
 	'translate-taction-disabled' => 'Hindi pinagagana sa wiking ito ang galaw na ito',
 	'translate-page-no-such-language' => 'Hindi tanggap ang tinukoy na wika.',
 	'translate-page-no-such-group' => 'Hindi tanggap ang tinukoy na pangkat.',
-	'translate-page-disabled' => "Hindi pinagana ang mga salinwika para sa wikang ito na nasa loob ng pangkat na ito. Dahilan:
+	'translate-page-disabled' => 'Hindi pinagana ang mga salinwika para sa wikang ito na nasa loob ng pangkat na ito. Dahilan:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Hindi pinagagana ang pagsasalinwika papunta sa wikang ito.',
 	'translate-page-settings-legend' => 'Mga pagtatakda',
 	'translate-page-group' => 'Pangkat',
@@ -33310,13 +33239,12 @@ katulad ng hindi paggamit ng mga patlang o transliterasyon ng mga pangalang pant
 	'translate-ext-url' => '<hr />Websayt: $1',
 	'translate-optional' => '(maaaring wala nito)',
 	'translate-ignored' => '(binalewala)',
-	'translate-edit-jsopen' => 'baguhin',
 	'translate-edit-title' => 'Baguhin ang "$1"',
 	'translate-edit-definition' => 'Kahulugan ng mensahe',
 	'translate-edit-translation' => 'Salinwika',
 	'translate-edit-contribute' => 'magambag',
 	'translate-edit-no-information' => "''Walang kasulatan ang mensaheng ito.
-Kung alam mo kung saan o paano ginagamit ang mensaheng ito, makakatulong ka sa iba pang mga tagapagsalinwika sa pamamagitan ng pagdaragdag ng kasulatan sa mensaheng ito.''",
+Kung alam mo kung saan o paano ginagamit ang mensaheng ito, makakatulong ka sa iba pang mga tagapagsalinwika sa pamamagitan ng pagdaragdag ng kasulatan sa mensaheng ito.''", # Fuzzy
 	'translate-edit-information' => 'Kabatiran hinggil sa mensahe ($1)',
 	'translate-edit-in-other-languages' => 'Mensahe na nasa ibang mga wika',
 	'translate-edit-committed' => 'Pangkasalukuyang salinwikang nasa sopwer',
@@ -33325,9 +33253,6 @@ Kung alam mo kung saan o paano ginagamit ang mensaheng ito, makakatulong ka sa i
 	'translate-edit-tmmatch-source' => 'Teksto ng pinagmulan ng salinwika: $1',
 	'translate-edit-tmmatch' => '$1% tumugma',
 	'translate-use-suggestion' => 'Palitan ang kasulukuyang salinwika ng ganitong mungkahi.',
-	'translate-edit-tab-prev' => '<<<',
-	'translate-edit-tab-next' => '>>>',
-	'translate-edit-tab-list' => 'Talaan ng mensahe',
 	'translate-edit-nopermission' => 'Kailangan mo ng pahintulot upang makapagsalinwika ng mga mensahe.',
 	'translate-edit-askpermission' => 'Humiling ng pahintulot',
 	'translate-magic-pagename' => 'Dinugtungang salinwika ng MediaWiki',
@@ -33387,7 +33312,6 @@ Ang salinwika ng isang mensahe sa mga wikang ito ay ipinapakita kapag nagsasalin
 Nakasalalay sa wika mo ang likas na nakatakdang talaan ng mga wika.',
 	'translate-pref-editassistlang-bad' => 'Hindi tanggap na kodigong pangwika sa loob ng talaan:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Pinahusay na patnugot ng salinwika (JavaScript)',
 	'right-translate' => "Baguhing ginagamit ang ugnayang-hangganan (''interface'') na pangpagsasalinwika",
 	'right-translate-manage' => 'Pamahalaan ang mga pangkat ng mensahe',
 	'action-translate-manage' => 'pamahalaan ang mga pangkat ng mensahe',
@@ -33489,7 +33413,6 @@ Ang kulay ng salungguhit ay nagpapahiwatig kung kailan huling naging masigla rit
 	'translate-smg-nochanges' => 'Walang mga pagbabagong maisasagawa.',
 	'translate-smg-submit' => 'Ipasa ang mga pagbabago para sa pagsasagawa',
 	'translate-smg-submitted' => 'Naisapanahon na ang mga kahulugan ng mensahe. Isinasagawa na ang mga pagbabago sa may likuran.',
-	'translate-smg-postponed' => 'Hindi maisasagawa ang ilang mga pagbabago. [[{{FULLPAGENAME}}|Subukan ulit]].',
 	'translate-smg-left' => 'Nilalaman ng mensahe sa loob ng wiki',
 	'translate-smg-right' => 'Parating na mga pagbabago',
 	'translate-manage-import-diff' => 'Mensahe $1 | Mga galaw: $2',
@@ -33515,6 +33438,8 @@ Pakisuri.',
 	'translate-manage-intro-other' => 'Nasa ibaba ang talaan ng mga pagbabago sa salinwika sa wikang $1.
 Pakisuri ang mga pagbabago at pumili ng galaw na nais mong gawin para sa bawat salinwika.
 Kung pinili mong huwag pansinin ang mga pagbabago, pangingibabawan sila sa susunod na pagluluwas.', # Fuzzy
+	'translate-manage-import-ok' => 'Inangkat na bagong bersyon ng pahinang $1.', # Fuzzy
+	'translate-manage-import-done' => 'Lahat nagawa na!', # Fuzzy
 	'importtranslations' => 'Mag-angkat ng mga salinwika',
 	'translate-import-from-local' => 'Karga ng katutubong talaksan:',
 	'translate-import-load' => 'Ikarga ang talaksan',
@@ -33642,9 +33567,9 @@ $messages['tr'] = array(
 	'translate-taction-disabled' => 'Bu eylem, bu viki üzerinde devre dışı bırakıldı.',
 	'translate-page-no-such-language' => 'Belirtilen dil geçersiz.',
 	'translate-page-no-such-group' => 'Belirtilen grup geçersiz.',
-	'translate-page-disabled' => "Bu gruptaki dil çevirileri devre dışı bırakıldı:
+	'translate-page-disabled' => 'Bu gruptaki dil çevirileri devre dışı bırakıldı:
 Neden:
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Bu dile çeviri devre dışı bırakıldı.',
 	'translate-page-settings-legend' => 'Ayarlar',
 	'translate-page-group' => 'Grup',
@@ -33672,7 +33597,7 @@ Neden:
 	'translate-edit-translation' => 'Çeviri',
 	'translate-edit-contribute' => 'Katkıda bulun',
 	'translate-edit-no-information' => "''Bu ileti için tanım bulunmuyor.''
-''Eğer bu iletinin nerede ve nasıl kullanıldığını biliyorsanız, bu ileti için bir tanım ekleyerek diğer çevirmenlere yardımcı olabilirsiniz.''",
+''Eğer bu iletinin nerede ve nasıl kullanıldığını biliyorsanız, bu ileti için bir tanım ekleyerek diğer çevirmenlere yardımcı olabilirsiniz.''", # Fuzzy
 	'translate-edit-information' => 'İleti hakkında bilgi(ler) ($1)',
 	'translate-edit-in-other-languages' => 'Diğer dillerdeki iletisi',
 	'translate-edit-committed' => 'Yazılımdaki mevcut çeviriler',
@@ -33815,6 +33740,7 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-manage-nochanges-other' => 'Bu dil için değişiklik yapılmadı.
 Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanın.',
 	'translate-manage-submit' => 'Yürüt',
+	'translate-manage-import-done' => 'Tamamlandı!', # Fuzzy
 	'importtranslations' => 'Çevirileri içe aktar',
 	'translate-import-from-local' => 'Yerel dosya yükleme:',
 	'translate-import-load' => 'Dosya yükle',
@@ -33930,7 +33856,7 @@ Görevleri incelemek için çok kullanışlıdır.',
 	'tux-proofread-translated-by-self' => 'Sizin tarafınızdan çevrildi',
 	'tux-empty-list-all' => 'Bu ileti grubu boştur.',
 	'tux-empty-list-all-guide' => 'Çevirmek için farklı bir ileti grubu seçin',
-	'tux-translate-page-no-such-group' => "'''Belirtilen grup mevcut değil.''' Farklı bir ileti grubu seçiniz.",
+	'tux-translate-page-no-such-group' => "'''Belirtilen grup mevcut değil.''' Farklı bir ileti grubu seçiniz.", # Fuzzy
 	'tux-empty-list-translated' => 'Hiçbir çevrilmiş ileti yok',
 	'tux-empty-list-translated-guide' => 'Çeviriye yardımcı olabilirsiniz',
 	'tux-empty-list-translated-action' => 'Çevir',
@@ -33974,9 +33900,9 @@ $messages['tt-cyrl'] = array(
 	'translate' => 'Тәрҗемә',
 	'translate-desc' => '[[Special:Translate|Махсус бит]] MediaWiki һәм башка программлар тәрҗемә итү өчен',
 	'translate-page-no-such-group' => 'Төркем дөрес күрсәтелмәгән',
-	'translate-page-disabled' => "Әлеге бүлектә бу тел буенча тәрҗемәләр ябылган. Сәбәбе:
+	'translate-page-disabled' => 'Әлеге бүлектә бу тел буенча тәрҗемәләр ябылган. Сәбәбе:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Көйләнмәләр',
 	'translate-page-group' => 'Төркем',
 	'translate-page-language' => 'Тел',
@@ -33998,7 +33924,6 @@ $messages['tt-cyrl'] = array(
 	'translate-edit-warnings' => 'Тулы булмаган тәрҗемәләр турында искәрмә',
 	'translate-edit-tmsugs' => 'Тәрҗемәләр хәтереннән тәкъдим',
 	'translate-edit-tmmatch' => '$1% туры килү',
-	'translate-edit-tab-list' => 'Мәкаләләр исемлеге',
 	'translate-magic-pagename' => 'MediaWiki-ны тулысынча тәрҗемә итү',
 	'translate-magic-module' => 'Модуль:',
 	'translate-magic-submit' => 'Чыгарырга',
@@ -34108,10 +34033,10 @@ $messages['ug-arab'] = array(
 	'translate-taction-disabled' => 'بۇ مەشغۇلات مەزكۇر ۋىكىدا چەكلەنگەن',
 	'translate-page-no-such-language' => 'بەلگىلەنگەن تىل ئىناۋەتسىز.',
 	'translate-page-no-such-group' => 'بەلگىلەنگەن گۇرۇپپا ئىناۋەتسىز.',
-	'translate-page-disabled' => "بۇ تىلنىڭ مەزكۇر گۇرۇپپىدىكى تەرجىمە ئىشلىرى چەكلەندى.
+	'translate-page-disabled' => 'بۇ تىلنىڭ مەزكۇر گۇرۇپپىدىكى تەرجىمە ئىشلىرى چەكلەندى.
 سەۋەبى:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'بۇ تىلدا تەرجىمە قىلىش چەكلەنگەن.',
 	'translate-page-settings-legend' => 'تەڭشەكلەر',
 	'translate-page-group' => 'گۇرۇپپا',
@@ -34133,13 +34058,12 @@ $messages['ug-arab'] = array(
 	'translate-ext-url' => '<hr />تور بېكەت: $1',
 	'translate-optional' => '(تاللاشچان)',
 	'translate-ignored' => '(پەرۋا قىلىنمىغان)',
-	'translate-edit-jsopen' => 'تەھرىر',
 	'translate-edit-title' => 'تەھرىر "$1"',
 	'translate-edit-definition' => 'ئۇچۇر ئېنىقلىمىسى',
 	'translate-edit-translation' => 'تەرجىمىسى',
 	'translate-edit-contribute' => 'تۆھپە',
 	'translate-edit-no-information' => "''بۇ ئۇچۇرنىڭ چۈشەندۈرۈشى يوق.''
-''ئەگەر سىز بۇ ئۇچۇرنىڭ قەيەردە ياكى قانداق ئىشلىتىلىدىغانلىقىنى بىلسىڭىز، بۇ ئۇچۇرنىڭ چۈشەندۈرۈشىنى قوشۇپ باشقا تەرجىمانلارغا ياردەم قىلالايسىز.''",
+''ئەگەر سىز بۇ ئۇچۇرنىڭ قەيەردە ياكى قانداق ئىشلىتىلىدىغانلىقىنى بىلسىڭىز، بۇ ئۇچۇرنىڭ چۈشەندۈرۈشىنى قوشۇپ باشقا تەرجىمانلارغا ياردەم قىلالايسىز.''", # Fuzzy
 	'translate-edit-information' => 'ئۇچۇر ھەققىدىكى ئۇچۇر ($1)',
 	'translate-edit-in-other-languages' => 'باشقا تىللاردىكى ئۇچۇرى',
 	'translate-edit-committed' => 'يۇمشاق دېتالنىڭ نۆۋەتتىكى تەرجىمىسى',
@@ -34148,7 +34072,6 @@ $messages['ug-arab'] = array(
 	'translate-edit-tmmatch-source' => 'تەرجىمە ئەسلى تېكىستى: $1',
 	'translate-edit-tmmatch' => '$1% ماس كېلىدۇ',
 	'translate-use-suggestion' => 'نۆۋەتتىكى تەرجىمىنى بۇ تەكلىپ بىلەن ئالماشتۇر',
-	'translate-edit-tab-list' => 'ئۇچۇر تىزىمى',
 	'translate-edit-nopermission' => 'ئۇچۇرلارنى تەرجىمە قىلىش ھوقۇقىغا ئېرىشىڭ.',
 	'translate-edit-askpermission' => 'ھوقۇق ئىلتىماسى',
 	'translate-magic-pagename' => 'كېڭەيتىلگەن MediaWiki تەرجىمە',
@@ -34195,7 +34118,6 @@ $messages['ug-arab'] = array(
 كۆڭۈلدىكى تىل تىزىمى تىلىڭىزغا باغلىق.',
 	'translate-pref-editassistlang-bad' => 'تىزىمدىكى ئىناۋەتسىز تىل كودى:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'كۈچەيتىلگەن تەرجىمە تەھرىرلىگۈچ (JavaScript)',
 	'right-translate' => 'ئىشلىتىدىغان تەرجىمە ئارايۈزى تەھرىر',
 	'right-translate-manage' => 'ئۇچۇر گۇرۇپپا باشقۇر',
 	'action-translate-manage' => 'ئۇچۇر گۇرۇپپىلارنى باشقۇر',
@@ -34296,7 +34218,6 @@ $messages['ug-arab'] = array(
 	'translate-smg-nochanges' => 'بىر تەرەپ قىلىدىغان ئۆزگىرىش يوق.',
 	'translate-smg-submit' => 'بىر تەرەپ قىلىشنىڭ ئۆزگىرىشىنى تاپشۇر',
 	'translate-smg-submitted' => 'ئۇچۇر ئېنىقلىمىسى يېڭىلاندى. ئۆزگىرىشنى ئارقا سۇپىدا بىر تەرەپ قىلىۋاتىدۇ.',
-	'translate-smg-postponed' => 'بەزى ئۆزگىرىشلەرنى بىر تەرەپ قىلالمىدى. [[{{FULLPAGENAME}}|قايتا سىناڭ]].',
 	'translate-smg-left' => 'ۋىكىدىكى ئۇچۇر مەزمۇنى',
 	'translate-smg-right' => 'كىرگۈزگەن ئۆزگەرتىشلەر',
 	'translate-manage-import-diff' => 'ئۇچۇر $1 | مەشغۇلات: $2',
@@ -34462,9 +34383,9 @@ $messages['uk'] = array(
 	'translate-taction-disabled' => 'Ця дія недоступна у цій вікі.',
 	'translate-page-no-such-language' => 'Зазначена неправильна мова.',
 	'translate-page-no-such-group' => 'Зазначена неправильна група.',
-	'translate-page-disabled' => "Переклади на цю мову в цій групі вимкнені. Причина:
+	'translate-page-disabled' => 'Переклади на цю мову в цій групі вимкнені. Причина:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Переклад цією мовою вимкнено.',
 	'translate-page-settings-legend' => 'Параметри',
 	'translate-page-group' => 'Група',
@@ -34491,8 +34412,8 @@ $messages['uk'] = array(
 	'translate-edit-definition' => 'Текст повідомлення',
 	'translate-edit-translation' => 'Переклад',
 	'translate-edit-contribute' => 'редагувати',
-	'translate-edit-no-information' => "''Це повідомлення не має опису.
-Якщо ви знаєте, де чи як воно використовується, ви можете допомогти іншим перекладачам, додавши опис для цього повідомлення.''",
+	'translate-edit-no-information' => '<em>Це повідомлення не має опису.
+Якщо ви знаєте, де чи як воно використовується, то ви можете допомогти іншим перекладачам, додавши опис для цього повідомлення.</em>',
 	'translate-edit-information' => 'Інформація про повідомлення ($1)',
 	'translate-edit-in-other-languages' => 'Повідомлення іншими мовами',
 	'translate-edit-committed' => 'Поточний переклад у програмі',
@@ -34501,7 +34422,6 @@ $messages['uk'] = array(
 	'translate-edit-tmmatch-source' => 'Текст для перекладу: $1',
 	'translate-edit-tmmatch' => '$1% відповідність',
 	'translate-use-suggestion' => 'Замінити поточний переклад цією пропозицією.',
-	'translate-edit-tab-list' => 'Список повідомлень',
 	'translate-edit-nopermission' => 'Вам потрібні права для перекладу повідомлень.',
 	'translate-edit-askpermission' => 'Подати запит на отримання прав',
 	'translate-magic-pagename' => 'Поглиблений переклад MediaWiki',
@@ -34556,7 +34476,6 @@ $messages['uk'] = array(
 Стандартний список мов залежить від вашої мови.',
 	'translate-pref-editassistlang-bad' => 'Неправильний мовний код в списку:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Розширений редактор перекладів (JavaScript)',
 	'right-translate' => 'Редагування з використанням інтерфейсу перекладу',
 	'right-translate-manage' => 'Управління групами повідомлень',
 	'action-translate-manage' => 'Керування групами повідомлень',
@@ -34682,6 +34601,8 @@ $messages['uk'] = array(
 	'translate-manage-intro-other' => 'Далі наведено список змін перекладів мовою: $1.
 Будь ласка, перевірте ці зміни і виберіть дію, яку застосувати щодо кожного оновлення.
 Якщо Ви оберете проігнорувати зміни, то ця дія лише тимчасова.',
+	'translate-manage-import-ok' => 'Імпортовано: $1',
+	'translate-manage-import-done' => 'Імпорт завершено!',
 	'importtranslations' => 'Імпортувати переклади',
 	'translate-import-from-local' => 'Завантажити локальний файл:',
 	'translate-import-load' => 'Завантажити файл',
@@ -34827,7 +34748,7 @@ $1',
 	'tux-proofread-translated-by-self' => 'Перекладено Вами',
 	'tux-empty-list-all' => 'Ця група повідомлень порожня',
 	'tux-empty-list-all-guide' => 'Оберіть іншу групу повідомлень для перекладу',
-	'tux-translate-page-no-such-group' => "'''Вказана група не існує.''' Оберіть іншу групу повідомлень.",
+	'tux-translate-page-no-such-group' => '<strong>Вказана група не існує.</strong> Оберіть іншу групу повідомлень.',
 	'tux-empty-list-translated' => 'Немає перекладених повідомень',
 	'tux-empty-list-translated-guide' => 'Ви можете допомогти перекладом',
 	'tux-empty-list-translated-action' => 'Перекласти',
@@ -34980,7 +34901,7 @@ $messages['uz'] = array(
 	'translate-taction-disabled' => "Bu vikida bu amal o'chirilgan.",
 	'translate-page-no-such-language' => "Noto'g'ri til kodi yuborildi",
 	'translate-page-no-such-group' => "Guruh noto'g'ri ko'rsatildi.",
-	'translate-page-disabled' => "Bu boʻlimda ushbu tilga tarjima qilish toʻxtatilgan. Sababi: ''$1''",
+	'translate-page-disabled' => 'Bu boʻlimda ushbu tilga tarjima qilish toʻxtatilgan. Sababi: <em>$1</em>',
 	'translate-language-disabled' => "Bu tilga tarjima qilish imkoniyati o'chirilgan.",
 	'translate-page-settings-legend' => 'Moslamalar',
 	'translate-page-group' => 'Guruh',
@@ -35002,12 +34923,11 @@ Qo'shimcha xabarlar faqat shu hollardagina tarjima qilinadi, qachonki xususiy no
 	'translate-ext-url' => '<hr />Sayt: $1',
 	'translate-optional' => '(majburiy emas)',
 	'translate-ignored' => "(e'tiborga olinmagan)",
-	'translate-edit-jsopen' => 'tahrir',
 	'translate-edit-title' => 'Tahrir "$1"',
 	'translate-edit-definition' => 'Xabar ifodasi',
 	'translate-edit-translation' => 'Tarjima',
 	'translate-edit-contribute' => 'tahrirlash',
-	'translate-edit-no-information' => "'Bu xabar tavsifga ega emas. Agar siz bu xabar qayerda va qanday ishlatilishini bilsangiz, u holda unga tavsif kiritib boshqa tarjimonlarga yordam berishingiz mumkin.''",
+	'translate-edit-no-information' => "'Bu xabar tavsifga ega emas. Agar siz bu xabar qayerda va qanday ishlatilishini bilsangiz, u holda unga tavsif kiritib boshqa tarjimonlarga yordam berishingiz mumkin.''", # Fuzzy
 	'translate-edit-information' => 'Xabar haqida maʼlumot ($1)',
 	'translate-edit-in-other-languages' => 'Xabar boshqa tillarda',
 	'translate-edit-committed' => 'Dasturda joriy tarjima',
@@ -35016,7 +34936,6 @@ Qo'shimcha xabarlar faqat shu hollardagina tarjima qilinadi, qachonki xususiy no
 	'translate-edit-tmmatch-source' => 'Tarjima uchun manba xabar matni: $1',
 	'translate-edit-tmmatch' => '$1% moslik',
 	'translate-use-suggestion' => 'Joriy tarjima matnini mazkur taklifga almashtirish.',
-	'translate-edit-tab-list' => 'Xabarlar roʻyxati',
 	'translate-edit-nopermission' => 'Xabarni tarjima qilish uchun ruxsat zarur.',
 	'translate-edit-askpermission' => "Ruxsat so'rash",
 	'translate-magic-pagename' => "MediaWikining chuqur o'rganilgan tarjimasi",
@@ -35052,7 +34971,6 @@ Qo'shimcha xabarlar faqat shu hollardagina tarjima qilinadi, qachonki xususiy no
 	'prefs-translate' => 'Tarjima moslamalari',
 	'translate-pref-editassistlang-bad' => "Ro'yxatda noto'g'ri til kodi:
 <nowiki>$1</nowiki>.",
-	'translate-pref-jsedit' => 'Yaxshilangan tarjimalar tahrirlagichi (JavaScript)',
 	'right-translate' => 'Tarjima qilish interfeysidan foydalangan holda tahrirlash',
 	'right-translate-manage' => 'Xabarlar guruhlarini boshqarish',
 	'action-translate-manage' => 'xabarlar guruhlarini boshqarish',
@@ -35465,9 +35383,9 @@ $messages['vi'] = array(
 	'translate-taction-disabled' => 'Tác vụ này đã bị tắt trên wiki này.',
 	'translate-page-no-such-language' => 'Ngôn ngữ chỉ định không đúng.',
 	'translate-page-no-such-group' => 'Nhóm chỉ định không đúng.',
-	'translate-page-disabled' => "Các bản dịch trong ngôn ngữ này trong nhóm đã bị tắt. Lý do:
+	'translate-page-disabled' => 'Các bản dịch trong ngôn ngữ này trong nhóm đã bị tắt. Lý do:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'Đã tắt chức năng dịch sang ngôn ngữ này.',
 	'translate-page-settings-legend' => 'Thiết lập',
 	'translate-page-group' => 'Nhóm',
@@ -35495,7 +35413,7 @@ thí dụ như không sử dụng khoảng cách hoặc có hệ thống phiên 
 	'translate-edit-definition' => 'Định nghĩa thông điệp',
 	'translate-edit-translation' => 'Bản dịch',
 	'translate-edit-contribute' => 'đóng góp',
-	'translate-edit-no-information' => "''Thông điệp này hiện chưa có tài liệu hướng dẫn. Nếu bạn biết thông điệp này dùng ở đâu và dùng như thế nào, bạn có thể giúp những biên dịch viên khác bằng cách thêm tài liệu hướng dẫn cho nó.''",
+	'translate-edit-no-information' => "''Thông điệp này hiện chưa có tài liệu hướng dẫn. Nếu bạn biết thông điệp này dùng ở đâu và dùng như thế nào, bạn có thể giúp những biên dịch viên khác bằng cách thêm tài liệu hướng dẫn cho nó.''", # Fuzzy
 	'translate-edit-information' => 'Thông tin về thông điệp ($1)',
 	'translate-edit-in-other-languages' => 'Thông điệp bằng thứ tiếng khác',
 	'translate-edit-committed' => 'Bản dịch hiện tại trong phần mềm',
@@ -35840,7 +35758,7 @@ Nó có ích đối với các tác vụ duyệt.',
 	'tux-proofread-translated-by-self' => 'Bản dịch của bạn',
 	'tux-empty-list-all' => 'Nhóm thông điệp này đang trống',
 	'tux-empty-list-all-guide' => 'Hãy chọn một nhóm thông điệp khác để dịch',
-	'tux-translate-page-no-such-group' => "'''Nhóm được chỉ định không tồn tại.''' Hãy chọn một nhóm thông điệp khác.",
+	'tux-translate-page-no-such-group' => "'''Nhóm được chỉ định không tồn tại.''' Hãy chọn một nhóm thông điệp khác.", # Fuzzy
 	'tux-empty-list-translated' => 'Chưa dịch thông điệp nào',
 	'tux-empty-list-translated-guide' => 'Mời bạn cùng biên dịch',
 	'tux-empty-list-translated-action' => 'Biên dịch',
@@ -35877,10 +35795,10 @@ $messages['vo'] = array(
 	'translate-desc' => '[[Special:Translate|Pad patik]] pro tradutam sitanunis ela MediaWiki',
 	'translate-page-no-such-language' => 'Pük pevälöl no dabinon.',
 	'translate-page-no-such-group' => 'Grup pevälöl no dabinon.',
-	'translate-page-disabled' => "Tradutam ini pük at in grup at penemögükon.
+	'translate-page-disabled' => 'Tradutam ini pük at in grup at penemögükon.
 Kod:
 
-''$1''",
+<em>$1</em>',
 	'translate-page-settings-legend' => 'Paramets',
 	'translate-page-group' => 'Grup:',
 	'translate-page-language' => 'Pük:',
@@ -35898,7 +35816,7 @@ Kod:
 	'translate-ignored' => '(penedemöl)',
 	'translate-edit-definition' => 'Miedet nuna',
 	'translate-edit-contribute' => 'keblünön',
-	'translate-edit-no-information' => 'Nun at no peplänon. If sevol, kiöpo u lio nun at pagebon, kanol yufön tradutanis votik medä penol pläni gudik dö geb onik.',
+	'translate-edit-no-information' => 'Nun at no peplänon. If sevol, kiöpo u lio nun at pagebon, kanol yufön tradutanis votik medä penol pläni gudik dö geb onik.', # Fuzzy
 	'translate-edit-information' => 'Plän nuna ($1)',
 	'translate-edit-in-other-languages' => 'Nun: "$1" in püks votik', # Fuzzy
 	'translate-edit-warnings' => 'Nüneds tefü tradutods no lölöfiks',
@@ -35983,7 +35901,7 @@ $messages['wa'] = array(
 	'translate-page-disabled' => "Les ratournaedjes dins ç' lingaedje la po ç' groupe ci n' si polèt nén fé.
 Råjhon:
 
-''$1''",
+<em>$1</em>",
 	'translate-language-disabled' => "Li ratournaedje dins ç' lingaedje ci a stî dismetou.",
 	'translate-page-settings-legend' => 'Tchuzes',
 	'translate-page-group' => 'Groupe:',
@@ -36005,13 +35923,12 @@ Les messaedjes di rawete sont-st opcionels et n' divèt esse ratournés k' si vo
 	'translate-ext-url' => '<hr />Waibe: $1',
 	'translate-optional' => '(opcionel)',
 	'translate-ignored' => '(ignoré)',
-	'translate-edit-jsopen' => 'candjî',
 	'translate-edit-title' => 'Candjî «$1»',
 	'translate-edit-definition' => 'Definixha do messaedje',
 	'translate-edit-translation' => 'Ratournaedje',
 	'translate-edit-contribute' => 'contribouwer',
 	'translate-edit-no-information' => "''Ci messaedje ci n' a nén stî documinté.''
-''Si vos savoz wice ou cmint ki ç' messaedje ci est eployî, vos ploz aidî les ôtes ratourneus tot radjoutant ene documintåcion pol messaedje.''",
+''Si vos savoz wice ou cmint ki ç' messaedje ci est eployî, vos ploz aidî les ôtes ratourneus tot radjoutant ene documintåcion pol messaedje.''", # Fuzzy
 	'translate-edit-information' => 'Infôrmåcions sol messaedje ($1)',
 	'translate-edit-in-other-languages' => 'Messaedjes dins ds ôtes lingaedjes',
 	'translate-edit-committed' => "Ratournaedje do moumint dins l' programe",
@@ -36020,7 +35937,6 @@ Les messaedjes di rawete sont-st opcionels et n' divèt esse ratournés k' si vo
 	'translate-edit-tmmatch-source' => 'Tecse sourdant do ratournaedje: $1',
 	'translate-edit-tmmatch' => 'rishonnant a $1%',
 	'translate-use-suggestion' => "Replaecî l' ratournaedje do moumint avou l' propôzaedje.",
-	'translate-edit-tab-list' => 'Djivêye di messaedjes',
 	'translate-edit-nopermission' => 'I vs fåt les permissions po pleur ratourner des messaedjes.',
 	'translate-edit-askpermission' => 'Dimander les permissions',
 	'translate-magic-pagename' => 'Ratournaedjes MediaWiki stindous',
@@ -36079,7 +35995,6 @@ Li ratournaedje d' on messaedje dins onk di ces lingaedjes la srè håyné cwand
 Li prémetowe djivêye dipind d' vosse lingaedje po l' eterface.",
 	'translate-pref-editassistlang-bad' => 'Côde di lingaedje nén valide el djivêye:
 <nowiki>$1</nowiki>.',
-	'translate-pref-jsedit' => 'Amidreye boesse di ratournaedje (JavaScript)',
 	'right-translate' => "Fé des ratournaedjes avou l' eterface di ratournaedje",
 	'right-translate-manage' => 'Manaedjî les groupes di messaedjes',
 	'action-translate-manage' => 'manaedjî les groupes di messaedjes',
@@ -36305,10 +36220,10 @@ $messages['yi'] = array(
 	'translate-taction-disabled' => 'די פעולה איז אומאקטיווירט אויף דער וויקי.',
 	'translate-page-no-such-language' => 'באַשטימטע שפראַך אומגילטיק.',
 	'translate-page-no-such-group' => 'ספעציפֿירטע גרופע אומגילטיק.',
-	'translate-page-disabled' => "פֿאַרטײַטשונגען צו דער דאזיקער שפראַך זענען מבוטל געווארן.
+	'translate-page-disabled' => 'פֿאַרטײַטשונגען צו דער דאזיקער שפראַך זענען מבוטל געווארן.
 טעם:
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => 'איבערזעצונג אין דער שפראך נישט מעגלעך.',
 	'translate-page-settings-legend' => 'איינשטעלונגען',
 	'translate-page-group' => 'גרופע',
@@ -36331,13 +36246,12 @@ $messages['yi'] = array(
 	'translate-ext-url' => '<hr />וועבזײַטל: $1',
 	'translate-optional' => '(ברירהדיק)',
 	'translate-ignored' => '(איגנאָרירט)',
-	'translate-edit-jsopen' => 'רעדאַקטירן',
 	'translate-edit-title' => 'רעדאַקטירן"$1"',
 	'translate-edit-definition' => 'מעלדונג דעפֿיניציע',
 	'translate-edit-translation' => 'איבערזעצונג',
 	'translate-edit-contribute' => 'בײַשטײַערן',
 	'translate-edit-no-information' => "'''די מעלדונג פעלט דאקומענטאציע.
-אויב איר ווייסט וואו אדער ווי די מעלדונג ווערט געניצט, קענט איר העלפֿן אנדערע פארטייטשערס דורך צולייגן דאקומענטאציע צו דער מעלדונג.'''",
+אויב איר ווייסט וואו אדער ווי די מעלדונג ווערט געניצט, קענט איר העלפֿן אנדערע פארטייטשערס דורך צולייגן דאקומענטאציע צו דער מעלדונג.'''", # Fuzzy
 	'translate-edit-information' => 'אינפֿארמאציע וועגן מעלדונג ($1)',
 	'translate-edit-in-other-languages' => ' מעלדונג אין אַנדערע שפּראַכן',
 	'translate-edit-committed' => 'לויפֿיגע איבערזעצונג אין ווייכוואַרג',
@@ -36346,7 +36260,6 @@ $messages['yi'] = array(
 	'translate-edit-tmmatch-source' => 'איבערזעצונג מקור טעקסט: $1',
 	'translate-edit-tmmatch' => '$1% צופאַסונג',
 	'translate-use-suggestion' => 'פֿארבייטן לויפֿיקע איבערזעצונג מיט דעם פֿארשלאג.',
-	'translate-edit-tab-list' => 'מעלדונג־ליסטע',
 	'translate-edit-nopermission' => 'איר דארפֿט רשות איבערצוזעצן מעלדונגען.',
 	'translate-edit-askpermission' => 'בעטן רשות',
 	'translate-magic-pagename' => 'פֿאַרברײטערטע מעדיעוויקי איבערזעצונג',
@@ -36406,7 +36319,6 @@ $messages['yi'] = array(
 די גרונט רשימה פון שפראכן ווענדט זיך לויט אייער שפראך.',
 	'translate-pref-editassistlang-bad' => 'אומגילטיקער שפּראַך קאָד אין דער רשימה:
 <nowiki>$1</nowiki> .',
-	'translate-pref-jsedit' => 'פֿארברייטערטער איבערזעצונג  רעדאקטאר (JavaScript)',
 	'right-translate' => 'רעדאקטירן דורכן איבערזעצונג אייבערפֿלאך',
 	'right-translate-manage' => 'פֿארוואלטן מעלדונג גרופעס',
 	'action-translate-manage' => 'פֿארוואלטן מעלדונג גרופעס',
@@ -36509,6 +36421,7 @@ $messages['yi'] = array(
 	'translate-manage-nochanges' => 'נישטא קיין ענדערונגען אין דעפֿיניציעס פֿאַר דער דאָזיגער גרופע.',
 	'translate-manage-fuzzy-summary' => 'די מעלדונג דעפיניציע איז געענדערט געווארן',
 	'translate-manage-submit' => 'אויספֿירן',
+	'translate-manage-import-done' => 'אַלץ ערליידיקט!', # Fuzzy
 	'importtranslations' => 'אימפארטירן איבערזעצונגען',
 	'translate-import-from-local' => 'לאקאלע טעקע ארויפֿלאדן:',
 	'translate-import-load' => 'לאָדן טעקע',
@@ -36631,7 +36544,7 @@ $1",
 	'tux-proofread-translated-by-self' => 'איבערגעזעצט דורך אייך',
 	'tux-empty-list-all' => 'די דאזיקע מעלדונג גרופע איז ליידיק',
 	'tux-empty-list-all-guide' => 'קלויבט אן אנדער מעלדונג גרופע איבערצוזעצן',
-	'tux-translate-page-no-such-group' => "'''די געזוכטע גרופע עקזיסטירט נישט.''' קלויבט אן אנדער מעלדונג גרופע.",
+	'tux-translate-page-no-such-group' => "'''די געזוכטע גרופע עקזיסטירט נישט.''' קלויבט אן אנדער מעלדונג גרופע.", # Fuzzy
 	'tux-empty-list-translated' => 'קיין איבערגעזעצטע מעלדונגען',
 	'tux-empty-list-translated-guide' => 'איר קענט העלפן איבערזעצן',
 	'tux-empty-list-translated-action' => 'פֿאַרטײַטשן',
@@ -36768,9 +36681,9 @@ $messages['zh-hans'] = array(
 	'translate-taction-disabled' => '该操作在本维基停用。',
 	'translate-page-no-such-language' => '指定语言无效。',
 	'translate-page-no-such-group' => '指定信息组无效。',
-	'translate-page-disabled' => "本信息组该语言的翻译已经停用。原因：
+	'translate-page-disabled' => '本信息组该语言的翻译已经停用。原因：
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => '至该语言的翻译已停用。',
 	'translate-page-settings-legend' => '设置',
 	'translate-page-group' => '信息组',
@@ -36795,7 +36708,7 @@ $messages['zh-hans'] = array(
 	'translate-edit-definition' => '信息定义',
 	'translate-edit-translation' => '翻译',
 	'translate-edit-contribute' => '贡献',
-	'translate-edit-no-information' => "''该信息没有说明文件。如果你知道该信息用于何处或如何使用，你可以通过添加该信息的说明文件以帮助其他译者。''",
+	'translate-edit-no-information' => "''该信息没有说明文件。如果你知道该信息用于何处或如何使用，你可以通过添加该信息的说明文件以帮助其他译者。''", # Fuzzy
 	'translate-edit-information' => '关于信息的资料（$1）',
 	'translate-edit-in-other-languages' => '其他语言的信息',
 	'translate-edit-committed' => '当前软件中的翻译',
@@ -36966,6 +36879,8 @@ $messages['zh-hans'] = array(
 	'translate-manage-fuzzy-summary' => '信息定义已经更改',
 	'translate-manage-submit' => '执行',
 	'translate-manage-intro-other' => '下面是$1翻译更改列表。请复查更改并选择你想要为每个更新执行的操作。如果你选择忽略更改，该操作只是暂时的。',
+	'translate-manage-import-ok' => '已导入：$1',
+	'translate-manage-import-done' => '导入完成！',
 	'importtranslations' => '导入翻译',
 	'translate-import-from-local' => '本地文件上传：',
 	'translate-import-load' => '载入文件',
@@ -37108,7 +37023,7 @@ $messages['zh-hans'] = array(
 	'tux-proofread-translated-by-self' => '你的翻译',
 	'tux-empty-list-all' => '本信息组为空',
 	'tux-empty-list-all-guide' => '请选择其他信息组翻译',
-	'tux-translate-page-no-such-group' => "'''指定的信息组不存在。'''请选择其他信息组。",
+	'tux-translate-page-no-such-group' => "'''指定的信息组不存在。'''请选择其他信息组。", # Fuzzy
 	'tux-empty-list-translated' => '没有已翻译信息',
 	'tux-empty-list-translated-guide' => '你可以帮助翻译',
 	'tux-empty-list-translated-action' => '翻译',
@@ -37170,10 +37085,10 @@ $messages['zh-hant'] = array(
 	'translate-taction-disabled' => '在本維基上禁止使用此操作。',
 	'translate-page-no-such-language' => '選擇的語言錯誤',
 	'translate-page-no-such-group' => '選擇的群組錯誤',
-	'translate-page-disabled' => "已停止本群組翻譯成該語言。
+	'translate-page-disabled' => '已停止本群組翻譯成該語言。
 原因：
 
-''$1''",
+<em>$1</em>',
 	'translate-language-disabled' => '已禁止翻譯成該語言。',
 	'translate-page-settings-legend' => '設定',
 	'translate-page-group' => '群組',
@@ -37195,13 +37110,12 @@ $messages['zh-hant'] = array(
 	'translate-ext-url' => '<hr />網站：$1',
 	'translate-optional' => '（可選）',
 	'translate-ignored' => '（已略過）',
-	'translate-edit-jsopen' => '編輯',
 	'translate-edit-title' => '開始翻譯「$1」',
 	'translate-edit-definition' => '介面訊息原文',
 	'translate-edit-translation' => '翻譯',
 	'translate-edit-contribute' => '貢獻',
 	'translate-edit-no-information' => "''本介面訊息沒有任何說明資訊。''
-''如果您知道這個訊息是使用在哪個地方，您可以增加說明資訊以協助其他翻譯者。''",
+''如果您知道這個訊息是使用在哪個地方，您可以增加說明資訊以協助其他翻譯者。''", # Fuzzy
 	'translate-edit-information' => '關於訊息的資料（$1）',
 	'translate-edit-in-other-languages' => '其他語言的訊息',
 	'translate-edit-committed' => '目前翻譯',
@@ -37210,7 +37124,6 @@ $messages['zh-hant'] = array(
 	'translate-edit-tmmatch-source' => '翻譯原文：$1',
 	'translate-edit-tmmatch' => '$1% 符合',
 	'translate-use-suggestion' => '採納此建議取代目前的翻譯。',
-	'translate-edit-tab-list' => '介面訊息清單',
 	'translate-edit-nopermission' => '您必須獲得權限才可以翻譯訊息。',
 	'translate-edit-askpermission' => '請求權限',
 	'translate-magic-pagename' => '延伸的MediaWiki翻譯',
@@ -37271,7 +37184,6 @@ $messages['zh-hant'] = array(
 預設語言列表取決於你的語言。',
 	'translate-pref-editassistlang-bad' => '列表中的無效語言代碼：
 <nowiki>$1</nowiki>。',
-	'translate-pref-jsedit' => '增強的翻譯編輯器（JavaScript）',
 	'right-translate' => '使用翻譯介面編輯',
 	'right-translate-manage' => '管理訊息群組',
 	'action-translate-manage' => '管理訊息群組',
@@ -37372,7 +37284,6 @@ $messages['zh-hant'] = array(
 	'translate-smg-nochanges' => '沒有變更要處理。',
 	'translate-smg-submit' => '提交變更以處理',
 	'translate-smg-submitted' => '消息定義已更新。變更正在後台處理。',
-	'translate-smg-postponed' => '一些變更無法處理。[[{{FULLPAGENAME}}|重試]]。',
 	'translate-smg-left' => 'Wiki中的消息內容',
 	'translate-smg-right' => '發生的變更',
 	'translate-manage-import-diff' => '訊息 $1 | 操作：$2',
@@ -37398,6 +37309,8 @@ $messages['zh-hant'] = array(
 	'translate-manage-intro-other' => '下列是在$1語言的翻譯更改列表。
 請檢查更改，並為每個翻譯更新選擇您想要的操作。
 您可以選擇暫時忽略這些更改。',
+	'translate-manage-import-ok' => '導入新版本的網頁$1。', # Fuzzy
+	'translate-manage-import-done' => '全部完成！', # Fuzzy
 	'importtranslations' => '匯入翻譯',
 	'translate-import-from-local' => '上載本地檔案：',
 	'translate-import-load' => '載入檔案',
@@ -37544,7 +37457,7 @@ $1',
 	'tux-proofread-translated-by-self' => '您的翻譯',
 	'tux-empty-list-all' => '此訊息群組無訊息',
 	'tux-empty-list-all-guide' => '選擇其他的訊息群組翻譯',
-	'tux-translate-page-no-such-group' => "'''指定的群組並不存在。''' 謮選擇其他訊息群組。",
+	'tux-translate-page-no-such-group' => "'''指定的群組並不存在。''' 謮選擇其他訊息群組。", # Fuzzy
 	'tux-empty-list-translated' => '沒有已翻譯的訊息',
 	'tux-empty-list-translated-guide' => '您可以幫助翻譯',
 	'tux-empty-list-translated-action' => '翻譯',

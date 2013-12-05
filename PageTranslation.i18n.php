@@ -2517,12 +2517,12 @@ Die Seite, die gerade bearbeitet wird, hat keine Verbindung zu einer übersetzba
 	'tpt-translation-restricted' => 'Das Übersetzen dieser Seite in diese Sprache wurde durch einen Übersetzungsadministrator deaktiviert.
 
 Grund: $1',
-	'tpt-discouraged-language-force' => 'Ein Übersetzungsadministrator hat die Sprachen eingeschränkt, in die diese Seite übersetzt werden kann. Diese Sprache befindet sich nicht unter den zulässigen Sprachen.
+	'tpt-discouraged-language-force' => '<strong>Diese Seite kann nicht auf $2 übersetzt werden.</strong>
 
-Grund: $1',
-	'tpt-discouraged-language' => 'Diese Sprache befindet sich nicht unter den von einem Übersetzungsadministrator priorisierten Sprachen für die Übersetzung dieser Seite.
+Ein Übersetzungsadministrator hat sich entschieden, dass diese Seite nur auf $3 übersetzt werden kann.',
+	'tpt-discouraged-language' => '<strong>$2 ist keine priorisierte Sprache für diese Seite.</strong>
 
-Grund: $1',
+Ein Übersetzungsadministrator hat sich entschieden, die Übersetzungsarbeiten auf $3 zu fokussieren.',
 	'tpt-discouraged-language-reason' => 'Grund: $1',
 	'tpt-priority-languages' => 'Ein Übersetzungsadministrator hat die priorisierte Sprachen für diese Nachrichtengruppe auf $1 festgelegt.',
 	'tpt-render-summary' => 'Übernehme Bearbeitung einer neuen Version der Quellseite',
@@ -2747,10 +2747,10 @@ Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kó
 Pśicyna: $1',
 	'tpt-discouraged-language-force' => 'Pśełožowański administrator jo rěcy wobgranicował, do kótarychž toś ten bok dajo se pśełožyś. Toś rěc njejo mjazy toś tymi rěcami:
 
-Pśicyna: $1',
+Pśicyna: $1', # Fuzzy
 	'tpt-discouraged-language' => 'Toś ta rěc njejo mjazy primarnymi rěcami, kótarež pśełožowański administrator jo za ten toś bok póstajił.
 
-Pśicyna: $1',
+Pśicyna: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Pśicyna: $1',
 	'tpt-priority-languages' => 'Pśełožowański administrator jo primarne rěcy za toś tu kupku ako $1 nastajił.',
 	'tpt-render-summary' => 'Aktualizacija pó nowej wersiji žrědłowego boka',
@@ -3881,12 +3881,12 @@ La page que vous essayé de modifier ne semble correspondre à aucune page marqu
 	'tpt-translation-restricted' => 'La traduction de cette page dans cette langue a été empêchée par un administrateur des traductions.
 
 Motif: $1',
-	'tpt-discouraged-language-force' => 'Un administrateur des traductions a limité les langues dans lesquelles cette page peut être traduite. Cette langue ne fait pas partie de celles-ci.
+	'tpt-discouraged-language-force' => '<strong>Cette page ne peut pas être traduite en $2.</strong>
 
-Motif: $1',
-	'tpt-discouraged-language' => 'La langue vers laquelle les messages listés dans cette page peuvent être traduits ne fait pas partie des langues prioritaires définies par un administrateur des traductions.
+Un administrateur des traductions a décidé que cette page ne peut être traduite qu’en $3.',
+	'tpt-discouraged-language' => '<strong>Traduire en $2 n’est pas une priorité pour cette page.</strong>
 
-Motif : $1',
+Un administrateur des traductions a décidé de concentrer l’effort de traduction sur $3.',
 	'tpt-discouraged-language-reason' => 'Raison : $1',
 	'tpt-priority-languages' => 'Un administrateur de traduction a défini les langues prioritaire pour ce groupe : $1 .',
 	'tpt-render-summary' => 'Mise à jour pour être en accord avec la nouvelle version de la source de la page',
@@ -5715,11 +5715,11 @@ $messages['ja'] = array(
 	'tpt-translation-restricted' => '翻訳管理者がこのページのこの言語への翻訳を禁止しています。
 
 理由: $1',
-	'tpt-discouraged-language-force' => "'''このページは $2 に翻訳できません。'''
+	'tpt-discouraged-language-force' => '<strong>このページは $2 に翻訳できません。</strong>
 
-翻訳管理者がこのページの翻訳先言語を $3 のみに制限しています。",
-	'tpt-discouraged-language' => "'''このページの$2への翻訳は重要ではありません。'''
-翻訳管理者が$3への翻訳作業に重点を置くことを決めました。",
+翻訳管理者がこのページの翻訳先言語を $3 のみに制限しています。',
+	'tpt-discouraged-language' => '<strong>このページの $2 への翻訳は重要ではありません。</strong>
+翻訳管理者が $3 への翻訳作業に重点を置くことを決めました。',
 	'tpt-discouraged-language-reason' => '理由: $1',
 	'tpt-priority-languages' => '翻訳管理者が、このメッセージ群の優先言語を $1 に設定しました。',
 	'tpt-render-summary' => '翻訳元ページの新版に適合するように更新',
@@ -6172,10 +6172,10 @@ $messages['ko'] = array(
 이유: $1',
 	'tpt-discouraged-language-force' => "'''이 문서는 $2(으)로 번역할 수 없습니다.'''
 
-번역 관리자는 이 문서가 $3(으)로 번역할 수 있도록 결정했습니다.",
+번역 관리자는 이 문서가 $3(으)로 번역할 수 있도록 결정했습니다.", # Fuzzy
 	'tpt-discouraged-language' => "'''$2로 번역하는 것은 이 문서에 대해 우선 순위가 아닙니다.'''
 
-번역 관리자는 $3에 번역 노력을 집중하기로 결정합니다.",
+번역 관리자는 $3에 번역 노력을 집중하기로 결정합니다.", # Fuzzy
 	'tpt-discouraged-language-reason' => '이유: $1',
 	'tpt-priority-languages' => '번역 관리자는 $1(으)로 이 그룹에 대해 우선 언어를 설정합니다.',
 	'tpt-render-summary' => '원본 문서의 새 버전에 맞게 업데이트',
@@ -6916,12 +6916,12 @@ $messages['mk'] = array(
 	'tpt-translation-restricted' => 'Преведувањето на страницата на овој јазик е спречено од преводен администратор.
 
 Причина: $1',
-	'tpt-discouraged-language-force' => 'Преводен администратор ги ограничи јазиците на кои може да се преведе оваа страница. Овој јазик не е меѓу нив.
+	'tpt-discouraged-language-force' => '<strong>Страницава не може да се преведува на $2.</strong>
 
-Причина: $1',
-	'tpt-discouraged-language' => 'Овој јазик не е меѓу приоритетните јазици на оваа страница што ги задал администратор
+Преводен администратор одлучил дека страницата може да се преведува само на $3.',
+	'tpt-discouraged-language' => '<strong>Преводот на $2 не претставува приоритет за страницава.</strong>
 
-Причина: $1',
+Преводен администратор реши дека преведувањето треба да се задржи на $3.',
 	'tpt-discouraged-language-reason' => 'Причина: $1',
 	'tpt-priority-languages' => 'Преводен администратор на групата ѝ ги зададе приоритетните јазици: $1.',
 	'tpt-render-summary' => 'Обнова за усогласување со новата верзија на изворната страница',
@@ -7098,6 +7098,8 @@ $messages['mr'] = array(
 	'tpt-section' => 'भाषांतर एकक $1',
 	'tpt-offer-notify' => 'आपण या पानाबाबत <span class="plainlinks">[$1 भाषांतरकारांना माहिती देउ शकता]</span>',
 	'tpt-tab-translate' => 'भाषांतर करा',
+	'tpt-discouraged-language-force' => '<strong>हे पान $2 भाषेत भाषांतरीत करता येणार नाही.</strong>भाषांतर प्रशासकाने निर्णय घेतला आहे कि या पानाचे भाषांतर फक्त $3 मध्ये करता येईल.',
+	'tpt-discouraged-language' => '<strong>$2 मधील भाषांतर या पानाची प्राथमिकता नाही.</strong>$3 वर भाषांतरासाठीचे प्रयत्न केंद्रित करण्याचा भाषांतर प्रशासकाने निर्णय घेतला आहे.',
 );
 
 /** Malay (Bahasa Melayu)
@@ -10451,12 +10453,12 @@ $messages['uk'] = array(
 	'tpt-translation-restricted' => 'Адміністратор перекладу заборонив переклад цієї сторінки такою мовою.
 
 Причина: $1',
-	'tpt-discouraged-language-force' => "'''Ця сторінка не може бути перекладена мовою $2.'''
+	'tpt-discouraged-language-force' => '<strong>Ця сторінка не може бути перекладена мовою $2.</strong>
 
-Адміністратор перекладу вирішив, що ця сторінка може бути перекладена лише такими мовами: $3",
-	'tpt-discouraged-language' => "'''Переклад мовою $2 не є пріоритетним для цієї сторінки.'''
+Адміністратор перекладу вирішив, що ця сторінка може бути перекладена лише такими мовами: $3',
+	'tpt-discouraged-language' => '<strong>Переклад мовою $2 не є пріоритетним для цієї сторінки.</strong>
 
-Адміністратор вирішив зосередити зусилля на перекладі такими мовами: $3.",
+Адміністратор вирішив зосередити зусилля на перекладі такими мовами: $3.',
 	'tpt-discouraged-language-reason' => 'Причина:$1',
 	'tpt-priority-languages' => 'Адміністратор перекладу визначив для цієї групи пріоритетні мови $1.',
 	'tpt-render-summary' => 'Оновлення для відповідності новій версії вихідної сторінки',
@@ -11060,10 +11062,10 @@ $messages['zh-hans'] = array(
 原因：$1',
 	'tpt-discouraged-language-force' => '翻译管理员限制了翻译此页时所能采用的语言。这种语言不在这些语言之列。
 
-原因：$1',
+原因：$1', # Fuzzy
 	'tpt-discouraged-language' => '这种语言不在此页的翻译管理员所设置的优先语言之列。
 
-原因：$1',
+原因：$1', # Fuzzy
 	'tpt-discouraged-language-reason' => '原因：$1',
 	'tpt-priority-languages' => '翻译管理员已将该组需优先翻译的语言设为$1。',
 	'tpt-render-summary' => '更新以匹配源页面内容的新版本',

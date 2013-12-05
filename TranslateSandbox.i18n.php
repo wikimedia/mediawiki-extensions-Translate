@@ -273,6 +273,7 @@ Veuillez venir sur $2 et faire quelques traductions de plus.',
 	'tsb-search-requests' => 'Demandes de recherche',
 	'tsb-accept-button-label' => 'Accepter',
 	'tsb-reject-button-label' => 'Rejeter',
+	'tsb-selected-count' => '{{PLURAL:$1|$1 utilisateur sélectionné|$1 utilisateurs sélectionnés}}',
 	'tsb-accept-all-button-label' => 'Tout accepter',
 	'tsb-reject-all-button-label' => 'Tout rejeter',
 	'tsb-reminder-link-text' => 'Envoyer un courriel de rappel',
@@ -287,6 +288,7 @@ Veuillez venir sur $2 et faire quelques traductions de plus.',
 	'translate-translationstash-skip-button-label' => 'Essayer une autre',
 	'tsb-limit-reached-title' => 'Merci pour vos traductions',
 	'tsb-limit-reached-body' => 'Vous atteint le nombre limite de traductions pour les nouveaux traducteurs. !N !Notre équipe va vérifier et mettre à niveau votre compte bientôt. !N !Ensuite, vous serez en mesure de traduire sans limites.',
+	'tsb-no-requests-from-new-users' => 'Aucune requête de nouveaux utilisateurs',
 );
 
 /** Galician (galego)
@@ -523,6 +525,7 @@ $messages['mk'] = array(
 	'tsb-search-requests' => 'Пребарајте барања',
 	'tsb-accept-button-label' => 'Прифати',
 	'tsb-reject-button-label' => 'Одбиј',
+	'tsb-selected-count' => '{{PLURAL:$1|Избран е еден корисник|Избрани се $1 корисници}}',
 	'tsb-accept-all-button-label' => 'Прифати ги сите',
 	'tsb-reject-all-button-label' => 'Одбиј ги сите',
 	'tsb-reminder-link-text' => 'Испрати потсетник по е-пошта',
@@ -539,6 +542,15 @@ $messages['mk'] = array(
 	'tsb-limit-reached-body' => 'Ја достигнавте границата на преводи од нови преведувачи.
 Наскоро нашата екипа ќе ви ја провери и надгради сметката.
 Потоа ќе можете да преведувате неограничено.',
+	'tsb-no-requests-from-new-users' => 'Нема барања од нови корисници',
+);
+
+/** Marathi (मराठी)
+ * @author V.narsikar
+ */
+$messages['mr'] = array(
+	'tsb-selected-count' => '{{PLURAL:$1|$1 सदस्य निवडला|$1 सदस्य निवडले}}',
+	'tsb-no-requests-from-new-users' => 'नविन सदस्यांपासून काहीच विनंत्या नाहीत',
 );
 
 /** Malay (Bahasa Melayu)
@@ -747,6 +759,7 @@ $messages['uk'] = array(
 	'tsb-search-requests' => 'Пошукові запити',
 	'tsb-accept-button-label' => 'Прийняти',
 	'tsb-reject-button-label' => 'Відмовитися',
+	'tsb-selected-count' => '{{PLURAL:$1|$1 користувач вибраний|$1 користувачі вибрані|$1 користувачів вибрано}}',
 	'tsb-accept-all-button-label' => 'Прийняти всі',
 	'tsb-reject-all-button-label' => 'Відхилити всі',
 	'tsb-reminder-link-text' => 'Надсилати нагадування по електронній пошті',
@@ -763,6 +776,7 @@ $messages['uk'] = array(
 	'tsb-limit-reached-body' => 'Вами досягнута межа перекладу для нових перекладачів.
 Наша команда невдовзі перевірить і оновить ваш обліковий запис.
 Потім зможете перекладати без обмежень.',
+	'tsb-no-requests-from-new-users' => 'Немає запитів від нових користувачів',
 );
 
 /** Vietnamese (Tiếng Việt)
@@ -804,6 +818,7 @@ Sau đó bạn sẽ có thể biên dịch thoải mái không có giới hạn.
  * @author Hzy980512
  * @author Liuxinyu970226
  * @author Qiyue2001
+ * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'translatesandbox' => '管理译者沙盒',
@@ -821,6 +836,7 @@ $messages['zh-hans'] = array(
 	'translate-translationstash-translations' => '$1完成了翻译',
 	'translate-translationstash-skip-button-label' => '尝试其他',
 	'tsb-limit-reached-title' => '感谢您的翻译',
+	'tsb-no-requests-from-new-users' => '没有新用户请求',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
