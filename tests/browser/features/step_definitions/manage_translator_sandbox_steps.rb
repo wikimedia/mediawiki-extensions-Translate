@@ -15,9 +15,7 @@ When(/^I search for '(.*)' in the sandboxed users search field$/) do |string|
 end
 
 Then(/^only users whose name begins with '(.*)' are displayed in the first column$/) do |prefix|
-	on(ManageTranslatorSandboxPage).username_element.each do |name|
-		name.text.should match(/^#{prefix}/i)
-	end
+	on(ManageTranslatorSandboxPage).visible_users_start_with?(prefix).should be_true
 end
 
 Then(/^a user whose name begins with '(.*)' is displayed in the first column$/) do |prefix|
@@ -27,7 +25,11 @@ Then(/^a user whose name begins with '(.*)' is displayed in the first column$/) 
 end
 
 Then(/^no users are displayed in the first column$/) do
-	on(ManageTranslatorSandboxPage).username_element.length.should == 0
+	# Testing search doesn't work without waiting a bit,
+	# because the filtering doesn't happen immediately.
+	# TODO: Find a better way to wait until the filtering is complete.
+	sleep 1
+	on(ManageTranslatorSandboxPage).visible_users_element.length.should == 0
 end
 
 Then(/^'(.+)' is displayed at the top of the first column$/) do |requests_number|
