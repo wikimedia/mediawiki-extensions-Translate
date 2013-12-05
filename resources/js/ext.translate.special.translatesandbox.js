@@ -443,9 +443,34 @@
 		}
 
 		// Activate language selector
-		// TODO: Make it functional
-		$( '.language-selector' ).uls();
+		$( '.language-selector' ).uls( {
+			onSelect: function ( language ) {
+				$( '.language-selector' ).text( $.uls.data.getAutonym( language ) );
+				filterRequestsByLanguage( language );
+			}
+		} );
 	} );
+
+	/**
+	 * Filter the requests by language.
+	 * @param  {string} language Language code
+	 */
+	function filterRequestsByLanguage ( language ) {
+		var $requests = $( '.request' );
+		$requests.each( function ( index, request ) {
+			var $request = $(request),
+				requestData = $request.data( 'data' );
+
+			if ( requestData.languagepreferences
+				&& requestData.languagepreferences.languages
+				&& requestData.languagepreferences.languages.indexOf( language ) > -1 ) {
+				// Found language
+				$request.removeClass( 'hide' );
+			} else {
+				$request.addClass( 'hide' );
+			}
+		} );
+	}
 
 	function TranslatorSearch ( element ) {
 		this.$search = $( element );
