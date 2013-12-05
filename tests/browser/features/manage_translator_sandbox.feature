@@ -22,13 +22,13 @@ Feature: Manage translator sandbox
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I search for 'pupu' in the sandboxed users search field
     Then only users whose name begins with 'pupu' are displayed in the first column
-      And '5 requests' is displayed at the top of the first column
+      And I should see '5 requests' at the top of the first column
 
   Scenario: Searching for non-existing users displays no results
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I search for 'nosuchuser' in the sandboxed users search field
     Then no users are displayed in the first column
-      And '0 requests' is displayed at the top of the first column
+      And I should see '0 requests' at the top of the first column
 
   Scenario: Emptying the search field shows all the users
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
@@ -36,6 +36,25 @@ Feature: Manage translator sandbox
       And I search for '' in the sandboxed users search field
     Then a user whose name begins with 'pupu' is displayed in the first column
       And a user whose name begins with 'orava' is displayed in the first column
+
+  Scenario: Searching for a user by language
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
+    When I click the sandboxed users language filter button
+      And I type 'ml' in the language filter
+    Then only users who translate to language 'ml' are displayed in the first column
+      And I should see '2 requests' at the top of the first column
+      And I should see '1 user selected' at the bottom of the first column
+      And I should see the name of the first user in the first column in the header of the second column
+
+  Scenario: Searching for a user by language and selecting all users
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
+    When I click the sandboxed users language filter button
+      And I type 'uk' in the language filter
+      And I click the checkbox to select all users
+    Then only users who translate to language 'uk' are displayed in the first column
+      And I should see '2 requests' at the top of the first column
+      And I should see '2 user selected' at the bottom of the first column
+      And I should see '2 users selected' in the header of the second column
 
   Scenario: Translation Administrator should be able to see a list of pending requests with usernames in the first column, sorted by the number of translations and the most recent within them, and the first user should be selected
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox

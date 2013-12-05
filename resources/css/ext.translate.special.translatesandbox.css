@@ -191,11 +191,15 @@
 	font-size: 1em;
 }
 
+.language-selector.selected {
+	cursor: default;
+}
+
 .language-selector:hover {
 	border-color: #AAAAAA;
 }
 
-.language-selector:after {
+.language-selector.unselected:after {
 	content: "";
 	border-top: 4px solid #AAAAAA;
 	border-left: 4px solid transparent;
@@ -203,6 +207,11 @@
 	display: inline-block;
 	vertical-align: middle;
 	margin-left: 0.5em;
+}
+
+.language-selector .clear {
+	padding-left: 10px;
+	cursor: pointer;
 }
 
 textarea.body {
