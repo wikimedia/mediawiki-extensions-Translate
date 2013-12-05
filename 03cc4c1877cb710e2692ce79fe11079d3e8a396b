@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_4357db05",
+        "filename": "tests/browser/features/step_definitions/manage_translator_sandbox_steps.rb",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-05T10:00:48Z",
+      "side": 1,
+      "message": "This is not working, unknown method attribute",
+      "revId": "03cc4c1877cb710e2692ce79fe11079d3e8a396b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
