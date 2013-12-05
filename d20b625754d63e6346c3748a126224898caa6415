@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_a8eb2676",
+        "filename": "PageTranslation.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-05T07:54:48Z",
+      "side": 1,
+      "message": "That looks like it may have had to be a strong.\n\nIndeed: https://gerrit.wikimedia.org/r/#/c/99182/1/PageTranslation.i18n.php",
+      "revId": "d20b625754d63e6346c3748a126224898caa6415",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
