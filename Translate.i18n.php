@@ -39,7 +39,7 @@ $messages['en'] = array(
 	'translate-page-disabled' => "Translations to this language in this group have been disabled.
 Reason:
 
-''$1''",
+<em>$1</em>",
 	'translate-language-disabled' => 'Translation to this language is disabled.',
 	'translate-page-settings-legend' => 'Settings',
 	'translate-page-group' => 'Group',
@@ -71,8 +71,8 @@ like not using spaces or transliterating proper names. $1',
 	'translate-edit-definition' => 'Message definition',
 	'translate-edit-translation' => 'Translation',
 	'translate-edit-contribute' => 'contribute',
-	'translate-edit-no-information' => "''This message has no documentation.''
-''If you know where or how this message is used, you can help other translators by adding documentation to this message.''",
+	'translate-edit-no-information' => "<em>This message has no documentation.
+If you know where or how this message is used, you can help other translators by adding documentation to this message.</em>",
 	'translate-edit-information' => 'Information about message ($1)',
 	'translate-edit-in-other-languages' => 'Message in other languages',
 	'translate-edit-committed' => 'Current translation in software',
@@ -489,7 +489,7 @@ Most useful for the review tasks.',
 
 	'tux-empty-list-all' => 'This message group is empty',
 	'tux-empty-list-all-guide' => 'Select a different message group to translate',
-	'tux-translate-page-no-such-group' => "'''The indicated group does not exist.''' Select a different message group.",
+	'tux-translate-page-no-such-group' => "<strong>The indicated group does not exist.</strong> Select a different message group.",
 
 	'tux-empty-list-translated' => 'No translated messages',
 	'tux-empty-list-translated-guide' => 'You can help translating',

@@ -102,10 +102,10 @@ The page you are trying to edit does not seem to correspond any page marked for 
 	'tpt-translation-restricted' => 'Translation of this page to this language has been prevented by a translation administrator.
 
 Reason: $1',
-	'tpt-discouraged-language-force' => "'''This page cannot be translated to $2.'''
+	'tpt-discouraged-language-force' => "<em>'This page cannot be translated to $2.</em>'
 
 A translation administrator decided that this page can only be translated to $3.",
-	'tpt-discouraged-language' => "'''Translating to $2 is not a priority for this page.'''
+	'tpt-discouraged-language' => "<strong>Translating to $2 is not a priority for this page.</strong>
 
 A translation administrator decided to focus the translation efforts on $3.",
 	'tpt-discouraged-language-reason' => 'Reason: $1',

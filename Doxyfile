@@ -204,8 +204,8 @@ DOT_CLEANUP            = YES
 #---------------------------------------------------------------------------
 SEARCHENGINE           = NO
 
-ALIASES = "type{1}= &nbsp;  <b>\1</b> &nbsp; " \
-		"types{2}= &nbsp; <b>\1</b> or <b>\2</b> &nbsp; " \
+ALIASES = "type{1}= &nbsp;  <strong>\1</strong> &nbsp; " \
+		"types{2}= &nbsp; <strong>\1</strong> or <strong>\2</strong> &nbsp; " \
 		"arrayof{2}=\type{Array[\1 => \2]}" \
 		"array=\type{Array}" \
 		"list{1}=\type{List of \1s}" \

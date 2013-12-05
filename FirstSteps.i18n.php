@@ -30,7 +30,7 @@ $messages['en'] = array(
 
 	'translate-fs-intro' => "Welcome to the {{SITENAME}} first steps wizard.
 You will be guided through the process of becoming a translator step by step.
-In the end you will be able to translate ''interface messages'' of all supported projects at {{SITENAME}}.",
+In the end you will be able to translate <em>interface messages</em> of all supported projects at {{SITENAME}}.",
 
 	'translate-fs-selectlanguage' => "Pick a language",
 	'translate-fs-settings-planguage' => "Primary language:",
