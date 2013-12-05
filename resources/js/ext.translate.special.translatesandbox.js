@@ -317,6 +317,7 @@
 
 	$( document ).ready( function () {
 		var $requestCheckboxes = $( '.request-selector' ),
+			$languaegSelector = $( '.language-selector' ),
 			$selectAll = $( '.request-selector-all' ),
 			$requestRows = $( '.requests .request' ),
 			$detailsPane = $( '.pane.details' );
@@ -443,9 +444,51 @@
 		}
 
 		// Activate language selector
-		// TODO: Make it functional
-		$( '.language-selector' ).uls();
+		$languaegSelector .uls( {
+			onSelect: function ( language ) {
+				$languaegSelector
+					.removeClass( 'unselected' )
+					.addClass( 'selected' )
+					.text( $.uls.data.getAutonym( language ) )
+					.append( $( '<span>' ) // A '×' icon to clear the selector
+						.addClass( 'clear' )
+						.text( '×' )
+						.click( function() {
+							$languaegSelector
+								.removeClass( 'selected' )
+								.addClass( 'unselected' )
+								.text( mw.msg('tsb-all-languages-button-label' ) );
+							filterRequestsByLanguage();
+							return false;
+						} )
+					);
+				filterRequestsByLanguage( language );
+			}
+		} );
 	} );
+
+	/**
+	 * Filter the requests by language.
+	 * @param  {string} [language] Language code
+	 */
+	function filterRequestsByLanguage ( language ) {
+		var $requests = $( '.request' );
+		$requests.each( function ( index, request ) {
+			var $request = $(request),
+				requestData = $request.data( 'data' );
+
+			if ( !language
+				|| ( requestData.languagepreferences
+				&& requestData.languagepreferences.languages
+				&& requestData.languagepreferences.languages.indexOf( language ) > -1 )
+			) {
+				// Found language
+				$request.removeClass( 'hide' );
+			} else {
+				$request.addClass( 'hide' );
+			}
+		} );
+	}
 
 	function TranslatorSearch ( element ) {
 		this.$search = $( element );
