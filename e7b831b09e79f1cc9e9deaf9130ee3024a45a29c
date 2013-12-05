@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_e8524e69",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-05T07:43:29Z",
+      "side": 1,
+      "message": "misisng spaces",
+      "revId": "e7b831b09e79f1cc9e9deaf9130ee3024a45a29c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_08545255",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-05T07:43:29Z",
+      "side": 1,
+      "message": "missing space",
+      "revId": "e7b831b09e79f1cc9e9deaf9130ee3024a45a29c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_28595690",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-05T07:43:29Z",
+      "side": 1,
+      "message": "double space",
+      "revId": "e7b831b09e79f1cc9e9deaf9130ee3024a45a29c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_c84d4ac9",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-05T07:43:29Z",
+      "side": 1,
+      "message": "tabs, spaces",
+      "revId": "e7b831b09e79f1cc9e9deaf9130ee3024a45a29c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_a8c44612",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-05T07:43:29Z",
+      "side": 1,
+      "message": "spaces",
+      "revId": "e7b831b09e79f1cc9e9deaf9130ee3024a45a29c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_88c74215",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-05T07:43:29Z",
+      "side": 1,
+      "message": "indentation",
+      "revId": "e7b831b09e79f1cc9e9deaf9130ee3024a45a29c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_68ce3e33",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-05T07:43:29Z",
+      "side": 1,
+      "message": "spaces, tabs",
+      "revId": "e7b831b09e79f1cc9e9deaf9130ee3024a45a29c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
