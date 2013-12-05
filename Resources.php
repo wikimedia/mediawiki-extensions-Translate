@@ -372,6 +372,7 @@ $wgResourceModules['ext.translate.special.translatesandbox'] = array(
 		'mediawiki.jqueryMsg',
 	),
 	'messages' => array(
+		'tsb-all-languages-button-label',
 		'tsb-accept-button-label',
 		'tsb-reject-button-label',
 		'tsb-selected-count',

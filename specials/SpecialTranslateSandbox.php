@@ -143,7 +143,7 @@ HTML;
 		return <<<HTML
 <div class="row request-header">
 	<div class="four columns">
-		<button class="language-selector">
+		<button class="language-selector unselected">
 			{$this->msg( "tsb-all-languages-button-label" )->escaped()}
 		</button>
 	</div>
