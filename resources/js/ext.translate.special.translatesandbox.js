@@ -10,6 +10,8 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	var delay;
+
 	function doApiAction( options ) {
 		var api = new mw.Api();
 
@@ -323,6 +325,8 @@
 		window.setTimeout( setPanesHeight, 0 );
 		$( window ).on( 'resize', setPanesHeight );
 
+		$( '.request-filter-box' ).translatorSearch();
+
 		// Handle clicks for the 'Select all' checkbox
 		$selectAll.on( 'click', function () {
 			var selectedCount;
@@ -442,4 +446,58 @@
 		// TODO: Make it functional
 		$( '.language-selector' ).uls();
 	} );
+
+	function TranslatorSearch ( element ) {
+		this.$search = $( element );
+		this.init();
+	}
+
+	TranslatorSearch.prototype.init = function () {
+		this.$search.on( 'search keyup', $.proxy( this.keyup, this ) );
+	}
+
+	TranslatorSearch.prototype.keyup = function() {
+		var query,
+			translatorSearch = this;
+
+		// Respond to the keypress events after a small timeout to avoid freeze when typed fast.
+		delay( function () {
+			query = $.trim( translatorSearch.$search.val() ).toLowerCase().trim();
+			translatorSearch.filter( query );
+		}, 300 );
+	}
+
+	TranslatorSearch.prototype.filter = function( query ) {
+		var $requests = $( '.request' );
+		$requests.each( function ( index, request ) {
+			var $request = $(request),
+				requestData = $request.data( 'data' );
+
+			if ( query.length ===0
+				|| requestData.username.toLowerCase().indexOf( query ) === 0
+				||  requestData.email.toLowerCase().indexOf( query ) === 0 ) {
+				$request.removeClass( 'hide' );
+			} else {
+				$request.addClass( 'hide' );
+			}
+		} );
+	}
+
+	$.fn.translatorSearch = function () {
+		 return this.each( function () {
+            if ( !$.data(this,'TranslatorSearch' ) )  {
+                $.data(this, 'TranslatorSearch',
+                new TranslatorSearch( this ) );
+            }
+        });
+	}
+
+	delay = ( function () {
+		var timer = 0;
+
+		return function ( callback, milliseconds ) {
+			clearTimeout( timer );
+			timer = setTimeout( callback, milliseconds );
+		};
+	} () );
 }( jQuery, mediaWiki ) );
