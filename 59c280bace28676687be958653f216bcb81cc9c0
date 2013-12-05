@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_d6a0488f",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 658
+      },
+      "writtenOn": "2013-12-05T20:54:38Z",
+      "side": 1,
+      "message": "\u0027global\u0027 usual goes in the first line of the function.",
+      "revId": "59c280bace28676687be958653f216bcb81cc9c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_96aac06b",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 658
+      },
+      "writtenOn": "2013-12-05T20:54:38Z",
+      "side": 1,
+      "message": "Logic flow reads a bit confusingly, why not just put the block inside a true test block?\n\n if ( $wgTranslate... ) {\n   $parser-\u003esetHook...\n }",
+      "revId": "59c280bace28676687be958653f216bcb81cc9c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_163b5038",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 658
+      },
+      "writtenOn": "2013-12-05T20:54:38Z",
+      "side": 1,
+      "message": "optional parameter can be designated with square brackets. With bools comment can describe what true means, so just \u0027Clear the cache\u0027",
+      "revId": "59c280bace28676687be958653f216bcb81cc9c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
