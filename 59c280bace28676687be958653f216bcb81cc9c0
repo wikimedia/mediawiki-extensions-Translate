@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_d68608be",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-05T21:12:35Z",
+      "side": 1,
+      "message": "That\u0027s pretty subjective, Ed. Maybe this should be taken to https://www.mediawiki.org/wiki/Manual_talk:Coding_conventions/PHP ? :)",
+      "parentUuid": "0ee75395_96f9a04c",
+      "revId": "59c280bace28676687be958653f216bcb81cc9c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_163b5038",
         "filename": "tag/TranslatablePage.php",
         "patchSetId": 2
