@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_1010f002",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-12-06T11:29:25Z",
+      "side": 1,
+      "message": "You can use either Copyright or © - Both are same.",
+      "revId": "7ec0a21047f6a69b2a35310997ea968a961944bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_d0f168db",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-12-06T11:29:25Z",
+      "side": 1,
+      "message": "Extra space after \u003d",
+      "revId": "7ec0a21047f6a69b2a35310997ea968a961944bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
