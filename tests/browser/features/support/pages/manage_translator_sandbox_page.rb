@@ -19,9 +19,16 @@ class ManageTranslatorSandboxPage
 	text_field(:search, class: "request-filter-box")
 
 	checkbox(:select_all_checkbox, class: "request-selector-all")
-
 	div(:username) do |page|
 		page.requests_list_element.element.divs(class: "username")
+	end
+
+	def details_button_is_visible?(label)
+		@browser.elements(css: ".details button", text: label)
+	end
+
+	def visible_request_selectors_element
+		@browser.elements(css: ".row.request:not(.hide) .request-selector")
 	end
 
 	def visible_users_element
@@ -53,5 +60,31 @@ class ManageTranslatorSandboxPage
 
 	def username_in_request(index)
 		visible_users_element[index].text
+	end
+
+	def requests_are_sorted_by_translation_count_and_date?
+		prev_translations = false
+		prev_registrationdate = false
+
+		visible_requests_element.all? do |element|
+			user_data = JSON.parse(element.attribute_value("data-data"))
+
+			if prev_registrationdate
+				correct_date_order = prev_registrationdate >= user_data["registrationdate"]
+			else
+				correct_date_order = true
+			end
+
+			if prev_translations
+				correct_translations_order = prev_translations >= user_data["translations"]
+			else
+				correct_translations_order = true
+			end
+
+			prev_translations = user_data["translations"]
+			prev_registrationdate = user_data["registrationdate"]
+
+			correct_date_order and correct_translations_order
+		end
 	end
 end
