@@ -50,11 +50,21 @@ class SpecialTranslateSandbox extends SpecialPage {
 		if ( $request->getVal( 'integrationtesting' ) === 'populate' ) {
 			$this->emptySandbox();
 
-			foreach ( array( 'Pupu', 'Orava' ) as $prefix ) {
-				for ( $i = 0; $i < 5; $i++ ) {
-					$user = TranslateSandbox::addUser( "$prefix$i", "$prefix$i@pupun.kolo",  'porkkana' );
+			$textUsernamePrefixes = array( 'Pupu', 'Orava' );
+			$testLanguages = array( 'fi', 'uk', 'nl', 'ml', 'bn' );
+			$userCount = count( $testLanguages );
+
+			foreach ( $textUsernamePrefixes as $prefix ) {
+				for ( $i = 0; $i < $userCount; $i++ ) {
+					$user = TranslateSandbox::addUser( "$prefix$i", "$prefix$i@pupun.kolo", 'porkkana' );
+					$user->setOption(
+						'translate-sandbox',
+						'{"languages":["' . $testLanguages[$i] . '"],"comment":""}'
+					);
+					$user->saveSettings();
+
 					for( $j = 0; $j < $i; $j++ ) {
-						$title = Title::makeTitle( NS_MEDIAWIKI, wfRandomString( 24 ) . '/fi' );
+						$title = Title::makeTitle( NS_MEDIAWIKI, wfRandomString( 24 ) . '/' . $testLanguages[$i] );
 						$translation = 'plop';
 						$stashedTranslation = new StashedTranslation( $user, $title, $translation );
 						$this->stash->addTranslation( $stashedTranslation );
