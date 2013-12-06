@@ -103,9 +103,12 @@ class TranslateUtils {
 	 * @param int $hours Number of hours.
 	 * @param bool $bots Should bot edits be included.
 	 * @param null|int[] $ns List of namespace IDs.
+	 * @param string[] $extraFields List of extra columns to fetch.
 	 * @return array List of recent changes.
 	 */
-	public static function translationChanges( $hours = 24, $bots = false, $ns = null ) {
+	public static function translationChanges(
+		$hours = 24, $bots = false, $ns = null, $extraFields = array()
+	) {
 		global $wgTranslateMessageNamespaces;
 
 		$dbr = wfGetDB( DB_SLAVE );
@@ -119,8 +122,11 @@ class TranslateUtils {
 			$namespaces = $dbr->makeList( $ns );
 		}
 
-		$fields = 'rc_title, rc_timestamp, rc_user_text, rc_namespace';
-
+		$fields = array_merge(
+			array( 'rc_title', 'rc_timestamp', 'rc_user_text', 'rc_namespace' ),
+			$extraFields
+		);
+		$fields = implode( ',', $fields );
 		// @todo Raw SQL
 		$sql = "SELECT $fields, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
 			"WHERE rc_timestamp >= '{$cutoff}' " .
