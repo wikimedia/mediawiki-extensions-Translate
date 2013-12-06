@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_33ef7b1d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-06T21:27:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_800b8b2c",
+      "revId": "4dabf76cac092dd9bf76da3075f0259b58507c00",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_f306b31f",
         "filename": "resources/js/ext.translate.special.translatesandbox.js",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_73c3c38c",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-06T21:27:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_f306b31f",
+      "revId": "4dabf76cac092dd9bf76da3075f0259b58507c00",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_930be725",
         "filename": "resources/js/ext.translate.special.translatesandbox.js",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2013-12-06T21:12:46Z",
       "side": 1,
       "message": "Double space",
+      "revId": "4dabf76cac092dd9bf76da3075f0259b58507c00",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_53be7ffb",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-06T21:27:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_930be725",
       "revId": "4dabf76cac092dd9bf76da3075f0259b58507c00",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_d384cf60",
+        "filename": "tests/browser/features/step_definitions/manage_translator_sandbox_steps.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-06T21:27:25Z",
+      "side": 1,
+      "message": "OK. Made myself a reminder to reorder after the current chain of commits is merged. Don\u0027t want too much rebasing.",
+      "parentUuid": "0ee75395_b3370be0",
+      "revId": "4dabf76cac092dd9bf76da3075f0259b58507c00",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_334bfb64",
         "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
         "patchSetId": 8
@@ -98,6 +170,24 @@
       "writtenOn": "2013-12-06T21:12:46Z",
       "side": 1,
       "message": "Where is the assertion here. What does all? do?",
+      "revId": "4dabf76cac092dd9bf76da3075f0259b58507c00",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_f3aa33d0",
+        "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-06T21:27:25Z",
+      "side": 1,
+      "message": "See below.",
+      "parentUuid": "0ee75395_334bfb64",
       "revId": "4dabf76cac092dd9bf76da3075f0259b58507c00",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_b3b4ab34",
+        "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-06T21:27:25Z",
+      "side": 1,
+      "message": "Yes, and numerous Ruby aficionados told me that the Ruby style prefers not using explicit return. E.g. https://github.com/styleguide/ruby .",
+      "parentUuid": "0ee75395_134eb772",
+      "revId": "4dabf76cac092dd9bf76da3075f0259b58507c00",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_f3547303",
         "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
         "patchSetId": 8
@@ -132,6 +240,24 @@
       "writtenOn": "2013-12-06T21:12:46Z",
       "side": 1,
       "message": "did you mean to use index here?",
+      "revId": "4dabf76cac092dd9bf76da3075f0259b58507c00",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_33889b75",
+        "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-06T21:27:25Z",
+      "side": 1,
+      "message": "Yes, fixed.",
+      "parentUuid": "0ee75395_f3547303",
       "revId": "4dabf76cac092dd9bf76da3075f0259b58507c00",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
