@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_f0c90caf",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T11:07:20Z",
+      "side": 1,
+      "message": "I would prefer FormatJson::encode( array( \u0027languages\u0027 \u003d\u003e array( $testLanguages[$i] ), \u0027comment\u0027 \u003d\u003e \u0027\u0027 ) );",
+      "revId": "4b5a2f13093a521274919949946034539cd29c06",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
