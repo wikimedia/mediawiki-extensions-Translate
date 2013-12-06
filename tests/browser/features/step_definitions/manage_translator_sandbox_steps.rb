@@ -72,3 +72,17 @@ end
 When(/^I click the checkbox to select all users$/) do
 	on(ManageTranslatorSandboxPage).select_all_checkbox_element.click
 end
+
+Then(/^I should see the userlist in the first column sorted by the number of translations and the most recent within them$/) do
+	on(ManageTranslatorSandboxPage).requests_are_sorted_by_translation_count_and_date?.should be_true
+end
+
+Then(/^I should see the checkbox next to the name of the first user in the first column (.+) and (.+)$/) do |checked, disabled|
+	first_request_checkbox = on(ManageTranslatorSandboxPage).visible_request_selectors_element[0]
+	first_request_checkbox.attribute_value("checked").should == (checked == "checked").to_s
+	first_request_checkbox.attribute_value("disabled").should == (disabled == "disabled").to_s
+end
+
+Then(/^I should see the '(.+)' button displayed in the second column$/) do |label|
+	on(ManageTranslatorSandboxPage).details_button_is_visible?(label).should be_true
+end
